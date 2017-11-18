@@ -200,15 +200,9 @@ add_action( 'init', 'wortex_editor_styles' );
  */
 function wortex_scripts() {
 
-	if ( function_exists( 'get_theme_file_uri' ) ) : // WordPress 4.7
-		wp_enqueue_script( 'wortex', get_theme_file_uri( '/js/wortex.min.js' ), array( 'jquery', 'hoverIntent' ), WORTEX_THEME_VERSION );
-		// Loads HTML5 JavaScript file to add support for HTML5 elements for IE < 9.
-		wp_enqueue_script( 'html5shiv', get_theme_file_uri( '/js/html5.js' ), array(), WORTEX_THEME_VERSION );
-	else : // Support for WordPress <4.7 (to be removed after 4.9 is released)
-		wp_enqueue_script( 'wortex', WORTEX_THEME_DIR_URI . '/js/wortex.min.js', array( 'jquery', 'hoverIntent' ), WORTEX_THEME_VERSION );
-		// Loads HTML5 JavaScript file to add support for HTML5 elements for IE < 9.
-		wp_enqueue_script( 'html5shiv', WORTEX_THEME_DIR_URI . '/js/html5.js', array(), WORTEX_THEME_VERSION );
-	endif;
+	wp_enqueue_script( 'wortex', get_theme_file_uri( '/js/wortex.min.js' ), array( 'jquery', 'hoverIntent' ), WORTEX_THEME_VERSION );
+	// Loads HTML5 JavaScript file to add support for HTML5 elements for IE < 9.
+	wp_enqueue_script( 'html5shiv', get_theme_file_uri( '/js/html5.js' ), array(), WORTEX_THEME_VERSION );
 
 	// Add conditional for HTML5Shiv to only load for IE < 9
 	wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
