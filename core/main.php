@@ -526,7 +526,7 @@ if (!function_exists('lookilite_scripts_styles')) {
 
 		if ( ( lookilite_setting('lookilite_skin') ) && ( lookilite_setting('lookilite_skin') <> "turquoise" ) ):
 	
-			wp_enqueue_style( 'lookilite-' . lookilite_setting('lookilite_skin') , get_template_directory_uri() . '/inc/skins/' . lookilite_setting('lookilite_skin') . '.css' ); 
+			wp_enqueue_style( 'lookilite-' . lookilite_setting('lookilite_skin') , get_template_directory_uri() . '/assets/skins/' . lookilite_setting('lookilite_skin') . '.css' ); 
 		
 		endif;
 
