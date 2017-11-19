@@ -4,7 +4,7 @@ Theme URI: http://KyleGabriel.com/mytheme
 Author: Kyle Gabriel
 Author URI: http://KyleGabriel.com/
 Description: Atomic is a theme developed for a website to showcase my portfolio and travel. With so many themes cluttered with unused or unwanted features, Atomic brings a refreshingly minimal, full-width, responsive, andi fluid layout that is also mobile friendly. Many complex aspects have been stripped so you may choose which features you would like to use, as plugins. For extra customization of the header and footer, go to Appearance -> Atomic Options. Featured images are displayed in the header and are recommended to be greater than or equal to 1400x400 resolution.
-Version: 1.6.2
+Version: 1.6.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, custom-header, custom-menu, dark, featured-image-header, fluid-layout, full-width-template, light, one-column, responsive-layout, theme-options, threaded-comments, white
@@ -1200,7 +1200,10 @@ a.header-link {
     -moz-transition:all .2s ease-in-out;
     -ms-transition:all .2s ease-in-out;
     -o-transition:all .2s ease-in-out;
-    transition:all .2s ease-in-out
+    transition:all .2s ease-in-out;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px
 }
 
 .header-link:hover {
