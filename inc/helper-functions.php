@@ -56,9 +56,9 @@ function ariel_get_sample( $what ) {
 
     switch ( $what ) {
         case 'post-thumbnail':
-            $images = $ariel_defaults['ariel-slider-fs'];
+            $images = $ariel_defaults['ariel-featured'];
             $rand_key = array_rand( $images, 1 );
-            return ( $images[$rand_key] );
+            return ( $images[$rand_key] ); //images already escaped in theme-defaults.php
             break;
         case 'ariel-slider-fw':
             $images = $ariel_defaults['ariel-slider-fw'];
@@ -96,11 +96,11 @@ if ( ! function_exists( 'ariel_example_sidebar' ) ) :
  */
 function ariel_example_sidebar() {
     echo '<div class="sidebar-default sidebar-block sidebar-no-borders sidebar-example" >';
-    the_widget( 'WP_Widget_Search', 'title=' . __( 'Search', 'ariel' ), 'before_title=<h3 class="widget-title">&after_title=</h3>&before_widget=<div class="default-widget widget widget_search">&after_widget=</div>' );
-    the_widget( 'WP_Widget_Pages', 'title=' . __( 'Pages', 'ariel' ) , 'before_title=<h3 class="widget-title">&after_title=</h3>&before_widget=<div class="default-widget widget">&after_widget=</div>' );
-    the_widget( 'WP_Widget_Recent_Posts', 'title=' . __( 'Recent Posts', 'ariel' ) , 'before_title=<h3 class="widget-title">&after_title=</h3>&before_widget=<div class="default-widget widget">&after_widget=</div>' );
-    the_widget( 'WP_Widget_Archives', 'title=' . __( 'Archives', 'ariel' ), 'before_title=<h3 class="widget-title">&after_title=</h3>&before_widget=<div class="default-widget widget">&after_widget=</div>' );
-    the_widget( 'WP_Widget_Categories', 'title=' . __( 'Categories', 'ariel' ), 'before_title=<h3 class="widget-title">&after_title=</h3>&before_widget=<div class="default-widget widget">&after_widget=</div>' );
+    the_widget( 'WP_Widget_Search', 'title=' . esc_html__( 'Search', 'ariel' ), 'before_title=<h3 class="widget-title">&after_title=</h3>&before_widget=<div class="default-widget widget widget_search">&after_widget=</div>' );
+    the_widget( 'WP_Widget_Pages', 'title=' . esc_html__( 'Pages', 'ariel' ) , 'before_title=<h3 class="widget-title">&after_title=</h3>&before_widget=<div class="default-widget widget">&after_widget=</div>' );
+    the_widget( 'WP_Widget_Recent_Posts', 'title=' . esc_html__( 'Recent Posts', 'ariel' ) , 'before_title=<h3 class="widget-title">&after_title=</h3>&before_widget=<div class="default-widget widget">&after_widget=</div>' );
+    the_widget( 'WP_Widget_Archives', 'title=' . esc_html__( 'Archives', 'ariel' ), 'before_title=<h3 class="widget-title">&after_title=</h3>&before_widget=<div class="default-widget widget">&after_widget=</div>' );
+    the_widget( 'WP_Widget_Categories', 'title=' . esc_html__( 'Categories', 'ariel' ), 'before_title=<h3 class="widget-title">&after_title=</h3>&before_widget=<div class="default-widget widget">&after_widget=</div>' );
     echo '</div>';
 }
 endif; // function_exists( 'ariel_example_sidebar' )
@@ -175,7 +175,7 @@ function ariel_truncated_entry_title( $title, $length ) {
     if( strlen($title) > $length ) :
         $temp = substr($title, 0, strpos($title, ' ', $length));
         if(strlen($temp) > $length) :
-            $string = $temp . '...';
+            $string = $temp . '&hellip;';
         endif;
     endif;
 

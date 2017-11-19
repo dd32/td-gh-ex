@@ -26,6 +26,11 @@ if ( have_posts() ) :
 		</div><!-- row -->
 	</div><!-- frontpage-grid -->
 
+<?php echo ariel_posts_pagination(); ?>
+
+<?php else: ?>
+
+    <div class="blog-feed-empty"><p><?php esc_html_e('No posts found.', 'ariel'); ?></p></div>
+    
 <?php endif; // have_posts()
 
-echo ariel_posts_pagination();

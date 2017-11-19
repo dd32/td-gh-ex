@@ -1,8 +1,78 @@
 == Changelog ==
 
-= 1.0 =
-* 07/26/2017
-* Initial Release
+1.0.10
+* 11/19/2017
+* Fixed Bootstrap license
+
+1.0.9
+* 11/19/2017
+* Removed Jetpack styling/checks
+* Removed WooCommerce integration (removed e-commerce tag)
+* Removed bundled Kirki, recommending via TGM-Plugin-Activation, added fallback class and Kirki installation message in Customizer
+* Prefixed all variables and functions with ariel_
+* Revised escaping throughout all files
+* Featured posts turned off by default, only shows unique posts now
+* Removed example content check / sample images from page.php, template-full.php, single.php
+
+1.0.8
+* 11/18/2017
+* https://themes.trac.wordpress.org/ticket/47322#comment:24
+* Fix: Prefixed functions jptweak_remove_share() on line 266 in template-functions.php, woocommerce_get_product_thumbnail() on line 80 in functions_woocommerce.php.
+* Fix: Escaped get_author_posts_url() on line 45 in template-tags.php,  get_the_post_thumbnail_url() on line 49 in product-image.php.
+* Fix: get_the_permalink() was escaped in functions_woocommerce.php
+* Fix: Escaping fixes in functions_woocommerce.php
+* Fix: More checks added for array $social_link in parts/entry.php
+* Updated: Kirki to 3.0.15
+* Default header style is now "Banner"
+* Some styling fixes in style.css
+
+1.0.7
+* 11/10/2017
+* https://themes.trac.wordpress.org/ticket/47322#comment:16
+* Added license information for images shown in screenshot.png
+
+= 1.0.6
+* 11/5/2017
+* https://themes.trac.wordpress.org/ticket/47322#comment:11
+* Updated readme.txt file: fixed documentation link, version number, tested up to
+* Removed theme prefix from html5 and respond JS files
+* Removed commented code from customize/customizer.php
+* Removed comment-form and comment-list from add_theme_support('html5')
+* Escaped items in comments.php, template-functions.php, entry.php, feed.php, sidebar-footer.php
+* Changed ariel_custom_css function in template-functions.php to use wp_add_inline_style
+
+= 1.0.5
+* 10/29/2017
+* Added credits for Merriweather and Source Sans Pro
+* Pingback link, added function ariel_pingback_header
+* Added rtl-language-support, e-commerce tags to style file
+* Removed food-and-drink, photography tags from style file
+
+= 1.0.4 =
+* 10/20/2017
+* https://themes.trac.wordpress.org/ticket/47322#comment:2
+* Fix: Parse error functions.php on line 32
+
+= 1.0.3 =
+* 10/13/2017
+* https://themes.trac.wordpress.org/ticket/45211#comment:25
+* Changed copyright message in readme.txt
+= Header image license/credit added to readme.txt
+= WooCommerce outdated template files updated
+= Language folder created, .pot file added
+= Fix: array_rand() notice in helper-functions.php
+= Fix: template-tags.php:153 undefined variable, helper-functions.php:59 undefined index
+= Fix: Documentation link fixed
+
+= 1.0.2 =
+* 08/02/2017
+* Fix: Author box formatting fixed (was malformed when no description or social media icons were present)
+* Fix: WooCommerce loop was malformed when number of items displayed were not a multiple of 4
+* Fix: Adjustments to blog feed list view on mobile screens
+* Fix: TinyNav current menu bug fixed
+* Fix: Banner adjusted on mobile screens
+* Fix: Current parent menu item now shows in active menu state
+* style-rtl.css updated
 
 = 1.0.1 =
 * 07/31/2017
@@ -14,3 +84,8 @@
 * Added margin above footer area
 * woocommerce.php footer sidebar fix
 * Tweaked padding for top menu
+
+= 1.0 =
+* 07/26/2017
+* Initial Release
+
