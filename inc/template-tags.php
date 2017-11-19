@@ -4,6 +4,7 @@
  *
  * @package Ariel
  */
+
 if ( ! function_exists( 'ariel_entry_date' ) ) :
 /**
  * Entry Date
@@ -22,10 +23,12 @@ function ariel_entry_date() {
 	$show = ariel_toggle_entry_meta( $ariel_blog_feed_date_show, $ariel_posts_date_show );
 
 	if ( $show ) :
-		echo '<span class="entry-meta-date">' . get_the_date() . '</span>';
+		echo '<span class="entry-meta-date">' . esc_html ( get_the_date() ) . '</span>';
 	endif;
 }
 endif;
+
+
 if ( ! function_exists( 'ariel_entry_author' ) ) :
 /**
  * Entry Author
@@ -43,11 +46,12 @@ function ariel_entry_author() {
 
 	if ( $show ) :
 		echo '<a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ) ) . '" class="entry-meta-author">';
-		printf( esc_html__( 'By %s', 'ariel' ), get_the_author() );
+		printf( esc_html__( 'By %s', 'ariel' ), esc_html ( get_the_author() ) );
 		echo '</a>';
 	endif;
 }
 endif;
+
 
 if ( ! function_exists( 'ariel_entry_separator' ) ) :
 /**
@@ -84,6 +88,7 @@ function ariel_entry_separator($check) {
 }
 endif;
 
+
 if ( ! function_exists( 'ariel_entry_categories' ) ) :
 /**
  * Entry Categories
@@ -104,6 +109,7 @@ function ariel_entry_categories() {
 }
 endif;
 
+
 if ( ! function_exists( 'ariel_entry_excerpt' ) ) :
 /**
  * Entry Excerpt
@@ -113,6 +119,7 @@ function ariel_entry_excerpt() { ?>
 	<div class="entry-summary"><?php the_excerpt(); ?></div><?php
 }
 endif;
+
 
 if ( ! function_exists( 'ariel_entry_title' ) ) :
 /**
@@ -128,13 +135,13 @@ function ariel_entry_title() {
 }
 endif;
 
+
 if ( ! function_exists( 'ariel_entry_comments_link' ) ) :
 /**
  * Comments link
  * @return string Prints comments number inside comments link for curent post
  */
 function ariel_entry_comments_link() {
-    $separator = '';
     
 	$ariel_blog_feed_comments_show = ariel_get_option( 'ariel_blog_feed_comments_show' );
 	$ariel_posts_comments_show     = ariel_get_option( 'ariel_posts_comments_show' );
@@ -150,13 +157,13 @@ function ariel_entry_comments_link() {
 			$label = sprintf( _nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', 'ariel' ),
 				number_format_i18n( get_comments_number()
 			) );
-			//$separator = esc_html__( '&nbsp;&#8211;&nbsp;', 'ariel' );
 
-			echo $separator . '<a class="entry-meta-comment" href="' . esc_url( get_comments_link() ). '">' . $label . '</a>';
+			echo '<a class="entry-meta-comment" href="' . esc_url( get_comments_link() ). '">' . esc_html ( $label ) . '</a>';
 		endif;
 	endif;
 }
 endif;
+
 
 if ( ! function_exists( 'ariel_entry_thumbnail' ) ) :
 /**
@@ -180,6 +187,7 @@ function ariel_entry_thumbnail( $size = 'thumbnail' ) {
 }
 endif;
 
+
 if ( ! function_exists( 'ariel_fontawesome_icon' ) ) :
 /**
  * Font Awesome Icon
@@ -190,13 +198,14 @@ if ( ! function_exists( 'ariel_fontawesome_icon' ) ) :
 function ariel_fontawesome_icon( $icon = '', $echo = true ) {
 	if ( $icon ) {
 		if ( $echo ) {
-			echo '<i class="fa fa-' . $icon . '"></i>';
+			echo '<i class="fa fa-' . esc_attr($icon) . '"></i>';
 		} else {
-			return '<i class="fa fa-' . $icon . '"></i>';
+			return '<i class="fa fa-' . esc_attr($icon) . '"></i>';
 		}
 	}
 }
 endif;
+
 
 if ( ! function_exists( 'ariel_posts_pagination' ) ) :
 /**
@@ -219,9 +228,9 @@ function ariel_posts_pagination( $query = '' ) {
 	// Don't print empty markup if there's only one page.
 	if ( $query->max_num_pages > 1 ) {
 		$args = array(
-			'prev_text'          => __( 'Older Posts', 'ariel' ),
-			'next_text'          => __( 'Newer Posts', 'ariel' ),
-			'screen_reader_text' => __( 'Posts navigation', 'ariel' ),
+			'prev_text'          => esc_html__( 'Older Posts', 'ariel' ),
+			'next_text'          => esc_html__( 'Newer Posts', 'ariel' ),
+			'screen_reader_text' => esc_html__( 'Posts navigation', 'ariel' ),
 		);
 		$next_link = get_previous_posts_link( $args['next_text'], $query->max_num_pages );
 		$prev_link = get_next_posts_link( $args['prev_text'], $query->max_num_pages );
@@ -229,7 +238,7 @@ function ariel_posts_pagination( $query = '' ) {
 		$navigation .= '<div class="pagination-blog-feed">';
 
 		if ( $prev_link ) {
-			$navigation .= '<div class="previous_posts">' . $prev_link . '</div>';
+			$navigation .= '<div class="previous_posts">' . esc_url ( $prev_link ) . '</div>';
 		}
 
 		if ( $prev_link && $next_link ) {
@@ -237,7 +246,7 @@ function ariel_posts_pagination( $query = '' ) {
 		}
 
 		if ( $next_link ) {
-			$navigation .= '<div class="next_posts">' . $next_link . '</div>';
+			$navigation .= '<div class="next_posts">' . esc_url ( $next_link ) . '</div>';
 		}
 
 		$navigation .= '</div>';

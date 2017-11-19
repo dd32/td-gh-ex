@@ -19,8 +19,8 @@ function ariel_customizer_panels_sections( $wp_customize ) {
 	if ( ! isset( $wp_customize ) ) {
 		return;
 	}
-	// Remove and modify core controls and sections
-	$wp_customize->remove_control( 'header_textcolor' );
+	// Modify core controls and sections
+	//$wp_customize->remove_control( 'header_textcolor' );
 	$wp_customize->get_section( 'colors' )->priority = 75;
 
 	// ariel_section_general_settings
@@ -111,11 +111,26 @@ function ariel_customizer_fields( $fields ) {
 	$fields[] = array(
 		'type'        => 'custom',
 		'settings'    => 'ariel_theme_info',
-		'label'       => esc_html__( 'Ariel', 'ariel' ),
+		'label'       => esc_html__( 'Current Theme: Ariel', 'ariel' ),
 		'description' => wp_kses_post(__( '
+        
+        <h3>Demo Site</h3>
+        <p>Head on over to the <a  href="https://www.lyrathemes.com/preview/?theme=ariel" target="_blank">Ariel demo</a> to see what you can accomplish with this theme!</p>
+        <h3>Documentation</h3>
+        <p>Read how to customize the theme, set up widgets, and learn of all the possible options available to you.</p>
+        <p><a class="button" href="https://www.lyrathemes.com/documentation/" target="_blank">Ariel Documentation</a></p>
+        <h3>Sample Data</h3>
+        <p>You can install the content and settings shown on our demo site by importing this sample data.</p>
+        <p><a class="button" href="https://www.lyrathemes.com/sample-data/ariel-sample-data.zip" target="_blank">Ariel Sample Data</a></p>
+        <h3>Feedback and Support</h3>
+        <p>For feedback and support, please contact us and we would be happy to assist!</p>
+        <p><a class="button" href="https://www.lyrathemes.com/support" target="_blank">Ariel Support</a></p>
+        
+        <hr />
+        
         <h1>Ariel Pro</h1>
         <p><a class="button" href="https://www.lyrathemes.com/ariel-pro/" target="_blank">Upgrade to Ariel Pro</a></p>
-        <p>Upgrade for the many awesome features and expert support included with the pro version of this theme. View the <a href="http://www.lyrathemes.com/preview/?theme=ariel-pro" target="_blank">Ariel Pro Demo</a> to see the additional features and functionality available in your upgrade.</p>
+        <p>Upgrade for the many awesome features and expert support included with the pro version of this theme. View the <a href="https://www.lyrathemes.com/preview/?theme=ariel-pro" target="_blank">Ariel Pro Demo</a> to see the additional features and functionality available in your upgrade.</p>
         <p>Pro Features:
         <ul>
             <li>&raquo; Slider options: Custom slider</li>
@@ -126,19 +141,6 @@ function ariel_customizer_fields( $fields ) {
             <li>&raquo; One on one personal support and continuous theme updates</li>
         </ul>
         </p>
-        <hr />
-        <h1>Current Theme: Ariel</h1>
-        <h3>Demo Site</h3>
-        <p>Head on over to the <a  href="http://www.lyrathemes.com/preview/?theme=ariel" target="_blank">Ariel demo</a> to see what you can accomplish with this theme!</p>
-        <h3>Documentation</h3>
-        <p>Read how to customize the theme, set up widgets, and learn of all the possible options available to you.</p>
-        <p><a class="button" href="https://www.lyrathemes.com/documentation/" target="_blank">Ariel Documentation</a></p>
-        <h3>Sample Data</h3>
-        <p>You can install the content and settings shown on our demo site by importing this sample data.</p>
-        <p><a class="button" href="https://www.lyrathemes.com/sample-data/ariel-sample-data.zip" target="_blank">Ariel Sample Data</a></p>
-        <h3>Feedback and Support</h3>
-        <p>For feedback and support, please contact us and we would be happy to assist!</p>
-        <p><a class="button" href="https://www.lyrathemes.com/support" target="_blank">Ariel Support</a></p>
         ', 'ariel' ) ),
         'section'     => 'ariel_section_theme_info',
         'priority'    => 1,
@@ -171,7 +173,7 @@ function ariel_customizer_fields( $fields ) {
 	$fields[] = array(
 		'type'        => 'custom',
 		'settings'    => 'ariel_section_general_sep1',
-		'label'       => '<hr />',
+		'label'       => wp_kses_post ( '<hr />' ),
 		'section'     => 'ariel_section_general_settings',
 		'priority'    => 4
 	);
@@ -201,7 +203,7 @@ function ariel_customizer_fields( $fields ) {
 		'fields' => array(
 			'social_network' => array(
 				'type'        => 'select',
-				'label'       => esc_attr__( 'Network name', 'ariel' ),
+				'label'       => esc_attr__( 'Social Network', 'ariel' ),
 				'default'     => $ariel_defaults['ariel_author_social_links']['social_network'],
 				'choices'     => array(
 					'facebook'   => esc_html__( 'Facebook', 'ariel' ),
@@ -253,14 +255,14 @@ function ariel_customizer_fields( $fields ) {
 		'section'     => 'title_tagline',
 		'priority'    => 2,
 		'default'     => $ariel_defaults['ariel_text_logo'],
-		// 'active_callback'  => array( array( 'setting'  => 'ariel_image_logo_show', 'operator' => '==', 'value'    => '0' ) ),
+		'active_callback'  => array( array( 'setting'  => 'ariel_image_logo_show', 'operator' => '==', 'value'    => false ) ),
 		'sanitize_callback'=> 'sanitize_text_field'
 	);
 
 	$fields[] = array(
 		'type'        => 'custom',
 		'settings'    => 'ariel_text_logo_sep1',
-		'label'       => '<hr />',
+		'label'       => wp_kses_post ( '<hr />' ),
 		'section'     => 'title_tagline',
 		'priority'    => 3
 	);
@@ -321,7 +323,7 @@ function ariel_customizer_fields( $fields ) {
 	$fields[] = array(
 		'type'        => 'custom',
 		'settings'    => 'ariel_frontpage_posts_slider_type_sep',
-		'label'       => '<hr />',
+		'label'       => wp_kses_post ( '<hr />' ),
 		'section'     => 'ariel_section_frontpage_banner',
 		'priority'    => 2,
 		'active_callback'  => array(
@@ -360,7 +362,7 @@ function ariel_customizer_fields( $fields ) {
 	$fields[] = array(
 		'type'        => 'custom',
 		'settings'    => 'ariel_frontpage_posts_slider_desc',
-		'label'       => wp_kses_post(__( '<hr />Posts Slider', 'ariel' )),
+		'label'       => esc_html__( 'Posts Slider', 'ariel' ),
 		'description' => esc_html__( 'Select a category to show posts from in the slider. Also enter the number of posts to show from that category.', 'ariel' ),
 		'section'     => 'ariel_section_frontpage_banner',
 		'priority'    => 4,
@@ -411,7 +413,7 @@ function ariel_customizer_fields( $fields ) {
 	$fields[] = array(
 		'type'        => 'custom',
 		'settings'    => 'ariel_frontpage_custom_slider_sep',
-		'label'       => '<hr />',
+		'label'       => wp_kses_post ( '<hr />' ),
 		'section'     => 'ariel_section_frontpage_banner',
 		'priority'    => 7,
 		'active_callback'  => array(
@@ -439,14 +441,14 @@ function ariel_customizer_fields( $fields ) {
 	$fields[] = array(
 		'type'        => 'custom',
 		'settings'    => 'ariel_frontpage_featured_posts_sep1',
-		'label'       => '<hr />',
+		'label'       => wp_kses_post ( '<hr />' ),
 		'section'     => 'ariel_section_frontpage_featured_posts',
 		'priority'    => 2,
 		'active_callback'  => array(
 			array(
 				'setting'  => 'ariel_frontpage_featured_posts_show',
 				'operator' => '==',
-				'value'    => '1',
+				'value'    => true,
 			),
 		)
 	);
@@ -461,12 +463,12 @@ function ariel_customizer_fields( $fields ) {
 			array(
 				'setting'  => 'ariel_frontpage_featured_posts_show',
 				'operator' => '==',
-				'value'    => '1',
+				'value'    => true,
 			),
 		)
 	);
 	
-	$priority = 4;
+	$ariel_priority = 4;
 	/**
 	 * There are 4 selects for posts
 	 */
@@ -477,14 +479,14 @@ function ariel_customizer_fields( $fields ) {
 			'settings'    => 'ariel_frontpage_featured_posts_post_' . $i,
 			'label'       => sprintf( esc_html__( 'Post %s', 'ariel' ), $i ),
 			'section'     => 'ariel_section_frontpage_featured_posts',
-			'priority'    => $priority++,
+			'priority'    => $ariel_priority++,
 			'default'     => $ariel_defaults['ariel_frontpage_featured_posts_post_' . $i],
 			'choices'     => Kirki_Helper::get_posts( array( 'numberposts' => -1 ) ),
 			'active_callback'  => array(
 				array(
 					'setting'  => 'ariel_frontpage_featured_posts_show',
 					'operator' => '==',
-					'value'    => '1',
+					'value'    => true,
 				),
 			)
 		);
@@ -514,7 +516,7 @@ function ariel_customizer_fields( $fields ) {
 			array(
 				'setting'  => 'ariel_blog_feed_meta_show',
 				'operator' => '==',
-				'value'    => '1',
+				'value'    => true,
 			),
 		)
 	);
@@ -529,7 +531,7 @@ function ariel_customizer_fields( $fields ) {
 			array(
 				'setting'  => 'ariel_blog_feed_meta_show',
 				'operator' => '==',
-				'value'    => '1',
+				'value'    => true,
 			),
 		)
 	);
@@ -544,7 +546,7 @@ function ariel_customizer_fields( $fields ) {
 			array(
 				'setting'  => 'ariel_blog_feed_meta_show',
 				'operator' => '==',
-				'value'    => '1',
+				'value'    => true,
 			),
 		)
 	);
@@ -559,7 +561,7 @@ function ariel_customizer_fields( $fields ) {
 			array(
 				'setting'  => 'ariel_blog_feed_meta_show',
 				'operator' => '==',
-				'value'    => '1',
+				'value'    => true,
 			),
 		)
 	);
@@ -567,7 +569,7 @@ function ariel_customizer_fields( $fields ) {
 	$fields[] = array(
 		'type'        => 'custom',
 		'settings'    => 'ariel_blog_feed_sep1',
-		'label'       => '<hr />',
+		'label'       => wp_kses_post ( '<hr />' ),
 		'section'     => 'ariel_section_blog_feed',
 		'priority'    => 7
 	);
@@ -575,8 +577,8 @@ function ariel_customizer_fields( $fields ) {
 	$fields[] = array(
 		'type'        => 'text',
 		'settings'     => 'ariel_blog_feed_label',
-		'label'       => __( 'Heading for Blog Feed on Home Page', 'ariel' ),
-		'description' => __( 'The `Recent Posts` label on the home page.', 'ariel' ),
+		'label'       => esc_html__( 'Heading for Blog Feed on Home Page', 'ariel' ),
+		'description' => esc_html__( 'The `Recent Posts` label on the home page.', 'ariel' ),
 		'section'     => 'ariel_section_blog_feed',
 		'priority'    => 8,
 		'default'     => $ariel_defaults['ariel_blog_feed_label'],
@@ -624,7 +626,7 @@ function ariel_customizer_fields( $fields ) {
 			array(
 				'setting'  => 'ariel_posts_meta_show',
 				'operator' => '==',
-				'value'    => '1',
+				'value'    => true,
 			),
 		)
 	);
@@ -639,7 +641,7 @@ function ariel_customizer_fields( $fields ) {
 			array(
 				'setting'  => 'ariel_posts_meta_show',
 				'operator' => '==',
-				'value'    => '1',
+				'value'    => true,
 			),
 		)
 	);
@@ -654,7 +656,7 @@ function ariel_customizer_fields( $fields ) {
 			array(
 				'setting'  => 'ariel_posts_meta_show',
 				'operator' => '==',
-				'value'    => '1',
+				'value'    => true,
 			),
 		)
 	);
@@ -669,7 +671,7 @@ function ariel_customizer_fields( $fields ) {
 			array(
 				'setting'  => 'ariel_posts_meta_show',
 				'operator' => '==',
-				'value'    => '1',
+				'value'    => true,
 			),
 		)
 	);
@@ -677,7 +679,7 @@ function ariel_customizer_fields( $fields ) {
 	$fields[] = array(
 		'type'        => 'custom',
 		'settings'    => 'ariel_posts_sep1',
-		'label'       => '<hr />',
+		'label'       => wp_kses_post ( '<hr />' ),
 		'section'     => 'ariel_section_posts',
 		'priority'    => 7
 	);
@@ -689,8 +691,8 @@ function ariel_customizer_fields( $fields ) {
 		'section'     => 'ariel_section_posts',
 		'default'     => $ariel_defaults['ariel_posts_sidebar'],
 		'priority'    => 8,
-		'choices'     => array( '0' => trailingslashit( get_template_directory_uri() ) . 'customize/images/full.png',
-								'1' => trailingslashit( get_template_directory_uri() ) . 'customize/images/sidebar.png', ),
+		'choices'     => array( '0' => esc_url (trailingslashit( get_template_directory_uri() ) . 'customize/images/full.png'),
+								'1' => esc_url (trailingslashit( get_template_directory_uri() ) . 'customize/images/sidebar.png'), ),
 	);
 	$fields[] = array(
 		'type'        => 'toggle',
@@ -713,8 +715,8 @@ function ariel_customizer_fields( $fields ) {
 		'section'     => 'ariel_section_pages',
 		'default'     => $ariel_defaults['ariel_pages_sidebar'],
 		'priority'    => 1,
-		'choices'     => array( '0' => trailingslashit( get_template_directory_uri() ) . 'customize/images/full.png',
-								'1' => trailingslashit( get_template_directory_uri() ) . 'customize/images/sidebar.png', ),
+		'choices'     => array( '0' => esc_url (trailingslashit( get_template_directory_uri() ) . 'customize/images/full.png'),
+								'1' => esc_url (trailingslashit( get_template_directory_uri() ) . 'customize/images/sidebar.png'), ),
 	);
 	$fields[] = array(
 		'type'        => 'toggle',

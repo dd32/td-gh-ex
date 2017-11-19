@@ -8,12 +8,12 @@ $ariel_blog_feed_post_format  = ariel_get_option( 'ariel_blog_feed_post_format' 
 $ariel_blog_feed_label        = ariel_get_option( 'ariel_blog_feed_label' );
 
 // Set class for main content depending on sidebar being displayed or not - always displayed in free version
-$main_class = 'col-md-9';
+$ariel_main_class = 'col-md-9';
 ?>
 
 <div class="container">
 	<div class="row two-columns">
-		<div class="main-column <?php echo esc_attr( $main_class ); ?>">
+		<div class="main-column <?php echo esc_attr( $ariel_main_class ); ?>">
 			<div class="blog-feed">
 				<?php if ( is_front_page() ) : ?>
 					<h2 class="section-title"><?php echo esc_html( $ariel_blog_feed_label ); ?></h2>

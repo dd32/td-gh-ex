@@ -1,5 +1,15 @@
 == Changelog ==
 
+1.0.9
+* 11/19/2017
+* Removed Jetpack styling/checks
+* Removed WooCommerce integration (removed e-commerce tag)
+* Removed bundled Kirki, recommending via TGM-Plugin-Activation, added fallback class and Kirki installation message in Customizer
+* Prefixed all variables and functions with ariel_
+* Revised escaping throughout all files
+* Featured posts turned off by default, only shows unique posts now
+* Removed example content check / sample images from page.php, template-full.php, single.php
+
 1.0.8
 * 11/18/2017
 * https://themes.trac.wordpress.org/ticket/47322#comment:24
