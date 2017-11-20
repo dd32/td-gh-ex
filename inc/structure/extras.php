@@ -178,13 +178,6 @@ function bellini_post_author() { ?>
 }
 
 /**
-* Edit Content
-*/
-function bellini_edit_content() {
-    edit_post_link(sprintf(esc_html__( 'Edit %s', 'bellini' ),the_title( '<span class="screen-reader-text">"', '"</span>', false )),'<span class="edit-link">','</span>');
-}
-
-/**
 * Returns true if a blog has more than 1 category.
 *
 * @return bool

@@ -349,9 +349,6 @@ input[type=checkbox]:checked:before {
     background-color: #fff;
 }
 
-.customize-control-radio label {margin-left:2.5rem;}
-
-
 .bellini_pro_section:before {
     font: 400 24px/1 dashicons;
     content: "\f534";

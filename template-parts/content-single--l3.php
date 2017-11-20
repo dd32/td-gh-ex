@@ -10,7 +10,6 @@ global $bellini;
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class();?> itemscope itemtype="https://schema.org/CreativeWork">
 <div class="container--card-content clearfix">
-<div class="text-center"><?php bellini_edit_content(); ?></div>
 <header class="entry-header single-post__header--l3">
 	<?php
 		if($bellini['bellini_show_post_meta'] == true):
