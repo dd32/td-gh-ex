@@ -84,5 +84,8 @@ License URI: https://github.com/oddbird/susy/blob/master/LICENSE.txt
 2. https://burst.shopify.com/photos/mens-watch-ring
 License URL: https://burst.shopify.com/licenses/creative-commons
 
+3. https://www.pexels.com/photo/close-up-of-man-using-mobile-phone-248528/
+License URL: https://www.pexels.com/photo-license/
+
 * Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)

@@ -97,6 +97,7 @@ class AzonBooster_Customizer {
 	}
 
 	public function scripts() {
+		
 		global $azonbooster_version;
 
 		/**
