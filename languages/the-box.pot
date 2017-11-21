@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-11 10:24+0000\n"
+"POT-Creation-Date: 2017-11-21 11:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "Meta"
 msgstr ""
 
-#: index.php:39 archive.php:86 search.php:35
+#: index.php:39 archive.php:86 search.php:39
 msgid "&larr;"
 msgstr ""
 
-#: index.php:40 archive.php:87 search.php:36
+#: index.php:40 archive.php:87 search.php:40
 msgid "&rarr;"
 msgstr ""
 
@@ -87,8 +87,8 @@ msgid "Next &rarr;"
 msgstr ""
 
 #: image.php:93 template-parts/content-page.php:22
-#: template-parts/content-single.php:46 template-parts/content-quote.php:18
-#: template-parts/content.php:54 template-parts/content-aside.php:18
+#: template-parts/content-single.php:36 template-parts/content-quote.php:18
+#: template-parts/content.php:50 template-parts/content-aside.php:18
 msgid "Pages:"
 msgstr ""
 
@@ -119,7 +119,7 @@ msgid "Both comments and trackbacks are currently closed."
 msgstr ""
 
 #: image.php:107 template-parts/content-page.php:39
-#: template-parts/content-single.php:81 template-parts/content.php:115
+#: template-parts/content-single.php:71 template-parts/content.php:111
 msgid "Edit"
 msgstr ""
 
@@ -180,14 +180,14 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: functions.php:378
+#: functions.php:395
 #, php-format
 msgid ""
 "<strong>Upgrade to The Box Plus</strong> to get extended functionality and "
 "advanced customization options: %1$s"
 msgstr ""
 
-#: functions.php:383
+#: functions.php:400
 msgid "Close and don't show this message again"
 msgstr ""
 
@@ -267,108 +267,100 @@ msgid ""
 "below or a search?"
 msgstr ""
 
-#: search.php:17
+#: search.php:16
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: template-parts/content-none.php:12
+#: search.php:18 template-parts/content-none.php:12
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:18
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: template-parts/content-none.php:22
+#: search.php:45
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:27
+#: template-parts/content-none.php:17
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:21
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:26 template-parts/content-single.php:50
-#: template-parts/content-quote.php:22 template-parts/content.php:58
+#: template-parts/content-page.php:26 template-parts/content-single.php:40
+#: template-parts/content-quote.php:22 template-parts/content.php:54
 #: template-parts/content-aside.php:22 inc/customizer.php:204
 msgid "Page"
 msgstr ""
 
-#: template-parts/content-page.php:36 template-parts/content.php:110
+#: template-parts/content-page.php:36 template-parts/content.php:106
 msgid "<span class=\"icon-font icon-comment-alt\"></span> Leave a comment"
 msgstr ""
 
-#: template-parts/content-page.php:36 template-parts/content.php:110
+#: template-parts/content-page.php:36 template-parts/content.php:106
 msgid "<span class=\"icon-font icon-comment\"></span> 1 Comment"
 msgstr ""
 
-#: template-parts/content-page.php:36 template-parts/content.php:110
+#: template-parts/content-page.php:36 template-parts/content.php:106
 msgid "<span class=\"icon-font icon-comments-alt\"></span> % Comments"
 msgstr ""
 
-#: template-parts/content-single.php:27
-msgid "Posted by"
-msgstr ""
-
 #. translators: used between list items, there is a space after the comma
 #. translators: used between list items, there is a space after the comma
 #. translators: used between list items, there is a space after the comma
 #. translators: used between list items, there is a space after the comma
-#: template-parts/content-single.php:60 template-parts/content-single.php:72
-#: template-parts/content.php:84 template-parts/content.php:96
+#: template-parts/content-single.php:50 template-parts/content-single.php:62
+#: template-parts/content.php:80 template-parts/content.php:92
 msgid ", "
 msgstr ""
 
-#: template-parts/content-single.php:65 template-parts/content-single.php:77
-#: template-parts/content.php:89 template-parts/content.php:101
+#: template-parts/content-single.php:55 template-parts/content-single.php:67
+#: template-parts/content.php:85 template-parts/content.php:97
 #, php-format
 msgid "%1$s"
 msgstr ""
 
-#: template-parts/content-quote.php:31 template-parts/content.php:52
+#: template-parts/content-quote.php:31 template-parts/content.php:48
 #: template-parts/content-aside.php:31
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/template-tags.php:17
-#, php-format
-msgid ""
-"Posted on <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time "
-"class=\"entry-date\" datetime=\"%3$s\">%4$s</time></a><span class=\"byline\">"
-" by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" "
-"title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+#: inc/template-tags.php:31
+msgctxt "Used before publish date."
+msgid "Posted on"
 msgstr ""
 
-#: inc/template-tags.php:23
-#, php-format
-msgid "View all posts by %s"
+#: inc/template-tags.php:37
+msgctxt "Used before post author name."
+msgid "Author"
 msgstr ""
 
-#: inc/template-tags.php:42
+#: inc/template-tags.php:58
 msgid "Pingback:"
 msgstr ""
 
-#: inc/template-tags.php:42 inc/template-tags.php:65
+#: inc/template-tags.php:58 inc/template-tags.php:81
 msgid "(Edit)"
 msgstr ""
 
-#: inc/template-tags.php:52
+#: inc/template-tags.php:68
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
-#: inc/template-tags.php:55
+#: inc/template-tags.php:71
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #. translators: 1: date, 2: time
-#: inc/template-tags.php:63
+#: inc/template-tags.php:79
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""

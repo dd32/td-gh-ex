@@ -14,15 +14,31 @@ if ( ! function_exists( 'thebox_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function thebox_posted_on() {
-	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'the-box' ),
+	
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	}
+
+	$time_string = sprintf( $time_string,
+		get_the_date( DATE_W3C ),
+		get_the_date(),
+		get_the_modified_date( DATE_W3C ),
+		get_the_modified_date()
+	);
+
+	printf( '<span class="posted-on"><span class="screen-reader-text">%1$s </span><span class="icon-font icon-date"></span> <a href="%2$s" rel="bookmark">%3$s</a></span>',
+		_x( 'Posted on', 'Used before publish date.', 'the-box' ),
 		esc_url( get_permalink() ),
-		esc_attr( get_the_time() ),
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
+		$time_string
+	);
+
+	printf( '<span class="byline"><span class="author vcard"><span class="screen-reader-text">%1$s </span> <a class="url fn n" href="%2$s"><span class="icon-font icon-user"></span> %3$s</a></span></span>',
+		_x( 'Author', 'Used before post author name.', 'the-box' ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'the-box' ), get_the_author() ) ),
 		get_the_author()
 	);
+	
 }
 endif;
 
@@ -104,18 +120,4 @@ function thebox_categorized_blog() {
 		// This blog has only 1 category so thebox_categorized_blog should return false
 		return false;
 	}
-}
-
-
-/**
- * Adds custom classes to the array of body classes.
- */
-function thebox_body_classes( $classes ) {
-	// Adds a class of group-blog to blogs with more than 1 published author
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
-	}
-	return $classes;
-}
-add_filter( 'body_class', 'thebox_body_classes' );
- 
+} 

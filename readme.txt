@@ -87,6 +87,10 @@ Please visit https://wordpress.org/support/theme/the-box if you have any questio
 - Tweak: Add nofollow to Theme Author link
 * Tweak: Color Options
 
+1.4.9
+* Tweak: Post Meta
+* Tweak: Search results
+
 
 == Resources ==
 * 	The Theme is based on Underscores http://underscores.me/,

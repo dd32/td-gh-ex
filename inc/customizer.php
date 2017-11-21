@@ -489,18 +489,6 @@ function thebox_sanitize_choices( $input, $setting ) {
 }
 
 
-/** 
- * Add specific CSS class by filter
- */
-function thebox_custom_classes( $classes ) {
-	// add 'class-name' to the $classes array
-	$classes[] = get_option('thebox_sidebar_settings', 'content-sidebar');
-	// return the $classes array
-	return $classes;
-}
-add_filter( 'body_class', 'thebox_custom_classes' );
-
-
 /**
  * Convert hex to rgb
  *

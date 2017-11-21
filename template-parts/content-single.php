@@ -17,17 +17,7 @@
 			<span class="entry-format-icon"></span>
 		</div>
 		<div class="entry-meta">
-			<span class="posted-on">
-				<span class="icon-font icon-date"></span>
-				<?php the_time( get_option( 'date_format' ) ); ?>
-			</span>
-			<span class="byline">
-				<span class="author">
-					<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-						<span class="icon-font icon-user"></span> <?php _e( 'Posted by', 'the-box' ); ?> <?php the_author(); ?> 
-					</a>
-				</span>
-			</span>
+			<?php thebox_posted_on(); ?>
 			<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
 				<span class="comments-link">
 					<?php comments_popup_link( '<span class="icon-font icon-comment-alt"></span> 0', '<span class="icon-font icon-comments-alt"></span> 1', '<span class="icon-font icon-comments-alt"></span> %' ); ?>

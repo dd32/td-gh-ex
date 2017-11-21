@@ -15,9 +15,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
 	<header class="entry-header">
-		
 		<?php if ( $layout_type == 'grid2-sidebar' ) { ?>
-			
 			<?php if ( has_post_thumbnail() && ! post_password_required() && get_option( 'thebox_show_thumbnails', 1 ) ) : ?>
 				<div class="post-thumbnail">
 					<a href="<?php the_permalink(); ?>" rel="bookmark">
@@ -25,10 +23,10 @@
 					</a>
 				</div>
 			<?php endif; ?>	
-		
 		<?php } ?>
 		
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		
 		<div class="entry-time">
 			<span class="entry-time-day"><?php the_time('j') ?></span>
 			<span class="entry-time-month"><?php the_time('M') ?></span>
@@ -39,7 +37,6 @@
 	<?php if ( $layout_type != 'grid2-sidebar' && ( get_post_format() || $post_lenght == 'option2' ) ) : ?>
 			
 		<div class="entry-content">
-			
 			<?php if ( has_post_thumbnail() && ! post_password_required() && get_option( 'thebox_show_thumbnails', 1 ) ) : ?>
 				<div class="post-thumbnail">
 					<a href="<?php the_permalink(); ?>" rel="bookmark">
@@ -47,7 +44,6 @@
 					</a>
 				</div>
 			<?php endif; ?>
-			
 			<?php 
 				the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'the-box' ) );
 				wp_link_pages( array(

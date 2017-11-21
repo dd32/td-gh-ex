@@ -4,7 +4,7 @@ Theme URI: https://www.designlabthemes.com/the-box-wordpress-theme/
 Author: Design Lab
 Author URI: https://www.designlabthemes.com/
 Description: Clean and Simple WordPress Theme designed for blogs and online publications. With easy to use options The Box lets you focus on your awesome writing.
-Version: 1.4.8
+Version: 1.4.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: the-box
@@ -1440,12 +1440,20 @@ button.menu-toggle:focus {
 	height: auto;
 }
 
+.updated:not(.published) {
+	display: none;
+}
+
 /* Icons */
 
 .icon-font {
 	font-size: 14px;
 	display: inline-block;
 	vertical-align: -10%;
+}
+
+.entry-meta .icon-font {
+	vertical-align: -5%;
 }
 
 .entry-footer .icon-font {

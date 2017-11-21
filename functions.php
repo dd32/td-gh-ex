@@ -127,7 +127,7 @@ function thebox_scripts() {
 	wp_enqueue_style( 'thebox-icons', get_template_directory_uri() . '/fonts/fa-icons.css', array(), '1.7' );
 		
 	// Loads main stylesheet.
-	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.4.8' );
+	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.4.9' );
 	
 	wp_enqueue_script( 'thebox-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20170220', true );
 
@@ -350,6 +350,23 @@ function thebox_credits() {
 	$website_credits = '&copy; ' . $website_date . ' ' . $website_author;	
 	echo esc_html( $website_credits );
 }
+
+
+/** 
+ * Add specific CSS class by filter
+ */
+function thebox_custom_classes( $classes ) {
+	$classes[] = get_option('thebox_sidebar_settings', 'content-sidebar');
+	
+	// Adds a class of group-blog to blogs with more than 1 published author
+	if ( is_multi_author() ) {
+		$classes[] = 'group-blog';
+	}
+	
+	// return the $classes array
+	return $classes;
+}
+add_filter( 'body_class', 'thebox_custom_classes' );
 
 
 /**
