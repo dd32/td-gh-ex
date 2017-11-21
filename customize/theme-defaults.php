@@ -35,7 +35,7 @@ $ariel_defaults['ariel_frontpage_posts_slider_number']    = '3';
 /**
  * Frontpage > Featured Posts / Pages
  */
-$ariel_defaults['ariel_frontpage_featured_posts_show']    = false;
+$ariel_defaults['ariel_frontpage_featured_posts_show']    = true;
 $ariel_defaults['ariel_frontpage_featured_posts_heading'] = esc_html__( 'Featured Posts', 'ariel' );
 $ariel_defaults['ariel_frontpage_featured_post_type']     = 'post';
 $ariel_defaults['ariel_frontpage_featured_posts_post_1']  = 1;

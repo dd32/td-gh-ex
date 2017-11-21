@@ -1,5 +1,14 @@
 == Changelog ==
 
+1.1
+* 11/20/2017
+* Removed esc_html from get_the_archive_title
+* Updated theme description in style.css
+
+1.0.10
+* 11/19/2017
+* Fixed Bootstrap license
+
 1.0.9
 * 11/19/2017
 * Removed Jetpack styling/checks

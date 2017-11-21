@@ -3,7 +3,7 @@
 Author: LyraThemes www.lyrathemes.com
 Requires at least: WordPress 4.5
 Tested up to: WordPress 4.9
-Version: 1.0.9
+Version: 1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: one-column, two-columns, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, rtl-language-support, e-commerce
@@ -41,7 +41,8 @@ The theme uses the following third-party resources:
 * Respond.js v1.3.0 (c) Scott Jehl. MIT/GPLv2. https://github.com/scottjehl/Respond
 * Slick  v1.7.0 (c) 2014 Ken Wheeler The MIT License (MIT) https://github.com/kenwheeler/slick
 * TinyNav.js v1.2 (c) 2011-2014 Viljami Salminen The MIT License (MIT) http://tinynav.viljamis.com/
-* Bootstrap v3.3.5 (c) Twitter Inc. MIT. http://getbootstrap.com
+* Bootstrap v3.3.7 (c) Twitter Inc. MIT. http://getbootstrap.com
+* GLYPHICONS Halflings font - released as an extension of a Bootstrap http://getbootstrap.com for free and it is released under the same license as Bootstrap. MIT. 
 * Font Awesome 4.7 by Dave Gandy. MIT. http://fontawesome.io
 * Kirki 3.0.15 (c) Aristeides Stathopoulos. MIT https://aristath.github.io/kirki/
 * Kirki Helpers (c) 2016 Aristeides Stathopoulos. The MIT License (MIT). https://github.com/aristath/kirki-helpers (inc/ariel_kirki.php, inc/ariel_kirki_installer.php)
@@ -50,6 +51,7 @@ The theme uses the following third-party resources:
 * Fonts used https://fonts.google.com/specimen/Merriweather (by Sorkin Type, Open Font License)
 	         https://fonts.google.com/specimen/Source+Sans+Pro (by Paul D. Hunt, Open Font License)
 
+Images in customize/images: (c) LyraThemes.com, GPLv3.
 
 Images in samples/images:
 110x110-1.jpg, 540x540-1.jpg, 840x500-1.jpg, 870x550-1.jpg, 1170x550-1.jpg: https://pixabay.com/en/chalkboard-blackboard-board-picture-2281205/

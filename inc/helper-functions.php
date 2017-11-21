@@ -175,7 +175,7 @@ function ariel_truncated_entry_title( $title, $length ) {
     if( strlen($title) > $length ) :
         $temp = substr($title, 0, strpos($title, ' ', $length));
         if(strlen($temp) > $length) :
-            $string = $temp . '...';
+            $string = $temp . '&hellip;';
         endif;
     endif;
 

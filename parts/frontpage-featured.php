@@ -17,7 +17,7 @@ if ( $ariel_frontpage_featured_posts_show == 1 ) :
 		ariel_get_option( 'ariel_frontpage_featured_posts_' . $ariel_frontpage_featured_post_type . '_3' ),
 		ariel_get_option( 'ariel_frontpage_featured_posts_' . $ariel_frontpage_featured_post_type . '_4' ),
 	);
-    $ariel_featured_ids = array_unique($ariel_featured_ids);
+    //$ariel_featured_ids = array_unique($ariel_featured_ids);
     
 	if ( $ariel_featured_ids ) : ?>
 
