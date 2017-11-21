@@ -3,13 +3,13 @@
 Template Name: Blog
 */
 
-global $post;
+global $post, $virtue_sidebar;
 
 if( kadence_display_sidebar() ) {
-	$display_sidebar = true;
+	$virtue_sidebar = true;
 	$fullclass 		 = '';
 } else {
-	$display_sidebar = false;
+	$virtue_sidebar = false;
 	$fullclass = 'fullwidth';
 }
 if( get_post_meta( $post->ID, '_kad_blog_summery', true ) == 'full' ) {
@@ -54,17 +54,9 @@ if( $blog_items == 'all' ) {
 				if ( $wp_query ) : 
 					while ( $wp_query->have_posts() ) : $wp_query->the_post();
 				 		if( $summery == 'full' ) {
-							if( $display_sidebar ){
 								get_template_part( 'templates/content', 'fullpost' ); 
-							} else {
-								get_template_part( 'templates/content', 'fullpostfull' );
-							}
 						} else {
-							if( $display_sidebar ){
 								get_template_part( 'templates/content', get_post_format() ); 
-							} else {
-								get_template_part( 'templates/content', 'fullwidth' );
-							}	
 						}
 					endwhile; 
 				else: ?>

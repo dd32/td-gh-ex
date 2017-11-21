@@ -1,6 +1,6 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
         <div class="row">
-        <?php global $post, $virtue; 
+        <?php global $post, $virtue, $virtue_sidebar; 
             $postsummery  = get_post_meta( $post->ID, '_kad_post_summery', true );
             $height       = get_post_meta( $post->ID, '_kad_posthead_height', true );
             $swidth       = get_post_meta( $post->ID, '_kad_posthead_width', true );
@@ -12,7 +12,11 @@
             if (!empty($swidth)){
                 $slidewidth = $swidth;
             } else {
-                $slidewidth = $slidewidth = apply_filters('kt_post_excerpt_image_width', 846);
+            	if( $virtue_sidebar ) {
+                	$slidewidth = apply_filters('kt_post_excerpt_image_width', 846);
+                } else {
+                	$slidewidth = apply_filters('kt_post_excerpt_full_image_width', 1140);
+                }
             }
             if(empty($postsummery) || $postsummery == 'default') {
                 if(!empty($virtue['post_summery_default'])) {
@@ -40,12 +44,18 @@
                         </div>
                     </div>
                     <?php
-            } elseif($postsummery == 'img_portrait') { 
-                $textsize = 'col-md-7'; 
+            } elseif($postsummery == 'img_portrait') {
+				if( $virtue_sidebar ) {
+					$textsize = 'col-md-7';
+					$featsize = 'col-md-5';
+				} else {
+					$textsize = 'col-md-8';
+					$featsize = 'col-md-4';
+				}
                 $image_id = get_post_thumbnail_id( $post->ID );
             	$img = virtue_get_image_array( $portraitwidth, $portraitheight, true, 'iconhover', null, $image_id, true );
               	?>
-                <div class="col-md-5 post-image-container">
+                <div class="<?php echo esc_attr( $featsize ); ?> post-image-container">
                     <div class="imghoverclass img-margin-center" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                         <a href="<?php the_permalink()  ?>" title="<?php the_title_attribute(); ?>">
                             <img src="<?php echo esc_url( $img[ 'src' ] ); ?>" alt="<?php the_title_attribute(); ?>" width="<?php echo esc_attr( $img[ 'width' ] );?>" height="<?php echo esc_attr( $img[ 'height' ] );?>" itemprop="contentUrl"   class="<?php echo esc_attr( $img[ 'class' ] );?>" <?php echo wp_kses_post(  $img[ 'srcset' ] ); ?>>
@@ -85,9 +95,15 @@
                     </div> <!--Flex Slides-->
                 </div>
             <?php 
-            } elseif($postsummery == 'slider_portrait') { ?>
-                <?php $textsize = 'col-md-7'; ?>
-                <div class="col-md-5 post-image-container">
+            } elseif($postsummery == 'slider_portrait') {
+            	if( $virtue_sidebar ) {
+                	$textsize = 'col-md-7';
+                	$featsize = 'col-md-5';
+                } else {
+                	$textsize = 'col-md-8';
+                	$featsize = 'col-md-4';
+                }?>
+                <div class="<?php echo esc_attr( $featsize ); ?> post-image-container">
                     <div class="flexslider kt-flexslider loading" data-flex-speed="7000" data-flex-anim-speed="400" data-flex-animation="fade" data-flex-auto="true">
                         <ul class="slides">
                             <?php 

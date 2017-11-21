@@ -90,11 +90,12 @@
 
 							case 'block_four':
 								if( is_home() ) {
+									global $virtue_sidebar;
 									if( kadence_display_sidebar() ) {
-										$display_sidebar = true; 
+										$virtue_sidebar = true;
 										$fullclass = '';
 									} else {
-										$display_sidebar = false;
+										$virtue_sidebar = false;
 										$fullclass = 'fullwidth';
 									} 
 									if( isset( $virtue['home_post_summery'] ) and ( $virtue['home_post_summery'] == 'full' ) ) {
@@ -107,17 +108,9 @@
 									<div class="homecontent <?php echo esc_attr( $fullclass ); ?>  <?php echo esc_attr( $postclass ); ?> clearfix home-margin"> 
 										<?php while ( have_posts() ) : the_post(); 
 									  			if( $summery == 'full' ) {
-													if( $display_sidebar ){
 														get_template_part( 'templates/content', 'fullpost' ); 
-													} else {
-														get_template_part( 'templates/content', 'fullpostfull' );
-													}
 												} else {
-													if( $display_sidebar ){
 														get_template_part( 'templates/content', get_post_format() ); 
-													} else {
-														get_template_part( 'templates/content', 'fullwidth' );
-													}
 												}
 											endwhile; 
 										

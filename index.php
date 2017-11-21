@@ -3,6 +3,8 @@
 	* @hooked virtue_page_title - 20
 	*/
 	do_action( 'virtue_page_title_container' );
+	global $virtue_sidebar;
+	$virtue_sidebar = true;
 	?>
 
 <div id="content" class="container">

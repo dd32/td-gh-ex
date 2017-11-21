@@ -1,5 +1,5 @@
 <?php
-global $virtue;
+global $virtue, $virtue_sidebar;
 if ( isset( $virtue[ 'blog_archive_full' ] ) && 'full' === $virtue[ 'blog_archive_full' ] ) {
 	$summery    = 'full';
 	$postclass  = 'single-article fullpost';
@@ -7,7 +7,7 @@ if ( isset( $virtue[ 'blog_archive_full' ] ) && 'full' === $virtue[ 'blog_archiv
 	$summery 	= 'normal';
 	$postclass 	= 'postlist';
 }
-
+	$virtue_sidebar = true;
 	/**
 	* @hooked virtue_page_title - 20
 	*/

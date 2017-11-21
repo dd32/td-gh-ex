@@ -1,5 +1,5 @@
 <?php
-global $post; 
+global $post, $virtue_sidebar; 
 $headcontent = get_post_meta( $post->ID, '_kad_blog_head', true );
 $height      = get_post_meta( $post->ID, '_kad_posthead_height', true ); 
 $swidth      = get_post_meta( $post->ID, '_kad_posthead_width', true );
@@ -11,7 +11,11 @@ if ( !empty($height ) ) {
 if ( !empty($swidth ) ) {
 	$slidewidth = $swidth; 
 } else {
-	$slidewidth = 848;
+	if ( $virtue_sidebar ) {
+		$slidewidth = 848;
+	} else {
+		$slidewidth =  140;
+	}
 } ?>
 <article <?php post_class(); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
 	<?php 

@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.1.0 | 21st November 2017 = 
+* Fix: Issue with blog full width output.
+
 = Version 3.0.9 | 31th October 2017 = 
 * Change version for wordpress.org upload issue.
 

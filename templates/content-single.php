@@ -1,4 +1,10 @@
 <?php 
+global $virtue_sidebar;
+if( kadence_display_sidebar() ) {
+	$virtue_sidebar = true;
+} else {
+	$virtue_sidebar = false;
+}
 do_action( 'virtue_single_post_begin' ); 
 ?>
 <div id="content" class="container">

@@ -85,6 +85,6 @@ do_action( 'virtue_page_title_container' );
 				/**
                 * @hooked virtue_page_comments - 20
                 */
-				do_action('virtue_page_footer');
+				do_action( 'virtue_page_footer' );
 				?>
 			</div><!-- /.main -->

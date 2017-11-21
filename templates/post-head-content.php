@@ -1,5 +1,5 @@
 <?php 
-global $post, $virtue; 
+global $post, $virtue, $virtue_sidebar; 
 $headcontent = get_post_meta( $post->ID, '_kad_blog_head', true );
 $height      = get_post_meta( $post->ID, '_kad_posthead_height', true ); 
 $swidth      = get_post_meta( $post->ID, '_kad_posthead_width', true );
@@ -10,7 +10,7 @@ if(empty($headcontent) || $headcontent == 'default') {
 		$headcontent = 'none';
 	}
 }
-if(kadence_display_sidebar()) {
+if($virtue_sidebar) {
 	$slide_sidebar = 848;
 } else {
 	$slide_sidebar = 1140;

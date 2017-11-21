@@ -3,7 +3,8 @@
 	* @hooked virtue_page_title - 20
 	*/
 	do_action( 'virtue_page_title_container' );
-	
+	global $virtue_sidebar;
+	$virtue_sidebar = true;
 	$homeid = get_option( 'page_for_posts' );
 		$fullclass     = '';
 	if( get_post_meta( $homeid, '_kad_blog_summery', true ) == 'full' ) {

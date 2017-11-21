@@ -58,7 +58,7 @@ if ( ! class_exists( 'Redux' ) ) {
         'disable_tracking'     => true,
         'customizer_only'      => true,
         'save_defaults'        => false,
-        'intro_text'           => 'Upgrade to <a href="https://www.kadencethemes.com/product/virtue-premium-theme/" target="_blank" >Virtue Premium</a> for more great features. Over 50 more theme options, premium sliders and carousels, breadcrumbs, custom post types and much much more!',           
+        'intro_text'           => 'Upgrade to <a href="https://www.kadencethemes.com/product/virtue-premium-theme/?utm_source=themeoptions&utm_medium=banner&utm_campaign=virtue_premium" target="_blank" >Virtue Premium</a> for more great features. Over 50 more theme options, premium sliders and carousels, breadcrumbs, custom post types and much much more!',           
         'footer_credit'        => __('Thank you for using the Virtue Theme by <a href="https://www.kadencethemes.com/" target="_blank">Kadence Themes</a>.', 'virtue'),
         'hints'                => array(
             'icon'          => 'icon-question',
