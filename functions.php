@@ -30,6 +30,7 @@ $azonbooster = (object) array(
 	'main'       => require 'inc/class-azonbooster.php',
 	'customizer' => require 'inc/customizer/class-azonbooster-customizer.php',
 );
+require 'inc/class-tgm-plugin-activation.php';
 
 require 'inc/azonbooster-functions.php';
 require 'inc/azonbooster-template-hooks.php';
