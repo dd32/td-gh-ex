@@ -6,7 +6,7 @@
  * @subpackage Better Health 
  */
 
-
+require get_template_directory() . '/inc/customizer/customizer-pro/class-customize.php';
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *

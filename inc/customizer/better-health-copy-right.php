@@ -92,6 +92,30 @@ $wp_customize->add_control(
 );
 
 
+     /**
+         * Section separator
+         *
+         * @since 1.0.0
+         */
+        $wp_customize->add_setting(
+            'better_health_feature_icon_sec_separator_0',
+                array(
+                    'default' => '<hr>',
+                    'sanitize_callback' => 'wp_kses',
+                )
+        );
+        $wp_customize->add_control(new Better_Health_Customize_Section_Separator(
+            $wp_customize, 
+                'better_health_feature_icon_sec_separator_0', 
+                array(
+                    'type'      => 'better_health_separator',
+                    'section'   => 'better_health_contact_link_info_section',
+                    'priority'  => 4,
+                )                   
+            )
+        );
+
+
 /**
          * Upload image control for section
          *
@@ -111,12 +135,71 @@ $wp_customize->add_control(
                 array(
                     'label'      => esc_html__( 'Contact Image', 'better-health' ),
                     'section'    => 'better_health_contact_link_info_section',
-                    'priority' => 8
+                    'priority' => 5
                 )
             )
         );
 
 
+// Top Footer Information Text
+
+$wp_customize->add_setting(
+    'better_health_contact_title_text',
+    array(
+        'default' => $default['better_health_contact_title_text'],
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+$wp_customize->add_control(
+    'better_health_contact_title_text',
+    array(
+        'type' => 'text',
+        'label' => esc_html__('Top Footer Title Text', 'better-health'),
+        'section' => 'better_health_contact_link_info_section',
+        'priority' => 5
+    )
+);
+
+$wp_customize->add_setting(
+    'better_health_contact_subtitle_text',
+    array(
+        'default' => $default['better_health_contact_subtitle_text'],
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+$wp_customize->add_control(
+    'better_health_contact_subtitle_text',
+    array(
+        'type' => 'text',
+        'label' => esc_html__('Top Footer Sub Title Text', 'better-health'),
+        'section' => 'better_health_contact_link_info_section',
+        'priority' => 5
+    )
+);
+
+
+/**
+         * Section separator
+         *
+         * @since 1.0.0
+         */
+        $wp_customize->add_setting(
+            'better_health_feature_icon_sec_separator_1',
+                array(
+                    'default' => '<hr>',
+                    'sanitize_callback' => 'wp_kses',
+                )
+        );
+        $wp_customize->add_control(new Better_Health_Customize_Section_Separator(
+            $wp_customize, 
+                'better_health_feature_icon_sec_separator_1', 
+                array(
+                    'type'      => 'better_health_separator',
+                    'section'   => 'better_health_contact_link_info_section',
+                    'priority'  => 5,
+                )                   
+            )
+        );
 
 
 $wp_customize->add_setting(
@@ -132,7 +215,7 @@ $wp_customize->add_control(
         'type' => 'text',
         'label' => esc_html__('Button Text', 'better-health'),
         'section' => 'better_health_contact_link_info_section',
-        'priority' => 8
+        'priority' => 6
     )
 );
 
@@ -149,9 +232,78 @@ $wp_customize->add_control(
         'type' => 'url',
         'label' => esc_html__('Button Link', 'better-health'),
         'section' => 'better_health_contact_link_info_section',
-        'priority' => 8
+        'priority' => 6
     )
 );
+
+
+
+ /**
+     * Section separator
+     *
+     * @since 1.0.0
+     */
+    $wp_customize->add_setting(
+        'better_health_feature_icon_sec_separator_2',
+            array(
+                'default' => '<hr>',
+                'sanitize_callback' => 'wp_kses',
+            )
+    );
+    $wp_customize->add_control(new Better_Health_Customize_Section_Separator(
+        $wp_customize, 
+            'better_health_feature_icon_sec_separator_2', 
+            array(
+                'type'      => 'better_health_separator',
+                'section'   => 'better_health_contact_link_info_section',
+                'priority'  => 6,
+            )                   
+        )
+    );
+
+
+/**
+ * Field for Fonsome Icon for Address
+ *
+ */
+$wp_customize->add_setting(
+    'better_health_contact_link_address_icon',
+    array(
+        'default' => $default['better_health_contact_link_address_icon'],
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+
+$wp_customize->add_control(
+    'better_health_contact_link_address_icon',
+    array(
+        'type' => 'text',
+        'description'   => sprintf( __( 'Font Awesome Icon Can Be Found Here: %1$sFont Awesome%2$s.', 'better-health' ), '<a href="http://fontawesome.io/cheatsheet/" target="_blank">','</a>' ),
+        'section' => 'better_health_contact_link_info_section',
+        'priority' => 7
+    )
+);
+
+
+// Address label
+
+$wp_customize->add_setting(
+    'better_health_contact_link_address_label',
+    array(
+        'default' => $default['better_health_contact_link_address_label'],
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+$wp_customize->add_control(
+    'better_health_contact_link_address_label',
+    array(
+        'type' => 'text',
+        'label' => esc_html__('Address Label', 'better-health'),
+        'section' => 'better_health_contact_link_info_section',
+        'priority' => 7
+    )
+);
+
 
 
 $wp_customize->add_setting(
@@ -167,9 +319,79 @@ $wp_customize->add_control(
         'type' => 'text',
         'label' => esc_html__('Address', 'better-health'),
         'section' => 'better_health_contact_link_info_section',
+        'priority' => 7
+    )
+);
+
+
+/**
+     * Section separator
+     *
+     * @since 1.0.0
+     */
+    $wp_customize->add_setting(
+        'better_health_feature_icon_sec_separator_3',
+            array(
+                'default' => '<hr>',
+                'sanitize_callback' => 'wp_kses',
+            )
+    );
+    $wp_customize->add_control(new Better_Health_Customize_Section_Separator(
+        $wp_customize, 
+            'better_health_feature_icon_sec_separator_3', 
+            array(
+                'type'      => 'better_health_separator',
+                'section'   => 'better_health_contact_link_info_section',
+                'priority'  => 7,
+            )                   
+        )
+    );
+
+
+
+/**
+ * Field for Fonsome Icon for Email
+ *
+ */
+$wp_customize->add_setting(
+    'better_health_contact_link_email_icon',
+    array(
+        'default' => $default['better_health_contact_link_email_icon'],
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+
+$wp_customize->add_control(
+    'better_health_contact_link_email_icon',
+    array(
+        'type' => 'text',
+        'description'   => sprintf( __( 'Font Awesome Icon Can Be Found Here: %1$sFont Awesome%2$s.', 'better-health' ), '<a href="http://fontawesome.io/cheatsheet/" target="_blank">','</a>' ),
+        'section' => 'better_health_contact_link_info_section',
         'priority' => 8
     )
 );
+
+
+// Email label
+
+$wp_customize->add_setting(
+    'better_health_contact_link_email_label',
+    array(
+        'default' => $default['better_health_contact_link_email_label'],
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+$wp_customize->add_control(
+    'better_health_contact_link_email_label',
+    array(
+        'type' => 'text',
+        'label' => esc_html__('Email Label', 'better-health'),
+        'section' => 'better_health_contact_link_info_section',
+        'priority' => 8
+    )
+);
+
+
 
 $wp_customize->add_setting(
     'better_health_contact_link_email',
@@ -190,6 +412,73 @@ $wp_customize->add_control(
 );
 
 
+
+/**
+     * Section separator
+     *
+     * @since 1.0.0
+     */
+    $wp_customize->add_setting(
+        'better_health_feature_icon_sec_separator_4',
+            array(
+                'default' => '<hr>',
+                'sanitize_callback' => 'wp_kses',
+            )
+    );
+    $wp_customize->add_control(new Better_Health_Customize_Section_Separator(
+        $wp_customize, 
+            'better_health_feature_icon_sec_separator_4', 
+            array(
+                'type'      => 'better_health_separator',
+                'section'   => 'better_health_contact_link_info_section',
+                'priority'  => 8,
+            )                   
+        )
+    );
+
+/**
+ * Field for Fonsome Icon for Phone Number
+ *
+ */
+$wp_customize->add_setting(
+    'better_health_contact_link_phone_icon',
+    array(
+        'default' => $default['better_health_contact_link_phone_icon'],
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+
+$wp_customize->add_control(
+    'better_health_contact_link_phone_icon',
+    array(
+        'type' => 'text',
+        'description'   => sprintf( __( 'Font Awesome Icon Can Be Found Here: %1$sFont Awesome%2$s.', 'better-health' ), '<a href="http://fontawesome.io/cheatsheet/" target="_blank">','</a>' ),
+        'section' => 'better_health_contact_link_info_section',
+        'priority' => 8
+    )
+);
+
+// Phone Number label
+
+$wp_customize->add_setting(
+    'better_health_contact_link_phone_label',
+    array(
+        'default' => $default['better_health_contact_link_phone_label'],
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+$wp_customize->add_control(
+    'better_health_contact_link_phone_label',
+    array(
+        'type' => 'text',
+        'label' => esc_html__('Phone Number Label', 'better-health'),
+        'section' => 'better_health_contact_link_info_section',
+        'priority' => 8
+    )
+);
+
+
+
 $wp_customize->add_setting(
     'better_health_contact_link_phone_number',
     array(
@@ -208,6 +497,28 @@ $wp_customize->add_control(
     )
 );
 
+/**
+     * Section separator
+     *
+     * @since 1.0.0
+     */
+    $wp_customize->add_setting(
+        'better_health_service_icon_sec_separator_5',
+            array(
+                'default' => '',
+                'sanitize_callback' => 'esc_html',
+            )
+    );
+    $wp_customize->add_control(new Better_Health_Customize_Section_Separator(
+        $wp_customize, 
+            'better_health_service_icon_sec_separator_5', 
+            array(
+                'type'      => 'better_health_separator',
+                'section'   => 'better_health_contact_link_info_section',
+                'priority'  => 9,
+            )                   
+        )
+    );
 
 
 

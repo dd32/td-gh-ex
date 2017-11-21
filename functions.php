@@ -184,6 +184,8 @@ function better_health_scripts()
 
     wp_enqueue_style('animate', get_template_directory_uri() . '/assets/css/animate.css', array(), '4.5.0');
 
+    wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.css', array(), '4.5.0');
+
     wp_enqueue_style('magnific-popup', get_template_directory_uri() . '/assets/css/magnific-popup.css', array(), '4.5.0');
 
     wp_enqueue_style('better-health-style', get_stylesheet_uri());
@@ -199,6 +201,8 @@ function better_health_scripts()
     wp_enqueue_script('jquery-magnific-popup', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.js', array('jquery'), '20151215', true);
 
     wp_enqueue_script('wow', get_template_directory_uri() . '/assets/js/wow.min.js', array('jquery'), '20151215', true);
+
+    wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.js', array('jquery'), '20151215', true);
 
     wp_enqueue_script('waypoints', get_template_directory_uri() . '/assets/js/waypoints.min.js', array('jquery'), '20151215', true);
        
@@ -324,7 +328,7 @@ if (!function_exists('better_health_exclude_category_in_blog_page')) :
         return $query;
     }
 endif;
-add_filter('pre_get_posts', 'better_health_exclude_category_in_blog_page');
+add_filter('pre_get_posts', 'better_health_exclude_category_in_blog_page');    
 
 
 /**

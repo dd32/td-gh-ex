@@ -35,15 +35,17 @@ if (!class_exists('Better_Health_Testimonial_Widget')) {
 
                 if ($count > 0) {
                     ?>
-                    <section id="section8" class="mytestimonial" style=" <?php if(!empty($bgimage)) { ?>background: url(<?php echo($bgimage); ?>) no-repeat center;<?php } else { ?> background: rgba(0, 65, 65, 1);   <?php } ?>">
+                  
+
+                    <!-- NEW -->
+                    <!--start testimonial Section-->
+                    <section class="section-margine" style=" <?php if(!empty($bgimage)) { ?>background: url(<?php echo($bgimage); ?>) no-repeat center;<?php } else { ?> background: rgba(0, 65, 65, 1);   <?php } ?>">
                         <div class="container">
-                            <div class="row"> 
-                                    <div data-ride="carousel" class="carousel slide" id="testimonial">
-                                        
-                                        <!-- Carousel Slides / Quotes -->
-                                        <div class="carousel-inner">
-                                            <!-- Quote 1 -->
-                                            <?php if (!empty($catid)) {
+                            <div class="row">
+                                <div class="col-md-12">
+                                  <div class="bh-testimonial owl-carousel">
+                                   
+                                        <?php if (!empty($catid)) {
                                                 $i = 0;
                                                 $sticky = get_option('sticky_posts');
                                                 $home_testimonial_section = array(
@@ -58,51 +60,39 @@ if (!class_exists('Better_Health_Testimonial_Widget')) {
                                                     while ($home_testimonial_section_query->have_posts()) {
                                                         $home_testimonial_section_query->the_post();
                                                         ?>
-                                                        <div class="item text-center quotes-detail <?php if ($i == 0) {
-                                                            echo 'active';
-                                                        } else {
-                                                        } ?>">
-                                                            <div class="single-testimonial">
-                                                            <p class="client-quote">
-                                                                <i class="fa fa-quote-left"></i>
-                                                                <?php echo get_the_content() ?>
-                                                                 <i class="fa fa-quote-right "></i>
-                                                            </p>
-                                                            
-                                                            <?php if (has_post_thumbnail()) {
+                                   
+                                                <div class="item">
+                                                  <div class="testimonial-wrapper text-center">
+                                             <?php 
+                                                if (has_post_thumbnail()) {
                                                             $image_id = get_post_thumbnail_id();
                                                             $image_url = wp_get_attachment_image_src($image_id, 'thumbnail', true);
-                                                            ?>
-                                                            <img class="img-circle " src="<?php echo esc_url($image_url[0]); ?>" height="80" width="80" />
-                                                            <h4 class="client-name">
-                                                                <?php the_title(); ?>
-                                                            </h4>
-                                                            </div>
-                                                            <?php } ?>
-                                                        </div>
-                                                        <?php
-                                                        $i++;
-                                                    }
-                                                }
-                                                wp_reset_postdata();
+                                                 ?>       
+                                                  
+                                                    <div class="thumb"><img class="img-circle img-thumbnail" alt="" src="<?php echo esc_url($image_url[0]); ?>"></div>
+                                        <?php } ?>            
+                                                    <div class="test-content">
+                                                      <p class="text-white"><?php echo get_the_content() ?></p>
+                                                      <h4 class="author text-white"><?php the_title(); ?></h4>
+                                                     
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                    
+                                    <?php
+                                                $i++;
                                             }
-                                            ?>
-                                        </div>
-                                        <?php
-                                        if ($count > 1) {
-                                            ?>
-                                            <!-- Carousel Buttons Next/Prev -->
-                                            <a data-slide="prev" href="#testimonial" class="left carousel-control">
-                                                <i class="fa fa-angle-left"></i></a>
-                                            <a data-slide="next" href="#testimonial" class="right carousel-control">
-                                                <i class="fa fa-angle-right"></i>
-                                            </a>
-                                        <?php } ?>
-
-                                    </div>
+                                        }
+                                        wp_reset_postdata();
+                                    }
+                                    ?>
+                                   
+                                  </div>
+                                </div>
                             </div>
                         </div>
                     </section>
+
                     <?php
                 }
                 echo $args['after_widget'];

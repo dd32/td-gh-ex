@@ -37,6 +37,30 @@
 
 		});
 
+		//Testimonial carousel
+        $('.bh-testimonial').owlCarousel({
+            loop:true,
+            items: 3,
+            margin:20,
+            autoplay:true,
+            nav: false,
+            dots:true,
+            responsive: {
+                320: {
+                    items: 1
+                }
+                , 480: {
+                    items: 1
+                }
+                , 768: {
+                    items: 2
+                }
+                , 992: {
+                    items: 3
+                }
+            }
+        });
+
 		//Go To Top
 	        $(window).scroll(function () {
 	            if ($(this).scrollTop() > 100) {

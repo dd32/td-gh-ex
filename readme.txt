@@ -4,7 +4,7 @@ Contributors: canyonthemes
 Tags: custom-logo, one-column, two-columns, right-sidebar, left-sidebar, full-width-template, custom-background, custom-colors, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, blog, portfolio, e-commerce, footer-widgets
 Requires at least: 4.4
 Tested up to: 4.8.3
-Stable tag: 0.0.3
+Stable tag: 0.0.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -23,6 +23,14 @@ Demo: http://demo.canyonthemes.com/better-health
 3. Click Activate to use your new theme right away.
 
 #### Changelog ####
+
+## 0.0.5 - November 22 2017 ##
+
+* Fixed feature section and footer section Column issue.
+* Add dynamic icon and label field on top footer.
+* Add color option for Feature odd and even section part.
+* Minor Style changed
+
 ## 0.0.4 - November 10 2017 ##
 * Fixed some code issues
 * Minor Style changed

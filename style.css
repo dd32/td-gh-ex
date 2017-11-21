@@ -5,11 +5,12 @@ Author: canyonthemes
 Author URI: https://www.canyonthemes.com
 Description: Better Health  is a capable and competent, professional and robust, serious and reliable responsive WordPress multipurpose website theme. Better Health has been developed as a powerful platform for the effortless crafting of feature-rich medical industry websites.
 The advanced theme options and available various widgets with drag and drop features will help to customize your site as your need.  Some of the available options are awesome slider section, header options, footer options, layout design options,Color options, widget options, custom copyright options integrated social icons using menu, reset color option and lots of other available options will allow you to create unique website as you want. Medical practices, medical organizations and related businesses find in Better Health a staunch ally in bringing the benefits of their practice to a worldwide audience. Try Better Health today!
-Version: 0.0.4
+Version: 0.0.5
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: better-health
 Tags:  custom-logo, one-column, two-columns, right-sidebar, left-sidebar, full-width-template, custom-background, custom-colors, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, blog, portfolio, e-commerce, footer-widgets
+
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 Better Health is based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
@@ -994,26 +995,10 @@ li.current-menu-item a {color:#00AEF0;}
     line-height: 20px;
 }
 
-.logo-text {
-    text-transform: none;
-    font-size: 25px;
-    vertical-align: bottom;
-    line-height: 38px;
-    letter-spacing: 1px;
-    color: #777;
-}
-.logo-text samp {
-    background: #00AEF0;
+.custom-logo-link {
+    width: 250px;
     float: left;
-    margin-right: 5px;
-    width: 40px;
-    height: 40px;
-    border-radius: 3px;
-    text-align: center;
-    line-height: 40px;
-    color: #fff;
-    font-weight: normal;
-    font-size: 30px;
+    padding: 15px 0;
 }
 .site-description {
     margin-bottom: 0;
@@ -1072,11 +1057,9 @@ li.current-menu-item a {color:#00AEF0;}
     position: fixed;
 }
 .navbar-nav > li > a {
-    font-size: 14px;
-    font-weight: 400;
-    color: #545454;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-family: 'Poppins', Roboto;
+    color: #222222;
+    font-size: 16px;
 }
 
 .navbar-fixed-top .navbar-nav>li>a {
@@ -1239,13 +1222,13 @@ p.search-btn {
     width: 100%;
 }
 .slider-content p{
-    color: #212121;
+    color: #212121; 
 }
 .slide-title {
     font-size: 28px;
     line-height: 36px;
     color: #fff;
-    margin: 15px 0;
+    margin: 15px 0; 
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1255,7 +1238,7 @@ p.search-btn {
     font-size: 52px;
     line-height: 58px;
     margin: 15px 0;
-    color: #00AEF0;
+    color: #222222;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -1471,10 +1454,17 @@ section#section1 .section-1-box {
     color: #fff;
     font-size: 14px;
 }
-#section1 .col-md-3.col-sm-6:nth-child(odd) {
+#section1 .col-md-3.col-sm-6:nth-child(odd),#section1 .col-md-4.col-sm-6:nth-child(odd),#section1 .col-md-6.col-sm-6:nth-child(odd),
+
+#section1 .col-md-12.col-sm-6:nth-child(odd)
+
+{
     background: #00aef0;
 }
-#section1 .col-md-3.col-sm-6:nth-child(even) {
+#section1 .col-md-3.col-sm-6:nth-child(even),#section1 .col-md-4.col-sm-6:nth-child(even),
+
+#section1 .col-md-6.col-sm-6:nth-child(even),#section1 .col-md-12.col-sm-6:nth-child(even)
+{
     background: #05a1dc;
 }
 #section1 .col-md-3.col-sm-6:nth-child(odd):hover {
@@ -1513,25 +1503,26 @@ section#section1 .section-1-box {
 }
 
 /************************************
+
 07)Section 2
+
 *************************************/
+
 #section2 {
     position: relative;
     margin: 0;
+    padding: 0;
 }
+
 .section-2-box-left figure {
     margin-bottom: 15px;
 }
+.wel-img{
+    position:relative;
+}
 .half-bg-right {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 45%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-color: #091b6b;
+    width: 75%;
+    margin: 0 auto;
 }
 
 .section-2-box-left h4 {
@@ -1539,62 +1530,74 @@ section#section1 .section-1-box {
     color: #555555;
     margin: 15px 0;
 }
+
 .section-2-box-left a{
     margin: 15px 0;
 }
+
 .section-2-box-right{
-    padding: 0;
+    padding: 100px 0 100px 0;
 }
 .section-2-box-right h2{
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 .section-2-box-right h3{
     color: #ffffff;
 }
+
 .section-2-box-right p {
-    color: #909090;
+    color: #696868;
+}
+.section-2-box-right a.readmore {
+    float: none;
+    padding: 10px 25px;
+    display: inline-block;
+    margin-top: 15px;
+    color: #fff;
+}
+.section-2-box-right a.readmore:hover{
+    color: #000;
 }
 .section-2-box-right ul{
     padding: 0;
     margin: 15px 0;
 }
+
 .section-2-box-right ul li{
     list-style: none;
     color: #fff;
     font-weight: 300;
     padding: 5px 0;
 }
+
 .section-2-box-right .btn{
+    width: 100%;
     border: 0;
     margin-bottom: 15px;
     font-weight: 300;
-    margin-top: 15px;
 }
+
 @media (max-width: 768px) {
     .half-bg-right {
         display: none;
     }
+    #section2 {
+        margin: 70px 0 0;
+    }
     .section-2-box-right {
         padding: 0 30px;
     }
+
     .better-health-info {
         display: none;
     }
     .main-menu .navbar-collapse {
         padding: 0 15px !important;
     }
+
     .search {
         display: none;
     }   
-    
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-    section#section1 .section-1-box {
-        min-height: 272px;
-    }
-    .section-5-box-text-cont {
-        padding: 70px 35px;
-    }
 }
 
 /************************************
@@ -1869,61 +1872,167 @@ section#section1 .section-1-box {
     margin: 0 0 40px 0;
 }
 
-
 /************************************
+
 13)Section 8
+
 *************************************/
 
+
+
 .mytestimonial{
-    padding-bottom: 150px;
+
     background: url(../images/m4.jpg) no-repeat center;
+
     background-size: cover;
-    padding-top: 100px;
+
+    padding: 100px 0;
+
 }
+
 .client-quote {
+
     color: #fff;
+
     max-width:700px;
+
     display: inline-block;
+
 }
+
 .client-name {
+
     color: #fff;
+
 }
+
 .client-quote i {
+
     color: #fff;
+
     font-size: 20px;
+
     padding: 0 12px;
+
 }
+
 #testimonial .carousel-indicators {
+
     bottom: -60px;
+
 }
+
 #testimonial .carousel-indicators li,
+
 #testimonial .carousel-indicators .active {
+
     width: 60px;
+
     border: none;
+
     background-color: transparent;
+
 }
+
 #testimonial .carousel-indicators li img {
+
     width: 60px;
+
     height: 60px;
+
     border: 2px solid #FFF;
+
     border-radius: 50%; 
+
     opacity: 0.3;  
+
     -webkit-transition: 0.3s ease-in-out;
+
     transition: 0.3s ease-in-out;
+
     -moz-transition: 0.3s ease-in-out;
+
     -ms-transition: 0.3s ease-in-out;
+
     -o-transition: 0.3s ease-in-out;
+
 }
+
 #testimonial .carousel-indicators li.active img {
+
     opacity: 1;  
+
     border: 2px solid #3399CC;
+
 }
+
 .single-testimonial {
+
     display: inline-block;
+
     background: rgba(0, 0, 0, 0.48);
+
     padding: 40px;
+
     border-bottom: 3px solid #00aef0;
+
 }
+
+.testimonial-wrapper{
+background-color: rgba(17, 150, 204, 0.5) !important;
+padding: 30px;
+}
+.testimonial-wrapper .text-white{
+    color: #fff;
+}
+.thumb{
+    margin-bottom: 30px;
+}
+.test-content p{
+    margin-bottom: 25px;
+}
+
+.test-content .author{
+    font-size: 18px;
+    margin: 10px;
+}
+.test-content .title{
+    font-size: 15px;
+}
+.bh-testimonial.owl-carousel .owl-item img {
+    display: inline-block;
+    width: 100px;
+}
+.bh-testimonial.owl-theme .owl-dots .owl-dot span {
+    border-color: #1196CC;
+}
+
+.bh-testimonial.owl-carousel .owl-dots .owl-dot span {
+    background: #D6D6D6;
+    border-radius: 50%;
+    display: block;
+    height: 12px;
+    margin: 5px 3px;
+    opacity: 0.8;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+    width: 12px;
+}
+.bh-testimonial.owl-carousel .owl-dots {
+    text-align: center;
+    margin-top: 10px;
+}
+.bh-testimonial.owl-carousel .owl-dots .owl-dot {
+    display: inline-block;
+    zoom: 1;
+}
+.bh-testimonial.owl-carousel .owl-dots .owl-dot.active span{
+    background: #1196CC;
+}
+
+
+
 /************************************
 14)Section 9
 *************************************/
@@ -2504,7 +2613,10 @@ a.btn.btn-primary.btn-sm .fa {
     margin-right: 5px;
 }
 a.readmore {
-    color: #676666;
+    float: left;
+    padding: 6px 15px;
+    margin-top: 5px;
+    color: #fff;
 }
 a.readmore:hover {
     transition: 0.5s;

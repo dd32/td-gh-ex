@@ -13,7 +13,11 @@ if ( ! function_exists( 'better_health_reset_colors' ) ) :
 
          set_theme_mod('better_health_bottom_footer_background_color','#111315');
 
-         set_theme_mod('better_health_primary_color','#EEB500');
+         set_theme_mod('better_health_primary_color','#00aef0');
+
+         set_theme_mod('better_health_feature_odd_part_color_option','#00aef0');
+
+         set_theme_mod('better_health_feature_even_part_color_option','#05a1dc');
 
          set_theme_mod('better_health_color_reset_option','do-not-reset');
          

@@ -119,6 +119,56 @@ $wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'bette
 )));
 
 
+/*-----------------------------------------------------------------------------*/
+/**
+ * Odd Feature Section Color Options
+ *
+ * @since 1.0.0
+ */
+
+$wp_customize->add_setting(
+    'better_health_feature_odd_part_color_option',
+    array(
+        'default' => $default['better_health_feature_odd_part_color_option'],
+        'sanitize_callback' => 'sanitize_hex_color',
+
+    )
+);
+
+$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'better_health_feature_odd_part_color_option', array(
+    'label' => esc_html__('Feature Odd Section Color Option', 'better-health'),
+    'description' => esc_html__('We recommend choose Color for odd section part', 'better-health'),
+    'section' => 'better_health_primary_color_option',
+    'priority' => 14,
+
+)));
+
+
+/*-----------------------------------------------------------------------------*/
+/**
+ * Even Feature Section Color Options
+ *
+ * @since 1.0.0
+ */
+
+$wp_customize->add_setting(
+    'better_health_feature_even_part_color_option',
+    array(
+        'default' => $default['better_health_feature_even_part_color_option'],
+        'sanitize_callback' => 'sanitize_hex_color',
+
+    )
+);
+
+$wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'better_health_feature_even_part_color_option', array(
+    'label' => esc_html__('Feature Even Section Color Option', 'better-health'),
+    'description' => esc_html__('We recommend choose Color for even section part', 'better-health'),
+    'section' => 'better_health_primary_color_option',
+    'priority' => 14,
+
+)));
+
+
 /*-------------------------------------------------------------------------------------------*/
 /**
  * Hide Static page in Home page

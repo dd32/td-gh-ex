@@ -9,6 +9,7 @@ if (!class_exists('Better_Health_Our_mission_Widget')) {
                 'button-text' => esc_html__('Learn More','better-health'),
                 'button-text-link' => '#',
                 'background-image' => '',
+                'character_limit' => 100,
             );
             return $defaults;
         }
@@ -31,6 +32,8 @@ if (!class_exists('Better_Health_Our_mission_Widget')) {
                 $button_text = esc_html($instance['button-text']);
                 $button_url = esc_url($instance['button-text-link']);
                 $bgimage = esc_url($instance['background-image']);
+                $limit_character = absint( $instance['character_limit'] );
+
                 echo $args['before_widget'];
                 $better_health_page_args = array(
                     'page_id' => $page_id,
@@ -58,7 +61,7 @@ if (!class_exists('Better_Health_Our_mission_Widget')) {
                                     } ?>">
                                         <div class="section-5-box-text-cont wow fadeInRight">
                                             <h2><?php the_title(); ?></h2>
-                                            <p><?php echo esc_html( wp_trim_words(get_the_content(), 60) ); ?></p>
+                                            <p><?php echo esc_html( wp_trim_words(get_the_content(), $limit_character) ); ?></p>
                                             <?php
                                             if (!empty( $button_text ) && !empty($button_url) ) {
                                                 ?>
@@ -92,6 +95,7 @@ if (!class_exists('Better_Health_Our_mission_Widget')) {
             $instance['button-text'] = sanitize_text_field($new_instance['button-text']);
             $instance['button-text-link'] = esc_url_raw($new_instance['button-text-link']);
             $instance['background-image'] = esc_url_raw($new_instance['background-image']);
+            $instance['character_limit'] = absint( $new_instance['character_limit'] );
             return $instance;
         }
 
@@ -102,6 +106,8 @@ if (!class_exists('Better_Health_Our_mission_Widget')) {
             $button_text = esc_html($instance['button-text']);
             $button_url = esc_url($instance['button-text-link']);
             $bgimage = esc_url($instance['background-image']);
+            $limit_character = absint( $instance['character_limit'] );
+            
             ?>
 
             <p>
@@ -119,6 +125,13 @@ if (!class_exists('Better_Health_Our_mission_Widget')) {
                 );
                 wp_dropdown_pages($args);
                 ?>
+            </p>
+            
+            <hr>
+            
+             <p>
+                <label for="<?php echo esc_attr( $this->get_field_id('character_limit')); ?>"><?php esc_html_e('Character Limit', 'better-health'); ?></label><br/>
+                <input type="number" name="<?php echo esc_attr( $this->get_field_name('character_limit')); ?>" class="quality-cons" id="<?php echo esc_attr($this->get_field_id('character_limit')); ?>" value="<?php echo $limit_character ?>">
             </p>
             <hr>
             <p>

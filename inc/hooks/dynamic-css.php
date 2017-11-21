@@ -22,10 +22,29 @@ if ( !function_exists('better_health_dynamic_css') ):
     $better_health_primary_color = esc_attr( better_health_get_option('better_health_primary_color') );
 
 
+    $bh_feature_odd_section_part_color = esc_attr( better_health_get_option('better_health_feature_odd_part_color_option') );
+
+    $bh_feature_even_section_part = esc_attr( better_health_get_option('better_health_feature_even_part_color_option') );
+
+
     $custom_css = '';
 
 
     /*====================Dynamic Css =====================*/
+
+
+   $custom_css .= "#section1 .col-md-3.col-sm-6:nth-child(odd),#section1 .col-md-4.col-sm-6:nth-child(odd),#section1 .col-md-6.col-sm-6:nth-child(odd),#section1 .col-md-12.col-sm-6:nth-child(odd)
+    {
+         background-color: " . $bh_feature_odd_section_part_color . ";
+    }
+    ";
+
+    $custom_css .= "#section1 .col-md-3.col-sm-6:nth-child(even),#section1  col-md-4.col-sm-6:nth-child(even),#section1 .col-md-6.col-sm-6:nth-child(even),#section1 .col-md-12.col-sm-6:nth-child(even)
+      {
+         background-color: " . $bh_feature_even_section_part . ";
+      }
+    ";
+
     $custom_css .= ".top-header{
          background-color: " . $better_health_top_header_color . ";}
     ";
@@ -66,8 +85,10 @@ if ( !function_exists('better_health_dynamic_css') ):
       .woocommerce nav.woocommerce-pagination ul li span.current,
       header .navbar-toggle,
       .front-blog-date .publish-month,
-      .section-contact-full,
-      .scrollup
+      .section-contact-full, 
+      .scrollup,
+      .section-2-box-right .readmore, 
+      a.readmore
      {
          background-color: " . $better_health_primary_color . ";
      }
@@ -86,7 +107,6 @@ if ( !function_exists('better_health_dynamic_css') ):
                   header .navbar-menu .navbar-nav > .open > a:focus, 
                   header .navbar-menu .navbar-nav > .open > a:hover,
                   .icon-box--description .fa,
-                  a.readmore:hover,
                   .front-blog-date .publish-date,
                   a.contact-us:hover,
                   .better-health-info .contact-detail2 li a:hover
