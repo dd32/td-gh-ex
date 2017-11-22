@@ -4,11 +4,11 @@
       <div class="row">
       <?php 
 	  $blog_sidebar=get_theme_mod('blog_sidebar');
-	  if(isset($blog_sidebar)&&$blog_sidebar=='left' || $blog_sidebar=='gridleft')
+	  if(isset($blog_sidebar)&&$blog_sidebar=='left' || $blog_sidebar=='gridleft' || $blog_sidebar=='listleft')
 {
 	get_sidebar();
 }
-if(isset($blog_sidebar)&&$blog_sidebar=='full' || $blog_sidebar=='gridfull')
+if(isset($blog_sidebar)&&$blog_sidebar=='full' || $blog_sidebar=='gridfull' || $blog_sidebar=='listfull')
 {
 	$fullclass='col-lg-12 col-md-12';
 }
@@ -30,6 +30,14 @@ else
 			echo'<div class="clearfix"></div>';
 		}
 	}
+	elseif(isset($blog_sidebar)&&$blog_sidebar=='listleft' || $blog_sidebar=='listright' || $blog_sidebar=='listfull')
+	{
+		get_template_part('template-parts/gridstyle/list');
+		if($grid++%2==0)
+		{
+			echo'<div class="clearfix"></div>';
+		}
+	}
 	else
 	{
            get_template_part('template-parts/content');    
@@ -45,7 +53,7 @@ else
           </main>
         </div>
         <?php 
-	  if(isset($blog_sidebar)&&$blog_sidebar=='right' || $blog_sidebar=='gridright')
+	  if(isset($blog_sidebar)&&$blog_sidebar=='right' || $blog_sidebar=='gridright' || $blog_sidebar=='listright')
 {
 	get_sidebar();
 }

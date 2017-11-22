@@ -61,3 +61,5 @@ Changelog
 2.6 - Added template home list blog sidebar options in Customizer.
 
 2.7 - Added grid blog sidebar options in Customizer.
+
+2.8 - Added list blog sidebar options in Customizer.
