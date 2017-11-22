@@ -56,6 +56,10 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.6.8
+1. Added About theme section.
+@version 1.6.7
+1. Update screen reader css.
 @version 1.6.6
 1. Fixed string issue.
 @version 1.6.5

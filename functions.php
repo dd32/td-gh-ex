@@ -31,6 +31,9 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_header.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer.php' );
 	
+	// Elitepress Info Page
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/elitepress-info/welcome-screen.php');
+	
 	
 	
 	

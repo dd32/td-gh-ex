@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: ElitePress\n"
-"POT-Creation-Date: 2017-11-08 17:32+0530\n"
-"PO-Revision-Date: 2017-11-08 17:31+0530\n"
+"POT-Creation-Date: 2017-11-22 18:36+0530\n"
+"PO-Revision-Date: 2017-11-22 18:36+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -171,7 +171,7 @@ msgstr ""
 msgid "Leave a Reply"
 msgstr ""
 
-#: content.php:20 fullwidth.php:13 functions.php:122 functions.php:139
+#: content.php:20 fullwidth.php:13 functions.php:125 functions.php:142
 #: functions/customizer/customizer-homecallout.php:50 index-slider.php:100
 #: page.php:13 theme_setup_data.php:75
 msgid "Read More"
@@ -181,16 +181,16 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: functions.php:56
+#: functions.php:59
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:72
+#: functions.php:75
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:73
+#: functions.php:76
 msgid "Footer Menu"
 msgstr ""
 
@@ -669,6 +669,411 @@ msgstr ""
 
 #: functions/customizer/customizer_theme_style.php:54
 msgid "Theme Layout"
+msgstr ""
+
+#: functions/elitepress-info/sections/actions-required.php:13
+msgid "1. Creating Homepage using Home Page Template."
+msgstr ""
+
+#: functions/elitepress-info/sections/actions-required.php:14
+msgid ""
+"To set up an exact replica of the Homepage as shown in our demo, you have to "
+"create a WordPress page using the Home Page Template. The Business Template "
+"has all the sections like banners, services, portfolio, etc., which are "
+"ideal for any business site. Kindly refer to the snapshot."
+msgstr ""
+
+#: functions/elitepress-info/sections/actions-required.php:21
+msgid "2. Assign Homepage as Front Page Display"
+msgstr ""
+
+#: functions/elitepress-info/sections/actions-required.php:22
+msgid ""
+"Do you want to show the Homepage as a Front Page? You need to set the "
+"Homepage as a static page, as shown in the snapshot below. Now go to the "
+"Customizer and start configuring the sections in the Business Template. We "
+"hope you will find this theme useful."
+msgstr ""
+
+#: functions/elitepress-info/sections/actions-required.php:30
+#: functions/elitepress-info/sections/actions-required.php:37
+msgid "elitepress Blue Child Theme"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:13
+msgid "Features"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:18
+msgid "Frontpage Sections"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:19
+msgid "You will find a number of sections on the front page."
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:23
+msgid "Page Templates Support"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:24
+msgid "Various Page Templates included in the Elitepress Premium Theme"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:28
+msgid "Mobile Friendly"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:29
+msgid "Responsive layout in all devices"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:33
+msgid "Contact Form Support"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:37
+#: functions/elitepress-info/sections/github.php:16
+msgid "SEO Friendly URL"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:38
+msgid ""
+"This feature allows you to rename the custom post type slug names in the URL."
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:42
+#: functions/elitepress-info/sections/github.php:88
+msgid "Multiple Color Schemes"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:43
+msgid ""
+"Enjoy using the 13 preset color schemes. You can also create custom skins "
+"without adding any code."
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:47
+msgid "Google Map"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:48
+msgid ""
+"Display your Shop and Business location on your website using Google Maps."
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:53
+msgid "Portfolio"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:54
+msgid ""
+"Present your project/portfolio collection with 2 column, 3 column and 4 "
+"column layouts. You can also display your  project / portfolio by category."
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:58
+msgid "About Us Page"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:59
+msgid "Show team members, your clients and custom content."
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:63
+msgid "Services Page"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:64
+msgid "Show all your services in a single place."
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:68
+msgid "Testimonial / Review Section"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:69
+msgid "Show user feedback on the Homepage and Services page."
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:74
+msgid "WPML / Polylang Support"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:75
+msgid "With the help of WPML, you can make a Multilingual Website."
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:79
+msgid "Support Forum"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:80
+msgid "Get instant 24/7 support on our Support Forum."
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:91
+msgid "Elitepress Lite"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:95
+msgid ""
+"Header Widget, Slider [Unlimited Slider] With Repetator Control, Service "
+"[Unlimited Service] with Repetator Control, Callout Section, Product "
+"section, Latest News"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:96
+msgid "Homepage Template and Full-Width Page Template"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:107
+msgid "WordPress Support Forum"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:119
+msgid "Elitepress Pro"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:123
+msgid ""
+"Top header Widget, Header Widget, Slider [Unlimited Slides] With Repetator "
+"Control, Service [Unlimited Services] with Repetator Control, Callout "
+"Section, Portfolio [Unlimited Portfolio], Latest News, Clients, Testimonials,"
+"Contact with map"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:125
+msgid ""
+"About Us, Services, Portfolio, Blog Left & Right Sidebars, Blog Full Width, "
+"Page Full Width, Contact Page and much more."
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:136
+msgid "Webriti Support Forum"
+msgstr ""
+
+#: functions/elitepress-info/sections/free_pro.php:147
+msgid "Get Elitepress PRO Now!"
+msgstr ""
+
+#: functions/elitepress-info/sections/getting-started.php:14
+msgid "About Elitepress Theme"
+msgstr ""
+
+#: functions/elitepress-info/sections/getting-started.php:20
+msgid ""
+"ElitePress WordPress theme is developed for corporate business. It provides "
+"you simple and elegant look. Already thousands of users loving this theme "
+"because it is designed for multiple businesses like digital agency, "
+"freelancers, blogger, startup, portfolio, corporate and any kind of "
+"business. The theme is developed using Bootstrap 3 CSS framework that makes "
+"it friendly for all the devices like mobiles, tablets, laptops etc. In "
+"ElitePress Lite, you can easily set Social Media and Contact Info in Header, "
+"Slider, Callout, Services, Portfolios and 3 column widgetized footer. "
+msgstr ""
+
+#: functions/elitepress-info/sections/getting-started.php:22
+msgid ""
+"Couple of page templates are added one is Homepage and the second one is  "
+"full width page template. In the premium version, you will get boxed layout "
+"with background patterns, 7 predefined color schemes, feature for creating "
+"your custom color scheme, an eye-catching Slider, Services, Testimonials, "
+"Portfolio, Clients/ Sponsors, Blog Layouts, Layout Manager and Latest News. "
+"You will get Various page templates  like About, Service, Portfolio, Blog "
+"and Contact Us. The theme has supports for popular  plugins like WPML, "
+"Polylang and JetPack Gallery Extensions. Just navigate to Appearance / "
+"Customize to start customizing. Check premium version theme demo at https://"
+"webriti.com/demo/wp/elitepress"
+msgstr ""
+
+#: functions/elitepress-info/sections/getting-started.php:28
+msgid "Appointment Blue Child Theme"
+msgstr ""
+
+#: functions/elitepress-info/sections/getting-started.php:38
+msgid "Useful Links"
+msgstr ""
+
+#: functions/elitepress-info/sections/getting-started.php:46
+msgid "Lite Demo"
+msgstr ""
+
+#: functions/elitepress-info/sections/getting-started.php:49
+msgid "Pro Demo"
+msgstr ""
+
+#: functions/elitepress-info/sections/getting-started.php:52
+msgid "Premium Theme Support"
+msgstr ""
+
+#: functions/elitepress-info/sections/getting-started.php:61
+msgid "Premium Theme Details"
+msgstr ""
+
+#: functions/elitepress-info/sections/getting-started.php:64
+msgid "Your feedback is valuable to us"
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:11
+#: functions/elitepress-info/welcome-screen.php:208
+msgid "Why Upgrade to Pro?"
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:17
+msgid ""
+"This feature helps you to rename the slug name from the URL, allowing you to "
+"make it SEO friendly."
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:24
+msgid "Header Section"
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:25
+msgid ""
+"In the premium version you will get a top header sidebar area where you can "
+"use any widget - all the widgets are styled. We have created a number of "
+"widgets in the theme which you can use here. Specifically, use the Header "
+"Widget for showing your email ID, contact number or any other info of your "
+"choice."
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:33
+msgid "Multi Level Navigation"
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:34
+msgid ""
+"There are beautifully styled navigation/menus in the Elitepress theme. You "
+"can make multi level menus, which means you can create sub menus."
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:42
+msgid "Caption Slider"
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:43
+msgid ""
+"You can create unlimited slides which you can control via Repetator control "
+"the settings in Appearance >> Customize. "
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:51
+msgid "Service Features"
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:53
+msgid ""
+"You can display any number of Services on the Homepage, with thousands of "
+"FontAwesome icons available. You can also display a set of services on a "
+"separate page by using the service-related page templates with repetator "
+"control."
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:61
+msgid "Portfolio Features"
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:62
+msgid ""
+"Showcase any number of projects. This theme provides you with an option to "
+"create 2, 3, 4 column grid layouts by using the portfolio 2, 3, 4 column "
+"layout templates, respectively. If you have a number of projects to present "
+"then these templates are the answer. You can also create categorized "
+"portfolios, which display all the portfolio categories in a single place. In "
+"fact, we have coded this theme so that you can create any number of "
+"different portfolios."
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:70
+msgid "Latest News Section"
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:71
+msgid ""
+"This section is often used to display Latest News, Announcements and Events "
+"type content."
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:78
+msgid "Testimonial Feature"
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:79
+msgid ""
+"Testimonials are a powerful way to gain credibility. You can display "
+"testimonials with a carousel effect with Repetator control."
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:89
+msgid ""
+"You will get 7 preset color schemes and you can even create your own "
+"favorite color schemes using the Custom Color Setting in the Customizer."
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:97
+msgid "Well Documented"
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:98
+msgid ""
+"We provide good knowledgebase articles which will help you to create "
+"effective websites. You can visit these articles via our <a href='http://"
+"webriti.com/help/category/themes/elitepress/' target='_blank'>Help Section</"
+"a>."
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:106
+msgid "Custom widget"
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:107
+msgid ""
+"Building a website with our custom widgets is very simple. Just place them "
+"inside the available sidebar or even in the content."
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:116
+msgid "Translation Ready"
+msgstr ""
+
+#: functions/elitepress-info/sections/github.php:117
+msgid ""
+"The theme supports yet another famous plugin: WPML. With the help of this "
+"support you can create a website available in multiple languages."
+msgstr ""
+
+#: functions/elitepress-info/welcome-screen.php:55
+#, php-format
+msgid ""
+"Welcome! Thank you for choosing Elitepress Lite! To take full advantage of "
+"the best our theme can offer, please make sure you visit our %swelcome page"
+"%s."
+msgstr ""
+
+#: functions/elitepress-info/welcome-screen.php:56
+msgid "Get started with Elitepress Lite"
+msgstr ""
+
+#: functions/elitepress-info/welcome-screen.php:99
+msgid "Hooray! There are no required actions for you right now."
+msgstr ""
+
+#: functions/elitepress-info/welcome-screen.php:136
+msgid "View Theme Info"
+msgstr ""
+
+#: functions/elitepress-info/welcome-screen.php:206
+msgid "Getting Started"
+msgstr ""
+
+#: functions/elitepress-info/welcome-screen.php:207
+msgid "Actions Required"
+msgstr ""
+
+#: functions/elitepress-info/welcome-screen.php:209
+msgid "Free vs PRO"
 msgstr ""
 
 #: functions/meta-box/post-meta.php:21
