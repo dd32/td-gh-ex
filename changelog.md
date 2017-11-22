@@ -1,5 +1,40 @@
 # Auberge Changelog
 
+## 2.3.0
+
+* **Update**: Improved One Click Demo Import plugin compatibility
+* **Update**: Default footer credits text
+* **Update**: Minor style improvements
+* **Update**: Localization
+
+### Files changed:
+
+	changelog.md
+	footer-credits.php
+	style.css
+	assets/sass/main.scss
+	includes/plugins/one-click-demo-import/class-one-click-demo-import.php
+	languages/*.*
+
+
+## 2.2.1
+
+* **Update**: Improved WordPress 4.9 compatibility
+* **Update**: Updated documentation URL
+* **Update**: Improved masonry blog layout
+
+### Files changed:
+
+	changelog.md
+	style.css
+	assets/js/scripts-global.js
+	assets/sass/main.scss
+	assets/sass/starter/_starter.scss
+	includes/plugins/one-click-demo-import/class-one-click-demo-import.php
+	template-parts/component-welcome-demo.php
+	template-parts/component-welcome-header.php
+
+
 ## 2.2.0
 
 * **Add**: RTL language support
