@@ -4,8 +4,8 @@
 
 Theme Name      :   Atmosphere Lite
 Theme URI       :   https://alexathemes.net/themes/atmosphere-restaurant-wordpress-theme/
-Version         :   1.1.2
-Tested up to    :   WP 4.8.2
+Version         :   1.1.3
+Tested up to    :   WP 4.9
 Author          :   AlexaThemes
 Author URI      :   https://www.alexathemes.net/
 
