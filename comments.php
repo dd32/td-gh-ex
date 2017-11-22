@@ -4,7 +4,7 @@
 	<?php if ( have_comments() ) : ?>
 
 		<div id="comment-title" class="cf">
-			<h3><?php _e('Comments', 'asteroid'); ?></h3>
+			<h3><?php _e( 'Comments', 'asteroid' ); ?></h3>
 		</div>
 
 		<ol class="comment-list">
@@ -27,7 +27,7 @@
 	<?php endif; ?>
 
 	<?php if ( !comments_open() && get_comments_number() ) : ?>
-		<div id="respond"><p id="closed"><?php _e('Comments are closed', 'asteroid'); ?></p></div>
+		<div id="respond"><p id="closed"><?php _e( 'Comments are closed', 'asteroid' ); ?></p></div>
 	<?php endif; ?>
 
 	<?php comment_form(); ?>

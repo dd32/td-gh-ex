@@ -4,21 +4,21 @@ function asteroid_admin_bar_menu() {
 		global $wp_admin_bar;
 		$wp_admin_bar->add_menu( array(
 			'parent' => false,
-			'id' => 'asteroid_admin_bar', 
-			'title' => __( 'Asteroid Options', 'asteroid' ), 
-			'href' => admin_url('themes.php?page=asteroid-options')
+			'id' => 'asteroid_admin_bar',
+			'title' => __( 'Asteroid Options', 'asteroid' ),
+			'href' => admin_url( 'themes.php?page=asteroid-options' )
 		));
 		$wp_admin_bar->add_menu( array(
 			'parent' => 'appearance',
-			'id' => 'theme_editor_admin_bar', 	
-			'title' => __( 'Editor', 'asteroid' ), 
-			'href' => admin_url('theme-editor.php')
+			'id' => 'theme_editor_admin_bar',
+			'title' => __( 'Editor', 'asteroid' ),
+			'href' => admin_url( 'theme-editor.php' )
 		));
 		$wp_admin_bar->add_menu( array(
 			'parent' => 'appearance',
-			'id' => 'plugins_admin_bar', 	
-			'title' => __( 'Plugins', 'asteroid' ), 
-			'href' => admin_url('plugins.php')
+			'id' => 'plugins_admin_bar',
+			'title' => __( 'Plugins', 'asteroid' ),
+			'href' => admin_url( 'plugins.php' )
 		));
 	}
 }
@@ -26,7 +26,7 @@ add_action( 'admin_bar_menu', 'asteroid_admin_bar_menu', 88 );
 
 
 class Asteroid_Theme_Options {
-	
+
 	private $sections;
 	private $checkboxes;
 	private $settings;
@@ -36,7 +36,7 @@ class Asteroid_Theme_Options {
 		$this->checkboxes = array();
 		$this->settings = array();
 		$this->get_option();
-		
+
 		$this->sections['general']     	 	= __( 'General', 'asteroid' );
 		$this->sections['appearance']  	 	= __( 'Appearance', 'asteroid' );
 		$this->sections['post-page']   		= __( 'Posts & Pages', 'asteroid' );
@@ -44,23 +44,23 @@ class Asteroid_Theme_Options {
 		$this->sections['custom-css']  	 	= __( 'Custom CSS', 'asteroid' );
 		$this->sections['misc']   			= __( 'Misc', 'asteroid' );
 		$this->sections['reset']        	= __( 'Reset', 'asteroid' );
-		
+
 		add_action( 'admin_menu', array( &$this, 'ast_add_pages' ) );
 		add_action( 'admin_init', array( &$this, 'register_settings' ) );
-		
+
 		if ( ! get_option( 'asteroid_options' ) )
 			$this->initialize_settings();
-		
+
 	}
-	
+
 	/* Add page(s) to the admin menu */
 	public function ast_add_pages() {
-		$admin_menu = add_theme_page( __('Asteroid Options', 'asteroid'), __('Asteroid Options', 'asteroid'), 'edit_theme_options', 'asteroid-options', array( &$this, 'display_page' ) );
-		
+		$admin_menu = add_theme_page( __( 'Asteroid Options', 'asteroid' ), __( 'Asteroid Options', 'asteroid' ), 'edit_theme_options', 'asteroid-options', array( &$this, 'display_page' ) );
+
 		add_action( 'admin_print_scripts-' . $admin_menu, array( &$this, 'scripts' ) );
-		add_action( 'admin_print_styles-' . $admin_menu, array( &$this, 'styles' ) );	
+		add_action( 'admin_print_styles-' . $admin_menu, array( &$this, 'styles' ) );
 	}
-	
+
 	/* Create settings field */
 	public function create_setting( $args = array() ) {
 
@@ -212,10 +212,10 @@ class Asteroid_Theme_Options {
 		<div id="theme-info" class="postbox">
 			<h4>About Asteroid Theme</h4>
 			<div class="inside">
-				<div>&#9679;&nbsp;&nbsp;<a href="' . esc_url( 'http://ronangelo.com/asteroid/' ) . '" target="_blank">Asteroid Theme Page</a></div>
-				<div>&#9679;&nbsp;&nbsp;<a href="' . esc_url( 'http://ronangelo.com/asteroid/theme-documentation/' ) . '" target="_blank">Asteroid Documentation</a></div>
-				<div>&#9679;&nbsp;&nbsp;<a href="' . esc_url( 'http://ronangelo.com/asteroid/theme-changelog/' ) . '" target="_blank">Asteroid Changelog</a></div>
-				<p>Have any questions or suggestions? Post them here on the theme\'s <a href="' . esc_url( 'http://ronangelo.com/forums/' ) . '" target="_blank">support forum</a> or on <a href="' . esc_url( 'http://wordpress.org/support/theme/asteroid/' ) . '" target="_blank">wordpress.org</a></p>
+				<div>&#9679;&nbsp;&nbsp;<a href="' . esc_url( 'https://ronangelo.com/asteroid/' ) . '" target="_blank">Asteroid Theme Page</a></div>
+				<div>&#9679;&nbsp;&nbsp;<a href="' . esc_url( 'https://ronangelo.com/asteroid/theme-documentation/' ) . '" target="_blank">Asteroid Documentation</a></div>
+				<div>&#9679;&nbsp;&nbsp;<a href="' . esc_url( 'https://ronangelo.com/asteroid/theme-changelog/' ) . '" target="_blank">Asteroid Changelog</a></div>
+				<p>Have any questions or suggestions? Post them here on the theme\'s <a href="' . esc_url( 'https://ronangelo.com/forums/' ) . '" target="_blank">support forum</a> or on <a href="' . esc_url( 'https://wordpress.org/support/theme/asteroid/' ) . '" target="_blank">wordpress.org</a></p>
 				<p>Note: Check the theme changelog page linked above before updating to a newer version of the theme.</p>
 			</div>
 		</div>
@@ -284,7 +284,7 @@ class Asteroid_Theme_Options {
 
 			case 'textarea':
 				echo '<textarea class="' . $field_class . '" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" rows="8" cols="64" wrap="off">' . format_for_editor( $options[$id] ) . '</textarea>';
-				
+
 				if ( $desc != '' )
 					echo '<br /><span class="description">' . $desc . '</span>';
 
@@ -292,28 +292,28 @@ class Asteroid_Theme_Options {
 
 			case 'textarea-css':
 				echo '<textarea class="' . $field_class . '" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" rows="18" cols="72" wrap="off">' . format_for_editor( $options[$id] ) . '</textarea>';
-				
+
 				if ( $desc != '' )
 					echo '<br /><span class="description">' . $desc . '</span>';
 				break;
 
 			case 'password':
 				echo '<input class="regular-text' . $field_class . '" type="password" id="' . $id . '" name="asteroid_options[' . $id . ']" value="' . esc_attr( $options[$id] ) . '" />';
-				
+
 				if ( $desc != '' )
 					echo '<br /><span class="description">' . $desc . '</span>';
 				break;
 
 			case 'text':
 		 		echo '<input class="regular-text' . $field_class . '" type="text" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" value="' . esc_attr( $options[$id] ) . '" />';
-		 		
+
 		 		if ( $desc != '' )
 		 			echo '<br /><span class="description">' . $desc . '</span>';
 		 		break;
 
 			case 'text-int':
 		 		echo '<input class="text-int' . $field_class . '" type="text" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" value="' . esc_attr( $options[$id] ) . '" />';
-		 		
+
 		 		if ( $desc != '' )
 		 			echo '&nbsp;<span class="description">' . $desc . '</span>';
 		 		break;
@@ -327,10 +327,10 @@ class Asteroid_Theme_Options {
 
 			case 'color':
 		 		echo '<input class="color' . $field_class . '" type="text" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" value="' . esc_attr( $options[$id] ) . '" />';
-		 		
+
 		 		if ( $desc != '' )
 		 			echo '&nbsp;<span class="description">' . $desc . '</span>';
-		 		break;	
+		 		break;
 		}
 	}
 
@@ -496,10 +496,10 @@ class Asteroid_Theme_Options {
 			'type'    => 'select',
 			'std'     => 1,
 			'choices' => array(
-				0	=> __('Hidden', 'asteroid'),
-				1	=> __('On Posts', 'asteroid'),
-				2	=> __('On Pages', 'asteroid'),
-				3	=> __('Both Posts & Pages', 'asteroid')
+				0	=> __( 'Hidden', 'asteroid' ),
+				1	=> __( 'On Posts', 'asteroid' ),
+				2	=> __( 'On Pages', 'asteroid' ),
+				3	=> __( 'Both Posts & Pages', 'asteroid' )
 				)
 		);
 
@@ -510,10 +510,10 @@ class Asteroid_Theme_Options {
 			'type'    => 'select',
 			'std'     => 1,
 			'choices' => array(
-				0	=> __('Hidden', 'asteroid'),
-				1	=> __('On Posts', 'asteroid'),
-				2	=> __('On Pages', 'asteroid'),
-				3	=> __('Both Posts & Pages', 'asteroid')
+				0	=> __( 'Hidden', 'asteroid' ),
+				1	=> __( 'On Posts', 'asteroid' ),
+				2	=> __( 'On Pages', 'asteroid' ),
+				3	=> __( 'Both Posts & Pages', 'asteroid' )
 				)
 		);
 
@@ -524,10 +524,10 @@ class Asteroid_Theme_Options {
 			'type'    => 'select',
 			'std'     => 1,
 			'choices' => array(
-				0	=> __('Hidden', 'asteroid'),
-				1	=> __('On Posts', 'asteroid'),
-				2	=> __('On Pages', 'asteroid'),
-				3	=> __('Both Posts & Pages', 'asteroid')
+				0	=> __( 'Hidden', 'asteroid' ),
+				1	=> __( 'On Posts', 'asteroid' ),
+				2	=> __( 'On Pages', 'asteroid' ),
+				3	=> __( 'Both Posts & Pages', 'asteroid' )
 				)
 		);
 
@@ -603,7 +603,7 @@ class Asteroid_Theme_Options {
 			'desc'    => __( 'Allow widgets to show after the post-title.', 'asteroid' ),
 			'type'    => 'checkbox',
 			'std'     => 1
-		);	
+		);
 
 		$this->settings['ast_widget_before_post_content'] = array(
 			'section' => 'widget-areas',
@@ -618,7 +618,7 @@ class Asteroid_Theme_Options {
 			'title'   => __( 'After Post - Content', 'asteroid' ),
 			'desc'    => __( 'Allow widgets to show after the post-content.', 'asteroid' ),
 			'type'    => 'checkbox',
-			'std'     => 1 
+			'std'     => 1
 		);
 
 		$this->settings['ast_widget_after_post'] = array(
@@ -630,7 +630,7 @@ class Asteroid_Theme_Options {
 		);
 
 		/* Custom CSS
-		===========================================*/	
+		===========================================*/
 		$this->settings['ast_custom_css'] = array(
 			'title'   => __( 'Custom CSS Codes', 'asteroid' ),
 			'desc'    => __( 'Enter custom CSS here to apply to the theme. This should override any other stylings.', 'asteroid' ),
@@ -703,14 +703,14 @@ class Asteroid_Theme_Options {
 	}
 
 	public function display_about_section() {
-		// No Description	
+		// No Description
 	}
 
 	/*-------------------------------------
 	   Initialize Settings to Defaults
 	--------------------------------------*/
 	public function initialize_settings() {
-		
+
 		$default_settings = array();
 		foreach ( $this->settings as $id => $setting ) {
 			if ( $setting['type'] != 'heading' )
@@ -750,19 +750,19 @@ class Asteroid_Theme_Options {
 	public function scripts() {
 		wp_print_scripts( 'jquery-ui-tabs' );
 
-		wp_enqueue_script('my-upload');
-		wp_enqueue_script('media-upload');
-		wp_enqueue_script('thickbox');
-		wp_register_script('my-upload', get_template_directory_uri() . '/js/uploader.js', array('jquery','media-upload','thickbox'));
+		wp_enqueue_script( 'my-upload' );
+		wp_enqueue_script( 'media-upload' );
+		wp_enqueue_script( 'thickbox' );
+		wp_register_script( 'my-upload', get_template_directory_uri() . '/js/uploader.js', array( 'jquery', 'media-upload', 'thickbox' ) );
 	}
 
 	/*-------------------------------------
 	   Styling for the theme options page
 	--------------------------------------*/
-	public function styles() {	
+	public function styles() {
 		wp_register_style( 'mytheme-admin', get_template_directory_uri() . '/includes/theme-options.css' );
 		wp_enqueue_style( 'mytheme-admin' );
-		wp_enqueue_style('thickbox');
+		wp_enqueue_style( 'thickbox' );
 	}
 
 	/*-------------------------------------
@@ -779,7 +779,7 @@ class Asteroid_Theme_Options {
 			}
 			return $input;
 		}
-		return false;		
+		return false;
 	}
 
 }
@@ -789,7 +789,7 @@ $asteroid_options = new Asteroid_Theme_Options();
 function asteroid_option( $option ) {
 	$options = get_option( 'asteroid_options' );
 	if ( isset( $options[$option] ) )
-		return $options[$option]; 
+		return $options[$option];
 	else
 		return false;
 }
