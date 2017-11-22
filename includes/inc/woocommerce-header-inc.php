@@ -1,6 +1,6 @@
 <?php
 // Ensure cart contents update when products are added to the cart via AJAX
-add_filter('woocommerce_add_to_cart_fragments', 'avant_wc_header_add_to_cart_fragment');
+add_filter( 'woocommerce_add_to_cart_fragments', 'avant_wc_header_add_to_cart_fragment' );
  
 function avant_wc_header_add_to_cart_fragment( $fragments ) {
     global $woocommerce;

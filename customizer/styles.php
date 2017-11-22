@@ -58,6 +58,9 @@ function customizer_library_avant_build_styles() {
 				.main-navigation ul ul li.current_page_parent > a,
 				.main-navigation ul ul li.current-menu-ancestor > a,
 				.main-navigation ul ul li.current_page_ancestor > a,
+				.main-navigation.avant-nav-style-solid .current_page_item > a,
+				.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+				.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
 				.main-navigation button,
 				.wpcf7-submit,
 				.wp-paginate li a:hover,
@@ -140,6 +143,7 @@ function customizer_library_avant_build_styles() {
 				.woocommerce #review_form #respond .form-submit input:hover,
 				.woocommerce-page #review_form #respond .form-submit input:hover,
 				.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+				.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content,
 				.wpcf7-submit:hover'
 			),
 			'declarations' => array(

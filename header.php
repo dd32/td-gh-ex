@@ -17,7 +17,6 @@ global $woocommerce;
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-
 <div id="page" class="hfeed site <?php echo ( get_theme_mod( 'avant-site-layout' ) == 'avant-site-boxed' ) ? sanitize_html_class( 'boxed-site' ) : ''; ?> <?php echo sanitize_html_class( get_theme_mod( 'avant-slider-type' ) ); ?>">
 	
 <?php echo ( get_theme_mod( 'avant-header-layout' ) != 'avant-header-layout-six' && get_theme_mod( 'avant-site-layout' ) == 'avant-site-boxed' ) ? '<div class="content-boxed">' : ''; ?>

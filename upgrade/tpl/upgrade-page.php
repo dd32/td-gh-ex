@@ -10,7 +10,7 @@
             
             <div class="upgrade-order-number-info-btns-link">
                 <a href="https://kairaweb.com/theme/avant/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
-                    <?php printf( __( '<span>Avant Premium </span><em>$45</em>', 'avant' ) ); ?>
+                    <?php printf( __( '<span>Avant Premium </span><em>$39</em>', 'avant' ) ); ?>
                 </a>
             </div>
             
@@ -28,7 +28,7 @@
             
             <div class="avant-upgrade-page-inner-wrap">
                 
-                <h3><?php _e( 'Avant Premium is a once off payment of $45', 'avant' ); ?></h3>
+                <h3><?php _e( 'Avant Premium is a once off payment of $39', 'avant' ); ?></h3>
                 
                 <div class="avant-upgrade-block">
                     <div class="avant-upgrade-block-left">

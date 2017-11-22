@@ -58,7 +58,7 @@ function customizer_library_avant_options() {
 
     $panels[] = array(
         'id' => $panel,
-        'title' => __( 'Layout Settings', 'avant' ),
+        'title' => __( 'Avant Theme Settings', 'avant' ),
         'priority' => '30'
     );
 
@@ -230,7 +230,7 @@ function customizer_library_avant_options() {
         'id' => 'avant-noteon-header',
         'section' => $section,
         'type'    => 'note',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Stick Navigation<br />- Change Navigation Styling<br />- Add extra text to the header', 'avant' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Sticky Navigation<br />- Change Navigation Styling<br />- Add extra text to the header', 'avant' )
     );
     
 
@@ -694,7 +694,7 @@ function customizer_library_avant_options() {
 
     $panels[] = array(
         'id' => $panel,
-        'title' => __( 'Font/Text Settings', 'avant' ),
+        'title' => __( 'Avant Font Settings', 'avant' ),
         'priority' => '40'
     );
 
@@ -832,7 +832,7 @@ function customizer_library_avant_options() {
 
     $panels[] = array(
         'id' => $panel,
-        'title' => __( 'Layout Colors', 'avant' ),
+        'title' => __( 'Avant Layout Colors', 'avant' ),
         'priority' => '40'
     );
 
@@ -1038,7 +1038,7 @@ function customizer_library_avant_options() {
 
     $panels[] = array(
         'id' => $panel,
-        'title' => __( 'Website Text', 'avant' ),
+        'title' => __( 'Avant Theme Text', 'avant' ),
         'priority' => '40'
     );
 
@@ -1132,7 +1132,7 @@ function customizer_library_avant_options() {
 
     $sections[] = array(
         'id' => $section,
-        'title' => __( 'Social Links', 'avant' ),
+        'title' => __( 'Avant Social Links', 'avant' ),
         'priority' => '70'
     );
 

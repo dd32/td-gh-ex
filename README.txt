@@ -66,5 +66,8 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.1
+* Renamed Customizer Settings to be easier to navigate
+
 #### 1.0.0
 * Initial release.

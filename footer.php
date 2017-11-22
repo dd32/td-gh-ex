@@ -39,7 +39,6 @@
 <?php echo ( get_theme_mod( 'avant-header-layout' ) != 'avant-header-layout-six' && get_theme_mod( 'avant-site-layout' ) == 'avant-site-boxed' ) ? '</div>' : ''; ?>
 
 </div><!-- #page -->
-
 <?php wp_footer(); ?>
 </body>
 </html>

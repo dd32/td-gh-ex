@@ -4,7 +4,7 @@ Theme URI: https://kairaweb.com/theme/avant/
 Author: Kaira
 Author URI: https://kairaweb.com/
 Description: 7 Header layouts, 5 Blog layouts, 3 Footer layouts, Full site color settings and lots more settings all built neatly into the WordPress Customizer so you can edit & make changes in a live environment before making any of the changes live... Avant sure gives you what you're wanting. Avant is a highly customizable, multipurpose WordPress theme. Use Avant to build your WooCommerce eCommerce store, online fashion blog, corporate law or business website, or anything down to a simple personal blog. Avant integrates with top plugins such as Elementor or SiteOrigin's Page Builder to make it easy building your website with a drag and drop Page Builder. WooCommerce to create your e-commerce shop selling your products beautifully online. We're constantly building on to Avant, making it even more flexible to what you need. Give it a go!
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avant
@@ -2352,6 +2352,8 @@ input[type="submit"],
 .woocommerce #review_form #respond .form-submit input,
 .woocommerce-page #review_form #respond .form-submit input,
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover,
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
 .single-product span.onsale,
 .main-navigation ul ul a:hover,
 .main-navigation ul ul li.current-menu-item > a,
@@ -2437,6 +2439,7 @@ input[type="submit"],
 .woocommerce #review_form #respond .form-submit input:hover,
 .woocommerce-page #review_form #respond .form-submit input:hover,
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content,
 .wpcf7-submit:hover {
     background: inherit;
     background-color: #ab3d3a;
