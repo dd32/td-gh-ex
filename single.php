@@ -94,10 +94,11 @@
 	            </div><!-- #above-related-posts-widget-area -->
 	        <?php endif; 
 	        	// Related Posts
-	        	$displayrelatedposts = minimumminimal_themeoptions('displayrelatedposts'); 
-	        	if(!empty($displayrelatedposts)) : 
+	        	$displayrelatedposts = minimumminimal_themeoptions('displayrelated'); 
+	        	if ($displayrelatedposts != '') : 
 	        		get_template_part( 'single-related' ); 
-	        	endif;?>
+	        	endif; ?>
+
     	</div>
     </div>
 

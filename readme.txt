@@ -40,7 +40,8 @@ V1.2.0 - 2016-03-16 'section' => 'title_tagline' enabled and Logo settings moved
 V1.2.1 - 2016-03-16 changelog version corrected
 V1.2.2 - 2016-12-15 Custom Logo support added; minimum_minimal_powered_by function added, added the following tags to style.css: one-column, custom-colors, custom-logo, featured-images, footer-widgets, blog
 V1.2.3 - 2016-12-15 bugfix of function minimum_minimal_powered_by
-V1.2.3 - 2017-11-21 Complete Rebuild based on the Foundation 6 Front-End Framework
+V2.0.0 - 2017-11-21 Complete Rebuild based on the Foundation 6 Front-End Framework
+V2.0.1 - 2017-11-23 Fix in inc/richwp-options
 
 
 ########################################################

@@ -1,7 +1,7 @@
 <?php
 // Options Page
 
-	if ( ! function_exists( 'minimum-minimal' ) ) :
+	if ( ! function_exists( 'minimumminimal' ) ) :
 
 		function minimumminimal_themeoptions( $name ) {
 			$default_theme_options = array(
@@ -11,13 +11,13 @@
 				'colorhdfonthover' => '#0066cc',
 				'color1' => '#0066cc',
 				'colorfontbuttons' => '#FFFFFF',
-				'displayrelatedposts' => '1',
+				'displayrelated' => '',
 				'copyright' =>  get_bloginfo( 'name' ),
-				'herofeaturedimage' => '1',
+				'herofeaturedimage' => '',
 				'info' => '',
 				);
 		
-			$options = wp_parse_args( get_option( 'minimum-minimal' ), $default_theme_options );
+			$options = wp_parse_args( get_option( 'minimumminimal' ), $default_theme_options );
 
 			return $options[$name];
 		}
@@ -124,15 +124,15 @@ function minimumminimal_customize_register( $wp_customize ) {
 		'priority' => 10,
 	) );
 
-	$wp_customize->add_setting( 'minimumminimal[displayrelatedposts]', array(
-		'default' => minimumminimal_themeoptions( 'displayrelatedposts' ),
+	$wp_customize->add_setting( 'minimumminimal[displayrelated]', array(
+		'default' => minimumminimal_themeoptions( 'displayrelated' ),
 		'sanitize_callback' => 'minimumminimal_sanitize_checkbox',
 		'type' => 'option',
 		'capability' => 'edit_theme_options',
 	) );
 	
-	$wp_customize->add_control( 'minimumminimal[displayrelatedposts]', array(
-		'settings' => 'minimumminimal[displayrelatedposts]',
+	$wp_customize->add_control( 'minimumminimal[displayrelated]', array(
+		'settings' => 'minimumminimal[displayrelated]',
 		'label'    => __( 'Display Related Posts', 'minimum-minimal' ),
 		'section'  => 'minimumminimal_misc',
 		'type'     => 'checkbox',
