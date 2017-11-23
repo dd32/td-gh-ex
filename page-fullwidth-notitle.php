@@ -1,17 +1,22 @@
-<?php /* Template Name: No Title*/ ?>
-<?php get_header(); ?>
-<div id="wrapper">
-	<div id="contentcontainer" class="container_16 containermargin">
-		<div id="container" class="grid_16">
-			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-				<article class="boxes box-standard">
-					<div class="entry-content">
-						<?php the_content(); ?>
-						<div style="clear:both;"></div>
-					</div><!-- .entry-content -->
-				</article>
-			<?php endwhile; endif;?>
-		</div><!-- #container -->
-	</div><!-- #contentcontainer -->
-</div><!-- #wrapper -->
-<?php get_footer(); ?>
+<?php /* Template Name: Full Width - No Title - No Hero Image */ ?>
+    <?php get_header(); ?>
+    
+    <div id="container" class="row">
+        <div id="primary" class="small-12 columns">
+          	<article <?php post_class('articlebox'); ?>>
+        	<?php	
+        		while ( have_posts() ) : the_post(); ?>
+        			<div class="entry-content">
+                        <?php the_content(); ?>
+                    </div><!-- .entry-content -->
+        		<?php 
+                    if ( comments_open() || get_comments_number() ) :
+                    comments_template();
+                    endif;
+                    endwhile; 
+                    ?>
+            </article>
+        </div><!-- #primary -->           
+    </div> <!-- #container -->
+    
+    <?php get_footer(); ?>

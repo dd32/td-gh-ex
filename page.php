@@ -1,20 +1,34 @@
 <?php get_header(); ?>
-<div id="wrapper">
-	<div id="contentcontainer" class="container_16 containermargin">
-		<div id="container" class="grid_16">
-			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-				<article class="boxes box-standard">
-					<header>
-						<h1 class="entry-title"><?php the_title(); ?></h1>
-					</header>
-					<div class="entry-content">
-						<?php the_content(); ?>
-						<div style="clear:both;"></div>
-					</div><!-- .entry-content -->
-				</article>
-			<?php endwhile; endif;?>
-			<?php comments_template( '', true ); ?>
-		</div><!-- #container -->
-	</div><!-- #contentcontainer -->
-</div><!-- #wrapper -->
+
+<?php $herofeaturedimage = minimumminimal_themeoptions('herofeaturedimage'); 
+	if ((!empty($herofeaturedimage))  && (has_post_thumbnail( $post->ID ) ) ): ?>       
+              <div id="herofeaturedimage" class="coverimage">
+              	<?php the_post_thumbnail( 'minimumminimal_single-post-cover' );?>
+              </div>
+<?php endif; ?>
+
+<div id="container" class="row">
+	<div id="primary" class="large-7 medium-9 small-11 small-centered columns">
+	  	<article <?php post_class('articlebox'); ?>>
+		<?php	
+			while ( have_posts() ) : the_post(); ?>
+			<header class="entry-header entry-header-single">
+				<h1 class="entry-title">
+					<?php the_title(); ?>
+				</h1>
+			</header>
+				<div class="entry-content">
+					<?php the_content(); ?>
+				</div><!-- .entry-content -->
+			<?php
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+			endwhile;
+			?>
+	    </article>
+	</div><!-- #primary -->           
+
+</div> <!-- #container -->
+
 <?php get_footer(); ?>

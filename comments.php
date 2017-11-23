@@ -1,11 +1,11 @@
 <?php
+
 if ( post_password_required() ) {
 	return;
 }
 ?>
 
-<div id="comments" class="comments-area container_16 containermargin">
-	<div class="grid_16">
+<div id="comments" class="comments-area">
 
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
@@ -15,30 +15,45 @@ if ( post_password_required() ) {
 			?>
 		</h2>
 
-		<?php minimum_minimal_comment_nav(); ?>
 
 		<ol class="comment-list">
 			<?php
 				wp_list_comments( array(
 					'style'       => 'ol',
 					'short_ping'  => true,
-					'avatar_size' => 120,
+					'avatar_size' => 46,
 				) );
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php minimum_minimal_comment_nav(); ?>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
+	?>
+	<nav class="navigation comment-navigation">
+		<div class="nav-links">
+			<?php
+				if ( $prev_link = get_previous_comments_link( __( '&larr; Older Comments', 'minimum-minimal' ) ) ) :
+					printf( '<div class="nav-previous">%s</div>', $prev_link );
+				endif;
+
+				if ( $next_link = get_next_comments_link( __( 'Newer Comments &rarr;', 'minimum-minimal' ) ) ) :
+					printf( '<div class="nav-next">%s</div>', $next_link );
+				endif;
+			?>
+		</div><!-- .nav-links -->
+	</nav><!-- .comment-navigation -->
+	<?php endif; ?>
 
 	<?php endif; // have_comments() ?>
 
 	<?php
-		
+		// If comments are closed and there are comments, leave a note
 		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'minimum-minimal' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
-	</div>
-</div><!-- .comments-area -->
+	<?php comment_form(array('comment_notes_after' => '', 
+	'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="%3$s button" value="%4$s" />'
+	)); ?>
 
+</div><!-- .comments-area -->
