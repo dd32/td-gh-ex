@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 3.3.5 - Released: 23.11.2017
+
+-- Edit  : Code optimized.
+
 - Version 3.3.4 - Released: 08.11.2017
 
 -- Fixed : Minimal layout => single product => box border

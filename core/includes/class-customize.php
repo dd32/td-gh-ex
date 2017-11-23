@@ -416,7 +416,21 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
             <div class="inside">
 
-                <h2><?php esc_html_e('Get support','suevafree');?></h2> 
+                <h2><?php esc_html_e('WordPress Support Service.','suevafree');?></h2> 
+    
+                <p><?php esc_html_e("We are excited to announce the opening of our new Premium WordPress Support Service, to solve all technical issues like code issues, white screen issues, theme and plugin issues and much more.","suevafree");?></p>
+
+                <ul>
+                
+                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/wordpress-premium-support-service/?ref=2&campaign=sueva-panel' ); ?>" title="<?php esc_attr_e('WordPress Support','suevafree');?>" target="_blank"><?php esc_html_e('WordPress Support','suevafree');?></a></li>
+                
+                </ul>
+
+            </div>
+
+            <div class="inside">
+
+                <h2><?php esc_html_e('SuevaFree Support','suevafree');?></h2> 
 
                 <p><?php _e("If you've opened a new support ticket from <strong>WordPress.org</strong>, please send a reminder to <strong>support@wpinprogress.com</strong>, to get a faster reply.","suevafree");?></p>
 

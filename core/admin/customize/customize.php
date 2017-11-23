@@ -986,8 +986,8 @@ if (!function_exists('suevafree_customize_panel_function')) {
 
 			array( 
 
-				"label" => esc_html__( "Telegram URL","suevafree"),
-				"description" => esc_html__( "Insert Telegram Url (leave empty if you want to hide the button)","suevafree"),
+				"label" => esc_html__( "Telegram Account","suevafree"),
+				"description" => esc_html__( "Insert Telegram Account (leave empty if you want to hide the button)","suevafree"),
 				"id" => "suevafree_footer_telegram_button",
 				"type" => "button",
 				"section" => "footer_section",
