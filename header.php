@@ -23,13 +23,11 @@
 					<img src="<?php echo asteroid_option( 'ast_header_logo' ); ?>" alt="<?php echo get_bloginfo( 'name' ); ?>" /></a>
 				</div>
 			<?php else : ?>
-				<?php if ( ! 'blank' == get_header_textcolor() ) : ?>
-					<div id="header-text" class="cf">
-						<?php $htag = is_singular() ? 'h2' : 'h1'; ?>
-						<?php echo '<' . $htag . ' id="site-title">'; ?><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo get_bloginfo( 'name' ); ?></a><?php echo '</' . $htag . '>'; ?>
-						<h4 id="site-description"><?php bloginfo( 'description' ); ?></h4>		
-					</div>
-				<?php endif; ?>
+				<div id="header-text" class="cf">
+					<?php $htag = is_singular() ? 'h2' : 'h1'; ?>
+					<?php echo '<' . $htag . ' id="site-title">'; ?><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo get_bloginfo( 'name' ); ?></a><?php echo '</' . $htag . '>'; ?>
+					<h4 id="site-description"><?php bloginfo( 'description' ); ?></h4>
+				</div>
 			<?php endif ; ?>
 		</div>
 

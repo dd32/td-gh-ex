@@ -18,6 +18,9 @@ custom header images, backgrounds, menus, full-width page templates, basic schem
 JSColor - A lightweight Javascript color-picker maintained by Jan Odvárko.
 
 == CHANGELOG ==
+Version 1.2.6
+	* Fixed missing Blog Title in Header.
+
 Version 1.2.5
 	* Updated theme info/resource URLs.
 	* Removed wp_title() fallback for old WP.
