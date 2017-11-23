@@ -1,0 +1,544 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: BC Business Consulting\n"
+"POT-Creation-Date: 2017-11-24 01:07+0600\n"
+"PO-Revision-Date: 2017-11-24 01:07+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:21
+msgid "Oooops!"
+msgstr ""
+
+#: 404.php:22 vendors/breadcrumbs/breadcrumbs.php:247
+msgid "404 Not Found"
+msgstr ""
+
+#: 404.php:23
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: 404.php:26
+msgid "Back to home"
+msgstr ""
+
+#: comments.php:35
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: comments.php:41
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:66
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:76
+msgid "Your Name"
+msgstr ""
+
+#: comments.php:81
+msgid "Your Email"
+msgstr ""
+
+#: comments.php:87
+msgid "Website"
+msgstr ""
+
+#: comments.php:92
+msgid "Comment"
+msgstr ""
+
+#: comments.php:102
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+
+#: comments.php:110
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: comments.php:115
+msgid "Your email address will not be published."
+msgstr ""
+
+#: inc/custom-header.php:34
+msgid "Default Header Image"
+msgstr ""
+
+#: inc/customizer/core/default.php:34
+msgid "Copyright All right reserved"
+msgstr ""
+
+#: inc/customizer/core/default.php:36
+msgid "Your Trusted 24 Hours Service Provider! "
+msgstr ""
+
+#: inc/customizer/core/default.php:38
+msgid "Number #1 Provider"
+msgstr ""
+
+#: inc/customizer/core/default.php:39
+msgid "of Industrial Solution"
+msgstr ""
+
+#: inc/customizer/core/default.php:41
+msgid "Global Certificate"
+msgstr ""
+
+#: inc/customizer/core/default.php:42
+msgid "ISO 9001:2015"
+msgstr ""
+
+#: inc/customizer/core/default.php:44
+msgid "Award Winning"
+msgstr ""
+
+#: inc/customizer/core/default.php:45
+msgid "Solution Of The Year"
+msgstr ""
+
+#: inc/customizer/customizer.php:43
+msgid "NewsBD24 Pro"
+msgstr ""
+
+#: inc/customizer/customizer.php:44
+msgid "Upgrade To Pro"
+msgstr ""
+
+#: inc/customizer/theme-option.php:17
+msgid "Theme Options"
+msgstr ""
+
+#: inc/customizer/theme-option.php:27
+msgid "Social Profile Options"
+msgstr ""
+
+#: inc/customizer/theme-option.php:44
+msgid "Global Social Profile ( Nav Right )"
+msgstr ""
+
+#: inc/customizer/theme-option.php:60
+msgid "Search Icon ( Nav Right )"
+msgstr ""
+
+#: inc/customizer/theme-option.php:71
+msgid "Facebook URL"
+msgstr ""
+
+#: inc/customizer/theme-option.php:74
+msgid "Twitter URL"
+msgstr ""
+
+#: inc/customizer/theme-option.php:77
+msgid "pinterest URL"
+msgstr ""
+
+#: inc/customizer/theme-option.php:80
+msgid "Youtube URL"
+msgstr ""
+
+#: inc/customizer/theme-option.php:83
+msgid "Instagram URL"
+msgstr ""
+
+#: inc/customizer/theme-option.php:115
+msgid "Blog Management"
+msgstr ""
+
+#: inc/customizer/theme-option.php:132
+msgid "Blog Layout Options"
+msgstr ""
+
+#: inc/customizer/theme-option.php:133 inc/customizer/theme-option.php:210
+msgid "Choose between different layout options to be used as default"
+msgstr ""
+
+#: inc/customizer/theme-option.php:136 inc/customizer/theme-option.php:212
+msgid "Primary Sidebar - Content"
+msgstr ""
+
+#: inc/customizer/theme-option.php:137 inc/customizer/theme-option.php:213
+msgid "Content - Primary Sidebar"
+msgstr ""
+
+#: inc/customizer/theme-option.php:138 inc/customizer/theme-option.php:214
+msgid "No Sidebar"
+msgstr ""
+
+#: inc/customizer/theme-option.php:156
+msgid "Set Blog Excerpt Length"
+msgstr ""
+
+#: inc/customizer/theme-option.php:175
+msgid "Blog Looop Content"
+msgstr ""
+
+#: inc/customizer/theme-option.php:178
+msgid "Excerpt Only"
+msgstr ""
+
+#: inc/customizer/theme-option.php:179
+msgid "Full Post"
+msgstr ""
+
+#: inc/customizer/theme-option.php:190
+msgid "Page Management"
+msgstr ""
+
+#: inc/customizer/theme-option.php:208
+msgid "Page Layout Options"
+msgstr ""
+
+#: inc/customizer/theme-option.php:225
+msgid "Footer Options"
+msgstr ""
+
+#: inc/customizer/theme-option.php:242
+msgid "Footer Copyright Text"
+msgstr ""
+
+#: inc/customizer/theme-option.php:254
+msgid "Dialog & Award"
+msgstr ""
+
+#: inc/customizer/theme-option.php:271
+msgid "Dialog Top Right Text"
+msgstr ""
+
+#: inc/customizer/theme-option.php:282 inc/customizer/theme-option.php:291
+#: inc/customizer/theme-option.php:300
+msgid "Award Title"
+msgstr ""
+
+#: inc/customizer/theme-option.php:286 inc/customizer/theme-option.php:295
+#: inc/customizer/theme-option.php:304
+msgid "Award Text"
+msgstr ""
+
+#: inc/fitter_hook.php:51
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/fitter_hook.php:56
+msgid "Reply"
+msgstr ""
+
+#: inc/fitter_hook.php:79
+msgid "Read More"
+msgstr ""
+
+#: inc/fitter_hook.php:101 template-parts/content.php:63
+#: template-parts/single/content.php:58
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: inc/post_hooks.php:202
+msgid "Previous Article"
+msgstr ""
+
+#: inc/post_hooks.php:214
+msgid "Next Article"
+msgstr ""
+
+#: inc/template-functions.php:271
+msgid "Toggle navigation"
+msgstr ""
+
+#: inc/template-functions.php:340
+msgid "Set Up menu here"
+msgstr ""
+
+#: inc/template-functions.php:373
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: inc/template-functions.php:373
+#, php-format
+msgid "Proudly powered by %s ."
+msgstr ""
+
+#: inc/template-functions.php:376
+#, php-format
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: inc/template-functions.php:376
+msgid "https://athemeart.com"
+msgstr ""
+
+#: inc/template-functions.php:376
+msgid "aThemeArt"
+msgstr ""
+
+#: inc/template-functions.php:482
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: inc/template-functions.php:486
+msgid "404 Error"
+msgstr ""
+
+#: inc/template-functions.php:645
+msgid "Previous"
+msgstr ""
+
+#: inc/template-functions.php:646
+msgid "Next"
+msgstr ""
+
+#: inc/template-functions.php:647
+msgid "&nbsp;"
+msgstr ""
+
+#: inc/template-tags.php:29
+#, php-format
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#: inc/template-tags.php:43
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:46
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc/template-tags.php:56
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#: inc/template-tags.php:86
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:89
+#, php-format
+msgid "Tagged : %1$s"
+msgstr ""
+
+#: inc/template-tags.php:100
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: inc/theme-core.php:47
+msgid "Primary"
+msgstr ""
+
+#: inc/theme-core.php:48
+msgid "Top Right Menu"
+msgstr ""
+
+#: inc/theme-core.php:49
+msgid "Footer Right"
+msgstr ""
+
+#: inc/theme-core.php:125
+msgid "Sidebar"
+msgstr ""
+
+#: inc/theme-core.php:127 inc/theme-core.php:137 inc/theme-core.php:146
+#: inc/theme-core.php:155
+msgid "Add widgets here."
+msgstr ""
+
+#: inc/theme-core.php:135 inc/theme-core.php:144 inc/theme-core.php:153
+msgid "Footer"
+msgstr ""
+
+#: single.php:32
+msgid "<i class=\"fa fa-long-arrow-left\"></i>%title"
+msgstr ""
+
+#: single.php:33
+msgid "%title <i class=\"fa fa-long-arrow-right\"></i>"
+msgstr ""
+
+#: single.php:35
+msgid "post_tag"
+msgstr ""
+
+#: single.php:36
+msgid "Continue Reading"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:25
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:38
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:44
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:46 template-parts/content.php:75
+#: template-parts/single/content.php:69
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content-search.php:39 template-parts/content.php:40
+#: template-parts/single/content.php:40
+msgid "By -"
+msgstr ""
+
+#: vendors/breadcrumbs/breadcrumbs.php:244
+msgid "Browse:"
+msgstr ""
+
+#: vendors/breadcrumbs/breadcrumbs.php:245
+msgctxt "breadcrumbs aria label"
+msgid "Breadcrumbs"
+msgstr ""
+
+#: vendors/breadcrumbs/breadcrumbs.php:246
+msgid "Home"
+msgstr ""
+
+#: vendors/breadcrumbs/breadcrumbs.php:248
+msgid "Archives"
+msgstr ""
+
+#: vendors/breadcrumbs/breadcrumbs.php:250
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr ""
+
+#: vendors/breadcrumbs/breadcrumbs.php:252
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: vendors/breadcrumbs/breadcrumbs.php:254
+#, php-format
+msgid "Minute %s"
+msgstr ""
+
+#: vendors/breadcrumbs/breadcrumbs.php:256
+#, php-format
+msgid "Week %s"
+msgstr ""
+
+#: vendors/breadcrumbs/breadcrumbs.php:708
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr ""
+
+#: vendors/breadcrumbs/breadcrumbs.php:725
+msgctxt "minute archives time format"
+msgid "i"
+msgstr ""
+
+#: vendors/breadcrumbs/breadcrumbs.php:742
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr ""
+
+#: vendors/breadcrumbs/breadcrumbs.php:758
+#: vendors/breadcrumbs/breadcrumbs.php:787
+#: vendors/breadcrumbs/breadcrumbs.php:814
+#: vendors/breadcrumbs/breadcrumbs.php:841
+#: vendors/breadcrumbs/breadcrumbs.php:1182
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: vendors/breadcrumbs/breadcrumbs.php:759
+#: vendors/breadcrumbs/breadcrumbs.php:815
+#: vendors/breadcrumbs/breadcrumbs.php:1186
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr ""
+
+#: vendors/breadcrumbs/breadcrumbs.php:760
+#: vendors/breadcrumbs/breadcrumbs.php:1190
+msgctxt "daily archives date format"
+msgid "j"
+msgstr ""
+
+#: vendors/breadcrumbs/breadcrumbs.php:788
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr ""
+
+#: vendors/wp-bootstrap-navwalker/wp-bootstrap-navwalker.php:209
+msgid "Add a menu"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "BC Business Consulting"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://athemeart.com/downloads/bc-business-consulting/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"BC Business Consulting Multipurpose One page WordPress Theme BC Business "
+"Consulting is a clean, super flexible and fully responsive Multipurpose One "
+"page WordPress Theme for any project, business, agency , personal or web "
+"studio. Its equipped with the latest technologies and designed with user in "
+"mind to ensure endless freedom to create and customize your site like a pro "
+"and without any coding. This versatile, multi-purpose theme is perfect for "
+"beginners, while also feature rich and extendable for developers, "
+"freelancers and growing businesses. We built this theme on Visual Composer, "
+"a very convenient drag-n-drop PageBuilder for WordPress. It should provide "
+"you with the smoothest experience while creating your website with our "
+"theme. The colorful widgets will help anyone to customize according to their "
+"branding colors. This theme is very well commented and also have proper help "
+"documentation too."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "athemeart"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://athemeart.com/"
+msgstr ""
