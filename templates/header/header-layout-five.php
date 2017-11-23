@@ -80,7 +80,7 @@ global $woocommerce; ?>
 				<?php if ( !get_theme_mod( 'avant-header-remove-cart' ) ) : ?>
 					<div class="header-cart">
 						
-			            <a class="header-cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart', 'avant' ); ?>">
+			            <a class="header-cart-contents" href="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'avant' ); ?>">
 			                <span class="header-cart-amount">
 			                    <?php echo sprintf( _n( '%d', '%d', $woocommerce->cart->cart_contents_count, 'avant' ), $woocommerce->cart->cart_contents_count ); ?><span> - <?php echo $woocommerce->cart->get_cart_total(); ?></span>
 			                </span>

@@ -1,7 +1,7 @@
 === Avant ===
 Contributors: Kaira
 Donate link: 
-Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, blog, e-commerce, entertainment, holiday, portfolio
+Tags: two-columns, three-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, e-commerce, entertainment, portfolio
 Requires at least: 4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == License ==
 
-Avant WordPress Theme, Copyright 2016 Zack Viljoen.
+Avant WordPress Theme, Copyright 2017 Zack Viljoen.
 Avant is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
@@ -26,20 +26,24 @@ All Javascript is located in /js/ with license headers where appropriate.
 
 == Bundled Licenses ==
 
-jQuery carouFredSel 6.2.1
-Copyright (c) 2013 Fred Heusschen
-http://en.wikipedia.org/wiki/MIT_License
-http://en.wikipedia.org/wiki/GNU_General_Public_License
+jQuery carouFredSel v6.2.1, https://github.com/Codeinwp/carouFredSel-jQuery
+Copyright (c) 2012, Dev7studios, GPL License, https://github.com/Codeinwp/carouFredSel-jQuery/blob/master/license.txt
 
-FontAwesome - Copyright 2012 Dave Gandy
-License: MIT License
-http://fontawesome.io/license/
+FontAwesome v4.7.0, http://fontawesome.io/
+Copyright 2017, Dave Gandy, SIL OFL 1.1 - Font License, http://fontawesome.io/license/
+Copyright 2017, Dave Gandy, MIT License - Code License, http://fontawesome.io/license/
 
-* The Photo in screenshot.png is from unsplash.com and licensed Creative Commons 0 (CC0)
-* Photos in the Avant demo site are from unsplash.com and licensed Creative Commons 0 (CC0)
-* Photos in the Avant demo slider are from unsplash.com and licensed Creative Commons 0 (CC0)
-Unsplash - Distributed under the terms of CC0 1.0 Universal License (Public Domain).
-https://unsplash.com/license
+TGM Plugin Activation v2.6.1, http://tgmpluginactivation.com/
+Copyright 2017, Thomas Griffin, GNU GENERAL PUBLIC LICENSE, https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/LICENSE.md
+
+Customizer Library v1.3.0, https://github.com/devinsays/customizer-library/
+Copyright 2015, Devin Price, The Theme Foundry, GPL-2.0+, https://github.com/devinsays/customizer-library/blob/master/customizer-library.php
+
+Images used from Pixabay are released under Creative Commons CC0, https://pixabay.com/
+Image in Screenshot.png: CCO by freephotocc, https://pixabay.com/en/fashion-glasses-go-pro-female-1478810/
+Image in Default Slider Demo, /images/demo/slider_default_01.jpg: CCO by freephotocc, https://pixabay.com/en/fashion-glasses-go-pro-female-1478810/
+Pixabay - Distributed under the terms of CC0 1.0 Universal License (Public Domain).
+https://pixabay.com/en/service/terms/
 
 == Installation ==
 
@@ -51,8 +55,6 @@ https://unsplash.com/license
 Avant's Customizer Settings:
 ---------------
 The theme settings are built into the WordPress Customizer using "Customizer Library" by Devin Price, situated in /customizer/.
-license: GPL 2.0+
-https://github.com/devinsays/customizer-library/blob/master/composer.json
 
 The Avant upgrade situated in /upgrade/ displays the features that the premium version includes.
 Avant version is licensed under GPL 2.0+
@@ -65,6 +67,12 @@ View the theme settings under "Appearance" -> Customize.
 1. Featured Images work best at a minimum of 1400 wide and 700 high.
 
 == Changelog ==
+
+#### 1.0.2
+* Updated style.css theme tags
+* Escape attributes in multiple files
+* Updated bundled scripts licenses
+* Updated the language .pot file
 
 #### 1.0.1
 * Renamed Customizer Settings to be easier to navigate

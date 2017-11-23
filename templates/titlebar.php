@@ -6,7 +6,7 @@
             <?php if ( is_home() ) :
                 $blog_page_id = get_option( 'page_for_posts' );  ?>
                 
-                <?php echo '<h2>' . get_page( $blog_page_id )->post_title . '</h2>'; ?>
+                <?php echo '<h2>' . esc_html( get_page( $blog_page_id )->post_title ) . '</h2>'; ?>
             
             <?php elseif ( is_archive() ) : ?>
                 
@@ -27,7 +27,7 @@
                 <?php if ( is_shop() ) :
                     $shop_id = get_option( 'woocommerce_shop_page_id' ); ?>
                     
-                    <?php echo '<h2>' . get_page( $shop_id )->post_title . '</h2>'; ?>
+                    <?php echo '<h2>' . esc_html( get_page( $shop_id )->post_title ) . '</h2>'; ?>
                 <?php endif; ?>
             
             <?php else : ?>

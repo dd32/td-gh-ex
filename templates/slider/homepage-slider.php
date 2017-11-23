@@ -74,7 +74,7 @@
                 <div class="home-slider-empty"></div>
             <?php endif; ?>
             
-        <?php endif; wp_reset_query(); ?>
+        <?php endif; wp_reset_postdata(); ?>
         
     <?php else : ?>
         
