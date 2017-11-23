@@ -187,3 +187,6 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 = Version 1.8.2 =
 * Improved Javascript file
 * Minor bug fixes
+
+= Version 1.8.3 =
+* Minor bug fixes

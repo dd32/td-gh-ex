@@ -55,7 +55,7 @@ if ( post_password_required() ) {
 		</ol><!-- .comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
+		<nav id="comment-nav-below" class="comment-navigation">
 			<h1 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'semplicemente' ); ?></h1>
 			<div class="nav-previous"><i class="fa spaceRight fa-angle-double-left" aria-hidden="true"></i><?php previous_comments_link( esc_html__( 'Older Comments', 'semplicemente' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'semplicemente' ) ); ?><i class="fa spaceLeft fa-angle-double-right" aria-hidden="true"></i></div>
