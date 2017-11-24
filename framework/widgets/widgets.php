@@ -1,4 +1,10 @@
 <?php
+
+// Do not allow direct access to the file.
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 /**
  * Register Widgets & Sidebars
  * 

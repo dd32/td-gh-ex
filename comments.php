@@ -11,6 +11,11 @@
  * @subpackage Agama
  * @since Agama 1.0
  */
+
+// Do not allow direct access to the file.
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
  
 /*
  * If comments are disabled do not output anything.
@@ -41,7 +46,7 @@ if ( post_password_required() )
 
 		<ol class="commentlist clearfix">
 			<?php wp_list_comments( array( 'callback' => 'agama_comment', 'style' => 'ol' ) ); ?>
-		</ol><!-- .commentlist -->
+		</ol>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="navigation" role="navigation">

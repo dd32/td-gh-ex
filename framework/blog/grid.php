@@ -1,49 +1,37 @@
-<?php if( ! defined( 'ABSPATH' ) ) exit; ?>
+<?php 
 
-<?php $search_post_thumbnails = get_theme_mod('agama_search_page_thumbnails', ''); ?>
+// Do not allow direct access to the file.
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+} 
+
+$search_post_thumbnails = esc_attr( get_theme_mod( 'agama_search_page_thumbnails', '' ) );
+$has_post_thumbnail     = ! post_password_required() && ! is_attachment() && get_the_post_thumbnail() && ! is_search() || 
+                          is_search() && has_post_thumbnail() && $search_post_thumbnails; ?>
 
 <header class="entry-header">
-
-	<?php if ( ! post_password_required() && ! is_attachment() && get_the_post_thumbnail() && ! is_search() || is_search() && has_post_thumbnail() && $search_post_thumbnails ) { // Attachments ?>
-	
+	<?php if( $has_post_thumbnail ): ?>
 		<figure class="hover1">
-			
 			<?php if( get_theme_mod( 'agama_blog_thumbnails_permalink', true ) ): ?>
-				<a href="<?php the_permalink(); ?>">
-			<?php endif; ?>
-			
-				<img src="<?php echo agama_return_image_src('post-thumbnail'); ?>" class="img-responsive">
-			
-			<?php if( get_theme_mod( 'agama_blog_thumbnails_permalink', true ) ): ?>
-				</a>
-			<?php endif; ?>
-			
+            <a href="<?php the_permalink(); ?>">
+                 <img src="<?php echo agama_return_image_src('post-thumbnail'); ?>" class="img-responsive">
+            </a>
+			<?php else: ?>
+                <img src="<?php echo agama_return_image_src('post-thumbnail'); ?>" class="img-responsive">
+            <?php endif; ?>
 		</figure>
-	
-	<?php } ?>
+	<?php endif; ?>
 	
 	<h1 class="entry-title">
 		<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 	</h1>
 	
-	<?php
-	/**
-	 * agama_blog_post_meta hook
-	 *
-	 * @hooked agama_render_blog_post_meta - 10  (output HTML post meta details)
-	 */
-	if( get_theme_mod('agama_blog_post_meta', true) ):
-		echo '<p class="single-line-meta">';
-		do_action( 'agama_blog_post_meta' );
-		echo '</p>';
-	endif;
-	?>
-
+	<?php do_action( 'agama_blog_post_meta' ); ?>
 </header>
 
-<?php if( ! is_sticky() ): ?>
+    <?php if( ! is_sticky() ): ?>
 	<div class="entry-sep"></div>
-<?php endif; ?>
+    <?php endif; ?>
 
 <div class="article-entry-wrapper">
 
@@ -59,9 +47,8 @@
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'agama' ), 'after' => '</div>' ) ); ?>
 	</div>
 	
-	<!-- Content Footer -->
 	<footer class="entry-meta">
 		<?php edit_post_link( __( 'Edit', 'agama' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-meta -->
+	</footer>
 
 </div>

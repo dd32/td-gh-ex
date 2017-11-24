@@ -1,43 +1,38 @@
-	<?php if( ! defined( 'ABSPATH' ) ) exit; ?>
-	
-	<?php $search_post_thumbnails = get_theme_mod('agama_search_page_thumbnails', ''); ?>
+<?php 
 
-	<?php if ( has_post_thumbnail() && ! is_search() || is_search() && has_post_thumbnail() && $search_post_thumbnails ) { ?>
+// Do not allow direct access to the file.
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+$is_sticky              = is_sticky() && is_home() && ! is_paged();
+$search_post_thumbnails = esc_attr( get_theme_mod( 'agama_search_page_thumbnails', '' ) );
+$has_post_thumbnail     = has_post_thumbnail() && ! is_search() || 
+                          is_search() && has_post_thumbnail() && $search_post_thumbnails; ?>
+
+	<?php if ( $has_post_thumbnail ): ?>
 	<header class="entry-header">
 		<figure class="hover1">
-		
 			<?php if( get_theme_mod( 'agama_blog_thumbnails_permalink', true ) ): ?>
-				<a href="<?php the_permalink(); ?>">
-			<?php endif; ?>
-			
+            <a href="<?php the_permalink(); ?>">
+                 <img src="<?php echo agama_return_image_src('agama-blog-large'); ?>" class="img-responsive">
+            </a>
+			<?php else: ?>
 				<img src="<?php echo agama_return_image_src('agama-blog-large'); ?>" class="img-responsive">
-			
-			<?php if( get_theme_mod( 'agama_blog_thumbnails_permalink', true ) ): ?>
-				</a>
-			<?php endif; ?>
-			
+            <?php endif; ?>
 		</figure>
 	</header>
-	<?php } ?>
+	<?php endif; ?>
 
 	<div class="article-entry-wrapper">
 
-		<?php if ( is_sticky() && is_home() && ! is_paged() ) { // Sticky post ?>
-			<div class="featured-post">
-				<?php _e( 'Featured post', 'agama' ); ?>
-			</div>
-		<?php } ?>
+		<?php if ( $is_sticky ):  ?>
+        <div class="featured-post">
+            <?php _e( 'Featured post', 'agama' ); ?>
+        </div>
+		<?php endif; ?>
 		
-		<?php
-		/**
-		 * agama_blog_post_date_and_format hook
-		 *
-		 * @hooked agama_render_blog_post_date - 10 (output HML post date & format)
-		 */
-		if( get_theme_mod('agama_blog_post_meta', true) ):
-			do_action( 'agama_blog_post_date_and_format' ); 
-		endif;
-		?>
+		<?php do_action( 'agama_blog_post_date_and_format' ); ?>
 		
 		<div class="entry-content">
 			
@@ -45,17 +40,7 @@
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 			</h1>
 			
-			<?php
-			/**
-			 * agama_blog_post_meta hook
-			 *
-			 * @hooked agama_render_blog_post_meta - 10  (output HTML post meta details)
-			 */
-			if( get_theme_mod('agama_blog_post_meta', true) ):
-				echo '<p class="single-line-meta">';
-				do_action( 'agama_blog_post_meta' );
-				echo '</p>'; 
-			endif; ?>
+			<?php do_action( 'agama_blog_post_meta' ); ?>
 			
 			<?php the_excerpt(); ?>
 				

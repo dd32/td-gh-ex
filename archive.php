@@ -7,6 +7,11 @@
  * @since Agama 1.0
  */
 
+// Do not allow direct access to the file.
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 get_header(); ?>
 
 	<section id="primary" class="site-content <?php echo Agama::bs_class(); ?>">

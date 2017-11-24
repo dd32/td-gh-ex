@@ -1,7 +1,9 @@
 <?php
 
 // Do not allow direct access to the file.
-if( ! defined( 'ABSPATH' ) ) exit; 
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 /**
  * Agama Framework Class

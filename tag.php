@@ -9,6 +9,11 @@
  * @since Agama 1.0
  */
 
+// Do not allow direct access to the file.
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 get_header(); ?>
 
 	<section id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
@@ -21,7 +26,7 @@ get_header(); ?>
 			<?php if ( tag_description() ) : // Show an optional tag description ?>
 				<div class="archive-meta"><?php echo tag_description(); ?></div>
 			<?php endif; ?>
-			</header><!-- .archive-header -->
+			</header>
 
 			<?php
 			/* Start the Loop */
@@ -35,16 +40,13 @@ get_header(); ?>
 				get_template_part( 'content', get_post_format() );
 
 			endwhile;
+                agama_content_nav( 'nav-below' );
+            else:
+                get_template_part( 'content', 'none' );
+            endif; ?>
 
-			agama_content_nav( 'nav-below' );
-			?>
-
-		<?php else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
-		<?php endif; ?>
-
-		</div><!-- #content -->
-	</section><!-- #primary -->
+		</div>
+	</section>
 
 <?php get_sidebar(); ?>
 

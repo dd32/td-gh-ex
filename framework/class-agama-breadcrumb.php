@@ -1,7 +1,9 @@
 <?php
 
 // Do not allow direct access to the file.
-if( ! defined( 'ABSPATH' ) ) exit; 
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 /**
  * Agama Breadcrumb Class
@@ -57,9 +59,14 @@ class Agama_Breadcrumb {
 	 * @since 1.2.9
 	 */
 	private static function is_home_or_front_page() {
-		$h1 	= sprintf( '<h1>%s</h1>', __( 'Homepage', 'agama' ) );
-		$output	= '';
-		
+        if( is_home() && is_front_page() ) {
+            $h1 = sprintf( '<h1>%s</h1>', __( 'Home', 'agama' ) );
+        } else if( is_home() ) {
+            $h1 = sprintf( '<h1>%s</h1>', __( 'Blog', 'agama' ) );
+        } else if( is_front_page() ) {
+            $h1 = sprintf( '<h1>%s</h1>', get_the_title() );
+        }
+         $output = '';
 		self::html_markup( $h1, $output );
 	}
 	
@@ -163,7 +170,7 @@ class Agama_Breadcrumb {
 	 * @since 1.2.9
 	 */
 	private static function is_404() {
-		$h1		= sprintf( '<h1>%s</h1> <span>%s</span>', '404', __( 'Page not Found', 'agama' ) );
+		$h1		= sprintf( '<h1>%s</h1>', __( 'Page not found', 'agama' ) );
 		$output	= sprintf( '<li class="active">%s</li>', __( 'Page not Found', 'agama' ) );
 		
 		self::html_markup( $h1, $output );

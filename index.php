@@ -7,10 +7,16 @@
  * @since Agama
  */
 
+// Do not allow direct access to the file.
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 get_header(); ?>
 
 	<div id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
-		<div id="content" role="main" <?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' && ! is_singular() ): ?>class="js-isotope"  data-isotope-options='{ "itemSelector": ".article-wrapper" }'<?php endif; ?>>
+		<div id="content" role="main"<?php Agama_Helper::get_blog_isotope_class(); ?>>
+            
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>

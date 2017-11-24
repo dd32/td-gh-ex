@@ -3,6 +3,31 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.3.1 - 24 November 2017 =
+* Added body typography feature into Customize -> General -> Body.
+* Added header textual logo typography feature.
+* Added navigation top typography feature.
+* Added navigation primary typography feature.
+* Added navigation mobile typography feature.
+* Added enable / disable HTML tags suggestion on comment form.
+* Added tag cloud icon on single page / post.
+* Extended customizer with FontAwesome icon picker feature.
+* Updated Kirki framework to the latest version.
+* Updated customizer preview for many features to partial refresh.
+* Updated 404 not found page styling.
+* Updated search form styling.
+* Updated tag cloud widget style.
+* Improved CSS inline loading speed.
+* Fixed top navigation social icons enable / disable issue.
+* Fixed static front page breadcrumb to show page title instead of "Home".
+* Fixed particles overflow on header image issue.
+* Fixed sidebar left side bugs.
+* Fixed blog grid layout issues.
+* Fixed blog infinity scroll bug.
+* Fixed back to top button on small media devices.
+* Fixed Notice: Kirki_Field::set_output was called incorrectly. "output" invalid format in field agama_slider_overlay_bg_color.
+* Fixed Notice: Kirki::add_field was called incorrectly. Do not use "alpha" as an argument in color controls.
+
 = 1.3.0 July 27 2017 =
 * Added top navigation select links color feature.
 * Added top navigation select links hover color feature.

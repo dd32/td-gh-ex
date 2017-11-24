@@ -1,7 +1,9 @@
 <?php 
 
 // Do not allow direct access to the file.
-if( ! defined( 'ABSPATH' ) ) exit;
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 /**
  * Agama Frontpage Boxes Class
@@ -143,9 +145,15 @@ class Agama_Front_Page_Boxes {
 							echo '<a href="'. $box[1]['iurl'] .'">';
 						}
 						if( $box[1]['img'] ) {
-							echo '<img src="'. $box[1]['img'] .'" alt="'. $box[1]['title'] .'">';
+                            echo '<img src="'. $box[1]['img'] .'" alt="'. $box[1]['title'] .'">';
 						} else {
-							echo '<i class="fa '. $box[1]['icon'] .'"></i>';
+                            if( is_customize_preview() ) { 
+                                echo '<span class="fbox-icon" style="display:block;text-align:center;">';
+                                    echo '<i class="fa '. $box[1]['icon'] .'"></i>';
+                                echo '</span>';
+                            } else {
+				                echo '<i class="fa '. $box[1]['icon'] .'"></i>';
+                            }
 						}
 						if( $box[1]['iurl'] ) {
 							echo '</a>';
@@ -165,9 +173,15 @@ class Agama_Front_Page_Boxes {
 							echo '<a href="'. $box[2]['iurl'] .'">';
 						}
 						if( $box[2]['img'] ) {
-							echo '<img src="'. $box[2]['img'] .'" alt="'. $box[2]['title'] .'">';
+                            echo '<img src="'. $box[2]['img'] .'" alt="'. $box[2]['title'] .'">';
 						} else {
-							echo '<i class="fa '. $box[2]['icon'] .'"></i>';
+							if( is_customize_preview() ) { 
+                                echo '<span class="fbox-icon" style="display:block;text-align:center;">';
+                                    echo '<i class="fa '. $box[2]['icon'] .'"></i>';
+                                echo '</span>';
+                            } else {
+				                echo '<i class="fa '. $box[2]['icon'] .'"></i>';
+                            }
 						}
 						if( $box[2]['iurl'] ) {
 							echo '</a>';
@@ -189,7 +203,13 @@ class Agama_Front_Page_Boxes {
 						if( $box[3]['img'] ) {
 							echo '<img src="'. $box[3]['img'] .'" alt="'. $box[3]['title'] .'">';
 						} else {
-							echo '<i class="fa '. $box[3]['icon'] .'"></i>';
+							if( is_customize_preview() ) { 
+                                echo '<span class="fbox-icon" style="display:block;text-align:center;">';
+                                    echo '<i class="fa '. $box[3]['icon'] .'"></i>';
+                                echo '</span>';
+                            } else {
+				                echo '<i class="fa '. $box[3]['icon'] .'"></i>';
+                            }
 						}
 						if( $box[3]['iurl'] ) {
 							echo '</a>';
@@ -211,7 +231,13 @@ class Agama_Front_Page_Boxes {
 						if( $box[4]['img'] ) {
 							echo '<img src="'. $box[4]['img'] .'" alt="'. $box[4]['title'] .'">';
 						} else {
-							echo '<i class="fa '. $box[4]['icon'] .'"></i>';
+							if( is_customize_preview() ) { 
+                                echo '<span class="fbox-icon" style="display:block;text-align:center;">';
+                                    echo '<i class="fa '. $box[4]['icon'] .'"></i>';
+                                echo '</span>';
+                            } else {
+				                echo '<i class="fa '. $box[4]['icon'] .'"></i>';
+                            }
 						}
 						if( $box[4]['iurl'] ) {
 							echo '</a>';

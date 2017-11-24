@@ -3,6 +3,12 @@
  bbPress Template
  @since Agama v1.0.2
 */
+
+// Do not allow direct access to the file.
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 get_header(); ?>
 
 	<div id="primary" class="site-content <?php echo Agama::bs_class(); ?>">

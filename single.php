@@ -7,6 +7,11 @@
  * @since Agama 1.0
  */
 
+// Do not allow direct access to the file.
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 get_header(); ?>
 
 	<div id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
@@ -16,15 +21,13 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				
 				<?php if( get_theme_mod( 'agama_blog_single_post_thumbnail', true ) ): ?>
-				<header class="entry-header">
-				<?php if ( ! post_password_required() && ! is_attachment() && get_the_post_thumbnail() && ! is_search() ) { // Attachments ?>
-						
-					<figure class="hover1">
-						<img src="<?php echo agama_return_image_src('agama-blog-large'); ?>" class="img-responsive">
-					</figure>
-						
-				<?php } ?>
-				</header>
+                    <?php if ( ! post_password_required() && ! is_attachment() && get_the_post_thumbnail() && ! is_search() ): ?>
+                        <header class="entry-header">
+                            <figure class="hover1">
+                                <img src="<?php echo agama_return_image_src('agama-blog-large'); ?>" class="img-responsive">
+                            </figure>
+                        </header>
+                     <?php endif; ?>
 				<?php endif; ?>
 
 				<div class="article-entry-wrapper">
@@ -35,40 +38,24 @@ get_header(); ?>
 						</div>
 					<?php } ?>
 					
-					<?php
-					/**
-					 * agama_blog_post_date_and_format hook
-					 *
-					 * @hooked agama_render_blog_post_date - 10 (output HML post date & format)
-					 */
-					if( get_theme_mod('agama_blog_post_meta', true) ):
-						do_action( 'agama_blog_post_date_and_format' ); 
-					endif;
-					?>
+					<?php do_action( 'agama_blog_post_date_and_format' ); ?>
 					
 					<div class="entry-content">
-					
-						<h1 class="entry-title"><?php the_title(); ?></h1>
+					   
+                        <?php if( ! get_theme_mod( 'agama_breadcrumb', true ) ): ?>
+				            <h1 class="entry-title"><?php the_title(); ?></h1>
+                        <?php endif; ?>
 						
-						<?php
-						/**
-						 * agama_blog_post_meta hook
-						 *
-						 * @hooked agama_render_blog_post_meta - 10  (output HTML post meta details)
-						 */
-						if( get_theme_mod('agama_blog_post_meta', true) ):
-							echo '<p class="single-line-meta">';
-							do_action( 'agama_blog_post_meta' );
-							echo '</p>';
-						endif;
-						?>
+						<?php do_action( 'agama_blog_post_meta' ); ?>
 
 						<?php the_content(); ?>
 						
+                        <?php if( get_the_tags() ): ?>
 						<!-- Tags -->
 						<div class="tagcloud clearfix bottommargin">
-							<?php the_tags(false, false, false); ?>
+							<i class="fa fa-tags"></i> <?php the_tags(false, false, false); ?>
 						</div><!-- Tags End -->
+                        <?php endif; ?>
 
 						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'agama' ), 'after' => '</div>' ) ); ?>
 						

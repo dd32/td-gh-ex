@@ -1,27 +1,31 @@
-<?php $search_post_thumbnails = get_theme_mod('agama_search_page_thumbnails', ''); ?>
+<?php
 
-<?php if( ! defined( 'ABSPATH' ) ) exit; ?>
+// Do not allow direct access to the file.
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+$search_post_thumbnails = esc_attr( get_theme_mod( 'agama_search_page_thumbnails', '' ) );
+$has_post_thumbnail     = has_post_thumbnail() && ! is_search() || 
+                          is_search() && has_post_thumbnail() && $search_post_thumbnails; ?>
 
 <!-- Small Thumbs -->
 <div class="small-thumbs">
 
 	 <div class="entry clearfix">
 		
-		<?php if( has_post_thumbnail() && ! is_search() || is_search() && has_post_thumbnail() && $search_post_thumbnails ): ?>
-		<!-- Entry Image -->
+		<?php if( $has_post_thumbnail ): ?>
 		<div class="entry-image">
 		
 			<?php if( get_theme_mod( 'agama_blog_thumbnails_permalink', true ) ): ?>
 				<a href="<?php the_permalink(); ?>">
-			<?php endif; ?>
-			
+                    <img class="image_fade img-responsive image-grow" src="<?php echo agama_return_image_src('agama-blog-small'); ?>" alt="<?php the_title(); ?>">
+                </a>
+			<?php else: ?>
 				<img class="image_fade img-responsive image-grow" src="<?php echo agama_return_image_src('agama-blog-small'); ?>" alt="<?php the_title(); ?>">
+            <?php endif; ?>
 			
-			<?php if( get_theme_mod( 'agama_blog_thumbnails_permalink', true ) ): ?>
-				</a>
-			<?php endif; ?>
-			
-		</div><!--.entry-image-->
+		</div>
 		<?php endif; ?>
 		
 		<div class="entry-c">

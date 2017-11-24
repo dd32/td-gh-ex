@@ -1,5 +1,8 @@
 <?php
-if( ! defined( 'ABSPATH' ) ) exit;
+// Do not allow direct access to the file.
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 ################################################################
 # Animate Return Options | @since 1.2.0 | using in customizer
 ################################################################

@@ -1,7 +1,9 @@
 <?php 
 
 // Do not allow direct access to the file.
-if( ! defined( 'ABSPATH' ) ) exit;
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 /**
  * Agama Helper Class
@@ -16,7 +18,10 @@ class Agama_Helper {
 	 * @since 1.2.9
 	 */
 	public static function get_header() {
-		$header = esc_attr( get_theme_mod( 'agama_header_style', 'transparent' ) );
+        global $top_nav, $social_icons;
+		$header       = esc_attr( get_theme_mod( 'agama_header_style', 'transparent' ) );
+        $top_nav      = esc_attr( get_theme_mod( 'agama_top_navigation', true ) );
+        $social_icons = esc_attr( get_theme_mod( 'agama_top_nav_social', true ) );
 		switch( $header ):
 			case 'transparent':
 				get_template_part( 'framework/headers/header-transparent' );
@@ -102,13 +107,25 @@ class Agama_Helper {
 	 * @since 1.2.8
 	 */
 	public static function get_data_animated() {
-		$animated  = esc_attr( get_theme_mod( 'agama_blog_posts_load_animated', true ) );
-		$animation = esc_attr( get_theme_mod( 'agama_blog_posts_load_animation', 'bounceInUp' ) );
+		$animated    = esc_attr( get_theme_mod( 'agama_blog_posts_load_animated', true ) );
+		$animation   = esc_attr( get_theme_mod( 'agama_blog_posts_load_animation', 'bounceInUp' ) );
+        $blog_layout = esc_attr( get_theme_mod( 'agama_blog_layout', 'list' ) ); 
 		
-		if( $animated && ! is_single() ) {
+		if( $animated && $blog_layout !== 'grid' && ! is_single()) {
 			echo ' data-animate="'. $animation .'" data-delay="100"';
 		}
 	}
+    
+    /**
+     * Get Blog Grid Wrapper Isotope Data
+     *
+     * @since 1.3.1
+     */
+    public static function get_blog_isotope_class() {
+        if( ! is_single() && get_theme_mod( 'agama_blog_layout', 'list' ) == 'grid' ) {
+            echo 'class="js-isotope"';
+        }
+    }
 	
 	/**
 	 * Generate Footer Widgets Bootstrap Class

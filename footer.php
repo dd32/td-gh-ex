@@ -8,10 +8,14 @@
  * @subpackage Agama
  * @since Agama 1.0
  */
-?>		
-			</div><!-- .container -->
-		</div><!-- #main .wrapper -->
-	</div><!-- #page -->
+
+// Do not allow direct access to the file.
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+} ?>		
+			</div>
+		</div>
+	</div>
 	
 	<?php 
 	if( 

@@ -10,6 +10,7 @@ var THEMEVISION = THEMEVISION || {};
 			
 			THEMEVISION.initialize.responsiveClasses();
 			THEMEVISION.initialize.slider();
+            THEMEVISION.initialize.blogGridIsotope();
 			THEMEVISION.initialize.goToTop();
 			
 		},
@@ -230,6 +231,16 @@ var THEMEVISION = THEMEVISION || {};
 				}
 			}
 		},
+        
+        blogGridIsotope: function() {
+            if( agama.blog_layout == 'grid' && ! $('body').hasClass('single-post') && $('div.article-wrapper').hasClass('grid-style') ) {
+                $('#content').imagesLoaded( function(){
+                    var $grid = $('#content').isotope({
+                        itemSelector: 'div.article-wrapper'
+                    });
+                });
+            }
+        },
 		
 		goToTop: function(){
 			$goToTopEl.click(function() {
@@ -239,11 +250,11 @@ var THEMEVISION = THEMEVISION || {};
 		},
 		
 		goToTopScroll: function(){
-			if( $body.hasClass('device-lg') || $body.hasClass('device-md') || $body.hasClass('device-sm') ) {
+			if( $body.hasClass('device-lg') || $body.hasClass('device-md') || $body.hasClass('device-sm') || $body.hasClass('device-xs') || $body.hasClass('device-xxs') ) {
 				if($window.scrollTop() > 450) {
-					$goToTopEl.fadeIn();
+					$goToTopEl.slideDown();
 				} else {
-					$goToTopEl.fadeOut();
+					$goToTopEl.slideUp();
 				}
 			}
 		},

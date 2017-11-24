@@ -1,5 +1,9 @@
 <?php
-if( ! defined( 'ABSPATH' ) ) exit;
+
+// Do not allow direct access to the file.
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 // Include Agama Custom Header Function File
 get_template_part('includes/agama-custom-header');
@@ -30,9 +34,7 @@ function agama_setup() {
 	// This theme supports a variety of post formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
 
-	if( get_theme_mod( 'agama_header_style', '' ) !== 'transparent' ) {
-		register_nav_menu( 'top', __( 'Top Menu', 'agama' ) );
-	}
+    register_nav_menu( 'top', __( 'Top Menu', 'agama' ) );
 	register_nav_menu( 'primary', __( 'Primary Menu', 'agama' ) );
 
 	/*
@@ -257,11 +259,16 @@ add_filter( 'comment_form_defaults', 'agama_comment_form_defaults' );
 function agama_comment_form_defaults( $defaults ) {
 	global $current_user;
 	
-	$defaults['logged_in_as'] 			= '<div class="col-md-12 logged-in-as">' . sprintf(	'%s <a href="%s">%s</a>. <a href="%s" title="%s">%s</a>', __('Logged in as', 'agama'), admin_url( 'profile.php' ), $current_user->display_name, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ), __('Log out of this account', 'agama'), __('Log out?', 'agama') ) . '</div>';
-	$defaults['comment_field'] 			= '<div class="col-md-12"><label for="comment">' . __( 'Comment', 'agama' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" class="sm-form-control"></textarea></div>';
-	$defaults['comment_notes_after'] 	= '<div class="col-md-12" style="margin-top: 15px; margin-bottom: 15px;">' . sprintf( '%s <abbr title="HyperText Markup Language">HTML</abbr> %s: %s', __( 'You may use these', 'agama' ), __( 'tags and attributes', 'agama' ), '<code>' . allowed_tags() . '</code>') . '</div>';
-	$defaults['title_reply']			= sprintf( '%s <span>%s</span>', __( 'Leave a', 'agama' ), __( 'Comment', 'agama' ) );
-	$defaults['class_submit']			= 'button button-3d button-large button-rounded';
+	$defaults['logged_in_as'] = '<div class="col-md-12 logged-in-as">' . sprintf(	'%s <a href="%s">%s</a>. <a href="%s" title="%s">%s</a>', __('Logged in as', 'agama'), admin_url( 'profile.php' ), $current_user->display_name, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ), __('Log out of this account', 'agama'), __('Log out?', 'agama') ) . '</div>';
+	$defaults['comment_field'] = '<div class="col-md-12"><label for="comment">' . __( 'Comment', 'agama' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" class="sm-form-control"></textarea></div>';
+	
+    // HTML Tags Usage Suggestion
+    if( get_theme_mod( 'agama_comments_tags_suggestion', true ) ) {
+        $defaults['comment_notes_after'] = '<div class="col-md-12" style="margin-top: 15px; margin-bottom: 15px;">' . sprintf( '%s <abbr title="HyperText Markup Language">HTML</abbr> %s: %s', __( 'You may use these', 'agama' ), __( 'tags and attributes', 'agama' ), '<code>' . allowed_tags() . '</code>') . '</div>';
+    }
+    
+	$defaults['title_reply']	= sprintf( '%s <span>%s</span>', __( 'Leave a', 'agama' ), __( 'Comment', 'agama' ) );
+	$defaults['class_submit']	= 'button button-3d button-large button-rounded';
 	
 	return $defaults;
 }
@@ -347,19 +354,20 @@ function agama_article_wrapper_class() {
 if( ! function_exists( 'agama_render_blog_post_date' ) ) {
 	function agama_render_blog_post_date() {
 		global $post;
-		
-		// Display blog post date only on posts loop page.
-		if( ! is_single() && get_theme_mod( 'agama_blog_post_date', true ) ) {
-			echo '<div class="entry-date">';
-				echo '<div class="date-box updated">';
-					printf( '<span class="date">%s</span>', get_the_time('d') ); // Get day
-					printf( '<span class="month-year">%s</span>', get_the_time('m, Y') ); // Get month, year
-				echo '</div>';
-				echo '<div class="format-box">';
-					printf( '%s', Agama::post_format() );
-				echo '</div>';
-			echo '</div>';
-		}
+		if( get_theme_mod( 'agama_blog_post_meta', true ) ) {
+            // Display blog post date only on posts loop page.
+            if( ! is_single() && get_theme_mod( 'agama_blog_post_date', true ) ) {
+                echo '<div class="entry-date">';
+                    echo '<div class="date-box updated">';
+                        printf( '<span class="date">%s</span>', get_the_time('d') ); // Get day
+                        printf( '<span class="month-year">%s</span>', get_the_time('m, Y') ); // Get month, year
+                    echo '</div>';
+                    echo '<div class="format-box">';
+                        printf( '%s', Agama::post_format() );
+                    echo '</div>';
+                echo '</div>';
+            }
+        }
 	}
 }
 add_action( 'agama_blog_post_date_and_format', 'agama_render_blog_post_date', 10 );
@@ -371,49 +379,51 @@ add_action( 'agama_blog_post_date_and_format', 'agama_render_blog_post_date', 10
  */
 if( ! function_exists( 'agama_render_blog_post_meta' ) ) {
 	function agama_render_blog_post_meta() {
-		
-		// Display blog post author.
-		if( get_theme_mod( 'agama_blog_post_author', true ) ) {
-			printf( 
-				'%s <span class="vcard"><span class="fn">%s</span></span>', 
-				'<i class="fa fa-user"></i>', 
-				get_the_author_link() 
-			);
-		}
-		
-		// Display blog post publish date.
-		if( get_theme_mod( 'agama_blog_post_date', true ) ) {
-			printf( 
-				'%s %s <span>%s</span>',
-				'<span class="inline-sep">/</span>',				
-				'<i class="fa fa-calendar"></i>', 
-				get_the_time('F j, Y') 
-			);
-		}
-		
-		// Display next details only on list blog layout or on single post page.
-		if( get_theme_mod('agama_blog_layout', 'list') == 'list' || is_single() ) {
-			
-			// Display post category.
-			if( get_theme_mod( 'agama_blog_post_category', true ) ) {
-				printf( 
-					'%s %s %s', 
-					'<span class="inline-sep">/</span>',
-					'<i class="fa fa-folder-open"></i>', 
-					get_the_category_list(', ') 
-				);
-			}
-			
-			// Display post comment counter.
-			if( comments_open() && get_theme_mod( 'agama_blog_post_comments', true ) ) {
-				printf( 
-					'%s %s <a href="%s">%s</a>', 
-					'<span class="inline-sep">/</span>',
-					'<i class="fa fa-comments"></i>', 
-					get_comments_link(), 
-					get_comments_number().__( ' comments', 'agama' ) 
-				);
-			}
+		if( get_theme_mod( 'agama_blog_post_meta', true ) ) {
+            echo '<p class="single-line-meta">';
+                // Display blog post author.
+                if( get_theme_mod( 'agama_blog_post_author', true ) ) {
+                    printf( 
+                        '%s <span class="vcard"><span class="fn">%s</span></span>', 
+                        '<i class="fa fa-user"></i>', 
+                        get_the_author_link() 
+                    );
+                }
+
+                // Display blog post publish date.
+                if( get_theme_mod( 'agama_blog_post_date', true ) ) {
+                    printf( 
+                        '%s %s <span>%s</span>',
+                        '<span class="inline-sep">/</span>',				
+                        '<i class="fa fa-calendar"></i>', 
+                        get_the_time('F j, Y') 
+                    );
+                }
+
+                // Display next details only on list blog layout or on single post page.
+                if( get_theme_mod('agama_blog_layout', 'list') == 'list' || is_single() ) {
+                    // Display post category.
+                    if( get_theme_mod( 'agama_blog_post_category', true ) ) {
+                        printf( 
+                            '%s %s %s', 
+                            '<span class="inline-sep">/</span>',
+                            '<i class="fa fa-folder-open"></i>', 
+                            get_the_category_list(', ') 
+                        );
+                    }
+
+                    // Display post comment counter.
+                    if( comments_open() && get_theme_mod( 'agama_blog_post_comments', true ) ) {
+                        printf( 
+                            '%s %s <a href="%s">%s</a>', 
+                            '<span class="inline-sep">/</span>',
+                            '<i class="fa fa-comments"></i>', 
+                            get_comments_link(), 
+                            get_comments_number().__( ' comments', 'agama' ) 
+                        );
+                    }
+                }
+            echo '</p>';
 		}
 	}
 }
@@ -427,13 +437,13 @@ add_action( 'agama_blog_post_meta', 'agama_render_blog_post_meta', 10 );
 function agama_infinite_scroll_init() { ?>
 <script>
 jQuery(function($){
-	<?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' && ! is_singular() ): ?>
-	var $container = $('#content').imagesLoaded(function(){
+	<?php if( get_theme_mod( 'agama_blog_layout', 'list' ) == 'grid' && ! is_singular() ): ?>
+	var $container = $('#content').ready(function(){
 	
 		$container.isotope({
 			itemSelector : '.article-wrapper'
 		});
-	  
+        
 		$container.infinitescroll({
 			navSelector  : '.navigation',
 			nextSelector : '.nav-previous a',
@@ -450,7 +460,9 @@ jQuery(function($){
 			},
 			// call Isotope as a callback
 			function( newElements ) {
-				$container.isotope( 'appended', $( newElements ) ); 
+                var $newElems = $(newElements);
+				$container.isotope( 'appended', $newElems );
+                $container.isotope('reLayout');
 			}
 		);
 		
@@ -459,8 +471,12 @@ jQuery(function($){
 		jQuery('.navigation').css('display', 'none');
 		
 		jQuery('#infinite-loadmore').click(function() {
-			jQuery('#content').infinitescroll('retrieve');
-				return false;
+			$container.infinitescroll({
+                navSelector  : '.navigation',
+                nextSelector : '.nav-previous a',
+                itemSelector : '.article-wrapper'
+            });
+            return false;
 		});
 		
 		jQuery(document).ajaxError(function(e,xhr,opt) {
@@ -470,6 +486,7 @@ jQuery(function($){
 		<?php endif; ?>
 	});
 	<?php else: ?>
+    
 	jQuery('#content').infinitescroll({
 		navSelector  : '.navigation',
 		nextSelector : '.navigation .nav-previous a',
@@ -480,7 +497,7 @@ jQuery(function($){
 		},
 	});
 	
-	<?php if( get_theme_mod('agama_blog_infinite_trigger', 'button') == 'button'): ?>
+	<?php if( get_theme_mod( 'agama_blog_infinite_trigger', 'button' ) == 'button' ): ?>
 	jQuery(window).unbind('.infscr');
 	jQuery('.navigation').css('display', 'none');
 	
@@ -494,7 +511,6 @@ jQuery(function($){
 			jQuery('.navigation .nav-previous a').remove();
 	});
 	<?php endif; ?>
-	
 	<?php endif; ?>
 });
 </script>

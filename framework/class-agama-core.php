@@ -1,6 +1,9 @@
 <?php
-// Prevent direct access to the file
-if( ! defined( 'ABSPATH' ) ) exit; 
+
+// Do not allow direct access to the file.
+if( ! defined( 'ABSPATH' ) ) {
+    exit; 
+}
 
 /**
  * Agama Core Class
@@ -23,7 +26,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
 		 * @rewritten
 		 * @since 1.1.5
 		 */
-		static private $version = '1.3.0';
+		static private $version = '1.3.1';
 		
 		/**
 		 * Development Mode
@@ -214,10 +217,15 @@ if( ! class_exists( 'Agama_Core' ) ) {
 				'slider_particles_lines_color'	=> esc_attr( get_theme_mod( 'agama_slider_particles_lines_color', '#FE6663' ) ),
 				'header_image_particles'		=> esc_attr( get_theme_mod( 'agama_header_image_particles', true ) ),
 				'header_img_particles_c_color'	=> esc_attr( get_theme_mod( 'agama_header_image_particles_circle_color', '#FE6663' ) ),
-				'header_img_particles_l_color'	=> esc_attr( get_theme_mod( 'agama_header_image_particles_lines_color', '#FE6663' ) )
+				'header_img_particles_l_color'	=> esc_attr( get_theme_mod( 'agama_header_image_particles_lines_color', '#FE6663' ) ),
+                'blog_layout'                   => esc_attr( get_theme_mod( 'agama_blog_style', 'list' ) )
 			);
 			wp_localize_script( 'agama-functions', 'agama', $translation_array );
 			wp_enqueue_script( 'agama-functions' );
+            
+            if( get_theme_mod( 'agama_blog_infinite_scroll', false ) ) {
+                add_action( 'wp_footer', 'agama_infinite_scroll_init' );
+            }
 		}
 		
 		/**
@@ -236,7 +244,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
 		 * @since Agama v1.0.3
 		 */
 		function footer_scripts() {
-			if( get_theme_mod('agama_nicescroll', false) ) {
+			if( get_theme_mod( 'agama_nicescroll', false ) ) {
 				echo '
 				<script>
 				jQuery(document).ready(function($) {
@@ -269,6 +277,17 @@ if( ! class_exists( 'Agama_Core' ) ) {
 					update_option( '_agama_1291_migrated', true );
 				}
 			}
+            // If current theme version is bigger than "1.3.0" apply next updates.
+            // Migrate Custom CSS code to WP Additional CSS.
+            if( version_compare( '1.3.0', self::$version, '<' ) ) {
+                if( ! get_option( '_agama_130_migrated' ) ) {
+                    $custom_css = esc_attr( get_theme_mod( 'agama_custom_css', '' ) );
+                    if( ! empty( $custom_css ) ) {
+                        wp_update_custom_css_post( $custom_css );
+                        update_option( '_agama_130_migrated', true );
+                    }
+                }
+            }
 		}
 		
 		/**

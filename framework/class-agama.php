@@ -1,6 +1,9 @@
 <?php 
+
 // Prevent direct access to the file
-if( ! defined( 'ABSPATH' ) ) exit; 
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 /**
  * Agama Class
@@ -60,6 +63,10 @@ if( ! class_exists( 'Agama' ) ) {
 			$header 			= esc_attr( get_theme_mod( 'agama_header_style', 'transparent' ) );
 			$sidebar_position	= esc_attr( get_theme_mod( 'agama_sidebar_position', 'right' ) );
 			$blog_layout 		= esc_attr( get_theme_mod('agama_blog_layout', 'list') );
+            
+            if( is_404() ) {
+                $classes[] = 'vision-404';
+            }
 			
 			// Apply header style class.
 			switch( $header ) {
@@ -108,10 +115,6 @@ if( ! class_exists( 'Agama' ) ) {
 				elseif ( in_array( $background_color, array( 'fff', 'ffffff' ) ) )
 					$classes[] = 'custom-background-white';
 			}
-
-			// Apply custom font enabled class.
-			if ( wp_style_is( 'PTSans', 'queue' ) )
-				$classes[] = 'custom-font-enabled';
 			
 			// Apply single author class.
 			if ( ! is_multi_author() )
@@ -161,7 +164,8 @@ if( ! class_exists( 'Agama' ) ) {
 		 * @since 1.0.0
 		 */
 		function excerpt_length( $length ) {
-			return esc_attr( get_theme_mod('agama_blog_excerpt', '60') );
+            $custom = esc_attr( get_theme_mod( 'agama_blog_excerpt', '60' ) );
+			return $length = intval( $custom );
 		}
 		
 		/**
@@ -205,14 +209,15 @@ if( ! class_exists( 'Agama' ) ) {
 		public static function menu( $location = false, $class = false ) {
 			
 			// If location not set
-			if( ! $location )
+			if( ! $location ) {
 				return;
+            }
 			
 			$args = array(
 				'theme_location' => $location,
-				'menu_class' => $class,
-				'container' => false,
-				'echo' => '0'
+				'menu_class'     => $class,
+				'container'      => false,
+				'echo'           => '0'
 			);
 			
 			$menu = wp_nav_menu( $args );
@@ -247,7 +252,6 @@ if( ! class_exists( 'Agama' ) ) {
 				'Linkedin'	=> esc_url( get_theme_mod('social_linkedin', '') ),
 				'Blogger'	=> esc_url( get_theme_mod('social_blogger', '') ),
 				'Skype'		=> esc_html( get_theme_mod('social_skype', '') ),
-				'Forrst'	=> esc_url( get_theme_mod('social_forrst', '') ),
 				'Myspace'	=> esc_url( get_theme_mod('social_myspace', '') ),
 				'Deviantart'=> esc_url( get_theme_mod('social_deviantart', '') ),
 				'Yahoo'		=> esc_url( get_theme_mod('social_yahoo', '') ),

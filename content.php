@@ -8,7 +8,13 @@
  * @subpackage Agama
  * @since Agama 1.0
  */
- $blog_layout = esc_attr( get_theme_mod('agama_blog_layout', 'list') ); ?>
+
+// Do not allow direct access to the file.
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+$blog_layout = esc_attr( get_theme_mod('agama_blog_layout', 'list') ); ?>
 
 <div class="article-wrapper <?php agama_article_wrapper_class(); ?> clearfix"<?php Agama_Helper::get_data_animated(); ?>>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
