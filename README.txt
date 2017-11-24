@@ -51,19 +51,19 @@ GNU General Public License for more details.
 BfastMag bundles the following third-party resources:
 
 Bootstrap v3.3.5 , Copyright 2011-2016 Twitter, Inc.
-License: MIT
+License: MIT, https://github.com/twbs/bootstrap/blob/master/LICENSE
 Source: http://getbootstrap.com
 
 Owl Carousel , Copyright 2014 Owl
-License: MIT
+License: MIT, https://github.com/OwlCarousel2/OwlCarousel2/blob/develop/LICENSE
 Source: https://github.com/OwlCarousel2/OwlCarousel2
 
 Font Awesome icons, Copyright Dave Gandy
-License: SIL Open Font License, version 1.1.
+License: SIL Open Font License, version 1.1., http://fontawesome.io/license/
 Source: http://fontawesome.io/
 
 Font Awesome Iconpicker, Copyright 2016 Javi Aguilar
-License: MIT
+License: MIT, https://github.com/farbelous/fontawesome-iconpicker/blob/master/LICENSE
 Source: https://github.com/itsjavi/fontawesome-iconpicker
 
 Bundled Background image, Copyright Kasper Bertelsen

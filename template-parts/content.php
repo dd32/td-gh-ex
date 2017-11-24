@@ -25,7 +25,7 @@
 				$post_thumbnail = apply_filters( 'bfastmag_get_prev_img', $post_thumbnail_url );
 
 				if ( ! empty( $post_thumbnail ) ) {
-					echo $post_thumbnail;
+					echo  ($post_thumbnail);
 				} else {
 					echo '<img src="' . get_template_directory_uri() . '/assets/images/blog-default.jpg" />';
 				}
