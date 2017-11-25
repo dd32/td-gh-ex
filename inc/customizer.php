@@ -212,7 +212,7 @@ h1,h2,h3,h4,h5,h6,
 <?php echo $bellini_meta_color_text;?>{color: <?php echo $bellini_accent_color; ?>;}
 <?php echo $bellini_meta_color_background;?>{background-color: <?php echo $bellini_accent_color; ?>;}
 
-.current-menu-item a,.main-navigation .menu-item a:hover{border-color:<?php echo $bellini_primary_color; ?> !important;}
+.current_page_item a,.current-menu-item a,.main-navigation .nav-menu a:hover{border-bottom:3px solid <?php echo $bellini_primary_color; ?> !important;}
 
 a{color: <?php echo $link_text_color; ?>;}
 a:hover,a:focus,a:active{color: <?php echo $link_hover_color; ?>;}

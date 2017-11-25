@@ -7,7 +7,7 @@ $bellini = bellini_option_defaults();
 if ( ! function_exists( 'bellini_before_content' ) ):
 	function bellini_before_content() { ?>
 		<div class="bellini__canvas">
-		<main id="main" class="site-main" role="main" itemprop="mainContentOfPage">
+		<main id="main" class="site-main" role="main">
 		<div class="row">
 		<?php
 	}
@@ -104,9 +104,9 @@ function bellini_woo_product_per_page( $count ) {
 if ( ! function_exists( 'bellini_woocommerce_template_loop_price' ) ):
 	function bellini_woocommerce_template_loop_price() {
 		global $product; ?>
-		<div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="product-card__info__price">
+		<div class="product-card__info__price">
 			<?php if ( $price_html = $product->get_price_html() ) : ?>
-				<span itemprop="price" class="price">
+				<span class="price">
 					<?php echo $price_html; ?>
 				</span>
 			<?php endif; ?>
@@ -147,7 +147,7 @@ if ( ! function_exists( 'bellini_before_woo_product_archive_item_one' ) ):
 	function bellini_before_woo_product_archive_item_one() {
 		global $bellini;
 		$woo_product_column = esc_attr($bellini['bellini_woo_shop_product_column']);?>
-		<div itemscope itemtype="http://schema.org/Product" class="product--l1 product-holder--l1 <?php echo $woo_product_column;?>">
+		<div class="product--l1 product-holder--l1 <?php echo $woo_product_column;?>">
 		<div class="product-card__inner">
 		<?php
 	}
@@ -180,7 +180,7 @@ endif;
 
 if ( ! function_exists( 'bellini_woo_product_info_title_archive_item' ) ):
 	function bellini_woo_product_info_title_archive_item() { ?>
-		<div itemprop="name" class="product-card__info__product">
+		<div class="product-card__info__product">
 		<?php
 	}
 endif;

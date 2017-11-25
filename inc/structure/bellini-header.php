@@ -8,15 +8,15 @@ function bellini_header_logo(){ ?>
 			the_custom_logo();
 		else: ?>
 		<!-- Display the Sitename as Logo -->
-			<p class="site-title" itemprop="headline">
-				<a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<p class="site-title">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<?php bloginfo( 'name' ); ?>
 				</a>
 			</p>
 	<?php endif;
 		$description = get_bloginfo( 'description', 'display' );
 		if ( $description || is_customize_preview() ) : ?>
-			<p class="site-description" itemprop="description">
+			<p class="site-description">
 				<?php echo $description; ?>
 			</p>
 		<?php endif; ?>
@@ -32,15 +32,15 @@ if ( $bellini['bellini_menu_layout'] == 'hamburger' ):?>
 			<div class="hamburger__menu__full">
 			<div class="row hamburger__menu__middle" aria-controls="primary-menu" aria-expanded="true">
 
-			<div class="col-xs-12 hamburger__site-title" itemprop="headline">
-				<a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			<div class="col-xs-12 hamburger__site-title">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<?php bloginfo( 'name' ); ?>
 				</a>
 				<a class="ham__close"><?php esc_attr_e( 'Close', 'bellini' ); ?></a>
 			</div>
 
 				<div class="col-md-12 col-xs-12 site-header-cart menu clearfix">
-				<nav id="site-navigation-ham" aria-label="site links" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+				<nav id="site-navigation-ham" aria-label="site links">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'main-nav' ) ); ?>
 				</nav>
 				</div>
@@ -70,7 +70,7 @@ if ( $bellini['bellini_menu_layout'] == 'hamburger' ):?>
 			</nav><!-- #site-navigation -->
 			<?php }else{ ?>
 
-			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="site links" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="site links">
 				<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
 					<?php esc_html_e( 'Menu', 'bellini' ); ?>
 				</button>

@@ -8,7 +8,7 @@
  */
 global $bellini;
 get_header(); ?>
-<main id="primary" role="main" itemprop="mainContentOfPage" class="content-area">
+<main id="primary" role="main" class="content-area">
 <div id="main" class="site-main">
 		<?php
 		if ( have_posts() ) : ?>
@@ -22,7 +22,7 @@ get_header(); ?>
 			<div class="bellini__canvas">
 			<div class="row">
 
-				<div class="template__blog <?php bellini_blog_sidebar();?>" itemscope="itemscope" itemtype="http://schema.org/Blog">
+				<div class="template__blog <?php bellini_blog_sidebar();?>">
 				<div class="row">
 				<?php
 				/* Start the Loop */

@@ -7,7 +7,7 @@
  */
 get_header(); ?>
 
-	<main role="main" itemprop="mainContentOfPage">
+	<main role="main">
 		<?php
 			bellini_get_sidebar_before_content();
 

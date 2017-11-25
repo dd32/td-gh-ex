@@ -7,7 +7,7 @@
  * @package bellini
  */
 get_header(); ?>
-<main id="primary" role="main" itemprop="mainContentOfPage" class="content-area">
+<main id="primary" role="main" class="content-area">
 <div id="main" class="site-main">
 <section class="error-404 not-found bellini__canvas">
 <header class="page-header col-md-12">

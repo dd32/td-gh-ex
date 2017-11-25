@@ -8,7 +8,7 @@
  */
 global $bellini;
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class();?> itemscope itemtype="https://schema.org/CreativeWork">
+<article id="post-<?php the_ID(); ?>" <?php post_class();?>>
 <div class="container--card-content clearfix">
 <header class="entry-header single-post__header--l3">
 	<?php
@@ -17,7 +17,7 @@ global $bellini;
 		endif;
 	?>
 	<div class="post__header__inner">
-	<?php the_title( '<h1 class="entry-title element-title element-title--post single-post__title--l3" itemprop="headline">', '</h1>' ); ?>
+	<?php the_title( '<h1 class="entry-title element-title element-title--post single-post__title--l3">', '</h1>' ); ?>
 
 	<?php if($bellini['bellini_show_post_meta'] == true):
 		bellini_post_author();
@@ -31,11 +31,11 @@ global $bellini;
 </header>
 <?php
 	if ( has_excerpt( $post->ID ) ):?>
-		<div itemprop="description" class="single-post__excerpt--l3 text-center">
+		<div class="single-post__excerpt--l3 text-center">
 			<?php echo get_the_excerpt();?>
 		</div>
 <?php endif;?>
-<div class="entry-content single-post__body--l3" itemprop="text">
+<div class="entry-content single-post__body--l3">
 	<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

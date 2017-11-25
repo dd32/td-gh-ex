@@ -22,7 +22,7 @@ $bellini = bellini_option_defaults();
 	do_action( 'bellini_before_header' );
 	$header_orientation = sanitize_html_class($bellini['bellini_header_orientation']); ?>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bellini' ); ?></a>
-	<header id="masthead" class="site-header <?php echo $header_orientation; ?>" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+	<header id="masthead" class="site-header <?php echo $header_orientation; ?>" role="banner">
 
 	<div class="custom-header">
 		<div class="custom-header-media">

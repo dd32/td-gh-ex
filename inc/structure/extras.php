@@ -137,13 +137,11 @@ function bellini_post_tag() {
 function bellini_published_on() { ?>
     <span class="post-meta__time">
 
-      <span itemprop="datePublished">
+      <span>
         <time datetime="<?php echo get_the_date(get_option('date_format')); ?>" pubdate>
         <?php echo get_the_date(get_option('date_format'));?>
         </time>
       </span>
-
-      <meta itemprop="dateModified" content="<?php the_modified_time(get_option('date_format'));?>">
     </span>
 
 <?php }
@@ -164,10 +162,10 @@ function bellini_comment_count(){
 */
 function bellini_post_author() { ?>
 
-  <p class="post-meta__author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <span class="vcard author author_name" itemprop="name">
+  <p class="post-meta__author">
+    <span class="vcard author author_name">
     <span class="fn">
-      <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ));?>" class="post-meta__author__link" itemprop="url">
+      <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ));?>" class="post-meta__author__link">
         <?php the_author(); ?>
       </a>
     </span>
@@ -225,21 +223,14 @@ function bellini_category_transient_flusher() {
 function bellini_post_thumbnail(){
     global $bellini;
     if ( has_post_thumbnail() ) {
-
-                $meta   = wp_get_attachment_metadata( get_post_thumbnail_id( get_the_ID() ) );
-                $width  = $meta['width'];
-                $height = $meta['height'];
         ?>
-            <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+            <figure>
                 <?php the_post_thumbnail('bellini-thumb', array('class' => 'img-respponsive blog__post__image'));?>
-                <meta itemprop="url" content="<?php echo esc_url( the_post_thumbnail_url() ); ?>" />
-                <meta itemprop="width" content="<?php echo esc_attr( $width ); ?>" />
-                <meta itemprop="height" content="<?php echo esc_attr( $height ); ?>" />
-            </figure><!--/itemprop=image-->
+            </figure>
 
 <?php
     }else{?>
-        <img itemprop="image" src="<?php if ($bellini['bellini_post_featured_image' ]) : echo $bellini['bellini_post_featured_image']; else: echo get_parent_theme_file_uri('/images/featured-image.jpg'); endif; ?>" class="img-responsive blog__post__image" alt="<?php the_title(); ?>" />
+        <img src="<?php if ($bellini['bellini_post_featured_image' ]) : echo $bellini['bellini_post_featured_image']; else: echo get_parent_theme_file_uri('/images/featured-image.jpg'); endif; ?>" class="img-responsive blog__post__image" alt="<?php the_title(); ?>" />
     <?php }
 }
 
@@ -327,17 +318,9 @@ endif;
 function bellini_single_post_thumbnail(){
     if ( has_post_thumbnail() ) : ?>
 
-        <?php
-                $meta   = wp_get_attachment_metadata( get_post_thumbnail_id( get_the_ID() ) );
-                $width  = $meta['width'];
-                $height = $meta['height'];
-        ?>
-            <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+            <figure>
                 <?php the_post_thumbnail('full', array('class' => 'img-responsive single-post__featured-image'));?>
-                <meta itemprop="url" content="<?php echo esc_url( the_post_thumbnail_url() ); ?>" />
-                <meta itemprop="width" content="<?php echo esc_attr( $width ); ?>" />
-                <meta itemprop="height" content="<?php echo esc_attr( $height ); ?>" />
-            </figure><!--/itemprop=image-->
+            </figure>
     <?php
 
     endif;
@@ -437,4 +420,22 @@ function bellini_footer_column_function( $class ) {
         $class = '<section id="%1$s" class="widget__after__content col-md-3 %2$s">';
         return $class;
     endif;
+}
+
+
+
+function bellini_excerpt_length( $length ) {
+    return 20;
+}
+
+function bellini_upsell_notice() {
+ // Enqueue the script
+     wp_enqueue_script('bellini-customizer-upsell', get_template_directory_uri() . '/inc/js/unlock.js', array(), '1.0.0', true);
+     // Localize the script
+     wp_localize_script('bellini-customizer-upsell', 'belliniL10n',
+     array(
+         'belliniURL'   => esc_url( 'https://atlantisthemes.com/bellini-feature-comparison/' ),
+         'belliniLabel' => esc_html__( 'Upgrade To Pro', 'bellini' ),
+     )
+     );
 }

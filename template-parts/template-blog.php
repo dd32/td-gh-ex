@@ -7,8 +7,8 @@
  */
 get_header(); ?>
 
-<main id="primary" role="main" itemprop="mainContentOfPage" class="content-area">
-<div id="main" class="site-main" itemscope="itemscope" itemtype="http://schema.org/Blog">
+<main id="primary" role="main" class="content-area">
+<div id="main" class="site-main">
 <?php
 		//Fix homepage pagination
 		if ( get_query_var('paged') ) {
@@ -37,14 +37,14 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 				<header class="col-md-12 page__header entry-header">
 				<?php
-					the_title( '<h1 class="entry-title element-title single-page__title" itemprop="headline">', '</h1>' );
+					the_title( '<h1 class="entry-title element-title single-page__title">', '</h1>' );
 				 	bellini_breadcrumb_integration();
 				 ?>
 				</header>
 			<div class="bellini__canvas">
 			<div class="row">
 
-				<div class="template__blog <?php bellini_blog_sidebar();?>" itemscope="itemscope" itemtype="http://schema.org/Blog">
+				<div class="template__blog <?php bellini_blog_sidebar();?>">
 				<div class="row">
 				<?php
 				/* Start the Loop */

@@ -34,3 +34,11 @@ add_action( 'wp_footer', 'bellini_scroll_to_top' );
 // Pagination
 
 add_action('bellini_loop_after', 'bellini_pagination');
+
+add_action( 'customize_controls_enqueue_scripts', 'bellini_upsell_notice' );
+add_filter( 'excerpt_length', 'bellini_excerpt_length', 999 );
+
+add_action( 'wp_head', 'bellini_structured_data' );
+
+add_filter( 'bellini-style', 'remove_cssjs_ver', 1000 );
+add_action('after_setup_theme', 'bellini_cleanup_setup');

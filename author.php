@@ -9,7 +9,7 @@ $url            = esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) )
 
 ?>
 
-<main id="main" class="site-main" role="main" itemprop="mainContentOfPage">
+<main id="main" class="site-main" role="main">
     <div class="bellini__canvas">
     <div class="row">
 

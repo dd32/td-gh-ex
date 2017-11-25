@@ -92,7 +92,7 @@ if($bellini['bellini_show_frontpage_woo_category'] == true) :
 
 	if(is_woocommerce_activated()):?>
 
-	<section class="front-product-category" itemscope itemtype="http://schema.org/Offer">
+	<section class="front-product-category">
 	<?php do_action( 'bellini_homepage_before_product_categories' );?>
 	<div class="bellini__canvas">
 	<div class="row">

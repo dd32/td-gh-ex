@@ -10,7 +10,7 @@ get_header();?>
 <div class="bellini__canvas">
 <div class="row">
 <?php get_sidebar('left');?>
-	<main id="primary" role="main" itemprop="mainContentOfPage" class="content-area single-post__content <?php bellini_sidebar_content_class(); ?>">
+	<main id="primary" role="main" class="content-area single-post__content <?php bellini_sidebar_content_class(); ?>">
 		<div id="main" class="site-main row">
 		<?php while ( have_posts() ) : the_post();
 

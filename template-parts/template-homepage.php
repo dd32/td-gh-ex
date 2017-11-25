@@ -13,7 +13,7 @@
  */
 get_header();?>
 
-	<main role="main" itemprop="mainContentOfPage">
+	<main role="main">
 
 		<?php
 
