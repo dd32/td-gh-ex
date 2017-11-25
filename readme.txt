@@ -67,6 +67,12 @@ I have improved my understanding so that I can make this theme better.
 
 Changelog
 ================================================================================================
+Version: 0.2.7
+- Minor Changes
+
+Version: 0.2.6
+- Minor Changes
+
 Version: 0.2.5
 - Major Changes to the layout
 - Adjusted a few styles and files.
