@@ -10,7 +10,7 @@ of this theme. This also displays the navigation menu as well or any extra featu
 @package        White Spektrum WordPress Theme
 @copyright      Copyright (C) 2016. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (https://www.luminathemes.com/)
+@author         Benjamin Lu (https://www.benjlu.com/)
 ================================================================================================
 */
 ?>
@@ -24,22 +24,25 @@ of this theme. This also displays the navigation menu as well or any extra featu
         <?php wp_head(); ?>
     </head>
 <body <?php body_class(); ?>>
-    <section id="site-container" class="site-container cf">
-        <header id="site-header" class="site-header" style="background: url(<?php echo header_image(); ?>);">
-            <div id="site-branding" class="site-branding">
-                <div id="title-box" class="title-box">
-                    <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
-                    <h4 class="site-description"><?php bloginfo('description'); ?></h4>
-                </div>
-            </div>
+    <section id="site-container" class="site-container">
+        <header id="site-branding" class="site-branding">
+            <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
+            <h4 class="site-description"><?php bloginfo('description'); ?></h4>
         </header>
-        <nav id="site-navigation" class="primary-navigation">
-            <button class="menu-toggle" aria-conrol="primary-menu" aria-expanded="false"><?php esc_html_e('Menu', 'white-spektrum'); ?></button>
-            <?php wp_nav_menu(array(
-                'theme_location'    => 'primary-navigation',
-                'menu_id'           => 'primary-menu',
-                'menu_class'        => 'nav-menu'   
-            )); 
-            ?>
-        </nav>
-        <section id="site-wrapper" class="site-wrapper cf">
+        <?php if (has_nav_menu('primary-navigation')) { ?>
+            <div id="main-navigation" class="main-navigation">
+                <nav id="site-navigation" class="primary-navigation">
+                    <button class="menu-toggle" aria-conrol="primary-menu" aria-expanded="false"><?php esc_html_e('Menu', 'white-spektrum'); ?></button>
+                    <?php wp_nav_menu(array(
+                        'theme_location'    => 'primary-navigation',
+                        'menu_id'           => 'primary-menu',
+                        'menu_class'        => 'nav-menu'   
+                    )); 
+                    ?>
+                </nav>
+            </div>
+        <?php } ?>
+        <header id="site-header" class="site-header">
+            <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+        </header>
+        <section id="site-content" class="site-content">

@@ -1,6 +1,6 @@
 /*
 Theme Name: White Spektrum
-Theme URI: https://www.benjaminlu.net/themes/white-spektrum/
+Theme URI: https://www.benjlu.com/portfolio/white-spektrum/
 Author: Benjamin Lu
 Author URI: https://www.benjaminlu.net/
 Description: White Spektrum is a fully responsive WordPress theme that looks great on smartphones and tablets. Custom Background, Custom Header is now available so that you can choose more features for this theme. This theme also supports new features that allows you to choose different layouts from blog layout, page layout and custom layout if you choose to use sidebars or no sidebars. 
@@ -8,7 +8,7 @@ License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: custom-background, custom-colors, custom-header, left-sidebar, one-column, right-sidebar, two-columns, sticky-post, threaded-comments, theme-options, translation-ready
 Text Domain: white-spektrum
-Version: 0.2.4
+Version: 0.2.5
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -18,546 +18,105 @@ Use it to make something cool, have fun, and share what you've learned with othe
 ================================================================================================
 Table of Content
 ================================================================================================
- 1.0 - Normalize (Reset)
- 2.0 - Micro Clearfix Hack
- 3.0 - Typography
- 4.0 - Elements
- 5.0 - Forms
- 6.0 - Alignments
- 7.0 - Accessibility
+ 1.0 - Typography
+ 2.0 - Elements
+ 3.0 - Forms
+ 4.0 - Alignments
+ 5.0 - Accessibility
+ 6.0 - Clearings
+ 7.0 - Basic Structure
  8.0 - Navigation (Links)
  9.0 - Navigation (Primary Navigation)
-10.0 - Navigation (Footer Navigation)
-11.0 - Navigation (Social Navigation)
-12.0 - Navigation (Pagination Navigation)
-13.0 - Navigation (Search Toggle)
-14.0 - Basic Structure
-15.0 - Header Area
-16.0 - Content Area (Posts and Pages)
-17.0 - Content Area (Archives)
-18.0 - Content Area (Comments)
-19.0 - Content Area (404 and Search)
-20.0 - Content Area (Attachments)
-21.0 - Content Area (Full Width)
-22.0 - Content Area (Post Formats)
-23.0 - Widget Area
-24.0 - Footer Area
-25.0 - Media Area (Captions)
-26.0 - Media Area (Galleries)
-27.0 - Media Queries (Mobile Small 20em (320px))
-28.0 - Media Queries (Mobile Small 30em (480px))
-29.0 - Media Queries (Mobile Large 37.50em (600px))
-30.0 - Media Queries (Tablet Small 48em (768px))
-31.0 - Media Queries (Tablet Large 64em (1024px))
+10.0 - Navigation (Secondary Navigation)
+11.0 - Navigation (Pagination Navigation)
+12.0 - Navigation (Social Navigation)
+13.0 - Header Area (Header Image)
+14.0 - Content Area (Posts and Pages)
+15.0 - Content Area (Archives)
+16.0 - Content Area (Comments)
+17.0 - Content Area (Error 404)
+18.0 - Content Area (Search)
+19.0 - Content Area (Post Formats)
+20.0 - Widget Area
+21.0 - Footer Area
+22.0 - Media Area (Captions)
+23.0 - Media Area (Galleries)
+24.0 - Media Queries (Mobile Small 30em (480px))
+25.0 - Media Queries (Mobile Medium 37.50em (600px))
+26.0 - Media Queries (Mobile Large 41.688em (667px))
+27.0 - Media Queries (Mobile Extra Large 46em (736px))
+28.0 - Media Queries (Tablet Small 48em (768px))
+29.0 - Media Queries (Tablet Medium 64em (1024px))
+30.0 - Media Queries (Table Large 64.063em (1025px))
 ================================================================================================
 */
 
 /*
 ================================================================================================
- 1.0 - Normalize (Reset)
+ 1.0 - Typography
 ================================================================================================
 */
-/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
-
-/**
- * 1. Change the default font family in all browsers (opinionated).
- * 2. Correct the line height in all browsers.
- * 3. Prevent adjustments of font size after orientation changes in
- *    IE on Windows Phone and in iOS.
- */
-
-/* Document
-   ========================================================================== */
-
-html {
-  font-family: sans-serif; /* 1 */
-  line-height: 1.15; /* 2 */
-  -ms-text-size-adjust: 100%; /* 3 */
-  -webkit-text-size-adjust: 100%; /* 3 */
-}
-
-/* Sections
-   ========================================================================== */
-
-/**
- * Remove the margin in all browsers (opinionated).
- */
-
 body {
-  margin: 0;
+    background: #eeeeee;
+    font-family: 'Merriweather', serif;
 }
 
-/**
- * Add the correct display in IE 9-.
- */
-
-article,
-aside,
-footer,
-header,
-nav,
-section {
-  display: block;
+h1 { 
+    display: block;
+    font-family: 'Sanchez', serif;
+    font-size: 2em;
+    font-weight: 700;
+    margin: 0.67em 0;
 }
 
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+h2 {
+    display: block;
+    font-family: 'Sanchez', serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0.83em 0;
 }
 
-/* Grouping content
-   ========================================================================== */
-
-/**
- * Add the correct display in IE 9-.
- * 1. Add the correct display in IE.
- */
-
-figcaption,
-figure,
-main { /* 1 */
-  display: block;
+h3 { 
+    display: block;
+    font-family: 'Sanchez', serif;
+    font-size: 1.17em;
+    font-weight: 700;
+    margin: 1em 0;
 }
 
-/**
- * Add the correct margin in IE 8.
- */
-
-figure {
-  margin: 1em 40px;
+h4 { 
+    display: block;
+    font-family: 'Sanchez', serif;
+    font-size: 1em;
+    font-weight: 700;
+    margin: 1.33em 0;
 }
 
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
-
-hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
+h5 { 
+    display: block;
+    font-family: 'Sanchez', serif;
+    font-size: .83em;
+    font-weight: 700;
+    margin: 1.67em 0;
 }
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/* Text-level semantics
-   ========================================================================== */
-
-/**
- * 1. Remove the gray background on active links in IE 10.
- * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
- */
-
-a {
-  background-color: transparent; /* 1 */
-  -webkit-text-decoration-skip: objects; /* 2 */
-}
-
-/**
- * Remove the outline on focused links when they are also active or hovered
- * in all browsers (opinionated).
- */
-
-a:active,
-a:hover {
-  outline-width: 0;
-}
-
-/**
- * 1. Remove the bottom border in Firefox 39-.
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
-
-abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
-}
-
-/**
- * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
- */
-
-b,
-strong {
-  font-weight: inherit;
-}
-
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-code,
-kbd,
-samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/**
- * Add the correct font style in Android 4.3-.
- */
-
-dfn {
-  font-style: italic;
-}
-
-/**
- * Add the correct background and color in IE 9-.
- */
-
-mark {
-  background-color: #ff0;
-  color: #000;
-}
-
-/**
- * Add the correct font size in all browsers.
- */
-
-small {
-  font-size: 80%;
-}
-
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
-
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/* Embedded content
-   ========================================================================== */
-
-/**
- * Add the correct display in IE 9-.
- */
-
-audio,
-video {
-  display: inline-block;
-}
-
-/**
- * Add the correct display in iOS 4-7.
- */
-
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-/**
- * Remove the border on images inside links in IE 10-.
- */
-
-img {
-  border-style: none;
-}
-
-/**
- * Hide the overflow in IE.
- */
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
-/* Forms
-   ========================================================================== */
-
-/**
- * 1. Change the font styles in all browsers (opinionated).
- * 2. Remove the margin in Firefox and Safari.
- */
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: sans-serif; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
-}
-
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-
-button,
-input { /* 1 */
-  overflow: visible;
-}
-
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
-
-button,
-select { /* 1 */
-  text-transform: none;
-}
-
-/**
- * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
- *    controls in Android 4.
- * 2. Correct the inability to style clickable types in iOS and Safari.
- */
-
-button,
-html [type="button"], /* 1 */
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button; /* 2 */
-}
-
-/**
- * Remove the inner border and padding in Firefox.
- */
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-/**
- * Restore the focus styles unset by the previous rule.
- */
-
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-/**
- * Change the border, margin, and padding in all browsers (opinionated).
- */
-
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
- */
-
-legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  padding: 0; /* 3 */
-  white-space: normal; /* 1 */
-}
-
-/**
- * 1. Add the correct display in IE 9-.
- * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
-
-progress {
-  display: inline-block; /* 1 */
-  vertical-align: baseline; /* 2 */
-}
-
-/**
- * Remove the default vertical scrollbar in IE.
- */
-
-textarea {
-  overflow: auto;
-}
-
-/**
- * 1. Add the correct box sizing in IE 10-.
- * 2. Remove the padding in IE 10-.
- */
-
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
-}
-
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
-
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
-
-[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
-}
-
-/**
- * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
- */
-
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
-}
-
-/* Interactive
-   ========================================================================== */
-
-/*
- * Add the correct display in IE 9-.
- * 1. Add the correct display in Edge, IE, and Firefox.
- */
-
-details, /* 1 */
-menu {
-  display: block;
-}
-
-/*
- * Add the correct display in all browsers.
- */
-
-summary {
-  display: list-item;
-}
-
-/* Scripting
-   ========================================================================== */
-
-/**
- * Add the correct display in IE 9-.
- */
-
-canvas {
-  display: inline-block;
-}
-
-/**
- * Add the correct display in IE.
- */
-
-template {
-  display: none;
-}
-
-/* Hidden
-   ========================================================================== */
-
-/**
- * Add the correct display in IE 10-.
- */
-
-[hidden] {
-  display: none;
+h6 { 
+    display: block;
+    font-family: 'Sanchez', serif;
+    font-size: .67em;
+    font-weight: 700;
+    margin: 2.33em 0;
 }
 
 /*
 ================================================================================================
- 2.0 - Micro Clearfix Hack
-================================================================================================
-*/
-/**
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    contenteditable attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that are clearfixed.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-.cf:before,
-.cf:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.cf:after {
-    clear: both;
-}
-
-/**
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-.cf {
-    *zoom: 1;
-}
-
-/*
-================================================================================================
- 3.0 - Typography
+ 2.0 - Elements
 ================================================================================================
 */
 html {
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 *,
@@ -566,212 +125,52 @@ html {
 	box-sizing: inherit;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: "";
-}
-
-blockquote,
-q {
-	quotes: "" "";
-}
-
-blockquote {
-
-    font-family: 'Sanchez', serif;
-    font-size: 22px;
-    font-weight: bold;
-    margin: 0 auto;
-    position: relative;
-    text-align: center;
-}
-
-blockquote::before {
-    content: "\f10d";
-    font-size: 24px;
-    font-family: 'FontAwesome';
-    position: absolute;
-    left: -1.1em;
-    color: #000000;;
-}
-
-blockquote::after {
-    content: "\f10e";
-    font-size: 24px;
-    font-family: 'FontAwesome';
-    position: absolute;
-    right: -1.1em;
-    top: 0;
-    color: #000000;;
-}
-
-blockquote cite {
-    font-size: 14px;
-}
-
-input[type="search"] {
-    box-sizing: border-box;
-    width: 100%;
-}
-
-.search-submit {
-    display: none;
-}
-
 img {
     height: auto;
     max-width: 100%;
 }
 
-/*
-================================================================================================
- 4.0 - Elements
-================================================================================================
-*/
-body {
-    font-family: 'Merriweather Sans', sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Sanchez', serif;
-}
-
-p {
-	margin-bottom: 1.5em;
-}
-
-dfn,
-cite,
-em,
-i {
-	font-style: italic;
-}
-
-blockquote {
-	margin: 0 1.5em;
-}
-
-address {
-	margin: 0 0 1.5em;
-}
-
-pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
-	line-height: 1.6;
-	margin-bottom: 1.6em;
-	max-width: 100%;
-	overflow: auto;
-	padding: 1.6em;
-}
-
-code,
-kbd,
-tt,
-var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
-}
-
-abbr,
-acronym {
-	border-bottom: 1px dotted #666;
-	cursor: help;
-}
-
-mark,
-ins {
-	background: #fff9c0;
-	text-decoration: none;
-}
-
-big {
-	font-size: 125%;
+figure {
+    height: auto;
+    margin: 0;
+    max-width: 100%;
 }
 
 /*
 ================================================================================================
- 5.0 - Forms
+ 3.0 - Forms
 ================================================================================================
 */
-button,
-input[type="button"],
-input[type="reset"],
+input[type="text"],
+input[type="email"],
+input[type="url"] {
+    border: 0.063em solid #cccccc;
+    padding: 0.6em;
+    width: 25em;
+}
+
+textarea {
+    border: 0.063em solid #cccccc;
+    padding: 0.6em;
+    width: 100%;
+}
+
 input[type="submit"] {
-    border: 1px solid #000000;
-	border-radius: 0;
-	background: #fff;
-	color: #000000;
-	font-family: 'Sanchez', serif;
-	font-size: 12px;
-	font-size: 0.75rem;
-	line-height: 1;
-	padding: 0.6em;
+    background: #ffffff;
+    border: 0.063em solid #cccccc;
+    display: inline-block;
+    font-family: 'Merriweather', serif;
+    line-height: 1.5em;
+    padding: 0.5em 1em;
 }
 
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #000;
-	color: #fff;
-}
-
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
-	border-color: #000;
-	color: #fff;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-textarea:focus {
-	color: #111;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {
-	padding: 0.8em;
-    width: 99%;
-}
-
-textarea {
-	padding-left: 3px;
-	width: 97%;
-    height: 20em;
+    color: #666666;
 }
 
 /*
 ================================================================================================
- 6.0 - Alignments
+ 4.0 - Alignments
 ================================================================================================
 */
 .alignleft {
@@ -795,34 +194,91 @@ textarea {
 
 /*
 ================================================================================================
- 7.0 - Accessibility
+ 5.0 - Accessibility
 ================================================================================================
 */
 .screen-reader-text {
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
+    clip: rect(0.063em, 0.063em, 0.063em, 0.063em);
+    height: 0.063em;
     overflow: hidden;
     position: absolute !important;
-    width: 1px;
+    width: 0.063em;
 }
 
 .screen-reader-text:focus {
     background: #f1f1f1;
-    border-radius: 3px;
-    box-shadow: 0 0 2px 2px;
+    border-radius: 0.188em;
+    box-shadow: 0 0 0.125em 0.125em;
     clip: auto !important;
     color: #21759b;
     display: block;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 0.875em;
+    font-weight: 700;
     height: auto;
-    left: 5px;
+    left: 0.313em;
     line-height: normal;
-    padding: 15px 23px 14px;
+    padding: 0.938em 1.438em 0.875em;
     text-decoration: none;
-    top: 5px;
+    top: 0.313em;
     width: auto;
-    z-index: 100000;
+    z-index: 100000; 
+}
+
+/*
+================================================================================================
+ 6.0 - Clearings
+================================================================================================
+*/
+.site-container:before,
+.site-container:after,
+.site-branding:before,
+.site-branding:after,
+.post-navigation:before,
+.post-navigation:after,
+.comment-content:before,
+.comment-content:after,
+.site-content:before,
+.site-content:after,
+.content-area:before,
+.content-area:after,
+.entry-content:before,
+.entry-content:after,
+.entry-excerpt:before,
+.entry-excerpt:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+/*
+================================================================================================
+ 7.0 - Basic Structure
+================================================================================================
+*/
+.site-container {
+    background: #ffffff;
+    margin: 0 auto;
+    max-width: 73.125em;
+}
+
+.site-branding {
+    margin: 1.125em;
+    padding: 1.125em;
+    text-align: center;
+}
+
+.site-branding .site-title,
+.site-branding .site-description {
+    margin: 0;
+    padding: 0;
+}
+
+.site-branding .site-title a {
+    font-size: 1.125em;
+}
+
+.site-content {
+    margin: 1.125em;
 }
 
 /*
@@ -831,15 +287,15 @@ textarea {
 ================================================================================================
 */
 a {
-    color: #1d1d1d;
+    color: #000000;
     text-decoration: none;
 }
 
-a:hover,
-a:focus {
-    color: #1d1d1d;
-    text-decoration: underline;
+a:hover {
+    color: #999999;
+    text-decoration: none;
 }
+
 
 /*
 ================================================================================================
@@ -871,7 +327,7 @@ a:focus {
 .primary-navigation a {
 	position: relative;
 	display: block;
-	padding: 0.6em 1em;
+	padding: 0.5em 1em;
 	font-weight: 400;
 	text-decoration: none;
 	line-height: 1.6em;
@@ -886,7 +342,7 @@ a:focus {
 
 .primary-navigation a,
 .primary-navigation ul ul li:lastchild a {
-	border-bottom: 1px solid white;
+	border-bottom: 0.063em solid white;
 }
 
 .primary-navigation ul li:last-child a {
@@ -898,8 +354,8 @@ a:focus {
 }
 
 .primary-navigation li {
-	border-top: 1px solid #eaeaea;
-	border-top: 1px solid rgba(51, 51, 51, 0.1);
+	border-top: 0.063em solid #eaeaea;
+	border-top: 0.063em solid rgba(51, 51, 51, 0.1);
 	position: relative;
 }
 
@@ -917,7 +373,7 @@ a:focus {
 
 .primary-navigation .menu-item-has-children > a,
 .primary-navigation .page_item_has_children > a{
-	padding-right: 48px;
+	padding-right: 3em;
 }
 
 .no-js .primary-navigation ul ul {
@@ -926,17 +382,17 @@ a:focus {
 
 .dropdown-toggle {
 	position: absolute;
-	height: 27px;
-	width: 27px;
-	top: 8px;
-	right: 8px;
+	height: 1.688em;
+	width: 1.688em;
+	top: 0.5em;
+	right: 0.5em;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 	padding: 0;
 	font-family: 'FontAwesome';
 	background-color: #000;
-	border: 1px solid #fff;
+	border: 0.063em solid #fff;
 	content: "";
 	color: #fff;
 	text-transform: lowercase; /* Stop screen readers from reading the text as capital letters */
@@ -944,17 +400,17 @@ a:focus {
 
 .dropdown-toggle:after {
 	content: "\f078";
-	font-size: 14px;
-	line-height: 27px;
+	font-size: 0.875em;
+	line-height: 1.688em;
 	position: relative;
 	top: 0;
 	left: 0;
-	width: 27px;
+	width: 1.688em;
 }
 
 .dropdown-toggle:hover,
 .dropdown-toggle:focus {
-	background-color: #fff;
+	background: #ffffff;
 	color: #000;
 }
 
@@ -963,17 +419,18 @@ a:focus {
 }
 
 .menu-toggle {
-	position: fixed;
-	z-index: 100;
-	bottom: 1em;
-	left: 1em;
+	background: #000000;
+	border: 0.125em solid #ffffff;
+    bottom: 1em;
+	color: #ffffff;
     display: none;
-	font-size: 1em;
 	font-family: 'Sanchez', serif;
-	background-color: #000;
-	color: #fff;
-	border: solid 2px #fff;
+	font-size: 1em;
+    left: 1em;
+    padding: 0.5em;
+	position: fixed;
 	transition: all ease-out 400ms;
+	z-index: 100;
 }
 
 .menu-toggle.hide {
@@ -997,7 +454,6 @@ a:focus {
 	z-index: 1;
 }
 
-
 .nav-menu {
 	padding: 1em;
 	margin-bottom: 3em;
@@ -1020,202 +476,286 @@ a:focus {
 
 /*
 ================================================================================================
-10.0 - Navigation (Footer Navigation)
+10.0 - Navigation (Secondary Navigation)
 ================================================================================================
 */
 
 /*
 ================================================================================================
-11.0 - Navigation (Social Navigation)
+11.0 - Navigation (Pagination Navigation)
 ================================================================================================
 */
-
-/*
-================================================================================================
-12.0 - Navigation (Pagination Navigation)
-================================================================================================
-*/
-.paging-navigation {
-    text-align: center;
-    margin: 2em 0;
-}
-
-.paging-navigation ul {
-    margin: 0;
+.pagination {
     text-align: center;
 }
 
-.paging-navigation li { display: inline; }
-
-a.page-numbers,
-span.page-numbers {
-     padding: 0 5px;
-
+.page-numbers {
+    background: #ffffff;
+    border: 0.063em solid #c3c3c3;
+    color: #333333;
+	display: inline-block;
+	padding: 0.5em 1em;
+	text-decoration: none;
 }
 
-.paging-navigation .current {
-    font-weight: bold;
+.page-numbers:hover {
+	background: #000;
+	color: #fff;
+	border-color: #000;
 }
+
+.page-number:hover a {
+    color: #ffffff;
+}
+
+.page-numbers.current {
+    background: #000000;
+    color: #ffffff;
+}
+
+.page-links > a {
+    border: 0.063em solid #999999;
+    padding: 0.5em 1em;
+    text-decoration: none;
+}
+
+.page-links > a:hover {
+    background: #000000;
+    color: #ffffff;
+}
+
+.page-links > span {
+    background: #000000;
+    border: 0.063em solid #666666;
+    color: #ffffff;
+    padding: 0.5em 1em;
+}
+
+.posts-navigation,
+.post-navigation {
+    background: #ffffff;
+    border: 0.063em solid #cccccc;
+    clear: both;
+    padding: 1.125em;
+}
+
+.posts-navigation .nav-links .nav-previous,
+.post-navigation .nav-links .nav-previous {
+    float: left;
+    line-height: 1.250em;
+}
+
+.posts-navigation .nav-links .nav-next,
+.post-navigation .nav-links .nav-next {
+    float: right;
+    line-height: 1.125em;
+}
+
+.posts-navigation .nav-links .nav-previous .post-previous,
+.post-navigation .nav-links .nav-previous .post-previous {
+    color: #000000;
+    display: block;
+    font-size: 0.9375em;
+    font-weight: 700;
+    text-align: left;
+}
+
+.posts-navigation .nav-links .nav-next .post-next,
+.post-navigation .nav-links .nav-next .post-next {
+    color: #000000;
+    display: block;
+    font-size: 0.9375em;
+    font-weight: 700;
+    text-align: right
+}
+
+.posts-navigation .nav-links .nav-previous .post-title,
+.post-navigation .nav-links .nav-previous .post-title {
+    font-size: 0.813em;
+}
+
+.posts-navigation .nav-links .nav-next .post-title,
+.post-navigation .nav-links .nav-next .post-title {
+    font-size: 0.813em;
+}
+
+.link-pages {
+    text-align: center; 
+}
+
 
 /*
 ================================================================================================
-13.0 - Navigation (Search Toggle)
+12.0 - Navigation (Social Navigation)
 ================================================================================================
 */
+.site-social {
+    margin: 0 1.125em;
+    padding: 0 1.125em;
+}
+
+.menu-social ul {
+    text-align: center;
+    list-style: none;
+}
+
+.menu-social ul li {
+    position: relative;
+    display:  inline-block;
+}
+
+.menu-social li a:before {
+    color: #000000;
+    content: '\f08e';
+    display: inline-block;
+    font-family: 'fontawesome';
+    font-size: 2em;
+    padding: 0 0.375em;
+    vertical-align: top;
+    -webkit-font-smoothing: antialiased;
+}
+
+.menu-social li a[href*="dribbble.com"]::before { content: '\f17d'; }
+.menu-social li a[href*="facebook.com"]::before { content: '\f230'; }
+.menu-social li a[href*="flickr.com"]::before { content: '\f16e'; }
+.menu-social li a[href*="foursquare.com"]::before { content: '\f180'; }
+.menu-social li a[href*="github.com"]::before { content: '\f09b'; }
+.menu-social li a[href*="plus.google.com"]::before { content: '\f0d5'; }
+.menu-social li a[href*="instagram.com"]::before { content: '\f16d'; }
+.menu-social li a[href*="jsfiddle.com"]::before { content: '\f1cc'; }
+.menu-social li a[href*="linkedin.com"]::before { content: '\f0e1'; }
+.menu-social li a[href*="pinterest.com"]::before { content: '\f0d2'; }
+.menu-social li a[href*="reddit.com"]::before { content: '\f1a1'; }
+.menu-social li a[href*="soundcloud.com"]::before { content: '\f1be'; }
+.menu-social li a[href*="stackoverflow.com"]::before { content: '\f16c'; }
+.menu-social li a[href*="tumblr.com"]::before { content: '\f173'; }
+.menu-social li a[href*="twitter.com"]::before { content: '\f099'; }
+.menu-social li a[href*="vimeo.com"]::before { content: '\f194'; }
+.menu-social li a[href*="vine.co"]::before { content: '\f1ca'; }
+.menu-social li a[href*="yelp.com"]::before { content: '\f1e9'; }
+.menu-social li a[href*="youtube.com"]::before { content: '\f167'; }
+.menu-social li a[href*="wordpress.org"]::before { content: '\f19a'; }
 
 /*
 ================================================================================================
-14.0 - Basic Structure
-================================================================================================
-*/
-.site-container {
-    margin: 1.250em auto;
-    padding: 0.750em;
-    max-width: 70.625em; /* 1130px */
-}
-
-.site-wrapper {
-    margin: 1.250em 0;
-    padding: 0.938em; /* 15px */
-}
-
-/*
-================================================================================================
-15.0 - Header Area
+13.0 - Header Area (Header Image)
 ================================================================================================
 */
 .site-header {
-    
-}
-
-.site-branding {
-    padding: 2.813em 0;
-    text-align: center;
-}
-
-.title-box {
-    margin: 0 auto;
-    padding: 2.813em 0;
-    max-width: 28.125em;
-}
-
-.site-title,
-.site-description {
-    margin: 0;
-    padding: 0;
-}
-
-.site-title a {
-    font-size: 1.250em;
+    padding: 0 1.125em;
 }
 
 /*
 ================================================================================================
-16.0 - Content Area (Posts and Pages)
+14.0 - Content Area (Posts and Pages)
 ================================================================================================
 */
-.content-area {
-    margin: 0 auto;
-    width: 70.90909090909091%;
-}
-
-.sidebar-right .content-area {
+.right-sidebar .content-area {
     float: left;
-    width: 70.90909090909091%;
+    width: 70.76923076923077%;
 }
 
-.sidebar-left .content-area {
+.left-sidebar .content-area {
     float: right;
-    width: 70.90909090909091%;
+    width: 70.76923076923077%;
 }
 
-.post {
-    margin: 0 0 6em 0;
+.content-area .post,
+.content-area .page,
+.recent-posts {
+    border: 0.063em solid #cccccc;
+    margin-bottom: 1.125em;
+    min-height: 18.813em;
+    padding: 1.125em;
 }
 
-.entry-header {
-    border-left: 4px solid #cccccc;
-    padding-left: 0.625em;
+.content-area .post .entry-header,
+.content-area .page .entry-header,
+.recent-posts .entry-header,
+.recent-posts .recent-header {
+    text-align: center;
 }
 
-.entry-title {
+.content-area .post .entry-header .entry-title,
+.content-area .page .entry-header .entry-title,
+.recent-posts .entry-header .entry-title,
+.recent-posts .recent-header .recent-title {
     margin: 0;
     padding: 0;
 }
 
-.entry-metadata {
+.content-area .post .entry-content,
+.content-area .post .entry-excerpt,
+.content-area .page .entry-content,
+.content-area .page .entry-excerpt,
+.recent-posts .entry-content,
+.recent-posts .entry-excerpt {
+    line-height: 1.5em;
+    margin: 1.125em 0;
+}
+
+.content-area .has-post-thumbnail {
+    position: relative;
+    padding-left: 19.938em;
+}
+
+.content-area .has-post-thumbnail .post-thumbnail {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.recent-posts .continue-reading,
+.content-area .post .entry-excerpt .continue-reading,
+.section-blog .entry-content .continue-reading {
+    text-align: center;
+}
+
+.recent-posts .continue-reading a, 
+.content-area .post .entry-excerpt .continue-reading a,
+.section-blog .entry-content .continue-reading a {
+    background: #ffffff;
+    border: 0.063em solid #cccccc;
+    display: inline-block;
+    line-height: 1.6em;
+    padding: 0.5em 1em;
+}
+
+.content-area .post .entry-metadata {
     background: #eeeeee;
     margin: 1.250em 0;
     padding: 1em;
     text-align: center;
 }
 
-.entry-metadata .avatar {
-    border: 0.500em solid #cccccc;
+.content-area .post .entry-metadata .avatar {
+    border: 0.313em solid #cccccc;
     border-radius: 50%;
     display: block;
     margin: 0 auto;
 }
 
-.entry-metadata .by-author {
+.content-area .post .entry-metadata .by-author {
     display: block;
     font-family: 'Sanchez', serif;
     font-size: 1.250em;
 }
 
-.entry-metadata .published,
-.entry-metadata .entry-comments {
+.content-area .post .entry-metadata .published,
+.content-area .post .entry-metadata .entry-comments {
     display: block;
-    font-size: 12px;
+    font-size: 0.750em;
 }
 
-.entry-excerpt {
-    font-family: 'Sanchez', serif;
-    font-size: 1.188em;
-}
-
-
-
-.post-index-metadata {
-    font-size: 0.813em;
-}
-
-.continue-reading {
-	text-align: center;
-}
-
-.continue-reading a,
-.entry-content .continue-reading a {
-	display: inline-block;
-	margin: 1em auto;
-	padding: 16px 20px;
-	font-family: "Open Sans", sans-serif;
-	text-decoration: none;
-	border: 1px solid #c3c3c3;
-}
-
-.continue-reading a:hover,
-.continue-reading a:focus,
-.entry-content .continue-reading a:hover,
-.entry-content .continue-reading a:focus {
-	border-color: #000;
-	border-width: 1px;
-	box-shadow: none;
-}
-
-.continue-reading::after {
-	display: block;
-    content: "";
-    width: 7em;
-    border-bottom: 1px solid #c3c3c3;
-    margin: 40px auto 0;
+.content-area .sticky {
+    border: 0.063em solid #666666;
 }
 
 .cat-link,
 .tag-link {
     display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
+    font-size: 0.938em;
+    margin-bottom: 0.250em;
 }
 
 .tag-link .fa-tags {
@@ -1224,31 +764,50 @@ span.page-numbers {
 
 .tag-list,
 .cat-list {
-    font-size: 12px;
+    font-size: 0.875em;
 }
 
-.sticky::before {
-    content: "Featured";
-    display: block;
+.two-columns {
+    margin: 1.250em 0;
+    padding: 0;
 }
 
-.post-thumbniail-banner {
-    margin-bottom: 0.5em;
+.two-columns ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: left;
 }
+
+.two-columns li {
+    list-style: none;
+    float: left;
+    margin: 0;
+    padding: 0.5em;
+    width: 50%;
+}
+
 
 /*
 ================================================================================================
-17.0 - Content Area (Archives)
+15.0 - Content Area (Archives)
 ================================================================================================
 */
 
 /*
 ================================================================================================
-18.0 - Content Area (Comments)
+16.0 - Content Area (Comments)
 ================================================================================================
 */
+.comments-area {
+    background: #ffffff;
+    border: 0.063em solid #cccccc;
+    margin-top: 1.125em;
+    padding: 1.125em;
+}
+
 .comments-title {
-    margin-bottom: 20px;
+    margin-bottom: 1.125em;
     text-align: center;
 }
 
@@ -1258,9 +817,9 @@ span.page-numbers {
 }
 
 .comment-body {
-    border: 1px solid #cccccc;
-    margin-bottom: 20px;
-    padding: 10px;
+    border: 0.063em solid #cccccc;
+    margin-bottom: 1.125em;
+    padding: 1.125em;
 }
 
 .comments-area > ol  {
@@ -1268,15 +827,15 @@ span.page-numbers {
 }
 
 .comment-author .avatar {
-    border: 4px solid #cccccc;
+    border: 0.313em solid #cccccc;
     border-radius: 50%;
     float: left; 
     display: block;
-    margin-right: 10px;
+    margin-right: 1em;
 }
 
 .comment-author .fn {
-    font-size: 14px;
+    font-size: 1.250em;
     margin: 0;
     font-weight: bold;
     font-style: normal;
@@ -1284,14 +843,13 @@ span.page-numbers {
 }
 
 .comment-meta {
-    font-size: 12px;
+    font-size: 0.875em;
 }
 
-.comments-area p {
-    font-size: 14px;
-    margin-left: 60px;
-    margin-top: 20px;
+.comment-content {
+    line-height: 1.5em;
 }
+
 
 .comments-area .says {
     display: none;
@@ -1303,42 +861,41 @@ span.page-numbers {
 }
 
 .reply a {
+    background: #ffffff;
+    border: 0.063em solid #cccccc;
+    color: #373737;
 	display: inline-block;
-	padding: .5em 1.4em;
-	font-size: 85%;
-	color: #333;
-	line-height: 1.3em;
+	padding: 0.5em 1.4em;
 	text-decoration: none;
-	border: 1px solid #c3c3c3;
 }
 
 .reply a:hover,
 .reply a:focus {
-	background: #000;
-	color: #fff;
-	border-color: #000;
+	color: #373737;
+    text-decoration: underline;
 }
 
 .comment-list ol {
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-top: 1.125em;
+    margin-left: 1.125em;
 }
 
 ol.children {
     list-style-type: none;
+    margin-left: 0;
 }
 
 .content-meta {
-    margin-left: 70px;
+    margin-left: 4.375em;
 }
 
 .comment-navigation {
-    border-top: 1px solid #999;
-    border-bottom: 1px solid #999;
+    border-top: 0.063em solid #999;
+    border-bottom: 0.063em solid #999;
 }
 
 .comment-navigation i {
-    padding: 10px;
+    padding: 1.125em;
 }
 
 .comment-previous {
@@ -1350,121 +907,186 @@ ol.children {
 
 .bypostauthor > .comment-body {
     background: #f0f0f0; 
-    padding: 10px;
+    padding: 1.125em;
     position: relative;
 }
 
-.comment-reply-title {
-    font-size: 20px;
+.comment-reply-title {;
     margin: 0;
-    margin-top: 10px;
     padding: 0;
-    padding-top: 10px;
+    padding-top: 1.125em;
 }
 
 .comment-form p {
     margin-left: 0;
 }
-.comment-form label {
-    display: block;
-}
 
 .required {
     color: #FF0000;
-    font-size: 10px;
+    font-size: 0.625em;
 }
 
 .comment-awaiting-moderation {
     background: #84BD68;
-    font-size: 12px;
-    padding: 3px 4px;
+    color: #ffffff;
+    font-size: 0.750em;
+    padding: 0.188em 0.250em;
 }
 
 .form-allowed-tags {
-    font-size: 13px;
-    width: 600px;
+    font-size: 0.813em;
+    width: 37.500em;
 }
 
-.form-submit .submit {
-	display: inline-block;
-    color: #000000;
-	padding: 16px 20px;
+.comment-form .comment-form-comment label,
+.comment-form .comment-form-author label,
+.comment-form .comment-form-email label,
+.comment-form .comment-form-url label {
+    display: block;
+    margin: 0.2em 0;
+    font-weight: 700;
+}
+
+.comment-form .comment-form-comment textarea {
+    border: 0.063em solid #cccccc;
+    font-family: 'Merriewather', serif;
     font-size: 1em;
-	text-decoration: none;
-	border: 1px solid #c3c3c3;
-}
-
-.form-submit .submit:hover,
-.form-submit .submit:focus {
-	border-color: #000;
-	border-width: 1px;
-    color: #000000;
-	box-shadow: none;
-}
-
-#respond textarea#comment{
-    height: 200px;
-    width: 100%;	
-}
-
-/*
-================================================================================================
-19.0 - Content Area (404 and Search)
-================================================================================================
-*/
-
-/*
-================================================================================================
-20.0 - Content Area (Attachments)
-================================================================================================
-*/
-
-/*
-================================================================================================
-21.0 - Content Area (Full Width)
-================================================================================================
-*/
-
-/*
-================================================================================================
-22.0 - Content Area (Post Formats)
-================================================================================================
-*/
-
-/*
-================================================================================================
-23.0 - Widget Area
-================================================================================================
-*/
-.sidebar-right .widget-area {
-    float: right;
-    width: 27.27272727272727%;
-}
-
-.sidebar-left .widget-area {
-    float: left;
-    width: 27.27272727272727%;
-}
-
-.widget-area .search-submit,
-.widget-area .screen-reader-text {
-    display: none;
-}
-
-input[type = "search"] {
-    box-sizing: border-box;
+    min-height: 12.375em;
     width: 100%;
 }
 
-.widget-area .search-field {
-    color: #000000;
-    margin: 10px 0;
-    padding: 8px 5px;
+.comment-form .comment-form-author input[type="text"],
+.comment-form .comment-form-email input[type="email"],
+.comment-form .comment-form-url input[type="url"] {
+    border: 0.063em solid #cccccc;
+    font-family: 'Merriewather', serif;
+    font-size: 1em;
+    padding: 0.6em;
+    width: 20em;
 }
 
-.widget {
-    margin: 0 0 30px 0;
-    
+.comment-form .comment-notes {
+    font-size: 0.875em;
+}
+
+p.comment-awaiting-moderation {
+    margin: 0.125em 0 0 4.063em;
+    padding: 0.188em 0.313em;
+}
+
+.comment-subscription-form .subscribe-label {
+    display: inline !important;
+    font-size: 0.875em;
+}
+
+/*
+================================================================================================
+17.0 - Content Area (Error 404)
+================================================================================================
+*/
+
+/*
+================================================================================================
+18.0 - Content Area (Search)
+================================================================================================
+*/
+.content-area .search-form:before,
+.content-area .search-form:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.content-area  .post .search-form {
+    padding: 0.938em;
+    background: #555;
+    max-width: 100%;
+}
+
+.content-area .search-field {
+    border: none;
+    float: left;
+    font-family: 'Merriweather', serif;
+    font-size: 1em;
+    padding: 0.5em;
+    width: 100%;
+}
+
+.content-area .search-submit {
+    border: none;
+    background: #d88f3c;
+    color: #ffffff;
+    float: right;
+    font-family: 'Merriweather', serif;
+    font-size: 1em;
+    display: none;
+    padding: 0.4em;
+    position: relative;
+    width: 10%;
+}
+
+/*
+================================================================================================
+19.0 - Content Area (Post Formats)
+================================================================================================
+*/
+
+/*
+================================================================================================
+20.0 - Widget Area
+================================================================================================
+*/
+.left-sidebar .widget-area {
+    float: left;
+    width: 27.69230769230769%;
+}
+
+.right-sidebar .widget-area {
+    float: right;
+    width: 27.69230769230769%;
+}
+
+.widget-area .search-form:before,
+.widget-area .search-form:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.widget-area .search-form {
+    padding: 0.938em;
+    background: #555;
+    max-width: 100%;
+}
+
+.widget-area .search-field {
+    border: none;
+    float: left;
+    font-family: 'Merriweather', serif;
+    font-size: 1em;
+    padding: 0.563em;
+    width: 100%;
+}
+
+.widget-area .search-submit {
+    border: none;
+    background: #d88f3c;
+    color: #ffffff;
+    float: right;
+    font-family: 'Merriweather', serif;
+    font-size: 1em;
+    display: none;
+    padding: 0.5em;
+    position: relative;
+    width: 30%;
+}
+
+.widget-area .widget {
+    background: #ffffff;
+    border: 0.063em solid #cccccc;
+    line-height: 1.5em;
+    margin-bottom: 1.125em;
+    padding: 1.125em;
 }
 
 .widget ul,
@@ -1475,96 +1097,111 @@ input[type = "search"] {
 }
 
 .widget li {
-    margin: 5px 0 0 0;
+    margin: 0.4em 0 0 0;
 }
 
 .widget li li {
-    margin-left: 18px;
+    margin-left: 1.125em;
 }
 
 .widget select {
-    margin: 10px 0;
-    padding: 5px 5px;
-    max-width: 100%;
+    font-family: 'Merriweather', serif;
+    padding: 0.5em;
+    width: 100%;
 }
 
 .widget-title {
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
+    margin: 0 0 0.5em 0;
+}
+
+.rss-widget-icon {
+    display: none;
 }
 
 .rsswidget {
     display: block;
 }
 
-.rss-date {
+.widget_rss cite {
     display: block;
-    margin-top: 5px;
-    text-align: right;
+    font-size: 0.875em;
+    font-weight: 700;
+    margin-bottom: 1.125em;
+}
+
+.rss-date {
+    font-size: 0.875em;
 }
 
 .rssSummary {
-    margin-top: 10px;
+    margin-top: 0.625em;
+}
+
+#wp-calendar table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#wp-calendar tr:nth-of-type(odd) {
+    background: #eeeeee;
+}
+
+#wp-calendar th {
+    background: #999999;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+}
+
+#wp-calendar th,
+#wp-calendar td {
+    border: 0.063em solid #cccccc;
+    padding: 0.438em;
 }
 
 #wp-calendar {
-    border: 1px solid #cccccc;
+    border: 0.063em solid #cccccc;
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 1.250em;
     text-align: center;
     width: 100%;
 }
 
 #wp-calendar a {
-    color: #0000ff;
-    font-style: italic;
-    font-weight: 400;
+    color: #1d1d1d;
+    font-weight: 700;
 }
 
 #wp-calendar caption {
-    font-weight: 400;
-    margin: 5px 0;
+    font-weight: 700;
+    margin: 0.313em 0;
     text-align: center;
 }
 
 #wp-calendar #today {
-    font-weight: 400;
+    background: #cccccc;
+    font-weight: 700;
 }
 
-#wp-calendar th {
-    font-weight: 400;
-}
-
-#wp-calendar td {
-    font-weight: 300;
-    padding: 6px 0;
-}
 
 /*
 ================================================================================================
-24.0 - Footer Area
+21.0 - Footer Area
 ================================================================================================
 */
 .site-footer {
-    margin: 1.250em 0 0 0;
-    padding: 0.938em 0 0 0;
-}
-
-.site-info {
-    font-family: 'Sanchez', serif;
-    font-size: 0.875em;
+    margin: 0 1.125em;
+    padding: 0 1.125em;
     text-align: center;
 }
 
-.footer-title {
-    display: block;
-    font-size: 1.1em;
+.site-info {
+    line-height: 1.5em;
 }
 
 /*
 ================================================================================================
-25.0 - Media Area (Captions)
+22.0 - Media Area (Captions)
 ================================================================================================
 */
 .wp-caption {
@@ -1579,15 +1216,14 @@ input[type = "search"] {
 }
 
 .wp-caption-text { 
-    margin-top: 4px;
     text-align: center; 
 }
 
 .wp-caption .wp-caption-text,
 .gallery-caption {
-    background: #cccccc;
-    color: #000000;
-    padding: 8px;
+    background: #eeeeee;
+    padding: 0.313em;
+    text-align: center;
 }
 
 .wp-caption p {
@@ -1597,28 +1233,25 @@ input[type = "search"] {
 
 /*
 ================================================================================================
-26.0 - Media Area (Galleries)
+23.0 - Media Area (Galleries)
 ================================================================================================
 */
+.gallery-caption {
+    background: #eeeeee;
+    padding: 0.313em;
+    text-align: center;
+}
+
 
 /*
 ================================================================================================
-27.0 - Media Queries (Mobile Small 20em (320px))
+24.0 - Media Queries (Mobile Small 30em (480px))
 ================================================================================================
 */
-
-/*
-================================================================================================
-28.0 - Media Queries (Mobile Small 30em (480px))
-================================================================================================
-*/
-
-/*
-================================================================================================
-29.0 - Media Queries (Mobile Large 37.50em (600px))
-================================================================================================
-*/
-@media screen and (max-width: 37.50em) {
+@media screen and (max-width: 30em) {
+    .site-main {
+        padding: 0;
+    }
     .menu-toggle,
     .primary-navigation.toggled ul {
         display: block;
@@ -1633,7 +1266,7 @@ input[type = "search"] {
     }
     
     .nav-menu {
-        margin: 0 1.6em 3.8em 0;
+        margin-bottom: 3.6em;
     }
     
     .primary-navigation .nav-menu {
@@ -1642,45 +1275,32 @@ input[type = "search"] {
     
     .primary-navigation.toggled .nav-menu {
         display: block;
+        margin: 1em 1em 3.6em 1em;
     }
     
-    .branding-navigation {
-        margin-left: 0;
-    }
-
-    .branding-navigation .site-branding {
-        float: none;
-        margin-left: 0;
-        width: 100%;
-    }
-    
-    .sidebar-right .content-area {
+    .left-sidebar .content-area,
+    .right-sidebar .content-area {
         float: none;
         width: 100%;
     }
     
-    .sidebar-right .widget-area {
+    .right-sidebar .widget-area,
+    .left-sidebar .widget-area {
         float: none;
+        margin-top: 1.125em;
         width: 100%;
     }
 }
 
 /*
 ================================================================================================
-30.0 - Media Queries (Tablet Small 48em (768px))
+25.0 - Media Queries (Mobile Medium 37.50em (600px))
 ================================================================================================
 */
-@media screen and (min-width: 601px) and (max-width: 895px) {
-    .bn-container {
-        margin-left: 0;
+@media screen and (min-height: 30.063em) and (max-width: 37.50em) {
+    .site-main {
+        padding: 0;
     }
-
-    .site-branding {
-        float: none;
-        margin-left: 0;
-        width: 100%;
-    }
-    
     .menu-toggle,
     .primary-navigation.toggled ul {
         display: block;
@@ -1695,7 +1315,7 @@ input[type = "search"] {
     }
     
     .nav-menu {
-        margin: 0 1.6em 3.8em 0;
+        margin-bottom: 3.6em;
     }
     
     .primary-navigation .nav-menu {
@@ -1704,158 +1324,196 @@ input[type = "search"] {
     
     .primary-navigation.toggled .nav-menu {
         display: block;
+        margin: 1em 1em 3.6em 1em;
     }
     
-    .branding-navigation {
-        margin-left: 0;
-    }
-
-    .branding-navigation .site-branding {
-        float: none;
-        margin-left: 0;
-        width: 100%;
-    }
-
-    .sidebar-right .content-area {
+    .left-sidebar .content-area,
+    .right-sidebar .content-area {
         float: none;
         width: 100%;
     }
     
-    .sidebar-right .widget-area {
+    .right-sidebar .widget-area, 
+    .left-sidebar .widget-area {
         float: none;
+        margin-top: 1.125em;
         width: 100%;
     }
-}
-
-@media screen and (min-width: 896px) and (max-width: 1023px) {
-     .primary-navigation {
-        clear: none;
-    }
-	
-	/* Position the menu in the header */
-	.primary-navigation,
-	.primary-navigation.toggled {
-		position: relative;
-		min-height: 3.5em;
-		max-width: 100%;
-		margin: 0 auto;
-		padding: 0;
-	}
-    
-	.nav-menu {
-		padding: .4em;
-		background-color: transparent;
-        margin: 0;
-    }
-    
-    .nav-menu a {
-        color: #000000;
-    }
-    
-    .nav-menu a:hover {
-        color: #000000;
-    }
-	
-	.primary-navigation ul,
-	.primary-navigation.toggled ul {
-		max-height: none;
-		padding-left: 0;
-		text-align: center;
-        
-	}
-	
-	.primary-navigation.toggled ul {
-		overflow-y: visible;
-	}
-	
-	/* Display the menu items in a horizontal order */
-	.primary-navigation li {
-		display: inline-block;
-		border: none;
-	}
-	
-	/* Add an outline to the drop-down menus */
-	.primary-navigation ul ul {
-		outline: 1px solid #333;
-	}
-	
-	/* Left-align drop-down menu items */
-	.primary-navigation li li {
-		display: block;
-		text-align: left;
-	}
-    
-    .primary-navigation a {
-        padding: 0.6em 1em;
-    }
-	
-	.primary-navigation a,
-	.primary-navigation ul ul li:last-child a {
-		border-bottom: none;
-	}
-    
-    .primary-navigation ul ul li a {
-        color: #ffffff;
-    }
-	
-	/* Add an outline on hovered and focused menu items */
-	.primary-navigation a:hover,
-	.primary-navigation a:focus {
-		background: transparent;
-		color: #000000;
-		text-decoration: underline;
-		outline: solid 1px #b3b3b3;
-	}
-	
-	/* Create hover and focus contrast on drop-down items */
-	.primary-navigation li li a:hover,
-	.primary-navigation li li a:focus {
-		background: #eee;
-		color: #000;
-		text-decoration: none;
-	}
-	
-	/* Position drop-down menus absolutely */
-	.primary-navigation ul ul.toggled-on {
-		position: absolute;
-		width: 17em;
-		display: block;
-		z-index: 10;
-        right: 0.6em;
-		margin-left: 0;
-		background: #000;
-	}
-	
-	.primary-navigation ul ul ul.toggled-on {
-		right: 0;
-        padding-left: 1em;
-        position: relative;
-	}
-	
-	/* Indent 3rd level drop-down menus */
-	.primary-navigation ul ul ul a {
-		padding-left: 2em;
-	}
-	
-	/* Simplify the drop-down toggle */
-	.dropdown-toggle {
-		top: 7px;
-		right: 8px;
-
-	}
-	
-	.dropdown-toggle::after {
-		line-height: 27px;
-		width: 27px;
-	}
 }
 
 /*
 ================================================================================================
-31.0 - Media Queries (Tablet Large 64em (1024px))
+26.0 - Media Queries (Mobile Large 41.688em (667px))
 ================================================================================================
 */
-@media screen and (min-width: 1024px) {
+@media screen and (min-height: 37.563em) and (max-width: 41.688em) {
+    .site-main {
+        padding: 0;
+    }
+    .menu-toggle,
+    .primary-navigation.toggled ul {
+        display: block;
+    }
+    
+	.primary-navigation ul {
+		display: none;
+	}
+    
+    .primary-navigation.toggled {
+        padding: 0.1em;
+    }
+    
+    .nav-menu {
+        margin-bottom: 3.6em;
+    }
+    
+    .primary-navigation .nav-menu {
+        display: none;
+    }
+    
+    .primary-navigation.toggled .nav-menu {
+        display: block;
+        margin: 1em 1em 3.6em 1em;
+    }
+    
+    .left-sidebar .content-area,
+    .right-sidebar .content-area {
+        float: none;
+        width: 100%;
+    }
+    
+    .right-sidebar .widget-area, 
+    .left-sidebar .widget-area {
+        float: none;
+        margin-top: 1.125em;
+        width: 100%;
+    }
+}
+
+/*
+================================================================================================
+27.0 - Media Queries (Mobile Extra Large 46em (736px))
+================================================================================================
+*/
+@media screen and (min-height: 41.750em) and (max-width: 46em) {
+    .site-main {
+        padding: 0;
+    }
+    .menu-toggle,
+    .primary-navigation.toggled ul {
+        display: block;
+    }
+    
+	.primary-navigation ul {
+		display: none;
+	}
+    
+    .primary-navigation.toggled {
+        padding: 0.1em;
+    }
+    
+    .nav-menu {
+        margin-bottom: 3.6em;
+    }
+    
+    .primary-navigation .nav-menu {
+        display: none;
+    }
+    
+    .primary-navigation.toggled .nav-menu {
+        display: block;
+        margin: 1em 1em 3.6em 1em;
+    }
+    
+    .left-sidebar .content-area,
+    .right-sidebar .content-area {
+        float: none;
+        width: 100%;
+    }
+    
+    .right-sidebar .widget-area, 
+    .left-sidebar .widget-area {
+        float: none;
+        margin-top: 1.125em;
+        width: 100%;
+    }
+}
+
+/*
+================================================================================================
+28.0 - Media Queries (Tablet Small 48em (768px))
+================================================================================================
+*/
+@media screen and (min-height: 46.063em) and (max-width: 48em) {
+    .site-main {
+        padding: 0;
+    }
+    .menu-toggle,
+    .primary-navigation.toggled ul {
+        display: block;
+    }
+    
+	.primary-navigation ul {
+		display: none;
+	}
+    
+    .primary-navigation.toggled {
+        padding: 0.1em;
+    }
+    
+    .nav-menu {
+        margin-bottom: 3.6em;
+    }
+    
+    .primary-navigation .nav-menu {
+        display: none;
+    }
+    
+    .primary-navigation.toggled .nav-menu {
+        display: block;
+        margin: 1em 1em 3.6em 1em;
+    }
+    
+    .left-sidebar .content-area,
+    .right-sidebar .content-area {
+        float: none;
+        width: 100%;
+    }
+    
+    .right-sidebar .widget-area, 
+    .left-sidebar .widget-area {
+        float: none;
+        margin-top: 1.125em;
+        width: 100%;
+    }
+}
+
+
+/*
+================================================================================================
+29.0 - Media Queries (Tablet Medium 64em (1024px))
+================================================================================================
+*/
+@media screen and (min-width: 48.063em) and (max-width: 64em) {
+    .right-sidebar .content-area {
+        float: left;
+        width: 66.6015625%;
+    }
+    
+    .left-sidebar .content-area {
+        float: right;
+        width: 66.6015625%;
+    }
+    
+    .right-sidebar .widget-area {
+        float: right;
+        width: 31.640625%;
+    }
+    
+    .main-navigation {
+        margin: 1.125em;
+    }
+    
     .primary-navigation {
         clear: none;
     }
@@ -1904,7 +1562,7 @@ input[type = "search"] {
 	
 	/* Add an outline to the drop-down menus */
 	.primary-navigation ul ul {
-		outline: 1px solid #333;
+		outline: 0.063em solid #333;
 	}
 	
 	/* Left-align drop-down menu items */
@@ -1932,7 +1590,7 @@ input[type = "search"] {
 		background: transparent;
 		color: #000000;
 		text-decoration: underline;
-		outline: solid 1px #b3b3b3;
+		outline: solid 0.063em #b3b3b3;
 	}
 	
 	/* Create hover and focus contrast on drop-down items */
@@ -1967,35 +1625,144 @@ input[type = "search"] {
 	
 	/* Simplify the drop-down toggle */
 	.dropdown-toggle {
-		top: 8px;
-		right: 8px;
+		top: 0.5em;
+		right: 0.5em;
 
 	}
 	
 	.dropdown-toggle::after {
-		line-height: 27px;
-		width: 27px;
+		line-height: 1.688em;
+		width: 1.688em;
 	}
-
-
 }
 
+/*
+================================================================================================
+30.0 - Media Queries (Table Large 64.063em (1025px))
+================================================================================================
+*/
+@media screen and (min-width: 64.063em) {
+    .main-navigation {
+        margin: 1.125em;
+    }
+    
+    .primary-navigation {
+        clear: none;
+    }
+	
+	/* Position the menu in the header */
+	.primary-navigation,
+	.primary-navigation.toggled {
+		position: relative;
+		min-height: 3.5em;
+		max-width: 100%;
+		margin: 0 auto;
+		padding: 0;
+	}
+    
+	.nav-menu {
+		padding: .4em;
+		background-color: transparent;
+        margin: 0;
+    }
+    
+    .nav-menu a {
+        color: #000000;
+    }
+    
+    .nav-menu a:hover {
+        color: #000000;
+    }
+	
+	.primary-navigation ul,
+	.primary-navigation.toggled ul {
+		max-height: none;
+		padding-left: 0;
+		text-align: center;
+	}
+	
+	.primary-navigation.toggled ul {
+		overflow-y: visible;
+	}
+	
+	/* Display the menu items in a horizontal order */
+	.primary-navigation li {
+		display: inline-block;
+		border: none;
+	}
+	
+	/* Add an outline to the drop-down menus */
+	.primary-navigation ul ul {
+		outline: 0.063em solid #333;
+	}
+	
+	/* Left-align drop-down menu items */
+	.primary-navigation li li {
+		display: block;
+		text-align: left;
+	}
+    
+    .primary-navigation a {
+        padding: 0.6em 1em;
+    }
+	
+	.primary-navigation a,
+	.primary-navigation ul ul li:last-child a {
+		border-bottom: none;
+	}
+    
+    .primary-navigation ul ul li a {
+        color: #ffffff;
+    }
+	
+	/* Add an outline on hovered and focused menu items */
+	.primary-navigation a:hover,
+	.primary-navigation a:focus {
+		background: transparent;
+		color: #000000;
+		text-decoration: underline;
+		outline: solid 0.063em #b3b3b3;
+	}
+	
+	/* Create hover and focus contrast on drop-down items */
+	.primary-navigation li li a:hover,
+	.primary-navigation li li a:focus {
+		background: #eee;
+		color: #000;
+		text-decoration: none;
+	}
+	
+	/* Position drop-down menus absolutely */
+	.primary-navigation ul ul.toggled-on {
+		position: absolute;
+		width: 17em;
+		display: block;
+		z-index: 10;
+        right: 0;
+		margin-left: 0;
+		background: #000;
+	}
+	
+	.primary-navigation ul ul ul.toggled-on {
+		right: 0;
+        padding-left: 1em;
+        position: relative;
+	}
+	
+	/* Indent 3rd level drop-down menus */
+	.primary-navigation ul ul ul a {
+		padding-left: 2em;
+	}
+	
+	/* Simplify the drop-down toggle */
+	.dropdown-toggle {
+		top: 0.5em;
+		right: 0.5em;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	}
+	
+	.dropdown-toggle::after {
+		line-height: 1.688em;
+		width: 1.688em;
+	}
+}

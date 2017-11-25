@@ -1,15 +1,15 @@
 /*
 ================================================================================================
-Amity - navigation.js
+White Spektrum - navigation.js
 ================================================================================================
 This is the most generic template file in a WordPress theme and is one of required files to hide
 and show the primary navigation for the Primary Navigation in different resolution and other
 features.
 
-@package        Amity WordPress Theme
-@copyright      Copyright (C) 2016. Benjamin Lu
+@package        White Spektrum WordPress Theme
+@copyright      Copyright (C) 2014-2017. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (https://www.luminathemes.com/)
+@author         Benjamin Lu (https://www.benjlu.com/)
 ================================================================================================
 */
 ( function( $ ) {
@@ -89,7 +89,7 @@ features.
 
 	function initMainNavigation( container ) {
 		// Add dropdown toggle that display child menu items.
-		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + whitespektrumscreenReaderText.expand + '</button>' );
+		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + whitespektrumScreenReaderText.expand + '</button>' );
 
 		container.find( '.dropdown-toggle' ).click( function( e ) {
 			var _this = $( this );
@@ -97,7 +97,7 @@ features.
 			_this.toggleClass( 'toggle-on' );
 			_this.next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
 			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
-			_this.html( _this.html() === whitespektrumscreenReaderText.expand ? whitespektrumscreenReaderText.collapse : whitespektrumscreenReaderText.expand );
+			_this.html( _this.html() === whitespektrumScreenReaderText.expand ? whitespektrumScreenReaderText.collapse : whitespektrumScreenReaderText.expand );
 		} );
 	}
 	initMainNavigation( $( '.primary-navigation' ) );
