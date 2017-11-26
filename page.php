@@ -30,7 +30,7 @@
 							
 						</a>
 								
-					</div> <!-- /featured-media -->
+					</div><!-- .featured-media -->
 						
 				<?php endif; ?>
 														
@@ -38,7 +38,7 @@
 											
 				    <h1 class="post-title"><?php the_title(); ?></h1>
 				    				    
-			    </div> <!-- /post-header -->
+			    </div><!-- .post-header -->
 			   				        			        		                
 				<div class="post-content">
 							                                        
@@ -50,9 +50,9 @@
 					
 					<?php endif; ?>
 														            			                        
-				</div> <!-- /post-content -->
+				</div><!-- .post-content -->
 								
-			</div> <!-- /post -->
+			</div><!-- .post -->
 			
 			<?php if ( comments_open() || get_comments_number() != '' ) : ?>
 			
@@ -60,7 +60,7 @@
 			
 			<?php endif; ?>
 		
-		</div> <!-- /posts -->
+		</div><!-- .posts -->
 		
 		<?php endwhile; else: ?>
 		
@@ -70,12 +70,12 @@
 	
 		<div class="clear"></div>
 		
-	</div> <!-- /content left -->
+	</div><!-- .content left -->
 	
 	<?php get_sidebar(); ?>
 	
 	<div class="clear"></div>
 
-</div> <!-- /wrapper -->
+</div><!-- .wrapper -->
 								
 <?php get_footer(); ?>

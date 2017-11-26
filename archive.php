@@ -40,7 +40,7 @@
 							echo apply_filters( 'tag_archive_meta', '<div class="tag-archive-meta">' . $tag_description . '</div>' );
 					?>
 					
-				</div> <!-- /page-title -->
+				</div><!-- .page-title -->
 				
 				<div class="clear"></div>
 		
@@ -56,11 +56,11 @@
 							
 							<div class="clear"></div>
 							
-						</div> <!-- /post -->
+						</div><!-- .post -->
 						
 					<?php endwhile; ?>
 								
-			</div> <!-- /posts -->
+			</div><!-- .posts -->
 						
 			<?php if ( $wp_query->max_num_pages > 1 ) : ?>
 			
@@ -72,7 +72,7 @@
 					
 					<div class="clear"></div>
 					
-				</div> <!-- /post-nav archive-nav -->
+				</div><!-- .post-nav archive-nav -->
 				
 				<div class="clear"></div>
 				
@@ -80,12 +80,12 @@
 					
 		<?php endif; ?>
 	
-	</div> <!-- /content -->
+	</div><!-- .content -->
 	
 	<?php get_sidebar(); ?>
 	
 	<div class="clear"></div>
 
-</div> <!-- /wrapper -->
+</div><!-- .wrapper -->
 
 <?php get_footer(); ?>
