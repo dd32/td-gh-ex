@@ -4,7 +4,7 @@
 	
 		<?php dynamic_sidebar( 'sidebar' ); ?>
 		
-	</div><!-- /sidebar -->
+	</div><!-- .sidebar -->
 
 <?php else : ?>
 		
@@ -18,7 +18,7 @@
 	            
 			</div>
 			
-	    </div> <!-- /widget_search -->
+	    </div><!-- .widget_search -->
 	    
 	    <div class="widget widget_recent_entries">
 	    
@@ -31,7 +31,7 @@
 						$args = array( 'numberposts' => '5', 'post_status' => 'publish' );
 						$recent_posts = wp_get_recent_posts( $args );
 						foreach( $recent_posts as $recent ){
-							echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="'.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
+							echo '<li><a href="' . get_permalink( $recent["ID"]) . '" title="' . esc_attr( $recent["post_title"]).'" >' .   $recent["post_title"] . '</a></li>';
 						}
 					?>
 				</ul>
@@ -40,17 +40,17 @@
 			
 			<div class="clear"></div>
 			
-		</div> <!-- /widget_recent_entries -->
+		</div><!-- .widget_recent_entries -->
 		
 		<div class="widget widget_text">
 	    
 	        <div class="widget-content">
 	        
-	        	<h3 class="widget-title"><?php _e("Text widget", "baskerville") ?></h3>
+	        	<h3 class="widget-title"><?php _e( "Text widget", "baskerville" ); ?></h3>
 	        
 	        	<div class="textwidget">
 	        	
-	        		<p><?php _e("These widgets are displayed because you haven't added any widgets of your own yet. You can do so at Appearance > Widgets in the WordPress settings.", "baskerville") ?></p>
+	        		<p><?php _e( "These widgets are displayed because you haven't added any widgets of your own yet. You can do so at Appearance > Widgets in the WordPress settings.", "baskerville" ); ?></p>
 				
 				</div>	
 				
@@ -58,8 +58,8 @@
 			
 			<div class="clear"></div>
 			
-		</div> <!-- /widget_recent_entries -->
+		</div><!-- .widget_recent_entries -->
 								
-	</div> <!-- /sidebar -->
+	</div><!-- .sidebar -->
 
 <?php endif; ?>

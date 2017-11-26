@@ -12,23 +12,23 @@
 				
 					<div class="post-header">
 												
-					    <h1 class="post-title"><?php the_title(); ?></h1>
+					    <?php the_title( '<h1 class="post-title">', '</h1>' ); ?>
 					    				    
-				    </div> <!-- /post-header -->
+				    </div><!-- .post-header -->
 				
 					<?php if ( has_post_thumbnail() ) : ?>
 						
 						<div class="featured-media">
 						
-							<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
+							<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 							
-								<?php the_post_thumbnail('post-image'); ?>
+								<?php the_post_thumbnail( 'post-image' ); ?>
 								
-								<?php if ( !empty(get_post(get_post_thumbnail_id())->post_excerpt) ) : ?>
+								<?php if ( ! empty( get_post( get_post_thumbnail_id() )->post_excerpt ) ) : ?>
 												
 									<div class="media-caption-container">
 									
-										<p class="media-caption"><?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?></p>
+										<p class="media-caption"><?php echo get_post( get_post_thumbnail_id() )->post_excerpt; ?></p>
 										
 									</div>
 									
@@ -36,7 +36,7 @@
 								
 							</a>
 									
-						</div> <!-- /featured-media -->
+						</div><!-- .featured-media -->
 							
 					<?php endif; ?>
 				   				        			        		                
@@ -46,28 +46,30 @@
 						
 						<div class="clear"></div>
 															            			                        
-					</div> <!-- /post-content -->
+					</div><!-- .post-content -->
 					
 					<?php comments_template( '', true ); ?>
 									
-				</div> <!-- /post -->
+				</div><!-- .post -->
 			
-			<?php endwhile; else: ?>
+			<?php endwhile; 
+		
+			else: ?>
 			
-				<p><?php _e("We couldn't find any posts that matched your query. Please try again.", "baskerville"); ?></p>
+				<p><?php _e( "We couldn't find any posts that matched your query. Please try again.", "baskerville" ); ?></p>
 		
 			<?php endif; ?>
 		
 			<div class="clear"></div>
 			
-		</div> <!-- /content -->
+		</div><!-- .content -->
 		
 		<?php get_sidebar(); ?>
 		
 		<div class="clear"></div>
 	
-	</div> <!-- /section-inner -->
+	</div><!-- .section-inner -->
 
-</div> <!-- /wrapper -->
+</div><!-- .wrapper -->
 								
 <?php get_footer(); ?>

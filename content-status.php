@@ -1,10 +1,10 @@
-<?php if($post->post_content != "") : ?>
+<?php if ( get_the_content() ) : ?>
 									                                    	    
 	<div class="post-excerpt">
-		    		            			            	                                                                                            
-		<?php the_excerpt('100'); ?>
+
+		<?php the_excerpt( 100 ); ?>
 	
-	</div> <!-- /post-excerpt -->
+	</div><!-- .post-excerpt -->
 
 <?php endif; ?>
 

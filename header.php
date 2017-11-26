@@ -6,16 +6,16 @@
 		
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-				
-		<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
-		 
+						 
 		<?php wp_head(); ?>
 	
 	</head>
 	
 	<body <?php body_class(); ?>>
+
+		<?php $background_image_url = get_header_image() ?: get_template_directory_uri() . '/images/header.jpg'; ?>
 	
-		<div class="header section small-padding bg-dark bg-image" style="background-image: url(<?php if (get_header_image() != '') : ?><?php header_image(); ?><?php else : ?><?php echo get_template_directory_uri() . '/images/header.jpg'; ?><?php endif; ?>);">
+		<div class="header section small-padding bg-dark bg-image" style="background-image: url( <?php echo $background_image_url; ?> );">
 		
 			<div class="cover"></div>
 			
@@ -23,7 +23,7 @@
 			
 				<?php get_search_form(); ?>
 			
-			</div> <!-- /header-search-block -->
+			</div><!-- .header-search-block -->
 					
 			<div class="header-inner section-inner">
 			
@@ -39,21 +39,21 @@
 			
 				<?php elseif ( get_bloginfo( 'description' ) || get_bloginfo( 'title' ) ) : ?>
 								
-						<h1 class="blog-title">
-							<a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?> &mdash; <?php echo esc_attr( get_bloginfo( 'description' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'title' ) ); ?></a>
-						</h1>
+					<h1 class="blog-title">
+						<a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'title' ) ) . ' &mdash; ' . esc_attr( get_bloginfo( 'description' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'title' ) ); ?></a>
+					</h1>
+					
+					<?php if ( get_bloginfo( 'description' ) ) : ?>
+					
+						<h3 class="blog-description"><?php echo esc_attr( get_bloginfo( 'description' ) ); ?></h3>
 						
-						<?php if ( get_bloginfo( 'description' ) ) { ?>
-						
-							<h3 class="blog-description"><?php echo esc_attr( get_bloginfo( 'description' ) ); ?></h3>
-							
-						<?php } ?>
+					<?php endif; ?>
 										
 				<?php endif; ?>
 							
-			</div> <!-- /header-inner -->
+			</div><!-- .header-inner -->
 						
-		</div> <!-- /header -->
+		</div><!-- .header -->
 		
 		<div class="navigation section no-padding bg-dark">
 		
@@ -71,60 +71,60 @@
 						
 				<ul class="main-menu">
 				
-					<?php if ( has_nav_menu( 'primary' ) ) {
-																		
-						wp_nav_menu( array( 
-						
-							'container' => '', 
-							'items_wrap' => '%3$s',
-							'theme_location' => 'primary', 
-							'walker' => new baskerville_nav_walker
-														
-						) ); } else {
+					<?php 
 					
-						wp_list_pages( array(
-						
+					if ( has_nav_menu( 'primary' ) ) {
+
+						$nav_args = array( 
+							'container' 		=> '', 
+							'items_wrap' 		=> '%3$s',
+							'theme_location' 	=> 'primary', 
+							'walker' 			=> new baskerville_nav_walker,
+						);
+																		
+						wp_nav_menu( $nav_args ); 
+
+					} else {
+
+						$list_pages_args = array(
 							'container' => '',
-							'title_li' => ''
+							'title_li' 	=> '',
+						);
+					
+						wp_list_pages( $list_pages_args );
 						
-						));
-						
-					} ?>
+					} 
+					
+					?>
 											
-				 </ul> <!-- /main-menu -->
+				 </ul><!-- .main-menu -->
 				 
 				 <a class="search-toggle fright" href="#"></a>
 				 
 				 <div class="clear"></div>
 				 
-			</div> <!-- /navigation-inner -->
+			</div><!-- .navigation-inner -->
 			
-		</div> <!-- /navigation -->
+		</div><!-- .navigation -->
 		
 		<div class="mobile-navigation section bg-graphite no-padding hidden">
 					
 			<ul class="mobile-menu">
 			
-				<?php if ( has_nav_menu( 'primary' ) ) {
+				<?php
+
+				if ( has_nav_menu( 'primary' ) ) {
 																	
-					wp_nav_menu( array( 
-					
-						'container' => '', 
-						'items_wrap' => '%3$s',
-						'theme_location' => 'primary', 
-						'walker' => new baskerville_nav_walker
-													
-					) ); } else {
+					wp_nav_menu( $nav_args ); 
+
+				} else {
 				
-					wp_list_pages( array(
+					wp_list_pages( $list_pages_args );
 					
-						'container' => '',
-						'title_li' => ''
-					
-					));
-					
-				} ?>
+				} 
+				
+				?>
 										
-			 </ul> <!-- /main-menu -->
+			 </ul><!-- .main-menu -->
 		
-		</div> <!-- /mobile-navigation -->
+		</div><!-- .mobile-navigation -->
