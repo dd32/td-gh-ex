@@ -3,17 +3,17 @@
 Template Name: Contributors template
 */
 
-$allUsers = get_users('orderby=post_count&order=DESC');
+$all_users = get_users( 'orderby=post_count&order=DESC' );
 
 $user_num = 0;
 $users = array();
 
-foreach ( $allUsers as $currentUser ) {
-	if ( !in_array( 'subscriber', $currentUser->roles ) // If the user isn't a subscriber...
-	&& ( !count_user_posts( $currentUser->ID ) == 0 )  // ...and the user has published one post or more...
-	&& ( !$currentUser->hideauthor == "yes" ) ) { // ...and the user hasn't been checked as hidden on the user profile...
+foreach ( $all_users as $current_user ) {
+	if ( ! in_array( 'subscriber', $current_user->roles ) // If the user isn't a subscriber...
+	&& ( ! count_user_posts( $current_user->ID ) == 0 )  // ...and the user has published one post or more...
+	&& ( ! $current_user->hideauthor == "yes" ) ) { // ...and the user hasn't been checked as hidden on the user profile...
 		
-		$users[] = $currentUser; // ...add the user to the array of users that is going to be displayed
+		$users[] = $current_user; // ...add the user to the array of users that is going to be displayed
 			
 	}
 } ?>
@@ -28,21 +28,21 @@ foreach ( $allUsers as $currentUser ) {
 					
 			<div <?php post_class('single post'); ?>>
 			
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 																		
 					<div class="post-header">
 												
-					    <h1 class="post-title"><?php the_title(); ?></h1>
+					    <?php the_title( '<h1 class="post-title">', '</h1>' ); ?>
 					    				    
-				    </div> <!-- /post-header -->
+				    </div><!-- .post-header -->
 				    
-					<?php if($post->post_content != "") : ?>
+					<?php if ( get_the_content() ) : ?>
 				   				        			        		                
 						<div class="post-content">
 									                                        
 							<?php the_content(); ?>
 																            			                        
-						</div> <!-- /post-content -->
+						</div><!-- .post-content -->
 					
 					<?php endif; ?>
 					
@@ -52,9 +52,9 @@ foreach ( $allUsers as $currentUser ) {
 						
 						$i = 0;
 						
-						foreach($users as $user) {
+						foreach( $users as $user ) {
 						
-							if($i%2 == 0) {
+							if ( $i % 2 == 0 ) {
 								echo $i > 0 ? "<div class='clear'></div></div>" : ""; // close div if it's not the first
 								echo "<div class='authors-row row'>";
 							}
@@ -69,27 +69,43 @@ foreach ( $allUsers as $currentUser ) {
 								<h5>
 								
 									<a href="<?php echo get_author_posts_url( $user->ID ); ?>">
-									
-										<?php echo count_user_posts( $user->ID ); ?>
-									
-										<?php if ( count_user_posts( $user->ID ) == 1 ) { echo ' post'; } else { echo ' posts'; } ?>
+
+										<?php 
+										$user_posts_count = count_user_posts( $user->ID );
+										printf( _n( '%s post', '%s posts', $user_posts_count, 'baskerville' ), $user_posts_count );
+										?>
 										
 									</a>
 									
 								</h5>
 								
-								<p class="author-description"><?php echo get_user_meta($user->ID, 'description', true); ?></p>
+								<div class="author-description">
+								
+									<?php echo wpautop( get_user_meta( $user->ID, 'description', true ) ); ?>
+									
+								</div>
 			
 								<div class="author-links">
-								
-									<?php if ( !empty($user->user_email) ) : ?><a class="author-link-mail" href="mailto:<?php echo $user->user_email; ?>"><?php _e('E-mail','baskerville'); ?></a><?php endif; ?>
+
+									<?php
+
+									$show_mail = get_the_author_meta( 'showemail' );
+																	
+									if ( ! empty( $author_mail ) && ( $show_mail == "yes" ) ) : ?>
+										<a class="author-link-mail" href="mailto:<?php echo $user->user_email; ?>"><?php _e( 'E-mail', 'baskerville' ); ?></a>
+									<?php endif; ?>
 									
-									<?php if ( !empty($user->user_url) ) : ?><a class="author-link-website" href="<?php echo $user->user_url; ?>"><?php _e('Website', 'baskerville') ?></a><?php endif; ?>
-									<?php if ( !empty($user->twitter) ) : ?><a class="author-link-twitter" href="http://www.twitter.com/<?php echo $user->twitter; ?>"><?php _e('Twitter', 'baskerville'); ?></a><?php endif; ?>
+									<?php if ( ! empty($user->user_url) ) : ?>
+										<a class="author-link-website" href="<?php echo $user->user_url; ?>"><?php _e( 'Website', 'baskerville' ); ?></a>
+									<?php endif; ?>
+
+									<?php if ( ! empty($user->twitter) ) : ?>
+										<a class="author-link-twitter" href="http://www.twitter.com/<?php echo $user->twitter; ?>"><?php _e( 'Twitter', 'baskerville' ); ?></a>
+									<?php endif; ?>
 									
-								</div> <!-- /author-links -->
+								</div><!-- .author-links -->
 								
-							</div> <!-- /author-info -->
+							</div><!-- .author-info -->
 							
 							<?php $i++; ?>
 															
@@ -97,24 +113,24 @@ foreach ( $allUsers as $currentUser ) {
 						
 						<div class="clear"></div>
 																		
-					</div> <!-- /authors-row -->
+					</div><!-- .authors-row -->
 					
-				</div> <!-- /contributors-container -->
+				</div><!-- .contributors-container -->
 				
 				<?php comments_template( '', true ); ?>
 						
 				<?php endwhile; endif; ?>
 	
-			</div> <!-- /post -->
+			</div><!-- .post -->
 				
-		</div> <!-- /content -->
+		</div><!-- .content -->
 		
 		<?php get_sidebar(); ?>
 			
 		<div class="clear"></div>
 	
-	</div> <!-- /section-inner -->
+	</div><!-- .section-inner -->
 	
-</div> <!-- /wrapper -->
+</div><!-- .wrapper -->
 								
 <?php get_footer(); ?>

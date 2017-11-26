@@ -12,26 +12,27 @@
 				
 				<h2 class="comments-title fleft">
 				
-					<?php echo count($wp_query->comments_by_type[comment]) . ' ';
-					echo _n( 'Comment', 'Comments', count($wp_query->comments_by_type[comment]), 'baskerville' ); ?>
+					<?php 
+					$comment_count = count( $wp_query->comments_by_type['comment'] );
+					echo $comment_count . ' ' . _n( 'Comment', 'Comments', $comment_count, 'baskerville' ); ?>
 					
 				</h2>
 				
 				<?php if ( comments_open() ) : ?>
 				
-					<h2 class="add-comment-title fright"><a href="#respond"><?php _e('Add yours', 'baskerville') . ' &rarr;'; ?></a></h2>
+					<h2 class="add-comment-title fright"><a href="#respond"><?php _e( 'Add yours', 'baskerville' ) . ' &rarr;'; ?></a></h2>
 				
 				<?php endif; ?>
 				
 				<div class="clear"></div>
 			
-			</div> <!-- /comments-title-container -->
+			</div><!-- .comments-title-container -->
 	
 			<ol class="commentlist">
 			    <?php wp_list_comments( array( 'type' => 'comment', 'callback' => 'baskerville_comment' ) ); ?>
 			</ol>
 			
-			<?php if (!empty($comments_by_type['pings'])) : ?>
+			<?php if ( ! empty( $comments_by_type['pings'] ) ) : ?>
 			
 				<div class="pingbacks">
 				
@@ -39,8 +40,9 @@
 				
 						<h3 class="pingbacks-title">
 						
-							<?php echo count($wp_query->comments_by_type[pings]) . ' ';
-							echo _n( 'Pingback', 'Pingbacks', count($wp_query->comments_by_type[pings]), 'baskerville' ); ?>
+							<?php 
+							$pingback_count = count( $wp_query->comments_by_type['pings'] );
+							echo $pingback_count . ' ' . _n( 'Pingback', 'Pingbacks', $pingback_count, 'baskerville' ); ?>
 						
 						</h3>
 					
@@ -64,11 +66,11 @@
 					
 					<div class="clear"></div>
 					
-				</div> <!-- /comment-nav-below -->
+				</div><!-- .comment-nav-below -->
 				
 			<?php endif; ?>
 			
-		</div><!-- /comments -->
+		</div><!-- .comments -->
 		
 	<?php endif; ?>
 	
@@ -90,13 +92,13 @@
 		
 			'author' =>
 				'<p class="comment-form-author">' .
-				'<input id="author" name="author" type="text" placeholder="' . __('Name','baskerville') . '" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" />' . '<label for="author">Author</label> ' . ( $req ? '<span class="required">*</span>' : '' ) . '</p>',
+				'<input id="author" name="author" type="text" placeholder="' . __( 'Name', 'baskerville' ) . '" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" />' . '<label for="author">' . __( 'Author', 'baskerville' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) . '</p>',
 			
 			'email' =>
-				'<p class="comment-form-email">' . '<input id="email" name="email" type="text" placeholder="' . __('Email','baskerville') . '" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" /><label for="email">Email</label> ' . ( $req ? '<span class="required">*</span>' : '' ) . '</p>',
+				'<p class="comment-form-email">' . '<input id="email" name="email" type="text" placeholder="' . __( 'Email','baskerville' ) . '" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" /><label for="email">' . __( 'Email', 'baskerville' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) . '</p>',
 			
 			'url' =>
-			'<p class="comment-form-url">' . '<input id="url" name="url" type="text" placeholder="' . __('Website','baskerville') . '" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /><label for="url">Website</label></p>')
+			'<p class="comment-form-url">' . '<input id="url" name="url" type="text" placeholder="' . __( 'Website', 'baskerville' ) . '" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /><label for="url">' . __( 'Website', 'baskerville' ) . '</label></p>')
 		),
 	);
 	

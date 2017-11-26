@@ -12,7 +12,7 @@
 										
 				</div>
 				
-			</div>
+			</div><!-- .column-1 -->
 			
 		<?php else : ?>
 		
@@ -33,9 +33,9 @@
 									
 				</div>
 				
-			</div>
+			</div><!-- .column-1 -->
 			
-		<?php endif; ?> <!-- /footer-a -->
+		<?php endif; ?>
 			
 		<?php if ( is_active_sidebar( 'footer-b' ) ) : ?>
 		
@@ -45,9 +45,9 @@
 		
 					<?php dynamic_sidebar( 'footer-b' ); ?>
 										
-				</div> <!-- /widgets -->
+				</div><!-- .widgets -->
 				
-			</div>
+			</div><!-- .column-2 -->
 			
 		<?php else : ?>
 		
@@ -63,10 +63,13 @@
 							
 							<ul>
 				                <?php
-									$args = array( 'numberposts' => '5', 'post_status' => 'publish' );
+									$args = array( 
+										'numberposts' => '5', 
+										'post_status' => 'publish' 
+									);
 									$recent_posts = wp_get_recent_posts( $args );
 									foreach( $recent_posts as $recent ){
-										echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="'.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
+										echo '<li><a href="' . get_permalink( $recent["ID"] ) . '" title="' . esc_attr( $recent["post_title"] ) . '" >' .  $recent["post_title"] . '</a></li>';
 									}
 								?>
 							</ul>
@@ -75,11 +78,11 @@
 						
 	                </div>
 									
-				</div> <!-- /widgets -->
+				</div><!-- .widgets -->
 				
-			</div>
+			</div><!-- .column-2 -->
 			
-		<?php endif; ?> <!-- /footer-b -->
+		<?php endif; ?>
 							
 		<?php if ( is_active_sidebar( 'footer-c' ) ) : ?>
 		
@@ -89,7 +92,7 @@
 		
 					<?php dynamic_sidebar( 'footer-c' ); ?>
 										
-				</div> <!-- /widgets -->
+				</div><!-- .widgets -->
 				
 			</div>
 			
@@ -98,23 +101,25 @@
 			<div class="column column-3 one-third">
 			
 				<div id="meta" class="widget widget_text">
+
 					<div class="widget-content">
 					
 						<h3 class="widget-title"><?php _e( "Text widget", "baskerville" ); ?></h3>
 						<p><?php _e( "These widgets are displayed because you haven't added any widgets of your own yet. You can do so at Appearance > Widgets in the WordPress settings.", "baskerville" ); ?></p>
 		                
 					</div>
+
                 </div>
 								
 			</div>
 			
-		<?php endif; ?> <!-- /footer-c -->
+		<?php endif; ?><!-- .footer-c -->
 		
 		<div class="clear"></div>
 	
-	</div> <!-- /footer-inner -->
+	</div><!-- .footer-inner -->
 
-</div> <!-- /footer -->
+</div><!-- .footer -->
 
 <div class="credits section bg-dark small-padding">
 
@@ -122,21 +127,21 @@
 
 		<p class="credits-left fleft">
 		
-			&copy; <?php echo date("Y") ?> <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a><span> &mdash; <?php printf( __( 'Powered by <a href="%s">WordPress</a>', 'baskerville'), 'http://www.wordpress.org' ); ?></span>
+			&copy; <?php echo date("Y") ?> <a href="<?php echo home_url(); ?>" title="<?php bloginfo( 'name' ); ?>"><?php bloginfo( 'name' ); ?></a><span> &mdash; <?php printf( __( 'Powered by <a href="%s">WordPress</a>', 'baskerville'), 'http://www.wordpress.org' ); ?></span>
 		
 		</p>
 		
 		<p class="credits-right fright">
 			
-			<span><?php printf( __( 'Theme by <a href="%s">Anders Noren</a>', 'baskerville'), 'http://www.andersnoren.se' ); ?> &mdash; </span><a class="tothetop" title="<?php _e('To the top', 'baskerville'); ?>" href="#"><?php _e('Up', 'baskerville' ); ?> &uarr;</a>
+			<span><?php printf( __( 'Theme by <a href="%s">Anders Noren</a>', 'baskerville' ), 'http://www.andersnoren.se' ); ?> &mdash; </span><a class="tothetop" title="<?php _e( 'To the top', 'baskerville' ); ?>" href="#"><?php _e( 'Up', 'baskerville' ); ?> &uarr;</a>
 			
 		</p>
 		
 		<div class="clear"></div>
 	
-	</div> <!-- /credits-inner -->
+	</div><!-- .credits-inner -->
 	
-</div> <!-- /credits -->
+</div><!-- .credits -->
 
 <?php wp_footer(); ?>
 
