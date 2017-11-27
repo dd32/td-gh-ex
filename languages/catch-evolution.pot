@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution 2.9.1\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-10-30 22:00+0545\n"
+"POT-Creation-Date: 2017-11-27 21:18+0545\n"
 "PO-Revision-Date: 2016-12-07 14:43-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -278,15 +278,15 @@ msgstr ""
 msgid "Fixed Header Top Menu"
 msgstr ""
 
-#: ../functions.php:158 ../inc/catchevolution-menus.php:106
+#: ../functions.php:158 ../inc/catchevolution-menus.php:95
 msgid "Primary Menu"
 msgstr ""
 
-#: ../functions.php:159 ../inc/catchevolution-menus.php:155
+#: ../functions.php:159 ../inc/catchevolution-menus.php:136
 msgid "Secondary Menu"
 msgstr ""
 
-#: ../functions.php:160 ../inc/catchevolution-menus.php:281
+#: ../functions.php:160 ../inc/catchevolution-menus.php:235
 msgid "Footer Menu"
 msgstr ""
 
@@ -488,24 +488,24 @@ msgstr ""
 msgid "Meetup"
 msgstr ""
 
-#: ../inc/catchevolution-menus.php:92 ../inc/catchevolution-menus.php:142
-#: ../inc/catchevolution-menus.php:204 ../inc/catchevolution-menus.php:262
+#: ../inc/catchevolution-menus.php:90 ../inc/catchevolution-menus.php:130
+#: ../inc/catchevolution-menus.php:177 ../inc/catchevolution-menus.php:226
 msgid "Menu"
 msgstr ""
 
-#: ../inc/catchevolution-menus.php:107
+#: ../inc/catchevolution-menus.php:96
 msgid "Primary menu"
 msgstr ""
 
-#: ../inc/catchevolution-menus.php:156
+#: ../inc/catchevolution-menus.php:137
 msgid "Secondary menu"
 msgstr ""
 
-#: ../inc/catchevolution-menus.php:216 ../inc/catchevolution-menus.php:217
+#: ../inc/catchevolution-menus.php:182 ../inc/catchevolution-menus.php:183
 msgid "Top Menu"
 msgstr ""
 
-#: ../inc/catchevolution-menus.php:282
+#: ../inc/catchevolution-menus.php:236
 msgid "Footer menu"
 msgstr ""
 

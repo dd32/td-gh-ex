@@ -71,7 +71,7 @@ function catchevolution_header_menu() {
     $header_menu = $options['disable_header_menu'];
 
     //Check Disable Primary and has Secondary menu
-    if ( empty ( $header_menu ) || has_nav_menu( 'secondary' ) ) : 
+    if ( empty ( $header_menu ) || has_nav_menu( 'secondary' ) ) :
 
         $classes = "mobile-menu-anchor page-menu";
 
@@ -82,23 +82,12 @@ function catchevolution_header_menu() {
         ?>
 
         <div id="header-menu">
-            
+
             <?php if ( empty ( $header_menu ) ) : ?>
                 <div id="access" class="menu-access-wrap clearfix">
                     <div id="mobile-primary-menu" class="<?php echo $classes; ?>">
-                        <?php 
-                        $hide_mobile_menu_labels = isset( $options['hide_mobile_menu_labels'] ) ? $options['hide_mobile_menu_labels'] : 0;
-                        
-                        $label = isset( $options['primary_mobile_menu_label'] ) ? $options['primary_mobile_menu_label'] : esc_html__( 'Menu', 'catch-evolution' );
-                        
-                        $labelclass = "mobile-menu-text";
-                        
-                        if ( !empty ( $hide_mobile_menu_labels ) ) {
-                            $labelclass = "screen-reader-text";
-                        }
-                        ?>
                         <button id="menu-toggle-primary" class="genericon genericon-menu">
-                            <span class="<?php echo esc_attr( $labelclass ); ?>"><?php echo esc_attr( $label ); ?></span>
+                            <span class="mobile-menu-text"><?php esc_html_e( 'Menu', 'catch-evolution' ); ?></span>
                         </button>
                     </div><!-- #mobile-primary-menu -->
 
@@ -125,7 +114,7 @@ function catchevolution_header_menu() {
                 </div><!-- #access -->
             <?php endif; ?>
 
-            <?php if ( has_nav_menu( 'secondary' ) ) : 
+            <?php if ( has_nav_menu( 'secondary' ) ) :
 
                 $menuclass = "mobile-disable";
                 if ( !empty ($options['enable_menus'] ) ) :
@@ -137,16 +126,8 @@ function catchevolution_header_menu() {
                     <?php
                     if ( !empty ($options['enable_menus'] ) ) : ?>
                         <div id="mobile-secondary-menu" class="mobile-menu-anchor secondary-menu">
-                            <?php 
-                            $hide_mobile_menu_labels = isset( $options['hide_mobile_menu_labels'] ) ? $options['hide_mobile_menu_labels'] : 0;
-                            $label = isset( $options['secondary_mobile_menu_label'] ) ? $options['secondary_mobile_menu_label'] : esc_html__( 'Menu', 'catch-evolution' );
-                            $labelclass = "mobile-menu-text";
-                            if ( !empty ( $hide_mobile_menu_labels ) ) {
-                                $labelclass = "screen-reader-text";
-                            }
-                            ?>
                             <button id="menu-toggle-secondary" class="genericon genericon-menu">
-                                <span class="<?php echo $labelclass; ?>"><?php echo esc_attr( $label ); ?></span>
+                                <span class="mobile-menu-text"><?php esc_html_e( 'Menu', 'catch-evolution' ); ?></span>
                             </button>
                         </div><!-- #mobile-header-right-menu -->
                     <?php endif; ?>
@@ -180,17 +161,10 @@ function catchevolution_header_top_menu() {
     // Getting data from Theme Options
     global $catchevolution_options_settings;
     $options = $catchevolution_options_settings;
-    $logo = esc_url( $options['top_menu_logo'] );
 
-    if ( !empty( $logo ) ) :
-        $classes = 'menu-with-logo';
-        $headerimage = '<div id="top-logo">';
-        $headerimage .= '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '"><img src="' . $logo . '" alt="' . get_bloginfo( 'name' ) . '" /></a>';
-        $headerimage .= '</div><!-- #top-logo -->';
-    else :
-        $classes = 'full-menu';
-        $headerimage = '';
-    endif; ?>
+    $classes = 'full-menu';
+    $headerimage = '';
+    ?>
 
     <?php if ( has_nav_menu( 'top', 'catch-evolution' ) ) : ?>
         <div id="fixed-header-top" class="<?php echo $classes; ?>">
@@ -199,16 +173,8 @@ function catchevolution_header_top_menu() {
 
                 <div id="access-top" class="menu-access-wrap clearfix">
                     <div id="mobile-top-menu" class="mobile-menu-anchor top-menu">
-                        <?php 
-                        $hide_mobile_menu_labels = isset( $options['hide_mobile_menu_labels'] ) ? $options['hide_mobile_menu_labels'] : 0;
-                        $label = isset( $options['top_mobile_menu_label'] ) ? $options['top_mobile_menu_label'] : esc_html__( 'Menu', 'catch-evolution' );
-                        $labelclass = "mobile-menu-text";
-                        if ( !empty ( $hide_mobile_menu_labels ) ) {
-                            $labelclass = "screen-reader-text";
-                        }
-                        ?>
                         <button id="menu-toggle-top" class="genericon genericon-menu">
-                            <span class="<?php echo $labelclass; ?>"><?php echo esc_attr( $label ); ?></span>
+                            <span class="mobile-menu-text"><?php esc_html_e( 'Menu', 'catch-evolution' ) ?></span>
                         </button>
                     </div><!-- #mobile-top-menu -->
 
@@ -218,7 +184,7 @@ function catchevolution_header_top_menu() {
                                 <?php wp_nav_menu( array( 'theme_location'  => 'top', 'container' => 'false', 'items_wrap' => '<ul id="top-nav" class="menu">%3$s</ul>' ) ); ?>
                         </nav><!-- #access -->
                     </div><!-- #site-top-menu -->
-                    
+
                 </div><!-- #access-top -->
             </div><!-- .wrapper -->
         </div><!-- #fixed-header-top -->
@@ -242,7 +208,7 @@ function catchevolution_footer_menu() {
         // Check is footer menu is enable or not
         global $catchevolution_options_settings;
         $options = $catchevolution_options_settings;
-        
+
         $menuclass = "mobile-disable";
 
         if ( !empty ($options['enable_menus'] ) ) :
@@ -251,30 +217,18 @@ function catchevolution_footer_menu() {
         ?>
 
         <div id="access-footer" class="<?php echo $menuclass; ?>">
-            <?php 
+            <?php
             if ( !empty ($options['enable_menus'] ) ) {
                     ?>
                 <div id="mobile-footer-menu" class="menu-access-wrap clearfix">
-                
-                    <?php   
-                    $hide_mobile_menu_labels = isset( $options['hide_mobile_menu_labels'] ) ? $options['hide_mobile_menu_labels'] : 0;
-                    
-                    $label = isset( $options['footer_mobile_menu_label'] ) ? $options['footer_mobile_menu_label'] : esc_html__( 'Menu', 'catch-evolution' );
-                    
-                    $labelclass = "mobile-menu-text";
-                    
-                    if ( !empty ( $hide_mobile_menu_labels ) ) {
-                        $labelclass = "screen-reader-text";
-                    }
-                    ?>
                     <div class="mobile-menu-anchor">
                         <button id="menu-toggle-footer" class="genericon genericon-menu">
-                            <span class="<?php echo esc_attr( $labelclass ); ?>"><?php echo esc_attr( $label ); ?></span>
+                            <span class="mobile-menu-text"><?php esc_html_e( 'Menu', 'catch-evolution' ); ?></span>
                         </button>
                     </div><!-- .mobile-menu-anchor -->
                 </div><!-- #mobile-footer-menu -->
-                <?php 
-            } 
+                <?php
+            }
             ?>
 
             <div id="site-footer-menu" class="site-menu">

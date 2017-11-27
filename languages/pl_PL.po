@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-10-30 22:01+0545\n"
-"PO-Revision-Date: 2017-10-30 22:01+0545\n"
+"POT-Creation-Date: 2017-11-27 21:19+0545\n"
+"PO-Revision-Date: 2017-11-27 21:19+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Piotrekkk <fansitepoprostugry@gmail.com>\n"
 "Language: pl\n"
@@ -300,15 +300,15 @@ msgstr "Polecane"
 msgid "Fixed Header Top Menu"
 msgstr "Fixed Header Top Menu"
 
-#: ../functions.php:158 ../inc/catchevolution-menus.php:106
+#: ../functions.php:158 ../inc/catchevolution-menus.php:95
 msgid "Primary Menu"
 msgstr "Główne menu"
 
-#: ../functions.php:159 ../inc/catchevolution-menus.php:155
+#: ../functions.php:159 ../inc/catchevolution-menus.php:136
 msgid "Secondary Menu"
 msgstr "Drugie menu"
 
-#: ../functions.php:160 ../inc/catchevolution-menus.php:281
+#: ../functions.php:160 ../inc/catchevolution-menus.php:235
 msgid "Footer Menu"
 msgstr "Menu w stopce"
 
@@ -553,21 +553,21 @@ msgstr "Xing"
 msgid "Meetup"
 msgstr "Meetup"
 
-#: ../inc/catchevolution-menus.php:107
+#: ../inc/catchevolution-menus.php:96
 msgid "Primary menu"
 msgstr "Główne menu"
 
-#: ../inc/catchevolution-menus.php:156
+#: ../inc/catchevolution-menus.php:137
 msgid "Secondary menu"
 msgstr "Drugie menu"
 
-#: ../inc/catchevolution-menus.php:216 ../inc/catchevolution-menus.php:217
+#: ../inc/catchevolution-menus.php:182 ../inc/catchevolution-menus.php:183
 #, fuzzy
 #| msgid "Footer Menu"
 msgid "Top Menu"
 msgstr "Menu w stopce"
 
-#: ../inc/catchevolution-menus.php:282
+#: ../inc/catchevolution-menus.php:236
 msgid "Footer menu"
 msgstr "Menu w stopce"
 

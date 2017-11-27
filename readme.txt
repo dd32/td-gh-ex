@@ -9,9 +9,9 @@ Catch Evolution theme is translation ready.
 Added Translation for Spanish by Ruben Ramos Fernandez (batmovil69@hotmail.com)
 Added Translation for French by Sebastian Chamusard (admin78@orange.fr) and Capronnier luc (Email: lcapronnier@yahoo.com)
 Added Translation for Swedish by Andre Fahlstrom (admin@andrefahlstrom.se)
-Added Translation for German by Knut Pfefferkorn (knut.pfefferkorn@gmail.com) 
+Added Translation for German by Knut Pfefferkorn (knut.pfefferkorn@gmail.com)
 Added Translation for Danish by Med venlig hilsen (medvind@medvind.dk)
-Added Translation for Italian by Eticamente Bella (eticamentebella1@gmail.com) and Lorenzo Bossi (lorenzobossi83@gmail.com) 
+Added Translation for Italian by Eticamente Bella (eticamentebella1@gmail.com) and Lorenzo Bossi (lorenzobossi83@gmail.com)
 Added Translation for Japanese by Key Saito (key@keyspace.info)
 Added Translation for Russian by XakRu (Email: calvinxakru@gmail.com) and Jose Rainbow (youlold@gmail.com)
 Added Translation for Czech by Marek Pridal (Email: m.pridal29@gmail.com)
@@ -63,11 +63,16 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 
 == Change Log ==
 
+= 3.0.1 (Released: November 27, 2017 ) =
+* Bug Fixed: Undefined index issue(Reported By: epharim)
+* Removed: Unnecessary codes
+
 = 3.0 (Released: October 25, 2017) =
 * Major Update: Enhanced HTML structure
 * Updated: Menu script (removed tinynav in favor of custom script)
 * Updated: Responsive style
 * Updated: Screenshot
+* Updated: French translation fr_FR.po and fr_FR.mo by Capronnier luc
 * Code optimization
 * Removed: changelog.txt file and added changelog in readme.txt file
 
