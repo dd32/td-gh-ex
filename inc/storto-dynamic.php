@@ -157,7 +157,7 @@ function storto_custom_settings_register( $wp_customize ) {
         		</span>
         	</p>
 			<p style="text-align:center;" class="storto-upgrade-button">
-				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/demo/gigante/" class="button button-secondary">
+				<a style="margin: 10px;" target="_blank" href="https://crestaproject.com/demo/gigante/" class="button button-secondary">
 					<?php esc_html_e('Watch the demo', 'storto'); ?>
 				</a>
 				<a style="margin: 10px;" target="_blank" href="https://crestaproject.com/downloads/gigante/" class="button button-secondary">

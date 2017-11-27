@@ -8,7 +8,7 @@
  */
 ?>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer">
 		<div class="site-info smallPart">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'storto' ) ); ?>">
 			<?php

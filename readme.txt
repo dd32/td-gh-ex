@@ -152,3 +152,6 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 = Version 1.5.0 =
 * Improved Javascript file
 * Minor bug fixes
+
+= Version 1.5.1 =
+* Minor bug fixes

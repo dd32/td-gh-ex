@@ -19,7 +19,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
@@ -80,11 +80,11 @@
 		</div>
 		<?php if ($hideSearch == 1 ) : ?>
 		<div class="topSearchForm">
-			<form role="search" method="get" id="searchform" action="<?php echo esc_url(home_url( '/' )); ?>"><input type="search" name="s" class="search" placeholder="<?php esc_attr_e('Type and hit enter...', 'storto'); ?>"></form>
+			<form method="get" id="searchform" action="<?php echo esc_url(home_url( '/' )); ?>"><input type="search" name="s" class="search" placeholder="<?php esc_attr_e('Type and hit enter...', 'storto'); ?>"></form>
 		</div>
 		<?php endif; ?>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
+		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle"><?php esc_html_e( 'Select a page...', 'storto' ); ?><i class="fa fa-align-justify"></i></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
