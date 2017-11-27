@@ -835,6 +835,40 @@ function customizer_library_avant_options() {
         'title' => __( 'Avant Layout Colors', 'avant' ),
         'priority' => '40'
     );
+    
+    // Colors
+    $section = 'colors';
+
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'Default Colors', 'avant' ),
+        'priority' => '10',
+        'panel' => $panel
+    );
+
+    $options['avant-boxed-bg-color'] = array(
+        'id' => 'avant-boxed-bg-color',
+        'label'   => __( 'Site Boxed Background Color', 'avant' ),
+        'section' => $section,
+        'type'    => 'color',
+        'default' => '#FFFFFF',
+    );
+    
+    $options['avant-primary-color'] = array(
+        'id' => 'avant-primary-color',
+        'label'   => __( 'Primary Color', 'avant' ),
+        'section' => $section,
+        'type'    => 'color',
+        'default' => $primary_color,
+    );
+
+    $options['avant-secondary-color'] = array(
+        'id' => 'avant-secondary-color',
+        'label'   => __( 'Secondary Color', 'avant' ),
+        'section' => $section,
+        'type'    => 'color',
+        'default' => $secondary_color,
+    );
 
     $section = 'avant-panel-colors-section-header';
 
@@ -999,40 +1033,7 @@ function customizer_library_avant_options() {
         'type'    => 'color',
         'default' => $header_font_color,
     );
-
-	// Colors
-	$section = 'colors';
-
-	$sections[] = array(
-		'id' => $section,
-		'title' => __( 'Colors', 'avant' ),
-		'priority' => '50'
-	);
-
-    $options['avant-boxed-bg-color'] = array(
-        'id' => 'avant-boxed-bg-color',
-        'label'   => __( 'Site Boxed Background Color', 'avant' ),
-        'section' => $section,
-        'type'    => 'color',
-        'default' => '#FFFFFF',
-    );
-
-	$options['avant-primary-color'] = array(
-		'id' => 'avant-primary-color',
-		'label'   => __( 'Primary Color', 'avant' ),
-		'section' => $section,
-		'type'    => 'color',
-		'default' => $primary_color,
-	);
-
-	$options['avant-secondary-color'] = array(
-		'id' => 'avant-secondary-color',
-		'label'   => __( 'Secondary Color', 'avant' ),
-		'section' => $section,
-		'type'    => 'color',
-		'default' => $secondary_color,
-	);
-
+    
 
     $panel = 'avant-panel-text';
 

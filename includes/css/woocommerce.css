@@ -270,8 +270,8 @@
 .woocommerce-page #content table.cart td.actions .coupon .input-text,
 .woocommerce-page table.cart td.actions .coupon .input-text {
     background-color: #FFF;
-    width: 50%;
-    padding: 8px 6px;
+    width: 48%;
+    padding: 6px;
     margin: 0;
 }
 

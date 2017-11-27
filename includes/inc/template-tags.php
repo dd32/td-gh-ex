@@ -25,7 +25,7 @@ function avant_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( '%s', 'post date', 'avant' ),
+		esc_html_x( 'Posted on %s', 'post date', 'avant' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 

@@ -80,7 +80,7 @@ global $woocommerce; ?>
 						
 			            <a class="header-cart-contents" href="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'avant' ); ?>">
 			                <span class="header-cart-amount">
-			                    <?php echo sprintf( _n( '%d', '%d', $woocommerce->cart->cart_contents_count, 'avant' ), $woocommerce->cart->cart_contents_count ); ?><span> - <?php echo $woocommerce->cart->get_cart_total(); ?></span>
+			                    <?php echo sprintf( _n( '%d item', '%d items', $woocommerce->cart->cart_contents_count, 'avant' ), $woocommerce->cart->cart_contents_count ); ?><span> - <?php echo $woocommerce->cart->get_cart_total(); ?></span>
 			                </span>
 			                <span class="header-cart-checkout <?php echo ( $woocommerce->cart->cart_contents_count > 0 ) ? sanitize_html_class( 'cart-has-items' ) : ''; ?>">
 			                    <i class="fa fa-shopping-cart"></i>
