@@ -153,8 +153,8 @@ class MP_Artwork {
 			add_theme_support( 'post-thumbnails' );
 			set_post_thumbnail_size( 770, 578, true );
 		}
-		add_image_size( $this->get_prefix() . 'thumb-large', 1600, 900, true );
-		add_image_size( $this->get_prefix() . 'thumb-large-blog', 1170, 543, true );
+		add_image_size( $this->get_prefix() . 'thumb-large', 2000 );
+		add_image_size( $this->get_prefix() . 'thumb-large-blog', 1170 );
 		add_image_size( $this->get_prefix() . 'thumb-medium', 960, 640, true );
 	}
 
@@ -168,10 +168,22 @@ class MP_Artwork {
 	 */
 
 	function load_google_fonts() {
-		wp_register_style( $this->get_prefix() . 'JosefinSans', 'https://fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,300italic,400italic,600,600italic,700italic,700' );
-		wp_enqueue_style( $this->get_prefix() . 'JosefinSans' );
-		wp_register_style( $this->get_prefix() . 'Niconne', 'https://fonts.googleapis.com/css?family=Niconne' );
-		wp_enqueue_style( $this->get_prefix() . 'Niconne' );
+
+		//Josefin Sans
+		$font_family_text       = get_theme_mod( $this->get_prefix() . "text_font_family", "Josefin Sans" );
+		//Niconne
+		$font_family_title       = get_theme_mod( $this->get_prefix() . "title_font_family", "Niconne" );
+
+		if ( strcasecmp( $font_family_text, "Josefin Sans" ) == 0 ) {
+			wp_register_style( $this->get_prefix() . 'JosefinSans',
+				'https://fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,300italic,400italic,600,600italic,700italic,700', array(), null );
+			wp_enqueue_style( $this->get_prefix() . 'JosefinSans' );
+		}
+
+		if ( strcasecmp( $font_family_title, "Niconne" ) == 0 ) {
+			wp_register_style( $this->get_prefix() . 'Niconne', 'https://fonts.googleapis.com/css?family=Niconne', array(), null );
+			wp_enqueue_style( $this->get_prefix() . 'Niconne' );
+		}
 	}
 
 	/**

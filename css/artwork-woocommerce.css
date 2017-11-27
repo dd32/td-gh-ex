@@ -359,11 +359,10 @@ td.label {
   margin: 1.500em 0 0;
 }
 
-@media (max-width: 991px) {
-  .single-product .quantity {
-    margin-bottom: 1.500em;
-  }
+.single-product .quantity {
+  margin-bottom: 1.500em;
 }
+
 @media (max-width: 767px) {
   .woocommerce ul.products li.product {
     width: 50%;
@@ -415,10 +414,9 @@ td.label {
   margin-right: -0.3125em;
 }
 .woocommerce-product-gallery .flex-control-thumbs li {
-  width: 33.333%;
+  width: 32.2%;
   float: left;
-  margin: 0 0 0.625em;
-  padding: 0 0.3125em;
+  margin: 1% 1% 0 0;
   cursor: pointer;
 }
 
@@ -657,6 +655,9 @@ ul#select2-results-2 {
 .checkout #shipping_method label {
   display: inline-block;
 }
+.checkout .terms label {
+  display: inline-block;
+}
 
 .select2-drop.select2-drop-above {
   border-radius: 0;
@@ -714,6 +715,10 @@ h3 label {
   border-color: #707070;
   border-radius: 0;
   height: 2.375em;
+}
+
+.variations td.label {
+  vertical-align: middle;
 }
 
 .woocommerce .woocommerce-message,

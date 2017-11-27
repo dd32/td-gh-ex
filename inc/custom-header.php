@@ -88,10 +88,7 @@ class MP_Artwork_Custom_Header {
 		}
 		if ( strcasecmp( $font_family, "Niconne" ) != 0 ) {
 			?>
-			<link id='theme-title-font-family'
-			      href="http://fonts.googleapis.com/css?family=<?php echo str_replace( " ", "+", $font_family ) . ":" . $font_weight_style . ( $font_weight_style != '400' ? ',400' : '' ); ?>"
-			      rel='stylesheet' type='text/css'>
-
+			<link id='theme-title-font-family' href="https://fonts.googleapis.com/css?family=<?php echo str_replace( " ", "+", $font_family ) . ":" . $font_weight_style . ( $font_weight_style != '400' ? ',400' : '' ); ?>" rel='stylesheet' type='text/css'>
 			<?php
 		}
 		$font_family_text       = esc_html( get_theme_mod( $this->get_prefix() . "text_font_family", "Josefin Sans" ) );
@@ -107,10 +104,7 @@ class MP_Artwork_Custom_Header {
 		$font_size_text = esc_html( get_theme_mod( $this->get_prefix() . "text_font_size", "16px" ) );
 		if ( strcasecmp( $font_family_text, "Josefin Sans" ) != 0 ) {
 			?>
-			<link id='theme-title-font-family'
-			      href="http://fonts.googleapis.com/css?family=<?php echo str_replace( " ", "+", $font_family_text ) . ":" . $font_weight_style_text . ( $font_weight_style_text != '400' ? ',400' : '' ); ?>"
-			      rel='stylesheet' type='text/css'>
-
+			<link id='theme-text-font-family' href="https://fonts.googleapis.com/css?family=<?php echo str_replace( " ", "+", $font_family_text ) . ":" . $font_weight_style_text . ( $font_weight_style_text != '400' ? ',400' : '' ); ?>" rel='stylesheet' type='text/css'>
 			<?php
 		}
 		$tagline_font = esc_html( get_theme_mod( $this->get_prefix() . "tagline_font", 0 ) );
@@ -122,13 +116,11 @@ class MP_Artwork_Custom_Header {
 					border: 0px solid;
 				}
 			<?php } ?>
-
 			<?php if (!get_bloginfo('description')) : ?>
 				.site-footer .site-description {
 					margin: 0;
 				}
 			<?php endif; ?>
-
 			<?php if (strcasecmp($tagline_font, "0") != 0) { ?>
 				.site-tagline {
 					font-family: <?php echo $font_family; ?>;

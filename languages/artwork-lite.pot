@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-05-24 18:02+0300\n"
+"POT-Creation-Date: 2017-11-27 13:59+0200\n"
 "PO-Revision-Date: 2016-05-24 09:48+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_n;_x;esc_html__;esc_attr_e;esc_attr_x\n"
@@ -433,7 +433,7 @@ msgid "&#8226; Designed by"
 msgstr ""
 
 #: footer.php:30
-msgid "http://www.getmotopress.com/"
+msgid "https://motopress.com/"
 msgstr ""
 
 #: footer.php:30
@@ -557,35 +557,35 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: inc/theme/init.php:261
+#: inc/theme/init.php:273
 msgid "Main Widget Area"
 msgstr ""
 
-#: inc/theme/init.php:263
+#: inc/theme/init.php:275
 msgid "Appears on posts and pages in the sidebar."
 msgstr ""
 
-#: inc/theme/init.php:271
+#: inc/theme/init.php:283
 msgid "Shop Widget Area"
 msgstr ""
 
-#: inc/theme/init.php:273
+#: inc/theme/init.php:285
 msgid "Appears on shop pages in the sidebar."
 msgstr ""
 
-#: inc/theme/init.php:281
+#: inc/theme/init.php:293
 msgid "Footer Left"
 msgstr ""
 
-#: inc/theme/init.php:283 inc/theme/init.php:293 inc/theme/init.php:303
+#: inc/theme/init.php:295 inc/theme/init.php:305 inc/theme/init.php:315
 msgid "Appears in the footer section of the site."
 msgstr ""
 
-#: inc/theme/init.php:291
+#: inc/theme/init.php:303
 msgid "Footer Center"
 msgstr ""
 
-#: inc/theme/init.php:301
+#: inc/theme/init.php:313
 msgid "Footer Right"
 msgstr ""
 
