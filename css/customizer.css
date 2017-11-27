@@ -1,4 +1,14 @@
 /*Cutomizer CSS*/
+.awada-accordion-section-title {
+    color: #0073aa;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    padding: 10px 10px 11px 14px;
+    line-height: 21px;
+    background: #FFF;
+    margin: 0 -12px 0;
+    border-left: 4px solid #0073aa
+}
 #slider .customize-partial-edit-shortcut button{
 	left:0px;
 }
@@ -49,4 +59,7 @@
 .upsell-btn > a.btn.btn-success.btn {
     padding: 10px;
     border-radius: 6px;
+}
+.customize-control-kirki-radio-image label {
+    margin-left: 4px;
 }

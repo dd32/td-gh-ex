@@ -5,7 +5,7 @@
 	Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-image-header, flexible-header, rtl-language-support,custom-colors, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, grid-layout, footer-widgets, blog, e-commerce, news, photography, portfolio
 	Author: WebHunt Infotech
 	Author URI: http://www.webhuntinfotech.com/
-	Version: 1.6.2
+	Version: 1.6.3
 	License: GNU General Public License v3 or later
 	License URI: http://www.gnu.org/licenses/gpl.html
 	Text Domain: awada
@@ -1837,4 +1837,292 @@ img {
 }
 #awada-header .dropmenu img {
     margin-left: 15px;
+}
+
+/*--------------------------------------------------------------
+16.1 Galleries
+--------------------------------------------------------------*/
+
+.gallery-item {
+	display: inline-block;
+	text-align: left;
+	vertical-align: top;
+	margin: 0 0 1.5em;
+	padding: 0 1em 0 0;
+	width: 50%;
+}
+
+.gallery-columns-1 .gallery-item {
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-item a,
+.gallery-item a:hover,
+.gallery-item a:focus,
+.widget-area .gallery-item a,
+.widget-area .gallery-item a:hover,
+.widget-area .gallery-item a:focus {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background: none;
+	display: inline-block;
+	max-width: 100%;
+}
+
+.gallery-item a img {
+	display: block;
+	-webkit-transition: -webkit-filter 0.2s ease-in;
+	transition: -webkit-filter 0.2s ease-in;
+	transition: filter 0.2s ease-in;
+	transition: filter 0.2s ease-in, -webkit-filter 0.2s ease-in;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.gallery-item a:hover img,
+.gallery-item a:focus img {
+	-webkit-filter: opacity(60%);
+	filter: opacity(60%);
+}
+
+.gallery-caption {
+	display: block;
+	text-align: left;
+	padding: 0 10px 0 0;
+	margin-bottom: 0;
+}
+@media screen and (min-width: 30em) {
+	/* Gallery Columns */
+
+	.gallery-item {
+		max-width: 25%;
+	}
+
+	.gallery-columns-1 .gallery-item {
+		max-width: 100%;
+	}
+
+	.gallery-columns-2 .gallery-item {
+		max-width: 50%;
+	}
+
+	.gallery-columns-3 .gallery-item {
+		max-width: 33.33%;
+	}
+
+	.gallery-columns-4 .gallery-item {
+		max-width: 25%;
+	}
+}
+@media screen and (min-width: 48em) {
+	/* Gallery Columns */
+
+	.gallery-columns-5 .gallery-item {
+		max-width: 20%;
+	}
+
+	.gallery-columns-6 .gallery-item {
+		max-width: 16.66%;
+	}
+
+	.gallery-columns-7 .gallery-item {
+		max-width: 14.28%;
+	}
+
+	.gallery-columns-8 .gallery-item {
+		max-width: 12.5%;
+	}
+
+	.gallery-columns-9 .gallery-item {
+		max-width: 11.11%;
+	}
+}
+
+/*--------------------------------------------------------------
+6.0 Forms
+--------------------------------------------------------------*/
+
+label {
+	color: #333;
+	display: block;
+	font-weight: 800;
+	margin-bottom: 0.5em;
+}
+fieldset {
+	border: 1px solid #bbb;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	color: inherit;
+	display: table;
+	max-width: 100%;
+	padding: 0;
+	white-space: normal;
+}
+fieldset {
+	margin-bottom: 1em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: #666;
+	background: #fff;
+	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+	border: 1px solid #bbb;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	display: block;
+	padding: 0.7em;
+	width: 100%;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: #222;
+}
+.radio, .checkbox{
+	display: inline-block;
+}
+select {
+	border: 1px solid #bbb;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	height: 3em;
+	max-width: 100%;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	margin-right: 0.5em;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+	font-weight: 400;
+}
+
+button,
+input[type="button"],
+input[type="submit"] {
+	border: 0;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 800;
+	line-height: 1;
+	padding: 1em 2em;
+	text-shadow: none;
+	-webkit-transition: background 0.2s;
+	transition: background 0.2s;
+}
+
+input + button,
+input + input[type="button"],
+input + input[type="submit"] {
+	padding: 0.75em 2em;
+}
+
+button.secondary,
+input[type="reset"],
+input[type="button"].secondary,
+input[type="reset"].secondary,
+input[type="submit"].secondary {
+	border: 0;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	text-shadow: none;
+	-webkit-transition: background 0.2s;
+	transition: background 0.2s;
+	padding: 4.9px 2em;
+	background-color: #222;
+	color: #fff;
+}
+
+button:hover,
+button:focus,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+	opacity: 0.8;
+}
+
+button.secondary:hover,
+button.secondary:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="button"].secondary:hover,
+input[type="button"].secondary:focus,
+input[type="reset"].secondary:hover,
+input[type="reset"].secondary:focus,
+input[type="submit"].secondary:hover,
+input[type="submit"].secondary:focus {
+	opacity: 0.8;
+}
+
+/* Placeholder text color -- selectors need to be separate to work. */
+::-webkit-input-placeholder {
+	color: #333;
+	font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
+}
+
+:-moz-placeholder {
+	color: #333;
+	font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
+}
+
+::-moz-placeholder {
+	color: #333;
+	font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
+	opacity: 1;
+	/* Since FF19 lowers the opacity of the placeholder by default */
+}
+
+:-ms-input-placeholder {
+	color: #333;
+	font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
 }

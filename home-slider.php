@@ -1,49 +1,57 @@
 <?php $awada_theme_options = awada_theme_options();
-if($awada_theme_options['home_slider_enabled']==1){ ?>
-<div id="slider" class="sl-slider-wrapper demo-2">
-	<div class="sl-slider" >
-		<?php if(isset($awada_theme_options['home_slider_posts']) && $awada_theme_options['home_slider_posts'] != "") {
-			$j = 0;
-			foreach ($awada_theme_options['home_slider_posts'] as $post_id) {
-			$slider = get_post($post_id);
-				if ($j % 2 == 0){	$orientation = 'horizontal';	}
-				else{	$orientation = 'vertical';	}
-			?>
-				<div class="sl-slide" data-orientation="<?php echo $orientation; ?>" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-					<div class="sl-slide-inner">
-						<?php echo get_the_post_thumbnail($slider->ID, 'awada_home_slider_bg_image', array('class' => 'img-responsive bg-img')); ?>
-						<h2><?php echo esc_attr($slider->post_title); ?></h2>
-						<blockquote><p><?php echo esc_attr(wp_trim_words($slider->post_content, 8, '...')); ?></p></blockquote>
-					</div>
-				</div>
-		<?php $j++; //endif;
-		} } else {
-			$slider_title = array(__('Highly Customizable', 'awada'), __('Responsive Theme', 'awada'), __('Corporate Theme', 'awada'));
-			for($j=1 ; $j<=3 ; $j++){
-			if ($j % 2 == 0){	$orientation = 'horizontal';	}
-				else{	$orientation = 'vertical';	} ?>
-					<div class="sl-slide" data-orientation="<?php echo $orientation; ?>" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-						<div class="sl-slide-inner">
-							<img class="img-responsive bg-img" src="<?php echo get_template_directory_uri(); ?>/images/slider/s<?php echo $j; ?>.jpg">
-							<h2><?php echo esc_attr($slider_title[$j-1]); ?></h2>
-							<blockquote><p><?php _e('Lorem ipsum dolor sit amet, consectetur.', 'awada'); ?></p></blockquote>
-						</div>
-					</div>
-		<?php } $j=3;
-		} ?>
-	</div><!-- /sl-slider -->
-	<?php if($j>1){ ?>
-	<nav id="nav-arrows" class="nav-arrows">
-		<span class="nav-arrow-prev"><?php _e('Previous', 'awada'); ?></span>
-		<span class="nav-arrow-next"><?php _e('Next', 'awada'); ?></span>
-	</nav>
-				
-	<nav id="nav-dots" class="nav-dots">
-		<?php for($i=1; $i<=$j; $i++) { ?>
-			<span <?php echo $i==1 ? 'class="nav-dot-current"' : ""; ?>></span>
-		<?php } ?>
-	</nav>
-	<?php } ?>
+if($awada_theme_options['home_slider_enabled']==1){
+	if($awada_theme_options['home_slider_shortcode']!=""){
+		echo do_shortcode($awada_theme_options['home_slider_shortcode']);
+	}else{?>
+		<div id="slider" class="sl-slider-wrapper demo-2">
+			<div class="sl-slider" >
+				<?php for ($i = 1; $i <= 3; $i++) { 
+                if($awada_theme_options['slider_img_'.$i]!=""){
+					$image_id = Kirki_Helper::get_image_id( $awada_theme_options['slider_img_'.$i] );
+                    if ($image_id!=false) {
+                        $img_src = wp_get_attachment_image_url($image_id, 'awada_home_slider_bg_image',false);
+                    }else{
+                        $img_src =$awada_theme_options['slider_img_'.$i];
+                    }
 
-</div><!-- /slider-wrapper -->
-<?php } ?>
+						if ($i % 2 == 0){	$orientation = 'horizontal';	}
+						else{	$orientation = 'vertical';	}
+					?>
+						<div class="sl-slide" data-orientation="<?php echo $orientation; ?>" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+							<div class="sl-slide-inner">
+								<img src="<?php echo esc_url($img_src); ?>" class="awada_home_slider_bg_image img-responsive bg-img" alt="<?php echo wp_kses_post($awada_theme_options['slider_title_'.$i]); ?>">
+								 <?php if($awada_theme_options['slider_title_'.$i]!=""){?>
+								<h2><?php echo wp_kses_post($awada_theme_options['slider_title_'.$i]); ?></h2>
+								<?php } ?>
+								<?php $link='';
+	                            if (isset($awada_theme_options['slider_post_page_' . $i]) && $awada_theme_options['slider_post_page_' . $i] == 'post') {
+	                                    if (isset($awada_theme_options['post_slider_' . $i]) && $awada_theme_options['post_slider_' . $i] != 0) {$link = get_permalink($awada_theme_options['post_slider_' . $i]);}
+	                                } else {
+	                                    if (isset($awada_theme_options['page_slider_' . $i]) && $awada_theme_options['page_slider_' . $i] != 0) {$link = get_permalink($awada_theme_options['page_slider_' . $i]);}
+	                                } ?>
+								<?php if($awada_theme_options['slider_subtitle_'.$i]!="" || $link!=""){?>
+								<blockquote>
+									<?php if($awada_theme_options['slider_subtitle_'.$i]!=""){?>
+									<p><?php echo wp_kses_post($awada_theme_options['slider_subtitle_'.$i]); ?></p>
+									<?php } ?>
+									<?php if($link!='' && isset($awada_theme_options['slider_readmore_' . $i]) && $awada_theme_options['slider_readmore_' . $i]!=''){?>
+	                           <a id="slide<?php echo $i; ?>-btn1" href="<?php echo esc_url($link); ?>" class="btn btn-primary btn-lg slider-btn2"><?php if(isset($awada_theme_options['slider_readmore_' . $i]) && $awada_theme_options['slider_readmore_' . $i]!=''){ echo esc_attr($awada_theme_options['slider_readmore_' . $i]); }?></a>
+	                            <?php } ?>
+								</blockquote>
+								<?php } ?>								
+							</div>
+						</div>
+
+				<?php } //endif;
+				 } ?>
+			</div><!-- /sl-slider -->
+			<?php if($i>1){ ?>
+			<nav id="nav-arrows" class="nav-arrows">
+				<span class="nav-arrow-prev"><?php _e('Previous', 'awada'); ?></span>
+				<span class="nav-arrow-next"><?php _e('Next', 'awada'); ?></span>
+			</nav>
+			
+			<?php } ?>
+		</div><!-- /slider-wrapper --><?php 
+	}
+} ?>

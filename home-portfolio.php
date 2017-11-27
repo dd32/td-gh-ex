@@ -4,9 +4,11 @@ $awada_portfolio_post = get_post($post_id); ?>
 <section id="home_portfolio" class="white-wrapper">
 	<div class="container">
 		<div class="main_title">
-			<?php if($awada_portfolio_post->post_title!=""){ ?>
-			<h2 id="portfolio_heading"><?php echo esc_attr($awada_portfolio_post->post_title); ?></h2>
+			<?php if($awada_theme_options['home_portfolio_title']!=""){ ?>
+			<h2 id="portfolio_heading"><?php echo wp_kses_post($awada_theme_options['home_portfolio_title']); ?></h2>
 			<hr>
+			<?php } if ($awada_theme_options['home_portfolio_subtitle'] != ""){ ?>
+			<p id="portfolio_sub_heading" class="lead"><?php echo wp_kses_post($awada_theme_options['home_portfolio_subtitle']); ?></p>
 			<?php } ?>
 		</div><!-- end general title -->
 		<div class="padding-top"><?php

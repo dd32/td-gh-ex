@@ -18,36 +18,58 @@ function awada_theme_options()
 		'color_scheme' => 'green.css',
 		//Slider Settings:
         'home_slider_enabled' => 1,
+
+        'slider_img_1'=>get_template_directory_uri().'/images/slider/s1.jpg',
+        'slider_img_2'=>get_template_directory_uri().'/images/slider/s2.jpg',
+        'slider_img_3'=>get_template_directory_uri().'/images/slider/s3.jpg',
+
+        'slider_title_1'=>__('Welcome To Awada','awada'),
+        'slider_subtitle_1'=>__('The ultimate aim of your business','awada'),
+
+        'slider_title_2'=>__('Popular Responsive Theme','awada'),
+        'slider_subtitle_2'=>__('The Key Of Your Success','awada'),
+
+        'slider_title_3'=>__('Why Are You Waitting','awada'),
+        'slider_subtitle_3'=>__('Download and Start Customizing Your Site','awada'),
+
+        'home_slider_shortcode'=>'',
 		// Service
-        'home_service_title' => __('Our Services', 'awada'),
+        'home_service_title' => __('Our <span>Services</span>', 'awada'),
 		'home_service_description' => __('We provide best solution for your business', 'awada'),
         'home_service_column' => 4,
         'service_title_1' => __("Responsive", 'awada'),
-        'service_icon_1' => "fa fa-mobile",
+        'service_icon_1' => "mobile",
         'service_text_1' => __("Lorem ipsum dolor sit amet, consectetur adipisicing elit ipsum lorem sit amet.", 'awada'),
 		'service_link_1' => "#",
 
         'service_title_2' => __("Retina Ready", 'awada'),
-        'service_icon_2' => "fa fa-eye",
+        'service_icon_2' => "eye",
         'service_text_2' => __("Lorem ipsum dolor sit amet, consectetur adipisicing elit ipsum lorem sit amet.", 'awada'),
         'service_link_2' => "#",
 
         'service_title_3' => __("Multi Layout", 'awada'),
-        'service_icon_3' => "fa fa-code",
+        'service_icon_3' => "code",
         'service_text_3' => __("Lorem ipsum dolor sit amet, consectetur adipisicing elit ipsum lorem sit amet", 'awada'),
         'service_link_3' => "#",
 
         'service_title_4' => __('Easy To Customize', 'awada'),
         'service_text_4' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit ipsum lorem sit amet', 'awada'),
-        'service_icon_4' => "fa fa-wrench",
+        'service_icon_4' => "wrench",
         'service_link_4' => "#",
 		//Portfolio Settings:
+        'home_portfolio_title' => __('Our <span>Portfolio</span>', 'awada'),
+        'home_portfolio_subtitle' => __('Our Latest <strong>Work</strong>', 'awada'),
         'portfolio_post' => '',
         /* blog option */
-		'home_blog_title' => __('Our Recent Posts', 'awada'),
+		'home_blog_title' => __('Our <span>Recent Posts</span>', 'awada'),
 		'home_blog_description' => __('Etiam sit amet orci eget eros faucibus tincidunt.', 'awada'),
         'blog_post_count' => 3,
-		'home_post_cat' => '',
+		'home_post_cat' => array(),
+        'show_load_more_btn'=>1,
+        'home_load_post_num'=>3,
+        'blog_no_more_post'       => __('No older posts found', 'awada'),
+        'blog_more_loading'       => __('Loading', 'awada'),
+        'blog_load_more_text'     => __('Load More', 'awada'),
 		/* footer callout */
 		'callout_bg_image' => $banner_img,
 		'callout_external_bg_video'=>esc_url('https://www.youtube.com/watch?v=jnLSYfObARA'),

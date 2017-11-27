@@ -45,9 +45,6 @@ $("a[data-gal^='prettyPhoto']").prettyPhoto({animationSpeed:'slow',slideshow:fal
 	  }
 	}
 });
-$(document).ready(function(){
-	$('form input, form textarea, form select:not(#billing_country)').addClass('form-control');
-});
 
 /* Slider */
 var Page = (function() {

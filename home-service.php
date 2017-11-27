@@ -4,10 +4,10 @@ $col = 12 / (int)$awada_theme_options['home_service_column']; ?>
 	<div class="container">
 		<div class="main_title">
 			<?php if ($awada_theme_options['home_service_title'] != ""){ ?>
-			<h2 id="home_service_title"><?php echo esc_attr($awada_theme_options['home_service_title']); ?></h2>
+			<h2 id="home_service_title"><?php echo wp_kses_post($awada_theme_options['home_service_title']); ?></h2>
 			<hr>
 			<?php } if ($awada_theme_options['home_service_description'] != ""){ ?>
-			<p id="home_service_description" class="lead"><?php echo esc_attr($awada_theme_options['home_service_description']); ?></p>
+			<p id="home_service_description" class="lead"><?php echo wp_kses_post($awada_theme_options['home_service_description']); ?></p>
 			<?php } ?>
 		</div><!-- end general title -->
 		
@@ -48,15 +48,15 @@ $col = 12 / (int)$awada_theme_options['home_service_column']; ?>
 					if($awada_theme_options['service_icon_' . $j] != ""){ ?>
 					<a href="<?php echo esc_url($service_url); ?>">
 					<div id="service_box_<?php echo $j; ?>"class="service-icon-square  <?php if($i==2){ echo 'active'; } ?>">
-						<i id="service_icon_<?php echo $j; ?>" class="<?php echo esc_attr($awada_theme_options['service_icon_' . $j]); ?>"></i>
+						<i id="service_icon_<?php echo $j; ?>" class="fa fa-<?php echo wp_kses_post($awada_theme_options['service_icon_' . $j]); ?>"></i>
 					</div><!-- end service icon -->
 					</a>
 					<?php } ?>
 					<div class="title">
-						<a href="<?php echo esc_url($service_url); ?>"><h3 id="service_title_<?php echo $j; ?>"><?php echo esc_attr($awada_theme_options['service_title_' . $j]); ?></h3></a>
+						<a href="<?php echo esc_url($service_url); ?>"><h3 id="service_title_<?php echo $j; ?>"><?php echo wp_kses_post($awada_theme_options['service_title_' . $j]); ?></h3></a>
 					</div><!-- end title -->
 					<?php if($awada_theme_options['service_text_' . $j] != ""){ ?>
-					<p id="service_description_<?php echo $j; ?>"><?php echo esc_attr($awada_theme_options['service_text_' . $j]); ?></p>
+					<p id="service_description_<?php echo $j; ?>"><?php echo wp_kses_post($awada_theme_options['service_text_' . $j]); ?></p>
 					<?php } ?>
 					<a id="service_link_<?php echo $j; ?>" class="readmore" href="<?php echo esc_url($service_url); ?>" target="_blank" ><?php _e('Read More', 'awada'); ?></a>
 				</div><!-- end Service Layout -->

@@ -18,7 +18,7 @@ blockquote,
 .main_title hr {
 	border-color:#31a3dd;
 }
-
+.main_title h2 span,
 .blog-meta span i,
 .service-icon-square i,
 .servicelayout:hover .service-icon i,
@@ -30,7 +30,9 @@ a.readmore,
 #sitetopbar .sitetopbar-login i {
 	color:#31a3dd;
 }
-
+button,
+input[type="button"],
+input[type="submit"],
 .recent_posts_widget > li img:hover,
 #awada_footer_area .topbar-social-links span a:hover,
 .awadatop,

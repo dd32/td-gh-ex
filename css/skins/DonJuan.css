@@ -37,6 +37,7 @@ blockquote,
 #awada-header-style-1 .dropmenu .dropdown.dropmenu-fw .dropdown-menu {
 	border-top-color: #5C4B51 !important;
 }
+.main_title h2 span,
 .blog_button,
 .cat_widget h3,
 .rating i,
@@ -61,6 +62,9 @@ a.readmore,
 #sitetopbar .topbar-contact-cart i {
 	color:#5C4B51;
 }
+button,
+input[type="button"],
+input[type="submit"],
 .timeline-badge.danger,
 .flex-control-paging li a.flex-active,
 .tparrows:hover {

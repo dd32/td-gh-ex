@@ -1,3 +1,10 @@
+###Version 1.6.3 [27-NOV-2017]
+* Kirki Latest Package Updated.
+* Home post loading via ajax.
+* New options added in Slider. Also You can use any slider plugin to display slider.
+* Portfolio Title and Description Field added.
+* Now You can use html attr like <span>, <strong>,<br> in title and description of Home sections.
+* Performance Improvments.
 ###Version 1.6.2 [29-May-2017]
 * Backgroung image and video background support added.
 * Minor issue fixed.

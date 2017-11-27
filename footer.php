@@ -43,10 +43,6 @@ $col = 12 / (int)$awada_theme_options['footer_layout']; ?>
 		<?php } ?>
 	</div><!-- end container -->
 </div><!-- end copyrights -->
-<?php } if ($awada_theme_options['custom_css'] != '') { ?>
-<style>
-	<?php echo $awada_theme_options['custom_css']; ?>
-</style>
 <?php } ?>
 <div class="awadatop"><?php _e('Scroll to Top', 'awada'); ?></div>
 <?php wp_footer(); ?>

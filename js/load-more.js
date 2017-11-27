@@ -1,32 +1,59 @@
-jQuery(document).ready(function () {
-    var count1 = (load_more_posts_variable1.counts_posts1);
-    var count2 = (load_more_posts_variable1.blog_post_count);
-    var $container = jQuery('.masonry2');
-    var totalPosts = parseInt(count1);
-    var view_post = parseInt(count2);
-    var show_after = 1 + parseInt(view_post);
-    var j;
-    var i;
-    var totPost = totalPosts;
-    j = i = totalPosts - view_post; //  Show only 3 posts
-    for (totalPosts; i >= 1; i--, totalPosts--) {
-        jQuery('#roww-' + totalPosts).hide();
-    }
-    if (totPost <= view_post) {
-        jQuery('.post-btn2').hide();
-    } else if (totPost >= show_after) {
-        jQuery('.post-btn2').show();
-    }
-    jQuery(".append-button1").click(function () {
-        var showPosts = view_post;
-        while (!showPosts == 0 && totalPosts < totPost) {
-            var plusOne = totalPosts + 1;
-            jQuery('#roww-' + plusOne).show();
-            showPosts--;
-            totalPosts++;
-        }
-        if (totPost == totalPosts) {
-            jQuery('.post-btn2').hide();
-        }
+jQuery(document).ready(function ($) {
+   /*----------------------------------------------------*/
+    /*  Ajax Load More Posts
+     /*----------------------------------------------------*/
+    var $content = $('.ajax_posts');
+    var $loader = $('#more_posts');
+    var ppp = screenReaderText.ppp;
+    $content.imagesLoaded(function(){
+        $content.masonry({
+            itemSelector: '.grid-item', 
+        });
     });
+    $loader.on( 'click', load_ajax_posts );
+    function load_ajax_posts() {
+        if (!($loader.hasClass('loading') || $loader.hasClass('post_no_more_posts'))) {
+            var offset = $('.blog-masonry').find('.blog-carousel').length;
+            $.ajax({
+                type: 'POST',
+                dataType: 'html',
+                url: screenReaderText.ajaxurl,
+                data: {
+                    'ppp': ppp,
+                    'offset': offset,
+                    'action': 'awada_more_post_ajax'
+                },
+                beforeSend : function () {
+                    $loader.button('loading');
+                },
+                success: function (data) {
+                    var $data = $(data);
+                    if ($data.length) {
+                        var $newElements = $data.addClass('animated zoomIn').css('opacity',0);
+                        $content.append($newElements).each(function(){
+                            $content.imagesLoaded(function(){
+                            $content.masonry({
+                                itemSelector: '.grid-item',
+                            });
+                            
+                        });
+                            $content.masonry('reloadItems');
+                        });
+                        $newElements.animate({ opacity: 1 });
+                        $content.masonry();
+                        $loader.button('reset');
+                    } else {
+                        $loader.removeClass('loading').addClass('post_no_more_posts').html(screenReaderText.noposts);
+                    }
+                },
+                error : function (jqXHR, textStatus, errorThrown) {
+                    $loader.html($.parseJSON(jqXHR.responseText) + ' :: ' + textStatus + ' :: ' + errorThrown);
+                    console.log(jqXHR);
+                },
+            });
+        }
+
+        offset += ppp;
+        return false;
+    }
 });
