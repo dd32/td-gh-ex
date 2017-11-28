@@ -88,17 +88,13 @@
 						</div>
 					    
 					</div><!-- .post-header -->
-
-					<?php if ( get_the_content() ) : ?>
 														                                    	    
-						<div class="post-content">
-						
-							<?php the_content(); ?>
-							<?php wp_link_pages(); ?>
-												
-						</div><!-- .post-content -->
-
-					<?php endif; ?>
+					<div class="post-content">
+					
+						<?php the_content(); ?>
+						<?php wp_link_pages(); ?>
+											
+					</div><!-- .post-content -->
 					            
 					<div class="clear"></div>
 					

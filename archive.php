@@ -19,25 +19,28 @@
 					<?php elseif ( is_tag() ) : ?>
 						<?php printf( __( 'Tag: %s', 'hemingway' ), '' . single_tag_title( '', false ) . '' ); ?>
 					<?php elseif ( is_author() ) : ?>
-						<?php $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author)); ?>
+						<?php $curauth = ( isset($_GET['author_name'] ) ) ? get_user_by('slug', $author_name) : get_userdata( intval( $author ) ); ?>
 						<?php printf( __( 'Author: %s', 'hemingway' ), $curauth->display_name ); ?>
 					<?php else : ?>
 						<?php _e( 'Archive', 'hemingway' ); ?>
-					<?php endif; ?>
+					<?php endif;
+
+					$paged = get_query_var( 'paged' ) ?: 1;
 					
-					<?php
-					$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+					if ( 1 < $wp_query->max_num_pages ) : ?>
 					
-					if ( "1" < $wp_query->max_num_pages ) : ?>
-					
-						<span><?php printf( __('(page %s of %s)', 'hemingway'), $paged, $wp_query->max_num_pages ); ?></span>
+						<span><?php printf( __( '(page %s of %s)', 'hemingway' ), $paged, $wp_query->max_num_pages ); ?></span>
 					
 					<?php endif; ?></h4>
 					
 					<?php
-						$tag_description = tag_description();
-						if ( ! empty( $tag_description ) )
-							echo apply_filters( 'tag_archive_meta', '<div class="tag-archive-meta">' . $tag_description . '</div>' );
+
+					$tag_description = tag_description();
+
+					if ( ! empty( $tag_description ) ) {
+						echo apply_filters( 'tag_archive_meta', '<div class="tag-archive-meta">' . $tag_description . '</div>' );
+					}
+
 					?>
 					
 				</div><!-- .page-title -->
@@ -45,8 +48,6 @@
 				<div class="clear"></div>
 		
 				<?php if ( have_posts() ) : ?>
-			
-					<?php rewind_posts(); ?>
 				
 					<?php while ( have_posts() ) : the_post(); ?>
 					

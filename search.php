@@ -16,7 +16,7 @@
 				
 					$paged = get_query_var( 'paged' ) ?: 1;
 					
-					if ( "1" < $wp_query->max_num_pages ) : ?>
+					if ( 1 < $wp_query->max_num_pages ) : ?>
 					
 						<span><?php printf( __( '(page %s of %s)', 'hemingway' ), $paged, $wp_query->max_num_pages ); ?></span>
 					

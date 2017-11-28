@@ -41,6 +41,10 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.58 (2017-11-28)
+-------------------------
+- Cleaned up a bit in archive.php
+- Removed conditionals around the_content() output in single.php, as the conditional was interfering with plugins using the_content() to output stuff
 
 Version 1.57 (2017-11-26)
 -------------------------

@@ -46,7 +46,7 @@
 					
 					<?php if ( current_user_can( 'manage_options' ) ) : ?>
 																	
-						<p><?php edit_post_link( __('Edit', 'hemingway') ); ?></p>
+						<p><?php edit_post_link( __( 'Edit', 'hemingway' ) ); ?></p>
 					
 					<?php endif; ?>
 														            			                        
@@ -62,9 +62,11 @@
 		
 		</div><!-- .posts -->
 		
-		<?php endwhile; else: ?>
+		<?php endwhile; 
+	
+		else: ?>
 		
-			<p><?php _e("We couldn't find any posts that matched your query. Please try again.", "hemingway"); ?></p>
+			<p><?php _e( "We couldn't find any posts that matched your query. Please try again.", "hemingway" ); ?></p>
 	
 		<?php endif; ?>
 	
