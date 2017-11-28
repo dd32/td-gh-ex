@@ -162,6 +162,18 @@ function ifeature_upgrade_link() {
 
 add_filter( 'cyberchimps_upgrade_pro_title', 'cyberchimps_upgrade_bar_pro_title' );
 add_filter( 'cyberchimps_upgrade_link', 'ifeature_upgrade_link' );
+function cyberchimps_demodata()
+{
+	$link = 'https://cyberchimps.com/checkout/?add-to-cart=277283';
+	return $link.'';
+}
+add_filter( 'cyberchimps_demodata', 'cyberchimps_demodata' );
+function cyberchimps_rating_link()
+{
+	$link = 'https://wordpress.org/support/theme/ifeature/reviews/#new-post/';
+	return $link.'';
+}
+add_filter( 'cyberchimps_rating_link', 'cyberchimps_rating_link' );
 
 // Help Section
 function ifeature_options_help_header() {
@@ -415,26 +427,6 @@ function cyberchimps_ifeature_upgrade_bar(){
 				'<a href="' . $upgrade_link . '" target="_blank" title="' . $pro_title . '">' . $pro_title . '</a> '
 			); ?>
 		</p>
-
-	<div class="social-container">
-			<div class="social">
-				<a href="https://twitter.com/cyberchimps" class="twitter-follow-button" data-show-count="false" data-size="small">Follow @cyberchimps</a>
-				<script>!function (d, s, id) {
-						var js, fjs = d.getElementsByTagName(s)[0];
-						if (!d.getElementById(id)) {
-							js = d.createElement(s);
-							js.id = id;
-							js.src = "//platform.twitter.com/widgets.js";
-							fjs.parentNode.insertBefore(js, fjs);
-						}
-					}(document, "script", "twitter-wjs");</script>
-			</div>
-			<div class="social">
-				<iframe
-					src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcyberchimps.com%2F&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21"
-					scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:21px;" allowTransparency="true"></iframe>
-			</div>
-		</div>
 
 	</div>
 <?php
@@ -869,6 +861,52 @@ function my_admin_notice(){
 	}
 	
 }
+function ifeature_custom_category_widget( $arg ) {
+	$excludecat = get_theme_mod( 'cyberchimps_exclude_post_cat' );
+
+	if( $excludecat ){
+		$excludecat = array_diff( array_unique( $excludecat ), array('') );
+		$arg["exclude"] = $excludecat;
+	}
+	return $arg;
+}
+add_filter( "widget_categories_args", "ifeature_custom_category_widget" );
+add_filter( "widget_categories_dropdown_args", "ifeature_custom_category_widget" );
+
+function ifeature_exclude_post_cat_recentpost_widget(){
+	$s = '';
+	$i = 1;
+	$excludecat = get_theme_mod( 'cyberchimps_exclude_post_cat' );
+
+	if( $excludecat ){
+		$excludecat = array_diff( array_unique( $excludecat ), array('') );
+		foreach( $excludecat as $c ){
+			$i++;
+			$s .= '-'.$c;
+			if( count($excludecat) >= $i )
+				$s .= ', ';
+		}
+	}
+
+	$exclude = array( 'cat' => $s );
+
+	return $exclude;
+}
+add_filter( "widget_posts_args", "ifeature_exclude_post_cat_recentpost_widget" );
+
+if( !function_exists('ifeature_exclude_post_cat') ) :
+function ifeature_exclude_post_cat( $query ){		
+	$excludecat = get_theme_mod( 'cyberchimps_exclude_post_cat' );
+
+	if( $excludecat && ! is_admin() && $query->is_main_query() ){
+		$excludecat = array_diff( array_unique( $excludecat ), array('') );
+		if( $query->is_home() || $query->is_archive() ) {
+			$query->set( 'category__not_in', $excludecat );			
+		}
+	}
+}
+endif;
+add_filter( 'pre_get_posts', 'ifeature_exclude_post_cat' );
 
 add_action( 'cyberchimps_posted_by', 'ifeature_byline_author' );
 function ifeature_byline_author()

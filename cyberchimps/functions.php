@@ -1103,7 +1103,7 @@ function cyberchimps_options_help_text() {
 
 		$text .= '<div class="row-fluid">
 						<div class="span6">
-						<a href="' . $upgrade_link . '" title="' . $pro_title . '">
+						<a href="' . $upgrade_link . '" target="_blank" title="' . $pro_title . '">
 						<div class="cc_help_upgrade_bar">' . sprintf( __( 'Upgrade to %1$s', 'cyberchimps_core' ), $pro_title ) . '</div>
 						</a>
 						</div>
@@ -1112,7 +1112,7 @@ function cyberchimps_options_help_text() {
 						<div class="clear"></div>';
 		$text .= sprintf(
 			'<p>' . __( 'For even more amazing new features, upgrade to %1$s which includes a slider with customizable features, an image carousel, widgetized boxes, a callout section, expanded typography (including Google Fonts), additional color skins, and many more powerful new features. Visit %2$s to learn more!', 'cyberchimps_core' ) . '</p>',
-			'<a href="' . $upgrade_link . ' title="' . $pro_title . '">' . $pro_title . '</a>',
+			'<a href="' . $upgrade_link . ' target="_blank" title="' . $pro_title . '">' . $pro_title . '</a>',
 			'<a href="cyberchimps.com" title="CyberChimps">CyberChimps.com</a>'
 		);
 	}
@@ -1141,7 +1141,7 @@ function cyberchimps_upgrade_bar() {
 			); ?>
 		</p>
 
-		<div class="social-container">
+	<!--	<div class="social-container">
 			<div class="social">
 				<a href="https://twitter.com/cyberchimps" class="twitter-follow-button" data-show-count="false" data-size="small">Follow @cyberchimps</a>
 				<script>!function (d, s, id) {
@@ -1159,7 +1159,7 @@ function cyberchimps_upgrade_bar() {
 					src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcyberchimps.com%2F&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21"
 					scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:21px;" allowTransparency="true"></iframe>
 			</div>
-		</div>
+		</div>-->
 	</div>
 <h4 class="notice notice-info is-dismissible" style="margin-top:15px;">
 <p>
