@@ -10,6 +10,7 @@ function backyard_themes_customizer($wp_customize) {
 	} else {
 		$comley_cat_array["No content blocks found"] = 0;
 	}
+require get_template_directory() . '/lib/backyard-customizerclass.php';
 //theme options
 $wp_customize->add_panel( 'backyard_options',
 			array(
@@ -23,6 +24,54 @@ $wp_customize->add_panel( 'backyard_options',
 
 		/* Global Settings
 		----------------------------------------------------------------------*/
+		//logo settings
+		$wp_customize->add_section(
+   'header_logo_settings',
+   array(
+       'title' => esc_html__('Logo Settings', 'backyard'),
+       'priority' => 1,
+	   'panel'       => 'backyard_options',
+   )
+);
+$wp_customize->add_setting(
+					'logolayout',
+					array(
+					'default' => 'logolayout_first',
+					'sanitize_callback' => 'sanitize_text_field',
+					'transport'   => 'refresh',
+					)
+					);
+
+	$wp_customize->add_control(
+		new backyard_Custom_Radio_Image_Control( 
+			// $wp_customize object
+			$wp_customize,
+			// $id
+			'logolayout',
+			// $args
+			array(
+				'settings'		=> 'logolayout',
+				'section'		=> 'header_logo_settings',
+				'description'	=> esc_html__( 'Select logo layout.', 'backyard' ),
+				'choices'		=> array(
+				'logolayout_first' => array(
+                        'label' => esc_html__( 'Left sidebar', 'backyard' ),
+                        'url'   => get_template_directory_uri() . '/assets/images/left-logo.jpg',
+                    ),
+				'logolayout_second' => array(
+                        'label' => esc_html__( 'Right sidebar', 'backyard' ),
+                        'url'   => get_template_directory_uri() . '/assets/images/right-logo.jpg',
+                    ),
+					'logolayout_third' => array(
+                        'label' => esc_html__( 'Right sidebar', 'backyard' ),
+                        'url'   => get_template_directory_uri() . '/assets/images/cetner-logo.jpg',
+                    ),
+					
+				)
+			)
+		)
+	);
+		//end
 		$wp_customize->add_section(
    'page_settings',
    array(

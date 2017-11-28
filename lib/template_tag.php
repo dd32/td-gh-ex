@@ -117,4 +117,91 @@ function backyard_add_item_meta( $item_id, $values ) {
 }
 add_action( 'wp_ajax_backyard_load_more_posts', 'backyard_load_more_posts');
 add_action( 'wp_ajax_nopriv_backyard_load_more_posts', 'backyard_load_more_posts');
+//header layout
+add_action('backyard_header_action', 'backyard_header_layout');
+function backyard_header_layout() {?>
+<?php 
+$logolayout=get_theme_mod('logolayout');
+if(isset($logolayout)&&$logolayout=='logolayout_first')
+{
+?>
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 pull-left">
+             <div class="main-logo">
+             <div id="logo">
+           <a href="<?php echo esc_url(home_url('/')); ?>">
+           <?php if(has_custom_logo()): the_custom_logo();
+           else: bloginfo( 'name' ); endif; ?>
+           </a>
+           </div></div><!--main-logo-->
+           <!--logo--></div>
+          <?php if(has_nav_menu('primary_navigation')) : ?>  
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-2 pull-right">
+          <nav id="nav">
+    <?php wp_nav_menu(array('theme_location' => 'primary_navigation', 'container'=> false, 'menu_class' => '','depth'=> 0)); ?>
+          </nav>
+          <!--main-nav--> 
+        </div>
+        <?php endif; 
+}elseif(isset($logolayout)&&$logolayout=='logolayout_second')
+{?>
+	  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 pull-right">
+             <div class="main-logo">
+             <div id="logo">
+           <a href="<?php echo esc_url(home_url('/')); ?>">
+           <?php if(has_custom_logo()): the_custom_logo();
+           else: bloginfo( 'name' ); endif; ?>
+           </a>
+           </div></div><!--main-logo-->
+           <!--logo--></div>
+          <?php if(has_nav_menu('primary_navigation')) : ?>  
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-2  nav-left">
+          <nav id="nav">
+    <?php wp_nav_menu(array('theme_location' => 'primary_navigation', 'container'=> false, 'menu_class' => '','depth'=> 0)); ?>
+          </nav>
+          <!--main-nav--> 
+        </div>
+        <?php endif; 
+}
+elseif(isset($logolayout)&&$logolayout=='logolayout_third')
+{?>
+	 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center-logo">
+             <div class="main-logo">
+             <div id="logo">
+           <a href="<?php echo esc_url(home_url('/')); ?>">
+           <?php if(has_custom_logo()): the_custom_logo();
+           else: bloginfo( 'name' ); endif; ?>
+           </a>
+           </div></div><!--main-logo-->
+           <!--logo--></div>
+          <?php if(has_nav_menu('primary_navigation')) : ?>  
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center-logo">
+          <nav id="nav">
+    <?php wp_nav_menu(array('theme_location' => 'primary_navigation', 'container'=> false, 'menu_class' => '','depth'=> 0)); ?>
+          </nav>
+          <!--main-nav--> 
+        </div>
+        <?php endif; 
+}
+else
+{?>
+	 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 pull-left">
+             <div class="main-logo">
+             <div id="logo">
+           <a href="<?php echo esc_url(home_url('/')); ?>">
+           <?php if(has_custom_logo()): the_custom_logo();
+           else: bloginfo( 'name' ); endif; ?>
+           </a>
+           </div></div><!--main-logo-->
+           <!--logo--></div>
+          <?php if(has_nav_menu('primary_navigation')) : ?>  
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-2 pull-right">
+          <nav id="nav">
+    <?php wp_nav_menu(array('theme_location' => 'primary_navigation', 'container'=> false, 'menu_class' => '','depth'=> 0)); ?>
+          </nav>
+          <!--main-nav--> 
+        </div>
+        <?php endif; 
+}
+}
+//end
 ?>

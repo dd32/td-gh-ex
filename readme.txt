@@ -63,3 +63,5 @@ Changelog
 2.7 - Added grid blog sidebar options in Customizer.
 
 2.8 - Added list blog sidebar options in Customizer.
+
+2.9 - Added header logo options in Customizer.
