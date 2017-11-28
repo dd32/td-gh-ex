@@ -143,7 +143,7 @@
 							$content = $content_parts['extended'];
 							$content = apply_filters( 'the_content', $content );
 							echo $content;
-						} elseif ( get_the_content() ) {
+						} else {
 							the_content();
 						}																																	
 						wp_link_pages();

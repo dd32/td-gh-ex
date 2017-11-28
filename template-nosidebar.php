@@ -45,16 +45,12 @@ Template Name: No sidebar template
 						</div><!-- .featured-media -->
 							
 					<?php endif; ?>
-				   				        			        		                
-					<?php if ( get_the_content() ) : ?>
-						
-						<div class="post-content">
-								
-							<?php the_content(); ?>
-																	
-						</div><!-- .post-content -->
 
-					<?php endif; ?>
+					<div class="post-content">
+
+						<?php the_content(); ?>
+						
+					</div><!-- .post-content -->
 					
 					<?php comments_template( '', true ); ?>
 									

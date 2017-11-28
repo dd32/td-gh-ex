@@ -45,16 +45,12 @@ Template Name: Full width template
 						</div><!-- .featured-media -->
 							
 					<?php endif; ?>
-
-					<?php if ( get_the_content() ) : ?>
 				   				        			        		                
-						<div class="post-content">
-																			
-							<?php the_content(); ?>
-																												
-						</div><!-- .post-content -->
+					<div class="post-content">
 
-					<?php endif; ?>
+						<?php the_content(); ?>
+						
+					</div><!-- .post-content -->
 					
 					<?php comments_template( '', true ); ?>
 									
