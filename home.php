@@ -11,6 +11,9 @@
 get_header(); ?>
 
 <div id="wrap">
+  <div id="main_visual">
+  </div><!-- #main_visual -->
+
   <div class="container clearfix">
     <div id="primary">
       <main id="main" role="main" class="clearfix">
@@ -27,7 +30,7 @@ get_header(); ?>
             <?php endif;?>
           </div><!-- .entry-thumbnail -->
           <div class="entry-main">
-            <p class="entry-date"><?php the_time('Y.m.d');?></p>
+            <p class="entry-date"><?php echo get_the_date(); ?></p>
             <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
             <p class="entry-content">
             <?php

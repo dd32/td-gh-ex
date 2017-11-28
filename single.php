@@ -17,7 +17,7 @@ get_header(); ?>
         <?php while(have_posts()):the_post();?>
         <article <?php post_class();?>>
           <div class="entry-date">
-            <?php the_time('Y.m.d');?>
+            <?php echo get_the_date(); ?>
           </div><!-- .entry-date -->
           <h2 class="entry-title">
             <?php the_title();?>

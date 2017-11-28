@@ -4,10 +4,10 @@ Theme Name: Base For Original
 Description: Base For Original is simpler, inorganic, less tasty theme than any theme. Base For Original is the basis of original theme creation, and supports to create your own original theme. This theme contains the minimum necessary files on the typical Web site. Please use this theme to create your own original theme or lerning.
 Author: Wildworks
 Author URI: https://profiles.wordpress.org/wildworks/
-Version: 1.01
+Version: 1.02
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, featured-images, editor-style, threaded-comments, right-sidebar, sticky-post, full-width-template, translation-ready
+Tags: one-column, two-columns, featured-images, editor-style, threaded-comments, right-sidebar, translation-ready
 Text Domain: base-for-original
 */
 
@@ -204,24 +204,55 @@ header #header_tel a{
 header #header_button{
   display: none;
 }
-header nav{
+header .nav{
   margin: 20px 0;
 }
-header nav ul{
-  font-size:0;
+header .nav a{
+  display: block;
+  text-decoration: none;
+  padding: 0 10px;
 }
-header nav ul li{
+
+/*Nav Level 1*/
+header .nav > ul > li{
+  float: left;
   border: 1px #BBB solid;
   text-align: center;
-  display: inline-block;
   width: 20%; /*Change the value according to the number of navigation menu.*/
   height: 40px;
   line-height: 40px;
+  position: relative;
 }
-header nav ul li a{
+header .nav > ul > li:hover > ul {
   display: block;
-  font-size: 14px;
-  text-decoration: none;
+}
+
+/*Nav Level 2*/
+header .nav > ul > li > ul{
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  background: #EEE;
+  z-index: 1;
+}
+header .nav > ul > li > ul > li{
+  border: 1px #BBB solid;
+  position: relative;
+  text-align: left;
+}
+
+/*header .nav > ul ul > li:hover > ul {
+  display: block;
+}*/
+
+/*Nav Level 3*/
+header .nav > ul > li > ul > li > ul{
+  background: #EEE;
+  z-index: 1;
+  white-space: nowrap;
+  text-indent: 1em;
 }
 
 @media screen and (max-width:768px) {
@@ -265,10 +296,8 @@ header nav ul li a{
     margin: 7px auto;
   }
 
-  header nav{
+  header .nav{
     margin: 0;
-  }
-  header nav ul{
     display: none;
     position: fixed;
     left: 0;
@@ -277,10 +306,40 @@ header nav ul li a{
     width: 100%;
     border: 1px #BBB solid;
     background: #FFF;
+    max-height: 50%;
+    overflow-x: scroll;
   }
-  header nav ul li{
+
+  /*Nav Level 1*/
+  header .nav ul li{
     display: block;
     width: 100%;
+    height: auto;
+    text-align: left;
+  }
+
+  /*Nav Level 2*/
+  header .nav > ul > li > ul{
+    display: block;
+    position: static;
+  }
+  header .nav > ul > li > ul > li{
+    border: none;
+  }
+  header .nav > ul > li > ul > li > a{
+    text-indent: 1em;
+  }
+
+  /*Nav Level 3*/
+  header .nav > ul > li > ul > li > ul{
+    display: block;
+    position: static;
+  }
+  header .nav > ul > li > ul > li > ul > li{
+    border: none;
+  }
+  header .nav > ul > li > ul > li > ul > li > a{
+    text-indent: 2em;
   }
 }
 
@@ -374,6 +433,7 @@ header nav ul li a{
 /*Wrapper class of widget.*/
 #secondary .widget{
   border: 1px #BBB solid;
+  padding: 10px;
 }
 #secondary .widget:not(:last-child){
   margin-bottom: 10px;
@@ -396,26 +456,10 @@ header nav ul li a{
 footer{
   border: 1px #BBB solid;
 }
-footer nav{
-  padding: 10px;
-}
-footer nav ul{
-  float: left;
-  width: 33.3%; /*Change the value according to the number of columns.*/
-  border: 1px #BBB solid;
-  padding: 10px;
-}
 footer #copyright{
   text-align: center;
   padding: 0 10px;
   border: 1px #BBB solid;
-}
-
-@media screen and (max-width:768px) {
-  footer nav ul{
-    float: none;
-    width: 100%;
-  }
 }
 
 /******************************************************
@@ -508,7 +552,7 @@ footer #copyright{
   max-width: 250px; /*Set the max width of the thumbnail.*/
 }
 
-/*Style for the article text. */
+/*Style for the article content. */
 .single .entry-content{
   border: 1px #BBB solid;
   margin-bottom: 10px;

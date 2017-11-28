@@ -40,6 +40,9 @@ Base For Original is simpler, inorganic, less tasty theme than any theme. Base F
 
 == Changelog ==
 
+v1.02
+* Fix the theme review.
+
 v1.01
 * Fix the theme review.
 

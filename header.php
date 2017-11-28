@@ -23,9 +23,7 @@
 <header>
   <div class="container clearfix">
     <p id="header_description"><?php bloginfo('description');?></p>
-    <h1>
-      <a href="<?php echo esc_url(home_url());?>"><img src="<?php echo esc_url(get_template_directory_uri());?>/images/header_logo.png" alt="<?php bloginfo('name');?>"></a>
-    </h1>
+    <h1><a href="<?php echo esc_url(home_url());?>"><?php the_custom_logo();?></a></h1>
     <div id="header_tel">
       <a href="tel:0120-000-000">0120-000-000</a>
     </div>
@@ -36,18 +34,9 @@
     </div><!-- #header_nav_button -->
   </div><!-- .container -->
   <div class="container">
-    <nav>
-      <ul>
     <?php wp_nav_menu( array(
-      'theme_location'  => 'globalnav',
-      'container_class' => 'globalnav clearfix',
-      'menu_class'      => 'globalnav clearfix',
-    ) ); ?>        <li><a href="<?php echo esc_url(home_url());?>">header-menu-1</a></li>
-        <li><a href="<?php echo esc_url(home_url());?>">header-menu-2</a></li>
-        <li><a href="<?php echo esc_url(home_url());?>">header-menu-3</a></li>
-        <li><a href="<?php echo esc_url(home_url());?>">header-menu-4</a></li>
-        <li><a href="<?php echo esc_url(home_url());?>">header-menu-5</a></li>
-      </ul>
-    </nav>
+      'container_class' => 'nav clearfix',
+      'menu_class'=>'clearfix'
+    ) ); ?>
   </div><!-- .container -->
 </header>
