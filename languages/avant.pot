@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2017-11-27 14:00+0200\n"
+"POT-Creation-Date: 2017-11-28 10:15+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1520,11 +1520,11 @@ msgid "Have you enjoyed using Avant?"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:70
-msgid "Please help by giving us a 5 star rating on WordPress.org :)"
+msgid "Please help by giving us a rating on WordPress.org :)"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:74
-msgid "Rate Avant 5 stars"
+msgid "Give Avant a rating"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:79

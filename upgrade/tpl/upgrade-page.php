@@ -67,11 +67,11 @@
                 <div class="avant-upgrade-block avant-upgrade-block-alt">
                     <div class="avant-upgrade-block-left">
                         <?php _e( 'Have you enjoyed using Avant?', 'avant' ); ?><br />
-                        <?php printf( __( 'Please help by giving us a 5 star rating on WordPress.org :)', 'avant' ) , 'https://kairaweb.com/' ); ?>
+                        <?php printf( __( 'Please help by giving us a rating on WordPress.org :)', 'avant' ) , 'https://kairaweb.com/' ); ?>
                     </div>
                     <div class="avant-upgrade-block-right">
-                        <a href="<?php echo esc_url( 'https://wordpress.org/support/theme/avant/reviews/?rate=5#new-post' ) ?>" target="_blank" class="avant-upgrade-result-button">
-                            <?php _e( 'Rate Avant 5 stars', 'avant' ); ?>
+                        <a href="<?php echo esc_url( 'https://wordpress.org/support/theme/avant/reviews/#new-post' ) ?>" target="_blank" class="avant-upgrade-result-button">
+                            <?php _e( 'Give Avant a rating', 'avant' ); ?>
                         </a>
                     </div>
                 </div>

@@ -68,6 +68,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.4
+* Changed text in upgrade page
+* Updated the language .pot file
+
 #### 1.0.3
 * Fixed translations missing content
 * Updated the language .pot file
