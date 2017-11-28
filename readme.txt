@@ -2,7 +2,7 @@
 Contributors: MotoPress
 Tags: translation-ready, custom-background, theme-options, custom-menu, threaded-comments
 Requires at least: 4.0
-Tested up to: 4.8
+Tested up to: 4.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,9 @@ Avior is distributed under the terms of the GNU GPL
 To add social icons, navigate to WordPress Customizer > Menus > Add Menu > Add Custom links with the appropriate names (e.g. Twitter, Facebook) and links to your social media accounts. In the Display Location menu choose the "Social" menu and save.
 
 == Changelog ==
+
+= 0.1.5 =
+* Added the full set of the theme text strings available for translation.
 
 = 0.1.4 =
 * Initial release

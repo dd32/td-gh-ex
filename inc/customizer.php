@@ -186,7 +186,7 @@ function avior_customize_register($wp_customize)
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'header_background_color', array(
-        'label' => esc_html('Header background color', 'avior'),
+        'label' => esc_html__('Header background color', 'avior'),
         'section' => 'colors',
     )));
     // Add footer background color setting and control.
@@ -196,7 +196,7 @@ function avior_customize_register($wp_customize)
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'footer_background_color', array(
-        'label' => esc_html('Footer background color', 'avior'),
+        'label' => esc_html__('Footer background color', 'avior'),
         'section' => 'colors',
     )));
     // Add main text color setting and control.
@@ -206,7 +206,7 @@ function avior_customize_register($wp_customize)
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'main_text_color', array(
-        'label' => esc_html('Text Color', 'avior'),
+        'label' => esc_html__('Text Color', 'avior'),
         'section' => 'colors',
     )));
 
@@ -218,7 +218,7 @@ function avior_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'brand_color', array(
-        'label' => esc_html('Link Color', 'avior'),
+        'label' => esc_html__('Link Color', 'avior'),
         'section' => 'colors',
     )));
 
@@ -230,7 +230,7 @@ function avior_customize_register($wp_customize)
     ));
 
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'brand_color_hover', array(
-        'label' => esc_html('Button Hover Color', 'avior'),
+        'label' => esc_html__('Button Hover Color', 'avior'),
         'section' => 'colors',
     )));
 
@@ -304,7 +304,7 @@ function avior_get_color_schemes()
      */
     return apply_filters('avior_color_schemes', array(
         'default' => array(
-            'label' => esc_html('Default', 'avior'),
+            'label' => esc_html__('Default', 'avior'),
             'colors' => array(
                 '#ffffff',
                 '#333333',
