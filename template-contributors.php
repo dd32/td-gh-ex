@@ -35,16 +35,12 @@ foreach ( $all_users as $current_user ) {
 					    <?php the_title( '<h1 class="post-title">', '</h1>' ); ?>
 					    				    
 				    </div><!-- .post-header -->
-				    
-					<?php if ( get_the_content() ) : ?>
 				   				        			        		                
-						<div class="post-content">
-									                                        
-							<?php the_content(); ?>
-																            			                        
-						</div><!-- .post-content -->
-					
-					<?php endif; ?>
+					<div class="post-content">
+
+						<?php the_content(); ?>
+
+					</div><!-- .post-content -->
 					
 					<div class="contributors-container">
 					

@@ -114,6 +114,11 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.21 (2017-11-28)
+-------------------------
+- Removed the changelog.txt (se first list item in previous version)
+- Removed conditionals around the_content() output, as the conditional was interfering with plugins using the_content() to output stuff
+
 Version 1.20 (2017-11-26)
 -------------------------
 - Updated to the new readme.txt format, with changelog.txt incorporated into it
