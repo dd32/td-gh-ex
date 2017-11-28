@@ -18,19 +18,19 @@ if(!isset($content_width )){
  */
 function base_for_original_scripts(){
   // Load theme stylesheet
-  wp_enqueue_style( 'style_common', get_stylesheet_uri() );
+  wp_enqueue_style( 'base_for_original_style_common', get_stylesheet_uri() );
 
   // Load Japanese font when the browser language is Japanese
   if(strtoupper(get_locale()) == 'JA'){
-    wp_enqueue_style('lang_ja', get_template_directory_uri().'/css/ja.css');
+    wp_enqueue_style('base_for_original_lang_ja', get_template_directory_uri().'/css/ja.css');
   }
 
   // Load common script
-  wp_enqueue_script('script_common', get_template_directory_uri().'/js/common.js', array('jquery'), '', false);
+  wp_enqueue_script('base_for_original_script_common', get_template_directory_uri().'/js/common.js', array('jquery'), '', false);
 
   // Load the html5 shiv
-  wp_enqueue_script('script_html5', get_theme_file_uri('/js/html5shiv.js' ), array(), '');
-  wp_script_add_data('script_html5', 'conditional', 'lt IE 9');
+  wp_enqueue_script('base_for_original_script_html5', get_theme_file_uri('/js/html5shiv.js' ), array(), '');
+  wp_script_add_data('base_for_original_script_html5', 'conditional', 'lt IE 9');
 
   //Load comment script
   if(is_singular() && comments_open() && get_option('thread_comments')){
@@ -66,6 +66,8 @@ function base_for_original_setup(){
   // The visual editor stylesheet
   add_editor_style('editor-style.css');
 
+  // Register a menu.
+  register_nav_menu('primary', __( 'Navigation Menu', 'base-for-original'));
 }
 add_action('after_setup_theme','base_for_original_setup');
 

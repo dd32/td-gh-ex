@@ -10,6 +10,7 @@ Tags: one-column, two-columns, featured-images, editor-style, threaded-comments,
 == Copyright ==
 
 Base For Original is distributed under the terms of the GNU GPL
+Base For Original WordPress Theme, Copyright 2017 Wildworks
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -39,6 +40,9 @@ Base For Original is simpler, inorganic, less tasty theme than any theme. Base F
 4. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Changelog ==
+
+v1.03
+* Fix the theme review.
 
 v1.02
 * Fix the theme review.
