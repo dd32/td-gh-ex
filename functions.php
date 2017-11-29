@@ -93,17 +93,6 @@ function minimumminimal_setup() {
     if ( function_exists( 'is_woocommerce' ) ) {
 
         function minimumminimal_woo_widgets_init() {
-            // Woo Shop Hero Image Widget Area
-             register_sidebar( array(
-            'name'          => __( 'Woo Hero Image Widget Area', 'minimum-minimal' ),
-            'id'            => 'woo-hero-image-widget-area',
-            'description'   => __( 'Add widgets here to appear within the shop page cover image.', 'minimum-minimal' ),
-            'before_widget' => '<div class="row"><aside id="%1$s" class="widget top-widget %2$s">',
-            'after_widget'  => '</aside></div>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
-             ) );
-
              // Woo Shop Sidebar
              register_sidebar( array(
             'name'          => __( 'Woo Sidebar Widget Area', 'minimum-minimal' ),

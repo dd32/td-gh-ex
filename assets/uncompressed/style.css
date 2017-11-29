@@ -5,8 +5,8 @@ Theme Name: Minimum Minimal
 Theme URI: https://richwp.com/themes/minimumminimal/
 Author: Felix Krusch
 Author URI: http://RichWP.com
-Description: A beautiful blogging WordPress theme with a minimalist nordic style. Your perfect companion for your travel blog, food blog or other daily musings. This theme is Jetpack, Gutenberg and WooCommerce ready and easy to set up and work with on a daily basis. Live demo: https://richwp.r1e9.com/minimumminimal/
-Version: 2.0.1
+Description: A beautiful lightweight blogging WordPress theme with a minimalist nordic style. "Minimum Minimal" is your mobile friendly and fully responsive companion for your travel blog, food blog, self development articles or other daily musings. It is Jetpack, Gutenberg and WooCommerce ready and, of course, SEO (search engine) friendly. Use the icon menu to support your social media presence and publish photo galleries or post videos to share from your site. This theme is easy to set up and work with on a daily basis. Its elegant, clean and timeless design makes sure your site looks best for years to come. Live demo: https://richwp.r1e9.com/minimumminimal/
+Version: 2.0.2
 Tags: featured-images, custom-menu, threaded-comments, translation-ready, theme-options, post-formats, sticky-post, one-column, custom-colors, custom-logo, featured-images, footer-widgets, blog
 Text Domain: minimum-minimal
 
@@ -3228,7 +3228,8 @@ article.sticky {
 
 .backhome {
   text-align: center;
-  padding-bottom: 1em; }
+  padding: 1em 0;
+  display: block; }
 
 #author-info,
 .relatedpoststitle {
