@@ -22,23 +22,18 @@
 				?>
 				<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $avior_icon, '</a></h2>' ); ?>
 			</header><!-- .entry-header -->
-			<?php
-			if ( trim( $post->post_content ) != "" ) { ?>
-				<div class="entry-content">
-					<?php the_content( sprintf(
-					/* translators: %s: Name of current post. */
-						wp_kses( __( 'Continue reading %s', 'avior' ), array( 'span' => array( 'class' => array() ) ) ),
-						the_title( '<span class="screen-reader-text">"', '"</span>', false )
-					) );
-					wp_link_pages( array(
-						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'avior' ),
-						'after'  => '</div>',
-					) );
-					?>
-				</div><!-- .entry-content -->
-				<?php
-			}
-			?>
+			<div class="entry-content">
+				<?php the_content( sprintf(
+				/* translators: %s: Name of current post. */
+					wp_kses( __( 'Continue reading %s', 'avior' ), array( 'span' => array( 'class' => array() ) ) ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				) );
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'avior' ),
+					'after'  => '</div>',
+				) );
+				?>
+			</div><!-- .entry-content -->
 		</div><!-- .entry-wrapper -->
 	</div><!-- .entry-row -->
 </article><!-- #post-## -->

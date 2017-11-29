@@ -31,11 +31,14 @@ To add social icons, navigate to WordPress Customizer > Menus > Add Menu > Add C
 
 == Changelog ==
 
+= 0.1.6 =
+* Added support for Jetpack Content Options.
+
 = 0.1.5 =
 * Added the full set of the theme text strings available for translation.
 
 = 0.1.4 =
-* Initial release
+* Initial release.
 
 == Credits ==
 

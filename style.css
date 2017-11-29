@@ -4,11 +4,11 @@ Theme Name: Avior
 Author: MotoPress
 Author URI: https://motopress.com/
 Description: Avior is a clean and dandy WordPress blogging theme, designed for people, who aim for readable, photo-rich and SEO-smart writing. With Avior you'll easily take care of a website customization: change footer and header info like menus and social media icons, change header image, use unlimited colors to reach a perfect color scheme and more. All tweaks are easily performed visually via WordPress Customizer. A distinctive search engine optimized blog will help you stand out of the crowd and create impressive posts that will look just perfect on any modern device.
-Version: 0.1.5
+Version: 0.1.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avior
-Tags:one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
+Tags:one-column, full-width-template, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -464,10 +464,6 @@ big {
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
-blockquote {
-  quotes: "" "";
-}
-
 blockquote {
   quotes: "" "";
   font-family: "Source Serif Pro", serif;
@@ -5754,14 +5750,16 @@ form > :last-child {
 
 .related-posts,
 .comments-area,
-.author-info {
+.author-info,
+.entry-author {
   padding-top: 4.22222em;
 }
 
 .post-navigation,
 .related-posts,
 .comments-area,
-.author-info {
+.author-info,
+.entry-author {
   margin-top: 3.72222em;
   border-top: 1px solid #d9d9d9;
 }
@@ -5772,18 +5770,19 @@ form > :last-child {
 }
 
 .related-posts,
-.author-info {
+.author-info,
+.entry-author {
   clear: both;
 }
 
-.author-info .author-avatar .avatar {
+.author-info .author-avatar .avatar, .entry-author .author-avatar .avatar {
   float: left;
   margin: 0.38889em 1.66667em 0 0;
   width: 36px;
   height: 36px;
 }
 @media screen and (min-width: 48em) {
-  .author-info .author-avatar .avatar {
+  .author-info .author-avatar .avatar, .entry-author .author-avatar .avatar {
     width: 64px;
     height: 64px;
   }
@@ -5791,6 +5790,7 @@ form > :last-child {
 
 .related-posts-title,
 .author-info .author-title,
+.entry-author .author-title,
 .comment-reply-title,
 .comments-title {
   margin-bottom: 1.68182em;
@@ -5801,6 +5801,7 @@ form > :last-child {
 @media screen and (min-width: 48em) {
   .related-posts-title,
   .author-info .author-title,
+  .entry-author .author-title,
   .comment-reply-title,
   .comments-title {
     font-size: 26px;
@@ -5815,7 +5816,8 @@ form > :last-child {
 }
 
 .related-posts .related-posts-title,
-.author-info .author-title {
+.author-info .author-title,
+.entry-author .author-title {
   clear: none;
 }
 

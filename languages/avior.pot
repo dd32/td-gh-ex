@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Avior\n"
-"POT-Creation-Date: 2017-11-28 14:14+0200\n"
+"POT-Creation-Date: 2017-11-29 10:59+0200\n"
 "PO-Revision-Date: 2017-05-25 15:36+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -96,6 +96,14 @@ msgstr ""
 
 #: functions.php:126
 msgid "Footer Right"
+msgstr ""
+
+#: functions.php:150
+msgid "Expand menu"
+msgstr ""
+
+#: functions.php:151
+msgid "Collapse menu"
 msgstr ""
 
 #: functions.php:216
@@ -239,11 +247,11 @@ msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: template-parts/biography.php:10
+#: template-parts/biography.php:18
 msgid "Author:"
 msgstr ""
 
-#: template-parts/biography.php:27
+#: template-parts/biography.php:35
 #, php-format
 msgid "All Posts by %s"
 msgstr ""
