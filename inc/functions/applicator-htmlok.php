@@ -119,6 +119,7 @@ function applicator_htmlok( $args = array() ) {
     
     // Attributes
     $p_attr = '';
+    $p_elem_label_attr = '';
     $p_custom_attr = '';
     $p_title_attr = '';
     $p_id_attr = '';
@@ -191,7 +192,7 @@ function applicator_htmlok( $args = array() ) {
     $t_object_mu .= '%1$s';
     $t_object_mu .= '</span>';
     $t_object_mu .= '</%8$s>';
-    $t_object_mu .= '</div><!-- %2$s OBJ -->';
+    $t_object_mu .= '</div>';
     
     
     // Text Markup Structure Template
@@ -342,7 +343,6 @@ function applicator_htmlok( $args = array() ) {
                 $subtype_name_abbr = 'aside';
                 
                 $p_subtype_css = ' '.$subtype_name_abbr;
-                $p_custom_attr = ' '.'role="complementary"';
                 
                 $p_subtype_name = ' '.$subtype_name;
                 $p_subtype_postfix_css = '-'.$subtype_name_abbr;
@@ -692,6 +692,26 @@ function applicator_htmlok( $args = array() ) {
             $p_obj_a_elem_attr .= ' '.$clean_key.'="'.$clean_val.'"';
         }
     }
+    
+    
+    // Attributes of Element Label (h_l, g_l, a_l)
+    if ( ! empty( $r['structure']['attr']['elem_label'] ) ) {
+        $r_attr_elem_label = $r['structure']['attr']['elem_label'];
+            
+        $p_elem_label_attr = '';
+        
+        foreach ( ( array ) $r_attr_elem_label as $key => $val ) {
+            
+            $clean_key = '';
+            $clean_val = '';
+            
+            $clean_key = substr( strtolower( preg_replace( $pat_no_space, $rep_no_space, trim( $key ) ) ), $substr_start, $substr_end );
+            
+            $clean_val = preg_replace( $pat_space, $rep_space, trim( $val ) );
+            
+            $p_elem_label_attr .= ' '.$clean_key.'="'.$clean_val.'"';
+        }
+    }
 
 
     
@@ -794,6 +814,8 @@ function applicator_htmlok( $args = array() ) {
     
     // Output
     $o_obj_elem = $p_obj_elem;
+    
+    $o_elem_label_attr = $p_elem_label_attr;
     
     $o_obj_label_elem = $p_obj_label_elem;
     
@@ -1310,25 +1332,25 @@ function applicator_htmlok( $args = array() ) {
                     // Form Label
                     $content_val .= '<'.$o_content_compound_layout_elem.' class="obj flabel'.$o_content_compound_group_branch_css.'-flabel" data-name="'.$o_felems_obj_name.' Form Label OBJ">';
                     $content_val .= '<label class="label'.$o_content_compound_group_branch_css.'-flabel---label" for="'.$o_group_label_for.'"><span class="label_l'.$o_content_compound_group_branch_css.'-flabel---label_l"><span class="txt'.$o_content_compound_group_name_txt.'">'.$o_content_compound_group_name.'</span></span></label>';
-                    $content_val .= '</'.$o_content_compound_layout_elem.'><!-- '.$o_content_compound_complete_group_name.' Form Label OBJ -->';
+                    $content_val .= '</'.$o_content_compound_layout_elem.'>';
                     
                     // Form Element (Created Element)
                     $content_val .= '<'.$o_content_compound_layout_elem.' class="obj felem'.$o_content_compound_group_branch_css.'-'.$o_felem_type_css.'" data-name="'.$o_felems_obj_name. $o_felem_type_name.' OBJ">';
                     $content_val .= '<'.$o_content_compound_layout_elem.' class="ce'.$o_content_compound_group_branch_css.'-'.$o_felem_type_css.'---ce">';
                     $content_val .= $o_form_type;
                     $content_val .= '</'.$o_content_compound_layout_elem.'>';
-                    $content_val .= '</'.$o_content_compound_layout_elem.'><!-- '.$o_felems_obj_name. $o_felem_type_name.' OBJ -->';
+                    $content_val .= '</'.$o_content_compound_layout_elem.'>';
                     
                     
                     $content_val .= '</div>';
-                    $content_val .= '</div><!-- '.$o_content_compound_complete_group_name.' Form Elements CP -->';
+                    $content_val .= '</div>';
                 }
             }
             
             $content_val .= '</div>';
             $content_val .= '</div>';
             $content_val .= '</fieldset>';
-            $content_val .= '</div><!-- '.$o_content_compound_name.' Fieldset Item CP -->';
+            $content_val .= '</div>';
         }
     }
     
@@ -1530,7 +1552,7 @@ function applicator_htmlok( $args = array() ) {
     $subtype_form_actions_cr_emu .= '</div>';
     $subtype_form_actions_cr_emu .= '</div>';
     $subtype_form_actions_cr_emu .= '</div>';
-    $subtype_form_actions_cr_emu .= '</div><!-- '.$p_name. $p_subtype_name.' Actions CP -->';
+    $subtype_form_actions_cr_emu .= '</div>';
     
     
     // Form Elements Structure Markup
@@ -1543,14 +1565,14 @@ function applicator_htmlok( $args = array() ) {
     $subtype_form_elements_cr_emu = '';
     $subtype_form_elements_cr_emu .= '</div>';
     $subtype_form_elements_cr_emu .= '</label>';
-    $subtype_form_elements_cr_emu .= '</div><!-- Object Name -->';
+    $subtype_form_elements_cr_emu .= '</div>';
     $subtype_form_elements_cr_emu .= $cr_emu;
     
     
     // Anchor Markup
     $a_smu = '';
     $a_smu .= '<a'.$o_obj_a_id_attr.' class="a '.$o_obj_a_elem_css.'---a'.$o_obj_a_root_css.'" '.$o_obj_a_elem_attr. $p_obj_elem_root_title.'>';
-    $a_smu .= '<'.$o_obj_label_elem.' class="a_l '.$o_obj_a_elem_css.'---a_l">';
+    $a_smu .= '<'.$o_obj_label_elem.' class="a_l '.$o_obj_a_elem_css.'---a_l"'. $o_elem_label_attr. '>';
     $a_smu .= '<'.$o_obj_label_elem.' class="l '.$o_obj_a_elem_css.'---l">';
     
     $a_emu = '';
@@ -1571,7 +1593,7 @@ function applicator_htmlok( $args = array() ) {
     }
     
     else {
-        $obj_cr_smu .= '<'.$o_obj_label_elem.' class="'.$o_obj_label_elem_css.'">';
+        $obj_cr_smu .= '<'.$o_obj_label_elem.' class="'.$o_obj_label_elem_css.'"'. $o_elem_label_attr. '>';
         $obj_cr_smu .= '<'.$o_obj_label_elem.' class="'.$o_obj_label_l_elem_css.'">';
         
         $obj_cr_emu = '';
@@ -1780,7 +1802,7 @@ function applicator_htmlok( $args = array() ) {
         
         }
         
-        $output .= '</'.$o_root_elem.'><!-- '.$o_structure_name.' -->';
+        $output .= '</'.$o_root_elem.'>';
         
         $output .= $o_content_after;
     

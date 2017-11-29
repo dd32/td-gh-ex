@@ -46,7 +46,16 @@
         overlayMu,
         
         $mainActions = $( '#main-actions' ),
-        $mainSearch;
+        
+        $mainNav = $( '#main-nav' ),
+        $navParentItems = $( '.page_item, .menu-item' ),
+            
+        $mainSearch,
+        
+        $goStartNaviA = $( '#go-start-navi---a' ),
+        
+        scrollMsFactor = 800 / 125,
+        scrollTime;
     
     
     
@@ -167,19 +176,51 @@
     
     /* ------------------------ Transition Here and There ------------------------ */
     
+    // Variables
+    var hereTerm = 'here',
+        thereTerm = 'there',
+        transitionEnd = 'transitionend.applicator webkitTransitionEnd.applicator oTransitionEnd.applicator otransitionend.applicator';
+    
+    
     // Transition Entrance
-    function transHere( $elem ) {
+    function transHereCSS( $elem ) {
         $elem
-            .addClass( 'here' )
-            .removeClass( 'there' );
+            .addClass( hereTerm )
+            .removeClass( thereTerm );
     }
     
     // Transition Exit
-    function transThere( $elem ) {
+    function transThereCSS( $elem ) {
         $elem
-            .addClass( 'there' )
-            .removeClass( 'here' );
+            .addClass( thereTerm )
+            .removeClass( hereTerm );
     }
+    
+    function transHere( $elem, $property, $target ) {
+        
+        $elem.on( transitionEnd, function() {
+            if ( event.propertyName == $property ) {
+                transHereCSS( $target );
+            }
+        } );
+        
+    }
+    
+    function transThere( $elem, $property, $target ) {
+        
+        if ( $target.hasClass( hereTerm ) ) {
+        
+            $elem.on( transitionEnd, function() {
+                if ( event.propertyName == $property ) {
+                    transThereCSS( $target );
+                }
+            } );
+
+        }
+    
+    }
+    
+    
     
     
     
@@ -379,6 +420,16 @@
         }() );
         
         
+        // // Focus Out > Deactivate
+        ( function() {
+            
+            $( '#go-ct-navi---a' ).on( 'click.applicator', function() {
+                $( '#go-ct-navi---a' ).blur();
+            } );
+            
+        }() );
+        
+        
         // Deactivate via keyboard ESC key
         ( function() {
             $window.load( function() {
@@ -419,9 +470,7 @@
             .addClass( funcName )
             .addClass( funcTerm );
         
-        var $goStartNaviA = $( '#go-start-navi---a' ),
-            
-            goStartNavActCss = 'go-start-nav--active',
+        var goStartNavActCss = 'go-start-nav--active',
             goStartNavInactCss = 'go-start-nav--inactive',
             
             aplgoStartNavActCss = 'applicator--go-start-nav--active',
@@ -647,20 +696,15 @@
         
         
         // Activate and TransHere
-        function mainMenuOnTransHere() {
+        function mainMenuOntransHereCSS() {
             
             if ( $cp.hasClass( mainMenuInactCss ) ) {
-            
                 mainMenuActivate();
-                
             }
-
-            $mainHrAsCt.on( 'transitionend.applicator webkitTransitionEnd.applicator oTransitionEnd.applicator otransitionend.applicator', function() {
-                if ( event.propertyName == 'transform' ) {
-                    transHere( $cp );
-                    transHere( $mainMenuOverlay );
-                }
-            } );
+            
+            transHere( $mainHrAsCt, 'transform', $cp );
+            transHere( $mainHrAsCt, 'transform', $mainMenuOverlay );
+            
         }
         
         
@@ -686,18 +730,14 @@
         
         
         // Deactivate and TransThere
-        function mainMenuOffTransThere() {
+        function mainMenuOfftransThereCSS() {
             
-            if ( $cp.hasClass( mainMenuActCss + ' ' + 'here' ) ) {
+            if ( $cp.hasClass( mainMenuActCss ) ) {
             
                 mainMenuDeactivate();
-
-                $mainHrAsCt.on( 'transitionend.applicator webkitTransitionEnd.applicator oTransitionEnd.applicator otransitionend.applicator', function() {
-                    if ( event.propertyName == 'transform' ) {
-                        transThere( $cp );
-                        transThere( $mainMenuOverlay );
-                    }
-                } );
+                
+                transThere( $mainHrAsCt, 'transform', $cp );
+                transThere( $mainHrAsCt, 'transform', $mainMenuOverlay );
             
             }
         }
@@ -707,12 +747,12 @@
         function mainMenuToggle() {
             
             if ( $cp.hasClass( mainMenuInactCss ) ) {
-                mainMenuOnTransHere();
+                mainMenuOntransHereCSS();
                 $mainHeaderAsideWidgetGroup.scrollTop( 0 );
             }
             
             else if ( $cp.hasClass( mainMenuActCss ) ) {
-                mainMenuOffTransThere();
+                mainMenuOfftransThereCSS();
             }
         }
         
@@ -730,7 +770,7 @@
         ( function() {
             $mainMenuDismissButton.on( 'click.applicator', function( e ) {
                 e.preventDefault();
-                mainMenuOffTransThere();
+                mainMenuOfftransThereCSS();
             } );
         }() );
         
@@ -738,7 +778,7 @@
         // Deactivate via external click
         $document.on( 'touchmove.applicator click.applicator', function ( e ) {
             if ( ! $( e.target ).closest( $mainMenuTog ).length && ! $( e.target ).closest( $mainHrAsCt ).length ) {
-                mainMenuOffTransThere();
+                mainMenuOfftransThereCSS();
             }
         } );
           
@@ -747,7 +787,7 @@
         $window.load( function() {
             $document.on( 'keyup.applicator', function ( e ) {
                 if ( e.keyCode == 27 ) {
-                    mainMenuOffTransThere();
+                    mainMenuOfftransThereCSS();
                 }
             } );
         } );
@@ -757,7 +797,7 @@
         ( function() {
             $mainMenuOverlay.on( 'click.applicator', function( e ) {
                 e.preventDefault();
-                mainMenuOffTransThere();
+                mainMenuOfftransThereCSS();
             } );
         }() );
         
@@ -898,10 +938,16 @@
         function commentsScrollTop() {
             
             $comments = $( '#comments' );
+            
+            if ( ! $comments.length ) {
+                return;
+            }
+            
+            scrollTime = 300;
 
             $('html,body').stop().animate( {
                 scrollTop: $comments.offset().top
-            }, 300, 'easeInOutCirc', function() {
+            }, scrollTime, 'easeInOutCirc', function() {
                 window.location.hash = '#comments';
             } );
         }
@@ -970,10 +1016,12 @@
                     commentsActivate();
                     
                     var href = $.attr( this, 'href' );
+                    
+                    scrollTime = 3000;
 
                     $htmlBody.stop().animate( {
                         scrollTop: $( href ).offset().top
-                    }, 300, 'easeInOutCirc', function() {
+                    }, scrollTime, 'easeInOutCirc', function() {
                         window.location.hash = href;
                     } );
 
@@ -1012,7 +1060,7 @@
 		}
         
         $mainActions
-            .find( $( '.main-actions---ct_cr' ) )
+            .find( $( '.main-actions-aside---ct_cr' ) )
                 .children( '.search:first, .widget_search:first' )
                     .attr( 'id', 'main-search' );
     }() );
@@ -1021,12 +1069,12 @@
         
         $mainSearch = $( '#main-search' );
         
-        if ( ! $mainSearch.length ) {
-            $html.removeClass( applicatorMainSearchTerm );
+        if ( ! $aplApplicatorMainSearch.length ) {
 			return;
 		}
         
-        if ( ! $aplApplicatorMainSearch.length ) {
+        if ( ! $mainSearch.length ) {
+            $html.removeClass( applicatorMainSearchTerm );
 			return;
 		}
         
@@ -1243,7 +1291,7 @@
     function initMainActions() {
         
         
-        var $mainActionsWidgetItems = $mainActions.find( '.main-actions---ct_cr > .widget:not( .widget_search )' );
+        var $mainActionsWidgetItems = $mainActions.find( '.main-actions-aside---ct_cr > .widget:not( .main-search-func )' );
         
         // Gatekeeper
         ( function() {
@@ -1285,17 +1333,6 @@
             $mainActionsWidgetsWidgetGroup;
         
         
-        // Initializing
-        ( function() {
-            
-            funcName = 'main-actions-widgets-func';
-            
-            $mainActionsWidgets
-                .addClass( funcTerm )
-                .addClass( funcName );
-        } );
-        
-        
         // Create Main Actions Widgets
         ( function() {
 
@@ -1333,6 +1370,19 @@
             $mainActionsWidgetsH = $mainActionsWidgets.find( '.main-actions-widgets---h' );
             $mainActionsWidgetsWidgetGroup = $mainActionsWidgets.find( '.main-actions-widgets---widget-grp' );
             
+        }() );
+        
+        
+        // Initializing
+        ( function() {
+            
+            funcName = 'main-actions-widgets-func';
+            
+            $mainActionsWidgets
+                .addClass( funcTerm )
+                .addClass( funcName );
+            
+            overlayActivate( funcName );
         }() );
         
         
@@ -1400,18 +1450,6 @@
         }
 
 
-        // TransHere
-        function mainActionsWidgetsTransHere() {
-
-            $mainActionsWidgetsCt.on( 'transitionend.applicator webkitTransitionEnd.applicator oTransitionEnd.applicator otransitionend.applicator', function() {
-                if ( event.propertyName == 'opacity' ) {
-                    transHere( $mainActionsWidgets );
-                }
-            } );
-
-        }
-
-
         // Deactivate
         function mainActionsWidgetsDeactivate() {
             $mainActionsWidgets
@@ -1434,33 +1472,24 @@
         mainActionsWidgetsDeactivate();
 
 
-        // TransThere
-        function mainActionsWidgetsTransThere() {
-
-            if ( $mainActionsWidgets.hasClass( 'here' ) ) {
-
-                $mainActionsWidgetsCt.on( 'transitionend.applicator webkitTransitionEnd.applicator oTransitionEnd.applicator otransitionend.applicator', function() {
-                    if ( event.propertyName == 'opacity' ) {
-                        transThere( $mainActionsWidgets );
-                    }
-                } );
-
-            }
-        }
-
-
         // Toggle
         function mainActionsWidgetsToggle() {
 
             if ( $mainActionsWidgets.hasClass( mainActionsWidgetsOffCSS ) ) {
+                
                 mainActionsWidgetsActivate();
-                mainActionsWidgetsTransHere();
+                
+                transHere( $mainActionsWidgetsCt, 'opacity', $mainActionsWidgets );
+                
                 $mainActionsWidgetsWidgetGroup.scrollTop( 0 );
+            
             }
-
             else if ( $mainActionsWidgets.hasClass( mainActionsWidgetsOnCSS ) ) {
+                
                 mainActionsWidgetsDeactivate();
-                mainActionsWidgetsTransThere();
+                
+                transThere( $mainActionsWidgetsCt, 'opacity', $mainActionsWidgets );
+            
             }
         }
 
@@ -1477,9 +1506,13 @@
         // Dismiss Click
         ( function() {
             $mainActionsWidgetsDismissButton.on( 'click.applicator', function( e ) {
+                
                 e.preventDefault();
+                
                 mainActionsWidgetsDeactivate();
-                mainActionsWidgetsTransThere();
+                
+                transThere( $mainActionsWidgetsCt, 'opacity', $mainActionsWidgets );
+            
             } );
         }() );
 
@@ -1487,8 +1520,11 @@
         // Deactivate via external click
         $document.on( 'touchmove.applicator click.applicator', function ( e ) {
             if ( $mainActionsWidgets.hasClass( mainActionsWidgetsOnCSS ) && ( ! $( e.target ).closest( $mainActionsWidgetsToggle ).length ) && ( ! $( e.target ).closest( $mainActionsWidgetsCt ).length ) ) {
+                
                 mainActionsWidgetsDeactivate();
-                mainActionsWidgetsTransThere();
+                
+                transThere( $mainActionsWidgetsCt, 'opacity', $mainActionsWidgets );
+            
             }
         } );
 
@@ -1497,8 +1533,11 @@
         $window.load( function() {
             $document.on( 'keyup.applicator', function ( e ) {
                 if ( $mainActionsWidgets.hasClass( mainActionsWidgetsOnCSS ) && e.keyCode == 27 ) {
+                    
                     mainActionsWidgetsDeactivate();
-                    mainActionsWidgetsTransThere();
+                    
+                    transThere( $mainActionsWidgetsCt, 'opacity', $mainActionsWidgets );
+                
                 }
             } );
         } );
@@ -1534,8 +1573,6 @@
             navHoverInactiveCss = 'nav-hover--inactive',
             aplSubNavActCss = 'applicator--sub-nav--active',
             aplSubNavInactCss = 'applicator--sub-nav--inactive',
-            
-            $navParentItems = $( '.page_item, .menu-item' ),
             
             $mainNavItem = $cp.find( $navParentItems ),
             
@@ -1841,7 +1878,6 @@
                 if ( ! event.target.checkValidity() ) {
                     event.preventDefault();
 
-                    //$('#commentform :input:visible[required="required"]').each( function () {
                     $('#commentform :input:visible').each( function () {
                         
                         var $this = $( this );
@@ -2139,11 +2175,18 @@
 
 
             // ------------ <table>
-            $( postContentCtCrCss + ' ' + '> *:has( table )' ).each(function() {
+            $( '.post-content---ct_cr > *:has( table ), .comment-content---ct_cr > *:has( table )' ).each(function() {
                 var $this = $( this ),
                     $table = $this.find( 'table' );
 
                 $table.wrap( dataFormatBlockCpMu )
+                    .closest( dataFormatCss )
+                        .addClass( dataFormatPrefixCss + 'table' );
+            });
+
+            $( postContentCtCrCss + ' ' + '> table, .comment-content---ct_cr > table' ).each(function() {
+                var $this = $( this );
+                $this.wrap( dataFormatBlockCpMu )
                     .closest( dataFormatCss )
                         .addClass( dataFormatPrefixCss + 'table' );
             });
@@ -2157,18 +2200,31 @@
 
 
             // ------------ <iframe>
-            $( postContentCtCrCss + ' ' + '> *:has( iframe )' ).each(function() {
+            $( '.post-content---ct_cr > *:has( iframe )' ).each( function() {
                 var $this = $( this );
-
-                $this.addClass( dataFormatTerm + ' ' + dataFormatPrefixCss + 'iframe' );
-            });
-
-            $( postContentCtCrCss + ' ' + '> iframe' ).each(function() {
+                $this.addClass( 'data-format data-format--iframe' );
+            } );
+            
+            $( '.post-content---ct_cr > iframe' ).each( function() {
                 var $this = $( this );
                 $this.wrap( dataFormatInlineCpMu )
-                    .closest( dataFormatCss )
-                        .addClass( dataFormatPrefixCss + 'iframe' );
-            });
+                    .closest( 'data-format' )
+                        .addClass( 'data-format--iframe' );
+            } );
+            
+            
+            // ------------ <embed>
+            $( '.post-content---ct_cr > *:has( embed )' ).each( function() {
+                var $this = $( this );
+                $this.addClass( 'data-format data-format--embed' );
+            } );
+            
+            $( '.post-content---ct_cr > embed' ).each( function() {
+                var $this = $( this );
+                $this.wrap( dataFormatInlineCpMu )
+                    .closest( 'data-format' )
+                        .addClass( 'data-format--embed' );
+            } );
             
 
          } )();
@@ -2200,6 +2256,7 @@
             
             wrapTextNode( $( '.data-format--img, .excerpt-link, .post-password-form label' ) );
             wrapTextNode( $( '.post-content---ct_cr' ) );
+            wrapTextNode( $( '.wp-caption-text' ) );
             
             initRemoveEmpty( $( '.text-node' ) );
             
@@ -2211,7 +2268,23 @@
         
         /* ------------------------ Main Logo ------------------------ */
         ( function(){
+            
+            // Gatekeeper
+            ( function(){
+                
+                if ( ! $( '#main-logo' ).length ) {
+
+                    $html
+                        .removeClass( 'main-logo--enabled' )
+                        .addClass( 'main-logo--disabled' );
+
+                    return;
+                }
+            
+            }() );
         
+            
+            // Variables
             var $mainLogoWidth = $( '.main-logo' ).width(),
                 $mainLogoHeight = $( '.main-logo' ).height(),
                 $mainName = $( '.main-logo--enabled .main-name' ),
@@ -2219,11 +2292,15 @@
                 $rootFontSize = $( ':root' ).css( 'font-size' ),
                 $mainLogoWidthRem = ( ( $mainLogoWidth / parseInt( $rootFontSize ) ) + .5 ) + 'rem';
             
-            // If logo is not square
-            if ( $mainLogoWidth !== $mainLogoHeight ) {
-                $mainName.css( 'margin-left', $mainLogoWidthRem );
-                $mainDescription.css( 'margin-left', $mainLogoWidthRem );
-            }
+            // If logo is not square, compute its width
+            ( function() {
+                
+                if ( $mainLogoWidth !== $mainLogoHeight ) {
+                    $mainName.css( 'margin-left', $mainLogoWidthRem );
+                    $mainDescription.css( 'margin-left', $mainLogoWidthRem );
+                }
+            
+            }() );
             
         }() );
         
@@ -2244,6 +2321,104 @@
             }
         
         }() );
+        
+        
+        
+        
+        
+        /* ------------------------ If Main Description is visually-hidden ------------------------ */
+        ( function() {
+            
+            var $mainNavAnchor = $mainNav.find( 'a' );
+            
+            $mainNavAnchor.each( function() {
+                
+                var $this = $( this );
+                
+                if ( $this.attr( 'href' ) == '#' ) {
+                    $this.addClass( 'main-navi--hash---a' );
+                }
+                
+            } );
+        
+        }() );
+        
+        
+        
+        
+        
+        /* ------------------------ Add Anchor to Content Headings ------------------------ */
+        ( function() {
+            
+            if ( ! $html.hasClass( 'view--inner' ) ) {
+                return;
+            }
+            
+            var $postContentHeadings = $( '.post-content---ct_cr' ).find( 'h1, h2, h3, h4, h5, h6' );
+            
+            $.each( $postContentHeadings, function( index, value ) {
+                
+                $( this )
+                    .attr( {
+                        'id': 'section' + ( index + 1 ),
+                        'class': 'heading--anchored'
+                    } )
+                    .wrapInner( '<a href="#section' + ( index + 1 ) + '" />' );
+            
+            } );
+        
+        }() );
+        
+        
+        
+        
+        
+        /* ------------------------ Video Fluid Widths ------------------------ */
+        // https://css-tricks.com/NetMag/FluidWidthVideo/demo.php
+        ( function() {
+
+            var $videos = $( 'iframe[src*="//player.vimeo.com"], iframe[src*="//www.youtube.com"], embed[src*="//v.wordpress.com"], object, embed' ),
+                $container = $( '.post-content---ct_cr' ),
+                $containerChild = $( '.post-content---ct_cr > *' );
+            
+            
+            // Add Data Aspect Ratio
+            $videos.each( function() {
+                $( this )
+                    .attr( 'data-aspect-ratio', this.height / this.width )
+                    .removeAttr( 'width' )
+                    .removeAttr( 'height' )
+                    .closest( $containerChild ).addClass( 'data-format--video' );
+            } );
+
+            
+            // Define New Width and Height
+            $( window ).resize( function() {
+                var newWidth = $container.width(),
+                    $hdVideos = $( 'iframe[data-aspect-ratio], embed[data-aspect-ratio]' );
+            
+                $videos.each(function() {
+                    var $this = $( this );
+                    
+                    $this
+                        .width( newWidth )
+                        .height( newWidth * $this.attr( 'data-aspect-ratio' ) );
+                } );
+                
+                // Define HD Videos
+                $hdVideos.each( function() {
+                    var $this = $( this );
+
+                    if ( $this.attr( 'data-aspect-ratio' ) >= '0.5' && $this.attr( 'data-aspect-ratio' ) <= '0.6' ) {
+                        $this.closest( $containerChild ).addClass( 'data-format--video--hd' );
+                    }
+
+                } );
+
+            } ).resize();
+
+        }() );
+        
     
     } );
     /* ------------------------ End DOM Ready ------------------------ */
@@ -2387,92 +2562,48 @@
     /* ------------------------ Smooth Scrolling ------------------------ */
     // https://stackoverflow.com/a/7717572
     ( function() {
-        $( 'a[href^="#"]' ).on( 'click.applicator', function() {
+        
+        $( 'a[href^="#"]:not( #go-start-navi---a )' ).on( 'click.applicator', function() {
             var href = $.attr( this, 'href' );
+            
+            scrollTime = window.innerHeight / scrollMsFactor;
 
             $htmlBody.stop().animate( {
                 scrollTop: $( href ).offset().top
-            }, 300, 'easeInOutCirc', function() {
+            }, scrollTime, 'easeInOutCirc', function() {
                 window.location.hash = href;                
             } );
 
             return false;
         } );
-    }() );
-    
-    
-    
-    
-    
-    /* ------------------------ Main Banner Illusion ------------------------ */
-    ( function() {
-
-        var $mainBanner = $( '#main-banner' );
-
         
-        // Gatekeeper
-        ( function() {
+        $( 'a[href^="#"]:not( #go-start-navi---a )' ).each( function() {
             
-            if ( ! $mainBanner.length || $mainBanner.css( 'margin' ) == '-1px'  ) {
-                return;
-            }
+            var $this = $( this );
             
-        }() );
+            console.log( $this );
+            
+        } );
         
-
-        // Variables
-        var scrollPosition,
-            mainBannerScale,
-            mainBannerTranslateY,
-            mainBannerOpacity,
-
-            $mainMediaBanner = $mainBanner.find( '.main-media-banner' ),
-
-            mainBannerOffset = $mainBanner.offset().top,
-            mainBannerHeight = $mainBanner.height(),
-            mainBannerHeightHalf = mainBannerHeight / 2,
-            mainBannerOffsetHeight = mainBannerOffset + mainBannerHeight,
-            mainBannerOffsetHeightHalf = mainBannerOffset + ( mainBannerHeight / 2 );
-
         
-        ( function() {
-        
-            $window.on( 'scroll.applicator', function() {
+        $window.on( 'scroll.applicator', function() {
+                
+            $goStartNaviA.on( 'click.applicator', function() {
 
-                scrollPosition = $( this ).scrollTop();
-                mainBannerScale = ( scrollPosition / ( mainBannerOffsetHeight / .3 ) ) + 1;
-                mainBannerTranslateY = ( 10 / mainBannerOffsetHeight ) * scrollPosition;
-                mainBannerOpacity = 1 - ( ( scrollPosition - mainBannerOffsetHeightHalf ) / mainBannerHeightHalf );
+                var href = $.attr( this, 'href' );
 
-                /* Transform magic */
-                if ( scrollPosition <= mainBannerOffsetHeight ) {
-                    $mainMediaBanner.css( {
-                        transform: "translateY(" + mainBannerTranslateY + "px) scale(" + mainBannerScale + ", " + mainBannerScale + ")"
-                    } );
-                }
+                scrollTime = window.pageYOffset / scrollMsFactor;
 
-                /* Opacity magic */
-                if ( scrollPosition >= mainBannerOffsetHeightHalf ) {
-                    $mainMediaBanner.css( {
-                        opacity: mainBannerOpacity
-                    } );
-                }
+                $htmlBody.stop().animate( {
+                    scrollTop: $( href ).offset().top
+                }, scrollTime, 'easeInOutCirc', function() {
+                    window.location.hash = href;                
+                } );
 
-                else {
-                    $mainMediaBanner.css( {
-                        opacity: 1
-                    } );
-                }
-
-                if ( scrollPosition >= mainBannerOffsetHeight ) {
-
-                    $mainMediaBanner.css( {
-                        opacity: 0
-                    } );
-                }
+                return false;
             } );
-            
-        }() );
+
+        } );
     
     }() );
 

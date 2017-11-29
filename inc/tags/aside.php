@@ -22,6 +22,11 @@ if ( ! function_exists( 'applicator_main_header_aside' ) ) {
                     'elem'          => 'aside',
                     'hr_structure'  => true,
                     'h_elem'        => 'h2',
+                    'attr'          => array(
+                        'elem'          => array(
+                            'role'          => 'complementary',
+                        ),
+                    ),
                 ),
                 'id'        => $main_header_aside_term,
                 'css'       => 'main-hr',
@@ -31,6 +36,90 @@ if ( ! function_exists( 'applicator_main_header_aside' ) ) {
             ) );
             
             return $main_header_aside;
+        }
+    }
+}
+
+
+// Main Actions
+if ( ! function_exists( 'applicator_main_actions' ) ) {
+    function applicator_main_actions() {
+        
+        $main_actions_term = 'main-actions-aside';
+        
+        if ( is_active_sidebar( $main_actions_term )  ) {
+            
+            ob_start();
+            dynamic_sidebar( $main_actions_term );
+            $aside = ob_get_contents();
+            ob_end_clean();
+            
+        }
+        else {
+            
+            // OB: Search
+            ob_start();
+            get_search_form();
+            $search_ob_content = ob_get_contents();
+            ob_end_clean();
+            
+            $aside = $search_ob_content;
+            
+        }
+        
+        // E: Main Actions
+        $main_actions_cp = applicator_htmlok( array(
+            'name'      => 'Main Actions',
+            'structure' => array(
+                'type'          => 'constructor',
+                'subtype'       => 'aside',
+                'elem'          => 'aside',
+                'hr_structure'  => true,
+                'h_elem'        => 'h3',
+            ),
+            'id'        => 'main-actions',
+            'content'   => array(
+                'constructor'   => $aside,
+            ),
+        ) );
+        
+        return $main_actions_cp;
+    }
+}
+
+
+// Main Banner
+if ( ! function_exists( 'applicator_main_banner' ) ) {
+    function applicator_main_banner() {
+        
+        $main_banner_term = 'main-banner-aside';
+        
+        if ( is_active_sidebar( $main_banner_term )  ) {
+        
+            ob_start();
+            dynamic_sidebar( $main_banner_term );
+            $aside = ob_get_contents();
+            ob_end_clean();
+            
+            
+            // E: Main Banner
+            $main_banner_cp = applicator_htmlok( array(
+                'name'      => 'Main Banner',
+                'structure' => array(
+                    'type'          => 'constructor',
+                    'subtype'       => 'aside',
+                    'elem'          => 'aside',
+                    'hr_structure'  => true,
+                    'h_elem'        => 'h3',
+                ),
+                'id'        => 'main-banner',
+                'content'   => array(
+                    'constructor'   => $aside,
+                ),
+            ) );
+
+            return $main_banner_cp;
+            
         }
     }
 }
@@ -92,6 +181,11 @@ if ( ! function_exists( 'applicator_main_content_aside' ) ) {
                     'elem'          => 'aside',
                     'hr_structure'  => true,
                     'h_elem'        => 'h2',
+                    'attr'          => array(
+                        'elem'          => array(
+                            'role'          => 'complementary',
+                        ),
+                    ),
                 ),
                 'id'        => $main_content_aside_term,
                 'css'       => 'main-ct',
@@ -137,48 +231,5 @@ if ( ! function_exists( 'applicator_main_footer_aside' ) ) {
             
             return $main_footer_aside;
         }
-    }
-}
-
-
-// Main Actions
-if ( ! function_exists( 'applicator_main_actions' ) ) {
-    function applicator_main_actions() {
-        
-        $main_actions_term = 'main-actions-aside';
-        
-        if ( is_active_sidebar( $main_actions_term )  ) {
-            
-            ob_start();
-            dynamic_sidebar( $main_actions_term );
-            $aside = ob_get_contents();
-            ob_end_clean();
-            
-        }
-        else {
-            
-            // OB: Search
-            ob_start();
-            get_search_form();
-            $search_ob_content = ob_get_contents();
-            ob_end_clean();
-            
-            $aside = $search_ob_content;
-            
-        }
-        
-        // E: Main Actions
-        $main_actions_cp = applicator_htmlok( array(
-            'name'      => 'Main Actions',
-            'structure' => array(
-                'type'          => 'component',
-            ),
-            'id'        => 'main-actions',
-            'content'   => array(
-                'component'   => $aside,
-            ),
-        ) );
-        
-        return $main_actions_cp;
     }
 }

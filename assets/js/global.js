@@ -31,24 +31,90 @@
 
 ( function( $ ) {
     
+    var $html = $( document.documentElement );
     
     
-    
-    
-    // Widget Content
-    $( '.widget-content---ct_cr > *:not( img )' ).each( function() {
-        var $this = $( this );
-
-        if ( $this.html().replace(/\s|&nbsp;/g, '' ).length == 0 ) {
-            $this.closest( '.widget' ).addClass( 'widget--zero-length' );
+    // Remove Empty Element
+    function removeEmptyElement( $elem, $target ) {
+        
+        // Gatekeeper
+        if ( ! $elem.length ) {
+            return;
         }
-    } );
+        
+        if ( $elem.html().replace(/\s|&nbsp;/g, '' ).length == 0 ) {
+            
+            $elem.closest( $target ).remove();
+        
+        }
+    
+    }
+    
+    
+    // Tag Empty Element
+    function tagEmptyElement( $elem, $target, $class ) {
+        
+        // Gatekeeper
+        if ( ! $elem.length ) {
+            return;
+        }
+        
+        $elem.each( function() {
+            
+            var $this = $( this );
+            
+            if ( $this.html().replace(/\s|&nbsp;/g, '' ).length == 0 ) {
+                $this.closest( $target ).addClass( $class );
+            }
+            
+        } );
+    
+    }
+    
+    
+    // If there is no logo, remove the object
+    removeEmptyElement( $( '.custom-logo-link' ), $( '#main-logo' ) );
+    
+    // removeEmptyElement( $( '#calendar_wrap' ), $( '.widget_calendar' ) );
+    
+    
+    
+    // Tag Empty Widgets like Calendar Widgets
+    ( function() {
+        
+        var $element = $( '.widget-content---ct_cr > *:not( img ):not( .widget-heading )' ),
+            $target = $( '.widget' ),
+            $class = 'widget--zero-length';
+        
+        tagEmptyElement( $element, $target, $class );
+    
+    } )();
+    
+    
+    // Tag Empty Categories Widgets
+    ( function() {
 
-    $( '.widget_categories .widget-content---ct_cr > *:has( .cat-item-none )' ).each( function() {
-        var $this = $( this );
+        $( '.widget_categories .widget-content---ct_cr > *:has( .cat-item-none )' ).each( function() {
+            $( this ).closest( '.widget' ).addClass( 'widget--empty' );
+        } );
+    
+    } )();
+    
+    
+    /* ------------------------ Remove remnants of <!--more--> tag ------------------------ */
+    ( function() {
 
-        $this.closest( '.widget' ).addClass( 'widget--empty' );
-    } );
+        if ( ! $html.closest( '.view--detail' ) ) {
+            return;
+        }
+
+        $( '.post-content---ct_cr span[id^="more-"]' ).each( function() {
+
+            $( this ).closest( '.post-content---ct_cr > *' ).remove();
+
+        } );
+
+    }() );
     
     
     

@@ -50,7 +50,6 @@
 #cancel-comment-reply-link .comment---txt,
 .logged-in .commenter-comment-creation-flabel,
 .comments---hr .comments-nav,
-.site-preview .main-media-banner,
 .site--root .site-main-info,
 .view--multisite-directory .post-banner-visual img,
 .view--multisite-directory .entry-content,
@@ -78,7 +77,7 @@
 .applicator--theme--page-nav .page-nav .ellipsis--delimiter,
 .applicator--theme--page-nav .blog .page-navi:not( .adjacent-navi ),
 .applicator--theme--post-format--status .format-status .published-post-author,
-.view--inner .main-banner,
+
 .applicator--theme--post-format--status .blog .format-status .post-title,
 .applicator--theme--post-format--status .single .format-status .post-title,
 .applicator--theme--post-format--status .format-status .apl-post-categories,
@@ -158,6 +157,25 @@
 
 
 
+/* ------------------ Headings ------------------ */
+h5
+{
+    font-weight: normal;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+h6
+{
+    font-weight: normal;
+    font-size: .875rem;
+    text-transform: uppercase;
+}
+
+
+
+
+
 /* ------------------ Post ------------------ */
 .post a
 {
@@ -214,12 +232,9 @@
     text-transform: capitalize;
 }
 
-.commenter-url-creation-flabel---l
+.commenter-url-creation-flabel .optional---txt
 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    margin-left: .5rem;
 }
 
 .comment-form .creation--invalid .input-text
@@ -298,8 +313,7 @@
 {
     background-color: white;
     
-    color: hsla(0, 0%, 0%, .5);
-    color: var(--copyright-info--fg-color);
+    color: #505050
 }
 
 .copyright .wbp-name---txt
@@ -380,6 +394,11 @@
     font-size: 1.5rem;
 }
 
+.site-preview .main-banner
+{
+    display: none;
+}
+
 
 
 
@@ -396,7 +415,7 @@
     position: relative;
 }
 
-.view--multisite-directory .post-banner-vis---g
+.view--multisite-directory .post-banner-vis---a_l
 {
     background-size: cover;
     background-position: center;
@@ -513,7 +532,8 @@
     --table-line--sm: 1px solid var(--table-stroke--color--min);
 }
 
-.applicator--theme--table .post-content tbody
+.applicator--theme--table .post-content tbody,
+.applicator--theme--table .comment-content tbody
 {
     border: var(--table-line--md);
     border-left-width: 1px;
@@ -521,7 +541,8 @@
 }
 
 /* Table Header */
-.applicator--theme--table .post-content th
+.applicator--theme--table .post-content th,
+.applicator--theme--table .comment-content th
 {
     border: 0;
     
@@ -529,7 +550,9 @@
 }
 
 .applicator--theme--table .post-content td,
-.applicator--theme--table .post-content tbody th
+.applicator--theme--table .post-content tbody th,
+.applicator--theme--table .comment-content td,
+.applicator--theme--table .comment-content tbody th
 {
     border: var(--table-line--sm);
     
@@ -537,12 +560,14 @@
     border-bottom: 0;
 }
 
-.applicator--theme--table .post-content td:first-child
+.applicator--theme--table .post-content td:first-child,
+.applicator--theme--table .comment-content td:first-child
 {
     border-left: 0;
 }
 
-.applicator--theme--table .post-content tfoot
+.applicator--theme--table .post-content tfoot,
+.applicator--theme--table .comment-content tfoot
 {
     border: var(--table-line--md);
     border-left: 0;
@@ -675,11 +700,6 @@
     border: var(--category--border);
 }
 
-.applicator--theme--categories .apl-categories a:hover
-{
-    text-decoration: none;
-}
-
 .applicator--theme--categories .apl-categories .post-categories
 {
     display: inline-flex;
@@ -720,7 +740,7 @@
     left: 0;
     top: 50%;
     
-    margin-left: 1rem;
+    margin-left: 1.25rem;
     
     color: var(--links--fg-color););
     
@@ -741,11 +761,6 @@
     line-height: 1;
     
     border: var(--category--border);
-}
-
-.applicator--theme--tags .apl-tags a:hover
-{
-    text-decoration: none;
 }
 
 .applicator--theme--tags .apl-tags .post-tags---grp
@@ -795,7 +810,7 @@
 .applicator--theme--post-meta .post-mod-d-stamp-dtstamp---a,
 .applicator--theme--comment-meta .comment-pub-d-stamp-dtstamp---a
 {
-    color: var(--post-meta--fg-color);
+    color: #505050;
 }
 
 .applicator--theme--post-meta .post-pub-d-stamp-dtstamp---a:hover,
@@ -815,8 +830,7 @@
     
     line-height: 1;
     
-    border: 1px solid lightgray;
-    border: var(--post-meta--border);
+    border: 1px solid #505050;
 }
 
 .applicator--theme--post-meta .post-published,
@@ -879,7 +893,7 @@
 {
     margin-bottom: .5rem;
     
-    color: gray;
+    color: #505050;
     
     font-size: .875rem;
 }
@@ -913,6 +927,12 @@
 
 
 /* ------------------ Edit Action ------------------ */
+.applicator--theme--edit-action .post-edit-link,
+.applicator--theme--edit-action .comment-edit-link
+{
+    color: var(--edit-post-action--fg-color);
+}
+
 .applicator--theme--edit-action .edit-post-axn---a_l,
 .applicator--theme--edit-action .edit-com-axn---a_l
 {
@@ -923,8 +943,7 @@
     
     font-size: .875rem;
     
-    background-color: var(--edit-post-action--bg-color);
-    color: var(--edit-post-action--fg-color);    
+    background-color: var(--edit-post-action--bg-color);    
 }
 
 
@@ -997,7 +1016,10 @@
 
 .sub-nav--active > ul,
 
-.applicator--theme--rounded-rectangles .go-ct-navi---a_l
+.applicator--theme--rounded-rectangles .go-ct-navi---a_l,
+
+.applicator--theme--rounded-rectangles .apl-categories a,
+.applicator--theme--rounded-rectangles .apl-tags a
 {
     border-radius: .125em;
 }
@@ -1227,6 +1249,10 @@
     padding-right: var(--content--spacing-x);
     
     background-color: var(--accent-color--pri);
+}
+
+.show-more-axn---a
+{
     color: white;
 }
 
@@ -1419,7 +1445,7 @@
 /* Main Content */
 .applicator--theme--layout .main-post-title---cr,
 .applicator--theme--layout .post-meta---cr,
-.applicator--theme--layout .post-content---ct_cr > *,
+.applicator--theme--layout .post-content---ct_cr,
 .applicator--theme--layout .comment-md---cr,
 .applicator--theme--layout .breadcrumbs-nav---cr,
 .applicator--theme--layout .post-excerpt---cr,
@@ -1441,7 +1467,7 @@
 /* Main Header */
 .applicator--theme--layout .main-info---cr,
 .applicator--theme--layout .main-nav---cr,
-.applicator--theme--layout .main-actions---cr,
+.applicator--theme--layout .main-actions-aside---cr,
 .applicator--theme--layout .main-menu-func .main-hr-aside---cr
 {
     margin-left: auto;
@@ -1455,30 +1481,6 @@
     position: relative;
 }
 
-.applicator--theme--layout .show-more-action
-{
-    display: block;
-}
-
-.applicator--theme--layout .post-banner-visual img
-{
-    display: none;
-}
-
-.applicator--theme--layout .post-banner-vis---g
-{
-    background-size: cover;
-    background-position: center;
-}
-
-.applicator--theme--layout .post-banner-vis---a
-{
-    display: block;
-    
-    width: 100%;
-    height: 20rem;
-}
-
 
 
 
@@ -1486,8 +1488,7 @@
 /* ------------------ Main Header ------------------ */
 .applicator--theme--main-header .main-info,
 .applicator--theme--main-header.applicator--main-menu .main-hr-aside---hr_cr,
-.applicator--theme--main-header .main-actions---ct_cr,
-.applicator--theme--main-header.applicator--main-menu .main-menu-dismiss
+.applicator--theme--main-header .main-actions-aside---ct_cr
 {
     height: 3.5rem;
 }
@@ -1508,17 +1509,17 @@
 }
 
 .applicator--theme--main-header.applicator--main-menu .main-hr-aside---hr,
-.applicator--theme--main-header .main-actions---ct
+.applicator--theme--main-header .main-actions-aside---ct
 {
     position: absolute;
 }
 
-.applicator--theme--main-header .main-actions---ct
+.applicator--theme--main-header .main-actions-aside---ct
 {
     right: 0;
 }
 
-.applicator--theme--main-header.applicator--main-search--active .main-actions---ct
+.applicator--theme--main-header.applicator--main-search--active .main-actions-aside---ct
 {
     width: 100%;
 }
@@ -1528,22 +1529,31 @@
     min-height: 3rem;
 }
 
-.applicator--theme--main-header.applicator--main-menu .main-menu-dismiss---b
-{   
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+
+
+
+
+/* ------------------ GPU Hack ------------------ */
+.main-hr-aside---ct,
+.main-actions-widgets---widget-grp
+{
+    transform: translateZ(0);
 }
 
 
 
 
 
-/* ------------------ GPU Hack ------------------ */
-.main-banner,
-.main-hr-aside---ct
+/* ------------------ Viewport Width: 768 ------------------ */
+
+@media only screen and ( min-width: 48em )
 {
-    transform: translateZ(0);
+    
+    .applicator--theme--main-header.applicator--main-search--active .main-actions-aside---ct
+    {
+        width: auto;
+    }
+    
 }
 
 
