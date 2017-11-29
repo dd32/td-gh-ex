@@ -18,7 +18,7 @@ if ($awada_theme_options['site_layout'] == 'boxed') {
 <?php if ($awada_theme_options['site_layout'] == 'boxed') { ?>
 <div id="wrapper" class="container">
 <?php } ?>
-<?php if ($awada_theme_options['topbar']){ ?>
+<?php if ($awada_theme_options['show_topbar']){ ?>
 <div id="sitetopbar" class="clearfix">
 	<div class="container">
 		<?php if ($awada_theme_options['contact_info_header']) { ?>

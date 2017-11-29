@@ -15,10 +15,6 @@ add_action( 'customize_register', function( $wp_customize ) {
     $wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
 	$wp_customize->get_setting( 'custom_logo' )->transport          = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport  = 'postMessage';
-	
-
-
 	$wp_customize->selective_refresh->add_partial( 'blogname', array(
 		'selector' => '#alogo',
 		'render_callback' => function(){
@@ -74,7 +70,7 @@ Kirki::add_field('awada_theme', array(
     'type'              => 'color',
     'priority'          => 9,
     'default'           => '#33a568',
-    'sanitize_callback' => 'awada_sanitize_color',
+    'transport'         =>'auto',
     'output'            => array(
         array(
             'element'  => '#sitetopbar',
@@ -85,7 +81,6 @@ Kirki::add_field('awada_theme', array(
             'property' => 'border-bottom',
         ),
     ),
-    'transport'         => 'auto',
 ));
 
 Kirki::add_field('awada_theme', array(
@@ -182,6 +177,112 @@ Kirki::add_field( 'awada_theme', array(
         
     ),
 ) );
+/* topbar Options */
+Kirki::add_field('awada_theme', array(
+    'settings'          => 'topbar_heading',
+    'label'             => __('Topbar Options', 'awada'),
+    'section'           => 'general_sec',
+    'type'              => 'heading',
+    'priority'          => 10,
+));
+Kirki::add_field('awada_theme', array(
+    'settings'          => 'show_topbar',
+    'label'             => __('Show Top bar', 'awada'),
+    'section'           => 'general_sec',
+    'type'              => 'switch',
+    'priority'          => 10,
+    'default'           => $awada_theme_options['show_topbar'],
+    'sanitize_callback' => 'awada_sanitize_checkbox',
+));
+Kirki::add_field('awada_theme', array(
+    'settings'          => 'contact_info_header',
+    'label'             => __('Header Contact Info', 'awada'),
+    'description'       => __('Show/Hide contact info bar in header', 'awada'),
+    'section'           => 'general_sec',
+    'type'              => 'switch',
+    'priority'          => 10,
+    'default'           => $awada_theme_options['contact_info_header'],
+    'sanitize_callback' => 'awada_sanitize_checkbox',
+    'active_callback' => array(
+        array(
+            'setting'  => 'show_topbar',
+            'operator' => '==',
+            'value'    => true,
+        ),
+    ),
+));
+Kirki::add_field('awada_theme', array(
+    'settings'          => 'contact_email',
+    'label'             => __('Contact Email Address', 'awada'),
+    'section'           => 'general_sec',
+    'type'              => 'text',
+    'priority'          => 10,
+    'transport'         => 'postMessage',
+    'default'           => $awada_theme_options['contact_email'],
+    'sanitize_callback' => 'sanitize_email',
+    'partial_refresh' => array(
+        'contact_email' => array(
+            'selector'        => '.topbar-contact-email',
+            'render_callback' => 'awada_render_contact_email',
+        ),
+    ),
+    'active_callback' => array(
+        array(
+            'setting'  => 'show_topbar',
+            'operator' => '==',
+            'value'    => true,
+        ),
+        array(
+            'setting'  => 'contact_info_header',
+            'operator' => '==',
+            'value'    => true,
+        ),
+    ),
+));
+Kirki::add_field('awada_theme', array(
+    'settings'          => 'contact_phone',
+    'label'             => __('Phone Number', 'awada'),
+    'section'           => 'general_sec',
+    'type'              => 'text',
+    'priority'          => 10,
+    'transport'         => 'postMessage',
+    'default'           => $awada_theme_options['contact_phone'],
+    'sanitize_callback' => 'awada_sanitize_text',
+    'partial_refresh' => array(
+        'contact_phone' => array(
+            'selector'        => '.topbar-contact-phone',
+            'render_callback' => 'awada_render_contact_phone',
+        )
+    ),
+    'active_callback' => array(
+        array(
+            'setting'  => 'show_topbar',
+            'operator' => '==',
+            'value'    => true,
+        ),
+        array(
+            'setting'  => 'contact_info_header',
+            'operator' => '==',
+            'value'    => true,
+        ),
+    ),
+));
+Kirki::add_field('awada_theme', array(
+    'settings'          => 'social_media_heder',
+    'label'             => __('Add Social Media Icons', 'awada'),
+    'section'           => 'general_sec',
+    'type'              => 'custom',
+    'priority'          => 10,
+    'default'           => sprintf(__('Create a new menu and then add the URL for each social profile to your menu as a custom link. %1$s Create Now %2$s', 'awada'), '<br><a class="button" href="javascript:wp.customize.control( \'nav_menu_locations[social]\' ).focus();">', '</a>'),
+    'active_callback' => array(
+        array(
+            'setting'  => 'show_topbar',
+            'operator' => '==',
+            'value'    => true,
+        ),
+    ),
+));
+/* logo spacing */
 Kirki::add_field('awada_theme', array(
     'settings'          => 'logo_top_spacing',
     'label'             => __('Logo Top Spacing', 'awada'),
@@ -1013,65 +1114,6 @@ Kirki::add_field('awada_theme', array(
             'render_callback'     => 'awada_partial_refresh_callout_btn'
         ),
     )
-));
-/* Social Options */
-Kirki::add_section('social_sec', array(
-    'title'      => __('Contact and Social Options', 'awada'),
-    'panel'      => 'awada_option_panel',
-    'priority'   => 159,
-    'capability' => 'edit_theme_options',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'contact_info_header',
-    'label'             => __('Header Contact Info', 'awada'),
-    'description'       => __('Show/Hide contact info bar in header', 'awada'),
-    'section'           => 'social_sec',
-    'type'              => 'switch',
-    'priority'          => 10,
-	'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['contact_info_header'],
-    'sanitize_callback' => 'awada_sanitize_checkbox',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'contact_email',
-    'label'             => __('Contact Email Address', 'awada'),
-    'section'           => 'social_sec',
-    'type'              => 'text',
-    'priority'          => 10,
-	'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['contact_email'],
-    'sanitize_callback' => 'sanitize_email',
-	'partial_refresh' => array(
-    'contact_email' => array(
-        'selector'        => '.topbar-contact-email',
-        'render_callback' => 'awada_render_contact_email',
-    )
-),
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'contact_phone',
-    'label'             => __('Phone Number', 'awada'),
-    'section'           => 'social_sec',
-    'type'              => 'text',
-    'priority'          => 10,
-	'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['contact_phone'],
-    'sanitize_callback' => 'awada_sanitize_text',
-	'partial_refresh' => array(
-		'contact_phone' => array(
-			'selector'        => '.topbar-contact-phone',
-			'render_callback' => 'awada_render_contact_phone',
-		)
-	),
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'social_media_header',
-    'label'             => __('Add Social Media Icons', 'awada'),
-    'section'           => 'social_sec',
-    'type'              => 'custom',
-    'priority'          => 10,
-    'default'           => sprintf(__('Create a new menu and then add the URL for each social profile to your menu as a custom link. %1$s Create Now %2$s', 'awada'), '<a href="javascript:wp.customize.control( \'nav_menu_locations[social]\' ).focus();">', '</a>'),
-    'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
 
 /* footer options */

@@ -194,6 +194,14 @@
         });
     });
 	/* Header Contact and Social  */
+    wp.customize('awada_theme_options[show_topbar]', function (value) {
+        value.bind(function (to) {
+            if (!to)
+                $('#sitetopbar').hide();
+            else
+                $('#sitetopbar').show();
+        });
+    });
     wp.customize('awada_theme_options[contact_info_header]', function (value) {
         value.bind(function (to) {
             if (!to)

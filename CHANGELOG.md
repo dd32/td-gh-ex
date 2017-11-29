@@ -1,3 +1,5 @@
+###Version 1.6.4 [29-NOV-2017]
+* Customizer Color Control issue fixed.
 ###Version 1.6.3 [27-NOV-2017]
 * Kirki Latest Package Updated.
 * Home post loading via ajax.

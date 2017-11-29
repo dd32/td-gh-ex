@@ -12,7 +12,7 @@ function awada_theme_options()
         'post_layout' => 'rightsidebar',
 		'page_layout' => 'rightsidebar',
 		// Topbar
-        'topbar' => 1,
+        'show_topbar' => 1,
         'headersticky' => 0,
         'custom_css' => '',
 		'color_scheme' => 'green.css',
