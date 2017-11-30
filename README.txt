@@ -68,6 +68,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.5
+* Admin style tweaks/fixes
+* Recommended Elementor Page Builder in TGMPA
+
 #### 1.0.4
 * Changed text in upgrade page
 * Updated the language .pot file

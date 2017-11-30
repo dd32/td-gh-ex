@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.0.4' );
+define( 'AVANT_THEME_VERSION' , '1.0.5' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -207,6 +207,14 @@ function avant_add_editor_styles() {
 add_action( 'admin_init', 'avant_add_editor_styles' );
 
 /**
+ * Enqueue admin styling.
+ */
+function avant_load_admin_script() {
+    wp_enqueue_style( 'avant-admin-css', get_template_directory_uri() . '/upgrade/css/admin-css.css' );
+}
+add_action( 'admin_enqueue_scripts', 'avant_load_admin_script' );
+
+/**
  * Enqueue avant custom customizer styling.
  */
 function avant_load_customizer_script() {
@@ -312,13 +320,13 @@ function avant_register_required_plugins() {
 	$plugins = array(
 		// The recommended WordPress.org plugins.
 		array(
-			'name'      => __( 'Elementor Page Builder', 'avant' ),
-			'slug'      => 'elementor',
+			'name'      => __( 'WooCommerce', 'avant' ),
+			'slug'      => 'woocommerce',
 			'required'  => false,
 		),
 		array(
-			'name'      => __( 'WooCommerce', 'avant' ),
-			'slug'      => 'woocommerce',
+			'name'      => __( 'Elementor Page Builder', 'avant' ),
+			'slug'      => 'elementor',
 			'required'  => false,
 		),
 		array(
@@ -340,6 +348,13 @@ function avant_register_required_plugins() {
 	tgmpa( $plugins, $config );
 }
 add_action( 'tgmpa_register', 'avant_register_required_plugins' );
+
+/**
+ * Elementor Check
+ */
+if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
+	define( 'ELEMENTOR_PARTNER_ID', 2118 );
+}
 
 /**
  * Add classes to the admin body class
