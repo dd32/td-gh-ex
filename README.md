@@ -20,6 +20,12 @@ Image used on screenshot:
  
 ## Changelog
 
+= 1.0.7 - UNRELEASED =
+* Rewritten customizer settins via Kirki framework.
+* Removed blog posts thumbnail placeholder.
+* Updated theme language pot file.
+* Fixed blog posts per page to show exact selected number of post.
+
 = 1.0.6 18 May 2017 =
 * Updated theme translation file.
 * Fixed contents display bug.

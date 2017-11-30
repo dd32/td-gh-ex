@@ -5,8 +5,12 @@
  * @package Theme-Vision
  * @subpackage Agama Blue
  * @since 1.0
- */ 
-if( ! defined( 'ABSPATH' ) ) exit; ?>
+ */
+
+// Do not allow direct access to the file.
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+} ?>
 
 <?php get_header(); ?>
 

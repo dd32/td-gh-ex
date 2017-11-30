@@ -1,91 +1,66 @@
 <?php
-if( ! defined( 'ABSPATH' ) ) exit;
 
-/**
- * Define Customizer Settings, Controls etc...
- *
- * @since Agama 1.0.1
- */
-function agama_blue_customize_register( $wp_customize ) {
-	// Agama Blue Options Panel
-	$wp_customize->add_panel( 'agama_blue_panel', array(
-		'title'				=> __( 'Agama Blue Options', 'agama-blue' ),
-		'description'		=> __( 'Agama blue theme options.', 'agama-blue' ),
-		'capability'		=> 'edit_theme_options',
-		'priority'			=> 120
-	) ); // Blog Section
-	$wp_customize->add_section( 'agama_blue_blog_section', array(
-		'title'				=> __( 'Blog', 'agama-blue' ),
-		'description'		=> __( 'Blog settings.', 'agama-blue' ),
-		'panel'				=> 'agama_blue_panel'
-	) ); // Agama Blue blog feature
-	$wp_customize->add_setting( 'agama_blue_blog', array(
-		'default'			=> true,
-		'capability'		=> 'edit_theme_options',
-		'transport'			=> 'refresh',
-		'sanitize_callback'	=> 'agama_blue_sanitize_checkbox'
-	));
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize, 'agama_blue_blog', array(
-				'label'			=> __( 'Enable blog feature ?', 'agama-blue' ),
-				'description'	=> __( 'Enable blog feature on homepage.', 'agama-blue' ),
-				'section'		=> 'agama_blue_blog_section',
-				'settings'		=> 'agama_blue_blog',
-				'type'			=> 'checkbox'
-			)
-		)
-	); // Blog Heading
-	$wp_customize->add_setting( 'agama_blue_blog_heading', array(
-		'default'			=> 'Latest from the Blog',
-		'capability'		=> 'edit_theme_options',
-		'transport'			=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize, 'agama_blue_blog_heading', array(
-				'label'			=> __( 'Blog Heading', 'agama-blue' ),
-				'description'	=> __( 'Set custom blog section heading title.', 'agama-blue' ),
-				'section'		=> 'agama_blue_blog_section',
-				'settings'		=> 'agama_blue_blog_heading',
-				'type'			=> 'text'
-			)
-		)
-	); // Blog Posts Heading
-	$wp_customize->add_setting( 'agama_blue_blog_posts_number', array(
-		'default'			=> '4',
-		'capability'		=> 'edit_theme_options',
-		'transport'			=> 'refresh',
-		'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize, 'agama_blue_blog_posts_number', array(
-				'label'			=> __( 'Blog Posts', 'agama-blue' ),
-				'description' 	=> __( 'Enter how many blog posts should appear on blog section on homepage.', 'agama-blue' ),
-				'section'		=> 'agama_blue_blog_section',
-				'settings'		=> 'agama_blue_blog_posts_number',
-				'type'			=> 'text'
-			)
-		)
-	);
+// Do not allow direct access to the file.
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
 }
-add_action( 'customize_register', 'agama_blue_customize_register' );
 
-/**
- * Checkbox sanitization callback.
- * 
- * Sanitization callback for 'checkbox' type controls. This callback sanitizes `$checked`
- * as a boolean value, either TRUE or FALSE.
- *
- * @param bool $checked Whether the checkbox is checked.
- * @return bool Whether the checkbox is checked.
- */
-function agama_blue_sanitize_checkbox( $checked ) {
-	// Boolean check.
-	return ( ( isset( $checked ) && true == $checked ) ? true : false );
+// Define kirki framework file path.
+$Kirki = get_template_directory() . '/framework/admin/kirki/kirki.php';
+
+// Load Kirki Framework
+if( file_exists( $Kirki ) ) {
+    require_once( $Kirki );
 }
+
+// If Kirki Framework Not Found
+if( ! class_exists( 'Kirki' ) )
+    return;
+
+###############################################
+# AGAMA BLUE OPTIONS
+###############################################
+Kirki::add_config( 'agama_blue_options', array(
+    'option_type' => 'theme_mod',
+    'capability'  => 'edit_theme_options'
+) );
+Kirki::add_panel( 'agama_blue_theme_options_panel', array(
+    'title'     => __( 'Agama Blue Options', 'agama-blue' ),
+    'priority'  => 135
+) );
+Kirki::add_section( 'agama_blue_blog_section', array(
+    'title'     => __( 'Blog', 'agama-blue' ),
+    'panel'     => 'agama_blue_theme_options_panel'
+) );
+Kirki::add_field( 'agama_blue_options', array(
+    'label'     => __( 'Enable', 'agama-blue' ),
+    'tooltip'   => __( 'Enable blog feature on home page.', 'agama-blue' ),
+    'settings'  => 'agama_blue_blog',
+    'section'   => 'agama_blue_blog_section',
+    'type'      => 'switch',
+    'default'   => true
+) );
+Kirki::add_field( 'agama_blue_options', array(
+    'label'     => __( 'Heading Title', 'agama-blue' ),
+    'tooltip'   => __( 'Set custom blog heading title.', 'agama-blue' ),
+    'settings'  => 'agama_blue_blog_heading',
+    'section'   => 'agama_blue_blog_section',
+    'type'      => 'text',
+    'default'   => __( 'Latest from the Blog', 'agama-blue' )
+) );
+Kirki::add_field( 'agama_blue_options', array(
+    'label'     => __( 'Posts per Page', 'agama-blue' ),
+    'tooltip'   => __( 'Set how many blog posts to display per page.', 'agama-blue' ),
+    'settings'  => 'agama_blue_blog_posts_number',
+    'section'   => 'agama_blue_blog_section',
+    'type'      => 'slider',
+    'choices'   => array(
+        'min'   => 1,
+        'max'   => 36,
+        'step'  => 1
+    ),
+    'default'   => '4'
+) );
 
 /**
  * Generating Dynamic CSS
@@ -125,11 +100,15 @@ add_action( 'wp_head', 'agama_blue_customize_css' );
 add_action( 'customize_controls_print_styles', 'agama_blue_customize_styles_support' );
 function agama_blue_customize_styles_support() { ?>
 <style type="text/css">
-#customize-theme-controls #accordion-panel-agama_blue_panel .accordion-section-title {
+#accordion-panel-agama_blue_theme_options_panel h3:before {
+    font-family: FontAwesome;
+    content: '\f013';
+}
+#customize-theme-controls #accordion-panel-agama_blue_theme_options_panel .accordion-section-title {
 	background-color: rgba(0, 164, 208, 0.9) !important;
 	color: #FFF;
 }
-#customize-theme-controls #accordion-panel-agama_blue_panel .accordion-section-title:after {
+#customize-theme-controls #accordion-panel-agama_blue_theme_options_panel .accordion-section-title:after {
 	color: #FFF;
 }
 </style>

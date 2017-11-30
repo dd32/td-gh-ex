@@ -1,5 +1,9 @@
 <?php
-if( ! defined( 'ABSPATH' ) ) exit;
+
+// Do not allow direct access to the file.
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
 
 // Include Customizer File
 get_template_part( 'includes/customizer' );
@@ -28,9 +32,9 @@ function agama_blue_after_setup_theme() {
 	// Roboto Condensed Font
 	wp_enqueue_style( 'RobotoCondensed', esc_url( 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' ) );
 	// Agama Stylesheet
-	wp_enqueue_style( 'agama-style', get_template_directory_uri(). '/style.css' );
+	wp_enqueue_style( 'agama-style', get_template_directory_uri() . '/style.css' );
 	// Agama Blue Stylesheet
-	wp_enqueue_style( 'agama-blue-style', get_stylesheet_directory_uri() . '/style.css', array( 'agama-style' ), '1.0.1' );
+	wp_enqueue_style( 'agama-blue-style', get_stylesheet_directory_uri() . '/style.css', array( 'agama-style' ), '1.0.7' );
  }
  
 /**
@@ -56,3 +60,5 @@ function agama_blue_contents() {
 		get_template_part( 'includes/frontpage-blog' ); 
 	}
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */
