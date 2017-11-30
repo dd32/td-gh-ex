@@ -122,7 +122,7 @@ class AttireOptionFields {
 
 	public static function GetFonts() {
 		$ini_directory = get_template_directory() . '/theme-data/';
-		$font_array    = parse_ini_file( "$ini_directory/fonts.php", true, INI_SCANNER_RAW );
+		$font_array    = parse_ini_file( "$ini_directory/fonts.php", true );
 
 		return $font_array;
 	}

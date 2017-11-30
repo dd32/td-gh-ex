@@ -1118,7 +1118,7 @@ $attire_options = array(
 		'transport' => 'postMessage',
 		'type'      => 'textarea',
 		'section'   => 'attire_copyright',
-		'default'   => '© Copyright 2017 | All Rights Reserved.',
+		'default'   => '&copy; Copyright 2017 | All Rights Reserved.',
 	),
 	'copyright_info_visibility' => array(
 		'label'     => __( 'Show Copyright Visibility', 'attire' ),
