@@ -35,6 +35,7 @@
   </div><!-- .container -->
   <div class="container">
     <?php wp_nav_menu( array(
+      'theme_location' => 'primary',
       'container_class' => 'nav clearfix',
       'menu_class'=>'clearfix'
     ) ); ?>
