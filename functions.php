@@ -32,9 +32,9 @@ function agama_blue_after_setup_theme() {
 	// Roboto Condensed Font
 	wp_enqueue_style( 'RobotoCondensed', esc_url( 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' ) );
 	// Agama Stylesheet
-	wp_enqueue_style( 'agama-style', get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'agama-style', get_template_directory_uri() . '/style.css', array(), Agama_Core::version() );
 	// Agama Blue Stylesheet
-	wp_enqueue_style( 'agama-blue-style', get_stylesheet_directory_uri() . '/style.css', array( 'agama-style' ), '1.0.7' );
+	wp_enqueue_style( 'agama-blue-style', get_stylesheet_directory_uri() . '/style.css', array( 'agama-style' ), Agama_Core::version() );
  }
  
 /**

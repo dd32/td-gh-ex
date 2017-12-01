@@ -20,7 +20,10 @@ Image used on screenshot:
  
 ## Changelog
 
-= 1.0.7 - UNRELEASED =
+= 1.0.8 - 01 December 2017 =
+* Fixed minor issues.
+
+= 1.0.7 - 30 November 2017 =
 * Rewritten customizer settins via Kirki framework.
 * Removed blog posts thumbnail placeholder.
 * Updated theme language pot file.
