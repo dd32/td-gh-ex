@@ -77,29 +77,8 @@ if( ! class_exists( 'Agama_About' ) ) {
 				
 				echo '<div class="changelog point-releases">';
 					echo sprintf( '<h3>Changelog Agama v%s</h3>', Agama_Core::version() );
-                    echo '<p>* Added body typography feature into Customize -> General -> Body.</p>';
-                    echo '<p>* Added header textual logo typography feature.</p>';
-                    echo '<p>* Added navigation top typography feature.</p>';
-                    echo '<p>* Added navigation primary typography feature.</p>';
-                    echo '<p>* Added navigation mobile typography feature.</p>';
-                    echo '<p>* Added enable / disable HTML tags suggestion on comment form.</p>';
-                    echo '<p>* Added tag cloud icon on single page / post.</p>';
-                    echo '<p>* Extended customizer with FontAwesome icon picker feature.</p>';
-                    echo '<p>* Updated Kirki framework to the latest version.</p>';
-                    echo '<p>* Updated customizer preview for many features to partial refresh.</p>';
-                    echo '<p>* Updated 404 not found page styling.</p>';
-                    echo '<p>* Updated search form styling.</p>';
-                    echo '<p>* Updated tag cloud widget style.</p>';
-                    echo '<p>* Improved CSS inline loading speed.</p>';
-                    echo '<p>* Fixed top navigation social icons enable / disable issue.</p>';
-                    echo '<p>* Fixed static front page breadcrumb to show page title instead of "Home".</p>';
-                    echo '<p>* Fixed particles overflow on header image issue.</p>';
-                    echo '<p>* Fixed sidebar left side bugs.</p>';
-                    echo '<p>* Fixed blog grid layout issues.</p>';
-                    echo '<p>* Fixed blog infinity scroll bug.</p>';
-                    echo '<p>* Fixed back to top button on small media devices.</p>';
-                    echo '<p>* Fixed Notice: Kirki_Field::set_output was called incorrectly. "output" invalid format in field agama_slider_overlay_bg_color.</p>';
-                    echo '<p>* Fixed Notice: Kirki::add_field was called incorrectly. Do not use "alpha" as an argument in color controls.</p>';
+                    echo '<p>* Fixed Contact Form 7 responsivity issues.</p>';
+                    echo '<p>* Fixed Contact Form 7 border around recaptcha & file upload issue.</p>';
 				echo '</div>';
 				
 			echo '</div>';

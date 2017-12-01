@@ -3,6 +3,10 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.3.1.1 - 01 December 2017 =
+* Fixed Contact Form 7 responsivity issues.
+* Fixed Contact Form 7 border around recaptcha & file upload issue.
+
 = 1.3.1 - 24 November 2017 =
 * Added body typography feature into Customize -> General -> Body.
 * Added header textual logo typography feature.

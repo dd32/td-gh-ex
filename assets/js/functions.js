@@ -483,11 +483,9 @@ var THEMEVISION = THEMEVISION || {};
 		},
 		
 		contact7form: function() {
-			
-			$('.wpcf7-form-control').css('width', 'auto');
-			$('.wpcf7-form-control').addClass('sm-form-control');
-			$('.wpcf7-submit').removeClass('sm-form-control');
-			
+            if( $('input').hasClass('wpcf7-submit') ) {
+                $('.wpcf7-submit').addClass('button button-3d');
+            }
 		}
 		
 	};

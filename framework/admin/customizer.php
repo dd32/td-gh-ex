@@ -216,7 +216,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 				'property'	=> 'background-color'
 			),
 			array(
-				'element'	=> '.top-links > ul > li.current-menu-item, #top-navigation > ul > li.current-menu-item, #top-navigation > ul > li.current_page_item, #vision-primary-nav > div > ul > li.current-menu-item > a, #vision-primary-nav > ul > li.current-menu-item > a, #vision-primary-nav > div > ul > li.current_page_item > a, #vision-primary-nav > ul > li.current_page_item > a, header#masthead nav:not(.mobile-menu) ul li ul.sub-menu, .tagcloud a:hover',
+				'element'	=> '.top-links > ul > li.current-menu-item, #top-navigation > ul > li.current-menu-item, #top-navigation > ul > li.current_page_item, #vision-primary-nav > div > ul > li.current-menu-item > a, #vision-primary-nav > ul > li.current-menu-item > a, #vision-primary-nav > div > ul > li.current_page_item > a, #vision-primary-nav > ul > li.current_page_item > a, header#masthead nav:not(.mobile-menu) ul li ul.sub-menu, .tagcloud a:hover, .wpcf7-text:focus, .wpcf7-email:focus, .wpcf7-textarea:focus',
 				'property'	=> 'border-color'
 			),
 			array(
@@ -232,49 +232,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 				'property'	=> 'border-right-color'
 			)
 		),
-		'transport'		=> 'postMessage',
-		'js_vars'		=> array(
-			array(
-				'element'	=> 'a:hover, .entry-title a:hover, .vision-search-submit:hover, .entry-meta a:hover, .entry-content a:hover, .comment-content a:hover, .single-line-meta a:hover, a.comment-reply-link:hover, a.comment-edit-link:hover, article header a:hover, .comments-title span, .comment-reply-title span, .widget a:hover, .comments-link a:hover, .entry-meta a:hover, .entry-header header a:hover, .tagcloud a:hover, footer[role="contentinfo"] a:hover',
-				'function'	=> 'css',
-				'property'	=> 'color'
-			),
-			array(
-				'element'	=> '.woocommerce span.onsale, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt',
-				'function'	=> 'css',
-				'property'	=> 'background-color'
-			),
-			array(
-				'element'	=> '.top-nav-wrapper, .top-links > ul > li.current-menu-item, #top-navigation > ul > li.current-menu-item, #top-navigation > ul > li.current_page_item, #vision-primary-nav > ul > li.current-menu-item > a, #vision-primary-nav > div > ul > li.current-menu-item > a, #vision-primary-nav > div > ul > li.current_page_item > a, #vision-primary-nav > ul > li.current_page_item > a, header#masthead nav:not(.mobile-menu) ul li ul.sub-menu, .tagcloud a:hover',
-				'function'	=> 'css',
-				'property'	=> 'border-color'
-			),
-			array(
-				'element'	=> '#top-bar, .top-bar-out .sticky-header',
-				'function'	=> 'css',
-				'property'	=> 'border-top-color'
-			),
-			array(
-				'element'	=> 'header#masthead nav:not(.mobile-menu) ul li ul.sub-menu li:hover',
-				'function'	=> 'css',
-				'property'	=> 'border-left-color'
-			),
-			array(
-				'element'	=> 'header#masthead nav:not(.mobile-menu) ul li ul.sub-menu li ul.sub-menu li:hover',
-				'function'	=> 'css',
-				'property'	=> 'border-right-color'
-			),
-			array(
-				'element'	=> '.footer-widgets .widget-title:after',
-				'function'	=> 'css',
-				'property'	=> 'background'
-			),
-			array(
-				'element'	=> '#toTop:hover',
-				'function'	=> 'css',
-				'property'	=> 'background-color'
-			)
-		),
+		'transport'		=> 'auto',
 		'default'		=> '#FE6663'
 	) );
     #######################################################
@@ -2499,7 +2457,7 @@ function agama_customize_css() { ?>
 	<?php endif; ?>
 	
 	.sm-form-control:focus {
-		border-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>;
+		border: 2px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?> !important;
 	}
 	
 	.entry-content .more-link {

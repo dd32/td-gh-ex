@@ -28,16 +28,14 @@ get_header(); ?>
 
 			<article id="post-0" class="post no-results not-found">
 
-			<?php if ( current_user_can( 'edit_posts' ) ) :
-				// Show a different message to a logged-in user who can add posts.
-			?>
+			<?php if ( current_user_can( 'edit_posts' ) ) : // Show a different message to a logged-in user who can add posts. ?>
 				<header class="entry-header">
 					<h1 class="entry-title"><?php _e( 'No posts to display', 'agama' ); ?></h1>
 				</header>
 
 				<div class="entry-content">
 					<p><?php printf( __( 'Ready to publish your first post? <a href="%s">Get started here</a>.', 'agama' ), admin_url( 'post-new.php' ) ); ?></p>
-				</div><!-- .entry-content -->
+				</div>
 
 			<?php else :
 				// Show the default message to everyone else.
@@ -49,14 +47,14 @@ get_header(); ?>
 				<div class="entry-content">
 					<p><?php _e( 'Apologies, but no results were found. Perhaps searching will help find a related post.', 'agama' ); ?></p>
 					<?php get_search_form(); ?>
-				</div><!-- .entry-content -->
-			<?php endif; // end current_user_can() check ?>
+				</div>
+			<?php endif; ?>
 
-			</article><!-- #post-0 -->
+			</article>
 
 		<?php endif; // end have_posts() check ?>
 
-		</div><!-- #content -->
+		</div>
 		
 		<?php if( get_theme_mod('agama_blog_infinite_scroll', false) && get_theme_mod('agama_blog_infinite_trigger', 'button') == 'button' ): ?>
 		
@@ -67,7 +65,8 @@ get_header(); ?>
 		<?php endif; ?>
 		
 		<?php agama_content_nav( 'nav-below' ); ?>
-	</div><!-- #primary -->
+        
+	</div>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
