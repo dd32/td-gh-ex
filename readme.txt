@@ -1,21 +1,22 @@
-# Copyright
---------------
-
-Rams WordPress Theme, Copyright 2015 Anders Norén
-Rams is distributed under the terms of the GNU GPL v2
-
-
-
-# Install Steps
---------------
-
-1. Upload the theme.
-2. Activate the theme.
+=== Rams ===
+Contributors: Anlino
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=anders%40andersnoren%2ese&lc=US&item_name=Free%20WordPress%20Themes%20from%20Anders%20Noren&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
+Requires at least: 4.4
+Tested up to: 4.8
+Stable tag: trunk
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 
+== Installation ==
 
-# Use the gallery post format
---------------
+1. Upload the theme
+2. Activate the theme
+
+All theme specific options are handled through the WordPress Customizer.
+
+
+== Use the gallery post format ==
 
 1. Go to Admin > Posts > Add New.
 2. Select the "Gallery" post format in the Post Attributes box.
@@ -24,9 +25,7 @@ Rams is distributed under the terms of the GNU GPL v2
 5. The images you uploaded should now be displayed in the post gallery.
 
 
-
-# Use the the quote post format
---------------
+== Use the the quote post format ==
 
 1. Create a new post.
 2. Select "Quote" in the Format window to the right.
@@ -43,12 +42,112 @@ The rest of the content...
 6. The blockquote will now be presented as a single link element on the archive pages.
 
 
+== Licenses ==
 
-# Licenses
---------------
+Montserrat
+License: SIL Open Font License, 1.1 
+Source: https://fonts.google.com/specimen/Montserrat
 
-Montserrat font license : SIL Open Font License, 1.1 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+Crimson Text
+License: SIL Open Font License, 1.1 
+Source: https://fonts.google.com/specimen/Crimson+Text
 
-Crimson Text font license : SIL Open Font License, 1.1 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+Flexslider 2
+License: GPLv2 
+Source: http://flexslider.woothemes.com
 
-FlexSlider jQuery slider license : GNU GPL v2.0 http://www.gnu.org/licenses/gpl-2.0.html
+screenshot.png post image 
+License: CC0 Public Domain 
+Source: http://www.unsplash.com
+
+
+== Changelog ==
+
+Version 1.16 (2017-12-01)
+-------------------------
+- Updated to the new readme.txt format, with changelog.txt incorporated into it
+- Fixed notice in comments.php
+- Changed closing element comment structure
+- General code cleanup, improvements in readability
+- Made all of the functions in functions.php pluggable
+- Better handling of edge cases (missing title)
+- Center post thumbnail images thinner than the featured-media element
+
+Version 1.15 (2016-06-18)
+-------------------------
+- Added the new theme directory tags
+
+Version 1.14 (2015-12-29)
+-------------------------
+- Removed the <title> tag from header.php (fixing conflict with title_tag())
+- Updated the theme description
+- Minor formatting updates to style.css
+
+Version 1.13 (2015-08-25)
+-------------------------
+- Fixed an issue with overflowing images
+- Added the .screen-reader-text class
+
+Version 1.12 (2015-08-11)
+-------------------------
+- Replaced the custom title function with theme support for title-tag
+- Modified the presentation of quotes in content-quote
+- Added a description for adding quotes in content-quote to readme.txt
+- Changed the post title to h1 elements on singular for SEO reasons
+
+Version 1.11 (2015-01-27)
+-------------------------
+- Updated the readme.txt to reflect the changes in v1.10.
+
+Version 1.10 (2015-01-27)
+-------------------------
+- Removed the video template file and format, and changed the display of the quote post format in order to be able to remove the meta fields from the theme
+- Removed the meta fields and associated functions from functions.php
+- Added sanitize callback to the custom accent color function
+- Removed the shortcode modifying the display of wp_caption
+- Updated the associated image alignment code in style.css
+- Fixed the height of the more tag in the theme editor styles
+- Added styling for the email input type
+
+Version 1.09 (2014-10-02)
+-------------------------
+- Added a missing function prefix to functions.php
+
+Version 1.08 (2014-09-25)
+-------------------------
+- Added a Search Page Template per user requests
+
+Version 1.07 (2014-08-21)
+-------------------------
+- Moved enqueue comment-reply to functions.php
+
+Version 1.06 (2014-08-21)
+-------------------------
+- Fixed an error in header.php
+
+Version 1.05 (2014-08-06)
+-------------------------
+- Updated style.css for brevity and browser compatibility
+- Made some improvements to the editor style
+
+Version 1.04 (2014-07-20)
+-------------------------
+- Added a .no-js fallback for the post meta
+
+Version 1.03 (2014-07-19)
+-------------------------
+- Added image.php and template-archives.php
+- Added missing namespaces
+- Updated the Swedish .mo file
+
+Version 1.02 (2014-07-19)
+-------------------------
+- Improved styling of tables
+– Made the header more adaptable to long blog titles at < 600px
+
+Version 1.01 (2014-07-19)
+-------------------------
+- Added missing .sticky class 
+
+Version 1.0 (2014-07-19)
+------------------------- 

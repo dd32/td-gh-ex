@@ -8,14 +8,15 @@
 			
 				<h4>
 			
-					<?php _e( 'Search results:', 'rams'); echo ' "' . get_search_query() . '"'; ?>
-				
-					<?php
-					$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+					<?php 
 					
-					if ( "1" < $wp_query->max_num_pages ) : ?>
+					printf( __( 'Search results: "%s"', 'rams' ), get_search_query() );
 					
-						<span><?php printf( __('(page %s of %s)', 'rams'), $paged, $wp_query->max_num_pages ); ?></span>
+					$paged = get_query_var( 'paged' ) ?: 1;
+					
+					if ( 1 < $wp_query->max_num_pages ) : ?>
+					
+						<span><?php printf( __( '(page %s of %s)', 'rams' ), $paged, $wp_query->max_num_pages ); ?></span>
 					
 					<?php endif; ?>
 				
@@ -25,25 +26,25 @@
 					
 			<div class="posts" id="posts">
 				
-				<?php while (have_posts()) : the_post(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 		    	
 		    		<?php get_template_part( 'content', get_post_format() ); ?>
 		    			        		            
 		        <?php endwhile; ?>
 							
-			</div> <!-- /posts -->
+			</div><!-- .posts -->
 			
 			<?php if ( $wp_query->max_num_pages > 1 ) : ?>
 			
 				<div class="archive-nav">
 				
-					<?php echo get_next_posts_link( '&laquo; ' . __('Older posts', 'rams')); ?>
+					<?php echo get_next_posts_link( '&laquo; ' . __( 'Older posts', 'rams' ) ); ?>
 						
-					<?php echo get_previous_posts_link( __('Newer posts', 'rams') . ' &raquo;'); ?>
+					<?php echo get_previous_posts_link( __( 'Newer posts', 'rams' ) . ' &raquo;' ); ?>
 					
 					<div class="clear"></div>
 					
-				</div> <!-- /post-nav archive-nav -->
+				</div><!-- .post-nav archive-nav -->
 								
 			<?php endif; ?>
 	
@@ -53,12 +54,13 @@
 		
 				<h4>
 			
-					<?php echo _e( 'Search results:', 'rams') . ' "' . get_search_query() . '"'; ?>
-				
-					<?php
-					$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+					<?php 
 					
-					if ( "1" < $wp_query->max_num_pages ) : ?>
+					printf( __( 'Search results: "%s"', 'rams' ), get_search_query() );
+					
+					$paged = get_query_var( 'paged' ) ?: 1;
+					
+					if ( 1 < $wp_query->max_num_pages ) : ?>
 					
 						<span><?php printf( __('(page %s of %s)', 'rams'), $paged, $wp_query->max_num_pages ); ?></span>
 					
@@ -72,18 +74,18 @@
 			
 				<div class="post-content section-inner thin">
 				
-					<p><?php _e('No results. Try again, would you kindly?', 'rams'); ?></p>
+					<p><?php _e( 'No results. Try again, would you kindly?', 'rams' ); ?></p>
 					
 					<?php get_search_form(); ?>
 				
-				</div> <!-- /post-content -->
+				</div><!-- .post-content -->
 				
 				<div class="clear"></div>
 			
-			</div> <!-- /post -->
+			</div><!-- .post -->
 		
 		<?php endif; ?>
 		
-	</div> <!-- /content section-inner -->
+	</div><!-- .content section-inner -->
 		
 <?php get_footer(); ?>

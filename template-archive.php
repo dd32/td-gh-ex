@@ -1,24 +1,22 @@
 <?php
-/*
-Template Name: Archive Template
-*/
-?>
 
-<?php get_header(); ?>
+/* Template Name: Archive Template */
+
+get_header(); ?>
 
 <div class="content">						
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	<?php if ( have_posts( )) : while( have_posts() ) : the_post(); ?>
 
-		<div <?php post_class('post single'); ?>>
+		<div <?php post_class( 'post single' ); ?>>
 		
 			<div class="post-inner section-inner thin">
 	
 				<div class="post-header">
 																										
-					<h1 class="post-title"><?php the_title(); ?></h1>
+					<?php the_title( '<h1 class="post-title">', '</h1>' ); ?>
 														
-				</div> <!-- /post-header -->
+				</div><!-- .post-header -->
 			   				        			        		                
 				<div class="post-content">
 											                                        
@@ -28,71 +26,76 @@ Template Name: Archive Template
 					
 					<div class="archive-container">
 				
-						<h3><?php _e('Posts','rams') ?></h3>
+						<h3><?php _e( 'Posts', 'rams' ); ?></h3>
 											            
 			            <ul class="posts-archive-list">
-				            <?php $posts_archive = get_posts('numberposts=-1');
-				            foreach($posts_archive as $post) : ?>
-				                <li>
-				                	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-				                		<?php the_title();?> 
-				                	</a>
-				                	<span><?php the_time(get_option('date_format')); ?></span>
-				                </li> 
-				            <?php endforeach; ?>
-			            </ul>
-			            
-			            <?php wp_reset_query(); ?>
-			            
-			            <h3><?php _e('Categories','rams') ?></h3>
+
+							<?php 
+
+							$archive_posts = get_posts( array( 
+								'post_status'		=> 'publish',
+								'post_type'			=> 'post',
+								'posts_per_page' 	=> -1,
+							) );
+
+							foreach( $archive_posts as $archive_post ) : ?>
+								<li>
+									<a href="<?php echo get_permalink( $archive_post->ID ); ?>"><?php echo get_the_title( $archive_post->ID );?> <span>(<?php the_time( get_option( 'date_format' ), $archive_post->ID ); ?>)</span>
+									</a>
+								</li>
+							<?php endforeach; ?>
+
+						</ul>
+			            			            
+			            <h3><?php _e( 'Categories', 'rams' ); ?></h3>
 			            
 			            <?php wp_list_categories('title_li='); ?>
 			            
-			            <h3><?php _e('Tags','rams') ?></h3>
+			            <h3><?php _e( 'Tags', 'rams' ); ?></h3>
 			            
 			            <ul>
-			                <?php $tags = get_tags();
+							<?php 
+							$tags = get_tags();
 			                
-			                if ($tags) {
-			                    foreach ($tags as $tag) {
+			                if ( $tags ) {
+			                    foreach ( $tags as $tag ) {
 			                 	   echo '<li><a href="' . get_tag_link( $tag->term_id ) . '" title="' . sprintf( __( "View all posts in %s", 'rams' ), $tag->name ) . '" ' . '>' . $tag->name.'</a></li> ';
 			                    }
 			                }
-			                
-			                wp_reset_query();?>
+			                ?>
 			            </ul>
 			            
-			            <h3><?php _e('Contributors', 'rams') ?></h3>
+			            <h3><?php _e( 'Contributors', 'rams' ); ?></h3>
 		            	
 		            	<ul>
 		            		<?php wp_list_authors(); ?> 
 		            	</ul>
 		            	
-		            	<h3><?php _e('Archives by Year', 'rams') ?></h3>
+		            	<h3><?php _e( 'Archives by Year', 'rams' ); ?></h3>
 		            	
 		            	<ul>
-		            	    <?php wp_get_archives('type=yearly'); ?>
+		            	    <?php wp_get_archives( 'type=yearly' ); ?>
 		            	</ul>
 		            	
-		            	<h3><?php _e('Archives by Month', 'rams') ?></h3>
+		            	<h3><?php _e( 'Archives by Month', 'rams' ); ?></h3>
 		            	
 		            	<ul>
-		            	    <?php wp_get_archives('type=monthly'); ?>
+		            	    <?php wp_get_archives( 'type=monthly' ); ?>
 		            	</ul>
 		            
-			            <h3><?php _e('Archives by Day', 'rams') ?></h3>
+			            <h3><?php _e( 'Archives by Day', 'rams' ); ?></h3>
 			            
 			            <ul>
-			                <?php wp_get_archives('type=daily'); ?>
+			                <?php wp_get_archives( 'type=daily' ); ?>
 			            </ul>
 		        
-		            </div> <!-- /archive-container -->
+		            </div><!-- .archive-container -->
 										
 				</div>
             
-			</div> <!-- /post-inner -->
+			</div><!-- .post-inner -->
 
-		</div> <!-- /post -->
+		</div><!-- .post -->
 		
 		<?php if ( comments_open() ) : ?>
 			
@@ -104,16 +107,18 @@ Template Name: Archive Template
 				
 				</div>
 			
-			</div> <!-- /comments-container -->
+			</div><!-- .comments-container -->
 		
 		<?php endif; ?>
 			
-	<?php endwhile; else: ?>
+	<?php endwhile; 
 
-		<p><?php _e("We couldn't find any posts that matched your query. Please try again.", "rams"); ?></p>
+	else: ?>
+
+		<p><?php _e( "We couldn't find any posts that matched your query. Please try again.", "rams" ); ?></p>
 
 	<?php endif; ?>
 	
-</div> <!-- /content -->
+</div><!-- .content -->
 								
 <?php get_footer(); ?>

@@ -31,7 +31,7 @@
 					
 				<?php endif; ?>
 				
-				<a class="nav-toggle hidden" title="<?php _e('Click to view the navigation','rams') ?>" href="#">
+				<a class="nav-toggle hidden" title="<?php _e( 'Click to view the navigation', 'rams' ); ?>" href="#">
 				
 					<div class="bars">
 					
@@ -44,8 +44,8 @@
 					</div>
 					
 					<p>
-						<span class="menu"><?php _e('Menu','rams') ?></span>
-						<span class="close"><?php _e('Close','rams') ?></span>
+						<span class="menu"><?php _e( 'Menu', 'rams' ); ?></span>
+						<span class="close"><?php _e( 'Close', 'rams' ); ?></span>
 					</p>
 				
 				</a>
@@ -53,54 +53,43 @@
 				<ul class="main-menu">
 					
 					<?php if ( has_nav_menu( 'primary' ) ) {
-																		
-						wp_nav_menu( array( 
-						
-							'container' => '', 
-							'items_wrap' => '%3$s',
-							'theme_location' => 'primary'
-														
-						) ); } else {
-					
-						wp_list_pages( array(
-						
-							'container' => '',
-							'title_li' => ''
-						
-						));
+
+						$nav_menu_args = array( 
+							'container' 		=> '', 
+							'items_wrap' 		=> '%3$s',
+							'theme_location' 	=> 'primary'
+						);
+						wp_nav_menu( $nav_menu_args );
+
+					} else {
+
+						$list_pages_args = array(
+							'container' 	=> '',
+							'title_li' 		=> ''
+						);
+						wp_list_pages( $list_pages_args );
 						
 					} ?>
 					
 				 </ul>
 				 
-				 <p class="credits"><?php _e('Theme by','rams'); ?> <a href="http://www.andersnoren.se">Anders Nor&eacute;n</a></p>
+				 <p class="credits"><?php _e( 'Theme by', 'rams' ); ?> <a href="http://www.andersnoren.se">Anders Nor&eacute;n</a></p>
 				
 				 <div class="clear"></div>
 			
-			</div> <!-- /sidebar-inner -->
+			</div><!-- .sidebar-inner -->
 							
-		</div> <!-- /sidebar -->
+		</div><!-- .sidebar -->
 		
 		<ul class="mobile-menu bg-dark hidden">
 					
-			<?php if ( has_nav_menu( 'primary' ) ) {
-																
-				wp_nav_menu( array( 
-				
-					'container' => '', 
-					'items_wrap' => '%3$s',
-					'theme_location' => 'primary'
-												
-				) ); } else {
-			
-				wp_list_pages( array(
-				
-					'container' => '',
-					'title_li' => ''
-				
-				));
-				
-			} ?>
+			<?php
+			if ( has_nav_menu( 'primary' ) ) {
+				wp_nav_menu( $nav_menu_args );
+			} else {
+				wp_list_pages( $list_pages_args );
+			} 
+			?>
 			
 		 </ul>
 	

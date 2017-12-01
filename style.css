@@ -3,8 +3,8 @@
 	Theme Name: Rams
     Text Domain: rams
 	Theme URI: http://www.andersnoren.se/teman/rams-wordpress-theme/
-	Version: 1.15
-	Description: A clean, minimalist and responsive theme for bloggers. Features responsive and retina-ready design, support for the gallery and quote post formats, custom accent color support, Jetpack infinite scroll integration, editor styles and translation ready code. Included translation: Swedish/svenska. Demo: http://www.andersnoren.se/themes/rams/
+	Version: 1.16
+	Description: A clean, minimalist and responsive theme for bloggers. Features responsive and retina-ready design, support for the gallery and quote post formats, custom accent color support, Jetpack infinite scroll integration, editor styles and translation ready code. Demo: http://www.andersnoren.se/themes/rams/
 	Tags: blog, two-columns, left-sidebar, custom-colors, custom-menu, editor-style, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
 	Author URI: http://www.andersnoren.se
@@ -362,11 +362,18 @@ img#wpstats { display: none !important } /* silly wp stats */
 /* Featured media --------------------------------------- */
 
 
-.featured-media img { display: block; }
+.featured-media img,
+.featured-media a { 
+	display: block; 
+}
 
-.featured-media a { display: block; }
+.featured-media img {
+	margin: 0 auto;
+}
 
-.format-standard .featured-media a:hover img { opacity: 0.8; }
+.format-standard .featured-media a:hover img { 
+	opacity: 0.8; 
+}
 
 
 /* Post header --------------------------------------- */

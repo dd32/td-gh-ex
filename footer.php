@@ -1,6 +1,6 @@
-	</div> <!-- /wrapper -->
+	</div><!-- .wrapper -->
 	
-</div> <!-- /wrapper-inner -->
+</div><!-- .wrapper-inner -->
 
 <?php wp_footer(); ?>
 

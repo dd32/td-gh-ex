@@ -2,19 +2,21 @@
 
 <div class="content">		
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>				
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	
-		<div <?php post_class('post single'); ?>>
+		<div <?php post_class( 'post single' ); ?>>
 		
-			<?php if ( has_post_thumbnail() ) : ?>
-			
-				<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail_size' ); $thumb_url = $thumb['0']; ?>
+			<?php if ( has_post_thumbnail() ) : 
+				
+				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail_size' ); 
+				$thumb_url = $thumb['0']; 
+				?>
 		
 				<div class="featured-media">
 		
-					<?php the_post_thumbnail('post-image'); ?>
+					<?php the_post_thumbnail( 'post-image' ); ?>
 					
-				</div> <!-- /featured-media -->
+				</div><!-- .featured-media -->
 					
 			<?php endif; ?>
 			
@@ -22,21 +24,21 @@
 												
 				<div class="post-header">
 																										
-					<h1 class="post-title"><?php the_title(); ?></h1>
+					<?php the_title( '<h1 class="post-title">', '</h1>' ); ?>
 															
-				</div> <!-- /post-header section -->
+				</div><!-- .post-header section -->
 				    
 			    <div class="post-content">
 			    
 			    	<?php the_content(); ?>
 					
-			    	<?php wp_link_pages('before=<div class="clear"></div><p class="page-links">' . __('Pages:','rams') . ' &after=</p>&seperator= <span class="sep">/</span> '); ?>
+			    	<?php wp_link_pages('before=<div class="clear"></div><p class="page-links">' . __( 'Pages:', 'rams' ) . ' &after=</p>&seperator= <span class="sep">/</span> '); ?>
 			    
 			    </div>
 	
-			</div> <!-- /post-inner -->
+			</div><!-- .post-inner -->
 		
-		</div> <!-- /post -->
+		</div><!-- .post -->
 		
 		<?php if ( comments_open() ) : ?>
 			
@@ -44,18 +46,20 @@
 									
 				<?php comments_template( '', true ); ?>
 			
-			</div> <!-- /comments-container -->
+			</div><!-- .comments-container -->
 		
-		<?php endif; ?>
-		
-	<?php endwhile; else: ?>
+		<?php endif;
 	
-		<p><?php _e("We couldn't find any posts that matched your query. Please try again.", "rams"); ?></p>
+	endwhile; 
+
+	else: ?>
+	
+		<p><?php _e( "We couldn't find any posts that matched your query. Please try again.", "rams" ); ?></p>
 
 	<?php endif; ?>
 
 	<div class="clear"></div>
 	
-</div> <!-- /content -->
+</div><!-- .content -->
 								
 <?php get_footer(); ?>

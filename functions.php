@@ -1,267 +1,358 @@
 <?php
 
-// Theme setup
-add_action( 'after_setup_theme', 'rams_setup' );
 
-function rams_setup() {
-	
-	// Automatic feed
-	add_theme_support( 'automatic-feed-links' );
-	
-	// Post thumbnails
-	add_theme_support( 'post-thumbnails' ); 
-	add_image_size( 'post-image', 800, 9999 );
-	
-	// Post formats
-	add_theme_support( 'post-formats', array( 'gallery', 'quote' ) );
-	
-	add_theme_support('title-tag');
-		
-	// Jetpack infinite scroll
-	add_theme_support( 'infinite-scroll', array(
-	    'container' => 'posts',
-	    'footer'    => 'wrapper',
-	    'type'      => 'click'
-	) );
-	
-	// Add nav menu
-	register_nav_menu( 'primary', __( 'Primary Menu', 'rams' ) );
-	
-	// Make the theme translation ready
-	load_theme_textdomain( 'rams', get_template_directory() . '/languages' );
-	
-	$locale = get_locale();
-	$locale_file = get_template_directory() . '/languages/$locale.php';
-	if ( is_readable( $locale_file ) )
-	  require_once( $locale_file );
-	
-}
+/* ---------------------------------------------------------------------------------------------
+   THEME SETUP
+   --------------------------------------------------------------------------------------------- */
 
-// Register and enqueue Javascript files
-function rams_load_javascript_files() {
+if ( ! function_exists( 'rams_setup' ) ) {
 
-	if ( !is_admin() ) {
-		wp_register_script( 'rams_global', get_template_directory_uri() . '/js/global.js', array( 'jquery' ), '', true );
-		wp_register_script( 'rams_flexslider', get_template_directory_uri() . '/js/flexslider.min.js', array( 'jquery' ), '', true );
+	function rams_setup() {
 		
-		wp_enqueue_script( 'rams_flexslider' );
-		wp_enqueue_script( 'rams_global' );
+		// Automatic feed
+		add_theme_support( 'automatic-feed-links' );
 		
-		if ( is_singular() && get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' ); }
+		// Post thumbnails
+		add_theme_support( 'post-thumbnails' ); 
+		add_image_size( 'post-image', 800, 9999 );
+		
+		// Post formats
+		add_theme_support( 'post-formats', array( 'gallery', 'quote' ) );
+		
+		add_theme_support('title-tag');
+			
+		// Jetpack infinite scroll
+		add_theme_support( 'infinite-scroll', array(
+			'container' => 'posts',
+			'footer'    => 'wrapper',
+			'type'      => 'click'
+		) );
+		
+		// Add nav menu
+		register_nav_menu( 'primary', __( 'Primary Menu', 'rams' ) );
+		
+		// Make the theme translation ready
+		load_theme_textdomain( 'rams', get_template_directory() . '/languages' );
+		
+		$locale = get_locale();
+		$locale_file = get_template_directory() . '/languages/$locale.php';
+
+		if ( is_readable( $locale_file ) ) {
+			require_once( $locale_file );
+		}
 		
 	}
+	add_action( 'after_setup_theme', 'rams_setup' );
+
 }
 
-add_action( 'wp_enqueue_scripts', 'rams_load_javascript_files' );
+
+/* ---------------------------------------------------------------------------------------------
+   ENQUEUE SCRIPTS
+   --------------------------------------------------------------------------------------------- */
 
 
-// Register and enqueue styles
-function rams_load_style() {
-	if ( !is_admin() ) {
-	    wp_register_style( 'rams_googleFonts', '//fonts.googleapis.com/css?family=Montserrat:400,700|Crimson+Text:400,700,400italic,700italic' );
-		wp_register_style( 'rams_style', get_stylesheet_uri() );
-		
-	    wp_enqueue_style( 'rams_googleFonts' );
-	    wp_enqueue_style( 'rams_style' );
+if ( ! function_exists( 'rams_load_javascript_files' ) ) {
+
+	function rams_load_javascript_files() {
+
+		if ( !is_admin() ) {
+			wp_register_script( 'rams_global', get_template_directory_uri() . '/js/global.js', array( 'jquery' ), '', true );
+			wp_register_script( 'rams_flexslider', get_template_directory_uri() . '/js/flexslider.min.js', array( 'jquery' ), '', true );
+			
+			wp_enqueue_script( 'rams_flexslider' );
+			wp_enqueue_script( 'rams_global' );
+			
+			if ( is_singular() && get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' ); }
+			
+		}
 	}
+	add_action( 'wp_enqueue_scripts', 'rams_load_javascript_files' );
+
 }
 
-add_action( 'wp_print_styles', 'rams_load_style' );
+
+/* ---------------------------------------------------------------------------------------------
+   ENQUEUE STYLES
+   --------------------------------------------------------------------------------------------- */
 
 
-// Add editor styles
-function rams_add_editor_styles() {
-    add_editor_style( 'rams-editor-styles.css' );
-    $font_url = '//fonts.googleapis.com/css?family=Montserrat:400,700|Crimson+Text:400,700,400italic,700italic';
-    add_editor_style( str_replace( ',', '%2C', $font_url ) );
+if ( ! function_exists( 'rams_load_style' ) ) {
+
+	function rams_load_style() {
+		if ( ! is_admin() ) {
+			wp_register_style( 'rams_googleFonts', '//fonts.googleapis.com/css?family=Montserrat:400,700|Crimson+Text:400,700,400italic,700italic' );
+			wp_register_style( 'rams_style', get_stylesheet_uri() );
+			
+			wp_enqueue_style( 'rams_googleFonts' );
+			wp_enqueue_style( 'rams_style' );
+		}
+	}
+	add_action( 'wp_print_styles', 'rams_load_style' );
+
 }
-add_action( 'init', 'rams_add_editor_styles' );
 
 
-// Set content-width
+/* ---------------------------------------------------------------------------------------------
+   ADD EDITOR STYLES
+   --------------------------------------------------------------------------------------------- */
+
+
+if ( ! function_exists( 'rams_add_editor_styles' ) ) {
+
+	function rams_add_editor_styles() {
+		add_editor_style( 'rams-editor-styles.css' );
+		$font_url = '//fonts.googleapis.com/css?family=Montserrat:400,700|Crimson+Text:400,700,400italic,700italic';
+		add_editor_style( str_replace( ',', '%2C', $font_url ) );
+	}
+	add_action( 'init', 'rams_add_editor_styles' );
+
+}
+
+
+/* ---------------------------------------------------------------------------------------------
+   SET CONTENT WIDTH
+   --------------------------------------------------------------------------------------------- */
+
+
 if ( ! isset( $content_width ) ) $content_width = 672;
 
 
-// Check whether the browser supports javascript
-function rams_html_js_class () {
-    echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>'. "\n";
-}
-add_action( 'wp_head', 'rams_html_js_class', 1 );
+/* ---------------------------------------------------------------------------------------------
+   CHECK FOR JAVASCRIPT SUPPORT
+   --------------------------------------------------------------------------------------------- */
 
 
-// Add classes to next_posts_link and previous_posts_link
-function rams_posts_link_attributes_1() {
-    return 'class="archive-nav-older"';
-}
-add_filter('next_posts_link_attributes', 'rams_posts_link_attributes_1');
+if ( ! function_exists( 'rams_html_js_class' ) ) {
 
-function rams_posts_link_attributes_2() {
-    return 'class="archive-nav-newer"';
-}
-add_filter('previous_posts_link_attributes', 'rams_posts_link_attributes_2');
-
-
-// Custom more-link text
-function rams_custom_more_link( $more_link, $more_link_text ) {
-	return str_replace( $more_link_text, __('Read more', 'rams') . ' &rarr;', $more_link );
-}
-add_filter( 'the_content_more_link', 'rams_custom_more_link', 10, 2 );
-
-
-// Add class to the post and body elements if the post/page has a featured image
-function rams_if_featured_image_class($classes) {
-	global $post;
-	if ( has_post_thumbnail() ) {
-		$classes[] = 'has-featured-image';
-	} else {
-		$classes[] = 'no-featured-image';
+	function rams_html_js_class () {
+		echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>'. "\n";
 	}
-	return $classes;
+	add_action( 'wp_head', 'rams_html_js_class', 1 );
+
 }
-add_filter('post_class','rams_if_featured_image_class');
-add_filter('body_class','rams_if_featured_image_class');
 
 
-// Style the admin area
-function rams_custom_colors() { 
-   echo '<style type="text/css">
+/* ---------------------------------------------------------------------------------------------
+   ADD CLASSES TO PAGINATION
+   --------------------------------------------------------------------------------------------- */
 
-	#postimagediv #set-post-thumbnail img {
-		max-width: 100%;
-		height: auto;
+
+if ( ! function_exists( 'rams_pagination_class_next' ) ) {
+
+	function rams_pagination_class_next() {
+		return 'class="archive-nav-older"';
 	}
+	add_filter( 'next_posts_link_attributes', 'rams_pagination_class_next' );
 
-</style>';
 }
-add_action('admin_head', 'rams_custom_colors');
+
+if ( ! function_exists( 'rams_pagination_class_prev' ) ) {
+
+	function rams_pagination_class_prev() {
+		return 'class="archive-nav-newer"';
+	}
+	add_filter( 'previous_posts_link_attributes', 'rams_pagination_class_prev' );
+
+}
 
 
-// Flexslider function for format-gallery
-function rams_flexslider($size) {
+/* ---------------------------------------------------------------------------------------------
+   CUSTOM MORE LINK TEXT
+   --------------------------------------------------------------------------------------------- */
 
-	if ( is_page()) :
-		$attachment_parent = $post->ID;
-	else : 
-		$attachment_parent = get_the_ID();
-	endif;
 
-	if($images = get_posts(array(
-		'post_parent'    => $attachment_parent,
-		'post_type'      => 'attachment',
-		'numberposts'    => -1, // show all
-		'post_status'    => null,
-		'post_mime_type' => 'image',
-                'orderby'        => 'menu_order',
-                'order'           => 'ASC',
-	))) { ?>
-	
-		<div class="flexslider">
+if ( ! function_exists( 'rams_custom_more_link' ) ) {
+
+	function rams_custom_more_link( $more_link, $more_link_text ) {
+		return str_replace( $more_link_text, __( 'Read more', 'rams' ) . ' &rarr;', $more_link );
+	}
+	add_filter( 'the_content_more_link', 'rams_custom_more_link', 10, 2 );
+
+}
+
+
+/* ---------------------------------------------------------------------------------------------
+   BODY & POST CLASSES
+   --------------------------------------------------------------------------------------------- */
+
+
+if ( ! function_exists( 'rams_body_post_class' ) ) {
+
+	function rams_body_post_class( $classes ) {
 		
-			<ul class="slides">
-	
-				<?php foreach($images as $image) { 
-					
-					global $attachment_id;
-					
-					$default_attr = array(
-						'alt'   => trim(strip_tags( get_post_meta($attachment_id, '_wp_attachment_image_alt', true) )),
-					);
-				
-					$attimg = wp_get_attachment_image($image->ID, $size, $default_attr); ?>
-					
-					<li>
-						<?php echo $attimg; ?>
-					</li>
-					
-				<?php }; ?>
+		$classes[] = has_post_thumbnail() ? 'has-featured-image' : 'no-featured-image';
+
+		return $classes;
+	}
+	add_filter( 'post_class', 'rams_body_post_class' );
+	add_filter( 'body_class', 'rams_body_post_class' );
+
+}
+
+
+/* ---------------------------------------------------------------------------------------------
+   STYLE ADMIN AREA
+   --------------------------------------------------------------------------------------------- */
+
+
+if ( ! function_exists( 'rams_admin_css' ) ) {
+
+	function rams_admin_css() { 
+	echo '<style type="text/css">
+
+		#postimagediv #set-post-thumbnail img {
+			max-width: 100%;
+			height: auto;
+		}
+
+	</style>';
+	}
+	add_action( 'admin_head', 'rams_admin_css' );
+
+}
+
+
+/* ---------------------------------------------------------------------------------------------
+   FLEXSLIDER OUTPUT
+   --------------------------------------------------------------------------------------------- */
+
+
+if ( ! function_exists( 'rams_flexslider' ) ) {
+
+	function rams_flexslider( $size ) {
+
+		$attachment_parent = is_page() ? $post->ID : get_the_ID();
+
+		if ( $images = get_posts( array(
+			'post_parent'    => $attachment_parent,
+			'post_type'      => 'attachment',
+			'numberposts'    => -1, // show all
+			'orderby'        => 'menu_order',
+			'order'          => 'ASC',
+			'post_status'    => null,
+			'post_mime_type' => 'image',
+		) ) ) { ?>
 		
-			</ul>
+			<div class="flexslider">
 			
-		</div><?php
+				<ul class="slides">
 		
+					<?php foreach( $images as $image ) :
+						
+						global $attachment_id;
+						
+						$default_attr = array(
+							'alt'   => trim(strip_tags( get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) ) ),
+						);
+					
+						$attimg = wp_get_attachment_image( $image->ID, $size, $default_attr ); ?>
+						
+						<li>
+							<?php echo $attimg; ?>
+						</li>
+						
+					<?php endforeach; ?>
+			
+				</ul>
+				
+			</div><?php
+			
+		}
 	}
+
 }
 
 
-// Rams comment function
-if ( ! function_exists( 'rams_comment' ) ) :
-function rams_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-	switch ( $comment->comment_type ) :
-		case 'pingback' :
-		case 'trackback' :
-	?>
-	
-	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-	
-		<?php __( 'Pingback:', 'rams' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'rams' ), '<span class="edit-link">', '</span>' ); ?>
+/* ---------------------------------------------------------------------------------------------
+   COMMENT FUNCTION
+   --------------------------------------------------------------------------------------------- */
+
+
+if ( ! function_exists( 'rams_comment' ) ) {
+
+	function rams_comment( $comment, $args, $depth ) {
+		$GLOBALS['comment'] = $comment;
+		switch ( $comment->comment_type ) :
+			case 'pingback' :
+			case 'trackback' :
+		?>
 		
-	</li>
-	<?php
-			break;
-		default :
-		global $post;
-	?>
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-	
-		<div id="comment-<?php comment_ID(); ?>" class="comment">
-		
-			<div class="avatar-container">
-				<?php echo get_avatar( $comment, 160 ); ?>
-			</div>
+			<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
 			
-			<div class="comment-inner">
-		
-				<div class="comment-header">
-											
-					<h4><?php echo get_comment_author_link(); ?></h4>
-					
-					<p class="comment-date"><a class="comment-date-link" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>" title="<?php echo get_comment_date() . ' at ' . get_comment_time(); ?>"><?php echo get_comment_date() . '<span> &mdash; ' . get_comment_time() . '</span>'; ?></a></p>
+				<?php __( 'Pingback:', 'rams' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'rams' ), '<span class="edit-link">', '</span>' ); ?>
 				
+			</li>
+		<?php
+				break;
+			default :
+			global $post;
+		?>
+		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+		
+			<div id="comment-<?php comment_ID(); ?>" class="comment">
+			
+				<div class="avatar-container">
+					<?php echo get_avatar( $comment, 160 ); ?>
 				</div>
-	
-				<div class="comment-content post-content">
 				
-					<?php if ( '0' == $comment->comment_approved ) : ?>
-					
-						<p class="comment-awaiting-moderation"><?php __( 'Your comment is awaiting moderation.', 'rams' ); ?></p>
-						
-					<?php endif; ?>
-				
-					<?php comment_text(); ?>
-					
-				</div><!-- /comment-content -->
-				
-				<div class="comment-actions">
-					
-					<?php 
-						comment_reply_link( array_merge( $args, 
-						array( 
-							'reply_text' 	=>  	__( 'Reply', 'rams' ), 
-							'depth'			=> 		$depth, 
-							'max_depth' 	=> 		$args['max_depth'],
-							'before'		=>		'<p class="comment-reply">',
-							'after'			=>		'</p>'
-							) 
-						) ); 
-					?>
-					
-					<?php edit_comment_link( __( 'Edit', 'rams' ), '<p class="comment-edit">', '</p>' ); ?>
-													
-				</div> <!-- /comment-actions -->
+				<div class="comment-inner">
 			
-			</div> <!-- /comment-inner -->
+					<div class="comment-header">
+												
+						<h4><?php echo get_comment_author_link(); ?></h4>
 						
-		</div><!-- /comment-## -->
+						<p class="comment-date"><a class="comment-date-link" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>" title="<?php echo get_comment_date() . ' at ' . get_comment_time(); ?>"><?php echo get_comment_date() . '<span> &mdash; ' . get_comment_time() . '</span>'; ?></a></p>
+					
+					</div>
+		
+					<div class="comment-content post-content">
+					
+						<?php if ( '0' == $comment->comment_approved ) : ?>
+						
+							<p class="comment-awaiting-moderation"><?php __( 'Your comment is awaiting moderation.', 'rams' ); ?></p>
+							
+						<?php endif; ?>
+					
+						<?php comment_text(); ?>
+						
+					</div><!-- /comment-content -->
+					
+					<div class="comment-actions">
+						
+						<?php 
+							comment_reply_link( array_merge( $args, 
+							array( 
+								'reply_text' 	=>  	__( 'Reply', 'rams' ), 
+								'depth'			=> 		$depth, 
+								'max_depth' 	=> 		$args['max_depth'],
+								'before'		=>		'<p class="comment-reply">',
+								'after'			=>		'</p>'
+								) 
+							) ); 
+						?>
+						
+						<?php edit_comment_link( __( 'Edit', 'rams' ), '<p class="comment-edit">', '</p>' ); ?>
+														
+					</div><!-- .comment-actions -->
 				
-	<?php
-		break;
-	endswitch;
+				</div><!-- .comment-inner -->
+							
+			</div><!-- /comment-## -->
+					
+		<?php
+			break;
+		endswitch;
+	}
+
 }
-endif;
 
 
-// Rams theme options
+/* ---------------------------------------------------------------------------------------------
+   CUSTOMIZER OPTIONS
+   --------------------------------------------------------------------------------------------- */
+
+
 class rams_Customize {
 
    public static function rams_register ( $wp_customize ) {
