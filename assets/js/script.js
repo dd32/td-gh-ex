@@ -32,26 +32,24 @@
 
 		navSearch: function() {
 
-			var mhHeigh = $('#masthead').height() - 50;
-			$('.site-search').css('top', mhHeigh + 'px' );
+			//var mhHeigh = $('#masthead').height() - 50;
+			//$('.site-search').css('top', mhHeigh + 'px' );
 
-			$('.header-right').css('height', $('.header-left').height() + 'px');
+			//$('.header-right').css('height', $('.header-left').height() + 'px');
 
 			$('.search-toggle').on('click', function(e) {
 				e.preventDefault();
 
-				$('body').removeClass('nav-open');
-				$('.menu-toggle').removeClass('active');
+				$(this).addClass('active');
+				$('body').addClass('search-open');
+				$(this).hide();
+			});
 
-				var hasActive = $(this).hasClass('active');
-
-				if ( !hasActive ) {
-					$(this).addClass('active');
-					$('body').addClass('search-open');
-				} else {
-					$(this).removeClass('active');
-					$('body').removeClass('search-open');
-				}
+			$('.search-toggle-close').on('click', function(e) {
+				e.preventDefault();
+				$(this).removeClass('active');
+				$('body').removeClass('search-open');
+				$('.search-toggle').show('slow');
 			});
 		}
 	};

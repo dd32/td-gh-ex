@@ -30,16 +30,6 @@
 			<?php
 			/**
 			 * Functions hooked into azonbooster_header action
-			 *
-			 * @hooked azonbooster_skip_links                       - 0
-			 * @hooked azonbooster_social_icons                     - 10
-			 * @hooked azonbooster_site_branding                    - 20
-			 * @hooked azonbooster_secondary_navigation             - 30
-			 * @hooked azonbooster_product_search                   - 40
-			 * @hooked azonbooster_primary_navigation_wrapper       - 42
-			 * @hooked azonbooster_primary_navigation               - 50
-			 * @hooked azonbooster_header_cart                      - 60
-			 * @hooked azonbooster_primary_navigation_wrapper_close - 68
 			 */
 			do_action( 'azonbooster_header' ); ?>
 

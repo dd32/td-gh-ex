@@ -78,6 +78,7 @@ if ( ! function_exists( 'azonbooster_header_search_form') ) {
 				<?php echo get_search_form(); ?>
 				</div>
 			</div>
+			<div class="search-toggle-close"><i class="fa fa-close"></i></div>
 		</div>
 		<?php
 	}
