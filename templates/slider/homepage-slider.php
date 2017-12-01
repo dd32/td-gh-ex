@@ -1,4 +1,60 @@
-<?php if ( get_theme_mod( 'avant-slider-type' ) == 'avant-slider-default' ) : ?>
+<?php if ( get_theme_mod( 'avant-slider-type' ) == 'avant-no-slider' ) : ?>
+    
+    <!-- No Slider -->
+    
+<?php elseif ( get_theme_mod( 'avant-slider-type' ) == 'avant-home-featured-image' ) : ?>
+    
+    <?php
+    $home_page_id = get_option( 'page_on_front' );
+    if ( 'page' == get_option( 'show_on_front' ) && has_post_thumbnail( $home_page_id ) ) : ?>
+        
+        <?php echo ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) ? '<div class="site-side-layout-container">' : ''; ?>
+        
+            <?php echo ( !get_theme_mod( 'avant-slidermage-fullwidth' ) ) ? '<div class="site-container">' : ''; ?>
+                
+                <div class="page-fimage-banner <?php echo ( get_theme_mod( 'avant-slidermage-size' ) == 'avant-slidermage-size-actual' ) ? sanitize_html_class( 'slidermage-banner-actual' ) : ''; ?>" <?php echo ( get_theme_mod( 'avant-slidermage-size' ) != 'avant-slidermage-size-actual' ) ? 'style="background-image: url(' . esc_url( get_the_post_thumbnail_url( $home_page_id ) ) . ');"' : ''; ?>>
+                    
+                    <?php if ( get_theme_mod( 'avant-slidermage-size' ) == 'avant-slidermage-size-actual' ) : ?>
+                        <img src="<?php echo get_the_post_thumbnail_url( $home_page_id ); ?>" />
+                    <?php elseif ( get_theme_mod( 'avant-slidermage-size' ) == 'avant-slidermage-size-extra-small' ) : ?>
+                        <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_extra_small.gif" />
+                    <?php elseif ( get_theme_mod( 'avant-slidermage-size' ) == 'avant-slidermage-size-small' ) : ?>
+                        <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_small.gif" />
+                    <?php elseif ( get_theme_mod( 'avant-slidermage-size' ) == 'avant-slidermage-size-large' ) : ?>
+                        <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_large.gif" />
+                    <?php else : ?>
+                        <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_medium.gif" />
+                    <?php endif; ?>
+                    
+                </div> <!-- .page-fimage-banner -->
+                
+            <?php echo ( !get_theme_mod( 'avant-slidermage-fullwidth' ) ) ? '</div>' : ''; ?>
+        
+        <?php echo ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) ? '</div>' : ''; ?>
+        
+    <?php endif; ?>
+
+<?php elseif ( get_theme_mod( 'avant-slider-type' ) == 'avant-shortcode-slider' ) : ?>
+    
+    <?php
+    $slider_code = '';
+    if ( get_theme_mod( 'avant-slider-shortcode' ) ) {
+        $slider_code = get_theme_mod( 'avant-slider-shortcode' );
+    } ?>
+    
+    <?php echo ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) ? '<div class="site-side-layout-container">' : ''; ?>
+    
+        <?php if ( $slider_code ) : ?>
+            <?php echo do_shortcode( esc_html( $slider_code ) ); ?>
+        <?php else : ?>
+            <?php if ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) : ?>
+                <div class="home-slider-empty"></div>
+            <?php endif; ?>
+        <?php endif; ?>
+        
+    <?php echo ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) ? '</div>' : ''; ?>
+    
+<?php else : ?>
     
     <?php
     $slider_cats = '';
@@ -122,61 +178,5 @@
         </div>
             
     <?php endif; ?>
-    
-<?php elseif ( get_theme_mod( 'avant-slider-type' ) == 'avant-home-featured-image' ) : ?>
-    
-    <?php
-    $home_page_id = get_option( 'page_on_front' );
-    if ( 'page' == get_option( 'show_on_front' ) && has_post_thumbnail( $home_page_id ) ) : ?>
-        
-        <?php echo ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) ? '<div class="site-side-layout-container">' : ''; ?>
-        
-            <?php echo ( !get_theme_mod( 'avant-slidermage-fullwidth' ) ) ? '<div class="site-container">' : ''; ?>
-                
-                <div class="page-fimage-banner <?php echo ( get_theme_mod( 'avant-slidermage-size' ) == 'avant-slidermage-size-actual' ) ? sanitize_html_class( 'slidermage-banner-actual' ) : ''; ?>" <?php echo ( get_theme_mod( 'avant-slidermage-size' ) != 'avant-slidermage-size-actual' ) ? 'style="background-image: url(' . esc_url( get_the_post_thumbnail_url( $home_page_id ) ) . ');"' : ''; ?>>
-                    
-                    <?php if ( get_theme_mod( 'avant-slidermage-size' ) == 'avant-slidermage-size-actual' ) : ?>
-                        <img src="<?php echo get_the_post_thumbnail_url( $home_page_id ); ?>" />
-                    <?php elseif ( get_theme_mod( 'avant-slidermage-size' ) == 'avant-slidermage-size-extra-small' ) : ?>
-                        <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_extra_small.gif" />
-                    <?php elseif ( get_theme_mod( 'avant-slidermage-size' ) == 'avant-slidermage-size-small' ) : ?>
-                        <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_small.gif" />
-                    <?php elseif ( get_theme_mod( 'avant-slidermage-size' ) == 'avant-slidermage-size-large' ) : ?>
-                        <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_large.gif" />
-                    <?php else : ?>
-                        <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_medium.gif" />
-                    <?php endif; ?>
-                    
-                </div> <!-- .page-fimage-banner -->
-                
-            <?php echo ( !get_theme_mod( 'avant-slidermage-fullwidth' ) ) ? '</div>' : ''; ?>
-        
-        <?php echo ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) ? '</div>' : ''; ?>
-        
-    <?php endif; ?>
-
-<?php elseif ( get_theme_mod( 'avant-slider-type' ) == 'avant-shortcode-slider' ) : ?>
-    
-    <?php
-    $slider_code = '';
-    if ( get_theme_mod( 'avant-slider-shortcode' ) ) {
-        $slider_code = get_theme_mod( 'avant-slider-shortcode' );
-    } ?>
-    
-    <?php echo ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) ? '<div class="site-side-layout-container">' : ''; ?>
-    
-        <?php if ( $slider_code ) : ?>
-            <?php echo do_shortcode( esc_html( $slider_code ) ); ?>
-        <?php else : ?>
-            <?php if ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) : ?>
-                <div class="home-slider-empty"></div>
-            <?php endif; ?>
-        <?php endif; ?>
-        
-    <?php echo ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) ? '</div>' : ''; ?>
-    
-<?php else : ?>
-    
-    <!-- No Slider -->
     
 <?php endif; ?>

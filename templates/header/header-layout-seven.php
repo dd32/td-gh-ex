@@ -51,14 +51,14 @@ global $woocommerce; ?>
 
 <?php if ( is_front_page() ) : ?>
 	
-	<?php if ( get_theme_mod( 'avant-slider-type' ) == 'avant-slider-default' ) : ?>
-		<header id="masthead" class="site-header site-header-layout-seven <?php echo ( get_theme_mod( 'avant-header-switch' ) ) ? sanitize_html_class( 'site-header-switch' ) : ''; ?>">
+	<?php if ( get_theme_mod( 'avant-slider-type' ) == 'avant-no-slider' ) : ?>
+		<header id="masthead" class="site-header site-header-layout-seven site-header-nobanner <?php echo ( get_theme_mod( 'avant-header-switch' ) ) ? sanitize_html_class( 'site-header-switch' ) : ''; ?>">
 	<?php elseif ( get_theme_mod( 'avant-slider-type' ) == 'avant-shortcode-slider' ) : ?>
 		<header id="masthead" class="site-header site-header-layout-seven <?php echo ( get_theme_mod( 'avant-header-switch' ) ) ? sanitize_html_class( 'site-header-switch' ) : ''; ?> <?php echo ( get_theme_mod( 'avant-slider-shortcode' ) ) ? '' : sanitize_html_class( 'site-header-nobanner' ); ?>">
 	<?php elseif ( get_theme_mod( 'avant-slider-type' ) == 'avant-home-featured-image' ) : ?>
 		<header id="masthead" class="site-header site-header-layout-seven <?php echo ( get_theme_mod( 'avant-header-switch' ) ) ? sanitize_html_class( 'site-header-switch' ) : ''; ?> <?php echo ( has_post_thumbnail() ) ? '' : sanitize_html_class( 'site-header-nobanner' ); ?>">
 	<?php else : ?>
-		<header id="masthead" class="site-header site-header-layout-seven site-header-nobanner <?php echo ( get_theme_mod( 'avant-header-switch' ) ) ? sanitize_html_class( 'site-header-switch' ) : ''; ?>">
+		<header id="masthead" class="site-header site-header-layout-seven <?php echo ( get_theme_mod( 'avant-header-switch' ) ) ? sanitize_html_class( 'site-header-switch' ) : ''; ?>">
 	<?php endif; ?>
 	
 <?php elseif ( is_home() || is_archive() || is_search() ) : ?>

@@ -255,7 +255,7 @@ function customizer_library_avant_options() {
         'section' => $section,
         'type'    => 'select',
         'choices' => $choices,
-        'default' => 'avant-no-slider'
+        'default' => 'avant-slider-default'
     );
     $options['avant-slider-cats'] = array(
         'id' => 'avant-slider-cats',

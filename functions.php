@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.0.5' );
+define( 'AVANT_THEME_VERSION' , '1.0.6' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -171,10 +171,8 @@ function avant_scripts() {
 	
 	wp_enqueue_script( 'avant-custom-js', get_template_directory_uri() . "/js/custom.js", array('jquery'), AVANT_THEME_VERSION, true );
 	
-	if ( is_front_page() && get_theme_mod( 'avant-slider-type' ) == 'avant-slider-default' ) :
-		wp_enqueue_script( 'caroufredsel-js', get_template_directory_uri() . "/js/caroufredsel/jquery.carouFredSel-6.2.1-packed.js", array('jquery'), AVANT_THEME_VERSION, true );
-        wp_enqueue_script( 'avant-home-slider', get_template_directory_uri() . '/js/home-slider.js', array('jquery'), AVANT_THEME_VERSION, true );
-	endif;
+	wp_enqueue_script( 'caroufredsel-js', get_template_directory_uri() . "/js/caroufredsel/jquery.carouFredSel-6.2.1-packed.js", array('jquery'), AVANT_THEME_VERSION, true );
+    wp_enqueue_script( 'avant-home-slider', get_template_directory_uri() . '/js/home-slider.js', array('jquery'), AVANT_THEME_VERSION, true );
 	
 	if ( get_theme_mod( 'avant-blog-layout' ) == 'blog-blocks-layout' ) :
 		wp_enqueue_script( 'jquery-masonry' );

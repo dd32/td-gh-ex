@@ -68,6 +68,13 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.6
+* Style tweaks/fixes
+* Fixed Slider CSS class output not working
+* Change slider default setting
+Premium: Added setting to add/enable WooCommerce drop down basket
+Premium: Added color settings for new WooCOmmerce drop down cart
+
 #### 1.0.5
 * Admin style tweaks/fixes
 * Recommended Elementor Page Builder in TGMPA
