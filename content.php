@@ -6,22 +6,19 @@
 		
 			<a class="featured-media" title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>">	
 				
-				<?php the_post_thumbnail('post-thumb'); ?>
+				<?php the_post_thumbnail( 'post-thumb' ); ?>
 				
-			</a> <!-- /featured-media -->
+			</a><!-- .featured-media -->
 				
 		<?php endif; ?>
 		
-		<?php 
-			$post_title = get_the_title();
-			if ( !empty( $post_title ) ) : 
-		?>
+		<?php if ( get_the_title() ) : ?>
 					
 			<div class="post-header">
 				
 			    <h2 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 			    	    
-			</div> <!-- /post-header -->
+			</div><!-- .post-header -->
 		
 		<?php endif; ?>
 		
@@ -31,7 +28,7 @@
 		
 		</div>
 		
-		<?php if ( empty( $post_title ) ) : ?>
+		<?php if ( ! get_the_title() ) : ?>
 			    
 		    <div class="posts-meta">
 		    
@@ -41,6 +38,6 @@
 	    
 	    <?php endif; ?>
 	
-	</div> <!-- /post -->
+	</div><!-- .post -->
 
-</div> <!-- /post-container -->
+</div><!-- .post-container -->

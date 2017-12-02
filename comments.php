@@ -1,6 +1,9 @@
-<?php if ( post_password_required() ) return; ?>
+<?php 
 
-<?php if ( have_comments() ) : ?>
+if ( post_password_required() ) 
+	return;
+
+if ( have_comments() ) : ?>
 
 	<div class="comments-container">
 	
@@ -10,8 +13,9 @@
 			
 			<h2 class="comments-title">
 			
-				<?php echo count($wp_query->comments_by_type[comment]) . ' ';
-				echo _n( 'Comment' , 'Comments' , count($wp_query->comments_by_type[comment]), 'fukasawa' ); ?>
+				<?php 
+				$comment_count = count( $wp_query->comments_by_type['comment'] );
+				printf( _n( '%s Comment', '%s Comments', $comment_count, 'fukasawa' ), $comment_count ); ?>
 				
 			</h2>
 		
@@ -21,14 +25,15 @@
 				    <?php wp_list_comments( array( 'type' => 'comment', 'callback' => 'fukasawa_comment' ) ); ?>
 				</ol>
 				
-				<?php if (!empty($comments_by_type['pings'])) : ?>
+				<?php if ( ! empty( $comments_by_type['pings'] ) ) : ?>
 				
 					<div class="pingbacks">
 										
 						<h3 class="pingbacks-title">
 						
-							<?php echo count($wp_query->comments_by_type[pings]) . ' ';
-							echo _n( 'Pingback', 'Pingbacks', count($wp_query->comments_by_type[pings]), 'fukasawa' ); ?>
+							<?php 
+							$pingback_count = count( $wp_query->comments_by_type['pings'] );
+							printf( _n( '%s Pingback', '%s Pingbacks', $pingback_count, 'fukasawa' ), $pingback_count ); ?>
 						
 						</h3>
 					
@@ -36,7 +41,7 @@
 						    <?php wp_list_comments( array( 'type' => 'pings', 'callback' => 'fukasawa_comment' ) ); ?>
 						</ol>
 							
-					</div> <!-- /pingbacks -->
+					</div><!-- .pingbacks -->
 				
 				<?php endif; ?>
 						
@@ -58,15 +63,15 @@
 						
 						<div class="clear"></div>
 						
-					</div> <!-- /comment-nav-below -->
+					</div><!-- .comment-nav-below -->
 					
 				<?php endif; ?>
 				
-			</div> <!-- /comments -->
+			</div><!-- .comments -->
 			
-		</div> <!-- /comments-inner -->
+		</div><!-- .comments-inner -->
 		
-	</div> <!-- /comments-container -->
+	</div><!-- .comments-container -->
 	
 <?php endif; ?>
 
@@ -94,7 +99,7 @@
 
 	'comment_field' => 
 		'<p class="comment-form-comment">
-			<label for="comment">' . __('Comment','fukasawa') . '</label>
+			<label for="comment">' . __( 'Comment', 'fukasawa' ) . '</label>
 			<textarea id="comment" name="comment" cols="45" rows="6" required></textarea>
 		</p>',
 	
@@ -102,28 +107,28 @@
 	
 		'author' =>
 			'<p class="comment-form-author">
-				<label for="author">' . __('Name','fukasawa') . ( $req ? '<span class="required">*</span>' : '' ) . '</label> 
+				<label for="author">' . __( 'Name', 'fukasawa' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label> 
 				<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" />
 			</p>',
 		
 		'email' =>
 			'<p class="comment-form-email">
-				<label for="email">' . __('Email','fukasawa') . ( $req ? '<span class="required">*</span>' : '' ) . '</label> 
+				<label for="email">' . __( 'Email', 'fukasawa' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label> 
 				<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" />
 			</p>',
 		
 		'url' =>
 			'<p class="comment-form-url">
-				<label for="url">' . __('Website','fukasawa') . '</label>
+				<label for="url">' . __( 'Website', 'fukasawa' ) . '</label>
 				<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" />
 			</p>')
 	),
 );
 
-if ( comments_open() ) { echo '<div class="respond-container">'; }
+if ( comments_open() ) echo '<div class="respond-container">';
 
-comment_form($comments_args);
+comment_form( $comments_args );
 
-if ( comments_open() ) { echo '</div> <!-- /respond-container -->'; }
+if ( comments_open() ) echo '</div><!-- .respond-container -->';
 
 ?>

@@ -1,21 +1,44 @@
-# Copyright
---------------
-
-Fukasawa WordPress Theme, Copyright 2015 Anders Norén
-Fukasawa is distributed under the terms of the GNU GPL v2
-
-
-
-# Install Steps
---------------
-
-1. Upload the theme.
-2. Activate the theme.
+=== Fukasawa ===
+Contributors: Anlino
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=anders%40andersnoren%2ese&lc=US&item_name=Free%20WordPress%20Themes%20from%20Anders%20Noren&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
+Requires at least: 4.4
+Tested up to: 4.8
+Stable tag: trunk
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 
+== Installation ==
 
-# Use the gallery post format
---------------
+1. Upload the theme
+2. Activate the theme
+
+All theme specific options are handled through the WordPress Customizer.
+
+
+== Licenses ==
+
+Lato
+License: SIL Open Font License, 1.1 
+Source: https://fonts.google.com/specimen/Lato
+
+Genericon font icon set
+License: GNU GPL 2.0
+Source: http://genericons.com
+
+screenshot.png images
+License: CC0 Public Domain 
+Source: http://www.unsplash.com
+
+Flexslider jQuery Slider
+License: GNU GPL 2.0
+Source: http://flexslider.woothemes.com
+
+
+== Frequently Asked Questions ==
+
+
+== Use the gallery post format 
 
 1. Go to Admin > Posts > Add New.
 2. Select the "Gallery" post format in the Post Attributes box.
@@ -25,8 +48,7 @@ Fukasawa is distributed under the terms of the GNU GPL v2
 
 
 
-# Use the video post format
---------------
+== Use the video post format
 
 1. Go to Admin > Posts > Add New.
 2. Select the "Video" post format in the Post Attributes box.
@@ -35,16 +57,82 @@ Fukasawa is distributed under the terms of the GNU GPL v2
 5. The video you linked to should now be displayed in the media section above the post.
 
 
+== Changelog ==
 
-# Licenses
---------------
 
-Lato font license : SIL Open Font License, 1.1 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+Version 1.11 (2017-11-26)
+-------------------------
+- Updated to the new readme.txt format, with changelog.txt incorporated into it
+- Added a demo link to the stylesheet theme description
+- Removed specific post types for add_theme_support( 'post-thumbnails' );
+- Added a deliberate dependency order to the stylesheet enqueueing
+- Same for scripts enqueues
+- Made all functions in functions.php pluggable
+- Replaced a new WP_Query in widgets/recent-posts.php with a get_posts()
+- Fixed genericons path
+- Made a text string in single.php translateable
+- Fixed notice in comments.php
+- Changed closing element comment structure
+- General code cleanup, improvements in readability
+- Removed duplicate comment-reply enqueueing from the header (already in functions)
+- SEO improvements (title structure, mostly)
+- Better handling of edge cases (missing title, missing content)
+- Restructured query on the archive page template
 
-Genericons icon font license : GNU GPL v2.0 http://www.gnu.org/licenses/gpl-2.0.html
 
-FlexSlider jQuery slider license : GNU GPL v2.0 http://www.gnu.org/licenses/gpl-2.0.html
+Version 1.10 (2016-06-28)
+-------------------------
+- Added the new theme directory tags
 
-imagesLoaded license : MIT License http://opensource.org/licenses/MIT
+Version 1.09 (2016-04-02)
+-------------------------
+- Fixed respond input margins with new order of inputs
 
-Licenses for images used in screenshot.png : Public Domain http://en.wikipedia.org/wiki/Public_domain
+Version 1.08 (2016-03-12)
+-------------------------
+- Fixed Flickr widget styling issue
+- Removed extra semicolon in Flickr widget input label
+
+Version 1.07 (2016-03-12)
+-------------------------
+- Fixed automated theme scanning error (.ds_store)
+
+Version 1.06 (2016-03-12)
+-------------------------
+- Fixed an issue with empty titles
+
+Version 1.05 (2015-08-25)
+-------------------------
+- Fixed an issue with overflowing images
+- Added the .screen-reader-text class
+
+Version 1.04 (2015-08-11)
+-------------------------
+- Removed a superfluous closing <p> tag
+- Replaced a custom title function with support for title-tag
+- Added comment-reply to enqueued js files
+- Removed the custom post meta boxes for content-video from functions.php
+- Added sanitize callback for custom accent color
+- Removed do_shortcode() function from functions.php
+- Modified theme widgets to use __construct() in prep for WP 4.3
+- Removed superfluous code from single.php (leftovers from previously supported post formats)
+- Changed post title elements on singular from h2 to h1 for SEO reasons
+- Updated the Swedish translation
+
+Version 1.03 (2014-09-22)
+-------------------------
+- Fixed an issue with the read more image in the post editor being too big
+
+Version 1.02 (2014-09-13)
+-------------------------
+- Added missing function prefix in functions.php
+- Added esc_url to the video urls
+- Fixed a bug in the flexslider function
+
+Version 1.01 (2014-09-10)
+-------------------------
+- Added missing function prefixes in functions.php
+- Globalized $content_width and moved it to the theme initialization
+
+Version 1.0 (2014-08-04)
+------------------------- 
