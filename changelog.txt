@@ -1,5 +1,10 @@
 SuevaFree Changelog
 
+- Version 3.3.6 - Released: 02.12.2017
+
+-- Tested with WordPress 4.9.1
+-- Edit  : Code optimized.
+
 - Version 3.3.5 - Released: 23.11.2017
 
 -- Edit  : Code optimized.
