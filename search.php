@@ -6,7 +6,7 @@
 		
 			<div class="page-title">
 				
-					<h5><?php _e( 'Search results', 'garfunkel'); ?>: <?php echo ' "' . get_search_query() . '"'; ?></h5>
+					<h5><?php printf( __( 'Search results: "%s"', 'garfunkel' ), get_search_query() ); ?></h5>
 					
 				</div>
 		
@@ -22,15 +22,15 @@
 							
 						<?php endwhile; ?>
 									
-					</div> <!-- /posts -->
+					</div><!-- .posts -->
 					
 					<?php if ( $wp_query->max_num_pages > 1 ) : ?>
 					
 						<div class="archive-nav">
 						
-							<?php echo get_next_posts_link( '&laquo; ' . __('Older posts', 'garfunkel')); ?>
+							<?php echo get_next_posts_link( '&laquo; ' . __( 'Older posts', 'garfunkel' ) ); ?>
 							
-							<?php echo get_previous_posts_link( __('Newer posts', 'garfunkel') . ' &raquo;'); ?>
+							<?php echo get_previous_posts_link( __( 'Newer posts', 'garfunkel' ) . ' &raquo;' ); ?>
 							
 							<div class="clear"></div>
 							
@@ -44,22 +44,22 @@
 				
 						<div class="post-content">
 						
-							<p><?php _e('No results. Try again, would you kindly?', 'garfunkel'); ?></p>
+							<p><?php _e( 'No results. Try again, would you kindly?', 'garfunkel' ); ?></p>
 												
-						</div> <!-- /post-content -->
+						</div><!-- .post-content -->
 					
-					</div> <!-- /section-inner -->
+					</div><!-- .section-inner -->
 					
 					<div class="clear"></div>
 								
 				<?php endif; ?>
 			
-			</div> <!-- /content -->
+			</div><!-- .content -->
 					
 			<div class="clear"></div>
 		
-		</div> <!-- /wrapper-inner -->
+		</div><!-- .wrapper-inner -->
 		
-	</div> <!-- /wrapper -->
+	</div><!-- .wrapper -->
 		
 <?php get_footer(); ?>

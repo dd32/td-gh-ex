@@ -6,31 +6,35 @@
 		
 			<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
 	
-			<?php				
+				<?php				
 				$attachment_parent = get_the_ID();
-			
-				if($images = get_posts(array(
+
+				$image_args = array(
+					'numberposts'    => 1,
+					'orderby'        => 'menu_order',
+					'order'          => 'ASC',
 					'post_parent'    => $attachment_parent,
 					'post_type'      => 'attachment',
-					'numberposts'    => 1,
 					'post_status'    => null,
 					'post_mime_type' => 'image',
-			                'orderby'        => 'menu_order',
-			                'order'           => 'ASC',
-				))) { ?>
-				
-					<?php foreach($images as $image) { 
-						$attimg = wp_get_attachment_image($image->ID, 'post-thumbnail'); ?>
-						
-						<?php echo $attimg; ?>
-						
-					<?php } ?>
+				);
 
-				<?php } ?>
+				$images = get_posts( $image_args );
+			
+				if ( $images ) {
+				
+					foreach( $images as $image ) {
+
+						$attimg = wp_get_attachment_image( $image->ID, 'post-thumbnail' );
+						echo $attimg;
+						
+					}
+
+				} ?>
 									
 			</a>
 							
-		</div> <!-- /featured-media -->
+		</div><!-- .featured-media -->
 		
 		<?php if ( is_sticky() ) : ?>
 				
@@ -42,23 +46,21 @@
 		
 		<div class="post-inner">
 		
-			<?php $title_var = get_the_title(); ?>
-		
-			<?php if ( !empty( $title_var ) ) : ?>
+			<?php if ( get_the_title() ) : ?>
 		
 				<div class="post-header">
 					
 				    <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 				    	    
-				</div> <!-- /post-header -->
+				</div><!-- .post-header -->
 			
 			<?php endif; ?>
-				    		            			            	                                                                                            
+
 			<?php the_excerpt(); ?>
 		
 			<?php garfunkel_meta(); ?>
 		
-		</div> <!-- /post-inner -->
+		</div><!-- .post-inner -->
 	
 	</div>
 

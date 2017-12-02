@@ -2,8 +2,8 @@
 
 	Theme Name: Garfunkel
     Text Domain: garfunkel
-	Version: 1.10
-	Description: Garfunkel is a stylish and responsive Pinterest-style theme with Masonry layout. It features responsive and retina-ready design, support for six post formats (including a gallery slideshow), six custom widgets, two page templates, Jetpack Infinite Scroll support, editor styling and translation-ready code. Included translations: Swedish/svenska.
+	Version: 1.11
+	Description: Garfunkel is a stylish and responsive Pinterest-style theme with Masonry layout. It features responsive and retina-ready design, support for six post formats (including a gallery slideshow), six custom widgets, two page templates, Jetpack Infinite Scroll support, editor styling and translation-ready code. Demo: http://www.andersnoren.se/themes/garfunkel/
 	Tags: blog, three-columns, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, grid-layout, portfolio
 	Author: Anders Norén
 	Author URI: http://www.andersnoren.se
@@ -338,7 +338,7 @@ a .post-icon img {
 
 .title-section { position: relative; }
 
-.home_first_page .title-section .section-inner { padding: 150px 0; }
+.home-first-page .title-section .section-inner { padding: 150px 0; }
 
 .title-section .section-inner { 
 	padding: 75px 0; 
@@ -2767,7 +2767,7 @@ img#wpstats { display: none; }
 
 	/* header */
 	
-	.home_first_page .title-section .section-inner { padding: 100px 0; }
+	.home-first-page .title-section .section-inner { padding: 100px 0; }
 	
 	/* main content */
 
@@ -2854,7 +2854,7 @@ img#wpstats { display: none; }
 	
 	/* title section */
 	
-	.home_first_page .title-section .section-inner,
+	.home-first-page .title-section .section-inner,
 	.title-section .section-inner { padding: 71px 0 66px; }
 	
 	.bg-image.master,
@@ -2922,7 +2922,7 @@ img#wpstats { display: none; }
 	/* title section */
 	
 	.title-section .section-inner,
-	.home_first_page .title-section .section-inner { padding: 64px 0 30px; }
+	.home-first-page .title-section .section-inner { padding: 64px 0 30px; }
 	
 	.bg-image.master,
 	.bg-shader.master {

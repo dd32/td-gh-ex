@@ -12,7 +12,7 @@ Template Name: Full width template
 	
 		<div class="content">
 	
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		
 				<div class="post">
 				
@@ -20,15 +20,15 @@ Template Name: Full width template
 						
 						<div class="featured-media">
 						
-							<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
+							<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 							
-								<?php the_post_thumbnail('post-image'); ?>
+								<?php the_post_thumbnail( 'post-image' ); ?>
 								
-								<?php if ( !empty(get_post(get_post_thumbnail_id())->post_excerpt) ) : ?>
+								<?php if ( ! empty( get_post( get_post_thumbnail_id() )->post_excerpt ) ) : ?>
 												
 									<div class="media-caption-container">
 									
-										<p class="media-caption"><?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?></p>
+										<p class="media-caption"><?php echo get_post( get_post_thumbnail_id() )->post_excerpt; ?></p>
 										
 									</div>
 									
@@ -36,7 +36,7 @@ Template Name: Full width template
 								
 							</a>
 									
-						</div> <!-- /featured-media -->
+						</div><!-- .featured-media -->
 							
 					<?php endif; ?>
 					
@@ -44,21 +44,25 @@ Template Name: Full width template
 					
 						<div class="post-header">
 													
-						    <h2 class="post-title"><?php the_title(); ?></h2>
+							<?php the_title( '<h1 class="post-title">', '</h1>' ); ?>
 						    				    
-					    </div> <!-- /post-header -->
+					    </div><!-- .post-header -->
 					   				        			        		                
 						<div class="post-content">
 									                                        
-							<?php the_content(); ?>
+							<?php 
 							
-							<?php edit_post_link(__('Edit','garfunkel') . ' &rarr;'); ?>
+							the_content();
+							
+							edit_post_link(__('Edit','garfunkel') . ' &rarr;'); 
+							
+							?>
 																            			                        
-						</div> <!-- /post-content -->
+						</div><!-- .post-content -->
 						
 						<div class="clear"></div>
 					
-					</div> <!-- /post-inner -->
+					</div><!-- .post-inner -->
 					
 					<?php if ( comments_open() ) : ?>
 						
@@ -68,28 +72,28 @@ Template Name: Full width template
 						
 								<?php comments_template( '', true ); ?>
 							
-							</div> <!-- /comments-page-container-inner -->
+							</div><!-- .comments-page-container-inner -->
 						
-						</div> <!-- /comments-page-container -->
+						</div><!-- .comments-page-container -->
 					
 					<?php endif; ?>
 					
 					<?php get_sidebar(); ?>
 									
-				</div> <!-- /post -->
+				</div><!-- .post -->
 			
 			<?php endwhile; else: ?>
 			
-				<p><?php _e("We couldn't find any posts that matched your query. Please try again.", "garfunkel"); ?></p>
+				<p><?php _e( "We couldn't find any posts that matched your query. Please try again.", "garfunkel" ); ?></p>
 		
 			<?php endif; ?>
 		
 			<div class="clear"></div>
 			
-		</div> <!-- /content -->
+		</div><!-- .content -->
 		
-	</div> <!-- /section-inner -->
+	</div><!-- .section-inner -->
 
-</div> <!-- /wrapper -->
+</div><!-- .wrapper -->
 								
 <?php get_footer(); ?>

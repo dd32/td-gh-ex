@@ -1,37 +1,52 @@
-Copyright
---------------
+=== Garfunkel ===
+Contributors: Anlino
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=anders%40andersnoren%2ese&lc=US&item_name=Free%20WordPress%20Themes%20from%20Anders%20Noren&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
+Requires at least: 4.4
+Tested up to: 4.8
+Stable tag: trunk
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Garfunkel WordPress Theme, Copyright 2015 Anders Norén
-Garfunkel is distributed under the terms of the GNU GPL v2
 
-
-
-Install steps
---------------
+== Installation ==
 
 1. Upload the theme
 2. Activate the theme
 
+All theme specific options are handled through the WordPress Customizer.
 
 
-Translate the theme
---------------
+== Licenses ==
 
-1. Install and activate the plugin CodeStyling Localization, available on the WordPress plugin depository.
-2. Go to Tools > Localization on your WordPress installation.
-3. Scroll down until you find Garfunkel in the list.
-4. Click Add New Language in the Garfunkel box.
-5. Select the language you wish to translate Garfunkel to, and click Create PO file.
-6. Click on Edit next to the first list item in the list of strings.
-7. Enter the translation, and click "Save & Next".
-8. Repeat until all strings in Garfunkel have been translated.
-9. Click on Generate MO File button in the top of the window.
-10. Provided that your WordPress installation has the same language set as the translation you've added, the translation should now be active on your site.
+Fira Sans
+License: SIL Open Font License, 1.1 
+Source: https://fonts.google.com/specimen/Fira+Sans
+
+Crimson Text
+License: SIL Open Font License, 1.1 
+Source: https://fonts.google.com/specimen/Crimson+Text
+
+Playfai Display
+License: SIL Open Font License, 1.1 
+Source: https://fonts.google.com/specimen/Playfair+Display
+
+Genericon font icon set
+License: GNU GPL 2.0
+Source: http://genericons.com
+
+Standard header image
+License: CC0 Public Domain 
+Source: http://www.unsplash.com
+
+Flexslider jQuery Slider
+License: GNU GPL 2.0
+Source: http://flexslider.woothemes.com
 
 
+== Frequently Asked Questions ==
 
-Display the social menu in the navigation bar
---------------
+
+== Display the social menu in the navigation bar
 
 1. Go to Admin > Appearance > Menus.
 2. Create a new menu.
@@ -43,9 +58,7 @@ Display the social menu in the navigation bar
 For a list of all social icons supported, visit http://genericons.com/.
 
 
-
-Use the gallery post format
---------------
+== Use the gallery post format
 
 1. Go to Admin > Posts > Add New.
 2. Select the "Gallery" post format in the Post Attributes box.
@@ -54,9 +67,7 @@ Use the gallery post format
 5. The images you uploaded should now be displayed in the post gallery.
 
 
-
-Link Format
---------------
+== Link Format
 
 1. Create a new post.
 2. Select "Link" in the Format window to the right.
@@ -72,9 +83,7 @@ The rest of the content...
 6. The link title and link will now be displayed in a separate section from the content of your post.
 
 
-
-Quote Format
---------------
+== Quote Format
 
 1. Create a new post.
 2. Select "Quote" in the Format window to the right.
@@ -91,9 +100,7 @@ The rest of the content...
 6. The quote will now be displayed in a separate section from the content of your post.
 
 
-
-Video Format
---------------
+== Video Format
 
 1. Create a new post.
 2. Select "Video" in the Format window to the right.
@@ -108,20 +115,84 @@ The rest of the content...
 6. The video will now be displayed in a separate section from the content of your post.
 
 
+== Changelog ==
 
-Licenses
---------------
 
-Standard header image license: CC0 1.0 Universal (CC0 1.0) http://creativecommons.org/publicdomain/zero/1.0/
+Version 1.11 (2017-11-26)
+-------------------------
+- Updated to the new readme.txt format, with changelog.txt incorporated into it
+- Added a demo link to the stylesheet theme description
+- Removed specific post types for add_theme_support( 'post-thumbnails' );
+- Added a deliberate dependency order to the stylesheet enqueueing
+- Made all functions in functions.php pluggable
+- Replaced a query_posts() in widgets/recent-posts.php with a get_posts()
+- Fixed notices when adding values to dribble-widget.php for the first time
+- Same for scripts enqueues
+- Fixed genericons path
+- Simplified author role output in single.php and made it support other roles than the default WP ones
+- Fixed notice in comments.php
+- Fixed notice in single.php
+- Improved output of author recent comments in the single.php post meta section
+- Changed closing element comment structure
+- General code cleanup, improvements in readability
+- Removed duplicate comment-reply enqueueing from the header (already in functions)
+- SEO improvements (title structure, mostly)
+- Better handling of edge cases (missing title, missing content)
+- Added word-break to titles on the archive template
+- Restructured query on the archive page template
 
-Fira Sans font license : SIL Open Font License, 1.1 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+Version 1.10 (2016-06-28)
+-------------------------
+- Added the new theme directory tags
 
-Crimson Text font license : SIL Open Font License, 1.1 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+Version 1.09 (2016-03-12)
+-------------------------
+- Fixed respond input margins
 
-Playfair Display font license : SIL Open Font License, 1.1 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+Version 1.08 (2016-03-12)
+-------------------------
+- Removed the wp_title() function from header (replaced with title_tag())
 
-Genericon font icon set license : GNU GPL v2.0 http://www.gnu.org/licenses/gpl-2.0.html
+Version 1.07 (2015-08-25)
+-------------------------
+- Fixed an issue with overflowing images
+- Added the .screen-reader-text class
 
-Masonry cascading grid layout library : MIT License http://desandro.mit-license.org
+Version 1.06 (2015-08-20)
+-------------------------
+- Fixed the display of videos on single posts with the video post format
 
-FlexSlider jQuery slider : GNU GPL v2.0 http://www.gnu.org/licenses/gpl-2.0.html
+Version 1.05 (2015-08-11)
+-------------------------
+- Fixed the display of post excerpts in the quote post format
+
+Version 1.04 (2015-08-11)
+-------------------------
+- Actually generated the new Swedish translation (important part)
+
+Version 1.03 (2015-08-11)
+-------------------------
+- Replaced custom title function with title-tag support
+- The widgets now use __construct()
+- Fixed missing index notice for widget variables
+- Removed post meta fields from functions.php
+- Removed a shortcode function from functions.php
+- Removed a function used for getting titles from URLs (no longer needed due to changes in format-video/-quote/-link)
+- Added a sanitize callback for custom accent color and custom logo
+- Stored the post meta element as a function in functions.php
+- Modified how the post formats video, quote and link are edited and presented
+- Updated readme.txt to reflect those changes
+- Optimized translation strings
+- Updated the Swedish translation
+- Improved the presentation of the infinite scroll button
+
+Version 1.02 (2014-09-26)
+-------------------------
+- Fixed a misplaced the_title() function call that caused links to break in the post meta
+
+Version 1.01 (2014-08-25)
+-------------------------
+- Moved enqueue of comment-reply to functions.php
+
+Version 1.0 (2014-07-XX)
+-------------------------

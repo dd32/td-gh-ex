@@ -19,69 +19,62 @@
 				
 				<ul class="main-menu">
 				
-					<?php if ( has_nav_menu( 'primary' ) ) {
-																		
-						wp_nav_menu( array( 
-						
-							'container' => '', 
-							'items_wrap' => '%3$s',
-							'theme_location' => 'primary', 
-							'walker' => new garfunkel_nav_walker
-														
-						) ); } else {
+					<?php 
 					
-						wp_list_pages( array(
-						
-							'container' => '',
-							'title_li' => ''
-						
-						));
+					if ( has_nav_menu( 'primary' ) ) {
+
+						$nav_menu_args = array( 
+							'container' 		=> '', 
+							'items_wrap' 		=> '%3$s',
+							'theme_location' 	=> 'primary', 
+							'walker' 			=> new garfunkel_nav_walker
+						);
+																		
+						wp_nav_menu( $nav_menu_args ); 
+					
+					} else {
+
+						$list_pages_args = array(
+							'container'	=> '',
+							'title_li'	=> ''
+						);
+					
+						wp_list_pages( $list_pages_args );
 						
 					} ?>
 											
-				</ul> <!-- /main-menu -->
+				</ul><!-- .main-menu -->
 				
 				<?php get_template_part( 'menu', 'social' ); ?>
 			 
 			<div class="clear"></div>
 			 
-			</div> <!-- /section-inner -->
+			</div><!-- .section-inner -->
 			
 			<div class="mobile-menu-container">
 			
 				<ul class="mobile-menu">
+					
+					<?php 
+					if ( has_nav_menu( 'primary' ) ) {					
+						wp_nav_menu( $nav_menu_args); 
+					} else {
+						wp_list_pages( $list_pages_args );
+					} ?>
 				
-				<?php if ( has_nav_menu( 'primary' ) ) {
-																	
-					wp_nav_menu( array( 
-					
-						'container' => '', 
-						'items_wrap' => '%3$s',
-						'theme_location' => 'primary', 
-						'walker' => new garfunkel_nav_walker
-													
-					) ); } else {
-				
-					wp_list_pages( array(
-					
-						'container' => '',
-						'title_li' => ''
-					
-					));
-					
-				} ?>
-				
-				</ul> <!-- /mobile-menu -->
+				</ul><!-- .mobile-menu -->
 				
 				<?php get_template_part( 'menu', 'social' ); ?>
 										
-			</div> <!-- /mobile-menu-container -->
+			</div><!-- .mobile-menu-container -->
 				 			
-		</div> <!-- /navigation -->
+		</div><!-- .navigation -->
 		
 		<div class="title-section">
+
+			<?php $header_image_url = get_header_image() ?: get_template_directory_uri() . '/images/bg.jpg'; ?>
 			
-			<div class="bg-image master" style="background-image: url(<?php if (get_header_image() != '') : ?><?php header_image(); ?><?php else : ?><?php echo get_template_directory_uri() . '/images/bg.jpg'; ?><?php endif; ?>);"></div>
+			<div class="bg-image master" style="background-image: url( <?php echo $header_image_url; ?> );"></div>
 			
 			<div class="bg-shader master"></div>
 		
@@ -89,7 +82,7 @@
 			
 				<div class="toggle-container">
 			
-					<a class="nav-toggle" title="Click to view the navigation" href="#">
+					<a class="nav-toggle" title="<?php _e( 'Click to view the navigation', 'garfunkel' ); ?>" href="#">
 				
 						<div class="bars">
 						
@@ -102,15 +95,15 @@
 						</div>
 						
 						<p>
-							<span class="menu"><?php _e('Menu','garfunkel'); ?></span>
-							<span class="close"><?php _e('Close','garfunkel'); ?></span>
+							<span class="menu"><?php _e( 'Menu', 'garfunkel' ); ?></span>
+							<span class="close"><?php _e( 'Close', 'garfunkel' ); ?></span>
 						</p>
 						
 						<div class="clear"></div>
 					
 					</a>
 				
-				</div> <!-- /toggle-container -->
+				</div><!-- .toggle-container -->
 		
 				<?php if ( get_theme_mod( 'garfunkel_logo' ) ) : ?>
 					
@@ -128,11 +121,11 @@
 						<a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?> &mdash; <?php echo esc_attr( get_bloginfo( 'description' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'title' ) ); ?></a>
 					</h1>
 					
-					<?php if ( get_bloginfo( 'description' ) ) { ?>
+					<?php if ( get_bloginfo( 'description' ) ) : ?>
 					
 						<h3 class="blog-subtitle"><?php echo esc_attr( get_bloginfo( 'description' ) ); ?></h3>
 						
-					<?php } ?>
+					<?php endif; ?>
 										
 				<?php endif; ?>
 			

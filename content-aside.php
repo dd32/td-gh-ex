@@ -16,8 +16,8 @@
 		
 			<?php garfunkel_meta(); ?>
 		
-		</div> <!-- /post-inner -->
+		</div><!-- .post-inner -->
 	
-	</div> <!-- /post -->
+	</div><!-- .post -->
 
 </div>

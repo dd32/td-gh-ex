@@ -1,8 +1,4 @@
-<?php if (
-	is_active_sidebar( 'footer-a' ) ||
-	is_active_sidebar( 'footer-b' ) ||
-	is_active_sidebar( 'footer-c' )
-) : ?>
+<?php if ( is_active_sidebar( 'footer-a' ) || is_active_sidebar( 'footer-b' ) || is_active_sidebar( 'footer-c' ) ) : ?>
 
 	<div class="widget-area">
 	
@@ -12,7 +8,7 @@
 			
 				<?php dynamic_sidebar( 'footer-a' ); ?>
 				
-			</div><!-- /column-1 -->
+			</div><!-- .column-1 -->
 		
 		<?php endif; ?>
 		
@@ -22,7 +18,7 @@
 			
 				<?php dynamic_sidebar( 'footer-b' ); ?>
 				
-			</div><!-- /column-1 -->
+			</div><!-- .column-2 -->
 		
 		<?php endif; ?>
 		
@@ -32,12 +28,12 @@
 			
 				<?php dynamic_sidebar( 'footer-c' ); ?>
 				
-			</div><!-- /column-1 -->
+			</div><!-- .column-3 -->
 		
 		<?php endif; ?>
 		
 		<div class="clear"></div>
 	
-	</div> <!-- /widget-area -->
+	</div><!-- .widget-area -->
 
 <?php endif; ?>

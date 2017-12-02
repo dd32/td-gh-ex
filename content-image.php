@@ -6,15 +6,15 @@
 		
 			<div class="featured-media">
 			
-				<?php if( is_sticky() ) { ?> <span class="sticky-post"><?php _e('Sticky post', 'garfunkel'); ?></span> <?php } ?>
+				<?php if ( is_sticky() ) echo '<span class="sticky-post">' . __( 'Sticky post', 'garfunkel' ) . '</span>'; ?>
 			
 				<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 				
-					<?php the_post_thumbnail('post-thumbnail'); ?>
+					<?php the_post_thumbnail( 'post-thumbnail' ); ?>
 					
 				</a>
 						
-			</div> <!-- /featured-media -->
+			</div><!-- .featured-media -->
 				
 		<?php endif; ?>
 		
@@ -32,7 +32,7 @@
 		
 			<?php garfunkel_meta(); ?>
 		
-		</div> <!-- /post-inner -->
+		</div><!-- .post-inner -->
 	
 	</div>
 

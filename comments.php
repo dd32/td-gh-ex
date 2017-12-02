@@ -1,8 +1,8 @@
-<?php if ( post_password_required() )
+<?php 
+if ( post_password_required() ) 
 	return;
-?>
 
-	<?php if ( have_comments() ) : ?>
+	if ( have_comments() ) : ?>
 	
 		<div class="comments">
 		
@@ -12,33 +12,35 @@
 				
 				<h2 class="comments-title fleft">
 				
-					<?php echo count($wp_query->comments_by_type[comment]) . ' ';
-					echo _n( 'comment' , 'comments' , count($wp_query->comments_by_type[comment]), 'garfunkel' ); ?>
+					<?php 
+					$comment_count = count( $wp_query->comments_by_type['comment'] );
+					printf( _n( '%s Comment', '%s Comments', $comment_count, 'garfunkel' ), $comment_count ); ?>
 					
 				</h2>
 				
 				<?php if ( comments_open() ) : ?>
 				
-					<h2 class="comments-subtitle fright"><a href="#respond"><?php _e('Add yours', 'garfunkel'); echo ' &rarr;'; ?></a></h2>
+					<h2 class="comments-subtitle fright"><a href="#respond"><?php echo __( 'Add yours', 'garfunkel' ) . ' &rarr;'; ?></a></h2>
 				
 				<?php endif; ?>
 				
 				<div class="clear"></div>
 			
-			</div> <!-- /comments-title-container -->
+			</div><!-- .comments-title-container -->
 	
 			<ol class="commentlist">
 			    <?php wp_list_comments( array( 'type' => 'comment', 'callback' => 'garfunkel_comment' ) ); ?>
 			</ol>
 			
-			<?php if (!empty($comments_by_type['pings'])) : ?>
+			<?php if ( ! empty( $comments_by_type['pings'] ) ) : ?>
 			
 				<div class="pingbacks-container">
 								
 					<h3 class="pingbacks-title">
 					
-						<?php echo count($wp_query->comments_by_type[pings]) . ' ';
-						echo _n( 'Pingback', 'Pingbacks', count($wp_query->comments_by_type[pings]), 'garfunkel' ); ?>
+						<?php 
+						$pingback_count = count( $wp_query->comments_by_type['pings'] );
+						printf( _n( '%s Pingback', '%s Pingbacks', $pingback_count, 'garfunkel' ), $pingback_count ); ?>
 					
 					</h3>
 				
@@ -46,7 +48,7 @@
 					    <?php wp_list_comments( array( 'type' => 'pings', 'callback' => 'garfunkel_comment' ) ); ?>
 					</ol>
 											
-				</div> <!-- /pingbacks-container -->
+				</div><!-- .pingbacks-container -->
 			
 			<?php endif; ?>
 			
@@ -62,13 +64,13 @@
 				
 				<div class="clear"></div>
 				
-			</div> <!-- /comments-nav -->
+			</div><!-- .comments-nav -->
 			
 		<?php endif; ?>
 		
 	<?php endif; ?>
 	
-	<?php if ( ! comments_open() && !is_page() ) : ?>
+	<?php if ( ! comments_open() && ! is_page() ) : ?>
 	
 		<p class="nocomments"><?php _e( 'Comments are closed.', 'garfunkel' ); ?></p>
 		
@@ -81,10 +83,10 @@
 	
 		'comment_field' => 
 			'<p class="comment-form-comment">' . 
-			'<label for="comment">' . __('Comment','garfunkel') . '</label>' . 
+			'<label for="comment">' . __( 'Comment', 'garfunkel' ) . '</label>' . 
 			'<textarea id="comment" name="comment" cols="45" rows="6" required>' . '</textarea></p>',		
 	);
 	
-	comment_form($comments_args);
+	comment_form( $comments_args );
 	
 	?>
