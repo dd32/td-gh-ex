@@ -14,9 +14,9 @@
 											
 					</div>
 					
-				</div>
+				</div><!-- .footer-a -->
 				
-			<?php endif; ?> <!-- /footer-a -->
+			<?php endif; ?>
 				
 			<?php if ( is_active_sidebar( 'footer-b' ) ) : ?>
 			
@@ -26,11 +26,11 @@
 			
 						<?php dynamic_sidebar( 'footer-b' ); ?>
 											
-					</div> <!-- /widgets -->
+					</div><!-- .widgets -->
 					
-				</div>
+				</div><!-- .footer-b -->
 				
-			<?php endif; ?> <!-- /footer-b -->
+			<?php endif; ?>
 								
 			<?php if ( is_active_sidebar( 'footer-c' ) ) : ?>
 			
@@ -40,17 +40,17 @@
 			
 						<?php dynamic_sidebar( 'footer-c' ); ?>
 											
-					</div> <!-- /widgets -->
+					</div><!-- .widgets -->
 					
-				</div>
+				</div><!-- .footer-c -->
 				
-			<?php endif; ?> <!-- /footer-c -->
+			<?php endif; ?>
 			
 			<div class="clear"></div>
 		
-		</div> <!-- /footer-inner -->
+		</div><!-- .footer-inner -->
 	
-	</div> <!-- /footer -->
+	</div><!-- .footer -->
 
 <?php endif; ?>
 
@@ -63,43 +63,43 @@
 		<div class="fleft">
 		
 			<ul class="credits-menu">
-
 						
-				<?php if ( has_nav_menu( 'primary' ) ) {
+				<?php 
+				
+				if ( has_nav_menu( 'primary' ) ) {
 																	
 					wp_nav_menu( array( 
-					
-						'container' => '', 
-						'items_wrap' => '%3$s',
-						'theme_location' => 'primary',
-						'depth' => '1'
-													
-					) ); } else {
+						'container' 		=> '', 
+						'depth' 			=> '1',
+						'items_wrap' 		=> '%3$s',
+						'theme_location' 	=> 'primary',
+					) ); 
+				
+				} else {
 				
 					wp_list_pages( array(
-					
 						'container' => '',
-						'title_li' => ''
+						'title_li' 	=> ''
+					) );
 					
-					));
-					
-				} ?>
+				} 
+				?>
 				
 				<div class="clear"></div>
 					
 			 </ul>
 
-			<p>&copy; <?php echo date("Y") ?> <a href="<?php echo esc_url( home_url() ); ?>" title="<?php esc_attr( bloginfo('name') ); ?>"><?php bloginfo('name'); ?></a>. <?php _e('All rights reserved.','hoffman'); ?></p>
+			<p>&copy; <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( home_url() ); ?>" title="<?php esc_attr( bloginfo( 'name' ) ); ?>"><?php bloginfo( 'name' ); ?></a>. <?php _e( 'All rights reserved.', 'hoffman' ); ?></p>
 			
 			<p><?php _e( 'Theme by', 'hoffman' ); ?> <a href="http://www.andersnoren.se">Anders Nor&eacute;n</a>.</p>		
 			
-		</div> <!-- /fleft -->
+		</div><!-- .fleft -->
 		
 		<div class="clear"></div>
 		
-	</div>
+	</div><!-- .section-inner -->
 
-</div> <!-- /credits -->
+</div><!-- .credits -->
 
 <?php wp_footer(); ?>
 

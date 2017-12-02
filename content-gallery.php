@@ -2,14 +2,14 @@
 
 	<div class="featured-media">	
 		
-		<?php hoffman_flexslider('post-image'); ?>
+		<?php hoffman_flexslider( 'post-image' ); ?>
 		
-	</div> <!-- /featured-media -->
+	</div><!-- .featured-media -->
 	
 	<?php 
-		if ( is_sticky() ) { 
-			echo '<a class="is-sticky" href="' . get_permalink() . '" title="' . __('Sticky post','hoffman') . '"><span class="genericon genericon-pinned"></span></a>'; 
-		} 
+	if ( is_sticky() ) { 
+		echo '<a class="is-sticky" href="' . get_permalink() . '" title="' . __( 'Sticky post', 'hoffman' ) . '"><span class="genericon genericon-pinned"></span></a>'; 
+	} 
 	?>
 	
 	<div class="post-inner section-inner thin">
@@ -18,24 +18,23 @@
 			
 			<div class="post-meta top">
 			
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_time(get_option('date_format')); ?></a>
+				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_time( get_option( 'date_format' ) ); ?></a>
 				
 				<?php 
-					if ( comments_open() ) {
-						echo '<span class="sep">/</span> '; 
-						comments_popup_link( __( '0 Comments', 'hoffman' ), __( '1 Comment', 'hoffman' ), __( '% Comments', 'hoffman' ) );
-					}
-				?> 
+				if ( comments_open() ) {
+					echo '<span class="sep">/</span> '; 
+					comments_popup_link( __( '0 Comments', 'hoffman' ), __( '1 Comment', 'hoffman' ), __( '% Comments', 'hoffman' ) );
+				}
 				
-				<?php if ( is_sticky() ) { echo '<span class="sep">/</span> '; _e('Sticky','hoffman'); } ?>
+				if ( is_sticky() ) echo '<span class="sep">/</span> ' . __( 'Sticky', 'hoffman' );
 				
-				<?php edit_post_link( __('Edit','hoffman'), '<span class="sep">/</span> ', ''); ?>
+				edit_post_link( __( 'Edit', 'hoffman' ), '<span class="sep">/</span> ', '' ); ?>
 				
 			</div>
 			
 		    <h2 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 		    	    
-		</div> <!-- /post-header -->
+		</div><!-- .post-header -->
 		
 		<div class="post-content">
 		
@@ -43,6 +42,6 @@
 		
 		</div>
 	
-	</div> <!-- /post-inner -->
+	</div><!-- .post-inner -->
 
-</div>
+</div><!-- .post -->

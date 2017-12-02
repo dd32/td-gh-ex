@@ -8,14 +8,13 @@
 			
 				<h4 class="section-inner">
 			
-					<?php _e( 'Search results:', 'hoffman'); echo ' "' . get_search_query() . '"'; ?>
-				
-					<?php
-					$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+					<?php printf( __( 'Search results: "%s"', 'hoffman' ), get_search_query() );
 					
-					if ( "1" < $wp_query->max_num_pages ) : ?>
+					$paged = get_query_var( 'paged' ) ?: 1;
 					
-						<span><?php printf( __('(page %s of %s)', 'hoffman'), $paged, $wp_query->max_num_pages ); ?></span>
+					if ( 1 < $wp_query->max_num_pages ) : ?>
+					
+						<span><?php printf( __( '(page %s of %s)', 'hoffman' ), $paged, $wp_query->max_num_pages ); ?></span>
 					
 					<?php endif; ?>
 				
@@ -25,25 +24,25 @@
 					
 			<div class="posts" id="posts">
 				
-				<?php while (have_posts()) : the_post(); ?>
+				<?php while( have_posts() ) : the_post(); ?>
 		    	
 		    		<?php get_template_part( 'content', get_post_format() ); ?>
-		    			        		            
+
 		        <?php endwhile; ?>
 							
-			</div> <!-- /posts -->
+			</div><!-- .posts -->
 			
 			<?php if ( $wp_query->max_num_pages > 1 ) : ?>
 			
 				<div class="archive-nav">
 				
-					<?php echo get_next_posts_link( '&laquo; ' . __('Older posts', 'hoffman')); ?>
+					<?php echo get_next_posts_link( '&laquo; ' . __( 'Older posts', 'hoffman' ) ); ?>
 						
-					<?php echo get_previous_posts_link( __('Newer posts', 'hoffman') . ' &raquo;'); ?>
+					<?php echo get_previous_posts_link( __( 'Newer posts', 'hoffman' ) . ' &raquo;' ); ?>
 					
 					<div class="clear"></div>
 					
-				</div> <!-- /post-nav archive-nav -->
+				</div><!-- .post-nav archive-nav -->
 								
 			<?php endif; ?>
 	
@@ -53,14 +52,13 @@
 		
 				<h4>
 			
-					<?php echo _e( 'Search results:', 'hoffman') . ' "' . get_search_query() . '"'; ?>
-				
-					<?php
-					$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+					<?php printf( __( 'Search results: "%s"', 'hoffman' ), get_search_query() );
 					
-					if ( "1" < $wp_query->max_num_pages ) : ?>
+					$paged = get_query_var( 'paged' ) ?: 1;
 					
-						<span><?php printf( __('(page %s of %s)', 'hoffman'), $paged, $wp_query->max_num_pages ); ?></span>
+					if ( 1 < $wp_query->max_num_pages ) : ?>
+					
+						<span><?php printf( __( '(page %s of %s)', 'hoffman' ), $paged, $wp_query->max_num_pages ); ?></span>
 					
 					<?php endif; ?>
 					
@@ -72,18 +70,18 @@
 			
 				<div class="post-content section-inner thin">
 				
-					<p><?php _e('No results. Try again, would you kindly?', 'hoffman'); ?></p>
+					<p><?php _e( 'No results. Try again, would you kindly?', 'hoffman' ); ?></p>
 					
 					<?php get_search_form(); ?>
 				
-				</div> <!-- /post-content -->
+				</div><!-- .post-content -->
 				
 				<div class="clear"></div>
 			
-			</div> <!-- /post -->
+			</div><!-- .post -->
 		
 		<?php endif; ?>
 		
-	</div> <!-- /content section-inner -->
+	</div><!-- .content section-inner -->
 		
 <?php get_footer(); ?>

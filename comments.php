@@ -1,6 +1,8 @@
-<?php if ( post_password_required() ) return; ?>
+<?php 
+if ( post_password_required() ) 
+	return;
 
-<?php if ( have_comments() ) : ?>
+	if ( have_comments() ) : ?>
 
 	<a name="comments"></a>
 
@@ -10,20 +12,21 @@
 		
 			<h2 class="comments-title fleft">
 			
-				<?php echo count($wp_query->comments_by_type[comment]) . ' ';
-				echo _n( 'Comment' , 'Comments' , count($wp_query->comments_by_type[comment]), 'hoffman' ); ?>
+				<?php 
+				$comment_count = count( $wp_query->comments_by_type['comment'] );
+				printf( _n( '%s Comment', '%s Comments', $comment_count, 'hoffman' ), $comment_count ); ?>
 				
 			</h2>
 			
 			<?php if ( comments_open() ) : ?>
 			
-				<h4 class="comments-subtitle fright"><a href="#respond"><?php _e('Add yours','hoffman'); ?> &rarr;</a></h4>
+				<h4 class="comments-subtitle fright"><a href="#respond"><?php _e( 'Add yours', 'hoffman' ); ?> &rarr;</a></h4>
 			
 			<?php endif; ?>
 			
 			<div class="clear"></div>
 		
-		</div> <!-- /comments-title-container -->
+		</div><!-- .comments-title-container -->
 		
 		<div class="clear"></div>
 
@@ -31,7 +34,7 @@
 		    <?php wp_list_comments( array( 'type' => 'comment', 'callback' => 'hoffman_comment' ) ); ?>
 		</ol>
 		
-		<?php if (!empty($comments_by_type['pings'])) : ?>
+		<?php if ( ! empty( $comments_by_type['pings'] ) ) : ?>
 		
 			<div class="pingbacks">
 			
@@ -39,8 +42,9 @@
 			
 					<h3 class="pingbacks-title">
 					
-						<?php echo count($wp_query->comments_by_type[pings]) . ' ';
-						echo _n( 'Pingback', 'Pingbacks', count($wp_query->comments_by_type[pings]), 'hoffman' ); ?>
+						<?php 
+						$pingback_count = count( $wp_query->comments_by_type['pings'] );
+						printf( _n( '%s Pingback', '%s Pingbacks', $pingback_count, 'hoffman' ), $pingback_count ); ?>
 					
 					</h3>
 				
@@ -58,25 +62,16 @@
 			
 			<div class="comments-nav" role="navigation">
 			
-				<div class="fleft">
-									
-					<?php previous_comments_link( '&laquo; ' . __( 'Older Comments', 'hoffman' ) ); ?>
-				
-				</div>
-				
-				<div class="fright">
-				
-					<?php next_comments_link( __( 'Newer Comments', 'hoffman' ) . ' &raquo;' ); ?>
-				
-				</div>
+				<div class="fleft"><?php previous_comments_link( '&laquo; ' . __( 'Older Comments', 'hoffman' ) ); ?></div>
+				<div class="fright"><?php next_comments_link( __( 'Newer Comments', 'hoffman' ) . ' &raquo;' ); ?></div>
 				
 				<div class="clear"></div>
 				
-			</div> <!-- /comment-nav-below -->
+			</div><!-- .comment-nav-below -->
 			
 		<?php endif; ?>
 		
-	</div> <!-- /comments -->
+	</div><!-- .comments -->
 	
 <?php endif; ?>
 
@@ -96,7 +91,7 @@
 
 	'comment_field' => 
 		'<p class="comment-form-comment">
-			<label for="comment">' . __('Comment','hoffman') . '</label>
+			<label for="comment">' . __( 'Comment', 'hoffman' ) . '</label>
 			<textarea id="comment" name="comment" cols="45" rows="6" required></textarea>
 		</p>',
 	
@@ -104,24 +99,24 @@
 	
 		'author' =>
 			'<p class="comment-form-author">
-				<label for="author">' . __('Name','hoffman') . ( $req ? '<span class="required">*</span>' : '' ) . '</label> 
+				<label for="author">' . __( 'Name', 'hoffman' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label> 
 				<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" />
 			</p>',
 		
 		'email' =>
 			'<p class="comment-form-email">
-				<label for="email">' . __('Email','hoffman') . ( $req ? '<span class="required">*</span>' : '' ) . '</label> 
+				<label for="email">' . __( 'Email', 'hoffman' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label> 
 				<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" />
 			</p>',
 		
 		'url' =>
 			'<p class="comment-form-url">
-				<label for="url">' . __('Website','hoffman') . '</label>
+				<label for="url">' . __( 'Website', 'hoffman' ) . '</label>
 				<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" />
 			</p>')
 	),
 );
 
-comment_form($comments_args);
+comment_form( $comments_args );
 
 ?>

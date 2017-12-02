@@ -23,11 +23,16 @@
 			        	<img src='<?php echo esc_url( get_theme_mod( 'hoffman_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>'>
 			        </a>
 			
-				<?php elseif ( get_bloginfo( 'description' ) || get_bloginfo( 'title' ) ) : ?>
+				<?php elseif ( get_bloginfo( 'description' ) || get_bloginfo( 'title' ) ) : 
+
+					// h2 title on singular, h1 elsewhere
+					$title_type = is_singular() ? '2' : '1';
+					
+					?>
 			
-					<h1 class="blog-title">
+					<h<?php echo $title_type; ?> class="blog-title">
 						<a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?> &mdash; <?php echo esc_attr( get_bloginfo( 'description' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'title' ) ); ?></a>
-					</h1>
+					</h<?php echo $title_type; ?>>
 					
 					<?php if (  get_bloginfo( 'description' ) ) : ?>
 					
@@ -60,7 +65,7 @@
 				
 				<div class="clear"></div>
 								
-			</div> <!-- /header -->
+			</div><!-- .header -->
 			
 			<div class="navigation bg-dark hidden">
 		
@@ -68,52 +73,47 @@
 				
 					<ul class="main-menu">
 						
-						<?php if ( has_nav_menu( 'primary' ) ) {
-																			
-							wp_nav_menu( array( 
-							
-								'container' => '', 
-								'items_wrap' => '%3$s',
-								'theme_location' => 'primary'
-															
-							) ); } else {
+						<?php 
 						
-							wp_list_pages( array(
-							
+						if ( has_nav_menu( 'primary' ) ) {
+
+							$nav_args = array( 
+								'container' 		=> '', 
+								'items_wrap' 		=> '%3$s',
+								'theme_location' 	=> 'primary'
+							);
+																			
+							wp_nav_menu( $nav_args ); 
+
+						} else {
+
+							$list_pages_args = array(
 								'container' => '',
-								'title_li' => ''
+								'title_li' 	=> ''
+							);
 							
-							));
+							wp_list_pages( $list_pages_args );
 							
-						} ?>
+						} 
+						
+						?>
 						
 						<div class="clear"></div>
 							
 					 </ul>
 					 
 					 <ul class="mobile-menu hidden">
+						
+						<?php 
+						if ( has_nav_menu( 'primary' ) ) {						
+							wp_nav_menu( $nav_args ); 
+						} else {
+							wp_list_pages( $list_pages_args );
+						} 
+						?>
+						
+					</ul>
+						
+				</div><!-- .section-inner -->
 					
-					<?php if ( has_nav_menu( 'primary' ) ) {
-																		
-						wp_nav_menu( array( 
-						
-							'container' => '', 
-							'items_wrap' => '%3$s',
-							'theme_location' => 'primary'
-														
-						) ); } else {
-					
-						wp_list_pages( array(
-						
-							'container' => '',
-							'title_li' => ''
-						
-						));
-						
-					} ?>
-					
-				</ul>
-						
-				</div> <!-- /section-inner -->
-					
-			</div> <!-- /navigation -->
+			</div><!-- .navigation -->
