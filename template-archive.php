@@ -59,7 +59,7 @@ get_header(); ?>
 							
 							if ( $tags ) {
 								foreach ( $tags as $tag ) {
-									echo '<li><a href="' . get_tag_link( $tag->term_id ) . '" title="' . sprintf( __( 'View all posts in %s', 'garfunkel' ), $tag->name ) . '">' . $tag->name . '</a></li> ';
+									echo '<li><a href="' . get_tag_link( $tag->term_id ) . '" title="' . sprintf( __( 'View all posts in %s', 'hoffman' ), $tag->name ) . '">' . $tag->name . '</a></li> ';
 								}
 							}
 							?>

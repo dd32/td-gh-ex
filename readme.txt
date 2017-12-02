@@ -75,6 +75,11 @@ Source: http://flexslider.woothemes.com
 
 == Changelog ==
 
+
+Version 1.19 (2017-12-02)
+-------------------------
+- Fixed silly text domain issue
+
 Version 1.18 (2017-12-02)
 -------------------------
 - Updated to the new readme.txt format, with changelog.txt incorporated into it
