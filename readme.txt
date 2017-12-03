@@ -41,6 +41,10 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.59 (2017-12-03)
+-------------------------
+- The pluggable update: made all functions in functions.php pluggable
+
 Version 1.58 (2017-11-28)
 -------------------------
 - Cleaned up a bit in archive.php

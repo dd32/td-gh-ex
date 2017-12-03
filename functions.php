@@ -6,48 +6,56 @@
    --------------------------------------------------------------------------------------------- */
 
 
-function hemingway_setup() {
-	
-	// Automatic feed
-	add_theme_support( 'automatic-feed-links' );
-	
-	// Custom background
-	add_theme_support( 'custom-background' );
-		
-	// Post thumbnails
-	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'post-image', 676, 9999 );
+if ( ! function_exists( 'hemingway_setup' ) ) {
 
-	// Post formats
-	add_theme_support( 'post-formats', array( 'video', 'aside', 'quote' ) );
-
-	// Custom header
-	$args = array(
-		'width'         => 1280,
-		'height'        => 416,
-		'default-image' => get_template_directory_uri() . '/images/header.jpg',
-		'uploads'       => true,
-		'header-text'  	=> false
+	function hemingway_setup() {
 		
-	);
-	add_theme_support( 'custom-header', $args );
-	
-	// Title tag
-	add_theme_support( 'title-tag' );
-	
-	// Add nav menu
-	register_nav_menu( 'primary', 'Primary Menu' );
-	
-	// Make the theme translation ready
-	load_theme_textdomain( 'hemingway', get_template_directory() . '/languages' );
-	
-	$locale = get_locale();
-	$locale_file = get_template_directory() . "/languages/$locale.php";
-	if ( is_readable($locale_file) )
-	  require_once($locale_file);
-	
+		// Automatic feed
+		add_theme_support( 'automatic-feed-links' );
+		
+		// Custom background
+		add_theme_support( 'custom-background' );
+			
+		// Post thumbnails
+		add_theme_support( 'post-thumbnails' );
+		add_image_size( 'post-image', 676, 9999 );
+
+		// Post formats
+		add_theme_support( 'post-formats', array( 'video', 'aside', 'quote' ) );
+
+		// Custom header
+		$args = array(
+			'width'         => 1280,
+			'height'        => 416,
+			'default-image' => get_template_directory_uri() . '/images/header.jpg',
+			'uploads'       => true,
+			'header-text'  	=> false
+			
+		);
+		add_theme_support( 'custom-header', $args );
+		
+		// Title tag
+		add_theme_support( 'title-tag' );
+
+		// Set content width
+		global $content_width;
+		if ( ! isset( $content_width ) ) $content_width = 676;
+		
+		// Add nav menu
+		register_nav_menu( 'primary', 'Primary Menu' );
+		
+		// Make the theme translation ready
+		load_theme_textdomain( 'hemingway', get_template_directory() . '/languages' );
+		
+		$locale = get_locale();
+		$locale_file = get_template_directory() . "/languages/$locale.php";
+		if ( is_readable($locale_file) )
+		require_once($locale_file);
+		
+	}
+	add_action( 'after_setup_theme', 'hemingway_setup' );
+
 }
-add_action( 'after_setup_theme', 'hemingway_setup' );
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -55,14 +63,17 @@ add_action( 'after_setup_theme', 'hemingway_setup' );
    --------------------------------------------------------------------------------------------- */
 
 
-function hemingway_load_javascript_files() {
-	if ( ! is_admin() ) {
-		wp_enqueue_script( 'hemingway_global', get_template_directory_uri() . '/js/global.js', array( 'jquery' ), '', true );
-		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
-	}
-}
+if ( ! function_exists( 'hemingway_load_javascript_files' ) ) {
 
-add_action( 'wp_enqueue_scripts', 'hemingway_load_javascript_files' );
+	function hemingway_load_javascript_files() {
+		if ( ! is_admin() ) {
+			wp_enqueue_script( 'hemingway_global', get_template_directory_uri() . '/js/global.js', array( 'jquery' ), '', true );
+			if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+		}
+	}
+	add_action( 'wp_enqueue_scripts', 'hemingway_load_javascript_files' );
+
+}
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -70,14 +81,17 @@ add_action( 'wp_enqueue_scripts', 'hemingway_load_javascript_files' );
    --------------------------------------------------------------------------------------------- */
 
 
-function hemingway_load_style() {
-	if ( ! is_admin() ) {
-	    wp_enqueue_style( 'hemingway_googleFonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Raleway:700,400' );
-	    wp_enqueue_style( 'hemingway_style', get_template_directory_uri() . '/style.css' );
-	}
-}
+if ( ! function_exists( 'hemingway_load_style' ) ) {
 
-add_action( 'wp_print_styles', 'hemingway_load_style' );
+	function hemingway_load_style() {
+		if ( ! is_admin() ) {
+			wp_enqueue_style( 'hemingway_googleFonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Raleway:700,400' );
+			wp_enqueue_style( 'hemingway_style', get_template_directory_uri() . '/style.css' );
+		}
+	}
+	add_action( 'wp_print_styles', 'hemingway_load_style' );
+
+}
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -85,12 +99,16 @@ add_action( 'wp_print_styles', 'hemingway_load_style' );
    --------------------------------------------------------------------------------------------- */
 
 
-function hemingway_add_editor_styles() {
-    add_editor_style( 'hemingway-editor-style.css' );
-    $font_url = '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Raleway:700,400';
-    add_editor_style( str_replace( ',', '%2C', $font_url ) );
+if ( ! function_exists( 'hemingway_add_editor_styles' ) ) {
+
+	function hemingway_add_editor_styles() {
+		add_editor_style( 'hemingway-editor-style.css' );
+		$font_url = '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Raleway:700,400';
+		add_editor_style( str_replace( ',', '%2C', $font_url ) );
+	}
+	add_action( 'init', 'hemingway_add_editor_styles' );
+
 }
-add_action( 'init', 'hemingway_add_editor_styles' );
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -98,50 +116,54 @@ add_action( 'init', 'hemingway_add_editor_styles' );
    --------------------------------------------------------------------------------------------- */
 
 
-function hemingway_sidebar_reg() {
+if ( ! function_exists( 'hemingway_sidebar_registration' ) ) {
 
-	register_sidebar( array(
-		'name' 			=> __( 'Footer A', 'hemingway' ),
-		'id' 			=> 'footer-a',
-		'description' 	=> __( 'Widgets in this area will be shown in the left column in the footer.', 'hemingway' ),
-		'before_title' 	=> '<h3 class="widget-title">',
-		'after_title' 	=> '</h3>',
-		'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
-		'after_widget' 	=> '</div><div class="clear"></div></div>'
-	) );
+	function hemingway_sidebar_registration() {
 
-	register_sidebar( array(
-		'name' 			=> __( 'Footer B', 'hemingway' ),
-		'id' 			=> 'footer-b',
-		'description' 	=> __( 'Widgets in this area will be shown in the middle column in the footer.', 'hemingway' ),
-		'before_title' 	=> '<h3 class="widget-title">',
-		'after_title' 	=> '</h3>',
-		'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
-		'after_widget' 	=> '</div><div class="clear"></div></div>'
-	) );
+		register_sidebar( array(
+			'name' 			=> __( 'Footer A', 'hemingway' ),
+			'id' 			=> 'footer-a',
+			'description' 	=> __( 'Widgets in this area will be shown in the left column in the footer.', 'hemingway' ),
+			'before_title' 	=> '<h3 class="widget-title">',
+			'after_title' 	=> '</h3>',
+			'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+			'after_widget' 	=> '</div><div class="clear"></div></div>'
+		) );
 
-	register_sidebar( array(
-		'name' 			=> __( 'Footer C', 'hemingway' ),
-		'id' 			=> 'footer-c',
-		'description' 	=> __( 'Widgets in this area will be shown in the right column in the footer.', 'hemingway' ),
-		'before_title' 	=> '<h3 class="widget-title">',
-		'after_title' 	=> '</h3>',
-		'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
-		'after_widget' 	=> '</div><div class="clear"></div></div>'
-	) );
+		register_sidebar( array(
+			'name' 			=> __( 'Footer B', 'hemingway' ),
+			'id' 			=> 'footer-b',
+			'description' 	=> __( 'Widgets in this area will be shown in the middle column in the footer.', 'hemingway' ),
+			'before_title' 	=> '<h3 class="widget-title">',
+			'after_title' 	=> '</h3>',
+			'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+			'after_widget' 	=> '</div><div class="clear"></div></div>'
+		) );
 
-	register_sidebar( array(
-		'name' 			=> __( 'Sidebar', 'hemingway' ),
-		'id' 			=> 'sidebar',
-		'description'	=> __( 'Widgets in this area will be shown in the sidebar.', 'hemingway' ),
-		'before_title' 	=> '<h3 class="widget-title">',
-		'after_title' 	=> '</h3>',
-		'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
-		'after_widget' 	=> '</div><div class="clear"></div></div>'
-	) );
+		register_sidebar( array(
+			'name' 			=> __( 'Footer C', 'hemingway' ),
+			'id' 			=> 'footer-c',
+			'description' 	=> __( 'Widgets in this area will be shown in the right column in the footer.', 'hemingway' ),
+			'before_title' 	=> '<h3 class="widget-title">',
+			'after_title' 	=> '</h3>',
+			'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+			'after_widget' 	=> '</div><div class="clear"></div></div>'
+		) );
+
+		register_sidebar( array(
+			'name' 			=> __( 'Sidebar', 'hemingway' ),
+			'id' 			=> 'sidebar',
+			'description'	=> __( 'Widgets in this area will be shown in the sidebar.', 'hemingway' ),
+			'before_title' 	=> '<h3 class="widget-title">',
+			'after_title' 	=> '</h3>',
+			'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+			'after_widget' 	=> '</div><div class="clear"></div></div>'
+		) );
+
+	}
+	add_action( 'widgets_init', 'hemingway_sidebar_registration' ); 
 
 }
-add_action( 'widgets_init', 'hemingway_sidebar_reg' ); 
 	
 
 /* ---------------------------------------------------------------------------------------------
@@ -154,27 +176,27 @@ require_once( get_template_directory() . '/widgets/flickr-widget.php' );
 
 
 /* ---------------------------------------------------------------------------------------------
-   SET CONTENT WIDTH
-   --------------------------------------------------------------------------------------------- */
-
-
-if ( ! isset( $content_width ) ) $content_width = 676;
-
-
-/* ---------------------------------------------------------------------------------------------
    ADD CLASSES TO PAGINATION LINKS
    --------------------------------------------------------------------------------------------- */
 
 
-function hemingway_next_posts_link_class() {
-    return 'class="post-nav-older"';
-}
-add_filter( 'next_posts_link_attributes', 'hemingway_next_posts_link_class' );
+if ( ! function_exists( 'hemingway_next_posts_link_class' ) ) {
 
-function hemingway_prev_posts_link_class() {
-    return 'class="post-nav-newer"';
+	function hemingway_next_posts_link_class() {
+		return 'class="post-nav-older"';
+	}
+	add_filter( 'next_posts_link_attributes', 'hemingway_next_posts_link_class' );
+
 }
-add_filter( 'previous_posts_link_attributes', 'hemingway_prev_posts_link_class' );
+
+if ( ! function_exists( 'hemingway_prev_posts_link_class' ) ) {
+
+	function hemingway_prev_posts_link_class() {
+		return 'class="post-nav-newer"';
+	}
+	add_filter( 'previous_posts_link_attributes', 'hemingway_prev_posts_link_class' );
+
+}
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -198,16 +220,20 @@ class hemingway_nav_walker extends Walker_Nav_Menu {
    --------------------------------------------------------------------------------------------- */
 
 
-function hemingway_body_classes( $classes ) {
+if ( ! function_exists( 'hemingway_body_classes' ) ) {
 
-	// If there's a post thumbnail
-	if ( has_post_thumbnail() ) {
-		$classes[] = 'has-featured-image';
+	function hemingway_body_classes( $classes ) {
+
+		// If there's a post thumbnail
+		if ( has_post_thumbnail() ) {
+			$classes[] = 'has-featured-image';
+		}
+
+		return $classes;
 	}
+	add_action( 'body_class', 'hemingway_body_classes' );
 
-	return $classes;
 }
-add_action( 'body_class', 'hemingway_body_classes' );
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -215,10 +241,14 @@ add_action( 'body_class', 'hemingway_body_classes' );
    --------------------------------------------------------------------------------------------- */
 
 
-function hemingway_custom_more_link( $more_link, $more_link_text ) {
-	return str_replace( $more_link_text, __( 'Continue reading', 'hemingway' ), $more_link );
+if ( ! function_exists( 'hemingway_custom_more_link' ) ) {
+
+	function hemingway_custom_more_link( $more_link, $more_link_text ) {
+		return str_replace( $more_link_text, __( 'Continue reading', 'hemingway' ), $more_link );
+	}
+	add_filter( 'the_content_more_link', 'hemingway_custom_more_link', 10, 2 );
+
 }
-add_filter( 'the_content_more_link', 'hemingway_custom_more_link', 10, 2 );
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -226,16 +256,20 @@ add_filter( 'the_content_more_link', 'hemingway_custom_more_link', 10, 2 );
    --------------------------------------------------------------------------------------------- */
 
 
-function hemingway_admin_css() { ?>
-   <style type="text/css">
-		#postimagediv #set-post-thumbnail img {
-			max-width: 100%;
-			height: auto;
-		}
-	</style>
-	<?php 
+if ( ! function_exists( 'hemingway_admin_css' ) ) {
+
+	function hemingway_admin_css() { ?>
+	<style type="text/css">
+			#postimagediv #set-post-thumbnail img {
+				max-width: 100%;
+				height: auto;
+			}
+		</style>
+		<?php 
+	}
+	add_action( 'admin_head', 'hemingway_admin_css' );
+
 }
-add_action( 'admin_head', 'hemingway_admin_css' );
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -243,7 +277,7 @@ add_action( 'admin_head', 'hemingway_admin_css' );
    --------------------------------------------------------------------------------------------- */
 
 
-if ( ! function_exists( 'hemingway_comment' ) ) :
+if ( ! function_exists( 'hemingway_comment' ) ) {
 	function hemingway_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
 		switch ( $comment->comment_type ) :
@@ -309,7 +343,7 @@ if ( ! function_exists( 'hemingway_comment' ) ) :
 			break;
 		endswitch;
 	}
-endif;
+}
 
 
 /* ---------------------------------------------------------------------------------------------
