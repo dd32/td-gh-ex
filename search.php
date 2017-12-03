@@ -10,14 +10,14 @@
 			
 				<div class="page-title">
 				
-					<h4><?php _e( 'Search results:', 'lovecraft'); echo ' "' . get_search_query() . '"'; ?>
+					<h4><?php printf( _x( 'Search results: "%s"', 'Variable: Search query text', 'lovecraft' ), get_search_query() ); ?>
 					
 					<?php
-					$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+					$paged = get_query_var( 'paged' ) ?: 1;
 					
-					if ( "1" < $wp_query->max_num_pages ) : ?>
+					if ( 1 < $wp_query->max_num_pages ) : ?>
 					
-						<span><?php printf( __('(Page %s of %s)', 'lovecraft'), $paged, $wp_query->max_num_pages ); ?></span>
+						<span><?php printf( __( '(Page %s of %s)', 'lovecraft' ), $paged, $wp_query->max_num_pages ); ?></span>
 						
 						<div class="clear"></div>
 					
@@ -27,25 +27,26 @@
 						
 				<div class="posts" id="posts">
 					
-					<?php while (have_posts()) : the_post(); ?>
-			    	
-			    		<?php get_template_part( 'content', get_post_format() ); ?>
-			    			        		            
-			        <?php endwhile; ?>
+					<?php 
+					while( have_posts() ) : the_post();
+					
+						get_template_part( 'content', get_post_format() );
+						
+					endwhile; 
+					?>
 								
-				</div> <!-- /posts -->
+				</div><!-- .posts -->
 				
-				<?php lovecraft_archive_navigation(); ?>
+				<?php 
+				lovecraft_archive_navigation();
 				
-			<?php else : ?>	
+			else : ?>	
 							
 				<div class="page-title">
 			
-					<h4>
-						<?php _e( 'Search results:', 'lovecraft'); echo ' "' . get_search_query() . '"'; ?>
-					</h4>
+					<h4><?php printf( _x( 'Search results: "%s"', 'Variable: Search query text', 'lovecraft' ), get_search_query() ); ?></h4>
 					
-				</div> <!-- /page-title -->
+				</div><!-- .page-title -->
 							
 				<div class="post single">
 				
@@ -53,28 +54,28 @@
 				
 						<div class="post-content">
 						
-							<p><?php _e('No results. Try again, would you kindly?', 'lovecraft'); ?></p>
+							<p><?php _e( 'No results. Try again, would you kindly?', 'lovecraft' ); ?></p>
 							
 							<?php get_search_form(); ?>
 						
-						</div> <!-- /post-content -->
+						</div><!-- .post-content -->
 					
-					</div> <!-- /post-inner -->
+					</div><!-- .post-inner -->
 					
 					<div class="clear"></div>
 				
-				</div> <!-- /post -->
+				</div><!-- .post -->
 		
 			<?php endif; ?>
 	
-		</div> <!-- /content -->
+		</div><!-- .content -->
 		
 		<?php get_sidebar(); ?>
 		
 		<div class="clear"></div>
 	
-	</div> <!-- /section-inner -->
+	</div><!-- .section-inner -->
 	
-</div> <!-- /wrapper.section -->
+</div><!-- .wrapper.section -->
 		
 <?php get_footer(); ?>

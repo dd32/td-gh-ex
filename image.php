@@ -6,9 +6,9 @@
 
 		<div class="content">
 													        
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<?php if ( have_posts() ) : while( have_posts() ) : the_post(); ?>
 			
-				<div id="post-<?php the_ID(); ?>" <?php post_class('single post'); ?>>
+				<div id="post-<?php the_ID(); ?>" <?php post_class( 'single post' ); ?>>
 						
 					<div class="post-image">
 		
@@ -20,49 +20,57 @@
 					
 						<div class="post-header">
 						
-							<h2 class="post-title"><?php echo basename(get_attached_file( $post->ID )); ?></h2>
+							<h2 class="post-title"><?php echo basename( get_attached_file( $post->ID ) ); ?></h2>
 							
 							<div class="post-meta">
 						
-								<p><?php _e('By','lovecraft'); ?> <?php the_author_posts_link(); ?></p>
-								<p class="post-date"><?php _e('On','lovecraft'); ?> <a href="<?php the_permalink(); ?>"><?php the_date(get_option('date_format')); ?></a></p>
-								<?php $imageArray = wp_get_attachment_image_src($post->ID, 'full', false); $url = $imageArray['0']; ?>
-								<p><?php _e('Resolution:','lovecraft'); ?> <?php echo $imageArray['1'] . 'x' . $imageArray['2'] . ' px'; ?></p>
+								<p><?php _e( 'By', 'lovecraft' ); ?> <?php the_author_posts_link(); ?></p>
+
+								<p class="post-date"><?php _e( 'On', 'lovecraft' ); ?> <a href="<?php the_permalink(); ?>"><?php the_date(get_option( 'date_format' )); ?></a></p>
+
+								<?php 
+								$image_array = wp_get_attachment_image_src( $post->ID, 'full', false ); 
+								$url = $image_array['0']; 
+								?>
+								
+								<p><?php echo __( 'Resolution:', 'lovecraft' ) . ' ' . $image_array['1'] . 'x' . $image_array['2'] . ' px'; ?></p>
 							
-							</div> <!-- /post-meta -->
+							</div><!-- .post-meta -->
 						
-						</div> <!-- /post-header -->
+						</div><!-- .post-header -->
 						
-						<?php if ( !empty(get_post(get_post_thumbnail_id())->post_excerpt) ) : ?>
+						<?php if ( ! empty( get_post( get_post_thumbnail_id() )->post_excerpt ) ) : ?>
 															
 							<div class="post-content">
 							
-								<p><?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?></p>
+								<p><?php echo get_post( get_post_thumbnail_id() )->post_excerpt; ?></p>
 								
 							</div>
 							
 						<?php endif; ?>
 						
-					</div> <!-- /post-inner -->
+					</div><!-- .post-inner -->
 					
 					<?php comments_template( '', true ); ?>
 																                        
-			   	<?php endwhile; else: ?>
+				<?php 
+				endwhile; 
+				else: ?>
 			
-					<p><?php _e("We couldn't find any posts that matched your query. Please try again.", "lovecraft"); ?></p>
+					<p><?php _e( "We couldn't find any posts that matched your query. Please try again.", "lovecraft" ); ?></p>
 				
 				<?php endif; ?>    
 					
-			</div> <!-- /post -->
+			</div><!-- .post -->
 		
-		</div> <!-- /content -->
+		</div><!-- .content -->
 		
 		<?php get_sidebar(); ?>
 		
 		<div class="clear"></div>
 		
-	</div> <!-- /section-inner -->
+	</div><!-- .section-inner -->
 
-</div> <!-- /wrapper.section -->
+</div><!-- .wrapper.section -->
 		
 <?php get_footer(); ?>

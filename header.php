@@ -4,7 +4,7 @@
 
 	<head profile="http://gmpg.org/xfn/11">
 		
-		<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+		<meta http-equiv="Content-Type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
 		 
 		<?php wp_head(); ?>
@@ -25,16 +25,18 @@
 				        	<img src='<?php echo esc_url( get_theme_mod( 'lovecraft_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'title' ) ); ?>'>
 				        </a>
 				
-					<?php elseif ( get_bloginfo( 'description' ) || get_bloginfo( 'title' ) ) : ?>
+					<?php elseif ( get_bloginfo( 'description' ) || get_bloginfo( 'title' ) ) : 
+						
+						$title_type = is_singular() ? '2' : '1'; ?>
 				
-						<h2 class="blog-title">
+						<h<?php echo $title_type; ?> class="blog-title">
 							<a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'title' ) ); ?> &mdash; <?php echo esc_attr( get_bloginfo( 'description' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'title' ) ); ?></a>
-						</h2>
+						</h<?php echo $title_type; ?>>
 						
 						<?php if ( get_bloginfo( 'description' ) ) : ?>
 						
 							<h4 class="blog-tagline">
-								<?php bloginfo('description'); ?>
+								<?php bloginfo( 'description' ); ?>
 							</h4>
 							
 						<?php endif; ?>
@@ -43,9 +45,9 @@
 								
 					<div class="clear"></div>
 				
-				</div> <!-- /section-inner -->
+				</div><!-- .section-inner -->
 						
-			</div> <!-- /header -->
+			</div><!-- .header -->
 			
 			<div class="toggles">
 						
@@ -65,9 +67,9 @@
 				
 				<div class="clear"></div>
 				
-			</div> <!-- /toggles -->
+			</div><!-- .toggles -->
 		
-		</div> <!-- /header-wrapper -->
+		</div><!-- .header-wrapper -->
 		
 		<div class="navigation bg-white no-padding">
 			
@@ -76,21 +78,23 @@
 				<ul class="mobile-menu">
 				
 					<?php if ( has_nav_menu( 'primary' ) ) {
+
+						$menu_args = array( 
+							'container' 		=> '', 
+							'items_wrap' 		=> '%3$s',
+							'theme_location' 	=> 'primary'
+						);
 																		
-						wp_nav_menu( array( 
-						
-							'container' => '', 
-							'items_wrap' => '%3$s',
-							'theme_location' => 'primary'
-														
-						) ); } else {
-					
-						wp_list_pages( array(
-						
+						wp_nav_menu( $menu_args ); 
+
+					} else {
+
+						$list_pages_args = array(
 							'container' => '',
-							'title_li' => ''
-						
-						));
+							'title_li' 	=> ''
+						);
+
+						wp_list_pages( $list_pages_args );
 						
 					} ?>
 					
@@ -104,57 +108,42 @@
 				
 				<ul class="main-menu">
 				
-					<?php if ( has_nav_menu( 'primary' ) ) {
-																	
-						wp_nav_menu( array( 
-						
-							'container' => '', 
-							'items_wrap' => '%3$s',
-							'theme_location' => 'primary'
-														
-						) ); } else {
-					
-						wp_list_pages( array(
-						
-							'container' => '',
-							'title_li' => ''
-						
-						));
-						
-					} ?>
+					<?php 
+					if ( has_nav_menu( 'primary' ) ) {
+						wp_nav_menu( $menu_args ); 
+					} else {
+						wp_list_pages( $list_pages_args );
+					} 
+					?>
 					
 				</ul>
 				
 				<div class="clear"></div>
 				
-			</div> <!-- /section-inner -->
+			</div><!-- .section-inner -->
 			
-		</div> <!-- /navigation -->
+		</div><!-- .navigation -->
 		
-		<?php if ( is_singular() && has_post_thumbnail() ) : ?>
-		
-			<?php 
-				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'post-image-cover' );
-				$post_image = $thumb['0']; 
+		<?php if ( is_singular() && has_post_thumbnail() ) :
+			$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'post-image-cover' );
+			$post_image = $thumb['0']; 
 			?>
 		
 			<div class="header-image bg-image" style="background-image: url(<?php echo esc_url( $post_image ); ?>)">
 				
-				<?php the_post_thumbnail('post-image'); ?>
+				<?php the_post_thumbnail( 'post-image' ); ?>
 				
 			</div>
 		
-		<?php else : ?>
+		<?php else : 
+
+			$header_image = get_header_image() ?: get_template_directory_uri() . '/images/header.jpg';
+			
+			?>
 		
-			<div class="header-image bg-image" style="background-image: url(<?php if (get_header_image() != '') { header_image(); echo ')'; } else { echo   get_template_directory_uri() . "/images/header.jpg)"; } ?>">
+			<div class="header-image bg-image" style="background-image: url( <?php echo $header_image ?> );">
 				
-				<?php 
-					if (get_header_image() != '') {
-						echo '<img src="'; header_image(); echo '">';
-					} else {
-						echo '<img src="' . get_template_directory_uri() . '/images/header.jpg">';
-					}
-				?>
+				<img src="<?php echo $header_image; ?>" />
 				
 			</div>
 		

@@ -9,10 +9,10 @@
 	//Update site accent color in real time...
 	wp.customize( 'accent_color', function( value ) {
 		value.bind( function( newval ) {
-			$('.post-title a:hover').css('color', newval );
-			$('.main-menu .current-menu-item:before').css('color', newval );
-			$('.main-menu .current_page_item:before').css('color', newval );
-			$('.post-content blockquote:before').css('color', newval );
+			$( '.post-title a:hover' ).css( 'color', newval );
+			$( '.main-menu .current-menu-item:before' ).css( 'color', newval );
+			$( '.main-menu .current_page_item:before' ).css( 'color', newval );
+			$( '.post-content blockquote:before' ).css( 'color', newval );
 		} );
 	} );
 	

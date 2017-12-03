@@ -6,9 +6,9 @@
 
 		<div class="content">
 													        
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<?php if ( have_posts() ) : while( have_posts() ) : the_post(); ?>
 				
-				<div id="post-<?php the_ID(); ?>" <?php post_class('post single'); ?>>
+				<div id="post-<?php the_ID(); ?>" <?php post_class( 'post single' ); ?>>
 							
 					<div class="post-inner">
 				
@@ -16,17 +16,17 @@
 							
 						    <h1 class="post-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 						    
-						    <?php if ( current_user_can('edit_post', $post->ID) ) : ?>
+						    <?php if ( current_user_can( 'edit_post', $post->ID ) ) : ?>
 						    
 							    <div class="post-meta">
 								    
-									<?php edit_post_link('Edit', '<p>', '</p>'); ?>
+									<?php edit_post_link( 'Edit', '<p>', '</p>' ); ?>
 								    
 							    </div>
 						    
 						    <?php endif; ?>
 						    	    
-						</div> <!-- /post-header -->
+						</div><!-- .post-header -->
 						
 						<?php if ( get_the_content() ) : ?>
 		
@@ -40,26 +40,28 @@
 						
 						<?php endif; ?>
 					
-					</div> <!-- /post-inner -->
+					</div><!-- .post-inner -->
 															
 					<?php comments_template( '', true ); ?>
 				
-				</div> <!-- /post -->
+				</div><!-- .post -->
 											                        
-		   	<?php endwhile; else: ?>
+			<?php 
+			endwhile; 
+			else: ?>
 		
-				<p><?php _e("We couldn't find any posts that matched your query. Please try again.", "lovecraft"); ?></p>
+				<p><?php _e( "We couldn't find any posts that matched your query. Please try again.", "lovecraft" ); ?></p>
 			
 			<?php endif; ?>    
 		
-		</div> <!-- /content -->
+		</div><!-- .content -->
 		
 		<?php get_sidebar(); ?>
 		
 		<div class="clear"></div>
 
-	</div> <!-- /section-inner -->
+	</div><!-- .section-inner -->
 	
-</div> <!-- /wrapper.section -->
+</div><!-- .wrapper.section -->
 								
 <?php get_footer(); ?>

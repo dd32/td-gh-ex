@@ -69,7 +69,7 @@ jQuery(document).ready(function($) {
 	// When Jetpack Infinite scroll posts have loaded
 	$( document.body ).on( 'post-load', function () {
 
-		var $container = $('.posts');
+		var $container = $( '.posts' );
 		$container.masonry( 'reloadItems' );
 		
 		$blocks.imagesLoaded(function(){
