@@ -10,7 +10,7 @@
 				
 					<?php printf( _x( 'Search results: "%s"', 'Variable: search query text', 'fukasawa' ), get_search_query() );
 					
-					$paged = get_query_var( 'paged' ) ?: 1;
+					$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 					
 					if ( 1 < $wp_query->max_num_pages ) : ?>
 					
