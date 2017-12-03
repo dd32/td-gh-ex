@@ -244,20 +244,18 @@
 										<p class="author-position">
 				
 											<?php
-
 											$user_info = get_userdata( $user_id );
 											$user_role = ucfirst( implode( ', ', $user_info->roles ) );
 
 											echo $user_role;
-
 											?>
 											
 										</p>
 										
 										<?php if ( get_the_author_meta( 'description' ) ) : ?>
-											<p class="author-description">
-												<?php the_author_meta( 'description' ); ?>
-											</p>
+											<div class="author-description">
+												<?php echo wpautop( get_the_author_meta( 'description' ) ); ?>
+											</div>
 										<?php endif; ?>
 									
 									</div><!-- .author-meta-inner -->

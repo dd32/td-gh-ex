@@ -118,6 +118,10 @@ The rest of the content...
 == Changelog ==
 
 
+Version 1.12 (2017-12-03)
+-------------------------
+- Updated author description on single to work with new wrapping paragraph
+
 Version 1.11 (2017-11-26)
 -------------------------
 - Updated to the new readme.txt format, with changelog.txt incorporated into it
