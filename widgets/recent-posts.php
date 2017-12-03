@@ -41,7 +41,7 @@ class lovecraft_recent_posts extends WP_Widget {
 				<ul class="lovecraft-widget-list">
 
 					
-					<?php foreach ( $recent_posts as $post ) : $recent_posts->the_post(); 
+					<?php foreach ( $recent_posts as $post ) : 
 					
 						global $post;
 						setup_postdata( $post );
@@ -56,7 +56,7 @@ class lovecraft_recent_posts extends WP_Widget {
 								
 									<?php 
 
-									$post_format = get_post_format() ?: 'standard'; 
+									$post_format = get_post_format() ? get_post_format() : 'standard'; 
 
 									if ( has_post_thumbnail() ) {
 										

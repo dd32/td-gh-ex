@@ -229,7 +229,7 @@ if ( ! function_exists( 'lovecraft_archive_navigation' ) ) {
 	function lovecraft_archive_navigation() {
 		
 		global $wp_query;
-		$paged = get_query_var( 'paged' ) ?: 1;
+		$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 		
 		if ( $wp_query->max_num_pages > 1 ) : ?>
 					

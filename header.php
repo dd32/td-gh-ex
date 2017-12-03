@@ -137,7 +137,7 @@
 		
 		<?php else : 
 
-			$header_image = get_header_image() ?: get_template_directory_uri() . '/images/header.jpg';
+			$header_image = get_header_image() ? get_header_image() : get_template_directory_uri() . '/images/header.jpg';
 			
 			?>
 		

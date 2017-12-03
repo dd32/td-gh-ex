@@ -45,6 +45,11 @@ Source: https://github.com/dachcom-digital/jquery-doubletaptogo
 
 == Changelog ==
 
+Version 1.19 (2017-12-03)
+-------------------------
+- Fixed bug caused by leftover code after update in recent posts widget
+- Went back to full-length ternarys to prevent issue with older versions of PHP
+
 Version 1.18 (2017-12-02)
 -------------------------
 - Updated to the new readme.txt format, with changelog.txt incorporated into it

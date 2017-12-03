@@ -13,7 +13,7 @@
 					<h4><?php printf( _x( 'Search results: "%s"', 'Variable: Search query text', 'lovecraft' ), get_search_query() ); ?>
 					
 					<?php
-					$paged = get_query_var( 'paged' ) ?: 1;
+					$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 					
 					if ( 1 < $wp_query->max_num_pages ) : ?>
 					
