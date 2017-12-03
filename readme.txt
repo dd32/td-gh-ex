@@ -76,6 +76,10 @@ Source: http://flexslider.woothemes.com
 == Changelog ==
 
 
+Version 1.20 (2017-12-03)
+-------------------------
+- Updated output of author description to work with the new wrapping paragraph added in 4.9
+
 Version 1.19 (2017-12-02)
 -------------------------
 - Fixed silly text domain issue
