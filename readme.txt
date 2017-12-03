@@ -114,6 +114,10 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.24 (2017-12-03)
+-------------------------
+- Replaced shorthand ternanry with non-shorthand ternary, due to it breaking in pre PHP 5.3
+
 Version 1.23 (2017-12-03)
 -------------------------
 - Fixed enqueue issue
