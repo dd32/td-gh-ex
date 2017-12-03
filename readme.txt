@@ -114,6 +114,10 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.23 (2017-12-03)
+-------------------------
+- Fixed enqueue issue
+
 Version 1.22 (2017-12-03)
 -------------------------
 - Made all functions in functions.php pluggable
