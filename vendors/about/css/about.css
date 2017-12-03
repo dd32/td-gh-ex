@@ -98,7 +98,8 @@
 	width: 30%;
 }
 
-.at-wrap .useful-plugins {
+.at-wrap .useful-plugins,
+.at-wrap .demo-content {
 	padding-top: 60px;
 }
 

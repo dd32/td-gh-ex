@@ -40,6 +40,7 @@ $config = array(
 	'tabs' => array(
 		'getting_started'     => esc_html__( 'Getting Started', 'best-commerce' ),
 		'recommended_actions' => esc_html__( 'Recommended Actions', 'best-commerce' ),
+		'demo_content'        => esc_html__( 'Demo Content', 'best-commerce' ),
 		'useful_plugins'      => esc_html__( 'Useful Plugins', 'best-commerce' ),
 		'support'             => esc_html__( 'Support', 'best-commerce' ),
 		'upgrade_to_pro'      => esc_html__( 'Upgrade to Pro', 'best-commerce' ),
@@ -50,7 +51,7 @@ $config = array(
 		array(
 			'title'               => esc_html__( 'Theme Documentation', 'best-commerce' ),
 			'text'                => esc_html__( 'Even if you are a long-time WordPress user, we still believe you should give our documentation a very quick read.', 'best-commerce' ),
-			'button_label'        => esc_html__( 'View documentation', 'best-commerce' ),
+			'button_label'        => esc_html__( 'View Documentation', 'best-commerce' ),
 			'button_link'         => 'https://axlethemes.com/documentation/best-commerce/',
 			'is_button'           => false,
 			'recommended_actions' => false,
@@ -59,9 +60,18 @@ $config = array(
 		array(
 			'title'               => esc_html__( 'Recommended Actions', 'best-commerce' ),
 			'text'                => esc_html__( 'We have compiled a list of steps for you, to take make sure the experience you will have using one of our products is very easy to follow.', 'best-commerce' ),
-			'button_label'        => esc_html__( 'Check recommended actions', 'best-commerce' ),
+			'button_label'        => esc_html__( 'Check Recommended Actions', 'best-commerce' ),
 			'button_link'         => esc_url( admin_url( 'themes.php?page=best-commerce-about&tab=recommended_actions' ) ),
-			'is_button'           => false,
+			'is_button'           => true,
+			'recommended_actions' => false,
+			'is_new_tab'          => false,
+		),
+		array(
+			'title'               => esc_html__( 'Theme Demo Content', 'best-commerce' ),
+			'text'                => esc_html__( 'You can easily import demo content as we have bundled demo content file within the theme folder. Importer plugin is needed.', 'best-commerce' ),
+			'button_label'        => esc_html__( 'Demo Content', 'best-commerce' ),
+			'button_link'         => esc_url( admin_url( 'themes.php?page=best-commerce-about&tab=demo_content' ) ),
+			'is_button'           => true,
 			'recommended_actions' => false,
 			'is_new_tab'          => false,
 		),
@@ -73,6 +83,24 @@ $config = array(
 			'is_button'           => true,
 			'recommended_actions' => false,
 			'is_new_tab'          => false,
+		),
+		array(
+			'title'               => esc_html__( 'View Theme Demo', 'best-commerce' ),
+			'text'                => esc_html__( 'To get quick glance of the theme, please visit theme demo.', 'best-commerce' ),
+			'button_label'        => esc_html__( 'View Demo', 'best-commerce' ),
+			'button_link'         => 'https://axlethemes.com/theme-demo/?demo=best-commerce',
+			'is_button'           => false,
+			'recommended_actions' => false,
+			'is_new_tab'          => true,
+		),
+		array(
+			'title'               => esc_html__( 'Child Theme', 'best-commerce' ),
+			'text'                => esc_html__( 'If you want to customize theme file, you should use child theme rather than modifying theme file itself.', 'best-commerce' ),
+			'button_label'        => esc_html__( 'About Child Theme', 'best-commerce' ),
+			'button_link'         => 'https://developer.wordpress.org/themes/advanced-topics/child-themes/',
+			'is_button'           => false,
+			'recommended_actions' => false,
+			'is_new_tab'          => true,
 		),
 	),
 
@@ -109,6 +137,11 @@ $config = array(
 			),
 		),
 	),
+
+	// Demo content.
+	'demo_content' => array(
+		'description' => sprintf( esc_html__( 'Demo content files are bundled within this theme. %1$s plugin is needed to import demo content. Please make sure plugin is installed and activated. If you have not installed the plugin, please go to Installed Plugins page under Appearance. After plugin activation, go to Import Demo Data menu under Appearance.', 'best-commerce' ), '<a href="https://wordpress.org/plugins/one-click-demo-import/" target="_blank">' . esc_html__( 'One Click Demo Import', 'best-commerce' ) . '</a>' ),
+		),
 
 	// Useful plugins.
 	'useful_plugins' => array(
@@ -168,7 +201,7 @@ $config = array(
 			'title'        => esc_html__( 'Child Theme', 'best-commerce' ),
 			'icon'         => 'dashicons dashicons-admin-customizer',
 			'text'         => esc_html__( 'If you want to customize theme file, you should use child theme rather than modifying theme file itself.', 'best-commerce' ),
-			'button_label' => esc_html__( 'About child theme', 'best-commerce' ),
+			'button_label' => esc_html__( 'About Child Theme', 'best-commerce' ),
 			'button_link'  => 'https://developer.wordpress.org/themes/advanced-topics/child-themes/',
 			'is_button'    => false,
 			'is_new_tab'   => true,
