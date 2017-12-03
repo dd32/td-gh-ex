@@ -89,9 +89,9 @@ if ( ! function_exists( 'baskerville_load_javascript_files' ) ) {
    --------------------------------------------------------------------------------------------- */
 
 
-if ( ! function_exists( 'baskerville_load_javascript_files' ) ) {
+if ( ! function_exists( 'baskerville_load_style' ) ) {
 
-	function baskerville_load_javascript_files() {
+	function baskerville_load_style() {
 		if ( ! is_admin() ) {
 			wp_register_style( 'baskerville_googleFonts', '//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400italic,700,700italic,300|Pacifico:400' );
 			wp_register_style( 'baskerville_style', get_template_directory_uri() . '/style.css' );
