@@ -114,6 +114,10 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.22 (2017-12-03)
+-------------------------
+- Made all functions in functions.php pluggable
+
 Version 1.21 (2017-11-28)
 -------------------------
 - Removed the changelog.txt (se first list item in previous version)

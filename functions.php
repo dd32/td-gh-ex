@@ -6,51 +6,59 @@
    --------------------------------------------------------------------------------------------- */
 
 
-function baskerville_setup() {
-	
-	// Automatic feed
-	add_theme_support( 'automatic-feed-links' );
-		
-	// Post thumbnails
-	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'post-image', 945, 9999 );
-	add_image_size( 'post-thumbnail', 600, 9999 );
-	
-	// Post formats
-	add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
+if ( ! function_exists( 'baskerville_setup' ) ) {
 
-	// Custom header
-	$args = array(
-		'width'         => 1440,
-		'height'        => 221,
-		'default-image' => get_template_directory_uri() . '/images/header.jpg',
-		'uploads'       => true,
-		'header-text'  	=> false
-	);
-	add_theme_support( 'custom-header', $args );
-	
-	// Add support for title_tag
-	add_theme_support('title-tag');
+	function baskerville_setup() {
 		
-	// Add support for custom background
-	$args = array(
-		'default-color'	=> '#f1f1f1'
-	);
-	add_theme_support( "custom-background", $args );
+		// Automatic feed
+		add_theme_support( 'automatic-feed-links' );
+			
+		// Post thumbnails
+		add_theme_support( 'post-thumbnails' );
+		add_image_size( 'post-image', 945, 9999 );
+		add_image_size( 'post-thumbnail', 600, 9999 );
+		
+		// Post formats
+		add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
 
-	// Add nav menu
-	register_nav_menu( 'primary', 'Primary Menu' );
-	
-	// Make the theme translation ready
-	load_theme_textdomain('baskerville', get_template_directory() . '/languages');
-	
-	$locale = get_locale();
-	$locale_file = get_template_directory() . "/languages/$locale.php";
-	if ( is_readable($locale_file) )
-	  require_once($locale_file);
-	
+		// Custom header
+		$args = array(
+			'width'         => 1440,
+			'height'        => 221,
+			'default-image' => get_template_directory_uri() . '/images/header.jpg',
+			'uploads'       => true,
+			'header-text'  	=> false
+		);
+		add_theme_support( 'custom-header', $args );
+		
+		// Add support for title_tag
+		add_theme_support( 'title-tag' );
+
+		// Set content width
+		global $content_width;
+		if ( ! isset( $content_width ) ) $content_width = 676;
+			
+		// Add support for custom background
+		$args = array(
+			'default-color'	=> '#f1f1f1'
+		);
+		add_theme_support( "custom-background", $args );
+
+		// Add nav menu
+		register_nav_menu( 'primary', 'Primary Menu' );
+		
+		// Make the theme translation ready
+		load_theme_textdomain('baskerville', get_template_directory() . '/languages');
+		
+		$locale = get_locale();
+		$locale_file = get_template_directory() . "/languages/$locale.php";
+		if ( is_readable($locale_file) )
+		require_once($locale_file);
+		
+	}
+	add_action( 'after_setup_theme', 'baskerville_setup' );
+
 }
-add_action( 'after_setup_theme', 'baskerville_setup' );
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -58,18 +66,22 @@ add_action( 'after_setup_theme', 'baskerville_setup' );
    --------------------------------------------------------------------------------------------- */
 
 
-function baskerville_load_javascript_files() {
+if ( ! function_exists( 'baskerville_load_javascript_files' ) ) {
 
-	if ( ! is_admin() ) {
-		wp_register_script( 'baskerville_imagesloaded', get_template_directory_uri() . '/js/imagesloaded.pkgd.js', '', true );
-		wp_register_script( 'baskerville_flexslider', get_template_directory_uri() . '/js/flexslider.min.js', '', true );
+	function baskerville_load_javascript_files() {
 
-		wp_enqueue_script( 'baskerville_global', get_template_directory_uri() . '/js/global.js', array( 'jquery', 'masonry', 'baskerville_imagesloaded', 'baskerville_flexslider' ), '', true );
+		if ( ! is_admin() ) {
+			wp_register_script( 'baskerville_imagesloaded', get_template_directory_uri() . '/js/imagesloaded.pkgd.js', '', true );
+			wp_register_script( 'baskerville_flexslider', get_template_directory_uri() . '/js/flexslider.min.js', '', true );
 
-		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+			wp_enqueue_script( 'baskerville_global', get_template_directory_uri() . '/js/global.js', array( 'jquery', 'masonry', 'baskerville_imagesloaded', 'baskerville_flexslider' ), '', true );
+
+			if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+		}
 	}
+	add_action( 'wp_enqueue_scripts', 'baskerville_load_javascript_files' );
+
 }
-add_action( 'wp_enqueue_scripts', 'baskerville_load_javascript_files' );
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -77,16 +89,20 @@ add_action( 'wp_enqueue_scripts', 'baskerville_load_javascript_files' );
    --------------------------------------------------------------------------------------------- */
 
 
-function baskerville_load_style() {
-	if ( !is_admin() ) {
-	    wp_register_style( 'baskerville_googleFonts', '//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400italic,700,700italic,300|Pacifico:400' );
-		wp_register_style( 'baskerville_style', get_template_directory_uri() . '/style.css' );
-		
-	    wp_enqueue_style( 'baskerville_googleFonts' );
-	    wp_enqueue_style( 'baskerville_style' );
+if ( ! function_exists( 'baskerville_load_javascript_files' ) ) {
+
+	function baskerville_load_javascript_files() {
+		if ( ! is_admin() ) {
+			wp_register_style( 'baskerville_googleFonts', '//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400italic,700,700italic,300|Pacifico:400' );
+			wp_register_style( 'baskerville_style', get_template_directory_uri() . '/style.css' );
+			
+			wp_enqueue_style( 'baskerville_googleFonts' );
+			wp_enqueue_style( 'baskerville_style' );
+		}
 	}
+	add_action( 'wp_print_styles', 'baskerville_load_style' );
+
 }
-add_action( 'wp_print_styles', 'baskerville_load_style' );
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -94,12 +110,16 @@ add_action( 'wp_print_styles', 'baskerville_load_style' );
    --------------------------------------------------------------------------------------------- */
 
 
-function baskerville_add_editor_styles() {
-    add_editor_style( 'baskerville-editor-style.css' );
-    $font_url = '//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400italic,700,700italic,300';
-    add_editor_style( str_replace( ',', '%2C', $font_url ) );
+if ( ! function_exists( 'baskerville_add_editor_styles' ) ) {
+
+	function baskerville_add_editor_styles() {
+		add_editor_style( 'baskerville-editor-style.css' );
+		$font_url = '//fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,400italic,700,700italic,300';
+		add_editor_style( str_replace( ',', '%2C', $font_url ) );
+	}
+	add_action( 'init', 'baskerville_add_editor_styles' );
+
 }
-add_action( 'init', 'baskerville_add_editor_styles' );
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -107,50 +127,54 @@ add_action( 'init', 'baskerville_add_editor_styles' );
    --------------------------------------------------------------------------------------------- */
 
 
-function baskerville_sidebar_reg() {
+if ( ! function_exists( 'baskerville_sidebar_registration' ) ) {
 
-	register_sidebar( array(
-		'name' 			=> __( 'Footer A', 'baskerville' ),
-		'id' 			=> 'footer-a',
-		'description' 	=> __( 'Widgets in this area will be shown in the left column in the footer.', 'baskerville' ),
-		'before_title' 	=> '<h3 class="widget-title">',
-		'after_title' 	=> '</h3>',
-		'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
-		'after_widget' 	=> '</div><div class="clear"></div></div>'
-	) );
+	function baskerville_sidebar_registration() {
 
-	register_sidebar( array(
-		'name' 			=> __( 'Footer B', 'baskerville' ),
-		'id' 			=> 'footer-b',
-		'description' 	=> __( 'Widgets in this area will be shown in the middle column in the footer.', 'baskerville' ),
-		'before_title' 	=> '<h3 class="widget-title">',
-		'after_title' 	=> '</h3>',
-		'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
-		'after_widget' 	=> '</div><div class="clear"></div></div>'
-	) );
+		register_sidebar( array(
+			'name' 			=> __( 'Footer A', 'baskerville' ),
+			'id' 			=> 'footer-a',
+			'description' 	=> __( 'Widgets in this area will be shown in the left column in the footer.', 'baskerville' ),
+			'before_title' 	=> '<h3 class="widget-title">',
+			'after_title' 	=> '</h3>',
+			'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+			'after_widget' 	=> '</div><div class="clear"></div></div>'
+		) );
 
-	register_sidebar( array(
-		'name' 			=> __( 'Footer C', 'baskerville' ),
-		'id' 			=> 'footer-c',
-		'description' 	=> __( 'Widgets in this area will be shown in the right column in the footer.', 'baskerville' ),
-		'before_title' 	=> '<h3 class="widget-title">',
-		'after_title' 	=> '</h3>',
-		'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
-		'after_widget' 	=> '</div><div class="clear"></div></div>'
-	) );
+		register_sidebar( array(
+			'name' 			=> __( 'Footer B', 'baskerville' ),
+			'id' 			=> 'footer-b',
+			'description' 	=> __( 'Widgets in this area will be shown in the middle column in the footer.', 'baskerville' ),
+			'before_title' 	=> '<h3 class="widget-title">',
+			'after_title' 	=> '</h3>',
+			'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+			'after_widget' 	=> '</div><div class="clear"></div></div>'
+		) );
 
-	register_sidebar( array(
-		'name' 			=> __( 'Sidebar', 'baskerville' ),
-		'id'			=> 'sidebar',
-		'description' 	=> __( 'Widgets in this area will be shown in the sidebar.', 'baskerville' ),
-		'before_title' 	=> '<h3 class="widget-title">',
-		'after_title' 	=> '</h3>',
-		'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
-		'after_widget' 	=> '</div><div class="clear"></div></div>'
-	) );
+		register_sidebar( array(
+			'name' 			=> __( 'Footer C', 'baskerville' ),
+			'id' 			=> 'footer-c',
+			'description' 	=> __( 'Widgets in this area will be shown in the right column in the footer.', 'baskerville' ),
+			'before_title' 	=> '<h3 class="widget-title">',
+			'after_title' 	=> '</h3>',
+			'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+			'after_widget' 	=> '</div><div class="clear"></div></div>'
+		) );
+
+		register_sidebar( array(
+			'name' 			=> __( 'Sidebar', 'baskerville' ),
+			'id'			=> 'sidebar',
+			'description' 	=> __( 'Widgets in this area will be shown in the sidebar.', 'baskerville' ),
+			'before_title' 	=> '<h3 class="widget-title">',
+			'after_title' 	=> '</h3>',
+			'before_widget' => '<div class="widget %2$s"><div class="widget-content">',
+			'after_widget' 	=> '</div><div class="clear"></div></div>'
+		) );
+
+	}
+	add_action( 'widgets_init', 'baskerville_sidebar_registration' ); 
 
 }
-add_action( 'widgets_init', 'baskerville_sidebar_reg' ); 
 	
 
 /* ---------------------------------------------------------------------------------------------
@@ -158,16 +182,8 @@ add_action( 'widgets_init', 'baskerville_sidebar_reg' );
    --------------------------------------------------------------------------------------------- */
 
 
-require_once ( get_template_directory() . '/widgets/dribbble-widget.php' );
-require_once ( get_template_directory() . '/widgets/flickr-widget.php' );
-
-
-/* ---------------------------------------------------------------------------------------------
-   SET CONTENT WIDTH
-   --------------------------------------------------------------------------------------------- */
-
-
-if ( ! isset( $content_width ) ) $content_width = 676;
+require_once( get_template_directory() . '/widgets/dribbble-widget.php' );
+require_once( get_template_directory() . '/widgets/flickr-widget.php' );
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -175,15 +191,23 @@ if ( ! isset( $content_width ) ) $content_width = 676;
    --------------------------------------------------------------------------------------------- */
 
 
-function baskerville_pagination_classes_next() {
-    return 'class="post-nav-older fleft"';
-}
-add_filter( 'next_posts_link_attributes', 'baskerville_pagination_classes_next' );
+if ( ! function_exists( 'baskerville_pagination_classes_next' ) ) {
 
-function baskerville_pagination_classes_prev() {
-    return 'class="post-nav-newer fright"';
+	function baskerville_pagination_classes_next() {
+		return 'class="post-nav-older fleft"';
+	}
+	add_filter( 'next_posts_link_attributes', 'baskerville_pagination_classes_next' );
+
 }
-add_filter( 'previous_posts_link_attributes', 'baskerville_pagination_classes_prev' );
+
+if ( ! function_exists( 'baskerville_pagination_classes_prev' ) ) {
+
+	function baskerville_pagination_classes_prev() {
+		return 'class="post-nav-newer fright"';
+	}
+	add_filter( 'previous_posts_link_attributes', 'baskerville_pagination_classes_prev' );
+
+}
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -207,25 +231,29 @@ class baskerville_nav_walker extends Walker_Nav_Menu {
    --------------------------------------------------------------------------------------------- */
 
 
-function baskerville_body_classes( $classes ) {
-	
-	// If has post thumbnail
-	$classes[] = has_post_thumbnail() ? 'has-featured-image' : 'no-featured-image';
+if ( ! function_exists( 'baskerville_body_classes' ) ) {
 
-	// If is mobile
-	if ( wp_is_mobile() ) {
-		$classes[] = 'is_mobile';
+	function baskerville_body_classes( $classes ) {
+		
+		// If has post thumbnail
+		$classes[] = has_post_thumbnail() ? 'has-featured-image' : 'no-featured-image';
+
+		// If is mobile
+		if ( wp_is_mobile() ) {
+			$classes[] = 'is_mobile';
+		}
+
+		// Replicate single classes on other pages
+		if ( is_singular() || is_404() ) {
+			$classes[] = 'single single-post';
+		}
+
+		return $classes;
+
 	}
-
-	// Replicate single classes on other pages
-	if ( is_singular() || is_404() ) {
-		$classes[] = 'single single-post';
-	}
-
-	return $classes;
+	add_action( 'body_class', 'baskerville_body_classes' );
 
 }
-add_action( 'body_class', 'baskerville_body_classes' );
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -233,10 +261,14 @@ add_action( 'body_class', 'baskerville_body_classes' );
    --------------------------------------------------------------------------------------------- */
 
 
-function baskerville_custom_excerpt_length( $length ) {
-	return 40;
+if ( ! function_exists( 'baskerville_custom_excerpt_length' ) ) {
+
+	function baskerville_custom_excerpt_length( $length ) {
+		return 40;
+	}
+	add_filter( 'excerpt_length', 'baskerville_custom_excerpt_length', 999 );
+
 }
-add_filter( 'excerpt_length', 'baskerville_custom_excerpt_length', 999 );
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -244,10 +276,14 @@ add_filter( 'excerpt_length', 'baskerville_custom_excerpt_length', 999 );
    --------------------------------------------------------------------------------------------- */
 
 
-function baskerville_new_excerpt_more( $more ) {
-	return '... <a class="more-link" href="'. get_permalink( get_the_ID() ) . '">' . __(' Continue Reading', 'baskerville' ) . ' &rarr;</a>';
+if ( ! function_exists( 'baskerville_new_excerpt_more' ) ) {
+
+	function baskerville_new_excerpt_more( $more ) {
+		return '... <a class="more-link" href="'. get_permalink( get_the_ID() ) . '">' . __(' Continue Reading', 'baskerville' ) . ' &rarr;</a>';
+	}
+	add_filter( 'excerpt_more', 'baskerville_new_excerpt_more' );
+
 }
-add_filter( 'excerpt_more', 'baskerville_new_excerpt_more' );
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -255,29 +291,33 @@ add_filter( 'excerpt_more', 'baskerville_new_excerpt_more' );
    --------------------------------------------------------------------------------------------- */
 
 
-function baskerville_meta() { ?>
+if ( ! function_exists( 'baskerville_meta' ) ) {
 
-	<div class="post-meta">
-	
-		<a class="post-date" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_time( 'Y/m/d' ); ?></a>
+	function baskerville_meta() { ?>
+
+		<div class="post-meta">
 		
-		<?php
+			<a class="post-date" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_time( 'Y/m/d' ); ?></a>
+			
+			<?php
+			
+			if ( function_exists( 'zilla_likes' ) ) zilla_likes(); 
 		
-		if ( function_exists( 'zilla_likes' ) ) zilla_likes(); 
-	
-		if ( comments_open() ) {
-			comments_popup_link( '0', '1', '%', 'post-comments' );
-		}
+			if ( comments_open() ) {
+				comments_popup_link( '0', '1', '%', 'post-comments' );
+			}
+			
+			edit_post_link(); 
+			
+			?>
+			
+			<div class="clear"></div>
 		
-		edit_post_link(); 
+		</div><!-- .post-meta -->
 		
-		?>
-		
-		<div class="clear"></div>
-	
-	</div><!-- .post-meta -->
-	
-<?php
+	<?php
+	}
+
 }
 
 
@@ -286,17 +326,20 @@ function baskerville_meta() { ?>
    --------------------------------------------------------------------------------------------- */
 
 
-function baskerville_admin_css() { ?>
-	<style type="text/css">   
-		#postimagediv #set-post-thumbnail img {
-			max-width: 100%;
-			height: auto;
-		}
-	</style>
-	<?php 
-}
+if ( ! function_exists( 'baskerville_admin_css' ) ) {
 
-add_action( 'admin_head', 'baskerville_admin_css' );
+	function baskerville_admin_css() { ?>
+		<style type="text/css">   
+			#postimagediv #set-post-thumbnail img {
+				max-width: 100%;
+				height: auto;
+			}
+		</style>
+		<?php 
+	}
+	add_action( 'admin_head', 'baskerville_admin_css' );
+
+}
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -304,50 +347,54 @@ add_action( 'admin_head', 'baskerville_admin_css' );
    --------------------------------------------------------------------------------------------- */
 
 
-function baskerville_flexslider( $size = 'thumbnail' ) {
+if ( ! function_exists( 'baskerville_flexslider' ) ) {
 
-	$attachment_parent = is_page() ? $post->ID : get_the_ID();
+	function baskerville_flexslider( $size = 'thumbnail' ) {
 
-	$images = get_posts( array(
-		'orderby'        	=> 'menu_order',
-		'order'          	=> 'ASC',
-		'post_mime_type' 	=> 'image',
-		'post_parent'   	=> $attachment_parent,
-		'post_status'    	=> null,
-		'post_type'     	=> 'attachment',
-		'posts_per_page'    => -1,
-	) );
+		$attachment_parent = is_page() ? $post->ID : get_the_ID();
 
-	if ( $images ) { ?>
-	
-		<div class="flexslider">
+		$images = get_posts( array(
+			'orderby'        	=> 'menu_order',
+			'order'          	=> 'ASC',
+			'post_mime_type' 	=> 'image',
+			'post_parent'   	=> $attachment_parent,
+			'post_status'    	=> null,
+			'post_type'     	=> 'attachment',
+			'posts_per_page'    => -1,
+		) );
+
+		if ( $images ) { ?>
 		
-			<ul class="slides">
-	
-				<?php 
-				foreach( $images as $image ) :
-					$attimg = wp_get_attachment_image( $image->ID, $size ); ?>
-					
-					<li>
-						<?php echo $attimg; ?>
-						<?php if ( ! empty( $image->post_excerpt ) && is_single() ) : ?>
-							<div class="media-caption-container">
-								<p class="media-caption"><?php echo $image->post_excerpt; ?></p>
-							</div>
-						<?php endif; ?>
-					</li>
-					
-					<?php 
-				endforeach; 
-				?>
-		
-			</ul>
+			<div class="flexslider">
 			
-		</div><!-- .flexslider -->
+				<ul class="slides">
 		
-		<?php
-		
+					<?php 
+					foreach( $images as $image ) :
+						$attimg = wp_get_attachment_image( $image->ID, $size ); ?>
+						
+						<li>
+							<?php echo $attimg; ?>
+							<?php if ( ! empty( $image->post_excerpt ) && is_single() ) : ?>
+								<div class="media-caption-container">
+									<p class="media-caption"><?php echo $image->post_excerpt; ?></p>
+								</div>
+							<?php endif; ?>
+						</li>
+						
+						<?php 
+					endforeach; 
+					?>
+			
+				</ul>
+				
+			</div><!-- .flexslider -->
+			
+			<?php
+			
+		}
 	}
+
 }
 
 
@@ -356,7 +403,8 @@ function baskerville_flexslider( $size = 'thumbnail' ) {
    --------------------------------------------------------------------------------------------- */
 
 
-if ( ! function_exists( 'baskerville_comment' ) ) :
+if ( ! function_exists( 'baskerville_comment' ) ) {
+
 	function baskerville_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
 		switch ( $comment->comment_type ) :
@@ -431,7 +479,7 @@ if ( ! function_exists( 'baskerville_comment' ) ) :
 			break;
 		endswitch;
 	}
-endif;
+}
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -439,14 +487,18 @@ endif;
    --------------------------------------------------------------------------------------------- */
 
 
-function baskerville_modify_contact_methods( $profile_fields ) {
+if ( ! function_exists( 'baskerville_modify_contact_methods' ) ) {
 
-	// Add new fields
-	$profile_fields['twitter'] = __( 'Twitter-username (without the @)', 'baskerville' );
+	function baskerville_modify_contact_methods( $profile_fields ) {
 
-	return $profile_fields;
+		// Add new fields
+		$profile_fields['twitter'] = __( 'Twitter-username (without the @)', 'baskerville' );
+
+		return $profile_fields;
+	}
+	add_filter( 'user_contactmethods', 'baskerville_modify_contact_methods' );
+
 }
-add_filter( 'user_contactmethods', 'baskerville_modify_contact_methods' );
 
 
 /* ---------------------------------------------------------------------------------------------
@@ -455,39 +507,47 @@ add_filter( 'user_contactmethods', 'baskerville_modify_contact_methods' );
 
 /* DISPLAY FIELDS */
 
-function baskerville_show_extra_profile_fields( $user ) { ?>
+if ( ! function_exists( 'baskerville_show_extra_profile_fields' ) ) {
 
-	<h3><?php _e( 'Extra profile information', 'baskerville' ); ?></h3>
+	function baskerville_show_extra_profile_fields( $user ) { ?>
 
-	<table class="form-table">
+		<h3><?php _e( 'Extra profile information', 'baskerville' ); ?></h3>
 
-		<tr>
-			<th><label for="showemail"><?php _e( 'Show email', 'baskerville' ); ?></label></th>
+		<table class="form-table">
 
-			<td>
-				<input type="checkbox" name="showemail" id="showemail" value="yes"<?php if ( esc_attr( get_the_author_meta( "showemail", $user->ID )) == "yes") echo " checked"; ?> />	
-				<span class="description"><?php _e( 'Check if you want to display your email address in single posts and the contributors page template.', 'baskerville' ); ?></span>
-			</td>
-		</tr>
+			<tr>
+				<th><label for="showemail"><?php _e( 'Show email', 'baskerville' ); ?></label></th>
 
-	</table>
-	<?php 
+				<td>
+					<input type="checkbox" name="showemail" id="showemail" value="yes"<?php if ( esc_attr( get_the_author_meta( "showemail", $user->ID )) == "yes") echo " checked"; ?> />	
+					<span class="description"><?php _e( 'Check if you want to display your email address in single posts and the contributors page template.', 'baskerville' ); ?></span>
+				</td>
+			</tr>
+
+		</table>
+		<?php 
+	}
+	add_action( 'show_user_profile', 'baskerville_show_extra_profile_fields' );
+	add_action( 'edit_user_profile', 'baskerville_show_extra_profile_fields' );
+
 }
-add_action( 'show_user_profile', 'baskerville_show_extra_profile_fields' );
-add_action( 'edit_user_profile', 'baskerville_show_extra_profile_fields' );
 
 /* SAVE FIELDS */
 
-function baskerville_save_extra_profile_fields( $user_id ) {
+if ( ! function_exists( 'baskerville_save_extra_profile_fields' ) ) {
 
-	if ( ! current_user_can( 'edit_user', $user_id ) )
-		return false;
+	function baskerville_save_extra_profile_fields( $user_id ) {
 
-	update_user_meta( $user_id, 'showemail', $_POST['showemail'] );
+		if ( ! current_user_can( 'edit_user', $user_id ) )
+			return false;
+
+		update_user_meta( $user_id, 'showemail', $_POST['showemail'] );
+
+	}
+	add_action( 'personal_options_update', 'baskerville_save_extra_profile_fields' );
+	add_action( 'edit_user_profile_update', 'baskerville_save_extra_profile_fields' );
 
 }
-add_action( 'personal_options_update', 'baskerville_save_extra_profile_fields' );
-add_action( 'edit_user_profile_update', 'baskerville_save_extra_profile_fields' );
 
 
 /* ---------------------------------------------------------------------------------------------
