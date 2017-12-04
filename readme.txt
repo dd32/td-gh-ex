@@ -3,7 +3,7 @@
 - By Think Up Themes, http://www.thinkupthemes.com/
 
 Requires at least:	4.0.0
-Tested up to:		4.7.2
+Tested up to:		4.9.1
 
 Minamaze is a multi-purpose professional Premium WordPress Theme ideal for a business or blog website. The theme is responsive, HD retina ready and comes with 600+ Google Fonts which can easily be selected directly from the theme options panel.
 
@@ -121,6 +121,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 -----------------------------------------------------------------------------
 	Changelog
 -----------------------------------------------------------------------------
+
+Version 1.4.14
+- Fixed:   style-backend.css now loads correctly in admin area.
+- Fixed:   WooCommerce v3+ gallery support added, ensured image zoom function works correctly.
 
 Version 1.4.13
 - Updated: Improved escaping in comments.php.
