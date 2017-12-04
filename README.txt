@@ -68,6 +68,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.7
+* Admin CSS edits
+* Added help links to Customizer
+
 #### 1.0.6
 * Style tweaks/fixes
 * Fixed Slider CSS class output not working

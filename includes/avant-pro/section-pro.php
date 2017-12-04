@@ -49,6 +49,15 @@ class Avant_Premium_Customize_Section extends WP_Customize_Section {
 
 		return $json;
 	}
+	
+	/**
+	 * Set section priority
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public $priority = 10;
 
 	/**
 	 * Outputs the Underscore.js template.
@@ -64,6 +73,7 @@ class Avant_Premium_Customize_Section extends WP_Customize_Section {
 				{{ data.title }}
 				<# if ( data.pro_text && data.pro_url ) { #>
 					<a href="{{ data.pro_url }}" class="button button-secondary alignright" title="Premium now only $25" target="_blank">{{ data.pro_text }}</a>
+					<div class="avant-prem-tryout"><a href="https://demo.kairaweb.com/#avant" target="_blank">View Premium Demo &amp; Settings</a></div>
 				<# } #>
 			</h3>
 		</li>

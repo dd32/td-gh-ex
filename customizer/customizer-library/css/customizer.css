@@ -17,9 +17,28 @@
 #customize-theme-controls #accordion-section-avant-social-section .accordion-section-title:hover:after {
     color: #FFF !important;
 }
+#accordion-section-avant_premium a.button {
+    background-color: #006CC9;
+    color: #FFF;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset;
+    border: 0;
+    position: relative;
+    top: -2px;
+}
+#accordion-section-avant_premium a.button:hover {
+    background-color: #0952A9;
+    color: #FFF;
+}
+.avant-prem-tryout {
+    clear: both;
+    text-align: right;
+    font-size: 11px;
+    line-height: 11px;
+    text-decoration: none;
+    padding: 4px 0 0;
+}
 
 .kaira-upsell {
-    display: none;
     margin-top: 30px;
 }
 .kaira-upsell b {

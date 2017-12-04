@@ -31,5 +31,4 @@ get_header(); ?>
 	<?php get_sidebar(); ?>
 	
 	<div class="clearboth"></div>
-	
 <?php get_footer(); ?>
