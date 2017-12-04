@@ -70,6 +70,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.11
+* Added admin help links/styling
+* Updated language .pot file
+Premium: Added setting to add/enable WooCommerce drop down basket in the Header
+
 #### 1.3.10
 * Styling fixes/tweaks
 * Updated dashboard help links
