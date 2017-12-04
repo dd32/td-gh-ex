@@ -1418,3 +1418,7 @@ table.cart td.actions .coupon {
 .product-filter-wrap.filter--1 {
     padding: 1em 0;
 }
+
+form.woocommerce-ordering {
+    text-align: right;
+}
