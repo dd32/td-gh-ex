@@ -10,7 +10,7 @@ jQuery.noConflict()(function($){
 		
 		var body_width = $(window).width();
 		
-		var header = $('#header-wrapper .row').innerHeight();
+		var header = $('#header-wrapper.fixed-header .suevafree-general-menu ul').innerHeight();
 		var submenu = $('.suevafree-menu ul > li').innerHeight();
 		var demostore = $('p.demo_store').innerHeight();
 		var adminbar = $('body.logged-in #wpadminbar').innerHeight();
@@ -18,13 +18,21 @@ jQuery.noConflict()(function($){
 		if ( body_width >= 992 ){
 		
 			$('#header-wrapper.fixed-header').css({'height': header + demostore});
+			$('#header-wrapper.fixed-header #logo').css({'line-height': header + 'px' });
+			$('#header-wrapper.fixed-header #logo').css({'max-height': header + 'px' });
 			$('#header-wrapper.fixed-header #header').css({'height': header});
-			$('#header-wrapper.fixed-header #header').css({'top': demostore + adminbar });
+			$('#header-wrapper.fixed-header .suevafree-general-menu').css({'height': header});
 			$('.suevafree-menu ul > li > ul').css({'top': submenu });
-		
+			$('#header-wrapper.fixed-header #header').css({'top': demostore + adminbar });
+
 		} else {
-		
-			$('#header-wrapper.fixed-header, #header-wrapper.fixed-header #header').css({'height':'auto'});
+			
+			$('#header-wrapper.fixed-header').css({'height':'auto'});
+			$('#header-wrapper.fixed-header #logo').css({'line-height': '90px' });
+			$('#header-wrapper.fixed-header #logo').css({'max-height': '90px' });
+			$('#header-wrapper.fixed-header #header').css({'top': 0 });
+			$('#header-wrapper.fixed-header #header').css({'height':'auto'});
+			$('#header-wrapper.fixed-header .suevafree-general-menu').css({'height':'auto'});
 		
 		}
 

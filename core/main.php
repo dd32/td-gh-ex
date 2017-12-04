@@ -800,8 +800,6 @@ if (!function_exists('suevafree_scripts_styles')) {
 
 	function suevafree_scripts_styles() {
 	
-		wp_enqueue_style( 'suevafree_style', get_stylesheet_uri(), array() );
-
 		suevafree_enqueue_style('/assets/css');
 
 		$fonts_args = array(

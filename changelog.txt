@@ -1,5 +1,10 @@
 SuevaFree Changelog
 
+- Version 3.3.7 - Released: 04.12.2017
+
+-- Fixed : Fixed header on mobile devices
+-- Edit  : Code optimized.
+
 - Version 3.3.6 - Released: 02.12.2017
 
 -- Tested with WordPress 4.9.1
