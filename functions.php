@@ -6,7 +6,7 @@
  */
 
 // Declare latest theme version
-$GLOBALS['alante_thinkup_theme_version'] = '1.0.11';
+$GLOBALS['alante_thinkup_theme_version'] = '1.0.12';
 
 // Setup content width 
 function alante_thinkup_content_width() {
@@ -68,6 +68,9 @@ if ( ! function_exists( 'alante_thinkup_themesetup' ) ) {
 
 		// Add WooCommerce functions.
 		add_theme_support( 'woocommerce' );
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
 
 		// Add excerpt support to pages.
 		add_post_type_support( 'page', 'excerpt' );
