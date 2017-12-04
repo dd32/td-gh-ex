@@ -6,7 +6,7 @@
  */
 
 // Declare latest theme version
-$GLOBALS['thinkup_theme_version'] = '1.8.14';
+$GLOBALS['thinkup_theme_version'] = '1.8.15';
 
 // Setup content width 
 function thinkup_content_width() {
@@ -89,6 +89,9 @@ if ( ! function_exists( 'thinkup_themesetup' ) ) {
 
 		// Add WooCommerce functions.
 		add_theme_support( 'woocommerce' );
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
 
 		// Register theme menu's.
 		register_nav_menus( array( 'pre_header_menu' => __( 'Pre Header Menu', 'lan-thinkupthemes' ) ) );
