@@ -30,20 +30,23 @@ class lovecraft_recent_posts extends WP_Widget {
 		}
 			if ( $number_of_posts == 0 ) $number_of_posts = 5;
 
+			global $post;
+
+			$ignore = get_option( 'sticky_posts' );
+			$ignore[] = $post->ID;
+
 			$recent_posts = get_posts( array(
-				'posts_per_page'      => $number_of_posts,
-				'post_status'         => 'publish',
-				'ignore_sticky_posts' => true
+				'posts_per_page' 	=> $number_of_posts,
+				'post_status'    	=> 'publish',
+				'ignore'			=> $ignore,
 			) );
 			
 			if ( $recent_posts ) : ?>
 
 				<ul class="lovecraft-widget-list">
-
 					
 					<?php foreach ( $recent_posts as $post ) : 
-					
-						global $post;
+
 						setup_postdata( $post );
 
 						?>

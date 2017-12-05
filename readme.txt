@@ -45,6 +45,10 @@ Source: https://github.com/dachcom-digital/jquery-doubletaptogo
 
 == Changelog ==
 
+Version 1.20 (2017-12-05)
+-------------------------
+- Fixed recent posts widget showing currently viewed post regardless of date
+
 Version 1.19 (2017-12-03)
 -------------------------
 - Fixed bug caused by leftover code after update in recent posts widget
