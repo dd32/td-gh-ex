@@ -27,7 +27,7 @@
 
 </div><!-- .post-link -->
 
-<?php if ( get_thecontent() ) : ?>
+<?php if ( get_the_content() ) : ?>
 									                                    	    
 	<div class="post-excerpt">
 		
