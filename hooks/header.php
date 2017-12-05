@@ -120,8 +120,7 @@ function bfastmag_header() {
          <div class="bfastmag-breaking-container"><ul class="bfastmag-breaking">
               <?php
                             $wp_query = new WP_Query( array(
-                //'posts_per_page'        => $bfastmag_featured_slider_max_posts,
-                'posts_per_page'        => 4,
+                 'posts_per_page'        => 4,
                 'order'                 => 'DESC',
                 'post_status'           => 'publish',
              ) );

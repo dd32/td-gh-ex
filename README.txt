@@ -66,17 +66,14 @@ Font Awesome Iconpicker, Copyright 2016 Javi Aguilar
 License: MIT, https://github.com/farbelous/fontawesome-iconpicker/blob/master/LICENSE
 Source: https://github.com/itsjavi/fontawesome-iconpicker
 
-Bundled Background image, Copyright Kasper Bertelsen
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://unsplash.com/photos/Iv_FGYnhtS0
  
 Bundled Preview image 1, Copyright melancholiaphotography
 License: CC0 1.0 Universal (CC0 1.0)
 Source: https://pixabay.com/en/woman-blond-portrait-girl-color-1320810/
  
-Bundled Preview image 2, Copyright Jeremy Bishop
+Bundled Preview image 2, Copyright Zygimantas Trinka
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://unsplash.com/photos/JpUJqo8Le0s
+Source: https://www.pexels.com/photo/portrait-of-young-woman-lying-on-bed-312925/
 
 Bundled Preview image 3, Copyright Adam Kontor
 License: CC0 1.0 Universal (CC0 1.0)
@@ -90,9 +87,7 @@ Bundled Preview image 5, Copyright sasint
 License: CC0 1.0 Universal (CC0 1.0)
 Source: https://pixabay.com/en/rice-sow-adult-ancient-asia-1807554/
  
-Bundled Preview image 6, Copyright Zygimantas Trinka
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://www.pexels.com/photo/portrait-of-young-woman-lying-on-bed-312925/
+
  
    
  
