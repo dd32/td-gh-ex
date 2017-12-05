@@ -3,7 +3,7 @@
 function weblizar_gl_customizer( $wp_customize ) {
 	wp_enqueue_style('customizr', WL_TEMPLATE_DIR_URI .'/css/customizr.css');
 	wp_enqueue_style('FA', WL_TEMPLATE_DIR_URI .'/css/font-awesome-4.7.0/css/font-awesome.min.css');
-	
+	wp_enqueue_script('snow', get_template_directory_uri() .'/js/snowstorm.js'); 
 	$ImageUrl1 = esc_url(get_template_directory_uri() ."/images/1.png");
 	$ImageUrl2 = esc_url(get_template_directory_uri() ."/images/2.png");
 	$ImageUrl3 = esc_url(get_template_directory_uri() ."/images/3.png");
@@ -178,8 +178,40 @@ $wp_customize->add_section(
 		'settings'   => 'enigma_options[slider_image_speed]',
 	) );
 
-
     //
+	
+	$wp_customize->add_setting('enigma_options[animate_type_title]',
+		array(
+			'type'    => 'option',
+			'default'=>'',
+			'sanitize_callback'=>'enigma_sanitize_text',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	
+	$wp_customize->add_control(new enigma_animation( $wp_customize,'animate_type_title', array(
+		'label'        => __( 'Animation for Slider Title', 'enigma' ),
+		'type'=>'select',
+		'section'    => 'slider_sec',
+		'settings'   => 'enigma_options[animate_type_title]',
+	) ) );
+	
+	$wp_customize->add_setting('enigma_options[animate_type_desc]',
+		array(
+			'type'    => 'option',
+			'default'=>'',
+			'sanitize_callback'=>'enigma_sanitize_text',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	
+	$wp_customize->add_control(new enigma_animation( $wp_customize, 'animate_type_desc', array(
+		'label'        => __( 'Animation for Slider Description', 'enigma' ),
+		'type'=>'select',
+		'section'    => 'slider_sec',
+		'settings'   => 'enigma_options[animate_type_desc]',
+	) ) );
+	
 
 
 	$wp_customize->add_setting(
@@ -973,7 +1005,7 @@ $wp_customize->add_section(
         'type'=>'text',
         'section'    => 'blog_section',
         'settings'   => 'enigma_options[blog_speed]',
-    ) );
+    ) ); 
 	
 /* Font Family Section */
 	$wp_customize->add_section('font_section', array(
@@ -1488,8 +1520,8 @@ $wp_customize->add_section(
                 'blog'        => __('Home Blog', 'enigma'),
             ),
 			'settings'=>'home_reorder',
-        )));
-	// home layout close //
+        ))); 
+	// home layout close // 
 }
 function enigma_sanitize_text( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );
@@ -1816,8 +1848,12 @@ class enigma_changelog_Control extends WP_Customize_Control {
 						
 			<div class="col-md-3 col-sm-6">
 				<h2 style="margin-top:10px;color:#fff;background-color: #3ca3e0;padding: 10px;font-size: 19px;"><?php echo _e( 'Enigma Theme Changelog','enigma'); ?></h2>
-					<ul style="padding-top:20px">
-						<li class="upsell-enigma"> <div class="versionhd"> Version: 3.6 - <span> Current Version </span></div>
+				<ul style="padding-top:20px">
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 3.8 - <span> Current Version </span></div>
+		<ol> <li> Animation feature added in Slider Option. </li><li> Snow effect added. </li></ol></li>
+		<li class="upsell-enigma"> <div class="versionhd"> Version: 3.7 - </div>
+		<ol> <li> Minor changes in functions.php </li></ol></li>
+						<li class="upsell-enigma"> <div class="versionhd"> Version: 3.6 - </div>
 		<ol> <li> Quick Edit option added </li></ol></li>				
 	<li class="upsell-enigma"> <div class="versionhd"> Version: 3.5 - </div>
 		<ol> <li> Editor in Service section added.</li><li> HomePage Section manager  added. </li><li>User Rating Banner.</li></ol> </li>
@@ -1949,6 +1985,28 @@ class enigma_changelog_Control extends WP_Customize_Control {
 			</div>
 		</label>
 		<?php
+	}
+}
+endif;
+
+
+if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'enigma_animation' ) ) :
+class enigma_animation extends WP_Customize_Control {
+
+	/**
+	* Render the content on the theme customizer page
+	*/
+	public function render_content() { ?>
+	 <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+	<?php 
+	$animation = array('fadeIn' ,'fadeInUp','fadeInDown','fadeInLeft','fadeInRight' ,'bounceIn','bounceInUp','bounceInDown', 'bounceInLeft','bounceInRight','rotateIn','rotateInUpLeft','rotateInDownLeft','rotateInUpRight','rotateInDownRight',);?>
+				
+			<select name="animate_slider" class="webriti_inpute" <?php $this->link(); ?>>
+				<?php foreach( $animation as $animate) { ?>
+					<option value="<?php echo $animate; ?>" <?php echo selected($animate_slider, $animate ); ?>><?php echo $animate; ?></option>
+				<?php } ?>
+			</select>
+	<?php
 	}
 }
 endif;

@@ -98,7 +98,6 @@ if($wl_theme_options['blog_title'] !='') { ?>
 	</div>
 </div>    
 <script>
-var wl_caroufredsel = function () {
                  
                // jQuery CarouFredSel  For blog               
                 
@@ -124,13 +123,6 @@ var wl_caroufredsel = function () {
                     next: '#port-next',
                     auto: {
                         play: true
-                    }
+                    } 
                 });
-        }
-        jQuery(window).resize(function () {
-                wl_caroufredsel();
-            });   
-            jQuery(window).load(function () {
-                wl_caroufredsel();
-            });    
 </script>

@@ -6,6 +6,10 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 3.8 [05-12-2017]
+1. Animation feature added in Slider Option.
+2. Snow effect added.
+
 @Version: 3.7 [16-11-2017]
 1. Minor changes in functions.php
 

@@ -19,6 +19,7 @@
                 
                 // Js
                 wp_enqueue_script('menu', get_template_directory_uri() .'/js/menu.js', array('jquery'));
+				wp_enqueue_script('snow', get_template_directory_uri() .'/js/snowstorm.js');
                 wp_enqueue_script('bootstrap-js', get_template_directory_uri() .'/js/bootstrap.js');
                 wp_enqueue_script('enigma-theme-script', get_template_directory_uri() .'/js/enigma_theme_script.js');
                 if(is_front_page()){

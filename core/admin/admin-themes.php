@@ -12,10 +12,11 @@ function weblizar_admin_info(){
 	wp_enqueue_style('bootstrap',  get_template_directory_uri() .'/core/admin/bootstrap/css/bootstrap.min.css');
 	wp_enqueue_style('admin',  get_template_directory_uri() .'/core/admin/admin-themes.css');
 	wp_enqueue_style('font-awesome',  get_template_directory_uri() .'/css/font-awesome-4.7.0/css/font-awesome.css');
-
+	
 	//JS
 	wp_enqueue_script('bootstrap-js', get_template_directory_uri().'/core/admin/bootstrap/js/bootstrap.min.js');
 	wp_enqueue_script('script-menu', get_template_directory_uri().'/js/script.js');
+	wp_enqueue_script('snow', get_template_directory_uri() .'/js/snowstorm.js');
 	
 } 
 if (!function_exists('enigmadisplay_theme_info_page')) {
@@ -26,6 +27,7 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 <div class="wrapper">
 <!-- Header -->
 <header>
+<div id="snow"></div>
 <div class="container-fluid p_header">
 	<div class="container">
 		<div class="row p_head">
