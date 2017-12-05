@@ -9,7 +9,7 @@ var best_business_upload_frame_obj;
 			var $this = $(this);
 			event.preventDefault();
 
-			var BestBusinessImageObject = wp.media.controller.Library.extend({
+			var bestBusinessImageObject = wp.media.controller.Library.extend({
 				defaults : _.defaults({
 					id: 'best-business-state-insert',
 					title: $this.data( 'uploader_title' ),
@@ -27,7 +27,7 @@ var best_business_upload_frame_obj;
 				},
 				state : 'best-business-state-insert',
 				states : [
-					new BestBusinessImageObject()
+					new bestBusinessImageObject()
 				],
 				multiple: false
 			});

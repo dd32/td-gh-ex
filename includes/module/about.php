@@ -40,6 +40,7 @@ $config = array(
 	'tabs' => array(
 		'getting_started'     => esc_html__( 'Getting Started', 'best-business' ),
 		'recommended_actions' => esc_html__( 'Recommended Actions', 'best-business' ),
+		'demo_content'        => esc_html__( 'Demo Content', 'best-business' ),
 		'useful_plugins'      => esc_html__( 'Useful Plugins', 'best-business' ),
 		'support'             => esc_html__( 'Support', 'best-business' ),
 		'upgrade_to_pro'      => esc_html__( 'Upgrade to Pro', 'best-business' ),
@@ -50,7 +51,7 @@ $config = array(
 		array(
 			'title'               => esc_html__( 'Theme Documentation', 'best-business' ),
 			'text'                => esc_html__( 'Even if you are a long-time WordPress user, we still believe you should give our documentation a very quick read.', 'best-business' ),
-			'button_label'        => esc_html__( 'View documentation', 'best-business' ),
+			'button_label'        => esc_html__( 'View Documentation', 'best-business' ),
 			'button_link'         => 'https://axlethemes.com/documentation/best-business/',
 			'is_button'           => false,
 			'recommended_actions' => false,
@@ -59,9 +60,18 @@ $config = array(
 		array(
 			'title'               => esc_html__( 'Recommended Actions', 'best-business' ),
 			'text'                => esc_html__( 'We have compiled a list of steps for you, to take make sure the experience you will have using one of our products is very easy to follow.', 'best-business' ),
-			'button_label'        => esc_html__( 'Check recommended actions', 'best-business' ),
+			'button_label'        => esc_html__( 'Check Recommended Actions', 'best-business' ),
 			'button_link'         => esc_url( admin_url( 'themes.php?page=best-business-about&tab=recommended_actions' ) ),
 			'is_button'           => false,
+			'recommended_actions' => false,
+			'is_new_tab'          => false,
+		),
+		array(
+			'title'               => esc_html__( 'Theme Demo Content', 'best-business' ),
+			'text'                => esc_html__( 'You can easily import demo content as we have bundled demo content file within the theme folder. Importer plugin is needed.', 'best-business' ),
+			'button_label'        => esc_html__( 'Demo Content', 'best-business' ),
+			'button_link'         => esc_url( admin_url( 'themes.php?page=best-business-about&tab=demo_content' ) ),
+			'is_button'           => true,
 			'recommended_actions' => false,
 			'is_new_tab'          => false,
 		),
@@ -74,6 +84,24 @@ $config = array(
 			'recommended_actions' => false,
 			'is_new_tab'          => false,
 		),
+		array(
+			'title'               => esc_html__( 'View Theme Demo', 'best-business' ),
+			'text'                => esc_html__( 'To get quick glance of the theme, please visit theme demo.', 'best-business' ),
+			'button_label'        => esc_html__( 'View Demo', 'best-business' ),
+			'button_link'         => 'https://axlethemes.com/theme-demo/?demo=best-business',
+			'is_button'           => false,
+			'recommended_actions' => false,
+			'is_new_tab'          => true,
+		),
+		array(
+			'title'               => esc_html__( 'Child Theme', 'best-business' ),
+			'text'                => esc_html__( 'If you want to customize theme file, you should use child theme rather than modifying theme file itself.', 'best-business' ),
+			'button_label'        => esc_html__( 'About Child Theme', 'best-business' ),
+			'button_link'         => 'https://developer.wordpress.org/themes/advanced-topics/child-themes/',
+			'is_button'           => false,
+			'recommended_actions' => false,
+			'is_new_tab'          => true,
+		),
 	),
 
 	// Recommended actions.
@@ -81,26 +109,25 @@ $config = array(
 		'content' => array(
 			'front-page' => array(
 				'title'       => esc_html__( 'Setting Static Front Page','best-business' ),
-				'description' => esc_html__( 'Select A static page then Front page and Posts page to display front page specific sections. Note: If you import demo content using our Axle Demo Importer plugin, static page will be set automatically.', 'best-business' ),
+				'description' => esc_html__( 'Select A static page then Front page and Posts page to display front page specific sections. Note: Static page will be set automatically when you import demo content.', 'best-business' ),
 				'id'          => 'front-page',
 				'check'       => ( 'page' === get_option( 'show_on_front' ) ) ? true : false,
 				'help'        => '<a href="' . esc_url( admin_url( 'customize.php' ) ) . '?autofocus[section]=static_front_page" class="button button-secondary">' . esc_html__( 'Static Front Page', 'best-business' ) . '</a>',
 			),
-			'axle-demo-importer' => array(
-				'title'       => esc_html__( 'Axle Demo Importer', 'best-business' ),
-				'description' => esc_html__( 'Please install the Axle Demo Importer plugin to import the demo content.', 'best-business' ),
-				'check'       => class_exists( 'Axle_Demo_Importer' ),
-				'plugin_slug' => 'axle-demo-importer',
-				'id'          => 'axle-demo-importer',
-			),
-			'axle-demo-importer-files' => array(
-				'title'       => esc_html__( 'Demo Import File', 'best-business' ),
-				'description' => esc_html__( 'Please download demo content zip file to import using Axle Demo Importer plugin.', 'best-business' ),
-				'id'          => 'axle-demo-importer-files',
-				'help'        => '<a href="https://raw.githubusercontent.com/axlethemes/demo-contents/master/files/best-business.zip">' . esc_html__( 'Download File', 'best-business' ) . '</a>',
+			'one-click-demo-import' => array(
+				'title'       => esc_html__( 'One Click Demo Import', 'best-business' ),
+				'description' => esc_html__( 'Please install the One Click Demo Import plugin to import the demo content.', 'best-business' ),
+				'check'       => class_exists( 'OCDI_Plugin' ),
+				'plugin_slug' => 'one-click-demo-import',
+				'id'          => 'one-click-demo-import',
 			),
 		),
 	),
+
+	// Demo content.
+	'demo_content' => array(
+		'description' => sprintf( esc_html__( 'Demo content files are bundled within this theme. %1$s plugin is needed to import demo content. Please make sure plugin is installed and activated. If you have not installed the plugin, please go to Installed Plugins page under Appearance. After plugin activation, go to Import Demo Data menu under Appearance.', 'best-business' ), '<a href="https://wordpress.org/plugins/one-click-demo-import/" target="_blank">' . esc_html__( 'One Click Demo Import', 'best-business' ) . '</a>' ),
+		),
 
 	// Useful plugins.
 	'useful_plugins' => array(
@@ -142,7 +169,7 @@ $config = array(
 			'title'        => esc_html__( 'Pre-sale Queries', 'best-business' ),
 			'icon'         => 'dashicons dashicons-cart',
 			'text'         => esc_html__( 'Have any query before purchase, you are more than welcome to ask.', 'best-business' ),
-			'button_label' => esc_html__( 'Pre-sale question?', 'best-business' ),
+			'button_label' => esc_html__( 'Pre-sale Question?', 'best-business' ),
 			'button_link'  => 'https://axlethemes.com/pre-sale-question/',
 			'is_button'    => false,
 			'is_new_tab'   => true,
@@ -160,7 +187,7 @@ $config = array(
 			'title'        => esc_html__( 'Child Theme', 'best-business' ),
 			'icon'         => 'dashicons dashicons-admin-customizer',
 			'text'         => esc_html__( 'If you want to customize theme file, you should use child theme rather than modifying theme file itself.', 'best-business' ),
-			'button_label' => esc_html__( 'About child theme', 'best-business' ),
+			'button_label' => esc_html__( 'About Child Theme', 'best-business' ),
 			'button_link'  => 'https://developer.wordpress.org/themes/advanced-topics/child-themes/',
 			'is_button'    => false,
 			'is_new_tab'   => true,

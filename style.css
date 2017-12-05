@@ -4,7 +4,7 @@ Theme URI: https://axlethemes.com/downloads/best-business/
 Author: Axle Themes
 Author URI: https://axlethemes.com/
 Description: Best Business is a modern and trendy, useful and resourceful, versatile and flexible, powerful and easy to use and responsive WordPress creative multipurpose website theme. It is a theme that allows everyone to construct an impressive business page, regardless of their skill level. It comes packed with many useful features, and a design that never fails to impress. It is perfect for all sorts of applications and website archetypes, from professional and personal projects to business and corporate endeavors. Regardless of your previous development or coding experience, it delivers sharp, polished results. Personal, corporate, professional and business users alike find this theme an ideal solution for their purpose.
-Version: 1.0.6
+Version: 1.0.7
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: best-business
@@ -1327,6 +1327,8 @@ object {
 
 .gallery {
     margin-bottom: 1.5em;
+    margin-left: -5px;
+    margin-right: -5px;
 }
 
 .gallery-item {
@@ -1335,7 +1337,11 @@ object {
     vertical-align: top;
     width: 100%;
     margin: 0;
-    padding: 5px 10px;
+    padding: 5px;
+}
+
+.gallery-item img {
+    vertical-align: middle;
 }
 
 .gallery-columns-2 .gallery-item {

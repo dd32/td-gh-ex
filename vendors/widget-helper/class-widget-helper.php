@@ -11,6 +11,8 @@ if ( ! class_exists( 'Best_Business_Widget_Helper' ) ) {
 	 * Widget helper class.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @version 1.0.1
 	 */
 	class Best_Business_Widget_Helper extends WP_Widget {
 
@@ -145,11 +147,24 @@ if ( ! class_exists( 'Best_Business_Widget_Helper' ) ) {
 			switch ( $type ) {
 				case 'text':
 				case 'email':
-				case 'url':
 					?>
 					<p>
 						<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"><?php echo esc_html( $field['label'] ); ?></label>
 						<input type="<?php echo esc_attr( $type ); ?>" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>" value="<?php echo esc_attr( $value ); ?>" class="<?php echo esc_attr( $class ); ?>" placeholder="<?php echo esc_attr( $field['placeholder'] ); ?>" style="<?php echo esc_attr( $field['style'] ); ?>"/>
+						<?php if ( isset( $field['description'] ) && ! empty( $field['description'] ) ) : ?>&nbsp;
+							<?php echo ( true === $field['newline'] ) ? '<br />' : ''; ?>
+							<span class="widget-field-description"><em><?php echo esc_html( $field['description'] ); ?></em></span>
+						<?php endif; ?>
+					</p>
+
+					<?php
+				break;
+
+				case 'url':
+					?>
+					<p>
+						<label for="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>"><?php echo esc_html( $field['label'] ); ?></label>
+						<input type="text" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>" value="<?php echo esc_attr( $value ); ?>" class="<?php echo esc_attr( $class ); ?>" placeholder="<?php echo esc_attr( $field['placeholder'] ); ?>" style="<?php echo esc_attr( $field['style'] ); ?>"/>
 						<?php if ( isset( $field['description'] ) && ! empty( $field['description'] ) ) : ?>&nbsp;
 							<?php echo ( true === $field['newline'] ) ? '<br />' : ''; ?>
 							<span class="widget-field-description"><em><?php echo esc_html( $field['description'] ); ?></em></span>

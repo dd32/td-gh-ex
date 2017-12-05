@@ -19,8 +19,8 @@ if ( ! function_exists( 'best_business_register_recommended_plugins' ) ) :
 
 		$plugins = array(
 			array(
-				'name'     => esc_html__( 'Axle Demo Importer', 'best-business' ),
-				'slug'     => 'axle-demo-importer',
+				'name'     => esc_html__( 'One Click Demo Import', 'best-business' ),
+				'slug'     => 'one-click-demo-import',
 				'required' => false,
 			),
 			array(

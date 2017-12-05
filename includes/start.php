@@ -44,8 +44,12 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require_once trailingslashit( get_template_directory() ) . 'includes/support/woocommerce.php';
 }
 
-// Load about
 if ( is_admin() ) {
+	// Load about.
 	require_once trailingslashit( get_template_directory() ) . 'vendors/about/class-about.php';
 	require_once trailingslashit( get_template_directory() ) . 'includes/module/about.php';
+
+	// Load demo.
+	require_once trailingslashit( get_template_directory() ) . 'vendors/demo/class-demo.php';
+	require_once trailingslashit( get_template_directory() ) . 'includes/module/demo.php';
 }

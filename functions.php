@@ -203,7 +203,7 @@ function best_business_scripts() {
 
 	wp_enqueue_style( 'jquery-sidr', get_template_directory_uri() . '/vendors/sidr/css/jquery.sidr.dark' . $min . '.css', '', '2.2.1' );
 
-	wp_enqueue_style( 'best-business-style', get_stylesheet_uri(), array(), '1.0.6' );
+	wp_enqueue_style( 'best-business-style', get_stylesheet_uri(), array(), '1.0.7' );
 
 	wp_enqueue_script( 'best-business-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix' . $min . '.js', array(), '20130115', true );
 

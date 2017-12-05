@@ -48,6 +48,9 @@ class Best_Business_Woocommerce {
 
 		// Remove product title.
 		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+
+		// Modify global layout.
+		add_filter( 'best_business_filter_theme_global_layout', array( $this, 'modify_global_layout' ), 15 );
 	}
 
 	/**
@@ -70,6 +73,27 @@ class Best_Business_Woocommerce {
 		if ( in_array( $global_layout, array( 'no-sidebar' ), true ) ) {
 			remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 		}
+	}
+
+	/**
+	 * Modify global layout.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $layout Layout.
+	 */
+	function modify_global_layout( $layout ) {
+
+		// Fix for shop page.
+		if ( is_shop() && ( $shop_id = absint( wc_get_page_id( 'shop' ) ) ) > 0 ) {
+			$post_options = get_post_meta( $shop_id, 'best_business_settings', true );
+			if ( isset( $post_options['post_layout'] ) && ! empty( $post_options['post_layout'] ) ) {
+				$layout = esc_attr( $post_options['post_layout'] );
+			}
+		}
+
+		return $layout;
+
 	}
 
 	/**

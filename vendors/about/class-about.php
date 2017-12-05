@@ -19,7 +19,7 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 		 *
 		 * @var string $version Version.
 		 */
-		private $version = '1.0.0';
+		private $version = '1.0.1';
 
 		/**
 		 * Page configuration.
@@ -161,7 +161,8 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 			$this->logo_url      = isset( $this->config['logo_url'] ) ? $this->config['logo_url'] : get_template_directory_uri() . '/vendors/about/images/logo.png';
 			$this->logo_link     = isset( $this->config['logo_link'] ) ? $this->config['logo_link'] : 'https://axlethemes.com/';
 			$this->tabs          = isset( $this->config['tabs'] ) ? $this->config['tabs'] : array();
-			$this->notification  = isset( $this->config['notification'] ) ? $this->config['notification'] : ( '<p>' . sprintf( esc_html__( 'Welcome! Thank you for choosing %1$s! To fully take advantage of the best our theme can offer please make sure you visit our %2$swelcome page%3$s.', 'best-business' ), $this->theme_name, '<a href="' . esc_url( admin_url( 'themes.php?page=' . $this->page_slug ) ) . '">', '</a>' ) . '</p><p><a href="' . esc_url( admin_url( 'themes.php?page=' . $this->page_slug ) ) . '" class="button button-primary" style="text-decoration: none;">' . sprintf( esc_html__( 'Get started with %s', 'best-business' ), $this->theme_name ) . '</a></p>' );
+			$dismiss_url = wp_nonce_url( add_query_arg( array( 'best-business-at-dismiss' => '1' ), admin_url( 'themes.php' ) ), 'best-business-action-dismiss-' . get_current_user_id(), 'best-business-dismiss-nonce' );
+			$this->notification  = isset( $this->config['notification'] ) ? $this->config['notification'] : ( '<p>' . sprintf( esc_html__( 'Welcome! Thank you for choosing %1$s! To fully take advantage of the best our theme can offer please make sure you visit our %2$swelcome page%3$s.', 'best-business' ), $this->theme_name, '<a href="' . esc_url( admin_url( 'themes.php?page=' . $this->page_slug ) ) . '">', '</a>' ) . '</p><p><a href="' . esc_url( admin_url( 'themes.php?page=' . $this->page_slug ) ) . '" class="button button-primary" style="text-decoration: none;">' . sprintf( esc_html__( 'Get started with %s', 'best-business' ), $this->theme_name ) . '</a>' ) . '<a href="' . esc_url( $dismiss_url ) . '" class="btn-at-dismiss">' . esc_html__( 'Dismiss', 'best-business' ) . '</a></p>';
 		}
 
 		/**
@@ -171,6 +172,7 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 		 */
 		public function setup_actions() {
 			add_action( 'admin_menu', array( $this, 'register' ) );
+			add_action( 'wp_loaded', array( $this, 'hide_notice' ) );
 			add_action( 'load-themes.php', array( $this, 'activation_admin_notice' ) );
 			add_action( 'admin_enqueue_scripts', array( $this, 'load_assets' ) );
 			add_action( 'wp_ajax_at_about_action_dismiss_recommended_action', array( $this, 'dismiss_recommended_action_callback' ) );
@@ -200,6 +202,22 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 					$this->page_slug,
 					array( $this, 'render_about_page' )
 				);
+			}
+		}
+
+		/**
+		 * Hide notice
+		 *
+		 * @since 1.0.0
+		 */
+		function hide_notice() {
+			// Verify nonce.
+			if (! ( isset( $_GET['best-business-dismiss-nonce'] ) && wp_verify_nonce( sanitize_key( $_GET['best-business-dismiss-nonce'] ), 'best-business-action-dismiss-' . get_current_user_id() ) ) ) {
+				return;
+			}
+
+			if ( 1 === absint( $_GET['best-business-at-dismiss'] ) ) {
+				update_user_meta( get_current_user_id(), 'best_business_at_dismissed', 1 );
 			}
 		}
 
@@ -357,8 +375,16 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 		 * @since 1.0.0
 		 */
 		public function activation_admin_notice() {
-			global $pagenow;
-			if ( is_admin() && ( 'themes.php' === $pagenow ) && isset( $_GET['activated'] ) ) {
+			$current_screen_id     = null;
+			$current_screen_object = get_current_screen();
+
+			if ( $current_screen_object ) {
+				$current_screen_id = $current_screen_object->id;
+			}
+
+			$dismissed_status = get_user_meta( get_current_user_id(), 'best_business_at_dismissed', true );
+
+			if ( 'themes' === $current_screen_id && 1 !== absint( $dismissed_status ) ) {
 				add_action( 'admin_notices', array( $this, 'welcome_admin_notice' ), 99 );
 			}
 		}
@@ -408,13 +434,19 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 
 			wp_add_inline_style( 'admin-menu', $custom_css );
 
+			$custom_css = '.btn-at-dismiss {
+				margin-left: 10px;
+			}';
+
+			wp_add_inline_style( 'themes', $custom_css );
+
 			if ( 'appearance_page_' . $this->page_slug === $hook ) {
 				wp_enqueue_style( 'plugin-install' );
 				wp_enqueue_script( 'plugin-install' );
 				wp_enqueue_script( 'updates' );
 
-				wp_enqueue_style( 'best-business-about', get_template_directory_uri() . '/vendors/about/css/about' . $min . '.css', array(), '1.0.0' );
-				wp_enqueue_script( 'best-business-about', get_template_directory_uri() . '/vendors/about/js/about' . $min . '.js', array( 'jquery' ), '1.0.0' );
+				wp_enqueue_style( 'best-business-about', get_template_directory_uri() . '/vendors/about/css/about' . $min . '.css', array(), '1.0.1' );
+				wp_enqueue_script( 'best-business-about', get_template_directory_uri() . '/vendors/about/js/about' . $min . '.js', array( 'jquery' ), '1.0.1' );
 				$js_vars = array(
 					'ajaxurl' => esc_url( admin_url( 'admin-ajax.php' ) ),
 				);
@@ -494,7 +526,7 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 
 			if ( ! empty( $recommended_actions ) ) {
 
-				echo '<div class="about-tab-wrapper feature-section action-recommended demo-import-boxed" id="plugin-filter">';
+				echo '<div class="about-tab-wrapper feature-section action-recommended" id="plugin-filter1">';
 
 				$actions = array();
 
@@ -584,6 +616,24 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 				echo '</div>';
 			} // End if().
 		}
+
+		/**
+		 * Render demo content.
+		 *
+		 * @since 1.0.0
+		 */
+		public function demo_content() {
+			$demo_content = ( isset( $this->config['demo_content'] ) ) ? $this->config['demo_content'] : array();
+
+			echo '<div class="feature-section demo-content">';
+
+			if ( isset( $demo_content['description'] ) && ! empty( $demo_content['description'] ) ) {
+				echo '<div>' . wp_kses_post( $demo_content['description'] ) . '</div>';
+			}
+
+			echo '</div>';
+		}
+
 
 		/**
 		 * Render upgrade tab.
