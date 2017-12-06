@@ -1,12 +1,12 @@
 === Content Theme ===
-Contributors: Alberto Ramacciotti ( http://albertoramacciotti.com )
-Tags: one-column, dark, flexible-width, custom-menu, editor-style, threaded-comments, featured-images, translation-ready
+Contributors: Alberto Ramacciotti ( http://albertoramacciotti.me )
+Tags: one-column, custom-menu, editor-style, threaded-comments, featured-images, translation-ready
 Requires at least: 3.0
-Tested up to: 4.2.2
-Version: 1.0.8
+Tested up to: 4.9.1
+Version: 1.0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Content WordPress theme, Copyright (C) 2013-2015 Alberto Ramacciotti
+Content WordPress theme, Copyright (C) 2013-2017 Alberto Ramacciotti ( http://albertoramacciotti.me )
 Content WordPress theme is licensed under the GPL.
 
 Content is a responsive HTML5 WordPress theme.
@@ -27,7 +27,7 @@ Content default menu will does not show sub-levels menu items.
 
 == Installation ==
 
-01. Download Content theme ( http://ramacciotti.altervista.org/archives/articles/content-wordpress-theme ),
+01. Download Content theme ( https://wordpress.org/themes/content/ ),
 02. Upload via FTP the `Content` folder to your `/wp-content/themes/` directory,
 03. Activate through the 'Appearence -> Themes' menu in WordPress,
 04. Optional: customize the theme options like Widgets and Menu setup.
@@ -77,5 +77,9 @@ None
 * Fix bugs
 
 = 1.0.8 =
+
+* Fix bugs
+
+= 1.0.9 =
 
 * Fix bugs

@@ -7,12 +7,13 @@ function content_setup() {
 
     add_editor_style();
 
-    add_theme_support( 'automatic-feed-links' );
+    add_theme_support('automatic-feed-links');
 
-    add_theme_support( 'title-tag' );
+    add_theme_support('custom-background', array('default-color' => 'fefefe',));
 
-    add_theme_support( 
-        'post-formats', 
+    add_theme_support('title-tag');
+
+    add_theme_support('post-formats', 
         array( 
             'aside', 
             'image', 
@@ -29,6 +30,8 @@ function content_setup() {
     set_post_thumbnail_size( 625, 9999 );
 }
 add_action( 'after_setup_theme', 'content_setup' );
+
+require(get_template_directory() . '/inc/custom-header.php');
 
 function content_scripts() {
     wp_enqueue_style( 'content-style', get_stylesheet_uri() );
