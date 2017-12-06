@@ -1,13 +1,13 @@
 === AR zine Theme ===
-Contributors: Alberto Ramacciotti ( http://albertoramacciotti.com )
-Tags: light, black, white, three-columns, right-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready 
+Contributors: Alberto Ramacciotti ( http://albertoramacciotti.me )
+Tags: three-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready 
 Requires at least: 3.0
-Tested up to: 3.5.1
-Version: 1.5
+Tested up to: 4.9.1
+Version: 1.6
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-AR zine WordPress theme, Copyright (C) 2013 Alberto Ramacciotti, AR Web Dev Studio
+AR zine WordPress theme, Copyright (C) 2013-2017 Alberto Ramacciotti ( http://albertoramacciotti.me )
 AR zine theme is licensed under the GPL.
 
 AR zine is a responsive HTML5 WordPress theme.
@@ -26,8 +26,8 @@ Font used is Open Sans free font ( http://www.google.com/fonts/specimen/Open+San
 
 == Installation ==
 
-01. Download AR Zine theme from http://ramacciotti.altervista.org/archivio/articolo/arzine-theme ,
-02. Upload via FTP the 'AR Zine' folder to your `/wp-content/themes/` directory,
+01. Download AR Zine theme from https://wordpress.org/themes/arzine/,
+02. Upload via FTP the 'arzine' folder to your `/wp-content/themes/` directory,
 03. Activate through the 'Appearance -> Themes' menu in WordPress,
 04. Optional: customize the theme options like Widgets and Menu setup.
 
@@ -55,4 +55,7 @@ None
 * Add copyright notes
 
 = 1.5 =
+* Fix bugs
+
+= 1.6 =
 * Fix bugs

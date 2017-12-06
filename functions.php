@@ -5,13 +5,13 @@ if ( ! isset( $content_width ) )
 function arzine_setup() {
     load_theme_textdomain( 'arzine', get_template_directory() . '/langs' );
     add_editor_style();
-    add_theme_support( 'automatic-feed-links' );
-    add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
-    register_nav_menu( 'container', __( 'container Menu', 'arzine' ) );
-    add_theme_support( 'custom-background', array(
-        'default-color' => '040606',
-    ) );
-    add_theme_support( 'post-thumbnails' );
+    add_theme_support('automatic-feed-links');
+    add_theme_support('title-tag');
+    add_theme_support('post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ));
+    register_nav_menu('container', __( 'container Menu', 'arzine' ));
+    add_theme_support('custom-background', array(
+        'default-color' => '040606',));
+    add_theme_support('post-thumbnails');
     set_post_thumbnail_size( 550, 9999 );
 }
 add_action( 'after_setup_theme', 'arzine_setup' );
