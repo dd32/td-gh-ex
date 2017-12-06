@@ -47,6 +47,9 @@ if ( ! function_exists( 'azonbooster_handburger_btn' ) ) {
 				<span></span>
 			</div>
 			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<div class="menu-close-btn">
+					<i class="fa fa-close"></i>
+				</div>
 				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 			</nav><!-- #site-navigation -->
 			<?php if ( ( ( is_home() && is_front_page() ) ) && has_custom_header() ) : ?>

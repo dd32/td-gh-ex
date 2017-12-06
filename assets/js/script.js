@@ -23,19 +23,21 @@
 					$(this).addClass('active');
 					
 				} else {
+
 					$('body').removeClass('nav-open');
 					$(this).removeClass('active');
 				}
 
 			});
+
+			// Close menu
+			$('.menu-close-btn i').on('click touch', function() {
+				$('body').removeClass('nav-open');
+				$('.menu-toggle').removeClass('active');
+			});
 		},
 
 		navSearch: function() {
-
-			//var mhHeigh = $('#masthead').height() - 50;
-			//$('.site-search').css('top', mhHeigh + 'px' );
-
-			//$('.header-right').css('height', $('.header-left').height() + 'px');
 
 			$('.search-toggle').on('click', function(e) {
 				e.preventDefault();

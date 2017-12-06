@@ -481,7 +481,7 @@ if ( ! class_exists( 'AzonBooster' ) ) :
 				array(
 					'name'      => 'Kirki',
 					'slug'      => 'kirki',
-					'required'  => true,
+					'required'  => false,
 				),
 
 			);

@@ -1167,7 +1167,21 @@ video {
 	-webkit-transform: translateX(-100%);
 	-ms-transform: translateX(-100%);
 	transform: translateX(-100%);
-	z-index: 99999;
+	z-index: 9999;
+
+	.menu-close-btn {
+		position: absolute;
+	    top: -35px;
+	    left: 50%;
+	    margin-left: -15px;
+
+	    .fa-close {
+	    	color: #fff;
+		    cursor: pointer;
+		    font-size: 1.875em;
+		    line-height: 1;
+	    }
+	}
 }
 
 body.nav-open {
@@ -1202,6 +1216,10 @@ body.nav-open .main-navigation {
 .main-navigation li {
 	position: relative;
 	text-align: left;
+
+	&:hover {
+		background: #333;
+	}
 }
 
 .main-navigation a {
@@ -1405,7 +1423,7 @@ body.nav-open .menu-toggle span:nth-child(4) {
 			    line-height: 1;
 			    position: fixed;
 			    right: 15px;
-			    top: 8px;
+			    top: 35px;
 		    }
 	}
 }

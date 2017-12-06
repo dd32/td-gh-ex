@@ -24,6 +24,12 @@ The best free Amazon Affiliate theme double up your sales and conversion rate. A
 AzonBooster includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+= 1.1.3 - Dec 6 2017 =
+* Fixed: Recommend Plugin
+* Added: Close menu
+* Fixed: Avoid admin function for `excerpt_length` and `excerpt_more`
+* Removed: Remove unused files/folders
+
 = 1.0.2 - Nov 1 2017 =
 * Added: Requirement Plugin Helper
 * Added: Customizer Style

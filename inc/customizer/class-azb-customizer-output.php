@@ -55,6 +55,10 @@ class AzonBooster_Customizer_Output {
 
 	public function custom_excerpt_length( $length ) {
 
+		if ( is_admin() ) {
+			return $length;
+		}
+
 		return azonbooster_get_option('blog_post_excerpt_length', 20);
 
 	}
@@ -72,6 +76,10 @@ class AzonBooster_Customizer_Output {
 	}
 
 	public function custom_excerpt_more( $more  ) {
+
+		if ( is_admin() ) {
+			return $more;
+		}
 
 		return azonbooster_get_option('blog_post_show_excerpt_more', '[...]');
 	}

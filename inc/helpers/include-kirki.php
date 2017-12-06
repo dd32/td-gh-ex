@@ -51,7 +51,7 @@ if ( ! class_exists( 'Kirki' ) ) {
 				?>
 				<li id="accordion-section-<?php echo esc_attr( $this->id ); ?>" class="<?php echo esc_attr( $classes ); ?>" style="border-top:none;border-bottom:1px solid #ddd;padding:7px 14px 16px 14px;text-align:right;">
 					<?php if ( ! $installed ) : ?>
-						<p style="text-align:left;margin-top:0;"><?php _e( 'This theme recommends the following plugin: <a href="https://wordpress.org/plugins/kirki/" target="_blank">Kirki Toolkit</a>', 'azonbooster' ); ?></p>
+						<p style="text-align:left;margin-top:0;"><?php _e( 'The AzonBooster recommends the following plugin: <a href="https://wordpress.org/plugins/kirki/" target="_blank">Kirki Toolkit</a>', 'azonbooster' ); ?></p>
 						<a class="install-now button-primary button" data-slug="kirki" href="<?php echo esc_url_raw( $plugin_install_url ); ?>" aria-label="<?php esc_attr_e( 'Install Kirki Toolkit now', 'azonbooster' ); ?>" data-name="Kirki Toolkit">
 							<?php esc_html_e( 'Install Now', 'azonbooster' ); ?>
 						</a>
@@ -67,13 +67,13 @@ if ( ! class_exists( 'Kirki' ) ) {
 		}
 	}
 
-	if ( ! function_exists( 'kirki_installer_register' ) ) {
+	if ( ! function_exists( 'azonbooster_installer_register' ) ) {
 		/**
 		 * Registers the section, setting & control for the kirki installer.
 		 *
 		 * @param object $wp_customize The main customizer object.
 		 */
-		function kirki_installer_register( $wp_customize ) {
+		function azonbooster_installer_register( $wp_customize ) {
 			$wp_customize->add_section( new Kirki_Installer_Section( $wp_customize, 'kirki_installer', array(
 				'title'      => '',
 				'capability' => 'install_plugins',
@@ -88,6 +88,6 @@ if ( ! class_exists( 'Kirki' ) ) {
 			) );
 
 		}
-		add_action( 'customize_register', 'kirki_installer_register' );
+		add_action( 'customize_register', 'azonbooster_installer_register' );
 	}
 }
