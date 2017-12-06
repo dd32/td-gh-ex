@@ -3,7 +3,7 @@
 Contributors: athemeart
 Requires at least: 4.0
 Tested up to: 4.8.1
-Stable tag: 1.0
+Stable tag: 1.0.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -59,7 +59,6 @@ Author: justintadlock
 Source: https://github.com/justintadlock/breadcrumb-trail
 License: https://github.com/garand/sticky/blob/master/LICENSE.md
 
-
 Sticky :
 Author:  Anthony Garand   
 Source: https://github.com/garand/sticky
@@ -69,11 +68,9 @@ Tgmpluginactivation:
 Source: http://tgmpluginactivation.com/
 License: GPL-2.0 or later license.
 
-
 wp bootstrap navwalker:
 Source: https://github.com/wp-bootstrap/wp-bootstrap-navwalker
 License: GPL-2.0 or later license.
-
 
 
 
@@ -93,6 +90,9 @@ All are Licensed under CC0
 
 
 == Changelog ==
+
+= 1.0.2 =
+* Addmin Options Added
 
 = 1.0.1 =
 * Initial release

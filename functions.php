@@ -51,3 +51,5 @@ require get_template_directory() . '/vendors/breadcrumbs/breadcrumbs.php';
 
 
 
+require get_template_directory() . '/inc/pro/admin-page.php';
+
