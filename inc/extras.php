@@ -32,19 +32,6 @@ function adagio_new_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'adagio_new_excerpt_more');
 
-add_filter( 'wp_trim_excerpt', 'adagio_excerpt_metabox_more' );
-function adagio_excerpt_metabox_more( $excerpt ) {
-	$output = $excerpt;
-	
-	if ( has_excerpt() ) {
-		$output = sprintf( '%1$s <a class="more-link" href="'.esc_url(get_permalink($post->ID)) . '"><span data-hover="'. __('Read More', 'adagio-lite') .'">'. __('Read More', 'adagio-lite') .'</span></a>',
-			$excerpt,
-			get_permalink()
-		);
-	}
-	
-	return $output;
-}
 
 /**
 * Adds excerpt support for pages.
@@ -77,3 +64,30 @@ function adagio_get_the_archive_title( $title ) {
     return $title;
 };
 add_filter( 'get_the_archive_title', 'adagio_get_the_archive_title', 10, 1 );
+// display custom admin notice
+
+function adagio_lite_notice() {
+	global $current_user;
+	$user_id = $current_user->ID;
+	if (!get_user_meta($user_id, 'adagio_notice_ignore')) {
+		echo '<div class="updated notice"><p>'. esc_html__('Thanks for installing Adagio Lite! Want more features?', 'adagio-lite') .' <a href="https://www.vivathemes.com/wordpress-theme/adagio/" target="blank">'. esc_html__('Check Out the Pro Version  &#8594;', 'adagio-lite') .'</a><a class="notice-dismiss" href="?adagio-ignore-notice"><span class="screen-reader-text">Dismiss Notice</span></a></p></div>';
+	}
+}
+add_action('admin_notices', 'adagio_lite_notice');
+
+function adagio_notice_ignore() {
+	global $current_user;
+	$user_id = $current_user->ID;
+	if (isset($_GET['adagio-ignore-notice'])) {
+		add_user_meta($user_id, 'adagio_notice_ignore', 'true', true);
+	}
+}
+add_action('admin_init', 'adagio_notice_ignore');
+
+add_action('admin_head', 'adagio_admin_style');
+function adagio_admin_style() {
+  echo '<style>
+   .notice {position: relative;}
+   a.notice-dismiss {text-decoration:none;}
+  </style>';
+}

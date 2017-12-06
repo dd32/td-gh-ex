@@ -34,7 +34,7 @@
   </div>
   <?php endif ?>
   <div id="copyinfo">
-    &copy; <?php echo date("Y"); ?>
+    &copy; <?php echo date_i18n(__('Y','adagio-lite')); ?>
     <?php bloginfo('name'); ?>
     . <a href="<?php echo esc_url( esc_html__( 'http://wordpress.org/', 'adagio-lite' ) ); ?>"> <?php printf( esc_html__( 'Powered by %s.', 'adagio-lite' ), 'WordPress' ); ?> </a> <?php printf( esc_html__( 'Theme by %1$s.', 'adagio-lite' ), '<a href="http://www.vivathemes.com/" rel="designer">Viva Themes</a>' ); ?> </div>
 </div>

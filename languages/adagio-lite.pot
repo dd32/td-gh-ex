@@ -2,9 +2,9 @@
 # This file is distributed under the GNU GPL.
 msgid ""
 msgstr ""
-"Project-Id-Version: Adagio Lite 1.0\n"
+"Project-Id-Version: Adagio Lite 1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/adagio-lite\n"
-"POT-Creation-Date: 2017-10-09 09:32:50+00:00\n"
+"POT-Creation-Date: 2017-12-06 10:38:46+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,26 +20,40 @@ msgstr ""
 msgid "Not Found"
 msgstr ""
 
-#: comments.php:18
-msgid "One comment"
-msgid_plural "%1$s comments"
+#. translators: %s: post title
+
+#: comments.php:21
+msgctxt "comments title"
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr ""
+
+#. translators: 1: number of comments, 2: post title
+
+#: comments.php:25
+msgctxt "comments title"
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:30
+#: comments.php:46
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:33
+#: comments.php:49
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:36
+#: comments.php:52
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:46
+#: comments.php:62
 msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:37
+msgid "Y"
 msgstr ""
 
 #: footer.php:39
@@ -78,27 +92,35 @@ msgstr ""
 msgid "Footer Widgets"
 msgstr ""
 
-#: inc/extras.php:31 inc/extras.php:40
+#: inc/extras.php:31
 msgid "Read More"
 msgstr ""
 
-#: inc/extras.php:65
+#: inc/extras.php:52
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/extras.php:67
+#: inc/extras.php:54
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: inc/extras.php:69
+#: inc/extras.php:56
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
-#: inc/extras.php:75
+#: inc/extras.php:62
 msgid "Archives"
+msgstr ""
+
+#: inc/extras.php:73
+msgid "Thanks for installing Adagio Lite! Want more features?"
+msgstr ""
+
+#: inc/extras.php:73
+msgid "Check Out the Pro Version  &#8594;"
 msgstr ""
 
 #: inc/template-tags.php:27
