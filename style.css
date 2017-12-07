@@ -1,16 +1,19 @@
 /* 
 Theme Name: Rockers
+Theme URI: https://wordpress.org/themes/rockers/
 Author: Alberto Ramacciotti
-Author URI: http://albertoramacciotti.com
+Author URI: http://albertoramacciotti.me
 Description: Rockers is a responsive theme for bloggers with a clean design.
-Version: 2.5
+Version: 2.6
+Text Domain: rockers
+
 License: GNU General Public License v2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Rockers WordPress theme, Copyright (C) 2013-2015 Alberto Ramacciotti.
-Rockers theme is licensed under the GPL.
+Rockers WordPress theme, Copyright (C) 2013-2017 Alberto Ramacciotti ( http://albertoramacciotti.me ).
+Rockers theme is licensed under the GPL license.
 
-Tags: two-columns, left-sidebar, light, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments 
+Tags: two-columns, left-sidebar, custom-background, custom-header, custom-menu, editor-style, threaded-comments, featured-images, sticky-post, translation-ready, post-formats, rtl-language-support, threaded-comments 
 */
 
 html, 
