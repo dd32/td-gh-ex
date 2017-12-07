@@ -68,6 +68,14 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.80
+* Fixed search bar not showing if Top Bar is removed on header 1 & 3
+* Added Customizer inter links to help/improve user experience
+* Updated the language .pot file
+Premium: Added settings to show Site Title & Tagline with an uploaded logo
+Premium: Added settings to adjust logo positions
+Premium: Fixed bug with Sticky Header & Elementor Page Builder Conflict
+
 #### 1.0.7
 * Admin CSS edits
 * Added help links to Customizer

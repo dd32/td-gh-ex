@@ -1,3 +1,15 @@
+#sub-accordion-section-title_tagline .description.customize-section-description,
+#sub-accordion-section-avant-site-layout-section-site .description.customize-section-description,
+#sub-accordion-section-avant-site-layout-section-header .description.customize-section-description,
+#sub-accordion-section-avant-site-layout-section-footer .description.customize-section-description,
+#sub-accordion-section-colors .description.customize-section-description {
+    background-color: #e2f1ff;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    margin: 0 -12px 0 -10px;
+    padding: 15px 15px 16px;
+    font-size: 12px;
+}
+
 #customize-theme-controls #accordion-section-title_tagline .accordion-section-title:hover,
 #customize-theme-controls #accordion-panel-avant-panel-layout .accordion-section-title:hover,
 #customize-theme-controls #accordion-panel-avant-panel-font-settings .accordion-section-title:hover,

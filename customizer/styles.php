@@ -470,6 +470,7 @@ function customizer_library_avant_build_styles() {
 			'selectors' => array(
 				'.site-top-bar.site-header-layout-one .search-block,
 				.site-header.site-header-layout-one .site-header-top,
+				.site-header.site-header-layout-one .search-block,
 				.site-header.site-header-layout-one .main-navigation ul ul,
 				.site-header.site-header-layout-two,
 				.site-header.site-header-layout-two .site-header-top,

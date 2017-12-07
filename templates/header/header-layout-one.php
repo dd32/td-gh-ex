@@ -28,12 +28,6 @@ global $woocommerce; ?>
 			</div>
 			<div class="clearboth"></div>
 			
-			<?php if ( !get_theme_mod( 'avant-header-search' ) ) : ?>
-			    <div class="search-block">
-			        <?php get_search_form(); ?>
-			    </div>
-			<?php endif; ?>
-			
 		</div>
 		
 	</div>
@@ -73,6 +67,12 @@ global $woocommerce; ?>
 				</nav><!-- #site-navigation -->
 				
 			</div>
+			
+			<?php if ( !get_theme_mod( 'avant-header-search' ) ) : ?>
+			    <div class="search-block">
+			        <?php get_search_form(); ?>
+			    </div>
+			<?php endif; ?>
 			
 			<div class="site-header-top-right">
 				

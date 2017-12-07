@@ -328,16 +328,16 @@ a.header-cart-contents {
     background-color: #FFF;
     border-top: 0;
     border-radius: 0 0 3px 3px;
-    bottom: 2px;
+    top: -55px;
     right: 20px;
     padding: 9px 9px;
     z-index: 2;
 
-    -webkit-transition: bottom 0.3s ease 0s;
-    -moz-transition: bottom 0.3s ease 0s;
-    -ms-transition: bottom 0.3s ease 0s;
-    -o-transition: bottom 0.3s ease 0s;
-    transition: bottom 0.3s ease 0s;
+    -webkit-transition: top 0.3s ease 0s;
+    -moz-transition: top 0.3s ease 0s;
+    -ms-transition: top 0.3s ease 0s;
+    -o-transition: top 0.3s ease 0s;
+    transition: top 0.3s ease 0s;
 }
 .search-block .search-field {
     font-size: 13px;
@@ -357,7 +357,7 @@ a.header-cart-contents {
 }
 
 .show-site-search .search-block {
-    bottom: -49px;
+    top: 0;
 }
 
 /* -------- Naviagtion Elements -------- */

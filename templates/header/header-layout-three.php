@@ -28,12 +28,6 @@ global $woocommerce; ?>
 			</div>
 			<div class="clearboth"></div>
 			
-			<?php if ( !get_theme_mod( 'avant-header-search' ) ) : ?>
-			    <div class="search-block">
-			        <?php get_search_form(); ?>
-			    </div>
-			<?php endif; ?>
-			
 		</div>
 		
 	</div>
@@ -42,6 +36,12 @@ global $woocommerce; ?>
 <header id="masthead" class="site-header site-header-layout-three <?php echo ( get_theme_mod( 'avant-header-switch' ) ) ? sanitize_html_class( 'site-header-switch' ) : ''; ?> <?php echo ( is_front_page() && get_theme_mod( 'avant-header-remove-slider-space' ) ) ? sanitize_html_class( 'site-header-nospace' ) : ''; ?>">
 	
 	<div class="site-container">
+		
+		<?php if ( !get_theme_mod( 'avant-header-search' ) ) : ?>
+		    <div class="search-block">
+		        <?php get_search_form(); ?>
+		    </div>
+		<?php endif; ?>
 			
 		<div class="site-branding">
 			

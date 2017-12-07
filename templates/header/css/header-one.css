@@ -175,6 +175,9 @@ Avant - Default Header
     box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.08) inset, 0 2px 3px 0 rgba(238, 238, 238, 0.4);
     color: #aaa;
 }
+.site-header-top .site-container {
+    position: relative;
+}
 .site-header-top-left {
     float: left;
 }
@@ -271,9 +274,6 @@ a.header-cart-contents {
 .site-top-bar .header-cart a.header-cart-contents {
     padding: 8px 10px 7px;
 }
-.header-cart-amount {
-
-}
 .header-cart-checkout {
     margin: 0 0 0 4px;
     position: relative;
@@ -302,7 +302,7 @@ a.header-cart-contents {
     background-color: #FFF;
     border-top: 0;
     border-radius: 0 0 3px 3px;
-    bottom: 2px;
+    bottom: 55px;
     right: 55px;
     padding: 9px 9px;
     z-index: 2;
@@ -331,7 +331,7 @@ a.header-cart-contents {
 }
 
 .show-site-search .search-block {
-    bottom: -50px;
+    bottom: 1px;
 }
 
 /* -- Site Boxed -- */
