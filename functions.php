@@ -23,8 +23,14 @@ if (!function_exists('sneaklite_scripts_styles')) {
 		$sneaklite_header = suevafree_setting( 'sneaklite_header_layout', 'header_layout_3');
 		wp_enqueue_style('sneaklite-' . $sneaklite_header, get_template_directory_uri() . '/assets/css/header/' . $sneaklite_header . '.css'); 
 
-		wp_deregister_style ( 'suevafree-google-fonts' );
-		wp_enqueue_style( 'sneaklite-google-fonts', '//fonts.googleapis.com/css?family=Abel|Allura|Roboto+Slab|Fjalla+One&subset=latin,latin-ext' );
+		wp_deregister_style( 'suevafree_google_fonts' );
+
+		$fonts_args = array(
+			'family' =>	str_replace('|', '%7C','Abel|Allura|Fjalla+One|Roboto+Slab:300,300i,400,400i,500,500i,600,600i,700,700'),
+			'subset' =>	'latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic'
+		);
+		
+		wp_enqueue_style( 'sneaklite-google-fonts', add_query_arg ($fonts_args, "https://fonts.googleapis.com/css" ), array(), null);
 
 	}
 	
