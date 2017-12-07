@@ -21,7 +21,7 @@ Boxy_Kirki::add_config( 'boxy', array(
 Boxy_Kirki::add_section( 'title_tagline', array(
 	'title'          => __( 'Site Identity','boxy' ),
 	'description'    => __( 'Site Header Options', 'boxy'),       
-	'priority'       => 8,         																																																																																																																																	
+	'priority'       => 8,         													
 ) );    
 
 Boxy_Kirki::add_field( 'boxy', array(
@@ -552,7 +552,7 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'section'  => 'primary_color_field',
 	'type'     => 'color',   
 	'default'  => '',
-	'alpha'  => true,
+	"choices['alpha']"  => true,
 	'active_callback' => array(
 		array (
 			'setting'  => 'enable_primary_color',
@@ -666,7 +666,7 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'section'  => 'primary_color_field',
 	'type'     => 'color',
 	'default'  => '#d7d7d7',
-	'alpha'  => true,
+	"choices['alpha']"  => true,
 	'active_callback' => array(
 		array(
 			'setting'  => 'enable_nav_bg_color',
@@ -698,7 +698,7 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'section'  => 'primary_color_field',
 	'type'     => 'color',
 	'default'  => '#d7d7d7',
-	'alpha'  => true,
+	"choices['alpha']"  => true,
 	'active_callback' => array(
 		array(
 			'setting'  => 'enable_dd_bg_color',
@@ -730,7 +730,7 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'section'  => 'primary_color_field',
 	'type'     => 'color',
 	'default'  => '#fff',
-	'alpha'  => true,
+	"choices['alpha']"  => true,
 	'active_callback' => array(
 		array(
 			'setting'  => 'enable_nav_hover_color',
@@ -765,7 +765,7 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'section'  => 'primary_color_field',
 	'type'     => 'color',
 	'default'  => '#3a3a3a',
-	'alpha'  => true,
+	"choices['alpha']"  => true,
 	'active_callback' => array(
 		array(
 			'setting'  => 'enable_secondary_color',
@@ -1262,7 +1262,7 @@ Boxy_Kirki::add_section( 'header', array(
 	'label'    => __( 'Header Text Color', 'boxy' ),
 	'section'  => 'header',
 	'type'     => 'color',
-	'alpha' => true,
+	"choices['alpha']"  => true,
 	'default'  => '', 
 	'output'   => array(
 		array(
@@ -1536,7 +1536,7 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'label'    => __( 'Header Overlay ( Background )color', 'boxy' ),
 	'section'  => 'header_image',
 	'type'     => 'color',
-	'alpha' => true,
+	"choices['alpha']"  => true,
 	'default'  => '', 
 	'output'   => array(
 		array(
@@ -2221,7 +2221,7 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'label'    => __( 'Footer Overlay ( Background )color', 'boxy' ),
 	'section'  => 'footer_image',
 	'type'     => 'color',
-	'alpha' => true,
+	"choices['alpha']"  => true,
 	'default'  => '#E5493A', 
 	'active_callback' => array(
 		array(
@@ -2342,7 +2342,7 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'section'  => 'flex_caption_section',
 	'type'     => 'color',
 	'default'  => 'rgba(1, 1, 1, 0.6)',
-	'alpha' => true,
+	"choices['alpha']"  => true,
 	'output'   => array(
 		array(
 			'element'  => '.flex-container .flex-caption h1, .flex-container .flex-caption h2, .flex-container .flex-caption h3, .flex-container .flex-caption h4, .flex-container .flex-caption h5, .flex-container .flex-caption h6, .flex-container .flex-caption p, .flex-container .flex-caption ul',
@@ -2500,7 +2500,7 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'section'  => 'flex_caption_section',
 	'type'     => 'color',
 	'default'  => '',
-	'alpha' => true,
+	"choices['alpha']"  => true,
 	'output'   => array(
 		array(
 			'element'  => '.flex-caption,.home .flexslider .slides .flex-caption  a,.home .flexslider .slides .flex-caption p,.flexslider .slides .flex-caption p,.home .flexslider .slides .flex-caption h1, .home .flexslider .slides .flex-caption h2, .home .flexslider .slides .flex-caption h3, .home .flexslider .slides .flex-caption h4, .home .flexslider .slides .flex-caption h5, .home .flexslider .slides .flex-caption h6,.flexslider .slides .flex-caption h1,.flexslider .slides .flex-caption h2,.flexslider .slides .flex-caption h3,.flexslider .slides .flex-caption h4,.flexslider .slides .flex-caption h5,.flexslider .slides .flex-caption h6',
@@ -2552,7 +2552,7 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'label'    => __( 'General Background Color', 'boxy' ),
 	'section'  => 'colors',
 	'type'     => 'color',
-	'alpha' => true,
+	"choices['alpha']"  => true,
 	'default'  => '#ffffff',
 	'output'   => array(
 		array(
@@ -2567,7 +2567,7 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'section'  => 'colors',
 	'type'     => 'color',
 	'description' => __('when you are select boxed layout content background color will reflect the grid area','boxy'), 
-	'alpha' => true, 
+	"choices['alpha']"  => true, 
 	'default'  => '#ffffff',
 	'output'   => array(
 		array(

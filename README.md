@@ -41,6 +41,9 @@ https://pixabay.com/en/man-handsome-male-model-guy-885223/
 
 == Change Log ==
 
+v. 1.3.4 
+* Updated Kirki Files and WP compatible issue fixed.
+
 v. 1.3.3 
 * Updated flexslider and font-awesome Files.
 
