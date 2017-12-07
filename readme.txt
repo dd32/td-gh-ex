@@ -33,6 +33,10 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 == Changelog ==
 
 
+= 1.5.9 | 7th December 2017 = 
+* Update: Google Fonts
+* Update: Woo Archive
+
 = 1.5.8 | 4th July 2017 = 
 * Small fix for polylang.
 * Small css update.

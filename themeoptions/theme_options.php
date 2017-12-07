@@ -57,7 +57,7 @@ if ( ! class_exists( 'Redux' ) ) {
         'disable_tracking'     => true,
         'customizer_only'      => true,
         'save_defaults'        => false,
-        'intro_text'           => 'Upgrade to <a href="https://www.kadencethemes.com/product/pinnacle-premium-wordpress-theme/" target="_blank" >Pinnacle Premium!</a> More great features! Over 50 more theme options, premium sliders and carousels, breadcrumbs, custom post types and much much more!',           
+        'intro_text'           => 'Upgrade to <a href="https://www.kadencethemes.com/product/pinnacle-premium-wordpress-theme/?utm_source=themeoptions&utm_medium=banner&utm_campaign=pinnacle_premium" target="_blank" >Pinnacle Premium!</a> More great features! Over 50 more theme options, premium sliders and carousels, breadcrumbs, custom post types and much much more!',           
         'footer_credit'        => __('Thank you for using the Pinnacle Theme by <a href="https://kadencethemes.com/" target="_blank">Kadence Themes</a>.', 'pinnacle'),
         'hints'                => array(
             'icon'          => 'icon-question',
