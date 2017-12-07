@@ -68,7 +68,7 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
-#### 1.0.80
+#### 1.0.90
 * Fixed search bar not showing if Top Bar is removed on header 1 & 3
 * Added Customizer inter links to help/improve user experience
 * Updated the language .pot file

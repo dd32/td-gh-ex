@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2017-11-28 10:15+0200\n"
+"POT-Creation-Date: 2017-12-07 15:58+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,11 +19,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: js\n"
 
-#: 404.php:18 customizer/customizer-options.php:1106
+#: 404.php:18 customizer/customizer-options.php:1116
 msgid "Oops! <span>404</span>"
 msgstr ""
 
-#: 404.php:21 customizer/customizer-options.php:1113
+#: 404.php:21 customizer/customizer-options.php:1123
 msgid ""
 "It looks like that page does not exist. <br />Return home or try a search"
 msgstr ""
@@ -108,188 +108,193 @@ msgid "Monospaced"
 msgstr ""
 
 #: customizer/customizer-options.php:37
-msgid "Site Title top padding"
+msgid "Site Identity"
 msgstr ""
 
 #: customizer/customizer-options.php:44
-msgid "Site Title bottom padding"
+msgid "Site Title top padding"
 msgstr ""
 
 #: customizer/customizer-options.php:51
+msgid "Site Title bottom padding"
+msgstr ""
+
+#: customizer/customizer-options.php:58
 msgid "Set a max-width for the logo"
 msgstr ""
 
-#: customizer/customizer-options.php:54
+#: customizer/customizer-options.php:61
 msgid "This only applies if a logo image is uploaded"
 msgstr ""
 
-#: customizer/customizer-options.php:61
+#: customizer/customizer-options.php:68
 msgid "Avant Theme Settings"
 msgstr ""
 
-#: customizer/customizer-options.php:69 customizer/customizer-options.php:87
+#: customizer/customizer-options.php:76 customizer/customizer-options.php:95
 msgid "Site Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:76
+#: customizer/customizer-options.php:84
 msgid "Remove Top Border"
 msgstr ""
 
-#: customizer/customizer-options.php:82
+#: customizer/customizer-options.php:90
 msgid "Boxed Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:83
+#: customizer/customizer-options.php:91
 msgid "Full Width Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:95
+#: customizer/customizer-options.php:103
 msgid "Remove Content Background & Borders"
 msgstr ""
 
-#: customizer/customizer-options.php:102
+#: customizer/customizer-options.php:110
 msgid "Add Sidebar divider line"
 msgstr ""
 
-#: customizer/customizer-options.php:111
+#: customizer/customizer-options.php:119
 msgid ""
-"<b>Premium Extra Features:</b><br />- Set custom website container width<br /"
-">- Set custom Sidebar width<br />- Change Site Attribution text"
+"<b>Premium Extra Features:</b><br />- Add Title & Tagline with uploaded logo "
+"and adjust<br />- Set custom website container width<br />- Set custom "
+"Sidebar width<br />- Change Site Attribution text"
 msgstr ""
 
-#: customizer/customizer-options.php:119 customizer/customizer-options.php:877
-#: customizer/customizer-options.php:1050
+#: customizer/customizer-options.php:127 customizer/customizer-options.php:887
+#: customizer/customizer-options.php:1060
 msgid "Header"
 msgstr ""
 
-#: customizer/customizer-options.php:126
+#: customizer/customizer-options.php:135
 msgid "Remove Top Bar"
 msgstr ""
 
-#: customizer/customizer-options.php:133
+#: customizer/customizer-options.php:142
 msgid "Switch Top Bar"
 msgstr ""
 
-#: customizer/customizer-options.php:139
+#: customizer/customizer-options.php:148
 msgid "Default Header"
 msgstr ""
 
-#: customizer/customizer-options.php:140
+#: customizer/customizer-options.php:149
 msgid "Centered Header"
 msgstr ""
 
-#: customizer/customizer-options.php:141
+#: customizer/customizer-options.php:150
 msgid "Centered Header Social"
 msgstr ""
 
-#: customizer/customizer-options.php:142
+#: customizer/customizer-options.php:151
 msgid "Standard Header"
 msgstr ""
 
-#: customizer/customizer-options.php:143
+#: customizer/customizer-options.php:152
 msgid "Standard Header Social"
 msgstr ""
 
-#: customizer/customizer-options.php:144
+#: customizer/customizer-options.php:153
 msgid "Side Layout Header"
 msgstr ""
 
-#: customizer/customizer-options.php:145
+#: customizer/customizer-options.php:154
 msgid "Transparent Header"
 msgstr ""
 
-#: customizer/customizer-options.php:149
+#: customizer/customizer-options.php:158
 msgid "Header Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:157
+#: customizer/customizer-options.php:166
 msgid "Switch Header"
 msgstr ""
 
-#: customizer/customizer-options.php:164
+#: customizer/customizer-options.php:173
 msgid "Remove Slider Top Space"
 msgstr ""
 
-#: customizer/customizer-options.php:170
+#: customizer/customizer-options.php:179
 msgid "Align Right"
 msgstr ""
 
-#: customizer/customizer-options.php:171
+#: customizer/customizer-options.php:180
 msgid "Align Left"
 msgstr ""
 
-#: customizer/customizer-options.php:172
+#: customizer/customizer-options.php:181
 msgid "Align Center"
 msgstr ""
 
-#: customizer/customizer-options.php:176
+#: customizer/customizer-options.php:185
 msgid "Navigation Alignment"
 msgstr ""
 
-#: customizer/customizer-options.php:184
+#: customizer/customizer-options.php:193
 msgid "Menu Button Text"
 msgstr ""
 
-#: customizer/customizer-options.php:188
+#: customizer/customizer-options.php:197
 msgid "This is the text for the mobile menu button"
 msgstr ""
 
-#: customizer/customizer-options.php:192
+#: customizer/customizer-options.php:201
 msgid "Remove Search"
 msgstr ""
 
-#: customizer/customizer-options.php:199
+#: customizer/customizer-options.php:208
 msgid "Remove Phone Number"
 msgstr ""
 
-#: customizer/customizer-options.php:206
+#: customizer/customizer-options.php:215
 msgid "Remove Address"
 msgstr ""
 
-#: customizer/customizer-options.php:215
+#: customizer/customizer-options.php:224
 msgid "Remove WooCommerce Cart"
 msgstr ""
 
-#: customizer/customizer-options.php:224
+#: customizer/customizer-options.php:233
 msgid "Remove Social Icons"
 msgstr ""
 
-#: customizer/customizer-options.php:233
+#: customizer/customizer-options.php:242
 msgid ""
 "<b>Premium Extra Features:</b><br />- Sticky Navigation<br />- Change "
 "Navigation Styling<br />- Add extra text to the header"
 msgstr ""
 
-#: customizer/customizer-options.php:241
+#: customizer/customizer-options.php:250
 msgid "Home Page Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:247
+#: customizer/customizer-options.php:256
 msgid "Default Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:248 customizer/customizer-options.php:269
+#: customizer/customizer-options.php:257 customizer/customizer-options.php:278
 msgid "Slider Shortcode"
 msgstr ""
 
-#: customizer/customizer-options.php:249
+#: customizer/customizer-options.php:258
 msgid "Featured Image"
 msgstr ""
 
-#: customizer/customizer-options.php:250 customizer/customizer-options.php:474
-#: customizer/customizer-options.php:577 customizer/customizer-options.php:624
+#: customizer/customizer-options.php:259 customizer/customizer-options.php:483
+#: customizer/customizer-options.php:586 customizer/customizer-options.php:634
 msgid "None"
 msgstr ""
 
-#: customizer/customizer-options.php:254
+#: customizer/customizer-options.php:263
 msgid "Choose a Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:262
+#: customizer/customizer-options.php:271
 msgid "Slider Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:265
+#: customizer/customizer-options.php:274
 msgid ""
 "Enter the ID's of the post categories you want to display in the slider. Eg: "
 "\"13,17,19\" (no spaces and only comma's)<br /><br />Get the ID at <b>Posts -"
@@ -298,163 +303,163 @@ msgid ""
 "here</b></a>"
 msgstr ""
 
-#: customizer/customizer-options.php:272
+#: customizer/customizer-options.php:281
 msgid "Enter the shortcode give by the slider."
 msgstr ""
 
-#: customizer/customizer-options.php:276
+#: customizer/customizer-options.php:285
 msgid "Set slider to full width"
 msgstr ""
 
-#: customizer/customizer-options.php:282
+#: customizer/customizer-options.php:291
 msgid "Small Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:283
+#: customizer/customizer-options.php:292
 msgid "Medium Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:284
+#: customizer/customizer-options.php:293
 msgid "Large Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:288
+#: customizer/customizer-options.php:297
 msgid "Slider Size"
 msgstr ""
 
-#: customizer/customizer-options.php:295
+#: customizer/customizer-options.php:304
 msgid "Fade"
 msgstr ""
 
-#: customizer/customizer-options.php:296
+#: customizer/customizer-options.php:305
 msgid "Cover Fade"
 msgstr ""
 
-#: customizer/customizer-options.php:297
+#: customizer/customizer-options.php:306
 msgid "Uncover Fade"
 msgstr ""
 
-#: customizer/customizer-options.php:298
+#: customizer/customizer-options.php:307
 msgid "Cover"
 msgstr ""
 
-#: customizer/customizer-options.php:299
+#: customizer/customizer-options.php:308
 msgid "Scroll"
 msgstr ""
 
-#: customizer/customizer-options.php:303
+#: customizer/customizer-options.php:312
 msgid "Slider Scroll Effect"
 msgstr ""
 
-#: customizer/customizer-options.php:311
+#: customizer/customizer-options.php:320
 msgid "Link Slide to post"
 msgstr ""
 
-#: customizer/customizer-options.php:318
+#: customizer/customizer-options.php:327
 msgid "Remove Slider Title"
 msgstr ""
 
-#: customizer/customizer-options.php:325
+#: customizer/customizer-options.php:334
 msgid "Remove Slider Pagination"
 msgstr ""
 
-#: customizer/customizer-options.php:332
+#: customizer/customizer-options.php:341
 msgid "Stop Auto Scroll"
 msgstr ""
 
-#: customizer/customizer-options.php:339
+#: customizer/customizer-options.php:348
 msgid "Extra Small Image"
 msgstr ""
 
-#: customizer/customizer-options.php:340
+#: customizer/customizer-options.php:349
 msgid "Small Image"
 msgstr ""
 
-#: customizer/customizer-options.php:341
+#: customizer/customizer-options.php:350
 msgid "Medium Image"
 msgstr ""
 
-#: customizer/customizer-options.php:342
+#: customizer/customizer-options.php:351
 msgid "Large Image"
 msgstr ""
 
-#: customizer/customizer-options.php:343
+#: customizer/customizer-options.php:352
 msgid "Use Full Image"
 msgstr ""
 
-#: customizer/customizer-options.php:347
+#: customizer/customizer-options.php:356
 msgid "Image Size"
 msgstr ""
 
-#: customizer/customizer-options.php:355
+#: customizer/customizer-options.php:364
 msgid "Make Full Width"
 msgstr ""
 
-#: customizer/customizer-options.php:366
+#: customizer/customizer-options.php:375
 msgid "Blog List"
 msgstr ""
 
-#: customizer/customizer-options.php:372
+#: customizer/customizer-options.php:381
 msgid "Left Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:373
+#: customizer/customizer-options.php:382
 msgid "Right Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:374
+#: customizer/customizer-options.php:383
 msgid "Alternate Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:375
+#: customizer/customizer-options.php:384
 msgid "Top Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:376
+#: customizer/customizer-options.php:385
 msgid "Blocks Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:380
+#: customizer/customizer-options.php:389
 msgid "Blog Posts Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:388
+#: customizer/customizer-options.php:397
 msgid "Break into Blocks"
 msgstr ""
 
-#: customizer/customizer-options.php:395
+#: customizer/customizer-options.php:404
 msgid "Square Blocks"
 msgstr ""
 
-#: customizer/customizer-options.php:396
+#: customizer/customizer-options.php:405
 msgid "Image Shape Blocks"
 msgstr ""
 
-#: customizer/customizer-options.php:400
+#: customizer/customizer-options.php:409
 msgid "Blog Post Shape"
 msgstr ""
 
-#: customizer/customizer-options.php:408
+#: customizer/customizer-options.php:417
 msgid "Remove Blocks Border"
 msgstr ""
 
-#: customizer/customizer-options.php:415 customizer/customizer-options.php:504
+#: customizer/customizer-options.php:424 customizer/customizer-options.php:513
 msgid "Remove Meta Info"
 msgstr ""
 
-#: customizer/customizer-options.php:422
+#: customizer/customizer-options.php:431
 msgid "Remove Content"
 msgstr ""
 
-#: customizer/customizer-options.php:429 customizer/customizer-options.php:511
+#: customizer/customizer-options.php:438 customizer/customizer-options.php:520
 msgid "Remove Tags & Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:436
+#: customizer/customizer-options.php:445
 msgid "Exclude Blog Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:439
+#: customizer/customizer-options.php:448
 msgid ""
 "Enter the ID's of the post categories you'd like to EXCLUDE from the Blog, "
 "enter only the ID's with a minus sign (-) before them, separated by a comma "
@@ -463,21 +468,21 @@ msgid ""
 "at <b>Posts -> Categories</b>."
 msgstr ""
 
-#: customizer/customizer-options.php:444
+#: customizer/customizer-options.php:453
 msgid "Remove Blog & Archive Page Titles"
 msgstr ""
 
-#: customizer/customizer-options.php:451
+#: customizer/customizer-options.php:460
 msgid "Remove text before Archive Title"
 msgstr ""
 
-#: customizer/customizer-options.php:454
+#: customizer/customizer-options.php:463
 msgid ""
 "This will not update in the Customizer. Exit the Customizer to view the "
 "change"
 msgstr ""
 
-#: customizer/customizer-options.php:461
+#: customizer/customizer-options.php:470
 msgid ""
 "<b>Premium Extra Features:</b><br />- Set Blog, Archives and Single pages to "
 "Left Sidebar<br />- Set Blog, Archives and Single pages to Full Width<br />- "
@@ -486,116 +491,116 @@ msgid ""
 "Blocks layout<br />- Change Blocks styling (Image or Post layouts)"
 msgstr ""
 
-#: customizer/customizer-options.php:468
+#: customizer/customizer-options.php:477
 msgid "Blog Single Posts"
 msgstr ""
 
-#: customizer/customizer-options.php:475 customizer/customizer-options.php:578
+#: customizer/customizer-options.php:484 customizer/customizer-options.php:587
 msgid "Standard"
 msgstr ""
 
-#: customizer/customizer-options.php:476 customizer/customizer-options.php:579
+#: customizer/customizer-options.php:485 customizer/customizer-options.php:588
 msgid "Page Banner"
 msgstr ""
 
-#: customizer/customizer-options.php:480 customizer/customizer-options.php:583
+#: customizer/customizer-options.php:489 customizer/customizer-options.php:592
 msgid "Featured Image Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:487 customizer/customizer-options.php:590
+#: customizer/customizer-options.php:496 customizer/customizer-options.php:599
 msgid "Extra Small Banner"
 msgstr ""
 
-#: customizer/customizer-options.php:488 customizer/customizer-options.php:591
+#: customizer/customizer-options.php:497 customizer/customizer-options.php:600
 msgid "Small Banner"
 msgstr ""
 
-#: customizer/customizer-options.php:489 customizer/customizer-options.php:592
+#: customizer/customizer-options.php:498 customizer/customizer-options.php:601
 msgid "Medium Banner"
 msgstr ""
 
-#: customizer/customizer-options.php:490 customizer/customizer-options.php:593
+#: customizer/customizer-options.php:499 customizer/customizer-options.php:602
 msgid "Large Banner"
 msgstr ""
 
-#: customizer/customizer-options.php:491 customizer/customizer-options.php:594
+#: customizer/customizer-options.php:500 customizer/customizer-options.php:603
 msgid "Use Proper Image"
 msgstr ""
 
-#: customizer/customizer-options.php:495 customizer/customizer-options.php:598
+#: customizer/customizer-options.php:504 customizer/customizer-options.php:607
 msgid "Page Banner Size"
 msgstr ""
 
-#: customizer/customizer-options.php:520 customizer/customizer-options.php:608
+#: customizer/customizer-options.php:529 customizer/customizer-options.php:617
 msgid ""
 "<b>Premium Extra Features:</b><br />- Set Featured Image banner to Full Width"
 msgstr ""
 
-#: customizer/customizer-options.php:528 customizer/customizer-options.php:978
+#: customizer/customizer-options.php:537 customizer/customizer-options.php:988
 msgid "Pages"
 msgstr ""
 
-#: customizer/customizer-options.php:535
+#: customizer/customizer-options.php:544
 msgid "Sidebar Blocks"
 msgstr ""
 
-#: customizer/customizer-options.php:542
+#: customizer/customizer-options.php:551
 msgid "Remove all Page Titles"
 msgstr ""
 
-#: customizer/customizer-options.php:549
+#: customizer/customizer-options.php:558
 msgid "Sidebar Title Size"
 msgstr ""
 
-#: customizer/customizer-options.php:556
+#: customizer/customizer-options.php:565
 msgid "Left Align Title"
 msgstr ""
 
-#: customizer/customizer-options.php:562
+#: customizer/customizer-options.php:571
 msgid "Plain"
 msgstr ""
 
-#: customizer/customizer-options.php:563
+#: customizer/customizer-options.php:572
 msgid "Underlined Dots"
 msgstr ""
 
-#: customizer/customizer-options.php:564
+#: customizer/customizer-options.php:573
 msgid "Underlined Solid"
 msgstr ""
 
-#: customizer/customizer-options.php:565
+#: customizer/customizer-options.php:574
 msgid "Short Underline"
 msgstr ""
 
-#: customizer/customizer-options.php:569
+#: customizer/customizer-options.php:578
 msgid "Widget Title Styling"
 msgstr ""
 
-#: customizer/customizer-options.php:616 customizer/customizer-options.php:995
+#: customizer/customizer-options.php:625 customizer/customizer-options.php:1005
 msgid "Footer"
 msgstr ""
 
-#: customizer/customizer-options.php:622
+#: customizer/customizer-options.php:632
 msgid "Standard Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:623
+#: customizer/customizer-options.php:633
 msgid "Social Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:628
+#: customizer/customizer-options.php:638
 msgid "Footer Layout"
 msgstr ""
 
-#: customizer/customizer-options.php:637
+#: customizer/customizer-options.php:647
 msgid "Set Footer to Full Width"
 msgstr ""
 
-#: customizer/customizer-options.php:644
+#: customizer/customizer-options.php:654
 msgid "Switch Bottom Bar"
 msgstr ""
 
-#: customizer/customizer-options.php:653
+#: customizer/customizer-options.php:663
 msgid ""
 "<b>Premium Extra Features:</b><br />- Change Site Attribution text<br />- "
 "New Custom Footer layout<br />- Edit Custom Columns amount and Custom "
@@ -603,191 +608,191 @@ msgid ""
 "Adjust Footer top & bottom padding"
 msgstr ""
 
-#: customizer/customizer-options.php:664 functions.php:320
+#: customizer/customizer-options.php:674 functions.php:321
 msgid "WooCommerce"
 msgstr ""
 
-#: customizer/customizer-options.php:671
+#: customizer/customizer-options.php:681
 msgid "Remove Product Border"
 msgstr ""
 
-#: customizer/customizer-options.php:678
+#: customizer/customizer-options.php:688
 msgid "Remove Shop Page Titles"
 msgstr ""
 
-#: customizer/customizer-options.php:687
+#: customizer/customizer-options.php:697
 msgid ""
 "<b>Premium Extra Features:</b><br />- Set Products Per Page<br />- Set "
 "Products Per Row<br />- Set Shop, Archives and Product pages to Left "
 "Sidebar<br />- Set Shop, Archives and Product pages to Full Width"
 msgstr ""
 
-#: customizer/customizer-options.php:697
+#: customizer/customizer-options.php:707
 msgid "Avant Font Settings"
 msgstr ""
 
-#: customizer/customizer-options.php:707
+#: customizer/customizer-options.php:717
 msgid "Title/Tagline Fonts"
 msgstr ""
 
-#: customizer/customizer-options.php:714
+#: customizer/customizer-options.php:724
 msgid "Site Title Font"
 msgstr ""
 
-#: customizer/customizer-options.php:722
+#: customizer/customizer-options.php:732
 msgid "Site Title Size"
 msgstr ""
 
-#: customizer/customizer-options.php:729
+#: customizer/customizer-options.php:739
 msgid "Site Tagline Font"
 msgstr ""
 
-#: customizer/customizer-options.php:737
+#: customizer/customizer-options.php:747
 msgid "Site Tagline Size"
 msgstr ""
 
-#: customizer/customizer-options.php:744
+#: customizer/customizer-options.php:754
 msgid "Site Title Bottom Margin"
 msgstr ""
 
-#: customizer/customizer-options.php:747
+#: customizer/customizer-options.php:757
 msgid "This will set the space between the site title and the site tagline"
 msgstr ""
 
-#: customizer/customizer-options.php:755
+#: customizer/customizer-options.php:765
 msgid "Site Fonts"
 msgstr ""
 
-#: customizer/customizer-options.php:762
+#: customizer/customizer-options.php:772
 msgid "Body Font"
 msgstr ""
 
-#: customizer/customizer-options.php:770
+#: customizer/customizer-options.php:780
 msgid "Body Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:778
+#: customizer/customizer-options.php:788
 msgid "Heading Font"
 msgstr ""
 
-#: customizer/customizer-options.php:786 customizer/customizer-options.php:1009
+#: customizer/customizer-options.php:796 customizer/customizer-options.php:1019
 msgid "Heading Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:793
+#: customizer/customizer-options.php:803
 msgid "Page Title Color"
 msgstr ""
 
-#: customizer/customizer-options.php:800
+#: customizer/customizer-options.php:810
 msgid "Blog List Title Color"
 msgstr ""
 
-#: customizer/customizer-options.php:807
+#: customizer/customizer-options.php:817
 msgid "Sidebar Widget Title Color"
 msgstr ""
 
-#: customizer/customizer-options.php:816
+#: customizer/customizer-options.php:826
 msgid "WooCommerce Product Title Size"
 msgstr ""
 
-#: customizer/customizer-options.php:823
+#: customizer/customizer-options.php:833
 msgid "WooCommerce Product Title Color"
 msgstr ""
 
-#: customizer/customizer-options.php:835
+#: customizer/customizer-options.php:845
 msgid "Avant Layout Colors"
 msgstr ""
 
-#: customizer/customizer-options.php:844
+#: customizer/customizer-options.php:854
 msgid "Default Colors"
 msgstr ""
 
-#: customizer/customizer-options.php:851
+#: customizer/customizer-options.php:861
 msgid "Site Boxed Background Color"
 msgstr ""
 
-#: customizer/customizer-options.php:859
+#: customizer/customizer-options.php:869
 msgid "Primary Color"
 msgstr ""
 
-#: customizer/customizer-options.php:867
+#: customizer/customizer-options.php:877
 msgid "Secondary Color"
 msgstr ""
 
-#: customizer/customizer-options.php:884
+#: customizer/customizer-options.php:894
 msgid "Top Bar Background Color"
 msgstr ""
 
-#: customizer/customizer-options.php:891
+#: customizer/customizer-options.php:901
 msgid "Top Bar Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:898 customizer/customizer-options.php:935
-#: customizer/customizer-options.php:1002
+#: customizer/customizer-options.php:908 customizer/customizer-options.php:945
+#: customizer/customizer-options.php:1012
 msgid "Background Color"
 msgstr ""
 
-#: customizer/customizer-options.php:905 customizer/customizer-options.php:942
-#: customizer/customizer-options.php:1016
+#: customizer/customizer-options.php:915 customizer/customizer-options.php:952
+#: customizer/customizer-options.php:1026
 msgid "Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:912
+#: customizer/customizer-options.php:922
 msgid "Header Opacity"
 msgstr ""
 
-#: customizer/customizer-options.php:928
+#: customizer/customizer-options.php:938
 msgid "Navigation"
 msgstr ""
 
-#: customizer/customizer-options.php:949
+#: customizer/customizer-options.php:959
 msgid "Drop Down Bg Color"
 msgstr ""
 
-#: customizer/customizer-options.php:956
+#: customizer/customizer-options.php:966
 msgid "Drop Down Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:963
+#: customizer/customizer-options.php:973
 msgid "Drop Down Opacity"
 msgstr ""
 
-#: customizer/customizer-options.php:985
+#: customizer/customizer-options.php:995
 msgid "Content Background Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1024
+#: customizer/customizer-options.php:1034
 msgid "Bottom Bar Bg Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1031
+#: customizer/customizer-options.php:1041
 msgid "Bottom Bar Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:1042
+#: customizer/customizer-options.php:1052
 msgid "Avant Theme Text"
 msgstr ""
 
-#: customizer/customizer-options.php:1057
+#: customizer/customizer-options.php:1067
 msgid "Phone Number Icon"
 msgstr ""
 
-#: customizer/customizer-options.php:1060
+#: customizer/customizer-options.php:1070
 msgid ""
 "Add your own custom icon by pasting the corrent <a href=\"http://fontawesome."
 "io/icons/#brand\" target=\"_blank\">Font Awesome</a> class here<br />Eg: "
 "\"fa-phone\"<br />Or enter a space to remove the icon"
 msgstr ""
 
-#: customizer/customizer-options.php:1061
+#: customizer/customizer-options.php:1071
 msgid "fa-phone"
 msgstr ""
 
-#: customizer/customizer-options.php:1065
+#: customizer/customizer-options.php:1075
 msgid "Phone Number"
 msgstr ""
 
-#: customizer/customizer-options.php:1068
+#: customizer/customizer-options.php:1078
 #: templates/header/header-layout-five.php:15
 #: templates/header/header-layout-four.php:15
 #: templates/header/header-layout-one.php:15
@@ -798,58 +803,58 @@ msgstr ""
 msgid "Call Us: +2782 444 YEAH"
 msgstr ""
 
-#: customizer/customizer-options.php:1072
+#: customizer/customizer-options.php:1082
 msgid "Address Icon"
 msgstr ""
 
-#: customizer/customizer-options.php:1075
+#: customizer/customizer-options.php:1085
 msgid ""
 "Add your custom icon from <a href=\"http://fontawesome.io/icons/#brand\" "
 "target=\"_blank\">Font Awesome</a>"
 msgstr ""
 
-#: customizer/customizer-options.php:1076
+#: customizer/customizer-options.php:1086
 msgid "fa-map-marker"
 msgstr ""
 
-#: customizer/customizer-options.php:1080
+#: customizer/customizer-options.php:1090
 msgid "Address"
 msgstr ""
 
-#: customizer/customizer-options.php:1083
+#: customizer/customizer-options.php:1093
 msgid "Cape Town, South Africa"
 msgstr ""
 
-#: customizer/customizer-options.php:1089
+#: customizer/customizer-options.php:1099
 msgid "<b>Premium Extra Features:</b><br />- Add extra text to Header"
 msgstr ""
 
-#: customizer/customizer-options.php:1096
+#: customizer/customizer-options.php:1106
 msgid "404 Error / No Results"
 msgstr ""
 
-#: customizer/customizer-options.php:1103
+#: customizer/customizer-options.php:1113
 msgid "404 Error Page Heading"
 msgstr ""
 
-#: customizer/customizer-options.php:1110
+#: customizer/customizer-options.php:1120
 msgid "Error 404 Message"
 msgstr ""
 
-#: customizer/customizer-options.php:1117
+#: customizer/customizer-options.php:1127
 msgid "No Search Results Heading"
 msgstr ""
 
-#: customizer/customizer-options.php:1120
+#: customizer/customizer-options.php:1130
 #: templates/contents/content-none.php:14
 msgid "Nothing Found"
 msgstr ""
 
-#: customizer/customizer-options.php:1124
+#: customizer/customizer-options.php:1134
 msgid "No Search Results"
 msgstr ""
 
-#: customizer/customizer-options.php:1127
+#: customizer/customizer-options.php:1137
 #: templates/contents/content-none.php:24
 #: templates/contents/content-none.php:28
 msgid ""
@@ -857,39 +862,39 @@ msgid ""
 "different keywords."
 msgstr ""
 
-#: customizer/customizer-options.php:1136
+#: customizer/customizer-options.php:1146
 msgid "Avant Social Links"
 msgstr ""
 
-#: customizer/customizer-options.php:1142
+#: customizer/customizer-options.php:1152
 msgid "Email Address"
 msgstr ""
 
-#: customizer/customizer-options.php:1148
+#: customizer/customizer-options.php:1158
 msgid "Skype Name"
 msgstr ""
 
-#: customizer/customizer-options.php:1154
+#: customizer/customizer-options.php:1164
 msgid "Facebook"
 msgstr ""
 
-#: customizer/customizer-options.php:1160
+#: customizer/customizer-options.php:1170
 msgid "Twitter"
 msgstr ""
 
-#: customizer/customizer-options.php:1166
+#: customizer/customizer-options.php:1176
 msgid "Tumblr"
 msgstr ""
 
-#: customizer/customizer-options.php:1172
+#: customizer/customizer-options.php:1182
 msgid "Flickr"
 msgstr ""
 
-#: customizer/customizer-options.php:1178
+#: customizer/customizer-options.php:1188
 msgid "GitHub"
 msgstr ""
 
-#: customizer/customizer-options.php:1186
+#: customizer/customizer-options.php:1196
 msgid ""
 "<b>Premium Extra Features:</b><br />- Premium offers a bunch of extra Social "
 "Links<br />- Plus 2 custom inputs for your own links"
@@ -919,15 +924,15 @@ msgstr ""
 msgid "The footer will divide into however many widgets are placed here."
 msgstr ""
 
-#: functions.php:315
+#: functions.php:326
 msgid "Elementor Page Builder"
 msgstr ""
 
-#: functions.php:325
+#: functions.php:331
 msgid "Breadcrumb NavXT"
 msgstr ""
 
-#: functions.php:330
+#: functions.php:336
 msgid "Meta Slider"
 msgstr ""
 
@@ -1334,7 +1339,7 @@ msgstr ""
 #: includes/inc/woocommerce-header-inc.php:9
 #: templates/header/header-layout-five.php:83
 #: templates/header/header-layout-four.php:81
-#: templates/header/header-layout-one.php:59
+#: templates/header/header-layout-one.php:53
 #: templates/header/header-layout-seven.php:121
 #: templates/header/header-layout-six.php:58
 #: templates/header/header-layout-three.php:75
@@ -1345,7 +1350,7 @@ msgstr ""
 #: includes/inc/woocommerce-header-inc.php:11
 #: templates/header/header-layout-five.php:85
 #: templates/header/header-layout-four.php:83
-#: templates/header/header-layout-one.php:61
+#: templates/header/header-layout-one.php:55
 #: templates/header/header-layout-seven.php:123
 #: templates/header/header-layout-six.php:60
 #: templates/header/header-layout-three.php:77
@@ -1431,7 +1436,7 @@ msgstr ""
 
 #: templates/header/header-layout-five.php:72
 #: templates/header/header-layout-four.php:70
-#: templates/header/header-layout-one.php:50
+#: templates/header/header-layout-one.php:44
 #: templates/header/header-layout-seven.php:110
 #: templates/header/header-layout-six.php:49
 #: templates/header/header-layout-three.php:98
@@ -1439,11 +1444,11 @@ msgstr ""
 msgid "menu"
 msgstr ""
 
-#: templates/slider/homepage-slider.php:104
+#: templates/slider/homepage-slider.php:160
 msgid "Paint A Picture"
 msgstr ""
 
-#: templates/slider/homepage-slider.php:106
+#: templates/slider/homepage-slider.php:162
 msgid ""
 "Are you shopping anywhere, changed the color of your hair, are you busy?"
 msgstr ""
