@@ -1,4 +1,5 @@
-<?php function weblizar_scripts()
+<?php $wl_theme_options = weblizar_get_options();
+function weblizar_scripts()
         {      //google font style
 				wp_enqueue_style('OpenSans', 'https://fonts.googleapis.com/css?family=Rock+Salt|Neucha|Sans+Serif|Indie+Flower|Shadows+Into+Light|Dancing+Script|Kaushan+Script|Tangerine|Pinyon+Script|Great+Vibes|Bad+Script|Calligraffitti|Homemade+Apple|Allura|Megrim|Nothing+You+Could+Do|Fredericka+the+Great|Rochester|Arizonia|Astloch|Bilbo|Cedarville+Cursive|Clicker+Script|Dawning+of+a+New+Day|Ewert|Felipa|Give+You+Glory|Italianno|Jim+Nightshade|Kristi|La+Belle+Aurore|Meddon|Montez|Mr+Bedfort|Over+the+Rainbow|Princess+Sofia|Reenie+Beanie|Ruthie|Sacramento|Seaweed+Script|Stalemate|Trade+Winds|UnifrakturMaguntia|Waiting+for+the+Sunrise|Yesteryear|Zeyada|Warnes|Abril+Fatface|Advent+Pro|Aldrich|Alex+Brush|Amatic+SC|Antic+Slab|Candal');
 				
@@ -19,7 +20,6 @@
                 
                 // Js
                 wp_enqueue_script('menu', get_template_directory_uri() .'/js/menu.js', array('jquery'));
-				wp_enqueue_script('snow', get_template_directory_uri() .'/js/snowstorm.js');
                 wp_enqueue_script('bootstrap-js', get_template_directory_uri() .'/js/bootstrap.js');
                 wp_enqueue_script('enigma-theme-script', get_template_directory_uri() .'/js/enigma_theme_script.js');
                 if(is_front_page()){

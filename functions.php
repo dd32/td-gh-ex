@@ -38,6 +38,7 @@
 			'excerpt_blog'=>'55',
 			'home_reorder'=>'',
 			'upload_image_favicon'=>'',
+			'snoweffect'=>'0',
 
 			'slider_image_speed' => '',
 			'slide_image_1' => $ImageUrl,
@@ -526,5 +527,13 @@ function enqueue_custom_admin_style() {
         wp_enqueue_style( 'custom_admin_css' );
 }
 add_action( 'admin_enqueue_scripts', 'enqueue_custom_admin_style' );
+}
+
+$theme_options = weblizar_get_options();
+if($theme_options['snoweffect']!=''){
+	function snow_script() {
+	wp_enqueue_script('snow', get_template_directory_uri() .'/js/snowstorm.js');
+	}
+	add_action( 'wp_enqueue_scripts', 'snow_script' );
 }
 ?>

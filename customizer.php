@@ -3,7 +3,6 @@
 function weblizar_gl_customizer( $wp_customize ) {
 	wp_enqueue_style('customizr', WL_TEMPLATE_DIR_URI .'/css/customizr.css');
 	wp_enqueue_style('FA', WL_TEMPLATE_DIR_URI .'/css/font-awesome-4.7.0/css/font-awesome.min.css');
-	wp_enqueue_script('snow', get_template_directory_uri() .'/js/snowstorm.js'); 
 	$ImageUrl1 = esc_url(get_template_directory_uri() ."/images/1.png");
 	$ImageUrl2 = esc_url(get_template_directory_uri() ."/images/2.png");
 	$ImageUrl3 = esc_url(get_template_directory_uri() ."/images/3.png");
@@ -66,6 +65,22 @@ $wp_customize->add_section(
 		'type'=>'checkbox',
 		'section'    => 'general_sec',
 		'settings'   => 'enigma_options[_frontpage]',
+	) );
+	
+	$wp_customize->add_setting(
+		'enigma_options[snoweffect]',
+		array(
+			'type'    => 'option',
+			'default'=>$wl_theme_options['snoweffect'],
+			'sanitize_callback'=>'enigma_sanitize_checkbox',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control( 'snoweffect', array(
+		'label'        => __( 'Snow effect on/off , Reload to view effect', 'enigma' ),
+		'type'=>'checkbox',
+		'section'    => 'general_sec',
+		'settings'   => 'enigma_options[snoweffect]',
 	) );
 	
 	$wp_customize->add_setting(
@@ -1457,7 +1472,7 @@ $wp_customize->add_section(
 	) );   
 	
 			$wp_customize->add_section( 'enigma_more' , array(
-				'title'      	=> __( 'Upgrade to Enigma Premium 10%OFF', 'enigma' ),
+				'title'      	=> __( 'Upgrade to Enigma Premium 25%OFF', 'enigma' ),
 				'priority'   	=> 999,
 				'panel'=>'enigma_theme_option',
 			) );
@@ -1564,7 +1579,10 @@ class More_Enigma_Control extends WP_Customize_Control {
 		?>
 		<div class="row">
 		<div class="col-md-4">
-				<div class="stitched"><?php _e("Coupon Code : 10%OFF","enigma") ;?>	</div>
+				<div class="stitched">
+				
+				<?php echo __("Coupon Code : PREXMAS25", "enigma" );?>
+				</div>
 		</div>
 		</div>
 		<label style="overflow: hidden; zoom: 1;">
@@ -1572,7 +1590,7 @@ class More_Enigma_Control extends WP_Customize_Control {
 					<a style="margin-bottom:20px;margin-left:20px;" href="http://weblizar.com/themes/enigma-premium/" target="blank" class="btn btn-success btn"><?php _e('Upgrade to Enigma Premium','enigma'); ?> </a>
 			</div>
 			<div class="col-md-4 col-sm-6">
-				<img class="enigma_img_responsive " src="<?php echo WL_TEMPLATE_DIR_URI .'/images/Enig.jpg'?>">
+				<img class="enigma_img_responsive" src="<?php echo WL_TEMPLATE_DIR_URI .'/images/Enig.jpg'?>">
 			</div>			
 			<div class="col-md-3 col-sm-6">
 				<h3 style="margin-top:10px;margin-left: 20px;text-decoration:underline;color:#333;"><?php echo _e( 'Enigma Premium - Features','enigma'); ?></h3>
@@ -1849,7 +1867,9 @@ class enigma_changelog_Control extends WP_Customize_Control {
 			<div class="col-md-3 col-sm-6">
 				<h2 style="margin-top:10px;color:#fff;background-color: #3ca3e0;padding: 10px;font-size: 19px;"><?php echo _e( 'Enigma Theme Changelog','enigma'); ?></h2>
 				<ul style="padding-top:20px">
-				<li class="upsell-enigma"> <div class="versionhd"> Version: 3.8 - <span> Current Version </span></div>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 3.9 - <span> Current Version </span></div>
+		<ol> <li> Snow effect option added. </li></ol></li>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 3.8 - </div>
 		<ol> <li> Animation feature added in Slider Option. </li><li> Snow effect added. </li></ol></li>
 		<li class="upsell-enigma"> <div class="versionhd"> Version: 3.7 - </div>
 		<ol> <li> Minor changes in functions.php </li></ol></li>
