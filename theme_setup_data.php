@@ -89,15 +89,15 @@ function theme_data_setup()
 			'front_portfolio_title' => __('Latest projects','elitepress'),
 			'front_portfolio_description' => 'Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...',
 			
-			'portfolio_one_title' => __('Business growth','elitepress'),
+			'portfolio_one_title' => __('Growing your business','elitepress'),
 			'portfolio_one_description' => 'Morbi leo risus, porta ac consectetur vestibulum eros cras 	mattis consectetur purus sit...',
 			'portfolio_one_image' => $portfolio_image,
 
-			'portfolio_two_title' => __('Functional beauty','elitepress'),
+			'portfolio_two_title' => __('Functional elegance','elitepress'),
 			'portfolio_two_description' => 'Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...',
 			'portfolio_two_image' => $portfolio_image,
 			
-			'portfolio_three_title' => __('Planning around','elitepress'),
+			'portfolio_three_title' => __('Planning your next move','elitepress'),
 			'portfolio_three_description' => 'Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...',
 			'portfolio_three_image' => $portfolio_image,
 			

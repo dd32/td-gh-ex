@@ -10,10 +10,10 @@
 	function __construct() {
 		parent::__construct(
 			'elitepress_header_widget', // Base ID
-			__('WBR : Header widget','elitepress'), // Widget Name
+			__('WBR: Header widget','elitepress'), // Widget Name
 			array(
 				'classname' => 'elitepress_header_widget',
-				'description' => __('Elitepress header widget','elitepress'),
+				'description' => __('ElitePress header widget','elitepress'),
 			),
 			array(
 				'width' => 300,

@@ -36,8 +36,8 @@
 				if ( ! empty( $elitepress_slider_content_control ) ) {
 				$elitepress_slider_content_control->default = json_encode( array(
 				array(
-				'title'      => esc_html__( 'elitepress by webriti themes', 'elitepress' ),
-				'text'       => esc_html__( 'Create fresh website fast with us.', 'elitepress' ),
+				'title'      => esc_html__( 'ElitePress by webriti themes', 'elitepress' ),
+				'text'       => esc_html__( 'With our themes, you can create a stunning website in no time.', 'elitepress' ),
 				'button_text'      => 'Read more',
 				'link'       => '#',
 				'image_url'  => get_template_directory_uri().'/images/slide/slide1.jpg',
@@ -45,8 +45,8 @@
 				'id'         => 'customizer_repeater_56d7ea7f40b96',
 				),
 				array(
-				'title'      => esc_html__( 'Clean & fresh design', 'elitepress' ),
-				'text'       => esc_html__( 'Create fresh website fast with us.', 'elitepress' ),
+				'title'      => esc_html__( 'A clean and fresh design', 'elitepress' ),
+				'text'       => esc_html__( 'With our themes, you can create a stunning website in no time.', 'elitepress' ),
 				'button_text'      => 'Read more',
 				'link'       => '#',
 				'image_url'  => get_template_directory_uri().'/images/slide/slide2.jpg',
@@ -54,8 +54,8 @@
 				'id'         => 'customizer_repeater_56d7ea7f40b97',
 				),
 				array(
-				'title'      => esc_html__( 'elitepress by webriti themes', 'elitepress' ),
-				'text'       => esc_html__( 'Create fresh website fast with us.', 'elitepress' ),
+				'title'      => esc_html__( 'ElitePress by webriti themes', 'elitepress' ),
+				'text'       => esc_html__( 'With our themes, you can create a stunning website in no time.', 'elitepress' ),
 				'button_text'      => 'Read more',
 				'link'       => '#',
 				'image_url'  =>  get_template_directory_uri().'/images/slide/slide3.jpg',

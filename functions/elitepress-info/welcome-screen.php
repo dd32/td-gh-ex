@@ -52,8 +52,8 @@ class elitepress_screen {
 	public function elitepress_admin_notice() {
 		?>
 			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing Elitepress Lite! To take full advantage of the best our theme can offer, please make sure you visit our %swelcome page%s.', 'elitepress' ), '<a href="' . esc_url( admin_url( 'themes.php?page=elitepress-info' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=elitepress-info' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Elitepress Lite', 'elitepress' ); ?></a></p>
+				<p><?php echo sprintf( esc_html__( "Welcome! Thank you for choosing ElitePress Lite! To take full advantage of all of our theme's best features, please visit our %swelcome page%s.", "elitepress" ), '<a href="' . esc_url( admin_url( 'themes.php?page=elitepress-info' ) ) . '">', '</a>' ); ?></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=elitepress-info' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with ElitePress Lite', 'elitepress' ); ?></a></p>
 			</div>
 		<?php
 	}

@@ -3,13 +3,13 @@ function elitepress_home_callout_customizer( $wp_customize ){
 $wp_customize->add_panel( 'home_callout_setting', array(
 		'priority'       => 400,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Header home callout setting', 'elitepress'),
+		'title'      => __('Home header callout setting', 'elitepress'),
 	) );
 //Home top callout
 $wp_customize->add_section(
         'header_home_callout',
         array(
-            'title' => __('Header home callout setting','elitepress'),
+            'title' => __('Home header callout setting','elitepress'),
            'priority'    => 4,
 			'panel' => 'home_callout_setting',
         )

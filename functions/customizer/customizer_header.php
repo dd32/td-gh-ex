@@ -30,7 +30,7 @@ function elitepress_header_widget_customizer( $wp_customize ){
     public function render_content() {
     ?>
     <a href="<?php bloginfo ( 'url' );?>/wp-admin/widgets.php" class="button"  
-	target="_blank"><?php _e('Click here to add header widget','elitepress'); ?></a>
+	target="_blank"><?php _e('Click here to add a header widget','elitepress'); ?></a>
     <?php
     }
 	}

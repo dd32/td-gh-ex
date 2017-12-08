@@ -88,7 +88,7 @@ wp_enqueue_script('elitepress-slider');
 				<?php } 
 				} else {
 						
-					$slider_default_title = array(__('Welcome to ElitePress WordPress Theme','elitepress'), __('Boost Your Site Today!','elitepress'), __('Let us grow your website','elitepress'),);
+					$slider_default_title = array(__('Welcome to the ElitePress WordPress Theme','elitepress'), __('Boost your site today!','elitepress'), __('Let us help you make your website amazing!','elitepress'),);
 						for($i=1; $i<=3; $i++) 
 						{  ?>
 						<li>

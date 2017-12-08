@@ -74,7 +74,7 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	//portfolio one Title
 	$wp_customize->add_setting(
 	'elitepress_lite_options[portfolio_one_title]', array(
-        'default'        => __('Business growth','elitepress'),
+        'default'        => __('Growing your business','elitepress'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
@@ -129,7 +129,7 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	//portfolio Two Title
 	$wp_customize->add_setting(
 	'elitepress_lite_options[portfolio_two_title]', array(
-        'default'        => __('Functional beauty','elitepress'),
+        'default'        => __('Functional elegance','elitepress'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
@@ -184,7 +184,7 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	//portfolio Title Title
 	$wp_customize->add_setting(
 	'elitepress_lite_options[portfolio_three_title]', array(
-        'default'        => __('Planning around','elitepress'),
+        'default'        => __('Planning your next move','elitepress'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
@@ -232,7 +232,7 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	
 	
 	$wp_customize->add_section( 'more_portfolio' , array(
-		'title'      => __('Add more portfolio', 'elitepress'),
+		'title'      => __('Add more portfolios', 'elitepress'),
 		'panel'  => 'elitepress_portfolio_setting',
 		'priority'   => 400,
    	) );

@@ -10,10 +10,10 @@
 	function __construct() {
 		parent::__construct(
 			'elitepress_social_icon_widget', // Base ID
-			__('WBR : Social icon','elitepress'), // Widget Name
+			__('WBR: Social icon','elitepress'), // Widget Name
 			array(
 				'classname' => 'elitepress_social_icon_widget',
-				'description' => __('Elitepress social icon widget','elitepress'),
+				'description' => __('ElitePress social icons widget','elitepress'),
 			),
 			array(
 				'width' => 300,
@@ -212,7 +212,7 @@
 	<label for="<?php echo $this->get_field_id( 'google_plus_target' ); ?>"><?php _e( 'Open link in new tab','elitepress' ); ?></label>
 
 	<!-- Lindedin Link -->
-	<h4 for="<?php echo $this->get_field_id( 'linkedin_link' ); ?>"><?php _e( 'Lindedin URL','elitepress' ); ?></h4>
+	<h4 for="<?php echo $this->get_field_id( 'linkedin_link' ); ?>"><?php _e( 'LinkedIn URL','elitepress' ); ?></h4>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'linkedin_link' ); ?>" name="<?php echo $this->get_field_name( 'linkedin_link' ); ?>" type="text" value="<?php if($linkedin_link) echo esc_attr( $linkedin_link ); ?>" />
 	<input class="checkbox" type="checkbox" <?php if($instance['linkedin_target']==true){ echo 'checked'; } ?> id="<?php echo $this->get_field_id( 'linkedin_target' ); ?>" name="<?php echo $this->get_field_name( 'linkedin_target' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'linkedin_target' ); ?>"><?php _e( 'Open link in new tab','elitepress' ); ?></label>

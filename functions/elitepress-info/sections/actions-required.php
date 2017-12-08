@@ -27,14 +27,14 @@
 	
 	<div class="col-md-6">
 	<div class="elitepress-tab-pane-half">
-		<img style="border:1px solid #ccc;" src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/elitepress-info/img/create-home.gif'; ?>" alt="<?php esc_html_e( 'elitepress Blue Child Theme', 'elitepress' ); ?>" />
+		<img style="border:1px solid #ccc;" src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/elitepress-info/img/create-home.gif'; ?>" alt="<?php esc_html_e( 'ElitePress Blue Child Theme', 'elitepress' ); ?>" />
 	</div>
 	</div>
 	
 	
 	<div class="col-md-6">
 	<div class="elitepress-tab-pane-half">
-		<img style="border:1px solid #ccc;" src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/elitepress-info/img/assign-home.gif'; ?>" alt="<?php esc_html_e( 'elitepress Blue Child Theme', 'elitepress' ); ?>" />
+		<img style="border:1px solid #ccc;" src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/elitepress-info/img/assign-home.gif'; ?>" alt="<?php esc_html_e( 'ElitePress Blue Child Theme', 'elitepress' ); ?>" />
 	</div>
 	</div>
 	<div class="clearfix"></div>

@@ -22,7 +22,7 @@
 	<div class="col-md-6">
 	<div class="elitepress-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Header Section', 'elitepress' ); ?></strong></p>
-		<p><?php esc_html_e( 'In the premium version you will get a top header sidebar area where you can use any widget - all the widgets are styled. We have created a number of widgets in the theme which you can use here. Specifically, use the Header Widget for showing your email ID, contact number or any other info of your choice.', 'elitepress' ); ?></p>
+		<p><?php esc_html_e( 'In the premium version, ElitePress PRO, you get a top header sidebar area where you can use any widget. We have created a number of widgets in the theme which you can use here, and all are styled. Specifically, you can use the Header Widget to show your email address, contact number or any other info of your choice.', 'elitepress' ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -31,7 +31,7 @@
 	<div class="col-md-6">
 	<div class="elitepress-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Multi Level Navigation','elitepress'); ?></strong></p>
-		<p><?php esc_html_e( "There are beautifully styled navigation/menus in the Elitepress theme. You can make multi level menus, which means you can create sub menus.","elitepress" ); ?></p>
+		<p><?php esc_html_e( "There are beautifully styled navigation/menus in ElitePress. You can create sub menus and make make multi level menus.","elitepress" ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -40,7 +40,7 @@
 	<div class="col-md-6">
 	<div class="elitepress-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Caption Slider', 'elitepress' ); ?></strong></p>
-		<p><?php esc_html_e( 'You can create unlimited slides which you can control via Repetator control the settings in Appearance >> Customize. ', 'elitepress' ); ?></p>
+		<p><?php esc_html_e( 'You can create unlimited slides which you can control via Appearance > Customize.', 'elitepress' ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -50,7 +50,7 @@
 	<div class="elitepress-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Service Features','elitepress' ); ?></strong></p>
 
-		<p><?php esc_html_e( 'You can display any number of Services on the Homepage, with thousands of FontAwesome icons available. You can also display a set of services on a separate page by using the service-related page templates with repetator control.','elitepress' ); ?></p>
+		<p><?php esc_html_e( 'You can display any number of Services on the Homepage, with thousands of FontAwesome icons available. You can also display a set of services on a separate page by using the service-related page templates.','elitepress' ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -76,7 +76,7 @@
 	<div class="col-md-6">
 	<div class="elitepress-tab-pane-half">
 	<p><strong><?php esc_html_e( 'Testimonial Feature', 'elitepress' ); ?></strong></p>
-		<p><?php esc_html_e( 'Testimonials are a powerful way to gain credibility. You can display testimonials with a carousel effect with Repetator control.','elitepress' ); ?></p>
+		<p><?php esc_html_e( 'Testimonials are a powerful way to gain credibility. You can display testimonials with a carousel effect.','elitepress' ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -95,7 +95,7 @@
 	<div class="col-md-6">
 	<div class="elitepress-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Well Documented', 'elitepress' ); ?></strong></p>
-		<p><?php echo sprintf (__("We provide good knowledgebase articles which will help you to create effective websites. You can visit these articles via our <a href='http://webriti.com/help/category/themes/elitepress/' target='_blank'>Help Section</a>.","elitepress")); ?></p>
+		<p><?php echo sprintf (__("We provide good knowledgebase articles which will help you create effective websites. You can reach these articles via our <a href='http://webriti.com/help/category/themes/elitepress/' target='_blank'>Help Section</a>.","elitepress")); ?></p>
 		<hr>
 	</div>
 	</div>

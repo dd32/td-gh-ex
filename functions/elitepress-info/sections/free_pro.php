@@ -21,7 +21,7 @@
 						
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Page Templates Support','elitepress' ); ?></span>
-							<p><?php esc_html_e( 'Various Page Templates included in the Elitepress Premium Theme','elitepress' ); ?></p>
+							<p><?php esc_html_e( 'The premium version, ElitePress PRO, includes various page templates','elitepress' ); ?></p>
 						</li>
 						
 						<li>
@@ -51,12 +51,12 @@
 						
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Portfolio','elitepress' ); ?></span>
-							<p><?php esc_html_e( 'Present your project/portfolio collection with 2 column, 3 column and 4 column layouts. You can also display your  project / portfolio by category.','elitepress' ); ?></p>
+							<p><?php esc_html_e( 'Present your project/portfolio collection with a 2 column, 3 column or 4 column layout. You can also display your project/portfolio by category.','elitepress' ); ?></p>
 						</li>
 						
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'About Us Page','elitepress' ); ?></span>
-							<p><?php esc_html_e( 'Show team members, your clients and custom content.','elitepress' ); ?></p>
+							<p><?php esc_html_e( 'Show the members of your team, your clients, or any custom content.','elitepress' ); ?></p>
 						</li>
 						
 						<li>
@@ -88,11 +88,11 @@
 				<div class="plan text-center">
 					
 					<header>
-						<h2><?php echo __('Elitepress Lite','elitepress'); ?></h2>
+						<h2><?php echo __('ElitePress Lite','elitepress'); ?></h2>
 					</header>
 					
 					<ul class="feature">
-						<li style="font-size:16px; line-height:25px; padding:10px; height:160px;"><?php _e("Header Widget, Slider [Unlimited Slider] With Repetator Control, Service [Unlimited Service] with Repetator Control, Callout Section, Product section, Latest News","elitepress"); ?> </li>
+						<li style="font-size:16px; line-height:25px; padding:10px; height:160px;"><?php _e("Header Widget, Slider with unlimited slides, Unlimited Services, Callout Section, Product section, Latest News","elitepress"); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Homepage Template and Full-Width Page Template','elitepress'); ?> </li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-no-alt red"></span></li>
@@ -116,11 +116,11 @@
 				<div class="plan text-center border-right">
 					
 					<header>
-						<h2><?php echo _e('Elitepress Pro','elitepress'); ?></h2>
+						<h2><?php echo _e('ElitePress PRO','elitepress'); ?></h2>
 					</header>
 					
 					<ul class="feature">
-						<li style="font-size:16px; line-height:25px; padding:5px;height: 160px;"><?php _e("Top header Widget, Header Widget, Slider [Unlimited Slides] With Repetator Control, Service [Unlimited Services] with Repetator Control, Callout Section, Portfolio [Unlimited Portfolio], Latest News, Clients, Testimonials,Contact with map","elitepress"); ?></li>
+						<li style="font-size:16px; line-height:25px; padding:5px;height: 160px;"><?php _e("Top header Widget, Header Widget, Slider with unlimited slides, Unlimited Services, Callout Section, Portfolio [Unlimited Portfolio], Latest News, Clients, Testimonials, Contact with map","elitepress"); ?></li>
 						<li style="font-size:16px; line-height:25px; padding:18px">
 						<?php _e("About Us, Services, Portfolio, Blog Left & Right Sidebars, Blog Full Width, Page Full Width, Contact Page and much more.","elitepress"); ?></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>

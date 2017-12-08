@@ -30,7 +30,7 @@ function elitepress_header_customizer( $wp_customize ) {
 	
 	//Header logo setting
 	$wp_customize->add_section( 'header_logo' , array(
-		'title'      => __('Header Logo settings', 'elitepress'),
+		'title'      => __('Header logo settings', 'elitepress'),
 		'panel'  => 'header_options',
 		'priority'   => 400,
    	) );

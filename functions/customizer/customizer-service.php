@@ -22,7 +22,7 @@ function elitepress_service_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'elitepress_lite_options[service_section_enabled]',
     array(
-        'label' => __('Enable service section on front page','elitepress'),
+        'label' => __('Enable Service section on front page','elitepress'),
         'section' => 'service_section_head',
         'type' => 'checkbox',
     )
