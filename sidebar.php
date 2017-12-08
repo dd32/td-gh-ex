@@ -2,7 +2,7 @@
 // The template for rendering the sidebar, i.e. the primary widget area
 
 // Reset the query
-wp_reset_postdata();
+wp_reset_query();
 
 // Display the content if it's a project post type
 if ( get_post_type() == 'project' ) {
@@ -25,7 +25,7 @@ if ( get_post_type() == 'project' ) {
 				return;
 			}
 		}
-		if ( isset($post->ID) && get_post_meta($post->ID, 'bento_sidebar_layout', true) == 'full-width' ) {
+		if ( is_singular() && isset( $post->ID ) && get_post_meta( $post->ID, 'bento_sidebar_layout', true ) == 'full-width' ) {
 			return;	
 		} else {
 			// Display the widgetized sidebar

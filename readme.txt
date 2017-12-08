@@ -4,8 +4,8 @@ Contributors: satoristudio
 Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 
 Requires at least: 4.0
-Tested up to: 4.8
-Stable tag: 1.7.8
+Tested up to: 4.9
+Stable tag: 1.7.9
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,10 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 1.7.9 / 8 December 2017
+Added a Spanish translation.
+Fixed sidebar behavior on blog index-template pages.
 
 * 1.7.8 / 9 November 2017
 Submenus in side-menu layout now stay open on pages corresponding to active submenu items.
@@ -252,6 +256,10 @@ Initial release.
 
 
 ___ CREDITS
+
+* Translations
+Spanish: David Busto
+French: Laurent Vergnaud (ThemeCloud)
 
 * Third Party Assets
 Isotope http://isotope.metafizzy.co/ (c) Metafizzy LLC, under [GPLv3] (https://www.gnu.org/licenses/gpl-3.0.en.html)
