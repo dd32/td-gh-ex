@@ -48,7 +48,6 @@
     // Color Scheme CSS.
     api.bind( 'preview-ready', function() {
         api.preview.bind( 'update-color-scheme-css', function( css ) {
-			console.log('update-color-scheme-css');
             style.html( css );
         } );
     } );

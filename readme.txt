@@ -31,6 +31,9 @@ To add social icons, navigate to WordPress Customizer > Menus > Add Menu > Add C
 
 == Changelog ==
 
+= 0.1.7 =
+* Minor bugfixes and improvements.
+
 = 0.1.6 =
 * Added support for Jetpack Content Options.
 

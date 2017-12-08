@@ -4,7 +4,7 @@ Theme Name: Avior
 Author: MotoPress
 Author URI: https://motopress.com/
 Description: Avior is a clean and dandy WordPress blogging theme, designed for people, who aim for readable, photo-rich and SEO-smart writing. With Avior you'll easily take care of a website customization: change footer and header info like menus and social media icons, change header image, use unlimited colors to reach a perfect color scheme and more. All tweaks are easily performed visually via WordPress Customizer. A distinctive search engine optimized blog will help you stand out of the crowd and create impressive posts that will look just perfect on any modern device.
-Version: 0.1.6
+Version: 0.1.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avior
@@ -609,7 +609,6 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   display: inline-block;
-  height: 2.5em;
   margin-bottom: 0;
   font-weight: 400;
   text-align: center;
@@ -618,7 +617,7 @@ input[type="submit"] {
   cursor: pointer;
   background-image: none;
   border: 1px solid #1ca4d3;
-  padding: 0.3125em 0.875em 0.375em;
+  padding: 0.34375em 0.875em 0.40625em;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.625;
@@ -4800,14 +4799,14 @@ a:hover {
 # Menu icons
 --------------------------------------------------------------*/
 @media screen and (min-width: 62em) {
-  .theme-social-menu a[href*="twitter.com"] .menu-text, .theme-social-menu a[href*="facebook.com"] .menu-text, .theme-social-menu a[href*="google.com"] .menu-text, .theme-social-menu a[href*="plus.google.com"] .menu-text, .theme-social-menu a[href*="pinterest.com"] .menu-text, .theme-social-menu a[href*="foursquare.com"] .menu-text, .theme-social-menu a[href*="yahoo.com"] .menu-text, .theme-social-menu a[href*="skype:"] .menu-text, .theme-social-menu a[href*="yelp.com"] .menu-text, .theme-social-menu a[href*="linkedin.com"] .menu-text, .theme-social-menu a[href*="viadeo.com"] .menu-text, .theme-social-menu a[href*="xing.com"] .menu-text, .theme-social-menu a[href*="soundcloud.com"] .menu-text, .theme-social-menu a[href*="spotify.com"] .menu-text, .theme-social-menu a[href*="last.fm"] .menu-text, .theme-social-menu a[href*="youtube.com"] .menu-text, .theme-social-menu a[href*="vimeo.com"] .menu-text, .theme-social-menu a[href*="vine.com"] .menu-text, .theme-social-menu a[href*="flickr.com"] .menu-text, .theme-social-menu a[href*="500px.com"] .menu-text, .theme-social-menu a[href*="instagram.com"] .menu-text, .theme-social-menu a[href*="wordpress.com"] .menu-text, .theme-social-menu a[href*="wordpress.org"] .menu-text, .theme-social-menu a[href*="tumblr.com"] .menu-text, .theme-social-menu a[href*="reddit.com"] .menu-text, .theme-social-menu a[href*="dribbble.com"] .menu-text, .theme-social-menu a[href*="stumbleupon.com"] .menu-text, .theme-social-menu a[href*="digg.com"] .menu-text, .theme-social-menu a[href*="behance.net"] .menu-text, .theme-social-menu a[href*="delicious.com"] .menu-text, .theme-social-menu a[href*="deviantart.com"] .menu-text, .theme-social-menu a[href*="play.com"] .menu-text, .theme-social-menu a[href*="wikipedia.com"] .menu-text, .theme-social-menu a[href*="apple.com"] .menu-text, .theme-social-menu a[href*="github.com"] .menu-text, .theme-social-menu a[href*="github.io"] .menu-text, .theme-social-menu a[href*="windows.com"] .menu-text, .theme-social-menu a[href*="tripadvisor."] .menu-text, .theme-social-menu a[href*="slideshare.net"] .menu-text, .theme-social-menu a[href*=".rss"] .menu-text, .theme-social-menu a[href*="vk.com"] .menu-text {
+  .theme-social-menu a[href*="twitter.com"] .menu-text, .theme-social-menu a[href*="facebook.com"] .menu-text, .theme-social-menu a[href*="google.com"] .menu-text, .theme-social-menu a[href*="plus.google.com"] .menu-text, .theme-social-menu a[href*="pinterest.com"] .menu-text, .theme-social-menu a[href*="foursquare.com"] .menu-text, .theme-social-menu a[href*="yahoo.com"] .menu-text, .theme-social-menu a[href*="skype:"] .menu-text, .theme-social-menu a[href*="yelp.com"] .menu-text, .theme-social-menu a[href*="linkedin.com"] .menu-text, .theme-social-menu a[href*="viadeo.com"] .menu-text, .theme-social-menu a[href*="xing.com"] .menu-text, .theme-social-menu a[href*="soundcloud.com"] .menu-text, .theme-social-menu a[href*="spotify.com"] .menu-text, .theme-social-menu a[href*="last.fm"] .menu-text, .theme-social-menu a[href*="youtube.com"] .menu-text, .theme-social-menu a[href*="vimeo.com"] .menu-text, .theme-social-menu a[href*="vine.com"] .menu-text, .theme-social-menu a[href*="flickr.com"] .menu-text, .theme-social-menu a[href*="500px.com"] .menu-text, .theme-social-menu a[href*="instagram.com"] .menu-text, .theme-social-menu a[href*="tumblr.com"] .menu-text, .theme-social-menu a[href*="reddit.com"] .menu-text, .theme-social-menu a[href*="dribbble.com"] .menu-text, .theme-social-menu a[href*="stumbleupon.com"] .menu-text, .theme-social-menu a[href*="digg.com"] .menu-text, .theme-social-menu a[href*="behance.net"] .menu-text, .theme-social-menu a[href*="delicious.com"] .menu-text, .theme-social-menu a[href*="deviantart.com"] .menu-text, .theme-social-menu a[href*="play.com"] .menu-text, .theme-social-menu a[href*="wikipedia.com"] .menu-text, .theme-social-menu a[href*="apple.com"] .menu-text, .theme-social-menu a[href*="github.com"] .menu-text, .theme-social-menu a[href*="github.io"] .menu-text, .theme-social-menu a[href*="windows.com"] .menu-text, .theme-social-menu a[href*="tripadvisor."] .menu-text, .theme-social-menu a[href*="slideshare.net"] .menu-text, .theme-social-menu a[href*=".rss"] .menu-text, .theme-social-menu a[href*="vk.com"] .menu-text {
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute !important;
     height: 1px;
     width: 1px;
     overflow: hidden;
   }
-  .theme-social-menu a[href*="twitter.com"]:before, .theme-social-menu a[href*="facebook.com"]:before, .theme-social-menu a[href*="google.com"]:before, .theme-social-menu a[href*="plus.google.com"]:before, .theme-social-menu a[href*="pinterest.com"]:before, .theme-social-menu a[href*="foursquare.com"]:before, .theme-social-menu a[href*="yahoo.com"]:before, .theme-social-menu a[href*="skype:"]:before, .theme-social-menu a[href*="yelp.com"]:before, .theme-social-menu a[href*="linkedin.com"]:before, .theme-social-menu a[href*="viadeo.com"]:before, .theme-social-menu a[href*="xing.com"]:before, .theme-social-menu a[href*="soundcloud.com"]:before, .theme-social-menu a[href*="spotify.com"]:before, .theme-social-menu a[href*="last.fm"]:before, .theme-social-menu a[href*="youtube.com"]:before, .theme-social-menu a[href*="vimeo.com"]:before, .theme-social-menu a[href*="vine.com"]:before, .theme-social-menu a[href*="flickr.com"]:before, .theme-social-menu a[href*="500px.com"]:before, .theme-social-menu a[href*="instagram.com"]:before, .theme-social-menu a[href*="wordpress.com"]:before, .theme-social-menu a[href*="wordpress.org"]:before, .theme-social-menu a[href*="tumblr.com"]:before, .theme-social-menu a[href*="reddit.com"]:before, .theme-social-menu a[href*="dribbble.com"]:before, .theme-social-menu a[href*="stumbleupon.com"]:before, .theme-social-menu a[href*="digg.com"]:before, .theme-social-menu a[href*="behance.net"]:before, .theme-social-menu a[href*="delicious.com"]:before, .theme-social-menu a[href*="deviantart.com"]:before, .theme-social-menu a[href*="play.com"]:before, .theme-social-menu a[href*="wikipedia.com"]:before, .theme-social-menu a[href*="apple.com"]:before, .theme-social-menu a[href*="github.com"]:before, .theme-social-menu a[href*="github.io"]:before, .theme-social-menu a[href*="windows.com"]:before, .theme-social-menu a[href*="tripadvisor."]:before, .theme-social-menu a[href*="slideshare.net"]:before, .theme-social-menu a[href*=".rss"]:before, .theme-social-menu a[href*="vk.com"]:before {
+  .theme-social-menu a[href*="twitter.com"]:before, .theme-social-menu a[href*="facebook.com"]:before, .theme-social-menu a[href*="google.com"]:before, .theme-social-menu a[href*="plus.google.com"]:before, .theme-social-menu a[href*="pinterest.com"]:before, .theme-social-menu a[href*="foursquare.com"]:before, .theme-social-menu a[href*="yahoo.com"]:before, .theme-social-menu a[href*="skype:"]:before, .theme-social-menu a[href*="yelp.com"]:before, .theme-social-menu a[href*="linkedin.com"]:before, .theme-social-menu a[href*="viadeo.com"]:before, .theme-social-menu a[href*="xing.com"]:before, .theme-social-menu a[href*="soundcloud.com"]:before, .theme-social-menu a[href*="spotify.com"]:before, .theme-social-menu a[href*="last.fm"]:before, .theme-social-menu a[href*="youtube.com"]:before, .theme-social-menu a[href*="vimeo.com"]:before, .theme-social-menu a[href*="vine.com"]:before, .theme-social-menu a[href*="flickr.com"]:before, .theme-social-menu a[href*="500px.com"]:before, .theme-social-menu a[href*="instagram.com"]:before, .theme-social-menu a[href*="tumblr.com"]:before, .theme-social-menu a[href*="reddit.com"]:before, .theme-social-menu a[href*="dribbble.com"]:before, .theme-social-menu a[href*="stumbleupon.com"]:before, .theme-social-menu a[href*="digg.com"]:before, .theme-social-menu a[href*="behance.net"]:before, .theme-social-menu a[href*="delicious.com"]:before, .theme-social-menu a[href*="deviantart.com"]:before, .theme-social-menu a[href*="play.com"]:before, .theme-social-menu a[href*="wikipedia.com"]:before, .theme-social-menu a[href*="apple.com"]:before, .theme-social-menu a[href*="github.com"]:before, .theme-social-menu a[href*="github.io"]:before, .theme-social-menu a[href*="windows.com"]:before, .theme-social-menu a[href*="tripadvisor."]:before, .theme-social-menu a[href*="slideshare.net"]:before, .theme-social-menu a[href*=".rss"]:before, .theme-social-menu a[href*="vk.com"]:before {
     margin-right: 0;
   }
 }
@@ -4897,12 +4896,6 @@ a:hover {
 }
 .theme-social-menu a[href*="instagram.com"]:before {
   content: "";
-}
-.theme-social-menu a[href*="wordpress.com"]:before {
-  content: "";
-}
-.theme-social-menu a[href*="wordpress.org"]:before {
-  content: "";
 }
 .theme-social-menu a[href*="tumblr.com"]:before {
   content: "";
@@ -5065,9 +5058,6 @@ a:hover {
   font-family: "Source Sans Pro", sans-serif;
   margin: 0 0 1.26667em;
 }
-.widget ol, .widget ul, .widget table, .widget form {
-  margin-bottom: 0;
-}
 .widget ol, .widget ul {
   list-style: none;
   margin-left: 0;
@@ -5206,7 +5196,6 @@ a:hover {
 }
 
 .site-content .widget-area {
-  overflow: hidden;
   padding-top: 3em;
 }
 @media screen and (min-width: 62em) {
@@ -5382,11 +5371,12 @@ a:hover {
 
 .site-header-main {
   padding: 0.625em 0 1.625em;
-  background: rgba(32, 43, 52, 0.8);
+  background: #202b34;
 }
 @media screen and (min-width: 62em) {
   .site-header-main {
     padding: 0;
+    background: rgba(32, 43, 52, 0.8);
   }
 }
 

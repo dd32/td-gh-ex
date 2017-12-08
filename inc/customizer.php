@@ -448,9 +448,9 @@ function avior_get_color_scheme_css($colors)
         'header_background_color' => '',
         'footer_background_color' => '',
         'site_header_main' => '',
+        'site_header_main_rgba' => '',
         'header_textcolor' => ''
     ));
-
     return <<<CSS
 	/* Color Scheme */
 
@@ -511,10 +511,14 @@ function avior_get_color_scheme_css($colors)
 	.site-header {
       background-color:  {$colors['header_background_color']};
     }
-    
     .site-header-main{
-        background-color: {$colors['site_header_main']};
+        background-color:{$colors['site_header_main']};
     }
+    @media screen and (min-width: 62em){
+        .site-header-main{
+            background-color: {$colors['site_header_main_rgba']};
+        }
+    }    
 CSS;
 }
 
@@ -537,6 +541,7 @@ function avior_color_scheme_css_template()
         'header_background_color' => '{{data.header_background_color}}',
         'footer_background_color' => '{{data.footer_background_color}}',
         'site_header_main' => '{{data.site_header_main}}',
+        'site_header_main_rgba' => '{{data.site_header_main_rgba}}',
         'header_textcolor' => '{{data.header_textcolor}}'
     );
     ?>
@@ -598,13 +603,17 @@ function avior_header_background_color_css()
 	.site-header {
      background-color: %1$s;
     }
-    
     .site-header-main{
-    background-color: %2$s;
+        background-color: %2$s;
+    }
+    @media screen and (min-width: 62em){
+        .site-header-main{
+            background-color: %3$s;
+        }
     }
 	';
 
-    wp_add_inline_style('avior-style', sprintf($css, esc_html($header_background_color), esc_html($site_header_main)));
+    wp_add_inline_style('avior-style', sprintf($css, esc_html($header_background_color), esc_html($header_background_color), esc_html($site_header_main)));
 }
 
 add_action('wp_enqueue_scripts', 'avior_header_background_color_css', 11);
