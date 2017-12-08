@@ -15,7 +15,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-
 	<?php wp_head(); ?>
 </head>
 
@@ -56,14 +55,6 @@
 				</div>
 			</nav><!-- #site-navigation -->
 
-			<?php if ( get_theme_mod( 'header_frontpage_only' ) == '' ) : ?>
-			<?php else : ?>
-				<?php if ( !is_front_page() ) : ?>
-				<?php endif; ?>
-			<?php endif; ?>
-
-
-			<?php if ( get_theme_mod( 'header_frontpage_only' ) == '' ) : ?>
 				<!-- Header start -->
 				<div class="container">
 					<div class="header-container">
@@ -79,9 +70,7 @@
 									apppage_the_custom_logo();
 								}?>
 								<span class="site-title">
-									<?php if (get_theme_mod('header_title') ) : ?>
-										<?php echo wp_kses_post(get_theme_mod('header_title')) ?>
-									<?php endif; ?>
+									<?php bloginfo( 'name' ); ?>
 								</span>
 
 								<?php if ( get_theme_mod( 'left_button_text') || get_theme_mod( 'right_button_text')  ) : ?>
@@ -105,81 +94,15 @@
 				</div>
 			</div>
 			<!-- Header End -->
-		<?php else : ?>
-			<?php if ( is_front_page() ) : ?>
-
-				<!-- Header start -->
-				<div class="container">
-					<div class="header-container">
-					<?php if ( is_active_sidebar( 'header_widget_right')  ) : ?>
-						<div class="header-image">
-							<?php dynamic_sidebar( 'header_widget_right' ); ?>
-						</div>
-					<?php endif; ?>
-						<div class="header-content">
-							<div class="site-branding">
-								<?php
-								if ( has_custom_logo() ) {
-									apppage_the_custom_logo();
-								}?>
-								<span class="site-title">
-									<?php if (get_theme_mod('header_title') ) : ?>
-										<?php echo wp_kses_post(get_theme_mod('header_title')) ?>
-									<?php endif; ?>
-								</span>
-
-								<p class="site-description">
-									<?php if (get_theme_mod('header_tagline') ) : ?>
-										<?php echo wp_kses_post(get_theme_mod('header_tagline')) ?>
-									<?php endif; ?>
-								</p>
-								<?php if ( get_theme_mod( 'left_button_text') || get_theme_mod( 'right_button_text')  ) : ?>
-								<?php endif; ?>
-								<?php if (get_theme_mod('left_button_text') ) : ?>
-									<a class="header-button" href="<?php if (get_theme_mod('left_button_text') ) : ?><?php echo wp_kses_post(get_theme_mod('left_button_link')) ?><?php endif; ?>">
-										<?php if (get_theme_mod('left_button_text') ) : ?><?php echo wp_kses_post(get_theme_mod('left_button_text')) ?><?php endif; ?>
-									</a>
-								<?php endif; ?>
-
-								<?php if (get_theme_mod('right_button_text') ) : ?>
-									<a class="header-button-text" href="<?php if (get_theme_mod('right_button_text') ) : ?><?php echo wp_kses_post(get_theme_mod('right_button_link')) ?><?php endif; ?>">
-										<?php if (get_theme_mod('right_button_text') ) : ?><?php echo wp_kses_post(get_theme_mod('right_button_text')) ?><?php endif; ?>
-									</a>
-								<?php endif; ?>
-
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Header End -->
-		<?php endif; ?>
-	<?php endif; ?>
-
 
 </header><!-- #masthead -->
 
-
-<?php if ( get_theme_mod( 'header_frontpage_only' ) == '' ) : ?>
-<?php else : ?>
-	<?php if ( !is_front_page() ) : ?>
-		<div class="noheader-margins"></div>
-	<?php endif; ?>
-<?php endif; ?>
-
-
-
-
-
-<?php if ( get_theme_mod( 'toggle_top_widgets_frontpage' ) == '' ) : ?>
 	<!-- Top widgets -->
 	<?php if ( is_active_sidebar( 'top_widget_left') || is_active_sidebar( 'top_widget_fullwidth') || is_active_sidebar( 'top_widget_middle') ||  is_active_sidebar( 'top_widget_right')  ) : ?>
 		<div class="container"> 
 			<div class="row">
 				<div class="top-widget-wrapper">
 					<?php if ( is_active_sidebar( 'top_widget_left') || is_active_sidebar( 'top_widget_middle') ||  is_active_sidebar( 'top_widget_right')  ) : ?>
-
-
 						<div class="top-widget-grid">
 							<?php if ( is_active_sidebar( 'top_widget_left')  ) : ?>
 								<div class="top-widget-single">
@@ -209,41 +132,4 @@
 		</div>
 	<?php endif; ?>
 	<!-- / Top widgets -->
-<?php else : ?>
-	<?php if ( is_front_page() ) : ?>
-		<!-- Top widgets -->
-		<?php if ( is_active_sidebar( 'top_widget_left') || is_active_sidebar( 'top_widget_fullwidth') || is_active_sidebar( 'top_widget_middle') ||  is_active_sidebar( 'top_widget_right')  ) : ?>
-			<div class="container"> 
-				<div class="row">
-					<div class="top-widget-wrapper">
-						<?php if ( is_active_sidebar( 'top_widget_left') || is_active_sidebar( 'top_widget_middle') ||  is_active_sidebar( 'top_widget_right')  ) : ?>
-						<div class="top-widget-grid">
-							<?php if ( is_active_sidebar( 'top_widget_left')  ) : ?>
-								<div class="top-widget-single">
-									<?php dynamic_sidebar( 'top_widget_left' ); ?>
-								</div>
-							<?php endif; ?>
-
-
-							<?php if ( is_active_sidebar( 'top_widget_middle')  ) : ?>
-								<div class="top-widget-single">
-									<?php dynamic_sidebar( 'top_widget_middle' ); ?>
-								</div>
-							<?php endif; ?>
-
-							<?php if ( is_active_sidebar( 'top_widget_right')  ) : ?>
-								<div class="top-widget-single">
-									<?php dynamic_sidebar( 'top_widget_right' ); ?>
-								</div>
-							<?php endif; ?>
-						</div>
-
-						<?php endif; ?>
-					</div>
-				</div>
-			</div>
-		<?php endif; ?>
-		<!-- / Top widgets -->
-	<?php endif; ?>
-<?php endif; ?>
 <div id="content" class="site-content">

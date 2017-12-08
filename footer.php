@@ -35,11 +35,7 @@
 
 <div class="site-info">
 	<div class="container">
-        <?php if (get_theme_mod('footer_custom_copyright_text') ) : ?>
-        <?php echo wp_kses_post(get_theme_mod('footer_custom_copyright_text')) ?>
-    <?php else : ?>
     <?php echo '&copy; '.date_i18n(__('Y','apppage')); ?> <?php bloginfo( 'name' ); ?>
-<?php endif; ?>
 	</div>
 </div>
 

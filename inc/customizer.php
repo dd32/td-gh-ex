@@ -492,11 +492,8 @@ add_action('customize_controls_print_styles', 'apppage_customizer_load_css');
 
 
 
-if(! function_exists('apppage_custom_css' ) ):
-/**
-* Set the header background color 
-*/
-function apppage_custom_css(){
+if(! function_exists('apppage_custom_css_changes' ) ):
+function apppage_custom_css_changes(){
     ?>
 
     <style type="text/css">
@@ -557,5 +554,5 @@ function apppage_custom_css(){
 }   
 </style>
 <?php }
-add_action( 'wp_head', 'apppage_custom_css' );
+add_action( 'wp_head', 'apppage_custom_css_changes' );
 endif;

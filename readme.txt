@@ -2,7 +2,7 @@ Theme Name: AppPage
 Author: Vilhoprogramming
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 1.1
+Version: 1.2
 Tested up to: WordPress 4.8
 Tags: two-columns, right-sidebar, blog, portfolio
 Text Domain: appPage
