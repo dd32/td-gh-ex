@@ -536,7 +536,7 @@ Greenr_Kirki::add_field( 'greenr', array(
 	'section'  => 'primary_color_field',
 	'type'     => 'color',
 	'default'  => '#56cc00',
-	'alpha'  => true,
+	"choices['alpha']"  => true,
 	'active_callback' => array(
 		array (
 			'setting'  => 'enable_primary_color',
@@ -683,7 +683,7 @@ Greenr_Kirki::add_field( 'greenr', array(
 	'section'  => 'primary_color_field',
 	'type'     => 'color',
 	'default'  => '#56cc00',
-	'alpha'  => true,
+	"choices['alpha']"  => true,
 	'active_callback' => array(
 		array(
 			'setting'  => 'enable_nav_primary_color',
@@ -719,7 +719,7 @@ Greenr_Kirki::add_field( 'greenr', array(
 	'section'  => 'primary_color_field',
 	'type'     => 'color',
 	'default'  => '#e2e1e1',
-	'alpha'  => true,
+	"choices['alpha']"  => true,
 	'active_callback' => array(
 		array(
 			'setting'  => 'enable_dd_bg_color',
@@ -751,7 +751,7 @@ Greenr_Kirki::add_field( 'greenr', array(
 	'section'  => 'primary_color_field',
 	'type'     => 'color',
 	'default'  => '#242424',
-	'alpha'  => true,
+	"choices['alpha']"  => true,
 	'active_callback' => array(
 		array(
 			'setting'  => 'enable_nav_bar_color',
@@ -783,7 +783,7 @@ Greenr_Kirki::add_field( 'greenr', array(
 	'section'  => 'primary_color_field',
 	'type'     => 'color',
 	'default'  => '#E5493A',
-	'alpha'  => true,
+	"choices['alpha']"  => true,
 	'active_callback' => array(
 		array(
 			'setting'  => 'enable_nav_hover_color',
@@ -819,7 +819,7 @@ Greenr_Kirki::add_field( 'greenr', array(
 	'section'  => 'primary_color_field',
 	'type'     => 'color',
 	'default'  => '#000',
-	'alpha'  => true,
+	"choices['alpha']"  => true,
 	'active_callback' => array(
 		array(
 			'setting'  => 'enable_secondary_color',
@@ -1227,7 +1227,7 @@ Greenr_Kirki::add_field( 'greenr', array(
 	'label'    => __( 'Header Text Color', 'greenr' ),
 	'section'  => 'header',
 	'type'     => 'color',
-	'alpha' => true,
+	"choices['alpha']"  => true,
 	'default'  => '', 
 	'output'   => array(
 		array(
@@ -1482,7 +1482,7 @@ Greenr_Kirki::add_field( 'greenr', array(
 	'label'    => __( 'Header Overlay ( Background )color', 'greenr' ),
 	'section'  => 'header_image',
 	'type'     => 'color',
-	'alpha' => true,
+	"choices['alpha']"  => true,
 	'default'  => '#E5493A', 
 	'output'   => array(
 		array(
@@ -1990,7 +1990,7 @@ Greenr_Kirki::add_field( 'greenr', array(
 	'label'    => __( 'Footer Overlay ( Background )color', 'greenr' ),
 	'section'  => 'footer_image',
 	'type'     => 'color',
-	'alpha' => true,
+	"choices['alpha']"  => true,
 	'default'  => '#E5493A', 
 	'active_callback' => array(
 		array(
@@ -2406,7 +2406,7 @@ Greenr_Kirki::add_field( 'greenr', array(
 	'label'    => __( 'Footer Overlay ( Background )color', 'greenr' ),
 	'section'  => 'footer_image',
 	'type'     => 'color',
-	'alpha' => true,
+	"choices['alpha']"  => true,
 	'default'  => '#E5493A', 
 	'active_callback' => array(
 		array(
@@ -2455,7 +2455,7 @@ Greenr_Kirki::add_field( 'greenr', array(
 	'section'  => 'flex_caption_section',
 	'type'     => 'color',
 	'default'  => '',
-	'alpha' => true,
+	"choices['alpha']"  => true,
 	'output'   => array(
 		array(
 			'element'  => '.flex-caption',
@@ -2619,7 +2619,7 @@ Greenr_Kirki::add_field( 'greenr', array(
 	'section'  => 'flex_caption_section',
 	'type'     => 'color',
 	'default'  => '',
-	'alpha' => true,
+	"choices['alpha']"  => true,
 	'output'   => array(
 		array(
 			'element'  => '.flex-caption,.home .flexslider .slides .flex-caption p,.flexslider .slides .flex-caption p,.home .flexslider .slides .flex-caption h1, .home .flexslider .slides .flex-caption h2, .home .flexslider .slides .flex-caption h3, .home .flexslider .slides .flex-caption h4, .home .flexslider .slides .flex-caption h5, .home .flexslider .slides .flex-caption h6,.flexslider .slides .flex-caption h1,.flexslider .slides .flex-caption h2,.flexslider .slides .flex-caption h3,.flexslider .slides .flex-caption h4,.flexslider .slides .flex-caption h5,.flexslider .slides .flex-caption h6',
@@ -2672,7 +2672,7 @@ Greenr_Kirki::add_field( 'greenr', array(
 	'label'    => __( 'General Background Color', 'greenr' ),
 	'section'  => 'colors',
 	'type'     => 'color',
-	'alpha' => true,
+	"choices['alpha']"  => true,
 	'default'  => '#ffffff',
 	'output'   => array(
 		array(
@@ -2687,7 +2687,7 @@ Greenr_Kirki::add_field( 'greenr', array(
 	'section'  => 'colors',
 	'type'     => 'color',
 	'description' => __('when you are select boxed layout content background color will reflect the grid area','greenr'), 
-	'alpha' => true, 
+	"choices['alpha']"  => true, 
 	'default'  => '#ffffff',
 	'output'   => array(
 		array(

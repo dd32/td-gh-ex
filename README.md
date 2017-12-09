@@ -46,6 +46,9 @@ https://unsplash.imgix.net/46/3YNGIU4yRTO4DDifrEfA__MG_2885.jpg?q=75&fm=jpg&s=b7
 
 == Change Log ==
 
+Version 1.2.5
+ * Updated Kirki Files and WP compatible issue fixed.
+
 Version 1.2.4
  * Starter Content Added.
  * Flex Caption Issue Fixed.
