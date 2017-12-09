@@ -120,7 +120,7 @@ function white_spektrum_theme_setup() {
     following files. single.php
     ============================================================================================
     */
-    add_image_size('white-spektrum-medium-thumbnails', 834, 250, true);
+    add_image_size('white-spektrum-medium-thumbnails', 1170, 300, true);
     
     /*
     ============================================================================================
