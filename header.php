@@ -69,20 +69,20 @@
 								if ( has_custom_logo() ) {
 									apppage_the_custom_logo();
 								}?>
-								<span class="site-title">
+								<span class="site-title title-header-typo">
 									<?php bloginfo( 'name' ); ?>
 								</span>
 
 								<?php if ( get_theme_mod( 'left_button_text') || get_theme_mod( 'right_button_text')  ) : ?>
 								<?php endif; ?>
 								<?php if (get_theme_mod('left_button_text') ) : ?>
-									<a class="header-button" href="<?php if (get_theme_mod('left_button_text') ) : ?><?php echo esc_url(get_theme_mod('left_button_link')) ?><?php endif; ?>">
+									<a class="header-button left-header-button-typo" href="<?php if (get_theme_mod('left_button_text') ) : ?><?php echo esc_url(get_theme_mod('left_button_link')) ?><?php endif; ?>">
 										<?php if (get_theme_mod('left_button_text') ) : ?><?php echo esc_html(get_theme_mod('left_button_text')) ?><?php endif; ?>
 									</a>
 								<?php endif; ?>
 
 								<?php if (get_theme_mod('right_button_text') ) : ?>
-									<a class="header-button-text" href="<?php if (get_theme_mod('right_button_text') ) : ?><?php echo esc_url(get_theme_mod('right_button_link')) ?><?php endif; ?>">
+									<a class="header-button-text right-header-button-typo" href="<?php if (get_theme_mod('right_button_text') ) : ?><?php echo esc_url(get_theme_mod('right_button_link')) ?><?php endif; ?>">
 										<?php if (get_theme_mod('right_button_text') ) : ?><?php echo esc_html(get_theme_mod('right_button_text')) ?><?php endif; ?>
 									</a>
 								<?php endif; ?>
@@ -105,20 +105,20 @@
 					<?php if ( is_active_sidebar( 'top_widget_left') || is_active_sidebar( 'top_widget_middle') ||  is_active_sidebar( 'top_widget_right')  ) : ?>
 						<div class="top-widget-grid">
 							<?php if ( is_active_sidebar( 'top_widget_left')  ) : ?>
-								<div class="top-widget-single">
+								<div class="top-widget-single left-widget-top">
 									<?php dynamic_sidebar( 'top_widget_left' ); ?>
 								</div>
 							<?php endif; ?>
 
 
 							<?php if ( is_active_sidebar( 'top_widget_middle')  ) : ?>
-								<div class="top-widget-single">
+								<div class="top-widget-single middle-widget-top">
 									<?php dynamic_sidebar( 'top_widget_middle' ); ?>
 								</div>
 							<?php endif; ?>
 
 							<?php if ( is_active_sidebar( 'top_widget_right')  ) : ?>
-								<div class="top-widget-single">
+								<div class="top-widget-single right-widget-top">
 									<?php dynamic_sidebar( 'top_widget_right' ); ?>
 								</div>
 							<?php endif; ?>
