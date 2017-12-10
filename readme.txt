@@ -2,7 +2,7 @@ Theme Name: AppPage
 Author: Vilhoprogramming
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 1.4
+Version: 1.7
 Tested up to: WordPress 4.9.x
 Tags: two-columns, right-sidebar, blog, news
 Text Domain: appPage
@@ -31,6 +31,8 @@ Text Domain: appPage
 * AppPage WordPress Theme, Copyright 2017
 * AppPage is distributed under the terms of the GNU GPL
 
+
+Check out the rest of my themes right here: https://wordpress.org/themes/author/vilhoprogramming/
 
 == Installation ==
 	
