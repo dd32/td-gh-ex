@@ -25,19 +25,6 @@ function apppage_customize_register( $wp_customize ) {
             )
         );
 
-    $wp_customize->add_setting( 'header_title', array(
-        'type'              => 'theme_mod',
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'wp_kses_post',
-        ) );
-
-    $wp_customize->add_control( 'header_title', array(
-        'label'    => __( "Title", 'apppage' ),
-        'section'  => 'header_image',
-        'description' => __( 'Add a title to your header image! If you dont want any, you can press SPACE inside, leaving it blank.', 'apppage' ),
-        'type'     => 'text',
-        'priority' => 1,
-        ) );
     $wp_customize->add_setting( 'header_title_color', array(
         'default'           => '#fff',
         'sanitize_callback' => 'sanitize_hex_color',
@@ -53,7 +40,7 @@ function apppage_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'left_button_text', array(
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'wp_kses_post',
+        'sanitize_callback' => 'sanitize_text_field',
         ) );
 
     $wp_customize->add_control( 'left_button_text', array(
@@ -83,7 +70,7 @@ function apppage_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'right_button_text', array(
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'wp_kses_post',
+        'sanitize_callback' => 'sanitize_text_field',
         ) );
 
     $wp_customize->add_control( 'right_button_text', array(

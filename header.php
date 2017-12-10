@@ -76,14 +76,14 @@
 								<?php if ( get_theme_mod( 'left_button_text') || get_theme_mod( 'right_button_text')  ) : ?>
 								<?php endif; ?>
 								<?php if (get_theme_mod('left_button_text') ) : ?>
-									<a class="header-button" href="<?php if (get_theme_mod('left_button_text') ) : ?><?php echo wp_kses_post(get_theme_mod('left_button_link')) ?><?php endif; ?>">
-										<?php if (get_theme_mod('left_button_text') ) : ?><?php echo wp_kses_post(get_theme_mod('left_button_text')) ?><?php endif; ?>
+									<a class="header-button" href="<?php if (get_theme_mod('left_button_text') ) : ?><?php echo esc_url(get_theme_mod('left_button_link')) ?><?php endif; ?>">
+										<?php if (get_theme_mod('left_button_text') ) : ?><?php echo esc_html(get_theme_mod('left_button_text')) ?><?php endif; ?>
 									</a>
 								<?php endif; ?>
 
 								<?php if (get_theme_mod('right_button_text') ) : ?>
-									<a class="header-button-text" href="<?php if (get_theme_mod('right_button_text') ) : ?><?php echo wp_kses_post(get_theme_mod('right_button_link')) ?><?php endif; ?>">
-										<?php if (get_theme_mod('right_button_text') ) : ?><?php echo wp_kses_post(get_theme_mod('right_button_text')) ?><?php endif; ?>
+									<a class="header-button-text" href="<?php if (get_theme_mod('right_button_text') ) : ?><?php echo esc_url(get_theme_mod('right_button_link')) ?><?php endif; ?>">
+										<?php if (get_theme_mod('right_button_text') ) : ?><?php echo esc_html(get_theme_mod('right_button_text')) ?><?php endif; ?>
 									</a>
 								<?php endif; ?>
 
