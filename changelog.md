@@ -1,10 +1,53 @@
 # Modern Changelog
 
+## 2.0.0
+
+* **Add**: A lot of theme customization options
+* **Add**: Installing theme demo with one click
+* **Add**: Theme "Welcome" admin page (under Appearance admin menu)
+* **Add**: Making the theme accessibility ready
+* **Add**: Compatibility with any page builder plugin
+* **Add**: Compatibility with Jetpack Testimonials content type
+* **Add**: Compatibility with Jetpack Content Options
+* **Add**: Ability to display sidebar on any page/post
+* **Add**: More post editor "Formats" dropdown styles
+* **Add**: Easy post/page options setup with Advanced Custom Fields plugin compatibility
+* **Add**: Right To Left languages support
+* **Add**: More custom header images out of the box
+* **Add**: Compatibility with WPML and Polylang multilingual plugins
+* **Add**: Support for page excerpt
+* **Add**: Simple theme starter content
+* **Update**: Improved compatibility with WordPress 4.9
+* **Update**: Library 2.6.0
+* **Update**: CSS Starter 4.0.1
+* **Update**: Code organization and improvements
+* **Update**: Removing microformats (Schema.org) markup in favor of dedicated plugins
+* **Update**: Improving and optimizing JavaScript codes
+* **Update**: Dropping Internet Explorer 9 and 10 compatibility
+* **Update**: Improving CSS styles
+* **Update**: Improving theme performance
+* **Update**: Improved sticky header
+* **Update**: Improved responsive styles
+* **Update**: Using SVG for social icons
+* **Update**: Ability to display social icons in a Navigational Menu widget anywhere on the website
+* **Update**: Making custom typography more flexible by supporting 3rd party plugins
+* **Update**: Theme demo content and website
+* **Update**: Localization
+* **Update**: Documentation
+* **Fix**: Front page slideshow controls issues
+* **Fix**: Featured image size on single post and page
+* **Fix**: All reported issues
+
+### Files changed:
+
+	*.* (Yes, all files have been changed in this update.)
+
+
 ## 1.4.6
 
-* **Fix**: Gallery post slidshow navigation issue
+* **Fix**: Gallery post slideshow navigation issue
 
-#### Files changed:
+### Files changed:
 
 	js/scripts-global.js
 
@@ -22,7 +65,7 @@
 * **Fix**: Fixed issue with masonry footer layout when using Jetpack's infinite scroll
 * **Fix**: Slider issue
 
-#### Files changed:
+### Files changed:
 
 	license.txt
 	readme.md
@@ -45,7 +88,7 @@
 * **Fix**: Search field text color on error 404 and nothing found page
 * **Fix**: `wmhook_entry_image_link` is not applied correctly on page content
 
-#### Files changed:
+### Files changed:
 
 	style.css
 	content-page.php
@@ -55,7 +98,7 @@
 
 * **Update**: Using new prefixed image sizes
 
-#### Files changed:
+### Files changed:
 
 	content-custom-header.php
 	content-featured-post.php
@@ -70,7 +113,7 @@
 * **Update**: Saving image size setup into theme mod, not individual options
 * **Update**: Removing obsolete constants
 
-#### Files changed:
+### Files changed:
 
 	functions.php
 	genericons/example.html
@@ -86,7 +129,7 @@
 * **Update**: TGM Plugin Activation 2.4.1
 * **Update**: Starter CSS
 
-#### Files changed:
+### Files changed:
 
 	css/starter.css
 	inc/tgmpa/class-tgm-plugin-activation.php
@@ -99,7 +142,7 @@
 * **Update**: Tightening security
 * **Update**: Improved code
 
-#### Files changed:
+### Files changed:
 
 	style.css
 	inc/setup-theme-options.php
@@ -121,7 +164,7 @@
 * **Fix**: Responsive sidebar width
 * **Fix**: Customizer script dependency
 
-#### Files changed:
+### Files changed:
 
 	content-audio.php
 	content-custom-header.php
@@ -149,7 +192,7 @@
 
 * **Fix**: Error on older versions of PHP
 
-#### Files changed:
+### Files changed:
 
 	inc/setup.php
 
@@ -162,7 +205,7 @@
 * **Fix**: Displaying `title` tag in HTML head
 * **Fix**: Comments display condition
 
-#### Files changed:
+### Files changed:
 
 	comments.php
 	css/editor-styles.css
@@ -176,7 +219,7 @@
 
 * **Fix**: Incorrect filter hook name
 
-#### Files changed:
+### Files changed:
 
 	inc/setup.php
 
@@ -199,7 +242,7 @@
 * **Fix**: Styles fixes
 * **Fix**: Responsive styles
 
-#### Files changed:
+### Files changed:
 
 	archive.php
 	content-audio.php
@@ -239,7 +282,7 @@
 
 * **Add**: Original (not minified) JS scripts
 
-#### Files changed:
+### Files changed:
 
 	js/dev/imagesloaded.pkgd.js
 	js/dev/slick.js
@@ -271,7 +314,7 @@
 * **Fix**: Styling issues
 * **Fix**: Filter hook names
 
-#### Files changed:
+### Files changed:
 
 	archive.php
 	comments.php
