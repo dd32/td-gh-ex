@@ -4,7 +4,7 @@ Theme URI: https://www.tenman.info/wp3/raindrops/
 Description: This theme can change freely fonts,layout,color scheme and header image for each post,page. The google fonts, you can use freely in the post more than 90percent of the fonts.Color scheme and layout, you can freely change from theme customizer.For more updates, please make sure to open the link of the changelog from the help tab of this theme page.Add new post, so also to help tab of edit post page has been described how to use tips, please visit. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: https://www.tenman.info/wp3/
-Version: 1.501
+Version: 1.502
 Tags: one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, rtl-language-support, microformats, grid-layout, flexible-header, custom-logo, featured-image-header, footer-widgets
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -794,6 +794,9 @@ b{
     border-bottom:none;
     text-decoration:none;
 }
+strong strong{
+    text-decoration:underline;
+}
 em,
 i{
     font-style: italic;
@@ -933,11 +936,12 @@ blockquote p:last-child{
     padding:.5em;
     overflow:auto;
 }
+/* @1.501
 .textwidget cite,
 .entry-content cite {
     margin:.2em .5em;
     padding:0 1em;
-}
+}*/
 .textwidget blockquote cite,
 .entry-content blockquote cite {
     display:inline-block;
@@ -6524,9 +6528,9 @@ ul.rd-nowrap{
     height: 0px;
     position: fixed;
     overflow: hidden;
-    left: 0px;
-    top: 1em;
-    padding: 0px;
+    left: 0;
+    top: 0;
+    padding: 0;
     z-index: 199999;
     text-align: center;
     background:rgba(0,0,0,.6);
@@ -9289,4 +9293,12 @@ body:not(.hierarchical-cat) .rsidebar .widget_categories .cat-item a,
      * Icon color when category is set and it is not used in post
      */
     background: repeating-linear-gradient( 135deg, transparent, rgba(127,127,127,.3) 2px, rgba(127,127,127,.1) 3px, rgba(127,127,127,.1) 5px );
+}
+/**
+ * Audio element
+   ========================================================================== */
+audio{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
 }
