@@ -1,5 +1,9 @@
 == Changelog ==
 
+1.1.1
+12/10
+* Fixed pagination
+
 1.1
 * 11/20/2017
 * Removed esc_html from get_the_archive_title

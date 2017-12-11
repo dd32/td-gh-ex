@@ -238,7 +238,7 @@ function ariel_posts_pagination( $query = '' ) {
 		$navigation .= '<div class="pagination-blog-feed">';
 
 		if ( $prev_link ) {
-			$navigation .= '<div class="previous_posts">' . esc_url ( $prev_link ) . '</div>';
+			$navigation .= '<div class="previous_posts">' .  $prev_link . '</div>';
 		}
 
 		if ( $prev_link && $next_link ) {
@@ -246,7 +246,7 @@ function ariel_posts_pagination( $query = '' ) {
 		}
 
 		if ( $next_link ) {
-			$navigation .= '<div class="next_posts">' . esc_url ( $next_link ) . '</div>';
+			$navigation .= '<div class="next_posts">' .  $next_link  . '</div>';
 		}
 
 		$navigation .= '</div>';
