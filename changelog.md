@@ -1,5 +1,16 @@
 # Modern Changelog
 
+## 2.0.1
+
+* **Fix**: Quote post format metabox title
+
+### Files changed:
+
+	changelog.md
+	style.css
+	includes/plugins/advanced-custom-fields/class-advanced-custom-fields.php
+
+
 ## 2.0.0
 
 * **Add**: A lot of theme customization options
