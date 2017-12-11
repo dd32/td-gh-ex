@@ -4,7 +4,7 @@ Theme Name: Avior
 Author: MotoPress
 Author URI: https://motopress.com/
 Description: Avior is a clean and dandy WordPress blogging theme, designed for people, who aim for readable, photo-rich and SEO-smart writing. With Avior you'll easily take care of a website customization: change footer and header info like menus and social media icons, change header image, use unlimited colors to reach a perfect color scheme and more. All tweaks are easily performed visually via WordPress Customizer. A distinctive search engine optimized blog will help you stand out of the crowd and create impressive posts that will look just perfect on any modern device.
-Version: 0.1.7
+Version: 0.1.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avior
@@ -297,7 +297,7 @@ th {
 # Typography
 --------------------------------------------------------------*/
 *:focus {
-  outline: none;
+  outline: thin dotted;
 }
 
 html {
@@ -648,7 +648,7 @@ button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus {
-  outline: none;
+  outline: thin dotted;
 }
 button[disabled], fieldset[disabled] button,
 .button[disabled], fieldset[disabled]
@@ -750,7 +750,7 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: none;
+  outline: thin dotted;
 }
 
 select,
@@ -830,7 +830,7 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-  outline: 0;
+  outline: thin dotted;
   border: 1px solid #1ca4d3;
   background-color: #fff;
   -moz-box-shadow: none;

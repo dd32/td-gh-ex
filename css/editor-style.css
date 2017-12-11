@@ -15,7 +15,7 @@ Description: Used to style the TinyMCE editor.
 # Typography
 --------------------------------------------------------------*/
 *:focus {
-  outline: none;
+  outline: thin dotted;
 }
 
 html {
