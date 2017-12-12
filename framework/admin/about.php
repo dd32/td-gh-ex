@@ -77,8 +77,7 @@ if( ! class_exists( 'Agama_About' ) ) {
 				
 				echo '<div class="changelog point-releases">';
 					echo sprintf( '<h3>Changelog Agama v%s</h3>', Agama_Core::version() );
-                    echo '<p>* Fixed Contact Form 7 responsivity issues.</p>';
-                    echo '<p>* Fixed Contact Form 7 border around recaptcha & file upload issue.</p>';
+                    echo '<p>* Added ALT attributes to slider images.</p>';
 				echo '</div>';
 				
 			echo '</div>';

@@ -68,7 +68,7 @@ class Agama_Slider {
 				}
 				echo '<div id="agama_slider" class="camera_wrap">';
 					if( $slide['1']['img'] ) {
-						echo '<div data-src="'. $slide['1']['img'] .'">';
+						echo '<div data-src="'. $slide['1']['img'] .'" data-alt="'. $slide['1']['title'] .'">';
 							echo '<div class="slide-content slide-1">';
 								echo '<div class="slide-content-cell">';
 									echo '<div class="container">';
@@ -92,7 +92,7 @@ class Agama_Slider {
 						echo '</div>';
 					}
 					if( $slide['2']['img'] ) {
-						echo '<div data-src="'. $slide['2']['img'] .'">';
+						echo '<div data-src="'. $slide['2']['img'] .'" data-alt="'. $slide['2']['title'] .'">';
 							echo '<div class="slide-content slide-2">';
 								echo '<div class="slide-content-cell">';
 									echo '<div class="container">';
