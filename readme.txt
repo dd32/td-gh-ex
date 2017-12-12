@@ -89,6 +89,9 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.59
+ * Responsive issue in team section fixed
+
 Version 1.58
  * Minor CSS issue fixed
  * Recommended plugin activate and deactive button not working - Fixed
