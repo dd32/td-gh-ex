@@ -55,15 +55,15 @@ $wp_customize->add_setting(
 				'description'	=> esc_html__( 'Select logo layout.', 'backyard' ),
 				'choices'		=> array(
 				'logolayout_first' => array(
-                        'label' => esc_html__( 'Left sidebar', 'backyard' ),
+                        'label' => esc_html__( 'Left logo', 'backyard' ),
                         'url'   => get_template_directory_uri() . '/assets/images/left-logo.jpg',
                     ),
 				'logolayout_second' => array(
-                        'label' => esc_html__( 'Right sidebar', 'backyard' ),
+                        'label' => esc_html__( 'Right logo', 'backyard' ),
                         'url'   => get_template_directory_uri() . '/assets/images/right-logo.jpg',
                     ),
 					'logolayout_third' => array(
-                        'label' => esc_html__( 'Right sidebar', 'backyard' ),
+                        'label' => esc_html__( 'Center logo', 'backyard' ),
                         'url'   => get_template_directory_uri() . '/assets/images/cetner-logo.jpg',
                     ),
 					
@@ -72,11 +72,11 @@ $wp_customize->add_setting(
 		)
 	);
 		//end
+		//Top header
 		$wp_customize->add_section(
-   'page_settings',
+   'topheader_settings',
    array(
-       'title' => esc_html__('Page Settings', 'backyard'),
-       'description' => esc_html__('This is a page settings.', 'backyard'),
+       'title' => esc_html__('Top header settings', 'backyard'),
        'priority' => 1,
 	   'panel'       => 'backyard_options',
    )
@@ -92,23 +92,67 @@ $wp_customize->add_control(
 array(
    'type' => 'checkbox',
    'label' => esc_html__('Show Top Bar', 'backyard'),
-   'section' => 'page_settings',
+   'section' => 'topheader_settings',
 )
 );
 $wp_customize->add_setting(
-'show_search',array(
-'default' => '',
-'sanitize_callback' => 'backyard_boolean',
-'transport'=> 'refresh',));
+					'topheaderlayout',
+					array(
+					'default' => 'topheaderlayout_a',
+					'sanitize_callback' => 'sanitize_text_field',
+					'transport'   => 'refresh',
+					)
+					);
 
-$wp_customize->add_control(
-'show_search',
-array(
-   'type' => 'checkbox',
-   'label' => esc_html__('Show Search', 'backyard'),
-   'section' => 'page_settings',
-)
-);
+	$wp_customize->add_control(
+		new backyard_Custom_Radio_Image_Control( 
+			// $wp_customize object
+			$wp_customize,
+			// $id
+			'topheaderlayout',
+			// $args
+			array(
+				'settings'		=> 'topheaderlayout',
+				'section'		=> 'topheader_settings',
+				'description'	=> esc_html__( 'Select top header layout.', 'backyard' ),
+				'choices'		=> array(
+				'topheaderlayout_a' => array(
+				        'label' => esc_html__( 'Left search/Right social icon', 'backyard' ),
+                        'url'   => get_template_directory_uri() . '/assets/images/left-logo.jpg',
+                    ),
+				'topheaderlayout_b' => array(
+				'label' => esc_html__( 'Right search/Left social icon', 'backyard' ),
+                        'url'   => get_template_directory_uri() . '/assets/images/right-logo.jpg',
+                    ),
+					'topheaderlayout_c' => array(
+					'label' => esc_html__( 'Left search', 'backyard' ),
+                        'url'   => get_template_directory_uri() . '/assets/images/cetner-logo.jpg',
+                    ),
+					'topheaderlayout_d' => array(
+					'label' => esc_html__( 'Right search', 'backyard' ),
+                        'url'   => get_template_directory_uri() . '/assets/images/cetner-logo.jpg',
+                    ),
+					'topheaderlayout_e' => array(
+					'label' => esc_html__( 'Left social icon', 'backyard' ),
+                        'url'   => get_template_directory_uri() . '/assets/images/cetner-logo.jpg',
+                    ),
+					'topheaderlayout_f' => array(
+					     'label' => esc_html__( 'Right social icon', 'backyard' ),
+                        'url'   => get_template_directory_uri() . '/assets/images/cetner-logo.jpg',
+                    ),
+					'topheaderlayout_g' => array(
+					     'label' => esc_html__( 'Center search', 'backyard' ),
+                        'url'   => get_template_directory_uri() . '/assets/images/cetner-logo.jpg',
+                    ),
+					'topheaderlayout_h' => array(
+					     'label' => esc_html__( 'Center social icon', 'backyard' ),
+                        'url'   => get_template_directory_uri() . '/assets/images/cetner-logo.jpg',
+                    ),
+					
+				)
+			)
+		)
+	);
 	//footer
 	$wp_customize->add_section(
    'footer_settings',

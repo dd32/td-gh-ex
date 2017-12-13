@@ -47,6 +47,8 @@ Installation
 Screenshots
 ----------------------
 1. 1. screenshot.png
+
+
 Changelog
 ---------
 2.2 - Added blog sidebar options in Customizer. Go to Theme Options > Blog settings > Blog sidebar settings
@@ -65,3 +67,6 @@ Changelog
 2.8 - Added list blog sidebar options in Customizer.
 
 2.9 - Added header logo options in Customizer.
+
+3.0 - Added top header style options in Customizer.
+    - Fixed customizer css.

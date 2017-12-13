@@ -204,4 +204,90 @@ else
 }
 }
 //end
+add_action('backyard_top_header_action', 'backyard_top_header_layout');
+function backyard_top_header_layout()
+{
+	$topheaderlayout=get_theme_mod('topheaderlayout');
+	$show_top_bar=get_theme_mod('show_top_bar');
+	if(isset($show_top_bar)&&$show_top_bar==1){  ?>
+    <section class="header-top">
+      <section class="container">
+        <div class="row">
+        <?php if(isset($topheaderlayout)&&$topheaderlayout=='topheaderlayout_a'){?>
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-left">
+            <?php get_search_form(); ?>
+          </div>
+            <div class="top-social">
+            <?php backyard_social_media_link(); ?>
+            </div>
+            <?php }elseif(isset($topheaderlayout)&&$topheaderlayout=='topheaderlayout_b'){?>
+            <div class="top-social pull-left">
+            <?php backyard_social_media_link(); ?>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-right">
+            <?php get_search_form(); ?>
+          </div>
+            <?php }elseif(isset($topheaderlayout)&&$topheaderlayout=='topheaderlayout_c'){?>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-left">
+            <?php get_search_form(); ?>
+          </div>
+            <?php }elseif(isset($topheaderlayout)&&$topheaderlayout=='topheaderlayout_d'){?>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pull-right">
+            <?php get_search_form(); ?>
+          </div>
+            <?php }elseif(isset($topheaderlayout)&&$topheaderlayout=='topheaderlayout_e'){?>
+            <div class="top-social pull-left">
+            <?php backyard_social_media_link(); ?>
+            </div>
+            <?php }elseif(isset($topheaderlayout)&&$topheaderlayout=='topheaderlayout_f'){?>
+            <div class="top-social pull-right">
+            <?php backyard_social_media_link(); ?>
+            </div>
+            <?php }elseif(isset($topheaderlayout)&&$topheaderlayout=='topheaderlayout_g'){?>
+           <div class="col-lg-12 col-md-12 col-sm-3 col-xs-12 topheaderlayout_center">
+            <?php get_search_form(); ?>
+          </div>
+            <?php }elseif(isset($topheaderlayout)&&$topheaderlayout=='topheaderlayout_h'){?>
+           <div class="top-social topheaderlayout_center">
+            <?php backyard_social_media_link(); ?>
+          </div>
+            <?php }?>
+            <!--top-social--> 
+       </div>
+     </section>
+    </section>
+    <!--top-header-->
+     <?php }}?>
+<?php 
+function backyard_hook_css() {
+	$heading_h1=get_theme_mod('heading_h1');
+	$heading_h2=get_theme_mod('heading_h2');
+	$heading_h3=get_theme_mod('heading_h3');
+	$heading_h4=get_theme_mod('heading_h4');
+	$heading_h5=get_theme_mod('heading_h5');
+	$heading_h6=get_theme_mod('heading_h6');
+        ?>
+            <style>
+			  <?php if(isset($heading_h1)&&$heading_h1!==''){?>
+                h1 {font-size:<?php echo esc_attr($heading_h1);?>px !important;}
+				<?php }?>
+				 <?php if(isset($heading_h2)&&$heading_h2!==''){?>
+                h2 {font-size:<?php echo esc_attr($heading_h2);?>px !important;}
+				<?php }?>
+				 <?php if(isset($heading_h3)&&$heading_h3!==''){?>
+                h3 {font-size:<?php echo esc_attr($heading_h3);?>px !important;}
+				<?php }?>
+				 <?php if(isset($heading_h4)&&$heading_h4!==''){?>
+                h4 {font-size:<?php echo esc_attr($heading_h4);?>px !important;}
+				<?php }?>
+				 <?php if(isset($heading_h5)&&$heading_h5!==''){?>
+                h5 {font-size:<?php echo esc_attr($heading_h5);?>px !important;}
+				<?php }?>
+				 <?php if(isset($heading_h6)&&$heading_h6!==''){?>
+                h5 {font-size:<?php echo esc_attr($heading_h6);?>px !important;}
+				<?php }?>
+            </style>
+        <?php
+    }
+    add_action('wp_head', 'backyard_hook_css');
 ?>
