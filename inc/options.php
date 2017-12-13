@@ -405,14 +405,16 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __('Misc Settings', 'aadya'),
 		'type' => 'heading');		
-		
+	
+	/*	
 	$options[] = array(
 		'name' => __('Set your Favicon', 'aadya'),
 		'desc' => __('Set your Favicon. Add complete url for icon image' , 'aadya'),
 		'id' => 'favicon_url',
 		'std' => '',
 		'type' => 'text');				
-
+    */
+	
 	$options[] = array(
 		'name' => __('Display Search Icon in Nav Menu', 'aadya'),
 		'desc' => __('Check to display Search in Nav Menu. Defaults to True.', 'aadya'),

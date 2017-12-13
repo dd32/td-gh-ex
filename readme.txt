@@ -1,4 +1,4 @@
-Aadya 2.0.0
+Aadya 2.0.2
 ===============
 The Aadya theme for WordPress developed on top of Twitter Bootstrap Framework. 
 The theme is fully responsive and can be viewed on any device. Aadya theme 

@@ -1,5 +1,9 @@
 *** Revision History ***
 ===========================
+version 2.0.2		2017-08-13
+* Added fix for menu titles.
+* Fixed the broken url for theme home page
+
 version 2.0.1		2017-08-13
 * Added css margin fix for archives
 
