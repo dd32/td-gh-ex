@@ -5,7 +5,7 @@
  * @package AccesspressLite
  */
 
-global $accesspresslite_options;
+$accesspresslite_options = accesspress_default_setting_value();
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 add_action('add_meta_boxes', 'accesspresslite_add_sidebar_layout_box');
 $accesspresslite_event_category = !empty($accesspresslite_settings['event_cat']) ? $accesspresslite_settings['event_cat']:"";

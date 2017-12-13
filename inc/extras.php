@@ -30,7 +30,7 @@ function accesspresslite_body_classes( $classes ) {
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
-    global $accesspresslite_options;
+    $accesspresslite_options = accesspress_default_setting_value();
     $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
      $home_template = $accesspresslite_settings['accesspresslite_home_template'];
     if ($home_template == 'template_two' || $home_template == '') {
@@ -65,7 +65,7 @@ function accesspresslite_setup_author() {
 }
 add_action( 'wp', 'accesspresslite_setup_author' );
 
-global $accesspresslite_options;
+$accesspresslite_options = accesspress_default_setting_value();
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 
 /**
@@ -188,7 +188,7 @@ add_action( 'widgets_init', 'accesspresslite_widgets_init' );
  * Enqueue scripts and styles.
  */
 function accesspresslite_scripts() {
-	global $accesspresslite_options;
+	$accesspresslite_options = accesspress_default_setting_value();
 	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
     $layout_home = $accesspresslite_settings['accesspresslite_home_template'];
 	$query_args = array(
@@ -232,7 +232,7 @@ add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 * Loads up favicon
 */
 function accesspresslite_add_favicon(){
-	global $accesspresslite_options;
+	$accesspresslite_options = accesspress_default_setting_value();
 	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 	
 	if( !empty($accesspresslite_settings[ 'media_upload' ])){
@@ -243,7 +243,7 @@ add_action('wp_head', 'accesspresslite_add_favicon');
 
 
 function accesspresslite_social_cb(){ 
-	global $accesspresslite_options;
+	$accesspresslite_options = accesspress_default_setting_value();
 	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 	?>
 	<div class="socials">
@@ -313,7 +313,7 @@ add_action( 'accesspresslite_social_links', 'accesspresslite_social_cb', 10 );
 
 
 function accesspresslite_header_text_cb(){
-	global $accesspresslite_options;
+	$accesspresslite_options = accesspress_default_setting_value();
 	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 	if(!empty($accesspresslite_settings['header_text'])){
 	echo '<div class="header-text">'.wpautop(wp_kses_post($accesspresslite_settings['header_text'])).'</div>';
@@ -323,7 +323,7 @@ function accesspresslite_header_text_cb(){
 add_action('accesspresslite_header_text','accesspresslite_header_text_cb', 10);
 
 function accesspresslite_menu_alignment_cb(){
-	global $accesspresslite_options;
+	$accesspresslite_options = accesspress_default_setting_value();
 	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 	if($accesspresslite_settings['menu_alignment'] =="Left"){
 		$accesspresslite_alignment_class="menu-left";
@@ -548,7 +548,7 @@ return $classes;
 add_filter( 'body_class', 'accesspresslite_web_layout' );
 
 function accesspresslite_custom_css(){
-	global $accesspresslite_options;
+	$accesspresslite_options = accesspress_default_setting_value();
 	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 	echo '<style type="text/css">';
 		echo esc_html($accesspresslite_settings['custom_css']);
@@ -559,7 +559,7 @@ add_action('wp_head','accesspresslite_custom_css');
 
 function accesspresslite_call_to_action_cb()
 {
-	global $accesspresslite_options;
+	$accesspresslite_options = accesspress_default_setting_value();
 	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
     $home_template = $accesspresslite_settings['accesspresslite_home_template'];
     if($home_template == ''){
@@ -586,7 +586,7 @@ function accesspresslite_call_to_action_cb()
 add_action('accesspresslite_call_to_action','accesspresslite_call_to_action_cb', 10);
 
 function accesspresslite_exclude_cat_from_blog($query) {
-	global $accesspresslite_options;
+	$accesspresslite_options = accesspress_default_setting_value();
 	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 	$accesspresslite_exclude_cat = array($accesspresslite_settings['event_cat'],$accesspresslite_settings['testimonial_cat'], $accesspresslite_settings['slider_cat'], $accesspresslite_settings['portfolio_cat']);
 
@@ -636,3 +636,88 @@ function accesspress_check_old_template(){
     }
 }
 add_action( 'init', 'accesspress_check_old_template' );
+
+function accesspress_default_setting_value(){
+	$accesspresslite_options = array(
+		'responsive_design'=>'',
+		'accesspresslite_favicon'=> '',
+		'header_text'=>__('Call us : 984187523XX','accesspress-lite'),
+		'show_search'=> true,
+		'menu_alignment'=> 'Left',
+		'welcome_post' => '',
+		'welcome_post_readmore' => __('Read More','accesspress-lite'),
+		'welcome_post_char' => '650',
+		'show_fontawesome' => false,
+	    'big_icons' => false,
+	    'featured_section_title' => __('Feature Posts','accesspress-lite'),
+		'featured_post1' => '',
+		'featured_post2' => '',
+		'featured_post3' => '',
+		'featured_post_readmore' => __('Read More','accesspress-lite'),
+		'featured_post1_icon' => '',
+		'featured_post2_icon' => '',
+		'featured_post3_icon' => '',
+		'show_event_number' => '3',
+		'event_cat' => '',
+		'testimonial_cat' => '',
+		'portfolio_cat' => '',
+		'footer_copyright' => get_bloginfo('name'),
+
+		'show_slider' => 'yes',
+		'slider_show_pager' => 'yes1',
+		'slider_show_controls' => 'yes2',
+		'slider_mode' => 'slide',
+		'slider_auto' => 'yes3',
+		'slider_speed' => '500',
+		'slider_caption'=>'yes4',
+		'slider_pause' => '4000',
+
+		'slider1'=>'',
+		'slider2'=>'',
+		'slider3'=>'',
+		'slider4'=>'',
+
+		'leftsidebar_show_latest_events'=>true,
+		'leftsidebar_show_testimonials'=>true,
+		'rightsidebar_show_latest_events'=>true,
+		'rightsidebar_show_testimonials'=>true,
+		
+		'accesspresslite_facebook' => '',
+		'accesspresslite_twitter' => '',
+		'accesspresslite_gplus' => '',
+		'accesspresslite_youtube' => '',
+		'accesspresslite_pinterest' => '',
+		'accesspresslite_linkedin' => '',
+		'accesspresslite_flickr' => '',
+		'accesspresslite_vimeo' => '',
+		'accesspresslite_stumbleupon' => '',
+		'accesspresslite_instagram' => '',
+		'accesspresslite_sound_cloud' => '',
+		'accesspresslite_skype' => '',
+		'accesspresslite_rss' => '',
+		'accesspresslite_tumblr' => '',
+		'accesspresslite_myspace' =>'',
+		'show_social_header'=>'',
+
+		'accesspresslite_home_page_layout' => 'Default',
+	    'accesspresslite_webpage_layout' => 'Fullwidth',
+	    'gallery_code' => '',
+
+	    'slider_options' => 'single_post_slider',
+	    'slider_cat' => '',
+	    'view_all_text' =>__('View All','accesspress-lite'),
+	    'custom_css' => '',
+	    'featured_bar' => false,
+
+	    'action_text' => __('Check Our AccessPress Pro Theme - A premium version of AccessPres Lite','accesspress-lite'),
+	    'action_btn_text' => __('Check Now','accesspress-lite'),
+	    'action_btn_link' => esc_url('http://accesspressthemes.com/accesspresslite-pro/'),
+	    'welcome_post_content' => false,
+	    'show_eventdate' => true,
+	    'disable_event' => false,
+	    'accesspresslite_home_template' => 'template_one',
+	    'template_option_selected' =>'yes'
+	);
+
+	return $accesspresslite_options;
+}

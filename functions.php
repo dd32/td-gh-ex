@@ -94,11 +94,6 @@ add_action( 'after_setup_theme', 'accesspresslite_setup' );
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
- * Implement the Theme Option feature.
- */
-require get_template_directory() . '/inc/admin-panel/theme-options.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -107,6 +102,11 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
+
+/**
+ * Implement the Theme Option feature.
+ */
+require get_template_directory() . '/inc/admin-panel/theme-options.php';
 
 /**
  * Load Jetpack compatibility file.

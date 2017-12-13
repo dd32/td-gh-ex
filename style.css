@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-lite/
 Author: AccessPress Themes
 Author URI: https://accesspressthemes.com
 Description: AccessPress Lite is responsive multipurpose WordPress business theme with clean, highly professional design and lots of useful features like a premium theme - and strong theme options panel to manage theme all! It is probably the most feature-rich free theme with lots of useful options events layout, portfolio layout, testimonial layout, blog layout, gallery layout, featured posts on home page, quick contact, social media integration, full width slider, team member layout, sidebar layout, multiple home page layout, call to action and many other page layouts. It is fully responsive, WooCommerce compatible, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. Theme is completely translated in: French, Persian, Japanese, Danish now. AccessPress Lite is multi-purpose and is suitable for travel, corporate, portfolio, photography, nature, health, small biz, personal, creative, corporate, agencies, bloggers anyone and everyone. Great customer support via online chat, email, support forum. Official support forum: https://accesspressthemes.com/support/ Video tutorials: http://bit.ly/aptytube View full demo here: http://accesspressthemes.com/theme-demos/?theme=accesspress-lite
-Version: 2.72
+Version: 2.73
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: accesspress-lite
@@ -766,7 +766,7 @@ textarea#comment{
 	top: -20px;
 	color:#FFF;
 	font-size: 13px;
-	width: :250px;
+	width: 250px;
 	margin-left: -125px;
 }
 
@@ -899,6 +899,7 @@ object {
 Header
 --------------------------------------------------------------*/
 #masthead #top-header{
+	padding: 20px 0;
     background: url(images/bgheader.jpg) repeat-x scroll left bottom #FFF;
 }
 
@@ -915,7 +916,8 @@ body.boxed-layout{
 
 .boxed-layout .ak-container{
     width:1200px;
-    padding:0 15px; 
+    padding-left: 40px; 
+	padding-right: 40px; 
 }
 
 .ak-container{ 
@@ -1043,10 +1045,6 @@ Menus
 	position: relative;
 	border-bottom: 3px solid #04A3ED;
 	background: #00ABFF;
-}
-
-.main-navigation .ak-container{
-    padding:0 !important;
 }
 
 .main-navigation ul {

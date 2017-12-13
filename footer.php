@@ -11,17 +11,12 @@
 
 	<footer id="colophon" class="site-footer">
 	<?php 
-		global $accesspresslite_options;
+		$accesspresslite_options = accesspress_default_setting_value();
 		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
         $home_template = $accesspresslite_settings['accesspresslite_home_template'];
-        $footer_title = $accesspresslite_settings['footer_title'];
 		if ( is_active_sidebar( 'footer-1' ) ||  is_active_sidebar( 'footer-2' )  || is_active_sidebar( 'footer-3' )  || is_active_sidebar( 'footer-4' ) ) : ?>
 		<div id="top-footer">
-		<div class="ak-container"><?php
-        if($home_template == 'template_two' || $home_template == ''){
-         if($footer_title){?>
-                <h1 class="footer_title_text"><?php echo esc_attr($footer_title); ?></h1>
-        <?php }} ?>
+		<div class="ak-container">
 			<div class="footer1 footer">
 				<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
 					<?php dynamic_sidebar( 'footer-1' ); ?>

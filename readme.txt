@@ -66,6 +66,9 @@ Images
 
 == Changelog ==
 
+Version 2.73
+* Fixes in styles in Layout two
+
 Version 2.72
 * Updated bxSlider Plugins
 * Added updated version of Fontawesome

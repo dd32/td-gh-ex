@@ -1,5 +1,5 @@
 <?php
-global $accesspresslite_options;
+$accesspresslite_options = accesspress_default_setting_value();
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 $menu_align = $accesspresslite_settings['menu_alignment'];?>
 <div id="top-header" class="<?php if($menu_align == 'Center'){echo 'center_menu_top';}?>">

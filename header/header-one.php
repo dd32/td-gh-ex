@@ -1,5 +1,5 @@
 <?php
-global $accesspresslite_options;
+$accesspresslite_options = accesspress_default_setting_value();
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );?>
 <div id="top-header">
 		<div class="ak-container">

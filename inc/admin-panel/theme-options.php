@@ -19,87 +19,7 @@ add_action('admin_print_styles-appearance_page_theme_options', 'accesspress_lite
 
 
 
-$accesspresslite_options = array(
-	'responsive_design'=>'',
-	'accesspresslite_favicon'=> '',
-	'header_text'=>__('Call us : 984187523XX','accesspress-lite'),
-	'show_search'=> true,
-	'menu_alignment'=> 'Right',
-	'welcome_post' => '',
-	'welcome_post_readmore' => __('Read More','accesspress-lite'),
-	'welcome_post_char' => '650',
-	'show_fontawesome' => false,
-    'big_icons' => false,
-    'featured_section_title' => __('Feature Posts','accesspress-lite'),
-	'featured_post1' => '',
-	'featured_post2' => '',
-	'featured_post3' => '',
-	'featured_post_readmore' => __('Read More','accesspress-lite'),
-	'featured_post1_icon' => '',
-	'featured_post2_icon' => '',
-	'featured_post3_icon' => '',
-	'show_event_number' => '3',
-	'event_cat' => '',
-	'testimonial_cat' => '',
-	'portfolio_cat' => '',
-	'footer_copyright' => get_bloginfo('name'),
-
-	'show_slider' => 'yes',
-	'slider_show_pager' => 'yes1',
-	'slider_show_controls' => 'yes2',
-	'slider_mode' => 'slide',
-	'slider_auto' => 'yes3',
-	'slider_speed' => '500',
-	'slider_caption'=>'yes4',
-	'slider_pause' => '4000',
-
-	'slider1'=>'',
-	'slider2'=>'',
-	'slider3'=>'',
-	'slider4'=>'',
-
-	'leftsidebar_show_latest_events'=>true,
-	'leftsidebar_show_testimonials'=>true,
-	'rightsidebar_show_latest_events'=>true,
-	'rightsidebar_show_testimonials'=>true,
-	
-	'accesspresslite_facebook' => '',
-	'accesspresslite_twitter' => '',
-	'accesspresslite_gplus' => '',
-	'accesspresslite_youtube' => '',
-	'accesspresslite_pinterest' => '',
-	'accesspresslite_linkedin' => '',
-	'accesspresslite_flickr' => '',
-	'accesspresslite_vimeo' => '',
-	'accesspresslite_stumbleupon' => '',
-	'accesspresslite_instagram' => '',
-	'accesspresslite_sound_cloud' => '',
-	'accesspresslite_skype' => '',
-	'accesspresslite_rss' => '',
-	'accesspresslite_tumblr' => '',
-	'accesspresslite_myspace' =>'',
-	'show_social_header'=>'',
-
-	'accesspresslite_home_page_layout' => 'Layout2',
-    'accesspresslite_webpage_layout' => 'Fullwidth',
-    'gallery_code' => '',
-
-    'slider_options' => 'single_post_slider',
-    'slider_cat' => '',
-    'view_all_text' =>__('View All','accesspress-lite'),
-    'custom_css' => '',
-    'featured_bar' => false,
-
-    'action_text' => __('Check Our AccessPress Pro Theme - A premium version of AccessPres Lite','accesspress-lite'),
-    'action_btn_text' => __('Check Now','accesspress-lite'),
-    'action_btn_link' => esc_url('http://accesspressthemes.com/accesspresslite-pro/'),
-    'welcome_post_content' => false,
-    'show_eventdate' => true,
-    'disable_event' => false,
-    'accesspresslite_home_template' => 'template_two',
-    'template_option_selected' =>'yes'
-
-);
+$accesspresslite_options = accesspress_default_setting_value();
 
 
 add_action( 'admin_init', 'accesspresslite_register_settings' );
@@ -431,13 +351,6 @@ function accesspresslite_theme_options_page() {
 					</tr>
 
 					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
-                    
-                    <tr>
-                        <th scope="row"><label for="footer_title"><?php _e('Footer Title','accesspress-lite'); ?></label></th>
-                        <td>
-    					   <input id="footer_title" name="accesspresslite_options[footer_title]" type="text" value="<?php echo esc_attr($settings['footer_title']); ?>" />
-    					<em class="f13"><?php _e('Only For Home Template Two','accesspress-lite'); ?></em></td>
-                    </tr>
 
 					<tr>
     					<th scope="row"><label for="footer_copyright"><?php _e('Footer Copyright Text','accesspress-lite'); ?></label></th>
@@ -468,6 +381,35 @@ function accesspresslite_theme_options_page() {
                     </div>
 					<?php endforeach; ?>
 					</td>
+					</tr>
+
+					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
+
+					<tr>
+						<th><label for="featured_bar"><?php _e('Call To action','accesspress-lite'); ?></label></th>
+					</tr>
+
+					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
+
+					<tr>
+						<th><label for="call_to_action"><?php _e('Text','accesspress-lite'); ?></label></th>
+						<td>
+							<textarea rows="4" cols="60" name="accesspresslite_options[action_text]" placeholder="Write Call to Action Text"><?php if(!empty($settings['action_text'])) echo esc_textarea($settings['action_text']); ?></textarea>
+						</td>
+					</tr>
+
+					<tr>
+						<th><label for="call_to_action"><?php _e('Read More Button Text','accesspress-lite'); ?></label></th>
+						<td>
+							<input type="text" name="accesspresslite_options[action_btn_text]" value="<?php if(!empty($settings['action_btn_text'])) echo esc_attr($settings['action_btn_text']); ?>">
+						</td>
+					</tr>
+
+					<tr>
+						<th><label for="call_to_action"><?php _e('Read More Button link','accesspress-lite'); ?></label></th>
+						<td>
+							<input type="text" name="accesspresslite_options[action_btn_link]" value="<?php if(!empty($settings['action_btn_link'])) echo esc_url($settings['action_btn_link']); ?>">
+						</td>
 					</tr>
 
 					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
@@ -515,7 +457,7 @@ function accesspresslite_theme_options_page() {
 					</tr>
 
 					<tr>
-						<th><label for="show_event_number"><?php _e('No of Items to display in Event/News Category beside Welcome Post','accesspress-lite'); ?></label></th>
+						<th><label for="show_event_number"><?php _e('No of Items to display in Event/News Category(Righ side of Welcome Post)','accesspress-lite'); ?></label></th>
 						<td><input id="show_event_number" type="text" name="accesspresslite_options[show_event_number]" value="<?php if (isset($settings['show_event_number'])){ echo esc_attr($settings['show_event_number']); } ?>"></td>
 					</tr>
 
@@ -626,35 +568,6 @@ function accesspresslite_theme_options_page() {
 						<td>
 							<input type="checkbox" id="featured_bar" name="accesspresslite_options[featured_bar]" value="1" <?php checked( true, $settings['featured_bar'] ); ?> />
 							<label for="featured_bar"><?php _e('Check to disable','accesspress-lite'); ?></label><br />
-						</td>
-					</tr>
-
-					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
-
-					<tr>
-						<th><label for="featured_bar"><?php _e('Call To action','accesspress-lite'); ?></label></th>
-					</tr>
-
-					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
-
-					<tr>
-						<th><label for="call_to_action"><?php _e('Text','accesspress-lite'); ?></label></th>
-						<td>
-							<textarea rows="4" cols="60" name="accesspresslite_options[action_text]" placeholder="Write Call to Action Text"><?php if(!empty($settings['action_text'])) echo esc_textarea($settings['action_text']); ?></textarea>
-						</td>
-					</tr>
-
-					<tr>
-						<th><label for="call_to_action"><?php _e('Read More Button Text','accesspress-lite'); ?></label></th>
-						<td>
-							<input type="text" name="accesspresslite_options[action_btn_text]" value="<?php if(!empty($settings['action_btn_text'])) echo esc_attr($settings['action_btn_text']); ?>">
-						</td>
-					</tr>
-
-					<tr>
-						<th><label for="call_to_action"><?php _e('Read More Button link','accesspress-lite'); ?></label></th>
-						<td>
-							<input type="text" name="accesspresslite_options[action_btn_link]" value="<?php if(!empty($settings['action_btn_link'])) echo esc_url($settings['action_btn_link']); ?>">
 						</td>
 					</tr>
                 </table>
@@ -1046,19 +959,14 @@ function accesspresslite_theme_options_page() {
 				<table class="form-table">
 					<tr>
 					<td colspan="2">
-						<p><?php _e('AccessPress Lite - is a FREE WordPress theme by','accesspress-lite'); ?> <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/'); ?>">AccessPress Themes</a> <?php _e('- A WordPress Division of Access Keys.','accesspress-lite'); ?>
-						<?php _e(' Access Keys - has developed more than 350 WordPress websites for its clients.','accesspress-lite'); ?></p>
-
-						<p><?php _e('We want to give "a little beautiful thing" - back to the community.<br />With our experience, we are creating "AccessPress Lite", a free WordPress theme, which includes the most useful features for a generic business website!','accesspress-lite'); ?></p>
-						<hr />
 						
 						<p><?php _e('For Documentation, click','accesspress-lite'); ?> <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/theme-instruction-accesspress-lite/'); ?>"><?php _e('here','accesspress-lite'); ?></a></p>
 						<p><?php _e('For Video tutorials, click','accesspress-lite'); ?> <a target="_blank" href="<?php echo esc_url('https://www.youtube.com/watch?v=Mi60ORm_VMI&list=PLdSqn2S_qFxEzeboBioXZdAg5P4l32Hm3'); ?>"><?php _e('here','accesspress-lite'); ?></a></p>
-						<p><?php _e('Live Preview, click','accesspress-lite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-demos/?theme=accesspress-lite'); ?>"><?php _e('here','accesspress-lite'); ?></a></p>
+						<p><?php _e('Live Preview, click','accesspress-lite'); ?> <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/theme-demos/?theme=accesspress-lite'); ?>"><?php _e('here','accesspress-lite'); ?></a></p>
 						<hr />
 
 						<h4 class="accesspress-child-theme"><?php _e('New Child Theme of AccessPress Lite','accesspress-lite'); ?></h4>
-						<p class="accesspress-child-theme"><?php _e('Check Demo Here - ','accesspress-lite'); ?> <a target="_blank" href="<?php echo esc_url('http://accesspressthemes.com/theme-demos/?theme=ap-lite'); ?>"><?php echo esc_url('http://accesspressthemes.com/theme-demos/?theme=ap-lite'); ?></a></p>
+						<p class="accesspress-child-theme"><?php _e('Check Demo Here - ','accesspress-lite'); ?> <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/theme-demos/?theme=ap-lite'); ?>"><?php echo esc_url('http://accesspressthemes.com/theme-demos/?theme=ap-lite'); ?></a></p>
 						<p class="accesspress-child-theme"><?php _e('Download Here - ','accesspress-lite'); ?> <a target="_blank" href="<?php echo esc_url('https://wordpress.org/themes/aplite/'); ?>"><?php echo esc_url('https://wordpress.org/themes/aplite/'); ?></a></p>
 
 						<hr />
@@ -1072,11 +980,6 @@ function accesspresslite_theme_options_page() {
 						<p>
 						<?php _e('If you have any question/feedback regarding theme, please post in our forum','accesspress-lite'); ?><br/>
 						<?php _e('Forum:','accesspress-lite'); ?> <a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/support/'); ?>"><?php echo esc_url('https://accesspressthemes.com/support/'); ?></a><br/>
-						
-						<br />
-
-						<?php _e('For Online Chat Support','accesspress-lite'); ?><br/>
-						<a target="_blank" href="<?php echo esc_url('https://accesspressthemes.com/'); ?>"><?php echo esc_url('https://accesspressthemes.com/'); ?></a><br/>
 						
 						<br />
 

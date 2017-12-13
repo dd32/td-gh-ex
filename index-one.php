@@ -1,5 +1,5 @@
 <?php 
-global $accesspresslite_options;
+$accesspresslite_options = accesspress_default_setting_value();
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 $accesspresslite_layout = $accesspresslite_settings['accesspresslite_home_page_layout'];
 $accesspresslite_welcome_post_id = $accesspresslite_settings['welcome_post'];
@@ -523,34 +523,23 @@ wp_reset_query(); ?>
 					<div class="testimonial-slide">
 			        	<div class="testimonial-list clearfix">
 			        		<div class="testimonial-thumbnail">
-			        		<img src="<?php echo get_template_directory_uri(); ?>/images/demo/Yanetxys-Torreblanca.jpg">
+			        		<img src="<?php echo get_template_directory_uri(); ?>/images/demo/testimonial-image4.jpg">
 			        		</div>
 
 			        		<div class="testimonial-excerpt"><?php _e('Thanks for delivering top quality services to your clients. It just takes a minute to get an answer from you when in difficulties.','accesspress-lite'); ?></div>
 			        	</div>
-						<div class="testimoinal-client-name"><?php _e('Yanetxys Torreblanca','accesspress-lite'); ?></div>
+						<div class="testimoinal-client-name"><?php _e('Robin Jacob','accesspress-lite'); ?></div>
 					</div>
 
 					<div class="testimonial-slide">
 			        	<div class="testimonial-list clearfix">
 			        		<div class="testimonial-thumbnail">
-			        		<img src="<?php echo get_template_directory_uri(); ?>/images/demo/David-Soriano.jpg">
+			        		<img src="<?php echo get_template_directory_uri(); ?>/images/demo/testimonial-image4.jpg">
 			        		</div>
 
 			        		<div class="testimonial-excerpt"><?php _e('Thank you very much the support team AccessPress lite for service, are really wonderful in their care and in the resolution of the problem.','accesspress-lite'); ?></div>
 			        	</div>
-						<div class="testimoinal-client-name"><?php _e('David Soriano','accesspress-lite'); ?></div>
-					</div>
-
-					<div class="testimonial-slide">
-			        	<div class="testimonial-list clearfix">
-			        		<div class="testimonial-thumbnail">
-			        		<img src="<?php echo get_template_directory_uri(); ?>/images/demo/Jotta-Lima.jpg">
-			        		</div>
-
-			        		<div class="testimonial-excerpt"><?php _e('Hello, I would say I am much satisfied! I tested installing the theme AccessPress Lite on my blog and found it very good.','accesspress-lite'); ?></div>
-			        	</div>
-						<div class="testimoinal-client-name"><?php _e('Jotta Lima','accesspress-lite'); ?></div>
+						<div class="testimoinal-client-name"><?php _e('David Blen','accesspress-lite'); ?></div>
 					</div>
 				</div>
 			</div>
