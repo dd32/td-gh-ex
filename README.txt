@@ -68,6 +68,12 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.91
+* Style tweaks/fixes
+* Added 3 new Social Links - Pinterest / LinkedIn / VKontakte
+* Fixed/Updated help links
+* Updated the language .pot file
+
 #### 1.0.90
 * Fixed search bar not showing if Top Bar is removed on header 1 & 3
 * Added Customizer inter links to help/improve user experience

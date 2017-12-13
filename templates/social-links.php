@@ -15,12 +15,24 @@ if( get_theme_mod( 'avant-social-twitter' ) ) :
     echo '<a href="' . esc_url( get_theme_mod( 'avant-social-twitter' ) ) . '" target="_blank" title="' . esc_attr__( 'Follow Us on Twitter', 'avant' ) . '" class="social-icon social-twitter"><i class="fa fa-twitter"></i></a>';
 endif;
 
+if( get_theme_mod( 'avant-social-pinterest' ) ) :
+    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-pinterest' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Pinterest', 'avant' ) . '" class="social-icon social-pinterest"><i class="fa fa-pinterest"></i></a>';
+endif;
+
+if( get_theme_mod( 'avant-social-linkedin' ) ) :
+    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-linkedin' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on LinkedIn', 'avant' ) . '" class="social-icon social-linkedin"><i class="fa fa-linkedin"></i></a>';
+endif;
+
 if( get_theme_mod( 'avant-social-tumblr' ) ) :
     echo '<a href="' . esc_url( get_theme_mod( 'avant-social-tumblr' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Tumblr', 'avant' ) . '" class="social-icon social-tumblr"><i class="fa fa-tumblr"></i></a>';
 endif;
 
 if( get_theme_mod( 'avant-social-flickr' ) ) :
     echo '<a href="' . esc_url( get_theme_mod( 'avant-social-flickr' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Flickr', 'avant' ) . '" class="social-icon social-flickr"><i class="fa fa-flickr"></i></a>';
+endif;
+
+if( get_theme_mod( 'avant-social-vk' ) ) :
+    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-vk' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on VK', 'avant' ) . '" class="social-icon social-vk"><i class="fa fa-vk"></i></a>';
 endif;
 
 if( get_theme_mod( 'avant-social-github' ) ) :

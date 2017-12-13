@@ -624,7 +624,7 @@ function customizer_library_avant_options() {
         'id' => $section,
         'title' => __( 'Footer', 'avant' ),
         'priority' => '80',
-        'description' => 'Customize the <a href="#avant-panel-colors" rel="tc-panel">Footer Colors</a>, add <a href="#avant-social-section" rel="tc-section">Social links</a> and edit <a href="#avant-website-section-text-footer" rel="tc-section">Footer text</a> or <a href="#avant-panel-font-settings" rel="tc-panel">Site Fonts</a>',
+        'description' => 'Customize the <a href="#avant-panel-colors" rel="tc-panel">Footer Colors</a>, add <a href="#avant-social-section" rel="tc-section">Social links</a> or <a href="#avant-panel-font-settings" rel="tc-panel">Site Fonts</a>',
         'panel' => $panel
     );
 
@@ -1171,6 +1171,18 @@ function customizer_library_avant_options() {
         'section' => $section,
         'type'    => 'text',
     );
+    $options['avant-social-pinterest'] = array(
+        'id' => 'avant-social-pinterest',
+        'label'   => __( 'Pinterest', 'avant' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['avant-social-linkedin'] = array(
+        'id' => 'avant-social-linkedin',
+        'label'   => __( 'LinkedIn', 'avant' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
     $options['avant-social-tumblr'] = array(
         'id' => 'avant-social-tumblr',
         'label'   => __( 'Tumblr', 'avant' ),
@@ -1180,6 +1192,12 @@ function customizer_library_avant_options() {
     $options['avant-social-flickr'] = array(
         'id' => 'avant-social-flickr',
         'label'   => __( 'Flickr', 'avant' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['avant-social-vk'] = array(
+        'id' => 'avant-social-vk',
+        'label'   => __( 'VK', 'avant' ),
         'section' => $section,
         'type'    => 'text',
     );

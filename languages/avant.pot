@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2017-12-07 15:58+0200\n"
+"POT-Creation-Date: 2017-12-13 08:34+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -883,18 +883,30 @@ msgid "Twitter"
 msgstr ""
 
 #: customizer/customizer-options.php:1176
-msgid "Tumblr"
+msgid "Pinterest"
 msgstr ""
 
 #: customizer/customizer-options.php:1182
-msgid "Flickr"
+msgid "LinkedIn"
 msgstr ""
 
 #: customizer/customizer-options.php:1188
+msgid "Tumblr"
+msgstr ""
+
+#: customizer/customizer-options.php:1194
+msgid "Flickr"
+msgstr ""
+
+#: customizer/customizer-options.php:1200
+msgid "VK"
+msgstr ""
+
+#: customizer/customizer-options.php:1206
 msgid "GitHub"
 msgstr ""
 
-#: customizer/customizer-options.php:1196
+#: customizer/customizer-options.php:1214
 msgid ""
 "<b>Premium Extra Features:</b><br />- Premium offers a bunch of extra Social "
 "Links<br />- Plus 2 custom inputs for your own links"
@@ -1414,18 +1426,30 @@ msgid "Follow Us on Twitter"
 msgstr ""
 
 #: templates/footer/footer-social.php:24 templates/social-links.php:19
-msgid "Find Us on Tumblr"
+msgid "Find Us on Pinterest"
 msgstr ""
 
 #: templates/footer/footer-social.php:28 templates/social-links.php:23
-msgid "Find Us on Flickr"
+msgid "Find Us on LinkedIn"
 msgstr ""
 
 #: templates/footer/footer-social.php:32 templates/social-links.php:27
+msgid "Find Us on Tumblr"
+msgstr ""
+
+#: templates/footer/footer-social.php:36 templates/social-links.php:31
+msgid "Find Us on Flickr"
+msgstr ""
+
+#: templates/footer/footer-social.php:40 templates/social-links.php:35
+msgid "Find Us on VK"
+msgstr ""
+
+#: templates/footer/footer-social.php:44 templates/social-links.php:39
 msgid "Find Us on GitHub"
 msgstr ""
 
-#: templates/footer/footer-social.php:35
+#: templates/footer/footer-social.php:47
 #, php-format
 msgid "<div class=\"site-footer-social-copy\">Theme: %1$s by %2$s"
 msgstr ""
