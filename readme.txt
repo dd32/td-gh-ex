@@ -84,6 +84,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.18
+- Updated: Slider updated to ensure full compatibility with child themes.
+
 Version 1.3.17
 - Fixed:   style-backend.css now loads correctly in admin area.
 - Fixed:   WooCommerce v3+ gallery support added, ensured image zoom function works correctly.
