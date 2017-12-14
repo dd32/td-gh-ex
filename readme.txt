@@ -28,7 +28,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Full Frame WordPress Theme, Copyright 2015 Catchthemes.com
 Full Frame is distributed under the terms of the GNU General Public License v3
 
-Full Frame is based on Catch Base theme https://catchthemes.com/themes/catch-base/ 
+Full Frame is based on Catch Base theme https://catchthemes.com/themes/catch-base/
 
 Images used are released under the CC0 license
 Slider Image 1: http://pixabay.com/en/photography-photo-camera-olympus-407218/
@@ -37,11 +37,11 @@ Featured Content Background Image: http://www.pexels.com/photo/2286/
 1st Featured Content Image: http://pixabay.com/en/central-park-new-york-city-benches-535645/
 2nd Featured Content Image: http://pixabay.com/en/clock-city-antique-architecture-426079/
 3rd Featued Content Image: http://pixabay.com/en/vespa-street-night-city-517227/
-All other images are self shot image by (CatchThemes.com) 
+All other images are self shot image by (CatchThemes.com)
 
 Font Icons
 	Genericons by Automattic, Inc.
-  	Genericons is Licensed under the GPL, version 2 or later 
+  	Genericons is Licensed under the GPL, version 2 or later
 	http://genericons.com/
 
 JS Files
@@ -68,8 +68,8 @@ JS Files
 
 = Custom Menus =
 
-Full Frame theme supports one custom menu that is primary menu. 
-To create a custom menu, go to Appearance -> Menus in your dashboard. 
+Full Frame theme supports one custom menu that is primary menu.
+To create a custom menu, go to Appearance -> Menus in your dashboard.
 For more about custom menu, check out https://catchthemes.com/blog/custom-menus-wordpress-themes/
 
 = Featured Image =
@@ -80,9 +80,9 @@ If you are migrating your old site to this new them then you need to regenerate 
 
 = Featured Slider =
 
-In Full Frame Free theme, there is only option to use Featured Page Slider, which is created to highlight your Page in the slider. But pro version has additional option to Featured Post Slider, Featured Category Slider and Featured Image Slider. 
+In Full Frame Free theme, there is only option to use Featured Page Slider, which is created to highlight your Page in the slider. But pro version has additional option to Featured Post Slider, Featured Category Slider and Featured Image Slider.
 
-To add featured page slider, 
+To add featured page slider,
 1. Create a Page and then add Featured Image to the Page.
 2. Go to "Appearance -> Customize -> Featured Slider Options" from your WordPress Dashboard
 3. Under Featured Slider Type, you need to select "Featured Page Slider"
@@ -93,9 +93,9 @@ Note: You can also change Enable Slider, slider effects, delay and length under 
 
 = Social Icons =
 
-Full Frame has social icons for various social networking sites. 
+Full Frame has social icons for various social networking sites.
 1. Go to "Appearance -> Customize -> Social Links" form your WordPress Dashboard
-2. Add in your social profile links and click on "Save & Publish" 
+2. Add in your social profile links and click on "Save & Publish"
 
 Note: By default social links will be added in Header Right Section. You can also add that in your sidebar from "Appearance -> Widgets"
 
@@ -129,7 +129,7 @@ Available icons:
 Skype Link:
 Skype link can have several formats which are documented below:
 Username:
-    skype:profile_name?action 
+    skype:profile_name?action
 
     Examples of such actions are
     * call        to call
@@ -143,7 +143,7 @@ Username:
     This will initiate test call use skype usenarme echo123
 
 Number:
-    callto://+*********** 
+    callto://+***********
 
     E.g: callto://+14044627491
     This will initiate Skype to call phone number 14044627491
@@ -154,6 +154,9 @@ For detail instructions, check out theme instructions page at https://catchtheme
 
 
 == Change log ==
+
+= 2.5.4 (Released: December 14, 2017) =
+* Update: JS compression update
 
 = 2.5.3 (Released: September 15, 2017) =
 * Bug Fixed: Breadcrumb custom post archive link
