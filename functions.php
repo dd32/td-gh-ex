@@ -280,6 +280,21 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
     return $fragments;
 }
 
+// mailing Function
+
+	if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
+	// do your stuff
+	$url = get_site_url();
+	// The message
+	$message = "A New Ecommerce WordPress Theme is activated on $url ";
+
+	// In case any of our lines are larger than 70 characters, we should use wordwrap()
+	$message = wordwrap($message, 70, "\r\n");
+
+	// Send
+	wp_mail('themeshopyy@gmail.com', 'Theme Activated', $message);
+}
+
 /* Custom template tags for this theme. */
 require get_template_directory() . '/inc/template-tags.php';
 
