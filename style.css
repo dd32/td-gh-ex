@@ -4,7 +4,7 @@ Theme Name: Avior
 Author: MotoPress
 Author URI: https://motopress.com/
 Description: Avior is a clean and dandy WordPress blogging theme, designed for people, who aim for readable, photo-rich and SEO-smart writing. With Avior you'll easily take care of a website customization: change footer and header info like menus and social media icons, change header image, use unlimited colors to reach a perfect color scheme and more. All tweaks are easily performed visually via WordPress Customizer. A distinctive search engine optimized blog will help you stand out of the crowd and create impressive posts that will look just perfect on any modern device.
-Version: 0.1.8
+Version: 0.1.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avior
@@ -296,10 +296,6 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-*:focus {
-  outline: thin dotted;
-}
-
 html {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -633,22 +629,19 @@ input[type="submit"] {
   -webkit-transition: background 0.15s ease-in-out, color 0.15s ease-in-out, border 0.15s ease-in-out;
   transition: background 0.15s ease-in-out, color 0.15s ease-in-out, border 0.15s ease-in-out;
 }
-button:hover,
+button:hover, button:focus,
 .button:hover,
+.button:focus,
 input[type="button"]:hover,
+input[type="button"]:focus,
 input[type="reset"]:hover,
-input[type="submit"]:hover {
+input[type="reset"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
   color: #fff;
   background-color: #1f2429;
   border-color: #1f2429;
   text-decoration: none;
-}
-button:focus,
-.button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus {
-  outline: thin dotted;
 }
 button[disabled], fieldset[disabled] button,
 .button[disabled], fieldset[disabled]
@@ -725,7 +718,7 @@ input[type="search"] {
 
 input[type="radio"],
 input[type="checkbox"] {
-  margin: 0 1.1em 0.44444em 0;
+  margin: 0 0.6em 0.11111em 0;
   line-height: normal;
   display: inline-block;
   vertical-align: middle;
@@ -830,8 +823,6 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-  outline: thin dotted;
-  border: 1px solid #1ca4d3;
   background-color: #fff;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
@@ -1023,6 +1014,25 @@ input[type="color"]::-webkit-input-placeholder, .site-footer
 textarea::-webkit-input-placeholder {
   color: #858d95;
 }
+.site-footer select:focus, .site-footer
+input[type="text"]:focus, .site-footer
+input[type="email"]:focus, .site-footer
+input[type="url"]:focus, .site-footer
+input[type="password"]:focus, .site-footer
+input[type="search"]:focus, .site-footer
+input[type="number"]:focus, .site-footer
+input[type="tel"]:focus, .site-footer
+input[type="range"]:focus, .site-footer
+input[type="date"]:focus, .site-footer
+input[type="month"]:focus, .site-footer
+input[type="week"]:focus, .site-footer
+input[type="time"]:focus, .site-footer
+input[type="datetime"]:focus, .site-footer
+input[type="datetime-local"]:focus, .site-footer
+input[type="color"]:focus, .site-footer
+textarea:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+}
 
 textarea {
   height: auto;
@@ -1037,12 +1047,12 @@ select {
   -moz-appearance: none;
   background-image: url(images/angle-down.svg);
   background-repeat: no-repeat;
-  background-position: right 0.27778em top 50%;
+  background-position: right 0.44444em top 50%;
   -moz-background-size: 1rem;
   -o-background-size: 1rem;
   -webkit-background-size: 1rem;
   background-size: 1rem;
-  padding-right: 1.44444em;
+  padding-right: 1.66667em;
   overflow: auto;
 }
 
@@ -4158,6 +4168,10 @@ a:hover, a:active {
 a:hover {
   text-decoration: underline;
 }
+a:focus {
+  outline: thin dotted;
+  outline-color: #333333;
+}
 
 /*--------------------------------------------------------------
 ## Menus
@@ -4774,8 +4788,9 @@ a:hover {
   width: 3.75em;
   text-align: center;
 }
-.pagination a.prev:hover,
-.pagination a.next:hover {
+.pagination a.prev:hover, .pagination a.prev:focus,
+.pagination a.next:hover,
+.pagination a.next:focus {
   background: #1ca4d3;
   color: #fff;
   text-decoration: none;
@@ -5394,6 +5409,10 @@ a:hover {
   background-size: cover;
 }
 
+.site-header a:focus {
+  outline-color: currentColor;
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -5501,6 +5520,10 @@ a:hover {
 .entry-title a:hover {
   color: #1ca4d3;
   text-decoration: none;
+}
+
+.entry-title a:focus {
+  color: #1ca4d3;
 }
 
 .entry-title {
@@ -5997,6 +6020,9 @@ form > :last-child {
 }
 .site-footer a {
   color: #fff;
+}
+.site-footer a:focus {
+  outline-color: currentColor;
 }
 .site-footer .wrapper-top {
   padding: 5.875em 0;

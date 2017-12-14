@@ -14,10 +14,6 @@ Description: Used to style the TinyMCE editor.
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-*:focus {
-  outline: thin dotted;
-}
-
 html {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -193,6 +189,10 @@ a:hover, a:active {
 }
 a:hover {
   text-decoration: underline;
+}
+a:focus {
+  outline: thin dotted;
+  outline-color: #333333;
 }
 
 /*--------------------------------------------------------------

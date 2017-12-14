@@ -466,6 +466,7 @@ function avior_get_color_scheme_css($colors)
 	}
 	.top-navigation-right .menu-item-has-children .dropdown-toggle:hover,
 	.pagination a.prev:hover, .pagination a.next:hover,
+	.pagination a.prev:focus, .pagination a.next:focus,
 	button, .button, input[type="button"], input[type="reset"], input[type="submit"]{
 	  background-color: {$colors['brand_color']};
 	}
@@ -475,7 +476,7 @@ function avior_get_color_scheme_css($colors)
 	.widget.widget_calendar tbody a,
 	.search-icon-wrapper a:hover,
 	.tagcloud a:hover,
-	.entry-footer a:hover, .entry-meta a:hover, .entry-title a:hover,
+	.entry-footer a:hover, .entry-meta a:hover, .entry-title a:hover, .entry-title a:focus,
     .top-navigation-right li:hover > a, 
 	a {
 	  color:  {$colors['brand_color']};
@@ -488,11 +489,11 @@ function avior_get_color_scheme_css($colors)
 	/* Brand Color  Hover*/	
 
 	.sticky-post,.pagination a.prev, .pagination a.next,
-	button:hover,
-	.button:hover,
-	input[type="button"]:hover,
-	input[type="reset"]:hover,
-	input[type="submit"]:hover {
+	button:hover,button:focus,
+	.button:hover,.button:focus,
+	input[type="button"]:hover,input[type="button"]:focus,
+	input[type="reset"]:hover,input[type="reset"]:focus,
+	input[type="submit"]:hover,input[type="submit"]:focus {
 	  background-color:  {$colors['brand_color_hover']};
 	  border-color:  {$colors['brand_color_hover']};
 	}	
@@ -518,7 +519,10 @@ function avior_get_color_scheme_css($colors)
         .site-header-main{
             background-color: {$colors['site_header_main_rgba']};
         }
-    }    
+    }
+	a:focus {
+        outline-color: {$colors['main_text_color']};
+    }	
 CSS;
 }
 
@@ -636,7 +640,6 @@ function avior_brand_color_css()
     }
 
     $css = '
-	select:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus,
 	.tagcloud a:hover,
 	button, .button, input[type="button"], input[type="reset"], input[type="submit"],
 	blockquote {
@@ -644,6 +647,7 @@ function avior_brand_color_css()
 	}
 	.top-navigation-right .menu-item-has-children .dropdown-toggle:hover,
 	.pagination a.prev:hover, .pagination a.next:hover,
+	.pagination a.prev:focus, .pagination a.next:focus,
 	button, .button, input[type="button"], input[type="reset"], input[type="submit"]{
 	  background-color: %1$s;
 	}
@@ -653,7 +657,7 @@ function avior_brand_color_css()
 	.widget.widget_calendar tbody a,
 	.search-icon-wrapper a:hover,
 	.tagcloud a:hover,
-	.entry-footer a:hover, .entry-meta a:hover, .entry-title a:hover,
+	.entry-footer a:hover, .entry-meta a:hover, .entry-title a:hover, .entry-title a:focus,
 	.top-navigation-right li:hover > a, 
 	a {
 	  color: %1$s;
@@ -724,11 +728,11 @@ function avior_brand_color_hover_css()
 
     $css = '
 	.sticky-post,.pagination a.prev, .pagination a.next,
-	button:hover,
-	.button:hover,
-	input[type="button"]:hover,
-	input[type="reset"]:hover,
-	input[type="submit"]:hover {
+	button:hover,button:focus,
+	.button:hover,.button:focus,
+	input[type="button"]:hover,input[type="button"]:focus,
+	input[type="reset"]:hover,input[type="reset"]:focus,
+	input[type="submit"]:hover,input[type="submit"]:focus {
 	  background-color:  %1$s;
 	  border-color:  %1$s;
 	}	

@@ -31,6 +31,9 @@ To add social icons, navigate to WordPress Customizer > Menus > Add Menu > Add C
 
 == Changelog ==
 
+= 0.1.9 =
+* Minor bugfixes and improvements.
+
 = 0.1.8 =
 * Added outline style for accessibility.
 
