@@ -144,7 +144,7 @@
 		<div class="offer-content clearfix">
 			<div class="media pricing-content text-center padding10">
 				<div class="media-body">
-					<a href="<?php echo esc_url( 'http://webriti.com/elitepress' ); ?>" target="_blank" class="btn btn-info btn-lg"><?php esc_html_e( 'Get Elitepress PRO Now!','elitepress' ); ?></a>
+					<a href="<?php echo esc_url( 'http://webriti.com/elitepress' ); ?>" target="_blank" class="btn btn-info btn-lg"><?php esc_html_e( 'Get ElitePress PRO Now!','elitepress' ); ?></a>
 				</div>
 			</div>
 		</div>

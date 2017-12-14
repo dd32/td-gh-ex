@@ -31,7 +31,7 @@
 	<div class="col-md-6">
 	<div class="elitepress-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Multi Level Navigation','elitepress'); ?></strong></p>
-		<p><?php esc_html_e( "There are beautifully styled navigation/menus in ElitePress. You can create sub menus and make make multi level menus.","elitepress" ); ?></p>
+		<p><?php esc_html_e( "There are beautifully styled navigation/menus in ElitePress. You can create sub menus and make multi level menus.","elitepress" ); ?></p>
 		<hr>
 	</div>
 	</div>
