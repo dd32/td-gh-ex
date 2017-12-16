@@ -1,5 +1,12 @@
 SuevaFree Changelog
 
+- Version 3.3.8 - Released: 16.12.2017
+
+-- Fixed : VK social icon
+-- Fixed : Slack social icon
+-- Fixed : Vimeo social icon
+-- Fixed : Spotify social icon
+
 - Version 3.3.7 - Released: 04.12.2017
 
 -- Fixed : Fixed header on mobile devices

@@ -821,17 +821,6 @@ if (!function_exists('suevafree_customize_panel_function')) {
 
 			array( 
 
-				"label" => esc_html__( "Myspace Url","suevafree"),
-				"description" => esc_html__( "Insert Myspace Url (leave empty if you want to hide the button)","suevafree"),
-				"id" => "suevafree_footer_myspace_button",
-				"type" => "url",
-				"section" => "footer_section",
-				"std" => "",
-
-			),
-
-			array( 
-
 				"label" => esc_html__( "Pinterest Url","suevafree"),
 				"description" => esc_html__( "Insert Pinterest Url (leave empty if you want to hide the button)","suevafree"),
 				"id" => "suevafree_footer_pinterest_button",
