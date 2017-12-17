@@ -65,6 +65,8 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.74
+* Fixes in HTML markup and CSS issues
 
 Version 2.73
 * Fixes in styles in Layout two

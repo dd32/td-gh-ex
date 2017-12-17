@@ -208,7 +208,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					</figure>
 					<?php } ?>	
 
-					<h2 class="<?php if($show_fontawesome_icon == 1){ echo 'has-icon'; }?>">
+					<h4 class="<?php if($show_fontawesome_icon == 1){ echo 'has-icon'; }?>">
 					<a href="<?php the_permalink(); ?>">
 					<?php 
 					if($show_fontawesome_icon == 1){ ?>
@@ -218,7 +218,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					<?php } ?>
 					<span><?php the_title(); ?></span>
 					</a>
-					</h2>
+					</h4>
 
 					<div class="featured-content">
 						<p><?php echo accesspresslite_excerpt( get_the_content() , 260 ) ?></p>
@@ -266,7 +266,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					</figure>
 					<?php } ?>	
 
-					<h2 class="<?php if($show_fontawesome_icon == 1){ echo 'has-icon'; }?>">
+					<h4 class="<?php if($show_fontawesome_icon == 1){ echo 'has-icon'; }?>">
 					<a href="<?php the_permalink(); ?>">
 					<?php 
 					if($show_fontawesome_icon == 1){ ?>
@@ -276,7 +276,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					<?php } ?>
 					<span><?php the_title(); ?></span>
 					</a>
-					</h2>
+					</h4>
 
 					<div class="featured-content">
 						<p><?php echo accesspresslite_excerpt( get_the_content() , 260 ) ?></p>
@@ -322,7 +322,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					</figure>
 					<?php } ?>	
 
-					<h2 class="<?php if($show_fontawesome_icon == 1){ echo 'has-icon'; }?>">
+					<h4 class="<?php if($show_fontawesome_icon == 1){ echo 'has-icon'; }?>">
 					<a href="<?php the_permalink(); ?>">
 					<?php 
 					if($show_fontawesome_icon == 1){ ?>
@@ -332,7 +332,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					<?php } ?>
 					<span><?php the_title(); ?></span>
 					</a>
-					</h2>
+					</h4>
 
 					<div class="featured-content">
 						<p><?php echo accesspresslite_excerpt( get_the_content() , 260 ) ?></p>
@@ -361,7 +361,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 		</a>
 		</figure>
 
-		<h2><a href="#"><?php _e('Featured Post','accesspress-lite'); ?> <?php echo $featured_post; ?></a></h2>
+		<h4><a href="#"><?php _e('Featured Post','accesspress-lite'); ?> <?php echo $featured_post; ?></a></h4>
 
 		<div class="featured-content">
 			<p><?php _e('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate...','accesspress-lite'); ?></p>

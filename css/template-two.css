@@ -439,41 +439,31 @@ input[type="submit"]:hover{
 	margin-left:-4.33%;
 }
 
-.body_template_two #mid-section h1 {
-	color:#e15b22;
-	font-size: 30px;
-	text-align: center;
-	padding-bottom: 48px;
-	transition:all 0.3s ease-in-out;
-	-webkit-transition:all 0.3s ease-in-out;
-	-moz-transition:all 0.3s ease-in-out;
-}
-
 .body_template_two #mid-section #featured-post-3.featured-post {
 	margin-right: 0;
 }
 
-.body_template_two #mid-section .featured-post h2 {
+.body_template_two #mid-section .featured-post h4 {
 	padding:10px 20px 0 20px;
 	font-size: 20px;
 	margin-bottom: 16px;
 }
 
-.body_template_two #mid-section .icon_view_mod h2{
+.body_template_two #mid-section .icon_view_mod h4{
 	text-align: left;
 	padding: 30px 20px 5px 20px;
 }
 
-.body_template_two #mid-section .icon_view_mod.big-icon h2{
+.body_template_two #mid-section .icon_view_mod.big-icon h4{
 	text-align: center;
 }
 
-.featured-post h2.has-icon .fa{
+.featured-post h4.has-icon .fa{
 	font-size: 28px;
     margin-right: 12px;
 }
 
-.body_template_two #mid-section .featured-post h2 a{
+.body_template_two #mid-section .featured-post h4 a{
     text-transform: uppercase;
 }
 
@@ -680,6 +670,7 @@ input[type="submit"]:hover{
 	margin-left: 2%;
 	position: relative;
 	overflow: hidden;
+	text-align: center;
 }
 
 .body_template_two #event_section #latest-events_template_two .event-list_two .event-date_two {
@@ -728,7 +719,6 @@ input[type="submit"]:hover{
 }
 
 .body_template_two #event_section #latest-events_template_two .event-excerpt_two {
-	font-size: 16px;
     color: #aaaaaa;
     line-height: 1.2;
 }
