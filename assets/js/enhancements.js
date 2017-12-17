@@ -37,7 +37,6 @@
         pageLongCss = 'page--long',
         
         applicatorMainSearchTerm = 'applicator--main-search',
-        applicatorMainMenuTerm = 'applicator--main-menu',
         aplApplicatorMainActionsWidgetsTerm = 'applicator--main-actions-widgets',
         
         $aplWildcard = $( '#applicator-wildcard' ),
@@ -54,7 +53,7 @@
         
         $goStartNaviA = $( '#go-start-navi---a' ),
         
-        scrollMsFactor = 800 / 125,
+        scrollMsFactor = 300,
         scrollTime;
     
     
@@ -502,20 +501,16 @@
         }
         goStartNavDeactivate();
         
+        
         function goStartNav() {
             
-            bodyOffsetCriteriaHeight = document.body.offsetHeight / 2;
-            bodyOffsetHeight = document.body.offsetHeight;
-            
-            if ( ( window.innerHeight ) <= ( bodyOffsetCriteriaHeight ) ) {
-
-                // http://stackoverflow.com/a/40370876
-                $window.on( 'scroll.applicator', function() {
-                    if ( ( ( window.innerHeight + window.pageYOffset ) >= ( bodyOffsetHeight / 4 ) ) && ( ! window.pageYOffset == 0 ) ) {
+            if ( document.body.offsetHeight > window.innerHeight ) {
+                
+                $window.scrolled( function() {
+                    if ( window.pageYOffset >= window.innerHeight ) {
                         goStartNavActivate();
                     }
-                    
-                    else if ( ( ( window.innerHeight + window.pageYOffset ) < ( bodyOffsetHeight / 4 ) ) || ( window.pageYOffset == 0 ) ) {
+                    else {
                         goStartNavDeactivate();
                     }
                 } );
@@ -809,17 +804,13 @@
     
     
     /* ------------------------ Comments ------------------------ */
-    function initComments( $cp ) {
+    function applicatorComments( $cp ) {
         
         
-        // Proceed only in Detail View and the Applicator CSS class name is present
-        if ( ! $html.closest( '.view--detail' ) && ! $applicatorComments.length ) {
+        // Proceed only if Detail View and the Applicator CSS class name is present
+        if ( ! $html.closest( '.view-granularity--detail' ) && ! $applicatorComments.length ) {
             return;
         }
-
-        
-        // Functionality Name
-        funcName = 'comments-func';
 
         
         // Variables
@@ -832,7 +823,6 @@
             $comments,
             
             $commentModuleH,
-            $commentsCountAction,
             $commentsToggleButton,
             $commentsToggleButtonTextLabel,
             $commentsToggleButtonTextLabelTxt,
@@ -849,10 +839,17 @@
             commentsOnCSS = 'comments--active',
             commentsOffCSS = 'comments--inactive'
         ;
-
         
-        // Add CSS Class names to Component
-        $cp.addClass( funcTerm + ' ' + funcName );
+        
+        // Initializing
+        ( function() {
+            
+            funcName = 'comments-func';
+            
+            $cp
+                .addClass( funcTerm )
+                .addClass( funcName );
+        }() );
 
         
         // Build Markup
@@ -994,6 +991,10 @@
             }
         }
         
+        if ( $( '.comments-actions-snippet' ).hasClass( 'comment-creation--disabled' ) && $( '.comments-actions-snippet' ).hasClass( 'comments--empty' ) ) {
+            commentsActivate();
+        }
+        
         
         // Button Clicks
         ( function() {
@@ -1009,6 +1010,12 @@
         
         // Link Clicks
         ( function() {
+            
+            var $commentModule = $( '#comment-md' );
+            
+            if ( ! $commentModule.length ) {
+                return;
+            }
             
             $( 'a[href*="#comment"]' ).on( 'click.applicator', function() {
                 
@@ -1046,7 +1053,7 @@
         } );
 
     }
-    initComments( $( '#comment-md' ) );
+    applicatorComments( $( '#comment-md' ) );
     
     
     
@@ -2156,6 +2163,7 @@
             });
 
 
+            /*
             // ------------ <code>
             $( postContentCtCrCss + ' ' + '> *:has( code )' ).each(function() {
                 var $this = $( this ),
@@ -2165,6 +2173,7 @@
                     .closest( dataFormatCss )
                         .addClass( dataFormatPrefixCss + 'code' );
             });
+            */
 
             $( postContentCtCrCss + ' ' + '> code' ).each(function() {
                 var $this = $( this );
@@ -2257,6 +2266,8 @@
             wrapTextNode( $( '.data-format--img, .excerpt-link, .post-password-form label' ) );
             wrapTextNode( $( '.post-content---ct_cr' ) );
             wrapTextNode( $( '.wp-caption-text' ) );
+            
+            wrapTextNode( $( '.custom-html-widget' ) );
             
             initRemoveEmpty( $( '.text-node' ) );
             
@@ -2356,15 +2367,21 @@
             
             var $postContentHeadings = $( '.post-content---ct_cr' ).find( 'h1, h2, h3, h4, h5, h6' );
             
-            $.each( $postContentHeadings, function( index, value ) {
+            $.each( $postContentHeadings, function( index ) {
                 
+                // https://stackoverflow.com/a/18727318
+                // https://api.jquery.com/contents/
                 $( this )
                     .attr( {
                         'id': 'section' + ( index + 1 ),
                         'class': 'heading--anchored'
                     } )
-                    .wrapInner( '<a href="#section' + ( index + 1 ) + '" />' );
-            
+                    
+                    .contents().filter( function() {
+
+                        // Get only the text nodes
+                        return this.nodeType !== 1;
+                    } ).wrap( '<a href="#section' + ( index + 1 ) + '" />' );
             } );
         
         }() );
@@ -2563,36 +2580,15 @@
     // https://stackoverflow.com/a/7717572
     ( function() {
         
-        $( 'a[href^="#"]:not( #go-start-navi---a )' ).on( 'click.applicator', function() {
-            var href = $.attr( this, 'href' );
+        $window.scrolled( function() {
             
-            scrollTime = window.innerHeight / scrollMsFactor;
+            $( 'a[href^="#"]:not( #go-start-navi---a ):not( a[href*="#comment"] )' ).on( 'click.applicator', function() {
+                var href = $.attr( this, 'href' ),
+                    pageYOffset = window.pageYOffset,
+                    innerHeight = window.innerHeight,
+                    howManyPagesOffset = pageYOffset / innerHeight;
 
-            $htmlBody.stop().animate( {
-                scrollTop: $( href ).offset().top
-            }, scrollTime, 'easeInOutCirc', function() {
-                window.location.hash = href;                
-            } );
-
-            return false;
-        } );
-        
-        $( 'a[href^="#"]:not( #go-start-navi---a )' ).each( function() {
-            
-            var $this = $( this );
-            
-            console.log( $this );
-            
-        } );
-        
-        
-        $window.on( 'scroll.applicator', function() {
-                
-            $goStartNaviA.on( 'click.applicator', function() {
-
-                var href = $.attr( this, 'href' );
-
-                scrollTime = window.pageYOffset / scrollMsFactor;
+                scrollTime = howManyPagesOffset * scrollMsFactor;
 
                 $htmlBody.stop().animate( {
                     scrollTop: $( href ).offset().top
@@ -2602,7 +2598,31 @@
 
                 return false;
             } );
+                
+            
+            $goStartNaviA.on( 'click.applicator', function() {
 
+                var href = $.attr( this, 'href' ),
+                    pageYOffset = window.pageYOffset,
+                    innerHeight = window.innerHeight,
+                    howManyPagesOffset = pageYOffset / innerHeight;
+                
+                scrollTime = howManyPagesOffset * scrollMsFactor;
+                
+                // If offset is greater than 4 pages, turbo speed
+                if ( howManyPagesOffset > 4 ) {
+                    scrollTime = 300;
+                }
+
+                $htmlBody.stop().animate( {
+                    scrollTop: $( href ).offset().top
+                }, scrollTime, 'easeInOutCirc', function() {
+                    window.location.hash = href;                
+                } );
+
+                return false;
+            } );
+        
         } );
     
     }() );

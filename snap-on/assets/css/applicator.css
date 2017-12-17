@@ -5,22 +5,19 @@
     
     --category--padding: .5em 1em;
     --category--min-height: 2.25rem;
-    --category--border: 1px solid var(--accent-color--pri);
+    --category--border: 1px solid #005fe6;
     --category-item--spacing: calc( var(--content--spacing) / 2 );
     --category-item--spacing-x: calc( var(--content--spacing-x) / 2 );
     
     --post-meta--border: 1px solid lightgray;
-    --post-meta--fg-color: var(--color--transparent-black);
+    --post-meta--fg-color: hsla(0, 0%, 0%, .5);
     
-    --note--fg-color: var(--color--transparent-black);
+    --note--fg-color: hsla(0, 0%, 0%, .5);
     --note-font-size: .875rem;
     
     /* Edit Post Action */
     --edit-post-action--bg-color: var(--button--pri--bg-color);
     --edit-post-action--fg-color: var(--button--pri--fg-color);
-    --edit-post-action--min-width: calc( var(--button--min-width) /2 );
-    --edit-post-action--min-height: 2.25rem;
-    --edit-post-action--padding: .5em 1em;
     
     --post-banner-vis--height: 10rem;
 }
@@ -33,12 +30,13 @@
 .visually-hidden,
 .page .post-published-modified,
 .page .published-post-author,
-.page .comments-actions-snippet,
 .edit-post-action .post-title---txt,
 .edit-comment-action .comment-title---txt,
-.post-header-aside .comment-creation-ability,
-.post-header-aside .comments-population--empty .comments-population,
-.comments-population--empty .comments-empty-note,
+.post-header-aside .comment-creation,
+.post-header-aside .comments--empty .comments--populated,
+.post-header-aside .comments-actions-snippet.comments--empty.comment-creation--disabled,
+.post-header-aside .comments-actions-snippet.comments--empty,
+.comments--empty .comments-empty-note,
 .comment-creation-glabel,
 .comment-form .open-parenthesis---txt,
 .comment-form .close-parenthesis---txt,
@@ -51,8 +49,8 @@
 .logged-in .commenter-comment-creation-flabel,
 .comments---hr .comments-nav,
 .site--root .site-main-info,
-.view--multisite-directory .post-banner-visual img,
-.view--multisite-directory .entry-content,
+.multisite-directory--in .post-banner-visual img,
+.multisite-directory--in .entry-content,
 
 .applicator--theme--post-meta .post-published-glabel,
 .applicator--theme--post-meta .post-modified-glabel,
@@ -75,14 +73,11 @@
 .applicator--theme--excerpt .show-more-action .property---line .of---txt,
 .applicator--theme--excerpt .show-more-action .value---line,
 .applicator--theme--page-nav .page-nav .ellipsis--delimiter,
-.applicator--theme--page-nav .blog .page-navi:not( .adjacent-navi ),
 .applicator--theme--post-format--status .format-status .published-post-author,
 
 .applicator--theme--post-format--status .blog .format-status .post-title,
 .applicator--theme--post-format--status .single .format-status .post-title,
-.applicator--theme--post-format--status .format-status .apl-post-categories,
-.page .comment-md,
-.comment-creation-ability--disabled.comments-population--empty .comment-md
+.applicator--theme--post-format--status .format-status .apl-post-categories
 {
     position:absolute;margin:-1px;padding:0;width:1px;min-width:auto;height:1px;min-height:auto;overflow:hidden;clip:rect(0,0,0,0);border:0;word-wrap:normal;
 }
@@ -187,9 +182,9 @@ h6
     text-decoration: underline;
 }
 
-.view--detail .post-title---a
+.view-granularity--detail .post-title---a
 {
-    color: black;
+    color: #262626;
 }
 
 
@@ -209,7 +204,7 @@ h6
 
 .comments-header-aside .comments-actions-snippet .comments-count-axn---a
 {
-    color: black;
+    color: #262626;
 }
 
 .comments-header-aside .comments-actions-snippet .comments-count-axn---a:hover{
@@ -218,9 +213,6 @@ h6
 
 .comments-header-aside .comments-actions-snippet .comments-count-axn---a .comments-label---txt
 {
-    margin-right: .3em;
-    margin-right: var(--glabel--between--spacing);
-    
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -239,14 +231,12 @@ h6
 
 .comment-form .creation--invalid .input-text
 {
-    border-color: #f20c0c;
-    border-color: var(--color--record-red);
+    border-color: hsl(0, 91%, 50%);
 }
 
 .comment-form .creation--valid .input-text
 {
-    border-color: #14cc14;
-    border-color: var(--color--go-green);
+    border-color: hsl(120, 82%, 44%);
 }
 
 .comment-title,
@@ -359,7 +349,7 @@ h6
 
 .site-preview .site-main-name---a
 {
-    color: black;
+    color: #262626;
     
     text-decoration: none;
 }
@@ -404,18 +394,18 @@ h6
 
 
 /* ------------------ Multisite Directory - Post Banner Visual ------------------ */
-.view--multisite-directory .post-banner-visual
+.multisite-directory--in .post-banner-visual
 {
     position: relative;
     z-index: -1;
 }
 
-.view--multisite-directory .post-banner-visual--enabled .post---hr_cr
+.multisite-directory--in .post-banner-visual--enabled .post---hr_cr
 {
     position: relative;
 }
 
-.view--multisite-directory .post-banner-vis---a_l
+.multisite-directory--in .post-banner-vis---a_l
 {
     background-size: cover;
     background-position: center;
@@ -423,7 +413,7 @@ h6
     background-color: var(--image--bg-color);
 }
 
-.view--multisite-directory .post .post-banner-vis---a
+.multisite-directory--in .post .post-banner-vis---a
 {
     position: relative;
     
@@ -432,7 +422,7 @@ h6
     height: 10rem;
 }
 
-.view--multisite-directory .post-banner-vis---a::before
+.multisite-directory--in .post-banner-vis---a::before
 {
     content: '';
     position: absolute;
@@ -456,18 +446,18 @@ h6
 
 
 /* ------------------ Multisite Directory - Main Post Title ------------------ */
-.view--multisite-directory .main-post-title---ct_cr
+.multisite-directory--in .main-post-title---ct_cr
 {
     text-align: center;
 }
 
-.view--multisite-directory .post-banner-visual--enabled .post-title
+.multisite-directory--in .post-banner-visual--enabled .post-title
 {
     display: block;
     padding: 0;
 }
 
-.view--multisite-directory .post-banner-visual--enabled .post-title---a
+.multisite-directory--in .post-banner-visual--enabled .post-title---a
 {
     position: absolute;
     left: 0;
@@ -479,7 +469,7 @@ h6
     overflow: hidden;
 }
 
-.view--multisite-directory .post-banner-visual--enabled .post-title---a_l
+.multisite-directory--in .post-banner-visual--enabled .post-title---a_l
 {   
     position: absolute;
     left: 50%;
@@ -493,12 +483,12 @@ h6
     color: white;
 }
 
-.view--multisite-directory .post-title---a
+.multisite-directory--in .post-title---a
 {
     text-decoration: none;
 }
 
-.view--multisite-directory .post-banner-visual--enabled .post-title---a_l
+.multisite-directory--in .post-banner-visual--enabled .post-title---a_l
 {
     display: flex;
 }
@@ -508,12 +498,12 @@ h6
 
 
 /* ------------------ Multisite Directory - Post ------------------ */
-.view--multisite-directory .post---cr
+.multisite-directory--in .post---cr
 {
     padding: 0;
 }
 
-.view--multisite-directory .post-title---a
+.multisite-directory--in .post-title---a
 {
     color: var(--links--fg-color);
 }
@@ -936,14 +926,14 @@ h6
 .applicator--theme--edit-action .edit-post-axn---a_l,
 .applicator--theme--edit-action .edit-com-axn---a_l
 {
-    padding: var(--edit-post-action--padding);
+    padding: .25em 1em;
     
-    min-width: var(--edit-post-action--min-width);
-    min-height: var(--edit-post-action--min-height);
+    min-width: 3em;
+    min-height: 2.25rem;
     
     font-size: .875rem;
     
-    background-color: var(--edit-post-action--bg-color);    
+    background-color: #005fe6;
 }
 
 
@@ -961,16 +951,15 @@ h6
 {
     order: 1;
     
+    margin-left: .3em;
+    
     padding: calc( var(--content--spacing-y) / 3 ) calc( var(--content--spacing-x) / 1.5 );
     
     min-width: 1.5rem;
-    min-width: calc( var(--active-area--width--md) / 2 );
-    
     min-height: 1.5rem;
-    min-height: calc( var(--active-area--width--md) / 2 );
     
-    background-color: var(--accent-color--pri);
-    color: var(--color--white);
+    background-color: #005fe6;
+    color: hsl(0, 100%, 100%);
 }
 
 .applicator--theme--comments-count-action .comments-count-axn .txt .comments-label---txt
@@ -1064,12 +1053,6 @@ h6
 
 
 /* ------------------ Comments ------------------ */
-.applicator--theme--comments.applicator--comments .comments-toggle---b_l
-{
-    background-color: transparent;
-    color: var(--links--fg-color);
-}
-
 .applicator--theme--comments.applicator--comments .comments-toggle---b .show-hide---txt
 {
     text-decoration: none;
@@ -1210,8 +1193,8 @@ h6
     min-width: 2rem;
     min-height: 2rem;
     
-    background-color: var(--accent-color--pri);
-    color: var(--color--white);
+    background-color: #005fe6;
+    color: hsl(0, 100%, 100%);
     
     font-size: 1rem;
 }
@@ -1235,8 +1218,8 @@ h6
 {
     display: inline-block;
     
-    margin-top: var(--object--spacing-y);
-    margin-bottom: var(--object--spacing-y);
+    margin-top: 1em;
+    margin-bottom: 1em;
     
     padding-top: 0;
     padding-bottom: 0;
@@ -1245,10 +1228,10 @@ h6
 .applicator--theme--excerpt .show-more-glabel---g_l,
 .applicator--theme--excerpt .show-more-axn---a_l
 {
-    padding-left: var(--content--spacing-x);
-    padding-right: var(--content--spacing-x);
+    padding-left: 1rem;
+    padding-right: 1rem;
     
-    background-color: var(--accent-color--pri);
+    background-color: #005fe6;
 }
 
 .show-more-axn---a
@@ -1264,7 +1247,7 @@ h6
 
 .applicator--theme--excerpt .excerpt-link
 {
-    color: black;
+    color: #262626;
     text-decoration: none;
 }
 
@@ -1407,7 +1390,7 @@ h6
     flex: 1 100%;
 }
 
-.applicator--theme--post-format--status.view--multisite-directory .format-status .post---cr
+.applicator--theme--post-format--status.multisite-directory--in .format-status .post---cr
 {
     justify-content: center;
 }
@@ -1445,7 +1428,9 @@ h6
 /* Main Content */
 .applicator--theme--layout .main-post-title---cr,
 .applicator--theme--layout .post-meta---cr,
+.applicator--theme--layout .post-header-aside .comments-axns-snip---cr,
 .applicator--theme--layout .post-content---ct_cr,
+.applicator--theme--layout .post-nav---cr,
 .applicator--theme--layout .comment-md---cr,
 .applicator--theme--layout .breadcrumbs-nav---cr,
 .applicator--theme--layout .post-excerpt---cr,
@@ -1538,6 +1523,49 @@ h6
 .main-actions-widgets---widget-grp
 {
     transform: translateZ(0);
+}
+
+
+
+
+
+/* ------------------ Focus and Hover on Main Header UI Elements ------------------ */
+.tab-key--active .main-menu-toggle---b_l,
+.tab-key--active .main-search--inactive .main-search-toggle---b_l
+{
+    position: relative;
+}
+
+.tab-key--active .main-menu-toggle---b:focus,
+.tab-key--active .main-search--inactive .main-search-toggle---b:focus
+{
+    outline: 0;
+}
+
+.tab-key--active .main-menu-toggle---b_l:before,
+.tab-key--active .main-search--inactive .main-search-toggle---b_l:before
+{
+    content: '';
+    position: absolute;
+    z-index: 0;
+    
+    width: 100%;
+    height: 100%;
+    
+    background-color: #262626;
+    border-radius: 50%;
+    
+    opacity: 0;
+    transform: scale(0);
+    
+    transition: opacity .3s ease-in-out, transform .1s ease-in-out;
+}
+
+.tab-key--active .main-menu-toggle---b:focus .b_l:before,
+.tab-key--active .main-search--inactive .main-search-toggle---b:focus .b_l:before
+{
+    opacity: .25;
+    transform: scale(.85);
 }
 
 
@@ -1652,17 +1680,17 @@ h6
     
     
     /* ------------ Layout - Multisite Directory ------------ */
-    .applicator--theme--layout.main-content-aside--enabled.view--multisite-directory .main-content---ct_cr
+    .applicator--theme--layout.main-content-aside--enabled.multisite-directory--in .main-content---ct_cr
     {
         display: block;
     }
 
-    .applicator--theme--layout.main-content-aside--enabled.view--multisite-directory .primary-content 
+    .applicator--theme--layout.main-content-aside--enabled.multisite-directory--in .primary-content 
     {
         flex: none;
     }
 
-    .applicator--theme--layout.main-content-aside--enabled.view--multisite-directory .secondary-content 
+    .applicator--theme--layout.main-content-aside--enabled.multisite-directory--in .secondary-content 
     {
         flex: none;
     }
