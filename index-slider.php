@@ -5,7 +5,8 @@ if( $current_options['home_banner_strip_enabled'] == 'on' && $current_options['s
 <div class="clearfix"></div>
 <!-- Slider -->
 <?php 
- if($slide_options!='') { ?>
+ if($slide_options!='') {
+ ?>
 <div id="main" role="main">
 	<section class="slider">
 		<ul class="slides">
@@ -26,7 +27,8 @@ if( $current_options['home_banner_strip_enabled'] == 'on' && $current_options['s
 							<?php } else if($current_options['caption_text']!='') {?>
 							<p><?php echo esc_html($current_options['caption_text']); ?></p>	
 							<?php } if($slide_options['link']!=''){ ?>
-							<div><a href="<?php echo esc_url($slide_options['link']); ?>" target="_blank" class="flex-btn"><?php echo esc_html($slide_options['button_text']); ?></a>
+							<div><a href="<?php echo esc_url($slide_options['link']); ?>" <?php if(
+							$slide_options['open_new_tab'] == 'yes') { echo "target='_blank'"; } ?> class="flex-btn"><?php echo esc_html($slide_options['button_text']); ?></a>
 							</div>
 							<?php } 
 							else

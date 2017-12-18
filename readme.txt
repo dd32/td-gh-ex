@@ -55,6 +55,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.9.4
+1. Fixed slider link target issue.
 @version 1.9.3
 1. Update screen reader css.
 @version 1.9.2
