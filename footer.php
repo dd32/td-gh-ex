@@ -11,6 +11,14 @@
 							</ul>
 						</div>
 					</div>
+
+					<nav id="footer-menu">
+						<?php wp_nav_menu( array( 'theme_location' => 'footer', ) ); ?>
+					</nav>
+
+					<div class="clear">
+					</div><!-- .clear -->
+
 					<div id="copyright">
 					<p>
 						 <?php fgymm_show_copyright_text(); ?> <a href="<?php echo esc_url( 'https://tishonator.com/product/fgymm' ); ?>" title="<?php esc_attr_e( 'fgymm Theme', 'fgymm' ); ?>">
