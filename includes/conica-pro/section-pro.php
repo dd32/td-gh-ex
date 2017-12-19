@@ -70,11 +70,11 @@ class Conica_Premium_Customize_Section extends WP_Customize_Section {
 
 		<li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand">
 
-			<h3 class="accordion-section-title">
+			<h3 class="accordion-section-title" title="Conica Premium now only $25">
 				{{ data.title }}
 
 				<# if ( data.pro_text && data.pro_url ) { #>
-					<a href="{{ data.pro_url }}" class="button button-secondary alignright" title="Conica Premium now only $25" target="_blank">{{ data.pro_text }}</a>
+					<a href="{{ data.pro_url }}" class="button button-secondary alignright" target="_blank">{{ data.pro_text }}</a>
 					<div class="conica-prem-tryout"><a href="https://demo.kairaweb.com/demo/#conica" target="_blank">View Premium Demo &amp; Settings</a></div>
 				<# } #>
 			</h3>

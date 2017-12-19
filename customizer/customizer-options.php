@@ -7,8 +7,8 @@
 
 function customizer_library_conica_options() {
 
-	$primary_color = '#d80000';
-	$secondary_color = '#e54814';
+	$primary_color = '#64ace0';
+	$secondary_color = '#148be0';
 
 	$body_font_color = '#3C3C3C';
 	$heading_font_color = '#1d1d1d';
@@ -33,7 +33,7 @@ function customizer_library_conica_options() {
     $panels[] = array(
         'id' => $panel,
         'title' => __( 'Theme Settings', 'conica' ),
-        'priority' => '10'
+        'priority' => '20'
     );
 
     $section = 'conica-panel-website-section-website'; // --------------------------------- Website Layout Settings
@@ -169,7 +169,7 @@ function customizer_library_conica_options() {
         'id' => 'conica-upsell-header',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Add Site Title & Tagline with an uploaded logo<br />- Adjust logo position<br />- Vertically align Header One & Two Navigation<br />- Remove WooCommerce Cart from header', 'conica' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Enable WooCommerce drop down basket/cart<br />- Add Site Title & Tagline with an uploaded logo<br />- Adjust logo position<br />- Vertically align Header One & Two Navigation<br />- Remove WooCommerce Cart from header', 'conica' )
     );
     // --------------------------------------------------------------------------------------- Header Settings
 
@@ -449,7 +449,7 @@ function customizer_library_conica_options() {
     $panels[] = array(
         'id' => $panel,
         'title' => __( 'Text Settings', 'conica' ),
-        'priority' => '10'
+        'priority' => '20'
     );
 
     $section = 'conica-panel-text-section-header'; // ------------------------------------------- Header Text
@@ -580,7 +580,7 @@ function customizer_library_conica_options() {
     $panels[] = array(
         'id' => $panel,
         'title' => __( 'Font Options', 'conica' ),
-        'priority' => '10'
+        'priority' => '30'
     );
 
     $section = 'conica-panel-font-section-site'; // ----------------------------------------- Default Fonts

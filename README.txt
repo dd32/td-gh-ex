@@ -40,13 +40,13 @@ License: MIT License - Code License
 http://fontawesome.io/license/
 
 PixaBay Images:
-Image in /images/demo/slide_demo_01.jpg: CCO by Cuncon, https://pixabay.com/en/sexy-girl-women-lingerie-cute-1721446/
-Image in /images/demo/slide_demo_02.jpg: CCO by Miodarf, https://pixabay.com/en/girl-beauty-model-pretty-outside-1128523/
+Image in /images/demo/slide_demo_01.jpg: CCO by khiemtran87, https://pixabay.com/en/interior-neoclassical-design-luxury-2685522/
+Image in /images/demo/slide_demo_02.jpg: CCO by 3844328, https://pixabay.com/en/architecture-blueprint-floor-plan-1857175/
 
-Image in Screenshot.png - Top: CCO by Cuncon, https://pixabay.com/en/sexy-girl-women-lingerie-cute-1721446/
-Image in Screenshot.png - Bottom Left: CCO by Condesign, https://pixabay.com/en/rose-red-rose-romantic-rose-bloom-812765/
-Image in Screenshot.png - Bottom Middle: CCO by Nile, https://pixabay.com/en/hourglass-time-hours-sand-clock-620397/
-Image in Screenshot.png - Bottom Right: CCO by DGlodowska, https://pixabay.com/en/book-reading-love-story-story-419589/
+Image in Screenshot.png - Top: CCO by khiemtran87, https://pixabay.com/en/interior-neoclassical-design-luxury-2685522/
+Image in Screenshot.png - Bottom Left: CCO by Stux, https://pixabay.com/en/sketch-book-sketch-marker-455698/
+Image in Screenshot.png - Bottom Middle: CCO by WerbeFabrik, https://pixabay.com/en/plan-build-draw-architect-cad-1859392/
+Image in Screenshot.png - Bottom Right: CCO by Eduardo-Silva, https://pixabay.com/en/bathroom-decoration-interiors-2658996/
 
 Pixabay - Distributed under the terms of CC0 1.0 Universal License (Public Domain).
 https://pixabay.com/en/service/terms/
@@ -66,8 +66,8 @@ The theme settings are built into the WordPress Customizer using "Customizer Lib
 license: GPL 2.0+
 https://github.com/devinsays/customizer-library/blob/master/composer.json
 
-The Satori upgrade situated in /upgrade/ displays the features that the premium version includes.
-Satori version is licensed under GPL 2.0+
+The Conica upgrade situated in /upgrade/ displays the features that the premium version includes.
+Conica version is licensed under GPL 2.0+
 
 All setting are self explanatory or have notes explaining what they do or how to use the theme settings.
 View the theme settings under "Appearance" -> Customize.
@@ -78,6 +78,14 @@ View the theme settings under "Appearance" -> Customize.
 2. Featured Images work best at a minimum of 1000 wide and 600 high.
 
 == Changelog ==
+
+#### 1.3.08
+* Styling fixes/tweaks
+* Updated screenshot.png
+* Updated the language.pot file
+Premium: Added new WooCommerce drop down basket/cart
+Premium: Added setting to enable/disable new WooCommerce basket
+Premium: Added color settings for basket/cart
 
 #### 1.3.07
 * Styling fixes/tweaks

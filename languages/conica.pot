@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Conica\n"
-"POT-Creation-Date: 2017-11-16 11:25+0200\n"
+"POT-Creation-Date: 2017-12-19 16:43+0200\n"
 "PO-Revision-Date: 2016-11-02 11:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: Kaira\n"
@@ -219,9 +219,10 @@ msgstr ""
 
 #: customizer/customizer-options.php:172
 msgid ""
-"<b>Premium Extra Features:</b><br />- Add Site Title & Tagline with an "
-"uploaded logo<br />- Adjust logo position<br />- Vertically align Header One "
-"& Two Navigation<br />- Remove WooCommerce Cart from header"
+"<b>Premium Extra Features:</b><br />- Enable WooCommerce drop down basket/"
+"cart<br />- Add Site Title & Tagline with an uploaded logo<br />- Adjust "
+"logo position<br />- Vertically align Header One & Two Navigation<br />- "
+"Remove WooCommerce Cart from header"
 msgstr ""
 
 #: customizer/customizer-options.php:180 customizer/customizer-options.php:497
