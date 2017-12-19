@@ -68,6 +68,12 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.92
+* Style tweaks/fixes
+* Updated the language .pot file
+Premium: Added new social link for SoundCloud (requested)
+Premium: Added new social link for Xing
+
 #### 1.0.91
 * Style tweaks/fixes
 * Added 3 new Social Links - Pinterest / LinkedIn / VKontakte
