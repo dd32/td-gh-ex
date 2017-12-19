@@ -11,6 +11,9 @@ function customizer_library_topshop_options() {
 	$primary_color = '#29a6e5';
 	$secondary_color = '#266ee4';
     
+    $nav_bg_color = '#FFFFFF';
+    $footer_bg_color = '#FFFFFF';
+    
     $body_font_color = '#4F4F4F';
     $heading_font_color = '#5E5E5E';
 
@@ -178,12 +181,38 @@ function customizer_library_topshop_options() {
         'choices' => $choices,
         'default' => 'blog-use-featured-image'
     );
+    $choices = array(
+        'blog-display-full-text' => __( 'Full Text', 'topshop' ),
+        'blog-display-summary' => __( 'Summary', 'topshop' )
+    );
+    $options['topshop-article-content-display'] = array(
+        'id' => 'topshop-article-content-display',
+        'label'   => __( 'For each article display:', 'topshop' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => 'blog-display-full-text'
+    );
+    $options['topshop-article-content-word-count'] = array(
+        'id' => 'topshop-article-content-word-count',
+        'label'   => __( 'Amount of words displayed', 'topshop' ),
+        'section' => $section,
+        'type'    => 'number',
+        'default' => 40
+    );
+    $options['topshop-article-content-readmore'] = array(
+        'id' => 'topshop-article-content-readmore',
+        'label'   => __( 'Read More Text', 'topshop' ),
+        'section' => $section,
+        'type'    => 'text',
+        'default' => '...Read More'
+    );
     
     $options['topshop-upsell-blog'] = array(
         'id' => 'topshop-upsell-blog',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Select between blog side or top layout<br />- Change Blog List/Archive/Single pages to full width<br />- Change WooCommerce Shop/Archive/single pages to full width', 'topshop' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Select between blog side or top layouts<br />- Set Blog, Archive & Single pages to Left Sidebar<br />- Set Blog, Archive & Single pages to full width<br />- Set WooCommerce Shop, Archive & Product pages to Left Sidebar<br />- Set WooCommerce Shop, Archive & Product pages to Full Width', 'topshop' )
     );
     
     // Slider Settings
@@ -252,6 +281,129 @@ function customizer_library_topshop_options() {
         'section' => $section,
         'type'    => 'textarea',
         'description' => __( 'Add custom CSS to your theme', 'topshop' )
+    );
+    
+    $panel = 'topshop-panel-layout-colors';
+    
+    $panels[] = array(
+        'id' => $panel,
+        'title' => __( 'Layout Colors', 'topshop' ),
+        'priority' => '40'
+    );
+    
+    $section = 'topshop-panel-layout-colors-section-header';
+
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'Header', 'topshop' ),
+        'priority' => '10',
+        'panel' => $panel
+    );
+    
+    $options['topshop-header-bg-color'] = array(
+        'id' => 'topshop-header-bg-color',
+        'label'   => __( 'Background Color', 'topshop' ),
+        'section' => $section,
+        'type'    => 'color',
+        'default' => '#FFFFFF',
+    );
+    $options['topshop-header-font-color'] = array(
+        'id' => 'topshop-header-font-color',
+        'label'   => __( 'Font Color', 'topshop' ),
+        'section' => $section,
+        'type'    => 'color',
+        'default' => '#777777',
+    );
+    $options['topshop-topbar-bg-color'] = array(
+        'id' => 'topshop-topbar-bg-color',
+        'label'   => __( 'Top Bar Background Color', 'topshop' ),
+        'section' => $section,
+        'type'    => 'color',
+        'default' => '#FFFFFF',
+    );
+    $options['topshop-topbar-font-color'] = array(
+        'id' => 'topshop-topbar-font-color',
+        'label'   => __( 'Top Bar Background Color', 'topshop' ),
+        'section' => $section,
+        'type'    => 'color',
+        'default' => '#777777',
+    );
+    $options['topshop-nav-color'] = array(
+        'id' => 'topshop-nav-color',
+        'label'   => __( 'Navigation Background Color', 'topshop' ),
+        'section' => $section,
+        'type'    => 'color',
+        'default' => $nav_bg_color,
+    );
+    $options['topshop-nav-font-color'] = array(
+        'id' => 'topshop-nav-font-color',
+        'label'   => __( 'Navigation Font Color', 'topshop' ),
+        'section' => $section,
+        'type'    => 'color',
+        'default' => '#626262',
+    );
+    
+    $section = 'topshop-panel-layout-colors-section-pages';
+
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'Page', 'topshop' ),
+        'priority' => '20',
+        'panel' => $panel
+    );
+    
+    $options['topshop-sidebar-head-color'] = array(
+        'id' => 'topshop-sidebar-head-color',
+        'label'   => __( 'Sidebar Headings Color', 'topshop' ),
+        'section' => $section,
+        'type'    => 'color',
+        'default' => '#4D4D4D',
+    );
+    
+    $section = 'topshop-panel-layout-colors-section-footer';
+
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'Footer', 'topshop' ),
+        'priority' => '20',
+        'panel' => $panel
+    );
+    
+    $options['topshop-footer-color'] = array(
+        'id' => 'topshop-footer-color',
+        'label'   => __( 'Background Color', 'topshop' ),
+        'section' => $section,
+        'type'    => 'color',
+        'default' => $footer_bg_color,
+    );
+    $options['topshop-footer-head-font-color'] = array(
+        'id' => 'topshop-footer-head-font-color',
+        'label'   => __( 'Heading Font Color', 'topshop' ),
+        'section' => $section,
+        'type'    => 'color',
+        'default' => '#4D4D4D',
+    );
+    $options['topshop-footer-font-color'] = array(
+        'id' => 'topshop-footer-font-color',
+        'label'   => __( 'Footer Font Color', 'topshop' ),
+        'section' => $section,
+        'type'    => 'color',
+        'default' => '#4F4F4F',
+    );
+    
+    $options['topshop-footer-bottombar-bg-color'] = array(
+        'id' => 'topshop-footer-bottombar-bg-color',
+        'label'   => __( 'Bottom Bar Background Color', 'topshop' ),
+        'section' => $section,
+        'type'    => 'color',
+        'default' => $footer_bg_color,
+    );
+    $options['topshop-footer-bottombar-font-color'] = array(
+        'id' => 'topshop-footer-bottombar-font-color',
+        'label'   => __( 'Bottom Bar Font Color', 'topshop' ),
+        'section' => $section,
+        'type'    => 'color',
+        'default' => '#777777',
     );
     
     // Colors

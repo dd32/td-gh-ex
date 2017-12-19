@@ -33,6 +33,25 @@
             }
         }
         
+        // Show / Hide Blog Summary Settings
+        var topshop_blg_value = $( '#customize-control-topshop-article-content-display select' ).val();
+        topshop_blg_type_check( topshop_blg_value );
+        
+        $( '#customize-control-topshop-article-content-display select' ).on( 'change', function() {
+            var topshop_blg_select_value = $( this ).val();
+            topshop_blg_type_check( topshop_blg_select_value );
+        });
+        
+        function topshop_blg_type_check( topshop_blg_select_value ) {
+            if ( topshop_blg_select_value == 'blog-display-summary' ) {
+                $( '#sub-accordion-section-topshop-panel-layout-section-blog #customize-control-topshop-article-content-word-count' ).show();
+                $( '#sub-accordion-section-topshop-panel-layout-section-blog #customize-control-topshop-article-content-readmore' ).show();
+            } else {
+                $( '#sub-accordion-section-topshop-panel-layout-section-blog #customize-control-topshop-article-content-word-count' ).hide();
+                $( '#sub-accordion-section-topshop-panel-layout-section-blog #customize-control-topshop-article-content-readmore' ).hide();
+            }
+        }
+        
     } );
     
 } )( jQuery );

@@ -70,6 +70,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.12
+* Added a bunch of site wide Layout Color settings
+* Added settings to set and adjust blog list summary
+* Updated language .pot file
+
 #### 1.3.11
 * Added admin help links/styling
 * Updated language .pot file

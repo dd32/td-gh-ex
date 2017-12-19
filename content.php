@@ -51,16 +51,37 @@ if ( has_post_thumbnail() ) {
     	</header><!-- .entry-header -->
 
     	<div class="entry-content">
-    		<?php
-            if ( has_excerpt() ) :
-                the_excerpt();
-            else :
-                /* translators: %s: Name of current post */
-                the_content( sprintf(
-                    wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'topshop' ), array( 'span' => array( 'class' => array() ) ) ),
-                    the_title( '<span class="screen-reader-text">"', '"</span>', false )
-                ) );
-            endif; ?>
+    		
+            <?php if ( get_theme_mod( 'topshop-article-content-display' ) == 'blog-display-summary' ) : ?>
+                    
+                <?php
+                $article_content = get_the_content();
+                $word_count = 40;
+                if ( get_theme_mod( 'topshop-article-content-word-count' ) ) {
+                    $word_count = get_theme_mod( 'topshop-article-content-word-count' );
+                }
+                $read_more_txt = '...Read More';
+                if ( get_theme_mod( 'topshop-article-content-readmore' ) ) {
+                    $read_more_txt = get_theme_mod( 'topshop-article-content-readmore' );
+                }
+                
+                $trimmed_content = wp_trim_words( $article_content, $word_count, '<a href="'.get_the_permalink().'" class="readmore">'.$read_more_txt.'</a>' );
+                echo '<p>'.$trimmed_content.'</p>'; ?>
+                
+            <?php else : ?>
+            
+                <?php
+                if ( has_excerpt() ) :
+                    the_excerpt();
+                else :
+                    /* translators: %s: Name of current post */
+                    the_content( sprintf(
+                        wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'topshop' ), array( 'span' => array( 'class' => array() ) ) ),
+                        the_title( '<span class="screen-reader-text">"', '"</span>', false )
+                    ) );
+                endif; ?>
+                
+            <?php endif; ?>
 
     		<?php
     			wp_link_pages( array(

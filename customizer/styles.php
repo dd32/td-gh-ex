@@ -299,7 +299,240 @@ function customizer_library_topshop_build_styles() {
             )
         ) );
     }
+    
+    // Header Colors
+    $setting = 'topshop-header-bg-color';
+    $mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
 
+    if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+        $color = sanitize_hex_color( $mod );
+
+        Customizer_Library_Styles()->add( array(
+            'selectors' => array(
+                '.site-header,
+                .topshop-header-layout-standard .site-top-bar-left,
+                .topshop-header-layout-standard .site-top-bar-right,
+                .topshop-header-layout-centered .site-top-bar-left,
+                .topshop-header-layout-centered .site-top-bar-right,
+                .topshop-header-layout-three .site-top-bar-left,
+                .topshop-header-layout-three .site-top-bar-right'
+            ),
+            'declarations' => array(
+                'background-color' => $color
+            )
+        ) );
+    }
+    $setting = 'topshop-header-font-color';
+    $mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+    if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+        $color = sanitize_hex_color( $mod );
+
+        Customizer_Library_Styles()->add( array(
+            'selectors' => array(
+                '.site-header'
+            ),
+            'declarations' => array(
+                'color' => $color
+            )
+        ) );
+    }
+    // Header Top Bar Colors
+    $setting = 'topshop-topbar-bg-color';
+    $mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+    if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+        $color = sanitize_hex_color( $mod );
+
+        Customizer_Library_Styles()->add( array(
+            'selectors' => array(
+                '.site-top-bar,
+                .topshop-header-layout-standard .site-top-bar-left,
+                .topshop-header-layout-standard .site-top-bar-right,
+                .topshop-header-layout-centered .site-top-bar-left,
+                .topshop-header-layout-centered .site-top-bar-right,
+                .topshop-header-layout-three .site-top-bar-left,
+                .topshop-header-layout-three .site-top-bar-right'
+            ),
+            'declarations' => array(
+                'background-color' => $color
+            )
+        ) );
+    }
+    $setting = 'topshop-topbar-font-color';
+    $mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+    if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+        $color = sanitize_hex_color( $mod );
+
+        Customizer_Library_Styles()->add( array(
+            'selectors' => array(
+                '.site-top-bar'
+            ),
+            'declarations' => array(
+                'color' => $color
+            )
+        ) );
+    }
+    
+    $setting = 'topshop-nav-color';
+    $mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+    if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+        $color = sanitize_hex_color( $mod );
+
+        Customizer_Library_Styles()->add( array(
+            'selectors' => array(
+                '.main-navigation'
+            ),
+            'declarations' => array(
+                'background-color' => $color
+            )
+        ) );
+    }
+    $setting = 'topshop-nav-font-color';
+    $mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+    if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+        $color = sanitize_hex_color( $mod );
+
+        Customizer_Library_Styles()->add( array(
+            'selectors' => array(
+                '.main-navigation a'
+            ),
+            'declarations' => array(
+                'color' => $color
+            )
+        ) );
+    }
+    
+    $setting = 'topshop-sidebar-head-color';
+    $mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+    if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+        $color = sanitize_hex_color( $mod );
+        $rgba_color = customizer_library_hex_to_rgb( $color );
+
+        Customizer_Library_Styles()->add( array(
+            'selectors' => array(
+                '.widget-area .widget-title,
+                .widget-area .widgettitle'
+            ),
+            'declarations' => array(
+                'color' => $color
+            )
+        ) );
+        Customizer_Library_Styles()->add( array(
+            'selectors' => array(
+                '.widget-area .widget-title,
+                .widget-area .widgettitle'
+            ),
+            'declarations' => array(
+                'border-bottom' => '1px solid rgba(' . $rgba_color['r'] . ', ' . $rgba_color['g'] . ', ' . $rgba_color['b'] . ', 0.2);'
+            )
+        ) );
+    }
+    
+    // Footer Colors
+    $setting = 'topshop-footer-color';
+    $mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+    if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+        $color = sanitize_hex_color( $mod );
+
+        Customizer_Library_Styles()->add( array(
+            'selectors' => array(
+                '.site-footer'
+            ),
+            'declarations' => array(
+                'background-color' => $color
+            )
+        ) );
+    }
+    $setting = 'topshop-footer-font-color';
+    $mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+    if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+        $color = sanitize_hex_color( $mod );
+
+        Customizer_Library_Styles()->add( array(
+            'selectors' => array(
+                '.site-footer,
+                .site-footer-widgets .widget a'
+            ),
+            'declarations' => array(
+                'color' => $color
+            )
+        ) );
+    }
+    $setting = 'topshop-footer-head-font-color';
+    $mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+    if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+        $color = sanitize_hex_color( $mod );
+        $rgba_color = customizer_library_hex_to_rgb( $color );
+
+        Customizer_Library_Styles()->add( array(
+            'selectors' => array(
+                '.site-footer-widgets li .widgettitle,
+                .site-footer-widgets li .widget-title'
+            ),
+            'declarations' => array(
+                'color' => $color . ' !important'
+            )
+        ) );
+        Customizer_Library_Styles()->add( array(
+            'selectors' => array(
+                '.site-footer-widgets li .widgettitle,
+                .site-footer-widgets li .widget-title'
+            ),
+            'declarations' => array(
+                'border-bottom' => '1px solid rgba(' . $rgba_color['r'] . ', ' . $rgba_color['g'] . ', ' . $rgba_color['b'] . ', 0.2) !important;'
+            )
+        ) );
+    }
+    $setting = 'topshop-footer-bottombar-bg-color';
+    $mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+    if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+        $color = sanitize_hex_color( $mod );
+
+        Customizer_Library_Styles()->add( array(
+            'selectors' => array(
+                '.site-footer-bottom-bar'
+            ),
+            'declarations' => array(
+                'background-color' => $color
+            )
+        ) );
+    }
+    $setting = 'topshop-footer-bottombar-font-color';
+    $mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+    if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+        $color = sanitize_hex_color( $mod );
+
+        Customizer_Library_Styles()->add( array(
+            'selectors' => array(
+                '.site-footer-bottom-bar'
+            ),
+            'declarations' => array(
+                'color' => $color
+            )
+        ) );
+    }
 
 }
 endif;
