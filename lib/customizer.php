@@ -118,41 +118,161 @@ $wp_customize->add_setting(
 				'choices'		=> array(
 				'topheaderlayout_a' => array(
 				        'label' => esc_html__( 'Left search/Right social icon', 'backyard' ),
-                        'url'   => get_template_directory_uri() . '/assets/images/left-logo.jpg',
+                        'url'   => get_template_directory_uri() . '/assets/images/leftsearch-righticon.jpg',
                     ),
 				'topheaderlayout_b' => array(
 				'label' => esc_html__( 'Right search/Left social icon', 'backyard' ),
-                        'url'   => get_template_directory_uri() . '/assets/images/right-logo.jpg',
+                        'url'   => get_template_directory_uri() . '/assets/images/rightsearch-lefticon.jpg',
                     ),
 					'topheaderlayout_c' => array(
 					'label' => esc_html__( 'Left search', 'backyard' ),
-                        'url'   => get_template_directory_uri() . '/assets/images/cetner-logo.jpg',
+                        'url'   => get_template_directory_uri() . '/assets/images/leftsearch.jpg',
                     ),
 					'topheaderlayout_d' => array(
 					'label' => esc_html__( 'Right search', 'backyard' ),
-                        'url'   => get_template_directory_uri() . '/assets/images/cetner-logo.jpg',
+                        'url'   => get_template_directory_uri() . '/assets/images/rightsearch.jpg',
                     ),
 					'topheaderlayout_e' => array(
 					'label' => esc_html__( 'Left social icon', 'backyard' ),
-                        'url'   => get_template_directory_uri() . '/assets/images/cetner-logo.jpg',
+                        'url'   => get_template_directory_uri() . '/assets/images/lefticon.jpg',
                     ),
 					'topheaderlayout_f' => array(
 					     'label' => esc_html__( 'Right social icon', 'backyard' ),
-                        'url'   => get_template_directory_uri() . '/assets/images/cetner-logo.jpg',
+                        'url'   => get_template_directory_uri() . '/assets/images/righticon.jpg',
                     ),
 					'topheaderlayout_g' => array(
 					     'label' => esc_html__( 'Center search', 'backyard' ),
-                        'url'   => get_template_directory_uri() . '/assets/images/cetner-logo.jpg',
+                        'url'   => get_template_directory_uri() . '/assets/images/centersearch.jpg',
                     ),
 					'topheaderlayout_h' => array(
 					     'label' => esc_html__( 'Center social icon', 'backyard' ),
-                        'url'   => get_template_directory_uri() . '/assets/images/cetner-logo.jpg',
+                        'url'   => get_template_directory_uri() . '/assets/images/centericon.jpg',
                     ),
 					
 				)
 			)
 		)
 	);
+	//Typography
+	$wp_customize->add_section(
+   'typography_settings',
+   array(
+       'title' => esc_html__('Typography', 'backyard'),
+       'priority' => 1,
+	   'panel'       => 'backyard_options',
+   )
+);
+$wp_customize->add_setting(
+'heading_h1',array(
+'default' => '',
+'sanitize_callback' => 'sanitize_text_field',
+'transport'=> 'refresh',));
+
+$wp_customize->add_control( new backyard_Customizer_Range_Value_Control( $wp_customize, 'heading_h1', array(
+	'type'     => 'range-value',
+	'section'  => 'typography_settings',
+	'settings' => 'heading_h1',
+	'label'    => esc_html__( 'H1 font size','backyard' ),
+	'input_attrs' => array(
+		'min'    => 1,
+		'max'    => 70,
+		'step'   => 1,
+		'suffix' => 'px', //optional suffix
+  	),
+) ) );
+//h2
+$wp_customize->add_setting(
+'heading_h2',array(
+'default' => '',
+'sanitize_callback' => 'sanitize_text_field',
+'transport'=> 'refresh',));
+
+$wp_customize->add_control( new backyard_Customizer_Range_Value_Control( $wp_customize, 'heading_h2', array(
+	'type'     => 'range-value',
+	'section'  => 'typography_settings',
+	'settings' => 'heading_h2',
+	'label'    => esc_html__( 'H2 font size','backyard' ),
+	'input_attrs' => array(
+		'min'    => 1,
+		'max'    => 70,
+		'step'   => 1,
+		'suffix' => 'px', //optional suffix
+  	),
+) ) );
+$wp_customize->add_setting(
+'heading_h3',array(
+'default' => '',
+'sanitize_callback' => 'sanitize_text_field',
+'transport'=> 'refresh',));
+
+$wp_customize->add_control( new backyard_Customizer_Range_Value_Control( $wp_customize, 'heading_h3', array(
+	'type'     => 'range-value',
+	'section'  => 'typography_settings',
+	'settings' => 'heading_h3',
+	'label'    => esc_html__( 'H3 font size','backyard' ),
+	'input_attrs' => array(
+		'min'    => 1,
+		'max'    => 70,
+		'step'   => 1,
+		'suffix' => 'px', //optional suffix
+  	),
+) ) );
+$wp_customize->add_setting(
+'heading_h4',array(
+'default' => '',
+'sanitize_callback' => 'sanitize_text_field',
+'transport'=> 'refresh',));
+
+$wp_customize->add_control( new backyard_Customizer_Range_Value_Control( $wp_customize, 'heading_h4', array(
+	'type'     => 'range-value',
+	'section'  => 'typography_settings',
+	'settings' => 'heading_h4',
+	'label'    => esc_html__( 'H4 font size','backyard' ),
+	'input_attrs' => array(
+		'min'    => 1,
+		'max'    => 70,
+		'step'   => 1,
+		'suffix' => 'px', //optional suffix
+  	),
+) ) );
+
+$wp_customize->add_setting(
+'heading_h5',array(
+'default' => '',
+'sanitize_callback' => 'sanitize_text_field',
+'transport'=> 'refresh',));
+
+$wp_customize->add_control( new backyard_Customizer_Range_Value_Control( $wp_customize, 'heading_h5', array(
+	'type'     => 'range-value',
+	'section'  => 'typography_settings',
+	'settings' => 'heading_h5',
+	'label'    => esc_html__( 'H5 font size','backyard' ),
+	'input_attrs' => array(
+		'min'    => 1,
+		'max'    => 70,
+		'step'   => 1,
+		'suffix' => 'px', //optional suffix
+  	),
+) ) );
+$wp_customize->add_setting(
+'heading_h6',array(
+'default' => '',
+'sanitize_callback' => 'sanitize_text_field',
+'transport'=> 'refresh',));
+
+$wp_customize->add_control( new backyard_Customizer_Range_Value_Control( $wp_customize, 'heading_h6', array(
+	'type'     => 'range-value',
+	'section'  => 'typography_settings',
+	'settings' => 'heading_h6',
+	'label'    => esc_html__( 'H6 font size','backyard' ),
+	'input_attrs' => array(
+		'min'    => 1,
+		'max'    => 70,
+		'step'   => 1,
+		'suffix' => 'px', //optional suffix
+  	),
+) ) );
+	//end
 	//footer
 	$wp_customize->add_section(
    'footer_settings',
