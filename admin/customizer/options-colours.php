@@ -165,7 +165,7 @@ function graphene_customizer_colour_options( $wp_customize ){
 		'options'	=> array(
             'archive_bg'        => array( 'label' => __( 'Archive label background', 'graphene' ) ),
 		    'archive_border'    => array( 'label' => __( 'Archive label border', 'graphene' ) ),
-		    'archive_label'     => array( 'label' => __( 'Archive label label colour', 'graphene' ) ),
+		    'archive_label'     => array( 'label' => __( 'Archive label title colour', 'graphene' ) ),
 		    'archive_text'      => array( 'label' => __( 'Archive label text colour', 'graphene' ) ),
 		)
 	);

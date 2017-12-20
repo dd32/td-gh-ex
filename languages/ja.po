@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graphene 1.0 theme for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-05 07:04+0800\n"
-"PO-Revision-Date: 2017-11-05 07:09+0800\n"
+"POT-Creation-Date: 2017-11-24 16:21+0800\n"
+"PO-Revision-Date: 2017-11-24 16:31+0800\n"
 "Last-Translator: Masato Maekawa <masato@maekawa.com>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -13,8 +13,8 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: D:/[MyVault]/MyProjects/[Websites]/theme-graphene/site/wp-"
 "content/themes/graphene/graphene\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 2.0.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -469,7 +469,7 @@ msgstr "ドロップダウンメニューの表示幅"
 msgid "Dropdown menu text (active state)"
 msgstr "ドロップダウンメニューの表示幅"
 
-#: admin/customizer/options-colours.php:48 inc/setup.php:95
+#: admin/customizer/options-colours.php:48 inc/setup.php:97
 msgid "Secondary Menu"
 msgstr "第2メニュー"
 
@@ -828,7 +828,7 @@ msgstr ""
 #: admin/customizer/options-general.php:46
 #, fuzzy
 #| msgid "Header image by Syahir Hakim"
-msgid "Header image height"
+msgid "Header image max height"
 msgstr "ヘッダー画像 by Syahir Hakim\""
 
 #: admin/customizer/options-general.php:53
@@ -1538,7 +1538,7 @@ msgstr ""
 #: admin/options.php:26
 #, fuzzy, php-format
 #| msgid "%1$s at %2$s"
-msgid "Version %1$s, by %2$s"
+msgid "Version %1$s by %2$s"
 msgstr "%1$s at %2$s"
 
 #: admin/options.php:32
@@ -1677,20 +1677,16 @@ msgstr ""
 "パスワードで保護された記事。コメントするにはパスワードを入力してください。"
 
 #: comments.php:50 inc/loop.php:818 loop-author.php:58
-#, fuzzy, php-format
-#| msgid "% comments"
+#, php-format
 msgid "%s comment"
 msgid_plural "%s comments"
-msgstr[0] "% 個のコメント"
-msgstr[1] "% 個のコメント"
+msgstr[0] "%s 個のコメント"
 
 #: comments.php:52
-#, fuzzy, php-format
-#| msgid "% pings"
+#, php-format
 msgid "%s ping"
 msgid_plural "%s pings"
-msgstr[0] "% 個のping"
-msgstr[1] "% 個のping"
+msgstr[0] "%s 個のping"
 
 #: comments.php:82
 #, fuzzy
@@ -1716,8 +1712,6 @@ msgid "Made with %1$s by %2$s."
 msgstr ""
 
 #: footer.php:76
-#, fuzzy
-#| msgid "Graphene Theme Options"
 msgid "Graphene Themes"
 msgstr "Grapheneの設定"
 
@@ -1760,8 +1754,6 @@ msgid "Your message"
 msgstr "本文:"
 
 #: inc/comments.php:184
-#, fuzzy
-#| msgid "Leave comment"
 msgid "Delete this comment"
 msgstr "コメントをどうぞ"
 
@@ -1774,8 +1766,6 @@ msgid "Spam"
 msgstr ""
 
 #: inc/comments.php:213
-#, fuzzy
-#| msgid "Leave comment"
 msgid "Fetch more comments"
 msgstr "コメントをどうぞ"
 
@@ -1816,9 +1806,9 @@ msgstr ""
 msgid "Load more"
 msgstr ""
 
-#: inc/loop.php:99
-msgid "Continue reading &raquo;"
-msgstr "続きを読む &raquo;"
+#: inc/loop.php:99 loop.php:36
+msgid "Continue reading"
+msgstr "続きを読む"
 
 #: inc/loop.php:220
 msgid "&laquo; Prev"
@@ -1873,24 +1863,24 @@ msgstr "コメントをどうぞ"
 msgid "In this section"
 msgstr ""
 
-#: inc/menus.php:135
+#: inc/menus.php:136
 msgid "FontAwesome Icon Name"
 msgstr ""
 
-#: inc/menus.php:178
+#: inc/menus.php:179
 #, php-format
 msgid "Choose from 580+ %s"
 msgstr ""
 
-#: inc/menus.php:178
+#: inc/menus.php:179
 msgid "available icons"
 msgstr ""
 
-#: inc/menus.php:223
+#: inc/menus.php:224
 msgid "Home"
 msgstr "ホーム"
 
-#: inc/menus.php:295
+#: inc/menus.php:296
 #, fuzzy, php-format
 #| msgid "(No title)"
 msgid "#%d (no title)"
@@ -1916,7 +1906,6 @@ msgstr ""
 msgid "Fetching %1$s of %2$s item left ..."
 msgid_plural "Fetching %1$s of %2$s items left ..."
 msgstr[0] ""
-msgstr[1] ""
 
 #: inc/scripts.php:89
 msgid "All loaded!"
@@ -1927,7 +1916,6 @@ msgstr ""
 msgid "Fetching %1$s of %2$s comments left ..."
 msgid_plural "Fetching %1$s of %2$s comments left ..."
 msgstr[0] ""
-msgstr[1] ""
 
 #: inc/scripts.php:102
 #, fuzzy
@@ -1935,33 +1923,33 @@ msgstr[1] ""
 msgid "All comments loaded!"
 msgstr "% 個のコメント"
 
-#: inc/setup.php:94
+#: inc/setup.php:96
 msgid "Header Menu"
 msgstr "ヘッダーメニュー"
 
-#: inc/setup.php:96
+#: inc/setup.php:98
 #, fuzzy
 #| msgid "Footer Options"
 msgid "Footer Menu"
 msgstr "フッター設定"
 
-#: inc/setup.php:146
+#: inc/setup.php:148
 msgid "Forest"
 msgstr ""
 
-#: inc/setup.php:151
+#: inc/setup.php:153
 msgid "Mountains"
 msgstr ""
 
-#: inc/setup.php:156
+#: inc/setup.php:158
 msgid "Road"
 msgstr ""
 
-#: inc/setup.php:160
+#: inc/setup.php:162
 msgid "Header image by Syahir Hakim"
 msgstr "ヘッダー画像 by Syahir Hakim\""
 
-#: inc/setup.php:164
+#: inc/setup.php:166
 msgid ""
 "This is the default Graphene theme header image, cropped from image by "
 "Quantin Houyoux at sxc.hu"
@@ -1969,18 +1957,18 @@ msgstr ""
 "Grapheneテーマのデフォルトヘッダー画像で、Quantin Houyoux が sxc.hu に投稿し"
 "た画像を切り取ったものです。"
 
-#: inc/setup.php:168 inc/setup.php:172 inc/setup.php:176 inc/setup.php:180
-#: inc/setup.php:184
+#: inc/setup.php:170 inc/setup.php:174 inc/setup.php:178 inc/setup.php:182
+#: inc/setup.php:186
 msgid "Header image cropped from image by Ilco at sxc.hu"
 msgstr "ヘッダー画像はsxc.huのIlcoによる画像を切り抜いたものです"
 
-#: inc/setup.php:205
+#: inc/setup.php:207
 #, fuzzy
 #| msgid "Graphene Display Options"
 msgid "Graphene - Sidebar One"
 msgstr "Grapheneの表示オプション"
 
-#: inc/setup.php:207
+#: inc/setup.php:209
 #, fuzzy
 #| msgid ""
 #| "The right sidebar widget area that will only be displayed on the front "
@@ -1990,11 +1978,11 @@ msgid ""
 "side)."
 msgstr "右サイドバー・ウィジェットエリアはフロントページのみ表示されます。"
 
-#: inc/setup.php:214
+#: inc/setup.php:216
 msgid "Graphene - Sidebar Two"
 msgstr ""
 
-#: inc/setup.php:216
+#: inc/setup.php:218
 #, fuzzy
 #| msgid ""
 #| "The right sidebar widget area that will only be displayed on the front "
@@ -2004,13 +1992,13 @@ msgid ""
 "side)."
 msgstr "右サイドバー・ウィジェットエリアはフロントページのみ表示されます。"
 
-#: inc/setup.php:234
+#: inc/setup.php:236
 #, fuzzy
 #| msgid "Graphene FAQs"
 msgid "Graphene - Footer"
 msgstr "GrapheneのFAQ"
 
-#: inc/setup.php:236
+#: inc/setup.php:238
 msgid ""
 "The footer widget area. Leave empty to disable. Set the number of columns to "
 "display at the theme's Display Options page."
@@ -2018,11 +2006,11 @@ msgstr ""
 "フッター・ウィジェット領域。空のままだと使用不可。テーマの表示オプションで表"
 "示されるコラム数を設定してください"
 
-#: inc/setup.php:251
+#: inc/setup.php:253
 msgid "Graphene - Sidebar One (Front Page)"
 msgstr ""
 
-#: inc/setup.php:253
+#: inc/setup.php:255
 #, fuzzy
 #| msgid ""
 #| "The right sidebar widget area that will only be displayed on the front "
@@ -2031,11 +2019,11 @@ msgid ""
 "The first sidebar widget area that will only be displayed on the front page."
 msgstr "右サイドバー・ウィジェットエリアはフロントページのみ表示されます。"
 
-#: inc/setup.php:260
+#: inc/setup.php:262
 msgid "Graphene - Sidebar Two (Front Page)"
 msgstr ""
 
-#: inc/setup.php:262
+#: inc/setup.php:264
 #, fuzzy
 #| msgid ""
 #| "The right sidebar widget area that will only be displayed on the front "
@@ -2044,11 +2032,11 @@ msgid ""
 "The second sidebar widget area that will only be displayed on the front page."
 msgstr "右サイドバー・ウィジェットエリアはフロントページのみ表示されます。"
 
-#: inc/setup.php:271
+#: inc/setup.php:273
 msgid "Graphene - Footer (Front Page)"
 msgstr ""
 
-#: inc/setup.php:273
+#: inc/setup.php:275
 msgid ""
 "The footer widget area that will only be displayed on the front page. Leave "
 "empty to disable. Set the number of columns to display at the theme's "
@@ -2057,19 +2045,19 @@ msgstr ""
 "フロントページにのみ表示されるフッター・ウィジェット領域。空のままだと使用不"
 "可。テーマの表示オプションでコラム数を設定してください。"
 
-#: inc/setup.php:283
+#: inc/setup.php:285
 #, fuzzy
 #| msgid "Graphene Display"
 msgid "Graphene - Header"
 msgstr "Grapheneの表示"
 
-#: inc/setup.php:285
+#: inc/setup.php:287
 #, fuzzy
 #| msgid "The right sidebar widget area."
 msgid "The header widget area."
 msgstr "右サイドバー・ウィジェット領域"
 
-#: inc/setup.php:302
+#: inc/setup.php:304
 #, php-format
 msgid ""
 "Dynamically added widget area. This widget area is attached to the %s action "
@@ -2114,18 +2102,11 @@ msgstr ""
 msgid "Permanent link to this article:"
 msgstr "%s へのパーマリンク"
 
-#: loop.php:36
-#, fuzzy
-#| msgid "Continue reading &raquo;"
-msgid "Continue reading"
-msgstr "続きを読む &raquo;"
-
 #: search-404.php:17
 #, php-format
 msgid "Found %1$s search result for keyword: %2$s"
 msgid_plural "Found %1$s search results for keyword: %2$s"
 msgstr[0] ""
-msgstr[1] ""
 
 #: search-404.php:26
 msgid "Suggested results"
@@ -2145,9 +2126,6 @@ msgid_plural ""
 msgstr[0] ""
 "キーワード %s で検索を行いました。 このリストからお探しのものを見つけてくださ"
 "い:"
-msgstr[1] ""
-"キーワード %s で検索を行いました。 このリストからお探しのものを見つけてくださ"
-"い:"
 
 #: search-404.php:52
 msgid ""
@@ -2163,7 +2141,6 @@ msgstr ""
 msgid "%1$d result for %2$s"
 msgid_plural "%1$d results for %2$s"
 msgstr[0] "%1$s at %2$s"
-msgstr[1] "%1$s at %2$s"
 
 #: searchform.php:3
 msgid "Search"
@@ -2223,6 +2200,9 @@ msgstr ""
 #: template-twocolumnsright.php:13
 msgid "Two columns, sidebar on the left"
 msgstr ""
+
+#~ msgid "Continue reading &raquo;"
+#~ msgstr "続きを読む &raquo;"
 
 #~ msgid "1 comment"
 #~ msgstr "1 個のコメント"

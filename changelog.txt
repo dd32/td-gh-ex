@@ -4,6 +4,17 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.1.3
+	* Added: graphene_header widget hook now appears above the header image instead of after
+	* Added: Translations migrated to GlotPress for the following languages: Romanian, Swedish, Turkish, Croatian, Italian, English (UK)
+	* Fixed: Update all language files for "Continue Reading" string
+	* Fixed: Graphene action hooks map site reinstated
+	* Fixed: PHP notice when using default menu
+	* Fixed: Collapsing Categories plugin conflict with Bootstrap styling
+	* Fixed: Alternative front page footer widget area missing columns
+	* Fixed: Site administrator in WordPress Multisite can't access theme settings in Customizer
+	* Fixed: Empty space in footer widget area when set to 5 columns
+
 Version 2.1.2
 	* Fixed: Inconsistent header height with varying screen sizes
 	* Fixed: Current commenter's name not automatically filled in comment form

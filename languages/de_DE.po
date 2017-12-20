@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Graphene 1.9.2 theme for WordPress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-05 07:04+0800\n"
-"PO-Revision-Date: 2017-11-05 07:06+0800\n"
+"POT-Creation-Date: 2017-11-24 16:21+0800\n"
+"PO-Revision-Date: 2017-11-24 16:26+0800\n"
 "Last-Translator: KS <k.siedentop@gmx.de>\n"
 "Language-Team: Krissie <kris.sie@38.de>\n"
 "Language: de_DE\n"
@@ -341,16 +341,12 @@ msgid "Reset settings"
 msgstr "Auf Standardeinstellungen zurücksetzen"
 
 #: admin/customizer/controls.php:400 admin/customizer/options-utilities.php:38
-#, fuzzy
-#| msgid "Export presets"
 msgid "Export settings"
-msgstr "Vorlagen exportieren"
+msgstr "Einstellungen exportieren"
 
 #: admin/customizer/controls.php:422 admin/customizer/options-utilities.php:32
-#, fuzzy
-#| msgid "Import presets"
 msgid "Import settings"
-msgstr "Vorlagen importieren"
+msgstr "Einstellungen importieren"
 
 #: admin/customizer/customizer.php:35
 msgid "Oops, nothing found."
@@ -371,30 +367,22 @@ msgid "Link"
 msgstr "Link"
 
 #: admin/customizer/customizer.php:41
-#, fuzzy
-#| msgid "Please select the exported Graphene options file to import."
 msgid "Please select a settings file to import."
 msgstr ""
 "Bitte wählen Sie die exportierte Graphene-Einstellungsdatei, die importiert "
 "werden soll."
 
 #: admin/customizer/customizer.php:95
-#, fuzzy
-#| msgid "Graphene Theme"
 msgid "Graphene: General"
-msgstr "Graphene-Theme"
+msgstr "Graphene: Allgemein"
 
 #: admin/customizer/customizer.php:99
-#, fuzzy
-#| msgid "Graphene Display Options"
 msgid "Graphene: Display"
-msgstr "Graphene-Anzeige-Optionen"
+msgstr "Graphene: Anzeige"
 
 #: admin/customizer/customizer.php:103
-#, fuzzy
-#| msgid "Graphene Options"
 msgid "Graphene: Colours"
-msgstr "Graphene-Optionen"
+msgstr "Graphene: Farbeinstellung"
 
 #: admin/customizer/customizer.php:104
 msgid ""
@@ -419,16 +407,12 @@ msgstr ""
 "Farbpaletten auszuprobieren."
 
 #: admin/customizer/customizer.php:108
-#, fuzzy
-#| msgid "Graphene FAQs"
 msgid "Graphene: Advanced"
-msgstr "Graphene-FAQs"
+msgstr "Graphene: Fortgeschrittene Einstellungen"
 
 #: admin/customizer/customizer.php:112
-#, fuzzy
-#| msgid "Graphene Options"
 msgid "Graphene: Utilities"
-msgstr "Graphene-Optionen"
+msgstr "Graphene: Import/Export & Downgrad"
 
 #: admin/customizer/options-advanced.php:13
 msgid "Custom <head> Tags"
@@ -501,7 +485,7 @@ msgstr "Dropdown-Menüs (Standardstatus)"
 msgid "Dropdown menu text (active state)"
 msgstr "Dropdown-Menü (Mouseover- und aktiver Status)"
 
-#: admin/customizer/options-colours.php:48 inc/setup.php:95
+#: admin/customizer/options-colours.php:48 inc/setup.php:97
 msgid "Secondary Menu"
 msgstr "Untermenü"
 
@@ -896,7 +880,9 @@ msgstr ""
 "Artikelbild unabhängig von dessen Größe ersetzt wird."
 
 #: admin/customizer/options-general.php:46
-msgid "Header image height"
+#, fuzzy
+#| msgid "Header image height"
+msgid "Header image max height"
 msgstr "Kopfbild-Höhe"
 
 #: admin/customizer/options-general.php:53
@@ -1633,33 +1619,34 @@ msgstr "Dokumentation"
 
 #: admin/options.php:26
 #, fuzzy, php-format
-#| msgid "%1$s at %2$s"
-msgid "Version %1$s, by %2$s"
-msgstr "%1$s von %2$s"
+#| msgid "Version %1$s, by %2$s"
+msgid "Version %1$s by %2$s"
+msgstr "Version %1$s von %2$s"
 
 #: admin/options.php:32
-#, fuzzy
-#| msgid "Graphene Options"
 msgid "Customise Graphene settings"
-msgstr "Graphene-Optionen"
+msgstr "Individuelle Graphene Einstellungen"
 
 #: admin/options.php:37
 msgid "Get community support"
-msgstr ""
+msgstr "Bekomme Community Unterstützung"
 
 #: admin/options.php:42
 msgid ""
 "Graphene theme is a labour of love, but it could not survive on love alone. "
 "Help support the theme and ensure its continuous development."
 msgstr ""
+"Graphene ist ein Wordpress-Theme, welches mit viel Liebe gemacht wurde. Es "
+"kann aber nicht nur mit Liebe fortbestehen. Helfen Sie mit, das Theme zu "
+"unterstützen und seine kontinuierliche Weiterentwicklung sicherzustellen."
 
 #: admin/options.php:43
 msgid "Make a contribution"
-msgstr ""
+msgstr "Spende etwas"
 
 #: admin/options.php:47
 msgid "News and announcement"
-msgstr ""
+msgstr "Neuigkeiten und Ankündigungen"
 
 #: admin/options.php:56
 msgid "No news items."
@@ -1713,14 +1700,12 @@ msgstr ""
 "strong> groß sein."
 
 #: admin/user.php:24
-#, fuzzy
-#| msgid "Hide date"
 msgid "Hide email"
-msgstr "Datum nicht anzeigen"
+msgstr "Verberge E-Mail"
 
 #: admin/user.php:28
 msgid "Remove email address from your author bio."
-msgstr ""
+msgstr "Entferne die E-Mail Adresse des Autoren"
 
 #: admin/user.php:33
 #, fuzzy
@@ -1735,16 +1720,13 @@ msgid ""
 msgstr ""
 
 #: admin/user.php:43
-#, fuzzy
-#| msgid "Social Media icon URL"
 msgid "Social media URLs"
-msgstr "Icon der Sozialen Medien"
+msgstr "Soziale Medien URLs"
 
 #: archive.php:24 archive.php:26 archive.php:30
-#, fuzzy, php-format
-#| msgid "Archives"
+#, php-format
 msgid "%s archive"
-msgstr "Archiv"
+msgstr "%s Archiv"
 
 #: archive.php:28
 msgid "F Y"
@@ -1809,54 +1791,40 @@ msgid "Made with %1$s by %2$s."
 msgstr ""
 
 #: footer.php:76
-#, fuzzy
-#| msgid "Graphene Theme"
 msgid "Graphene Themes"
-msgstr "Graphene-Theme"
+msgstr "Graphene Theme"
 
 #: header.php:30
-#, fuzzy
-#| msgid "Disable search box"
 msgid "Toggle search form"
-msgstr "Suchebox deaktivieren"
+msgstr "Suchbox umschalten"
 
 #: header.php:60 header.php:98
 msgid "Go back to the front page"
 msgstr "Zurück zur Startseite"
 
 #: header.php:81
-#, fuzzy
-#| msgid "Slider animation"
 msgid "Toggle navigation"
-msgstr "Slider-Animation"
+msgstr "Navigation umschalten"
 
 #: inc/comments.php:25
 msgid "Your comment is awaiting moderation."
 msgstr "Ihr Kommentar wartet auf Freischaltung. "
 
 #: inc/comments.php:54
-#, fuzzy
-#| msgid "Name:"
 msgid "Name"
-msgstr "Name:"
+msgstr "Name"
 
 #: inc/comments.php:58
-#, fuzzy
-#| msgid "Email:"
 msgid "Email"
-msgstr "E-Mail:"
+msgstr "E-Mail"
 
 #: inc/comments.php:62
-#, fuzzy
-#| msgid "Site title options"
 msgid "Website (optional)"
-msgstr "Seitentitel-Optionen"
+msgstr "Webseite (optional)"
 
 #: inc/comments.php:88
-#, fuzzy
-#| msgid "Message:"
 msgid "Your message"
-msgstr "Nachricht:"
+msgstr "Deine Nachricht"
 
 #: inc/comments.php:184
 msgid "Delete this comment"
@@ -1881,7 +1849,7 @@ msgstr ""
 
 #: inc/comments.php:263
 msgid "Author"
-msgstr ""
+msgstr "Autor"
 
 #: inc/comments.php:271
 msgid "Reply"
@@ -1910,24 +1878,18 @@ msgid "This notice will not be displayed to your site's visitors."
 msgstr "Dieser Hinweis ist für Besucher Ihrer Seite nicht sichtbar."
 
 #: inc/infinite-scroll.php:98 inc/scripts.php:73
-#, fuzzy
-#| msgid "Read more"
 msgid "Load more"
 msgstr "Mehr lesen"
 
-#: inc/loop.php:99
-msgid "Continue reading &raquo;"
-msgstr "Weiterlesen &raquo;"
+#: inc/loop.php:99 loop.php:36
+msgid "Continue reading"
+msgstr "Weiterlesen"
 
 #: inc/loop.php:220
-#, fuzzy
-#| msgid "&laquo; Previous page"
 msgid "&laquo; Prev"
 msgstr "&laquo; Vorherige Seite"
 
 #: inc/loop.php:221
-#, fuzzy
-#| msgid "Next page &raquo;"
 msgid "Next &raquo;"
 msgstr "Nächste Seite &raquo;"
 
@@ -1954,19 +1916,16 @@ msgstr "%1$s von %2$s"
 #: inc/loop.php:728
 #, php-format
 msgid "Filed under %2$s"
-msgstr ""
+msgstr "Veröffentlicht unter %2$s"
 
 #: inc/loop.php:729
-#, fuzzy, php-format
-#| msgid "by %s"
+#, php-format
 msgid "By %s"
 msgstr "von %s"
 
 #: inc/loop.php:810
-#, fuzzy
-#| msgid "Tags:"
 msgid "Tags"
-msgstr "Schlagwörter:"
+msgstr "Schlagwörter"
 
 #: inc/loop.php:817
 msgid "Leave comment"
@@ -1976,24 +1935,24 @@ msgstr "Kommentar hinterlassen"
 msgid "In this section"
 msgstr ""
 
-#: inc/menus.php:135
+#: inc/menus.php:136
 msgid "FontAwesome Icon Name"
 msgstr ""
 
-#: inc/menus.php:178
+#: inc/menus.php:179
 #, php-format
 msgid "Choose from 580+ %s"
 msgstr ""
 
-#: inc/menus.php:178
+#: inc/menus.php:179
 msgid "available icons"
-msgstr ""
+msgstr "verfügbare Icons"
 
-#: inc/menus.php:223
+#: inc/menus.php:224
 msgid "Home"
 msgstr "Startseite"
 
-#: inc/menus.php:295
+#: inc/menus.php:296
 #, fuzzy, php-format
 #| msgid "(No title)"
 msgid "#%d (no title)"
@@ -2027,7 +1986,7 @@ msgstr[1] "Rufe %1$s weitere Einträge von %2$s ab ..."
 
 #: inc/scripts.php:89
 msgid "All loaded!"
-msgstr ""
+msgstr "Alles geladen!"
 
 #: inc/scripts.php:93 inc/scripts.php:97
 #, fuzzy, php-format
@@ -2039,36 +1998,34 @@ msgstr[0] "Rufe %1$s weiteren Eintrag von %2$s ab ..."
 msgstr[1] "Rufe %1$s weitere Einträge von %2$s ab ..."
 
 #: inc/scripts.php:102
-#, fuzzy
-#| msgid "Author comments top border"
 msgid "All comments loaded!"
-msgstr "Oberer Rahmen der Autoren-Kommentare"
+msgstr "Alle Kommentare geladen!"
 
-#: inc/setup.php:94
+#: inc/setup.php:96
 msgid "Header Menu"
 msgstr "Hauptmenü"
 
-#: inc/setup.php:96
+#: inc/setup.php:98
 msgid "Footer Menu"
 msgstr "Footer-Menü"
 
-#: inc/setup.php:146
+#: inc/setup.php:148
 msgid "Forest"
 msgstr ""
 
-#: inc/setup.php:151
+#: inc/setup.php:153
 msgid "Mountains"
 msgstr ""
 
-#: inc/setup.php:156
+#: inc/setup.php:158
 msgid "Road"
 msgstr ""
 
-#: inc/setup.php:160
+#: inc/setup.php:162
 msgid "Header image by Syahir Hakim"
 msgstr "Kopfbild von by Syahir Hakim"
 
-#: inc/setup.php:164
+#: inc/setup.php:166
 msgid ""
 "This is the default Graphene theme header image, cropped from image by "
 "Quantin Houyoux at sxc.hu"
@@ -2076,18 +2033,16 @@ msgstr ""
 "Dies ist das Standard-Kopfbild für Graphene, zugeschnitten von einem Bild "
 "von Quantin Houyoux auf sxc.hu"
 
-#: inc/setup.php:168 inc/setup.php:172 inc/setup.php:176 inc/setup.php:180
-#: inc/setup.php:184
+#: inc/setup.php:170 inc/setup.php:174 inc/setup.php:178 inc/setup.php:182
+#: inc/setup.php:186
 msgid "Header image cropped from image by Ilco at sxc.hu"
 msgstr "Das Kopfbild ist ein zugeschnittenes Bild von Ilco auf sxc.hu"
 
-#: inc/setup.php:205
-#, fuzzy
-#| msgid "Graphene Theme news"
-msgid "Graphene - Sidebar One"
-msgstr "Graphene-Theme-Neuigkeiten"
-
 #: inc/setup.php:207
+msgid "Graphene - Sidebar One"
+msgstr "Graphene - Sidebar 1"
+
+#: inc/setup.php:209
 msgid ""
 "The first sidebar widget area (will always be displayed on the right hand "
 "side)."
@@ -2095,11 +2050,11 @@ msgstr ""
 "Der erste Sidebar-Widget-Bereich (wird immer auf der rechten Seite "
 "angezeigt)."
 
-#: inc/setup.php:214
-msgid "Graphene - Sidebar Two"
-msgstr ""
-
 #: inc/setup.php:216
+msgid "Graphene - Sidebar Two"
+msgstr "Graphene - Sidebar 2"
+
+#: inc/setup.php:218
 msgid ""
 "The second sidebar widget area (will always be displayed on the left hand "
 "side)."
@@ -2107,13 +2062,11 @@ msgstr ""
 "Der Widget-Bereich der zweiten Sidebar (wird immer auf der linken Seite "
 "angezeigt)."
 
-#: inc/setup.php:234
-#, fuzzy
-#| msgid "Graphene FAQs"
-msgid "Graphene - Footer"
-msgstr "Graphene-FAQs"
-
 #: inc/setup.php:236
+msgid "Graphene - Footer"
+msgstr "Graphene - Fußzeile"
+
+#: inc/setup.php:238
 msgid ""
 "The footer widget area. Leave empty to disable. Set the number of columns to "
 "display at the theme's Display Options page."
@@ -2122,31 +2075,31 @@ msgstr ""
 "deaktivieren. Die Anzahl der Spalten legen Sie in den Graphene-Anzeige-"
 "Optionen fest."
 
-#: inc/setup.php:251
-msgid "Graphene - Sidebar One (Front Page)"
-msgstr ""
-
 #: inc/setup.php:253
+msgid "Graphene - Sidebar One (Front Page)"
+msgstr "Graphene - Sidebar 1 (Vorderseite)"
+
+#: inc/setup.php:255
 msgid ""
 "The first sidebar widget area that will only be displayed on the front page."
 msgstr ""
 "Der erste Sidebar-Widget-Bereich wird nur auf der Startseite angezeigt."
 
-#: inc/setup.php:260
-msgid "Graphene - Sidebar Two (Front Page)"
-msgstr ""
-
 #: inc/setup.php:262
+msgid "Graphene - Sidebar Two (Front Page)"
+msgstr "Graphene - Sidebar 2 (Vorderseite)"
+
+#: inc/setup.php:264
 msgid ""
 "The second sidebar widget area that will only be displayed on the front page."
 msgstr ""
 "Der Widget-Bereich der zweiten Sidebar wird nur auf der Startseite angezeigt."
 
-#: inc/setup.php:271
-msgid "Graphene - Footer (Front Page)"
-msgstr ""
-
 #: inc/setup.php:273
+msgid "Graphene - Footer (Front Page)"
+msgstr "Graphene - Fußzeile (Vorderseite)"
+
+#: inc/setup.php:275
 msgid ""
 "The footer widget area that will only be displayed on the front page. Leave "
 "empty to disable. Set the number of columns to display at the theme's "
@@ -2156,17 +2109,15 @@ msgstr ""
 "auswählen, um den Bereich zu deaktivieren. Die Anzahl der Spalten legen Sie "
 "in den Graphene-Anzeige-Optionen fest."
 
-#: inc/setup.php:283
-#, fuzzy
-#| msgid "Graphene Theme"
-msgid "Graphene - Header"
-msgstr "Graphene-Theme"
-
 #: inc/setup.php:285
+msgid "Graphene - Header"
+msgstr "Graphene - Kopfzeile"
+
+#: inc/setup.php:287
 msgid "The header widget area."
 msgstr "Widget-Bereich des Headers."
 
-#: inc/setup.php:302
+#: inc/setup.php:304
 #, php-format
 msgid ""
 "Dynamically added widget area. This widget area is attached to the %s action "
@@ -2176,8 +2127,6 @@ msgstr ""
 "an den %s-Action-Hook."
 
 #: inc/slider.php:61
-#, fuzzy
-#| msgid "View full post"
 msgid "View post"
 msgstr "Ganzen Beitrag ansehen"
 
@@ -2212,12 +2161,6 @@ msgstr ""
 #: loop-page.php:42 loop-single.php:44 loop.php:74
 msgid "Permanent link to this article:"
 msgstr "Permanentlink zu diesem Beitrag:"
-
-#: loop.php:36
-#, fuzzy
-#| msgid "Continue reading &raquo;"
-msgid "Continue reading"
-msgstr "Weiterlesen &raquo;"
 
 #: search-404.php:17
 #, php-format
@@ -2318,6 +2261,9 @@ msgstr "Zwei Spalten, Seitenleiste rechts"
 #: template-twocolumnsright.php:13
 msgid "Two columns, sidebar on the left"
 msgstr "Zwei Spalten, Seitenleiste links"
+
+#~ msgid "Continue reading &raquo;"
+#~ msgstr "Weiterlesen &raquo;"
 
 #~ msgid "Daily Archive: %s"
 #~ msgstr "Tagesarchiv: %s"

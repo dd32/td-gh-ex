@@ -23,7 +23,7 @@ function graphene_options(){
     	<div class="header">
             <img src="<?php echo GRAPHENE_ROOTURI; ?>/admin/images/graphene-logo.png" alt="Graphene" width="115" height="83" />
             <h2>Graphene</h2>
-            <p class="ver"><?php printf( __( 'Version %1$s, by %2$s', 'graphene' ), $theme_data->Version, $theme_data->Author ); ?></p>
+            <p class="ver"><?php printf( __( 'Version %1$s by %2$s', 'graphene' ), $theme_data->Version, $theme_data->Author ); ?></p>
         </div>
 
         <div class="panels">
@@ -34,7 +34,10 @@ function graphene_options(){
 
             <div class="panel panel-50 support">
                 <p class="icon"><i class="fa fa-comments-o"></i></p>
-                <p><a class="button" href="https://forum.graphene-theme.com/"><?php _e( 'Get community support', 'graphene' ); ?></a></p>
+                <p>
+                    <a class="button" href="https://forum.graphene-theme.com/"><?php _e( 'Get community support', 'graphene' ); ?></a>
+                    <a class="button purple" href="https://www.graphene-theme.com/priority-support/"><?php _e( 'Get Priority Support', 'graphene' ); ?></a>
+                </p>
             </div>
 
             <div class="panel panel-50 contribute">

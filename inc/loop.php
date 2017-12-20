@@ -96,7 +96,7 @@ if ( ! function_exists( 'graphene_continue_reading_link' ) ) :
 function graphene_continue_reading_link() {
 	global $graphene_in_slider;
 	if ( ! is_page() && ! $graphene_in_slider ) {
-		$more_link_text = __( 'Continue reading &raquo;', 'graphene' );
+		$more_link_text = __( 'Continue reading', 'graphene' );
 		return '</p><p><a class="more-link btn" href="' . get_permalink() . '">' . $more_link_text . '</a>';
 	}
 }

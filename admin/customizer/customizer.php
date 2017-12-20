@@ -19,13 +19,16 @@ function graphene_enqueue_customizer_scripts() {
 	global $graphene_settings;
 	$version = $graphene_settings['scripts_ver'];
 
-	wp_enqueue_script( 'graphene-codemirror', 	GRAPHENE_ROOTURI . '/js/codemirror/codemirror.min.js', 	array(), '', false );
+	if ( version_compare( get_bloginfo( 'version' ), '4.9', '<' ) ) {
+		wp_enqueue_script( 'graphene-codemirror', 	GRAPHENE_ROOTURI . '/js/codemirror/codemirror.min.js', 	array(), '', false );
+		wp_enqueue_style( 'graphene-codemirror', 	GRAPHENE_ROOTURI . '/js/codemirror/codemirror.css', 	array(), '', 'all' );
+	}
+
 	wp_enqueue_script( 'graphene-chosen', 		GRAPHENE_ROOTURI . '/js/chosen/chosen.jquery.min.js', 	array(), '', false );
 	wp_enqueue_script( 'graphene-customizer', 	GRAPHENE_ROOTURI . '/admin/customizer/customizer.js', 	array( 'jquery', 'customize-controls' ), $version, true );
 	wp_enqueue_script( 'jquery-ui-slider' );
 	wp_enqueue_script( 'jquery-ui-sortable' );
 
-	wp_enqueue_style( 'graphene-codemirror', 	GRAPHENE_ROOTURI . '/js/codemirror/codemirror.css', 	array(), '', 'all' );
 	wp_enqueue_style( 'graphene-chosen', 		GRAPHENE_ROOTURI . '/js/chosen/chosen.css' );
 	wp_enqueue_style( 'graphene-customizer', 	GRAPHENE_ROOTURI . '/admin/customizer/customizer.css', $version );
 	wp_enqueue_style( 'jquery-ui-slider', 		GRAPHENE_ROOTURI . '/js/jquery-ui/jquery.ui.custom.css', array(), false );
@@ -47,7 +50,7 @@ function graphene_enqueue_customizer_scripts() {
 	global $graphene_settings;
 	wp_localize_script( 'graphene-customizer', 'graphene_settings', $graphene_settings );
 }
-add_action( 'customize_controls_enqueue_scripts', 'graphene_enqueue_customizer_scripts' );
+add_action( 'customize_controls_enqueue_scripts', 'graphene_enqueue_customizer_scripts', 20 );
 
 
 /**
