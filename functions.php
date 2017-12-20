@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION', '1.6.8' );
+define( 'SITEORIGIN_THEME_VERSION', '1.6.9' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', '.min' );
 define( 'SITEORIGIN_THEME_CSS_PREFIX', '.min' );
 
@@ -427,7 +427,7 @@ if ( ! function_exists( 'vantage_render_slider' ) ) :
  */
 function vantage_render_slider() {
 
-	if ( is_front_page() &&  in_array( siteorigin_setting( 'home_slider' ), array( '', 'none' ) ) ) {
+	if ( is_front_page() &&  ! in_array( siteorigin_setting( 'home_slider' ), array( '', 'none' ) ) ) {
 		$settings_slider = siteorigin_setting( 'home_slider' );
 		$slider_stretch = siteorigin_setting( 'home_slider_stretch' );
 
