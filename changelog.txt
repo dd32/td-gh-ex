@@ -1,3 +1,8 @@
+AyaSpirit 1.1.2, 2017-12-20
+------------------------
+- improve animation effects
+- add footer menu
+
 AyaSpirit 1.1.1, 2017-10-27
 ------------------------
 - add animations
