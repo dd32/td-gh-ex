@@ -4,11 +4,11 @@ Theme URI: https://www.themeshopy.com/premium/ecommerce-store-wordpress-theme/
 Author: ThemeShopy
 Author URI: https://www.themeshopy.com
 Description: E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce Store is an elegant E-commerce/Woo-Commerce WordPress theme suitable for E-commerce websites of any store type such as online bookstore, electronic store, apparel & clothing store, fashion store, sport & athletic goods store, handbags & feminine products store, cosmetics & saloon item shop, jewelry & luxury item store and various multipurpose online stores. The modern design and smooth coding standard make them perfect for business, corporate, companies and freelancers. Who wants to have an impactful and awesome online presence? We also utilize best and clean coding standard that functions well with the latest WordPress version. This Free customizable responsive Woo-commerce WordPress theme includes plenty of customization options that are fairly easy to use. You can easily customize them, using the short codes and hook. Setting up, an astonishing e-store that's a dazzling beauty was never this easy before. Main features of our Free e-commerce-store includes Customizer theme options, background image, and color, SEO optimized, fully responsive, fast loading. Why stop there? If you can setup your website, easily utilizing our free business WordPress theme.  why not take it a notch further?  Upgrade to your premium theme, as it offers an army of features, along with customization options with a customer care support that will resolve your problems in no time. We have a devoted team of developers that believes in perfection and providing the best product for the users. This team will be ready at the helm to provide you with support and being your ultimate back-up. If you ever required our assistance. Customer satisfaction is our top priority; we strive to deliver the best and aren’t going to be ever content with anything less. If it doesn’t satisfy the user then it won’t please us either. You can easily set up and dip your hands into the world E-marketing with our free corporate WordPress theme. Our free themes are user and mobile friendly, very responsive and have a beautiful professional look.  It is not going to be enough in a longer run. Your business is bound to grow and with a booming business, you would need to make upgrades in almost every business aspect. The way your website appears and works is significant for an online store.  Upgrading to premium WordPress theme should take first priority, in that case. The first impression is the last impression and you can leave an ever-lasting one, with the aid of our premium WordPress theme.  Upgrade your free theme to premium now! You can take a free demo tour of our premium theme and see how it will sit on your website. Click on the click below to being your demo tour. https://www.themeshopy.com/ecommerce-store-wordpress-theme/
-Version: 1.2.4.3
+Version: 1.2.4.4
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-ecommerce-store
-Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, buddypress, full-width-template, front-page-post-form, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce, portfolio
+Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, front-page-post-form, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce, portfolio
 
 BB Ecommerce Store WordPress Theme has been created by ThemeShopy(themeshopy.com), 2017.
 BB Ecommerce Store WordPress Theme is released under the terms of GNU GPL
@@ -791,46 +791,6 @@ section#blog{
 }
 
 /* --------- Blog Page ------- */
-
-#full-width-blog .postbox{
-  height:355px;
-}
-
-#blog-right-sidebar .postbox img,
-#blog-left-sidebar .postbox img{
-  height:250px;
-}
-
-#blog-left-sidebar .postbox img:hover{
-  border:1px solid #d3da36;
-}
-
-.postbox {
-  margin-bottom:39px;
-  border-bottom:2px dotted #7e7e7e;
-  padding:0 0 26px;
-}
-
-.postbox h2{
-  margin:0 0 5px;
-  font-weight:bold;
-}
-
-.postbox  a.blogbutton {
-  background:none;
-  color:#fff;
-  font-size:12px;
-  font-weight:bold;
-  color:#fff;
-  padding:6px 25px;
-  border:1px solid #000;
-  color:#000;
-  font-size:18px;
-  text-transform:uppercase;
-  margin:25px 0 0 0;
-  display:table;
-}
-
 .blogbutton-small{
   background:none;
   color:#fff;
@@ -852,8 +812,6 @@ section#blog{
   padding:15px 15px;
   clear:both;
 }
-
-
 .metabox .entry-date{
   background:url('images/date.png') no-repeat;
   padding: 0 0 0 20px;
@@ -861,7 +819,6 @@ section#blog{
   font-size: 15px;
   color: #636060;
 }
-
 .metabox .entry-author{
   background:url('images/author.png') no-repeat;
   padding: 0 0 0 20px;
@@ -869,7 +826,6 @@ section#blog{
   font-size: 15px;
   color: #636060;
 }
-
 .metabox .entry-comments{
   background:url('images/comments.png') no-repeat;
   padding: 0 0 0 20px;
@@ -881,20 +837,17 @@ section#blog{
 #comments{
   margin-top:40px;
 }
-
 #comments h2.comments-title{
   font-size:20px;
   font-weight:bold;
   border-top:2px dotted #7e7e7e;
   padding:40px 0 0 0;
 }
-
 #comments h3.comment-reply-title{
   font-size:20px;
   font-weight:bold;
   clear:both;
 }
-
 #comments input[type="text"],
 #comments input[type="email"],
 #comments textarea {
@@ -902,7 +855,6 @@ section#blog{
   font-size:18px;
   margin:20px 0 0 0;
 }
-
 #comments input[type="submit"].submit{
   background:#e22626 !important ;
   padding:10px 60px;
@@ -911,25 +863,20 @@ section#blog{
   margin-top:20px;
   margin-left:0px;
 }
-
 #comments a.comment-reply-link{
   color:#000;
   background:#cecece;
   padding:5px 15px;
 }
-
 #comments a.comment-reply-link:hover{
   background:#e22626;
   color: #fff;
 }
-
 #comments a time{
   color:#000;
   font-weight:bold;
   font-size:12px;
 }
-
-
 #content-tc #comments ol li{
   width:100%;
   background:none;
@@ -939,31 +886,25 @@ section#blog{
   background:#eee;
   display:inline-block;
 }
-
 #content-tc #comments ul{
   margin:0 0 0 40px;
 }
-
 #comments .reply{
   float:right;
 }
-
 .comment-respond{
   clear:both;
 }
-
 #comments .comment-metadata{
   width:90%;
   float:left;
   padding:1% 0 0 0;
 }
-
 #comments .comment-content{
   width:90%;
   float:left;
   margin-left:7%;
 }
-
 #comments p {
   width:90%;
   float:left;
@@ -978,24 +919,24 @@ section#blog{
 #sidebar table,
 #sidebar th,
 #sidebar td {
-    border: 1px solid #d1d1d1;
-    text-align: center;
+  border: 1px solid #d1d1d1;
+  text-align: center;
 }
 #sidebar td {
-    padding: 10px;
-    color: #fff;
+  padding: 10px;
+  color: #fff;
 }
 #sidebar th {
-    text-align: center;
-    padding: 10px;
-    color: #fff;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
 }
 #sidebar select {
-    padding: 8px 5px;
+  padding: 8px 5px;
 }
 #sidebar {
-    background: rgba(226, 38, 38, 0.51);
-    padding: 15px 15px;
+  background: rgba(226, 38, 38, 0.51);
+  padding: 15px 15px;
 }
 #sidebar form{
   display: table;
@@ -1003,7 +944,6 @@ section#blog{
   border: 2px solid #fff;
   border-radius: 40px;
 }
-
 #sidebar h3 {
   text-align: left;
   padding: 15px;
@@ -1013,7 +953,6 @@ section#blog{
   color: #fff;
   margin-bottom: 5%;
 }
-
 #sidebar input[type="search"] {
   background:none;
   padding:7px 10px;
@@ -1022,30 +961,26 @@ section#blog{
   color:#fff;
   width:100%;
 }
-
 #sidebar label{
   width:70%;
   float:left;
 }
-
 #sidebar input[type="submit"] {
-    background: #e22626;
-    border: none;
-    color: #ffffff;
-    padding: 10px 0;
-    width: 30%;
-    font-size: 14px;
-    float: left;
-    margin: 0;
-    font-weight: bold;
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 20px;
+  background: #e22626;
+  border: none;
+  color: #ffffff;
+  padding: 10px 0;
+  width: 30%;
+  font-size: 14px;
+  float: left;
+  margin: 0;
+  font-weight: bold;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
 }
-
 #sidebar aside{
   margin-bottom:30px;
 }
-
 #sidebar ul {list-style:none;
   margin:0;
   padding:0;
@@ -1056,11 +991,9 @@ section#blog{
   margin:0 0 15px;
   padding:0 0 0 23px;
 }
-
 #sidebar ul li a{
   color:#fff;
 }
-
 #sidebar .tagcloud a{
   background:#eeeeee;
   color:#000;
@@ -1069,24 +1002,21 @@ section#blog{
   margin:0 0 5px;
   display:inline-block;
 }
-
 #sidebar .tagcloud a:hover{
   background:#a94442;
   color: #fff;
 }
-/* woocommerce */
 
+/* woocommerce */
 .woocommerce #sidebar{
   width: 28%;
   float: left;
   margin-left: 2%;
 }
-
 .woocommerce-checkout #content-tc ul li{
   list-style-type: none;
   padding: 1em 2em 1em 3.5em;
 }
-
 
 /* Page */
 .title-box{
@@ -1106,8 +1036,7 @@ section#blog{
 	font-style:italic;
 	font-weight:bold;
 	margin:0 0 15px 0;
-	}
-
+}
 .cat-box{
 	background:url(images/cat-icon.png) no-repeat 1px 3px;
 	padding:0 0 0 25px;
@@ -1115,33 +1044,27 @@ section#blog{
 	font-weight:bold;
 	margin:15px 0 30px 0;
 }
-
 .single .title-box{
   background-size:100% 100%;
 }
-
 #content-tc {
   font-family:Helvetica;
 }
-
 #content-tc p{
   line-height: 25px;
   font-size: 16px;
   margin:0 0 20px 0;
 }
-
 #content-tc hr{
   border:none;
   border-bottom:2px dotted #7e7e7e;
   margin:35px 0;
   clear:both;
 }
-
 #content-tc h1{
   font-size:35px;
   margin:20px 0 0 0;
 }
-
 #content-tc h2{
   font-size:30px;
   font-weight:normal;
@@ -1151,7 +1074,6 @@ section#blog{
   margin:0 0 15px;
   font-family:Roboto;
 }
-
 #content-tc h3{
   font-size:36px;
   font-weight:normal;
@@ -1161,7 +1083,6 @@ section#blog{
   margin:0 0 25px;
   font-family:Roboto;
 }
-
 #content-tc h4{
   font-size:20px;
   font-weight:bold;
@@ -1171,11 +1092,9 @@ section#blog{
   margin:0 0 10px;
   font-family:Roboto;
 }
-
 #content-tc  h6{
   font-size:18px;
 }
-
 #content-tc  h6{
   margin:0 0 15px;
   font-size:17px;
@@ -1183,25 +1102,21 @@ section#blog{
   font-weight:bold;
   line-height:normal;
 }
-
 #content-tc ul{
   list-style:none;
   margin:0 0 0 10px;
   padding:10px 0 0;
   font-size:16px;
 }
-
 #content-tc ul li{
   list-style-type: circle;
   padding:0 0 0 35px;
   margin:0 0 20px 0;
   line-height:25px;
 }
-
 #content-tc ul li ul li{
   list-style-type: circle;
 }
-
 #content-tc ol{
   list-style: none;
   margin:0 0 0 15px;
@@ -1209,18 +1124,15 @@ section#blog{
   font-size:16px;
   counter-reset: myCounter;
 }
-
 #content-tc ol li{
   padding:0 0 0 0;
   margin:0 0 15px 5px;
   list-style:decimal;
 }
-
 #content-tc ol li ol li{
   margin:0 0 15px 0;
   padding:0 0 0 35px;
 }
-
 #content-tc  h5{
   margin:0 0 15px;
   font-size:18px;
@@ -1228,11 +1140,9 @@ section#blog{
   font-weight:bold;
   line-height:normal;
 }
-
 .read-moresec{
   margin:2% 0;
 }
-
 a.button {
   border: 2px solid #000;
   background: #fff;
@@ -1253,8 +1163,7 @@ a.button {
   float:right;  
   font-weight:bold;
   width:100%;
-}
- 
+} 
 .pagination span, .pagination a {
   display:block;
   float:left;
@@ -1269,25 +1178,21 @@ a.button {
   -ms-transition: background .15s ease-in-out;
   -o-transition: background .15s ease-in-out;
   transition: background .15s ease-in-out;
-}
- 
+} 
 .pagination a:hover{
-    color:#fff;
-    background: #e22626;
-}
- 
+  color:#fff;
+  background: #e22626;
+} 
 .pagination .current{
-    padding:10px 15px;
-    background: #e22626;
-    color: #ffffff;
-    font-weight:normal;
+  padding:10px 15px;
+  background: #e22626;
+  color: #ffffff;
+  font-weight:normal;
 }
-
 #content-tc .pagination ul{
   margin:0;
   clear:both;
 }
-
 #content-tc .pagination ul li{
   margin:0;
 }

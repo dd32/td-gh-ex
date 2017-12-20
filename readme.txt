@@ -4,7 +4,7 @@
 
 Theme Name      :   BB Ecommerce Store
 Theme URI       :   https://www.themeshopy.com/premium/ecommerce-store-wordpress-theme/
-Version         :   1.2.4.3
+Version         :   1.2.4.4
 Tested up to    :   WP 4.9.1
 Author          :   Themeshopy
 Author URI      :   https://www.themeshopy.com/
@@ -107,6 +107,10 @@ ii) Done Some customization.
 Version 1.2.4.3
 i)  Resolved template tag error.
 ii) Done Some customization.
+
+Version 1.2.4.4
+i) Added wp content in the custom page template.
+
 
 Ecommerce Store Plus version
 ==========================================================

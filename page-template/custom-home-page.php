@@ -117,5 +117,11 @@ get_header(); ?>
 
 <?php do_action( 'bb_ecommerce_store_after_productsec' ); ?>
 
+<div class="container">
+	<?php while ( have_posts() ) : the_post(); ?>
+        <?php the_content(); ?>
+    <?php endwhile; // end of the loop. ?>
+</div>
+
 
 <?php get_footer(); ?>
