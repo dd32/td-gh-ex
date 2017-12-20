@@ -95,6 +95,7 @@ if ( ! function_exists( 'ayafreelance_setup' ) ) :
 		// This theme uses wp_nav_menu() in header menu
 		register_nav_menus( array(
 			'primary'   => __( 'Primary Menu', 'ayafreelance' ),
+			'footer'    => __( 'Footer Menu', 'ayafreelance' ),
 		) );
 
 		$defaults = array(
