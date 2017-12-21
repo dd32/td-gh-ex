@@ -42,7 +42,7 @@ final class Astra_Fonts {
 		}
 
 		if ( is_array( $variants ) ) {
-			$key = array_search( 'inherit' , $variants );
+			$key = array_search( 'inherit', $variants );
 			if ( false !== $key ) {
 
 				unset( $variants[ $key ] );
@@ -80,18 +80,21 @@ final class Astra_Fonts {
 	/**
 	 * Renders the <link> tag for all fonts in the $fonts array.
 	 *
+	 * @since 1.0.16 Added the filter 'astra_render_fonts' to support custom fonts.
 	 * @since 1.0.0
 	 * @return void
 	 */
 	static public function render_fonts() {
 
-		$font_list = self::get_fonts();
+		$font_list = apply_filters( 'astra_render_fonts', self::get_fonts() );
 
 		$google_fonts = array();
-		$font_subset = array();
+		$font_subset  = array();
+
+		$system_fonts = Astra_Font_Families::get_system_fonts();
 
 		foreach ( $font_list as $name => $font ) {
-			if ( ! empty( $name ) ) {
+			if ( ! empty( $name ) && ! isset( $system_fonts[ $name ] ) ) {
 
 				// Add font variants.
 				$google_fonts[ $name ] = $font['variants'];
@@ -113,8 +116,8 @@ final class Astra_Fonts {
 	 * Combine multiple google font in one URL
 	 *
 	 * @link https://shellcreeper.com/?p=1476
-	 * @param array $fonts 		Google Fonts array.
-	 * @param array $subsets 	Font's Subsets array.
+	 * @param array $fonts      Google Fonts array.
+	 * @param array $subsets    Font's Subsets array.
 	 *
 	 * @return string
 	 */
@@ -124,6 +127,8 @@ final class Astra_Fonts {
 		$base_url  = '//fonts.googleapis.com/css';
 		$font_args = array();
 		$family    = array();
+
+		$fonts = apply_filters( 'astra_google_fonts', $fonts );
 
 		/* Format Each Font Family in Array */
 		foreach ( $fonts as $font_name => $font_weight ) {

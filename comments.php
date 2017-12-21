@@ -22,10 +22,8 @@ if ( post_password_required() ) {
 ?>
 
 <div id="comments" class="comments-area">
-	
-	<?php astra_comments_before(); ?>
 
-	<?php // You can start editing here -- including this comment! ?>
+	<?php astra_comments_before(); ?>
 
 	<?php if ( have_comments() ) : ?>
 		<div class="comments-count-wrapper">
@@ -34,12 +32,13 @@ if ( post_password_required() ) {
 					printf( // WPCS: XSS OK.
 						/* translators: 1: number of comments */
 						esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'astra' ) ),
-					number_format_i18n( get_comments_number() ), get_the_title() );
+						number_format_i18n( get_comments_number() ), get_the_title()
+					);
 				?>
 			</h3>
 		</div>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation" aria-label="<?php esc_html_e( 'Comments Navigation', 'astra' ); ?>">
 			<h3 class="screen-reader-text"><?php echo esc_html( astra_default_strings( 'string-comment-navigation-next', false ) ); ?></h3>
 			<div class="nav-links">
@@ -49,16 +48,20 @@ if ( post_password_required() ) {
 
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
+		<?php endif; ?>
 
 		<ol class="ast-comment-list">
-			<?php wp_list_comments( array(
-				'callback' => 'astra_theme_comment',
-				'style' => 'ol',
-			) ); ?>
+			<?php
+			wp_list_comments(
+				array(
+					'callback' => 'astra_theme_comment',
+					'style'    => 'ol',
+				)
+			);
+			?>
 		</ol><!-- .ast-comment-list -->
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation" aria-label="<?php esc_html_e( 'Comments Navigation', 'astra' ); ?>">
 			<h3 class="screen-reader-text"><?php echo esc_html( astra_default_strings( 'string-comment-navigation-next', false ) ); ?></h3>
 			<div class="nav-links">
@@ -68,9 +71,9 @@ if ( post_password_required() ) {
 
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-below -->
-		<?php endif; // Check for comment navigation. ?>
+		<?php endif; ?>
 
-	<?php endif; // Check for have_comments(). ?>
+	<?php endif; ?>
 
 	<?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?

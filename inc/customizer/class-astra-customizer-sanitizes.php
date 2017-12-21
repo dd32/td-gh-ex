@@ -62,10 +62,37 @@ if ( ! class_exists( 'Astra_Customizer_Sanitizes' ) ) {
 		/**
 		 * Sanitize Integer
 		 *
-		 * @param  number $val Customizer setting input number.
-		 * @return number        Return number.
+		 * @param  number $val      Customizer setting input number.
+		 * @param  object $setting  Setting object.
+		 * @return number           Return number.
 		 */
-		static public function sanitize_number( $val ) {
+		static public function sanitize_number( $val, $setting ) {
+
+			$input_attrs = $setting->manager->get_control( $setting->id )->input_attrs;
+
+			if ( isset( $input_attrs ) ) {
+
+				$input_attrs['min']  = isset( $input_attrs['min'] ) ? $input_attrs['min'] : 0;
+				$input_attrs['step'] = isset( $input_attrs['step'] ) ? $input_attrs['step'] : 1;
+
+				if ( isset( $input_attrs['max'] ) && $val > $input_attrs['max'] ) {
+					$val = $input_attrs['max'];
+				} elseif ( $val < $input_attrs['min'] ) {
+					$val = $input_attrs['min'];
+				}
+
+						$dv = $val / $input_attrs['step'];
+
+						$dv = round( $dv );
+
+						$val = $dv * $input_attrs['step'];
+
+					$val = number_format( (float) $val, 2, '.', '' );
+				if ( $val == (int) $val ) {
+					$val = (int) $val;
+				}
+			}
+
 			return is_numeric( $val ) ? $val : 0;
 		}
 
@@ -96,10 +123,46 @@ if ( ! class_exists( 'Astra_Customizer_Sanitizes' ) ) {
 		}
 
 		/**
+		 * Sanitize Responsive Slider
+		 *
+		 * @param  array|number $val Customizer setting input number.
+		 * @param  object       $setting Setting Onject.
+		 * @return array        Return number.
+		 */
+		static public function sanitize_responsive_slider( $val, $setting ) {
+
+			$input_attrs = array();
+			if ( isset( $setting->manager->get_control( $setting->id )->input_attrs ) ) {
+				$input_attrs = $setting->manager->get_control( $setting->id )->input_attrs;
+			}
+
+			$responsive = array(
+				'desktop' => '',
+				'tablet'  => '',
+				'mobile'  => '',
+			);
+			if ( is_array( $val ) ) {
+				$responsive['desktop'] = is_numeric( $val['desktop'] ) ? $val['desktop'] : '';
+				$responsive['tablet']  = is_numeric( $val['tablet'] ) ? $val['tablet'] : '';
+				$responsive['mobile']  = is_numeric( $val['mobile'] ) ? $val['mobile'] : '';
+			} else {
+				$responsive['desktop'] = is_numeric( $val ) ? $val : '';
+			}
+
+			foreach ( $responsive as $key => $value ) {
+				$value              = isset( $input_attrs['min'] ) && $input_attrs['min'] > $value ? $input_attrs['min'] : $value;
+				$value              = isset( $input_attrs['max'] ) && $input_attrs['max'] < $value ? $input_attrs['max'] : $value;
+				$responsive[ $key ] = $value;
+			}
+
+			return $responsive;
+		}
+
+		/**
 		 * Sanitize Responsive Typography
 		 *
-		 * @param  number $val Customizer setting input number.
-		 * @return number        Return number.
+		 * @param  array|number $val Customizer setting input number.
+		 * @return array        Return number.
 		 */
 		static public function sanitize_responsive_typo( $val ) {
 
@@ -238,6 +301,29 @@ if ( ! class_exists( 'Astra_Customizer_Sanitizes' ) ) {
 		}
 
 		/**
+		 * Sanitize Alpha color
+		 *
+		 * @param  string $color setting input.
+		 * @return string        setting input value.
+		 */
+		static public function sanitize_alpha_color( $color ) {
+
+			if ( '' === $color ) {
+				return '';
+			}
+
+			if ( false === strpos( $color, 'rgba' ) ) {
+				/* Hex sanitize */
+				return self::sanitize_hex_color( $color );
+			}
+
+			/* rgba sanitize */
+			$color = str_replace( ' ', '', $color );
+			sscanf( $color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
+			return 'rgba(' . $red . ',' . $green . ',' . $blue . ',' . $alpha . ')';
+		}
+
+		/**
 		 * Sanitize html
 		 *
 		 * @param  string $input    setting input.
@@ -258,7 +344,7 @@ if ( ! class_exists( 'Astra_Customizer_Sanitizes' ) ) {
 
 			// Get list of choices from the control
 			// associated with the setting.
-			$choices = $setting->manager->get_control( $setting->id )->choices;
+			$choices    = $setting->manager->get_control( $setting->id )->choices;
 			$input_keys = $input;
 
 			foreach ( $input_keys as $key => $value ) {

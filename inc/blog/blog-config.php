@@ -62,6 +62,9 @@ if ( ! function_exists( 'astra_get_post_meta' ) ) {
 						$output_str .= $comment;
 					}
 					break;
+				default:
+					$output_str = apply_filters( 'astra_meta_case_' . $meta_value, $output_str, $loop_count, $separator );
+
 			}// End switch().
 
 			$loop_count ++;
@@ -86,14 +89,22 @@ if ( ! function_exists( 'astra_post_date' ) ) {
 	 */
 	function astra_post_date() {
 
-		$output = '';
-		$format = apply_filters( 'astra_post_date_format','' );
-		$time_string = esc_html( get_the_date( $format ) );
-		$posted_on = sprintf(
+		$output        = '';
+		$format        = apply_filters( 'astra_post_date_format', '' );
+		$time_string   = esc_html( get_the_date( $format ) );
+		$modified_date = esc_html( get_the_modified_date( $format ) );
+		$posted_on     = sprintf(
 			esc_html( '%s' ),
 			$time_string
 		);
-		$output .= '<span class="posted-on" itemprop="datePublished"> ' . $posted_on . '</span>';
+		$modified_on   = sprintf(
+			esc_html( '%s' ),
+			$modified_date
+		);
+		$output       .= '<span class="posted-on">';
+		$output       .= '<span class="published" itemprop="datePublished"> ' . $posted_on . '</span>';
+		$output       .= '<span class="updated" itemprop="dateModified"> ' . $modified_on . '</span>';
+		$output       .= '</span>';
 		return apply_filters( 'astra_post_date', $output );
 	}
 }// End if().
@@ -120,7 +131,7 @@ if ( ! function_exists( 'astra_post_author' ) ) {
 			'<a class="url fn n" title="View all posts by ' . esc_attr( get_the_author() ) . '" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author" itemprop="url"> <span class="author-name" itemprop="name">' . esc_html( get_the_author() ) . '</span> </a>'
 		);
 
-		$output .= '<span class="posted-by" itemtype="http://schema.org/Person" itemscope="itemscope" itemprop="author"> ' . $byline . '</span>';
+		$output .= '<span class="posted-by vcard author" itemtype="http://schema.org/Person" itemscope="itemscope" itemprop="author"> ' . $byline . '</span>';
 
 		return apply_filters( 'astra_post_author', $output, $output_filter );
 	}
@@ -142,13 +153,17 @@ if ( ! function_exists( 'astra_post_link' ) ) {
 	 */
 	function astra_post_link( $output_filter = '' ) {
 
-		if ( is_admin() ) {
+		$enabled = apply_filters( 'astra_post_link_enabled', '__return_true' );
+		if ( is_admin() || ! $enabled ) {
 			return $output_filter;
 		}
 
+		$read_more_text    = apply_filters( 'astra_post_read_more', __( 'Read More &raquo;', 'astra' ) );
+		$read_more_classes = apply_filters( 'astra_post_read_more_class', array() );
+
 		$post_link = sprintf(
 			esc_html( '%s' ),
-			'<a href="' . esc_url( get_permalink() ) . '"> ' . the_title( '<span class="screen-reader-text">', '</span>', false ) . __( 'Read More &raquo;', 'astra' ) . '</a>'
+			'<a class="' . implode( ' ', $read_more_classes ) . '" href="' . esc_url( get_permalink() ) . '"> ' . the_title( '<span class="screen-reader-text">', '</span>', false ) . $read_more_text . '</a>'
 		);
 
 		$output = ' &hellip;<p class="read-more"> ' . $post_link . '</p>';
@@ -186,7 +201,8 @@ if ( ! function_exists( 'astra_post_comments' ) ) {
 				 *
 				 * @see astra_default_strings()
 				 */
-				comments_popup_link( astra_default_strings( 'string-blog-meta-leave-a-comment', false ), astra_default_strings( 'string-blog-meta-one-comment', false ), astra_default_strings( 'string-blog-meta-multiple-comment', false ) ); ?>
+				comments_popup_link( astra_default_strings( 'string-blog-meta-leave-a-comment', false ), astra_default_strings( 'string-blog-meta-one-comment', false ), astra_default_strings( 'string-blog-meta-multiple-comment', false ) );
+				?>
 
 				<!-- Comment Schema Meta -->
 				<span itemprop="interactionStatistic" itemscope itemtype="http://schema.org/InteractionCounter">
@@ -312,7 +328,7 @@ if ( ! function_exists( 'astra_get_blog_layout_class' ) ) {
 			$post_format = 'standard';
 		}
 
-		$classes[]   = 'ast-post-format-' . $post_format;
+		$classes[] = 'ast-post-format-' . $post_format;
 
 		if ( ! has_post_thumbnail() || ! wp_get_attachment_image_src( get_post_thumbnail_id() ) ) {
 			switch ( $post_format ) {

@@ -33,10 +33,25 @@
 }
 
 #side-sortables #astra_settings_meta_box select {
-	min-width: 50%;
+	min-width: 100%;
 }
 
 #normal-sortables #astra_settings_meta_box select {
 	min-width: 200px;
+}
 
+.customize-control {
+	position: relative;
+}
+
+.customize-control .ast-control-tooltip {
+    position: absolute;
+    top: 6px;
+    right: 0;
+}
+.customize-control.customize-control-ast-divider .ast-control-tooltip {
+    position: absolute;
+    top: auto;
+    bottom: 3px;
+    right: 0;
 }

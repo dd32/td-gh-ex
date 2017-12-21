@@ -78,11 +78,11 @@ final class Astra_Control_Typography extends WP_Customize_Control {
 
 			case 'ast-font-family':
 				$this->render_font( $this->ast_inherit );
-			break;
+				break;
 
 			case 'ast-font-weight':
 				$this->render_font_weight( $this->ast_inherit );
-			break;
+				break;
 		}
 	}
 
@@ -93,22 +93,21 @@ final class Astra_Control_Typography extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 
-		$css_uri = ASTRA_THEME_URI . 'inc/customizer/custom-controls/typography/';
-		$js_uri  = ASTRA_THEME_URI . 'inc/customizer/custom-controls/typography/';
+		$js_uri = ASTRA_THEME_URI . 'inc/customizer/custom-controls/typography/';
 
 		wp_enqueue_script( 'astra-typography', $js_uri . 'typography.js', array( 'jquery', 'customize-base' ), ASTRA_THEME_VERSION, true );
 		$astra_typo_localize = array(
-				'inherit' => __( 'Inherit', 'astra' ),
-				'100'     => __( 'Thin 100', 'astra' ),
-				'200'     => __( 'Extra-Light 200', 'astra' ),
-				'300'     => __( 'Light 300', 'astra' ),
-				'400'     => __( 'Normal 400', 'astra' ),
-				'500'     => __( 'Medium 500', 'astra' ),
-				'600'     => __( 'Semi-Bold 600', 'astra' ),
-				'700'     => __( 'Bold 700', 'astra' ),
-				'800'     => __( 'Extra-Bold 800', 'astra' ),
-				'900'     => __( 'Ultra-Bold 900', 'astra' ),
-			);
+			'inherit' => __( 'Inherit', 'astra' ),
+			'100'     => __( 'Thin 100', 'astra' ),
+			'200'     => __( 'Extra-Light 200', 'astra' ),
+			'300'     => __( 'Light 300', 'astra' ),
+			'400'     => __( 'Normal 400', 'astra' ),
+			'500'     => __( 'Medium 500', 'astra' ),
+			'600'     => __( 'Semi-Bold 600', 'astra' ),
+			'700'     => __( 'Bold 700', 'astra' ),
+			'800'     => __( 'Extra-Bold 800', 'astra' ),
+			'900'     => __( 'Ultra-Bold 900', 'astra' ),
+		);
 
 		wp_localize_script( 'astra-typography', 'astraTypo', $astra_typo_localize );
 	}
@@ -145,6 +144,7 @@ final class Astra_Control_Typography extends WP_Customize_Control {
 	/**
 	 * Renders a font control.
 	 *
+	 * @since 1.0.16 Added the action 'astra_customizer_font_list' to support custom fonts.
 	 * @since 1.0.0
 	 * @param  string $default Inherit/Default.
 	 * @access protected
@@ -160,13 +160,16 @@ final class Astra_Control_Typography extends WP_Customize_Control {
 		echo '<option value="inherit" ' . selected( 'inherit', $this->value(), false ) . '>' . esc_attr( $default ) . '</option>';
 		echo '<optgroup label="System">';
 
-		foreach ( Astra_Font_Families::$system as $name => $variants ) {
+		foreach ( Astra_Font_Families::get_system_fonts() as $name => $variants ) {
 			echo '<option value="' . esc_attr( $name ) . '" ' . selected( $name, $this->value(), false ) . '>' . esc_attr( $name ) . '</option>';
 		}
 
+		// Add Custom Font List Into Customizer.
+		do_action( 'astra_customizer_font_list', $this->value() );
+
 		echo '<optgroup label="Google">';
 
-		foreach ( Astra_Font_Families::$google as $name => $variants ) {
+		foreach ( Astra_Font_Families::get_google_fonts() as $name => $variants ) {
 			echo '<option value="' . esc_attr( $name ) . '" ' . selected( $name, $this->value(), false ) . '>' . esc_attr( $name ) . '</option>';
 		}
 

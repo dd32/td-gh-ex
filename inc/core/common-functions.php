@@ -35,13 +35,13 @@ if ( ! function_exists( 'astra_get_foreground_color' ) ) {
 			$hex = str_replace( '#', '', $hex );
 
 			if ( 3 == strlen( $hex ) ) {
-				$hex = str_repeat( substr( $hex,0,1 ), 2 ) . str_repeat( substr( $hex,1,1 ), 2 ) . str_repeat( substr( $hex,2,1 ), 2 );
+				$hex = str_repeat( substr( $hex, 0, 1 ), 2 ) . str_repeat( substr( $hex, 1, 1 ), 2 ) . str_repeat( substr( $hex, 2, 1 ), 2 );
 			}
 
 			// Get r, g & b codes from hex code.
-			$r   = hexdec( substr( $hex,0,2 ) );
-			$g   = hexdec( substr( $hex,2,2 ) );
-			$b   = hexdec( substr( $hex,4,2 ) );
+			$r   = hexdec( substr( $hex, 0, 2 ) );
+			$g   = hexdec( substr( $hex, 2, 2 ) );
+			$b   = hexdec( substr( $hex, 4, 2 ) );
 			$hex = ( ( $r * 299 ) + ( $g * 587 ) + ( $b * 114 ) ) / 1000;
 
 			return 128 <= $hex ? '#000000' : '#ffffff';
@@ -86,6 +86,39 @@ if ( ! function_exists( 'astra_css' ) ) {
 /**
  * Get Font Size value
  */
+if ( ! function_exists( 'astra_responsive_font' ) ) {
+
+	/**
+	 * Get Font CSS value
+	 *
+	 * @param  array  $font    CSS value.
+	 * @param  string $device  CSS device.
+	 * @param  string $default Default value.
+	 * @return mixed
+	 */
+	function astra_responsive_font( $font, $device = 'desktop', $default = '' ) {
+
+		$css_val = '';
+
+		if ( isset( $font[ $device ] ) && isset( $font[ $device . '-unit' ] ) ) {
+			if ( '' != $default ) {
+				$font_size = astra_get_css_value( $font[ $device ], $font[ $device . '-unit' ], $default );
+			} else {
+				$font_size = astra_get_font_css_value( $font[ $device ], $font[ $device . '-unit' ] );
+			}
+		} elseif ( is_numeric( $font ) ) {
+			$font_size = astra_get_css_value( $font );
+		} else {
+			$font_size = ( ! is_array( $font ) ) ? $font : '';
+		}
+
+		return $font_size;
+	}
+}// End if().
+
+/**
+ * Get Font Size value
+ */
 if ( ! function_exists( 'astra_get_font_css_value' ) ) {
 
 	/**
@@ -116,22 +149,22 @@ if ( ! function_exists( 'astra_get_font_css_value' ) ) {
 		$css_val = '';
 
 		switch ( $unit ) {
-			case 'em' :
-			case '%' :
+			case 'em':
+			case '%':
 						$css_val = esc_attr( $value ) . $unit;
 				break;
 
 			case 'px':
-
 				if ( is_numeric( $value ) || strpos( $value, 'px' ) ) {
-					$value          = intval( $value );
-					$body_font_size = astra_get_option( 'font-size-body' );
-					$body_font_size['desktop'] = ( '' != $body_font_size['desktop'] ) ? $body_font_size['desktop'] : 15;
-					$body_font_size['tablet'] = ( '' != $body_font_size['tablet'] ) ? $body_font_size['tablet'] : $body_font_size['desktop'];
-					$body_font_size['mobile'] = ( '' != $body_font_size['mobile'] ) ? $body_font_size['mobile'] : $body_font_size['tablet'];
+					$value            = intval( $value );
+					$fonts            = array();
+					$body_font_size   = astra_get_option( 'font-size-body' );
+					$fonts['desktop'] = ( isset( $body_font_size['desktop'] ) && '' != $body_font_size['desktop'] ) ? $body_font_size['desktop'] : 15;
+					$fonts['tablet']  = ( isset( $body_font_size['tablet'] ) && '' != $body_font_size['tablet'] ) ? $body_font_size['tablet'] : $fonts['desktop'];
+					$fonts['mobile']  = ( isset( $body_font_size['mobile'] ) && '' != $body_font_size['mobile'] ) ? $body_font_size['mobile'] : $fonts['tablet'];
 
-					if ( $body_font_size[ $device ] ) {
-						$css_val = esc_attr( $value ) . 'px;font-size:' . ( esc_attr( $value ) / esc_attr( $body_font_size[ $device ] ) ) . 'rem';
+					if ( $fonts[ $device ] ) {
+						$css_val = esc_attr( $value ) . 'px;font-size:' . ( esc_attr( $value ) / esc_attr( $fonts[ $device ] ) ) . 'rem';
 					}
 				} else {
 					$css_val = esc_attr( $value );
@@ -141,6 +174,37 @@ if ( ! function_exists( 'astra_get_font_css_value' ) ) {
 		return $css_val;
 	}
 }// End if().
+
+/**
+ * Get Font family
+ */
+if ( ! function_exists( 'astra_get_font_family' ) ) {
+
+	/**
+	 * Get Font family
+	 *
+	 * Syntax:
+	 *
+	 *  astra_get_font_family( VALUE, DEFAULT );
+	 *
+	 * E.g.
+	 *  astra_get_font_family( VALUE, '' );
+	 *
+	 * @since  1.0.19
+	 *
+	 * @param  string $value       CSS value.
+	 * @return mixed               CSS value depends on $unit
+	 */
+	function astra_get_font_family( $value = '' ) {
+		$system_fonts = Astra_Font_Families::get_system_fonts();
+		if ( isset( $system_fonts[ $value ] ) && isset( $system_fonts[ $value ]['fallback'] ) ) {
+			$value .= ',' . $system_fonts[ $value ]['fallback'];
+		}
+
+		return $value;
+	}
+}
+
 
 /**
  * Get CSS value
@@ -167,7 +231,7 @@ if ( ! function_exists( 'astra_get_css_value' ) ) {
 	 */
 	function astra_get_css_value( $value = '', $unit = 'px', $default = '' ) {
 
-		if ( '' == $value &&  '' == $default ) {
+		if ( '' == $value && '' == $default ) {
 			return $value;
 		}
 
@@ -175,9 +239,9 @@ if ( ! function_exists( 'astra_get_css_value' ) ) {
 
 		switch ( $unit ) {
 
-			case 'font' :
-
+			case 'font':
 				if ( 'inherit' != $value ) {
+					$value   = astra_get_font_family( $value );
 					$css_val = esc_attr( $value );
 				} elseif ( '' != $default ) {
 					$css_val = esc_attr( $default );
@@ -186,24 +250,27 @@ if ( ! function_exists( 'astra_get_css_value' ) ) {
 				break;
 
 			case 'px':
-			case '%' :
-						$value = ( '' != $value ) ? $value : $default;
+			case '%':
+						$value   = ( '' != $value ) ? $value : $default;
 						$css_val = esc_attr( $value ) . $unit;
 				break;
 
-			case 'url' :
+			case 'url':
 						$css_val = $unit . '(' . esc_url( $value ) . ')';
 				break;
 
 			case 'rem':
-
 				if ( is_numeric( $value ) || strpos( $value, 'px' ) ) {
 					$value          = intval( $value );
 					$body_font_size = astra_get_option( 'font-size-body' );
-					$body_font_size['desktop'] = ( '' != $body_font_size['desktop'] ) ? $body_font_size['desktop'] : 15;
+					if ( is_array( $body_font_size ) ) {
+						$body_font_size_desktop = ( isset( $body_font_size['desktop'] ) && '' != $body_font_size['desktop'] ) ? $body_font_size['desktop'] : 15;
+					} else {
+						$body_font_size_desktop = ( '' != $body_font_size ) ? $body_font_size : 15;
+					}
 
-					if ( $body_font_size['desktop'] ) {
-						$css_val = esc_attr( $value ) . 'px;font-size:' . ( esc_attr( $value ) / esc_attr( $body_font_size['desktop'] ) ) . $unit;
+					if ( $body_font_size_desktop ) {
+						$css_val = esc_attr( $value ) . 'px;font-size:' . ( esc_attr( $value ) / esc_attr( $body_font_size_desktop ) ) . $unit;
 					}
 				} else {
 					$css_val = esc_attr( $value );
@@ -242,14 +309,16 @@ if ( ! function_exists( 'astra_parse_css' ) ) {
 
 			foreach ( $css_output as $selector => $properties ) {
 
-				if ( ! count( $properties ) ) { continue; }
+				if ( ! count( $properties ) ) {
+					continue; }
 
 				$temp_parse_css   = $selector . '{';
 				$properties_added = 0;
 
 				foreach ( $properties as $property => $value ) {
 
-					if ( '' === $value ) { continue; }
+					if ( '' === $value ) {
+						continue; }
 
 					$properties_added++;
 					$temp_parse_css .= $property . ':' . $value . ';';
@@ -297,10 +366,10 @@ if ( ! function_exists( 'astra_get_option' ) ) {
 	/**
 	 * Return Theme options.
 	 *
-	 * @param  string $option  		Option key.
-	 * @param  string $default 		Option default value.
-	 * @param  string $deprecated 	Option default value.
-	 * @return string          		Return option value.
+	 * @param  string $option       Option key.
+	 * @param  string $default      Option default value.
+	 * @param  string $deprecated   Option default value.
+	 * @return Mixed               Return option value.
 	 */
 	function astra_get_option( $option, $default = '', $deprecated = '' ) {
 
@@ -310,9 +379,24 @@ if ( ! function_exists( 'astra_get_option' ) ) {
 
 		$theme_options = Astra_Theme_Options::get_options();
 
+		/**
+		 * Filter the options array for Astra Settings.
+		 *
+		 * @since  1.0.20
+		 * @var Array
+		 */
+		$theme_options = apply_filters( 'astra_get_option_array', $theme_options, $option, $default );
+
 		$value = ( isset( $theme_options[ $option ] ) && '' !== $theme_options[ $option ] ) ? $theme_options[ $option ] : $default;
 
-		return $value;
+		/**
+		 * Dynamic filter astra_get_option_$option.
+		 * $option is the name of the Astra Setting, Refer Astra_Theme_Options::defaults() for option names from the theme.
+		 *
+		 * @since  1.0.20
+		 * @var Mixed.
+		 */
+		return apply_filters( "astra_get_option_{$option}", $value, $option, $default );
 	}
 }
 
@@ -329,7 +413,7 @@ if ( ! function_exists( 'astra_get_option_meta' ) ) {
 	 * @param  boolean $only_meta Get only meta value.
 	 * @param  string  $extension Is value from extension.
 	 * @param  string  $post_id   Get value from specific post by post ID.
-	 * @return string             Return option value.
+	 * @return Mixed             Return option value.
 	 */
 	function astra_get_option_meta( $option_id, $default = '', $only_meta = false, $extension = '', $post_id = '' ) {
 
@@ -352,7 +436,14 @@ if ( ! function_exists( 'astra_get_option_meta' ) ) {
 			}
 		}
 
-		return $value;
+		/**
+		 * Dynamic filter astra_get_option_meta_$option.
+		 * $option_id is the name of the Astra Meta Setting.
+		 *
+		 * @since  1.0.20
+		 * @var Mixed.
+		 */
+		return apply_filters( "astra_get_option_meta_{$option_id}", $value, $default, $default );
 	}
 }// End if().
 
@@ -535,31 +626,34 @@ if ( ! function_exists( 'astra_get_post_format' ) ) {
 }
 
 /**
- * Wrapper function fot the_title()
+ * Wrapper function for get_the_title() for blog post.
  */
-if ( ! function_exists( 'astra_the_title' ) ) {
+if ( ! function_exists( 'astra_the_post_title' ) ) {
 
 	/**
-	 * Wrapper function fot the_title()
+	 * Wrapper function for get_the_title() for blog post.
 	 *
 	 * Displays title only if the page title bar is disabled.
 	 *
+	 * @since 1.0.15
 	 * @param string $before Optional. Content to prepend to the title.
 	 * @param string $after  Optional. Content to append to the title.
+	 * @param int    $post_id Optional, default to 0. Post id.
 	 * @param bool   $echo   Optional, default to true.Whether to display or return.
 	 * @return string|void String if $echo parameter is false.
 	 */
-	function astra_the_title( $before = '', $after = '', $echo = true ) {
+	function astra_the_post_title( $before = '', $after = '', $post_id = 0, $echo = true ) {
 
-		if ( apply_filters( 'astra_the_title_enabled', true ) ) {
+		$enabled = apply_filters( 'astra_the_post_title_enabled', true );
+		if ( $enabled ) {
 
-			$title  = astra_get_the_title();
-			$before = apply_filters( 'astra_the_title_before', '' ) . $before;
-			$after  = $after . apply_filters( 'astra_the_title_after', '' );
+			$title  = astra_get_the_title( $post_id );
+			$before = apply_filters( 'astra_the_post_title_before', $before );
+			$after  = apply_filters( 'astra_the_post_title_after', $after );
 
 			// This will work same as `the_title` function but with Custom Title if exits.
 			if ( $echo ) {
-				echo $before . $title . $after;
+				echo $before . $title . $after; // WPCS: XSS OK.
 			} else {
 				return $before . $title . $after;
 			}
@@ -568,45 +662,92 @@ if ( ! function_exists( 'astra_the_title' ) ) {
 }
 
 /**
- * Wrapper function fot get_the_title()
+ * Wrapper function for the_title()
+ */
+if ( ! function_exists( 'astra_the_title' ) ) {
+
+	/**
+	 * Wrapper function for the_title()
+	 *
+	 * Displays title only if the page title bar is disabled.
+	 *
+	 * @param string $before Optional. Content to prepend to the title.
+	 * @param string $after  Optional. Content to append to the title.
+	 * @param int    $post_id Optional, default to 0. Post id.
+	 * @param bool   $echo   Optional, default to true.Whether to display or return.
+	 * @return string|void String if $echo parameter is false.
+	 */
+	function astra_the_title( $before = '', $after = '', $post_id = 0, $echo = true ) {
+
+		$title             = '';
+		$blog_post_title   = astra_get_option( 'blog-post-structure' );
+		$single_post_title = astra_get_option( 'blog-single-post-structure' );
+
+		if ( ( ( ! is_singular() && in_array( 'title-meta', $blog_post_title ) ) || ( is_single() && in_array( 'single-title-meta', $single_post_title ) ) || is_page() ) ) {
+			if ( apply_filters( 'astra_the_title_enabled', true ) ) {
+
+				$title  = astra_get_the_title( $post_id );
+				$before = apply_filters( 'astra_the_title_before', $before );
+				$after  = apply_filters( 'astra_the_title_after', $after );
+
+				$title = $before . $title . $after;
+			}
+		}
+
+		// This will work same as `the_title` function but with Custom Title if exits.
+		if ( $echo ) {
+			echo $title;
+		} else {
+			return $title;
+		}
+	}
+}
+
+/**
+ * Wrapper function for get_the_title()
  */
 if ( ! function_exists( 'astra_get_the_title' ) ) {
 
 	/**
-	 * Wrapper function fot get_the_title()
+	 * Wrapper function for get_the_title()
 	 *
 	 * Return title for Title Bar and Normal Title.
 	 *
+	 * @param int  $post_id Optional, default to 0. Post id.
 	 * @param bool $echo   Optional, default to false. Whether to display or return.
 	 * @return string|void String if $echo parameter is false.
 	 */
-	function astra_get_the_title( $echo = false ) {
+	function astra_get_the_title( $post_id = 0, $echo = false ) {
 
-		$id    = astra_get_post_id();
 		$title = '';
-
-		// for 404 page - title always display.
-		if ( is_404() ) {
-
-			$title = apply_filters( 'astra_the_404_page_title', esc_html( 'This page doesn\'t seem to exist.', 'astra' ) );
-
-			// for search page - title always display.
-		} elseif ( is_search() ) {
-
-			/* translators: 1: search string */
-			$title = apply_filters( 'astra_the_search_page_title', sprintf( __( 'Search Results for: %s', 'astra' ), '<span>' . get_search_query() . '</span>' ) );
-
-		} elseif ( class_exists( 'WooCommerce' ) && is_shop() ) {
-
-			$title = woocommerce_page_title();
-
-		} elseif ( is_archive() ) {
-
-			$title = get_the_archive_title();
-
+		if ( $post_id || is_singular() ) {
+			$title = get_the_title( $post_id );
 		} else {
+			if ( is_front_page() && is_home() ) {
+				// Default homepage.
+				$title = apply_filters( 'astra_the_default_home_page_title', esc_html__( 'Home', 'astra' ) );
+			} elseif ( is_home() ) {
+				// blog page.
+				$title = apply_filters( 'astra_the_blog_home_page_title', get_the_title( get_option( 'page_for_posts', true ) ) );
+			} elseif ( is_404() ) {
+				// for 404 page - title always display.
+				$title = apply_filters( 'astra_the_404_page_title', esc_html__( 'This page doesn\'t seem to exist.', 'astra' ) );
 
-			$title = get_the_title( $id );
+				// for search page - title always display.
+			} elseif ( is_search() ) {
+
+				/* translators: 1: search string */
+				$title = apply_filters( 'astra_the_search_page_title', sprintf( __( 'Search Results for: %s', 'astra' ), '<span>' . get_search_query() . '</span>' ) );
+
+			} elseif ( class_exists( 'WooCommerce' ) && is_shop() ) {
+
+				$title = woocommerce_page_title();
+
+			} elseif ( is_archive() ) {
+
+				$title = get_the_archive_title();
+
+			}
 		}
 
 		// This will work same as `get_the_title` function but with Custom Title if exits.
@@ -624,7 +765,7 @@ if ( ! function_exists( 'astra_get_the_title' ) ) {
 if ( ! function_exists( 'astra_archive_page_info' ) ) {
 
 	/**
-	 * Wrapper function fot the_title()
+	 * Wrapper function for the_title()
 	 *
 	 * Displays title only if the page title bar is disabled.
 	 */
@@ -637,18 +778,19 @@ if ( ! function_exists( 'astra_archive_page_info' ) ) {
 
 				<section class="ast-author-box ast-archive-description">
 					<div class="ast-author-bio">
-						 <h1 class='page-title ast-archive-title'><?php echo get_the_author(); ?></h1>
-						 <p><?php echo wp_kses_post( get_the_author_meta( 'description' ) ); ?></p>
+						<h1 class='page-title ast-archive-title'><?php echo get_the_author(); ?></h1>
+						<p><?php echo wp_kses_post( get_the_author_meta( 'description' ) ); ?></p>
 					</div>
 					<div class="ast-author-avatar">
-						<?php echo get_avatar( get_the_author_meta( 'email' ) , 120 ); ?>
+						<?php echo get_avatar( get_the_author_meta( 'email' ), 120 ); ?>
 					</div>
 				</section>
 
 			<?php
 
 			// Category.
-			} elseif ( is_category() ) { ?>
+			} elseif ( is_category() ) {
+			?>
 
 				<section class="ast-archive-description">
 					<h1 class="page-title ast-archive-title"><?php echo single_cat_title(); ?></h1>
@@ -658,7 +800,8 @@ if ( ! function_exists( 'astra_archive_page_info' ) ) {
 			<?php
 
 			// Tag.
-			} elseif ( is_tag() ) { ?>
+			} elseif ( is_tag() ) {
+			?>
 
 				<section class="ast-archive-description">
 					<h1 class="page-title ast-archive-title"><?php echo single_tag_title(); ?></h1>
@@ -668,7 +811,8 @@ if ( ! function_exists( 'astra_archive_page_info' ) ) {
 			<?php
 
 			// Search.
-			} elseif ( is_search() ) { ?>
+			} elseif ( is_search() ) {
+			?>
 
 				<section class="ast-archive-description">
 					<?php
@@ -681,14 +825,16 @@ if ( ! function_exists( 'astra_archive_page_info' ) ) {
 			<?php
 
 			// Other.
-			} else { ?>
+			} else {
+			?>
 
 				<section class="ast-archive-description">
 					<?php the_archive_title( '<h1 class="page-title ast-archive-title">', '</h1>' ); ?>
 					<?php the_archive_description(); ?>
 				</section>
 
-		<?php }// End if().
+		<?php
+			}// End if().
 		}// End if().
 	}
 
@@ -712,12 +858,12 @@ if ( ! function_exists( 'astra_adjust_brightness' ) ) {
 	function astra_adjust_brightness( $hex, $steps, $type ) {
 
 		// Get rgb vars.
-		$hex = str_replace( '#','',$hex );
+		$hex = str_replace( '#', '', $hex );
 
 		$shortcode_atts = array(
-			'r' => hexdec( substr( $hex,0,2 ) ),
-			'g' => hexdec( substr( $hex,2,2 ) ),
-			'b' => hexdec( substr( $hex,4,2 ) ),
+			'r' => hexdec( substr( $hex, 0, 2 ) ),
+			'g' => hexdec( substr( $hex, 2, 2 ) ),
+			'b' => hexdec( substr( $hex, 4, 2 ) ),
 		);
 
 		// Should we darken the color?
@@ -730,9 +876,9 @@ if ( ! function_exists( 'astra_adjust_brightness' ) ) {
 		// Build the new color.
 		$steps = max( -255, min( 255, $steps ) );
 
-		$shortcode_atts['r']  = max( 0,min( 255,$shortcode_atts['r'] + $steps ) );
-		$shortcode_atts['g'] = max( 0,min( 255,$shortcode_atts['g'] + $steps ) );
-		$shortcode_atts['b'] = max( 0,min( 255,$shortcode_atts['b'] + $steps ) );
+		$shortcode_atts['r'] = max( 0, min( 255, $shortcode_atts['r'] + $steps ) );
+		$shortcode_atts['g'] = max( 0, min( 255, $shortcode_atts['g'] + $steps ) );
+		$shortcode_atts['b'] = max( 0, min( 255, $shortcode_atts['b'] + $steps ) );
 
 		$r_hex = str_pad( dechex( $shortcode_atts['r'] ), 2, '0', STR_PAD_LEFT );
 		$g_hex = str_pad( dechex( $shortcode_atts['g'] ), 2, '0', STR_PAD_LEFT );
