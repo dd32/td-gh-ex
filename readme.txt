@@ -56,6 +56,11 @@ The exceptions to this license are as follows:
 * fonts/fontawesome-webfont.woff SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 * fonts/fontawesome-webfont.woff2 SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 *
+* css/animate.css - the MIT license, Reference: http://opensource.org/licenses/MIT
+* author URL: http://daneden.me/animate
+*
+* js/viewportchecker.js - the MIT license, Reference: http://opensource.org/licenses/MIT
+*
 * images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
 * images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms 
 * images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms

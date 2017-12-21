@@ -1,3 +1,7 @@
+fKidd 1.8.3, 2017-12-22
+------------------------
+- improve animation effects
+
 fKidd 1.8.2, 2017-11-13
 ------------------------
 - add animations
