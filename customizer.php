@@ -1867,7 +1867,9 @@ class enigma_changelog_Control extends WP_Customize_Control {
 			<div class="col-md-3 col-sm-6">
 				<h2 style="margin-top:10px;color:#fff;background-color: #3ca3e0;padding: 10px;font-size: 19px;"><?php echo _e( 'Enigma Theme Changelog','enigma'); ?></h2>
 				<ul style="padding-top:20px">
-				<li class="upsell-enigma"> <div class="versionhd"> Version: 3.9 - <span> Current Version </span></div>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.0 - <span> Current Version </span></div>
+		<ol> <li> Review Request Banner dismiss option added. </li></ol></li>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 3.9 - </div>
 		<ol> <li> Snow effect option added. </li></ol></li>
 				<li class="upsell-enigma"> <div class="versionhd"> Version: 3.8 - </div>
 		<ol> <li> Animation feature added in Slider Option. </li><li> Snow effect added. </li></ol></li>

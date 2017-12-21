@@ -493,41 +493,52 @@ function enigma_plugin_recommend(){
 	);
     tgmpa( $plugins );
 }
-if (get_template_directory() == get_stylesheet_directory()) {
-add_action( 'admin_notices', 'enigma_rating' );
-function enigma_rating() {
-    ?>
-    <div class="notice error my-acf-notice is-dismissible notice-box" >
-        <p><?php _e( 'Thank You for using Enigma theme, Please give your reviews and ratings on Enigma theme. Your ratings will help us to improve our themes.','enigma' ); ?></p>
-		<p style="font-size:17px;"> 
-			<a style="color: #fff;background: #ec635b;padding: 3px 7px 4px 6px;border-radius: 5px;" href="<?php echo esc_url('https://wordpress.org/support/theme/enigma/reviews/?filter=5');  ?>" target="_blank"><?php _e('Rate the theme','enigma') ?></a>
-		</p>
-    </div>
-    <?php
+function enigma_custom_admin_notice() {
+	wp_register_style( 'custom_admin_css', get_template_directory_uri() . '/core/admin/admin-rating.css');
+    wp_enqueue_style( 'custom_admin_css' );
+	$wl_th_info = wp_get_theme(); 
+	$currentversion = str_replace('.','',(esc_html( $wl_th_info->get('Version') )));
+	$isitdismissed = 'enigma_notice_dismissed'.$currentversion;
+	if ( !get_user_meta( get_current_user_id() , $isitdismissed ) ) { ?>
+	<div class="notice-box notice-success is-dismissible flat_responsive_notice" data-dismissible="disable-done-notice-forever">
+		<div>
+			<p>	
+			<?php _e('Thank you for using the free version of ','enigma'); ?>
+			<?php echo esc_html( $wl_th_info->get('Name') );?> - 
+			<?php echo esc_html( $wl_th_info->get('Version') );
+			 ?>
+			<?php _e('Please give your reviews and ratings on ','enigma'); echo $wl_th_info->get('Name'); _e(' theme. Your ratings will help us to improve our themes.', 'enigma'); ?>
+			<script type="text/javascript">alert(<?php echo $isitdismissed?>);</script>
+			<?php if($wl_th_info->get('Name')=="Enigma") { ?>
+			<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/enigma/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel"> <?php } elseif($wl_th_info->get('Name')=="Greenigma") { ?>
+			<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/greenigma/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel"> <?php } elseif($wl_th_info->get('Name')=="Inferno") { ?>
+			<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/inferno/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel">		
+			<?php } else { ?>
+			<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/cista/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel">	
+			<?php } ?>
+				<strong><?php _e('Rate Us here','enigma');?></strong>
+			</a>
+			<a class="dismiss" href="?-notice-dismissed<?php echo $currentversion;?>"><?php _e('Dismiss','enigma');?></a>
+			</p>
+		</div>
+		
+	</div>
+	
+<?php
+	}
+ }
+add_action('admin_notices', 'enigma_custom_admin_notice');
+
+function enigma_notice_dismissed() {
+	$wl_th_info = wp_get_theme(); 
+	$currentversion = str_replace('.','',(esc_html( $wl_th_info->get('Version') )));
+	$dismissurl = '-notice-dismissed'.$currentversion;
+	$isitdismissed = 'enigma_notice_dismissed'.$currentversion;
+    $user_id = get_current_user_id();
+    if ( isset( $_GET[$dismissurl] ) )
+        add_user_meta( $user_id, $isitdismissed, 'true', true );
 }
-function enqueue_custom_admin_style() {
-        wp_register_style( 'custom_admin_css', get_template_directory_uri() . '/core/admin/admin-rating.css');
-        wp_enqueue_style( 'custom_admin_css' );
-}
-add_action( 'admin_enqueue_scripts', 'enqueue_custom_admin_style' );
-} else {
-	add_action( 'admin_notices', 'greenigma_rating' );
-function greenigma_rating() {
-    ?>
-    <div class="error my-acf-notice is-dismissible notice-box1" >
-        <p><?php _e( 'Thank You for using Greenigma theme, Please give your reviews and ratings on Greenigma theme. Your ratings will help us to improve our themes.','Greenigma' ); ?></p>
-		<p style="font-size:17px;"> 
-			<a style="color: #fff;background: #ec635b;padding: 3px 7px 4px 6px;border-radius: 5px;" href="<?php echo esc_url('https://wordpress.org/support/theme/greenigma/reviews/#new-post');  ?>" target="_blank"><?php _e('Rate the theme','enigma') ?></a>
-		</p>
-    </div>
-    <?php
-}
-function enqueue_custom_admin_style() {
-        wp_register_style( 'custom_admin_css', get_template_directory_uri() . '/core/admin/admin-rating.css');
-        wp_enqueue_style( 'custom_admin_css' );
-}
-add_action( 'admin_enqueue_scripts', 'enqueue_custom_admin_style' );
-}
+add_action( 'admin_init', 'enigma_notice_dismissed' );
 
 $theme_options = weblizar_get_options();
 if($theme_options['snoweffect']!=''){

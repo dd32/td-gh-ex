@@ -6,6 +6,9 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 4.0 [21-12-2017]
+1. Review Request banner dismiss option added.
+
 @Version: 3.9 [08-12-2017]
 1. Snow effect option added.
 
