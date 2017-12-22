@@ -23,6 +23,20 @@ See headers of each files for further details.
 
 
 ####################### Changelog ######################
+= 4.0.14 December 22nd 2017 =
+* Fix: decrease regular submenu top to 15px. fixes #1333
+* Fix: apply margin-bottom to the right wrapper element, as part of the fix for #1331
+* Fix: avoid adding slider metabox to attachment which are not images. fixes #1317
+* Fix: widget categories title transformed to uppercase. apply the uppercase rule only to its list items also remove the bold font-weight. fixes #1309
+* Fix: always display the comment form before comment list (if any)
+* Fix: slider cta hiding text. fixes #1299
+* Fix: related posts height after the content with two sidebars fixes #1304
+* Fix: fix search icon not appearing in the topbar. fixes #1324
+* Fix: fix WooCommerce Terms and Condition checkbox in Checkout page is not really visible. fixes #1340
+* Fix : dropdown menu-item word-break property set to break-word. Fixes #1339
+* added: a boxed layout options for the header, the content and the footer
+* added: new option to allow a menu dropdown on click for mobile menu and side menu. Enabled by default on mobile devices
+
 = 4.0.13 November 20th 2017 =
 * Fix : WP 4.9 Code Editor issue could impact the custom css customizer option when checking errors in the code
 

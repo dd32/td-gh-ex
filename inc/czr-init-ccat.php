@@ -2613,7 +2613,8 @@ class CZR_utils_settings_map {
                   'tc_header_mobile_wc_cart',
                   'tc_header_mobile_tagline',
                   'tc_header_mobile_sticky',
-                  'tc_header_mobile_menu_layout'
+                  'tc_header_mobile_menu_layout',
+                  'tc_header_mobile_menu_dropdown_on_click'
             );
             foreach ( $_to_unset as $key ) {
                   unset( $_map[ $key ] );
@@ -2631,6 +2632,15 @@ class CZR_utils_settings_map {
 
             if ( !is_array( $_map ) || empty( $_map ) ) {
                   return $_map;
+            }
+
+            //to unset
+            $_to_unset = array(
+                  'tc_side_menu_dropdown_on_click',
+            );
+
+            foreach ( $_to_unset as $key ) {
+                  unset( $_map[ $key ] );
             }
 
 
@@ -3192,6 +3202,15 @@ class CZR_utils_settings_map {
       * hook : tc_add_section_map
       */
       function czr_fn_popul_section_map( $_sections ) {
+            //removed sections
+            //to unset
+            $_sections_to_unset = array(
+                  'site_layout_sec',
+            );
+
+            foreach ( $_sections_to_unset as $key ) {
+                  unset( $_sections[ $key ] );
+            }
 
             $_old_sections = array(
 
