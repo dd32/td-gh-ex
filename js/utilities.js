@@ -62,16 +62,21 @@ function fcorpo_IsLargeResolution() {
 function fcorpo_init_loading_effects() {
 
     jQuery('#header-logo').addClass("hidden").viewportChecker({
-            classToAdd: 'animated fadeInLeft',
+            classToAdd: 'animated bounce',
             offset: 1
           });
 
-    jQuery('#navmain').addClass("hidden").viewportChecker({
-            classToAdd: 'animated bounceInRight',
+    jQuery('.phone-and-email, #header-phone, #header-email').addClass("hidden").viewportChecker({
+            classToAdd: 'animated rubberBand',
             offset: 1
           });
 
-    jQuery('#page-header, article h1').addClass("hidden").viewportChecker({
+    jQuery('#navmain a, #top-menu a').addClass("hidden").viewportChecker({
+            classToAdd: 'animated rubberBand',
+            offset: 1
+          });
+
+    jQuery('#page-header').addClass("hidden").viewportChecker({
             classToAdd: 'animated bounceInUp',
             offset: 1
           });
@@ -82,13 +87,18 @@ function fcorpo_init_loading_effects() {
             offset: 1
           });
 
+    jQuery('.col3a, .col3b, .col3c').addClass("hidden").viewportChecker({
+            classToAdd: 'animated zoomIn',
+            offset: 1
+          });
+
     jQuery('img').addClass("hidden").viewportChecker({
             classToAdd: 'animated zoomIn',
             offset: 1
           });
 
     jQuery('#sidebar').addClass("hidden").viewportChecker({
-            classToAdd: 'animated bounceInRight',
+            classToAdd: 'animated zoomIn',
             offset: 1
           });
 
@@ -97,9 +107,15 @@ function fcorpo_init_loading_effects() {
             offset: 1
           });
 
-    jQuery('article p, article li')
+    jQuery('.header-social-widget')
         .addClass("hidden").viewportChecker({
-            classToAdd: 'animated fadeInLeft',
+            classToAdd: 'animated bounceInLeft',
+            offset: 1
+          });
+
+    jQuery('article, article p, article li')
+        .addClass("hidden").viewportChecker({
+            classToAdd: 'animated zoomIn',
             offset: 1
           });
 
@@ -109,9 +125,21 @@ function fcorpo_init_loading_effects() {
             offset: 1
           });
 
-    jQuery('#footer-main p, #footer-main li')
+    jQuery('#footer-main p, #footer-main ul, #footer-main li, .footer-title, .col3a, .col3b, .col3c')
         .addClass("hidden").viewportChecker({
-            classToAdd: 'animated fadeInLeft',
+            classToAdd: 'animated zoomIn',
+            offset: 1
+          });
+
+    jQuery('.footer-social-widget')
+        .addClass("hidden").viewportChecker({
+            classToAdd: 'animated rubberBand',
+            offset: 1
+          });
+
+    jQuery('#footer-menu')
+        .addClass("hidden").viewportChecker({
+            classToAdd: 'animated bounceInDown',
             offset: 1
           });
 }

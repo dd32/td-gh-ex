@@ -52,6 +52,7 @@ if ( ! function_exists( 'fcorpo_setup' ) ) {
 		register_nav_menus( array(
 			'top'   => __( 'top menu', 'fcorpo' ),
 			'primary'   => __( 'Primary Menu', 'fcorpo' ),
+			'footer'   => __( 'Footer Menu', 'fcorpo' ),
 		) );
 
 		// add Custom background				 

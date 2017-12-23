@@ -18,6 +18,10 @@
 
 					<?php get_sidebar('footer'); ?>
 
+					<nav id="footer-menu">
+						<?php wp_nav_menu( array( 'theme_location' => 'footer', ) ); ?>
+					</nav>
+
 					<div class="clear">
 					</div>
 

@@ -4,7 +4,7 @@ Description: fCorpo a perfect choice for your Corporate, Business, Company, Port
 Theme URI: https://tishonator.com/product/fcorpo
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 1.1.1
+Version: 1.1.2
 Text Domain: fcorpo
 Tags: blog, news, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, post-formats, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
@@ -176,6 +176,12 @@ ul {
 
 #header-spacer {
 	width:100%;
+}
+
+#header-top #top-menu li a,
+#header-top #header-email,
+#header-top #header-phone {
+	display: inline-block;
 }
 
 #header-top-content,
@@ -488,6 +494,22 @@ article,
 .separator {
 	height:1px;
 	margin:20px 1% 10px 0;
+}
+
+#footer-menu {
+	text-align:center;
+	margin:15px 0;
+}
+
+#footer-menu ul,
+#footer-menu li {
+	display:inline;
+	padding:0;
+	margin:0;
+}
+
+#footer-menu li {
+	margin-right:20px;
 }
 
 #footer-main {
