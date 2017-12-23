@@ -26,7 +26,7 @@ h2.aqa-main-title {
 }
 h2.aqa-main-title:before { 
     content: "";
-    border-bottom: 1px solid #3b5998;
+    border-bottom: 1px solid #e73f43;
     position: absolute;
     width: 150px;
     bottom: 1px;
@@ -40,7 +40,7 @@ h2.aqa-main-title:after {
     width: 5%;
     bottom: 0;
     height: 3px;
-    background: #1e56d0;
+    background: #e73f43;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -337,7 +337,7 @@ ul.footer-links li a{
   text-decoration: none;
 }
 .aqa-footer-top-section {
-    background: rgb(116, 146, 208);
+    background: #e73f43e0;
     margin-top: 40px;
 }
 .aqa-footer-section h2 {
@@ -493,21 +493,21 @@ p.parllex-btn {
   text-align: justify;
 }
 a.read-more-btn {
-    background: #3b5998;
+    background: #e73f43;
     padding: 10px 20px;
     color: #fff;
     display: inline-block;
 }
 a.read-more-btn:hover{
   text-decoration: none;
-  background: #1e56d0;
+  background: #e73f43d1;
 }
 .aqa-read-btn {
   margin-top: 25px;
   float: right;
 }
 .aqa-view-more-btn a {
-    background: #3b5998;
+    background: #e73f43;
     padding: 13px 70px;
     margin: 50px 0 0;
     color: #fff;
@@ -518,7 +518,7 @@ a.read-more-btn:hover{
 }
 .aqa-view-more-btn a:hover{
   text-decoration: none;
-  background: #1e56d0;
+  background: #e73f43d1;
 }
 .aqa-view-more-btn {
     text-align: center;
@@ -580,13 +580,13 @@ a.read-more-btn:hover{
   width: 49%;
 }
 .form-submit input[type="submit"] {
-    background: #3b5998;
+    background: #e73f43;
     border: none;
     color: #fff;
     padding: 7px 10px;
 }
 .form-submit input[type="submit"]:hover {
-    background: #1e56d0;
+    background: #e73f43d1;
 }
 p.form-submit {
     margin-top: 25px;
@@ -636,7 +636,7 @@ ol.comment-list p {
   margin: 30px 0 0;
 }
 p.blog-single-btn a {
-  background: #3b5998;
+  background: #e73f43;
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
@@ -644,7 +644,7 @@ p.blog-single-btn a {
   display: inline-block;
 }
 p.blog-single-btn a:hover {
-    background: #1e56d0;
+    background: #e73f43d1;
 }
 p.post-discription {
     margin: 20px 0;
@@ -866,10 +866,10 @@ p.side-post-name {
 .aqa-blog-side-bar h2 {
     font-size: 20px;
     text-transform: uppercase;
-    border-bottom: 1px solid #3b5998;
+    border-bottom: 1px solid #e73f43;
     margin: 0 0 22px;
     padding: 0 0 7px;
-    color: #3b5998;
+    color: #e73f43;
 }
 .blog-page-row-gap{
   margin-bottom: 40px;
@@ -1077,7 +1077,7 @@ p.blog-cat {
     margin: 15px 0 15px 0px;
 }
 .aqa-single-blog-detail h2 {
-    color: #337ab7;
+    color: #e73f43;
     text-align: left;
 }
 .aqa-single-blog-detail {
@@ -1269,7 +1269,7 @@ h3.you-may-like{
 }
 .aqa-footer-section .widget_search input#searchsubmit {
   margin-top: 15px;
-  background: #3b5998;
+  background: #e73f43;
   color: #fff;
   border: none;
   outline: none;
@@ -1277,7 +1277,7 @@ h3.you-may-like{
   padding: 6px 20px; 
 }
 .aqa-footer-section .widget_search input#searchsubmit:hover {
-  background: #1e56d0;
+  background: #e73f43d1;
 }
 .aqa-search-page{
   margin-top:50px;
@@ -1409,14 +1409,14 @@ span.aqa-blog-date{
     border-radius: 50px;
     outline: none;
     padding: 0 0px 0 30px;
-    background: #3b5998;
+    background: #e73f43;
     color: #fff;
 }
 .page-content input#searchsubmit {
     position: absolute;
     right: 4px;
     background: #ffffff;
-    color: #3b5998;
+    color: #e73f43;
     border: none;
     outline: none;
     border-radius: 50px;
@@ -1498,7 +1498,7 @@ ul.dropdown-menu:before {
   z-index: 1;
   top: 0;left: 0;right: 0;
   margin: 0 auto;
-  background-color: rgb(51, 122, 183);
+  background-color: #e73f43;
 
   -webkit-transition: 0.3s all;
   -o-transition: 0.3s all;
@@ -1529,7 +1529,7 @@ ul.dropdown-menu li:last-child {
   padding: 20px 25px !important;
 }
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-  background-color: #337ab7 !important;
+  background-color: #e73f43 !important;
   text-decoration: none;
   color: #fff !important;
 }
@@ -1569,7 +1569,7 @@ ul.dropdown-submenu-position {
 ul#menu-header-menu li a:hover,
 ul#menu-header-menu li a:active,
 ul#menu-header-menu li a:focus {
-  background-color: #337ab7;
+  background-color: #e73f43;
   color: #fff;
 }
 .grpe-logo-menu-bar {

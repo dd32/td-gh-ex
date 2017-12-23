@@ -98,12 +98,12 @@ add_action( 'after_setup_theme', 'aquaparallax_setup' );
 function aquaparallax_scripts() {
     // aquaparallax styles
     wp_enqueue_style( 'aquaparallax-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', true, '', 'all' );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', array(), rand(111,9999), 'all' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.css', false, '', 'all' );
-	wp_enqueue_style( 'aquaparallax-styles', get_template_directory_uri() . '/assets/css/styles.css', false, '', 'all' );
+	wp_enqueue_style( 'aquaparallax-styles', get_template_directory_uri() . '/assets/css/styles.css', array(), rand(111,9999), 'all' );
 	wp_enqueue_style( 'aquaparallax-responsive', get_template_directory_uri() . '/assets/css/responsive.css', false, '', 'all' );
 	wp_enqueue_style( 'meanmenu', get_template_directory_uri() . '/assets/css/meanmenu.min.css', false, '', 'all' );
-	wp_enqueue_style( 'aquaparallax-pagination', get_template_directory_uri() . '/assets/css/pagination.css', false, '', 'all' );
+	wp_enqueue_style( 'aquaparallax-pagination', get_template_directory_uri() . '/assets/css/pagination.css', array(), rand(111,9999), 'all' );
 	wp_enqueue_style( 'google-font', '//fonts.googleapis.com/css?family=Pacifico|Roboto:400,500,700', false, '', 'all' );
 
     // aquaparallax scripts

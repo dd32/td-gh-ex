@@ -48,7 +48,7 @@ get_header();
 	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 	<p class="blog-user-cmd"><span class="aqa-blog-date"><i class="fa fa-clock-o"></i><?php echo get_the_date(); ?></span></p>
 	<p><?php the_excerpt(); ?></p>
-	<div class="aqa-read-btn"><a href="<?php the_permalink(); ?>" class="read-more-btn"><?php echo esc_html_e( 'Continue Reading', 'aquaparallax' ); ?></a></div>
+	<div class="aqa-read-btn"><a href="<?php the_permalink(); ?>" class="read-more-btn"><?php echo esc_html_e( 'Read More', 'aquaparallax' ); ?></a></div>
 </div>
 </div>
 </div><?php endwhile; ?>
