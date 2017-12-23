@@ -1,5 +1,10 @@
 Bazaar Lite Changelog
 
+- Version 1.4.7 - Released: 23.12.2017
+
+-- Added : Telegram social button.
+-- Updated : Font Awesome library.
+
 - Version 1.4.4 - Released: 18.10.2017
 
 -- Updated : WooCommerce templates.

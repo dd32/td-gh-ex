@@ -32,6 +32,7 @@ if (!function_exists('bazaarlite_socials_function')) {
 			"github" => array( "icon" => "fa fa-github" , "target" => "_blank" ),
 			"xing" => array( "icon" => "fa fa-xing" , "target" => "_blank" ),
 			"whatsapp" => array( "icon" => "fa fa-whatsapp" , "target" => "_self" ),
+			"telegram" => array( "icon" => "fa fa-telegram" , "target" => "_self" ),
 			"email" => array( "icon" => "fa fa-envelope" , "target" => "_self" ),
 		
 		);

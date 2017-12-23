@@ -1113,6 +1113,17 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 
 			array( 
 
+				"label" => esc_html__( "Telegram Account",'bazaar-lite'),
+				"description" => esc_html__( "Insert Telegram account (empty if you want to hide the button)",'bazaar-lite'),
+				"id" => "wip_footer_telegram_button",
+				"type" => "button",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+
+			array( 
+
 				"label" => esc_html__( "Email Address",'bazaar-lite'),
 				"description" => esc_html__( "Insert Email Address (empty if you want to hide the button)",'bazaar-lite'),
 				"id" => "wip_footer_email_button",
