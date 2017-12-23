@@ -5,7 +5,7 @@ Description:  Appeal features a pull-quote block in the main content to display 
   Author:      Larry Judd Oliver
   Author URI:  http://tradesouthwest.com/
   Theme URI:   https://larryjudd.us/appeal/theme/
-  Version:     1.2.3
+  Version:     1.2.4
   Text Domain: appeal
   Tags:        one-column, two-columns, three-columns, translation-ready, right-sidebar, footer-widgets, full-width-template, featured-images, blog, e-commerce, news, custom-menu, post-formats, custom-background, custom-logo, editor-style, custom-header, threaded-comments
   License:     GPL 3
@@ -386,7 +386,8 @@ th {
     a[href^=http]:after {
         content: " < " attr(href) "> ";
     }
-    $a:after>img {
+	/*fixed*/
+    a:after>img {
         content: "";
     }
     article a[href^="#"]:after {
@@ -2189,8 +2190,8 @@ tbody.collapse.in {
     top: 0;
     margin-top: 0;
 }
-
-@media all and max-width: 768px) {
+/*fixed*/
+@media all and (max-width: 768px) {
     .dropdown:hover .dropdown-menu,
     .dropdown-menu li,
     .dropdown-menu li ul li {
@@ -4423,7 +4424,7 @@ button.close {
 .carousel-inner>.item>a>img {
     line-height: 1;
 }
-
+/*not fixed
 @media all and(transform-3d),
 (-webkit-transform-3d) {
     .carousel-inner>.item {
@@ -4448,7 +4449,7 @@ button.close {
         transform: translate3d(0, 0, 0);
     }
 }
-
+*/
 .carousel-inner>.active,
 .carousel-inner>.next,
 .carousel-inner>.prev {
@@ -4581,7 +4582,6 @@ button.close {
     margin: 1px;
     text-indent: -999px;
     cursor: pointer;
-    background-color: #000 \9;
     background-color: rgba(0, 0, 0, 0);
     border: 1px solid #fff;
     border-radius: 10px;
@@ -4978,11 +4978,9 @@ button.close {
     }
 }
 
-
 /**
  * ---------------------------------------------------------- ==== Theme ====
 ----------------------------------------------------------------------------- */
-
 
 /* ---------------------modal/navbar/content z-index -------*/
 
@@ -5002,10 +5000,7 @@ button.close {
 /* Alignment and WP
 ----------------------------------------------------------- */
 
-
 /*Comment Output*/
-
-
 /* This theme uses comments numerated list by default */
 
 .commentlist>li {
@@ -5018,18 +5013,14 @@ button.close {
     border-top: 8px solid;
 }
 
-
 /*Comment Form */
-
 #respond {
     height: 100%;
     padding-left: 12px;
 }
-
 #reply-title {
     color: #656565;
 }
-
 #cancel-comment-reply-link {
     color: red;
 }
@@ -5123,7 +5114,8 @@ textarea#comment:focus {
     padding: 3px 0px 3px 3px;
     border: 1px solid #cccccc;
     border-radius: 1px;
-    box-shadow: 0 1px 1px #ddd background-image: linear-gradient( to bottom, #ffffff, #f9f9f9);
+    box-shadow: 0 1px 1px #ddd;
+	background-image: linear-gradient( to bottom, #ffffff, #f9f9f9);
 }
 
 #respond input[type=url] {
@@ -5606,42 +5598,52 @@ img[class*="-thumbnail"] {
 .site-title {
     font-size: 200%;
     position: relative;
-    top: 1em;
+    top: 2px;
     color: #37c;
 }
 
 .site-description {
     font-size: 160%;
     position: relative;
-    top: 1.22em;
+    top: 2px;
     color: #37c;
 }
 
 .site-head {
-    padding: 15px;
-    min-height: 250px;
-    height: auto;
-    max-height: 250px;
+    padding: 0px;
+    display: block;
+    height: 250px;
     width: 100%;
-    position: relative;
 }
 
 .site-head .hgroup {
-    padding-left: 30px;
+    padding: 12px 0px 0px 30px;
     z-index: 100;
     position: relative;
-    top: -14px;
-    text-shadow: 0 1px 1px rgba(242, 242, 242, .8);
+    top: 15px;
+    text-shadow: 0 .5px .5px rgba(242, 242, 242, .8);
 }
-
+.site-head .hgroup p.list-inline {
+    position: absolute;
+    top: 70px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+    z-index: 111; 
+ }
 .header-logo {
-    z-index: 3;
+    position: relative;
+    top: 25px;
 }
 
 .custom-header-img {
     background: transparent;
 }
-
+.header-logo img {
+    max-height: 150px;
+    position: relative;
+    z-index: 2;
+}
 h3 em {
     color: #767676;
 }
@@ -5665,10 +5667,7 @@ body {
     overflow-x: hidden;
 }
 
-
 /* uncomment this to push theme to edges */
-
-
 /*
 #page-content .container  {
 width: 100%;
@@ -6387,7 +6386,8 @@ Can be enabled to get same effect */
 #sidebar-bottom .vertical-nav.block .widget {
     position: relative;
     margin: 7px;
-    float: left: display: inline;
+    float: left;
+	display: inline;
     width: 30%;
 }
 
@@ -6867,7 +6867,7 @@ body.home .thedate {
     }
     .social-footer li {
         display: inline-block;
-        float: left z-index: 888;
+        float: left; z-index: 888;
         border-right: thin solid #c4c4c4;
         margin-bottom: 1px;
     }
@@ -6956,3 +6956,4 @@ body.home .thedate {
     }
 }
 /* Have a Wonderful Time */
+

@@ -33,7 +33,7 @@ function appeal_register_theme_customizer($wp_customize)
 		'appeal_header_background_image_size_setting',
 		// $args
 		array(
-			'default'			=> false,
+			'default'			=> true,
 			'sanitize_callback'	=> 'appeal_sanitize_checkbox',
 			'transport'			=> 'refresh'
 		)

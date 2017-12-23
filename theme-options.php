@@ -177,7 +177,18 @@ $adurl = admin_url( 'customize.php?autofocus[control]=appeal_custom_teaser_lengt
 <span> <a href="https://twitter.com/tradesouthwest" title="<?php esc_attr_e('Twitter', 'appeal'); ?>" target="_blank"> 
 <img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/imgs/alpha-twitter.png'; ?>" alt="<?php esc_attr_e('tweet', 'appeal'); ?>" height="28"/></a></span></p></td>
 </tr></tbody></table>
+<pre>
+== Change Log ==
+1.2.4
+* fixed stylesheet errors
+* added default image setting to header image
+* header logo and title reposition to macth new header settings.
 
+1.2.3
+* fixed archive title error on tags
+* added uri
+* fixed title size
+</pre>
 </div>
 
 <?php
