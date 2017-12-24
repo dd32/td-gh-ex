@@ -16,16 +16,16 @@
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' );?>" />
 		<?php endif; ?>
 		<?php wp_head();?>
-
 	</head>
 
-	<body <?php body_class();?> id="top" >
-
-<div id="site-wrapper" class="grid-container full">
-<div class="header-wrap">
-	<div class="jarallax">
-		<img class="jarallax-img object-fit-images" src="<?php header_image(); ?>" alt="">
-<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
-<?php get_template_part( 'template-parts/header/main', 'menu' ); ?>
-</div>
-</div>
+	<body <?php body_class();?> >
+		<?php /* start site warp */?>
+		<?php $site_layout = get_theme_mod( 'site_layout', 'fluid' ); ?>
+		<div id="site-wrapper" class=" site_layout <?php  echo $site_layout; ?> grid-container ">
+			<div class="header-wrap">
+				<?php get_template_part( 'template-parts/header/header', 'mobile' ); ?>
+				<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
+				<?php get_template_part( 'template-parts/header/main', 'menu' ); ?>
+			</div>
+			<?php $topbg_gradient = get_theme_mod( 'topbg_gradient', '14' ); ?>
+			<div id="content" class="site-mask  <?php echo $topbg_gradient ?>" id="sticky-anchor">

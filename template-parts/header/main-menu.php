@@ -3,15 +3,18 @@
  * The TOP header
  */
 ?>
-<div class="menu-outer">
+<div data-sticky-container>
+<div class="menu-outer z-depth-1 hide-for-medium-only hide-for-small-only  no-js" data-sticky data-options="marginTop:0;" style="width:100%"  data-anchor="content" >
 	<div class="grid-container ">
-	<div class="top-bar ">
+	<div class="top-bar">
+	<?php if ( has_nav_menu( 'off-canvas' ) ) : ?>
   <div class="top-bar-left">
 		<div class="off-canvas-content" data-off-canvas-content>
 			  <button class="offcanvas-trigger menu-icon" type="button" data-open="offCanvasleft">
 	</div>
   </div>
-	<div class="main-menu-wrap">
+	<?php endif; ?>
+	<div class="main-menu-wrap ">
 		 <?php if ( has_nav_menu( 'primary' ) ) : ?>
 		          <?php bestblog_top_nav(); ?>
 						<?php else : ?>
@@ -30,9 +33,10 @@
 		</div>
  </div>
 </div>
-<div class="navbar-search-bar-container animated fadeIn " id="navbar-search-bar" data-toggler=".is-hidden" data-animate="fade-in fade-out" data-closable="" aria-expanded="true" style="display: none;">
+<div class="navbar-search-bar-container animated  " id="navbar-search-bar" data-toggler=".is-hidden" data-animate="fade-in fade-out" data-closable="" aria-expanded="true" style="display: none;">
 <?php get_search_form(); ?>
 <button class="close-button fast" data-close="">&times;</button>
+</div>
 </div>
 </div>
 </div>

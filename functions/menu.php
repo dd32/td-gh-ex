@@ -1,29 +1,12 @@
 <?php
 
-//Register Menus
-register_nav_menus( array(
-		'primary' => __( 'Primary Navigation(Header)', 'best-blog' ),
-    'top-bar'  	=> esc_html__( 'Top bar menu', 'best-blog' )
-	) );
 
 
-function bestblog_top_bar() {
-	 wp_nav_menu(array(
-        'container' => false,                           // Remove nav container
-        'menu_class' => ' menu',       // Adding custom nav class
-        'items_wrap' => '<ul id="%1$s" class="%2$s" >%3$s</ul>',
-        'theme_location' => 'top-bar',        			// Where it's located in the theme
-        'depth' => 1,                                   // Limit the depth of the nav
-        'fallback_cb' => false,                         // Fallback function (see below)
-
-    ));
-}
-
-// The Top Menu
+// The Main Menu
 function bestblog_top_nav() {
 	 wp_nav_menu(array(
         'container' => false,                           // Remove nav container
-        'menu_class' => 'horizontal menu align-center ',       // Adding custom nav class
+        'menu_class' => 'horizontal menu align-center mainmenu ',       // Adding custom nav class
         'items_wrap' => '<ul id="%1$s " class="%2$s" data-responsive-menu="accordion medium-dropdown" data-close-on-click-inside="false">%3$s</ul>',
         'theme_location' => 'primary',        			// Where it's located in the theme
         'depth' => 5,                                   // Limit the depth of the nav
@@ -40,13 +23,26 @@ class Topbar_Menu_Walker extends Walker_Nav_Menu {
     }
 }
 
+// The Off Canvas Menu mobile
+function bestblog_off_canvas_mobile() {
+	 wp_nav_menu(array(
+        'container' => false,                           // Remove nav container
+        'menu_class' => 'vertical menu accordion-menu off-canvas-inner',       // Adding custom nav class
+        'items_wrap' => '<ul id="%1$s" class="%2$s" data-accordion-menu data-close-on-click-inside="false">%3$s</ul>',
+        'theme_location' => 'primary',        			// Where it's located in the theme
+        'depth' => 5,                                   // Limit the depth of the nav
+        'fallback_cb' => false,                         // Fallback function (see below)
+        'walker' => new Off_Canvas_Menu_Walker()
+    ));
+}
+
 // The Off Canvas Menu
 function bestblog_off_canvas_nav() {
 	 wp_nav_menu(array(
         'container' => false,                           // Remove nav container
         'menu_class' => 'vertical menu accordion-menu off-canvas-inner',       // Adding custom nav class
         'items_wrap' => '<ul id="%1$s" class="%2$s" data-accordion-menu data-close-on-click-inside="false">%3$s</ul>',
-        'theme_location' => 'primary',        			// Where it's located in the theme
+        'theme_location' => 'off-canvas',        			// Where it's located in the theme
         'depth' => 5,                                   // Limit the depth of the nav
         'fallback_cb' => false,                         // Fallback function (see below)
         'walker' => new Off_Canvas_Menu_Walker()
@@ -59,6 +55,8 @@ class Off_Canvas_Menu_Walker extends Walker_Nav_Menu {
         $output .= "\n$indent<ul class=\"vertical menu nested\">\n";
     }
 }
+
+
 
 /**
  * Adapted  from http://thewebtaylor.com/articles/wordpress-creating-breadcrumbs-without-a-plugin
@@ -119,7 +117,7 @@ if ( ! function_exists( 'bestblog_breadcrumb' ) ) {
 				$parent = $queried_object->parent;
 
 				if( $parent ) {
-					
+
 					// Loop through all term ancestors
 					while ( $parent ) {
 						$parent_term = get_term($parent, $tax);

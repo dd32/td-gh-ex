@@ -16,8 +16,8 @@
  ?>
  <div class="grid-container">
  <div class="callout margin-vertical-0 border-none copy-text">
-	 <a target="_blank" href="<?php echo esc_url( 'http://imonthemes.com/'); ?>"><?php printf( esc_attr__( 'Theme by %s', 'best-blog' ), 'Themez WP' ); ?></a>
-	 <?php echo $bestblog_footertext;?>Hi! I am a callout with no Borders
+	 <a target="_blank" href="<?php echo esc_url( 'http://imonthemes.com/'); ?>"><?php printf( esc_attr__( 'Theme by %s', 'best-blog' ), 'Imon Themes' ); ?></a>
+	 <?php echo $bestblog_footertext;?>
  </div>
  </div>
 </div>

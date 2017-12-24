@@ -12,9 +12,9 @@
  <?php echo bestblog_mainpost_page_title( );?>
  <!--Call Sub Header-->
 
-
- <div id="blog-content" class="padding-vertical-large-3 padding-vertical-small-2">
+<?php $site_layout = get_theme_mod( 'site_layout', 'fluid main-raised' ); ?>
+ <div id="blog-content" class="padding-vertical-large-3 padding-vertical-small-2 <?php if ( 'box_wbb z-depth-2' == $site_layout) : ?> margin-horizontal-cs-1 <?php endif;?>">
    <?php get_template_part( 'template-parts/main-post', 'loop',get_post_format() );?>
  </div><!--container END-->
 
- <?php get_footer(); ?>
+<?php get_footer(); ?>

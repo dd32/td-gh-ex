@@ -1,7 +1,7 @@
 <?php
 // Numeric Post Navi (built into the theme by default)
 function bestblog_post_navi($before = '', $after = '') {
-	global $wpdb, $wp_query;
+	global  $wp_query;
 	$request = $wp_query->request;
 	$posts_per_page = intval(get_query_var('posts_per_page'));
 	$paged = intval(get_query_var('paged'));

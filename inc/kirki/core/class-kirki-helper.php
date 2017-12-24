@@ -76,6 +76,10 @@ class Kirki_Helper {
 
 	/**
 	 * Initialize the WP_Filesystem
+	 *
+	 * @static
+	 * @access public
+	 * @return object WP_Filesystem
 	 */
 	public static function init_filesystem() {
 		global $wp_filesystem;
@@ -83,6 +87,7 @@ class Kirki_Helper {
 			require_once( ABSPATH . '/wp-admin/includes/file.php' );
 			WP_Filesystem();
 		}
+		return $wp_filesystem;
 	}
 
 	/**
@@ -102,7 +107,7 @@ class Kirki_Helper {
 
 		$attachment = wp_cache_get( 'kirki_image_id_' . md5( $url ), null );
 		if ( false === $attachment ) {
-			$attachment = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE guid = '%s';", $url ) );
+			$attachment = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE guid = %s;", $url ) );
 			wp_cache_add( 'kirki_image_id_' . md5( $url ), $attachment, null );
 		}
 
@@ -255,7 +260,11 @@ class Kirki_Helper {
 	 * @return array
 	 */
 	public static function get_material_design_colors( $context = 'primary' ) {
-
+		$array2 = array();
+		for ($x = 0; $x <= 30; $x++)
+		{
+				$array2[] = 'gradient_'.$x.'';
+		}
 		$colors = array(
 			'primary'     => array( '#FFFFFF', '#000000', '#F44336', '#E91E63', '#9C27B0', '#673AB7', '#3F51B5', '#2196F3', '#03A9F4', '#00BCD4', '#009688', '#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', '#FF5722', '#795548', '#9E9E9E', '#607D8B' ),
 			'red'         => array( '#FFEBEE', '#FFCDD2', '#EF9A9A', '#E57373', '#EF5350', '#F44336', '#E53935', '#D32F2F', '#C62828', '#B71C1C', '#FF8A80', '#FF5252', '#FF1744', '#D50000' ),
@@ -277,6 +286,7 @@ class Kirki_Helper {
 			'brown'       => array( '#EFEBE9', '#D7CCC8', '#BCAAA4', '#A1887F', '#8D6E63', '#795548', '#6D4C41', '#5D4037', '#4E342E', '#3E2723' ),
 			'grey'        => array( '#FAFAFA', '#F5F5F5', '#EEEEEE', '#E0E0E0', '#BDBDBD', '#9E9E9E', '#757575', '#616161', '#424242', '#212121', '#000000', '#ffffff' ),
 			'blue-grey'   => array( '#ECEFF1', '#CFD8DC', '#B0BBC5', '#90A4AE', '#78909C', '#607D8B', '#546E7A', '#455A64', '#37474F', '#263238' ),
+			'gradient'		=>$array2,
 		);
 
 		switch ( $context ) {
@@ -295,7 +305,7 @@ class Kirki_Helper {
 			case 'A200':
 			case 'A400':
 			case 'A700':
-				$key = $context / 100;
+				$key = absint( $context ) / 100;
 				if ( 'A100' === $context ) {
 					$key = 10;
 					unset( $colors['grey'] );
@@ -345,298 +355,63 @@ class Kirki_Helper {
 	 */
 	public static function get_dashicons() {
 
-		$admin_menu = array(
-			'menu',
-			'admin-site',
-			'dashboard',
-			'admin-post',
-			'admin-media',
-			'admin-links',
-			'admin-page',
-			'admin-comments',
-			'admin-appearance',
-			'admin-plugins',
-			'admin-users',
-			'admin-tools',
-			'admin-settings',
-			'admin-network',
-			'admin-home',
-			'admin-generic',
-			'admin-collapse',
-			'filter',
-			'admin-customizer',
-			'admin-multisite',
-		);
-
-		$welcome_screen = array(
-			'welcome-write-blog',
-			'welcome-add-page',
-			'welcome-view-site',
-			'welcome-widgets-menus',
-			'welcome-comments',
-			'welcome-learn-more',
-		);
-
-		$post_formats = array(
-			'format-aside',
-			'format-image',
-			'format-gallery',
-			'format-video',
-			'format-status',
-			'format-quote',
-			'format-chat',
-			'format-audio',
-			'camera',
-			'images-alt',
-			'images-alt2',
-			'video-alt',
-			'video-alt2',
-			'video-alt3',
-		);
-
-		$media = array(
-			'media-archive',
-			'media-audio',
-			'media-code',
-			'media-default',
-			'media-document',
-			'media-interactive',
-			'media-spreadsheet',
-			'media-text',
-			'media-video',
-			'playlist-audio',
-			'playlist-video',
-			'controls-play',
-			'controls-pause',
-			'controls-forward',
-			'controls-skipforward',
-			'controls-back',
-			'controls-skipback',
-			'controls-repeat',
-			'controls-volumeon',
-			'controls-volumeoff',
-		);
-
-		$image_editing = array(
-			'image-crop',
-			'image-rotate',
-			'image-rotate-left',
-			'image-rotate-right',
-			'image-flip-vertical',
-			'image-flip-horizontal',
-			'image-filter',
-			'undo',
-			'redo',
-		);
-
-		$tinymce = array(
-			'editor-bold',
-			'editor-italic',
-			'editor-ul',
-			'editor-ol',
-			'editor-quote',
-			'editor-alignleft',
-			'editor-aligncenter',
-			'editor-alignright',
-			'editor-insertmore',
-			'editor-spellcheck',
-			'editor-expand',
-			'editor-contract',
-			'editor-kitchensink',
-			'editor-underline',
-			'editor-justify',
-			'editor-textcolor',
-			'editor-paste-word',
-			'editor-paste-text',
-			'editor-removeformatting',
-			'editor-video',
-			'editor-customchar',
-			'editor-outdent',
-			'editor-indent',
-			'editor-help',
-			'editor-strikethrough',
-			'editor-unlink',
-			'editor-rtl',
-			'editor-break',
-			'editor-code',
-			'editor-paragraph',
-			'editor-table',
-		);
-
-		$posts = array(
-			'align-left',
-			'align-right',
-			'align-center',
-			'align-none',
-			'lock',
-			'unlock',
-			'calendar',
-			'calendar-alt',
-			'visibility',
-			'hidden',
-			'post-status',
-			'edit',
-			'trash',
-			'sticky',
-		);
-
-		$sorting = array(
-			'external',
-			'arrow-up',
-			'arrow-down',
-			'arrow-right',
-			'arrow-left',
-			'arrow-up-alt',
-			'arrow-down-alt',
-			'arrow-right-alt',
-			'arrow-left-alt',
-			'arrow-up-alt2',
-			'arrow-down-alt2',
-			'arrow-right-alt2',
-			'arrow-left-alt2',
-			'sort',
-			'leftright',
-			'randomize',
-			'list-view',
-			'exerpt-view',
-			'grid-view',
-		);
-
-		$social = array(
-			'share',
-			'share-alt',
-			'share-alt2',
-			'twitter',
-			'rss',
-			'email',
-			'email-alt',
-			'facebook',
-			'facebook-alt',
-			'googleplus',
-			'networking',
-		);
-
-		$wordpress_org = array(
-			'hammer',
-			'art',
-			'migrate',
-			'performance',
-			'universal-access',
-			'universal-access-alt',
-			'tickets',
-			'nametag',
-			'clipboard',
-			'heart',
-			'megaphone',
-			'schedule',
-		);
-
-		$products = array(
-			'wordpress',
-			'wordpress-alt',
-			'pressthis',
-			'update',
-			'screenoptions',
-			'info',
-			'cart',
-			'feedback',
-			'cloud',
-			'translation',
-		);
-
-		$taxonomies = array(
-			'tag',
-			'category',
-		);
-
-		$widgets = array(
-			'archive',
-			'tagcloud',
-			'text',
-		);
-
-		$notifications = array(
-			'yes',
-			'no',
-			'no-alt',
-			'plus',
-			'plus-alt',
-			'minus',
-			'dismiss',
-			'marker',
-			'star-filled',
-			'star-half',
-			'star-empty',
-			'flag',
-			'warning',
-		);
-
-		$misc = array(
-			'location',
-			'location-alt',
-			'vault',
-			'shield',
-			'shield-alt',
-			'sos',
-			'search',
-			'slides',
-			'analytics',
-			'chart-pie',
-			'chart-bar',
-			'chart-line',
-			'chart-area',
-			'groups',
-			'businessman',
-			'id',
-			'id-alt',
-			'products',
-			'awards',
-			'forms',
-			'testimonial',
-			'portfolio',
-			'book',
-			'book-alt',
-			'download',
-			'upload',
-			'backup',
-			'clock',
-			'lightbulb',
-			'microphone',
-			'desktop',
-			'tablet',
-			'smartphone',
-			'phone',
-			'index-card',
-			'carrot',
-			'building',
-			'store',
-			'album',
-			'palmtree',
-			'tickets-alt',
-			'money',
-			'smiley',
-			'thumbs-up',
-			'thumbs-down',
-			'layout',
-		);
-
 		return array(
-			'admin-menu'     => $admin_menu,
-			'welcome-screen' => $welcome_screen,
-			'post-formats'   => $post_formats,
-			'media'          => $media,
-			'image-editing'  => $image_editing,
-			'tinymce'        => $tinymce,
-			'posts'          => $posts,
-			'sorting'        => $sorting,
-			'social'         => $social,
-			'wordpress_org'  => $wordpress_org,
-			'products'       => $products,
-			'taxonomies'     => $taxonomies,
-			'widgets'        => $widgets,
-			'notifications'  => $notifications,
-			'misc'           => $misc,
+			'admin-menu'     => array( 'menu', 'admin-site', 'dashboard', 'admin-post', 'admin-media', 'admin-links', 'admin-page', 'admin-comments', 'admin-appearance', 'admin-plugins', 'admin-users', 'admin-tools', 'admin-settings', 'admin-network', 'admin-home', 'admin-generic', 'admin-collapse', 'filter', 'admin-customizer', 'admin-multisite' ),
+			'welcome-screen' => array( 'welcome-write-blog', 'welcome-add-page', 'welcome-view-site', 'welcome-widgets-menus', 'welcome-comments', 'welcome-learn-more' ),
+			'post-formats'   => array( 'format-aside', 'format-image', 'format-gallery', 'format-video', 'format-status', 'format-quote', 'format-chat', 'format-audio', 'camera', 'images-alt', 'images-alt2', 'video-alt', 'video-alt2', 'video-alt3' ),
+			'media'          => array( 'media-archive', 'media-audio', 'media-code', 'media-default', 'media-document', 'media-interactive', 'media-spreadsheet', 'media-text', 'media-video', 'playlist-audio', 'playlist-video', 'controls-play', 'controls-pause', 'controls-forward', 'controls-skipforward', 'controls-back', 'controls-skipback', 'controls-repeat', 'controls-volumeon', 'controls-volumeoff' ),
+			'image-editing'  => array( 'image-crop', 'image-rotate', 'image-rotate-left', 'image-rotate-right', 'image-flip-vertical', 'image-flip-horizontal', 'image-filter', 'undo', 'redo' ),
+			'tinymce'        => array( 'editor-bold', 'editor-italic', 'editor-ul', 'editor-ol', 'editor-quote', 'editor-alignleft', 'editor-aligncenter', 'editor-alignright', 'editor-insertmore', 'editor-spellcheck', 'editor-expand', 'editor-contract', 'editor-kitchensink', 'editor-underline', 'editor-justify', 'editor-textcolor', 'editor-paste-word', 'editor-paste-text', 'editor-removeformatting', 'editor-video', 'editor-customchar', 'editor-outdent', 'editor-indent', 'editor-help', 'editor-strikethrough', 'editor-unlink', 'editor-rtl', 'editor-break', 'editor-code', 'editor-paragraph', 'editor-table' ),
+			'posts'          => array( 'align-left', 'align-right', 'align-center', 'align-none', 'lock', 'unlock', 'calendar', 'calendar-alt', 'visibility', 'hidden', 'post-status', 'edit', 'trash', 'sticky' ),
+			'sorting'        => array( 'external', 'arrow-up', 'arrow-down', 'arrow-right', 'arrow-left', 'arrow-up-alt', 'arrow-down-alt', 'arrow-right-alt', 'arrow-left-alt', 'arrow-up-alt2', 'arrow-down-alt2', 'arrow-right-alt2', 'arrow-left-alt2', 'sort', 'leftright', 'randomize', 'list-view', 'exerpt-view', 'grid-view' ),
+			'social'         => array( 'share', 'share-alt', 'share-alt2', 'twitter', 'rss', 'email', 'email-alt', 'facebook', 'facebook-alt', 'googleplus', 'networking' ),
+			'wordpress_org'  => array( 'hammer', 'art', 'migrate', 'performance', 'universal-access', 'universal-access-alt', 'tickets', 'nametag', 'clipboard', 'heart', 'megaphone', 'schedule' ),
+			'products'       => array( 'wordpress', 'wordpress-alt', 'pressthis', 'update', 'screenoptions', 'info', 'cart', 'feedback', 'cloud', 'translation' ),
+			'taxonomies'     => array( 'tag', 'category' ),
+			'widgets'        => array( 'archive', 'tagcloud', 'text' ),
+			'notifications'  => array( 'yes', 'no', 'no-alt', 'plus', 'plus-alt', 'minus', 'dismiss', 'marker', 'star-filled', 'star-half', 'star-empty', 'flag', 'warning' ),
+			'misc'           => array( 'location', 'location-alt', 'vault', 'shield', 'shield-alt', 'sos', 'search', 'slides', 'analytics', 'chart-pie', 'chart-bar', 'chart-line', 'chart-area', 'groups', 'businessman', 'id', 'id-alt', 'products', 'awards', 'forms', 'testimonial', 'portfolio', 'book', 'book-alt', 'download', 'upload', 'backup', 'clock', 'lightbulb', 'microphone', 'desktop', 'tablet', 'smartphone', 'phone', 'index-card', 'carrot', 'building', 'store', 'album', 'palmtree', 'tickets-alt', 'money', 'smiley', 'thumbs-up', 'thumbs-down', 'layout' ),
 		);
 
+	}
+
+	/**
+	 * Compares the 2 values given the condition
+	 *
+	 * @param mixed  $value1   The 1st value in the comparison.
+	 * @param mixed  $value2   The 2nd value in the comparison.
+	 * @param string $operator The operator we'll use for the comparison.
+	 * @return boolean whether The comparison has succeded (true) or failed (false).
+	 */
+	public static function compare_values( $value1, $value2, $operator ) {
+		$return = false;
+		if ( '===' === $operator && $value1 === $value2 ) {
+			$return = true;
+		} elseif ( '!==' === $operator && $value1 !== $value2 ) {
+			$return = true;
+		} elseif ( ( '!=' === $operator || 'not equal' === $operator ) && $value1 != $value2 ) {
+			$return = true;
+		} elseif ( ( '>=' === $operator || 'greater or equal' === $operator || 'equal or greater' === $operator ) && $value2 >= $value1 ) {
+			$return = true;
+		} elseif ( ( '<=' === $operator || 'smaller or equal' === $operator || 'equal or smaller' === $operator ) && $value2 <= $value1 ) {
+			$return = true;
+		} elseif ( ( '>' === $operator || 'greater' === $operator ) && $value2 > $value1 ) {
+			$return = true;
+		} elseif ( ( '<' === $operator || 'smaller' === $operator ) && $value2 < $value1 ) {
+			$return = true;
+		} elseif ( 'contains' === $operator || 'in' === $operator ) {
+			if ( is_array( $value1 ) && ! is_array( $value2 ) ) {
+				// @codingStandardsIgnoreLine
+				$return = ( in_array( $value2, $value1 ) );
+			} elseif ( is_array( $value2 ) && ! is_array( $value1 ) ) {
+				// @codingStandardsIgnoreLine
+				$return = ( in_array( $value1, $value2 ) );
+			} elseif ( false === strrpos( $value1, $value2 ) && false === strpos( $value2, $value1 ) ) {
+				$return = false;
+			}
+		} else {
+			$return = ( $value1 == $value2 ) ? true : false;
+		}
+		return (bool) $return;
 	}
 }

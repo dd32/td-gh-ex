@@ -14,7 +14,7 @@ get_header(); ?>
 		<div class="grid-y medium-grid-frame align-center ">
 			<div class="cell  medium-cell-block">
 
-				<!-- Hero Content -->
+				<!-- Hero Content --> 
 				<div class="home-content container">
 						<div class="home-text">
 								<div class="hs-cont">

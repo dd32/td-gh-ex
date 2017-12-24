@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name:   Kirki Toolkit
- * Plugin URI:    http://kirki.org
+ * Plugin URI:    http://aristath.github.io/kirki
  * Description:   The ultimate WordPress Customizer Toolkit
  * Author:        Aristeides Stathopoulos
- * Author URI:    http://aristeides.com
- * Version:       3.0.10
+ * Author URI:    http://aristath.github.io
+ * Version:       3.0.21
  * Text Domain:   kirki
  *
  * GitHub Plugin URI: aristath/kirki
@@ -37,35 +37,45 @@ if ( ! defined( 'KIRKI_PLUGIN_FILE' ) ) {
 	define( 'KIRKI_PLUGIN_FILE', __FILE__ );
 }
 
+// Define the KIRKI_VERSION constant.
+if ( ! defined( 'KIRKI_VERSION' ) ) {
+	if ( ! function_exists( 'get_plugin_data' ) ) {
+		include_once ABSPATH . 'wp-admin/includes/plugin.php';
+	}
+	$data = get_plugin_data( KIRKI_PLUGIN_FILE );
+	$version = ( isset( $data['Version'] ) ) ? $data['Version'] : false;
+	define( 'KIRKI_VERSION', $version );
+}
+
 // Make sure the path is properly set.
 Kirki::$path = wp_normalize_path( dirname( __FILE__ ) );
 Kirki_Init::set_url();
 
+new Kirki_Controls();
+
 if ( ! function_exists( 'Kirki' ) ) {
-	// @codingStandardsIgnoreStart
 	/**
 	 * Returns an instance of the Kirki object.
 	 */
-	function Kirki() {
+	function kirki() {
 		$kirki = Kirki_Toolkit::get_instance();
 		return $kirki;
 	}
-	// @codingStandardsIgnoreEnd
-
 }
 
 // Start Kirki.
 global $kirki;
-$kirki = Kirki();
+$kirki = kirki();
 
 // Instantiate the modules.
 $kirki->modules = new Kirki_Modules();
 
 Kirki::$url = plugins_url( '', __FILE__ );
 
-// Instantiate 2ndary classes.
-new Kirki_L10n();
+// Instantiate classes.
 new Kirki();
+new Kirki_L10n();
+
 // Include deprecated functions & methods.
 include_once wp_normalize_path( dirname( __FILE__ ) . '/core/deprecated.php' );
 
@@ -84,5 +94,13 @@ if ( file_exists( $custom_config_path ) ) {
 // Add upgrade notifications.
 include_once wp_normalize_path( dirname( __FILE__ ) . '/upgrade-notifications.php' );
 
-// Handle localization when kirki is included in a theme.
-include_once wp_normalize_path( dirname( __FILE__ ) . '/l10n.php' );
+/**
+ * To enable tests, add this line to your wp-config.php file (or anywhere alse):
+ * define( 'KIRKI_TEST', true );
+ *
+ * Please note that the example.php file is not included in the wordpress.org distribution
+ * and will only be included in dev versions of the plugin in the github repository.
+ */
+if ( defined( 'KIRKI_TEST' ) && true === KIRKI_TEST && file_exists( dirname( __FILE__ ) . '/example.php' ) ) {
+	include_once dirname( __FILE__ ) . '/example.php';
+}

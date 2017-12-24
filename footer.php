@@ -12,7 +12,7 @@
  * Contains footer content and the closing of the #main and #page div elements.
  */
 ?>
-
+</div><!-- .site-mask -->
 <footer id="footer" class="footer-wrap">
 
       <?php
@@ -21,10 +21,13 @@
       get_template_part( 'template-parts/footer/site', 'info' );
 
       ?>
-
+      <a href="#0"  class="scroll_to_top cd-top floating-action button secondary" data-smooth-scroll>
+      <i class="material-icons no-js">&#xE316;</i>
+      </a>
   </footer>
-</div>
 
+
+</div><!-- #site-wrapper -->
 
 <?php wp_footer(); ?>
 </body>

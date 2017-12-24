@@ -192,7 +192,7 @@ class Kirki_Modules_CSS {
 				$styles = self::loop_controls( $config_id );
 				$styles = apply_filters( "kirki/{$config_id}/dynamic_css", $styles );
 				if ( ! empty( $styles ) ) {
-					wp_enqueue_style( 'kirki-styles-' . $config_id, trailingslashit( Kirki::$url ) . 'assets/css/kirki-styles.css', null, null );
+					wp_enqueue_style( 'kirki-styles-' . $config_id, trailingslashit( Kirki::$url ) . 'assets/css/kirki-styles.css', array(), KIRKI_VERSION );
 					wp_add_inline_style( 'kirki-styles-' . $config_id, $styles );
 				}
 			}
@@ -216,7 +216,7 @@ class Kirki_Modules_CSS {
 	 * @access public
 	 */
 	public function frontend_styles() {
-		wp_enqueue_style( 'kirki-styles-php', admin_url( 'admin-ajax.php' ) . '?action=kirki_dynamic_css', null, null );
+		wp_enqueue_style( 'kirki-styles-php', admin_url( 'admin-ajax.php' ) . '?action=kirki_dynamic_css', array(), KIRKI_VERSION );
 	}
 
 	/**
@@ -247,21 +247,23 @@ class Kirki_Modules_CSS {
 				continue;
 			}
 
-			// Only continue if field dependencies are met.
-			if ( ! empty( $field['required'] ) ) {
-				$valid = true;
+			if ( true === apply_filters( "kirki/{$config_id}/css/skip_hidden", true ) ) {
+				// Only continue if field dependencies are met.
+				if ( ! empty( $field['required'] ) ) {
+					$valid = true;
 
-				foreach ( $field['required'] as $requirement ) {
-					if ( isset( $requirement['setting'] ) && isset( $requirement['value'] ) && isset( $requirement['operator'] ) ) {
-						$controller_value = Kirki_Values::get_value( $config_id, $requirement['setting'] );
-						if ( ! Kirki_Active_Callback::compare( $controller_value, $requirement['value'], $requirement['operator'] ) ) {
-							$valid = false;
+					foreach ( $field['required'] as $requirement ) {
+						if ( isset( $requirement['setting'] ) && isset( $requirement['value'] ) && isset( $requirement['operator'] ) ) {
+							$controller_value = Kirki_Values::get_value( $config_id, $requirement['setting'] );
+							if ( ! Kirki_Helper::compare_values( $controller_value, $requirement['value'], $requirement['operator'] ) ) {
+								$valid = false;
+							}
 						}
 					}
-				}
 
-				if ( ! $valid ) {
-					continue;
+					if ( ! $valid ) {
+						continue;
+					}
 				}
 			}
 

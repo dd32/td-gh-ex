@@ -16,54 +16,57 @@ function bestblog_customize_register($wp_customize)
     $wp_customize->get_setting('blogdescription')->transport  = 'postMessage';
 
 
+/*----------- Move Customizer default Control -----------*/
+$bestblog_appearance_options = $wp_customize->get_control('background_color');
+if ($bestblog_appearance_options) {
+    $bestblog_appearance_options->section = 'bestblog_appearance_options';
+}
+
+$homewidgetsarea_section = $wp_customize->get_section('sidebar-widgets-home-widgets-bestblog');
+if (! empty($homewidgetsarea_section)) {
+    $homewidgetsarea_section->panel = 'bestblog_theme_options';
+    $homewidgetsarea_section->title   = esc_attr__('Home page widgets area', 'best-blog');
+    $homewidgetsarea_section->priority = 2;
+}
+$homewidgetsarea_section = $wp_customize->get_section('sidebar-widgets-home-sidebar-bestblog');
+if (! empty($homewidgetsarea_section)) {
+    $homewidgetsarea_section->panel = 'bestblog_theme_options';
+    $homewidgetsarea_section->title   = esc_attr__('Home Right Sidebar', 'best-blog');
+    $homewidgetsarea_section->priority = 2;
+}
 
 }
 add_action('customize_register', 'bestblog_customize_register');
 
-function bestblog_registers()
-{
-    wp_enqueue_style('bestblog_customizer_style', get_template_directory_uri() . '/css/admin.css', 'bestblog-style', true);
-}
-add_action('customize_controls_enqueue_scripts', 'bestblog_registers');
-
-
-
 /**
- * Sets up the WordPress core custom header .
- *
-
- *
- * @see advance_header_style()
+ * Returns false if Creative Homepage is activated.
  */
-function bestblog_custom_header()
-{
+function bestblog_is_active_creative_homepage() {
 
-    /**
-     * Filter the arguments used when adding 'custom-header' support in advance.
-     *
-     *
-     * @param array $args {
-     *     An array of custom-header support arguments.
-     *
-     *     @type string $default-text-color Default color of the header text.
-     *     @type int      $width            Width in pixels of the custom header image. Default 1200.
-     *     @type int      $height           Height in pixels of the custom header image. Default 280.
-     *     @type bool     $flex-height      Whether to allow flexible-height header images. Default true.
-     *     @type callable $wp-head-callback Callback function used to style the header image and text
-     *                                      displayed on the blog.
-     * }
-     */
-    add_theme_support('custom-header', apply_filters('bestblog_custom_header_args', array(
-        'flex-width'    => true,
-        'width'                  => 1800,
-        'height'                 => 250,
+	if ( 'page' == get_option( 'show_on_front' ) ) {
 
+		$frontpage_id = get_option( 'page_on_front' );
+        $frontpage_slug = get_page_template_slug( $frontpage_id );
 
-    )));
+        if ( $frontpage_slug == 'template-creative.php' ) {
+            return true;
+        } else {
+			return false;
+		}
+
+	} else {
+		return false;
+	}
+
 }
-add_action('after_setup_theme', 'bestblog_custom_header');
 
-
+function bestblog_inactive_creative() {
+	if ( true == bestblog_is_active_creative_homepage() ) {
+		return false;
+	} else {
+		return true;
+	}
+}
 
 
 

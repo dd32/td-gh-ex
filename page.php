@@ -1,10 +1,7 @@
 <?php get_header(); ?>
 <!--Call Sub Header-->
 
-<div id="sub_banner">
-  <div class="grid-container">
-    <div class="grid-x grid-padding-x ">
-      <div class="cell small-12 ">
+<div class="sub_banner_page callout  border-none">
         <div class="heade-content">
           <h1 class="text-center">
             <?php the_title(); ?>
@@ -19,18 +16,15 @@
           </div>
           <div class="overlay"></div>
         <?php endif;?>
-      </div>
-    </div>
-  </div>
 </div>
 
 <!--Content-->
 <!--Content-->
-<div id="content-page">
-  <div class="grid-container">
+<div id="content-page" class="padding-vertical-small-0 padding-vertical-large-1">
+  <div class="grid-container padding-horizontal-0">
     <div class="grid-x grid-margin-x align-center">
-      <div class="auto cell">
-        <div class="page_content">
+      <div class="cell  small-12 <?php echo bestblog_sidebar_layout();?>">
+        <div class="page_content z-depth-1">
           <?php if(have_posts()): ?>
             <?php while(have_posts()): ?>
               <?php the_post();?>
@@ -49,7 +43,7 @@
                   ?>
                 </div>
 
-              <div class="post_info_wrap">
+              <div class="page_content_wrap">
                 <?php the_content();
                 wp_link_pages( array(
                   'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'best-blog' ) . '</span>',
@@ -76,6 +70,6 @@
       <!--PAGE END-->
       <?php get_template_part('sidebar'); ?>
     </div>
+    </div>
   </div>
-</div>
 <?php get_footer(); ?>
