@@ -3,13 +3,13 @@ Theme Name: Adventure Lite
 Theme URI: https://www.sktthemes.net/shop/free-travel-blog-wordpress-theme/
 Author: SKT Themes
 Author URI: https://www.sktthemes.net
-Description: Adventure Lite WordPress theme can be used for adventure, sports, hiking, trekking, railing, rafting, games, fun, elking, hunting, military, mountain climbing, skiing, surfing and other such adventure sports. Also can be used for tours and travels, camping, hotel, students, summer camps, skating, motels, service industry, and other corporate, business, photography and personal portfolio websites. Is simple, flexible and multipurpose with having multi industry use. It is compatible with WooCommerce, and other popular plugins. It is also page builder plugin compatible and multilingual plugins compatible as well. Demo : http://sktperfectdemo.com/demos/adventure/
+Description: Adventure Lite WordPress theme can be used for adventure, sports, hiking, trekking, railing, rafting, games, fun, elking, hunting, military, mountain climbing, skiing, surfing and other such adventure sports. Also can be used for tours and travels, camping, hotel, students, summer camps, skating, motels, service industry, and other corporate, business, photography and personal portfolio websites. Is simple, flexible and multipurpose with having multi industry use. It is compatible with WooCommerce, and other popular plugins. It is also page builder plugins compatible like Elementor, Live Composer, Beaver Builder and multilingual plugins like Polylang, qTranslate X and others too compatible as well. Demo : http://sktperfectdemo.com/demos/adventure/
 
-Version: 1.5
+Version: 1.6
 License: GNU General Public License
 License URI: license.txt
 Text Domain: adventure-lite
-Tags: two-columns,right-sidebar,custom-background,custom-colors,custom-menu,sticky-post,theme-options,threaded-comments,e-commerce
+Tags: two-columns,right-sidebar,custom-background,custom-colors,custom-menu,full-width-template,sticky-post,theme-options,threaded-comments,e-commerce
 
 Adventure Lite is based on Underscores theme(Underscores is distributed under the terms of the GNU GPL v2 or later).
 
@@ -230,6 +230,7 @@ a.ReadMore:hover{background-color:#fec42b; color:#000; }
 /* = Page lay out css
 -------------------------------------------------------------- */
 .site-main{ width:790px; margin:0; padding:0; float:left;}
+.site-full{ width:100%; margin:0; padding:0; float:left;}
 #sitefull{ width:100%; float:none;}
 #sitefull p{ margin-bottom:15px;}
 body.home .page_content{padding:80px 0;}
@@ -255,7 +256,7 @@ body.home .page_content{padding:80px 0;}
 #sidebar{ width:330px; float:right;}
 aside.widget{margin-bottom:20px; background-color:#f6f4f4; padding:20px; border:1px solid #edecec;}
 aside.widget ul{ list-style:disc; }
-h3.widget-title{ background-color:#fec42b; padding:12px 15px; margin-bottom:1px; color:#ffffff;}
+h3.widget-title{ background-color:#e64d43; padding:12px 15px; margin-bottom:1px; color:#ffffff;}
 h3.widget-title a{color:#ffffff;}
 #sidebar ul li{padding:8px 0; list-style:none;}
 #sidebar ul li a{color:#3b3b3b; display:inline-block; }

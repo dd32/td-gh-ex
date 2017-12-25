@@ -4,8 +4,8 @@
 
 Theme Name      :   Adventure Lite
 Theme URI       :   https://www.sktthemes.net/shop/free-travel-blog-wordpress-theme
-Version         :   1.5
-Tested up to    :   WP 4.9
+Version         :   1.6
+Tested up to    :   WP 4.9.1
 Author          :   SKT Themes
 Author URI      :   https://www.sktthemes.net
 
