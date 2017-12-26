@@ -403,10 +403,11 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
                 <h2><?php esc_html_e('SuevaFree child themes.','suevafree');?></h2> 
     
-                <p><?php esc_html_e("You can also choose one of available premium child themes for SuevaFree, SvevaPro or Avana.","suevafree");?></p>
+                <p><?php esc_html_e("You can also choose one of available premium child themes for SuevaFree","suevafree");?></p>
 
                 <ul>
                 
+                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/valepro-free-clean-magazine-wordpress-child-theme/?ref=2&campaign=sueva-panel' ); ?>" title="<?php esc_attr_e('Upgrade to ValePro','suevafree');?>" target="_blank"><?php esc_html_e('Upgrade to ValePro','suevafree');?></a></li>
                     <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/sveva-pro-beauty-and-clean-suevafree-child-theme/?ref=2&campaign=sueva-panel' ); ?>" title="<?php esc_attr_e('Upgrade to SvevaPro','suevafree');?>" target="_blank"><?php esc_html_e('Upgrade to SvevaPro','suevafree');?></a></li>
                     <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/avana-clean-and-minimal-suevafree-child-theme/?ref=2&campaign=sueva-panel' ); ?>" title="<?php esc_attr_e('Upgrade to Avana','suevafree');?>" target="_blank"><?php esc_html_e('Upgrade to Avana','suevafree');?></a></li>
                 
