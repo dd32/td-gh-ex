@@ -8,7 +8,10 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
-(11/28/17) - Changed - Version 3.7
+(12/26/17) - Changed - Version 3.8
+[*] Visual Improvements to the Admin Dashboard
+
+(11/27/17) - Changed - Version 3.7
 [*] Contact form will be available only on home page 
 [*] Updated WooCommerce template
 
