@@ -1,7 +1,11 @@
 iFeature Changelog
 
 ****************************
-Version 6.4 (11/28/17)
+Version 6.5 (12/26/17)
+- Visual Improvements to the Admin Dashboard
+- Fixed Recent post widget issue (No of posts field not working)
+
+Version 6.4 (11/20/17)
 - Added option to filter categories from Blog page (Customize -> Blog Option)
 
 Version 6.3 (10/11/17)

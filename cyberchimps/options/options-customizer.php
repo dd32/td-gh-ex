@@ -838,7 +838,7 @@ function cyberchimps_customize( $wp_customize ) {
         'type' => 'checkbox'
     ) );
 	
-    $wp_customize->add_setting( 'cyberchimps_exclude_post_cat]', array( 'sanitize_callback' => 'cyberchimps_sanitize_multiple_checkboxes') );
+    $wp_customize->add_setting( 'cyberchimps_exclude_post_cat', array( 'sanitize_callback' => 'cyberchimps_sanitize_multiple_checkboxes') );
     $wp_customize->add_control(
     		new cyberchimps_Customize_Control_Checkbox_Multiple(
     				$wp_customize,
@@ -1998,7 +1998,11 @@ function cc_add_upgrade_button() {
             border-color: #CCCCCC;
             box-shadow: 0 1px 0 #5BC0DE inset, 0 1px 0 rgba(0, 0, 0, 0.08);
             float: right;
-            margin-top: -23px;
+            //margin-top: -23px;
+            margin-top: 15px;
+			font-size: 14px;
+			height: 30px;
+			margin-bottom: 15px;
         }
         .wp-core-ui .btn-upgrade:hover {
             color: #fff;
@@ -2009,6 +2013,7 @@ function cc_add_upgrade_button() {
                     word-break: break-all;
                     padding-right: 120px;
         }
+        .wp-full-overlay-sidebar-content #customize-info {background-color: #fff;}
     </style>
     <?php
 }

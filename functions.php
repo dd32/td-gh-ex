@@ -168,6 +168,14 @@ function cyberchimps_demodata()
 	return $link.'';
 }
 add_filter( 'cyberchimps_demodata', 'cyberchimps_demodata' );
+
+function cyberchimps_gopro()
+{
+	$link = 'https://cyberchimps.com/store/ifeaturepro#whygopro';
+	return $link;
+}
+add_filter( 'cyberchimps_gopro', 'cyberchimps_gopro' );
+
 function cyberchimps_rating_link()
 {
 	$link = 'https://wordpress.org/support/theme/ifeature/reviews/#new-post/';
@@ -873,7 +881,7 @@ function ifeature_custom_category_widget( $arg ) {
 add_filter( "widget_categories_args", "ifeature_custom_category_widget" );
 add_filter( "widget_categories_dropdown_args", "ifeature_custom_category_widget" );
 
-function ifeature_exclude_post_cat_recentpost_widget(){
+function ifeature_exclude_post_cat_recentpost_widget($array){
 	$s = '';
 	$i = 1;
 	$excludecat = get_theme_mod( 'cyberchimps_exclude_post_cat' );
@@ -887,10 +895,11 @@ function ifeature_exclude_post_cat_recentpost_widget(){
 				$s .= ', ';
 		}
 	}
+	
+	$array['cat']=array($s);	
+	//$exclude = array( 'cat' => $s );
 
-	$exclude = array( 'cat' => $s );
-
-	return $exclude;
+	return $array;
 }
 add_filter( "widget_posts_args", "ifeature_exclude_post_cat_recentpost_widget" );
 
@@ -966,7 +975,8 @@ add_filter( 'ifeature_menu_design', 'ifeature_menu_design_options', 1 );
 // add styles for skin selection
 function ifeature_menu_design_styles() {
 	$skin = cyberchimps_get_option( 'ifeature_menu_design' );
-	if( $skin != 'default' ) {
+
+	if( isset($skin) && $skin!= '' && $skin != 'default' ) {
 		wp_enqueue_style( 'ifeature-menu-design', get_template_directory_uri() . '/inc/css/menu/' . $skin . '.css', array( 'style' ), '1.0' );
 	}
 	
