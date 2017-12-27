@@ -4,12 +4,12 @@
         <ul class="slides">
                       <li> 
                         <a href="#" target="_blank" >
-                          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/kt_slide_01.jpg" width="1170px" height="450px" alt="Example Slider 01" />
+                          <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/img/kt_slide_01.jpg' );?>" width="1170px" height="450px" alt="Example Slider 01" />
                         </a>
                       </li>
                       <li> 
                         <a href="#" target="_blank" >
-                          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/kt_slide_02.jpg" width="1170px" height="450px" alt="Example Slider 02"/>
+                          <img src="<?php echo esc_url( get_template_directory_uri() .'/assets/img/kt_slide_02.jpg');?>" width="1170px" height="450px" alt="Example Slider 02"/>
                         </a>
                       </li>
         </ul>

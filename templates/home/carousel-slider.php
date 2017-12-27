@@ -43,11 +43,13 @@
                         echo '<img src="'.esc_url($image[0]).'" width="'.esc_attr($image[1]).'" height="'.esc_attr($image[2]).'" alt="'.esc_attr($slide['title']).'" />';
                         if ($captions == '1') { ?> 
                                 <div class="flex-caption">
-                                <?php if ($slide['title'] != '') echo '<div class="captiontitle headerfont">'.$slide['title'].'</div>'; 
-                                 if ($slide['description'] != '') echo '<div><div class="captiontext headerfont"><p>'.$slide['description'].'</p></div></div>';?>
+                                <?php if ($slide['title'] != '') echo '<div class="captiontitle headerfont">'.esc_html( $slide['title'] ).'</div>'; 
+                                 if ($slide['description'] != '') echo '<div><div class="captiontext headerfont"><p>'.wp_kses_post( $slide['description'] ).'</p></div></div>';?>
                                 </div> 
                         <?php } 
-                         if($slide['link'] != '') echo '</a>'; ?>
+                        if(!empty( $slide['link'] ) ) {
+                         	echo '</a>';
+                        } ?>
                       </div>
                     </div>
                   <?php endforeach; ?>

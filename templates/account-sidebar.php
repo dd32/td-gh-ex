@@ -16,10 +16,10 @@ if ( 0 == $current_user->ID ) {
    <div class="account_page_menu"> 
       <ul class="account-menu">
         <li>
-          <a href="<?php echo esc_url( wc_customer_edit_account_url() ); ?>" class="kad_editlink"> <?php echo __( 'Edit Account', 'virtue' );?></a> 
+          <a href="<?php echo esc_url( wc_customer_edit_account_url() ); ?>" class="kad_editlink"> <?php esc_html_e( 'Edit Account', 'virtue' );?></a> 
         </li>
         <li>
-          <a href="<?php echo esc_url( wp_logout_url( get_permalink( wc_get_page_id( 'myaccount' ) ) ) );?>" class="kad_logoutlink"><?php echo __('Logout', 'virtue');?></a>
+          <a href="<?php echo esc_url( wp_logout_url( get_permalink( wc_get_page_id( 'myaccount' ) ) ) );?>" class="kad_logoutlink"><?php esc_html_e('Logout', 'virtue');?></a>
         </li>
       </ul>
    </div>

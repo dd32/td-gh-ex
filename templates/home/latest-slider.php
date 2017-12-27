@@ -55,7 +55,7 @@
                             </a>
                           </li>
               <?php } endwhile; else: ?>
-                <li class="error-not-found"><?php _e('Sorry, no blog entries found.', 'virtue'); ?></li>
+                <li class="error-not-found"><?php esc_html_e('Sorry, no blog entries found.', 'virtue'); ?></li>
               <?php endif;
               $wp_query = null;
               $wp_query = $temp; 

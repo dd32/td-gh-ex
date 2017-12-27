@@ -41,6 +41,10 @@ class Kadence_Sidebar {
   }
 }
 function kadence_sidebar_id() {
+	error_log( "The kadence_sidebar_id() function is deprecated since version 3.1.1. Please use virtue_sidebar_id() instead." );
+	return virtue_sidebar_id();
+}
+function virtue_sidebar_id() {
     if(is_front_page()) {
       global $virtue;
         if (!empty($virtue['home_sidebar'])) {

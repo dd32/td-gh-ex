@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="page-header">
 			<h1 class="entry-title" itemprop="name">
-				<?php echo virtue_title(); ?>
+				<?php echo wp_kses_post( virtue_title() ); ?>
 			</h1>
 			<?php 
 			if( is_page() ) {

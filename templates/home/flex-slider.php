@@ -53,10 +53,10 @@
                               <?php if ($captions == '1') { ?> 
                                 <div class="flex-caption">
               								  <?php if (!empty($slide['title'])) {
-                                  echo '<div class="captiontitle headerfont">'.$slide['title'].'</div>'; 
+                                  echo '<div class="captiontitle headerfont">'.esc_html( $slide['title'] ).'</div>'; 
                                 }
               								  if (!empty($slide['description'])) {
-                                  echo '<div><div class="captiontext headerfont"><p>'.$slide['description'].'</p></div></div>';
+                                  echo '<div><div class="captiontext headerfont"><p>'.wp_kses_post( $slide['description'] ).'</p></div></div>';
                                 } ?>
                                 </div> 
                               <?php } ?>

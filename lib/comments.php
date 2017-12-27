@@ -6,7 +6,7 @@ class Virtue_Walker_Comment extends Walker_Comment {
         $tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
         $child_class = $this->has_children ? 'parent' : '';
 ?>
-        <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( 'media comment-' . get_comment_ID() . ' ' . $child_class, $comment ); ?>>
+        <<?php echo esc_attr( $tag ); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( 'media comment-' . get_comment_ID() . ' ' . $child_class, $comment ); ?>>
         <?php if ( 0 != $args['avatar_size'] ) {
     		echo get_avatar( $comment, $args['avatar_size'] );
     		} ?>
@@ -16,7 +16,7 @@ class Virtue_Walker_Comment extends Walker_Comment {
 					<h5 class="media-heading comment-author"><span class="fn"><?php echo get_comment_author_link( $comment ); ?></span></h5>
 					<div class="comment-meta comment-metadata">
 						<time datetime="<?php echo comment_date( 'c' ); ?>"><a href="<?php echo esc_url( htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ); ?>">
-							<?php printf(__('%1$s', 'virtue'), get_comment_date(),  get_comment_time()); ?></a>
+							<?php printf('%1$s', get_comment_date(),  get_comment_time()); ?></a>
 						</time>
 						|
 						<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>

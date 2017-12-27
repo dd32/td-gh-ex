@@ -7,7 +7,21 @@
 			$slidewidth = 1140;
 		} ?>
 			<div class="videofit" style="max-width:<?php echo esc_attr($slidewidth);?>px; margin-left: auto; margin-right:auto;">
-                <?php echo $virtue['video_embed'];?>
+				<?php 
+				$allowed_tags = wp_kses_allowed_html('post');
+				$allowed_tags['iframe'] = array(
+					'src'             => true,
+					'height'          => true,
+					'width'           => true,
+					'frameborder'     => true,
+					'allowfullscreen' => true,
+					'name' 			  => true,
+					'id' 			  => true,
+					'class' 		  => true,
+					'style' 		  => true,
+				);
+
+				echo do_shortcode( wp_kses( $virtue['video_embed'], $allowed_tags ) ); ?>
             </div>
-</div><!--Container-->
+	</div><!--Container-->
 </div><!--feat-->

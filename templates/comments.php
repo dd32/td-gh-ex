@@ -9,9 +9,10 @@ if ( have_comments() ) : ?>
 			<?php
 				$comments_number = get_comments_number();
 				if ( '1' === $comments_number ) {
-					printf( esc_html__( 'One Response', 'virtue' ), $comments_number );
+					esc_html__( 'One Response', 'virtue' );
 				} else {
-					printf( esc_html( _n( '%d Response', '%d Responses', $comments_number, 'virtue' ) ), $comments_number );
+					/* translators: %d: Response Number */
+					printf( esc_html( _n( '%d Response', '%d Responses', $comments_number, 'virtue' ) ), esc_html( $comments_number ) );
 				}
 			?>
 		</h3>
@@ -102,6 +103,7 @@ if ( comments_open() ) : ?>
 			'class_submit'         => 'kad-btn kad-btn-primary',
 			'name_submit'          => 'submit',
 			'title_reply'          => __( 'Leave a Reply', 'virtue' ),
+			/* translators: %s: post title */
 			'title_reply_to'       => __( 'Leave a Reply to %s', 'virtue' ),
 			'label_submit'         => __( 'Submit Comment', 'virtue' ),
 			'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',

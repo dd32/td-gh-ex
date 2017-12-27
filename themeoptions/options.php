@@ -1858,14 +1858,6 @@ Redux::setSection( $opt_name, array(
             "default" => 0,
             ),
         array(
-            'id'=>'virtue_custom_favicon',
-            'type' => 'media', 
-            'customizer' => true,
-            'preview'=> false,
-            'title' => __('Custom Favicon, *Note depreciated. Use WordPress site icon in customizer.', 'virtue'),
-            'subtitle' => __('Go to apperance > customize > site identity and set your favicon there.', 'virtue'),
-            ),
-        array(
             'id'=>'contact_email',
             'type' => 'text',
             'customizer' => true,

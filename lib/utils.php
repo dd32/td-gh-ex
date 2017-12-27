@@ -62,6 +62,7 @@ function virtue_title() {
   	} elseif ( is_archive() ) {
   		$title = get_the_archive_title();
   	} elseif ( is_search() ) {
+  		/* translators: %s: search term */
     	$title = sprintf( __( 'Search Results for %s', 'virtue' ), get_search_query() );
   	} elseif ( is_404() ) {
     	$title = __( 'Not Found', 'virtue' );
@@ -78,14 +79,18 @@ function virtue_filter_archive_title( $title ){
 	} elseif ( is_tag() ) {
 		$title = single_tag_title( '', false );
 	} elseif (is_author()) {
+		/* translators: %s: Author Name */
 		$title = sprintf( __( 'Author Archives: %s', 'virtue'), get_the_author() );
 	} else if ($term) {
 		$title = $term->name;
 	} elseif (is_day()) {
+		/* translators: %s: Date */
 		$title = sprintf( __( 'Daily Archives: %s', 'virtue' ), get_the_date() );
 	} elseif (is_month()) {
+		/* translators: %s: Date showing year and month */
 		$title = sprintf( __( 'Monthly Archives: %s', 'virtue' ), get_the_date( 'F Y' ) );
 	} elseif (is_year()) {
+		/* translators: %s: Date showing year only */
 		$title = sprintf( __( 'Yearly Archives: %s', 'virtue' ), get_the_date( 'Y' ) );
 	} 
 	return $title;

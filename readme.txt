@@ -30,6 +30,14 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.1.1 | 27th December 2017 = 
+* Move: CMB to toolkit.
+* Update: Metabox script to use CMB2.
+* Update: Clean files spacing and code cleanup.
+* Add: More esc for translations.
+* Deprecate functions.
+* Force users to pull favicon through customizer for better standards support.
+
 = Version 3.1.0 | 21st November 2017 = 
 * Fix: Issue with blog full width output.
 

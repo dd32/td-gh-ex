@@ -2,7 +2,7 @@
     <?php global $post, $virtue; 
     $text = get_post_meta( $post->ID, '_kad_portfolio_carousel_title', true );
     if(!empty($text)) { 
-    	echo '<h3 class="title">'.$text.'</h3>'; 
+    	echo '<h3 class="title">'.esc_html( $text ).'</h3>'; 
     } else {
     	echo '<h3 class="title">'.__('Recent Projects', 'virtue').'</h3>';
     } ?>
@@ -36,17 +36,12 @@
 					while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 						<div class="<?php echo esc_attr($itemsize); ?>">
 							<div class="grid_item portfolio_item all postclass">
-								<?php if (has_post_thumbnail( $post->ID ) ) {
-										$image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
-										$thumbnailURL = $image_url[0]; 
-										$image = aq_resize($thumbnailURL, $slidewidth, $slideheight, true);
-										if(empty($image)) {$image = $thumbnailURL;}?>
-										<div class="imghoverclass">
-		                                       <a href="<?php the_permalink();  ?>" title="<?php the_title_attribute(); ?>">
-		                                       <img src="<?php echo esc_url($image); ?>" alt="<?php the_title_attribute(); ?>" width="<?php echo esc_attr($slidewidth);?>" height="<?php echo esc_attr($slideheight);?>" class="lightboxhover" style="display: block;">
-		                                       </a> 
-		                                </div>
-	                           				<?php $image = null; $thumbnailURL = null;?>
+								<?php if ( has_post_thumbnail( $post->ID ) ) { ?>
+									<div class="imghoverclass">
+										<a href="<?php the_permalink();  ?>" title="<?php the_title_attribute(); ?>">
+											<?php echo virtue_get_full_image_output( $slidewidth, $slideheight, true, 'lightboxhover', null, get_post_thumbnail_id( $post->ID ), true, true, false ); ?>
+										</a> 
+									</div>
                            		<?php } ?>
               				<a href="<?php the_permalink() ?>" class="portfoliolink">
               					<div class="piteminfo">   
@@ -54,7 +49,8 @@
                           			<?php if($portfolio_item_types == true) {
 				                        	$terms = get_the_terms( $post->ID, 'portfolio-type' );
 				                        	if ($terms) {?>
-				                        		<p class="cportfoliotag"><?php $output = array(); foreach($terms as $term){ $output[] = $term->name;} echo implode(', ', $output); ?></p>
+				                        		<p class="cportfoliotag"><?php $output = array(); foreach($terms as $term){ $output[] = $term->name;} 
+				                        		echo wp_kses_post( implode(', ', $output) ); ?></p>
 				                        	<?php } 
 				                        } ?>
 			                    </div>
@@ -63,7 +59,7 @@
                  </div>
 					<?php endwhile; else: ?>
 					 
-					<div class="error-not-found"><?php _e('Sorry, no portfolio entries found.', 'virtue');?></div>
+					<div class="error-not-found"><?php esc_html_e('Sorry, no portfolio entries found.', 'virtue');?></div>
 						
 				<?php endif;
 				$wp_query = null; 

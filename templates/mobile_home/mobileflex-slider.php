@@ -52,12 +52,12 @@
                     $image = aq_resize($slide['url'], $slidewidth, $slideheight, true);
                     if(empty($image)) {$image = $slide['url'];} ?>
                         <li> 
-                        <?php if($slide['link'] != '') echo '<a href="'.$slide['link'].'" target="'.$target.'">'; ?>
+                        <?php if($slide['link'] != '') echo '<a href="'.esc_url( $slide['link'] ).'" target="'.esc_attr( $target ).'">'; ?>
                             <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($slide['title']); ?>" width="<?php echo esc_attr($slidewidth);?>" height="<?php echo esc_attr($slideheight);?>"  />
                                 <?php if ($captions == '1') { ?> 
                                     <div class="flex-caption">
-                                    <?php if ($slide['title'] != '') echo '<div class="captiontitle headerfont">'.$slide['title'].'</div>'; ?>
-                                    <?php if ($slide['description'] != '') echo '<div><div class="captiontext headerfont"><p>'.$slide['description'].'</p></div></div>';?>
+                                    <?php if ($slide['title'] != '') echo '<div class="captiontitle headerfont">'.esc_html( $slide['title'] ).'</div>'; ?>
+                                    <?php if ($slide['description'] != '') echo '<div><div class="captiontext headerfont"><p>'.wp_kses_post( $slide['description'] ).'</p></div></div>';?>
                                     </div> 
                                 <?php } ?>
                         <?php if($slide['link'] != '') echo '</a>'; ?>

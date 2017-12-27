@@ -17,3 +17,5 @@ get_template_part( 'templates/head' ); ?>
 	<div id="wrapper" class="container">
 	<?php 
 		get_template_part( 'templates/header' );
+
+		do_action('virtue_header_after');

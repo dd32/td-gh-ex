@@ -48,10 +48,10 @@
                                 <div class="flex-caption" style="height:<?php echo esc_attr($slideheight);?>px;">
                                   <div class="flex-caption-case" style="height:<?php echo esc_attr($slideheight);?>px;">
                 								  <?php if (!empty($slide['title'])) {
-                                    echo '<div class="captiontitle headerfont">'.$slide['title'].'</div>'; 
+                                    echo '<div class="captiontitle headerfont">'.esc_html( $slide['title'] ).'</div>'; 
                                   }
                 								  if (!empty($slide['description'])) {
-                                    echo '<div><div class="captiontext headerfont">'.$slide['description'].'</div></div>';
+                                    echo '<div><div class="captiontext headerfont">'.wp_kses_post( $slide['description'] ).'</div></div>';
                                   } ?>
                                   </div>
                                 </div> 

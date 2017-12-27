@@ -71,8 +71,20 @@ if ( $headcontent == 'flex' ) { ?>
 	<div class="postfeat">
 		<div class="videofit">
 			<?php 
-			echo get_post_meta( $post->ID, '_kad_post_video', true ); 
-			?>
+				$allowed_tags = wp_kses_allowed_html('post');
+				$allowed_tags['iframe'] = array(
+					'src'             => true,
+					'height'          => true,
+					'width'           => true,
+					'frameborder'     => true,
+					'allowfullscreen' => true,
+					'name' 			  => true,
+					'id' 			  => true,
+					'class' 		  => true,
+					'style' 		  => true,
+				);
+
+				echo do_shortcode( wp_kses( get_post_meta( $post->ID, '_kad_post_video', true ), $allowed_tags ) ); ?>
 		</div>
 		<?php
 		if (has_post_thumbnail( $post->ID ) ) { 

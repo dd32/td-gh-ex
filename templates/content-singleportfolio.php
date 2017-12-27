@@ -89,17 +89,17 @@
 												$img = virtue_get_image_array( $slidewidth, $slideheight, true, null, null, $attachment, false );
 												$caption = get_post($attachment)->post_excerpt;
 
-												echo '<li><a href="'.esc_url( $img[ 'full' ] ).'" data-rel="lightbox" title="'.esc_attr( $caption ).'"><img src="'.esc_url( $img[ 'src' ] ).'" width="'.esc_attr( $img[ 'width' ] ).'" height="'.esc_attr( $img[ 'height' ] ).'" '.wp_kses_post( $img[ 'srcset' ] ).' alt="'.esc_attr( $caption ).'"/></a></li>';
+												echo '<li><a href="'.esc_url( $img[ 'full' ] ).'" data-rel="lightbox" title="'.esc_attr( $caption ).'"><img src="'.esc_url( $img[ 'src' ] ).'" width="'.esc_attr( $img[ 'width' ] ).'" height="'.esc_attr( $img[ 'height' ] ).'" '.wp_kses_post( $img[ 'srcset' ] ).' alt="'.esc_attr( $img[ 'alt' ] ).'"/></a></li>';
 											}
 										}
                     			} else {
                     				$attach_args = array('order'=> 'ASC','post_type'=> 'attachment','post_parent'=> $post->ID,'post_mime_type' => 'image','post_status'=> null,'orderby'=> 'menu_order','numberposts'=> -1);
 									$attachments = get_posts($attach_args);
-										if ($attachments) {
-											foreach ($attachments as $attachment) {
-												$caption = $attachment->post_excerpt();
+										if ( $attachments ) {
+											foreach ( $attachments as $attachment ) {
+												$caption = get_post($attachment->ID)->post_excerpt;
 												$img = virtue_get_image_array( $slidewidth, $slideheight, true, null, null, $attachment->ID, false );
-												echo '<li><a href="'.esc_url( $img[ 'full' ] ).'" data-rel="lightbox" title="'.esc_attr( $caption ).'"><img src="'.esc_url( $img[ 'src' ] ).'" width="'.esc_attr( $img[ 'width' ] ).'" height="'.esc_attr( $img[ 'height' ] ).'" '.wp_kses_post( $img[ 'srcset' ] ).' alt="'.esc_attr( $caption ).'"/></a></li>';
+												echo '<li><a href="'.esc_url( $img[ 'full' ] ).'" data-rel="lightbox" title="'.esc_attr( $caption ).'"><img src="'.esc_url( $img[ 'src' ] ).'" width="'.esc_attr( $img[ 'width' ] ).'" height="'.esc_attr( $img[ 'height' ] ).'" '.wp_kses_post( $img[ 'srcset' ] ).' alt="'.esc_attr( $img[ 'alt' ] ).'"/></a></li>';
 											}
                     					}	
 								} ?>                                

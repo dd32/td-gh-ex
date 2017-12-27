@@ -5,7 +5,7 @@ Template Name: Blog
 
 global $post, $virtue_sidebar;
 
-if( kadence_display_sidebar() ) {
+if( virtue_display_sidebar() ) {
 	$virtue_sidebar = true;
 	$fullclass 		 = '';
 } else {

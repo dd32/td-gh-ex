@@ -8,7 +8,7 @@
  */
 global $woocommerce, $woocommerce_loop;
 if ( empty( $woocommerce_loop['columns'] ) ) $woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 4 );
-  if(kadence_display_sidebar()) {
+  if(virtue_display_sidebar()) {
             $columns = "shopcolumn".$woocommerce_loop['columns']." shopsidebarwidth"; 
       } else {
 			$columns = "shopcolumn".$woocommerce_loop['columns']." shopfullwidth"; 

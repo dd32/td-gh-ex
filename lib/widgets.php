@@ -3,218 +3,240 @@
  * Register sidebars and widgets
  */
 function virtue_sidebar_list() {
-  $all_sidebars=array(array('name'=>__('Primary Sidebar', 'virtue'), 'id'=>'sidebar-primary'));
-  global $virtue; 
-  if(isset($virtue['cust_sidebars'])) {
-  if (is_array($virtue['cust_sidebars'])) {
-    $i = 1;
-  foreach($virtue['cust_sidebars'] as $sidebar){
-    if(empty($sidebar)) {$sidebar = 'sidebar'.$i;}
-    $all_sidebars[]=array('name'=>$sidebar, 'id'=>'sidebar'.$i);
-    $i++;
-  }
- }
-}
-  global $vir_sidebars;
-  $vir_sidebars = $all_sidebars;
-  return $all_sidebars;
+	$all_sidebars = array( array( 'name'=> __('Primary Sidebar', 'virtue' ), 'id'=>'sidebar-primary' ) );
+	global $virtue; 
+	if ( isset( $virtue['cust_sidebars'] ) ) {
+		if ( is_array( $virtue['cust_sidebars'] ) ) {
+			$i = 1;
+			foreach( $virtue['cust_sidebars'] as $sidebar ) {
+				if ( empty( $sidebar ) ) {
+					$sidebar = 'sidebar'.$i;
+				}
+				$all_sidebars[] = array( 'name'=>$sidebar, 'id'=>'sidebar'.$i );
+				$i++;
+			}
+		}
+	}
+	global $vir_sidebars;
+	$vir_sidebars = $all_sidebars;
+	return $all_sidebars;
 }
 add_action('init', 'virtue_sidebar_list');
 
-
 function virtue_register_sidebars(){
-  $the_sidebars = virtue_sidebar_list();
-  if (function_exists('register_sidebar')){
-    foreach($the_sidebars as $side){
-      virtue_register_sidebar($side['name'], $side['id']);    
-    }
+	$the_sidebars = virtue_sidebar_list();
+	if ( function_exists( 'register_sidebar' ) ){
+		foreach( $the_sidebars as $side ){
+			virtue_register_sidebar( $side['name'], $side['id'] );    
+		}
+	}
+}
 
-  }
+function virtue_register_sidebar( $name, $id ) {
+	register_sidebar( array( 'name'=>$name,
+		'id' => $id,
+		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-inner">',
+		'after_widget' => '</div></section>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+	) );
 }
-function virtue_register_sidebar($name, $id){
-  register_sidebar(array('name'=>$name,
-    'id' => $id,
-    'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-inner">',
-    'after_widget' => '</div></section>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
-  ));
-}
-add_action('widgets_init', 'virtue_register_sidebars');
+add_action( 'widgets_init', 'virtue_register_sidebars' );
 
 function kadence_widgets_init() {
-  //Topbar 
-  if(kadence_display_topbar_widget()) {
-  register_sidebar(array(
-    'name'          => __('Topbar Widget', 'virtue'),
-    'id'            => 'topbarright',
-    'before_widget' => '',
-    'after_widget'  => '',
-    'before_title'  => '<span class="topbar-widgettitle">',
-    'after_title'   => '</span>',
-  ));
-}
-  // Sidebars
-  register_sidebar(array(
-    'name'          => __('Primary Sidebar', 'virtue'),
-    'id'            => 'sidebar-primary',
-    'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-inner">',
-    'after_widget'  => '</div></section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>',
-  ));
-  // Footer
-  global $virtue; if(isset($virtue['footer_layout'])) { $footer_layout = $virtue['footer_layout'];} else {$footer_layout = "twoc";}
-  if ($footer_layout == "fourc") {
-    if ( function_exists('register_sidebar') )
-      register_sidebar(array(
-        'name' => __('Footer Column 1', 'virtue'),
-        'id' => 'footer_1',
-        'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside></div>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>',
-      )
-    );
-    if ( function_exists('register_sidebar') )
-      register_sidebar(array(
-        'name' => __('Footer Column 2', 'virtue'),
-        'id' => 'footer_2',
-        'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside></div>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>',
-      )
-    );
-    if ( function_exists('register_sidebar') )
-      register_sidebar(array(
-        'name' => __('Footer Column 3', 'virtue'),
-        'id' => 'footer_3',
-        'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside></div>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>',
-      )
-    );
-    if ( function_exists('register_sidebar') )
-      register_sidebar(array(
-        'name' => __('Footer Column 4', 'virtue'),
-        'id' => 'footer_4',
-        'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside></div>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>',
-      )
-    );
-  } else if ($footer_layout == "threec") {
-    if ( function_exists('register_sidebar') )
-      register_sidebar(array(
-        'name' => __('Footer Column 1', 'virtue'),
-        'id' => 'footer_third_1',
-        'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside></div>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>',
-      )
-    );
-    if ( function_exists('register_sidebar') )
-      register_sidebar(array(
-        'name' => __('Footer Column 2', 'virtue'),
-        'id' => 'footer_third_2',
-        'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside></div>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>',
-      )
-    );
-    if ( function_exists('register_sidebar') )
-      register_sidebar(array(
-        'name' => __('Footer Column 3', 'virtue'),
-        'id' => 'footer_third_3',
-        'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside></div>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>',
-      )
-    );
-  } else {
-      if ( function_exists('register_sidebar') )
-        register_sidebar(array(
-          'name' => __('Footer Column 1', 'virtue'),
-          'id' => 'footer_double_1',
-          'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
-          'after_widget' => '</aside></div>',
-          'before_title' => '<h3>',
-          'after_title' => '</h3>',
-        )
-      );
-      if ( function_exists('register_sidebar') )
-        register_sidebar(array(
-          'name' => __('Footer Column 2', 'virtue'),
-          'id' => 'footer_double_2',
-          'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
-          'after_widget' => '</aside></div>',
-          'before_title' => '<h3>',
-          'after_title' => '</h3>',
-        )
-      );
-    }
+	//Topbar 
+	if( kadence_display_topbar_widget() ) {
+		register_sidebar( array(
+			'name'          => __('Topbar Widget', 'virtue'),
+			'id'            => 'topbarright',
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '<span class="topbar-widgettitle">',
+			'after_title'   => '</span>',
+		));
+	}
+	// Sidebars
+	register_sidebar( array(
+		'name'          => __('Primary Sidebar', 'virtue'),
+		'id'            => 'sidebar-primary',
+		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-inner">',
+		'after_widget'  => '</div></section>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	));
+	// Footer
+	global $virtue; 
+	if ( isset( $virtue['footer_layout'] ) ) {
+		$footer_layout = $virtue['footer_layout'];
+	} else {
+		$footer_layout = "twoc";
+	}
+	if ( $footer_layout == "fourc" ) {
+		if ( function_exists( 'register_sidebar' ) )
+			register_sidebar( array(
+				'name' => __('Footer Column 1', 'virtue'),
+				'id' => 'footer_1',
+				'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside></div>',
+				'before_title' => '<h3>',
+				'after_title' => '</h3>',
+			)
+		);
+		if ( function_exists( 'register_sidebar' ) )
+			register_sidebar( array(
+				'name' => __('Footer Column 2', 'virtue'),
+				'id' => 'footer_2',
+				'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside></div>',
+				'before_title' => '<h3>',
+				'after_title' => '</h3>',
+			)
+		);
+		if ( function_exists( 'register_sidebar' ) )
+			register_sidebar( array(
+				'name' => __('Footer Column 3', 'virtue'),
+				'id' => 'footer_3',
+				'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside></div>',
+				'before_title' => '<h3>',
+				'after_title' => '</h3>',
+			)
+		);
+		if ( function_exists( 'register_sidebar' ) )
+			register_sidebar( array(
+				'name' => __('Footer Column 4', 'virtue'),
+				'id' => 'footer_4',
+				'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside></div>',
+				'before_title' => '<h3>',
+				'after_title' => '</h3>',
+			)
+		);
+	} else if ($footer_layout == "threec") {
+		if ( function_exists( 'register_sidebar' ) )
+			register_sidebar( array(
+				'name' => __('Footer Column 1', 'virtue'),
+				'id' => 'footer_third_1',
+				'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside></div>',
+				'before_title' => '<h3>',
+				'after_title' => '</h3>',
+			)
+		);
+		if ( function_exists( 'register_sidebar' ) )
+			register_sidebar( array(
+				'name' => __('Footer Column 2', 'virtue'),
+				'id' => 'footer_third_2',
+				'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside></div>',
+				'before_title' => '<h3>',
+				'after_title' => '</h3>',
+			)
+		);
+		if ( function_exists( 'register_sidebar' ) )
+			register_sidebar( array(
+				'name' => __('Footer Column 3', 'virtue'),
+				'id' => 'footer_third_3',
+				'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside></div>',
+				'before_title' => '<h3>',
+				'after_title' => '</h3>',
+			)
+		);
+	} else {
+		if ( function_exists( 'register_sidebar' ) )
+			register_sidebar( array(
+				'name' => __('Footer Column 1', 'virtue'),
+				'id' => 'footer_double_1',
+				'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside></div>',
+				'before_title' => '<h3>',
+				'after_title' => '</h3>',
+			)
+		);
+		if ( function_exists( 'register_sidebar' ) )
+			register_sidebar( array(
+				'name' => __('Footer Column 2', 'virtue'),
+				'id' => 'footer_double_2',
+				'before_widget' => '<div class="footer-widget"><aside id="%1$s" class="widget %2$s">',
+				'after_widget' => '</aside></div>',
+				'before_title' => '<h3>',
+				'after_title' => '</h3>',
+			)
+		);
+	}
 
-  // Widgets
-  register_widget('Kadence_Contact_Widget');
-  register_widget('Kadence_Social_Widget');
-  register_widget('Kadence_Recent_Posts_Widget');
-  register_widget('Kadence_Image_Grid_Widget');
-  register_widget('Simple_About_With_Image');
+	// Widgets
+	if ( class_exists( 'Kadence_Contact_Widget' ) ) {
+		register_widget('Kadence_Contact_Widget');
+	}
+	if ( class_exists( 'Kadence_Social_Widget' ) ) {
+		register_widget('Kadence_Social_Widget');
+	}
+	if ( class_exists( 'Kadence_Recent_Posts_Widget' ) ) {
+		register_widget('Kadence_Recent_Posts_Widget');
+	}
+	if ( class_exists( 'Kadence_Image_Grid_Widget' ) ) {
+		register_widget('Kadence_Image_Grid_Widget');
+	}
+	if ( class_exists( 'Kadence_Image_Grid_Widget' ) ) {
+		register_widget('Kadence_Image_Grid_Widget');
+	}
 }
 add_action('widgets_init', 'kadence_widgets_init');
 
 /**
  * Contact widget
  */
-class Kadence_Contact_Widget extends WP_Widget {
-  private static $instance = 0;
-    public function __construct() {
-    $widget_ops = array('classname' => 'widget_kadence_contact', 'description' => __('Use this widget to add a Vcard to your site', 'virtue'));
-    parent::__construct('widget_kadence_contact', __('Virtue: Contact/Vcard', 'virtue'), $widget_ops);
-  }
+if ( ! class_exists( 'Kadence_Contact_Widget' ) ) {
+	class Kadence_Contact_Widget extends WP_Widget {
+		private static $instance = 0;
+		public function __construct() {
+			$widget_ops = array( 'classname' => 'widget_kadence_contact', 'description' => __( 'Use this widget to add a Vcard to your site', 'virtue' ) );
+			parent::__construct( 'widget_kadence_contact', __('Virtue: Contact/Vcard', 'virtue'), $widget_ops);
+		}
 
-  public function widget($args, $instance) {
+		public function widget($args, $instance) {
 
-    if (!isset($args['widget_id'])) {
-      $args['widget_id'] = null;
-    }
-    extract($args);
+			if (!isset($args['widget_id'])) {
+				$args['widget_id'] = null;
+			}
+			extract($args);
 
-    $title = apply_filters('widget_title', empty($instance['title']) ? __('vCard', 'virtue') : $instance['title'], $instance, $this->id_base);
-  if (!isset($instance['company'])) { $instance['company'] = ''; }
-  if (!isset($instance['name'])) { $instance['name'] = ''; }
-    if (!isset($instance['street_address'])) { $instance['street_address'] = ''; }
-    if (!isset($instance['locality'])) { $instance['locality'] = ''; }
-    if (!isset($instance['region'])) { $instance['region'] = ''; }
-    if (!isset($instance['postal_code'])) { $instance['postal_code'] = ''; }
-    if (!isset($instance['tel'])) { $instance['tel'] = ''; }
-     if (!isset($instance['fixedtel'])) { $instance['fixedtel'] = ''; }
-    if (!isset($instance['email'])) { $instance['email'] = ''; }
+			$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? __('vCard', 'virtue') : $instance['title'], $instance, $this->id_base );
+			if ( !isset( $instance['company'] ) ) { $instance['company'] = ''; }
+			if ( !isset( $instance['name'] ) ) { $instance['name'] = ''; }
+			if ( !isset( $instance['street_address'] ) ) { $instance['street_address'] = ''; }
+			if ( !isset( $instance['locality'] ) ) { $instance['locality'] = ''; }
+			if ( !isset( $instance['region'] ) ) { $instance['region'] = ''; }
+			if ( !isset( $instance['postal_code'] ) ) { $instance['postal_code'] = ''; }
+			if ( !isset( $instance['tel'] ) ) { $instance['tel'] = ''; }
+			if ( !isset( $instance['fixedtel'] ) ) { $instance['fixedtel'] = ''; }
+			if ( !isset( $instance['email'] ) ) { $instance['email'] = ''; }
 
-    echo $before_widget;
-    if ($title) {
-      echo $before_title;
-      echo $title;
-      echo $after_title;
-    }
-  ?>
-    <div class="vcard">
-      
-      <?php if(!empty($instance['company'])):?><h5 class="vcard-company"><i class="icon-building"></i><?php echo $instance['company']; ?></h5><?php endif;?>
-      <?php if(!empty($instance['name'])):?><p class="vcard-name fn"><i class="icon-user"></i><?php echo $instance['name']; ?></p><?php endif;?>
-      <?php if(!empty($instance['street_address']) || !empty($instance['locality']) || !empty($instance['region']) ):?>
-        <p class="vcard-address"><i class="icon-map-marker"></i><?php echo $instance['street_address']; ?>
-       <span><?php echo $instance['locality']; ?> <?php echo $instance['region']; ?> <?php echo $instance['postal_code']; ?></span></p>
-     <?php endif;?>
-      <?php if(!empty($instance['tel'])):?><p class="tel"><i class="icon-tablet"></i> <?php echo $instance['tel']; ?></p><?php endif;?>
-      <?php if(!empty($instance['fixedtel'])):?><p class="tel fixedtel"><i class="icon-phone"></i> <?php echo $instance['fixedtel']; ?></p><?php endif;?>
-      <?php if(!empty($instance['email'])):?><p><a class="email" href="mailto:<?php echo $instance['email']; ?>"><i class="icon-envelope"></i> <?php echo $instance['email']; ?></a></p> <?php endif;?>
+			echo $before_widget;
+
+			if ($title) {
+				echo $before_title;
+				echo $title;
+				echo $after_title;
+			}
+			?>
+			<div class="vcard">
+				<?php 
+				if ( ! empty( $instance['company'] ) ) : ?><h5 class="vcard-company"><i class="icon-building"></i><?php echo esc_html( $instance['company'] ); ?></h5>
+				<?php 
+				endif;
+				if ( ! empty( $instance['name'] ) ) : ?><p class="vcard-name fn"><i class="icon-user"></i><?php echo esc_html( $instance['name'] ); ?></p>
+				<?php 
+				endif;
+				if ( ! empty( $instance['street_address'] ) || ! empty( $instance['locality'] ) || ! empty( $instance['region'] ) ) :?>
+				<p class="vcard-address"><i class="icon-map-marker"></i><?php echo esc_html( $instance['street_address'] ); ?>
+				<span><?php echo esc_html($instance['locality']); ?> <?php echo esc_html( $instance['region'] ); ?> <?php echo esc_html( $instance['postal_code'] ); ?></span></p>
+				<?php endif;?>
+				<?php if(!empty($instance['tel'])):?><p class="tel"><i class="icon-tablet"></i> <?php echo esc_html( $instance['tel'] ); ?></p><?php endif;?>
+				<?php if(!empty($instance['fixedtel'])):?><p class="tel fixedtel"><i class="icon-phone"></i> <?php echo esc_html( $instance['fixedtel'] ); ?></p><?php endif;?>
+				<?php if(!empty($instance['email'])):?><p><a class="email" href="mailto:<?php echo esc_attr($instance['email']); ?>"><i class="icon-envelope"></i> <?php echo esc_html($instance['email']); ?></a></p> <?php endif;?>
     </div>
   <?php
     echo $after_widget;
@@ -223,16 +245,16 @@ class Kadence_Contact_Widget extends WP_Widget {
 
   public function update($new_instance, $old_instance) {
     $instance = $old_instance;
-    $instance['title'] = strip_tags($new_instance['title']);
-    $instance['company'] = strip_tags($new_instance['company']);
-    $instance['name'] = strip_tags($new_instance['name']);
-    $instance['street_address'] = strip_tags($new_instance['street_address']);
-    $instance['locality'] = strip_tags($new_instance['locality']);
-    $instance['region'] = strip_tags($new_instance['region']);
-    $instance['postal_code'] = strip_tags($new_instance['postal_code']);
-    $instance['tel'] = strip_tags($new_instance['tel']);
-    $instance['fixedtel'] = strip_tags($new_instance['fixedtel']);
-    $instance['email'] = strip_tags($new_instance['email']);
+    $instance['title'] = sanitize_text_field( $new_instance['title']);
+    $instance['company'] = sanitize_text_field( $new_instance['company']);
+    $instance['name'] = sanitize_text_field( $new_instance['name']);
+    $instance['street_address'] = sanitize_text_field( $new_instance['street_address']);
+    $instance['locality'] = sanitize_text_field( $new_instance['locality']);
+    $instance['region'] = sanitize_text_field( $new_instance['region']);
+    $instance['postal_code'] = sanitize_text_field( $new_instance['postal_code']);
+    $instance['tel'] = sanitize_text_field( $new_instance['tel']);
+    $instance['fixedtel'] = sanitize_text_field( $new_instance['fixedtel']);
+    $instance['email'] = sanitize_text_field( $new_instance['email']);
 
     return $instance;
   }
@@ -251,51 +273,53 @@ class Kadence_Contact_Widget extends WP_Widget {
     $email = isset($instance['email']) ? esc_attr($instance['email']) : '';
   ?>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('company')); ?>"><?php _e('Company Name:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('company')); ?>"><?php esc_html_e('Company Name:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('company')); ?>" name="<?php echo esc_attr($this->get_field_name('company')); ?>" type="text" value="<?php echo esc_attr($company); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('name')); ?>"><?php _e('Name:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('name')); ?>"><?php esc_html_e('Name:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('name')); ?>" name="<?php echo esc_attr($this->get_field_name('name')); ?>" type="text" value="<?php echo esc_attr($name); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('street_address')); ?>"><?php _e('Street Address:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('street_address')); ?>"><?php esc_html_e('Street Address:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('street_address')); ?>" name="<?php echo esc_attr($this->get_field_name('street_address')); ?>" type="text" value="<?php echo esc_attr($street_address); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('locality')); ?>"><?php _e('City/Locality:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('locality')); ?>"><?php esc_html_e('City/Locality:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('locality')); ?>" name="<?php echo esc_attr($this->get_field_name('locality')); ?>" type="text" value="<?php echo esc_attr($locality); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('region')); ?>"><?php _e('State/Region:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('region')); ?>"><?php esc_html_e('State/Region:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('region')); ?>" name="<?php echo esc_attr($this->get_field_name('region')); ?>" type="text" value="<?php echo esc_attr($region); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('postal_code')); ?>"><?php _e('Zipcode/Postal Code:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('postal_code')); ?>"><?php esc_html_e('Zipcode/Postal Code:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('postal_code')); ?>" name="<?php echo esc_attr($this->get_field_name('postal_code')); ?>" type="text" value="<?php echo esc_attr($postal_code); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('tel')); ?>"><?php _e('Mobile Telephone:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('tel')); ?>"><?php esc_html_e('Mobile Telephone:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('tel')); ?>" name="<?php echo esc_attr($this->get_field_name('tel')); ?>" type="text" value="<?php echo esc_attr($tel); ?>" />
     </p>
      <p>
-      <label for="<?php echo esc_attr($this->get_field_id('fixedtel')); ?>"><?php _e('Fixed Telephone:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('fixedtel')); ?>"><?php esc_html_e('Fixed Telephone:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('fixedtel')); ?>" name="<?php echo esc_attr($this->get_field_name('fixedtel')); ?>" type="text" value="<?php echo esc_attr($fixedtel); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('email')); ?>"><?php _e('Email:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('email')); ?>"><?php esc_html_e('Email:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('email')); ?>" name="<?php echo esc_attr($this->get_field_name('email')); ?>" type="text" value="<?php echo esc_attr($email); ?>" />
     </p>
   <?php
   }
 }
+}
 /**
  * Social widget
  */
+if ( ! class_exists( 'Kadence_Social_Widget' ) ) {
 class Kadence_Social_Widget extends WP_Widget {
   private static $instance = 0;
     public function __construct() {
@@ -355,20 +379,20 @@ class Kadence_Social_Widget extends WP_Widget {
 
   public function update($new_instance, $old_instance) {
     $instance = $old_instance;
-     $instance['title'] = strip_tags($new_instance['title']);
-    $instance['facebook'] = strip_tags($new_instance['facebook']);
-    $instance['twitter'] = strip_tags($new_instance['twitter']);
-    $instance['instagram'] = strip_tags($new_instance['instagram']);
-    $instance['googleplus'] = strip_tags($new_instance['googleplus']);
-    $instance['flickr'] = strip_tags($new_instance['flickr']);
-    $instance['vimeo'] = strip_tags($new_instance['vimeo']);
-    $instance['youtube'] = strip_tags($new_instance['youtube']);
-    $instance['pinterest'] = strip_tags($new_instance['pinterest']);
-    $instance['dribbble'] = strip_tags($new_instance['dribbble']);
-    $instance['linkedin'] = strip_tags($new_instance['linkedin']);
-    $instance['tumblr'] = strip_tags($new_instance['tumblr']);
-    $instance['vk'] = strip_tags($new_instance['vk']);
-    $instance['rss'] = strip_tags($new_instance['rss']);
+     $instance['title'] = sanitize_text_field( $new_instance['title']);
+    $instance['facebook'] = esc_url_raw( $new_instance['facebook']);
+    $instance['twitter'] = esc_url_raw( $new_instance['twitter']);
+    $instance['instagram'] = esc_url_raw( $new_instance['instagram']);
+    $instance['googleplus'] = esc_url_raw( $new_instance['googleplus']);
+    $instance['flickr'] = esc_url_raw( $new_instance['flickr']);
+    $instance['vimeo'] = esc_url_raw( $new_instance['vimeo']);
+    $instance['youtube'] = esc_url_raw( $new_instance['youtube']);
+    $instance['pinterest'] = esc_url_raw( $new_instance['pinterest']);
+    $instance['dribbble'] = esc_url_raw( $new_instance['dribbble']);
+    $instance['linkedin'] = esc_url_raw( $new_instance['linkedin']);
+    $instance['tumblr'] = esc_url_raw( $new_instance['tumblr']);
+    $instance['vk'] = esc_url_raw( $new_instance['vk']);
+    $instance['rss'] = esc_url_raw( $new_instance['rss']);
 
     return $instance;
   }
@@ -390,69 +414,71 @@ class Kadence_Social_Widget extends WP_Widget {
     $rss = isset($instance['rss']) ? esc_attr($instance['rss']) : '';
   ?>
   <p>
-      <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php esc_html_e('Title:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('facebook')); ?>"><?php _e('Facebook:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('facebook')); ?>"><?php esc_html_e('Facebook:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('facebook')); ?>" name="<?php echo esc_attr($this->get_field_name('facebook')); ?>" type="text" value="<?php echo esc_attr($facebook); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('twitter')); ?>"><?php _e('Twitter:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('twitter')); ?>"><?php esc_html_e('Twitter:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('twitter')); ?>" name="<?php echo esc_attr($this->get_field_name('twitter')); ?>" type="text" value="<?php echo esc_attr($twitter); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('instagram')); ?>"><?php _e('Instagram:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('instagram')); ?>"><?php esc_html_e('Instagram:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('instagram')); ?>" name="<?php echo esc_attr($this->get_field_name('instagram')); ?>" type="text" value="<?php echo esc_attr($instagram); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('googleplus')); ?>"><?php _e('GooglePlus:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('googleplus')); ?>"><?php esc_html_e('GooglePlus:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('googleplus')); ?>" name="<?php echo esc_attr($this->get_field_name('googleplus')); ?>" type="text" value="<?php echo esc_attr($googleplus); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('flickr')); ?>"><?php _e('Flickr:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('flickr')); ?>"><?php esc_html_e('Flickr:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('flickr')); ?>" name="<?php echo esc_attr($this->get_field_name('flickr')); ?>" type="text" value="<?php echo esc_attr($flickr); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('vimeo')); ?>"><?php _e('Vimeo:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('vimeo')); ?>"><?php esc_html_e('Vimeo:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('vimeo')); ?>" name="<?php echo esc_attr($this->get_field_name('vimeo')); ?>" type="text" value="<?php echo esc_attr($vimeo); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('youtube')); ?>"><?php _e('Youtube:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('youtube')); ?>"><?php esc_html_e('Youtube:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('youtube')); ?>" name="<?php echo esc_attr($this->get_field_name('youtube')); ?>" type="text" value="<?php echo esc_attr($youtube); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('pinterest')); ?>"><?php _e('Pinterest:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('pinterest')); ?>"><?php esc_html_e('Pinterest:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('pinterest')); ?>" name="<?php echo esc_attr($this->get_field_name('pinterest')); ?>" type="text" value="<?php echo esc_attr($pinterest); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('dribbble')); ?>"><?php _e('Dribbble:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('dribbble')); ?>"><?php esc_html_e('Dribbble:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('dribbble')); ?>" name="<?php echo esc_attr($this->get_field_name('dribbble')); ?>" type="text" value="<?php echo esc_attr($dribbble); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('linkedin')); ?>"><?php _e('Linkedin:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('linkedin')); ?>"><?php esc_html_e('Linkedin:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('linkedin')); ?>" name="<?php echo esc_attr($this->get_field_name('linkedin')); ?>" type="text" value="<?php echo esc_attr($linkedin); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('tumblr')); ?>"><?php _e('Tumblr:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('tumblr')); ?>"><?php esc_html_e('Tumblr:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('tumblr')); ?>" name="<?php echo esc_attr($this->get_field_name('tumblr')); ?>" type="text" value="<?php echo esc_attr($tumblr); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('vk')); ?>"><?php _e('VK:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('vk')); ?>"><?php esc_html_e('VK:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('vk')); ?>" name="<?php echo esc_attr($this->get_field_name('vk')); ?>" type="text" value="<?php echo esc_attr($vk); ?>" />
     </p>
     <p>
-      <label for="<?php echo esc_attr($this->get_field_id('rss')); ?>"><?php _e('RSS:', 'virtue'); ?></label>
+      <label for="<?php echo esc_attr($this->get_field_id('rss')); ?>"><?php esc_html_e('RSS:', 'virtue'); ?></label>
       <input class="widefat" id="<?php echo esc_attr($this->get_field_id('rss')); ?>" name="<?php echo esc_attr($this->get_field_name('rss')); ?>" type="text" value="<?php echo esc_attr($rss); ?>" />
     </p>
   <?php
   }
+}
 }
 /**
  * Kadence Recent_Posts widget class
  *  Just a rewite of wp recent post
  * 
  */
+if ( ! class_exists( 'Kadence_Recent_Posts_Widget' ) ) {
 class Kadence_Recent_Posts_Widget extends WP_Widget {
 
   private static $instance = 0;
@@ -477,18 +503,22 @@ class Kadence_Recent_Posts_Widget extends WP_Widget {
     <?php echo $before_widget; ?>
     <?php if ( $title ) echo $before_title . $title . $after_title; ?>
     <ul>
-    <?php  while ($r->have_posts()) : $r->the_post(); ?>
+    <?php  while ($r->have_posts()) : $r->the_post(); 
+    global $post; ?>
     <li class="clearfix postclass">
-        <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="recentpost_featimg">
-          <?php global $post; if(has_post_thumbnail( $post->ID ) ) { 
-            the_post_thumbnail( 'widget-thumb' ); 
-          } else { 
-            $image_url = virtue_post_widget_default_placeholder();
-            $image = aq_resize($image_url, 80, 50, true);
-            if(empty($image)) { $image = $image_url; }
-            echo '<img width="80" height="50" src="'.esc_attr($image).'" class="attachment-widget-thumb wp-post-image" alt="">'; } ?></a>
-        <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="recentpost_title"><?php if ( get_the_title() ) the_title(); else the_ID(); ?></a>
-        <span class="recentpost_date"><?php echo get_the_date(get_option( 'date_format' )); ?></span>
+		<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>" class="recentpost_featimg">
+		<?php
+			if(has_post_thumbnail( $post->ID ) ) { 
+				the_post_thumbnail( 'widget-thumb' ); 
+			} else { 
+				$image_url = virtue_post_widget_default_placeholder();
+				$image = aq_resize($image_url, 80, 50, true);
+				if(empty($image)) { $image = $image_url; }
+				echo '<img width="80" height="50" src="'.esc_attr($image).'" class="attachment-widget-thumb wp-post-image" alt="">'; 
+			} ?>
+        </a>
+        <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>" class="recentpost_title"><?php the_title() ?></a>
+        <span class="recentpost_date"><?php echo esc_html( get_the_date( get_option( 'date_format' ) ) ); ?></span>
         </li>
     <?php endwhile; ?>
     </ul>
@@ -503,9 +533,9 @@ class Kadence_Recent_Posts_Widget extends WP_Widget {
 
   public function update( $new_instance, $old_instance ) {
     $instance = $old_instance;
-    $instance['title'] = strip_tags($new_instance['title']);
+    $instance['title'] = sanitize_text_field( $new_instance['title'] );
     $instance['number'] = (int) $new_instance['number'];
-    $instance['thecate'] = $new_instance['thecate'];
+    $instance['thecate'] = sanitize_text_field( $new_instance['thecate'] );
 
     return $instance;
   }
@@ -525,20 +555,21 @@ class Kadence_Recent_Posts_Widget extends WP_Widget {
     }
 
 ?>
-    <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'virtue'); ?></label>
-    <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
+    <p><label for="<?php echo esc_attr( $this->get_field_id('title') ); ?>"><?php esc_html_e('Title:', 'virtue'); ?></label>
+    <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('title') ); ?>" name="<?php echo esc_attr( $this->get_field_name('title') ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" /></p>
 
-    <p><label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of posts to show:', 'virtue'); ?></label>
-    <input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
+    <p><label for="<?php echo esc_attr( $this->get_field_id('number') ); ?>"><?php esc_html_e('Number of posts to show:', 'virtue'); ?></label>
+    <input id="<?php echo esc_attr( $this->get_field_id('number') ); ?>" name="<?php echo esc_attr( $this->get_field_name('number') ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" size="3" /></p>
         <p>
-    <label for="<?php echo $this->get_field_id('thecate'); ?>"><?php _e('Limit to Catagory (Optional):', 'virtue'); ?></label>
-    <select id="<?php echo $this->get_field_id('thecate'); ?>" name="<?php echo $this->get_field_name('thecate'); ?>"><?php echo implode('', $cate_options); ?></select>
+    <label for="<?php echo esc_attr( $this->get_field_id('thecate') ); ?>"><?php esc_html_e('Limit to Catagory (Optional):', 'virtue'); ?></label>
+    <select id="<?php echo esc_attr( $this->get_field_id('thecate') ); ?>" name="<?php echo esc_attr( $this->get_field_name('thecate') ); ?>"><?php echo wp_kses_post( implode('', $cate_options) ); ?></select>
   </p>
 <?php
   }
 }
 
-
+}
+if ( ! class_exists( 'Kadence_Image_Grid_Widget' ) ) {
 class Kadence_Image_Grid_Widget extends WP_Widget {
 
   private static $instance = 0;
@@ -603,11 +634,11 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
 
   public function update( $new_instance, $old_instance ) {
     $instance = $old_instance;
-    $instance['title'] = strip_tags($new_instance['title']);
+    $instance['title'] = sanitize_text_field( $new_instance['title'] );
     $instance['number'] = (int) $new_instance['number'];
-    $instance['thecat'] = $new_instance['thecat'];
-    $instance['thetype'] = $new_instance['thetype'];
-    $instance['gridchoice'] = $new_instance['gridchoice'];
+    $instance['thecat'] = sanitize_text_field( $new_instance['thecat'] );
+    $instance['thetype'] = sanitize_text_field( $new_instance['thetype'] );
+    $instance['gridchoice'] = sanitize_text_field( $new_instance['gridchoice'] );
 
     return $instance;
   }
@@ -638,26 +669,27 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
     }
 
 ?>
-    <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'virtue'); ?></label>
-    <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
+    <p><label for="<?php echo esc_attr( $this->get_field_id('title') ); ?>"><?php esc_html_e('Title:', 'virtue'); ?></label>
+    <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('title') ); ?>" name="<?php echo esc_attr( $this->get_field_name('title') ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" /></p>
 
-    <p><label for="<?php echo $this->get_field_id('gridchoice'); ?>"><?php _e('Grid Choice:','virtue'); ?></label>
-        <select id="<?php echo $this->get_field_id('gridchoice'); ?>" name="<?php echo $this->get_field_name('gridchoice'); ?>">
-            <option value="post"<?php echo ($gridchoice === 'post' ? ' selected="selected"' : ''); ?>><?php _e('Blog Posts', 'virtue'); ?></option>
-            <option value="portfolio"<?php echo ($gridchoice === 'portfolio' ? ' selected="selected"' : ''); ?>><?php _e('Portfolio', 'virtue'); ?></option>
+    <p><label for="<?php echo esc_attr( $this->get_field_id('gridchoice') ); ?>"><?php esc_html_e('Grid Choice:','virtue'); ?></label>
+        <select id="<?php echo esc_attr( $this->get_field_id('gridchoice') ); ?>" name="<?php echo esc_attr( $this->get_field_name('gridchoice') ); ?>">
+            <option value="post"<?php echo ($gridchoice === 'post' ? ' selected="selected"' : ''); ?>><?php esc_html_e('Blog Posts', 'virtue'); ?></option>
+            <option value="portfolio"<?php echo ($gridchoice === 'portfolio' ? ' selected="selected"' : ''); ?>><?php esc_html_e('Portfolio', 'virtue'); ?></option>
         </select></p>
         
-        <p><label for="<?php echo $this->get_field_id('thecat'); ?>"><?php _e('If Post - Choose Category (Optional):', 'virtue'); ?></label>
-    <select id="<?php echo $this->get_field_id('thecat'); ?>" name="<?php echo $this->get_field_name('thecat'); ?>"><?php echo implode('', $cat_options); ?></select></p>
+        <p><label for="<?php echo esc_attr( $this->get_field_id('thecat') ); ?>"><?php esc_html_e('If Post - Choose Category (Optional):', 'virtue'); ?></label>
+    <select id="<?php echo esc_attr( $this->get_field_id('thecat') ); ?>" name="<?php echo $this->get_field_name('thecat'); ?>"><?php echo wp_kses_post( implode('', $cat_options) ); ?></select></p>
         
-    <p><label for="<?php echo $this->get_field_id('thetype'); ?>"><?php _e('If Portfolio - Choose Type (Optional):', 'virtue'); ?></label>
-    <select id="<?php echo $this->get_field_id('thetype'); ?>" name="<?php echo $this->get_field_name('thetype'); ?>"><?php echo implode('', $type_options); ?></select></p>
+    <p><label for="<?php echo esc_attr( $this->get_field_id('thetype') ); ?>"><?php esc_html_e('If Portfolio - Choose Type (Optional):', 'virtue'); ?></label>
+    <select id="<?php echo esc_attr( $this->get_field_id('thetype') ); ?>" name="<?php echo esc_attr( $this->get_field_name('thetype') ); ?>"><?php echo wp_kses_post(implode('', $type_options) ); ?></select></p>
         
-        <p><label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of images to show:', 'virtue'); ?></label>
-    <input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
+        <p><label for="<?php echo esc_attr( $this->get_field_id('number') ); ?>"><?php esc_html_e('Number of images to show:', 'virtue'); ?></label>
+    <input id="<?php echo esc_attr( $this->get_field_id('number') ); ?>" name="<?php echo esc_attr( $this->get_field_name('number') ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" size="3" /></p>
   
 <?php
   }
+}
 }
 function kad_is_edit_page(){
   if (!is_admin()) return false;
@@ -677,6 +709,7 @@ function virtue_admin_script() {
 }
 add_action('init', 'virtue_admin_script');
 
+if ( ! class_exists( 'Simple_About_With_Image' ) ) {
 class Simple_About_With_Image extends WP_Widget{
 
   private static $instance = 0;
@@ -707,10 +740,10 @@ class Simple_About_With_Image extends WP_Widget{
     ?>
      <?php echo $before_widget; ?>
     <div class="kad_img_upload_widget">
-        <?php if($uselink == true) {echo '<a href="'.$link.'" '.$linktype.'>';} ?>
+        <?php if($uselink == true) {echo '<a href="'.esc_attr( $link ).'" '.wp_kses_post( $linktype ).'>';} ?>
         <img src="<?php echo esc_url($instance['image_uri']); ?>" />
         <?php if($uselink == true) {echo '</a>'; }?>
-        <?php if(!empty($instance['text'])) { ?> <div class="virtue_image_widget_caption"><?php echo $instance['text']; ?></div><?php }?>
+        <?php if(!empty($instance['text'])) { ?> <div class="virtue_image_widget_caption"><?php echo wp_kses_post( $instance['text'] ); ?></div><?php }?>
     </div>
 
     <?php echo $after_widget; ?>
@@ -718,10 +751,10 @@ class Simple_About_With_Image extends WP_Widget{
 
     public function update($new_instance, $old_instance) {
         $instance = $old_instance;
-        $instance['text'] = $new_instance['text'];
-        $instance['image_uri'] = strip_tags( $new_instance['image_uri'] );
-        $instance['image_link'] = $new_instance['image_link'];
-        $instance['image_link_open'] = $new_instance['image_link_open'];
+        $instance['text'] = wp_filter_post_kses( $new_instance['text'] );
+        $instance['image_uri'] = esc_url_raw( $new_instance['image_uri'] );
+        $instance['image_link'] = esc_url_raw( $new_instance['image_link'] );
+        $instance['image_link_open'] = sanitize_text_field( $new_instance['image_link_open'] );
         return $instance;
     }
 
@@ -743,29 +776,29 @@ class Simple_About_With_Image extends WP_Widget{
     ?>
   <div class="kad_img_upload_widget">
     <p>
-        <img class="kad_custom_media_image" src="<?php if(!empty($instance['image_uri'])){echo $instance['image_uri'];} ?>" style="margin:0;padding:0;max-width:100px;display:block" />
+        <img class="kad_custom_media_image" src="<?php if(!empty($instance['image_uri'])){echo esc_url( $instance['image_uri'] );} ?>" style="margin:0;padding:0;max-width:100px;display:block" />
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id('image_uri'); ?>"><?php _e('Image URL', 'virtue'); ?></label><br />
-        <input type="text" class="widefat kad_custom_media_url" name="<?php echo $this->get_field_name('image_uri'); ?>" id="<?php echo $this->get_field_id('image_uri'); ?>" value="<?php echo $image_uri; ?>">
-        <input type="button" value="<?php _e('Upload', 'virtue'); ?>" class="button kad_custom_media_upload" id="kad_custom_image_uploader" />
+        <label for="<?php echo esc_attr( $this->get_field_id('image_uri') ); ?>"><?php esc_html_e('Image URL', 'virtue'); ?></label><br />
+        <input type="text" class="widefat kad_custom_media_url" name="<?php echo esc_attr( $this->get_field_name('image_uri') ); ?>" id="<?php echo esc_attr( $this->get_field_id('image_uri') ); ?>" value="<?php echo esc_attr( $image_uri ); ?>">
+        <input type="button" value="<?php esc_html_e('Upload', 'virtue'); ?>" class="button kad_custom_media_upload" id="kad_custom_image_uploader" />
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id('image_link_open'); ?>"><?php _e('Image opens in', 'virtue'); ?></label><br />
-        <select id="<?php echo $this->get_field_id('image_link_open'); ?>" name="<?php echo $this->get_field_name('image_link_open'); ?>"><?php echo implode('', $link_options_array);?></select>
+        <label for="<?php echo esc_attr( $this->get_field_id('image_link_open') ); ?>"><?php esc_html_e('Image opens in', 'virtue'); ?></label><br />
+        <select id="<?php echo esc_attr( $this->get_field_id('image_link_open') ); ?>" name="<?php echo esc_attr( $this->get_field_name('image_link_open') ); ?>"><?php echo implode('', $link_options_array);?></select>
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id('image_link'); ?>"><?php _e('Image Link (optional)', 'virtue'); ?></label><br />
-        <input type="text" class="widefat kad_img_widget_link" name="<?php echo $this->get_field_name('image_link'); ?>" id="<?php echo $this->get_field_id('image_link'); ?>" value="<?php echo $image_link; ?>">
+        <label for="<?php echo esc_attr( $this->get_field_id('image_link') ); ?>"><?php esc_html_e('Image Link (optional)', 'virtue'); ?></label><br />
+        <input type="text" class="widefat kad_img_widget_link" name="<?php echo esc_attr( $this->get_field_name('image_link') ); ?>" id="<?php echo esc_attr( $this->get_field_id('image_link') ); ?>" value="<?php echo esc_attr( $image_link ); ?>">
     </p>
     <p>
-      <label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('Text/Caption (optional)', 'virtue'); ?></label><br />
-      <textarea name="<?php echo $this->get_field_name('text'); ?>" id="<?php echo $this->get_field_id('text'); ?>" class="widefat" ><?php if(!empty($instance['text'])) echo $instance['text']; ?></textarea>
+      <label for="<?php echo esc_attr( $this->get_field_id('text') ); ?>"><?php esc_html_e('Text/Caption (optional)', 'virtue'); ?></label><br />
+      <textarea name="<?php echo esc_attr( $this->get_field_name('text') ); ?>" id="<?php echo esc_attr( $this->get_field_id('text') ); ?>" class="widefat" ><?php if(! empty( $instance['text'] ) ) echo esc_textarea( $instance['text'] ); ?></textarea>
     </p>
   </div>
     <?php
   }
-
+}
 
 
 }

@@ -51,9 +51,9 @@ global $virtue;
 									<span class="kad-cart-dash">-</span>
 									<?php 
 									if ( WC()->cart->tax_display_cart == 'incl' ) {
-										echo WC()->cart->get_cart_subtotal(); 
+										echo wp_kses_post( WC()->cart->get_cart_subtotal() ); 
 									} else {
-										echo WC()->cart->get_cart_total();
+										echo wp_kses_post( WC()->cart->get_cart_total() );
 									}
 									?>
 								</a>

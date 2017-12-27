@@ -32,7 +32,7 @@
                                     echo '<h4>'.esc_html($icon['title']).'</h4>'; 
                                 }
                                 if (!empty($icon['description'])) {
-                                    echo '<p>'.$icon['description'].'</p>';
+                                    echo '<p>'.wp_kses_post( $icon['description'] ).'</p>';
                                 } ?>
                                 </a>
                             </div>

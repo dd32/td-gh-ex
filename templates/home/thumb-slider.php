@@ -62,8 +62,8 @@ global $virtue;
                                       <img src="<?php echo esc_url($image); ?>" width="<?php echo esc_attr($slidewidth);?>" height="<?php echo esc_attr($slideheight);?>" alt="<?php echo esc_attr($slide['title']); ?>" />
                                             <?php if ($captions == '1') { ?> 
                                                 <div class="flex-caption">
-                                                  <?php if ($slide['title'] != '') echo '<div class="captiontitle headerfont">'.$slide['title'].'</div>'; ?>
-                                                  <?php if ($slide['description'] != '') echo '<div><div class="captiontext headerfont"><p>'.$slide['description'].'</p></div></div>';?>
+                                                  <?php if ($slide['title'] != '') echo '<div class="captiontitle headerfont">'.esc_html( $slide['title'] ).'</div>'; ?>
+                                                  <?php if ($slide['description'] != '') echo '<div><div class="captiontext headerfont"><p>'.wp_kses_post( $slide['description'] ).'</p></div></div>';?>
                                                 </div> 
                                             <?php } ?>
                                 <?php if($slide['link'] != '') echo '</a>'; ?>
