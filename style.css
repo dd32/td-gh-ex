@@ -10,7 +10,7 @@ Text Domain: best-blog
 
 Description: bestblog is a perfect WordPress theme for personal blogs, blog,  content publishers .
 
-Version: 1.0.1
+Version: 1.0.2
 
 Tags:   grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments,blog,news,food-and-drink
 
@@ -104,7 +104,9 @@ bestblog  is distributed under the terms of the GNU GPL
   height: 100%;
   z-index: -1;
 }
-
+.pagination{width: 80%;
+    margin-right: auto;
+    margin-left: auto;}
 /*
 ------------------------------------
   			 2. WORDPRESS CORE
@@ -237,31 +239,24 @@ a img.aligncenter {
 }
 
 .banner-warp {
-  display: block;
   text-align: center;
-  min-height: 300px;
-  position: relative;
-  background-color: #fff;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      min-height: 250px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
 }
 
 .banner-warp .object-fit-images {
   min-height: 300px;
-}
-
-.banner-warp .banner-inner {
-  position: absolute;
-  top: 0;
-  right: auto;
-  bottom: auto;
-  left: 0;
-  z-index: 9;
-  display: -webkit-flex;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
 }
 
 /*-------------------------
@@ -286,8 +281,8 @@ a img.aligncenter {
 .banner-inner .logo-inner img {
   display: block;
   margin: auto;
-  max-height: 110px;
   width: auto;
+  padding: 10px;
 }
 
 .header-social-wrap {
@@ -334,7 +329,7 @@ a img.aligncenter {
 }
 
 .main-menu-wrap .dropdown.menu a {
-  padding: 17px 17px;
+  padding: 20px 17px;
   color: black;
 }
 
@@ -343,13 +338,7 @@ a img.aligncenter {
   z-index: 40;
 }
 
-.dropdown.menu a, .dropdown .is-dropdown-submenu a {
-  padding: 1rem 1rem;
-}
-
-.dropdown.menu a {
-  padding: 1.3rem 1rem;
-}
+.dropdown .is-dropdown-submenu a{width: 100%; text-align: left;}
 
 .dropdown li ul li {
   padding: 0px
@@ -363,15 +352,13 @@ a img.aligncenter {
   right: 18px;
 }
 
-.main-menu-wrap .is-dropdown-submenu-parent .submenu li {
+.main-menu-wrap .is-dropdown-submenu-parent .submenu li a {
   background-color: #ececec;
+  transition: background-color .50s ease-out,color .25s ease-out;
+
 }
 
-.main-menu-wrap .desktop-menu .is-dropdown-submenu-parent .is-dropdown-submenu li a:hover {
-  -webkit-transition: background-color 300ms linear;
-  -ms-transition: background-color 300ms linear;
-  transition: background-color 300ms linear;
-}
+
 
 .menu-outer .menu-icon::after {
   content: "\f0c9";
@@ -497,10 +484,7 @@ button:active {
  MENU off canvas desktop
 ---------------------------*/
 .main-menu-wrap .is-dropdown-submenu-parent .submenu li:hover{
-  color: #FFFFFF;
-background-color: #9c27b0;
-box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
-
+box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .js-off-canvas-overlay {
@@ -577,8 +561,10 @@ Mobile header
 -------------------------------------------------------- */
 
 .mobile-header {
-  background: #f4dade;
-  position: relative;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
 }
 
 .mobile-header .logo-wrap {}
@@ -733,28 +719,10 @@ color: #616161;
     font-size: 18px;
 }
 .post-wrap-layout-2 .card .category.text-info a {
-  padding-right: 8px;
+  margin-bottom: 0px;
+  margin-top: 5px;
 }
 
-/*  ----------------------------------------------------
-   Page sub banner
--------------------------------------------------------- */
-
-#sub_banner {
-  background-color: white;
-}
-
-#sub_banner .breadcrumb-wrap .breadcrumbs {
-  margin: 0;
-}
-
-#sub_banner .top-bar, #sub_banner .top-bar-right, #sub_banner .top-bar ul {
-  background-color: transparent;
-}
-
-#sub_banner .top-bar {
-  min-height: 80px;
-}
 
 /*  ----------------------------------------------------
   Single Post
@@ -843,7 +811,7 @@ color: #616161;
 .post-single-content-body {
   display: block;
   overflow: hidden;
-  margin-top: 60px;
+  margin-top: 30px;
   margin-bottom: 30px;
   padding-right: 20px;
   padding-left: 20px;
@@ -1034,12 +1002,13 @@ color: #616161;
 .sidebar-inner .widget_wrap {
   border-top: 3px solid #ffc2ca;
   padding: 30px 20px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   background-color: #fff;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
   position: relative;
 }
+.sidebar-inner .widget_media_image .widget_wrap{padding: 0px;border: none}
 .sidebar-inner .widget_search .widget_wrap .search-form{
   top: 2px;
 position: absolute;
@@ -1115,32 +1084,118 @@ width: 90%;
   padding: .4rem 1rem;
   padding-left: 0;
 }
-
+/*----------------------------------------------------
+   Post sub banner
+--------------------------------------------------------*/
+#sub_banner .top-bar {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+#sub_banner .top-bar .breadcrumbs {
+  margin: 0px;
+}
+.block-content-none{
+  margin: 0 auto;
+}
+.block-content-none .search-submit{
+  border: none;
+    border-radius: 3px;
+    position: relative;
+    padding: 12px 30px;
+    margin: 10px 1px;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    will-change: box-shadow, transform;
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12);
+    width: 60%;
+    display: inline-block;
+    text-align: center;
+    left: 20%;
+    right: 20%;
+    cursor: pointer;
+    font-size: 18px;
+}
 /*  ----------------------------------------------------
    Single Page
 -------------------------------------------------------- */
-.button.clear.secondary,.button.hollow.secondary{background: transparent;}
-.sub_banner_page {
-  min-height: 200px;
-  background-color: #fdfdfd;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  width: 100%;
-  display: table;
+/*----------------------------------------------------
+   Page sub banner
+-------------------------------------------------------- */
+
+#sub_banner_page {
+  background-color:#8a8484;
+}
+#sub_banner_page.callout{padding: 0px;margin: 0px;}
+#sub_banner_page .breadcrumb-wrap .breadcrumbs {
+  margin: 0;
 }
 
-.sub_banner_page .heade-content {
-  display: table-cell;
-  vertical-align: middle;
+#sub_banner_page .top-bar, #sub_banner .top-bar-right, #sub_banner .top-bar ul {
+  background-color: transparent;
 }
+
+
+.moon-curve{position: relative;display: block;}
+.moon-curve::after {
+    background-image: url(./images/curve-bg-576672200f6225a05f88cc5aabeee29f.svg);
+    background-size: 100% 100%;
+    content: '';
+    display: block;
+    height: 40px;
+    position: absolute;
+    top: calc(-40px + 1px);
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    right: 0;
+
+}
+.single-page-thumb-outer {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+.page-thumb {
+    display: block;
+    max-height: 500px;
+    width: 100%;
+}
+.page-thumb img {
+    display: inline-block;
+    max-height: 500px;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+}
+#sub_banner_page .heade-content{
+  position: absolute;
+top: 50%;
+text-align: center;
+width: 100%;
+color: #fff;
+font-size: 36px;
+-ms-transform: translate(0,-50%);
+-webkit-transform: translate(0,-50%);
+transform: translate(0,-50%);
+}
+
+.button.clear.secondary,.button.hollow.secondary{background: transparent;}
+
 
 .page_content {
   background-color: #fff;
   border-radius: 2px;
   padding: 40px 30px;
   margin-bottom: 80px;
+  margin-top: -40px;
 }
+
 .box_wbb #content-page{padding: 0 10px 0 10px;}
 /*  ----------------------------------------------------
    Footer section
@@ -1193,6 +1248,7 @@ width: 90%;
   bottom: 20px;
   right: 20px;
   cursor: pointer;
+  z-index: 10;
 }
 
 .scroll_to_top.floating-action.button {
@@ -1215,7 +1271,12 @@ width: 90%;
 /*  ----------------------------------------------------
    pagination
 -------------------------------------------------------- */
-
+.single-post-box-related{
+  margin-bottom: 30px;
+}
+.single-post-box-related .post-wrap-layout-2 .card .card-image {
+  margin: 0px;
+}
 .navigation .nav-links {
   margin: 1em auto 1em;
   text-align: center;
@@ -1374,6 +1435,14 @@ move bblog-buttons - move prev and next bblog-buttons to the sides
 
 .single-nav {
   margin: 1em auto 1em;
+}
+/*  ----------------------------------------------------
+   gallery setup
+-------------------------------------------------------- */
+.top-footer-wrap .gallery-item{
+  float: left;
+  width: fit-content;
+  padding: 2px;
 }
 
 /* --------------------------------
@@ -1699,7 +1768,7 @@ h2.comment-reply-title {
       overflow: visible;
   }
   .card-profile {
-    margin-top: 30px;
+    margin-top: 70px;
     text-align: center;
 }
 
@@ -2003,9 +2072,7 @@ h2.comment-reply-title {
   .is-font-size-6 {
     font-size: 12px;
   }
-  .with-sidebar {
-    padding-right: 20px;
-  }
+
   .padding-vertical-large-1 {
     padding-bottom: 1rem!important;
     padding-top: 1rem!important;
@@ -2033,6 +2100,11 @@ h2.comment-reply-title {
   .padding-horizontal-cs-1 {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+  .top-footer-wrap .gallery-item{
+    float: left;
+    width: 50%;
+    padding: 2px;
   }
 }
 

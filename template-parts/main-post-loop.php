@@ -11,7 +11,7 @@
 ?>
   <div class="grid-container">
     <div class="grid-x grid-margin-x align-center ">
-      <div class="cell  small-12 <?php echo bestblog_sidebar_layout();?>">
+      <div class="cell  small-24 <?php echo bestblog_sidebar_layout();?> large-order-2 ">
         <?php $blogpost_style = get_theme_mod('layout_page_gen', 'content1');?>
         <div class="blog-container <?php if ( 'content2' == $blogpost_style) : ?> post-wrap-layout-2 grid-x grid-padding-x grid-padding-y <?php endif;?>">
             <?php if ( have_posts() ) : ?>
@@ -27,20 +27,24 @@
                 get_template_part( 'template-parts/post/content', get_post_format() );
                 ?>
               <?php endwhile; ?>
-          <div class="grid-container">
-            <div class="grid-x grid-margin-x align-center ">
-              <div class="cell small-12 <?php if ( !is_active_sidebar( 'right-sidebar' ) ) : ?> large-8 medium-8 <?php else : ?> large-12  <?php endif;?>">
+                <div class="cell small-24  large-24 ">
                 <?php the_posts_pagination(); ?>
               </div>
-            </div>
-          </div>
           <?php else : ?>
             <?php get_template_part( 'template-parts/post/content', 'none' ); ?>
           <?php endif; ?>
         </div>
         <!--POST END-->
       </div>
-      <?php get_template_part('sidebar'); ?>
+      <?php $sidbar_positionmn = get_theme_mod( 'sidbar_position_gen', 'right' );
+      if (('full' == $sidbar_positionmn)) {
+          echo '';  // nosidebar
+      } elseif ( ('right' == $sidbar_positionmn)) {
+        echo '<div class="cell small-24 medium-22 large-7 large-order-2">';   get_template_part('sidebar');   echo '</div>';
+      } elseif ( ('left' == $sidbar_positionmn)) {
+        echo '<div class="cell small-24 medium-22 large-7 large-order-1">';   get_template_part('sidebar');   echo '</div>';
+      }
+      ?>
       <!--sidebar END-->
     </div>
   </div>

@@ -9,10 +9,8 @@
 
 ?>
 
-<div class="block-content-wrap">
-	<article class="grid-x grid-padding-x post-wrap-blog ">
-		<div class=" small-12 cell ">
-		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
+<div class="block-content-none">
+			<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
 			<p class="pique-get-started"><?php printf( wp_kses( __( 'Ready to publish bestblogr first post? <a href="%1$s">Get started here</a>.', 'best-blog' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 
@@ -27,6 +25,4 @@
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>
-	</div><!-- .page-content -->
-</article><!-- .no-results -->
-</div>
+	</div>

@@ -9,20 +9,21 @@
  */
 
 ?>
-<?php $main_header_gradient = get_theme_mod( 'main_header_gradient', 'gradient_2' ); ?>
-<div class="banner-warp <?php echo $main_header_gradient ?> hide-for-small-only hide-for-medium-only  ">
+<?php
+	$main_bgheader_style = get_theme_mod( 'main_bgheader_style', 'gradient_header' );
+	$main_header_gradient = get_theme_mod( 'main_header_gradient', 'gradient_2' );
+	?>
+	<?php   if ( ('img_header' == $main_bgheader_style )&& get_header_image() ) : ?>
+					<div class="banner-warp hide-for-small-only hide-for-medium-only" data-interchange="[<?php echo esc_url( header_image());?>, small],[<?php echo esc_url( header_image());?>, large]">
+			<div class="overlay"></div>
+		<?php else:?>
+<div class="banner-warp <?php   if ( ('gradient_header' == $main_bgheader_style ) ) : ?> <?php echo $main_header_gradient ?> <?php endif;?> hide-for-small-only hide-for-medium-only  ">
+	<?php endif;?>
 	<div class="grid-container">
-		<div class="grid-x grid-padding-x ">
-			<div class="small-12 cell">
-				<div class="banner-inner">
-					<div class="logo-wrap is-logo-image" >
 						<div class="logo-inner">
 							<?php the_custom_logo(); ?>
 							<div class="site-branding">
-
 										<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-
-
 								<?php $description = get_bloginfo( 'description', 'display' );
 								if ( $description || is_customize_preview() ) : ?>
 									<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
@@ -45,10 +46,6 @@
 										<?php endif; ?>
 						</div>
 						<!--site-title END-->
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
 <div class="off-canvas-wrapper ">

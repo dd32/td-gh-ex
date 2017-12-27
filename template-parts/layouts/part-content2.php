@@ -7,7 +7,8 @@
  * @since newspapers 1.0
  */
  ?>
-       <div class="cell <?php if ( !is_active_sidebar( 'right-sidebar' ) ) : ?> large-4 <?php else : ?>large-6 <?php endif;?>  medium-6 small-12 ">
+      <?php $sidbar_positioncontent2 = get_theme_mod( 'sidbar_position_gen', 'right' );?>
+       <div class="cell <?php if ( ('full' !== $sidbar_positioncontent2)):?> large-12 <?php else : ?>large-8  <?php endif;?>  medium-12 small-24 ">
          <div class="card card-blog">
            <?php if ( has_post_thumbnail() ) { ?>
              <div class="card-image">

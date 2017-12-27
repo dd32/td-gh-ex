@@ -6,35 +6,28 @@ Template Name: Page with No sidebar
 <?php get_header(); ?>
 
 <!--Call Sub Header-->
-
-<div id="sub_banner">
-  <div class="grid-container">
-    <div class="grid-x grid-padding-x ">
-      <div class="cell small-12 ">
-        <div class="heade-content">
-          <h1 class="text-center">
-            <?php the_title(); ?>
-          </h1>
-        </div>
-        <?php
-        // If a featured image is set, insert into layout and use Interchange
-        // to select the optimal image size per named media query.
-        if ( has_post_thumbnail( $post->ID ) ) : ?>
-          <div class="header-image-container" role="banner" data-interchange="[<?php echo the_post_thumbnail_url('bestblog-small'); ?>, small], [<?php echo the_post_thumbnail_url('bestblog-large'); ?>, medium], [<?php echo the_post_thumbnail_url('bestblog-xlarge'); ?>, large], [<?php echo the_post_thumbnail_url('bestblog-xlarge'); ?>, xlarge]" >
-          </div>
-          <div class="overlay"></div>
-        <?php endif;?>
-      </div>
-    </div>
+<div id="sub_banner_page" class=" callout  border-none">
+<div class="single-page-thumb-outer">
+  <div class="page-thumb">
+  <?php if ( has_post_thumbnail( $post->ID ) ) : ?>
+    <img data-interchange="[<?php echo the_post_thumbnail_url('bestblog-small'); ?>, small], [<?php echo the_post_thumbnail_url('bestblog-large'); ?>, medium], [<?php echo the_post_thumbnail_url('bestblog-xlarge'); ?>, large], [<?php echo the_post_thumbnail_url('bestblog-xlarge'); ?>, xlarge]"  />
+  <?php endif;?>
+  <div class="heade-content">
+    <h1 class="text-center">
+      <?php the_title(); ?>
+    </h1>
+  </div>
   </div>
 </div>
+</div>
+
 
 <!--Content-->
-<div id="content-page">
-  <div class="grid-container">
+<div id="content-page" >
+  <div class="grid-container ">
     <div class="grid-x grid-margin-x align-center">
-      <div class="auto cell">
-        <div class="page_content">
+      <div class="auto moon-curve">
+        <div class="page_content  z-depth-2">
           <?php if(have_posts()): ?>
             <?php while(have_posts()): ?>
               <?php the_post();?>

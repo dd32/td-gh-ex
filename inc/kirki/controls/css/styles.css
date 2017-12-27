@@ -415,7 +415,7 @@ add customizer control style
   flex-wrap: wrap; }
 .customize-control-kirki-radio-image label {
   position: relative;
-  display: inline-block; }
+  display: inline-block; margin-right: 2px; }
   .customize-control-kirki-radio-image label .image-label {
     display: none;
     position: absolute;

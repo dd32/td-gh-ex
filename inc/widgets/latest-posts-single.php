@@ -71,7 +71,7 @@
             <article class=" post-wrap-layout-1 radius" >
           		<div class="grid-x grid-padding-x grid-padding-y ">
           		<?php if ( has_post_thumbnail() ) { ?>
-          			<div class="large-5 medium-5 small-12 align-self-middle">
+          			<div class="large-10 medium-10 small-24 align-self-middle">
           				<div class="post-thumb-warp">
           					<div class="post-thumb">
           						<?php the_post_thumbnail( 'bestblogtop-medium',array('class' => 'object-fit-images')  ); ?>
@@ -79,7 +79,7 @@
           				</div>
           			</div>
           		<?php } ?>
-          		<div class="large-auto medium-auto small-12 cell align-self-middle ">
+          		<div class="large-auto medium-auto small-24 cell align-self-middle ">
           			<div class="post-body-warp">
           				<div class="post-header-warp">
           				<div class="entry-category">

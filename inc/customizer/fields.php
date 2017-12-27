@@ -63,17 +63,17 @@ Kirki::add_field('best_blog', array(
     ),
     'output' => array(
         array(
-            'element' => '#sub_banner .breadcrumbs a,.post-wrap-layout-2 .card .category.text-info a,.button.hollow.secondary,.sidebar-inner .widget_wrap ul li a,.single-header-warp .post-meta a,.comment-title h2,h2.comment-reply-title,.logged-in-as a,.author-title a',
+            'element' => '#sub_banner .breadcrumbs a,.post-wrap-layout-2 .card .category.text-info a,.button.hollow.secondary,.single-header-warp .post-meta a,.comment-title h2,h2.comment-reply-title,.logged-in-as a,.author-title a',
             'property' => 'color',
             'units' => ''
         ),
         array(
-            'element' => '.comment-list .comment-reply-link,.navigation .nav-links .current,.single-cats.button-group .button,.bestblog-author-bttom .button,.comment-form .form-submit input#submit, a.box-comment-btn, .comment-form .form-submit input[type="submit"],.scroll_to_top.floating-action.button,.button.secondary',
+            'element' => '.sidebar-inner .widget_wrap ul li,.comment-list .comment-reply-link,.navigation .nav-links .current,.single-cats.button-group .button,.bestblog-author-bttom .button,.comment-form .form-submit input#submit, a.box-comment-btn, .comment-form .form-submit input[type="submit"],.scroll_to_top.floating-action.button,.button.secondary,.block-content-none .search-submit',
 						'property' => 'background',
             'units' => ''
         ),
 				array(
-						'element' => '.button.hollow.secondary,.sidebar-inner .widget_wrap ul li,.sidebar-inner .widget_wrap,.single-header-warp',
+						'element' => '.multilevel-offcanvas.off-canvas.is-transition-overlap.is-open,.button.hollow.secondary,.sidebar-inner .widget_wrap ul li,.sidebar-inner .widget_wrap,.single-header-warp',
 						'property' => 'border-color',
 						'units' => ''
 				),
@@ -91,6 +91,23 @@ Kirki::add_field('best_blog', array(
     'choices' => array(
         'alpha' => true
     ),
+		'output' => array(
+        array(
+            'element' => '',
+            'property' => 'color',
+            'units' => ''
+        ),
+        array(
+            'element' => '.block-content-none .search-submit:hover,.main-menu-wrap .is-dropdown-submenu-parent .submenu li a:hover,.button.secondary:not(.hollow):hover',
+						'property' => 'background',
+            'units' => ''
+        ),
+				array(
+						'element' => '.button.hollow.secondary:hover',
+						'property' => 'border-color',
+						'units' => ''
+				),
+    )
 
 ));
 /*=============================================>>>>>
@@ -101,7 +118,7 @@ Kirki::add_field('best_blog', array(
     'settings' => 'main_bgheader_style',
     'label' => esc_attr__('Header Background Style', 'best-blog'),
     'section' => 'bestblog_header_options',
-    'default' => 'gradient_subheader',
+    'default' => 'gradient_header',
     'priority' => 10,
     'choices' => array(
         'img_header' => esc_attr__(' Header Image', 'best-blog'),
@@ -141,7 +158,7 @@ Kirki::add_field( 'best_blog', array(
 	),
 	'output' => array(
 			array(
-					'element' => '.header-wrap .banner-warp',
+					'element' => '.header-wrap .banner-warp,.mobile-header',
 					'property' => 'background',
 					'units' => ''
 			)
@@ -196,8 +213,13 @@ Kirki::add_field( 'best_blog', array(
 	),
 	'output' => array(
 			array(
-					'element' => '.menu-outer .menu-icon::after,.main-menu-wrap .dropdown.menu a,.navbar-search .navbar-search-button .fa,offcanvas-trigger',
+					'element' => '.menu-outer .menu-icon::after,.main-menu-wrap .dropdown.menu a,.navbar-search .navbar-search-button .fa,.offcanvas-trigger,#sub_banner .top-bar .subheader,#sub_banner .top-bar .breadcrumbs li ',
 					'property' => 'color',
+					'units' => ''
+			),
+			array(
+					'element' => '.is-dropdown-submenu .is-dropdown-submenu-parent.opens-right > a::after',
+					'property' => 'border-left-color',
 					'units' => ''
 			)
 	),
@@ -216,8 +238,8 @@ Kirki::add_field( 'best_blog', array(
 	),
 	'output' => array(
 			array(
-					'element' => '.menu-outer,.main-menu-wrap .is-dropdown-submenu-parent .submenu li',
-					'property' => 'background',
+					'element' => '.menu-outer,#sub_banner .top-bar,.main-menu-wrap .is-dropdown-submenu-parent .submenu li a',
+					'property' => 'background-color',
 					'units' => ''
 			)
 	),

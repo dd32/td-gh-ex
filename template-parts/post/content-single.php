@@ -9,13 +9,13 @@
 
 ?>
 
-<div class="content-wrapper padding-vertical-small-2 padding-vertical-large-3">
+<div class="content-wrapper padding-vertical-small-2 padding-vertical-large-3 margin-horizontal-cs-1">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x align-center">
 			<?php if (have_posts()): ?>
 				<?php while (have_posts()): ?>
 					<?php the_post(); ?>
-					<div class="cell small-12 <?php echo bestblog_sidebar_layout();?>">
+					<div class="cell small-24 <?php if ( ! is_active_sidebar( 'right-sidebar' ) ) : ?> large-22 <?php else:?> large-17 <?php endif;?> ">
 						<article class="single-post-warp z-depth-1" id="post-<?php the_ID(); ?> ">
 							<?php if (has_post_thumbnail()): ?>
 								<!-- featured-image -->
@@ -80,9 +80,10 @@
 							));?>
 						</div>
 						<?php get_template_part('template-parts/post/box', 'author');?>
+						<?php get_template_part('template-parts/post/related', 'post');?>
 						<div class="box-comment-content z-depth-1">
 							<div class="grid-x grid-padding-x align-center">
-								<div class="cell large-11 medium-11 small-11">
+								<div class="cell large-22 medium-24 small-24">
 									<?php if (comments_open() || get_comments_number()) {
     								comments_template();
 									}

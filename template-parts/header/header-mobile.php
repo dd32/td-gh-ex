@@ -3,7 +3,16 @@
  * For Mobile
  */
 ?>
-<div class="mobile-header  show-for-small hide-for-large">
+<?php
+	$main_bgheader_style = get_theme_mod( 'main_bgheader_style', 'gradient_header' );
+	$main_header_gradient = get_theme_mod( 'main_header_gradient', 'gradient_2' );
+	?>
+	<?php   if ( ('img_header' == $main_bgheader_style )&& get_header_image() ) : ?>
+<div class="mobile-header  show-for-small hide-for-large" data-interchange="[<?php echo esc_url( header_image());?>, small],[<?php echo esc_url( header_image());?>, large]" data-sticky data-margin-top="0">
+	<?php else:?>
+		<div class="mobile-header  show-for-small hide-for-large <?php   if ( ('gradient_header' == $main_bgheader_style ) ) : ?> <?php echo $main_header_gradient ?> <?php endif;?> " data-sticky data-margin-top="0" data-anchor="content">
+			<?php endif;?>
+
 	<div class="grid-container full ">
 	<div class="title-bar">
   <div class="title-bar-left">
@@ -50,7 +59,18 @@
      <span aria-hidden="false">&times;</span>
     </button>
     <?php bestblog_off_canvas_mobile(); ?>
-		<div class="off-canvas-social-wrap">
-<a class="icon-facebook icon-social" title="facebook" href="http://bingo.themeruby.com/fashion/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a><a class="icon-twitter icon-social" title="twitter" href="http://bingo.themeruby.com/fashion/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a><a class="icon-pinterest icon-social" title="pinterest" href="http://bingo.themeruby.com/fashion/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a><a class="icon-instagram icon-social" title="instagram" href="http://bingo.themeruby.com/fashion/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a><a class="icon-snapchat icon-social" title="snapchat" href="http://bingo.themeruby.com/fashion/" target="_blank"><i class="fa fa-snapchat-ghost" aria-hidden="true"></i></a><a class="icon-reddit icon-social" title="reddit" href="http://bingo.themeruby.com/fashion/" target="_blank"><i class="fa fa-reddit" aria-hidden="true"></i></a><a class="icon-whatsapp icon-social" title="whatsapp" href="http://bingo.themeruby.com/fashion/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a><a class="icon-rss icon-social" title="rss" href="http://bingo.themeruby.com/fashion/" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i></a>	</div>
-  </div>
+		<?php $social_icons_top = get_theme_mod( 'social_icons_top'); ?>
+		<?php if( !empty( $social_icons_top ) ):?>
+			<div class="off-canvas-social-wrap">
+			<?php foreach( $social_icons_top as $row ) : ?>
+				<a <?php if ( true == get_theme_mod( 'open_social_tab', false ) ) : ?>target="_blank"<?php endif; ?> href="<?php echo esc_url($row['social_url']); ?>">
+					<button class=" btn btn-simple btn-<?php echo esc_html( $row['social_icon']); ?>">
+						<i class="fa fa-<?php echo esc_html( $row['social_icon']); ?>"></i>
+					</button>
+				</a>
+			<?php endforeach; ?>
+		</div>
+		<?php endif; ?>
+
+	  </div>
 </div>

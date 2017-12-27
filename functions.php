@@ -90,9 +90,10 @@ function bestblog_setup()
 
 
     $defaults = array(
-        'height'      => 80,
+        'height'      => 120,
         'width'      => 180,
         'flex-width'  => true,
+				'flex-height'  => true,
         'header-text' => array( 'site-title', 'site-description' ),
     );
     add_theme_support('custom-logo', $defaults);
@@ -258,7 +259,7 @@ function bestblog_widgets_init()
     'name'          => __('Right Sidebar', 'best-blog'),
     'id'            => 'right-sidebar',
     'description'   => __('Right Sidebar', 'best-blog'),
-    'before_widget' => '<div id="%1$s" class="widget %2$s sidebar-item cell small-12 medium-6 large-12"><div class="widget_wrap ">',
+    'before_widget' => '<div id="%1$s" class="widget %2$s sidebar-item cell small-24 medium-12 large-24"><div class="widget_wrap ">',
     'after_widget'  => '</div></div>',
     'before_title'  => '<div class="widget-title "> <h3>',
     'after_title'   => '</h3></div>'
@@ -277,8 +278,8 @@ function bestblog_widgets_init()
 		'name'          => __('Home sidebar Widgets', 'best-blog'),
 		'id'            => 'home-sidebar-bestblog',
 		'description'   => __('Home Right Sidebar', 'best-blog'),
-		'before_widget' => '<div id="%1$s" class="widget %2$s homeright_widget_wrap">',
-		'after_widget'  => '</div>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s sidebar-item cell small-24 medium-12 large-24"><div class="widget_wrap home_sidebar ">',
+		'after_widget'  => '</div></div>',
 		'before_title'  => '<div class="widget-title "> <h3>',
 		'after_title'   => '</h3></div>'
 		));
@@ -287,7 +288,7 @@ function bestblog_widgets_init()
     'name'          => __('Footer Widgets', 'best-blog'),
     'id'            => 'foot_sidebar',
     'description'   => __('Widget Area for the Footer', 'best-blog'),
-    'before_widget' => '<div id="%1$s" class="widget %2$s widget_wrap footer_widgets_warp cell small-12 medium-6 large-4 align-self-top " ><aside id="%1$s" class="widget %2$s">',
+    'before_widget' => '<div id="%1$s" class="widget %2$s widget_wrap footer_widgets_warp cell small-24 medium-12 large-6 align-self-top " ><aside id="%1$s" class="widget %2$s">',
     'after_widget'  => '</aside></div>',
     'before_title'  => '<div class="widget-title "> <h3>',
     'after_title'   => '</h3></div>'
@@ -312,6 +313,9 @@ require_once(get_template_directory() . '/functions/menu.php');
 
 /** Image function */
 require_once(get_template_directory() . '/functions/function-hooks.php');
+
+/** color function */
+require_once(get_template_directory() . '/functions/custom-css.php');
 
 /** Layout function */
 require_once(get_template_directory() . '/functions/template-layout.php');

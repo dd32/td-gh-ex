@@ -14,7 +14,7 @@
 <!--FOOTER WIDGETS-->
     <div class="top-footer-wrap">
       <div class="grid-container">
-      <div class="grid-x grid-padding-x align-top " >
+      <div class="grid-x grid-padding-x align-center " >
 				<?php if ( is_active_sidebar('dynamic_sidebar') || !dynamic_sidebar('foot_sidebar') ) : ?><?php endif; ?>
     </div>
   </div>

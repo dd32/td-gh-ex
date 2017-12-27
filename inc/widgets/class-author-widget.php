@@ -15,13 +15,13 @@ class bestblog_Author_Widget extends WP_Widget
         parent::__construct('bestblog_author_widget', __('bestblog Author Bio', 'best-blog'), $widget_ops, $control_ops);
         //Allow themes or plugins to modify default parameters
         $defaults = apply_filters('bestblog_author_widget_modify_defaults', array(
-                      'title' => __('CEO / Co-Founder', 'best-blog'),
+                      'title' => esc_attr__('CEO / Co-Founder', 'best-blog'),
                       'author' => 0,
                       'display_avatar' => 1,
                       'display_desc' => 1,
                       'display_all_posts' => 1,
                       'avatar_size' => 120,
-                      'link_text' => __('View all posts', 'best-blog'),
+                      'link_text' => esc_attr__('View all posts', 'best-blog'),
                       'limit_chars' => '',
                                           ));
 
@@ -32,7 +32,7 @@ class bestblog_Author_Widget extends WP_Widget
 
     public function widget($args, $instance)
     {
-        $title = apply_filters('widget_title', $instance['title']);
+        $title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'CEO / Co-Founder' ,'best-blog');
 
         extract($args);
 
@@ -71,7 +71,7 @@ class bestblog_Author_Widget extends WP_Widget
     public function update($new_instance, $old_instance)
     {
         $instance = $old_instance;
-        $instance['title'] = strip_tags($new_instance['title']);
+        $instance['title'] = sanitize_text_field( $new_instance['title'] );
         $instance['author'] = absint($new_instance['author']);
         $instance['display_avatar'] = isset($new_instance['display_avatar']) ? 1 : 0;
         $instance['display_desc'] = isset($new_instance['display_desc']) ? 1 : 0;
@@ -101,9 +101,10 @@ class bestblog_Author_Widget extends WP_Widget
     <input id="<?php echo $this->get_field_id('author'); ?>" type="text" name="<?php echo $this->get_field_name('author'); ?>" value="<?php echo $instance['author']; ?>" class="small-text" />
   <?php endif; ?>
 </p>
+
 <p>
-  <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Author designation', 'best-blog'); ?>:</label>
-  <input id="<?php echo $this->get_field_id('title'); ?>" type="text" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $instance['title']; ?>" class="widefat"/>
+  <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e('Author designation', 'best-blog'); ?></label>
+  <input class="widefat" id="<?php echo esc_attr( $this->get_field_id('title') ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 </p>
 
 <h4><?php _e('Display Options', 'best-blog'); ?></h4>

@@ -264,7 +264,6 @@ if (! function_exists('bestblog_mainpost_page_title')) :
 function bestblog_mainpost_page_title()
 {
     echo '<div id="sub_banner">';
-    echo '<div class="grid-container">';
     echo '<div class="top-bar">';
     echo '<div class="top-bar-left">';
     echo '<div class="top-bar-title">';
@@ -276,7 +275,6 @@ function bestblog_mainpost_page_title()
     echo '<div class="top-bar-right">';
     echo '<div class="breadcrumb-wrap">';
     echo bestblog_breadcrumb();
-    echo '</div>';
     echo '</div>';
     echo '</div>';
     echo '</div>';

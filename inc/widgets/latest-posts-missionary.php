@@ -33,7 +33,7 @@
       function widget($args, $instance) {
         extract($args);
 
-        $show_post_row = ( ! empty( $instance['show_post_row'] ) ) ? wp_kses_post( $instance['show_post_row'] ) : 'large-4';
+        $show_post_row = ( ! empty( $instance['show_post_row'] ) ) ? wp_kses_post( $instance['show_post_row'] ) : '';
         $number_posts = ( ! empty( $instance['number_posts'] ) ) ? absint( $instance['number_posts'] ) : 3;
         $sticky_posts = ( isset( $instance['sticky_posts'] ) ) ? $instance['sticky_posts'] : true;
         $category = ( isset( $instance['category'] ) ) ? absint( $instance['category'] ) : '';
@@ -58,7 +58,7 @@
         <div class="lates-post-cardmission"  >
           <?php if( !empty($instance['title']) ): ?>
             <div class="grid-x grid-padding-x grid-padding-y ">
-              <div class="cell small-12 ">
+              <div class="cell small-24 ">
                 <div class="block-title">
                   <h3 class="blog-title"><?php echo apply_filters('widget_title', $instance['title']); ?></h3>
                 </div>
@@ -69,7 +69,7 @@
             <div class="grid-x grid-padding-x grid-padding-y ">
               <?php if ( $latest_bloglist_posts -> have_posts() ) :
                 while ( $latest_bloglist_posts -> have_posts() ) : $latest_bloglist_posts -> the_post(); ?>
-                <div class="cell <?php echo $show_post_row;?> medium-6 small-12 ">
+                <div class="cell <?php echo $show_post_row;?> medium-12 small-24 ">
                   <div class="card card-blog">
                     <?php if ( has_post_thumbnail() ) { ?>
                       <div class="card-image">
@@ -131,7 +131,7 @@ function form($instance) {
  'title' => 'Latest Blog ',
  'sticky_posts' => 'true',
  'number_posts' => '5',
- 'show_post_row'=>'large-4'
+ 'show_post_row'=>'large-8'
 
  );
  $instance = wp_parse_args( (array) $instance, $defaults ); ?>
@@ -156,10 +156,10 @@ function form($instance) {
   <p>
   <label for="<?php echo $this->get_field_id('show_post_row'); ?>"><?php _e('Show post in row', 'best-blog') ?></label>
   <select id="<?php echo $this->get_field_id('show_post_row'); ?>" name="<?php echo $this->get_field_name('show_post_row'); ?>" class="widefat">
-    <option value="large-11" <?php if ( 'large-12' == $instance['show_post_row'] ) echo 'selected="selected"'; ?>><?php esc_html_e('one', 'best-blog') ?></option>
-    <option value="large-6" <?php if ( 'large-6' == $instance['show_post_row'] ) echo 'selected="selected"'; ?>><?php esc_html_e('two', 'best-blog') ?></option>
-    <option value="large-4" <?php if ( 'large-4' == $instance['show_post_row'] ) echo 'selected="selected"'; ?>><?php esc_html_e('three', 'best-blog') ?></option>
-    <option value="large-3" <?php if ( 'large-3' == $instance['show_post_row'] ) echo 'selected="selected"'; ?>><?php esc_html_e('four', 'best-blog') ?></option>
+    <option value="large-22" <?php if ( 'large-22' == $instance['show_post_row'] ) echo 'selected="selected"'; ?>><?php esc_html_e('one', 'best-blog') ?></option>
+    <option value="large-12" <?php if ( 'large-12' == $instance['show_post_row'] ) echo 'selected="selected"'; ?>><?php esc_html_e('two', 'best-blog') ?></option>
+    <option value="large-8" <?php if ( 'large-8' == $instance['show_post_row'] ) echo 'selected="selected"'; ?>><?php esc_html_e('three', 'best-blog') ?></option>
+    <option value="large-6" <?php if ( 'large-6' == $instance['show_post_row'] ) echo 'selected="selected"'; ?>><?php esc_html_e('four', 'best-blog') ?></option>
   </select>
   </p>
   <?php

@@ -12,12 +12,12 @@
 
 <div class="single-box-author card z-depth-1">
             <div class="grid-x ">
-              <div class="cell large-3 medium-3 small-12 align-self-middle medium-text-left text-center">
+              <div class="cell large-6 medium-6 small-24 align-self-middle medium-text-left text-center">
                 <div class="author-thumb-wrap">
                   <?php echo get_avatar(get_the_author_meta('ID'), '200'); ?>
                 </div>
               </div>
-              <div class="cell large-9 medium-9 small-12 align-self-middle medium-text-left text-center card-section">
+              <div class="cell large-18 medium-18 small-24 align-self-middle medium-text-left text-center card-section">
                 <div class="author-content-wrap padding-left-lg">
                     <div class="author-title">
                       <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( get_the_author() ); ?>">
