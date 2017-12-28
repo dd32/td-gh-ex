@@ -68,7 +68,7 @@ input[type="submit"],
 .timeline-badge.danger,
 .flex-control-paging li a.flex-active,
 .tparrows:hover {
-	background-color:#33a568 !important;
+	background-color:#33a568;
 }
 .demo_changer .demo-icon,
 .recent_posts_widget > li img:hover,

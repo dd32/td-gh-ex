@@ -1,3 +1,6 @@
+###Version 1.6.5 [28-DEC-2017]
+* Breadcrumb update.
+* Minor bug fixed.
 ###Version 1.6.4 [29-NOV-2017]
 * Customizer Color Control issue fixed.
 ###Version 1.6.3 [27-NOV-2017]
