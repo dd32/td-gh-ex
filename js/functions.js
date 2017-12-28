@@ -1,28 +1,51 @@
 /**
- * Functionality specific to Aguafuerte.
+ * Functionality specific to Gaukingo.
  *
  * Provides helper functions to enhance the theme experience.
  */
 
 (function($) {
-	
+
 	menuToggle = $('.menu-toggle');
 	siteNavigation = $('#masthead');
 	_window = $(window);
 
-if (881 > _window.width()) {
-	var dropdownToggle = $('<button />', {'class': 'dropdown-toggle'});
+	/**
+	 * In small screens the dropdownToggle is a button with an icon inside and it is after the 'a' 
+	 * that is the child of a 'li' with submenues. (The button and the 'a' are siblings of the submenu).
+	 * In big screens the dropdownToggle is only an icon and it is inside the 'a' that is the child of a 'li' with submenues.
+	 **/
+
+function changeTheDropdownToggle() {
+	if (881 > _window.width()) {
+	var dropdownToggle = $('<button />', {'class': 'dropdown-toggle'})
+		.append( $( '<span />', {'class': 'genericon genericon-expand', 'aria-hidden': 'true'} ),
+				 $( '<span />',{'class': 'screen-reader-text', text : aguafuerteScreenReaderText.expand } ) );
+					   
+	siteNavigation.find( 'li:has(ul) > a' ).after(dropdownToggle);                     
+	}
+
+	else {
+	var dropdownToggle = $('<span />', {'class': 'genericon genericon-downarrow', 'aria-hidden': 'true'});
+	siteNavigation.find( 'li:has(ul) > a' ).append(dropdownToggle);
+	}
 }
 
-
 function switchClass (a, b, c) {
-	if(a.hasClass(b)){
+	if ( a.hasClass(b) ) {
 		a.removeClass(b);
 		a.addClass(c);
-	}
-	else{
+	} else {
 		a.removeClass(c);
 		a.addClass(b);
+	}
+}
+
+function switchScreenReaderText (a, b, c) {
+	if( a.text() === b) {
+		a.text(c);
+	} else {
+		a.text(b)
 	}
 }
 
@@ -39,39 +62,35 @@ function onResizeARIA() {
 	}
 
 _window.on('load', onResizeARIA());
+_window.on('resize', changeTheDropdownToggle() )
 
 menuToggle.click(function(){
+	switchClass($(this).children('#nav-icon'), 'genericon-menu', 'genericon-close-alt');
 	$(this).toggleClass('toggled-on');
 	siteNavigation.toggleClass('toggled-on');
 
-	if($(this).hasClass('toggled-on')){
+	if($(this).hasClass('toggled-on')) {
 		$(this).attr('aria-expanded', 'true');
-		siteNavigation.attr('aria-expanded', 'true');        
+		siteNavigation.attr('aria-expanded', 'true');
 	}
 	else {
 		$(this).attr('aria-expanded', 'false');
 		siteNavigation.attr('aria-expanded', 'false');
 	}
-	//$(this).attr('aria-expanded', $(this).attr('aria-expanded') === 'false' ? 'true' : 'false');
-	//siteNavigation.attr('aria-expanded', $(this).attr('aria-expanded') === 'false' ? 'true' : 'false');
-
 });
 
-
-siteNavigation.find( 'li:has(ul) > a' ).after(dropdownToggle);
-
 siteNavigation.find( '.dropdown-toggle' ).click( function(e) {
-			var _this = $( this );
-			
-			e.preventDefault();
-			_this.toggleClass( 'toggle-on' );
-			_this.next( '.sub-menu' ).toggleClass( 'toggled-on' );
+	var _this = $( this );
+	var _i = _this.children('span:first-child');
+	var screenReaderSpan = _this.find( '.screen-reader-text' );
+	switchClass( _i, 'genericon-expand', 'genericon-collapse');
+	switchScreenReaderText(screenReaderSpan, aguafuerteScreenReaderText.expand, aguafuerteScreenReaderText.collapse );
+	e.preventDefault();
+	_this.toggleClass( 'toggle-on' );
+	_this.next( '.sub-menu' ).toggleClass( 'toggled-on' );
+} );
 
-			// _this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
-			//_this.html( _this.html() === aguafuerteScreenReaderText.expand ? aguafuerteScreenReaderText.collapse : aguafuerteScreenReaderText.expand );
-		} );
-
-siteNavigation.find( '.menu a' ).on( 'focus blur', function() {
+siteNavigation.find( 'a' ).on( 'focus blur', function() {
 			$( this ).parents( '.menu-item' ).toggleClass( 'focus' );
 		} );
 

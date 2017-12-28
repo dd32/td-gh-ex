@@ -157,8 +157,8 @@ function aguafuerte_widgets_init() {
 		'name'          => __( 'Sidebar Area', 'aguafuerte' ),
 		'id'            => 'sidebar',
 		'description'   => __( 'Add widgets here to appear in your first sidebar.', 'aguafuerte' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
@@ -166,8 +166,8 @@ function aguafuerte_widgets_init() {
 		'name'          => __( 'First Footer Area', 'aguafuerte' ),
 		'id'            => 'footer-1',
 		'description'   => __( 'Add widgets here to appear in your first footer area.', 'aguafuerte' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
@@ -175,8 +175,8 @@ function aguafuerte_widgets_init() {
 		'name'          => __( 'Second Footer Area', 'aguafuerte' ),
 		'id'            => 'footer-2',
 		'description'   => __( 'Add widgets here to appear in your second footer area.', 'aguafuerte' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
@@ -184,8 +184,8 @@ function aguafuerte_widgets_init() {
 		'name'          => __( 'Third Footer Area', 'aguafuerte' ),
 		'id'            => 'footer-3',
 		'description'   => __( 'Add widgets here to appear in your third footer area.', 'aguafuerte' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );

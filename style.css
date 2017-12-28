@@ -4,7 +4,7 @@ Theme URI: http://ebyb.eu/themes/aguafuerte/
 Author: acalfieri
 Author URI: http://ebyb.eu
 Description: Aguafuerte is a theme designed to be fully responsive by taking the mobile-first approach. It features the full range of post formats, two menu locations, one sidebar and three footer widget areas.
-Version: 1.0.7
+Version: 1.0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, grid-layout, accessibility-ready, custom-background, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -686,7 +686,12 @@ input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus {
 	outline: thin dotted;
-	outline-offset: -4px;
+	outline-width: auto;
+	outline-style: auto;
+	outline: 2px solid;
+	outline-color: Highlight;
+	outline-color: -webkit-focus-ring-color;
+	outline-offset: -2px;
 }
 
 input[type="text"],
@@ -921,12 +926,13 @@ a:focus {
 	color: transparent; 
 }
 
-.menu-toggle:before {
+
+.menu-toggle .genericon {
 	color: #9f0000;
 	background-color: #fafafa;
-	position: absolute;
-	right: 0;
-	top: 0;
+	/*! position: absolute; */
+	/*! right: 0; */
+	/*! top: 0; */
 	font-size: 20px;
 	line-height: 20px;
 	border: 1px solid #9f0000;
@@ -935,9 +941,7 @@ a:focus {
 	padding: 10px;
 }
 
-.toggled-on .menu-toggle:before {
-	content: "\f406";      
-}
+
 
 /* Primary Navigation */
 
@@ -1055,7 +1059,7 @@ a:focus {
 	color: #656565;
 }
 
-.dropdown-toggle:after {   
+.dropdown-toggle .genericon {   
 	content: "\f431";
 	border-left: 1px solid #ccc;
 	font-size: 1.5em;
@@ -1064,7 +1068,7 @@ a:focus {
 	width: 2em;
 }
 
-.dropdown-toggle.toggle-on:after {
+.dropdown-toggle.toggle-on .genericon {
    content: "\f432";
 }
 
@@ -1877,7 +1881,7 @@ body {
 }
 
 .cat-links a {
-	color: #888;
+	color: #656565;
 	text-decoration: none;
 }
 
@@ -2858,8 +2862,8 @@ h6 {
 	padding-right: 30px;
 }
 
-.primary-navigation .menu-item-has-children > a:after,
-.primary-navigation .page_item_has_children > a:after {
+.primary-navigation .menu-item-has-children > a .genericon,
+.primary-navigation .page_item_has_children > a .genericon {
 	-webkit-font-smoothing: antialiased;
 	content: "\f502"; /* arrow down */
 	display: inline-block;
@@ -2870,10 +2874,10 @@ h6 {
 	vertical-align: text-bottom;
 }
 
-.primary-navigation .menu-item-has-children li.menu-item-has-children > a:after,
-.primary-navigation .menu-item-has-children li.page_item_has_children > a:after,
-.primary-navigation .page_item_has_children li.menu-item-has-children > a:after,
-.primary-navigation .page_item_has_children li.page_item_has_children > a:after {
+.primary-navigation .menu-item-has-children li.menu-item-has-children > a .genericon:before,
+.primary-navigation .menu-item-has-children li.page_item_has_children > a .genericon:before,
+.primary-navigation .page_item_has_children li.menu-item-has-children > a .genericon:before,
+.primary-navigation .page_item_has_children li.page_item_has_children > a .genericon:before {
 	content: "\f501"; /* arrow right */
 	right: 4px;
 	top: 16px;

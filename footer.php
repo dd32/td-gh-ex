@@ -14,7 +14,7 @@
 
 <?php get_sidebar('footer'); ?>
 
-<footer id="page-footer">
+<footer id="page-footer" role="contentinfo">
     <div class="inner">
         <div id="site-info">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>

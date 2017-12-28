@@ -21,7 +21,7 @@
 	</head>
 	<body <?php body_class(); ?> >
 		<div id="container">
-			<header id="masthead" class="site-header">
+			<header id="masthead" class="site-header" role="banner">
 				<a class="screen-reader-text skip-link" href="#main"><?php _e( 'Skip to content', 'aguafuerte' ); ?></a>
 				  
 				<div id="site-identity">
@@ -36,7 +36,7 @@
 				</div><!--/site-identity-->
 
 				<?php if (has_nav_menu('primary') || has_nav_menu('secondary') || has_nav_menu('social')): ?>
-					<button id="nav-button" class="menu-toggle"><?php _e( 'Menus', 'aguafuerte' ); ?></button>
+					<button id="nav-button" class="menu-toggle"><span class="screen-reader-text"><?php _e( 'Menus', 'aguafuerte' ); ?></span><span id="nav-icon" class="genericon genericon-menu" aria-hidden="true"></span></button>
 				<?php endif ?>
 
 				<div id="navigation">
@@ -57,5 +57,5 @@
 
 				</div><!--/navigation-->
 			</header><!--/header-->
-			<main id="main">
+			<main id="main" role="main">
 
