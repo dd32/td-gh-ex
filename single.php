@@ -8,7 +8,8 @@
 <h1><?php the_title(); ?></h1>
 <div id="metad"><span class="postmeta_box">
 		<?php get_template_part('/includes/postmeta'); ?><?php edit_post_link('Edit', ' &#124; ', ''); ?>
-	</span></div>		<div class="entry clearfix">
+	</span></div>		
+	<div class="entry clearfix">
 			<div class="entry-content"><?php the_content(); ?></div> 
 			<div class="gap"></div><?php if ( of_get_option('digital_tags' ) =='1') { ?>	<?php  if (get_the_tags()) :?> <span class="tags"><?php if("the_tags")	$before = '';
 $seperator = ''; // blank instead of comma

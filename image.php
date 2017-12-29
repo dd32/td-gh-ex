@@ -6,6 +6,9 @@
 <?php while(have_posts())  : the_post(); ?>
 
 <h1><?php the_title(); ?></h1>
+<div id="metad"><span class="postmeta_box">
+		<?php get_template_part('/includes/postmeta'); ?><?php edit_post_link('Edit', ' &#124; ', ''); ?>
+	</span></div>
 <div class="entry" class="clearfix"><?php if (of_get_option('digital_ad2') <> "" ) { echo stripslashes(of_get_option('digital_ad2')); } ?>
 <div class="entry-meta">
 								<?php
@@ -74,14 +77,7 @@ endif;
 
 					</div><!-- .entry-content -->
 							</div> <!-- end div .entry -->
-<span class="postmeta_box">
-		<ul class="auth"> <?php digital_post_meta_data(); ?>, in <?php the_category(', '); ?>
-</ul>
-<ul class="tags">			
-<?php if("the_tags") the_tags('Tags: ', ', ', ' - '); ?><?php edit_post_link('Edit', ' &#124; ', ''); ?>
-	</ul>
 
-</span>		
 
 <div class="gap"></div><?php if (of_get_option('digital_author' ) =='1' ) {load_template(get_template_directory() . '/includes/author.php'); } ?>
 

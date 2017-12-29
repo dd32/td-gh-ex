@@ -93,3 +93,10 @@ Custom Css:
 -http://pixabay.com/en/flower-child-hippie-flower-people-336658/
 * Font Awesome License: SIL OFL 1.1 URL: http://scripts.sil.org/OFL
 **This theme and file are created by me & publish under GPL
+
+
+Slider Images
+
+https://www.pexels.com/photo/clouds-dawn-ice-landscape-410981/
+https://www.pexels.com/photo/full-length-of-a-man-jumping-from-beach-324112/
+https://www.pexels.com/photo/skyline-buildings-new-york-skyscrapers-2324/

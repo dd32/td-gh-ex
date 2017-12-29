@@ -192,7 +192,7 @@ background: #FDF9F1;
 }
 
 .buypred a{color: #FFF;text-decoration: none;}
-.buypred {float: left;background-color: #FFB30D;
+.buypred a{float: left;background-color: #FFB30D;
 background: -webkit-gradient(linear, left top, left bottom, from(#157BAA), to(#145576));
 background: -webkit-linear-gradient(#157BAA, #145576);
 background: -moz-linear-gradient(center top, #157baa 0%, #145576 100%);
@@ -200,8 +200,6 @@ background: -moz-gradient(center top, #157baa 0%, #145576 100%);
 border: 1px solid #0B3A50;
 color: #FFF;
 margin-bottom: 8px;
-font-family: "Amaranth", Arial, sans-serif;
-font-style: italic;
 font-size: 18px;
 font-weight: normal;
 letter-spacing: 1px;
@@ -219,7 +217,13 @@ text-align: center;
 width: auto;}
 .buypre a{color: #FFF;
 text-decoration: none;}
-.buypre{
+.buypre a:before{
+	content: "\f317";
+    font-family: dashicons;
+    padding-right: 3px;
+    vertical-align: bottom;
+}
+.buypre a{
 float: right;
 background-color: #FFB30D;
 background: -webkit-gradient(linear, left top, left bottom, from(#FECB19), to(#FF9C00));
@@ -228,8 +232,6 @@ background: -moz-linear-gradient(center top, #fecb19 0%, #ff9c00 100%);
 background: -moz-gradient(center top, #fecb19 0%, #ff9c00 100%);
 border: 1px solid #FF9C00;
 color: #FFF;
-font-family: "Amaranth", Arial, sans-serif;
-font-style: italic;
 font-size: 20px;
 font-weight: normal;
 letter-spacing: 1px;
