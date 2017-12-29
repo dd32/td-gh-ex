@@ -38,12 +38,12 @@ $args['fonts'] = $fonts = array(
 	);
 	
 // Pull all the categories into an array
-	$options_categories = array();
-	$options_categories_obj = get_categories();
-	$options_categories[''] = __( 'All', 'avata' );
-	foreach ($options_categories_obj as $category) {
-		$options_categories[$category->cat_ID] = $category->cat_name;
-	}
+$options_categories = array();
+$options_categories_obj = get_categories();
+$options_categories[''] = esc_attr__( 'All', 'avata' );
+foreach ($options_categories_obj as $category) {
+	$options_categories[$category->cat_ID] = $category->cat_name;
+}
 
 $avata_sidebars['0'] = __( '--Disable--', 'avata' );
 for( $i=1;$i<=8;$i++ ):
@@ -131,13 +131,13 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 					  ),
 
 			  'section_subtitle_'.$id => array(
-					'type'        => 'text',
+					'type'        => 'textarea',
 					'label'       => esc_attr__('Section Subitle', 'avata' ),
 					'description' =>  '',
 					'default'     => $default_options['section_subtitle'],
 					  ),
 			  'section_content_'.$id => array(
-					'type'        => 'textarea',
+					'type'        => 'editor',
 					'label'       => esc_attr__('Section Content', 'avata' ),
 					'description' =>  '',
 					'default'     => $default_options['content'],
@@ -1227,7 +1227,7 @@ $slogan_options = avata_public_section_options('slogan',$slogan_defaults,false,$
 array_splice($slogan_options,3,0,
 		array(
 		'section_content_slogan' => array(
-				  'type'        => 'textarea',
+				  'type'        => 'editor',
 				  'settings'    => 'section_content_slogan',
 				  'label'       => esc_attr__( 'Content', 'avata' ),
 				  'description' => '',
@@ -1487,31 +1487,17 @@ Kirki::add_config( 'avata', array(
 ) );
 
 
-$sortsections_saved  = get_option('avata_sortsections',true);
-$avata_sections = array();
-if( is_array($sortsections_saved) && !empty($sortsections_saved) ){
-	foreach( $sortsections_saved as $sortsection ){
-		if(isset($avata_lite_sections[$sortsection])){
-			$avata_sections[$sortsection] = $avata_lite_sections[$sortsection];
-		}
-	}
-
-	$avata_sections = array_merge($avata_sections,$avata_lite_sections);
-
-}else{
-	$avata_sections = 	$avata_lite_sections;
-}
-	
+$avata_sections = 	avata_get_sections();
+$s = 0;
 foreach( $avata_sections as $k => $v ){
-	
-	
+
 	$section_id = 'avata_'.str_replace('-','_',$k);
 	
 	Kirki::add_section( $section_id , array(
     'title'          => $v['name'],
     'description'    => '',
     'panel'          => '', 
-    'priority'       => 10,
+    'priority'       => 10+$s,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
 	) );
@@ -1526,7 +1512,7 @@ foreach( $avata_sections as $k => $v ){
 		Kirki::add_field( 'avata',$field);
 			
 	}
-		
+	$s++;	
 }
 
 // Front page
@@ -1777,6 +1763,19 @@ Kirki::add_field( 'avata', array(
 	'default'  => '0',
 ) );
 
+$avata_sortsections = get_option('avata_sortsections',true);
+if($avata_sortsections!='')
+	$avata_sortsections = @json_encode($avata_sortsections);
+Kirki::add_field( 'avata', array(
+	'type'     => 'textarea',
+	'settings' => 'section_order',
+	'label'    => __('Section Order', 'avata'),
+	'section'  => 'avata_panel_basic_settings',
+	'default'  => $avata_sortsections,
+	'transport' => 'refresh',
+	'priority' => 11,
+	) );
+
 // Sidebar settings
 Kirki::add_section( 'avata_panel_sidebar_settings', array(
     'title'          => __( 'Avata: Sidebar Settings', 'avata' ),
@@ -1848,9 +1847,7 @@ Kirki::add_field( 'avata', array(
 ) );
 
 
-
 // Footer
-
 Kirki::add_section( 'avata_footer', array(
     'title'          => __( 'Avata: Footer', 'avata' ),
     'description'    => '',

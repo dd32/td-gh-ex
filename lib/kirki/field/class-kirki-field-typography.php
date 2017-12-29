@@ -181,8 +181,8 @@ class Kirki_Field_Typography extends Kirki_Field {
 					}
 					unset( $value['subset'] );
 					// Make sure we're using a valid subset.
-					$valid_subsets = Kirki_Fonts::get_google_font_subsets();
-					$subsets_ok = array();
+					$valid_subsets    = Kirki_Fonts::get_google_font_subsets();
+					$subsets_ok       = array();
 					$value['subsets'] = (array) $value['subsets'];
 					foreach ( $value['subsets'] as $subset ) {
 						if ( array_key_exists( $subset, $valid_subsets ) ) {
@@ -204,6 +204,11 @@ class Kirki_Field_Typography extends Kirki_Field {
 					break;
 				case 'text-transform':
 					if ( ! in_array( $val, array( 'none', 'capitalize', 'uppercase', 'lowercase', 'initial', 'inherit' ), true ) ) {
+						$value['text-transform'] = 'none';
+					}
+					break;
+				case 'text-decoration':
+					if ( ! in_array( $val, array( 'none', 'underline', 'overline', 'line-through', 'initial', 'inherit' ), true ) ) {
 						$value['text-transform'] = 'none';
 					}
 					break;

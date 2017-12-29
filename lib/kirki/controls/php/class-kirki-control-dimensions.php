@@ -92,7 +92,7 @@ class Kirki_Control_Dimensions extends Kirki_Control_Base {
 								<# } #>
 							</h5>
 							<div class="{{ choiceKey }} input-wrapper">
-								<# var val = ( ! _.isUndefined( data.value ) && ! _.isUndefined( data.value[ choiceKey ] ) ) ? data.value[ choiceKey ].replace( '%%', '%' ) : ''; #>
+								<# var val = ( ! _.isUndefined( data.value ) && ! _.isUndefined( data.value[ choiceKey ] ) ) ? data.value[ choiceKey ].toString().replace( '%%', '%' ) : ''; #>
 								<input {{{ data.inputAttrs }}} type="text" data-choice="{{ choiceKey }}" value="{{ val }}"/>
 							</div>
 						</div>
@@ -112,32 +112,32 @@ class Kirki_Control_Dimensions extends Kirki_Control_Base {
 	 */
 	protected function l10n() {
 		return array(
-			'left-top'              => esc_attr__( 'Left Top', 'avata' ),
-			'left-center'           => esc_attr__( 'Left Center', 'avata' ),
-			'left-bottom'           => esc_attr__( 'Left Bottom', 'avata' ),
-			'right-top'             => esc_attr__( 'Right Top', 'avata' ),
-			'right-center'          => esc_attr__( 'Right Center', 'avata' ),
-			'right-bottom'          => esc_attr__( 'Right Bottom', 'avata' ),
-			'center-top'            => esc_attr__( 'Center Top', 'avata' ),
-			'center-center'         => esc_attr__( 'Center Center', 'avata' ),
-			'center-bottom'         => esc_attr__( 'Center Bottom', 'avata' ),
-			'font-size'             => esc_attr__( 'Font Size', 'avata' ),
-			'font-weight'           => esc_attr__( 'Font Weight', 'avata' ),
-			'line-height'           => esc_attr__( 'Line Height', 'avata' ),
-			'font-style'            => esc_attr__( 'Font Style', 'avata' ),
-			'letter-spacing'        => esc_attr__( 'Letter Spacing', 'avata' ),
-			'word-spacing'          => esc_attr__( 'Word Spacing', 'avata' ),
-			'top'                   => esc_attr__( 'Top', 'avata' ),
-			'bottom'                => esc_attr__( 'Bottom', 'avata' ),
-			'left'                  => esc_attr__( 'Left', 'avata' ),
-			'right'                 => esc_attr__( 'Right', 'avata' ),
-			'center'                => esc_attr__( 'Center', 'avata' ),
-			'size'                  => esc_attr__( 'Size', 'avata' ),
-			'height'                => esc_attr__( 'Height', 'avata' ),
-			'spacing'               => esc_attr__( 'Spacing', 'avata' ),
-			'width'                 => esc_attr__( 'Width', 'avata' ),
-			'height'                => esc_attr__( 'Height', 'avata' ),
-			'invalid-value'         => esc_attr__( 'Invalid Value', 'avata' ),
+			'left-top'       => esc_attr__( 'Left Top', 'avata' ),
+			'left-center'    => esc_attr__( 'Left Center', 'avata' ),
+			'left-bottom'    => esc_attr__( 'Left Bottom', 'avata' ),
+			'right-top'      => esc_attr__( 'Right Top', 'avata' ),
+			'right-center'   => esc_attr__( 'Right Center', 'avata' ),
+			'right-bottom'   => esc_attr__( 'Right Bottom', 'avata' ),
+			'center-top'     => esc_attr__( 'Center Top', 'avata' ),
+			'center-center'  => esc_attr__( 'Center Center', 'avata' ),
+			'center-bottom'  => esc_attr__( 'Center Bottom', 'avata' ),
+			'font-size'      => esc_attr__( 'Font Size', 'avata' ),
+			'font-weight'    => esc_attr__( 'Font Weight', 'avata' ),
+			'line-height'    => esc_attr__( 'Line Height', 'avata' ),
+			'font-style'     => esc_attr__( 'Font Style', 'avata' ),
+			'letter-spacing' => esc_attr__( 'Letter Spacing', 'avata' ),
+			'word-spacing'   => esc_attr__( 'Word Spacing', 'avata' ),
+			'top'            => esc_attr__( 'Top', 'avata' ),
+			'bottom'         => esc_attr__( 'Bottom', 'avata' ),
+			'left'           => esc_attr__( 'Left', 'avata' ),
+			'right'          => esc_attr__( 'Right', 'avata' ),
+			'center'         => esc_attr__( 'Center', 'avata' ),
+			'size'           => esc_attr__( 'Size', 'avata' ),
+			'height'         => esc_attr__( 'Height', 'avata' ),
+			'spacing'        => esc_attr__( 'Spacing', 'avata' ),
+			'width'          => esc_attr__( 'Width', 'avata' ),
+			'height'         => esc_attr__( 'Height', 'avata' ),
+			'invalid-value'  => esc_attr__( 'Invalid Value', 'avata' ),
 		);
 	}
 }

@@ -7,7 +7,8 @@ jQuery(document).ready(function($) {
 
         $('ul[id*="avata_frontpage_sections_panel"] .accordion-section').not('.panel-meta').each( function () {
             $( this ).on( 'click', function() {
-                var section = $( this ).attr('aria-owns').replace('sub-accordion-section-sidebar-widgets-section-','');
+                var section = $( this ).attr('aria-owns').replace('sub-accordion-section-avata_section_','');
+				section = section.replace(/_/g, '-');
                 customize.previewer.send('clicked-customizer-section', section);
             });
         });

@@ -21,7 +21,7 @@ class Kirki_L10n {
 	 * @access private
 	 * @var string
 	 */
-	private $textdomain = 'kirki';
+	private $textdomain = 'avata';
 
 	/**
 	 * The theme textdomain
@@ -119,11 +119,11 @@ class Kirki_L10n {
 		global $l10n;
 		if ( isset( $l10n[ $this->get_theme_textdomain() ] ) ) {
 			// @codingStandardsIgnoreLine WordPress.Variables.GlobalVariables.OverrideProhibited
-			$l10n['kirki'] = $l10n[ $this->get_theme_textdomain() ];
+			$l10n['avata'] = $l10n[ $this->get_theme_textdomain() ];
 		}
 
 		// Check if the domain is "kirki".
-		if ( 'kirki' === $domain ) {
+		if ( 'avata' === $domain ) {
 			return true;
 		}
 		return $override;
@@ -142,7 +142,7 @@ class Kirki_L10n {
 		if ( '' === $this->theme_textdomain ) {
 
 			// Get the textdomain.
-			$theme = wp_get_theme();
+			$theme                  = wp_get_theme();
 			$this->theme_textdomain = $theme->get( 'TextDomain' );
 
 			// If no texdomain was found, use the template folder name.

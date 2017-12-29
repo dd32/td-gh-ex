@@ -42,9 +42,8 @@ var avata_customizer_section_scroll = function ( $ ) {
         var customize = wp.customize;
 
         customize.preview.bind( 'clicked-customizer-section', function( data ) {
-			data = data.replace('sub-accordion-section-avata_section_','');
             
-             var sectionId = 'section.avata-section-' + data.replace('_','-');
+             var sectionId = 'section.avata-section-' + data;
           
             if ( $(sectionId).length > 0) {
                 $('html, body').animate({

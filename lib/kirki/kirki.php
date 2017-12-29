@@ -11,7 +11,7 @@ if ( class_exists( 'Kirki' ) ) {
 }
 
 // Include the autoloader.
-include_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'class-kirki-autoload.php';
+require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'class-kirki-autoload.php';
 new Kirki_Autoload();
 
 if ( ! defined( 'KIRKI_PLUGIN_FILE' ) ) {
@@ -23,7 +23,7 @@ if ( ! defined( 'KIRKI_VERSION' ) ) {
 	if ( ! function_exists( 'get_plugin_data' ) ) {
 		include_once ABSPATH . 'wp-admin/includes/plugin.php';
 	}
-	$data = get_plugin_data( KIRKI_PLUGIN_FILE );
+	$data    = get_plugin_data( KIRKI_PLUGIN_FILE );
 	$version = ( isset( $data['Version'] ) ) ? $data['Version'] : false;
 	define( 'KIRKI_VERSION', $version );
 }
@@ -32,22 +32,21 @@ if ( ! defined( 'KIRKI_VERSION' ) ) {
 Kirki::$path = wp_normalize_path( dirname( __FILE__ ) );
 Kirki_Init::set_url();
 
+new Kirki_Controls();
+
 if ( ! function_exists( 'Kirki' ) ) {
-	// @codingStandardsIgnoreStart
 	/**
 	 * Returns an instance of the Kirki object.
 	 */
-	function Kirki() {
+	function kirki() {
 		$kirki = Kirki_Toolkit::get_instance();
 		return $kirki;
 	}
-	// @codingStandardsIgnoreEnd
-
 }
 
 // Start Kirki.
 global $kirki;
-$kirki = Kirki();
+$kirki = kirki();
 
 // Instantiate the modules.
 $kirki->modules = new Kirki_Modules();
@@ -59,10 +58,10 @@ new Kirki();
 new Kirki_L10n();
 
 // Include deprecated functions & methods.
-include_once wp_normalize_path( dirname( __FILE__ ) . '/core/deprecated.php' );
+require_once wp_normalize_path( dirname( __FILE__ ) . '/deprecated/deprecated.php' );
 
 // Include the ariColor library.
-include_once wp_normalize_path( dirname( __FILE__ ) . '/lib/class-aricolor.php' );
+require_once wp_normalize_path( dirname( __FILE__ ) . '/lib/class-aricolor.php' );
 
 // Add an empty config for global fields.
 Kirki::add_config( '' );
@@ -70,11 +69,5 @@ Kirki::add_config( '' );
 $custom_config_path = dirname( __FILE__ ) . '/custom-config.php';
 $custom_config_path = wp_normalize_path( $custom_config_path );
 if ( file_exists( $custom_config_path ) ) {
-	include_once $custom_config_path;
+	require_once $custom_config_path;
 }
-
-// Add upgrade notifications.
-include_once wp_normalize_path( dirname( __FILE__ ) . '/upgrade-notifications.php' );
-
-// Uncomment this line to see the demo controls in the customizer.
-/* include_once dirname( __FILE__ ) . '/example.php'; */

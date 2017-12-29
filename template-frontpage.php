@@ -4,7 +4,7 @@
  */
  
  get_header('featured');
- global $avata_sections, $avata_animation, $avata_animation_delay;
+ global $avata_animation, $avata_animation_delay;
  
  $hide_side_nav   = absint( avata_option( 'hide_side_nav'));
  $side_nav_align  = esc_attr( avata_option( 'side_nav_align'));
@@ -15,6 +15,8 @@
  if( $animation == '1' )
  	$avata_animation =  'os-animation';
  $avata_animation_delay = esc_attr( avata_option( 'animation_delay'),'0.1s');
+
+ $avata_sections = 	avata_get_sections();
 
  ?>
  

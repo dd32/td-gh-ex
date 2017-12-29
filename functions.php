@@ -13,8 +13,10 @@ function avata_get_option_name(){
 }
 
 function avata_setup(){
-	global $content_width,$avata_lite_sections;
-
+	global $content_width,$avata_lite_sections, $avata_options;
+	$textdomain    = avata_get_option_name();
+	$avata_options = get_option($textdomain);
+	
 	load_theme_textdomain('avata');
 	add_theme_support( 'post-thumbnails' ); 
 	$args = array();
@@ -54,11 +56,11 @@ add_action( 'after_setup_theme', 'avata_setup' );
 /******          WIDGETS     *************/
 /*****************************************/
 
-add_action('widgets_init', 'avata_register_widgets');
+/*add_action('widgets_init', 'avata_register_widgets');
 
 function avata_register_widgets() {
 	global $avata_lite_sections;
-	/* Register sections */
+
 	$extra_class = 'avata-section-widgets';
 	foreach ( $avata_lite_sections as $k => $v ):
         register_sidebar(
@@ -71,7 +73,7 @@ function avata_register_widgets() {
         );
 		
     endforeach;
-}
+}*/
 
 /**
  * Selective Refresh
@@ -555,10 +557,13 @@ function avata_option($name,$default=''){
  * Get option saved
  */
 function avata_option_saved($name,$default=''){
-	$textdomain = avata_get_option_name();
-	$options    = get_option($textdomain);
-	if( isset($options[$name]) )
-		$return = $options[$name];
+	global $avata_options;
+	if(!$avata_options){
+		$textdomain = avata_get_option_name();
+		$avata_options = get_option($textdomain);
+	}
+	if( isset($avata_options[$name]) )
+		$return = $avata_options[$name];
 	else
 		$return = $default;
 		
@@ -801,6 +806,28 @@ add_action('wp_head', 'avata_space_before_head');
 add_action('wp_footer', 'avata_space_before_body'); 
 
 /**
+* Get sections
+*/
+function avata_get_sections(){
+	global $avata_lite_sections;
+	$sortsections_saved  = avata_option('section_order');
+	$avata_sections = array();
+	if( $sortsections_saved!='' ){
+		$sortsections_saved = @json_decode($sortsections_saved, true);
+		foreach( $sortsections_saved as $k=>$sortsection ){
+			if(isset($avata_lite_sections[$sortsection])){
+				$avata_sections[$sortsection] = $avata_lite_sections[$sortsection];
+			}
+		}
+	
+		$avata_sections = array_merge($avata_sections,$avata_lite_sections);
+	
+	}else{
+		$avata_sections = 	$avata_lite_sections;
+	}
+	return $avata_sections;
+	}
+/**
 * Standard fonts
 */
 function avata_standard_fonts(){
@@ -864,7 +891,7 @@ function avata_standard_fonts(){
 	return $standard_fonts;	
 	}
 		
-add_filter( 'options-framework/fonts/standard_fonts', 'avata_standard_fonts' );
+add_filter( 'kirki/fonts/standard_fonts', 'avata_standard_fonts' );
 
 require_once dirname( __FILE__ ) . '/lib/kirki/kirki.php';
 require_once dirname( __FILE__ ) . '/includes/options.php';

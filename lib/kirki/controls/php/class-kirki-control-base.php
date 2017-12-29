@@ -41,6 +41,15 @@ class Kirki_Control_Base extends WP_Customize_Control {
 	public $kirki_config = 'global';
 
 	/**
+	 * Whitelisting the "required" argument.
+	 *
+	 * @since 3.0.17
+	 * @access public
+	 * @var array
+	 */
+	public $required = array();
+
+	/**
 	 * Extra script dependencies.
 	 *
 	 * @since 3.1.0
@@ -59,7 +68,6 @@ class Kirki_Control_Base extends WP_Customize_Control {
 
 		// Build the suffix for the script.
 		$suffix  = '';
-		$suffix .= ( Kirki_Util::get_wp_version() >= 4.9 ) ? '' : '-legacy';
 		$suffix .= ( ! defined( 'SCRIPT_DEBUG' ) || true !== SCRIPT_DEBUG ) ? '.min' : '';
 
 		// The Kirki plugin URL.
@@ -77,22 +85,35 @@ class Kirki_Control_Base extends WP_Customize_Control {
 		// Enqueue the script.
 		wp_enqueue_script(
 			'kirki-script',
-			"{$kirki_url}controls/js/dist/script{$suffix}.js",
+			"{$kirki_url}controls/js/script{$suffix}.js",
 			array(
 				'jquery',
 				'customize-base',
 				'wp-color-picker-alpha',
 				'selectWoo',
 				'jquery-ui-button',
-				'jquery-ui-spinner',
 			),
 			KIRKI_VERSION
 		);
 
+		wp_localize_script(
+			'kirki-script',
+			'kirkiL10n',
+			array(
+				'noFileSelected' => esc_attr__( 'No File Selected', 'avata' ),
+				'remove'         => esc_attr__( 'Remove', 'avata' ),
+				'default'        => esc_attr__( 'Default', 'avata' ),
+				'selectFile'     => esc_attr__( 'Select File', 'avata' ),
+				'standardFonts'  => esc_attr__( 'Standard Fonts', 'avata' ),
+				'googleFonts'    => esc_attr__( 'Google Fonts', 'avata' ),
+			)
+		);
+
+		$suffix = str_replace( '.min', '', $suffix );
 		// Enqueue the style.
 		wp_enqueue_style(
 			'kirki-styles',
-			"{$kirki_url}controls/css/styles.css",
+			"{$kirki_url}controls/css/styles{$suffix}.css",
 			array(),
 			KIRKI_VERSION
 		);
@@ -111,6 +132,8 @@ class Kirki_Control_Base extends WP_Customize_Control {
 		if ( isset( $this->default ) ) {
 			$this->json['default'] = $this->default;
 		}
+		// Required.
+		$this->json['required'] = $this->required;
 		// Output.
 		$this->json['output'] = $this->output;
 		// Value.
