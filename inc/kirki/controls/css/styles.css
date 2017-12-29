@@ -126,7 +126,11 @@ add customizer control style
 }
 
 
-
+ .control-section-kirki-default .dashicons-before::before,#accordion-panel-bestblog_theme_options .dashicons-before::before{
+   vertical-align: middle;
+color: #ea4c89;
+margin-right: 5px;
+ }
 
 .select2-container .select2-selection--single{height: auto;}
 

@@ -8,9 +8,9 @@
 	$main_header_gradient = get_theme_mod( 'main_header_gradient', 'gradient_2' );
 	?>
 	<?php   if ( ('img_header' == $main_bgheader_style )&& get_header_image() ) : ?>
-<div class="mobile-header  show-for-small hide-for-large" data-interchange="[<?php echo esc_url( header_image());?>, small],[<?php echo esc_url( header_image());?>, large]" data-sticky data-margin-top="0">
+<div class="mobile-header  show-for-small hide-for-large" data-interchange="[<?php echo esc_url( header_image());?>, small],[<?php echo esc_url( header_image());?>, large]" >
 	<?php else:?>
-		<div class="mobile-header  show-for-small hide-for-large <?php   if ( ('gradient_header' == $main_bgheader_style ) ) : ?> <?php echo $main_header_gradient ?> <?php endif;?> " data-sticky data-margin-top="0" data-anchor="content">
+		<div class="mobile-header  show-for-small hide-for-large <?php   if ( ('gradient_header' == $main_bgheader_style ) ) : ?> <?php echo $main_header_gradient ?> <?php endif;?> " >
 			<?php endif;?>
 
 	<div class="grid-container full ">

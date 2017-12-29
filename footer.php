@@ -22,7 +22,7 @@
 
       ?>
       <a href="#0"  class="scroll_to_top cd-top floating-action button secondary" data-smooth-scroll>
-      <i class="material-icons no-js">&#xE316;</i>
+      <i class="fa fa-angle-up "></i>
       </a>
   </footer>
 

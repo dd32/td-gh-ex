@@ -221,7 +221,10 @@ function bestblog_time_link()
 }
 endif;
 
-
+/* Function which displays your post date in time ago format */
+function bestblog_time_ago() {
+	return human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ).' '.esc_html__( 'ago','best-blog' );
+}
 if (! function_exists('bestblog_author_bio')) :
 
 function bestblog_author_bio()

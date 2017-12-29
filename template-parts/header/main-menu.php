@@ -11,7 +11,7 @@
   <div class="top-bar-left">
 		<div class="off-canvas-content" data-off-canvas-content>
 			  <button class="offcanvas-trigger menu-icon" type="button" data-open="offCanvasleft">
-	</div>
+	</div> 
   </div>
 	<?php endif; ?>
 	<div class="main-menu-wrap ">

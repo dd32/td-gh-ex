@@ -342,8 +342,13 @@ Kirki::add_field( 'best_blog', array(
           'element' => '#footer .footer-copyright-wrap,.footer-copyright-text p,.footer-copyright-wrap a,.footer-copyright-wrap li,.footer-copyright-wrap ul,.footer-copyright-text ol',
           'property' => 'color',
           'units' => ''
-      )
-  )
+      ),
+  ),
+	'choices' => array(
+			'fonts' => array(
+				'google' => array( 'popularity', 20 ),
+			),
+		),
 ) );
 
 Kirki::add_field('best_blog', array(

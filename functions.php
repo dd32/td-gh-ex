@@ -90,8 +90,8 @@ function bestblog_setup()
 
 
     $defaults = array(
-        'height'      => 120,
-        'width'      => 180,
+        'height'      => 100,
+        'width'      => 220,
         'flex-width'  => true,
 				'flex-height'  => true,
         'header-text' => array( 'site-title', 'site-description' ),
@@ -114,15 +114,6 @@ function bestblog_setup()
     add_image_size('bestblog-large', 1200, 750, true);
     add_image_size('bestblog-xlarge', 1920, 400, true);
 
-
-    /*
-             * Make theme available for translation.
-             * Translations can be filed in the /languages/ directory.
-             * If bestblog're building a theme based on bestblog, use a find and replace
-             * to change 'best-blog' to the name of bestblogr theme in all the template files
-             */
-
-    load_theme_textdomain('best-blog', get_template_directory() . '/languages');
 
     add_theme_support('starter-content', array(
 
@@ -162,7 +153,6 @@ function bestblog_scripts()
 {
     wp_enqueue_style('fontawesome', get_template_directory_uri() . '/fonts/awesome/css/font-awesome.min.css', 'font_awesome', true);
     wp_enqueue_style('bestblog_core', get_template_directory_uri() . '/css/bestblog.min.css', 'bestblogcore_css', true);
-    wp_enqueue_style('bestblog-google-fonts', 'https://fonts.googleapis.com/icon?family=Material+Icons', false);
     wp_enqueue_style('bestblog-fonts', bestblog_fonts_url(), array(), null);
     wp_enqueue_style('bestblog-style', get_stylesheet_uri());
 }

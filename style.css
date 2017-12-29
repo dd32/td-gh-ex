@@ -10,7 +10,7 @@ Text Domain: best-blog
 
 Description: bestblog is a perfect WordPress theme for personal blogs, blog,  content publishers .
 
-Version: 1.0.2
+Version: 1.0.3
 
 Tags:   grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments,blog,news,food-and-drink
 
@@ -254,7 +254,7 @@ a img.aligncenter {
       background-repeat: no-repeat;
       background-position: center center;
 }
-
+.banner-warp .logo-inner{padding: 4vh;}
 .banner-warp .object-fit-images {
   min-height: 300px;
 }
@@ -567,7 +567,9 @@ Mobile header
     width: 100%;
 }
 
-.mobile-header .logo-wrap {}
+.mobile-header .logo-wrap {
+  padding: 2vh;
+}
 
 .mobile-header .title-bar {
   background-color: transparent;
@@ -713,10 +715,9 @@ color: #616161;
 .post-wrap-layout-2 .card-footer .stats a {
     color: #616161;
 }
-.post-wrap-layout-2 .card-footer .stats .material-icons {
+.post-wrap-layout-2 .card-footer .stats .fa {
     position: relative;
-    top: 4px;
-    font-size: 18px;
+    font-size: 16px;
 }
 .post-wrap-layout-2 .card .category.text-info a {
   margin-bottom: 0px;
@@ -1263,9 +1264,10 @@ transform: translate(0,-50%);
   display: none;
 }
 
-.scroll_to_top .material-icons {
+.scroll_to_top .fa {
   font-size: 36px;
-  overflow: hidden;
+    font-weight: 600;
+    line-height: .8;
 }
 
 /*  ----------------------------------------------------

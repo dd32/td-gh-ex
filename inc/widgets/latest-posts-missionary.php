@@ -94,9 +94,10 @@
                           <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" title="<?php echo esc_attr(get_the_author()); ?>">
                             <?php echo get_avatar(get_the_author_meta('ID'), '40'); ?>
                             <span><?php echo get_the_author();?></span>
+                          </a>
                           </div>
                           <div class="stats">
-                            <i class="material-icons">schedule</i> <?php echo bestblog_time_link(); ?>
+                            <i class="fa fa-clock-o"></i> <?php echo bestblog_time_ago(); ?>
                           </div>
                         </div>
                       </div>
