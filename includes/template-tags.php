@@ -57,7 +57,9 @@ if ( ! function_exists( 'bento_google_fonts' ) ) {
 if ( ! function_exists( 'bento_logo' ) ) {
 	
 	function bento_logo() {
-		echo '<div class="logo clear">'.get_custom_logo().'</div>';
+		if ( function_exists('get_custom_logo') ) {
+			echo '<div class="logo clear">'.get_custom_logo().'</div>';
+		}
 	}
     
 }

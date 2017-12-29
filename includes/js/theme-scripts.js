@@ -97,7 +97,7 @@ $str(document).ready(function() {
 	
 	// Submenu animations
 	if ( bentoThemeVars.menu_config < 2 ) {
-		$str('.site-wrapper').on( 'mouseenter mouseleave', '.menu-item-has-children', function(ev) {
+		$str('.site-wrapper').on( 'mouseenter mouseleave', '.primary-menu .menu-item-has-children', function(ev) {
 			var parentMenu = $str(this);
 			var submPos = parentMenu.offset().left;
 			var windowWidth = $str(window).width();
@@ -251,7 +251,11 @@ $str(document).ready(function() {
 	
 	// Scroll to bottom of header with CTA buttons
 	$str('.post-header-cta div').click(function() {
-		var hb = $str('.post-header').position().top + $str('.post-header').outerHeight(true);
+		bento_headerHeight = 0;
+		if ( bentoThemeVars.fixed_menu == 1 ) {
+			bento_headerHeight = $str('.site-header').outerHeight(true);
+		}
+		var hb = $str('.post-header').position().top + $str('.post-header').outerHeight(true) - bento_headerHeight;
 		$str('html, body').animate( { scrollTop: hb }, 1000 );
 	});
 	

@@ -10,7 +10,7 @@ Author URI: http://satoristudio.net/
 
 Description: Bento is a powerful yet user-friendly free WordPress theme intended for use in the broadest range of web projects. It boasts premium-grade design and is packed with awesome features, some of which are unique for free themes. Bento is mobile-friendly (responsive), retina-ready, optimized for speed, and implements SEO (search engine optimization) best practices. The theme offers unprecedented customization flexibility through the native WP Customizer interface as well as built-in layouts, including one-page template. Unlimited color combinations for every element of the website, 500+ high-quality vector icons, advanced typography based on Google Fonts, and tons of other cool options and settings make it an ultimate tool for creating websites that are eye-pleasing, unique, and tailored to your needs. The theme offers advanced WooCommerce integration, including page templates, widgets, as well as full checkout funnel styling. Some other small but pleasant features include native infinite scroll, fixed menu options, and detailed settings for customizing the look of each individual page. Bento has been developed by an Envato Elite author who has sold 2000+ premium templates on ThemeForest, the largest marketplace in the industry; the theme implements clean, well-commented, developer-friendly code, and includes detailed documentation and a child theme template. Special attention has been paid to ensuring outstanding UX (user experience) and bringing the best in current web design trends and practices to the widest possible audience. Bento is being constantly maintained by its author and offers regular free updates with bugfixes and additional features.
 
-Version: 1.7.9
+Version: 1.8
 
 License: GNU General Public License v3 or later
 
@@ -2779,6 +2779,14 @@ h1.product_title {
 	clear: both;	
 	padding-top: 20px;
 	padding-top: 2rem;
+}
+
+.single-product .variations .label { 
+	padding-right: 10px;
+}
+
+.cart .single_add_to_cart_button {
+	margin: 0;
 }
 
 /* Cart page */

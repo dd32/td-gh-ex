@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-
 
 Requires at least: 4.0
 Tested up to: 4.9
-Stable tag: 1.7.9
+Stable tag: 1.8
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,12 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 1.8 / 29 December 2017
+Improved WooCommerce single product page styling.
+Removed animations from footer widget nav menus.
+Included backward-compatibility for the custom logo function.
+Fixed scroll position for the same-page links from the CTA buttons in the presence of fixed header.
 
 * 1.7.9 / 8 December 2017
 Added a Spanish translation.
