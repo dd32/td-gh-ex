@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php if ( is_front_page() ) : ?>
+<?php if ( is_front_page() && get_theme_mod('fkidd_slider_display', 1) == 1 ) : ?>
 
 		<?php fkidd_display_slider(); ?>
 	

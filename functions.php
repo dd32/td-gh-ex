@@ -125,6 +125,25 @@ function fkidd_customize_register( $wp_customize ) {
 		)
 	);
 	
+	$wp_customize->add_setting(
+			'fkidd_slider_display',
+			array(
+					'default'           => 1,
+					'sanitize_callback' => 'esc_attr',
+			)
+	);
+	
+	// Add display slider option
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fkidd_slider_display',
+							array(
+								'label'          => __( 'Display Slider', 'fkidd' ),
+								'section'        => 'fkidd_slider_section',
+								'settings'       => 'fkidd_slider_display',
+								'type'           => 'checkbox',
+							)
+						)
+	);
+	
 	for ($i = 1; $i <= 3; ++$i) {
 	
 		$slideContentId = 'fkidd_slide'.$i.'_content';
