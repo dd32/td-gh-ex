@@ -31,10 +31,14 @@
                             <?php 
                                             
                                 if ( novalite_setting('novalite_custom_logo') ):
-                                    echo "<img src='".novalite_setting('novalite_custom_logo','url')."' alt='".esc_attr_e('Logo','novalite')."'>"; 
-                                else: 
-                                    bloginfo('name');
-                                endif; 
+								
+                                    echo '<img src="' . esc_url(novalite_setting('novalite_custom_logo', 'url')) . '" alt="' . esc_attr__('Logo', 'novalite') . '">'; 
+                                
+								else: 
+                                    
+									bloginfo('name');
+                                
+								endif; 
                                 
                             ?>
                                     
