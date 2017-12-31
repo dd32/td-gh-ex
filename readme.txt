@@ -1,12 +1,12 @@
 === Fmi ===
 Theme Name: Fmi
 Theme URI: http://forrss.com/themes/fmi/
-Version: 1.3.11
+Version: 1.3.12
 Requires at least: 4.5
 Tested up to: 4.8
 Author: Forrss
 Author URI: http://forrss.com/
-Tags: custom-background,accessibility-ready,two-columns,right-sidebar,custom-colors,custom-menu,featured-images,sticky-post,theme-options,translation-ready,blog
+Tags: custom-background,two-columns,right-sidebar,custom-colors,custom-menu,featured-images,sticky-post,theme-options,translation-ready,blog
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl.html
 

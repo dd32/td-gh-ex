@@ -4,11 +4,11 @@ Theme URI: http://forrss.com/themes/fmi/
 Author: Forrss
 Author URI: http://forrss.com/
 Description: Fmi is an elegant blog theme with responsive and easily customizable.
-Version: 1.3.11
+Version: 1.3.12
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: fmi
-Tags: custom-background,accessibility-ready,two-columns,right-sidebar,custom-colors,custom-menu,featured-images,sticky-post,theme-options,translation-ready,blog
+Tags: custom-background,two-columns,right-sidebar,custom-colors,custom-menu,featured-images,sticky-post,theme-options,translation-ready,blog
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others. fmi is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
@@ -1446,7 +1446,7 @@ object {
 	bottom:15px;
 	cursor:pointer;
 	height:40px;
-	opacity:0.8;
+	opacity:1;
 	position:fixed;
 	right:15px;
 	text-align:center;
@@ -1455,15 +1455,12 @@ object {
 	background:#07b2e5;
 	color:#ffffff;
 	padding:0;
+	display: none;
 }
 #back_top i{
 	line-height:40px;
 	font-size:24px;
 	color:#ffffff;
-}
-#back_top:hover,
-#back_top:focus{
-	opacity:1;
 }
 
 /*responsive*/
