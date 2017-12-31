@@ -13,8 +13,8 @@
 	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'fmi' ); ?></h1>
 	</header><!-- .page-header -->
-	
-    <div class="post">
+
+	<div class="entry-info">
 	<div class="page-content">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
@@ -36,7 +36,7 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php if(get_theme_mod('website_nosearch_msg')){echo get_theme_mod('website_nosearch_msg');}else{esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'fmi' );}?></p>
+			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'fmi' ); ?></p>
 			<?php
 				get_search_form();
 
@@ -47,6 +47,8 @@
 				get_search_form();
 
 		endif; ?>
+        
+        <div class="clear"></div>
 	</div><!-- .page-content -->
     </div>
 </section><!-- .no-results -->

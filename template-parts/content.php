@@ -11,11 +11,12 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ( has_post_thumbnail() ):?> 
-	<div class="post-entry-media">
-    	<a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php the_post_thumbnail();?></a>
+	<div class="entry-image">
+    	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_post_thumbnail();?></a>
     </div>
     <?php endif;?>
 
+	<div class="entry-info">
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -27,6 +28,8 @@
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php fmi_posted_on(); ?>
+            
+            <div class="clear"></div>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
@@ -52,9 +55,12 @@
 				'after'  => '</div>',
 			) );
 		?>
+        
+        <div class="clear"></div>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
 		<?php fmi_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+    </div>
 </article><!-- #post-<?php the_ID(); ?> -->

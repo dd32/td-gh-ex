@@ -40,7 +40,11 @@ get_header(); ?>
 
 			endwhile;
 
-			fmi_posts_navigation();
+			if (get_theme_mod('blog_pagination') == 'navigation') {
+				fmi_posts_navigation();
+			} else {
+				fmi_posts_pagination();
+			}
 
 		else :
 

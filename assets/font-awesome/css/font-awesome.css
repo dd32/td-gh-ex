@@ -754,7 +754,7 @@
   content: "\f0d0";
 }
 .fa-truck:before {
-  content: "\f0d1";
+  content: "\f0fmi";
 }
 .fa-pinterest:before {
   content: "\f0d2";
@@ -1515,7 +1515,7 @@
 }
 .fa-ge:before,
 .fa-empire:before {
-  content: "\f1d1";
+  content: "\f1fmi";
 }
 .fa-git-square:before {
   content: "\f1d2";
@@ -2270,7 +2270,7 @@
   content: "\f2d0";
 }
 .fa-window-minimize:before {
-  content: "\f2d1";
+  content: "\f2fmi";
 }
 .fa-window-restore:before {
   content: "\f2d2";

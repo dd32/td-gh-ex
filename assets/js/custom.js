@@ -8,5 +8,7 @@
 			if(jQuery(this).scrollTop() !== 0){jQuery('#back_top').fadeIn();}else{jQuery('#back_top').fadeOut();}
 		});
 		if(jQuery(window).scrollTop() !== 0){jQuery('#back_top').show();}else{jQuery('#back_top').hide();}
+		
+		jQuery("#main").fitVids();
 	});
 })(jQuery);

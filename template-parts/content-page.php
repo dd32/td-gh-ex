@@ -11,11 +11,12 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ( has_post_thumbnail() ):?> 
-	<div class="post-entry-media">
-    	<a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php the_post_thumbnail();?></a>
+	<div class="entry-image">
+    	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_post_thumbnail();?></a>
     </div>
     <?php endif;?>
 
+	<div class="entry-info">
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
@@ -29,6 +30,8 @@
 				'after'  => '</div>',
 			) );
 		?>
+        
+        <div class="clear"></div>
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>
@@ -47,10 +50,11 @@
 						),
 						get_the_title()
 					),
-					'<span class="edit-link"><i class="fa fa-edit"></i> ',
+					'<span class="edit-link">',
 					'</span>'
 				);
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
+    </div>
 </article><!-- #post-<?php the_ID(); ?> -->
