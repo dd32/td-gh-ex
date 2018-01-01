@@ -32,11 +32,11 @@
 				?>
 
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerNav" aria-controls="headerNav" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'best-reloaded' ); ?>">
-					<span class="navbar-toggler-icon"></span><span class="sr-only">Toggle Navigation</span>
+					<span class="navbar-toggler-icon"></span><span class="sr-only"><?php esc_html_e( 'Toggle Navigation', 'best-reloaded' ); ?></span>
 				</button>
 
 				<nav class="collapse navbar-collapse" id="headerNav" role="navigation" aria-label="Main Menu">
-					<span class="sr-only">Main Menu</span>
+					<span class="sr-only"><?php esc_html_e( 'Main Menu', 'best-reloaded' ); ?></span>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' 	=> 'best_reloaded_nav_topbar',
@@ -62,7 +62,7 @@
 			<div class="col-sm-8 site-header">
 
 				<?php
-				$custom_logo_id = get_theme_mod( 'custom_logo' );
+				$custom_logo_id = get_theme_mod( 'custom_logo', false );
 				if ( $custom_logo_id ) {
 					// Since we have a custom logo get the url of it.
 					$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
@@ -75,16 +75,22 @@
 					</div>
 				<?php } else {
 					// If the header image is not set output text site-title.
+					$small_title = get_theme_mod( 'small_site_title', false );
+					if ( $small_title ) {
+						$small_title = ' long-title';
+					} else {
+						$small_title = '';
+					}
 					?>
 					<div class="name-text">
 						<?php if ( is_home() || is_front_page() ) {
 							// For SEO reasons site title as h1 is only on home and blog page, otherwise it's a styled span.
 							?>
-							<h1 class="site-title">
+							<h1 class="site-title<?php echo esc_attr( $small_title ); ?>">
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 							</h1>
 						<?php } else { ?>
-							<span class="h1 site-title">
+							<span class="h1 site-title<?php echo esc_attr( $small_title ); ?>">
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 							</span>
 						<?php }
