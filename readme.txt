@@ -54,6 +54,9 @@ Alante Business is a child theme or Alante and as such uses the same opensource 
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.3
+- Updated: alante_thinkup_updateoption_child_settings updated to ensure setting option is correctly saved.
+
 Version 1.0.2
 - Updated: Function alante_thinkup_updateoption_child_color() disabled, no longer hooked into init. Monitoring with view of updating in future.
 
