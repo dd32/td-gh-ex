@@ -103,6 +103,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.13
+- Updated: Improved escaping in function alante_thinkup_title_select() to ensure page title displays correctly.
+
 Version 1.0.12
 - Fixed:   WooCommerce v3+ gallery support added, ensured image zoom function works correctly.
 
