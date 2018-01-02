@@ -265,7 +265,7 @@ if ( ! function_exists( 'thinkup_input_addimagesizes' ) ) {
 		add_image_size( 'column4-3/5', 240, 144, true );
 		add_image_size( 'column4-4/5', 240, 192, true );
 	}
-	add_action( 'init', 'thinkup_input_addimagesizes' );
+	add_action( 'after_setup_theme', 'thinkup_input_addimagesizes' );
 }
 
 if ( ! function_exists( 'thinkup_input_showimagesizes' ) ) {

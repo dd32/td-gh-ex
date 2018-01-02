@@ -122,6 +122,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.4.15
+- Updated: Function to add additional image sizes hooked into after_theme_setup instead of init.
+
 Version 1.4.14
 - Fixed:   style-backend.css now loads correctly in admin area.
 - Fixed:   WooCommerce v3+ gallery support added, ensured image zoom function works correctly.
