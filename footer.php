@@ -1,15 +1,24 @@
 <?php
 /**
- * The template for displaying the footer.
+ * The template for displaying the footer
  *
- * Contains the closing of the #content div and all content after
+ * Contains the closing of the #content div and all content after.
  *
- * @package avenue
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Avenue
  */
+
 ?>
 
-<?php avenue_close(); ?>
+    </div><!-- #content -->
+
+    <?php do_action( 'avenue_footer' ); ?>
+        
 </div><!-- #page -->
+
 <?php wp_footer(); ?>
+
 </body>
 </html>
+   
