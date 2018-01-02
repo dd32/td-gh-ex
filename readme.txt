@@ -93,6 +93,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.8.16
+- Updated: Function to add additional image sizes hooked into after_theme_setup instead of init.
+
 Version 1.8.15
 - Fixed:   WooCommerce v3+ gallery support added, ensured image zoom function works correctly.
 
