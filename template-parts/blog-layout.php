@@ -14,6 +14,7 @@ get_header(); ?>
         </div>
     </div>
 </div>
+<?php $default_posts_per_page = get_option( 'posts_per_page' ); query_posts('post_type=post&post_status=publish&posts_per_page='.$default_posts_per_page.'&paged='. get_query_var('paged')); ?>
 <div class="blog-wrapper">
     <div class="">
         <div class="container">
@@ -33,6 +34,10 @@ get_header(); ?>
                                     <div class="blog-images">
                                         <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'BestStartupThumbnailImage', array( 'alt' => esc_attr(get_the_title()), 'class' => 'img-responsive') ); ?></a>
                                     </div>
+                                    <?php else: ?>                                        
+                                        <div class="blog-images">
+                                            <a href="<?php the_permalink(); ?>"><img src="<?php echo get_template_directory_uri();?>/assets/images/no-image.jpg"></a>
+                                        </div>
                                     <?php endif; ?>
                                     <div class="blog-inner-content mask">
                                         <div class="title-data fadeIn animated">

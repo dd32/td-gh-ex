@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Best Startup\n"
-"POT-Creation-Date: 2017-12-16 13:11+0530\n"
-"PO-Revision-Date: 2017-12-16 13:10+0530\n"
+"POT-Creation-Date: 2018-01-02 18:37+0530\n"
+"PO-Revision-Date: 2018-01-02 18:37+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -20,25 +20,25 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:14
+#: 404.php:9
 msgid "404 - ARTICLE NOT FOUND"
 msgstr ""
 
-#: 404.php:25
+#: 404.php:20
 msgid "This is embarassing. We can't find what you were looking for."
 msgstr ""
 
-#: 404.php:27
+#: 404.php:22
 msgid ""
 "Whatever you were looking for was not found, but maybe try looking again or "
 "search using the form below."
 msgstr ""
 
-#: archive.php:10
+#: archive.php:12
 msgid "Archive "
 msgstr ""
 
-#: author.php:10
+#: author.php:12
 msgid "Published by : "
 msgstr ""
 
@@ -50,15 +50,15 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: content.php:29 template-parts/blog-layout.php:48
+#: content.php:35 template-parts/blog-layout.php:53
 msgid "READ MORE"
 msgstr ""
 
-#: content.php:33 template-parts/blog-layout.php:55
+#: content.php:42 template-parts/blog-layout.php:60
 msgid "Back"
 msgstr ""
 
-#: content.php:34 template-parts/blog-layout.php:56
+#: content.php:43 template-parts/blog-layout.php:61
 msgid "Onward"
 msgstr ""
 
@@ -78,8 +78,11 @@ msgstr ""
 msgid "Top Header Menu"
 msgstr ""
 
+#: functions.php:53
+msgid "Default Header Image"
+msgstr ""
+
 #: functions/class-tgm-plugin-activation.php:327
-#: functions/theme-default-setup.php:114
 msgid "Install Required Plugins"
 msgstr ""
 
@@ -519,231 +522,237 @@ msgstr ""
 msgid "Social Accounts"
 msgstr ""
 
-#: functions/theme-customization.php:39 functions/theme-customization.php:99
+#: functions/theme-customization.php:40 functions/theme-customization.php:100
 msgid "Header & Logo"
 msgstr ""
 
-#: functions/theme-customization.php:45
+#: functions/theme-customization.php:46
 #, php-format
 msgid "Social Account %s"
 msgstr ""
 
-#: functions/theme-customization.php:61
+#: functions/theme-customization.php:62
 msgid "Enter Icon"
 msgstr ""
 
-#: functions/theme-customization.php:72
+#: functions/theme-customization.php:73
 #, php-format
 msgid "Social Link %s"
 msgstr ""
 
-#: functions/theme-customization.php:90
+#: functions/theme-customization.php:91
 msgid "Enter URL"
 msgstr ""
 
-#: functions/theme-customization.php:126
+#: functions/theme-customization.php:127
 msgid "Upload Dark Logo"
 msgstr ""
 
-#: functions/theme-customization.php:140
+#: functions/theme-customization.php:141
 msgid "Header Fix"
 msgstr ""
 
-#: functions/theme-customization.php:158
+#: functions/theme-customization.php:159
 msgid "Enter Logo Size"
 msgstr ""
 
-#: functions/theme-customization.php:159
+#: functions/theme-customization.php:160
 msgid ""
 "Use if you want to increase or decrease logo size (optional) Don't include "
 "`px` in the string. e.g. 20 (default: 10px)"
 msgstr ""
 
-#: functions/theme-customization.php:175 functions/theme-customization.php:184
+#: functions/theme-customization.php:176 functions/theme-customization.php:185
 msgid "Preloader"
 msgstr ""
 
-#: functions/theme-customization.php:187
+#: functions/theme-customization.php:188
 msgid "On "
 msgstr ""
 
-#: functions/theme-customization.php:188
+#: functions/theme-customization.php:189
 msgid "Off"
 msgstr ""
 
-#: functions/theme-customization.php:200
+#: functions/theme-customization.php:201
 msgid "Upload Custom Preloader"
 msgstr ""
 
-#: functions/theme-customization.php:206
+#: functions/theme-customization.php:207
 msgid "Home Settings"
 msgstr ""
 
-#: functions/theme-customization.php:218
+#: functions/theme-customization.php:221
 msgid "Menu Style"
 msgstr ""
 
-#: functions/theme-customization.php:223
+#: functions/theme-customization.php:226
 msgid "Transparent"
 msgstr ""
 
-#: functions/theme-customization.php:224
+#: functions/theme-customization.php:227
 msgid "Non-Transparent"
 msgstr ""
 
-#: functions/theme-customization.php:234
+#: functions/theme-customization.php:239
 msgid "Home Page Title"
 msgstr ""
 
-#: functions/theme-customization.php:239 functions/theme-customization.php:554
-#: functions/theme-customization.php:574 functions/theme-customization.php:595
-#: functions/theme-customization.php:631 functions/theme-customization.php:684
+#: functions/theme-customization.php:243 functions/theme-customization.php:259
+#: functions/theme-customization.php:571 functions/theme-customization.php:591
+#: functions/theme-customization.php:612 functions/theme-customization.php:648
+#: functions/theme-customization.php:701
 msgid "Hide"
 msgstr ""
 
-#: functions/theme-customization.php:240 functions/theme-customization.php:553
-#: functions/theme-customization.php:573 functions/theme-customization.php:594
-#: functions/theme-customization.php:630 functions/theme-customization.php:683
+#: functions/theme-customization.php:244 functions/theme-customization.php:260
+#: functions/theme-customization.php:570 functions/theme-customization.php:590
+#: functions/theme-customization.php:611 functions/theme-customization.php:647
+#: functions/theme-customization.php:700
 msgid "Show"
 msgstr ""
 
-#: functions/theme-customization.php:261
+#: functions/theme-customization.php:255
+msgid "Single Page & Post Title"
+msgstr ""
+
+#: functions/theme-customization.php:278
 msgid "Theme Color "
 msgstr ""
 
-#: functions/theme-customization.php:280
+#: functions/theme-customization.php:297
 msgid "Secondary Color"
 msgstr ""
 
-#: functions/theme-customization.php:300
+#: functions/theme-customization.php:317
 msgid "Menu Background Color"
 msgstr ""
 
-#: functions/theme-customization.php:320
+#: functions/theme-customization.php:337
 msgid "Menu Background Color (after scroll)"
 msgstr ""
 
-#: functions/theme-customization.php:340
+#: functions/theme-customization.php:357
 msgid "Menu Text Color"
 msgstr ""
 
-#: functions/theme-customization.php:360
+#: functions/theme-customization.php:377
 msgid "Menu Text Color(after scroll)"
 msgstr ""
 
-#: functions/theme-customization.php:380
+#: functions/theme-customization.php:397
 msgid "Body Background Color"
 msgstr ""
 
-#: functions/theme-customization.php:400
+#: functions/theme-customization.php:417
 msgid "Body Text Color"
 msgstr ""
 
-#: functions/theme-customization.php:420
+#: functions/theme-customization.php:437
 msgid "Footer Background Color"
 msgstr ""
 
-#: functions/theme-customization.php:439
+#: functions/theme-customization.php:456
 msgid "Footer Text Color"
 msgstr ""
 
-#: functions/theme-customization.php:458
+#: functions/theme-customization.php:475
 msgid "Footer Link Color"
 msgstr ""
 
-#: functions/theme-customization.php:477
+#: functions/theme-customization.php:494
 msgid "Footer Link Hover Color"
 msgstr ""
 
-#: functions/theme-customization.php:490
+#: functions/theme-customization.php:507
 msgid "Blog Page Options"
 msgstr ""
 
-#: functions/theme-customization.php:491
+#: functions/theme-customization.php:508
 msgid "Blog page option settings. "
 msgstr ""
 
-#: functions/theme-customization.php:508
+#: functions/theme-customization.php:525
 msgid "Select Blog Sidebar Option"
 msgstr ""
 
-#: functions/theme-customization.php:511 functions/theme-customization.php:532
+#: functions/theme-customization.php:528 functions/theme-customization.php:549
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions/theme-customization.php:512 functions/theme-customization.php:533
+#: functions/theme-customization.php:529 functions/theme-customization.php:550
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions/theme-customization.php:513 functions/theme-customization.php:534
+#: functions/theme-customization.php:530 functions/theme-customization.php:551
 msgid "Full Sidebar"
 msgstr ""
 
-#: functions/theme-customization.php:529
+#: functions/theme-customization.php:546
 msgid "Select Single Post Sidebar Option"
 msgstr ""
 
-#: functions/theme-customization.php:550
+#: functions/theme-customization.php:567
 msgid "Select Blog Post Meta Tag Option"
 msgstr ""
 
-#: functions/theme-customization.php:570
+#: functions/theme-customization.php:587
 msgid "Select Single Post Meta Tag Option"
 msgstr ""
 
-#: functions/theme-customization.php:591
+#: functions/theme-customization.php:608
 msgid "Select Blog Post Excerpt Option"
 msgstr ""
 
-#: functions/theme-customization.php:611
+#: functions/theme-customization.php:628
 msgid "Blog Post Excerpt String Limit Option"
 msgstr ""
 
-#: functions/theme-customization.php:627
+#: functions/theme-customization.php:644
 msgid "Select Blog Post Read More Button Option"
 msgstr ""
 
-#: functions/theme-customization.php:642
+#: functions/theme-customization.php:659
 msgid "Footer"
 msgstr ""
 
-#: functions/theme-customization.php:643
+#: functions/theme-customization.php:660
 msgid "Footer options"
 msgstr ""
 
-#: functions/theme-customization.php:648
+#: functions/theme-customization.php:665
 msgid "Footer Widget Area"
 msgstr ""
 
-#: functions/theme-customization.php:655
+#: functions/theme-customization.php:672
 msgid "Social Settings"
 msgstr ""
 
-#: functions/theme-customization.php:662
+#: functions/theme-customization.php:679
 msgid "Footer Copyright Area"
 msgstr ""
 
-#: functions/theme-customization.php:680
+#: functions/theme-customization.php:697
 msgid "Hide Widget Area"
 msgstr ""
 
-#: functions/theme-customization.php:701
+#: functions/theme-customization.php:718
 msgid "Select Widget Area"
 msgstr ""
 
-#: functions/theme-customization.php:704
+#: functions/theme-customization.php:721
 msgid "2 column"
 msgstr ""
 
-#: functions/theme-customization.php:705
+#: functions/theme-customization.php:722
 msgid "3 column"
 msgstr ""
 
-#: functions/theme-customization.php:706
+#: functions/theme-customization.php:723
 msgid "4 column"
 msgstr ""
 
-#: functions/theme-customization.php:723
+#: functions/theme-customization.php:740
 msgid "Enter Copyright Text"
 msgstr ""
 
@@ -792,6 +801,10 @@ msgstr ""
 msgid "Contact Form 7"
 msgstr ""
 
+#: functions/theme-default-setup.php:114
+msgid "Install Recommended Plugins"
+msgstr ""
+
 #: functions/theme-default-setup.php:120
 #, php-format
 msgid ""
@@ -836,15 +849,15 @@ msgstr[1] ""
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
-#: index.php:17 template-parts/blog-layout.php:9
+#: index.php:12 template-parts/blog-layout.php:9
 msgid "Blog "
 msgstr ""
 
-#: search.php:15
+#: search.php:10
 msgid "Search results for"
 msgstr ""
 
-#: search.php:31
+#: search.php:26
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords"
@@ -865,19 +878,19 @@ msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: single.php:57
+#: single.php:51
 msgid "Pages:"
 msgstr ""
 
-#: single.php:61 single.php:68
+#: single.php:55 single.php:62
 msgid "Page"
 msgstr ""
 
-#: single.php:66
+#: single.php:60
 msgid "Previous page"
 msgstr ""
 
-#: single.php:67
+#: single.php:61
 msgid "Next page"
 msgstr ""
 

@@ -2,19 +2,13 @@
 /*
 * Single Post template file
 */
-get_header(); ?>
-    <style type="text/css">
-        <?php if(!empty($page_options_header_style_bg_image)) : ?>
-        .blog-heading-wrap {
-            background-image: url('<?php echo esc_url($page_options_header_style_bg_image); ?>');
-        }
-        <?php else : ?>
-        .blog-heading-wrap {
-            background-image: url('<?php header_image(); ?>');
-        }
-        <?php endif; ?>
-    </style>
-    
+get_header(); 
+$singlepagetitle = get_theme_mod('singlepagetitle',1); 
+if(!is_front_page() && is_page())
+{  $pagetitle = get_theme_mod('pagetitle',1);   
+    if($pagetitle==1): $singlepagetitle =1; else: $singlepagetitle =0; endif;
+}
+if( $singlepagetitle == 1 ) : ?>
     <div class="heading-wrap blog-heading-wrap">
         <div class="heading-layer">
             <div class="heading-title">
@@ -22,14 +16,14 @@ get_header(); ?>
             </div>
         </div>
     </div>
-    
+<?php endif; ?>
 <div class="single-blog-wrapper">
     <div class="best-startup-section">
         <div class="container">
             <div class="row responsive">
                  <?php 
-                $blog_layout_class=(get_theme_mod('blogsinglesidebar',4) == 1)?"9":((get_theme_mod('blogsinglesidebar',4) == 2)?"9":((get_theme_mod('blogsinglesidebar',4) == 3)?"6":"12"));
-                if(get_theme_mod('blogsinglesidebar',4) == 1 || get_theme_mod('blogsinglesidebar',4) == 3 ):
+                $blog_layout_class=(get_theme_mod('blogsinglesidebar',3) == 1)?"9":((get_theme_mod('blogsinglesidebar',3) == 2)?"9":"12");
+                if(get_theme_mod('blogsinglesidebar',3) == 1):
                         get_sidebar();
                  endif;
                 ?>  
@@ -70,7 +64,7 @@ get_header(); ?>
                 <?php endwhile; ?>
                 </div>
                  <?php 
-                if(get_theme_mod('blogsinglesidebar',4) == 2 || get_theme_mod('blogsinglesidebar',4) == 3):
+                if(get_theme_mod('blogsinglesidebar',3) == 2 ):
                         get_sidebar();
                  endif;
                 ?>

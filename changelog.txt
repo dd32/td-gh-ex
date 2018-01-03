@@ -1,5 +1,0 @@
-Version 1.0.0 (7 Dec 2017)
-1) Lunch Theme
-
-Version 1.0.1 (7 Dec 2017)
-1) Changed home layout and header menu style

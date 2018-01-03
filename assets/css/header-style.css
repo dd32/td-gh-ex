@@ -45,15 +45,15 @@
     margin: 15px 0;
     float: right;
 }
-#menu-style-header > ul > li {
+#menu-style-header  ul  li {
     float: left;
 }
-#menu-style-header > ul > li > a {
+#menu-style-header  ul  li  a {
     padding: 15px 15px 15px 15px;
     font-size: 14px;
     text-decoration: none;
     text-transform: uppercase;
-    color: #000;
+    color: #fff;
     -webkit-transition: color .2s ease;
     -moz-transition: color .2s ease;
     -ms-transition: color .2s ease;
@@ -63,13 +63,13 @@
     outline: none;
 }
 
-#menu-style-header > ul > li:before{
+#menu-style-header  ul  li:before{
     position: absolute;
     top: 50%; /*you may want to adjust this*/
     left: 50%;
     width: 100%; /*you may want to adjust this*/
     height: 80%; /*you may want to adjust this*/
-    border: 2px solid #fff; /*you may want to adjust this*/
+    border: 2px solid #ea8800; /*you may want to adjust this*/
     border-radius: 0%;
     content: '';
     opacity: 0;
@@ -80,27 +80,27 @@
     -moz-transform: translateX(-50%) translateY(-50%) scale(0.2);
     transform: translateX(-50%) translateY(-50%) scale(0.2);
 }
-#menu-style-header > ul > li:hover:before{
+#menu-style-header  ul  li:hover:before{
     opacity: 1;
     -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
     -moz-transform: translateX(-50%) translateY(-50%) scale(1);
     transform: translateX(-50%) translateY(-50%) scale(1);
 }
 
-.sub-header-fixed #menu-style-header > ul > li > a {
+.sub-header-fixed #menu-style-header  ul  li  a {
     padding: 15px 15px 29px 15px;
 }
-#menu-style-header > ul > li > a.active {
-    color:#EF4C23;
+#menu-style-header  ul  li  a.active {
+    color:#ea8800;
 }
-.blackMenu #menu-style-header > ul > li > a.active {
-    color:#EF4C23;
+.blackMenu #menu-style-header  ul  li  a.active {
+    color:#ea8800;
 }
-#menu-style-header > ul > li.has-sub > a {
+#menu-style-header  ul  li.has-sub  a {
     padding-right: 25px;
 }
 
-#menu-style-header > ul > li.has-sub > a::after {
+#menu-style-header  ul  li.has-sub  a::after {
     position: absolute;
     top: 18px;
     right: 13px;
@@ -262,7 +262,10 @@
 .fixed-header .custom-logo {
     display: none;
 }
-
+.header-top .logo .site-title
+{   color:#fff;  }
+.header-top .logo .site-title:hover
+{   color:#ea8800;  }
 
 @media all and (min-width:768px) and (max-width: 784px){
     #menu-style-header,

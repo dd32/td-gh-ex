@@ -2,7 +2,9 @@
 /**
  * Author Page template file
  * */
-get_header(); ?>
+get_header(); 
+$pagetitle = get_theme_mod('singlepagetitle',1); 
+if( $pagetitle == 1 ): ?>
 <div class="heading-wrap blog-heading-wrap">
     <div class="heading-layer">
         <div class="heading-title">
@@ -13,4 +15,5 @@ get_header(); ?>
         </div>
     </div>
 </div>
+<?php endif; ?>
 <?php get_template_part('content'); get_footer(); ?>

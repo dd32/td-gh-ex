@@ -7,26 +7,35 @@
                         get_sidebar();
                  endif;
                 ?>                
-                <div class="col-md-<?php echo $blog_layout_class; ?> col-sm-12 col-xs-12 content">
+                <div class="col-md-<?php echo esc_attr($blog_layout_class); ?> col-sm-12 col-xs-12 content blog-layout-one">
                     <div class="blog-content-area fadeIn animated">
                         <?php while ( have_posts() ) : the_post(); ?>
-                            <div class="blog-content">
-                                <div class="title-data fadeIn animated">
-                                    <h2><a href="<?php the_permalink(); ?>"><?php esc_html(the_title()); ?></a></h2>
-                                    <?php if(get_theme_mod('blogMetaTag') == 1):?>
-                                    <p> <?php best_startup_entry_meta(); ?></p>
-                                <?php endif; ?>
+                            <div class="col-md-6 col-sm-6 col-xs-12 fadeIn animated">
+                                <div class="blog-content view view-fifth">
+                                    <?php if ( has_post_thumbnail() ) : ?>
+                                    <div class="blog-images">
+                                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'BestStartupThumbnailImage', array( 'alt' => esc_attr(get_the_title()), 'class' => 'img-responsive') ); ?></a>
+                                    </div>
+                                    <?php else: ?>                                        
+                                        <div class="blog-images">
+                                            <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url(get_template_directory_uri());?>/assets/images/no-image.jpg"></a>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="blog-inner-content mask">
+                                        <div class="title-data fadeIn animated">
+                                            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                                           <?php if(get_theme_mod('blogMetaTag') == 1):?>
+                                             <?php best_startup_entry_meta(); ?>
+                                          <?php endif; ?>
+                                        </div>
+                                        <?php if(get_theme_mod('blogPostExcerpt',1) == 1): ?> 
+                                          <p><?php echo best_startup_excerpt(absint(get_theme_mod('blogPostExcerptTextLimit',150))); ?></p>
+                                        <?php endif; ?> 
+                                        <?php if(get_theme_mod('blogPostReadMore',1) == 1): ?>  
+                                        <a href="<?php the_permalink();?>" class="btn-light"><?php esc_html_e('READ MORE','best-startup'); ?></a>
+                                        <?php endif; ?> 
+                                    </div>
                                 </div>
-                                <?php if ( has_post_thumbnail() ) : ?>
-                                <div class="blog-images">
-                                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'BestStartupThumbnailImage', array( 'alt' => esc_attr(get_the_title()), 'class' => 'img-responsive') ); ?></a>
-                                </div>
-                            <?php endif; ?>
-                            <?php if(get_theme_mod('blogPostExcerpt',1) == 1): ?> 
-                                <p><?php echo best_startup_excerpt(absint(get_theme_mod('blogPostExcerptTextLimit',150))); ?></p>
-                            <?php endif; ?>
-
-                            <a href="<?php the_permalink();?>" class="btn-light"><?php _e('READ MORE','best-startup'); ?></a>
                             </div>
                         <?php endwhile;  ?> 
                         <?php the_posts_pagination( array(

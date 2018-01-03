@@ -37,7 +37,7 @@ $hide_footer_widget_bar = get_theme_mod('hideFooterWidgetBar',1); ?>
                         <?php if(get_theme_mod('footerLogo') != '') : ?>
                             <div class="footer-logo fadeIn animated">
                                 <?php $footer_logo=get_theme_mod('footerLogo'); $footer_logo=wp_get_attachment_url($footer_logo);?>
-                                <img class="img-responsive" src="<?php echo esc_url($footer_logo); ?>" alt="<?php _e('Footer Logo','best-startup');?>">
+                                <img class="img-responsive" src="<?php echo esc_url($footer_logo); ?>" alt="<?php esc_html_e('Footer Logo','best-startup');?>">
                             </div>
                         <?php endif; ?>
                     </div>

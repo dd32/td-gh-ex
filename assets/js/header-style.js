@@ -17,8 +17,7 @@
              }, options);
          return this.each(function () {
              cssmenu.prepend('<div id="menu-button">' + settings.title + '</div>');
-             jQuery(this).find("#menu-button").on('click', function () {
-                console.log('dfjkjlk');
+             jQuery(this).find("#menu-button").on('click', function () {                
                  jQuery(this).toggleClass('menu-opened');
                  var mainmenu = jQuery(this).next('ul.mobilemenu');
                  if (mainmenu.hasClass('open')) {

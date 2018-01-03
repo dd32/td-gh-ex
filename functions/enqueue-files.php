@@ -5,7 +5,7 @@
  */
 
 function best_startup_enqueue() {
-    wp_enqueue_style('font-raleway', '//fonts.googleapis.com/css?family=Raleway:500,300,600,700', array(),null);
+    wp_enqueue_style('best-startup-font-raleway', '//fonts.googleapis.com/css?family=Raleway:500,300,600,700', array(),null);
 
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', array(),null);
     wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.css', array(),null);

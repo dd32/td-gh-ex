@@ -28,14 +28,34 @@ if (!function_exists('best_startup_setup')) :
             'flex-width' => true,
             'priority' => 11,
             'header-text' => array('img-responsive', 'site-description'),
-        ));
-        add_theme_support( 'custom-background', array(
-            'default-color' => 'ffffff',
-            'default-image' => '',
-        ) );
+        ));        
         add_image_size('BestStartupThumbnailImage', 840, 560, true);
         add_image_size('BestStartupBlogThumbnailImage', 760, 500, true);
-        add_theme_support('custom-header');
+
+        $best_startup_defaults = array(
+            'default-image'          => get_template_directory_uri().'/assets/images/best-startup.jpg',
+            'width'                  => 0,
+            'height'                 => 0,
+            'flex-height'            => 1400,
+            'flex-width'             => 800,
+            'uploads'                => true,
+            'random-default'         => false,
+            'header-text'            => false,
+            'default-text-color'     => '',
+            'wp-head-callback'       => '',
+            'admin-head-callback'    => '',
+            'admin-preview-callback' => '',
+        );
+        register_default_headers( array(
+            'default-image' => array(
+                'url'           => get_template_directory_uri().'/assets/images/best-startup.jpg',
+                'thumbnail_url' => get_template_directory_uri().'/assets/images/best-startup.jpg',
+                'description'   => __( 'Default Header Image', 'best-startup' )
+            ),
+        ) );
+
+        add_theme_support('custom-header',$best_startup_defaults);
+        
         // Switch default core markup for search form, comment form, and commen, to output valid HTML5.
         add_theme_support('html5', array(
             'search-form', 'comment-form', 'comment-list',

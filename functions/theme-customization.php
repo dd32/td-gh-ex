@@ -36,6 +36,7 @@ function best_startup_customize_register( $wp_customize ) {
   );
   $wp_customize->get_section('title_tagline')->panel = 'general';
   $wp_customize->get_section('header_image')->panel = 'general';
+  $wp_customize->get_section('static_front_page')->panel = 'general';
   $wp_customize->get_section('title_tagline')->title = __('Header & Logo','best-startup');
   
  $best_startup_social_icon = array();
@@ -212,6 +213,7 @@ $wp_customize->add_section( 'homepageSection' , array(
 $wp_customize->add_setting( 'menustyle', array(
     'capability'     => 'edit_theme_options',
     'priority' => 40,
+    'default' => '0',
     'sanitize_callback' => 'sanitize_text_field',
 ));
 
@@ -219,7 +221,7 @@ $wp_customize->add_control( 'menustyle', array(
     'label'    => __( 'Menu Style', 'best-startup' ),
     'section'  => 'homepageSection',
     'type'       => 'select',
-    'default' => '0',
+    
     'choices' => array(
       "0"   => esc_html__( "Transparent", 'best-startup' ),
       "1"   => esc_html__( "Non-Transparent", 'best-startup' ),
@@ -229,22 +231,35 @@ $wp_customize->add_control( 'menustyle', array(
 $wp_customize->add_setting( 'pagetitle', array(
     'capability'     => 'edit_theme_options',
     'priority' => 40,
+     'default' => '1',
     'sanitize_callback' => 'sanitize_text_field',
 ));
 
 $wp_customize->add_control( 'pagetitle', array(
     'label'    => __( 'Home Page Title', 'best-startup' ),
     'section'  => 'homepageSection',
-    'type'       => 'select',
-    'default' => '1',
+    'type'       => 'select',   
     'choices' => array(
       "0"   => esc_html__( "Hide", 'best-startup' ),
       "1"   => esc_html__( "Show", 'best-startup' ),
     ),
 ));
+$wp_customize->add_setting( 'singlepagetitle', array(
+    'capability'     => 'edit_theme_options',
+    'priority' => 40,
+     'default' => '1',
+    'sanitize_callback' => 'sanitize_text_field',
+));
 
-//Remove Background Image Section
-$wp_customize->remove_section( 'background_image' );
+$wp_customize->add_control( 'singlepagetitle', array(
+    'label'    => __( 'Single Page & Post Title', 'best-startup' ),
+    'section'  => 'homepageSection',
+    'type'       => 'select',   
+    'choices' => array(
+      "0"   => esc_html__( "Hide", 'best-startup' ),
+      "1"   => esc_html__( "Show", 'best-startup' ),
+    ),
+));
 
 //Colors section
 $wp_customize->add_setting(
@@ -498,7 +513,7 @@ $wp_customize->add_section(
 $wp_customize->add_setting(
     'blogsidebar',
     array(
-        'default' => '4',
+        'default' => '3',
         'capability'     => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
     )
@@ -519,7 +534,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'blogsinglesidebar',
     array(
-        'default' => '4',
+        'default' => '3',
         'capability'     => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
     )
@@ -736,9 +751,7 @@ function best_startup_custom_css(){
   wp_enqueue_style( 'best_startup_style', get_stylesheet_uri() );
   $custom_css='';
 
-  $custom_css.="p, span, li, a,.package-header h4 span,.btn-iprimary{
-      font-size: ".get_theme_mod('NormalFontSize','14')."px;
-    }
+  $custom_css.="
     .navbar {
       background: ".get_theme_mod('menuBackgroundColor', 'transparent').";
     }
@@ -760,30 +773,21 @@ function best_startup_custom_css(){
     }";
 
     /*Main logo height*/
-    $theme_logo_height = (get_theme_mod('theme_logo_height'))?(get_theme_mod('theme_logo_height')):45;
+    $theme_logo_height = (get_theme_mod('theme_logo_height'))?(get_theme_mod('theme_logo_height')):55;
     $custom_css.= "#top-menu .logo img ,.header-top .logo img , #best_startup_navigation .main-logo img{ max-height: ".esc_attr($theme_logo_height)."px;   }";
 
     if(get_theme_mod('theme_header_fix',0)){
       $custom_css.= ".header-top.fixed-header { position :fixed; } ";
     }    
 
-    $custom_css.= "#top-menu, #top-menu ul, #top-menu ul li,#top-menu ul li a, #top-menu #menu-button,
-    #cssmenu, #cssmenu ul, #cssmenu ul li,#cssmenu ul li a,
-    #cssmenu #menu-button,.logo-light, .logo-light a {
+    $custom_css.= "
+    .logo-light, .logo-light a {
       color: ".get_theme_mod('menuTextColor','#fff').";
     }    
-    .fixed-header  #top-menu > ul > li > a,.fixed-header #top-menu  ul ul li  a,
-    .fixed-header #cssmenu > ul > li > a,.fixed-header #cssmenu ul ul li a,
+    
     .logo-dark a, .logo-dark{
       color: ".get_theme_mod('menuTextColorScroll','#000')."; 
     }
-    #top-menu .menu-global{border-top: 2px solid ".get_theme_mod('menuTextColor','#fff')."; }
-    #top-menu > ul > li:hover > a, #top-menu ul li.active a{border-top: 2px solid ".get_theme_mod('menuTextColor','#fff').";}
-    .fixed-header #top-menu > ul > li:hover > a, .fixed-header #top-menu ul li.active a
-    {
-      color: ".get_theme_mod('menuTextColorScroll','#fff').";
-    }
-    .fixed-header  #top-menu .menu-global{border-top: 2px solid ".get_theme_mod('menuTextColorScroll','#000')."; }
 
     *::selection,.silver-package-bg,#menu-line,.menu-left li:hover:before{
       background-color: ".get_theme_mod('themeColor','#ea8800').";
@@ -867,103 +871,68 @@ function best_startup_custom_css(){
     }
     .footer-wrap .copyright a:hover,.footer-wrap a:hover,.footer-wrap.style2 .footer-nav ul li a:hover,.footer-wrap.style2 .copyright a:hover,.footer-wrap.style1 .copyright a:hover{
       color: ".get_theme_mod('copyrightLinkHoverColor', '#000').";
-    }
-    
+    }  
     
 
     /* Menu Css Cutomization */
     
       /*main top menu text color*/
 
-      #menu-style > ul > li > a, #menu-style-header > ul > li > a, #header-menu-style > ul > li > a, #header-style-menu > ul > li > a, #style-menu > ul > li > a, #header-right-menu > ul > li > a, #header-left-menu > ul > li > a, #header-top-menu > ul > li > a, #top-menu > ul > li > a, #cssmenu > ul > li > a {
+      #menu-style-header > ul > li > a{
         color: ".esc_attr(get_theme_mod('menuTextColor','#ffffff')).";
       }
 
       /*sub menu text color*/
 
-      #menu-style ul ul li a, #menu-style-header ul ul li a, #header-menu-style ul ul li a, #header-style-menu ul ul li a, #style-menu ul ul li a, #header-right-menu ul ul li a, #header-left-menu ul ul li a, #header-top-menu ul ul li a, #top-menu ul ul li a, #cssmenu ul ul li a {
+      #menu-style-header ul ul li a{
         color: ".esc_attr(get_theme_mod('secondaryColor','#2c3e55')).";
       }
 
       /*main top menu text Scroll color*/
 
-      .fixed-header #menu-style > ul > li > a, .fixed-header #menu-style-header > ul > li > a, .fixed-header #header-menu-style > ul > li > a, .fixed-header #header-style-menu > ul > li > a, .fixed-header #style-menu > ul > li > a, .fixed-header #header-right-menu > ul > li > a, .fixed-header #header-left-menu > ul > li > a, .fixed-header #header-top-menu > ul > li > a, .fixed-header #top-menu > ul > li > a, .fixed-header #cssmenu > ul > li > a {
+      .fixed-header #menu-style-header > ul > li > a{
         color: ".esc_attr(get_theme_mod('menuTextColorScroll','#ffffff')).";
       }
 
       /*sub menu text Scroll color*/
 
-      .fixed-header #menu-style ul ul li a, .fixed-header #menu-style-header ul ul li a, .fixed-header #header-menu-style ul ul li a, .fixed-header #header-style-menu ul ul li a, .fixed-header #style-menu ul ul li a, .fixed-header #top-menu ul ul li a, .fixed-header #cssmenu ul ul li a {
+      .fixed-header #menu-style-header ul ul li a{
         color: ".esc_attr(get_theme_mod('menuTextColorScroll','#ffffff')).";
       }
 
       /*sub menu background color*/
 
-      #menu-style ul ul li a, #menu-style-header ul ul li a, #header-menu-style ul ul li a, #header-style-menu ul ul li a, #style-menu ul ul li a, #header-right-menu ul ul li a, #header-left-menu ul ul li a, #header-top-menu ul ul li a, #top-menu ul ul li a, #cssmenu ul ul li a
-       {
+      #menu-style-header ul ul li a  {
         background-color: ".get_theme_mod('secondaryColor','#000000').";
       }
 
       /*sub menu Scroll background color*/
 
-      .fixed-header #menu-style ul ul li a, .fixed-header #menu-style-header ul ul li a, .fixed-header #header-menu-style ul ul li a, .fixed-header #header-style-menu ul ul li a, .fixed-header #style-menu ul ul li a, .fixed-header #top-menu ul ul li a, .fixed-header #cssmenu ul ul li a
-       {
+      .fixed-header #menu-style-header ul ul li a {
         background-color: ".get_theme_mod('menuBackgroundColorScroll','#ffffff').";
       } 
 
       /*sub menu background hover color*/
 
-      #menu-style ul ul li a:hover, #menu-style-header ul ul li a:hover, #header-menu-style ul ul li a:hover, #header-style-menu ul ul li a:hover, #style-menu ul ul li a:hover, #header-top-menu ul ul li a:hover, #top-menu ul ul li a:hover, #header-left-menu ul ul li a:hover, #cssmenu ul ul li a:hover
-       {
+      #menu-style-header ul ul li a:hover {
         background-color: ".get_theme_mod('themeColor','#ea8800').";
       } 
-
-      /*left,right fixed menu background color*/
-
-       #header-right-menu > ul > li > a, #header-left-menu > ul > li > a
-       {
-        background-color: ".get_theme_mod('secondaryColor','#000000').";
-      }  
-
-      /*left,right fixed menu background hover color*/
-
-      #header-right-menu > ul > li > a:after, #header-right-menu ul ul li a:after, #header-left-menu > ul > li:hover > a, #header-left-menu ul li.active a
-       {
-        background-color: ".get_theme_mod('themeColor','#ea8800').";
-      } 
-
+      
       /*all top menu hover effect border color*/
 
-      #menu-style > ul > li::before, #menu-style > ul > li::after, #menu-style-header > ul > li:before, #header-style-menu > ul > li > a:hover:before, #header-style-menu > ul > li > a:focus:before, #header-right-menu > ul > li > a, #header-right-menu ul ul li a, #header-left-menu > ul > li > a, #top-menu > ul > li:hover > a, #top-menu ul li.active a, #cssmenu > ul > li:hover > a, #cssmenu > ul > li.current-menu-item a
-        {
+      #menu-style-header > ul > li:before {
            border-color: ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
         }
 
-      /*all top menu hover effect border hover color*/
-
-      #header-left-menu ul ul li a:hover, #header-left-menu > ul > li:hover > a, #header-left-menu ul li.active a
-        {
-           border-color: ".esc_attr(get_theme_mod('secondaryColor','#000000')).";
-        }
-
-      /*all top menu hover effect background border color*/
-      
-      #header-menu-style > ul > li::before, #header-menu-style > ul > li::after, #style-menu > ul > li:before, #header-top-menu > ul > li::before, #header-top-menu > ul > li::after
-        {
-          background-color: ".get_theme_mod('themeColor','#ea8800').";
-        } 
-
       /*all menu arrow border color*/
 
-      #menu-style > ul > li.has-sub > a::after, #menu-style ul ul li.has-sub > a::after, #menu-style-header > ul > li.has-sub > a::after, #menu-style-header ul ul li.has-sub > a::after, #header-menu-style > ul > li.has-sub > a::after, #header-menu-style ul ul li.has-sub > a::after, #header-style-menu > ul > li.has-sub > a::after, #header-style-menu ul ul li.has-sub > a::after, #style-menu > ul > li.has-sub > a::after, #style-menu ul ul li.has-sub > a::after, #header-right-menu > ul > li.has-sub > a::before, #header-right-menu ul ul li.has-sub > a:before, #header-left-menu > ul > li.has-sub > a::after, #header-left-menu ul ul li.has-sub > a:after, #header-top-menu > ul > li.has-sub > a::after, #header-top-menu ul ul li.has-sub > a:after, #top-menu > ul > li.has-sub > a::after, #top-menu ul ul li.has-sub > a:after
-        {
+      #menu-style-header > ul > li.has-sub > a::after, #menu-style-header ul ul li.has-sub > a::after {
            border-color: ".esc_attr(get_theme_mod('menuTextColor','#ffffff')).";
         }
 
         /*all menu scroll arrow border color*/
 
-      .fixed-header #menu-style > ul > li.has-sub > a::after, .fixed-header #menu-style ul ul li.has-sub > a::after, .fixed-header #menu-style-header > ul > li.has-sub > a::after, .fixed-header #menu-style-header ul ul li.has-sub > a::after, .fixed-header #header-menu-style > ul > li.has-sub > a::after, .fixed-header #header-menu-style ul ul li.has-sub > a::after, .fixed-header #header-style-menu > ul > li.has-sub > a::after, .fixed-header #header-style-menu ul ul li.has-sub > a::after, .fixed-header #style-menu > ul > li.has-sub > a::after, .fixed-header #style-menu ul ul li.has-sub > a::after, .fixed-header #header-right-menu > ul > li.has-sub > a::before, .fixed-header #header-right-menu ul ul li.has-sub > a:before, .fixed-header #top-menu > ul > li.has-sub > a::after, .fixed-header #top-menu ul ul li.has-sub > a:after
-        {
+       .fixed-header #menu-style-header > ul > li.has-sub > a::after, .fixed-header #menu-style-header ul ul li.has-sub > a::after {
            border-color: ".esc_attr(get_theme_mod('menuTextColorScroll','#ffffff')).";
         }
 
@@ -971,75 +940,57 @@ function best_startup_custom_css(){
         
       /*all menu arrow border color*/
 
-      #menu-style #menu-button::before, #menu-style-header #menu-button::before, #header-menu-style #menu-button::before, #header-style-menu #menu-button::before, #style-menu #menu-button::before, .menu-global, #style-menu #menu-button::after, #menu-style .menu-opened::after, #menu-style-header .menu-opened::after, #header-menu-style .menu-opened::after, #header-style-menu .menu-opened::after
-        {
+      #menu-style-header #menu-button::before, #menu-style-header .menu-opened::after {
            border-color: ".get_theme_mod('secondaryColor','#2c3e55').";
         }
 
       /*all menu scroll arrow border color*/
 
-      .fixed-header #menu-style #menu-button::before, .fixed-header #menu-style .menu-opened::after, .fixed-header #menu-style-header #menu-button::before, .fixed-header #menu-style-header .menu-opened::after, .fixed-header #header-menu-style #menu-button::before, .fixed-header #header-menu-style .menu-opened::after, .fixed-header #header-style-menu .menu-opened::after, .fixed-header #header-style-menu #menu-button::before, .fixed-header #style-menu #menu-button::before
-        {
+      .fixed-header #menu-style-header #menu-button::before, .fixed-header #menu-style-header .menu-opened::after {
            border-color: ".get_theme_mod('menuTextColorScroll','#ffffff')." ;
         }
 
       /*all menu arrow background border color*/
       
-      #menu-style #menu-button::after, #menu-style-header #menu-button::after, #header-menu-style #menu-button::after, #header-style-menu #menu-button::after, #style-menu #menu-button::after, #style-menu .submenu-button::before, #cssmenu #menu-button span, #cssmenu #menu-button.menu-opened span:nth-child(1), #cssmenu #menu-button.menu-opened span:nth-child(6), #cssmenu #menu-button.menu-opened span:nth-child(2), #cssmenu #menu-button.menu-opened span:nth-child(5)
+      #menu-style-header #menu-button::after
         {
           background-color: ".get_theme_mod('secondaryColor','#2c3e55').";
         }
 
       /*all menu scroll arrow background border color*/
       
-      .fixed-header #menu-style #menu-button::after, .fixed-header #menu-style-header #menu-button::after, .fixed-header #header-menu-style #menu-button::after, .fixed-header #header-style-menu #menu-button::after, .fixed-header #style-menu #menu-button::after, .fixed-header #style-menu .submenu-button::before, .fixed-header #cssmenu #menu-button span, .fixed-header #cssmenu #menu-button.menu-opened span:nth-child(1), .fixed-header #cssmenu #menu-button.menu-opened span:nth-child(6), .fixed-header #cssmenu #menu-button.menu-opened span:nth-child(2), .fixed-header #cssmenu #menu-button.menu-opened span:nth-child(5), #cssmenu .submenu-button::after, #cssmenu .submenu-button::before
-        {
+      .fixed-header #menu-style-header #menu-button::after {
           background-color: ".get_theme_mod('menuTextColorScroll','#ffffff').";
         } 
 
       /*mobile menu background color*/
 
-      #menu-style .mobilemenu li a, #menu-style-header .mobilemenu li a, #header-menu-style .mobilemenu li a, #header-style-menu .mobilemenu li a, #style-menu .mobilemenu li a, #top-menu ul.offside li a, #header-top-menu ul.offside li a, #header-right-menu > ul > li > a, #header-left-menu > ul > li > a, #header-right-menu ul ul li a, #header-left-menu ul ul li a, #cssmenu > ul > li > a, #cssmenu ul ul li a
-        {
+      #menu-style-header .mobilemenu li a{
            background-color: ".get_theme_mod('menuBackgroundColorScroll','#ffffff').";
            color: ".esc_attr(get_theme_mod('menuTextColorScroll','#2c3e55')).";
         }
 
-        #menu-style .mobilemenu li a:hover, #menu-style-header .mobilemenu li a:hover, #header-menu-style .mobilemenu li a:hover, #header-style-menu .mobilemenu li a:hover, #style-menu .mobilemenu li a:hover, #top-menu ul.offside li a:hover, #header-top-menu ul.offside li a:hover, #header-right-menu > ul > li > a:hover, #header-left-menu > ul > li > a:hover, #header-right-menu ul ul li a:hover, #header-left-menu ul ul li a:hover
-        {
+        #menu-style-header .mobilemenu li a:hover{
            background-color: ".get_theme_mod('themeColor','#ea8800').";
         }
 
-        #menu-style .mobilemenu li:hover > a, #menu-style-header .mobilemenu li:hover > a, #header-menu-style .mobilemenu li:hover > a, #header-style-menu .mobilemenu li:hover > a, #style-menu .mobilemenu li:hover > a, #top-menu ul.offside li:hover > a, #header-top-menu ul.offside li:hover > a, #cssmenu > ul > li > a:hover
-        {
+        #menu-style-header .mobilemenu li:hover > a  {
            background-color: ".get_theme_mod('themeColor','#ea8800').";
         }
 
-        #top-menu .submenu-button::before, #header-right-menu .submenu-button::before, #header-left-menu .submenu-button::before, #header-top-menu .submenu-button::before {
-           color: ".esc_attr(get_theme_mod('menuTextColorScroll','#ffffff')).";
-        }
-
-
-        #menu-style .submenu-button::before, #menu-style .submenu-button::after, #menu-style-header .submenu-button::before, #menu-style-header .submenu-button::after, #header-menu-style .submenu-button::before, #header-menu-style .submenu-button::after, #header-style-menu .submenu-button::before, #header-style-menu .submenu-button::after, #style-menu .submenu-button::after, #style-menu .submenu-button::before
-        {
+        #menu-style-header .submenu-button::before, #menu-style-header .submenu-button::after{
            background-color: ".get_theme_mod('menuTextColorScroll','#ffffff').";
-        }
-
-      /*all top menu hover effect background border color*/
-      
-      #header-menu-style > ul > li::before, #header-menu-style > ul > li::after, #style-menu > ul > li:before, #header-top-menu > ul > li::before, #header-top-menu > ul > li::after
-        {
-          background: none;
-        } 
-
-      #header-right-menu > ul > li > a, #header-right-menu ul ul li a, #header-left-menu > ul > li > a, #top-menu > ul > li:hover > a, #top-menu ul li.active a {
-          border-top:1px solid #ddd;
-        }
+        }     
 
       }   
 
       /*  Menu Css Cutomization */
     ";
+  if(has_header_image()){
+     
+      $url = get_header_image();
+      $custom_css .= ".blog-heading-wrap {background-image:url(".esc_url_raw($url).");}";
+  }
   $custom_css .= wp_kses_post(get_theme_mod('customCss'));
   wp_add_inline_style( 'best_startup_style', $custom_css ); 
 

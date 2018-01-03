@@ -498,7 +498,7 @@ p {
 }
 .title-data h2 a {
     color: #ea8800;
-    line-height: 21px;
+    line-height: 30px;
     font-weight: bolder;
     text-align: left;
     text-transform: uppercase;
@@ -1222,9 +1222,6 @@ span.wpcf7-not-valid-tip {
 .owl-carousel .owl-item img {
     transform-style: preserve-3d;
 }
-.blog-carousel .blog-carousel-title {
-    /*padding: 0 0 15px;*/
-}
 .blog-carousel .blog-carousel-title h4 {
     color: #ea8800;
     text-transform: uppercase;
@@ -1234,14 +1231,9 @@ span.wpcf7-not-valid-tip {
     word-break: break-all;
     overflow: hidden;
 }
-.blog-carousel .blog-carousel-title {
-    /*padding: 15px 0;*/
-}
+
 .blog-carousel .blog-carousel-title p {
     font-size: 12px;
-}
-.blog-carousel .blog-carousel-content {
-    /*padding: 15px 0;*/
 }
 .blog-carousel-content p {
     display: inline;
@@ -1543,9 +1535,7 @@ span.wpcf7-not-valid-tip {
 }
 /* Index page end */
 /* About-me page start */
-.about-me-heading-wrap {
-    background-image: url(../images/heading-about-me-bg.jpg);
-}
+
 .about-me-content {
     padding: 45px 0;
 }
@@ -1679,9 +1669,7 @@ span.wpcf7-not-valid-tip {
 }
 /* About-me page end */
 /* Services page start */
-.services-heading-wrap {
-    background-image: url(../images/best-startup.jpg);
-}
+
 .services-tab-blank .tab-menu-area,
 .services-tab-blank .tab-content-area {
     padding: 45px 15px;
@@ -1712,9 +1700,7 @@ span.wpcf7-not-valid-tip {
 }
 /* Services page end */
 /* Blog page start */
-.blog-heading-wrap {
-    background-image: url(../images/best-startup.jpg);
-}
+
 .blog-menu-area {
     padding: 45px 15px;
 }
@@ -1850,11 +1836,12 @@ button.search-submit {
     max-width: 500px;
     margin: 0 auto;
 }
+.blog-heading-wrap{
+    background: linear-gradient(to right, #ea8800 , #F2C94C );
+}
 /* Blog page end */
 /* Single-blog page start */
-.single-blog-heading-wrap {
-    background-image: url(../images/heading-single-blog-bg.jpg);
-}
+
 .single-blog-menu-area {
     padding: 45px 0;
 }
@@ -2121,9 +2108,7 @@ button.search-submit {
 }
 /* Single-blog page end */
 /* Contact-me page start */
-.contact-me-heading-wrap {
-    background-image: url(../images/heading-contact-me-bg.jpg);
-}
+
 .contact-me-map {
     line-height: 0;
     position: relative;

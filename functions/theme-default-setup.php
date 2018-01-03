@@ -111,7 +111,7 @@ function best_startup_action_tgm_plugin_active_register_required_plugins() {
         'is_automatic' => false,
         'message'      => '',
         'strings'      => array(
-           'page_title'                      => __( 'Install Required Plugins', 'best-startup' ),
+           'page_title'                      => __( 'Install Recommended Plugins', 'best-startup' ),
            'menu_title'                      => __( 'Install Plugins', 'best-startup' ),
            'installing'                      => __( 'Installing Plugin: %s', 'best-startup' ), 
            'oops'                            => __( 'Something went wrong with the plugin API.', 'best-startup' ),

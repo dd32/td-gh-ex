@@ -3,16 +3,11 @@
  * Search Template File
  */
 get_header(); ?>
-<style type="text/css">
-.blog-heading-wrap {
-    background-image: url('<?php header_image(); ?>');
-}
-</style>
 <div class="heading-wrap blog-heading-wrap">
     <div class="heading-layer">
         <div class="heading-title">
             <h4><?php
-                _e('Search results for', 'best-startup');
+                esc_html_e('Search results for', 'best-startup');
                 echo " : " . get_search_query();
             ?></h4>
         </div>
@@ -28,7 +23,7 @@ get_header(); ?>
                     <div class="blog-content-area fadeIn animated">
                         <div class="search-area">
                             <p class="spage">
-                                <?php _e('Sorry, but nothing matched your search terms. Please try again with some different keywords', 'best-startup'); ?>.</p>
+                                <?php esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords', 'best-startup'); ?>.</p>
                             <?php get_search_form(); ?>
                         </div>
                     </div>
