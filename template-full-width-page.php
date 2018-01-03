@@ -5,7 +5,7 @@
  * This page template will display any functions hooked into the `full width page` action.
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * Template name: Full-Width Page Template
+ * Template name: Full width
  *
  * @package Avior
  */

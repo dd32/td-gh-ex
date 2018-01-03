@@ -14,10 +14,6 @@ Description: Used to style the TinyMCE editor.
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-*:focus {
-  outline: none;
-}
-
 html {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -115,7 +111,7 @@ pre {
   overflow: auto;
   font-size: inherit;
   line-height: inherit;
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Courier 10 Pitch", Courier, monospace;
   margin: 0 0 1.6em;
 }
 
@@ -194,14 +190,14 @@ a:hover, a:active {
 a:hover {
   text-decoration: underline;
 }
+a:focus {
+  outline: thin dotted;
+  outline-color: #333333;
+}
 
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
-blockquote, q {
-  quotes: "" "";
-}
-
 blockquote {
   quotes: "" "";
   font-family: "Source Serif Pro", serif;

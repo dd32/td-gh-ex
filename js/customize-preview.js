@@ -29,25 +29,25 @@
     api( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
 			if ( 'blank' === to ) {
-				$( '.site-title a, .site-description' ).css( {
+				$( '.site-title a' ).css( {
 					'clip': 'rect(1px, 1px, 1px, 1px)',
 					'position': 'absolute'
 				} );
 			} else {
-				$( '.site-title a, .site-description' ).css( {
+				$( '.site-title a' ).css( {
 					'clip': 'auto',
 					'position': 'relative'
 				} );
-				$( '.site-title a, .site-description' ).css( {
+				$( '.menu-toggle,.main-navigation,.site-header .site-title, .top-navigation-right .theme-social-menu > li > a, .top-navigation-right .nav-menu > li > a, .main-navigation .theme-social-menu > li > a, .main-navigation .nav-menu > li > a' ).css( {
 					'color': to
 				} );
+
 			}
 		} );
 	} );
     // Color Scheme CSS.
     api.bind( 'preview-ready', function() {
         api.preview.bind( 'update-color-scheme-css', function( css ) {
-			console.log('update-color-scheme-css');
             style.html( css );
         } );
     } );

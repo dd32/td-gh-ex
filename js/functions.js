@@ -14,7 +14,7 @@
             'aria-expanded': false
         }).append($('<span />', {
             'class': 'screen-reader-text',
-            text: screenReaderText.expand
+            text: avior_screenReaderText.expand
         }));
 
         container.find('.menu-item-has-children > a').after(dropdownToggle);
@@ -37,7 +37,7 @@
             // jscs:disable
             _this.attr('aria-expanded', _this.attr('aria-expanded') === 'false' ? 'true' : 'false');
             // jscs:enable
-            screenReaderSpan.text(screenReaderSpan.text() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand);
+            screenReaderSpan.text(screenReaderSpan.text() === avior_screenReaderText.expand ? avior_screenReaderText.collapse : screenReaderText.expand);
         });
     }
 

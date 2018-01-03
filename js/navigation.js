@@ -105,4 +105,4 @@
 	}( container ) );
 } )();
 
-/* global screenReaderText */
+/* global avior_screenReaderText */
