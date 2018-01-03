@@ -95,6 +95,9 @@ Turkish - Emre Dalkili�
 
 == Changelog ==
 
+= 3.0.1 =
+* Fixed echo function in header.php
+
 = 3.0 =
 * PERFORMED A VISUAL REVAMP OF THE THEME TO BRING IT UP TO DATE WITH CURRENT DESIGN TRENDS
 * Changed default site width, default content, headings and meta font sizes and font families, some default colors

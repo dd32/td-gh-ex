@@ -38,7 +38,7 @@
 
 			</div><!-- #branding -->
 
-            <a id="nav-toggle"><span>&nbsp; <?php echo ('Menu', 'mantra');?></span></a>
+            <a id="nav-toggle"><span>&nbsp; <?php _e('Menu', 'mantra');?></span></a>
 			<nav id="access" class="jssafe" role="navigation">
 
 				<?php cryout_access_hook();?>
