@@ -55,7 +55,7 @@ if (! function_exists('bestblog_post_image_html')) :
 */
 function bestblog_post_image_html($html, $post_id, $post_image_id)
 {
-    if (is_single()) {
+    if (is_single() || is_shop() ) {
         $html ='<span class="thumbnail-resize" >'. $html . '</span>';
     } else {
         $html = ' <a href="' . esc_url(get_permalink($post_id)) . '" alt="' . esc_attr(get_the_title($post_id)) . '"> <span class="thumbnail-resize" > ' . $html . '</a> </span>';
@@ -225,6 +225,7 @@ endif;
 function bestblog_time_ago() {
 	return human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ).' '.esc_html__( 'ago','best-blog' );
 }
+
 if (! function_exists('bestblog_author_bio')) :
 
 function bestblog_author_bio()

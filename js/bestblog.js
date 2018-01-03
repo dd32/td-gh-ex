@@ -40,13 +40,14 @@ jQuery(document).ready(function($) {
   });
 
   $('.slick-slider').slick({
-    centerMode: true,
-    centerPadding: '60px',
     slidesToShow:1,
-    fade: true,
     cssEase: 'linear',
+    pauseOnHover:false,
+    autoplay:true,
+    autoplaySpeed: 4000,
+    speed:400,
     prevArrow: '<div  class="bestblog-slider-nav bestblog-slider-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>',
-	nextArrow: '<div  class="bestblog-slider-nav bestblog-slider-next "><i class="fa fa-angle-right" aria-hidden="true"></i></div>'
+	  nextArrow: '<div  class="bestblog-slider-nav bestblog-slider-next "><i class="fa fa-angle-right" aria-hidden="true"></i></div>'
   });
 });
 /* --------------------------------------------

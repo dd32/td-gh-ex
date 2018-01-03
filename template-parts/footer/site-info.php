@@ -11,13 +11,11 @@
 ?>
 <!--COPYRIGHT TEXT-->
 <div id="footer-copyright" class="footer-copyright-wrap">
-	<?php
-		 $bestblog_footertext = html_entity_decode(get_theme_mod ('bestblog_footertext'));
- ?>
- <div class="grid-container">
- <div class="callout margin-vertical-0 border-none copy-text">
-	 <a target="_blank" href="<?php echo esc_url( 'http://imonthemes.com/'); ?>"><?php printf( esc_attr__( 'Theme by %s', 'best-blog' ), 'Imon Themes' ); ?></a>
-	 <?php echo $bestblog_footertext;?>
- </div>
- </div>
+	<?php $bestblog_footertext = html_entity_decode(get_theme_mod ('bestblog_footertext'));?>
+	<div class="grid-container">
+		<div class="callout margin-vertical-0 border-none copy-text">
+			<?php echo $bestblog_footertext;?>
+			<a target="_blank" href="<?php echo esc_url( 'http://imonthemes.com/'); ?>"><?php printf( esc_attr__( 'Theme by %s', 'best-blog' ), 'Imon Themes' ); ?></a>
+		</div>
+	</div>
 </div>

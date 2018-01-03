@@ -9,16 +9,14 @@
  */
 
 ?>
-
 <?php if ( is_active_sidebar( 'foot_sidebar' ) ) { ?>
-<!--FOOTER WIDGETS-->
-    <div class="top-footer-wrap">
-      <div class="grid-container">
-      <div class="grid-x grid-padding-x align-center " >
-				<?php if ( is_active_sidebar('dynamic_sidebar') || !dynamic_sidebar('foot_sidebar') ) : ?><?php endif; ?>
+  <!--FOOTER WIDGETS-->
+  <div class="top-footer-wrap">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x align-center ">
+        <?php if ( is_active_sidebar('dynamic_sidebar') || !dynamic_sidebar('foot_sidebar') ) : ?><?php endif; ?>
+      </div>
     </div>
   </div>
-
-    </div>
-    <!--FOOTER WIDGETS END-->
-    <?php } ?>
+  <!--FOOTER WIDGETS END-->
+<?php } ?>

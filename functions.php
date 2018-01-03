@@ -40,6 +40,10 @@ function bestblog_setup()
 
     // Declare WooCommerce support
     add_theme_support('woocommerce');
+		// Add theme support for woocommerce product gallery added in WooCommerce 3.0.
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-slider' );
 
     //Custom Background
     $args = array(
@@ -273,7 +277,15 @@ function bestblog_widgets_init()
 		'before_title'  => '<div class="widget-title "> <h3>',
 		'after_title'   => '</h3></div>'
 		));
-
+		register_sidebar(array(
+		'name'          => __('WooCommerce sidebar Widgets', 'best-blog'),
+		'id'            => 'woocommerce-sidebar-bestblog',
+		'description'   => __('Home Right Sidebar', 'best-blog'),
+		'before_widget' => '<div id="%1$s" class="widget %2$s sidebar-item cell small-24 medium-12 large-24"><div class="widget_wrap woocommerce_sidebar ">',
+		'after_widget'  => '</div></div>',
+		'before_title'  => '<div class="widget-title "> <h3>',
+		'after_title'   => '</h3></div>'
+		));
     register_sidebar(array(
     'name'          => __('Footer Widgets', 'best-blog'),
     'id'            => 'foot_sidebar',
@@ -287,8 +299,26 @@ function bestblog_widgets_init()
 
 add_action('widgets_init', 'bestblog_widgets_init');
 
+/**
+ * Checks whether woocommerce is active or not
+ *
+ * @return boolean
+ */
+function bestblog_is_woocommerce_active() {
+	if ( class_exists( 'woocommerce' ) ) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
 
+/**
+ * If woocommerce is active, load compatibility file
+ */
+if ( bestblog_is_woocommerce_active() ) {
+	require get_template_directory() . '/inc/woocommerce.php';
+}
 
 
 /** call widgets */

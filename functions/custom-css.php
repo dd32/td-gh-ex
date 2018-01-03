@@ -1,10 +1,10 @@
 <?php
 /**
- * newspapers Theme Custom color
+ * best blog Theme Custom color
  *
- * @package themezwp
- * @subpackage newspapers
- * @since newspapers 1.0.0
+ * @package imon themes
+ * @subpackage best blog
+ * @since best blog 1.0.0
  */
 
 function bestblog_inline_style() {

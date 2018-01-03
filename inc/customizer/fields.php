@@ -63,17 +63,17 @@ Kirki::add_field('best_blog', array(
     ),
     'output' => array(
         array(
-            'element' => '#sub_banner .breadcrumbs a,.post-wrap-layout-2 .card .category.text-info a,.button.hollow.secondary,.single-header-warp .post-meta a,.comment-title h2,h2.comment-reply-title,.logged-in-as a,.author-title a',
+            'element' => '#sub_banner .breadcrumbs a,.post-wrap-layout-2 .card .category.text-info a,.button.hollow.secondary,.single-header-warp .post-meta a,.comment-title h2,h2.comment-reply-title,.logged-in-as a,.author-title a,.woocommerce ul.products li.product a, .woocommerce ul.products li.product .woocommerce-loop-category__title, .woocommerce ul.products li.product .woocommerce-loop-product__title, .woocommerce ul.products li.product h3, .woocommerce ul.products li.product .price, .woocommerce div.product .woocommerce-tabs ul.tabs li.active a,.woocommerce .star-rating span::before,.card .card-footer .right .button.add_to_cart_button,.woocommerce div.product .woocommerce-tabs ul.tabs.wc-tabs li.active a,.woocommerce-product-rating a',
             'property' => 'color',
             'units' => ''
         ),
         array(
-            'element' => '.sidebar-inner .widget_wrap ul li,.comment-list .comment-reply-link,.navigation .nav-links .current,.single-cats.button-group .button,.bestblog-author-bttom .button,.comment-form .form-submit input#submit, a.box-comment-btn, .comment-form .form-submit input[type="submit"],.scroll_to_top.floating-action.button,.button.secondary,.block-content-none .search-submit',
+            'element' => '.sidebar-inner .widget_wrap ul li,.comment-list .comment-reply-link,.navigation .nav-links .current,.single-cats.button-group .button,.bestblog-author-bttom .button,.comment-form .form-submit input#submit, a.box-comment-btn, .comment-form .form-submit input[type="submit"],.scroll_to_top.floating-action.button,.button.secondary,.block-content-none .search-submit,h1.entry-title::after',
 						'property' => 'background',
             'units' => ''
         ),
 				array(
-						'element' => '.multilevel-offcanvas.off-canvas.is-transition-overlap.is-open,.button.hollow.secondary,.sidebar-inner .widget_wrap ul li,.sidebar-inner .widget_wrap,.single-header-warp',
+						'element' => '.multilevel-offcanvas.off-canvas.is-transition-overlap.is-open,.button.hollow.secondary,.sidebar-inner .widget_wrap ul li,.sidebar-inner .widget_wrap,.single-header-warp,.woocommerce div.product .woocommerce-tabs ul.tabs.wc-tabs li.active a',
 						'property' => 'border-color',
 						'units' => ''
 				),
@@ -93,7 +93,7 @@ Kirki::add_field('best_blog', array(
     ),
 		'output' => array(
         array(
-            'element' => '',
+            'element' => '.card .card-footer .right .button.add_to_cart_button:hover,.woocommerce div.product .woocommerce-tabs ul.tabs.wc-tabs li a:hover',
             'property' => 'color',
             'units' => ''
         ),
@@ -103,7 +103,7 @@ Kirki::add_field('best_blog', array(
             'units' => ''
         ),
 				array(
-						'element' => '.button.hollow.secondary:hover',
+						'element' => '.button.hollow.secondary:hover,.woocommerce div.product .woocommerce-tabs ul.tabs.wc-tabs li.active a:hover,.woocommerce div.product .woocommerce-tabs ul.tabs.wc-tabs li a:hover',
 						'property' => 'border-color',
 						'units' => ''
 				),
@@ -238,7 +238,7 @@ Kirki::add_field( 'best_blog', array(
 	),
 	'output' => array(
 			array(
-					'element' => '.menu-outer,#sub_banner .top-bar,.main-menu-wrap .is-dropdown-submenu-parent .submenu li a',
+					'element' => '.menu-outer,#sub_banner,.main-menu-wrap .is-dropdown-submenu-parent .submenu li a',
 					'property' => 'background-color',
 					'units' => ''
 			)
@@ -339,7 +339,7 @@ Kirki::add_field( 'best_blog', array(
 	'priority'    => 10,
   'output' => array(
       array(
-          'element' => '#footer .footer-copyright-wrap,.footer-copyright-text p,.footer-copyright-wrap a,.footer-copyright-wrap li,.footer-copyright-wrap ul,.footer-copyright-text ol',
+          'element' => '.copy-text,#footer .footer-copyright-wrap,.footer-copyright-text p,.footer-copyright-wrap a,.footer-copyright-wrap li,.footer-copyright-wrap ul,.footer-copyright-text ol',
           'property' => 'color',
           'units' => ''
       ),
@@ -357,14 +357,17 @@ Kirki::add_field('best_blog', array(
     'label' => __('Copyright text', 'best-blog'),
     'section' => 'bestblog_copyright_settings',
     'priority' => 10,
-    'transport' => 'postMessage',
-    'js_vars' => array(
-        array(
-            'element' => '.footer-copyright-wrap ,.footer-copyright-wrap p,.footer-copyright-wrap h1,.footer-copyright-wrap li,.footer-copyright-wrap ul',
-            'function' => 'html'
-        )
-    )
-));
+		'transport' => 'postMessage',
+		'partial_refresh' => array(
+				'bestblog_footertext' => array(
+						'selector' => '#footer-copyright',
+						'render_callback' => function()
+							{
+								get_template_part('template-parts/footer/site-info');
+							}
+				),
+		),
+	));
 
 /*=============================================>>>>>
 = slider options =

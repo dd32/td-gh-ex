@@ -6,8 +6,6 @@
  */
 ?>
 
-
-
 <?php
 $category_show = get_theme_mod( 'category_show_slider');
 $post_order_by = get_theme_mod( 'slider_post_order_by','date' );
