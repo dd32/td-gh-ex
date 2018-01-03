@@ -7,118 +7,44 @@
  * @subpackage Functions
  */
 
-if ( ! function_exists( 'mantra_frontpage_css' ) ) :
-function mantra_frontpage_css() {
-	$mantra_options= mantra_get_theme_options();
-	foreach ($mantra_options as $key => $value) { ${"$key"} = $value; }
-	ob_start();
-	echo '<style type="text/css">/* Mantra frontpage CSS */'; ?>
-<?php if ($mantra_fronthideheader) {?> #branding {display:none;} <?php }
-	  if ($mantra_fronthidemenu) {?> #access {display:none;} <?php }
-  	  if ($mantra_fronthidewidget) {?> #colophon {display:none;} <?php }
-	  if ($mantra_fronthidefooter) {?> #footer2 {display:none;} <?php }
-      if ($mantra_fronthideback) {?> #main {background:none;} <?php } ?>
-
-.slider-wrapper { display:block; float:none; width:100%; margin:0 auto; }
-
-#slider{
-	max-width:<?php echo $mantra_fpsliderwidth ?>px ;
-	height:<?php echo $mantra_fpsliderheight ?>px ;
-	margin:30px auto 20px; display:block; float:none;
-	border:<?php echo $mantra_fpsliderborderwidth.'px solid '.$mantra_fpsliderbordercolor; ?>; }
-
-#front-text1 h1, #front-text2 h1 { display:block; float:none; margin:35px auto; text-align:center; font-size:32px;
-	clear:both; line-height:32px; font-weight:bold; color:<?php echo $mantra_fronttitlecolor; ?>; }
-
-#front-text2 h1{ font-size:28px; line-height:28px; margin-top:0px; margin-bottom:25px; }
-
-#frontpage blockquote { width:88%; max-width:88% !important; margin-bottom:20px;
-	font-size:16px; line-height:22px; color:#444; }
-
-#frontpage #front-text4 blockquote { font-size:14px; line-height:18px; color:#666; }
-
-#frontpage blockquote:before, #frontpage blockquote:after { content:none; }
-
-#front-columns > div { display:block; width:<?php
-switch ($mantra_nrcolumns) {
-    case 0: break;
-	case 1: echo "95"; break;
-    case 2: echo "45"; break;
-    case 3: echo "29"; break;
-    case 4: echo "21"; break;
-} ?>%; height:auto; margin-left:2%; margin-right:2%; margin-bottom:10px; float:left; }
-
-.column-image { height:<?php echo $mantra_colimageheight ?>px; border:3px solid #eee; }
-
-.theme-default .nivo-controlNav {margin-left:0;}
-<?php
-switch($mantra_fpslidernav):
-    case "Bullets": break;
-	case "Numbers": ?>
-.theme-default .nivo-controlNav {bottom:-40px;}
-.theme-default .nivo-controlNav a { background: none; text-decoration:underline; text-indent:0; }
-<?php break;
-    case "None": ?>
-.theme-default .nivo-controlNav { display:none; }
-<?php break;
-endswitch; 
-    echo "</style>\n";
-	$mantra_presentation_page_styling = ob_get_contents();
-	ob_end_clean();
-	return $mantra_presentation_page_styling;
-} // mantra_frontpage_css()
-endif;
-
+ // Front page generator
 if ( ! function_exists( 'mantra_frontpage_generator' ) ) :
-// Front page generator
 function mantra_frontpage_generator() {
-$mantra_options= mantra_get_theme_options();
-foreach ($mantra_options as $key => $value) {
-     ${"$key"} = $value ;
+	$mantra_options= mantra_get_theme_options();
+	foreach ($mantra_options as $key => $value) {
+	     ${"$key"} = $value ;
 }
 ?>
 
 <script type="text/javascript">
-
-jQuery(document).ready(function() {
-	<?php if ($mantra_slideType!="Slider Shortcode") { ?> 
-	/* Slider */
-    jQuery('#slider').nivoSlider({
-		effect: '<?php  echo $mantra_fpslideranim; ?>',
-		animSpeed: <?php echo $mantra_fpslidertime ?>,
-		<?php	if($mantra_fpsliderarrows=="Hidden") { ?> directionNav: false, <?php }
-		if($mantra_fpsliderarrows=="Always Visible") { ?>  directionNav: true, <?php } ?>
-		pauseTime: <?php echo $mantra_fpsliderpause ?>
+	jQuery(document).ready(function() {
+		<?php if ($mantra_slideType!="Slider Shortcode") { ?>
+		/* Slider */
+	    jQuery('#slider').nivoSlider({
+			effect: '<?php  echo $mantra_fpslideranim; ?>',
+			animSpeed: <?php echo $mantra_fpslidertime ?>,
+			<?php	if($mantra_fpsliderarrows=="Hidden") { ?> directionNav: false, <?php }
+			if($mantra_fpsliderarrows=="Always Visible") { ?>  directionNav: true, <?php } ?>
+			pauseTime: <?php echo $mantra_fpsliderpause ?>
+		});
+		<?php } ?>
 	});
-	<?php } ?>
-
-	/* Flash animation for columns */
-	jQuery('#front-columns > div img').hover( function() {
-	      jQuery(this)
-			 .stop()
-             .animate({opacity: 0.5}, 100)
-             .fadeOut(100)
-			 .fadeIn(100)
-             .animate({opacity: 0.999}, 100) ;
-	}, function() {jQuery(this).stop();} )
-
-});
 </script>
 
 <div id="frontpage">
 	<?php
 
 	// First FrontPage Title
-	if($mantra_fronttext1) {?><div id="front-text1"> <h1><?php echo esc_attr($mantra_fronttext1) ?> </h1></div><?php }
-	
-	// Slider 
- 	if ($mantra_slideType=="Slider Shortcode") { ?> 
- 	    <div class="slider-wrapper"> 
- 	    <?php echo do_shortcode( $mantra_slideShortcode ); ?> 
- 	    </div> <?php 
- 	} else { 
+	if($mantra_fronttext1) {?><div id="front-text1"> <h2><?php echo esc_attr($mantra_fronttext1) ?> </h2></div><?php }
+
+	// Slider
+ 	if ($mantra_slideType=="Slider Shortcode") { ?>
+ 	    <div class="slider-wrapper">
+ 	    <?php echo do_shortcode( $mantra_slideShortcode ); ?>
+ 	    </div> <?php
+ 	} else {
 		// The built-in slider
-		
+
 		// When a post query has been selected from the Slider type in the admin area
 		if ($mantra_slideType != 'Custom Slides') {
 			global $post;
@@ -153,37 +79,37 @@ jQuery(document).ready(function() {
 					$pieces_array = explode(",", $mantra_slideSpecific);
 					$custom_query->query(array( 'post_type' => 'any', 'showposts' => -1, 'post__in' => $pieces_array, 'ignore_sticky_posts' => 1, 'orderby' => 'post__in' ));
 					break;
-				
-			} // switch 
-			
+
+			} // switch
+
 			// Variables for matching slider number with caption number
 			$mantra_cycle1=0;
-			$mantra_cycle2=0; ?> 
+			$mantra_cycle2=0; ?>
 			<div class="slider-wrapper theme-default">
 					<div class="ribbon"></div>
 					<div id="slider" class="nivoSlider <?php if($mantra_fpsliderarrows=="Visible on Hover"): ?>slider-navhover<?php endif; ?>">
-						<?php 
+						<?php
 						// Loop for creating the slides
-						if ( $custom_query->have_posts() ) while ( $custom_query->have_posts()) : 
+						if ( $custom_query->have_posts() ) while ( $custom_query->have_posts()) :
 							$custom_query->the_post();
 
 							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),'slider');
 							$mantra_cycle1++; ?>
 							<a href="<?php the_permalink(); ?>"><img src="<?php echo $image[0]; ?>"  alt=""  title="#caption<?php echo $mantra_cycle1;?>"  /></a> <?php
-						
-						endwhile; // end of the loop. 
+
+						endwhile; // end of the loop.
 						?>
 					</div>
 					<?php
 					// Loop for creating the captions
-					if ($custom_query->have_posts() ) while ( $custom_query->have_posts() ) : 
+					if ($custom_query->have_posts() ) while ( $custom_query->have_posts() ) :
 						$custom_query->the_post();
 						$mantra_cycle2++; ?>
 
 						<div id="caption<?php echo $mantra_cycle2;?>" class="nivo-html-caption">
-							<?php the_title("<h2>","</h2>"); the_excerpt(); ?>
-						</div> 
-						<?php 
+							<?php the_title("<h3>","</h3>"); the_excerpt(); ?>
+						</div>
+						<?php
 					endwhile; // end of the loop. ?>
 
 			</div>
@@ -194,7 +120,7 @@ jQuery(document).ready(function() {
 		<div class="slider-wrapper theme-default">
 			<div class="ribbon"></div>
 			<div id="slider" class="nivoSlider <?php if($mantra_fpsliderarrows=="Visible on Hover"): ?>slider-navhover<?php endif; ?>">
-				<?php  
+				<?php
 				for ( $mantra_cycle1=1; $mantra_cycle1<=5; $mantra_cycle1++ )
 					if(${"mantra_sliderimg$mantra_cycle1"}) { ?>
 						<a href='<?php echo esc_url(${"mantra_sliderlink$mantra_cycle1"}) ?>'>
@@ -202,48 +128,51 @@ jQuery(document).ready(function() {
 						</a>
 					<?php } ?>
 			</div>
-			<?php 
+			<?php
 			for ( $mantra_cycle1=1; $mantra_cycle1<=5; $mantra_cycle1++ ) { ?>
 				<div id="caption<?php echo $mantra_cycle1;?>" class="nivo-html-caption">
-					<?php echo '<h2>'.${"mantra_slidertitle$mantra_cycle1"}.'</h2>'.${"mantra_slidertext$mantra_cycle1"} ?>
+					<?php echo '<h3>'.${"mantra_slidertitle$mantra_cycle1"}.'</h3>'.${"mantra_slidertext$mantra_cycle1"} ?>
 				</div>
 			<?php } ?>
-		</div> <?php 
+		</div> <?php
 		} // if custom slides
-		
+
 	} // if built-in slider
 
 	// Second FrontPage title
-	 if($mantra_fronttext2) {?><div id="front-text2"> <h1><?php echo esc_attr($mantra_fronttext2) ?> </h1></div><?php }
+	 if($mantra_fronttext2) {?><div id="front-text2"> <h2><?php echo esc_attr($mantra_fronttext2) ?> </h2></div><?php }
 
 	// Frontpage columns
 	if($mantra_nrcolumns) { ?>
-		<div id="front-columns">
+		<div id="front-columns" class="front-columns-<?php echo $mantra_nrcolumns;?>">
 			<?php for ($mantra_cycle = 1; $mantra_cycle <= $mantra_nrcolumns; $mantra_cycle++ ) { ?>
 					<div id="column<?php echo $mantra_cycle ?>">
-					<a href="<?php echo esc_url(${'mantra_columnlink'.$mantra_cycle}) ?>">
-						<div class="column-image">
-							<img src="<?php echo esc_url(${'mantra_columnimg'.$mantra_cycle}) ?>" id="columnImage<?php echo $mantra_cycle ?>" alt="" /> 
-						</div>
-						<h3><?php echo ${'mantra_columntitle'.$mantra_cycle} ?></h3>
-					</a>
+
+					<div class="column-image">
+						<a href="<?php echo esc_url(${'mantra_columnlink'.$mantra_cycle}) ?>">
+							<img src="<?php echo esc_url(${'mantra_columnimg'.$mantra_cycle}) ?>" id="columnImage<?php echo $mantra_cycle ?>" alt="" />
+						</a>
+					</div>
+
+					<h3><a href="<?php echo esc_url(${'mantra_columnlink'.$mantra_cycle}) ?>"><?php echo ${'mantra_columntitle'.$mantra_cycle} ?></a></h3>
+
 					<div class="column-text"><?php echo do_shortcode (${'mantra_columntext'.$mantra_cycle} ); ?></div>
-					<?php if($mantra_columnreadmore) {?>	
-						<div class="columnmore"> 
+					<?php if($mantra_columnreadmore) {?>
+						<div class="columnmore">
 							<a href="<?php echo esc_url(${'mantra_columnlink'.$mantra_cycle}) ?>"><?php echo esc_attr($mantra_columnreadmore) ?> &raquo;</a>
 						</div>
 					<?php } // if ?>
-					</div>				
-			<?php } // for ?>			
+					</div>
+			<?php } // for ?>
 		</div>
 	<?php }
 
 	 // Frontpage text areas
-	  if($mantra_fronttext3) {?><div id="front-text3"> <blockquote><?php echo do_shortcode( $mantra_fronttext3 ) ?> </blockquote></div><?php }
-	  if($mantra_fronttext4) {?><div id="front-text4"> <blockquote><?php echo do_shortcode( $mantra_fronttext4 ) ?> </blockquote></div><?php }
+	  if($mantra_fronttext3) {?><div id="front-text3" class="front-text"><?php echo do_shortcode( $mantra_fronttext3 ) ?></div><?php }
+	  if($mantra_fronttext4) {?><div id="front-text4" class="front-text"><?php echo do_shortcode( $mantra_fronttext4 ) ?></div><?php }
 
 	 ?>
 </div> <!-- frontpage -->
- <?php  } // End of mantra_frontpage_generator
+<?php  } // mantra_frontpage_generator()
 endif;
 ?>

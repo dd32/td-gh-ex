@@ -49,7 +49,7 @@ function mantra_add_page_fn() {
 // Adding the styles for the Mantra admin page used when mantra_add_page_fn() is launched
 function mantra_admin_styles() {
 	wp_register_style( 'mantra-admin-style',get_template_directory_uri() . '/admin/css/admin.css', NULL, _CRYOUT_THEME_VERSION  );
-	wp_register_style( 'jquery-ui-style',get_template_directory_uri() . '/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css', NULL, _CRYOUT_THEME_VERSION );
+	wp_register_style( 'jquery-ui-style',get_template_directory_uri() . '/resources/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css', NULL, _CRYOUT_THEME_VERSION );
 	wp_enqueue_style( 'mantra-admin-style' );
 	wp_enqueue_style( 'jquery-ui-style' );
 }
@@ -241,7 +241,7 @@ function mantra_page_fn() {
 	} ?>
 
 
-<div class="wrap"><!-- Admin wrap page -->
+<div class="wrap cryout-admin"><!-- Admin wrap page -->
 <h2 id="empty-placeholder-heading-for-wp441-notice-forced-move"></h2>
 
 <div id="lefty"><!-- Left side of page - the options area -->
@@ -263,7 +263,7 @@ function mantra_page_fn() {
 } ?>
 
 <div id="jsAlert" class=""><b>Checking jQuery functionality...</b><br/><em>If this message remains visible after the page has loaded then there is a problem with your WordPress jQuery library. This can have several causes, including incompatible plugins.
-The Parabola Settings page cannot function without jQuery. </em></div>
+The Settings page cannot function without jQuery.</em></div>
 
 	<div id="main-options">
 		<?php
@@ -277,6 +277,9 @@ The Parabola Settings page cannot function without jQuery. </em></div>
 
 
 <div id="righty" ><!-- Right side of page - Coffee, RSS tips and others -->
+
+	<?php do_action('mantra_before_righty') ?>
+
 	<div class="postbox donate">
 		<h3 class="hndle"> Coffee Break </h3>
 		<div class="inside"><?php echo "<p>Here at Cryout Creations (the developers of yours truly Mantra Theme), we spend night after night improving the Mantra Theme. We fix a lot of bugs (that we previously created); we add more and more customization options while also trying to keep things as simple as possible; then... we might play a game or two but rest assured that we return to read and (in most cases) reply to your late night emails and comments, take notes and draw dashboards of things to implement in future versions.</p>
@@ -314,7 +317,6 @@ The Parabola Settings page cannot function without jQuery. </em></div>
                     <input type="hidden" name="mantra_export" value="true" />
                     <input type="submit" class="button" value="<?php _e('Export Theme options', 'mantra'); ?>" />
                 </form>
-				<br>
                 <form action="" method="post">
                     <input type="hidden" name="mantra_import" value="true" />
                     <input type="submit" class="button" value="<?php _e('Import Theme options', 'mantra'); ?>" />
@@ -354,7 +356,7 @@ The Parabola Settings page cannot function without jQuery. </em></div>
 </div><!--  wrap -->
 
 <script>
-var mantra_tooltip_icon_url = '<?php echo get_template_directory_uri(); ?>/images/icon-tooltip.png'
+var mantra_tooltip_icon_url = '<?php echo get_template_directory_uri(); ?>/resources/images/icon-tooltip.png'
 </script>
 
 <?php } // mantra_page_fn()

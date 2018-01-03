@@ -38,6 +38,7 @@
 
 			</div><!-- #branding -->
 
+            <a id="nav-toggle"><span>&nbsp; <?php echo ('Menu', 'mantra');?></span></a>
 			<nav id="access" class="jssafe" role="navigation">
 
 				<?php cryout_access_hook();?>
@@ -49,11 +50,10 @@
 	<div style="clear:both;"> </div>
 
 </header><!-- #header -->
-<div id="main">
+<div id="main" class="main">
 	<div  id="forbottom" >
 		<?php cryout_forbottom_hook(); ?>
 
 		<div style="clear:both;"> </div>
-		
+
 		<?php cryout_breadcrumbs_hook();?>
-							

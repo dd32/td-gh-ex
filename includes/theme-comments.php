@@ -1,10 +1,10 @@
 <?php /*
- * Comments related functions - comments.php 
+ * Comments related functions - comments.php
  *
  * @package mantra
  * @subpackage Functions
  */
- 
+
 if ( ! function_exists( 'mantra_comment' ) ) :
 /**
  * Template for comments and pingbacks.
@@ -82,7 +82,7 @@ if ( ! function_exists( 'mantra_comments_on' ) ) :
  * Number of comments on loop post if comments are enabled.
  */
 function mantra_comments_on() {
-	printf ( comments_popup_link( __( 'Leave a comment', 'mantra' ), __( '<b>1</b> Comment', 'mantra' ), __( '<b>%</b> Comments', 'mantra' ) ));
+	printf ( comments_popup_link( __( 'Leave a comment', 'mantra' ), __( '1 Comment', 'mantra' ), __( '% Comments', 'mantra' ) ));
 }
 endif;
 
@@ -107,7 +107,7 @@ if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are t
 				<div class="nav-previous"><?php previous_comments_link( '<span class="meta-nav">&larr;</span>'.__('Older Comments', 'mantra' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'mantra' ).' <span class="meta-nav">&rarr;</span>' ); ?></div>
 			</div> <!-- .navigation -->
-<?php endif; // check for comment navigation 
+<?php endif; // check for comment navigation
 }
 
 add_action('cryout_before_comments_hook','mantra_comments_navigation');
@@ -115,26 +115,26 @@ add_action('cryout_after_comments_hook','mantra_comments_navigation');
 
 /*
 * Listing the actual comments
-* 
+*
 * Loop through and list the comments. Tell wp_list_comments()
 * to use mantra_comment() to format the comments.
 * If you want to overload this in a child theme then you can
 * define mantra_comment() and that will be used instead.
 * See mantra_comment() in mantra/functions.php for more.
  */
-function mantra_list_comments() {	
+function mantra_list_comments() {
 					wp_list_comments( array( 'callback' => 'mantra_comment' ) );
 			}
 
-add_action('cryout_comments_hook','mantra_list_comments');	
+add_action('cryout_comments_hook','mantra_list_comments');
 
 /*
  * If there are no comments and comments are closed
  */
-function mantra_comments_off() { 
+function mantra_comments_off() {
 if ( ! comments_open() ) : ?>
 	<p class="nocomments"><?php _e( 'Comments are closed.', 'mantra' ); ?></p>
-<?php endif; // end ! comments_open() 
+<?php endif; // end ! comments_open()
 }
 
 

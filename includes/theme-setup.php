@@ -6,7 +6,7 @@
  * @subpackage Functions
  */
 
-/* 
+/*
 // Bringing up Mantra Settings page after install
 if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
 	wp_redirect( 'themes.php?page=mantra-page' );
@@ -14,7 +14,7 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
 */
 
 $mantra_totalSize = $mantra_sidebar + $mantra_sidewidth+50;
- 
+
  /**
 
  *
@@ -61,7 +61,7 @@ function mantra_setup() {
 
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
-	
+
 	// Support title tag since WP 4.1
 	add_theme_support( 'title-tag' );
 
@@ -98,7 +98,7 @@ function mantra_setup() {
 	global $mantra_hheight;
 	$mantra_hheight=(int)$mantra_hheight;
 	global $mantra_totalSize;
-	add_image_size('header', apply_filters( 'mantra_header_image_width', $mantra_totalSize ), apply_filters( 'mantra_header_image_height', $mantra_hheight), true );	
+	add_image_size('header', apply_filters( 'mantra_header_image_width', $mantra_totalSize ), apply_filters( 'mantra_header_image_height', $mantra_hheight), true );
 
 	global $mantra_fpsliderwidth;
 	global $mantra_fpsliderheight;
@@ -121,8 +121,8 @@ function mantra_setup() {
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
 	register_default_headers( array(
 		'mantra' => array(
-			'url' => '%s/images/headers/mantra.png',
-			'thumbnail_url' => '%s/images/headers/mantra-thumbnail.png',
+			'url' => '%s/resources/images/headers/mantra.png',
+			'thumbnail_url' => '%s/resources/images/headers/mantra-thumbnail.png',
 			// translators: header image description
 			'description' => __( 'mantra', 'mantra' )
 		),
@@ -137,7 +137,7 @@ function mantra_remove_obsolete_functions() {
 	remove_filter('wp_title_rss','mantra_filter_wp_title_rss');
 }
 add_action('init','mantra_remove_obsolete_functions');
-endif; 
+endif;
 
 // Backwards compatibility for the title-tag
 if ( ! function_exists( '_wp_render_title_tag' ) ) :
@@ -171,7 +171,7 @@ function mantra_filter_wp_title2( $title ) {
     return $filtered_title;
 }
 
-function nirvana_filter_wp_title_rss2($title) {
+function mantra_filter_wp_title_rss2($title) {
 	return ' ';
 }
 
@@ -217,32 +217,32 @@ add_filter( 'wp_page_menu_args', 'mantra_page_menu_args' );
 /**
  * Create menus
  */
- 
+
 // TOP MENU
 function mantra_top_menu() {
- if ( has_nav_menu( 'top' ) ) wp_nav_menu( array( 'container' => 'nav', 'container_class' => 'topmenu', 'theme_location' => 'top', 'depth' => 1 ) ); 
+ if ( has_nav_menu( 'top' ) ) wp_nav_menu( array( 'container' => 'nav', 'container_class' => 'topmenu', 'theme_location' => 'top', 'depth' => 1 ) );
  }
- 
+
  add_action ('cryout_wrapper_hook','mantra_top_menu');
- 
+
  // MAIN MENU
  function mantra_main_menu() {
   /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
 <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'mantra' ); ?>"><?php _e( 'Skip to content', 'mantra' ); ?></a></div>
 <?php /* Main navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */
-wp_nav_menu( array( 'container_class' => 'menu', 'menu_id' =>'prime_nav', 'theme_location' => 'primary' ) ); 
+wp_nav_menu( array( 'container_class' => 'menu', 'menu_id' =>'prime_nav', 'theme_location' => 'primary' ) );
 }
 
 add_action ('cryout_access_hook','mantra_main_menu');
 
 // FOOTER MENU
  function mantra_footer_menu() {
-  if ( has_nav_menu( 'footer' ) ) wp_nav_menu( array( 'container' => 'nav', 'container_class' => 'footermenu', 'theme_location' => 'footer', 'depth' => 1 ) ); 
+  if ( has_nav_menu( 'footer' ) ) wp_nav_menu( array( 'container' => 'nav', 'container_class' => 'footermenu', 'theme_location' => 'footer', 'depth' => 1 ) );
   }
-  
+
   add_action ('cryout_footer_hook','mantra_footer_menu',10);
 
-  
+
 /**
  * Register widgetized areas, including two sidebars and four widget-ready columns in the footer.
  *
@@ -340,7 +340,7 @@ function mantra_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
-	
+
 		// Area 9, located above the content area. Empty by default.
 	register_sidebar( array(
 		'name' => __( 'Above content Widget Area', 'mantra' ),
@@ -351,7 +351,7 @@ function mantra_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
-	
+
 		// Area 10, located below the content area. Empty by default.
 	register_sidebar( array(
 		'name' => __( 'Below Content Widget Area', 'mantra' ),
@@ -414,14 +414,14 @@ function mantra_footer_sidebar_class() {
 			<ul class="yoyo">
 				<?php dynamic_sidebar( 'above-content-widget-area' ); ?>
 			</ul>
-		<?php } } 
-		
+		<?php } }
+
 function mantra_below_widget() {
  if ( is_active_sidebar( 'below-content-widget-area' )) { ?>
 			<ul class="yoyo">
 				<?php dynamic_sidebar( 'below-content-widget-area' ); ?>
 			</ul>
-		<?php } } 
-		
+		<?php } }
+
 add_action ('cryout_before_content_hook','mantra_above_widget');
 add_action ('cryout_after_content_hook','mantra_below_widget'); ?>

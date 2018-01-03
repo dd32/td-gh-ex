@@ -53,10 +53,8 @@ jQuery(document).ready(function(){
      jQuery("img.alignnone, img.alignleft, img.aligncenter,  img.alignright").addClass("<?php echo 'image'.$mantra_image;?>");
 <?php if ($mantra_mobile=="Enable") { // If mobile view is enabled ?>
 
-	// Add select navigation to small screens
-     jQuery("#access > .menu > ul").tinyNav({
-          	header: ' = <?php _e('Menu','mantra'); ?> = '
-			});
+
+
 <?php } ?>
 });
 
@@ -100,9 +98,9 @@ function mantra_title_and_description() {
 			echo '<div>';
 			$heading_tag = ( ( is_home() || is_front_page() ) && !is_page() ) ? 'h1' : 'div';
 			echo '<'.$heading_tag.' id="site-title">';
-			echo '<span> <a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a> </span>';
+			echo '<span> <a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">' . esc_attr( get_bloginfo( 'name' ) ).'</a> </span>';
 			echo '</'.$heading_tag.'>';
-			echo '<div id="site-description" >'.get_bloginfo( 'description' ).'</div></div>';
+			echo '<div id="site-description" >'.esc_attr( get_bloginfo( 'description' ) ).'</div></div>';
 		break;
 
 		case 'Clickable header image' :
@@ -130,21 +128,21 @@ add_action ('cryout_branding_hook','mantra_title_and_description');
  * Add social icons in header / undermneu left / undermenu right / footer
  * Used in header.php and footer.php
 */
- function mantra_header_socials() {
- mantra_set_social_icons('sheader');
- }
+function mantra_header_socials() {
+     mantra_set_social_icons('sheader');
+}
 
-  function mantra_smenul_socials() {
- mantra_set_social_icons('smenul');
- }
+function mantra_smenul_socials() {
+      mantra_set_social_icons('smenul');
+}
 
-  function mantra_smenur_socials() {
- mantra_set_social_icons('smenur');
- }
+function mantra_smenur_socials() {
+    mantra_set_social_icons('smenur');
+}
 
-   function mantra_footer_socials() {
- mantra_set_social_icons('sfooter');
- }
+function mantra_footer_socials() {
+    mantra_set_social_icons('sfooter');
+}
 
 //if($mantra_socialsdisplay0) add_action('cryout_branding_hook', 'mantra_header_socials');
 if($mantra_socialsdisplay1) add_action('cryout_forbottom_hook', 'mantra_smenul_socials');
@@ -172,7 +170,8 @@ function mantra_set_social_icons($id) {
 				$cryout_current_social = esc_url( ${"mantra_social$j"} );
 			endif;	?>
 
-			<a target="_blank" rel="nofollow" href="<?php echo $cryout_current_social; ?>" class="socialicons social-<?php echo esc_attr(${"mantra_social$i"}); ?>" title="<?php echo esc_attr(${"mantra_social$i"}); ?>"><img alt="<?php echo esc_attr(${"mantra_social$i"}); ?>" src="<?php echo get_template_directory_uri().'/images/socials/'.${"mantra_social$i"}.'.png'; ?>" /></a><?php
+			<a target="_blank" rel="nofollow" href="<?php echo $cryout_current_social; ?>" class="socialicons social-<?php echo esc_attr(${"mantra_social$i"}); ?>" title="<?php echo esc_attr(${"mantra_social$i"}); ?>"><img alt="<?php echo esc_attr(${"mantra_social$i"}); ?>" src="<?php echo get_template_directory_uri().'/resources/images/socials/'.${"mantra_social$i"}.'.png'; ?>" /></a>
+            <?php
 		}
 	}
 	echo '</div>';
@@ -180,45 +179,14 @@ function mantra_set_social_icons($id) {
 endif;
 
 
-
-  /**
- * Replaces header image with featured image if there is one for single pages
- * Used in header.php
-*/
-
-/* // Moved to custom-styles.php
-
-function mantra_header_featured_image() {
-global $post;
-global $mantra_options;
-foreach ($mantra_options as $key => $value) {
-${"$key"} = $value ;
-}
-// Check if this is a post or page, if it has a thumbnail, and if it's a big one
-if ( is_singular() && has_post_thumbnail( $post->ID ) && $mantra_fheader == "Enable" &&
-	(  $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
-	$image[1] >= HEADER_IMAGE_WIDTH ) :
-	// Houston, we have a new header image!
-	//echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
-	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array(HEADER_IMAGE_WIDTH,HEADER_IMAGE_HEIGHT) );
-endif;
-}
-
-
-
-*/
-
 /**
  * Mantra back to top button
  * Creates div for js
 */
 function mantra_back_top() {
-  echo '<div id="toTop"> </div>';
-  }
-
-
+    echo '<div id="toTop"><i class="crycon-back2top"></i> </div>';
+}
 if ($mantra_backtop=="Enable") add_action ('cryout_body_hook','mantra_back_top');
-
 
 
  /**
@@ -230,7 +198,7 @@ foreach ($mantra_options as $key => $value) { ${"$key"} = $value; }
 global $post;
 echo '<div class="breadcrumbs">';
 if (is_page() && !is_front_page() || is_single() || is_category() || is_archive()) {
-        echo '<a href="'.esc_url( home_url() ) .'">'.get_bloginfo('name').' &raquo; </a>';
+        echo '<a href="'.esc_url( home_url() ) .'">' . esc_attr( get_bloginfo('name') ).' &raquo; </a>';
 
         if (is_page()) {
             $ancestors = get_post_ancestors($post);
@@ -239,7 +207,7 @@ if (is_page() && !is_front_page() || is_single() || is_category() || is_archive(
                 $ancestors = array_reverse($ancestors);
 
                 foreach ($ancestors as $crumb) {
-                    echo '<a href="'.get_permalink($crumb).'">'.get_the_title($crumb).' &raquo; </a>';
+                    echo '<a href="' . esc_url( get_permalink($crumb) ) . '">' . esc_attr( get_the_title($crumb) ) . ' &raquo; </a>';
                 }
             }
         }
@@ -257,7 +225,7 @@ if (is_page() && !is_front_page() || is_single() || is_category() || is_archive(
 
 		if (is_tag()) {
 			echo ''.__('Tag','mantra').' &raquo; '.single_tag_title('', false);
-		} 
+		}
 
         // Current page
         if (is_page() || is_single()) {
@@ -267,7 +235,7 @@ if (is_page() && !is_front_page() || is_single() || is_category() || is_archive(
     } elseif (is_home() && $mantra_frontpage!="Enable" ) {
         // Front page
         echo '';
-        echo '<a href="'.esc_url( home_url() ) .'">'.get_bloginfo('name').'</a> '."&raquo; ";
+        echo '<a href="'.esc_url( home_url() ) .'">' . esc_attr( get_bloginfo('name') ).'</a> '."&raquo; ";
         _e('Home Page','mantra');
         echo '';
     }
@@ -281,52 +249,49 @@ if ( ! function_exists( 'mantra_pagination' ) ) :
 /**
  * Creates pagination for blog pages.
  */
-function mantra_pagination($pages = '', $range = 2, $prefix ='')
-{
-     $showitems = ($range * 2)+1;
+function mantra_pagination($pages = '', $range = 2, $prefix ='') {
+    $showitems = ($range * 2)+1;
 
-     global $paged;
-     if(empty($paged)) $paged = 1;
+    global $paged;
+    if(empty($paged)) $paged = 1;
 
-     if($pages == '')
+    if($pages == '') {
+        global $wp_query;
+        $pages = $wp_query->max_num_pages;
+        if(!$pages) {
+            $pages = 1;
+        }
+    }
+
+    if(1 != $pages)
+    {
+    echo "<div class='pagination_container'><nav class='pagination'>";
+     if ($prefix) {echo "<span id='paginationPrefix'>$prefix </span>";}
+     if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo;</a>";
+     if($paged > 1 && $showitems < $pages) echo "<a href='".get_pagenum_link($paged - 1)."'>&lsaquo;</a>";
+
+     for ($i=1; $i <= $pages; $i++)
      {
-         global $wp_query;
-         $pages = $wp_query->max_num_pages;
-         if(!$pages)
+         if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
          {
-             $pages = 1;
+             echo ($paged == $i)? "<span class='current'>".$i."</span>":"<a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a>";
          }
      }
 
-     if(1 != $pages)
-     {
-		echo "<div class='pagination_container'><nav class='pagination'>";
-         if ($prefix) {echo "<span id='paginationPrefix'>$prefix </span>";}
-         if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo;</a>";
-         if($paged > 1 && $showitems < $pages) echo "<a href='".get_pagenum_link($paged - 1)."'>&lsaquo;</a>";
-
-         for ($i=1; $i <= $pages; $i++)
-         {
-             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
-             {
-                 echo ($paged == $i)? "<span class='current'>".$i."</span>":"<a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a>";
-             }
-         }
-
-         if ($paged < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($paged + 1)."'>&rsaquo;</a>";
-         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($pages)."'>&raquo;</a>";
-         echo "</nav></div>\n";
-     }
+     if ($paged < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($paged + 1)."'>&rsaquo;</a>";
+     if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($pages)."'>&raquo;</a>";
+     echo "</nav></div>\n";
+    }
 }
 endif;
 
 function mantra_nextpage_links($defaults) {
-$args = array(
-'link_before'      => '<em>',
-'link_after'       => '</em>',
-);
-$r = wp_parse_args($args, $defaults);
-return $r;
+    $args = array(
+    'link_before'      => '<em>',
+    'link_after'       => '</em>',
+    );
+    $r = wp_parse_args($args, $defaults);
+    return $r;
 }
 add_filter('wp_link_pages_args','mantra_nextpage_links');
 
@@ -477,9 +442,9 @@ endif;
 // Favicon
 function mantra_fav_icon() {
 	global $mantra_options;
-	foreach ($mantra_options as $key => $value) { ${"$key"} = $value ;}	
-		echo '<link rel="shortcut icon" href="'.esc_url($mantra_options['mantra_favicon']).'" />'; 
-		echo '<link rel="apple-touch-icon" href="'.esc_url($mantra_options['mantra_favicon']).'" />'; 
+	foreach ($mantra_options as $key => $value) { ${"$key"} = $value ;}
+		echo '<link rel="shortcut icon" href="'.esc_url($mantra_options['mantra_favicon']).'" />';
+		echo '<link rel="apple-touch-icon" href="'.esc_url($mantra_options['mantra_favicon']).'" />';
 }
 
-if ($mantra_options['mantra_favicon']) add_action ('cryout_header_hook','mantra_fav_icon');	
+if ($mantra_options['mantra_favicon']) add_action ('cryout_header_hook','mantra_fav_icon');

@@ -17,7 +17,7 @@
  */
 function mantra_excerpt_length( $length ) {
 	global $mantra_excerptwords;
-	return $mantra_excerptwords;
+	return absint( $mantra_excerptwords );
 }
 add_filter( 'excerpt_length', 'mantra_excerpt_length' );
 
@@ -29,7 +29,7 @@ add_filter( 'excerpt_length', 'mantra_excerpt_length' );
  */
 function mantra_continue_reading_link() {
 	global $mantra_excerptcont;
-	return ' <a class="continue-reading-link" href="'. get_permalink() . '">' .$mantra_excerptcont.' <span class="meta-nav">&rarr; </span>' . '</a>';
+	return ' <a class="continue-reading-link" href="' . esc_url( get_permalink() ) . '">' . wp_kses_post( $mantra_excerptcont ).' <span class="meta-nav">&rarr; </span>' . '</a>';
 }
 
 /**
@@ -43,7 +43,7 @@ function mantra_continue_reading_link() {
  */
 function mantra_auto_excerpt_more( $more ) {
 	global $mantra_excerptdots;
-	return $mantra_excerptdots. mantra_continue_reading_link();
+	return wp_kses_post( $mantra_excerptdots ). mantra_continue_reading_link();
 }
 add_filter( 'excerpt_more', 'mantra_auto_excerpt_more' );
 
@@ -77,7 +77,7 @@ add_filter( 'get_the_excerpt', 'mantra_custom_excerpt_more' );
  */
 function mantra_more_link($more_link, $more_link_text) {
 	global $mantra_excerptcont;
-	$new_link_text = $mantra_excerptcont;
+	$new_link_text = wp_kses_post( $mantra_excerptcont );
 	if (preg_match("/custom=(.*)/",$more_link_text,$m) ) {
 		$new_link_text = $m[1];
 	};
@@ -94,43 +94,39 @@ add_filter('the_content_more_link', 'mantra_more_link',10,2);
  */
 
 function mantra_trim_excerpt($text) {
-global $mantra_excerptwords;
-global $mantra_excerptcont;
-global $mantra_excerptdots;
-$raw_excerpt = $text;
-if ( '' == $text ) {
-    //Retrieve the post content.
-    $text = get_the_content('');
+	global $mantra_excerptwords;
+	global $mantra_excerptcont;
+	global $mantra_excerptdots;
+	$raw_excerpt = $text;
+	if ( '' == $text ) {
+	    //Retrieve the post content.
+	    $text = get_the_content('');
 
-    //Delete all shortcode tags from the content.
-    $text = strip_shortcodes( $text );
+	    //Delete all shortcode tags from the content.
+	    $text = strip_shortcodes( $text );
 
-    $text = apply_filters('the_content', $text);
-    $text = str_replace(']]>', ']]&gt;', $text);
+	    $text = apply_filters('the_content', $text);
+	    $text = str_replace(']]>', ']]&gt;', $text);
 
-    $allowed_tags = '<a>,<img>,<b>,<strong>,<ul>,<li>,<i>,<h1>,<h2>,<h3>,<h4>,<h5>,<h6>,<pre>,<code>,<em>,<u>,<br>,<p>';
-    $text = strip_tags($text, $allowed_tags);
+	    $allowed_tags = '<a>,<img>,<b>,<strong>,<ul>,<li>,<i>,<h1>,<h2>,<h3>,<h4>,<h5>,<h6>,<pre>,<code>,<em>,<u>,<br>,<p>';
+	    $text = strip_tags($text, $allowed_tags);
 
-    $words = preg_split("/[\n\r\t ]+/", $text, $mantra_excerptwords + 1, PREG_SPLIT_NO_EMPTY);
-    if ( count($words) > $mantra_excerptwords ) {
-        array_pop($words);
-        $text = implode(' ', $words);
-        $text = $text .' '.$mantra_excerptdots. ' <a href="'. get_permalink() . '">' .$mantra_excerptcont.' <span class="meta-nav">&rarr; </span>' . '</a>';
-    } else {
-        $text = implode(' ', $words);
-    }
+	    $words = preg_split("/[\n\r\t ]+/", $text, $mantra_excerptwords + 1, PREG_SPLIT_NO_EMPTY);
+	    if ( count($words) > $mantra_excerptwords ) {
+	        array_pop($words);
+	        $text = implode(' ', $words);
+	        $text = $text .' '.$mantra_excerptdots. ' <a href="' . esc_url( get_permalink() ) . '">' .$mantra_excerptcont.' <span class="meta-nav">&rarr; </span>' . '</a>';
+	    } else {
+	        $text = implode(' ', $words);
+	    }
+	}
+	return apply_filters('wp_trim_excerpt', $text, $raw_excerpt);
 }
-return apply_filters('wp_trim_excerpt', $text, $raw_excerpt);
-}
-
-
-
 
 if ($mantra_excerpttags=='Enable') {
-remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-add_filter('get_the_excerpt', 'mantra_trim_excerpt');
+	remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+	add_filter('get_the_excerpt', 'mantra_trim_excerpt');
 }
-
 
 /**
  * Remove inline styles printed when the gallery shortcode is used.
@@ -153,33 +149,32 @@ if ( ! function_exists( 'mantra_posted_on' ) ) :
  * @since mantra 0.5
  */
 function mantra_posted_on() {
-global $mantra_options;
-foreach ($mantra_options as $key => $value) {
-     ${"$key"} = $value ;
-}
+	global $mantra_options;
+	foreach ($mantra_options as $key => $value) {
+	     ${"$key"} = $value ;
+	}
 
+	$date_string = '<time class="onDate date published" datetime="' . get_the_time( 'c' ) . '"> %3$s </time><span class="bl_sep">|</span>';
+	$date_string .= '<time class="updated"  datetime="' . get_the_modified_date( 'c' ) . '">' . get_the_modified_date() . '</time>';
 
-$date_string = '<time class="onDate date published" datetime="' . get_the_time( 'c' ) . '"> %3$s </time><span class="bl_sep">|</span>';
-$date_string .= '<time class="updated"  datetime="' . get_the_modified_date( 'c' ) . '">' . get_the_modified_date() . '</time>';
+	// If author is hidden don't give it a value
+	$author_string = sprintf( '<span class="author vcard" >'.__( 'By ','mantra'). ' <a class="url fn n" rel="author" href="%1$s" title="%2$s">%3$s</a> <span class="bl_sep">|</span></span>',
+				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+				sprintf( esc_attr__( 'View all posts by %s', 'mantra' ), get_the_author() ),
+				get_the_author()
+			);
 
-// If author is hidden don't give it a value
-$author_string = sprintf( '<span class="author vcard" >'.__( 'By ','mantra'). ' <a class="url fn n" rel="author" href="%1$s" title="%2$s">%3$s</a> <span class="bl_sep">|</span></span>',
-			get_author_posts_url( get_the_author_meta( 'ID' ) ),
-			sprintf( esc_attr__( 'View all posts by %s', 'mantra' ), get_the_author() ),
-			get_the_author()
+	// Print the meta data
+		printf( '&nbsp; %4$s  '.$date_string.' <span class="bl_categ"> %2$s </span>  ',
+			'meta-prep meta-prep-author',
+			get_the_category_list( ', ' ),
+			sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span> <span class="entry-time"> - %2$s</span></a>',
+				esc_url( get_permalink() ),
+				esc_attr( get_the_time() ),
+				get_the_date()
+			), $author_string
+
 		);
-
-// Print the meta data
-	printf( '&nbsp; %4$s  '.$date_string.' <span class="bl_categ"> %2$s </span>  ',
-		'meta-prep meta-prep-author',
-		get_the_category_list( ', ' ),
-		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span> <span class="entry-time"> - %2$s</span></a>',
-			get_permalink(),
-			esc_attr( get_the_time() ),
-			get_the_date()
-		), $author_string
-
-	);
 }
 endif;
 
@@ -188,7 +183,7 @@ add_filter( 'the_category', 'mantra_remove_category_tag' );
 add_filter( 'get_the_category_list', 'mantra_remove_category_tag' );
 
 function mantra_remove_category_tag( $text ) {
-$text = str_replace('rel="category tag"', 'rel="tag"', $text); return $text;
+	$text = str_replace('rel="category tag"', 'rel="tag"', $text); return $text;
 }
 
 
@@ -213,7 +208,7 @@ function mantra_posted_in() {
 		$posted_in,
 		get_the_category_list( ', ' ),
 		$tag_list,
-		get_permalink(),
+		esc_url( get_permalink() ),
 		the_title_attribute( 'echo=0' )
 	);
 }
@@ -260,7 +255,7 @@ function cryout_echo_first_image ($postID)
 		foreach($attachments as $attachment) {
 			$image_attributes = wp_get_attachment_image_src( $attachment->ID, 'custom' )  ? wp_get_attachment_image_src( $attachment->ID, 'custom' ) : wp_get_attachment_image_src( $attachment->ID, 'custom' );
 
-			return $image_attributes[0];
+			return esc_url( $image_attributes[0] );
 
 		}
 	}
@@ -280,10 +275,10 @@ global $post;
 $image_src = cryout_echo_first_image($post->ID);
 
 	 if ( function_exists("has_post_thumbnail") && has_post_thumbnail() && $mantra_fpost=='Enable')
-			the_post_thumbnail( 'custom', array("class" => "align".strtolower($mantra_falign)." post_thumbnail" ) );
+			the_post_thumbnail( 'custom', array("class" => "align".strtolower($mantra_falign)." post-thumbnail" ) );
 
 	else if ($mantra_fpost=='Enable' && $mantra_fauto=="Enable" && $image_src && ($mantra_excerptarchive != "Full Post" || $mantra_excerpthome != "Full Post"))
-			echo '<a title="'.the_title_attribute('echo=0').'" href="'.get_permalink().'" ><img width="'.$mantra_fwidth.'" title="" alt="" class="align'.strtolower($mantra_falign).' post_thumbnail" src="'.$image_src.'"></a>' ;
+			echo '<a class="post-thumbnail-link" title="'.the_title_attribute('echo=0').'" href="' . esc_url( get_permalink() ).'" ><img width="'.$mantra_fwidth.'" title="" alt="" class="align'.strtolower($mantra_falign).' post_thumbnail" src="'.$image_src.'"></a>' ;
 
 	}
 endif; // mantra_set_featured_thumb
@@ -295,7 +290,7 @@ if ($mantra_fpost=='Enable' && $mantra_fpostlink) add_filter( 'post_thumbnail_ht
  */
 
 function mantra_thumbnail_link( $html, $post_id ) {
-	$html = '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '">' . $html . '</a>';
+	$html = '<a class="post-thumbnail-link" href="' . esc_url( get_permalink( $post_id ) ) . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '">' . $html . '</a>';
 	return $html;
 }
 ?>

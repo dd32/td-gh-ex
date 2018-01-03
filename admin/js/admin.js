@@ -3,7 +3,7 @@
  */
 
 function media_upload( button_class) {
-	if (!window.wp || !window.wp.media || !window.wp.media.editor || !window.wp.media.editor.send || !window.wp.media.editor.send.attachment) return; 
+	if (!window.wp || !window.wp.media || !window.wp.media.editor || !window.wp.media.editor.send || !window.wp.media.editor.send.attachment) return;
     var _custom_media = true,
     _orig_send_attachment = wp.media.editor.send.attachment;
     jQuery('body').on('click',button_class, function(e) {
@@ -17,7 +17,7 @@ function media_upload( button_class) {
 		_custom_media = true;
 		wp.media.editor.send.attachment = function(props, attachment){
 			if ( _custom_media  ) {
-				/* jQuery('.custom_media_id').val(attachment.id); */		   
+				/* jQuery('.custom_media_id').val(attachment.id); */
 				uploadparent.find('.slideimages').val(attachment.url);
 				uploadparent.find('.imagebox').attr('src',attachment.url);
 				/* jQuery('.custom_media_image').attr('src',attachment.url).css('display','block');   */
@@ -28,13 +28,13 @@ function media_upload( button_class) {
 		wp.media.editor.open(button);
 		return false;
     });
-} 	
-			
-jQuery(document).ready(function() {		
+}
+
+jQuery(document).ready(function() {
 
 	var uploadparent = 0;
-	media_upload( '.upload_image_button' );	
-	
+	media_upload( '.upload_image_button' );
+
 	// Show/hide slides
 	jQuery('.slidetitle').click(function() {
 		jQuery(this).next().toggle("fast");
@@ -68,8 +68,8 @@ jQuery(document).ready(function() {
 
 			case "Slider Shortcode" :
 			jQuery('#sliderShortcode').show("normal");
-			break;			
-			
+			break;
+
 			case "Custom Slides" :
 			jQuery('#sliderCustomSlides').show("normal");
 			break;
@@ -101,7 +101,7 @@ jQuery(document).ready(function() {
 		}//switch
 
 	});//function
-	
+
 	jQuery('#mantra_slideType').trigger('change');
 
 	//Slide type value
@@ -135,15 +135,15 @@ jQuery(document).ready(function() {
 	// Create accordion from existing settings table
 	jQuery('.form-table').wrap('<div>');
 	jQuery(function() {
-		if (jQuery( "#accordion h2" ).length > 0) { 
-			// wordpress 4.4+ changed headings to h2 
-			jQuery( "#accordion" ).accordion({ 
-					header: 'h2', 
-					heightStyle: "content", 
-					collapsible: true, 
-					navigation: true, 
-					active: false 
-				}); 
+		if (jQuery( "#accordion h2" ).length > 0) {
+			// wordpress 4.4+ changed headings to h2
+			jQuery( "#accordion" ).accordion({
+					header: 'h2',
+					heightStyle: "content",
+					collapsible: true,
+					navigation: true,
+					active: false
+				});
 			} else {
 			jQuery( "#accordion" ).accordion({
 					header: 'h3',
@@ -155,7 +155,7 @@ jQuery(document).ready(function() {
 				});
 			}
 	});
-	
+
 	if (vercomp(jQuery.ui.version,"1.9.0")) {
 		// tooltip function is included since jQuery UI 1.9.0
 		tooltip_terain();
@@ -212,7 +212,7 @@ jQuery(document).ready(function() {
 		// inform the user about the old partially unsupported version
 		jQuery("#jsAlert").after("<div class='updated fade' style='clear:left; font-size: 16px;'><p>Mantra has detected you are running an old version of Wordpress (jQuery) and will be running in compatibility mode. Some features may not work correctly. Consider updating your Wordpress to the latest version.</p></div>");
 	}
-	
+
 	jQuery('#jsAlert').hide();
 
 });// ready
@@ -224,13 +224,13 @@ function startfarb(a,b) {
 
 	jQuery(a).click(function() {
 			if(jQuery(b).css('display') == 'none')	{
-                                        			jQuery(b).parents('div:eq(0)').addClass('ui-accordion-content-overflow');
+                                        			jQuery(b).parents('.ui-accordion-content').addClass('ui-accordion-content-overflow');
                                                        jQuery(b).css('display','inline-block').hide().show(300);
                                                        }
 		});
 
 	jQuery(document).mousedown( function() {
-			jQuery(b).hide(700, function(){ jQuery(b).parents('div:eq(0)').removeClass('ui-accordion-content-overflow'); });
+			jQuery(b).hide(700, function(){ jQuery(b).parents('.ui-accordion-content').removeClass('ui-accordion-content-overflow'); });
 			// todo: find a better way to remove class after the fade on IEs
 		});
 }

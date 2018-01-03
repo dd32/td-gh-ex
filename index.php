@@ -11,16 +11,16 @@
  * @package Cryout Creations
  * @subpackage Mantra
  */
-get_header(); 
+get_header();
 if ($mantra_frontpage=="Enable" && is_front_page() ):
 	mantra_frontpage_generator();
-	if ($mantra_frontposts=="Enable"): get_template_part('content','frontpage'); endif;
+	if ($mantra_frontposts=="Enable"): get_template_part('content/content','frontpage'); endif;
 else:
 ?>
 		<section id="container">
-				
+
 			<div id="content" role="main">
-			
+
 <?php cryout_before_content_hook(); ?><?php if ( have_posts() ) : ?>
 
 				<?php mantra_content_nav( 'nav-above' ); ?>
@@ -28,8 +28,8 @@ else:
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'content', get_post_format() ); ?>
-										
+					<?php get_template_part( 'content/content', get_post_format() ); ?>
+
 				<?php endwhile; ?>
 
 					<?php if($mantra_pagination=="Enable") mantra_pagination(); else mantra_content_nav( 'nav-below' ); ?>
@@ -52,6 +52,6 @@ else:
 			</div><!-- #content -->
 	<?php get_sidebar(); ?>
 		</section><!-- #container -->
-<?php 
+<?php
 endif;
 get_footer(); ?>

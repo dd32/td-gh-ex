@@ -47,14 +47,14 @@ global $mantra_options;
 }
 
  //SLIDER - Name: ma_options[sidewidth]
-function cryout_setting_sidewidth_fn() { 
+function cryout_setting_sidewidth_fn() {
 	global $mantra_options;
 	$items = array ("Absolute" , "Relative");
 	$itemsare = array( __("Absolute","mantra"), __("Relative *NO LONGER SUPPORTED","mantra"));
 	if ( "Relative" != $mantra_options['mantra_dimselect'] ) {
 		// relative dimmensions are no longer supported by the theme; only display them to existing sites that use them
 		unset($items[1]);
-		unset($itemsare[1]);		
+		unset($itemsare[1]);
 	}
 	echo __("Dimensions to use: ","mantra")." <select id='mantra_dimselect' name='ma_options[mantra_dimselect]'>";
 	foreach($items as $id=>$item) {
@@ -74,11 +74,11 @@ jQuery(document).ready(function() {
 			step:10,
 			min: 0,
 			max: 1980,
-			values: [ <?php echo $mantra_options['mantra_sidewidth'] ?>, <?php echo ($mantra_options['mantra_sidewidth']+$mantra_options['mantra_sidebar']); ?> ],
+			values: [ <?php echo absint($mantra_options['mantra_sidewidth']) ?>, <?php echo absint($mantra_options['mantra_sidewidth']+$mantra_options['mantra_sidebar']); ?> ],
 			slide: function( event, ui ) {
           		range=ui.values[ 1 ] - ui.values[ 0 ];
           		if (ui.values[ 0 ]<500) {ui.values[ 0 ]=500; return false;};
-          		if(	range<220 || range>800 ){ ui.values[ 1 ] =  <?php echo $mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth'];?>; return false;  };
+          		if(	range<220 || range>800 ){ ui.values[ 1 ] =  <?php echo absint($mantra_options['mantra_sidebar']+$mantra_options['mantra_sidewidth']);?>; return false;  };
                	jQuery( "#mantra_sidewidth" ).val( ui.values[ 0 ] );
           		jQuery( "#mantra_sidebar" ).val( ui.values[ 1 ] - ui.values[ 0 ] );
           		jQuery( "#totalsize" ).html( ui.values[ 1 ]);
@@ -91,10 +91,10 @@ jQuery(document).ready(function() {
                }
 		});
 
-		jQuery( "#mantra_sidewidth" ).val( <?php echo $mantra_options['mantra_sidewidth'];?> );
-		jQuery( "#mantra_sidebar" ).val( <?php echo $mantra_options['mantra_sidebar'];?> );
-		var percentage =  <?php echo ($mantra_options['mantra_sidebar']/1980)*100;?> ;
-		var leftwidth =  <?php echo ($mantra_options['mantra_sidewidth']/1980)*100;?> ;
+		jQuery( "#mantra_sidewidth" ).val( <?php echo absint( $mantra_options['mantra_sidewidth'] );?> );
+		jQuery( "#mantra_sidebar" ).val( <?php echo absint( $mantra_options['mantra_sidebar'] );?> );
+		var percentage =  <?php echo (absint($mantra_options['mantra_sidebar'])/1980)*100;?> ;
+		var leftwidth =  <?php echo (absint($mantra_options['mantra_sidewidth'])/1980)*100;?> ;
 		jQuery( "#barb" ).css('left',-18+leftwidth+percentage/2+"%");
 		jQuery( "#contentb" ).css('left',-8+leftwidth/2+"%");
 		jQuery( "#totalb" ).css('left',-20+(percentage+leftwidth)/2+"%");
@@ -108,11 +108,11 @@ jQuery(function() {
 			step:1,
 			min: 0,
 			max: 100,
-			values: [ <?php echo $mantra_options['mantra_sidewidthRel'] ?>, <?php echo ($mantra_options['mantra_sidewidthRel']+$mantra_options['mantra_sidebarRel']); ?> ],
+			values: [ <?php echo absint( $mantra_options['mantra_sidewidthRel'] ) ?>, <?php echo absint($mantra_options['mantra_sidewidthRel']+$mantra_options['mantra_sidebarRel']); ?> ],
 			slide: function( event, ui ) {
      			range=ui.values[ 1 ] - ui.values[ 0 ];
       			if (ui.values[ 0 ]<40) {ui.values[ 0 ]=40; return false;};
-     			if(	range<20 || range>50 ){ ui.values[ 1 ] =  <?php echo $mantra_options['mantra_sidebarRel']+$mantra_options['mantra_sidewidthRel'];?>; return false;  };
+     			if(	range<20 || range>50 ){ ui.values[ 1 ] =  <?php echo absint( $mantra_options['mantra_sidebarRel']+$mantra_options['mantra_sidewidthRel'] );?>; return false;  };
                	jQuery( "#mantra_sidewidthRel" ).val( ui.values[ 0 ] );
      			jQuery( "#mantra_sidebarRel" ).val( ui.values[ 1 ] - ui.values[ 0 ] );
      			jQuery( "#totalsizeRel" ).html( ui.values[ 1 ]);
@@ -125,22 +125,22 @@ jQuery(function() {
                }
 		});
 
-		jQuery( "#mantra_sidewidthRel" ).val( <?php echo $mantra_options['mantra_sidewidthRel'];?> );
-		jQuery( "#mantra_sidebarRel" ).val( <?php echo $mantra_options['mantra_sidebarRel'];?> );
-		var percentageRel =  <?php echo $mantra_options['mantra_sidebarRel'];?> ;
-		var leftwidthRel =  <?php echo $mantra_options['mantra_sidewidthRel'];?> ;
+		jQuery( "#mantra_sidewidthRel" ).val( <?php echo absint( $mantra_options['mantra_sidewidthRel'] );?> );
+		jQuery( "#mantra_sidebarRel" ).val( <?php echo absint( $mantra_options['mantra_sidebarRel'] );?> );
+		var percentageRel =  <?php echo absint( $mantra_options['mantra_sidebarRel'] );?> ;
+		var leftwidthRel =  <?php echo absint( $mantra_options['mantra_sidewidthRel'] );?> ;
 		jQuery( "#barbRel" ).css('left',-18+leftwidthRel+percentageRel/2+"%");
 		jQuery( "#contentbRel" ).css('left',-8+leftwidthRel/2+"%");
 		jQuery( "#totalbRel" ).css('left',-20+(percentageRel+leftwidthRel)/2+"%");
-		
+
 });
 </script>
 
 <div id="absolutedim">
 
-	<b id="contentb" style="display:block;float:left;position:absolute;margin-top:-20px;"><?php _e("Content =","mantra");?> <span id="contentsize"><?php echo $mantra_options['mantra_sidewidth'];?></span>px</b>
-	<b id="barb" style="margin-left:40px;color:#F6A828;display:block;float:left;position:absolute;margin-top:-20px;" ><?php _e("Sidebar(s) =","mantra");?> <span id="barsize"><?php echo $mantra_options['mantra_sidebar'];?></span>px</b>
-	<b id="totalb" style="margin-left:40px;color:#999;display:block;float:left;position:absolute;margin-top:12px;" >^&mdash;&mdash;&mdash; <?php _e("Total width =","mantra");?>  <span id="totalsize"><?php echo $mantra_options['mantra_sidewidth']+ $mantra_options['mantra_sidebar'];?></span>px &mdash;&mdash;&mdash;^</b>
+	<b id="contentb" style="display:block;float:left;position:absolute;margin-top:-20px;"><?php _e("Content =","mantra");?> <span id="contentsize"><?php echo absint( $mantra_options['mantra_sidewidth'] );?></span>px</b>
+	<b id="barb" style="margin-left:40px;color:#F6A828;display:block;float:left;position:absolute;margin-top:-20px;" ><?php _e("Sidebar(s) =","mantra");?> <span id="barsize"><?php echo absint( $mantra_options['mantra_sidebar'] );?></span>px</b>
+	<b id="totalb" style="margin-left:40px;color:#999;display:block;float:left;position:absolute;margin-top:12px;" >^&mdash;&mdash;&mdash; <?php _e("Total width =","mantra");?>  <span id="totalsize"><?php echo absint( $mantra_options['mantra_sidewidth']+ $mantra_options['mantra_sidebar'] );?></span>px &mdash;&mdash;&mdash;^</b>
 
 <p>
 	<?php echo  "<input type='hidden'  name='ma_options[mantra_sidewidth]' id='mantra_sidewidth'   />";
@@ -158,9 +158,9 @@ jQuery(function() {
 
 <div id="relativedim">
 
-	<b id="contentbRel" style="display:block;float:left;position:absolute;margin-top:-20px;"><?php _e("Content =","mantra");?> <span id="contentsizeRel"><?php echo $mantra_options['mantra_sidewidthRel'];?></span>%</b>
-	<b id="barbRel" style="margin-left:40px;color:#F6A828;display:block;float:left;position:absolute;margin-top:-20px;" ><?php _e("Sidebar(s) =","mantra");?>  <span id="barsizeRel"><?php echo $mantra_options['mantra_sidebarRel'];?></span>%</b>
-	<b id="totalbRel" style="margin-left:40px;color:#999;display:block;float:left;position:absolute;margin-top:12px;" >^&mdash;&mdash;&mdash; <?php _e("Total width =","mantra");?>  <span id="totalsizeRel"><?php echo $mantra_options['mantra_sidewidthRel']+$mantra_options['mantra_sidebarRel'];?></span>% &mdash;&mdash;&mdash;^</b>
+	<b id="contentbRel" style="display:block;float:left;position:absolute;margin-top:-20px;"><?php _e("Content =","mantra");?> <span id="contentsizeRel"><?php echo absint( $mantra_options['mantra_sidewidthRel'] );?></span>%</b>
+	<b id="barbRel" style="margin-left:40px;color:#F6A828;display:block;float:left;position:absolute;margin-top:-20px;" ><?php _e("Sidebar(s) =","mantra");?>  <span id="barsizeRel"><?php echo absint( $mantra_options['mantra_sidebarRel'] );?></span>%</b>
+	<b id="totalbRel" style="margin-left:40px;color:#999;display:block;float:left;position:absolute;margin-top:12px;" >^&mdash;&mdash;&mdash; <?php _e("Total width =","mantra");?>  <span id="totalsizeRel"><?php echo absint( $mantra_options['mantra_sidewidthRel']+$mantra_options['mantra_sidebarRel'] );?></span>% &mdash;&mdash;&mdash;^</b>
 
 <p>
 	<?php echo  "<input type='hidden'  name='ma_options[mantra_sidewidthRel]' id='mantra_sidewidthRel'   />";
@@ -194,8 +194,8 @@ function cryout_setting_mobile_fn() {
 
 	echo " <label style='border:none;margin-left:10px;' for='mantra_zoom' class='socialsdisplay'><input ";
 		 checked($mantra_options['mantra_zoom'],'1');
-	echo " value='". $mantra_options['mantra_zoom'] ."' id='mantra_zoom' name='ma_options[mantra_zoom]' type='checkbox' /> Allow zoom </label>";	
-	
+	echo " value='". $mantra_options['mantra_zoom'] ."' id='mantra_zoom' name='ma_options[mantra_zoom]' type='checkbox' /> Allow zoom </label>";
+
 	echo "<div><small>".__("Enable to make Mantra fully responsive. The layout and general sizes of your blog will adjust depending on what device and what resolution it is viewed in.<br> Do not disable unless you have a good reason to.","mantra")."</small></div>";
 }
 
@@ -238,7 +238,7 @@ function cryout_setting_frontposts_fn() {
 	}
 	echo "</select> ";
 	echo "<input type='text' id='mantra_frontpostscount' name='ma_options[mantra_frontpostscount]' size='3' value='";
-	echo $mantra_options['mantra_frontpostscount']."'> ".__('posts','mantra');
+	echo absint( $mantra_options['mantra_frontpostscount'] )."'> ".__('posts','mantra');
 	echo "<div><small>".__("Enable to display latest posts on the presentation page, below the columns. Sticky posts are always displayed and not counted.","mantra")."</small></div>";
 }
 
@@ -382,9 +382,9 @@ foreach($items as $id=>$item) {
 
 ?>
 
-<div id="sliderShortcode" class="slideDivs"> 
-<span><?php _e('Enter the desired slider plugin shortcode below:','mantra'); ?> </span> 
-<input id='mantra_slideShortcode' name='ma_options[mantra_slideShortcode]' size='44' type='text' value='<?php echo esc_attr($mantra_options['mantra_slideShortcode'] ) ?>' /> 
+<div id="sliderShortcode" class="slideDivs">
+<span><?php _e('Enter the desired slider plugin shortcode below:','mantra'); ?> </span>
+<input id='mantra_slideShortcode' name='ma_options[mantra_slideShortcode]' size='44' type='text' value='<?php echo esc_attr($mantra_options['mantra_slideShortcode'] ) ?>' />
 </div>
 
 <div id="sliderLatestPosts" class="slideDivs">
@@ -692,12 +692,12 @@ function cryout_setting_himage_fn() {
 	echo "<div><small>".__("The header image should not be used to display logos.<br> Enable ratio preservation to force the header image aspect ratio. Keep in mind that short images will become very small on mobile devices.","mantra")."</small></div>";
 	echo "<br><label id='hcenter' for='mantra_hcenter' class='socialsdisplay $checkedClass'><input ";
 		 checked($mantra_options['mantra_hcenter'],'1');
-	echo " value='1' id='mantra_hcenter' name='ma_options[mantra_hcenter]' type='checkbox'/> Center the header image horizontally </label>";
+	echo " value='1' id='mantra_hcenter' name='ma_options[mantra_hcenter]' type='checkbox'/>Center horizontally</label>";
 
-	echo " <label id='hratio' for='mantra_hratio' class='socialsdisplay $checkedClass2'><input ";
+	echo "<label id='hratio' for='mantra_hratio' class='socialsdisplay $checkedClass2'><input ";
 		 checked($mantra_options['mantra_hratio'],'1');
-	echo " value='1' id='mantra_hratio' name='ma_options[mantra_hratio]' type='checkbox' style='margin-left:10px;'/> Keep header image aspect ratio </label>";
-	
+	echo " value='1' id='mantra_hratio' name='ma_options[mantra_hratio]' type='checkbox'/>Keep aspect ratio</label>";
+
 }
 
 //CHECKBOX - Name: ma_options[menurounded]
@@ -1398,7 +1398,7 @@ global $mantra_options;
 		$checkedClass = ($mantra_options['mantra_pin']==$item) ? ' checkedClass' : '';
 		echo "<label id='$item' class='pins  $checkedClass'><input ";
 		checked($mantra_options['mantra_pin'],$item);
-		echo " value='$item' onClick=\"changeBorder('$item','pins');\" name='ma_options[mantra_pin]' type='radio' />$none<img style='margin-left:10px;margin-right:10px;' src='".get_template_directory_uri()."/images/pins/".$item.".png'/></label>";
+		echo " value='$item' onClick=\"changeBorder('$item','pins');\" name='ma_options[mantra_pin]' type='radio' />$none<img style='margin-left:10px;margin-right:10px;' src='".get_template_directory_uri()."/resources/images/pins/".$item.".png'/></label>";
 	}
 		echo "<div><small>".__("The image on top of your captions. ","mantra")."</small></div>";
 }
@@ -1413,7 +1413,7 @@ function cryout_setting_sidebullet_fn() {
 		$checkedClass = ($mantra_options['mantra_sidebullet']==$item) ? ' checkedClass' : '';
 		echo "<label id='$item' class='sidebullets  $checkedClass'><input ";
 		checked($mantra_options['mantra_sidebullet'],$item);
-		echo " value='$item' onClick=\"changeBorder('$item','sidebullets');\" name='ma_options[mantra_sidebullet]' type='radio' />$none<img style='margin-left:10px;margin-right:10px;' src='".get_template_directory_uri()."/images/bullets/".$item.".png'/></label>";
+		echo " value='$item' onClick=\"changeBorder('$item','sidebullets');\" name='ma_options[mantra_sidebullet]' type='radio' />$none<img style='margin-left:10px;margin-right:10px;' src='".get_template_directory_uri()."/resources/images/bullets/".$item.".png'/></label>";
 	}
 	echo "<div><small>".__("The sidebar list bullets. ","mantra")."</small></div>";
 }
@@ -1977,19 +1977,19 @@ global $mantra_options;
 
 		echo " <label id='$items[0]' for='$items[0]$items[0]' class='socialsdisplay $checkedClass0'><input  ";
 		 checked($mantra_options['mantra_socialsdisplay0'],'1');
-	echo " value='1' id='$items[0]$items[0]'  name='ma_options[mantra_socialsdisplay0]' type='checkbox' /> Top right corner of header </label>";
+	echo " value='1' id='$items[0]$items[0]'  name='ma_options[mantra_socialsdisplay0]' type='checkbox' /> Header </label>";
 
 		echo " <label id='$items[1]' for='$items[1]$items[1]' class='socialsdisplay $checkedClass1'><input  ";
 		 checked($mantra_options['mantra_socialsdisplay1'],'1');
-	echo " value='1' id='$items[1]$items[1]'  name='ma_options[mantra_socialsdisplay1]' type='checkbox' /> Under menu - left side </label>";
+	echo " value='1' id='$items[1]$items[1]'  name='ma_options[mantra_socialsdisplay1]' type='checkbox' /> Left side </label>";
 
 		echo " <label id='$items[2]' for='$items[2]$items[2]' class='socialsdisplay $checkedClass2'><input  ";
 		 checked($mantra_options['mantra_socialsdisplay2'],'1');
-	echo " value='1' id='$items[2]$items[2]'  name='ma_options[mantra_socialsdisplay2]' type='checkbox' /> Under menu - right side </label>";
+	echo " value='1' id='$items[2]$items[2]'  name='ma_options[mantra_socialsdisplay2]' type='checkbox' /> Right side </label>";
 
 		echo " <label id='$items[3]' for='$items[3]$items[3]' class='socialsdisplay $checkedClass3'><input  ";
 		 checked($mantra_options['mantra_socialsdisplay3'],'1');
-	echo " value='1' id='$items[3]$items[3]'  name='ma_options[mantra_socialsdisplay3]' type='checkbox' /> In the footer (smaller icons) </label>";
+	echo " value='1' id='$items[3]$items[3]'  name='ma_options[mantra_socialsdisplay3]' type='checkbox' /> Footer </label>";
 
 
 

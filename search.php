@@ -12,10 +12,10 @@ get_header(); ?>
 		<section id="container">
 			<div id="content" role="main">
 	<?php cryout_before_content_hook(); ?>
-	
+
 			<?php if ( have_posts() ) : ?>
 
-				
+
 				<?php mantra_content_nav( 'nav-above' ); ?>
 				<span class="page-title"><?php printf( __( 'Search Results for: %s', 'mantra' ), '<span>' . get_search_query() . '</span>' ); ?></span>
 	<div class="contentsearch"><?php get_search_form(); ?></div>
@@ -27,7 +27,7 @@ get_header(); ?>
 				 * If you want to overload this in a child theme then include a file
 				 * called loop-search.php and that will be used instead.
 				 */
-				 get_template_part( 'content', get_post_format() );
+				 get_template_part( 'content/content', get_post_format() );
 				?>
 										<?php endwhile; ?>
 

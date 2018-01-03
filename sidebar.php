@@ -13,15 +13,15 @@ foreach ($mantra_options as $key => $value) {
      ${"$key"} = esc_attr($value) ;
 }
 
-if (is_page_template() && !is_page_template('template-blog.php') && !is_page_template('template-onecolumn.php') && !is_page_template('template-page-with-intro.php') ) {
+if (is_page_template() && !is_page_template('templates/template-blog.php') && !is_page_template('templates/template-onecolumn.php') && !is_page_template('templates/template-page-with-intro.php') ) {
 ?>
 	<div id="primary" class="widget-area" role="complementary">
-	
+
 	<?php cryout_before_primary_widgets_hook(); ?>
-			
-			
+
+
 		<?php if (!is_active_sidebar('primary-widget-area') && !is_active_sidebar('secondary-widget-area')): ?>
-			<ul class="xoxo">	
+			<ul class="xoxo">
 				<li class="widget-container widget-placeholder">
 					<h3 class="widget-title"><?php _e('Sidebar 1','mantra'); ?></h3>
 					<p><?php
@@ -31,8 +31,8 @@ if (is_page_template() && !is_page_template('template-blog.php') && !is_page_tem
 				</li>
 			</ul>
 		<?php endif; ?>
-			
-			
+
+
 			<ul class="xoxo">
 				<?php dynamic_sidebar( 'primary-widget-area' ); ?>
 			</ul>
@@ -40,20 +40,20 @@ if (is_page_template() && !is_page_template('template-blog.php') && !is_page_tem
 			<ul class="xoxo">
 				<?php dynamic_sidebar( 'secondary-widget-area' ); ?>
 			</ul>
-			
+
 		<?php cryout_after_primary_widgets_hook(); ?>
-		
+
 		</div><!-- #primary .widget-area -->
-		
-		<?php 
-		if (is_page_template("template-threecolumns-right.php") || is_page_template("template-threecolumns-left.php") || is_page_template("template-threecolumns-center.php")) { ?>
+
+		<?php
+		if (is_page_template("templates/template-threecolumns-right.php") || is_page_template("templates/template-threecolumns-left.php") || is_page_template("templates/template-threecolumns-center.php")) { ?>
 
 		<div id="secondary" class="widget-area" role="complementary" >
-		
+
 		<?php cryout_before_secondary_widgets_hook(); ?>
-		
+
 				<?php if (!is_active_sidebar('third-widget-area') && !is_active_sidebar('fourth-widget-area')): ?>
-			<ul class="xoxo">	
+			<ul class="xoxo">
 				<li class="widget-container widget-placeholder">
 					<h3 class="widget-title"><?php _e('Sidebar 2','mantra'); ?></h3>
 					<p><?php
@@ -63,31 +63,31 @@ if (is_page_template() && !is_page_template('template-blog.php') && !is_page_tem
 				</li>
 			</ul>
 		<?php endif; ?>
-		
+
 			<ul class="xoxo">
 				<?php dynamic_sidebar( 'third-widget-area' ); ?>
 			</ul>
-			
+
 			<ul class="xoxo">
 				<?php dynamic_sidebar( 'fourth-widget-area' ); ?>
 			</ul>
-			
+
 		<?php cryout_after_secondary_widgets_hook(); ?>
-		
+
 		</div><!-- #secondary .widget-area -->
 
 		<?php } // second sidebar
 } // if page_template
 
-else 
+else
 if ($mantra_side != "1c") { ?>
 		<div id="primary" class="widget-area" role="complementary">
-		
+
 		<?php cryout_before_primary_widgets_hook(); ?>
-		
-		<?php 
+
+		<?php
 				if (!is_active_sidebar('primary-widget-area') && !is_active_sidebar('secondary-widget-area')): ?>
-			<ul class="xoxo">	
+			<ul class="xoxo">
 				<li class="widget-container widget-placeholder">
 					<h3 class="widget-title"><?php _e('Sidebar 1','mantra'); ?></h3>
 					<p><?php
@@ -97,7 +97,7 @@ if ($mantra_side != "1c") { ?>
 				</li>
 			</ul>
 		<?php endif; ?>
-		
+
 			<ul class="xoxo">
 				<?php dynamic_sidebar( 'primary-widget-area' ) ; ?>
 			</ul>
@@ -105,22 +105,22 @@ if ($mantra_side != "1c") { ?>
 			<ul class="xoxo">
 				<?php dynamic_sidebar( 'secondary-widget-area' ); ?>
 			</ul>
-			
-			
+
+
 			<?php cryout_after_primary_widgets_hook(); ?>
-			
+
 		</div><!-- #primary .widget-area -->
 
 <?php
 	// A second sidebar for widgets, just because.
-	
+
 	if ( $mantra_side != "2cSr" &&  $mantra_side != "2cSl") { ?>
-	
+
 		<div id="secondary" class="widget-area" role="complementary" >
-		
+
 		<?php cryout_before_secondary_widgets_hook(); ?>
 		<?php if (!is_active_sidebar('third-widget-area') && !is_active_sidebar('fourth-widget-area')): ?>
-			<ul class="xoxo">	
+			<ul class="xoxo">
 				<li class="widget-container widget-placeholder">
 					<h3 class="widget-title"><?php _e('Sidebar 2','mantra'); ?></h3>
 					<p><?php
@@ -130,17 +130,17 @@ if ($mantra_side != "1c") { ?>
 				</li>
 			</ul>
 		<?php endif; ?>
-		
+
 			<ul class="xoxo">
 				<?php dynamic_sidebar( 'third-widget-area' ); ?>
 			</ul>
-			
+
 			<ul class="xoxo">
 				<?php dynamic_sidebar( 'fourth-widget-area' ); ?>
 			</ul>
-			
-		<?php cryout_after_secondary_widgets_hook(); ?>	
-		
+
+		<?php cryout_after_secondary_widgets_hook(); ?>
+
 		</div><!-- #secondary .widget-area -->
 	<?php }
  }?> <!-- 1c -->

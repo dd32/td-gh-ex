@@ -47,16 +47,17 @@
 					 "Lucida Handwriting,cursive",
 					 "Comic Sans MS, cursive");
 
-/* Social media links */
-
-	$socialNetworks = array ("Amazon", "Dailymotion", "Delicious", "DeviantArt", "Digg", "Etsy", "Facebook", "Flickr", 
-							"Google", "GoodReads", "GooglePlus", "IMDb", "Instagram", "LastFM", "LinkedIn", "Mail", 
-							"MySpace", "Picasa", "Pinterest", "Reddit", "RSS", "Skype", "Steam", "SoundCloud", 
-							"StumbleUpon", "Technorati", "Tumblr", "Twitch", "Twitter", "Vimeo", "VK", "WordPress",
-                            "Xing", "Yahoo", "Yelp", "YouTube" );
-
-
-
+	/* Social media links */
+	$socialNetworks = array (
+			"AboutMe", "AIM", "Amazon", "Contact", "Delicious", "DeviantArt",
+			"Digg", "Discord", "Dribbble", "Etsy", "Facebook", "Flickr",
+			"FriendFeed", "Github", "GoodReads", "GooglePlus", "IMDb", "Instagram",
+			"LastFM", "LinkedIn", "Mail", "MindVox", "MySpace", "Newsvine", "Patreon",
+			"PayPal", "Phone", "Picasa", "Pinterest", "Reddit", "RSS", "ShareThis",
+			"Skype", "Steam", "Steam-old", "SoundCloud", "StumbleUpon", "Technorati",
+			"TripAdvisor", "Tumblr",  "Twitch", "Twitter", "Twitter-old", "Vimeo", "VK",
+			"WordPress", "Yahoo", "Yelp", "YouTube", "YouTube-old", "Xing",
+	);
 
 if (!function_exists ('ma_options_validate') ) :
 /*

@@ -1,17 +1,18 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Mantra 2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-10 15:49+0200\n"
+"POT-Creation-Date: 2017-12-29 22:39+0200\n"
 "PO-Revision-Date: 2017-05-10 15:49+0200\n"
 "Last-Translator: Cryout Creations\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-KeywordsList: __;_e;_x\n"
-"X-Poedit-Basepath: ../\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:17
@@ -22,208 +23,6 @@ msgstr ""
 msgid ""
 "Apologies, but the page you requested could not be found. Perhaps searching "
 "will help."
-msgstr ""
-
-#: archive.php:27
-#, php-format
-msgid "Daily Archives: %s"
-msgstr ""
-
-#: archive.php:29
-#, php-format
-msgid "Monthly Archives: %s"
-msgstr ""
-
-#: archive.php:29
-msgid "F Y"
-msgstr ""
-
-#: archive.php:31
-#, php-format
-msgid "Yearly Archives: %s"
-msgstr ""
-
-#: archive.php:31
-msgid "Y"
-msgstr ""
-
-#: archive.php:33
-msgid "Blog Archives"
-msgstr ""
-
-#: archive.php:59 author.php:75 category.php:51 content-frontpage.php:26
-#: index.php:41 search.php:41 tag.php:52 template-blog.php:36
-msgid "Nothing Found"
-msgstr ""
-
-#: archive.php:63 author.php:79 category.php:55 content-frontpage.php:30
-#: index.php:45 tag.php:56 template-blog.php:40
-msgid ""
-"Apologies, but no results were found for the requested archive. Perhaps "
-"searching will help find a related post."
-msgstr ""
-
-#: attachment.php:18
-#, php-format
-msgid "Return to %s"
-msgstr ""
-
-#: attachment.php:29
-msgid "By"
-msgstr ""
-
-#: attachment.php:40
-msgid "Published"
-msgstr ""
-
-#: attachment.php:50
-#, php-format
-msgid "Full size is %s pixels"
-msgstr ""
-
-#: attachment.php:53
-msgid "Link to full-size image"
-msgstr ""
-
-#: attachment.php:60 attachment.php:107 content-aside.php:46
-#: content-chat.php:47 content-gallery.php:73 content-image.php:40
-#: content-link.php:47 content-page.php:22 content-quote.php:44
-#: content-status.php:46 content.php:78 single.php:55
-#: template-onecolumn.php:28 template-page-with-intro.php:18
-msgid "Edit"
-msgstr ""
-
-#: attachment.php:100
-msgid "Continue reading"
-msgstr ""
-
-#: attachment.php:101 content-aside.php:37 content-chat.php:36
-#: content-gallery.php:63 content-image.php:31 content-link.php:36
-#: content-page.php:21 content-quote.php:34 content-status.php:37
-#: content.php:51 content.php:67 single.php:33 template-onecolumn.php:27
-#: template-page-with-intro.php:17
-msgid "Pages:"
-msgstr ""
-
-#: author.php:29
-#, php-format
-msgid "Author Archives: %s"
-msgstr ""
-
-#: author.php:50
-#, php-format
-msgid "About %s"
-msgstr ""
-
-#: category.php:20
-#, php-format
-msgid "Category Archives: %s"
-msgstr ""
-
-#: comments.php:18
-msgid ""
-"This post is password protected. Enter the password to view any comments."
-msgstr ""
-
-#: content-aside.php:18
-msgid "Aside"
-msgstr ""
-
-#: content-aside.php:36 content-chat.php:35 content-image.php:30
-#: content-link.php:35 content-quote.php:33 content-status.php:36
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: content-aside.php:44 content-chat.php:43 content-gallery.php:70
-#: content-image.php:37 content-link.php:43 content-quote.php:41
-#: content-status.php:44 content.php:76 includes/theme-loop.php:205
-msgid "Tagged"
-msgstr ""
-
-#: content-chat.php:18
-msgid "Chat"
-msgstr ""
-
-#: content-gallery.php:21
-msgid "Gallery"
-msgstr ""
-
-#: content-image.php:17 admin/settings.php:444 admin/settings.php:459
-#: admin/settings.php:474 admin/settings.php:489 admin/settings.php:504
-#: admin/settings.php:546 admin/settings.php:561 admin/settings.php:576
-#: admin/settings.php:591
-msgid "Image"
-msgstr ""
-
-#: content-link.php:18 admin/settings.php:451 admin/settings.php:466
-#: admin/settings.php:481 admin/settings.php:496 admin/settings.php:511
-#: admin/settings.php:553 admin/settings.php:568 admin/settings.php:583
-#: admin/settings.php:598
-msgid "Link"
-msgstr ""
-
-#: content-page.php:27 includes/theme-comments.php:136
-msgid "Comments are closed."
-msgstr ""
-
-#: content-quote.php:16
-msgid "Quote"
-msgstr ""
-
-#: content-status.php:28 includes/tgm.php:2609
-msgid "Status"
-msgstr ""
-
-#: search.php:20
-#, php-format
-msgid "Search Results for: %s"
-msgstr ""
-
-#: search.php:39
-#, php-format
-msgid "No search results for: %s"
-msgstr ""
-
-#: searchform.php:2
-msgid "Search"
-msgstr ""
-
-#: sidebar.php:26 sidebar.php:92
-msgid "Sidebar 1"
-msgstr ""
-
-#: sidebar.php:28 sidebar.php:94
-#, php-format
-msgid ""
-"You currently have no widgets set in the primary sidebar. You can add "
-"widgets via the <a href=\"%s\">Dashboard</a>."
-msgstr ""
-
-#: sidebar.php:29 sidebar.php:61 sidebar.php:95 sidebar.php:128
-#, php-format
-msgid ""
-"To hide this sidebar, switch to a different Layout via the <a href=\"%s"
-"\">Theme Settings</a>."
-msgstr ""
-
-#: sidebar.php:58 sidebar.php:125
-msgid "Sidebar 2"
-msgstr ""
-
-#: sidebar.php:60 sidebar.php:127
-#, php-format
-msgid ""
-"You currently have no widgets set in the secondary sidebar. You can add "
-"widgets via the <a href=\"%s\">Dashboard</a>."
-msgstr ""
-
-#: single.php:46
-msgid "View all posts by "
-msgstr ""
-
-#: tag.php:21
-#, php-format
-msgid "Tag Archives: %s"
 msgstr ""
 
 #: admin/admin-functions.php:82
@@ -747,27 +546,27 @@ msgstr ""
 msgid "Mantra settings updated successfully."
 msgstr ""
 
-#: admin/main.php:309
+#: admin/main.php:312
 msgid "Import/Export Settings"
 msgstr ""
 
-#: admin/main.php:315
+#: admin/main.php:318
 msgid "Export Theme options"
 msgstr ""
 
-#: admin/main.php:320
+#: admin/main.php:322
 msgid "Import Theme options"
 msgstr ""
 
-#: admin/main.php:328
+#: admin/main.php:330
 msgid "Mantra Latest News"
 msgstr ""
 
-#: admin/main.php:340
+#: admin/main.php:342
 msgid "No news items."
 msgstr ""
 
-#: admin/main.php:344
+#: admin/main.php:346
 msgid "Posted on"
 msgstr ""
 
@@ -1156,6 +955,13 @@ msgstr ""
 msgid "Slide 1"
 msgstr ""
 
+#: admin/settings.php:444 admin/settings.php:459 admin/settings.php:474
+#: admin/settings.php:489 admin/settings.php:504 admin/settings.php:546
+#: admin/settings.php:561 admin/settings.php:576 admin/settings.php:591
+#: content/content-image.php:17
+msgid "Image"
+msgstr ""
+
 #: admin/settings.php:446 admin/settings.php:461 admin/settings.php:476
 #: admin/settings.php:491 admin/settings.php:506 admin/settings.php:548
 #: admin/settings.php:563 admin/settings.php:578 admin/settings.php:593
@@ -1173,6 +979,13 @@ msgstr ""
 #: admin/settings.php:494 admin/settings.php:509 admin/settings.php:551
 #: admin/settings.php:566 admin/settings.php:581 admin/settings.php:596
 msgid "Text"
+msgstr ""
+
+#: admin/settings.php:451 admin/settings.php:466 admin/settings.php:481
+#: admin/settings.php:496 admin/settings.php:511 admin/settings.php:553
+#: admin/settings.php:568 admin/settings.php:583 admin/settings.php:598
+#: content/content-link.php:18
+msgid "Link"
 msgstr ""
 
 #: admin/settings.php:457
@@ -1877,6 +1690,151 @@ msgid ""
 "forms of Analytic software).<br> The &ltscript&gt tags are not needed."
 msgstr ""
 
+#: archive.php:27
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:29
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:29
+msgid "F Y"
+msgstr ""
+
+#: archive.php:31
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:31
+msgid "Y"
+msgstr ""
+
+#: archive.php:33
+msgid "Blog Archives"
+msgstr ""
+
+#: archive.php:59 author.php:75 category.php:51
+#: content/content-frontpage.php:26 index.php:41 search.php:41 tag.php:52
+#: templates/template-blog.php:36
+msgid "Nothing Found"
+msgstr ""
+
+#: archive.php:63 author.php:79 category.php:55
+#: content/content-frontpage.php:30 index.php:45 tag.php:56
+#: templates/template-blog.php:40
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr ""
+
+#: attachment.php:18
+#, php-format
+msgid "Return to %s"
+msgstr ""
+
+#: attachment.php:29
+msgid "By"
+msgstr ""
+
+#: attachment.php:40
+msgid "Published"
+msgstr ""
+
+#: attachment.php:50
+#, php-format
+msgid "Full size is %s pixels"
+msgstr ""
+
+#: attachment.php:53
+msgid "Link to full-size image"
+msgstr ""
+
+#: attachment.php:60 attachment.php:107 content/content-aside.php:46
+#: content/content-chat.php:47 content/content-gallery.php:73
+#: content/content-image.php:40 content/content-link.php:47
+#: content/content-page.php:22 content/content-quote.php:44
+#: content/content-status.php:46 content/content.php:78 single.php:38
+#: templates/template-onecolumn.php:28
+#: templates/template-page-with-intro.php:18
+msgid "Edit"
+msgstr ""
+
+#: attachment.php:100
+msgid "Continue reading"
+msgstr ""
+
+#: attachment.php:101 content/content-aside.php:37 content/content-chat.php:36
+#: content/content-gallery.php:63 content/content-image.php:31
+#: content/content-link.php:36 content/content-page.php:21
+#: content/content-quote.php:34 content/content-status.php:37
+#: content/content.php:51 content/content.php:67 single.php:33
+#: templates/template-onecolumn.php:27
+#: templates/template-page-with-intro.php:17
+msgid "Pages:"
+msgstr ""
+
+#: author.php:29
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: author.php:50
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: category.php:20
+#, php-format
+msgid "Category Archives: %s"
+msgstr ""
+
+#: comments.php:18
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: content/content-aside.php:18
+msgid "Aside"
+msgstr ""
+
+#: content/content-aside.php:36 content/content-chat.php:35
+#: content/content-image.php:30 content/content-link.php:35
+#: content/content-quote.php:33 content/content-status.php:36
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: content/content-aside.php:44 content/content-chat.php:43
+#: content/content-gallery.php:70 content/content-image.php:37
+#: content/content-link.php:43 content/content-quote.php:41
+#: content/content-status.php:44 content/content.php:76
+#: includes/theme-loop.php:200
+msgid "Tagged"
+msgstr ""
+
+#: content/content-chat.php:18
+msgid "Chat"
+msgstr ""
+
+#: content/content-gallery.php:21
+msgid "Gallery"
+msgstr ""
+
+#: content/content-page.php:27 includes/theme-comments.php:136
+msgid "Comments are closed."
+msgstr ""
+
+#: content/content-quote.php:16
+msgid "Quote"
+msgstr ""
+
+#: content/content-status.php:28 includes/tgm.php:2609
+msgid "Status"
+msgstr ""
+
 #: includes/tgm.php:29
 msgid "Recommended Plugins"
 msgstr ""
@@ -2167,11 +2125,11 @@ msgid "Leave a comment"
 msgstr ""
 
 #: includes/theme-comments.php:85
-msgid "<b>1</b> Comment"
+msgid "1 Comment"
 msgstr ""
 
 #: includes/theme-comments.php:85
-msgid "<b>%</b> Comments"
+msgid "% Comments"
 msgstr ""
 
 #: includes/theme-comments.php:107
@@ -2186,45 +2144,45 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: includes/theme-functions.php:259
+#: includes/theme-functions.php:231
 msgid "Tag"
 msgstr ""
 
-#: includes/theme-functions.php:271
+#: includes/theme-functions.php:243
 msgid "Home Page"
 msgstr ""
 
-#: includes/theme-functions.php:344
+#: includes/theme-functions.php:313
 msgid "Powered by"
 msgstr ""
 
-#: includes/theme-loop.php:166
+#: includes/theme-loop.php:161
 msgid "By "
 msgstr ""
 
-#: includes/theme-loop.php:205
+#: includes/theme-loop.php:200
 msgid " Bookmark the "
 msgstr ""
 
-#: includes/theme-loop.php:205 includes/theme-loop.php:207
-#: includes/theme-loop.php:209
+#: includes/theme-loop.php:200 includes/theme-loop.php:202
+#: includes/theme-loop.php:204
 msgid "Permalink to"
 msgstr ""
 
-#: includes/theme-loop.php:205 includes/theme-loop.php:207
-#: includes/theme-loop.php:209
+#: includes/theme-loop.php:200 includes/theme-loop.php:202
+#: includes/theme-loop.php:204
 msgid "permalink"
 msgstr ""
 
-#: includes/theme-loop.php:207 includes/theme-loop.php:209
+#: includes/theme-loop.php:202 includes/theme-loop.php:204
 msgid "Bookmark the "
 msgstr ""
 
-#: includes/theme-loop.php:231
+#: includes/theme-loop.php:226
 msgid "<span class=\"meta-nav\">&laquo;</span> Older posts"
 msgstr ""
 
-#: includes/theme-loop.php:232
+#: includes/theme-loop.php:227
 msgid "Newer posts <span class=\"meta-nav\">&raquo;</span>"
 msgstr ""
 
@@ -2323,4 +2281,60 @@ msgstr ""
 
 #: includes/theme-setup.php:357 includes/theme-setup.php:359
 msgid "Below Content Widget Area"
+msgstr ""
+
+#: search.php:20
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: search.php:39
+#, php-format
+msgid "No search results for: %s"
+msgstr ""
+
+#: searchform.php:11
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:14
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:26 sidebar.php:92
+msgid "Sidebar 1"
+msgstr ""
+
+#: sidebar.php:28 sidebar.php:94
+#, php-format
+msgid ""
+"You currently have no widgets set in the primary sidebar. You can add "
+"widgets via the <a href=\"%s\">Dashboard</a>."
+msgstr ""
+
+#: sidebar.php:29 sidebar.php:61 sidebar.php:95 sidebar.php:128
+#, php-format
+msgid ""
+"To hide this sidebar, switch to a different Layout via the <a href=\"%s"
+"\">Theme Settings</a>."
+msgstr ""
+
+#: sidebar.php:58 sidebar.php:125
+msgid "Sidebar 2"
+msgstr ""
+
+#: sidebar.php:60 sidebar.php:127
+#, php-format
+msgid ""
+"You currently have no widgets set in the secondary sidebar. You can add "
+"widgets via the <a href=\"%s\">Dashboard</a>."
+msgstr ""
+
+#: single.php:52
+msgid "View all posts by "
+msgstr ""
+
+#: tag.php:21
+#, php-format
+msgid "Tag Archives: %s"
 msgstr ""

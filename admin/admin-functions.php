@@ -39,11 +39,8 @@ function mantra_export_options(){
 	}
 
 	if ( $authorised) {
-global $mantra_options;
-/*date_default_timezone_set('UTC');
-$today = date("YmdGis");
-$name = 'mantra-settings'.$today.'.txt';*/
-		$name = 'mantra-settings.txt';
+		global $mantra_options;
+		$name = 'mantrasettings-'.preg_replace("/[^a-z0-9-_]/i",'',str_replace("http://","",get_option('siteurl'))).'-'.date('Ymd-His').'.txt';
 		$data = $mantra_options;
 		$data = json_encode( $data );
 		$size = strlen( $data );
