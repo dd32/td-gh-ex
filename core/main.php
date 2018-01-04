@@ -605,13 +605,13 @@ if (!function_exists('suevafree_customize_excerpt_more')) {
 	
 			$class = 'button ' . suevafree_setting('suevafree_readmore_layout');
 			$button = esc_html__('Read More','suevafree');
-			$container = 'class="read-more"';
+			$container = 'class="read-more ' . suevafree_setting('suevafree_readmore_align') . '"';
 	
 			if ( suevafree_setting('suevafree_readmore_layout') == "default" || !suevafree_setting('suevafree_readmore_layout') ) : 
 			
 				$class = 'button default';
 				$button = esc_html__('Read More','suevafree');
-				$container = 'class="read-more"';
+				$container = 'class="read-more ' . suevafree_setting('suevafree_readmore_align') . '"';
 	
 			else :
 	

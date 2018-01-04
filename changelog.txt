@@ -1,6 +1,14 @@
 SuevaFree Changelog
 
-- Version 3.3.9 - Released: 26.11.2017
+- Version 3.4.0 - Released: 04.12.2017
+
+-- Added  : Option to manage the alignment of titles and post details. 
+-- Added  : Option to manage the content alignment of posts and pages. 
+-- Added  : Option to manage the alignment of read more button. 
+-- Fixed  : Mobile drop-down menu on the header layouts 1, 2 and 3
+-- Edit   : Code optimized.
+
+- Version 3.3.9 - Released: 26.12.2017
 
 -- Edit  : Code optimized.
 

@@ -249,6 +249,14 @@ div.sharedaddy {
 	text-align:center;
 }
 
+.read-more.left-button { 
+	text-align:left;
+}
+
+.read-more.right-button { 
+	text-align:right;
+}
+
 span.button {
 	background:#ff6644;
 	padding:10px 15px;
@@ -779,11 +787,13 @@ body.disable_box_shadow .post-article {
 	margin:auto;
 }
 
-.post-article blockquote { 
-	border-left: 4px solid #ff6644; 
+.post-article blockquote {
 	padding:0 35px; 
 	position:relative; 
 	margin-left:0px;
+	border-color:#ff6644;
+	border-left-width:4px;
+	border-left-style:solid;
 }
 
 post-article blockquote p { 
@@ -1450,8 +1460,96 @@ h3.comments {
 h3#reply-title small, 
 .logged-in-as { 
 	font-size: 14px;
-	margin:-25px 0 50px 0;
+	margin:-25px 0 30px 0;
 	font-weight:bold
+}
+
+/* ===============================================
+   TITLE AND CONTENT ALIGN > LEFT 
+   ============================================= */
+
+.post-container .title-left-align .line ,
+.post-container .title-left-align .title ,
+.post-container .title-left-align .entry-info ,
+.post-container .title-left-align .entry-date ,
+.post-container .title-left-align .entry-category {
+	text-align:left;
+    padding-left: 0;
+}
+
+.col-md-3 .title-left-align.post-details-1 .entry-info span, 
+.col-md-4 .title-left-align.post-details-1 .entry-info span, 
+.col-md-6 .title-left-align.post-details-1 .entry-info span {
+    padding-left: 20px;
+}
+
+.col-md-3 .title-left-align.post-details-1 .entry-info span span, 
+.col-md-4 .title-left-align.post-details-1 .entry-info span span, 
+.col-md-6 .title-left-align.post-details-1 .entry-info span span {
+    padding-left: 0;
+}
+
+.post-container .post-left-align , 
+.post-container .post-left-align h3.comments,
+.post-container .post-left-align h3#reply-title, 
+.post-container .post-left-align .logged-in-as, 
+.post-container .post-left-align .comment-notes, 
+.post-container .post-left-align .comment-form-comment, 
+.post-container .post-left-align .comment-form-author, 
+.post-container .post-left-align .comment-form-email, 
+.post-container .post-left-align .comment-form-url, 
+.post-container .post-left-align .form-submit {
+	text-align:left;
+}
+
+/* ===============================================
+   TITLE AND CONTENT ALIGN > RIGHT 
+   ============================================= */
+
+.col-md-3 .title-right-align .entry-info i, 
+.col-md-4 .title-right-align .entry-info i, 
+.col-md-6 .title-right-align .entry-info i {
+	right: 0;
+}
+
+.post-container .title-right-align .line ,
+.post-container .title-right-align .title ,
+.post-container .title-right-align .entry-info ,
+.post-container .title-right-align .entry-date ,
+.post-container .title-right-align .entry-category {
+	text-align:right;
+    padding-right: 0;
+}
+
+.col-md-3 .title-right-align.post-details-1 .entry-info span, 
+.col-md-4 .title-right-align.post-details-1 .entry-info span, 
+.col-md-6 .title-right-align.post-details-1 .entry-info span {
+    padding-right: 20px;
+}
+
+.col-md-3 .title-right-align.post-details-1 .entry-info span span, 
+.col-md-4 .title-right-align.post-details-1 .entry-info span span, 
+.col-md-6 .title-right-align.post-details-1 .entry-info span span {
+    padding-right: 0;
+}
+
+.post-container .post-right-align , 
+.post-container .post-right-align h3.comments,
+.post-container .post-right-align h3#reply-title, 
+.post-container .post-right-align .logged-in-as, 
+.post-container .post-right-align .comment-notes, 
+.post-container .post-right-align .comment-form-comment, 
+.post-container .post-right-align .comment-form-author, 
+.post-container .post-right-align .comment-form-email, 
+.post-container .post-right-align .comment-form-url, 
+.post-container .post-right-align .form-submit {
+	text-align:right;
+}
+
+.post-container .post-right-align.post-article blockquote {
+    border-left: none;
+	border-right-width:4px;
+	border-right-style:solid;
 }
 
 /* ===============================================
@@ -1520,7 +1618,7 @@ div.wpcf7-mail-sent-ok {
 	font-size:14px;
 	text-align:center;
 	position:relative;
-	display: block;
+	display: inline-block;
 	border:none;
 	text-shadow:none;
 	padding:10px 15px;
@@ -1529,6 +1627,9 @@ div.wpcf7-mail-sent-ok {
 	-webkit-transition: all .3s ease;
 	-moz-transition: all .3s ease; 
 	-o-transition: all .3s ease;
+	-webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
 
 .wpcf7-form input[type=submit]:hover ,
@@ -1584,6 +1685,10 @@ div.wpcf7-mail-sent-ok {
 .form-submit { 
 	display:block;
 	text-align:center;
+}
+
+.form-submit {
+	margin-top:40px;
 }
 
 .contact-form span.messagge-sent {
@@ -2124,6 +2229,10 @@ body.disable_box_shadow .suevafree-pagination span {
 
 @media screen and (min-width : 0px) and (max-width : 992px)  {	
 
+	/* ===============================================
+	   HEADER 
+	   ============================================= */
+
 	#header {
 		position:relative;
 	}
@@ -2186,6 +2295,10 @@ body.disable_box_shadow .suevafree-pagination span {
 		float:inherit;
 	}
 
+	/* ===============================================
+	   MARGINS 
+	   ============================================= */
+
 	#mainmenu,
 	#sidebar, 
 	.wp-pagenavi,
@@ -2218,7 +2331,11 @@ body.disable_box_shadow .suevafree-pagination span {
 	#footer { 
 		margin-top:50px;
 	}
-	
+
+	/* ===============================================
+	   FOOTER 
+	   ============================================= */
+
 	#footer .copyright {
 		margin:0;
 		line-height:15px;
@@ -2239,7 +2356,19 @@ body.disable_box_shadow .suevafree-pagination span {
 		padding:10px 25px;
 		text-align:center;
 	}
-	
+
+	#footer_widgets .widget {
+		margin-right: inherit;
+	}
+
+	.suevafree-pagination {
+		padding-bottom:50px;
+	}
+
+	/* ===============================================
+	   POST INFO 
+	   ============================================= */
+
 	.line {
 		border:none;
 		background:none;
@@ -2278,7 +2407,11 @@ body.disable_box_shadow .suevafree-pagination span {
 		width:100%;
 		margin-bottom:50px;
 	}
-	
+
+	/* ===============================================
+	   COMMENTS 
+	   ============================================= */
+
 	.children li {
 		margin-left:0;
 	}
@@ -2299,10 +2432,6 @@ body.disable_box_shadow .suevafree-pagination span {
 		font-size:18px;
 	}
 	
-	#footer_widgets .widget {
-		margin-right: inherit;
-	}
-	
 	.col-md-8.left-sidebar,
 	.col-md-8.right-sidebar  {
 		float:inherit;
@@ -2312,9 +2441,11 @@ body.disable_box_shadow .suevafree-pagination span {
 		font-size:22px;
 		margin:0 0 15px 0;
 	}
+	
 	.row.masonry {
 		margin-bottom:0;
 	}
+	
 	.skills {
 		margin-bottom:50px;
 		width:100%
@@ -2328,8 +2459,44 @@ body.disable_box_shadow .suevafree-pagination span {
 		margin:0;
 	}
 
-	.suevafree-pagination {
-		padding-bottom:50px;
+	/* ===============================================
+	   MOBILE TITLE AND CONTENT ALIGN
+	   ============================================= */
+
+	.title-left-align .entry-info ,
+	.title-right-align .entry-info {
+		display:block;
+		margin:30px 0;
+	}
+
+	/* ===============================================
+	   MOBILE TITLE AND CONTENT ALIGN > LEFT 
+	   ============================================= */
+
+	.title-left-align .entry-info span {
+		text-align:left;
+		padding-left: 20px;
+	}
+
+	.title-left-align .entry-info span span {
+		padding-left: 0;
+	}
+	
+	/* ===============================================
+	   MOBILE TITLE AND CONTENT ALIGN > RIGHT 
+	   ============================================= */
+
+	.title-right-align .entry-info i {
+		right: 0;
+	}
+
+	.title-right-align .entry-info span {
+		text-align:right;
+		padding-right: 20px;
+	}
+
+	.title-right-align .entry-info span span {
+		padding-right: 0;
 	}
 
 }

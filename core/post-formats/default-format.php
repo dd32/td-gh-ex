@@ -14,6 +14,8 @@ if (!function_exists('suevafree_default_format_function')) {
 
 	function suevafree_default_format_function($post_thumbnail = 'suevafree_thumbnail') {
 		
+		$postDetails = str_replace('suevafree_before_content_', '', suevafree_setting('suevafree_post_details_layout', 'suevafree_before_content_1'));
+		
 		do_action('suevafree_thumbnail', 
 			
 			array(	'id' => $post_thumbnail, 
@@ -25,7 +27,7 @@ if (!function_exists('suevafree_default_format_function')) {
 
 	?>
     
-        <div class="post-article post-details-<?php echo str_replace('suevafree_before_content_', '', suevafree_setting('suevafree_post_details_layout', 'suevafree_before_content_1')); ?>">
+        <div class="post-article post-details-<?php echo $postDetails . ' ' . suevafree_setting('suevafree_post_align', '') . ' ' . suevafree_setting('suevafree_title_align', ''); ?>">
         
             <?php 
 				

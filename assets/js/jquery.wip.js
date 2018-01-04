@@ -189,7 +189,7 @@ jQuery.noConflict()(function($){
    TINYNAV MENU
    =============================================== */
 
-	if ( $('.tinynav-menu').length ) { 
+	if ( $('.suevafree-general-menu ul:first .current-menu-item').length ) { 
 	
 		$('.tinynav-menu ul:first').tinyNav({
 			active: 'current-menu-item',
