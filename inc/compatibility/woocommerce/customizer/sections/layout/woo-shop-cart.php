@@ -4,7 +4,7 @@
  *
  * @package     Astra
  * @author      Astra
- * @copyright   Copyright (c) 2017, Astra
+ * @copyright   Copyright (c) 2018, Astra
  * @link        http://wpastra.com/
  * @since       Astra 1.1.0
  */
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		ASTRA_THEME_SETTINGS . '[enable-cart-upsells]', array(
 			'section'  => 'section-woo-shop-cart',
 			'label'    => __( 'Enable Upsells', 'astra' ),
-			'priority' => 0,
+			'priority' => 10,
 			'type'     => 'checkbox',
 		)
 	);
