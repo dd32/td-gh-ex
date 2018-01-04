@@ -1556,6 +1556,11 @@ h3#reply-title small,
    FORMS / COMMENT FORMS / CONTACT FORMS
    =============================================== */
 
+div.wpcf7 .ajax-loader {
+    visibility: hidden;
+    display: block;
+}
+
 div.wpcf7 img.ajax-loader {
 	display:none;
 }

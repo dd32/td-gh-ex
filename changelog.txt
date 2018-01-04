@@ -1,6 +1,13 @@
 SuevaFree Changelog
 
-- Version 3.4.0 - Released: 04.12.2017
+- Version 3.4.1 - Released: 05.01.2018
+
+-- Fixed  : Alignment of titles and post details. 
+-- Fixed  : Content alignment of posts and pages. 
+-- Fixed  : Alignment of read more button. 
+-- Fixed  : Contact form 7 alignment.
+
+- Version 3.4.0 - Released: 04.01.2018
 
 -- Added  : Option to manage the alignment of titles and post details. 
 -- Added  : Option to manage the content alignment of posts and pages. 

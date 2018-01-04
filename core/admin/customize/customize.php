@@ -726,7 +726,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				'type' => 'select',
 				'section' => 'align_section',
 				'options' => array (
-					'' => esc_html__( 'Center', 'suevafree'),
+					'' => esc_html__( 'Default', 'suevafree'),
 					'title-left-align' => esc_html__( 'Left align', 'suevafree'),
 					'title-right-align' => esc_html__( 'Right align', 'suevafree'),
 				),
@@ -743,7 +743,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				'type' => 'select',
 				'section' => 'align_section',
 				'options' => array (
-					'' => esc_html__( 'Center', 'suevafree'),
+					'' => esc_html__( 'Default', 'suevafree'),
 					'post-left-align' => esc_html__( 'Left align', 'suevafree'),
 					'post-right-align' => esc_html__( 'Right align', 'suevafree'),
 				),
@@ -760,7 +760,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				'type' => 'select',
 				'section' => 'align_section',
 				'options' => array (
-					'' => esc_html__( 'Center', 'suevafree'),
+					'' => esc_html__( 'Default', 'suevafree'),
 					'left-button' => esc_html__( 'Left align', 'suevafree'),
 					'right-button' => esc_html__( 'Right align', 'suevafree'),
 				),

@@ -40,7 +40,7 @@ if (!function_exists('suevafree_image_format_function')) {
 
 	?>
 
-        <div class="post-article post-details-<?php echo $postDetails . ' ' . suevafree_setting('suevafree_post_align', '') . ' ' . suevafree_setting('suevafree_title_align', ''); ?>">
+        <div class="post-article post-details post-details-<?php echo $postDetails . ' ' . suevafree_setting('suevafree_post_align', '') . ' ' . suevafree_setting('suevafree_title_align', ''); ?>">
         
             <?php 
 				
