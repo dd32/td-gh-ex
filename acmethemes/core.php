@@ -113,7 +113,7 @@ function acmeblog_scripts() {
     wp_script_add_data( 'respond', 'conditional', 'lt IE 9' );
 
 	if( 1 == $acmeblog_customizer_all_values['acmeblog-enable-sticky-sidebar'] ){
-		wp_enqueue_script('theia-sticky-sidebar', get_template_directory_uri() . '/assets/library/theia-sticky-sidebar/theia-sticky-sidebar.js', array('jquery'), '1.4.0', 1);
+		wp_enqueue_script('theia-sticky-sidebar', get_template_directory_uri() . '/assets/library/theia-sticky-sidebar/theia-sticky-sidebar.min.js', array('jquery'), '1.4.0', 1);
 	}
 
     /*bxslider js*/
@@ -131,29 +131,37 @@ add_action( 'wp_enqueue_scripts', 'acmeblog_scripts' );
 /**
  * Enqueue admin scripts and styles.
  */
+function acmeblog_is_edit_page() {
+	//make sure we are on the backend
+	if ( !is_admin() ){
+		return false;
+	}
+	global $pagenow;
+	return in_array( $pagenow, array( 'post.php', 'post-new.php' ) );
+}
+
+/**
+ * Enqueue admin scripts and styles.
+ */
 function acmeblog_admin_scripts( $hook ) {
-
-	wp_enqueue_media();
-	wp_enqueue_script( 'acmeblog-widgets-script', get_template_directory_uri() . '/assets/js/acme-widget.js', array( 'jquery' ), '1.0.0' );
-
-
+	if ( 'widgets.php' == $hook || acmeblog_is_edit_page() ){
+		wp_enqueue_media();
+		wp_enqueue_script( 'acmeblog-widgets-script', get_template_directory_uri() . '/assets/js/acme-widget.js', array( 'jquery' ), '1.0.0' );
+	}
 }
 add_action( 'admin_enqueue_scripts', 'acmeblog_admin_scripts' );
 
 /**
  * Custom template tags for this theme.
  */
-$acmeblog_template_tags_file_path = acmeblog_file_directory('acmethemes/core/template-tags.php');
-require $acmeblog_template_tags_file_path;
+require_once acmeblog_file_directory('acmethemes/core/template-tags.php');
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-$acmeblog_extras_file_path = acmeblog_file_directory('acmethemes/core/extras.php');
-require $acmeblog_extras_file_path;
+require_once acmeblog_file_directory('acmethemes/core/extras.php');
 
 /**
  * Load Jetpack compatibility file.
  */
-$acmeblog_jetpack_file_path = acmeblog_file_directory('acmethemes/core/jetpack.php');
-require $acmeblog_jetpack_file_path;
+require_once acmeblog_file_directory('acmethemes/core/jetpack.php');

@@ -11,11 +11,9 @@ $wp_customize->add_panel( 'acmeblog-options', array(
 /*
 * file for header breadcrumb options
 */
-$acmeblog_customizer_options_breadcrumb_file_path = acmeblog_file_directory('acmethemes/customizer/options/breadcrumb.php');
-require $acmeblog_customizer_options_breadcrumb_file_path;
+require_once acmeblog_file_directory('acmethemes/customizer/options/breadcrumb.php');
 
 /*
 * file for header search options
 */
-$acmeblog_customizer_options_search_file_path = acmeblog_file_directory('acmethemes/customizer/options/search.php');
-require $acmeblog_customizer_options_search_file_path;
+require_once acmeblog_file_directory('acmethemes/customizer/options/search.php');

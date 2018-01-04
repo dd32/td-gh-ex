@@ -9,7 +9,6 @@
  */
 
 ?>
-
 <section class="no-results not-found">
 	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'acmeblog' ); ?></h1>
@@ -28,8 +27,7 @@
 		<?php else : ?>
 
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'acmeblog' ); ?></p>
-			<?php get_search_form(); ?>
-
-		<?php endif; ?>
+			<?php get_search_form();
+        endif; ?>
 	</div><!-- .page-content -->
 </section><!-- .no-results -->

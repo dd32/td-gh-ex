@@ -7,16 +7,19 @@
  */
 
 /*
+* file for upgrade to pro
+*/
+require_once acmeblog_file_directory('acmethemes/customizer/customizer-pro/class-customize.php');
+
+/*
 * file for customizer core functions
 */
-$acmeblog_custom_controls_file_path = acmeblog_file_directory('acmethemes/customizer/customizer-core.php');
-require $acmeblog_custom_controls_file_path;
+require_once acmeblog_file_directory('acmethemes/customizer/customizer-core.php');
 
 /*
 * file for customizer sanitization functions
 */
-$acmeblog_sanitize_functions_file_path = acmeblog_file_directory('acmethemes/customizer/sanitize-functions.php');
-require $acmeblog_sanitize_functions_file_path;
+require_once acmeblog_file_directory('acmethemes/customizer/sanitize-functions.php');
 
 /**
  * Adding different options
@@ -37,44 +40,36 @@ function acmeblog_customize_register( $wp_customize ) {
     /*
     * file for customizer custom controls classes
     */
-    $acmeblog_custom_controls_file_path = acmeblog_file_directory('acmethemes/customizer/custom-controls.php');
-    require $acmeblog_custom_controls_file_path;
-
+	require_once acmeblog_file_directory('acmethemes/customizer/custom-controls.php');
     /*
      * file for feature panel of home page
      */
-    $acmeblog_customizer_feature_option_file_path = acmeblog_file_directory('acmethemes/customizer/feature-section/feature-panel.php');
-    require $acmeblog_customizer_feature_option_file_path;
+	require_once acmeblog_file_directory('acmethemes/customizer/feature-section/feature-panel.php');
 
     /*
     * file for header panel
     */
-    $acmeblog_customizer_header_options_file_path = acmeblog_file_directory('acmethemes/customizer/header-options/header-panel.php');
-    require $acmeblog_customizer_header_options_file_path;
+	require_once acmeblog_file_directory('acmethemes/customizer/header-options/header-panel.php');
 
     /*
     * file for customizer footer section
     */
-    $acmeblog_customizer_footer_options_file_path = acmeblog_file_directory('acmethemes/customizer/footer-section/footer-section.php');
-    require $acmeblog_customizer_footer_options_file_path;
+	require_once acmeblog_file_directory('acmethemes/customizer/footer-section/footer-section.php');
 
     /*
     * file for design/layout panel
     */
-    $acmeblog_customizer_design_options_file_path = acmeblog_file_directory('acmethemes/customizer/design-options/design-panel.php');
-    require $acmeblog_customizer_design_options_file_path;
+	require_once acmeblog_file_directory('acmethemes/customizer/design-options/design-panel.php');
 
     /*
     * file for single post sections
     */
-    $acmeblog_customizer_single_post_section_file_path = acmeblog_file_directory('acmethemes/customizer/single-posts/single-post-section.php');
-    require $acmeblog_customizer_single_post_section_file_path;
+	require_once acmeblog_file_directory('acmethemes/customizer/single-posts/single-post-section.php');
 
     /*
      * file for options panel
      */
-    $acmeblog_customizer_options_panel_file_path = acmeblog_file_directory('acmethemes/customizer/options/options-panel.php');
-    require $acmeblog_customizer_options_panel_file_path;
+	require_once acmeblog_file_directory('acmethemes/customizer/options/options-panel.php');
 
     /*removing*/
     $wp_customize->remove_panel('header_image');
@@ -90,19 +85,6 @@ function acmeblog_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'acmeblog_customize_preview_js' );
 
-
-/**
- * Enqueue scripts for customizer
- */
-function acmeblog_customizer_js() {
-    wp_enqueue_script('acmeblog-customizer', get_template_directory_uri() . '/assets/js/acmeblog-customizer.js', array('jquery'), '1.3.0', 1);
-
-    wp_localize_script( 'acmeblog-customizer', 'acmeblog_customizer_js_obj', array(
-        'pro' => __('Upgrade To Pro','acmeblog')
-    ) );
-    wp_enqueue_style( 'acmeblog-customizer', get_template_directory_uri() . '/assets/css/acmeblog-customizer.css');
-}
-add_action( 'customize_controls_enqueue_scripts', 'acmeblog_customizer_js' );
 /**
  * Theme Update Script
  *
@@ -130,6 +112,5 @@ function acmeblog_update_check() {
         $acmeblog_saved_theme_options['acmeblog-header-logo'] = '';
         set_theme_mod( 'acmeblog_theme_options', $acmeblog_saved_theme_options );
     }
-
 }
 add_action( 'after_setup_theme', 'acmeblog_update_check' );

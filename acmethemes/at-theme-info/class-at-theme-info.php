@@ -1268,7 +1268,7 @@ $config = array(
 		    'title'       => __( 'Theme Credit Link', 'acmeblog' ),
 		    'desc' => __( 'Options to disable to Powered by text on footer.', 'acmeblog' ),
 		    'free'  => __('No Options To Disable','acmeblog'),
-		    'pro'   => __('Enable/Disable','acmeblog'),
+		    'pro'   => __('Enable/Disable/Custom Credit','acmeblog'),
 	    ),
 	    array(
 		    'title'       => __( 'Own Credit Link', 'acmeblog' ),
@@ -1351,13 +1351,13 @@ $config = array(
 	    array(
 		    'title'=> __( 'Sidebars', 'acmeblog' ),
 		    'desc' => __( 'Global and Individual sidebars are available. You can easily orveride it from single page/post.', 'acmeblog' ),
-		    'free' => __('Global And Individuals', 'acmeblog'),
+		    'free' => __('Global', 'acmeblog'),
 		    'pro'  => __('Global And Individuals', 'acmeblog'),
 	    ),
 	    array(
 		    'title'=> __( 'WooCommerce', 'acmeblog' ),
 		    'desc' => __( 'Create WooCommerce shop easily with the help of WooCommerce plugin.', 'acmeblog' ),
-		    'free' => 'no',
+		    'free' => 'yes',
 		    'pro'  => 'yes',
 	    ),
 	    array(

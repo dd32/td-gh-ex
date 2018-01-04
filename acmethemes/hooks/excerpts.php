@@ -16,7 +16,6 @@ if ( !function_exists('acmeblog_alter_excerpt') ) :
         return 90;
     }
 endif;
-
 add_filter('excerpt_length', 'acmeblog_alter_excerpt');
 
 /**

@@ -101,7 +101,6 @@ if ( !function_exists('acmeblog_feature_side') ) :
             <?php
         }
         echo '</div><!-- .beides-block -->';
-
     }
 endif;
 add_action( 'acmeblog_action_feature_side', 'acmeblog_feature_side', 0 );

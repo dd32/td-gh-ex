@@ -18,4 +18,4 @@ if( $sidebar_layout == "right-sidebar" || empty( $sidebar_layout ) ) : ?>
 			<?php dynamic_sidebar( 'acmeblog-sidebar' ); ?>
 		</div>
 	</div>
-<?php endif; ?>
+<?php endif;

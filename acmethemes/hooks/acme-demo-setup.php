@@ -26,6 +26,5 @@ if( !function_exists( 'acmeblog_update_image_size') ){
 		update_option( 'large_size_h', 530 );
 	}
 }
-
 add_action( 'acme_demo_setup_before_import', 'acmeblog_update_image_size' );
 add_action( 'wp_ajax_acme_demo_setup_before_import', 'acmeblog_update_image_size' );

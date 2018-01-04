@@ -13,4 +13,4 @@ $sidebar_layout = acmeblog_sidebar_selection();
             <?php dynamic_sidebar( 'acmeblog-sidebar' ); ?>
         </div>
     </div>
-<?php endif; ?>
+<?php endif;

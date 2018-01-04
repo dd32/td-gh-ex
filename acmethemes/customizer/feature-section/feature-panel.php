@@ -11,17 +11,14 @@ $wp_customize->add_panel( 'acmeblog-feature-panel', array(
 /*
 * file for feature slider category
 */
-$acmeblog_customizer_feature_category_file_path = acmeblog_file_directory('acmethemes/customizer/feature-section/feature-category.php');
-require $acmeblog_customizer_feature_category_file_path;
+require_once acmeblog_file_directory('acmethemes/customizer/feature-section/feature-category.php');
 
 /*
 * file for feature side
 */
-$acmeblog_customizer_feature_side_file_path = acmeblog_file_directory('acmethemes/customizer/feature-section/feature-side.php');
-require $acmeblog_customizer_feature_side_file_path;
+require_once acmeblog_file_directory('acmethemes/customizer/feature-section/feature-side.php');
 
 /*
 * file for feature section enable
 */
-$acmeblog_customizer_feature_enable_file_path = acmeblog_file_directory('acmethemes/customizer/feature-section/feature-enable.php');
-require $acmeblog_customizer_feature_enable_file_path;
+require_once acmeblog_file_directory('acmethemes/customizer/feature-section/feature-enable.php');

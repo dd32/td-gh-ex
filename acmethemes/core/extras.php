@@ -24,5 +24,4 @@ if ( ! function_exists( 'acmeblog_body_classes' ) ) :
 		return $classes;
 	}
 endif;
-
 add_filter( 'body_class', 'acmeblog_body_classes' );

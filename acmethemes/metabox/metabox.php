@@ -2,7 +2,7 @@
 /**
  * AcmeBlog sidebar layout options
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return array
@@ -35,7 +35,7 @@ endif;
 /**
  * Custom Metabox
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return void
@@ -64,12 +64,10 @@ if( !function_exists( 'acmeblog_add_metabox' )):
 endif;
 add_action('add_meta_boxes', 'acmeblog_add_metabox');
 
-
-
 /**
  * Callback function for metabox
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return void
@@ -144,7 +142,7 @@ endif;
  * save the custom metabox data
  * @hooked to save_post hook
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return void
@@ -168,7 +166,6 @@ if ( !function_exists('acmeblog_save_sidebar_layout') ) :
             return $post_id;
         }
 
-
         //Execute this saving function
         if(isset($_POST['acmeblog_sidebar_layout'])){
             $old = get_post_meta( $post_id, 'acmeblog_sidebar_layout', true);
@@ -180,6 +177,5 @@ if ( !function_exists('acmeblog_save_sidebar_layout') ) :
             }
         }
     }
-
 endif;
 add_action('save_post', 'acmeblog_save_sidebar_layout');

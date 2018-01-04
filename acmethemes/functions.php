@@ -2,7 +2,7 @@
 /**
  * List down the post category
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param int $post_id
  * @return string list of category
@@ -38,7 +38,7 @@ endif;
 /**
  * Callback functions for comments
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param $comment
  * @param $args
@@ -88,15 +88,14 @@ if ( !function_exists('acmeblog_commment_list') ) :
         </div>
         <?php if ('div' != $args['style']) : ?>
             </div>
-        <?php endif; ?>
-        <?php
+        <?php endif;
     }
 endif;
 
 /**
  * Date display functions
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param string $format
  * @return string
@@ -113,13 +112,12 @@ endif;
 /**
  * Select sidebar according to the options saved
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return string
  *
  */
-
 if ( !function_exists('acmeblog_sidebar_selection') ) :
 	function acmeblog_sidebar_selection( ) {
 		wp_reset_postdata();
@@ -200,7 +198,7 @@ endif;
 /**
  * Return content of fixed lenth
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param string $acmeblog_content
  * @param int $length
@@ -222,128 +220,22 @@ endif;
  * BreadCrumb Settings
  */
 if( ! function_exists( 'acmeblog_breadcrumbs' ) ):
+	function acmeblog_breadcrumbs() {
+		if ( ! function_exists( 'breadcrumb_trail' ) ) {
+			require acmeblog_file_directory('acmethemes/library/breadcrumbs/breadcrumbs.php');
+		}
+		$breadcrumb_args = array(
+			'container'   => 'div',
+			'show_browse' => false
+		);
+		$acmeblog_customizer_all_values = acmeblog_get_theme_options();
 
-    function acmeblog_breadcrumbs() {
-
-        wp_reset_postdata();
-        global $post;
-        $trans_here = __( 'You are here', 'acmeblog' );
-        $trans_home = __( 'Home', 'acmeblog' );
-        $search_result_text = __( 'Search Results for ', 'acmeblog' );
-
-        $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-        $delimiter = '<span class="bread_arrow"> > </span>'; // delimiter between crumbs
-        $home = $trans_home; // text for the 'Home' link
-        $showHomeLink = 1;
-
-        $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
-        $before = '<span class="current">'; // tag before the current crumb
-        $after = '</span>'; // tag after the current crumb
-
-        $homeLink = esc_url( home_url() );
-
-        if (is_home() || is_front_page()) {
-
-            if ($showOnHome == 1) echo '<div id="acmeblog-breadcrumbs"><div class="breadcrumb-container"><a href="' . $homeLink . '">' . $home . '</a></div></div>';
-
-        } else {
-            if($showHomeLink == 1){
-                echo '<div id="acmeblog-breadcrumbs" class="clearfix"><span class="breadcrumb">'.esc_attr( $trans_here ).'</span><div class="breadcrumb-container"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
-            } else {
-                echo '<div id="acmeblog-breadcrumbs" class="clearfix"><span class="breadcrumb">'.esc_attr( $trans_here ).'</span><div class="breadcrumb-container">' . $home . ' ' . $delimiter . ' ';
-            }
-
-            if ( is_category() ) {
-                $thisCat = get_category(get_query_var('cat'), false);
-                if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter . ' ');
-                echo $before .  single_cat_title('', false) . $after;
-
-            } elseif ( is_search() ) {
-                echo $before . $search_result_text.' "' . get_search_query() . '"' . $after;
-
-            } elseif ( is_day() ) {
-                echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-                echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
-                echo $before . get_the_time('d') . $after;
-
-            } elseif ( is_month() ) {
-                echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-                echo $before . get_the_time('F') . $after;
-
-            } elseif ( is_year() ) {
-                echo $before . get_the_time('Y') . $after;
-
-            } elseif ( is_single() && !is_attachment() ) {
-                if ( get_post_type() != 'post' ) {
-                    $post_type = get_post_type_object(get_post_type());
-                    $slug = $post_type->rewrite;
-                    echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
-                    if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
-                } else {
-                    $cat = get_the_category();
-                    if( !empty( $cat ) ){
-                        $cat = $cat[0];
-                        $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-                        if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
-                        echo $cats;
-                    }
-                    if ($showCurrent == 1) echo $before . get_the_title() . $after;
-                }
-
-            } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
-                $post_type = get_post_type_object(get_post_type());
-                echo $before . $post_type->labels->singular_name . $after;
-
-            } elseif ( is_attachment() ) {
-                $parent = get_post($post->post_parent);
-                $cat = get_the_category($parent->ID);
-
-                if( !empty( $cat ) ){
-                    $cat = $cat[0];
-                    echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-                }
-
-                echo '<a href="' . esc_url( get_permalink( $parent ) ) . '">' . $parent->post_title . '</a>';
-                if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
-
-            } elseif ( is_page() && !$post->post_parent ) {
-                if ($showCurrent == 1) echo $before . get_the_title() . $after;
-
-            } elseif ( is_page() && $post->post_parent ) {
-                $parent_id  = $post->post_parent;
-                $breadcrumbs = array();
-                while ($parent_id) {
-                    $page = get_post($parent_id);
-                    $breadcrumbs[] = '<a href="' . esc_url( get_permalink( $page->ID ) ) . '">' . get_the_title($page->ID) . '</a>';
-                    $parent_id  = $page->post_parent;
-                }
-                $breadcrumbs = array_reverse($breadcrumbs);
-                for ($i = 0; $i < count($breadcrumbs); $i++) {
-                    echo $breadcrumbs[$i];
-                    if ($i != count($breadcrumbs)-1) echo ' ' . $delimiter . ' ';
-                }
-                if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
-
-            } elseif ( is_tag() ) {
-                echo $before . __('Posts tagged : ','acmeblog' ) . single_tag_title('', false) . '"' . $after;
-
-            } elseif ( is_author() ) {
-                global $author;
-                $userdata = get_userdata($author);
-                echo $before . __('Author: ', 'acmeblog' ) . $userdata->display_name . $after;
-
-            } elseif ( is_404() ) {
-                echo $before . __( 'Error 404', 'acmeblog' ) . $after;
-            }
-            else {
-                /*nothing to do*/
-            }
-            if ( get_query_var('paged') ) {
-                if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-                echo __('Page' , 'acmeblog') . ' ' . get_query_var('paged');
-                if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
-            }
-            echo '</div></div>';
-        }
-    }
+		$acmeblog_you_are_here_text = $acmeblog_customizer_all_values['acmeblog-you-are-here-text'];
+		if( !empty( $acmeblog_you_are_here_text ) ){
+			$acmeblog_you_are_here_text = "<span class='breadcrumb'>".$acmeblog_you_are_here_text."</span>";
+		}
+		echo "<div class='breadcrumbs init-animate clearfix'>".$acmeblog_you_are_here_text."<div id='acmeblog-breadcrumbs' class='clearfix'>";
+		breadcrumb_trail( $breadcrumb_args );
+		echo "</div></div>";
+	}
 endif;

@@ -128,19 +128,18 @@ if ( ! function_exists( 'acmeblog_display_feature_slider' ) ) :
                 <?php
                 endwhile;
                 wp_reset_postdata();
-                ?>
-            <?php endif; ?>
-        <?php
+                endif;
         }
         else{
             acmeblog_default_slider();
         }
     }
 endif;
+
 /**
  * Display featured slider
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param int $post_id
  * @return void

@@ -4,11 +4,11 @@ Theme URI: https://www.acmethemes.com/themes/acmeblog/
 Author: acmethemes
 Author URI: https://www.acmethemes.com/
 Description: AcmeBlog is professional blog theme, can be used for blog, news and magazine site. It is a modern responsive theme. It is SEO friendly theme. You can just focus on writing content and images. The theme has beautifully designed featured section and you have full control over it. AcmeBlog is very easy to use and customize. It is very light weight theme but have highly customizable theme customizer. With its advanced setting, you can control featured section, homepage, sidebar and inner pages. You have full control over header setting- logo, date, search and social. Further you can add your own copyright text in the footer. This theme come with advanced layout/design control. Default layout can be full or boxed, sidebar options are left, right and no sidebar. Image can be enable/disable in blog and archive pages. You can change whole site primary color. With the custom CSS and custom background image option, you can further customize your site. In the single post, you can show-hide related posts. Also with extra theme options, you can add breadcrumb and search placeholder. The theme comes with reset options too. Again Author widget, allow you to add author information. Support : http://www.acmethemes.com/supports/ and Demo http://www.acmethemes.com/demo/?theme=acmeblog
-Version: 1.4.0
+Version: 1.4.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: acmeblog
-Tags: one-column, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, e-commerce
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, e-commerce
 
 */
 
@@ -206,7 +206,22 @@ table{
 td,th{
 	padding:0
 }
-
+blockquote:before {
+	content: "\201C";
+	display: block;
+	font-size: 30px;
+	height: 0;
+	left: -20px;
+	position: relative;
+	top: -10px;
+}
+blockquote{
+	border-left: none;
+	font-size: 16px;
+	font-style: italic;
+	color: #888888;
+	display: block;
+}
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -997,10 +1012,10 @@ object {
 		color: transparent;
 		cursor: pointer;
 		display: block;
-		float: left;
+		float: right;
 		font: 0px/0 a;
 		height: 28px;
-		left: 70px;
+		right: 0;
 		position: absolute;
 		text-decoration: none;
 		text-shadow: none;
@@ -1532,7 +1547,7 @@ object {
 .single .single-feat{
 	display: inline-block;
 	float: left;
-	max-width: 60%;
+	max-width: 44%;
 	padding-right: 15px;
 }
 .single .entry-content{
@@ -1580,7 +1595,7 @@ article.post .post-thumb {
 	float: left;
 	margin-right: 10px;
 	width: auto;
-	max-width: 60%;
+	max-width: 44%;
 }
 
 article.post{
@@ -1681,10 +1696,14 @@ article.post.sticky{
 	color: #ffffff;
 }
 /*breadcrumbs*/
-#acmeblog-breadcrumbs{
-	background: #eeeeef ;
-	margin-bottom: 20px;
-	padding: 0;
+.breadcrumb {
+	color: #ffffff;
+	float: left;
+	padding: 5px 10px;
+	position: relative;
+}
+breadcrumb::after {
+	border-left: 5px solid #66CCFF;
 }
 .breadcrumb::after {
 	border-bottom: 5px solid transparent;
@@ -1697,15 +1716,34 @@ article.post.sticky{
 	top: 50%;
 	width: 0;
 }
-.breadcrumb {
-	color: #ffffff;
-	float: left;
-	padding: 5px 10px;
-	position: relative;
+.breadcrumbs{
+	margin-bottom: 20px;
 }
-#acmeblog-breadcrumbs .breadcrumb-container{
+#acmeblog-breadcrumbs{
+	background: #eeeeef;
+	padding: 0;
+}
+#acmeblog-breadcrumbs .breadcrumb-trail li {
+	display: block;
 	float: left;
-	padding: 5px 0 5px 20px;
+	list-style: outside none none;
+	padding: 5px 0 5px 10px;
+}
+#acmeblog-breadcrumbs a:hover{
+	text-decoration: underline;
+}
+#acmeblog-breadcrumbs .breadcrumb-trail li.trail-item.trail-end::after {
+	display: none;
+}
+#acmeblog-breadcrumbs .breadcrumb-trail li::after {
+	color: #ddd;
+	content: "\f105";
+	font-family: FontAwesome;
+	margin-left: 10px;
+}
+#acmeblog-breadcrumbs .breadcrumb-trail .trail-items {
+	margin: 0;
+	padding: 0;
 }
 /*default content style*/
 .acme-default.menu{

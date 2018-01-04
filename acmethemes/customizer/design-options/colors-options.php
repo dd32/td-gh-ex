@@ -7,6 +7,7 @@ $wp_customize->add_section( 'colors', array(
     'title'          => __( 'Colors', 'acmeblog' ),
     'panel'          => 'acmeblog-design-panel'
 ) );
+
 /*Primary color*/
 $wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-primary-color]', array(
     'capability'		=> 'edit_theme_options',

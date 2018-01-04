@@ -8,7 +8,7 @@ $wp_customize->add_section( 'acmeblog-design-sidebar-sticky-option', array(
     'panel'          => 'acmeblog-design-panel'
 ) );
 
-/*sticky sidbar enable disable*/
+/*sticky sidebar enable disable*/
 $wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-enable-sticky-sidebar]', array(
     'capability'		=> 'edit_theme_options',
     'default'			=> $defaults['acmeblog-enable-sticky-sidebar'],

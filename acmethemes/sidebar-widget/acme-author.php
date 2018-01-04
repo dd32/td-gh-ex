@@ -85,6 +85,7 @@ if ( ! class_exists( 'acmeblog_author_widget' ) ) :
             <hr />
             <?php
         }
+
         /**
          * Function to Updating widget replacing old instances with new
          *
@@ -106,6 +107,7 @@ if ( ! class_exists( 'acmeblog_author_widget' ) ) :
 
             return $instance;
         }
+
         /**
          * Function to Creating widget front-end. This is where the action happens
          *
@@ -114,7 +116,7 @@ if ( ! class_exists( 'acmeblog_author_widget' ) ) :
          *
          * @param array $args widget setting
          * @param array $instance saved values
-         * @return array
+         * @return void
          *
          */
         function widget( $args, $instance ) {
@@ -160,7 +162,7 @@ if ( ! function_exists( 'acmeblog_author_widget' ) ) :
      * @since 1.0
      *
      * @param null
-     * @return null
+     * @return void
      *
      */
     function acmeblog_author_widget() {

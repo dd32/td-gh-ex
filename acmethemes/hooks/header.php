@@ -90,7 +90,6 @@ if ( ! function_exists( 'acmeblog_body_class' ) ) :
         $acmeblogbody_classes[] = acmeblog_sidebar_selection();
 
         return $acmeblogbody_classes;
-
     }
 endif;
 add_action( 'body_class', 'acmeblog_body_class', 10, 1);
@@ -109,7 +108,7 @@ if ( ! function_exists( 'acmeblog_page_start' ) ) :
     function acmeblog_page_start() {
         ?>
         <div id="page" class="hfeed site">
-<?php
+    <?php
     }
 endif;
 add_action( 'acmeblog_action_before', 'acmeblog_page_start', 15 );
@@ -191,8 +190,8 @@ if ( ! function_exists( 'acmeblog_header' ) ) :
                                         <p class="site-description"><?php echo esc_html( $description ); ?></p>
                                     <?php endif;
                                 endif;
-                            endif; ?>
-                            <?php endif;?><!--acmeblog-header-id-display-opt-->
+                            endif;
+                            endif;?><!--acmeblog-header-id-display-opt-->
                         </div><!--site-logo-->
 
                         <div class="right-header acme-col-3 float-right">
@@ -252,7 +251,7 @@ add_action( 'acmeblog_action_header', 'acmeblog_header', 10 );
 /**
  * Before main content
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return void
@@ -271,7 +270,7 @@ if ( ! function_exists( 'acmeblog_before_content' ) ) :
             /**
              * Slide
              * acmeblog_action_feature_slider
-             * @since acmeblog 1.1.0
+             * @since AcmeBlog 1.1.0
              *
              * @hooked acmeblog_feature_slider -  0
              */
@@ -280,7 +279,7 @@ if ( ! function_exists( 'acmeblog_before_content' ) ) :
             /**
              * Featured Post Beside Slider
              * acmeblog_action_feature_side
-             * @since acmeblog 1.1.0
+             * @since AcmeBlog 1.1.0
              *
              * @hooked acmeblog_feature_side-  0
              */
@@ -293,7 +292,7 @@ if ( ! function_exists( 'acmeblog_before_content' ) ) :
         ?>
     <div id="<?php echo esc_attr( $acmeblog_content_id ); ?>" class="site-content">
     <?php
-        if( 1 == $acmeblog_customizer_all_values['acmeblog-show-breadcrumb'] ){
+        if( 1 == $acmeblog_customizer_all_values['acmeblog-show-breadcrumb'] && !is_front_page() ){
             acmeblog_breadcrumbs();
         }
     }

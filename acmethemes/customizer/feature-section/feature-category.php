@@ -28,6 +28,7 @@ $wp_customize->add_control(
         )
     )
 );
+
 /*Category posts number*/
 $wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-feature-slider-post-number]', array(
 	'capability'		=> 'edit_theme_options',

@@ -8,6 +8,20 @@ $wp_customize->add_section( 'acmeblog-header-social', array(
     'panel'          => 'acmeblog-header-panel'
 ) );
 
+/*enable social*/
+$wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-enable-social]', array(
+	'capability'		=> 'edit_theme_options',
+	'default'			=> $defaults['acmeblog-enable-social'],
+	'sanitize_callback' => 'acmeblog_sanitize_checkbox',
+) );
+$wp_customize->add_control( 'acmeblog_theme_options[acmeblog-enable-social]', array(
+	'label'		=> __( 'Enable social', 'acmeblog' ),
+	'section'   => 'acmeblog-header-social',
+	'settings'  => 'acmeblog_theme_options[acmeblog-enable-social]',
+	'type'	  	=> 'checkbox',
+	'priority'  => 10
+) );
+
 /*facebook url*/
 $wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-facebook-url]', array(
     'capability'		=> 'edit_theme_options',
@@ -64,7 +78,6 @@ $wp_customize->add_control( 'acmeblog_theme_options[acmeblog-instagram-url]', ar
     'priority'  => 30
 ) );
 
-
 /*@Since Version: 1.4.0
  * Google +  url*/
 $wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-google-plus-url]', array(
@@ -92,18 +105,4 @@ $wp_customize->add_control( 'acmeblog_theme_options[acmeblog-pinterest-url]', ar
     'settings'  => 'acmeblog_theme_options[acmeblog-pinterest-url]',
     'type'	  	=> 'url',
     'priority'  => 50
-) );
-
-/*enable social*/
-$wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-enable-social]', array(
-    'capability'		=> 'edit_theme_options',
-    'default'			=> $defaults['acmeblog-enable-social'],
-    'sanitize_callback' => 'acmeblog_sanitize_checkbox',
-) );
-$wp_customize->add_control( 'acmeblog_theme_options[acmeblog-enable-social]', array(
-    'label'		=> __( 'Enable social', 'acmeblog' ),
-    'section'   => 'acmeblog-header-social',
-    'settings'  => 'acmeblog_theme_options[acmeblog-enable-social]',
-    'type'	  	=> 'checkbox',
-    'priority'  => 100
 ) );

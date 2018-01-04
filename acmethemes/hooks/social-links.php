@@ -2,7 +2,7 @@
 /**
  * Display Social Links
  *
- * @since acmeblog 1.1.0
+ * @since AcmeBlog 1.1.0
  *
  * @param null
  * @return void
@@ -54,5 +54,4 @@ if ( !function_exists('acmeblog_social_links') ) :
         <?php
     }
 endif;
-
 add_filter( 'acmeblog_action_social_links', 'acmeblog_social_links', 10 );

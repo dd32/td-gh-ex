@@ -100,7 +100,5 @@ if ( !function_exists('acmeblog_related_post_below') ) :
             <?php
         }
     }
-
 endif;
-
 add_action( 'acmeblog_related_posts', 'acmeblog_related_post_below', 10, 1 );

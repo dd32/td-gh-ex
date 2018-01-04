@@ -9,20 +9,17 @@
  */
 global $acmeblog_customizer_all_values;
 $acmeblog_get_image_sizes_options = $acmeblog_customizer_all_values['acmeblog-blog-archive-image-size'];
-
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-		<?php if ( 'post' === get_post_type() ) : ?>
+		<?php
+        the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php acmeblog_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-
 	<?php
 	if (
 		has_post_thumbnail() &&
@@ -41,13 +38,10 @@ $acmeblog_get_image_sizes_options = $acmeblog_customizer_all_values['acmeblog-bl
 		<?php
 	}
 	?>
-
 	<div class="entry-summary entry-content">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
-
 	<footer class="entry-footer">
 		<?php acmeblog_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
-

@@ -459,7 +459,7 @@ jQuery(document).ready(function($) {
     //for menu
      $('.header-wrapper #site-navigation .menu-main-menu-container').addClass('clearfix');
 
-    //Sickey Sidebar
+    //Sicky Sidebar
     if($('body').hasClass('at-sticky-sidebar')){
         if($('body').hasClass('both-sidebar')){
             $('#primary-wrap, #secondary-right, #secondary-left').theiaStickySidebar();
@@ -468,5 +468,4 @@ jQuery(document).ready(function($) {
             $('.secondary-sidebar, #primary').theiaStickySidebar();
         }
     }
-
 });

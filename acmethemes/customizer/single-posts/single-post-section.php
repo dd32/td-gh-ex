@@ -40,8 +40,7 @@ $wp_customize->add_control( 'acmeblog_theme_options[acmeblog-single-image-size]'
 	'priority'  => 20
 ) );
 
-
-/*show rlated posts*/
+/*show related posts*/
 $wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-show-related]', array(
 	'capability'		=> 'edit_theme_options',
 	'default'			=> $defaults['acmeblog-show-related'],
@@ -54,6 +53,7 @@ $wp_customize->add_control( 'acmeblog_theme_options[acmeblog-show-related]', arr
 	'type'	  	=> 'checkbox',
 	'priority'  => 30
 ) );
+
 /*Related title*/
 $wp_customize->add_setting( 'acmeblog_theme_options[acmeblog-related-title]', array(
 	'capability'		=> 'edit_theme_options',

@@ -2,7 +2,7 @@
 /**
  * Header logo/text display options alternative
  *
- * @since acmeblog 1.0.2
+ * @since AcmeBlog 1.0.2
  *
  * @param null
  * @return array $acmeblog_header_id_display_opt
@@ -23,7 +23,7 @@ endif;
 /**
  * Global layout options
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return array $acmeblog_default_layout
@@ -42,7 +42,7 @@ endif;
 /**
  * Sidebar layout options
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return array $acmeblog_sidebar_layout
@@ -59,11 +59,10 @@ if ( !function_exists('acmeblog_sidebar_layout') ) :
     }
 endif;
 
-
 /**
  * Blog layout options
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return array $acmeblog_blog_layout
@@ -82,7 +81,7 @@ endif;
 /**
  * Blog layout options
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return array $acmeblog_blog_single_image_layout
@@ -102,7 +101,7 @@ endif;
 /**
  * Related posts layout options
  *
- * @since acmeblog 1.1.0
+ * @since AcmeBlog 1.1.0
  *
  * @param null
  * @return array
@@ -146,16 +145,14 @@ if ( !function_exists('acmeblog_get_image_sizes_options') ) :
 			}
 
 		}
-
 		return apply_filters( 'acmeblog_get_image_sizes_options', $choices );
 	}
 endif;
 
-
 /**
  *  Default Theme layout options
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return array $acmeblog_theme_layout
@@ -211,18 +208,16 @@ if ( !function_exists('acmeblog_get_default_theme_options') ) :
             /*theme options*/
             'acmeblog-search-placholder'    => __( 'Search', 'acmeblog' ),
             'acmeblog-show-breadcrumb'      => '',
-
+            'acmeblog-you-are-here-text'  => __( 'You are here', 'acmeblog' ),
         );
-
         return apply_filters( 'acmeblog_default_theme_options', $default_theme_options );
     }
 endif;
 
-
 /**
  *  Get theme options
  *
- * @since acmeblog 1.0.0
+ * @since AcmeBlog 1.0.0
  *
  * @param null
  * @return array acmeblog_theme_options
@@ -239,6 +234,5 @@ if ( !function_exists('acmeblog_get_theme_options') ) :
         else{
             return $acmeblog_default_theme_options;
         }
-
     }
 endif;

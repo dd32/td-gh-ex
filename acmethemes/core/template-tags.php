@@ -34,9 +34,7 @@ function acmeblog_posted_on() {
 		'%s',
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"><i class="fa fa-user"></i>' . esc_html( get_the_author() ) . '</a></span>'
 	);
-
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-
 }
 endif;
 
@@ -66,15 +64,17 @@ function acmeblog_entry_footer() {
 		echo '</span>';
 	}
 
-	edit_post_link(
-		sprintf(
+	if( get_edit_post_link()){
+		edit_post_link(
+			sprintf(
 			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'acmeblog' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		'<span class="edit-link"><i class="fa fa-edit "></i>',
-		'</span>'
-	);
+				esc_html__( 'Edit %s', 'acmeblog' ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			),
+			'<span class="edit-link"><i class="fa fa-edit "></i>',
+			'</span>'
+		);
+	}
 }
 endif;
 
@@ -111,7 +111,6 @@ if ( ! function_exists( 'acmeblog_categorized_blog' ) ) :
 	}
 endif;
 
-
 /**
  * Flush out the transients used in acmeblog_categorized_blog.
  */
@@ -124,7 +123,5 @@ if ( ! function_exists( 'acmeblog_category_transient_flusher' ) ) :
 		delete_transient( 'acmeblog_categories' );
 	}
 endif;
-
-
 add_action( 'edit_category', 'acmeblog_category_transient_flusher' );
 add_action( 'save_post',     'acmeblog_category_transient_flusher' );
