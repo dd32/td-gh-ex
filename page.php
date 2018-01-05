@@ -31,4 +31,5 @@ else {
 
 
 <?php } // else
-get_footer(); ?>
+
+get_footer(); 

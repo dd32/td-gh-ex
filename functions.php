@@ -9,7 +9,7 @@
 
 // theme specifics
 define ('_CRYOUT_THEME_NAME','mantra');
-define ('_CRYOUT_THEME_VERSION','3.0.1');
+define ('_CRYOUT_THEME_VERSION','3.0.2');
 
 require_once(get_template_directory() . "/admin/main.php"); 	// Load necessary admin files
 
@@ -23,4 +23,4 @@ require_once(get_template_directory() . "/includes/theme-functions.php"); // The
 require_once(get_template_directory() . "/includes/theme-hooks.php");     // Theme hooks
 require_once(get_template_directory() . "/includes/tgm.php");     		  // TGM-PA
 
-?>
+// FIN

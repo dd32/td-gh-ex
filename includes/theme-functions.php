@@ -7,63 +7,26 @@
  */
 
 
- /**
- * Loads necessary scripts
- * Adds HTML5 tags for IE8
- * Used in header.php
+/**
+* Loads necessary scripts
+* Adds HTML5 tags for IE8
+* Used in header.php
 */
- function mantra_header_scripts() {
- $mantra_options= mantra_get_theme_options();
-foreach ($mantra_options as $key => $value) {
-     ${"$key"} = $value ;
+function mantra_header_scripts() {
+	$mantra_options = mantra_get_theme_options();
+	extract( $mantra_options ); ?>
+	<!--[if lt IE 9]>
+	<script>
+	document.createElement('header');
+	document.createElement('nav');
+	document.createElement('section');
+	document.createElement('article');
+	document.createElement('aside');
+	document.createElement('footer');
+	document.createElement('hgroup');
+	</script>
+	<![endif]--> <?php
 }
-?>
-<!--[if lt IE 9]>
-<script>
-document.createElement('header');
-document.createElement('nav');
-document.createElement('section');
-document.createElement('article');
-document.createElement('aside');
-document.createElement('footer');
-document.createElement('hgroup');
-</script>
-<![endif]-->
-<script type="text/javascript">
-function makeDoubleDelegate(function1, function2) {
-// concatenate functions
-    return function() { if (function1) function1(); if (function2) function2(); }
-}
-
-function mantra_onload() {
-
-<?php if ($mantra_mobile=="Enable") { // If mobile view is enabled ?>
-
-     // Add responsive videos
-     if (jQuery(window).width() < 800) jQuery(".entry-content").fitVids();
-<?php }
-if (($mantra_s1bg || $mantra_s2bg) ) { ?>
-     // Check if sidebars have user colors and if so equalize their heights
-     equalizeHeights();<?php } ?>
-}; // mantra_onload
-
-
-jQuery(document).ready(function(){
-     // Add custom borders to images
-     jQuery("img.alignnone, img.alignleft, img.aligncenter,  img.alignright").addClass("<?php echo 'image'.$mantra_image;?>");
-<?php if ($mantra_mobile=="Enable") { // If mobile view is enabled ?>
-
-
-
-<?php } ?>
-});
-
-// make sure not to lose previous onload events
-window.onload = makeDoubleDelegate(window.onload, mantra_onload );
-</script>
-<?php
-}
-
 add_action('wp_head','mantra_header_scripts',100);
 
  /**
@@ -84,7 +47,7 @@ function mantra_title_and_description() {
 		$himgsrc = $image[0];
 	endif;
 
-	if (isset($himgsrc) && ($himgsrc != '')) : echo '<img id="bg_image" alt="" title="" src="'.$himgsrc.'"  />';  endif;
+	if (isset($himgsrc) && ($himgsrc != '')) : echo '<img id="bg_image" alt="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" title="" src="'.$himgsrc.'"  />';  endif;
 
 ?>
 
@@ -448,3 +411,5 @@ function mantra_fav_icon() {
 }
 
 if ($mantra_options['mantra_favicon']) add_action ('cryout_header_hook','mantra_fav_icon');
+
+// FIN

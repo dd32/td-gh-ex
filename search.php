@@ -50,4 +50,5 @@ get_header(); ?>
 		<?php get_sidebar(); ?>
 		</section><!-- #primary -->
 
-<?php get_footer(); ?>
+<?php 
+get_footer();

@@ -53,6 +53,9 @@ if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('
 	jQuery('body').addClass('safari');
 }
 
+/* Add custom borders to images */
+jQuery("img.alignnone, img.alignleft, img.aligncenter,  img.alignright").addClass(mantra_options.image_class);
+
 
 });
 /* end document.ready */
@@ -77,8 +80,26 @@ function equalizeHeights(){
     var max = Math.max(h1,h2,h3);
 	if (h1<max) { jQuery("#primary").height(max); };
 	if (h2<max) { jQuery("#secondary").height(max); };
-
 }
+
+function makeDoubleDelegate(function1, function2) {
+// concatenate functions
+    return function() { if (function1) function1(); if (function2) function2(); }
+}
+
+function mantra_onload() {
+	if ( mantra_options.responsive == 1 ) {
+		/* Add responsive videos */
+		if (jQuery(window).width() < 800) jQuery(".entry-content").fitVids();
+	}
+	if ( mantra_options.equalizesidebars = 1 ) {
+		/* Check if sidebars have user colors and if so equalize their heights */
+		equalizeHeights();
+	}
+}; // mantra_onload
+
+// make sure not to lose previous onload events
+window.onload = makeDoubleDelegate(window.onload, mantra_onload );
 
 /*!
 * FitVids 1.0

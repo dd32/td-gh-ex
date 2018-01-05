@@ -1,7 +1,7 @@
 <?php
-// Frontend
+// General
 require_once(get_template_directory() . "/admin/defaults.php");					// default options
-require_once(get_template_directory() . "/admin/custom-styles.php");			// custom styling
+require_once(get_template_directory() . "/includes/custom-styles.php");			// custom styling
 
 // Admin side
 if( is_admin() ) {
@@ -15,22 +15,16 @@ function mantra_get_theme_options() {
 	global $mantra_defaults;
 	$optionsMantra = get_option( 'ma_options', (array)$mantra_defaults );
 	$optionsMantra = array_merge((array)$mantra_defaults, (array)$optionsMantra);
-return $optionsMantra;
+	return $optionsMantra;
 }
-
-$mantra_options = mantra_get_theme_options();
-foreach ($mantra_options as $key => $value) {
-     ${"$key"} = $value ;
-}
-
 
 //  Hooks/Filters
 // add_action('admin_init', 'mantra_init_fn' ); // hooked by the settings plugin
 add_action('admin_menu', 'mantra_add_page_fn');
 add_action('init', 'mantra_init');
 
-
-$mantra_options= mantra_get_theme_options();
+$mantra_options = mantra_get_theme_options();
+extract( $mantra_options );
 
 // Registering and enqueuing all scripts and styles for the init hook
 function mantra_init() {
@@ -43,15 +37,12 @@ function mantra_add_page_fn() {
 	$page = add_theme_page('Mantra Settings', 'Mantra Settings', 'edit_theme_options', 'mantra-page', 'mantra_page_fn');
 	add_action( 'admin_print_styles-'.$page, 'mantra_admin_styles' );
 	add_action('admin_print_scripts-'.$page, 'mantra_admin_scripts');
-
 }
 
 // Adding the styles for the Mantra admin page used when mantra_add_page_fn() is launched
 function mantra_admin_styles() {
-	wp_register_style( 'mantra-admin-style',get_template_directory_uri() . '/admin/css/admin.css', NULL, _CRYOUT_THEME_VERSION  );
-	wp_register_style( 'jquery-ui-style',get_template_directory_uri() . '/resources/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css', NULL, _CRYOUT_THEME_VERSION );
-	wp_enqueue_style( 'mantra-admin-style' );
-	wp_enqueue_style( 'jquery-ui-style' );
+	wp_enqueue_style( 'mantra-admin-style', get_template_directory_uri() . '/admin/css/admin.css', NULL, _CRYOUT_THEME_VERSION  );
+	wp_enqueue_style( 'mantra-jqueryui-style', get_template_directory_uri() . '/resources/js/jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css', NULL, _CRYOUT_THEME_VERSION );
 }
 
 // Adding the styles for the Mantra admin page used when mantra_add_page_fn() is launched
@@ -81,13 +72,11 @@ function mantra_admin_scripts() {
     }
 
 	// The JS used in the admin
-	wp_register_script('cryout-admin-js',get_template_directory_uri() . '/admin/js/admin.js', NULL, _CRYOUT_THEME_VERSION  );
-	wp_enqueue_script('cryout-admin-js');
+	wp_enqueue_script( 'mantra-admin-js', get_template_directory_uri() . '/admin/js/admin.js', NULL, _CRYOUT_THEME_VERSION  );
 }
 
 // The settings sections. All the referenced functions are found in admin-functions.php
 function mantra_init_fn(){
-
 
 	register_setting('ma_options', 'ma_options', 'ma_options_validate' );
 
@@ -144,7 +133,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_wordspace', __('Word spacing','mantra') , 'cryout_setting_wordspace_fn', 'mantra-page', 'text_section');
 	add_settings_field('mantra_letterspace', __('Letter spacing','mantra') , 'cryout_setting_letterspace_fn', 'mantra-page', 'text_section');
 	add_settings_field('mantra_textshadow', __('Text shadow','mantra') , 'cryout_setting_textshadow_fn', 'mantra-page', 'text_section');
-/*** appereance ***/
+/*** appearance ***/
 	add_settings_field('mantra_sitebackground', __('Background Image','mantra') , 'cryout_setting_sitebackground_fn', 'mantra-page', 'appereance_section');
 	add_settings_field('mantra_backcolor', __('Background Color','mantra') , 'cryout_setting_backcolor_fn', 'mantra-page', 'appereance_section');
 	add_settings_field('mantra_headercolor', __('Header (Banner and Menu) Background Color','mantra') , 'cryout_setting_headercolor_fn', 'mantra-page', 'appereance_section');
@@ -360,4 +349,5 @@ var mantra_tooltip_icon_url = '<?php echo get_template_directory_uri(); ?>/resou
 </script>
 
 <?php } // mantra_page_fn()
+
 // FIN

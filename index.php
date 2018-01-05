@@ -54,4 +54,5 @@ else:
 		</section><!-- #container -->
 <?php
 endif;
-get_footer(); ?>
+
+get_footer(); 

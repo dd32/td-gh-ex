@@ -293,4 +293,5 @@ function mantra_thumbnail_link( $html, $post_id ) {
 	$html = '<a class="post-thumbnail-link" href="' . esc_url( get_permalink( $post_id ) ) . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '">' . $html . '</a>';
 	return $html;
 }
-?>
+
+// FIN

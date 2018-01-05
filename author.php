@@ -89,4 +89,5 @@ get_header(); ?>
 		</section><!-- #primary -->
 
 
-<?php get_footer(); ?>
+<?php 
+get_footer(); 

@@ -20,7 +20,7 @@ $mantra_defaults = array(
 "mantra_frontpage" => "Disable",
 "mantra_frontposts" => "Enable",
 "mantra_frontpostscount" => 5,
-                                                "mantra_menualign" => "left",
+"mantra_menualign" => "left",
 "mantra_fpsliderwidth" => "1050",
 "mantra_fpsliderheight" => "450",
 "mantra_fpslideranim" => "random",
@@ -211,4 +211,4 @@ $mantra_defaults = array(
 "mantra_customcss" => "/* Mantra Custom CSS */  ",
 "mantra_customjs" => "");
 
-?>
+// FIN

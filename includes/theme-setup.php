@@ -424,4 +424,6 @@ function mantra_below_widget() {
 		<?php } }
 
 add_action ('cryout_before_content_hook','mantra_above_widget');
-add_action ('cryout_after_content_hook','mantra_below_widget'); ?>
+add_action ('cryout_after_content_hook','mantra_below_widget'); 
+
+// FIN

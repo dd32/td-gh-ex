@@ -140,4 +140,4 @@ if ( ! comments_open() ) : ?>
 
 add_action('cryout_nocomments_hook','mantra_comments_off');
 
-?>
+// FIN

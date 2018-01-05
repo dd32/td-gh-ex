@@ -5,7 +5,7 @@ Copyright 2011-18 Cryout Creations
 Author: Cryout Creations
 Requires at least: 4.0
 Tested up to: 4.9.1
-Stable tag: 3.0
+Stable tag: 3.0.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Donate link: https://www.cryoutcreations.eu/donate/
@@ -95,8 +95,20 @@ Turkish - Emre Dalkili�
 
 == Changelog ==
 
+= 3.0.2 =
+* Fixed magazine layout applying to single posts
+* Cleaned up theme generated styling code and moved custom-styles.php to includes/ subfolder
+* Rewritten theme styles enqeueing code to use current WordPress standards ***this can result in styles loading in incorrect order if you're using a child theme with old code
+* Updated options-based CSS generated functions to use wp_add_inline_style()
+* Optimized meta viewport code and switched to cryout_seo_hook
+* Cleaned up some inline JS and options JS code
+* Fixed Google fonts failing to enqueue until first theme options save
+* Fixed bullet vertical alignment for widget items
+* Fixed minor design issues in the theme settings page
+* Fixed post formats displaying format images on single posts 
+
 = 3.0.1 =
-* Fixed echo function in header.php
+* Fixed parse error in header.php in 3.0
 
 = 3.0 =
 * PERFORMED A VISUAL REVAMP OF THE THEME TO BRING IT UP TO DATE WITH CURRENT DESIGN TRENDS

@@ -175,4 +175,5 @@ function mantra_frontpage_generator() {
 </div> <!-- frontpage -->
 <?php  } // mantra_frontpage_generator()
 endif;
-?>
+
+// FIN

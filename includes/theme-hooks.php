@@ -156,4 +156,5 @@ function cryout_before_content_hook() {
 function cryout_after_content_hook() {
     do_action('cryout_after_content_hook');
 }
-?>
+
+// FIN

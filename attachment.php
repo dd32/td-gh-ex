@@ -116,4 +116,5 @@ get_header(); ?>
 <?php // get_sidebar(); // sidebars disabled on attachment page; alt css used ?>
 		</section><!-- #container -->
 
-<?php get_footer(); ?>
+<?php
+get_footer();

@@ -138,9 +138,9 @@ jQuery(function() {
 
 <div id="absolutedim">
 
-	<b id="contentb" style="display:block;float:left;position:absolute;margin-top:-20px;"><?php _e("Content =","mantra");?> <span id="contentsize"><?php echo absint( $mantra_options['mantra_sidewidth'] );?></span>px</b>
-	<b id="barb" style="margin-left:40px;color:#F6A828;display:block;float:left;position:absolute;margin-top:-20px;" ><?php _e("Sidebar(s) =","mantra");?> <span id="barsize"><?php echo absint( $mantra_options['mantra_sidebar'] );?></span>px</b>
-	<b id="totalb" style="margin-left:40px;color:#999;display:block;float:left;position:absolute;margin-top:12px;" >^&mdash;&mdash;&mdash; <?php _e("Total width =","mantra");?>  <span id="totalsize"><?php echo absint( $mantra_options['mantra_sidewidth']+ $mantra_options['mantra_sidebar'] );?></span>px &mdash;&mdash;&mdash;^</b>
+	<b id="contentb" style="display:block;float:left;position:absolute;margin-top:-30px;"><?php _e("Content =","mantra");?> <span id="contentsize"><?php echo absint( $mantra_options['mantra_sidewidth'] );?></span>px</b>
+	<b id="barb" style="margin-left:40px;color:#F6A828;display:block;float:left;position:absolute;margin-top:-30px;" ><?php _e("Sidebar(s) =","mantra");?> <span id="barsize"><?php echo absint( $mantra_options['mantra_sidebar'] );?></span>px</b>
+	<b id="totalb" style="margin-left:40px;color:#999;display:block;float:left;position:absolute;margin-top:22px;" >^&mdash;&mdash;&mdash; <?php _e("Total width =","mantra");?>  <span id="totalsize"><?php echo absint( $mantra_options['mantra_sidewidth']+ $mantra_options['mantra_sidebar'] );?></span>px &mdash;&mdash;&mdash;^</b>
 
 <p>
 	<?php echo  "<input type='hidden'  name='ma_options[mantra_sidewidth]' id='mantra_sidewidth'   />";
@@ -2023,4 +2023,5 @@ function cryout_setting_customjs_fn() {
 	echo "<textarea id='mantra_customjs' name='ma_options[mantra_customjs]' rows='8' cols='70' type='textarea' >".esc_textarea(htmlspecialchars_decode($mantra_options['mantra_customjs'], ENT_QUOTES))." </textarea>";
 	echo "<div><small>".__("Insert your custom Javascript code here. (Google Analytics and any other forms of Analytic software).<br> The &ltscript&gt tags are not needed.","mantra")."</small></div>";
 }
-?>
+
+// FIN

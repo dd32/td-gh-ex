@@ -141,32 +141,6 @@ global $mantra_defaults;
 	$input['mantra_googlefontside'] = 	trim(wp_kses_data($input['mantra_googlefontside']));
 	$input['mantra_googlefontsubheader'] = 	trim(wp_kses_data($input['mantra_googlefontsubheader']));
 
-	if($input['mantra_googlefont']) {
-	$mantra_googlefont2 = $input['mantra_googlefont'];
-	$mantra_googlefont2=  preg_replace( '/\s+/', '+', $mantra_googlefont2 );
-	$mantra_googlefont2= "//fonts.googleapis.com/css?family=".$mantra_googlefont2;
-	$input['mantra_googlefont2'] = $mantra_googlefont2;
-     } else $input['mantra_googlefont2'] = '';
-	if($input['mantra_googlefonttitle']) {
-	$mantra_googlefonttitle2 = $input['mantra_googlefonttitle'];
-	$mantra_googlefonttitle2=  preg_replace( '/\s+/', '+', $mantra_googlefonttitle2 );
-	$mantra_googlefonttitle2= "//fonts.googleapis.com/css?family=".$mantra_googlefonttitle2;
-	$input['mantra_googlefonttitle2'] = $mantra_googlefonttitle2;
-     } else $input['mantra_googlefonttitle2'] = '';
-	if($input['mantra_googlefontside']) {
-	$mantra_googlefontside2 = $input['mantra_googlefontside'];
-	$mantra_googlefontside2=  preg_replace( '/\s+/', '+', $mantra_googlefontside2 );
-	$mantra_googlefontside2= "//fonts.googleapis.com/css?family=".$mantra_googlefontside2;
-	$input['mantra_googlefontside2'] = $mantra_googlefontside2;
-     } else $input['mantra_googlefontside2'] = '';
-	if($input['mantra_googlefontsubheader']) {
-	$mantra_googlefontsubheader2 = $input['mantra_googlefontsubheader'];
-	$mantra_googlefontsubheader2=  preg_replace( '/\s+/', '+', $mantra_googlefontsubheader2 );
-	$mantra_googlefontsubheader2= "//fonts.googleapis.com/css?family=".$mantra_googlefontsubheader2;
-	$input['mantra_googlefontsubheader2'] = $mantra_googlefontsubheader2;
-     } else $input['mantra_googlefontsubheader2'] = '';
-
-
 	$input['mantra_frontpostscount'] =  intval(wp_kses_data($input['mantra_frontpostscount']));
 
 	$input['mantra_fpsliderborderwidth'] =  intval(wp_kses_data($input['mantra_fpsliderborderwidth']));
@@ -237,4 +211,5 @@ global $mantra_defaults;
 }
 
 endif;
-?>
+
+// FIN
