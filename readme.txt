@@ -3,8 +3,8 @@
 Contributors: specia
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.9.1
-Stable tag: 1.0.15
-Version: 1.0.15
+Stable tag: 1.0.16
+Version: 1.0.16
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-logo, translation-ready, blog
@@ -30,11 +30,14 @@ Avira WordPress Theme is distributed under the terms of the GNU GPL
 Images
 =================================================================================================
 Screenshot Image
-URL: https://www.pexels.com/photo/adventure-backpack-backpacker-backpacking-615471/
-Source: https://www.pexels.com/
+URL: https://stocksnap.io/photo/MU7G67710S
+Source: https://stocksnap.io/license
 License: CC0 License
 
 ##Changelog
+version 1.0.16
+* Image URL changed.
+
 version 1.0.15
 * Screenshot Changed.
 
