@@ -106,6 +106,8 @@ body {
 }
 .panel .button .fa {
 	margin-right: 5px;
+	font-size: 20px;
+	vertical-align: middle;
 }
 
 /* Extra small devices (phones, less than 768px) */

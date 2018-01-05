@@ -194,6 +194,10 @@ function graphene_get_customizer_transport_settings(){
 		'footer_bg',
 		'footer_text',
 		'footer_link',
+		'footer_widget_bg',
+		'footer_widget_border',
+		'footer_widget_text',
+		'footer_widget_link',
 
 		'comments_bg',
 		'comments_border',
