@@ -160,7 +160,18 @@ function boxy_display_upgrade() {
 
         <?php if ( is_null( $tab ) ) { ?>
             <div class="theme_info info-tab-content">
-                <div class="theme_info_column clearfix">
+                <div class="theme_info_column clearfix">    
+                    <div id="webulous-create-web">
+                        <div id="webulous-mode-wrap">
+                            <h3>New to Creating a Website?</h3> 
+                            <p>We will build you a complete website based on the theme you selected. We will populate content, change colors and do any look and feel customisation work you prefer.</p>
+                        </div>
+                        <div class="image-wrap">
+                            <a href="https://www.webulousthemes.com/checkout?edd_action=add_to_cart&download_id=23052" target="_blank">
+                            <?php echo sprintf ( '<img src="'. get_template_directory_uri() .'/images/api.png" alt="%1$s" />',__('Image','boxy') ); ?>
+                            </a>
+                        </div>
+                    </div>
                     <div class="theme_info_left">
                         <div class="theme_link">
                             <h3><?php esc_html_e( 'Theme Customizer', 'boxy' ); ?></h3>
