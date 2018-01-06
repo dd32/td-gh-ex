@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Avata 1.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-20 22:07+0800\n"
+"POT-Creation-Date: 2018-01-06 22:12+0800\n"
 "PO-Revision-Date: 2016-08-24 18:55+0800\n"
 "Last-Translator: HooThemes <support@hoosoft.com>\n"
 "Language-Team: HooThemes <support@hoosoft.com>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.0.5\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -102,56 +102,56 @@ msgstr ""
 msgid "Designed by <a href=\"%s\">HooThemes</a>."
 msgstr ""
 
-#: functions.php:36
+#: functions.php:38
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:36
+#: functions.php:38
 msgid "Front Page Main Menu"
 msgstr ""
 
-#: functions.php:504
+#: functions.php:506
 msgid "Re-order Saved."
 msgstr ""
 
-#: functions.php:654
+#: functions.php:659
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:659
+#: functions.php:664
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:695
+#: functions.php:700
 msgid "<i class=\"fa fa-comment\"></i> 1 "
 msgstr ""
 
-#: functions.php:695
+#: functions.php:700
 msgid "<i class=\"fa fa-comment\"></i> % "
 msgstr ""
 
-#: functions.php:712 functions.php:773
+#: functions.php:717 functions.php:778
 msgid "No Comments"
 msgstr ""
 
-#: functions.php:713 functions.php:775
+#: functions.php:718 functions.php:780
 msgid "1 Comment"
 msgstr ""
 
-#: functions.php:714 functions.php:771
+#: functions.php:719 functions.php:776
 msgid "% Comments"
 msgstr ""
 
-#: functions.php:715
+#: functions.php:720
 msgid "Comments Off"
 msgstr ""
 
-#: functions.php:753
+#: functions.php:758
 #, php-format
 msgid "Comment on %s"
 msgstr ""
 
-#: functions.php:893
+#: functions.php:920
 msgid "Hoo Contact Form"
 msgstr ""
 
@@ -457,10 +457,6 @@ msgstr ""
 msgid "Avata: Front Page Sections"
 msgstr ""
 
-#: includes/options.php:43
-msgid "All"
-msgstr ""
-
 #: includes/options.php:48
 msgid "--Disable--"
 msgstr ""
@@ -619,241 +615,245 @@ msgstr ""
 msgid "Custom Section %d"
 msgstr ""
 
-#: includes/options.php:1536
+#: includes/options.php:1522
 msgid "Avata: Front Page Options"
 msgstr ""
 
-#: includes/options.php:1542
+#: includes/options.php:1528
 msgid "General Options"
 msgstr ""
 
-#: includes/options.php:1553
+#: includes/options.php:1539
 msgid "Section Auto Scrolling"
 msgstr ""
 
-#: includes/options.php:1554
+#: includes/options.php:1540
 msgid ""
 "Defines whether to use the \"automatic\" scrolling or the \"normal\" one."
 "(Only affect desktop devices)"
 msgstr ""
 
-#: includes/options.php:1563
+#: includes/options.php:1549
 msgid "Enable Animation"
 msgstr ""
 
-#: includes/options.php:1571
+#: includes/options.php:1557
 msgid "Animation Delay"
 msgstr ""
 
-#: includes/options.php:1580
+#: includes/options.php:1566
 msgid "Menu Font Color"
 msgstr ""
 
-#: includes/options.php:1589
+#: includes/options.php:1575
 msgid "Front Page Header"
 msgstr ""
 
-#: includes/options.php:1600
+#: includes/options.php:1586
 msgid "Sticky Header"
 msgstr ""
 
-#: includes/options.php:1610
+#: includes/options.php:1596
 msgid "Sticky Header Opacity"
 msgstr ""
 
-#: includes/options.php:1621
+#: includes/options.php:1607
 msgid "Side Navigation Icon Styling"
 msgstr ""
 
-#: includes/options.php:1632
+#: includes/options.php:1618
 msgid "Hide Side Navigation"
 msgstr ""
 
-#: includes/options.php:1641
+#: includes/options.php:1627
 msgid "Side Navigation Align"
 msgstr ""
 
-#: includes/options.php:1646
+#: includes/options.php:1632
 msgid "Left"
 msgstr ""
 
-#: includes/options.php:1647
+#: includes/options.php:1633
 msgid "Right"
 msgstr ""
 
-#: includes/options.php:1656
+#: includes/options.php:1642
 msgid "Icon Styles"
 msgstr ""
 
-#: includes/options.php:1661
+#: includes/options.php:1647
 msgid "Fill up"
 msgstr ""
 
-#: includes/options.php:1662
+#: includes/options.php:1648
 msgid "Scale up"
 msgstr ""
 
-#: includes/options.php:1663
+#: includes/options.php:1649
 msgid "Stroke"
 msgstr ""
 
-#: includes/options.php:1664
+#: includes/options.php:1650
 msgid "Fill in"
 msgstr ""
 
-#: includes/options.php:1665
+#: includes/options.php:1651
 msgid "Circle grow"
 msgstr ""
 
-#: includes/options.php:1666
+#: includes/options.php:1652
 msgid "Dot stroke"
 msgstr ""
 
-#: includes/options.php:1667
+#: includes/options.php:1653
 msgid "Draw circle"
 msgstr ""
 
-#: includes/options.php:1668
+#: includes/options.php:1654
 msgid "Small dot stroke"
 msgstr ""
 
-#: includes/options.php:1669
+#: includes/options.php:1655
 msgid "Puff"
 msgstr ""
 
-#: includes/options.php:1670
+#: includes/options.php:1656
 msgid "Hop"
 msgstr ""
 
-#: includes/options.php:1676
+#: includes/options.php:1662
 msgid "Icon Color"
 msgstr ""
 
-#: includes/options.php:1685
+#: includes/options.php:1671
 msgid "Icon Border Color"
 msgstr ""
 
-#: includes/options.php:1694
+#: includes/options.php:1680
 msgid "Side Padding"
 msgstr ""
 
-#: includes/options.php:1704
+#: includes/options.php:1690
 msgid "Avata: Basic Settings"
 msgstr ""
 
-#: includes/options.php:1714
+#: includes/options.php:1700
 msgid "Primary Color"
 msgstr ""
 
-#: includes/options.php:1723
+#: includes/options.php:1709
 msgid "Hide Breadcrumb"
 msgstr ""
 
-#: includes/options.php:1732
+#: includes/options.php:1718
 msgid "Hide Page Title Bar"
 msgstr ""
 
-#: includes/options.php:1742
+#: includes/options.php:1728
 msgid "Page Title Bar Background"
 msgstr ""
 
-#: includes/options.php:1755
+#: includes/options.php:1741
 msgid "Header Tracking Code"
 msgstr ""
 
-#: includes/options.php:1764
+#: includes/options.php:1750
 msgid "Footer Tracking Code"
 msgstr ""
 
-#: includes/options.php:1773
+#: includes/options.php:1759
 msgid "404 Page Content"
 msgstr ""
 
-#: includes/options.php:1782
+#: includes/options.php:1772
+msgid "Section Order"
+msgstr ""
+
+#: includes/options.php:1781
 msgid "Avata: Sidebar Settings"
 msgstr ""
 
-#: includes/options.php:1792
+#: includes/options.php:1791
 msgid "Page Left Sidebar"
 msgstr ""
 
-#: includes/options.php:1802
+#: includes/options.php:1801
 msgid "Page Right Sidebar"
 msgstr ""
 
-#: includes/options.php:1812
+#: includes/options.php:1811
 msgid "Post Left Sidebar"
 msgstr ""
 
-#: includes/options.php:1822
+#: includes/options.php:1821
 msgid "Post Right Sidebar"
 msgstr ""
 
-#: includes/options.php:1832
+#: includes/options.php:1831
 msgid "Archive Left Sidebar"
 msgstr ""
 
-#: includes/options.php:1842
+#: includes/options.php:1841
 msgid "Archive Right Sidebar"
 msgstr ""
 
-#: includes/options.php:1855
+#: includes/options.php:1852
 msgid "Avata: Footer"
 msgstr ""
 
-#: includes/options.php:1866
+#: includes/options.php:1863
 msgid "Display Footer Widgets"
 msgstr ""
 
-#: includes/options.php:1875
+#: includes/options.php:1872
 msgid "Footer Widgets Area Background"
 msgstr ""
 
-#: includes/options.php:1957
+#: includes/options.php:1954
 msgid "Copyright"
 msgstr ""
 
-#: includes/options.php:1966
+#: includes/options.php:1963
 msgid "Copyright Font Color"
 msgstr ""
 
-#: includes/options.php:1975
+#: includes/options.php:1972
 msgid "Copyright Background Color"
 msgstr ""
 
-#: includes/options.php:1984
+#: includes/options.php:1981
 msgid "Avata: Typography"
 msgstr ""
 
-#: includes/options.php:1995
+#: includes/options.php:1992
 msgid "Load Google Fonts"
 msgstr ""
 
-#: includes/options.php:2004
+#: includes/options.php:2001
 msgid "Avata: Blog"
 msgstr ""
 
-#: includes/options.php:2015
+#: includes/options.php:2012
 msgid "Hide Post Meta"
 msgstr ""
 
-#: includes/options.php:2023
+#: includes/options.php:2020
 msgid "Hide Meta: Date"
 msgstr ""
 
-#: includes/options.php:2031
+#: includes/options.php:2028
 msgid "Hide Meta: Author"
 msgstr ""
 
-#: includes/options.php:2039
+#: includes/options.php:2036
 msgid "Hide Meta: Comments"
 msgstr ""
 
-#: includes/options.php:2047
+#: includes/options.php:2044
 msgid "Hide Categories on Post List Page"
 msgstr ""
 
-#: includes/options.php:2055
+#: includes/options.php:2052
 msgid "Hide \"Read More\" on Post List Page"
 msgstr ""
 

@@ -16,8 +16,8 @@ function avata_setup(){
 	global $content_width,$avata_lite_sections, $avata_options;
 	$textdomain    = avata_get_option_name();
 	$avata_options = get_option($textdomain);
-	
-	load_theme_textdomain('avata');
+	$lang = get_template_directory(). '/languages';
+	load_theme_textdomain('avata', $lang );
 	add_theme_support( 'post-thumbnails' ); 
 	$args = array();
 	$header_args = array( 
@@ -814,13 +814,17 @@ function avata_get_sections(){
 	$avata_sections = array();
 	if( $sortsections_saved!='' ){
 		$sortsections_saved = @json_decode($sortsections_saved, true);
-		foreach( $sortsections_saved as $k=>$sortsection ){
-			if(isset($avata_lite_sections[$sortsection])){
-				$avata_sections[$sortsection] = $avata_lite_sections[$sortsection];
+		if( is_array($sortsections_saved) ){
+			foreach( $sortsections_saved as $k=>$sortsection ){
+				if(isset($avata_lite_sections[$sortsection])){
+					$avata_sections[$sortsection] = $avata_lite_sections[$sortsection];
+				}
 			}
+		
+			$avata_sections = array_merge($avata_sections,$avata_lite_sections);
+		}else{
+			$avata_sections = 	$avata_lite_sections;
 		}
-	
-		$avata_sections = array_merge($avata_sections,$avata_lite_sections);
 	
 	}else{
 		$avata_sections = 	$avata_lite_sections;
