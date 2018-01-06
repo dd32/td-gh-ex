@@ -35,6 +35,9 @@ Other Screenshot images:
 * To set up social media links in the page footer: Appearance > Menus - then <Custom Links> to the left. Footer does not support depths of the child links below it. (No drop downs)
 
 == Change Log ==
+1.2.5 
+* entry-header height removed
+
 1.2.4
 * fixed stylesheet errors
 * added default image setting to header image
