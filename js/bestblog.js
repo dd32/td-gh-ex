@@ -43,8 +43,8 @@ jQuery(document).ready(function($) {
     slidesToShow:1,
     cssEase: 'linear',
     pauseOnHover:false,
-    autoplay:true,
     autoplaySpeed: 4000,
+     adaptiveHeight: true,
     speed:400,
     prevArrow: '<div  class="bestblog-slider-nav bestblog-slider-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>',
 	  nextArrow: '<div  class="bestblog-slider-nav bestblog-slider-next "><i class="fa fa-angle-right" aria-hidden="true"></i></div>'

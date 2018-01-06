@@ -40,6 +40,7 @@ function bestblog_setup()
 
     // Declare WooCommerce support
     add_theme_support('woocommerce');
+		
 		// Add theme support for woocommerce product gallery added in WooCommerce 3.0.
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-zoom' );
@@ -117,6 +118,7 @@ function bestblog_setup()
     add_image_size('bestblog-medium', 750, 450, true);
     add_image_size('bestblog-large', 1200, 750, true);
     add_image_size('bestblog-xlarge', 1920, 400, true);
+		add_image_size('bestblog-slider', 1440, 500, true);
 
 
     add_theme_support('starter-content', array(
@@ -283,7 +285,7 @@ function bestblog_widgets_init()
 		'description'   => __('Home Right Sidebar', 'best-blog'),
 		'before_widget' => '<div id="%1$s" class="widget %2$s sidebar-item cell small-24 medium-12 large-24"><div class="widget_wrap woocommerce_sidebar ">',
 		'after_widget'  => '</div></div>',
-		'before_title'  => '<div class="widget-title "> <h3>',
+		'before_title'  => '<div class="widget-title"> <h3>',
 		'after_title'   => '</h3></div>'
 		));
     register_sidebar(array(
@@ -349,3 +351,4 @@ require_once(get_template_directory() . '/inc/custom-header.php');
 //load widgets ,kirki ,customizer,functions
 require_once(get_template_directory() . '/inc/kirki/kirki.php');
 require_once(get_template_directory() . '/inc/customizer.php');
+require_once(get_template_directory() . '/inc/welcome/welcome-screen.php');

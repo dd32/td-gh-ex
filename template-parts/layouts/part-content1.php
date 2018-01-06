@@ -14,7 +14,7 @@
     <div class="large-10 medium-10 small-24 align-self-middle">
       <div class="post-thumb-warp">
         <div class="post-thumb">
-          <?php the_post_thumbnail( 'bestblogtop-medium',array('class' => 'object-fit-images')  ); ?>
+          <?php the_post_thumbnail( 'bestblog-medium',array('class' => 'object-fit-images','link_thumbnail' =>TRUE)  ); ?>
         </div>
       </div>
     </div>

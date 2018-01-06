@@ -18,7 +18,7 @@
     get_template_part( 'template-parts/footer/footer', 'widgets' );
     get_template_part( 'template-parts/footer/site', 'info' );
     ?>
-    <a href="#0"  class="scroll_to_top cd-top floating-action button secondary" data-smooth-scroll>
+    <a href="#0" class="scroll_to_top cd-top floating-action button secondary" data-smooth-scroll>
       <i class="fa fa-angle-up "></i>
     </a>
   </footer>

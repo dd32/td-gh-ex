@@ -23,19 +23,19 @@ endif;
     );
   $main_slider = new WP_Query($args);
 ?>
+<div  class="grid-container full ">
 <div class="cell large-auto small-12" >
   <div id="slider" class="slick-slider slider-post-wrap" >
       <?php if ( $main_slider->have_posts() ) : ?>
         <?php /* Start the Loop */ ?>
         <?php while ( $main_slider->have_posts() ) : $main_slider->the_post(); ?>
-          <?php $featured_img_url = wp_get_attachment_url( get_post_thumbnail_id(), 'bestblog-large' );   ?>
             <article class="post-wrap-slider">
               <div class="post-thumbouter-slider">
                 <div class="post-thumb-overlay"></div>
                 <div class="post-thumb-slider ">
                   <span class="thumbnail-resize-slider">
                     <span class="thumbnail-image-slider">
-                      <img src="<?php echo esc_url( $featured_img_url ); ?>">
+                      <?php the_post_thumbnail( 'bestblog-slider'); ?>
                     </span>
                   </span>
                 </div>
@@ -53,4 +53,5 @@ endif;
         <?php wp_reset_postdata(); ?>
       <?php endif; ?>
     </div>
+  </div>
   </div>

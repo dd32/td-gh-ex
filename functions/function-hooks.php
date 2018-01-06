@@ -27,6 +27,35 @@ function bestblog_excerpt_more($more)
 }
 add_filter('excerpt_more', 'bestblog_excerpt_more');
 
+/**
+ * Link thumbnails to their posts based on attr
+ *
+ * @param $html
+ * @param int $pid
+ * @param int $post_thumbnail_id
+ * @param int $size
+ * @param array $attr
+ *
+ * @return string
+ */
+
+function bestblog_filter_post_thumbnail_html( $html, $pid, $post_thumbnail_id, $size, $attr ) {
+
+     if ( ! empty( $attr[ 'link_thumbnail' ] ) ) {
+
+        $html = sprintf(
+            '<a class="img-link" href="%s" title="%s" rel="nofollow"><span class="thumbnail-resize" >%s</span></a>',
+            esc_url(get_permalink( $pid )),
+            esc_attr( get_the_title( $pid ) ),
+            $html
+        );
+     }
+
+    return $html;
+}
+
+add_filter( 'post_thumbnail_html', 'bestblog_filter_post_thumbnail_html', 10, 5 );
+
 
 /**
 * comments meta
@@ -43,27 +72,6 @@ function bestblog_meta_comment()
 }
 endif;
 
-
-if (! function_exists('bestblog_post_image_html')) :
-/**
-* Link all post thumbnails to the post permalink.
-*
-* @param string $html          Post thumbnail HTML.
-* @param int    $post_id       Post ID.
-* @param int    $post_image_id Post image ID.
-* @return string Filtered post image HTML.
-*/
-function bestblog_post_image_html($html, $post_id, $post_image_id)
-{
-    if (is_single() || is_shop() ) {
-        $html ='<span class="thumbnail-resize" >'. $html . '</span>';
-    } else {
-        $html = ' <a href="' . esc_url(get_permalink($post_id)) . '" alt="' . esc_attr(get_the_title($post_id)) . '"> <span class="thumbnail-resize" > ' . $html . '</a> </span>';
-    }
-    return $html;
-}
-add_filter('post_thumbnail_html', 'bestblog_post_image_html', 10, 3);
-endif;
 
 
 /**

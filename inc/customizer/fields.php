@@ -114,6 +114,23 @@ Kirki::add_field('best_blog', array(
 = Header Options =
 ===============================================>>>>>*/
 Kirki::add_field('best_blog', array(
+	'type'        		=> 'custom',
+	'settings'    		=> 'main_bgheader_style_notice',
+	'label'       		=> esc_html__( 'Notice', 'best-blog' ),
+	'section'     		=> 'header_image',
+	'default'     		=> '<div style="padding: 8px; background-color: #e74c3c; color: #fff; border-radius: 3px;">' . esc_html__( 'For show Wordpress core header image you should select Header image background style (Header Image),theme option => Header Options => Header Background Style => Header image
+', 'best-blog' ) . '</div>',
+	'priority'    		=> 1,
+	'active_callback' => array(
+			array(
+					'setting' => 'main_bgheader_style',
+					'operator' => '!==',
+					'value' => 'img_header'
+			)
+	),
+));
+
+Kirki::add_field('best_blog', array(
     'type' => 'select',
     'settings' => 'main_bgheader_style',
     'label' => esc_attr__('Header Background Style', 'best-blog'),
@@ -238,7 +255,7 @@ Kirki::add_field( 'best_blog', array(
 	),
 	'output' => array(
 			array(
-					'element' => '.menu-outer,#sub_banner,.main-menu-wrap .is-dropdown-submenu-parent .submenu li a',
+					'element' => '#sub_banner_page,.menu-outer,#sub_banner,.main-menu-wrap .is-dropdown-submenu-parent .submenu li a',
 					'property' => 'background-color',
 					'units' => ''
 			)
@@ -328,8 +345,8 @@ Kirki::add_field( 'best_blog', array(
   'transport' => 'auto',
 	'default'     => array(
 		'font-family'    => 'Roboto',
-		'variant'        => 'regular',
-		'font-size'      => '14px',
+		'variant'        => '400',
+		'font-size'      => '16px',
 		'line-height'    => '1.5',
 		'letter-spacing' => '0',
 		'subsets'        => array( 'latin-ext' ),
@@ -374,6 +391,24 @@ Kirki::add_field('best_blog', array(
 ===============================================>>>>>*/
 Kirki::add_field('best_blog', array(
 	'type'        		=> 'custom',
+	'settings'    		=> 'slider_notice_homepagesettings',
+	'label'       		=> esc_html__( 'Notice', 'best-blog' ),
+	'section'     		=> 'static_front_page',
+	'default'     		=> '<div style="padding: 8px; background-color: #e74c3c; color: #fff; border-radius: 3px;">' . esc_html__( 'For show Home page like demo . setup home page', 'best-blog' ) . '</div>',
+	'priority'    		=> 1,
+	'active_callback' 	=> 'bestblog_inactive_creative'
+));
+Kirki::add_field('best_blog', array(
+	'type'        		=> 'custom',
+	'settings'    		=> 'slider_notice_url',
+	'label'       		=> esc_html__( 'Create a custom homepage.', 'best-blog' ),
+	'section'     		=> 'static_front_page',
+	'default'     		=> '<a href="'. esc_url( admin_url( 'themes.php?page=bestblog-welcome' ) ) .'" target="_blank">' . esc_html__('Learn How to create a custom homepage','best-blog') . '<a><br/><br/>',
+	'priority'    		=> 1,
+	'active_callback' 	=> 'bestblog_inactive_creative'
+));
+Kirki::add_field('best_blog', array(
+	'type'        		=> 'custom',
 	'settings'    		=> 'slider_notice',
 	'label'       		=> esc_html__( 'Notice', 'best-blog' ),
 	'section'     		=> 'bestblog_slider_settings',
@@ -405,6 +440,14 @@ Kirki::add_field( 'best_blog', array(
 	'section'     => 'bestblog_slider_settings',
 	'default'     => false,
 ) );
+Kirki::add_field('best_blog', array(
+	'type'        		=> 'custom',
+	'settings'    		=> 'slider_notice_hight',
+	'label'       		=> esc_html__( 'Notice', 'best-blog' ),
+	'section'     		=> 'bestblog_slider_settings',
+	'default'     		=> '<div style="padding: 8px; background-color: #e74c3c; color: #fff; border-radius: 3px;">' . esc_html__( 'Slider height should be 1440 x 600 px', 'best-blog' ) . '</div>',
+	'priority'    		=> 1,
+	));
 
 Kirki::add_field('best_blog', array(
     'type' => 'select',

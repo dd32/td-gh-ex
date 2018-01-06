@@ -13,7 +13,7 @@
       'posts_per_page'=> 4, // Number of related posts that will be shown.
       'ignore_sticky_posts'   => true
     );
-    $my_query = new wp_query($args);?>
+    $related_query = new wp_query($args);?>
     <div class="single-post-box-related">
       <div class="grid-x grid-padding-x grid-padding-y ">
         <div class="cell small-24 ">
@@ -24,14 +24,14 @@
       </div>
       <div class="post-wrap-layout-2 ">
         <div class="grid-x grid-margin-x  ">
-          <?php if ($my_query->have_posts()) : ?>
+          <?php if ($related_query->have_posts()) : ?>
             <?php /* Start the Loop */ ?>
-            <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+            <?php while ($related_query->have_posts()) : $related_query->the_post(); ?>
               <div class="cell  large-12  medium-12 small-24 ">
                 <div class="card card-blog">
                   <?php if ( has_post_thumbnail() ) { ?>
                     <div class="card-image">
-                      <?php the_post_thumbnail( 'bestblogtop-small',array('class' => 'img')  ); ?>
+                      <?php the_post_thumbnail( 'bestblogtop-small',array('class' => 'img','link_thumbnail' =>TRUE)  ); ?>
                     </div>
                   <?php } ?>
                   <div class="card-content">

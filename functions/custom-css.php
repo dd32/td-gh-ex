@@ -63,6 +63,28 @@ $inline_css .=
 	color: $text_color_hover ;
 }"
 ;
+
+// Get the text color for  hover
+$menu_bg_color   =  get_theme_mod( 'menu_bg_color' ,'#fff') ;
+
+
+if ( 225 > ariColor::newColor( $menu_bg_color )->luminance ) {
+// Our background color is dark, so we need to create a light text color.
+$sub_h1_color = Kirki_Color::adjust_brightness( $menu_bg_color, 225 );
+} else {
+
+// Our background color is light, so we need to create a dark text color
+$sub_h1_color = Kirki_Color::adjust_brightness( $menu_bg_color, -225 );
+
+}
+/*  Color calculation for text */
+$inline_css .=
+".heade-page-nothumb h1
+{
+	color: $sub_h1_color ;
+}"
+;
+
 wp_add_inline_style( 'bestblog-style', $inline_css );
 }
 add_action( 'wp_enqueue_scripts', 'bestblog_inline_style', 10 );

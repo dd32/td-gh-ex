@@ -11,8 +11,7 @@ class bestblog_Author_Widget extends WP_Widget
     public function __construct()
     {
         $widget_ops = array( 'classname' => 'bestblog_author_widget', 'description' => __('Use this widget to display author/user profile info', 'best-blog') ,'customize_selective_refresh' => true);
-        $control_ops = array( 'id_base' => 'bestblog_author_widget' );
-        parent::__construct('bestblog_author_widget', __('bestblog Author Bio', 'best-blog'), $widget_ops, $control_ops);
+        parent::__construct('bestblog_author_widget', __('bestblog Author Bio', 'best-blog'), $widget_ops);
         //Allow themes or plugins to modify default parameters
         $defaults = apply_filters('bestblog_author_widget_modify_defaults', array(
                       'title' => esc_attr__('CEO / Co-Founder', 'best-blog'),
@@ -32,8 +31,6 @@ class bestblog_Author_Widget extends WP_Widget
 
     public function widget($args, $instance)
     {
-        $title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'CEO / Co-Founder' ,'best-blog');
-
         extract($args);
 
         $instance = wp_parse_args((array) $instance, $this->defaults); ?>
@@ -50,8 +47,8 @@ class bestblog_Author_Widget extends WP_Widget
             <?php echo get_avatar(get_the_author_meta('ID'), $instance['avatar_size']) ;?>
           </div>
           <div class="card-content">
-            <?php if( !empty($title) ): ?>
-              <h6 class="category text-gray"><?php echo $title ; ?></h6>
+            <?php if( !empty($instance['title'])): ?>
+              <h6 class="category text-gray"><?php echo apply_filters('widget_title', $instance['title']); ?></h6>
             <?php endif; ?>
             <?php echo '<h4 class="card-title">' . get_the_author_meta('display_name').  '</h4>'; ?>
             <?php if ($instance['display_desc']) : ?>

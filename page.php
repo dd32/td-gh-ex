@@ -1,12 +1,11 @@
 <?php get_header(); ?>
 <!--Call Sub Header-->
 <div id="sub_banner_page" class=" callout  border-none">
+  <?php if ( has_post_thumbnail( $post->ID ) ) : ?>
   <div class="single-page-thumb-outer">
     <div class="page-thumb">
-      <?php if ( has_post_thumbnail( $post->ID ) ) : ?>
       <img
         data-interchange="[<?php echo the_post_thumbnail_url('bestblog-small'); ?>, small], [<?php echo the_post_thumbnail_url('bestblog-large'); ?>, medium], [<?php echo the_post_thumbnail_url('bestblog-xlarge'); ?>, large], [<?php echo the_post_thumbnail_url('bestblog-xlarge'); ?>, xlarge]"/>
-      <?php endif;?>
       <div class="heade-content">
         <h1 class="text-center">
           <?php the_title(); ?>
@@ -14,13 +13,20 @@
       </div>
     </div>
   </div>
+<?php else:?>
+      <div class="heade-page-nothumb">
+        <h1 class="text-center">
+          <?php the_title(); ?>
+        </h1>
+    </div>
+<?php endif;?>
 </div>
 <!--Content-->
 <div id="content-page" class="padding-vertical-small-0 padding-vertical-large-1">
   <div class="grid-container padding-horizontal-0">
     <div class="grid-x grid-margin-x align-center">
       <div class="cell  small-24 large-17">
-        <div class="page_content moon-curve z-depth-1">
+        <div class="page_content moon-curve z-depth-2">
           <?php if(have_posts()): ?>
             <?php while(have_posts()): ?>
               <?php the_post();?>

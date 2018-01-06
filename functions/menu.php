@@ -72,7 +72,7 @@ if ( ! function_exists( 'bestblog_breadcrumb' ) ) {
 		$separator  = '&gt;';
 		$id         = 'breadcrumbs';
 		$class      = 'breadcrumbs';
-		$home_title = 'Homepage';
+		$home_title = esc_attr__('Homepage','best-blog'); 
 
 		// Get the query & post information
 		global $post,$wp_query;
