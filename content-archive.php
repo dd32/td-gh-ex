@@ -62,7 +62,7 @@
 						echo '<span class="post-views">' . number_format_i18n( $result[0]['views'] ) . '</span>'; ?>
 				<?php endif; ?>
 			
-			<?php edit_post_link( __( 'Edit', 'aladdin' ), '<span title="'.__( 'Edit', 'aladdin' ).'" class="edit-link">', '</span>' ); ?>
+			<?php edit_post_link( __( 'Edit', 'aladdin' ), '<span title="'. esc_url( __( 'Edit', 'aladdin' ) ) .'" class="edit-link">', '</span>' ); ?>
 		</footer><!-- .entry-meta -->
 		
 	</article><!-- #post -->
