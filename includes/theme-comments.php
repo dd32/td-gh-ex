@@ -62,6 +62,7 @@ function mantra_comment( $comment, $args, $depth ) {
 }
 endif;
 
+
 /**
  * Removes the default styles that are packaged with the Recent Comments widget.
  *
@@ -74,8 +75,8 @@ function mantra_remove_recent_comments_style() {
 	global $wp_widget_factory;
 	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
 }
-
 add_action( 'widgets_init', 'mantra_remove_recent_comments_style' );
+
 
 if ( ! function_exists( 'mantra_comments_on' ) ) :
 /**
@@ -90,26 +91,24 @@ endif;
  * The number of comments title
  */
 function mantra_number_comments() { ?>
-			<h3 id="comments-title">
-				<?php  printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'mantra' ),
-				number_format_i18n( get_comments_number() ), '<em>' . get_the_title() . '</em>' ); ?>
-			</h3>
-<?php }
-
+	<h3 id="comments-title">
+		<?php  printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'mantra' ),
+		number_format_i18n( get_comments_number() ), '<em>' . get_the_title() . '</em>' ); ?>
+	</h3> <?php 
+}
 add_action('cryout_before_comments_hook','mantra_number_comments');
 
 /**
  * The comments navigation in case of comments on multiple pages (both top and bottom)
  */
 function mantra_comments_navigation() {
-if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-			<div class="navigation">
-				<div class="nav-previous"><?php previous_comments_link( '<span class="meta-nav">&larr;</span>'.__('Older Comments', 'mantra' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'mantra' ).' <span class="meta-nav">&rarr;</span>' ); ?></div>
-			</div> <!-- .navigation -->
-<?php endif; // check for comment navigation
+	if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+		<div class="navigation">
+			<div class="nav-previous"><?php previous_comments_link( '<span class="meta-nav">&larr;</span>'.__('Older Comments', 'mantra' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'mantra' ).' <span class="meta-nav">&rarr;</span>' ); ?></div>
+		</div> <!-- .navigation -->
+	<?php endif; // check for comment navigation
 }
-
 add_action('cryout_before_comments_hook','mantra_comments_navigation');
 add_action('cryout_after_comments_hook','mantra_comments_navigation');
 
@@ -123,21 +122,18 @@ add_action('cryout_after_comments_hook','mantra_comments_navigation');
 * See mantra_comment() in mantra/functions.php for more.
  */
 function mantra_list_comments() {
-					wp_list_comments( array( 'callback' => 'mantra_comment' ) );
-			}
-
+	wp_list_comments( array( 'callback' => 'mantra_comment' ) );
+}
 add_action('cryout_comments_hook','mantra_list_comments');
 
 /*
  * If there are no comments and comments are closed
  */
 function mantra_comments_off() {
-if ( ! comments_open() ) : ?>
+	if ( ! comments_open() ) : ?>
 	<p class="nocomments"><?php _e( 'Comments are closed.', 'mantra' ); ?></p>
-<?php endif; // end ! comments_open()
+	<?php endif; // end ! comments_open()
 }
-
-
 add_action('cryout_nocomments_hook','mantra_comments_off');
 
 // FIN

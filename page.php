@@ -13,23 +13,23 @@
  */
 get_header();
 if ($mantra_frontpage=="Enable" && is_front_page() ) {
-mantra_frontpage_generator();
+	mantra_frontpage_generator();
 }
 else {
-?>
-		<section id="container">
+	?>
+			<section id="container">
 
-			<div id="content" role="main">
-			<?php cryout_before_content_hook(); ?>
+				<div id="content" role="main">
+				<?php cryout_before_content_hook(); ?>
 
-	<?php get_template_part( 'content/content', 'page'); ?>
+				<?php get_template_part( 'content/content', 'page'); ?>
 
-			<?php cryout_after_content_hook(); ?>
-			</div><!-- #content -->
-			<?php get_sidebar(); ?>
-		</section><!-- #container -->
+				<?php cryout_after_content_hook(); ?>
+				</div><!-- #content -->
+				<?php get_sidebar(); ?>
+			</section><!-- #container -->
 
 
-<?php } // else
+	<?php } // else
 
 get_footer(); 

@@ -3,9 +3,9 @@ Mantra WordPress Theme
 Copyright 2011-18 Cryout Creations
 
 Author: Cryout Creations
-Requires at least: 4.0
+Requires at least: 4.2
 Tested up to: 4.9.1
-Stable tag: 3.0.2
+Stable tag: 3.0.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Donate link: https://www.cryoutcreations.eu/donate/
@@ -95,10 +95,22 @@ Turkish - Emre Dalkili�
 
 == Changelog ==
 
+= 3.0.3 =
+* Cleaned up leftover +50px hardcoded rules on header image width (thanks stormcrow)
+* Fixed slider not working in v3.0.2 due to incorrect script path (thanks Tezzer)
+* Improved image overflow handling in the content/sidebars
+* Improved failsafe layout styling for older/unsupported page template
+* Added filters for slider and featured image size registrations
+* Adjusted empty sidebar warnings to only be visible to logged in users with sufficient permissions
+* Cleaned up and optimized code in theme-setup.php, theme-comments.php, theme-frontpage.php, theme-loop.php, sidebar.php, settings.php
+* Renamed fonts and socials global variables to avoid name collisions
+* Cleaned up obsolete relative dimensions code
+* Changed social icons defaults to indicate the use of full URL
+
 = 3.0.2 =
 * Fixed magazine layout applying to single posts
 * Cleaned up theme generated styling code and moved custom-styles.php to includes/ subfolder
-* Rewritten theme styles enqeueing code to use current WordPress standards ***this can result in styles loading in incorrect order if you're using a child theme with old code
+* Rewritten theme styles enqueue code to use current WordPress standards ***this can result in styles loading in incorrect order if you're using a child theme with old code
 * Updated options-based CSS generated functions to use wp_add_inline_style()
 * Optimized meta viewport code and switched to cryout_seo_hook
 * Cleaned up some inline JS and options JS code

@@ -22,7 +22,9 @@ get_header(); ?>
 			</div><!-- #post-0 -->
 
 		</div><!-- #content -->
-<?php get_sidebar(); ?>
+		
+		<?php get_sidebar(); ?>
+
 	</div><!-- #container -->
 	<script type="text/javascript">
 		// focus on search field after it has loaded

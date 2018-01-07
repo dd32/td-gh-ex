@@ -7,74 +7,81 @@
  */
 
 /* Font family arrays */
+$mantra_fonts = array( 
+	'fontSans' => array(
+		"Segoe UI, Arial, sans-serif",
+		"Verdana, Geneva, sans-serif ",
+		"Geneva, sans-serif ",
+		"Helvetica Neue, Arial, Helvetica, sans-serif",
+		"Helvetica, sans-serif",
+		"Century Gothic, AppleGothic, sans-serif",
+		"Futura, Century Gothic, AppleGothic, sans-serif",
+		"Calibri, Arian, sans-serif",
+		"Myriad Pro, Myriad,Arial, sans-serif",
+		"Trebuchet MS, Arial, Helvetica, sans-serif",
+		"Gill Sans, Calibri, Trebuchet MS, sans-serif",
+		"Impact, Haettenschweiler, Arial Narrow Bold, sans-serif ",
+		"Tahoma, Geneva, sans-serif",
+		"Arial, Helvetica, sans-serif" ,
+		"Arial Black, Gadget, sans-serif",
+		"Lucida Sans Unicode, Lucida Grande, sans-serif ",
+	),
+	'fontSerif' => array(	
+		"Georgia, Times New Roman, Times, serif",
+		"Times New Roman, Times, serif",
+		"Cambria, Georgia, Times, Times New Roman, serif",
+		"Palatino Linotype, Book Antiqua, Palatino, serif",
+		"Book Antiqua, Palatino, serif",
+		"Palatino, serif",
+		"Baskerville, Times New Roman, Times, serif",
+		"Bodoni MT, serif",
+		"Copperplate Light, Copperplate Gothic Light, serif",
+		"Garamond, Times New Roman, Times, serif",
+	),
+	'fontMono' => array(
+		"Courier New, Courier, monospace",
+		"Lucida Console, Monaco, monospace",
+		"Consolas, Lucida Console, Monaco, monospace",
+		"Monaco, monospace",
+	),
+	'fontCursive' => array( 
+		"Lucida Casual, Comic Sans MS , cursive ",
+		"Brush Script MT,Phyllis,Lucida Handwriting,cursive",
+		"Phyllis,Lucida Handwriting,cursive",
+		"Lucida Handwriting,cursive",
+		"Comic Sans MS, cursive",
+	),
+);
 
-	$fontSans = array("Segoe UI, Arial, sans-serif",
-					 "Verdana, Geneva, sans-serif " ,
-					 "Geneva, sans-serif ",
-					 "Helvetica Neue, Arial, Helvetica, sans-serif",
-					 "Helvetica, sans-serif" ,
-					 "Century Gothic, AppleGothic, sans-serif",
-				     "Futura, Century Gothic, AppleGothic, sans-serif",
-					 "Calibri, Arian, sans-serif",
-				     "Myriad Pro, Myriad,Arial, sans-serif",
-					 "Trebuchet MS, Arial, Helvetica, sans-serif" ,
-					 "Gill Sans, Calibri, Trebuchet MS, sans-serif",
-					 "Impact, Haettenschweiler, Arial Narrow Bold, sans-serif ",
-					 "Tahoma, Geneva, sans-serif" ,
-					 "Arial, Helvetica, sans-serif" ,
-					 "Arial Black, Gadget, sans-serif",
-					 "Lucida Sans Unicode, Lucida Grande, sans-serif ");
-
-	$fontSerif = array("Georgia, Times New Roman, Times, serif" ,
-					  "Times New Roman, Times, serif",
-					  "Cambria, Georgia, Times, Times New Roman, serif",
-					  "Palatino Linotype, Book Antiqua, Palatino, serif",
-					  "Book Antiqua, Palatino, serif",
-					  "Palatino, serif",
-				      "Baskerville, Times New Roman, Times, serif",
- 					  "Bodoni MT, serif",
-					  "Copperplate Light, Copperplate Gothic Light, serif",
-					  "Garamond, Times New Roman, Times, serif");
-
-	$fontMono = array( "Courier New, Courier, monospace" ,
-					 "Lucida Console, Monaco, monospace",
-					 "Consolas, Lucida Console, Monaco, monospace",
-					 "Monaco, monospace");
-
-	$fontCursive = array( "Lucida Casual, Comic Sans MS , cursive ",
-				     "Brush Script MT,Phyllis,Lucida Handwriting,cursive",
-					 "Phyllis,Lucida Handwriting,cursive",
-					 "Lucida Handwriting,cursive",
-					 "Comic Sans MS, cursive");
-
-	/* Social media links */
-	$socialNetworks = array (
-			"AboutMe", "AIM", "Amazon", "Contact", "Delicious", "DeviantArt",
-			"Digg", "Discord", "Dribbble", "Etsy", "Facebook", "Flickr",
-			"FriendFeed", "Github", "GoodReads", "GooglePlus", "IMDb", "Instagram",
-			"LastFM", "LinkedIn", "Mail", "MindVox", "MySpace", "Newsvine", "Patreon",
-			"PayPal", "Phone", "Picasa", "Pinterest", "Reddit", "RSS", "ShareThis",
-			"Skype", "Steam", "Steam-old", "SoundCloud", "StumbleUpon", "Technorati",
-			"TripAdvisor", "Tumblr",  "Twitch", "Twitter", "Twitter-old", "Vimeo", "VK",
-			"WordPress", "Yahoo", "Yelp", "YouTube", "YouTube-old", "Xing",
+/* Social media networks */
+$mantra_socials = array(
+		"AboutMe", "AIM", "Amazon", "Contact", "Delicious", "DeviantArt",
+		"Digg", "Discord", "Dribbble", "Etsy", "Facebook", "Flickr",
+		"FriendFeed", "Github", "GoodReads", "GooglePlus", "IMDb", "Instagram",
+		"LastFM", "LinkedIn", "Mail", "MindVox", "MySpace", "Newsvine", 
+		"Patreon", "PayPal", "Phone", "Picasa", "Pinterest", "Reddit", 
+		"RSS", "ShareThis", "Skype", "Steam", "Steam-old", "SoundCloud", 
+		"StumbleUpon", "Technorati", "TripAdvisor", "Tumblr", "Twitch", "Twitter",
+		"Twitter-old", "Vimeo", "VK", "WordPress", "Yahoo", "Yelp", 
+		"YouTube", "YouTube-old", "Xing",
 	);
 
-if (!function_exists ('ma_options_validate') ) :
+if ( !function_exists ('ma_options_validate') ) :
 /*
  *
  * Validate user data
  *
  */
 function ma_options_validate($input) {
-global $mantra_defaults;
-	// Sanitize the texbox input
+	global $mantra_defaults;
 
-/*** 1 ***/
-	if(isset($input['mantra_sidewidth']) && is_numeric($input['mantra_sidewidth']) && $input['mantra_sidewidth']>=500 && $input['mantra_sidewidth'] <=1760) {} else {$input['mantra_sidewidth']=$mantra_defaults['mantra_sidewidth']; }
-	if(isset($input['mantra_sidebar']) && is_numeric($input['mantra_sidebar']) && $input['mantra_sidebar']>=220 && $input['mantra_sidebar'] <=800) {} else {$input['mantra_sidebar']=$mantra_defaults['mantra_sidebar']; }
+	/** 1 **/
+	
+	if (isset($input['mantra_sidewidth']) && is_numeric($input['mantra_sidewidth']) && $input['mantra_sidewidth']>=500 && $input['mantra_sidewidth'] <=1760) {} else {$input['mantra_sidewidth']=$mantra_defaults['mantra_sidewidth']; }
+	if (isset($input['mantra_sidebar']) && is_numeric($input['mantra_sidebar']) && $input['mantra_sidebar']>=220 && $input['mantra_sidebar'] <=800) {} else {$input['mantra_sidebar']=$mantra_defaults['mantra_sidebar']; }
 
-	if(isset($input['mantra_sidewidthRel']) && is_numeric($input['mantra_sidewidthRel']) && $input['mantra_sidewidthRel']>=40 && $input['mantra_sidewidthRel'] <=80) {} else {$input['mantra_sidewidthRel']=$mantra_defaults['mantra_sidewidthRel']; }
-	if(isset($input['mantra_sidebarRel']) && is_numeric($input['mantra_sidebarRel']) && $input['mantra_sidebarRel']>=20 && $input['mantra_sidebarRel'] <=50) {} else {$input['mantra_sidebarRel']=$mantra_defaults['mantra_sidebarRel']; }
+	if (isset($input['mantra_sidewidthRel']) && is_numeric($input['mantra_sidewidthRel']) && $input['mantra_sidewidthRel']>=40 && $input['mantra_sidewidthRel'] <=80) {} else {$input['mantra_sidewidthRel']=$mantra_defaults['mantra_sidewidthRel']; }
+	if (isset($input['mantra_sidebarRel']) && is_numeric($input['mantra_sidebarRel']) && $input['mantra_sidebarRel']>=20 && $input['mantra_sidebarRel'] <=50) {} else {$input['mantra_sidebarRel']=$mantra_defaults['mantra_sidebarRel']; }
 
 	if (isset($input['mantra_zoom'])) $input['mantra_zoom'] = "1"; else $input['mantra_zoom'] = 0;
 
@@ -110,7 +117,7 @@ global $mantra_defaults;
 	$input['mantra_fwidth'] =  intval(wp_kses_data($input['mantra_fwidth']));
 	$input['mantra_fheight'] =  intval(wp_kses_data($input['mantra_fheight']));
 
-/*** 2 ***/
+	/** 2 **/
 
 	$cryout_special_terms = array('mailto:','callto://');
 	$cryout_special_keys = array('Mail', 'Skype');
@@ -125,8 +132,8 @@ global $mantra_defaults;
 		endif;
 	}
 	for ($i=0;$i<=5;$i++) {
-		if (!isset($input['mantra_socialsdisplay'.$i])) {$input['mantra_socialsdisplay'.$i] = "0";}
-		}
+		if (!isset($input['mantra_socialsdisplay'.$i])) { $input['mantra_socialsdisplay'.$i] = "0"; }
+	}
 
 	$input['mantra_favicon'] =  esc_url_raw($input['mantra_favicon']);
 	$input['mantra_logoupload'] =  esc_url_raw($input['mantra_logoupload']);
@@ -151,7 +158,8 @@ global $mantra_defaults;
 	$input['mantra_fpsliderwidth'] =  intval(wp_kses_data($input['mantra_fpsliderwidth']));
 	$input['mantra_fpsliderheight'] = intval(wp_kses_data($input['mantra_fpsliderheight']));
 
-/** 3 ***/
+	/** 3 **/
+	
 	$input['mantra_sliderimg1'] =  wp_kses_data($input['mantra_sliderimg1']);
 	$input['mantra_slidertitle1'] =  wp_kses_data($input['mantra_slidertitle1']);
 	$input['mantra_slidertext1'] =  wp_kses_post($input['mantra_slidertext1']);
@@ -175,7 +183,8 @@ global $mantra_defaults;
 
 	$input['mantra_colimageheight'] = intval(wp_kses_data($input['mantra_colimageheight']));
 
-/** 4 **/
+	/** 4 **/
+	
 	$input['mantra_columnimg1'] =  wp_kses_data($input['mantra_columnimg1']);
 	$input['mantra_columntitle1'] =  wp_kses_data($input['mantra_columntitle1']);
 	$input['mantra_columntext1'] =  wp_kses_post($input['mantra_columntext1']);
@@ -202,14 +211,13 @@ global $mantra_defaults;
 	$input['mantra_fronttext3'] = trim( wp_kses_post($input['mantra_fronttext3']));
 	$input['mantra_fronttext4'] = trim (wp_kses_post($input['mantra_fronttext4']));
 
-	 $resetDefault = ( ! empty( $input['mantra_defaults']) ? true : false );
+	$resetDefault = ( ! empty( $input['mantra_defaults']) ? true : false );
 
-	if ($resetDefault) {$input=$mantra_defaults;}
+	if ($resetDefault) { $input = $mantra_defaults; }
 
 	return $input; // return validated input
 
 }
-
 endif;
 
 // FIN

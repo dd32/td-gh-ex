@@ -20,7 +20,7 @@ if ($mantra_options['mantra_mobile']) add_action( 'cryout_seo_hook', 'mantra_mob
 
 function mantra_enqueue_styles() {
 	global $mantra_options;
-	
+
 	// Main theme style
 	wp_enqueue_style( 'mantra-style', get_stylesheet_uri(), NULL, _CRYOUT_THEME_VERSION  );
 
@@ -38,16 +38,16 @@ function mantra_enqueue_styles() {
 	wp_add_inline_style( 'mantra-style', preg_replace( "/[\n\r\t\s]+/", " ", mantra_custom_styles() ) ); // includes/custom-styles.php
 
 	// Presentation Page options-based styling (only used when needed)
-	if ( ($mantra_options['mantra_frontpage']=="Enable") && is_front_page() ) { 
+	if ( ($mantra_options['mantra_frontpage']=="Enable") && is_front_page() ) {
 		wp_add_inline_style( 'mantra-style', preg_replace( "/[\n\r\t\s]+/", " ", mantra_frontpage_css() ) ); // also in includes/custom-styles.php
 	}
-	
+
 	// RTL support
 	if ( is_rtl() ) wp_enqueue_style( 'mantra-rtl', get_template_directory_uri() . '/resources/css/rtl.css', NULL, _CRYOUT_THEME_VERSION );
 
 	// User supplied custom styling
 	wp_add_inline_style( 'mantra-style', preg_replace( "/[\n\r\t\s]+/", " ", mantra_customcss() ) ); // also in includes/custom-styles.php
-	
+
 	/// Responsive styling (loaded last)
 	if ( $mantra_options['mantra_mobile']=="Enable" ) {
 		wp_enqueue_style( 'mantra-mobile', get_template_directory_uri() . '/resources/css/style-mobile.css', NULL, _CRYOUT_THEME_VERSION  );
@@ -67,23 +67,23 @@ function mantra_scripts_method() {
     // If frontend - load the js for the menu and the social icons animations
 	if ( !is_admin() ) {
 		wp_enqueue_script( 'mantra-frontend', get_template_directory_uri() . '/resources/js/frontend.js', array('jquery'), _CRYOUT_THEME_VERSION );
-		
-		$js_options = array( 
+
+		$js_options = array(
 			'responsive' => 0,
 			'image_class' => '',
 			'equalize_sidebars' => 0,
 		);
 		$js_options['image_class'] = 'image' . $mantra_options['mantra_image'];
-		if ( $mantra_options['mantra_mobile'] == "Enable" ) { $js_options['responsive'] = 1; } 
+		if ( $mantra_options['mantra_mobile'] == "Enable" ) { $js_options['responsive'] = 1; }
 		if ( !empty($mantra_options['mantra_s1bg']) || !empty($mantra_options['mantra_s2bg']) ) { $js_options['equalize_sidebars'] = 1; }
-		
+
 		wp_localize_script( 'mantra-frontend', 'mantra_options',  $js_options );
-		
-  		// If mantra presentation page is enabled and the current page is home page - load the nivo slider js							
+
+  		// If mantra presentation page is enabled and the current page is home page - load the nivo slider js
 		if ( $mantra_options['mantra_frontpage'] == "Enable" && is_front_page() ) {
-			wp_enqueue_script( 'mantra-nivoslider', get_template_directory_uri() . '/js/nivo-slider.js', array('jquery'), _CRYOUT_THEME_VERSION );
+			wp_enqueue_script( 'mantra-nivoslider', get_template_directory_uri() . '/resources/js/nivo-slider.js', array('jquery'), _CRYOUT_THEME_VERSION );
 		}
-		
+
   	}
 
 	/* We add some JavaScript to pages with the comment form

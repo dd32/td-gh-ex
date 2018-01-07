@@ -679,6 +679,20 @@ a.tooltip img {
     margin-top: 20px;
 }
 
+.cryout-admin .social-buttons {  
+    text-align: center; 
+} 
+.cryout-admin .social-buttons a { 
+    display: inline-block; 
+} 
+.cryout-admin .social-buttons a img { 
+    max-width: 32px; 
+    max-height: 32px; 
+} 
+.cryout-admin .social-buttons a img + img { 
+    margin-left: 10px; 
+} 
+
 #jsAlert {
     margin: 0 15px 10px;
     background-color: #F4F8FA;

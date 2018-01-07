@@ -149,42 +149,39 @@ if ( ! function_exists( 'mantra_posted_on' ) ) :
  * @since mantra 0.5
  */
 function mantra_posted_on() {
-	global $mantra_options;
-	foreach ($mantra_options as $key => $value) {
-	     ${"$key"} = $value ;
-	}
 
 	$date_string = '<time class="onDate date published" datetime="' . get_the_time( 'c' ) . '"> %3$s </time><span class="bl_sep">|</span>';
 	$date_string .= '<time class="updated"  datetime="' . get_the_modified_date( 'c' ) . '">' . get_the_modified_date() . '</time>';
 
 	// If author is hidden don't give it a value
-	$author_string = sprintf( '<span class="author vcard" >'.__( 'By ','mantra'). ' <a class="url fn n" rel="author" href="%1$s" title="%2$s">%3$s</a> <span class="bl_sep">|</span></span>',
+	$author_string = sprintf( '<span class="author vcard" > %4$s <a class="url fn n" rel="author" href="%1$s" title="%2$s">%3$s</a> <span class="bl_sep">|</span></span>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				sprintf( esc_attr__( 'View all posts by %s', 'mantra' ), get_the_author() ),
-				get_the_author()
+				get_the_author(),
+				__('By ', 'mantra')
 			);
 
 	// Print the meta data
-		printf( '&nbsp; %4$s  '.$date_string.' <span class="bl_categ"> %2$s </span>  ',
-			'meta-prep meta-prep-author',
-			get_the_category_list( ', ' ),
-			sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span> <span class="entry-time"> - %2$s</span></a>',
-				esc_url( get_permalink() ),
-				esc_attr( get_the_time() ),
-				get_the_date()
-			), $author_string
+	printf( ' %4$s  '.$date_string.' <span class="bl_categ"> %2$s </span>  ',
+		'meta-prep meta-prep-author',
+		get_the_category_list( ', ' ),
+		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span> <span class="entry-time"> - %2$s</span></a>',
+			esc_url( get_permalink() ),
+			esc_attr( get_the_time() ),
+			get_the_date()
+		), $author_string
 
-		);
+	);
 }
 endif;
 
-// Remove category from rel in categry tags.
+
+// Remove category from rel in category tags.
+function mantra_remove_category_tag( $text ) {
+	return str_replace('rel="category tag"', 'rel="tag"', $text); 
+}
 add_filter( 'the_category', 'mantra_remove_category_tag' );
 add_filter( 'get_the_category_list', 'mantra_remove_category_tag' );
-
-function mantra_remove_category_tag( $text ) {
-	$text = str_replace('rel="category tag"', 'rel="tag"', $text); return $text;
-}
 
 
 if ( ! function_exists( 'mantra_posted_in' ) ) :
@@ -230,26 +227,20 @@ function mantra_content_nav( $nav_id ) {
 }
 endif; // mantra_content_nav
 
-// Custom image size for use with post thumbnails
-if($mantra_fcrop)
-add_image_size( 'custom', $mantra_fwidth, $mantra_fheight, true );
-else
-add_image_size( 'custom', $mantra_fwidth, $mantra_fheight );
-
-
-function cryout_echo_first_image ($postID)
-{
+/**
+ * Returns src of image first attached to the post
+ */
+function cryout_echo_first_image( $postID ) {
 	$args = array(
-	'numberposts' => 1,
-	'order'=> 'ASC',
-	'post_mime_type' => 'image',
-	'post_parent' => $postID,
-	'post_status' => 'any',
-	'post_type' => 'any'
+		'numberposts' => 1,
+		'order'=> 'ASC',
+		'post_mime_type' => 'image',
+		'post_parent' => $postID,
+		'post_status' => 'any',
+		'post_type' => 'any',
 	);
 
 	$attachments = get_children( $args );
-	//print_r($attachments);
 
 	if ($attachments) {
 		foreach($attachments as $attachment) {
@@ -268,30 +259,26 @@ if ( ! function_exists( 'mantra_set_featured_thumb' ) ) :
 
 function mantra_set_featured_thumb() {
 	global $mantra_options;
-	foreach ($mantra_options as $key => $value) {
-     ${"$key"} = $value ;
+	extract($mantra_options);
+	global $post;
+	$image_src = cryout_echo_first_image($post->ID);
+
+	if ( function_exists("has_post_thumbnail") && has_post_thumbnail() && $mantra_fpost=='Enable') {
+		the_post_thumbnail( 'custom', array( "class" => "align" . strtolower($mantra_falign) . " post-thumbnail" ) );
+	} elseif ($mantra_fpost=='Enable' && $mantra_fauto=="Enable" && $image_src && ($mantra_excerptarchive != "Full Post" || $mantra_excerpthome != "Full Post")) { ?>
+		<a class="post-thumbnail-link" title="<?php echo the_title_attribute('echo=0') ?>" href="<?php echo esc_url( get_permalink() ) ?>" >
+			<img width="<?php echo $mantra_fwidth ?>" title="" alt="<?php echo the_title_attribute('echo=0') ?>" class="align<?php echo strtolower($mantra_falign) ?> post_thumbnail" src="<?php echo $image_src ?>">
+		</a>
+	<?php }
 }
-global $post;
-$image_src = cryout_echo_first_image($post->ID);
-
-	 if ( function_exists("has_post_thumbnail") && has_post_thumbnail() && $mantra_fpost=='Enable')
-			the_post_thumbnail( 'custom', array("class" => "align".strtolower($mantra_falign)." post-thumbnail" ) );
-
-	else if ($mantra_fpost=='Enable' && $mantra_fauto=="Enable" && $image_src && ($mantra_excerptarchive != "Full Post" || $mantra_excerpthome != "Full Post"))
-			echo '<a class="post-thumbnail-link" title="'.the_title_attribute('echo=0').'" href="' . esc_url( get_permalink() ).'" ><img width="'.$mantra_fwidth.'" title="" alt="" class="align'.strtolower($mantra_falign).' post_thumbnail" src="'.$image_src.'"></a>' ;
-
-	}
 endif; // mantra_set_featured_thumb
-
-if ($mantra_fpost=='Enable' && $mantra_fpostlink) add_filter( 'post_thumbnail_html', 'mantra_thumbnail_link', 10, 2 );
 
 /**
  * The thumbnail gets a link to the post's page
  */
-
 function mantra_thumbnail_link( $html, $post_id ) {
-	$html = '<a class="post-thumbnail-link" href="' . esc_url( get_permalink( $post_id ) ) . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '">' . $html . '</a>';
-	return $html;
+	return '<a class="post-thumbnail-link" href="' . esc_url( get_permalink( $post_id ) ) . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '">' . $html . '</a>';
 }
+if ($mantra_fpost=='Enable' && $mantra_fpostlink) add_filter( 'post_thumbnail_html', 'mantra_thumbnail_link', 10, 2 );
 
 // FIN
