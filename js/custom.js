@@ -39,6 +39,10 @@
         
     });
     
+    $(window).load(function() {
+        $( '.side-aligned-social' ).removeClass( 'hide-side-social' );
+    });
+    
     // Hide Search is user clicks anywhere else
     $( document ).mouseup( function (e) {
         var container = $( '.search-block' );

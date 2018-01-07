@@ -142,7 +142,7 @@
                 
                 <div class="home-slider">
                     
-                    <div class="home-slider-block" style="background-image: url(<?php echo get_template_directory_uri() ?>/images/demo/slider_default_01.jpg);">
+                    <div class="home-slider-block" style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/images/demo/slider_default_01.jpg);">
                         
                         <?php if ( get_theme_mod( 'avant-slider-size' ) == 'avant-slider-size-small' ) : ?>
                             <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_small.gif" />

@@ -78,6 +78,10 @@ Avant - Transparent Header
     box-shadow: -1px 0 0 rgba(0, 0, 0, 0.08);
 }
 
+.side-aligned-social {
+    top: 155px;
+}
+
 /* -- Site Top Bar -- */
 .site-top-border {
     z-index: 101;

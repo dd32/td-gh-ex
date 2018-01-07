@@ -28,6 +28,7 @@ function customizer_library_avant_build_styles() {
 				'.site-top-border,
 				#comments .form-submit #submit,
 				.search-block .search-submit,
+				.side-aligned-social a.social-icon,
 				.no-results-btn,
 				button,
 				input[type="button"],

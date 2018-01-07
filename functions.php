@@ -1,10 +1,10 @@
-<?php
+	<?php
 /**
  * Avant functions and definitions
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.0.92' );
+define( 'AVANT_THEME_VERSION' , '1.0.93' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -15,10 +15,10 @@ require get_template_directory() . '/includes/inc/extras.php';
 require get_template_directory() . '/includes/inc/jetpack.php';
 
 // Load Customizer Library scripts
-require get_template_directory() . '/customizer/customizer-options.php';
-require get_template_directory() . '/customizer/customizer-library/customizer-library.php';
-require get_template_directory() . '/customizer/styles.php';
-require get_template_directory() . '/customizer/mods.php';
+require_once( get_template_directory() . '/customizer/customizer-options.php' );
+require_once( get_template_directory() . '/customizer/customizer-library/customizer-library.php' );
+require_once( get_template_directory() . '/customizer/styles.php' );
+require_once( get_template_directory() . '/customizer/mods.php' );
 
 // Load TGM plugin class
 require_once get_template_directory() . '/includes/inc/class-tgm-plugin-activation.php';
@@ -140,19 +140,19 @@ function avant_scripts() {
 	wp_enqueue_style( 'avant-style', get_stylesheet_uri(), array(), AVANT_THEME_VERSION );
 
 	if ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-seven' ) :
-		wp_enqueue_style( 'avant-header-style-seven', get_template_directory_uri()."/templates/header/css/header-seven.css", array(), AVANT_THEME_VERSION );
+		wp_enqueue_style( 'avant-header-style', get_template_directory_uri()."/templates/header/css/header-seven.css", array(), AVANT_THEME_VERSION );
 	elseif ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) :
-		wp_enqueue_style( 'avant-header-style-six', get_template_directory_uri()."/templates/header/css/header-six.css", array(), AVANT_THEME_VERSION );
+		wp_enqueue_style( 'avant-header-style', get_template_directory_uri()."/templates/header/css/header-six.css", array(), AVANT_THEME_VERSION );
 	elseif ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-five' ) :
-		wp_enqueue_style( 'avant-header-style-five', get_template_directory_uri()."/templates/header/css/header-five.css", array(), AVANT_THEME_VERSION );
+		wp_enqueue_style( 'avant-header-style', get_template_directory_uri()."/templates/header/css/header-five.css", array(), AVANT_THEME_VERSION );
 	elseif ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-four' ) :
-		wp_enqueue_style( 'avant-header-style-four', get_template_directory_uri()."/templates/header/css/header-four.css", array(), AVANT_THEME_VERSION );
+		wp_enqueue_style( 'avant-header-style', get_template_directory_uri()."/templates/header/css/header-four.css", array(), AVANT_THEME_VERSION );
 	elseif ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-three' ) :
-		wp_enqueue_style( 'avant-header-style-three', get_template_directory_uri()."/templates/header/css/header-three.css", array(), AVANT_THEME_VERSION );
+		wp_enqueue_style( 'avant-header-style', get_template_directory_uri()."/templates/header/css/header-three.css", array(), AVANT_THEME_VERSION );
 	elseif ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-two' ) :
-		wp_enqueue_style( 'avant-header-style-two', get_template_directory_uri()."/templates/header/css/header-two.css", array(), AVANT_THEME_VERSION );
+		wp_enqueue_style( 'avant-header-style', get_template_directory_uri()."/templates/header/css/header-two.css", array(), AVANT_THEME_VERSION );
 	else :
-		wp_enqueue_style( 'avant-header-style-one', get_template_directory_uri()."/templates/header/css/header-one.css", array(), AVANT_THEME_VERSION );
+		wp_enqueue_style( 'avant-header-style', get_template_directory_uri()."/templates/header/css/header-one.css", array(), AVANT_THEME_VERSION );
 	endif;
 	
 	if ( avant_is_woocommerce_activated() ) :
@@ -160,13 +160,13 @@ function avant_scripts() {
 	endif;
 
 	if ( get_theme_mod( 'avant-footer-layout' ) == 'avant-footer-layout-custom' ) :
-		wp_enqueue_style( 'avant-footer-style-custom', get_template_directory_uri()."/templates/footer/css/footer-custom.css", array(), AVANT_THEME_VERSION );
+		wp_enqueue_style( 'avant-footer-style', get_template_directory_uri()."/templates/footer/css/footer-custom.css", array(), AVANT_THEME_VERSION );
 	elseif ( get_theme_mod( 'avant-footer-layout' ) == 'avant-footer-layout-social' ) :
-		wp_enqueue_style( 'avant-footer-style-social', get_template_directory_uri()."/templates/footer/css/footer-social.css", array(), AVANT_THEME_VERSION );
+		wp_enqueue_style( 'avant-footer-style', get_template_directory_uri()."/templates/footer/css/footer-social.css", array(), AVANT_THEME_VERSION );
 	elseif ( get_theme_mod( 'avant-footer-layout' ) == 'avant-footer-layout-none' ) :
-		wp_enqueue_style( 'avant-footer-style-none', get_template_directory_uri()."/templates/footer/css/footer-none.css", array(), AVANT_THEME_VERSION );
+		wp_enqueue_style( 'avant-footer-style', get_template_directory_uri()."/templates/footer/css/footer-none.css", array(), AVANT_THEME_VERSION );
 	else :
-		wp_enqueue_style( 'avant-footer-style-standard', get_template_directory_uri()."/templates/footer/css/footer-standard.css", array(), AVANT_THEME_VERSION );
+		wp_enqueue_style( 'avant-footer-style', get_template_directory_uri()."/templates/footer/css/footer-standard.css", array(), AVANT_THEME_VERSION );
 	endif;
 	
 	wp_enqueue_script( 'avant-custom-js', get_template_directory_uri() . "/js/custom.js", array('jquery'), AVANT_THEME_VERSION, true );

@@ -99,6 +99,10 @@ Avant - Default Header
     display: block;
 }
 
+.side-aligned-social {
+    top: 100px;
+}
+
 /* -- Site Top Bar -- */
 .site-top-bar {
     box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.08) inset;

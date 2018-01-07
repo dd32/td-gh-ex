@@ -112,6 +112,13 @@ function customizer_library_avant_options() {
         'type'    => 'checkbox',
         'default' => 0,
     );
+    $options['avant-site-add-side-social'] = array(
+        'id' => 'avant-site-add-side-social',
+        'label'   => __( 'Add Side Aligned Social Icons', 'avant' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
     $options['avant-noteon-layout'] = array(
         'id' => 'avant-noteon-layout',
         'section' => $section,

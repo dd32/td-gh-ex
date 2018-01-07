@@ -91,6 +91,9 @@ Avant - Centered Header Social
     padding: 8px 10px 7px;
 }
 
+.side-aligned-social {
+    top: 265px;
+}
 
 /* -- Site Top Bar -- */
 .site-top-bar {

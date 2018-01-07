@@ -65,6 +65,10 @@
 .avant-remove-section {
 	display: none !important;
 }
+#customize-controls .description {
+    font-size: 12px;
+    opacity: 0.8;
+}
 
 #customize-control-blogdescription,
 #customize-control-avant-slider-full-width,
@@ -97,6 +101,7 @@
     margin-bottom: 15px;
 }
 #customize-control-blogname,
+#customize-control-avant-site-add-side-social,
 #customize-control-avant-header-layout,
 #customize-control-avant-header-menu-text,
 #customize-control-avant-header-search,

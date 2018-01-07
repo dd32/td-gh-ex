@@ -68,6 +68,15 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.93
+* Fixed CSS handle names to work with Child Theme
+* Fixed uri functions to work with Child Theme
+* Style fix: Remove blog updated time
+* Admin style tweaks/fixes
+* Added NEW side social icons
+* Updated the language .pot file
+Premium: Added setting to remove Header Main Navigation
+
 #### 1.0.92
 * Style tweaks/fixes
 * Updated the language .pot file

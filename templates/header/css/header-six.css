@@ -42,6 +42,10 @@ Avant - Side Layout Header
     padding: 0 25px;
 }
 
+.side-aligned-social {
+    top: 6px;
+}
+
 /* -- Site Boxed -- */
 .site-boxed .site-top-bar .site-container {
     padding: 0 20px;

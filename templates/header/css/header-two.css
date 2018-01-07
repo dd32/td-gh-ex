@@ -81,6 +81,10 @@ Avant - Centered Header
     box-shadow: 1px 0 0 rgba(0, 0, 0, 0.08);
 }
 
+.side-aligned-social {
+    top: 265px;
+}
+
 /* -- Site Top Bar -- */
 .site-top-bar {
     box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.08) inset;
