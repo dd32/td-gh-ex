@@ -45,7 +45,7 @@
     <?php echo ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) ? '<div class="site-side-layout-container">' : ''; ?>
     
         <?php if ( $slider_code ) : ?>
-            <?php echo do_shortcode( esc_html( $slider_code ) ); ?>
+            <?php echo do_shortcode( sanitize_text_field( $slider_code ) ); ?>
         <?php else : ?>
             <?php if ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) : ?>
                 <div class="home-slider-empty"></div>

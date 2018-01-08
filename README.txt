@@ -68,6 +68,12 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.94
+* Fix Home Page Slider do_shortcode not working
+* Header fix - To work with Savant child theme
+* Updated the language .pot file
+Premium: Added setting to change Side Social Links design - Square or Round
+
 #### 1.0.93
 * Fixed CSS handle names to work with Child Theme
 * Fixed uri functions to work with Child Theme

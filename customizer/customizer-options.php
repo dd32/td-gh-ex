@@ -117,13 +117,14 @@ function customizer_library_avant_options() {
         'label'   => __( 'Add Side Aligned Social Icons', 'avant' ),
         'section' => $section,
         'type'    => 'checkbox',
+        'description' => __( 'Add <a href="#avant-social-section" rel="tc-section">Social Icons</a> for this to show', 'avant' ),
         'default' => 0,
     );
     $options['avant-noteon-layout'] = array(
         'id' => 'avant-noteon-layout',
         'section' => $section,
         'type'    => 'note',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Add Title & Tagline with uploaded logo and adjust<br />- Set custom website container width<br />- Set custom Sidebar width<br />- Change Site Attribution text', 'avant' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Add Title & Tagline with uploaded logo and adjust<br />- Set custom website container width<br />- Set custom Sidebar width<br />- Change Side Social Links design<br />- Change Site Attribution text', 'avant' )
     );
 
 

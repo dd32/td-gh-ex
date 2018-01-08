@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.0.93' );
+define( 'AVANT_THEME_VERSION' , '1.0.94' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -15,10 +15,10 @@ require get_template_directory() . '/includes/inc/extras.php';
 require get_template_directory() . '/includes/inc/jetpack.php';
 
 // Load Customizer Library scripts
-require_once( get_template_directory() . '/customizer/customizer-options.php' );
-require_once( get_template_directory() . '/customizer/customizer-library/customizer-library.php' );
-require_once( get_template_directory() . '/customizer/styles.php' );
-require_once( get_template_directory() . '/customizer/mods.php' );
+require get_template_directory() . '/customizer/customizer-options.php';
+require get_template_directory() . '/customizer/customizer-library/customizer-library.php';
+require get_template_directory() . '/customizer/styles.php';
+require get_template_directory() . '/customizer/mods.php';
 
 // Load TGM plugin class
 require_once get_template_directory() . '/includes/inc/class-tgm-plugin-activation.php';
