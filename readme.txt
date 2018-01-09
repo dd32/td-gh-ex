@@ -21,6 +21,7 @@ Scripts used in the site are as below:
 	1. Font Awesome (http://fontawesome.io/) Font licensed under SIL OFL 1.1 and Code lisensed under MIT
 	2. HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2
 	3. Smooth Scroll script (https://gist.github.com/galambalazs/6477177/) licensed under MIT
+	4. nanoScrollerJS (https://github.com/jamesflorentino/nanoScrollerJS) licensed under MIT
 
 Image used in Theme Screenshot
 	1. Pixabay (http://pixabay.com/it/home-office-workstation-ufficio-336378/) Free photos for commercial and personal works
@@ -41,6 +42,11 @@ one-column, left-sidebar, responsive-layout, custom-background, custom-menu, cus
 3. Log into your WP admin panel and click on the Design tab. Now click on the Zenzero theme to activate it.
 
 == Changelog ==
+= Version 1.5.4 =
+* Added NanoScroller script for sidebar
+* Added support for Jetpack Content Options for featured images
+* Minor bug fixes
+
 = Version 1.5.3 =
 * Minor bug fixes
 

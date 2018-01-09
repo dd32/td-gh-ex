@@ -472,6 +472,7 @@ function zenzero_custom_css_styles() {
 	<?php endif; ?>
 	
 	<?php if (!empty($special_box_color_fourth) && $special_box_color_fourth != '#727272' ) : ?>
+	<?php list($r, $g, $b) = sscanf($special_box_color_fourth, '#%02x%02x%02x'); ?>
 	.site-header a, 
 	.site-footer a, 
 	#secondary a, 
@@ -493,6 +494,15 @@ function zenzero_custom_css_styles() {
 	#wp-calendar tbody td#today,
 	.tagcloud a:hover {
 		border: 1px solid <?php echo esc_html($special_box_color_fourth); ?>;
+	}
+	.nano > .nano-pane > .nano-slider {
+		background-color: <?php echo esc_html($special_box_color_fourth); ?>;
+	}
+	.nano > .nano-pane {
+		background: rgba(<?php echo esc_html($r).', '.esc_html($g).', '.esc_html($b); ?>, 0.15);
+	}
+	.nano > .nano-pane > .nano-slider {
+		background: rgba(<?php echo esc_html($r).', '.esc_html($g).', '.esc_html($b); ?>, 0.3);
 	}
 	@media screen and (max-width: 1024px) {
 		.main-navigation ul li .indicator {
