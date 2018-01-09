@@ -5,6 +5,9 @@
 .navbar-collapse{background-color:#44484b;}
 #jumbo .jumbotron{padding-top:100px;}
 #sb-home h1{font-size: 24px;}
+#tf-menu ul li{    display: block;  width:100%;
+    float: none !important;}
+	#tf-menu ul li ul{float: none !important; position:relative; width:100%;}
 }
 
 @media (max-width: 603px){
@@ -23,6 +26,10 @@ label{float: none !important}
 }
 .hover-bg .hover-text { padding: 12% 10%;}
 #jumbo .jumbotron{padding-top:130px;}
+
+#tf-menu ul li {    display: block;  width:100%;
+    float: none !important;}
+	#tf-menu ul li ul{float: none !important; position:relative; width:100%;}
 
 }
 @media (max-width: 360px){

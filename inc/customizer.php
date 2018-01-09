@@ -94,6 +94,11 @@ function atoz_customize_register( $wp_customize ) {
 
 	 /* Selective Refresh */
 	if ( isset( $wp_customize->selective_refresh ) ) {	
+	/*header title */
+	$wp_customize->selective_refresh->add_partial( 'blogname', array(
+			'selector'        => '.navbar-header h3',
+			
+		) ); 
 	/*Search section */	
 		$wp_customize->selective_refresh->add_partial( 'atoz_search_check', array(
 			'selector'        => 'form#searchform',
@@ -247,7 +252,7 @@ function atoz_customize_register( $wp_customize ) {
 			
 		   $wp_customize->add_control( 'atoz_slider_check', array(
 					'type'		=> 'checkbox',
-					'label' 	=> __( 'Enable slider section', 'atoz' ),			
+					'label' 	=> __( 'Enable/Disable Slider', 'atoz' ),			
 					'section'  	=> 'atoz_slider_options',
 					
 			) );
@@ -294,9 +299,9 @@ function atoz_customize_register( $wp_customize ) {
            ) );
     
 	   $wp_customize->add_control( 'atoz_search_check', array(
-				'type'										=> 'checkbox',
-				'label' 									=> __( 'Enable search form on homepage', 'atoz' ),			
-				'section'  								=> 'atoz_search',
+				'type'		=> 'checkbox',
+				'label' 	=> __( 'Enable search form on homepage', 'atoz' ),			
+				'section'  	=> 'atoz_search',
 				
 		) );
     

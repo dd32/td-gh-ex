@@ -9,8 +9,8 @@
 
 ?>
 <!--blog-box-->
-      <article class="col-md-4 col-sm-4">
-        <div class="blog-box-inn eq-blocks"> <span><?php echo get_the_date('M d');?></span> 
+      <article class="col-md-4 col-sm-4  eq-blocks">
+        <div class="blog-box-inn"> <span><?php echo get_the_date('M d');?></span> 
             <?php
             if  ( get_the_post_thumbnail()!='')
             {?><a href="<?php esc_url(the_permalink());?>"><?php

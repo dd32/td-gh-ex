@@ -143,7 +143,7 @@ if (!function_exists('print_all_head_styles')) {
 		}
 		$nav_text_color = get_theme_mod('atoz_nav_text_color');
 		if ($nav_text_color) {
-			echo esc_attr("\n" . '#tf-menu.navbar-default .navbar-nav>li>a { color: ' . $nav_text_color . '}');
+			echo esc_html("\n" . '#tf-menu.navbar-default .navbar-nav a { color: ' . $nav_text_color . '}');
 		}
 		$submenu_bg = get_theme_mod('atoz_submenu_bg');
 		if ($submenu_bg) {
@@ -151,7 +151,11 @@ if (!function_exists('print_all_head_styles')) {
 		}
 		$menu_hover = get_theme_mod('atoz_menu_hover');
 		if ($menu_hover) {
-			echo esc_attr("\n" . '#tf-menu ul li:hover { background-color: ' . $menu_hover . '}');
+			echo esc_attr("\n" . '#tf-menu.navbar-default ul li a:hover { background-color: ' . $menu_hover . '}');
+		}
+		$footer_text_color= get_theme_mod('atoz_footer_text_color');
+		if($footer_text_color){
+			echo esc_attr("\n" . '.footer-bottom .widget-title { color: ' . $footer_text_color . '}');
 		}
 		echo "\n" . "</style>" . "\n";
 	}
@@ -278,8 +282,9 @@ function atoz_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}    
-    wp_enqueue_script( 'atoz-jquery-min', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '20151215', true );
-    wp_enqueue_script( 'atoz-jquery-1-11-1', get_template_directory_uri() . '/js/jquery.1.11.1.js', array(), '20151215', true );
+    /*wp_enqueue_script( 'atoz-jquery-min', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), '20151215', true );
+    wp_enqueue_script( 'atoz-jquery-1-11-1', get_template_directory_uri() . '/js/jquery.1.11.1.js', array(), '20151215', true );*/
+    wp_enqueue_script('jquery');
     wp_enqueue_script( 'atoz-jquery-isotope', get_template_directory_uri() . '/js/jquery.isotope.js', array(), '20151215', true );
     wp_enqueue_script( 'atoz-modernizr-custom', get_template_directory_uri() . '/js/modernizr.custom.js', array(), '20151215', true );
     wp_enqueue_script( 'atoz-bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array(), '20151215', true );

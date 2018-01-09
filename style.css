@@ -1,10 +1,10 @@
 /*
-Theme Name: atoz
+Theme Name: Atoz
 Theme URI: https://dcrazed.com/themes/atoz/
 Author: Dcrazed
 Author URI: https://dcrazed.com/
 Description: atoz is a simple and creative personal blog theme for designers, developers who are into blogging. Showcase your freebies easily with this free wordpress blog theme.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: atoz
@@ -151,10 +151,12 @@ ul, ol {
 #tf-menu {
 	padding: 10px;
 	transition: all 0.8s;
+	
 }
 #tf-menu.navbar-default {
 	background-color: rgba(0, 0, 0, 0.53);
 	border-color: rgba(231, 231, 231, 0);
+	
 }
 #tf-menu a.navbar-brand {
 	text-transform: uppercase;
@@ -162,15 +164,21 @@ ul, ol {
 	color: #fff;
 	font-weight: 900;
 }
-#tf-menu.navbar-default .navbar-nav>li>a {
+#tf-menu.navbar-default ul>li>a {
 	opacity:1;
 	text-transform: uppercase;
 	color: #cdcfd1;
 	font-weight: bold;
 	font-size: 14px;
 	letter-spacing: 1px;
+	position: relative;
+    display: block;
+    padding: 10px 15px;
 }
-#tf-menu.navbar-default .navbar-nav>li>a:hover {
+
+#tf-menu.navbar-default ul>li:hover{background:#333;}
+
+#tf-menu.navbar-default ul>li>a:hover {
 	opacity:0.8;
 	transition: all ease-in-out 400ms;
 	-moz-transition: all ease-in-out 400ms;
@@ -185,13 +193,13 @@ ul, ol {
 }
 .navbar-brand h3{
 	font-size:20px;
-	line-height: 10px;
+	
 }
 .navbar-brand span{
 	vertical-align:-webkit-baseline-middle;	
 	vertical-align:-moz-baseline-middle;	
 }
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+.navbar-default ul>.active>a, .navbar-default ul>.active>a:hover, .navbar-default ul>.active>a:focus {
 	color: #FFCC33 !important;
 	background-color: transparent;
 	font-weight: 700;
@@ -220,6 +228,7 @@ margin:0;
 }
 #tf-menu ul li:hover {
 	background: #000; 
+	
 }
 #tf-menu ul ul {
 	display: none;
@@ -228,6 +237,7 @@ margin:0;
 	left: 0;
 	background: #000;
 	padding: 0;
+	z-index:9;
 }
 
 #tf-menu ul ul li {
@@ -707,7 +717,7 @@ embed, iframe, object {
 	display: inline-block;
 }
 
-.custom-logo-link img{max-width: 48px; object-fit: cover; max-height:50px; }
+.custom-logo-link img{max-width: 150px; object-fit: cover; max-height:150px; }
 
 /*--------------------------------------------------------------
 ## Captions

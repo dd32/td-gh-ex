@@ -9,7 +9,6 @@
 
 jQuery(function($) { // DOM is now read and ready to be manipulated
 equalheight = function(container){
-
 var currentTallest = 0,
      currentRowStart = 0,
      rowDivs = new Array(),
@@ -136,6 +135,27 @@ function main() {
         });
 
   	});
+	
+	
+	
+	
+
+	
+  
+ 
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
 	
 		/*====================================
     Page loader
