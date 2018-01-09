@@ -68,6 +68,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.95
+* Style fixes
+* Removed space in PHP causing saving issues
+
 #### 1.0.94
 * Fix Home Page Slider do_shortcode not working
 * Header fix - To work with Savant child theme

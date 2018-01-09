@@ -1,10 +1,10 @@
-	<?php
+<?php
 /**
  * Avant functions and definitions
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.0.94' );
+define( 'AVANT_THEME_VERSION' , '1.0.95' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
