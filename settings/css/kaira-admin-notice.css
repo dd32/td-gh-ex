@@ -31,7 +31,7 @@ div.albar-conica-notice {
 .albar-conica-img {
     position: absolute;
     right: 0;
-    top: 82px;
+    bottom: -385px;
     z-index: 999;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
     background-color: #FFF;
@@ -45,4 +45,21 @@ div.albar-conica-notice {
 
 div.albar-conica-notice:hover .albar-conica-img {
     display: block;
+}
+
+a.albar-notice-a {
+    display: inline-block;
+    margin: 0;
+    background-color: #006CC9;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    min-width: 200px;
+    color: #FFF;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.14) inset;
+    padding: 2px 15px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    font-weight: 300;
 }

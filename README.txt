@@ -68,6 +68,10 @@ View the settings under Appearance -> ALBAR Settings.
 
 == Changelog ==
 
+#### 1.7.70
+* Style fixes/tweaks
+* Updated Recommended plugins
+
 #### 1.7.6
 * Updated language .pot file
 * Added advice notice
