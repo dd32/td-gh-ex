@@ -31,7 +31,7 @@
                 <div class="card card-blog">
                   <?php if ( has_post_thumbnail() ) { ?>
                     <div class="card-image">
-                      <?php the_post_thumbnail( 'bestblogtop-small',array('class' => 'img','link_thumbnail' =>TRUE)  ); ?>
+                      <?php the_post_thumbnail( 'bestblog-small',array('class' => 'img','link_thumbnail' =>TRUE)  ); ?>
                     </div>
                   <?php } ?>
                   <div class="card-content">

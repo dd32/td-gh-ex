@@ -35,7 +35,12 @@ endif;
                 <div class="post-thumb-slider ">
                   <span class="thumbnail-resize-slider">
                     <span class="thumbnail-image-slider">
-                      <?php the_post_thumbnail( 'bestblog-slider'); ?>
+                      <?php
+                        if ( has_post_thumbnail() ) {?>
+                            <?php the_post_thumbnail( 'bestblog-slider'); ?>
+                          <?php  } else {?>
+                          <img src="<?php echo get_template_directory_uri(); ?>/images/sliderdemo.jpg" / />
+                        <?php }?>
                     </span>
                   </span>
                 </div>

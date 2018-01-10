@@ -139,7 +139,7 @@ function bestblog_category_widgtesmission()
         if (! empty($categories)) {
             foreach ($categories as $category) {
                 $output .=
-                '<a class="secondary" href="' . esc_url(get_category_link($category->term_id)) .
+                '<a class="clear button secondary" href="' . esc_url(get_category_link($category->term_id)) .
                 '" alt="' . esc_attr(sprintf(__('View all posts in %s', 'best-blog'), $category->name)) . '">' . esc_html($category->name) . '</a>' . $separator;
             }
         }

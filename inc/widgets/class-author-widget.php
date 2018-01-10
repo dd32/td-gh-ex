@@ -16,6 +16,7 @@ class bestblog_Author_Widget extends WP_Widget
         $defaults = apply_filters('bestblog_author_widget_modify_defaults', array(
                       'title' => esc_attr__('CEO / Co-Founder', 'best-blog'),
                       'author' => 0,
+                      'auto_detect' => 0,
                       'display_avatar' => 1,
                       'display_desc' => 1,
                       'display_all_posts' => 1,
@@ -37,24 +38,25 @@ class bestblog_Author_Widget extends WP_Widget
 
 <?php
 //Check for user_id
+  $user_id = $instance['author'];
 
-        $author_link =  get_author_posts_url(get_the_author_meta('ID'));
+  $author_link = !empty($instance['link_url']) ? esc_url($instance['link_url']) : get_author_posts_url(get_the_author_meta('ID', $user_id));
 
         echo $before_widget; ?>
 
         <div class="card card-profile">
           <div class="card-avatar">
-            <?php echo get_avatar(get_the_author_meta('ID'), $instance['avatar_size']) ;?>
+            <?php echo get_avatar(get_the_author_meta('ID', $user_id), $instance['avatar_size']) ;?>
           </div>
           <div class="card-content">
             <?php if( !empty($instance['title'])): ?>
               <h6 class="category text-gray"><?php echo apply_filters('widget_title', $instance['title']); ?></h6>
             <?php endif; ?>
-            <?php echo '<h4 class="card-title">' . get_the_author_meta('display_name').  '</h4>'; ?>
+            <?php echo '<h4 class="card-title">' . get_the_author_meta('display_name', $user_id).  '</h4>'; ?>
             <?php if ($instance['display_desc']) : ?>
               <p class="card-description">
-                <?php $description = get_the_author_meta('description'); ?>
-                <?php echo wpautop($this->trim_chars($description, $instance['limit_chars'])); ?>
+                <?php $description = get_the_author_meta('description', $user_id); ?>
+                <?php echo wpautop($this->trim_chars($description, $instance['limit_chars'], $user_id)); ?>
               </p>
             <?php endif; ?>
             <?php if ($instance['display_all_posts'] && $instance['link_text']) : ?>

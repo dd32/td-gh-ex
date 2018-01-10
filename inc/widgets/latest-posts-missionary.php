@@ -73,16 +73,25 @@
                   <div class="card card-blog">
                     <?php if ( has_post_thumbnail() ) { ?>
                       <div class="card-image">
+                        <div class="post-thumb-overlay"></div>
                         <?php the_post_thumbnail( 'bestblog-small',array('class' => 'img','link_thumbnail' =>TRUE)  ); ?>
                         <div class="card-title">
+                          <?php if ( 'large-22' == $instance['show_post_row'] ): ?>
+                          <?php the_title( sprintf( '<h3 class="post-title is-font-size-1"><a class="post-title-link" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+                        <?php else:?>
                           <?php the_title( sprintf( '<h3 class="post-title is-font-size-4"><a class="post-title-link" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+                        <?php endif;?>
                         </div>
                       </div>
                     <?php } ?>
                     <div class="card-content">
                       <?php if (! has_post_thumbnail() ) { ?>
                         <div class="card-title no-thumb">
+                          <?php if ( 'large-22' == $instance['show_post_row'] ): ?>
+                          <?php the_title( sprintf( '<h3 class="post-title is-font-size-1"><a class="post-title-link" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+                        <?php else:?>
                           <?php the_title( sprintf( '<h3 class="post-title is-font-size-4"><a class="post-title-link" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+                        <?php endif;?>
                         </div>
                       <?php } ?>
                       <h6 class="category text-info"><?php bestblog_category_widgtesmission(); ?></h6>

@@ -33,7 +33,12 @@ $inline_css .=
 	.bestblog-author-bttom .button a,
 	.sidebar-inner .widget_wrap ul li a,
 	.block-content-none .search-submit,
-	.scroll_to_top.floating-action.button
+	.scroll_to_top.floating-action.button,
+	.woocommerce div.product form.cart .button,
+	.woocommerce #respond input#submit.alt,
+	.woocommerce a.button.alt, .woocommerce button.button.alt,
+	.woocommerce input.button.alt, .woocommerce #respond input#submit,
+	.woocommerce a.button, .woocommerce button.button, .woocommerce input.button
 	{
 		color: $text_color ;
 	}"
@@ -58,7 +63,16 @@ $inline_css .=
 .main-menu-wrap .is-dropdown-submenu-parent .submenu li a:hover,
 .single-cats.button-group .button:hover,
 .bestblog-author-bttom .button a:hover,
-.block-content-none .search-submit:hover
+.block-content-none .search-submit:hover,
+.woocommerce div.product form.cart .button:hover,
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover,
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover
 {
 	color: $text_color_hover ;
 }"
@@ -79,7 +93,8 @@ $sub_h1_color = Kirki_Color::adjust_brightness( $menu_bg_color, -225 );
 }
 /*  Color calculation for text */
 $inline_css .=
-".heade-page-nothumb h1
+".heade-page-nothumb h1,
+	#sub_banner .top-bar-left h1
 {
 	color: $sub_h1_color ;
 }"

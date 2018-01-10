@@ -21,7 +21,7 @@
 								<!-- featured-image -->
 								<div class="featured-image img-div-cover">
 									<?php $post_id = get_post($post); ?>
-									<?php echo get_the_post_thumbnail($post_id, 'bestblog-xxlarge', array( 'class' => 'float-center object-fit-images' )); ?>
+									<?php echo get_the_post_thumbnail($post_id, 'bestblog-xlarge', array( 'class' => 'float-center object-fit-images' )); ?>
 									<span class="single-cats button-group font-bold">
 										<?php bestblog_category_list(); ?>
 									</span>

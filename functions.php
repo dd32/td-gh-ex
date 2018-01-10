@@ -40,7 +40,7 @@ function bestblog_setup()
 
     // Declare WooCommerce support
     add_theme_support('woocommerce');
-		
+
 		// Add theme support for woocommerce product gallery added in WooCommerce 3.0.
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-zoom' );
@@ -116,11 +116,15 @@ function bestblog_setup()
     // and optimized for HiDPI displays on 'small' and 'medium' screen sizes.
     add_image_size('bestblog-small', 540, 370, true); // name, width, height, crop
     add_image_size('bestblog-medium', 750, 450, true);
-    add_image_size('bestblog-large', 1200, 750, true);
-    add_image_size('bestblog-xlarge', 1920, 400, true);
+		add_image_size('bestblog-post-layout1', 400, 275, true);
+    add_image_size('bestblog-large', 1200, 500, true);
+    add_image_size('bestblog-xlarge', 1920, 600, true);
 		add_image_size('bestblog-slider', 1440, 500, true);
 
-
+		if ( class_exists( 'woocommerce' ) ) {
+			add_image_size( 'bestblog-shop', 300, 300, true );
+			add_image_size( 'bestblog-shop-2x', 460, 700, true );
+		}
     add_theme_support('starter-content', array(
 
     'posts' => array(

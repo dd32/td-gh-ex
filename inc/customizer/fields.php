@@ -68,7 +68,7 @@ Kirki::add_field('best_blog', array(
             'units' => ''
         ),
         array(
-            'element' => '.sidebar-inner .widget_wrap ul li,.comment-list .comment-reply-link,.navigation .nav-links .current,.single-cats.button-group .button,.bestblog-author-bttom .button,.comment-form .form-submit input#submit, a.box-comment-btn, .comment-form .form-submit input[type="submit"],.scroll_to_top.floating-action.button,.button.secondary,.block-content-none .search-submit,h1.entry-title::after',
+            'element' => '.sidebar-inner .widget_wrap ul li,.comment-list .comment-reply-link,.navigation .nav-links .current,.single-cats.button-group .button,.bestblog-author-bttom .button,.comment-form .form-submit input#submit, a.box-comment-btn, .comment-form .form-submit input[type="submit"],.scroll_to_top.floating-action.button,.button.secondary,.block-content-none .search-submit,h1.entry-title::after,.woocommerce div.product form.cart .button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button',
 						'property' => 'background',
             'units' => ''
         ),
@@ -98,7 +98,7 @@ Kirki::add_field('best_blog', array(
             'units' => ''
         ),
         array(
-            'element' => '.block-content-none .search-submit:hover,.main-menu-wrap .is-dropdown-submenu-parent .submenu li a:hover,.button.secondary:not(.hollow):hover',
+            'element' => '.block-content-none .search-submit:hover,.main-menu-wrap .is-dropdown-submenu-parent .submenu li a:hover,.button.secondary:not(.hollow):hover,.woocommerce div.product form.cart .button:hover,.woocommerce #respond input#submit.alt:hover,.woocommerce a.button.alt:hover,.woocommerce button.button.alt:hover,.woocommerce input.button.alt:hover,.woocommerce #respond input#submit:hover,.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce input.button:hover',
 						'property' => 'background',
             'units' => ''
         ),
@@ -219,9 +219,22 @@ Kirki::add_field('best_blog', array(
 ));
 
 Kirki::add_field( 'best_blog', array(
+	'type'        => 'switch',
+	'settings'    => 'sticky_menu_onof',
+	'label'       => esc_attr__( 'Enable/Disable sticky Menu', 'best-blog' ),
+	'section'     => 'bestblog_header_options',
+	'default'     => '1',
+	'priority'    => 10,
+	'choices'     => array(
+		'on'  => esc_attr__( 'Enable', 'best-blog' ),
+		'off' => esc_attr__( 'Disable', 'best-blog' ),
+	),
+) );
+
+Kirki::add_field( 'best_blog', array(
 	'type'        => 'color',
 	'settings'    => 'menu_text_color',
-	'label'       => __( 'Menu Text color', 'best-blog' ),
+	'label'       => esc_attr__( 'Menu Text color', 'best-blog' ),
 	'section'     => 'bestblog_header_options',
 	'default'     => '#0a0a0a',
 	'transport' => 'auto',
@@ -506,23 +519,24 @@ Kirki::add_field( 'best_blog', array(
 	'settings'    => 'slider_titlefontsize_setting',
 	'label'       => esc_attr__( 'Slider Title text size', 'best-blog' ),
 	'section'     => 'bestblog_slider_settings',
-	'default'     =>  3.866,
+	'default'     =>  2.866,
   'transport'   => 'auto',
 	'choices'     => array(
 		'min'  => '0',
-		'max'  => '100',
-		'step' => '.2',
+		'max'  => '12',
+		'step' => '.02',
 	),
-  'output'      => array(
+	'output'      => array(
 		array(
-			'element' => '#slider .post-header-outer .post-header .post-title a ',
-      'property' => 'font-size',
-      'prefix'=>'calc(2.92815vw + ',
-      'units'   => 'px',
-      'suffix'=>')',
+			'element' => '#slider .post-header-outer .post-header .post-title a',
+			'property' => 'font-size',
+			'prefix'=>'calc( ',
+			'units'   => 'vw',
+			'suffix'=>' + 3.8661417323px)',
 		),
 	),
 ) );
+
 
 Kirki::add_field( 'best_blog', array(
 	'type'        => 'checkbox',

@@ -13,6 +13,7 @@
     <?php if (has_post_thumbnail()) {
     ?>
       <div class="card-image">
+        <div class="post-thumb-overlay"></div>
       <?php the_post_thumbnail('bestblog-small', array('class' => 'img','link_thumbnail' =>TRUE,)); ?>
       <div class="card-title">
         <?php the_title(sprintf('<h3 class="post-title is-font-size-4"><a class="post-title-link" href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h3>'); ?>
