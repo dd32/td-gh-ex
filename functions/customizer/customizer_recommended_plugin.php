@@ -9,7 +9,7 @@ $config_customizer = array(
 	'recommended_plugins'       => array(
 		'webriti-companion' => array(
 			'recommended' => true,
-			'description' => sprintf( esc_html__( 'Install and activate Webriti Companion plugin for taking full advantage of all the features this theme has to offer %s.', 'quality' ), sprintf( '<strong>%s</strong>', 'Webriti Companion' ) ),
+			'description' => sprintf('Install and activate <strong>Webriti Companion</strong> plugin for taking full advantage of all the features this theme has to offer %s.', 'quality'),
 		),
 	),
 	'recommended_actions'       => array(),

@@ -53,8 +53,8 @@ class quality_screen {
 	public function quality_admin_notice() {
 		?>
 			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing quality Lite! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'quality' ), '<a href="' . esc_url( admin_url( 'themes.php?page=quality-info' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=quality-info' ) ); ?>" class="button button-blue-secondary" style="text-decoration: none;"><?php _e( 'Get started with quality Lite', 'quality' ); ?></a></p>
+				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing Quality WordPress Theme. To take full advantage of the features this theme has to offer visit %swelcome page%s.', 'quality' ), '<a href="' . esc_url( admin_url( 'themes.php?page=quality-info' ) ) . '">', '</a>' ); ?></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=quality-info' ) ); ?>" class="button button-blue-secondary" style="text-decoration: none;"><?php _e( 'Get started with Quality', 'quality' ); ?></a></p>
 			</div>
 		<?php
 	}

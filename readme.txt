@@ -153,6 +153,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 ChangLog:
+@Version 1.9.1
+1.Change message text.
+2.Fixed styling issue.
 @Version 1.9
 1.Added repetater customize control in service section.
 @Version 1.8.1
