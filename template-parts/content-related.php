@@ -12,7 +12,6 @@ $no_image ='';
 if( !has_post_thumbnail() ){
     $no_image = 'acme-no-image';
 }
-
 $acmephoto_blog_enable_gap = $acmephoto_customizer_all_values['acmephoto-blog-enable-gap'];
 $acmephoto_blog_show_title = $acmephoto_customizer_all_values['acmephoto-blog-show-title'];
 $acmephoto_blog_show_cats = $acmephoto_customizer_all_values['acmephoto-blog-show-cats'];
@@ -24,7 +23,6 @@ if( 1!= $acmephoto_blog_enable_gap ){
     $gab .= ' no-gab';
 }
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class($gab); ?>>
     <div class="inner-wrapper <?php echo $no_image?>">
         <!--post thumbnal options-->

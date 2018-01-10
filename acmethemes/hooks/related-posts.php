@@ -75,9 +75,6 @@ if ( !function_exists('acmephoto_related_post_below') ) :
             </div>
 		    <?php
         }
-
     }
-
 endif;
-
 add_action( 'acmephoto_related_posts', 'acmephoto_related_post_below', 10, 1 );

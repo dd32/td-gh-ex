@@ -11,19 +11,15 @@ $wp_customize->add_panel( 'acmephoto-header-panel', array(
 /*
 * file for header logo options
 */
-$acmephoto_customizer_header_logo_file_path = acmephoto_file_directory('acmethemes/customizer/header-options/header-logo.php');
-require $acmephoto_customizer_header_logo_file_path;
+require_once acmephoto_file_directory('acmethemes/customizer/header-options/header-logo.php');
 
 /*
 * file for header social options
 */
-$acmephoto_customizer_header_social_file_path = acmephoto_file_directory('acmethemes/customizer/header-options/social-options.php');
-require $acmephoto_customizer_header_social_file_path;
+require_once acmephoto_file_directory('acmethemes/customizer/header-options/social-options.php');
 
 /*
 * file for menu options
 */
-$acmephoto_customizer_header_menu_option_file_path = acmephoto_file_directory('acmethemes/customizer/header-options/menu-option.php');
-require $acmephoto_customizer_header_menu_option_file_path;
-
+require_once acmephoto_file_directory('acmethemes/customizer/header-options/menu-option.php');
 

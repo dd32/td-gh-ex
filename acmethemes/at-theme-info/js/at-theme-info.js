@@ -70,5 +70,4 @@ jQuery(document).ready(function ($) {
             }
         });
     });
-
 });

@@ -11,17 +11,14 @@ $wp_customize->add_panel( 'acmephoto-options', array(
 /*
 * file for header breadcrumb options
 */
-$acmephoto_customizer_options_breadcrumb_file_path = acmephoto_file_directory('acmethemes/customizer/options/breadcrumb.php');
-require $acmephoto_customizer_options_breadcrumb_file_path;
+require_once acmephoto_file_directory('acmethemes/customizer/options/breadcrumb.php');
 
 /*
 * file for header search options
 */
-$acmephoto_customizer_options_search_file_path = acmephoto_file_directory('acmethemes/customizer/options/search.php');
-require $acmephoto_customizer_options_search_file_path;
+require_once acmephoto_file_directory('acmethemes/customizer/options/search.php');
 
 /*
 * file for pagination
 */
-$acmephoto_customizer_options_pagination_file_path = acmephoto_file_directory('acmethemes/customizer/options/pagination.php');
-require $acmephoto_customizer_options_pagination_file_path;
+require_once acmephoto_file_directory('acmethemes/customizer/options/pagination.php');

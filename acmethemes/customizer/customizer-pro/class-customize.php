@@ -91,13 +91,9 @@ final class Acmephoto_Customize {
 	 */
 	public function enqueue_control_scripts() {
 		require_once acmephoto_file_directory('acmethemes/customizer/customizer-pro/section-pro.php');
-
-
 		wp_enqueue_script( 'acmephoto-customize-controls', trailingslashit( get_template_directory_uri() ) . 'acmethemes/customizer/customizer-pro/customize-controls.js', array( 'customize-controls' ) );
-
 		wp_enqueue_style( 'acmephoto-customize-controls', trailingslashit( get_template_directory_uri() ) . 'acmethemes/customizer/customizer-pro/customize-controls.css' );
 	}
 }
-
 // Doing this customizer thang!
 Acmephoto_Customize::get_instance();

@@ -24,5 +24,4 @@ if ( ! function_exists( 'acmephoto_body_classes' ) ) :
 		return $classes;
 	}
 endif;
-
 add_filter( 'body_class', 'acmephoto_body_classes' );

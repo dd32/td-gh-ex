@@ -40,7 +40,6 @@ if ( ! function_exists( 'acmephoto_reset_db_setting' ) ) :
         }
     }
 endif;
-
 add_action( 'customize_save_after','acmephoto_reset_db_setting' );
 
 /*adding sections for Reset Options*/

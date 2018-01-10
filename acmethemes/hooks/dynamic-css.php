@@ -108,7 +108,6 @@ if ( ! function_exists( 'acmephoto_dynamic_css' ) ) :
             $custom_css .= $acmephoto_custom_css;
         }
         wp_add_inline_style( 'acmephoto-style', $custom_css );
-
     }
 endif;
 add_action( 'wp_enqueue_scripts', 'acmephoto_dynamic_css', 99 );

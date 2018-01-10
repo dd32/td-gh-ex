@@ -7,11 +7,10 @@
  * @package Acme Themes
  * @subpackage AcmePhoto
  */
+get_header();
 global $acmephoto_customizer_all_values;
-
-get_header(); ?>
-
-	<div id="primary" class="content-area">
+?>
+    <div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<?php
 			while ( have_posts() ) : the_post();

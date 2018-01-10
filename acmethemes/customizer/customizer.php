@@ -9,20 +9,17 @@
 /*
 * file for upgrade to pro
 */
-$acmephoto_custom_controls_file_path = acmephoto_file_directory('acmethemes/customizer/customizer-pro/class-customize.php');
-require $acmephoto_custom_controls_file_path;
+require_once acmephoto_file_directory('acmethemes/customizer/customizer-pro/class-customize.php');
 
 /*
 * file for customizer core functions
 */
-$acmephoto_custom_controls_file_path = acmephoto_file_directory('acmethemes/customizer/customizer-core.php');
-require $acmephoto_custom_controls_file_path;
+require_once acmephoto_file_directory('acmethemes/customizer/customizer-core.php');
 
 /*
 * file for customizer sanitization functions
 */
-$acmephoto_sanitize_functions_file_path = acmephoto_file_directory('acmethemes/customizer/sanitize-functions.php');
-require $acmephoto_sanitize_functions_file_path;
+require_once acmephoto_file_directory('acmethemes/customizer/sanitize-functions.php');
 
 /**
  * Adding different options
@@ -42,44 +39,37 @@ function acmephoto_customize_register( $wp_customize ) {
     /*
      * file for feature panel of home page
      */
-    $acmephoto_customizer_feature_option_file_path = acmephoto_file_directory('acmethemes/customizer/feature-section/feature-panel.php');
-    require $acmephoto_customizer_feature_option_file_path;
+	require_once acmephoto_file_directory('acmethemes/customizer/feature-section/feature-panel.php');
 
     /*
     * file for header panel
     */
-    $acmephoto_customizer_header_options_file_path = acmephoto_file_directory('acmethemes/customizer/header-options/header-panel.php');
-    require $acmephoto_customizer_header_options_file_path;
+	require_once acmephoto_file_directory('acmethemes/customizer/header-options/header-panel.php');
 
     /*
     * file for customizer footer section
     */
-    $acmephoto_customizer_footer_options_file_path = acmephoto_file_directory('acmethemes/customizer/footer-section/footer-section.php');
-    require $acmephoto_customizer_footer_options_file_path;
+	require_once acmephoto_file_directory('acmethemes/customizer/footer-section/footer-section.php');
 
     /*
     * file for design/layout panel
     */
-    $acmephoto_customizer_design_options_file_path = acmephoto_file_directory('acmethemes/customizer/design-options/design-panel.php');
-    require $acmephoto_customizer_design_options_file_path;
+	require_once acmephoto_file_directory('acmethemes/customizer/design-options/design-panel.php');
 
     /*
     * file for single post sections
     */
-    $acmephoto_customizer_single_post_section_file_path = acmephoto_file_directory('acmethemes/customizer/single-posts/single-post-section.php');
-    require $acmephoto_customizer_single_post_section_file_path;
+	require_once acmephoto_file_directory('acmethemes/customizer/single-posts/single-post-section.php');
 
     /*
      * file for options panel
      */
-    $acmephoto_customizer_options_panel_file_path = acmephoto_file_directory('acmethemes/customizer/options/options-panel.php');
-    require $acmephoto_customizer_options_panel_file_path;
+	require_once acmephoto_file_directory('acmethemes/customizer/options/options-panel.php');
 
     /*
     * file for options reset
     */
-    $acmephoto_customizer_options_reset_file_path = acmephoto_file_directory('acmethemes/customizer/options/options-reset.php');
-    require $acmephoto_customizer_options_reset_file_path;
+	require_once acmephoto_file_directory('acmethemes/customizer/options/options-reset.php');
 
     /*removing*/
     $wp_customize->remove_panel('header_image');
@@ -122,7 +112,5 @@ function acmephoto_update_check() {
         $acmephoto_saved_theme_options['acmephoto-header-logo'] = '';
         set_theme_mod( 'acmephoto_theme_options', $acmephoto_saved_theme_options );
     }
-
 }
 add_action( 'after_setup_theme', 'acmephoto_update_check' );
-

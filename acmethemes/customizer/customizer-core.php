@@ -174,7 +174,6 @@ if ( !function_exists('acmephoto_get_image_sizes_options') ) :
 			foreach ($_wp_additional_image_sizes as $key => $size ) {
 				$choices[ $key ] = $key . ' ('. $size['width'] . 'x' . $size['height'] . ')';
 			}
-
 		}
 		return apply_filters( 'acmephoto_get_image_sizes_options', $choices );
 	}
@@ -211,7 +210,7 @@ if ( !function_exists('acmephoto_get_default_theme_options') ) :
 
             /*footer options*/
             'acmephoto-enable-footer-social'     => '',
-            'acmephoto-footer-copyright'     => __( '&copy; All Right Reserved 2017', 'acmephoto' ),
+            'acmephoto-footer-copyright'     => __( '&copy; All Right Reserved 2018', 'acmephoto' ),
 
             /*layout/design options*/
             'acmephoto-default-layout'       => 'fullwidth',
@@ -251,14 +250,11 @@ if ( !function_exists('acmephoto_get_default_theme_options') ) :
 
             /*Reset*/
             'acmephoto-reset-options'        => '0',
-            'acmephoto-you-are-here-text'  => __( 'You are here', 'acmephoto' ),
-
+            'acmephoto-you-are-here-text'  => __( 'You are here', 'acmephoto' )
         );
-
         return apply_filters( 'acmephoto_default_theme_options', $default_theme_options );
     }
 endif;
-
 
 /**
  *  Get theme options

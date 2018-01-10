@@ -31,6 +31,7 @@ jQuery(function($){
             }
         });
     });
+
     // Runs when the image button is clicked.
     jQuery('body').on('click','.media-image-remove', function(e){
         $(this).siblings('.img-preview-wrap').hide();

@@ -29,8 +29,10 @@ if ( !function_exists('acmephoto_commment_list') ) :
             <div id="div-comment-<?php comment_ID() ?>" class="comment-body clearfix">
         <?php endif; ?>
         <div class="comment-author vcard">
-            <?php if ($args['avatar_size'] != 0) echo get_avatar($comment, '64'); ?>
-            <?php echo '<cite class="fn">'.get_comment_author_link().'</cite>'; ?>
+            <?php
+            if ($args['avatar_size'] != 0) echo get_avatar($comment, '64');
+            echo '<cite class="fn">'.get_comment_author_link().'</cite>';
+            ?>
         </div>
         <?php if ($comment->comment_approved == '0') : ?>
             <em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.', 'acmephoto'); ?></em>
@@ -51,8 +53,7 @@ if ( !function_exists('acmephoto_commment_list') ) :
         </div>
         <?php if ('div' != $args['style']) : ?>
             </div>
-        <?php endif; ?>
-        <?php
+        <?php endif;
     }
 endif;
 
@@ -88,8 +89,6 @@ if ( !function_exists('acmephoto_sidebar_selection') ) :
 		else{
 			$acmephoto_body_global_class= 'right-sidebar';
 		}
-
-
 		if( is_front_page() ){
 			if( isset( $acmephoto_customizer_all_values['acmephoto-front-page-sidebar-layout'] ) ){
 				if(
@@ -120,7 +119,6 @@ if ( !function_exists('acmephoto_sidebar_selection') ) :
 			else{
 				$acmephoto_body_classes = $acmephoto_body_global_class;
 			}
-
 		}
         elseif ( is_archive() ) {
 			if( isset( $acmephoto_customizer_all_values['acmephoto-archive-sidebar-layout'] ) ){

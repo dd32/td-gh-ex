@@ -7,8 +7,6 @@
  * @package Acme Themes
  * @subpackage AcmePhoto
  */
-
-
 if ( ! function_exists( 'acmephoto_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
@@ -78,7 +76,7 @@ function acmephoto_entry_footer( $show_cat = 1, $show_tag = 1 , $show_comment = 
 			echo '</span>';
 		}
 	}
-	if( $edit_post == 1 ){
+	if( $edit_post == 1 && get_edit_post_link()){
 		edit_post_link(
 			sprintf(
 			/* translators: %s: Name of current post */
@@ -89,7 +87,6 @@ function acmephoto_entry_footer( $show_cat = 1, $show_tag = 1 , $show_comment = 
 			'</span>'
 		);	
 	}
-
 }
 endif;
 
@@ -125,9 +122,7 @@ if ( ! function_exists( 'acmephoto_categorized_blog' ) ) :
 			return false;
 		}
 	}
-
 endif;
-
 
 /**
  * Flush out the transients used in acmephoto_categorized_blog.
@@ -143,7 +138,5 @@ if ( ! function_exists( 'acmephoto_category_transient_flusher' ) ) :
 	}
 
 endif;
-
-
 add_action( 'edit_category', 'acmephoto_category_transient_flusher' );
 add_action( 'save_post',     'acmephoto_category_transient_flusher' );

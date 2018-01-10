@@ -41,14 +41,12 @@ require_once acmephoto_file_directory('acmethemes/library/tgm/class-tgm-plugin-a
 /*
 * file for customizer theme options
 */
-$acmephoto_customizer_file_path = acmephoto_file_directory('acmethemes/customizer/customizer.php');
-require $acmephoto_customizer_file_path;
+require_once acmephoto_file_directory('acmethemes/customizer/customizer.php');
 
 /*
 * file for additional functions files
 */
-$acmephoto_functions_file_path = acmephoto_file_directory('acmethemes/functions.php');
-require $acmephoto_functions_file_path;
+require_once acmephoto_file_directory('acmethemes/functions.php');
 
 /*
 * files for hooks
@@ -59,56 +57,42 @@ require_once acmephoto_file_directory('acmethemes/hooks/siteorigin-panels.php');
 
 require_once acmephoto_file_directory('acmethemes/hooks/acme-demo-setup.php');
 
-$acmephoto_slider_selection_file_path = acmephoto_file_directory('acmethemes/hooks/slider-selection.php');
-require $acmephoto_slider_selection_file_path;
+require_once acmephoto_file_directory('acmethemes/hooks/slider-selection.php');
 
-$acmephoto_hooks_header_file_path = acmephoto_file_directory('acmethemes/hooks/header.php');
-require $acmephoto_hooks_header_file_path;
+require_once acmephoto_file_directory('acmethemes/hooks/header.php');
 
-$acmephoto_social_links_file_path = acmephoto_file_directory('acmethemes/hooks/social-links.php');
-require $acmephoto_social_links_file_path;
+require_once acmephoto_file_directory('acmethemes/hooks/social-links.php');
 
-$acmephoto_hooks_dynamic_css_file_path = acmephoto_file_directory('acmethemes/hooks/dynamic-css.php');
-require $acmephoto_hooks_dynamic_css_file_path;
+require_once acmephoto_file_directory('acmethemes/hooks/dynamic-css.php');
 
-$acmephoto_photography_file_path = acmephoto_file_directory('acmethemes/hooks/masonry.php');
-require $acmephoto_photography_file_path;
+require_once acmephoto_file_directory('acmethemes/hooks/masonry.php');
 
-$acmephoto_hooks_footer_file_path = acmephoto_file_directory('acmethemes/hooks/footer.php');
-require $acmephoto_hooks_footer_file_path;
+require_once acmephoto_file_directory('acmethemes/hooks/footer.php');
 
-$acmephoto_comment_form_file_path = acmephoto_file_directory('acmethemes/hooks/comment-forms.php');
-require $acmephoto_comment_form_file_path;
+require_once acmephoto_file_directory('acmethemes/hooks/comment-forms.php');
 
-$acmephoto_excerpts_form_file_path = acmephoto_file_directory('acmethemes/hooks/excerpts.php');
-require $acmephoto_excerpts_form_file_path;
+require_once acmephoto_file_directory('acmethemes/hooks/excerpts.php');
 
-$acmephoto_related_posts_file_path = acmephoto_file_directory('acmethemes/hooks/related-posts.php');
-require $acmephoto_related_posts_file_path;
+require_once acmephoto_file_directory('acmethemes/hooks/related-posts.php');
 
-$acmephoto_ajax_pagination_file_path = acmephoto_file_directory('acmethemes/hooks/navigation.php');
-require $acmephoto_ajax_pagination_file_path;
+require_once acmephoto_file_directory('acmethemes/hooks/navigation.php');
 
 /*
 * file for sidebar and widgets
 */
-$acmephoto_acme_author_widget = acmephoto_file_directory('acmethemes/sidebar-widget/acme-author.php');
-require $acmephoto_acme_author_widget;
+require_once acmephoto_file_directory('acmethemes/sidebar-widget/acme-author.php');
 
-$acmephoto_sidebar = acmephoto_file_directory('acmethemes/sidebar-widget/sidebar.php');
-require $acmephoto_sidebar;
+require_once acmephoto_file_directory('acmethemes/sidebar-widget/sidebar.php');
 
 /**
  * Implement Custom Metaboxes
  */
-require acmephoto_file_directory('acmethemes/metabox/metabox.php');
+require_once acmephoto_file_directory('acmethemes/metabox/metabox.php');
 
 /*
 * file for core functions imported from functions.php while downloading Underscores
 */
-$acmephoto_sidebar = acmephoto_file_directory('acmethemes/core.php');
-require $acmephoto_sidebar;
-
+require_once acmephoto_file_directory('acmethemes/core.php');
 
 /*themes info*/
 require_once acmephoto_file_directory('acmethemes/at-theme-info/class-at-theme-info.php');

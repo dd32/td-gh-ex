@@ -45,5 +45,4 @@ if ( ! function_exists( 'acmephoto_widget_init' ) ) :
         ));
     }
 endif;
-
 add_action('widgets_init', 'acmephoto_widget_init');

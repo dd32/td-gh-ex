@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Adds Acmephoto Theme Widgets in SiteOrigin Pagebuilder Tabs
  *

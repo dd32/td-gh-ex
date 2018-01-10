@@ -132,10 +132,9 @@ if ( !function_exists('acmephoto_sidebar_layout_callback') ) :
             <tr>
                 <td><em class="f13"><?php _e( 'You can set up the sidebar content', 'acmephoto' ); ?> <a href="<?php echo admin_url('/widgets.php'); ?>"><?php _e( 'here', 'acmephoto' ); ?></a></em></td>
             </tr>
-
         </table>
-
-    <?php }
+    <?php
+}
 endif;
 
 /**
@@ -166,7 +165,6 @@ if ( !function_exists('acmephoto_save_sidebar_layout') ) :
             return $post_id;
         }
 
-
         //Execute this saving function
         if(isset($_POST['acmephoto_sidebar_layout'])){
             $old = get_post_meta( $post_id, 'acmephoto_sidebar_layout', true);
@@ -178,6 +176,5 @@ if ( !function_exists('acmephoto_save_sidebar_layout') ) :
             }
         }
     }
-
 endif;
 add_action('save_post', 'acmephoto_save_sidebar_layout');

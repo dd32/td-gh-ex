@@ -19,6 +19,3 @@ if( $sidebar_layout == "right-sidebar" || empty( $sidebar_layout ) ) : ?>
 		</div>
 	</div>
 <?php endif;
-
-
-

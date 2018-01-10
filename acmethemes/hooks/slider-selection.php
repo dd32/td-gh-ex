@@ -108,6 +108,7 @@ if ( ! function_exists( 'acmephoto_display_feature_slider' ) ) :
         }
     }
 endif;
+
 /**
  * Display featured slider
  *
@@ -152,7 +153,6 @@ if ( !function_exists('acmephoto_feature_slider') ) :
                 data-cycle-pause-on-hover = true
                 data-cycle-timeout = 2000
                 data-cycle-slides = '.item'
-                
             >
                 <!-- prev/next links -->
                 <div class="owl-prev cycle-prev"><i class="fa fa-angle-left"></i></div>
@@ -163,5 +163,4 @@ if ( !function_exists('acmephoto_feature_slider') ) :
         <?php
     }
 endif;
-
 add_action( 'acmephoto_action_feature_slider', 'acmephoto_feature_slider', 0 );

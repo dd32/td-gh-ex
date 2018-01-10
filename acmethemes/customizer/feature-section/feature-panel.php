@@ -12,17 +12,14 @@ $wp_customize->add_panel( 'acmephoto-feature-panel', array(
 /*
 * file for feature section enable
 */
-$acmephoto_customizer_feature_enable_file_path = acmephoto_file_directory('acmethemes/customizer/feature-section/feature-enable.php');
-require $acmephoto_customizer_feature_enable_file_path;
+require_once acmephoto_file_directory('acmethemes/customizer/feature-section/feature-enable.php');
 
 /*
 * file for feature slider category
 */
-$acmephoto_customizer_feature_category_file_path = acmephoto_file_directory('acmethemes/customizer/feature-section/feature-slider.php');
-require $acmephoto_customizer_feature_category_file_path;
+require_once acmephoto_file_directory('acmethemes/customizer/feature-section/feature-slider.php');
 
 /*
 * file for feature slider category
 */
-$acmephoto_customizer_feature_social_options_file_path = acmephoto_file_directory('acmethemes/customizer/feature-section/social-options.php');
-require $acmephoto_customizer_feature_social_options_file_path;
+require_once acmephoto_file_directory('acmethemes/customizer/feature-section/social-options.php');

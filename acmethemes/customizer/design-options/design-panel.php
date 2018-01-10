@@ -12,25 +12,22 @@ $wp_customize->add_panel( 'acmephoto-design-panel', array(
 /*
 * file for default layout
 */
-$acmephoto_customizer_default_layout_file_path = acmephoto_file_directory('acmethemes/customizer/design-options/default-layout.php');
-require $acmephoto_customizer_default_layout_file_path;
+require_once acmephoto_file_directory('acmethemes/customizer/design-options/default-layout.php');
 
 /*
 * file for sidebar layout
 */
-$acmephoto_customizer_sidebar_layout_file_path = acmephoto_file_directory('acmethemes/customizer/design-options/sidebar-layout.php');
-require $acmephoto_customizer_sidebar_layout_file_path;
-
+require_once acmephoto_file_directory('acmethemes/customizer/design-options/sidebar-layout.php');
 
 /*
 * file for front page sidebar layout options
 */
-require acmephoto_file_directory('acmethemes/customizer/design-options/front-page-sidebar-layout.php');
+require_once acmephoto_file_directory('acmethemes/customizer/design-options/front-page-sidebar-layout.php');
 
 /*
 * file for front archive sidebar layout options
 */
-require acmephoto_file_directory('acmethemes/customizer/design-options/archive-sidebar-layout.php');
+require_once acmephoto_file_directory('acmethemes/customizer/design-options/archive-sidebar-layout.php');
 
 /*
 * file for sticky sidebar
@@ -40,23 +37,19 @@ require_once acmephoto_file_directory('acmethemes/customizer/design-options/stic
 /*
 * file for blog layout
 */
-$acmephoto_customizer_blog_layout_file_path = acmephoto_file_directory('acmethemes/customizer/design-options/blog-layout.php');
-require $acmephoto_customizer_blog_layout_file_path;
+require_once acmephoto_file_directory('acmethemes/customizer/design-options/blog-layout.php');
 
 /*
 * file for color options
 */
-$acmephoto_customizer_colors_options_file_path = acmephoto_file_directory('acmethemes/customizer/design-options/colors-options.php');
-require $acmephoto_customizer_colors_options_file_path;
+require_once acmephoto_file_directory('acmethemes/customizer/design-options/colors-options.php');
 
 /*
 * file for background image layout
 */
-$acmephoto_customizer_background_image_file_path = acmephoto_file_directory('acmethemes/customizer/design-options/background-image.php');
-require $acmephoto_customizer_background_image_file_path;
+require_once acmephoto_file_directory('acmethemes/customizer/design-options/background-image.php');
 
 /*
 * file for custom css
 */
-$acmephoto_customizer_custom_css_file_path = acmephoto_file_directory('acmethemes/customizer/design-options/custom-css.php');
-require $acmephoto_customizer_custom_css_file_path;
+require_once acmephoto_file_directory('acmethemes/customizer/design-options/custom-css.php');

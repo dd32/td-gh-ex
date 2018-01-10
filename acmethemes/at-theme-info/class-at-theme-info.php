@@ -145,6 +145,7 @@ if ( ! class_exists( 'Acmephoto_Theme_Info' ) ) {
             }
             exit;
         }
+
         private function get_recommended_actions() {
             $saved_actions = get_option( $this->theme_slug . '_recommended_actions' );
             if ( ! is_array( $saved_actions ) ) {

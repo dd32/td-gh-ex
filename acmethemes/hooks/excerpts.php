@@ -16,7 +16,6 @@ if ( !function_exists('acmephoto_alter_excerpt') ) :
         return 90;
     }
 endif;
-
 add_filter('excerpt_length', 'acmephoto_alter_excerpt');
 
 /**
@@ -37,5 +36,4 @@ if ( !function_exists('acmephoto_excerpt_more') ) :
         return ' ';
     }
 endif;
-
 add_filter('excerpt_more', 'acmephoto_excerpt_more');

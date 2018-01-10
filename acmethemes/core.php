@@ -117,7 +117,7 @@ function acmephoto_scripts() {
     wp_enqueue_script( 'masonry' );
 
 	if( 1 == $acmephoto_customizer_all_values['acmephoto-enable-sticky-sidebar'] ){
-		wp_enqueue_script('theia-sticky-sidebar', get_template_directory_uri() . '/assets/library/theia-sticky-sidebar/theia-sticky-sidebar.js', array('jquery'), '1.4.0', 1);
+		wp_enqueue_script('theia-sticky-sidebar', get_template_directory_uri() . '/assets/library/theia-sticky-sidebar/theia-sticky-sidebar.min.js', array('jquery'), '1.4.0', 1);
 	}
     /*custom-js*/
     wp_enqueue_script('acmephoto-custom', get_template_directory_uri() . '/assets/js/acmephoto-custom.js', array('jquery'), '1.0.0', 1);
@@ -143,9 +143,21 @@ add_action( 'wp_enqueue_scripts', 'acmephoto_scripts' );
 /**
  * Enqueue admin scripts and styles.
  */
+function acmephoto_is_edit_page() {
+	//make sure we are on the backend
+	if ( !is_admin() ){
+		return false;
+	}
+	global $pagenow;
+	return in_array( $pagenow, array( 'post.php', 'post-new.php' ) );
+}
+
+/**
+ * Enqueue admin scripts and styles.
+ */
 function acmephoto_admin_scripts( $hook ) {
 
-    if ( 'widgets.php' == $hook ) {
+	if ( 'widgets.php' == $hook || acmephoto_is_edit_page() ) {
         wp_enqueue_media();
         wp_enqueue_script( 'acmephoto-widgets-script', get_template_directory_uri() . '/assets/js/acme-widget.js', array( 'jquery' ), '1.0.0' );
     }

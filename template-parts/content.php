@@ -26,7 +26,6 @@ if( 1 != $acmephoto_blog_enable_gap ){
 	$gab .= ' no-gab';
 }
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class($gab); ?>>
 	<div class="inner-wrapper <?php echo $no_image?>">			
 		<!--post thumbnal options-->

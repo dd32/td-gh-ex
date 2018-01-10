@@ -24,7 +24,5 @@ if ( !function_exists('acmephoto_alter_comment_form') ) :
 
         return $form;
     }
-
 endif;
-
 add_filter('comment_form_defaults', 'acmephoto_alter_comment_form');

@@ -11,5 +11,4 @@
 /**
  * require int.
  */
-$acmephoto_file_directory_init_file_path = trailingslashit( get_template_directory() ).'acmethemes/init.php';
-require $acmephoto_file_directory_init_file_path;
+require_once trailingslashit( get_template_directory() ).'acmethemes/init.php';

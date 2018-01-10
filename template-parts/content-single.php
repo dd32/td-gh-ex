@@ -88,4 +88,3 @@ $acmephoto_single_image_size = $acmephoto_customizer_all_values['acmephoto-singl
 	}
 	?>
 </article><!-- #post-## -->
-

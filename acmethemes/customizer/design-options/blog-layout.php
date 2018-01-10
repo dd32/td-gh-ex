@@ -8,7 +8,6 @@ $wp_customize->add_section( 'acmephoto-design-blog-layout-option', array(
     'panel'          => 'acmephoto-design-panel'
 ) );
 
-
 /*blog image size*/
 $wp_customize->add_setting( 'acmephoto_theme_options[acmephoto-blog-archive-image-size]', array(
 	'capability'		=> 'edit_theme_options',

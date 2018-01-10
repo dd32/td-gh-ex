@@ -16,7 +16,6 @@ if ( ! function_exists( 'acmephoto_set_global' ) ) :
         $GLOBALS['acmephoto_customizer_all_values'] = $acmephoto_saved_theme_options;
         /*Getting saved values end*/
     }
-
 endif;
 add_action( 'acmephoto_action_before_head', 'acmephoto_set_global', 0 );
 
@@ -182,7 +181,6 @@ if ( ! function_exists( 'acmephoto_body_class' ) ) :
         $acmephotobody_classes[] = acmephoto_sidebar_selection();
 
         return $acmephotobody_classes;
-
     }
 endif;
 add_action( 'body_class', 'acmephoto_body_class', 10, 1);
@@ -201,7 +199,7 @@ if ( ! function_exists( 'acmephoto_page_start' ) ) :
     function acmephoto_page_start() {
         ?>
         <div id="page" class="hfeed site">
-<?php
+    <?php
     }
 endif;
 add_action( 'acmephoto_action_before', 'acmephoto_page_start', 15 );
@@ -324,7 +322,6 @@ if ( ! function_exists( 'acmephoto_before_content' ) ) :
             <?php
         }
         ?>
-
         <div class="wrapper content-wrapper clearfix">
     <div id="<?php echo esc_attr( $acmephoto_content_id ); ?>" class="site-content clearfix">
     <?php

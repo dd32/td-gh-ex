@@ -8,11 +8,9 @@
  * @return void
  *
  */
-
 if ( !function_exists('acmephoto_social_links') ) :
 
     function acmephoto_social_links( $show_title = 0 ) {
-
         global $acmephoto_customizer_all_values;
         ?>
         <div class="socials">
@@ -62,7 +60,5 @@ if ( !function_exists('acmephoto_social_links') ) :
         </div>
         <?php
     }
-
 endif;
-
 add_filter( 'acmephoto_action_social_links', 'acmephoto_social_links', 10 ,1 );

@@ -54,15 +54,13 @@ if ( ! function_exists( 'acmephoto_footer' ) ) :
                                 <div class="footer-sidebar <?php echo esc_attr( $footer_top_col );?>">
                                     <?php dynamic_sidebar( 'footer-top-col-one' ); ?>
                                 </div>
-                            <?php endif; ?>
-
-                            <?php if( is_active_sidebar( 'footer-top-col-two' ) ) : ?>
+                            <?php endif;
+                            if( is_active_sidebar( 'footer-top-col-two' ) ) : ?>
                                 <div class="footer-sidebar <?php echo esc_attr( $footer_top_col );?>">
                                     <?php dynamic_sidebar( 'footer-top-col-two' ); ?>
                                 </div>
-                            <?php endif; ?>
-
-                            <?php if( is_active_sidebar( 'footer-top-col-three' ) ) : ?>
+                            <?php endif;
+                            if( is_active_sidebar( 'footer-top-col-three' ) ) : ?>
                                 <div class="footer-sidebar <?php echo esc_attr( $footer_top_col );?>">
                                     <?php dynamic_sidebar( 'footer-top-col-three' ); ?>
                                 </div>

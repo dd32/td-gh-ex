@@ -10,7 +10,6 @@
  * @subpackage AcmePhoto
  */
 
-
 /**
  * acmephoto_action_after_content hook
  * @since AcmePhoto 1.0.0
