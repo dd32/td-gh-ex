@@ -10,7 +10,12 @@
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-
+		<div class="meta_area">
+			<span class="single_meta"><i class="fa fa-user"></i> <?php echo bhost_author();?></span>
+			<span class="single_meta"><i class="fa fa-clock-o"></i> <?php echo esc_html(get_the_time('d M , Y'));?></span>
+			
+		</div>
+		
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php

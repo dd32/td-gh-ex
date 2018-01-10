@@ -159,6 +159,46 @@ function bhost_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'bhost_scripts' );
 
+function bhost_wp_kses($val){
+	return wp_kses($val, array(
+	
+	'p' => array(),
+	'span' => array(),
+	'div' => array(),
+	'strong' => array(),
+	'b' => array(),
+	'br' => array(),
+	'h1' => array(),
+	'h2' => array(),
+	'h3' => array(),
+	'h4' => array(),
+	'h5' => array(),
+	'h6' => array(),
+	'a'=> array('href' => array(),'target' => array()),
+	'iframe'=> array('src' => array(),'height' => array(),'width' => array()),
+	
+	), '');
+}
+
+// modify search widget
+function bhost_my_search_form( $form ) {
+	$form = '
+		
+			
+			<form role="search" method="get" id="searchform" class="searchform" action="' . esc_url(home_url( '/' )) . '" >
+				<div class="input-group">
+					<input type="text" value="' . esc_attr(get_search_query()) . '" name="s" id="s" class="form-control search_field" placeholder="' . esc_attr__('Search...' , 'bhost') .'">
+					<span class="input-group-btn">
+						<button class="btn btn-default search_btn" type="submit"><i class="fa fa-search"></i></button>
+					</span>
+				</div>
+			</form>
+			
+		
+        ';
+	return $form;
+}
+add_filter( 'get_search_form', 'bhost_my_search_form' );
 
 /**
  * Custom template tags for this theme.

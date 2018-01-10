@@ -7,6 +7,9 @@
  * @package bhost
  */
 
+function bhost_author(){
+	echo '<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a>';
+} 
 
 if ( ! function_exists( 'bhost_entry_footer' ) ) :
 /**
