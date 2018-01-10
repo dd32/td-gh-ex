@@ -18,7 +18,7 @@
 	
 		<div class="footer-bar">
 		
-			<h2 class="footer-title"><span>App</span>Setter</h2>	
+			<h2 class="footer-title"><?php bloginfo( 'name' ); ?></h2>	
 			<div class="title-signature">
 				<p><?php bloginfo( 'description' ); ?></p>
 			</div>

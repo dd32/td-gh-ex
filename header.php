@@ -39,10 +39,10 @@
 							<?php } ?>
 							<?php
 								if ( is_front_page() && is_home() ) : ?>
-								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span>App</span>Setter</a></h1>
+								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 								<?php if ($show_desc == 1) { ?><p class="site-desc"><?php bloginfo( 'description' ); ?></p><?php } ?>
 							<?php else : ?>
-								<h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span>App</span>Setter</a></h2>
+								<h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
 								<?php if ($show_desc == 1) { ?><p class="site-desc"><?php bloginfo( 'description' ); ?></p><?php } ?>
 							<?php
 								endif;
