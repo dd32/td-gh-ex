@@ -16,7 +16,11 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-
+<?php if ( get_theme_mod( 'conica-site-add-side-social' ) ) : ?>
+    <div class="side-aligned-social hide-side-social">
+        <?php get_template_part( '/templates/social-links' ); ?>
+    </div>
+<?php endif; ?>
 <div id="page">
 
 <?php echo ( get_theme_mod( 'conica-set-site-layout' ) == 'conica-site-boxed' ) ? '<div class="site-boxed">' : ''; ?>

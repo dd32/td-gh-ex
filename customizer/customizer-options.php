@@ -69,6 +69,14 @@ function customizer_library_conica_options() {
         'choices' => $choices,
         'default' => 'conica-site-full-width'
     );
+    $options['conica-site-add-side-social'] = array(
+        'id' => 'conica-site-add-side-social',
+        'label'   => __( 'Add Side Aligned Social Icons', 'conica' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'description' => __( 'Add Social Icons for this to show', 'conica' ),
+        'default' => 0,
+    );
 
     $options['conica-upsell-layout'] = array(
         'id' => 'conica-upsell-layout',

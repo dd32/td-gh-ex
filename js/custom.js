@@ -51,6 +51,8 @@
     
     $(window).load(function() {
         
+        $( '.side-aligned-social' ).removeClass( 'hide-side-social' );
+        
         conica_home_slider();
         
     });

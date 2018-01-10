@@ -79,6 +79,12 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.09
+* Styling fixes/tweaks
+* Added NEW side social icons
+* Updated the language .pot file
+Premium: Added setting to change Side Social Links design - Square or Round
+
 #### 1.3.08
 * Styling fixes/tweaks
 * Updated screenshot.png

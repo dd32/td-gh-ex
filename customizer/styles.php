@@ -27,6 +27,7 @@ function customizer_library_conica_build_styles() {
 			'selectors' => array(
 				'#comments .form-submit #submit,
 				.search-block .search-submit,
+				.side-aligned-social a.social-icon,
 				.no-results-btn,
 				.search-block .search-submit,
 				.conica-navigation-style-blocks a:hover span,
