@@ -61,7 +61,7 @@
 			<div class="quality-child-theme-details">
 				<?php if ( 'quality-green' != $current_theme['Name'] ) { ?>
 					<div class="theme-details">
-						<span class="theme-name">Quality Green</span>
+						<span class="theme-name"><?php esc_html_e( 'Quality Green', 'quality' ); ?></span>
 						<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=quality-green' ), 'install-theme_quality-green' ) ); ?>" class="button button-primary install right"><?php printf( __( 'Install %s now', 'quality' ), '<span class="screen-reader-text">quality green</span>' ); ?></a>
 						<a class="button button-secondary preview right" target="_blank" href="https://wp-themes.com/quality-green"><?php esc_html_e( 'Live Preview','quality'); ?></a>
 						<div class="quality-clear"></div>
@@ -91,7 +91,7 @@
 			<div class="quality-child-theme-details">
 				<?php if ( 'quality orange' != $current_theme['Name'] ) { ?>
 					<div class="theme-details">
-						<span class="theme-name">Quality Orange</span>
+						<span class="theme-name"><?php esc_html_e( 'Quality Orange', 'quality' ); ?></span>
 						<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=quality-orange' ), 'install-theme_quality-orange' ) ); ?>" class="button button-primary install right"><?php printf( __( 'Install %s now', 'quality' ), '<span class="screen-reader-text">Quality Orange</span>' ); ?></a>
 						<a class="button button-secondary preview right" target="_blank" href="https://wp-themes.com/quality-orange"><?php esc_html_e( 'Live Preview','quality'); ?></a>
 						<div class="quality-clear"></div>

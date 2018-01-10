@@ -12,7 +12,7 @@ jQuery(document).ready(function() {
         jQuery('#customize-theme-controls > ul').prepend('<li class="accordion-section quality-upsells">');
     }
     if (typeof quality_aboutpage !== 'undefined') {
-        jQuery('.quality-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="' + quality_aboutpage + '" class="button" target="_blank">{themeinfo}</a>'.replace('{themeinfo}', qualityLiteWelcomeScreenCustomizerObject.themeinfo));
+        jQuery('.quality-upsells').append('<a style="width: 80%; margin: 5px auto 15px auto; display: block; text-align: center;" href="' + quality_aboutpage + '" class="button" target="_blank">{themeinfo}</a>'.replace('{themeinfo}', qualityLiteWelcomeScreenCustomizerObject.themeinfo));
     }
     if ( !jQuery( ".quality-upsells" ).length ) {
         jQuery('#customize-theme-controls > ul').prepend('</li>');

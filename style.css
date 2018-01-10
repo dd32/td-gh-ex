@@ -4,7 +4,7 @@ Theme URI: https://webriti.com/quality-lite-version-details-page/
 Author: Webriti
 Author URI: https://webriti.com/
 Description: Business theme which is ideal for creating a corporate / business website.It boasts of 3 beautifully designed page template namely Business Page, Full-width and Blog. Theme is built on Bootstrap Css Framework, hence make it responsive in all the devices. Quality theme is completely transtion ready. To enable business template you have to create a normal WordPress page and select the page template as Business Template. To configure business template there are number of settings in the customizer. Each section in the Business Template is well designed according to the business requirements. Section like Banner, Services, Projects etc etc are there. You can use this theme for any busniess type. Theme also support famous plugin like contact form 7, so that you can create a conact page or any number of forms you want to add. Theme also give clean and effective look to WordPress core gallery feature. Browse lite version demo: http://webriti.com/quality-free
-Version:  1.8
+Version:  1.9
 Tags: full-width-template, threaded-comments, custom-menu, two-columns, translation-ready, sticky-post, blog, portfolio, footer-widgets, featured-images, right-sidebar
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -452,6 +452,8 @@ margin-top:70px;
 }
 
 /* Homepage Service Section css --------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.service_section { margin-top: 60px; }
+
 .qua-testimonial{
 /* height: auto !important;
 	margin-bottom: 30px !important; */
@@ -523,7 +525,7 @@ margin-top:70px;
     transition: all 300ms ease-out;
 }
 .qua-service-area:hover > .hexagon-box { background: url('./images/hexagon.png') no-repeat center; height: 120px; width: 120px; margin: 0px auto 16px; }
-.qua-service-area i { color: #121212; display: block; margin-left: auto; margin-right: auto; max-width: 100%; opacity: 1; transform: scale(0.9); transition-duration: 0.5s; }
+.qua-service-area i { display: block; margin-left: auto; margin-right: auto; max-width: 100%; opacity: 1; transform: scale(0.9); transition-duration: 0.5s; }
 .qua-service-area i { border: 0 none; font-size: 70px; line-height: 125px; margin-bottom: 0px; }
 .qua-service-area h2 {
     font-family: 'Open Sans';
@@ -802,7 +804,7 @@ margin-top:70px;
 
 /***** Blog page *****************************************************************
 ***************************************************************************************/
-
+.home-blog { margin: 70px 0 0; }
 
 .qua_blog_wrapper {
     margin-bottom: 90px;
@@ -1927,7 +1929,7 @@ word-wrap: break-word;
 padding-left: 20px;
 padding-right: 20px;
 padding: 55px 0;
-margin: 0 0 72px;
+margin: 0;
 }
 .qua_home_portfolio_caption a {
 float: left;
@@ -2095,11 +2097,25 @@ p.wp-caption-text {
 
 /* Text meant only for screen readers. */
 .screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
+	border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+.no-js .some-element .screen-reader-text {
+    position: static;
+    -webkit-clip-path: none;
+    clip-path: none;
+    width: auto;
+    height: auto;
+    margin: 0;
 }
 
 .screen-reader-text:focus {

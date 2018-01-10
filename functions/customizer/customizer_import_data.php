@@ -22,19 +22,23 @@ class quality_customize_import_dummy_data {
 	public function quality_setup_actions() {
 
 		// Register the section
-		add_action( 'customize_register', array( $this, 'quality_customize_register' ) );
+		//add_action( 'customize_register', array( $this, 'quality_customize_register' ) );
 
 		// Enqueue scripts
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'quality_import_customize_scripts' ), 0 );
 
 	}
+	
+	
 
 	public function quality_import_customize_scripts() {
 
 	wp_enqueue_script( 'quality-import-customizer-js', get_template_directory_uri() . '/js/quality-import-customizer.js', array( 'customize-controls' ) );
 	}
+	
+	
 
-	public function quality_customize_register( $wp_customize ) {
+	/*public function quality_customize_register( $wp_customize ) {
 
 		require_once get_template_directory() . '/functions/custom_control/class-dummy-import-control.php';
 		
@@ -50,7 +54,7 @@ class quality_customize_import_dummy_data {
 			)
 		);
 
-	}
+	}*/
 }
 
 $import_customizer = array(
@@ -61,3 +65,4 @@ $import_customizer = array(
 		),
 );
 quality_customize_import_dummy_data::init( apply_filters( 'quality_import_customizer', $import_customizer ) );
+

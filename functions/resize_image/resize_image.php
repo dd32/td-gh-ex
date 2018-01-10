@@ -7,7 +7,7 @@
 // code for home slider post types 
 add_filter( 'intermediate_image_sizes', 'quality_image_presets');
 function quality_image_presets($sizes){
-   $type = get_post_type($_REQUEST['post_id']);	
+   $type = get_post_type(isset($_REQUEST['post_id']));	
     foreach($sizes as $key => $value){				
 		if($type=='post'  &&  $value != 'quality_blog_img'  )
 		{        unset($sizes[$key]);      }		

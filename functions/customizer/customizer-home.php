@@ -11,9 +11,9 @@ function appointment_header_customizer( $wp_customize ) {
 	
 	/* favicon option */
     $wp_customize->add_section( 'quality_favicon' , array(
-      'title'       => __('Site favicon', 'quality' ),
+      'title'       => __('Site Favicon', 'quality' ),
       'priority'    => 300,
-      'description' => __( 'Upload a favicon', 'quality' ),
+      'description' => __( 'Upload a Favicon', 'quality' ),
 	  'panel'  => 'header_options',
     ) );
     
@@ -31,7 +31,7 @@ function appointment_header_customizer( $wp_customize ) {
 	
 	//Header logo setting
 	$wp_customize->add_section( 'header_logo' , array(
-		'title'      => __('Header logo setting', 'quality'),
+		'title'      => __('Header logo settings', 'quality'),
 		'panel'  => 'header_options',
 		'priority'   => 400,
    	) );
@@ -48,7 +48,7 @@ function appointment_header_customizer( $wp_customize ) {
 			   $wp_customize,
 			   'quality_pro_options[upload_image_logo]',
 			   array(
-				   'label'          => __('Upload a 150x150 for Logo Image','quality' ),
+				   'label'          => __('Upload a 150x150 Logo Image','quality' ),
 				   'section'        => 'header_logo',
 				   'priority'   => 50,
 			   )
@@ -157,4 +157,23 @@ function appointment_header_customizer( $wp_customize ) {
     )); 	
 	}
 	add_action( 'customize_register', 'appointment_header_customizer' );
+	
+	
+	/**
+ * Add selective refresh for Front page section section controls.
+ */
+function quality_register_header_section_partials( $wp_customize ){
+
+$wp_customize->selective_refresh->add_partial( 'quality_pro_options[upload_image_logo]', array(
+		'selector'            => '.navbar-header a',
+		'settings'            => 'quality_pro_options[upload_image_logo]',
+	
+	) );
+	
+	
+}
+
+add_action( 'customize_register', 'quality_register_header_section_partials' );
+	
+	
 	?>

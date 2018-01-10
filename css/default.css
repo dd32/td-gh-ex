@@ -92,14 +92,14 @@ border: 1px solid #F8504B;
 }
 /* Flex Slider Css --------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 .carousel{
-	margin-bottom: 60px;
+	margin-bottom: 0px;
 	background-color: #121212;
 }
 /* Homepage Service Section css --------------*/
 .qua_page_heading p, .qua_heading_title p, .qua-service-area p, .qua-blog-post-description, .qua-project-description p, .qua_blog_post_content p, .qua_media_sidebar span, .qua_media_sidebar span a, .qua_sidebar_link p a , .widget ul li a , .qua_sidebar_widget ul li a, .tweet_info, .qua_para_icons, .qua_comment_detail p{
     color: #6A6A6A;
 }
-.qua-service-area h2 > a, .qua-service-area p > a:hover, .qua-service-area i, .qua_page_heading h1, .qua_post_title_wrapper h2 a, .qua_heading_title h1, .qua_para_icons i, .qua_sidebar_widget_title h2 , h2.widgettitle {
+.qua-service-area h2 > a, .qua-service-area p > a:hover, .qua_page_heading h1, .qua_post_title_wrapper h2 a, .qua_heading_title h1, .qua_para_icons i, .qua_sidebar_widget_title h2 , h2.widgettitle {
 	color: #121212;
 }
 .qua_port_title p {

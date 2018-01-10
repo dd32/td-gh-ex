@@ -8,7 +8,9 @@
   	define('QUALITY_THEME_FUNCTIONS_PATH',QUALITY_TEMPLATE_DIR.'/functions');	
   	define('QUALITY_THEME_OPTIONS_PATH',QUALITY_TEMPLATE_DIR_URI.'/functions/theme_options');
   
-	require( QUALITY_THEME_FUNCTIONS_PATH . '/menu/new_Walker.php'); //NEW Walker Class Added.  		
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/menu/new_Walker.php'); //NEW Walker Class Added.  
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php');
+	
   	require_once( QUALITY_THEME_FUNCTIONS_PATH . '/scripts/scripts.php');     //Theme Scripts And Styles	
   	require( QUALITY_THEME_FUNCTIONS_PATH . '/resize_image/resize_image.php'); //Image Resizing 	
   	require( QUALITY_THEME_FUNCTIONS_PATH . '/commentbox/comment-function.php'); //Comment Handling
@@ -16,18 +18,25 @@
 	
 	
 	//Customizer 
-	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-service.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-slider.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-copyright.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-home.php');
-	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-project.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-blog.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer_recommended_plugin.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer_import_data.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/font/font.php');
 	
 	//Quality Demo Image
 	require_once( get_template_directory() . '/quality-demo-image/quality-prevdem.php' );
+	
+	$repeater_path = trailingslashit( get_template_directory() ) . '/functions/customizer-repeater/functions.php';
+	if ( file_exists( $repeater_path ) ) {
+	require_once( $repeater_path );
+	}
+
+
+
 	
 	//wp title tag starts here
   	function quality_head( $title, $sep )
@@ -59,6 +68,9 @@
   		register_nav_menu( 'primary', __( 'Primary Menu', 'quality' ) ); //Navigation
   		// theme support 	
   		add_theme_support( 'automatic-feed-links');
+		
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
 		
 		//Title tag
 		add_theme_support( "title-tag" );
@@ -119,4 +131,23 @@
 	wp_enqueue_style( 'quality-info-button', get_template_directory_uri() . '/css/import-button.css' );
 	}
 	
-  ?>
+	
+	function quality_theme_plugin_notify() {
+   ?>
+               <div class="notice-warning notice is-dismissible">
+               <p><b><?php echo sprintf( esc_html__( ' Important Notice:  Hope you are enjoying this theme, Now in future service and project settings will be served by our companion plugin. No need to worry nothing will be lost. Install Webriti Companion Plugin go to customizer and install Webriti Companion plugin..', 'quality' ) ); ?></b></p>
+                <p><a href="<?php echo esc_url( admin_url( '/customize.php' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Go To Customizer', 'quality' ); ?></a></p>
+            </div>
+		
+   <?php
+	}
+	$old_theme = get_option( 'quality_pro_options');
+	if($old_theme!='')
+	{
+		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+if( is_plugin_active( 'webriti-companion/webriti-companion.php' ) ) {}	else{	
+	add_action( 'admin_notices', 'quality_theme_plugin_notify' );
+
+	}
+	}
+	?>

@@ -23,7 +23,7 @@ class quality_screen {
 
 		/* load welcome screen */
 		add_action( 'quality_info_screen', array( $this, 'quality_getting_started' ), 	    10 );
-		add_action( 'quality_info_screen', array( $this, 'quality_action_required' ), 	    20 );
+		//add_action( 'quality_info_screen', array( $this, 'quality_action_required' ), 	    20 );
 		add_action( 'quality_info_screen', array( $this, 'quality_child_themes' ), 		    30 );
 		add_action( 'quality_info_screen', array( $this, 'quality_github' ), 		            40 );
 		add_action( 'quality_info_screen', array( $this, 'quality_welcome_free_pro' ), 				50 );
@@ -205,8 +205,8 @@ class quality_screen {
 		<div class="col-md-12">
 		<ul class="quality-nav-tabs" role="tablist">
 			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting Started','quality'); ?></a></li>
-			<li role="presentation"><a href="#actions_required" aria-controls="actions_required" role="tab" data-toggle="tab"><?php esc_html_e( 'Actions Required','quality'); ?></a></li>
-			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Why Upgrade Pro','quality'); ?></a></li>
+			
+			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Why Upgrade to PRO?','quality'); ?></a></li>
 			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free VS PRO','quality'); ?></a></li>
 			<li role="presentation"><a href="#child_themes" aria-controls="child_themes" role="tab" data-toggle="tab"><?php esc_html_e( 'Child Themes','quality'); ?></a></li>
 			
@@ -231,14 +231,7 @@ class quality_screen {
 		require_once( get_template_directory() . '/functions/quality-info/sections/getting-started.php' );
 	}
 
-	
-	/**
-	 * Action Requerd
-	 *
-	 */
-	public function quality_action_required() {
-		require_once( get_template_directory() . '/functions/quality-info/sections/actions-required.php' );
-	}
+
 	
 	/**
 	 * Child themes
