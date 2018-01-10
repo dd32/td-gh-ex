@@ -2,7 +2,7 @@
 Contributors: makerspender
 Requires at least: WordPress 4.0
 Tested up to: WordPress 4.8
-Version: 1.0
+Version: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, custom-colors, custom-header, custom-menu, featured-images
@@ -22,7 +22,8 @@ For more information about appsetter please go to https://appsetter.com
 5. Navigate to Appearance > Customize in your admin panel and customize the rest of the options to your taste.
 
 == Changelog ==
-
+= 1.0.1 - Jan 10 2018 =
+* Fixed textdomain issues and few other warnings
 = 1.0 - Dec. 18 2017 =
 * Initial release
 

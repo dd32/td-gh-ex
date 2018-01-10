@@ -305,8 +305,8 @@ function appsetter_custom_pagination($numpages = '', $pagerange = '', $paged='')
     'end_size'        => 1,
     'mid_size'        => $pagerange,
     'prev_next'       => True,
-    'prev_text'       => __('&laquo;'),
-    'next_text'       => __('&raquo;'),
+    'prev_text'       => __('&laquo;', 'appsetter'),
+    'next_text'       => __('&raquo;', 'appsetter'),
     'type'            => 'plain',
     'add_args'        => false,
     'add_fragment'    => ''
