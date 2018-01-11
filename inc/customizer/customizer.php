@@ -345,7 +345,7 @@ if (! function_exists('awesomepress_dynamic_css') ) :
             .page .site-content > .inner,
             .error404 .custom-headers,
             .page .custom-headers' => array(
-                'max-width' => awesomepress_get_option('container-width-page') . 'px',
+                'max-width' => absint( awesomepress_get_option('container-width-page') ) . 'px',
             ),
 
             '.archive .site-content > .inner,
@@ -354,12 +354,12 @@ if (! function_exists('awesomepress_dynamic_css') ) :
             .archive .custom-headers,
             .search .custom-headers,
             .blog .custom-headers' => array(
-                'max-width' => awesomepress_get_option('container-width-archive') . 'px',
+                'max-width' => absint( awesomepress_get_option('container-width-archive') ) . 'px',
             ),
 
             '.single .site-content > .inner,
             .single .custom-headers' => array(
-                'max-width' => awesomepress_get_option('container-width-single') . 'px',
+                'max-width' => absint( awesomepress_get_option('container-width-single') ) . 'px',
             ),
             '.page-header' => array(
                 'background-image' => 'url('.get_header_image().')',

@@ -23,7 +23,7 @@
                 <?php printf( esc_html__('Proudly powered by %s', 'awesomepress'), 'WordPress'); ?>
             </a>
             <span class="sep"> <?php _e('|', 'awesomepress'); ?> </span>
-            <?php printf(esc_html__('Theme: %1$s', 'awesomepress'), '<a href="http://maheshwaghmare.wordpress.com/" rel="designer">AwesomePress</a>'); ?>
+            <?php printf(esc_html__('Theme: %1$s', 'awesomepress'), '<a href="http://surror.com/" rel="designer">AwesomePress</a>'); ?>
         </div><!-- .site-info -->
 
     <?php awesomepress_footer_bottom(); ?>
