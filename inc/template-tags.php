@@ -45,19 +45,17 @@ function bb_ecommerce_store_the_attached_image() {
 
 		// get the URL of the next image attachment...
 		if ( $next_id )
-			$next_attachment_url = esc_url( get_attachment_link( $next_id ) );
+			$next_attachment_url = ( get_attachment_link( $next_id ) );
 
 		// or get the URL of the first image attachment.
 		else
-			$next_attachment_url = esc_url( get_attachment_link( array_shift( $attachment_ids ) ) );
+			$next_attachment_url = ( get_attachment_link( array_shift( $attachment_ids ) ) );
 	}
 
 	printf( '<a href="%1$s" rel="attachment">%2$s</a>',
 		esc_url( $next_attachment_url ),
 		wp_get_attachment_image( $post->ID, $attachment_size )
 	);
-
-	wp_reset_postdata();
 }
 endif;
 

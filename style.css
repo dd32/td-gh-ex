@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/premium/ecommerce-store-wordpress-theme/
 Author: ThemeShopy
 Author URI: https://www.themeshopy.com
 Description: E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce Store is an elegant E-commerce/Woo-Commerce WordPress theme suitable for E-commerce websites of any store type such as online bookstore, electronic store, apparel & clothing store, fashion store, sport & athletic goods store, handbags & feminine products store, cosmetics & saloon item shop, jewelry & luxury item store and various multipurpose online stores. The modern design and smooth coding standard make them perfect for business, corporate, companies and freelancers. Who wants to have an impactful and awesome online presence? We also utilize best and clean coding standard that functions well with the latest WordPress version. This Free customizable responsive Woo-commerce WordPress theme includes plenty of customization options that are fairly easy to use. You can easily customize them, using the short codes and hook. Setting up, an astonishing e-store that's a dazzling beauty was never this easy before. Main features of our Free e-commerce-store includes Customizer theme options, background image, and color, SEO optimized, fully responsive, fast loading. Why stop there? If you can setup your website, easily utilizing our free business WordPress theme.  why not take it a notch further?  Upgrade to your premium theme, as it offers an army of features, along with customization options with a customer care support that will resolve your problems in no time. We have a devoted team of developers that believes in perfection and providing the best product for the users. This team will be ready at the helm to provide you with support and being your ultimate back-up. If you ever required our assistance. Customer satisfaction is our top priority; we strive to deliver the best and aren’t going to be ever content with anything less. If it doesn’t satisfy the user then it won’t please us either. You can easily set up and dip your hands into the world E-marketing with our free corporate WordPress theme. Our free themes are user and mobile friendly, very responsive and have a beautiful professional look.  It is not going to be enough in a longer run. Your business is bound to grow and with a booming business, you would need to make upgrades in almost every business aspect. The way your website appears and works is significant for an online store.  Upgrading to premium WordPress theme should take first priority, in that case. The first impression is the last impression and you can leave an ever-lasting one, with the aid of our premium WordPress theme.  Upgrade your free theme to premium now! You can take a free demo tour of our premium theme and see how it will sit on your website. Click on the click below to being your demo tour. https://www.themeshopy.com/ecommerce-store-wordpress-theme/
-Version: 1.2.4.4
+Version: 1.3
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-ecommerce-store
@@ -620,107 +620,11 @@ h3.ecomercepost-title {
   margin: 0 18%;
   display: inline-block;
 }
-/** Blog post css **
------------------------------------------------------------------*/
-.blog-thumb{ 
-  position:relative;
-}
-
-.blog-date{ 
-  position:absolute;
-  top:0;
-  left:0;
-}
-
-.blog-date .date{ 
-  background-color:#00A885;
-  color:#ffffff;
-  font:700 24px arial;
-  padding:5px 20px;
-}
-
-.blog-date .month{ 
-  background-color:#2e2e2e;
-  color:#ffffff;
-  font-size:14px;
-  padding:4px 20px;
-}
-
-.blog-author{ 
-  background-color:rgba(0,0,0,0.5);
-  color:#ffffff;
-  width:100%;
-   position:absolute;
-  bottom:6px;
-  padding:10px 0;
-  text-transform:uppercase;
-}
-
-.blog-author .blog-author-name{ 
-  float:left;
-  margin-left:10px;
-}
-
-.blog-author .comment-count{ 
-  float:right;
-  margin-right:10px;
-}
-
-.see-all-button { 
-  border:1px solid #444;
-  display:table;
-  font-size:16px;
-  font-weight:700;
-  margin:50px auto 0;
-  padding:10px 20px;
-  text-align:center;
-  text-transform:uppercase;
-  transition: all 0.3s ease 0s;
-  color:#f0efef;
-}
-
-.see-all-button:hover { 
-  background:#ff8a00;
-  border:#ff8a00 solid 1px;
-  color:#fff;
-}
-
-.clients{ 
-  text-align:center;
-}
-
-.clients img {
-  text-align: center;
-  vertical-align: middle;
-  margin:0 20px;
-}
-
-/*-------------- LATEST NEWS END -------------------------------------------*/
 
 /* --------- POST --------- */
-section#blog{
-  padding-top:0;
-  margin-top:0;
-}
-
-.blog-post h5{
-  text-transform:uppercase;
-  color: #000;
-}
-
-.feature-image-box{
-  width:100%;
-}
-
-.feature-image-box img{
-  height:230px;
-  width:100%;
-}
-
 .bradcrumbs{
   padding:30px 0;
 }
-
 .bradcrumbs a{
   background:#f1f1f1;
   color:#000;
@@ -728,11 +632,9 @@ section#blog{
   margin-right:5px;
   line-height: 37px;
 }
-
 .bradcrumbs a:hover{
   background:#ffd34e;
 }
-
 .bradcrumbs span{
   background:#dddddd;
   color:#000;
@@ -877,7 +779,7 @@ section#blog{
   font-weight:bold;
   font-size:12px;
 }
-#content-tc #comments ol li{
+#content-bb #comments ol li{
   width:100%;
   background:none;
   list-style:none;
@@ -886,7 +788,7 @@ section#blog{
   background:#eee;
   display:inline-block;
 }
-#content-tc #comments ul{
+#content-bb #comments ul{
   margin:0 0 0 40px;
 }
 #comments .reply{
@@ -1013,7 +915,7 @@ section#blog{
   float: left;
   margin-left: 2%;
 }
-.woocommerce-checkout #content-tc ul li{
+.woocommerce-checkout #content-bb ul li{
   list-style-type: none;
   padding: 1em 2em 1em 3.5em;
 }
@@ -1047,25 +949,25 @@ section#blog{
 .single .title-box{
   background-size:100% 100%;
 }
-#content-tc {
-  font-family:Helvetica;
+#content-bb {
+  font-family:Roboto;
 }
-#content-tc p{
+#content-bb p{
   line-height: 25px;
   font-size: 16px;
   margin:0 0 20px 0;
 }
-#content-tc hr{
+#content-bb hr{
   border:none;
   border-bottom:2px dotted #7e7e7e;
   margin:35px 0;
   clear:both;
 }
-#content-tc h1{
+#content-bb h1{
   font-size:35px;
   margin:20px 0 0 0;
 }
-#content-tc h2{
+#content-bb h2{
   font-size:30px;
   font-weight:normal;
   margin:0;
@@ -1074,7 +976,7 @@ section#blog{
   margin:0 0 15px;
   font-family:Roboto;
 }
-#content-tc h3{
+#content-bb h3{
   font-size:36px;
   font-weight:normal;
   margin:0;
@@ -1083,7 +985,7 @@ section#blog{
   margin:0 0 25px;
   font-family:Roboto;
 }
-#content-tc h4{
+#content-bb h4{
   font-size:20px;
   font-weight:bold;
   margin:0;
@@ -1092,48 +994,48 @@ section#blog{
   margin:0 0 10px;
   font-family:Roboto;
 }
-#content-tc  h6{
+#content-bb  h6{
   font-size:18px;
 }
-#content-tc  h6{
+#content-bb  h6{
   margin:0 0 15px;
   font-size:17px;
   padding:0;
   font-weight:bold;
   line-height:normal;
 }
-#content-tc ul{
+#content-bb ul{
   list-style:none;
   margin:0 0 0 10px;
   padding:10px 0 0;
   font-size:16px;
 }
-#content-tc ul li{
+#content-bb ul li{
   list-style-type: circle;
   padding:0 0 0 35px;
   margin:0 0 20px 0;
   line-height:25px;
 }
-#content-tc ul li ul li{
+#content-bb ul li ul li{
   list-style-type: circle;
 }
-#content-tc ol{
+#content-bb ol{
   list-style: none;
   margin:0 0 0 15px;
   padding:10px 0 0 0;
   font-size:16px;
   counter-reset: myCounter;
 }
-#content-tc ol li{
+#content-bb ol li{
   padding:0 0 0 0;
   margin:0 0 15px 5px;
   list-style:decimal;
 }
-#content-tc ol li ol li{
+#content-bb ol li ol li{
   margin:0 0 15px 0;
   padding:0 0 0 35px;
 }
-#content-tc  h5{
+#content-bb  h5{
   margin:0 0 15px;
   font-size:18px;
   padding:0;
@@ -1189,11 +1091,11 @@ a.button {
   color: #ffffff;
   font-weight:normal;
 }
-#content-tc .pagination ul{
+#content-bb .pagination ul{
   margin:0;
   clear:both;
 }
-#content-tc .pagination ul li{
+#content-bb .pagination ul li{
   margin:0;
 }
 
@@ -1300,12 +1202,8 @@ a.button {
 .wpcf7 form input[type="tel"],
 .wpcf7 form input[type="url"],
 .wpcf7 form input[type="date"],
-.wpcf7 form select, .leftdiv input[type="text"],
-.leftdiv input [type="url"],
-.leftdiv input[type="email"],
-.leftdiv input[type="tel"],
-.wpcf7 form textarea,
-.rightdiv textarea{ 
+.wpcf7 form select,
+.wpcf7 form textarea,{ 
   width:94%;
   background-color:#f8f8f8;
   border:1px solid #e6e5e5;
@@ -1329,19 +1227,7 @@ span.wpcf7-list-item{
 }
 
 .wpcf7 form input[type="submit"],
-#contact input[type="submit"],
-#contactform_main input[type='submit']{
-  margin:25px 0 0 0;
-  padding:5px 20px;
-  border:none;
-  color:#ffffff;
-  border-radius:4px;
-  -moz-border-radius:4px;
-  -o-border-radius:4px;
-  -webkit-border-radius:4px;
-  cursor:pointer;
-  background-color:#00A885;
-}
+
 
 .pagination{
   display:table;
@@ -1486,66 +1372,6 @@ nav.post-navigation{
   margin-top:15px;
 }
 
-.blog-post-repeat{ 
-  border-bottom:1px solid #cccccc;
-  margin-bottom:40px;
-}
-
-#contact .column-2{ 
-  width:65%;
-  float:left;
-  margin:0;
-}
-#contact .column-2.last_column{ 
-  width:25%;
-  margin-left:9%;
-}
-
-#contact .column-2.last_column span{ 
-  text-transform:capitalize;
-}
-
-#contact .column-2.last_column a{
-  color:#666666;
-}
-
-.leftdiv{ 
-  float:left;
-  width:48%;
-}
-
-.rightdiv{ 
-  float:right;
-  width:48%;
-}
-
-#contact .column-2 h2{ 
-  font:400 17px 'Oswald';
-  text-transform:uppercase;
-}
-
-.social-icons{ 
-  text-align:center;
-}
-
-.top-right .social-icons a {height: 50px;
-  margin:0;
-  vertical-align: 0;
-  width: 39px;
-  display: table;
-  float: left;
-  border-left:1px solid #727171;
-  color:#727171;
-}
-
-.top-right .social-icons a:hover{
-  color:#ffffff;
-}
-
-.top-right .social-icons a:last-child{ 
-  border-right:1px solid #727171;
-}
-
 .fa::before, fa::after{ 
   display:table-cell;
   vertical-align:middle;
@@ -1557,7 +1383,7 @@ nav.post-navigation{
 
 /*responsive menu*/
 @media screen and (max-width:686px){
-  #content-tc #comments ul{
+  #content-bb #comments ul{
     margin: 0!important;
   }
 }
@@ -1751,7 +1577,7 @@ nav.post-navigation{
     width: 30px;
     border: solid 1px;
   }
-  #content-tc #comments ol li {
+  #content-bb #comments ol li {
     padding: 10% 0 0 2%;
   }
   .comment-author img {
@@ -1787,11 +1613,5 @@ nav.post-navigation{
   #slider .slide-cap h2{
     font-size:150%;
     color:#ffffff;
-  }
-
-  .day-time{ 
-    border-bottom: 1px solid #fff;
-    margin-bottom: 15px;
-    padding-bottom: 20px;
   }
 }

@@ -41,12 +41,3 @@ function bb_ecommerce_store_header_style() {
 
 }
 endif; // bb_ecommerce_store_header_style
-
-// bb_ecommerce_store_admin_header_css
-add_action( 'admin_head', 'bb_ecommerce_store_admin_header_css' );
-function bb_ecommerce_store_admin_header_css() { ?>
-
-		<style>pre{white-space: pre-wrap;}</style>
-		
-	<?php
-}

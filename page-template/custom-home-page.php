@@ -64,8 +64,7 @@ get_header(); ?>
 				          </div>
 				        </div>
 				      </div>
-				        <?php $bb_ecommerce_store_k++;
-				    	wp_reset_postdata();
+				        <?php $bb_ecommerce_store_k++;				    	
 				    } ?>
 				</div>
 			    <?php else : ?>
@@ -108,7 +107,8 @@ get_header(); ?>
 			  <?php else : ?>
 			      <div class="no-postfound"></div>
 			  <?php endif;
-			endif;?>
+			endif;
+			wp_reset_postdata();?>
 		    <div class="clearfix"></div> 
 		</section>
 	</div>

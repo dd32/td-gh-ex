@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<div id="content-tc" class="container">
+<div id="content-bb" class="container">
     <div class="middle-align">
         <?php
             $left_right = get_theme_mod( 'bb_ecommerce_store_theme_options','One Column');

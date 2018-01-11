@@ -15,7 +15,7 @@ get_header(); ?>
 	        $left_right = get_theme_mod( 'bb_ecommerce_store_theme_options','One Column');
 	        if($left_right == 'Left Sidebar'){ ?> 
 	    	<div id="sidebar" class="col-md-4 col-sm-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
-			<div class="col-md-8 col-sm-8" id="content-tc">
+			<div class="col-md-8 col-sm-8" id="content-bb">
 				<?php while ( have_posts() ) : the_post(); ?>
 					<h1><?php the_title();?></h1>
 					<div class="metabox">
@@ -70,7 +70,7 @@ get_header(); ?>
 	            <?php endwhile; // end of the loop. ?>
 	       	</div>
 	    <?php }else if($left_right == 'Right Sidebar'){ ?>
-	       	<div class="col-md-8 col-sm-8" id="content-tc">
+	       	<div class="col-md-8 col-sm-8" id="content-bb">
 				<?php while ( have_posts() ) : the_post(); ?>
 					<h1><?php the_title();?></h1>
 					<div class="metabox">
@@ -126,7 +126,7 @@ get_header(); ?>
 	       	</div>
 			<div id="sidebar" class="col-md-4 col-sm-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
 		<?php }else if($left_right == 'One Column'){ ?>
-			<div class="col-md-12 col-sm-12" id="content-tc">
+			<div class="col-md-12 col-sm-12" id="content-bb">
 				<?php while ( have_posts() ) : the_post(); ?>
 					<h1><?php the_title();?></h1>
 					<div class="metabox">
@@ -182,7 +182,7 @@ get_header(); ?>
 	       	</div>
 	    <?php }else if($left_right == 'Three Columns'){ ?>
 	       	<div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
-	       	<div class="col-md-6 col-sm-6" id="content-tc">
+	       	<div class="col-md-6 col-sm-6" id="content-bb">
 				<?php while ( have_posts() ) : the_post(); ?>
 					<h1><?php the_title();?></h1>
 					<div class="metabox">
@@ -239,7 +239,7 @@ get_header(); ?>
 			<div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
 		<?php }else if($left_right == 'Four Columns'){ ?>
 			<div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
-	       	<div class="col-md-3 col-sm-3" id="content-tc">
+	       	<div class="col-md-3 col-sm-3" id="content-bb">
 				<?php while ( have_posts() ) : the_post(); ?>
 					<h1><?php the_title();?></h1>
 					<div class="metabox">
@@ -296,7 +296,7 @@ get_header(); ?>
 			<div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
 			<div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar('sidebar-3'); ?></div>
 		<?php }else if($left_right == 'Grid Layout'){ ?>
-			<div class="col-md-8 col-sm-8" id="content-tc">
+			<div class="col-md-8 col-sm-8" id="content-bb">
 				<?php while ( have_posts() ) : the_post(); ?>
 					<h1><?php the_title();?></h1>
 					<div class="metabox">

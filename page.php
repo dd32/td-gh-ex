@@ -14,7 +14,7 @@ get_header(); ?>
 
 <?php do_action( 'bb_ecommerce_store_page_header' ); ?>
 
-<div id="content-tc" class="container">
+<div id="content-bb" class="container">
     <div class="middle-align">       
         <div class="col-md-12">
             <?php 

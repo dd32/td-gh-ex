@@ -1031,7 +1031,7 @@ section#blog{
 }
 
 
-#content-tc #comments ol li{
+#content-bb #comments ol li{
   width:100%;
   background:none;
   list-style:none;
@@ -1041,7 +1041,7 @@ section#blog{
   display:inline-block;
 }
 
-#content-tc #comments ul{
+#content-bb #comments ul{
   margin:0 40px 0 0;
 }
 
@@ -1185,7 +1185,7 @@ section#blog{
   margin-right: 2%;
 }
 
-.woocommerce-checkout #content-tc ul li{
+.woocommerce-checkout #content-bb ul li{
   list-style-type: none;
   padding: 1em 3.5em 1em 2em;
 }
@@ -1223,29 +1223,29 @@ section#blog{
   background-size:100% 100%;
 }
 
-#content-tc {
+#content-bb {
   font-family:Helvetica;
 }
 
-#content-tc p{
+#content-bb p{
   line-height: 25px;
   font-size: 16px;
   margin:0 0 20px 0;
 }
 
-#content-tc hr{
+#content-bb hr{
   border:none;
   border-bottom:2px dotted #7e7e7e;
   margin:35px 0;
   clear:both;
 }
 
-#content-tc h1{
+#content-bb h1{
   font-size:35px;
   margin:20px 0 0 0;
 }
 
-#content-tc h2{
+#content-bb h2{
   font-size:30px;
   font-weight:normal;
   margin:0;
@@ -1255,7 +1255,7 @@ section#blog{
   font-family:Roboto;
 }
 
-#content-tc h3{
+#content-bb h3{
   font-size:36px;
   font-weight:normal;
   margin:0;
@@ -1265,7 +1265,7 @@ section#blog{
   font-family:Roboto;
 }
 
-#content-tc h4{
+#content-bb h4{
   font-size:20px;
   font-weight:bold;
   margin:0;
@@ -1275,11 +1275,11 @@ section#blog{
   font-family:Roboto;
 }
 
-#content-tc  h6{
+#content-bb  h6{
   font-size:18px;
 }
 
-#content-tc  h6{
+#content-bb  h6{
   margin:0 0 15px;
   font-size:17px;
   padding:0;
@@ -1287,25 +1287,25 @@ section#blog{
   line-height:normal;
 }
 
-#content-tc ul{
+#content-bb ul{
   list-style:none;
   margin:0 10px 0 0;
   padding:10px 0 0;
   font-size:16px;
 }
 
-#content-tc ul li{
+#content-bb ul li{
   list-style-type: circle;
   padding:0 35px 0 0;
   margin:0 0 20px 0;
   line-height:25px;
 }
 
-#content-tc ul li ul li{
+#content-bb ul li ul li{
   list-style-type: circle;
 }
 
-#content-tc ol{
+#content-bb ol{
   list-style: none;
   margin:0 15px 0 0;
   padding:10px 0 0 0;
@@ -1313,18 +1313,18 @@ section#blog{
   counter-reset: myCounter;
 }
 
-#content-tc ol li{
+#content-bb ol li{
   padding:0 0 0 0;
   margin:0 5px 15px 0;
   list-style:decimal;
 }
 
-#content-tc ol li ol li{
+#content-bb ol li ol li{
   margin:0 0 15px 0;
   padding:0 35px 0 0;
 }
 
-#content-tc  h5{
+#content-bb  h5{
   margin:0 0 15px;
   font-size:18px;
   padding:0;
@@ -1386,12 +1386,12 @@ a.button {
     font-weight:normal;
 }
 
-#content-tc .pagination ul{
+#content-bb .pagination ul{
   margin:0;
   clear:both;
 }
 
-#content-tc .pagination ul li{
+#content-bb .pagination ul li{
   margin:0;
 }
 
@@ -1502,7 +1502,7 @@ a.button {
     width: 30px;
     border: solid 1px;
   }
-  #content-tc #comments ol li {
+  #content-bb #comments ol li {
     padding: 10% 2% 0 0;
   }
   .comment-author img {
@@ -1887,7 +1887,7 @@ section#contact-box {
 }
 
 @media screen and (max-width:686px){
-  #content-tc #comments ul{
+  #content-bb #comments ul{
     margin: 0!important;
   }
 }

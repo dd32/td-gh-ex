@@ -33,7 +33,7 @@ get_header(); ?>
 
             else :
 
-              get_template_part( 'no-results', 'archive' ); 
+              get_template_part( 'no-results' ); 
 
             endif; 
         ?>
@@ -63,7 +63,7 @@ get_header(); ?>
 
             else :
 
-              get_template_part( 'no-results', 'archive' ); 
+              get_template_part( 'no-results' ); 
 
             endif; 
         ?>
@@ -94,7 +94,7 @@ get_header(); ?>
 
             else :
 
-              get_template_part( 'no-results', 'archive' ); 
+              get_template_part( 'no-results' ); 
 
             endif; 
         ?>
@@ -125,7 +125,7 @@ get_header(); ?>
 
             else :
 
-              get_template_part( 'no-results', 'archive' ); 
+              get_template_part( 'no-results' ); 
 
             endif; 
         ?>
@@ -157,7 +157,7 @@ get_header(); ?>
 
             else :
 
-              get_template_part( 'no-results', 'archive' ); 
+              get_template_part( 'no-results' ); 
 
             endif; 
         ?>
@@ -189,7 +189,7 @@ get_header(); ?>
 
             else :
 
-              get_template_part( 'no-results', 'archive' ); 
+              get_template_part( 'no-results' ); 
 
             endif; 
         ?>

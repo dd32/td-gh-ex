@@ -18,26 +18,6 @@ if ( ! function_exists( 'bb_ecommerce_store_setup' ) ) :
  * support post thumbnails.
  */
 
-function bb_ecommerce_store_the_breadcrumb() {
-	if (!is_home()) {
-		echo '<a href="';
-			echo esc_url( home_url() );
-		echo '">';
-			bloginfo('name');
-		echo "</a> ";
-		if (is_category() || is_single()) {
-			the_category(',');
-			if (is_single()) {
-				echo "<span> ";
-					the_title();
-				echo "</span> ";
-			}
-		} elseif (is_page()) {
-			the_title();
-		}
-	}
-}
-
 /* Theme Setup */
 function bb_ecommerce_store_setup() {
 
@@ -234,18 +214,11 @@ function bb_ecommerce_store_ie_stylesheet(){
 add_action('wp_enqueue_scripts','bb_ecommerce_store_ie_stylesheet');
 
 
-define('bb_ecommerce_store_CREDIT','https://www.themeshopy.com','bb-ecommerce-store');
+define('bb_ecommerce_store_CREDIT','https://www.themeshopy.com/product/premium/ecommerce-store-wordpress-theme/','bb-ecommerce-store');
 
 if ( ! function_exists( 'bb_ecommerce_store_credit' ) ) {
 	function bb_ecommerce_store_credit(){
-			echo "<a href=".esc_url(bb_ecommerce_store_CREDIT)." target='_blank' rel='nofollow'>Themeshopy</a>";
-	}
-}
-define('bb_ecommerce_store_CREDIT1','https://www.themeshopy.com/premium/ecommerce-store-wordpress-theme/','bb-ecommerce-store');
-
-if ( ! function_exists( 'bb_ecommerce_store_credit1' ) ) {
-	function bb_ecommerce_store_credit1(){
-			echo "<a href=".esc_url(bb_ecommerce_store_CREDIT1)." target='_blank' rel='nofollow'>Ecommerce WordPress Theme</a>";
+			echo "<a href=".esc_url(bb_ecommerce_store_CREDIT)." target='_blank'>Ecommerce WordPress Theme</a>";
 	}
 }
 
@@ -278,21 +251,6 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
     $fragments['a.cart-contents'] = ob_get_clean();
     
     return $fragments;
-}
-
-// mailing Function
-
-	if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
-	// do your stuff
-	$url = get_site_url();
-	// The message
-	$message = "A New Ecommerce WordPress Theme is activated on $url ";
-
-	// In case any of our lines are larger than 70 characters, we should use wordwrap()
-	$message = wordwrap($message, 70, "\r\n");
-
-	// Send
-	wp_mail('themeshopyy@gmail.com', 'Theme Activated', $message);
 }
 
 /* Custom template tags for this theme. */

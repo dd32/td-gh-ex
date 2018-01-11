@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<div id="content-tc">
+<div id="content-bb">
     <div class="container">
         <div class="page-content">      
             <div class="col-md-12">

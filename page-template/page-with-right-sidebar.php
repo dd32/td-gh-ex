@@ -9,7 +9,7 @@ get_header(); ?>
 
 <div class="container">
     <div class="middle-align">       
-		<div class="col-md-9" id="content-tc">
+		<div class="col-md-9" id="content-bb">
 
 			<?php while ( have_posts() ) : the_post(); ?>	
                 

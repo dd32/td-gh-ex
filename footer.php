@@ -27,10 +27,10 @@
     </div>
 	<div class="inner">
         <div class="copyright">
-           <p><?php echo esc_html(bb_ecommerce_store_credit1(),'bb-ecommerce-store'); ?> <?php echo esc_html(get_theme_mod('bb_ecommerce_store_footer_copy',__('By','bb-ecommerce-store'))); ?> <?php echo esc_html(bb_ecommerce_store_credit(),'bb-ecommerce-store'); ?></p>
-        </div><!-- copyright -->
+           <p><?php echo esc_html(bb_ecommerce_store_credit(),'bb-ecommerce-store'); ?> <?php echo esc_html(get_theme_mod('bb_ecommerce_store_footer_copy',__('By ThemeShopy','bb-ecommerce-store'))); ?></p>
+        </div>
         <div class="clear"></div>
-    </div><!-- inner -->
+    </div>
     <?php wp_footer(); ?>
 
     </body>
