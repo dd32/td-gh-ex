@@ -5,7 +5,7 @@
  * @package Conica
  */
 
-define( 'CONICA_THEME_VERSION' , '1.3.09' );
+define( 'CONICA_THEME_VERSION' , '1.3.10' );
 
 // Get help / Premium Page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -135,21 +135,21 @@ function conica_scripts() {
 	endif;
 	
 	if ( get_theme_mod( 'conica-set-header-layout' ) == 'conica-header-layout-two' ) :
-		wp_enqueue_style( 'conica-header-style-two', get_template_directory_uri().'/templates/css/header/header-two.css', array(), CONICA_THEME_VERSION );
+		wp_enqueue_style( 'conica-header-style', get_template_directory_uri().'/templates/css/header/header-two.css', array(), CONICA_THEME_VERSION );
 	elseif ( get_theme_mod( 'conica-set-header-layout' ) == 'conica-header-layout-three' ) :
-		wp_enqueue_style( 'conica-header-style-three', get_template_directory_uri().'/templates/css/header/header-three.css', array(), CONICA_THEME_VERSION );
+		wp_enqueue_style( 'conica-header-style', get_template_directory_uri().'/templates/css/header/header-three.css', array(), CONICA_THEME_VERSION );
 	elseif ( get_theme_mod( 'conica-set-header-layout' ) == 'conica-header-layout-four' ) :
-		wp_enqueue_style( 'conica-header-style-four', get_template_directory_uri().'/templates/css/header/header-four.css', array(), CONICA_THEME_VERSION );
+		wp_enqueue_style( 'conica-header-style', get_template_directory_uri().'/templates/css/header/header-four.css', array(), CONICA_THEME_VERSION );
 	else :
-		wp_enqueue_style( 'conica-header-style-one', get_template_directory_uri().'/templates/css/header/header-one.css', array(), CONICA_THEME_VERSION );
+		wp_enqueue_style( 'conica-header-style', get_template_directory_uri().'/templates/css/header/header-one.css', array(), CONICA_THEME_VERSION );
 	endif;
 	
 	if ( get_theme_mod( 'conica-footer-layout' ) == 'conica-footer-layout-social' ) :
-	    wp_enqueue_style( 'conica-footer-social-style', get_template_directory_uri().'/templates/css/footer/footer-social.css', array(), CONICA_THEME_VERSION );
+	    wp_enqueue_style( 'conica-footer-style', get_template_directory_uri().'/templates/css/footer/footer-social.css', array(), CONICA_THEME_VERSION );
 	elseif ( get_theme_mod( 'conica-footer-layout' ) == 'conica-footer-layout-none' ) :
-	    wp_enqueue_style( 'conica-no-footer-style', get_template_directory_uri().'/templates/css/footer/footer-none.css', array(), CONICA_THEME_VERSION );
+	    wp_enqueue_style( 'conica-footer-style', get_template_directory_uri().'/templates/css/footer/footer-none.css', array(), CONICA_THEME_VERSION );
 	else :
-		wp_enqueue_style( 'conica-footer-standard-style', get_template_directory_uri().'/templates/css/footer/footer-standard.css', array(), CONICA_THEME_VERSION );
+		wp_enqueue_style( 'conica-footer-style', get_template_directory_uri().'/templates/css/footer/footer-standard.css', array(), CONICA_THEME_VERSION );
 	endif;
 	
 	wp_enqueue_script( 'conica-caroufredSel', get_template_directory_uri() . '/js/caroufredsel/jquery.carouFredSel-6.2.1-packed.js', array('jquery'), CONICA_THEME_VERSION, true );

@@ -61,30 +61,38 @@ global $woocommerce; ?>
                 <div class="site-header-main site-header-nocart">
                 <?php endif; ?>
                     
-                    <nav id="site-navigation" class="main-navigation <?php echo ( get_theme_mod( 'conica-set-navigation-style' ) ) ? sanitize_html_class( get_theme_mod( 'conica-set-navigation-style' ) ) : sanitize_html_class( 'conica-navigation-style-blocks' ); ?> conica-navigation-animation-none" role="navigation">
-                        <span class="header-menu-button"><i class="fa fa-bars"></i><span><?php echo esc_attr( get_theme_mod( 'conica-set-text-mobile-nav', __( 'MENU', 'conica' ) ) ); ?></span></span>
-                        <div id="main-menu" class="main-menu-container">
-                            <span class="main-menu-close"><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></span>
+                    <?php if ( get_theme_mod( 'conica-plugin-mega-menu' ) ) : ?>
+                        <nav class="main-navigation-mm">
                             <?php wp_nav_menu( array( 'theme_location' => 'conica-main-menu' ) ); ?>
-                            <div class="clearboth"></div>
-                        </div>
-                    </nav> <!-- #site-navigation -->
-                    
-                    <?php if ( conica_is_woocommerce_activated() ) : ?>
-                        <?php if ( !get_theme_mod( 'conica-set-header-cart' ) ) : ?>
-                            <div class="header-cart">
-                                
-                                <a class="header-cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart', 'conica' ); ?>">
-                                    <span class="header-cart-amount">
-                                        <?php echo sprintf( _n( '(%d)', '(%d)', $woocommerce->cart->cart_contents_count, 'conica' ), $woocommerce->cart->cart_contents_count ); ?> <?php echo $woocommerce->cart->get_cart_total(); ?>
-                                    </span>
-                                    <span class="header-cart-checkout <?php echo ( $woocommerce->cart->cart_contents_count > 0 ) ? sanitize_html_class( 'cart-has-items' ) : ''; ?>">
-                                        <i class="fa <?php echo ( get_theme_mod( 'conica-cart-icon' ) ) ? sanitize_html_class( get_theme_mod( 'conica-cart-icon' ) ) : sanitize_html_class( 'fa-shopping-cart' ); ?>"></i>
-                                    </span>
-                                </a>
-                                
+                        </nav><!-- #site-navigation -->
+                    <?php else : ?>
+                        
+                        <nav id="site-navigation" class="main-navigation <?php echo ( get_theme_mod( 'conica-set-navigation-style' ) ) ? sanitize_html_class( get_theme_mod( 'conica-set-navigation-style' ) ) : sanitize_html_class( 'conica-navigation-style-blocks' ); ?> conica-navigation-animation-none" role="navigation">
+                            <span class="header-menu-button"><i class="fa fa-bars"></i><span><?php echo esc_attr( get_theme_mod( 'conica-set-text-mobile-nav', __( 'MENU', 'conica' ) ) ); ?></span></span>
+                            <div id="main-menu" class="main-menu-container">
+                                <span class="main-menu-close"><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></span>
+                                <?php wp_nav_menu( array( 'theme_location' => 'conica-main-menu' ) ); ?>
+                                <div class="clearboth"></div>
                             </div>
+                        </nav> <!-- #site-navigation -->
+                        
+                        <?php if ( conica_is_woocommerce_activated() ) : ?>
+                            <?php if ( !get_theme_mod( 'conica-set-header-cart' ) ) : ?>
+                                <div class="header-cart">
+                                    
+                                    <a class="header-cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart', 'conica' ); ?>">
+                                        <span class="header-cart-amount">
+                                            <?php echo sprintf( _n( '(%d)', '(%d)', $woocommerce->cart->cart_contents_count, 'conica' ), $woocommerce->cart->cart_contents_count ); ?> <?php echo $woocommerce->cart->get_cart_total(); ?>
+                                        </span>
+                                        <span class="header-cart-checkout <?php echo ( $woocommerce->cart->cart_contents_count > 0 ) ? sanitize_html_class( 'cart-has-items' ) : ''; ?>">
+                                            <i class="fa <?php echo ( get_theme_mod( 'conica-cart-icon' ) ) ? sanitize_html_class( get_theme_mod( 'conica-cart-icon' ) ) : sanitize_html_class( 'fa-shopping-cart' ); ?>"></i>
+                                        </span>
+                                    </a>
+                                    
+                                </div>
+                            <?php endif; ?>
                         <?php endif; ?>
+                        
                     <?php endif; ?>
                     
                     <?php if ( get_theme_mod( 'conica-set-show-search' ) ) : ?>

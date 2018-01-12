@@ -15,6 +15,24 @@ if ( ! function_exists( 'customizer_library_conica_build_styles' ) && class_exis
  */
 function customizer_library_conica_build_styles() {
 	
+	// Site Logo Max Width
+	$setting = 'conica-logo-max-width';
+	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+	if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+		$logo_max_width = esc_attr( $mod );
+
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.site-branding a.custom-logo-link'
+			),
+			'declarations' => array(
+				'max-width' => $logo_max_width . 'px'
+			)
+		) );
+	}
+	
 	// Primary Color
 	$setting = 'conica-primary-color';
 	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );

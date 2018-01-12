@@ -1,4 +1,3 @@
-
 <?php if ( get_theme_mod( 'conica-set-header-layout' ) == 'conica-header-layout-two' ) : ?>
     
     <?php get_template_part( '/templates/header/header-two' ); ?>

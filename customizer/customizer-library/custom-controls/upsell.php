@@ -22,7 +22,7 @@ class Customizer_Library_Upsell extends WP_Customize_Control {
 	 */
 	public function render_content() {
 		?>
-		<div class="kaira-upsell">
+		<div class="kaira-notes">
             <div class="kaira-upsell-desc"><?php echo wp_kses_post( $this->description ); ?></div>
 		</div>
 		<?php

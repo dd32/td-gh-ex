@@ -26,22 +26,40 @@ function customizer_library_conica_options() {
 
 	// Adds the sections to the $options array
 	$options['sections'] = $sections;
+    
+    // Header Image
+    $section = 'title_tagline';
+    
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'Site Identity', 'conica' ),
+        'priority' => '20',
+        'description' => 'Change/edit the <a href="#conica-panel-website-section-header" rel="tc-section">Header</a> & <a href="#conica-panel-website-section-footer" rel="tc-section">Footer</a> Layouts<br />Add a <a href="#conica-panel-website-section-slider" rel="tc-section">Home Page Slider</a><br />Change/edit the <a href="#conica-panel-website-section-blog-list" rel="tc-section">Blog Layout</a><br />Add/edit <a href="#conica-panel-website-section-single-page" rel="tc-section">Pages Featured Image</a><br />Add/edit <a href="#conica-panel-website-section-blog-single" rel="tc-section">Single Posts featured image</a><br />Add <a href="#conica-section-social" rel="tc-section">Social Links</a> to your site<br />Edit <a href="#conica-panel-text" rel="tc-panel">Website Text</a>'
+    );
 
+    $options['conica-logo-max-width'] = array(
+        'id' => 'conica-logo-max-width',
+        'label'   => __( 'Set a max-width for the logo', 'conica' ),
+        'section' => $section,
+        'type'    => 'number',
+        'description' => __( 'This only applies if a logo image is uploaded', 'conica' ),
+    );
 
     $panel = 'conica-panel-website';
 
     $panels[] = array(
         'id' => $panel,
-        'title' => __( 'Theme Settings', 'conica' ),
-        'priority' => '20'
+        'title' => __( 'Conica Theme Settings', 'conica' ),
+        'priority' => '30'
     );
-
+    
     $section = 'conica-panel-website-section-website'; // --------------------------------- Website Layout Settings
 
     $sections[] = array(
         'id' => $section,
         'title' => __( 'Layout Settings', 'conica' ),
         'priority' => '10',
+        'description' => 'Change/edit the <a href="#conica-panel-website-section-header" rel="tc-section">Header</a> & <a href="#conica-panel-website-section-footer" rel="tc-section">Footer</a> Layouts<br />Add a <a href="#conica-panel-website-section-slider" rel="tc-section">Home Page Slider</a><br />Change/edit the <a href="#conica-panel-website-section-blog-list" rel="tc-section">Blog Layout</a><br />Add/edit <a href="#conica-panel-website-section-single-page" rel="tc-section">Pages Featured Image</a><br />Add/edit <a href="#conica-panel-website-section-blog-single" rel="tc-section">Single Posts featured image</a><br />Add <a href="#conica-section-social" rel="tc-section">Social Links</a> to your site<br />Edit <a href="#conica-panel-text" rel="tc-panel">Website Text</a>',
         'panel' => $panel
     );
 
@@ -74,7 +92,7 @@ function customizer_library_conica_options() {
         'label'   => __( 'Add Side Aligned Social Icons', 'conica' ),
         'section' => $section,
         'type'    => 'checkbox',
-        'description' => __( 'Add Social Icons for this to show', 'conica' ),
+        'description' => __( 'Add <a href="#conica-section-social" rel="tc-section">Social Icons</a> for this to show', 'conica' ),
         'default' => 0,
     );
 
@@ -456,8 +474,8 @@ function customizer_library_conica_options() {
 
     $panels[] = array(
         'id' => $panel,
-        'title' => __( 'Text Settings', 'conica' ),
-        'priority' => '20'
+        'title' => __( 'Conica Text Settings', 'conica' ),
+        'priority' => '40'
     );
 
     $section = 'conica-panel-text-section-header'; // ------------------------------------------- Header Text
@@ -587,8 +605,8 @@ function customizer_library_conica_options() {
 
     $panels[] = array(
         'id' => $panel,
-        'title' => __( 'Font Options', 'conica' ),
-        'priority' => '30'
+        'title' => __( 'Conica Font Options', 'conica' ),
+        'priority' => '50'
     );
 
     $section = 'conica-panel-font-section-site'; // ----------------------------------------- Default Fonts
@@ -665,8 +683,8 @@ function customizer_library_conica_options() {
 
     $sections[] = array(
         'id' => $section,
-        'title' => __( 'Social Links', 'conica' ),
-        'priority' => '80'
+        'title' => __( 'Conica Social Links', 'conica' ),
+        'priority' => '60'
     );
 
     $options['conica-social-email'] = array(
@@ -681,6 +699,12 @@ function customizer_library_conica_options() {
         'section' => $section,
         'type'    => 'text',
     );
+    $options['conica-social-twitter'] = array(
+        'id' => 'conica-social-twitter',
+        'label'   => __( 'Twitter', 'conica' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
     $options['conica-social-google-plus'] = array(
         'id' => 'conica-social-google-plus',
         'label'   => __( 'Google Plus', 'conica' ),
@@ -690,6 +714,30 @@ function customizer_library_conica_options() {
     $options['conica-social-linkedin'] = array(
         'id' => 'conica-social-linkedin',
         'label'   => __( 'LinkedIn', 'conica' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['conica-social-behance'] = array(
+        'id' => 'conica-social-behance',
+        'label'   => __( 'Behance', 'conica' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['conica-social-tumblr'] = array(
+        'id' => 'conica-social-tumblr',
+        'label'   => __( 'Tumblr', 'conica' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['conica-social-flickr'] = array(
+        'id' => 'conica-social-flickr',
+        'label'   => __( 'Flickr', 'conica' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['conica-social-vk'] = array(
+        'id' => 'conica-social-vk',
+        'label'   => __( 'VK', 'conica' ),
         'section' => $section,
         'type'    => 'text',
     );
@@ -708,7 +756,7 @@ function customizer_library_conica_options() {
     $sections[] = array(
         'id' => $section,
         'title' => __( 'Colors', 'conica' ),
-        'priority' => '40'
+        'priority' => '70'
     );
 
     $options['conica-primary-color'] = array(
@@ -732,6 +780,25 @@ function customizer_library_conica_options() {
         'description' => __( '<b>Premium Extra Features:</b><br />Conica Premium ($25) has advanced color settings to change Header, Top Bar and Navigation colors, Default Slider colors, Page Title & Widget heading colors, Footer & Bottom Bar colors + more', 'conica' )
     );
     // --------------------------------------------------------------- Colors
+    
+    // Site Plugins Support
+    $section = 'conica-plugin-support-section';
+
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'Plugin Support', 'conica' ),
+        'priority' => '120',
+        'description' => __( 'Conica adds/removes custom styling to support external plugins', 'conica' )
+    );
+    
+    $options['conica-plugin-mega-menu'] = array(
+        'id' => 'conica-plugin-mega-menu',
+        'label'   => __( 'Mega Menu', 'conica' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
+    
 
 	// Adds the sections to the $options array
 	$options['sections'] = $sections;

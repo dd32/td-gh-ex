@@ -79,6 +79,16 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.10
+* Style tweaks/fixes
+* Neatened Customizer Settings
+* Added interlinking for Customizer easier navigation
+* Fixed enqueue Scripts/Styles for Child Themes
+* Added new setting to set uploaded logo width
+* Added 5 NEW Social Icons - Customize -> Social
+* Added compatibility for Mega Menus - Customize -> Plugin Support
+* Updated the language .pot file
+
 #### 1.3.09
 * Styling fixes/tweaks
 * Added NEW side social icons
