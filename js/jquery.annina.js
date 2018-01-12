@@ -1,5 +1,5 @@
 (function($) {
-	"use strict";
+	'use strict';
 	$(document).ready(function() {
 		/*-----------------------------------------------------------------------------------*/
 		/*  If the Tagcloud widget exist or Edit Comments Link exist
