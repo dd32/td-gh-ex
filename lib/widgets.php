@@ -562,7 +562,7 @@ class Kadence_Recent_Posts_Widget extends WP_Widget {
     <input id="<?php echo esc_attr( $this->get_field_id('number') ); ?>" name="<?php echo esc_attr( $this->get_field_name('number') ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" size="3" /></p>
         <p>
     <label for="<?php echo esc_attr( $this->get_field_id('thecate') ); ?>"><?php esc_html_e('Limit to Catagory (Optional):', 'virtue'); ?></label>
-    <select id="<?php echo esc_attr( $this->get_field_id('thecate') ); ?>" name="<?php echo esc_attr( $this->get_field_name('thecate') ); ?>"><?php echo wp_kses_post( implode('', $cate_options) ); ?></select>
+    <select id="<?php echo esc_attr( $this->get_field_id('thecate') ); ?>" name="<?php echo esc_attr( $this->get_field_name('thecate') ); ?>"><?php echo wp_kses( implode('', $cate_options ), virtue_admin_allowed_html() ); ?></select>
   </p>
 <?php
   }
@@ -590,46 +590,51 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
       echo $before_widget; ?>
         <?php if ( $title ) echo $before_title . $title . $after_title;
         
-       switch ($instance['gridchoice']) {
+		switch ($instance['gridchoice']) {
       
-        case "portfolio" :
-        
-          $r = new WP_Query( apply_filters('widget_posts_args', array( 
-          'post_type' => 'portfolio', 
-          'portfolio-type' => $instance['thetype'], 
-          'no_found_rows' => true, 
-          'posts_per_page' => $number, 
-          'post_status' => 'publish', 
-          'ignore_sticky_posts' => true ) ) );
-          if ($r->have_posts()) :
-          ?>        
-          <div class="imagegrid-widget">
-          <?php  while ($r->have_posts()) : $r->the_post(); ?>
-          
-          <?php global $post; if(has_post_thumbnail( $post->ID ) ) { ?> <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="imagegrid_item lightboxhover"><?php the_post_thumbnail( 'widget-thumb' ); ?>
-          </a>
-                    <?php } ?>
-          <?php endwhile; ?>
-          </div>
-          <?php wp_reset_postdata(); endif;
-                break;
-                case "post":          
-            $r = new WP_Query( apply_filters( 'widget_posts_args', array( 'posts_per_page' => $number, 'category_name' => $instance['thecat'], 'no_found_rows' => true, 'post_status' => 'publish', 'ignore_sticky_posts' => true ) ) );
-            if ($r->have_posts()) : ?>
-            <div class="imagegrid-widget">
-          <?php  while ($r->have_posts()) : $r->the_post(); ?>
-          
-            <?php if(has_post_thumbnail( $post->ID ) ) { ?> <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="imagegrid_item lightboxhover"><?php the_post_thumbnail( 'widget-thumb' ); ?></a><?php } ?>
-          <?php endwhile; ?>
-          </div>
-          <?php wp_reset_postdata(); endif;
-               break; 
-       } ?>
-             
-             <div class="clearfix"></div>
-      <?php echo $after_widget; ?>
-        
-<?php
+	        case "portfolio" :
+	        
+				$r = new WP_Query( apply_filters('widget_posts_args', array( 
+				'post_type' => 'portfolio', 
+				'portfolio-type' => $instance['thetype'], 
+				'no_found_rows' => true, 
+				'posts_per_page' => $number, 
+				'post_status' => 'publish', 
+				'ignore_sticky_posts' => true ) ) );
+				if ($r->have_posts()) :
+				?>        
+				<div class="imagegrid-widget">
+					<?php  while ($r->have_posts()) : $r->the_post(); 
+						global $post; 
+						if( has_post_thumbnail( $post->ID ) ) { ?>
+							<a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="imagegrid_item lightboxhover">
+								<?php the_post_thumbnail( 'widget-thumb' ); ?>
+							</a>
+						<?php } 
+					endwhile; ?>
+					</div>
+					<?php wp_reset_postdata(); 
+				endif;
+			break;
+			case "post":
+				$r = new WP_Query( apply_filters( 'widget_posts_args', array( 'posts_per_page' => $number, 'category_name' => $instance['thecat'], 'no_found_rows' => true, 'post_status' => 'publish', 'ignore_sticky_posts' => true ) ) );
+				if ( $r->have_posts() ) : ?>
+					<div class="imagegrid-widget">
+					<?php  while ( $r->have_posts() ) : $r->the_post(); 
+						global $post; 
+						if( has_post_thumbnail( $post->ID ) ) { ?>
+							<a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="imagegrid_item lightboxhover">
+								<?php the_post_thumbnail( 'widget-thumb' ); ?>
+							</a>
+						<?php } 
+					endwhile; ?>
+					</div>
+					<?php wp_reset_postdata(); 
+				endif;
+			break; 
+		} ?>
+		<div class="clearfix"></div>
+		<?php echo $after_widget; 
   }
 
   public function update( $new_instance, $old_instance ) {
@@ -679,10 +684,10 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
         </select></p>
         
         <p><label for="<?php echo esc_attr( $this->get_field_id('thecat') ); ?>"><?php esc_html_e('If Post - Choose Category (Optional):', 'virtue'); ?></label>
-    <select id="<?php echo esc_attr( $this->get_field_id('thecat') ); ?>" name="<?php echo $this->get_field_name('thecat'); ?>"><?php echo wp_kses_post( implode('', $cat_options) ); ?></select></p>
+    <select id="<?php echo esc_attr( $this->get_field_id('thecat') ); ?>" name="<?php echo $this->get_field_name('thecat'); ?>"><?php echo wp_kses( implode( '', $cat_options ), virtue_admin_allowed_html() ); ?></select></p>
         
     <p><label for="<?php echo esc_attr( $this->get_field_id('thetype') ); ?>"><?php esc_html_e('If Portfolio - Choose Type (Optional):', 'virtue'); ?></label>
-    <select id="<?php echo esc_attr( $this->get_field_id('thetype') ); ?>" name="<?php echo esc_attr( $this->get_field_name('thetype') ); ?>"><?php echo wp_kses_post(implode('', $type_options) ); ?></select></p>
+    <select id="<?php echo esc_attr( $this->get_field_id('thetype') ); ?>" name="<?php echo esc_attr( $this->get_field_name('thetype') ); ?>"><?php echo wp_kses( implode('', $type_options), virtue_admin_allowed_html() ); ?></select></p>
         
         <p><label for="<?php echo esc_attr( $this->get_field_id('number') ); ?>"><?php esc_html_e('Number of images to show:', 'virtue'); ?></label>
     <input id="<?php echo esc_attr( $this->get_field_id('number') ); ?>" name="<?php echo esc_attr( $this->get_field_name('number') ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" size="3" /></p>
@@ -785,7 +790,7 @@ class Simple_About_With_Image extends WP_Widget{
     </p>
     <p>
         <label for="<?php echo esc_attr( $this->get_field_id('image_link_open') ); ?>"><?php esc_html_e('Image opens in', 'virtue'); ?></label><br />
-        <select id="<?php echo esc_attr( $this->get_field_id('image_link_open') ); ?>" name="<?php echo esc_attr( $this->get_field_name('image_link_open') ); ?>"><?php echo implode('', $link_options_array);?></select>
+        <select id="<?php echo esc_attr( $this->get_field_id('image_link_open') ); ?>" name="<?php echo esc_attr( $this->get_field_name('image_link_open') ); ?>"><?php echo wp_kses( implode('', $link_options_array), virtue_admin_allowed_html() );?></select>
     </p>
     <p>
         <label for="<?php echo esc_attr( $this->get_field_id('image_link') ); ?>"><?php esc_html_e('Image Link (optional)', 'virtue'); ?></label><br />

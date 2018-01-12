@@ -55,8 +55,6 @@ $classes[] = 'clearfix';
 	 */
 	do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
-	<a href="<?php the_permalink(); ?>" class="product_item_link product_img_link">
-
 		<?php
 			/**
 			 * woocommerce_before_shop_loop_item_title hook
@@ -66,8 +64,7 @@ $classes[] = 'clearfix';
 			 */
 			do_action( 'woocommerce_before_shop_loop_item_title' );
 		 	?>
-    
-    </a>
+		 	
 		<div class="product_details">
 			<a href="<?php the_permalink(); ?>" class="product_item_link">
 			<?php 

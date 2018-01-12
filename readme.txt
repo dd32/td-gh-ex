@@ -30,6 +30,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.1.2 | 12th January 2018 = 
+* Fix: image grid widget.
+* Slight change product archive template.
+
 = Version 3.1.1 | 27th December 2017 = 
 * Move: CMB to toolkit.
 * Update: Metabox script to use CMB2.

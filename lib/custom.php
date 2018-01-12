@@ -34,6 +34,32 @@ function virtue_hex2rgb( $hex ) {
 	return $rgb;
 }
 
+function virtue_admin_allowed_html(){
+
+	$allowed = wp_kses_allowed_html( 'post' );
+	// form fields - input
+	$allowed['input'] = array(
+		'class' => array(),
+		'id'    => array(),
+		'name'  => array(),
+		'value' => array(),
+		'type'  => array(),
+	);
+	// select
+	$allowed['select'] = array(
+		'class'  => array(),
+		'id'     => array(),
+		'name'   => array(),
+		'value'  => array(),
+		'type'   => array(),
+	);
+	// select options
+	$allowed['option'] = array(
+		'selected' => array(),
+	);
+	
+	return $allowed;
+}
 function virtue_template_override_init() {
 	if( class_exists( 'EventOrganiser_Admin_Page' ) ) {
 		add_filter( 'template_include', 'virtue_evento_venue_overide', 20 );
