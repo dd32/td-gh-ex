@@ -2,9 +2,9 @@
 Theme Name: AwesomePress
 Theme URI:
 Author: Surror
-Author URI:
+Author URI: http://surror.com/
 Description: Customizable theme, SEO ready theme.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: awesomepress
@@ -1172,7 +1172,7 @@ input.search-submit {
 
 .entry-footer i,
 .entry-footer a {
-  color: #555555;
+  color: #4F4F4F;
 }
 
 .entry-footer .fa-comments {
@@ -1195,7 +1195,7 @@ input.search-submit {
 
 .entry-meta i,
 .entry-meta a {
-  color: #555555;
+  color: #4F4F4F;
 }
 
 .entry-meta > span:first-child {
@@ -1512,7 +1512,6 @@ input.search-submit {
 .single .tags-links > a {
   background-color: #f1f4f9;
   display: inline-block;
-  color: #9da8b4;
   padding: 0.5em 1em;
   margin-right: 0.5em;
   margin-bottom: 0.5em;
@@ -1563,7 +1562,7 @@ input.search-submit {
 .single .entry-meta,
 .single .entry-meta i,
 .single .entry-meta a {
-  color: #999;
+  color: #CCCCCC;
   text-transform: capitalize;
 }
 

@@ -20,7 +20,7 @@ SEO ready and Customizable theme.
 
 == Copyright ==
 
-AwesomePress WordPress Theme, Copyright 2017 WordPress.org
+AwesomePress WordPress Theme, Copyright 2017 Surror
 AwesomePress is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
