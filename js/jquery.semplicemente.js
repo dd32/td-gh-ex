@@ -1,5 +1,5 @@
 (function($) {
-	"use strict";
+	'use strict';
 	$(document).ready(function() {
 		/*-----------------------------------------------------------------------------------*/
 		/*  Top Search Button

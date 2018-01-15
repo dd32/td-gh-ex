@@ -190,3 +190,6 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 
 = Version 1.8.3 =
 * Minor bug fixes
+
+= Version 1.8.4 =
+* Minor bug fixes
