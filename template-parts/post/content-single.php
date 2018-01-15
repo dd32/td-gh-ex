@@ -66,9 +66,11 @@
 									'after'  => '</div>',
 								));
 								?>
+								<?php if( has_tag() ) { ?>
 								<div class="post-single-tags callout border-none">
 									<?php bestblog_meta_tag();?>
 								</div>
+							<?php }?>
 							</div>
 							<!-- post single content body END -->
 						</article>
@@ -80,17 +82,16 @@
 							));?>
 						</div>
 						<?php get_template_part('template-parts/post/box', 'author');?>
-						<?php get_template_part('template-parts/post/related', 'post');?>
+					<?php if (comments_open() || get_comments_number()) {?>
 						<div class="box-comment-content z-depth-1">
 							<div class="grid-x grid-padding-x align-center">
 								<div class="cell large-22 medium-24 small-24">
-									<?php if (comments_open() || get_comments_number()) {
-    								comments_template();
-									}
-									?>
+    								<?php comments_template();?>
 								</div>
 							</div>
 						</div>
+					<?php }?>
+					<?php get_template_part('template-parts/post/related', 'post');?>
 					</div>
 				<?php endwhile ?>
 			<?php endif ?>

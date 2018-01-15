@@ -296,7 +296,7 @@ function bestblog_widgets_init()
     'name'          => __('Footer Widgets', 'best-blog'),
     'id'            => 'foot_sidebar',
     'description'   => __('Widget Area for the Footer', 'best-blog'),
-    'before_widget' => '<div id="%1$s" class="widget %2$s widget_wrap footer_widgets_warp cell small-24 medium-12 large-6 align-self-top " ><aside id="%1$s" class="widget %2$s">',
+    'before_widget' => '<div id="%1$s" class="widget %2$s widget_wrap footer_widgets_warp cell small-24 medium-12 large-auto align-self-top " ><aside id="%1$s" class="widget %2$s">',
     'after_widget'  => '</aside></div>',
     'before_title'  => '<div class="widget-title "> <h3>',
     'after_title'   => '</h3></div>'

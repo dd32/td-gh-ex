@@ -2,7 +2,7 @@
 /*
 Theme Name: Best Blog
 Theme URI: https://www.imonthemes.com/best-blog-wordpress-theme/
-Author: Themez WP
+Author: Imon Themes
 Author URI: http://imonthemes.com/
 License: GNU General Public License, v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -11,7 +11,7 @@ Text Domain: best-blog
 Description: Best Blog is a perfect WordPress theme for personal blogs, blog,content publishers. From travel to fashion and everything in between, Best Blog brings beauty and unique designs combined with quality performance and stability to any type of blog.
 With WooCommerce plugin, you can get your blog and shop running in minutes. Also Best Blog have Five custom widgets and much more.
 
-Version: 1.0.6
+Version: 1.0.7
 
 Tags:   grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments,blog,news,food-and-drink
 
@@ -779,6 +779,18 @@ post layout-2 missionary
   background-color: transparent;
 }
 
+.top-footer-wrap .lates-post-cardmission .cell{
+  width: 100%;
+  padding-top: 0px;
+  padding-bottom: 0;
+}
+.top-footer-wrap .lates-post-cardmission .card-content{
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.top-footer-wrap .lates-post-cardmission .post-title{
+  font-size: 18px;
+}
 
 /*----------- laout 2 at sidebar -----------*/
 
@@ -1125,7 +1137,8 @@ widget
 /* ========== Footer widget ============ */
 
 .footer_widgets_warp {
-  padding: 40px 18px;
+  padding-top: 40px;
+  padding-bottom:0px;
   margin-bottom: 40px;
 }
 
@@ -1548,7 +1561,6 @@ gallery setup
 
 .top-footer-wrap .gallery-item {
   float: left;
-  width: fit-content;
   padding: 2px;
 }
 
@@ -2660,7 +2672,6 @@ Global Mobile
   }
   .top-footer-wrap .gallery-item {
     float: left;
-    width: 50%;
     padding: 2px;
   }
   .woocommerce .columns-3 ul.products li.product {
