@@ -1020,7 +1020,24 @@ $wp_customize->add_section(
         'type'=>'text',
         'section'    => 'blog_section',
         'settings'   => 'enigma_options[blog_speed]',
-    ) ); 
+    ) );
+
+
+	$wp_customize->add_setting('enigma_options[blog_category]',
+		array(
+			'type'    => 'option',
+			'sanitize_callback'=>'enigma_sanitize_text',
+			'capability' => 'edit_theme_options',
+		)
+	);
+	
+	$wp_customize->add_control(new enigma_category_Control( $wp_customize, 'blog_category', array(
+		'label'        => __( 'Blog Category', 'enigma' ),
+		'type'=>'select',
+		'section'    => 'blog_section',
+		'settings'   => 'enigma_options[blog_category]',
+	) ) );
+	
 	
 /* Font Family Section */
 	$wp_customize->add_section('font_section', array(
@@ -1867,7 +1884,9 @@ class enigma_changelog_Control extends WP_Customize_Control {
 			<div class="col-md-3 col-sm-6">
 				<h2 style="margin-top:10px;color:#fff;background-color: #3ca3e0;padding: 10px;font-size: 19px;"><?php echo _e( 'Enigma Theme Changelog','enigma'); ?></h2>
 				<ul style="padding-top:20px">
-				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.0 - <span> Current Version </span></div>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1 - <span> Current Version </span></div>
+		<ol> <li> Category option added for blog. </li></ol></li>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.0 - </div>
 		<ol> <li> Review Request Banner dismiss option added. </li></ol></li>
 				<li class="upsell-enigma"> <div class="versionhd"> Version: 3.9 - </div>
 		<ol> <li> Snow effect option added. </li></ol></li>
@@ -2032,4 +2051,19 @@ class enigma_animation extends WP_Customize_Control {
 	}
 }
 endif;
+
+/* class for categories */
+if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'enigma_category_Control' ) ) :
+class enigma_category_Control extends WP_Customize_Control 
+{   public function render_content(){ ?>
+		<span class="customize-control-title"><?php echo $this->label; ?></span>
+		<?php  $enigma_category = get_categories(); ?>
+		<select <?php $this->link(); ?> >
+			<?php foreach($enigma_category as $category){ ?>
+				<option value= "<?php echo $category->term_id; ?>" <?php if($this->value()=='') echo 'selected="selected"';?> ><?php echo $category->cat_name; ?></option>
+			<?php } ?>
+		</select> <?php
+	}  /* public function ends */
+}/*   class ends */
+endif; 
 ?>

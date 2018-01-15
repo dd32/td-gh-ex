@@ -119,6 +119,7 @@
 			'blog_home' => '1',
 			'blog_title'=>__('Latest Blog', 'enigma' ),
 			'blog_speed'=>'2000',
+			'blog_category'=>'',
 			
 			//Google font style
 			'main_heading_font' => 'Open Sans',

@@ -15,10 +15,15 @@ if($wl_theme_options['blog_title'] !='') { ?>
 	<div class="row" id="enigma_blog_section">
 	<?php 	if ( have_posts()) : 			
 			$posts_count =wp_count_posts()->publish;
-			$args = array( 'post_type' => 'post','posts_per_page' => $posts_count ,'ignore_sticky_posts' => 1);		
+			if($wl_theme_options['blog_category']) {
+				$category = $wl_theme_options['blog_category'];
+				$args = array( 'post_type' => 'post','posts_per_page' => $posts_count ,'ignore_sticky_posts' => 1, 'cat' => $category);		
+			} else {
+			$args = array( 'post_type' => 'post','posts_per_page' => $posts_count ,'ignore_sticky_posts' => 1);	 }	
 			$post_type_data = new WP_Query( $args );
 			while($post_type_data->have_posts()):
-			$post_type_data->the_post(); ?>
+			$post_type_data->the_post();
+			?>
 			<div class="col-md-4 col-sm-12 scrollimation scale-in d2 pull-left">
 			<div class="enigma_blog_thumb_wrapper">
 				<div class="enigma_blog_thumb_wrapper_showcase">					

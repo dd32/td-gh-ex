@@ -6,6 +6,9 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 4.1 [03-01-2018]
+1. Category option added for blog.
+
 @Version: 4.0 [21-12-2017]
 1. Review Request banner dismiss option added.
 
