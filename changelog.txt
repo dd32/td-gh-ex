@@ -1,5 +1,10 @@
 SuevaFree Changelog
 
+- Version 3.4.2 - Released: 16.01.2018
+
+-- Added  : Option to manage the alignment of page titles. 
+-- Added  : Option to manage the content alignment of pages. 
+
 - Version 3.4.1 - Released: 05.01.2018
 
 -- Fixed  : Alignment of titles and post details. 

@@ -27,7 +27,7 @@ if (!function_exists('suevafree_page_format_function')) {
 	
 	?>
 
-        <div class="post-article post-details page-details-<?php echo $pageDetails . ' ' . suevafree_setting('suevafree_post_align', '') . ' ' . suevafree_setting('suevafree_title_align', ''); ?>">
+        <div class="post-article post-details page-details-<?php echo $pageDetails . ' ' . suevafree_setting('suevafree_page_align', '') . ' ' . suevafree_setting('suevafree_page_title_align', ''); ?>">
         
             <?php 
 				

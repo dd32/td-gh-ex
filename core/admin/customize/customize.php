@@ -720,8 +720,8 @@ if (!function_exists('suevafree_customize_panel_function')) {
 
 			array(
 				
-				'label' => esc_html__('Titles and post details.', 'suevafree'),
-				'description' => esc_html__('Select the alignment of titles and post details.','suevafree'),
+				'label' => esc_html__('Post titles and post details.', 'suevafree'),
+				'description' => esc_html__('Select the alignment of post titles and post details.','suevafree'),
 				'id' => 'suevafree_title_align',
 				'type' => 'select',
 				'section' => 'align_section',
@@ -737,8 +737,8 @@ if (!function_exists('suevafree_customize_panel_function')) {
 
 			array(
 				
-				'label' => esc_html__('Content of posts and pages', 'suevafree'),
-				'description' => esc_html__('Select the content alignment of posts and pages.','suevafree'),
+				'label' => esc_html__('Content of posts.', 'suevafree'),
+				'description' => esc_html__('Select the content alignment of posts.','suevafree'),
 				'id' => 'suevafree_post_align',
 				'type' => 'select',
 				'section' => 'align_section',
@@ -763,6 +763,40 @@ if (!function_exists('suevafree_customize_panel_function')) {
 					'' => esc_html__( 'Default', 'suevafree'),
 					'left-button' => esc_html__( 'Left align', 'suevafree'),
 					'right-button' => esc_html__( 'Right align', 'suevafree'),
+				),
+				
+				'std' => '',
+			
+			),
+
+			array(
+				
+				'label' => esc_html__('Page titles.', 'suevafree'),
+				'description' => esc_html__('Select the alignment of page titles.','suevafree'),
+				'id' => 'suevafree_page_title_align',
+				'type' => 'select',
+				'section' => 'align_section',
+				'options' => array (
+					'' => esc_html__( 'Default', 'suevafree'),
+					'title-left-align' => esc_html__( 'Left align', 'suevafree'),
+					'title-right-align' => esc_html__( 'Right align', 'suevafree'),
+				),
+				
+				'std' => '',
+			
+			),
+
+			array(
+				
+				'label' => esc_html__('Content of pages', 'suevafree'),
+				'description' => esc_html__('Select the content alignment of pages.','suevafree'),
+				'id' => 'suevafree_page_align',
+				'type' => 'select',
+				'section' => 'align_section',
+				'options' => array (
+					'' => esc_html__( 'Default', 'suevafree'),
+					'post-left-align' => esc_html__( 'Left align', 'suevafree'),
+					'post-right-align' => esc_html__( 'Right align', 'suevafree'),
 				),
 				
 				'std' => '',
