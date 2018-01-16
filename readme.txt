@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.1.4 | 16th January 2018 = 
+* Fix: widget issue.
+
 = Version 3.1.3 | 16th January 2018 = 
 * Fix: image widget from not showing.
 * Slight change product archive template.

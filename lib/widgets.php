@@ -589,7 +589,6 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
       $number = 8; 
       echo $before_widget; ?>
         <?php if ( $title ) echo $before_title . $title . $after_title;
-        
 		switch ($instance['gridchoice']) {
       
 	        case "portfolio" :
@@ -616,8 +615,15 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
 					<?php wp_reset_postdata(); 
 				endif;
 			break;
-			case "post":
-				$r = new WP_Query( apply_filters( 'widget_posts_args', array( 'posts_per_page' => $number, 'category_name' => $instance['thecat'], 'no_found_rows' => true, 'post_status' => 'publish', 'ignore_sticky_posts' => true ) ) );
+			case "post" :
+			echo $instance['thecat'];
+				$r = new WP_Query( apply_filters( 'widget_posts_args', array( 
+					'posts_per_page' => $number, 
+					'category_name' => $instance['thecat'], 
+					'no_found_rows' => true, 
+					'post_status' => 'publish', 
+					'ignore_sticky_posts' => true ) 
+				) );
 				if ( $r->have_posts() ) : ?>
 					<div class="imagegrid-widget">
 					<?php  while ( $r->have_posts() ) : $r->the_post(); 
@@ -658,7 +664,7 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
     if (isset($instance['thetype'])) { $thetype = esc_attr($instance['thetype']); } else {$thetype = '';}
      $types= get_terms('portfolio-type');
      $type_options = array();
-          $type_options[] = '<option value="">All</option>';
+          $type_options[] = '<option value="null">All</option>';
  
     foreach ($types as $type) {
       if ($thetype == $type->slug) { $selected=' selected="selected"';} else { $selected=""; }

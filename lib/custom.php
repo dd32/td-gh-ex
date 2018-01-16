@@ -56,8 +56,9 @@ function virtue_admin_allowed_html(){
 	// select options
 	$allowed['option'] = array(
 		'selected' => array(),
+		'value' => array(),
 	);
-	
+
 	return $allowed;
 }
 function virtue_template_override_init() {
