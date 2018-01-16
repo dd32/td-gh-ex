@@ -23,6 +23,18 @@ See headers of each files for further details.
 
 
 ####################### Changelog ######################
+= 4.0.15 January 10th 2018 =
+* Fix: modern - fix animated underline not removable in some navigation menus. Also do not underline current menu item when the underline hover effect option is disabled. fixes #1363
+* Fix: modern - remove useless @import rules for unused gfonts. fixes #1366
+* Fix: Wp icon font-family possible override with the pro Font Customizer. Fixes #1350
+* Fix: List in wc product description missing list style type. Fixes #1354
+* Fix: slider caption not centered in ipad Mini. Fixes #1356
+* Fix: clicking menu items with children and no URL bring to 404. Fixes #1358
+* Fix: remove unwanted vertical separator before comments link in single posts. Fixes #1381
+* Improved: improve mobile menu horizontal alignment. fixes #1380
+* Improved: full page search form focus/blur on overlay open/close. fixes #1374
+* Improved: upgraded the Font Awesome icon set to its latest version. adresses #1364
+
 = 4.0.14 December 22nd 2017 =
 * Fix: decrease regular submenu top to 15px. fixes #1333
 * Fix: apply margin-bottom to the right wrapper element, as part of the fix for #1331
