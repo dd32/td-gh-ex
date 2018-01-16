@@ -179,8 +179,8 @@ function kadence_widgets_init() {
 	if ( class_exists( 'Kadence_Image_Grid_Widget' ) ) {
 		register_widget('Kadence_Image_Grid_Widget');
 	}
-	if ( class_exists( 'Kadence_Image_Grid_Widget' ) ) {
-		register_widget('Kadence_Image_Grid_Widget');
+	if ( class_exists( 'Simple_About_With_Image' ) ) {
+		register_widget('Simple_About_With_Image');
 	}
 }
 add_action('widgets_init', 'kadence_widgets_init');
@@ -715,7 +715,7 @@ function virtue_admin_script() {
 add_action('init', 'virtue_admin_script');
 
 if ( ! class_exists( 'Simple_About_With_Image' ) ) {
-class Simple_About_With_Image extends WP_Widget{
+class Simple_About_With_Image extends WP_Widget {
 
   private static $instance = 0;
     public function __construct() {

@@ -27,9 +27,9 @@
               <a class="brand logofont" href="<?php echo esc_url( home_url() ); ?>/">
                 <?php if (!empty($virtue['x1_virtue_logo_upload']['url'])) { ?>
                   <div id="thelogo">
-                    <img src="<?php echo esc_url($virtue['x1_virtue_logo_upload']['url']); ?>" alt="<?php bloginfo('name');?>" class="kad-standard-logo" />
+                    <img src="<?php echo esc_url($virtue['x1_virtue_logo_upload']['url']); ?>" alt="<?php bloginfo('name');?>" width="<?php echo esc_attr($virtue['x1_virtue_logo_upload']['width']); ?>" height="<?php echo esc_attr($virtue['x1_virtue_logo_upload']['height']); ?>" class="kad-standard-logo" />
                     <?php if(!empty($virtue['x2_virtue_logo_upload']['url'])) {?>
-                    <img src="<?php echo esc_url($virtue['x2_virtue_logo_upload']['url']);?>" alt="<?php bloginfo('name');?>" class="kad-retina-logo" style="max-height:<?php echo esc_attr($virtue['x1_virtue_logo_upload']['height']);?>px" /> <?php } ?>
+                    <img src="<?php echo esc_url($virtue['x2_virtue_logo_upload']['url']);?>" alt="<?php bloginfo('name');?>" width="<?php echo esc_attr($virtue['x2_virtue_logo_upload']['width']); ?>" height="<?php echo esc_attr($virtue['x2_virtue_logo_upload']['height']); ?>" class="kad-retina-logo" style="max-height:<?php echo esc_attr($virtue['x1_virtue_logo_upload']['height']);?>px" /> <?php } ?>
                   </div>
                 <?php } else { 
                     echo wp_kses_post( apply_filters('kad_site_name', get_bloginfo('name') ) ); 
