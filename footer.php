@@ -2,8 +2,8 @@
 /**
  * The template for displaying the footer.
  *
- * @package gump
- * @since gump 1.0
+ * @package Gump
+ * @since Gump 1.0.0
  */
 ?>
 

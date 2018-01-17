@@ -2,8 +2,8 @@
 /**
  * The template used for displaying content
  *
- * @package gump
- * @since gump 1.0
+ * @package Gump
+ * @since Gump 1.0.0
  */
 ?>
 
@@ -14,9 +14,6 @@
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php gump_posted_on(); ?>
-			<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-			<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'gump' ), __( '1 Comment', 'gump' ), __( '% Comments', 'gump' ) ); ?></span>
-			<?php endif; ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 
@@ -50,22 +47,24 @@
 				if ( $categories_list ) :
 			?>
 			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', 'gump' ), $categories_list ); ?>
+				<?php printf( __( '%1$s', 'gump' ), $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories ?>
-
 			<?php
+				/* translators: used between list items, there is a space after the comma */
 				$tags_list = get_the_tag_list( '', __( ', ', 'gump' ) );
 				if ( $tags_list ) :
 			?>
 			<span class="tags-links">
-				<?php printf( __( '- Tagged %1$s', 'gump' ), $tags_list ); ?>
+				<?php printf( __( 'Tagged %1$s', 'gump' ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
+			<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
+			<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'gump' ), __( '1 Comment', 'gump' ), __( '% Comments', 'gump' ) ); ?></span>
+			<?php endif; ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php edit_post_link( __( 'Edit', 'gump' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
-
-	<div class="entry-divider"></div>
+    
 </article><!-- #post-## -->

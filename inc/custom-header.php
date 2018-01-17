@@ -2,8 +2,8 @@
 /**
  * Custom Header feature
  *
- * @package gump
- * @since gump 1.0
+ * @package Gump
+ * @since Gump 1.0.0
  */
 
 /**
@@ -17,8 +17,8 @@ function gump_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'gump_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
-		'width'                  => 1050,
-		'height'                 => 120,
+		'width'                  => 1100,
+		'height'                 => 150,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'gump_header_style',
 		'admin-head-callback'    => 'gump_admin_header_style',

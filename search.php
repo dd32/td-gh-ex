@@ -2,13 +2,13 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package gump
- * @since gump 1.0
+ * @package Gump
+ * @since Gump 1.0.0
  */
 
 get_header(); ?>
 
-	<section id="primary" class="content-area column three-fourths">
+	<section id="primary" class="content-area column two-thirds">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>

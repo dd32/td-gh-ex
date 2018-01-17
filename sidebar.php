@@ -2,8 +2,8 @@
 /**
  * The Sidebar containing the Sidebar
  *
- * @package gump
- * @since gump 1.0
+ * @package Gump
+ * @since Gump 1.0.0
  */
 ?>
 
@@ -12,7 +12,7 @@
 			return;
 	?>
 
-	<div id="secondary" class="column fourth">
+	<div id="secondary" class="column third">
 		<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 			<div id="sidebar-1" class="widget-area" role="complementary">
 				<?php dynamic_sidebar( 'sidebar-1' ); ?>

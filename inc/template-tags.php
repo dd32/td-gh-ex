@@ -2,8 +2,8 @@
 /**
  * Custom template tags for gump
  *
- * @package gump
- * @since gump 1.0
+ * @package Gump
+ * @since Gump 1.0.0
  */
 
 if ( ! function_exists( 'gump_paging_nav' ) ) :

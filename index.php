@@ -2,13 +2,13 @@
 /**
  * The main template file.
  *
- * @package gump
- * @since gump 1.0
+ * @package Gump
+ * @since Gump 1.0.0
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area column three-fourths">
+	<div id="primary" class="content-area column two-thirds">
 		<main id="main" class="site-main" role="main">
 
 			<?php if ( have_posts() ) : ?>

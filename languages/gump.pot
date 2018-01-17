@@ -328,7 +328,7 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Responsive Wordpress Theme for Bloggers"
+"WordPress Theme for Lifestyle, Food and Fashion blogger. It has a responsive design with a lot of options like: custom colors, social icons, google analytics and more. People like Gump for his minimal style and because it's easy to use. The theme is also translation ready and it supports RTL language."
 msgstr ""
 
 #. Author of the plugin/theme

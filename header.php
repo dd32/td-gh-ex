@@ -2,8 +2,8 @@
 /**
  * The Header for gump
  *
- * @package gump
- * @since gump 1.0
+ * @package Gump
+ * @since Gump 1.0.0
  */
 
 ?><!DOCTYPE html>

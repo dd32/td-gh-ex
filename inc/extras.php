@@ -2,8 +2,8 @@
 /**
  * Custom functions that act independently of the theme templates
  *
- * @package gump
- * @since gump 1.0
+ * @package Gump
+ * @since Gump 1.0.0
  */
 
 /**

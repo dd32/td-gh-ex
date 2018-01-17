@@ -3,52 +3,50 @@ Theme Name: Gump
 Theme URI: http://pankogut.com/wordpress-themes/gump
 Author: PanKogut
 Author URI: http://pankogut.com
-Description: Responsive Wordpress Theme for Bloggers. Now you can change all colors via Customizer Panel. There is also the custom widget with social links.
-Version: 1.3.0
+Description: WordPress Theme for Lifestyle, Food and Fashion blogger. It has a responsive design with a lot of options like: custom colors, social icons, google analytics and more. People like Gump for his minimal style and because it's easy to use. The theme is also translation ready and it supports RTL language.
+Version: 2.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-header, custom-menu, editor-style, featured-image-header, full-width-template, post-formats, theme-options, featured-images, translation-ready
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-header, custom-background, custom-colors, custom-menu, editor-style, featured-image-header, full-width-template, footer-widgets, rtl-language-support, post-formats, theme-options, featured-images, translation-ready, blog
 Text Domain: gump
 */
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-0.0 - Genericons
-1.0 - Reset
-2.0 - Responsive Grid
-3.0 - Typography
-4.0 - Elements
-5.0 - Forms
-	5.1 - Contact Form 7
-6.0 - Header
-	6.1 - Links
-	6.2 - Logo and Title
-	6.3 - Menus
-7.0 - Accessibility
-8.0 - Alignments
-9.0 - Clearings
-10.0 - Widgets
-	10.1 - Social Widget
-11.0 - Site Content
-	11.1 - Posts and pages
-	11.2 - Asides
-	11.3 - Gallery
-	11.4 - Image
-	11.5 - Comments
-12.0 - Footer
-13.0 - Infinite scroll
-14.0 - Media
-	14.1 - Captions
-	14.2 - Galleries
-15.0 Media Queries
-16.0 Print
+# Genericons
+# Reset
+# Responsive Grid
+# Typography
+# Elements
+# Forms
+	## Contact Form 7
+# Header
+	## Links
+	## Logo and Title
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+	## Social Widget
+# Site Content
+	## Posts and pages
+	## Asides
+	## Gallery
+	## Image
+	## Comments
+# Footer
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+# Media Queries
+# Print
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-0.0 - Genericons
+# Genericons
 --------------------------------------------------------------*/
-@import url(http://fonts.googleapis.com/css?family=Euphoria+Script|Lato:300,400,700,300italic,400italic,700italic|Lora:400,700,400italic,700italic&subset=latin,cyrillic,latin-ext);
-
 @font-face {
     font-family: 'Genericons';
     src: url('fonts/genericons-regular-webfont.eot');
@@ -61,7 +59,7 @@ Text Domain: gump
 }
 
 /*--------------------------------------------------------------
-1.0 - Reset
+# Reset
 --------------------------------------------------------------*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -139,7 +137,7 @@ a img {
 }
 
 /*--------------------------------------------------------------
-2.0 Responsive Grid
+# Responsive Grid
 --------------------------------------------------------------*/
 
 .container {
@@ -154,7 +152,11 @@ a img {
 	.column {
 		float: left;
 		margin-bottom: 0;
-		padding: 0 15px;
+		padding-right: 3%;
+	}
+
+	.column:last-child {
+		padding-right: 0;
 	}
   
 	.column.full { width: 100%; }
@@ -177,23 +179,23 @@ a img {
 @media (min-width: 1090px) {
 	.container {
 		margin: 0 auto;
-		width: 1050px;
+		width: 1100px;
 	}
 }
 
 /*--------------------------------------------------------------
-3.0 Typography
+# Typography
 --------------------------------------------------------------*/
 body,
 button,
 input,
 select,
 textarea {
-	color: #666666;
-    font-family: 'Lora', Georgia, Serif;
-    font-weight: 300;
+	color: #545454;
+    font-family: 'Lato', Georgia, Serif;
+    font-weight: 400;
 	font-size: 14px;
-	line-height: 1.8;
+	line-height: 1.5;
 	word-wrap: break-word;
 	-webkit-hyphens: auto;
 	   -moz-hyphens: auto;
@@ -202,7 +204,7 @@ textarea {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lora', Georgia, Serif;
+    font-family: 'Lato', Georgia, Serif;
     font-weight: 700;
 	margin-top: 20px;
 	margin-bottom: 10px;
@@ -292,7 +294,7 @@ big {
 }
 
 /*--------------------------------------------------------------
-4.0 Elements
+# Elements
 --------------------------------------------------------------*/
 hr {
 	background-color: #e5e5e5;
@@ -363,7 +365,7 @@ table tr {
 }
 
 /*--------------------------------------------------------------
-5.0 Forms
+# Forms
 --------------------------------------------------------------*/
 button,
 input,
@@ -452,7 +454,7 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-5.1 Contact Form 7
+## Contact Form 7
 --------------------------------------------------------------*/
 .wpcf7-form-control-wrap {
 	display: inline;
@@ -514,35 +516,31 @@ textarea {
 
 
 /*--------------------------------------------------------------
-6.0 Header
+# Header
 --------------------------------------------------------------*/
 html {
 	border: 10px solid #f0f4f5;
 }
 
 .site-header {
-	margin-top: 2em;
-	padding-bottom: 1em;
+	background-color: #fff;
 }
 
 .header-image {
-	margin-top: 1em;
+	margin: 1em 0 2.5em;
+	text-align: center;
 }
 
 /*--------------------------------------------------------------
-6.1 Links
+## Links
 --------------------------------------------------------------*/
 a {
-	color: #666666;
+	color: #000;
 	text-decoration: underline;
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	-o-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
-}
-
-a:visited {
-	color: #666666;
 }
 
 a:hover,
@@ -557,13 +555,15 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-6.2 Logo and Title
+## Logo and Title
 --------------------------------------------------------------*/
 .site-branding {
+	margin: 3em 0;
 	text-align: center;
 }
 
 .site-title {
+	font-family: 'Pacifico', cursive;
 	font-size: 6rem;
 	line-height: 1;
 	margin-top: 25px;
@@ -579,13 +579,13 @@ a:active {
 	font-size: 14px;
 	font-style: italic;
 	font-weight: 300;
-	margin-top: 0;
+	margin-top: 2em;
 	margin-bottom: 0;
 	padding-top: 8px;
 }
 
 /*--------------------------------------------------------------
-6.3 Menus
+## Menus
 --------------------------------------------------------------*/
 .menu {
 	display: table;
@@ -593,15 +593,18 @@ a:active {
 }
 
 .main-navigation {
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
 	font-family: 'Lato', sans-serif;
 	font-size: 14px;
 	font-weight: 300;
-	padding: 0.5em 0;
 	text-transform: uppercase;
 }
 
 	.main-navigation a {
+		letter-spacing: 2px;
 		text-decoration: none;
+		white-space: nowrap;
 	}
 
 .main-navigation ul {
@@ -613,28 +616,50 @@ a:active {
 	display: inline;
 	float: left;
 	margin: 0 1em;
+	padding: 1em 0;
 	position: relative;
 }
 
+.main-navigation li.menu-item-has-children:after {
+	font-family: 'FontAwesome';
+	font-size: 14px;
+	content: '\f0d7';
+}
+
 .main-navigation ul ul {
-	border-left: 1px solid #666666;
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
 	background-color: #fff;
 	display: none;
 	float: left;
-	left: 0;
-	padding: 0.5em 1em;
+	left: -1em;
 	position: absolute;
-	top: 1.5em;
+	top: 3.6em;
 	z-index: 99999;
 }
 
 .main-navigation ul ul li {
+	border-bottom: 1px solid #000;
 	margin: 0;
-	width: 150px;
+	padding: 0.5em 1em;
+	width: 100%;
+}
+
+.main-navigation ul ul li.menu-item-has-children:after {
+	font-family: 'FontAwesome';
+	font-size: 14px;
+	content: '\f0da';
 }
 
 .main-navigation ul li:hover > ul {
-	display: block;
+	display: inline-block;
+}
+
+.main-navigation ul ul ul {
+	float: left;
+	left: auto;
+	top: 0;
 }
 
 /* Small menu */
@@ -642,11 +667,47 @@ a:active {
 	display: none;
 }
 
+/* Search Box */
+.site-header .search-form {
+    position: absolute;
+    right: -20px;
+    top: 3px;
+}
+ 
+.site-header .search-field {
+    background-color: transparent;
+    background-image: url(images/search-icon.png);
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    border: none;
+    cursor: pointer;
+    height: 37px;
+    margin: 3px 0;
+    padding: 0 0 0 34px;
+    position: relative;
+    -webkit-transition: width 400ms ease, background 400ms ease;
+    transition:         width 400ms ease, background 400ms ease;
+    width: 0;
+}
+ 
+.site-header .search-field:focus {
+    background-color: #fff;
+    cursor: text;
+    outline: 0;
+    width: 230px;
+}
+
+.search-form
+.search-submit { 
+	display:none;
+}
+
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
-	margin: 0 0 3.5em;
-	overflow: hidden;
+    margin: 0 0 3.5em;
+    overflow: hidden;
 }
 
 .comment-navigation .nav-previous,
@@ -665,7 +726,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-7.0 Accessibility
+# Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers */
 .screen-reader-text {
@@ -695,7 +756,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-8.0 Alignments
+# Alignments
 --------------------------------------------------------------*/
 .alignleft {
 	display: inline;
@@ -716,7 +777,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-9.0 Clearings
+# Clearings
 --------------------------------------------------------------*/
 .clear:before,
 .clear:after,
@@ -748,12 +809,11 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-10.0 Widgets
+# Widgets
 --------------------------------------------------------------*/
 .widget-area {
 	background-color: #f0f4f5;
-	padding: 30px 15px;
-	text-align: center;
+	padding: 3em;
 }
 
 .widget {
@@ -773,15 +833,19 @@ a:active {
 }
 
 .widget-title {
-	color: #999;
-	font-family: 'Euphoria Script', cursive;
-	font-weight: 400;
+	color: #000;
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
+    font-style: normal;
+	font-weight: 700;
 	letter-spacing: 2px;
 	line-height: 30px;
 	list-style: none;
 	margin-top: 0;
 	margin-left: 0;
 	margin-bottom: 0.5em;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 	.widget-title a {
@@ -790,7 +854,7 @@ a:active {
 
 /* Make sure select elements fit in widgets */
 .widget select {
-	max-width: 100%;
+	width: 100%;
 }
 
 /* Search widget */
@@ -803,70 +867,80 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-10.1 Social Widgets
+## Social Widgets
 --------------------------------------------------------------*/
+.widget-about,
+.widget-social {
+	text-align: center;
+}
+
+.widget-about .widget-title {
+	text-align: center;
+}
+
+.widget-image {
+	margin-bottom: 1em;
+}
+
+.widget-social span {
+	line-height: 3em;
+	margin-right: 5px;
+}
+
 .widget-social a {
+	font-weight: normal;
 	text-decoration: none;
 }
 
-.about-social span {
-	display: inline-block;
-	margin-bottom: 10px;
+.widget-social a:hover {
+	opacity: 0.6;
 }
 
 .social {
-	background-color: #ccc;
-	border-radius: 50%;
-	font-family: 'Genericons';
-	font-size: 18px;
+	border-radius: 0;
+	font-family: 'FontAwesome';
+	font-size: 14px;
 	overflow: hidden;
 	padding: 0.5em;
 }
 
-.social:before {
-	color: #fff;
-}
-
-.social-fontello {
-	background-color: #ccc;
-	border-radius: 50%;
-	font-family: 'behance';
-	font-size: 21px;
-	overflow: hidden;
-	padding: 10px 8px 9px 8px;
-}
-
-.social-fontello:before {
-	color: #fff;
-}
-
-.social-feed:before { content: '\f413'; }
-.social-linkedin:before { content: '\f208'; }
-.social-twitter:before { content: '\f202'; }
-.social-facebook:before { content: '\f203'; }
-.social-googleplus:before { content: '\f206'; }
-.social-pinterest:before { content: '\f210'; }
-.social-instagram:before { content: '\f215'; }
-.social-flickr:before { content: '\f211'; }
-.social-youtube:before { content: '\f213'; }
-.social-vimeo:before { content: '\f212'; }
-.social-dribbble:before { content: '\f201'; }
-.social-behance:before { content: '\e800'; }
-.social-github:before { content: '\f200'; }
-.social-skype:before { content: '\f220'; }
-.social-tumblr:before { content: '\f214'; }
-.social-wordpress:before { content: '\f205'; }
+.social-feed:before { content: '\f09e'; }
+.social-email:before { content: '\f0e0'; }
+.social-linkedin:before { content: '\f0e1'; }
+.social-bloglovin:before { content: '\f004'; }
+.social-twitter:before { content: '\f099'; }
+.social-facebook:before { content: '\f230'; }
+.social-googleplus:before { content: '\f0d5'; }
+.social-pinterest:before { content: '\f0d2'; }
+.social-instagram:before { content: '\f16d'; }
+.social-flickr:before { content: '\f16e'; }
+.social-youtube:before { content: '\f16a'; }
+.social-vimeo:before { content: '\f27d'; }
+.social-dribbble:before { content: '\f17d'; }
+.social-behance:before { content: '\f1b4'; }
+.social-github:before { content: '\f113'; }
+.social-skype:before { content: '\f17e'; }
+.social-tumblr:before { content: '\f173'; }
+.social-wordpress:before { content: '\f19a'; }
+.social-soundcloud:before { content: '\f1be'; }
+.social-pk-medium:before { content: '\f23a'; }
+.social-snapchat:before { content: '\f2ab'; }
 
 /*--------------------------------------------------------------
-11.0 Site Content
+# Site Content
 --------------------------------------------------------------*/
 #primary,
 #secondary {
 	padding-top: 3em;
 }
 
+.site-content {
+	background-color: #fff;
+    padding-bottom: 2em;
+}
+
 /*--------------------------------------------------------------
-11.1 Posts and pages
+## Posts and pages
 --------------------------------------------------------------*/
 .sticky {
 }
@@ -875,7 +949,7 @@ a:active {
 }
 
 .hentry {
-	margin: 0 0 3.5em;
+	margin: 0 0 1.5em;
 }
 
 /* Thumbnail */
@@ -923,7 +997,7 @@ a.more-link {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0;
+	margin: 1.5em 0 0;
 }
 
 .no-results .page-content {
@@ -935,6 +1009,7 @@ a.more-link {
 .entry-meta {
 	font-family: 'Lato', sans-serif;
 	font-size: 12px;
+	font-style: italic;
 	font-weight: 300;
 	letter-spacing: 1px;;
 }
@@ -947,10 +1022,6 @@ a.more-link {
 		.entry-meta a:hover {
 			text-decoration: underline;
 		}
-
-.entry-meta .comments-link:before {
-	content: " - ";
-}
 
 .byline,
 .updated {
@@ -971,9 +1042,11 @@ a.more-link {
 
 /* Entry Footer */
 .entry-footer {
-	font-style: italic;
+    font-size: 14px;
+    letter-spacing: 2px;
 	padding-top: 1em;
 	padding-bottom: 0.5em;
+    text-transform: uppercase;
 }
 
 	.entry-footer a {
@@ -983,6 +1056,10 @@ a.more-link {
 
 	.entry-footer a:hover {
 		text-decoration: underline;
+	}
+
+	.entry-footer span {
+		margin-right: 0.5em;
 	}
 
 .blog .entry-footer,
@@ -995,11 +1072,8 @@ a.more-link {
 	border-bottom: 0;
 }
 
-.entry-divider {
-	background: url(images/divider.png) no-repeat center;
-	height: 10px;
-	margin: 0 auto;
-	width: 100%;
+.tags-links {
+	display: none;
 }
 
 /* Entry Navigation */
@@ -1022,10 +1096,6 @@ a.more-link {
 	text-transform: capitalize;
 }
 
-.page-title:before {
-	content: "#";
-}
-
 .page-header p {
 	font-style: italic;
 	margin-bottom: 0.5em;
@@ -1038,7 +1108,7 @@ a.more-link {
 }
 
 /*--------------------------------------------------------------
-11.2 Asides
+## Asides
 --------------------------------------------------------------*/
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
@@ -1046,7 +1116,7 @@ a.more-link {
 }
 
 /*--------------------------------------------------------------
-11.3 Gallery
+## Gallery
 --------------------------------------------------------------*/
 .blog .format-gallery .entry-thumbnail,
 .archive .format-gallery .entry-thumbnail,
@@ -1055,7 +1125,7 @@ a.more-link {
 }
 
 /*--------------------------------------------------------------
-11.4 Image
+## Image
 --------------------------------------------------------------*/
 .blog .format-image .entry-thumbnail,
 .archive .format-image .entry-thumbnail,
@@ -1064,7 +1134,7 @@ a.more-link {
 }
 
 /*--------------------------------------------------------------
-11.5 Comments
+## Comments
 --------------------------------------------------------------*/
 .comments-title {
 	font-size: 20px;
@@ -1146,23 +1216,35 @@ a.more-link {
 	}
 
 /*--------------------------------------------------------------
-12.0 Footer
+# Footer
 --------------------------------------------------------------*/
 .site-footer {
+	background-color: #fff;
 	padding: 2em 0;
 	text-align: center;
+}
+
+.footer-sidebar {
+	background-color: #fff;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 3em 0 0;
 }
 
 @media screen and (min-width: 1024px) {
 	.footer-sidebar .footer-widget {
 	    float: left;
-	    padding: 0px 15px;
+	    padding-right: 3%;
 	    width: 33.3%;
+	}
+
+	.footer-sidebar .footer-widget:last-child {
+		padding-right: 0;
 	}
 }
 
 /*--------------------------------------------------------------
-13.0 Infinite scroll
+# Jetpack
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
@@ -1175,8 +1257,18 @@ a.more-link {
 	display: block;
 }
 
+/* Related Post */
+.jp-relatedposts-post-date,
+.jp-relatedposts-post-context {
+	font-style: italic;
+}
+
+#jp-relatedposts .jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
+    font-size: 16px !important;
+}
+
 /*--------------------------------------------------------------
-14.0 Media
+# Media
 --------------------------------------------------------------*/
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,
@@ -1195,7 +1287,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-14.1 Captions
+## Captions
 --------------------------------------------------------------*/
 .wp-caption {
 	margin-bottom: 1.5em;
@@ -1218,7 +1310,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-14.2 Galleries
+## Galleries
 --------------------------------------------------------------*/
 .gallery {
 	margin-bottom: 1.5em;
@@ -1252,7 +1344,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-15.0 Media Queries
+# Media Queries
 --------------------------------------------------------------*/
 @media (max-width: 600px) {
 	.entry-meta {
@@ -1261,12 +1353,6 @@ object {
 }
 
 @media screen and (min-width: 1024px) {
-	.site-content {
-		margin-left: -15px;
-		margin-right: -15px;
-		overflow: hidden;
-	}
-
 	.page-template-layoutspage-left-sidebar-php .column {
 		float: right;
 	}
@@ -1315,6 +1401,7 @@ object {
 
 		.main-navigation li {
 			float: none;
+			display: block;
 			margin: 0;
 			position: relative;
 			padding: 0;
@@ -1325,13 +1412,17 @@ object {
 			border-bottom: 0;
 		}
 
+		.main-navigation li.page_item_has_children:after {
+			display: none;
+		}
+
 	.main-navigation ul li > ul {
 		display: block;
 		margin-left: 0;
 	}
 
 	.main-navigation ul ul {
-		border-left: 0;
+		border: 0;
 		box-shadow: none;
 		display: block;
 		float: none;
@@ -1346,6 +1437,15 @@ object {
 	.main-navigation ul ul li {
 		border-bottom: 0;
 		padding: 0;
+		width: auto;
+	}
+
+	.main-navigation ul ul li.page_item_has_children:after {
+		display: none;
+	}
+
+	.main-navigation ul ul ul {
+		float: none;
 	}
 
 	/* Widget */
@@ -1355,7 +1455,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-16.0 Print
+# Print
 --------------------------------------------------------------*/
 @media print {
 	body {

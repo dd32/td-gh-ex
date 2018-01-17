@@ -1,0 +1,40 @@
+/**
+ * Customizer Controls CSS
+ *
+ * @package Gump
+ * @since Gump 2.0.0
+ */
+
+/* Theme Panel */
+#customize-outer-theme-controls #accordion-section-read_more_section .accordion-section-title, 
+#customize-theme-controls #accordion-section-read_more_section .accordion-section-title {
+    color: #fff;
+    background-color: #3990c2;
+    border-bottom: 1px solid #3990c2;
+    border-left: 4px solid #3990c2;
+}
+
+#customize-outer-theme-controls #accordion-section-read_more_section .accordion-section-title::after, 
+#customize-theme-controls #accordion-section-read_more_section .accordion-section-title::after {
+    content: "\f345";
+    color: #fff;
+}
+
+#customize-outer-theme-controls #accordion-section-read_more_section .accordion-section-title:hover, 
+#customize-theme-controls #accordion-section-read_more_section .accordion-section-title:hover {
+    opacity: 0.6;
+}
+
+.wp-core-ui #customize-control-read_more .button, 
+.wp-core-ui #customize-control-read_more .button-secondary {
+    color: #fff;
+    border-color: #3990c2;
+    background: #3990c2;
+    box-shadow: 0 1px 0 #3990c2;
+    vertical-align: top;
+}
+
+.wp-core-ui #customize-control-read_more .button:hover, 
+.wp-core-ui .button-secondary:hover {
+    opacity: 0.6;
+}

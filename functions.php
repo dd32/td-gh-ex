@@ -2,8 +2,8 @@
 /**
  * gump functions and definitions
  *
- * @package gump
- * @since gump 1.0
+ * @package Gump
+ * @since Gump 1.0.0
  */
 
 /**
@@ -28,7 +28,7 @@ if ( ! function_exists( 'gump_setup' ) ) :
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	add_theme_support( 'post-thumbnails', array( 'post', 'slides' ) );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -81,8 +81,8 @@ function gump_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
     
 	register_sidebar( array(
@@ -91,8 +91,8 @@ function gump_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
@@ -101,8 +101,8 @@ function gump_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
@@ -111,8 +111,8 @@ function gump_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'gump_widgets_init' );
@@ -122,6 +122,7 @@ add_action( 'widgets_init', 'gump_widgets_init' );
  */
 function gump_scripts() {
 	wp_enqueue_style( 'gump-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'fontawesome-css', get_template_directory_uri() . '/css/font-awesome.min.css' );
 
 	wp_enqueue_script( 'gump-fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '1.1' );
 
@@ -134,6 +135,35 @@ function gump_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'gump_scripts' );
+
+/**
+ * Add notice after active theme.
+ */
+function pk_notice() {
+	global $pagenow;
+	if ( is_admin() && isset( $_GET['activated'] ) && 'themes.php' === $pagenow ) {
+	?>
+	<div class="updated notice notice-success is-dismissible">
+		<p>
+			<?php
+			// Translators: welcome page.
+			echo wp_kses_post( sprintf( __( 'Thank you for choosing Gump Free. To get started, visit our <a href="%s">welcome page</a>.', 'gump' ), esc_url( admin_url( 'themes.php?page=gump' ) ) ) );
+			?>
+		</p>
+		<p>
+			<a class="button" href="<?php echo esc_url( admin_url( 'themes.php?page=gump' ) ); ?>"><?php esc_html_e( 'Get started with Gump Free', 'gump' ); ?></a>
+		</p>
+	</div>
+	<?php
+	}
+}
+add_action( 'admin_notices', 'pk_notice' );
+
+/**
+ * Load dashboard
+ */
+require get_template_directory() . '/inc/dashboard/class-pk-dashboard.php';
+$dashboard = new Gump_Dashboard;
 
 /**
  * Custom Header feature.
@@ -164,6 +194,12 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Custom Widgets
  */
 require get_template_directory() . '/inc/widgets.php';
+
+/**
+ * Add "pro" link to the customizer
+ *
+ */
+require get_template_directory() . '/inc/customize-pro/class-customize.php';
 
 /**
  * Print the attached image with a link to the next attached image.
@@ -237,7 +273,7 @@ endif;
  * @since gump 1.0
  */
 function gump_excerpt_more( $more ) {
-	return '<a class="more-link" href="'. get_permalink( get_the_ID() ) . '">' . __( 'Read more', 'gump' ) . '</a>';
+	return '<a class="more-link" href="'. get_permalink( get_the_ID() ) . '">' . __( 'Read more ->', 'gump' ) . '</a>';
 }
 add_filter( 'excerpt_more', 'gump_excerpt_more' );
 
@@ -251,3 +287,54 @@ add_filter( 'excerpt_more', 'gump_excerpt_more' );
  */
 remove_action('wp_head', 'wp_generator'); //Version of Wordpress
 remove_action('wp_head', 'adjacent_posts_rel_link'); //Next and Prev Posts
+
+/**
+ * Add Google Fonts
+ */
+function add_google_fonts() {
+
+wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Pacifico&subset=cyrillic,latin-ext,vietnamese');
+	wp_enqueue_style( 'googleFonts');
+}
+add_action('wp_print_styles', 'add_google_fonts');
+
+/**
+ * Add Google Analytics
+ */
+function pk_analytics() {
+?>
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '<?php echo get_theme_mod( 'pk_start_here_analytics' ); ?>', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- /Google Analytics -->
+<?php
+}
+add_action('wp_head', 'pk_analytics',99);
+
+/**
+ * Add Search Box to the Menu
+ *
+ */
+function add_search_form($items, $args) {
+          if( $args->theme_location == 'primary' ){
+          $items .= '<li class="menu-item search-box">'
+                  . '<form role="search" method="get" class="search-form" action="'.home_url( '/' ).'">'
+                  . '<label>'
+                  . '<span class="screen-reader-text">' . _x( 'Search for:', 'label', 'gump' ) . '</span>'
+                  . '<input type="search" class="search-field" placeholder="' . esc_attr_x( 'Search', 'placeholder', 'gump' ) . '" value="' . get_search_query() . '" name="s" title="' . esc_attr_x( 'Search for:', 'label', 'gump' ) . '" />'
+                  . '</label>'
+                  . '<input type="submit" class="search-submit" value="'. esc_attr_x('Search', 'submit button', 'gump') .'" />'
+                  . '</form>'
+                  . '</li>';
+          }
+        return $items;
+}
+add_filter('wp_nav_menu_items', 'add_search_form', 10, 2);

@@ -2,8 +2,8 @@
 /**
  * The template part for displaying a message that posts cannot be found.
  *
- * @package gump
- * @since gump 1.0
+ * @package Gump
+ * @since Gump 1.0.0
  */
 ?>
 

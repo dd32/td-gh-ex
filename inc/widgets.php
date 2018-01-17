@@ -2,21 +2,21 @@
 /**
  * Custom Widgets
  *
- * @package gump
- * @since gump 1.0
+ * @package Gump
+ * @since Gump 1.0.0
  */
 
 /**
  * Social Links
  *
- * @since gump 1.0
+ * @since Gump 1.0.0
  */
 class social_gump extends WP_Widget {
 
 	/**
 	 * Sets up the widgets name etc
 	 */
-	function social_gump() {
+	function __construct() {
 		/* Widget settings. */
 		$widget_ops = array( 'classname' => 'widget-social', 'description' => 'Show Icons of your Social Links.', 'gump' );
 
@@ -24,7 +24,7 @@ class social_gump extends WP_Widget {
 		$control_ops = array( 'id_base' => 'social_gump' );
 
 		/* Create the widget. */
-		$this->__construct( 'social_gump', 'Social Links (gump)', $widget_ops, $control_ops );
+		parent::__construct( 'social_gump', 'Social Links (gump)', $widget_ops, $control_ops );
 	}
 
 	/**
@@ -39,7 +39,9 @@ class social_gump extends WP_Widget {
 		/* User-selected settings. */
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		$feed = $instance['feed'];
+		$email = $instance['email'];
 		$linkedin = $instance['linkedin'];
+		$bloglovin = $instance['bloglovin'];
 		$twitter = $instance['twitter'];
 		$facebook = $instance['facebook'];
 		$googleplus = $instance['googleplus'];
@@ -54,6 +56,9 @@ class social_gump extends WP_Widget {
 		$skype = $instance['skype'];
 		$tumblr = $instance['tumblr'];
 		$wordpress = $instance['wordpress'];
+		$soundcloud = $instance['soundcloud'];
+		$medium = $instance['medium'];
+		$snapchat = $instance['snapchat'];
 
 
 		/* Before widget (defined by themes). */
@@ -65,8 +70,14 @@ class social_gump extends WP_Widget {
 		if ( $feed )
 			echo '<span><a href="' . $feed . '" title="' . __( 'Feed', 'gump' ) . '" class="' . __( 'social social-feed', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
 
+		if ( $email )
+			echo '<span><a href="mailto:' . $email . '" title="' . __( 'Email', 'gump' ) . '" class="' . __( 'social social-email', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
+
 		if ( $linkedin )
 			echo '<span><a href="' . $linkedin . '" title="' . __( 'Linkedin', 'gump' ) . '" class="' . __( 'social social-linkedin', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
+		
+		if ( $bloglovin )
+			echo '<span><a href="' . $bloglovin . '" title="' . __( 'Bloglovin', 'gump' ) . '" class="' . __( 'social social-bloglovin', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
 
 		if ( $twitter )
 			echo '<span><a href="' . $twitter . '" title="' . __( 'Twitter', 'gump' ) . '" class="' . __( 'social social-twitter', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
@@ -96,7 +107,7 @@ class social_gump extends WP_Widget {
 			echo '<span><a href="' . $dribbble . '" title="' . __( 'Dribbble', 'gump' ) . '" class="' . __( 'social social-dribbble', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
 
 		if ( $behance )
-			echo '<span><a href="' . $behance . '" title="' . __( 'Behance', 'gump' ) . '" class="' . __( 'social-fontello social-behance', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
+			echo '<span><a href="' . $behance . '" title="' . __( 'Behance', 'gump' ) . '" class="' . __( 'social social-behance', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
 
 		if ( $github )
 			echo '<span><a href="' . $github . '" title="' . __( 'Github', 'gump' ) . '" class="' . __( 'social social-github', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
@@ -109,6 +120,15 @@ class social_gump extends WP_Widget {
 
 		if ( $wordpress )
 			echo '<span><a href="' . $wordpress . '" title="' . __( 'Wordpress', 'gump' ) . '" class="' . __( 'social social-wordpress', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
+
+		if ( $soundcloud )
+			echo '<span><a href="' . $soundcloud . '" title="' . __( 'Soundcloud', 'gump' ) . '" class="' . __( 'social social-soundcloud', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
+
+		if ( $medium )
+			echo '<span><a href="' . $medium . '" title="' . __( 'Medium', 'gump' ) . '" class="' . __( 'social social-pk-medium', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
+
+		if ( $snapchat )
+			echo '<span><a href="' . $snapchat . '" title="' . __( 'Snapchat', 'gump' ) . '" class="' . __( 'social social-snapchat', 'gump' ) . '" target="' . __( '_blank', 'gump' ) . '"></a></span>';
 		
 		/* After widget (defined by themes). */
 		echo $after_widget;
@@ -126,7 +146,9 @@ class social_gump extends WP_Widget {
 		/* Strip tags (if needed) and update the widget settings. */
 		$instance['title'] = strip_tags( $new_instance['title'] );
 		$instance['feed'] = $new_instance['feed'];
+		$instance['email'] = $new_instance['email'];
 		$instance['linkedin'] = $new_instance['linkedin'];
+		$instance['bloglovin'] = $new_instance['bloglovin'];
 		$instance['twitter'] = $new_instance['twitter'];
 		$instance['facebook'] = $new_instance['facebook'];
 		$instance['googleplus'] = $new_instance['googleplus'];
@@ -141,6 +163,9 @@ class social_gump extends WP_Widget {
 		$instance['skype'] = $new_instance['skype'];
 		$instance['tumblr'] = $new_instance['tumblr'];
 		$instance['wordpress'] = $new_instance['wordpress'];
+		$instance['soundcloud'] = $new_instance['soundcloud'];
+		$instance['medium'] = $new_instance['medium'];
+		$instance['snapchat'] = $new_instance['snapchat'];
 
 		return $instance;
 	}
@@ -155,8 +180,10 @@ class social_gump extends WP_Widget {
 		/* Set up some default widget settings. */
 		$defaults = array( 
 						'title' => 'Social Links', 
-						'feed' => 'http://www.website.com/feed/', 
+						'feed' => 'http://www.website.com/feed/',
+						'email' => '', 
 						'linkedin' => '',
+						'bloglovin' => '',
 						'twitter' => '',
 						'facebook' => '',
 						'googleplus' => '',
@@ -170,7 +197,10 @@ class social_gump extends WP_Widget {
 						'github' => '',
 						'skype' => '',
 						'tumblr' => '',
-						'tumblr' => ''
+						'wordpress' => '',
+						'soundcloud' => '',
+						'medium' => '',
+						'snapchat' => ''
 					);
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 
@@ -185,8 +215,18 @@ class social_gump extends WP_Widget {
 		</p>
 
 		<p>
+			<label for="<?php echo $this->get_field_id( 'email' ); ?>"><?php _e('Email:','gump'); ?></label>
+			<input id="<?php echo $this->get_field_id( 'email' ); ?>" name="<?php echo $this->get_field_name( 'email' ); ?>" value="<?php echo $instance['email']; ?>" style="width:100%;" />
+		</p>
+
+		<p>
 			<label for="<?php echo $this->get_field_id( 'linkedin' ); ?>"><?php _e('Linkedin:','gump'); ?></label>
 			<input id="<?php echo $this->get_field_id( 'linkedin' ); ?>" name="<?php echo $this->get_field_name( 'linkedin' ); ?>" value="<?php echo $instance['linkedin']; ?>" style="width:100%;" />
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'bloglovin' ); ?>"><?php _e('Bloglovin:','gump'); ?></label>
+			<input id="<?php echo $this->get_field_id( 'bloglovin' ); ?>" name="<?php echo $this->get_field_name( 'bloglovin' ); ?>" value="<?php echo $instance['bloglovin']; ?>" style="width:100%;" />
 		</p>
 
 		<p>
@@ -257,6 +297,21 @@ class social_gump extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'wordpress' ); ?>"><?php _e('Wordpress:','gump'); ?></label>
 			<input id="<?php echo $this->get_field_id( 'wordpress' ); ?>" name="<?php echo $this->get_field_name( 'wordpress' ); ?>" value="<?php echo $instance['wordpress']; ?>" style="width:100%;" />
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'soundcloud' ); ?>"><?php _e('Soundcloud:','gump'); ?></label>
+			<input id="<?php echo $this->get_field_id( 'soundcloud' ); ?>" name="<?php echo $this->get_field_name( 'soundcloud' ); ?>" value="<?php echo $instance['soundcloud']; ?>" style="width:100%;" />
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'medium' ); ?>"><?php _e('Medium:','gump'); ?></label>
+			<input id="<?php echo $this->get_field_id( 'medium' ); ?>" name="<?php echo $this->get_field_name( 'medium' ); ?>" value="<?php echo $instance['medium']; ?>" style="width:100%;" />
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id( 'snapchat' ); ?>"><?php _e('Snapchat:','gump'); ?></label>
+			<input id="<?php echo $this->get_field_id( 'snapchat' ); ?>" name="<?php echo $this->get_field_name( 'snapchat' ); ?>" value="<?php echo $instance['snapchat']; ?>" style="width:100%;" />
 		</p>
 
 		<?php

@@ -2,8 +2,8 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package gump
- * @since gump 1.0
+ * @package Gump
+ * @since Gump 1.0.0
  */
 ?>
 

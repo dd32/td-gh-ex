@@ -2,8 +2,8 @@
 /**
  * Template Name: Full-width Page Template
  *
- * @package gump
- * @since gump 1.0
+ * @package Gump
+ * @since Gump 1.0.0
  */
 
 get_header(); ?>
