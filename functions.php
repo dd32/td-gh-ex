@@ -459,7 +459,7 @@ if ( ! function_exists( 'ayaclub_customize_register' ) ) :
 				'ayaclub_animations_display',
 				array(
 						'default'           => 1,
-						'sanitize_callback' => 'ayaclub_sanitize_checkbox',
+						'sanitize_callback' => 'esc_attr',
 				)
 		);
 
