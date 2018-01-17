@@ -459,7 +459,7 @@ if ( ! function_exists( 'ayaclub_customize_register' ) ) :
 				'ayaclub_animations_display',
 				array(
 						'default'           => 1,
-						'sanitize_callback' => 'esc_attr',
+						'sanitize_callback' => 'ayaclub_sanitize_checkbox',
 				)
 		);
 
@@ -476,3 +476,13 @@ if ( ! function_exists( 'ayaclub_customize_register' ) ) :
 	}
 endif; // ayaclub_customize_register
 add_action( 'customize_register', 'ayaclub_customize_register' );
+
+
+if ( ! function_exists( 'ayaclub_sanitize_checkbox' ) ) :
+
+	function ayaclub_sanitize_checkbox( $checked ) {
+		// Boolean check.
+		return ( ( isset( $checked ) && true == $checked ) ? true : false );
+	}
+
+endif; // ayaclub_sanitize_checkbox

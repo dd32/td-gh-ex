@@ -1,3 +1,9 @@
+AyaClub 1.0.2, 2018-01-17
+------------------------
+- fix issue in style.css with text domain
+- remove food-and-drink theme tag from style.css
+- add sanitize_callback function 
+
 AyaClub 1.0.1, 2018-01-17
 ------------------------
 - fix issue with Customize Animations checkbox
