@@ -11,7 +11,7 @@ Text Domain: best-blog
 Description: Best Blog is a perfect WordPress theme for personal blogs, blog,content publishers. From travel to fashion and everything in between, Best Blog brings beauty and unique designs combined with quality performance and stability to any type of blog.
 With WooCommerce plugin, you can get your blog and shop running in minutes. Also Best Blog have Five custom widgets and much more.
 
-Version: 1.0.7
+Version: 1.0.8
 
 Tags:   grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments,blog,news,food-and-drink
 
@@ -52,7 +52,6 @@ bestblog  is distributed under the terms of the GNU GPL
 .thumbnail-resize {
   position: relative;
   display: block;
-  overflow: hidden;
   width: 100%;
   height: 100%;
   text-align: center;
@@ -645,6 +644,7 @@ post layout-1
 .post-wrap-layout-1 .post-thumb .thumbnail-resize img {
   width: 100%;
   min-width: 330px;
+  box-shadow: 0px -3px 11px -7px rgba(0, 0, 0, 0.24), 7px 1px 9px -5px rgba(0, 0, 0, 0.2), 1px 6px 11px -3px rgba(0, 0, 0, 0.2);
 }
 
 .post-wrap-layout-1 .entry-category .meta-info-date a {
@@ -680,7 +680,7 @@ post layout-1
 }
 
 /*  ----------------------------------------------------
-post layout-2 missionary
+post layout-2 masonry
 -------------------------------------------------------- */
 
 .post-wrap-layout-2 .card-blog {
@@ -738,8 +738,9 @@ post layout-2 missionary
 }
 
 .card .card-footer .author {
-  display: inline-block;
   font-size: 14px;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .card .card-footer .author a {
@@ -755,11 +756,12 @@ post layout-2 missionary
 }
 
 .post-wrap-layout-2 .card-footer .stats {
-  float: right;
   line-height: 30px;
-  color: #616161;
-  display: inline-block;
-  font-size: 14px;
+    color: #616161;
+    font-size: 14px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
 }
 
 .post-wrap-layout-2 .card-footer .stats a {
@@ -782,7 +784,7 @@ post layout-2 missionary
 .top-footer-wrap .lates-post-cardmission .cell{
   width: 100%;
   padding-top: 0px;
-  padding-bottom: 0;
+  padding-bottom: 10px;
 }
 .top-footer-wrap .lates-post-cardmission .card-content{
   padding-right: 10px;
@@ -794,11 +796,13 @@ post layout-2 missionary
 
 /*----------- laout 2 at sidebar -----------*/
 
-.sidebar-inner .widget_latest-post-missionary .widget_wrap {
+.sidebar-inner .widget_latest-post-masonry .widget_wrap {
   padding: 0px;
 }
-
-.sidebar-inner .widget_latest-post-missionary .widget_wrap .post-wrap-layout-2 .cell {
+.widget_wrap .card-title h3.post-title{
+  font-size: 24px;
+}
+.sidebar-inner .widget_latest-post-masonry .widget_wrap .post-wrap-layout-2 .cell {
   padding: 0px;
   width: 100%;
 }
@@ -837,6 +841,8 @@ Single Post
   margin: 0 3px 3px 0;
   background: rgba(255, 194, 202, 0.82);
   color: #fff;
+  opacity: .8;
+  padding: .4em .8em;
 }
 
 .single-cats-noimg.button-group {
@@ -1967,6 +1973,8 @@ Main Slider
   pointer-events: none;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  border-bottom-right-radius: 6px;
+border-bottom-left-radius: 6px;
 }
 .slider-post-wrap .post-thumb-slider {
   z-index: 1;
@@ -2145,9 +2153,11 @@ Main Slider
 .card-footer {
   border-top: 1px solid rgba(0, 0, 0, .125);
   padding: .75rem 0rem 0 0rem;
-  display: block;
+  display: table;
   position: relative;
   overflow: hidden;
+  width: 100%;
+
 }
 
 .card .card-footer .left {
@@ -2673,6 +2683,7 @@ Global Mobile
   .top-footer-wrap .gallery-item {
     float: left;
     padding: 2px;
+    width: 48%;
   }
   .woocommerce .columns-3 ul.products li.product {
     float: left;

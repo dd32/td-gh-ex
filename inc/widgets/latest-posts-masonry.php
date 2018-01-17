@@ -9,16 +9,16 @@
 
 
 
- if ( !class_exists( 'bestblog_post_missionary' ) ) {
+ if ( !class_exists( 'bestblog_post_masonry' ) ) {
 
-    class bestblog_post_missionary extends WP_Widget {
+    class bestblog_post_masonry extends WP_Widget {
 
       public function __construct() {
         parent::__construct(
-          'latest-post-missionary',
-          __( 'Bestblog - Blog missionary Style', 'best-blog' ),
+          'latest-post-masonry',
+          __( 'Bestblog - Blog Masonry Style', 'best-blog' ),
           array(
-            'description' => __( '(blog missionary style) Displays latest posts or posts from a choosen category.(Home page & sidebar) ', 'best-blog' ),
+            'description' => __( '(blog masonry style) Displays latest posts or posts from a choosen category.(Home page & sidebar) ', 'best-blog' ),
             'customize_selective_refresh' => true,
           )
         );
@@ -179,7 +179,7 @@ function form($instance) {
 
 
 // register bestblog dual category posts widget
-function bestblog_latest_post_missionary() {
-    register_widget( 'bestblog_post_missionary' );
+function bestblog_latest_post_masonry() {
+    register_widget( 'bestblog_post_masonry' );
 }
-add_action( 'widgets_init', 'bestblog_latest_post_missionary' );
+add_action( 'widgets_init', 'bestblog_latest_post_masonry' );

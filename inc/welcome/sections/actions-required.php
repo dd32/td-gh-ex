@@ -13,7 +13,7 @@
   <!-- NEWS -->
 
   <!-- Front page -->
-  <?php if ( get_option( 'show_on_front' ) != 'page' ) { ?> 
+  <?php if ( get_option( 'show_on_front' ) != 'page' ) { ?>
     <h3><?php esc_html_e( ' Setup a custom homepage ', 'best-blog' ); ?></h3>
 		<div class="two-three"><?php esc_html_e( 'If you want to create unique homepage, create the new page first, set the template "Homepage" and save the page. Then please go to Settings -> Reading and switch "Front page displays" to "A static page" and select the page you created before.', 'best-blog' ); ?>
       <ul>
@@ -28,7 +28,7 @@
       </ul>
       <img src="<?php echo get_template_directory_uri(); ?>/inc/welcome/img/Reading-Settings.png ;?>" />
 
-      <p><a href="<?php echo esc_url('http://localhost/wordpress/wp-admin/options-reading.php'); ?>" class="button button-primary"><?php esc_html_e( 'Front page settings', 'best-blog' ); ?></a></p>
+      <p><a href="<?php echo esc_url( admin_url( 'options-reading.php' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Front page settings', 'best-blog' ); ?></a></p>
     </div>
 
   <?php

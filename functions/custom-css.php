@@ -22,6 +22,7 @@ if ( 225 > ariColor::newColor( $bestblog_flavor_color )->luminance ) {
 	$text_color = Kirki_Color::adjust_brightness( $bestblog_flavor_color, -225 );
 
 }
+$text_color = esc_attr( $text_color );
 /*  Color calculation for text */
 $inline_css .=
 	".button.secondary,
@@ -57,6 +58,7 @@ $text_color_hover = Kirki_Color::adjust_brightness( $bestblog_flavor_color, 225 
 $text_color_hover = Kirki_Color::adjust_brightness( $bestblog_flavor_color, -225 );
 
 }
+$text_color_hover = esc_attr( $text_color_hover );
 /*  Color calculation for text */
 $inline_css .=
 ".button.secondary:hover,
@@ -91,6 +93,8 @@ $sub_h1_color = Kirki_Color::adjust_brightness( $menu_bg_color, 225 );
 $sub_h1_color = Kirki_Color::adjust_brightness( $menu_bg_color, -225 );
 
 }
+$sub_h1_color = esc_attr( $sub_h1_color );
+
 /*  Color calculation for text */
 $inline_css .=
 ".heade-page-nothumb h1,

@@ -161,7 +161,7 @@ add_action('after_setup_theme', 'bestblog_setup');
 
 function bestblog_scripts()
 {
-    wp_enqueue_style('fontawesome', get_template_directory_uri() . '/fonts/awesome/css/font-awesome.min.css', 'font_awesome', true);
+    wp_enqueue_style('fontawesome', get_template_directory_uri() . '/inc/kirki/assets/vendor/fontawesome/css/font-awesome.min.css', 'font_awesome', true);
     wp_enqueue_style('bestblog_core', get_template_directory_uri() . '/css/bestblog.min.css', 'bestblogcore_css', true);
     wp_enqueue_style('bestblog-fonts', bestblog_fonts_url(), array(), null);
     wp_enqueue_style('bestblog-style', get_stylesheet_uri());
@@ -330,7 +330,7 @@ if ( bestblog_is_woocommerce_active() ) {
 /** call widgets */
 require_once(get_template_directory() . '/inc/widgets/class-author-widget.php');
 require_once(get_template_directory() . '/inc/widgets/latest-posts-single.php');
-require_once(get_template_directory() . '/inc/widgets/latest-posts-missionary.php');
+require_once(get_template_directory() . '/inc/widgets/latest-posts-masonry.php');
 
 
 

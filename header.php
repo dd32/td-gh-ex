@@ -21,11 +21,11 @@
 	<body <?php body_class();?> >
 		<?php /* start site warp */?>
 		<?php $site_layout = get_theme_mod( 'site_layout', 'fluid main-raised' ); ?>
-		<div id="site-wrapper" class=" site_layout <?php  echo $site_layout; ?> grid-container ">
+		<div id="site-wrapper" class=" site_layout <?php  echo esc_attr($site_layout); ?> grid-container ">
 			<div class="header-wrap">
 				<?php get_template_part( 'template-parts/header/header', 'mobile' ); ?>
 				<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 				<?php get_template_part( 'template-parts/header/main', 'menu' ); ?>
 			</div>
 			<?php $topbg_gradient = get_theme_mod( 'topbg_gradient', 'gradient_2' ); ?>
-			<div id="content" class="site-mask  <?php echo $topbg_gradient ?>" id="sticky-anchor">
+			<div id="content" class="site-mask  <?php echo esc_attr($topbg_gradient); ?>" id="sticky-anchor">

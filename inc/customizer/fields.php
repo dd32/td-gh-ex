@@ -5,7 +5,7 @@ Kirki::add_config( 'best_blog', array(
 ) );
 
 $socialarray = array(
-		'' => 'Please Select',
+		'' => esc_attr__('Please Select', 'best-blog'),
 		'facebook' =>esc_attr__('Facebook', 'best-blog'),
 		'dribbble' => esc_attr__('Dribbble', 'best-blog'),
 		'twitter' => esc_attr__('Twitter', 'best-blog'),
