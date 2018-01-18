@@ -1,7 +1,7 @@
 === Bezel ===
 Contributors: SimpleFreeThemes.com
-Requires at least: WordPress 4.6
-Tested up to: WordPress 4.8.1
+Requires at least: WordPress 4.7
+Tested up to: WordPress 4.9.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
@@ -88,6 +88,14 @@ Source: https://unsplash.com/
 - https://unsplash.com/photos/BmsmOjGQegU
 
 == Changelog ==
+
+= 0.1.4 =
+Released: January 18, 2017
+
+* New: Theme Option `Display Archives at Fullwidth` added in Customizer > Theme Options > General Options
+* Code Improvements.
+* CSS Enhancements.
+* POT file updated.
 
 = 0.1.3 =
 Released: September 13, 2017

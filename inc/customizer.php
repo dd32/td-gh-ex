@@ -27,7 +27,8 @@ function bezel_customize_register ( $wp_customize ) {
 	$wp_customize->add_section( 'bezel_general_options', array (
 		'title'     => esc_html__( 'General Options', 'bezel' ),
 		'panel'     => 'bezel_theme_options',
-		'priority'  => 1,
+		'priority'  => 10,
+		'description' => esc_html__( 'Personalize the settings of your theme.', 'bezel' ),
 	) );
 
 	// Main Sidebar Position
@@ -47,13 +48,26 @@ function bezel_customize_register ( $wp_customize ) {
 		),
 	) );
 
+	// Fullwidth Archive Control
+	$wp_customize->add_setting ( 'bezel_fullwidth_archive', array (
+		'default'           => bezel_default( 'bezel_fullwidth_archive' ),
+		'sanitize_callback' => 'bezel_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control ( 'bezel_fullwidth_archive', array (
+		'label'    => esc_html__( 'Display Archives at Fullwidth', 'bezel' ),
+		'section'  => 'bezel_general_options',
+		'priority' => 2,
+		'type'     => 'checkbox',
+	) );
+
 	/**
 	 * Footer Section
 	 */
 	$wp_customize->add_section( 'bezel_footer_options', array (
 		'title'       => esc_html__( 'Footer Options', 'bezel' ),
 		'panel'       => 'bezel_theme_options',
-		'priority'    => 2,
+		'priority'    => 20,
 		'description' => esc_html__( 'Personalize the footer settings of your theme.', 'bezel' ),
 	) );
 
@@ -90,7 +104,7 @@ function bezel_customize_register ( $wp_customize ) {
 		'title'       => esc_html__( 'Theme Support', 'bezel' ),
 		'description' => esc_html__( 'Thanks for your interest in Bezel! If you have any questions or run into any trouble, please visit us the following links. We will get you fixed up!', 'bezel' ),
 		'panel'       => 'bezel_theme_options',
-		'priority'    => 3,
+		'priority'    => 30,
 	) );
 
 	// Theme
@@ -140,7 +154,7 @@ function bezel_customize_register ( $wp_customize ) {
 		'title'       => esc_html__( 'Enjoying the theme?', 'bezel' ),
 		'description' => esc_html__( 'Why not leave us a review on WordPress.org? We\'d really appreciate it!', 'bezel' ),
 		'panel'       => 'bezel_theme_options',
-		'priority'    => 4,
+		'priority'    => 40,
 	) );
 
 	// Theme

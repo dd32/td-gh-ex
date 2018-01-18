@@ -16,9 +16,10 @@
 function bezel_default( $theme_mod = 'bezel_sidebar_position' ) {
 
 	$bezel_default = array(
-		'bezel_sidebar_position' => 'right',
-		'bezel_copyright'        => sprintf( '&copy; Copyright %1$s - <a href="%2$s">%3$s</a>', esc_html( date_i18n( __( 'Y', 'bezel' ) ) ), esc_attr( esc_url( home_url( '/' ) ) ), esc_html( get_bloginfo( 'name' ) ) ),
-		'bezel_credit'           => true,
+		'bezel_sidebar_position'  => 'right',
+		'bezel_fullwidth_archive' => false,
+		'bezel_copyright'         => sprintf( '&copy; Copyright %1$s - <a href="%2$s">%3$s</a>', esc_html( date_i18n( __( 'Y', 'bezel' ) ) ), esc_attr( esc_url( home_url( '/' ) ) ), esc_html( get_bloginfo( 'name' ) ) ),
+		'bezel_credit'            => true,
 	);
 
 	if ( isset( $bezel_default[$theme_mod] ) ) {
@@ -100,6 +101,24 @@ function bezel_fonts_url() {
 
 }
 endif;
+
+/**
+ * Filter 'bezel_has_sidebar'
+ * We will modify the filter only, if the `bezel_has_fullwidth_archive`.
+ *
+ * @param bool $sidebar
+ * @return bool
+ */
+function bezel_has_fullwidth_archive_filter( $sidebar ) {
+
+	if ( bezel_has_fullwidth_archive() ) {
+		return false; // Sidebar must be false if archive is fullwidth.
+	}
+
+	return (bool) $sidebar;
+
+}
+add_filter( 'bezel_has_sidebar', 'bezel_has_fullwidth_archive_filter', 20 );
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
@@ -225,10 +244,15 @@ function bezel_body_classes( $classes ) {
 		$classes[] = 'has-custom-background-image';
 	}
 
+	// Full Width Archive Class
+	if ( bezel_has_fullwidth_archive() ) {
+		$classes[] = 'has-full-width-archive';
+	}
+
 	// Sidebar Position Class
 	if ( bezel_has_sidebar() ) {
 		$classes[] = 'has-' . esc_attr( bezel_mod( 'bezel_sidebar_position' ) ) . '-sidebar';
-	} else {
+	} else if ( ! bezel_has_fullwidth_archive() ) {
 		$classes[] = 'has-no-sidebar';
 	}
 
@@ -252,53 +276,56 @@ function bezel_template_redirect_content_width() {
 add_action( 'template_redirect', 'bezel_template_redirect_content_width' );
 
 /**
- * Blog Copyright.
+ * Blog Credits.
  *
  * @return void
  */
-function bezel_copyright() {
-	$html = '<div class="copyright bezel-copyright">'. bezel_mod( 'bezel_copyright' ) .'</div>';
+function bezel_credits_blog() {
+	$html = '<div class="credits credits-blog">'. bezel_mod( 'bezel_copyright' ) .'</div>';
 
 	/**
-	 * Filters the Blog Copyright HTML.
+	 * Filters the Blog Credits HTML.
 	 *
-	 * @param string $html Blog Copyright HTML.
+	 * @param string $html Blog Credits HTML.
 	 */
-	$html = apply_filters( 'bezel_copyright_html', $html );
+	$html = apply_filters( 'bezel_credits_blog_html', $html );
 
 	echo convert_chars( convert_smilies( wptexturize( stripslashes( wp_filter_post_kses( addslashes( $html ) ) ) ) ) ); // WPCS: XSS OK.
 }
-add_action( 'bezel_credits', 'bezel_copyright' );
+add_action( 'bezel_credits', 'bezel_credits_blog' );
 
 /**
  * Designer Credits.
  *
  * @return void
  */
-function bezel_designer() {
-	$designer_string = sprintf( '<a href="%1$s" title="%2$s">%3$s</a> <span>&sdot;</span> %4$s <a href="%5$s" title="%6$s">%7$s</a>',
-		esc_url( 'https://simplefreethemes.com' ),
-		esc_attr( 'Bezel Theme' ),
+function bezel_credits_designer() {
+	$designer_string = sprintf( '%1$s %2$s <a href="%3$s" title="%4$s">%5$s</a> <span>%6$s</span> %7$s <a href="%8$s" title="%9$s">%10$s</a>',
 		esc_html( 'Bezel Theme' ),
+		esc_html__( 'by', 'bezel' ),
+		esc_url( 'https://simplefreethemes.com' ),
+		esc_attr( 'SimpleFreeThemes' ),
+		esc_html( 'SimpleFreeThemes' ),
+		esc_html_x( '&sdot;', 'Footer Credit Separator', 'bezel' ),
 		esc_html__( 'Powered by', 'bezel' ),
 		esc_url( 'https://wordpress.org' ),
-		esc_attr( 'WordPress', 'bezel' ),
+		esc_attr( 'WordPress' ),
 		esc_html( 'WordPress' )
 	);
 
 	// Designer HTML
-	$html = '<div class="designer bezel-designer">'. $designer_string .'</div>';
+	$html = '<div class="credits credits-designer">'. $designer_string .'</div>';
 
 	/**
 	 * Filters the Designer HTML.
 	 *
 	 * @param string $html Designer HTML.
 	 */
-	$html = apply_filters( 'bezel_designer_html', $html );
+	$html = apply_filters( 'bezel_credits_designer_html', $html );
 
 	echo $html; // WPCS: XSS OK.
 }
-add_action( 'bezel_credits', 'bezel_designer' );
+add_action( 'bezel_credits', 'bezel_credits_designer' );
 
 /**
  * Enqueues front-end CSS to hide elements.
@@ -311,7 +338,7 @@ function bezel_hide_elements() {
 
 	// Designer Credit
 	if ( false === bezel_mod( 'bezel_credit' ) ) {
-		$elements[] = '.bezel-designer';
+		$elements[] = '.credits-designer';
 	}
 
 	// Bail if their are no elements to process

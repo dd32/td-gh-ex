@@ -267,19 +267,6 @@ function bezel_post_thumbnail() {
 }
 endif;
 
-if ( ! function_exists( 'bezel_the_custom_logo' ) ) :
-/**
- * Displays the optional custom logo.
- *
- * Does nothing if the custom logo is not available.
- */
-function bezel_the_custom_logo() {
-	if ( function_exists( 'the_custom_logo' ) ) {
-		the_custom_logo();
-	}
-}
-endif;
-
 /**
  * A helper conditional function.
  * Theme has Excerpt or Not
@@ -317,6 +304,22 @@ function bezel_has_sidebar() {
 	 * @param bool
 	 */
 	return apply_filters( 'bezel_has_sidebar', is_active_sidebar( 'sidebar-1' ) );
+
+}
+
+/**
+ * A helper conditional function.
+ * Theme has Fullwidth Archive or not
+ *
+ * @return bool
+ */
+function bezel_has_fullwidth_archive() {
+
+	/**
+	 * Fullwidth Archive Filter
+	 * @return bool
+	 */
+	return apply_filters( 'bezel_has_fullwidth_archive', (bool) ( is_archive() || is_home() ) && bezel_mod( 'bezel_fullwidth_archive' ) );
 
 }
 

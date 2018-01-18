@@ -51,7 +51,7 @@
 	// Copyright Control
 	wp.customize( 'bezel_copyright', function( value ) {
 		value.bind( function( to ) {
-			$( '.bezel-copyright' ).html( to );
+			$( '.credits-blog' ).html( to );
 		} );
 	} );
 
@@ -59,12 +59,12 @@
 	wp.customize( 'bezel_credit', function( value ) {
 		value.bind( function( to ) {
 			if ( true === to ) {
-				$( '.bezel-designer' ).css( {
+				$( '.credits-designer' ).css( {
 					'clip': 'auto',
 					'position': 'relative'
 				} );
 			} else {
-				$( '.bezel-designer' ).css( {
+				$( '.credits-designer' ).css( {
 					'clip': 'rect(1px, 1px, 1px, 1px)',
 					'position': 'absolute'
 				} );
