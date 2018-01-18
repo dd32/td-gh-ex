@@ -6,7 +6,12 @@
 
 
 /* adding labestblogt panel */
-
+Kirki::add_panel( 'upgradepro_options', array(
+    'priority'    => 10,
+    'title'       => esc_attr__( 'About Theme', 'best-blog' ),
+    'description' => esc_attr__( 'This panel will provide all Site layout and Background color typography options of the Theme.', 'best-blog' ),
+    'icon' => 'dashicons-warning'
+) );
 
 
 Kirki::add_panel( 'bestblog_theme_options', array(

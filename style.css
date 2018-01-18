@@ -11,7 +11,7 @@ Text Domain: best-blog
 Description: Best Blog is a perfect WordPress theme for personal blogs, blog,content publishers. From travel to fashion and everything in between, Best Blog brings beauty and unique designs combined with quality performance and stability to any type of blog.
 With WooCommerce plugin, you can get your blog and shop running in minutes. Also Best Blog have Five custom widgets and much more.
 
-Version: 1.0.8
+Version: 1.0.9
 
 Tags:   grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments,blog,news,food-and-drink
 
@@ -1570,6 +1570,7 @@ gallery setup
   padding: 2px;
 }
 
+
 /* --------------------------------
 Comment box
 -------------------------------- */
@@ -2684,6 +2685,11 @@ Global Mobile
     float: left;
     padding: 2px;
     width: 48%;
+  }
+  .widget_wrap .gallery-item{
+    display: inline-block;
+    padding: 2px;
+    width:48%;
   }
   .woocommerce .columns-3 ul.products li.product {
     float: left;

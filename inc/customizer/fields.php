@@ -20,6 +20,32 @@ $socialarray = array(
 		'instagram' => esc_attr__('Instagram', 'best-blog'),
 		'xing' => esc_attr__('Xing', 'best-blog')
 );
+//**** newspapers upsell pro */
+Kirki::add_field( 'best_blog', array(
+	'type'        => 'custom',
+	'settings'    => 'best_blog_view_link_pro',
+	'section'     => 'bestblog_upgradepro_options',
+	'default'     => '<a class="button-error  button-upsell" target="_blank" href="' . esc_url( 'https://www.imonthemes.com/best-blog-wordpress-theme/#panel-3392-13-0-1' ) . '">'.esc_html__( 'Upgrade To Pro', 'best-blog' ).'</a>',
+	'priority'    => 10,
+) );
+
+
+Kirki::add_field( 'best_blog', array(
+	'type'        => 'custom',
+	'settings'    => 'best_blog_view_link2',
+	'section'     => 'bestblog_upgradepro_options',
+	'default'     => '<a class="button-blue  button-upsell" target="_blank" href="' . esc_url( 'https://wordpress.org/support/theme/best-blog' ) . '">'.esc_html__( 'Support', 'best-blog' ).'</a>',
+	'priority'    => 30,
+) );
+
+
+Kirki::add_field( 'best_blog', array(
+	'type'        => 'custom',
+	'settings'    => 'best_blog_view_link3',
+	'section'     => 'bestblog_upgradepro_options',
+	'default'     => '<a class="button-warning  button-upsell" target="_blank" href="' . esc_url( 'http://imonthemes.com/bestblog-demo/documentation-usage/' ) . '">'.esc_html__( 'Read the documentation', 'best-blog' ).'</a>',
+	'priority'    => 50,
+) );
 
 
 Kirki::add_field( 'best_blog', array(

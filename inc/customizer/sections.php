@@ -5,6 +5,14 @@
 
 
 /* adding Header Options section*/
+Kirki::add_section( 'bestblog_upgradepro_options', array(
+    'title'          =>esc_attr__( 'About Theme Info ', 'best-blog' ),
+     'panel'          => 'upgradepro_options', // Not typically needed.
+    'priority'       => 1,
+    'type'           => 'expanded',
+    'capability'     => 'edit_theme_options',
+) );
+
 Kirki::add_section( 'bestblog_appearance_options', array(
     'title'          =>esc_attr__( 'Site Appearance', 'best-blog' ),
      'panel'          => 'bestblog_theme_options', // Not typically needed.

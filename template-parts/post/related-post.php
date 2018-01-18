@@ -18,7 +18,7 @@
       <div class="grid-x grid-padding-x grid-padding-y ">
         <div class="cell small-24 ">
           <div class="block-title">
-            <h3 class="blog-title"><?php echo esc_attr__('You Might Also Like','best-blog'); ?></h3>
+            <h3 class="blog-title"><?php echo esc_html__('You Might Also Like','best-blog'); ?></h3>
           </div>
         </div>
       </div>
