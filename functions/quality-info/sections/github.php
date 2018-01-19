@@ -31,7 +31,7 @@
 	<div class="col-md-6">
 	<div class="quality-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Multi Level Navigation','quality'); ?></strong></p>
-		<p><?php esc_html_e( "There are beautifully styled navigation/menus in the Appointment theme. You can make multi level menus, which means you can create sub menus.","quality" ); ?></p>
+		<p><?php esc_html_e( "There are beautifully styled navigation/menus in the Quality theme. You can make multi level menus, which means you can create sub menus.","quality" ); ?></p>
 		<hr>
 	</div>
 	</div>
