@@ -29,26 +29,48 @@ function cell_customize_register ( $wp_customize ) {
 	 * Theme Pro Section
 	 */
 	$wp_customize->add_section( 'cell_pro', array(
-		'title'       => esc_html__( 'About Cell Pro', 'cell' ),
-		'description' => esc_html__( 'Cell Pro is premium WordPress theme with lot of additional features and support forum access. Please visit the link below to know more about Cell Pro theme.', 'cell' ),
+		'title'       => esc_html__( 'Cell Pro - 30% Off', 'cell' ),
+		'description' => esc_html__( 'Cell Pro is premium WordPress theme with lot of additional features, priority email support, forum access and regular updates. Upgrade to Cell Pro by using 30% limited discount code: CELLPRO30', 'cell' ),
 		'panel'       => 'cell_theme_options',
 		'priority'    => 10,
 	) );
 
-	// Theme
+	// Cell Pro vs Cell Lite
+	$wp_customize->add_setting ( 'cell_theme_about', array(
+		'default' => '',
+	) );
+
+	$wp_customize->add_control(
+		new Cell_Button_Control(
+			$wp_customize,
+			'cell_theme_about',
+			array(
+				'label'         => esc_html__( 'Cell Lite vs Cell Pro', 'cell' ),
+				'section'       => 'cell_pro',
+				'priority'      => 1,
+				'type'          => 'cell-button',
+				'button_tag'    => 'a',
+				'button_class'  => 'button button-primary',
+				'button_href'   => 'https://designorbital.com/cell/',
+				'button_target' => '_blank',
+			)
+		)
+	);
+
+	// Cell Pro
 	$wp_customize->add_setting ( 'cell_pro_about', array(
 		'default' => '',
 	) );
 
 	$wp_customize->add_control(
-		new Cell_WP_Customize_Button_Control(
+		new Cell_Button_Control(
 			$wp_customize,
 			'cell_pro_about',
 			array(
 				'label'         => esc_html__( 'Cell Pro', 'cell' ),
 				'section'       => 'cell_pro',
-				'priority'      => 1,
-				'type'          => 'button',
+				'priority'      => 2,
+				'type'          => 'cell-button',
 				'button_tag'    => 'a',
 				'button_class'  => 'button button-primary',
 				'button_href'   => 'https://designorbital.com/cell-pro/',
@@ -162,42 +184,20 @@ function cell_customize_register ( $wp_customize ) {
 		'priority'    => 40,
 	) );
 
-	// Theme
-	$wp_customize->add_setting ( 'cell_theme_about', array(
-		'default' => '',
-	) );
-
-	$wp_customize->add_control(
-		new Cell_WP_Customize_Button_Control(
-			$wp_customize,
-			'cell_theme_about',
-			array(
-				'label'         => esc_html__( 'Cell Lite vs Cell Pro', 'cell' ),
-				'section'       => 'cell_support',
-				'priority'      => 1,
-				'type'          => 'button',
-				'button_tag'    => 'a',
-				'button_class'  => 'button button-primary',
-				'button_href'   => 'https://designorbital.com/cell/',
-				'button_target' => '_blank',
-			)
-		)
-	);
-
 	// Documentation
 	$wp_customize->add_setting ( 'cell_theme_doc', array(
 		'default' => '',
 	) );
 
 	$wp_customize->add_control(
-		new Cell_WP_Customize_Button_Control(
+		new Cell_Button_Control(
 			$wp_customize,
 			'cell_theme_doc',
 			array(
 				'label'         => esc_html__( 'Cell Documentation', 'cell' ),
 				'section'       => 'cell_support',
-				'priority'      => 2,
-				'type'          => 'button',
+				'priority'      => 1,
+				'type'          => 'cell-button',
 				'button_tag'    => 'a',
 				'button_class'  => 'button button-primary',
 				'button_href'   => 'https://designorbital.com/cell-documentation/',
@@ -212,17 +212,46 @@ function cell_customize_register ( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control(
-		new Cell_WP_Customize_Button_Control(
+		new Cell_Button_Control(
 			$wp_customize,
 			'cell_theme_support',
 			array(
 				'label'         => esc_html__( 'General Support', 'cell' ),
 				'section'       => 'cell_support',
-				'priority'      => 3,
-				'type'          => 'button',
+				'priority'      => 2,
+				'type'          => 'cell-button',
 				'button_tag'    => 'a',
 				'button_class'  => 'button button-primary',
 				'button_href'   => 'https://designorbital.com/contact/',
+				'button_target' => '_blank',
+			)
+		)
+	);
+
+	// Theme Review Section
+	$wp_customize->add_section( 'cell_review_options', array(
+		'title'       => esc_html__( 'Enjoying the theme?', 'cell' ),
+		'description' => esc_html__( 'Why not leave us a review on WordPress.org? We\'d really appreciate it!', 'cell' ),
+		'panel'       => 'cell_theme_options',
+		'priority'    => 50,
+	) );
+
+	// Theme
+	$wp_customize->add_setting ( 'cell_theme_review', array(
+		'default' => '',
+	) );
+
+	$wp_customize->add_control(
+		new Cell_Button_Control(
+			$wp_customize,
+			'cell_theme_review',
+			array(
+				'label'         => esc_html__( 'Review on WordPress.org', 'cell' ),
+				'section'       => 'cell_review_options',
+				'type'          => 'cell-button',
+				'button_tag'    => 'a',
+				'button_class'  => 'button button-primary',
+				'button_href'   => 'https://wordpress.org/support/theme/cell/reviews',
 				'button_target' => '_blank',
 			)
 		)
@@ -235,12 +264,12 @@ add_action( 'customize_register', 'cell_customize_register' );
  */
 if ( class_exists( 'WP_Customize_Control' ) ) {
 
-	class Cell_WP_Customize_Button_Control extends WP_Customize_Control {
+	class Cell_Button_Control extends WP_Customize_Control {
 		/**
 		 * @access public
 		 * @var string
 		 */
-		public $type = 'button';
+		public $type = 'cell-button';
 
 		/**
 		 * HTML tag to render button object.

@@ -79,6 +79,9 @@ function cell_setup() {
 		'default-image' => '',
 	) ) );
 
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
 }
 endif; // cell_setup
 add_action( 'after_setup_theme', 'cell_setup' );

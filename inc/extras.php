@@ -243,14 +243,16 @@ add_action( 'cell_credits', 'cell_credits_blog' );
  * @return void
  */
 function cell_credits_designer() {
-	$designer_string = sprintf( '<a href="%1$s" title="%2$s">%3$s</a> %4$s <span>&sdot;</span> %5$s <a href="%6$s" title="%7$s">%8$s</a>',
-		esc_url( 'https://designorbital.com/cell/' ),
-		esc_attr( 'Cell Theme' ),
+	$designer_string = sprintf( '%1$s %2$s <a href="%3$s" title="%4$s">%5$s</a> <span>%6$s</span> %7$s <a href="%8$s" title="%9$s">%10$s</a>',
 		esc_html( 'Cell Theme' ),
-		esc_html( 'by DesignOrbital', 'cell' ),
+		esc_html__( 'by', 'cell' ),
+		esc_url( 'https://designorbital.com' ),
+		esc_attr( 'DesignOrbital' ),
+		esc_html( 'DesignOrbital' ),
+		esc_html_x( '&sdot;', 'Footer Credit Separator', 'cell' ),
 		esc_html__( 'Powered by', 'cell' ),
-		esc_url( 'https://wordpress.org/' ),
-		esc_attr( 'WordPress', 'cell' ),
+		esc_url( 'https://wordpress.org' ),
+		esc_attr( 'WordPress' ),
 		esc_html( 'WordPress' )
 	);
 
