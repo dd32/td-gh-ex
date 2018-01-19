@@ -110,7 +110,7 @@ function elitepress_service_content( $elitepress_service_content, $is_callback =
 			$title = ! empty( $features_item->title ) ? apply_filters( 'elitepress_translate_single_string', $features_item->title, 'Features section' ) : '';
 			$text = ! empty( $features_item->text ) ? apply_filters( 'elitepress_translate_single_string', $features_item->text, 'Features section' ) : '';
 			$link = ! empty( $features_item->link ) ? apply_filters( 'elitepress_translate_single_string', $features_item->link, 'Features section' ) : '';
-			$image = ! empty( $features_item->image_url ) ? apply_filters( 'hestia_translate_single_string', $features_item->image_url, 'Features section' ) : '';
+			$image = ! empty( $features_item->image_url ) ? apply_filters( 'elitepress_translate_single_string', $features_item->image_url, 'Features section' ) : '';
 			$color = '';
 			if ( is_customize_preview() && ! empty( $features_item->color ) ) {
 				$color = $features_item->color;
@@ -118,10 +118,15 @@ function elitepress_service_content( $elitepress_service_content, $is_callback =
 			?>
 			<div class="col-md-6 col-sm-6">
 				<div class="media service-area">
-					<?php if ( ! empty( $icon ) ) :?>
-					<div class="service-box" <?php if ( ! empty( $color ) ) { echo 'style="color:' . $color . '"'; } ?>>
-					<i class="fa <?php echo esc_html( $icon ); ?>"></i>
-					</div>
+					<?php if ( ! empty( $image ) ) : ?>
+						<div class="service-featured-img">
+							<img class="img-responsive" src="<?php echo esc_url( $image ); ?>" <?php if ( ! empty( $title ) ) : ?> alt="<?php echo esc_attr( $title ); ?>" title="<?php echo esc_attr( $title ); ?>" <?php endif; ?> />
+						</div>	
+					<?php endif; ?>
+						<?php if ( ! empty( $icon ) ) :?>
+							<div class="service-box">
+									<i class="fa <?php echo esc_html( $icon ); ?>"></i>
+							</div>
 					<?php endif; ?>
 					<div class="media-body">			
 					<?php if ( ! empty( $title ) ) : ?>

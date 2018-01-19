@@ -96,7 +96,7 @@ wp_enqueue_script('elitepress-slider');
 							<div class="container flex-slider-center">
 								<div class="slide-text-bg1"><h1><?php echo $slider_default_title[$i-1]; ?></h1>
 								</div>
-								<div class="slide-text-bg2"><h3><?php 'Lorem ipsum dolor sit amet consectetuer adipiscing elit.'; ?></h3></div>
+								<div class="slide-text-bg2"><h3><?php echo 'Lorem ipsum dolor sit amet consectetuer adipiscing elit.'; ?></h3></div>
 								<div class="flex-btn-div"><a class="btn1 flex-btn" href="#"><?php _e('Read More', 'elitepress'); ?></a></div>
 							</div>
 						</li>
