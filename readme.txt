@@ -227,3 +227,6 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, 
 
 = Version 1.6.4 =
 * Minor bug fixes
+
+= Version 1.6.5 =
+* Minor bug fixes
