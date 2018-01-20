@@ -491,6 +491,7 @@ if ( ! function_exists( 'avata_extensions_enqueue' ) ) {
 	function avata_extensions_enqueue() {
 		global $wp_customize;
 		$current_screen = get_current_screen();
+		$section_types  = avata_section_types();
 
 		if( $current_screen->id === "widgets" || $current_screen->id === "customize" || isset( $wp_customize ) ) :
 			wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/plugins/font-awesome/css/font-awesome.css', array(), '20170730', 'all' );
@@ -504,6 +505,11 @@ if ( ! function_exists( 'avata_extensions_enqueue' ) ) {
 		wp_localize_script( 'avata-extensions-widgets-customizer', 'avata_params', array(
 			'ajaxurl'  => admin_url('admin-ajax.php'),
 			'i18n_01'  =>  __('Re-order Saved.', 'avata' ),
+			'i18n_02' =>__('Are you sure you want to remove this section?', 'avata'),
+			'i18n_03' =>__('Remove Section', 'avata'),
+			'i18n_04' =>__('Duplicate Section', 'avata'),
+			'i18n_05' => sprintf(__('Get the <a href="%s" target="_blank">Pro version</a> of Avata to acquire this feature.', 'avata'),esc_url('https://www.hoothemes.com/themes/avata.html')),
+			'section_types' => $section_types
 		));
 		endif;
 	}

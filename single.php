@@ -8,6 +8,10 @@ $left_sidebar  = esc_attr(avata_option('left_sidebar_posts'));
 $right_sidebar = esc_attr(avata_option('right_sidebar_posts'));
 $hide_page_titlebar = esc_attr(avata_option('hide_page_titlebar'));
 
+$left_sidebar = apply_filters('avata_left_sidebar_posts',$left_sidebar);
+$right_sidebar = apply_filters('avata_right_sidebar_posts',$right_sidebar);
+$hide_page_titlebar = apply_filters('avata_hide_page_titlebar',$hide_page_titlebar);
+
 if ($left_sidebar != '' && $left_sidebar != '0')
 	$sidebar = 'left';
 

@@ -2,7 +2,10 @@
 
 == CHANGE LOG == 
 
-= Version 1.4.2 = = 06/05/2018
+= Version 1.4.3 = = 21/01/2018
+* Add - Added Social Link Target option for section team
+
+= Version 1.4.2 = = 06/01/2018
 * Fix - Fixed php Warning issue
 
 = Version 1.4.1 = = 29/12/2017 

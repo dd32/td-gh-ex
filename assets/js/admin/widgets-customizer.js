@@ -6,7 +6,48 @@ jQuery(document).ready(function($) {
 			$( s ).parent( '.widgets-holder-wrap' ).hide();
 		});
 		
-		$('#sub-accordion-panel-avata_frontpage_sections_panel > li.control-section > .accordion-section-title').append('<i class="fa fa-arrows">&nbsp;</i>');
+		var avata_get_sections = function(){
+			
+			var sections = new Array(),i = 0;
+			$('#sub-accordion-panel-avata_frontpage_sections_panel > li.control-section:visible').each(function(index, element) {
+                var id = $(this).attr('id');
+				api.section( id.replace('accordion-section-','') ).priority( i+10 );
+				id = id.replace('accordion-section-avata_','');	
+				id = id.replace(/_/g, '-');
+				sections[i] = id;
+				i++;
+            });
+			return sections;
+			}
+			
+			
+		$('#sub-accordion-panel-avata_frontpage_sections_panel > li.control-section').each(function(index, element) {
+            
+			var sectionID = $(this).attr('id');
+			sectionID = sectionID.replace('accordion-section-avata_section_','');
+			
+			$(this).find('.accordion-section-title').append('<i class="left fa fa-arrows">&nbsp;</i>');
+			
+			if($.inArray(sectionID, avata_params.section_types) !== -1){
+					$(this).append('<a href="javascript:;" title="'+avata_params.i18n_04+'" class="avata-section-action avata-copy-section"><i class="right fa fa-files-o">&nbsp;</i></a>');
+				}else{
+					if(isNaN(sectionID)){
+					$(this).append('<a href="javascript:;" title="'+avata_params.i18n_03+'" class="avata-section-action avata-delete-section"><i class="right fa fa-times">&nbsp;</i></a>');
+					}
+					
+					}
+			
+        });
+		
+		$(document).on('click', '.avata-copy-section', function(e){
+			
+				e.preventDefault();
+				$('.avata-update-to-pro').remove();
+				$(this).after('<p class="avata-update-to-pro">'+avata_params.i18n_04+': '+avata_params.i18n_05+' </p>');
+				
+		});
+		
+	
 		$('#sub-accordion-panel-avata_frontpage_sections_panel').sortable({items: "> li.control-section",update: function( event, ui ){
 			
 			var sections = new Array(),i = 0;

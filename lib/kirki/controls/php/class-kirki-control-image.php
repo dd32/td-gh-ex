@@ -43,6 +43,17 @@ class Kirki_Control_Image extends Kirki_Control_Base {
 		if ( _.isObject( data.value ) && ! _.isUndefined( data.value.url ) ) {
 			url = data.value.url;
 		}
+
+		data.choices.labels = _.isObject( data.choices.labels ) ? data.choices.labels : {};
+		data.choices.labels = _.defaults( data.choices.labels, {
+			select: '<?php esc_attr_e( 'Select image', 'avata' ); ?>',
+			change: '<?php esc_attr_e( 'Change image', 'avata' ); ?>',
+			'default': '<?php esc_attr_e( 'Default', 'avata' ); ?>',
+			remove: '<?php esc_attr_e( 'Remove', 'avata' ); ?>',
+			placeholder: '<?php esc_attr_e( 'No image selected', 'avata' ); ?>',
+			frame_title: '<?php esc_attr_e( 'Select image', 'avata' ); ?>',
+			frame_button: '<?php esc_attr_e( 'Choose image', 'avata' ); ?>',
+		} );
 		#>
 		<label>
 			<span class="customize-control-title">
@@ -58,22 +69,14 @@ class Kirki_Control_Image extends Kirki_Control_Base {
 					<img src="{{ url }}" alt="" />
 				</div>
 			<# } else { #>
-				<div class="placeholder">
-					<?php esc_attr_e( 'No File Selected', 'avata' ); ?>
-				</div>
+				<div class="placeholder">{{ data.choices.labels.placeholder }}</div>
 			<# } #>
 			<div class="actions">
-				<button class="button image-upload-remove-button<# if ( '' === url ) { #> hidden <# } #>">
-					<?php esc_attr_e( 'Remove', 'avata' ); ?>
-				</button>
+				<button class="button image-upload-remove-button<# if ( '' === url ) { #> hidden <# } #>">{{ data.choices.labels.remove }}</button>
 				<# if ( data.default && '' !== data.default ) { #>
-					<button type="button" class="button image-default-button"<# if ( data.default === data.value || ( ! _.isUndefined( data.value.url ) && data.default === data.value.url ) ) { #> style="display:none;"<# } #>>
-						<?php esc_attr_e( 'Default', 'avata' ); ?>
-					</button>
+					<button type="button" class="button image-default-button"<# if ( data.default === data.value || ( ! _.isUndefined( data.value.url ) && data.default === data.value.url ) ) { #> style="display:none;"<# } #>>{{ data.choices.labels['default'] }}</button>
 				<# } #>
-				<button type="button" class="button image-upload-button">
-					<?php esc_attr_e( 'Select File', 'avata' ); ?>
-				</button>
+				<button type="button" class="button image-upload-button">{{ data.choices.labels.select }}</button>
 			</div>
 		</div>
 		<?php

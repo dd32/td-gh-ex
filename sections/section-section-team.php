@@ -4,6 +4,7 @@
   $section_subtitle  = avata_option('section_subtitle_team');
   $team              = avata_option('section_items_team');
   $fullwidth         =  avata_option('section_fullwidth_team');
+  $link_target       =  avata_option('link_target_team');
   $container         = 'container';
   if ($fullwidth=='1')
  	 $container         = 'container-fullwidth';
@@ -40,7 +41,7 @@
 				for($i=1;$i<=5;$i++){
 					if($item['social_icon_'.$i] !='' ){
 			?>
-            <li><a target="_blank" href="<?php echo esc_url($item['social_link_'.$i]);?>"><i class="fa fa-<?php echo esc_attr(str_replace('fa-','',$item['social_icon_'.$i]));?>"></i></a></li>
+            <li><a target="<?php echo $link_target;?>" href="<?php echo esc_url($item['social_link_'.$i]);?>"><i class="fa fa-<?php echo esc_attr(str_replace('fa-','',$item['social_icon_'.$i]));?>"></i></a></li>
             <?php
 					}
 				}

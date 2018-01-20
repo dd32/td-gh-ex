@@ -46,9 +46,9 @@ var avata_customizer_section_scroll = function ( $ ) {
              var sectionId = 'section.avata-section-' + data;
           
             if ( $(sectionId).length > 0) {
-                $('html, body').animate({
+               /* $('html, body').animate({
                     scrollTop: $(sectionId).offset().top - 100
-                }, 1000);
+                }, 1000);*/
             }
         } );
     } );

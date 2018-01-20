@@ -1,4 +1,5 @@
 <?php
+require_once('section-options.php');
 global $avata_sections, $avata_sidebars;
 $option_name = avata_get_option_name();
 
@@ -1041,7 +1042,16 @@ array_splice($team_options,3,0,array('section_items_team' => array(
 														),
 																									
 													),
-													)));
+													),
+									'link_target_team' => array(
+				  'type'        => 'select',
+				  'settings'    => 'link_target_team',
+				  'label'       => esc_attr__( 'Social Link Target', 'avata-pro' ),
+				  'description' => '',
+				  'default'     => '_blank',
+				  'choices'     => array('_blank'=>esc_attr__( 'Blank', 'avata-pro' ),'_self'=>esc_attr__( 'Self', 'avata-pro' ))
+		),
+													));
 
 $avata_lite_sections['section-team'] = array(
 										'name'=> __('Section Team', 'avata'),
