@@ -7,8 +7,8 @@ Tested up to: 4.9.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Fred WordPress Theme, Copyright 2012 Joe Smith
-Fred is distributed under the terms of the GNU GPL
+Atoz WordPress Theme, Copyright 2018 Rijo Abraham
+Atoz is distributed under the terms of the GNU GPL
 
 == Description ==
 
