@@ -1,6 +1,5 @@
 	<aside id="oloWidget">
 		<ul>
-			<?php if (is_home()) { ?>
 			<li class="twitter_rss">
 			<?php 
 				global $olo_theme_options;
@@ -50,11 +49,13 @@
 					<span class="fa fa-rss"></span>
 				<?php } ?>
 				<?php if ($qrcode_url != '') { ?>
-				<a href="<?php echo $qrcode_url; ?>" rel="bookmark" title="<?php echo $qrcode_name; ?>"><span class="fa fa-qrcode"></span></a>
+				<span class="fa fa-qrcode"></span>
+				<img src="<?php echo $qrcode_url; ?>" alt="<?php echo $qrcode_name; ?>" class="qrcodeimg" width="258" height="258" />
 				<?php }else{ ?>
 					<span class="fa fa-qrcode"></span>
 				<?php } ?>
 			</li>
+			<?php if (is_home()) { ?>
 				<?php if ( !dynamic_sidebar('home') ) : ?>
 					<li id="archives" class="widget widget_archive">
 						<h2><span><?php _e( 'Archives', 'olo' ); ?></span></h2>

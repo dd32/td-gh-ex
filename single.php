@@ -27,7 +27,7 @@
 					</section>
 					
 					<footer>
-						<p class="tags"><i class="fa fa-tags"></i><?php the_tags(); ?></p>
+						<?php the_tags('<p class="tags"><i class="fa fa-tags"></i> ',', ','</p>'); ?>
 						<span class="author">
 							<?php _e('Posted by', 'olo'); ?> <?php the_author_posts_link(); ?>
 						</span> - 

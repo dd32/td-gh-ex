@@ -22,4 +22,17 @@ $('.oloEntry p a').each(function(){
             $self.append(' <i class="fa fa-external-link"></i>');
     }
 });
+
+ $('.fa-search').click(function(){
+	$('.fa-search').toggleClass('active');
+	$('#searchform').fadeToggle(250);
+	setTimeout(function(){
+		$('#searchform input').focus();
+	}, 300);
+});
+
+ $('.fa-qrcode').click(function(){
+	$('.fa-qrcode').toggleClass('active');
+	$('.qrcodeimg').fadeToggle(250);
+});
 }); 

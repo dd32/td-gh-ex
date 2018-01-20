@@ -1,19 +1,19 @@
 == olo WordPress Theme==
 Author:HJYL
 * by hjyl.org
-Requires at least: 3.7+
-Tested up to: 3.8
+Requires at least: 4.5+
+Tested up to: 4.9
 
 == ABOUT olo ==
 For questions, comments or bug reports, please go to
-http://hjyl.org/wordpress-theme-olo/
+https://hjyl.org/wordpress-theme-olo/
 
 All the images bundled with the theme are licensed under the [GNU GPL](http://www.gnu.org/licenses/gpl-2.0.html)
 
 == Theme Options ==
 olo has theme options page:Go into your Wordpress Admin, navigate to 'Appearance > Theme Options'
 
-* Theme options User Guide please visit here: http://hjyl.org/wordpress-theme-olo/#olo-theme-options
+* Theme options User Guide please visit here: https://hjyl.org/wordpress-theme-olo/#olo-theme-options
 
 == Language Package:  ==
 * Chinese (zh_CN): HJYL
@@ -37,3 +37,5 @@ olo has theme options page:Go into your Wordpress Admin, navigate to 'Appearance
 2015.04.28	update some functions.
 2015.05.09	Fix the function add_theme_support( 'title-tag' ).
 2015.06.21	Fix the_title bug.
+2018.01.20	update to newest functions for WordPress 4.9+,
+			change the whole site width, and some styles.

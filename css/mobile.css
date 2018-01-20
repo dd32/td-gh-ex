@@ -6,7 +6,7 @@ Author URI: http://hjyl.org/
 Description: Blue WordPress Theme based as HTML5 + CSS3.
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 3.0
+Version: 4.0
 */
 @import url("font-awesome.min.css");
 /* =Reset CSS.= */
@@ -94,9 +94,9 @@ video{
 }
 body{
 	text-align:center;
-	font-size:13px;
-	font-family:Consolas,Microsoft YaHei,Helvetica,Georgia,Arial,sans-serif,'宋体';
-	color:#000;
+	font-size:14px;
+	font-family:sans-serif;
+	color:#383838;
 	word-wrap: break-word;
 	position:relative;
 	background:#0A385A;
@@ -307,54 +307,44 @@ pre{
 	padding:0 5px 16px;
 	margin:0 0 20px;
 }
-
-
-/*header
----------------------*/
-header h1 a{
-	color:#FFF;
-	font-weight:bold;
-	font-size:100px;
-	text-shadow:2px 2px 2px #ccc;
-	transition-duration: 0.3s;
-	transition-property:color;
-}
-header h1 a:hover{
-	text-decoration:none;
-	text-shadow:2px 2px 2px #12629C;
-}
-body > header{
-	margin:0 auto;
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
 
-/*Home-Nav
----------------------*/
-#oloLogo #searchform{
-	width:150px;
-	position:absolute;
-	left:0;
-	top:100px;
+.screen-reader-text:focus {
+	background-color: #eee;
+	clip: auto !important;
+	clip-path: none;
+	color: #444;
+	display: block;
+	font-size: 1em;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
 }
-#oloLogo #searchform #s{
-	height:15px;
-	padding:5px 20px;
-	border:none;
-	background:transparent;
-	color:#FFF;
-}
-#searchsubmit{
-	display:none;
-}
-
 /*oloMenu
 ---------------------*/
 #oloMenu{
-	width:100%;
-	margin:0 auto;
 	background:rgba(6,35,56,0.4);
 	height:50px;
 }
-#oloMenu > ul > li{
+#oloMenu > ul li{
 	float:left;
 	padding:0 20px;
 	line-height:50px;
@@ -366,7 +356,7 @@ body > header{
 	font-size:14px;
 	font-weight:600;
 }
-.sub-menu{
+#oloMenu .sub-menu{
 	display:none;
 	z-index:999;
 	background:rgba(6,35,56,0.4);
@@ -376,7 +366,7 @@ body > header{
 	-o-transition:		all 0.3s ease-in-out;
 	transition:			all 0.3s ease-in-out;
 }
-.sub-menu li{
+#oloMenu .sub-menu li{
 	min-width:120px;
 }
 #oloMenu > ul > li > a{
@@ -388,13 +378,20 @@ body > header{
 	float:left;
 	left:0;
 }
-.sub-menu li a{
+#oloMenu .sub-menu li a{
 	text-decoration:none;
 	padding:10px 20px;
 }
-.sub-menu li:hover,
-.sub-menu li.current-menu-item{
+#oloMenu .sub-menu li:hover,
+#oloMenu .sub-menu li.current-menu-item{
 	background:rgba(6,35,56,0.8);
+}
+#oloMenu ul.sub-menu  li:hover > .sub-menu{
+	display:block;
+	position:absolute;
+	float:left;
+	left:100%;
+	top:0;
 }
 #oloMenu li.oloCat:hover a:after{
 	-webkit-transform:	rotate(180deg);
@@ -416,32 +413,67 @@ body > header{
 	-o-transition:		all 0.2s ease-in-out;
 	transition:			all 0.2s ease-in-out;
 }
-#oloLogo h1 a{
-	background:url("../images/logo.gif") no-repeat scroll 0 0 transparent;
-	width:100px;
-	height:100px;
-	display:block;
-	text-indent:-9999px;
+#oloLogo h1 img{
 	overflow:hidden;
 	border-radius:100px;
 	box-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
 	border:5px solid #FFF;
 	margin:20px auto;
 }
-#oloLogo h1 a:hover{
+#oloLogo h1 img:hover{
 	box-shadow:0 0 1px #ccc;
 }
-
+#oloLogo #olosearch{
+	position:relative;
+	text-align:right;
+}
+#olosearch .fa-search{
+	position:absolute;
+	right:0;
+	top:5px;
+	color:#EEEEEE;
+	padding:10px;
+	cursor: pointer;
+}
+#olosearch #searchform{
+	display:none ;
+}
+#olosearch #searchform input{
+	position:absolute;
+	right:30px;
+	top:8px;
+	border:1px solid #EEEEEE;
+	border-radius:8px;
+	padding:5px 10px;
+	background:#EEEEEE;
+	z-index:10;
+}
+#searchsubmit{
+	display:none;
+}
 /*oloContent
 ---------------------*/
+.sticky{
+}
+.bypostauthor{
+}
 #oloContainer{
 	background:rgba(255, 255, 255, 0.25);
 }
 #oloContainer{
 	text-align:left;
 }
+.nav-previous,
+.nav-next{
+	padding:10px 0 10px 120px;
+} 
+#nav-single p.nav-previous:before{
+	margin: 10px 0 0 -16px;
+}
+#archives-content {
+	width: 60%;
+}
 .oloPosts{
-	width:100%;
 	padding:20px 10px;
 	background-color: #E0E0E0;
 	background-image: -webkit-linear-gradient(0, rgba(255,255,255,.07) 50%, transparent 50%),  -webkit-linear-gradient(0, rgba(255,255,255,.13) 50%, transparent 50%),  -webkit-linear-gradient(0, transparent 50%, rgba(255,255,255,.17) 50%),  -webkit-linear-gradient(0, transparent 50%, rgba(255,255,255,.19) 50%);
@@ -472,25 +504,24 @@ body > header{
 #pinglist li:before ,
 #reply-title:before,
 #nav-single  p:before,
-#pings-title span a:before,
-#comments-title span a:before{
+#comments-title span a:before,
+#pings-title span a:before{
 	content: "";
 	left: 105px;
 	position: absolute;
 	top: 0;
 }
 #olo article {
-	border-bottom: 1px solid #DDDDDD;
 	margin: 0 0 1em;
 	overflow: hidden;
 	padding: 0 0 1em;
 }
-#olo article:before ,
+#olo article:before,
 .commentlist > .depth-1 > .comment:before,
 #comments-title span:before ,
+#reply-title:before,
 #pings-title span:before ,
 #pinglist li:before ,
-#reply-title:before,
 #nav-single  p:before{
 	background:#12629C;
 	border: 3px solid #FFFFFF;
@@ -511,17 +542,17 @@ body > header{
 #nav-single  p:hover:before{
 	background: orange;
 }
-.date {
+.oloPosts .date {
 	display: block;
 	width: 60px;
-	height: 70px;
-	margin: 10px;
+	height: 80px;
+	margin: 20px 10px;
 	background: #fff;
 	text-align: center;
 	position: relative;
 	float: left;
 }
-.date .binds {
+.oloPosts .date .binds {
 	position: absolute;
 	height: 15px;
 	width: 30px;
@@ -533,25 +564,25 @@ body > header{
 	right: 0;
 	margin: auto;
 }
-.date .month {
+.oloPosts .date .month {
 	background: #227EC0;
 	display: block;
-	padding: 8px 0;
+	padding: 5px 0;
 	color: #fff;
 	font-size: 12px;
 	font-weight: bold;
 	border-bottom: 2px solid #4B80A7;
 	box-shadow: inset 0 -1px 0 0 #666;
 }
-.date .day {
+.oloPosts .date .day {
 	display: block;
 	margin: 0;
-	padding: 0;
+	padding:8px 0;
 	font-size: 32px;
 	box-shadow: 0 0 3px #ccc;
 	position: relative;
 }
-.date .day:after {
+.oloPosts .date .day:after {
 	content: '';
 	display: block;
 	height: 100%;
@@ -562,7 +593,7 @@ body > header{
 	z-index: -1;
 	box-shadow: 0 0 3px #ccc;
 }
-.date .day:before {
+.oloPosts .date .day:before {
 	content: '';
 	display: block;
 	height: 100%;
@@ -574,8 +605,8 @@ body > header{
 	box-shadow: 0 0 3px #ccc;
 }
 .oloEntry:before,
-#pings-title span a:before,
-#comments-title span a:before {
+#comments-title span a:before,
+#pings-title span a:before {
 	background:#FFFFFF;
 	border-color: #E5E5E5;
 	border-style: solid;
@@ -592,16 +623,19 @@ body > header{
 }
 .oloEntry,
 .commentlist li.depth-1{
+	float:right;
+	width:60%;
 	background:#FFF;
 	border-radius:5px;
-	margin-left:120px;
 	padding:10px;
 	position:relative;
+	margin:10px 0;
 }
 #olo article header h2,
 #olo article footer,
-#archives-content {
-	margin:5px 0 5px 120px;
+.oloPosts .nopassword{
+	float:right;
+	width:60%;
 }
 .oloEntry{
 	font-size:14px;
@@ -614,8 +648,10 @@ body > header{
 }
 .oloNav{
 	text-align:right;
+	margin:10px 0;
 }
 .oloNav a{
+	margin:0 5px;
 	padding:5px 10px;
 }
 .oloNav a:hover,
@@ -626,32 +662,11 @@ body > header{
 	font-weight:bold;
 }
 
-/*oloContainer
----------------------*/
-#oloContainer{
-	float:left;
-	width:100%;
-}
-#oloContainer #oloContent{
-	width:100%;
-	margin:0 auto;
-}
-#oloContainer .oloPosts{
-	float:left;
-}
-.nav-previous,
-.nav-next{
-	padding:10px 0 10px 120px;
-} 
-#nav-single p.nav-previous:before{
-	margin: 10px 0 0 -16px;
-}
-
 /*Comments*/
 .commentlist li.depth-1{
+	margin:10px 0 10px 80px;
 	position:relative;
 	padding:10px;
-	margin-bottom:10px;
 	border:1px solid #ccc;
 	border-radius:5px;
 }
@@ -659,20 +674,19 @@ body > header{
 	content:" ";
 	border-left:1px solid #ccc;
 	border-bottom:1px solid #ccc;
-	height:15px;
-	width:15px;
+	height:15px;width:15px;
 	position:absolute;
 	top:20px;
 	left:-9px;
+	background:#FFF;
 	-moz-transform:		rotate(45deg);
 	-o-transform:		rotate(45deg);
 	-webkit-transform:	rotate(45deg);
 	-ms-transform:		rotate(45deg);
 	transform:			rotate(45deg);
-	background:#FFF;
 }
 .commentlist > .depth-1 > .comment:before{
-	margin:20px 0 0 -139px;
+	margin:20px 0 0 -135px;
 }
 /*IE9 hack
 :root .commentlist li.depth-1:before{
@@ -693,13 +707,10 @@ body > header{
 	font-size:2.5em;
 	color:#EBEBEB;
 }
-.comment-author{
-	position:relative;
-	z-index:1;
-}
-ul.children li.comment{
+.commentlist ul.children li.comment{
 	clear:both;
 	margin-top:10px;
+	width: 90%;
 }
 ul.children .avatar{
 	float:left;
@@ -715,7 +726,18 @@ ul.children .comment-body{
 	position:relative;
 	z-index:1;
 }
-.comment_time, .reply a{
+.comment-body p a{
+	border-bottom:1px dotted;
+}
+.comment-body p a:hover{
+	text-decoration:none;
+}
+.comment-body p a:first-child{
+	margin-right: 5px;
+	color:#227EC0;
+}
+.comment_time,
+.reply a{
 	color:#CCC;
 	font-family:Microsoft YaHei,Arial,sans-serif;
 }
@@ -723,12 +745,11 @@ ul.children .comment-body{
 	font-style:normal;
 }
 #comment-author-info p,
-#submit,.comment-welcomeback{
+#submit{
 	margin:10px 0;
 }
 #comment-author-info input{
 	padding:5px 10px;
-	width:70%;
 }
 #comments-title, #pings-title{
 	position:relative;
@@ -753,41 +774,34 @@ ul.children .comment-body{
 	margin:3px 0 0 -16px;
 }
 .comment-form-comment #comment{
-	width:70%;
+	width:97.5%;
 	padding:10px;
 }
-.comment-form-comment #comment, #comment-author-info input{
+.comment-form-comment #comment,
+#comment-author-info input{
+	width:60%;
 	font-size:14px;
 	border: 1px solid #CAE1EE;
 	-moz-box-shadow:	inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.2);
 	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.2);
 	box-shadow:			inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.2);
 }
-#respond{
+#respond,
+.comment-welcomeback{
 	margin:0 10px 0 120px;
 	display:inline-block;
 	position:relative;
 }
 #reply-title:before{
-	margin-left:-136px;
+	margin:5px 0 0 -136px;
 }
-.commentlist-nav{
+#comments-nav{
 	display:inline-block;
 	float:right;
 }
 #submit {
 	cursor:pointer;
-	display: inline-block;
-	vertical-align: top;
-	height: 48px;
-	line-height: 46px;
-	padding: 0 25px;
 	font-size: 15px;
-	color: #bbb;
-	text-align: center;
-	text-decoration: none;
-	text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
-	background-color: #303030;
 	border: 1px solid;
 	border-color: #202020 #1a1a1a #111;
 	border-radius: 25px;
@@ -807,7 +821,6 @@ ul.children .comment-body{
 #pinglist li:before {
 	margin: 0 0 0 -136px;
 }
-
 /*footer
 ---------------------*/
 body  > footer{
@@ -826,14 +839,3 @@ body > footer p{
 	color:#8E8E8E;
 	cursor:pointer;
 }
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 

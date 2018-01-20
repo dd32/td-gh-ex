@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-27 19:43+0800\n"
-"PO-Revision-Date: 2015-04-27 19:43+0800\n"
+"POT-Creation-Date: 2018-01-20 11:39+0800\n"
+"PO-Revision-Date: 2018-01-20 11:41+0800\n"
 "Last-Translator: 皇家元林 <i@hjyl.org>\n"
 "Language-Team: hjyl.org <i@hjyl.org>\n"
 "Language: zh_CN\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.7.6\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../archive.php:10 ../index.php:10 ../single.php:10
@@ -22,11 +22,11 @@ msgstr "置顶"
 
 #: ../archive.php:30 ../index.php:33 ../page.php:26 ../single.php:32
 msgid "Posted by"
-msgstr "Posted by"
+msgstr "作者"
 
 #: ../archive.php:33 ../index.php:36 ../single.php:35
 msgid "Posted in"
-msgstr "Posted in"
+msgstr "分类"
 
 #: ../archive.php:36 ../comments.php:5 ../index.php:39
 msgid "Leave a reply"
@@ -40,7 +40,7 @@ msgstr "<b>1</b>条评论"
 msgid "<b>%</b> Replies"
 msgstr "<b>%</b>条评论"
 
-#: ../archive.php:39 ../functions.php:96 ../index.php:42 ../page.php:32
+#: ../archive.php:39 ../functions.php:87 ../index.php:42 ../page.php:32
 #: ../single.php:38
 msgid "Edit"
 msgstr "编辑"
@@ -142,67 +142,70 @@ msgstr "引用通告"
 
 #: ../footer.php:4
 msgid "CopyRight"
-msgstr "CopyRight"
+msgstr "版权"
 
 #: ../footer.php:4
 #, php-format
 msgid "%1$s Powered by %2$s"
 msgstr "%1$s 由 %2$s 强力驱动"
 
-#: ../functions.php:54
+#: ../footer.php:4 ../inc/theme_inc.php:155
+msgid "http://hjyl.org/"
+msgstr "http://hjyl.org/"
+
+#: ../footer.php:4
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: ../functions.php:57
 msgid "Primary Navigation"
 msgstr "主要导航"
 
-#: ../functions.php:55
+#: ../functions.php:58
 msgid "Mobile Navigation"
 msgstr "手机导航"
 
-#: ../functions.php:76
-#, php-format
-msgid "Page %1$s of %2$s"
-msgstr "Page %1$s of %2$s"
-
-#: ../functions.php:95
+#: ../functions.php:86
 msgid "Before Refresh, you can"
 msgstr "刷新之前，你可以"
 
-#: ../functions.php:97
+#: ../functions.php:88
 msgid "Cancel Editing"
 msgstr "取消编辑"
 
-#: ../functions.php:98
+#: ../functions.php:89
 msgid "Wait a moment..."
 msgstr "请稍候..."
 
-#: ../functions.php:99
+#: ../functions.php:90
 msgid "Good Comment"
 msgstr "提交成功"
 
-#: ../functions.php:126
+#: ../functions.php:117
 msgid "<< Previous"
 msgstr "上一页"
 
-#: ../functions.php:127
+#: ../functions.php:118
 msgid "Next >>"
 msgstr "下一页"
 
-#: ../functions.php:138
+#: ../functions.php:129
 msgid "CopyRights"
 msgstr "转载请注明"
 
-#: ../functions.php:146
+#: ../functions.php:137
 msgid "Home"
 msgstr "首页"
 
-#: ../functions.php:154
+#: ../functions.php:145
 msgid "Single"
 msgstr "文章页"
 
-#: ../functions.php:162
+#: ../functions.php:153
 msgid "Other"
 msgstr "其他页"
 
-#: ../inc/oloComment.php:23
+#: ../inc/oloComment.php:23 ../inc/oloComment.php:180
 #, php-format
 msgid "%s "
 msgstr "%s "
@@ -250,12 +253,7 @@ msgstr "检查有重复评论；你好像刚刚评论过了！"
 msgid "You are posting comments too quickly.  Slow down."
 msgstr "你评论太快了。淡定。"
 
-#: ../inc/oloComment.php:176
-#, php-format
-msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
-msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">说:</span>"
-
-#: ../inc/oloComment.php:179
+#: ../inc/oloComment.php:175
 msgid "Your comment is awaiting moderation."
 msgstr "你的评论正在等待审核。"
 
@@ -356,16 +354,16 @@ msgstr "填写你的二维码名称或者其他描述"
 msgid "Theme Options"
 msgstr "主题设置"
 
-#: ../inc/theme_inc.php:148
+#: ../inc/theme_inc.php:147
 #, php-format
 msgid "%1$s Theme Options"
 msgstr "%1$s 主题设置"
 
-#: ../inc/theme_inc.php:154
+#: ../inc/theme_inc.php:153
 msgid "Donation"
 msgstr "捐助"
 
-#: ../inc/theme_inc.php:156
+#: ../inc/theme_inc.php:155
 #, php-format
 msgid ""
 "Created, Developed and maintained by %s . If you feel my work is useful and "
@@ -375,31 +373,27 @@ msgstr ""
 "本主题由%s开发和维护，如果你觉得还不错，并想支持开发更多免费资源，你可以给我"
 "捐助。非常感谢你的支持！"
 
-#: ../inc/theme_inc.php:156
-msgid "http://hjyl.org/"
-msgstr "http://hjyl.org/"
-
-#: ../inc/theme_inc.php:170
+#: ../inc/theme_inc.php:169
 msgid "http://t1.qpic.cn/mblogpic/bcd7926bbc4d4e03f384/2000"
 msgstr "http://t1.qpic.cn/mblogpic/bcd7926bbc4d4e03f384/2000"
 
-#: ../inc/theme_inc.php:170
+#: ../inc/theme_inc.php:169
 msgid "Alipay"
 msgstr "支付宝捐赠"
 
-#: ../inc/theme_inc.php:182
+#: ../inc/theme_inc.php:181
 msgid "General settings"
 msgstr "常规设置"
 
-#: ../inc/theme_inc.php:261
+#: ../inc/theme_inc.php:260
 msgid "Save Options"
 msgstr "保存设置"
 
-#: ../inc/theme_inc.php:265
+#: ../inc/theme_inc.php:264
 msgid "Reset All Settings"
 msgstr "重置所有设置"
 
-#: ../inc/theme_inc.php:265
+#: ../inc/theme_inc.php:264
 msgid "Click OK to reset. Any settings will be lost!"
 msgstr "点击‘确定’重置。所有设置将被丢失！"
 
@@ -409,17 +403,17 @@ msgstr "页面："
 
 #: ../page.php:29
 msgid "Last Updated"
-msgstr "Last Updated"
+msgstr "最后一次更新"
 
-#: ../searchform.php:2
-msgid "Search..."
-msgstr "搜索..."
+#: ../searchform.php:4
+msgid "Search...Enter"
+msgstr "搜索...回车"
 
-#: ../sidebar.php:60
+#: ../sidebar.php:61
 msgid "Archives"
 msgstr "归档"
 
-#: ../sidebar.php:67
+#: ../sidebar.php:68
 msgid "Meta"
 msgstr "管理"
 
@@ -430,6 +424,12 @@ msgstr "上一篇: %title"
 #: ../single.php:47
 msgid "Next: %title"
 msgstr "下一篇: %title"
+
+#~ msgid "Page %1$s of %2$s"
+#~ msgstr "Page %1$s of %2$s"
+
+#~ msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+#~ msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">说:</span>"
 
 #~ msgid "Show ICP No."
 #~ msgstr "显示备案号"
@@ -448,9 +448,6 @@ msgstr "下一篇: %title"
 
 #~ msgid "http://me.alipay.com/hjyl"
 #~ msgstr "http://me.alipay.com/hjyl"
-
-#~ msgid "http://wordpress.org/"
-#~ msgstr "http://wordpress.org/"
 
 #~ msgid "WordPress"
 #~ msgstr "WordPress"

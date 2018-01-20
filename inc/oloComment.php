@@ -5,23 +5,23 @@ function olo_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	global $commentcount;
 	if(!$commentcount) { 
-		$page = get_query_var('cpage')-1;
+		$page = ( get_query_var('cpage') ) ? get_query_var('cpage') : get_page_of_comment( $comment->comment_ID, $args );
 		$cpp=get_option('comments_per_page');
-		$commentcount = $cpp * $page;
+		$commentcount = $cpp * ($page - 1);
 	}
 	switch ( $comment->comment_type ) :
 		case '' :
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<span class="floor">
-			<?php if(!$parent_id = $comment->comment_parent) {printf('#%1$s', ++$commentcount);} ?>
+			<?php printf('#%1$s', ++$commentcount); ?>
 		</span>
 		<div id="comment-<?php comment_ID(); ?>" class="comment">
 		<div class="comment-author vcard">
 			<?php $default= ''; echo get_avatar( $comment, 64, $default, $comment->comment_author ); ?>
 			<div class="comment_meta">
 				<h3><?php printf( __( '%s ', 'olo'), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?></h3>
-				<a class="comment_time" href="#comment-<?php comment_ID() ?>"><?php printf( __( '<cite id="commentmeta">%1$s</cite>'), comment_date('Y/m/d  '),  comment_time() ); ?></a>
+				<a class="comment_time" href="#comment-<?php comment_ID() ?>"><?php printf( __( '<cite id="commentmeta">%1$s</cite>','olo'), comment_date('Y/m/d  '),  comment_time() ); ?></a>
 			<span class="reply">
 				<?php if ($depth == get_option('thread_comments_depth')) : ?>
 					 <a onclick="return addComment.moveForm( 'comment-<?php comment_ID() ?>','<?php echo $comment->comment_parent; ?>', 'respond','<?php echo $comment->comment_post_ID; ?>' )" href="?replytocom=<?php comment_ID() ?>#respond" class="comment-reply-link" rel="nofollow">-@</a>
