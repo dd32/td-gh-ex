@@ -439,7 +439,7 @@ function agama_infinite_scroll_init() { ?>
 jQuery(function($){
 	<?php if( get_theme_mod( 'agama_blog_layout', 'list' ) == 'grid' && ! is_singular() ): ?>
 	var $container = $('#content').ready(function(){
-	
+        
 		$container.isotope({
 			itemSelector : '.article-wrapper'
 		});
@@ -461,8 +461,10 @@ jQuery(function($){
 			// call Isotope as a callback
 			function( newElements ) {
                 var $newElems = $(newElements);
-				$container.isotope( 'appended', $newElems );
-                $container.isotope('reLayout');
+                $newElems.imagesLoaded(function(){
+                    $container.isotope( 'appended', $newElems );
+                    $container.isotope( 'layout' );
+                });
 			}
 		);
 		
@@ -471,11 +473,7 @@ jQuery(function($){
 		jQuery('.navigation').css('display', 'none');
 		
 		jQuery('#infinite-loadmore').click(function() {
-			$container.infinitescroll({
-                navSelector  : '.navigation',
-                nextSelector : '.nav-previous a',
-                itemSelector : '.article-wrapper'
-            });
+			$container.infinitescroll('retrieve');
             return false;
 		});
 		

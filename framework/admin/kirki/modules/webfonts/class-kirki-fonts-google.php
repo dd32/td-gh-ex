@@ -73,12 +73,17 @@ final class Kirki_Fonts_Google {
 	 */
 	private function __construct() {
 
-		$config = apply_filters( 'kirki/config', array() );
+		$config = apply_filters( 'kirki_config', array() );
 
 		// If we have set $config['disable_google_fonts'] to true then do not proceed any further.
 		if ( isset( $config['disable_google_fonts'] ) && true === $config['disable_google_fonts'] ) {
 			return;
 		}
+
+		add_action( 'wp_ajax_kirki_fonts_google_all_get', array( $this, 'get_googlefonts_json' ) );
+		add_action( 'wp_ajax_noprinv_kirki_fonts_google_all_get', array( $this, 'get_googlefonts_json' ) );
+		add_action( 'wp_ajax_kirki_fonts_standard_all_get', array( $this, 'get_strandardfonts_json' ) );
+		add_action( 'wp_ajax_noprinv_kirki_fonts_standard_all_get', array( $this, 'get_strandardfonts_json' ) );
 
 		// Populate the array of google fonts.
 		$this->google_fonts = Kirki_Fonts::get_google_fonts();
@@ -149,7 +154,7 @@ final class Kirki_Fonts_Google {
 			}
 			// Are we force-loading all variants?
 			if ( true === self::$force_load_all_variants ) {
-				$all_variants = Kirki_Fonts::get_all_variants();
+				$all_variants               = Kirki_Fonts::get_all_variants();
 				$args['choices']['variant'] = array_keys( $all_variants );
 			}
 
@@ -251,5 +256,27 @@ final class Kirki_Fonts_Google {
 			}
 		}
 		$this->subsets = $valid_subsets;
+	}
+
+	/**
+	 * Gets the googlefonts JSON file.
+	 *
+	 * @since 3.0.17
+	 * @return void
+	 */
+	public function get_googlefonts_json() {
+		include wp_normalize_path( dirname( __FILE__ ) . '/webfonts.json' );
+		wp_die();
+	}
+
+	/**
+	 * Get the standard fonts JSON.
+	 *
+	 * @since 3.0.17
+	 * @return void
+	 */
+	public function get_strandardfonts_json() {
+		echo wp_json_encode( Kirki_Fonts::get_standard_fonts() ); // WPCS: XSS ok.
+		wp_die();
 	}
 }

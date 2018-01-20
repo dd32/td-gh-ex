@@ -77,7 +77,18 @@ if( ! class_exists( 'Agama_About' ) ) {
 				
 				echo '<div class="changelog point-releases">';
 					echo sprintf( '<h3>Changelog Agama v%s</h3>', Agama_Core::version() );
-                    echo '<p>* Added ALT attributes to slider images.</p>';
+                    echo '<p>* Fixed infinite scroll load more button doesn\'t show on tag.php page.</p>';
+                    echo '<p>* Fixed infinite scroll load more button doesn\'t show on archive.php page.</p>';
+                    echo '<p>* Fixed infinite scroll load more button doesn\'t show on category.php page.</p>';
+                    echo '<p>* Fixed infinite scroll load more button doesn\'t show on author.php page.</p>';
+                    echo '<p>* Fixed infinite scroll load more button doesn\'t show on search.php page.</p>';
+                    echo '<p>* Fixed infinite scroll load more button not working when blog grid layout selected.</p>';
+                    echo '<p>* Updated theme dark skin.</p>';
+                    echo '<p>* Updated Kirki framework to the latest version.</p>';
+                    echo '<p>* Updated "Top Border" feature to display only when header v2 & v3 selected.</p>';
+                    echo '<p>* Updated "Top Border" feature "transport" => "auto".</p>';
+                    echo '<p>* Updated "Top Margin" feature "transport" => "auto".</p>';
+                    echo '<p>* Updated breadcrumb to split in 2 rows when media device max-width is 992px.</p>';
 				echo '</div>';
 				
 			echo '</div>';

@@ -40,12 +40,15 @@ get_header(); ?>
 				get_template_part( 'content', get_post_format() );
 
 			endwhile;
-                agama_content_nav( 'nav-below' );
             else:
                 get_template_part( 'content', 'none' );
             endif; ?>
 
 		</div>
+        
+        <?php agama_content_nav( 'nav-below' ); ?>
+        <?php Agama_Helper::get_infinite_scroll_load_more_btn(); ?>
+        
 	</section>
 
 <?php get_sidebar(); ?>

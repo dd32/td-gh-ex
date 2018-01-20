@@ -13,7 +13,8 @@ if( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header(); ?>
-
+    
+    <!-- Primary -->
 	<section id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
 		
 		<?php if( have_posts() ): ?>
@@ -22,6 +23,7 @@ get_header(); ?>
 		</header>
 		<?php endif; ?>
 		
+        <!-- Content -->
 		<div id="content" role="main" <?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' && ! is_singular() ): ?>class="js-isotope"  data-isotope-options='{ "itemSelector": ".article-wrapper" }'<?php endif; ?>>
 
 		<?php if ( have_posts() ) : ?>
@@ -45,16 +47,17 @@ get_header(); ?>
 				<div class="entry-content">
 					<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'agama' ); ?></p>
 					<?php get_search_form(); ?>
-				</div><!-- .entry-content -->
-			</article><!-- #post-0 -->
+				</div>
+			</article>
 
 		<?php endif; ?>
 
-		</div><!-- #content -->
+		</div><!-- Content End -->
 		
 		<?php agama_content_nav( 'nav-below' ); ?>
+        <?php Agama_Helper::get_infinite_scroll_load_more_btn(); ?>
 		
-	</section><!-- #primary -->
+	</section><!-- Primary End -->
 
 <?php get_sidebar(); ?>
 

@@ -1,10 +1,10 @@
 /*
  Theme Name: Agama
  Theme URI: http://theme-vision.com/agama/
- Author: Jaroslav Svetlik
+ Author: ThemeVision
  Author URI: http://theme-vision.com/
  Description: Agama is a free Multi-Purpose WordPress theme. It’s perfect for web agency business, corporate business, personal and parallax business portfolio, photography sites and freelancer. Is built on BootStrap with parallax support, is responsive, clean, modern, flat and minimal. Agama is e-commerce (WooCommerce) Compatible, WPML, RTL, Retina-Ready, SEO Friendly and with parallax. 3 Superb header variations. Check demo: http://demo.theme-vision.com
- Version: 1.3.1.2
+ Version: 1.3.1.3
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, flexible-header, accessibility-ready, buddypress, custom-background, custom-header, custom-logo, custom-menu, custom-colors, editor-style, featured-image-header, featured-images, full-width-template, footer-widgets, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, education, entertainment, food-and-drink, holiday, news, photography, portfolio
@@ -333,6 +333,11 @@ input[type="color"] {
 	background-color: #F5F5F5;
 	border-bottom: 1px solid #EEE;
 }
+body.device-lg #page-title .container { 
+    max-width: 1200px;
+    padding: 0 10px;
+    width: 100%;
+}
 #page-title .container { position: relative; }
 #page-title h1 {
 	padding: 0;
@@ -366,7 +371,10 @@ body.stretched .container-fullwidth .breadcrumb { right: 60px !important; }
 #header.transparent-header + #page-title.page-title-parallax .breadcrumb { margin-top: 35px !important; }
 .breadcrumb a { color: #555; }
 .breadcrumb a:hover { color: #FE6663; }
-.breadcrumb i { width: auto !important; }
+.breadcrumb i { 
+    font-size: 16px;
+    width: auto !important; 
+}
 
 /* Breadcrumb - Mini
 -----------------------------------------------------------------*/
@@ -660,6 +668,7 @@ textarea.sm-form-control {
 figure.hover1 {
 	overflow: hidden;
 	position: relative;
+    margin-bottom: 10px;
 }
 figure.hover1::before {
 	position: absolute;
@@ -823,6 +832,12 @@ img.wp-smiley,
 
 /* = Header V2
  *------------------------------------------------------------- */
+#masthead.header_v2,
+#masthead.header_v3 #top-bar,
+body.top-bar-out #masthead.header_v3 .sticky-header {
+    border-top-style: solid;
+    border-top-color: #FE6663;
+}
 #masthead.header_v2 hgroup { 
 	position: relative; 
 }
@@ -1149,9 +1164,6 @@ a:hover {
 
 /* = Sticky Header
  *------------------------------------------------------------- */
-body.sticky_header #main-wrapper {
-	margin-top: 0 !important;
-}
 .sticky-header {
 	position: relative;
 	width: 100%;
@@ -1173,6 +1185,7 @@ body.sticky_header #main-wrapper {
 .site-header .sticky-header .sticky-header-inner {
 	max-width: 1200px;
 	margin: 0 auto;
+    padding: 0 10px;
 }
 .site-header .sticky-header h1,
 .site-header .sticky-header nav {
@@ -1191,7 +1204,7 @@ body.sticky_header #main-wrapper {
 	font-size: 2.5em;
 	margin: 0;
 	float: left;
-	padding: 0 25px;
+	padding-right: 25px;
 }
 .site-header .sticky-header nav {
 	padding-right: 0;
@@ -1322,7 +1335,6 @@ header#masthead nav:not(.mobile-menu) ul li ul.sub-menu li ul.sub-menu li:hover 
 .sticky-nav > li,
 .sticky-nav > ul > li {
 	display: inline-block;
-	margin: 0 -4px 0 0;
 }
 .sticky-nav > li:last-child { border-right: 0; }
 .sticky-nav > ul > li.current_page_item a,
@@ -3269,22 +3281,7 @@ img#wpstats {
 
 /* Maximum width of 767px. */
 @media (max-width: 767px) {
-	#page-title {
-		padding: 20px 0 25px;
-		text-align: center;
-	}
-	#page-title h1 {
-		line-height: 1.5;
-		font-size: 24px;
-	}
-	#page-title span { display: none; }
-	#page-title .breadcrumb {
-		position: relative !important;
-		top: 0 !important;
-		left: 0 !important;
-		right: 0 !important;
-		margin: 15px 0 0 !important;
-	}
+	
 }
 
 /* Maximum width of 850px. */
@@ -3307,6 +3304,22 @@ img#wpstats {
 
 /* Maximu width of 992px. */
 @media screen and (max-width: 992px) {
+    #page-title {
+		padding: 20px 0 25px;
+		text-align: center;
+	}
+	#page-title h1 {
+		line-height: 1.5;
+		font-size: 24px;
+	}
+	#page-title span { display: none; }
+	#page-title .breadcrumb {
+		position: relative !important;
+		top: 0 !important;
+		left: 0 !important;
+		right: 0 !important;
+		margin: 15px 0 0 !important;
+	}
     .sidebar-left #primary, 
     body:not(.blog-grid).sidebar-left #primary #content {
         float: none;

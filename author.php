@@ -15,7 +15,8 @@ if( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header(); ?>
-
+    
+    <!-- Primary -->
 	<section id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
 	
 		
@@ -70,7 +71,7 @@ get_header(); ?>
 			<?php endif; ?>
 			<?php } ?>
 		
-	
+        <!-- Content -->
 		<div id="content" role="main" <?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' && ! is_singular() ): ?>class="js-isotope"  data-isotope-options='{ "itemSelector": ".article-wrapper" }'<?php endif; ?>>
 		<?php if ( have_posts() ) : ?>
 			<?php if( get_theme_mod('agama_blog_layout', 'list') != 'grid' ) { ?>
@@ -126,20 +127,16 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php get_template_part( 'content', get_post_format() ); ?>
 			<?php endwhile; ?>
-			
-			<?php if( get_theme_mod('agama_blog_layout', 'list') != 'grid' ): ?>
-				<?php agama_content_nav( 'nav-below' ); ?>
-			<?php endif; ?>
-
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
 
-		</div><!-- #content -->
-		<?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' ): ?>
-			<?php agama_content_nav( 'nav-below' ); ?>
-		<?php endif; ?>
-	</section><!-- #primary -->
+		</div><!-- Content End -->
+        
+        <?php agama_content_nav( 'nav-below' ); ?>
+        <?php Agama_Helper::get_infinite_scroll_load_more_btn(); ?>
+        
+	</section><!-- Primary End -->
 
 <?php get_sidebar(); ?>
 

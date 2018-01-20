@@ -3,6 +3,20 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.3.1.3 - 20 January 2018 =
+* Fixed infinite scroll load more button doesn't show on tag.php page.
+* Fixed infinite scroll load more button doesn't show on archive.php page.
+* Fixed infinite scroll load more button doesn't show on category.php page.
+* Fixed infinite scroll load more button doesn't show on author.php page.
+* Fixed infinite scroll load more button doesn't show on search.php page.
+* Fixed infinite scroll load more button not working when blog grid layout selected.
+* Updated theme dark skin.
+* Updated Kirki framework to the latest version.
+* Updated "Top Border" feature to display only when header v2 & v3 selected.
+* Updated "Top Border" feature "transport" => "auto".
+* Updated "Top Margin" feature "transport" => "auto".
+* Updated breadcrumb to split in 2 rows when media device max-width is 992px.
+
 = 1.3.1.2 - 12 December 2017 =
 * Added ALT attributes to slider images.
 

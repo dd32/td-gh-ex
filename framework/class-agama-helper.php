@@ -126,6 +126,21 @@ class Agama_Helper {
             echo 'class="js-isotope"';
         }
     }
+    
+    /**
+     * Infinite Scroll Load More Button
+     *
+     * @since 1.3.2
+     */
+    public static function get_infinite_scroll_load_more_btn() {
+        $enabled = esc_attr( get_theme_mod( 'agama_blog_infinite_scroll', false ) );
+        $trigger = esc_attr( get_theme_mod( 'agama_blog_infinite_trigger', 'button' ) );
+        if( $enabled && $trigger == 'button' ) {
+            echo '<a id="infinite-loadmore" class="button button-3d button-rounded">';
+                echo '<i class="fa fa-spinner fa-spin"></i> '. __( 'Load More', 'agama' );
+            echo '</a>';
+        }
+    }
 	
 	/**
 	 * Generate Footer Widgets Bootstrap Class

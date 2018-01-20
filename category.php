@@ -53,20 +53,16 @@ get_header(); ?>
 				get_template_part( 'content', get_post_format() );
 
 			endwhile;
-			
-			if( get_theme_mod('agama_blog_layout', 'list') != 'grid' ) {
-				agama_content_nav( 'nav-below' );
-			}
-			?>
 
-		<?php else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
-		<?php endif; ?>
+		else: 
+            get_template_part( 'content', 'none' );
+		endif; ?>
 
 		</div>
-		<?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' ): ?>
-			<?php agama_content_nav( 'nav-below' ); ?>
-		<?php endif; ?>
+        
+        <?php agama_content_nav( 'nav-below' ); ?>
+        <?php Agama_Helper::get_infinite_scroll_load_more_btn(); ?>
+        
 	</section>
 
 <?php get_sidebar(); ?>

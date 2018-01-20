@@ -56,15 +56,9 @@ get_header(); ?>
 
 		</div>
 		
-		<?php if( get_theme_mod('agama_blog_infinite_scroll', false) && get_theme_mod('agama_blog_infinite_trigger', 'button') == 'button' ): ?>
-		
-			<a id="infinite-loadmore" class="button button-3d button-rounded">
-				<i class="fa fa-spinner fa-spin"></i> <?php _e( 'Load More', 'agama' ); ?>
-			</a>
-		
-		<?php endif; ?>
-		
 		<?php agama_content_nav( 'nav-below' ); ?>
+        
+        <?php Agama_Helper::get_infinite_scroll_load_more_btn(); ?>
         
 	</div>
 

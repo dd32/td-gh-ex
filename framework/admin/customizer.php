@@ -220,7 +220,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 				'property'	=> 'border-color'
 			),
 			array(
-				'element'	=> '#top-bar, .top-bar-out .sticky-header',
+				'element'	=> '#masthead.header_v2, #masthead.header_v3 #top-bar, body.top-bar-out #masthead.header_v3 .sticky-header',
 				'property'	=> 'border-top-color'
 			),
 			array(
@@ -380,39 +380,60 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'default'		=> 'sticky'
 	) );
 	Kirki::add_field( 'agama_options', array(
-		'label'	   => __( 'Top Margin', 'agama' ),
-		'tooltip'  => __( 'Set header top margin in PX. This feature works only with header V2', 'agama' ),
-		'section'  => 'agama_header_section',
-		'settings' => 'agama_header_top_margin',
-		'type'	   => 'slider',
-		'choices'  => array(
-			'step' => '1',
-			'min'  => '0',
-			'max'  => '100'
+		'label'	           => __( 'Top Margin', 'agama' ),
+		'tooltip'          => __( 'Set header top margin in PX. This feature works only with header V2', 'agama' ),
+		'section'          => 'agama_header_section',
+		'settings'         => 'agama_header_top_margin',
+		'type'	           => 'slider',
+		'choices'          => array(
+			'step'         => '1',
+			'min'          => '0',
+			'max'          => '100'
 		),
-        'output'   => array(
+        'transport'        => 'auto',
+        'output'           => array(
             array(
-                'element'  => '#main-wrapper',
+                'element'  => 'body.header_v2 #main-wrapper',
                 'property' => 'margin-top',
                 'suffix'   => 'px'
             )
         ),
-         'active_callback'   => array(
+         'active_callback' => array(
             array(
-                'setting'   => 'agama_header_style',
-                'operator'  => '==',
-                'value'     => 'default'
+                'setting'  => 'agama_header_style',
+                'operator' => '==',
+                'value'    => 'default'
             )
         ),
-		'default'		=> '0'
+		'default'		   => '0'
 	) );
 	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Top Border', 'agama' ),
-		'tooltip'	    => __( 'Select header top border height in PX. This feature works with header V2 & V3.', 'agama' ),
-		'section'		=> 'agama_header_section',
-		'settings'		=> 'agama_header_top_border_size',
-		'type'			=> 'number',
-		'default'		=> '3'
+		'label'			   => __( 'Top Border', 'agama' ),
+		'tooltip'	       => __( 'Select header top border height in PX. This feature works with header V2 & V3.', 'agama' ),
+		'section'		   => 'agama_header_section',
+		'settings'		   => 'agama_header_top_border_size',
+		'type'			   => 'slider',
+        'choices'          => array(
+            'min'          => '0',
+            'max'          => '20',
+            'step'         => '1'
+        ),
+        'transport'        => 'auto',
+        'output'           => array(
+            array(
+                'element'  => '#masthead.header_v2, #masthead.header_v3 #top-bar, body.top-bar-out #masthead.header_v3 .sticky-header',
+                'property' => 'border-top-width',
+                'suffix'   => 'px'
+            )
+        ),
+        'active_callback'  => array(
+            array(
+                'setting'  => 'agama_header_style',
+                'operator' => 'contains',
+                'value'    => array( 'default', 'sticky' )
+            )  
+        ),
+		'default'		   => '3'
 	) );
 	#######################################################
 	# HEADER LOGO SECTION
@@ -2496,36 +2517,6 @@ function agama_customize_css() { ?>
 	 *********************************************************************************/
 	.header_v1 .sticky-header { position: fixed; box-shadow: none; -webkit-box-shadow: none; border-bottom: 2px solid rgba(255,255,255, .1); }
 	.header_v1.shrinked .sticky-header { border-bottom: 0 none; }
-	<?php endif; ?>
-	
-	<?php if( get_theme_mod( 'agama_header_style', 'transparent' ) == 'sticky' && get_theme_mod( 'agama_top_navigation', true ) ): ?>
-	
-	#top-bar,
-	.top-bar-out .sticky-header {
-		border-top-width: <?php echo esc_attr( get_theme_mod( 'agama_header_top_border_size', '3' ) ); ?>px; 
-		border-top-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>;
-		border-top-style: solid;
-	}
-	<?php elseif( get_theme_mod( 'agama_header_style', 'transparent' ) == 'sticky' && ! get_theme_mod( 'agama_top_navigation', true ) ): ?>
-	.sticky-header {
-		border-top-width: <?php echo esc_attr( get_theme_mod( 'agama_header_top_border_size', '3' ) ); ?>px; 
-		border-top-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>;
-		border-top-style: solid;
-	}
-	<?php endif; ?>
-	
-	<?php if( get_theme_mod( 'agama_header_style', 'transparent' ) == 'default' && get_theme_mod( 'agama_top_navigation', true ) ): ?>
-	.top-nav-wrapper { 
-		border-top-width: <?php echo esc_attr( get_theme_mod( 'agama_header_top_border_size', '3' ) ); ?>px; 
-		border-top-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>;
-		border-top-style: solid;
-	}
-	<?php elseif( get_theme_mod( 'agama_header_style', 'transparent' ) == 'default' && ! get_theme_mod( 'agama_top_navigation', true ) ): ?>
-	#masthead { 
-		border-top-width: <?php echo esc_attr( get_theme_mod( 'agama_header_top_border_size', '3' ) ); ?>px; 
-		border-top-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>;
-		border-top-style: solid;
-	}
 	<?php endif; ?>
 	
 	#page-title { background-color: <?php echo esc_attr( get_theme_mod( 'agama_breadcrumb_bg_color', '#F5F5F5' ) ); ?>; }

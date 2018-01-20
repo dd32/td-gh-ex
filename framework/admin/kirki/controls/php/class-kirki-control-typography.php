@@ -36,12 +36,17 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 
 		parent::enqueue();
 
+		if ( Kirki_Util::get_wp_version() >= 4.9 ) {
+			return;
+		}
 		$custom_fonts_array  = ( isset( $this->choices['fonts'] ) && ( isset( $this->choices['fonts']['google'] ) || isset( $this->choices['fonts']['standard'] ) ) && ( ! empty( $this->choices['fonts']['google'] ) || ! empty( $this->choices['fonts']['standard'] ) ) );
 		$localize_script_var = ( $custom_fonts_array ) ? 'kirkiFonts' . $this->id : 'kirkiAllFonts';
-		wp_localize_script( 'kirki-script', $localize_script_var, array(
-			'standard' => $this->get_standard_fonts(),
-			'google'   => $this->get_google_fonts(),
-		) );
+		wp_localize_script(
+			'kirki-script', $localize_script_var, array(
+				'standard' => $this->get_standard_fonts(),
+				'google'   => $this->get_google_fonts(),
+			)
+		);
 	}
 
 	/**
@@ -55,6 +60,10 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 		if ( is_array( $this->json['value'] ) ) {
 			foreach ( array_keys( $this->json['value'] ) as $key ) {
 				if ( ! in_array( $key, array( 'variant', 'font-weight', 'font-style' ), true ) && ! isset( $this->json['default'][ $key ] ) ) {
+					unset( $this->json['value'][ $key ] );
+				}
+				// Fix for https://wordpress.org/support/topic/white-font-after-updateing-to-3-0-16.
+				if ( ! isset( $this->json['default'][ $key ] ) ) {
 					unset( $this->json['value'][ $key ] );
 				}
 				// Fix for https://github.com/aristath/kirki/issues/1405.
@@ -205,11 +214,18 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 				</div>
 			<# } #>
 
-			<# if ( false !== data.default['color'] && data.default['color'] ) { #>
-				<# data.value['color'] = data.value['color'] || data['default']['color']; #>
-				<div class="color">
-					<h5><?php esc_attr_e( 'Color', 'kirki' ); ?></h5>
-					<input {{{ data.inputAttrs }}} type="text" data-palette="{{ data.palette }}" data-default-color="{{ data.default['color'] }}" value="{{ data.value['color'] }}" class="kirki-color-control"/>
+			<# if ( data.default['text-decoration'] ) { #>
+				<# data.value['text-decoration'] = data.value['text-decoration'] || data['default']['text-decoration']; #>
+				<div class="text-decoration">
+					<h5><?php esc_attr_e( 'Text Decoration', 'kirki' ); ?></h5>
+					<select {{{ data.inputAttrs }}} id="kirki-typography-text-decoration-{{{ data.id }}}">
+						<option value="none"<# if ( 'none' === data.value['text-decoration'] ) { #>selected<# } #>><?php esc_attr_e( 'None', 'kirki' ); ?></option>
+						<option value="underline"<# if ( 'underline' === data.value['text-decoration'] ) { #>selected<# } #>><?php esc_attr_e( 'Underline', 'kirki' ); ?></option>
+						<option value="overline"<# if ( 'overline' === data.value['text-decoration'] ) { #>selected<# } #>><?php esc_attr_e( 'Overline', 'kirki' ); ?></option>
+						<option value="line-through"<# if ( 'line-through' === data.value['text-decoration'] ) { #>selected<# } #>><?php esc_attr_e( 'Line-Through', 'kirki' ); ?></option>
+						<option value="initial"<# if ( 'initial' === data.value['text-decoration'] ) { #>selected<# } #>><?php esc_attr_e( 'Initial', 'kirki' ); ?></option>
+						<option value="inherit"<# if ( 'inherit' === data.value['text-decoration'] ) { #>selected<# } #>><?php esc_attr_e( 'Inherit', 'kirki' ); ?></option>
+					</select>
 				</div>
 			<# } #>
 
@@ -228,18 +244,27 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 					<input {{{ data.inputAttrs }}} type="text" value="{{ data.value['margin-bottom'] }}"/>
 				</div>
 			<# } #>
+
+			<# if ( false !== data.default['color'] && data.default['color'] ) { #>
+				<# data.value['color'] = data.value['color'] || data['default']['color']; #>
+				<div class="color">
+					<h5><?php esc_attr_e( 'Color', 'kirki' ); ?></h5>
+					<input {{{ data.inputAttrs }}} type="text" data-palette="{{ data.palette }}" data-default-color="{{ data.default['color'] }}" value="{{ data.value['color'] }}" class="kirki-color-control"/>
+				</div>
+			<# } #>
+
 		</div>
 		<?php if ( Kirki_Util::get_wp_version() >= 4.9 ) : ?>
 			<input class="typography-hidden-value" type="hidden" {{{ data.link }}}>
-		<?php else : ?>
-			<#
-			if ( ! _.isUndefined( data.value['font-family'] ) ) {
-				data.value['font-family'] = data.value['font-family'].replace( /&quot;/g, '&#39' );
-			}
-			valueJSON = JSON.stringify( data.value ).replace( /'/g, '&#39' );
-			#>
-			<input class="typography-hidden-value" type="hidden" value='{{{ valueJSON }}}' {{{ data.link }}}>
+			<?php return; ?>
 		<?php endif; ?>
+		<#
+		if ( ! _.isUndefined( data.value['font-family'] ) ) {
+			data.value['font-family'] = data.value['font-family'].replace( /&quot;/g, '&#39' );
+		}
+		valueJSON = JSON.stringify( data.value ).replace( /'/g, '&#39' );
+		#>
+		<input class="typography-hidden-value" type="hidden" value='{{{ valueJSON }}}' {{{ data.link }}}>
 		<?php
 	}
 
@@ -253,7 +278,7 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 	 */
 	protected function format_variants_array( $variants ) {
 
-		$all_variants = Kirki_Fonts::get_all_variants();
+		$all_variants   = Kirki_Fonts::get_all_variants();
 		$final_variants = array();
 		foreach ( $variants as $variant ) {
 			if ( is_string( $variant ) ) {
@@ -285,12 +310,14 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 		}
 
 		$standard_fonts_final = array();
-		$default_variants = $this->format_variants_array( array(
-			'regular',
-			'italic',
-			'700',
-			'700italic',
-		) );
+		$default_variants     = $this->format_variants_array(
+			array(
+				'regular',
+				'italic',
+				'700',
+				'700italic',
+			)
+		);
 		foreach ( $standard_fonts as $key => $font ) {
 			if ( ( ! empty( $std_user_keys ) && ! in_array( $key, $std_user_keys, true ) ) || ! isset( $font['stack'] ) || ! isset( $font['label'] ) ) {
 				continue;
@@ -339,7 +366,7 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 				foreach ( $variants as $variant ) {
 					if ( array_key_exists( $variant, $all_variants ) ) {
 						$available_variants[] = array(
-							'id' => $variant,
+							'id'    => $variant,
 							'label' => $all_variants[ $variant ],
 						);
 					}
@@ -351,7 +378,7 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 				foreach ( $subsets as $subset ) {
 					if ( array_key_exists( $subset, $all_subsets ) ) {
 						$available_subsets[] = array(
-							'id' => $subset,
+							'id'    => $subset,
 							'label' => $all_subsets[ $subset ],
 						);
 					}
@@ -359,10 +386,10 @@ class Kirki_Control_Typography extends Kirki_Control_Base {
 			}
 
 			$google_fonts_final[] = array(
-				'family'       => $family,
-				'label'        => $label,
-				'variants'     => $available_variants,
-				'subsets'      => $available_subsets,
+				'family'   => $family,
+				'label'    => $label,
+				'variants' => $available_variants,
+				'subsets'  => $available_subsets,
 			);
 		} // End foreach().
 		return $google_fonts_final;

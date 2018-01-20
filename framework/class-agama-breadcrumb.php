@@ -196,7 +196,7 @@ class Agama_Breadcrumb {
 				echo '<div class="container clearfix">';
 					echo $heading; 
 					echo '<ol class="breadcrumb">';
-						echo '<li><a href="'. esc_url( home_url( '/' ) ) .'">'. __( 'Home', 'agama' ) .'</a></li>';
+						echo '<li><a href="'. esc_url( home_url( '/' ) ) .'"><i class="fa fa-home"></i></a></li>';
 							echo $title;
 					echo '</ol>';
 				echo '</div>';
