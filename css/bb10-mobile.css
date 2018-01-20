@@ -6,9 +6,10 @@ Author URI: http://hjyl.org/
 Description: The theme from blackberry 10. simple and beautiful.based on HTML5 and CSS3.
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 1.6
-Tags: black, two-columns, theme-options, custom-menu, right-sidebar, editor-style, sticky-post, fixed-layout
+Version: 2.0
+Tags: two-columns, theme-options, custom-menu, right-sidebar, editor-style, sticky-post, blog
 */
+@import url("font-awesome.min.css");
 /* =Reset CSS.= */
 *{
 	margin:0;
@@ -96,10 +97,10 @@ body{
 	text-align:center;
 	font-size:13px;
 	font-family:Microsoft YaHei,Consolas,Georgia,Helvetica,Arial,sans-serif,'宋体';
-	color:#FFF;
+	color:#DDDDDD;
 	word-wrap: break-word;
 	position:relative;
-	background:url("../images/bb10.png") repeat fixed center top #000;
+	background:#333436;
 }
 article,
 aside,
@@ -118,9 +119,10 @@ summary {
 }
 a{
 	text-decoration:none;
-	color:#FFF;
+	color:#DDDDDD;
 }
 a:hover{
+	text-decoration:underline;
 	color:#227EC0;
 }
 h1{
@@ -193,7 +195,7 @@ img.aligncenter {
 	margin-bottom: 12px;
 }
 .wp-caption {
-	box-shadow:inset 0px 0px 1px #fff;
+	box-shadow:inset 0px 0px 1px #DDDDDD;
 	max-width: 100%;
 	padding-top: 4px;
 	text-align: center;
@@ -277,7 +279,7 @@ th{
 blockquote{
 	padding:20px 30px;
 	border-radius:3px;
-	box-shadow:0px 0px 1px #FFF inset;
+	box-shadow:0px 0px 1px #DDDDDD inset;
 	margin:10px 5px;
 	position:relative;
 }
@@ -294,15 +296,15 @@ blockquote:after{
 }
 .wp-caption:before,
 blockquote:before{
-    border-top: 1px solid #FFF;
-    border-left: 1px solid #FFF;
+    border-top: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
 	top: 0;
 	left: 0;	
 }
 .wp-caption:after,
 blockquote:after{
-    border-bottom: 1px solid #FFF;
-    border-right: 1px solid #FFF;
+    border-bottom: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
 	bottom: 0;
 	right: 0;	
 }
@@ -336,12 +338,29 @@ pre{
 
 /****header****/
 #hjyl_header{
-	height:160px;
+	height:200px;
 	margin-bottom:20px;
 }
 #hjyl_header h1{
-	font-size:90px;
+	font-size:100px;
 	font-weight:bold;
+	width:100px;
+	height:100px;
+	overflow:hidden;
+	margin-top:50px;
+	border-left:1px solid #DDDDDD;
+	border-bottom:1px solid #DDDDDD;
+	padding:20px;
+	border-radius:100px;
+	line-height:100px;
+}
+.logo-line{
+	width:1px;
+	height:86px;
+	position:absolute;
+	background:#DDDDDD;
+	left:40px;
+	bottom:-20px;
 }
 #hjyl_header h1 a{
 	text-decoration:none;
@@ -356,20 +375,17 @@ pre{
 	display:block;
 }
 #hjyl_menu ul li{
-	padding:5px;
+	margin:20px 0;
 	text-align:center;
 	position:relative;
 	width:30px;
-	border:1px solid rgba(255, 255, 255, 0.2);
-	box-shadow:0 0 1px rgba(255, 255, 255, 0.2);
 }
-.header-logo,
-#hjyl_header #searchform{
+.header-logo{
 	margin-left:50px;
 }
 #hjylContent{
-	border-left:1px solid #FFF;
-	margin:0 0 0 60px;
+	border-left:1px solid #DDDDDD;
+	margin:0 0 0 40px;
 	padding-left:15px;
 	display:inline-block;
 }
@@ -381,9 +397,9 @@ pre{
 	-moz-transform:rotate(135deg); 	/* Firefox */
 	-webkit-transform:rotate(135deg); /* Safari 和 Chrome */
 	-o-transform:rotate(135deg); 	/* Opera */
-    background: #464D57;
-    border-bottom: 1px solid #FFF;
-    border-right: 1px solid #FFF;
+    background: #333436;
+    border-bottom: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
 	width:13px;
 	height:13px;
 	position: absolute;
@@ -391,26 +407,33 @@ pre{
 	right: -17px;
 }
 #hjyl_header #searchform{
-	width:225px;
+	float:right;
+	position:absolute;
+	width:232px;
 	height:25px;
-	margin-top:10px;
+	top:160px;
+	left:10px;
 }
-#searchform #s,
 #searchform .submit{
-	float:left;
-	border:1px solid #FFF;
-	border-left:none;
-	background:#ccc;
+	display:none;
 }
 #searchform #s{
-	padding:0 10px;
-	height:20px;
-	border-radius:15px 0 0 15px;
-	
+	border:1px solid #DDDDDD;
+	background:#ccc;
+	padding:10px;
+	width:40px;
+	height:40px;
+	border-radius:40px;	
+	transition: width 400ms ease, height 400ms ease, border-radius 400ms ease;
+	-moz-transition: width 400ms ease, height 400ms ease, border-radius 400ms ease;
+	-webkit-transition: width 400ms ease, height 400ms ease, border-radius 400ms ease;
+	-o-transition: width 400ms ease, height 400ms ease, border-radius 400ms ease;
 }
-#searchform .submit{
-	height:22px;
-	border-radius:0 15px 15px 0;
+#searchform #s:focus {
+	width:100%;
+	height:20px;
+	padding:10px;
+	border-radius:15px;	
 }
 
 /*****#hjylContent*****/
@@ -441,7 +464,7 @@ pre{
 	font-size:12px;
 }
 .hjylPosts .date .day{
-	background:#FFF;
+	background:#DDDDDD;
 	color:#000;
 	padding:2px 3px;
 	border-radius:100px;
@@ -451,7 +474,7 @@ pre{
 }
 .hjylPosts article:hover .date .day{
 	background:#227EC0;
-	color:#FFF;
+	color:#DDDDDD;
 }
 .hjylEntry{
 	line-height:24px;
@@ -480,13 +503,108 @@ pre{
 .hjylNav a:hover,
 .hjylNav a.current{
 	color:#000;
-	background:#FFF;
+	background:#DDDDDD;
 	text-decoration:none;
 	font-weight:bold;
 	border-radius:100px;
 }
 #archives-content {
 	width: 80%;
+}
+#hjyl_x{
+	float:right;
+	margin:10px 0 10px 10px;
+}
+#hjyl_xx{
+	text-align:center;
+}
+/*****#hjylWidget*****/
+#hjylWidget{
+	margin-left:20px;
+	float:right;
+}
+#hjylWidget{
+	padding-bottom:40px;
+}
+#hjylWidget .widget h2{
+	margin-bottom:10px;
+}
+#hjylWidget .widget_mail .rsstxt {
+	height: 30px;
+	padding: 0 10px;
+	width: 80%;
+	border:1px solid #ccc;
+}
+#hjylWidget  ul li {
+	margin-bottom: 5px;
+}
+#hjylWidget .widget_mail,
+#hjylWidget .widget_meta{
+	width:200px;
+}
+#hjylWidget .widget_links li,
+#hjylWidget .widget_categories li{
+	float: left;
+	width: 45%;
+}
+.widget_recent_entries li,
+.widget_links li,
+.widget_categories li{
+	list-style:square;
+	margin-left:15px;
+	color:#DDDDDD;
+}
+#hjylWidget .widget{
+	width:260px;
+	padding:10px;
+}
+#hjylWidget .widget_links li,
+#hjylWidget .widget_categories li{
+	width:40%;
+}
+.widget_archive li,
+.widget_count li{
+	float:left;
+	width:48%;
+}
+.widget_share > div{
+	float:left;
+	margin:0 10px;
+}
+/*自定义widget*/
+aside .ffox_most_active{
+	display:inline-block;
+}
+aside .ffox_most_active img.avatar{
+	border:1px solid #ddd;
+	height:32.5px;
+	width:32.5px;
+}
+aside li.widget .ffox_most_active li{
+	border:none;
+	line-height:0;
+	list-style:none;
+	margin:2px 3px;
+	width: 34px;
+	padding: 0;
+	height: 34px;
+	float: left;
+	overflow:hidden;
+}
+aside li.widget .ffox_most_active li a{
+	border:none;
+	padding-left:0;
+}
+aside .recentcomments li{
+	overflow:hidden;
+}
+aside .recentcomments .avatar{
+	border:1px solid #ddd;
+	float:left;
+	height:28px;
+	margin-right:5px;
+	padding:2px;
+	width:28px;
 }
 
 /**********commentlist************/
@@ -506,21 +624,28 @@ pre{
 	top:-20px;
 	border-radius:100px;
 	border:2px solid #000;
-	box-shadow:0px 0px 2px #FFF;
+	box-shadow:0px 0px 2px #DDDDDD;
 	
 }
 .commentlist li.comment div.comment:hover .comment-author .avatar{
-	box-shadow:0px 0px 5px #FFF;
+	box-shadow:0px 0px 5px #DDDDDD;
 }
 .floor{
 	position:absolute;
-	color:rgba(255,255,255,0.7);
+	color:rgba(255,255,255,0.3);
 }
 .comment .comment-author .comment_meta{
 	text-align:right;
 	margin-right:15px;
 	position:relative;
 	top:-21px;
+}
+.hjylEntry a, .comment-body p a{
+	border-bottom:1px dotted;
+}
+.comment-body p a:first-child {
+    margin-right: 5px;
+    color: #227EC0;
 }
 #comment-author-info p,
 #submit{
@@ -529,8 +654,7 @@ pre{
 #comment-author-info input{
 	padding:5px 10px;
 }
-#comments-title,
-#pings-title{
+#comments-title, #pings-title{
 	margin:20px 0;
 }
 .comment-form-comment #comment{
@@ -541,9 +665,9 @@ pre{
 #comment-author-info input{
 	font-size:14px;
 	border: 1px solid #CAE1EE;
-	-moz-box-shadow:	inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.2);
-	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.2);
-	box-shadow:			inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.2);
+	box-shadow:inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.2);
+	background:#333436;
+	color:#DDDDDD;
 }
 #reply-title,
 .comment-welcomeback{
@@ -557,7 +681,7 @@ pre{
 	padding:5px 10px;
 	font-size: 15px;
 	font-weight:bold;
-	color: #FFF;
+	color: #DDDDDD;
 	text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
 	background: rgba(255, 255, 255, 0.4);
 	border:1px solid #CCC;
@@ -575,14 +699,36 @@ pre{
 	top:0;
 	left:-115px;
 }
+#subpcodes {
+	background:#DDDDDD;
+	border: 1px solid #CAE1EE;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.2);
+	height: 20px;
+	line-height: 20px;
+	margin: 5px 10px;
+	padding: 0 5px;
+	width: 50px;
+}
+.pcodes {
+	color: #DDDDDD;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: Verdana;
+}
+.hjyl_anti {
+	background:rgba(255, 255, 255, 0.4);
+	height: 32px;
+	line-height: 32px;
+	padding: 0 10px;
+	width:240px;
+}
 
 /****footer****/
 footer{
 	margin:20px 0;
 	
 }
-.copyright,
-.comment .comment-author .comment_meta .comment_time{
+.copyright, .comment .comment-author .comment_meta .comment_time{
 	font-family: Consolas,Microsoft YaHei,sans-serif,"宋体";
 	text-align:center;
 }

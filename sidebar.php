@@ -1,7 +1,6 @@
 	<aside id="hjylWidget">
 		<ul>
-			<?php if (is_home()) { ?>
-			<li class="twitter_rss">
+			<li class="twitter_rss widget">
 			<?php 
 				global $bb10_theme_options;
 				$twitter_name = 'Follow me on twitter!';
@@ -50,11 +49,14 @@
 					<span class="fa fa-rss"></span>
 				<?php } ?>
 				<?php if ($qrcode_url != '') { ?>
-				<a href="<?php echo $qrcode_url; ?>" rel="bookmark" title="<?php echo $qrcode_name; ?>"><span class="fa fa-qrcode"></span></a>
+				<span class="fa fa-qrcode"></span>
+				<img src="<?php echo $qrcode_url; ?>" width="258" height="258" alt="<?php echo $qrcode_name; ?>" class="qrcodeimg" />
 				<?php }else{ ?>
 					<span class="fa fa-qrcode"></span>
 				<?php } ?>
 			</li>
+			<div class="clear"></div>
+			<?php if (is_home()) { ?>
 				<?php if ( !dynamic_sidebar('home') ) : ?>
 					<li id="archives" class="widget widget_archive">
 						<h2><span><?php _e( 'Archives', 'bb10' ); ?></span></h2>

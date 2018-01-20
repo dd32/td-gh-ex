@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-10 21:22+0800\n"
-"PO-Revision-Date: 2015-07-10 21:22+0800\n"
+"POT-Creation-Date: 2018-01-20 16:07+0800\n"
+"PO-Revision-Date: 2018-01-20 16:08+0800\n"
 "Last-Translator: 皇家元林 <i@hjyl.org>\n"
 "Language-Team: hjyl.org <i@hjyl.org>\n"
 "Language: zh_CN\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../archive.php:7 ../index.php:7 ../single.php:7
@@ -22,11 +22,11 @@ msgstr "置顶"
 
 #: ../archive.php:27 ../index.php:27 ../page.php:20 ../single.php:26
 msgid "Posted by"
-msgstr "Posted by"
+msgstr "作者"
 
 #: ../archive.php:30 ../index.php:30
 msgid "Posted in"
-msgstr "Posted in"
+msgstr "分类"
 
 #: ../archive.php:34 ../comments.php:5 ../index.php:34
 msgid "Leave a reply"
@@ -40,7 +40,7 @@ msgstr "<b>1</b>"
 msgid "<b>%</b>"
 msgstr "<b>%</b>"
 
-#: ../archive.php:37 ../functions.php:78 ../index.php:37 ../page.php:27
+#: ../archive.php:37 ../functions.php:86 ../index.php:37 ../page.php:27
 #: ../single.php:33
 msgid "Edit"
 msgstr "编辑"
@@ -152,47 +152,47 @@ msgstr "https://hjyl.org/"
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: ../functions.php:53
+#: ../functions.php:56
 msgid "Primary Navigation"
 msgstr "主要导航"
 
-#: ../functions.php:54
+#: ../functions.php:57
 msgid "Mobile Navigation"
 msgstr "手机导航"
 
-#: ../functions.php:77
+#: ../functions.php:85
 msgid "Before Refresh, you can"
 msgstr "刷新之前，你可以"
 
-#: ../functions.php:79
+#: ../functions.php:87
 msgid "Cancel Editing"
 msgstr "取消编辑"
 
-#: ../functions.php:80
+#: ../functions.php:88
 msgid "Wait a moment..."
 msgstr "请稍候..."
 
-#: ../functions.php:81
+#: ../functions.php:89
 msgid "Good Comment"
 msgstr "提交成功"
 
-#: ../functions.php:100
+#: ../functions.php:108
 msgid "CopyRights"
 msgstr "转载请注明"
 
-#: ../functions.php:108 ../header.php:47
+#: ../functions.php:116 ../header.php:47
 msgid "Home"
 msgstr "首页"
 
-#: ../functions.php:116
+#: ../functions.php:124
 msgid "Single"
 msgstr "文章页"
 
-#: ../functions.php:124
+#: ../functions.php:132
 msgid "404"
 msgstr "404页面"
 
-#: ../functions.php:132
+#: ../functions.php:140
 msgid "Other"
 msgstr "其他页"
 
@@ -419,17 +419,17 @@ msgstr "页面："
 
 #: ../page.php:23 ../single.php:29
 msgid "Last Updated"
-msgstr "Last Updated"
+msgstr "最后一次更新"
 
 #: ../searchform.php:2
 msgid "Search..."
 msgstr "搜索..."
 
-#: ../sidebar.php:60
+#: ../sidebar.php:62
 msgid "Archives"
 msgstr "归档"
 
-#: ../sidebar.php:67
+#: ../sidebar.php:69
 msgid "Meta"
 msgstr "管理"
 

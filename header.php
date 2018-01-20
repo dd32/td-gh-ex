@@ -14,7 +14,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
-<title><?php wp_title(' | ', true, 'right'); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php if (is_archive() && ($paged > 1)&& ($paged < $wp_query->max_num_pages)) { ?>
@@ -28,7 +27,8 @@
 </head>
 <body <?php body_class(); ?> id="hjyl_bb10">
 	<header id="hjyl_header">
-		<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
+		<h1 id="bb_logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
+		<div class="logo-line"></div>
 		<p class="header-logo"><img src="<?php echo esc_url( header_image() ); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php bloginfo('name'); ?>"></p>
 		<?php get_search_form(); ?>
 		<nav id="hjyl_menu">

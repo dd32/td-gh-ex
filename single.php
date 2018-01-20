@@ -4,7 +4,7 @@
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header>
 						<?php if ( is_sticky() ) : ?>
-								<h2>[<?php printf(__('Featured', 'bb10')) ; ?>]<?php the_title(); ?></h2>
+								<h2><i class="fa fa-hourglass-start" aria-hidden="true" title="<?php printf(__('Featured', 'bb10')) ; ?>"></i> <?php the_title(); ?></h2>
 							
 						<?php else : ?>
 						<h2><?php the_title(); ?></h2>
@@ -22,7 +22,7 @@
 					</section>
 					
 					<footer>
-						<p class="tags"><i class="fa fa-tags"></i><?php the_tags(); ?></p>
+						<?php the_tags('<p class="tags"><i class="fa fa-tags"></i> ', ', ', '</p>'); ?>
 						<span class="fa fa-user author" title="<?php _e('Posted by', 'bb10'); ?>">
 							<?php the_author_posts_link(); ?>
 						</span>

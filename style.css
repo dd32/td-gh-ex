@@ -6,8 +6,9 @@ Author URI: http://hjyl.org/
 Description: The theme from blackberry 10. simple and beautiful.based on HTML5 and CSS3.
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 1.6
-Tags: black, two-columns, theme-options, custom-menu, right-sidebar, editor-style, sticky-post, fixed-layout
+Text Domain: bb10
+Version: 2.0
+Tags: two-columns, theme-options, custom-menu, right-sidebar, editor-style, sticky-post, blog
 */
 /* =Reset CSS.= */
 *{
@@ -94,12 +95,12 @@ video{
 }
 body{
 	text-align:center;
-	font-size:13px;
+	font-size:14px;
 	font-family:Microsoft YaHei,Consolas,Georgia,Helvetica,Arial,sans-serif,'宋体';
-	color:#FFF;
+	color:#DDDDDD;
 	word-wrap: break-word;
 	position:relative;
-	background:url("images/bb10.png") repeat fixed center top #000;
+	background:#333436;
 }
 article,
 aside,
@@ -118,7 +119,7 @@ summary {
 }
 a{
 	text-decoration:none;
-	color:#FFF;
+	color:#DDDDDD;
 }
 a:hover{
 	color:#227EC0;
@@ -194,7 +195,7 @@ img.aligncenter {
 	margin-bottom: 12px;
 }
 .wp-caption {
-	box-shadow:inset 0px 0px 1px #fff;
+	box-shadow:inset 0px 0px 1px #DDDDDD;
 	max-width: 100%;
 	padding-top: 4px;
 	text-align: center;
@@ -272,13 +273,10 @@ th, td{
 tr.even td{
 	background:#f7f7f7;
 }
-th{
-	background:#edeff0;
-}
 blockquote{
 	padding:20px 30px;
 	border-radius:3px;
-	box-shadow:0px 0px 1px #FFF inset;
+	box-shadow:0px 0px 1px #DDDDDD inset;
 	margin:10px 5px;
 	position:relative;
 }
@@ -295,15 +293,15 @@ blockquote:after{
 }
 .wp-caption:before,
 blockquote:before{
-    border-top: 1px solid #FFF;
-    border-left: 1px solid #FFF;
+    border-top: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
 	top: 0;
 	left: 0;	
 }
 .wp-caption:after,
 blockquote:after{
-    border-bottom: 1px solid #FFF;
-    border-right: 1px solid #FFF;
+    border-bottom: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
 	bottom: 0;
 	right: 0;	
 }
@@ -329,6 +327,37 @@ pre{
 	padding:0 5px 16px;
 	margin:0 0 20px;
 }
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #eee;
+	clip: auto !important;
+	clip-path: none;
+	color: #444;
+	display: block;
+	font-size: 1em;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
 #hjyl_header,
 #hjylContainer{
 	text-align:left;
@@ -339,14 +368,29 @@ pre{
 
 /****header****/
 #hjyl_header{
-	height:160px;
+	height:200px;
 	margin-bottom:20px;
 }
 #hjyl_header h1{
 	font-size:100px;
 	font-weight:bold;
-	width:400px;
-	margin-left:60px;
+	width:100px;
+	height:100px;
+	overflow:hidden;
+	margin-top:50px;
+	border-left:1px solid #DDDDDD;
+	border-bottom:1px solid #DDDDDD;
+	padding:20px;
+	border-radius:100px;
+	line-height:100px;
+}
+.logo-line{
+	width:1px;
+	height:80px;
+	position:absolute;
+	background:#DDDDDD;
+	left:60px;
+	bottom:-20px;
 }
 #hjyl_header h1 a{
 	text-decoration:none;
@@ -377,7 +421,7 @@ pre{
 	box-shadow:0 0 1px rgba(255, 255, 255, 0.2);
 }
 #hjylContent{
-	border-left:1px solid #FFF;
+	border-left:1px solid #DDDDDD;
 	margin:0 0 0 60px;
 	padding-left:15px;
 	display:inline-block;
@@ -390,9 +434,9 @@ pre{
 	-moz-transform:rotate(135deg); 	/* Firefox */
 	-webkit-transform:rotate(135deg); /* Safari 和 Chrome */
 	-o-transform:rotate(135deg); 	/* Opera */
-    background: #464D57;
-    border-bottom: 1px solid #FFF;
-    border-right: 1px solid #FFF;
+    background: #333436;
+    border-bottom: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
 	width:13px;
 	height:13px;
 	position: absolute;
@@ -404,24 +448,29 @@ pre{
 	position:absolute;
 	width:232px;
 	height:25px;
-	right:0;
+	right:100px;
+	top:160px;
 }
-#searchform #s,
 #searchform .submit{
-	float:left;
-	border:1px solid #FFF;
-	border-left:none;
-	background:#ccc;
+	display:none;
 }
 #searchform #s{
-	padding:0 10px;
-	height:20px;
-	border-radius:15px 0 0 15px;
-	
+	border:1px solid #DDDDDD;
+	background:#ccc;
+	padding:10px;
+	width:40px;
+	height:40px;
+	border-radius:40px;	
+	transition: width 400ms ease, height 400ms ease, border-radius 400ms ease;
+	-moz-transition: width 400ms ease, height 400ms ease, border-radius 400ms ease;
+	-webkit-transition: width 400ms ease, height 400ms ease, border-radius 400ms ease;
+	-o-transition: width 400ms ease, height 400ms ease, border-radius 400ms ease;
 }
-#searchform .submit{
-	height:22px;
-	border-radius:0 15px 15px 0;
+#searchform #s:focus {
+	width:100%;
+	height:20px;
+	padding:10px;
+	border-radius:15px;	
 }
 
 /*****#hjylContent*****/
@@ -452,7 +501,7 @@ pre{
 	font-size:12px;
 }
 .hjylPosts .date .day{
-	background:#FFF;
+	background:#DDDDDD;
 	color:#000;
 	padding:2px 3px;
 	border-radius:100px;
@@ -462,7 +511,7 @@ pre{
 }
 .hjylPosts article:hover .date .day{
 	background:#227EC0;
-	color:#FFF;
+	color:#DDDDDD;
 }
 .hjylEntry{
 	line-height:24px;
@@ -491,7 +540,7 @@ pre{
 .hjylNav a:hover,
 .hjylNav a.current{
 	color:#000;
-	background:#FFF;
+	background:#DDDDDD;
 	text-decoration:none;
 	font-weight:bold;
 	border-radius:100px;
@@ -534,7 +583,7 @@ pre{
 .widget_categories li{
 	list-style:square;
 	margin-left:15px;
-	color:#FFF;
+	color:#DDDDDD;
 }
 #hjylWidget .widget{
 	width:260px;
@@ -553,24 +602,50 @@ pre{
 	float:left;
 	margin:0 10px;
 }
-#hjylWidget .twitter_rss{
+.twitter_rss{
 	text-align:center;
-	margin-top:20px;
-	margin-bottom:30px;
-	border-bottom:2px solid #DDDDDD;
-	height:15px;
+	border-bottom:1px solid #DDDDDD;
+	position:relative;
+	height:30px;
 	
 }
 .twitter_rss span{
-	font-size:30px;
-	width:40px;
-	height:40px;
-	color:#40444F;
-	margin-left:5px;
-	padding:2px 7px;
-	border-radius:100px;
-	background:#e7e7e7;
-	display:inline;
+	font-size:18px;
+	width:16px;
+	height:16px;
+	color:#DDDDDD;
+	margin-left:18px;
+	border-radius:20px;
+	cursor: pointer;
+}
+.twitter_rss .qrcodeimg{
+	display:none;
+	position:absolute;
+	right:10px;
+	top:50px;
+	z-index:10;
+	border:1px solid #DDDDDD;
+	
+}
+.twitter_rss .active{
+	position:relative;
+}
+.twitter_rss .active:after{
+	content:" ";
+	width:15px;
+	height:15px;
+	border-top:1px solid #DDDDDD;
+	border-right:1px solid #DDDDDD;
+	background:#333436;
+	transform: rotate(135deg);
+	-ms-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	position:absolute;
+	top:32px;
+	right:0;
+	z-index:20;
 }
 .twitter_rss span:hover{
 	color:#227EC0;
@@ -593,11 +668,11 @@ pre{
 	top:-20px;
 	border-radius:100px;
 	border:2px solid #000;
-	box-shadow:0px 0px 2px #FFF;
+	box-shadow:0px 0px 2px #DDDDDD;
 	
 }
 .commentlist li.comment div.comment:hover .comment-author .avatar{
-	box-shadow:0px 0px 5px #FFF;
+	box-shadow:0px 0px 5px #DDDDDD;
 }
 .floor{
 	position:absolute;
@@ -644,7 +719,7 @@ pre{
 	padding:5px 10px;
 	font-size: 15px;
 	font-weight:bold;
-	color: #FFF;
+	color: #DDDDDD;
 	text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
 	background: rgba(255, 255, 255, 0.4);
 	border:1px solid #CCC;

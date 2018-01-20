@@ -1,8 +1,8 @@
 == bb10 WordPress Theme==
 Author:HJYL
 * by hjyl.org
-Requires at least: 3.7+
-Tested up to: 4.2.2
+Requires at least: 4.9+
+Tested up to: 4.9.2
 
 == ABOUT bb10 ==
 For questions, comments or bug reports, please go to
@@ -31,3 +31,5 @@ bb10 has theme options page:Go into your Wordpress Admin, navigate to 'Appearanc
 2015.06.21	modify some css and wider.
 2015.06.28	use add_theme_support( 'title-tag' ) instead of wp_title.
 2015.07.09	Fix and update 1.5.
+2018.01.20	update to newest functions for WordPress 4.9+,
+			change some styles.
