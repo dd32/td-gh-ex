@@ -9,22 +9,17 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+<article class="col-md-4 col-sm-4 eq-blocks">
+	<div class="blog-box-inn">
+		<span><?php echo atoz_posted_on(); ?></span> 
+		<?php if  ( get_the_post_thumbnail()!='') {?><a href="<?php the_permalink();?>"><?php the_post_thumbnail('atoz_home_posts'); ?></a>
+		<?php }else{?>
+		<?php $placeholder_img   = get_template_directory_uri() . "/img/default.jpg"; ?>		
+		<a href="<?php the_permalink();?>"><img src="<?php echo esc_url($placeholder_img); ?>" alt="<?php the_title_attribute(); ?>" class="img-responsive blog-img"></a>
+		<?php }?>
+		<h2><a href="<?php the_permalink();?>" class="eq-blocks-title"><?php the_title();?></a></h2>
+		<?php the_category();?>
+		<a href="<?php the_permalink();?>" class="btn btn-default" style="background-color:<?php echo esc_attr(get_theme_mod( 'atoz_accent_color' ));?>"><?php esc_html_e('View', 'atoz'); ?></a> 
+	</div>
+</article>
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php atoz_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php atoz_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->

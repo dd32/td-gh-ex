@@ -1,16 +1,18 @@
 === atoz ===
 
-Contributors: Dcrazed
+Contributors: Rijo Abraham, Dcrazed
 Tags: blog, three-columns, right-sidebar, custom-logo, full-width-template, theme-options
-
 Requires at least: 4.0
-Tested up to: 4.8.2
+Tested up to: 4.9.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+Fred WordPress Theme, Copyright 2012 Joe Smith
+Fred is distributed under the terms of the GNU GPL
+
 == Description ==
 
-atoz is a simple and creative personal blog theme for designers, developers who are into blogging. Showcase your freebies easily with this free wordpress blog theme.
+atoz is a simple and creative personal blog theme for designers, developers who are into blogging. Showcase your freebies, articles easily with this free wordpress blog theme.
 
 == Installation ==
 	
@@ -18,20 +20,18 @@ atoz is a simple and creative personal blog theme for designers, developers who 
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-= Credits =
+== Documentation ==
+Hi folks, Check our full documentation by going to this link https://dcrazed.com/docs/atoz/
+
+== Credits ==
 
 - Bootstrap v3.3.6 (http://getbootstrap.com):
     Copyright 2011-2014 Twitter, Inc.
     Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
 - Images:
-	All images are from Unsplash (	ww.unsplash.com	) and custom ones.
+	All images are custom designed by Rijo Abraham.
 	License under Creative Commons Zero.
-
-	Sources for images used:
-		https://unsplash.com/photos/BeOW_PJjA0w
-		https://unsplash.com/photos/TrGVhbsUf40
-		https://unsplash.com/photos/oBb-Y26PJgg
 
 - FontAwesome
 	Source: https://fortawesome.github.io/Font-Awesome/

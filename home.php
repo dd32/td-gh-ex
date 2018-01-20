@@ -102,7 +102,7 @@ get_header(); ?>
 					if ($atoz_title != '') echo '<h4>' . wp_kses_post($atoz_title) . ' </h4>';
 				?>
 				<?php   
-					$atoz_feat_desc  = get_theme_mod( 'atoz_feat_desc', esc_html__('Morbi scelerisque massa quis scelerisque fermentum. Phasellus ac nunc vehicula, malesuada orci ac, cursus turpis. Nunc eu nibh diam. Cras posuere hendrerit purus euismod tincidunt. Etiam posuere vel libero at ornare. Nulla sit amet iaculis mauris.', 'atoz' ));
+					$atoz_feat_desc  = get_theme_mod( 'atoz_feat_desc', esc_html__('Description goes here. This is the featured item section of the theme.', 'atoz' ));
 					if ($atoz_feat_desc != '') echo '<p>' . wp_kses_post($atoz_feat_desc) . ' </p>';
 				?>
 				<?php 

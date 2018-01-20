@@ -49,7 +49,7 @@ $r = new WP_Query( apply_filters( 'widget_posts_args', array( 'posts_per_page' =
            <ul class="media-list main-list ltst-upd">
               <?php while ( $r->have_posts() ) : $r->the_post(); ?>
               
-                 <li class="media"> <a class="pull-left no-pddig" href="<?php esc_url(the_permalink()); ?>">
+                 <li class="media"> <a class="pull-left no-pddig" href="<?php the_permalink(); ?>">
 					<?php add_image_size( 'footer_recent_post', 96, 80,  array( 'top', 'center' ) );
 						 
 					 if  ( get_the_post_thumbnail()=='')
@@ -66,13 +66,13 @@ $r = new WP_Query( apply_filters( 'widget_posts_args', array( 'posts_per_page' =
 					?>
 					</a>
 				  <div class="media-body">
-					<p class="media-heading"><a href="<?php esc_url(the_permalink()); ?>"> <?php if ( get_the_title() ) {
+					<p class="media-heading"><a href="<?php the_permalink(); ?>"> <?php if ( get_the_title() ) {
 					$title = get_the_title();
 					echo substr($title, 0,40);
 					 }
 					 else the_ID(); ?></a>
 					</p>
-					<p class="by-author"><a href="<?php esc_url(the_permalink()); ?>"><?php esc_html_e('Read more', 'atoz'); ?></a></p>
+					<p class="by-author"><a href="<?php the_permalink(); ?>"><?php esc_html_e('Read more', 'atoz'); ?></a></p>
 					  <?php if ( $show_date ) : ?>
 					<span class="post-date"><?php echo esc_attr(get_the_date()); ?></span>
 					   <?php endif; ?>

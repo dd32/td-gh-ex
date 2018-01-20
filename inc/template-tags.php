@@ -26,17 +26,17 @@ function atoz_posted_on() {
 
 	$posted_on = sprintf(
 		/* translators: %s: post date. */
-		esc_html_x( 'Posted on %s', 'post date', 'atoz' ),
+		esc_html_x( 'Posted on %s ', 'post date', 'atoz' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
 		/* translators: %s: post author. */
 		esc_html_x( 'by %s', 'post author', 'atoz' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		'<div class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></div>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+	echo '<span class="posted-on">' . $posted_on . $byline . '</span>'; // WPCS: XSS OK.
 
 }
 endif;
@@ -104,43 +104,35 @@ endif;
 
 if ( ! function_exists( 'atoz_featured_slider' ) ) :
 /**
- * Featured image slider, displayed on front page for static page and blog
+ * Featured image slider, displayed on front page
  */
 function atoz_featured_slider() {
-        $firstClass = 'active'; 
-        $count = get_theme_mod( 'atoz_slide_number' );
-       $slidecat =get_option( 'atoz_slide_categories' );
-
-        $query = new WP_Query( array( 'cat' =>$slidecat,'posts_per_page' =>$count ) );
- 
-        if ( is_front_page() ) :
-    
-        if ($query->have_posts()) :
-          while ($query->have_posts()) : $query->the_post();
-
+	$firstClass = 'active'; 
+	$count = get_theme_mod( 'atoz_slide_number' );
+	$slidecat =get_option( 'atoz_slide_categories' );
+	$query = new WP_Query( array( 'cat' =>$slidecat,'posts_per_page' =>$count ) ); 
+	if ( is_front_page() ) :
+	if ($query->have_posts()) :
+	  while ($query->have_posts()) : $query->the_post();
     ?>
-      <div class="item <?php echo $firstClass; ?>">  
-          <?php
-            if  ( get_the_post_thumbnail()!='')
-            {
-             the_post_thumbnail('atoz_slider'); 
-            }?>
-        <div class="carousel-caption animated fadeInRight" >
-          <div class=" col-md-12 heading">
-            <h1><?php the_title();?></h1>
-            <p><?php //$content=get_the_content();
-                       // echo  $trimmed = wp_trim_words( $content, $num_words = 10, $more = null ); ?></p>
-						<p><?php the_excerpt(); ?></p>
-            <a href="<?php esc_url(the_permalink()); ?>" class="btn btn-outline-primary"><?php esc_html_e( 'Take a look', 'atoz' ); ?></a> </div>
-        </div>
-      </div>
-    
+		<div class="item <?php echo $firstClass; ?>">  
+			<?php
+			if  ( get_the_post_thumbnail()!='')
+			{
+			 the_post_thumbnail('atoz_slider'); 
+			}?>
+			<div class="carousel-caption animated fadeInRight" >
+				<div class=" col-md-12 heading">
+				<h1><?php the_title();?></h1>
+				<p><?php the_excerpt(); ?></p>
+				<a href="<?php the_permalink(); ?>" class="btn btn-outline-primary"><?php esc_html_e( 'Take a look', 'atoz' ); ?></a> </div>
+			</div>
+		</div>    
     <?php
-    
         $firstClass = "";
-            endwhile;    
-            endif;
+		endwhile;    
+		endif;
+		wp_reset_query();
     endif;
-
 }
 endif;

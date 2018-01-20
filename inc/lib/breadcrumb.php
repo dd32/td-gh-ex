@@ -5,9 +5,8 @@
  * @package atoz
  */
 
-
-function get_breadcrumb() {
-    echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
+function atoz_get_breadcrumb() {
+    echo '<a href="' . esc_url(home_url()) . '" rel="nofollow">Home</a>';
     if (is_category() || is_single()) {
         echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
         the_category(' &bull; ');

@@ -45,14 +45,6 @@ class atoz_info extends WP_Customize_Control {
 				'name' => __( 'Demo','atoz' ),
 				'link' => esc_url( 'http://atozdemo.dcrazed.com/' ),
 			),
-			array(
-				'name' => __( 'Leave a review on WordPress','atoz' ),
-				'link' => esc_url( '#' ),
-			),
-			array(
-				'name' => __( 'Buy us a coffee','atoz' ),
-				'link' => esc_url( '#' ),
-			),
 		); ?>
 
 

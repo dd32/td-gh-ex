@@ -63,7 +63,7 @@ if ( post_password_required() ) {
 	<?php endif; // Check for comment navigation. ?>
 
 	<ol class="comment-list">
-		<?php wp_list_comments( array( 'style'=> 'ol', 'short_ping' => true, ) ); ?>
+		<?php wp_list_comments( array( 'style'=> 'ol', 'short_ping' => true, 'avatar_size'  => 100, ) ); ?>
 	</ol>
 	<!-- .comment-list -->
 

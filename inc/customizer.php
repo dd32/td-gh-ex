@@ -11,22 +11,15 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 
-/*
- * Custom Scripts
- */
-
 function atoz_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-    $wp_customize->remove_control('blogdescription');
-    $wp_customize->remove_section('header_image');
-    $wp_customize->remove_section('background_image');
 	$wp_customize->get_setting( 'header_textcolor' )->default   = '#454545';
-	$wp_customize->get_section( 'title_tagline' )->title  = __( 'Branding', 'atoz' );	 
-    $wp_customize->remove_control('background_color');
+	$wp_customize->get_section( 'title_tagline' )->title  = __( 'Branding', 'atoz' );	    
 
-     class Customizer_Toggle_Control extends WP_Customize_Control 
+   /* This class adds toggle control to the customizer */
+     class Atoz_Customizer_Toggle_Control extends WP_Customize_Control 
 	{
 		public $type = 'ios';
 
@@ -37,8 +30,8 @@ function atoz_customize_register( $wp_customize ) {
 		 */
 		public function enqueue() 
 		{
-			/*wp_enqueue_script( 'customizer-toggle-control', get_stylesheet_directory_uri() . '/js/customizer-toggle-control.js', array( 'jquery' ), rand(), true );*/
-			wp_enqueue_style( 'pure-css-toggle-buttons', get_stylesheet_directory_uri() . '/css/pure-css-togle-buttons.css', array(), rand() );
+			
+			wp_enqueue_style( 'atoz-pure-css-toggle-buttons', get_template_directory_uri() . '/css/pure-css-togle-buttons.css', array(), rand() );
 
 			$css = '
 				.disabled-control-title {
@@ -66,7 +59,7 @@ function atoz_customize_register( $wp_customize ) {
 				}
 
 			';
-			wp_add_inline_style( 'pure-css-toggle-buttons' , $css );
+			wp_add_inline_style( 'atoz-pure-css-toggle-buttons' , $css );
 		}
 
 		/**
@@ -95,7 +88,7 @@ function atoz_customize_register( $wp_customize ) {
 	 /* Selective Refresh */
 	if ( isset( $wp_customize->selective_refresh ) ) {	
 	/*header title */
-	$wp_customize->selective_refresh->add_partial( 'blogname', array(
+		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector'        => '.navbar-header h3',
 			
 		) ); 
@@ -131,8 +124,10 @@ function atoz_customize_register( $wp_customize ) {
 			'render_callback' => 'atoz_customize_partial_atoz_image',
 		) ); 		
 	}	
-	/* A theme info panel */
-	require get_template_directory() . '/inc/lib/theme-info.php';	
+	
+	/* A theme INFO panel */
+	require get_template_directory() . '/inc/lib/theme-info.php';
+	
 	$wp_customize->add_section( 'atoz_theme_info', array(
 		'title'    => __( 'Theme INFO', 'atoz' ),
 		'priority' => 0,
@@ -242,265 +237,259 @@ function atoz_customize_register( $wp_customize ) {
     $wp_customize->add_section( 'atoz_slider_options' , array(
     'title'      => __('Slider','atoz'),
     'priority'   => 42,
-   ) );
-   		  $wp_customize->add_setting( 'atoz_slider_check', 
-				   array( 
-					   'default' 	=> 0,
-					   'transport' 	=> 'refresh',
-					   'sanitize_callback' => 'sanitize_text_field',
-				   ) );
-			
-		   $wp_customize->add_control( 'atoz_slider_check', array(
-					'type'		=> 'checkbox',
-					'label' 	=> __( 'Enable/Disable Slider', 'atoz' ),			
-					'section'  	=> 'atoz_slider_options',
-					
-			) );
-		global $options_categories;
-            $wp_customize->add_setting('atoz_slide_categories', array(
-                'default' => '',
-                'type' => 'option',
-                'capability' => 'edit_theme_options',
-                'sanitize_callback' => 'atoz_sanitize_slidecat'
-            ));
-            $wp_customize->add_control('atoz_slide_categories', array(
-                'label' => __('Slider Category', 'atoz'),
-                'section' => 'atoz_slider_options',
-                'type'    => 'select',
-                'description' => __('Select a category for the featured post slider', 'atoz'),
-                'choices'    => $options_categories
-            ));
-			$wp_customize->add_setting(
-			'atoz_slide_number',
-				array(
-					'sanitize_callback' => 'atoz_sanitize_integer'
-				)
-			);
-			$wp_customize->add_control(
-			'atoz_slide_number',
-			array(
-				'type' => 'integer',
-				'default' => 3,
-				'label' => __('Number Of Slides To Show - i.e 10 (default is 3)','atoz'),
-				'section' => 'atoz_slider_options',
-				
-				)
-			);    
+	) );
+	$wp_customize->add_setting( 'atoz_slider_check', 
+		   array( 
+			   'default' 	=> 0,
+			   'transport' 	=> 'refresh',
+			   'sanitize_callback' => 'atoz_sanitize_checkbox',
+		   ) );
+	
+	$wp_customize->add_control( new Atoz_Customizer_Toggle_Control( $wp_customize, 'atoz_slider_check', array(
+			'type'		=> 'checkbox',
+			'label' 	=> __( 'Enable/Disable Slider', 'atoz' ),			
+			'section'  	=> 'atoz_slider_options',
+			'type'     => 'ios',
+		)	
+	) );
+	global $atoz_options_categories;
+	$wp_customize->add_setting('atoz_slide_categories', array(
+		'default' => '',
+		'type' => 'option',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'atoz_sanitize_slidecat'
+	));
+	$wp_customize->add_control('atoz_slide_categories', array(
+		'label' => __('Slider Category', 'atoz'),
+		'section' => 'atoz_slider_options',
+		'type'    => 'select',
+		'description' => __('Select a category for the featured post slider', 'atoz'),
+		'choices'    => $atoz_options_categories
+	));
+	$wp_customize->add_setting(
+	'atoz_slide_number', array(
+			'default' => 3,
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+	'atoz_slide_number', array(
+		'type' => 'integer',				
+		'label' => __('Number Of Slides To Show - i.e 10 (default is 3)','atoz'),
+		'section' => 'atoz_slider_options',
+		
+		)
+	);    
     /*Search*/    
     $wp_customize->add_section( 'atoz_search' , array(
     'title'      => __('Search Section','atoz'),
     'priority'   => 43,
-   ) );
+	) );
     $wp_customize->add_setting( 'atoz_search_check', 
            array( 
                'default' => 0,
                'transport' => 'refresh',
-               'sanitize_callback' => 'sanitize_text_field',
+               'sanitize_callback' => 'atoz_sanitize_checkbox',
            ) );
+   
+	$wp_customize-> add_control( new Atoz_Customizer_Toggle_Control( $wp_customize, 'atoz_search_check', array(
+			'type'		=> 'checkbox',
+			'label' 	=> __( 'Enable search form on homepage', 'atoz' ),			
+			'section'  	=> 'atoz_search',
+			'type'     => 'ios',
+	) ) );
     
-	   $wp_customize->add_control( 'atoz_search_check', array(
-				'type'		=> 'checkbox',
-				'label' 	=> __( 'Enable search form on homepage', 'atoz' ),			
-				'section'  	=> 'atoz_search',
-				
-		) );
-    
-    /* Blog Settings*/
-    
-     $wp_customize->add_section('atoz_post_section', array(
+    /* Blog Settings*/    
+    $wp_customize->add_section('atoz_post_section', array(
         'title'    => __('Blog Settings', 'atoz'),
-        'description' => 'Add Title & Description to the blog listing on homepage. Post count can be changed from Settings -> Reading -> Blog pages show at most',
+        'description' => __('Add Title & Description to the blog listing on homepage. Post count can be changed from Settings -> Reading -> Blog pages show at most', 'atoz'),
         'priority' => 44,
     ));   
-   $wp_customize->add_setting( 'atoz_post_title', 
+	$wp_customize->add_setting( 'atoz_post_title', 
            array( 
+				'default' => __('Latest Posts', 'atoz'),
                'transport' => 'postMessage',
                'sanitize_callback' => 'sanitize_text_field',
-           ) );
+    ) );
 	$wp_customize->add_control( 'atoz_post_title', 
            array(
 			'type' => 'text',
 			'section' => 'atoz_post_section', 
 			'label' => __( "Blog Title", 'atoz' ),
-		) ); 
+	) ); 
     $wp_customize->add_setting( 'atoz_post_desc', 
            array( 
                'transport' => 'postMessage',
                'sanitize_callback' => 'sanitize_text_field',
-           ) );
+    ) );
 	$wp_customize->add_control( 'atoz_post_desc', 
            array(
 			'type' => 'text',
 			'section' => 'atoz_post_section',
 			'label' => __( "Description", 'atoz' ),
-		) );
+	) );
     $wp_customize->add_setting( 'atoz_related_post_check', 
            array( 
                'default' => 1,
                'transport' => 'refresh',
-               'sanitize_callback' => 'sanitize_text_field',
-           ) );
-    
-   $wp_customize->add_control( 'atoz_related_post_check', array(
+               'sanitize_callback' => 'atoz_sanitize_checkbox',
+	) );    
+   $wp_customize->add_control( new Atoz_Customizer_Toggle_Control( $wp_customize, 'atoz_related_post_check', array(
 			'type'		=> 'checkbox',
 			'label' 	=> __( 'Enable/Disable Related Post', 'atoz' ),			
 			'section'  	=> 'atoz_post_section',
-			
+			'type'     => 'ios',
+		)
 	) );
-      $wp_customize->add_setting( 'atoz_post_related_post_count', 
+    $wp_customize->add_setting( 'atoz_post_related_post_count', 
            array( 
-               'default' => '3' ,
+               'default' => 3 ,
                'transport' => 'refresh',
-               'sanitize_callback' => 'sanitize_text_field',
-           ) );
+               'sanitize_callback' => 'absint',
+    ) );
 	$wp_customize->add_control( 'atoz_post_related_post_count', 
            array(
 			'type' => 'text',
 			'section' => 'atoz_post_section', 
 			'label' => __( "Related Post Count", 'atoz' ),
-		) ); 
-    
+	) );     
     /* Featured item*/
-    
 		 $wp_customize->add_section('atoz_calender', array(
 			'title'    		=> __('Featured Item', 'atoz'),
-			'description' 	=> 'Link to your favorite post/page/link from here. Change the default values as it will not reflect on homepage.',
+			'description' 	=> __('Link to your favorite post/page/link from here. Change the default values as it will not reflect on homepage.', 'atoz'),
 			'priority' 		=> 45,
 		));
-		
-    
-         $wp_customize->add_setting( 'atoz_Featured_check',
-				array(
-					'sanitize_callback' => 'atoz_sanitize_checkbox',
-					'default'           => '',
-                    'capability'        => 'manage_options',
-			        'transport'         => 'refresh',
-				)
-			);
-	    $wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'atoz_Featured_check', array(
-			'settings' => 'atoz_Featured_check',
-			'label'    => __( 'Enable this section?', 'atoz' ),
-			'section'  => 'atoz_calender',
-			'type'     => 'ios',
-            'priority' => 1,
 
-	    ) ) );
-    
-		$wp_customize->add_setting( 'atoz_title', 
-			   array( 
-				   'default'  => esc_html__('Title of the item', 'atoz'),
-				   'transport' => 'postMessage',
-				   'sanitize_callback' => 'sanitize_text_field',
-			   ) );
-		$wp_customize->add_control( 'atoz_title', 
-			   array(
-				'type' => 'text',
-				'section' => 'atoz_calender',
-				'label' => __( "Heading", 'atoz' ),			
-			) );
-    
-		$wp_customize->add_setting( 'atoz_feat_desc', 
-			   array( 
-				   'default' => esc_html__('Morbi scelerisque massa quis scelerisque fermentum. Phasellus ac nunc vehicula, malesuada orci ac, cursus turpis. Nunc eu nibh diam. Cras posuere hendrerit purus euismod tincidunt. Etiam posuere vel libero at ornare. Nulla sit amet iaculis mauris.', 'atoz') ,
-				   'transport' => 'postMessage',
-				   'sanitize_callback' => 'sanitize_text_field',
-			   ) );
-		$wp_customize->add_control( 'atoz_feat_desc', 
-			   array(
-				'type' => 'textarea',
-				'section' => 'atoz_calender',
-				'label' => __( "Description", 'atoz' ),
-			) );    
-		$wp_customize->add_setting( 'atoz_url_title', 
-			   array( 
-				   'default' => esc_html__('Add Button Text', 'atoz') ,
-				   'transport' => 'postMessage',
-				   'sanitize_callback' => 'sanitize_text_field',
-			   ) );
-		$wp_customize->add_control( 'atoz_url_title', 
-			   array(
-				'type' => 'text',
-				'section' => 'atoz_calender',
-				'label' => __( "Button Text", 'atoz' ),			
-			) );    
-		$wp_customize->add_setting( 'atoz_url_link', 
-			   array( 
-				   'default' => '#',
-				   'transport' => 'postMessage',
-				   'sanitize_callback' => 'sanitize_text_field',
-			   ) );
-		$wp_customize->add_control( 'atoz_url_link', 
-			   array(
-				'type' => 'text',
-				'section' => 'atoz_calender',
-				'label' => __( "Button Link", 'atoz' ),
-			) );       
-	   $wp_customize->add_setting( 'atoz_image', array(
-				'default'           => get_template_directory_uri(). '/img/ser-1.png',
-				'type'              => 'theme_mod',
-				'capability'        => 'edit_theme_options',
-				'transport' => 'postMessage',
-				'sanitize_callback' => 'esc_url_raw',
-			) );
+	$wp_customize->add_setting( 'atoz_Featured_check',
+			array(
+				'sanitize_callback' => 'atoz_sanitize_checkbox',
+				'default'           => '',
+				'capability'        => 'manage_options',
+				'transport'         => 'refresh',
+			)
+	);
+	$wp_customize->add_control( new Atoz_Customizer_Toggle_Control( $wp_customize, 'atoz_Featured_check', array(
+		'settings' => 'atoz_Featured_check',
+		'label'    => __( 'Enable this section?', 'atoz' ),
+		'section'  => 'atoz_calender',
+		'type'     => 'ios',
+		'priority' => 1,
 
-		$wp_customize->add_control(
-				new WP_Customize_Image_Control(
-					$wp_customize,
-					'atoz_image',
-					array(
-						'label'    => __( 'Add a featured image', 'atoz' ),
-						'section'  => 'atoz_calender',
-						'settings' => 'atoz_image',
-						'context'  => 'a_2_z_image',
-						
-					)
-				)
-			);
-	   $wp_customize->add_setting( 'atoz_bg_image', array(
-				'default'           => get_template_directory_uri(). '/img/article-bg.jpg',
-				'type'              => 'theme_mod',
-				'capability'        => 'edit_theme_options',
-				'sanitize_callback' => 'esc_url_raw',
-			) );
-		$wp_customize->add_control(
-				new WP_Customize_Image_Control(
-					$wp_customize,
-					'atoz_bg_image',
-					array(
-						'label'    => __( 'Add a background image', 'atoz' ),
-						'section'  => 'atoz_calender',
-						'settings' => 'atoz_bg_image',
-						'context'  => 'atoz_bg_image',						
-					)
-				)
-			);        
-		$wp_customize->add_setting( 'atoz_quote_bg_color', 
+	) ) );
+    
+	$wp_customize->add_setting( 'atoz_title', 
+		   array( 
+			   'default'  => esc_html__('Title of the item', 'atoz'),
+			   'transport' => 'postMessage',
+			   'sanitize_callback' => 'sanitize_text_field',
+		   ) );
+	$wp_customize->add_control( 'atoz_title', 
+		   array(
+			'type' => 'text',
+			'section' => 'atoz_calender',
+			'label' => __( "Heading", 'atoz' ),			
+		) );
+
+	$wp_customize->add_setting( 'atoz_feat_desc', 
+		   array( 
+			   'default' => esc_html__('Description goes here. This is the featured item section of the theme.', 'atoz') ,
+			   'transport' => 'postMessage',
+			   'sanitize_callback' => 'sanitize_text_field',
+		   ) );
+	$wp_customize->add_control( 'atoz_feat_desc', 
+		   array(
+			'type' => 'textarea',
+			'section' => 'atoz_calender',
+			'label' => __( "Description", 'atoz' ),
+		) );    
+	$wp_customize->add_setting( 'atoz_url_title', 
+		   array( 
+			   'default' => esc_html__('Add Button Text', 'atoz') ,
+			   'transport' => 'postMessage',
+			   'sanitize_callback' => 'sanitize_text_field',
+		   ) );
+	$wp_customize->add_control( 'atoz_url_title', 
+		   array(
+			'type' => 'text',
+			'section' => 'atoz_calender',
+			'label' => __( "Button Text", 'atoz' ),			
+		) );    
+	$wp_customize->add_setting( 'atoz_url_link', 
+		   array( 
+			   'default' => '#',
+			   'transport' => 'postMessage',
+			   'sanitize_callback' => 'esc_url_raw',
+		   ) );
+	$wp_customize->add_control( 'atoz_url_link', 
+		   array(
+			'type' => 'text',
+			'section' => 'atoz_calender',
+			'label' => __( "Button Link", 'atoz' ),
+		) );       
+   $wp_customize->add_setting( 'atoz_image', array(
+			'default'           => get_template_directory_uri(). '/img/ser-1.png',
+			'type'              => 'theme_mod',
+			'capability'        => 'edit_theme_options',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'esc_url_raw',
+		) );
+
+	$wp_customize->add_control(
+			new WP_Customize_Image_Control(
+				$wp_customize,
+				'atoz_image',
 				array(
-					'default' => '#fe9c46',
-					'transport' => 'postMessage', 
-					'sanitize_callback' => 'sanitize_hex_color', 
-				) );
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'atoz_quote_bg_color', 
-			   array(
-				'label'      => esc_html__( 'Background Color', 'atoz' ),
-				'description' => esc_html__( 'Add a background overlay to add contrast to headings & descriptions.', 'atoz' ),
-				'section'    => 'atoz_calender',
-			) ) );			
-		$wp_customize->add_setting( 'atoz_transparnt', 
-			   array( 
-				   'default' => '.95',
-				   'transport' => 'refresh',
-				   'sanitize_callback' => 'sanitize_text_field',
-			   ) );
-		$wp_customize->add_control( 'atoz_transparnt', 
-			   array(
-				'type' => 'text',
-				'section' => 'atoz_calender',
-				'label' => esc_html__( "Background Transparency", 'atoz' ),
-				'description' => esc_html__( 'Change the opacity of the above background color.', 'atoz' ),
+					'label'    => __( 'Add a featured image', 'atoz' ),
+					'section'  => 'atoz_calender',
+					'settings' => 'atoz_image',
+					'context'  => 'a_2_z_image',
+					
+				)
+			)
+		);
+   $wp_customize->add_setting( 'atoz_bg_image', array(
+			'default'           => get_template_directory_uri(). '/img/article-bg.jpg',
+			'type'              => 'theme_mod',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'esc_url_raw',
+		) );
+	$wp_customize->add_control(
+			new WP_Customize_Image_Control(
+				$wp_customize,
+				'atoz_bg_image',
+				array(
+					'label'    => __( 'Add a background image', 'atoz' ),
+					'section'  => 'atoz_calender',
+					'settings' => 'atoz_bg_image',
+					'context'  => 'atoz_bg_image',						
+				)
+			)
+		);        
+	$wp_customize->add_setting( 'atoz_quote_bg_color', 
+			array(
+				'default' => '#fe9c46',
+				'transport' => 'postMessage', 
+				'sanitize_callback' => 'sanitize_hex_color', 
 			) );
-    
-    
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'atoz_quote_bg_color', 
+		   array(
+			'label'      => esc_html__( 'Background Color', 'atoz' ),
+			'description' => esc_html__( 'Add a background overlay to add contrast to headings & descriptions.', 'atoz' ),
+			'section'    => 'atoz_calender',
+		) ) );			
+	$wp_customize->add_setting( 'atoz_transparnt', 
+		   array( 
+			   'default' => '.95',
+			   'transport' => 'refresh',
+			   'sanitize_callback' => 'sanitize_text_field',
+		   ) );
+	$wp_customize->add_control( 'atoz_transparnt', 
+		   array(
+			'type' => 'text',
+			'section' => 'atoz_calender',
+			'label' => esc_html__( "Background Transparency", 'atoz' ),
+			'description' => esc_html__( 'Change the opacity of the above background color.', 'atoz' ),
+		) );    
 }
 add_action( 'customize_register', 'atoz_customize_register' );
 
@@ -511,8 +500,8 @@ function atoz_sanitize_integer( $input ) {
 	}
 
 function atoz_sanitize_slidecat( $input ) {
-    global $options_categories;
-    if ( array_key_exists( $input, $options_categories ) ) {
+    global $atoz_options_categories;
+    if ( array_key_exists( $input, $atoz_options_categories ) ) {
         return $input;
     } else {
         return '';
@@ -543,7 +532,7 @@ function atoz_customize_partial_blogname() {
 function atoz_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
-/*Blog listing */
+/*Render Blog listing for the selective refresh partial*/
 function atoz_customize_partial_blogtitle(){
 	echo esc_html(get_theme_mod( 'atoz_post_title' ));
 }
@@ -551,7 +540,7 @@ function atoz_customize_partial_blogdesc(){
 	echo esc_html(get_theme_mod( 'atoz_post_desc' ));
 }
 
-/*Featured Item - Render */
+/*Featured Item - Render this item for the selective refresh partial */
 function atoz_customize_partial_serv_content() {
 	echo esc_html(get_theme_mod( 'atoz_title' ));
 }
@@ -574,8 +563,7 @@ function atoz_customize_preview_js() {
 add_action( 'customize_preview_init', 'atoz_customize_preview_js' );
 ?>
 
-<?php
-add_action( 'customize_controls_print_scripts', 'atoz_head_scripts', 20 );
+<?php add_action( 'customize_controls_print_scripts', 'atoz_head_scripts', 20 );
 function atoz_head_scripts() { ?>
 <style>
 #customize-controls .description {
@@ -607,8 +595,8 @@ function atoz_head_scripts() { ?>
 <?php }?>
 
 <?php
-add_action( 'customize_controls_print_footer_scripts', 'customizer_custom_scripts' );
-function customizer_custom_scripts() { ?>
+add_action( 'customize_controls_print_footer_scripts', 'atoz_customizer_custom_scripts' );
+function atoz_customizer_custom_scripts() { ?>
 <script type="text/javascript">
     jQuery(document).ready(function() {
         /* This one shows/hides the an option when a checkbox is clicked. */
@@ -619,13 +607,10 @@ function customizer_custom_scripts() { ?>
        
     });
 </script>
-
 <?php }?>
 
 <?php
-
 function atoz_customizer_css() {
 		wp_enqueue_style( 'atoz-customizer-css', get_template_directory_uri() . '/css/customizer.css' );
 	}
-
-	add_action( 'customize_controls_print_styles', 'atoz_customizer_css' );
+add_action( 'customize_controls_print_styles', 'atoz_customizer_css' );

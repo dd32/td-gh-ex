@@ -43,16 +43,18 @@ function atoz_related_post() {
                 global $post;
                 $categories = get_the_category($post->ID);
                 $cat_link = get_category_link($categories[0]->cat_ID);
-				printf('<article class="col-md-4 col-sm-4">
-                        <div class="blog-box-inn eq-blocks"> 
-							<span>%s</span>%s
-							<h2>%s</h2>
+				printf('<article class="col-md-4 col-sm-4 eq-blocks">
+                        <div class="blog-box-inn"> 
+							<span class="posted-date">%s</span><a href="%s">%s</a>
+							<a href="%s"><h2>%s</h2></a>
 							<a href="%s"><p>' . $categories[0]->cat_name . '</p></a>
 							<a href="%s" class="btn btn-default">View</a>  
                         </div>
                      </article>',
-                    get_the_date(),
+					esc_html( get_the_date() ),
+					esc_url( get_permalink() ),
 					$post_thumbnail,
+					esc_url( get_permalink() ),
                     esc_html($title),
                     esc_url($cat_link),
                     esc_url( get_permalink() )
