@@ -1,7 +1,7 @@
 === Fmi ===
 Theme Name: Fmi
 Theme URI: http://forrss.com/themes/fmi/
-Version: 1.3.12
+Version: 1.3.13
 Requires at least: 4.5
 Tested up to: 4.8
 Author: Forrss
@@ -22,6 +22,8 @@ CSS files licensed under the MIT license - http://opensource.org/licenses/MIT
 - FitVids.JS http://fitvidsjs.com FitVids.JS WTFPL license
 
 - Photos https://pixabay.com/en/winter-snow-the-snow-falls-3016302/ [Free-Photos][CC0 License]
+
+- The script jquery.cycle.all.min.js is dual licensed under GPL & MIT
 
 - Other custom js files are our own creation and is licensed under the same license as this theme.
 

@@ -94,7 +94,7 @@ function fmi_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'fmi_sanitize_checkbox'
 	));
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'header_search',array(
-		'label'      => __('Hide Header Search', 'fmi'),
+		'label'      => esc_html__('Hide Header Search', 'fmi'),
 		'section'    => 'general',
 		'settings'   => 'header_search',
 		'type'		 => 'checkbox'
@@ -247,6 +247,189 @@ function fmi_customize_register( $wp_customize ) {
 		'settings' => 'social_flickr',
 		'type'     => 'text'
 	));
+	//----------------------------------------------------------------------------------
+	// Section: Slider
+	//----------------------------------------------------------------------------------
+	$wp_customize->add_section( 'fmi_slider', array(
+		'title'    => esc_html__( 'Slider', 'fmi' ),
+        'panel'       => 'theme_options',
+   		'priority'   => 5
+	));
+	$wp_customize->add_setting('activate_slider',array(
+		'default'     => false,
+		'sanitize_callback' => 'fmi_sanitize_checkbox'
+	));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize,'activate_slider',array(
+		'label'      => esc_html__('Check to activate slider', 'fmi'),
+		'section'    => 'fmi_slider',
+		'settings'   => 'activate_slider',
+		'type'		 => 'checkbox'
+	)));
+
+	$wp_customize->add_setting( 'slider_image1', array(
+		'default'     => '',
+        'sanitize_callback' => 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'slider_image1', array(
+		'label'       => esc_html__( 'Image Upload #1', 'fmi' ),
+		'description' => esc_html__( 'Upload slider image', 'fmi' ),
+		'section'     => 'fmi_slider',
+		'settings' => 'slider_image1'
+	) ) );
+	$wp_customize->add_setting( 'slider_title1', array(
+		'default'        => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'slider_title1', array(
+		'description'    => esc_html__( 'Enter title for your slider', 'fmi' ),
+		'section'     => 'fmi_slider',
+		'settings' => 'slider_title1',
+		'type'     => 'text'
+	) );
+	$wp_customize->add_setting( 'slider_text1', array(
+		'default'        => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'slider_text1', array(
+		'description'    => esc_html__( 'Enter your slider description', 'fmi' ),
+		'section'     => 'fmi_slider',
+		'settings' => 'slider_text1',
+		'type'     => 'text'
+	) );
+	$wp_customize->add_setting( 'slider_link1', array(
+		'default'        => '',
+		'sanitize_callback' => 'esc_url_raw'
+	) );
+	$wp_customize->add_control( 'slider_link1', array(
+		'description'    => esc_html__( 'Enter link to redirect slider when clicked', 'fmi' ),
+		'section'     => 'fmi_slider',
+		'settings' => 'slider_link1',
+		'type'     => 'text'
+	) );
+	
+	$wp_customize->add_setting( 'slider_image2', array(
+		'default'     => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'slider_image2', array(
+		'label'       => esc_html__( 'Image Upload #2', 'fmi' ),
+		'description' => esc_html__( 'Upload slider image', 'fmi' ),
+		'section'     => 'fmi_slider',
+		'settings' => 'slider_image2'
+	) ) );
+	$wp_customize->add_setting( 'slider_title2', array(
+		'default'        => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'slider_title2', array(
+		'description'    => esc_html__( 'Enter title for your slider', 'fmi' ),
+		'section'     => 'fmi_slider',
+		'settings' => 'slider_title2',
+		'type'     => 'text'
+	) );
+	$wp_customize->add_setting( 'slider_text2', array(
+		'default'        => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'slider_text2', array(
+		'description'    => esc_html__( 'Enter your slider description', 'fmi' ),
+		'section'     => 'fmi_slider',
+		'settings' => 'slider_text2',
+		'type'     => 'text'
+	) );
+	$wp_customize->add_setting( 'slider_link2', array(
+		'default'        => '',
+		'sanitize_callback' => 'esc_url_raw'
+	) );
+	$wp_customize->add_control( 'slider_link2', array(
+		'description'    => esc_html__( 'Enter link to redirect slider when clicked', 'fmi' ),
+		'section'     => 'fmi_slider',
+		'settings' => 'slider_link2',
+		'type'     => 'text'
+	) );
+	
+	$wp_customize->add_setting( 'slider_image3', array(
+		'default'     => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'slider_image3', array(
+		'label'       => esc_html__( 'Image Upload #3', 'fmi' ),
+		'description' => esc_html__( 'Upload slider image', 'fmi' ),
+		'section'     => 'fmi_slider',
+		'settings' => 'slider_image3'
+	) ) );
+	$wp_customize->add_setting( 'slider_title3', array(
+		'default'        => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'slider_title3', array(
+		'description'    => esc_html__( 'Enter title for your slider', 'fmi' ),
+		'section'     => 'fmi_slider',
+		'settings' => 'slider_title3',
+		'type'     => 'text'
+	) );
+	$wp_customize->add_setting( 'slider_text3', array(
+		'default'        => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'slider_text3', array(
+		'description'    => esc_html__( 'Enter your slider description', 'fmi' ),
+		'section'     => 'fmi_slider',
+		'settings' => 'slider_text3',
+		'type'     => 'text'
+	) );
+	$wp_customize->add_setting( 'slider_link3', array(
+		'default'        => '',
+		'sanitize_callback' => 'esc_url_raw'
+	) );
+	$wp_customize->add_control( 'slider_link3', array(
+		'description'    => esc_html__( 'Enter link to redirect slider when clicked', 'fmi' ),
+		'section'     => 'fmi_slider',
+		'settings' => 'slider_link3',
+		'type'     => 'text'
+	) );
+	
+	$wp_customize->add_setting( 'slider_image4', array(
+		'default'     => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'slider_image4', array(
+		'label'       => esc_html__( 'Image Upload #4', 'fmi' ),
+		'description' => esc_html__( 'Upload slider image', 'fmi' ),
+		'section'     => 'fmi_slider',
+		'settings' => 'slider_image4'
+	) ) );
+	$wp_customize->add_setting( 'slider_title4', array(
+		'default'        => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'slider_title4', array(
+		'description'    => esc_html__( 'Enter title for your slider', 'fmi' ),
+		'section'     => 'fmi_slider',
+		'settings' => 'slider_title4',
+		'type'     => 'text'
+	) );
+	$wp_customize->add_setting( 'slider_text4', array(
+		'default'        => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'slider_text4', array(
+		'description'    => esc_html__( 'Enter your slider description', 'fmi' ),
+		'section'     => 'fmi_slider',
+		'settings' => 'slider_text4',
+		'type'     => 'text'
+	) );
+	$wp_customize->add_setting( 'slider_link4', array(
+		'default'        => '',
+		'sanitize_callback' => 'esc_url_raw'
+	) );
+	$wp_customize->add_control( 'slider_link4', array(
+		'description'    => esc_html__( 'Enter link to redirect slider when clicked', 'fmi' ),
+		'section'     => 'fmi_slider',
+		'settings' => 'slider_link4',
+		'type'     => 'text'
+	) );
+
 }
 add_action( 'customize_register', 'fmi_customize_register' );
 

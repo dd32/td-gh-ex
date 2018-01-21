@@ -58,4 +58,14 @@
         <div class="clear"></div>
     </div></nav><!-- #site-navigation -->
 
+<?php
+if(get_theme_mod('activate_slider',0)){
+	if(is_front_page()){
+?>
+		<div class="site-slider"><div class="inner"><?php fmi_slider();?><div class="clear"></div></div></div>
+<?php
+	}
+}
+?>
+
 	<div id="content" class="site-content"><div class="inner">
