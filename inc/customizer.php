@@ -255,7 +255,6 @@ function atoz_customize_register( $wp_customize ) {
 	global $atoz_options_categories;
 	$wp_customize->add_setting('atoz_slide_categories', array(
 		'default' => '',
-		'type' => 'option',
 		'capability' => 'edit_theme_options',
 		'sanitize_callback' => 'atoz_sanitize_slidecat'
 	));
@@ -394,7 +393,7 @@ function atoz_customize_register( $wp_customize ) {
 		   array( 
 			   'default' => esc_html__('Description goes here. This is the featured item section of the theme.', 'atoz') ,
 			   'transport' => 'postMessage',
-			   'sanitize_callback' => 'sanitize_text_field',
+			   'sanitize_callback' => 'wp_kses_post',
 		   ) );
 	$wp_customize->add_control( 'atoz_feat_desc', 
 		   array(
@@ -492,12 +491,6 @@ function atoz_customize_register( $wp_customize ) {
 		) );    
 }
 add_action( 'customize_register', 'atoz_customize_register' );
-
-function atoz_sanitize_integer( $input ) {
-    	if( is_numeric( $input ) ) {
-        return intval( $input );
-   	}
-	}
 
 function atoz_sanitize_slidecat( $input ) {
     global $atoz_options_categories;

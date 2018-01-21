@@ -99,7 +99,7 @@ get_header(); ?>
 			<div class="col-md-5 text-center serv-content wow animated fadeInRightBig">
 				<?php   
 					$atoz_title  = get_theme_mod( 'atoz_title', esc_html__('TITLE OF THE ITEM', 'atoz' ));
-					if ($atoz_title != '') echo '<h4>' . wp_kses_post($atoz_title) . ' </h4>';
+					if ($atoz_title != '') echo '<h4>' . esc_html($atoz_title) . ' </h4>';
 				?>
 				<?php   
 					$atoz_feat_desc  = get_theme_mod( 'atoz_feat_desc', esc_html__('Description goes here. This is the featured item section of the theme.', 'atoz' ));
@@ -108,7 +108,7 @@ get_header(); ?>
 				<?php 
 				   $atoz_url_title  = get_theme_mod( 'atoz_url_title', esc_html__('Add Button Text', 'atoz' ));
 				   $atoz_url_link=  get_theme_mod( 'atoz_url_link', esc_attr('#', 'atoz') );          
-				   if ($atoz_url_title != '' && $atoz_url_link != '') echo '<a href="' . esc_url($atoz_url_link) . '"  class="btn btn-outline-primary">  ' . wp_kses_post($atoz_url_title) . ' </a>'; 
+				   if ($atoz_url_title != '' && $atoz_url_link != '') echo '<a href="' . esc_url($atoz_url_link) . '"  class="btn btn-outline-primary">  ' . esc_html($atoz_url_title) . ' </a>'; 
 				?>				
 			</div>
 		</div>

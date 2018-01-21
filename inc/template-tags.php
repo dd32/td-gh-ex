@@ -132,7 +132,7 @@ function atoz_featured_slider() {
         $firstClass = "";
 		endwhile;    
 		endif;
-		wp_reset_query();
+		wp_reset_postdata();
     endif;
 }
 endif;

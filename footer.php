@@ -29,7 +29,7 @@
 				</div>
 			</div>
 			<div class=" col-md-12 col-sm-12  fnav text-center">
-				<p>ALL RIGHTS RESERVED. COPYRIGHT &#169; 2017. A theme by
+				<p><?php esc_html_e('ALL RIGHTS RESERVED. COPYRIGHT &#169; 2017. A theme by', 'atoz');?>
 				<?php printf( '<a href="' . esc_url( 'https://dcrazed.com/' ) . '" target="_blank">Dcrazed</a>' ); ?> </p>
 			</div>
 		</div>

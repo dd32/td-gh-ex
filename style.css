@@ -4,7 +4,7 @@ Theme URI: https://dcrazed.com/themes/atoz/
 Author: Dcrazed
 Author URI: https://dcrazed.com/
 Description: atoz is a simple and creative personal blog theme for designers, developers who are into blogging. Showcase your freebies easily with this free wordpress blog theme.
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: atoz
@@ -1898,12 +1898,12 @@ aside .widget_search .input-group {
 	-moz-transition: all ease-in .3s;
 	-webkit-transition: all ease-in .3s;
 }
-.widget_premium-widget i.fa {
+.widget_atoz-premium-widget i.fa {
     color: #8c8c8c;
     padding: 20px;
     border: none;
 }
-.widget_premium-widget i.fa:hover {
+.widget_atoz-premium-widget i.fa:hover {
     color: #000;
 }
 aside section {
@@ -3065,7 +3065,7 @@ Comments
 	}
 }
 
-/*search imput*/
+/*search input*/
 
 .field {
 	display: flex;
@@ -3103,9 +3103,6 @@ textarea:hover, input:hover, textarea:active, input:active, textarea:focus, inpu
 	outline: 0px !important;
 }
 
-
-/*edited on 05/6/17*/
-
 .blog-box-inn img {
     height: 240px;
     width: 100%;
@@ -3121,7 +3118,6 @@ textarea:hover, input:hover, textarea:active, input:active, textarea:focus, inpu
 .post-categories li a:hover{color: #44484b;transition: all ease-in-out 500ms;
     -moz-transition: all ease-in-out 500ms;
     -webkit-transition: all ease-in-out 500ms; }
-
 
 .error404  h1
 {

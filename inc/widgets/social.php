@@ -8,7 +8,7 @@ class AtoZ_Premium extends WP_Widget{
     function __construct() 
     {
         parent::__construct(
-            'premium-widget', // Base ID
+            'atoz-premium-widget', // Base ID
             esc_attr__( 'A to Z -Sidebar social widget', 'atoz' ), // Name
             array( 
                 'description' => esc_attr__( 'Display a Premium or Feature description.', 'atoz' ),
@@ -30,10 +30,10 @@ class AtoZ_Premium extends WP_Widget{
     front page view */
     public function widget( $args, $instance ){
     echo $args['before_widget'];
-
+	$title = apply_filters('widget_title', empty($instance['social_title']) ? __('Follow us', 'atoz') : $instance['social_title'], $instance, $this->id_base);
 	?>
     
-        <h2 class="widget-title"><?php if( !empty( $instance['social_title'] ) ): echo apply_filters( 'widget_title', $instance['social_title'] ); endif; ?></h2>
+        <h2 class="widget-title"> <?php if ( $title ) echo $before_title . $title . $after_title; ?></h2>
           <ul class="list-inline">
               <?php if( !empty( $instance['facebook_url'] ) ){?>
             <li ><a href="<?php if( !empty( $instance['facebook_url'] ) ): echo apply_filters( 'widget_title', esc_url($instance['facebook_url'] ) ); endif; ?>" title="facebook"><i class="fa fa-facebook"></i></a></li>
@@ -71,7 +71,7 @@ class AtoZ_Premium extends WP_Widget{
 			echo $args['after_widget'];
 
     }
-    
+
     /**
      * Back-end widget form.
      *
@@ -128,6 +128,24 @@ class AtoZ_Premium extends WP_Widget{
   
     <?php
     }
+	    
+	/**
+     * Update widget.
+     *
+     */
+	 
+	public function update( $new_instance, $old_instance ) {
+		$instance              			= $old_instance;
+		$instance['social_title']     	= sanitize_text_field( $new_instance['social_title'] );
+		$instance['facebook_url']     	= esc_url_raw( $new_instance['facebook_url'] );
+		$instance['twitter_url']     	= esc_url_raw( $new_instance['twitter_url'] );
+		$instance['google_url']     	= esc_url_raw( $new_instance['google_url'] );
+		$instance['inst_title']     	= esc_url_raw( $new_instance['inst_title'] );
+		$instance['dribbble']     		= esc_url_raw( $new_instance['dribbble'] );
+		$instance['behance']     		= esc_url_raw( $new_instance['behance'] );
+		return $instance;
+	}
+	
 }
 register_widget( 'AtoZ_Premium' );
 ?>

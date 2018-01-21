@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Atoz\n"
-"POT-Creation-Date: 2018-01-20 14:29+0530\n"
-"PO-Revision-Date: 2018-01-20 14:29+0530\n"
+"POT-Creation-Date: 2018-01-21 16:59+0530\n"
+"PO-Revision-Date: 2018-01-21 16:59+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -59,6 +59,10 @@ msgstr ""
 msgid "Comments are closed. "
 msgstr ""
 
+#: footer.php:32
+msgid "ALL RIGHTS RESERVED. COPYRIGHT &#169; 2017. A theme by"
+msgstr ""
+
 #: functions.php:47
 msgid "Primary"
 msgstr ""
@@ -91,7 +95,7 @@ msgstr ""
 msgid "Footer Widgets 4"
 msgstr ""
 
-#: functions.php:267 inc/widgets/recentpost.php:75
+#: functions.php:267 inc/widgets/recentpost.php:77
 msgid "Read more"
 msgstr ""
 
@@ -103,11 +107,11 @@ msgstr ""
 msgid "TITLE OF THE ITEM"
 msgstr ""
 
-#: home.php:105 inc/customizer.php:395
+#: home.php:105 inc/customizer.php:394
 msgid "Description goes here. This is the featured item section of the theme."
 msgstr ""
 
-#: home.php:109 inc/customizer.php:407
+#: home.php:109 inc/customizer.php:406
 msgid "Add Button Text"
 msgstr ""
 
@@ -167,107 +171,107 @@ msgstr ""
 msgid "Enable/Disable Slider"
 msgstr ""
 
-#: inc/customizer.php:263
+#: inc/customizer.php:262
 msgid "Slider Category"
 msgstr ""
 
-#: inc/customizer.php:266
+#: inc/customizer.php:265
 msgid "Select a category for the featured post slider"
 msgstr ""
 
-#: inc/customizer.php:278
+#: inc/customizer.php:277
 msgid "Number Of Slides To Show - i.e 10 (default is 3)"
 msgstr ""
 
-#: inc/customizer.php:285
+#: inc/customizer.php:284
 msgid "Search Section"
 msgstr ""
 
-#: inc/customizer.php:297
+#: inc/customizer.php:296
 msgid "Enable search form on homepage"
 msgstr ""
 
-#: inc/customizer.php:304
+#: inc/customizer.php:303
 msgid "Blog Settings"
 msgstr ""
 
-#: inc/customizer.php:305
+#: inc/customizer.php:304
 msgid ""
 "Add Title & Description to the blog listing on homepage. Post count can be "
 "changed from Settings -> Reading -> Blog pages show at most"
 msgstr ""
 
-#: inc/customizer.php:310
+#: inc/customizer.php:309
 msgid "Latest Posts"
 msgstr ""
 
-#: inc/customizer.php:318
+#: inc/customizer.php:317
 msgid "Blog Title"
 msgstr ""
 
-#: inc/customizer.php:329 inc/customizer.php:403
+#: inc/customizer.php:328 inc/customizer.php:402
 msgid "Description"
 msgstr ""
 
-#: inc/customizer.php:339
+#: inc/customizer.php:338
 msgid "Enable/Disable Related Post"
 msgstr ""
 
-#: inc/customizer.php:354
+#: inc/customizer.php:353
 msgid "Related Post Count"
 msgstr ""
 
-#: inc/customizer.php:358
+#: inc/customizer.php:357
 msgid "Featured Item"
 msgstr ""
 
-#: inc/customizer.php:359
+#: inc/customizer.php:358
 msgid ""
 "Link to your favorite post/page/link from here. Change the default values as "
 "it will not reflect on homepage."
 msgstr ""
 
-#: inc/customizer.php:373
+#: inc/customizer.php:372
 msgid "Enable this section?"
 msgstr ""
 
-#: inc/customizer.php:382
+#: inc/customizer.php:381
 msgid "Title of the item"
 msgstr ""
 
-#: inc/customizer.php:390
+#: inc/customizer.php:389
 msgid "Heading"
 msgstr ""
 
-#: inc/customizer.php:415
+#: inc/customizer.php:414
 msgid "Button Text"
 msgstr ""
 
-#: inc/customizer.php:427
+#: inc/customizer.php:426
 msgid "Button Link"
 msgstr ""
 
-#: inc/customizer.php:442
+#: inc/customizer.php:441
 msgid "Add a featured image"
 msgstr ""
 
-#: inc/customizer.php:461
+#: inc/customizer.php:460
 msgid "Add a background image"
 msgstr ""
 
-#: inc/customizer.php:476
+#: inc/customizer.php:475
 msgid "Background Color"
 msgstr ""
 
-#: inc/customizer.php:477
+#: inc/customizer.php:476
 msgid "Add a background overlay to add contrast to headings & descriptions."
 msgstr ""
 
-#: inc/customizer.php:490
+#: inc/customizer.php:489
 msgid "Background Transparency"
 msgstr ""
 
-#: inc/customizer.php:491
+#: inc/customizer.php:490
 msgid "Change the opacity of the above background color."
 msgstr ""
 
@@ -328,7 +332,7 @@ msgstr ""
 msgid "Take a look"
 msgstr ""
 
-#: inc/widgets/recentpost.php:11 inc/widgets/recentpost.php:133
+#: inc/widgets/recentpost.php:11 inc/widgets/recentpost.php:143
 msgid "The most recent posts on your site with thumbnails"
 msgstr ""
 
@@ -336,23 +340,23 @@ msgstr ""
 msgid "atoZ Recent Posts"
 msgstr ""
 
-#: inc/widgets/recentpost.php:38
+#: inc/widgets/recentpost.php:40
 msgid "Recent Posts"
 msgstr ""
 
-#: inc/widgets/recentpost.php:119
+#: inc/widgets/recentpost.php:129
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets/recentpost.php:122
+#: inc/widgets/recentpost.php:132
 msgid "Number of posts to show:"
 msgstr ""
 
-#: inc/widgets/recentpost.php:126
+#: inc/widgets/recentpost.php:136
 msgid "Display post date?"
 msgstr ""
 
-#: inc/widgets/recentpost.php:135
+#: inc/widgets/recentpost.php:145
 msgid "atoz Recent Posts"
 msgstr ""
 
@@ -362,6 +366,10 @@ msgstr ""
 
 #: inc/widgets/social.php:14
 msgid "Display a Premium or Feature description."
+msgstr ""
+
+#: inc/widgets/social.php:33
+msgid "Follow us"
 msgstr ""
 
 #: inc/widgets/social.php:87
