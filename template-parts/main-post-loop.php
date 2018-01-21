@@ -9,6 +9,7 @@
 */
 
 ?>
+
   <div class="grid-container">
     <div class="grid-x grid-margin-x align-center ">
       <div class="cell  small-24 <?php echo bestblog_sidebar_layout();?> large-order-2 ">

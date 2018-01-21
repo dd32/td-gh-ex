@@ -11,7 +11,7 @@ Text Domain: best-blog
 Description: Best Blog is a perfect WordPress theme for personal blogs, blog,content publishers. From travel to fashion and everything in between, Best Blog brings beauty and unique designs combined with quality performance and stability to any type of blog.
 With WooCommerce plugin, you can get your blog and shop running in minutes. Also Best Blog have Five custom widgets and much more.
 
-Version: 1.0.9
+Version: 1.1.0
 
 Tags:   grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments,blog,news,food-and-drink
 
@@ -48,7 +48,7 @@ bestblog  is distributed under the terms of the GNU GPL
 .admin-bar .sticky.is-stuck {
   margin-top: 30px !important;
 }
-
+.sticky.is-stuck{z-index: 10;}
 .thumbnail-resize {
   position: relative;
   display: block;
@@ -264,7 +264,6 @@ a img.aligncenter {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  min-height: 250px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -678,7 +677,8 @@ post layout-1
 .post-wrap-layout-1 .post-title {
   margin-bottom: 0px;
 }
-
+.readmore{margin-bottom: 0px;
+font-size: 16px;padding-top: .7em;}
 /*  ----------------------------------------------------
 post layout-2 masonry
 -------------------------------------------------------- */
@@ -796,9 +796,7 @@ post layout-2 masonry
 
 /*----------- laout 2 at sidebar -----------*/
 
-.sidebar-inner .widget_latest-post-masonry .widget_wrap {
-  padding: 0px;
-}
+
 .widget_wrap .card-title h3.post-title{
   font-size: 24px;
 }
@@ -1100,16 +1098,22 @@ widget
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
   position: relative;
 }
+.sidebar-inner .readmore,.footer_widgets_warp .readmore{
+  display: none;
 
+}
 .sidebar-inner .widget_media_image .widget_wrap {
   padding: 0px;
   border: none
 }
 
 .sidebar-inner .widget_search .widget_wrap .search-form {
-  top: 2px;
+  top:6px;
   position: absolute;
   width: 90%;
+}
+.sidebar-inner .widget_search .widget_wrap  {
+  padding-bottom: 50px;
 }
 
 .sidebar-inner .widget-title h3 {
@@ -1195,7 +1199,10 @@ Post sub banner
   padding-left: 20px;
   background: transparent;
 }
-
+#sub_banner .blogtitle{
+  margin-right: auto;
+  margin-left: auto;
+}
 #sub_banner .top-bar .breadcrumbs {
   margin: 0px;
 }
@@ -1359,7 +1366,7 @@ Footer section
 
 .footer-copyright-wrap {
   background: #fff;
-  border-top: 1px solid #a7a7a7;
+
 }
 
 .footer-copyright-wrap .callout {

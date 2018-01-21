@@ -23,7 +23,26 @@ add_filter('excerpt_length', 'bestblog_custom_excerpt_length', 999);
 */
 function bestblog_excerpt_more($more)
 {
-    return '...';
+  if ( true == get_theme_mod( 'checkbox_read_more', false ) ) :
+  if ( is_front_page() && is_home() ) {
+  // Default homepage
+  return '<a href="'.esc_url(get_permalink()).'" class="readmore clear primary button"> '.esc_html__('Read more…','best-blog').'</a>';
+
+} elseif ( is_front_page() ) {
+  // static homepage
+  return '...';
+
+} elseif ( is_home() ) {
+  // blog page
+  return '<a href="'.esc_url(get_permalink()).'" class="readmore clear primary button">'.esc_html__('Read more…','best-blog').'</a>';
+} else {
+  //everything else
+  return '<a href="'.esc_url(get_permalink()).'" class="readmore clear primary button"> '.esc_html__('Read more…','best-blog').'</a>';
+
+}
+ else :
+   return '...';
+ endif;
 }
 add_filter('excerpt_more', 'bestblog_excerpt_more');
 
@@ -294,6 +313,20 @@ function bestblog_mainpost_page_title()
 }
 endif;
 
+if (! function_exists('bestblog_mainpost_blog_title')) :
+function bestblog_mainpost_blog_title()
+{
+    echo '<div id="sub_banner">';
+    echo '<div class="top-bar">';
+    echo '<div class="top-bar-title blogtitle ">';
+    echo '<h1 class="subheader">';
+    echo esc_html__('Blog', 'best-blog');
+    echo '</h1>';
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+}
+endif;
 /**
 * Converts Hex color code into RGB
 *

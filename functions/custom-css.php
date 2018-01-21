@@ -39,7 +39,8 @@ $inline_css .=
 	.woocommerce #respond input#submit.alt,
 	.woocommerce a.button.alt, .woocommerce button.button.alt,
 	.woocommerce input.button.alt, .woocommerce #respond input#submit,
-	.woocommerce a.button, .woocommerce button.button, .woocommerce input.button
+	.woocommerce a.button, .woocommerce button.button, .woocommerce input.button,
+	.comment-list .comment-reply-link
 	{
 		color: $text_color ;
 	}"
@@ -104,6 +105,24 @@ $inline_css .=
 }"
 ;
 
+/*  Color calculation for background to text */
+$topbg_gradient   =  get_theme_mod( 'topbg_gradient' ,'gradient_2') ;
+
+
+if ( 'gradient_14' == $topbg_gradient || 'gradient_21' == $topbg_gradient || 'gradient_6' == $topbg_gradient || 'gradient_1' == $topbg_gradient || 'gradient_29' == $topbg_gradient) :
+
+/*  Color calculation for text */
+$inline_css .=
+" .woocommerce-result-count,
+.related.products h2,
+.single-post-box-related .block-title,
+.home_widget_wrap .block-title,
+.home_widget_wrap .widget-title
+{
+	color: #fff ;
+}"
+;
+endif;
 wp_add_inline_style( 'bestblog-style', $inline_css );
 }
 add_action( 'wp_enqueue_scripts', 'bestblog_inline_style', 10 );

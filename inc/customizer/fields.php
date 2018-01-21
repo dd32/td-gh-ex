@@ -20,7 +20,7 @@ $socialarray = array(
 		'instagram' => esc_attr__('Instagram', 'best-blog'),
 		'xing' => esc_attr__('Xing', 'best-blog')
 );
-//**** newspapers upsell pro */
+//**** Best blog upsell pro */
 Kirki::add_field( 'best_blog', array(
 	'type'        => 'custom',
 	'settings'    => 'best_blog_view_link_pro',
@@ -89,12 +89,12 @@ Kirki::add_field('best_blog', array(
     ),
     'output' => array(
         array(
-            'element' => '#sub_banner .breadcrumbs a,.post-wrap-layout-2 .card .category.text-info a,.button.hollow.secondary,.single-header-warp .post-meta a,.comment-title h2,h2.comment-reply-title,.logged-in-as a,.author-title a,.woocommerce ul.products li.product a, .woocommerce ul.products li.product .woocommerce-loop-category__title, .woocommerce ul.products li.product .woocommerce-loop-product__title, .woocommerce ul.products li.product h3, .woocommerce ul.products li.product .price, .woocommerce div.product .woocommerce-tabs ul.tabs li.active a,.woocommerce .star-rating span::before,.card .card-footer .right .button.add_to_cart_button,.woocommerce div.product .woocommerce-tabs ul.tabs.wc-tabs li.active a,.woocommerce-product-rating a',
+            'element' => '.single-product .product_meta span > *,#sub_banner .breadcrumbs a,.post-wrap-layout-2 .card .category.text-info a,.button.hollow.secondary,.single-header-warp .post-meta a,.comment-title h2,h2.comment-reply-title,.logged-in-as a,.author-title a,.woocommerce ul.products li.product a, .woocommerce ul.products li.product .woocommerce-loop-category__title, .woocommerce ul.products li.product .woocommerce-loop-product__title, .woocommerce ul.products li.product h3, .woocommerce ul.products li.product .price, .woocommerce div.product .woocommerce-tabs ul.tabs li.active a,.woocommerce .star-rating span::before,.card .card-footer .right .button.add_to_cart_button,.woocommerce div.product .woocommerce-tabs ul.tabs.wc-tabs li.active a,.woocommerce-product-rating a',
             'property' => 'color',
             'units' => ''
         ),
         array(
-            'element' => '.sidebar-inner .widget_wrap ul li,.comment-list .comment-reply-link,.navigation .nav-links .current,.single-cats.button-group .button,.bestblog-author-bttom .button,.comment-form .form-submit input#submit, a.box-comment-btn, .comment-form .form-submit input[type="submit"],.scroll_to_top.floating-action.button,.button.secondary,.block-content-none .search-submit,h1.entry-title::after,.woocommerce div.product form.cart .button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button',
+            'element' => '.woocommerce span.onsale,.sidebar-inner .widget_wrap ul li,.comment-list .comment-reply-link,.navigation .nav-links .current,.single-cats.button-group .button,.bestblog-author-bttom .button,.comment-form .form-submit input#submit, a.box-comment-btn, .comment-form .form-submit input[type="submit"],.scroll_to_top.floating-action.button,.button.secondary,.block-content-none .search-submit,h1.entry-title::after,.woocommerce div.product form.cart .button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button',
 						'property' => 'background',
             'units' => ''
         ),
@@ -155,6 +155,26 @@ Kirki::add_field('best_blog', array(
 			)
 	),
 ));
+
+Kirki::add_field( 'best_blog', array(
+	'type'        => 'spacing',
+	'settings'    => 'header_main_padding',
+	'label'       => __( 'Main Header height', 'best-blog' ),
+	'section'     => 'bestblog_header_options',
+	'transport' => 'auto',
+	'default'     => array(
+			'top'    => '30px',
+			'bottom' => '30px',
+			'left'   => '10px',
+			'right'  => '10px',
+		),
+	'output' => array(
+			array(
+					'element' => '.banner-warp',
+					'property' => 'padding',
+			)
+	),
+) );
 
 Kirki::add_field('best_blog', array(
     'type' => 'select',
@@ -596,7 +616,13 @@ Kirki::add_field('best_blog', array(
         'content2' => get_template_directory_uri() . '/images/list-layout-grid.svg',
     )
 ));
-
+Kirki::add_field( 'best_blog', array(
+	'type'        => 'checkbox',
+	'settings'    => 'checkbox_read_more',
+	'label'       => esc_attr__( 'on/off readmore', 'best-blog' ),
+	'section'     => 'bestblog_postlayout_settings',
+	'default'     => false,
+) );
 Kirki::add_field('best_blog', array(
     'type' => 'radio-image',
     'settings' => 'sidbar_position_gen',
