@@ -23,13 +23,15 @@ function apppage_posted_on() {
 		esc_attr( get_the_modified_date( 'c' ) ),
 		esc_html( get_the_modified_date() )
 	);
-
 	$posted_on = sprintf(
+	/* Translators: Post date */
 		esc_html_x( ' %s', 'post date', 'apppage' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
+	/* Translators: Post date */
 	$byline = sprintf(
+	/* Translators: Post author */
 		esc_html_x( 'by %s', 'post author', 'apppage' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
@@ -49,12 +51,14 @@ function apppage_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'apppage' ) );
 		if ( $categories_list && apppage_categorized_blog() ) {
+		/* Translators: Posted in */
 			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'apppage' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'apppage' ) );
 		if ( $tags_list ) {
+	/* Translators: Tagged */
 			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'apppage' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
