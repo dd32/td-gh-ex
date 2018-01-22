@@ -307,6 +307,26 @@ function avata_enqueue_scripts() {
 	}";
 // primary color
 $primary_color = avata_option("primary_color");
+
+if( $primary_color == '#fff' || $primary_color == '#ffffff' ){
+	
+	$css .=  ".btn-primary {
+  		color: #666666;
+		}";
+	$css .=  ".btn-primary:hover {
+  		color: #999;
+		}";
+	$css .=  ".social-icons li a:hover {
+  		color: #999;
+		}";
+	$css .=  "#hoo-contactForm .btn-submit {
+   	 	border-color: #999999;
+	}";
+	$css .=  "#hoo-contactForm .btn-submit:hover {
+		border-color: #999999 !important;
+	}";
+}
+	
 $css .=  ".btn-primary {
   background: ".$primary_color.";
   border: 2px solid ".$primary_color.";
