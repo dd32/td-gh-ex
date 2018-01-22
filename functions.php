@@ -89,6 +89,72 @@ function awaken_setup() {
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
 
+	// Widgets refresh on customizer.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Define and register starter content to showcase the theme on new sites.
+	$starter_content = array(
+		'widgets' => array(
+			'sidebar-1' => array(
+				'search',
+				'text_about',
+				'recent-posts',
+			),
+
+			'footer-left' => array(
+				'text_business_info',
+			),
+			
+			'footer-mid' => array(
+				'text_about',
+			),
+
+			'footer-right' => array(
+				'recent-posts',
+				'search',
+			),
+		),
+
+		'posts' => array(
+			'home' => array(
+				'template' => 'layouts/magazine.php'
+			),
+			'blog',				
+		),
+
+		// Default to a static front page and assign the front and posts pages.
+		'options' => array(
+			'show_on_front' => 'page',
+			'page_on_front' => '{{home}}',
+			'page_for_posts' => '{{blog}}',
+		),
+
+		// Set up nav menus for each of the three areas registered in the theme.
+		'nav_menus' => array(
+			// Assign a menu to the "main menu" location.
+			'main_navigation' => array(
+				'name' => esc_html__( 'Main Menu', 'awaken' ),
+				'items' => array(
+					'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
+					'page_blog',
+				),
+			),
+
+			// Assign a menu to the "top menu" location.
+			'top_navigation' => array(
+				'name' => esc_html__( 'Top Menu', 'awaken' ),
+				'items' => array(
+					'link_home',
+					'page_blog',
+				),
+			),
+		),
+	);
+
+	$starter_content = apply_filters( 'awaken_starter_content', $starter_content );
+
+	add_theme_support( 'starter-content', $starter_content );
+
 }
 endif; // awaken_setup
 add_action( 'after_setup_theme', 'awaken_setup' ); 
@@ -97,12 +163,6 @@ add_action( 'after_setup_theme', 'awaken_setup' );
  * This function Contains All The scripts that Will be Loaded in the Theme Header including Custom Javascript, Custom CSS, etc.
  */
 function awaken_initialize_header() {
-	
-	//Place all Javascript Here
-	/*echo '<script>';
-		echo $awaken_options['awaken-header-code'];
-	echo '</script>';*/
-	//Java Script Ends
 	
 	//CSS Begins
 	echo "<style>";
@@ -154,8 +214,8 @@ function awaken_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<div class="widget-title-container"><h2 class="widget-title">',
-		'after_title'   => '</h2></div>',
+		'before_title'  => '<div class="widget-title-container"><h3 class="widget-title">',
+		'after_title'   => '</h3></div>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Magazine 1', 'awaken' ),
@@ -163,8 +223,8 @@ function awaken_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<div class="awt-container"><h2 class="awt-title">',
-		'after_title'   => '</h2></div>',
+		'before_title'  => '<div class="awt-container"><h3 class="awt-title">',
+		'after_title'   => '</h3></div>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Magazine 2', 'awaken' ),
@@ -172,8 +232,8 @@ function awaken_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<div class="awt-container"><h2 class="awt-title">',
-		'after_title'   => '</h2></div>',
+		'before_title'  => '<div class="awt-container"><h3 class="awt-title">',
+		'after_title'   => '</h3></div>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Header Ad Area', 'awaken' ),
@@ -181,8 +241,8 @@ function awaken_widgets_init() {
 		'description'   => __( '728px x 90px Ad area. Use default text widget to put ad codes like google.', 'awaken' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<div class="awt-container"><h2 class="awt-title">',
-		'after_title'   => '</h2></div>',
+		'before_title'  => '<div class="awt-container"><h3 class="awt-title">',
+		'after_title'   => '</h3></div>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Footer Left Sidebar', 'awaken' ),
@@ -190,8 +250,8 @@ function awaken_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="footer-widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="footer-widget-title">',
+		'after_title'   => '</h3>',
 	) );	
 	register_sidebar( array(
 		'name'          => __( 'Footer Mid Sidebar', 'awaken' ),
@@ -199,8 +259,8 @@ function awaken_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="footer-widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="footer-widget-title">',
+		'after_title'   => '</h3>',
 	) );	
 	register_sidebar( array(
 		'name'          => __( 'Footer Right Sidebar', 'awaken' ),
@@ -208,8 +268,8 @@ function awaken_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="footer-widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="footer-widget-title">',
+		'after_title'   => '</h3>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Shop Page Sidebar', 'awaken' ),
@@ -217,8 +277,8 @@ function awaken_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<div class="widget-title-container"><h2 class="widget-title">',
-		'after_title'   => '</h2></div>',
+		'before_title'  => '<div class="widget-title-container"><h3 class="widget-title">',
+		'after_title'   => '</h3></div>',
 	) );	
 }
 add_action( 'widgets_init', 'awaken_widgets_init' );

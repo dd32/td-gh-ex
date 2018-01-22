@@ -1,5 +1,5 @@
 ﻿Theme Name : Awaken
-Version    : 2.1.6
+Version    : 2.1.7
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -222,3 +222,8 @@ Added slider support for magazine template.
 
 - Version 2.1.6
 Fixed structured data errors showing on Google search console report.
+
+- Version 2.1.7
+Added theme starter content support.
+Added customize selective refresh support for widgets.
+Changed sidebar widget title <h2> tags to <h3>
