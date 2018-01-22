@@ -3,8 +3,8 @@
 Contributors: specia
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.9.2
-Stable tag: 1.0.17
-Version: 1.0.17
+Stable tag: 1.0.18
+Version: 1.0.18
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-logo, translation-ready, blog
@@ -35,6 +35,9 @@ Source: https://stocksnap.io/license
 License: CC0 License
 
 ##Changelog
+version 1.0.18
+* Code Improvement.
+
 version 1.0.17
 * WordPress 4.9.2 Compatibility Tested.
 
