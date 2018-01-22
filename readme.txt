@@ -51,7 +51,7 @@ Image Credits (screenshot.png):
 License: https://pixabay.com/en/service/terms/#usage
 
 Header Image, Copyright StockSnap
-https://pixabay.com/p-2559707/?no_redirect
+https://pixabay.com/en/trees-plants-woods-fence-park-2561373/
 
 First Post, Copyright rawpixel
 https://pixabay.com/en/adventure-carefree-casual-caucasian-2579921/
