@@ -30,10 +30,6 @@ function mantra_comment( $comment, $args, $depth ) {
 
 
 		</div><!-- .comment-author .vcard -->
-		<?php if ( $comment->comment_approved == '0' ) : ?>
-			<em><?php _e( 'Your comment is awaiting moderation.', 'mantra' ); ?></em>
-			<br />
-		<?php endif; ?>
 
 		<div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 			<?php
@@ -42,7 +38,12 @@ function mantra_comment( $comment, $args, $depth ) {
 			?>
 		</div><!-- .comment-meta .commentmetadata -->
 
-		<div class="comment-body"><?php comment_text(); ?></div>
+		<div class="comment-body">
+		<?php if ( $comment->comment_approved == '0' ) : ?>
+			 <em><?php _e( 'Your comment is awaiting moderation.', 'mantra' ); ?></em>
+			<br />
+		<?php endif; ?>
+		<?php comment_text(); ?></div>
 
 		<div class="reply">
 			<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>

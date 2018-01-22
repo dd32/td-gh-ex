@@ -512,17 +512,17 @@ function cryout_setting_fronttext_fn() {
 				<small><?php _e("More text for your front page. The top title is above the slider, the second title between the slider and the columns and 2 more rows of text under the columns.<br>It's all optional so leave any input field empty if it's not required.","mantra") ?></small>
 			</div>
 			<h5><?php _e("Top Title","mantra") ?></h5><br>
-			<input id='mantra_fronttext1' name='ma_options[mantra_fronttext1]' size='50' type='text' value='<?php esc_attr( $mantra_options['mantra_fronttext1'] ) ?>' />
+			<input id='mantra_fronttext1' name='ma_options[mantra_fronttext1]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_fronttext1'] ) ?>' />
 			<h5><?php _e("Second Title","mantra")?></h5>
-			<input id='mantra_fronttext2' name='ma_options[mantra_fronttext2]' size='50' type='text' value='<?php esc_attr( $mantra_options['mantra_fronttext2'] ) ?>'  />
+			<input id='mantra_fronttext2' name='ma_options[mantra_fronttext2]' size='50' type='text' value='<?php echo esc_attr( $mantra_options['mantra_fronttext2'] ) ?>'  />
 			<h5><?php _e("Title color","mantra")?></h5>
-			<input type="text" id="mantra_fronttitlecolor" name="ma_options[mantra_fronttitlecolor]" style="width:100px;display:block;float:none;" value="<?php esc_attr( $mantra_options['mantra_fronttitlecolor'] ) ?>" />
+			<input type="text" id="mantra_fronttitlecolor" name="ma_options[mantra_fronttitlecolor]" style="width:100px;display:block;float:none;" value="<?php echo esc_attr( $mantra_options['mantra_fronttitlecolor'] ) ?>" />
 			<div id="mantra_fronttitlecolor2"></div>
 
 			<h5><?php _e("Bottom Text 1","mantra")?></h5>
-			<textarea id='mantra_fronttext3' name='ma_options[mantra_fronttext3]' rows='3' cols='50' type='textarea' ><?php esc_attr($mantra_options['mantra_fronttext3']) ?> </textarea>
+			<textarea id='mantra_fronttext3' name='ma_options[mantra_fronttext3]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_fronttext3']) ?> </textarea>
 			<h5><?php _e("Bottom Text 2","mantra")?> </h5>
-			<textarea id='mantra_fronttext4' name='ma_options[mantra_fronttext4]' rows='3' cols='50' type='textarea' ><?php esc_attr($mantra_options['mantra_fronttext4']) ?> </textarea>
+			<textarea id='mantra_fronttext4' name='ma_options[mantra_fronttext4]' rows='3' cols='50' type='textarea' ><?php echo esc_attr($mantra_options['mantra_fronttext4']) ?> </textarea>
 		</div>
 	</div>
 			

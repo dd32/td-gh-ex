@@ -28,7 +28,11 @@ function mantra_custom_styles() {
 	
 	// handle layout page template custom sizes
 	
-	if (is_page_template("templates/template-twocolumns-right.php") ) { ?>
+	if (is_page_template("templates/template-onecolumn.php") ) { ?>
+		#content { width: 100%; margin: 0; }
+		<?php }
+
+	elseif (is_page_template("templates/template-twocolumns-right.php") ) { ?>
 		#primary, #secondary {width:<?php echo absint( $sidebarSize ) ?>px;}
 		#primary .widget-title, #secondary .widget-title { margin-right: -2em; text-align: left;}
 		<?php }

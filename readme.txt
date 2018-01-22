@@ -4,8 +4,8 @@ Copyright 2011-18 Cryout Creations
 
 Author: Cryout Creations
 Requires at least: 4.2
-Tested up to: 4.9.1
-Stable tag: 3.0.3
+Tested up to: 4.9.2
+Stable tag: 3.0.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Donate link: https://www.cryoutcreations.eu/donate/
@@ -94,6 +94,14 @@ Turkish - Emre Dalkili�
 
 
 == Changelog ==
+
+= 3.0.4 = 
+* Fixed menu alignment option not working 
+* Fixed 'one column no sidebar' template using broken layout
+* Fixed sided layout/template responsiveness issues
+* Fixed presentation page extra text fields losing values in settings page
+* Adjusted built-in slider to display slide titles on mobile devices
+* Redesigned back-to-top button
 
 = 3.0.3 =
 * Cleaned up leftover +50px hardcoded rules on header image width (thanks stormcrow)

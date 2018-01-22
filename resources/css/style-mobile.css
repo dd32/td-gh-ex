@@ -32,6 +32,10 @@
 		padding: 1.5em;
 	}
 
+	#content {
+		margin: 0;
+	}
+
 	#primary,
 	#secondary {
 		padding-left: 1.5em;
@@ -319,8 +323,13 @@
 	    text-align: center;
 	}
 
-	.nivo-caption {
-		opacity: 0;
+	.nivo-caption .nivo-description {
+		display: none;
+	}
+
+
+	.nivo-caption h3 {
+		margin-bottom: 0;
 	}
 
 	#toTop {

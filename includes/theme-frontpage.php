@@ -105,7 +105,8 @@ function mantra_frontpage_generator() {
 							$mantra_cycle2++; ?>
 
 							<div id="caption<?php echo $mantra_cycle2;?>" class="nivo-html-caption">
-								<?php the_title("<h3>","</h3>"); the_excerpt(); ?>
+								<?php the_title("<h3>","</h3>"); ?>
+								<?php echo '<div class="nivo-description">' . get_the_excerpt() . '</div>'; ?>
 							</div>
 							<?php
 						endwhile; // end of the loop. ?>
@@ -129,7 +130,7 @@ function mantra_frontpage_generator() {
 				<?php
 				for ( $mantra_cycle1=1; $mantra_cycle1<=5; $mantra_cycle1++ ) { ?>
 					<div id="caption<?php echo $mantra_cycle1;?>" class="nivo-html-caption">
-						<?php echo '<h3>'.${"mantra_slidertitle$mantra_cycle1"}.'</h3>'.${"mantra_slidertext$mantra_cycle1"} ?>
+						<?php echo '<h3>'.${"mantra_slidertitle$mantra_cycle1"}.'</h3><div class="nivo-description">'.${"mantra_slidertext$mantra_cycle1"} . '</div>' ?>
 					</div>
 				<?php } ?>
 			</div> <?php

@@ -4,7 +4,7 @@ Theme URI: https://www.cryoutcreations.eu/wordpress-themes/mantra
 Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
 Author: Cryout Creations
 Author URI: https://www.cryoutcreations.eu
-Version: 3.0.3
+Version: 3.0.4
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, grid-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, entertainment, news
@@ -659,6 +659,7 @@ a:hover {
 	float: left;
 	margin: 0 auto;
 	margin-top: 10px;
+	width: 100%;
 }
 
 #access .menu-header,
@@ -2374,44 +2375,40 @@ article.sticky {
 #toTop {
 	position: fixed;
 	z-index: 9999;
-	right: 0;
+	right: 30px;
 	bottom: 30px;
-	padding: 5px 20px 5px 5px;
 	cursor: pointer;
-	/* width: 37px;
-	height: 39px;
-	background: url(resources/images/back2top.png) bottom center no-repeat; */
-	background: rgba(0, 0, 0, 0.5);
-	border-radius: 100px 0 0 100px;
 	opacity: 0;
-	right: -100px;
-	box-shadow: 0 0 4px rgba(0,0,0,.15);
+	right: 30px;
 	-webkit-transition: .3s ease-out all;
 	transition: .3s ease-out all;
 }
 
 #toTop.showtop {
-	right: 0;
 	opacity: 1;
 }
 
 #toTop i:before {
 	content: '\e809';
+	color: #DDD;
 	position: relative;
 	display: block;
 	font-size: 1.2;
-	line-height: 2.5;
-	width: 2.5em;
-	height: 2.5em;
+	line-height: 2.75;
+	width: 2.75em;
+	height: 2.75em;
 	border-radius: 100px;
-	background: transparent;
-	opacity: 0.7;
-	-webkit-transition: .3s .3s ease-out background, .2s ease-out opacity;
-	transition: .3s .3s ease-out background, .2s ease-out opacity;
+	background: rgba(0,0,0,.5);
+	opacity: 0.5;
+	-webkit-transition: .3s ease-out all;
+	transition: .3s ease-out all;
+	-webkit-transform: scale(2);
+	transform: scale(2);
 }
 
 #toTop.showtop i:before {
-	background: rgba(255, 255, 255, 1);
+	-webkit-transform: scale(1);
+	transform: scale(1);
 }
 
 #toTop:hover i:before {
