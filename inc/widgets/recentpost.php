@@ -27,14 +27,6 @@ function __construct() {
 	if ( !is_array($cache) )
 	 $cache = array();
 
-	if ( ! isset( $args['widget_id'] ) )
-	 $args['widget_id'] = $this->id;
-
-	if ( isset( $cache[ $args['widget_id'] ] ) ) {
-	 echo $cache[ $args['widget_id'] ];
-	 return;
-	 }
-
 	ob_start();
 	 extract($args);
 	$title = apply_filters('widget_title', empty($instance['title']) ? __('Recent Posts', 'atoz') : $instance['title'], $instance, $this->id_base);
@@ -46,31 +38,24 @@ function __construct() {
 	$r = new WP_Query( apply_filters( 'widget_posts_args', array( 'posts_per_page' => $number, 'no_found_rows' => true, 'post_status' => 'publish', 'ignore_sticky_posts' => true, 'category__not_in' => array(23,24,25,26,27) ) ) );
 	 if ($r->have_posts()) :
 	?>
-	 <?php echo $before_widget; ?>
-	 <?php if ( $title ) echo $before_title . $title . $after_title; ?>
+	 <?php echo wp_kses_post($before_widget); ?>
+	 <h2 class="widget-title"><?php if ( $title ) echo esc_html( $title ); ?></h2>
            <ul class="media-list main-list ltst-upd">
               <?php while ( $r->have_posts() ) : $r->the_post(); ?>
               
                  <li class="media"> <a class="pull-left no-pddig" href="<?php the_permalink(); ?>">
-					<?php
-						 
-					 if  ( get_the_post_thumbnail()=='')
-					{
-						 $background_img_relatedpost   = get_template_directory_uri()."/img/default.jpg";
-						
-					   echo  $post_thumbnail= '<img src="'.$background_img_relatedpost.'">';
-					}
+					<?php if  ( get_the_post_thumbnail()=='') { ?>
+					<img src="<?php echo esc_url(get_template_directory_uri()."/img/default.jpg");?> ">		
+					<?php } 
 					else
 					{
-					   echo $post_thumbnail = get_the_post_thumbnail( get_the_ID(),'atoz_recent_post' );
-					   
+					   the_post_thumbnail('atoz_recent_post');
 					}   
 					?>
 					</a>
 				  <div class="media-body">
 					<p class="media-heading"><a href="<?php the_permalink(); ?>"> <?php if ( get_the_title() ) {
-					$title = get_the_title();
-					echo substr($title, 0,40);
+					echo esc_html(get_the_title());
 					 }
 					 else the_ID(); ?></a>
 					</p>
@@ -82,7 +67,7 @@ function __construct() {
 				</li>
             <?php endwhile; ?>
       
-	<?php echo $after_widget; ?>
+	<?php echo wp_kses_post($after_widget); ?>
 	<?php
 	 // Reset the global $the_post as this query will have stomped on it
 	 wp_reset_postdata();

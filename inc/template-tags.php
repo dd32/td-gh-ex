@@ -115,7 +115,7 @@ function atoz_featured_slider() {
 	if ($query->have_posts()) :
 	  while ($query->have_posts()) : $query->the_post();
     ?>
-		<div class="item <?php echo $firstClass; ?>">  
+		<div class="item <?php echo esc_html($firstClass); ?>">  
 			<?php
 			if  ( get_the_post_thumbnail()!='')
 			{

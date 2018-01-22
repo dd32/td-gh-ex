@@ -1,6 +1,6 @@
 <?php
 /**
- * atoz functions and definitions
+ * Atoz functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -95,14 +95,17 @@ function atoz_content_width() {
 add_action( 'after_setup_theme', 'atoz_content_width', 0 );
 
 /**
-	Post Thumbnails & Sizes
-*/
+ * Post Thumbnails & Sizes
+ */
 add_image_size( 'atoz_slider', 1920, 1000,  array( 'top', 'center' ) );
 add_image_size( 'atoz_home_posts', 358, 240,  array( 'top', 'center' ) );
 add_image_size( 'atoz_related_posts', 358, 240,  array( 'top', 'center' ) );
 add_image_size( 'atoz_recent_post', 65, 65,  array( 'top', 'center' ) );
 add_image_size( 'atoz_single_post', 1920, 560,  array( 'top', 'center' ) );
 
+/**
+ * Output color schemes as internal css
+ */
 if (!function_exists('atoz_print_all_head_styles')) {
 	function atoz_print_all_head_styles() {
 		echo '<style type="text/css" id="head-css">';
@@ -152,6 +155,9 @@ if (!function_exists('atoz_print_all_head_styles')) {
 }
 add_action( 'wp_head', 'atoz_print_all_head_styles' );
 
+/**
+ * Outputs footer background color
+ */
 if (!function_exists('atoz_footer_bck_color')) {
 	function atoz_footer_bck_color() {
 		echo '<style type="text/css" id="rijo-css">';
@@ -167,7 +173,7 @@ if (!function_exists('atoz_footer_bck_color')) {
  // Add custom styles to `<head>`.
 add_action( 'wp_head', 'atoz_footer_bck_color' );
 
-/* Globals variables */
+// Globals variables.
 global $atoz_options_categories;
 $atoz_options_categories = array();
 $atoz_options_categories_obj = get_categories();
@@ -232,26 +238,28 @@ function atoz_widgets_init() {
 add_action('widgets_init', 'atoz_widgets_init');
 
 
-
+/**
+ * Registers social widget
+ */
 function atoz_widgets_register() {
 	require get_template_directory() . '/inc/widgets/social.php';
 }
 add_action('widgets_init', 'atoz_widgets_register');
 
-/* Recent Post Widgets */
-
+// Recent Post Widgets.
 require get_template_directory() . '/inc/widgets/recentpost.php';
 
-/* Related Posts */
-
+// Related Posts.
 require get_template_directory() . '/inc/lib/related-post.php';
 
-/* Breadcrumbs */
-
+// Breadcrumbs.
 require get_template_directory() . '/inc/lib/breadcrumb.php';
 
-/* Post Excerpt length */
-
+/**
+ * Post Excerpt length
+ *
+ * $length is set to return 10 words
+ */
 function atoz_custom_excerpt_length( $length ) {
 	if ( is_admin() ) {
 		return $length;
@@ -260,8 +268,11 @@ function atoz_custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'atoz_custom_excerpt_length', 999 );
 
-/* Read more in posts*/
-
+/**
+ * Read more link
+ *
+ * $more add a read more link to all posts.
+ */
 function atoz_excerpt_more( $more ) {
 	if ( is_admin() ) {
 		return '&hellip; <br> <a class="read-more" href="' . esc_url(get_permalink(get_the_ID())) . '">' . esc_html__('Read more', 'atoz') . '</a>';
@@ -270,9 +281,8 @@ function atoz_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'atoz_excerpt_more' );
 
 /**
- * Enqueue scripts and styles.
+ * Enqueue css styles.
  */
-
 function atoz_styles(){    
     wp_enqueue_style( 'atoz-bootstrap',get_template_directory_uri() . '/css/bootstrap.css');
     wp_enqueue_style( 'atoz-font-awesome',get_template_directory_uri() . '/css/font-awesome.css');
@@ -286,7 +296,9 @@ function atoz_styles(){
 }
 add_action( 'wp_enqueue_scripts', 'atoz_styles' );
 
-
+/**
+ * Enqueue js scripts.
+ */
 function atoz_scripts() {
 	wp_enqueue_script( 'atoz-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'atoz-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );

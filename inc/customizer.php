@@ -1,6 +1,6 @@
 <?php
 /**
- * atoz Theme Customizer
+ * Atoz Theme Customizer
  *
  * @package atoz
  */
@@ -10,7 +10,6 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-
 function atoz_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -18,9 +17,10 @@ function atoz_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->default   = '#454545';
 	$wp_customize->get_section( 'title_tagline' )->title  = __( 'Branding', 'atoz' );	    
 
-   /* This class adds toggle control to the customizer */
-     class Atoz_Customizer_Toggle_Control extends WP_Customize_Control 
-	{
+	/**
+	* This class adds toggle control to the customizer 
+	*/
+     class Atoz_Customizer_Toggle_Control extends WP_Customize_Control {
 		public $type = 'ios';
 
 		/**

@@ -47,13 +47,13 @@ function atoz_related_post() {
                         <div class="blog-box-inn"> 
 							<span class="posted-date">%s</span><a href="%s">%s</a>
 							<a href="%s"><h2>%s</h2></a>
-							<a href="%s"><p>' . $categories[0]->cat_name . '</p></a>
+							<a href="%s"><p>' . wp_kses_post($categories[0]->cat_name) . '</p></a>
 							<a href="%s" class="btn btn-default">View</a>  
                         </div>
                      </article>',
 					esc_html( get_the_date() ),
 					esc_url( get_permalink() ),
-					$post_thumbnail,
+					wp_kses_post($post_thumbnail),
 					esc_url( get_permalink() ),
                     esc_html($title),
                     esc_url($cat_link),

@@ -10,7 +10,7 @@
 get_header(); ?>
 
 <?php if(have_posts() ) : while(have_posts() ) : the_post(); ?>     
-<div id="single-banner" style="background-image:url('<?php echo the_post_thumbnail_url('atoz_single_post'); ?>'); "> 
+<div id="single-banner" style="background-image:url('<?php the_post_thumbnail_url('atoz_single_post'); ?>'); "> 
     <div class="content wow fdeInUp">
 		<div class="container">
 			<?php 
@@ -46,9 +46,11 @@ get_header(); ?>
 				<!--Footer tags-->
 				<footer class="entry-footer entry-meta-bar">
 					<div class="entry-meta">
-						<span class="tag-links">
-							<?php echo get_the_tag_list('Tagged in: ',', '); ?>              
-						</span>
+						<?php $tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'atoz' ) );
+						if ( $tags_list ) {
+						/* translators: 1: list of tags. */
+						printf( '<span class="tags-links">' . esc_html__( 'Tagged: %1$s', 'atoz' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+						}?>							
 					</div>
 				</footer>
 				<?php endwhile; endif;?>

@@ -15,7 +15,7 @@ get_header(); ?>
 			<div class="col-md-12">
 				<?php if ( have_posts() ) : ?>
 				<header class="page-header">
-					<h3 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'atoz' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
+					<h3 class="page-title"><?php /* translators: %s: search term */ printf( esc_html__( 'Search Results for: %s', 'atoz' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
 				</header>
 				<!-- .page-header -->
 				<?php /* Start the Loop */ while ( have_posts() ) : the_post(); /** * Run the loop for the search to output the results. * If you want to overload this in a child theme then include a file * called content-search.php and that will be used instead. */ ?>

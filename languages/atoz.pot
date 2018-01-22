@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Atoz\n"
-"POT-Creation-Date: 2018-01-21 16:59+0530\n"
-"PO-Revision-Date: 2018-01-21 16:59+0530\n"
+"POT-Creation-Date: 2018-01-22 11:56+0530\n"
+"PO-Revision-Date: 2018-01-22 11:56+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -67,35 +67,35 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: functions.php:185
+#: functions.php:191
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:187 functions.php:207 functions.php:216 functions.php:225
+#: functions.php:193 functions.php:213 functions.php:222 functions.php:231
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:195
+#: functions.php:201
 msgid "Footer Widgets 1"
 msgstr ""
 
-#: functions.php:197
+#: functions.php:203
 msgid "Add Widgets Here."
 msgstr ""
 
-#: functions.php:205
+#: functions.php:211
 msgid "Footer Widgets 2"
 msgstr ""
 
-#: functions.php:214
+#: functions.php:220
 msgid "Footer Widgets 3"
 msgstr ""
 
-#: functions.php:223
+#: functions.php:229
 msgid "Footer Widgets 4"
 msgstr ""
 
-#: functions.php:267 inc/widgets/recentpost.php:77
+#: functions.php:278 inc/widgets/recentpost.php:62
 msgid "Read more"
 msgstr ""
 
@@ -115,7 +115,7 @@ msgstr ""
 msgid "Add Button Text"
 msgstr ""
 
-#: inc/customizer.php:19
+#: inc/customizer.php:18
 msgid "Branding"
 msgstr ""
 
@@ -308,7 +308,7 @@ msgstr ""
 msgid "Posted in %1$s"
 msgstr ""
 
-#: inc/template-tags.php:59
+#: inc/template-tags.php:59 single.php:49
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
@@ -332,7 +332,7 @@ msgstr ""
 msgid "Take a look"
 msgstr ""
 
-#: inc/widgets/recentpost.php:11 inc/widgets/recentpost.php:143
+#: inc/widgets/recentpost.php:11 inc/widgets/recentpost.php:128
 msgid "The most recent posts on your site with thumbnails"
 msgstr ""
 
@@ -340,23 +340,23 @@ msgstr ""
 msgid "atoZ Recent Posts"
 msgstr ""
 
-#: inc/widgets/recentpost.php:40
+#: inc/widgets/recentpost.php:32
 msgid "Recent Posts"
 msgstr ""
 
-#: inc/widgets/recentpost.php:129
+#: inc/widgets/recentpost.php:114
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets/recentpost.php:132
+#: inc/widgets/recentpost.php:117
 msgid "Number of posts to show:"
 msgstr ""
 
-#: inc/widgets/recentpost.php:136
+#: inc/widgets/recentpost.php:121
 msgid "Display post date?"
 msgstr ""
 
-#: inc/widgets/recentpost.php:145
+#: inc/widgets/recentpost.php:130
 msgid "atoz Recent Posts"
 msgstr ""
 
@@ -370,6 +370,30 @@ msgstr ""
 
 #: inc/widgets/social.php:33
 msgid "Follow us"
+msgstr ""
+
+#: inc/widgets/social.php:39
+msgid "facebook"
+msgstr ""
+
+#: inc/widgets/social.php:42
+msgid "twitter"
+msgstr ""
+
+#: inc/widgets/social.php:45
+msgid "google-plus"
+msgstr ""
+
+#: inc/widgets/social.php:48
+msgid "dribbble"
+msgstr ""
+
+#: inc/widgets/social.php:51
+msgid "behance"
+msgstr ""
+
+#: inc/widgets/social.php:54
+msgid "instagram"
 msgstr ""
 
 #: inc/widgets/social.php:87
@@ -428,7 +452,12 @@ msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: single.php:62
+#: single.php:52
+#, php-format
+msgid "Tagged: %1$s"
+msgstr ""
+
+#: single.php:64
 msgid "By:"
 msgstr ""
 

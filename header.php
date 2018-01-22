@@ -37,7 +37,7 @@
 						the_custom_logo();
 					} 
 					else {
-						echo '<h3>' . get_bloginfo( 'name', 'atoz' ) . '</h3>';
+						echo '<h3>' . esc_html(get_bloginfo( 'name' )) . '</h3>';
 					}
 					?>
 				</a>
