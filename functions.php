@@ -304,7 +304,7 @@ function ashe_page_layout() {
 		return 'col1-lrsidebar';
 	} else if ( is_active_sidebar( 'sidebar-left' ) ) {
 		return 'col1-lsidebar';
-	} else if ( is_active_sidebar( 'sidebar-right' ) ) {
+	} else if ( is_active_sidebar( 'sidebar-right' ) || ashe_is_preview() ) {
 		return 'col1-rsidebar';
 	}
 }
