@@ -289,5 +289,39 @@ function backyard_hook_css() {
             </style>
         <?php
     }
-    add_action('wp_head', 'backyard_hook_css');
+add_action('wp_head', 'backyard_hook_css');
+function backyard_typography_font() {
+	$backyard_headings_font=get_theme_mod('backyard_headings_font');
+	if(isset($backyard_headings_font)&&$backyard_headings_font!=='')
+	{?>
+	<style>
+    h1, h2, h3, h4, h5, h6{font-family: <?php echo esc_attr($backyard_headings_font);?> !important;}
+    </style>
+	<?php }
+	}
+	add_action('wp_head', 'backyard_typography_font');
+function backyard_get_standard_fonts() {
+		    $font=array(
+			'Arial, Helvetica, sans-serif',
+			'Arial Black, Gadget, sans-serif',
+			'Bookman Old Style, serif',
+			'Comic Sans MS, cursive',
+			'Courier, monospace',
+			'Georgia, serif',
+			'Garamond, serif',
+			'Impact, Charcoal, sans-serif',
+			'Lucida Console, Monaco, monospace',
+			'Lucida Sans Unicode, Lucida Grande, sans-serif',
+			'MS Sans Serif, Geneva, sans-serif',
+			'MS Serif, New York, sans-serif',
+			'Palatino Linotype, Book Antiqua, Palatino, serif',
+			'Tahoma, Geneva, sans-serif',
+			'Times New Roman, Times, serif',
+			'Trebuchet MS, Helvetica, sans-serif',
+			'Verdana, Geneva, sans-serif',
+			'Paratina Linotype',
+			'Trebuchet MS',		
+	);
+	return $font;
+}
 ?>

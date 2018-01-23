@@ -162,6 +162,25 @@ $wp_customize->add_setting(
 	   'panel'       => 'backyard_options',
    )
 );
+//font
+$wp_customize->add_setting(
+			'backyard_headings_font', array(
+				'type'              => 'theme_mod',
+				'sanitize_callback' => 'sanitize_text_field',
+			)
+		);
+
+		$wp_customize->add_control(
+			new backyard_Font_Selector(
+				$wp_customize, 'backyard_headings_font', array(
+					'label'    => esc_html__( 'Typography font family', 'backyard' ),
+					'section'  => 'typography_settings',
+					'priority' => 5,
+					'type'     => 'select',
+				)
+			)
+		);
+//end
 $wp_customize->add_setting(
 'heading_h1',array(
 'default' => '',
