@@ -58,8 +58,6 @@
 
 .woocommerce .woocommerce-result-count,
 .woocommerce-page .woocommerce-result-count {
-    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.015);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     display: block;
     width: 50%;
     float: left;
@@ -68,8 +66,6 @@
 }
 .woocommerce .woocommerce-ordering,
 .woocommerce-page .woocommerce-ordering {
-    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.015);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     display: block;
     width: 50%;
     text-align: right;

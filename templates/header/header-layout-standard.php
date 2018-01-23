@@ -60,7 +60,7 @@
             <?php endif; ?>
             <?php if ( !get_theme_mod( 'topshop-header-remove-cart' ) ) : ?>
                 <div class="header-cart">
-                    <a class="header-cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'topshop'); ?>">
+                    <a class="header-cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php _e('View your shopping cart', 'topshop'); ?>">
                         <span class="header-cart-amount">
                             <?php echo sprintf( _n( '(%d)', '(%d)', $woocommerce->cart->cart_contents_count, 'topshop' ), $woocommerce->cart->cart_contents_count ); ?> - <?php echo $woocommerce->cart->get_cart_total(); ?>
                         </span>
