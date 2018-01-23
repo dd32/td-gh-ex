@@ -47,8 +47,8 @@ function ashe_setup() {
 
 	// This theme uses wp_nav_menu() in two locations
 	register_nav_menus( array(
-		'top'	=> __( 'Top Menu', 'ashe' ),
-		'main' 	=> __( 'Main Menu', 'ashe' ),
+		'top'		=> __( 'Top Menu', 'ashe' ),
+		'primary' 	=> __( 'Main Menu', 'ashe' ),
 	) );
 
 	// Switch default core markup for search form, comment form, and comments to output valid HTML5
@@ -71,68 +71,6 @@ function ashe_setup() {
 	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
 		add_action( 'admin_notices', 'ashe_activation_notice' );
 	}
-
-	// Starter Content
-	add_theme_support( 'starter-content', array(
-
-		// Set up widgets
-		'widgets' => array(
-			'sidebar-right' => array(
-                'text_cta_contact' => [
-                    'text', [
-                        'title' => '',
-                        'text' => '<img style="margin: 0 auto 13px auto;" src="'. get_template_directory_uri() . '/assets/images/about_widget.png" alt="About" /><h6 style="text-align: center; font-size: 16px; letter-spacing: 1.5px; margin-bottom: 4px;">WRITER &amp; BLOGGER</h6><p style="text-align: center;">Meh syh Schlitz, tempor duis single origin next level ethnic ipsn dsrumdo larame timedos metssole coffee.</p>'
-                    ]
-                ],
-				'search',
-				'archives',
-				'recent-posts',
-				'categories',
-			),
-
-			'sidebar-alt' => array(
-				'search',
-				'calendar',
-				'text_business_info',
-			),
-
-			'footer-widgets' => array(
-				'recent-posts',
-				'recent-comments',
-				'text_business_info',
-			),
-		),
-
-		// Create core-defined pages
-		'posts' => array(
-			'home',
-			'about',
-			'contact',
-			'blog',
-			'homepage-section'
-		),
-
-		// Set up nav menus
-		'nav_menus' => array(
-			'main' => array(
-				'name' => __( 'Main Menu', 'ashe' ),
-				'items' => array(
-					'link_home',
-					'page_about',
-					'page_blog',
-					'page_contact',
-				),
-			),
-
-			'top' => array(
-				'name' => __( 'Top Menu', 'ashe' ),
-				'items' => array(
-					'page_about',
-					'page_contact',
-				),
-			),
-		),
-	) );	
 
 }
 add_action( 'after_setup_theme', 'ashe_setup' );
@@ -297,12 +235,18 @@ function top_menu_fallback() {
 */
 
 function ashe_main_menu_fallback() {
-	if ( current_user_can( 'edit_theme_options' ) ) {
+	if ( ashe_is_preview() ) {
 		echo '<ul id="main-menu">';
-			echo '<li>';
-				echo '<a href="'. esc_url( home_url('/') .'wp-admin/nav-menus.php' ) .'">'. esc_html__( 'Set up Menu', 'ashe' ) .'</a>';
-			echo '</li>';
+			ashe_preview_navigation();
 		echo '</ul>';
+	} else {
+		if ( current_user_can( 'edit_theme_options' ) ) {
+			echo '<ul id="main-menu">';
+				echo '<li>';
+					echo '<a href="'. esc_url( home_url('/') .'wp-admin/nav-menus.php' ) .'">'. esc_html__( 'Set up Menu', 'ashe' ) .'</a>';
+				echo '</li>';
+			echo '</ul>';
+		}
 	}
 }
 
@@ -395,7 +339,7 @@ if ( ! function_exists( 'ashe_social_media' ) ) {
 
 			<?php
 			$social_window = ( ashe_options( 'social_media_window' ) === true )?'_blank':'_self';
-			if ( ashe_options( 'social_media_url_1' ) !== '' || ashe_is_preview() ) :
+			if ( ashe_options( 'social_media_url_1' ) !== '' ) :
 			?>
 
 			<a href="<?php echo esc_url( ashe_options( 'social_media_url_1' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
@@ -403,19 +347,19 @@ if ( ! function_exists( 'ashe_social_media' ) ) {
 			</a>
 			<?php endif; ?>
 
-			<?php if ( ashe_options( 'social_media_url_2' ) !== '' || ashe_is_preview() ) : ?>
+			<?php if ( ashe_options( 'social_media_url_2' ) !== '' ) : ?>
 				<a href="<?php echo esc_url( ashe_options( 'social_media_url_2' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
 					<i class="fa fa-<?php echo esc_attr(ashe_options( 'social_media_icon_2' )); ?>"></i>
 				</a>
 			<?php endif; ?>
 
-			<?php if ( ashe_options( 'social_media_url_3' ) !== '' || ashe_is_preview() ) : ?>
+			<?php if ( ashe_options( 'social_media_url_3' ) !== '' ) : ?>
 				<a href="<?php echo esc_url( ashe_options( 'social_media_url_3' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
 					<i class="fa fa-<?php echo esc_attr(ashe_options( 'social_media_icon_3' )); ?>"></i>
 				</a>
 			<?php endif; ?>
 
-			<?php if ( ashe_options( 'social_media_url_4' ) !== '' || ashe_is_preview() ) : ?>
+			<?php if ( ashe_options( 'social_media_url_4' ) !== '' ) : ?>
 				<a href="<?php echo esc_url( ashe_options( 'social_media_url_4' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
 					<i class="fa fa-<?php echo esc_attr(ashe_options( 'social_media_icon_4' )); ?>"></i>
 				</a>

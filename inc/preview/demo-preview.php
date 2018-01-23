@@ -58,11 +58,50 @@ function ashe_get_preview_img_src( $i = 0 ) {
 }
 
 // Featured Images
-function ashe_the_post_thumbnail( $input ) {
+function ashe_preview_thumbnail( $input ) {
 	if ( empty( $input ) && ashe_is_preview() ) {
 		$placeholder = ashe_get_preview_img_src();
 		return '<img src="' . esc_url( $placeholder ) . '" class="attachment-ashe-blog size-ashe-blog wp-post-image">';
 	}
 	return $input;
 }
-add_filter( 'post_thumbnail_html', 'ashe_the_post_thumbnail' );
+add_filter( 'post_thumbnail_html', 'ashe_preview_thumbnail' );
+
+// Widgets
+function ashe_preview_right_sidebar() {
+	the_widget('WP_Widget_Search', 'title=' . esc_html__('Search', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_search">&after_widget=</div>');
+	the_widget('WP_Widget_Recent_Posts', 'title=' . esc_html__('Recent Posts', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_recent_entries">&after_widget=</div>');
+	the_widget('WP_Widget_Archives', 'title=' . esc_html__('Archives', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_archives">&after_widget=</div>');
+	the_widget('WP_Widget_Categories', 'title=' . esc_html__('Categories', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_categories">&after_widget=</div>');
+}
+
+function ashe_preview_alt_sidebar() {
+	the_widget('WP_Widget_Search', 'title=' . esc_html__('Search', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_search">&after_widget=</div>');
+	the_widget('WP_Widget_Pages', 'title=' . esc_html__('Pages', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_pages">&after_widget=</div>');
+	the_widget('WP_Widget_Archives', 'title=' . esc_html__('Archives', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_archives">&after_widget=</div>');
+}
+
+function ashe_preview_footer_sidebar() {
+	the_widget('WP_Widget_Pages', 'title=' . esc_html__('Pages', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_pages">&after_widget=</div>');
+	the_widget('WP_Widget_Archives', 'title=' . esc_html__('Archives', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_archives">&after_widget=</div>');
+	the_widget('WP_Widget_Recent_Comments', 'title=' . esc_html__('Recent Comments', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_recent_comments">&after_widget=</div>');
+}
+
+// Main Menu
+function ashe_preview_navigation(){
+    $pages = get_pages();  
+
+	foreach ( $pages as $page ) {
+		$menu_name = esc_html($page->post_title);
+		$menu_link = get_page_link( $page->ID );
+
+		if ( get_the_ID() == $page->ID ) {
+			$current_class = "current_page_item current-menu-item";
+		} else {
+			$current_class = '';
+		}
+
+		$menu_class = "page-item-" . $page->ID;
+		echo "<li class='page_item ". esc_attr($menu_class) ." $current_class'><a href='". esc_url($menu_link) ."'>". esc_html($menu_name) ."</a></li>";
+	}
+}

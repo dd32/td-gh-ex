@@ -1,7 +1,7 @@
 <?php
 
 // check if available
-if ( ! is_active_sidebar( 'sidebar-alt' ) || ashe_options( 'main_nav_show_sidebar' ) === false ) {
+if ( ashe_options( 'main_nav_show_sidebar' ) === false ) {
 	return;
 }
 
@@ -16,7 +16,15 @@ if ( ! is_active_sidebar( 'sidebar-alt' ) || ashe_options( 'main_nav_show_sideba
 			<span></span>
 		</div>
 
-		<?php dynamic_sidebar( 'sidebar-alt' ); ?>
+		<?php
+
+		if ( ashe_is_preview() ) {
+			ashe_preview_alt_sidebar();
+		} else {
+			dynamic_sidebar( 'sidebar-alt' );
+		}
+
+		?>
 		
 	</aside>
 </div>

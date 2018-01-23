@@ -1,7 +1,7 @@
 <?php
 
 // check if available
-if ( ! is_active_sidebar( 'sidebar-right' ) ) {
+if ( ! is_active_sidebar( 'sidebar-right' ) && ! ashe_is_preview() ) {
 	return;
 }
 
@@ -16,6 +16,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 <div class="sidebar-right-wrap">
 	<aside class="sidebar-right">
-		<?php dynamic_sidebar( 'sidebar-right' ); ?>
+		<?php
+
+		if ( ashe_is_preview() ) {
+			ashe_preview_right_sidebar();
+		} else {
+			dynamic_sidebar( 'sidebar-right' );
+		}
+
+		?>
 	</aside>
 </div>

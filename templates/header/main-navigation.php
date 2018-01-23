@@ -4,7 +4,7 @@
 	<div <?php echo esc_attr(ashe_options( 'general_header_width' )) === 'contained' ? 'class="boxed-wrapper"': ''; ?>>	
 		
 		<!-- Alt Sidebar Icon -->
-		<?php if ( ashe_options( 'main_nav_show_sidebar' ) === true && is_active_sidebar( 'sidebar-alt' ) ) : ?>
+		<?php if ( ashe_options( 'main_nav_show_sidebar' ) === true ) : ?>
 		<div class="main-nav-sidebar">
 			<div>
 				<span></span>
