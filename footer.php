@@ -25,8 +25,11 @@
 				$copyright = str_replace( '$year', date_i18n( __('Y','ashe') ), $copyright );
 				$copyright = str_replace( '$copy', '&copy;', $copyright );
 
-				// some allowed HTML
-				echo wp_kses_post( $copyright );
+				if ( ashe_is_preview() ) {
+					echo esc_html__( '&copy; 2017 - All Rights Reserved.', 'ashe' );
+				} else {
+					echo wp_kses_post( $copyright );
+				}
 
 				?>
 				</div>
