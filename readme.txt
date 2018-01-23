@@ -43,7 +43,20 @@ AyaClub WordPress Theme bundles the following third-party resources:
 *
 * js/viewportchecker.js - the MIT license, Reference: http://opensource.org/licenses/MIT
 *
-* screenshot (post thumbnail image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/concert-show-performance-stage-984276/
+* images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/concert-performance-audience-336695/
+*
+* images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/concert-music-crowd-dancings-1149979/
+*
+* images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/drinks-groningen-terrace-people-1746272/
+*
+* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/concert-performance-audience-336695/
+*
+* js/camera.min.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
+* js/camera.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
+* js/jquery.easing.1.3.js BSD License Reference: http://www.linfo.org/bsdlicense.html
+* js/jquery.mobile.customized.js MIT license Reference: http://jquery.org/license
+* js/jquery.mobile.customized.min.js MIT license Reference: http://jquery.org/license
+*
 
 == Installation ==
 

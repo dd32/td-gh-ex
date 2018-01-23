@@ -64,6 +64,16 @@
 	    	ayaclub_mainMenuClear();
 	    	ayaclub_mainMenuInit();
 		});
+
+		$(function(){
+			$('#camera_wrap').camera({
+				height: '600px',
+				loader: 'bar',
+				pagination: true,
+				thumbnails: false,
+				time: 4500
+			});
+		});
 	});
 
 	function ayaclub_mainMenuClear() {

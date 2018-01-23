@@ -168,6 +168,10 @@ if ( ! function_exists( 'ayaclub_load_scripts' ) ) :
     		'loading_effect' => ( get_theme_mod('ayaclub_animations_display', 1) == 1 ),
     	);
     	wp_localize_script('ayaclub-utilities', 'ayaclub_options', $data);
+
+    	wp_enqueue_script( 'jquery.mobile.customized', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
+		wp_enqueue_script( 'jquery.easing.1.3', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
+		wp_enqueue_script( 'camera', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
 	}
 endif; // ayaclub_load_scripts
 add_action( 'wp_enqueue_scripts', 'ayaclub_load_scripts' );
@@ -188,6 +192,39 @@ if ( ! function_exists( 'ayaclub_widgets_init' ) ) :
 							'before_title'	 =>  '<div class="sidebar-before-title"></div><h3 class="sidebar-title">',
 							'after_title'	 =>  '</h3><div class="sidebar-after-title"></div>',
 						) );
+
+		/**
+		 * Add Homepage Columns Widget areas
+		 */
+		register_sidebar( array (
+								'name'			 =>  __( 'Homepage Column #1', 'ayaclub' ),
+								'id' 			 =>  'homepage-column-1-widget-area',
+								'description'	 =>  __( 'The Homepage Column #1 widget area', 'ayaclub' ),
+								'before_widget'  =>  '',
+								'after_widget'	 =>  '',
+								'before_title'	 =>  '<h2 class="sidebar-title">',
+								'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
+							) );
+							
+		register_sidebar( array (
+								'name'			 =>  __( 'Homepage Column #2', 'ayaclub' ),
+								'id' 			 =>  'homepage-column-2-widget-area',
+								'description'	 =>  __( 'The Homepage Column #2 widget area', 'ayaclub' ),
+								'before_widget'  =>  '',
+								'after_widget'	 =>  '',
+								'before_title'	 =>  '<h2 class="sidebar-title">',
+								'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
+							) );
+
+		register_sidebar( array (
+								'name'			 =>  __( 'Homepage Column #3', 'ayaclub' ),
+								'id' 			 =>  'homepage-column-3-widget-area',
+								'description'	 =>  __( 'The Homepage Column #3 widget area', 'ayaclub' ),
+								'before_widget'  =>  '',
+								'after_widget'	 =>  '',
+								'before_title'	 =>  '<h2 class="sidebar-title">',
+								'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
+							) );
 
 		// Register Footer Column #1
 		register_sidebar( array (
@@ -239,6 +276,35 @@ if ( ! function_exists( 'ayaclub_show_copyright_text' ) ) :
 		}
 	}
 endif; // ayaclub_show_copyright_text
+
+
+if ( ! function_exists( 'ayaclub_display_slider' ) ) :
+	function ayaclub_display_slider() {
+	?>
+		<div class="camera_wrap camera_emboss" id="camera_wrap">
+			<?php
+				// display slides
+				for ( $i = 1; $i <= 3; ++$i ) {
+
+						$defaultSlideContent = __( '<h3>This is Default Slide Title</h3><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'ayaclub' );
+						
+						$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
+
+						$slideContent = get_theme_mod( 'ayaclub_slide'.$i.'_content', html_entity_decode( $defaultSlideContent ) );
+						$slideImage = get_theme_mod( 'ayaclub_slide'.$i.'_image', $defaultSlideImage );
+
+					?>
+
+						<div data-thumb="<?php echo esc_attr( $slideImage ); ?>" data-src="<?php echo esc_attr( $slideImage ); ?>">
+							<div class="camera_caption fadeFromBottom">
+								<?php echo $slideContent; ?>
+							</div>
+						</div>
+	<?php		} ?>
+		</div><!-- #camera_wrap -->
+	<?php 
+	}
+endif; // ayaclub_display_slider
 
 if ( ! function_exists( 'ayaclub_custom_header_setup' ) ) :
   /**
@@ -412,6 +478,60 @@ if ( ! function_exists( 'ayaclub_customize_register' ) ) :
 	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
 	 */
 	function ayaclub_customize_register( $wp_customize ) {
+
+		/**
+		 * Add Slider Section
+		 */
+		$wp_customize->add_section(
+			'ayaclub_slider_section',
+			array(
+				'title'       => __( 'Slider', 'ayaclub' ),
+				'capability'  => 'edit_theme_options',
+			)
+		);
+		
+		for ($i = 1; $i <= 3; ++$i) {
+		
+			$slideContentId = 'ayaclub_slide'.$i.'_content';
+			$slideImageId = 'ayaclub_slide'.$i.'_image';
+			$defaultSliderImagePath = get_template_directory_uri().'/images/slider/'.$i.'.jpg';
+		
+			// Add Slide Content
+			$wp_customize->add_setting(
+				$slideContentId,
+				array(
+					'default'           => __( '<h2>This is Default Slide Title</h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'ayaclub' ),
+					'sanitize_callback' => 'force_balance_tags',
+				)
+			);
+			
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, $slideContentId,
+										array(
+											'label'          => sprintf( esc_html__( 'Slide #%s Content', 'ayaclub' ), $i ),
+											'section'        => 'ayaclub_slider_section',
+											'settings'       => $slideContentId,
+											'type'           => 'textarea',
+											)
+										)
+			);
+			
+			// Add Slide Background Image
+			$wp_customize->add_setting( $slideImageId,
+				array(
+					'default' => $defaultSliderImagePath,
+					'sanitize_callback' => 'esc_url_raw'
+				)
+			);
+
+			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $slideImageId,
+					array(
+						'label'   	 => sprintf( esc_html__( 'Slide #%s Image', 'ayaclub' ), $i ),
+						'section' 	 => 'ayaclub_slider_section',
+						'settings'   => $slideImageId,
+					) 
+				)
+			);
+		}
 
 		/**
 		 * Add Footer Section

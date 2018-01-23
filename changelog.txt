@@ -1,3 +1,8 @@
+AyaClub 1.0.3, 2018-01-23
+------------------------
+- add Slider
+- add homepage widgets
+
 AyaClub 1.0.2, 2018-01-17
 ------------------------
 - fix issue in style.css with text domain
