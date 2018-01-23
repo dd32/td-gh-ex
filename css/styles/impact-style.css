@@ -1,0 +1,153 @@
+@import url("//fonts.googleapis.com/css?family=Source Sans Pro:400italic,700italic,400,700");
+
+body {
+  
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  line-height: 1.625;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 10px;
+}
+
+
+.entry-header {
+	font-size: 36px;
+	font-size: 3.6rem;
+	margin-bottom:10px;
+}
+
+.entry-meta {
+    font-size: 16px;
+    font-size: 1.6rem;
+    margin-bottom: 0;
+}
+
+.entry-meta,.post-meta a {
+    font-size: 16px;
+}
+
+.1sidebar-1right {
+    font-size: 16px;
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+}
+
+.widget ul, .widget ol, .widget dl {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+.widget-title {
+    font-size: 18px;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.sidebar-right .widget, .sidebar-left .widget {
+	background-color: #fff;
+	border-radius: 3px;
+	margin-bottom: 20px; 
+	margin-bottom: 2rem; 
+	padding: 20px; 
+	padding: 2rem; 
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color: #080808;
+	color: #999;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #999;
+    background-color: #080808;
+}
+
+.wp-caption .wp-caption-text, .gallery-caption, .entry-caption {
+    font-style: italic;
+    font-size: 14px;
+    line-height: 2;
+    color: #757575;
+}
+
+.readmore {
+    font-size: 16px;
+}
+
+.comment-notes {
+    font-size: 16px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+	font-size: 16px;
+	font-weight: normal;
+    
+}
+
+.comments-area .panel-default {
+    border-color: #fff;
+}
+
+.footer-nav {
+    padding-top: 14px;
+    font-size: 16px;
+}
+
+.dropdown-menu {
+    font-size: 18px;
+	font-weight: 600;
+}
+
+.navbar-nav {
+    font-size: 20px;
+	#font-weight: 600;
+}
+
+#main-row {
+	padding-top:15px;	
+}
+
+a {    
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+   text-decoration: none;
+}
+
+.sidebar-right .widget a:hover, 
+.sidebar-right .widget a:focus,
+.sidebar-left .widget a:hover,
+.sidebar-left .widget a:focus {
+	text-decoration: underline;
+}
+
+.feature .feature-icon {
+	color: #333;
+}
+

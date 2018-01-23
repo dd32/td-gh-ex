@@ -1,5 +1,9 @@
 *** Revision History ***
 ===========================
+version 2.0.3		2018-01-22
+* Added feature to change apply new style
+* Added feature to control Link primay and secondary colors
+
 version 2.0.2		2017-08-13
 * Added fix for menu titles.
 * Fixed the broken url for theme home page

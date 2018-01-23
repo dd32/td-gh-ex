@@ -38,6 +38,11 @@ function optionsframework_options() {
 		'wide' => __('Wide', 'aadya')
 	);
 	
+	$theme_style_array = array(
+		'default' => __('Default', 'aadya'),
+		'impact' => __('Impact', 'aadya')
+	);	
+	
 	// Multicheck Array
 	$multicheck_array = array(
 		'one' => __('French Toast', 'aadya'),
@@ -137,8 +142,9 @@ function optionsframework_options() {
 		'std' => 'Default',
 		'type' => 'select',
 		'class' => 'mini', //mini, tiny, small
-		'options' => $theme_layout_array);			
+		'options' => $theme_layout_array);		
 		
+	
 	$options[] = array(
 		'name' => "Page Layout",
 		'desc' => "These are layouts for your posts & pages. By default, Pages will follow this setting unless you use any other page templates that are available in template dropdown.",
@@ -414,6 +420,29 @@ function optionsframework_options() {
 		'std' => '',
 		'type' => 'text');				
     */
+	
+	$options[] = array(
+		'name' => __('Theme Style', 'aadya'),
+		'desc' => __('This option allows you to set theme style.', 'aadya'),
+		'id' => 'theme_style',
+		'std' => 'Default',
+		'type' => 'select',
+		'class' => 'mini', //mini, tiny, small
+		'options' => $theme_style_array);		
+		
+	$options[] = array(
+		'name' => __('Primary Link Color', 'aadya'),
+		'desc' => __('Its used for all links on your pages.', 'aadya'),
+		'id' => 'primary_link_color',
+		'std' => '#428bca',
+		'type' => 'color' );		
+
+	$options[] = array(
+		'name' => __('Secondary Link Color', 'aadya'),
+		'desc' => __('Its used on hover for all links on your pages.', 'aadya'),
+		'id' => 'secondary_link_color',
+		'std' => '#2a6496',
+		'type' => 'color' );			
 	
 	$options[] = array(
 		'name' => __('Display Search Icon in Nav Menu', 'aadya'),

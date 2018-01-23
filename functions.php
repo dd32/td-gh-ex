@@ -176,6 +176,7 @@ function aadya_scripts_styles() {
 	} else {
 		wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/css/bootstrap.css' );
 	}	
+		
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/font-awesome.min.css' );
 	wp_enqueue_style( 'bootstrap-social', get_template_directory_uri().'/css/bootstrap-social.css' );	
 
@@ -190,6 +191,11 @@ function aadya_scripts_styles() {
 	 */
 	wp_enqueue_style( 'aadya-style', get_stylesheet_uri() );	
 	wp_enqueue_style( 'aadya-style-carousel', get_template_directory_uri() . '/css/carousel.css');
+	
+	$theme_style = of_get_option('theme_style');	
+	if($theme_style=="impact") {
+		wp_enqueue_style( 'impact', get_template_directory_uri().'/css/styles/'.$theme_style.'-style.css');
+	}
 
 }
 add_action( 'wp_enqueue_scripts', 'aadya_scripts_styles' );
@@ -753,6 +759,16 @@ if(!empty($customcss)) { ?>
 ?> 
 </style>	
 <?php }
+
+	$primary_link_color = of_get_option('primary_link_color');
+	$secondary_link_color = of_get_option('secondary_link_color');
+	if(!empty($primary_link_color)) {
+		echo "<style type=\"text/css\" media=\"all\">\r\n";
+		echo "a { color: ".$primary_link_color."; }\r\n";
+		echo "a:hover, a:focus { color: ".$secondary_link_color."; }\r\n";
+		echo "#commentform input#submit { background-color: ".$primary_link_color."; }\r\n";
+		echo "</style>\r\n";
+	}
 
 }
 add_action( 'wp_head', 'aadya_wp_head', 100);
