@@ -239,8 +239,7 @@ add_filter( 'excerpt_length', 'apppage_custom_excerpt_length', 999 );
  */
 function apppage_scripts() {
 	wp_enqueue_style( 'apppage-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'apppage-font-awesome-css', get_template_directory_uri() . '/css/font-awesome.min.css');
-
+	wp_enqueue_style( 'apppage-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css');
 	wp_enqueue_script( 'apppage-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'apppage-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script( 'apppage-script', get_template_directory_uri() . '/js/apppage.js', array('jquery'), false, true);

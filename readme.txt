@@ -23,12 +23,11 @@ Text Domain: appPage
 * Background Image Credit: https://www.pexels.com/photo/woman-using-a-smartphone-while-fronting-a-macbook-pro-and-black-ipad-196656/
 * Background Image Credit: Screenshot iPad, gradients and more is made by Vilhoprogramming, feel free to use it for anything you want.
 * Fontawesome: FontAwesome 4.2.0 Copyright 2012 Dave Gandy Font License: SIL OFL 1.1 Code License: MIT License http://fontawesome.io/license/
-* Bootstrap - http://getbootstrap.com/ Licensed Under MIT( https://opensource.org/licenses/MIT)
 * Google Fonts - http://www.google.com/fonts/ - "Lato" - SIL Open Font License, 1.1 
 * html5shiv - http://code.google.com/p/html5shiv/ License Under MIT (http://opensource.org/licenses/MIT)
 
 == AppPage Theme GNU GPL ==
-* AppPage WordPress Theme, Copyright 2017
+* AppPage WordPress Theme, Copyright 2017 by Vilhoprogramming
 * AppPage is distributed under the terms of the GNU GPL
 
 
