@@ -71,19 +71,19 @@ add_filter( 'post_thumbnail_html', 'ashe_preview_thumbnail' );
 function ashe_preview_right_sidebar() {
 	the_widget('WP_Widget_Search', 'title=' . esc_html__('Search', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_search">&after_widget=</div>');
 	the_widget('WP_Widget_Recent_Posts', 'title=' . esc_html__('Recent Posts', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_recent_entries">&after_widget=</div>');
-	the_widget('WP_Widget_Archives', 'title=' . esc_html__('Archives', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_archives">&after_widget=</div>');
+	the_widget('WP_Widget_Archives', 'title=' . esc_html__('Archives', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_archive">&after_widget=</div>');
 	the_widget('WP_Widget_Categories', 'title=' . esc_html__('Categories', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_categories">&after_widget=</div>');
 }
 
 function ashe_preview_alt_sidebar() {
 	the_widget('WP_Widget_Search', 'title=' . esc_html__('Search', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_search">&after_widget=</div>');
 	the_widget('WP_Widget_Pages', 'title=' . esc_html__('Pages', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_pages">&after_widget=</div>');
-	the_widget('WP_Widget_Archives', 'title=' . esc_html__('Archives', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_archives">&after_widget=</div>');
+	the_widget('WP_Widget_Archives', 'title=' . esc_html__('Archives', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_archive">&after_widget=</div>');
 }
 
 function ashe_preview_footer_sidebar() {
 	the_widget('WP_Widget_Pages', 'title=' . esc_html__('Pages', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_pages">&after_widget=</div>');
-	the_widget('WP_Widget_Archives', 'title=' . esc_html__('Archives', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_archives">&after_widget=</div>');
+	the_widget('WP_Widget_Archives', 'title=' . esc_html__('Archives', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_archive">&after_widget=</div>');
 	the_widget('WP_Widget_Recent_Comments', 'title=' . esc_html__('Recent Comments', 'ashe'), 'before_title=<div class="widget-title"><h2>&after_title=</h2></div>&before_widget=<div class="ashe-widget widget_recent_comments">&after_widget=</div>');
 }
 

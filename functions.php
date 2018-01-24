@@ -47,8 +47,8 @@ function ashe_setup() {
 
 	// This theme uses wp_nav_menu() in two locations
 	register_nav_menus( array(
-		'top'		=> __( 'Top Menu', 'ashe' ),
-		'primary' 	=> __( 'Main Menu', 'ashe' ),
+		'top'	=> __( 'Top Menu', 'ashe' ),
+		'main' 	=> __( 'Main Menu', 'ashe' ),
 	) );
 
 	// Switch default core markup for search form, comment form, and comments to output valid HTML5
@@ -306,6 +306,8 @@ function ashe_page_layout() {
 		return 'col1-lsidebar';
 	} else if ( is_active_sidebar( 'sidebar-right' ) || ashe_is_preview() ) {
 		return 'col1-rsidebar';
+	} else {
+		return 'col1-fullwidth';
 	}
 }
 
