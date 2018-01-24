@@ -579,7 +579,7 @@ function ashe_true_false( $option ) {
 		esc_url(ashe_options( 'featured_links_image_3' ))
 	);
 
-	$featured_links = count( array_filter( $featured_links ) );
+	$featured_links = ( ashe_is_preview() ) ? 3 : count( array_filter( $featured_links ) );
 	$featured_links_gutter = 0;
 
 	// Gutter	
@@ -601,7 +601,7 @@ function ashe_true_false( $option ) {
 		}
 	';
 
-	if ( ashe_options( 'featured_links_title_1' ) === '' ) {
+	if ( ashe_options( 'featured_links_title_1' ) === '' && ! ashe_is_preview() ) {
 		$css .= '
 			.featured-link:nth-child(1) .cv-inner {
 			    display: none;
@@ -609,7 +609,7 @@ function ashe_true_false( $option ) {
 		';
 	}
 
-	if ( ashe_options( 'featured_links_title_2' ) === '' ) {
+	if ( ashe_options( 'featured_links_title_2' ) === '' && ! ashe_is_preview() ) {
 		$css .= '
 			.featured-link:nth-child(2) .cv-inner {
 			    display: none;
@@ -617,7 +617,7 @@ function ashe_true_false( $option ) {
 		';
 	}
 	
-	if ( ashe_options( 'featured_links_title_3' ) === '' ) {
+	if ( ashe_options( 'featured_links_title_3' ) === '' && ! ashe_is_preview() ) {
 		$css .= '
 			.featured-link:nth-child(3) .cv-inner {
 			    display: none;

@@ -4,17 +4,16 @@ get_header();
 
 if ( is_home() ) {
 
-	if ( ashe_options( 'featured_slider_label' ) === true || ashe_options( 'featured_links_label' ) === true ) {
-		// Featured Slider, Carousel
-		if ( ashe_options( 'featured_slider_label' ) === true ) {
-			get_template_part( 'templates/header/featured', 'slider' );
-		}
-
-		// Featured Links, Banners
-		if ( ashe_options( 'featured_links_label' ) === true ) {
-			get_template_part( 'templates/header/featured', 'links' ); 
-		}
+	// Featured Slider, Carousel
+	if ( ashe_options( 'featured_slider_label' ) === true || ashe_is_preview() ) {
+		get_template_part( 'templates/header/featured', 'slider' );
 	}
+
+	// Featured Links, Banners
+	if ( ashe_options( 'featured_links_label' ) === true || ashe_is_preview() ) {
+		get_template_part( 'templates/header/featured', 'links' ); 
+	}
+
 }
 
 ?>

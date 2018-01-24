@@ -39,30 +39,20 @@ $slider_data .= '}';
 			array(
 				'key' 		=> '_thumbnail_id',
 				'compare' 	=> 'EXISTS'
-			) ),			
+			)
+		),	
 	);
 
 	if ( ashe_options( 'featured_slider_display' ) === 'category' ) {
 		$args['cat'] = ashe_options( 'featured_slider_category' );
-	} 
+	}
 
-	if ( ashe_options( 'featured_slider_display' ) === 'metabox' ) {
-		$args['meta_query'] = array( 
-		'relation'		=> 'AND',
-		array(
-			'key'	 	=> 'show_in_featured_slider',
-			'value'	  	=> 'yes',
-			'compare' 	=> 'EXISTS',
-		),
-		array(
-			'key' 		=> '_thumbnail_id',
-			'compare' 	=> 'EXISTS'
-		) );
+	if ( ashe_is_preview() ) {
+		array_pop($args);
 	}
 
 	$sliderQuery = new WP_Query();
 	$sliderQuery->query( $args );
-
 
 	// Loop Start
 	if ( $sliderQuery->have_posts() ) :

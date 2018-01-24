@@ -18,7 +18,7 @@ function ashe_get_raw_option( $opt_name ) {
 // Random Images
 function ashe_get_preview_img_src( $i = 0 ) {
 	// prevent infinite loop
-	if ( 7 == $i ) {
+	if ( 6 == $i ) {
 		return '';
 	}
 
@@ -26,7 +26,7 @@ function ashe_get_preview_img_src( $i = 0 ) {
 
 	// Build or re-build the global dem img array
 	if ( ! isset( $GLOBALS['ashe_preview_images'] ) || empty( $GLOBALS['ashe_preview_images'] ) ) {
-		$imgs       = array( 'image_1.jpg', 'image_2.jpg', 'image_3.jpg', 'image_4.jpg', 'image_5.jpg', 'image_6.jpg', 'image_7.jpg' );
+		$imgs       = array( 'image_1.jpg', 'image_2.jpg', 'image_3.jpg', 'image_4.jpg', 'image_5.jpg', 'image_6.jpg' );
 		$candidates = array();
 
 		foreach ( $imgs as $img ) {
