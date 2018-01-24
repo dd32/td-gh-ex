@@ -65,7 +65,7 @@ li[id*="customize-control-ashe_options-social_media_icon"] select {
 	width: 80px;
 }
 
-li[id*="customize-control-ashe_options-social_media_icon"] span {
+li[id*="customize-control-ashe_options-social_media_icon"] label {
 	float: left;
 }
 
@@ -137,4 +137,9 @@ li[id*="pro_version"] a {
 #customize-control-pro_version_ h3 span {
 	color: red;
 	font-weight: bold;
+}
+
+/* Display Header Text Color */
+#customize-control-header_textcolor {
+	display: block !important;
 }

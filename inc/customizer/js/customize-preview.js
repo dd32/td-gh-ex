@@ -11,9 +11,15 @@
 	// Header
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( val ) {
-			$( '.header-logo a, .site-description' ).css({
-				color: val
-			});
+			if ( 'blank' === val ) {
+				$( '.header-logo a, .site-description' ).css( 'color', $('.site-description').css('color') );
+				$( 'body' ).removeClass( 'title-tagline-shown' );
+				$( 'body' ).addClass( 'title-tagline-hidden' );
+			} else {
+				$( '.header-logo a, .site-description' ).css( 'color', val );
+				$( 'body' ).removeClass( 'title-tagline-hidden' );
+				$( 'body' ).addClass( 'title-tagline-shown' );
+			}
 		});
 	});
 

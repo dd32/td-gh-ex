@@ -315,7 +315,7 @@ function ashe_customize_register( $wp_customize ) {
 				<li class="customize-control">
 					<h3><?php esc_html_e( 'Support', 'ashe' ); ?></h3>
 					<p><?php esc_html_e( 'For Ashe theme related questions feel free to post on our support forums. But firstly please ', 'ashe' ); ?><a href="<?php echo esc_url('http://wp-royal.com/wp-login.php?action=register'); ?>" target="_blank"><?php esc_html_e( 'Register on Support Forums', 'ashe' ); ?></a></p>
-					<a href="<?php echo esc_url('http://wp-royal.com/forums/forum/free-themes/ashe-free/?ref=ashe-free-customizer-about-section-support-forum-btn/'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Support', 'ashe' ); ?></a>
+					<a href="<?php echo esc_url('https://wp-royal.com/support-ashe-free/?ref=ashe-free-customizer-about-section-support-forum-btn/'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Support', 'ashe' ); ?></a>
 				</li>
 				<li class="customize-control">
 					<h3><?php esc_html_e( 'Demo Content', 'ashe' ); ?></h3>
@@ -536,11 +536,6 @@ function ashe_customize_register( $wp_customize ) {
 
 	// Align
 	ashe_select_control( 'main_nav', 'align', esc_html__( 'Align', 'ashe' ), $main_nav_align, 'refresh', 7 );
-
-	$main_nav_position = array(
-		'above' => esc_html__( 'Above Page Header', 'ashe' ),
-		'below' => esc_html__( 'Below Page Header', 'ashe' ),
-	);
 
 	// Show Search Icon
 	ashe_checkbox_control( 'main_nav', 'show_search', esc_html__( 'Show Search Icon', 'ashe' ), 'refresh', 13 );

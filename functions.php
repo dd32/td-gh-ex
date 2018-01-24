@@ -71,7 +71,7 @@ function ashe_setup() {
 	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
 		add_action( 'admin_notices', 'ashe_activation_notice' );
 	}
-
+	
 }
 add_action( 'after_setup_theme', 'ashe_setup' );
 
@@ -381,6 +381,10 @@ if ( ! function_exists( 'ashe_related_posts' ) ) {
 	
 	function ashe_related_posts( $title, $orderby ) {
 
+		if ( $orderby === 'none' ) {
+			return;
+		}
+
 		global $post;
 		$current_categories	= get_the_category();
 
@@ -388,38 +392,23 @@ if ( ! function_exists( 'ashe_related_posts' ) ) {
 
 			$first_category	= $current_categories[0]->term_id;
 
-			// Random
-			if ( $orderby === 'random' ) {
-				$args = array(
-					'post_type'				=> 'post',
-					'post__not_in'			=> array( $post->ID ),
-					'orderby'				=> 'rand',
-					'posts_per_page'		=> 3,
-					'ignore_sticky_posts'	=> 1,
-				    'meta_query' => array(
-				        array(
-				         'key' => '_thumbnail_id',
-				         'compare' => 'EXISTS'
-				        ),
-				    )
-				);
+			$args = array(
+				'post_type'				=> 'post',
+				'category__in'			=> array( $first_category ),
+				'post__not_in'			=> array( $post->ID ),
+				'orderby'				=> 'rand',
+				'posts_per_page'		=> 3,
+				'ignore_sticky_posts'	=> 1,
+			    'meta_query' => array(
+			        array(
+			         'key' => '_thumbnail_id',
+			         'compare' => 'EXISTS'
+			        ),
+			    )
+			);
 
-			// Similar
-			} else {
-				$args = array(
-					'post_type'				=> 'post',
-					'category__in'			=> array( $first_category ),
-					'post__not_in'			=> array( $post->ID ),
-					'orderby'				=> 'rand',
-					'posts_per_page'		=> 3,
-					'ignore_sticky_posts'	=> 1,
-				    'meta_query' => array(
-				        array(
-				         'key' => '_thumbnail_id',
-				         'compare' => 'EXISTS'
-				        ),
-				    )
-				);
+			if ( ashe_is_preview() ) {
+				array_pop($args);
 			}
 
 			$similar_posts = new WP_Query( $args );	
@@ -431,24 +420,15 @@ if ( ! function_exists( 'ashe_related_posts' ) ) {
 			<div class="related-posts">
 				<h3><?php echo esc_html( $title ); ?></h3>
 
-				<?php 
+				<?php  while ( $similar_posts->have_posts() ) : $similar_posts->the_post(); ?>
 
-				while ( $similar_posts->have_posts() ) { 
-					$similar_posts->the_post();
-					if ( has_post_thumbnail() ) {
-				?>
 					<section>
 						<a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_post_thumbnail('ashe-grid-thumbnail'); ?></a>
 						<h4><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h4>
 						<span class="related-post-date"><?php echo get_the_time( get_option('date_format') ); ?></span>
 					</section>
 
-				<?php
-
-					} // end if
-				} // end while
-
-				?>
+				<?php endwhile; ?>
 
 				<div class="clear-fix"></div>
 			</div>
@@ -471,7 +451,7 @@ if ( ! function_exists( 'ashe_related_posts' ) ) {
 function ashe_custom_search_form( $html ) {
 
 	$html  = '<form role="search" method="get" id="searchform" class="clear-fix" action="'. esc_url( home_url( '/' ) ) .'">';
-	$html .= '<input type="search" name="s" id="s" placeholder="'. esc_attr__( 'Search...', 'ashe' ) .'" data-placeholder="'. esc_attr__( 'Type & hit enter...', 'ashe' ) .'" value="'. get_search_query() .'" />';
+	$html .= '<input type="search" name="s" id="s" placeholder="'. esc_attr__( 'Search...', 'ashe' ) .'" data-placeholder="'. esc_attr__( 'Type & hit Enter...', 'ashe' ) .'" value="'. get_search_query() .'" />';
 	$html .= '<i class="fa fa-search"></i>';
 	$html .= '<input type="submit" id="searchsubmit" value="st" />';
 	$html .= '</form>';

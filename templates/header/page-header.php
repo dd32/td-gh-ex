@@ -22,10 +22,8 @@
 				<a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo bloginfo( 'title' ); ?></a>
 				<?php endif; ?>
 
-				<?php if ( display_header_text() ) : ?>
 				<br>
 				<p class="site-description"><?php echo bloginfo( 'description' ); ?></p>
-				<?php endif; ?>
 				
 			</div>
 		</div>

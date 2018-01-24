@@ -11,11 +11,7 @@
 			<div class="page-footer-inner <?php echo ashe_options( 'general_footer_width' ) === 'contained' ? 'boxed-wrapper': ''; ?>">
 
 			<!-- Footer Widgets -->
-			<?php 
-			if ( ashe_options( 'page_footer_columns' ) !== 'none' ) {
-				echo get_template_part( 'templates/sidebars/footer', 'widgets' ); 
-			}
-			?>
+			<?php echo get_template_part( 'templates/sidebars/footer', 'widgets' ); ?>
 
 			<div class="footer-copyright">
 				<div class="copyright-info">
@@ -26,7 +22,7 @@
 				$copyright = str_replace( '$copy', '&copy;', $copyright );
 
 				if ( ashe_is_preview() ) {
-					echo esc_html__( '&copy; 2017 - All Rights Reserved.', 'ashe' );
+					echo esc_html__( '&copy; 2018 - All Rights Reserved.', 'ashe' );
 				} else {
 					echo wp_kses_post( $copyright );
 				}

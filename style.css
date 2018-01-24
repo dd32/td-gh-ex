@@ -2,14 +2,15 @@
 Theme Name: Ashe
 Theme URI: https://wp-royal.com/themes/item-ashe-free/
 Author: Royal Flush
-Author URI: https://wp-royal.com/
+Author URI: http://wp-royal.com/
 Description: Personal and Multi-Author Free WordPress Blog Theme.  Perfect for personal, lifestyle, food, travel, fashion, corporate, photography and any other kind of amazing blogs.  Well documented and very easy to use even for WordPress beginners. Clean and Modern Responsive design will perfectly showcase your content on any device. You just need to write and be awesome!
-Version: 1.0.7
+Version: 1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: ashe
 Tags: blog, e-commerce, food-and-drink, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 */
+
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS
@@ -736,6 +737,7 @@ sup {
 
 .entry-header {
   position: relative;
+  overflow: hidden;
 }
 
 .header-logo {
@@ -755,11 +757,24 @@ sup {
   margin-bottom: 0;
 }
 
+.title-tagline-shown .header-logo a:not(.logo-img),
+.title-tagline-shown .site-description {
+  display: block;
+}
+
+.title-tagline-hidden .header-logo a:not(.logo-img),
+.title-tagline-hidden .site-description {
+  display: none;
+}
 
 
 /*--------------------------------------------------------------
 5.0 Featured Slider
 --------------------------------------------------------------*/
+
+.featured-slider-area.boxed-wrapper {
+  padding-top: 41px;
+}
 
 #featured-slider.boxed-wrapper img {
   width: 100%;
@@ -792,10 +807,11 @@ sup {
 [data-slick*="1"] .cv-container {
   visibility: hidden;
   opacity: 0.0001;
-  -webkit-transition: all 1200ms ease-in-out 0s;
-  -moz-transition: all 1200ms ease-in-out 0s;
-  -o-transition: all 1200ms ease-in-out 0s;
-  transition: all 1200ms ease-in-out 0s;
+  -webkit-transition: all 650ms ease-in-out 0s;
+  -moz-transition: all 650ms ease-in-out 0s;
+  -o-transition: all 650ms ease-in-out 0s;
+  transition: all 650ms ease-in-out 0s;
+  transition-delay: .75s;
 }
 
 [data-slick*="1"] .slick-current .cv-container {
@@ -833,14 +849,6 @@ sup {
 
 #featured-slider .next-arrow {
   right: 15px;
-}
-
-#featured-slider.boxed-wrapper .prev-arrow {
-  left: 45px;
-}
-
-#featured-slider.boxed-wrapper .next-arrow {
-  right: 45px;
 }
 
 .post-slider .prev-arrow,
@@ -1037,15 +1045,15 @@ sup {
   margin: 0;
 }
 
-#main-menu li.menu-item-has-children>a:after {
-  font-family: FontAwesome;
+#main-menu li.menu-item-has-children > a:after {
+  font-family: "FontAwesome";
   content: "\f107";
   margin-left: 10px;
   font-size: 15px;
 }
 
-#main-menu ul li.menu-item-has-children>a:after {
-  font-family: FontAwesome;
+#main-menu ul li.menu-item-has-children > a:after {
+  font-family: "FontAwesome";
   content: "\f105";
   font-size: 14px;
   float: right;
@@ -1062,10 +1070,13 @@ sup {
 
 .mobile-menu-btn {
   display: none;
-  font-size: 18px;
-  line-height: 60px;
   padding: 0 15px;
+  line-height: 60px;
   cursor: pointer;
+}
+
+#mobile-menu {
+  padding-bottom: 15px;
 }
 
 #mobile-menu li {
@@ -1076,6 +1087,7 @@ sup {
 
 #mobile-menu li.menu-item-has-children > a {
   display: inline-block;
+  text-indent: 15px;
 }
 
 #mobile-menu li a {
@@ -1084,12 +1096,20 @@ sup {
   z-index: 5;
 }
 
+#mobile-menu .sub-menu li {
+  line-height: 30px !important;
+}
+
+#mobile-menu .sub-menu li .sub-menu-btn-icon {
+  padding-top: 5px !important;
+}
+
 .sub-menu-btn {
   position: absolute;
   top: 0;
   left: 0;   
   width: 100%;
-  height: 60px;
+  height: 50px;
   padding: 0 10px;
   text-align: left;
   z-index: 1;
@@ -1103,7 +1123,7 @@ sup {
   padding-top: 16px;
 }
 
-#main-menu .sub-menu > li  .sub-menu-btn-icon,
+#main-menu .sub-menu > li .sub-menu-btn-icon,
 #mobile-menu .sub-menu > li .sub-menu-btn-icon {
   padding-top: 13px;
 }
@@ -1282,14 +1302,14 @@ sup {
 }
 
 #featured-links .cv-outer {
-  padding: 12px;
+  padding: 10px;
 }
 
-#featured-links h4 {
+#featured-links h6 {
   display: inline-block;
-  padding: 11px 20px;
+  padding: 9px 20px;
   font-family: 'Open Sans';
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1412,6 +1432,7 @@ sup {
 .post-author a img {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
+  border-radius: 50%;
   margin-right: 3px;
 }
 
@@ -2564,11 +2585,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-#mobile-menu .sub-menu > li:first-child {
-  line-height: 12px;
-  padding-bottom: 14px;
-}
-
 .main-nav-search,
 #main-nav #s {
   font-size: 15px;
@@ -2580,7 +2596,6 @@ body {
 }
 
 /* Headings Fonts */
-.post-content > p:first-child:first-letter,
 .post-meta,
 .ashe-widget > ul li span,
 .ashe-widget > ul li span a,

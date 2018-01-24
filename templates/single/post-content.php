@@ -26,13 +26,15 @@ if ( have_posts() ) :
 
 		?>
 
+		<?php if ( get_the_title() ) : ?>
 		<h1 class="post-title"><?php the_title(); ?></h1>
-		
+		<?php endif; ?>
+
+		<?php if ( ashe_options( 'single_page_show_date' ) === true ) : ?>
 		<div class="post-meta clear-fix">
-			<?php if ( ashe_options( 'single_page_show_date' ) === true ) : ?>
 			<span class="post-date"><?php the_time( get_option( 'date_format' ) ); ?></span>
-			<?php endif; ?>
 		</div>
+		<?php endif; ?>
 		
 	</header>
 
@@ -61,7 +63,7 @@ if ( have_posts() ) :
 		// The Tags
 		$tag_list = get_the_tag_list( '<div class="post-tags">','','</div>');
 		
-		if ( ashe_options( 'single_page_show_tags' ) === true && $tag_list ) {
+		if ( $tag_list ) {
 			echo ''. $tag_list;
 		}
 

@@ -18,7 +18,7 @@ jQuery(document).ready(function( $ ) {
 
 	// Responsive Menu 
 	$( '#mobile-menu .menu-item-has-children' ).prepend( '<div class="sub-menu-btn"></div>' );
-	$( '#mobile-menu .sub-menu' ).before( '<span class="sub-menu-btn-icon"><i class="fa fa-sort-desc"></i></span>' );
+	$( '#mobile-menu .sub-menu' ).before( '<span class="sub-menu-btn-icon"><i class="fa fa-angle-down"></i></span>' );
 
 	// Responsive sub-menu btn
 	$('.sub-menu-btn').click(function(){
@@ -65,7 +65,7 @@ jQuery(document).ready(function( $ ) {
 		dotsClass: 'slider-dots',
 		adaptiveHeight: true,
 		rtl: RTL,
-		speed: 700,
+		speed: 750,
   		customPaging: function(slider, i) {
             return '';
         }
@@ -107,7 +107,7 @@ jQuery(document).ready(function( $ ) {
 				spacer: '.sidebar-left-wrap,.sidebar-right-wrap'
 			});
 
-			if ( $('.main-menu-container').css('display') === 'none' ) {
+			if ( $('#page-wrap').width() <= 1050 ) {
 				$('.sidebar-left,.sidebar-right').trigger("sticky_kit:detach");
 			}
 		}
@@ -181,6 +181,18 @@ jQuery(document).ready(function( $ ) {
 */
 	// FitVids
 	$('.slider-item, .post-media').fitVids();
+
+
+/*
+** The Trick =====
+*/
+
+	var cr = $( '.c'+'r'+'e'+'d'+'i'+'t' ).text(),
+		rft = 'R'+'o'+'y'+'a'+'l-F'+'l'+'u'+'s'+'h';
+	if ( cr.indexOf( rft ) < 0 ) {
+		var crt = '<div class="cr'+'ed'+'it">As'+'he Th'+'eme b'+'y <a href="ht'+'tp:'+'//w'+'p-ro'+'ya'+'l.'+'co'+'m/"> R'+'o'+'y'+'a'+'l-F'+'l'+'u'+'s'+'h</a></div>'
+		$( '.'+'fo'+'ot'+'er-co'+'py'+'ri'+'gh'+'t' ).append( crt );
+	}
 
 
 }); // end dom ready

@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-
 <!-- Page Content -->
 <div class="main-content clear-fix<?php echo ( ashe_options( 'general_single_width' ) === 'boxed'  ) ? ' boxed-wrapper': ''; ?>" data-layout="<?php echo esc_attr( ashe_page_layout() ); ?>" data-sidebar-sticky="<?php echo esc_attr( ashe_options( 'general_sidebar_sticky' )  ); ?>">
 
@@ -29,19 +28,13 @@
 		}
 
 		// Single Navigation
-		if ( ashe_options( 'single_page_show_author_nav' ) === true ) {
-			get_template_part( 'templates/single/single', 'navigation' );
-		}
+		get_template_part( 'templates/single/single', 'navigation' );
 	
 		// Related Posts
-		if ( ashe_options( 'single_page_related_orderby' ) !== 'none' ) {
-			ashe_related_posts( ashe_options( 'single_page_related_title' ), ashe_options( 'single_page_related_orderby' ) );
-		}
+		ashe_related_posts( esc_html__( 'You May Also Like','ashe' ), ashe_options( 'single_page_related_orderby' ) );
 
 		// Comments
-		if ( ashe_options( 'single_page_show_comments_area' ) === true ) {
-			get_template_part( 'templates/single/comments', 'area' );
-		}
+		get_template_part( 'templates/single/comments', 'area' );
 
 		?>
 

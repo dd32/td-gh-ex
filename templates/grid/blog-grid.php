@@ -35,15 +35,17 @@
 
 					?>
 
+					<?php if ( get_the_title() ) : ?>
 					<h1 class="post-title">
-						<a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a>
+						<a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a>
 					</h1>
-					
+					<?php endif; ?>
+
+					<?php if ( ashe_options( 'blog_page_show_date' ) === true ) : ?>
 					<div class="post-meta clear-fix">
-						<?php if ( ashe_options( 'blog_page_show_date' ) === true ) : ?>
 						<span class="post-date"><?php the_time( get_option( 'date_format' ) ); ?></span>
-						<?php endif; ?>
 					</div>
+					<?php endif; ?>
 					
 				</header>
 
@@ -54,22 +56,16 @@
 					if ( ashe_options( 'blog_page_post_description' ) === 'content' ) {
 						the_content('');
 					} elseif ( ashe_options( 'blog_page_post_description' ) === 'excerpt' ) {
-						if ( substr( ashe_page_layout(), 0, 4 ) === 'col1' ) {
-							ashe_excerpt(  ashe_options( 'blog_page_excerpt_length' ) );
-						} else {
-							ashe_excerpt(  ashe_options( 'blog_page_grid_excerpt_length' ) );
-						}						
+						ashe_excerpt( 110 );												
 					}
 					?>
 				</div>
 
 				<?php endif; ?>
 
-				<?php if ( ashe_options( 'blog_page_show_more' ) === true ) : ?>
 				<div class="read-more">
-					<a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( ashe_options( 'blog_page_more_text' ) ); ?></a>
+					<a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e( 'read more','ashe' ); ?></a>
 				</div>
-				<?php endif; ?>
 				
 				<footer class="post-footer">
 
@@ -92,8 +88,8 @@
 
 				<!-- Related Posts -->
 				<?php
-				if ( substr( ashe_page_layout(), 0, 4 ) === 'col1' && ashe_options( 'blog_page_related_orderby' ) !== 'none' ) {
-					ashe_related_posts( ashe_options( 'blog_page_related_title' ), ashe_options( 'blog_page_related_orderby' ) );
+				if ( substr( ashe_page_layout(), 0, 4 ) === 'col1' ) {
+					ashe_related_posts( esc_html__( 'You May Also Like','ashe' ), ashe_options( 'blog_page_related_orderby' ) );
 				}
 				?>
 

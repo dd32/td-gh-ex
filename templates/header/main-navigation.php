@@ -1,5 +1,5 @@
 <?php if ( ashe_options( 'main_nav_label' ) === true ) : ?>
-<div id="main-nav" class="clear-fix" data-fixed="<?php echo esc_attr(ashe_options( 'main_nav_fixed' )); ?>">
+<div id="main-nav" class="clear-fix">
 
 	<div <?php echo esc_attr(ashe_options( 'general_header_width' )) === 'contained' ? 'class="boxed-wrapper"': ''; ?>>	
 		
@@ -17,12 +17,6 @@
 
 		<!-- Icons -->
 		<div class="main-nav-icons">
-			<?php
-			if ( ashe_options( 'main_nav_show_socials' ) === true ) {	
-				ashe_social_media( 'main-nav-socials' );
-			} 
-			?>
-
 			<?php if ( ashe_options( 'main_nav_show_search' ) === true ) : ?>
 			<div class="main-nav-search">
 				<i class="fa fa-search"></i>

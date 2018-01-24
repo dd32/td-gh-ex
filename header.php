@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="profile" href="http://gmpg.org/xfn/11">
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+
 <?php wp_head(); ?>
 </head>
 
@@ -23,18 +24,11 @@
 		// Top Bar
 		get_template_part( 'templates/header/top', 'bar' );
 
-		// Main Navigation
-		if ( ashe_options( 'main_nav_position' ) === 'above' ) {
-			get_template_part( 'templates/header/main', 'navigation' );
-		}
-
 		// Page Header
 		get_template_part( 'templates/header/page', 'header' );
 
 		// Main Navigation
-		if ( ashe_options( 'main_nav_position' ) === 'below' ) {
-			get_template_part( 'templates/header/main', 'navigation' );
-		}
+		get_template_part( 'templates/header/main', 'navigation' );
 		
 		?>
 

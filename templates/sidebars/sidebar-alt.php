@@ -21,7 +21,11 @@ if ( ashe_options( 'main_nav_show_sidebar' ) === false ) {
 		if ( ashe_is_preview() ) {
 			ashe_preview_alt_sidebar();
 		} else {
-			dynamic_sidebar( 'sidebar-alt' );
+			if ( ! is_active_sidebar( 'sidebar-alt' ) ) {
+				echo '<div ="ashe-widget"><p>'. esc_html__( 'No Widgets found in the Sidebar Alt!', 'ashe' ) .'</p></div>';
+			} else {
+				dynamic_sidebar( 'sidebar-alt' );
+			}
 		}
 
 		?>

@@ -25,11 +25,12 @@
     right: auto !important;
     min-height: 0;
     min-width: 0;
-    border-radius: 0;
     padding: 5px 10px;
     margin: 0 !important;
     line-height: 1;
     font-weight: 400;
+    -webkit-border-radius: 0;
+    border-radius: 0;
 }
 
 .woocommerce ul.products li.product .price del {
@@ -109,8 +110,9 @@ a.added_to_cart.wc-forward {
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li {
     margin-right: 0;
-    border-radius: 0;
     border-bottom: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li a {
@@ -156,6 +158,7 @@ a.added_to_cart.wc-forward {
 .select2-container--default .select2-selection--single {
     height: 44px;
     border-radius: 0;
+    -webkit-border-radius: 0;
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
@@ -170,6 +173,7 @@ a.added_to_cart.wc-forward {
 .woocommerce form.login,
 .woocommerce form.register {
     border-radius: 0;
+    -webkit-border-radius: 0;
 }
 
 .woocommerce form .form-row-first,
@@ -355,9 +359,10 @@ a.added_to_cart.wc-forward {
 
 .woocommerce #reviews #comments ol.commentlist li img.avatar {
     width: 60px;
-    border-radius: 50%;
-    border: none;
     padding: 0;
+    border: none;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
 }
 
 .woocommerce-Reviews .woocommerce-review__author {
@@ -497,6 +502,7 @@ a.added_to_cart.wc-forward {
     border-style: solid;
     border-width: 1px;
     border-radius: 0;
+    -webkit-border-radius: 0;
 }
 
 #page-content .woocommerce input.button,
@@ -516,6 +522,7 @@ a.added_to_cart.wc-forward {
     padding: 13px;
     border: none;
     border-radius: 0;
+    -webkit-border-radius: 0;
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
@@ -582,6 +589,7 @@ a.added_to_cart.wc-forward {
 
 .woocommerce table.shop_table {
     border-radius: 0;
+    -webkit-border-radius: 0;
 }
 
 .woocommerce table tr,

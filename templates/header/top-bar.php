@@ -6,21 +6,17 @@
 		<?php
 
 		// Menu
-		if ( ashe_options( 'top_bar_show_menu' ) === true ) {
-			wp_nav_menu( array(
-				'theme_location' 	=> 'top',
-				'menu_id' 		 	=> 'top-menu',
-				'menu_class' 		=> '',
-				'container' 	 	=> 'nav',
-				'container_class'	=> 'top-menu-container',
-				'fallback_cb' 		=> 'top_menu_fallback'
-			) );
-		}
+		wp_nav_menu( array(
+			'theme_location' 	=> 'top',
+			'menu_id' 		 	=> 'top-menu',
+			'menu_class' 		=> '',
+			'container' 	 	=> 'nav',
+			'container_class'	=> 'top-menu-container',
+			'fallback_cb' 		=> 'top_menu_fallback'
+		) );
 		
 		// Social Icons
-		if ( ashe_options( 'top_bar_show_socials' ) === true ) {	
-			ashe_social_media( 'top-bar-socials' );
-		}
+		ashe_social_media( 'top-bar-socials' );
 
 		?>
 
