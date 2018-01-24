@@ -61,7 +61,7 @@
 		<?php
 
 		if ( ashe_is_preview() ) {
-			$image_src_3 = get_template_directory_uri() . '/assets/images/image_3.jpg';
+			$image_src_3 = get_template_directory_uri() . '/assets/images/image_4.jpg';
 			$link_title_3 = 'Promo Box 3';
 		} else {
 			$image_src_3 = wp_get_attachment_url( ashe_options( 'featured_links_image_3' ) );

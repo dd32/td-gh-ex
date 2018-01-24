@@ -26,11 +26,17 @@ $slider_data .= '}';
 <!-- Featured Slider -->
 <div id="featured-slider" class="<?php echo esc_attr(ashe_options( 'general_slider_width' )) === 'boxed' ? 'boxed-wrapper': ''; ?>" data-slick="<?php echo esc_attr( $slider_data ); ?>">
 	
-	<?php 
+	<?php
+
+	if ( ashe_is_preview() ) {
+		$post_types = array( 'post' );
+	} else {
+		$post_types = array( 'post', 'page' );
+	}
 
 	// Query Args
 	$args = array(
-		'post_type'		      	=> array( 'post', 'page' ),
+		'post_type'		      	=> $post_types,
 	 	'orderby'		      	=> 'rand',
 		'order'			      	=> 'DESC',
 		'posts_per_page'      	=> ashe_options( 'featured_slider_amount' ),
