@@ -44,7 +44,7 @@ if ( post_password_required() ) {
   <?php endif; ?>
 
   <?php if ( ! comments_open() ) : ?>
-  <p class="no-comments"><?php _e( 'Comments are closed.' , 'affidavit' ); ?></p>
+  <p class="no-comments"><?php esc_html_e( 'Comments are closed.' , 'affidavit' ); ?></p>
   <?php endif; ?>
 
 <?php endif; ?>

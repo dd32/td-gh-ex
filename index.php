@@ -10,7 +10,7 @@ get_header(); ?>
 
     <div class="page-title-area">
         <div class="container">
-            <h1 class="page-title"><?php _e('Blog','affidavit'); ?></h1>
+            <h1 class="page-title"><?php esc_html_e('Blog','affidavit'); ?></h1>
         </div>
     </div>
 

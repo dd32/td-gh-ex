@@ -17,13 +17,20 @@ function affidavit_template_header(){ ?>
 			<div class="navbar-header">
 
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
-				<span class="sr-only"><?php _e( 'Toggle navigation','affidavit' ); ?></span>
+				<span class="sr-only"><?php esc_html_e( 'Toggle navigation','affidavit' ); ?></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				</button>
 
-				<h1 id="logo"><a class="navbar-brand" href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><?php echo esc_html( bloginfo('name') ); ?></a></h1>
+				<?php if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ): 
+                $affidavit_custom_logo_id = get_theme_mod( 'custom_logo' );
+                $image = wp_get_attachment_image_src( $affidavit_custom_logo_id,'full');
+                ?>
+                <h1 id="logo"><a class="navbar-brand" href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img src="<?php echo esc_url( $image[0] ); ?>"></a></h1>
+                <?php else : ?>
+                <h1 id="logo"><a class="navbar-brand" href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><?php echo esc_html( bloginfo('name') ); ?></a></h1>
+                <?php endif; ?>
 
 			</div>
 
@@ -298,7 +305,7 @@ function affidavit_template_copyright(){ ?>
         <div class="container">
             &#169; <?php echo date_i18n('Y') . ' '; bloginfo( 'name' ); ?>
             <span><?php if(is_front_page()): ?>
-                - <?php echo __('Built with','affidavit'); ?> <a href="<?php echo esc_url( __( 'http://mylawfirm.online/', 'affidavit' ) ); ?>"><?php printf( esc_html( '%s', 'affidavit' ), 'MyLawfirm.Online' ); ?></a> <span><?php _e('and','affidavit'); ?></span> <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'affidavit' ) ); ?>"><?php printf( esc_html( '%s', 'affidavit' ), 'WordPress' ); ?></a>
+                - <?php echo __('Built with','affidavit'); ?> <a href="<?php echo esc_url( __( 'http://mylawfirm.online/', 'affidavit' ) ); ?>"><?php printf( esc_html( '%s', 'affidavit' ), 'MyLawfirm.Online' ); ?></a> <span><?php esc_html_e('and','affidavit'); ?></span> <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'affidavit' ) ); ?>"><?php printf( esc_html( '%s', 'affidavit' ), 'WordPress' ); ?></a>
             <?php endif; ?>
             </span>
         </div>
