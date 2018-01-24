@@ -2,6 +2,9 @@
 
 == CHANGE LOG == 
 
+= Version 1.4.5 = = 24/01/2018
+* Update Bootstrap
+
 = Version 1.4.4 = = 22/01/2018
 * Fix - Fixed Primary Color issue(white color)
 
