@@ -10,49 +10,51 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-new suevafree_metaboxes ('team', array (
+new suevafree_metaboxes (
 
-array(  "name" => "Navigation",  
-		"type" => "navigation",  
-      
-		"item" => array( 
+'team', array (
 	
-			"setting" => esc_html__( "Setting","suevafree") , 
-
-		),   
-
-		"start" => "<ul>", 
-		"end" => "</ul>"),  
-
-array(  "type" => "begintab",
-		"tab" => "setting",
-		"element" =>
-
-		array(  "name" => esc_html__( "Setting","suevafree"),
-				"type" => "title",
-		),
-
-		array(  "name" => esc_html__( "Template","suevafree"),
-				"desc" => esc_html__( "Select a template for this page","suevafree"),
-				"id" => "suevafree_template",
-				"type" => "select",
-				"options" => array(
-					
-					"full" => esc_html__( "Full Width","suevafree"),
-					"left-sidebar" =>  esc_html__( "Left Sidebar","suevafree"),
-					"right-sidebar" => esc_html__( "Right Sidebar","suevafree")),
-			  
-				"std" => "right-sidebar",
+	array(  'name' => 'Navigation',  
+			'type' => 'navigation',  
+		  
+			'item' => array( 
 		
-		),
-
-),
-
-array(  "type" => "endtab"),
-array(  "type" => "endtab")
-
-)
-
+				'setting' => esc_html__( 'Setting','suevafree') , 
+	
+			),   
+	
+			'start' => '<ul>', 
+			'end' => '</ul>'),  
+	
+	array(  'type' => 'begintab',
+			'tab' => 'setting',
+			'element' =>
+	
+			array(  'name' => esc_html__( 'Setting','suevafree'),
+					'type' => 'title',
+			),
+	
+			array(  'name' => esc_html__( 'Template','suevafree'),
+					'desc' => esc_html__( 'Select a template for this page','suevafree'),
+					'id' => 'suevafree_template',
+					'type' => 'select',
+					'options' => array(
+						
+						'full' => esc_html__( 'Full Width','suevafree'),
+						'left-sidebar' =>  esc_html__( 'Left Sidebar','suevafree'),
+						'right-sidebar' => esc_html__( 'Right Sidebar','suevafree')),
+				  
+					'std' => 'right-sidebar',
+			
+			),
+	
+	),
+	
+	array(  'type' => 'endtab'),
+	array(  'type' => 'endtab')
+	
+	)
+	
 );
 
 

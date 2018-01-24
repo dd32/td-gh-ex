@@ -243,9 +243,6 @@ if (!function_exists('suevafree_css_custom')) {
 				
 			/* =================== END LINK STYLE =================== */
 		
-			if ( suevafree_setting('suevafree_custom_css_code') )
-				$css .= esc_html(suevafree_setting('suevafree_custom_css_code')); 
-		
 		$css .= '</style>';
 		
 		echo str_replace( array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $css);

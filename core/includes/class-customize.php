@@ -308,9 +308,6 @@ if( !class_exists( 'suevafree_customize' ) ) {
 
 			if (!suevafree_is_woocommerce_active())
 				$wp_customize->remove_control( 'suevafree_woocommerce_category_layout');
-			
-			if ($wp_version >= 4.7)
-				$wp_customize->remove_section( 'styles_section');
 
 	   }
 	

@@ -158,7 +158,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				'description' => esc_html__( 'From this section you can manage the color scheme of SuevaFree.','suevafree'),
 				'type' => 'section',
 				'panel' => 'general_panel',
-				'priority' => '10',
+				'priority' => '11',
 				'id' => 'colorscheme_section',
 
 			),
@@ -195,7 +195,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				'type' => 'section',
 				'id' => 'pagewidth_section',
 				'panel' => 'general_panel',
-				'priority' => '11',
+				'priority' => '12',
 
 			),
 
@@ -252,7 +252,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				'type' => 'section',
 				'id' => 'settings_section',
 				'panel' => 'general_panel',
-				'priority' => '12',
+				'priority' => '13',
 
 			),
 			
@@ -461,30 +461,6 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				
 				'std' => 'on',
 			
-			),
-
-			/* CUSTOM CSS */ 
-
-			array( 
-
-				'title' => esc_html__( 'Styles','suevafree'),
-				'description' => esc_html__( 'From this section you can include a custom css code.','suevafree'),
-				'type' => 'section',
-				'id' => 'styles_section',
-				'panel' => 'general_panel',
-				'priority' => '13',
-
-			),
-
-			array( 
-
-				'label' => esc_html__( 'Custom css','suevafree'),
-				'description' => esc_html__( 'Insert your custom css code.','suevafree'),
-				'id' => 'suevafree_custom_css_code',
-				'type' => 'textarea',
-				'section' => 'styles_section',
-				'std' => '',
-
 			),
 
 			/* LAYOUTS SECTION */ 
@@ -714,7 +690,7 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				'type' => 'section',
 				'id' => 'align_section',
 				'panel' => 'general_panel',
-				'priority' => '16',
+				'priority' => '15',
 
 			),
 
