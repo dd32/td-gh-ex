@@ -32,20 +32,20 @@
                                             ),
                                         ),
                                         array(
-                                            'sep'       => $GLOBALS['space_sep'],
-                                            'txt'       => esc_html__( '&copy;', 'applicator' ),
+                                            'sep'       => $GLOBALS['applicator_space_sep'],
+                                            'txt'       => esc_html( '&copy;' ),
                                             'css'       => 'copyright-symbol---txt',
                                         ),
                                         array(
-                                            'sep'       => $GLOBALS['space_sep'],
-                                            'txt'       => esc_html__( '2017', 'applicator' ),
+                                            'sep'       => $GLOBALS['applicator_space_sep'],
+                                            'txt'       => date('Y'),
                                             'css'       => 'year---txt',
                                         ),
                                     ),
                                     array(
                                         'css'   => 'applicator---line',
                                         array(
-                                            'sep'       => $GLOBALS['space_sep'],
+                                            'sep'       => $GLOBALS['applicator_space_sep'],
                                             'txt'       => esc_html( 'Applicator by DysineLab', 'applicator' ),
                                             'linked'    => true,
                                             'attr'      => array(

@@ -479,7 +479,7 @@ h6
 .applicator--theme--table .post-content tbody,
 .applicator--theme--table .comment-content tbody
 {
-    border: 2px solid hsla( 0, 0%, 0%, .125 );
+    border: 2px solid hsl( 0, 0%, 90% );
     border-left-width: 1px;
     border-right-width: 1px;
 }
@@ -498,7 +498,7 @@ h6
 .applicator--theme--table .comment-content td,
 .applicator--theme--table .comment-content tbody th
 {
-    border: 1px solid hsla( 0, 0%, 0%, .0625 );
+    border: 1px solid hsl( 0, 0%, 90% );
     
     border-right: 0;
     border-bottom: 0;
@@ -513,7 +513,7 @@ h6
 .applicator--theme--table .post-content tfoot,
 .applicator--theme--table .comment-content tfoot
 {
-    border: 2px solid hsla( 0, 0%, 0%, .125 );
+    border: 2px solid hsl( 0, 0%, 90% );
     border-left: 0;
     border-right: 0;
     border-top: 0;
@@ -686,7 +686,7 @@ h6
     
     margin-left: 1.25rem;
     
-    color: hsl(215, 100%, 45%););
+    color: #808080;
     
     line-height: 1;
     
@@ -702,9 +702,11 @@ h6
     
     min-height: 2.25rem;
     
-    line-height: 1;
+    color: #505050;
     
-    border: 1px solid hsl(215, 100%, 45%);
+    border: 1px solid hsla( 0, 0%, 0%, .125 );
+    
+    line-height: 1;
 }
 
 .applicator--theme--tags .apl-tags .post-tags---grp
@@ -774,7 +776,7 @@ h6
     
     line-height: 1;
     
-    border: 1px solid #505050;
+    border: 1px solid hsla( 0, 0%, 0%, .125 );
 }
 
 .applicator--theme--post-meta .post-published,
@@ -1186,15 +1188,10 @@ h6
 .applicator--theme--excerpt .show-more-glabel---g_l,
 .applicator--theme--excerpt .show-more-axn---a_l
 {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     
-    background-color: hsl(215, 100%, 45%);
-}
-
-.show-more-axn---a
-{
-    color: white;
+    border: 1px solid hsl(215, 100%, 45%);
 }
 
 .applicator--theme--excerpt .excerpt-link .ellipsis---sep::after
@@ -1475,49 +1472,6 @@ h6
 
 
 
-/* ------------------ Focus and Hover on Main Header UI Elements ------------------ */
-.tab-key--active .main-menu-toggle---b_l,
-.tab-key--active .main-search--inactive .main-search-toggle---b_l
-{
-    position: relative;
-}
-
-.tab-key--active .main-menu-toggle---b:focus,
-.tab-key--active .main-search--inactive .main-search-toggle---b:focus
-{
-    outline: 0;
-}
-
-.tab-key--active .main-menu-toggle---b_l:before,
-.tab-key--active .main-search--inactive .main-search-toggle---b_l:before
-{
-    content: '';
-    position: absolute;
-    z-index: 0;
-    
-    width: 100%;
-    height: 100%;
-    
-    background-color: #262626;
-    border-radius: 50%;
-    
-    opacity: 0;
-    transform: scale(0);
-    
-    transition: opacity .3s ease-in-out, transform .1s ease-in-out;
-}
-
-.tab-key--active .main-menu-toggle---b:focus .b_l:before,
-.tab-key--active .main-search--inactive .main-search-toggle---b:focus .b_l:before
-{
-    opacity: .25;
-    transform: scale(.85);
-}
-
-
-
-
-
 /* ------------------ Viewport Width: 768 ------------------ */
 
 @media only screen and ( min-width: 48em )
@@ -1642,3 +1596,47 @@ h6
     }
 
 }
+
+
+
+
+
+/* ------------------ Focus and Hover on Main Header UI Elements ------------------ 
+.tab-key--active .main-menu-toggle---b_l,
+.tab-key--active .main-search--inactive .main-search-toggle---b_l
+{
+    position: relative;
+}
+
+.tab-key--active .main-menu-toggle---b:focus,
+.tab-key--active .main-search--inactive .main-search-toggle---b:focus
+{
+    outline: 0;
+}
+
+.tab-key--active .main-menu-toggle---b_l:before,
+.tab-key--active .main-search--inactive .main-search-toggle---b_l:before
+{
+    content: '';
+    position: absolute;
+    z-index: 0;
+    
+    width: 100%;
+    height: 100%;
+    
+    background-color: #262626;
+    border-radius: 50%;
+    
+    opacity: 0;
+    transform: scale(0);
+    
+    transition: opacity .3s ease-in-out, transform .1s ease-in-out;
+}
+
+.tab-key--active .main-menu-toggle---b:focus .b_l:before,
+.tab-key--active .main-search--inactive .main-search-toggle---b:focus .b_l:before
+{
+    opacity: .25;
+    transform: scale(.85);
+}
+*/
