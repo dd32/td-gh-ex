@@ -1,6 +1,9 @@
 iFeature Changelog
 
 ****************************
+Version 6.6 (01/25/17)
+- Improved admin look and feel
+
 Version 6.5 (12/26/17)
 - Visual Improvements to the Admin Dashboard
 - Fixed Recent post widget issue (No of posts field not working)

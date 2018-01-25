@@ -54,7 +54,7 @@ jQuery(document).ready(function ($) {
 		product_element: "cyberchimps_product_section",
 		recent_posts: "cyberchimps_recent_posts_section",
 		html_box: "cyberchimps_html_box_section",
-		boxes: "cyberchimps_boxes_section",
+		boxes_lite: "cyberchimps_blog_boxes_lite_section",
 		separator: "cyberchimps_separator_section",
 		blank_space: "cyberchimps_blank_space_section",
 		google_maps: "cyberchimps_google_maps_section",
@@ -485,7 +485,7 @@ jQuery(document).ready(function ($) {
 	if ($('#cyberchimps_blog_slider_lite_section .field-container-wrapper .field-container:last').prev().is(':hidden')) {
 
 		// Add button to add new slider.
-		$('#cyberchimps_blog_slider_lite_section .field-container-wrapper').append('<div class="field-container"><button id="add_new_slide" class="btn btn-primary"><i class="icon-plus icon-white"></i></button></div>');
+		$('#cyberchimps_blog_slider_lite_section .field-container-wrapper').append('<div class="field-container"><button id="add_new_slide" class="btn slide btn-primary">Add Slide</button></div>');
 
 		// Print remaining number of slider that can be added.
 		$('#cyberchimps_blog_slider_lite_section .field-container:last').append('<div class="slider-countdown">' + slider_countdown() + ' more sliders remaining</div>');
