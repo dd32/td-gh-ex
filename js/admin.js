@@ -6,7 +6,7 @@
  
 ( function( $ ) {
 	$( document ).ready( function() {
-		$( '.theme[aria-describedby*="beonepage-lite"]' ).append( '<div class="theme-update">' + admin_vars.upgrade_available + '</div>' );
+		$( '.theme[aria-describedby*="beonepage-lite"]' ).append( '<div class="theme-update">' + be_admin_vars.upgrade_available + '</div>' );
 
 		$( '.theme' ).click( function() {
 			var themeName = $( '.theme-info .theme-name' ).text();
