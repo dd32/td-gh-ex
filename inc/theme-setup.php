@@ -116,22 +116,21 @@ if ( ! function_exists( 'best_reloaded_load_styles' ) ) {
 		if ( ! is_admin() ) {
 			// we can either have full bootstrap or a slim version. For ease
 			// keep handle the same but change src and tag the slim version.
-			if ( ! get_theme_mod( 'enable_slim_mode', false ) ){
-				wp_register_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', '4.0.0-beta' );
+			if ( ! get_theme_mod( 'enable_slim_mode', best_reloaded_setting_defaults( 'enable_slim_mode' ) ) ) {
+				wp_register_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', '4.0.0' );
 			} else {
-				wp_register_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap-slim.min.css', '4.0.0-beta-slim' );
+				wp_register_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap-slim.min.css', '4.0.0-slim' );
 			}
 
-
 			wp_register_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', '4.7.0' );
-			wp_enqueue_style( 'best-reloaded', get_template_directory_uri() . '/assets/css/style.min.css', array( 'bootstrap' ), '1.4.0' );
+			wp_enqueue_style( 'best-reloaded', get_template_directory_uri() . '/assets/css/style.min.css', array( 'bootstrap' ), '2.0.0' );
 
-			if ( get_theme_mod( 'enable_font-awesome', true ) ) {
+			if ( get_theme_mod( 'enable_font-awesome', best_reloaded_setting_defaults( 'enable_font-awesome' ) ) ) {
 				wp_enqueue_style( 'font-awesome' );
 			}
 
 			// we want to add some additional styles based on navbar style.
-			$nav_style = get_theme_mod( 'navbar_style', 'fixed-top' );
+			$nav_style = get_theme_mod( 'navbar_style', best_reloaded_setting_defaults( 'navbar_style' ) );
 			switch ( $nav_style ) {
 				case 'fixed-top':
 					$css = '
@@ -153,7 +152,7 @@ if ( ! function_exists( 'best_reloaded_load_styles' ) ) {
 					break;
 			}
 			wp_add_inline_style( 'best-reloaded', $css, 20 );
-		}
+		} // End if().
 	}
 } // End if().
 add_action( 'wp_enqueue_scripts', 'best_reloaded_load_styles' );
@@ -166,17 +165,17 @@ if ( ! function_exists( 'best_reloaded_load_scripts' ) ) {
 		if ( ! is_admin() ) {
 			// we can either have full bootstrap or a slim version. For ease
 			// keep handle the same but change src and tag the slim version.
-			if ( ! get_theme_mod( 'enable_slim_mode', false ) ){
-				wp_register_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array( 'jquery', 'popper' ), '4.0.0-beta', true );
+			if ( ! get_theme_mod( 'enable_slim_mode', best_reloaded_setting_defaults( 'enable_slim_mode' ) ) ) {
+				wp_register_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array( 'jquery', 'popper' ), '4.0.0', true );
 			} else {
-				wp_register_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap-slim.min.js', array( 'jquery', 'popper' ), '4.0.0-beta-slim', true );
+				wp_register_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap-slim.min.js', array( 'jquery', 'popper' ), '4.0.0-slim', true );
 			}
 			// register popper - needed by bootstrap affix.
 			wp_register_script( 'popper', get_template_directory_uri() . '/assets/js/popper.min.js', array( 'jquery' ), '1.11.1', true );
 
 			// enqueue the main theme scripts file - which will in turn enqueue
 			// bootstrap, tether and jQuery due to dependancy chaining.
-			wp_enqueue_script( 'best-reloaded', get_template_directory_uri() . '/assets/js/scripts.min.js', array( 'bootstrap', 'jquery' ), '1.4.0', true );
+			wp_enqueue_script( 'best-reloaded', get_template_directory_uri() . '/assets/js/scripts.min.js', array( 'bootstrap', 'jquery' ), '2.0.0', true );
 
 			// only enqueue comment-reply script on single pages.
 			if ( is_single() ) {
@@ -187,65 +186,6 @@ if ( ! function_exists( 'best_reloaded_load_scripts' ) ) {
 }
 add_action( 'wp_enqueue_scripts', 'best_reloaded_load_scripts' );
 
-
-
-if ( ! function_exists( 'best_reloaded_theme_options' ) ) {
-	/**
-	 * Echo out color options from admin panel
-	 **/
-	function best_reloaded_theme_options() {
-
-		// these are all hex values.
-		$text_color_featured    	= get_theme_mod( 'text_color_featured_content' );
-		$link_color_main 			= get_theme_mod( 'link_color_main' );
-		$link_color_hover_main 		= get_theme_mod( 'link_hover_color_main' );
-		$link_color_footer 			= get_theme_mod( 'link_color_footer' );
-		$link_color_hover_footer	= get_theme_mod( 'link_hover_color_footer' );
-		$link_color_featured    	= get_theme_mod( 'link_color_featured_content' );
-		$link_color_hover_featured 	= get_theme_mod( 'link_hover_color_featured_content' ); ?>
-
-			<style type="text/css">
-
-			<?php
-			if ( $text_color_featured ) { ?>
-				.featured-bar { color: <?php echo esc_html( $text_color_featured ); ?>; }
-			<?php } ?>
-			<?php if ( $link_color_featured ) { ?>
-				.featured-bar a { color: <?php echo esc_html( $link_color_featured ); ?>; }
-			<?php } ?>
-			<?php if ( $link_color_hover_featured ) { ?>
-				.featured-bar a:hover { color: <?php echo esc_html( $link_color_hover_featured ); ?>; }
-			<?php } ?>
-			<?php if ( $link_color_main ) { ?>
-				a, .comment-notes .required, .comment-form-author .required,
-				.comment-form-email .required, .comment-form-url .required, .comment-form-comment .required { color: <?php echo esc_html( $link_color_main ); ?>; }
-				footer .container.container-main.footer-top { border-top-color: <?php echo esc_html( $link_color_main ); ?>; }
-				.flex-direction-nav li a, .flex-control-nav li a.active,
-				.flex-control-nav li a:hover, .flex-control-nav li a:focus,
-				.sub-menu li > a:hover, .sub-menu .active > a, .sub-menu .active > a:hover { background-color: <?php echo esc_html( $link_color_main ); ?>; }
-				.wp-caption a:hover img { border-color: <?php echo esc_html( $link_color_main ); ?>; }
-			<?php } ?>
-			<?php if ( $link_color_hover_main ) { ?>
-				a:hover { color: <?php echo esc_html( $link_color_hover_main ); ?>; }
-			<?php } ?>
-			<?php if ( $link_color_footer ) { ?>
-				footer .container.container-main a { color: <?php echo esc_html( $link_color_footer ); ?>; }
-			<?php } ?>
-			<?php if ( $link_color_hover_footer ) { ?>
-				footer .container.container-main a:hover { color: <?php echo esc_html( $link_color_hover_footer );  ?>; }
-			<?php } ?>
-
-			</style>
-
-		<?php
-	}
-}// End if().
-add_action( 'wp_head', 'best_reloaded_theme_options' );
-
-
-
-add_filter( 'wp_list_categories', 'best_reloaded_remove_category_list_rel' );
-add_filter( 'the_category', 'best_reloaded_remove_category_list_rel' );
 if ( ! function_exists( 'best_reloaded_remove_category_list_rel' ) ) {
 	/**
 	 * Remove rel attribute from the category list
@@ -259,10 +199,9 @@ if ( ! function_exists( 'best_reloaded_remove_category_list_rel' ) ) {
 		return $output;
 	}
 }
+add_filter( 'wp_list_categories', 'best_reloaded_remove_category_list_rel' );
+add_filter( 'the_category', 'best_reloaded_remove_category_list_rel' );
 
-
-
-add_filter( 'excerpt_length', 'best_reloaded_custom_excerpt_length', 999 );
 if ( ! function_exists( 'best_reloaded_custom_excerpt_length' ) ) {
 	/**
 	 * Custom excerpt length and more text
@@ -278,7 +217,8 @@ if ( ! function_exists( 'best_reloaded_custom_excerpt_length' ) ) {
 		return 40;
 	}
 }
-add_filter( 'excerpt_more', 'best_reloaded_new_excerpt_more' );
+add_filter( 'excerpt_length', 'best_reloaded_custom_excerpt_length', 999 );
+
 if ( ! function_exists( 'best_reloaded_new_excerpt_more' ) ) {
 	/**
 	 * Function to handle custom excerpt more link
@@ -298,8 +238,8 @@ if ( ! function_exists( 'best_reloaded_new_excerpt_more' ) ) {
 		return ' &hellip; ' . $link;
 	}
 }
+add_filter( 'excerpt_more', 'best_reloaded_new_excerpt_more' );
 
-add_filter( 'widget_tag_cloud_args', 'best_reloaded_custom_tag_cloud_widget' );
 if ( ! function_exists( 'best_reloaded_custom_tag_cloud_widget' ) ) {
 	/**
 	 * Custom tagcloud tweaks
@@ -315,3 +255,4 @@ if ( ! function_exists( 'best_reloaded_custom_tag_cloud_widget' ) ) {
 		return $args;
 	}
 }
+add_filter( 'widget_tag_cloud_args', 'best_reloaded_custom_tag_cloud_widget' );
