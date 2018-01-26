@@ -124,10 +124,10 @@ function thebox_scripts() {
 	wp_enqueue_style( 'thebox-fonts', thebox_fonts_url(), array(), null );
 	
 	// Add Icons Font, used in the main stylesheet.
-	wp_enqueue_style( 'thebox-icons', get_template_directory_uri() . '/fonts/fa-icons.css', array(), '1.7' );
+	wp_enqueue_style( 'thebox-icons', get_template_directory_uri() . '/fonts/fa-icons.min.css', array(), '1.7' );
 		
 	// Loads main stylesheet.
-	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.4.9' );
+	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.4.9.1' );
 	
 	wp_enqueue_script( 'thebox-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20170220', true );
 
@@ -393,7 +393,7 @@ require_once( trailingslashit( get_template_directory() ) . '/inc/customize-pro/
         <p>
           <?php
             printf(__('<strong>Upgrade to The Box Plus</strong> to get extended functionality and advanced customization options: %1$s', 'the-box'),
-            sprintf('<a class="button button-primary" style="text-decoration:none" href="https://www.designlabthemes.com/the-box-plus-wordpress-theme/?utm_source=wordpress&utm_campaign=the_box&utm_content=notice_button" target="_blank">%s</a>', '<strong>Try The Box Plus</strong>')
+            sprintf('<a class="button button-primary" style="text-decoration:none" href="https://www.designlabthemes.com/the-box-plus-wordpress-theme/?utm_source=notice_button&utm_medium=wordpress_dashboard&utm_campaign=the_box_upsell" target="_blank">%s</a>', '<strong>Try The Box Plus</strong>')
             );
           ?>
         </p>

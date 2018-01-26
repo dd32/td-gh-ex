@@ -75,7 +75,7 @@ final class TheBox_Pro_Customize {
 				array(
 					'title'    => esc_html__( 'The Box Plus', 'the-box' ),
 					'pro_text' => esc_html__( 'View The Box Plus', 'the-box' ),
-					'pro_url'  => 'https://www.designlabthemes.com/the-box-plus-wordpress-theme/?utm_source=wordpress&utm_campaign=the_box&utm_content=customizer_button',
+					'pro_url'  => esc_url_raw('https://www.designlabthemes.com/the-box-plus-wordpress-theme/?utm_source=customizer_button&utm_medium=wordpress_dashboard&utm_campaign=the_box_upsell'),
 					'priority' => 1
 				)
 			)

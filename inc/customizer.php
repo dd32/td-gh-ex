@@ -58,7 +58,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		public function render_content() {
     	$important_links = array(
 			'upgrade' => array(
-	        'link' => esc_url('https://www.designlabthemes.com/the-box-plus-wordpress-theme/?utm_source=wordpress&utm_campaign=the_box&utm_content=customizer_link'),
+	        'link' => esc_url('https://www.designlabthemes.com/the-box-plus-wordpress-theme/?utm_source=customizer_link&utm_medium=wordpress_dashboard&utm_campaign=the_box_upsell'),
 	        'text' => __('Try The Box Plus', 'the-box'),
 	        ),
 			'theme' => array(
