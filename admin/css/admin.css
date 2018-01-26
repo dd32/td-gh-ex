@@ -247,10 +247,15 @@ a[href="themes.php?page=greenr_upgrade"] {
   position:relative;
 }
 #webulous-create-web img {
-  position: absolute;
+  position: absolute; 
   top:30px;
   right:35px;
   border:none;
+}
+
+#webulous-create-web a {
+  text-decoration: none;
+  box-shadow: none;
 }
 #webulous-create-web h3 {
   margin-bottom: 15px;

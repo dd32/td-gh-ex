@@ -31,14 +31,18 @@ if( get_theme_mod('enable_primary_color',false) ) {
 	add_action( 'wp_head','wbls_customizer_primary_custom_css' );
 
 	function wbls_customizer_primary_custom_css() {
-			$primary_color = get_theme_mod( 'primary_color','#56cc00'); ?>
+			$primary_color = get_theme_mod( 'primary_color','#56cc00'); 
+			$newcolor = array($primary_color,substr(str_replace(',',', ',Kirki_Color::get_rgb($primary_color,true)),4,-1)); ?>
 
 	<style type="text/css">
-			.site-footer .scroll-to-top:hover,.portfolioeffects .portfolio_overlay {
-					opacity: 0.6;
-				}
+			.portfolioeffects:hover .portfolio_overlay {
+				background-color: rgba(<?php echo $newcolor[1];?>,0.6);
+			}
+			.site-footer .scroll-to-top:hover {
+				opacity: 0.6;
+			}
 	</style>
 <?php
-		}
+	}
 }
 

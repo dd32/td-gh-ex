@@ -140,15 +140,15 @@ function greenr_display_upgrade() {
         $tab = null;
     } 
      
-    $pro_theme_url = 'https://webulousthemes.com/theme/greenr-pro/';
+    $pro_theme_url = 'https://www.webulousthemes.com/theme/greenr-pro/';
     $doc_url  = 'https://www.webulousthemes.com/greenr-free/';
-    $support_url = 'https://webulousthemes.com/free-support-request/';   
+    $support_url = 'https://www.webulousthemes.com/free-support-request/';   
     
     $current_action_link =  admin_url( 'themes.php?page=greenr_upgrade&tab=pro_features' ); ?>
     <div class="greenr-wrapper about-wrap">
         <h1><?php printf(esc_html__('Welcome to %1$s - Version %2$s', 'greenr'), $theme_data->Name ,$theme_data->Version ); ?></h1><?php
         printf( __('<div class="about-text">  Greenr is uniquely designed, elegant looking responsive theme. It uses Skeleton Grid system and SASS to keep CSS DRY. It is multi purpose theme and suited for all types of sites. It comes with Jigoshop support. It has advanced theme options panel to customize various parts of site, footer widget area to accommodate 4 widgets.</div>', 'greenr') ); ?>
-        <a href="https://webulousthemes.com/" target="_blank" class="wp-badge welcome-logo"></a>   
+        <a href="https://www.webulousthemes.com/" target="_blank" class="wp-badge welcome-logo"></a>   
         <p class="upgrade-btn"><a class="upgrade" href="<?php echo esc_url($pro_theme_url); ?>" target="_blank"><?php printf( __( 'Buy %1s Pro - $39', 'greenr'), $theme_data->Name ); ?></a></p>
 
        <h2 class="nav-tab-wrapper">
@@ -162,15 +162,15 @@ function greenr_display_upgrade() {
             <div class="theme_info info-tab-content">
                 <div class="theme_info_column clearfix">
                     <div id="webulous-create-web">
-                        <div id="webulous-mode-wrap"> 
-                            <h3>New to Creating a Website?</h3> 
-                            <p>We will build you a complete website based on the theme you selected. We will populate content, change colors and do any look and feel customisation work you prefer.</p>
-                        </div>
-                        <div class="image-wrap">
-                            <a href="https://www.webulousthemes.com/checkout?edd_action=add_to_cart&download_id=23052" target="_blank">
-                            <?php echo sprintf ( '<img src="'. get_template_directory_uri() .'/images/api.png" alt="%1$s" />',__('Image','greenr') ); ?>
-                            </a>
-                        </div>
+                        <a href="https://www.webulousthemes.com/checkout?edd_action=add_to_cart&download_id=23052" target="_blank">
+                            <div id="webulous-mode-wrap">
+                                <h3>New to Creating a Website?</h3> 
+                                <p>We will build you a complete website based on the theme you selected. We will populate content, change colors and do any look and feel customisation work you prefer.</p>
+                            </div>
+                            <div class="image-wrap">
+                                <?php echo sprintf ( '<img src="'. get_template_directory_uri() .'/images/api.png" alt="%1$s" />',__('Image','greenr') ); ?>
+                            </div>
+                        </a>
                     </div>
                     <div class="theme_info_left">
                         <div class="theme_link">

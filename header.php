@@ -103,10 +103,15 @@ endif;
 				<div class="ten columns">
 					<div class="top-right">
 						<nav id="site-navigation" class="main-navigation" role="navigation">
-							<button class="menu-toggle"><?php echo apply_filters('greenr_responsive_menu_title',__('Primary Menu','greenr') ); ?></button>
-							<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+							<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php echo apply_filters('greenr_responsive_menu_title',__('Primary Menu','greenr') ); ?></button>
+							<?php wp_nav_menu( array(
+								'theme_location' => 'primary', 
+							 	'link_before' => '<span>',
+							 	'link_after' => '</span>'
+						 	) ); ?>
 						</nav><!-- #site-navigation -->
 					</div>
+					<?php do_action('greenr_after_primary_nav'); ?>
 				</div>
 				
 			</div>

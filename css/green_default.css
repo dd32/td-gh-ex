@@ -860,12 +860,32 @@ a {
   display: none; }
 
 @media screen and (max-width: 600px) {
-  .menu-toggle,
-  .main-navigation.toggled .nav-menu {
-    display: block; }
+  .menu-toggle {
+    background: #000000;
+    color: #ffffff; }
+    .menu-toggle:hover {
+      color: #ffffff; }
 
-  .main-navigation ul {
+  .menu-toggle,
+  .main-navigation.toggled ul.nav-menu {
+    display: block; }
+    .menu-toggle li,
+    .main-navigation.toggled ul.nav-menu li {
+      float: none; }
+    .menu-toggle ul li:hover ul,
+    .main-navigation.toggled ul.nav-menu ul li:hover ul {
+      left: auto;
+      margin-left: 50%; }
+
+  .main-navigation {
+    background: transparent !important;
+    padding: 20px 0px; }
+
+  .main-navigation ul.nav-menu {
     display: none; }
+
+  .site-header.site-header-sticky {
+    position: static !important; }
 
   .sticky-header #header-bottom {
     position: static !important; } }

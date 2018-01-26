@@ -492,19 +492,16 @@ greenr_Kirki::add_field( 'greenr', array(
 	'settings' => 'color',
 	'label'    => __( 'Select your color scheme', 'greenr' ),
 	'section'  => 'greenr_customizer_options',
-	'type'     => 'select',
+	'type'     => 'palette',
 	'choices'     => array(
     '1' => array(
-		'Green_default',
+		'#56cc00',
 	),
 	'2' => array(
-		'Green_pattern',
+		'#56cc00',
 	),
 	'3' => array(
-		'Green_flat',
-	),
-	'4' => array(
-		'More color schemes in Greenr Pro Version',
+		'#1ec185',
 	),
 ),
 'default' => '1',
