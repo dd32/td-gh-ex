@@ -2,13 +2,13 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
-class ascend_image_widget extends WP_Widget{
-    private static $instance = 0;
-    public function __construct() {
-        $widget_ops = array('classname' => 'kadence_about_with_image', 'description' => __('This allows for an image and a simple about text.', 'ascend'));
-        parent::__construct('kadence_about_with_image', __('Ascend: Image', 'ascend'), $widget_ops);
-    }
+if ( ! class_exists( 'ascend_image_widget' ) ) {
+	class ascend_image_widget extends WP_Widget{
+	    private static $instance = 0;
+	    public function __construct() {
+	        $widget_ops = array('classname' => 'kadence_about_with_image', 'description' => __('This allows for an image and a simple about text.', 'ascend'));
+	        parent::__construct('kadence_about_with_image', __('Ascend: Image', 'ascend'), $widget_ops);
+	    }
 
     public function widget($args, $instance){ 
     	if ( ! isset( $args['widget_id'] ) ) {
@@ -141,4 +141,5 @@ class ascend_image_widget extends WP_Widget{
     <?php
   }
 
+}
 }

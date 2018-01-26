@@ -42,7 +42,7 @@ $ascend = ascend_get_options();
 		<div class="page-header">
 			<div class="page-header-inner">
 			<div class="header-case">
-		  		<h1 class="entry-title" <?php echo 'data-max-size="'.esc_attr($title_data).'" data-min-size="'.esc_attr($title_small_data).'"'; ?>><?php echo esc_html(ascend_title()); ?></h1>
+		  		<h1 class="entry-title" <?php echo 'data-max-size="'.esc_attr($title_data).'" data-min-size="'.esc_attr($title_small_data).'"'; ?>><?php echo wp_kses_post( ascend_title() ); ?></h1>
 		  		</div>
 			  	<?php if(!empty($bsub)) { echo '<div class="subtitle" data-max-size="'.esc_attr($subtitle_data).'" data-min-size="'.esc_attr($subtitle_small_data).'"> '.wp_kses_post($bsub).' </div>'; } ?>
 			</div>

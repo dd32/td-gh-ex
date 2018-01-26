@@ -22,7 +22,6 @@ require_once( trailingslashit( get_template_directory() ) . 'lib/classes/class-a
 require_once( trailingslashit( get_template_directory() ) . 'lib/classes/class-ascend_walker_nav_menu_custom.php');     // Custom Walker
 require_once( trailingslashit( get_template_directory() ) . 'lib/classes/class-ascend_custom_menu.php');     			// Custom Menu settings
 require_once( trailingslashit( get_template_directory() ) . 'lib/ascend_plugins_activate.php');   						// Plugin Activation
-require_once( trailingslashit( get_template_directory() ) . 'lib/classes/cmb/init.php');     							// Init Metaboxes
 require_once( trailingslashit( get_template_directory() ) . 'lib/metaboxes/ascend_cmb_extensions.php');     			// Custom Metaboxe Settings
 require_once( trailingslashit( get_template_directory() ) . 'lib/config.php');          								// Configuration
 require_once( trailingslashit( get_template_directory() ) . 'lib/config-pagetitle.php');          						// Page title Configuration
@@ -40,6 +39,8 @@ require_once( trailingslashit( get_template_directory() ) . 'lib/metaboxes/post-
 require_once( trailingslashit( get_template_directory() ) . 'lib/metaboxes/sidebar-metaboxes.php');     			// Custom metaboxes
 require_once( trailingslashit( get_template_directory() ) . 'lib/metaboxes/page-template-blog-metaboxes.php');    	// Custom metaboxes
 require_once( trailingslashit( get_template_directory() ) . 'lib/metaboxes/portfolio-metaboxes.php');     			// Custom metaboxes
+require_once( trailingslashit( get_template_directory() ) . 'lib/metaboxes/pageheader-metaboxes.php');     			// Custom metaboxes
+require_once( trailingslashit( get_template_directory() ) . 'lib/metaboxes/postheader-metaboxes.php');     			// Custom metaboxes
 
 /*
  * Init Widgets
@@ -88,5 +89,4 @@ require_once( trailingslashit( get_template_directory() ) . 'lib/output_css.php'
  * Note: Do not add any custom code here. Please use a custom plugin or child theme so that your customizations aren't lost during updates.
  * https://www.kadencethemes.com/child-themes/
  */
-
 

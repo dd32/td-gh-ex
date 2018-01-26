@@ -55,7 +55,7 @@ function ascend_woo_archive_support() {
 		}
 	}
     function ascend_woo_main_wrap_content_open() {
-      	echo '<div id="content" class="container"><div class="row"><div class="main '.esc_attr(ascend_main_class()).'" role="main">';
+      	echo '<div id="content" class="container"><div class="row"><div class="main '.esc_attr( ascend_main_class() ).'" role="main">';
     }
     add_action( 'woocommerce_before_main_content', 'ascend_woo_main_wrap_content_open', 10 );
    
@@ -69,7 +69,7 @@ function ascend_woo_archive_support() {
 			echo '</div>';
 		echo '</div>';
     }
-    add_action( 'woocommerce_before_shop_loop', 'ascend_woo_loop_top', 10 );
+    add_action( 'woocommerce_before_shop_loop', 'ascend_woo_loop_top', 20 );
 
     function ascend_woo_main_wrap_content_close() {
       	echo '</div>';

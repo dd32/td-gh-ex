@@ -21,8 +21,8 @@ global $post;
 			<?php if(has_post_thumbnail()) { ?>
 				<meta itemprop="thumbnailURL" content="<?php the_post_thumbnail_url(); ?>"/>
 			<?php }
-			preg_match('/src="([^"]+)"/', $video, $match);
-			if(is_array($match)){
+			preg_match( '/src="([^"]+)"/', $video, $match );
+			if( is_array( $match ) && ! empty( $match ) ) {
 				$url = $match[1];
 			} else {
 				$url = '';

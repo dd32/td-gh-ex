@@ -13,34 +13,32 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.0.0
+ * @version     3.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-get_header( 'shop' ); ?>
+get_header( 'shop' );
 
-	<?php
-		/**
-		 * woocommerce_before_main_content hook.
-		 *
-		 * @hooked ascend_woo_shop_page_title - 5
-		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content) REPLACED BY THEME
-		 * @hooked ascend_woo_main_wrap_content_open - 10
-		 * @hooked woocommerce_breadcrumb - 20
-		 */
-		do_action( 'woocommerce_before_main_content' );
-	?>
 
-		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+	/**
+	 * woocommerce_before_main_content hook.
+	 *
+	 * @hooked ascend_woo_shop_page_title - 5
+	 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content) REPLACED BY THEME
+	 * @hooked ascend_woo_main_wrap_content_open - 10
+	 * @hooked woocommerce_breadcrumb - 20
+	 */
+	do_action( 'woocommerce_before_main_content' );
 
-			<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
+	if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
-		<?php endif; ?>
+		<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
 
-		<?php
+	<?php endif; 
+
 			/**
 			 * woocommerce_archive_description hook.
 			 *
@@ -48,11 +46,9 @@ get_header( 'shop' ); ?>
 			 * @hooked woocommerce_product_archive_description - 10
 			 */
 			do_action( 'woocommerce_archive_description' );
-		?>
+		
+			if ( have_posts() ) {
 
-		<?php if ( have_posts() ) : ?>
-
-			<?php
 				/**
 				 * woocommerce_before_shop_loop hook.
 				 *
@@ -60,51 +56,72 @@ get_header( 'shop' ); ?>
 				 * @hooked woocommerce_catalog_ordering - 30
 				 */
 				do_action( 'woocommerce_before_shop_loop' );
-			?>
 
-			<?php woocommerce_product_loop_start(); ?>
+				woocommerce_product_loop_start();
 
-				<?php woocommerce_product_subcategories(); ?>
+				if ( version_compare( WC_VERSION, '3.3', '>' ) ) {
+					if ( wc_get_loop_prop( 'total' ) ) {
+						while ( have_posts() ) {
+							the_post();
 
-				<?php while ( have_posts() ) : the_post(); ?>
+							/**
+							 * Hook: woocommerce_shop_loop.
+							 *
+							 * @hooked WC_Structured_Data::generate_product_data() - 10
+							 */
+							do_action( 'woocommerce_shop_loop' );
 
-					<?php wc_get_template_part( 'content', 'product' ); ?>
+							wc_get_template_part( 'content', 'product' );
+						}
+					}
+				} else  {
 
-				<?php endwhile; // end of the loop. ?>
+					woocommerce_product_subcategories(); 
 
-			<?php woocommerce_product_loop_end(); ?>
+					while ( have_posts() ) : the_post();
 
-			<?php
+						wc_get_template_part( 'content', 'product' ); 
+
+					endwhile; // end of the loop. 
+
+				}
+
+				woocommerce_product_loop_end(); \
+
 				/**
 				 * woocommerce_after_shop_loop hook.
 				 *
 				 * @hooked woocommerce_pagination - 10
 				 */
 				do_action( 'woocommerce_after_shop_loop' );
-			?>
+			} else {
+				if ( version_compare( WC_VERSION, '3.3', '<' ) ) {
+					if ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) {
+						wc_get_template( 'loop/no-products-found.php' );
+					}
+				} else {
+					/**
+					 * Hook: woocommerce_no_products_found.
+					 *
+					 * @hooked wc_no_products_found - 10
+					 */
+					do_action( 'woocommerce_no_products_found' );
 
-		<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
-
-			<?php wc_get_template( 'loop/no-products-found.php' ); ?>
-
-		<?php endif; ?>
-
-	<?php
+				}
+			} 
 		/**
 		 * woocommerce_after_main_content hook.
 		 *
 		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
 		 */
 		do_action( 'woocommerce_after_main_content' );
-	?>
 
-	<?php
 		/**
 		 * woocommerce_sidebar hook.
 		 *
 		 * @hooked woocommerce_get_sidebar - 10
 		 */
 		do_action( 'woocommerce_sidebar' );
-	?>
+	
 
-<?php get_footer( 'shop' ); ?>
+	get_footer( 'shop' );

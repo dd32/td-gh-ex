@@ -18,15 +18,27 @@ function ascend_display_page_breadcrumbs() {
 }
 function ascend_display_archive_breadcrumbs() {
     $ascend = ascend_get_options();
-    if(isset($ascend['show_breadcrumbs_archive'])) {
-      	if($ascend['show_breadcrumbs_archive'] == 1 ) {
-            $showbreadcrumbs = true;
-        } else {
-            $showbreadcrumbs = false;
-        }
+    if( is_tax( array( 'product_cat', 'product_tag' ) ) ) {
+    	if(isset($ascend['show_breadcrumbs_shop'])) {
+			if($ascend['show_breadcrumbs_shop'] == 1 ) {
+				$showbreadcrumbs = true;
+			} else {
+				$showbreadcrumbs = false;
+			}
+		} else {
+			$showbreadcrumbs = true;
+		}
     } else {
-        $showbreadcrumbs = true;
-    }
+		if(isset($ascend['show_breadcrumbs_archive'])) {
+			if($ascend['show_breadcrumbs_archive'] == 1 ) {
+				$showbreadcrumbs = true;
+			} else {
+				$showbreadcrumbs = false;
+			}
+		} else {
+			$showbreadcrumbs = true;
+		}
+	}
   return $showbreadcrumbs;
 }
 function ascend_display_post_breadcrumbs() {
@@ -44,8 +56,8 @@ function ascend_display_post_breadcrumbs() {
 }
 function ascend_display_shop_breadcrumbs() {
   	$ascend = ascend_get_options();
-   	if(isset($ascend['show_breadcrumbs_page'])) {
-	  	if($ascend['show_breadcrumbs_page'] == 1 ) {
+   	if(isset($ascend['show_breadcrumbs_shop'])) {
+	  	if($ascend['show_breadcrumbs_shop'] == 1 ) {
 	  		$showbreadcrumbs = true;
 	  	} else { 
 	  		$showbreadcrumbs = false;
@@ -227,6 +239,37 @@ function ascend_breadcrumbs() {
                         echo sprintf($link, esc_url(get_term_link( $ancestor->slug, 'product_cat' )), esc_html($ancestor->name)) . $sep;
                     }
                     echo sprintf($link, esc_url(get_term_link( $main_term->slug, 'product_cat' )), esc_html($main_term->name)) . $sep;
+                }
+            // EVENTS
+          	} else if( $post_type == "event" ) {
+          		$main_term = '';
+              	// check if yoast category set and there is a primary
+              	if(class_exists('WPSEO_Primary_Term')) {
+              		$WPSEO_term = new WPSEO_Primary_Term('event-category', $post->ID);
+					$WPSEO_term = $WPSEO_term->get_primary_term();
+					$WPSEO_term = get_term($WPSEO_term);
+					if (is_wp_error($WPSEO_term)) { 
+						if ( $terms = wp_get_post_terms( $post->ID, 'event-category', array( 'orderby' => 'parent', 'order' => 'DESC' ) ) ) {
+							if( is_array($terms) ) {
+								$main_term = $terms[0];
+							}
+						}
+					} else {
+						$main_term = $WPSEO_term;
+					}
+              	} elseif ( $terms = wp_get_post_terms( $post->ID, 'event-category', array( 'orderby' => 'parent', 'order' => 'DESC' ) ) ) {
+              		if( is_array($terms) ) {
+                    	$main_term = $terms[0];
+                	}
+                }
+                if($main_term){
+                	$ancestors = get_ancestors( $main_term->term_id, 'event-category' );
+                    $ancestors = array_reverse( $ancestors );
+                    foreach ( $ancestors as $ancestor ) {
+                        $ancestor = get_term( $ancestor, 'event-category' );
+                        echo sprintf($link, esc_url(get_term_link( $ancestor->slug, 'event-category' )), esc_html($ancestor->name)) . $sep;
+                    }
+                    echo sprintf($link, esc_url(get_term_link( $main_term->slug, 'event-category' )), esc_html($main_term->name)) . $sep;
                 }
             // TRIBE
           	} else if($post_type == "tribe_events") {

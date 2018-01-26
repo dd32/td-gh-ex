@@ -49,7 +49,7 @@ function ascend_setup() {
     // Indicate widget sidebars can use selective refresh in the Customizer.
     add_theme_support( 'customize-selective-refresh-widgets' );
 
-    define( 'ASCEND_VERSION', '1.2.0' );
+    define( 'ASCEND_VERSION', '1.2.1' );
     // Square
 	add_image_size( 'ascend-600x600', 600, 600, true);
 	//portrait
@@ -90,14 +90,20 @@ function ascend_filter_archive_title($title){
         	$title = single_tag_title( '', false );
     	} elseif (is_author()) {
       		$title = sprintf(__('Author: %s', 'ascend'), get_the_author());
-    	} else if ($term) {
-      		$title = $term->name;
-    	} elseif (is_day()) {
+      	} elseif (is_day()) {
       		$title = sprintf(__('Day: %s', 'ascend'), get_the_date());
     	} elseif (is_month()) {
       		$title = sprintf(__('Month: %s', 'ascend'), get_the_date('F Y'));
     	} elseif (is_year()) {
       		$title = sprintf(__('Year: %s', 'ascend'), get_the_date('Y'));
-    	} 
+    	} elseif ( is_tax( array('product_cat', 'product_tag') ) ) {
+    		$title = single_term_title( '', false );
+    	} else if ($term) {
+      		$title = $term->name;
+    	} else if ( function_exists( 'is_bbpress' ) ) {
+    		if ( is_bbpress() ) {
+    			$title = bbp_title();
+    		}
+    	}
     	return $title;
 }

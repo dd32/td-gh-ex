@@ -28,6 +28,12 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.2.1 | 26th January 2018 =
+* Fix: issue with toolkit, php7.2
+* Add: page, post head option.
+* Update: Archive title
+* Update: Prep for woo 3.3
+
 = Version 1.2.0 | 9th October 2017 =
 * Fix: Video iframe embed issue.
 * Update: Ready for woo 3.2

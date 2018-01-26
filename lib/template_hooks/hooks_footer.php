@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 add_action('wp_footer', 'ascend_header_extras_login_modal', 20);
 function ascend_header_extras_login_modal() {
 	$ascend = ascend_get_options();
-		if(isset($ascend['header_extras']['login']) && $ascend['header_extras']['login'] == '1' || isset($ascend['topbar_account']) && $ascend['topbar_account'] != 'none' && !is_user_logged_in()){ ?>
+		if(isset($ascend['header_extras']['login']) && $ascend['header_extras']['login'] == '1' || isset($ascend['topbar_account']) && $ascend['topbar_account'] != 'none' || (isset($ascend['mobile_header_account']) && ($ascend['mobile_header_account'] == 'right' || $ascend['mobile_header_account'] == 'left') ) && !is_user_logged_in() ){ ?>
 	        	<div class="mag-pop-modal mfp-hide mfp-with-anim kt-loggin-modal" id="kt-extras-modal-login" tabindex="-1" role="dialog" aria-hidden="true">
 	                <div class="pop-modal-content">
 	                    <div class="pop-modal-body">
@@ -116,22 +116,7 @@ function ascend_mobile_account_sldr() {
 	            </div>
 	        </div>
 	   		<?php 
-		  	} else { ?>
-		  		<div class="mag-pop-modal mfp-hide mfp-with-anim kt-loggin-modal" id="kt-mobile-modal-login" tabindex="-1" role="dialog" aria-hidden="true">
-	                <div class="pop-modal-content">
-	                    <div class="pop-modal-body">
-                    <?php
-                    	if (class_exists('woocommerce'))  {
-                    		wc_get_template( 'myaccount/form-login.php' );
-                    	} else {
-                    		wp_login_form();
-                    		wp_register('<p>'.__("Don't have an account?", "ascend"), '</p>');
-                    	}?>
-	                </div>
-	            </div>
-	        </div>
-	        <?php 
-		   	}
+		  	}
 	   	}
 	}
 }

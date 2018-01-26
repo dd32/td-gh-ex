@@ -62,7 +62,7 @@ function ascend_topbar_cart($side = 'right') {
       	<div class="kad-topbar-flex-item kad-topbar-cart kt-header-extras kad-topbar-item-<?php echo esc_attr($side);?>">
 	      	<ul class="sf-menu sf-menu-normal">
 			  	<li class="menu-cart-icon-kt sf-dropdown">
-					<a class="menu-cart-btn" href="<?php echo esc_url(WC()->cart->get_cart_url() ); ?>">
+					<a class="menu-cart-btn" href="<?php echo esc_url( wc_get_cart_url() ); ?>">
 			  			<div class="kt-top-extras-label">
 			  			<?php if(isset($ascend['topbar_cart_label']) && !empty($ascend['topbar_cart_label'])) { 
 	          				if(isset($ascend['tl_cart']) && !empty($ascend['tl_cart'])) {

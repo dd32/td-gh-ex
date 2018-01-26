@@ -142,7 +142,7 @@ function ascend_mobile_header_account($side = 'right') {
 					<span class="kt-extras-label header-underscore-icon"><i class="kt-icon-user"></i></span>
           		</button>
             <?php } else { ?>
-            	<button class="kt-woo-account-toggle kt-pop-modal" rel="nofollow" data-mfp-src="#kt-mobile-modal-login">
+            	<button class="kt-woo-account-toggle kt-pop-modal" rel="nofollow" data-mfp-src="#kt-extras-modal-login">
 					<span class="kt-extras-label"><i class="kt-icon-user"></i></span>
               	</button>
              <?php 	} ?>

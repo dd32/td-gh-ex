@@ -1407,6 +1407,10 @@ select.kt-no-select2 {
 .woocommerce-product-details__short-description {
   margin-bottom: 10px;
 }
+.woo_product_zoom_enabled .woocommerce-product-gallery__image a {
+  position: relative;
+  display: block;
+}
 .woo_product_zoom_enabled .woocommerce-product-gallery__image a:before {
   font-family: 'kt-font-awesome' !important;
   speak: none;
@@ -1459,6 +1463,7 @@ select.kt-no-select2 {
 }
 .kad-shop-top .woocommerce-ordering {
   min-width: 200px;
+  margin-bottom: 0;
 }
 .kad-shop-top .woocommerce-ordering .select2-container {
   width: 100%;

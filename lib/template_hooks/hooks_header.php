@@ -226,7 +226,7 @@ function ascend_header_extras($class = 'sf-menu-normal', $side = null) {
 						if($value == '1') { 
 							if (class_exists('woocommerce'))  {  ?>
 						        	<li class="menu-cart-icon-kt sf-dropdown">
-						        		<a class="menu-cart-btn" href="<?php echo esc_url($woocommerce->cart->get_cart_url() ); ?>">
+						        		<a class="menu-cart-btn" href="<?php echo esc_url( wc_get_cart_url() ); ?>">
 						          			<span class="kt-extras-label">
 							          			<?php if(isset($ascend['header_extras_cart']) && !empty($ascend['header_extras_cart'])) { 
 							          				if(isset($ascend['tl_cart']) && !empty($ascend['tl_cart'])) {
