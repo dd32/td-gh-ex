@@ -55,7 +55,14 @@ $slider_data .= '}';
 
 	if ( ashe_is_preview() ) {
 		array_pop($args);
+		$preview_count  = 0;
+		$preview_images = array(
+			get_template_directory_uri() .'/assets/images/image_5.jpg',
+			get_template_directory_uri() .'/assets/images/image_3.jpg',
+			get_template_directory_uri() .'/assets/images/image_6.jpg'
+		);
 	}
+	
 
 	$sliderQuery = new WP_Query();
 	$sliderQuery->query( $args );
@@ -65,11 +72,18 @@ $slider_data .= '}';
 
 	while ( $sliderQuery->have_posts() ) : $sliderQuery->the_post();
 
+		if ( ashe_is_preview() ) {
+			$featured_image = $preview_images[$preview_count];
+			$preview_count++;
+		} else {
+			$featured_image = get_the_post_thumbnail_url();
+		}
+		
 	?>
 
 	<div class="slider-item">
 
-		<div class="slider-item-bg" style="background-image:url(<?php echo the_post_thumbnail_url(); ?>);"></div>
+		<div class="slider-item-bg" style="background-image:url(<?php echo esc_url($featured_image); ?>);"></div>
 
 		<div class="cv-container image-overlay">
 			<div class="cv-outer">

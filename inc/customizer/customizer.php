@@ -409,6 +409,7 @@ function ashe_customize_register( $wp_customize ) {
 		)
 	);
 
+
 /*
 ** General Layouts =====
 */
@@ -512,6 +513,21 @@ function ashe_customize_register( $wp_customize ) {
 	ashe_number_absint_control( 'title_tagline', 'logo_width', esc_html__( 'Width', 'ashe' ), array( 'step' => '10' ), 'postMessage', 8 );
 
 	$wp_customize->get_control( 'custom_logo' )->transport = 'selective_refresh';
+
+	// Pro Version
+	$wp_customize->add_setting( 'pro_version_logo', array(
+		'sanitize_callback' => 'ashe_sanitize_custom_control'
+	) );
+	$wp_customize->add_control( new Ashe_Customize_Pro_Version ( $wp_customize,
+			'pro_version_logo', array(
+				'section'	  => 'title_tagline',
+				'type'		  => 'pro_options',
+				'label' 	  => esc_html__( 'Logo Options', 'ashe' ),
+				'description' => esc_html( 'http://wp-royal.com/themes/ashe/customizer/free/typography.html?ref=demo-ashe-free-top-bar-typography' ),
+				'priority'	  => 50
+			)
+		)
+	);
 
 
 /*

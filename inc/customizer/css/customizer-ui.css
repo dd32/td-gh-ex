@@ -139,6 +139,10 @@ li[id*="pro_version"] a {
 	font-weight: bold;
 }
 
+#customize-control-pro_version_logo {
+	margin-bottom: 30px !important;
+}
+
 /* Display Header Text Color */
 #customize-control-header_textcolor {
 	display: block !important;
