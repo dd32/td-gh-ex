@@ -2,6 +2,9 @@
 
 == CHANGE LOG == 
 
+= Version 1.4.6 = = 27/01/2018
+* Do shortcode for section subtitle & description
+
 = Version 1.4.5 = = 24/01/2018
 * Update Bootstrap
 

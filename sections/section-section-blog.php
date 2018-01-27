@@ -28,7 +28,7 @@
     <?php if ( $section_title !='' || $section_subtitle !='' ){?>
     <div class="section-title-area">
       <h2 class="section-title text-center avata-section_title_team <?php echo $avata_animation;?>" ata-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo esc_attr($section_title);?></h2>
-      <p class="section-subtitle text-center avata-section_subtitle_team <?php echo $avata_animation;?>" ata-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo wp_kses($section_subtitle, $allowedposttags);?></p>
+      <p class="section-subtitle text-center avata-section_subtitle_team <?php echo $avata_animation;?>" ata-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo wp_kses(do_shortcode($section_subtitle), $allowedposttags);?></p>
     </div>
     <?php }?>
       <div class="section-content">

@@ -23,7 +23,7 @@
             <div class="avata-container">
               <div class="avata-section-title-wrap text-center">
                 <h2 class="section-title" style="color:<?php echo $font_color;?>"><span><?php echo esc_attr($item['title']);?></span></h2>
-                <p class="section-subtitle" style="color:<?php echo $font_color;?>"><?php echo wp_kses($item['description'], $allowedposttags);?></p>
+                <p class="section-subtitle" style="color:<?php echo $font_color;?>"><?php echo wp_kses(do_shortcode($item['description']), $allowedposttags);?></p>
               </div>
               <div class="avata-button-group">
               <?php if( $item['left_btn_text'] !=''){?>

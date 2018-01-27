@@ -34,7 +34,7 @@
             <div class="testimonial-slide text-center">
               <figure> <img src="<?php echo esc_url($item['avatar']);?>" alt="<?php echo esc_attr($item['name']);?>"> </figure>
               <blockquote>
-                <p>"<?php echo wp_kses($item['description'], $allowedposttags);?>"</p>
+                <p>"<?php echo wp_kses(do_shortcode($item['description']), $allowedposttags);?>"</p>
               </blockquote>
               <span><?php echo esc_attr($item['name']);?>, <?php echo esc_attr($item['role']);?></span>
                </div>

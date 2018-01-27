@@ -23,7 +23,7 @@
           <div class="intro-content">
             <div class="avata-section-title-wrap">
               <h2 class="section-title avata-section_title_intro_1 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo esc_attr($section_title);?></h2>
-              <p class="section-subtitle avata-section_subtitle_intro_1 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo wp_kses($section_subtitle, $allowedposttags);?></p>
+              <p class="section-subtitle avata-section_subtitle_intro_1 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo wp_kses(do_shortcode($section_subtitle), $allowedposttags);?></p>
             </div>
             <div class="avata-intro">
               <div class="avata-intro-content avata-section_content_intro_1 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"> <?php echo wp_kses(do_shortcode($section_content), $allowedposttags);?> </div>
@@ -38,7 +38,7 @@
           <div class="intro-content">
             <div class="avata-section-title-wrap">
               <h2 class="section-title avata-section-title avata-section_title_intro_1 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo esc_attr($section_title);?></h2>
-              <p class="avata-section-subtitle section-subtitle avata-section_subtitle_intro_1 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo wp_kses($section_subtitle, $allowedposttags);?></p>
+              <p class="avata-section-subtitle section-subtitle avata-section_subtitle_intro_1 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo wp_kses(do_shortcode($section_subtitle), $allowedposttags);?></p>
             </div>
             <div class="avata-intro">
               <div class="avata-intro-conten avata-section_content_intro_1 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"> <?php echo wp_kses(do_shortcode($section_content), $allowedposttags);?> </div>
