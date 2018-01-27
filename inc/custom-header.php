@@ -60,6 +60,20 @@ function apppage_header_style() {
 	if ( ! empty( $header_image ) ) :
 
 	?>
+
+	<?php endif; 
+
+		// Has the text been hidden?
+		if ( ! display_header_text() ) :
+
+	?>
+		.site-title,
+		.site-description {
+			position: absolute;
+			clip: rect(1px 1px 1px 1px); /* IE7 */
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+
 	header#masthead {
 		background-image: url(<?php header_image(); ?>);
 	}		

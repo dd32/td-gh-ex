@@ -16,8 +16,7 @@ function apppage_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
     $wp_customize->get_section('header_image')->title = __( 'Header', 'apppage' );
     $wp_customize->get_section('colors')->title = __( 'Background Color', 'apppage' );
-    $wp_customize->remove_control('display_header_text');
-
+    
     $wp_customize->add_panel( 'theme_options' ,
         array(
             'title'       => esc_html__( 'Theme Options', 'apppage' ),

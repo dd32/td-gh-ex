@@ -55,7 +55,3 @@ function apppage_light_get_image_src( $image_id, $size = 'full' ) {
 		return $img_attr[0];
 	}
 }
-function apppage_excerpt_length( $length ) {
-	return 100;
-}
-add_filter( 'excerpt_length', 'apppage_excerpt_length', 1 );
