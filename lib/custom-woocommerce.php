@@ -350,3 +350,13 @@ function kad_woo_archive_cat_image_output() {
     }
 }
 add_action( 'init', 'kad_woo_archive_cat_image_output');
+add_action( 'woocommerce_before_shop_loop', 'virtue_woo_cat_loop', 60 );
+function virtue_woo_cat_loop() {
+	if ( version_compare( WC_VERSION, '3.3', '<' ) ) {
+		if ( ! is_search() ) {
+			echo '<div class="clearfix rowtight product_category_padding">';
+				woocommerce_product_subcategories(); 
+			echo '</div>';
+		}
+	}
+}

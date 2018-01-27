@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.1.5 | 26th January 2018 = 
+* Add: Woo 3.3 support
+
 = Version 3.1.4 | 16th January 2018 = 
 * Fix: widget issue.
 
