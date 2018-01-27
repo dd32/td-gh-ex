@@ -44,19 +44,17 @@ function bb_wedding_bliss_the_attached_image() {
 
 		// get the URL of the next image attachment...
 		if ( $next_id )
-			$next_attachment_url = esc_url( get_attachment_link( $next_id ) );
+			$next_attachment_url = ( get_attachment_link( $next_id ) );
 
 		// or get the URL of the first image attachment.
 		else
-			$next_attachment_url = esc_url( get_attachment_link( array_shift( $attachment_ids ) ) );
+			$next_attachment_url = ( get_attachment_link( array_shift( $attachment_ids ) ) );
 	}
 
 	printf( '<a href="%1$s" rel="attachment">%2$s</a>',
 		esc_url( $next_attachment_url ),
 		wp_get_attachment_image( $post->ID, $attachment_size )
 	);
-
-	wp_reset_postdata();
 }
 endif;
 
@@ -65,19 +63,19 @@ endif;
  * Returns true if a blog has more than 1 category
  */
 function bb_wedding_bliss_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
+	if ( false === ( $bb_wedding_bliss_all_the_cool_cats = get_transient( 'bb_wedding_bliss_all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts
-		$all_the_cool_cats = get_categories( array(
+		$bb_wedding_bliss_all_the_cool_cats = get_categories( array(
 			'hide_empty' => 1,
 		) );
 
 		// Count the number of categories that are attached to the posts
-		$all_the_cool_cats = count( $all_the_cool_cats );
+		$bb_wedding_bliss_all_the_cool_cats = count( $bb_wedding_bliss_all_the_cool_cats );
 
-		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
+		set_transient( 'bb_wedding_bliss_all_the_cool_cats', $bb_wedding_bliss_all_the_cool_cats );
 	}
 
-	if ( '1' != $all_the_cool_cats ) {
+	if ( '1' != $bb_wedding_bliss_all_the_cool_cats ) {
 		// This blog has more than 1 category so bb_wedding_bliss_categorized_blog should return true
 		return true;
 	} else {
@@ -106,7 +104,7 @@ endif;
  */
 function bb_wedding_bliss_category_transient_flusher() {
 	// Like, beat it. Dig?
-	delete_transient( 'all_the_cool_cats' );
+	delete_transient( 'bb_wedding_bliss_all_the_cool_cats' );
 }
 add_action( 'edit_category', 'bb_wedding_bliss_category_transient_flusher' );
 add_action( 'save_post',     'bb_wedding_bliss_category_transient_flusher' );

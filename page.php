@@ -12,6 +12,8 @@
 
 get_header(); ?>
 
+<?php do_action( 'bb_wedding_bliss_header_page' ); ?>
+
 <?php 
 while ( have_posts() ) : the_post(); ?>
     <div class="title-box">
@@ -42,5 +44,8 @@ while ( have_posts() ) : the_post(); ?>
         }
     ?>
     </div><!-- container -->
-<?php endwhile; // end of the loop. ?>    
+<?php endwhile; // end of the loop. ?>
+
+<?php do_action( 'bb_wedding_bliss_footer_page' ); ?>
+
 <?php get_footer(); ?>

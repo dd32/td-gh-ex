@@ -24,7 +24,7 @@ get_header(); ?>
                     get_template_part( 'template-parts/content' ); 
                   endwhile;
                   else :
-                    get_template_part( 'no-results', 'archive' ); 
+                    get_template_part( 'no-results' ); 
                   endif; 
                 ?>
                 <div class="navigation">
@@ -47,7 +47,7 @@ get_header(); ?>
                         get_template_part( 'template-parts/content' ); 
                     endwhile;
                     else :
-                        get_template_part( 'no-results', 'archive' ); 
+                        get_template_part( 'no-results' ); 
                     endif; 
                 ?>
                 <div class="navigation">
@@ -73,7 +73,7 @@ get_header(); ?>
                         get_template_part( 'template-parts/content' ); 
                     endwhile;
                     else :
-                        get_template_part( 'no-results', 'archive' ); 
+                        get_template_part( 'no-results' ); 
                     endif; 
                 ?>
                 <div class="navigation">
@@ -97,7 +97,7 @@ get_header(); ?>
                     get_template_part( 'template-parts/content' ); 
                   endwhile;
                   else :
-                    get_template_part( 'no-results', 'archive' ); 
+                    get_template_part( 'no-results' ); 
                   endif; 
                 ?>
                 <div class="navigation">
@@ -122,7 +122,7 @@ get_header(); ?>
                         get_template_part( 'template-parts/content' ); 
                     endwhile;
                     else :
-                        get_template_part( 'no-results', 'archive' ); 
+                        get_template_part( 'no-results' ); 
                     endif; 
                 ?>
                 <div class="navigation">
@@ -147,7 +147,7 @@ get_header(); ?>
                         get_template_part( 'template-parts/grid-layout' ); 
                     endwhile;
                     else :
-                        get_template_part( 'no-results', 'archive' ); 
+                        get_template_part( 'no-results' ); 
                     endif; 
                 ?>
                 <div class="navigation">

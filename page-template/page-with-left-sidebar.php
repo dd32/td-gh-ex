@@ -5,6 +5,8 @@
 
 get_header(); ?>
 
+<?php do_action( 'bb_wedding_bliss_header_pageleft' ); ?>
+
 <div class="container">
     <div class="middle-align">  
 	<div class="col-md-4">
@@ -26,4 +28,7 @@ get_header(); ?>
         <div class="clear"></div>    
     </div>
 </div>
+
+<?php do_action( 'bb_wedding_bliss_footer_pageleft' ); ?>
+
 <?php get_footer(); ?>

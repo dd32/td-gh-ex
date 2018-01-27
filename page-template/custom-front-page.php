@@ -5,13 +5,15 @@
 
 get_header(); ?>
 
+<?php do_action( 'bb_wedding_bliss_below_slider' ); ?>
+
   <?php /** slider section **/ ?>
   <div class="slider-main">
     <?php
       // Get pages set in the customizer (if any)
       $pages = array();
       for ( $count = 1; $count <= 5; $count++ ) {
-        $mod = absint( get_theme_mod( 'bb_wedding_bliss_slidersettings-page-' . $count ) );
+        $mod = intval( get_theme_mod( 'bb_wedding_bliss_slidersettings-page-' . $count ) );
         if ( 'page-none-selected' != $mod ) {
           $pages[] = $mod;
         }
@@ -58,7 +60,6 @@ get_header(); ?>
               </div>
               <?php $bb_wedding_bliss_k++;
           }
-          wp_reset_postdata();
         else : ?>
             <div class="header-no-slider"></div>
           <?php
@@ -69,6 +70,8 @@ get_header(); ?>
       endif; 
     ?>
   </div>
+
+<?php do_action( 'bb_wedding_bliss_after_slider' ); ?>
 
 <div class="container">
   <div class="col-md-5 col-sm-5">
@@ -128,5 +131,7 @@ get_header(); ?>
     </section>
   </div>
 </div>
+
+<?php do_action( 'bb_wedding_bliss_after_section1' ); ?>
 
 <?php get_footer(); ?>
