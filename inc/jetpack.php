@@ -3,7 +3,7 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package aaron
+ * @package Aaron
  */
 
 /**
@@ -23,6 +23,7 @@ function aaron_jetpack_setup() {
 	add_theme_support( 'jetpack-responsive-videos' );
 	add_theme_support( 'jetpack-testimonial' );
 	add_theme_support( 'jetpack-portfolio' );
+
 	/* Support for Jetpack featured-content. */
 	add_theme_support( 'featured-content', array(
 		'filter'     => 'aaron_get_featured_posts',
@@ -37,7 +38,7 @@ function aaron_get_featured_posts() {
 	return apply_filters( 'aaron_get_featured_posts', array() );
 }
 
-function aaron_has_featured_posts( $minimum ) {
+function aaron_has_featured_posts( $minimum = 1 ) {
 	if ( is_paged() ) {
 		return false;
 	}
@@ -52,6 +53,7 @@ function aaron_has_featured_posts( $minimum ) {
 	if ( $minimum > count( $featured_posts ) ) {
 		return false;
 	}
+
 	return true;
 }
 
@@ -60,24 +62,26 @@ function aaron_has_featured_posts( $minimum ) {
  */
 function aaron_jetpack_featured_posts() {
 	if ( aaron_has_featured_posts( 1 ) ) {
-	?>
+		global $post;
+		?>
 		<section class="featured-wrap">
-			<h2 class="featured-headline"><?php echo esc_html( get_theme_mod( 'aaron_featured_headline', __( 'Featured', 'aaron' ) ) ); ?></h2>
-			<?php
-			$featured_posts = aaron_get_featured_posts();
-			foreach ( (array) $featured_posts as $order => $post ) :
-				setup_postdata( $post );
-				echo '<div class="featured-post aaron-border">';
-				if ( has_post_thumbnail() ) {
-					the_post_thumbnail( 'aaron-featured-posts-thumb' );
-				}
+		<h2 class="featured-headline"><?php echo esc_html( get_theme_mod( 'aaron_featured_headline', __( 'Featured', 'aaron' ) ) ); ?></h2>
+		<?php
+		$featured_posts = aaron_get_featured_posts();
+		foreach ( $featured_posts as $post ) :
+			setup_postdata( $post );
 
-				the_title( sprintf( '<h2><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-				echo '</div>';
-			endforeach;
+			echo '<div class="featured-post aaron-border">';
+			if ( has_post_thumbnail() ) {
+				the_post_thumbnail( 'aaron-featured-posts-thumb' );
+			}
 
-			wp_reset_postdata();
-			echo '</section>';
+			the_title( sprintf( '<h2><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+			echo '</div>';
+		endforeach;
+
+		wp_reset_postdata();
+		echo '</section>';
 	}
 }
 

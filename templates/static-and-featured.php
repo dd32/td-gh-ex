@@ -4,7 +4,7 @@
  *
  * Description: A Page Template that displays your static frontpage and featured content.
  *
- * @package aaron
+ * @package Aaron
  */
 
 get_header();
@@ -20,8 +20,8 @@ get_header();
 				if ( comments_open() ) {
 					comments_template();
 				}
-			endwhile; ?>
-
+			endwhile;
+			?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

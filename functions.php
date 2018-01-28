@@ -2,15 +2,8 @@
 /**
  * Aaron functions and definitions
  *
- * @package aaron
+ * @package Aaron
  */
-
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
-}
 
 if ( ! function_exists( 'aaron_setup' ) ) {
 
@@ -43,6 +36,9 @@ if ( ! function_exists( 'aaron_setup' ) ) {
 
 		add_theme_support( 'title-tag' );
 
+		// Set the default content width.
+		$GLOBALS['content_width'] = 640;
+
 		register_nav_menus( array(
 			'header' => __( 'Primary Menu', 'aaron' ),
 			'social' => __( 'Social Menu', 'aaron' ),
@@ -68,7 +64,7 @@ if ( ! function_exists( 'aaron_setup' ) ) {
 			),
 			'nav_menus' => array(
 				'social' => array(
-					'name' 	=> __( 'Social Menu', 'aaron' ),
+					'name' => __( 'Social Menu', 'aaron' ),
 					'items' => array(
 						'link_facebook',
 						'link_twitter',
@@ -77,7 +73,7 @@ if ( ! function_exists( 'aaron_setup' ) ) {
 					),
 				),
 				'header' => array(
-					'name' 	=> __( 'Primary Menu', 'aaron' ),
+					'name' => __( 'Primary Menu', 'aaron' ),
 					'items' => array(
 						'page_about',
 						'page_contact',
@@ -112,10 +108,10 @@ add_action( 'after_setup_theme', 'aaron_setup' );
 */
 if ( ! get_theme_mod( 'aaron_hide_search' ) ) {
 	function aaron_menu_search( $items, $args ) {
-	    if ( 'header' === $args->theme_location ) {
-	    	 $items = $items . '<li class="topsearch">' . get_search_form( false ) . '</li>';
-	    }
-	    return $items;
+		if ( 'header' === $args->theme_location ) {
+			$items = $items . '<li class="topsearch">' . get_search_form( false ) . '</li>';
+		}
+		return $items;
 	}
 	add_filter( 'wp_nav_menu_items','aaron_menu_search', 10, 2 );
 }
@@ -127,14 +123,14 @@ if ( ! get_theme_mod( 'aaron_hide_search' ) ) {
 */
 if ( ! get_theme_mod( 'aaron_hide_title' ) ) {
 	function aaron_menu_title( $items, $args ) {
-	    if ( 'header' === $args->theme_location ) {
-	    	$new_item       = array( '<li class="toptitle"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></li>' );
-	        $items          = preg_replace( '/<\/li>\s<li/', '</li>,<li',  $items );
-	        $array_items    = explode( ',', $items );
-	        array_splice( $array_items, 0, 0, $new_item );
-	        $items          = implode( '', $array_items );
-	    }
-	    return $items;
+		if ( 'header' === $args->theme_location ) {
+			$new_item       = array( '<li class="toptitle"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></li>' );
+			$items          = preg_replace( '/<\/li>\s<li/', '</li>,<li',  $items );
+			$array_items    = explode( ',', $items );
+			array_splice( $array_items, 0, 0, $new_item );
+			$items = implode( '', $array_items );
+		}
+		return $items;
 	}
 	add_filter( 'wp_nav_menu_items','aaron_menu_title', 10, 2 );
 }
@@ -177,7 +173,7 @@ function aaron_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Header widget area', 'aaron' ),
-				'id'            => 'sidebar-header',
+		'id'            => 'sidebar-header',
 		'description'   => __( 'Widgets in this area are displayed in the header, below the highlights.', 'aaron' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -222,8 +218,8 @@ if ( ! function_exists( 'aaron_fonts_url' ) ) {
 
 		if ( $fonts ) {
 			$fonts_url = add_query_arg( array(
-				'family' => urlencode( implode( '|', $fonts ) ),
-				'subset' => urlencode( $subsets ),
+				'family' => rawurlencode( implode( '|', $fonts ) ),
+				'subset' => rawurlencode( $subsets ),
 			), '//fonts.googleapis.com/css' );
 		}
 		return $fonts_url;
@@ -234,7 +230,7 @@ if ( ! function_exists( 'aaron_fonts_url' ) ) {
  * Enqueue scripts and styles.
  */
 function aaron_scripts() {
-	 /* If using a child theme, auto-load the parent theme style. */
+	/* If using a child theme, auto-load the parent theme style. */
 	if ( is_child_theme() ) {
 		wp_enqueue_style( 'parent-style', trailingslashit( get_template_directory_uri() ) . 'style.css' );
 	}
@@ -317,9 +313,9 @@ function aaron_post_title( $title ) {
 
 add_filter( 'body_class', 'aaron_classes' );
 function aaron_classes( $classes ) {
-	 /*
-	 *		Is the sidebar inactive? Add 'no-sidebar' to the $classes array
-	 *		Is the meta turned off in the customizer?  Add 'no-meta' to the $classes array
+	/*
+	 * Is the sidebar inactive? Add 'no-sidebar' to the $classes array
+	 * Is the meta turned off in the customizer?  Add 'no-meta' to the $classes array
 	 */
 
 	if ( is_front_page() && ! is_active_sidebar( 'sidebar-front' ) || is_home() && ! is_active_sidebar( 'sidebar-front' ) ) {
@@ -345,10 +341,10 @@ function aaron_classes( $classes ) {
 function aaron_customize_css() {
 	echo '<style type="text/css">';
 	if ( is_admin_bar_showing() ) {
-	 	?>
-	 	.main-navigation{top:32px;}
+		?>
+		.main-navigation{top:32px;}
 
-	 	@media screen and ( max-width: 782px ) {
+		@media screen and ( max-width: 782px ) {
 			.main-navigation{top:46px;}
 		}
 
@@ -494,8 +490,8 @@ if ( ! function_exists( 'aaron_top_sections' ) ) {
 
 				$top_section_query = new WP_Query( $args );
 
-		     	if ( $top_section_query->have_posts() ) {
-		     		while ( $top_section_query->have_posts() ) : $top_section_query->the_post();
+				if ( $top_section_query->have_posts() ) {
+					while ( $top_section_query->have_posts() ) : $top_section_query->the_post();
 						get_template_part( 'content', 'top' );
 					endwhile;
 					wp_reset_postdata();
@@ -512,7 +508,7 @@ if ( ! function_exists( 'aaron_bottom_sections' ) ) {
 		* The front page sections should not display on the blog listing page.
 		*/
 		if ( is_front_page() && is_home() ) {
-			if ( get_theme_mod( 'aaron_bottom_section1' ) or get_theme_mod( 'aaron_bottom_section2' ) or get_theme_mod( 'aaron_bottom_section3' ) ) {
+			if ( get_theme_mod( 'aaron_bottom_section1' ) || get_theme_mod( 'aaron_bottom_section2' ) || get_theme_mod( 'aaron_bottom_section3' ) ) {
 
 				$args = array(
 					'post_type' => 'page',
@@ -521,13 +517,13 @@ if ( ! function_exists( 'aaron_bottom_sections' ) ) {
 						get_theme_mod( 'aaron_bottom_section1' ),
 						get_theme_mod( 'aaron_bottom_section2' ),
 						get_theme_mod( 'aaron_bottom_section3' ),
-						),
+					),
 				);
 
-	     		$bottom_section_query = new WP_Query( $args );
+				$bottom_section_query = new WP_Query( $args );
 
-	     		if ( $bottom_section_query->have_posts() ) {
-		     		while ( $bottom_section_query->have_posts() ) : $bottom_section_query->the_post();
+				if ( $bottom_section_query->have_posts() ) {
+					while ( $bottom_section_query->have_posts() ) : $bottom_section_query->the_post();
 						get_template_part( 'content', 'bottom' );
 					endwhile;
 					wp_reset_postdata();
@@ -536,3 +532,15 @@ if ( ! function_exists( 'aaron_bottom_sections' ) ) {
 		}
 	}
 }
+
+
+/**
+ * Add a pingback url auto-discovery header for singularly identifiable articles.
+ * Credit: Twentyseventeen
+ */
+function aaron_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+	}
+}
+add_action( 'wp_head', 'aaron_pingback_header' );

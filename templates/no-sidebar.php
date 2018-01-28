@@ -4,7 +4,7 @@
  *
  * Description: A Page Template that displays your page content but not the sidebar.
  *
- * @package aaron
+ * @package Aaron
  */
 
 get_header(); ?>

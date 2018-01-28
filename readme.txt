@@ -4,7 +4,7 @@ Tags: threaded-comments, custom-menu, sticky-post, editor-style, translation-rea
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright 2015-2017 Carolina Nymark
+Copyright 2015-2018 Carolina Nymark
 
 = Description ==
 
@@ -25,6 +25,16 @@ If you have any questions, accessibility issues or feature requests for this the
 Please note that changing the colors of the theme can affect accessibility.
 
 == Change log ==
+
+Version 3.1, 2018-01-28
+Fixed an issue with the featured content option.
+Changed the customizer type from text to url for the link options.
+Moved the pingback url from header.php into a separate, conditional function.
+Moved the content width global setup inside the aaron_setup function.
+Improved sanitization for the metabox options.
+Minor code styling updates.
+
+
 Version 3.0, 2017-02-25
 Corrected a missing singular placeholder in comments.php.
 Made sure that html can also be used for the Call to Action text.
@@ -184,10 +194,10 @@ templates/ -contains page templates
 
 == Resources Used In This Theme ==
 Aaron is a derivative work of:
-Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc. License: GNU General Public License v2 or later
+Underscores http://underscores.me/, (C) 2012-2018 Automattic, Inc. License: GNU General Public License v2 or later
 Universal http://themes.joedolson.com/universal/ (C) Joseph C Dolson. License: GNU General Public License v2 or later
-Sela https://wordpress.com/themes/sela/, based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc. License: GNU General Public License v2 or later
-Twenty Seventeen https://wordpress.org/themes/twentyseventeen/ Copyright 2016 WordPress.org, GNU General Public License v2 or later
+Sela https://wordpress.com/themes/sela/, based on Underscores http://underscores.me/, (C) 2012-2018 Automattic, Inc. License: GNU General Public License v2 or later
+Twenty Seventeen https://wordpress.org/themes/twentyseventeen/ Copyright 2016-2018 WordPress.org, GNU General Public License v2 or later
 
 Header image by Ian Prince. Source: https://tookapic.com/ianprince/5613-les-dents-du-midi, License: CC0.
 Image used in the documentation: Karolina Grabowska. Source: https://tookapic.com/kaboompics/3311-dead-flower, License: CC0.
@@ -205,6 +215,6 @@ Copyright 2013 Amy Hendrix (email : amy@amyhendrix.net), Graham Armfield (email 
 License: MIT
 
 Checkbox sanitization
-Copyright (c) 2015, WordPress Theme Review Team
+Copyright (c) 2015-2018, WordPress Theme Review Team
 http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
 https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php

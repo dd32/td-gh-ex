@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package aaron
+ * @package Aaron
  */
 
 ?>
@@ -14,7 +14,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php wp_head(); ?>
 </head>
 
@@ -22,17 +21,25 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'aaron' ); ?></a>
 	<?php
-	if ( has_nav_menu( 'header' )  ) {
+	if ( has_nav_menu( 'header' ) ) {
 	?>
 		<nav id="site-navigation" class="main-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 			<button class="menu-toggle" aria-controls="menu" aria-expanded="false">
 			<span class="screen-reader-text"><?php esc_html_e( 'Main Menu', 'aaron' ); ?></span></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'header', 'fallback_cb' => false, 'depth' => 2, 'container' => false ) ); ?>
+			<?php
+			wp_nav_menu( array(
+				'theme_location' => 'header',
+				'fallback_cb' => false,
+				'depth' => 2,
+				'container' => false,
+			) );
+			?>
 		</nav><!-- #site-navigation -->
 	<?php
 	}
 
-	if ( is_home() || is_front_page() || is_singular() && aaron_get_meta( 'aaron_show_header' ) ) { ?>
+	if ( is_home() || is_front_page() || is_singular() && aaron_get_meta( 'aaron_show_header' ) ) {
+		?>
 		<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 			<div class="site-branding">	
 				<?php
@@ -50,9 +57,10 @@
 						}
 					} else {
 						// But if it is a post or page, and we are keeping the site title, then we want it to be a paragraph. We also want a link back to the home page.
-						if ( display_header_text() ) {?>
+						if ( display_header_text() ) {
+						?>
 							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-							<?php
+						<?php
 						}
 					}
 
@@ -66,9 +74,10 @@
 
 					if ( is_active_sidebar( 'sidebar-header' ) ) {
 					?>
-					<div class="widget-area" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar" aria-label="<?php esc_attr_e( 'Complementary widget area', 'aaron' );?>">
-						<?php dynamic_sidebar( 'sidebar-header' ); ?>
-					</div><!-- #header widget -->
+						<div class="widget-area" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar" 
+						aria-label="<?php esc_attr_e( 'Complementary widget area', 'aaron' ); ?>">
+							<?php dynamic_sidebar( 'sidebar-header' ); ?>
+						</div><!-- #header widget -->
 					<?php
 					}
 
@@ -92,11 +101,12 @@
 
 					aaron_highlights();
 
-					if ( is_active_sidebar( 'sidebar-header' )  ) {
+					if ( is_active_sidebar( 'sidebar-header' ) ) {
 					?>
-					<div class="widget-area" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar" aria-label="<?php esc_attr_e( 'Complementary widget area', 'aaron' );?>">
-						<?php dynamic_sidebar( 'sidebar-header' ); ?>
-					</div><!-- #header widget -->
+						<div class="widget-area" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar" 
+						aria-label="<?php esc_attr_e( 'Complementary widget area', 'aaron' ); ?>">
+							<?php dynamic_sidebar( 'sidebar-header' ); ?>
+						</div><!-- #header widget -->
 					<?php
 					}
 
@@ -110,5 +120,5 @@
 					</div><!-- .site-branding -->
 			</header><!-- #masthead -->
 	<?php } ?>
-	
+
 <div id="content" class="site-content">

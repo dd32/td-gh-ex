@@ -45,11 +45,11 @@ function aaron_highlights() {
 						echo '<a href="' . esc_url( get_theme_mod( 'aaron_highlight' . $i . '_link' ) ) . '">';
 					}
 					if ( get_theme_mod( 'aaron_highlight' . $i . '_headline' ) ) {
-						echo '<h2 style="color:' . esc_attr( get_theme_mod( 'aaron_highlight' . $i . '_textcolor', '#333333' ) ) . ';">' . 
+						echo '<h2 style="color:' . esc_attr( get_theme_mod( 'aaron_highlight' . $i . '_textcolor', '#333333' ) ) . ';">' .
 						wp_kses_post( get_theme_mod( 'aaron_highlight' . $i . '_headline' ) ) . '</h2>';
 					}
 					if ( get_theme_mod( 'aaron_highlight' . $i . '_text' ) ) {
-						echo '<p style="color:' . esc_attr( get_theme_mod( 'aaron_highlight' . $i . '_textcolor', '#333333' ) ) . ';">' . 
+						echo '<p style="color:' . esc_attr( get_theme_mod( 'aaron_highlight' . $i . '_textcolor', '#333333' ) ) . ';">' .
 						wp_kses_post( get_theme_mod( 'aaron_highlight' . $i . '_text' ) ) . '</p>';
 					}
 					// Close the link.

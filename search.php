@@ -2,14 +2,14 @@
 /**
  * The template for displaying search results pages.
  *
- * @package aaron
+ * @package Aaron
  */
 
 get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-		<?php if ( have_posts() && strlen( trim( get_search_query() ) ) !== 0 ) { ?>
+		<?php if ( have_posts() ) { ?>
 
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'aaron' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
@@ -29,15 +29,16 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php the_posts_navigation( array(
-				'prev_text'          => __( 'Previous page', 'aaron' ),
-				'next_text'          => __( 'Next page', 'aaron' ),
+			<?php
+			the_posts_navigation( array(
+				'prev_text' => __( 'Previous page', 'aaron' ),
+				'next_text' => __( 'Next page', 'aaron' ),
 			) );
 			?>
 
 			<?php
 			/* If the search is not visible in the menu, and there is only one page of search results, display a search form on the search page. */
-			if ( $GLOBALS['wp_query']->max_num_pages < 2  && get_theme_mod( 'aaron_hide_search' ) ) {
+			if ( $GLOBALS['wp_query']->max_num_pages < 2 && get_theme_mod( 'aaron_hide_search' ) ) {
 				echo '<span class="screen-reader-text">' . esc_html__( 'Would you like to search again?', 'aaron' ) . '</span><br/>';
 				get_search_form();
 			}

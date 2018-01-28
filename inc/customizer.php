@@ -382,7 +382,7 @@ function aaron_customize_register( $wp_customize ) {
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'aaron_highlight' . $i . '_image', array(
 			'label' => __( 'Upload an image for your highlight:', 'aaron' ),
-			'description'    => __( 'Uploading an image will overwrite your icon settings.', 'aaron' ),
+			'description' => __( 'Uploading an image will overwrite your icon settings.', 'aaron' ),
 			'section'  => 'aaron_section_' . $i,
 		) ) );
 
@@ -409,7 +409,7 @@ function aaron_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'esc_url_raw',
 		) );
 		$wp_customize->add_control('aaron_highlight' . $i . '_link', array(
-			'type' => 'text',
+			'type' => 'url',
 			'label' => __( 'Add a link to your highlight:', 'aaron' ),
 			'section' => 'aaron_section_' . $i,
 		) );
@@ -426,10 +426,10 @@ function aaron_customize_register( $wp_customize ) {
 		) );
 
 		$wp_customize->selective_refresh->add_partial( 'aaron_highlight' . $i . '_icon', array(
-	        'selector' => '.hl' . $i,
-	        'container_inclusive' => true,
-	        'render_callback' => 'aaron_highlights',
-	    ) );
+			'selector' => '.hl' . $i,
+			'container_inclusive' => true,
+			'render_callback' => 'aaron_highlights',
+		) );
 	} // End for().
 
 	$wp_customize->add_section( 'aaron_section_hide', array(
@@ -471,16 +471,16 @@ function aaron_customize_register( $wp_customize ) {
 
 	/* Call to action link */
 	$wp_customize->add_setting( 'aaron_action_link', array(
-			'sanitize_callback' => 'esc_url_raw',
+		'sanitize_callback' => 'esc_url_raw',
 	) );
 	$wp_customize->add_control('aaron_action_link',	array(
-		'type' => 'text',
+		'type' => 'url',
 		'label' => __( 'Add a link to the Call to action button:', 'aaron' ),
 		'section' => 'aaron_section_one',
 	) );
 
 	$wp_customize->add_setting( 'aaron_hide_action', array(
-			'sanitize_callback' => 'aaron_sanitize_checkbox',
+		'sanitize_callback' => 'aaron_sanitize_checkbox',
 	) );
 	$wp_customize->add_control('aaron_hide_action',	array(
 		'type' => 'checkbox',
@@ -500,14 +500,14 @@ function aaron_customize_register( $wp_customize ) {
 	) ) );
 
 	$wp_customize->add_setting( 'aaron_action_bgcolor', array(
-	    'default' => '',
-	    'sanitize_callback' => 'sanitize_hex_color_no_hash',
+		'default' => '',
+		'sanitize_callback' => 'sanitize_hex_color_no_hash',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'aaron_action_bgcolor', array(
-	    'label'   => __( 'Call to Action background color:','aaron' ),
-	    'section' => 'aaron_section_one',
-	    'settings'   => 'aaron_action_bgcolor',
+		'label'   => __( 'Call to Action background color:','aaron' ),
+		'section' => 'aaron_section_one',
+		'settings' => 'aaron_action_bgcolor',
 	) ) );
 
 	/*Advanced settings*/
@@ -515,7 +515,7 @@ function aaron_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'aaron_sanitize_checkbox',
 	) );
 
-	$wp_customize->add_control('aaron_hide_search',	array(
+	$wp_customize->add_control('aaron_hide_search', array(
 		'type' => 'checkbox',
 		'label' => __( 'Check this box to hide the search form in the header menu.', 'aaron' ),
 		'section' => 'aaron_section_advanced',
@@ -525,13 +525,13 @@ function aaron_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'aaron_sanitize_checkbox',
 	) );
 
-	$wp_customize->add_control('aaron_show_search',	array(
+	$wp_customize->add_control('aaron_show_search', array(
 		'type' => 'checkbox',
 		'label' => __( 'The search form in the header menu is hidden on smaller screens by default. Check this box to show it on all screen sizes.', 'aaron' ),
 		'section' => 'aaron_section_advanced',
 	) );
 
-	$wp_customize->add_setting( 'aaron_hide_title',	array(
+	$wp_customize->add_setting( 'aaron_hide_title', array(
 		'sanitize_callback' => 'aaron_sanitize_checkbox',
 	) );
 	$wp_customize->add_control('aaron_hide_title', array(
@@ -549,7 +549,7 @@ function aaron_customize_register( $wp_customize ) {
 		'section' => 'aaron_section_advanced',
 	) );
 
-	$wp_customize->add_setting( 'aaron_meta_below',	array(
+	$wp_customize->add_setting( 'aaron_meta_below', array(
 		'sanitize_callback' => 'aaron_sanitize_checkbox',
 	) );
 	$wp_customize->add_control('aaron_meta_below', array(
@@ -579,13 +579,13 @@ function aaron_customize_register( $wp_customize ) {
 			'min'   => 30,
 			'max'   => 100,
 			'step'  => 4,
-			 ),
+		),
 	) );
 
 	/* if jetpack is installed, add the featured heading to the customizer. */
-	$wp_customize->add_setting( 'aaron_featured_headline',	array(
-		'sanitize_callback'	=> 'aaron_sanitize_text',
-		'default'	=> __( 'Featured', 'aaron' ),
+	$wp_customize->add_setting( 'aaron_featured_headline', array(
+		'sanitize_callback' => 'aaron_sanitize_text',
+		'default' => __( 'Featured', 'aaron' ),
 	) );
 	$wp_customize->add_control('aaron_featured_headline', array(
 		'type' => 'text',
@@ -596,7 +596,7 @@ function aaron_customize_register( $wp_customize ) {
 	/**
 	 * Frontpage sections
 	 * Top Section
-	*/
+	 */
 
 	$wp_customize->add_section( 'aaron_top_section', array(
 		'title' => __( 'Top Section', 'aaron' ),
@@ -639,7 +639,7 @@ function aaron_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'aaron_bottom_section' . $i, array(
 			'default' => 0,
 			'type' => 'dropdown-pages',
-		    'label' => __( 'Select a page:','aaron' ),
+			'label' => __( 'Select a page:','aaron' ),
 			'section' => 'aaron_bottom_section',
 			'allow_addition' => true,
 		) );
@@ -675,21 +675,21 @@ function aaron_customize_register( $wp_customize ) {
 		'default'        => 'uppercase',
 	) );
 	$wp_customize->add_control( 'aaron_caps', array(
-		'type'	=> 'select',
+		'type' => 'select',
 		'label' => __( 'Change the capitalization', 'aaron' ),
 		'description' => __( 'By default, Aaron displays the navigation and headings as uppercase. You can use this option to change the capitalization.', 'aaron' ),
 		'section' => 'aaron_font',
 		'choices' => array(
-			'uppercase'	=> __( 'Uppercase (Default, transforms all characters to uppercase).','aaron' ),
-			'initial'	=> __( 'Normal','aaron' ),
-	        'capitalize'	=> __( 'Capitalized	(Transforms the first character of each word to uppercase).','aaron' ),
+			'uppercase' => __( 'Uppercase (Default, transforms all characters to uppercase).','aaron' ),
+			'initial' => __( 'Normal','aaron' ),
+			'capitalize' => __( 'Capitalized (Transforms the first character of each word to uppercase).','aaron' ),
 		),
 	) );
 
 	$wp_customize->add_section( 'aaron_font' , array(
-	    'title'      => __( 'Typography', 'aaron' ),
+		'title' => __( 'Typography', 'aaron' ),
 		'description' => __( 'Changing the fonts can affect accessibility.', 'aaron' ),
-	    'priority'   => 100,
+		'priority' => 100,
 	) );
 
 	$wp_customize->add_setting( 'aaron_font' , array(
@@ -702,13 +702,13 @@ function aaron_customize_register( $wp_customize ) {
 		'section'        => 'aaron_font',
 		'settings'       => 'aaron_font',
 		'type'           => 'select',
-		'choices'		 => array(
-		'Montserrat' => 'Montserrat ' . __( '(Default)', 'aaron' ),
-		'Open Sans' => 'Open Sans ' . __( '(Same as body)', 'aaron' ),
-		'Oswald'	=> 'Oswald',
-		'Rambla'	=> 'Rambla',
-		'Ubuntu Condensed' => 'Ubuntu Condensed',
-		'Fjalla One' => 'Fjalla One',
+		'choices'        => array(
+			'Montserrat' => 'Montserrat ' . __( '(Default)', 'aaron' ),
+			'Open Sans' => 'Open Sans ' . __( '(Same as body)', 'aaron' ),
+			'Oswald'    => 'Oswald',
+			'Rambla'    => 'Rambla',
+			'Ubuntu Condensed' => 'Ubuntu Condensed',
+			'Fjalla One' => 'Fjalla One',
 		),
 		)
 	) );
@@ -825,9 +825,9 @@ function aaron_sanitize_bgrepeat( $input ) {
  */
 function aaron_sanitize_cap( $input ) {
 	$valid = array(
-	  	'uppercase'	=> __( 'Uppercase (Default, transforms all characters to uppercase).','aaron' ),
+		'uppercase'	=> __( 'Uppercase (Default, transforms all characters to uppercase).','aaron' ),
 		'initial'	=> __( 'Normal.','aaron' ),
-	    'capitalize' => __( 'Capitalized (Transforms the first character of each word to uppercase).','aaron' ),
+		'capitalize' => __( 'Capitalized (Transforms the first character of each word to uppercase).','aaron' ),
 	);
 	if ( array_key_exists( $input, $valid ) ) {
 		return $input;

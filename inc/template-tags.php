@@ -2,7 +2,7 @@
 /**
  * Custom template tags for this theme.
  *
- * @package aaron
+ * @package Aaron
  */
 
 if ( ! function_exists( 'aaron_posted_on' ) ) {
@@ -84,8 +84,8 @@ if ( ! function_exists( 'aaron_entry_footer' ) ) {
 
 			/* Display jetpack's like  if it's active */
 			if ( class_exists( 'Jetpack_Likes' ) ) {
-			    $aaron_custom_likes = new Jetpack_Likes;
-			    echo $aaron_custom_likes->post_likes( '' );
+				$aaron_custom_likes = new Jetpack_Likes;
+				echo $aaron_custom_likes->post_likes( '' );
 			}
 			echo '</footer><!-- .entry-footer -->';
 		}
@@ -119,14 +119,13 @@ if ( ! function_exists( 'aaron_portfolio_footer' ) ) {
 
 			/* Display jetpack's like  if it's active */
 			if ( class_exists( 'Jetpack_Likes' ) ) {
-			    $aaron_custom_likes = new Jetpack_Likes;
-			    echo $aaron_custom_likes->post_likes( '' );
+				$aaron_custom_likes = new Jetpack_Likes;
+				echo $aaron_custom_likes->post_likes( '' );
 			}
 			echo '</footer><!-- .entry-footer -->';
 		}
 	}
 }
-
 
 add_filter( 'excerpt_more', 'aaron_excerpt_more',100 );
 function aaron_excerpt_more( $more ) {
@@ -174,3 +173,5 @@ if ( ! function_exists( 'aaron_breadcrumbs' ) ) {
 		}
 	}
 }
+
+
