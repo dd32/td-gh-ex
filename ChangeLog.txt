@@ -2,6 +2,9 @@
 
 == CHANGE LOG == 
 
+= Version 1.4.7 = = 28/01/2018
+* Add - Added section - Counter
+
 = Version 1.4.6 = = 27/01/2018
 * Do shortcode for section subtitle & description
 

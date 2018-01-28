@@ -122,7 +122,43 @@ $('.avata-home-sections').fullpage({
 /*gallery*/
 $('#lightgallery').lightGallery();
 $('.avate-video-container').lightGallery();
+// Counter
+	var counter = function() {
+		$('.avata-counter-style-1').waypoint( function( direction ) {
+			var el = $(this.element).attr('class');
+			if( direction === 'down' && !$(this.element).hasClass('animated')) {
+				setTimeout( function(){
+					// console.log($(this.element));
+					$('.'+el).find('.js-counter').countTo({
+						 formatter: function (value, options) {
+				      	return value.toFixed(options.decimals);
+				   	},
+					});
+				} , 200);
+				
+				$(this.element).addClass('animated');
+					
+			}
+		} , { offset: '75%' } );
 
+
+		$('.avata-counter-style-2').waypoint( function( direction ) {
+			var el = $(this.element).attr('class');
+			if( direction === 'down' && !$(this.element).hasClass('animated')) {
+				setTimeout( function(){
+					$('.'+el).find('.js-counter').countTo({
+						 formatter: function (value, options) {
+				      	return value.toFixed(options.decimals);
+				   	},
+					});
+				} , 200);
+				
+				$(this.element).addClass('animated');
+					
+			}
+		} , { offset: '75%' } );
+	};
+	counter();
 /*testimonial*/
 
 var owl = $('.owl-carousel-fullwidth');

@@ -186,7 +186,38 @@
 			  		<key name="description" />
 				</key>
 			</key>
-			
+			<!-- section counter -->
+			<key name='section_title_counter' />
+            <key name='section_subtitle_counter' />
+			<key name="section_items_counter">
+				<key name="0">
+			  		<key name="title" />
+				</key>
+				<key name="1">
+			   		<key name="title" />
+				</key>
+				<key name="2">
+			   		<key name="title" />
+				</key>
+				<key name="3">
+			   		<key name="title" />
+				</key>
+				<key name="4">
+			   		<key name="title" />
+				</key>
+				<key name="5">
+			   		<key name="title" />
+				</key>
+				<key name="6">
+			   		<key name="title" />
+				</key>
+				<key name="7">
+			   		<key name="title" />
+				</key>
+				<key name="8">
+			   		<key name="title" />
+				</key>
+			</key>
 			<!-- section slogan -->
 			<key name='section_title_slogan' />
             <key name='section_subtitle_slogan' />

@@ -3,8 +3,8 @@ Theme Name: Avata
 Theme URI: https://www.hoothemes.com/themes/avata.html
 Author: HooThemes
 Author URI: http://www.hoothemes.com/
-Description: Based on Bootstrap and coded with HTML5 and CSS3 language, Avata WordPress theme is fully responsive in desktops and mobile devices. With enriched settings , you can easily create a homepage with pre-built layouts such as banner, service, video, gallery, team, testimonial, blog, slogan and so on, you can also sort them by dragging and dropping. Avata theme is WooCommerce compatible we can use it for e-commerce site, multilingual ready (WPML & Polylang) and translateable. You can check the demo at http://demo.hoosoft.com/avata/.
-Version: 1.4.6
+Description: Based on Bootstrap and coded with HTML5 and CSS3 language, Avata WordPress theme is fully responsive in desktops and mobile devices. With enriched customizer settings, you can easily create a homepage with pre-built layouts such as banner, service, video, gallery, team, testimonial, counter up, blog, slogan and so on, you can also sort them by dragging and dropping. Avata theme is WooCommerce compatible we can use it for e-commerce site, multilingual ready (WPML & Polylang) and translateable. You can check the demo at http://demo.hoosoft.com/avata/.
+Version: 1.4.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avata
@@ -2747,14 +2747,12 @@ ul.social li {
 .avata-counter-style-2 .avata-counter {
   font-size: 50px;
   display: block;
-  color: #fff;
   width: 100%;
   font-family: "Open Sans", Arial, sans-serif;
   margin-bottom: .5em;
 }
 .avata-counter-style-1 .avata-counter-label,
 .avata-counter-style-2 .avata-counter-label {
-  color: #fff;
   text-transform: uppercase;
   font-size: 13px;
   font-family: "Montserrat", Arial, sans-serif;
@@ -2764,7 +2762,6 @@ ul.social li {
 }
 
 .avata-counter-style-2 .icon {
-  color: #fff;
   width: 70px;
   height: 70px;
   margin: 0 auto 30px auto;
@@ -2779,7 +2776,7 @@ ul.social li {
 .avata-counter-style-2 .icon i {
   text-align: center;
   width: 100%;
-  font-size: 30px;
+  font-size: 60px;
   display: block;
   top: 50%;
   margin-top: -15px;

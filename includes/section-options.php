@@ -14,6 +14,7 @@ function avata_section_types(){
 			'slogan',
 			'progress_bar_1',
 			'progress_bar_2',
+			'counter',
 		);
 		return apply_filters('avata_section_types',$section_types);
 	}

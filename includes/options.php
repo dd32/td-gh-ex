@@ -1143,6 +1143,112 @@ $avata_lite_sections['section-testimonial'] = array(
 										'name'=> __('Section Testimonial', 'avata'),
 										'fields'=> $testimonial_options 
 										);	
+										
+
+// section counter
+
+$counter_defaults = array(
+			'section_title'=> '',
+			'section_subtitle'=> '',
+			'background_color'=>'#ffffff',
+			'autoheight' => '1',
+			'hide' => '1',
+			'menu_slug' => 'counter',
+			'padding_top' => '10px',
+			'padding_bottom' => '10px',
+			);
+
+$counter_options = avata_public_section_options('counter',$counter_defaults,false,$args);
+
+		  
+array_splice($counter_options,3,0,array(
+											'columns_counter' => array(
+												  'settings' => 'columns_counter',
+												  'label'   => __( 'Columns', 'avata' ),
+												  'section' => 'section_counter',
+												  'type'    => 'select',
+												  'choices' => array( 2=>2,3=>3,4=>4 ),
+												  'default' => '4'
+											  ),
+
+											'section_items_counter' => array(
+													'type'        => 'repeater',
+													'label'       => esc_attr__( 'Counter', 'avata' ),
+													'section'     => 'section_counter',
+													'settings'     => 'section_items_counter',
+													'priority'    => 10,
+													'row_label' => array(
+														'type' => 'field',
+														'value' => esc_attr__('Counter', 'avata' ),
+														'field' => 'name',
+													),
+													'settings'    => 'section_items_counter',
+													'default'     => array(
+														array(
+															'image'  => '',
+															'icon'  => 'fa-heart-o',
+															'title'  => 'The Mastermind',
+															'number'  => '120',
+															
+														),
+														array(
+															'image'  => '',
+															'icon'  => 'fa-cogs',
+															'title'  => 'Creative head',
+															'number'  => '160',
+															
+														),
+														array(
+															'image'  => '',
+															'icon'  => 'fa-database',
+															'title'  => 'Technical lead',
+															'number'  => '1360',
+															
+														),
+														array(
+															'image'  => '',
+															'icon'=> 'fa-user',
+															'title'=> 'Customers',
+															'number'=> '3000',
+															),
+								
+													),
+													'fields' => array(
+														
+														'icon' => array(
+															'type'        => 'text',
+															'label'       => esc_attr__( 'Fontawesome Icon', 'avata' ),
+															'description' => '',
+															'default'     => '',
+														),
+				
+														'image' => array(
+															'type'        => 'image',
+															'label'       => esc_attr__( 'Image Icon', 'avata' ),
+															'description' => '',
+															'default'     => '',
+														),
+														
+														'title' => array(
+															'type'        => 'text',
+															'label'       => esc_attr__( 'Title', 'avata' ),
+															'description' => '',
+															'default'     => '',
+														),
+														'number' => array(
+															'type'        => 'text',
+															'label'       => esc_attr__( 'Number', 'avata' ),
+															'description' => '',
+															'default'     => '100',
+														),
+														
+													),
+													)));
+
+$avata_lite_sections['section-counter'] = array(
+										'name'=> __('Section Counter', 'avata'),
+										'fields'=> $counter_options 
+										);	
 	
 
 // section blog
