@@ -407,9 +407,9 @@ if ( ! function_exists( 'ashe_related_posts' ) ) {
 			    )
 			);
 
-			if ( ashe_is_preview() ) {
-				array_pop($args);
-			}
+			// if ( ashe_is_preview() ) {
+			// 	array_pop($args);
+			// }
 
 			$similar_posts = new WP_Query( $args );	
 

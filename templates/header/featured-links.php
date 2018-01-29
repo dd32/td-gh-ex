@@ -38,7 +38,7 @@
 			$link_title_2 = 'Promo Box 2';
 		} else {
 			$image_src_2 = wp_get_attachment_url( ashe_options( 'featured_links_image_2' ) );
-			$link_title_2 = ashe_options( 'featured_links_url_2' );
+			$link_title_2 = ashe_options( 'featured_links_title_2' );
 		}
 
 		?>
