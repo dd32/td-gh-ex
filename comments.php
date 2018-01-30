@@ -5,7 +5,7 @@
 <div class="qua_comment_section">
   <div class="qua_comment_title">
     <h3><i class="fa fa-comments"></i>
-      <?php echo comments_number('No Comments', '1 Comment', '% Comments'); ?>
+      <?php echo comments_number('No Comments', 'One comment', '% Comments'); ?>
     </h3>
   </div>
   <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :  ?>		

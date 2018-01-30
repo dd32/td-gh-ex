@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Quality\n"
-"POT-Creation-Date: 2018-01-15 18:37+0530\n"
-"PO-Revision-Date: 2018-01-15 18:37+0530\n"
+"POT-Creation-Date: 2018-01-30 16:41+0530\n"
+"PO-Revision-Date: 2018-01-30 16:40+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -53,8 +53,8 @@ msgstr ""
 msgid "Blog Archive"
 msgstr ""
 
-#: archive.php:62 author.php:48 category.php:48 index.php:54 single.php:51
-#: tag.php:50
+#: archive.php:62 author.php:48 category.php:48 index.php:54 search.php:60
+#: single.php:51 tag.php:50
 msgid "Read More"
 msgstr ""
 
@@ -301,8 +301,8 @@ msgstr ""
 msgid "Enable Home Blog section"
 msgstr ""
 
-#: functions/customizer/customizer-blog.php:38
-msgid "Our latest blog post"
+#: functions/customizer/customizer-blog.php:38 theme_setup_data.php:57
+msgid "Our latest blog posts"
 msgstr ""
 
 #: functions/customizer/customizer-copyright.php:8
@@ -310,10 +310,9 @@ msgid "Footer copyright settings"
 msgstr ""
 
 #: functions/customizer/customizer-copyright.php:17
-#, php-format
 msgid ""
-"<p>@ Copyright 2017 Quality Center Design And Developed by <a href=\"%1$s\" "
-"target=\"_blank\">WordPress Theme</a><p>"
+"<p>©2018 All Rights Reserved - Webriti. Designed and Developed by<a href="
+"\"https://www.webriti.com/\" target=\"_blank\"> Webriti</a></p>"
 msgstr ""
 
 #: functions/customizer/customizer-copyright.php:26
@@ -401,17 +400,19 @@ msgid "Featured slider settings"
 msgstr ""
 
 #: functions/customizer/customizer-slider.php:42 theme_setup_data.php:14
-#: theme_setup_data.php:24
-msgid "Fully responsive"
+msgid "Elegant design"
 msgstr ""
 
 #: functions/customizer/customizer-slider.php:57 theme_setup_data.php:15
-#: theme_setup_data.php:26
-msgid "Easy customization"
+msgid "Welcome to Quality theme"
+msgstr ""
+
+#: functions/customizer/customizer-slider.php:72 theme_setup_data.php:16
+msgid "Create beautiful websites, 100% responsive and easy to customize."
 msgstr ""
 
 #: functions/customizer/customizer-slider.php:88 theme_setup_data.php:17
-msgid "Purchase Now"
+msgid "Get this theme"
 msgstr ""
 
 #: functions/customizer/customizer-slider.php:111
@@ -926,29 +927,57 @@ msgstr ""
 msgid "Posted By"
 msgstr ""
 
+#: search.php:20
+#, php-format
+msgid "Search results for: %s"
+msgstr ""
+
+#: search.php:68
+msgid "Nothing Found"
+msgstr ""
+
+#: search.php:71
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+
 #: tag.php:8
 #, php-format
 msgid "Tag Archive %s"
 msgstr ""
 
 #: theme_setup_data.php:20
-msgid "Our services"
+msgid "Our nice services"
+msgstr ""
+
+#: theme_setup_data.php:24
+msgid "Beautiful Design"
 msgstr ""
 
 #: theme_setup_data.php:25
-msgid "SEO friendly"
+msgid "Global Customer Base"
+msgstr ""
+
+#: theme_setup_data.php:26
+msgid "Friendly Support"
 msgstr ""
 
 #: theme_setup_data.php:27
-msgid "Well documentation"
+msgid "A great value"
 msgstr ""
 
 #: theme_setup_data.php:40
-msgid "Featured portfolio project"
+msgid "Featured portfolio projects"
 msgstr ""
 
-#: theme_setup_data.php:57
-msgid "Latest from our blog"
+#: theme_setup_data.php:41
+msgid "Most popular of our works."
+msgstr ""
+
+#: theme_setup_data.php:44 theme_setup_data.php:47 theme_setup_data.php:50
+#: theme_setup_data.php:53
+msgid "Business cards"
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -976,10 +1005,159 @@ msgid ""
 "feature. Browse lite version demo: http://webriti.com/quality-free"
 msgstr ""
 
+#: inc/quality/features/feature-project-section.php:8
+#: inc/quality/features/feature-project-section.php:14
+msgid "Project settings"
+msgstr ""
+
+#: inc/quality/features/feature-project-section.php:33
+msgid "Enable Home Project section"
+msgstr ""
+
+#: inc/quality/features/feature-project-section.php:43
+#: inc/quality/sections/quality-portfolio-section.php:14
+msgid "Featured portfolio projects"
+msgstr ""
+
+#: inc/quality/features/feature-project-section.php:50
+#: inc/quality/features/feature-project-section.php:86
+#: inc/quality/features/feature-project-section.php:127
+#: inc/quality/features/feature-project-section.php:166
+#: inc/quality/features/feature-project-section.php:207
+#: inc/quality/features/feature-service-section.php:52
+msgid "Title"
+msgstr ""
+
+#: inc/quality/features/feature-project-section.php:58
+#: inc/quality/sections/quality-portfolio-section.php:15
+msgid "Most popular of our works."
+msgstr ""
+
+#: inc/quality/features/feature-project-section.php:65
+#: inc/quality/features/feature-service-section.php:69
+msgid "Description"
+msgstr ""
+
+#: inc/quality/features/feature-project-section.php:73
+msgid "Project one"
+msgstr ""
+
+#: inc/quality/features/feature-project-section.php:80
+#: inc/quality/features/feature-project-section.php:121
+#: inc/quality/features/feature-project-section.php:160
+#: inc/quality/features/feature-project-section.php:201
+#: inc/quality/sections/quality-portfolio-section.php:142
+#: inc/quality/sections/quality-portfolio-section.php:145
+#: inc/quality/sections/quality-portfolio-section.php:148
+#: inc/quality/sections/quality-portfolio-section.php:151
+msgid "Business cards"
+msgstr ""
+
+#: inc/quality/features/feature-project-section.php:101
+#: inc/quality/features/feature-project-section.php:140
+#: inc/quality/features/feature-project-section.php:180
+#: inc/quality/features/feature-project-section.php:221
+msgid "Image"
+msgstr ""
+
+#: inc/quality/features/feature-project-section.php:114
+msgid "Project two"
+msgstr ""
+
+#: inc/quality/features/feature-project-section.php:153
+msgid "Project three"
+msgstr ""
+
+#: inc/quality/features/feature-project-section.php:194
+msgid "Project four"
+msgstr ""
+
+#: inc/quality/features/feature-project-section.php:234
+#: inc/quality/sections/quality-portfolio-section.php:16
+msgid "View All Portfolios"
+msgstr ""
+
+#: inc/quality/features/feature-project-section.php:241
+msgid "Button Text"
+msgstr ""
+
+#: inc/quality/features/feature-project-section.php:256
+msgid "Button Link"
+msgstr ""
+
+#: inc/quality/features/feature-service-section.php:9
+msgid "Service settings"
+msgstr ""
+
+#: inc/quality/features/feature-service-section.php:13
+#: inc/quality/features/feature-service-section.php:85
+msgid "Service"
+msgstr ""
+
+#: inc/quality/features/feature-service-section.php:34
+msgid "Enable Services on homepage."
+msgstr ""
+
+#: inc/quality/features/feature-service-section.php:43
+#: inc/quality/sections/quality-features-section.php:12
+msgid "Our nice services"
+msgstr ""
+
+#: inc/quality/features/feature-service-section.php:82
+msgid "Service content"
+msgstr ""
+
+#: inc/quality/features/feature-service-section.php:84
+msgid "Add new service"
+msgstr ""
+
+#: inc/quality/sections/quality-features-section.php:13
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque "
+"faucibus risus non iaculis."
+msgstr ""
+
+#: inc/quality/sections/quality-features-section.php:193
+#: inc/quality/sections/quality-features-section.php:235
+msgid "Beautiful Design"
+msgstr ""
+
+#: inc/quality/sections/quality-features-section.php:194
+#: inc/quality/sections/quality-features-section.php:201
+#: inc/quality/sections/quality-features-section.php:208
+#: inc/quality/sections/quality-features-section.php:215
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua."
+msgstr ""
+
+#: inc/quality/sections/quality-features-section.php:200
+#: inc/quality/sections/quality-features-section.php:236
+msgid "Global Customer Base"
+msgstr ""
+
+#: inc/quality/sections/quality-features-section.php:207
+#: inc/quality/sections/quality-features-section.php:237
+msgid "Friendly Support"
+msgstr ""
+
+#: inc/quality/sections/quality-features-section.php:214
+#: inc/quality/sections/quality-features-section.php:238
+msgid "A great value"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Webriti Companion"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Enhances Webriti themes with extra functionality."
+msgstr ""
+
 #. Author of the plugin/theme
 msgid "Webriti"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://webriti.com/"
+msgid "https://github.com"
 msgstr ""

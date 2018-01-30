@@ -14,7 +14,7 @@
     'quality_pro_options[footer_copyright_text]',
     array(
          
-		 'default' => sprintf (__('<p>@ Copyright 2017 Quality Center Design And Developed by <a href="%1$s" target="_blank">WordPress Theme</a><p>','quality'),'http://www.webriti.com'),
+		 'default' => sprintf (__('<p>©2018 All Rights Reserved - Webriti. Designed and Developed by<a href="https://www.webriti.com/" target="_blank"> Webriti</a></p>','quality'),'http://www.webriti.com'),
 		 'type' =>'option',
 		'sanitize_callback' => 'quality_copyright_sanitize_text',
     )

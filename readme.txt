@@ -153,6 +153,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 ChangLog:
+@Version 1.9.3
+1. Strings Updated
 @Version 1.9.2
 1. Strings Updated
 @Version 1.9.1

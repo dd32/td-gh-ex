@@ -35,7 +35,7 @@ function quality_blog_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'quality_pro_options[blog_heading]',
 		array('capability'  => 'edit_theme_options',
-		'default' => __('Our latest blog post','quality'), 
+		'default' => __('Our latest blog posts','quality'), 
 		'type' => 'option',
 		'sanitize_callback' => 'quality_blog_sanitize_text',
 		));
