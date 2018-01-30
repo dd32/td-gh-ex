@@ -667,11 +667,11 @@ class kad_post_grid_widget extends WP_Widget {
 <?php
   }
 }
+// getting Ready to remove this widget from the theme, added to the toolkit.
+if( ! class_exists('kad_image_widget') ) {
+	class kad_image_widget extends WP_Widget{
 
-
-class kad_image_widget extends WP_Widget{
-
-  private static $instance = 0;
+  	private static $instance = 0;
     public function __construct() {
         $widget_ops = array('classname' => 'kadence_simple_image', 'description' => __('This allows for an image and a simple about text.', 'pinnacle'));
         parent::__construct('kadence_simple_image', __('Pinnacle: Image', 'pinnacle'), $widget_ops);
@@ -764,6 +764,6 @@ class kad_image_widget extends WP_Widget{
   </div>
     <?php
   }
-
+}
 
 }

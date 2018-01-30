@@ -39,6 +39,7 @@ require_once locate_template('/lib/comments.php');        								// Custom comm
 require_once locate_template('/lib/authorbox.php');         							// Author box
 require_once locate_template('/lib/custom-woocommerce.php'); 							// Woocommerce functions
 require_once locate_template('/lib/woo-account.php'); 									// Woocommerce functions
+require_once( trailingslashit( get_template_directory() ) . 'lib/woocommerce/product-archive-hooks.php'); 					// Woocommerce functions
 require_once locate_template('/lib/template-actions.php');         					    // Template actions
 
 /*

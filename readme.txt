@@ -32,6 +32,9 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.6.0 | 30th January 2018 = 
+* Update: Meta
+* Update: Woo 3.3
 
 = 1.5.9 | 7th December 2017 = 
 * Update: Google Fonts
