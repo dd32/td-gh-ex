@@ -24,8 +24,9 @@ require get_template_directory() . '/inc/functions/template-hooks.php';
 /**
  * load bootstrap navwalker
  */
-require get_template_directory() . '/assets/wp_bootstrap_navwalker.php'; /* Theme wp_bootstrap_navwalker display */
-
+if ( ! class_exists( 'wp_bootstrap_navwalker' )) {
+    require get_template_directory() . '/assets/wp_bootstrap_navwalker.php'; /* Theme wp_bootstrap_navwalker display */
+}
 /**
  * customizer
  */

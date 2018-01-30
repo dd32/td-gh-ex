@@ -20,7 +20,7 @@
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta">
-			
+			<?php the_date(get_option('date_format')); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>

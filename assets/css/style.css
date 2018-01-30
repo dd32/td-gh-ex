@@ -297,6 +297,13 @@ nav[role="navigation"] li:before {
 }
 .blog-list article.post .entry-title,
 .blog-list article.page .entry-title {
+    margin-bottom: 5px;
+}
+.blog-list article.post .entry-meta,
+.blog-list article.page .entry-title{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
     margin-bottom: 30px;
 }
 .gallery-caption,

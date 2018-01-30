@@ -59,7 +59,7 @@
         
       ";
 
-    wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '', 'all' );
+    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '', 'all' );
     wp_enqueue_style( 'affidavit-main-stylesheet', get_template_directory_uri() . '/assets/css/style.css', array(), '', 'all' );
     wp_add_inline_style( 'affidavit-main-stylesheet', $custom_css );
 }

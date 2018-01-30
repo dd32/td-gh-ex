@@ -37,7 +37,6 @@ function affidavit_template_header(){ ?>
 			<div class="collapse navbar-collapse" id="main-navigation">
 				<?php 
 				wp_nav_menu( array(
-				'menu'              => 'main-nav',
 				'theme_location'    => 'main-nav',
 				'depth'             => 2,
 				'container'         => 'false',
@@ -146,7 +145,7 @@ add_action( 'affidavit_home_banner', 'affidavit_template_banner', 10 );
 
 function affidavit_template_banner(){ ?>
     <?php 
-        $get_banner_sc = get_theme_mod( 'affidavit_section_1' );
+        $get_banner_sc = esc_html( get_theme_mod( 'affidavit_section_1' ) );
         if( $get_banner_sc && shortcode_exists( 'metaslider' ) ) :
     ?>
     <section id="banner">
@@ -303,7 +302,7 @@ function affidavit_template_footer_widgets(){
 function affidavit_template_copyright(){ ?>
     <div class="footer-copyright">
         <div class="container">
-            &#169; <?php echo date_i18n('Y') . ' '; bloginfo( 'name' ); ?>
+            &#169; <?php echo date_i18n(__('Y','affidavit')) . ' '; bloginfo( 'name' ); ?>
             <span><?php if(is_front_page()): ?>
                 - <?php echo __('Built with','affidavit'); ?> <a href="<?php echo esc_url( __( 'http://mylawfirm.online/', 'affidavit' ) ); ?>"><?php printf( esc_html( '%s', 'affidavit' ), 'MyLawfirm.Online' ); ?></a> <span><?php esc_html_e('and','affidavit'); ?></span> <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'affidavit' ) ); ?>"><?php printf( esc_html( '%s', 'affidavit' ), 'WordPress' ); ?></a>
             <?php endif; ?>

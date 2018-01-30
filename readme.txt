@@ -5,7 +5,7 @@ Tested up to: 4.8.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Affidavit WordPress Theme, Copyright 2017
+Affidavit WordPress Theme, Copyright 2017 MyLawfirm.Online
 Affidavit is distributed under the terms of the GNU GPL
 
 == Description ==
@@ -19,11 +19,16 @@ Affadavit is a theme designed specifically with law firms in mind. Out of the bo
 * nested comments are limited. It can only take 2 levels deep
 
 == Changelog ==
-= 1.0.1 =
-
-
 = 1.0.0 =
 * First public release
+
+= 1.0.2 =
+* updated template-hooks.php
+* added post deta meta
+* updated display.php
+* updated functions.php
+* updated content.php
+* updated style.css
 
 == Resources ==
 *   TGM Plugin Activation library, Copyright Thomas Griffin, Gary Jones, Juliette Reinders Folmer, 
