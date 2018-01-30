@@ -50,16 +50,23 @@
     padding: 4px 0 0;
 }
 
-.kaira-upsell {
+.kaira-note-txt {
     margin-top: 30px;
 }
-.kaira-upsell b {
+.kaira-note-txt b {
     font-weight: 500;
     color: #006CC9;
 }
-.kaira-upsell-desc {
+.kaira-note-txt-desc {
     font-size: 11px;
     color: #a5a5a5;
+}
+.isnton {
+    display: none;
+}
+.kaira-help-txt {
+    font-size: 11px;
+    color: #969696;
 }
 
 .avant-remove-section {
@@ -87,12 +94,12 @@
 #customize-control-avant-page-remove-titlebar,
 #customize-control-avant-header-nav-pos,
 #customize-control-avant-blog-widget-title-style,
+#customize-control-avant-remove-wc-results-sorting,
 #customize-control-avant-topbar-font-color,
 #customize-control-avant-navi-font-color,
 #customize-control-avant-footer-font-color,
 #customize-control-avant-website-head-no,
 #customize-control-avant-website-error-msg,
-#customize-control-avant-footer-layout,
 #customize-control-avant-footer-side-fullwidth,
 #customize-control-avant-remove-product-border,
 #customize-control-avant-website-txt-copy {
@@ -111,11 +118,13 @@
 #customize-control-avant-slidermage-size,
 #customize-control-avant-meta-slider-shortcode,
 #customize-control-avant-primary-color,
+#customize-control-avant-navi-selected-color,
 #customize-control-avant-blog-post-shape,
 #customize-control-avant-blog-blocks-remove-border,
 #customize-control-avant-blog-cats,
 #customize-control-avant-remove-blog-title,
 #customize-control-avant-article-content-display,
+#customize-control-avant-bottombar-switch,
 #customize-control-avant-blog-left-sidebar,
 #customize-control-avant-single-remove-meta {
 	border-top: 1px solid rgba(0, 0, 0, 0.1);

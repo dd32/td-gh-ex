@@ -62,7 +62,6 @@ function customizer_library_avant_build_styles() {
 				.main-navigation.avant-nav-style-solid .current_page_item > a,
 				.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
 				.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
-				.main-navigation button,
 				.wpcf7-submit,
 				.wp-paginate li a:hover,
 				.wp-paginate li a:active,
@@ -188,7 +187,7 @@ function customizer_library_avant_build_styles() {
 			)
 		) );
 	}
-	
+
 	// Site Boxed Background Color
 	$setting = 'avant-boxed-bg-color';
 	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
@@ -709,6 +708,44 @@ function customizer_library_avant_build_styles() {
 				.site-header.site-header-layout-five .main-navigation ul ul li a,
 				.site-header.site-header-layout-six .main-navigation ul ul li a,
 				.site-header.site-header-layout-seven .main-navigation ul ul li a'
+			),
+			'declarations' => array(
+				'color' => $color
+			)
+		) );
+	}
+	// Navigation Active Color
+	$setting = 'avant-navi-selected-color';
+	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+	if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+		$color = sanitize_hex_color( $mod );
+
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.main-navigation ul ul a:hover,
+				.main-navigation ul ul li.current-menu-item > a,
+				.main-navigation ul ul li.current_page_item > a,
+				.main-navigation ul ul li.current-menu-parent > a,
+				.main-navigation ul ul li.current_page_parent > a,
+				.main-navigation ul ul li.current-menu-ancestor > a,
+				.main-navigation ul ul li.current_page_ancestor > a'
+			),
+			'declarations' => array(
+				'background-color' => $color
+			)
+		) );
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.header-cart-checkout.cart-has-items .fa-shopping-cart,
+				.main-navigation.avant-nav-style-plain ul > li > a:hover,
+				.main-navigation.avant-nav-style-plain ul > li.current-menu-item > a,
+				.main-navigation.avant-nav-style-plain ul > li.current-menu-ancestor > a,
+				.main-navigation.avant-nav-style-plain ul > li.current-menu-parent > a,
+				.main-navigation.avant-nav-style-plain ul > li.current_page_parent > a,
+				.main-navigation.avant-nav-style-plain ul > li.current_page_ancestor > a,
+				.main-navigation.avant-nav-style-plain .current_page_item > a'
 			),
 			'declarations' => array(
 				'color' => $color

@@ -1,6 +1,6 @@
 <?php
 /**
- * Customize for Customizer note, extend the WP customizer
+ * Customize for Customizer help, extend the WP customizer
  *
  * @package 	Customizer_Library
  * @author		Devin Price, The Theme Foundry
@@ -10,7 +10,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return NULL;
 }
 
-class Customizer_Library_Note extends WP_Customize_Control {
+class Customizer_Library_Help extends WP_Customize_Control {
 
 	/**
 	 * Render the control's content.
@@ -22,8 +22,8 @@ class Customizer_Library_Note extends WP_Customize_Control {
 	 */
 	public function render_content() {
 		?>
-		<div class="kaira-note-txt">
-            <div class="kaira-note-txt-desc"><?php echo wp_kses_post( $this->description ); ?></div>
+		<div class="kaira-help-txt">
+            <?php echo wp_kses_post( $this->description ); ?>
 		</div>
 		<?php
 	}

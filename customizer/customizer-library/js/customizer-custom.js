@@ -213,16 +213,22 @@
                 $( '#sub-accordion-section-avant-panel-colors-section-footer #customize-control-avant-footer-bg-color' ).hide();
                 $( '#sub-accordion-section-avant-panel-colors-section-footer #customize-control-avant-footer-heading-font-color' ).hide();
                 $( '#sub-accordion-section-avant-panel-colors-section-footer #customize-control-avant-footer-font-color' ).hide();
+                $( '#sub-accordion-section-avant-site-layout-section-footer #customize-control-avant-noteon-footer-standard' ).hide();
+                $( '#sub-accordion-section-avant-site-layout-section-footer #customize-control-avant-noteon-footer-social' ).hide();
             } else if ( foot_select_value == 'avant-footer-layout-standard' ) {
                 $( '#sub-accordion-section-avant-panel-colors-section-footer #customize-control-avant-footer-bg-color' ).show();
                 $( '#sub-accordion-section-avant-panel-colors-section-footer #customize-control-avant-footer-heading-font-color' ).show();
                 $( '#sub-accordion-section-avant-panel-colors-section-footer #customize-control-avant-footer-font-color' ).show();
                 $( '#sub-accordion-section-avant-site-layout-section-footer #customize-control-avant-bottombar-switch' ).show();
+                $( '#sub-accordion-section-avant-site-layout-section-footer #customize-control-avant-noteon-footer-standard' ).show();
+                $( '#sub-accordion-section-avant-site-layout-section-footer #customize-control-avant-noteon-footer-social' ).hide();
             } else {
                 $( '#sub-accordion-section-avant-panel-colors-section-footer #customize-control-avant-footer-bg-color' ).show();
                 $( '#sub-accordion-section-avant-panel-colors-section-footer #customize-control-avant-footer-font-color' ).show();
+                $( '#sub-accordion-section-avant-site-layout-section-footer #customize-control-avant-noteon-footer-social' ).show();
                 $( '#sub-accordion-section-avant-site-layout-section-footer #customize-control-avant-bottombar-switch' ).hide();
                 $( '#sub-accordion-section-avant-panel-colors-section-footer #customize-control-avant-footer-heading-font-color' ).hide();
+                $( '#sub-accordion-section-avant-site-layout-section-footer #customize-control-avant-noteon-footer-standard' ).hide();
             }
         }
 

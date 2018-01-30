@@ -4,7 +4,7 @@ Theme URI: https://kairaweb.com/theme/avant/
 Author: Kaira
 Author URI: https://kairaweb.com/
 Description: 7 Header layouts, 5 Blog layouts, 3 Footer layouts, Full site color settings and lots more settings all built neatly into the WordPress Customizer so you can edit & make changes in a live environment before making any of the changes live... Avant sure gives you what you're wanting. Avant is a highly customizable, multipurpose WordPress theme. Use Avant to build your WooCommerce eCommerce store, online fashion blog, corporate law or business website, or anything down to a simple personal blog. Avant integrates with top plugins such as Elementor or SiteOrigin's Page Builder to make it easy building your website with a drag and drop Page Builder. WooCommerce to create your e-commerce shop selling your products beautifully online. We're constantly building on to Avant, making it even more flexible to what you need. Give it a go!
-Version: 1.0.95
+Version: 1.0.96
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avant
@@ -457,6 +457,20 @@ h5 {
 h6 {
     font-size: 14px;
     margin-bottom: 1.4em;
+}
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.entry-content h1 a,
+.entry-content h2 a,
+.entry-content h3 a,
+.entry-content h4 a,
+.entry-content h5 a,
+.entry-content h6 a {
+    line-height: 1.5em;
 }
 
 .entry-content code {
@@ -1116,11 +1130,32 @@ header.woocommerce-products-header {
     height: 106px;
     margin: 0 0 60px;
 }
-
 .home-slider-wrap {
     position: relative;
     margin: 0 0 60px;
     overflow: hidden;
+}
+.home-slider-wrap-hint {
+    position: absolute;
+    width: 220px;
+    top: 0;
+    left: 50%;
+    margin: 0 0 0 -110px;
+    padding: 2px 0 4px;
+    text-align: center;
+    z-index: 9;
+    font-size: 11px;
+    background-color: #f8f8f8;
+    border-radius: 0 0 4px 4px;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease 0s;
+    -moz-transition: opacity 0.3s ease 0s;
+    -ms-transition: opacity 0.3s ease 0s;
+    -o-transition: opacity 0.3s ease 0s;
+    transition: opacity 0.3s ease 0s;
+}
+.home-slider-wrap-hint a {
+    font-size: 12px;
 }
 .home-slider-wrap .site-container {
     position: relative;
@@ -1264,6 +1299,9 @@ header.woocommerce-products-header {
 .home-slider-remove .home-slider-prev,
 .home-slider-remove .home-slider-next {
     display: none;
+}
+.home-slider-wrap:hover .home-slider-wrap-hint {
+    opacity: 1;
 }
 
 .home-slider-header-six .home-slider-block {
@@ -1735,7 +1773,7 @@ article.page {
     box-shadow: none;
 }
 .content-boxed .content-area.blog-break-blocks {
-  padding: 30px 25px;
+    padding: 30px 25px;
 }
 
 .blog-break-blocks article.hentry {
@@ -1755,6 +1793,9 @@ article.page {
 .blog-break-blocks article.hentry .post-loop-content {
     width: 66%;
     padding: 25px;
+}
+.blog-break-blocks article.hentry.blog-post-noimg .post-loop-content {
+    width: 100%;
 }
 
 .blog-break-blocks .blog-blocks-wrap article.blog-blocks-layout {

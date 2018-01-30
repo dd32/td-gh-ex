@@ -35,6 +35,8 @@ if ( ! class_exists( 'Customizer_Library' ) ) : // Helper functions to output th
 
 // Custom upsell controls for the theme customizer.
 	require plugin_dir_path( __FILE__ ) . 'custom-controls/note.php';
+// Custom upsell controls for the theme customizer.
+	require plugin_dir_path( __FILE__ ) . 'custom-controls/help.php';
 
 // Custom controls for the theme customizer.
 	if ( version_compare( $GLOBALS['wp_version'], '4.0', '<' ) ) {

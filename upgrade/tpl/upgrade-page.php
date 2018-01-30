@@ -105,28 +105,37 @@
                         
                         <div class="upgrade-rating-slider-block">
                             <div class="upgrade-rating-slider-block-title">
-                                <?php printf( __( "SpySunny", "avant" ) ); ?>
+                                <?php printf( __( "Karmawordz", "avant" ) ); ?>
                             </div>
                             <div class="upgrade-rating-slider-block-rating">
-                                <?php printf( __( "Very user-friendly theme with excellent support.", "avant" ) ); ?>
+                                <?php printf( __( "The Avant theme works. It is stable, reliable and amazing. I had a few questions and Zack answered them almost instantly. Great attitude and an amazing theme. You can't go wrong.<br /><br />This is one of the best woocommerce themes I have ever used!", "avant" ) ); ?>
                             </div>
                         </div>
                         
                         <div class="upgrade-rating-slider-block">
                             <div class="upgrade-rating-slider-block-title">
-                                <?php printf( __( "Fitoni", "avant" ) ); ?>
+                                <?php printf( __( "Adrigrove", "avant" ) ); ?>
                             </div>
                             <div class="upgrade-rating-slider-block-rating">
-                                <?php printf( __( "What a great theme!! been using it for a long time, very clean code, easy to use, easy to customize, really cant say any wrong about it!!!<br /><br />Give it a try and you will not be dissapointed! this theme is THE BEST!!", "avant" ) ); ?>
+                                <?php printf( __( "By far the most beautiful and customizable free theme available.<br /><br />The support has been extremely quick and professional. Highly recommended!", "avant" ) ); ?>
                             </div>
                         </div>
                         
                         <div class="upgrade-rating-slider-block">
                             <div class="upgrade-rating-slider-block-title">
-                                <?php printf( __( "NayWordPress", "avant" ) ); ?>
+                                <?php printf( __( "PixieLauren", "avant" ) ); ?>
                             </div>
                             <div class="upgrade-rating-slider-block-rating">
-                                <?php printf( __( "I've purchased the Premium Theme for my Online Store. Very awesome! Support assistance 100&#37; available, easy to customize. I recommend it to everyone who want to build a Store Online. Really practicable for E-commerce.", "avant" ) ); ?>
+                                <?php printf( __( "This theme is so pretty. It's customizable, it's fast, and even the free version offers lots of options to get the look you want for your site.<br /><br />I bought the premium version because I did want some of the premium features - it's really affordable for such a great theme. Love it!", "avant" ) ); ?>
+                            </div>
+                        </div>
+
+                        <div class="upgrade-rating-slider-block">
+                            <div class="upgrade-rating-slider-block-title">
+                                <?php printf( __( "AllisonMandel", "avant" ) ); ?>
+                            </div>
+                            <div class="upgrade-rating-slider-block-rating">
+                                <?php printf( __( "This theme has a clean design with many options for customization. Flexibility is key, especially with an online store.<br /><br />Plus, when I had a question with formatting, Zack responded very quickly. His support was helpful and friendly. I'm happy I chose this theme and I would definitely recommend it to other users.", "avant" ) ); ?>
                             </div>
                         </div>
                         

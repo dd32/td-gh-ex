@@ -68,6 +68,21 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.96
+* Style tweaks/fixes
+* Added extra WooCommerce settings
+* Fixed Blog post with no image - full width
+* Fixed Default Slider Excerpt
+* Added extra Default Slider settings
+* Added new color setting - Navigation custom hover/active color
+* Added help links for building the Footer
+* Updated the language .pot file
+Premium: Added setting to apply custom url to Default Slider slides
+Premium: Added setting to adjust Site Title color
+Premium: Added setting to adjust Site Tagline color
+Premium: Added new Social Links - Digg, Vine, StumbleUpon & Amazon
+Premium: Added a bunch more WooCommerce settings
+
 #### 1.0.95
 * Style fixes
 * Removed space in PHP causing saving issues

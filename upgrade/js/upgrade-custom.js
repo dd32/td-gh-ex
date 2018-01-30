@@ -23,12 +23,12 @@
     
     $(window).load(function() {
         
-        vogue_upgrade_ratings_slider();
+        avant_upgrade_ratings_slider();
         
     });
     
     // Upgrade Ratings Slider
-    function vogue_upgrade_ratings_slider() {
+    function avant_upgrade_ratings_slider() {
         $( '.upgrade-rating-slider' ).carouFredSel({
             responsive: true,
             circular: true,
@@ -37,7 +37,6 @@
             height: 'variable',
             items: {
                 visible: 1,
-                start: 'random',
                 width: 280,
                 height: 'variable'
             },

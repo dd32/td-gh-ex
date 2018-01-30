@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.0.95' );
+define( 'AVANT_THEME_VERSION' , '1.0.96' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -208,7 +208,7 @@ add_action( 'admin_init', 'avant_add_editor_styles' );
  * Enqueue admin styling.
  */
 function avant_load_admin_script() {
-    wp_enqueue_style( 'avant-admin-css', get_template_directory_uri() . '/upgrade/css/admin-css.css' );
+    wp_enqueue_style( 'avant-admin-css', get_template_directory_uri() . '/upgrade/css/admin-css.css', array(), AVANT_THEME_VERSION );
 }
 add_action( 'admin_enqueue_scripts', 'avant_load_admin_script' );
 
@@ -217,7 +217,7 @@ add_action( 'admin_enqueue_scripts', 'avant_load_admin_script' );
  */
 function avant_load_customizer_script() {
 	wp_enqueue_script( 'avant-customizer-js', get_template_directory_uri() . "/customizer/customizer-library/js/customizer-custom.js", array('jquery'), AVANT_THEME_VERSION, true );
-    wp_enqueue_style( 'avant-customizer-css', get_template_directory_uri() . "/customizer/customizer-library/css/customizer.css" );
+    wp_enqueue_style( 'avant-customizer-css', get_template_directory_uri() . "/customizer/customizer-library/css/customizer.css", array(), AVANT_THEME_VERSION );
 }
 add_action( 'customize_controls_enqueue_scripts', 'avant_load_customizer_script' );
 
@@ -275,11 +275,11 @@ function avant_add_blog_post_classes ( $classes ) {
 		endif;
 		$classes[] = $avant_blog_style;
 
-		$avant_blog_greyscale = '';
-		if ( get_theme_mod( 'avant-blog-blocks-greyscale' ) ) :
-		    $avant_blog_greyscale = sanitize_html_class( 'blog-blocks-greyscale' );
+		$avant_blog_img = sanitize_html_class( 'blog-post-noimg' );
+		if ( has_post_thumbnail() ) :
+		    $avant_blog_img = sanitize_html_class( 'blog-post-hasimg' );
 		endif;
-		$classes[] = $avant_blog_greyscale;
+		$classes[] = $avant_blog_img;
 
 		$classes[] = $current_class;
 		$current_class = ( $current_class == 'blog-alt-odd' ) ? sanitize_html_class( 'blog-alt-even' ) : sanitize_html_class( 'blog-alt-odd' );

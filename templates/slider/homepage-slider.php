@@ -100,7 +100,13 @@
                                                 <h3>
                                                     <?php the_title(); ?>
                                                 </h3>
-                                                <p><?php the_content(); ?></p>
+                                                <?php if ( !get_theme_mod( 'avant-slider-remove-sub-title' ) ) : ?>
+                                                    <?php if ( has_excerpt() ) : ?>
+                                                        <p><?php the_excerpt(); ?></p>
+                                                    <?php else : ?>
+                                                        <p><?php the_content(); ?></p>
+                                                    <?php endif; ?>
+                                                <?php endif; ?>
                                             </div>
                                         </div>
                                         
@@ -135,6 +141,9 @@
     <?php else : ?>
         
         <div class="home-slider-wrap home-slider-remove <?php echo ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) ? sanitize_html_class( 'home-slider-header-six' ) : ''; ?>" data-auto="<?php echo ( get_theme_mod( 'avant-slider-auto-scroll' ) ) ? esc_attr( 'false' ) : esc_attr( '6500' ); ?>" data-scroll="<?php echo ( get_theme_mod( 'avant-slider-scroll-effect' ) ) ? esc_attr( get_theme_mod( 'avant-slider-scroll-effect' ) ) : esc_attr( 'crossfade' ); ?>">
+            <div class="home-slider-wrap-hint">
+                <?php _e( 'See how to', 'avant' ); ?> <a href="https://kairaweb.com/documentation/setting-up-the-default-slider/" target="_blank"><?php _e( 'Add your own slides here', 'avant' ); ?></a>
+            </div>
             
             <?php echo ( !get_theme_mod( 'avant-slider-full-width' ) ) ? '<div class="site-container">' : ''; ?>
                 <div class="home-slider-prev"><i class="fa fa-angle-left"></i></div>
@@ -159,7 +168,9 @@
                                     <h3>
                                         <?php _e( 'Paint A Picture', 'avant' ); ?>
                                     </h3>
-                                    <p><?php _e( 'Are you shopping anywhere, changed the color of your hair, are you busy?', 'avant' ); ?></p>
+                                    <?php if ( !get_theme_mod( 'avant-slider-remove-sub-title' ) ) : ?>
+                                        <p><?php _e( 'Are you shopping anywhere, changed the color of your hair, are you busy?', 'avant' ); ?></p>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             

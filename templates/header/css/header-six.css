@@ -369,42 +369,6 @@ a.header-cart-contents {
     left: 100%;
 }
 
-/* ---- Menu Switch Class ---- */
-
-.main-navigation .nav-switch ul {
-    left: auto;
-    right: -999em;
-}
-
-.main-navigation li.nav-switch:hover > ul,
-.main-navigation li.nav-switch:focus > ul {
-    left: auto;
-    right: 0;
-    display: block;
-}
-.main-navigation li.nav-switch ul li:hover > ul,
-.main-navigation li.nav-switch ul li:focus > ul {
-    left: auto;
-    right: 100%;
-    display: block;
-}
-
-.main-navigation li.nav-sub-switch:hover > ul,
-.main-navigation li.nav-sub-switch:focus > ul {
-    left: auto;
-    right: 100%;
-    display: block;
-}
-
-.main-navigation li.nav-sub-switch-all:hover > ul,
-.main-navigation li.nav-sub-switch-all:focus > ul,
-.main-navigation li.nav-sub-switch-all ul li:hover > ul,
-.main-navigation li.nav-sub-switch-all ul li:focus > ul {
-    left: auto;
-    right: 100%;
-    display: block;
-}
-
 @media screen and (max-width: 980px) {
     
     .site-header-side-container {

@@ -169,6 +169,12 @@ function customizer_library_avant_options() {
         'choices' => $choices,
         'default' => 'avant-header-layout-one'
     );
+    $options['avant-noteon-nav-style'] = array(
+        'id' => 'avant-noteon-nav-style',
+        'section' => $section,
+        'type'    => 'help',
+        'description' => __( '<a href="https://kairaweb.com/documentation/change-navigation-drop-direction-custom-css-class/" target="_blank">Switch the direction</a> of the navigation dropdown', 'avant' )
+    );
     $options['avant-header-switch'] = array(
         'id' => 'avant-header-switch',
         'label'   => __( 'Switch Header', 'avant' ),
@@ -332,7 +338,14 @@ function customizer_library_avant_options() {
     );
     $options['avant-slider-remove-title'] = array(
         'id' => 'avant-slider-remove-title',
-        'label'   => __( 'Remove Slider Title', 'avant' ),
+        'label'   => __( 'Remove Slider Title & Text', 'avant' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
+    $options['avant-slider-remove-sub-title'] = array(
+        'id' => 'avant-slider-remove-sub-title',
+        'label'   => __( 'Remove Slider Excerpt Only', 'avant' ),
         'section' => $section,
         'type'    => 'checkbox',
         'default' => 0,
@@ -649,6 +662,18 @@ function customizer_library_avant_options() {
         'choices' => $choices,
         'default' => 'avant-footer-layout-standard'
     );
+    $options['avant-noteon-footer-standard'] = array(
+        'id' => 'avant-noteon-footer-standard',
+        'section' => $section,
+        'type'    => 'help',
+        'description' => __( 'The Standard Footer is divided into columns by the amount of widgets that are added under<br /><i>Dashboard -> Appearance -> <a href="#widgets" rel="tc-panel">Widgets</a></i>', 'avant' )
+    );
+    $options['avant-noteon-footer-social'] = array(
+        'id' => 'avant-noteon-footer-social',
+        'section' => $section,
+        'type'    => 'help',
+        'description' => __( 'Add your <a href="#avant-social-section" rel="tc-section">Social links</a> to the footer', 'avant' )
+    );
     
     $options['avant-footer-side-fullwidth'] = array(
         'id' => 'avant-footer-side-fullwidth',
@@ -696,6 +721,21 @@ function customizer_library_avant_options() {
             'label'   => __( 'Remove Shop Page Titles', 'avant' ),
             'section' => $section,
             'type'    => 'checkbox',
+            'default' => 0,
+        );
+        $options['avant-remove-wc-results-sorting'] = array(
+            'id' => 'avant-remove-wc-results-sorting',
+            'label'   => __( 'Remove Shop Results & Sorting', 'avant' ),
+            'section' => $section,
+            'type'    => 'checkbox',
+            'default' => 0,
+        );
+        $options['avant-align-product-titles'] = array(
+            'id' => 'avant-align-product-titles',
+            'label'   => __( 'Align Product Titles', 'avant' ),
+            'section' => $section,
+            'type'    => 'checkbox',
+            'description' => __( 'Try keep titles to 2 lines, if more then you can <a href="https://kairaweb.com/documentation/add-custom-css-to-align-the-woocommerce-titles/" target="_blank">add CSS to align the titles</a>', 'avant' ),
             'default' => 0,
         );
         $options['avant-noteon-woocommerce'] = array(
@@ -765,6 +805,12 @@ function customizer_library_avant_options() {
         'description' => __( 'This will set the space between the site title and the site tagline', 'avant' ),
         'default' => 0,
     );
+    $options['avant-noteon-fonts-title'] = array(
+            'id' => 'avant-noteon-fonts-title',
+            'section' => $section,
+            'type'    => 'note',
+            'description' => __( '<b>Premium Extra Features:</b><br />- Set custom Title & Tagline colors', 'avant' )
+        );
 
     $section = 'avant-typography-section-default';
 
@@ -987,6 +1033,13 @@ function customizer_library_avant_options() {
             'step'  => 1,
         ),
         'default' => 30
+    );
+    $options['avant-navi-selected-color'] = array(
+        'id' => 'avant-navi-selected-color',
+        'label'   => __( 'Selected/Active Color', 'avant' ),
+        'section' => $section,
+        'type'    => 'color',
+        'default' => $primary_color,
     );
     
     $section = 'avant-panel-colors-section-pages';
