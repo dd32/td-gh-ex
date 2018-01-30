@@ -1,5 +1,10 @@
 SuevaFree Changelog
 
+- Version 3.4.4 - Released: 30.01.2018
+
+-- Updated : WooCommerce templates.
+-- Edit  : Code optimized.
+
 - Version 3.4.3 - Released: 24.01.2018
 
 -- Removed : Custom CSS SuevaFree option (Replaced with Additional CSS option)

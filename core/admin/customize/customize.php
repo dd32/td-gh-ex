@@ -306,6 +306,22 @@ if (!function_exists('suevafree_customize_panel_function')) {
 
 			array(
 				
+				'label' => esc_html__( 'WooCommerce title','suevafree'),
+				'description' => esc_html__( 'Do you want to view the WooCommerce category title under a black container?','suevafree'),
+				'id' => 'suevafree_view_woocommerce_title',
+				'type' => 'select',
+				'section' => 'settings_section',
+				'options' => array (
+				   'off' => esc_html__( 'No','suevafree'),
+				   'on' => esc_html__( 'Yes','suevafree'),
+				),
+				
+				'std' => 'off',
+			
+			),
+
+			array(
+				
 				'label' => esc_html__( 'Box Shadow','suevafree'),
 				'description' => esc_html__( 'Do you want to disable the shadow of boxes?','suevafree'),
 				'id' => 'suevafree_disable_box_shadow',
