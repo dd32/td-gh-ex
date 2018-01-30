@@ -51,7 +51,8 @@ function logo_url() {
 	$options = get_option('theme_options'); 
 	echo "<input name='theme_options[logo_url]' type='text' value='{$options['logo_url']}' />";
 	print '<code>Recommend: 70px &gt; height of image. </code>';
-} 
+}
+
 function aboutus() {
 	$options = get_option('theme_options'); 
 	echo "<textarea  cols='18' rows='3' name='theme_options[aboutus]'>{$options['aboutus']}</textarea>";

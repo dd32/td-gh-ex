@@ -4,7 +4,7 @@ Theme URI: https://jazcompany.wordpress.com/2016/07/30/artikler/
 Author: JAZ Themes Team
 Author URI: https://jazcompany.wordpress.com/
 Description: Artikler theme created and designed by JAZ Themes Team. Features include custom headers,custom background,theme options,full width template, multiple widget areas, mobile view an optional icon navigation menu. This theme is perfect for article sites.More detail for this theme visit https://jazcompany.wordpress.com/.
-Version: 1.3.4.7
+Version: 1.3.4.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header,  rtl-language-support,theme-options,full-width-template
@@ -150,7 +150,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c539e', end
 .content-post-tilte-excerpt h4 a{background:#FFF; padding:7px; display:inline-block;}
 .content-authore-excerpt{font-size:9px;}
 .content-post-tilte-excerpt h4{clear:none; text-transform:capitalize; margin: 0 0 0px; padding:0px 0px 0px;}
-.post_expert_index{height:132px;}
+.post_expert_index{}
 .post_expert_index a{text-decoration:none; text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:bold; color: #FFFFFF;
  background-color: #45484d; background-image: -webkit-gradient(linear, left top, left bottom, from(#45484d), to(#000000));
  background-image: -webkit-linear-gradient(top, #45484d, #000000);
@@ -257,10 +257,11 @@ commentlist .bypostauthor {border-top: 10px solid #666;}
 .go a:hover{background:#C30;}
 .tw a:hover{background:#3CF;}
 /******************************nav***************************/
-.navigation{overflow:hidden; background:#e0e0e0; font-size:14px; text-align:center; font-weight:bold; }
-.navigation a{color:#000; margin:0 8px 0; text-decoration:none;}
+.navigation{overflow:hidden; font-size:14px; text-align:center; font-weight:bold; text-align: center;}
+.navigation a{color:#000; margin: 5px 8px 5px 0; text-decoration:none; display: inline-block; padding: 10px 13px; background: #eee;}
+.navigation a:hover{background:#444; color:#fff;}
 .nav-single{overflow:hidden; margin:1px 0 0 0;}
-.nav-single a{text-decoration:none; font-size:11px; padding:0px; margin:0 5px; font-weight:600;}
+.nav-single a{text-decoration:none; font-size:16px; padding:0px; margin:0 5px; font-weight:600;}
 .nav-single a:hover{margin:0px;}
 .nav-previous{float:left; margin:0 0 0 0px; padding:0px 0;}
 .nav-next{float:right; margin:0 0px 0 0px; padding:0px 0;}
@@ -282,7 +283,7 @@ commentlist .bypostauthor {border-top: 10px solid #666;}
 .content-post-rand-img{height:148px;}
 .content-post-rand-img img{border:1px solid;}
 #no-image-yet-rand div{padding:49px 0 !important; width:120px !important; font-size:14px !important; }
-.content-post-rand-a{font-size: 13px;width: 126px;text-align: center;background: #000;color: #fff;margin: -4px;}
+.content-post-rand-a{font-size: 13px;width: 126px;text-align: center;background: #444;color: #fff;margin: -4px; }
 /*********************************************************/
 .sticky { color:#999; }
 .gallery-caption{font-size:10px; color:#000;}

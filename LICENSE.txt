@@ -1,4 +1,4 @@
-Artikler WordPress Theme, Copyright 2012 jathemes
+Artikler WordPress Theme, Copyright 2012 JAZ Themes
 Artikler is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
