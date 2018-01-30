@@ -859,6 +859,80 @@ function avata_get_sections(){
 	}
 	return $avata_sections;
 	}
+
+/*
+*  Allow tags
+*/
+add_action('init', 'avata_html_tags_code', 10);
+function avata_html_tags_code() {
+	
+	global $allowedposttags;
+	
+	$allowed_atts = array(
+		'align'      => array(),
+		'class'      => array(),
+		'type'       => array(),
+		'id'         => array(),
+		'dir'        => array(),
+		'lang'       => array(),
+		'style'      => array(),
+		'xml:lang'   => array(),
+		'src'        => array(),
+		'alt'        => array(),
+		'href'       => array(),
+		'rel'        => array(),
+		'rev'        => array(),
+		'target'     => array(),
+		'novalidate' => array(),
+		'type'       => array(),
+		'value'      => array(),
+		'name'       => array(),
+		'tabindex'   => array(),
+		'action'     => array(),
+		'method'     => array(),
+		'for'        => array(),
+		'width'      => array(),
+		'height'     => array(),
+		'data'       => array(),
+		'title'      => array(),
+	);
+	$allowedposttags['form']     = $allowed_atts;
+    $allowedposttags["script"] = array("src" => array(),"name" => array(),"id" => array(),"type" => array());
+	$allowedposttags['iframe'] = array (
+		'align'       => true,
+		'frameborder' => true,
+		'height'      => true,
+		'width'       => true,
+		'sandbox'     => true,
+		'seamless'    => true,
+		'scrolling'   => true,
+		'srcdoc'      => true,
+		'src'         => true,
+		'class'       => true,
+		'id'          => true,
+		'style'       => true,
+		'border'      => true,
+	);
+	
+	$allowedposttags["object"] = array("height" => array(), "width" => array());
+	$allowedposttags["param"] = array("name" => array(), "value" => array());
+	
+	$allowedposttags["embed"] = array(
+		"src" => array(),
+		"type" => array(),
+		"allowfullscreen" => array(),
+		"allowscriptaccess" => array(),
+		"height" => array(),
+		"width" => array()
+		);
+    $allowedposttags["style"] = array("type" => array());
+	$allowedposttags["link"] = array("rel" => array(),"href" => array(),"id" => array(),"type" => array(),"media" => array());
+	$allowedposttags["input"] = array("name" => array(),"id" => array(),"value" => array(),"class" => array(),"placeholder" => array(),"required" => array(),"type" => array(),'aria-required' => array());
+	$allowedposttags["select"] = array("name" => array(),"id" => array(),"value" => array(),"class" => array(),"required" => array(),"type" => array(),'aria-required' => array());
+	$allowedposttags["textarea"] = array("name" => array(),"id" => array(),"value" => array(),"class" => array(),"placeholder" => array(),"required" => array(),"type" => array(),'aria-required' => array());
+}
+
+
 /**
 * Standard fonts
 */

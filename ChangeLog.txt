@@ -2,6 +2,9 @@
 
 == CHANGE LOG == 
 
+= Version 1.4.8 = = 30/01/2018
+* Add - Added allow html tags
+
 = Version 1.4.7 = = 28/01/2018
 * Add - Added section - Counter
 
