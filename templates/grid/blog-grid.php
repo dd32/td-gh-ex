@@ -88,9 +88,7 @@
 
 				<!-- Related Posts -->
 				<?php
-				if ( substr( ashe_page_layout(), 0, 4 ) === 'col1' ) {
-					ashe_related_posts( esc_html__( 'You May Also Like','ashe' ), ashe_options( 'blog_page_related_orderby' ) );
-				}
+				ashe_related_posts( esc_html__( 'You May Also Like','ashe' ), ashe_options( 'blog_page_related_orderby' ) );
 				?>
 
 			</article>

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- Page Content -->
-<div class="main-content clear-fix<?php echo ( ashe_options( 'general_single_width' ) === 'boxed'  ) ? ' boxed-wrapper': ''; ?>" data-layout="<?php echo esc_attr( ashe_page_layout() ); ?>" data-sidebar-sticky="<?php echo esc_attr( ashe_options( 'general_sidebar_sticky' )  ); ?>">
+<div class="main-content clear-fix<?php echo ( ashe_options( 'general_single_width' ) === 'boxed'  ) ? ' boxed-wrapper': ''; ?>" data-sidebar-sticky="<?php echo esc_attr( ashe_options( 'general_sidebar_sticky' )  ); ?>">
 
 
 	<?php

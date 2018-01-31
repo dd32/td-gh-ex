@@ -298,19 +298,6 @@ if ( ! function_exists( 'ashe_excerpt' ) ) {
 ** Custom Functions
 */
 
-// Page Layouts
-function ashe_page_layout() {
-	if ( is_active_sidebar( 'sidebar-left' ) && is_active_sidebar( 'sidebar-right' ) ) {
-		return 'col1-lrsidebar';
-	} else if ( is_active_sidebar( 'sidebar-left' ) ) {
-		return 'col1-lsidebar';
-	} else if ( is_active_sidebar( 'sidebar-right' ) || ashe_is_preview() ) {
-		return 'col1-rsidebar';
-	} else {
-		return 'col1-fullwidth';
-	}
-}
-
 // HEX to RGBA Converter
 function ashe_hex2rgba( $color, $opacity = 1 ) {
 

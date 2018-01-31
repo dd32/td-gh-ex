@@ -67,6 +67,103 @@ function ashe_about_page_output() {
 
 			</div>
 
+			<div class="four-columns-wrap">
+			
+				<h2><?php esc_html_e( 'Ashe Pro - Predefined Styles', 'ashe' ); ?></h2>
+				<p>
+					<?php esc_html_e( 'Ashe Pro\'s powerful setup allows you to easily create unique looking sites. Here are a few included examples that can be installed with one click in the ', 'ashe' ); ?>
+					<a target="_blank" href="https://wp-royal.com/themes/item-ashe-pro/?ref=ashe-free-backend-about-predefined-styles"><?php esc_html_e( 'Ashe Pro Theme.', 'ashe' ); ?></a>
+					<?php esc_html_e( 'More details in the theme ', 'ashe' ); ?>
+					<a target="_blank" href="<?php echo esc_url('http://wp-royal.com/themes/ashe/docs/?ref=ashe-free-backend-about-predefined-styles#predefined'); ?>"><?php esc_html_e( 'Documentation.', 'ashe' ); ?></a>
+				</p>
+
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img1.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 1', 'ashe' ); ?></h2>
+						<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-pro/demo/?ref=ashe-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'ashe' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img2.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 2', 'ashe' ); ?></h2>
+						<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-pro/color-black/?ref=ashe-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'ashe' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img3.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 3', 'ashe' ); ?></h2>
+						<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-pro/sample-v5/?ref=ashe-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'ashe' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img4.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 4', 'ashe' ); ?></h2>
+						<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-pro/color-colorful/?ref=ashe-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'ashe' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img5.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 5', 'ashe' ); ?></h2>
+						<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-pro/columns2-sidebar/?ref=ashe-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'ashe' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img6.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 6', 'ashe' ); ?></h2>
+						<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-pro/columns4/?ref=ashe-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'ashe' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img7.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 7', 'ashe' ); ?></h2>
+						<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-pro/typography-v2/?ref=ashe-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'ashe' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img8.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 8', 'ashe' ); ?></h2>
+						<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-pro/columns3-sidebar/?ref=ashe-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'ashe' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img9.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 9', 'ashe' ); ?></h2>
+						<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-pro/color-black-white/?ref=ashe-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'ashe' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img10.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 10', 'ashe' ); ?></h2>
+						<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-pro/columns3-nsidebar/?ref=ashe-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'ashe' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img11.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 11', 'ashe' ); ?></h2>
+						<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-pro/columns2-nsidebar/?ref=ashe-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'ashe' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img12.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 12', 'ashe' ); ?></h2>
+						<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-pro/sample-v3/?ref=ashe-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'ashe' ); ?></a>
+					</div>
+				</div>
+
+			</div>
+
 		<?php elseif ( $active_tab == 'ashe_tab_2' ) : ?>
 			
 			<div class="three-columns-wrap">
