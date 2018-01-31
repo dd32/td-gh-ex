@@ -2,9 +2,9 @@
 
 **Contributors:** iceable
 **Requires at least:** WordPress 4.7
-**Tested up to:** WordPress 4.9
-**Stable tag:** 1.1.20
-**Version:** 1.1.20
+**Tested up to:** WordPress 4.9.2
+**Stable tag:** 1.1.21
+**Version:** 1.1.21
 **License:** GPLv2 or later
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 **Tags:** one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, footer-widgets, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, entertainment, photography, portfolio
@@ -31,7 +31,7 @@ Blackoot Lite is the free version of Blackoot Pro, which comes with many additio
 ### Translation
 
 Bundled translations (GPL Licensed):
-* French (fr_FR) translation: Copyright 2014-2017, Iceable Themes (https://www.iceablethemes.com)
+* French (fr_FR) translation: Copyright 2014-2018, Iceable Media - Mathieu Sarrasin (https://www.iceablethemes.com)
 * Spanish (es_ES) translation: Copyright 2016, David Ospina <dao_star_2@hotmail.com> (http://interlunas.vzpla.net/)
 
 Translating this theme into your own language is quick and easy, you will find a .POT file in the /languages folder to get you started. It contains about 80 strings only.
@@ -43,7 +43,7 @@ Your translation files will be added to the next update. Don't forget to leave y
 
 ## Copyright
 
-Blackoot Lite WordPress Theme, Copyright 2014-2017 Iceable Themes (https://www.iceablethemes.com)
+Blackoot Lite WordPress Theme, Copyright 2014-2018, Iceable Media - Mathieu Sarrasin (https://www.iceablethemes.com)
 Blackoot Lite is distributed under the terms of the GNU GPL
 
 Blackoot Lite bundles the following third-party resources:
@@ -62,6 +62,11 @@ Source: http://fontawesome.io/
 
 
 ## Changelog
+
+### 1.1.21
+January 31th, 2018
+* Merged Google fonts requests into one
+* Updated copyright
 
 ### 1.1.20
 November 18th, 2017

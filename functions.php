@@ -3,7 +3,7 @@
  *
  * Blackoot Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2014-2017 Mathieu Sarrasin - Iceable Media
+ * Copyright 2014-2018 Iceable Media - Mathieu Sarrasin
  *
  * Theme's Function
  *
@@ -157,8 +157,7 @@ function blackoot_styles() {
 	wp_enqueue_style( 'blackoot-style' );
 	wp_enqueue_style( 'font-awesome' );
 
-	wp_enqueue_style( 'Open-sans-webfonts', '//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&subset=latin,latin-ext', array(), null );
-	wp_enqueue_style( 'Quicksand-webfonts', '//fonts.googleapis.com/css?family=Quicksand:400italic,700italic,400,700&subset=latin,latin-ext', array(), null );
+	wp_enqueue_style( 'blackoot-webfonts', '//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700|Quicksand:400italic,700italic,400,700&subset=latin,latin-ext', array(), null );
 
 }
 add_action( 'wp_enqueue_scripts', 'blackoot_styles' );
