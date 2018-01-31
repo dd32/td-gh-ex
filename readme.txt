@@ -3,7 +3,7 @@ Author: ronangelo
 Author URI: https://ronangelo.com
 Theme URI:  https://ronangelo.com/asteroid/
 
-Asteroid WordPress Theme, Copyright 2012-2017 ronangelo
+Asteroid WordPress Theme, Copyright 2012-2018 ronangelo
 Asteroid is distributed under the terms of the GNU GPL version 3
 
 == Description ==
@@ -18,6 +18,10 @@ custom header images, backgrounds, menus, full-width page templates, basic schem
 JSColor - A lightweight Javascript color-picker maintained by Jan Odvárko.
 
 == CHANGELOG ==
+Version 1.2.7
+	* Fixed Title & Tagline setting in Customizer.
+	* Removed favicon setting in favor of Customizer Site Icon.
+
 Version 1.2.6
 	* Fixed missing Blog Title in Header.
 

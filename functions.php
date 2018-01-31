@@ -4,7 +4,7 @@
  * @package Asteroid
  *
  */
-$ast_version = '1.2.6';
+$ast_version = '1.2.7';
 /*-------------------------------------
 	Setup Theme Options
 --------------------------------------*/
@@ -246,13 +246,8 @@ function asteroid_link_pingback() {
 --------------------------------------*/
 function asteroid_print_head_codes() {
 	global $ast_version;
-echo '
-<!-- Asteroid Head -->
-<meta property="Asteroid Theme" content="' . $ast_version . '" />' . "\n";
-
-if ( asteroid_option( 'ast_favicon' ) ) {
-	echo '<link rel="icon" href="' . esc_url( asteroid_option( 'ast_favicon' ) ) . '" type="image/x-icon" />' . "\n";
-}
+echo '<!-- Asteroid Head -->' . "\n";
+echo '<meta property="Asteroid Theme" content="' . $ast_version . '" />' . "\n";
 echo asteroid_option( 'ast_head_codes' ) . "\n";
 echo '<!-- Asteroid Head End -->' . "\n";
 }
@@ -305,7 +300,7 @@ function asteroid_header_text_color() {
 	if ( get_header_textcolor() == 'FFA900' ) return;
 echo '
 <style type="text/css" media="screen">
-	#site-title a, #site-description {color:#' . get_header_textcolor() . ';}
+	#site-title a {color:#' . get_header_textcolor() . ';}
 </style>' . "\n\n";
 }
 

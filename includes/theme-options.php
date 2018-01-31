@@ -346,7 +346,7 @@ class Asteroid_Theme_Options {
 			'title'   => __( 'Search Box on Menu', 'asteroid' ),
 			'desc'    => __( 'Display a Search box on the Main Menu.', 'asteroid' ),
 			'type'    => 'checkbox',
-			'std'     => 1 // Set to 1 to be checked by default, 0 to be unchecked by default.
+			'std'     => 1
 		);
 
 		$this->settings['ast_menu_style'] = array(
@@ -354,7 +354,7 @@ class Asteroid_Theme_Options {
 			'title'   => __( 'Responsive Menu Style', 'asteroid' ),
 			'desc'    => __( 'Menu style to show on small screens. Responsive Layout must be enabled.', 'asteroid' ),
 			'type'    => 'radio',
-			'std'     => 'stack',
+			'std'     => 'drop',
 			'choices' => array(
 				'stack' => __( 'Stacked', 'asteroid' ),
 				'drop' 	=> __( 'Drop-down', 'asteroid' )
@@ -395,14 +395,6 @@ class Asteroid_Theme_Options {
 			'section' => 'appearance',
 			'title'   => __( 'Header Logo', 'asteroid' ),
 			'desc'    => __( 'The URL of your logo. This replaces the Title & Tagline.', 'asteroid' ),
-			'type'    => 'upload',
-			'std'     => ''
-		);
-
-		$this->settings['ast_favicon'] = array(
-			'section' => 'appearance',
-			'title'   => __( 'Favicon', 'asteroid' ),
-			'desc'    => __( 'The URL of your favicon. It should be 16x16 pixels.', 'asteroid' ),
 			'type'    => 'upload',
 			'std'     => ''
 		);
