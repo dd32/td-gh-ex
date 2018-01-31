@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.1.6 | 31th January 2018 = 
+* Fix: Issue with portfolio carousel.
+
 = Version 3.1.5 | 26th January 2018 = 
 * Add: Woo 3.3 support
 
