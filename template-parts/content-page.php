@@ -9,6 +9,11 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <?php if (function_exists('is_cart') && function_exists('is_checkout')) {
+        if (is_cart() || is_checkout()) {
+            do_action('avior_woocommerce_breadcrumb');
+        }
+    }?>
 	<header class="entry-header">
 		<?php if ( is_sticky() ) : ?>
 			<div class="sticky-post-wrapper">

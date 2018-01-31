@@ -130,7 +130,7 @@ if (!function_exists('avior_header_style')) :
         ?>
         <style type="text/css" id="avior-header-css">
 
-            .menu-toggle,.main-navigation, .site-header .site-title, .top-navigation-right .theme-social-menu > li > a, .top-navigation-right .nav-menu > li > a, .main-navigation .theme-social-menu > li > a, .main-navigation .nav-menu > li > a {
+            .menu-toggle, .main-navigation, .site-header .site-title, .top-navigation-right .theme-social-menu > li > a, .top-navigation-right .nav-menu > li > a, .main-navigation .theme-social-menu > li > a, .main-navigation .nav-menu > li > a {
                 color: #<?php echo esc_attr( $header_text_color ); ?>;
             }
 
@@ -523,6 +523,78 @@ function avior_get_color_scheme_css($colors)
 	a:focus {
         outline-color: {$colors['main_text_color']};
     }	
+
+    body.woocommerce-cart table.cart .coupon .button:hover, body .woocommerce-cart table.cart .coupon .button:focus,
+    body .woocommerce-cart table.cart .coupon .button:hover, body.woocommerce-cart table.cart .coupon .button:focus,
+    body.woocommerce div.product div.images .woocommerce-product-gallery__trigger:hover,
+    body .woocommerce div.product div.images .woocommerce-product-gallery__trigger:hover,
+    body.woocommerce #respond input#submit.alt, body .woocommerce a.button.alt, body.woocommerce button.button.alt, body.woocommerce input.button.alt,
+    body .woocommerce #respond input#submit.alt, body.woocommerce a.button.alt, body .woocommerce button.button.alt, body.woocommerce input.button.alt,
+    body .widget .woocommerce-product-search:before,
+    body.woocommerce nav.woocommerce-pagination ul li a.prev:hover, body.woocommerce nav.woocommerce-pagination ul li a.prev:focus, body.woocommerce nav.woocommerce-pagination ul li a.next:hover, body.woocommerce nav.woocommerce-pagination ul li a.next:focus,
+    body .woocommerce nav.woocommerce-pagination ul li a.prev:hover, body .woocommerce nav.woocommerce-pagination ul li a.prev:focus, body .woocommerce nav.woocommerce-pagination ul li a.next:hover, body .woocommerce nav.woocommerce-pagination ul li a.next:focus,
+    body.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+    body .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+    body.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
+    body .woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
+    body.woocommerce #respond input#submit, body.woocommerce a.button, body.woocommerce button.button, body.woocommerce input.button,
+    body .woocommerce #respond input#submit, body .woocommerce a.button, body .woocommerce button.button, body .woocommerce input.button{
+        background-color: {$colors['brand_color']};
+    }
+    body .woocommerce-error, body .woocommerce-info, body .woocommerce-message,           
+    body.woocommerce-cart table.cart .coupon .button:hover, body .woocommerce-cart table.cart .coupon .button:focus,
+    body .woocommerce-cart table.cart .coupon .button:hover, body.woocommerce-cart table.cart .coupon .button:focus,
+    body.woocommerce #respond input#submit, body.woocommerce a.button, body.woocommerce button.button, body.woocommerce input.button,
+    body .woocommerce #respond input#submit, body .woocommerce a.button, body .woocommerce button.button, body .woocommerce input.button,
+    body.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
+    body .woocommerce div.product .woocommerce-tabs ul.tabs li.active a{
+         border-color: {$colors['brand_color']};
+    }
+    body.woocommerce p.stars.selected a.active::before, body.woocommerce p.stars.selected a:not(.active)::before, body.woocommerce p.stars:hover a::before, body.woocommerce p.stars a:hover::before,
+    body .woocommerce p.stars.selected a.active::before, body .woocommerce p.stars.selected a:not(.active)::before, body .woocommerce p.stars:hover a::before, body .woocommerce p.stars a:hover::before,
+    body.woocommerce div.product .woocommerce-tabs ul.tabs li a,
+    body .woocommerce div.product .woocommerce-tabs ul.tabs li a,
+    body.woocommerce ul.products li.product .woocommerce-loop-product__link:hover,
+    body .woocommerce ul.products li.product .woocommerce-loop-product__link:hover,
+    body .site-header-cart .cart-contents:hover,
+    body.woocommerce .woocommerce-breadcrumb a, body.woocommerce-page .woocommerce-breadcrumb a,
+    body .woocommerce .woocommerce-breadcrumb a, body .woocommerce-page .woocommerce-breadcrumb a,
+    body .woocommerce .star-rating span::before,
+    body.woocommerce .star-rating span::before{
+         color: {$colors['brand_color']};
+    }
+    body.woocommerce a.remove:hover,
+    body .woocommerce a.remove:hover{
+         color: {$colors['brand_color']};!important;
+    }
+    body.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
+    body .woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
+    body.woocommerce div.product .woocommerce-grouped-product-list-item__price, body.woocommerce div.product .woocommerce-variation-price .price, body.woocommerce div.product p.price,
+    body .woocommerce div.product .woocommerce-grouped-product-list-item__price, body .woocommerce div.product .woocommerce-variation-price .price, body .woocommerce div.product p.price,
+    body.woocommerce ul.products li.product .price,
+    body.woocommerce nav.woocommerce-pagination ul li span.current,
+    body .woocommerce nav.woocommerce-pagination ul li span.current,
+    body .woocommerce ul.products li.product .price,
+    body.woocommerce ul.product_list_widget .woocommerce-Price-amount,
+    body .woocommerce ul.product_list_widget .woocommerce-Price-amount{
+	     color: {$colors['main_text_color']};
+    }
+    body.woocommerce-cart table.cart .coupon .button,
+    body .woocommerce-cart table.cart .coupon .button,
+    body.woocommerce #respond input#submit.alt:hover, body.woocommerce a.button.alt:hover, body.woocommerce button.button.alt:hover, body.woocommerce input.button.alt:hover,
+    body .woocommerce #respond input#submit.alt:hover, body .woocommerce a.button.alt:hover, body .woocommerce button.button.alt:hover, body .woocommerce input.button.alt:hover,
+    body.woocommerce nav.woocommerce-pagination ul li a.prev, body.woocommerce nav.woocommerce-pagination ul li a.next,
+    body .woocommerce nav.woocommerce-pagination ul li a.prev, body .woocommerce nav.woocommerce-pagination ul li a.next
+    body .woocommerce #respond input#submit:hover, body .woocommerce a.button:hover, body .woocommerce button.button:hover, body .woocommerce input.button:hover,
+    body.woocommerce #respond input#submit:hover, body.woocommerce a.button:hover, body.woocommerce button.button:hover, body.woocommerce input.button:hover{
+        background-color:{$colors['brand_color_hover']};
+    }
+    body.woocommerce-cart table.cart .coupon .button,
+    body .woocommerce-cart table.cart .coupon .button,
+    body .woocommerce #respond input#submit:hover, body .woocommerce a.button:hover, body .woocommerce button.button:hover, body .woocommerce input.button:hover,
+    body.woocommerce #respond input#submit:hover, body.woocommerce a.button:hover, body.woocommerce button.button:hover, body.woocommerce input.button:hover{
+        border-color:{$colors['brand_color_hover']};
+    }
 CSS;
 }
 
@@ -668,7 +740,54 @@ function avior_brand_color_css()
         }
 	}
 	';
-
+    if (class_exists('WooCommerce')) {
+        $css .= '
+           body.woocommerce-cart table.cart .coupon .button:hover, body .woocommerce-cart table.cart .coupon .button:focus,
+           body .woocommerce-cart table.cart .coupon .button:hover, body.woocommerce-cart table.cart .coupon .button:focus,
+           body.woocommerce div.product div.images .woocommerce-product-gallery__trigger:hover,
+           body .woocommerce div.product div.images .woocommerce-product-gallery__trigger:hover,
+           body.woocommerce #respond input#submit.alt, body .woocommerce a.button.alt, body.woocommerce button.button.alt, body.woocommerce input.button.alt,
+           body .woocommerce #respond input#submit.alt, body.woocommerce a.button.alt, body .woocommerce button.button.alt, body.woocommerce input.button.alt,
+           body .widget .woocommerce-product-search:before,
+           body.woocommerce nav.woocommerce-pagination ul li a.prev:hover, body.woocommerce nav.woocommerce-pagination ul li a.prev:focus, body.woocommerce nav.woocommerce-pagination ul li a.next:hover, body.woocommerce nav.woocommerce-pagination ul li a.next:focus,
+           body .woocommerce nav.woocommerce-pagination ul li a.prev:hover, body .woocommerce nav.woocommerce-pagination ul li a.prev:focus, body .woocommerce nav.woocommerce-pagination ul li a.next:hover, body .woocommerce nav.woocommerce-pagination ul li a.next:focus,
+           body.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+           body .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+           body.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
+           body .woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
+           body.woocommerce #respond input#submit, body.woocommerce a.button, body.woocommerce button.button, body.woocommerce input.button,
+           body .woocommerce #respond input#submit, body .woocommerce a.button, body .woocommerce button.button, body .woocommerce input.button{
+                background-color: %1$s;
+           }
+           body .woocommerce-error, body .woocommerce-info, body .woocommerce-message,           
+           body.woocommerce-cart table.cart .coupon .button:hover, body .woocommerce-cart table.cart .coupon .button:focus,
+           body .woocommerce-cart table.cart .coupon .button:hover, body.woocommerce-cart table.cart .coupon .button:focus,
+           body.woocommerce #respond input#submit, body.woocommerce a.button, body.woocommerce button.button, body.woocommerce input.button,
+           body .woocommerce #respond input#submit, body .woocommerce a.button, body .woocommerce button.button, body .woocommerce input.button,
+           body.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
+           body .woocommerce div.product .woocommerce-tabs ul.tabs li.active a{
+                border-color: %1$s;
+           }
+           body.woocommerce p.stars.selected a.active::before, body.woocommerce p.stars.selected a:not(.active)::before, body.woocommerce p.stars:hover a::before, body.woocommerce p.stars a:hover::before,
+           body .woocommerce p.stars.selected a.active::before, body .woocommerce p.stars.selected a:not(.active)::before, body .woocommerce p.stars:hover a::before, body .woocommerce p.stars a:hover::before,
+           body.woocommerce div.product .woocommerce-tabs ul.tabs li a,
+           body .woocommerce div.product .woocommerce-tabs ul.tabs li a,
+           body.woocommerce ul.products li.product .woocommerce-loop-product__link:hover,
+           body .woocommerce ul.products li.product .woocommerce-loop-product__link:hover,
+           body .site-header-cart .cart-contents:hover,
+           body.woocommerce .woocommerce-breadcrumb a, body.woocommerce-page .woocommerce-breadcrumb a,
+           body .woocommerce .woocommerce-breadcrumb a, body .woocommerce-page .woocommerce-breadcrumb a,
+           body .woocommerce .star-rating span::before,
+           body.woocommerce .star-rating span::before{
+                color: %1$s;
+           }
+           body.woocommerce a.remove:hover,
+           body .woocommerce a.remove:hover{
+                color: %1$s!important;
+           }
+           
+        ';
+    }
     wp_add_inline_style('avior-style', sprintf($css, esc_html($brand_color)));
 }
 
@@ -701,7 +820,22 @@ function avior_main_text_color_css()
 		     background: %1$s;
 		}
 	';
-
+    if (class_exists('WooCommerce')) {
+        $css .= '
+           body.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
+           body .woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
+           body.woocommerce div.product .woocommerce-grouped-product-list-item__price, body.woocommerce div.product .woocommerce-variation-price .price, body.woocommerce div.product p.price,
+           body .woocommerce div.product .woocommerce-grouped-product-list-item__price, body .woocommerce div.product .woocommerce-variation-price .price, body .woocommerce div.product p.price,
+           body.woocommerce ul.products li.product .price,
+           body.woocommerce nav.woocommerce-pagination ul li span.current,
+           body .woocommerce nav.woocommerce-pagination ul li span.current,
+           body .woocommerce ul.products li.product .price,
+           body.woocommerce ul.product_list_widget .woocommerce-Price-amount,
+           body .woocommerce ul.product_list_widget .woocommerce-Price-amount{
+	        color: %1$s;
+           }
+        ';
+    }
     wp_add_inline_style('avior-style', sprintf($css, esc_html($main_text_color)));
 }
 
@@ -737,7 +871,26 @@ function avior_brand_color_hover_css()
 	  border-color:  %1$s;
 	}	
 	';
-
+    if (class_exists('WooCommerce')) {
+        $css .= '
+           body.woocommerce-cart table.cart .coupon .button,
+           body .woocommerce-cart table.cart .coupon .button,
+           body.woocommerce #respond input#submit.alt:hover, body.woocommerce a.button.alt:hover, body.woocommerce button.button.alt:hover, body.woocommerce input.button.alt:hover,
+           body .woocommerce #respond input#submit.alt:hover, body .woocommerce a.button.alt:hover, body .woocommerce button.button.alt:hover, body .woocommerce input.button.alt:hover,
+           body.woocommerce nav.woocommerce-pagination ul li a.prev, body.woocommerce nav.woocommerce-pagination ul li a.next,
+           body .woocommerce nav.woocommerce-pagination ul li a.prev, body .woocommerce nav.woocommerce-pagination ul li a.next
+           body .woocommerce #respond input#submit:hover, body .woocommerce a.button:hover, body .woocommerce button.button:hover, body .woocommerce input.button:hover,
+           body.woocommerce #respond input#submit:hover, body.woocommerce a.button:hover, body.woocommerce button.button:hover, body.woocommerce input.button:hover{
+                background-color: %1$s;
+           }
+           body.woocommerce-cart table.cart .coupon .button,
+           body .woocommerce-cart table.cart .coupon .button,
+           body .woocommerce #respond input#submit:hover, body .woocommerce a.button:hover, body .woocommerce button.button:hover, body .woocommerce input.button:hover,
+           body.woocommerce #respond input#submit:hover, body.woocommerce a.button:hover, body.woocommerce button.button:hover, body.woocommerce input.button:hover{
+                border-color: %1$s;
+           }
+        ';
+    }
     wp_add_inline_style('avior-style', sprintf($css, esc_html($brand_color_hover)));
 }
 

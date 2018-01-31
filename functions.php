@@ -131,6 +131,15 @@ function avior_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+    register_sidebar( array(
+        'name'          => esc_html__( 'Shop', 'avior' ),
+        'id'            => 'shop',
+        'description'   => esc_html__( 'Add widgets here.', 'avior' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
 }
 
 add_action( 'widgets_init', 'avior_widgets_init' );
@@ -140,9 +149,11 @@ add_action( 'widgets_init', 'avior_widgets_init' );
  */
 function avior_scripts() {
 
+	wp_enqueue_style( 'avior-style', get_stylesheet_uri(), array(), avior_get_theme_version() );
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'avior-fonts', avior_fonts_url(), array(), null );
-	wp_enqueue_style( 'avior-style', get_stylesheet_uri(), array(), avior_get_theme_version() );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/fonts/font-awesome.css', array(), '4.7.0' );
+
 	wp_enqueue_script( 'avior-navigation', get_template_directory_uri() . '/js/navigation.js', array(), avior_get_theme_version(), true );
 	wp_enqueue_script( 'avior-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), avior_get_theme_version(), true );
 	wp_enqueue_script( 'avior-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), avior_get_theme_version(), true );
@@ -177,7 +188,12 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
+/**
+ * Load WooCommerce compatibility file.
+ */
+if(class_exists( 'WooCommerce' )){
+    require get_template_directory() . '/inc/woocommerce.php';
+}
 if ( ! function_exists( 'avior_the_custom_logo' ) ) :
 	/**
 	 * Displays the optional custom logo.

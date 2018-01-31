@@ -23,7 +23,13 @@ get_header(); ?>
 					<?php get_template_part( 'template-parts/content', 'page' ); ?>
 				</main><!-- #main -->
 			</div><!-- #primary -->
-			<?php get_sidebar(); ?>
+            <?php if (function_exists('is_cart') && function_exists('is_checkout')) {
+                if (!is_cart() && !is_checkout()) {
+                    get_sidebar();
+                }
+            } else {
+                get_sidebar();
+            } ?>
 		</div><!-- .wrapper -->
 		<?php
 	endwhile; // End of the loop.

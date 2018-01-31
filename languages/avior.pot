@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Avior\n"
-"POT-Creation-Date: 2017-11-29 10:59+0200\n"
+"POT-Creation-Date: 2018-01-31 10:34+0200\n"
 "PO-Revision-Date: 2017-05-25 15:36+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.0.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:101
+#: functions.php:101 functions.php:137
 msgid "Add widgets here."
 msgstr ""
 
@@ -98,25 +98,29 @@ msgstr ""
 msgid "Footer Right"
 msgstr ""
 
-#: functions.php:150
+#: functions.php:135
+msgid "Shop"
+msgstr ""
+
+#: functions.php:161
 msgid "Expand menu"
 msgstr ""
 
-#: functions.php:151
+#: functions.php:162
 msgid "Collapse menu"
 msgstr ""
 
-#: functions.php:216
+#: functions.php:232
 msgctxt "Source Sans Pro font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:226
+#: functions.php:242
 msgctxt "Source Serif Pro font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:236
+#: functions.php:252
 msgctxt "Source Code Pro font: on or off"
 msgid "on"
 msgstr ""
@@ -129,11 +133,11 @@ msgstr ""
 msgid "Top Links Menu"
 msgstr ""
 
-#: header.php:70
+#: header.php:71
 msgid "Menu"
 msgstr ""
 
-#: header.php:70
+#: header.php:71
 msgid "Close"
 msgstr ""
 
@@ -227,6 +231,17 @@ msgstr ""
 msgid "Related Posts"
 msgstr ""
 
+#: inc/woocommerce.php:311
+msgid "View your shopping cart"
+msgstr ""
+
+#: inc/woocommerce.php:313
+#, php-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
 #: search.php:15
 #, php-format
 msgid "Search Results for: %s"
@@ -247,11 +262,11 @@ msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: template-parts/biography.php:18
+#: template-parts/biography.php:17
 msgid "Author:"
 msgstr ""
 
-#: template-parts/biography.php:35
+#: template-parts/biography.php:34
 #, php-format
 msgid "All Posts by %s"
 msgstr ""
@@ -278,19 +293,19 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:15 template-parts/content-single.php:15
+#: template-parts/content-page.php:20 template-parts/content-single.php:15
 #: template-parts/content.php:18
 msgid "Featured"
 msgstr ""
 
-#: template-parts/content-page.php:27 template-parts/content-single.php:32
-#: template-parts/content.php:30
+#: template-parts/content-page.php:31 template-parts/content-single.php:29
+#: template-parts/content.php:28
 #, php-format
 msgid "Continue reading %s"
 msgstr ""
 
-#: template-parts/content-page.php:31 template-parts/content-single.php:39
-#: template-parts/content.php:34
+#: template-parts/content-page.php:35 template-parts/content-single.php:36
+#: template-parts/content.php:32
 msgid "Pages:"
 msgstr ""
 
