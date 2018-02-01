@@ -39,7 +39,7 @@ function alante_thinkup_custom_logo() {
 ---------------------------------------------------------------------------------- */
 
 /* Add Custom Sidebar css */
-function alante_thinkup_sidebar_css() {
+function alante_thinkup_sidebar_css($classes) {
 
 // Get theme options values.
 $thinkup_homepage_layout = alante_thinkup_var ( 'thinkup_homepage_layout' );
@@ -47,51 +47,61 @@ $thinkup_general_layout  = alante_thinkup_var ( 'thinkup_general_layout' );
 $thinkup_blog_layout     = alante_thinkup_var ( 'thinkup_blog_layout' );
 $thinkup_post_layout     = alante_thinkup_var ( 'thinkup_post_layout' );
 
+	$class_sidebar = NULL;
+
 	if ( is_front_page() ) {
 		if ( $thinkup_homepage_layout == "option1" or empty( $thinkup_homepage_layout ) ) {		
-			echo '';
+			$class_sidebar = '';
 		} else if ( $thinkup_homepage_layout == "option2" ) {
-			wp_enqueue_style ( 'alante-thinkup-sidebarleft' );
+			$class_sidebar = 'layout-sidebar-left';
 		} else if ( $thinkup_homepage_layout == "option3" ) {
-			wp_enqueue_style ( 'alante-thinkup-sidebarright' );
+			$class_sidebar = 'layout-sidebar-right';
 		}
 	} else if ( is_page() ) {	
 		if ( $thinkup_general_layout == "option1" or empty( $thinkup_general_layout ) ) {		
-			echo '';
+			$class_sidebar = '';
 		} else if ( $thinkup_general_layout == "option2" ) {
-			wp_enqueue_style ( 'alante-thinkup-sidebarleft' );
+			$class_sidebar = 'layout-sidebar-left';
 		} else if ( $thinkup_general_layout == "option3" ) {
-			wp_enqueue_style ( 'alante-thinkup-sidebarright' );
+			$class_sidebar = 'layout-sidebar-right';
 		}
 	} else if ( alante_thinkup_check_isblog() and ! is_single() ) {
 		if ( $thinkup_blog_layout == "option1" or empty( $thinkup_blog_layout ) ) {		
-			echo '';
+			$class_sidebar = '';
 		} else if ( $thinkup_blog_layout == "option2" ) {
-			wp_enqueue_style ( 'alante-thinkup-sidebarleft' );
+			$class_sidebar = 'layout-sidebar-left';
 		} else if ( $thinkup_blog_layout == "option3" ) {
-			wp_enqueue_style ( 'alante-thinkup-sidebarright' );
+			$class_sidebar = 'layout-sidebar-right';
 		}
 	} else if ( is_singular( 'post' ) ) {
 		if ( $thinkup_post_layout == "option1" or empty( $thinkup_post_layout ) ) {		
-			echo '';
+			$class_sidebar = '';
 		} else if ( $thinkup_post_layout == "option2" ) {
-			wp_enqueue_style ( 'alante-thinkup-sidebarleft' );
+			$class_sidebar = 'layout-sidebar-left';
 		} else if ( $thinkup_post_layout == "option3" ) {
-			wp_enqueue_style ( 'alante-thinkup-sidebarright' );
+			$class_sidebar = 'layout-sidebar-right';
 		} else {
-			echo '';
+			$class_sidebar = '';
 		}
 	} else if ( is_search() ) {
 		if ( $thinkup_general_layout == "option1" or empty( $thinkup_general_layout ) ) {		
-			echo '';
+			$class_sidebar = '';
 		} else if ( $thinkup_general_layout == "option2" ) {
-			wp_enqueue_style ( 'alante-thinkup-sidebarleft' );
+			$class_sidebar = 'layout-sidebar-left';
 		} else if ($thinkup_general_layout == "option3") {
-			wp_enqueue_style ( 'alante-thinkup-sidebarright' );
+			$class_sidebar = 'layout-sidebar-right';
 		}
 	}
+
+	// Output sidebar class
+	if( ! empty( $class_sidebar ) ) {
+		$classes[] = $class_sidebar;
+	} else {
+		$classes[] = 'layout-sidebar-none';
+	}
+	return $classes;
 }
-add_action( 'wp_enqueue_scripts', 'alante_thinkup_sidebar_css', '11' );
+add_action( 'body_class', 'alante_thinkup_sidebar_css' );
 
 /* Add Custom Sidebar html */
 function alante_thinkup_sidebar_html() {

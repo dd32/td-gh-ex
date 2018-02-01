@@ -6,7 +6,7 @@
  */
 
 // Declare latest theme version
-$GLOBALS['alante_thinkup_theme_version'] = '1.0.13';
+$GLOBALS['alante_thinkup_theme_version'] = '1.0.14';
 
 // Setup content width 
 function alante_thinkup_content_width() {
@@ -122,8 +122,6 @@ function alante_thinkup_frontscripts() {
 
 	// Register theme stylesheets
 	wp_register_style( 'alante-thinkup-responsive', get_template_directory_uri() . '/styles/style-responsive.css', '', $alante_thinkup_theme_version );
-	wp_register_style( 'alante-thinkup-sidebarleft', get_template_directory_uri() . '/styles/layouts/thinkup-left-sidebar.css', '', $alante_thinkup_theme_version );
-	wp_register_style( 'alante-thinkup-sidebarright', get_template_directory_uri() . '/styles/layouts/thinkup-right-sidebar.css', '', $alante_thinkup_theme_version );
 
 	// Register WooCommerce (theme specific) stylesheets
 
