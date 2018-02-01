@@ -1,5 +1,10 @@
 SuevaFree Changelog
 
+- Version 3.4.6 - Released: 01.02.2018
+
+-- Fixed : Shop page issues generated after the downgrade of the official WooCommerce version (from 3.3.0 to 3.2.7)
+-- Fixed : Cart page issues generated after the downgrade of the official WooCommerce version (from 3.3.0 to 3.2.7)
+
 - Version 3.4.5 - Released: 01.02.2018
 
 -- Fixed : WooCommerce shop layout.

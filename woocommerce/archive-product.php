@@ -91,7 +91,7 @@ do_action( 'woocommerce_before_main_content' );
 	
 		woocommerce_product_loop_start();
 	
-		if ( wc_get_loop_prop( 'total' ) ) {
+		if ( !function_exists('wc_get_loop_prop') || wc_get_loop_prop( 'total' ) ) {
 			while ( have_posts() ) {
 				the_post();
 	

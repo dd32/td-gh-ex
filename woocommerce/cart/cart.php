@@ -64,10 +64,14 @@ do_action( 'woocommerce_before_cart' ); ?>
             
                                     <td class="product-remove">
 										<?php
-                                            // @codingStandardsIgnoreLine
+											if ( !function_exists('wc_get_cart_remove_url') ) {
+												$removeUrl = WC()->cart->get_remove_url( $cart_item_key );
+											} else {
+												$removeUrl = wc_get_cart_remove_url( $cart_item_key );
+											}
                                             echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
                                                 '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
-                                                esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+                                                esc_url( $removeUrl ),
                                                 esc_attr__( 'Remove this item', 'suevafree' ),
                                                 esc_attr( $product_id ),
                                                 esc_attr( $_product->get_sku() )
@@ -93,7 +97,12 @@ do_action( 'woocommerce_before_cart' ); ?>
                                     }
             
                                     // Meta data.
-                                    echo wc_get_formatted_cart_item_data( $cart_item );
+                                    
+                                    if ( !function_exists('wc_get_formatted_cart_item_data') ) {
+                                    	echo WC()->cart->get_item_data( $cart_item );
+                                    } else {
+                                    	echo wc_get_formatted_cart_item_data( $cart_item );
+                                    }
             
                                     // Backorder notification.
                                     if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
