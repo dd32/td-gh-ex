@@ -492,6 +492,25 @@ if (!function_exists('suevafree_template')) {
 			$span = $template[esc_attr(suevafree_setting('suevafree_search_layout'))];
 			$sidebar =  esc_attr(suevafree_setting('suevafree_search_layout'));
 						
+		} else if ( suevafree_is_woocommerce_active('is_shop') ) {
+			
+			if ( strstr(get_page_template_slug( wc_get_page_id('shop') ), 'left' )) { 
+
+				$span = $template["left-sidebar"];
+				$sidebar =  "left-sidebar";
+		
+			} else if ( strstr(get_page_template_slug( wc_get_page_id('shop') ), 'right' )) {
+				
+				$span = $template["right-sidebar"];
+				$sidebar =  "right-sidebar";
+					
+			} else {
+				
+				$span = $template["full"];
+				$sidebar =  'full';
+					
+			}
+
 		}
 
 		return ${$id};

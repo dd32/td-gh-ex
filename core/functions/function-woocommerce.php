@@ -1,6 +1,5 @@
 <?php
 
-
 /*-----------------------------------------------------------------------------------*/
 /* Woocommerce Hooks */
 /*-----------------------------------------------------------------------------------*/ 
@@ -29,6 +28,37 @@ if ( suevafree_setting ('suevafree_woocommerce_upsell_products') == "off" ) :
 	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
 	
 endif;
+
+/*-----------------------------------------------------------------------------------*/
+/* Woocommerce restore page templates */
+/*-----------------------------------------------------------------------------------*/ 
+
+if ( ! function_exists( 'suevafree_restore_page_templates' ) ) {
+
+	function suevafree_restore_page_templates( $page_templates, $theme, $post ) {
+		
+		if ( suevafree_is_woocommerce_active() ) {
+	
+			$shop_page_id = wc_get_page_id( 'shop' );
+	
+			if ( $post && absint( $shop_page_id ) === absint( $post->ID ) ) {
+				
+				$page_templates = array(
+					 'template-left-sidebar.php' => esc_html__( 'Left Sidebar','suevafree'),
+					 'template-right-sidebar.php' => esc_html__( 'Right Sidebar','suevafree'),
+					 'template-one-page.php' => 'One Page'
+				 );
+			}
+	
+		}
+		
+		return $page_templates;
+	
+	}
+
+	add_filter( 'theme_page_templates', 'suevafree_restore_page_templates', 11, 3 );
+
+}
 
 /*-----------------------------------------------------------------------------------*/
 /* Woocommerce remove breadcrumbs */

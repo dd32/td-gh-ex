@@ -1,5 +1,11 @@
 SuevaFree Changelog
 
+- Version 3.4.5 - Released: 01.02.2018
+
+-- Fixed : WooCommerce shop layout.
+-- Fixed : WooCommerce page template option.
+-- Edit  : Code optimized.
+
 - Version 3.4.4 - Released: 30.01.2018
 
 -- Updated : WooCommerce templates.
