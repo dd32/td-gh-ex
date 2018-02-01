@@ -48,7 +48,7 @@
   content: "";
   position: absolute;
   width: 33%;
-  height: 3px;
+  border-bottom: 3px solid;
   bottom: 0;
   @if ( true == $is_rtl ) {
     right: 0;
@@ -59,21 +59,20 @@
 }
 
 //menu items underline
-[class*=nav__menu] {
-  .nav__title {
-    @include underlined_nocolor(2px);
-  }
+.czr-link-hover-underline [class*=nav__menu] {
+    .nav__title {
+      @include underlined_nocolor(2px);
+    }
 
-  .show:not(.dropdown-item) > .nav__link .nav__title,
-  .show:not(.dropdown-item) > .nav__link-wrapper .nav__title,
+    .show:not(.dropdown-item) > .nav__link .nav__title,
+    .show:not(.dropdown-item) > .nav__link-wrapper .nav__title,
+    li:not(.dropdown-item).current-active > .nav__link .nav__title,
+    li:not(.dropdown-item).current-active > .nav__link-wrapper .nav__title,
+    .current-menu-item > .nav__link .nav__title,
+    .current-menu-item > .nav__link-wrapper .nav__title {
+      @include underlined_highlight_before_nocolor();
+    }
 
-  li:not(.dropdown-item).current-active > .nav__link .nav__title,
-  li:not(.dropdown-item).current-active > .nav__link-wrapper .nav__title,
-
-  .current-menu-item > .nav__link .nav__title,
-  .current-menu-item > .nav__link-wrapper .nav__title {
-    @include underlined_highlight_before_nocolor();
-  }
 }
 
 .nav__menu {
@@ -81,7 +80,6 @@
   @extend .caps;
   @extend .bold;
   @extend .letter-spacing-1;
-
 
   .menu-item {
     margin: 0 $base-line-height-fixed/3;
@@ -97,8 +95,6 @@
       .nav__title {
         padding: 10px 0 5px 0;
         margin-bottom: 5px;
-        //padding: $base-line-height 0 $base-line-height/2 0;
-        //margin-bottom: $base-line-height/2
       }
     }
   }
@@ -127,6 +123,11 @@
 .czr-dropdown-menu {
     display: none;
     max-width: 50vw;
+    //override default bs positioning for rtl
+    @if ( true == $is_rtl ) {
+      left: auto;
+      right: 0;
+    }
     //the sidemenu and mobile menu should NOT break lines
     @at-root .vertical-nav .dropdown-menu.czr-dropdown-menu .nav__title {
       word-break: break-word;// was break-all; Fixed in dec-2017 @see https://github.com/presscustomizr/customizr/issues/1339
@@ -157,17 +158,30 @@
 
     .dropdown-item {
         margin: 0;
-
         @at-root .regular-nav .dropdown-menu .caret__dropdown-toggler i {
-          @include transform( translateZ(0) rotate(-90deg));
-          -ms-transform: rotate(-90deg);
+          @if ( true == $is_rtl ) {
+            @include transform( translateZ(0) rotate(90deg));
+            -ms-transform: rotate(90deg);
+          }
+          @else {
+            @include transform( translateZ(0) rotate(-90deg));
+            -ms-transform: rotate(-90deg);
+          }
           position: relative;
           display: inline-block;
           top: -.1em;
         }
-        @at-root .regular-nav .dropdown-menu .caret__dropdown-toggler.open-left i {
-          @include transform( translateZ(0) rotate(-270deg));
-          -ms-transform: rotate(-270deg);
+        @if ( true == $is_rtl ) {
+          @at-root .regular-nav .dropdown-menu .caret__dropdown-toggler.open-right i {
+            @include transform( translateZ(0) rotate(270deg));
+            -ms-transform: rotate(270deg);
+          }
+        }
+        @else {
+          @at-root .regular-nav .dropdown-menu .caret__dropdown-toggler.open-left i {
+            @include transform( translateZ(0) rotate(-270deg));
+            -ms-transform: rotate(-270deg);
+          }
         }
         @at-root .regular-nav .dropdown-menu .dropdown-item {
           padding: 0 $base-line-height;
@@ -203,7 +217,11 @@
       width: 0%;
       height: 100%;
       top: 0;
-      left: 0;
+      @if ( true == $is_rtl ) {
+        right: 0;
+      }@else {
+        left: 0;
+      }
       transition-delay: 0s;
       transition-duration: .6s;
       transition-timing-function: cubic-bezier(.19, 1, .22, 1);
@@ -238,13 +256,21 @@
           &::before {
             line-height: inherit;
           }
+
           .menu-item.show > span > &,
           .menu-item.show > a > & {
-              @include transform( translateZ(0) rotate(-180deg)!important);
-              -ms-transform: rotate(-180deg)!important;
+              @if ( true == $is_rtl ) {
+                @include transform( translateZ(0) rotate(180deg)!important);
+                -ms-transform: rotate(180deg)!important;
+              }
+              @else {
+                @include transform( translateZ(0) rotate(-180deg)!important);
+               -ms-transform: rotate(-180deg)!important;
+              }
           }
       }
 }
+
 
 .regular-nav {
   //
@@ -311,7 +337,12 @@
       @include transform( translate( 0, 0) );
     }
     .dropdown-item > a:hover {
-      @include transform( translate( 3px, 0) );
+      @if ( true == $is_rtl ) {
+        @include transform( translate( -3px, 0) );
+      }
+      @else {
+        @include transform( translate( 3px, 0) );
+      }
     }
   }
   // end subemnu link move
@@ -365,6 +396,10 @@
       padding: $base-line-height 10px;
     }
   }
+  .topbar-navbar__wrapper & {
+    padding-top: 2 * $base-line-height/3;
+    padding-bottom: 2 * $base-line-height/3;
+  }
 }
 
 // Hamburger button
@@ -403,25 +438,34 @@
 
 
 .ham-toggler-menu:hover .line {
-    -webkit-transform: translateX(-3px);
-    -moz-transform: translateX(-3px);
-    transform: translateX(-3px);
+    @if ( true == $is_rtl ) {
+      @include transform( translate( 3px, 0) );
+    }
+    @else {
+      @include transform( translate( -3px, 0) );
+    }
     width: 26px;
 }
 
 .ham-toggler-menu:not(.czr-collapsed) .line-1 {
-  -webkit-transform: translateY(6px) translateX(-3px) rotate(45deg);
-  -moz-transform: translateY(6px) translateX(-3px) rotate(45deg);
-  transform: translateY(6px) translateX(-3px) rotate(45deg);
+  @if ( true == $is_rtl ) {
+    @include transform( translate( 3px, 6px ) rotate(-45deg) );
+  }
+  @else {
+    @include transform( translate( -3px, 6px ) rotate(45deg) );
+  }
   width: 28px;
 }
 .ham-toggler-menu:not(.czr-collapsed) .line-2 {
   opacity: 0;
 }
 .ham-toggler-menu:not(.czr-collapsed) .line-3 {
-  -webkit-transform: translateY(-6px) translateX(-3px) rotate(-45deg);
-  -moz-transform: translateY(-6px) translateX(-3px) rotate(-45deg);
-  transform: translateY(-6px) translateX(-3px) rotate(-45deg);
+  @if ( true == $is_rtl ) {
+    @include transform( translate( 3px, -6px ) rotate(45deg) );
+  }
+  @else {
+    @include transform( translate( -3px, -6px ) rotate(-45deg) );
+  }
   width: 28px;
 }
 

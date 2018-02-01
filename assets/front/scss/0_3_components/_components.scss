@@ -1,21 +1,35 @@
+.czr-contact-info,
 .socials {
-  @extend .inline-list;
-    li + li {
-      @if ( true == $is_rtl ) {
-        margin-right: .833rem;
-      }
-      @else {
-        margin-left: .833rem;
-      }
-    }
+  margin: 0 -6.5px;
+  @extend .inline-list-nospace;
+  li {
+    padding: 0 6.5px;
+  }
   a {
     display:block;
+  }
+}
+.czr-contact-info {
+  i {
+    font-size: 0.9em;
+    + span {
+        @if ( true == $is_rtl ) {
+          padding-right: $base-line-height/4;
+        }
+        @else {
+          padding-left: $base-line-height/4;
+        }
+    }
+  }
+  .fa-envelope {
+    position:relative;
+    top: .05em;
   }
 }
 
 
 //
-// Base styles (bs based)
+// Button Base styles (bs based)
 //
 %btn_base {
   display: inline-block;
@@ -583,7 +597,7 @@ cite {
 //blockquote, link, cite end
 
 .tags {
-    @extend .inline-list;
+    @extend .inline-list-nospace;
     a {
       text-decoration: none !important;
     }
@@ -595,6 +609,8 @@ cite {
   @extend .service-font;
   @include transition (all 0.3s ease);
   line-height: 1em;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .tagcloud a,
@@ -1007,13 +1023,24 @@ svg.czr-svg-placeholder {
 
 
 //
-// Suppress link underline on hover effect
+// Widget link underline on hover effect
 //
-.czr-link-hover-underline-off {
-    .comment-author a::before, .comment-link::before,
-    .czr-format-link::before,
-    .widget__wrapper a:hover::before, .widget-area a:hover::before,
-    [class*=nav__menu] .nav__title::before {
-        content: none !important;
+.czr-link-hover-underline {
+  .widgets-list-layout-links, //<-jetpack top post/pages textual links only
+  .widget_archive,
+  .widget_nav_menu,
+  .widget_rss ul,
+  .widget_recent_entries,
+  .widget_product_categories,//<- woocommerce widget
+  .widget_categories,
+  .widget_meta,
+  .widget_recent_comments,
+  .widget_pages,
+  .widget_calendar {
+    a {
+      @include underlined_nocolor( 1px );
+      display: inline-block;
+      text-decoration: none;
     }
+  }
 }
