@@ -122,6 +122,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.4.16
+- Updated: Sidebar layouts now applied using css classes instead of loading seperate stylesheets.
+
 Version 1.4.15
 - Updated: Function to add additional image sizes hooked into after_theme_setup instead of init.
 

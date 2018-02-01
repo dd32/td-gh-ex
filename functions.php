@@ -6,7 +6,7 @@
  */
 
 // Declare latest theme version
-$GLOBALS['thinkup_theme_version'] = '1.4.15';
+$GLOBALS['thinkup_theme_version'] = '1.4.16';
 
 // Setup content width 
 function thinkup_content_width() {
@@ -123,8 +123,6 @@ function thinkup_frontscripts() {
 
 	// Register theme stylesheets
 	wp_register_style( 'thinkup-responsive', get_template_directory_uri() . '/styles/style-responsive.css', '', $thinkup_theme_version );
-	wp_register_style( 'thinkup-sidebarleft', get_template_directory_uri() . '/styles/layouts/thinkup-left-sidebar.css', '', $thinkup_theme_version );
-	wp_register_style( 'thinkup-sidebarright', get_template_directory_uri() . '/styles/layouts/thinkup-right-sidebar.css', '', $thinkup_theme_version );
 
 	// Register WooCommerce (theme specific) stylesheets
 
