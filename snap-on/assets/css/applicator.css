@@ -233,6 +233,7 @@ h6
 .comment-form .creation--invalid .input-text
 {
     border-color: hsl(0, 100%, 45%);
+    border-width: .125em;
 }
 
 .comment-form .creation--valid .input-text
