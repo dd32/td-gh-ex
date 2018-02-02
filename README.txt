@@ -68,6 +68,15 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.97
+* Style tweaks/fixes
+* Neatened Transparent Header - 7 layout
+* Added setting to change Site Tagline to lowercase
+* Added setting to change main Navigation to lowercase
+* Updated the language .pot file
+Premium: Fixed WC 3.3 update - broke blog full sidebar/width settings
+Premium: Added setting to replace default search with any other plugin search shortcode
+
 #### 1.0.96
 * Style tweaks/fixes
 * Added extra WooCommerce settings

@@ -336,6 +336,22 @@ function customizer_library_avant_build_styles() {
 			)
 		) );
 	}
+	$setting = 'avant-site-tagline-case-normal';
+	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+	$stack = customizer_library_get_font_stack( $mod );
+
+	if ( $mod != customizer_library_get_default( $setting ) ) {
+
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.site-description'
+			),
+			'declarations' => array(
+				'text-transform' => 'none'
+			)
+		) );
+
+	}
 	// Site Tagline Font
 	$setting = 'avant-tagline-font';
 	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
@@ -439,6 +455,22 @@ function customizer_library_avant_build_styles() {
 				'padding-bottom' => $logo_bottom_pad . 'px'
 			)
 		) );
+	}
+	$setting = 'avant-header-nav-case-normal';
+	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+	$stack = customizer_library_get_font_stack( $mod );
+
+	if ( $mod != customizer_library_get_default( $setting ) ) {
+
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.main-navigation li'
+			),
+			'declarations' => array(
+				'text-transform' => 'none'
+			)
+		) );
+
 	}
 	// Sidebar Widegt Title Size
 	$setting = 'avant-blog-widget-title-size';

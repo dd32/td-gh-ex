@@ -60,6 +60,12 @@ function customizer_library_avant_options() {
         'type'    => 'number',
         'description' => __( 'This only applies if a logo image is uploaded', 'avant' ),
     );
+    $options['avant-site-tagline-case-normal'] = array(
+        'id' => 'avant-site-tagline-case-normal',
+        'label'   => __( 'Site Tagline - Normal Case', 'avant' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+    );
 
     $panel = 'avant-panel-layout';
 
@@ -169,6 +175,12 @@ function customizer_library_avant_options() {
         'choices' => $choices,
         'default' => 'avant-header-layout-one'
     );
+    $options['avant-header-nav-case-normal'] = array(
+        'id' => 'avant-header-nav-case-normal',
+        'label'   => __( 'Navigation - Normal Case', 'avant' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+    );
     $options['avant-noteon-nav-style'] = array(
         'id' => 'avant-noteon-nav-style',
         'section' => $section,
@@ -231,7 +243,6 @@ function customizer_library_avant_options() {
         'type'    => 'checkbox',
         'default' => 0,
     );
-    
     if ( avant_is_woocommerce_activated() ) :
         $options['avant-header-remove-cart'] = array(
             'id' => 'avant-header-remove-cart',
@@ -241,7 +252,6 @@ function customizer_library_avant_options() {
             'default' => 0,
         );
     endif;
-    
     $options['avant-header-remove-social'] = array(
         'id' => 'avant-header-remove-social',
         'label'   => __( 'Remove Social Icons', 'avant' ),
@@ -253,7 +263,7 @@ function customizer_library_avant_options() {
         'id' => 'avant-noteon-header',
         'section' => $section,
         'type'    => 'note',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Sticky Navigation<br />- Change Navigation Styling<br />- Add extra text to the header', 'avant' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Sticky Navigation<br />- Change Navigation Styling<br />- Add extra text to the header<br />- Option to replace default search with Shortcode', 'avant' )
     );
     
 
