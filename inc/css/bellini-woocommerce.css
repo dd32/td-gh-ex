@@ -1422,3 +1422,5 @@ table.cart td.actions .coupon {
 form.woocommerce-ordering {
     text-align: right;
 }
+
+.woocommerce-cart .container--card-content {padding:0;}
