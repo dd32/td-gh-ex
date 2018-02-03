@@ -1,8 +1,16 @@
 ﻿jQuery(document).ready(function($){
 //up to top
 $body=(window.opera)?(document.compatMode=="CSS1Compat"?$('html'):$('body')):$('html,body');
-$('#oloUp').click(function(){
-		$body.animate({scrollTop:0},400);
+$(window).scroll(function(){
+	if($(window).scrollTop()>=300){
+		$('#oloUp').fadeIn(600);
+	}else{
+		$('#oloUp').fadeOut(600);
+}});
+$('#oloUp').click(function() {
+	$body.animate({
+		scrollTop: 0
+	}, 600)
 });
 
 //control height

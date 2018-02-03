@@ -7,7 +7,7 @@
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header>
 						<?php if ( is_sticky() ) : ?>
-								<h2><i class="fa fa-hourglass-start" aria-hidden="true" title="<?php printf(__('Featured', 'olo')) ; ?>"></i> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => '', 'after' => '' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+								<h2><i class="fa fa-thumb-tack" aria-hidden="true" title="<?php printf(__('Featured', 'olo')) ; ?>"></i> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => '', 'after' => '' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 							
 						<?php else : ?>
 						<h2><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => '', 'after' => '' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>

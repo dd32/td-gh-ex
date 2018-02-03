@@ -5,7 +5,7 @@
 		</div>
 		
 		<div id="oloUp">
-			<i class="fa fa-chevron-circle-up"></i>
+			<i class="fa fa-chevron-up" aria-hidden="true"></i>
 		</div>	
 	</footer>
 <?php wp_footer(); ?>

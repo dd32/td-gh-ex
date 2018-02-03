@@ -14,7 +14,11 @@ function olo_comment( $comment, $args, $depth ) {
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<span class="floor">
-			<?php printf('#%1$s', ++$commentcount); ?>
+			<?php if (!empty(get_option('thread_comments'))) { ?>
+				<?php if(!$parent_id = $comment->comment_parent) {printf('#%1$s', ++$commentcount);} ?>
+			<?php }else{ ?>
+				<?php printf('#%1$s', ++$commentcount); ?>
+			<?php } ?>
 		</span>
 		<div id="comment-<?php comment_ID(); ?>" class="comment">
 		<div class="comment-author vcard">

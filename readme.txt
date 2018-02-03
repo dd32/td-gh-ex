@@ -39,3 +39,5 @@ olo has theme options page:Go into your Wordpress Admin, navigate to 'Appearance
 2015.06.21	Fix the_title bug.
 2018.01.20	update to newest functions for WordPress 4.9+,
 			change the whole site width, and some styles.
+2018.02.03	add floors for thread comment or not,
+			change some styles;

@@ -7,7 +7,7 @@
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header>
 						<?php if ( is_sticky() ) : ?>
-								<h2>[<?php printf(__('Featured', 'olo')) ; ?>]<?php the_title(); ?></h2>
+								<h2><i class="fa fa-thumb-tack" aria-hidden="true" title="<?php printf(__('Featured', 'olo')) ; ?>"></i> <?php the_title(); ?></h2>
 							
 						<?php else : ?>
 						<h2><?php the_title(); ?></h2>
