@@ -82,6 +82,7 @@ function apppage_header_style() {
 			position: absolute;
 			clip: rect(1px 1px 1px 1px); /* IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
+			display:none;
 		}
 	<?php
 		endif;
