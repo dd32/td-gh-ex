@@ -523,7 +523,7 @@ function ashe_customize_register( $wp_customize ) {
 				'section'	  => 'title_tagline',
 				'type'		  => 'pro_options',
 				'label' 	  => esc_html__( 'Logo Options', 'ashe' ),
-				'description' => esc_html( 'http://wp-royal.com/themes/ashe/customizer/free/typography.html?ref=demo-ashe-free-top-bar-typography' ),
+				'description' => esc_html( 'http://wp-royal.com/themes/ashe/customizer/free/typography-logo.html?ref=ashe-free-site-identity-customizer' ),
 				'priority'	  => 50
 			)
 		)
@@ -729,12 +729,12 @@ function ashe_customize_register( $wp_customize ) {
 
 
 /*
-** Single Page =====
+** Single Post =====
 */
 
-	// add single Page section
+	// add single post section
 	$wp_customize->add_section( 'ashe_single_page' , array(
-		'title'		 => esc_html__( 'Single Page', 'ashe' ),
+		'title'		 => esc_html__( 'Single Post', 'ashe' ),
 		'priority'	 => 31,
 		'capability' => 'edit_theme_options'
 	) );
@@ -828,7 +828,7 @@ function ashe_customize_register( $wp_customize ) {
 		'snapchat' 				=> '&#xf2ab;',
 		'snapchat-ghost' 		=> '&#xf2ac;',
 		'snapchat-square'		=> '&#xf2ad;',
-		'meetup' 				=> '&#xf2e0;',
+		'meetup' 				=> '&#xf2e0;'
 	);
 
 	// Social #1 Icon

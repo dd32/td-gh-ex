@@ -221,6 +221,7 @@
     line-height: inherit !important;
     text-align: inherit !important;
     text-transform: inherit !important;
+    color: inherit !important;
   }
 
 }

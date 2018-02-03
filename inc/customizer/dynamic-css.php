@@ -174,7 +174,6 @@ function ashe_true_false( $option ) {
 		#page-content h4,
 		#page-content h5,
 		#page-content h6,
-		.post-content > p:first-child:first-letter,
 		#page-content .author-description h4 a,
 		#page-content .related-posts h4 a,
 		#page-content .blog-pagination .previous-page a,
@@ -686,6 +685,7 @@ function ashe_true_false( $option ) {
 			  font-size: 80px;
 			  line-height: 65px;
 			  text-align: center;
+			  color: #030303;
 			}
 
 			@-moz-document url-prefix() {
