@@ -61,9 +61,19 @@ function apppage_header_style() {
 
 	?>
 
-	<?php endif; 
 
-		// Has the text been hidden?
+
+
+
+	header#masthead {
+		background-image: url(<?php header_image(); ?>);
+	}		
+	<?php endif; 
+	?>
+
+
+		
+	<?php 
 		if ( ! display_header_text() ) :
 
 	?>
@@ -73,16 +83,21 @@ function apppage_header_style() {
 			clip: rect(1px 1px 1px 1px); /* IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 		}
-
-	header#masthead {
-		background-image: url(<?php header_image(); ?>);
-	}		
-	<?php endif; 
+	<?php
+		endif;
+		if ( empty( $header_image ) ) :
 	?>
+	<?php
+		else:
+	?>
+
+	<?php endif; ?>
+
+
 	</style>
 	<?php
 }
-endif; // apppage_header_style
+endif; 
 
 
 
