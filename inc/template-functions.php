@@ -44,28 +44,44 @@ Homepage Aboutus Section Function
 if ( ! function_exists( 'bcorporate_home_about_sec_fnc' ) ) :
 
 function bcorporate_home_about_sec_fnc() {
-	$bcorporate_about_image = get_theme_mod('homepage_about_background');
-	?>
-	<section id="bcorporate_home_about_wrap" style="background-image: url(<?php if($bcorporate_about_image){ echo esc_url( $bcorporate_about_image );}?>)">
-		<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12 text-center">
-				<h1>
-					<?php esc_html_e( get_theme_mod( 'homepage_about_main_text' ) );?>
-				</h1>
-				<div class="about_mid_text col-md-12 col-sm-12 col-lg-6 offset-lg-3">
-					<p><?php esc_html_e( get_theme_mod( 'homepage_about_sub_text' ) );?></p>
+	if( get_theme_mod( 'home_page_about_enable', '1' ) ): // check if about section is enabled
+		$bcorporate_about_image = get_theme_mod('homepage_about_background');
+		?>
+		<section id="bcorporate_home_about_wrap"  style="background-image: url(<?php if($bcorporate_about_image){ echo esc_url( $bcorporate_about_image );}?>)">
+			<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 text-center">
+					<h1 >
+						<?php echo esc_html( get_theme_mod( 'homepage_about_main_text' ) );?>
+					</h1>
+					<div class="about_mid_text col-md-12 col-sm-12 col-lg-8 offset-lg-2 homepage_sub_text">
+						<p><?php echo esc_html( get_theme_mod( 'homepage_about_sub_text' ) );?></p>
+					</div>
+					<div class="about_bottom_text">
+						<a href="<?php echo site_url(); ?>"><span><?php echo esc_html( get_theme_mod( 'homepage_about_bottom_text' ) );?></span></a>
+					</div>
 				</div>
-				<div class="about_bottom_text">
-					<a href="#"><span><?php esc_html_e( get_theme_mod( 'homepage_about_bottom_text' ) );?></span></a>
-				</div>
-				<div class="about_video_section">
-					<?php echo wp_oembed_get( esc_url( get_theme_mod( 'homepage_video_url' ) ) ); ?>
+			</div></div>
+
+			<div class="about_video_section">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-sm-12 text-center">
+							<?php if( get_theme_mod('homepage_about_image_url') ){ ?>
+							<img class="about_home_img" src="<?php echo esc_url ( get_theme_mod('homepage_about_image_url') ); ?>">
+							<?php } else{ 
+								if( get_theme_mod('homepage_video_url') ){ 
+							 ?>
+							 	<?php echo wp_oembed_get( esc_url( get_theme_mod( 'homepage_video_url' ) ) ); ?>
+							<?php } }
+							?>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div></div>
-	</section>
-	<?php 
+		</section>
+		<?php
+	endif; // end if about section is enable condition 
 	}
 endif;
 
@@ -78,41 +94,45 @@ Homepage Feature Section Function
 if ( ! function_exists( 'bcorporate_home_feature_sec_fnc' ) ) :
 
 function bcorporate_home_feature_sec_fnc() {
-	?>
-	<section id="bcorporate_home_feature_wrap" class="text-center">
-		<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12 col-sm-12 ">
-				<h1>
-					<?php esc_html_e( get_theme_mod( 'homepage_feature_main_title' ) );?>
-				</h1>
+	if( get_theme_mod( 'home_page_feature_enable', '1') ):
+		?>
+		<section id="bcorporate_home_feature_wrap" class="text-center  ">
+			<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12 col-sm-12 ">
+					<h1>
+						<?php echo esc_html( get_theme_mod( 'homepage_feature_main_title' ) );?>
+					</h1>
+				</div>
+			</div>
+			<div class="row home_feature_post_wrap">
+				<?php
+			    	$bcorporate_featured_id = get_theme_mod('homepage_feature_category');
+			    	if(!empty($bcorporate_featured_id)){
+			    		$bcorporate_feat_aos_delay = 0;
+			    		$bcorporate_feature_query  = new WP_Query( array( 
+																'cat' => absint( $bcorporate_featured_id ) , 
+																'posts_per_page' => 5 
+															) );
+
+					while ( $bcorporate_feature_query->have_posts() ) : $bcorporate_feature_query->the_post();
+			     ?>
+			    	<div class="services_single-wrap" data-aos="fade-up" data-aos-delay="<?php echo esc_attr( $bcorporate_feat_aos_delay ); ?>" data-aos-once="true">
+				    	<div class="header_part_feature">
+				    		<div class="home_feature_icon"><img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(),'full') );?>"></div>
+				    		
+				    	</div>
+				    	<div class="content_part_feature">
+				    		<h3><?php the_title(); ?></h3>
+				    		<p><?php echo esc_html( wp_trim_words(get_the_content(), '22', '') ); ?></p>
+				    	</div>
+			    	</div>	
+			 	<?php $bcorporate_feat_aos_delay = $bcorporate_feat_aos_delay+50; endwhile;  wp_reset_query(); } ?>
 			</div>
 		</div>
-		<div class="row home_feature_post_wrap">
-			<?php
-		    	$bcorporate_featured_id = get_theme_mod('homepage_feature_category');
-		    	if(!empty($bcorporate_featured_id)){
-		    		$bcorporate_feature_query  = new WP_Query( array( 
-															'cat' => absint( $bcorporate_featured_id ) , 
-															'posts_per_page' => 5 
-														) );
-
-				while ( $bcorporate_feature_query->have_posts() ) : $bcorporate_feature_query->the_post();
-		     ?>
-		    	<div class="services_single-wrap">
-			    	<div class="header_part_feature">
-			    		<div class="home_feature_icon"><img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(),'bcorporate_services') );?>"></div>
-			    		
-			    	</div>
-			    	<div class="content_part_feature">
-			    		<h3><?php the_title(); ?></h3>
-			    		<p><?php esc_html_e( wp_trim_words(get_the_content(), '22', '') ); ?></p>
-			    	</div>
-		    	</div>	
-		 	<?php endwhile; wp_reset_query(); } ?>
-		</div></div>
-	</section>
-	<?php 
+		</section>
+		<?php 
+	endif;
 	}
 endif;
 
@@ -126,51 +146,54 @@ Homepage Portfolio Section Function
 if ( ! function_exists( 'bcorporate_home_portfolio_sec_fnc' ) ) :
 
 function bcorporate_home_portfolio_sec_fnc() {
-	?>
-	<section id="bcorporate_home_portfolio_wrap" class="text-center">
-		<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h1>
-					<?php esc_html_e( get_theme_mod( 'homepage_portfolio_main_title' ) );?>
-				</h1>
-				<div class="col-md-12 col-sm-12 col-lg-6 offset-lg-3 homepage_portfolio_sub_text"><p ><?php esc_html_e( get_theme_mod( 'homepage_portfolio_sub_text' ) );?></p>
+	if( get_theme_mod( 'home_page_portfolio_enable', '1') ):
+		?>
+		<section id="bcorporate_home_portfolio_wrap" class="text-center bcorporate_home_feature_wrap-bg">
+			<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<h1>
+						<?php echo esc_html( get_theme_mod( 'homepage_portfolio_main_title' ) );?>
+					</h1>
+					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 homepage_sub_text"><p ><?php echo esc_html( get_theme_mod( 'homepage_portfolio_sub_text' ) );?></p>
+				</div></div>
+			</div>
+			<div class="row home_portfolio_post_wrap">
+				<?php
+			    	$bcorporate_portfolio_id = get_theme_mod('homepage_portfolio_category');
+			    	if(!empty($bcorporate_portfolio_id)){
+			    		$bcorporate_portfolio_query  = new WP_Query( array( 
+																'cat' => absint( $bcorporate_portfolio_id ) , 
+																'posts_per_page' => -1 
+															) );
+			    		$bcorporate_portfolio_aos_delay = 0;
+					while ( $bcorporate_portfolio_query->have_posts() ) : $bcorporate_portfolio_query->the_post();
+			     ?>
+				    <div class="col-md-6 col-sm-6 col-lg-4 portfolio_single">
+				    	<div class="portfolio_single_wrap" data-aos="fade-up" data-aos-delay="<?php echo esc_attr( $bcorporate_portfolio_aos_delay ); ?>" data-aos-once="true">
+					    	<div class="portfolio_image">
+					    		<img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(),'bcorporate_portfolio') );?>">
+					    	</div>
+					    	<div class="content_part_portfolio text-left">
+					    		<h3><a href="#"><?php the_title(); ?></a></h3>
+					    		<div class="category">
+					    			<?php the_category(); ?>
+					    		</div>	
+					    		<div class="main_content_portfolio">
+					    			<p><?php echo esc_html( wp_trim_words(get_the_content(), '22', '') ); ?></p>
+					    		</div>
+					    			
+					    	</div>
+				     	
+				    	</div>
+				    </div>
+			 	<?php $bcorporate_portfolio_aos_delay = $bcorporate_portfolio_aos_delay+50;  endwhile; wp_reset_query();
+			 	}
+			 	 ?>
 			</div></div>
-		</div>
-		<div class="row home_portfolio_post_wrap">
-			<?php
-		    	$bcorporate_portfolio_id = get_theme_mod('homepage_portfolio_category');
-		    	if(!empty($bcorporate_portfolio_id)){
-		    		$bcorporate_portfolio_query  = new WP_Query( array( 
-															'cat' => absint( $bcorporate_portfolio_id ) , 
-															'posts_per_page' => 5 
-														) );
-
-				while ( $bcorporate_portfolio_query->have_posts() ) : $bcorporate_portfolio_query->the_post();
-		     ?>
-			    <div class="col-md-6 col-sm-6 col-lg-4 portfolio_single">
-			    	<div class="portfolio_single_wrap">
-			    	<div class="portfolio_image">
-			    		<img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(),'bcorporate_portfolio') );?>">
-			    	</div>
-			    	<div class="content_part_portfolio text-left">
-			    		<h3><a href="#"><?php the_title(); ?></a></h3>
-			    		<div class="category">
-			    			<?php the_category(); ?>
-			    		</div>	
-			    		<div class="main_content_portfolio">
-			    			<p><?php esc_html_e( wp_trim_words(get_the_content(), '22', '') ); ?></p>
-			    		</div>
-			    			
-			    	</div>
-			     	
-			    </div></div>
-		 	<?php endwhile; wp_reset_query();
-		 	}
-		 	 ?>
-		</div></div>
-	</section>
-	<?php 
+		</section>
+		<?php
+	endif; 
 	}
 endif;
 
@@ -184,24 +207,26 @@ Homepage ctaone Section Function
 if ( ! function_exists( 'bcorporate_home_ctaone_sec_fnc' ) ) :
 
 function bcorporate_home_ctaone_sec_fnc() {
-	?>
-	<section id="bcorporate_home_ctaone_wrap" class="text-center">
-		<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h1>
-					<?php esc_html_e( get_theme_mod( 'homepage_cta_one_main_title' ) );?>
-				</h1>
-				<p class="bcorporate_home_ctaone_sub-text"><?php esc_html_e( get_theme_mod( 'homepage_cta_one_sub_title' ) );?></p>
-				<?php if( get_theme_mod('homepage_cta_one_button_url') ): ?>
-					<div class="btn BE-btn-primary"><a href="<?php echo esc_url( get_theme_mod('homepage_cta_one_button_url') ); ?>" class="btn cta-btn">
-						<?php esc_html_e( get_theme_mod( 'homepage_cta_one_button_text' ) );?></a>
-					</a>
-				<?php endif; ?>
-			</div>
-		</div></div>
-	</section>
-	<?php
+	if( get_theme_mod( 'home_page_cta_enable', '1') ):
+		?>
+		<section id="bcorporate_home_ctaone_wrap" class="text-center bcorporate_home_feature_wrap-bg">
+			<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<h1 data-aos="fade-down" data-aos-once="true"  data-aos-delay="400">
+						<?php echo esc_html( get_theme_mod( 'homepage_cta_one_main_title' ) );?>
+					</h1>
+					<p class=" homepage_sub_text" data-aos="fade-up"   data-aos-once="true"  data-aos-delay="450"><?php echo esc_html( get_theme_mod( 'homepage_cta_one_sub_title' ) );?></p>
+					<?php if( get_theme_mod('homepage_cta_one_button_url') ): ?>
+						<div class=" BE-btn-primary" data-aos="fade-up"   data-aos-once="true"  data-aos-delay="500"><a href="<?php echo esc_url( get_theme_mod('homepage_cta_one_button_url') ); ?>" class="btn cta-btn">
+							<?php echo esc_html( get_theme_mod( 'homepage_cta_one_button_text' ) );?></a>
+						</a>
+					<?php endif; ?>
+				</div>
+			</div></div>
+		</section>
+		<?php
+	endif;
 	} 
 endif;
 
@@ -215,46 +240,49 @@ Homepage Services Section Function
 if ( ! function_exists( 'bcorporate_home_services_sec_fnc' ) ) :
 
 function bcorporate_home_services_sec_fnc() {
-	?>
-	<section id="bcorporate_home_services_wrap" class="text-center">
-		<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h1>
-					<?php esc_html_e( get_theme_mod( 'homepage_services_main_title' ) );?>
-				</h1>
-				<div class="col-md-12 col-sm-12 col-lg-6 offset-lg-3 "><p><?php esc_html_e( get_theme_mod( 'homepage_services_sub_title' ) );?></p>
+	if( get_theme_mod( 'home_page_services_enable', '1') ):
+		?>
+		<section id="bcorporate_home_services_wrap" class="text-center ">
+			<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<h1>
+						<?php echo esc_html( get_theme_mod( 'homepage_services_main_title' ) );?>
+					</h1>
+					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 homepage_sub_text"><p><?php echo esc_html( get_theme_mod( 'homepage_services_sub_title' ) );?></p>
+				</div></div>
+			</div>
+			<div class="row home_services_post_wrap">
+				<?php
+			    	$bcorporate_services_id = get_theme_mod('homepage_services_category');
+			    	if(!empty($bcorporate_services_id)){
+			    		$bcorporate_services_query  = new WP_Query( array( 
+																'cat' => absint( $bcorporate_services_id ) , 
+																'posts_per_page' => -1 
+															) );
+			    		$bcorporate_services_two_aos_delay = 0;
+					while ( $bcorporate_services_query -> have_posts() ) : $bcorporate_services_query -> the_post();
+			     ?>
+				    <div class="col-md-6 col-sm-6 col-lg-4 services_single">
+				    	<div class="services_single-warp" data-aos="fade-up" data-aos-delay="<?php echo esc_attr( $bcorporate_services_two_aos_delay ); ?>" data-aos-once="true">
+					    	<div class="services_image">
+					    		<img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(),'bcorporate_portfolio') );?>">
+					    	</div>
+					    	<div class="content_part_services">
+					    		<h3><a href="#"><?php the_title(); ?></a></h3>
+					    		<div class="main_content_services">
+					    			<p><?php echo esc_html( get_the_content() ); ?></p>
+					    		</div>	
+					    	</div>
+				    	</div>
+				    </div>
+			 	<?php $bcorporate_services_two_aos_delay = $bcorporate_services_two_aos_delay+50; endwhile; wp_reset_query();
+			 	}
+			 	 ?>
 			</div></div>
-		</div>
-		<div class="row home_services_post_wrap">
-			<?php
-		    	$bcorporate_services_id = get_theme_mod('homepage_services_category');
-		    	if(!empty($bcorporate_services_id)){
-		    		$bcorporate_services_query  = new WP_Query( array( 
-															'cat' => absint( $bcorporate_services_id ) , 
-															'posts_per_page' => 5 
-														) );
-
-				while ( $bcorporate_services_query -> have_posts() ) : $bcorporate_services_query -> the_post();
-		     ?>
-			    <div class="col-md-6 col-sm-6 col-lg-4 services_single">
-			    	<div class="services_single-warp">
-			    	<div class="services_image">
-			    		<img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(),'bcorporate_portfolio') );?>">
-			    	</div>
-			    	<div class="content_part_services">
-			    		<h3><a href="#"><?php the_title(); ?></a></h3>
-			    		<div class="main_content_services">
-			    			<p><?php esc_html_e( get_the_content() ); ?></p>
-			    		</div>	
-			    	</div>
-			    </div></div>
-		 	<?php endwhile; wp_reset_query();
-		 	}
-		 	 ?>
-		</div></div>
-	</section>
-	<?php 
+		</section>
+		<?php 
+	endif;
 	}
 endif;
 
@@ -267,61 +295,68 @@ Homepage Blog Section Function
 if ( ! function_exists( 'bcorporate_home_blog_sec_fnc' ) ) :
 
 function bcorporate_home_blog_sec_fnc() {
-	?>
-	<section id="bcorporate_home_blog_wrap" class="text-center">
-		<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h1>
-					<?php esc_html_e( get_theme_mod( 'homepage_blog_main_title' ) );?>
-				</h1>
-				<div class="col-md-12 col-sm-12 col-lg-6 offset-lg-3 "><p><?php esc_html_e( get_theme_mod( 'homepage_blog_sub_title' ) );?></p></div>
+	if( get_theme_mod( 'home_page_blog_enable', '1') ):
+		?>
+		<section id="bcorporate_home_blog_wrap" class="text-center bcorporate_home_feature_wrap-bg">
+			<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<h1>
+						<?php echo esc_html( get_theme_mod( 'homepage_blog_main_title' ) );?>
+					</h1>
+					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 homepage_sub_text"><p><?php echo esc_html( get_theme_mod( 'homepage_blog_sub_title' ) );?></p></div>
+				</div>
 			</div>
-		</div>
-		<div class="row home_blog_post_wrap">
-			<?php
-		    	$bcorporate_blog_id = get_theme_mod('homepage_blog_category');
-		    	if(!empty($bcorporate_blog_id)){
-		    		$bcorporate_blog_query  = new WP_Query( array( 
-															'cat' => absint( $bcorporate_blog_id ) , 
-															'posts_per_page' => 5 
-														) );
+			<div class="row home_blog_post_wrap">
+				<?php
+				
+			    	$bcorporate_blog_id = get_theme_mod('homepage_blog_category');
+			    	if(!empty($bcorporate_blog_id)){
+			    		$bcorporate_about_aos_delay = 0;
+			    		$bcorporate_blog_query  = new WP_Query( array( 
+																'cat' => absint( $bcorporate_blog_id ) , 
+																'posts_per_page' => -1 
+															) );
 
-				while ( $bcorporate_blog_query -> have_posts() ) : $bcorporate_blog_query -> the_post();
-		     ?>
-			    <div class="col-md-6 col-sm-6 col-lg-4 blog_single text-left">
-			    	<div class="services_image">
-			    		<a href="<?php the_permalink();?>">
-			    			<img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(),'bcorporate_portfolio') );?>">
-			    		</a>
-			    	</div>
-			    	<div class="content_part_blog">
-			    		<h3><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>
-			    		<p class="blog_homepage_date"><?php echo esc_html( 'by', 'bcorporate'); ?>
-			    			<span class="bcorp_blog_author"><?php esc_html_e( get_the_author(),'bcorporate' );?></span> | 
-			    			<span class="bcorp_blog_date"> <?php esc_html_e( get_the_date(), 'bcorporate' );?> </span></p>
-			    		<div class="main_content_blog"><p>
-			    			<?php esc_html_e( wp_trim_words( get_the_content(), 24, '...' ) ); ?></p>
-			    		</div>
-			    		<div class="BE-btn-primary btn">
-			    			<a href="<?php the_permalink(); ?>" class="read_me_blog btn">Read Full Story</a>
-			    			
-  						</div>
-  						<div class="Bcorp_comment pull-right">
-  							<a href="<?php the_permalink();?>" class="comment_num">
-			    				<i class="fa fa-comment-o" aria-hidden="true"></i>
-  								<?php echo absint( get_comments_number() ); ?>
-  							</a>
-  						</div>
+					while ( $bcorporate_blog_query -> have_posts() ) : $bcorporate_blog_query -> the_post();
+			     ?>
+				    <div class="col-md-6 col-sm-6 col-lg-4 blog_single text-left">
+				    	<div data-aos="fade-up" data-aos-delay="<?php echo esc_attr( $bcorporate_about_aos_delay ); ?>" data-aos-once="true">
+				    		<div class="blog-single-wrap">
+						    	<div class="blog_image">
+						    		<a href="<?php the_permalink();?>">
+						    			<img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(),'bcorporate_portfolio') );?>">
+						    		</a>
+						    	</div>
+						    	<div class="content_part_blog clearfix">
+						    		<h3><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>
+						    		<p class="blog_homepage_date"><?php echo esc_html( 'by', 'bcorporate'); ?>
+						    			<span class="bcorp_blog_author"><?php echo esc_html( get_the_author(),'bcorporate' );?></span> | 
+						    			<span class="bcorp_blog_date"> <?php echo esc_html( get_the_date(), 'bcorporate' );?> </span></p>
+						    		<div class="main_content_blog"><p>
+						    			<?php echo esc_html( wp_trim_words( get_the_content(), 24, '...' ) ); ?></p>
+						    		</div>
+						    		<div class="BE-btn-primary pull-left ">
+						    			<a href="<?php the_permalink(); ?>" class="read_me_blog btn">Read Full Story</a>
+						    			
+			  						</div>
+			  						<div class="Bcorp_comment pull-right">
+			  							<a href="<?php the_permalink();?>" class="comment_num">
+						    				<i class="fa fa-comment-o" aria-hidden="true"></i>
+			  								<?php echo absint( get_comments_number() ); ?>
+			  							</a>
+			  						</div>
 
-			    	</div>
-			    </div>
-		 	<?php endwhile; wp_reset_query();
-		 	}
-		 	 ?>
-		</div></div>
-	</section>
-	<?php 
+						    	</div>
+				    	</div></div>
+					</div>
+			 	<?php $bcorporate_about_aos_delay = $bcorporate_about_aos_delay+100; endwhile; wp_reset_query();
+			 	}
+			 	 ?>
+			</div></div>
+		</section>
+		<?php 
+	endif;
 	}
 endif;
 
@@ -335,48 +370,52 @@ Homepage Testimonial Section Function
 if ( ! function_exists( 'bcorporate_home_testimonial_sec_fnc' ) ) :
 
 function bcorporate_home_testimonial_sec_fnc() {
-	?>
-	<section id="bcorporate_home_testimonial_wrap" class="text-center">
-		<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<span class="homepage_testimonial_sub_title"><?php esc_html_e( get_theme_mod( 'homepage_testimonial_sub_title' ) );?></span>
-				<h1 class="homepage_testimonial_main_title">
-					<?php esc_html_e( get_theme_mod( 'homepage_testimonial_main_title' ) );?>
-				</h1>
-				
+	if( get_theme_mod( 'home_page_testimonial_enable', '1') ):
+		?>
+		<section id="bcorporate_home_testimonial_wrap" class="text-center bcorporate_home_feature_wrap-bg">
+			<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<span class=" homepage_sub_text"><?php echo esc_html( get_theme_mod( 'homepage_testimonial_sub_title' ) );?></span>
+					<h1 class="homepage_testimonial_main_title">
+						<?php echo esc_html( get_theme_mod( 'homepage_testimonial_main_title' ) );?>
+					</h1>
+					
+				</div>
 			</div>
-		</div>
-		<div class="row home_blog_post_wrap">
-			<?php
-		    	$bcorporate_testimonial_id = get_theme_mod('homepage_testimonial_category');
-		    	if(!empty($bcorporate_testimonial_id)){
-		    		$bcorporate_testimonial_query  = new WP_Query( array( 
-															'cat' => absint( $bcorporate_testimonial_id ) , 
-															'posts_per_page' => 5 
-														) );
-
-				while ( $bcorporate_testimonial_query -> have_posts() ) : $bcorporate_testimonial_query -> the_post();
-		     ?>
-			    <div class="col-md-4 col-sm-4 testimonial_single">
-			    	<div class="main_content_testimonial">
-			    		<p><?php esc_html_e( wp_trim_words( get_the_content(), 20, '...' ) ); ?></p>
-			    	</div>
-			    	<div class="testimonial_image">
-			    		<a href="<?php the_permalink();?>">
-			    			<img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(),'bcorporate_testimonial') );?>">
-			    		</a>
-			    	</div>
-			    	<div class="testimonial_author">
-			    		<h3><?php the_title(); ?></h3>
-			    	</div>
-			    </div>
-		 	<?php endwhile; wp_reset_query();
-		 	}
-		 	 ?>
-		</div></div>
-	</section>
-	<?php 
+			<div class="row home_blog_post_wrap">
+				<?php
+			    	$bcorporate_testimonial_id = get_theme_mod('homepage_testimonial_category');
+			    	if(!empty($bcorporate_testimonial_id)){
+			    		$bcorporate_testimonial_query  = new WP_Query( array( 
+																'cat' => absint( $bcorporate_testimonial_id ) , 
+																'posts_per_page' => -1 
+															) );
+			    		$bcorporate_testimonial_aos_delay = 0;
+					while ( $bcorporate_testimonial_query -> have_posts() ) : $bcorporate_testimonial_query -> the_post();
+			     ?>
+				    <div class="col-md-4 col-sm-4 testimonial_single">
+				    	<div  data-aos="fade-up" data-aos-delay="<?php echo esc_attr( $bcorporate_testimonial_aos_delay ); ?>" data-aos-once="true">
+					    	<div class="main_content_testimonial">
+					    		<p><?php echo esc_html( wp_trim_words( get_the_content(), 20, '...' ) ); ?></p>
+					    	</div>
+					    	<div class="testimonial_image">
+					    		<a href="<?php the_permalink();?>">
+					    			<img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(),'bcorporate_testimonial') );?>">
+					    		</a>
+					    	</div>
+					    	<div class="testimonial_author">
+					    		<h3><?php the_title(); ?></h3>
+					    	</div>
+				    	</div>
+				    </div>
+			 	<?php $bcorporate_testimonial_aos_delay = $bcorporate_testimonial_aos_delay+50; endwhile; wp_reset_query();
+			 	}
+			 	 ?>
+			</div></div>
+		</section>
+		<?php 
+	endif;
 	}
 endif;
 
@@ -389,23 +428,25 @@ Homepage ctatwo Section Function
 if ( ! function_exists( 'bcorporate_home_ctatwo_sec_fnc' ) ) :
 
 function bcorporate_home_ctatwo_sec_fnc() {
-	?>
-	<section id="bcorporate_home_ctatwo_wrap" class="text-center">
-		<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-sm-12">
-				<h1>
-					<?php esc_html_e( get_theme_mod( 'homepage_cta_two_main_title' ) );?>
-				</h1>
-				<div class="col-md-12 col-sm-12 col-lg-6 offset-lg-3 "><p  class="bcorporate_home_ctatwo_sub-text"><?php esc_html_e( get_theme_mod( 'homepage_cta_two_sub_title' ) );?></p></div>
-				<?php if( get_theme_mod('homepage_cta_two_button_url') ): ?>
-					<div class="BE-btn-primary btn"><a href="<?php echo esc_url( get_theme_mod('homepage_cta_two_button_url') ); ?>" class="btn cta-btn">
-						<?php esc_html_e( get_theme_mod( 'homepage_cta_two_button_text' ) );?></a>
-					</a>
-				<?php endif; ?>
-			</div>
-		</div></div>
-	</section>
-	<?php
+	if( get_theme_mod( 'home_page_cta_two_enable', '1') ):
+		?>
+		<section id="bcorporate_home_ctatwo_wrap" class="text-center ">
+			<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<h1 data-aos="fade-down"   data-aos-once="true"  data-aos-delay="400">
+						<?php echo esc_html( get_theme_mod( 'homepage_cta_two_main_title' ) );?>
+					</h1>
+					<div class="col-md-12 col-sm-12 col-lg-6 offset-lg-3 "><p  class="bcorporate_home_ctatwo_sub-text" data-aos="fade-up"   data-aos-once="true"  data-aos-delay="450"> <?php echo esc_html( get_theme_mod( 'homepage_cta_two_sub_title' ) );?></p></div>
+					<?php if( get_theme_mod('homepage_cta_two_button_url') ): ?>
+						<div class="BE-btn-primary " data-aos="fade-up"   data-aos-once="true"  data-aos-delay="500"><a href="<?php echo esc_url( get_theme_mod('homepage_cta_two_button_url') ); ?>" class="btn cta-btn">
+							<?php echo esc_html( get_theme_mod( 'homepage_cta_two_button_text' ) );?></a>
+						</a>
+					<?php endif; ?>
+				</div>
+			</div></div>
+		</section>
+		<?php
+	endif;
 	} 
 endif;

@@ -8,18 +8,19 @@
  */
 
 get_header(); ?>
-		<div class="bcorporate_banner_section bcorporate_blog_banner_section">
-			<div class="text-center">
-				<h1 class="inner_page_title"><?php the_title(); ?>
-				</h1>
-				<?php
+		<div class="bcorporate_banner_section bcorporate_blog_banner_section"  style="background-image: url(<?php echo esc_url( get_template_directory_uri() );?>/inc/img/blog_header_img.jpg)">
+			<div class="text-center caption-text">
+				<?php 
+				the_archive_title( '<h1 class="page-title inner_page_title">', '</h1>' );
+				the_archive_description( '<div class="archive-description">', '</div>' );
+				?>
+			<?php
 					// Check if NavXT plugin activated
 					if( class_exists( 'breadcrumb_navxt' ) ) {
 						bcn_display();
 					} 
 				?>
 			</div>
-			<img src="<?php echo get_template_directory_uri();?>/inc/img/blog_header_img.jpg" class="banner_img home_banner_img" />
 		</div>
 
 	</header><!-- #masthead -->
@@ -35,13 +36,6 @@ get_header(); ?>
 
 						<?php
 						if ( have_posts() ) : ?>
-
-							<header class="page-header">
-								<?php
-									the_archive_title( '<h1 class="page-title">', '</h1>' );
-									the_archive_description( '<div class="archive-description">', '</div>' );
-								?>
-							</header><!-- .page-header -->
 
 							<?php
 							/* Start the Loop */

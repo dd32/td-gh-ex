@@ -8,19 +8,12 @@
  */
 
 get_header(); ?>
-	<div class="bcorporate_banner_section bcorporate_blog_banner_section">
-			<div class="text-center">
-				<h1 class="inner_page_title"><?php echo single_post_title(); ?>
+	<div class="bcorporate_banner_section bcorporate_blog_banner_section"  style="background-image: url(<?php echo esc_url( get_template_directory_uri() );?>/inc/img/blog_header_img.jpg)">
+			<div class="text-center caption-text">
+				<h1 class="inner_page_title">Search Page
 				</h1>
-				<?php
-					// Check if NavXT plugin activated
-					if( class_exists( 'breadcrumb_navxt' ) ) {
-						bcn_display();
-					} 
-				?>
 			</div>
-			<img src="<?php echo get_template_directory_uri();?>/inc/img/blog_header_img.jpg" class="banner_img home_banner_img" />
-		</div>
+	</div>
 
 	</header>
 	<div id="content" class="site-content">
@@ -57,7 +50,7 @@ get_header(); ?>
 
 							?>
 							<div class="clearfix"></div>
-								<ul class="pagination" role="navigation" aria-label="Pagination">
+								<ul class="pagination text-center justify-content-center" role="navigation" aria-label="Pagination">
 									<?php echo paginate_links(); ?>
 								</ul>
 							<?php

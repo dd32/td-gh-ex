@@ -16,7 +16,7 @@ get_header(); ?>
 <?php
 	while ( have_posts() ) : the_post();
 		?>
-		<div class="bcorporate_banner_section bcorporate_home_banner_section">
+		<div class="bcorporate_banner_section bcorporate_contact_banner_section " style="background-image: url(<?php if( has_post_thumbnail() ): echo esc_url( get_the_post_thumbnail_url() ); endif;?>)">
 			<div class="text-center caption-text">
 				<h1 class="inner_page_title"><?php the_title(); ?></h1>
 				<?php
@@ -26,11 +26,6 @@ get_header(); ?>
 					} 
 				?>
 			</div>
-			<?php if( has_post_thumbnail() ): ?>
-				<img src="<?php echo esc_url( get_the_post_thumbnail_url() );?>" class="banner_img inner_banner_img" />
-			<?php else: ?>
-				<img src="<?php echo esc_url( get_template_directory_uri() );?>/inc/img/blog_header_img.jpg" class="banner_img inner_banner_img" />
-			<?php endif; ?>
 		</div>
 
 	</header><!-- #masthead -->

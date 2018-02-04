@@ -162,9 +162,13 @@ add_filter( 'woocommerce_enqueue_styles', '__return_false' );
  */
 function bcorporate_scripts() {
 
-	wp_enqueue_style( 'bcorporate-bootstrap-css', get_stylesheet_directory_uri() . '/inc/bootstrap/css/bootstrap.min.css', array(), '4.0.0' );
+	wp_enqueue_style( 'bootstrap-css', get_stylesheet_directory_uri() . '/inc/bootstrap/css/bootstrap.min.css', array(), '4.0.0' );
 	wp_enqueue_style( 'bcorporate-font-awesome', get_template_directory_uri() . '/inc/font-awesome/font-awesome.min.css', false, '4.7.0' );
-	wp_enqueue_style( 'bcorporate-lightslider-css', get_stylesheet_directory_uri() . '/inc/lightslider/lightslider.css', array(), '1.1.3' );
+	wp_enqueue_style( 'lightslider-css', get_stylesheet_directory_uri() . '/inc/lightslider/lightslider.css', array(), '1.1.3' );
+
+	wp_enqueue_style( 'aos-css', get_stylesheet_directory_uri() . '/inc/animation/aos-master.css', array(), '2.2.0' );
+
+
 	wp_enqueue_style( 'bcorporate-style', get_stylesheet_uri() );
 	
 	// Roboto font google
@@ -175,8 +179,9 @@ function bcorporate_scripts() {
 
 
 	wp_enqueue_script( 'bcorporate-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-	wp_enqueue_script( 'bcorporate-bootstrap-js', get_template_directory_uri() . '/inc/bootstrap/js/bootstrap.min.js', array('jquery'), '4.0.0', true );
-	wp_enqueue_script( 'bcorporate-lightslider-js', get_template_directory_uri() . '/inc/lightslider/lightslider.js', array('jquery'), '1.1.3', true );
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/inc/bootstrap/js/bootstrap.min.js', array('jquery'), '4.0.0', true );
+	wp_enqueue_script( 'lightslider-js', get_template_directory_uri() . '/inc/lightslider/lightslider.js', array('jquery'), '1.1.3', true );
+	wp_enqueue_script( 'aos-js', get_stylesheet_directory_uri() . '/inc/animation/aos-script.js', array('jquery'), '2.2.0', true );
 
 	wp_enqueue_script( 'bcorporate-main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true );
 
@@ -223,3 +228,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Load TGM Plgin to recommended plugins 
+ */
+require get_template_directory() . '/inc/tgm-plugin-activation/bcorporate-plugin-activation.php';
+

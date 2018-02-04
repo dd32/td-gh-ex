@@ -8,8 +8,8 @@
  */
 get_header(); ?>
 
-		<div class="bcorporate_banner_section bcorporate_blog_banner_section">
-			<div class="text-center">
+		<div class="bcorporate_banner_section bcorporate_blog_banner_section" style="background-image: url(<?php if( has_post_thumbnail() ): echo esc_url( get_the_post_thumbnail_url() ); endif;?>)">
+			<div class="text-center caption-text">
 				<h1 class="inner_page_title"><?php the_title(); ?>
 				</h1>
 				<?php
@@ -19,7 +19,6 @@ get_header(); ?>
 					} 
 				?>
 			</div>
-			<img src="<?php echo get_template_directory_uri();?>/inc/img/blog_header_img.jpg" class="banner_img home_banner_img" />
 		</div>
 
 	</header><!-- #masthead -->

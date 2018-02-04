@@ -8,7 +8,7 @@
  */
 
 get_header(); ?>
-	<div class="bcorporate_banner_section bcorporate_inner_banner_section">
+	<div class="bcorporate_banner_section bcorporate_inner_banner_section" style="background-image: url(<?php echo esc_url( get_template_directory_uri() );?>/inc/img/blog_header_img.jpg)">
 			<div class="text-center">
 				<h1 class="inner_page_title"><?php esc_html_e('PAGE 404', 'bcorporate'); ?></h1>
 				<?php
@@ -18,7 +18,6 @@ get_header(); ?>
 					} 
 				?>
 			</div>
-			<img src="<?php echo esc_url( get_template_directory_uri() );?>/inc/img/blog_header_img.jpg" class="banner_img inner_banner_img" />
 		</div>
 
 	</header><!-- #masthead -->
@@ -38,7 +37,7 @@ get_header(); ?>
 							<div class="sub_404_title"><?php esc_html_e('Feel Free Contact Us', 'bcorporate'); ?></div>
 							<div class="main_404_text col-md-12 col-sm-12 col-lg-6 offset-lg-3">Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsuy veli. Nam nec tellus a odio tincidunt auctor</div>
 						
-							<div class="BE-btn-primary btn"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn  cta-btn"><?php esc_html_e('back to homepage','bcorporate'); ?></a></div>
+							<div class="BE-btn-primary "><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn  cta-btn"><?php esc_html_e('back to homepage','bcorporate'); ?></a></div>
 						</section><!-- .error-404 -->
 
 					

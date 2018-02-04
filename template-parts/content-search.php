@@ -36,6 +36,6 @@
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<?php bcorporate_entry_footer(); ?>
+		<?php //bcorporate_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

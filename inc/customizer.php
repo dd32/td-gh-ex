@@ -51,6 +51,20 @@ function bcorporate_customize_register( $wp_customize ) {
 	    'panel' => 'homepage_setting_panel',
 	) );
 
+	$wp_customize->add_setting( 'home_page_about_enable', array(
+	  'capability' => 'edit_theme_options',
+	  'default' => '1',
+	  'sanitize_callback' => 'bcorporate_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'home_page_about_enable', array(
+	  'type' => 'checkbox',
+	  'section' => 'home_page_about_section', // Add a default or your own section
+	  'label' => esc_html__( 'Enable Homepage About Section', 'bcorporate' ),
+	  'description' => esc_html__( 'Uncheck to disable Homepga about section', 'bcorporate' ),
+	  'priority' => 2,
+	) );
+
 	//About main text
 	$wp_customize->add_setting( 
 		'homepage_about_main_text', 
@@ -94,6 +108,17 @@ function bcorporate_customize_register( $wp_customize ) {
 	) );
 
 	// About section video url
+	$wp_customize->add_setting( 'homepage_about_image_url',
+		array(
+			'sanitize_callback' => 'bcorporate_sanitize_image',
+		)
+	 );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'homepage_about_image_url', array(
+	    'label'    => esc_html__( 'About Section Image ', 'bcorporate' ),
+	    'section'  => 'home_page_about_section',
+	) ) );
+
+
 	$wp_customize->add_setting( 'homepage_video_url', array(
 	  'capability' => 'edit_theme_options',
 	  'sanitize_callback' => 'bcorporate_sanitize_url',
@@ -108,6 +133,7 @@ function bcorporate_customize_register( $wp_customize ) {
 	    'placeholder' => esc_attr__( 'http://youtube.com', 'bcorporate' ),
 	  ),
 	) );
+
 
 	//About section background image
 	$wp_customize->add_setting( 'homepage_about_background',
@@ -125,6 +151,21 @@ function bcorporate_customize_register( $wp_customize ) {
 	    'title'       => esc_html__( 'Homepage feature Section', 'bcorporate' ),
 	    'priority'    => 1,
 	    'panel' => 'homepage_setting_panel',
+	) );
+
+	// Features enable disable 
+	$wp_customize->add_setting( 'home_page_feature_enable', array(
+	  'capability' => 'edit_theme_options',
+	  'default' => '1',
+	  'sanitize_callback' => 'bcorporate_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'home_page_feature_enable', array(
+	  'type' => 'checkbox',
+	  'section' => 'home_page_feature_section', // Add a default or your own section
+	  'label' => esc_html__( 'Enable Homepage Feature Section', 'bcorporate' ),
+	  'description' => esc_html__( 'Uncheck to disable Feature section', 'bcorporate' ),
+	  'priority' => 2,
 	) );
 
 	//Feature main title
@@ -165,6 +206,20 @@ function bcorporate_customize_register( $wp_customize ) {
 	    'title'       => esc_html__( 'Homepage Portfolio Section', 'bcorporate' ),
 	    'priority'    => 1,
 	    'panel' => 'homepage_setting_panel',
+	) );
+
+	$wp_customize->add_setting( 'home_page_portfolio_enable', array(
+	  'capability' => 'edit_theme_options',
+	  'default' => '1',
+	  'sanitize_callback' => 'bcorporate_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'home_page_portfolio_enable', array(
+	  'type' => 'checkbox',
+	  'section' => 'home_page_portfolio_section', // Add a default or your own section
+	  'label' => esc_html__( 'Enable Homepage Portfolio Section', 'bcorporate' ),
+	  'description' => esc_html__( 'Uncheck to disable Portfolio section', 'bcorporate' ),
+	  'priority' => 2,
 	) );
 
 	//portfolio main title
@@ -220,6 +275,23 @@ function bcorporate_customize_register( $wp_customize ) {
 	    'priority'    => 1,
 	    'panel' => 'homepage_setting_panel',
 	) );
+
+	// CTA enable disable 
+	$wp_customize->add_setting( 'home_page_cta_enable', array(
+	  'capability' => 'edit_theme_options',
+	  'default' => '1',
+	  'sanitize_callback' => 'bcorporate_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'home_page_cta_enable', array(
+	  'type' => 'checkbox',
+	  'section' => 'home_page_cta_one_section', // Add a default or your own section
+	  'label' => esc_html__( 'Enable CTa Feature Section', 'bcorporate' ),
+	  'description' => esc_html__( 'Uncheck to CTa Feature section', 'bcorporate' ),
+	  'priority' => 2,
+	) );
+
+
 
 	//CTA cat one main title
 	$wp_customize->add_setting( 
@@ -284,6 +356,21 @@ function bcorporate_customize_register( $wp_customize ) {
 	    'panel' => 'homepage_setting_panel',
 	) );
 
+	// Services enable disable 
+	$wp_customize->add_setting( 'home_page_services_enable', array(
+	  'capability' => 'edit_theme_options',
+	  'default' => '1',
+	  'sanitize_callback' => 'bcorporate_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'home_page_services_enable', array(
+	  'type' => 'checkbox',
+	  'section' => 'home_page_services_section', // Add a default or your own section
+	  'label' => esc_html__( 'Enable homepage services section', 'bcorporate' ),
+	  'description' => esc_html__( 'Uncheck to homepage services section', 'bcorporate' ),
+	  'priority' => 2,
+	) );
+
 	//Services title
 	$wp_customize->add_setting( 
 		'homepage_services_main_title', 
@@ -335,6 +422,22 @@ function bcorporate_customize_register( $wp_customize ) {
 	    'title'       => esc_html__( 'Homepage Blog Section', 'bcorporate' ),
 	    'priority'    => 1,
 	    'panel' => 'homepage_setting_panel',
+	) );
+
+
+	// Blog enable disable 
+	$wp_customize->add_setting( 'home_page_blog_enable', array(
+	  'capability' => 'edit_theme_options',
+	  'default' => '1',
+	  'sanitize_callback' => 'bcorporate_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'home_page_blog_enable', array(
+	  'type' => 'checkbox',
+	  'section' => 'home_page_blog_section', // Add a default or your own section
+	  'label' => esc_html__( 'Enable homepage blog section', 'bcorporate' ),
+	  'description' => esc_html__( 'Uncheck to homepage blog section', 'bcorporate' ),
+	  'priority' => 2,
 	) );
 
 	//Blog title
@@ -390,6 +493,21 @@ function bcorporate_customize_register( $wp_customize ) {
 	    'panel' => 'homepage_setting_panel',
 	) );
 
+	// Testimonial enable disable 
+	$wp_customize->add_setting( 'home_page_testimonial_enable', array(
+	  'capability' => 'edit_theme_options',
+	  'default' => '1',
+	  'sanitize_callback' => 'bcorporate_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'home_page_testimonial_enable', array(
+	  'type' => 'checkbox',
+	  'section' => 'home_page_testimonial_section', // Add a default or your own section
+	  'label' => esc_html__( 'Enable homepage testimonial section', 'bcorporate' ),
+	  'description' => esc_html__( 'Uncheck to homepage testimonial section', 'bcorporate' ),
+	  'priority' => 2,
+	) );
+
 	//Testimonial title
 	$wp_customize->add_setting( 
 		'homepage_testimonial_main_title', 
@@ -430,7 +548,7 @@ function bcorporate_customize_register( $wp_customize ) {
 	    array(
 	        'label' => esc_html__( 'Choose Testimonial Category', 'bcorporate' ),
 	        'section' => 'home_page_testimonial_section',
-	        'description' => esc_html__(' Select Category to show posts in Testimonial section) ','bcorporate'),
+	        'description' => esc_html__( ' Select Category to show posts in Testimonial section ','bcorporate'),
 	        'type' => 'select',
 	        'priority' => 2,
 	    )
@@ -442,6 +560,23 @@ function bcorporate_customize_register( $wp_customize ) {
 	    'priority'    => 1,
 	    'panel' => 'homepage_setting_panel',
 	) );
+
+
+	// CTA Two enable disable 
+	$wp_customize->add_setting( 'home_page_cta_two_enable', array(
+	  'capability' => 'edit_theme_options',
+	  'default' => '1',
+	  'sanitize_callback' => 'bcorporate_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'home_page_cta_two_enable', array(
+	  'type' => 'checkbox',
+	  'section' => 'home_page_cta_two_section', // Add a default or your own section
+	  'label' => esc_html__( 'Enable homepage cta two section', 'bcorporate' ),
+	  'description' => esc_html__( 'Uncheck to homepage cta two section', 'bcorporate' ),
+	  'priority' => 2,
+	) );
+
 
 	//CTA cat two main title
 	$wp_customize->add_setting( 
@@ -640,6 +775,12 @@ function bcorporate_sanitize_select( $input, $setting ) {
 	return absint( $input );
 }
 
+
+// Checkbod filed sanitization 
+function bcorporate_sanitize_checkbox( $checked ) {
+  // Boolean check.
+  return ( ( isset( $checked ) && true == $checked ) ? true : false );
+}
 
 /**
  * Control:WP_Customize_Image_Control

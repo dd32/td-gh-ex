@@ -14,8 +14,9 @@
 
 get_header(); ?>
 
-		<div class="bcorporate_banner_section bcorporate_blog_banner_section">
-			<div class="text-center">
+		<div class="bcorporate_banner_section bcorporate_blog_banner_section"  style="background-image: url(<?php echo esc_url( get_template_directory_uri() );?>/inc/img/blog_header_img.jpg)">
+			<div class="text-center caption-text">
+			<div class="text-center ">
 				<h1 class="inner_page_title"><?php echo single_post_title(); ?>
 				</h1>
 				<?php
@@ -25,7 +26,6 @@ get_header(); ?>
 					} 
 				?>
 			</div>
-			<img src="<?php echo get_template_directory_uri();?>/inc/img/blog_header_img.jpg" class="banner_img home_banner_img" />
 		</div>
 
 	</header><!-- #masthead -->
@@ -58,7 +58,7 @@ get_header(); ?>
 			    			if( $bcorporate_blog_query->have_posts() ):
 			    				while ( $bcorporate_blog_query->have_posts() ):
 			    					$bcorporate_blog_query->the_post();
-			    					get_template_part( 'template-parts/content', get_post_format() );
+			    					get_template_part( 'template-parts/content', 'category' );
 			    				endwhile;
 			    				?>
 			    				<div class="clearfix"></div>
@@ -81,13 +81,13 @@ get_header(); ?>
 									 * If you want to override this in a child theme, then include a file
 									 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 									 */
-									get_template_part( 'template-parts/content', get_post_format() );
+									get_template_part( 'template-parts/content', 'category' );
 
 								endwhile;
 								?>
 
 								<div class="clearfix"></div>
-								<ul class="pagination" role="navigation" aria-label="Pagination">
+								<ul class="pagination text-center justify-content-center" role="navigation" aria-label="Pagination">
 									<?php echo paginate_links(); ?>
 								</ul>
 								

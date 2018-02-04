@@ -25,11 +25,12 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bcorporate' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="headerwrap">
+		<div class="headermain">
+		<div class="headerwrap"> 
 			<div class="container-fluid">
-				<div class="row">
+				<div class="row header_wrap_menu">
 					
-					<div class="site-branding col-8 col-sm-4 col-lg-6">
+					<div class="site-branding col-8 col-sm-4 col-lg-3 col-xl-4">
 						<?php
 						the_custom_logo();
 						if ( is_front_page() && is_home() ) : ?>
@@ -46,7 +47,7 @@
 						endif; ?>
 					</div><!-- .site-branding -->
 							
-					<nav id="site-navigation" class="main-navigation col-4 col-sm-8 col-lg-6 text-sm-left text-md-right">
+					<nav id="site-navigation" class="main-navigation col-4 col-sm-8 col-lg-9 col-xl-8   clearfix ">
 						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'bcorporate' ); ?>
 							<div class="burger-menu">
 								<span></span>
@@ -57,7 +58,7 @@
 						</button>
 
 						<?php if ( has_nav_menu( 'header_menu' ) ) : ?>
-									
+								<div class="main-menu-wrap">	
 						    <?php
 							    wp_nav_menu(
 								    array(
@@ -69,16 +70,18 @@
 								    )
 							    );
 						    ?>
+						</div>
 							
 							<?php else : ?>
 							
-							<ul id="nav">
+							<div class="main-menu-wrap"><ul id="nav" >
 								<?php wp_list_pages( 'title_li=&depth=1' ); ?>
-							</ul>
+							</ul></div>
 							
 						<?php endif; ?>
 					</nav><!-- #site-navigation -->
 				</div>
 			</div>	
 		</div>
+	</div>
 		

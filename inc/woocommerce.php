@@ -166,8 +166,8 @@ if ( ! function_exists( 'bcorporate_woocommerce_wrapper_before' ) ) {
 	 */
 	function bcorporate_woocommerce_wrapper_before() {
 		?>
-			<div class="bcorporate_banner_section bcorporate_inner_banner_section">
-				<div class="center_text text-center">
+			<div class="bcorporate_banner_section bcorporate_inner_banner_section" style="background-image: url(<?php echo esc_url( get_template_directory_uri() );?>/inc/img/blog_header_img.jpg)">
+				<div class="text-center caption-text">
 					<h1 class="inner_page_title"><?php the_title(); ?></h1>
 					<?php
 						// Check if NavXT plugin activated
@@ -176,7 +176,6 @@ if ( ! function_exists( 'bcorporate_woocommerce_wrapper_before' ) ) {
 						} 
 					?>
 				</div>
-					<img src="<?php echo esc_url( get_template_directory_uri() );?>/inc/img/blog_header_img.jpg" class="banner_img inner_banner_img" />
 			</div>
 
 		</header><!-- #masthead -->

@@ -32,13 +32,17 @@ Bcorporate includes support for Infinite Scroll in Jetpack.
 = 1.0 - Jan 1 2018 =
 * Initial release
 
+= 1.0.1 - Few 4 2018 =
+* Implemented TGM plugin to recommend plugins used in theme
+* Fixed some escaping issues
+
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html   
 
 Screenshot Image
-	* https://pixabay.com/en/business-businessman-male-work-2879470/o
+	* https://pixabay.com/en/office-business-company-2360063/
 
 
 	* License: CC0 Public Domain
@@ -67,6 +71,3 @@ Bootstrap(v4.0.0):
    License: https://v4-alpha.getbootstrap.com/about/license/
    License url: https://v4-alpha.getbootstrap.com/about/license/
    Url: https://getbootstrap.com/
-
-
-
