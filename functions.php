@@ -21,6 +21,11 @@ function bb10_setup(){
 	
 	//bb10 Title Tag
 	add_theme_support( 'title-tag' );
+	add_filter( 'document_title_separator', 'hjyl_title_separator_to_line' );
+	add_filter( 'document_title_parts', 'hjyl_document_title_parts' );
+	
+	// add @ for comment
+	add_filter( 'comment_text' , 'hjyl_comment_add_at', 20, 2);
 	
 	//editor style
 	add_editor_style('css/editor.css');
@@ -37,17 +42,25 @@ function bb10_setup(){
 	// Add sidebar
 	add_action( 'widgets_init', 'bb10_widgets' );
 	
-	//change the_title "-" to "|"
-	add_filter( 'document_title_separator', 'Bing_title_separator_to_line' );
+	// Enable support for Post Formats.
+	add_theme_support( 'post-formats', array(
+		'aside',
+		'gallery',
+		'link',
+		'quote',
+		'status',
+	) );
 	
 	//Add custom-header for logo
-	$bb10_logo = array(
-		'default-image'          => BB10_TPLDIR.'/images/header-logo.png',
+	$hjyl_logo = array(
+		'default-image'          => TPLDIR.'/images/header-logo.png',
 		'random-default'         => false,
-		'width'                  => 300,
-		'height'                 => 60,
+		'width'                  => 600,
+		'height'                 => 150,
 		'header-text'            => false,
 		'uploads'                => true,
+        'flex-width'			 => true,
+        'flex-height'			 => true,
 	);
 	add_theme_support( 'custom-header', $bb10_logo );
 	
@@ -57,10 +70,25 @@ function bb10_setup(){
 		'mobile' => __( 'Mobile Navigation', 'bb10'),
 	) );
 };
+// add @ for comment
+function hjyl_comment_add_at( $comment_text, $comment = '') {
+  if( $comment->comment_parent > 0) {
+    $comment_text = '@<a href="#comment-' . $comment->comment_parent . '">'.get_comment_author( $comment->comment_parent ) . '</a> ' . $comment_text;
+  }
 
-//change the_title "-" to "|"
-function Bing_title_separator_to_line(){
-        return '|';
+  return $comment_text;
+}
+//bb10 Title Tag
+function hjyl_title_separator_to_line(){
+    return '|';
+}
+function hjyl_document_title_parts( $title ){
+    if( is_home() && isset( $title['tagline'] ) ) unset( $title['tagline'] );
+	//no title
+	if(is_singular() && ""==get_the_title() ) { 
+		$title['title'] = sprintf(__('Untitled #%s', 'bb10'),get_the_ID());
+	};
+    return $title;
 }
 
 //Custom wp_list_pages
@@ -73,14 +101,14 @@ function bb10_wp_list_pages(){
 // Enqueue style-file, if it exists.
 function bb10_script() {
 	if( !bb10_IsMobile ){
-		wp_enqueue_style( 'bb10-style', get_stylesheet_uri(),  array(), '20180120', false);
+		wp_enqueue_style( 'bb10-style', get_stylesheet_uri(),  array(), '20180204', false);
 	}else{
-		wp_enqueue_style('bb10-mobile', BB10_TPLDIR . '/css/bb10-mobile.css', array(), '20180120', 'all', false);
+		wp_enqueue_style('bb10-mobile', BB10_TPLDIR . '/css/bb10-mobile.css', array(), '20180204', 'all', false);
 	};
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_style( 'font-awesome', BB10_TPLDIR . '/css/font-awesome.min.css', array(), '20180120', 'all');
-	wp_enqueue_script( 'bb10-js', BB10_TPLDIR . '/js/bb10.js', array(), '20180120', true);
-	wp_enqueue_script( 'bb10-comments-ajax', BB10_TPLDIR . '/js/bb10-comments-ajax.js', array(), '20180120', true);
+	wp_enqueue_style( 'font-awesome', BB10_TPLDIR . '/css/font-awesome.min.css', array(), '20180204', 'all');
+	wp_enqueue_script( 'bb10-js', BB10_TPLDIR . '/js/bb10.js', array(), '20180204', true);
+	wp_enqueue_script( 'bb10-comments-ajax', BB10_TPLDIR . '/js/bb10-comments-ajax.js', array(), '20180204', true);
 	wp_localize_script('bb10-comments-ajax', 'ajaxL10n', array(
 		'edt1' => __('Before Refresh, you can','bb10'),
 		'edt2' => __('Edit','bb10'),
@@ -92,22 +120,50 @@ function bb10_script() {
 	if ( is_singular() && comments_open() ) wp_enqueue_script( 'comment-reply' );
 		
 	if( is_page('archives') ){
-		wp_enqueue_script( 'bb10-archives', BB10_TPLDIR . '/js/bb10-archives.js', array(), '20180120', false);
-		wp_enqueue_style( 'bb10-archives', BB10_TPLDIR . '/css/bb10-archives.css', array(), '20180120', 'all');
+		wp_enqueue_script( 'bb10-archives', BB10_TPLDIR . '/js/bb10-archives.js', array(), '20180204', false);
+		wp_enqueue_style( 'bb10-archives', BB10_TPLDIR . '/css/bb10-archives.css', array(), '20180204', 'all');
 	};
 	if(is_404()){
-		wp_enqueue_style( 'bb10-4041', '//fonts.googleapis.com/css?family=Press+Start+2P', array(), '20180120', 'all');
-		wp_enqueue_style( 'bb10-4042', '//fonts.googleapis.com/css?family=Oxygen:700', array(), '20180120', 'all');
-		wp_enqueue_style( 'bb10-4043', BB10_TPLDIR . '/css/bb10-404.css', array(), '20180120', 'all');
+		wp_enqueue_style( 'bb10-4041', '//fonts.googleapis.com/css?family=Press+Start+2P', array(), '20180204', 'all');
+		wp_enqueue_style( 'bb10-4042', '//fonts.googleapis.com/css?family=Oxygen:700', array(), '20180204', 'all');
+		wp_enqueue_style( 'bb10-4043', BB10_TPLDIR . '/css/bb10-404.css', array(), '20180204', 'all');
 	}
 }
 
 //copyright below single
 function bb10_copyright($content) {
 	if( is_single() ){
-		$content.= '<p>--'.__('CopyRights','bb10').': <a class="hjyl_Copy" href="'.home_url().'">'.get_bloginfo('name').'</a> &raquo; <a  class="hjyl_Copy" href="'.get_permalink().'">'.get_the_title().'</a></p>';
+		$content.= '<p>--'.__('CopyRights','bb10').': <a  class="hjyl_Copy" href="'.get_permalink().'">'.get_permalink().'</a></p>';
 	}
 	return $content;
+}
+
+//time formats "xxxx ago"
+function time_ago($type = 'commennt', $day = 365) {
+    $d = $type == 'post' ? 'get_post_time' : 'get_comment_time';
+    //if (time() - $d('U') > 60 * 60 * 24 * $day) return;
+	echo sprintf(__('%s ago','bb10'), human_time_diff($d('U') , strtotime(current_time('mysql', 0))));
+}
+function timeago($ptime) {
+    $ptime = strtotime($ptime);
+    $etime = time() - $ptime;
+    if ($etime < 1) return __('Just Now','bb10');
+    $interval = array(
+        12 * 30 * 24 * 60 * 60 => __('years ago', 'bb10'),
+        30 * 24 * 60 * 60 => __('month ago', 'bb10'),
+        7 * 24 * 60 * 60 => __('weeks ago', 'bb10'),
+        24 * 60 * 60 => __('days ago', 'bb10'),
+        60 * 60 => __('hours ago', 'bb10'),
+        60 => __('minutes ago', 'bb10'),
+        1 => __('seconds ago', 'bb10')
+    );
+    foreach ($interval as $secs => $str) {
+        $d = $etime / $secs;
+        if ($d >= 1) {
+            $r = round($d);
+            return $r . $str;
+        }
+    };
 }
 
 // Add sidebar

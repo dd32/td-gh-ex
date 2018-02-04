@@ -20,7 +20,7 @@
 						<span class="fa fa-user author" title="<?php _e('Posted by', 'bb10'); ?>">
 							<?php the_author_posts_link(); ?>
 						</span>
-						<span class="fa fa-clock-o last-updated" title="<?php _e('Last Updated', 'bb10'); ?>">
+						<span class="fa fa-clock-o last-updated" title="<?php printf(__(' Last Updated %s ', 'bb10'),timeago(get_gmt_from_date(get_the_time('Y-m-d G:i:s')))); ?>">
 							<?php if ((get_the_modified_time('Y')*365+get_the_modified_time('z')) > (get_the_time('Y')*365+get_the_time('z'))) : ?><?php the_modified_time('Y-m-j h:s'); ?><?php else : ?><?php the_time('Y-m-j G:i:s'); ?><?php endif; ?>
 						</span>
 

@@ -2,7 +2,7 @@
 		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'bb10' ); ?></p>
 <?php return;endif; ?>
 <?php if ( have_comments() ) : ?>
-		<h3 id="comments-title"><span><?php comments_popup_link(__( 'Leave a reply', 'bb10' ), __( '<b>1</b> Reply', 'bb10' ), __( '<b>%</b> Replies', 'bb10' ) ); ?></span></h3>
+		<h3 id="comments-title"><span><i class="fa fa-commenting" aria-hidden="true"></i> <?php comments_popup_link(__( 'Leave a reply', 'bb10' ), __( '<b>1</b> Reply', 'bb10' ), __( '<b>%</b> Replies', 'bb10' ) ); ?></span></h3>
 	<ol class="commentlist" id="comments">
 		<?php wp_list_comments( array( 'callback' => 'hjyl_comment' ) );?>
 			<p id="comments-nav">
@@ -38,7 +38,7 @@
 <div class="clear"></div>
 <?php /*output Trackbacks and Pingbacks*/ $havepings="pings"; foreach($comments as $comment){if(get_comment_type() != 'comment' && $comment->comment_approved != '0'){ $havepings = 1; break; }}if($havepings == 1) : ?>
 <div id="pings">
-	<h3 id="pings-title"><span><a><?php _e('Pingbacks', 'bb10'); ?></a></span></h3>
+	<h3 id="pings-title"><span><i class="fa fa-link" aria-hidden="true"></i> <a><?php _e('Pingbacks', 'bb10'); ?></a></span></h3>
 		<ul id="pinglist"><?php wp_list_comments('type=pings&per_page=0&callback=hjyl_pings'); ?></ul>
 </div>
 

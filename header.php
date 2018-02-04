@@ -29,7 +29,9 @@
 	<header id="hjyl_header">
 		<h1 id="bb_logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
 		<div class="logo-line"></div>
-		<p class="header-logo"><img src="<?php echo esc_url( header_image() ); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php bloginfo('name'); ?>"></p>
+		<?php if ( get_header_image() ) : ?>
+		<p class="header-logo"><img src="<?php header_image(); ?>" alt="<?php bloginfo('name'); ?>"></p>
+		<?php endif; ?>
 		<?php get_search_form(); ?>
 		<nav id="hjyl_menu">
 		<?php if(!bb10_IsMobile || !is_404()) { ?>

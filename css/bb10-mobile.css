@@ -6,8 +6,8 @@ Author URI: http://hjyl.org/
 Description: The theme from blackberry 10. simple and beautiful.based on HTML5 and CSS3.
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version: 2.0
-Tags: two-columns, theme-options, custom-menu, right-sidebar, editor-style, sticky-post, blog
+Version: 2.1
+Tags: two-columns, post-formats, theme-options, custom-menu, right-sidebar, editor-style, sticky-post, blog
 */
 @import url("font-awesome.min.css");
 /* =Reset CSS.= */
@@ -209,44 +209,44 @@ img.aligncenter {
 	font-size: 12px;
 	margin: 5px;
 }
-.gallery {
+#hjylContent .gallery {
 	margin: 0 auto 18px;
 }
-.gallery .gallery-item {
+#hjylContent .gallery .gallery-item {
 	float: left;
 	margin:0 10px 0;
 	text-align: center;
 	width: 24.5%;
 }
-.gallery-columns-2 .gallery-item {
+#hjylContent .gallery-columns-2 .gallery-item {
 	width: 50%;
 }
-.gallery-columns-4 .gallery-item {
+#hjylContent .gallery-columns-4 .gallery-item {
 	width: 25%;
 }
-.gallery img {
+#hjylContent .gallery img {
 	border: 2px solid #cfcfcf;
 }
-.gallery-columns-2 .attachment-medium {
+#hjylContent .gallery-columns-2 .attachment-medium {
 	max-width: 92%;
 	height: auto;
 }
-.gallery-columns-4 .attachment-thumbnail {
+#hjylContent .gallery-columns-4 .attachment-thumbnail {
 	max-width: 84%;
 	height: auto;
 }
-.gallery .gallery-caption {
+#hjylContent .gallery .gallery-caption {
 	color:#888;
 	font-size: 12px;
 	margin: 0 0 12px;
 }
-.gallery dl {
+#hjylContent .gallery dl {
 	margin: 0;
 }
-.gallery img {
+#hjylContent .gallery img {
 	border: 10px solid #f1f1f1;
 }
-.gallery br+br {
+#hjylContent .gallery br+br {
 	display: none;
 }
 .attachment img {/* single attachment images should be centered */
@@ -272,9 +272,6 @@ th, td{
 }
 tr.even td{
 	background:#f7f7f7;
-}
-th{
-	background:#edeff0;
 }
 blockquote{
 	padding:20px 30px;
@@ -511,101 +508,6 @@ pre{
 #archives-content {
 	width: 80%;
 }
-#hjyl_x{
-	float:right;
-	margin:10px 0 10px 10px;
-}
-#hjyl_xx{
-	text-align:center;
-}
-/*****#hjylWidget*****/
-#hjylWidget{
-	margin-left:20px;
-	float:right;
-}
-#hjylWidget{
-	padding-bottom:40px;
-}
-#hjylWidget .widget h2{
-	margin-bottom:10px;
-}
-#hjylWidget .widget_mail .rsstxt {
-	height: 30px;
-	padding: 0 10px;
-	width: 80%;
-	border:1px solid #ccc;
-}
-#hjylWidget  ul li {
-	margin-bottom: 5px;
-}
-#hjylWidget .widget_mail,
-#hjylWidget .widget_meta{
-	width:200px;
-}
-#hjylWidget .widget_links li,
-#hjylWidget .widget_categories li{
-	float: left;
-	width: 45%;
-}
-.widget_recent_entries li,
-.widget_links li,
-.widget_categories li{
-	list-style:square;
-	margin-left:15px;
-	color:#DDDDDD;
-}
-#hjylWidget .widget{
-	width:260px;
-	padding:10px;
-}
-#hjylWidget .widget_links li,
-#hjylWidget .widget_categories li{
-	width:40%;
-}
-.widget_archive li,
-.widget_count li{
-	float:left;
-	width:48%;
-}
-.widget_share > div{
-	float:left;
-	margin:0 10px;
-}
-/*自定义widget*/
-aside .ffox_most_active{
-	display:inline-block;
-}
-aside .ffox_most_active img.avatar{
-	border:1px solid #ddd;
-	height:32.5px;
-	width:32.5px;
-}
-aside li.widget .ffox_most_active li{
-	border:none;
-	line-height:0;
-	list-style:none;
-	margin:2px 3px;
-	width: 34px;
-	padding: 0;
-	height: 34px;
-	float: left;
-	overflow:hidden;
-}
-aside li.widget .ffox_most_active li a{
-	border:none;
-	padding-left:0;
-}
-aside .recentcomments li{
-	overflow:hidden;
-}
-aside .recentcomments .avatar{
-	border:1px solid #ddd;
-	float:left;
-	height:28px;
-	margin-right:5px;
-	padding:2px;
-	width:28px;
-}
 
 /**********commentlist************/
 .commentlist li{
@@ -656,6 +558,47 @@ aside .recentcomments .avatar{
 }
 #comments-title, #pings-title{
 	margin:20px 0;
+}
+#comments-title, #pings-title{
+	text-align: center;
+	border-bottom: 1px solid rgba(255,255,255,0.3);
+	height: 10px;
+	margin-bottom: 50px;
+	position:relative;
+}
+#comments-title:before, #comments-title:after, #pings-title:before, #pings-title:after{
+	content: "";
+	border-top: 15px solid rgba(255,255,255,0.3);
+	position: absolute;
+	top: 10px;
+}
+#comments-title:before, #pings-title:before{
+	border-left: 10px dashed transparent;
+	left: -25px;
+}
+#comments-title:after, #pings-title:after{
+	border-right: 10px dashed transparent;
+	right: -30px;
+}
+#comments-title span, #pings-title span{
+	border: 1px solid rgba(255,255,255,0.3);
+	padding: 5px 10px;
+	background: #333436;
+	border-radius: 5px;
+}
+#comments-title span:before, #comments-title span:after,#pings-title span:before, #pings-title span:after{
+	content: "";
+	border-top: 1px solid rgba(255,255,255,0.3);	
+	position: absolute;
+	top: 10px;
+}
+#comments-title span:before, #pings-title span:before{
+	left: -15px;
+	width:15px;	
+}
+#comments-title span:after, #pings-title span:after{
+	right: -20px;
+	width:20px;
 }
 .comment-form-comment #comment{
 	width:97.5%;
@@ -722,11 +665,57 @@ aside .recentcomments .avatar{
 	padding: 0 10px;
 	width:240px;
 }
+/*****post_format******/
+.status-avatar{
+	float:left;
+	width:50px;
+	margin-right:20px;
+}
+.status-avatar img{
+	border-radius:70px;
+	border:1px solid #DDDDDD;
+	padding:3px;
+}
+.status-avatar img:hover{
+	box-shadow: 0px 0px 2px #DDDDDD inset;
+}
+.status-footer{
+	text-align:right;
+}
+.nav-previous{
+	float:left;
+	width:45%;
+}
+#nav-single:before, #nav-single:after{
+	content:' ';
+	clear:both;
+	display:block;
+}
+.nav-next{
+	float:right;
+	width:45%;
+	text-align:right;
+}
 
 /****footer****/
 footer{
 	margin:20px 0;
 	
+}
+#hjylUp{
+	display:none;
+}
+#hjylUp i{
+	font-size:20px;
+	padding:5px 10px;
+	position:fixed;
+	left:20px;
+	bottom:20px;
+	cursor:pointer;
+	border-radius:5px;
+}
+#hjylUp i:hover{
+	background:#888;
 }
 .copyright, .comment .comment-author .comment_meta .comment_time{
 	font-family: Consolas,Microsoft YaHei,sans-serif,"宋体";

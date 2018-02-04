@@ -7,8 +7,8 @@ Description: The theme from blackberry 10. simple and beautiful.based on HTML5 a
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bb10
-Version: 2.0
-Tags: two-columns, theme-options, custom-menu, right-sidebar, editor-style, sticky-post, blog
+Version: 2.1
+Tags: two-columns, post-formats, theme-options, custom-menu, right-sidebar, editor-style, sticky-post, blog
 */
 /* =Reset CSS.= */
 *{
@@ -212,41 +212,41 @@ img.aligncenter {
 .gallery {
 	margin: 0 auto 18px;
 }
-.gallery .gallery-item {
+#hjylContent .gallery .gallery-item {
 	float: left;
 	margin:0 10px 0;
 	text-align: center;
 	width: 24.5%;
 }
-.gallery-columns-2 .gallery-item {
+#hjylContent .gallery-columns-2 .gallery-item {
 	width: 50%;
 }
-.gallery-columns-4 .gallery-item {
+#hjylContent .gallery-columns-4 .gallery-item {
 	width: 25%;
 }
-.gallery img {
+#hjylContent .gallery img {
 	border: 2px solid #cfcfcf;
 }
-.gallery-columns-2 .attachment-medium {
+#hjylContent .gallery-columns-2 .attachment-medium {
 	max-width: 92%;
 	height: auto;
 }
-.gallery-columns-4 .attachment-thumbnail {
+#hjylContent .gallery-columns-4 .attachment-thumbnail {
 	max-width: 84%;
 	height: auto;
 }
-.gallery .gallery-caption {
+#hjylContent .gallery .gallery-caption {
 	color:#888;
 	font-size: 12px;
 	margin: 0 0 12px;
 }
-.gallery dl {
+#hjylContent .gallery dl {
 	margin: 0;
 }
-.gallery img {
+#hjylContent .gallery img {
 	border: 10px solid #f1f1f1;
 }
-.gallery br+br {
+#hjylContent .gallery br+br {
 	display: none;
 }
 .attachment img {/* single attachment images should be centered */
@@ -408,17 +408,14 @@ pre{
 	position:absolute;
 	z-index:9999;
 	margin-top:100px;
-}
-#hjyl_menu .fa{
-	display:block;
+	left:-69px;
 }
 #hjyl_menu ul li{
 	padding:5px;
-	text-align:center;
+	text-align:right;
 	position:relative;
-	width:30px;
-	border:1px solid rgba(255, 255, 255, 0.2);
-	box-shadow:0 0 1px rgba(255, 255, 255, 0.2);
+	line-height:32px;
+	width:100px;
 }
 #hjylContent{
 	border-left:1px solid #DDDDDD;
@@ -440,7 +437,7 @@ pre{
 	width:13px;
 	height:13px;
 	position: absolute;
-	top: 0;
+	top: 13px;
 	right: -26px;
 }
 #hjyl_header #searchform{
@@ -548,6 +545,20 @@ pre{
 #archives-content {
 	width: 80%;
 }
+.page-link{
+	border-top: 1px dotted;
+	border-bottom: 1px dotted;
+	text-align: center;
+	line-height:30px;
+}
+.page-link a{
+	padding: 2px 10px;
+	background: #227EC0;
+	margin: 0 10px;
+}
+.page-link a:hover{
+	background: #333436;
+}
 
 /*****#hjylWidget*****/
 #hjylWidget{
@@ -559,6 +570,9 @@ pre{
 }
 #hjylWidget .widget h2{
 	margin-bottom:10px;
+	text-align:right;
+	border-bottom:1px solid #DDDDDD;
+	font-size:16px;
 }
 #hjylWidget .widget_mail .rsstxt {
 	height: 30px;
@@ -604,9 +618,7 @@ pre{
 }
 .twitter_rss{
 	text-align:center;
-	border-bottom:1px solid #DDDDDD;
 	position:relative;
-	height:30px;
 	
 }
 .twitter_rss span{
@@ -622,7 +634,7 @@ pre{
 	display:none;
 	position:absolute;
 	right:10px;
-	top:50px;
+	top:40px;
 	z-index:10;
 	border:1px solid #DDDDDD;
 	
@@ -634,8 +646,6 @@ pre{
 	content:" ";
 	width:15px;
 	height:15px;
-	border-top:1px solid #DDDDDD;
-	border-right:1px solid #DDDDDD;
 	background:#333436;
 	transform: rotate(135deg);
 	-ms-transform: rotate(135deg);
@@ -643,7 +653,7 @@ pre{
 	-webkit-transform: rotate(135deg);
 	-o-transform: rotate(135deg);
 	position:absolute;
-	top:32px;
+	top:22px;
 	right:0;
 	z-index:20;
 }
@@ -695,6 +705,59 @@ pre{
 #pings-title{
 	margin:20px 0;
 }
+#comments-title,
+#pings-title{
+	text-align: center;
+	border-bottom: 1px solid rgba(255,255,255,0.3);
+	height: 10px;
+	margin-bottom: 50px;
+	position:relative;
+}
+#comments-title:before,
+#comments-title:after,
+#pings-title:before,
+#pings-title:after{
+	content: "";
+	border-top: 15px solid rgba(255,255,255,0.3);
+	position: absolute;
+	top: 10px;
+}
+#comments-title:before,
+#pings-title:before{
+	border-left: 10px dashed transparent;
+	left: -25px;
+}
+#comments-title:after,
+#pings-title:after{
+	border-right: 10px dashed transparent;
+	right: -30px;
+}
+#comments-title span,
+#pings-title span{
+	border: 1px solid rgba(255,255,255,0.3);
+	padding: 5px 10px;
+	background: #333436;
+	border-radius: 5px;
+}
+#comments-title span:before,
+#comments-title span:after,
+#pings-title span:before,
+#pings-title span:after{
+	content: "";
+	border-top: 1px solid rgba(255,255,255,0.3);	
+	position: absolute;
+	top: 10px;
+}
+#comments-title span:before,
+#pings-title span:before{
+	left: -15px;
+	width:15px;	
+}
+#comments-title span:after,
+#pings-title span:after{
+	right: -20px;
+	width:20px;
+}
 .comment-form-comment #comment{
 	width:97.5%;
 	padding:10px;
@@ -716,13 +779,14 @@ pre{
 }
 #submit {
 	cursor:pointer;
-	padding:5px 10px;
+	padding:10px 25px;
 	font-size: 15px;
 	font-weight:bold;
 	color: #DDDDDD;
 	text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
 	background: rgba(255, 255, 255, 0.4);
 	border:1px solid #CCC;
+	border-radius:5px;
 }
 #submit:hover {
 	background:#227EC0;
@@ -737,14 +801,77 @@ pre{
 	top:0;
 	left:-115px;
 }
+.hjylEntry a, .comment-body p a{
+	border-bottom:1px dotted;
+}
+.comment-body p a:first-child{
+	margin-right: 5px;
+	color:#227EC0;
+}
+.comment-body p a:hover{
+	color:#DDDDDD;
+	border-bottom:1px solid #DDDDDD;
+}
 
 /****footer****/
 footer{
 	margin:20px 0;
 	
 }
+#hjylUp{
+	display:none;
+}
+#hjylUp i{
+	font-size:20px;
+	background:#555555;
+	padding:5px 10px;
+	position:fixed;
+	right:100px;
+	bottom:20px;
+	cursor:pointer;
+	border-radius:5px;
+}
+#hjylUp i:hover{
+	background:#888;
+}
 .copyright,
 .comment .comment-author .comment_meta .comment_time{
 	font-family: Consolas,Microsoft YaHei,sans-serif,"宋体";
 	text-align:center;
+}
+
+/*****post_format******/
+.status-avatar{
+	float:left;
+	width:50px;
+	margin-right:20px;
+}
+.status-avatar img{
+	border-radius:70px;
+	border:1px solid #DDDDDD;
+	padding:3px;
+}
+.status-avatar img:hover{
+	box-shadow: 0px 0px 2px #DDDDDD inset;
+}
+.status-date{
+	float:right;
+	width:530px;
+}
+.status-footer{
+	text-align:right;
+}
+.nav-previous{
+	float:left;
+	width:45%;
+}
+#nav-single:before, #nav-single:after{
+	content:' ';
+	clear:both;
+	display:block;
+}
+.nav-next{
+	float:right;
+	width:45%;
+	text-align:right;
 }

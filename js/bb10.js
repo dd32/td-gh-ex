@@ -1,19 +1,17 @@
 jQuery(document).ready(function($){ //Begin jQuery
-    $('.reply').click(function() {
-    var atid = '"#' + $(this).parent().parent().parent().attr("id") + '"';
-    var atname = $(this).prevAll().find('cite:first').text();
-    $("#comment").focus().val("<a href=" + atid + ">@" + atname + " </a>");
-});
-    $('#cancel-comment-reply-link').click(function() { //click to cancel reply
-    $("#comment").val('');
-});
-
 //up to top
 $body=(window.opera)?(document.compatMode=="CSS1Compat"?$('html'):$('body')):$('html,body');
-$('#hjylUp').click(function(){
-		$body.animate({scrollTop:0},400);
-})  //End jQuery
-
+$(window).scroll(function(){
+	if($(window).scrollTop()>=300){
+		$('#hjylUp').fadeIn(600);
+	}else{
+		$('#hjylUp').fadeOut(600);
+}});
+$('#hjylUp').click(function() {
+	$body.animate({
+		scrollTop: 0
+	}, 600)
+});
 //add external link to entry a tag;
 $('.hjylEntry p a').each(function(){
     $self = $(this);

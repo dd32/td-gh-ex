@@ -21,7 +21,7 @@ function hjyl_comment( $comment, $args, $depth ) {
 			<?php $default= ''; echo get_avatar( $comment, 32, $default, $comment->comment_author ); ?>
 			<div class="comment_meta">
 				<h3><?php printf( __( '%s ', 'bb10'), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?></h3>
-				<a class="comment_time" href="#comment-<?php comment_ID() ?>"><?php printf( __( '<cite id="commentmeta">%1$s</cite>', 'bb10'), comment_date('Y/m/d  '),  comment_time() ); ?></a>
+				<a class="comment_time" href="#comment-<?php comment_ID() ?>" title="<?php printf(__('%s published','bb10'), time_ago()); ?>"><?php printf( __( '<cite id="commentmeta">%1$s</cite>', 'bb10'), comment_date('Y/m/d  '),  comment_time() ); ?></a>
 			<span class="reply">
 				<?php if ($depth == get_option('thread_comments_depth')) : ?>
 					 <a onclick="return addComment.moveForm( 'comment-<?php comment_ID() ?>','<?php echo $comment->comment_parent; ?>', 'respond','<?php echo $comment->comment_post_ID; ?>' )" href="?replytocom=<?php comment_ID() ?>#respond" class="comment-reply-link" rel="nofollow">-@</a>
@@ -29,6 +29,7 @@ function hjyl_comment( $comment, $args, $depth ) {
 					 <a onclick="return addComment.moveForm( 'comment-<?php comment_ID() ?>','<?php comment_ID() ?>', 'respond','<?php echo $comment->comment_post_ID; ?>' ) " href="?replytocom=<?php comment_ID() ?>#respond" class="comment-reply-link" rel="nofollow">-@</a>
 				 <?php endif; ?>
 			</span><!-- .reply -->
+			<br/><?php if(function_exists('wpua_custom_output')) {wpua_custom_output();} //UA ICON ?>
 			</div>
 		</div><!-- .comment-author .vcard -->
 			<div class="comment-body"><?php comment_text(); ?></div>
@@ -178,7 +179,7 @@ function hjyl_ajax_comment(){
 						<?php echo get_avatar( $comment,$size='32'); ?>
 					<div class="comment-meta">
 						<h3><?php printf( __( '%s ', 'bb10'), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?></h3>
-						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( __( '%1$s at %2$s', 'bb10' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'bb10' ), ' ' ); ?>
+						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>" title="<?php printf(__('%s published','bb10'), time_ago()); ?>"><?php printf( __( '%1$s at %2$s', 'bb10' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'bb10' ), ' ' ); ?>
 					</div>
 					</div>
 					<div class="comment-body"><?php comment_text(); ?></div>

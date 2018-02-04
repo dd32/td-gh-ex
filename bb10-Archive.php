@@ -1,6 +1,6 @@
 <?php 
 /*
-Template Name: bb10-Archives
+Template Name: Archives
 */
 get_header(); ?>
 	<div id="archives">     

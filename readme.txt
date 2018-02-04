@@ -33,3 +33,5 @@ bb10 has theme options page:Go into your Wordpress Admin, navigate to 'Appearanc
 2015.07.09	Fix and update 1.5.
 2018.01.20	update to newest functions for WordPress 4.9+,
 			change some styles.
+2018.02.04	add post-formats and attachment template,
+			update mobile CSS and o
