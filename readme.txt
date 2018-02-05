@@ -4,8 +4,8 @@ Contributors: smartcat,automattic
 Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,grid-layout,custom-colors,custom-logo,featured-images,footer-widgets,full-width-template,theme-options,translation-ready,portfolio,e-commerce,entertainment
 
 Requires at least: 4.6
-Tested up to: 4.7.4
-Stable tag: 1.1.0
+Tested up to: 4.9.2
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,9 @@ Update tags
 updated TGM to latest version
 Bug fix for sidebar on Shop page
 
+= 1.1.1 - Oct 20th, 2017
+Reinstate WooCommerce Gallery features by specifically adding declarations
+Fix for deprecated get_cart_url() for WooCommerce
 
 == Credits ==
 

@@ -19,7 +19,7 @@ function athena_setup() {
     
     
         if( !defined( 'ATHENA_VERSION' ) ) :
-            define('ATHENA_VERSION', '1.1.0');
+            define('ATHENA_VERSION', '1.1.1');
         endif;
     
         
@@ -42,6 +42,9 @@ function athena_setup() {
 	 */
 	add_theme_support( 'title-tag' );
         add_theme_support('woocommerce');
+        add_theme_support( 'wc-product-gallery-zoom' );
+        add_theme_support( 'wc-product-gallery-lightbox' );
+        add_theme_support( 'wc-product-gallery-slider' );
         add_editor_style('');
         
 	/*

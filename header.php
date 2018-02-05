@@ -78,7 +78,7 @@
                                 
                                     <div class="athena-mobile-cart">
 
-                                        <a class="athena-cart" href="<?php echo WC()->cart->get_cart_url() ; ?>"><span class="fa fa-shopping-cart"></span> <?php echo WC()->cart->get_cart_total(); ?></a>
+                                        <a class="athena-cart" href="<?php echo function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->get_cart_url(); ?>"><span class="fa fa-shopping-cart"></span> <?php echo WC()->cart->get_cart_total(); ?></a>
 
                                     </div>
                                 

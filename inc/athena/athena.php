@@ -225,7 +225,7 @@ function athena_customize_nav($items) {
     endif;
     
     if( class_exists( 'WooCommerce' ) ) :
-        $items .= '<li><a class="athena-cart" href="' . WC()->cart->get_cart_url() . '"><span class="fa fa-shopping-cart"></span> ' . WC()->cart->get_cart_total() . '</a></li>';
+        $items .= '<li><a class="athena-cart" href="' . ( function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->get_cart_url() ) . '"><span class="fa fa-shopping-cart"></span> ' . WC()->cart->get_cart_total() . '</a></li>';
     endif;
     
     
