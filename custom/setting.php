@@ -6,7 +6,3 @@
 	get_template_part('/custom/setup');
 	get_template_part('/custom/inc');		
 	get_template_part('/custom/akaka-config');
-	
-	if ( !class_exists( 'Kirki' ) ) {	
-		get_template_part('/inc/tgm-plugin');
-	}
