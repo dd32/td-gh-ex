@@ -96,6 +96,9 @@ released
 2. Update styling issues.
 3. Add smoothscroll js.
 
+@Version 3.3
+1. Update Header banner images.
+2. Fixed styling issues.
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
 Becorp is distributed under the terms of the GNU GPL
@@ -209,8 +212,11 @@ Images Taken from : https://pixabay.com/
 
 Header title image :- https://pixabay.com/en/abstract-polygon-black-white-grey-1175050/
 
-*************** Default Header Images  ***************
-https://pixabay.com/en/business-lady-business-girl-1584654/
+*************** Header Banner Images  ***************
+
+Banner image 1:- https://pixabay.com/en/brick-brick-wall-business-2449728/
+Banner image 2:- https://pixabay.com/en/drinks-coffee-shop-business-deal-2847366/
+Banner image 3:- https://pixabay.com/en/business-online-telecommunication-2884024/
 
 ** --> All other images were created by Asiathemes as per requirement.
 ** --> All Image link is a free public picture and distributed under the terms of the Creative Commons CC0 Universal Public Domain Dedication
