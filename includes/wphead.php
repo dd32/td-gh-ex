@@ -41,7 +41,10 @@ function weaverx_generate_wphead() {
 	weaverx_echo_css( weaverx_getopt('_althead_opts') );
 	weaverx_echo_css( weaverx_getopt('head_opts') );   /* let the user have the last word! */
 
-	$per_page_code = weaverx_get_per_page_value('page-head-code');
+	if ( is_single() )
+		$per_page_code = weaverx_get_per_post_value('page-head-code');
+	else
+		$per_page_code = weaverx_get_per_page_value('page-head-code');
 	if (!empty($per_page_code)) {
 		weaverx_echo_css($per_page_code);
 	}

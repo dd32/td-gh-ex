@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.5
 Tested up to: 4.9
-Stable tag: 3.1.10
+Stable tag: 3.1.11
 
 == Description ==
 
@@ -442,3 +442,11 @@ with testing and feature suggestions.
 * Fix: WP 4.9 issue with customizer color picker fixed
 * Tweak: WP 4.9 compatibility check
 * Tweak: General code cleanup in preperation for 3.2
+
+= Version 3.1.11 =
+* Fix: Post single view now handles per-post 'page-head-code' correctly.
+* Tweak: changed post 'updated' <span> to <time> and added support for custom CSS so can make updated revision date visible.
+* Tweak: scroll bar width for extended width to work better with latest browser versions
+* Tweak: changed how extended handled for Safari browser
+* Tweak: More code cleanup, including adding new file: pluggables.php for new pluggable functions for easier child themes
+* Tweak: changed some inline code to child theme overridable actions and filters. This is in prep for 3.2.

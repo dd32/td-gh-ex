@@ -559,6 +559,7 @@ function weaverx_posted_on($type='') {
 			$po .= '</span>';
 	}
 
+
 	$po .= sprintf( __( '<span class="sep posted-on">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>','weaver-xtreme'),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
@@ -569,7 +570,16 @@ function weaverx_posted_on($type='') {
 		esc_html( get_the_author() )
 	);
 
-	$po .= '<span class="updated">' . the_modified_date('F j, Y', '', '', false). '</span>';        // required for Google Structured Data
+
+	// updated time changed 3.1.11 to handle published as well. Can't mess with messages because of translations.
+
+	if ( get_the_time( 'Y/m/d' ) !== get_the_modified_time( 'Y/m/d' ) ) {	// get original and modified dates - ignore revisions on same day
+		$time_string = '<time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">'. get_the_modified_date() . '</time>';
+	} else {
+		$time_string = '<time class="published updated" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">'. get_the_date() . '</time>';
+	}
+
+	$po .= $time_string;     // required for Google Structured Data
 
 	if  ( weaverx_getopt_default('show_post_avatar', 'hide') == 'end' ) {
 			$po .= '<span class="post-avatar post-avatar-end">';
@@ -798,7 +808,12 @@ background-attachment:fixed;-moz-background-size:cover;-o-background-size:cover;
 
 			$fi_after = apply_filters( 'weaverx_fi_after', '' );		// added 3.1.10
 
-			$the_fi = "\n{$before}<a class=\"wvrx-fi-link\" href=\"{$href}\">{$fi_img}</a>{$fi_after}\n";
+			if ($who == 'page' && weaverx_getopt('page_fi_nolink') )
+				$the_fi = "\n{$before}{$fi_img}{$fi_after}\n";
+			elseif ($who != 'page' && weaverx_getopt('post_fi_nolink'))
+				$the_fi = "\n{$before}{$fi_img}{$fi_after}\n";
+			else
+				$the_fi = "\n{$before}<a class=\"wvrx-fi-link\" href=\"{$href}\">{$fi_img}</a>{$fi_after}\n";
 
 			echo apply_filters('weaverx_fi_link', $the_fi, $before, $href, $fi_img, $who, $fi_after);  // Added 3.1.5; Changed 3.1.11 to add the $fi_after
 
@@ -910,7 +925,8 @@ function weaverx_show_only_title() {
 			  )
 		) {
 		weaverx_fi( 'post_excerpt', 'title_featured');            // show FI
-		echo "\t</article><!-- /#post; --><div style='clear:both'></div>\n";
+		//echo "\t</article><!-- /#post; --><div style='clear:both'></div>\n";
+		echo "\t</article><!-- /#post; -->\n";
 		return true;
 	} elseif ( weaverx_t_get('showposts') && weaverx_t_get('show') == 'title_featured') {
 		weaverx_fi( 'post_excerpt', 'title_featured');            // show FI

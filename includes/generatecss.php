@@ -970,14 +970,18 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 
 	$vis_container = '';
 	$vis_content   = '';
-	$w_view_scb    = '(100vw - 16px) '; // Viewport width scrollbar
+
+	// Changed: 3.1.11 - changed scroll bar width to 8px instead of 16. Firefox seems to have changed its width, and 8 works across most browsers
+
+	$w_view_scb    = '(100vw - 8px) '; // Viewport width scrollbar
 	$w_view_noscb  = '100vw '; // Viewport width No scrollbar
-	$m_wrap_scb    = '(50vw - 8px - (' . $themew . 'px / 2)) '; // Margin wrapper scrollbar
+	$m_wrap_scb    = '(50vw - 4px - (' . $themew . 'px / 2)) '; // Margin wrapper scrollbar
 	$m_wrap_noscb  = '(50vw - (' . $themew . 'px / 2)) '; // Margin wrapper no scrollbar
 
 	foreach ($extend as $opt => $vals) {		// loop through all areas with expand/extend
 
 		if (weaverx_getopt_expand('expand_' . $opt) || weaverx_getopt($opt . '_extend_width')) {
+			// weaverx_alert("extend/expand: {$opt}");	// ######
 
 			// if parent has width limit, let script take over for all cases
 			// nested limited width areas too difficult to generate CSS, let script do it
@@ -999,8 +1003,8 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 			$pad_right = '0';
 			$m_left    = '0';
 			$m_right   = '0'; // assume none
-			//Adding Wrapper paddings
 
+			//Adding Wrapper paddings
 			$wrap_p_left = weaverx_getopt_default('wrapper_padding_L',0);
 			$wrap_p_right = weaverx_getopt_default('wrapper_padding_R',0);
 
@@ -1008,6 +1012,7 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 			$m_left  = weaverx_getopt_default($vals['xpad'] . '_padding_L', 0);
 			$m_right = weaverx_getopt_default($vals['xpad'] . '_padding_R', 0);
 
+			// This areas own padding
 			$pad_left  = weaverx_getopt_default($opt . '_padding_L', 0) + $m_left;
 			$pad_right = weaverx_getopt_default($opt . '_padding_R', 0) + $m_right;
 
@@ -1046,10 +1051,13 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 			}
 
 //------------------------------------------------------  Post Specifics Section ----------------------------------------------------
+			$important = '';
 
 			if ($opt == 'post') {	// CASE: post
 				// *** This is a complete duplicate of the general loop for clarity
 				// *** so If changes are made in the rules of the general loop, they need to be also made to the post specific one
+
+				$not_safari = '.wvrx-not-safari';	// no spaces for posts
 
 				if (weaverx_getopt_default('blog_cols',1) > 1 || weaverx_getopt_default('masonry_cols', 1) > 1 )
 					continue;	// bail to JS on multi column
@@ -1090,20 +1098,22 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 				}
 
 				//==============================================================  POST SPECIFIC RULES  =========================================================
-				$pre_css .= "{$no_sdb}{$vals['sel']}{box-sizing:border-box;}\n"; //*** Needs to be in pre-css to work below site width width area padding
+				$pre_css .= "{$not_safari}{$no_sdb}{$vals['sel']}{box-sizing:border-box;}\n"; //*** Needs to be in pre-css to work below site width width area padding
 
 				//--- EXPAND & EXTEND COMMON RULES ---
 				// pre_css General width Rules for ALL. Adds margins rules for padding bug fix. Need calc around margin for post mix of % and px
 				// Margins in these apply under sitewidth as other rules will override above sitewidth
 
+
 				// *** Add specific content padding for below sitewidth with and without scrollbar ( _scb or _noscb)
-				$pre_css .= "{$no_sdb}{$vals['sel']}{max-width:none !important;width:calc{$w_view_scb} !important;margin-left: calc(-1 * ({$m_left} + {$cnt_pad_l_scb}) - {$wrap_p_left});margin-right: calc(-1 * ({$m_right} + {$cnt_pad_r_scb}) - {$wrap_p_right});}\n";
-				$pre_css .= ".no-vert-scrollbar{$no_sdb} {$vals['sel']}{width:{$w_view_noscb} !important;margin-left: calc(-1 * ({$m_left} + {$cnt_pad_l_noscb}) - {$wrap_p_left});margin-right: calc(-1 * ({$m_right} + {$cnt_pad_r_noscb}) - {$wrap_p_right});}\n";
+
+				$pre_css .= "{$not_safari}{$no_sdb}{$vals['sel']}{max-width:none {$important};width:calc{$w_view_scb} {$important};margin-left: calc(-1 * ({$m_left} + {$cnt_pad_l_scb}) - {$wrap_p_left});margin-right: calc(-1 * ({$m_right} + {$cnt_pad_r_scb}) - {$wrap_p_right});}\n";
+				$pre_css .= "{$not_safari}.no-vert-scrollbar{$no_sdb} {$vals['sel']}{width:{$w_view_noscb} {$important};margin-left: calc(-1 * ({$m_left} + {$cnt_pad_l_noscb}) - {$wrap_p_left});margin-right: calc(-1 * ({$m_right} + {$cnt_pad_r_noscb}) - {$wrap_p_right});}\n";
 
 				// xcss Expand margin Rules For ALL when over sitewidth ( _x )
 				// *** Add Specific Content paddings for below sitewidth with and without scrollbar
-				$xcss .= "{$no_sdb}{$vals['sel']} {margin-left:calc(-1 * {$m_wrap_scb} - {$wrap_p_left} - {$m_left} - {$cnt_pad_l_x});margin-right:calc(-1 * {$m_wrap_scb} - {$wrap_p_right} - {$m_right} - {$cnt_pad_r_x});}\n";
-				$xcss .= ".no-vert-scrollbar{$no_sdb} {$vals['sel']} {margin-left:calc(-1 * {$m_wrap_noscb} - {$wrap_p_left} - {$m_left} - {$cnt_pad_l_x});margin-right:calc(-1 * ({$m_wrap_noscb}) - {$wrap_p_right} - {$m_right} - {$cnt_pad_r_x});}\n";
+				$xcss .= "{$not_safari}{$no_sdb}{$vals['sel']} {margin-left:calc(-1 * {$m_wrap_scb} - {$wrap_p_left} - {$m_left} - {$cnt_pad_l_x});margin-right:calc(-1 * {$m_wrap_scb} - {$wrap_p_right} - {$m_right} - {$cnt_pad_r_x});}\n";
+				$xcss .= "{$not_safari}.no-vert-scrollbar{$no_sdb} {$vals['sel']} {margin-left:calc(-1 * {$m_wrap_noscb} - {$wrap_p_left} - {$m_left} - {$cnt_pad_l_x});margin-right:calc(-1 * ({$m_wrap_noscb}) - {$wrap_p_right} - {$m_right} - {$cnt_pad_r_x});}\n";
 
 				//--- EXTEND ONLY RULES ---
 				//--- pre_css General Padding rules
@@ -1111,34 +1121,37 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 				// These apply when under sitewidth (above other rules override)
 				// *** Add the content padding for below sitewidth with and without scrollbar ( _scb or _noscb)
 				if (weaverx_getopt($opt . '_extend_width')) {
-					$pre_css .= "{$no_sdb}{$vals['sel']}{padding-left:calc({$wrap_p_left} + {$cnt_pad_l_scb} + {$pad_left}{$align_left}); padding-right:calc({$wrap_p_right} + {$cnt_pad_r_scb} + {$pad_right}{$align_right});}\n";
-					$pre_css .= ".no-vert-scrollbar{$no_sdb} {$vals['sel']}{padding-left:calc({$wrap_p_left} + {$cnt_pad_l_noscb} + {$pad_left}{$align_left}); padding-right:calc({$wrap_p_right} + {$cnt_pad_r_noscb} + {$pad_right}{$align_right});}\n";
+					$pre_css .= "{$not_safari}{$no_sdb}{$vals['sel']}{padding-left:calc({$wrap_p_left} + {$cnt_pad_l_scb} + {$pad_left}{$align_left}); padding-right:calc({$wrap_p_right} + {$cnt_pad_r_scb} + {$pad_right}{$align_right});}\n";
+					$pre_css .= "{$not_safari}.no-vert-scrollbar{$no_sdb} {$vals['sel']}{padding-left:calc({$wrap_p_left} + {$cnt_pad_l_noscb} + {$pad_left}{$align_left}); padding-right:calc({$wrap_p_right} + {$cnt_pad_r_noscb} + {$pad_right}{$align_right});}\n";
 				}
 
 				// xcss GENERAL Rules for Extended Areas when wider than sitewidth
 				// *** Add The content padding for above sitewidth  ( _x )
 				if (weaverx_getopt($opt . '_extend_width')) {
-					$xcss .= "{$no_sdb}{$vals['sel']}{padding-left:calc({$m_wrap_scb} + {$wrap_p_left} + {$cnt_pad_l_x} + {$pad_left}{$align_left});padding-right:calc({$m_wrap_scb} + {$wrap_p_right} + {$cnt_pad_r_x} + {$pad_right}{$align_right});}\n";
-					$xcss .= ".no-vert-scrollbar{$no_sdb} {$vals['sel']}{padding-left:calc({$m_wrap_noscb} + {$wrap_p_left} + {$cnt_pad_l_x} + {$pad_left}{$align_left}); padding-right:calc({$m_wrap_noscb} + {$wrap_p_right} + {$cnt_pad_r_x} + {$pad_right}{$align_right});}\n";
+					$xcss .= "{$not_safari}{$no_sdb}{$vals['sel']}{padding-left:calc({$m_wrap_scb} + {$wrap_p_left} + {$cnt_pad_l_x} + {$pad_left}{$align_left});padding-right:calc({$m_wrap_scb} + {$wrap_p_right} + {$cnt_pad_r_x} + {$pad_right}{$align_right});}\n";
+					$xcss .= "{$not_safari}.no-vert-scrollbar{$no_sdb} {$vals['sel']}{padding-left:calc({$m_wrap_noscb} + {$wrap_p_left} + {$cnt_pad_l_x} + {$pad_left}{$align_left}); padding-right:calc({$m_wrap_noscb} + {$wrap_p_right} + {$cnt_pad_r_x} + {$pad_right}{$align_right});}\n";
 				}
 
 			}   // End of Post Specific case ===================================================================
 
-			else  {		// CASE anything but posts ===================================================================
+			else {		// CASE anything but posts #############################################################
 
 				//--- EXPAND & EXTEND COMMON RULES ---
+				$not_safari = '.wvrx-not-safari ';	// space after for others
 				// pre_css General width Rules for ALL. **Adds margins rules for padding bug fix. **Need calc around margin for post mix of % and px
-				$pre_css .= "{$vals['sel']}{max-width:none !important;width:calc{$w_view_scb} !important;margin-left: calc(-1 * ({$m_left}) - {$wrap_p_left});margin-right: calc(-1 * ({$m_right}) - {$wrap_p_right});}\n";
-				$pre_css .= ".no-vert-scrollbar {$vals['sel']}{width:{$w_view_noscb} !important;}\n";
+
+				$pre_css .= "{$not_safari}{$vals['sel']}{max-width:none {$important};width:calc{$w_view_scb} {$important};margin-left: calc(-1 * ({$m_left}) - {$wrap_p_left});margin-right: calc(-1 * ({$m_right}) - {$wrap_p_right});}\n";
+
+				$pre_css .= ".wvrx-not-safari.no-vert-scrollbar {$vals['sel']}{width:{$w_view_noscb}{$important};}\n";
 
 			// xcss Expand margin Rules For ALL when over sitewidth
-				$xcss .= "{$vals['sel']} {margin-left:calc(-1 * {$m_wrap_scb} - {$wrap_p_left} - {$m_left});margin-right:calc(-1 * {$m_wrap_scb} - {$wrap_p_right} - {$m_right});}\n";
-				$xcss .= ".no-vert-scrollbar {$vals['sel']} {margin-left:calc(-1 * {$m_wrap_noscb} - {$wrap_p_left} - {$m_left});margin-right:calc(-1 * ({$m_wrap_noscb}) - {$wrap_p_right} - {$m_right});}\n";
+				$xcss .= "{$not_safari}{$vals['sel']} {margin-left:calc(-1 * {$m_wrap_scb} - {$wrap_p_left} - {$m_left});margin-right:calc(-1 * {$m_wrap_scb} - {$wrap_p_right} - {$m_right});}\n";
+				$xcss .= ".wvrx-not-safari.no-vert-scrollbar {$vals['sel']} {margin-left:calc(-1 * {$m_wrap_noscb} - {$wrap_p_left} - {$m_left});margin-right:calc(-1 * ({$m_wrap_noscb}) - {$wrap_p_right} - {$m_right});}\n";
 
 				//--- EXTEND ONLY RULES ---
 				//--- pre_css General Padding rules
 				if (weaverx_getopt($opt . '_extend_width')) {
-					$pre_css .= "{$vals['sel']}{padding-left:calc({$wrap_p_left} + {$pad_left}{$align_left}); padding-right:calc({$wrap_p_right} + {$pad_right}{$align_right});}\n";
+					$pre_css .= "{$not_safari}{$vals['sel']}{padding-left:calc({$wrap_p_left} + {$pad_left}{$align_left}); padding-right:calc({$wrap_p_right} + {$pad_right}{$align_right});}\n";
 				}
 
 				// media_css SPECIALIZED Padding Rules for Limited width Sub Areas between 580px and sitewidth. ***Revised formula!
@@ -1152,27 +1165,27 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 						$align_left  = " + (100% - {$width}) / 2";
 						$align_right = $align_left; // center = same
 						//Centered Padding rules corrected
-						$media_css .= "{$vals['sel']}{padding-left:calc({$wrap_p_left} + {$pad_left}{$align_left}); padding-right:calc({$wrap_p_right} + {$pad_right}{$align_right});}\n";
+						$media_css .= "{$not_safari}{$vals['sel']}{padding-left:calc({$wrap_p_left} + {$pad_left}{$align_left}); padding-right:calc({$wrap_p_right} + {$pad_right}{$align_right});}\n";
 						break;
 
 					case 'float-right':
 						$align_left = " + 100% - {$width}"; // fix up the left side
 						//Left padding rules
-						$media_css .= "{$vals['sel']}{padding-left:calc({$wrap_p_left} + {$pad_left}{$align_left});}\n";
+						$media_css .= "{$not_safari}{$vals['sel']}{padding-left:calc({$wrap_p_left} + {$pad_left}{$align_left});}\n";
 						break;
 
 					default: // left
 						$align_right = " + 100% - {$width}"; // fix up the right side
 						//Right PAdding rules
-						$media_css .= "{$vals['sel']}{padding-right:calc({$wrap_p_right} + {$pad_right}{$align_right});}\n";
+						$media_css .= "{$not_safari}{$vals['sel']}{padding-right:calc({$wrap_p_right} + {$pad_right}{$align_right});}\n";
 						break;
 				}
 			}
 
 			// xcss GENERAL Rules for Extended Areas when wider than sitewidth
 				if (weaverx_getopt($opt . '_extend_width')) {
-					$xcss .= "{$vals['sel']}{padding-left:calc({$m_wrap_scb} + {$wrap_p_left} + {$pad_left}{$align_left});padding-right:calc({$m_wrap_scb} + {$wrap_p_right} + {$pad_right}{$align_right});}\n";
-					$xcss .= ".no-vert-scrollbar {$vals['sel']}{padding-left:calc({$m_wrap_noscb} + {$wrap_p_left} + {$pad_left}{$align_left}); padding-right:calc({$m_wrap_noscb} + {$wrap_p_right} + {$pad_right}{$align_right});}\n";
+					$xcss .= "{$not_safari}{$vals['sel']}{padding-left:calc({$m_wrap_scb} + {$wrap_p_left} + {$pad_left}{$align_left});padding-right:calc({$m_wrap_scb} + {$wrap_p_right} + {$pad_right}{$align_right});}\n";
+					$xcss .= ".wvrx-not-safari.no-vert-scrollbar {$vals['sel']}{padding-left:calc({$m_wrap_noscb} + {$wrap_p_left} + {$pad_left}{$align_left}); padding-right:calc({$m_wrap_noscb} + {$wrap_p_right} + {$pad_right}{$align_right});}\n";
 				}
 			}  // // end else CASE anything but posts ===================================================================
 
@@ -1188,9 +1201,9 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 		$media_css = "{$vis_container}{$vis_content}\n@media (min-width:580px) and (max-width:{$themew_less_one}px) {\n{$media_css} }\n";
 	}
 
-	weaverx_f_write($sout, $pre_css);
-	weaverx_f_write($sout, $xcss);
-	weaverx_f_write($sout, $media_css);
+	weaverx_f_write($sout, "\n/* ** E-E ** */\n" . $pre_css );
+	weaverx_f_write($sout, $xcss );
+	weaverx_f_write($sout, $media_css . " /* /EE */\n");
 
 	//----------------------End of EXPAND & EXTEND BG Attributes--------------------
 

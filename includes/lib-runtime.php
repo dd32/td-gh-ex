@@ -494,6 +494,10 @@ function weaverx_header_widget_area( $where_now ) {	// header.php support
 }
 
 function weaverx_add_ie_scripts() {
+	// Now we need to polyfill IE8. We need 2 scripts loaded AFTER the .css stylesheets. wp_enqueue_script
+	// does not work because it can't add the test for < IE9. And you can't just include the code directly
+	// right here because it ends up before the .css enqueues. So we use a little trick as an action for
+	// wp_head which lets us put the code here, but have it emitted after the .css files.
 	echo '<!--[if lt IE 9]>
 <script src="' . esc_url(get_template_directory_uri()) . '/assets/js/html5.js" type="text/javascript"></script>
 <script src="' . esc_url(get_template_directory_uri()) . '/assets/js/respond.min.js" type="text/javascript"></script>

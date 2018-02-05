@@ -616,6 +616,15 @@ function weaverxOnResize() {
     }
 
     var agent = navigator.userAgent;
+
+	// Safari is breaking our generated extend width CSS, so by removing the .wvrx-not-safari class from body,
+	// we can force the JS to fix it. For whatever reason, the Safari agend string included both Chrome and Safari. Bizarre!
+
+	if (agent.match(/Safari/i) && !agent.match(/Chrome/i)) {
+		//alert('Safari');
+		theBody.removeClass('wvrx-not-safari');	// Changed 3.1.11 to fix safari extended width issue
+	}
+
     if (agent.match(/iPad/i) || agent.match(/iPhone/i) || agent.match(/iPod/i)) {
         device = device + ' is-ios';
         if (agent.match(/iPad/i))
