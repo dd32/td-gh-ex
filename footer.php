@@ -1,7 +1,7 @@
     <footer class="ct_footer">
 
 	<?php
-		$display_footer_widget_area = acool_get_option( 'ct_acool','display_footer_widget_area',1);
+		$display_footer_widget_area = get_theme_mod( 'display_footer_widget_area',1 );
       	if( $display_footer_widget_area )
 		{
     ?>    
@@ -19,14 +19,14 @@
                       	<div class="ct_social_front">
                           	<p>
 							<?php 
-								$footer_info = acool_get_option( 'ct_acool','footer_info','' );
+								$footer_info = get_theme_mod( 'footer_info','' );
 								
 								if ( '' != $footer_info )
 								{
 									echo '<span class="footer_info">'.esc_html($footer_info).'</span>'; 
 								}
                             ?>
-                           <?php printf(__('Powered by <a href="%s">WordPress</a>. Acool theme by <a href="%s">CooThemes.com</a>.','acool'),esc_url('http://wordpress.org/'),esc_url('http://www.coothemes.com/'));?>                  
+                           <?php printf(__('Powered by <a href="%1$s">WordPress</a>. Acool theme by <a href="%2$s">CooThemes.com</a>.','acool'),esc_url('http://wordpress.org/'),esc_url('http://www.coothemes.com/'));?>                  
                             </p>
                       	</div>
                   	</div>

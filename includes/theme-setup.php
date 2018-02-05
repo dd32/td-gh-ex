@@ -56,19 +56,14 @@ function acool_custom_scripts()
 	//js
 
 	wp_enqueue_script('bootstrap-js', get_template_directory_uri().'/js/bootstrap.min.js', array( 'jquery' ), '3.3.5', false );	
-	if(acool_get_option( 'ct_acool','enable_query_loader',0))
+	if(get_theme_mod( 'enable_query_loader',0))
 	{
 		wp_enqueue_script( 'queryloader2', get_template_directory_uri().'/js/queryloader2.min.js', array( 'jquery' ), '', false );
 		wp_enqueue_script( 'acool-loader', get_template_directory_uri().'/js/loader.js', array( 'jquery' ), '', false );		
 	}
-	$fixed_header  =  acool_get_option( 'ct_acool','fixed_header',0);	
+	$fixed_header  =  get_theme_mod('fixed_header',0);	
 
-	//if($fixed_header && !is_front_page() || ($fixed_header && is_home()) ){
-		//wp_enqueue_script( 'acool-fixed-header', get_template_directory_uri().'/js/fixed-header.js', array( 'jquery' ), '', false );
-	//}	
-	//else if($fixed_header && is_home() ){	
-	if($fixed_header ){	
-		//echo '-----2222-----';	
+	if($fixed_header ){		
 		wp_enqueue_script( 'acool-fixed-header2', get_template_directory_uri().'/js/fixed-header2.js', array( 'jquery' ), '', false );		
 	}
 	
@@ -78,7 +73,6 @@ function acool_custom_scripts()
 	//	
 	wp_enqueue_script( 'waypoints', get_template_directory_uri().'/js/jquery.waypoints.min.js', array( 'jquery' ), $theme_info->get( 'Version' ), false );
 	
-	//wp_enqueue_script( 'noframework.waypoints', get_template_directory_uri().'/js/noframework.waypoints.min.js', false, $theme_info->get( 'Version' ), false );	
 	wp_enqueue_script('acool-js', get_template_directory_uri().'/js/common.js', array( 'jquery' ), $theme_info->get( 'Version' ), false );	
 	wp_localize_script( 'acool-js', 'acool_params', array(
 		'ajaxurl'        => admin_url('admin-ajax.php'),
@@ -126,17 +120,17 @@ function acool_customize_css()
 				$acool_custom_css .=  '.mobile_menu_bar:before{'.esc_attr($header_textcolor).'} ';	 
 			}
 			  
-			if ( acool_get_option( 'ct_acool','show_search_icon',1)) {				
+			if ( get_theme_mod( 'show_search_icon',1)) {				
 				$acool_custom_css  .=  '#top-menu{ margin-right:10px;}';
 				$acool_custom_css  .=  '#ct_top_search{ margin:18px 40px 0 0;}';
 			}
 
 			//------- customize css  -------
-			$header_bgcolor = acool_get_option( 'ct_acool','header_bgcolor','#ffffff' );
+			$header_bgcolor = get_theme_mod( 'header_bgcolor','#ffffff' );
 			$rbg = acool_hex2rgb($header_bgcolor);
 			
-			$header_opacity       =  acool_get_option( 'ct_acool','header_opacity',0.4);
-			$fixed_header         =  acool_get_option( 'ct_acool','fixed_header',0);			
+			$header_opacity       =  get_theme_mod( 'header_opacity',0.4);
+			$fixed_header         =  get_theme_mod( 'fixed_header',0);			
 			
 
 
@@ -175,21 +169,21 @@ function acool_customize_css()
 			{			
 				$acool_custom_css  .= '.ct_site_name{ line-height:52px; }';	
 			}
-			if(acool_get_option( 'ct_acool','box_header_center',0 ))
+			if(get_theme_mod( 'box_header_center',0 ))
 			{
 				$acool_custom_css  .= '#ct-top-navigation{ margin:15px 0 0 0;}.ct_logo{ padding-left:20px;}';
 			
 			}
 
-			if ( acool_get_option( 'ct_acool','footer_info','')  )
+			if ( get_theme_mod( 'footer_info','')  )
 			{
 				$acool_custom_css  .= '.ct_social{ margin-top:15px;}';
 			}
 			
-			$other_link_color      		= acool_get_option( 'ct_acool','other_link_color','' );
-			$other_link_hover_color 	= acool_get_option( 'ct_acool','other_link_hover_color','' );			
-			$content_link_color 		= acool_get_option( 'ct_acool','content_link_color' ,'');			
-			$content_link_hover_color 	= acool_get_option( 'ct_acool','content_link_hover_color','' );			
+			$other_link_color      		= get_theme_mod( 'other_link_color','' );
+			$other_link_hover_color 	= get_theme_mod('other_link_hover_color','' );			
+			$content_link_color 		= get_theme_mod( 'content_link_color' ,'');			
+			$content_link_hover_color 	= get_theme_mod('content_link_hover_color','' );			
 			
 			if( $other_link_color !='' )
 			{

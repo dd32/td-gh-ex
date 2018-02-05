@@ -128,7 +128,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 *
 		 * @var string
 		 */
-		public $id = 'acool';
+		public $id = 'tgmpa';
 
 		/**
 		 * Name of the query-string argument for the admin page.
@@ -326,51 +326,45 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			$this->strings = array(
 				'page_title'                      => __( 'Install Required Plugins', 'acool' ),
 				'menu_title'                      => __( 'Install Plugins', 'acool' ),
+				/* translators: %s: plugin name. */
 				'installing'                      => __( 'Installing Plugin: %s', 'acool' ),
+				/* translators: %s: plugin name. */
+				'updating'                        => __( 'Updating Plugin: %s', 'acool' ),
 				'oops'                            => __( 'Something went wrong with the plugin API.', 'acool' ),
 				'notice_can_install_required'     => _n_noop(
+					/* translators: 1: plugin name(s). */
 					'This theme requires the following plugin: %1$s.',
 					'This theme requires the following plugins: %1$s.',
 					'acool'
 				),
 				'notice_can_install_recommended'  => _n_noop(
+					/* translators: 1: plugin name(s). */
 					'This theme recommends the following plugin: %1$s.',
 					'This theme recommends the following plugins: %1$s.',
 					'acool'
 				),
-				'notice_cannot_install'           => _n_noop(
-					'Sorry, but you do not have the correct permissions to install the %1$s plugin.',
-					'Sorry, but you do not have the correct permissions to install the %1$s plugins.',
-					'acool'
-				),
 				'notice_ask_to_update'            => _n_noop(
+					/* translators: 1: plugin name(s). */
 					'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
 					'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
 					'acool'
 				),
 				'notice_ask_to_update_maybe'      => _n_noop(
+					/* translators: 1: plugin name(s). */
 					'There is an update available for: %1$s.',
 					'There are updates available for the following plugins: %1$s.',
 					'acool'
 				),
-				'notice_cannot_update'            => _n_noop(
-					'Sorry, but you do not have the correct permissions to update the %1$s plugin.',
-					'Sorry, but you do not have the correct permissions to update the %1$s plugins.',
-					'acool'
-				),
 				'notice_can_activate_required'    => _n_noop(
+					/* translators: 1: plugin name(s). */
 					'The following required plugin is currently inactive: %1$s.',
 					'The following required plugins are currently inactive: %1$s.',
 					'acool'
 				),
 				'notice_can_activate_recommended' => _n_noop(
+					/* translators: 1: plugin name(s). */
 					'The following recommended plugin is currently inactive: %1$s.',
 					'The following recommended plugins are currently inactive: %1$s.',
-					'acool'
-				),
-				'notice_cannot_activate'          => _n_noop(
-					'Sorry, but you do not have the correct permissions to activate the %1$s plugin.',
-					'Sorry, but you do not have the correct permissions to activate the %1$s plugins.',
 					'acool'
 				),
 				'install_link'                    => _n_noop(
@@ -389,13 +383,17 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					'acool'
 				),
 				'return'                          => __( 'Return to Required Plugins Installer', 'acool' ),
-				'dashboard'                       => __( 'Return to the dashboard', 'acool' ),
+				'dashboard'                       => __( 'Return to the Dashboard', 'acool' ),
 				'plugin_activated'                => __( 'Plugin activated successfully.', 'acool' ),
 				'activated_successfully'          => __( 'The following plugin was activated successfully:', 'acool' ),
+				/* translators: 1: plugin name. */
 				'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'acool' ),
+				/* translators: 1: plugin name. */
 				'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'acool' ),
+				/* translators: 1: dashboard link. */
 				'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'acool' ),
 				'dismiss'                         => __( 'Dismiss this notice', 'acool' ),
+				'notice_cannot_install_activate'  => __( 'There are one or more required or recommended plugins to install, update or activate.', 'acool' ),
 				'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'acool' ),
 			);
 
@@ -425,8 +423,6 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					add_action( 'admin_init', array( $this, 'admin_init' ), 1 );
 					add_action( 'admin_enqueue_scripts', array( $this, 'thickbox' ) );
 				}
-				
-				
 			}
 
 			// If needed, filter plugin action links.

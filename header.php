@@ -11,7 +11,7 @@
 <body  <?php body_class(); ?>>
 <div class="ct_acool ">
 	<header id="ct_header" class="ct_header_class site-header ct_header_class_post_page ">
-    <div class="header_box <?php if(acool_get_option( 'ct_acool','box_header_center',0)){echo 'container';}?>" >
+    <div class="header_box <?php if(  get_theme_mod( 'box_header_center',0) ){echo 'container';}?>" >
 
         <div class="ct_logo ct_f_left">        
         <?php 
@@ -25,8 +25,8 @@
 			}
 		?>               
             <div class="name-box">
-                <a href="<?php echo esc_url(home_url('/')); ?>"><h1 class="ct_site_name"><?php echo bloginfo('name');?></h1></a>
-                <span class="ct_site_tagline"><?php echo get_bloginfo('description');?></span>
+                <a href="<?php echo esc_url(home_url('/')); ?>"><h1 class="ct_site_name"><?php bloginfo('name');?></h1></a>
+                <span class="ct_site_tagline"><?php bloginfo('description');?></span>
             </div>
 
 
@@ -40,7 +40,7 @@
                              wp_nav_menu( array( 'theme_location' => 'primary-menu', 'items_wrap' => '%3$s','container' => false  ) );
                         }
 						
-						$hide_login_menu = acool_get_option( 'ct_acool','hide_login_menu',0 ); 
+						$hide_login_menu = get_theme_mod( 'hide_login_menu',0); 
 						if( !$hide_login_menu)
 						{
 							acool_login_li();
@@ -54,7 +54,7 @@
             
             <div id="ct_top_search">
             <?php 
-				if ( acool_get_option( 'ct_acool','show_search_icon',1) )
+				if ( get_theme_mod( 'show_search_icon',1) )
 				{ 
 					get_search_form();
 				}

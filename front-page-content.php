@@ -1,15 +1,22 @@
 <?php 
 	get_header();	
-	$homepage_banner_img_deault = get_stylesheet_directory_uri().'/images/banner1.jpg';
+	$homepage_banner_img_deault = esc_url(get_stylesheet_directory_uri().'/images/banner1.jpg');
+	
+	
+	
 ?>
 
         <section class="ct_section ct_section_slider">
             <div id="carousel-acool-generic" class="carousel slide" data-ride="carousel" data-interval="5000" >
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="<?php echo esc_url(acool_get_option( 'ct_acool','homepage_banner_img',$homepage_banner_img_deault));?> "  width="100%"/>
+                        <img src="<?php echo get_theme_mod( 'homepage_banner_img',$homepage_banner_img_deault);?> "  width="100%"/>
                         <div class="carousel-caption">
-                        <h1><?php echo esc_html(acool_get_option( 'ct_acool','homepage_banner_text_h1',__( 'The jQuery slider that just slides.', 'acool' )) );?></h1><p class="ct_slider_text"><?php echo esc_html(acool_get_option( 'ct_acool','homepage_banner_text',__( 'No fancy effects or unnecessary markup.', 'acool' )) );?></p><a class="btn" href="<?php echo esc_url(acool_get_option( 'ct_acool','homepage_banner_button_url','#') );?>"><?php echo esc_html(acool_get_option( 'ct_acool','homepage_banner_button_text',__( 'Download', 'acool' )) );?></a>                       
+                            <h1><?php echo esc_html(get_theme_mod( 'homepage_banner_text_h1',__( 'The jQuery slider that just slides.', 'acool' ) ) ) ;?></h1>
+                            <p class="ct_slider_text"><?php echo esc_html(get_theme_mod( 'homepage_banner_text',__( 'No fancy effects or unnecessary markup.', 'acool' )) );?></p>
+                            <a class="btn" href="<?php echo esc_url(get_theme_mod( 'homepage_banner_button_url','#') );?>">
+                                <?php echo esc_html(get_theme_mod( 'homepage_banner_button_text',__( 'Download', 'acool' )) );?>
+                            </a>                       
                         </div>
                     </div>
                 </div>
@@ -22,8 +29,8 @@
         <section id="section-id-580caf4c1638f" class="ct_section ct_section_post_list_2 " style=" background-color:rgba(255,255,255,1);-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;background-size:100% 100%;">
 			<div class="container "> 
 				<?php
-					$homepage_post_list_h1 = acool_get_option( 'ct_acool','homepage_post_list_h1',__('Blog posts', 'acool'));					
-					$homepage_post_list_text = acool_get_option( 'ct_acool','homepage_post_list_text', __('Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere.', 'acool'));						
+					$homepage_post_list_h1 = esc_html(get_theme_mod( 'homepage_post_list_h1',__('Blog posts', 'acool')));					
+					$homepage_post_list_text = esc_html(get_theme_mod('homepage_post_list_text', __('Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere.', 'acool')));						
 				?>	
               <div class="ct_section_title">
                   <h2><?php echo $homepage_post_list_h1;?></h2>
@@ -35,13 +42,14 @@
                 <?php 
 					global $wpdb;//ignore_sticky_posts //caller_get_posts 3.1 del
 					
-					$post_list_num = acool_get_option( 'ct_acool','homepage_post_list_num',6);
-					$post_list_cat = acool_get_option( 'ct_acool','post_list_cat','uncategorized');
-				
+					$post_list_num = get_theme_mod( 'homepage_post_list_num',6);
+					$options_cat_id = get_theme_mod( 'post_list_cat','uncategorized');
+									
                     query_posts( array( 
 					'showposts' => $post_list_num ,//6
 					'ignore_sticky_posts' => 1,
-					'category_name' => $post_list_cat,
+					//'category_name' => $post_list_cat,
+					'category__in' => $options_cat_id,
 					
 					 ));
 					 
@@ -80,7 +88,7 @@
                 </div>					
                 
                 <div class="ct_post_more">
-                    <a href="<?php $post_list_link =  esc_url(acool_get_option( 'ct_acool','homepage_blog_url',''));if($post_list_link == ''){echo esc_url(home_url('/')).'blog/'; }else{echo $post_list_link;} ?>" class="casems"><span>MORE</span><i></i></a>
+                    <a href="<?php $post_list_link =  esc_url(get_theme_mod( 'homepage_blog_url',''));if($post_list_link == ''){echo esc_url(home_url('/')).'blog/'; }else{echo $post_list_link;} ?>" class="casems"><span>MORE</span><i></i></a>
                 </div>
                 
 			</div>

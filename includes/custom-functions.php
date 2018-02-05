@@ -1,7 +1,7 @@
 <?php
 function acool_better_comments($comment, $args, $depth)
 {
-	$GLOBALS['comment'] = $comment;
+	//$GLOBALS['comment'] = $comment;
 ?>	
  
     <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
@@ -36,163 +36,6 @@ function acool_better_comments($comment, $args, $depth)
 <?php
 }
 
-
-/**
- * Custom scripts and styles on customize.php for upgrade acool-pro.
- *
- * @since acool 1.1
- */
-function acool_customize_scripts() {
-	wp_enqueue_script( 'acool_customizer_custom', get_template_directory_uri() . '/js/customizer-custom-scripts.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20150630', true );
-
-	$clean_box_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'https://www.coothemes.com/themes/acool.php' ),
-							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'acool' ),
-							'WP_version'				=> get_bloginfo( 'version' ),
-							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'acool' )
-		);
-
-	wp_enqueue_style( 'acool_customizer_custom_css', get_template_directory_uri() . '/css/customizer.css');
-}
-add_action( 'customize_controls_enqueue_scripts', 'acool_customize_scripts');
-
-
-/**
- * Gets option value from the single theme option, stored as an array in the database
- * if all options stored in one row.
- * Stores the serialized array with theme options into the global variable on the first function run on the page.
- *
- * If options are stored as separate rows in database, it simply uses get_option() function.
- *
- * @param string $option_name Theme option name.
- * @param string $default Default value that should be set if the theme option isn't set.
- */
-if ( ! function_exists( 'acool_get_option' ) ){
-	function acool_get_option( $ct_row,$option_name,$default )
-	{			
-		$arr =  get_option($ct_row);		
-		if(is_array($arr))
-		{
-			@$option_value     = $arr[$option_name];
-			if($option_value !='')
-			{
-				return $option_value;
-			}
-			else
-			{
-				if(array_key_exists($option_name,$arr) ){
-					return  false;
-				}	
-				else
-				{		
-					return  $default;	
-				}
-			}
-		}
-		else
-		{		
-			return  $default;	
-		}
-	}
-}
-
-
-/**
- * WordPress breadcrumbs
- * //since 1.0.2  acool_breadcrumbs()
- */
-function acool_breadcrumbs() {
- 
-  $delimiter = '&raquo;';
-  $name = __( 'Home', 'acool' ); //text for the 'Home' link
-  $currentBefore = '<span>';
-  $currentAfter = '</span>';
- 
-  if ( !is_home() && !is_front_page() || is_paged() ) {
- 
-    echo '<div id="crumbs">';
- 
-    global $post;
-    $home = esc_url(home_url());
-	echo ' <a href="' . $home . '">'.$name. '</a> ' . $delimiter . ' ';
- 
-    if ( is_category() ) {
-      global $wp_query;
-      $cat_obj = $wp_query->get_queried_object();
-      $thisCat = $cat_obj->term_id;
-      $thisCat = get_category($thisCat);
-      $parentCat = get_category($thisCat->parent);
-      if ($thisCat->parent != 0) echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
-      echo $currentBefore;
-      esc_html( single_cat_title());
-      echo  $currentAfter;
- 
-    } elseif ( is_day() ) {
-		
-      echo '<a href="' . esc_url(get_year_link( get_the_time( 'Y' ) ) ). '" title="' . get_the_time( esc_attr__( 'Y' , 'acool' ) ) . '">' . get_the_time('Y') . ' ' . $delimiter . '</a>';
-      echo '<a href="' . esc_url(get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) )) . '" title="' . esc_html(get_the_time( esc_attr__( 'F' , 'acool' ) ) ). '">' . esc_html(get_the_time('F')) . '</a>' . $delimiter . ' ';
-      echo $currentBefore . esc_url(get_the_time('d') ). $currentAfter;
- 
-    } elseif ( is_month() ) {
-      echo '<a href="' . esc_url(get_year_link( get_the_time( 'Y' ) )) . '" title="' . esc_html(get_the_time( esc_attr__( 'Y' , 'acool' ) ) ). '">' . esc_html(get_the_time('Y') ). ' ' . $delimiter . '</a>';	  
-      echo $currentBefore . esc_html(get_the_time('F')) . $currentAfter;
- 
-    } elseif ( is_year() ) {
-      echo $currentBefore . esc_html(get_the_time('Y')) . $currentAfter;
- 
-    } elseif ( is_single() ) {
-		
-      $cat = get_the_category(); $cat = $cat[0];
-      echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-      echo $currentBefore;
-      esc_html( the_title());
-      echo $currentAfter;
-	  
- 
-    } elseif ( is_page() && !$post->post_parent ) {
-      echo $currentBefore;
-      esc_html( the_title());
-      echo $currentAfter;
- 
-    } elseif ( is_page() && $post->post_parent ) {
-      $parent_id  = $post->post_parent;
-      $breadcrumbs = array();
-      while ($parent_id) {
-        $page = get_page($parent_id);
-        $breadcrumbs[] = '' . get_the_title($page->ID) . '';
-        $parent_id  = $page->post_parent;
-      }
-      $breadcrumbs = array_reverse($breadcrumbs);
-      foreach ($breadcrumbs as $crumb) echo $crumb . ' ' . $delimiter . ' ';
-      echo $currentBefore;
-      esc_html( the_title());
-      echo $currentAfter;
- 
-    } elseif ( is_search() ) {
-      echo $currentBefore . __('Search results for &#39;','acool') . get_search_query() . '&#39;' . $currentAfter;
- 
-    } elseif ( is_tag() ) {
-      echo $currentBefore . __('Posts tagged &#39;','acool') ;
-      esc_html(single_tag_title());
-      echo '&#39;' . $currentAfter;
- 
-    } elseif ( is_author() ) {
-       global $author;
-      $userdata = get_userdata($author);
-      echo $currentBefore . __('Articles posted by ','acool') . esc_html($userdata->display_name) . $currentAfter;
- 
-    } elseif ( is_404() ) {
-      echo $currentBefore . __('Error 404','acool') . $currentAfter;
-    }
- 
-    if ( get_query_var('paged') ) {
-      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-      echo __('Page', 'acool') . ' ' . get_query_var('paged');
-      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
-    } 
-    echo '</div>';
-  }
-}
 
 //add page number
 function acool_paging_nav(){
@@ -231,32 +74,7 @@ function acool_add_mobile_navigation(){
 }
 add_action( 'ct_header_top', 'acool_add_mobile_navigation' );
 
- 	/*	
-	*	get background 
-	*	---------------------------------------------------------------------
-	*/
-function acool_get_background($args,$opacity=1)
-{
-	$background = "";
- 	if (is_array($args))
-	{
-		if (isset($args['image']) && $args['image']!="")
-		{
-			$background .= "background-image:url(".esc_url($args['image']). ");";
-			$background .= "background-repeat: ".esc_attr($args['repeat']).";";
-			$background .= "background-position: ".esc_attr($args['position']).";";
-			$background .= "background-attachment: ".esc_attr($args['attachment']).";";
-		}
-	
-		if(isset($args['color']) && $args['color'] !="")
-		{
-			$rgb = acool_hex2rgb($args['color']);
-			$background .= "background-color:rgba(".$rgb[0].",".$rgb[1].",".$rgb[2].",".esc_attr($opacity).");";
-		}
 
-	}
-	return $background;
-}
 
 /**
  * Convert Hex Code to RGB   #FFFFFF -> 255 255 255

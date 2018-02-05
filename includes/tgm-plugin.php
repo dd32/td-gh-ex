@@ -61,54 +61,18 @@ function acool_register_required_plugins() {
 
 		// This is an example of how to include a plugin bundled with a theme.
 		array(
-			'name'               => __('CooThemes Shortcodes','acool'), // The plugin name.
-			'slug'               => 'cothemes-shortcode', // The plugin slug (typically the folder name).
-			'source'             => esc_url('https://downloads.wordpress.org/plugin/cothemes-shortcode.zip'), // The plugin source.
-			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-			'version'            => '1.0.2', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+			'name'               => __('Kirki','acool'), // The plugin name.
+			'slug'               => 'kirki', // The plugin slug (typically the folder name).
+			'source'             => esc_url('https://downloads.wordpress.org/plugin/kirki.3.0.19.zip'), // The plugin source.
+			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+			'version'            => '3.0.19', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
 			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
-			'id'           => 'cothemes-shortcode', 
+			'id'           => 'kirki', 
 		),
 
-		// This is an example of how to include a plugin from an arbitrary external source in your theme.
-		/*array(
-			'name'         => 'TGM New Media Plugin', // The plugin name.
-			'slug'         => 'tgm-new-media-plugin', // The plugin slug (typically the folder name).
-			'source'       => 'https://s3.amazonaws.com/tgm/tgm-new-media-plugin.zip', // The plugin source.
-			'required'     => true, // If false, the plugin is only 'recommended' instead of required.
-			'external_url' => 'https://github.com/thomasgriffin/New-Media-Image-Uploader', // If set, overrides default API URL and points to an external URL.
-		),*/
-
-		// This is an example of how to include a plugin from a GitHub repository in your theme.
-		// This presumes that the plugin code is based in the root of the GitHub repository
-		// and not in a subdirectory ('/src') of the repository.
-		/*array(
-			'name'      => 'Adminbar Link Comments to Pending',
-			'slug'      => 'adminbar-link-comments-to-pending',
-			'source'    => 'https://github.com/jrfnl/WP-adminbar-comments-to-pending/archive/master.zip',
-		),*/
-
-		// This is an example of how to include a plugin from the WordPress Plugin Repository.
-		/*array(
-			'name'      => 'BuddyPress',
-			'slug'      => 'buddypress',
-			'required'  => false,
-		),*/
-
-		// This is an example of the use of 'is_callable' functionality. A user could - for instance -
-		// have WPSEO installed *or* WPSEO Premium. The slug would in that last case be different, i.e.
-		// 'wordpress-seo-premium'.
-		// By setting 'is_callable' to either a function from that plugin or a class method
-		// `array( 'class', 'method' )` similar to how you hook in to actions and filters, TGMPA can still
-		// recognize the plugin as being installed.
-		/*array(
-			'name'        => 'WordPress SEO by Yoast',
-			'slug'        => 'wordpress-seo',
-			'is_callable' => 'wpseo_init',
-		),*/
 
 	);
 
@@ -131,13 +95,13 @@ function acool_register_required_plugins() {
 		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
 		'message'      => '',                      // Message to output right before the plugins table.
 
-		
+
         'strings'      => array(
             'page_title'                      => __( 'Install Required Plugins', 'acool' ),
             'menu_title'                      => __( 'Install Plugins', 'acool' ),
             'installing'                      => __( 'Installing Plugin: %s', 'acool' ), // %s = plugin name.
             'oops'                            => __( 'Something went wrong with the plugin API.', 'acool' ),
-            'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.<br/><span style="color:red;">NOTICE:</span> Acool includes all shortcodes inside the Coothemes Shortcode plugin. As to best user experience, please activate it now.', 'This theme requires the following plugins: %1$s.<br/><span style="color:red;">NOTICE:</span> Acool includes all shortcodes inside the Coothemes Shortcode plugin. As to best user experience, please activate it now.', 'acool' ), // %1$s = plugin name(s).
+            'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.<br/><span style="color:red;">NOTICE:</span> All customization of Acool are based on kirki, please activate kirki if you want to customize the theme.', 'This theme requires the following plugins: %1$s.<br/><span style="color:red;">NOTICE:</span> All customization of Acool are based on kirki, please activate kirki if you want to customize the theme.', 'acool' ), // %1$s = plugin name(s).
             'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'acool' ), // %1$s = plugin name(s).
             'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'acool' ), // %1$s = plugin name(s).
             'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.<br/><span style="color:red;">NOTICE:</span> Acool includes all shortcodes inside the Coothemes Shortcode plugin. As to best user experience, please activate it now.', 'The following required plugins are currently inactive: %1$s.<br/><span style="color:red;">NOTICE:</span> Acool includes all shortcodes inside the Coothemes Shortcode plugin. As to best user experience, please activate it now.', 'acool' ), // %1$s = plugin name(s).
@@ -152,9 +116,7 @@ function acool_register_required_plugins() {
             'complete'                        => __( 'All plugins installed and activated successfully. %s', 'acool' ), // %s = dashboard link.
             'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
         ),
-		
 	);
 
 	tgmpa( $plugins, $config );
 }
-add_filter('widget_text', 'do_shortcode');

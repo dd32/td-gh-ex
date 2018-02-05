@@ -4,7 +4,15 @@
 
 	<div class="container"><div class="row">
 
-		<?php if(function_exists('acool_breadcrumbs') && acool_get_option( 'ct_acool','show_breadcrumb',1 ) ){ acool_breadcrumbs();} ?>  
+		<?php 
+            if(get_theme_mod( 'enable_breadcrumb_check',1 ) ){  
+        ?>
+        <div class="container">
+        <?php acool_breadcrumb_trail(); ?> 
+        </div>
+        <?php }?> 
+            			
+                         
         <div class="col-md-8 ct_single_content" > 
             
         <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
@@ -13,7 +21,7 @@
                 <div class="ct_border">
                     <h1 class="ct_title_h1"><?php the_title(); ?></h1>
                  	<?php 
-						$hide_post_meta = acool_get_option( 'ct_acool','hide_post_meta',0 ); 
+						$hide_post_meta = get_theme_mod('hide_post_meta',0 ); 
 						if(!$hide_post_meta ){ acool_show_post_meta();}
 					?> 
             

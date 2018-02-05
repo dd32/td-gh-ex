@@ -9,8 +9,8 @@ Tags: two-columns, left-sidebar, custom-background, custom-colors, custom-header
 
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Version:      2.1.7
-Update date: 2017.1.17
+Version:      2.2.0
+Update date: 2018.1.31
 */
 
 
@@ -131,14 +131,28 @@ hr {background-color: rgba(0, 0, 0, 0.1);border: 0;	height: 1px;margin-bottom: 2
 .ct_page_nav ul li a{color: #03a325;}
 .ct_page_nav ul li a:active,.ct_page_nav ul li a:hover,.ct_page_nav ul li a:focus {color:#0c8432; text-decoration:none;}
 
-#crumbs{ width:100%; font-size:14px; margin:15px 0 0 0;}
-#crumbs a{
+
+
+
+.breadcrumbs{ width:100%; font-size:14px; margin:15px 0 0 0;}
+.breadcrumbs a{
 	color: #4E4E4E;
 }
-#crumbs a:hover{
+.breadcrumbs a:hover{
 	color: #0c8432;
 	text-decoration: none;
 }
+
+
+.breadcrumbs .trail-browse,.breadcrumbs .trail-items,.breadcrumbs .trail-items li {display: inline-block;margin:0;padding: 0;border:none;background:transparent;text-indent: 0;}
+.breadcrumbs .trail-browse {font-size: inherit;font-style:inherit;font-weight: inherit;color: inherit;}
+.breadcrumbs .trail-items {list-style: none;}
+.trail-items li::after {font-family: 'FontAwesome',"Ralway","Lucida Sans Unicode", "Lucida Grande", sans-serif;content: "\f105";padding: 0 0.3em; font-size:1em;}
+.trail-items li:last-of-type::after {display: none;}
+.breadcrumbs .trail-browse{ display:none}
+.trail-begin:before {font-family: 'FontAwesome',"Ralway","Lucida Sans Unicode", "Lucida Grande", sans-serif;content: "\f015"; padding-right:0.3em;font-size:1em;}
+
+
 .ct_border{
 	border: 1px solid #EFEFEF;
 	padding: 30px;
