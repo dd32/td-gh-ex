@@ -155,7 +155,7 @@ function bfastmag_header() {
                                     ?>
                             </nav><!-- #navigation-top -->
                     </div>
-                    <div class="tp_time_date"><i class="fa fa-calendar-o"></i><span><?php  echo date(get_option('date_format'));?></span></div>
+                    <div class="tp_time_date"><i class="fa fa-calendar-o"></i><span><?php  echo date_i18n(get_option('date_format'));?></span></div>
                 </div>
 
                 <?php bfastmag_after_navbar_top();?>
@@ -356,7 +356,7 @@ $bfastmag_block_title = get_theme_mod( 'bfastmag_featured_slider_title', esc_htm
 if ( (bool) $bfastmag_featured_slider_disable !== true ) {
     if ( $wp_query->have_posts() ) { ?>
 
-        <div class="bfastmag-featured-slider ">
+        <div class="bfastmag-featured-slider">
 
            <?php     if ( ! empty( $bfastmag_block_title ) ) { ?>
             <h2 class="title-border title-bg-line mb30">

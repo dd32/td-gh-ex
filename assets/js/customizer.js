@@ -852,4 +852,16 @@ function bfastmag_strip_tags(input, allowed) {
         });
     });
 
+        // Add new shop banner (Repeater)
+    wp.customize( 'bfastmag_shop_banners', function( value ) {
+        value.bind( function( to ) {
+            var obj = JSON.parse( to );
+             var result ='';
+            obj.forEach(function(item) {
+                result += '<div class="bfastmag-content-ban col-md-4"> <a href="' + item.link + '"><img src="' + item.image_url + '"></a></div>';
+            });
+            $( '.bfastmag-content-ban.col-md-12' ).html( result );
+        } );
+    });
+
 })(jQuery);
