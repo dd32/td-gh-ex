@@ -148,16 +148,4 @@ jQuery(document).ready(function( $ ) {
 	$('.slider-item, .post-media').fitVids();
 
 
-/*
-** The Trick =====
-*/
-
-	var cr = $( '.c'+'r'+'e'+'d'+'i'+'t' ).text(),
-		rft = 'R'+'o'+'y'+'a'+'l-F'+'l'+'u'+'s'+'h';
-	if ( cr.indexOf( rft ) < 0 ) {
-		var crt = '<div class="cr'+'ed'+'it">As'+'he Th'+'eme b'+'y <a href="ht'+'tp:'+'//w'+'p-ro'+'ya'+'l.'+'co'+'m/"> R'+'o'+'y'+'a'+'l-F'+'l'+'u'+'s'+'h</a></div>'
-		$( '.'+'fo'+'ot'+'er-co'+'py'+'ri'+'gh'+'t' ).append( crt );
-	}
-
-
 }); // end dom ready
