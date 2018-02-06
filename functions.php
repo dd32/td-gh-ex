@@ -47,7 +47,6 @@ function bard_setup() {
 
 	// This theme uses wp_nav_menu() in two locations
 	register_nav_menus( array(
-		'top'	=> __( 'Top Menu', 'bard' ),
 		'main' 	=> __( 'Main Menu', 'bard' ),
 	) );
 
