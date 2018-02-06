@@ -89,17 +89,17 @@ $wp_customize->add_section( 'social_option_section_settings',
 				if ( isset( $key ) && isset( $k ) ){
 					$wp_customize->add_setting('business_consulting_social_profile_link['.$key .']['. $k .']',
 						array(
-							'default'           => $default['social_profile_link'],
-							'capability'     => 'edit_theme_options',
+							'default'           => esc_url( $default['social_profile_link'] ),
+							'capability'        => 'edit_theme_options',
 							'sanitize_callback' => 'esc_url_raw'
 						)
 					);
 					// CONTROLS
 					$wp_customize->add_control('business_consulting_social_profile_link['.$key .']['. $k .']', 
 						array(
-							'label' => $val['label'], 
+							'label'		 => esc_attr( $val['label'] ), 
 							'section'    => 'social_option_section_settings',
-							'type'     => 'text',
+							'type'       => 'text',
 							
 						)
 					);

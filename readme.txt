@@ -87,14 +87,3 @@ License: Open Font License
 https://pixabay.com
 All are Licensed under CC0
 
-
-
-== Changelog ==
-
-= 1.0.2 =
-* Addmin Options Added
-
-= 1.0.1 =
-* Initial release
-
-

@@ -134,7 +134,7 @@ if ( ! function_exists( 'business_consulting_posts_formats_gallery' ) ) :
 				
 				   $link   = wp_get_attachment_url( $id );
 				
-				  echo '<div class="item"><img src="' . $link . '"  class="img-responsive" alt="' .get_the_title(). '" title="' .get_the_title(). '"  /></div>';
+				  echo '<div class="item"><img src="' . esc_url( $link ) . '"  class="img-responsive" alt="' .esc_attr( get_the_title() ). '" title="' .esc_attr( get_the_title() ). '"  /></div>';
 				
 				} 
 				

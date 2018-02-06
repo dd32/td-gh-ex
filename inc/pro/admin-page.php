@@ -468,7 +468,7 @@ class business_consulting_Admin {
                     foreach( $data->products as $product ) {
 					
                         echo '<div class="col">';
-                            echo '<a target="_blank" href="' . esc_url( $product->info->link ) . '"><img src=' . esc_url( $product->info->thumbnail ) . '" /><br/>' . $product->info->title . '</a>';
+                            echo '<a target="_blank" href="' . esc_url( $product->info->link ) . '"><img src=' . esc_url( $product->info->thumbnail ) . '" /><br/>' . esc_attr( $product->info->title ) . '</a>';
                         echo '</div>';
                     }
                    

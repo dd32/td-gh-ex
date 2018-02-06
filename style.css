@@ -5,13 +5,11 @@ Author: athemeart
 Author URI: https://athemeart.com/
 Description: BC Business Consulting Multipurpose One page WordPress Theme BC Business Consulting is a clean, super flexible and fully responsive Multipurpose One page WordPress Theme for any project, business, agency , personal or web studio. Its equipped with the latest technologies and designed with user in mind to ensure endless freedom to create and customize your site like a pro and without any coding. This versatile, multi-purpose theme is perfect for beginners, while also feature rich and extendable for developers, freelancers and growing businesses. We built this theme on Visual Composer, a very convenient drag-n-drop PageBuilder for WordPress. It should provide you with the smoothest experience while creating your website with our theme. The colorful widgets will help anyone to customize according to their branding colors. This theme is very well commented and also have proper help documentation too.
 
-Version: 1.0.2
+Version: 1.0.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: bc-business-consulting
-Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography
-
-
+Tags: one-column, two-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, custom-background, footer-widgets, blog, e-commerce
 */
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -43,7 +41,6 @@ Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custo
 /*==========================================================
 ********************** Common ********************
 ===========================================================*/
-
 
 body{
 	font-family:'Roboto', sans-serif;
@@ -979,7 +976,6 @@ ul.popular_category_list li:last-child{
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
 	font-weight: normal;
-	display: block;
 	color: #777;
 	text-decoration:none;
   
@@ -1035,7 +1031,10 @@ ul.popular_category_list li:before  {
 	display:none;	
 }
 
-
+.widget input,
+.widget select{
+	max-width:100%;	
+}
 
 /*==========================================================
 ********************** Blog ********************
@@ -1726,8 +1725,8 @@ figure{
 }
 .widget_search .search-field,
 .widget_search input[type=text]{
-    width:300px;
-	max-width: calc( 100% - 40px );
+    width:600px;
+	max-width:100%;
 	display:block;
     height: 40px;
     line-height: 40px;
@@ -1737,7 +1736,7 @@ figure{
 	font-weight:normal;
 }
 
-
+/*
 .widget_search .search-submit,
 #primary .search-form .search-submit{
     margin-top: 0;
@@ -1745,14 +1744,13 @@ figure{
     position: absolute;
     top: 0;
     right: 0;
-    height: 40px;
-    line-height: 40px;
+	font-size:16px;
     border-radius: 0 33px 33px 0;
     text-transform: capitalize!important;
     cursor: pointer;
     padding: 0 13px;
     border:none;
-}
+}*/
 /*-------------------------------------
 * ----- custom_header --------
 -----------------------------------*/
@@ -1960,19 +1958,20 @@ a.btn:active{
 	background:none;
 	z-index:99;
 	text-indent:-600px;
+	font-size:12px;
 }
 .search-form::before{
 	z-index:9;
 	position:absolute;
 	font-family: 'FontAwesome', sans-serif;
 	right:5px;
-	font-size: 16px;
+	font-size: 12px;
     top: 6px;
-	right:10px;
+	right:0px;
 	content: "\f002";
 	font-size:30px;
-	width:50px;
-	height:50px;
+	width:30px;
+	height:30px;
 	
 }
 

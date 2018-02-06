@@ -28,7 +28,7 @@ if( ! function_exists( 'business_consulting_header_top' ) ) :
               	
               	<div class="col-md-6 col-sm-6">
                 	<?php if ( business_consulting_get_option('dialog_top') !="" )  :?>	
-                	<span><?php echo business_consulting_get_option('dialog_top');?></span>
+                	<span><?php echo esc_html( business_consulting_get_option('dialog_top') );?></span>
                     <?php endif;?>
                 </div>
                 <div class="col-md-6 col-sm-6">
@@ -68,19 +68,15 @@ if( ! function_exists( 'business_consulting_header_middle' ) ) :
                         <div class="logo-block">
                             <?php
                             if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
-                            
-                            the_custom_logo();
-                            
+                           	 the_custom_logo();
                             }else{
                             ?>
                            
-                            
                                 <h3><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h3>
                                 <?php $description = get_bloginfo( 'description', 'display' );
                                 if ( $description || is_customize_preview() ) : ?>
                                 <p class="site-description"><?php echo esc_html($description); ?></p>
                             
-                          
                             <?php endif; ?>
                             
                             <?php }?>   
@@ -140,7 +136,6 @@ if( ! function_exists( 'business_consulting_breadcrumbs' ) ) :
         <div class=" page-breadcrumb">
             <div class="container">
             	<?php do_action('business_consulting_breadcrumb'); ?>
-            
             </div>
         </div>
         <?php
@@ -465,12 +460,6 @@ if ( ! function_exists( 'business_consulting_title_in_custom_header' ) ) :
 				echo '</div>';
 			 
 		
-		}else if ( function_exists('is_shop') && apply_filters( 'woocommerce_show_page_title', true ) && is_shop() ){
-			if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-				echo '<h1 class="display-1">';
-				echo woocommerce_page_title();
-				echo '</h1>';
-			}
 		} elseif ( is_singular() ) {
 			echo '<h1 class="display-1">';
 			echo single_post_title( '', false );
@@ -510,7 +499,7 @@ if ( ! function_exists( 'business_consulting_sub_title_in_custom_header' ) ) :
 		}else{
 			?>
              <?php if ( function_exists( 'the_subtitle' ) ) { ?>
-                 <div class="subtitle"><?php  the_subtitle() ;?></div>  
+                 <div class="subtitle"><?php the_subtitle() ;?></div>  
               <?php }?>
              
             <?php
