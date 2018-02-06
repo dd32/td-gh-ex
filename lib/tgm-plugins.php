@@ -1,7 +1,7 @@
 <?php
 
 	/*
-	*	Registered Required / Recommended Plugins for Anorya Theme
+	*	Register Recommended Plugins for Anorya Theme
 	*/
 	
 	
@@ -9,22 +9,23 @@
 	
 		$plugins = array(
 		
+						//Metabox Plugin for post formats metaboxes (optional)
+						array(
+							'name'     => 'MetaBox',
+							'slug'     => 'meta-box',
+							'required' => false,
+							'version'            => '4.13.2', 
+							'force_activation'   => false, 
+							'force_deactivation' => false, 
+						),
+						
+						
 						//Mail Chimp Sign Up Form Plugin
 						array(
 							'name'               => 'MailChimp for WordPress', 
 							'slug'               => 'mailchimp-for-wp', 
 							'required'           => false, 
 							'version'            => '4.1.4', 
-							'force_activation'   => false, 
-							'force_deactivation' => false, 
-						),
-						
-						//contact form 7
-						array(
-							'name'               => 'Contact Form 7', 
-							'slug'               => 'contact-form-7', 
-							'required'           => false, 
-							'version'            => '4.8', 
 							'force_activation'   => false, 
 							'force_deactivation' => false, 
 						),

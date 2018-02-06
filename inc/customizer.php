@@ -7,13 +7,6 @@
 
 	function anorya_customize_register( $wp_customize ) {
 	
-		//remove default settings not used by the theme
-		$wp_customize->remove_control("header_textcolor");
-		$wp_customize->remove_section("colors");
-		$wp_customize->remove_section("background_image");
-		$wp_customize->remove_section("static_front_page");
-		$wp_customize->remove_section("header_image");
-	
 		$wp_customize->get_setting( 'blogname' )->transport         = 'refresh';
 		$wp_customize->get_setting( 'blogdescription' )->transport  = 'refresh';
 		$wp_customize->get_section( 'title_tagline')->priority =1;

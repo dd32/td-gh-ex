@@ -1,6 +1,6 @@
 <?php
 
-	/**
+	/*
 	* Custom template tags for this theme
 	*/
 
@@ -68,8 +68,6 @@
 		wp_reset_postdata();	
 				
 	}			
-	
-	
 	
 	//get the main featured slider items/posts - WP-query
 	function anorya_main_slider_items(){
@@ -192,7 +190,7 @@
 								<div class="grid-post-img-container">
 									<?php 
 										if( has_post_thumbnail()){
-											print the_post_thumbnail('anorya_medium', array('class' => 'img-responsive')); 
+											 the_post_thumbnail('anorya_medium', array('class' => 'img-responsive')); 
 										}	?>
 								</div>
 								<?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><h4>', '</h4></a>' ); ?>
@@ -327,33 +325,35 @@
 	//display the list of social icons set in customizer
 	function anorya_social_links_list_display()
 	{
+		
+		
 		//facebook
-		if(!empty(get_theme_mod( 'anorya_facebook_link_setting', '' ))): ?>
+		if( get_theme_mod( 'anorya_facebook_link_setting', '' ) != '' ): ?>
 		<li><a href="<?php print esc_url_raw(get_theme_mod( 'anorya_facebook_link_setting')); ?>"><i class="fa fa-facebook" ></i></a></li> 
 		<?php endif; 
 		
 		//twitter						
-		if(!empty(get_theme_mod( 'anorya_twitter_link_setting', '' ))):?>
+		if(get_theme_mod( 'anorya_twitter_link_setting', '' ) != ''):?>
 		<li><a href="<?php print esc_url_raw(get_theme_mod( 'anorya_twitter_link_setting')); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 		<?php endif; 
 								
 		// google plus
-		if(!empty(get_theme_mod( 'anorya_google_plus_link_setting', '' ))):?>
+		if(get_theme_mod( 'anorya_google_plus_link_setting', '' ) != ''):?>
 		<li><a href="<?php print esc_url_raw(get_theme_mod( 'anorya_google_plus_link_setting')); ?>"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
 		<?php endif; 
 								
 		//linkedin
-		if(!empty(get_theme_mod( 'anorya_linkedin_link_setting', '' ) )):?>
+		if(get_theme_mod( 'anorya_linkedin_link_setting', '' ) != ''):?>
 		<li><a href="<?php print esc_url_raw(get_theme_mod( 'anorya_linkedin_link_setting')); ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
 		<?php endif; 								
 							
 		//instagram
-		if(!empty(get_theme_mod( 'anorya_instagram_link_setting', '' ))):?>
+		if(get_theme_mod( 'anorya_instagram_link_setting', '' ) != ''):?>
 		<li><a href="<?php print esc_url_raw(get_theme_mod( 'anorya_instagram_link_setting')); ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 		<?php endif; 								
 							
 		//youTube
-		if(!empty(get_theme_mod( 'anorya_youtube_link_setting', '' ))):?>
+		if(get_theme_mod( 'anorya_youtube_link_setting', '' ) != ''):?>
 		<li><a href="<?php print esc_url_raw(get_theme_mod( 'anorya_youtube_link_setting')); ?>"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
 		<?php endif; 
 	}
@@ -450,9 +450,8 @@
 					alt="<?php print esc_attr(get_bloginfo( 'name', 'display' ) ); ?>" /></a>
 		<?php else: ?>
 			<a href="<?php print esc_url_raw(home_url( '/' )); ?>">
-				<img class="img-responsive align-center" 
-					src="<?php print get_template_directory_uri().'/assets/images/logo.png'; ?>" 
-					alt="<?php print esc_attr(get_bloginfo( 'name', 'display' ) ); ?>" /></a>
+					<h1><?php print esc_attr(get_bloginfo( 'name', 'display' ) ); ?></h1>
+				</a>
 		<?php endif;
 	}
 

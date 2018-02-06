@@ -22,7 +22,7 @@
 				<div class="entry-meta">
 					<?php anorya_posted_on(); ?>
 				</div>
-			<?phpendif; ?>
+			<?php endif; ?>
 		</header>
 
 		<div class="entry-content">
