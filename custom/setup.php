@@ -43,7 +43,7 @@ function akaka_section_live_css($key){
 	  $slider_description_typography = theta_get_typography( 'slider_description_typography', $slider_description_typography_default );  
 	  $slider_button_typography = theta_get_typography( 'slider_button_typography', $slider_button_typography_default );  
 	  
-	  $slider_button_background = get_theme_mod( 'slider_button_background', '#f55145' );  
+	  $slider_button_background = esc_attr(get_theme_mod( 'slider_button_background', '#f55145' ));  
 	  
 	  $slider_button_background_hover = theta_change_color($slider_button_background,0.8);;
 	
@@ -57,15 +57,11 @@ function akaka_section_live_css($key){
 	  $repeater_value = get_theme_mod( 'repeater_slider',$default_content);	
 	  if ( ! empty( $repeater_value ) ) :	
 		foreach ( $repeater_value as $row ) : 
-		  if ( isset( $row[ 'slider_image' ] ) && !empty( $row[ 'slider_image' ] ) ) :
-			$image_id = wp_get_attachment_url( $row[ 'slider_image' ] );
-			if ( $image_id )
-			{
-			  $slide_image = esc_url( $image_id );
-			} else {
-			  $slide_image = esc_url( $row[ 'slider_image' ] );
-			}
-	
+		  if ( isset( $row[ 'slider_page' ] ) && !empty( $row[ 'slider_page' ] ) ) :
+			$sliders = akaka_get_slider_details($row[ 'slider_page' ]);
+			
+			$slide_image = $sliders['images'];
+			
 			$custom_css .=".ct_slider_item_".($j+1)."{background-image: url(".$slide_image.");background-size:auto 100%;background-position: center;}.ct_slider_item_".($j+1).":after {content: '';position: absolute;width: 100%;height: 100%;top: 0;left: 0;background-color: rgba(37, 46, 53, 0.5);}";
 	
 	 
@@ -119,9 +115,9 @@ function akaka_section_live_css($key){
 		
 	  $custom_css .='section.ct_section_'.$i.' .section_content{padding:'.$section_padding['top'].' '.$section_padding['right'].' '.$section_padding['bottom'].' '.$section_padding['left'].';}'; 
 	  
-	  $t_header_color = get_theme_mod( 'testimonials_header_bg_color','#f55145');
+	  $t_header_color = esc_attr(get_theme_mod( 'testimonials_header_bg_color','#f55145'));
 	  
-	  $custom_css .='section.ct_section_7 .ct_testimonials_text,section.ct_testimonials .rangle_r{background-color:'.$t_header_color.'}';
+	  $custom_css .='section.ct_section_'.$i.' .ct_testimonials_text,section.ct_testimonials .rangle_r{background-color:'.$t_header_color.'}';
 	  
  	  break;
 	  
@@ -146,14 +142,14 @@ function akaka_section_live_css($key){
 	  
 	 
 	  //background color and  opacity  
-	  $section_background_color     = get_theme_mod( $key.'_section_background_color',$default['color']); 
+	  $section_background_color     = esc_attr(get_theme_mod( $key.'_section_background_color',$default['color'])); 
 	  $section_background_opacity     = get_theme_mod( $key.'_section_background_opacity',1); 
 	
 	  $background                    = theta_get_background( $section_background_color , $section_background_opacity );	
 	  $custom_css .='section.ct_section_'.$i.' {'.$background.' background-size: 100% auto;}';  
 	  
 	  // background_image 
-	  $section_background_image     = get_theme_mod( $key.'_section_background_image',$default['img']); 
+	  $section_background_image     = esc_url(get_theme_mod( $key.'_section_background_image',$default['img'])); 
 	  if ( $section_background_image != '' ){$custom_css .='section.ct_section_'.$i.' {background-image:url('.$section_background_image.');}';  } 
 	  
 	  //padding 
@@ -162,7 +158,7 @@ function akaka_section_live_css($key){
 		
 	  $custom_css .='section.ct_section_'.$i.' .section_content{padding:'.$section_padding['top'].' '.$section_padding['right'].' '.$section_padding['bottom'].' '.$section_padding['left'].';}'; 
 	
-	  $blog_button_color_hover = get_theme_mod( 'blog_button_color_hover','#f55145');
+	  $blog_button_color_hover = esc_attr(get_theme_mod( 'blog_button_color_hover','#f55145'));
 	  
 	  $custom_css .= '
 	  .ct_post_info{ border-bottom: 3px solid '.$blog_button_color_hover.';}

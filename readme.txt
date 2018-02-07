@@ -7,7 +7,7 @@ Tested up to: 4.9
 Stable tag: 1.1.8
 
 Author URI:  https://www.coothemes.com/
-Theme URI:  https://www.coothemes.com/themes/akaka.php
+Theme URI:  https://www.coothemes.com/themes/theta.php
 License: GNU General Public License v2 or later
 License URI: License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -79,7 +79,11 @@ Does this theme have a support forum?
 Theta provides support at https://www.coothemes.com/forum/akaka-theme.
 
 
-=== Changelog ===	
+=== Changelog ===
+version 1.0.2 20180207
+* remove tgm-plugin
+* fix some problem
+	
 version 1.0.1 20180205
 * fix tgm-plugin
 

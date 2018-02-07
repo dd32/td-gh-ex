@@ -11,11 +11,6 @@
   
   $default_content = akaka_section_content_default($key); 
   
-  //$enable_parallax_background = get_theme_mod( $key.'_enable_parallax_background', 1 );
-
-  // background
-  $section_background_image  = get_theme_mod( $key.'_section_background_image',$default['img']); 
-
 
   //--------------section css set-------------------
   
@@ -45,22 +40,24 @@
 
               if ( ! empty( $repeater_value ) ) :	
                 foreach ( $repeater_value as $row ) : 
-                  if ( isset( $row[ 'testimonials_img' ] ) && !empty( $row[ 'testimonials_img' ] ) ) :
+                  if ( isset( $row[ 'testimonials_page' ] ) && !empty( $row[ 'testimonials_page' ] ) ) :
+				  $testimonial[$k] = akaka_get_testimonial_details($row[ 'testimonials_page' ]);
              ?>
 				<div class="col-md-4">
 	 				<div class="ct_testimonials_animated" >
 						<div class="magee-testimonial-box">
     						<div class="testimonial-content">
       							<p class="testimonial-quote">
-                                	<?php echo esc_html($row[ 'testimonials_description' ]);?>
+                                	<?php echo esc_html($testimonial[$k][ 'content' ]);?>
                               	</p>
     						</div>
     						<div class="testimonial-vcard style1">
       							<div class="testimonial-avatar">
-                                	<img src="<?php echo esc_url($row[ 'testimonials_img' ]);?>" class="img-circle">
+                                <?php echo get_avatar( $testimonial[$k][ 'user_email' ], '60' ) ;?>
+                                	<!--img src="<?php echo get_avatar( $testimonial[$k][ 'user_email' ], '60' ) ;?>" class="img-circle"-->
                                 </div>
                                 <div class="testimonial-author">
-                                    <h4 class="name"><?php echo esc_html($row[ 'testimonials_name' ]);?></h4>
+                                    <h4 class="name"><?php echo esc_html($testimonial[$k][ 'name' ]);?></h4>
                                     <div class="title"><?php echo esc_html($row[ 'testimonials_job' ]);?></div>
                                 </div>
     						</div>

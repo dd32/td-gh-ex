@@ -63,7 +63,7 @@
   	'settings'			 => 'front_page_info',
   	'label'				 => __( 'Switch "Front page displays" to "A static page"', 'akaka' ),
   	'section'			 => 'homepage_layout',
-  	'description'		 => sprintf( __( 'Your homepage is not static page. In order to set up the home page as shown in the official demo on our website (one page front page with sections), you will need to set up your front page to use a static page instead of showing your latest blog posts. Check the %s page for more informations.', 'akaka' ), '<a href="' . admin_url( 'options-reading.php' ) . '"><strong>' . __( 'Theme info', 'akaka' ) . '</strong></a>' ),
+  	'description'		 => sprintf( __( 'Your homepage is not static page. In order to set up the home page as shown in the official demo on our website (one page front page with sections), you will need to set up your front page to use a static page instead of showing your latest blog posts. Check the %s page for more informations.', 'akaka' ), '<a href="' . esc_url(admin_url( 'options-reading.php' )) . '"><strong>' . __( 'Theme info', 'akaka' ) . '</strong></a>' ),
   	'priority'			 => 10,
   	'active_callback'	 => array(
   		array(
@@ -83,18 +83,9 @@
   	'help'		 => esc_attr__( 'Drag and Drop and enable the homepage blocks.', 'akaka' ),
 	'default'     => akaka_section_default_order(),
   	'choices'	 => array(
-	
-	
-	
-		'slider'			 => esc_attr__( 'Slider', 'akaka' ),
-
-			
-  		'testimonials'		 => esc_attr__( 'Testimonials', 'akaka' ),
-			
-		
-  		'blog'		 => esc_attr__( 'Blog Post', 'akaka' ),
-				
-				
+		'slider'			 => esc_html__( 'Slider', 'akaka' ),
+  		'testimonials'		 => esc_html__( 'Testimonials', 'akaka' ),
+  		'blog'		 => esc_html__( 'Blog Post', 'akaka' ),	
   	),
   	'priority'	 => 10,	
 	
@@ -122,8 +113,8 @@
 	  'section'	 => 'slider_section',
 	  'priority'	 => 10,
   ) ); 
-  
-  Kirki::add_field( 'akaka_settings', array(
+
+    Kirki::add_field( 'akaka_settings', array(
   	'type'		 => 'repeater',
   	'label'		 => __( 'Slider', 'akaka' ),
   	'section'	 => 'slider_section',
@@ -132,45 +123,30 @@
     //'sanitize_callback' => 'esc_attr',
 	'default'     => array(
 		array(
-			'slider_image' => esc_url($imagepath.'p/banner1.jpg'),
-			'slider_title'  => esc_attr__( 'Welcome to Akaka', 'akaka' ),
-			'slider_desc'  => esc_attr__( 'Simple and easy to use, Akaka is the perfect solution to your business or personal needs!', 'akaka' ),			
-			'slider_button_text'  => esc_attr__( 'Check it out', 'akaka' ),			
+			'slider_page' => '',		
+			'slider_button_text'  => esc_html__( 'Check it out', 'akaka' ),			
 			'slider_url'  => '#',
 		),
 		
 		array(
-			'slider_image' => esc_url($imagepath.'p/banner2.jpg'),
-			'slider_title'  => esc_attr__( 'Awesome theme', 'akaka' ),
-			'slider_desc'  => esc_attr__( 'Many preset sections, parallax scrolling, video background, and much more features.', 'akaka' ),			
-			'slider_button_text'  => esc_attr__( 'Downlaod Now', 'akaka' ),			
+			'slider_page' => '',	
+			'slider_button_text'  => esc_html__( 'Downlaod Now', 'akaka' ),			
 			'slider_url'  => '#',
 		),		
 		
 		array(
-			'slider_image' => esc_url($imagepath.'p/banner3.jpg'),
-			'slider_title'  => esc_attr__( 'Awesome theme', 'akaka' ),
-			'slider_desc'  => esc_attr__( 'Absolutely suited for your business or personal needs!', 'akaka' ),			
-			'slider_button_text'  => esc_attr__( 'Check it out', 'akaka' ),			
+			'slider_page' => '',
+			'slider_button_text'  => esc_html__( 'Check it out', 'akaka' ),			
 			'slider_url'  => '#',
 		),
 	),
   	'fields'	 => array(
-  		'slider_image'	 => array(
-  			'type'		 => 'image',
-  			'label'		 => __( 'Image', 'akaka' ),
+  		'slider_page'	 => array(
+  			'type'		 => 'dropdown-pages',
+  			'label'		 => __( 'Select page', 'akaka' ),
   			'default'	 => '',
   		),
-  		'slider_title'	 => array(
-  			'type'		 => 'text',
-  			'label'		 => __( 'Title', 'akaka' ),
-  			'default'	 => '',
-  		),
-  		'slider_desc'	 => array(
-  			'type'		 => 'text',
-  			'label'		 => __( 'Description', 'akaka' ),
-  			'default'	 => '',
-  		),
+
   		'slider_button_text'	 => array(
   			'type'		 => 'text',
   			'label'		 => __( 'Button Text', 'akaka' ),
@@ -189,7 +165,6 @@
   	),
   ) ); 
   
- 
   Kirki::add_field( 'akaka_settings', array(
 	'type'        => 'color',
 	'settings'    => 'slider_button_background',
@@ -436,7 +411,7 @@
 	'priority'    => 10,
 
   ) );    
-  
+/*  
   Kirki::add_field( 'akaka_settings', array(
   	'type'		 => 'repeater',
   	'label'		 => __( 'Testimonials', 'akaka' ),
@@ -477,7 +452,38 @@
   		'type'	 => 'text',
   		'value'	 => __( 'Testimonials Item', 'akaka' ),
   	),
+  ) );*/
+
+  Kirki::add_field( 'akaka_settings', array(
+  	'type'		 => 'repeater',
+  	'label'		 => __( 'Testimonials', 'akaka' ),
+  	'section'	 => 'testimonials_section',
+  	'priority'	 => 10,
+  	'settings'	 => 'repeater_testimonials',
+    //'sanitize_callback' => 'esc_attr',
+	
+	'default'     => akaka_section_content_default('testimonials'),
+  	'fields'	 => array(
+  		'testimonials_page'	 => array(
+  			'type'		 => 'dropdown-pages',
+  			'label'		 => __( 'Customer testimonials page', 'akaka' ),
+  			'default'	 =>'',
+  		),	
+
+  		'testimonials_job'	 => array(
+  			'type'		 => 'text',
+  			'label'		 => __( 'Customer Job', 'akaka' ),
+  			'default'	 =>'',
+  		),	
+
+  	),
+	
+    'row_label'			 => array(
+  		'type'	 => 'text',
+  		'value'	 => __( 'Testimonials Item', 'akaka' ),
+  	),
   ) );
+
 
 //blog//,
   

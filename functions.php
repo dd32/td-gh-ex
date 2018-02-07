@@ -29,7 +29,7 @@ function akaka_custom_scripts()
 	$color = '#F55145';	
 	//header css
  	if ( get_theme_mod( 'theme_color','#F55145') ){
-		$color = get_theme_mod( 'theme_color','#F55145') ;
+		$color = esc_attr(get_theme_mod( 'theme_color','#F55145')) ;
 	}	
 				
 	$color_hover = theta_change_color($color,0.8);//#f7746a
@@ -85,7 +85,7 @@ function akaka_custom_scripts()
 	
 	//====pro====
 	wp_localize_script( 'akaka-main', 'ct_params', array(
-		'ajaxurl'        => admin_url('admin-ajax.php'),
+		'ajaxurl'        => esc_url(admin_url('admin-ajax.php')),
 		'themeurl' => get_stylesheet_directory_uri(),			
 	)  );
 	//====pro end====	
@@ -208,7 +208,7 @@ if ( ! function_exists( 'akaka_get_blog_thumbnail' ) ) {
 		
 		if($thumb_array['fullpath']=="" )
 		{
-			$thumb_array['fullpath'] = get_theme_mod( 'blog_feature_img',get_template_directory_uri()."/images/default.jpg");
+			$thumb_array['fullpath'] = esc_url(get_theme_mod( 'blog_feature_img',get_template_directory_uri()."/images/default.jpg"));
 			//$thumb_array['fullpath'] = get_template_directory_uri()."/images/default.jpg";
 		
 		}		
@@ -216,4 +216,35 @@ if ( ! function_exists( 'akaka_get_blog_thumbnail' ) ) {
 		return $thumb_array;
 		
 	}
+}
+
+function akaka_get_slider_details($page_id)
+{
+	$slider = array();
+ 	$page_data = get_page( $page_id ); 	
+	
+	$slider['title'] = $page_data->post_title;
+	$slider['content'] = $page_data->post_content;	
+	
+	$ct_post_thumbnail_fullpath=wp_get_attachment_image_src( get_post_thumbnail_id( $page_id ), "Full");
+	$slider['images'] = $ct_post_thumbnail_fullpath[0];
+	
+	return 	$slider;
+}
+
+function akaka_get_testimonial_details($page_id)
+{
+	$testimonial = array();
+	
+	$page_data = get_page($page_id);
+	$author_id = $page_data->post_author;	
+
+	$testimonial['name'] = get_the_author_meta( 'user_nicename' ,$author_id );
+	$testimonial['user_email'] = get_the_author_meta( 'user_email' ,$author_id );
+	
+	//$testimonial['avatar'] = get_avatar( $testimonial['user_email'], '60' );	
+	
+	$testimonial['content'] = $page_data->post_content;	
+	
+	return 	$testimonial;
 }

@@ -18,15 +18,24 @@
       
       if ( ! empty( $repeater_value ) ) :	
         foreach ( $repeater_value as $row ) : 
-          if ( isset( $row[ 'slider_image' ] ) && !empty( $row[ 'slider_image' ] ) ) :
+          if ( isset( $row[ 'slider_page' ] ) && !empty( $row[ 'slider_page' ] ) && $row[ 'slider_page' ]>0 ) :
     ?>  
            <li data-target="#myCarousel" data-slide-to="<?php echo $j;?>" <?php if($j==0){echo 'class="active"';}?>></li> 
+           
+           
     <?php   
+	
+			$sliders[$j] = akaka_get_slider_details($row[ 'slider_page' ]);
+			
           endif;
+		  
+		   //print_r($row[ 'slider_page' ]);echo '<br>';
           
           $j++;
         endforeach;	
       endif;
+	  
+	 
     ?>
     </ol>
     
@@ -37,7 +46,7 @@
       
       if ( ! empty( $repeater_value ) ) :	
         foreach ( $repeater_value as $row ) : 
-          if ( isset( $row[ 'slider_image' ] ) && !empty( $row[ 'slider_image' ] ) ) :
+          if ( isset( $row[ 'slider_page' ] ) && !empty( $row[ 'slider_page' ] ) ) :
 
      ?>       
             
@@ -47,15 +56,15 @@
                   <div class="carousel_caption_warp">
 
                       <div class="slider_text">
-						<?php if ( isset( $row[ 'slider_title' ] ) && !empty( $row[ 'slider_title' ] ) ) : ?>
+						<?php if ( isset( $sliders[$j][ 'title' ] ) && !empty( $sliders[$j][ 'title' ] ) ) : ?>
                             <h1 class="slider_title">
-                                <?php echo esc_html( $row[ 'slider_title' ] ); ?>
+                                <?php echo esc_html( $sliders[$j][ 'title' ] ); ?>
                             </h1>
                         <?php endif; ?>                      
 
-						<?php if ( isset( $row[ 'slider_desc' ] ) && !empty( $row[ 'slider_desc' ] ) ) : ?>
+						<?php if ( isset( $sliders[$j][ 'content' ] ) && !empty($sliders[$j][ 'content' ] ) ) : ?>
                             <p class="ct_slider_text">
-                                <?php echo esc_html( $row[ 'slider_desc' ] ); ?>
+                                <?php echo esc_html( $sliders[$j][ 'content' ] ); ?>
                             </p>
                         <?php endif; ?>
                       </div>

@@ -149,25 +149,25 @@ function akaka_section_content_default($key)
 		$default     = array(
 			array(
 				'slider_image' => esc_url($imagepath.'p/banner1.jpg'),
-				'slider_title'  => esc_attr__( 'Welcome to akaka fullpage', 'akaka' ),
-				'slider_desc'  => esc_attr__( 'Simple and easy to use, Akaka is the perfect solution to your business or personal needs!', 'akaka' ),			
-				'slider_button_text'  => esc_attr__( 'Check it out', 'akaka' ),			
+				'slider_title'  => esc_html__( 'Welcome to akaka fullpage', 'akaka' ),
+				'slider_desc'  => esc_html__( 'Simple and easy to use, Akaka is the perfect solution to your business or personal needs!', 'akaka' ),			
+				'slider_button_text'  => esc_html__( 'Check it out', 'akaka' ),			
 				'slider_url'  => '#',
 			),
 			
 			array(
 				'slider_image' => esc_url($imagepath.'p/banner2.jpg'),
-				'slider_title'  => esc_attr__( 'Awesome theme', 'akaka' ),
-				'slider_desc'  => esc_attr__( 'Many preset sections, parallax scrolling, video background, and much more features.', 'akaka' ),			
-				'slider_button_text'  => esc_attr__( 'Downlaod Now', 'akaka' ),			
+				'slider_title'  => esc_html__( 'Awesome theme', 'akaka' ),
+				'slider_desc'  => esc_html__( 'Many preset sections, parallax scrolling, video background, and much more features.', 'akaka' ),			
+				'slider_button_text'  => esc_html__( 'Downlaod Now', 'akaka' ),			
 				'slider_url'  => '#',
 			),		
 			
 			array(
 				'slider_image' => esc_url($imagepath.'p/banner3.jpg'),
-				'slider_title'  => esc_attr__( 'Awesome theme', 'akaka' ),
-				'slider_desc'  => esc_attr__( 'Absolutely suited for your business or personal needs!', 'akaka' ),			
-				'slider_button_text'  => esc_attr__( 'Check it out', 'akaka' ),			
+				'slider_title'  => esc_html__( 'Awesome theme', 'akaka' ),
+				'slider_desc'  => esc_html__( 'Absolutely suited for your business or personal needs!', 'akaka' ),			
+				'slider_button_text'  => esc_html__( 'Check it out', 'akaka' ),			
 				'slider_url'  => '#',
 			),
 		);
@@ -176,26 +176,19 @@ function akaka_section_content_default($key)
 	case 'testimonials':
 	  $default     = array(
 			array(
-				'testimonials_img' => esc_url($imagepath.'team/3.jpg'),
-				'testimonials_name' => esc_attr__( 'Customer Name', 'akaka' ),
-				'testimonials_job' => esc_attr__( 'Web Developer', 'akaka' ),
-				'testimonials_description' => esc_attr__( 'Write your testimonials here Write your testimonials here Write your testimonials here Write your testimonials here Write your testimonials here Write your testimonials here Write your testimonials here.', 'akaka' ),				
+				'testimonials_page' => '',
+				'testimonials_job' => esc_html__( 'Web Developer', 'akaka' ),																
+			),
+	
+			array(
+				'testimonials_page' => '',
+				'testimonials_job' => esc_html__( 'Web Developer', 'akaka' ),			
 																	
 			),
 	
 			array(
-				'testimonials_img' => esc_url($imagepath.'team/4.jpg'),
-				'testimonials_name' => esc_attr__( 'Customer Name', 'akaka' ),
-				'testimonials_job' => esc_attr__( 'Web Developer', 'akaka' ),
-				'testimonials_description' => esc_attr__( 'Write your testimonials here Write your testimonials here Write your testimonials here Write your testimonials here Write your testimonials here Write your testimonials here Write your testimonials here.', 'akaka' ),				
-																	
-			),
-	
-			array(
-				'testimonials_img' => esc_url($imagepath.'team/5.jpg'),
-				'testimonials_name' => esc_attr__( 'Customer Name', 'akaka' ),
-				'testimonials_job' => esc_attr__( 'Web Developer', 'akaka' ),
-				'testimonials_description' => esc_attr__( 'Write your testimonials here Write your testimonials here Write your testimonials here Write your testimonials here Write your testimonials here Write your testimonials here Write your testimonials here.', 'akaka' ),				
+				'testimonials_page' => '',
+				'testimonials_job' => esc_html__( 'Web Developer', 'akaka' ),			
 																	
 			),
 		);

@@ -12,11 +12,11 @@
   
   $blog_article_number = get_theme_mod( 'blog_article_number',3);
   
-  $blog_url = get_theme_mod( 'blog_url','');  
+  $blog_url = esc_url(get_theme_mod( 'blog_url',''));  
   
-  $blog_categories = get_theme_mod( 'blog_categories','');
+  $blog_categories = esc_html(get_theme_mod( 'blog_categories',''));
 
-  $blog_button_text = get_theme_mod( 'blog_button_text',__( 'Read The Blog', 'akaka' ));
+  $blog_button_text = esc_html(get_theme_mod( 'blog_button_text',__( 'Read The Blog', 'akaka' )));
 
 ?> 
 
@@ -41,9 +41,7 @@
 			<div class="row">
             
                 <?php
-					//$post_list_num                     = of_get_option('post_list_num'.$i,of_get_default('post_list_num'.$i) );
-					//$post_list_cat                     = of_get_option('post_list_cat_'.$i,of_get_default('post_list_cat_'.$i) );
-				
+		
 					// Pull all the categories into an array
 					//Pull all the categories into an array
 					$options_categories = array();
@@ -96,7 +94,7 @@
 										$exclude_id = get_the_ID();
 										$thumb_array = akaka_get_blog_thumbnail($exclude_id);
                                     ?>
-                                        <img src="<?php if($thumb_array['fullpath'] != ''){echo $thumb_array['fullpath'];}?>" /> 
+                                        <img src="<?php if($thumb_array['fullpath'] != ''){echo esc_url($thumb_array['fullpath']);}?>" /> 
 
                                         <div class="meta">
                                             <i class="fa fa-search fa-2x" aria-hidden="true"></i>
@@ -112,7 +110,7 @@
                                 <h3><?php the_title(); ?></h3>
                                 <p class="post-meta-2"><i class="fa fa-calendar-times-o" aria-hidden="true"></i> <?php the_time('M d, y');?></p>   
                                 <div class="post-content"><?php the_excerpt();?> </div>  
-                                <div class="ct_post_readmore"><a class="post_readmore_bttn" href="<?php the_permalink(); ?>">Read More</a></div>             
+                                <div class="ct_post_readmore"><a class="post_readmore_bttn" href="<?php the_permalink(); ?>"><?php echo esc_html('Read More','akaka'); ?></a></div>             
                             </div>
                         </div>                    
                     
@@ -124,7 +122,7 @@
 
                 
 				<div class="ct_post_more">
-                    <a href="<?php echo $blog_url; ?>" class="casems"><span><?php if($blog_button_text!=''){echo esc_html($blog_button_text);}else{echo __( 'Read The Blog', 'akaka' );}?></span> <i></i></a>
+                    <a href="<?php echo esc_url($blog_url); ?>" class="casems"><span><?php if($blog_button_text!=''){echo esc_html($blog_button_text);}else{echo esc_html( 'Read The Blog', 'akaka' );}?></span> <i></i></a>
                 </div> 	                
                 
                 
