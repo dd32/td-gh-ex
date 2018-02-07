@@ -75,17 +75,7 @@ function akaka_custom_scripts()
 	wp_enqueue_script('theta-main', get_template_directory_uri().'/js/main.js', array( 'jquery' ),$theme_info->get( 'Version' ), true );	
 	wp_enqueue_script('akaka-main', get_stylesheet_directory_uri().'/custom/js/main.js', array( 'jquery' ),$theme_info->get( 'Version' ), true );		
 	
-	
-	//====pro====
-	wp_localize_script( 'akaka-main', 'ct_params', array(
-		'ajaxurl'        => esc_url(admin_url('admin-ajax.php')),
-		'themeurl' => get_stylesheet_directory_uri(),			
-	)  );
-	//====pro end====	
-	
-
 	wp_add_inline_script( 'akaka-main', akaka_script_method() );
-	
 				
 }
 

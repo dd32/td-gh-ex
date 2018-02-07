@@ -98,19 +98,18 @@ function akaka_section_live_css($key){
 	
 	  // background
 	  $section_background_image  = esc_url(get_theme_mod( $key.'_section_background_image',$default['img'])); 
-	  
-	  if(!$enable_parallax_background){
+
 		$background                    = theta_get_background( $section_background_color , $section_background_opacity );	
 		$custom_css .='section.ct_section_'.$i.' {'.$background.' background-size: 100% auto;}';  
 	  
 		if ( $section_background_image != '' ){$custom_css .='section.ct_section_'.$i.' {background-image:url('.$section_background_image.');}';  } 
-	  }
+
 	  
 	  //padding 
 	  $padding_default = array( 'top' => $default['padding_top'] ,'bottom' => $default['padding_bottom'] ,'left' => '0' ,'right' => '0' );
 	  $section_padding     = get_theme_mod( $key.'_section_padding',$padding_default);
 		
-	  $custom_css .='section.ct_section_'.$i.' .section_content{padding:'.$section_padding['top'].' '.$section_padding['right'].' '.$section_padding['bottom'].' '.$section_padding['left'].';}'; 
+	  $custom_css .='section.ct_section_'.$i.' .section_content{padding:'.esc_attr($section_padding['top']).' '.esc_attr($section_padding['right']).' '.esc_attr($section_padding['bottom']).' '.esc_attr($section_padding['left']).';}'; 
 	  
 	  $t_header_color = esc_attr(get_theme_mod( 'testimonials_header_bg_color','#f55145'));
 	  
@@ -153,7 +152,7 @@ function akaka_section_live_css($key){
 	  $padding_default = array( 'top' => $default['padding_top'] ,'bottom' => $default['padding_bottom'] ,'left' => '0' ,'right' => '0' );
 	  $section_padding     = get_theme_mod( $key.'_section_padding',$padding_default);
 		
-	  $custom_css .='section.ct_section_'.$i.' .section_content{padding:'.$section_padding['top'].' '.$section_padding['right'].' '.$section_padding['bottom'].' '.$section_padding['left'].';}'; 
+	  $custom_css .='section.ct_section_'.$i.' .section_content{padding:'.esc_attr($section_padding['top']).' '.esc_attr($section_padding['right']).' '.esc_attr($section_padding['bottom']).' '.esc_attr($section_padding['left']).';}'; 
 	
 	  $blog_button_color_hover = esc_attr(get_theme_mod( 'blog_button_color_hover','#f55145'));
 	  

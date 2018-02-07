@@ -114,7 +114,13 @@
                     
                     </div><!--div class="ct_row ct_clear_margin_padding"-->
 
-                <?php endwhile; endif; ?>                             
+                <?php 
+				
+					endwhile; 
+					wp_reset_postdata();
+					endif;
+					
+				 ?>                             
 
                 <p class="clear"></p>                             
 
