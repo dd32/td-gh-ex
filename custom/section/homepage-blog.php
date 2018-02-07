@@ -51,38 +51,36 @@
 					}
 
 					$options_cat_id = array();
-					//$p=0;
+
 
 					if($options_categories){
 						foreach ( $options_categories as $cat_name => $cat ) {
 							if(!empty($blog_categories)){	
 							if (!in_array($cat_name, $blog_categories)){$options_cat_id[]= $cat;}	
 							}
-								//$p++;
 						}
-					}
-					
-					global $wpdb;//ignore_sticky_posts //caller_get_posts 3.1 del
+					}		
+				
 					
 					if(empty($options_cat_id)){
 						
-						query_posts( array( 
+						$query_posts = array( 
 						'showposts' => $blog_article_number,// $post_list_num
 						'ignore_sticky_posts' => 1,
 						
-						 )); 
+						 ); 
 
 					}else{
 					
-						query_posts( array( 
+						$query_posts =  array( 
 						  'showposts' => $blog_article_number, 
 						  'ignore_sticky_posts' => 1,
 						  'category__in' => $options_cat_id,
-						 ));
+						 );
 					}
+					$the_query = new WP_Query( $query_posts );
 					 
-					 
-                    if (have_posts()) :  while (have_posts()) : the_post();                             
+                    if ($the_query->have_posts()) :  while ($the_query->have_posts()) : $the_query->the_post();                             
                 ?>
                     <div class="col-md-4 ct_clear_margin_padding">  
                     
@@ -110,7 +108,7 @@
                                 <h3><?php the_title(); ?></h3>
                                 <p class="post-meta-2"><i class="fa fa-calendar-times-o" aria-hidden="true"></i> <?php the_time('M d, y');?></p>   
                                 <div class="post-content"><?php the_excerpt();?> </div>  
-                                <div class="ct_post_readmore"><a class="post_readmore_bttn" href="<?php the_permalink(); ?>"><?php echo esc_html('Read More','akaka'); ?></a></div>             
+                                <div class="ct_post_readmore"><a class="post_readmore_bttn" href="<?php the_permalink(); ?>"><?php echo esc_html__('Read More','akaka'); ?></a></div>             
                             </div>
                         </div>                    
                     
@@ -122,7 +120,7 @@
 
                 
 				<div class="ct_post_more">
-                    <a href="<?php echo esc_url($blog_url); ?>" class="casems"><span><?php if($blog_button_text!=''){echo esc_html($blog_button_text);}else{echo esc_html( 'Read The Blog', 'akaka' );}?></span> <i></i></a>
+                    <a href="<?php echo esc_url($blog_url); ?>" class="casems"><span><?php if($blog_button_text!=''){echo esc_html($blog_button_text);}else{echo esc_html__( 'Read The Blog', 'akaka' );}?></span> <i></i></a>
                 </div> 	                
                 
                 

@@ -1,4 +1,3 @@
-	//alert('ok'); //no
 var content_slider_counter = 0;
 (function($) {
 	function content_slider_child(e, t) {
@@ -12,7 +11,7 @@ var content_slider_counter = 0;
 		this.$element = $(element);
 		this.$base = this.$element;
 		this.$container = $('.circle_slider');
-		this.$element.wrap('<div class="main_content_slider_wrapper">'); //.wrap（）方法 -- 用指定的div来包裹被选元素
+		this.$element.wrap('<div class="main_content_slider_wrapper">'); 
 		this.$parent_wrapper = this.$element.parent();
 		this.parent_wrapper_width = 0;
 		this.id = this.$element.attr("id");

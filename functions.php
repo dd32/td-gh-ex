@@ -3,7 +3,9 @@
 function akaka_setup(){
 
 	//====free demo====
-	get_template_part('/custom/setting');
+	require_once( get_stylesheet_directory() . '/custom/setup.php');
+	require_once( get_stylesheet_directory().'/custom/inc.php');		
+	require_once( get_stylesheet_directory().'/custom/akaka-config.php');
 	//====free demo end====	
 
 }
@@ -32,7 +34,7 @@ function akaka_custom_scripts()
 		$color = esc_attr(get_theme_mod( 'theme_color','#F55145')) ;
 	}	
 				
-	$color_hover = theta_change_color($color,0.8);//#f7746a
+	$color_hover = theta_change_color($color,0.8);
 	$color_rbg = theta_hex2rgb( $color );
 
 	$header_color_rbg = theta_hex2rgb( '#ffffff' );
@@ -48,15 +50,6 @@ function akaka_custom_scripts()
 
 		';
 	}
-
-	get_template_part('/inc/Mobile_Detect');
-	$detect = new Mobile_Detect;	
-	
-	if ( $detect->isMobile() ) {
-		$custom_css .='
-					
-		';
-	}	
 
 	// get sction live css
 	$sortable_value = maybe_unserialize( get_theme_mod( 'home_layout', akaka_section_default_order() ) );
@@ -101,14 +94,12 @@ add_action( 'wp_enqueue_scripts', 'akaka_custom_scripts' );
 
 function akaka_script_method() {	
 	$custom_js = 'jQuery(document).ready(function($){';
-
-	//if(get_theme_mod( 'fullpage_bottom_loop',0) ){$fullpage_bottom_loop = 'true';}else{$fullpage_bottom_loop = 'false';}
 	
 	//front-page
 	$custom_js .= 'var height = jQuery(window).height();
 	var width = jQuery(window).width();';
 	
-	//get_template_part('/inc/Mobile_Detect');
+	require_once(get_template_directory().'/inc/Mobile_Detect.php');
 	
 	
 	$detect = new Mobile_Detect;	
@@ -121,9 +112,8 @@ function akaka_script_method() {
 			'scrollingSpeed': 500,
 			'loopBottom':false ,
 			'easing': 'linear',
-			
-			//sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
-			anchors: [".akaka_js_menu()."],//'section1', 'section2', 'section3', 'section4'
+
+			anchors: [".akaka_js_menu()."],
 			menu: '.menu'
 		});
 		";	
@@ -164,7 +154,7 @@ if ( ! function_exists( 'akaka_get_section_menu' ) ) {
 		$sortable_value = maybe_unserialize( get_theme_mod( 'home_layout',akaka_section_default_order() ) );	
 		if ( ! empty( $sortable_value ) ) : 
 		  foreach ( $sortable_value as $checked_value ) :
-			$section_menu .= '<li data-menuanchor="'.$checked_value.'"><a href="#'.$checked_value.'">'.ucfirst(get_theme_mod( $checked_value.'_section_menu_title',$checked_value) ).'</a></li>';
+			$section_menu .= '<li data-menuanchor="'.$checked_value.'"><a href="#'.$checked_value.'">'.ucfirst(esc_html(get_theme_mod( $checked_value.'_section_menu_title',$checked_value) )).'</a></li>';
 		  endforeach;
 		endif; 
 	
@@ -208,9 +198,7 @@ if ( ! function_exists( 'akaka_get_blog_thumbnail' ) ) {
 		
 		if($thumb_array['fullpath']=="" )
 		{
-			$thumb_array['fullpath'] = esc_url(get_theme_mod( 'blog_feature_img',get_template_directory_uri()."/images/default.jpg"));
-			//$thumb_array['fullpath'] = get_template_directory_uri()."/images/default.jpg";
-		
+			$thumb_array['fullpath'] = esc_url(get_theme_mod( 'blog_feature_img',get_template_directory_uri()."/images/default.jpg"));		
 		}		
 
 		return $thumb_array;
@@ -241,9 +229,7 @@ function akaka_get_testimonial_details($page_id)
 
 	$testimonial['name'] = get_the_author_meta( 'user_nicename' ,$author_id );
 	$testimonial['user_email'] = get_the_author_meta( 'user_email' ,$author_id );
-	
-	//$testimonial['avatar'] = get_avatar( $testimonial['user_email'], '60' );	
-	
+
 	$testimonial['content'] = $page_data->post_content;	
 	
 	return 	$testimonial;

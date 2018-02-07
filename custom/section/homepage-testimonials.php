@@ -11,17 +11,12 @@
   
   $default_content = akaka_section_content_default($key); 
   
-
   //--------------section css set-------------------
   
   $repeater_value = get_theme_mod( 'repeater_testimonials',$default_content);	
-
-  //$testimonials_background_overlay = get_theme_mod( 'testimonials_background_overlay',1);	
     
 ?> 
 	<div  id="ct-testimonials-content" class="section_content">
-  
-
     	<div class="ct_testimonials_text">
 			<h1 class="section_title "><?php echo esc_html( get_theme_mod( $key.'_section_title', $default['title'] ) );  ?></h1>
 			<?php if ( get_theme_mod( $key.'_section_description', $default['description'] ) != '' ) : ?>

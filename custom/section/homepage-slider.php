@@ -2,7 +2,7 @@
 
 <div  class="section_slider ">
   <!-- Carousel================================================== -->
-  <div id="myCarousel" class="carousel slide ct_slider_warp" data-ride="carousel"  data-interval="<?php echo get_theme_mod( 'slide_time','5000'); ?> " >
+  <div id="myCarousel" class="carousel slide ct_slider_warp" data-ride="carousel"  data-interval="<?php echo esc_attr(get_theme_mod( 'slide_time','5000')); ?> " >
   <!-- Indicators -->
     <ol class="carousel-indicators">
  
@@ -92,11 +92,11 @@
     </div>
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <i class="fa fa-angle-left fa-2x" aria-hidden="true"></i>
-        <span class="sr-only"><?php _e('Previous', 'akaka');?></span>
+        <span class="sr-only"><?php esc_html_e('Previous', 'akaka');?></span>
     </a>
     <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
         <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
-        <span class="sr-only"><?php _e('Next', 'akaka');?></span>
+        <span class="sr-only"><?php esc_html_e('Next', 'akaka');?></span>
     </a>  
     
   </div><!-- /.carousel -->

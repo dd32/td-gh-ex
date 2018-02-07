@@ -80,6 +80,9 @@ Theta provides support at https://www.coothemes.com/forum/akaka-theme.
 
 
 === Changelog ===
+version 1.0.3 20180207
+* fix some problem
+
 version 1.0.2 20180207
 * remove tgm-plugin
 * fix some problem

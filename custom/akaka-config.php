@@ -5,10 +5,8 @@
  * @package akaka
  */
 // Early exit if Kirki is not installed
- //require ( trailingslashit( get_template_directory() ) . 'custom/section/inc.php' ); 
- 
+
  $imagepath =  get_stylesheet_directory_uri() . '/custom/images/'; 
- //get_template_part('/custom/kirki/kirki');
  
   if ( !class_exists( 'Kirki' ) ) {
 	return;
@@ -120,7 +118,6 @@
   	'section'	 => 'slider_section',
   	'priority'	 => 10,
   	'settings'	 => 'repeater_slider',
-    //'sanitize_callback' => 'esc_attr',
 	'default'     => array(
 		array(
 			'slider_page' => '',		
@@ -257,7 +254,6 @@
   		'type'		 => 'text',
   		'settings'	 => $keys . '_section_title',
   		'label'		 => __( 'Section Title', 'akaka' ),
-        //'sanitize_callback' => 'esc_attr',
   		'default'	 => $values[ 'title' ],
   		'section'	 => $keys . '_section',
   		'priority'	 => 10,
@@ -267,7 +263,6 @@
   		'type'		 => 'textarea',
   		'settings'	 => $keys . '_section_description',
   		'label'		 => __( 'Section Description', 'akaka' ),
-        //'sanitize_callback' => 'esc_attr',
   		'default'	 => $values[ 'description' ],
   		'section'	 => $keys . '_section',
   		'priority'	 => 10,
@@ -411,48 +406,6 @@
 	'priority'    => 10,
 
   ) );    
-/*  
-  Kirki::add_field( 'akaka_settings', array(
-  	'type'		 => 'repeater',
-  	'label'		 => __( 'Testimonials', 'akaka' ),
-  	'section'	 => 'testimonials_section',
-  	'priority'	 => 10,
-  	'settings'	 => 'repeater_testimonials',
-    //'sanitize_callback' => 'esc_attr',
-	
-	'default'     => akaka_section_content_default('testimonials'),
-  	'fields'	 => array(
-  		'testimonials_img'	 => array(
-  			'type'		 => 'image',
-  			'label'		 => __( 'Customer Avatar', 'akaka' ),
-  			'default'	 =>'',
-  		),	
-
-  		'testimonials_name'	 => array(
-  			'type'		 => 'text',
-  			'label'		 => __( 'Customer Name', 'akaka' ),
-  			'default'	 =>'',
-  		),	
-
-  		'testimonials_job'	 => array(
-  			'type'		 => 'text',
-  			'label'		 => __( 'Customer Job', 'akaka' ),
-  			'default'	 =>'',
-  		),	
-
-  		'testimonials_description'	 => array(
-  			'type'		 => 'textarea',
-  			'label'		 => __( 'Description', 'akaka' ),
-  			'default'	 =>'',
-  		),	
-	
-  	),
-	
-    'row_label'			 => array(
-  		'type'	 => 'text',
-  		'value'	 => __( 'Testimonials Item', 'akaka' ),
-  	),
-  ) );*/
 
   Kirki::add_field( 'akaka_settings', array(
   	'type'		 => 'repeater',
@@ -460,7 +413,6 @@
   	'section'	 => 'testimonials_section',
   	'priority'	 => 10,
   	'settings'	 => 'repeater_testimonials',
-    //'sanitize_callback' => 'esc_attr',
 	
 	'default'     => akaka_section_content_default('testimonials'),
   	'fields'	 => array(

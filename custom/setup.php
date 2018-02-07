@@ -62,7 +62,7 @@ function akaka_section_live_css($key){
 			
 			$slide_image = $sliders['images'];
 			
-			$custom_css .=".ct_slider_item_".($j+1)."{background-image: url(".$slide_image.");background-size:auto 100%;background-position: center;}.ct_slider_item_".($j+1).":after {content: '';position: absolute;width: 100%;height: 100%;top: 0;left: 0;background-color: rgba(37, 46, 53, 0.5);}";
+			$custom_css .=".ct_slider_item_".($j+1)."{background-image: url(".esc_url($slide_image).");background-size:auto 100%;background-position: center;}.ct_slider_item_".($j+1).":after {content: '';position: absolute;width: 100%;height: 100%;top: 0;left: 0;background-color: rgba(37, 46, 53, 0.5);}";
 	
 	 
 		  endif;
@@ -83,24 +83,21 @@ function akaka_section_live_css($key){
 	  $default = $sections[$key];
 	  
 	  $default_content = akaka_section_content_default($key); 
-	  
-	  $enable_parallax_background = get_theme_mod( $key.'_enable_parallax_background', 1 );
-	
 		  
 	  // section title hr	  
 	  $title_typography_value = get_theme_mod( $key.'_title_typography', akaka_get_default_title_font($key) );
-	  $title_bottom_hr_color  = theta_change_color($title_typography_value['color'],0.5);
+	  $title_bottom_hr_color  = esc_attr(theta_change_color($title_typography_value['color'],0.5));
 	  
 	  $custom_css .='section.ct_section_'.$i.' .section-title-hr { border-top: 1px solid '.$title_bottom_hr_color.';}
 	  section.ct_section_'.$i.'  .section-title-hr:after {  border-top: 10px solid '.$title_bottom_hr_color.';}';
 	  
 	 
 	  //background color and  opacity  
-	  $section_background_color     = get_theme_mod( $key.'_section_background_color',$default['color']); 
+	  $section_background_color     = esc_attr(get_theme_mod( $key.'_section_background_color',$default['color'])); 
 	  $section_background_opacity     = get_theme_mod( $key.'_section_background_opacity',1); 
 	
 	  // background
-	  $section_background_image  = get_theme_mod( $key.'_section_background_image',$default['img']); 
+	  $section_background_image  = esc_url(get_theme_mod( $key.'_section_background_image',$default['img'])); 
 	  
 	  if(!$enable_parallax_background){
 		$background                    = theta_get_background( $section_background_color , $section_background_opacity );	
@@ -135,7 +132,7 @@ function akaka_section_live_css($key){
 		  
 	  // section title hr	  
 	  $title_typography_value = get_theme_mod( $key.'_title_typography', akaka_get_default_title_font($key) );
-	  $title_bottom_hr_color  = theta_change_color($title_typography_value['color'],0.5);
+	  $title_bottom_hr_color  = esc_attr(theta_change_color($title_typography_value['color'],0.5));
 	  
 	  $custom_css .='section.ct_section_'.$i.' .section-title-hr { border-top: 1px solid '.$title_bottom_hr_color.';}
 	  section.ct_section_'.$i.'  .section-title-hr:after {  border-top: 10px solid '.$title_bottom_hr_color.';}';
@@ -235,34 +232,10 @@ function akaka_section_live_js($key){
 		  },
 		  offset: "80%"
 		});';
-
  	  break;	
-	case 'tool':	
-		
-
- 	  break;	
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
 	  
 	default:
 	  $custom_js  = '';	
-	  	  
-
-
 
   }
   return $custom_js;	
