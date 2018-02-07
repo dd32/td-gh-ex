@@ -2,7 +2,7 @@
  * Weaver Xtreme JavaScript support Library
  *
  * Author: WeaverTheme - www.weavertheme.com
- * @version 3,0
+ * @version 3.1.12
  * @license GNU Lesser General Public License, http://www.gnu.org/copyleft/lesser.html
  * @author  Bruce Wampler
  *
@@ -13,7 +13,16 @@
  *
  ************************************************************************************* */
 //Initial load of page
-//jQuery(document).ready(weaverxOnResize);	// don't really want this - it results in a double call on initial load
+var agent = navigator.userAgent;
+
+	// Safari is breaking our generated extend width CSS, so by removing the .wvrx-not-safari class from body,
+	// we can force the JS to fix it. For whatever reason, the Safari agend string included both Chrome and Safari. Bizarre!
+
+	if (agent.match(/Safari/i) && !agent.match(/Chrome/i)) {	// run document ready just for Safari to get around full width issues
+		jQuery(document).ready(weaverxOnResize);
+	}
+
+//jQuery(document).ready(weaverxOnResize);	// don't really nned this for non-safari - it results in a double call on initial load
 // *********************************** >>>  JavaScript Functions <<< *******************************************
 // *********************************** >>>  weaverxBrowserWidth <<< *******************************************
 function weaverxBrowserWidth() {
@@ -342,7 +351,7 @@ if (!Object.create) { // IE8 shim for Object.create
             // Automatically insert a toggle button icon - dashicon
             if (menu.toggleButton.length < 1) {
                 if (!mo.hideToggle) {
-                    if (wvrxOpts.mobileAltLabel === '')
+                    if (typeof wvrxOpts !== 'undefined' && wvrxOpts.mobileAltLabel === '')
                         menu.toggleButton = menu.container.prepend('<div id="' + mo.toggleButtonID + '" class="menu-toggle-button genericon genericon-wvrx-menu" alt="open menu"></div>').find('#' + mo.toggleButtonID).hide();
                     else
                         menu.toggleButton = menu.container.prepend('<div id="' + mo.toggleButtonID + '" class="menu-toggle-button menu-toggle-menu" alt="open menu">' + wvrxOpts.mobileAltLabel + '</div>').find('#' + mo.toggleButtonID).hide();
@@ -440,7 +449,7 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 
 (function($) {
     /* Detect device in use  */
-    if (wvrxOpts.useSmartMenus != '0')
+    if (typeof wvrxOpts !== 'undefined' &&  wvrxOpts.useSmartMenus != '0')
         return;
 
     var weaverx_isTouch = ("ontouchstart" in window) ||
@@ -582,7 +591,7 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 function weaverxOnResize() {
     // this function is called on initial window load, and again on resizes
     var width;
-    if (typeof(wvrxOpts.menuAltswitch) == 'undefined' || wvrxOpts.menuAltswitch === null)
+    if (typeof wvrxOpts.menuAltswitch == 'undefined' || wvrxOpts.menuAltswitch === null)
         wvrxOpts.menuAltswitch = 767;
     width = weaverxBrowserWidth();
 
@@ -662,7 +671,7 @@ jQuery(window).scroll(function() {
 jQuery(function($) {
     $('.wrapper').resizeX(weaverxOnResize);
 
-    if (wvrxOpts.useSmartMenus == '0') { // SmartMenus handled inline
+    if (typeof wvrxOpts !== 'undefined' && wvrxOpts.useSmartMenus == '0') { // SmartMenus handled inline
         $('#nav-primary .weaverx-theme-menu').thmfdnMenu({
             toggleButtonID: 'primary-toggle-button'
         });
@@ -677,5 +686,6 @@ jQuery(function($) {
 
 // Add header video class after the video is loaded.
 	jQuery( document ).on( 'wp-custom-header-video-loaded', function() {
-		jQuery('body').addClass( wvrxOpts.headerVideoClass );
+		if (typeof wvrxOpts !== 'undefined')
+			jQuery('body').addClass( wvrxOpts.headerVideoClass );
 	});

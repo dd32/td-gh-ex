@@ -381,7 +381,7 @@ function weaverx_page_lead( $who , $archive = false ) {
 
 	do_action('weaverx_per_page');
 
-	echo '<div id="content" role="main"' . weaverx_content_class( $sb_layout, $who, false ) . ">\n";
+	echo '<div id="content" role="main"' . weaverx_content_class( $sb_layout, $who, false ) . apply_filters( 'weaverx_schema', $who ) . "> <!-- {$who} -->\n";
 	weaverx_inject_area( 'precontent' );
 
 	return $sb_layout;

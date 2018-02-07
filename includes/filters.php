@@ -216,23 +216,36 @@ function weaverx_page_menu( $args = array() ) {
 
 // =============================== >>> FILTER: weaverx_schema <<< ================================
 
-add_filter( 'weaverx_schema', 'weaverx_schema_filter' );
+// add_filter( 'weaverx_schema', 'weaverx_schema_filter' );	// disable in 3.1.12
 
 function weaverx_schema_filter( $who ) {
 
-	if ( false )
-		return '';		// schema disabled
-
 	switch ( $who ) {
+		case 'archive':
+		case 'author':
+		case 'blog':
+		case 'category':
+		case 'single':
+		case 'tag':
+			$schema = ' itemtype="http://schema.org/Blog" itemscope';
+			break;
+
 		case 'body':
-			$schema = ' itemscope itemtype="http://schema.org/WebPage"';
+			if ( is_search() ) {
+				$schema = ' itemtype="http://schema.org/SearchResultsPage" itemscope';
+			} else
+				$schema = ' itemtype="http://schema.org/WebPage" itemscope';
+			break;
+
+		case 'image':
+		case 'page':
+			$schema = ' itemtype="http://schema.org/WebPageElement" itemscope itemprop="mainContentOfPage"';
 			break;
 
 		default:
 			$schema = '';
 	}
-	echo $schema;
-	return '';
+	return $schema;
 }
 
 // =============================== >>> FILTER: weaverx_schema <<< ================================

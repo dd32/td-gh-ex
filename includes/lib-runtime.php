@@ -480,16 +480,19 @@ function weaverx_header_widget_area( $where_now ) {	// header.php support
 
 	$sb_position = weaverx_getopt_default('header_sb_position', 'top');
 
-	if ( $sb_position == $where_now  && weaverx_has_widgetarea('header-widget-area') ) {
-		$p_class = weaverx_area_class('header_sb', 'notpad', '-none', 'margin-none');
+	if ( $sb_position == $where_now ) {
+		do_action('weaverx_alt_header_image');				// support plugins to add alternate header image
+		if ( weaverx_has_widgetarea('header-widget-area') ) {
+			$p_class = weaverx_area_class('header_sb', 'notpad', '-none', 'margin-none');
 
-		if ( weaverx_getopt('expand_header-widget-area') && !weaverx_getopt('expand_header') ) $p_class .= ' wvrx-expand-full';
-		if ( weaverx_getopt('header_sb_fixedtop') ) $p_class .= ' wvrx-fixedtop';
+			if ( weaverx_getopt('expand_header-widget-area') && !weaverx_getopt('expand_header') ) $p_class .= ' wvrx-expand-full';
+			if ( weaverx_getopt('header_sb_fixedtop') ) $p_class .= ' wvrx-fixedtop';
 
-		//weaverx_clear_both('header_sb');
-		weaverx_put_widgetarea('header-widget-area', $p_class, 'header');
-		if (weaverx_getopt('header_sb_align') == 'float-right')
-			weaverx_clear_both('header-widget-area');
+			//weaverx_clear_both('header_sb');
+			weaverx_put_widgetarea('header-widget-area', $p_class, 'header');
+			if (weaverx_getopt('header_sb_align') == 'float-right')
+				weaverx_clear_both('header-widget-area');
+		}
 	}
 }
 

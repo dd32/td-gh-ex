@@ -422,7 +422,6 @@ require_once(get_template_directory() . '/settings.php');	                // set
 require_once(get_template_directory() . '/includes/lib-content.php');	    // page/post display support
 require_once(get_template_directory() . '/includes/lib-layout.php'); 	    // content layout support
 require_once(get_template_directory() . '/includes/lib-runtime.php');	    // standard runtime library
-require_once(get_template_directory() . '/includes/pluggables.php');	    // pluggables - overridable functions
 require_once(get_template_directory() . '/includes/filters.php');	        // other filter and action definitions
 
 if (is_user_logged_in() ) {
