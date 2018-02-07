@@ -1,7 +1,9 @@
 == Changelog ==
+= 1.0.4 =
+* Review theme feedback fixed
 
 = 1.0.3 =
-* Addmin Options Added
+* Review theme feedback fixed
 
 = 1.0.2 =
 * Addmin Options Added

@@ -141,7 +141,7 @@ function business_consulting_widgets_init() {
 		'after_title'   => '</h4>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'bc-business-consulting' ),
+		'name'          => esc_html__( 'Front Page Sidebar', 'bc-business-consulting' ),
 		'id'            => 'front_page_sidebar',
 		'description'   => esc_html__( 'Add widgets here.', 'bc-business-consulting' ),
 		'before_widget' => '<aside class="col-md-3 col-sm-6 col-xs-6 ftr-widget link-widget">',
@@ -150,7 +150,7 @@ function business_consulting_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'bc-business-consulting' ),
+		'name'          => esc_html__( 'Blog Page Sidebar', 'bc-business-consulting' ),
 		'id'            => 'blog_page_sidebar',
 		'description'   => esc_html__( 'Add widgets here.', 'bc-business-consulting' ),
 		'before_widget' => '<aside class="col-md-3 col-sm-6 col-xs-6 ftr-widget link-widget">',

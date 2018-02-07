@@ -42,7 +42,7 @@ function business_consulting_customize_register( $wp_customize ) {
 			array(
 				'title'    => esc_html__( 'BC Pro', 'bc-business-consulting' ),
 				'pro_text' => esc_html__( 'Upgrade To Pro', 'bc-business-consulting' ),
-				'pro_url'  => 'https://athemeart.com/downloads/business-consulting?ref=customize',
+				'pro_url'  => 'https://athemeart.com/downloads/bc-business-consulting/',
 				'priority'  => 1,
 			)
 		)

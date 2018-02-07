@@ -99,7 +99,7 @@ $wp_customize->add_section( 'social_option_section_settings',
 						array(
 							'label'		 => esc_attr( $val['label'] ), 
 							'section'    => 'social_option_section_settings',
-							'type'       => 'text',
+							'type'       => 'url',
 							
 						)
 					);

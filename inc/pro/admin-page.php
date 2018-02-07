@@ -120,11 +120,11 @@ class business_consulting_Admin {
 			<div class="welcome-description-wrap">
 				<div class="about-text"><?php echo esc_html( $theme->display( 'Description' ) ); ?>
 				<p class="cresta-actions">
-					<a href="<?php echo esc_url( 'https://athemeart.com/downloads/business-consulting?ref=welcome' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'bc-business-consulting' ); ?></a>
+					<a href="<?php echo esc_url( 'https://athemeart.com/downloads/bc-business-consulting/?ref=welcome' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'bc-business-consulting' ); ?></a>
 
 					<a href="<?php echo esc_url( apply_filters( 'business_consulting_pro_theme_url', 'https://athemeart.com/demo/bc/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'bc-business-consulting' ); ?></a>
 
-					<a href="<?php echo esc_url( apply_filters( 'business_consulting_pro_theme_url', 'https://athemeart.com/downloads/business_consulting?ref=welcome' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version Demo', 'bc-business-consulting' ); ?></a>
+					<a href="<?php echo esc_url( apply_filters( 'business_consulting_pro_theme_url', 'https://athemeart.com/downloads/bc-business-consulting/?ref=welcome' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version Demo', 'bc-business-consulting' ); ?></a>
 
 					<a href="<?php echo esc_url( apply_filters( 'business_consulting_pro_theme_url', 'http://wordpress.org/support/view/theme-reviews/bc_business_consulting?filter=5#postform' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'bc-business-consulting' ); ?></a>
 				</p>
@@ -296,12 +296,6 @@ class business_consulting_Admin {
 						<td><?php esc_html_e('WP forum', 'bc-business-consulting'); ?></td>
 						<td><?php esc_html_e('Ticket, email , Skype & Teamviewer', 'bc-business-consulting'); ?></td>
 					</tr>
-                     <tr>
-						<td><h4><?php esc_html_e('visual composer ', 'bc-business-consulting'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span><br/>Save $45</td>
-					</tr>
-                    
                     <tr>
 						<td><h4><?php esc_html_e('visual composer bc toolkit addons  ', 'bc-business-consulting'); ?></h4></td>
 						<td><span class="dashicons dashicons-no"></span></td>
@@ -317,7 +311,6 @@ class business_consulting_Admin {
 						<td><span class="dashicons dashicons-yes"></span></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
-                    
                     <tr>
 						<td><h4><?php esc_html_e('Post format', 'bc-business-consulting'); ?></h4></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
@@ -403,12 +396,6 @@ class business_consulting_Admin {
 						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
                     <tr>
-						<td><h4><?php esc_html_e('8+ NEWS RELATED WIDGETS', 'bc-business-consulting'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                  
-                      <tr>
 						<td><h4><?php esc_html_e('  Footer Branding Our Site', 'bc-business-consulting'); ?></h4></td>
 						<td><?php esc_html_e('Yes', 'bc-business-consulting'); ?></td>
 						<td><?php esc_html_e('No', 'bc-business-consulting'); ?></td>
@@ -424,7 +411,7 @@ class business_consulting_Admin {
 						<td></td>
 						<td class="btn-wrapper">
 							
-							<a href="<?php echo esc_url( apply_filters( 'business_consulting_pro_theme_url', 'https://athemeart.com/downloads/business-consulting?ref=welcome' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'More Information', 'bc-business-consulting' ); ?></a>
+							<a href="<?php echo esc_url( apply_filters( 'business_consulting_pro_theme_url', 'https://athemeart.com/downloads/bc-business-consulting/?ref=welcome' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'More Information', 'bc-business-consulting' ); ?></a>
 						</td>
 					</tr>
 				</tbody>

@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: BC Business Consulting\n"
-"POT-Creation-Date: 2017-11-24 01:07+0600\n"
-"PO-Revision-Date: 2017-11-24 01:07+0600\n"
+"POT-Creation-Date: 2018-02-07 08:48+0600\n"
+"PO-Revision-Date: 2018-02-07 08:48+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -124,7 +124,7 @@ msgid "Solution Of The Year"
 msgstr ""
 
 #: inc/customizer/customizer.php:43
-msgid "NewsBD24 Pro"
+msgid "BC Pro"
 msgstr ""
 
 #: inc/customizer/customizer.php:44
@@ -268,54 +268,286 @@ msgstr ""
 msgid "Next Article"
 msgstr ""
 
-#: inc/template-functions.php:271
+#: inc/pro/admin-page.php:36 inc/pro/admin-page.php:37
+msgid "Getting Started"
+msgstr ""
+
+#: inc/pro/admin-page.php:78
+msgid "Action failed. Please refresh the page and retry."
+msgstr ""
+
+#: inc/pro/admin-page.php:83
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#: inc/pro/admin-page.php:97
+msgid "Dismiss"
+msgstr ""
+
+#: inc/pro/admin-page.php:98
+#, php-format
+msgid ""
+"Welcome! Thank you for choosing business consulting! To fully take advantage "
+"of the best our theme can offer please make sure you visit our %1$swelcome "
+"page%2$s."
+msgstr ""
+
+#: inc/pro/admin-page.php:100
+msgid "Get started with BC"
+msgstr ""
+
+#: inc/pro/admin-page.php:116
+msgid "About"
+msgstr ""
+
+#: inc/pro/admin-page.php:123
+msgid "Theme Info"
+msgstr ""
+
+#: inc/pro/admin-page.php:125
+msgid "View Demo"
+msgstr ""
+
+#: inc/pro/admin-page.php:127
+msgid "View PRO version Demo"
+msgstr ""
+
+#: inc/pro/admin-page.php:129
+msgid "Rate this theme"
+msgstr ""
+
+#: inc/pro/admin-page.php:142
+msgid "Free Vs PRO"
+msgstr ""
+
+#: inc/pro/admin-page.php:145
+msgid "Changelog"
+msgstr ""
+
+#: inc/pro/admin-page.php:149
+msgid "Theme Club"
+msgstr ""
+
+#: inc/pro/admin-page.php:187
+msgid "Theme Customizer"
+msgstr ""
+
+#: inc/pro/admin-page.php:188
+msgid "All Theme Options are available via Customize screen."
+msgstr ""
+
+#: inc/pro/admin-page.php:189
+msgid "Customize"
+msgstr ""
+
+#: inc/pro/admin-page.php:193
+msgid "Got theme support question?"
+msgstr ""
+
+#: inc/pro/admin-page.php:194
+msgid "Please put it in our support forum."
+msgstr ""
+
+#: inc/pro/admin-page.php:195
+msgid "Support"
+msgstr ""
+
+#: inc/pro/admin-page.php:199
+msgid "Need more features?"
+msgstr ""
+
+#: inc/pro/admin-page.php:200 inc/pro/admin-page.php:283
+msgid "Upgrade to PRO version for more exciting features."
+msgstr ""
+
+#: inc/pro/admin-page.php:201
+msgid "Info about PRO version"
+msgstr ""
+
+#: inc/pro/admin-page.php:211
+msgid "Return to Updates"
+msgstr ""
+
+#: inc/pro/admin-page.php:211
+msgid "Return to Dashboard &rarr; Updates"
+msgstr ""
+
+#: inc/pro/admin-page.php:214
+msgid "Go to Dashboard &rarr; Home"
+msgstr ""
+
+#: inc/pro/admin-page.php:214
+msgid "Go to Dashboard"
+msgstr ""
+
+#: inc/pro/admin-page.php:231
+msgid "View changelog below:"
+msgstr ""
+
+#: inc/pro/admin-page.php:288
+msgid "Features"
+msgstr ""
+
+#: inc/pro/admin-page.php:289
+msgid "business consulting"
+msgstr ""
+
+#: inc/pro/admin-page.php:290
+msgid "business consulting PRO"
+msgstr ""
+
+#: inc/pro/admin-page.php:295
+msgid "24/7 Priority Support"
+msgstr ""
+
+#: inc/pro/admin-page.php:296
+msgid "WP forum"
+msgstr ""
+
+#: inc/pro/admin-page.php:297
+msgid "Ticket, email , Skype & Teamviewer"
+msgstr ""
+
+#: inc/pro/admin-page.php:300
+msgid "visual composer bc toolkit addons  "
+msgstr ""
+
+#: inc/pro/admin-page.php:305
+msgid "Navigation Color"
+msgstr ""
+
+#: inc/pro/admin-page.php:310
+msgid "Responsive Design"
+msgstr ""
+
+#: inc/pro/admin-page.php:315
+msgid "Post format"
+msgstr ""
+
+#: inc/pro/admin-page.php:320
+msgid "Change Background"
+msgstr ""
+
+#: inc/pro/admin-page.php:325
+msgid "Unlimited Text Color"
+msgstr ""
+
+#: inc/pro/admin-page.php:330
+msgid "Logo Upload"
+msgstr ""
+
+#: inc/pro/admin-page.php:335
+msgid "Choose Social Icon "
+msgstr ""
+
+#: inc/pro/admin-page.php:340
+msgid "jQuery Lightbox Popup "
+msgstr ""
+
+#: inc/pro/admin-page.php:348
+msgid "Extended Theme Options Panel"
+msgstr ""
+
+#: inc/pro/admin-page.php:353
+msgid "Styling for all sections"
+msgstr ""
+
+#: inc/pro/admin-page.php:358
+msgid "Google Fonts Supported (500+ Fonts)"
+msgstr ""
+
+#: inc/pro/admin-page.php:363
+msgid "Homepage Sections"
+msgstr ""
+
+#: inc/pro/admin-page.php:368
+msgid "Sub Title"
+msgstr ""
+
+#: inc/pro/admin-page.php:374 inc/pro/admin-page.php:379
+msgid "Page Layout Style"
+msgstr ""
+
+#: inc/pro/admin-page.php:384
+msgid "Blog Layout Style"
+msgstr ""
+
+#: inc/pro/admin-page.php:389
+msgid "Blog Gird Style"
+msgstr ""
+
+#: inc/pro/admin-page.php:394
+msgid "Breadcrumb"
+msgstr ""
+
+#: inc/pro/admin-page.php:399
+msgid "  Footer Branding Our Site"
+msgstr ""
+
+#: inc/pro/admin-page.php:400
+msgid "Yes"
+msgstr ""
+
+#: inc/pro/admin-page.php:401
+msgid "No"
+msgstr ""
+
+#: inc/pro/admin-page.php:405
+msgid "WP-Admin Welcome Section"
+msgstr ""
+
+#: inc/pro/admin-page.php:414
+msgid "More Information"
+msgstr ""
+
+#: inc/template-functions.php:266
 msgid "Toggle navigation"
 msgstr ""
 
-#: inc/template-functions.php:340
+#: inc/template-functions.php:335
 msgid "Set Up menu here"
 msgstr ""
 
-#: inc/template-functions.php:373
+#: inc/template-functions.php:368
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: inc/template-functions.php:373
+#: inc/template-functions.php:368
 #, php-format
 msgid "Proudly powered by %s ."
 msgstr ""
 
-#: inc/template-functions.php:376
+#: inc/template-functions.php:371
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: inc/template-functions.php:376
+#: inc/template-functions.php:371
 msgid "https://athemeart.com"
 msgstr ""
 
-#: inc/template-functions.php:376
+#: inc/template-functions.php:371
 msgid "aThemeArt"
 msgstr ""
 
-#: inc/template-functions.php:482
+#: inc/template-functions.php:471
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: inc/template-functions.php:486
+#: inc/template-functions.php:475
 msgid "404 Error"
 msgstr ""
 
-#: inc/template-functions.php:645
+#: inc/template-functions.php:634
 msgid "Previous"
 msgstr ""
 
-#: inc/template-functions.php:646
+#: inc/template-functions.php:635
 msgid "Next"
 msgstr ""
 
-#: inc/template-functions.php:647
+#: inc/template-functions.php:636
 msgid "&nbsp;"
 msgstr ""
 
@@ -375,8 +607,16 @@ msgstr ""
 msgid "Add widgets here."
 msgstr ""
 
-#: inc/theme-core.php:135 inc/theme-core.php:144 inc/theme-core.php:153
+#: inc/theme-core.php:135
 msgid "Footer"
+msgstr ""
+
+#: inc/theme-core.php:144
+msgid "Front Page Sidebar"
+msgstr ""
+
+#: inc/theme-core.php:153
+msgid "Blog Page Sidebar"
 msgstr ""
 
 #: single.php:32
