@@ -1,0 +1,45 @@
+jQuery(document).ready(function($){
+
+	  /** Variables from Customizer for Slider settings */
+    if( bakery_shop_data.auto == '1' ){
+        var slider_auto = true;
+    }else{
+        slider_auto = false;
+    }
+    
+    if( bakery_shop_data.loop == '1' ){
+        var slider_loop = true;
+    }else{
+        var slider_loop = false;
+    }
+    
+    if( bakery_shop_data.pager == '1' ){
+        var slider_control = true;
+    }else{
+        slider_control = false;
+    }
+
+
+    if( bakery_shop_data.animation == 'fade' ){
+        var slider_animation = 'fade';
+    }else{
+        slider_animation = '';
+    }
+    
+   
+    /** Home Page  Banner Slider */
+   
+	$('.fadeout').owlCarousel({
+		items: 1,
+		animateOut: slider_animation,// animation
+		loop: slider_loop, // loop
+		margin: 10,
+		nav: true,
+		navText:["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+		autoplay: slider_auto, //auto play
+		dots:  slider_control, //slider control
+		slideSpeed       : bakery_shop_data.speed,
+		autoplayTimeout: bakery_shop_data.pause
+	});
+
+});
