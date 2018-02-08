@@ -6,6 +6,9 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 4.1.1 [08-02-2018]
+1.Minor Change
+
 @Version: 4.1 [03-01-2018]
 1. Category option added for blog.
 
