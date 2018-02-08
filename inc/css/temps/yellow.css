@@ -41,7 +41,10 @@ input[type="submit"],
 .woocommerce button.button.alt, 
 .woocommerce input.button.alt,
 .woocommerce #respond input#submit.alt, 
-.woocommerce a.button.alt{
+.woocommerce a.button.alt,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input[type="submit"] {
     background: #f1c40f;
     color: #fff;
 }
@@ -50,7 +53,10 @@ input[type="submit"],
 .woocommerce button.button.alt:hover, 
 .woocommerce input.button.alt:hover,
 .woocommerce #respond input#submit.alt:hover, 
-.woocommerce a.button.alt:hover{
+.woocommerce a.button.alt:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input[type="submit"]:hover {
     background: #f5d313;
 }
 
@@ -95,4 +101,9 @@ input[type="submit"],
 
 #athena-overlay-trigger{
     border-color: transparent transparent #f1c40f transparent;
+}
+
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range, 
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
+    background-color: #f1c40f;
 }

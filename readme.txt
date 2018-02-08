@@ -5,7 +5,7 @@ Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,grid-layou
 
 Requires at least: 4.6
 Tested up to: 4.9.2
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,6 +74,12 @@ Bug fix for sidebar on Shop page
 = 1.1.1 - Oct 20th, 2017
 Reinstate WooCommerce Gallery features by specifically adding declarations
 Fix for deprecated get_cart_url() for WooCommerce
+
+= 1.1.2 - Feb 5th, 2018
+Removed yellow highlighted product count from WooCommerce categories in Shop view
+
+= 1.2.0 - Feb 8th, 2018
+Revamp of all WooCommerce template overrides in use and related styling
 
 == Credits ==
 

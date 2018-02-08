@@ -18,6 +18,8 @@ get_header('shop');
     <header id="title_bread_wrap" class="entry-header">
         <div class="ak-container">
 
+            <div class="col-sm-12">
+            
             <?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
 
                 <h1 class="entry-title ak-container"><?php woocommerce_page_title(); ?></h1>
@@ -36,6 +38,7 @@ get_header('shop');
 
 
             <?php do_action('woocommerce_archive_description'); ?>
+            </div>
         </div>
     </header>
     <div class="inner">
