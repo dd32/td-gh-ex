@@ -64,4 +64,9 @@ require $accesspress_store_widget_file_path = accesspress_store_file_directory('
 /**
  * Load Welcome Page
 */
+require $accesspress_store_woocommerce_hooks_file_path = accesspress_store_file_directory('woocommerce/woocommerce-hooks.php');
+
+/**
+ * Load Welcome Page
+*/
 require $accesspress_store_plugin_activation_file_path = accesspress_store_file_directory('welcome/welcome.php');

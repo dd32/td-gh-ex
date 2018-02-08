@@ -47,6 +47,8 @@ Images
 
 
 == Changelog ==
+= 2.2.5 =
+** Fixed Woocommerce outdated template issue.
 
 = 2.2.4 =
 ** Fixed issue with not displaying of featured products
