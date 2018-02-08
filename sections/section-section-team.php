@@ -24,12 +24,18 @@
 	$i = 1;
 	$avata_animation_delay_new = $avata_animation_delay;
 	if (is_array($team) && !empty($team) ):
+		$num = count($team);
+		if($num>=4){
+			$col = 3;
+		}else{
+			$col = 12/$num;		
+		}
 		foreach($team as $item ):
 			if(is_numeric($item['avatar']))
 				$item['avatar'] = wp_get_attachment_image_url($item['avatar'],'full');
 	?>
     
-    <div class="col-md-4 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay_new;?>">
+    <div class="col-md-<?php echo $col;?> <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay_new;?>">
         <div class="person"> <img src="<?php echo esc_url($item['avatar']);?>" alt="<?php echo esc_attr($item['name']);?>" class="img-responsive">
           <div class="person-content">
             <h4><?php echo esc_attr($item['name']);?></h4>

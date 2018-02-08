@@ -2,6 +2,10 @@
 
 == CHANGE LOG == 
 
+= Version 1.4.9 = = 08/02/2018
+* Fix - Fixed  "Menu Font Color" option issue
+* Optimized Section Team
+
 = Version 1.4.8 = = 30/01/2018
 * Add - Added allow html tags
 

@@ -171,7 +171,7 @@ function avata_enqueue_scripts() {
 		}
 		
 	$menu_color_frontpage =  avata_option('menu_color_frontpage');
-	$css .=  ".homepage-header .main-nav > li > a{color:".$menu_color_frontpage.";}";
+	$css .=  ".homepage-header .main-nav > li > a,.homepage-header .main-nav > li > a span,{color:".$menu_color_frontpage.";}";
 	
 	$anchors = array();
 	
