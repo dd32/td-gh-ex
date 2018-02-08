@@ -1,20 +1,11 @@
 <?php
 /**
- * The sidebar containing the main widget area
+ * The sidebar containing the main widget area.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Agency X
+ * @package agency-x
  */
-
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
 ?>
-<aside class="col-md-4">
 
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-	
-</aside>
-
-
+<div id="secondary" class="widget-area" role="complementary">
+	<?php dynamic_sidebar( 'right-sidebar-1' ); ?>
+</div><!-- #secondary -->

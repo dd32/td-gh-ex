@@ -1,75 +1,87 @@
 <?php
 /**
- * The header for our theme
+ * The header for our theme.
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
+ * Displays all of the <head> section and everything up till <header>
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Agency X
+ * @package agency-x
  */
 
 ?>
-<!doctype html>
-<html <?php language_attributes(); ?>>
-	<head>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?> class="no-js">
+<head>
+	<!-- Meta tag -->
+		<meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="description" content="">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">	
+	<?php wp_head(); ?>
+</head>
 
-		<!-- meta -->
-		<meta charset="<?php bloginfo( 'charset' ); ?>">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="profile" href="http://gmpg.org/xfn/11">
+<body <?php body_class(); ?>>
+<!-- Preloader -->
+<div class="loader">
+	<div class="loader-inner">
+		<div class="k-line k-line11-1"></div>
+		<div class="k-line k-line11-2"></div>
+		<div class="k-line k-line11-3"></div>
+		<div class="k-line k-line11-4"></div>
+		<div class="k-line k-line11-5"></div>
+	</div>
+</div>
+<!-- End Preloader -->
 
-	    <!-- css -->
-		<?php wp_head(); ?>
-	</head>
-
-	 <body <?php body_class(); ?>>
-		<div class="container">	
-			<a class="skip-link screen-reader-text" href=".content-body"><?php esc_html_e( 'Skip to content', 'agency-x' ); ?></a>
-			<header id="site-header">
-				<div class="row">
-					<div class="col-md-4 col-sm-5 col-xs-8">
-						<div class="logo">
-							<?php if(has_custom_logo()):
-									the_custom_logo(); 
-				else: ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><b><?php bloginfo( 'name' ); ?></b></a></h1>
-							<?php  $description = get_bloginfo( 'description', 'display' );
-							if ( $description || is_customize_preview() ) : ?>
-							<p class='site-description'><?php echo $description; /* WPCS: xss ok. */ ?></p>
-						<?php endif; ?>
-					<?php endif; ?>
-
-			
-						</div>
-					</div><!-- col-md-4 -->
-					<div class="col-md-8 col-sm-7 col-xs-4">
-						<nav class="main-nav" role="navigation">
-							<div class="navbar-header">
-  								<button type="button" id="trigger-overlay" class="navbar-toggle">
-    								<span class="ion-navicon"></span>
-  								</button>
-							</div>
-
-							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-  								<ul class="nav navbar-nav navbar-right">
-    								<?php
-											wp_nav_menu( array(
-												'theme_location' => 'menu-1',
-												'menu_id'        => 'primary-menu',
-												'container'         => 'div',
-							                	'menu_class'        => 'nav navbar-nav menu',
-											) );
-										?>
-  								</ul>
-							</div><!-- /.navbar-collapse -->
-						</nav>
-
-					</div><!-- col-md-8 -->
+<!-- Start Header -->
+<header id="header">
+	<!-- Header Inner -->
+	<div class="header-inner">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2 col-sm-12 col-xs-12">
+					<!-- Logo -->
+					<div class="logo">
+						<a href="<?php home_url(); ?>"><?php the_custom_logo(); ?></a>
+					</div>
+					<!--/ End Logo -->
 				</div>
-			</header>
-		</div>
+				<?php if( has_nav_menu( 'primary' ) ) : ?>
+					<div class="col-md-10 col-sm-12 col-xs-12">
+						<div class="nav-area">
+							<!-- Main Menu -->
+							<nav class="mainmenu">
+								<div class="mobile-nav"></div>
 
-		<div class="content-body">
-			<div class="container">
-				<div class="row">
+								<?php
+									$args = array(
+										'theme_location'	=>	'primary',									
+										'container'			=>	'div',
+										'container_class'	=>	'collapse navbar-collapse',
+										'menu_class'		=>	'nav navbar-nav',
+										'walker'			=>	new Agency_X_Wp_Bootstrap_Navwalker()
+									);
+								?>
+
+								<?php 
+									 wp_nav_menu( $args );
+								 ?>					
+							</nav>
+							<!--/ End Main Menu -->
+							<!-- Search Form -->
+							<ul class="search">
+								<li><a href="#header"><i class="fa fa-search"></i></a></li>
+							</ul>	
+							<div class="search-form">
+								<?php get_search_form( true ); ?>							
+							</div>
+							<!--/ End Search Form -->
+						</div>
+					</div>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
+	<!--/ End Header Inner -->
+</header>
+<!--/ End Header -->

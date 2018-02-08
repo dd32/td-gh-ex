@@ -1,46 +1,44 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying single posts.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Agency X
+ * @package agency-x
  */
 
 ?>
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-							<header class="entry-header">
-								<?php
-									if ( is_singular() ) :
-										the_title( '<h1 class="entry-title">', '</h1>' );
-									else :
-										the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
-									endif;
 
-									if ( 'post' === get_post_type() ) : ?>
-									<div class="entry-meta">
-										<?php agency_x_posted_on(); ?>
-										<?php agency_x_entry_footer(); ?>
-									</div><!-- .entry-meta -->
-									<?php
-									endif; ?>
-							</header>
-							<figure class="img-responsive-center">
-									 <?php if(has_post_thumbnail()){ $arg=array( 'class'=> 'img-responsive' ); the_post_thumbnail('',$arg); } ?>
-							</figure>
-							<div class="entry-content clearfix">
-								<p>
-									<?php
-											the_content();
-
-											wp_link_pages( array(
-												'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'agency-x' ),
-												'after'  => '</div>',
-											) );
-										?>
-								</p>
-								
-							</div>
-						</article>
-
-
+<div class="col-md-8">
+  <div class="entry-blog">
+    <!-- Single Blog -->
+    <div class="single-blog">
+      <div class="blog-head">
+        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' ); ?> 
+        <?php if( ! empty( $image ) ) { ?>
+            <img src="<?php echo esc_url( $image[0] ); ?>" class="img-responsive" alt="<?php echo esc_attr( get_the_title() ); ?>">
+        <?php } ?>
+        <span><i class="fa fa-calendar"></i><?php echo esc_attr( get_the_date() ); ?></span>
+        <a class="icon" href="#"><i class="fa fa-link"></i></a>
+      </div>
+      <div class="blog-info">
+        <h4><a href="blog-single.html"><?php the_title(); ?></a></h4>
+        <div class="meta">
+          <span><i class="fa fa-user"></i><?php echo esc_html( get_author_role() ); ?></span>
+          <span><i class="fa fa-comments"></i><?php comments_number( __( 'No comments', 'agency-x' ), __( 'one comment', 'agency-x' ), __( '% comments', 'agency-x' ) ); ?></span>
+        </div>
+       <?php the_content(); ?>
+      </div>
+      
+      <!-- Blog Prev Next -->
+      <div class="prev-next">
+        <ul>
+          <li class="prev"><?php previous_post_link( '&laquo; %link', 'Prev', false ); ?></li>
+          <li class="next"><?php next_post_link( '%link &raquo;', 'Next', false ); ?></li>          
+        </ul>
+      </div>
+      <!--/ End Blog Prev Next -->
+      <?php comments_template(); ?>
+    </div>
+    <!--/ End Single Blog -->
+  </div>
+</div>
+         

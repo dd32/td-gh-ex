@@ -1,56 +1,72 @@
 <?php
 /**
- * The template for displaying the footer
+ * The template for displaying the footer.
  *
- * Contains the closing of the #content div and all content after.
+ * Contains the closing of the #content div and all content after
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Agency X
+ * @package agency-x
  */
 
 ?>
-
-		</div>
-			</div>
-		</div>
-		<footer id="site-footer">
+<?php if( dynamic_sidebar('footer-1') || dynamic_sidebar('footer-1')|| dynamic_sidebar('footer-1') ): ?>
+	<!-- Footer Top -->
+		<section id="footer-top" class="section wow fadeInUp">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12">
-						
-						<p class="copyright">
-							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'agency-x' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'agency-x' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-							<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'agency-x' ), 'agency-x', '<a href="http://samuraithemes.com/">Samurai Theme</a>' );
-			?></p>
+					<!-- Single Widget -->					
+					<div class="col-md-4 col-sm-4 col-xs-12">							
+						<?php dynamic_sidebar( 'footer-1' ); ?>
+					</div>
+					<!--/ End Single Widget -->
+
+					<!-- Single Widget -->					
+					<div class="col-md-4 col-sm-4 col-xs-12">						
+						<?php dynamic_sidebar( 'footer-2' ); ?>
+					</div>			
+					<!--/ End Single Widget -->
+
+					<!-- Single Widget -->					
+					<div class="col-md-4 col-sm-4 col-xs-12">						
+						<?php dynamic_sidebar( 'footer-3' ); ?>
+					</div>
+					<!--/ End Single Widget -->
+				</div>
+			</div>
+		</section>
+		<!--/ End footer Top -->
+<?php endif; ?>	
+		<!-- Start Footer -->
+		<footer id="footer" class="clearfix">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="copyright">
+							<p>&copy;Copyright 2017<span><i class="fa fa-heart"></i></span>Jalil.</p>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<?php 
+					        $social = array();
+					        $social['facebook'] = get_theme_mod( 'facebook_textbox' );
+					        $social['twitter'] = get_theme_mod( 'twitter_textbox' );
+					        $social['google-plus'] = get_theme_mod( 'googleplus_textbox' );
+					        $social['youtube-play'] = get_theme_mod( 'youtube_textbox' );
+					        $social['linkedin'] = get_theme_mod( 'linkedin_textbox' );
+					        $social['pinterest'] = get_theme_mod( 'pinterest_textbox' );
+					        $social['instagram'] = get_theme_mod( 'instagram_textbox' );
+					        $social = array_filter( $social );
+					    ?>
+						<ul class="social">
+							<li>Follow Us</li>							
+							<?php foreach ( $social as $key => $value ) { ?>
+			                    <li><a href="<?php echo esc_url( $value ); ?>" target="_blank"><i class="fa fa-<?php echo esc_attr($key); ?>"></i></a></li>
+			            	<?php } ?>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</footer>
-
-		<!-- Mobile Menu -->
-		<div class="overlay overlay-hugeinc">
-			<button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
-			<nav>
-				<?php
-											wp_nav_menu( array(
-												'theme_location' => 'menu-1',
-												'menu_id'        => 'primary-menu',
-												'container'         => 'div',
-							                	'menu_class'        => 'nav navbar-nav menu',
-											) );
-										?>
-			</nav>
-		</div>
+		<!--/ End Footer -->
 		<?php wp_footer(); ?>
-
 	</body>
 </html>
-
-

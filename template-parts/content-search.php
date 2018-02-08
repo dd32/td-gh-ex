@@ -1,30 +1,33 @@
 <?php
 /**
- * Template part for displaying results in search pages
+ * The template part for displaying results in search pages.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Agency X
+ * @package agency-x
  */
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-		<?php if ( 'post' === get_post_type() ) : ?>
+<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+	<div class="entry-header">
+		
+
+		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php agency_x_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
-	</header><!-- .entry-header -->
+	</div><!-- .entry-header -->
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
-	<footer class="entry-footer">
+	<div class="entry-footer">
 		<?php agency_x_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+	</div><!-- .entry-footer -->
+</article><!-- #post-## -->
+<hr>
