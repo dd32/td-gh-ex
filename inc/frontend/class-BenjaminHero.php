@@ -102,9 +102,15 @@ class BenjaminHero {
 
     // grab the video markup
     public function videoMarkup() {
-        if(!$this->video)
+    
+
+        if(!$this->video )
             return;
-        return benjamin_get_the_video_markup($this->video, 'background');
+
+        if( !function_exists('franklin_get_the_video_markup') ) {
+            return;
+        }
+        return franklin_get_the_video_markup($this->video, 'background');
     }
 
 

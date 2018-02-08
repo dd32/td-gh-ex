@@ -1,13 +1,15 @@
 <?php
 
+function benjamin_ajax_calculate_widget_width() {
 
-function benjamin_ajax_video() {
-    if(isset($_POST['data']))
-        $url = esc_url_raw( wp_unslash( $_POST['data'] ) );
-    else
+    
+    if( !isset($_POST['data']))
         wp_die();
 
-    benjamin_the_video_markup($url);
+    echo benjamin_calculate_widget_width( wp_unslash(absint($_POST['data'])) ); // WPCS: xss ok.
+
     wp_die();
 }
-add_action('wp_ajax_benjamin_video_shortcode', 'benjamin_ajax_video');
+
+add_action('wp_ajax_benjamin_calculate_widget_width' ,'benjamin_ajax_calculate_widget_width');
+add_action('wp_ajax_nopriv_benjamin_calculate_widget_width' ,'benjamin_ajax_calculate_widget_width');

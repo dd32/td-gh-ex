@@ -8,7 +8,17 @@
  * @package Benjamin
  */
 
-function benjamin_the_template_list($use_widget_areas = false) {
+function benjamin_get_template_info($name = null) {
+
+    if(!$name)
+        return;
+
+    $templates = benjamin_the_template_list();
+    return $templates[$name];
+}
+
+
+function benjamin_the_template_list($use_widget_areas = false, $add_default = false) {
 
 
     $desc_warning = '<p>The layout settings and widgets on this template are not available
@@ -17,10 +27,8 @@ function benjamin_the_template_list($use_widget_areas = false) {
 
     $templates = array(
         'archive' => array(
-            'label' => 'Feed (default)',
-            'description' => __('<p>This is your default (home) page, but not your frontpage.
-            These settings are the default settings used on every page unless the other
-            templates\' settings been activated.</p>',
+            'label' => 'Feed/Archive',
+            'description' => __('<p>This is your feed, or archive page. This page shows your recent new, archived, filtered posts ect.',
             'benjamin'),
             /* translators: the page template name. */
             'widget_description' => sprintf( __('These widgets appear on %s
@@ -44,7 +52,7 @@ function benjamin_the_template_list($use_widget_areas = false) {
             'label' => 'Single Post',
             /* translators:  warning about activating the widget areas. */
             'description' => sprintf( __('<p>The "single post" is what you see when viewing
-            a single blog post, or single custom post type.</p> %s.', 'benjamin'), $desc_warning),
+            a single blog post, or single custom post type.</p> %s', 'benjamin'), $desc_warning),
             /* translators: the page template name. */
             'widget_description' => sprintf( __('These widgets appear on %s
             in the sidebar located on the right or left of the page.', 'benjamin'), 'single posts' )
@@ -126,60 +134,56 @@ function benjamin_the_template_list($use_widget_areas = false) {
     $templates = $templates + $cpts;
 
     $widget_areas = array(
-        'banner-widget-area-1' => array(
-            'label' => 'Banner Widget Area 1',
+        'banner-widget-area' => array(
+            'label' => __('Banner Widgets', 'benjamin'),
             'widget_description' => __('The banner is made up widget areas and are
             optionally used.  The banner is expandable only if widgets have been set.', 'benjamin')
         ),
-        'banner-widget-area-2' => array(
-            'label' => 'Banner Widget Area 2',
-            'widget_description' => __('The banner is made up widget areas and are
-            optionally used.  The banner is expandable only if widgets have been set.', 'benjamin')
-        ),
+
         'frontpage-widget-area-1' => array(
-            'label' => 'Frontpage Widget Area 1',
+            'label' => __('Frontpage Widget Area 1', 'benjamin'),
             'widget_description' => __('The frontpage content is made up of sortable,
             horizontal widget areas.  This is one of those areas and is
             optionally used.', 'benjamin')
         ),
         'frontpage-widget-area-2' => array(
-            'label' => 'Frontpage Widget Area 2',
+            'label' => __('Frontpage Widget Area 2', 'benjamin'),
             'widget_description' => __('The frontpage content is made up of sortable,
             horizontal widget areas.  This is one of those areas and is
             optionally used.', 'benjamin')
         ),
         'frontpage-widget-area-3' => array(
-            'label' => 'Frontpage Widget Area 3',
+            'label' => __('Frontpage Widget Area 3', 'benjamin'),
             'widget_description' => __('The frontpage content is made up of sortable,
             horizontal widget areas.  This is one of those areas and is
             optionally used.', 'benjamin')
         ),
         'widgetized-widget-area-1' => array(
-            'label' => 'Widgetized Page Area 1',
+            'label' => __('Widgetized Page Area 1', 'benjamin'),
             'widget_description' => __('The Widgetized page content is made up of
             sortable, horizontal widget areas.  This is one of those areas and
             is optionally used.', 'benjamin')
         ),
         'widgetized-widget-area-2' => array(
-            'label' => 'Widgetized Page Area 2',
+            'label' => __('Widgetized Page Area 2', 'benjamin'),
             'widget_description' => __('The Widgetized page content is made up of
             sortable, horizontal widget areas.  This is one of those areas and
             is optionally used.', 'benjamin')
         ),
         'widgetized-widget-area-3' => array(
-            'label' => 'Widgetized Page Area 3',
+            'label' => __('Widgetized Page Area 3', 'benjamin'),
             'widget_description' => __('The Widgetized page is full sortable, horizontal
             widget areas.  This is one of those areas and is optionally used.',
             'benjamin')
         ),
         'footer-widget-area-1' => array(
-            'label' => 'Footer Widget Area 1',
+            'label' => __('Footer Widget Area 1', 'benjamin'),
             'widget_description' => __('The footer area is sortable and contains two
             optional widget areas.  To use these widgets, remember to setup the
             footer in the customizer.', 'benjamin')
         ),
         'footer-widget-area-2' => array(
-            'label' => 'Footer Widget Area 2',
+            'label' => __('Footer Widget Area 2', 'benjamin'),
             'widget_description' => __('The footer area is sortable and contains two
             optional widget areas.  To use these widgets, remember to setup the
             footer in the customizer.', 'benjamin')
@@ -189,37 +193,18 @@ function benjamin_the_template_list($use_widget_areas = false) {
     if( $use_widget_areas == true )
         $templates = $templates + $widget_areas;
 
-    return $templates;
-}
 
-function benjamin_get_cpts() {
-    $args = array(
-       'public'   => true,
-       'publicly_queryable' => true,
-       '_builtin' => false
-    );
-    return benjamin_get_cpt_template_types( get_post_types($args) );
-}
-
-function benjamin_get_cpt_template_types($cpts) {
-    $new = array();
-    foreach($cpts as $cpt){
-        $obj = get_post_type_object($cpt);
-        $new[$cpt] = array(
-            'label' => $obj->label,
-            /* translators: custom post type label. */
-            'description' => sprintf( __('A single instance of a %s.', 'benjamin'), $obj->label)
-        );
-        if($obj->has_archive){
-
-            $new[$cpt.'-feed'] = array(
-                'label' => $obj->label . ' Feed',
-                /* translators: custom post type label. */
-                'description' => sprintf( __('The feed for your %s.', 'benjamin'), $obj->label)
-            );
-        }
+    if($add_default == true){
+        $templates = array(DEFAULT_TEMPLATE => array(
+            'label' => 'Default Layout Settings',
+            'description' => __('<p>These settings are the default settings used on every page unless the other
+            templates\' settings been activated.</p>',
+            'benjamin'),
+            /* translators: the page template name. */
+            'widget_description' => sprintf( __('These widgets appear on %s
+            in the sidebar located on the right or left of the page.', 'benjamin'), 'the home (the archive/feed) page')
+        )) + $templates;
     }
 
-
-    return $new;
+    return $templates;
 }
