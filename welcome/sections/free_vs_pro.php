@@ -263,7 +263,7 @@
 	<tr>
 		<td>
 			<span><?php esc_html_e('Fully WooCommerce Compatible', 'accesspress-store'); ?></span>
-			<p><?php esc_html_e('Yes – Stop your WooCommerce theme search here.', 'accesspress-store'); ?></p>
+			<p><?php esc_html_e('Yes - Stop your WooCommerce theme search here.', 'accesspress-store'); ?></p>
 		</td>
 		<td>
 			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
