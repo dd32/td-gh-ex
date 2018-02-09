@@ -118,6 +118,11 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 require get_template_directory() . '/inc/custom-metabox.php';
 
+/**
+ * Woocommerce Hooks
+ */
+require get_template_directory() . '/inc/ap-lite-woocommerce-function.php';
+
 add_filter('widget_text', 'do_shortcode');
 
 /**
