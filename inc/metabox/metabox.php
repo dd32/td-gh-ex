@@ -14,6 +14,9 @@ require get_template_directory() . '/inc/metabox/sidebar-layout.php';
 // Include header image meta
 require get_template_directory() . '/inc/metabox/header-image.php';
 
+// Include event meta
+require get_template_directory() . '/inc/metabox/event.php';
+
 /**
  * Adds meta box to the post editing screen
  */
@@ -23,6 +26,9 @@ function academic_custom_meta() {
 	
 	// Header image meta
     add_meta_box( 'academic_header_image', esc_html__( 'Header Image', 'academic' ), 'academic_header_image_callback', array( 'post', 'page' ) );
+
+    // Event meta
+    add_meta_box( 'academic_event_meta', esc_html__( 'Event Meta', 'academic' ), 'academic_event_meta_callback', array( 'post', 'page' ) );
 }
 add_action( 'add_meta_boxes', 'academic_custom_meta' );
 

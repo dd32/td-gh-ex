@@ -197,3 +197,33 @@ function academic_category_blog_first_type() {
 
   return $output;
 }
+
+/**
+ * Upcoming Event Content type
+ * @return array cat blog four content type
+ */
+function academic_cat_blog_four_content_type() {
+  $academic_cat_blog_four_content_type = array(
+    'category' => esc_html__( 'Category', 'academic' ),
+  );
+
+  $output = apply_filters( 'academic_cat_blog_four_content_type', $academic_cat_blog_four_content_type );
+  
+  return $output;
+}
+
+/**
+ * Upcoming Event content layout
+ * @return array Category blog four content type options
+ */
+function academic_category_blog_four_layout() {
+  $academic_category_blog_four_layout = array(
+    2  => esc_html__( '2 Column', 'academic' ),
+    3  => esc_html__( '3 Column', 'academic' ),
+    4  => esc_html__( '4 Column', 'academic' ),
+  );
+
+  $output = apply_filters( 'academic_category_blog_four_layout', $academic_category_blog_four_layout );
+
+  return $output;
+}

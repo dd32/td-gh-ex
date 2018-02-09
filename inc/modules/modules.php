@@ -27,5 +27,8 @@ require get_template_directory() . '/inc/modules/category-blog-first.php';
 // Add category blog two
 require get_template_directory() . '/inc/modules/category-blog-second.php';
 
+// Add Upcoming Event
+require get_template_directory() . '/inc/modules/upcoming-event.php';
+
 // Add partner
 require get_template_directory() . '/inc/modules/partner.php';

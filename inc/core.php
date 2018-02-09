@@ -89,3 +89,16 @@ require get_template_directory() . '/inc/woocommerce.php';
  * Load tgmpa
  */
 require get_template_directory() . '/inc/tgmpa/tgm-hook.php';
+
+
+/**
+ * Merge values from default options array and values from customizer
+ *
+ * @return array Values returned from customizer
+ * @since Academic Pro 1.0
+ */
+function academic_pro_get_theme_options() {
+  $academic_pro_default_options = academic_pro_get_default_theme_options();
+
+  return array_merge( $academic_pro_default_options , get_theme_mod( 'academic_pro_theme_options', $academic_pro_default_options ) ) ;
+}

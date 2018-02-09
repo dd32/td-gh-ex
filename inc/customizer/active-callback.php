@@ -113,6 +113,33 @@ function academic_category_blog_one_active( $control ) {
 }
 
 /**
+ * Check if cat blog four is enabled
+ *
+ * @since Academic 0.3
+ * @param WP_Customize_Control $control WP_Customize_Control instance.
+ * @return bool Whether the control is active to the current preview.
+ */
+function academic_is_cat_blog_four_enabled( $control ) {
+	if ( 'disabled' != $control->manager->get_setting( 'academic_theme_options[cat_blog_four_enable]' )->value() )
+		return true;
+
+	return false;
+}
+/**
+ * Check if cat blog four is category.
+ *
+ * @since Academic Pro 1.0
+ * @param WP_Customize_Control $control WP_Customize_Control instance.
+ * @return bool Whether the control is active to the current preview.
+ */
+function academic_is_content_type_cat_blog_four_enabled( $control ) {
+	if ( academic_is_cat_blog_four_enabled( $control ) && 'category' == $control->manager->get_setting( 'academic_theme_options[cat_blog_four_content_type]' )->value() )
+		return true;
+
+	return false;
+}
+
+/**
  * Check if category blog one type is multiple category.
  *
  * @since Academic 0.3

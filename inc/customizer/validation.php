@@ -104,6 +104,21 @@ function academic_validate_no_of_about_statistics( $validity, $value ){
    return $validity;
 }
 
+/**
+ * Category four blog number of posts validation
+ * @return validation for max and min no of statistics details
+ */
+function academic_validate_cat_blog_four_scroll_num_range( $validity, $value ){
+  $value = intval( $value );
+  if ( empty( $value ) || ! is_numeric( $value ) ) {
+       $validity->add( 'required', esc_html__( 'You must supply a valid number.', 'academic' ) );
+  } elseif ( $value < 1 ) {
+       $validity->add( 'min_no_of_posts', esc_html__( 'Minimum number of posts is 1', 'academic' ) );
+  } elseif ( $value > 4 ) {
+       $validity->add( 'max_no_of_posts', esc_html__( 'Maximum number of posts is 4', 'academic' ) );
+  }
+  return $validity;
+}
 
 /**
  * Category four blog number of posts validation

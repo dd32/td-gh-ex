@@ -6,8 +6,8 @@ Tags: education, translation-ready, custom-background, theme-options, custom-men
 
 Contributors: Theme Palace
 Requires at least: 4.5
-Tested up to: 4.8
-Stable tag: 1.3
+Tested up to: 4.9.4
+Stable tag: 1.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -128,6 +128,9 @@ You can choose what taxonomy to display in these sections. If you select a speci
 Whereas in Category blog second, you can choose what to display either the categories name or sub categories name.
 
 == Changelog ==
+
+= 1.4 - February 9, 2018 =
+* Add Upcoming Event Section in Homepage.
 
 = 1.3 - September 26, 2017 =
 * Fix responsive active menu item design.

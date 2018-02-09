@@ -94,6 +94,9 @@ function academic_customize_register( $wp_customize ) {
 	// category blog second
 	require get_template_directory() . '/inc/customizer/sections/category-blog-second.php';
 
+	// Upcoming Event 
+	require get_template_directory() . '/inc/customizer/sections/upcoming-event.php';
+
 	// partner
 	require get_template_directory() . '/inc/customizer/sections/partner.php';
 

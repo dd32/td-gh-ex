@@ -68,11 +68,24 @@ function academic_get_default_theme_options() {
 		'category_blog_two_type'		=> 'recent-posts',
 		'category_blog_two_layout'		=> 4,
 		
+		// Upcoming Event
+		'cat_blog_four_enable'            => 'static-frontpage',
+		'cat_blog_four_title'             => esc_html__( 'Upcoming events', 'academic' ),
+		'cat_blog_four_sub_title'         => esc_html__( 'How can we help you', 'academic' ),
+		'cat_blog_four_content_type'      => 'category',
+		'cat_blog_four_infinite_enable'   => false,
+		'cat_blog_four_pager_enable'      => false,
+		'cat_blog_four_arrows_enable'     => true,
+		'cat_blog_four_autoplay_enable'   => false,
+		'cat_blog_four_slide_to_show'     => 3,
+		'cat_blog_four_slide_to_scroll'   => 1,
+		'cat_blog_four_num_of_posts'      => 6,
+
 		// category blog one
-		'category_blog_one_enable'	=> 'disabled',
+		'category_blog_one_enable'		=> 'disabled',
 		'category_blog_one_dragable'	=> true,
 		'category_blog_one_autoplay'	=> true,
-		'category_blog_one_layout'	=> 6,
+		'category_blog_one_layout'		=> 6,
 		'category_blog_one_title'		=> esc_html__( 'First Category Blog', 'academic' ),
 		'category_blog_one_type'		=> 'category',
 		'category_blog_one_icon'		=> 'fa-snapchat-ghost',
