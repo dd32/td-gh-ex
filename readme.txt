@@ -53,6 +53,11 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+
+Version 3.1.2
+===============
+* Fixed Woocommerce Compatibility Issue in 3.3.0
+
 Version 3.1.1
 ===============
 * Updated bxSlider Plugin

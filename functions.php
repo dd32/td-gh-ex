@@ -178,3 +178,8 @@ require get_template_directory() . '/inc/apbasic-widgets.php';
  * Load Welcome Page
  */
 require get_template_directory() . '/welcome/welcome.php';
+
+/**
+ * Load Woocommerce
+ */
+require get_template_directory() . '/inc/woocommerce-hooks.php';
