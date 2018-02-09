@@ -2,12 +2,12 @@
 Contributors: iografica
 Requires at least: 4.4
 Tested up to: 4.5
-Version: 2.09
+Version: 2.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 
-Base WP is a beautiful responsive, elegant and clean coded WordPress theme that can be used for pesonal, business or ecommerce websites.
+Base WP is a beautiful responsive, elegant and clean coded WordPress theme that can be used for personal, business or e-commerce websites.
 
 == Description ==
 
@@ -291,4 +291,7 @@ All Javascript is located in /js/ with license headers where appropriate.
 * Minor fix.
 
 == 2.10 ==
+* Minor fix.
+
+== 2.11 ==
 * Minor fix.
