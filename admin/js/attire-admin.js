@@ -6,7 +6,7 @@ jQuery(function () {
     // Uploading files
     var file_frame, dfield;
 
-    jQuery('body').on('click', '.btn-media-upload', function (event) {
+    jQuery('body').on('click', '.attire-media-upload', function (event) {
         event.preventDefault();
         dfield = jQuery(jQuery(this).attr('rel'));
 

@@ -26,7 +26,7 @@ $attire_panels = array(
 		'priority'    => 4,
 	),
 	'attire_color_panel'   => array(
-		'title'       => __( 'Colors', 'attire' ),
+		'title'       => __( 'Attire Colors', 'attire' ),
 		'description' => '',
 		'priority'    => 5,
 	)
@@ -73,6 +73,11 @@ $attire_sections = array(
 		'title'       => __( 'Sidebar Widget', 'attire' ),
 		'description' => '',
 		'panel'       => 'attire_color_panel',
+		'priority'    => 6,
+	),
+	'attire_ph_section'                   => array(
+		'title'       => __( 'Page Header', 'attire' ),
+		'description' => '',
 		'priority'    => 6,
 	),
 	'attire_footer_widget_color_options'  => array(
@@ -239,14 +244,14 @@ $attire_options = array(
 			'after-title'   => 'After Post Title'
 		)
 	),
-	'site_header_bg_color'              => array(
+	'site_header_bg_color'               => array(
 		'label'     => __( 'Header Background', 'attire' ),
 		'transport' => 'postMessage',
 		'type'      => 'color',
 		'section'   => 'attire_header_color_options',
 		'default'   => '#151515',
 	),
-	'site_title_text_color'             => array(
+	'site_title_text_color'              => array(
 		'label'     => __( 'Site Title', 'attire' ),
 		'transport' => 'postMessage',
 		'type'      => 'color',
@@ -284,12 +289,36 @@ $attire_options = array(
 		'section'   => 'attire_logo_options',
 		'default'   => '',
 	),
+	'site_logo_height'                  => array(
+		'label'       => __( 'Site Logo Height', 'attire' ),
+		'transport'   => 'postMessage',
+		'type'        => 'range',
+		'section'     => 'attire_logo_options',
+		'default'     => 80,
+		'input_attrs' => array(
+			'min'  => 10,
+			'max'  => 200,
+			'step' => 1,
+		)
+	),
 	'site_logo_footer'                  => array(
 		'label'     => __( 'Footer Logo', 'attire' ),
 		'transport' => 'postMessage',
 		'type'      => 'image',
 		'section'   => 'attire_logo_options',
 		'default'   => '',
+	),
+	'site_logo_footer_height'           => array(
+		'label'       => __( 'Footer Logo Height', 'attire' ),
+		'transport'   => 'postMessage',
+		'type'        => 'range',
+		'section'     => 'attire_logo_options',
+		'default'     => 60,
+		'input_attrs' => array(
+			'min'  => 10,
+			'max'  => 200,
+			'step' => 1,
+		)
 	),
 	'container_width'                   => array(
 		'label'       => __( 'Container Width', 'attire' ),
@@ -358,7 +387,7 @@ $attire_options = array(
 			'container'       => 'Container',
 		),
 	),
-	'attire_search_form_visibility'      => array(
+	'attire_search_form_visibility'     => array(
 		'label'     => __( 'Search Form Visibility', 'attire' ),
 		'transport' => 'postMessage',
 		'type'      => 'select',
@@ -369,7 +398,7 @@ $attire_options = array(
 			'hide' => 'Hide',
 		),
 	),
-	'attire_nav_behavior'                => array(
+	'attire_nav_behavior'               => array(
 		'label'     => __( 'Navigation Menu Behavior', 'attire' ),
 		'transport' => 'postMessage',
 		'type'      => 'select',
@@ -380,7 +409,7 @@ $attire_options = array(
 			'static' => 'Static',
 		),
 	),
-	'attire_back_to_top_visibility'      => array(
+	'attire_back_to_top_visibility'     => array(
 		'label'     => __( 'Back To Top Button Visibility', 'attire' ),
 		'transport' => 'postMessage',
 		'type'      => 'select',
@@ -416,17 +445,17 @@ $attire_options = array(
 		'choices'   => array(
 			0 => array(
 				'value' => 'header-1',
-				'title' => 'Nav Style 1',
+				'title' => __( 'Nav Style 1', 'attire' ),
 				'src'   => get_template_directory_uri() . '/images/headers/header1.jpg',
 			),
 			1 => array(
 				'value' => 'header-2',
-				'title' => 'Nav Style 2',
+				'title' => __( 'Nav Style 2', 'attire' ),
 				'src'   => get_template_directory_uri() . '/images/headers/header2.jpg',
 			),
 			2 => array(
 				'value' => 'header-3',
-				'title' => 'Nav Style 3',
+				'title' => __( 'Nav Style 3', 'attire' ),
 				'src'   => get_template_directory_uri() . '/images/headers/header3.jpg',
 			)
 		),
@@ -441,22 +470,22 @@ $attire_options = array(
 		'choices'   => array(
 			0 => array(
 				'value' => 'footer1',
-				'title' => 'Narrow',
+				'title' => __( 'Narrow', 'attire' ),
 				'src'   => get_template_directory_uri() . '/images/footers/footer1.jpg',
 			),
 			1 => array(
 				'value' => 'footer2',
-				'title' => 'Large Centered',
+				'title' => __( 'Large Centered', 'attire' ),
 				'src'   => get_template_directory_uri() . '/images/footers/footer2.jpg',
 			),
 			2 => array(
 				'value' => 'footer3',
-				'title' => 'Large Left',
+				'title' => __( 'Large Left', 'attire' ),
 				'src'   => get_template_directory_uri() . '/images/footers/footer3.jpg',
 			),
 			3 => array(
 				'value' => 'footer4',
-				'title' => 'Large Right',
+				'title' => __( 'Large Right', 'attire' ),
 				'src'   => get_template_directory_uri() . '/images/footers/footer4.jpg',
 			)
 		),
@@ -674,9 +703,9 @@ $attire_options = array(
 		'section'   => 'attire_front_page_layout',
 		'default'   => '3',
 		'choices'   => array(
-			'2' => '2 Columns',
-			'3' => '3 Columns',
-			'4' => '4 Columns',
+			'2' => __( '2 Columns', 'attire' ),
+			'3' => __( '3 Columns', 'attire' ),
+			'4' => __( '4 Columns', 'attire' ),
 		),
 	),
 	'front_page_rs'         => array(
@@ -693,9 +722,9 @@ $attire_options = array(
 		'section'   => 'attire_front_page_layout',
 		'default'   => '3',
 		'choices'   => array(
-			'2' => '2 Columns',
-			'3' => '3 Columns',
-			'4' => '4 Columns',
+			'2' => __( '2 Columns', 'attire' ),
+			'3' => __( '3 Columns', 'attire' ),
+			'4' => __( '4 Columns', 'attire' ),
 		),
 	),
 	'layout_default_post'   => array(
@@ -738,9 +767,9 @@ $attire_options = array(
 		'section'   => 'attire_default_post_layout',
 		'default'   => '3',
 		'choices'   => array(
-			'2' => '2 Columns',
-			'3' => '3 Columns',
-			'4' => '4 Columns',
+			'2' => __( '2 Columns', 'attire' ),
+			'3' => __( '3 Columns', 'attire' ),
+			'4' => __( '4 Columns', 'attire' ),
 		),
 	),
 	'layout_default_page'   => array(
@@ -764,9 +793,9 @@ $attire_options = array(
 		'section'   => 'attire_default_page_layout',
 		'default'   => '3',
 		'choices'   => array(
-			'2' => '2 Columns',
-			'3' => '3 Columns',
-			'4' => '4 Columns',
+			'2' => __( '2 Columns', 'attire' ),
+			'3' => __( '3 Columns', 'attire' ),
+			'4' => __( '4 Columns', 'attire' ),
 		),
 	),
 	'default_page_rs'       => array(
@@ -783,9 +812,9 @@ $attire_options = array(
 		'section'   => 'attire_default_page_layout',
 		'default'   => '3',
 		'choices'   => array(
-			'2' => '2 Columns',
-			'3' => '3 Columns',
-			'4' => '4 Columns',
+			'2' => __( '2 Columns', 'attire' ),
+			'3' => __( '3 Columns', 'attire' ),
+			'4' => __( '4 Columns', 'attire' ),
 		),
 	),
 	'layout_archive_page'   => array(
@@ -809,9 +838,9 @@ $attire_options = array(
 		'section'   => 'attire_archive_page_layout',
 		'default'   => '3',
 		'choices'   => array(
-			'2' => '2 Columns',
-			'3' => '3 Columns',
-			'4' => '4 Columns',
+			'2' => __( '2 Columns', 'attire' ),
+			'3' => __( '3 Columns', 'attire' ),
+			'4' => __( '4 Columns', 'attire' ),
 		),
 	),
 	'archive_page_rs'       => array(
@@ -828,9 +857,9 @@ $attire_options = array(
 		'section'   => 'attire_archive_page_layout',
 		'default'   => '3',
 		'choices'   => array(
-			'2' => '2 Columns',
-			'3' => '3 Columns',
-			'4' => '4 Columns',
+			'2' => __( '2 Columns', 'attire' ),
+			'3' => __( '3 Columns', 'attire' ),
+			'4' => __( '4 Columns', 'attire' ),
 		),
 	),
 
@@ -844,7 +873,7 @@ $attire_options = array(
 	),
 	'heading_font_size'   => array(
 		'label'       => __( 'Heading Font Size', 'attire' ),
-		'description' => 'For H tags (h1...h6)',
+		'description' => __( 'For H tags (h1...h6)', 'attire' ),
 		'transport'   => 'postMessage',
 		'type'        => 'range',
 		'section'     => 'attire_generic_fonts',
@@ -1028,13 +1057,13 @@ $attire_options = array(
 		)
 	),
 
-	'custom_css' => array(
-		'label'     => __( 'Custom CSS', 'attire' ),
-		'transport' => 'postMessage',
-		'type'      => 'textarea',
-		'section'   => 'attire_custom_css',
-		'default'   => sprintf( "/*\n%s\n*/", __( "You can add your own CSS here.\n\nClick the help icon above to learn more.", "attire" ) ),
-	),
+//	'custom_css' => array(
+//		'label'     => __( 'Custom CSS', 'attire' ),
+//		'transport' => 'postMessage',
+//		'type'      => 'textarea',
+//		'section'   => 'attire_custom_css',
+//		'default'   => sprintf( "/*\n%s\n*/", __( "You can add your own CSS here.\n\nClick the help icon above to learn more.", "attire" ) ),
+//	),
 
 	'facebook_profile_url'      => array(
 		'label'     => __( 'Facebook Profile / Page URL', 'attire' ),
@@ -1118,7 +1147,7 @@ $attire_options = array(
 		'transport' => 'postMessage',
 		'type'      => 'textarea',
 		'section'   => 'attire_copyright',
-		'default'   => '&copy; Copyright 2017 | All Rights Reserved.',
+		'default'   => '&copy; Copyright ' . date( 'Y' ) . ' | All Rights Reserved.',
 	),
 	'copyright_info_visibility' => array(
 		'label'     => __( 'Show Copyright Visibility', 'attire' ),
@@ -1128,5 +1157,51 @@ $attire_options = array(
 		'default'   => 'show',
 		'choices'   => array( 'show' => 'Show', 'hide' => 'Hide' )
 	),
+
+	'ph_active'     => array(
+		'label'   => __( 'Show Page Header', 'attire' ),
+		'type'    => 'checkbox',
+		'default' => true,
+		'section' => 'attire_ph_section'
+	),
+	'ph_show_on_fp' => array(
+		'label'   => __( 'Show On Front Page', 'attire' ),
+		'type'    => 'checkbox',
+		'default' => false,
+		'section' => 'attire_ph_section'
+	),
+	'ph_bg_img'     => array(
+		'label'     => __( 'Page Header Background Image', 'attire' ),
+		'transport' => 'postMessage',
+		'type'      => 'image',
+		'default'   => '',
+		'section'   => 'attire_ph_section'
+	),
+	'ph_bg_color'   => array(
+		'label'     => __( 'Page Header Background Color', 'attire' ),
+		'transport' => 'postMessage',
+		'type'      => 'color',
+		'default'   => '',
+		'section'   => 'attire_ph_section'
+	),
+	'ph_text_color' => array(
+		'label'     => __( 'Page Header Text Color', 'attire' ),
+		'transport' => 'postMessage',
+		'type'      => 'color',
+		'default'   => '',
+		'section'   => 'attire_ph_section'
+	),
+	'ph_bg_height'  => array(
+		'label'       => __( 'Page Header Height', 'attire' ),
+		'transport'   => 'postMessage',
+		'type'        => 'range',
+		'default'     => 200,
+		'input_attrs' => array(
+			'min'  => 100,
+			'max'  => 2000,
+			'step' => 5,
+		),
+		'section'     => 'attire_ph_section'
+	)
 
 );

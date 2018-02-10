@@ -13,8 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
     <div class="row">
-
-		<?php AttireFramework::DynamicSidebars( 'left' );
+		<?php
+		AttireFramework::DynamicSidebars( 'left' );
 		do_action( ATTIRE_THEME_PREFIX . "before_main_content_area" );
 		?>
 
@@ -27,10 +27,16 @@ get_header();
                         <div class="clear"></div>
 						<?php do_action( "attire_before_content" ); ?>
                         <div class="entry-content">
-							<?php attire_post_thumb( array(
-								1100,
-								0
-							), true, array( 'class' => 'single-page-thumbnail' ) ); ?>
+
+							<?php
+							$ph_active = AttireThemeEngine::NextGetOption( 'ph_active', false );
+
+							if ( ! $ph_active ) {
+								?>
+                                <h1 class="page-title"><?php echo the_title(); ?></h1>
+							<?php } ?>
+
+							<?php the_post_thumbnail(); ?>
 							<?php the_content(); ?>
                             <div class="clear"></div>
                         </div>

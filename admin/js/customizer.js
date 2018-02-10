@@ -40,7 +40,11 @@
     function setImage(themeModName, selector, propertyName) {
         wp.customize('attire_options[' + themeModName + ']', function (value) {
             value.bind(function (newVal) {
-                $(selector).prop(propertyName, newVal);
+                if (propertyName === 'background-image') {
+                    $(selector).css(propertyName, 'url("' + newVal + '")');
+
+                } else
+                    $(selector).prop(propertyName, newVal);
             });
         });
     }
@@ -74,7 +78,7 @@
             value.bind(function (newVal) {
                 console.log(newVal)
                 $(selector).each(function () {
-                    if (newVal === 'show')
+                    if (newVal === 'show' || newVal === true)
                         $(this).show();
                     else
                         $(this).hide();
@@ -125,6 +129,15 @@
             });
         });
     });
+
+
+    /**
+     *
+     * General Settings -> Logo
+     *
+     */
+    setCss('site_logo_height', '.site-logo img', 'max-height');
+    setCss('site_logo_footer_height', '.footer-logo img', 'max-height');
 
     /**
      *
@@ -271,6 +284,19 @@
     setFont('menu_dropdown_font', 'header .dropdown ul li a.dropdown-item, footer .dropdown ul li a.dropdown-item', 'font-family');
     setCss('menu_dropdown_font_size', 'header .dropdown ul li a.dropdown-item, footer .dropdown ul li a.dropdown-item', 'font-size');
     setCss('menu_dropdown_font_weight', 'header .dropdown ul li a.dropdown-item, footer .dropdown ul li a.dropdown-item', 'font-weight');
+
+
+    /**
+     *
+     * Page Header
+     */
+
+    setVisibility('ph_active', '.page_header_wrap');
+    setVisibility('ph_show_on_fp', 'home .page_header_wrap');
+    setImage('ph_bg_img', '.page_header_wrap', 'background-image');
+    setCss('ph_bg_color', '.page_header_wrap', 'background-color');
+    setCss('ph_text_color', '.page_header_wrap *', 'color');
+    setCss('ph_bg_height', '.page_header_wrap', 'min-height');
 
 
     /**

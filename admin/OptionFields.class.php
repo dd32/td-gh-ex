@@ -16,10 +16,10 @@ class AttireOptionFields {
 	 */
 	public static function LayoutType( $params ) {
 		$html = "<select  name='{$params['name']}' id='{$params['id']}' style='width: 100px'>";
-		$html .= "<option value=''>Select</option>";
-		$html .= "<option value='wide'" . ( $params['selected'] == 'wide' ? 'selected=selected' : '' ) . ">Wide</option>";
-		$html .= "<option value='boxed'" . ( $params['selected'] == 'boxed' ? 'selected=selected' : '' ) . ">Boxed</option>";
-		$html .= "<option value='framed'" . ( $params['selected'] == 'framed' ? 'selected=selected' : '' ) . ">Framed</option>";
+		$html .= "<option value=''>".__('Select','attire')."</option>";
+		$html .= "<option value='wide'" . ( $params['selected'] === 'wide' ? 'selected=selected' : '' ) . ">" . __( 'Wide', 'attire' ) . "</option>";
+		$html .= "<option value='boxed'" . ( $params['selected'] === 'boxed' ? 'selected=selected' : '' ) . ">" . __( 'Boxed', 'attire' ) . "</option>";
+		$html .= "<option value='framed'" . ( $params['selected'] === 'framed' ? 'selected=selected' : '' ) . ">" . __( 'Framed', 'attire' ) . "</option>";
 		$html .= "</select>";
 
 		return $html;
@@ -60,7 +60,7 @@ class AttireOptionFields {
 		);
 		$html = "<ul class='post-sharing'>";
 		foreach ( $sns as $icon => $label ) {
-			$checked = in_array( $icon, $selected ) ? 'checked=checked' : ''; // checked() is not usable here as 1 parameter is array
+			$checked = in_array( $icon, $selected, true ) ? 'checked=checked' : '';
 			$html    .= "<li><label><input type='checkbox' name='{$name}[]' value='{$icon}' " . $checked . " /> {$label}</label></li>";
 		}
 		$html .= "</ul>";
@@ -144,7 +144,7 @@ class AttireOptionFields {
 		$html .= "<label>Background Color</label><br/>";
 		$html .= '<input class="' . $id . ' colorpicker" type="text" name="' . $name . '[color]" id="' . $id . '_color" size=10 placeholder="Color" value="' . $selected['color'] . '" ><script>jQuery(function(){ preview_cbg("' . $id . '");});</script>';
 		$html .= "<br/><label>Background Image</label><br/>";
-		$html .= "<div class='input-group' style='margin-right: 10px;max-width: 500px'><span class='input-group-btn'><button rel='#{$id}_image' class='btn btn-default btn-media-upload' type='button'><i class='fa fa-picture-o'></i></button></span><input onchange='preview_cbg(\"{$id}\")' style='min-width: 90%' class='{$id} form-control' type='text' name='{$name}[image]' id='{$id}_image' value='{$selected['image']}' /></div>";
+		$html .= "<div class='input-group' style='margin-right: 10px;max-width: 500px'><span class='input-group-btn'><button rel='#{$id}_image' class='btn btn-default attire-media-upload' type='button'><i class='fa fa-picture-o'></i></button></span><input onchange='preview_cbg(\"{$id}\")' style='min-width: 90%' class='{$id} form-control' type='text' name='{$name}[image]' id='{$id}_image' value='{$selected['image']}' /></div>";
 		$html .= "<br/><label>Background Image Position</label><br/>";
 		$html .= "<div class='input-group' style='margin-top:9px;margin-right:10px;float:left;'><select class='{$id}' style='width:90px' onchange='preview_cbg(\"{$id}\")' id='{$id}_position_h' name='{$name}[position_h]'><option value='left'>Left</option><option value='center' " . ( $selected['position_h'] == 'center' ? 'selected=selected' : '' ) . ">Center</option><option value='right' " . ( $selected['position_h'] == 'right' ? 'selected=selected' : '' ) . ">Right</option></select></div>";
 		$html .= "<div class='input-group' style='margin-top:9px;margin-right:10px;float:left;'><select class='{$id}' style='width:90px' onchange='preview_cbg(\"{$id}\")' id='{$id}_position_v' name='{$name}[position_v]'><option value='top'>Top</option><option value='center' " . ( $selected['position_v'] == 'center' ? 'selected=selected' : '' ) . ">Center</option><option value='bottom' " . ( $selected['position_v'] == 'bottom' ? 'selected=selected' : '' ) . ">Bottom</option></select></div>";
@@ -163,11 +163,11 @@ class AttireOptionFields {
 		$params['value'] = $selected['color'];
 		$html            .= "</div>";
 		$html            .= "<div class='col-md-7' style='padding-right: 0'>";
-		$html            .= "<button class='btn btn-sm btn-default col-md-12' id='clear_cpb' type='button'>Clear</button>";
-		$html            .= "<br/><div id='hfp' title='Monitor Preview' style='min-height:280px;min-width:100%; border: 1px solid rgba(0, 0, 0, 0.1);'></div>";
+		$html            .= "<button class='btn btn-sm btn-default col-md-12' id='clear_cpb' type='button'>" . __( 'Clear', 'attire' ) . "</button>";
+		$html            .= "<br/><div id='hfp' title='" . __( 'Monitor Preview', 'attire' ) . "' style='min-height:280px;min-width:100%; border: 1px solid rgba(0, 0, 0, 0.1);'></div>";
 		$html            .= "</div>";
 
 		return $html;
 	}
 
-} 
+}

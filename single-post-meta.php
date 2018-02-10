@@ -23,11 +23,12 @@ $navigation_buttons = $navigation_buttons === 'show' ? 'canshow' : 'noshow';
             <span class="bold"><?php the_category(', '); ?></span>
 
         </li>
-
-        <li class="post-navs float-right <?php echo esc_attr($navigation_buttons); ?>">
-            <span class="text-primary"><?php previous_post_link('%link', '<i class="fa fa-long-arrow-left"></i> ' . __('Previous', 'attire')); ?></span>
-            <i class="fa fa-dot-circle-o"></i>
-            <span class=""><?php next_post_link('%link', __('Next', 'attire') . ' <i class="fa fa-long-arrow-right"></i>'); ?></span>
-        </li>
+        <?php if (get_previous_post_link() || get_next_post_link()) { ?>
+            <li class="post-navs float-right <?php echo esc_attr($navigation_buttons); ?>">
+                <span class="text-primary"><?php previous_post_link('%link', '<i class="fa fa-long-arrow-left"></i> ' . __('Previous', 'attire')); ?></span>
+                <i class="fa fa-dot-circle-o"></i>
+                <span class=""><?php next_post_link('%link', __('Next', 'attire') . ' <i class="fa fa-long-arrow-right"></i>'); ?></span>
+            </li>
+        <?php } ?>
     </ul>
 </div>

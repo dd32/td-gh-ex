@@ -1,6 +1,6 @@
 <?php
-if (!defined('ABSPATH')) {
-    exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 get_header(); ?>
 
@@ -8,67 +8,67 @@ get_header(); ?>
         <div class="row">
             <div class="col-lg-9 col-sm-8">
                 <div class="row">
-                    <?php
-                    global $wp_query;
-                    $curauth = $wp_query->get_queried_object();
-                    $q = new WP_Query('post_type=post&posts_per_page=-1&author=' . $curauth->ID);
-                    while ($q->have_posts()): $q->the_post();
-                        ?>
+					<?php
+					global $wp_query;
+					$curauth = $wp_query->get_queried_object();
+					$q       = new WP_Query( 'post_type=post&posts_per_page=-1&author=' . $curauth->ID );
+					while ( $q->have_posts() ): $q->the_post();
+						?>
                         <div class="col-lg-4 col-sm-6 col-xs-12">
                             <div class="post-block">
-                                <a href="<?php the_permalink(); ?>"><?php attire_post_thumb(array(300, 300)); ?></a>
+                                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'medium' ); ?></a>
                                 <div class="post-info">
                                     <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                 </div>
                             </div>
                         </div>
-                    <?php
-                    endwhile;
-                    ?>
+					<?php
+					endwhile;
+					?>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-4">
                 <div class="author-avatar">
                     <div class="card">
                         <img class="card-img-top"
-                             src="<?php echo esc_url(get_avatar_url($curauth->user_email, array('size' => 300))); ?>"
-                             alt="Author avatar">
+                             src="<?php echo esc_url( get_avatar_url( $curauth->user_email, array( 'size' => 300 ) ) ); ?>"
+                             alt="<?php _e( 'Author avatar', 'attire' ); ?>">
 
                         <div class="card-footer text-muted">
-                            <?php echo esc_attr($curauth->first_name . " " . $curauth->last_name); ?>
+							<?php echo esc_attr( $curauth->first_name . " " . $curauth->last_name ); ?>
                         </div>
                     </div>
                 </div>
                 <br>
-                <?php dynamic_sidebar('author_page'); ?>
-                <?php if (get_user_meta($curauth->ID, 'description', true)) : ?>
+				<?php dynamic_sidebar( 'author_page' ); ?>
+				<?php if ( get_user_meta( $curauth->ID, 'description', true ) ) : ?>
 
 
                     <div class="card">
-                        <div class="card-header"><?php echo esc_attr__('About', 'attire'); ?></div>
+                        <div class="card-header"><?php echo esc_attr__( 'About', 'attire' ); ?></div>
                         <div class="card-body">
-                            <?php echo esc_attr(get_user_meta($curauth->ID, 'description', true)); ?>
+							<?php echo esc_attr( get_user_meta( $curauth->ID, 'description', true ) ); ?>
                         </div>
                     </div>
-                <?php endif; ?>
+				<?php endif; ?>
 
                 <br>
                 <div class="card">
-                    <div class="card-header"><?php echo esc_attr__('Contact Author', 'attire'); ?></div>
+                    <div class="card-header"><?php echo esc_attr__( 'Contact Author', 'attire' ); ?></div>
                     <div class="card-body">
                         <form method="post">
                             <input type="hidden" name="task" value="contact_author"/>
-                            <input type="hidden" name="uid" value="<?php echo esc_attr($curauth->ID); ?>"/>
+                            <input type="hidden" name="uid" value="<?php echo esc_attr( $curauth->ID ); ?>"/>
 
-                            <label><?php echo esc_attr__('Your Name:', 'attire'); ?></label>
+                            <label><?php echo esc_attr__( 'Your Name:', 'attire' ); ?></label>
                             <input type="text" name="name" class="form-control"/>
-                            <label><?php echo esc_attr__('Your Email:', 'attire'); ?></label>
+                            <label><?php echo esc_attr__( 'Your Email:', 'attire' ); ?></label>
                             <input type="text" name="email" class="form-control"/>
-                            <label><?php echo esc_attr__('Subject:', 'attire'); ?></label>
+                            <label><?php echo esc_attr__( 'Subject:', 'attire' ); ?></label>
                             <input type="text" name="subject" class="form-control"/>
-                            <label><?php echo esc_attr__('Message:', 'attire'); ?></label>
+                            <label><?php echo esc_attr__( 'Message:', 'attire' ); ?></label>
                             <textarea class="form-control" name="message"></textarea><br>
-                            <button class="btn btn-info"><?php echo esc_attr__('Submit', 'attire'); ?></button>
+                            <button class="btn btn-info"><?php echo esc_attr__( 'Submit', 'attire' ); ?></button>
                         </form>
                     </div>
                 </div>

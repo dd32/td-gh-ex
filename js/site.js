@@ -8,11 +8,13 @@ jQuery(function ($) {
         top = $('.default-menu').offset().top;
         height = $('.default-menu').height();
     }
-    var abheight = $('#wpadminbar').height();
+    if (height >= 80) {
+        height = 80;
+    }
+    var abheight = $('#wpadminbar').outerHeight();
 
     function addFakeP() {
         $('<p class="fake-placeholder" style="min-height: ' + (height) + 'px;top: 0;right: 0;display: none;margin: 0;"></p>').insertAfter('.header-div');
-
     }
 
     $(window).scroll(function () {
@@ -31,17 +33,17 @@ jQuery(function ($) {
     // END: Sticky menu
 
     // Footer Dropdown to Dropup converter
-
-    $(document).ready(function () {
-        $('footer .dropdown:not(.dropdown-submenu)').each(function () {
-            var _this = this;
-            //  convert footer nav to dropup
-            if ($(this).closest('footer').length) {
-                var $ul = $(this).children("ul.dropdown-menu");
-                $ul.css('top', '-' + $ul.css('height'));
-            }
-        });
-    });
+    //
+    // $(document).ready(function () {
+    //     $('footer .dropdown:not(.dropdown-submenu)').each(function () {
+    //         var _this = this;
+    //         //  convert footer nav to dropup
+    //         if ($(this).closest('footer').length) {
+    //             var $ul = $(this).children("ul.dropdown-menu");
+    //             $ul.css('top', '-' + $ul.css('height'));
+    //         }
+    //     });
+    // });
 
     // Responsive Dropdown menu JS
 
@@ -63,6 +65,12 @@ jQuery(function ($) {
         if ($(window).width() < 1000) {
             toggleDropdownMobile(this);
         }
+    });
+
+    $('.navbar-toggler').on('click', function () {
+        $('.dropdown-menu').css('display', 'none');
+        $('.dropdown-toggler').children('i').removeClass('fa-caret-up');
+        $('.dropdown-toggler').children('i').addClass('fa-caret-down');
     });
 
     // This function is called each time window is resized

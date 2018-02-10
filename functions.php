@@ -7,14 +7,14 @@ define( "ATTIRE_TEMPLATE_DIR", get_template_directory() );
 define( "ATTIRE_THEME_URL", get_stylesheet_directory_uri() );
 define( "ATTIRE_TEMPLATE_URL", get_template_directory_uri() );
 
-require_once( ATTIRE_TEMPLATE_DIR . "/admin/Util.class.php" );
+
+
 require_once( ATTIRE_TEMPLATE_DIR . "/admin/ThemeEngine.class.php" );
 require_once( ATTIRE_TEMPLATE_DIR . "/libs/Framework.class.php" );
 require_once( ATTIRE_TEMPLATE_DIR . "/libs/Attire.class.php" );
 require_once( ATTIRE_TEMPLATE_DIR . "/libs/MetaBoxes.class.php" );
 require_once( ATTIRE_TEMPLATE_DIR . "/libs/StructuredData.class.php" );
-require_once( ATTIRE_TEMPLATE_DIR . "/libs/post-functions.php" );
-//require_once( ATTIRE_TEMPLATE_DIR . "/libs/util-functions.php" );
+
 require_once( ATTIRE_TEMPLATE_DIR . '/admin/customizer.php' );
 
 new Attire();
@@ -52,7 +52,7 @@ class AttireBase {
 
 	function SidebarStyles( $styles ) {
 		$styles['boxed-panel'] = array(
-			'style_name'    => 'Boxed Panel',
+			'style_name'    => __( 'Boxed Panel', 'attire' ),
 			'before_widget' => '<div class="widget-boxed-panel">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-boxed-panel-heading widget-title">',
@@ -64,7 +64,7 @@ class AttireBase {
 
 	function attire_excerpt_more( $more ) {
 		global $post;
-		$more = AttireThemeEngine::NextGetOption( 'attire_read_more_text', 'Read more' );
+		$more = AttireThemeEngine::NextGetOption( 'attire_read_more_text', __( 'Read more', 'attire' ) );
 
 		return '... <a class="read-more-link" href="' . get_permalink( $post->ID ) . '">' . esc_attr( $more ) . '</a>';
 	}

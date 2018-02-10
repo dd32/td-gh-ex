@@ -4,17 +4,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header();
-AttireFramework::DynamicSidebars( 'left' );
 ?>
+    <div class="row">
 
-    <section id="primary" class="content-area col-lg-12">
-        <main id="main" class="site-main" role="main">
+		<?php
+		AttireFramework::DynamicSidebars( 'left' );
+		?>
 
-			<?php woocommerce_content(); ?>
+        <section id="primary" class="content-area <?php AttireFramework::ContentAreaWidth(); ?> attire-shop">
+            <main id="main" class="site-main" role="main">
 
-        </main><!-- #main -->
-    </section><!-- #primary -->
+				<?php woocommerce_content(); ?>
 
+            </main><!-- #main -->
+        </section><!-- #primary -->
+
+		<?php
+		AttireFramework::DynamicSidebars( 'right' );
+		?>
+    </div>
 <?php
-AttireFramework::DynamicSidebars( 'right' );
 get_footer();

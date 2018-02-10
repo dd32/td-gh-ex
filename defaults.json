@@ -85,6 +85,8 @@
     "copyright_info_visibility": "show",
     "attire_search_form_visibility": "show",
     "attire_back_to_top_visibility": "show",
-    "attire_nav_behavior": "sticky"
+    "attire_nav_behavior": "sticky",
+    "site_logo_height": "80",
+    "site_logo_footer_height": "60"
   }
 }
