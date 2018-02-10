@@ -246,6 +246,12 @@ class alhenalite_customize {
 			
 		}
 
+		if ( alhenalite_is_woocommerce_active() ) :
+			
+			$wp_customize->remove_control( 'woocommerce_catalog_rows');
+			$wp_customize->remove_control( 'woocommerce_catalog_columns');
+				
+		endif;
    }
 
 	public function customize_select_sanize ($value, $setting) {
