@@ -27,7 +27,7 @@ function themonic_setup() {
 	 * Making Iconic One ready for translation.
 	 * Translations can be added to the /languages/ directory. Sample iconic-one.pot file is included.
 	 */
-	load_theme_textdomain( 'themonic', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'iconic-one', get_template_directory() . '/languages' );
 
 	// Adds RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
