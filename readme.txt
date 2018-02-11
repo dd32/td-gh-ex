@@ -3,8 +3,8 @@ White Spektrum WordPress Theme
 Contributor: benlumia007
 Tags: custom-background, custom-header, right-sidebar
 Requres at least: 4.5
-Tested up to: 4.9
-Stable tag: 0.2.5
+Tested up to: 4.9.4
+Stable tag: 0.2.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,6 +67,12 @@ I have improved my understanding so that I can make this theme better.
 
 Changelog
 ================================================================================================
+Version: 0.2.9
+- Minor Changes
+
+Version: 0.2.8
+- Minor Changes
+
 Version: 0.2.7
 - Minor Changes
 
