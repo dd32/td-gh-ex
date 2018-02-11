@@ -3,8 +3,8 @@ Beyond Expectations WordPress Theme
 Contributor: benlumia007
 Tags: custom-background, custom-header, right-sidebar
 Requres at least: 4.4
-Tested up to: 4.6
-Stable tag: 0.1.1
+Tested up to: 4.9.4
+Stable tag: 0.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,9 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
+Version: 0.2.2
+- Change both URIs
+
 Version: 0.2.1 
 Fixed Navigation Bar 
 
