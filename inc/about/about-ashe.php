@@ -72,9 +72,8 @@ function ashe_about_page_output() {
 				<h2><?php esc_html_e( 'Ashe Pro - Predefined Styles', 'ashe' ); ?></h2>
 				<p>
 					<?php esc_html_e( 'Ashe Pro\'s powerful setup allows you to easily create unique looking sites. Here are a few included examples that can be installed with one click in the ', 'ashe' ); ?>
-					<a target="_blank" href="https://wp-royal.com/themes/item-ashe-pro/?ref=ashe-free-backend-about-predefined-styles"><?php esc_html_e( 'Ashe Pro Theme.', 'ashe' ); ?></a>
-					<?php esc_html_e( 'More details in the theme ', 'ashe' ); ?>
-					<a target="_blank" href="<?php echo esc_url('http://wp-royal.com/themes/ashe/docs/?ref=ashe-free-backend-about-predefined-styles#predefined'); ?>"><?php esc_html_e( 'Documentation.', 'ashe' ); ?></a>
+					<a target="_blank" href="http://wp-royal.com/themes/ashe/docs/?ref=ashe-free-backend-about-predefined-styles#predefined"><?php esc_html_e( 'Ashe Pro Theme.', 'ashe' ); ?></a>
+					<?php esc_html_e( 'More details in the theme Documentation.', 'ashe' ); ?>
 				</p>
 
 				<div class="column-wdith-4">
@@ -524,6 +523,14 @@ function ashe_about_page_output() {
 						<td>
 							<h3><?php esc_html_e( 'Ashe Pro Widgets', 'ashe' ); ?></h3>
 							<p><?php esc_html_e( 'Ashe Author, Ads &amp; Social Icons widgets included.', 'ashe' ); ?></p>
+						</td>
+						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
+						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td>
+							<h3><?php esc_html_e( 'Advanced Footer Options', 'ashe' ); ?></h3>
+							<p><?php esc_html_e( 'Theme and Author credit links in the footer are automatically removed. You can add social icons to the footer.', 'ashe' ); ?></p>
 						</td>
 						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
 						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>

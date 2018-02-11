@@ -101,7 +101,7 @@ add_action( 'wp_head', 'ashe_pingback_header' );
 function ashe_scripts() {
 
 	// Theme Stylesheet
-	wp_enqueue_style( 'ashe-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'ashe-style', get_stylesheet_uri(), array(), '1.3' );
 
 	// FontAwesome Icons
 	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/font-awesome.css' ) );
@@ -153,9 +153,37 @@ function ashe_opensans_font_url() {
     return $font_url;
 }
 
+function ashe_kalam_font_url() {
+    $font_url = '';
+    if ( 'off' !== _x( 'on', 'Google font: on or off', 'ashe' ) ) {
+        $font_url = add_query_arg( 'family', urlencode( 'Kalam' ), "//fonts.googleapis.com/css" );
+    }
+    return $font_url;
+}
+
+function ashe_rokkitt_font_url() {
+    $font_url = '';
+    if ( 'off' !== _x( 'on', 'Google font: on or off', 'ashe' ) ) {
+        $font_url = add_query_arg( 'family', urlencode( 'Rokkitt' ), "//fonts.googleapis.com/css" );
+    }
+    return $font_url;
+}
+
+
+
 function ashe_gfonts_scripts() {
     wp_enqueue_style( 'ashe-playfair-font', ashe_playfair_font_url(), array(), '1.0.0' );
     wp_enqueue_style( 'ashe-opensans-font', ashe_opensans_font_url(), array(), '1.0.0' );
+
+    // Load Kalam if selected
+    if ( ashe_options( 'typography_logo_family' ) == 'Kalam' || ashe_options( 'typography_nav_family' ) == 'Kalam' ) {
+    	wp_enqueue_style( 'ashe-kalam-font', ashe_kalam_font_url(), array(), '1.0.0' );
+    }
+
+    // Load Rokkitt if selected
+    if ( ashe_options( 'typography_logo_family' ) == 'Rokkitt' || ashe_options( 'typography_nav_family' ) == 'Rokkitt' ) {
+    	wp_enqueue_style( 'ashe-rokkitt-font', ashe_rokkitt_font_url(), array(), '1.0.0' );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'ashe_gfonts_scripts' );
 
@@ -394,9 +422,9 @@ if ( ! function_exists( 'ashe_related_posts' ) ) {
 			    )
 			);
 
-			// if ( ashe_is_preview() ) {
-			// 	array_pop($args);
-			// }
+			if ( ashe_is_preview() ) {
+				array_pop($args);
+			}
 
 			$similar_posts = new WP_Query( $args );	
 

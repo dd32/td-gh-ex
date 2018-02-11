@@ -406,6 +406,37 @@ function ashe_true_false( $option ) {
 		}
 	';
 
+
+/*
+** Typography =====
+*/
+	// Logo & Tagline
+	$css .= "
+		.header-logo {
+			font-family: '". str_replace( '+', ' ', ashe_options( 'typography_logo_family' ) ) ."';
+		}
+	";
+
+	// Top Bar
+	$css .= "
+		#top-menu li a {
+			font-family: '". str_replace( '+', ' ', ashe_options( 'typography_nav_family' ) ) ."';
+		}
+	";
+
+	// Main Navigation
+	$css .= "	
+		#main-menu li a {
+			font-family: '". str_replace( '+', ' ', ashe_options( 'typography_nav_family' ) ) ."';
+		}
+
+		#mobile-menu li {
+			font-family: '". str_replace( '+', ' ', ashe_options( 'typography_nav_family' ) ) ."';
+		}
+	";
+
+
+
 /*
 ** General Layouts =====
 */
@@ -643,11 +674,8 @@ function ashe_true_false( $option ) {
 	// Gutter
 	$css .= '
 		.blog-grid > li {
-			margin-bottom: ' . $blog_page_gutter_vert . 'px;
-		}
-
-		.blog-grid > li {
 			width: 100%;
+			margin-bottom: ' . $blog_page_gutter_vert . 'px;
 		}
 	';
 
@@ -692,6 +720,15 @@ function ashe_true_false( $option ) {
 				.post-content > p:first-child:first-letter {
 				    margin-top: 10px !important;
 				}
+			}
+		';
+	}
+
+	// if is preview
+	if ( ashe_is_preview() ) {
+		$css .= '
+			.blog-grid > li:first-child {
+				display: none;
 			}
 		';
 	}
