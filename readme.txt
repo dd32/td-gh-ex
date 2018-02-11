@@ -67,6 +67,9 @@ I have improved my understanding so that I can make this theme better.
 
 Changelog
 ================================================================================================
+Version: 0.3.0
+- Small Changes to some CSS Classes.
+
 Version: 0.2.9
 - Minor Changes
 
