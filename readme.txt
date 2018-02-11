@@ -3,8 +3,8 @@
 Contributor: benlumia007
 Tags: custom-background, custom-header, right-sidebar
 Requres at least: 4.5
-Tested up to: 4.7.5
-Stable tag: 0.2.5
+Tested up to: 4.9.4
+Stable tag: 2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,15 +53,57 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
-Version: 0.0.3
+Version: 2.6
+- Minor Changes
+
+Version: 2.5
+- Minor Changes
+
+Version: 2.4
+- Minor Changes
+
+Version; 2.3
+- Minor Changes
+
+Version: 2.2
+- Minor Changes
+
+Version: 2.1
+- Minor Changes
+
+Version: 2.0
+- Minor Changes
+
+Version: 1.9
+- Minor Changes
+
+Version: 1.8
+- Minor Changes
+
+Version: 1.7
+- Minor Changes
+
+Version: 1.6
+- Minor Changes
+
+Version: 1.5
+- Minor Changes
+
+Version: 1.4
+- Minor Changes
+
+Version: 1.3
+- Minor Changes
+
+Version: 1.2
 - Fixed Bugs
 - Minor Changes
 - Add New Tags
 
-Version: 0.0.2
+Version: 1.1
 - Rendered New CSS
 
-Version: 0.0.1
+Version: 1.0
 - Initial Release
 
 
