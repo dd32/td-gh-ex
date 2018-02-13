@@ -2179,8 +2179,8 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'default'		=> ''
 	) );
 	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Skype URL', 'agama' ),
-		'tooltip'	    => __( 'Set your skype page url.', 'agama' ),
+		'label'			=> __( 'Skype Username', 'agama' ),
+		'tooltip'	    => __( 'Enter your Skype username. Eg: johndoe', 'agama' ),
 		'section'		=> 'agama_social_icons_section',
 		'settings'		=> 'social_skype',
 		'type'			=> 'text',
@@ -2226,6 +2226,14 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'type'			=> 'text',
 		'default'		=> ''
 	) );
+    Kirki::add_field( 'agama_options', array(
+		'label'			=> __( 'Phone Number', 'agama' ),
+		'tooltip'	    => __( 'Enter your phone number. Eg: +381 60 000 000', 'agama' ),
+		'section'		=> 'agama_social_icons_section',
+		'settings'		=> 'social_phone',
+		'type'			=> 'text',
+		'default'		=> ''
+	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			=> __( 'Dropbox URL', 'agama' ),
 		'tooltip'	    => __( 'Set your dropbox page url.', 'agama' ),
@@ -2251,8 +2259,8 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'default'		=> ''
 	) );
 	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'E-mail URL', 'agama' ),
-		'tooltip'	    => __( 'Set your e-mail contact url.', 'agama' ),
+		'label'			=> __( 'E-mail Address', 'agama' ),
+		'tooltip'	    => __( 'Enter your email address. Eg: johndoe@example.com', 'agama' ),
 		'section'		=> 'agama_social_icons_section',
 		'settings'		=> 'social_email',
 		'type'			=> 'text',

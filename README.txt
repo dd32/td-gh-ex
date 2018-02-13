@@ -3,6 +3,12 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.3.2 - 14 February 2018 =
+* Added phone number social icon feature.
+* Updated Kirki framework to the latest version.
+* Updated (improved) social icons code.
+* Fixed social email icon not showing issue.
+
 = 1.3.1.3 - 20 January 2018 =
 * Fixed infinite scroll load more button doesn't show on tag.php page.
 * Fixed infinite scroll load more button doesn't show on archive.php page.
@@ -295,7 +301,7 @@ Agama is distributed under the terms of the GNU GPL2
  
  Images used in Screenshot are licensed under Creative Commons Zero License:
 
- * Luis Llerena - https://unsplash.com/@albertosaure - https://unsplash.com/@albertosaure?photo=6g0KJWnBhxg - CC0 1.0 License
+ * Pexels.com - https://www.pexels.com/photo/silver-imac-near-white-ceramic-kettle-205316/ - CC0 1.0 License
  
  Unless otherwise specified, all the theme files, scripts and images
  are licensed under GNU General Public License version 2, see file license.txt.

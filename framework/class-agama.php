@@ -251,26 +251,44 @@ if( ! class_exists( 'Agama' ) ) {
 				'Digg'		=> esc_url( get_theme_mod('social_digg', '') ),
 				'Linkedin'	=> esc_url( get_theme_mod('social_linkedin', '') ),
 				'Blogger'	=> esc_url( get_theme_mod('social_blogger', '') ),
-				'Skype'		=> esc_html( get_theme_mod('social_skype', '') ),
+				'Skype'		=> esc_attr( get_theme_mod('social_skype', '') ),
 				'Myspace'	=> esc_url( get_theme_mod('social_myspace', '') ),
 				'Deviantart'=> esc_url( get_theme_mod('social_deviantart', '') ),
 				'Yahoo'		=> esc_url( get_theme_mod('social_yahoo', '') ),
 				'Reddit'	=> esc_url( get_theme_mod('social_reddit', '') ),
 				'PayPal'	=> esc_url( get_theme_mod('social_paypal', '') ),
+                'Phone'     => esc_attr( get_theme_mod('social_phone' ) ),
 				'Dropbox'	=> esc_url( get_theme_mod('social_dropbox', '') ),
 				'Soundcloud'=> esc_url( get_theme_mod('social_soundcloud', '') ),
 				'VK'		=> esc_url( get_theme_mod('social_vk', '') ),
-				'Email'		=> esc_url( get_theme_mod('social_email', '') ),
+				'Email'		=> esc_attr( get_theme_mod('social_email', '') ),
 				'RSS'		=> esc_url( get_theme_mod('social_rss', get_bloginfo('rss2_url')) )
 			);
 			if( $style == 'animated' ):
 				echo '<ul>';
 				foreach( $social as $name => $url ) {
 					if( ! empty( $url ) ) {
+                        
+                        if( $name == 'Phone' ) {
+                            $url = 'tel:' . $url;
+                        }
+                        if( $name == 'Skype' ) {
+                            $url = 'skype:' . $url . '?call';
+                        }
+                        if( $name == 'Email' ) {
+                            $url = 'mailto:' . $url;
+                        }
+                        
+                        $fa_class = 'fa-' . strtolower( $name );
+                        
+                        if( $name == 'Email' ) {
+                            $fa_class = 'fa-at';
+                        }
+                        
 						echo sprintf
 						(
-							'<li><a class="tv-%s" href="%s" target="%s"><span class="tv-icon"><i class="fa fa-%s"></i></span><span class="tv-text">%s</span></a></li>', 
-							esc_attr( strtolower($name) ), $url, $_target, esc_attr( strtolower( $name ) ), esc_attr( $name )
+							'<li><a class="tv-%s" href="%s" target="%s"><span class="tv-icon"><i class="fa %s"></i></span><span class="tv-text">%s</span></a></li>', 
+							esc_attr( strtolower($name) ), $url, $_target, esc_attr( $fa_class ), esc_attr( $name )
 						);
 					}
 				}
@@ -278,6 +296,23 @@ if( ! class_exists( 'Agama' ) ) {
 			else:
 				foreach( $social as $name => $url ) {
 					if( ! empty( $url ) ) {
+                        
+                        if( $name == 'Phone' ) {
+                            $url = 'tel:' . $url;
+                        }
+                        if( $name == 'Skype' ) {
+                            $url = 'skype:' . $url . '?call';
+                        }
+                        if( $name == 'Email' ) {
+                            $url = 'mailto:' . $url;
+                        }
+                        
+                        $fa_class = 'fa-' . strtolower( $name );
+                        
+                        if( $name == 'Email' ) {
+                            $fa_class = 'fa-at';
+                        }
+                        
 						echo sprintf
 						(
 							'<a class="social-icons %s" href="%s" target="%s" data-toggle="tooltip" data-placement="%s" title="%s"></a>', 
