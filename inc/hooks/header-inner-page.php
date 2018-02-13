@@ -19,7 +19,7 @@ if (!function_exists('best_education_single_page_title')) :
                 }
             }
             ?>
-        <div class="wrapper page-inner-title inner-banner primary-bgcolor data-bg " data-background="<?php echo esc_url($global_banner_image); ?>">
+        <div class="wrapper page-inner-title inner-banner data-bg " data-background="<?php echo esc_url($global_banner_image); ?>">
             <header class="entry-header">
                 <div class="container">
                     <div class="row">
@@ -49,7 +49,7 @@ if (!function_exists('best_education_single_page_title')) :
             </header><!-- .entry-header -->
             <div class="bg-overlay"></div>
         </div>
-        <div class="breadcrumb-wrapper">
+        <div class="breadcrumb-wrapper secondary-bgcolor">
             <div class="container">
                 <div class="row">
                     <?php

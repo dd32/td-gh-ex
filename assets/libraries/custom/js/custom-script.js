@@ -9,7 +9,7 @@
                 this.toggleMenu(), this.menuMobile(), this.menuArrow()
             },
             toggleMenu: function () {
-                e('#masthead').on('click', '.toggle-menu', function(event) {
+                e('#masthead').on('click', '.toggle-menu', function (event) {
                     var ethis = e('.main-navigation .menu .menu-mobile');
                     if (ethis.css('display') == 'block') {
                         ethis.slideUp('300');
@@ -18,7 +18,7 @@
                     }
                     e('.ham').toggleClass('exit');
                 });
-                e('#masthead .main-navigation ').on('click', '.menu-mobile a i', function(event) {
+                e('#masthead .main-navigation ').on('click', '.menu-mobile a i', function (event) {
                     event.preventDefault();
                     var ethis = e(this),
                         eparent = ethis.closest('li'),
@@ -53,7 +53,7 @@
             },
             menuArrow: function () {
                 if (e('#masthead .main-navigation div.menu > ul').length) {
-                    e('#masthead .main-navigation div.menu > ul .sub-menu').parent('li').find('> a').append('<i class="ion-ios-arrow-down">');
+                    e('#masthead .main-navigation div.menu > ul .sub-menu').parent('li').find('> a').append('<i class="fa fa-angle-down">');
                 }
             }
         },
@@ -73,6 +73,15 @@
             });
         },
 
+        n.SearchReveal = function () {
+            e('.icon-search').on('click', function (event) {
+                e('body').toggleClass('reveal-search');
+            });
+            e('.close-popup').on('click', function (event) {
+                e('body').removeClass('reveal-search');
+            });
+        },
+
         /* Slick Slider */
         n.SlickCarousel = function () {
             e(".mainbanner-jumbotron").slick({
@@ -83,11 +92,11 @@
                 autoplaySpeed: 8000,
                 infinite: true,
                 dots: false,
-                nextArrow: '<i class="Thememattic-icon slide-icon slide-next ion-ios-arrow-right quaternary-bgcolor"></i>',
-                prevArrow: '<i class="Thememattic-icon slide-icon slide-prev ion-ios-arrow-left quaternary-bgcolor"></i>',
+                nextArrow: '<i class="Thememattic-icon slide-icon slide-next fa fa-angle-right"></i>',
+                prevArrow: '<i class="Thememattic-icon slide-icon slide-prev fa fa-angle-left"></i>',
             });
 
-            e(".tm-slider-widget").slick({
+            e(".tm-news").slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 fade: true,
@@ -95,41 +104,96 @@
                 autoplaySpeed: 8000,
                 infinite: true,
                 dots: false,
-                nextArrow: '<i class="Thememattic-icon slide-icon slide-next ion-ios-arrow-right quaternary-bgcolor"></i>',
-                prevArrow: '<i class="Thememattic-icon slide-icon slide-prev ion-ios-arrow-left quaternary-bgcolor"></i>',
+                nextArrow: '<i class="Thememattic-icon slide-icon slide-next fa fa-angle-right"></i>',
+                prevArrow: '<i class="Thememattic-icon slide-icon slide-prev fa fa-angle-left"></i>',
             });
 
-            e('.trending-slider').slick({
-                slidesToShow: 4,
+
+            e('.student-voice').slick({
+                slidesToShow: 3,
                 slidesToScroll: 1,
-                dots: false,
-                arrows: false,
-                nextArrow: '<i class="Thememattic-icon slide-icon slide-next ion-ios-arrow-right quaternary-bgcolor"></i>',
-                prevArrow: '<i class="Thememattic-icon slide-icon slide-prev ion-ios-arrow-left quaternary-bgcolor"></i>',
+                nextArrow: '<i class="Thememattic-icon slide-icon slide-next fa fa-angle-right"></i>',
+                prevArrow: '<i class="Thememattic-icon slide-icon slide-prev fa fa-angle-left"></i>',
                 focusOnSelect: true,
                 responsive: [
                     {
                         breakpoint: 991,
                         settings: {
                             slidesToShow: 3,
-                            slidesToScroll: 3,
-                            arrows: true
+                            slidesToScroll: 3
                         }
                     },
                     {
                         breakpoint: 768,
                         settings: {
                             slidesToShow: 2,
-                            slidesToScroll: 2,
-                            arrows: true
+                            slidesToScroll: 2
                         }
                     },
                     {
                         breakpoint: 480,
                         settings: {
                             slidesToShow: 1,
-                            slidesToScroll: 1,
-                            arrows: true
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+
+            e('.tm-team').slick({
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                nextArrow: '<i class="Thememattic-icon slide-icon slide-next fa fa-angle-right"></i>',
+                prevArrow: '<i class="Thememattic-icon slide-icon slide-prev fa fa-angle-left"></i>',
+                focusOnSelect: true,
+                responsive: [
+                    {
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+
+            e('.testmonial-slides').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                nextArrow: '<i class="Thememattic-icon slide-icon slide-next fa fa-angle-right"></i>',
+                prevArrow: '<i class="Thememattic-icon slide-icon slide-prev fa fa-angle-left"></i>',
+                focusOnSelect: true,
+                responsive: [
+                    {
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
                         }
                     }
                 ]
@@ -143,8 +207,8 @@
                 autoplaySpeed: 8000,
                 infinite: true,
                 dots: false,
-                nextArrow: '<i class="Thememattic-icon slide-icon slide-next ion-ios-arrow-right quaternary-bgcolor"></i>',
-                prevArrow: '<i class="Thememattic-icon slide-icon slide-prev ion-ios-arrow-left quaternary-bgcolor"></i>',
+                nextArrow: '<i class="Thememattic-icon slide-icon slide-next fa fa-angle-right"></i>',
+                prevArrow: '<i class="Thememattic-icon slide-icon slide-prev fa fa-angle-left"></i>',
             });
         },
 
@@ -157,7 +221,7 @@
         },
 
         n.Thememattic_preloader = function () {
-            e(window).load(function(){
+            e(window).load(function () {
                 e("body").addClass("page-loaded");
             });
         },
@@ -171,13 +235,13 @@
             });
         },
 
-        // SHOW/HIDE SCROLL UP //
-        n.show_hide_scroll_top = function () {
-            if (e(window).scrollTop() > e(window).height() / 2) {
-                e("#scroll-up").fadeIn(300);
-            } else {
-                e("#scroll-up").fadeOut(300);
-            }
+
+        n.parellex = function () {
+            e.stellar({
+                horizontalScrolling: false,
+                verticalOffset: 0,
+                responsive: true
+            });
         },
 
         // SCROLL UP //
@@ -189,12 +253,21 @@
                 return false;
             });
 
+
+            e('.smoothscroll').on('click', function () {
+                event.preventDefault();
+                var target = this.hash;
+
+                e('html, body').stop().animate({
+                    'scrollTop': e(target).offset().top - 0
+                }, 1200);
+            });
         },
 
         e(document).ready(function () {
-            n.mobileMenu.init(), n.DataBackground(), n.SlickCarousel(), n.Thememattic_preloader(), n.scroll_up();
+            n.mobileMenu.init(), n.DataBackground(), n.SearchReveal(), n.SlickCarousel(), n.Thememattic_preloader(), n.parellex(), n.scroll_up();
         }), e(window).scroll(function () {
-        n.stickyMenu(), n.show_hide_scroll_top();
+        n.stickyMenu();
     }), e(window).resize(function () {
         n.mobileMenu.menuMobile();
     })

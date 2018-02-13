@@ -127,15 +127,13 @@ if (!class_exists('Best_Education_Author_Post_widget')) :
                 </div> <!-- /#author-details -->
                 <div class="author-social">
                     <?php if (!empty($params['url-fb'])) { ?>
-                        <a href="<?php echo esc_url($params['url-fb']); ?>"><i
-                                class="meta-icon ion-social-facebook"></i></a>
+                        <a href="<?php echo esc_url($params['url-fb']); ?>"><i class="ion-social-facebook"></i></a>
                     <?php } ?>
                     <?php if (!empty($params['url-tw'])) { ?>
-                        <a href="<?php echo esc_url($params['url-tw']); ?>"><i class="meta-icon ion-social-twitter"></i></a>
+                        <a href="<?php echo esc_url($params['url-tw']); ?>"><i class="ion-social-twitter"></i></a>
                     <?php } ?>
                     <?php if (!empty($params['url-gp'])) { ?>
-                        <a href="<?php echo esc_url($params['url-gp']); ?>"><i
-                                class="meta-icon ion-social-googleplus"></i></a>
+                        <a href="<?php echo esc_url($params['url-gp']); ?>"><i class="ion-social-googleplus"></i></a>
                     <?php } ?>
                 </div>
             </div>

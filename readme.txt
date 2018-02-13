@@ -4,7 +4,7 @@ Contributors: Thememattic
 
 Requires at least: 4.0
 Tested up to: 4.9
-Stable tag: 0.0.5
+Stable tag: 0.0.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -27,7 +27,7 @@ Best Education is distributed under the terms of the GNU GPL
 
 == Changelog ==
 
-= 0.0.5 =
+= 0.0.6 =
 =Initial release=
 
 
@@ -74,11 +74,17 @@ Source: https://github.com/kenwheeler/slick
 License: Licensed under the MIT license
 
 == Image Used ==
-https://pixabay.com/en/people-girl-guy-hug-love-smile-2564430/
+https://pixabay.com/en/dawn-dusk-graduates-hill-people-1840298/
+https://pixabay.com/en/johns-hopkins-university-gilman-hall-1590925/
 
 All are Licensed under CC0
 
 == Google Fonts ==
-Open Sans
-Source: https://fonts.google.com/specimen/Roboto
-License: Apache License, Version 2.0
+Josefin Sans
+Source: https://fonts.google.com/specimen/Josefin+Sans
+License: Open Font License
+
+
+Lato
+Source: https://fonts.google.com/specimen/Lato
+License: Open Font License

@@ -17,15 +17,6 @@ if ('posts' == get_option('show_on_front')) {
      */
     do_action('best_education_action_front_page');
 
-    /**
-     * best_education_action_sidebar_section hook
-     * @since Best Education 0.0.1
-     *
-     * @hooked best_education_action_sidebar_section -  20
-     * @sub_hooked best_education_action_sidebar_section -  20
-     */
-    do_action('best_education_action_sidebar_section');
-
     if (best_education_get_option('home_page_content_status') == 1) {
         ?>
         <section class="section-block recent-blog">
@@ -34,13 +25,13 @@ if ('posts' == get_option('show_on_front')) {
                     <div class="col-md-8">
                         <?php
                         while (have_posts()) : the_post();
-                            the_title('<h2 class="section-title"> <span class="secondary-bgcolor">', '</span></h2>');
+                            the_title('<h2 class="section-title">', '</h2>');
                             get_template_part('template-parts/content', 'page');
 
                         endwhile; // End of the loop.
                         ?>
                     </div><!-- #primary -->
-                        <?php get_sidebar(); ?>
+                    <?php get_sidebar(); ?>
                 </div>
             </div>
         </section>
