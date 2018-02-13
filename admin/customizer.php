@@ -46,41 +46,41 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
                 <label>
                     <input type="radio" <?php $this->link(); ?> name="<?php echo esc_attr( $this->id ); ?>"
                            value="no-sidebar"/>
-                    <img src="<?php echo esc_attr( $imguri ); ?>no-sidebar.png"
+                    <img src="<?php echo esc_url( $imguri ); ?>no-sidebar.png"
                          alt="<?php _e( 'Full Width', 'attire' ); ?>" title="<?php _e( 'Full Width', 'attire' ); ?>"/>
                 </label>
                 <label>
                     <input type="radio" <?php $this->link(); ?> name="<?php echo esc_attr( $this->id ); ?>"
                            value="left-sidebar-1"/>
-                    <img src="<?php echo esc_attr( $imguri ); ?>left-sidebar.png"
+                    <img src="<?php echo esc_url( $imguri ); ?>left-sidebar.png"
                          alt="<?php _e( 'Left Sidebar', 'attire' ); ?>"
                          title="<?php _e( 'Left Sidebar', 'attire' ); ?>"/>
                 </label>
                 <label>
                     <input type="radio" <?php $this->link(); ?> name="<?php echo esc_attr( $this->id ); ?>"
                            value="right-sidebar-1"/>
-                    <img src="<?php echo esc_attr( $imguri ); ?>right-sidebar.png"
+                    <img src="<?php echo esc_url( $imguri ); ?>right-sidebar.png"
                          alt="<?php _e( 'Right Sidebar', 'attire' ); ?>"
                          title="<?php _e( 'Right Sidebar', 'attire' ); ?>"/>
                 </label>
                 <label>
                     <input type="radio" <?php $this->link(); ?> name="<?php echo esc_attr( $this->id ); ?>"
                            value="sidebar-2"/>
-                    <img src="<?php echo esc_attr( $imguri ); ?>sidebar-2.png"
+                    <img src="<?php echo esc_url( $imguri ); ?>sidebar-2.png"
                          alt="<?php _e( 'Sidebar | Content | Sidebar', 'attire' ); ?>"
                          title="<?php _e( 'Sidebar | Content | Sidebar', 'attire' ); ?>"/>
                 </label>
                 <label>
                     <input type="radio" <?php $this->link(); ?> name="<?php echo esc_attr( $this->id ); ?>"
                            value="left-sidebar-2"/>
-                    <img src="<?php echo esc_attr( $imguri ); ?>left-sidebar-2.png"
+                    <img src="<?php echo esc_url( $imguri ); ?>left-sidebar-2.png"
                          alt="<?php _e( 'Two Left Sidebar', 'attire' ); ?>"
                          title="<?php _e( 'Two Left Sidebar', 'attire' ); ?>"/>
                 </label>
                 <label>
                     <input type="radio" <?php $this->link(); ?> name="<?php echo esc_attr( $this->id ); ?>"
                            value="right-sidebar-2"/>
-                    <img src="<?php echo esc_attr( $imguri ); ?>right-sidebar-2.png"
+                    <img src="<?php echo esc_url( $imguri ); ?>right-sidebar-2.png"
                          alt="<?php _e( 'Two Right Sidebar', 'attire' ); ?>"
                          title="<?php _e( 'Two Right Sidebar', 'attire' ); ?>"/>
                 </label>
@@ -137,8 +137,6 @@ function attire_customize_register( $wp_customize ) {
 	$section         = '';
 	$description     = '';
 
-//	$wp_customize->remove_section( 'colors' );
-//	$wp_customize->remove_section( 'background_image' );
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 

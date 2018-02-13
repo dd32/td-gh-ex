@@ -27,16 +27,16 @@ if ( ! defined( 'ABSPATH' ) ) {
     <div class="post-meta post-meta-bottom">
         <ul class="meta-list">
             <li>
-                <span><?php echo esc_attr__( 'Posted on', 'attire' ); ?></span>
+                <span><?php echo __( 'Posted on', 'attire' ); ?></span>
                 <span class="black bold"><a href="<?php the_permalink(); ?>"><?php the_date(); ?></a></span>
             </li>
             <li>
-                <span><?php echo esc_attr__( 'By', 'attire' ); ?></span>
+                <span><?php echo __( 'By', 'attire' ); ?></span>
                 <span class="bold">
                 <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php the_author(); ?></a></span>
             </li>
             <li>
-                <span><?php echo esc_attr__( 'In', 'attire' ); ?></span>
+                <span><?php echo __( 'In', 'attire' ); ?></span>
                 <span class="bold">
 				<?php the_category( ', ' ); ?></span>
             </li>

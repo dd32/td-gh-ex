@@ -66,7 +66,7 @@ class AttireBase {
 		global $post;
 		$more = AttireThemeEngine::NextGetOption( 'attire_read_more_text', __( 'Read more', 'attire' ) );
 
-		return '... <a class="read-more-link" href="' . get_permalink( $post->ID ) . '">' . esc_attr( $more ) . '</a>';
+		return '... <a class="read-more-link" href="' . get_permalink( $post->ID ) . '">' . wp_kses_post( $more ) . '</a>';
 	}
 }
 

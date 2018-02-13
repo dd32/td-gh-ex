@@ -29,13 +29,6 @@ class MetaBoxes {
 				'priority'  => 'core',
 				'post_type' => 'page'
 			),
-//			'attire-page-settings' => array(
-//				'title'     => __( 'Page Settings', 'attire' ),
-//				'callback'  => array( $this, 'PageSettings' ),
-//				'position'  => 'normal',
-//				'priority'  => 'core',
-//				'post_type' => 'page'
-//			)
 		);
 		$this->meta_boxes = apply_filters( "attire_metabox", $this->meta_boxes );
 

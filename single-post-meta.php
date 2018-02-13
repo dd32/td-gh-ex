@@ -8,18 +8,18 @@ $navigation_buttons = $navigation_buttons === 'show' ? 'canshow' : 'noshow';
 <div class="post-meta">
     <ul class="meta-list single-post">
         <li>
-            <span><?php echo esc_attr__('Posted on', 'attire'); ?></span>
+            <span><?php echo __('Posted on', 'attire'); ?></span>
             <span class="bold"><a
                         href="<?php the_permalink(); ?>"><?php the_date(); ?></a></span>
         </li>
         <li>
-            <span><?php echo esc_attr__('By', 'attire'); ?></span>
+            <span><?php echo __('By', 'attire'); ?></span>
             <span class="bold">
                 <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php the_author(); ?></a>
             </span>
         </li>
         <li>
-            <span><?php echo esc_attr__('In', 'attire'); ?></span>
+            <span><?php echo __('In', 'attire'); ?></span>
             <span class="bold"><?php the_category(', '); ?></span>
 
         </li>

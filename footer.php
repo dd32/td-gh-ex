@@ -2,9 +2,7 @@
 if (!defined('ABSPATH')) {
     exit;
 }
-if (defined('ATTIRE_LEFT_NAV')) {
-    echo '</div> </div> </div>';
-}
+
 do_action(ATTIRE_THEME_PREFIX . "body_content_after");
 
 $canshow = AttireThemeEngine::NextGetOption('attire_back_to_top_visibility', 'show');

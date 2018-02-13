@@ -35,7 +35,7 @@ get_header(); ?>
                              alt="<?php _e( 'Author avatar', 'attire' ); ?>">
 
                         <div class="card-footer text-muted">
-							<?php echo esc_attr( $curauth->first_name . " " . $curauth->last_name ); ?>
+							<?php echo esc_html( $curauth->first_name . " " . $curauth->last_name ); ?>
                         </div>
                     </div>
                 </div>
@@ -45,30 +45,30 @@ get_header(); ?>
 
 
                     <div class="card">
-                        <div class="card-header"><?php echo esc_attr__( 'About', 'attire' ); ?></div>
+                        <div class="card-header"><?php echo __( 'About', 'attire' ); ?></div>
                         <div class="card-body">
-							<?php echo esc_attr( get_user_meta( $curauth->ID, 'description', true ) ); ?>
+							<?php echo esc_html( get_user_meta( $curauth->ID, 'description', true ) ); ?>
                         </div>
                     </div>
 				<?php endif; ?>
 
                 <br>
                 <div class="card">
-                    <div class="card-header"><?php echo esc_attr__( 'Contact Author', 'attire' ); ?></div>
+                    <div class="card-header"><?php echo __( 'Contact Author', 'attire' ); ?></div>
                     <div class="card-body">
                         <form method="post">
                             <input type="hidden" name="task" value="contact_author"/>
                             <input type="hidden" name="uid" value="<?php echo esc_attr( $curauth->ID ); ?>"/>
 
-                            <label><?php echo esc_attr__( 'Your Name:', 'attire' ); ?></label>
+                            <label><?php echo __( 'Your Name:', 'attire' ); ?></label>
                             <input type="text" name="name" class="form-control"/>
-                            <label><?php echo esc_attr__( 'Your Email:', 'attire' ); ?></label>
+                            <label><?php echo __( 'Your Email:', 'attire' ); ?></label>
                             <input type="text" name="email" class="form-control"/>
-                            <label><?php echo esc_attr__( 'Subject:', 'attire' ); ?></label>
+                            <label><?php echo __( 'Subject:', 'attire' ); ?></label>
                             <input type="text" name="subject" class="form-control"/>
-                            <label><?php echo esc_attr__( 'Message:', 'attire' ); ?></label>
+                            <label><?php echo __( 'Message:', 'attire' ); ?></label>
                             <textarea class="form-control" name="message"></textarea><br>
-                            <button class="btn btn-info"><?php echo esc_attr__( 'Submit', 'attire' ); ?></button>
+                            <button class="btn btn-info"><?php echo __( 'Submit', 'attire' ); ?></button>
                         </form>
                     </div>
                 </div>

@@ -19,9 +19,9 @@ get_header(); ?>
                     <div class="clear"></div>
 					<?php do_action( ATTIRE_THEME_PREFIX . 'before_contents' ); ?>
                     <h1 class="entry-title">
-						<?php echo esc_attr( apply_filters( ATTIRE_THEME_PREFIX . 'page_not_found_title', __( '404, Page not found!', 'attire' ) ) ); ?></h1>
+						<?php echo wp_kses_post( apply_filters( ATTIRE_THEME_PREFIX . 'page_not_found_title', __( '404, Page not found!', 'attire' ) ) ); ?></h1>
                     <div class="entry-content">
-						<?php echo esc_attr( apply_filters( ATTIRE_THEME_PREFIX . 'page_not_found_message', __( 'Nothing found here! Please use navigation above or search to find what you are looking for.', 'attire' ) ) ); ?>
+						<?php echo wp_kses_post( apply_filters( ATTIRE_THEME_PREFIX . 'page_not_found_message', __( 'Nothing found here! Please use navigation above or search to find what you are looking for.', 'attire' ) ) ); ?>
                     </div>
 					<?php do_action( ATTIRE_THEME_PREFIX . 'after_contents' ); ?>
 

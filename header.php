@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!--BODY STARTS HERE-->
 
 <body <?php body_class( 'attire' );
-AttireThemeEngine::AsinsioBodySchema(); ?> >
+AttireThemeEngine::AttireBodySchema(); ?> >
 
 <?php
 /**
@@ -29,7 +29,7 @@ do_action( ATTIRE_THEME_PREFIX . "body_content_before" );
 if ( is_home() ) {
 	$post_id = get_option( 'page_for_posts' );
 	$title   = get_the_title( $post_id );
-} else if ( $post ) {
+} elseif ( $post ) {
 	$post_id = $post->ID;
 	$title   = get_the_title( $post_id );
 }
@@ -60,12 +60,12 @@ $page_width = isset( $meta['layout_page'] ) && $meta['layout_page'] !== 'default
 	<?php do_action( ATTIRE_THEME_PREFIX . "after_header" ); ?>
 
     <!--        Page Header        -->
-	<?php if ( $ph_active && $ph_show_on_fp && is_page() ) {
+	<?php if ( $ph_active && $ph_show_on_fp && ( is_page() || is_home() ) ) {
 		do_action( ATTIRE_THEME_PREFIX . "before_page_header" );
 		?>
         <div class="page_header_wrap">
             <div class="page_header_inner">
-                <h1 id="cph_title"><?php echo esc_attr( $title ); ?></h1>
+                <h1 id="cph_title"><?php echo esc_html( $title ); ?></h1>
             </div>
         </div>
 		<?php

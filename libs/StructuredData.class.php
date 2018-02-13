@@ -15,7 +15,7 @@ class StructuredData {
 	}
 
 	function ItemName( $name ) {
-		return '<span itemprop="name">' . $name . '</span>';
+		return '<span itemprop="name">' . esc_html( $name ) . '</span>';
 	}
 
 }

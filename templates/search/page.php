@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	AttireFramework::DynamicSidebars( 'left' );
 	?>
     <div class="<?php AttireFramework::ContentAreaWidth(); ?> attire-post-and-comments">
-        <h2 class="search-result-title"><?php echo __( 'Search result for: ', 'attire' ) . esc_attr( $_GET['s'] ) ?></h2>
+        <h2 class="search-result-title"><?php echo __( 'Search result for: ', 'attire' ) . esc_html( $_GET['s'] ) ?></h2>
 
 		<?php
 		query_posts( array( 'post_type' => 'page', 's' => esc_attr( $_GET['s'] ) ) );

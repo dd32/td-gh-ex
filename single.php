@@ -39,14 +39,14 @@ $meta_position = AttireThemeEngine::NextGetOption( 'attire_single_post_meta_posi
 
 						<?php if ( has_tag() ) { ?>
                             <div class="single-post-tags">
-                                <h3 class="tag-title"><?php echo esc_attr__( 'Post Tags', 'attire' ); ?></h3>
+                                <h3 class="tag-title"><?php echo __( 'Post Tags', 'attire' ); ?></h3>
 								<?php the_tags( '<div class="post-tags">', ' ', '</div>' ); ?>
                             </div>
                             <br/>
 						<?php } ?>
                         <div class="single-post-author">
 
-                            <h3 class="author-title"><?php echo esc_attr__( 'About The Author', 'attire' ); ?></h3>
+                            <h3 class="author-title"><?php echo __( 'About The Author', 'attire' ); ?></h3>
 
                             <div class="post-author-info">
 
@@ -55,7 +55,7 @@ $meta_position = AttireThemeEngine::NextGetOption( 'attire_single_post_meta_posi
                                          src="<?php echo esc_url( get_avatar_url( get_the_author_meta( 'ID' ), array( 'size' => 90 ) ) ); ?>"
                                          alt="<?php _e( 'Author Avatar', 'attire' ) ?>">
                                     <div class="media-body">
-                                        <h4 class="mt-0"><?php echo esc_attr( get_the_author_meta( 'display_name' ) ); ?></h4>
+                                        <h4 class="mt-0"><?php echo esc_html( get_the_author_meta( 'display_name' ) ); ?></h4>
 										<?php echo wp_kses_post( get_the_author_meta( 'description' ) ); ?>
                                     </div>
                                 </div>

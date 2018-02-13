@@ -3,7 +3,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-//require_once dirname( __FILE__ ) . '/Util.class.php';
 require_once dirname( __FILE__ ) . '/OptionFields.class.php';
 
 
@@ -27,96 +26,8 @@ class AttireThemeEngine {
 	}
 
 	function WPHead() {
-		$this->PageCSS();
-		$this->CustomPageBG();
-		$this->CustomPageHeader();
+	    $this->CustomPageHeader();
 		$this->CustomCSS();
-	}
-
-
-	function PageCSS() {
-		wp_reset_query();
-		global $post;
-
-		$post_id = '';
-
-		if ( $post ) {
-			$post_id = $post->ID;
-		}
-
-		if ( ! is_front_page() && is_home() ) { // for static blog page ; meta has to be retrieved this way
-			$post_id = get_option( 'page_for_posts' );
-		}
-
-		if ( ! is_404() ) {
-			$data = maybe_unserialize( get_post_meta( $post_id, 'attire_post_meta', true ) );
-		}
-
-
-		if ( isset( $data['page_css'] ) ) {
-			?>
-            <!-- custom page css -->
-            <style id="page_css">
-                <?php echo wp_filter_nohtml_kses($data['page_css']); ?>
-            </style>
-            <!-- // custom page css -->
-			<?php
-		}
-
-	}
-
-	/**
-	 * @usage Custom Page Background for specific pages
-	 */
-	function CustomPageBG() {
-		global $post;
-		$post_id  = '';
-		$selector = '';
-		if ( $post ) {
-			$post_id  = $post->ID;
-			$selector = 'body.page-id-' . intval( $post_id );
-		}
-
-		if ( ! is_front_page() && is_home() ) { // for static blog page ; post_id to be retrieved this way
-			$post_id  = get_option( 'page_for_posts' );
-			$selector = 'body.blog';
-
-		}
-
-		if ( ! is_404() ) {
-			$data = maybe_unserialize( get_post_meta( $post_id, 'attire_post_meta', true ) );
-		}
-
-		$css = "";
-
-		if ( isset( $data['pagebg']['image'] ) && $data['pagebg']['image'] != '' ) {
-			$pbg = esc_url( $data['pagebg']['image'] );
-			$css .= "background-image: url({$pbg});";
-		}
-
-		if ( isset( $data['pagebg']['color'] ) && $data['pagebg']['color'] != '' ) {
-			$css .= "background-color: {$data['pagebg']['color']};";
-		}
-		if ( isset( $data['pagebg']['repeat'] ) && $data['pagebg']['repeat'] != '' ) {
-			$css .= "background-repeat: {$data['pagebg']['repeat']};";
-		}
-		if ( isset( $data['pagebg']['attachment'] ) && $data['pagebg']['attachment'] != '' ) {
-			$css .= "background-attachment: {$data['pagebg']['attachment']};";
-		}
-		if ( isset( $data['pagebg']['position_h'] ) && $data['pagebg']['position_h'] != '' ) {
-			$css .= "background-position: {$data['pagebg']['position_h']} {$data['pagebg']['position_v']};";
-		}
-		if ( $post_id !== '' ) {
-			?>
-            <!-- Custom page background -->
-            <style><?php echo esc_attr($selector); ?>
-                {
-                <?php echo wp_filter_nohtml_kses($css); ?>
-                }
-            </style>
-            <!-- / Custom page background -->
-			<?php
-		}
 	}
 
 
@@ -258,7 +169,6 @@ class AttireThemeEngine {
 			return;
 		}
 
-		wp_enqueue_style( 'metabox', ATTIRE_TEMPLATE_URL . '/admin/css/metabox.css' );
 		wp_enqueue_script( 'popper', ATTIRE_TEMPLATE_URL . '/bootstrap/js/popper.min.js', array( 'jquery' ) );
 		wp_enqueue_script( 'blockui-js', ATTIRE_TEMPLATE_URL . '/admin/js/jquery.blockUI.js', array( 'jquery' ) );
 		wp_enqueue_script( 'attire-js', ATTIRE_TEMPLATE_URL . '/admin/js/attire-admin.js', array(
@@ -286,7 +196,7 @@ class AttireThemeEngine {
 		return $classes;
 	}
 
-	public function FontCSS() {
+	public function ThemeCustomizerCSS() {
 
 		$theme_mod = get_option( 'attire_options' );
 
@@ -628,12 +538,12 @@ class AttireThemeEngine {
 		// Custom CSS ( From Customizer Custom CSS )
 		$attire_custom_css = wp_filter_nohtml_kses( AttireThemeEngine::NextGetOption( 'custom_css' ) );
 		$attire_custom_css = esc_attr( stripslashes( $attire_custom_css ) );
-		$font_css          = self::FontCSS();
+		$font_css          = self::ThemeCustomizerCSS();
 		echo "<style type='text/css'> {$attire_custom_css}{$font_css}</style>";
 
 	}
 
-	public static function AsinsioBodySchema() {
+	public static function AttireBodySchema() {
 
 		$blog = ( is_home() || is_archive() || is_attachment() || is_tax() || is_single() ) ? true : false;
 

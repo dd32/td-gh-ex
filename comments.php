@@ -47,7 +47,7 @@ $commenter = wp_get_current_commenter();
 $fields    = array(
 	'author' => '<input class="col-lg-12 form-control" required="required" placeholder="' . __( 'Name', 'attire' ) . ' *" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"/>',
 	'email'  => '<input class="col-lg-12 form-control" required="required" placeholder="' . __( 'Email', 'attire' ) . ' *" id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '"/>',
-	'url'    => '<input class="col-lg-12 form-control" placeholder="' . __( 'Website', 'attire' ) . '" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '"/>',
+	'url'    => '<input class="col-lg-12 form-control" placeholder="' . __( 'Website', 'attire' ) . '" id="url" name="url" type="text" value="' . esc_url( $commenter['comment_author_url'] ) . '"/>',
 );
 
 $args = array(

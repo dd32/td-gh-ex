@@ -211,8 +211,8 @@ $attire_options = array(
 		'section'   => 'attire_blog_section',
 		'default'   => 'excerpt',
 		'choices'   => array(
-			'full-post' => 'Show entire post',
-			'excerpt'   => 'Show excerpt'
+			'full-post' => __( 'Show entire post', 'attire' ),
+			'excerpt'   => __( 'Show excerpt', 'attire' )
 		)
 	),
 	'attire_read_more_text'              => array(
@@ -220,7 +220,7 @@ $attire_options = array(
 		'transport' => 'postMessage',
 		'type'      => 'text',
 		'section'   => 'attire_blog_section',
-		'default'   => 'Read more',
+		'default'   => __( 'Read more', 'attire' ),
 	),
 	'attire_single_post_post_navigation' => array(
 		'label'     => __( 'Previous/Next Post Button', 'attire' ),
@@ -229,8 +229,8 @@ $attire_options = array(
 		'section'   => 'attire_blog_section',
 		'default'   => 'show',
 		'choices'   => array(
-			'show' => 'Show',
-			'hide' => 'Hide'
+			'show' => __( 'Show', 'attire' ),
+			'hide' => __( 'Hide', 'attire' )
 		)
 	),
 	'attire_single_post_meta_position'   => array(
@@ -240,8 +240,8 @@ $attire_options = array(
 		'section'   => 'attire_blog_section',
 		'default'   => 'after-title',
 		'choices'   => array(
-			'after-content' => 'After Post Content',
-			'after-title'   => 'After Post Title'
+			'after-content' => __( 'After Post Content', 'attire' ),
+			'after-title'   => __( 'After Post Title', 'attire' )
 		)
 	),
 	'site_header_bg_color'               => array(
@@ -339,8 +339,8 @@ $attire_options = array(
 		'section'   => 'attire_layout_options',
 		'default'   => 'container-fluid',
 		'choices'   => array(
-			'container-fluid' => 'Full-Width',
-			'container'       => 'Container',
+			'container-fluid' => __( 'Full-Width', 'attire' ),
+			'container'       => __( 'Container', 'attire' ),
 		),
 	),
 	'header_content_layout_type'        => array(
@@ -350,8 +350,8 @@ $attire_options = array(
 		'section'   => 'attire_layout_options',
 		'default'   => 'container',
 		'choices'   => array(
-			'container-fluid' => 'Full-Width',
-			'container'       => 'Container',
+			'container-fluid' => __( 'Full-Width', 'attire' ),
+			'container'       => __( 'Container', 'attire' ),
 		),
 	),
 	'body_content_layout_type'          => array(
@@ -361,8 +361,8 @@ $attire_options = array(
 		'section'   => 'attire_layout_options',
 		'default'   => 'container',
 		'choices'   => array(
-			'container-fluid' => 'Full-Width',
-			'container'       => 'Container',
+			'container-fluid' => __( 'Full-Width', 'attire' ),
+			'container'       => __( 'Container', 'attire' ),
 		),
 	),
 	'footer_widget_content_layout_type' => array(
@@ -372,8 +372,8 @@ $attire_options = array(
 		'section'   => 'attire_layout_options',
 		'default'   => 'container',
 		'choices'   => array(
-			'container-fluid' => 'Full-Width',
-			'container'       => 'Container',
+			'container-fluid' => __( 'Full-Width', 'attire' ),
+			'container'       => __( 'Container', 'attire' ),
 		),
 	),
 	'footer_content_layout_type'        => array(
@@ -383,8 +383,8 @@ $attire_options = array(
 		'section'   => 'attire_layout_options',
 		'default'   => 'container',
 		'choices'   => array(
-			'container-fluid' => 'Full-Width',
-			'container'       => 'Container',
+			'container-fluid' => __( 'Full-Width', 'attire' ),
+			'container'       => __( 'Container', 'attire' ),
 		),
 	),
 	'attire_search_form_visibility'     => array(
@@ -394,8 +394,8 @@ $attire_options = array(
 		'section'   => 'attire_header_general_settings',
 		'default'   => 'show',
 		'choices'   => array(
-			'show' => 'Show',
-			'hide' => 'Hide',
+			'show' => __( 'Show', 'attire' ),
+			'hide' => __( 'Hide', 'attire' ),
 		),
 	),
 	'attire_nav_behavior'               => array(
@@ -405,8 +405,8 @@ $attire_options = array(
 		'section'   => 'attire_header_general_settings',
 		'default'   => 'sticky',
 		'choices'   => array(
-			'sticky' => 'Sticky',
-			'static' => 'Static',
+			'sticky' => __( 'Sticky', 'attire' ),
+			'static' => __( 'Static', 'attire' ),
 		),
 	),
 	'attire_back_to_top_visibility'     => array(
@@ -416,8 +416,8 @@ $attire_options = array(
 		'section'   => 'attire_back_to_top',
 		'default'   => 'show',
 		'choices'   => array(
-			'show' => 'Show',
-			'hide' => 'Hide',
+			'show' => __( 'Show', 'attire' ),
+			'hide' => __( 'Hide', 'attire' ),
 		),
 	),
 	'footer_widget_number'              => array(
@@ -748,9 +748,9 @@ $attire_options = array(
 		'section'   => 'attire_default_post_layout',
 		'default'   => '3',
 		'choices'   => array(
-			'2' => '2 Columns',
-			'3' => '3 Columns',
-			'4' => '4 Columns',
+			'2' => __( '2 Columns', 'attire' ),
+			'3' => __( '3 Columns', 'attire' ),
+			'4' => __( '4 Columns', 'attire' ),
 		),
 	),
 	'default_post_rs'       => array(
@@ -1155,7 +1155,7 @@ $attire_options = array(
 		'type'      => 'select',
 		'section'   => 'attire_copyright',
 		'default'   => 'show',
-		'choices'   => array( 'show' => 'Show', 'hide' => 'Hide' )
+		'choices'   => array( 'show' => __( 'Show', 'attire' ), 'hide' => __( 'Hide', 'attire' ) )
 	),
 
 	'ph_active'     => array(
