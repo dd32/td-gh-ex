@@ -16,9 +16,13 @@ Agama Blue is distributed under the terms of the GNU GPL.
 ## Image Credits
 
 Image used on screenshot:
- * John Cobb - https://unsplash.com/johncobb - https://unsplash.com/photos/ssAcdlJRsI4 - CC0 1.0 License
+ * Pexels.com - https://www.pexels.com/photo/silver-imac-near-white-ceramic-kettle-205316/ - CC0 1.0 License
+ * Pexels.com - https://www.pexels.com/photo/white-android-computer-monitor-turned-on-159394/ - CC0 1.0 License
  
 ## Changelog
+
+= 1.0.9 - 13 February 2018 =
+* Minor updates.
 
 = 1.0.8 - 01 December 2017 =
 * Fixed minor issues.
