@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: * Customizr v4.0.17\n"
+"Project-Id-Version: * Customizr v4.0.18\n"
 "Report-Msgid-Bugs-To: https://presscustomizr.com/contact/\n"
-"POT-Creation-Date: 2018-02-01 05:55:54+00:00\n"
+"POT-Creation-Date: 2018-02-13 14:07:19+00:00\n"
 "PO-Revision-Date: 2015-08-22 15:54+0200\n"
 "Last-Translator: Nicolas <contact@presscustomizr.com>\n"
 "Language-Team: Nicolas G. <contact@presscustomizr.com>\n"
@@ -2757,7 +2757,7 @@ msgid "General design settings"
 msgstr "Responsive indstillinger"
 
 #: core/core-settings-map.php:2549
-msgid "Design settings for desktop and laptops"
+msgid "Design settings for desktops and laptops"
 msgstr ""
 
 #: core/core-settings-map.php:2554
