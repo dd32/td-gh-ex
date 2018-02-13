@@ -9,7 +9,7 @@
 						<?php anorya_display_logo(); ?>
 					</div>
 					<div class="col-md-8 header-area-content">
-						<?php anorya_display_header_banner(); ?>
+						<?php  the_custom_logo();  ?>
 					</div>
 				</div>
 			</div>

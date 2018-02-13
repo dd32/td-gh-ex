@@ -34,11 +34,17 @@
 			// Add theme support for Post Formats
 			add_theme_support( 'post-formats', array( 'gallery', 'video', 'audio'  ) );
 			
-			// Add theme support for Custom Background
-			add_theme_support( 'custom-background', array( 'default-color' => 'ffffff', 'default-image' => '', ) );
 			
 			// Add theme support for selective refresh for widgets.
 			add_theme_support( 'customize-selective-refresh-widgets' );
+			
+			// Add theme support for custom logo.
+			add_theme_support( 'custom-logo', array(
+				'height'      => 150,
+				'width'       => 500,
+				'flex-width'  => true,
+				'flex-height' => true,
+			) );
 			
 			// Add wp_nav_menu() locations.
 			register_nav_menus( array('primary_navigation' => esc_html__( 'Primary Navigation', 'anorya' ),) );
@@ -176,12 +182,6 @@
 	//include latest posts widget
 	if ( file_exists(  get_template_directory().'/inc/widgets/anorya_latest_posts.php')){
 		require_once( ( get_template_directory() .'/inc/widgets/anorya_latest_posts.php'));
-	}
-	
-		
-	//include custom menu widget
-	if ( file_exists(  get_template_directory().'/inc/widgets/anorya_navigation.php')){
-		require_once( ( get_template_directory() .'/inc/widgets/anorya_navigation.php'));
 	}
 	
 	//TGM Plugin Activator Class
@@ -512,5 +512,19 @@
 		
 	}
 	add_filter( 'widget_tag_cloud_args', 'anorya_widget_tag_cloud_args' );
+	
+	//customize nav menu widget
+	function anorya_nav_menu_widget_args($args){
+		
+		$args['walker'] = new Anorya_Widget_Nav_Walker();
+		$args['container'] = 'nav';
+		$args['container_class'] = 'navbar';
+		$args['container_id'] = 'primaryNav';
+		$args['menu_class'] = 'nav navbar-nav';
+		
+		return $args;
+	}
+	add_filter( 'widget_nav_menu_args', 'anorya_nav_menu_widget_args' );
+	
 
 ?>

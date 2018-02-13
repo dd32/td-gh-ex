@@ -44,39 +44,31 @@
 									'type'     => 'checkbox',));										
 	
 		
-		//logo upload
-		$wp_customize->add_setting( 'anorya_logo_image_setting' , array(
-									'transport' => 'refresh',
-									'sanitize_callback' => 'anorya_image_sanitize',) );
-		$wp_customize->add_control(	 new WP_Customize_Image_Control($wp_customize, 'anorya_logo_image_control', array(
-																								'label'      => __( 'Change blog logo', 'anorya' ),
-																								'section'    => 'anorya_header_settings',
-																								'settings'   => 'anorya_logo_image_setting',)));	
 		//header style
 		$wp_customize->add_setting( 'anorya_header_style_setting' , array(
 									'default' => '3',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_choices_sanitize',) );
 		$wp_customize->add_control(	'anorya_header_style_control', 	array(
-									'label'    => __( 'Select Header Style', 'anorya' ),
+									'label'    => __( 'Select Header Layout', 'anorya' ),
 									'section'  => 'anorya_header_settings',
 									'settings' => 'anorya_header_style_setting',
 									'type'     => 'radio',
-									'choices'  => array('1'  => __('Header Style 1','anorya'),
-														'2'  => __('Header Style 2','anorya'),
-														'3'  => __('Header Style 3','anorya'),
-														'4'  => __('Header Style 4','anorya'),
-														'5'  => __('Header Style 5','anorya'),),));			
+									'choices'  => array('1'  => __('Header Layout 1','anorya'),
+														'2'  => __('Header Layout 2','anorya'),
+														'3'  => __('Header Layout 3','anorya'),
+														'4'  => __('Header Layout 4','anorya'),
+														'5'  => __('Header Layout 5','anorya'),),));			
 		
 		//header image backround upload
 		$wp_customize->add_setting( 'anorya_header_image_background_setting' , array(
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_image_sanitize',) );
 		$wp_customize->add_control(	 new WP_Customize_Image_Control($wp_customize, 'anorya_header_image_background_control', array(
-																								'label'      => __( 'Upload Header Background', 'anorya' ),
+																								'label'      => __( 'Upload Logo Container Background', 'anorya' ),
 																								'section'    => 'anorya_header_settings',
 																								'settings'   => 'anorya_header_image_background_setting',
-																								'description' => __('Header background is available for header styles 4 & 5','anorya'),)));	
+																								'description' => __('Header background is available for header Layouts 4 & 5','anorya'),)));	
 		
 		/*
 		*Header Banner Setting
@@ -286,7 +278,7 @@
 									'section'  => 'anorya_blog_settings',
 									'settings' => 'anorya_back_to_top_setting',
 									'type'     => 'checkbox',
-									'description' => __('Scroll to Top Button display for all pages of the site','anorya'),));
+									'description' => __('Scroll to Top Button is displayed on all pages of the site','anorya'),));
 									
 		//Loader Setting display
 		$wp_customize->add_setting( 'anorya_loader_setting' , array(
@@ -444,7 +436,7 @@
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_range_sanitize',) );
 		$wp_customize->add_control(	'anorya_footer_sliders_posts_no_control', 	array(
-									'label'    => __( 'Enter the number of that are going to be displayed on the footer slider. ', 'anorya' ),
+									'label'    => __( 'Enter the number of posts that are going to be displayed on the footer slider gallery. ', 'anorya' ),
 									'section'  => 'anorya_footer_settings',
 									'settings' => 'anorya_footer_sliders_posts_no_setting',
 									'type'     => 'range',

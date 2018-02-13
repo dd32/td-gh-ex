@@ -1,11 +1,11 @@
 === anorya ===
 
 Contributors: automattic
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
+Tags: translation-ready, theme-options, custom-menu, post-formats, threaded-comments
 
 Requires at least: 4.0
 Tested up to: 4.9.3
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * FIXED SEVERAL PHP BUGS FOR VERSIONS PRIOR TO 5.5
 * UPDATED THE TGMPA TO WORDPRESS.ORG VERSION
 
+=1.0.2 13/2/2018=
+
+* UPDATED CUSTOMIZER: ADDED CUSTOM-LOGO SUPPORT
+* REMOVED CUSTOM NAV MENU WIDGET - DEFAULT NAVIGATION MENU WIDGET CAN BE USED INSTEAD
+* REMOVED THEME SUPPORT OF CUSTOM-BACKGROUND
+* FIXED SEVERAL TYPOS ON CUSTOMIZER
 
 == Copyright ==
 

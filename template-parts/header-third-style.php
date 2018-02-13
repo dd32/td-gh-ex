@@ -7,7 +7,7 @@
 			<div class="container header-area">
 				<div class="row">
 					<div class="col-md-4">
-						<?php anorya_display_logo(); ?>
+						<?php the_custom_logo(); ?>
 					</div>
 					<div class="col-md-8 header-area-content">
 						<?php wp_nav_menu( array('theme_location' => 'primary_navigation', 

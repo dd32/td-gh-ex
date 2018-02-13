@@ -4,7 +4,7 @@
 
 		<div class="container-fluid cover-header-background" >
 			<div class="container center-logo">
-				<?php anorya_display_logo(); ?>
+				<?php the_custom_logo(); ?>
 			</div>
 		</div>		
 			

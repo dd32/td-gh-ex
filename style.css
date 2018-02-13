@@ -2,11 +2,11 @@
 Theme Name: Anorya
 Author: Reborn Themes
 Description: Anorya - Personal Responsive Blog Theme
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: anorya
-Tags: blog, right-sidebar, translation-ready, one-column, two-columns, grid-layout, theme-options, custom-colors,  custom-logo, featured-images, footer-widgets, post-formats
+Tags: blog, right-sidebar, translation-ready, one-column, two-columns, grid-layout, theme-options, custom-logo, featured-images, footer-widgets, post-formats
 
 Anorya is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
 
@@ -431,6 +431,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 		height:170px;
 		padding-top:20px;
 		padding-bottom:20px;
+		width:100%;
+		margin-left:auto;
+		margin-right:auto;
 	}
 	
 	

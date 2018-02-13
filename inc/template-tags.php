@@ -441,6 +441,7 @@
 	}
 
 	//display logo
+	// No longer used since 1.0.2
 	function anorya_display_logo(){
 		
 		if(get_theme_mod( 'anorya_logo_image_setting')): ?>
@@ -454,7 +455,15 @@
 				</a>
 		<?php endif;
 	}
+	
+	//change custom logo class
+	function anorya_custom_logo_class($html){
+   
+		$html = str_replace( 'custom-logo', 'img-responsive align-center', $html );
+		return $html;
 
+	}	
+	add_filter( 'get_custom_logo', 'anorya_custom_logo_class' );
 
 	//display header banner
 	function anorya_display_header_banner(){

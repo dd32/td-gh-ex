@@ -5,7 +5,7 @@
 
 
 			<div class="container center-logo">
-				<?php anorya_display_logo(); ?>
+				<?php the_custom_logo(); ?>
 			</div>
 				
 			
