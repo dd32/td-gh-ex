@@ -122,8 +122,8 @@ if ( file_exists( $post_content ) ) { require( $post_content ); }
 
 
 // HTML, Body CSS
-$html_body_class = get_parent_theme_file_path( '/inc/functions/html-body-class.php' );
-if ( file_exists( $html_body_class ) ) { require( $html_body_class ); }
+$html_body_css = get_parent_theme_file_path( '/inc/functions/html-body-css.php' );
+if ( file_exists( $html_body_css ) ) { require( $html_body_css ); }
 
 
 // Custom Visuals

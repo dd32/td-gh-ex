@@ -139,5 +139,5 @@ if ( ! function_exists( 'applicator_functionalities_css_class_names' ) ) {
             echo ' '. esc_attr( $applicator_term ). '--'. esc_attr( $css_class_name );
         }
     }
-    add_action( 'applicator_hook_html_class', 'applicator_functionalities_css_class_names');
+    add_action( 'applicator_hook_html_class_attr', 'applicator_functionalities_css_class_names');
 }

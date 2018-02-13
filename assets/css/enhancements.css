@@ -113,6 +113,7 @@ Enhancements Style
 
 /* Overlay Inactive */
 .applicator--main-menu .overlay--main-menu-func,
+.applicator--main-search .overlay--main-search-func,
 .applicator--main-actions-widgets .overlay--main-actions-widgets-func,
 .applicator--go-content-nav .overlay--go-content-nav-func
 {
@@ -133,11 +134,12 @@ Enhancements Style
 .applicator--main-menu--active .overlay--main-menu-func,
 .applicator--main-menu .here.overlay--main-menu-func,
 
+.applicator--main-search--active .overlay--main-search-func,
+
 .applicator--main-actions-widgets--active .overlay--main-actions-widgets-func,
 .applicator--main-actions-widgets .here.overlay--main-actions-widgets-func,
 
-.applicator--go-content-nav--active .overlay--go-content-nav-func,
-.applicator--go-content-nav .here.overlay--go-content-nav-func
+.applicator--go-content-nav--active .overlay--go-content-nav-func
 {
     bottom: 0%;
     z-index: 99;
@@ -149,13 +151,13 @@ Enhancements Style
 
 /* Exit Transition */
 .applicator--main-menu--inactive .there.overlay--main-menu-func,
-.applicator--main-actions-widgets--inactive .there.overlay--main-actions-widgets-func,
-.applicator--go-content-nav--inactive .there.overlay--go-content-nav-func
+.applicator--main-actions-widgets--inactive .there.overlay--main-actions-widgets-func
 {
     opacity: 0;
 }
 
-.applicator--go-content-nav .overlay--go-content-nav-func
+.applicator--go-content-nav .overlay--go-content-nav-func,
+.applicator--main-search .overlay--main-search-func
 {   
     background-color: white;
 }
@@ -894,17 +896,6 @@ img.size-medium
 
 
 
-/* ------------------ Edit Post ------------------ */
-.edit-post-action
-{
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-
-
-
-
 /* ------------------ Edit Comment ------------------ */
 .edit-comment-action
 {
@@ -976,7 +967,7 @@ img.size-medium
 
 
 /* ------------------ Categories ------------------ */
-.view .category--empty .apl-post-categories
+.view.category--empty .apl-post-categories
 {
     display: none;
 }
@@ -1089,17 +1080,12 @@ img.size-medium
     word-break: break-word;
 }
 
-.post-title
-{
-    padding: 1em 1rem;
-}
-
-.page-template--sub-pages.feature--no-touchevents .sub-post-content .post-title---h
+.feature--no-touchevents .page-template--sub-pages .sub-post-content .post-title---h
 {
     cursor: text;
 }
 
-.page-template--sub-pages.feature--no-touchevents .sub-post-content .post-title---a
+.feature--no-touchevents .page-template--sub-pages .sub-post-content .post-title---a
 {
     pointer-events: auto;
 }
@@ -1422,11 +1408,6 @@ img.size-medium
 
 
 /* ------------------ Main Header ------------------ */
-.main-header
-{
-    background-color: hsl(215, 100%, 45%);
-}
-
 .main-header---cr
 {
     display: flex;
@@ -1453,6 +1434,8 @@ img.size-medium
 .main-info
 {
     flex: 1;
+    
+    background-color: hsl(215, 100%, 45%);
 }
 
 .main-info---cr
@@ -2983,11 +2966,6 @@ button:hover .dismiss-icon
     padding-right: 1rem;
 }
 
-.applicator--main-menu .main-search-func .search-term-crt-search-text-input---ce
-{
-    padding-left: 2rem;
-}
-
 .main-search--inactive .input-text
 {
     display: none;
@@ -3026,9 +3004,9 @@ button:hover .dismiss-icon
     opacity: 1;
 }
 
-.applicator--main-menu .main-search--active .search-term-crt-search-text-input
+.main-search--active .search-term-crt-search-text-input
 {
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 /* Main Search Form Actions */
@@ -3047,6 +3025,12 @@ button:hover .dismiss-icon
 .main-search--inactive .search-form-axns
 {
     display: none;
+}
+
+.applicator--main-search--active
+{
+    /* Prevent Scroll on Root */
+    overflow: hidden;
 }
 
 .main-search--active.main-search-input--empty .search-form-reset-axn
@@ -3495,12 +3479,12 @@ button:hover .dismiss-icon
     position: relative;
 }
 
-.wp-admin-bar--enabled.vp--wp-admin-bar--narrow .web-product
+.vp--wp-admin-bar--narrow .wp-admin-bar--enabled .web-product
 {
     margin-top: 46px;
 }
 
-.wp-admin-bar--enabled.vp--wp-admin-bar--wide .web-product
+.vp--wp-admin-bar--wide .wp-admin-bar--enabled .web-product
 {
     margin-top: 32px;
 }

@@ -55,8 +55,8 @@
         
         $goStartNaviA = $( '#go-start-navi---a' ),
         
-        scrollMsFactor = 300,
-        scrollTime;
+        viewGranularityDetailClassName = 'view-granularity--detail',
+        viewGranularityDetailClassSelector = '.view-granularity--detail';
     
     
     
@@ -679,14 +679,11 @@
             // Deactivate and TransThere
             menuOffTransHere: function()
             {
-
-                if ( $cp.hasClass( mainMenuActCss ) ) {
-
+                if ( $cp.hasClass( mainMenuActCss ) )
+                {
                     mainMenuFn.menuOff();
-
                     transitionFn.there( $mainHrAsCt, 'transform', $cp );
                     transitionFn.there( $mainHrAsCt, 'transform', $mainMenuOverlay );
-
                 }
             },
 
@@ -694,13 +691,13 @@
             // Toggle
             menuToggle: function()
             {
-
-                if ( $cp.hasClass( mainMenuInactCss ) ) {
+                if ( $cp.hasClass( mainMenuInactCss ) )
+                {
                     mainMenuFn.menuOnTransHere();
                     $mainHeaderAsideWidgetGroup.scrollTop( 0 );
                 }
-
-                else if ( $cp.hasClass( mainMenuActCss ) ) {
+                else if ( $cp.hasClass( mainMenuActCss ) )
+                {
                     mainMenuFn.menuOffTransHere();
                 }
             }
@@ -762,8 +759,7 @@
     function applicatorComments( $cp ) {
         
         
-        // Proceed only if Detail View and the Applicator CSS class name is present
-        if ( ! $html.closest( '.view-granularity--detail' ) && ! $applicatorComments.length ) {
+        if ( ! $body.closest( viewGranularityDetailClassSelector ) && ! $applicatorComments.length ) {
             return;
         }
 
@@ -1020,9 +1016,18 @@
 			return;
 		}
         
-        funcName = 'main-search-func';
         
-        $cp.addClass( funcTerm + ' ' + funcName );
+        // Initializing
+        ( function() {
+            
+            funcName = 'main-search-func';
+        
+            $cp.addClass( funcTerm + ' ' + funcName );
+
+            genericFn.overlayActivate( funcName );
+            
+        }() );
+        
         
         var mainSearchActCss = 'main-search--active',
             mainSearchInactCss = 'main-search--inactive',
@@ -2248,7 +2253,7 @@
                 
                 if ( ! $( '#main-logo' ).length ) {
 
-                    $html
+                    $body
                         .removeClass( 'main-logo--enabled' )
                         .addClass( 'main-logo--disabled' );
 
@@ -2335,7 +2340,7 @@
         // ------------------------------------ Add Anchor to Content Headings
         ( function( $id ) {
             
-            if ( ! $html.hasClass( 'view-granularity--detail' ) ) {
+            if ( ! $body.hasClass( viewGranularityDetailClassName ) ) {
                 return;
             }
             
@@ -2785,7 +2790,7 @@
         ( function() {
 
             if ( $secondaryContent.css( 'margin' ) == '-1px' || $secondaryContent.is( ':hidden' ) ) {
-                $html
+                $body
                     .addClass( mainContentAsideDisabled )
                     .removeClass( mainContentAsideEnabled );
             }

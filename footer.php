@@ -169,23 +169,6 @@
             </div>
         </div>
 
-        <?php
-
-        // Wildcard
-        $wildcard_cn = applicator_htmlok( array(
-            'name'      => 'Applicator Wildcard',
-            'structure' => array(
-                'type'      => 'constructor',
-            ),
-            'id'        => 'applicator-wildcard',
-            'content'   => array(
-                'constructor'       => '',
-            ),
-            'echo'      => true,
-        ) );
-
-        ?>
-
         <?php wp_footer(); ?>
     
     </body>

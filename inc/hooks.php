@@ -2,8 +2,8 @@
 
 
 // header.php
-function applicator_hook_html_class() {
-    do_action( 'applicator_hook_html_class' );
+function applicator_hook_html_class_attr() {
+    do_action( 'applicator_hook_html_class_attr' );
 }
 
 

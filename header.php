@@ -1,5 +1,5 @@
 <!doctype html>
-<html id="start" class="html view feature--js--none<?php applicator_hook_html_class(); ?>" <?php language_attributes(); ?>>
+<html class="html feature--js--none<?php applicator_hook_html_class_attr(); ?>" <?php language_attributes(); ?>>
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -9,11 +9,31 @@
         
         <?php wp_head(); ?>
     </head>
-    <body <?php body_class(); ?>>
-        
+    <body id="start" <?php body_class(); ?>>
+
         <?php
+
+        
+        // ------------------------------------ Wildcard
+        $wildcard_cn = applicator_htmlok( array(
+            'name'      => 'Applicator Wildcard',
+            'structure' => array(
+                'type'      => 'constructor',
+                'attr'      => array(
+                    'elem'      => array(
+                        'role'      => 'presentation',
+                    ),
+                ),
+            ),
+            'id'        => 'applicator-wildcard',
+            'content'   => array(
+                'constructor'       => '',
+            ),
+            'echo'      => true,
+        ) );
+        
                 
-        /* ------------------------ Web Product Start ------------------------ */
+        // ------------------------------------ Web Product Start
 
         // R: Go to Content Navi
         $go_to_content_navi_obj = applicator_htmlok( array(
