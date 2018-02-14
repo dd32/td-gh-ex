@@ -11,7 +11,7 @@
 	<?php
 		$arise_settings = arise_get_theme_options();
 		$arise_search_form = $arise_settings['arise_search_text'];
-		if($arise_search_form !='Search ...'): ?>
+		if($arise_search_form !='Search &hellip;'): ?>
 	<input type="search" name="s" class="s" id="s" placeholder="<?php echo esc_attr($arise_search_form); ?>" autocomplete="off">
 	<button type="submit" class="search-submit"><i class="search-icon"></i></button>
 	<?php else: ?>

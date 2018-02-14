@@ -179,7 +179,7 @@ function arise_page_sliders() {
 					if ($excerpt != '') {
 						$excerpt_text = $arise_settings['arise_tag_text'];
 						$arise_page_sliders_display .= '<div class="slider-text">';
-						$arise_page_sliders_display .= '<h3 class="featured-content">'.$excerpt.' </h3></div><!-- end .slider-text -->';
+						$arise_page_sliders_display .= '<h3 class="featured-content">'.wp_strip_all_tags($excerpt).' </h3></div><!-- end .slider-text -->';
 						$arise_page_sliders_display .= '<div class="slider-buttons">';
 						if($arise_settings['arise_slider_button'] == 0){
 							if($excerpt_text == '' || $excerpt_text == 'Read More') :

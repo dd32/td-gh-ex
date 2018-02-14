@@ -105,9 +105,9 @@ class arise_portfolio_widget extends WP_Widget {
       <?php 
 					if(strlen(get_the_excerpt()) >130){
 						$excerpt_length = substr(get_the_excerpt(), 0 , 130);
-						echo $excerpt_length .'...';
+						echo wp_strip_all_tags($excerpt_length) .'&hellip;';
 					}else{
-						echo get_the_excerpt();
+						echo wp_strip_all_tags(get_the_excerpt());
 					}?>
     </p>
     <?php endif; ?>

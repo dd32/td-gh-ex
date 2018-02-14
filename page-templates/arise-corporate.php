@@ -55,7 +55,7 @@ $arise_settings = arise_get_theme_options();
 					}
 					if ($excerpt != '') {
 						$excerpt_text = $arise_settings['arise_tag_text'];
-						$arise_features .= '<p>'.$excerpt.' </p>';
+						$arise_features .= '<p>'.wp_strip_all_tags($excerpt).' </p>';
 					}
 					$arise_features 	.= '</article>';
 					$content = get_the_content();

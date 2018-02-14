@@ -35,12 +35,10 @@
 			container.className = container.className.replace( ' toggled', '' );
 			button.setAttribute( 'aria-expanded', 'false' );
 			menu.setAttribute( 'aria-expanded', 'false' );
-			socialMenu.setAttribute( 'aria-expanded', 'false' );
 		} else {
 			container.className += ' toggled';
 			button.setAttribute( 'aria-expanded', 'true' );
 			menu.setAttribute( 'aria-expanded', 'true' );
-			socialMenu.setAttribute( 'aria-expanded', 'true' );
 		}
 	};
 

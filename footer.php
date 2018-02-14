@@ -75,7 +75,17 @@ if (!is_page_template('page-templates/arise-corporate.php') ){
 			if(has_nav_menu('social-link') && $arise_settings['arise_buttom_social_icons'] == 0):
 				do_action('social_links');
 			endif;
-				do_action('arise_sitegenerator_footer'); ?>
+				
+
+			if ( is_active_sidebar( 'arise_footer_options' ) ) :
+					dynamic_sidebar( 'arise_footer_options' );
+				else:
+					echo '<div class="copyright">' .'&copy; ' . date('Y') .' '; ?>
+					<a title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" target="_blank" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo get_bloginfo( 'name', 'display' ); ?></a> | 
+									<?php _e('Designed by:','arise'); ?> <a title="<?php echo esc_attr__( 'Themefreesia', 'arise' ); ?>" target="_blank" href="<?php echo esc_url( 'https://themefreesia.com' ); ?>"><?php _e('Theme Freesia','arise');?></a> | 
+									<?php _e('Powered by:','arise'); ?> <a title="<?php echo esc_attr__( 'WordPress', 'arise' );?>" target="_blank" href="<?php echo esc_url( 'http://wordpress.org' );?>"><?php _e('WordPress','arise'); ?></a>
+								</div>
+				<?php endif; ?>
 			<div style="clear:both;"></div>
 		</div> <!-- end .container -->
 	</div> <!-- end .site-info -->

@@ -111,7 +111,6 @@ require get_template_directory() . '/inc/customizer/arise-default-values.php';
 require( get_template_directory() . '/inc/settings/arise-functions.php' );
 require( get_template_directory() . '/inc/settings/arise-common-functions.php' );
 require get_template_directory() . '/inc/jetpack.php';
-require get_template_directory() . '/inc/footer-details.php';
 
 /************************ Arise Widgets  *****************************/
 require get_template_directory() . '/inc/widgets/widgets-functions/contactus-widgets.php';
@@ -138,7 +137,7 @@ if(!class_exists('Arise_Plus_Features')){
 			<a href="<?php echo esc_url( 'https://tickets.themefreesia.com/' ); ?>" title="<?php esc_attr_e( 'Support Ticket', 'arise' ); ?>" target="_blank" id="about_arise">
 			<?php _e( 'Forum', 'arise' ); ?>
 			</a><br/>
-			<a href="<?php echo esc_url( 'http://demo.themefreesia.com/arise/' ); ?>" title="<?php esc_attr_e( 'View Demo', 'arise' ); ?>" target="_blank" id="about_arise">
+			<a href="<?php echo esc_url( 'https://demo.themefreesia.com/arise/' ); ?>" title="<?php esc_attr_e( 'View Demo', 'arise' ); ?>" target="_blank" id="about_arise">
 			<?php _e( 'View Demo', 'arise' ); ?>
 			</a><br/>
 			<a href="<?php echo esc_url(home_url('/')).'wp-admin/theme-install.php?search=author:themefreesia'; ?>" title="<?php esc_attr_e( 'View ThemeFreesia Themes', 'arise' ); ?>" target="_blank" id="about_arise">
@@ -219,7 +218,7 @@ function arise_header_display(){
 		<?php } else { ?> </h2> <!-- end .site-title --> <?php } 
 		$site_description = get_bloginfo( 'description', 'display' );
 		if($site_description){?>
-		<p id ="site-description"> <?php bloginfo('description');?> </p> <!-- end #site-description -->
+		<div id ="site-description"> <?php bloginfo('description');?> </div> <!-- end #site-description -->
 		<?php } ?>
 		</div> <!-- end #site-branding -->
 		<?php
@@ -235,7 +234,7 @@ function arise_header_display(){
 		<?php }
 		$site_description = get_bloginfo( 'description', 'display' );
 			if($site_description){?>
-			<p id ="site-description"> <?php bloginfo('description');?> </p>
+			<div id ="site-description"> <?php bloginfo('description');?> </div>
 		<?php } ?>
 		</div> <!-- end #site-branding -->
 		<?php }
