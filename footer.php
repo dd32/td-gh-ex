@@ -1,4 +1,7 @@
 <div class="clearboth"></div>
+<?php if ( kaira_is_woocommerce_activated() ) {
+	echo ( is_wooCommerce() ) ? '</div>' : '';
+} ?>
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<?php
 	$sidebars_widgets = wp_get_sidebars_widgets();
@@ -27,9 +30,7 @@
 <?php if ( kaira_theme_option( 'kra-website-layout' ) == 'site-layout-boxed' ) : ?>
 </div>
 <?php endif; ?>
-
 </div> <!-- #page -->
-
 <?php wp_footer(); ?>
 </body>
 </html>

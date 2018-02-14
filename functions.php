@@ -4,7 +4,7 @@
  *
  * @package Albar
  */
-define( 'KAIRA_THEME_VERSION' , '1.7.70' );
+define( 'KAIRA_THEME_VERSION' , '1.7.71' );
 
 // Is ONLY USED IF the user prompts for the premium update
 define( 'KAIRA_UPDATE_URL', 'https://updates.kairaweb.com/' );
@@ -89,6 +89,9 @@ function kaira_setup_theme() {
     add_theme_support( 'title-tag' );
     
     add_theme_support( 'woocommerce' );
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
 }
 endif; // kaira_setup
 add_action( 'after_setup_theme', 'kaira_setup_theme' );
@@ -106,7 +109,7 @@ function kaira_widgets_init() {
 		'after_title'   => '</h3>'
 	) );
 	register_sidebar(array(
-		'name' => __('Alba Footer', 'albar'),
+		'name' => __('Albar Footer', 'albar'),
 		'id' => 'site-footer',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',
@@ -176,6 +179,7 @@ function kaira_print_styles(){
         .wpcf7-submit,
         .alba-home-slider-prev,
         .alba-home-slider-next,
+        .woocommerce span.onsale,
         .alba-carousel-arrow-prev,
         .alba-carousel-arrow-next {
             background-color: <?php echo $primary_color; ?>;
@@ -190,8 +194,11 @@ function kaira_print_styles(){
         .page-header .cx-breadcrumbs a,
         .sidebar-navigation-left .current_page_item,
         .sidebar-navigation-right .current_page_item,
+        .woocommerce ul.products li.product .price,
+        .woocommerce div.product p.price,
         .entry-content a,
         .alba-blog-standard-block a,
+        .home-slider-wrap-hint a,
         .widget ul li a,
         #comments .logged-in-as a,
         .alba-heading i,
@@ -254,7 +261,7 @@ function kaira_scripts() {
         wp_enqueue_style( 'albar-google-heading-font-default', '//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic', array(), KAIRA_THEME_VERSION );
     }
     
-    wp_enqueue_style( 'albar-fontawesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.0.3' );
+    wp_enqueue_style( 'albar-fontawesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.7.0' );
 	wp_enqueue_style( 'albar-style', get_stylesheet_uri(), array(), KAIRA_THEME_VERSION );
     
 	wp_enqueue_script( 'albar-caroufredSel', get_template_directory_uri() . '/js/jquery.carouFredSel-6.2.1-packed.js', array('jquery'), KAIRA_THEME_VERSION, true );
@@ -280,18 +287,6 @@ function kaira_load_admin_script() {
     wp_enqueue_script( 'albar-admin-js', get_template_directory_uri() . '/upgrade/js/admin-custom.js', array( 'jquery' ), KAIRA_THEME_VERSION, true );
 }
 add_action( 'admin_enqueue_scripts', 'kaira_load_admin_script' );
-
-/**
- * Add Alba wrappers around WooCommerce pages content.
- */
-add_action('woocommerce_before_main_content', 'kaira_wrap_woocommerce_start', 10);
-add_action('woocommerce_after_main_content', 'kaira_wrap_woocommerce_end', 10);
-function kaira_wrap_woocommerce_start() {
-    echo '<div id="primary" class="content-area content-area-full">';
-}
-function kaira_wrap_woocommerce_end() {
-    echo '</div>';
-}
 
 // Create function to check if WooCommerce exists.
 if ( ! function_exists( 'kaira_is_woocommerce_activated' ) ) :
@@ -326,30 +321,29 @@ function kaira_register_required_plugins() {
     $plugins = array(
         // The recommended WordPress.org plugins.
         array(
-            'name'      => 'Elementor',
+            'name'      => __( 'Elementor Page Builder', 'albar' ),
             'slug'      => 'elementor',
             'required'  => false,
         ),
         array(
-            'name'      => 'WooCommerce',
+            'name'      => __( 'WooCommerce', 'albar' ),
             'slug'      => 'woocommerce',
             'required'  => false,
         ),
         array(
-            'name'      => 'Contact Form 7',
+            'name'      => __( 'Contact Form 7', 'albar' ),
             'slug'      => 'contact-form-7',
             'required'  => false,
         ),
         array(
-            'name'      => 'Breadcrumb NavXT',
+            'name'      => __( 'Breadcrumb NavXT', 'albar' ),
             'slug'      => 'breadcrumb-navxt',
             'required'  => false,
         )
     );
     $config = array(
         'id'           => 'albar',
-        'menu'         => 'tgmpa-install-plugins',
-        'message'      => '',
+        'menu'         => 'tgmpa-install-plugins'
     );
 
     tgmpa( $plugins, $config );
@@ -377,7 +371,7 @@ function kaira_recommended_plugin_notice() {
     if ( ! get_user_meta( $user_id, 'kaira_recommended_plugin_ignore_notice' ) ) {
         echo '<div class="updated albar-conica-notice"><p>';
         printf( __( '<a href="%1$s" class="albar-conica-notice-close"></a></p>', 'albar' ), '?kaira_recommended_plugin_nag_ignore=0' ); ?>
-            <?php printf( __( '<p>We recommend rather trying out our NEW Power theme, Avant - <a href="%1$s" class="albar-notice-a">Download and try Avant now</a></p><p>With 7 header layouts, 5 Blog layouts and 3 Footer layouts, full website color options and lots of other customization settings, you\'ll be able to create the perfect site. All built within the WordPress Customizer. <b>If not, Albar will still work and we will keep it updated.</b></p>', 'albar' ), admin_url( 'theme-install.php?search=avant' ) ); ?>
+            <?php printf( __( '<p style="color: red;">LATEST UPDATE: Requires WooCommerce 3.3 or more</p><p>We recommend rather trying out our NEW Power theme, Avant - <a href="%1$s" class="albar-notice-a">Download and try Avant now</a></p><p>With 7 header layouts, 5 Blog layouts and 3 Footer layouts, full website color options and lots of other customization settings, you\'ll be able to create the perfect site. All built within the WordPress Customizer.<br /><b>If not, Albar will still work and we will keep it updated.</b></p>', 'albar' ), admin_url( 'theme-install.php?search=avant' ) ); ?>
             <a href="<?php echo esc_url( admin_url( 'theme-install.php?search=avant' ) ); ?>" class="albar-conica-img"><img src="<?php echo get_template_directory_uri(); ?>/images/conica-screenshot.png" alt="<?php esc_attr_e( 'Try out Avant instead', 'albar' ); ?>" /></a>
         <?php
         echo '</p></div>';

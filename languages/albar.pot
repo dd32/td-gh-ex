@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Albar\n"
-"POT-Creation-Date: 2016-11-23 16:51+0200\n"
+"POT-Creation-Date: 2018-02-14 12:00+0200\n"
 "PO-Revision-Date: 2016-08-20 13:25+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_n:1,2;__ngettext:1,2;"
@@ -87,11 +87,6 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:19 content-single.php:52 image.php:33 image.php:77
-#: includes/inc/template-tags.php:71 includes/inc/template-tags.php:90
-msgid "Edit"
-msgstr ""
-
 #: content-single.php:21 content-single.php:24 content.php:56 content.php:64
 #: includes/blog/blog-standard.php:67 includes/blog/blog-standard.php:75
 msgid ", "
@@ -151,7 +146,7 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: footer.php:17
+#: footer.php:20
 #, php-format
 msgid ""
 "<div class=\"site-container\"><div class=\"scroll-to-top\"><i class=\"fa fa-"
@@ -162,28 +157,49 @@ msgstr ""
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:101
+#: functions.php:104
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:109
-msgid "Alba Footer"
+#: functions.php:112
+msgid "Albar Footer"
 msgstr ""
 
-#: functions.php:387
+#: functions.php:324
+msgid "Elementor Page Builder"
+msgstr ""
+
+#: functions.php:329
+msgid "WooCommerce"
+msgstr ""
+
+#: functions.php:334
+msgid "Contact Form 7"
+msgstr ""
+
+#: functions.php:339
+msgid "Breadcrumb NavXT"
+msgstr ""
+
+#: functions.php:373
 #, php-format
 msgid "<a href=\"%1$s\" class=\"albar-conica-notice-close\"></a></p>"
 msgstr ""
 
-#: functions.php:388
+#: functions.php:374
 #, php-format
 msgid ""
-"We've rebuilt Albar and named it Conica, and turned it into a power theme. "
-"<a href=\"%1$s\" target=\"_blank\">Download and try Conica instead now</a> :)"
+"<p style=\"color: red;\">LATEST UPDATE: Requires WooCommerce 3.3 or more</"
+"p><p>We recommend rather trying out our NEW Power theme, Avant - <a href="
+"\"%1$s\" class=\"albar-notice-a\">Download and try Avant now</a></p><p>With "
+"7 header layouts, 5 Blog layouts and 3 Footer layouts, full website color "
+"options and lots of other customization settings, you'll be able to create "
+"the perfect site. All built within the WordPress Customizer.<br /><b>If not, "
+"Albar will still work and we will keep it updated.</b></p>"
 msgstr ""
 
-#: functions.php:389
-msgid "Try out Conica instead"
+#: functions.php:375
+msgid "Try out Avant instead"
 msgstr ""
 
 #: image.php:22
@@ -193,6 +209,11 @@ msgid ""
 "\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size "
 "image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" "
 "rel=\"gallery\">%8$s</a>"
+msgstr ""
+
+#: image.php:33 image.php:77 includes/inc/template-tags.php:71
+#: includes/inc/template-tags.php:90
+msgid "Edit"
 msgstr ""
 
 #: image.php:38
@@ -229,27 +250,27 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr ""
 
-#: includes/headers/header-layout-one.php:18
+#: includes/headers/header-layout-one.php:21
 msgid "My Account"
 msgstr ""
 
-#: includes/headers/header-layout-one.php:20
+#: includes/headers/header-layout-one.php:23
 msgid "Login"
 msgstr ""
 
-#: includes/headers/header-layout-one.php:20
+#: includes/headers/header-layout-one.php:23
 msgid "Sign In / Register"
 msgstr ""
 
-#: includes/headers/header-layout-one.php:32
+#: includes/headers/header-layout-one.php:35
 msgid "Email"
 msgstr ""
 
-#: includes/headers/header-layout-one.php:41 includes/inc/woocommerce-inc.php:9
+#: includes/headers/header-layout-one.php:44 includes/inc/woocommerce-inc.php:9
 msgid "View your shopping cart"
 msgstr ""
 
-#: includes/headers/header-layout-one.php:44
+#: includes/headers/header-layout-one.php:47
 #: includes/inc/woocommerce-inc.php:12
 #, php-format
 msgid "%d item"
@@ -257,23 +278,31 @@ msgid_plural "%d items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/headers/header-layout-one.php:76
+#: includes/headers/header-layout-one.php:82
 msgid "Menu"
 msgstr ""
 
-#: includes/headers/homepage-slider.php:61
+#: includes/headers/homepage-slider.php:55
+msgid "See how to"
+msgstr ""
+
+#: includes/headers/homepage-slider.php:55
+msgid "Add your own slides here"
+msgstr ""
+
+#: includes/headers/homepage-slider.php:65
 msgid "Demo Slide One"
 msgstr ""
 
-#: includes/headers/homepage-slider.php:64
+#: includes/headers/homepage-slider.php:68
 msgid "Beautifully Simple"
 msgstr ""
 
-#: includes/headers/homepage-slider.php:71
+#: includes/headers/homepage-slider.php:75
 msgid "Demo Slide Two"
 msgstr ""
 
-#: includes/headers/homepage-slider.php:74
+#: includes/headers/homepage-slider.php:78
 msgid "Build Easily"
 msgstr ""
 
@@ -673,6 +702,34 @@ msgid "Find Us on Tumblr"
 msgstr ""
 
 #: includes/inc/social-links.php:43
+msgid "Find Us on Medium"
+msgstr ""
+
+#: includes/inc/social-links.php:47
+msgid "Find Us on Etsy"
+msgstr ""
+
+#: includes/inc/social-links.php:51
+msgid "Find Us on Yelp"
+msgstr ""
+
+#: includes/inc/social-links.php:55
+msgid "Find Us on Behance"
+msgstr ""
+
+#: includes/inc/social-links.php:59
+msgid "Find Us on Slack"
+msgstr ""
+
+#: includes/inc/social-links.php:63
+msgid "Find Us on Houzz"
+msgstr ""
+
+#: includes/inc/social-links.php:67
+msgid "Find Us on VK"
+msgstr ""
+
+#: includes/inc/social-links.php:71
 msgid "Find Us on Flickr"
 msgstr ""
 
@@ -882,6 +939,7 @@ msgid "Small"
 msgstr ""
 
 #: includes/widgets/alba-heading.php:80
+#: settings/class.kaira-theme-settings.php:589
 msgid "Medium"
 msgstr ""
 
@@ -1079,22 +1137,32 @@ msgid "Header Layout"
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:292
-msgid "Header Search"
+msgid "Remove Header Top Bar"
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:293
+msgid "Select this to remove the header top bar"
+msgstr ""
+
+#: settings/class.kaira-theme-settings.php:299
+#: settings/class.kaira-theme-settings.php:313
+msgid "Header Search"
+msgstr ""
+
+#: settings/class.kaira-theme-settings.php:300
+#: settings/class.kaira-theme-settings.php:314
 msgid "Select this to show the search in the header"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:299 settings/tpl/upsell-page.php:38
+#: settings/class.kaira-theme-settings.php:306 settings/tpl/upsell-page.php:38
 msgid "Sticky Header"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:310
+#: settings/class.kaira-theme-settings.php:324
 msgid "Enable Slider"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:311
+#: settings/class.kaira-theme-settings.php:325
 msgid ""
 "Click to enable the default homepage slider<br /><br /><big>See <a href="
 "\"https://kairaweb.com/documentation/setting-up-the-albar-default-slider/\" "
@@ -1102,163 +1170,163 @@ msgid ""
 "big>"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:324
+#: settings/class.kaira-theme-settings.php:338
 msgid "Slider Categories"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:325
+#: settings/class.kaira-theme-settings.php:339
 msgid ""
 "Enter the ID of the post category you'd like to display in the Home page "
 "Slider, separated by a comma (,)<br />Eg: \"13, 17, 19\""
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:331 settings/tpl/upsell-page.php:51
+#: settings/class.kaira-theme-settings.php:345 settings/tpl/upsell-page.php:51
 msgid "Slider Transitions"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:338
+#: settings/class.kaira-theme-settings.php:352
 msgid "Circular slider"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:339
+#: settings/class.kaira-theme-settings.php:353
 msgid "Select if the slider should be circular"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:345
+#: settings/class.kaira-theme-settings.php:359
 msgid "Infinite slider"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:346
+#: settings/class.kaira-theme-settings.php:360
 msgid "Select if the slider should be infinite"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:352
+#: settings/class.kaira-theme-settings.php:366
 msgid "Show slider Pagination"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:353
+#: settings/class.kaira-theme-settings.php:367
 msgid "Click to display slider pagination"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:359
+#: settings/class.kaira-theme-settings.php:373
 msgid "Scroll the slider automatically"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:360
+#: settings/class.kaira-theme-settings.php:374
 msgid ""
 "Click to scroll the slider automatically<br />The demo slider is set to "
 "scroll automatically"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:366
+#: settings/class.kaira-theme-settings.php:380
 msgid "Enable slider links"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:367
+#: settings/class.kaira-theme-settings.php:381
 msgid "Select if you want the slides to link to their post page"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:373
+#: settings/class.kaira-theme-settings.php:387
 msgid "Remove Slider Text"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:383
+#: settings/class.kaira-theme-settings.php:397
 msgid "Main Color"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:384
+#: settings/class.kaira-theme-settings.php:398
 msgid "This is the color of buttons, etc around the site. Default: #4965A0"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:390
+#: settings/class.kaira-theme-settings.php:404
 msgid "Main Hover Color"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:391
+#: settings/class.kaira-theme-settings.php:405
 msgid ""
 "This is the hover color for buttons, etc around the site. Default: #3e578b"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:405
+#: settings/class.kaira-theme-settings.php:419
 msgid "Body font URL"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:406
-#: settings/class.kaira-theme-settings.php:427
+#: settings/class.kaira-theme-settings.php:420
+#: settings/class.kaira-theme-settings.php:441
 msgid ""
 "Enter ONLY the fonts URL here. Eg: link href='<b><big> //fonts.googleapis."
 "com/css?family=Open+Sans:400italic,400 </big></b>' rel='stylesheet' "
 "type='text/css'"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:412
+#: settings/class.kaira-theme-settings.php:426
 msgid "Body font name"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:413
+#: settings/class.kaira-theme-settings.php:427
 msgid ""
 "Enter the FULL name. Eg:<b><big> font-family: 'Open Sans', sans-serif; </"
 "big></b>"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:418
+#: settings/class.kaira-theme-settings.php:432
 msgid "Body font color"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:419
+#: settings/class.kaira-theme-settings.php:433
 msgid "Select a color for the body font. Default: #7B7D80"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:426
+#: settings/class.kaira-theme-settings.php:440
 msgid "Heading font URL"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:433
+#: settings/class.kaira-theme-settings.php:447
 msgid "Heading font name"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:434
+#: settings/class.kaira-theme-settings.php:448
 msgid ""
 "Enter the FULL name. Eg:<b><big> font-family: 'Roboto', sans-serif; </big></"
 "b>"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:439
+#: settings/class.kaira-theme-settings.php:453
 msgid "Heading font color"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:440
+#: settings/class.kaira-theme-settings.php:454
 msgid "Select a color for the body font. Default: #5A5A5A"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:453
+#: settings/class.kaira-theme-settings.php:467
 msgid "Custom CSS"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:454
+#: settings/class.kaira-theme-settings.php:468
 msgid ""
 "Add Custom CSS to add your own styling to the Theme<br />It's recommended to "
 "use a <a href=\"https://wordpress.org/plugins/so-css/\" target=\"_blank"
 "\">Custom CSS</a> plugin instead"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:466 settings/tpl/upsell-page.php:64
+#: settings/class.kaira-theme-settings.php:480 settings/tpl/upsell-page.php:64
 msgid "Blog Layout"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:473
+#: settings/class.kaira-theme-settings.php:487
 msgid "Enable Blog Sidebar"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:474
+#: settings/class.kaira-theme-settings.php:488
 msgid "Select if you want to show the sidebar on the Blog page"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:480
+#: settings/class.kaira-theme-settings.php:494
 msgid "Blog Categories"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:481
+#: settings/class.kaira-theme-settings.php:495
 msgid ""
 "Enter the ID of the post categories you'd like to EXCLUDE from the Blog, "
 "enter only the ID's with a minus sign (-) before them, separated by a comma "
@@ -1266,104 +1334,128 @@ msgid ""
 "in that category.<br />Eg: \"-13, -17, -19\""
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:487
+#: settings/class.kaira-theme-settings.php:501
 msgid "Blog Page Title"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:488
+#: settings/class.kaira-theme-settings.php:502
 msgid "Enter the title you want for the blog page."
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:494
+#: settings/class.kaira-theme-settings.php:508
 msgid "Blog Posts Per Page"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:495
+#: settings/class.kaira-theme-settings.php:509
 msgid "Enter the number of posts you'd like to show per page"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:505
-#: settings/class.kaira-theme-settings.php:600
+#: settings/class.kaira-theme-settings.php:519
+#: settings/class.kaira-theme-settings.php:663
 msgid "Email Address"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:512
+#: settings/class.kaira-theme-settings.php:526
 msgid "Skype"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:519
+#: settings/class.kaira-theme-settings.php:533
 msgid "Facebook"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:526
+#: settings/class.kaira-theme-settings.php:540
 msgid "Twitter"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:533
+#: settings/class.kaira-theme-settings.php:547
 msgid "Google Plus"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:540
+#: settings/class.kaira-theme-settings.php:554
 msgid "YouTube"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:547
+#: settings/class.kaira-theme-settings.php:561
 msgid "Instagram"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:554
+#: settings/class.kaira-theme-settings.php:568
 msgid "Pinterest"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:561
+#: settings/class.kaira-theme-settings.php:575
 msgid "LinkedIn"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:568
+#: settings/class.kaira-theme-settings.php:582
 msgid "Tumblr"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:575
+#: settings/class.kaira-theme-settings.php:596
+msgid "Etsy"
+msgstr ""
+
+#: settings/class.kaira-theme-settings.php:603
+msgid "Yelp"
+msgstr ""
+
+#: settings/class.kaira-theme-settings.php:610
+msgid "Behance"
+msgstr ""
+
+#: settings/class.kaira-theme-settings.php:617
+msgid "Slack"
+msgstr ""
+
+#: settings/class.kaira-theme-settings.php:624
+msgid "Houzz"
+msgstr ""
+
+#: settings/class.kaira-theme-settings.php:631
+msgid "VK"
+msgstr ""
+
+#: settings/class.kaira-theme-settings.php:638
 msgid "Flickr"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:586
+#: settings/class.kaira-theme-settings.php:649
 msgid "Address"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:593
+#: settings/class.kaira-theme-settings.php:656
 msgid "Header Email Text"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:607
+#: settings/class.kaira-theme-settings.php:670
 msgid "Phone Number"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:621
+#: settings/class.kaira-theme-settings.php:684
 msgid "Footer Copy Text"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:634
+#: settings/class.kaira-theme-settings.php:697
 msgid "404 Error Page Heading"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:635
+#: settings/class.kaira-theme-settings.php:698
 msgid "Enter the heading for the 404 Error page"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:640
+#: settings/class.kaira-theme-settings.php:703
 msgid "Error 404 Message"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:641
+#: settings/class.kaira-theme-settings.php:704
 msgid "Enter the default text on the 404 error page (Page not found)"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:655
+#: settings/class.kaira-theme-settings.php:718
 msgid "No Search Results"
 msgstr ""
 
-#: settings/class.kaira-theme-settings.php:656
+#: settings/class.kaira-theme-settings.php:719
 msgid "Enter the default text for when no search results are found"
 msgstr ""
 
@@ -1439,51 +1531,27 @@ msgstr ""
 msgid "You can then delete the Easy Theme Upgrades plugin"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:30
-msgid "Latest features added to Albar Premium"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:32
-msgid "Custom WooCommerce styling"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:33
-msgid "Remove default slider text"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:34
-msgid "Select slider transition animation"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:35
-msgid "2 different header layouts"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:36
-msgid "Sticky header"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:42
+#: upgrade/tpl/upgrade-page.php:31
 msgid "<em>Support</em><span>Albar Documentation </span>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:47
+#: upgrade/tpl/upgrade-page.php:36
 msgid ""
 "We support all our themes, offering one on one email support to help you "
 "beild the website you want"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:48
+#: upgrade/tpl/upgrade-page.php:37
 msgid ""
 "While we do support our both free and premium themes... <strong>Premium "
 "themes get prioritized support</strong>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:56 upgrade/tpl/upgrade-page.php:62
+#: upgrade/tpl/upgrade-page.php:45 upgrade/tpl/upgrade-page.php:51
 msgid "Upgrade to Premium"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:59
+#: upgrade/tpl/upgrade-page.php:48
 msgid ""
 "If you've enjoyed using our Albar theme to build your website, then you "
 "should love the premium version which comes with a bunch of extra features "
@@ -1492,22 +1560,22 @@ msgid ""
 "the website you want."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:67 upgrade/tpl/upgrade-page.php:73
+#: upgrade/tpl/upgrade-page.php:56 upgrade/tpl/upgrade-page.php:62
 msgid "Continued Updates"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:70
+#: upgrade/tpl/upgrade-page.php:59
 msgid ""
 "Once you upgrade to Albar Premium, you'll then support and move over to our "
 "premium updates system which will ensure Albar works with all future "
 "versions of WordPress that are released."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:78 upgrade/tpl/upgrade-page.php:84
+#: upgrade/tpl/upgrade-page.php:67 upgrade/tpl/upgrade-page.php:73
 msgid "Get Premium Support"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:81
+#: upgrade/tpl/upgrade-page.php:70
 msgid ""
 "Upgrading to albar Premium will also give you prioritized support, ensuring "
 "we get to your queries first.<br /><br />We have a growing <a href='https://"
@@ -1516,52 +1584,52 @@ msgid ""
 "target='_blank'>email support</a> to sort out any queries you may have."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:95
+#: upgrade/tpl/upgrade-page.php:84
 msgid ""
 "We aim to keep our prices low, all our themes are under <strong>$30</"
 "strong>, while still offering you great WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:97
+#: upgrade/tpl/upgrade-page.php:86
 msgid ""
 "Upgrading will support us and enable us to keep building WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:99
+#: upgrade/tpl/upgrade-page.php:88
 #, php-format
 msgid ""
 "If you like our themes and/or found our support helpful, please let us know "
 "by <a href='%s' target='_blank'>giving us a review</a>."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:103
+#: upgrade/tpl/upgrade-page.php:92
 msgid "Theme Ratings"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:115
+#: upgrade/tpl/upgrade-page.php:104
 msgid "SpySunny"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:118
+#: upgrade/tpl/upgrade-page.php:107
 msgid "Very user-friendly theme with excellent support."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:124
+#: upgrade/tpl/upgrade-page.php:113
 msgid "Fitoni"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:127
+#: upgrade/tpl/upgrade-page.php:116
 msgid ""
 "What a great theme!! been using it for a long time, very clean code, easy to "
 "use, easy to customize, really cant say any wrong about it!!!<br /><br /"
 ">Give it a try and you will not be dissapointed! this theme is THE BEST!!"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:133
+#: upgrade/tpl/upgrade-page.php:122
 msgid "NayWordPress"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:136
+#: upgrade/tpl/upgrade-page.php:125
 msgid ""
 "I've purchased the Premium Theme for my Online Store. Very awesome! Support "
 "assistance 100&#37; available, easy to customize. I recommend it to everyone "

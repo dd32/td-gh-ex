@@ -26,17 +26,6 @@
                 <p><?php printf( __( 'You can then delete the Easy Theme Upgrades plugin', 'albar' ) ); ?></p>
             </div>
             
-            <div class="upgrade-changelog">
-                <h4><?php printf( __( 'Latest features added to Albar Premium', 'albar' ) ); ?></h4>
-                <ul>
-                    <li><?php printf( __( 'Custom WooCommerce styling', 'albar' ) ); ?></li>
-                    <li><?php printf( __( 'Remove default slider text', 'albar' ) ); ?></li>
-                    <li><?php printf( __( 'Select slider transition animation', 'albar' ) ); ?></li>
-                    <li><?php printf( __( '2 different header layouts', 'albar' ) ); ?></li>
-                    <li><?php printf( __( 'Sticky header', 'albar' ) ); ?></li>
-                </ul>
-            </div>
-            
             <div class="upgrade-order-number-info-btns">
                 <a href="https://kairaweb.com/docs/albar/" class="upgrade-page-link" target="_blank">
                     <?php printf( __( '<em>Support</em><span>Albar Documentation </span>', 'albar' ) ); ?>

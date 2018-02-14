@@ -68,6 +68,20 @@ View the settings under Appearance -> ALBAR Settings.
 
 == Changelog ==
 
+#### 1.7.71
+NOTE: PLEASE UPDATE WOOCOMMERCE WITH THIS UPDATE / UPDATE ONLY IF YOU UPDATE WOOCOMMERCE
+* Style fixes/tweaks
+* Added setting to remove the header top bar
+* Fixed WooCommerce pages breaking with latest WC updates
+* Added compatibility for WooCommerce gallery updates
+* Updated deprecated filter add_to_cart_fragments
+* Added missing translations & sanitization
+* Updated Font Awesome
+* Added new Social Links
+* Updated language .pot file
+Premium: Added new settings to remove Header elements
+Premium: Fixed WooCommerce Custom Styling Responsiveness
+
 #### 1.7.70
 * Style fixes/tweaks
 * Updated Recommended plugins

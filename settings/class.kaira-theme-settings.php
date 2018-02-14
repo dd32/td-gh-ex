@@ -287,6 +287,13 @@ class Kaira_theme_settings {
             'type'    => 'upsell',
             'std'     => ''
         );
+        $this->settings['kra-remove-header-top-bar'] = array(
+            'section' => 'general',
+            'title'   => __( 'Remove Header Top Bar', 'albar' ),
+            'desc'    => __( 'Select this to remove the header top bar', 'albar' ),
+            'type'    => 'checkbox',
+            'std'     => 0 // Set to 1 to be checked by default
+        );
         $this->settings['kra-header-search'] = array(
             'section' => 'general',
             'title'   => __( 'Header Search', 'albar' ),
@@ -300,6 +307,13 @@ class Kaira_theme_settings {
             'desc'    => __( '', 'albar' ),
             'type'    => 'upsell',
             'std'     => ''
+        );
+        $this->settings['kra-header-search'] = array(
+            'section' => 'general',
+            'title'   => __( 'Header Search', 'albar' ),
+            'desc'    => __( 'Select this to show the search in the header', 'albar' ),
+            'type'    => 'checkbox',
+            'std'     => 1 // Set to 1 to be checked by default
         );
         
         
@@ -566,6 +580,55 @@ class Kaira_theme_settings {
         $this->settings['kra-social-tumblr'] = array(
             'section' => 'social',
             'title'   => __( 'Tumblr', 'albar' ),
+            'desc'    => __( '', 'albar' ),
+            'type'    => 'url',
+            'std'     => ''
+        );
+        $this->settings['kra-social-medium'] = array(
+            'section' => 'social',
+            'title'   => __( 'Medium', 'albar' ),
+            'desc'    => __( '', 'albar' ),
+            'type'    => 'url',
+            'std'     => ''
+        );
+        $this->settings['kra-social-etsy'] = array(
+            'section' => 'social',
+            'title'   => __( 'Etsy', 'albar' ),
+            'desc'    => __( '', 'albar' ),
+            'type'    => 'url',
+            'std'     => ''
+        );
+        $this->settings['kra-social-yelp'] = array(
+            'section' => 'social',
+            'title'   => __( 'Yelp', 'albar' ),
+            'desc'    => __( '', 'albar' ),
+            'type'    => 'url',
+            'std'     => ''
+        );
+        $this->settings['kra-social-behance'] = array(
+            'section' => 'social',
+            'title'   => __( 'Behance', 'albar' ),
+            'desc'    => __( '', 'albar' ),
+            'type'    => 'url',
+            'std'     => ''
+        );
+        $this->settings['kra-social-slack'] = array(
+            'section' => 'social',
+            'title'   => __( 'Slack', 'albar' ),
+            'desc'    => __( '', 'albar' ),
+            'type'    => 'url',
+            'std'     => ''
+        );
+        $this->settings['kra-social-houzz'] = array(
+            'section' => 'social',
+            'title'   => __( 'Houzz', 'albar' ),
+            'desc'    => __( '', 'albar' ),
+            'type'    => 'url',
+            'std'     => ''
+        );
+        $this->settings['kra-social-vk'] = array(
+            'section' => 'social',
+            'title'   => __( 'VK', 'albar' ),
             'desc'    => __( '', 'albar' ),
             'type'    => 'url',
             'std'     => ''

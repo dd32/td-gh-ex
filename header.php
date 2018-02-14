@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!-- Albar.ORG -->
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -30,3 +30,7 @@ endif; ?>
     <?php endif; ?>
     
 <?php endif; ?>
+
+<?php if ( kaira_is_woocommerce_activated() ) {
+	echo ( is_wooCommerce() ) ? '<div class="site-container">' : '';
+} ?>

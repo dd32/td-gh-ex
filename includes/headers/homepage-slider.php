@@ -51,6 +51,10 @@ if( $slider_cats ) :
 <?php else: ?>
     
     <div class="alba-home-slider-wrapper alba-home-slider-remove" data-auto="4000" data-circular="true" data-infinite="true">
+        <div class="home-slider-wrap-hint">
+            <?php _e( 'See how to', 'albar' ); ?> <a href="https://kairaweb.com/documentation/setting-up-the-albar-default-slider/" target="_blank"><?php _e( 'Add your own slides here', 'albar' ); ?></a>
+        </div>
+
         <div class="alba-home-slider-prev"><i class="fa fa-angle-left"></i></div>
         <div class="alba-home-slider-next"><i class="fa fa-angle-right"></i></div>
         

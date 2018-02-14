@@ -32,7 +32,7 @@
     </div>
     <?php
     } ?>
-    <div class="alba-blog-standard-block-content alba-blog-standard-<?php echo ($images) ? 'has-images' : 'no-images'; ?>">
+    <div class="alba-blog-standard-block-content alba-blog-standard-<?php echo ($images) ? sanitize_html_class( 'has-images' ) : sanitize_html_class( 'no-images' ); ?>">
         
         <header class="entry-header">
             <h3 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
