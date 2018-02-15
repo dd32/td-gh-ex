@@ -705,7 +705,7 @@ function ashe_true_false( $option ) {
 	// Blog Page Dropcups
 	if ( ashe_true_false(ashe_options( 'blog_page_show_dropcaps' )) === true ) {
 		$css .= '
-			.post-content > p:first-child:first-letter {	
+			.post-content > p:first-of-type:first-letter {	
 			  font-family: "Playfair Display";
 			  font-weight: 400;
 			  float: left;
@@ -717,7 +717,7 @@ function ashe_true_false( $option ) {
 			}
 
 			@-moz-document url-prefix() {
-				.post-content > p:first-child:first-letter {
+				.post-content > p:first-of-type:first-letter {
 				    margin-top: 10px !important;
 				}
 			}
