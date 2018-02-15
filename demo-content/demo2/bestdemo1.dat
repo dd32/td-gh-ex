@@ -1,0 +1,23 @@
+a:4:{s:8:"template";s:12:"best-blogpro";s:4:"mods";a:27:{i:0;b:0;s:18:"nav_menu_locations";a:2:{s:7:"primary";i:150;s:10:"off-canvas";i:168;}s:18:"custom_css_post_id";i:2357;s:24:"front_background_setting";a:6:{s:16:"background-color";s:17:"rgba(20,20,20,.8)";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:5:"cover";s:21:"background-attachment";s:6:"scroll";}s:16:"social_icons_top";a:0:{}s:34:"widgetsfoobg_backgroundimg_setting";a:6:{s:16:"background-color";s:17:"rgba(20,20,20,.8)";s:16:"background-image";s:0:"";s:17:"background-repeat";s:6:"repeat";s:19:"background-position";s:13:"center center";s:15:"background-size";s:5:"cover";s:21:"background-attachment";s:6:"scroll";}s:19:"social_icons_footer";a:3:{i:0;a:2:{s:11:"social_icon";s:8:"dribbble";s:10:"social_url";s:1:"#";}i:1;a:2:{s:11:"social_icon";s:6:"github";s:10:"social_url";s:1:"#";}i:2;a:2:{s:11:"social_icon";s:7:"twitter";s:10:"social_url";s:0:"";}}s:21:"bestblog_flavor_color";s:7:"#ec407a";s:20:"main_menu_typography";a:10:{s:11:"font-family";s:6:"Roboto";s:7:"variant";s:7:"regular";s:9:"font-size";s:4:"16px";s:11:"line-height";s:3:"1.5";s:14:"letter-spacing";s:3:"0px";s:7:"subsets";a:1:{i:0;s:9:"latin-ext";}s:14:"text-transform";s:9:"uppercase";s:11:"font-backup";s:0:"";s:11:"font-weight";i:400;s:10:"font-style";s:6:"normal";}s:20:"main_header_gradient";s:11:"gradient_20";s:20:"bestblog_hover_color";s:7:"#34465d";s:19:"bestblog_link_color";s:7:"#ec407a";s:20:"hamburger_menu_style";s:15:"gradient_header";s:23:"hamburger_menu_gradient";s:11:"gradient_20";s:25:"hamburger_menuboder_color";s:7:"#1ab7ea";s:19:"main_bgheader_style";s:15:"gradient_header";s:25:"copyright_layout_settings";s:8:"content2";s:19:"bestblog_footertext";s:50:"<p>Copyright © IMONTHEMES All Rights Reserved</p>";s:15:"main_menu_style";s:15:"gradient_header";s:18:"main_menu_gradient";s:10:"gradient_1";s:12:"header_image";s:190:"http://imonthemes.com/bestblog-demo/demopro1/wp-content/uploads/sites/5/http://res.cloudinary.com/imon-themes/image/upload/v1515501005/cropped-lifestyle_sunset-cheer-bottles_233K1_nv1cgz.jpg";s:17:"header_image_data";O:8:"stdClass":5:{s:13:"attachment_id";i:2374;s:3:"url";s:190:"http://imonthemes.com/bestblog-demo/demopro1/wp-content/uploads/sites/5/http://res.cloudinary.com/imon-themes/image/upload/v1515501005/cropped-lifestyle_sunset-cheer-bottles_233K1_nv1cgz.jpg";s:13:"thumbnail_url";s:190:"http://imonthemes.com/bestblog-demo/demopro1/wp-content/uploads/sites/5/http://res.cloudinary.com/imon-themes/image/upload/v1515501005/cropped-lifestyle_sunset-cheer-bottles_233K1_nv1cgz.jpg";s:6:"height";i:719;s:5:"width";i:1280;}s:14:"topbg_gradient";s:11:"gradient_25";s:15:"menu_text_color";s:7:"#ffffff";s:20:"category_show_slider";a:1:{i:0;s:3:"167";}s:11:"header_text";i:0;s:11:"custom_logo";i:2323;}s:7:"options";a:2:{s:9:"site_icon";s:4:"2191";s:23:"nav_menus_created_posts";a:0:{}}s:6:"wp_css";s:463:".sidebar-inner .widget_latest-post-missionary .widget_wrap  {
+   
+    padding: 0;
+}
+
+.woocommerce_sub{
+	background:linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%)
+}
+
+.sidebar-inner .widget_search .widget_wrap .search-form {
+  top:6px;
+  position: absolute;
+  width: 90%;
+}
+.sidebar-inner .widget_search .widget_wrap  {
+  padding-bottom: 50px;
+}
+
+.lates-post-carousel .block-title{margin-bottom:0px}
+
+.lates-post-carousel .cell{
+	padding-top:0px;
+}";}

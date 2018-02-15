@@ -333,6 +333,11 @@ require_once(get_template_directory() . '/inc/widgets/latest-posts-single.php');
 require_once(get_template_directory() . '/inc/widgets/latest-posts-masonry.php');
 
 
+/**
+ * Implement demo import.
+ */
+require_once(get_template_directory() . '/functions/function-demo.php');
+
 
 /** Register all navigation menus */
 require_once(get_template_directory() . '/functions/menu.php');
@@ -350,6 +355,7 @@ require_once(get_template_directory() . '/functions/template-layout.php');
  * Implement the Custom Header feature.
  */
 require_once(get_template_directory() . '/inc/custom-header.php');
+require_once(get_template_directory() . '/inc/tgm-plugin.php');
 
 
 //load widgets ,kirki ,customizer,functions
