@@ -19,6 +19,10 @@ function cyberchimps_text_domain() {
 }
 add_action( 'after_setup_theme', 'cyberchimps_text_domain' );
 
+if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
+	define( 'ELEMENTOR_PARTNER_ID', 2126 );
+}
+
 // Theme check function to determine whether the them is free or pro.
 if( !function_exists( 'cyberchimps_theme_check' ) ) {
 	function cyberchimps_theme_check() {
@@ -39,6 +43,7 @@ add_filter( 'cyberchimps_current_theme_name', 'ifeature_options_theme_name', 1 )
 // Load Core
 require_once( get_template_directory() . '/cyberchimps/init.php' );
 require( get_template_directory() . '/inc/admin-about.php' );
+require_once( get_template_directory() . '/inc/testimonial_template.php' );
 
 // Set the content width based on the theme's design and stylesheet.
 if( !isset( $content_width ) ) {
@@ -52,6 +57,21 @@ function ifeature_add_site_info() {
 }
 
 add_action( 'cyberchimps_site_info', 'ifeature_add_site_info' );
+
+function ifeature_enqueue()
+{
+	$directory_uri  = get_template_directory_uri();
+	wp_enqueue_script( 'jquery-flexslider', $directory_uri . '/inc/js/jquery.flexslider.js', 'jquery', '', true );
+}
+add_action( 'wp_enqueue_scripts', 'ifeature_enqueue' );
+
+function ifeature_set_defaults()
+{
+
+	remove_action('testimonial', array( CyberChimpsTestimonial::instance(), 'render_display' ));
+	add_action('testimonial', 'ifeature_testimonial_render_display');
+}
+add_action( 'init', 'ifeature_set_defaults' );
 
 if( !function_exists( 'cyberchimps_comment' ) ) :
 // Template for comments and pingbacks.
@@ -832,6 +852,34 @@ function my_admin_notice(){
 	}
 	}
 	
+
+	$plugin = 'elementor/elementor.php';
+	$slug = 'elementor';
+	$installed_plugins = get_plugins();
+	if ( $admin_check_screen == 'Manage Themes' || $admin_check_screen == 'Theme Options Page' )
+	{
+		if( isset( $installed_plugins[$plugin] ) ) {
+			if( !is_plugin_active( $plugin ) ) {
+		?>
+				<div class="notice notice-info is-dismissible" style="margin-top:15px;">
+				<p>
+				<a href="<?php echo admin_url( 'plugins.php' ); ?>">Activate the Elementor plugin</a>
+				</p>
+				</div>
+		<?php 		
+		}
+		}
+		else {
+		?>
+			<div class="notice notice-info is-dismissible" style="margin-top:15px;">
+			<p>
+			<a href="<?php echo wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $slug ), 'install-plugin_' . $slug ); ?>">Install the Elementor plugin</a>
+			</p>
+			</div>
+	<?php 	
+		}	
+	}
+		
 	if( !class_exists('WP_Legal_Pages') )
 	{
 	$plugin = 'wplegalpages/legal-pages.php';
@@ -1043,7 +1091,7 @@ function ifeature_featured_image() {
 	endif;
 }
 
-function ifeature_cyberchimps_selected_blog_elements() {
+/*function ifeature_cyberchimps_selected_blog_elements() {
 	$options = array(
 			'boxes_lite'     => __( 'Boxes Lite', 'cyberchimps_core' ),
 			"portfolio_lite" => __( 'Portfolio Lite', 'cyberchimps_core' ),
@@ -1069,3 +1117,4 @@ function ifeature_cyberchimps_selected_page_elements() {
 }
 add_filter( 'cyberchimps_elements_draganddrop_page_options', 'cyberchimps_selected_page_elements' );
 add_filter( 'cyberchimps_elements_draganddrop_page_options', 'ifeature_cyberchimps_selected_page_elements' );
+*/

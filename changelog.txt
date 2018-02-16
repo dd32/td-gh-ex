@@ -1,6 +1,10 @@
 iFeature Changelog
 
 ****************************
+Version 6.7 (02/16/18)
+- Added Testimonial Element
+- Added Contact Us Element
+
 Version 6.6 (01/25/17)
 - Improved admin look and feel
 
