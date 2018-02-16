@@ -1,11 +1,11 @@
 === MyKnowledgeBase ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 5.7
+Version: 5.8
 Requires at least: 4.7
-Tested up to: 4.8
+Tested up to: 4.9
 License: GNU General Public License v3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, microformats, translation-ready
 
 
@@ -71,11 +71,10 @@ You can change the search bar title via WordPress Dashboard > Appearance > Custo
 = Browser support =
 The knowledgebase might not display 100% in IE8 and older because I have used css selector 'nth-of-type'.
 
-
 == Copyright ==
 = Fonts =
 * Font: Open Sans
-* Source: http://www.google.com/fonts/specimen/Open+Sans
+* Source: https://fonts.google.com/specimen/Open+Sans
 * Copyright author: Steve Matteson
 * Apache License, version 2.0
 * http://www.apache.org/licenses/LICENSE-2.0.html
@@ -83,17 +82,16 @@ The knowledgebase might not display 100% in IE8 and older because I have used cs
 = Images =
 * Item: boats.jpg
 * Copyright author: Guido van der Leest
-* Author URI: http://www.guidovanderleest.nl
+* Author URI: https://www.guidovanderleest.nl
 * GNU General Public License v3 or later
-* http://www.gnu.org/licenses/gpl-3.0.html
+* https://www.gnu.org/licenses/gpl-3.0.html
 
 = Reset stylesheet =
 * Included in file style.css
-* Source: http://meyerweb.com/eric/tools/css/reset
+* Source: https://meyerweb.com/eric/tools/css/reset
 * Author: Eric Meyer
-* Author URI: http://meyerweb.com/ 
+* Author URI: https://meyerweb.com/ 
 * License: none (public domain) 
-
 
 == Notes ==
 = Translation =

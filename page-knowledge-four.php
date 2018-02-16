@@ -19,9 +19,6 @@
 
 		<?php the_content(); ?>
 
-		<?php if ( $multipage ) { ?>
-			<div class="pagelink"><?php wp_link_pages(); ?></div>
-		<?php } ?> 
 	<?php endwhile; ?>
 
 	<div id="categories-four">
