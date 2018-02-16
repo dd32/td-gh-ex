@@ -223,7 +223,9 @@ if( ! function_exists( 'atlantic_do_footer_copyright' ) ) :
 function atlantic_do_footer_copyright(){
 
 	echo '<div class="site-info">'. atlantic_get_footer_copyright() . '</div>';
-	echo '<div class="site-designer">'. sprintf( __( 'Theme design by %s.', 'atlantic' ), '<a href="'. esc_url( 'https://elevate360.com.au/' ) .'">Elevate</a>' ) .'</div>';
+	if ( get_theme_mod( 'theme_designer', true ) ) {
+		echo '<div class="site-designer">'. sprintf( __( 'Theme design by %s %s.', 'atlantic' ), atlantic_get_svg( array( 'icon' => 'campaignkit' ) ), '<a href="'. esc_url( 'https://campaignkit.co/' ) .'">Campaign Kit</a>' ) .'</div>';
+	}
 
 }
 endif;

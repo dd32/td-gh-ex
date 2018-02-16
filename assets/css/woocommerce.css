@@ -962,6 +962,11 @@ p.lost_password {
 		width: 50%;
 	}
 
+	.woocommerce.col-shop-1 ul.products li.product,
+	.woocommerce-page.col-shop-1 ul.products li.product {
+		width: 50%;
+	}
+
 	.woocommerce #secondary .widget_shopping_cart .buttons a,
 	#secondary .woocommerce.widget_shopping_cart .buttons a,
 	.woocommerce-page #secondary .widget_shopping_cart .buttons a,

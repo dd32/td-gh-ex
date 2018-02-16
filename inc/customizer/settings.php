@@ -29,6 +29,23 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->get_section( 'background_image' )->panel 			= 'theme_settings';
 	$wp_customize->get_section( 'colors' )->panel 						= 'theme_settings';
 
+	/** WC */
+	$wp_customize->remove_control( 'woocommerce_catalog_columns' );
+
+	// Load custom sections.
+	require_once( get_parent_theme_file_path( "/inc/customizer/controls/class-section-pro.php" ) );
+
+	// Register custom section types.
+	$wp_customize->register_section_type( 'Atlantic_Customize_Section_Pro' );
+
+	// Register sections.
+	$wp_customize->add_section( new Atlantic_Customize_Section_Pro( $wp_customize, 'atlantic_pro', array(
+		'title'    			=> esc_html__( 'Campaign Kit', 'atlantic' ),
+		'pro_text' 			=> esc_html__( 'Learn More', 'atlantic' ),
+		'pro_url'  			=> esc_url( 'https://campaignkit.co/' ),
+		'priority'			=> 999
+	) ) );
+
 	/** Theme Colors */
 	$wp_customize->add_setting(
 		'primary_text_color',
@@ -329,6 +346,24 @@ function atlantic_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
+		'theme_designer' ,
+		 array(
+		    'default' 			=> $setting['theme_designer'],
+		    'transport'			=> 'postMessage',
+		    'sanitize_callback' => 'atlantic_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control(
+		'theme_designer',
+		array(
+			'label'    => __( 'Display theme designer at footer?', 'atlantic' ),
+			'section'  => 'footer_area',
+			'settings' => 'theme_designer',
+			'type'     => 'checkbox'
+		)
+	);
+
+	$wp_customize->add_setting(
 		'return_top' ,
 		 array(
 		    'default' 			=> $setting['return_top'],
@@ -348,14 +383,6 @@ function atlantic_customize_register( $wp_customize ) {
 
 	if ( class_exists( 'WooCommerce' ) ) {
 
-		$wp_customize->add_section(
-			'atlantic_woocommerce' ,
-			array(
-				'title' 			=> __( 'WooCommerce', 'atlantic' ),
-				'priority' 			=> 200,
-				'panel'				=> 'theme_settings'
-		) );
-
 		$wp_customize->add_setting(
 			'wc_columns',
 			array(
@@ -367,7 +394,7 @@ function atlantic_customize_register( $wp_customize ) {
 			'wc_columns',
 			array(
 				'label'    => __( 'Products columns', 'atlantic' ),
-				'section'  => 'atlantic_woocommerce',
+				'section'  => 'woocommerce_product_catalog',
 				'setting'  => 'wc_columns',
 				'type'     => 'select',
 				'choices'  => array(
@@ -388,7 +415,7 @@ function atlantic_customize_register( $wp_customize ) {
 			'wc_products_per_page',
 			array(
 				'label'    => __( 'Number of products per page', 'atlantic' ),
-				'section'  => 'atlantic_woocommerce',
+				'section'  => 'woocommerce_product_catalog',
 				'settings' => 'wc_products_per_page',
 				'type'     => 'number',
 			    'input_attrs' => array(
@@ -397,6 +424,14 @@ function atlantic_customize_register( $wp_customize ) {
 			    )
 			)
 		);
+
+		$wp_customize->add_section(
+			'atlantic_wc_colors' ,
+			array(
+				'title' 			=> __( 'Colors', 'atlantic' ),
+				'priority' 			=> 200,
+				'panel'				=> 'woocommerce'
+		) );
 
 		$wp_customize->add_setting(
 			'price_color',
@@ -410,7 +445,7 @@ function atlantic_customize_register( $wp_customize ) {
 			'price_color',
 			array(
 				'label'       	=> __( 'WooCommerce Price Color', 'atlantic' ),
-				'section'     	=> 'atlantic_woocommerce',
+				'section'     	=> 'atlantic_wc_colors',
 				'setting'		=> 'price_color',
 				'priority'		=> 99
 		) ) );
@@ -427,7 +462,7 @@ function atlantic_customize_register( $wp_customize ) {
 			'sale_color',
 			array(
 				'label'       	=> __( 'WooCommerce Sale Color', 'atlantic' ),
-				'section'     	=> 'atlantic_woocommerce',
+				'section'     	=> 'atlantic_wc_colors',
 				'setting'		=> 'sale_color',
 				'priority'		=> 99
 		) ) );
@@ -444,7 +479,7 @@ function atlantic_customize_register( $wp_customize ) {
 			'stars_color',
 			array(
 				'label'       	=> __( 'WooCommerce Stars/Rating Color', 'atlantic' ),
-				'section'     	=> 'atlantic_woocommerce',
+				'section'     	=> 'atlantic_wc_colors',
 				'setting'		=> 'stars_color',
 				'priority'		=> 99
 		) ) );
@@ -470,15 +505,6 @@ function atlantic_customize_register( $wp_customize ) {
 				'settings' 				=> array( 'footer_copyright' ),
 				'render_callback' 		=> 'atlantic_get_footer_copyright',
 				'container_inclusive'	=> false,
-		) );
-
-		$wp_customize->selective_refresh->add_partial(
-			'return_top',
-			array(
-				'selector' 				=> 'a.return-to-top',
-				'settings' 				=> array( 'return_top' ),
-				'render_callback' 		=> 'atlantic_get_footer_copyright',
-				'container_inclusive'	=> true,
 		) );
 
 	}

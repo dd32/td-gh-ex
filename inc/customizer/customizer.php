@@ -37,6 +37,18 @@ function atlantic_customize_preview_js() {
 add_action( 'customize_preview_init', 'atlantic_customize_preview_js' );
 
 /**
+ * Additional customizer control scripts.
+ */
+function atlantic_customizer_control() {
+
+	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+	wp_enqueue_style( 'atlantic-customizer-control', get_parent_theme_file_uri( "/assets/css/customizer-control$suffix.css" ), array(), time(), 'all' );
+	wp_enqueue_script( 'atlantic-customizer-control', get_parent_theme_file_uri( "/assets/js/customizer-control$suffix.js" ), array(), time(), true );
+}
+add_action( 'customize_controls_enqueue_scripts', 'atlantic_customizer_control', 15 );
+
+/**
  * [atlantic_setting_default description]
  * @return [type] [description]
  */
@@ -61,6 +73,7 @@ function atlantic_setting_default(){
 		'excerpt_length'		=> 20,
 		'blog_layout'			=> 'masonry-container',
 		'posts_navigation'		=> 'posts_navigation',
+		'theme_designer'		=> true,
 		'return_top'			=> true,
 	);
 

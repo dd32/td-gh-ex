@@ -3,17 +3,13 @@
 **Contributors:** elevate360
 **Requires at least:** WordPress 4.7
 **Tested up to:** WordPress 4.8
-**Stable tag:** 1.2.0
-**Version:** 1.2.0
+**Stable tag:** 1.2.2
+**Version:** 1.2.2
 **License:** GPLv2 or later
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 **Tags:** one-column, two-columns, custom-background, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-width-template, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-Commerce, photography
 
 Atlantic is for the creatives out there looking to give their creations the platform they deserve. Photographers, bloggers, videographers and artists alike will find Atlantic can not only mimic the style of their content but contribute to the design aesthetic you have in mind.
-
-Atlantic is a free high res photography blog theme for WordPress which understands the importance of presentation, offering a pixel perfect platform for your content. Atlantic serves as a digital frame for your photos. This theme compliments images that are large in scope, detailed in their display and ambitious in their composition. Each image is given its opportunity to shine unambiguously with Atlantic.
-
-This customizable theme can be changed to suit the individual style of each collection. Atlantic gives control to the user with domain over image and video sizes; selectable colours and fonts; as well as further customization opportunities with CSS.
 
 ## Description
 
@@ -87,6 +83,18 @@ https://www.pexels.com/photo/beautiful-blur-bouquet-carefree-573302/
 https://www.pexels.com/photo/art-astronomy-atmosphere-aurora-borealis-360912/
 
 ## Changelog
+
+### 1.2.2 - February 16, 2018
+* Fixed texdomain
+* Updated compatibility for WooCommerce 3.3.0
+* Updated Footer copyright settings
+* Updated authors info
+
+### 1.2.1 - December 19, 2017
+* Fixed texdomain
+* Updated `style.css`
+* Updated `readme.md` and `readme.txt`
+* Updated `package.json` and `gruntfile.js` for development
 
 ### 1.2.0 - September 18, 2017
 * Major update

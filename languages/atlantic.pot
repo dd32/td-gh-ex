@@ -1,17 +1,17 @@
-# <!=Copyright (C) 2017 Elevate360
+# <!=Copyright (C) 2018 Elevate360
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Atlantic 1.2.0\n"
-"Report-Msgid-Bugs-To: https://github.com/elevate360/caspian/issues\n"
-"POT-Creation-Date: 2017-09-17 09:33:00+00:00\n"
+"Project-Id-Version: Atlantic 1.2.2\n"
+"Report-Msgid-Bugs-To: https://elevate360/contact\n"
+"POT-Creation-Date: 2018-02-16 07:17:17+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
-"X-Generator: grunt-wp-i18n1.0.0\n"
+"X-Generator: grunt-wp-i18n1.0.1\n"
 
 #: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
@@ -90,139 +90,151 @@ msgstr ""
 msgid "Theme Settings"
 msgstr ""
 
+#: inc/customizer/settings.php:43
+msgid "Campaign Kit"
+msgstr ""
+
 #: inc/customizer/settings.php:44
-msgid "Primary Text Color"
+msgid "Learn More"
 msgstr ""
 
 #: inc/customizer/settings.php:61
-msgid "Secondary Text Color"
+msgid "Primary Text Color"
 msgstr ""
 
 #: inc/customizer/settings.php:78
+msgid "Secondary Text Color"
+msgstr ""
+
+#: inc/customizer/settings.php:95
 msgid "Link Color"
 msgstr ""
 
-#: inc/customizer/settings.php:79
+#: inc/customizer/settings.php:96
 msgid "Used for link, button, selection."
 msgstr ""
 
-#: inc/customizer/settings.php:96
+#: inc/customizer/settings.php:113
 msgid "Hover Color"
 msgstr ""
 
-#: inc/customizer/settings.php:97
+#: inc/customizer/settings.php:114
 msgid "Used for link:hover, button:hover."
 msgstr ""
 
-#: inc/customizer/settings.php:107
+#: inc/customizer/settings.php:124
 msgid "Blog Setting"
 msgstr ""
 
-#: inc/customizer/settings.php:122
+#: inc/customizer/settings.php:139
 msgid "Blog Layout"
 msgstr ""
 
-#: inc/customizer/settings.php:127
+#: inc/customizer/settings.php:144
 msgid "1 Column"
 msgstr ""
 
-#: inc/customizer/settings.php:128 inc/customizer/settings.php:374
+#: inc/customizer/settings.php:145 inc/customizer/settings.php:401
 msgid "2 Columns"
 msgstr ""
 
-#: inc/customizer/settings.php:142
+#: inc/customizer/settings.php:159
 msgid "Max gallery item slideshow"
 msgstr ""
 
-#: inc/customizer/settings.php:143
+#: inc/customizer/settings.php:160
 msgid "Post format gallery slideshow at archive page."
 msgstr ""
 
-#: inc/customizer/settings.php:164
+#: inc/customizer/settings.php:181
 msgid "Excerpt length"
 msgstr ""
 
-#: inc/customizer/settings.php:185
+#: inc/customizer/settings.php:202
 msgid "Posts Navigation"
 msgstr ""
 
-#: inc/customizer/settings.php:190
+#: inc/customizer/settings.php:207
 msgid "Prev / Next"
 msgstr ""
 
-#: inc/customizer/settings.php:191
+#: inc/customizer/settings.php:208
 msgid "Numeric"
 msgstr ""
 
-#: inc/customizer/settings.php:206
+#: inc/customizer/settings.php:223
 msgid "Display Post Date"
 msgstr ""
 
-#: inc/customizer/settings.php:224
+#: inc/customizer/settings.php:241
 msgid "Display Post Author"
 msgstr ""
 
-#: inc/customizer/settings.php:242
+#: inc/customizer/settings.php:259
 msgid "Display Post Category"
 msgstr ""
 
-#: inc/customizer/settings.php:260
+#: inc/customizer/settings.php:277
 msgid "Display Post Tag"
 msgstr ""
 
-#: inc/customizer/settings.php:278
+#: inc/customizer/settings.php:295
 msgid "Display comments count"
 msgstr ""
 
-#: inc/customizer/settings.php:296
+#: inc/customizer/settings.php:313
 msgid "Display Author biography at single post"
 msgstr ""
 
-#: inc/customizer/settings.php:307
+#: inc/customizer/settings.php:324
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer/settings.php:323
+#: inc/customizer/settings.php:340
 msgid "Footer copyright"
 msgstr ""
 
-#: inc/customizer/settings.php:324
+#: inc/customizer/settings.php:341
 msgid "Use [YEAR] for dynamic current year. Use [SITE] to render site link."
 msgstr ""
 
-#: inc/customizer/settings.php:342
+#: inc/customizer/settings.php:359
+msgid "Display theme designer at footer?"
+msgstr ""
+
+#: inc/customizer/settings.php:377
 msgid "Enable return to top link"
 msgstr ""
 
-#: inc/customizer/settings.php:354
-msgid "WooCommerce"
-msgstr ""
-
-#: inc/customizer/settings.php:369
+#: inc/customizer/settings.php:396
 msgid "Products columns"
 msgstr ""
 
-#: inc/customizer/settings.php:375
+#: inc/customizer/settings.php:402
 msgid "3 Columns"
 msgstr ""
 
-#: inc/customizer/settings.php:376
+#: inc/customizer/settings.php:403
 msgid "4 Columns"
 msgstr ""
 
-#: inc/customizer/settings.php:390
+#: inc/customizer/settings.php:417
 msgid "Number of products per page"
 msgstr ""
 
-#: inc/customizer/settings.php:412
+#: inc/customizer/settings.php:431
+msgid "Colors"
+msgstr ""
+
+#: inc/customizer/settings.php:447
 msgid "WooCommerce Price Color"
 msgstr ""
 
-#: inc/customizer/settings.php:429
+#: inc/customizer/settings.php:464
 msgid "WooCommerce Sale Color"
 msgstr ""
 
-#: inc/customizer/settings.php:446
+#: inc/customizer/settings.php:481
 msgid "WooCommerce Stars/Rating Color"
 msgstr ""
 
@@ -302,8 +314,8 @@ msgstr ""
 msgid "Y"
 msgstr ""
 
-#: inc/template-tags.php:226
-msgid "Theme design by %s."
+#: inc/template-tags.php:227
+msgid "Theme design by %s %s."
 msgstr ""
 
 #: search.php:21
@@ -406,7 +418,7 @@ msgid "Elevate360"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://elevate360.com.au"
+msgid "https://campaignkit.co/"
 msgstr ""
 
 #. Template Name of the plugin/theme
