@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+DarkElements version 5.8 - february 2018
+- please ignore my notification in previous version regarding removal from repository
+- decided not to remove it yet
+- added a static font-size in body tag
+- now other font-sizes will scale better
+- updated h1-h6 headings
+- updated files style and custom-editor-style
+- several small adjustments
+
 DarkElements version 5.7 - november 2017
 - last update: this theme will be removed from repository
 - you can keep using theme, but without updates and without support from author
