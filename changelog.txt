@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+DarkOrange version 6.2 - february 2018
+- please ignore my notification in previous version regarding removal from repository
+- decided not to remove it yet
+- added a static font-size in body tag
+- now other font-sizes will scale better
+- updated h1-h6 headings
+- updated files style and custom-editor-style
+- several small adjustments
+
 DarkOrange version 6.1 - november 2017
 - file style: minor fix
 
