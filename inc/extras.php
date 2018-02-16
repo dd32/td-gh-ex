@@ -14,44 +14,44 @@
  * @return array
  */
 function benevolent_body_classes( $classes ) {
-	
+  
     global $post;
     
     // Adds a class of group-blog to blogs with more than 1 published author.
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
-	}
+  if ( is_multi_author() ) {
+    $classes[] = 'group-blog';
+  }
 
-	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_singular() ) {
-		$classes[] = 'hfeed';
-	}
+  // Adds a class of hfeed to non-singular pages.
+  if ( ! is_singular() ) {
+    $classes[] = 'hfeed';
+  }
     
     // Adds a class of custom-background-image to sites with a custom background image.
-	if ( get_background_image() ) {
-		$classes[] = 'custom-background-image';
-	}
+  if ( get_background_image() ) {
+    $classes[] = 'custom-background-image';
+  }
     
     // Adds a class of custom-background-color to sites with a custom background color.
     if ( get_background_color() != 'ffffff' ) {
-		$classes[] = 'custom-background-color';
-	}
+    $classes[] = 'custom-background-color';
+  }
     
     if( !( is_active_sidebar( 'right-sidebar' )) || is_page_template( 'template-home.php' ) || is_search() ) {
-		$classes[] = 'full-width';	
-	}
+    $classes[] = 'full-width';  
+  }
     
     if( is_page() ){
-		$sidebar_layout = get_post_meta( $post->ID, 'benevolent_sidebar_layout', true );
+    $sidebar_layout = get_post_meta( $post->ID, 'benevolent_sidebar_layout', true );
         if( $sidebar_layout == 'no-sidebar' )
-		$classes[] = 'full-width';
-	}
+    $classes[] = 'full-width';
+  }
     
     if( get_theme_mod( 'benevolent_ed_slider' ) ){
-	   $classes[] = 'has-slider';
-	}
+     $classes[] = 'has-slider';
+  }
     
-	return $classes;
+  return $classes;
 }
 add_filter( 'body_class', 'benevolent_body_classes' );
 
@@ -70,97 +70,97 @@ if( ! function_exists( 'benevolent_excerpt' ) ):
  * @link http://alanwhipple.com/2011/05/25/php-truncate-string-preserving-html-tags-words/
  */
 function benevolent_excerpt($text, $length = 100, $ending = '...', $exact = false, $considerHtml = true) {
-	$text = strip_shortcodes( $text );
+  $text = strip_shortcodes( $text );
     $text = benevolent_strip_single( 'img', $text );
     $text = benevolent_strip_single( 'a', $text );
     
     if ($considerHtml) {
-		// if the plain text is shorter than the maximum length, return the whole text
-		if (strlen(preg_replace('/<.*?>/', '', $text)) <= $length) {
-			return $text;
-		}
-		// splits all html-tags to scanable lines
-		preg_match_all('/(<.+?>)?([^<>]*)/s', $text, $lines, PREG_SET_ORDER);
-		$total_length = strlen($ending);
-		$open_tags = array();
-		$truncate = '';
-		foreach ($lines as $line_matchings) {
-			// if there is any html-tag in this line, handle it and add it (uncounted) to the output
-			if (!empty($line_matchings[1])) {
-				// if it's an "empty element" with or without xhtml-conform closing slash
-				if (preg_match('/^<(\s*.+?\/\s*|\s*(img|br|input|hr|area|base|basefont|col|frame|isindex|link|meta|param)(\s.+?)?)>$/is', $line_matchings[1])) {
-					// do nothing
-				// if tag is a closing tag
-				} else if (preg_match('/^<\s*\/([^\s]+?)\s*>$/s', $line_matchings[1], $tag_matchings)) {
-					// delete tag from $open_tags list
-					$pos = array_search($tag_matchings[1], $open_tags);
-					if ($pos !== false) {
-					unset($open_tags[$pos]);
-					}
-				// if tag is an opening tag
-				} else if (preg_match('/^<\s*([^\s>!]+).*?>$/s', $line_matchings[1], $tag_matchings)) {
-					// add tag to the beginning of $open_tags list
-					array_unshift($open_tags, strtolower($tag_matchings[1]));
-				}
-				// add html-tag to $truncate'd text
-				$truncate .= $line_matchings[1];
-			}
-			// calculate the length of the plain text part of the line; handle entities as one character
-			$content_length = strlen(preg_replace('/&[0-9a-z]{2,8};|&#[0-9]{1,7};|[0-9a-f]{1,6};/i', ' ', $line_matchings[2]));
-			if ($total_length+$content_length> $length) {
-				// the number of characters which are left
-				$left = $length - $total_length;
-				$entities_length = 0;
-				// search for html entities
-				if (preg_match_all('/&[0-9a-z]{2,8};|&#[0-9]{1,7};|[0-9a-f]{1,6};/i', $line_matchings[2], $entities, PREG_OFFSET_CAPTURE)) {
-					// calculate the real length of all entities in the legal range
-					foreach ($entities[0] as $entity) {
-						if ($entity[1]+1-$entities_length <= $left) {
-							$left--;
-							$entities_length += strlen($entity[0]);
-						} else {
-							// no more characters left
-							break;
-						}
-					}
-				}
-				$truncate .= substr($line_matchings[2], 0, $left+$entities_length);
-				// maximum lenght is reached, so get off the loop
-				break;
-			} else {
-				$truncate .= $line_matchings[2];
-				$total_length += $content_length;
-			}
-			// if the maximum length is reached, get off the loop
-			if($total_length>= $length) {
-				break;
-			}
-		}
-	} else {
-		if (strlen($text) <= $length) {
-			return $text;
-		} else {
-			$truncate = substr($text, 0, $length - strlen($ending));
-		}
-	}
-	// if the words shouldn't be cut in the middle...
-	if (!$exact) {
-		// ...search the last occurance of a space...
-		$spacepos = strrpos($truncate, ' ');
-		if (isset($spacepos)) {
-			// ...and cut the text in this position
-			$truncate = substr($truncate, 0, $spacepos);
-		}
-	}
-	// add the defined ending to the text
-	$truncate .= $ending;
-	if($considerHtml) {
-		// close all unclosed html-tags
-		foreach ($open_tags as $tag) {
-			$truncate .= '</' . $tag . '>';
-		}
-	}
-	return $truncate;
+    // if the plain text is shorter than the maximum length, return the whole text
+    if (strlen(preg_replace('/<.*?>/', '', $text)) <= $length) {
+      return $text;
+    }
+    // splits all html-tags to scanable lines
+    preg_match_all('/(<.+?>)?([^<>]*)/s', $text, $lines, PREG_SET_ORDER);
+    $total_length = strlen($ending);
+    $open_tags = array();
+    $truncate = '';
+    foreach ($lines as $line_matchings) {
+      // if there is any html-tag in this line, handle it and add it (uncounted) to the output
+      if (!empty($line_matchings[1])) {
+        // if it's an "empty element" with or without xhtml-conform closing slash
+        if (preg_match('/^<(\s*.+?\/\s*|\s*(img|br|input|hr|area|base|basefont|col|frame|isindex|link|meta|param)(\s.+?)?)>$/is', $line_matchings[1])) {
+          // do nothing
+        // if tag is a closing tag
+        } else if (preg_match('/^<\s*\/([^\s]+?)\s*>$/s', $line_matchings[1], $tag_matchings)) {
+          // delete tag from $open_tags list
+          $pos = array_search($tag_matchings[1], $open_tags);
+          if ($pos !== false) {
+          unset($open_tags[$pos]);
+          }
+        // if tag is an opening tag
+        } else if (preg_match('/^<\s*([^\s>!]+).*?>$/s', $line_matchings[1], $tag_matchings)) {
+          // add tag to the beginning of $open_tags list
+          array_unshift($open_tags, strtolower($tag_matchings[1]));
+        }
+        // add html-tag to $truncate'd text
+        $truncate .= $line_matchings[1];
+      }
+      // calculate the length of the plain text part of the line; handle entities as one character
+      $content_length = strlen(preg_replace('/&[0-9a-z]{2,8};|&#[0-9]{1,7};|[0-9a-f]{1,6};/i', ' ', $line_matchings[2]));
+      if ($total_length+$content_length> $length) {
+        // the number of characters which are left
+        $left = $length - $total_length;
+        $entities_length = 0;
+        // search for html entities
+        if (preg_match_all('/&[0-9a-z]{2,8};|&#[0-9]{1,7};|[0-9a-f]{1,6};/i', $line_matchings[2], $entities, PREG_OFFSET_CAPTURE)) {
+          // calculate the real length of all entities in the legal range
+          foreach ($entities[0] as $entity) {
+            if ($entity[1]+1-$entities_length <= $left) {
+              $left--;
+              $entities_length += strlen($entity[0]);
+            } else {
+              // no more characters left
+              break;
+            }
+          }
+        }
+        $truncate .= substr($line_matchings[2], 0, $left+$entities_length);
+        // maximum lenght is reached, so get off the loop
+        break;
+      } else {
+        $truncate .= $line_matchings[2];
+        $total_length += $content_length;
+      }
+      // if the maximum length is reached, get off the loop
+      if($total_length>= $length) {
+        break;
+      }
+    }
+  } else {
+    if (strlen($text) <= $length) {
+      return $text;
+    } else {
+      $truncate = substr($text, 0, $length - strlen($ending));
+    }
+  }
+  // if the words shouldn't be cut in the middle...
+  if (!$exact) {
+    // ...search the last occurance of a space...
+    $spacepos = strrpos($truncate, ' ');
+    if (isset($spacepos)) {
+      // ...and cut the text in this position
+      $truncate = substr($truncate, 0, $spacepos);
+    }
+  }
+  // add the defined ending to the text
+  $truncate .= $ending;
+  if($considerHtml) {
+    // close all unclosed html-tags
+    foreach ($open_tags as $tag) {
+      $truncate .= '</' . $tag . '>';
+    }
+  }
+  return $truncate;
 }
 endif; // End function_exists
 
@@ -290,23 +290,23 @@ function benevolent_social_links_cb(){
     if( $facebook || $twitter || $pinterest || $linkedin || $gplus || $instagram || $youtube ){
     
     ?>
-	<ul class="social-networks">
-		<?php if( $facebook ){ ?>
+  <ul class="social-networks">
+    <?php if( $facebook ){ ?>
         <li><a href="<?php echo esc_url( $facebook ); ?>" class="fa fa-facebook" target="_blank" title="<?php esc_attr_e( 'Facebook', 'benevolent' );?>"></a></li>
-		<?php } if( $twitter ){ ?>
+    <?php } if( $twitter ){ ?>
         <li><a href="<?php echo esc_url( $twitter ); ?>" class="fa fa-twitter" target="_blank" title="<?php esc_attr_e( 'Twitter', 'benevolent' );?>"></a></li>
         <?php } if( $pinterest ){ ?>
         <li><a href="<?php echo esc_url( $pinterest ); ?>" class="fa fa-pinterest" target="_blank" title="<?php esc_attr_e( 'Pinterest', 'benevolent' );?>"></a></li>
-		<?php } if( $linkedin ){ ?>
+    <?php } if( $linkedin ){ ?>
         <li><a href="<?php echo esc_url( $linkedin ); ?>" class="fa fa-linkedin" target="_blank" title="<?php esc_attr_e( 'LinkedIn', 'benevolent' );?>"></a></li>
         <?php } if( $gplus ){ ?>
         <li><a href="<?php echo esc_url( $gplus ); ?>" class="fa fa-google-plus" target="_blank" title="<?php esc_attr_e( 'Google Plus', 'benevolent' );?>"></a></li>
         <?php } if( $instagram ){ ?>
         <li><a href="<?php echo esc_url( $instagram ); ?>" class="fa fa-instagram" target="_blank" title="<?php esc_attr_e( 'Instagram', 'benevolent' );?>"></a></li>
-		<?php } if( $youtube ){ ?>
+    <?php } if( $youtube ){ ?>
         <li><a href="<?php echo esc_url( $youtube ); ?>" class="fa fa-youtube-play" target="_blank" title="<?php esc_attr_e( 'YouTube', 'benevolent' );?>"></a></li>
         <?php } ?>
-	</ul>
+  </ul>
     <?php
     }
 }
@@ -331,49 +331,49 @@ add_filter( 'comment_form_fields', 'benevolent_move_comment_field_to_bottom' );
  * @link https://codex.wordpress.org/Function_Reference/wp_list_comments 
  */
 function benevolent_theme_comment($comment, $args, $depth) {
-	$GLOBALS['comment'] = $comment;
-	extract($args, EXTR_SKIP);
+  $GLOBALS['comment'] = $comment;
+  extract($args, EXTR_SKIP);
 
-	if ( 'div' == $args['style'] ) {
-		$tag = 'div';
-		$add_below = 'comment';
-	} else {
-		$tag = 'li';
-		$add_below = 'div-comment';
-	}
+  if ( 'div' == $args['style'] ) {
+    $tag = 'div';
+    $add_below = 'comment';
+  } else {
+    $tag = 'li';
+    $add_below = 'div-comment';
+  }
 ?>
-	<<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
-	<?php if ( 'div' != $args['style'] ) : ?>
-	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
-	<?php endif; ?>
-	
+  <<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
+  <?php if ( 'div' != $args['style'] ) : ?>
+  <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+  <?php endif; ?>
+  
     <footer class="comment-meta">
     
         <div class="comment-author vcard">
-    	<?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-    	<?php printf( __( '<b class="fn">%s</b>', 'benevolent' ), get_comment_author_link() ); ?>
-    	</div>
-    	<?php if ( $comment->comment_approved == '0' ) : ?>
-    		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'benevolent' ); ?></em>
-    		<br />
-    	<?php endif; ?>
+      <?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+      <?php printf( __( '<b class="fn">%s</b>', 'benevolent' ), get_comment_author_link() ); ?>
+      </div>
+      <?php if ( $comment->comment_approved == '0' ) : ?>
+        <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'benevolent' ); ?></em>
+        <br />
+      <?php endif; ?>
     
-    	<div class="comment-metadata commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><time datetime="<?php comment_date(); ?>">
-    		<?php
-    			/* translators: 1: date, 2: time */
-    			printf( __( '%s', 'benevolent' ), get_comment_date() ); ?></time></a><?php edit_comment_link( __( '(Edit)', 'benevolent' ), '  ', '' );
-    		?>
-    	</div>
+      <div class="comment-metadata commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><time datetime="<?php comment_date(); ?>">
+        <?php
+          /* translators: 1: date, 2: time */
+          printf( __( '%s', 'benevolent' ), get_comment_date() ); ?></time></a><?php edit_comment_link( __( '(Edit)', 'benevolent' ), '  ', '' );
+        ?>
+      </div>
     </footer>
     
     <div class="comment-content"><?php comment_text(); ?></div>
 
-	<div class="reply">
-	<?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-	</div>
-	<?php if ( 'div' != $args['style'] ) : ?>
-	</div>
-	<?php endif; ?>
+  <div class="reply">
+  <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+  </div>
+  <?php if ( 'div' != $args['style'] ) : ?>
+  </div>
+  <?php endif; ?>
 <?php
 }
 
@@ -442,24 +442,24 @@ function benevolent_slider_cb(){
                 $slider_qry->the_post();
                 if( has_post_thumbnail() ){
                 ?>
-    			<li>
-    				<?php 
+          <li>
+            <?php 
                     the_post_thumbnail( 'benevolent-slider' ); 
                     if( $slider_caption ){
                     ?>
                     <div class="banner-text">
-    					<div class="container">
-    						<div class="text">
-    							<strong class="main-title"><?php the_title(); ?></strong>
-    							<?php if( has_excerpt() ) the_excerpt(); ?>
-    							<a href="<?php the_permalink(); ?>" class="btn-learn"><?php echo esc_html( $slider_readmore );?></a>
-    						</div>
-    					</div>
-    				</div>
+              <div class="container">
+                <div class="text">
+                  <strong class="main-title"><?php the_title(); ?></strong>
+                  <?php if( has_excerpt() ) the_excerpt(); ?>
+                  <a href="<?php the_permalink(); ?>" class="btn-learn"><?php echo esc_html( $slider_readmore );?></a>
+                </div>
+              </div>
+            </div>
                     <?php
                     }
                     ?>
-    			</li>
+          </li>
                 <?php 
                 }
             } 
@@ -484,15 +484,15 @@ function benevolent_promotional_cb(){
     if( $ed_promotional_section ){
     ?>
     <div class="promotional-block" <?php if( $promotional_section_bg ) echo 'style="background: url(' . esc_url( $promotional_section_bg ) . '); background-size: cover; background-repeat: no-repeat; background-position: center;"';?>>
-			<div class="container">
-				<div class="text">
-					<?php 
+      <div class="container">
+        <div class="text">
+          <?php 
                     if( $promotional_section_title ) echo '<h3 class="title">' . esc_html( $promotional_section_title ) . '</h3>';
-					if( $promotional_button_url && $promotional_button_text ) echo '<a href="' . esc_url( $promotional_button_url ) . '" class="btn-donate" target="_blank">' . esc_html( $promotional_button_text ) . '</a>';
+          if( $promotional_button_url && $promotional_button_text ) echo '<a href="' . esc_url( $promotional_button_url ) . '" class="btn-donate" target="_blank">' . esc_html( $promotional_button_text ) . '</a>';
                     ?>
-				</div>
-			</div>
-		</div>
+        </div>
+      </div>
+    </div>
     <?php
     }
 }
@@ -512,10 +512,10 @@ function benevolent_intro_helper( $image, $logo, $title, $link, $url ){
         
         if( $logo ) echo '<div class="icon-holder"><img src="' . esc_url( $log[0] ) .'" alt="' . esc_attr( $title ) . '" /></div>';
         
-		if( $title || $url ){ 
+    if( $title || $url ){ 
             echo '<div class="text-holder">';
-			if( $title ) echo '<strong class="title">' . esc_html( $title ) . '</strong>'; 
-			if( $url && $link ) echo '<a class="btn" href="' . esc_url( $url ) . '" target="_blank">' . esc_html( $link ) . '<span class="fa fa-angle-right"></span></a>';
+      if( $title ) echo '<strong class="title">' . esc_html( $title ) . '</strong>'; 
+      if( $url && $link ) echo '<a class="btn" href="' . esc_url( $url ) . '" target="_blank">' . esc_html( $link ) . '<span class="fa fa-angle-right"></span></a>';
             echo '</div>';
         } 
         echo '</div>';
@@ -540,31 +540,46 @@ function benevolent_sponsor_helper( $logo, $url ){
 function benevolent_stat_helper( $title, $counter ){
     if( $counter ){ ?>
         <div class="columns-4">
-			<strong class="number"><?php echo absint( $counter );?></strong>
-			<?php if( $title ) echo '<span>' . esc_html( $title ) . '</span>'; ?>
-		</div>
+      <strong class="number"><?php echo absint( $counter );?></strong>
+      <?php if( $title ) echo '<span>' . esc_html( $title ) . '</span>'; ?>
+    </div>
     <?php }
 }
 
 /**
  * Custom CSS
 */
-function benevolent_custom_css(){
-    $custom_css = get_theme_mod( 'benevolent_custom_css' );
-    if( !empty( $custom_css ) ){
-		echo '<style type="text/css">';
-		echo wp_strip_all_tags( $custom_css );
-		echo '</style>';
-	}
+if ( function_exists( 'wp_update_custom_css_post' ) ) {
+    // Migrate any existing theme CSS to the core option added in WordPress 4.7.
+    $css = get_theme_mod( 'benevolent_custom_css' );
+    if ( $css ) {
+        $core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
+        $return = wp_update_custom_css_post( $core_css . $css );
+        if ( ! is_wp_error( $return ) ) {
+            // Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
+            remove_theme_mod( 'benevolent_custom_css' );
+        }
+    }
+} else {
+    // Back-compat for WordPress < 4.7.
+      function benevolent_custom_css(){
+      $custom_css = get_theme_mod( 'benevolent_custom_css' );
+      if( !empty( $custom_css ) ){
+        echo '<style type="text/css">';
+        echo wp_strip_all_tags( $custom_css );
+        echo '</style>';
+      }
+    }
+    add_action( 'wp_head', 'benevolent_custom_css', 100 );
 }
-add_action( 'wp_head', 'benevolent_custom_css', 100 );
+
 
 if ( ! function_exists( 'benevolent_excerpt_more' ) && ! is_admin() ) :
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... * 
  */
 function benevolent_excerpt_more() {
-	return ' &hellip; ';
+  return ' &hellip; ';
 }
 add_filter( 'excerpt_more', 'benevolent_excerpt_more' );
 endif;
@@ -574,7 +589,7 @@ if ( ! function_exists( 'benevolent_excerpt_length' ) ) :
  * Changes the default 55 character in excerpt 
 */
 function benevolent_excerpt_length( $length ) {
-	return 60;
+  return 60;
 }
 add_filter( 'excerpt_length', 'benevolent_excerpt_length', 999 );
 endif;

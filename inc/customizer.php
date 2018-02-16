@@ -11,23 +11,23 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function benevolent_customize_register( $wp_customize ) {
-	
-    /* Option list of all post */	
+    
+    /* Option list of all post */   
     $options_posts = array();
     $options_posts_obj = get_posts( 'posts_per_page=-1' );
     $options_posts[''] = __( 'Choose Post', 'benevolent' );
     foreach ( $options_posts_obj as $posts ) {
-    	$options_posts[$posts->ID] = $posts->post_title;
+        $options_posts[$posts->ID] = $posts->post_title;
     }
     
     /* Option list of all categories */
     $args = array(
-	   'type'                     => 'post',
-	   'orderby'                  => 'name',
-	   'order'                    => 'ASC',
-	   'hide_empty'               => 1,
-	   'hierarchical'             => 1,
-	   'taxonomy'                 => 'category'
+       'type'                     => 'post',
+       'orderby'                  => 'name',
+       'order'                    => 'ASC',
+       'hide_empty'               => 1,
+       'hierarchical'             => 1,
+       'taxonomy'                 => 'category'
     ); 
     $option_categories = array();
     $category_lists = get_categories( $args );
@@ -54,8 +54,8 @@ function benevolent_customize_register( $wp_customize ) {
     $wp_customize->get_section( 'static_front_page' )->panel = 'wp_default_panel'; 
     
     $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'background_color' )->transport = 'refresh';
+    $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+    $wp_customize->get_setting( 'background_color' )->transport = 'refresh';
     $wp_customize->get_setting( 'background_image' )->transport = 'refresh';
     /** Default Settings Ends */
     
@@ -1649,7 +1649,7 @@ function benevolent_customize_register( $wp_customize ) {
         )
     );
     /** Social Settings Ends */
-    
+     if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
     /** Custom CSS*/
     $wp_customize->add_section(
         'benevolent_custom_settings',
@@ -1679,6 +1679,7 @@ function benevolent_customize_register( $wp_customize ) {
         )
     );
     /** Custom CSS Ends */
+   }
 
      /** Footer Section */
     $wp_customize->add_section(
@@ -1720,13 +1721,13 @@ function benevolent_customize_register( $wp_customize ) {
      
      function benevolent_sanitize_select( $input, $setting ){
         // Ensure input is a slug.
-    	$input = sanitize_key( $input );
-    	
-    	// Get list of choices from the control associated with the setting.
-    	$choices = $setting->manager->get_control( $setting->id )->choices;
-    	
-    	// If the input is a valid key, return it; otherwise, return the default.
-    	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+        $input = sanitize_key( $input );
+        
+        // Get list of choices from the control associated with the setting.
+        $choices = $setting->manager->get_control( $setting->id )->choices;
+        
+        // If the input is a valid key, return it; otherwise, return the default.
+        return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
      }
      
      function benevolent_sanitize_url( $url ){
@@ -1734,19 +1735,19 @@ function benevolent_customize_register( $wp_customize ) {
      }
      
      function benevolent_sanitize_number_absint( $number, $setting ) {
-    	// Ensure $number is an absolute integer (whole number, zero or greater).
-    	$number = absint( $number );
-    	
-    	// If the input is an absolute integer, return it; otherwise, return the default
-    	return ( $number ? $number : $setting->default );
+        // Ensure $number is an absolute integer (whole number, zero or greater).
+        $number = absint( $number );
+        
+        // If the input is an absolute integer, return it; otherwise, return the default
+        return ( $number ? $number : $setting->default );
      }
      
      function benevolent_sanitize_image( $image, $setting ) {
-    	/*
-    	 * Array of valid image file types.
-    	 *
-    	 * The array includes image mime types that are included in wp_get_mime_types()
-    	 */
+        /*
+         * Array of valid image file types.
+         *
+         * The array includes image mime types that are included in wp_get_mime_types()
+         */
         $mimes = array(
             'jpg|jpeg|jpe' => 'image/jpeg',
             'gif'          => 'image/gif',
@@ -1755,14 +1756,17 @@ function benevolent_customize_register( $wp_customize ) {
             'tif|tiff'     => 'image/tiff',
             'ico'          => 'image/x-icon'
         );
-    	// Return an array with file extension and mime_type.
+        // Return an array with file extension and mime_type.
         $file = wp_check_filetype( $image, $mimes );
-    	// If $image has a valid mime_type, return it; otherwise, return the default.
+        // If $image has a valid mime_type, return it; otherwise, return the default.
         return ( $file['ext'] ? $image : $setting->default );
     }
     
     function benevolent_sanitize_css( $css ){
-   	    return wp_strip_all_tags( $css );
+        return wp_strip_all_tags( $css );
+    }
+    if ( version_compare( get_bloginfo('version'),'4.9', '>=') ) {
+        $wp_customize->get_section( 'static_front_page' )->title = __( 'Static Front Page', 'benevolent' );
     }
      
 }
@@ -1772,6 +1776,6 @@ add_action( 'customize_register', 'benevolent_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function benevolent_customize_preview_js() {
-	wp_enqueue_script( 'benevolent_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+    wp_enqueue_script( 'benevolent_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
 add_action( 'customize_preview_init', 'benevolent_customize_preview_js' );
