@@ -254,7 +254,7 @@
 			'default' => 'yes', 
 		) ); 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gridbulletin_archive_title', array( 
-			'label' => __( 'Archive title', 'gridbulletin' ), 
+			'label' => __( 'Title', 'gridbulletin' ), 
 			'section' => 'gridbulletin_archive_section', 
 			'settings' => 'gridbulletin_archive_title', 
 			'type' => 'radio', 
