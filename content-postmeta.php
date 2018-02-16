@@ -11,4 +11,3 @@
 		<?php echo '|'; ?> <?php comments_popup_link( __( 'No comments', 'bluegray' ), __( '1 comment', 'bluegray' ), __( '% comments', 'bluegray' ) ); ?>
 	<?php endif; ?>
 </div>
-
