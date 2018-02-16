@@ -1,0 +1,956 @@
+@import base.sass
+
+.screen-reader-text
+  clip: rect(1px, 1px, 1px, 1px)
+  clip-path: polygon(0px 0px, 0px 0px, 0px 0px, 0px 0px)
+  position: absolute !important
+  white-space: nowrap
+  height: 1px
+  width: 1px
+  overflow: hidden
+  &:focus
+    clip: auto !important
+    display: block
+    height: auto
+    left: 5px
+    top: 5px
+    width: auto
+    z-index: 100000
+
+body
+  background: $background
+  font-size: $base-font
+  font-family: $base-font-family
+  line-height: 26px
+
+a
+  color: $link-color
+  text-decoration: $link-decoration
+  &:hover
+    color: $link-hover
+    text-decoration: inherit
+    -webkit-transition: all 400ms ease-out
+    -moz-transition: all 400ms ease-out
+    -o-transition: all 400ms ease-out
+    transition: all 400ms ease-out
+  &:focus
+    outline: none !important 
+
+h1, h2, h3, h4, h5, h6
+  font-family: $header-font-family
+
+p
+  margin-bottom: 1.3em
+  line-height: 26px
+
+h1, h2, h3, h4
+  margin: 1.114em 0 0.5em
+  font-weight: inherit
+  line-height: 1.2
+
+h1
+  margin-top: 0
+  font-size: 3.157em
+
+h2
+  font-size: 2.2em
+
+h3
+  font-size: 1.777em
+
+h4
+  font-size: 1.333em
+
+small, .font_small
+  font-size: 0.75em
+
+.hide-element
+  display: none
+
+.show-element
+  display: block
+  
+
+.alignleft 
+  float: left
+  margin: 0 15px 30px 0
+
+.aligncenter 
+  display: block
+  margin: 0 auto 30px auto
+
+.alignright 
+  float: right
+  margin: 0 0 30px 15px
+
+.alignnone 
+  float: none
+  display: block
+  margin: 0 0 30px 0
+
+.size-full 
+  width: 100%
+  height: auto
+  margin: 0 0 30px 0
+
+p .alignleft 
+  float: left
+  margin: 5px 15px 30px 0
+
+p .aligncenter 
+  display: block
+  margin: 5px auto 30px auto
+
+p .alignright 
+  float: right
+  margin: 5px 0 30px 15px
+
+p .alignnone 
+  float: none
+  display: block
+  margin: 5px 0 0 0
+
+p .size-full 
+  width: 100%
+  height: auto
+  margin: 5px 0 0 0
+
+.wp-caption 
+  background: #fff
+  border: 1px solid #f0f0f0
+  max-width: 96% /* Image does not overflow the content area */
+  padding: 5px 3px 10px
+  text-align: center
+
+.wp-caption.alignnone 
+  margin: 5px 20px 20px 0
+
+.wp-caption.alignleft 
+  margin: 5px 20px 20px 0
+
+.wp-caption.alignright 
+  margin: 5px 0 20px 20px
+
+.wp-caption img
+  border: 0 none
+  height: auto
+  margin: 0
+  max-width: 98.5%
+  padding: 0
+  width: auto
+
+.wp-caption p.wp-caption-text
+  font-size: 11px
+  line-height: 17px
+  margin: 0
+  padding: 0 4px 5px
+
+.bypostauthor
+  font-size: 16px
+
+/*=====================*/
+/** WordPress Classes */
+/*======================*/
+.sticky
+  & .sticky-icon
+    color: $button-bg
+.gallery
+  margin: 0 auto 18px
+  &.gallery-item
+    float: left
+    margin-top: 0
+    text-align: center
+    width: 33%
+.gallery-columns-2 .gallery-item
+  width: 50%
+.gallery-columns-4 .gallery-item
+  width: 25%
+.gallery img
+  box-shadow: 0px 0px 4px #999
+  border: 1px solid white
+  padding: 8px
+  background: #f2f2f2
+.gallery img:hover
+  background: white
+
+.gallery-columns-2 .attachment-medium
+  max-width: 92%
+  height: auto
+
+.gallery-columns-4 .attachment-thumbnail
+  max-width: 84%
+  height: auto
+
+.gallery .gallery-caption
+  color: #888
+  font-size: 12px
+  margin: 0 0 12px
+
+.gallery dl, .gallery dt
+  margin: 0
+.gallery br+br
+  display: none
+/*=====================*/
+/** Top Bar
+/*=====================*/
+.topbar-area
+  font-size: $top-bar-font-size
+  background: $topbar-bg
+  color: $topbar-color
+  font-family: $header-font-family
+  & .topbar-text
+    text-align: right
+    @include for-phone-only
+      text-align: center
+      margin-top: 10px
+  & .widget-container
+    margin-bottom: 0
+.topbar-menu
+  padding: 0
+  list-style-type: none
+  margin: 0
+  @include for-phone-only
+    text-align: center
+  & li
+    margin: 0 7px 0 0
+    border-right: 1px solid rgba(102, 113, 137, 0.36)
+    padding-right: 10px
+    display: inline-block
+    &:last-child
+      margin-right: 0
+      border-right: none
+  & a
+    color : $topbar-color
+    &:hover
+      color: $link-hover
+.top-menu
+  margin: 0
+  padding: 0
+
+.justwp-sticky
+  position: fixed
+  width: 100%
+  left: 0
+  top: 0
+  z-index: 100
+  border-top: 0
+  background: inherit
+.transparent-header
+  width: 100%
+  position: absolute
+  z-index: 9999
+  border-bottom: none !important
+/*=====================*/
+/** Header Area        */
+/*=====================*/
+#header ul
+  margin: 0
+  padding: 0
+  list-style-type: none
+  font-size: 16px
+  color: $link-color
+  font-family: $header-font-family
+  & li
+    display: inline-block
+    margin: 0 12px 0 12px
+    position: relative
+    &:first-child
+      margin-left: 0
+    &:last-child
+      margin-right: 0
+
+    &.current-menu-item
+      border-top: 3px solid $button-bg
+    & .sub-menu
+      opacity: 0
+      display: none
+      & li
+        margin: 0
+        display: block
+        text-align: center
+        border-bottom: 1px solid rgba(40, 40, 40, 0.2)
+        &:last-child
+          border: none
+        & a
+          display: block
+          color: #282828
+          padding: 7px
+          &:last-child
+            border-bottom: none !important
+          &:hover
+            background: #282828
+            color: #ffffff
+    &:hover > .sub-menu
+      padding: 2px
+      opacity: 1
+      display: block
+      position: absolute
+      top: 31px
+      left: auto
+      background: #ffffff
+      width: 170px
+      border: 1px solid #282828
+      -webkit-transition: opacity .25s ease .1s
+      -moz-transition: opacity .25s ease .1s
+      -o-transition: opacity .25s ease .1s
+      -ms-transition: opacity .25s ease .1s
+      transition: opacity .25s ease .1s
+      z-index: 9999
+    & a
+      color: inherit
+      font-weight: 700
+      padding: 4px 0 10px 0
+      &:hover
+        color: $link-hover
+
+.mobile-trigger
+  font-size: 24px
+  font-weight: 900
+  padding: 0 10px 0 0
+
+.site-title,
+.site-tagline
+  margin: 0
+
+.site-title
+  & a
+    font-family: $header-font-family
+    font-size: $base-font*2
+    color: $text-color
+    text-shadow: 0 1px 3px rgba(190, 190, 190, 1)
+    text-decoration: inherit
+    &:hover
+      text-shadow: 0 1px 3px rgba(150, 150, 150, 1)
+
+.site-tagline
+  color: $text-color
+  font-size: 0.9em
+  font-family: $base-font-family
+  font-weight: 700
+
+/*= Header style specific CSS =*/
+header.header-style-1, header.header-style-2
+  border-bottom: 1px solid #eee
+.header-style-2
+  & ul.social-menu li
+    margin: 0 4px 0 4px !important
+
+.header-style-3
+  & .main-menu-nav
+    margin-top: 20px
+    padding-top: 20px
+    border-top: 1px solid #eee
+
+/*======================*/
+/** Header Image          */
+/*=======================*/
+.header-image-container
+  position: relative
+  background-size: cover !important
+  @include for-phone-only
+    height: 400px
+  @include for-tablet-portrait-up
+    height: 550px
+  @include for-desktop-up
+    height: 750px
+  image-rendering: -webkit-optimize-contrast
+  background-repeat: no-repeat
+  background-position: center
+  display: flex
+  align-items: center
+  justify-content: center
+  & .header-texts
+    font-family: $header-font-family
+    width: 60%
+    @include for-tablet-portrait-up
+      width: 75%
+    @include for-phone-only
+      width: 80%
+    font-weight: 700
+    & h2
+      color: $header-title-color
+      margin: 0 0 20px 0
+      text-shadow: 0 1px 1px rgba(100,100,100,0.8)
+      @include for-big-desktop-up
+        font-size: 80px
+      @include for-desktop-up
+        font-size: 60px
+      @include for-tablet-portrait-up
+        font-size: 45px
+      @include for-phone-only
+        font-size: 24px
+    & a
+      padding: 12px 24px
+      @include for-phone-only
+        padding: 6px 12px
+      background: $header-btn-bg
+      color: $header-btn-bg-txt
+      display: inline-block
+      margin-right: 10px
+      border-radius: 2px
+      font-size: 18px
+      margin-top: 8px
+      font-weight: 100
+      &:hover
+        background: $header-btn-bg-hover
+        color: $header-btn-bg
+
+/*======================*/
+/** Main Content        */
+/*======================*/
+.blog-item
+  margin-bottom: 50px
+  &:after
+    content: ''
+    height: 1px
+    width: 75%
+    margin: 50px auto 70px auto
+    background: rgba(130, 130, 130, 0.3)
+    display: block
+
+.featured-image-container
+  position: relative
+  & .blog-item-categories
+    position: absolute
+    top: 8px
+    left: 8px
+    & a
+      padding: 2px 8px
+      font-size: 14px
+      background: $blog-item-cat-bg
+      color: $blog-item-cat-txt
+      margin-right: 4px
+      &a:last-child
+        margin-right: 0
+  & .blog-item-image
+    border-radius: 2px
+    margin-bottom: 35px
+
+.blog-item-meta
+  font-size: 14px
+  color: $meta-txt-color
+  list-style: none
+  padding: 0
+  margin: 0
+  & li
+    display: inline-block
+    margin: 0
+    padding: 0
+    &:after
+      font-family: 'FontAwesome'
+      content: '\f111'
+      font-size: 5px
+      vertical-align: middle
+      color: $link-hover
+      margin: 0 8px
+    &:last-child:after
+      content: ''
+
+.blog-item-title
+  margin: 19px 0 30px 0
+  & a
+    color: $link-color
+    &:hover
+      color: $link-hover
+
+.read-more-link,
+.comment-reply-link,
+.pagination-link
+  padding: 8px 24px
+  border: 1px solid #50596C
+  color: $text-color
+  margin-top: 5px
+  display: inline-block
+  &:hover
+    border: 1px solid $link-hover
+    color: inherit
+.pagination-link
+  padding: 3px 8px
+
+/*=====================*/
+/** Single post */
+/*=====================*/
+.major-title
+  text-align: center
+  font-weight: 900
+  padding: 40px 0
+  background: $single-major-title-bg
+  @include for-phone-only
+    padding: 10px 20px
+  & h1
+    margin: 0
+    @include for-phone-only
+      font-size: 26px
+
+.atlast-breadcrumb
+  margin: 0
+  padding: 2px 4px
+  background: $breadcrumb-bg
+  margin-bottom: 8px
+  border: 1px solid $breadcrumb-border
+  font-size: 14px
+  @include for-phone-only
+    display: none
+  & li:before
+    color: $breadcrumb-sep-color
+
+
+/*======================*/
+/** Home Page
+/*======================*/
+.section-title
+  position: relative
+  display: inline-block
+  margin: 0
+  font-family: $base-font-family
+  font-size: $section-title-size
+  font-weight: 900
+  &:before
+    position: absolute
+    height: 3px
+    width: 30px
+    background: $header-divider-bg
+    content: ''
+    top: 53%
+    left: -32px
+  &:after
+    position: absolute
+    height: 3px
+    width: 30px
+    background: $header-divider-bg
+    content: ''
+    top: 53%
+    right: -32px
+.section-subtitle
+  margin: 0
+  font-size: $section-subtitle-size
+.section-editor-content
+  & h1,h2, h3, h4, h5, h6
+    margin: 0 0 15px 0
+  & p
+    margin: 8px 0 20px 0
+
+/*======================*/
+/** Specific Sections   */
+/*======================*/
+.home-services
+  background: $services-bg
+  color: $services-color
+  .front-single-service
+    position: relative
+    display: flex
+    padding: 30px
+    background: $service-item-bg
+    color: $service-item-txt
+    margin-bottom: 55px
+    border: 5px solid rgba(200,200,200,0.3)
+    border-radius: 3px 
+    @include for-phone-only
+      margin-bottom: 20px
+    &:hover
+      border-left: 5px solid $button-bg
+    & h3
+      margin: 0 0 20px 0
+      padding: 0
+      font-family: $base-font-family
+      text-transform: uppercase
+      font-weight: 900
+    & p
+      margin: 0
+      font-family: $header-font-family
+    & .service-icon
+      padding: 0 8px
+      color: $button-bg
+    & a
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+/*======================*/
+/** Projects section
+/*=====================*/
+.home-projects
+  & .front-single-project
+    margin-bottom: 50px
+    & h4
+      margin: 0
+      font-size: 18px
+      color: #888888
+      padding: 15px 0
+.front-single-project-img
+  position: relative
+  display: inline-block
+  overflow: hidden
+  width: 100%
+  color: #000000
+  text-align: left
+  font-size: 16px
+  background: #ffffff
+  margin: 0
+
+.front-single-project-img *,
+.front-single-project-img:before,
+.front-single-project-img:after 
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+  -webkit-transition: all 0.4s ease
+  transition: all 0.4s ease
+
+.front-single-project-img img 
+  max-width: 100%
+  backface-visibility: hidden
+  vertical-align: top
+
+.front-single-project-img:before,
+.front-single-project-img:after 
+  content: ''
+  background-color: #000
+  position: absolute
+  z-index: 1
+  top: 50%
+  left: 50%
+  opacity: 0
+  -webkit-transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%)
+
+.front-single-project-img:before 
+  width: 100%
+  height: 2px
+
+.front-single-project-img:after 
+  height: 100%
+  width: 2px
+.front-single-project-img figcaption 
+  position: absolute
+  left: 0
+  bottom: 0
+
+.front-single-project-img h3 
+  font-weight: 400
+  padding: 8px 15px
+  margin: 0
+  opacity: 0
+  -webkit-transform: translateY(100%)
+  transform: translateY(100%)
+.front-single-project-img a 
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  z-index: 1
+.front-single-project-img:hover img,
+.front-single-project-img.hover img 
+  zoom: 1
+  filter: alpha(opacity=25)
+  -webkit-opacity: 0.25
+  opacity: 0.25
+.front-single-project-img:hover:before,
+.front-single-project-img.hover:before,
+.front-single-project-img:hover:after,
+.front-single-project-img.hover:after 
+  opacity: 1
+.front-single-project-img:hover:before,
+.front-single-project-img.hover:before 
+  width: 50px
+.front-single-project-img:hover:after,
+.front-single-project-img.hover:after 
+  height: 50px
+.front-single-project-img:hover h3,
+.front-single-project-img.hover h3
+  -webkit-transform: translateY(0%)
+  transform: translateY(0%)
+  opacity: 1
+/*======================*/
+/** Gallery section
+/*======================*/
+.home-gallery
+  background: $gallery-bg
+  color: $gallery-color
+
+/*======================*/
+/** Team section
+/*======================*/
+.home-team
+  background: $team-bg
+  border-top: 1px solid #e8e8e8
+  & .single-team-item
+    margin-bottom: 50px
+    & h4
+      font-size: 24px
+      font-weight: 700
+    & p
+      font-family: $base-font-family
+      color: $single-team-title
+    & .single-team-item-image
+      position: relative
+      & img
+        margin: 0 auto 10px auto
+      & a
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+/*======================*/
+/** Team section
+/*======================*/
+.single-blog-item
+  margin: 0 0 20px 0
+  & .blog-item-contents
+    padding: 0 0 0 20px
+    & .date
+      font-size: 12px
+      margin: 7px 0 8px 0
+      color: #c8c8c8
+      text-transform: uppercase
+      & span
+        margin-right: 5px
+    & h4
+      margin: 5px 0 8px 0
+      font-weight: 700
+    & a
+      font-size: 15px
+      letter-spacing: 0.03em
+      margin-right: 5px
+      color: $blog-link-color  
+      font-family: $header-font-family
+      &:hover
+        & span
+           color: $link-hover
+      & span
+        margin-left: 5px
+        font-size: 10px
+        vertical-align: middle
+
+/*=====================*/
+/** Comments **/ 
+/*=====================*/
+.avatar
+  height: 64px
+  width: 64px
+.gravatar
+  flex: 3
+  & img
+    float: right
+/* width: 1.6rem; */
+.comments-container
+  & article
+    padding: 15px 20px
+    background: $comment-bg
+  &.comment-meta
+    flex: 2
+  & .comment-author-link
+    font-size: 16px
+    color: $comment-name-color
+    font-weight: 900
+  & time
+    font-size: 13px
+    padding: 5px
+    background: $comment-name-color
+    color: #ffffff
+    display: block
+    & a
+      color: $link-hover
+  & .comment-author
+    margin: 0
+  & .comment-content
+    margin: 20px 0 0 0
+
+.comment-form
+  & input[type=text], input[type=email], input[type=password], input[type=tel]
+    width: 100%
+    border: 2px solid #d8d8d8
+  & textarea
+    width: 100%
+    border: 2px solid #d8d8d8
+  & input[type=submit]
+    padding: 8px 24px
+    border: 1px solid #50596C
+    color: $text-color
+    margin-top: 5px
+    display: inline-block
+    cursor: pointer
+    &:hover
+      border: 1px solid #50596c
+      color: inherit
+      background: $button-hover-color
+/*=====================*/
+/** Widget Area (Main) */
+/*=====================*/
+.widget-area
+  padding: 0 8px
+  & h3
+    margin-bottom: 30px
+    &:first-child
+      margin-top: 0
+
+.widget-container
+  margin-bottom: 50px
+  & img
+    max-width: 100%
+    height: auto
+  select, input[type=text], input[type=email]
+    width: 100%
+    padding: 4px
+    border: 1px solid $widget-input-border
+  & ul
+    padding: 0
+    margin: 0
+    list-style-type: none
+    & li
+      padding-bottom: 16px
+      line-height: 24px
+      border-bottom: 1px solid rgba(100, 100, 100, 0.1)
+      margin-top: 16px
+      &:first-child
+        margin-top: 0
+      &:before
+        font-family: 'FontAwesome'
+        content: '\f111'
+        margin-right: 6px
+        vertical-align: text-top
+        color: $link-hover
+        font-size: 7px
+      & .post-date
+        font-size: 12px
+        display: block
+      & a
+        color: $link-color
+        &:hover
+          color: $link-hover
+  & #wp-calendar
+    width: 100%
+    & caption
+      padding: 4px 0
+      background: rgba(220, 220, 220, 0.2)
+    & tfoot tr td a
+      padding: 4px
+      background: rgba(220, 220, 220, 0.2)
+      color: #444444
+  & .widget_recent_entries
+    font-size: 12px
+    display: inline-block
+  & .tagcloud
+    & a
+      padding: 2px 8px
+      background: #f4f4f4
+      margin: 0 3px 6px 0
+      display: inline-block
+      border: 1px solid rgba(200, 200, 200, 0.5)
+      font-size: 13px !important
+      color: $text-color
+      &:hover
+        background: #eeeeee
+        border: 1px solid rgba(200,200,200,1)
+
+/*=====================*/
+/** Footer Area        */
+/*=====================*/
+.footer-area
+  background: $footer-bg
+  color: $text-color
+  border: 1px solid $footer-top-border
+
+.footer-widget
+  padding: 0 10px 0 10px
+  margin-bottom: 15px
+  font-size: 15px
+  & ul
+    margin: 0
+    padding: 0
+    list-style: none
+    & li
+      padding-bottom: 8px
+      line-height: 22px
+      border-bottom: 1px solid rgba(100, 100, 100, 0.1)
+      margin-top: 8px
+      &:first-child
+        margin-top: 0
+      & .post-date
+        font-size: 12px
+        display: block
+      & a
+        color: $link-color
+        &:hover
+          color: $link-hover
+  .tagcloud a
+    padding: 2px 8px
+    background: #fefefe
+    margin: 0 3px 6px 0
+    display: inline-block
+    border: 1px solid rgba(200, 200, 200, 0.5)
+    font-size: 13px !important
+    color: $text-color
+    &:hover
+      background: #eeeeee
+      border: 1px solid rgba(200,200,200,1)
+/*=====================*/
+/** Copyright Area        */
+/*=====================*/
+#copyright
+  background: $copyright-bg
+  color: $copyright-txt
+  font-family: $copyright-font-family
+  font-size: $copyright-font-size
+  & p
+    margin: 0
+  & a
+    color: $copyright-link
+    &:hover
+      color: $copyright-link-hover
+  & ul
+    list-style-type: none
+    margin: 0
+    & li
+      display: inline-block
+      margin: 0 8px 0 0
+      &:after
+        content: '-'
+        margin-left: 10px
+      &:last-child
+        margin-right: 0
+      &:last-child:after
+        content: ''
+        margin-left: 0
+  & .social-menu li:after
+    content: ''
+    margin: 0
+  & .social-menu a
+    font-size: $copyright-social-size
+/*=====================*/
+/** Plugins            */
+/** 1. Contact fomr 7
+/*=====================*/
+
+.wpcf7
+  font-family: $wpcf7-font
+  & input[type=text], input[type=email], input[type=password], input[type=tel]
+    width: 100%
+    border: 2px solid #d8d8d8
+  & textarea
+    width: 100%
+    border: 2px solid #d8d8d8
+  & input[type=submit]
+    padding: 8px 24px
+    border: 1px solid #50596C
+    color: $text-color
+    margin-top: 5px
+    display: inline-block
+    cursor: pointer
+    &:hover
+      border: 1px solid $button-hover-color
+      color: inherit
+      background: $button-hover-color
+  & .wpcf7-not-valid-tip
+    background: #ff0000
+    color: #fff
+    font-size: 14px
+  & .wpcf7-validation-errors
+    display: block
+    margin: 0
+    padding: 10px
+    background: $wpcf7-error-area-bg
+    border: 1px solid $wpcf7-error-area-border
+    color: $wpcf7-error-area-color

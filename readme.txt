@@ -1,0 +1,107 @@
+=== Atlast Business WordPress Theme ===
+Contributors: ArchimidisM
+Requires at least: WordPress 4.5.1
+Tested up to: WordPress 4.9.4
+Version: 1.0.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: theme-options,full-width-template,two-columns
+
+== Description ==
+Atlast Business theme contains over 60 customizer settings. It is maybe the most complete and ultra fast free business WordPress theme. There a lot of layout options in some of the theme's key elements. It contains 3 headers, 3 footers, a top bar with a combination of text and widgets , 3 navigation menus, two post options and many more options. This business WordPress theme is 100% compatible with the native WordPress customizer. From the customizer settings you can easily set your homepage really easy and fast. The main documentation of this theme is here (https://documentation.akisthemes.com) and you can find a fully working demo here (https://justwp.io) . Atlast Business theme is a top free theme that can be used from different types of businesses. At last but not least this theme is translation ready and fully responsive. Also it is very friendly to caching plugins like W3 Total Cache , WP Fastest Cache etc.
+
+* Mobile-first, Responsive Layout
+* Custom Colors
+* Custom Header
+* Custom background-color
+* Over 60 options using the native WordPress customizer
+* Different headers,footers etc.
+* Top Bar
+* 
+* The GPL v2.0 or later license. :) Use it to make something cool.
+
+== Installation ==
+
+1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
+2. Type in Atlast Business in the search form and press the 'Enter' key on your keyboard.
+3. Click on the 'Activate' button to use your new theme right away.
+4. Navigate to Appearance > Customize in your admin panel and customize to taste.
+
+== How to use this theme ==
+ If you want to read detailed instructions about how to use this starter theme, please visit this [link](https://documentation.akisthemes.com/)
+
+== Copyright ==
+
+Atlast Business WordPress Theme, Copyright 2017-18 Archmidis Mertzanos
+Atlast Business WordPress Theme is distributed under the terms of the GNU GPL
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+Atlast Business Theme bundles the following third-party resources:
+
+Spectre.css 0.5.0 by (c) 2014 Picturepan 2
+Licenses: - MIT License
+Source: https://picturepan2.github.io/spectre/
+
+Font Awesome 5.0.6 by @davegandy - @fontawesome
+Licenses - (Font: SIL OFL 1.1, CSS: MIT License)
+Source:  https://fontawesome.io
+
+Abel Font by MADTYPE
+Licenses: SIL OFL 1.1
+https://fonts.google.com/specimen/Abel
+
+Source Sans Pro Font by Paul D. Hunt
+Licenses: SIL OFL 1.1
+https://fonts.google.com/specimen/Source+Sans+Pro
+
+Sidr Navigation v2.2.1 by Alberto Varela
+License: MIT
+Source: http://www.berriart.com/sidr/
+
+MatchHeight  v 0.7.2 by @liabru
+License: MIT
+Source: http://brm.io/jquery-match-height/
+
+TGM Plugin activation class by Thomas Griffin v 2.6.1
+License: GPLv2
+Source: http://tgmpluginactivation.com/
+
+Image used in screenshot.png: A photo (https://unsplash.com/photos/voxDu8GIs6g)
+ by Breather (https://unsplash.com/@breather),
+ licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+
+The following images:
+- A photo ( https://unsplash.com/search/computer?photo=hpjSkU2UYSU ) -- by Carlos Muza, licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo ( https://unsplash.com/photos/o87YGz-G3O4 ) -- by rawpixel.com, licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo ( https://unsplash.com/photos/PhYq704ffdA) -- by Sean Pollock, licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo ( https://www.pexels.com/photo/silhouette-man-person-stars-12567/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo ( https://unsplash.com/photos/xjSkI_seiZY ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo ( https://pixabay.com/en/city-buildings-skyscrapers-towers-1030834/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo ( https://unsplash.com/photos/KBZlU_X9YVA ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo ( https://www.pexels.com/photo/marketing-office-working-business-33999/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo ( https://www.pexels.com/photo/box-business-celebrate-celebration-296878/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo ( https://www.pexels.com/photo/adult-beard-boy-casual-220453/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo ( https://www.pexels.com/photo/face-facial-hair-fine-looking-guy-614810/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo ( https://www.pexels.com/photo/closeup-photo-of-woman-with-brown-coat-and-gray-top-733872/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo ( https://unsplash.com/photos/k8apfKm-Md4 ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo ( https://unsplash.com/photos/Haz8prUXrI4 ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo ( https://unsplash.com/photos/3shfnfzdFVc ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+
+== Notes ==
+
+The main menu supports up to 3 navigation levels.
+Mobile menu shows only the top level elements. You can also add your custom logo.
+
+== Change Log ==
+
+= Version 1.0.0 =
+- Initial Release
