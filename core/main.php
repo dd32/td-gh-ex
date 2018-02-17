@@ -717,15 +717,15 @@ if (!function_exists('suevafree_posticon')) {
 	function suevafree_posticon() {
 	
 		$icons = array ( 
-			"video" => "fa fa-play" , 
-			"gallery" => "fa fa-camera" , 
-			"audio" => "fa fa-volume-up" , 
-			"chat" => "fa fa-users", 
-			"status" => "fa fa-keyboard-o", 
-			"image" => "fa fa-picture-o" ,
-			"quote" => "fa fa-quote-left", 
-			"link" => "fa fa-external-link", 
-			"aside" => "fa fa-file-text-o", 
+			'video' => 'fa fa-play' , 
+			'gallery' => 'fa fa-camera' , 
+			'audio' => 'fa fa-volume-up' , 
+			'chat' => 'fa fa-users', 
+			'status' => 'fa fa-keyboard-o', 
+			'image' => 'fa fa-picture-o' ,
+			'quote' => 'fa fa-quote-left', 
+			'link' => 'fa fa-external-link', 
+			'aside' => 'fa fa-file-text-o', 
 		);
 	
 		if ( get_post_format() ) { 
