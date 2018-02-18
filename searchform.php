@@ -41,3 +41,14 @@ if ( ! defined( 'ABSPATH' ) ) {
         </ul>
     </li>
 </ul>
+
+<form class="widget-search-form"
+      action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" method="get">
+
+    <input name="post_type" value="post"
+           type="hidden">
+    <input type="search" class="search-field form-control"
+           value="" name="s" placeholder="<?php _e( 'Search for...', 'attire' ); ?>"/>
+
+</form>
+

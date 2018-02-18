@@ -47,42 +47,43 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
                     <input type="radio" <?php $this->link(); ?> name="<?php echo esc_attr( $this->id ); ?>"
                            value="no-sidebar"/>
                     <img src="<?php echo esc_url( $imguri ); ?>no-sidebar.png"
-                         alt="<?php _e( 'Full Width', 'attire' ); ?>" title="<?php _e( 'Full Width', 'attire' ); ?>"/>
+                         alt="<?php esc_attr_e( 'Full Width', 'attire' ); ?>"
+                         title="<?php esc_attr_e( 'Full Width', 'attire' ); ?>"/>
                 </label>
                 <label>
                     <input type="radio" <?php $this->link(); ?> name="<?php echo esc_attr( $this->id ); ?>"
                            value="left-sidebar-1"/>
                     <img src="<?php echo esc_url( $imguri ); ?>left-sidebar.png"
-                         alt="<?php _e( 'Left Sidebar', 'attire' ); ?>"
-                         title="<?php _e( 'Left Sidebar', 'attire' ); ?>"/>
+                         alt="<?php esc_attr_e( 'Left Sidebar', 'attire' ); ?>"
+                         title="<?php esc_attr_e( 'Left Sidebar', 'attire' ); ?>"/>
                 </label>
                 <label>
                     <input type="radio" <?php $this->link(); ?> name="<?php echo esc_attr( $this->id ); ?>"
                            value="right-sidebar-1"/>
                     <img src="<?php echo esc_url( $imguri ); ?>right-sidebar.png"
-                         alt="<?php _e( 'Right Sidebar', 'attire' ); ?>"
-                         title="<?php _e( 'Right Sidebar', 'attire' ); ?>"/>
+                         alt="<?php esc_attr_e( 'Right Sidebar', 'attire' ); ?>"
+                         title="<?php esc_attr_e( 'Right Sidebar', 'attire' ); ?>"/>
                 </label>
                 <label>
                     <input type="radio" <?php $this->link(); ?> name="<?php echo esc_attr( $this->id ); ?>"
                            value="sidebar-2"/>
                     <img src="<?php echo esc_url( $imguri ); ?>sidebar-2.png"
-                         alt="<?php _e( 'Sidebar | Content | Sidebar', 'attire' ); ?>"
-                         title="<?php _e( 'Sidebar | Content | Sidebar', 'attire' ); ?>"/>
+                         alt="<?php esc_attr_e( 'Sidebar | Content | Sidebar', 'attire' ); ?>"
+                         title="<?php esc_attr_e( 'Sidebar | Content | Sidebar', 'attire' ); ?>"/>
                 </label>
                 <label>
                     <input type="radio" <?php $this->link(); ?> name="<?php echo esc_attr( $this->id ); ?>"
                            value="left-sidebar-2"/>
                     <img src="<?php echo esc_url( $imguri ); ?>left-sidebar-2.png"
-                         alt="<?php _e( 'Two Left Sidebar', 'attire' ); ?>"
-                         title="<?php _e( 'Two Left Sidebar', 'attire' ); ?>"/>
+                         alt="<?php esc_attr_e( 'Two Left Sidebar', 'attire' ); ?>"
+                         title="<?php esc_attr_e( 'Two Left Sidebar', 'attire' ); ?>"/>
                 </label>
                 <label>
                     <input type="radio" <?php $this->link(); ?> name="<?php echo esc_attr( $this->id ); ?>"
                            value="right-sidebar-2"/>
                     <img src="<?php echo esc_url( $imguri ); ?>right-sidebar-2.png"
-                         alt="<?php _e( 'Two Right Sidebar', 'attire' ); ?>"
-                         title="<?php _e( 'Two Right Sidebar', 'attire' ); ?>"/>
+                         alt="<?php esc_attr_e( 'Two Right Sidebar', 'attire' ); ?>"
+                         title="<?php esc_attr_e( 'Two Right Sidebar', 'attire' ); ?>"/>
                 </label>
             </div>
 			<?php
@@ -291,7 +292,7 @@ function attire_customize_register( $wp_customize ) {
 					'capability'        => $capability,
 					'type'              => $option_type,
 					'transport'         => $transport,
-					'sanitize_callback' => 'sanitize_text_field',
+					'sanitize_callback' => 'attire_sanitize_select',
 				) );
 
 				$wp_customize->add_control( $id, array(
@@ -309,7 +310,7 @@ function attire_customize_register( $wp_customize ) {
 					'capability'        => $capability,
 					'type'              => $option_type,
 					'transport'         => $transport,
-					'sanitize_callback' => 'sanitize_text_field',
+					'sanitize_callback' => 'attire_sanitize_checkbox',
 				) );
 
 				$wp_customize->add_control( $id, array(
@@ -342,7 +343,7 @@ function attire_customize_register( $wp_customize ) {
 					'capability'        => $capability,
 					'type'              => $option_type,
 					'transport'         => $transport,
-					'sanitize_callback' => 'sanitize_text_field',
+					'sanitize_callback' => 'attire_sanitize_custom_select',
 				) );
 				$wp_customize->add_control( new Layout_Picker_Custom_Control( $wp_customize, $id, array(
 					'label'       => $label,
@@ -359,7 +360,7 @@ function attire_customize_register( $wp_customize ) {
 					'capability'        => $capability,
 					'type'              => $option_type,
 					'transport'         => $transport,
-					'sanitize_callback' => 'sanitize_text_field',
+					'sanitize_callback' => 'attire_sanitize_custom_select',
 				) );
 				$wp_customize->add_control( new Image_Picker_Custom_Control( $wp_customize, $id, array(
 					'label'       => $label,
@@ -519,7 +520,6 @@ function attire_customize_register( $wp_customize ) {
 
 			) );
 
-
 		} elseif ( $id === 'nav_header' ) {
 			$wp_customize->selective_refresh->add_partial( 'nav_header_partial', array(
 				'settings'            => array( 'attire_options[nav_header]' ),
@@ -594,6 +594,60 @@ function attire_sanitize_email( $input ) {
 	}
 }
 
+function attire_sanitize_custom_select( $input, $setting ) {
+
+	// Ensure input is a slug.
+	$input = sanitize_key( $input );
+
+	if ( strrpos( $setting->id, '[' ) ) {
+		$id = explode( ']', explode( '[', $setting->id )[1] )[0];
+
+	} else {
+		$id = $setting->id;
+	}
+
+	// Get list of choices from the control associated with the setting.
+	$choices = $setting->manager->get_control( $id )->choices;
+
+	// If the input is a valid key, return it; otherwise, return the default.
+
+	foreach ( $choices as $choice ) {
+
+
+		if ( $choice['value'] === $input ) {
+
+			return $input;
+		}
+	}
+
+	return $setting->default;
+
+}
+
+function attire_sanitize_select( $input, $setting ) {
+
+	// Ensure input is a slug.
+	$input = sanitize_key( $input );
+	// Get list of choices from the control associated with the setting.
+
+	if ( strrpos( $setting->id, '[' ) ) {
+		$id = explode( ']', explode( '[', $setting->id )[1] )[0];
+
+	} else {
+		$id = $setting->id;
+	}
+
+	$choices = $setting->manager->get_control( $id )->choices;
+
+	// If the input is a valid key, return it; otherwise, return the default.
+	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+}
+
+function attire_sanitize_checkbox( $checked ) {
+	// Boolean check.
+	return ( ( isset( $checked ) && true == $checked ) ? true : false );
+}
+
 /**
  *
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
@@ -642,9 +696,9 @@ function site_logo_rcb() {
 function site_logo_footer_rcb() {
 	$logourl = esc_url( AttireThemeEngine::NextGetOption( 'site_logo_footer' ) );
 	if ( $logourl ) {
-		return "<a class='' href='" . esc_url( home_url( '/' ) ) . "'>    <img class='' src='{$logourl}' title='" . esc_attr( get_bloginfo( 'sitename' ) ) . "' alt='" . esc_attr( get_bloginfo( 'sitename' ) ) . "' /></a>";
+		return "<a class='' href='" . esc_url( home_url( '/' ) ) . "'>" . AttireThemeEngine::FooterLogo() . "</a>";
 	} else {
-		return esc_attr( get_bloginfo( 'sitename' ) );
+		return esc_html( get_bloginfo( 'sitename' ) );
 	}
 }
 

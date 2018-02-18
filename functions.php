@@ -8,7 +8,6 @@ define( "ATTIRE_THEME_URL", get_stylesheet_directory_uri() );
 define( "ATTIRE_TEMPLATE_URL", get_template_directory_uri() );
 
 
-
 require_once( ATTIRE_TEMPLATE_DIR . "/admin/ThemeEngine.class.php" );
 require_once( ATTIRE_TEMPLATE_DIR . "/libs/Framework.class.php" );
 require_once( ATTIRE_TEMPLATE_DIR . "/libs/Attire.class.php" );

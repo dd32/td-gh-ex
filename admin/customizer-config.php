@@ -98,103 +98,96 @@ $attire_sections = array(
 		'panel'       => '',
 		'priority'    => 3,
 	),
-	'attire_custom_css'                   => array(
-		'title'       => __( 'Custom CSS', 'attire' ),
-		'description' => '',
-		'panel'       => '',
-		'priority'    => 120,
-	),
-
-	'attire_logo_options'            => array(
+	'attire_logo_options'                 => array(
 		'title'       => __( 'Logo', 'attire' ),
 		'description' => '',
 		'panel'       => 'attire_theme_options',
 		'priority'    => 120,
 	),
-	'attire_footer_widget_number'    => array(
+	'attire_footer_widget_number'         => array(
 		'title'       => __( 'Footer Widgets', 'attire' ),
 		'description' => '',
 		'panel'       => 'attire_theme_options',
 		'priority'    => 120,
 	),
-	'attire_header_general_settings' => array(
+	'attire_header_general_settings'      => array(
 		'title'       => __( 'Site Header', 'attire' ),
 		'description' => '',
 		'panel'       => 'attire_theme_options',
 		'priority'    => 120,
 	),
-	'attire_back_to_top'             => array(
+	'attire_back_to_top'                  => array(
 		'title'       => __( 'Back To Top', 'attire' ),
 		'description' => '',
 		'panel'       => 'attire_theme_options',
 		'priority'    => 120,
 	),
-	'attire_layout_options'          => array(
+	'attire_layout_options'               => array(
 		'title'       => __( 'Site Layout', 'attire' ),
 		'description' => '',
 		'priority'    => 3,
 	),
-	'attire_social'                  => array(
+	'attire_social'                       => array(
 		'title'       => __( 'Social Networks', 'attire' ),
 		'description' => '',
 		'panel'       => 'attire_theme_options',
 		'priority'    => 120,
 	),
-	'attire_contact'                 => array(
+	'attire_contact'                      => array(
 		'title'       => __( 'Contact Info', 'attire' ),
 		'description' => '',
 		'panel'       => 'attire_theme_options',
 		'priority'    => 120,
 	),
-	'attire_copyright'               => array(
+	'attire_copyright'                    => array(
 		'title'       => __( 'Copyright Info', 'attire' ),
 		'description' => '',
 		'panel'       => 'attire_theme_options',
 		'priority'    => 120,
 	),
-	'attire_front_page_layout'       => array(
+	'attire_front_page_layout'            => array(
 		'title'       => __( 'Front / Blog Page Layout', 'attire' ),
 		'description' => '',
 		'panel'       => 'attire_layouts',
 		'priority'    => 120,
 	),
-	'attire_default_post_layout'     => array(
+	'attire_default_post_layout'          => array(
 		'title'       => __( 'Default Post Layout', 'attire' ),
 		'description' => '',
 		'panel'       => 'attire_layouts',
 		'priority'    => 120,
 	),
-	'attire_default_page_layout'     => array(
+	'attire_default_page_layout'          => array(
 		'title'       => __( 'Default Page Layout', 'attire' ),
 		'description' => '',
 		'panel'       => 'attire_layouts',
 		'priority'    => 120,
 	),
-	'attire_archive_page_layout'     => array(
+	'attire_archive_page_layout'          => array(
 		'title'       => __( 'Archive Page Layout', 'attire' ),
 		'description' => '',
 		'panel'       => 'attire_layouts',
 		'priority'    => 120,
 	),
-	'attire_generic_fonts'           => array(
+	'attire_generic_fonts'                => array(
 		'title'       => __( 'Generic Fonts', 'attire' ),
 		'description' => '',
 		'panel'       => 'attire_typography',
 		'priority'    => 120,
 	),
-	'attire_post_fonts'              => array(
+	'attire_post_fonts'                   => array(
 		'title'       => __( 'Post Fonts', 'attire' ),
 		'description' => '',
 		'panel'       => 'attire_typography',
 		'priority'    => 120,
 	),
-	'attire_widget_fonts'            => array(
+	'attire_widget_fonts'                 => array(
 		'title'       => __( 'Widget Fonts', 'attire' ),
 		'description' => '',
 		'panel'       => 'attire_typography',
 		'priority'    => 120,
 	),
-	'attire_menu_fonts'              => array(
+	'attire_menu_fonts'                   => array(
 		'title'       => __( 'Menu Fonts', 'attire' ),
 		'description' => '',
 		'panel'       => 'attire_typography',
@@ -869,7 +862,7 @@ $attire_options = array(
 		'type'        => 'typography',
 		'section'     => 'attire_generic_fonts',
 		'default'     => 'Montserrat',
-		'description' => 'Font family for H1...H6 html tags'
+		'description' => __( 'Font family for H1...H6 html tags', 'attire' )
 	),
 	'heading_font_size'   => array(
 		'label'       => __( 'Heading Font Size', 'attire' ),
@@ -1057,14 +1050,6 @@ $attire_options = array(
 		)
 	),
 
-//	'custom_css' => array(
-//		'label'     => __( 'Custom CSS', 'attire' ),
-//		'transport' => 'postMessage',
-//		'type'      => 'textarea',
-//		'section'   => 'attire_custom_css',
-//		'default'   => sprintf( "/*\n%s\n*/", __( "You can add your own CSS here.\n\nClick the help icon above to learn more.", "attire" ) ),
-//	),
-
 	'facebook_profile_url'      => array(
 		'label'     => __( 'Facebook Profile / Page URL', 'attire' ),
 		'transport' => 'postMessage',
@@ -1147,7 +1132,7 @@ $attire_options = array(
 		'transport' => 'postMessage',
 		'type'      => 'textarea',
 		'section'   => 'attire_copyright',
-		'default'   => '&copy; Copyright ' . date( 'Y' ) . ' | All Rights Reserved.',
+		'default'   => '&copy;' . __( 'Copyright ', 'attire' ) . date( 'Y' ) . ' | ' . __( 'All Rights Reserved.', 'attire' ),
 	),
 	'copyright_info_visibility' => array(
 		'label'     => __( 'Show Copyright Visibility', 'attire' ),

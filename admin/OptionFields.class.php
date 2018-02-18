@@ -25,49 +25,6 @@ class AttireOptionFields {
 		return $html;
 	}
 
-
-	/**
-	 * @usage Generate Post sharing control option
-	 *
-	 * @param $params
-	 *
-	 * @return string
-	 */
-	public static function PostSharing( $params ) {
-
-		extract( $params );
-		$sns  = array(
-			'icon-facebook'             => 'Facebook',
-			'icon-twitter'              => 'Twitter',
-			'icon-fontello-delicious'   => 'Delicious',
-			'icon-fontello-yahoo'       => 'Yahoo',
-			'icon-fontello-quora'       => 'Quora',
-			'icon-fontello-digg'        => 'Digg',
-			'icon-fontello-reddit'      => 'Reddit',
-			'icon-fontello-xing'        => 'Xing',
-			'icon-fontello-flickr'      => 'Flickr',
-			'icon-fontello-evernote'    => 'Evernote',
-			'icon-fontello-stumbleupon' => 'Stumble Upon',
-			'icon-fontello-mixi'        => 'Mixi',
-			'icon-pinterest'            => 'Pinterest',
-			'icon-googleplus'           => 'Google+',
-			'icon-linkedin'             => 'LinkedIn',
-			'icon-fontello-instagram'   => 'Instagram',
-			'icon-fontello-yelp'        => 'Yelp',
-			'icon-fontello-myspace'     => 'My Space',
-			'icon-fontello-skype'       => 'Skype',
-			'icon-envelope'             => 'Email'
-		);
-		$html = "<ul class='post-sharing'>";
-		foreach ( $sns as $icon => $label ) {
-			$checked = in_array( $icon, $selected, true ) ? 'checked=checked' : '';
-			$html    .= "<li><label><input type='checkbox' name='" . esc_attr( $name ) . "[]' value='" . esc_attr( $icon ) . "' " . esc_attr( $checked ) . " /> " . esc_html( $label ) . "</label></li>";
-		}
-		$html .= "</ul>";
-
-		return $html;
-	}
-
 	public static function HeaderStyles( $params ) {
 		WP_Filesystem();
 		global $wp_filesystem;
@@ -79,7 +36,7 @@ class AttireOptionFields {
 			$navheads = array_merge( $navheads, scandir( get_stylesheet_directory() . '/templates/headers/' ) );
 		}
 
-		$html     = "<select name='" . esc_attr( $name ) . "' id='" . esc_attr( $id ) . "' style='width: 150px'><option value='" . esc_attr( $default ) . "'>Default</option>";
+		$html     = "<select name='" . esc_attr( $name ) . "' id='" . esc_attr( $id ) . "' style='width: 150px'><option value='" . esc_attr( $default ) . "'>" . __( 'Default', 'attire' ) . "</option>";
 		$navheads = array_unique( $navheads );
 		foreach ( $navheads as $navhead ) {
 			if ( strpos( $navhead, '.php' ) && ( file_exists( get_template_directory() . '/templates/headers/' . $navhead ) || file_exists( get_stylesheet_directory() . '/templates/headers/' . $navhead ) ) ) {
@@ -112,7 +69,7 @@ class AttireOptionFields {
 		$html .= "<option value='default'>" . __( 'Theme Default', 'attire' ) . "</option>";
 		if ( is_array( $sidebars ) ) {
 			foreach ( $sidebars as $id => $name ) {
-				$html .= "<option " . selected( $params['selected'], $id, false ) . " value='" . esc_attr( $id ) . "'>" . esc_attr( $name ) . "</option>";
+				$html .= "<option " . selected( $params['selected'], $id, false ) . " value='" . esc_attr( $id ) . "'>" . esc_html( $name ) . "</option>";
 			}
 		}
 		$html .= "</select>";

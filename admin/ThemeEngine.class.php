@@ -26,7 +26,7 @@ class AttireThemeEngine {
 	}
 
 	function WPHead() {
-	    $this->CustomPageHeader();
+		$this->CustomPageHeader();
 		$this->CustomCSS();
 	}
 
@@ -76,9 +76,12 @@ class AttireThemeEngine {
             }
             <?php echo esc_attr($selector).' *'; ?>
             {
-                text-align: center;
-                vertical-align: middle;
-                line-height: <?php echo $pb_height?>px;
+                text-align: center
+            ;
+                vertical-align: middle
+            ;
+                line-height: <?php echo $pb_height?>px
+            ;
             <?php echo wp_filter_nohtml_kses($text_color); ?>
             }
         </style>
@@ -96,7 +99,7 @@ class AttireThemeEngine {
 		register_sidebar( array(
 			'name'          => __( 'Left Sidebar', 'attire' ),
 			'id'            => 'left',
-			'description'   => 'Left Sidebar',
+			'description'   => __( 'Left Sidebar', 'attire' ),
 			'before_widget' => '<div class="widget widget-default">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4 class="widget-heading widget-title">',
@@ -106,7 +109,7 @@ class AttireThemeEngine {
 		register_sidebar( array(
 			'name'          => __( 'Right Sidebar', 'attire' ),
 			'id'            => 'right',
-			'description'   => 'Right Sidebar',
+			'description'   => __( 'Right Sidebar', 'attire' ),
 			'before_widget' => '<div class="widget widget-default">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h5 class="widget-heading widget-title">',
@@ -178,7 +181,7 @@ class AttireThemeEngine {
 		wp_enqueue_script( 'bootstrap', ATTIRE_TEMPLATE_URL . '/bootstrap/js/bootstrap.min.js', array( 'jquery' ) );
 		wp_enqueue_script( 'wp-color-picker' );
 		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_style( 'fa', ATTIRE_TEMPLATE_URL . '/fonts/font-awesome/css/font-awesome.min.css' );
+		wp_enqueue_style( 'fa-awesome', ATTIRE_TEMPLATE_URL . '/fonts/font-awesome/css/font-awesome.min.css' );
 	}
 
 	public static function Layout( $default = 'wide' ) {
@@ -234,7 +237,7 @@ class AttireThemeEngine {
 		 *
 		 */
 
-		$container_width = $theme_mod['container_width'];
+		$container_width = esc_attr( $theme_mod['container_width'] );
 		$css             .= "@media (min-width: 1200px) {.container{max-width:{$container_width}px;}}";
 
 		/**
@@ -245,12 +248,12 @@ class AttireThemeEngine {
 
 		$body_font_weight = intval( $theme_mod['body_font_weight'] );
 		$body_font_weight = $body_font_weight != '' ? "font-weight:{$body_font_weight};" : "";
-		$body_bg          = $theme_mod['body_bg_color'];
+		$body_bg          = esc_attr( $theme_mod['body_bg_color'] );
 		$css              .= "body {background-color:{$body_bg}}";
 
 		$body_font_size  = intval( $theme_mod['body_font_size'] );
-		$body_font_color = $theme_mod['body_color'];
-		$body_font       = sanitize_text_field( $theme_mod['body_font'] );
+		$body_font_color = esc_attr( $theme_mod['body_color'] );
+		$body_font       = esc_attr( $theme_mod['body_font'] );
 		$font_size       = $body_font_size != '' ? "font-size:{$body_font_size}px;" : "";
 		$text_color      = $body_font_color ? "color:{$body_font_color};" : "";
 
@@ -273,8 +276,8 @@ class AttireThemeEngine {
 		$heading_font_weight = intval( $theme_mod['heading_font_weight'] );
 		$heading_font_weight = $heading_font_weight != '' ? "font-weight:{$heading_font_weight};" : "";
 		$heading_font_size   = intval( $theme_mod['heading_font_size'] );
-		$header_color        = $theme_mod['header_color'];
-		$heading_font        = sanitize_text_field( $theme_mod['heading_font'] );
+		$header_color        = esc_attr( $theme_mod['header_color'] );
+		$heading_font        = esc_attr( $theme_mod['heading_font'] );
 		$h1_font_size        = 'font-size:' . $heading_font_size . 'px;';
 		$h2_font_size        = 'font-size:' . ceil( $heading_font_size * .75 ) . 'px;';
 		$h3_font_size        = 'font-size:' . ceil( $heading_font_size * .6 ) . 'px;';
@@ -309,9 +312,9 @@ class AttireThemeEngine {
 		$heading_font_weight = intval( $theme_mod['heading_font_weight'] );
 		$heading_font_weight = $heading_font_weight != '' ? "font-weight:{$heading_font_weight};" : "";
 
-		$site_title_text_color        = 'color:' . $theme_mod['site_title_text_color'];
-		$site_footer_title_text_color = 'color:' . $theme_mod['site_footer_title_text_color'];
-		$site_description_text_color  = 'color:' . $theme_mod['site_description_text_color'];
+		$site_title_text_color        = 'color:' . esc_attr( $theme_mod['site_title_text_color'] );
+		$site_footer_title_text_color = 'color:' . esc_attr( $theme_mod['site_footer_title_text_color'] );
+		$site_description_text_color  = 'color:' . esc_attr( $theme_mod['site_description_text_color'] );
 
 		$css .= ".navbar-light .navbar-brand,.navbar-dark .navbar-brand,.logo-header{{$heading_font_weight}{$site_title_text_color}}";
 		$css .= ".footer-logo{{$heading_font_weight}{$site_footer_title_text_color}}";
@@ -336,10 +339,10 @@ class AttireThemeEngine {
 		 *
 		 */
 
-		$site_header_bg = 'background-color:' . $theme_mod['site_header_bg_color'];
+		$site_header_bg = 'background-color:' . esc_attr( $theme_mod['site_header_bg_color'] );
 		$css            .= ".header-div{ {$site_header_bg}}";
 		$css            .= ".sticky-menu{ {$site_header_bg}}";
-		$site_footer_bg = 'background-color:' . $theme_mod['site_footer_bg_color'];
+		$site_footer_bg = 'background-color:' . esc_attr( $theme_mod['site_footer_bg_color'] );
 		$css            .= ".footer-div{ {$site_footer_bg}}";
 
 
@@ -352,8 +355,8 @@ class AttireThemeEngine {
 		$font_size                  = intval( $theme_mod['widget_content_font_size'] );
 		$widget_content_font_weight = intval( $theme_mod['widget_content_font_weight'] );
 		$font_weight                = $widget_content_font_weight != '' ? "font-weight:{$widget_content_font_weight};" : "";
-		$font                       = sanitize_text_field( $theme_mod['widget_content_font'] );
-		$color                      = "color:" . $theme_mod['widget_content_font_color'];
+		$font                       = esc_attr( $theme_mod['widget_content_font'] );
+		$color                      = "color:" . esc_attr( $theme_mod['widget_content_font_color'] );
 		$font_size                  = $font_size != '' ? "font-size:{$font_size}px;" : "";
 
 		if ( $font != '' ) {
@@ -375,8 +378,8 @@ class AttireThemeEngine {
 		$widget_title_font_weight = intval( $theme_mod['widget_title_font_weight'] );
 		$font_size                = intval( $theme_mod['widget_title_font_size'] );
 		$font_weight              = $widget_title_font_weight != '' ? "font-weight:{$widget_title_font_weight};" : "";
-		$font                     = sanitize_text_field( $theme_mod['widget_title_font'] );
-		$color                    = "color:" . $theme_mod['widget_title_font_color'];
+		$font                     = esc_attr( $theme_mod['widget_title_font'] );
+		$color                    = "color:" . esc_attr( $theme_mod['widget_title_font_color'] );
 
 		if ( $font != '' ) {
 			$font_family = $fonts[ $font ]['family'] != '' ? "font-family:{$fonts[$font]['family']};" : "";
@@ -395,7 +398,7 @@ class AttireThemeEngine {
 		 *
 		 */
 
-		$font                 = sanitize_text_field( $theme_mod['menu_top_font'] );
+		$font                 = esc_attr( $theme_mod['menu_top_font'] );
 		$font_size            = intval( $theme_mod['menu_top_font_size'] );
 		$menu_top_font_weight = intval( $theme_mod['menu_top_font_weight'] );
 		$font_weight          = $menu_top_font_weight != '' ? "font-weight:{$menu_top_font_weight};" : "";
@@ -417,7 +420,7 @@ class AttireThemeEngine {
 		$menu_dropdown_font_weight = intval( $theme_mod['menu_dropdown_font_weight'] );
 		$font_size                 = intval( $theme_mod['menu_dropdown_font_size'] );
 		$font_weight               = $menu_dropdown_font_weight != '' ? "font-weight:{$menu_dropdown_font_weight};" : "";
-		$font                      = sanitize_text_field( $theme_mod['menu_dropdown_font'] );
+		$font                      = esc_attr( $theme_mod['menu_dropdown_font'] );
 		$font_size                 = $font_size != '' ? "font-size:{$font_size}px;" : "";
 
 		if ( $font != '' ) {
@@ -434,17 +437,17 @@ class AttireThemeEngine {
 		 *
 		 */
 
-		$color = "color:{$theme_mod['menu_top_font_color']};";
+		$color = "color:" . esc_attr( $theme_mod['menu_top_font_color'] ) . ";";
 		$css   .= "header .mainmenu > .menu-item:not(.active) > a, header .nav i.fa.fa-search, header .dropdown-toggler, header .mobile-menu-toggle{{$color}}";
 
-		$main_nav_bg = 'background-color:' . $theme_mod['main_nav_bg'];
+		$main_nav_bg = 'background-color:' . esc_attr( $theme_mod['main_nav_bg'] );
 		$css         .= ".short-nav .collapse.navbar-collapse,.long-nav{ {$main_nav_bg};}";
 
-		$main_nav_hover_active_bg = 'background-color:' . $theme_mod['menuhbg_color'];
+		$main_nav_hover_active_bg = 'background-color:' . esc_attr( $theme_mod['menuhbg_color'] );
 		$css                      .= "header .mainmenu > .menu-item:hover, header .mainmenu > .menu-item.active{ {$main_nav_hover_active_bg};}";
 
 
-		$main_nav_hover_active_text_color = 'color:' . $theme_mod['menuht_color'];
+		$main_nav_hover_active_text_color = 'color:' . esc_attr( $theme_mod['menuht_color'] );
 		$css                              .= "header .mainmenu > .menu-item:hover > a, header .mainmenu > .menu-item.active > a, header .mainmenu > .menu-item:hover > .dropdown-toggler, header .mainmenu > .menu-item.active > .dropdown-toggler,#search-top:hover i{ {$main_nav_hover_active_text_color};}";
 
 
@@ -454,17 +457,17 @@ class AttireThemeEngine {
 		 *
 		 */
 
-		$main_nav_dd_bg = 'background-color:' . $theme_mod['menuhbg_color'];
+		$main_nav_dd_bg = 'background-color:' . esc_attr( $theme_mod['menuhbg_color'] );
 		$css            .= "header .mainmenu > .dropdown > li, .default-menu.navbar-light .nav-search .form-control{{$main_nav_dd_bg};}"; // Search box bg color + main nav dd bg
 
-		$main_nav_dd_text = 'color:' . $theme_mod['menu_dropdown_font_color'];
+		$main_nav_dd_text = 'color:' . esc_attr( $theme_mod['menu_dropdown_font_color'] );
 		$css              .= "header .mainmenu > .dropdown li *, .default-menu.navbar-light .nav-search .form-control{{$main_nav_dd_text};}"; // Dropdown + search field input text color
 
 		$css                  .= '@media (min-width: 1000px) {';
-		$main_nav_dd_hover_bg = 'background-color:' . $theme_mod['menu_dropdown_hover_bg'];
+		$main_nav_dd_hover_bg = 'background-color:' . esc_attr( $theme_mod['menu_dropdown_hover_bg'] );
 		$css                  .= "header .mainmenu > .dropdown li:hover{{$main_nav_dd_hover_bg};}";
 
-		$main_nav_dd_hover_text = 'color:' . $theme_mod['menu_dropdown_hover_font_color'];
+		$main_nav_dd_hover_text = 'color:' . esc_attr( $theme_mod['menu_dropdown_hover_font_color'] );
 		$css                    .= "header .mainmenu > .dropdown li:hover > *, header .mainmenu > .dropdown li:hover > .dropdown-toggler *{{$main_nav_dd_hover_text};}";
 		$css                    .= '}';
 
@@ -475,16 +478,16 @@ class AttireThemeEngine {
 		 *
 		 */
 
-		$color = "color:" . $theme_mod['footer_nav_top_font_color'] . ";";
+		$color = "color:" . esc_attr( $theme_mod['footer_nav_top_font_color'] ) . ";";
 		$css   .= "footer .footermenu > .menu-item:not(.active) > a, footer .dropdown-toggler{{$color}}";
 
-		$footer_nav_bg = 'background-color:' . $theme_mod['footer_nav_bg'];
+		$footer_nav_bg = 'background-color:' . esc_attr( $theme_mod['footer_nav_bg'] );
 		$css           .= "footer .footermenu { {$footer_nav_bg};}";
 
-		$footer_nav_hover_active_bg = 'background-color:' . $theme_mod['footer_nav_hbg'];
+		$footer_nav_hover_active_bg = 'background-color:' . esc_attr( $theme_mod['footer_nav_hbg'] );
 		$css                        .= "footer .footermenu > .menu-item:hover,footer .footermenu > .menu-item.active{{$footer_nav_hover_active_bg};}";
 
-		$footer_nav_hover_active_text = 'color:' . $theme_mod['footer_nav_ht_color'];
+		$footer_nav_hover_active_text = 'color:' . esc_attr( $theme_mod['footer_nav_ht_color'] );
 		$css                          .= "footer .footermenu > .menu-item:hover > a,footer .footermenu > .menu-item.active > a, footer .footermenu > .menu-item:hover > .dropdown-toggler,footer .footermenu > .menu-item.active > .dropdown-toggler{{$footer_nav_hover_active_text};}";
 
 
@@ -494,16 +497,16 @@ class AttireThemeEngine {
 		 *
 		 */
 
-		$footer_nav_dd_bg = 'background-color:' . $theme_mod['footer_nav_hbg'];
+		$footer_nav_dd_bg = 'background-color:' . esc_attr( $theme_mod['footer_nav_hbg'] );
 		$css              .= "footer .footermenu .dropdown li{ {$footer_nav_dd_bg};}";
 
-		$footer_dropdown_font_color = "color:" . $theme_mod['footer_nav_dropdown_font_color'] . ";";
+		$footer_dropdown_font_color = "color:" . esc_attr( $theme_mod['footer_nav_dropdown_font_color'] ) . ";";
 		$css                        .= "footer .footermenu .dropdown li *{{$footer_dropdown_font_color}}";
 
-		$footer_nav_dd_hover_bg = 'background-color:' . $theme_mod['footer_nav_dropdown_hover_bg'];
+		$footer_nav_dd_hover_bg = 'background-color:' . esc_attr( $theme_mod['footer_nav_dropdown_hover_bg'] );
 		$css                    .= "footer .footermenu > .dropdown li:hover{ {$footer_nav_dd_hover_bg};}";
 
-		$footer_nav_dd_hover_text = 'color:' . $theme_mod['footer_nav_dropdown_hover_font_color'];
+		$footer_nav_dd_hover_text = 'color:' . esc_attr( $theme_mod['footer_nav_dropdown_hover_font_color'] );
 		$css                      .= "footer .footermenu > .dropdown li:hover *{{$footer_nav_dd_hover_text};}";
 
 
@@ -513,19 +516,19 @@ class AttireThemeEngine {
 		 *
 		 */
 
-		$css .= ".footer-widgets-area {background-color : " . $theme_mod['footer_widget_bg_color'] . "}";
-		$css .= ".footer-widgets .widget-title, .footer-widgets-area .widget-heading {color : " . $theme_mod['footer_widget_title_font_color'] . "}";
-		$css .= ".footer-widgets .widget *:not(.widget-title):not(input){color : " . $theme_mod['footer_widget_content_font_color'] . "}";
+		$css .= ".footer-widgets-area {background-color : " . esc_attr( $theme_mod['footer_widget_bg_color'] ) . "}";
+		$css .= ".footer-widgets .widget-title, .footer-widgets-area .widget-heading {color : " . esc_attr( $theme_mod['footer_widget_title_font_color'] ) . "}";
+		$css .= ".footer-widgets .widget *:not(.widget-title):not(input){color : " . esc_attr( $theme_mod['footer_widget_content_font_color'] ) . "}";
 
 		/**
 		 *
 		 * Link (<a>) color
 		 *
 		 */
-		$a_color = 'color:' . $theme_mod['a_color'];
+		$a_color = 'color:' . esc_attr( $theme_mod['a_color'] );
 		$css     .= ".attire-content a,.small-menu a{{$a_color};}";
 
-		$a_hover_color = 'color:' . $theme_mod['ah_color'];
+		$a_hover_color = 'color:' . esc_attr( $theme_mod['ah_color'] );
 		$css           .= ".attire-content a:hover,.small-menu a:hover{{$a_hover_color};}";
 
 		return apply_filters( ATTIRE_THEME_PREFIX . 'customisation_css', $css );
@@ -535,11 +538,9 @@ class AttireThemeEngine {
 	 * @usage Generate custom css
 	 */
 	function CustomCSS() {
-		// Custom CSS ( From Customizer Custom CSS )
-		$attire_custom_css = wp_filter_nohtml_kses( AttireThemeEngine::NextGetOption( 'custom_css' ) );
-		$attire_custom_css = esc_attr( stripslashes( $attire_custom_css ) );
-		$font_css          = self::ThemeCustomizerCSS();
-		echo "<style type='text/css'> {$attire_custom_css}{$font_css}</style>";
+
+		$font_css = self::ThemeCustomizerCSS();
+		echo "<style type='text/css'> {$font_css}</style>";
 
 	}
 
@@ -569,24 +570,38 @@ class AttireThemeEngine {
 		}
 	}
 
+	public static function attire_get_image_id( $image_url ) {
+		global $wpdb;
+		$attachment = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url ) );
+
+		return $attachment[0];
+	}
 
 	public static function SiteLogo() {
 		$logourl = esc_url( self::NextGetOption( 'site_logo' ) );
 
+
 		if ( $logourl ) {
-			return "<img src='{$logourl}' title='" . esc_attr( get_bloginfo( 'name' ) ) . "' alt='" . esc_attr( get_bloginfo( 'name' ) ) . "' />";
+			$image_id = self::attire_get_image_id( $logourl );
+			$meta     = wp_prepare_attachment_for_js( $image_id );
+
+			return "<img src='{$logourl}' title='" . esc_attr( $meta['title'] ) . "' alt='" . esc_attr( $meta['alt'] ) . "' />";
 		} else {
-			return '<h1 class="logo-header">' . esc_attr( get_bloginfo( 'name' ) ) . '</h1>';
+			return '<h1 class="logo-header">' . esc_html( get_bloginfo( 'name' ) ) . '</h1>';
 		}
 	}
 
 	public static function FooterLogo() {
 		$logourl = esc_url( self::NextGetOption( 'site_logo_footer' ) );
 
+
 		if ( $logourl ) {
-			return "<img src='{$logourl}' title='" . esc_attr( get_bloginfo( 'sitename' ) ) . "' alt='" . esc_attr( get_bloginfo( 'sitename' ) ) . "' />";
+			$image_id = self::attire_get_image_id( $logourl );
+			$meta     = wp_prepare_attachment_for_js( $image_id );
+
+			return "<img src='{$logourl}' title='" . esc_attr( $meta['title'] ) . "' alt='" . esc_attr( $meta['alt'] ) . "' />";
 		} else {
-			return esc_attr( get_bloginfo( 'sitename' ) );
+			return esc_html( get_bloginfo( 'sitename' ) );
 		}
 	}
 

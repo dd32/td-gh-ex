@@ -4,6 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 get_header();
 $meta_position = AttireThemeEngine::NextGetOption( 'attire_single_post_meta_position', 'after-title' );
+
 ?>
     <div class="row">
 		<?php AttireFramework::DynamicSidebars( 'left' );
