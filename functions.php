@@ -3,7 +3,7 @@
  * Theme functions and definitions.
  */
 
-// Sets up theme defaults and registers various WordPress features that OneColumn supports
+// Sets up theme defaults and registers various WordPress features that theme supports
 	function onecolumn_setup() { 
 		// Set max content width for img, video, and more
 			global $content_width; 
@@ -170,7 +170,7 @@
 	add_filter( 'excerpt_length', 'onecolumn_excerpt_length', 999 ); 
 
 
-// Theme Customizer (logo)
+// Theme Customizer
 	function onecolumn_theme_customizer( $wp_customize ) { 
 		$wp_customize->add_section( 'onecolumn_logo_section' , array( 
 			'title' => __( 'Logo', 'onecolumn' ), 
