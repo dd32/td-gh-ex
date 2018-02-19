@@ -103,8 +103,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.0.15
+- Updated: Improved checks for 'edit_theme_options' capability to ensure demo content only displays to site admins.
+
 Version 1.0.14
-- Updated: Sidebar layouts now applied using css classes instead of loading seperate stylesheets.
+- Updated: Sidebar layouts now applied using css classes instead of loading separate stylesheets.
 
 Version 1.0.13
 - Updated: Improved escaping in function alante_thinkup_title_select() to ensure page title displays correctly.

@@ -286,25 +286,20 @@ $thinkup_homepage_section3_link  = alante_thinkup_var ( 'thinkup_homepage_sectio
 		$thinkup_homepage_section3_image = wp_get_attachment_image_src( $thinkup_homepage_section3_image, $imagesize3 );
 	}
 
-	// Only show default values only to users with right to edit theme options
-	if ( current_user_can( 'edit_theme_options' ) ) {
+	// Set default values for titles
+	if ( empty( $thinkup_homepage_section1_title ) ) $thinkup_homepage_section1_title = __( 'Step 1 &#45; Theme Options', 'alante' );
+	if ( empty( $thinkup_homepage_section2_title ) ) $thinkup_homepage_section2_title = __( 'Step 2 &#45; Setup Slider', 'alante' );
+	if ( empty( $thinkup_homepage_section3_title ) ) $thinkup_homepage_section3_title = __( 'Step 3 &#45; Create Homepage', 'alante' );
 
-		// Set default values for titles
-		if ( empty( $thinkup_homepage_section1_title ) ) $thinkup_homepage_section1_title = __( 'Step 1 &#45; Theme Options', 'alante' );
-		if ( empty( $thinkup_homepage_section2_title ) ) $thinkup_homepage_section2_title = __( 'Step 2 &#45; Setup Slider', 'alante' );
-		if ( empty( $thinkup_homepage_section3_title ) ) $thinkup_homepage_section3_title = __( 'Step 3 &#45; Create Homepage', 'alante' );
+	// Set default values for descriptions
+	if ( empty( $thinkup_homepage_section1_desc ) ) 
+	$thinkup_homepage_section1_desc = __( 'To begin customizing your site go to Appearance &#45;&#62; Customizer and select Theme Options. Here&#39;s you&#39;ll find custom options to help build your site.', 'alante' );
 
-		// Set default values for descriptions
-		if ( empty( $thinkup_homepage_section1_desc ) ) 
-		$thinkup_homepage_section1_desc = __( 'To begin customizing your site go to Appearance &#45;&#62; Customizer and select Theme Options. Here&#39;s you&#39;ll find custom options to help build your site.', 'alante' );
+	if ( empty( $thinkup_homepage_section2_desc ) ) 
+	$thinkup_homepage_section2_desc = __( 'To add a slider go to Theme Options &#45;&#62; Homepage and choose page slider. The slider will use the page title, excerpt and featured image for the slides.', 'alante' );
 
-		if ( empty( $thinkup_homepage_section2_desc ) ) 
-		$thinkup_homepage_section2_desc = __( 'To add a slider go to Theme Options &#45;&#62; Homepage and choose page slider. The slider will use the page title, excerpt and featured image for the slides.', 'alante' );
-
-		if ( empty( $thinkup_homepage_section3_desc ) ) 
-		$thinkup_homepage_section3_desc = __( 'To add featured content go to Theme Options &#45;&#62; Homepage (Featured) and turn the switch on then add the content you want for each section.', 'alante' );
-
-	}
+	if ( empty( $thinkup_homepage_section3_desc ) ) 
+	$thinkup_homepage_section3_desc = __( 'To add featured content go to Theme Options &#45;&#62; Homepage (Featured) and turn the switch on then add the content you want for each section.', 'alante' );
 
 	// Get page names for links
 	if ( ! empty( $thinkup_homepage_section1_link ) ) {
