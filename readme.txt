@@ -1,7 +1,7 @@
 === PrivateBusiness ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 6.5
+Version: 6.6
 Requires at least: 4.7
 Tested up to: 4.9
 License: GNU General Public License v3 or later

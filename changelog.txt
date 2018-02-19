@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+PrivateBusiness version 6.6 - february 2018
+- several small adjustments
+- updated file style and functions
+
 PrivateBusiness version 6.5 - february 2018
 - please ignore my notification in previous version regarding removal from repository
 - decided not to remove it yet
