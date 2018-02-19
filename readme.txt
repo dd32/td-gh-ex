@@ -1,7 +1,7 @@
 === LeftSide ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 5.4
+Version: 5.5
 Requires at least: 4.2
 Tested up to: 4.9
 License: GNU General Public License v3 or later

@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+LeftSide version 5.5 - february 2018
+- several small adjustments
+- updated file style and functions
+
 LeftSide version 5.4 - february 2018
 - please ignore my notification in previous version regarding removal from repository
 - decided not to remove it yet
