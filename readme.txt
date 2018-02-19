@@ -1,7 +1,7 @@
 === MyKnowledgeBase ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 5.8
+Version: 5.9
 Requires at least: 4.7
 Tested up to: 4.9
 License: GNU General Public License v3 or later
@@ -43,7 +43,7 @@ You can set a page title and content above your posts via WordPress Dashboard > 
 And you can change the way how posts are displayed via WordPress Dashboard > Appearance > Customize.
 
 = Create a knowledgebase =
-The knowledgebase uses the default WordPress categories and posts.
+The knowledgebase uses the native WordPress categories and posts.
 
 Create a new page and select the knowledgebase page template. You can choose between 3 columns (with sidebar) and 4 columns (without sidebar).
 

@@ -3,7 +3,7 @@
  * Theme functions and definitions.
  */
 
-// Sets up theme defaults and registers various WordPress features that MyKnowledgeBase supports
+// Sets up theme defaults and registers various WordPress features that theme supports
 	function myknowledgebase_setup() { 
 		// Set max content width for img, video, and more
 			global $content_width; 
@@ -180,7 +180,7 @@
 	add_filter( 'excerpt_length', 'myknowledgebase_excerpt_length', 999 ); 
 
 
-// Theme Customizer (logo and settings for search bar and knowledgebase)
+// Theme Customizer
 	function myknowledgebase_theme_customizer( $wp_customize ) { 
 		$wp_customize->add_section( 'myknowledgebase_logo_section' , array( 
 			'title' => __( 'Logo', 'myknowledgebase' ), 
