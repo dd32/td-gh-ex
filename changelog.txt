@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+DarkOrange version 6.3 - february 2018
+- several small adjustments
+- updated file style and functions
+
 DarkOrange version 6.2 - february 2018
 - please ignore my notification in previous version regarding removal from repository
 - decided not to remove it yet
