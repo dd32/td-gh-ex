@@ -122,8 +122,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.4.17
+- Updated: Improved checks for 'edit_theme_options' capability to ensure demo content only displays to site admins.
+
 Version 1.4.16
-- Updated: Sidebar layouts now applied using css classes instead of loading seperate stylesheets.
+- Updated: Sidebar layouts now applied using css classes instead of loading separate stylesheets.
 
 Version 1.4.15
 - Updated: Function to add additional image sizes hooked into after_theme_setup instead of init.
