@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="html feature--js--none<?php applicator_hook_html_class_attr(); ?>" <?php language_attributes(); ?>>
+<html class="html no-js<?php applicator_hook_html_css(); ?>" <?php language_attributes(); ?>>
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -32,72 +32,72 @@
             'echo'      => true,
         ) );
         
-                
-        // ------------------------------------ Web Product Start
-
-        // R: Go to Content Navi
-        $go_to_content_navi_obj = applicator_htmlok( array(
-            'name'      => 'Go to Content',
-            'structure' => array(
-                'type'      => 'object',
-                'subtype'   => 'navigation item',
-                'attr'      => array(
-                    'a'         => array(
-                        'href'      => esc_url( '#content' ),
-                    ),
-                ),
-                'id'        => 'go-ct-navi---a',
-                'title'     => 'Go to Content',
-                'root_css'  => 'skip-link',
-            ),
-            'css'       => 'go-ct',
-            'content'   => array(
-                'object'        => array(
-                    array(
-                        'txt'       => esc_html__( 'Go to Content', 'applicator' ),
-                    ),
-                ),
-            ),
-        ) );
-
-        // R: Go to Content Nav
-        $go_to_content_nav_cp = applicator_htmlok( array(
-            'name'      => 'Go to Content',
-            'structure' => array(
-                'type'      => 'component',
-                'subtype'   => 'navigation',
-            ),
-            'id'        => 'go-content-nav',
-            'root_css'  => 'go-content-nav',
-            'css'       => 'go-ct',
-            'content'   => array(
-                'component'     => $go_to_content_navi_obj,
-            ),
-        ) );
-
-
-        // E: Web Product Start
-        $web_product_start_cn = applicator_htmlok( array(
-            'name'      => 'Web Product Start',
-            'structure' => array(
-                'type'      => 'constructor',
-            ),
-            'id'        => 'web-product-start',
-            'css'       => 'wbp-start',
-            'content'   => array(
-                'constructor'   => array(
-                    $go_to_content_nav_cp,
-                ),
-            ),
-            'echo'      => true,
-        ) );
-        
         ?>
                         
         <div id="web-product" class="cn web-product wbp site" data-name="Web Product CN">
             <div class="cr wbp---cr">
                 
                 <?php
+        
+                
+                // ------------------------------------ Web Product Start
+
+                // R: Go to Content Navi
+                $go_to_content_navi_obj = applicator_htmlok( array(
+                    'name'      => 'Go to Content',
+                    'structure' => array(
+                        'type'      => 'object',
+                        'subtype'   => 'navigation item',
+                        'attr'      => array(
+                            'a'         => array(
+                                'href'      => esc_url( '#content' ),
+                            ),
+                        ),
+                        'id'        => 'go-ct-navi---a',
+                        'title'     => 'Go to Content',
+                        'root_css'  => 'skip-link',
+                    ),
+                    'css'       => 'go-ct',
+                    'content'   => array(
+                        'object'        => array(
+                            array(
+                                'txt'       => esc_html__( 'Go to Content', 'applicator' ),
+                            ),
+                        ),
+                    ),
+                ) );
+
+                // R: Go to Content Nav
+                $go_to_content_nav_cp = applicator_htmlok( array(
+                    'name'      => 'Go to Content',
+                    'structure' => array(
+                        'type'      => 'component',
+                        'subtype'   => 'navigation',
+                    ),
+                    'id'        => 'go-content-nav',
+                    'root_css'  => 'go-content-nav',
+                    'css'       => 'go-ct',
+                    'content'   => array(
+                        'component'     => $go_to_content_navi_obj,
+                    ),
+                ) );
+
+
+                // E: Web Product Start
+                $web_product_start_cn = applicator_htmlok( array(
+                    'name'      => 'Web Product Start',
+                    'structure' => array(
+                        'type'      => 'constructor',
+                    ),
+                    'id'        => 'web-product-start',
+                    'css'       => 'wbp-start',
+                    'content'   => array(
+                        'constructor'   => array(
+                            $go_to_content_nav_cp,
+                        ),
+                    ),
+                    'echo'      => true,
+                ) );
                 
                 
                 /* ------------------------ Main Header ------------------------ */
