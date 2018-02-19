@@ -1,7 +1,7 @@
 === GridBulletin ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 5.9
+Version: 6.0
 Requires at least: 4.7
 Tested up to: 4.9
 License: GNU General Public License v3 or later
@@ -37,12 +37,12 @@ You can add your own background(image) via WordPress Dashboard > Appearance > Cu
 = Menu = 
 You can create and set a menu via WordPress Dashboard > Appearance > Menus.
 
-= Blog page =
+= Blog =
 You can show or hide sidebar and you can set a page title and content above your posts via WordPress Dashboard > Appearance > Customize.
 
 And you can change the way how posts are displayed via WordPress Dashboard > Appearance > Customize.
 
-= Archive page =
+= Archive =
 You can show or hide sidebar and archive title via WordPress Dashboard > Appearance > Customize.
 
 == Copyright ==

@@ -3,7 +3,7 @@
  * Theme functions and definitions.
  */
 
-// Sets up theme defaults and registers various WordPress features that GridBulletin supports
+// Sets up theme defaults and registers various WordPress features that theme supports
 	function gridbulletin_setup() { 
 		// Set max content width for img, video, and more
 			global $content_width; 
@@ -173,7 +173,7 @@
 	add_filter( 'excerpt_length', 'gridbulletin_excerpt_length', 999 ); 
 
 
-// Theme Customizer (logo and settings for archive page)
+// Theme Customizer
 	function gridbulletin_theme_customizer( $wp_customize ) { 
 		$wp_customize->add_section( 'gridbulletin_logo_section' , array( 
 			'title' => __( 'Logo', 'gridbulletin' ), 

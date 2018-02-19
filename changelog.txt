@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+GridBulletin version 6.0 - february 2018
+- several small adjustments
+- updated file style and functions
+
 GridBulletin version 5.9 - february 2018
 - fixed minor mistake in file style
 
