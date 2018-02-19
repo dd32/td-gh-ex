@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+Medical version 5.6 - february 2018
+- several small adjustments
+- updated file style and functions
+
 Medical version 5.5 - february 2018
 - please ignore my notification in previous version regarding removal from repository
 - decided not to remove it yet
