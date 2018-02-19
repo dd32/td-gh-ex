@@ -5,18 +5,20 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    
+  <?php
+    $column_class =  ('post' == get_post_type()) ? 'col-sm-12 col-md-10' : 'col-sm-12 col-md-12';
+  ?>
     <div class="row">
-	<div class="post-meta-info col-sm-12 col-md-2">
-	    <?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-		    <time class="entry-time updated" itemprop="datePublished" datetime="<?php the_time('c'); ?>"><?php the_time('M'); ?><strong><?php the_time('d'); ?></strong></time>
-		    <span class="comments_count clearfix entry-comments-link"><?php comments_popup_link(__('0', 'ascent'), __('1', 'ascent'), __('%', 'ascent')); ?></span>
-		</div><!-- .entry-meta -->
-	    <?php endif; ?>
-	</div><!--.post-meta-info-->
-	
-	<div class="post-content-wrap col-sm-12 col-md-10">
+      <?php if ( 'post' == get_post_type() ) : ?>
+        <div class="post-meta-info col-sm-12 col-md-2">
+      		<div class="entry-meta">
+      		    <time class="entry-time updated" itemprop="datePublished" datetime="<?php the_time('c'); ?>"><i class="fa fa-clock-o nt-mobile"></i> <?php the_time('M'); ?><strong><?php the_time('d'); ?></strong></time>
+      		    <span class="comments_count clearfix entry-comments-link"><i class="fa fa-comment nt-mobile"></i> <?php comments_popup_link(__('0', 'ascent'), __('1', 'ascent'), __('%', 'ascent')); ?></span>
+      		</div><!-- .entry-meta -->
+        </div><!--.post-meta-info-->
+      <?php endif; ?>
+
+	<div class="post-content-wrap <?php echo $column_class; ?>">
 	    <header class="page-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 		 <?php if ( 'post' == get_post_type() ) : ?>
@@ -31,7 +33,7 @@
 	    <div class="entry-content">
 		<?php $format = get_post_format($post->ID); ?>
 		<?php if (has_post_thumbnail($post->ID)): ?>
-		    <?php 
+		    <?php
 		    $image_id = get_post_thumbnail_id();
 		    $full_image_url = wp_get_attachment_url($image_id);
 		    ?>
@@ -43,7 +45,7 @@
 			</figure>
 		    <?php endif; ?>
 		<?php endif; ?>
-		
+
 		<?php the_content(); ?>
 		<?php
 		    wp_link_pages( array(
@@ -52,7 +54,7 @@
 		    ) );
 		?>
 	    </div><!-- .entry-content -->
-    
+
 	    <footer class="footer-meta">
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 		    <?php
@@ -63,9 +65,9 @@
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', __( ', ', 'ascent' ) );
 		    ?>
-			
+
 		    <?php if ( ($categories_list && ascent_categorized_blog()) || ($tags_list) ): ?>
-		    
+
 		    <div class="cat-tag-meta-wrap">
 			<?php if ( $categories_list && ascent_categorized_blog() ) : ?>
 			    <span class="cats-meta"><?php printf( __( '<i class="fa fa-folder"></i> %1$s', 'ascent' ), $categories_list ); ?></span>
@@ -76,7 +78,7 @@
 		    </div>
 		    <?php endif; ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
-	    </footer><!-- .entry-meta -->			
+	    </footer><!-- .entry-meta -->
 	</div><!--.post-content-wrap-->
     </div><!--.row-->
 </article><!-- #post-## -->

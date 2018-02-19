@@ -1,15 +1,15 @@
 /**
- * Green color scheme
+ * Turquoise4 color scheme
 */
 
 body {}
 
 ::selection {
-    background: #59BA47;
+    background: #7a6cea;
     color: #FFF;
 }
 ::-moz-selection {
-    background: #59BA47;
+    background: #7a6cea;
     color: #FFF;
 }
 
@@ -24,7 +24,7 @@ a,
 .header-top a:hover,
 .site-branding h1.site-title a,
 #colophon .widget_calendar table a:hover {
-    color: #59BA47;
+    color: #7a6cea;
 }
 
 /* Background color style */
@@ -40,7 +40,7 @@ body input[type="submit"]:focus,
 .mean-container .mean-bar,
 .mean-container .mean-bar .mean-nav ul li a.meanmenu-reveal,
 .mean-container .mean-bar .mean-nav ul li a.mean-expand:hover {
-    background-color: #59BA47;
+    background-color: #7a6cea;
 }
 
 /* Background style */
@@ -52,7 +52,7 @@ nav.main-menu ul > .current-menu-item > a,
 .comment a.btn,
 .error-404,
 .mean-container .mean-bar .meanmenu-reveal  {
-    background: #59BA47;
+    background: #7a6cea;
 }
 
 /* Border Color style */
@@ -76,27 +76,27 @@ body input[type="text"]:focus,
 body textarea:focus,
 body .form-control:focus,
 select:focus {
-    border-color: #59BA47;
+    border-color: #7a6cea;
 }
 .gallery .gallery-item img {
-    border-color: #049CA2!important;
+    border-color: #7a6cea!important;
 }
 
 /* Light color style */
 .nav > li > a:hover, .nav > li > a:focus,
 .post-meta-info .entry-meta,
 .comment-form .alert-info  {
-    background-color: #D4FFCC;
+    background-color: #ebe9ff;
 }
 .entry-content blockquote {
-    background: #D4FFCC;
+    background: #ebe9ff;
 }
 .error-404 a {
-    color: #D4FFCC;
+    color: #ebe9ff;
 }
 .comment-form .alert-info {
-    border-color: #99FA87;
-    color: #1D4E14;
+    border-color: #b5b1d2;
+    color: #251692;
 }
 
 /* Responsive style */

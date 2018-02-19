@@ -139,6 +139,8 @@ function optionsframework_options() {
 			'green' => $imagepath . 'green.png',
 			'gamboge' => $imagepath . 'gamboge.png',
 			'turquoise4' => $imagepath . 'turquoise4.png',
+			'dodgerblue' => $imagepath . 'dodger-blue.png',
+			'mediumslateblue' => $imagepath . 'medium-slate-blue.png',
 		)
 	);
 

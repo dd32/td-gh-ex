@@ -23,7 +23,7 @@
         <div class="container">
             <div class="site-info">
                 <?php do_action( 'ascent_credits' ); ?>
-                <a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'ascent' ); ?>" ><?php printf( __( '&copy; 2016 ascent. All rights reserved', 'ascent' ), 'WordPress' ); ?></a>
+                <a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'ascent' ); ?>" ><?php printf( __( '&copy; 2018 ascent. All rights reserved', 'ascent' ), 'WordPress' ); ?></a>
                 <span class="sep"> | </span>
                 <?php printf( __( '%1$s  ', 'ascent' ), 'Ascent by '); ?><a href="<?php echo esc_url( __( 'http://nettantra.com/', 'ascent' ) ); ?>" target="_blank"><?php printf( __( 'NetTantra', 'ascent' ), 'NetTantra' ); ?></a>
             </div><!-- close .site-info -->

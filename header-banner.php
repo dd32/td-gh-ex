@@ -7,13 +7,13 @@
  if(!empty($hm_v_height)) {
      $home_slider_video_height = 'height: '.$hm_v_height.'px' ;
  }
- 
+
 ?>
 <?php $enable_home_slider = of_get_option('home_page_slider'); ?>
 <?php if (($enable_home_slider == 1) && is_front_page()): ?>
 <?php $home_slider_array = ascent_home_slider();?>
     <div id="home-slider" class="">
-    	<div class="main-owl-carousel">
+    	<div class="main-owl-carousel owl-carousel owl-theme">
     	<?php $enable_slider_overaly = (of_get_option('slider_overlay_bg')) ? 'bg-overlay' : ' default-bg'; ?>
     	<?php foreach ($home_slider_array as $home_slider_item => $home_slider_fields): ?>
     	    <?php if (of_get_option($home_slider_fields['image']) || of_get_option($home_slider_fields['video'])): ?>

@@ -49,21 +49,48 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
     color: #1ABC9C;
     text-decoration: none;
 }
-
+.nt-mobile {
+  display: none;
+}
 /* Read More Buttons */
-
+.btn,
+.btn:focus:hover,
+.btn:active:hover,
+.btn:active:focus,
+.btn:hover,
+.btn:focus,
+.btn:active {
+  outline: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+}
+.btn-primary,
 .read-more {
     font-size: 14px;
     font-weight: normal;
     text-transform: uppercase;
     background-color: #1ABC9C;
+    border: none;
     padding: 10px 30px;
     color: #FFF;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    outline: none;
     text-decoration: none;
     display: inline-block;
 }
+.btn-primary:active:focus,
+.btn-primary:focus:hover,
+.btn-primary:active:hover,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
 .read-more:hover {
     color: #FFF;
+    border: none;
+    outline: none;
     background-color: #3a3c41;
     text-decoration: none;
     -webkit-transition: all .25s ease-in-out;
@@ -933,6 +960,9 @@ article.post .entry-content {
     font-weight: 700;
     color: #FFF;
 }
+.comments_count .fa {
+  padding-left: 15px;
+}
 .post-meta-info .entry-meta .comments_count a:hover {
     text-decoration: none;
     -moz-opacity: 0.6;
@@ -1047,11 +1077,26 @@ body input[type="text"]:focus, body input[type="email"]:focus, body input[type="
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
 }
+select:active, select:hover {
+  outline: none
+}
+
+select:active, select:hover {
+  outline-color: none
+}
+
 select {
+    width: 100%;
+    height: auto;
     border: 2px solid #dcdee4;
     background-color: #FFF;
-    width: 100%;
+    margin-bottom: 20px;
     padding: 11px 10px;
+    height: 42px;
+    color: #3a3c41;
+    font-weight: 500;
+    border-radius: 0;
+
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
@@ -1117,7 +1162,6 @@ body fieldset label {
     float: left;
 }
 body textarea, body input {
-    -webkit-appearance: none;
     -webkit-border-radius: 0px;
 }
 label {
@@ -1164,7 +1208,15 @@ label {
         background: none;
         display: inline;
         color: #3A3C41;
-        padding: 0 0 0 10px;
+        padding: 0;
+    }
+    .nt-mobile {
+      display: inline-block;
+    }
+    .post-meta-info .entry-meta .comments_count span {
+      display: inline-block;
+      color: #333;
+      padding-left: 0;
     }
 }
 
@@ -1188,6 +1240,7 @@ label {
     #masthead {
         margin-bottom: 20px;
     }
+
     .site-branding {
         text-align: center;
     }
@@ -1220,7 +1273,7 @@ label {
         border-color: rgba(255, 255, 255, 0.1);
     }
     .mean-container .mean-bar .mean-nav ul li a.mean-expand {
-        height: 22px;
+        height: 20px;
     }
     .mean-container .mean-bar .mean-nav ul li a.mean-expand:hover {
         background-color: #17A88B;

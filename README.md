@@ -1,7 +1,7 @@
 == Ascent ==
 
 Tags: white, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-menu, featured-images, post-formats, rtl-language-support, theme-options, translation-ready
-Tested up to: 4.0.3
+Tested up to: 4.9.4
 Stable tag: 3.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,13 +19,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Description ==
 
 Ascent Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight WordPress theme based on the most modern technologies like HTML5 and CSS3. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10.
-If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Ascent is your perfect find. You can check out the demo at http://testbase.info/c/theme/wp/ascent/
+If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Ascent is your perfect find. You can check out the demo at http://testbase.info/c/theme/wp/ascent/, and get support: https://support.nettantra.com/cart.php?gid=1.
+
 
 * Fully Bootstrap Power
 * FontAwesome implementation
 * jQuery smoothScroll
 * jQuery SwipeBox
-* Setup jQuery MeanMeanu and Velocity for beautiful responsive animated menu.
+* Setup jQuery MeanMenu and Velocity for beautiful responsive animated menu.
 * Implement jQuery appear for tracking element's appearance in browser viewport.
 * Implement Theme Options for customize the Theme
 * A just right amount of lean, well-commented, modern, HTML5 templates.
@@ -88,6 +89,21 @@ Yes! You can choose your color scheme under Appearance -> Theme Options -> Styli
 
 
 = Changelog =
+
+### Version 2.0.4
+- New: Added two Theme color scheme(Dodger blue and Medium slate blue)
+- Update: Font-awesome 4.7.0
+- Update: OwlCarousel 2.2.1
+- Update: MeanMenu
+- Update: SmoothScroll v1.4.6
+- Update: VelocityJS.org 1.5.0
+- Update: HTML5 Shiv 3.7.3
+- Update: jQuery appear 0.3.6
+- Update: Search Result Listing page template
+- Update: Header Search box slideToggle style
+- Fix: Radio Buttons and Checkboxes not displaying issue
+- Fix: Post date and comments count section responsive issue
+
 ### Version 2.0.3
 - Fixed Fatal error issue: Can't use function return value in write context in `ascent/header-banner.php` on line 6
 

@@ -1,8 +1,15 @@
 jQuery(document).ready(function() {
 
     /* Click search box appear */
-    jQuery('body').on('click', '#header-search-button', function() {
+    jQuery('body').on('click', '#header-search-button', function(e) {
+         e.stopPropagation();
         jQuery(this).parents().find('.header-search-form-wrap:first').slideToggle(200);
+    });
+    jQuery('body .header-search-form-wrap').click(function(e){
+       e.stopPropagation();
+    });
+    jQuery('body').click(function(e){
+       jQuery('.header-search-form-wrap').fadeOut(200);
     });
     var setupHeaderSearchform = function() {
         var headerSearchFormTopPosition = jQuery('.header-top').outerHeight() + jQuery('.header-bottom').outerHeight();
@@ -66,23 +73,17 @@ jQuery(document).ready(function() {
         }
     });
 
+
     /* Owl carousel */
     if (jQuery('#home-slider .main-owl-carousel').length) {
-        jQuery(".main-owl-carousel").owlCarousel({
-            navigation: true,
-            pagination: false,
-            responsive: true,
-            items: 1,
-            touchDrag: true,
-            navigationText: false,
-            mouseDrag: true,
-            itemsDesktop: [3000, 1],
-            itemsDesktopSmall: [1440, 1],
-            itemsTablet: [1024, 1],
-            itemsTabletSmall: [600, 1],
-            itemsMobile: [360, 1],
-            autoPlay: true,
-            autoHeight: true,
+        jQuery("#home-slider .main-owl-carousel").owlCarousel({
+          items: 1,
+          margin: 0,
+          nav: true,
+          singleItem: true,
+          loop: true,
+          autoplay: true,
+          autoHeight:true,
         });
     }
 

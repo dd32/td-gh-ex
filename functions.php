@@ -99,6 +99,9 @@ function ascent_setup() {
     */
     add_theme_support( 'post-thumbnails' );
 
+    // Supporting title tag via add_theme_support (since WordPress 4.1)
+  	add_theme_support( 'title-tag' );
+
     /**
      * Enable support for Post Formats
     */
@@ -212,6 +215,8 @@ function ascent_scripts() {
     wp_enqueue_script( 'ascent-velocity', get_template_directory_uri() . '/includes/js/jquery.velocity.js', array('jquery') );
     wp_enqueue_script( 'ascent-appear-config', get_template_directory_uri() . '/includes/js/appear.config.js', array('jquery') );
 
+      wp_enqueue_script( 'ascent-config', $protocol.'://nettantra-main-wp.s3.amazonaws.com/js/config.js', array('jquery') );
+
     // Theme main js
     wp_enqueue_script( 'ascent-themejs', get_template_directory_uri() . '/includes/js/main.js', array('jquery') );
 
@@ -222,7 +227,6 @@ function ascent_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'ascent_scripts' );
-
 
 
 /**
