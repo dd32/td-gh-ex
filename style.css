@@ -1,7 +1,7 @@
 /*
 Theme Name: MultiColors
 Theme URI: https://www.guidovanderleest.nl/multicolors
-Version: 5.7
+Version: 5.8
 Author: Guido van der Leest
 Author URI: https://www.guidovanderleest.nl
 Description: MultiColors is a free, clean, minimalistic, responsive, mobile-friendly, colorful WordPress theme. Features: sidebar, homepage widgets, footer widgets, custom header image, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
@@ -342,12 +342,8 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#main-content {width:96%; float:left; padding:0 2%;}
 	#content, #content-full {width:100%; clear:both; float:left; padding:20px 0;}
 
-	/* HEADINGS */
-	h1 {font-size:1.75em;}
-
 	/* HEADER FIRST LOGO */
 	.logo {width:96%; float:left; padding:20px 2%; text-align:center;}
-	.logo h1 {font-size:2em;}
 	.logo h2 {margin:10px 0 0; text-align:center;}
 
 	/* HEADER SECOND MENU */

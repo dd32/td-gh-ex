@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+MultiColors version 5.8 - february 2018
+- several small adjustments
+- updated file style and functions
+
 MultiColors version 5.7 - february 2018
 - please ignore my notification in previous version regarding removal from repository
 - decided not to remove it yet
