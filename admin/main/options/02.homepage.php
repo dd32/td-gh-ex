@@ -30,7 +30,7 @@ $slider_toggle           = NULL;
 			}
 		}
 
-		if ( empty( $thinkup_homepage_sliderswitch ) or $thinkup_homepage_sliderswitch == 'option1' ) {
+		if ( ( current_user_can( 'edit_theme_options' ) and empty( $thinkup_homepage_sliderswitch ) ) or $thinkup_homepage_sliderswitch == 'option1' ) {
 
 			echo '<div id="slider"><div id="slider-core">',
 			     '<div class="rslides-container"><div class="rslides-inner"><ul class="slides">';
@@ -217,7 +217,7 @@ global $thinkup_homepage_section4_link;
 	}
 
 	if ( is_front_page() or thinkup_check_ishome() ) {
-		if ( empty( $thinkup_homepage_sectionswitch ) or $thinkup_homepage_sectionswitch == '1' ) {
+		if ( ( current_user_can( 'edit_theme_options' ) and empty( $thinkup_homepage_sectionswitch ) ) or $thinkup_homepage_sectionswitch == '1' ) {
 
 		echo '<div id="section-home"><div id="section-home-inner">';
 
