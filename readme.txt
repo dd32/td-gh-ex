@@ -93,6 +93,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.8.19
+- Updated: Version bump as wp.org upload failed.
+
 Version 1.8.18
 - Updated: Improved checks for 'edit_theme_options' capability to ensure demo content only displays to site admins.
 
