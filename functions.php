@@ -3,7 +3,7 @@
  * Theme functions and definitions.
  */
 
-// Sets up theme defaults and registers various WordPress features that SimplyBlack supports
+// Sets up theme defaults and registers various WordPress features that theme supports
 	function simplyblack_setup() { 
 		// Set max content width for img, video, and more
 			global $content_width; 
@@ -170,7 +170,7 @@
 	add_filter( 'excerpt_length', 'simplyblack_excerpt_length', 999 ); 
 
 
-// Theme Customizer (logo)
+// Theme Customizer
 	function simplyblack_theme_customizer( $wp_customize ) { 
 		$wp_customize->add_section( 'simplyblack_logo_section' , array( 
 			'title' => __( 'Logo', 'simplyblack' ), 
