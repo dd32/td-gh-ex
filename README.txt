@@ -68,7 +68,7 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
-#### 1.0.98
+#### 1.0.99
 * WooCommerce & Avant CSS tweaks/fixes
 * Updated WooCommerce deprecated functions
 * Updated WooCommerce header cart to work with taxes
