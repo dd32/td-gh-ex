@@ -421,7 +421,7 @@ a.header-cart-contents {
 
     .header-cart {
         position: absolute;
-        top: 45px;
+        top: 15px;
         left: 10px;
     }
     a.header-cart-contents {

@@ -4,7 +4,7 @@ Theme URI: https://kairaweb.com/theme/avant/
 Author: Kaira
 Author URI: https://kairaweb.com/
 Description: 7 Header layouts, 5 Blog layouts, 3 Footer layouts, Full site color settings and lots more settings all built neatly into the WordPress Customizer so you can edit & make changes in a live environment before making any of the changes live... Avant sure gives you what you're wanting. Avant is a highly customizable, multipurpose WordPress theme. Use Avant to build your WooCommerce eCommerce store, online fashion blog, corporate law or business website, or anything down to a simple personal blog. Avant integrates with top plugins such as Elementor or SiteOrigin's Page Builder to make it easy building your website with a drag and drop Page Builder. WooCommerce to create your e-commerce shop selling your products beautifully online. We're constantly building on to Avant, making it even more flexible to what you need. Give it a go!
-Version: 1.0.97
+Version: 1.0.98
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avant
@@ -1574,6 +1574,14 @@ article.page {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
     width: 100%;
 }
+.blog-content-inner.blog-post-shape-round .post-loop-thumbnail,
+.blog-post-blocks-inner.blog-post-shape-round .blog-post-blocks-inner-img,
+.blog-post-blocks-inner.blog-post-shape-round .blog-post-blocks-inner-a {
+    border-radius: 50%;
+}
+.blog-content-inner.blog-post-shape-round .post-loop-thumbnail img {
+    box-shadow: none;
+}
 .post-loop-content {
     width: 100%;
 }
@@ -1623,7 +1631,6 @@ article.page {
 }
 
 /* -------- Blog Left Styling -------- */
-
 .blog-left-layout .post-loop-thumbnail {
     float: left;
     margin: 0 2.5% 0 0;
@@ -1631,9 +1638,14 @@ article.page {
 .blog-left-layout .post-loop-content {
     float: left;
 }
+.blog-break-blocks .blog-left-layout .blog-content-inner.blog-post-shape-round {
+    padding: 25px;
+}
+.blog-break-blocks .blog-left-layout .blog-content-inner.blog-post-shape-round .post-loop-content {
+    padding: 0 0 0 25px;
+}
 
 /* -------- Blog Right Styling -------- */
-
 .blog-right-layout .post-loop-thumbnail {
     float: right;
     margin: 0 0 0 2.5%;
@@ -1641,9 +1653,14 @@ article.page {
 .blog-right-layout .post-loop-content {
     float: left;
 }
+.blog-break-blocks .blog-right-layout .blog-content-inner.blog-post-shape-round {
+    padding: 25px;
+}
+.blog-break-blocks .blog-right-layout .blog-content-inner.blog-post-shape-round .post-loop-content {
+    padding: 0 25px 0 0;
+}
 
 /* -------- Blog Top Styling -------- */
-
 .blog-top-layout .post-loop-thumbnail {
     float: none;
     margin: 0 0 20px;
@@ -1657,9 +1674,14 @@ article.page {
     float: none;
     width: 100%;
 }
+.blog-break-blocks .blog-top-layout .blog-content-inner.blog-post-shape-round {
+    padding: 25px;
+}
+.blog-break-blocks .blog-top-layout .blog-content-inner.blog-post-shape-round .post-loop-content {
+    padding: 25px 0 0 0;
+}
 
 /* -------- Blog Alt Styling -------- */
-
 .blog-alt-layout.blog-alt-odd .post-loop-thumbnail {
     float: left;
     margin: 0 2.5% 0 0;
@@ -1674,9 +1696,17 @@ article.page {
 .blog-alt-layout.blog-alt-even .post-loop-content {
     float: left;
 }
+.blog-break-blocks .blog-alt-layout .blog-content-inner.blog-post-shape-round {
+    padding: 25px;
+}
+.blog-break-blocks .blog-alt-layout.blog-alt-odd .blog-content-inner.blog-post-shape-round .post-loop-content {
+    padding: 0 0 0 25px;
+}
+.blog-break-blocks .blog-alt-layout.blog-alt-even .blog-content-inner.blog-post-shape-round .post-loop-content {
+    padding: 0 25px 0 0;
+}
 
 /* -------- Blog Blocks Layout -------- */
-
 .blog-blocks-wrap {
 
 }
@@ -1716,9 +1746,8 @@ article.page {
 }
 
 /* ---- Post Style Blocks ---- */
-
 .blog-style-postblock .blog-post-blocks-inner {
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18) inset;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08) inset;
     margin: 0 8px 1px;
 }
 .blog-style-postblock .blog-post-blocks-inner-img {
@@ -1764,9 +1793,19 @@ article.page {
     text-transform: uppercase;
     margin: 0 0 10px;
 }
+.blog-style-postblock .blog-post-blocks-inner.blog-post-shape-round {
+    padding: 15px;
+}
+.blog-break-blocks .blog-style-postblock .blog-post-blocks-inner.blog-post-shape-round {
+    background-color: #FFF;
+    padding: 15px;
+}
+.blog-break-blocks .blog-style-postblock .blog-post-blocks-inner.blog-post-shape-round .blog-blocks-content {
+    box-shadow: none !important;
+    padding: 15px 5px 5px;
+}
 
 /* -------- Blog Break -------- */
-
 .content-area.blog-break-blocks {
     padding: 0;
     background: none;
@@ -1814,7 +1853,6 @@ article.page {
 }
 
 /* -------- Blog Posts Navigation -------- */
-
 .posts-navigation {
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08) inset;
     padding: 20px 0 0;

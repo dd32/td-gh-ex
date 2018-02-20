@@ -186,14 +186,10 @@
         
         function avant_blocks_layout_type_check( avant_blocks_select_value, avant_blocks_style_value ) {
             if ( avant_blocks_select_value == 'blog-blocks-layout' ) {
-                $( '#sub-accordion-section-avant-blog-section-blog #customize-control-avant-blog-post-shape' ).show();
                 $( '#sub-accordion-section-avant-blog-section-blog #customize-control-avant-blog-blocks-remove-border' ).show();
-                $( '#sub-accordion-section-avant-blog-section-blog #customize-control-avant-blog-blocks-remove-meta' ).show();
                 $( '#sub-accordion-section-avant-blog-section-blog #customize-control-avant-blog-blocks-remove-content' ).show();
             } else {
-                $( '#sub-accordion-section-avant-blog-section-blog #customize-control-avant-blog-post-shape' ).hide();
                 $( '#sub-accordion-section-avant-blog-section-blog #customize-control-avant-blog-blocks-remove-border' ).hide();
-                $( '#sub-accordion-section-avant-blog-section-blog #customize-control-avant-blog-blocks-remove-meta' ).hide();
                 $( '#sub-accordion-section-avant-blog-section-blog #customize-control-avant-blog-blocks-remove-content' ).hide();
             }
         }

@@ -27,11 +27,11 @@
     position: relative;
     top: 0;
     right: 0;
-    padding: 0;
+    padding: 0 0 10px;
+    z-index: 8;
 }
 
 /* -------- Products Styling -------- */
-
 .woocommerce .woocommerce-result-count,
 .woocommerce-page .woocommerce-result-count {
     display: block;

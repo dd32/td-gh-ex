@@ -408,6 +408,13 @@ function customizer_library_avant_options() {
         'panel' => $panel
     );
 
+    $options['avant-blog-break-blocks'] = array(
+        'id' => 'avant-blog-break-blocks',
+        'label'   => __( 'Break into Blocks', 'avant' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
     $choices = array(
         'blog-left-layout' => __( 'Left Layout', 'avant' ),
         'blog-right-layout' => __( 'Right Layout', 'avant' ),
@@ -423,25 +430,26 @@ function customizer_library_avant_options() {
         'choices' => $choices,
         'default' => 'blog-left-layout'
     );
-    $options['avant-blog-break-blocks'] = array(
-        'id' => 'avant-blog-break-blocks',
-        'label'   => __( 'Break into Blocks', 'avant' ),
-        'section' => $section,
-        'type'    => 'checkbox',
-        'default' => 0,
-    );
-
     $choices = array(
-        'blog-post-shape-square' => __( 'Square Blocks', 'avant' ),
-        'blog-post-shape-img' => __( 'Image Shape Blocks', 'avant' )
+        'blog-post-shape-square' => __( 'All Images Square', 'avant' ),
+        'blog-post-shape-round' => __( 'All Images Round', 'avant' ),
+        'blog-post-shape-img' => __( 'Actual Image Shape', 'avant' )
     );
     $options['avant-blog-post-shape'] = array(
         'id' => 'avant-blog-post-shape',
-        'label'   => __( 'Blog Post Shape', 'avant' ),
+        'label'   => __( 'Blog Post Image Shape', 'avant' ),
         'section' => $section,
         'type'    => 'select',
         'choices' => $choices,
         'default' => 'blog-post-shape-square'
+    );
+    $options['avant-blog-list-img-cut'] = array(
+        'id' => 'avant-blog-list-img-cut',
+        'label'   => __( 'Blog Image Cut', 'avant' ),
+        'section' => $section,
+        'type'    => 'imageselect',
+        'description' => __( 'Select which cut the Blog list uses<br />Recommended: Optimize images before upload', 'avant' ),
+        'default' => 'large'
     );
     $options['avant-blog-blocks-remove-border'] = array(
         'id' => 'avant-blog-blocks-remove-border',

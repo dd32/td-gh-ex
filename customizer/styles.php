@@ -899,7 +899,8 @@ function customizer_library_avant_build_styles() {
 				.widget-area,
 				.blog-break-blocks article.hentry,
 				.widget-area.sidebar-break-blocks .widget,
-				.blog-break-blocks .blog-blocks-wrap article.blog-blocks-layout .blog-blocks-content'
+				.blog-break-blocks .blog-blocks-wrap article.blog-blocks-layout .blog-blocks-content,
+				.blog-break-blocks .blog-post-blocks-inner.blog-post-shape-round'
 			),
 			'declarations' => array(
 				'background-color' => $page_bg_color

@@ -68,6 +68,14 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.0.98
+* WooCommerce & Avant CSS tweaks/fixes
+* Updated WooCommerce deprecated functions
+* Updated WooCommerce header cart to work with taxes
+* Added setting to change blog images to round
+* Added setting to select which image cut the Blog uses
+* Updated the language .pot file
+
 #### 1.0.97
 * Style tweaks/fixes
 * Neatened Transparent Header - 7 layout

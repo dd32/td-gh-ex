@@ -21,8 +21,9 @@ class Customizer_Library_Note extends WP_Customize_Control {
 	 * @return  void
 	 */
 	public function render_content() {
-		?>
-		<div class="kaira-note-txt">
+		$theme = wp_get_theme();
+		$theme_name = $theme->get( 'TextDomain' ); ?>
+		<div class="kaira-note-txt <?php echo ( is_child_theme() ) ? 'hide ' . sanitize_html_class( 'avant-note-' . $theme_name ) : ''; ?>">
             <div class="kaira-note-txt-desc"><?php echo wp_kses_post( $this->description ); ?></div>
 		</div>
 		<?php
