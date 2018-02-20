@@ -6,10 +6,10 @@ function becorp_theme_default_data()
 	// Fron-page
 	'front_page_enabled' => 1,
 	//Header Settings
-	'header_phone_email_enabled' => 0,
+	'header_phone_email_enabled' => 1,
 	'header_info_phone' =>get_theme_mod('header_info_phone',__('(2)245 23 68','becorp')),
 	'header_info_mail'=> get_theme_mod('header_info_mail',__('asiathemes[at]gmail[dot]com','becorp')),
-	'header_social_media_enabled' => 0,
+	'header_social_media_enabled' => 1,
 	'social_media_twitter_link' => '#',
 	'social_media_facebook_link' => '#',
 	'social_media_dribbble_link' => '#',

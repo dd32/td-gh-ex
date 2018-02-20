@@ -46,7 +46,7 @@ $wp_customize->remove_control('header_textcolor');
 	$wp_customize->add_setting(
 	'becorp_option[header_phone_email_enabled]',
     array(
-        'default' => 0,
+        'default' => 1,
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
@@ -105,7 +105,7 @@ $wp_customize->remove_control('header_textcolor');
 	'becorp_option[header_social_media_enabled]'
     ,
     array(
-        'default' => 0,
+        'default' => 1,
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',

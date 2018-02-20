@@ -99,6 +99,11 @@ released
 @Version 3.3
 1. Update Header banner images.
 2. Fixed styling issues.
+
+@Version 3.4
+1. Update menu default active.
+2. Update styling issue.
+
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
 Becorp is distributed under the terms of the GNU GPL
