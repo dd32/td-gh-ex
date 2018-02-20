@@ -26,7 +26,7 @@ $topbar_enable = esc_attr( get_theme_mod( $prefix . '_topbar_enable', '0' ) );
 <?php $hasSticky = esc_attr(get_theme_mod($prefix.'_sticky_header','0'));
 $header_style = esc_attr( get_theme_mod( $prefix . '_header_layout', '1' ) ); ?>
 
-<header id="header" class="pad-tb-20<?php echo atlast_set_transparent_menu(); ?> <?php echo ($hasSticky != '0'? ' sticky-header ' : '' ); ?> <?php echo 'header-style-'.$header_style;?>" role="banner">
+<header id="header" class="pad-tb-20<?php echo atlast_business_set_transparent_menu(); ?> <?php echo ($hasSticky != '0'? ' sticky-header ' : '' ); ?> <?php echo 'header-style-'.$header_style;?>" role="banner">
 	<?php
 	$header_style = esc_attr( get_theme_mod( $prefix . '_header_layout', '1' ) );
 	?>

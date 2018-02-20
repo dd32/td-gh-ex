@@ -60,20 +60,20 @@ if (!function_exists('atlast_business_set_header_image')):
         $html = '<div class="header-image-container" style="background-image: url(' . get_header_image() . ') ">';
         /* Has header text? */
 
-        $header_text = get_theme_mod(atlast_business_get_prefix() . '_header_image_heading', esc_html__('The MOST complete FREE WordPress Theme. Do it like a PRO.', 'atlast-business'));
+        $header_text = get_theme_mod(atlast_business_get_prefix() . '_header_image_heading', '');
 
         $html .= '<div class="header-texts text-center">';
         if (!empty($header_text)):
             $html .= '<h2>' . esc_html($header_text) . '</h2>';
         endif;
 
-        $btn_text_1 = get_theme_mod(atlast_business_get_prefix() . '_header_btn_text_1', esc_html__('Download Now', 'atlast-business'));
+        $btn_text_1 = get_theme_mod(atlast_business_get_prefix() . '_header_btn_text_1', '');
         if (!empty($btn_text_1)):
             $btn_url = get_theme_mod(atlast_business_get_prefix() . '_header_btn_url_1', '#');
             $html .= '<a href="' . esc_url($btn_url) . '" class="header-image-btn">' . esc_html($btn_text_1) . '</a>';
         endif;
 
-        $btn_text_2 = get_theme_mod(atlast_business_get_prefix() . '_header_btn_text_2', esc_html__('View Great Features', 'atlast-business'));
+        $btn_text_2 = get_theme_mod(atlast_business_get_prefix() . '_header_btn_text_2', '');
         if (!empty($btn_text_2)):
             $btn_url = get_theme_mod(atlast_business_get_prefix() . '_header_btn_url_2', '#');
             $html .= '<a href="' . esc_url($btn_url) . '" class="header-image-btn">' . esc_html($btn_text_2) . '</a>';
@@ -137,7 +137,7 @@ if (!function_exists('atlast_customizer_settings')):
         $wp_customize->add_setting($prefix . '_about_section_page', array(
             'default' => '',
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
         ));
 
 
@@ -175,14 +175,6 @@ if (!function_exists('atlast_customizer_settings')):
             'sanitize_callback' => 'atlast_business_sanitize_checkbox',
         ));
 
-
-        $wp_customize->add_setting($prefix . '_services_section_style', array(
-            'default' => 'default',
-            'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
-        ));
-
-
         $wp_customize->add_setting($prefix . '_services_section_title', array(
             'default' => esc_html__('Tailor made solutions for every client. We specialize in..', 'atlast-business'),
             'capability' => 'edit_theme_options',
@@ -199,37 +191,37 @@ if (!function_exists('atlast_customizer_settings')):
         $wp_customize->add_setting($prefix . '_services_section_page_1', array(
             'default' => '',
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
         ));
 
         $wp_customize->add_setting($prefix . '_services_section_page_2', array(
             'default' => '',
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
         ));
 
         $wp_customize->add_setting($prefix . '_services_section_page_3', array(
             'default' => '',
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
         ));
 
         $wp_customize->add_setting($prefix . '_services_section_page_4', array(
             'default' => '',
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
         ));
 
         $wp_customize->add_setting($prefix . '_services_section_page_5', array(
             'default' => '',
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
         ));
 
         $wp_customize->add_setting($prefix . '_services_section_page_6', array(
             'default' => '',
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
         ));
 
         $wp_customize->add_setting($prefix . '_services_section_icon_1', array(
@@ -417,25 +409,25 @@ if (!function_exists('atlast_customizer_settings')):
         $wp_customize->add_setting($prefix . '_projects_section_page_1', array(
             'default' => '',
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
         ));
 
         $wp_customize->add_setting($prefix . '_projects_section_page_2', array(
             'default' => '',
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
         ));
 
         $wp_customize->add_setting($prefix . '_projects_section_page_3', array(
             'default' => '',
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
         ));
 
         $wp_customize->add_setting($prefix . '_projects_section_page_4', array(
             'default' => '',
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
         ));
 
 
@@ -489,18 +481,18 @@ if (!function_exists('atlast_customizer_settings')):
             'label' => esc_html__('Select the fourth project', 'atlast-business'),
         ));
 
-	    /*============================================================*/
-	    /** Home Gallery area */
-	    /*=============================================================*/
+        /*============================================================*/
+        /** Home Gallery area */
+        /*=============================================================*/
 
-	    $wp_customize->add_section($prefix . '_home_gallery_section', array(
-		    'priority' => 13,
-		    'capability' => 'edit_theme_options',
-		    'theme_supports' => '',
-		    'title' => __('Gallery section', 'atlast-business'),
-		    'description' => esc_html__('The Gallery section of the homepage. Use the Foogallery plugin to show your gallery.', 'atlast-business'), 
-		    'panel' => $prefix . '_home_theme_panel',
-	    ));
+        $wp_customize->add_section($prefix . '_home_gallery_section', array(
+            'priority' => 13,
+            'capability' => 'edit_theme_options',
+            'theme_supports' => '',
+            'title' => __('Gallery section', 'atlast-business'),
+            'description' => esc_html__('The Gallery section of the homepage. Use the Foogallery plugin to show your gallery.', 'atlast-business'),
+            'panel' => $prefix . '_home_theme_panel',
+        ));
 
         $wp_customize->add_setting($prefix . '_enable_gallery_section', array(
             'default' => true,
@@ -522,7 +514,7 @@ if (!function_exists('atlast_customizer_settings')):
         $wp_customize->add_setting($prefix . '_gallery_section_page', array(
             'default' => '',
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
         ));
 
         $wp_customize->add_control($prefix . '_enable_gallery_section', array(
@@ -587,25 +579,25 @@ if (!function_exists('atlast_customizer_settings')):
         $wp_customize->add_setting($prefix . '_team_section_page_1', array(
             'default' => '',
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
         ));
 
         $wp_customize->add_setting($prefix . '_team_section_page_2', array(
             'default' => '',
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
         ));
 
         $wp_customize->add_setting($prefix . '_team_section_page_3', array(
             'default' => '',
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
         ));
 
         $wp_customize->add_setting($prefix . '_team_section_page_4', array(
             'default' => '',
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
         ));
 
         $wp_customize->add_control($prefix . '_enable_team_section', array(
@@ -800,15 +792,15 @@ if (!function_exists('atlast_customizer_settings')):
         /*== Top Bar section settings ==*/
 
         $wp_customize->add_setting($prefix . '_topbar_enable', array(
-            'default' => '0',
+            'default' => 0,
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_number_absint',
         ));
 
         $wp_customize->add_setting($prefix . '_topbar_layout', array(
-            'default' => '1',
+            'default' => 1,
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_number_absint',
         ));
 
 
@@ -819,8 +811,8 @@ if (!function_exists('atlast_customizer_settings')):
             'label' => esc_html__('Do you want to enable the top bar?', 'atlast-business'),
             'description' => esc_html__('Show off or not?', 'atlast-business'),
             'choices' => array(
-                '0' => esc_html__('No', 'atlast-business'),
-                '1' => esc_html__('Yes', 'atlast-business'),
+                0 => esc_html__('No', 'atlast-business'),
+                1 => esc_html__('Yes', 'atlast-business'),
             )
         ));
 
@@ -831,8 +823,8 @@ if (!function_exists('atlast_customizer_settings')):
             'label' => esc_html__('Select the possible layouts', 'atlast-business'),
             'description' => esc_html__('Choose among the different layouts', 'atlast-business'),
             'choices' => array(
-                '1' => esc_html__('Menu + Widget area', 'atlast-business'),
-                '2' => esc_html__('Just Widget Area', 'atlast-business'),
+                1 => esc_html__('Menu + Widget area', 'atlast-business'),
+                2 => esc_html__('Just Widget Area', 'atlast-business'),
             )
         ));
 
@@ -841,54 +833,54 @@ if (!function_exists('atlast_customizer_settings')):
 
         /*== Header section settings ==*/
         $wp_customize->add_setting($prefix . '_header_layout', array(
-            'default' => '1',
+            'default' => 1,
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_number_absint',
         ));
 
         $wp_customize->add_setting($prefix . '_everywhere_header', array(
-            'default' => '0',
+            'default' => 0,
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_number_absint',
         ));
 
         $wp_customize->add_setting($prefix . '_sticky_header', array(
-            'default' => '0',
+            'default' => 0,
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_number_absint',
         ));
 
         $wp_customize->add_setting($prefix . '_transparent_header', array(
-            'default' => '0',
+            'default' => 0,
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_number_absint',
         ));
 
         $wp_customize->add_setting($prefix . '_header_image_heading', array(
-            'default' => esc_html__('The MOST complete FREE WordPress Theme. Do it like a PRO.', 'atlast-business'),
+            'default' => '',
             'capability' => 'edit_theme_options',
             'sanitize_callback' => 'sanitize_text_field',
         ));
 
         $wp_customize->add_setting($prefix . '_header_btn_text_1', array(
-            'default' => esc_html__('Download Now', 'atlast-business'),
+            'default' => '',
             'capability' => 'edit_theme_options',
             'sanitize_callback' => 'sanitize_text_field',
         ));
         $wp_customize->add_setting($prefix . '_header_btn_url_1', array(
-            'default' => '#',
+            'default' => '',
             'capability' => 'edit_theme_options',
             'sanitize_callback' => 'esc_url_raw',
         ));
 
         $wp_customize->add_setting($prefix . '_header_btn_text_2', array(
-            'default' => esc_html__('Great Features', 'atlast-business'),
+            'default' => '',
             'capability' => 'edit_theme_options',
             'sanitize_callback' => 'sanitize_text_field',
         ));
 
         $wp_customize->add_setting($prefix . '_header_btn_url_2', array(
-            'default' => '#',
+            'default' => '',
             'capability' => 'edit_theme_options',
             'sanitize_callback' => 'esc_url_raw',
         ));
@@ -986,9 +978,9 @@ if (!function_exists('atlast_customizer_settings')):
         /*== Blog section settings ==*/
 
         $wp_customize->add_setting($prefix . '_blog_layout', array(
-            'default' => '1',
+            'default' => 1,
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_number_absint',
         ));
 
         $wp_customize->add_setting($prefix . '_blog_excerpt_length', array(
@@ -1005,8 +997,8 @@ if (!function_exists('atlast_customizer_settings')):
             'label' => esc_html__('Select blog layout.', 'atlast-business'),
             'description' => esc_html__('You can select the blog list page layout.', 'atlast-business'),
             'choices' => array(
-                '1' => esc_html__('Style 1', 'atlast-business'),
-                '2' => esc_html__('Style 2', 'atlast-business'),
+                1 => esc_html__('Style 1', 'atlast-business'),
+                2 => esc_html__('Style 2', 'atlast-business'),
             )
         ));
 
@@ -1021,9 +1013,9 @@ if (!function_exists('atlast_customizer_settings')):
         /*== Single Post settings ==*/
 
         $wp_customize->add_setting($prefix . '_single_layout', array(
-            'default' => '1',
+            'default' => 1,
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_number_absint',
         ));
 
         $wp_customize->add_control($prefix . '_single_layout', array(
@@ -1033,9 +1025,9 @@ if (!function_exists('atlast_customizer_settings')):
             'label' => esc_html__('Select single post layout.', 'atlast-business'),
             'description' => esc_html__('You can select the single post layout.', 'atlast-business'),
             'choices' => array(
-                '1' => esc_html__('Style 1 - default', 'atlast-business'),
-                '2' => esc_html__('Style 2 - Title and meta at the top', 'atlast-business'),
-                '3' => esc_html__('Full Width Posts with no sidebar', 'atlast-business'),
+                1 => esc_html__('Style 1 - default', 'atlast-business'),
+                2 => esc_html__('Style 2 - Title and meta at the top', 'atlast-business'),
+                3 => esc_html__('Full Width Posts with no sidebar', 'atlast-business'),
             )
         ));
         /*== Social section settings ==*/
@@ -1112,9 +1104,9 @@ if (!function_exists('atlast_customizer_settings')):
 
         /*== Footer section settings ==*/
         $wp_customize->add_setting($prefix . '_footer_layout', array(
-            'default' => '1',
+            'default' => 1,
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_number_absint',
         ));
 
         $wp_customize->add_control($prefix . '_footer_layout', array(
@@ -1124,17 +1116,17 @@ if (!function_exists('atlast_customizer_settings')):
             'label' => esc_html__('Select the footer(widget area) layout', 'atlast-business'),
             'description' => esc_html__('You can have boxed and full width layout.', 'atlast-business'),
             'choices' => array(
-                '1' => esc_html__('Boxed', 'atlast-business'),
-                '2' => esc_html__('Full width', 'atlast-business'),
+                1 => esc_html__('Boxed', 'atlast-business'),
+                2 => esc_html__('Full width', 'atlast-business'),
             )
         ));
 
         /*== Copyright section settings ==*/
 
         $wp_customize->add_setting($prefix . '_copyright_layout', array(
-            'default' => '1',
+            'default' => 1,
             'capability' => 'edit_theme_options',
-            'sanitize_callback' => 'esc_attr',
+            'sanitize_callback' => 'atlast_business_sanitize_number_absint',
         ));
 
         $wp_customize->add_setting($prefix . '_copyright_text', array(
@@ -1150,10 +1142,10 @@ if (!function_exists('atlast_customizer_settings')):
             'label' => esc_html__('Select the copyright section style', 'atlast-business'),
             'description' => esc_html__('There are more than one to choose from. Please refer to the documentation to view the available layouts.', 'atlast-business'),
             'choices' => array(
-                '1' => esc_html__('Style 1', 'atlast-business'),
-                '2' => esc_html__('Style 2', 'atlast-business'),
-                '3' => esc_html__('Style 3', 'atlast-business'),
-                '4' => esc_html__('Style 4', 'atlast-business'),
+                1 => esc_html__('Style 1', 'atlast-business'),
+                2 => esc_html__('Style 2', 'atlast-business'),
+                3 => esc_html__('Style 3', 'atlast-business'),
+                4 => esc_html__('Style 4', 'atlast-business'),
             )
         ));
 
@@ -1208,15 +1200,15 @@ endif;
  * Function that sets or removes the transparency class
  * based on the Customizer settings
  */
-if (!function_exists('atlast_set_transparent_menu')):
-    function atlast_set_transparent_menu()
+if (!function_exists('atlast_business_set_transparent_menu')):
+    function atlast_business_set_transparent_menu()
     {
         $prefix = atlast_business_get_prefix();
 
         $style = esc_attr(get_theme_mod($prefix . '_header_layout', ''));
         $trans = esc_attr(get_theme_mod($prefix . '_transparent_header', '0'));
 
-        if ($trans == '1' && $style == '1') {
+        if ($trans == '1' && $style == '1' && (is_front_page() || is_home())) {
             return ' transparent-header ';
         } else {
             return false;
@@ -1273,6 +1265,13 @@ function atlast_business_sanitize_checkbox($checked)
     return ((isset($checked) && true == $checked) ? true : false);
 }
 
+function atlast_business_sanitize_dropdown_pages($page_id, $setting)
+{
+
+    $page_id = absint($page_id);
+    return ('publish' == get_post_status($page_id) ? $page_id : $setting->default);
+}
+
 /*
  * Breadcrumbs
  */
@@ -1286,7 +1285,7 @@ if (!function_exists('atlast_business_breadcrumb')):
             echo '<ul class="breadcrumb atlast-breadcrumb">';
             echo '<li class="breadcrumb-item">';
             echo '<a href="';
-            echo home_url();
+            echo esc_url(home_url());
             echo '">';
             bloginfo('name');
             echo '</a></li>' . $sep;
@@ -1299,11 +1298,11 @@ if (!function_exists('atlast_business_breadcrumb')):
             } elseif (is_archive() || is_single()) {
                 echo '<li class="breadcrumb-item">';
                 if (is_day()) {
-                    printf(__('%s', 'atlast-business'), get_the_date());
+                    printf(__('Day: %s', 'atlast-business'), get_the_date());
                 } elseif (is_month()) {
-                    printf(__('%s', 'atlast-business'), get_the_date(_x('F Y', 'monthly archives date format', 'atlast-business')));
+                    printf(__('Month: %s', 'atlast-business'), get_the_date(_x('F Y', 'monthly archives date format', 'atlast-business')));
                 } elseif (is_year()) {
-                    printf(__('%s', 'atlast-business'), get_the_date(_x('Y', 'yearly archives date format', 'atlast-business')));
+                    printf(__('Year: %s', 'atlast-business'), get_the_date(_x('Y', 'yearly archives date format', 'atlast-business')));
                 } else {
                     _e('Blog Archives', 'atlast-business');
                 }
@@ -1321,10 +1320,10 @@ if (!function_exists('atlast_business_breadcrumb')):
                 echo '</li>';
             }
             if (is_home()) {
-                global $post;
+
                 $page_for_posts_id = get_option('page_for_posts');
                 if ($page_for_posts_id) {
-                    $post = get_page($page_for_posts_id);
+                    $post = get_post($page_for_posts_id);
                     setup_postdata($post);
                     the_title();
                     rewind_posts();
@@ -1510,14 +1509,15 @@ endif;
 /*
  * Function that returns the allowed scripts
  */
-if(!function_exists('atlast_business_allowed_HTML')):
-    function atlast_business_allowed_HTML(){
+if (!function_exists('atlast_business_allowed_HTML')):
+    function atlast_business_allowed_HTML()
+    {
         return array(
             'a' => array(
                 'href' => array(),
                 'title' => array()
             ),
-            'img'=> array(),
+            'img' => array(),
             'br' => array(),
             'em' => array(),
             'strong' => array(),

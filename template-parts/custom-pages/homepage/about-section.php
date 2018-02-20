@@ -2,7 +2,7 @@
 $prefix = atlast_business_get_prefix();
 $about_page = get_theme_mod($prefix . '_about_section_page', '');
  if ($about_page != 0 && $about_page != null):
-    $page = get_post(esc_attr($about_page)); ?>
+    $page = get_post(absint($about_page)); ?>
 
     <section class="home-about pad-tb-80" id="home-about-section">
         <div class="container grid-xl">

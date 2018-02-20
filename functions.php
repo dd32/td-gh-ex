@@ -12,7 +12,7 @@ function atlast_business_setup() {
 		'flex-height'   => true,
 		'height'        => 850,
 		'width'         => 1980,
-		'default-image' => get_template_directory_uri() . '/images/skyscaper-header-64opac.jpg',
+		'default-image' => get_template_directory_uri() . '/images/cropped-header-atlast.jpg',
 	) );
 	add_theme_support( 'custom-logo', array(
 		'height'      => 50,
@@ -168,7 +168,7 @@ function atlast_business_widgets_init() {
 
 if ( ! function_exists( 'atlast_business_comment' ) ):
 	function atlast_business_comment( $comment, $args, $depth ) {
-		$GLOBALS['comment'] = $comment;
+
 		extract( $args, EXTR_SKIP );
 
 		if ( 'article' == $args['style'] ) {
@@ -183,7 +183,7 @@ if ( ! function_exists( 'atlast_business_comment' ) ):
         <div class="comments-container">
             <div class="container">
                 <div class="columns">
-                    <<?php echo $tag ?>
+                    <<?php echo esc_html($tag) ?>
 					<?php comment_class( empty( $args['has_children'] ) ? 'col-12' : 'parent col-12' ) ?>
                     id="comment-<?php comment_ID() ?>"
                     itemscope itemtype="http://schema.org/Comment">

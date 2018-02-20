@@ -2,13 +2,13 @@
 Contributors: ArchimidisM
 Requires at least: WordPress 4.5.1
 Tested up to: WordPress 4.9.4
-Version: 1.0.0
+Version: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: theme-options,full-width-template,two-columns
 
 == Description ==
-Atlast Business theme contains over 60 customizer settings. It is maybe the most complete and ultra fast free business WordPress theme. There a lot of layout options in some of the theme's key elements. It contains 3 headers, 3 footers, a top bar with a combination of text and widgets , 3 navigation menus, two post options and many more options. This business WordPress theme is 100% compatible with the native WordPress customizer. From the customizer settings you can easily set your homepage really easy and fast. The main documentation of this theme is here (https://documentation.akisthemes.com) and you can find a fully working demo here (https://justwp.io) . Atlast Business theme is a top free theme that can be used from different types of businesses. At last but not least this theme is translation ready and fully responsive. Also it is very friendly to caching plugins like W3 Total Cache , WP Fastest Cache etc.
+Atlast Business theme contains over 60 customizer settings. It is maybe the most complete and ultra fast free business WordPress theme. There a lot of layout options in some of the theme's key elements. It contains 3 headers, 3 footers, a top bar with a combination of text and widgets , 3 navigation menus, 4 copyright styles, widgetized areas ,  two post options and many more options. This business WordPress theme is 100% compatible with the native WordPress customizer. From the customizer settings you can easily set your homepage really easy and fast. The main documentation of this theme is here (https://documentation.akisthemes.com) and you can find a fully working demo here (https://justwp.io) . Atlast Business theme is a top free theme that can be used from different types of businesses. At last but not least this theme is translation ready and fully responsive. Also it is very friendly to caching plugins like W3 Total Cache , WP Fastest Cache etc.
 
 * Mobile-first, Responsive Layout
 * Custom Colors
@@ -75,26 +75,24 @@ TGM Plugin activation class by Thomas Griffin v 2.6.1
 License: GPLv2
 Source: http://tgmpluginactivation.com/
 
-Image used in screenshot.png: A photo (https://unsplash.com/photos/voxDu8GIs6g)
- by Breather (https://unsplash.com/@breather),
+Image used in screenshot.png: A photo (https://www.pexels.com/photo/architecture-buildings-business-city-325185/)
+ by by Aleksandar Pasaric (https://www.pexels.com/u/apasaric/),
  licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 
 The following images:
-- A photo ( https://unsplash.com/search/computer?photo=hpjSkU2UYSU ) -- by Carlos Muza, licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo ( https://unsplash.com/photos/o87YGz-G3O4 ) -- by rawpixel.com, licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo ( https://unsplash.com/photos/PhYq704ffdA) -- by Sean Pollock, licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo (https://www.pexels.com/photo/apple-computer-desk-laptop-209151/ ) -- by pixabay, licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 - A photo ( https://www.pexels.com/photo/silhouette-man-person-stars-12567/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo ( https://unsplash.com/photos/xjSkI_seiZY ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo (https://www.pexels.com/photo/computer-cup-desk-drink-434337/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 - A photo ( https://pixabay.com/en/city-buildings-skyscrapers-towers-1030834/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo ( https://unsplash.com/photos/KBZlU_X9YVA ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo ( https://www.pexels.com/photo/colleagues-cooperation-fist-bump-fists-398532/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 - A photo ( https://www.pexels.com/photo/marketing-office-working-business-33999/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 - A photo ( https://www.pexels.com/photo/box-business-celebrate-celebration-296878/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 - A photo ( https://www.pexels.com/photo/adult-beard-boy-casual-220453/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 - A photo ( https://www.pexels.com/photo/face-facial-hair-fine-looking-guy-614810/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 - A photo ( https://www.pexels.com/photo/closeup-photo-of-woman-with-brown-coat-and-gray-top-733872/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo ( https://unsplash.com/photos/k8apfKm-Md4 ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo ( https://unsplash.com/photos/Haz8prUXrI4 ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
-- A photo ( https://unsplash.com/photos/3shfnfzdFVc ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo (https://pixabay.com/en/student-typing-keyboard-text-woman-849825/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo ( https://pixabay.com/en/christmas-holiday-yuletide-workshop-3013762/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo ( https://pixabay.com/en/ux-prototyping-design-webdesign-788002/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 
 == Notes ==
 
@@ -105,3 +103,14 @@ Mobile menu shows only the top level elements. You can also add your custom logo
 
 = Version 1.0.0 =
 - Initial Release
+
+= Version 1.1.0 =
+- Escaped all "home_url()" function with esc_url() function.
+- Changed all the archive titles with the the_archive_title() function
+- Fixed search page major title
+- Fixed missing icon font from widget list
+- Escaped "get_permalink()" function with esc_url - all instances
+- All header buttons and texts are now disabled upon the theme activation
+- All dummy content from Unsplash.com was replaced
+- Added new sanitization functions for some of the Customizer's elements
+- Fixed transparent menu when the page has not a header image assigned.
