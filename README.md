@@ -1,6 +1,6 @@
 == Ascent ==
 
-Tags: white, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-menu, featured-images, post-formats, rtl-language-support, theme-options, translation-ready
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, post-formats, theme-options, translation-ready
 Tested up to: 4.9.4
 Stable tag: 3.6
 License: GNU General Public License v2 or later
@@ -89,6 +89,10 @@ Yes! You can choose your color scheme under Appearance -> Theme Options -> Styli
 
 
 = Changelog =
+
+### Version 2.0.5
+- Update: Theme version
+
 
 ### Version 2.0.4
 - New: Added two Theme color scheme(Dodger blue and Medium slate blue)
