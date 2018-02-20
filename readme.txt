@@ -32,9 +32,13 @@ Bcorporate includes support for Infinite Scroll in Jetpack.
 = 1.0 - Jan 1 2018 =
 * Initial release
 
-= 1.0.1 - Few 4 2018 =
+= 1.0.1 - Feb 4 2018 =
 * Implemented TGM plugin to recommend plugins used in theme
 * Fixed some escaping issues
+
+= 1.0.2 - Feb 20 2018 =
+* fixed themeurl page not found issue
+* Fixed the google font enque issues
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt

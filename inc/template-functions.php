@@ -124,10 +124,10 @@ function bcorporate_home_feature_sec_fnc() {
 				    	</div>
 				    	<div class="content_part_feature">
 				    		<h3><?php the_title(); ?></h3>
-				    		<p><?php echo esc_html( wp_trim_words(get_the_content(), '22', '') ); ?></p>
+				    		<p><?php echo wp_kses_post( wp_trim_words(get_the_content(), '22', '') ); ?></p>
 				    	</div>
 			    	</div>	
-			 	<?php $bcorporate_feat_aos_delay = $bcorporate_feat_aos_delay+50; endwhile;  wp_reset_query(); } ?>
+			 	<?php $bcorporate_feat_aos_delay = $bcorporate_feat_aos_delay+50; endwhile;  wp_reset_postdata(); } ?>
 			</div>
 		</div>
 		</section>
@@ -187,7 +187,7 @@ function bcorporate_home_portfolio_sec_fnc() {
 				     	
 				    	</div>
 				    </div>
-			 	<?php $bcorporate_portfolio_aos_delay = $bcorporate_portfolio_aos_delay+50;  endwhile; wp_reset_query();
+			 	<?php $bcorporate_portfolio_aos_delay = $bcorporate_portfolio_aos_delay+50;  endwhile; wp_reset_postdata();
 			 	}
 			 	 ?>
 			</div></div>
@@ -271,12 +271,12 @@ function bcorporate_home_services_sec_fnc() {
 					    	<div class="content_part_services">
 					    		<h3><a href="#"><?php the_title(); ?></a></h3>
 					    		<div class="main_content_services">
-					    			<p><?php echo esc_html( get_the_content() ); ?></p>
+					    			<p><?php echo wp_kses_post( get_the_content() ); ?></p>
 					    		</div>	
 					    	</div>
 				    	</div>
 				    </div>
-			 	<?php $bcorporate_services_two_aos_delay = $bcorporate_services_two_aos_delay+50; endwhile; wp_reset_query();
+			 	<?php $bcorporate_services_two_aos_delay = $bcorporate_services_two_aos_delay+50; endwhile; wp_reset_postdata();
 			 	}
 			 	 ?>
 			</div></div>
@@ -334,7 +334,7 @@ function bcorporate_home_blog_sec_fnc() {
 						    			<span class="bcorp_blog_author"><?php echo esc_html( get_the_author(),'bcorporate' );?></span> | 
 						    			<span class="bcorp_blog_date"> <?php echo esc_html( get_the_date(), 'bcorporate' );?> </span></p>
 						    		<div class="main_content_blog"><p>
-						    			<?php echo esc_html( wp_trim_words( get_the_content(), 24, '...' ) ); ?></p>
+						    			<?php echo wp_kses_post( wp_trim_words( get_the_content(), 24, '...' ) ); ?></p>
 						    		</div>
 						    		<div class="BE-btn-primary pull-left ">
 						    			<a href="<?php the_permalink(); ?>" class="read_me_blog btn">Read Full Story</a>
@@ -350,7 +350,7 @@ function bcorporate_home_blog_sec_fnc() {
 						    	</div>
 				    	</div></div>
 					</div>
-			 	<?php $bcorporate_about_aos_delay = $bcorporate_about_aos_delay+100; endwhile; wp_reset_query();
+			 	<?php $bcorporate_about_aos_delay = $bcorporate_about_aos_delay+100; endwhile; wp_reset_postdata();
 			 	}
 			 	 ?>
 			</div></div>
@@ -397,7 +397,7 @@ function bcorporate_home_testimonial_sec_fnc() {
 				    <div class="col-md-4 col-sm-4 testimonial_single">
 				    	<div  data-aos="fade-up" data-aos-delay="<?php echo esc_attr( $bcorporate_testimonial_aos_delay ); ?>" data-aos-once="true">
 					    	<div class="main_content_testimonial">
-					    		<p><?php echo esc_html( wp_trim_words( get_the_content(), 20, '...' ) ); ?></p>
+					    		<p><?php echo wp_kses_post( wp_trim_words( get_the_content(), 20, '...' ) ); ?></p>
 					    	</div>
 					    	<div class="testimonial_image">
 					    		<a href="<?php the_permalink();?>">
@@ -409,7 +409,7 @@ function bcorporate_home_testimonial_sec_fnc() {
 					    	</div>
 				    	</div>
 				    </div>
-			 	<?php $bcorporate_testimonial_aos_delay = $bcorporate_testimonial_aos_delay+50; endwhile; wp_reset_query();
+			 	<?php $bcorporate_testimonial_aos_delay = $bcorporate_testimonial_aos_delay+50; endwhile; wp_reset_postdata();
 			 	}
 			 	 ?>
 			</div></div>

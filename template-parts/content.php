@@ -48,7 +48,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer clearfix">
-		<a href="<?php the_permalink(); ?>"><?php esc_html_e('More..', 'bcorporate'); ?></a>
 		<?php 
 			if( function_exists ( '_simple_share_buttons_adder_add_action_links' ) ) : ?>
 				<div class="float-right"><span> <?php echo do_shortcode( '[ssba-buttons]' ); ?></span></div>

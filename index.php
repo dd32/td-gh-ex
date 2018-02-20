@@ -65,6 +65,7 @@ get_header(); ?>
 								<nav class="pagination text-center justify-content-center" role="navigation" aria-label="Pagination">
 									<?php echo paginate_links( array('prev_text' => ('<i class="fa fa-chevron-left" aria-hidden="true"></i>'), 'next_text' => ('<i class="fa fa-chevron-right" aria-hidden="true"></i>') ) ); ?>
 								</nav>
+								<?php wp_reset_postdata(); ?>
 			    				<?php
 			    			endif;
 

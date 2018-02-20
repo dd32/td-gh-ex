@@ -162,17 +162,17 @@ add_filter( 'woocommerce_enqueue_styles', '__return_false' );
  */
 function bcorporate_scripts() {
 
+	// Add custom fonts, used in the main stylesheet.
+	wp_enqueue_style( 'bcorporate-fonts', bcorporate_fonts_url(), array(), null );
+
 	wp_enqueue_style( 'bootstrap-css', get_stylesheet_directory_uri() . '/inc/bootstrap/css/bootstrap.min.css', array(), '4.0.0' );
-	wp_enqueue_style( 'bcorporate-font-awesome', get_template_directory_uri() . '/inc/font-awesome/font-awesome.min.css', false, '4.7.0' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/inc/font-awesome/font-awesome.min.css', false, '4.7.0' );
 	wp_enqueue_style( 'lightslider-css', get_stylesheet_directory_uri() . '/inc/lightslider/lightslider.css', array(), '1.1.3' );
 
 	wp_enqueue_style( 'aos-css', get_stylesheet_directory_uri() . '/inc/animation/aos-master.css', array(), '2.2.0' );
 
 
 	wp_enqueue_style( 'bcorporate-style', get_stylesheet_uri() );
-	
-	// Roboto font google
-	wp_enqueue_style( 'bcorporate-googlefont-montserrat', '//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Sacramento' );
 
 	wp_enqueue_script( 'bcorporate-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -191,6 +191,39 @@ function bcorporate_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'bcorporate_scripts' );
+
+/**
+ * Register custom fonts.
+ */
+function bcorporate_fonts_url() {
+	$fonts_url = '';
+
+	$bcorporate_roboto_font = _x( 'on', 'Roboto: on or off', 'bcorporate' );
+	$bcorporate_sacramento = _x( 'on', 'Sacramento: on or off', 'bcorporate' );
+
+
+	if ( 'off' !== $bcorporate_roboto_font || 'off' !== $bcorporate_sacramento ) {
+
+		$font_families = array();
+
+		if ( 'off' !== $bcorporate_roboto_font ) {
+				$font_families[] = 'Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i';
+		}
+
+		if ( 'off' !== $bcorporate_sacramento ) {
+				$font_families[] = 'Sacramento';
+		}
+		
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+
+	return esc_url_raw( $fonts_url );
+}
 
 /**
  * Implement the Custom Header feature.

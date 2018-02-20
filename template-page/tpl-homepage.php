@@ -35,28 +35,28 @@ get_header(); ?>
 			 
 
 				<!-- About section home -->
-				<?php do_action('bcorporate_home_about_sec', 'bcorporate'); ?>
+				<?php do_action('bcorporate_home_about_sec'); ?>
 				
 				<!-- Our Features section home -->
-				<?php do_action('bcorporate_home_feature_sec', 'bcorporate'); ?>
+				<?php do_action('bcorporate_home_feature_sec'); ?>
 
 				<!-- Our Portfolio section home -->
-				<?php do_action('bcorporate_home_portfolio_sec', 'bcorporate'); ?>
+				<?php do_action('bcorporate_home_portfolio_sec'); ?>
 
 				<!-- Our cta one section home -->
-				<?php do_action('bcorporate_home_ctaone_sec', 'bcorporate'); ?>
+				<?php do_action('bcorporate_home_ctaone_sec'); ?>
 
 				<!-- Our Services section home -->
-				<?php do_action('bcorporate_home_services_sec', 'bcorporate'); ?>
+				<?php do_action('bcorporate_home_services_sec'); ?>
 
 				<!-- Our Services section home -->
-				<?php do_action('bcorporate_home_blog_sec', 'bcorporate'); ?>
+				<?php do_action('bcorporate_home_blog_sec'); ?>
 
 				<!-- Testimonial section home -->
-				<?php do_action('bcorporate_home_testimonial_sec', 'bcorporate'); ?>
+				<?php do_action('bcorporate_home_testimonial_sec'); ?>
 
 				<!-- CATA two section home -->
-				<?php do_action('bcorporate_home_ctatwo_sec', 'bcorporate'); ?>
+				<?php do_action('bcorporate_home_ctatwo_sec'); ?>
 
 				
 	 
