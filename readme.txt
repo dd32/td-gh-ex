@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.1.8 | 20th Febuary 2018 = 
+* Wordpress svn not working forced to update version.
+
 = Version 3.1.7 | 20th Febuary 2018 = 
 * Schema: portfolio post as creative work.
 * Update: Woo templates.
