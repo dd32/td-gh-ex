@@ -145,7 +145,7 @@ jQuery(window).load(function(){
     jQuery('.preloader').delay(400).fadeOut(500);
 });
 //One page smooth scrolling
-if(best_startup_script_handler.single_page == 0) {
+
     jQuery(function() {
       jQuery('a[href*="#"]:not([href="#"])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -160,7 +160,7 @@ if(best_startup_script_handler.single_page == 0) {
         }
       });
     });
-}
+
 /** start Shuffle Script **/
 jQuery(document).ready(function() {
     var cf7_icon = jQuery(".cf7-btn-icon").html();

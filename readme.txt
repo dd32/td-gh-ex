@@ -3,6 +3,9 @@ Theme Name: Best Startup
 Theme URI: https://electrathemes.com/wordpress-themes/best-startup/
 Author: ElectraThemes
 Author URI: http://electathemes.com/
+Requires at least: 4.0
+Tested up to: 4.9.4
+Stable tag: 1.0.2
 Description: Best Startup is a premium quality WordPress theme mainly designed for online startups which need high quality websites quickly. Using Best Startup WordPress themes, online entrepreneurs will be able to create eye catchy websites in just a few minutes even if they are newbie as we have a step by step tutorial available. Best Startup WordPress theme is a mobile responsive WordPress theme hence the website will look amazing in all the mobile devices, tables, MacBooks, PCs etc. Step by step documentation and dummy data is available here: https://electrathemes.com/documentation/best-startup/
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -53,6 +56,9 @@ Responsive design(Bootstrap), Customization Options, Custom Menu, supports socia
 * Readme resource added.
 * Blog layout set.
 * Escaping upadte in themes files.
+
+= 1.0.2 (20 Feb 2018) 
+* Misc Changes in customizer and best-startup-custom.js
 
 
 ---------------------------------------------------------

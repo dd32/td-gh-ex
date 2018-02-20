@@ -198,7 +198,10 @@ ul#recentcomments li:before,
     -o-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s;
 }
-.site-title .site-description { text-align: center;}
+.site-title .site-description { 
+    text-align: center;
+    font-size: 70%;
+}
 a {
     outline: 0;
     color: #4d4d4d;
@@ -1500,6 +1503,7 @@ span.wpcf7-not-valid-tip {
 }
 .footer-wrap.style2 .footer-social-icon ul{
     padding-left: 0;
+    margin: 0;
 }
 .footer-wrap.style2 .footer-nav ul {
     padding: 10px 0;
@@ -1520,15 +1524,13 @@ span.wpcf7-not-valid-tip {
 }
 .footer-wrap.style2 .footer-social-icon ul li {
     display: inline-block;
-    margin: 5px 13px;
+    margin: 10px 13px;
     cursor: pointer;
-}
-.footer-wrap.style2 .footer-social-icon ul li i::before {
-    font-size: 35px;
 }
 .footer-wrap.style2 .copyright p {
     font-weight: 500;
     padding: 5px 0;
+    margin: 0;
 }
 .footer-wrap.style2 .copyright a:hover {
     color: #ea8800;

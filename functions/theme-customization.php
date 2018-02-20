@@ -236,7 +236,7 @@ $wp_customize->add_setting( 'pagetitle', array(
 ));
 
 $wp_customize->add_control( 'pagetitle', array(
-    'label'    => __( 'Home Page Title', 'best-startup' ),
+    'label'    => __( 'Blog Archive Page Title', 'best-startup' ),
     'section'  => 'homepageSection',
     'type'       => 'select',   
     'choices' => array(
@@ -684,7 +684,7 @@ $wp_customize->add_section( 'footerCopyright' , array(
 $wp_customize->add_setting(
   'hideFooterWidgetBar',
   array(
-      'default' => '1',
+      'default' => '2',
       'capability'     => 'edit_theme_options',
       'sanitize_callback' => 'sanitize_text_field',
       'priority' => 20, 
@@ -851,11 +851,11 @@ function best_startup_custom_css(){
     .footer-box{
       background:".get_theme_mod('footerBackgroundColor','#2c3e50').";
     }
-    .footer-box div,.footer-box .widget-title,.footer-box p,.footer-box .textwidget p,.footer-box div,.footer-box h1,.footer-box h2,.footer-box h3,.footer-box h4,.footer-box h5,.footer-box h6 {
-      color: ".get_theme_mod('footerTextColor','#000000').";
-    }
+    .footer-box div,.footer-box .widget-title,.footer-box p,.footer-box .textwidget, .footer-box .calendar_wrap caption, .footer-box .textwidget p,.footer-box div,.footer-box h1,.footer-box h2,.footer-box h3,.footer-box h4,.footer-box h5,.footer-box h6 {
+      color: ".get_theme_mod('footerTextColor','#ffffff').";
+    }    
     .footer-box .footer-widget ul li a,.footer-widget .tagcloud a{
-      color:".get_theme_mod('footerLinkColor','#000000').";
+      color:".get_theme_mod('footerLinkColor','#ffffff').";
     }
     .footer-box .footer-widget ul li a:hover, .footer-widget .tagcloud a:hover{
       color:".get_theme_mod('footerLinkHoverColor','#ea8800').";
