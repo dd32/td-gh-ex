@@ -619,7 +619,7 @@ function ashe_true_false( $option ) {
 		esc_url(ashe_options( 'featured_links_image_3' ))
 	);
 
-	$featured_links = ( ashe_is_preview() ) ? 3 : count( array_filter( $featured_links ) );
+	$featured_links = count( array_filter( $featured_links ) );
 	$featured_links_gutter = 0;
 
 	// Gutter	
@@ -641,7 +641,7 @@ function ashe_true_false( $option ) {
 		}
 	';
 
-	if ( ashe_options( 'featured_links_title_1' ) === '' && ! ashe_is_preview() ) {
+	if ( ashe_options( 'featured_links_title_1' ) === '' ) {
 		$css .= '
 			.featured-link:nth-child(1) .cv-inner {
 			    display: none;
@@ -649,7 +649,7 @@ function ashe_true_false( $option ) {
 		';
 	}
 
-	if ( ashe_options( 'featured_links_title_2' ) === '' && ! ashe_is_preview() ) {
+	if ( ashe_options( 'featured_links_title_2' ) === '' ) {
 		$css .= '
 			.featured-link:nth-child(2) .cv-inner {
 			    display: none;
@@ -657,7 +657,7 @@ function ashe_true_false( $option ) {
 		';
 	}
 	
-	if ( ashe_options( 'featured_links_title_3' ) === '' && ! ashe_is_preview() ) {
+	if ( ashe_options( 'featured_links_title_3' ) === '' ) {
 		$css .= '
 			.featured-link:nth-child(3) .cv-inner {
 			    display: none;
@@ -720,15 +720,6 @@ function ashe_true_false( $option ) {
 				.post-content > p:first-of-type:first-letter {
 				    margin-top: 10px !important;
 				}
-			}
-		';
-	}
-
-	// if is preview
-	if ( ashe_is_preview() ) {
-		$css .= '
-			.blog-grid > li:first-child {
-				display: none;
 			}
 		';
 	}
