@@ -2,7 +2,7 @@
 Contributors: ArchimidisM
 Requires at least: WordPress 4.5.1
 Tested up to: WordPress 4.9.4
-Version: 1.1.0
+Version: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: theme-options,full-width-template,two-columns
@@ -114,3 +114,6 @@ Mobile menu shows only the top level elements. You can also add your custom logo
 - All dummy content from Unsplash.com was replaced
 - Added new sanitization functions for some of the Customizer's elements
 - Fixed transparent menu when the page has not a header image assigned.
+
+= Version 1.1.1 =
+- Fixed error in init.php so the servers with older PHP version can handle the empty() method.

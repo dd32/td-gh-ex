@@ -52,7 +52,8 @@ if (!function_exists('atlast_business_set_header_image')):
     function atlast_business_set_header_image()
     {
 
-        if (empty(get_header_image())): return; endif;
+    	$header_image_url = get_header_image();
+        if (empty($header_image_url)): return; endif;
 
         $prefix = atlast_business_get_prefix();
         $where_to_show = get_theme_mod($prefix . '_everywhere_header', '0');
