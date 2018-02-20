@@ -41,8 +41,8 @@ function ascend_sidebar_id() {
         $sidebar_name = get_post_meta( $post->ID, '_kad_sidebar_choice', true ); 
         if (empty($sidebar_name) || $sidebar_name == 'default') {
           $ascend = ascend_get_options();
-          if(!empty($ascend['product_sidebar_default_sidebar'])) {
-            $sidebar = $ascend['product_sidebar_default_sidebar'];
+          if(!empty($ascend['product_sidebar_default'])) {
+            $sidebar = $ascend['product_sidebar_default'];
           } else {
             $sidebar = 'sidebar-primary';
           }
@@ -56,8 +56,8 @@ function ascend_sidebar_id() {
         $sidebar_name = get_post_meta( $post->ID, '_kad_sidebar_choice', true ); 
         if (empty($sidebar_name) || 'default' == $sidebar_name) {
             $ascend = ascend_get_options();
-            if(!empty($ascend['page_sidebar_default_sidebar'])) {
-                $sidebar = $ascend['page_sidebar_default_sidebar'];
+            if(!empty($ascend['page_sidebar_default'])) {
+                $sidebar = $ascend['page_sidebar_default'];
             } else {
                 $sidebar = 'sidebar-primary';
             }
@@ -71,8 +71,8 @@ function ascend_sidebar_id() {
         $sidebar_name = get_post_meta( $post->ID, '_kad_sidebar_choice', true ); 
         if (empty($sidebar_name) || $sidebar_name == 'default') {
             $ascend = ascend_get_options();
-            if(!empty($ascend['post_sidebar_default_sidebar'])) {
-                $sidebar = $ascend['post_sidebar_default_sidebar'];
+            if(!empty($ascend['blog_sidebar_default'])) {
+                $sidebar = $ascend['blog_sidebar_default'];
             } else {
                 $sidebar = 'sidebar-primary';
             }
@@ -86,8 +86,8 @@ function ascend_sidebar_id() {
         $sidebar_name = get_post_meta( $post->ID, '_kad_sidebar_choice', true ); 
         if (empty($sidebar_name) || $sidebar_name == 'default') {
             $ascend = ascend_get_options();
-            if(!empty($ascend['portfolio_sidebar_default_sidebar'])) {
-                $sidebar = $ascend['portfolio_sidebar_default_sidebar'];
+            if(!empty($ascend['portfolio_sidebar_default'])) {
+                $sidebar = $ascend['portfolio_sidebar_default'];
             } else {
                 $sidebar = 'sidebar-primary';
             }
@@ -98,8 +98,8 @@ function ascend_sidebar_id() {
         } 
     } elseif(is_tax('portfolio-type') || is_tax('portfolio-tag') ) {
         $ascend = ascend_get_options();
-        if(!empty($ascend['portfolio_sidebar_default_sidebar'])) {
-            $sidebar = $ascend['portfolio_sidebar_default_sidebar'];
+        if(!empty($ascend['portfolio_sidebar_default'])) {
+            $sidebar = $ascend['portfolio_sidebar_default'];
         } else {
             $sidebar = 'sidebar-primary';
         }

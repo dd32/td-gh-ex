@@ -28,6 +28,12 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.2.3 | 20th February 2018 =
+* Update: Woo Templates
+
+= Version 1.2.2 | 29th January 2018 =
+* Fix: sidebar default issue.
+
 = Version 1.2.1 | 26th January 2018 =
 * Fix: issue with toolkit, php7.2
 * Add: page, post head option.
