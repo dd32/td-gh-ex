@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Quality\n"
-"POT-Creation-Date: 2018-02-15 15:00+0530\n"
-"PO-Revision-Date: 2018-02-15 14:59+0530\n"
+"POT-Creation-Date: 2018-02-20 14:37+0530\n"
+"PO-Revision-Date: 2018-02-20 14:36+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -116,19 +116,7 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:97
-msgid "Get the One-page template"
-msgstr ""
-
-#: functions.php:101
-msgid "Install Pirate Forms"
-msgstr ""
-
-#: functions.php:107
-msgid "After installing Pirate Forms, check the Contact form"
-msgstr ""
-
-#: functions.php:138
+#: functions.php:112
 msgid ""
 "Important Notice: We hope you are enjoying this theme, and we thank you for "
 "updating it. Please install our Webriti Companion plugin to manage your "
@@ -137,7 +125,7 @@ msgid ""
 "plugin from there."
 msgstr ""
 
-#: functions.php:139
+#: functions.php:113
 msgid "Go To Customizer"
 msgstr ""
 
@@ -764,7 +752,8 @@ msgid "Premium Theme Details"
 msgstr ""
 
 #: functions/quality-info/sections/github.php:11
-msgid "Why Upgrade to PRO?"
+#: functions/quality-info/welcome-screen.php:209
+msgid "Why should you upgrade to PRO?"
 msgstr ""
 
 #: functions/quality-info/sections/github.php:16
@@ -911,10 +900,6 @@ msgstr ""
 
 #: functions/quality-info/welcome-screen.php:137
 msgid "View Theme Info"
-msgstr ""
-
-#: functions/quality-info/welcome-screen.php:209
-msgid "Why should you upgrade to PRO?"
 msgstr ""
 
 #: functions/quality-info/welcome-screen.php:210

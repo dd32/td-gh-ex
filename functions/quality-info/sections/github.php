@@ -8,7 +8,7 @@
 <div class="container-fluid">
 	<div class="row">
 	<div class="quality-pane-center">
-		<h1><?php esc_html_e( 'Why Upgrade to PRO?', 'quality' ); ?></h1>
+		<h1><?php esc_html_e( 'Why should you upgrade to PRO?', 'quality' ); ?></h1>
 	</div>
 
 	<div class="col-md-6">

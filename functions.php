@@ -81,33 +81,7 @@
 
 	if ( is_admin() ) {
 
-        global $quality_required_actions;
-
-        /*
-         * id - unique id; required
-         * title
-         * description
-         * check - check for plugins (if installed)
-         * plugin_slug - the plugin's slug (used for installing the plugin)
-         *
-         */
-        $quality_required_actions = array(
-			array(
-                "id" => 'quality-req-ac-frontpage-latest-news',
-                "title" => esc_html__( 'Get the One-page template' ,'quality' ),
-            ),
-            array(
-                "id" => 'quality-req-ac-install-pirate-forms',
-                "title" => esc_html__( 'Install Pirate Forms' ,'quality' ),
-                "check" => defined("PIRATE_FORMS_VERSION"),
-                "plugin_slug" => 'pirate-forms'
-            ),
-            array(
-                "id" => 'quality-req-ac-check-pirate-forms',
-                "title" => esc_html__( 'After installing Pirate Forms, check the Contact form' ,'quality' ),
-            )
-        );
-		require( QUALITY_THEME_FUNCTIONS_PATH . '/quality-info/welcome-screen.php');
+        require( QUALITY_THEME_FUNCTIONS_PATH . '/quality-info/welcome-screen.php');
 	}
 
 		
