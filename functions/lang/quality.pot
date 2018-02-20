@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Quality\n"
-"POT-Creation-Date: 2018-01-30 16:41+0530\n"
-"PO-Revision-Date: 2018-01-30 16:40+0530\n"
+"POT-Creation-Date: 2018-02-15 15:00+0530\n"
+"PO-Revision-Date: 2018-02-15 14:59+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -117,7 +117,7 @@ msgid "Primary Menu"
 msgstr ""
 
 #: functions.php:97
-msgid "Get the one page template"
+msgid "Get the One-page template"
 msgstr ""
 
 #: functions.php:101
@@ -125,15 +125,16 @@ msgid "Install Pirate Forms"
 msgstr ""
 
 #: functions.php:107
-msgid "Check the contact form after installing Pirate Forms"
+msgid "After installing Pirate Forms, check the Contact form"
 msgstr ""
 
 #: functions.php:138
 msgid ""
-" Important Notice:  Hope you are enjoying this theme, Now in future service "
-"and project settings will be served by our companion plugin. No need to "
-"worry nothing will be lost. Install Webriti Companion Plugin go to "
-"customizer and install Webriti Companion plugin.."
+"Important Notice: We hope you are enjoying this theme, and we thank you for "
+"updating it. Please install our Webriti Companion plugin to manage your "
+"Services/Projects sections. Don't worry, nothing is lost, just install the "
+"Companion Plugin. Go to the Customizer and install the Webriti Companion "
+"plugin from there."
 msgstr ""
 
 #: functions.php:139
@@ -366,11 +367,11 @@ msgstr ""
 
 #: functions/customizer/customizer-pro.php:13
 #: functions/customizer/customizer-pro.php:20
-msgid "Upgrade to Pro"
+msgid "Upgrade to PRO"
 msgstr ""
 
 #: functions/customizer/customizer-pro.php:48
-msgid "View Pro Demo"
+msgid "View PRO Demo"
 msgstr ""
 
 #: functions/customizer/customizer-pro.php:76
@@ -383,12 +384,13 @@ msgstr ""
 
 #: functions/customizer/customizer-pro.php:111
 msgid ""
-"The Pro version gives you more opportunities to enhance your site and "
-"business. In order to create an effective online presence, one must showcase "
-"their wide range of products, use a Contact Us enquiry form, create an "
-"effective About Us page, introduce the Team Members, etc. The Pro version "
-"offers all this. Buy the Pro version today and give us the chance to serve "
-"you better."
+"The PRO version gives you more opportunities to enhance your site and "
+"business. An effective online presence requires showcasing a company's "
+"products and services in the best possible way. Effectively engage your "
+"visitors with a Contact Us enquiry form or through an appealing About Us "
+"page, or introducing your Team Members, or your latest portfolio. The PRO "
+"version offers all this. Choose Quality PRO today and give your business the "
+"best!"
 msgstr ""
 
 #: functions/customizer/customizer-slider.php:9
@@ -528,7 +530,7 @@ msgid "Page Templates Support"
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:22
-msgid "Various Page Templates included in the Appointment Premium Theme."
+msgid "The Quality PRO theme includes various page templates."
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:24
@@ -537,8 +539,8 @@ msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:25
 msgid ""
-"Theme Support Wide & Boxed layout options. Which can be Switched from Theme "
-"Appearance Customize."
+"Quality supports both a Full-Width and a Boxed layout options. To choose "
+"your preference (and switch between them) go to Appearance > Customize."
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:27
@@ -554,7 +556,9 @@ msgid "Contact Form Support"
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:31
-msgid "The theme has support Contact Form 7 Plugin. You can make Contact Form."
+msgid ""
+"This theme supports the Contact Form 7 plugin. Use it to build your contact "
+"form."
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:35
@@ -563,8 +567,8 @@ msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:36
 msgid ""
-"To Display your all information on single page. Parallax effect provides you "
-"easy scroling experience."
+"Display all of your information on a single page: the Parallax effect "
+"provides you a captivating scrolling experience."
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:39
@@ -574,8 +578,8 @@ msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:40
 msgid ""
-"Enjoy using the 9 preset color schemes. You can also create custom skins "
-"without adding any code."
+"Enjoy any if the 9 preset color schemes, or create your own, without adding "
+"any code."
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:42
@@ -602,7 +606,9 @@ msgid "About Us Page"
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:50
-msgid "Show team members and custom content added in the WordPress editor."
+msgid ""
+"Show team members and other custom content just by adding it in the "
+"WordPress editor."
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:53
@@ -618,7 +624,7 @@ msgid "Testimonial / Review Section"
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:58
-msgid "Show user feedback on the Homepage."
+msgid "Show user's feedback in the Homepage."
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:62
@@ -626,15 +632,15 @@ msgid "Typography Settings"
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:63
-msgid "You can customize the style without adding any code."
+msgid "Customize the style without adding any code."
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:67
-msgid "WPML Support"
+msgid "Supports WPML"
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:68
-msgid "The help of WPML Support. You can make Multilingual Website."
+msgid "You can use WPML to make your website multilingual."
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:71
@@ -645,14 +651,13 @@ msgstr ""
 msgid "Get instant 24/7 support on our Support Forum."
 msgstr ""
 
+#. Theme Name of the plugin/theme
 #: functions/quality-info/sections/free_pro.php:86
-msgid "Quality Lite"
+msgid "Quality"
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:92
-msgid ""
-"Slider [Static Image], Services [3 Services], Portfolio [4 Portfolio], "
-"Latest News"
+msgid "A Slider with 1 static image, 3 Services, 4 Portfolios, Latest News"
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:97
@@ -660,11 +665,11 @@ msgid "Business Template and Full-Width Template"
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:98
-msgid "Wide Layout"
+msgid "Full-Width Layout"
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:110
-msgid "On WordPress.org Support Forum"
+msgid "On the WordPress.org support forum"
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:122
@@ -673,22 +678,22 @@ msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:127
 msgid ""
-"Top Header, Slider [Unlimited], Services [Unlimited], Portfolio [Unlimited], "
-"Latest News, Clients, Testimonials, Custom Widgets"
+"A top header, unlimited sliders, unlimited services, unlimited portfolios, "
+"latest news, clients, testimonials, custom widgets"
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:129
 msgid ""
-"About, Services, Portfolio, Blog Left & Right Sidebars, Blog Full Width, "
-"Page Full Width, Contact Page and much more."
+"About Us, Services, Portfolios, Blogs with left and right sidebars or full-"
+"width, full-width pages, Contact forms and much more."
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:130
-msgid "Wide layout & Boxed Layout"
+msgid "Full-Width layout & Boxed layout"
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:142
-msgid "Premium Support Forum"
+msgid "PRO Support Forum"
 msgstr ""
 
 #: functions/quality-info/sections/free_pro.php:152
@@ -696,24 +701,26 @@ msgid "Get Quality PRO Now!"
 msgstr ""
 
 #: functions/quality-info/sections/getting-started.php:14
-msgid "About Quality Theme"
+msgid "About the Quality theme"
 msgstr ""
 
 #: functions/quality-info/sections/getting-started.php:20
 msgid ""
-"This is a Business theme which is ideal for creating corporate, business "
-"websites. The premium version has tons of features. The Homepage has a "
-"number of sections for showing sliders, your portfolio, user reviews, latest "
-"news, services, call to action and much more. Each section in the HomePage "
-"Template is well designed according to business requirements."
+"This is a Business theme, ideal for creating corporate and business "
+"websites. The premium version has tons of features: the Homepage has a "
+"number of sections where you can feature unlimited sliders, your portfolios, "
+"user reviews, latest news, services, calls to action and much more. Each "
+"section in the HomePage template is carefully designed to fit to all "
+"business requirements."
 msgstr ""
 
 #: functions/quality-info/sections/getting-started.php:22
 msgid ""
-"You can use this theme for any type of business. It is compatible with "
-"popular plugins like WPML and Polylang. The theme has a predefined version "
-"of a Contact page, Services page, Portfolio column layout pages, About Us "
-"and Blog layout pages, helping you to create an effective web presence."
+"You can use this theme for any type of activity. Quality is compatible with "
+"popular plugins like WPML and Polylang, and has predefined versions of a "
+"Contact page, a Services page, Portfolio columned layout pages, About Us and "
+"Blog layout pages, to help you create an effective and impactful web "
+"presence."
 msgstr ""
 
 #: functions/quality-info/sections/getting-started.php:24
@@ -723,9 +730,9 @@ msgstr ""
 
 #: functions/quality-info/sections/getting-started.php:28
 msgid ""
-"Install and activate Webriti Companion plugin for taking full advantage of "
-"all the features this theme has to offer. Go to customizer and install "
-"Webriti Companion plugin"
+"Install and activate the Webriti Companion plugin to take full advantage of "
+"all the features this theme has to offer. Go to Customize and install the "
+"Webriti Companion plugin."
 msgstr ""
 
 #: functions/quality-info/sections/getting-started.php:31
@@ -757,7 +764,6 @@ msgid "Premium Theme Details"
 msgstr ""
 
 #: functions/quality-info/sections/github.php:11
-#: functions/quality-info/welcome-screen.php:209
 msgid "Why Upgrade to PRO?"
 msgstr ""
 
@@ -767,8 +773,8 @@ msgstr ""
 
 #: functions/quality-info/sections/github.php:17
 msgid ""
-"Quality comes with two type of layout one is boxed and other one is wide "
-"layout, which can easily be switched from Theme Appearance Customizer."
+"Quality comes with two types of layout: a boxed one and a full-width layout. "
+"You can easily switch between them in Appearance > Customize."
 msgstr ""
 
 #: functions/quality-info/sections/github.php:24
@@ -777,8 +783,8 @@ msgstr ""
 
 #: functions/quality-info/sections/github.php:25
 msgid ""
-"You can customize your header section. There are Contact info detail and "
-"social media icons features in Header Top section."
+"You can customize your header section and you can add Contact info details "
+"and social media icons in the Top Section of the header."
 msgstr ""
 
 #: functions/quality-info/sections/github.php:33
@@ -787,8 +793,8 @@ msgstr ""
 
 #: functions/quality-info/sections/github.php:34
 msgid ""
-"There are beautifully styled navigation/menus in the Quality theme. You can "
-"make multi level menus, which means you can create sub menus."
+"There are beautifully styled navigation/menus in Quality. You can create sub "
+"menus and make multi level menus."
 msgstr ""
 
 #: functions/quality-info/sections/github.php:42
@@ -797,8 +803,8 @@ msgstr ""
 
 #: functions/quality-info/sections/github.php:43
 msgid ""
-"You can create unlimited slides and which you can control via setting in "
-"Theme Appearance Customizer."
+"You can create unlimited slides, which can be controlled by the settings "
+"found in Appearance > Customize."
 msgstr ""
 
 #: functions/quality-info/sections/github.php:51
@@ -807,9 +813,9 @@ msgstr ""
 
 #: functions/quality-info/sections/github.php:53
 msgid ""
-"You can display any number of Services on the Homepage, with thousands of "
-"FontAwesome icons available. You can also display a set of services on a "
-"separate page by using the Service Page Template. "
+"You can display any number of services on the Homepage, with thousands of "
+"Font Awesome icons available. You can also display a set of services on a "
+"separate page by using the Service page template."
 msgstr ""
 
 #: functions/quality-info/sections/github.php:61
@@ -833,8 +839,8 @@ msgstr ""
 
 #: functions/quality-info/sections/github.php:71
 msgid ""
-"This section is often used to display Latest News, Announcements and Events "
-"type content. "
+"This section is often used to display content like: Latest news, "
+"Announcements or Events."
 msgstr ""
 
 #: functions/quality-info/sections/github.php:78
@@ -849,8 +855,8 @@ msgstr ""
 
 #: functions/quality-info/sections/github.php:89
 msgid ""
-"You will get 9 preset color schemes and you can even create your own "
-"favorite color schemes using the Custom Color Setting in the Customizer."
+"Quality comes with 9 preset color schemes and you can also create your own "
+"palettes using the Custom Color Setting in the Customizer."
 msgstr ""
 
 #: functions/quality-info/sections/github.php:97
@@ -859,8 +865,8 @@ msgstr ""
 
 #: functions/quality-info/sections/github.php:98
 msgid ""
-"We provide good knowledgebase articles which will help you to create "
-"effective websites. You can visit these articles via our  "
+"We provide good knowledge-base articles to help you create effective "
+"websites. You can visit these articles through our"
 msgstr ""
 
 #: functions/quality-info/sections/github.php:98
@@ -890,8 +896,9 @@ msgstr ""
 #: functions/quality-info/welcome-screen.php:56
 #, php-format
 msgid ""
-"Welcome! Thank you for choosing Quality WordPress Theme. To take full "
-"advantage of the features this theme has to offer visit %swelcome page%s."
+"Welcome! Thank you for choosing Webriti's Quality WordPress theme. To take "
+"full advantage of the features this theme has to offer visit our %swelcome "
+"page%s."
 msgstr ""
 
 #: functions/quality-info/welcome-screen.php:57
@@ -899,11 +906,15 @@ msgid "Get started with Quality"
 msgstr ""
 
 #: functions/quality-info/welcome-screen.php:100
-msgid "Hooray! there are no required actions for you right now."
+msgid "Hooray! There are no required actions for you right now."
 msgstr ""
 
 #: functions/quality-info/welcome-screen.php:137
 msgid "View Theme Info"
+msgstr ""
+
+#: functions/quality-info/welcome-screen.php:209
+msgid "Why should you upgrade to PRO?"
 msgstr ""
 
 #: functions/quality-info/welcome-screen.php:210
@@ -948,7 +959,7 @@ msgid "Tag Archive %s"
 msgstr ""
 
 #: theme_setup_data.php:20
-msgid "Our nice services"
+msgid "Our awesome services"
 msgstr ""
 
 #: theme_setup_data.php:24
@@ -980,29 +991,33 @@ msgstr ""
 msgid "Business cards"
 msgstr ""
 
-#. Theme Name of the plugin/theme
-msgid "Quality"
-msgstr ""
-
 #. Theme URI of the plugin/theme
 msgid "https://webriti.com/quality-lite-version-details-page/"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Business theme which is ideal for creating a corporate / business website.It "
-"boasts of 3 beautifully designed page template namely Business Page, Full-"
-"width and Blog. Theme is built on Bootstrap Css Framework, hence make it "
-"responsive in all the devices. Quality theme is completely transtion ready. "
-"To enable business template you have to create a normal WordPress page and "
-"select the page template as Business Template. To configure business "
-"template there are number of settings in the customizer. Each section in the "
-"Business Template is well designed according to the business requirements. "
-"Section like Banner, Services, Projects etc etc are there. You can use this "
-"theme for any busniess type. Theme also support famous plugin like contact "
-"form 7, so that you can create a conact page or any number of forms you want "
-"to add. Theme also give clean and effective look to WordPress core gallery "
-"feature. Browse lite version demo: http://webriti.com/quality-free"
+"Quality is a perfect theme to create a corporate/business website. It boasts "
+"3 beautifully designed page templates, namely Business Page, Full-width, and "
+"Blog. Quality is built on the Bootstrap CSS Framework, which makes it fully "
+"responsive on all devices, and is translation-ready. To enable the Business "
+"template, just create a normal WordPress page and select Business Template "
+"as page template. The Business template can be further personalized in the "
+"customizer. Each section in the Business Template is designed according to "
+"current business requirements, with sections like Banner, Services, Projects "
+"etc. You can use this theme for any type of activity. Quality supports "
+"famous plugins like Contact Form 7, to create your contact page or any type "
+"of forms you might want to add. Quality also gives a clean and appealing "
+"look to the WordPress core gallery feature. See Quality's demo at http://"
+"webriti.com/quality-free"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Webriti"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://webriti.com/"
 msgstr ""
 
 #: inc/quality/features/feature-project-section.php:8

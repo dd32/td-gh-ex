@@ -14,7 +14,7 @@
 	<div class="col-md-6">
 	<div class="quality-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Site Layout','quality'); ?></strong></p>
-		<p><?php esc_html_e( 'Quality comes with two type of layout one is boxed and other one is wide layout, which can easily be switched from Theme Appearance Customizer.','quality' ); ?></p>
+		<p><?php esc_html_e( 'Quality comes with two types of layout: a boxed one and a full-width layout. You can easily switch between them in Appearance > Customize.','quality' ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -22,7 +22,7 @@
 	<div class="col-md-6">
 	<div class="quality-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Top Header Section', 'quality' ); ?></strong></p>
-		<p><?php esc_html_e( 'You can customize your header section. There are Contact info detail and social media icons features in Header Top section.', 'quality' ); ?></p>
+		<p><?php esc_html_e( 'You can customize your header section and you can add Contact info details and social media icons in the Top Section of the header.', 'quality' ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -31,7 +31,7 @@
 	<div class="col-md-6">
 	<div class="quality-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Multi Level Navigation','quality'); ?></strong></p>
-		<p><?php esc_html_e( "There are beautifully styled navigation/menus in the Quality theme. You can make multi level menus, which means you can create sub menus.","quality" ); ?></p>
+		<p><?php esc_html_e( "There are beautifully styled navigation/menus in Quality. You can create sub menus and make multi level menus.","quality" ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -40,7 +40,7 @@
 	<div class="col-md-6">
 	<div class="quality-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Caption Slider', 'quality' ); ?></strong></p>
-		<p><?php esc_html_e( 'You can create unlimited slides and which you can control via setting in Theme Appearance Customizer.', 'quality' ); ?></p>
+		<p><?php esc_html_e( 'You can create unlimited slides, which can be controlled by the settings found in Appearance > Customize.', 'quality' ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -50,7 +50,7 @@
 	<div class="quality-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Service Features', 'quality' ); ?></strong></p>
 
-		<p><?php esc_html_e( 'You can display any number of Services on the Homepage, with thousands of FontAwesome icons available. You can also display a set of services on a separate page by using the Service Page Template. ', 'quality' ); ?></p>
+		<p><?php esc_html_e( 'You can display any number of services on the Homepage, with thousands of Font Awesome icons available. You can also display a set of services on a separate page by using the Service page template.', 'quality' ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -68,7 +68,7 @@
 	<div class="col-md-6">
 	<div class="quality-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Latest News Section', 'quality' ); ?></strong></p>
-		<p><?php esc_html_e( "This section is often used to display Latest News, Announcements and Events type content. ", 'quality' ); ?></p>
+		<p><?php esc_html_e( "This section is often used to display content like: Latest news, Announcements or Events.", 'quality' ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -86,7 +86,7 @@
 	<div class="col-md-6">
 	<div class="quality-tab-pane-half">
 	  <p><strong><?php esc_html_e( 'Mulitple Color Schemes', 'quality' ); ?></strong></p>
-		<p><?php esc_html_e( 'You will get 9 preset color schemes and you can even create your own favorite color schemes using the Custom Color Setting in the Customizer.', 'quality' ); ?></p>
+		<p><?php esc_html_e( 'Quality comes with 9 preset color schemes and you can also create your own palettes using the Custom Color Setting in the Customizer.', 'quality' ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -95,7 +95,7 @@
 	<div class="col-md-6">
 	<div class="quality-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Well Documented', 'quality' ); ?></strong></p>
-		<p><?php esc_html_e( 'We provide good knowledgebase articles which will help you to create effective websites. You can visit these articles via our  ', 'quality' ); ?><a href="http://webriti.com/help/category/themes/quality/" target="_blank"><?php esc_html_e( 'Help Section', 'quality' ); ?></a></p>
+		<p><?php esc_html_e( 'We provide good knowledge-base articles to help you create effective websites. You can visit these articles through our', 'quality' ); ?><a href="http://webriti.com/help/category/themes/quality/" target="_blank"><?php esc_html_e('Help Section', 'quality'); ?></a></p>
 		<hr>
 	</div>
 	</div>

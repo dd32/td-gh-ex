@@ -94,7 +94,7 @@
         $quality_required_actions = array(
 			array(
                 "id" => 'quality-req-ac-frontpage-latest-news',
-                "title" => esc_html__( 'Get the one page template' ,'quality' ),
+                "title" => esc_html__( 'Get the One-page template' ,'quality' ),
             ),
             array(
                 "id" => 'quality-req-ac-install-pirate-forms',
@@ -104,7 +104,7 @@
             ),
             array(
                 "id" => 'quality-req-ac-check-pirate-forms',
-                "title" => esc_html__( 'Check the contact form after installing Pirate Forms' ,'quality' ),
+                "title" => esc_html__( 'After installing Pirate Forms, check the Contact form' ,'quality' ),
             )
         );
 		require( QUALITY_THEME_FUNCTIONS_PATH . '/quality-info/welcome-screen.php');
@@ -135,7 +135,7 @@
 	function quality_theme_plugin_notify() {
    ?>
                <div class="notice-warning notice is-dismissible">
-               <p><b><?php echo sprintf( esc_html__( ' Important Notice:  Hope you are enjoying this theme, Now in future service and project settings will be served by our companion plugin. No need to worry nothing will be lost. Install Webriti Companion Plugin go to customizer and install Webriti Companion plugin..', 'quality' ) ); ?></b></p>
+               <p><b><?php echo sprintf( esc_html__( "Important Notice: We hope you are enjoying this theme, and we thank you for updating it. Please install our Webriti Companion plugin to manage your Services/Projects sections. Don't worry, nothing is lost, just install the Companion Plugin. Go to the Customizer and install the Webriti Companion plugin from there.", 'quality' ) ); ?></b></p>
                 <p><a href="<?php echo esc_url( admin_url( '/customize.php' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Go To Customizer', 'quality' ); ?></a></p>
             </div>
 		

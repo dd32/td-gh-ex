@@ -17,7 +17,7 @@ function theme_data_setup()
 			'home_image_button_text' => __('Get this theme','quality'),
 			'home_image_button_link' => '#',
 
-			'service_title'=> __('Our nice services','quality'),
+			'service_title'=> __('Our awesome services','quality'),
 			'service_description' => 'Lorem Ipsum which looks reason able. The generated Lorem Ipsum is therefore always free.',
 			
 			'service_enable' => true,

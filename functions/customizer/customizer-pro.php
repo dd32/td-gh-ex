@@ -1,8 +1,8 @@
 <?php
-//Pro Button
+//PRO Button
 
 function quality_pro_customizer( $wp_customize ) {
-class WP_Pro_Customize_Control extends WP_Customize_Control {
+class WP_PRO_Customize_Control extends WP_Customize_Control {
     public $type = 'new_menu';
     /**
     * Render the control's content.
@@ -10,14 +10,14 @@ class WP_Pro_Customize_Control extends WP_Customize_Control {
     public function render_content() {
     ?>
      <div class="pro-box">
-       <a href="<?php echo esc_url('http://webriti.com/quality/');?>" target="_blank" class="upgrade" id="review_pro"><?php _e('Upgrade to Pro','quality' ); ?></a>
+       <a href="<?php echo esc_url('http://webriti.com/quality/');?>" target="_blank" class="upgrade" id="review_pro"><?php _e('Upgrade to PRO','quality' ); ?></a>
 		
 	</div>
     <?php
     }
 }
 $wp_customize->add_section( 'quality_pro_section' , array(
-		'title'      => __('Upgrade to Pro', 'quality'),
+		'title'      => __('Upgrade to PRO', 'quality'),
 		'priority'   => 1100,
    	) );
 
@@ -28,7 +28,7 @@ $wp_customize->add_setting(
 		'sanitize_callback' => 'sanitize_text_field',
     )	
 );
-$wp_customize->add_control( new WP_Pro_Customize_Control( $wp_customize, 'upgrade_pro', array(
+$wp_customize->add_control( new WP_PRO_Customize_Control( $wp_customize, 'upgrade_pro', array(
 		'section' => 'quality_pro_section',
 		'setting' => 'upgrade_pro',
     ))
@@ -45,7 +45,7 @@ class WP_multi_page_Customize_Control extends WP_Customize_Control {
     public function render_content() {
     ?>
 	  <div class="pro-box">
-     <a href="<?php echo esc_url('http://webriti.com/demo/wp/quality/');?>" target="_blank" class="multiple" id="review_pro"><?php _e( 'View Pro Demo','quality' ); ?></a>
+     <a href="<?php echo esc_url('http://webriti.com/demo/wp/quality/');?>" target="_blank" class="multiple" id="review_pro"><?php _e( 'View PRO Demo','quality' ); ?></a>
 	 </div>
     <?php
     }
@@ -108,7 +108,7 @@ class WP_document_Customize_Control extends WP_Customize_Control {
 	 
 	 <div>
 	 <div class="pro-vesrion">
-	 <?php _e('The Pro version gives you more opportunities to enhance your site and business. In order to create an effective online presence, one must showcase their wide range of products, use a Contact Us enquiry form, create an effective About Us page, introduce the Team Members, etc. The Pro version offers all this. Buy the Pro version today and give us the chance to serve you better.','quality');?>
+	 <?php _e("The PRO version gives you more opportunities to enhance your site and business. An effective online presence requires showcasing a company's products and services in the best possible way. Effectively engage your visitors with a Contact Us enquiry form or through an appealing About Us page, or introducing your Team Members, or your latest portfolio. The PRO version offers all this. Choose Quality PRO today and give your business the best!","quality");?>
 	 </div>
     <?php
     }

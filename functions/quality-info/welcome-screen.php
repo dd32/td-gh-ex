@@ -53,7 +53,7 @@ class quality_screen {
 	public function quality_admin_notice() {
 		?>
 			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing Quality WordPress Theme. To take full advantage of the features this theme has to offer visit %swelcome page%s.', 'quality' ), '<a href="' . esc_url( admin_url( 'themes.php?page=quality-info' ) ) . '">', '</a>' ); ?></p>
+				<p><?php echo sprintf( esc_html__( "Welcome! Thank you for choosing Webriti's Quality WordPress theme. To take full advantage of the features this theme has to offer visit our %swelcome page%s.", "quality"), '<a href="' . esc_url( admin_url( 'themes.php?page=quality-info' ) ) . '">', '</a>' ); ?></p>
 				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=quality-info' ) ); ?>" class="button button-blue-secondary" style="text-decoration: none;"><?php _e( 'Get started with Quality', 'quality' ); ?></a></p>
 			</div>
 		<?php
@@ -97,7 +97,7 @@ class quality_screen {
 				'nr_actions_required' => $nr_actions_required,
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
 				'template_directory' => get_template_directory_uri(),
-				'no_required_actions_text' => __( 'Hooray! there are no required actions for you right now.','quality' )
+				'no_required_actions_text' => __( 'Hooray! There are no required actions for you right now.','quality' )
 			) );
 		}
 	}
@@ -206,7 +206,7 @@ class quality_screen {
 		<ul class="quality-nav-tabs" role="tablist">
 			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting Started','quality'); ?></a></li>
 			
-			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Why Upgrade to PRO?','quality'); ?></a></li>
+			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Why should you upgrade to PRO?','quality'); ?></a></li>
 			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free VS PRO','quality'); ?></a></li>
 			<li role="presentation"><a href="#child_themes" aria-controls="child_themes" role="tab" data-toggle="tab"><?php esc_html_e( 'Child Themes','quality'); ?></a></li>
 			

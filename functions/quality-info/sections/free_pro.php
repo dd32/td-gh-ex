@@ -19,25 +19,25 @@
 										<p><?php esc_html_e( 'You will find a number of sections on the front page.','quality' ); ?></p>
 										</li>
 										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Page Templates Support','quality' ); ?></span>
-										<p><?php esc_html_e( 'Various Page Templates included in the Appointment Premium Theme.','quality' ); ?></p>
+										<p><?php esc_html_e( 'The Quality PRO theme includes various page templates.','quality' ); ?></p>
 										</li>
 										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Layout Options','quality' ); ?></span>
-										<p><?php esc_html_e( 'Theme Support Wide & Boxed layout options. Which can be Switched from Theme Appearance Customize.','quality' ); ?></p>
+										<p><?php esc_html_e( 'Quality supports both a Full-Width and a Boxed layout options. To choose your preference (and switch between them) go to Appearance > Customize.','quality' ); ?></p>
 										</li>
 										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Mobile Friendly','quality' ); ?></span>
 										<p><?php esc_html_e( 'Responsive layout in all devices','quality' ); ?></p>
 										</li>
 										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Contact Form Support','quality' ); ?></span>
-										<p><?php esc_html_e( 'The theme has support Contact Form 7 Plugin. You can make Contact Form.','quality' ); ?></p>
+										<p><?php esc_html_e( 'This theme supports the Contact Form 7 plugin. Use it to build your contact form.','quality' ); ?></p>
 										</li>
 										
 										
 										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Parallax Effect','quality' ); ?></span>
-										<p><?php esc_html_e( 'To Display your all information on single page. Parallax effect provides you easy scroling experience.','quality' ); ?></p>
+										<p><?php esc_html_e( 'Display all of your information on a single page: the Parallax effect provides you a captivating scrolling experience.','quality' ); ?></p>
 										</li>
 										
 										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Mulitple Color Schemes','quality' ); ?></span>
-										<p><?php esc_html_e( 'Enjoy using the 9 preset color schemes. You can also create custom skins without adding any code.','quality' ); ?></p>
+										<p><?php esc_html_e( 'Enjoy any if the 9 preset color schemes, or create your own, without adding any code.','quality' ); ?></p>
 										</li>
 										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Google Map','quality' ); ?></span>
 										<p><?php esc_html_e( 'Display your Shop and Business location on your website using Google Maps.','quality' ); ?></p>
@@ -47,7 +47,7 @@
 										</li>
 										
 										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'About Us Page','quality' ); ?></span>
-										<p><?php esc_html_e( 'Show team members and custom content added in the WordPress editor.','quality' ); ?></p>
+										<p><?php esc_html_e( 'Show team members and other custom content just by adding it in the WordPress editor.','quality' ); ?></p>
 										</li>
 										
 										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Services Page','quality' ); ?></span>
@@ -55,17 +55,17 @@
 										</li>
 										
 										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Testimonial / Review Section','quality' ); ?></span>
-										<p><?php esc_html_e( 'Show user feedback on the Homepage.','quality' ); ?></p>
+										<p><?php esc_html_e( "Show user's feedback in the Homepage.","quality" ); ?></p>
 										</li>
 										
 										
 										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Typography Settings','quality' ); ?></span>
-										<p><?php esc_html_e( 'You can customize the style without adding any code.','quality' ); ?></p>
+										<p><?php esc_html_e( 'Customize the style without adding any code.','quality' ); ?></p>
 										</li>
 										
 										
-										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'WPML Support','quality' ); ?></span>
-										<p><?php esc_html_e( 'The help of WPML Support. You can make Multilingual Website.','quality' ); ?></p>
+										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Supports WPML','quality' ); ?></span>
+										<p><?php esc_html_e( 'You can use WPML to make your website multilingual.','quality' ); ?></p>
 										</li>
 										
 										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Support Forum','quality' ); ?></span>
@@ -83,19 +83,19 @@
 								<div class="plan text-center">
 									
 									<header>
-										<h2><?php echo __('Quality Lite','quality'); ?></h2>
+										<h2><?php echo __('Quality','quality'); ?></h2>
 									</header>
 									
 									<ul class="feature">
 										<li style="font-size:16px; line-height:25px; padding:28px"> 
 										
-										<?php _e("Slider [Static Image], Services [3 Services], Portfolio [4 Portfolio], Latest News","quality"); ?>
+										<?php _e("A Slider with 1 static image, 3 Services, 4 Portfolios, Latest News","quality"); ?>
 										
 										
 										</li>
 										<li style="font-size:16px; line-height:25px; padding:28px"> 
 										<?php _e("Business Template and Full-Width Template","quality"); ?>
-										</li><li style="font-size:16px; line-height:25px; padding:43px"><?php _e("Wide Layout","quality"); ?> </li>
+										</li><li style="font-size:16px; line-height:25px; padding:43px"><?php _e("Full-Width Layout","quality"); ?> </li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-no-alt red"></span></li>
@@ -107,7 +107,7 @@
 										<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 										<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 										<li><span class="dashicons-before dashicons-no-alt red"></span></li>
-										<li style="font-size:16px; line-height:80px; padding:15px;"><a href="https://wordpress.org/support/theme/quality" target="_blank" ><?php _e("On WordPress.org Support Forum","quality"); ?></a></li>
+										<li style="font-size:16px; line-height:80px; padding:15px;"><a href="https://wordpress.org/support/theme/quality" target="_blank" ><?php _e("On the WordPress.org support forum","quality"); ?></a></li>
 										
 									</ul><!-- /.features -->
 									
@@ -124,10 +124,10 @@
 									
 									<ul class="feature">
 										<li style="font-size:16px; line-height:25px; padding:19px">
-										<?php _e("Top Header, Slider [Unlimited], Services [Unlimited], Portfolio [Unlimited], Latest News, Clients, Testimonials, Custom Widgets","quality"); ?>
+										<?php _e("A top header, unlimited sliders, unlimited services, unlimited portfolios, latest news, clients, testimonials, custom widgets","quality"); ?>
 										</li>
-										<li style="font-size:16px; line-height:25px; padding:18px"><?php _e("About, Services, Portfolio, Blog Left & Right Sidebars, Blog Full Width, Page Full Width, Contact Page and much more.","quality"); ?></li>
-										<li style="font-size:16px; line-height:25px; padding:43px"><?php _e("Wide layout & Boxed Layout","quality"); ?></li>
+										<li style="font-size:16px; line-height:25px; padding:18px"><?php _e("About Us, Services, Portfolios, Blogs with left and right sidebars or full-width, full-width pages, Contact forms and much more.","quality"); ?></li>
+										<li style="font-size:16px; line-height:25px; padding:43px"><?php _e("Full-Width layout & Boxed layout","quality"); ?></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
@@ -139,7 +139,7 @@
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
-										<li style="font-size:16px; line-height:80px; padding:15px;"><a href="http://webriti.com/support/categories/quality" target="_blank"><?php _e("Premium Support Forum","quality"); ?></a></li>
+										<li style="font-size:16px; line-height:80px; padding:15px;"><a href="http://webriti.com/support/categories/quality" target="_blank"><?php _e("PRO Support Forum","quality"); ?></a></li>
 										
 									</ul><!-- /.features -->
 									
