@@ -1627,7 +1627,7 @@ div[id^="contact-form-"] > .contact-form-submission
 
 
 
-/* ------------------ Mod: Excerpt Snippet and Show More Action ------------------ */
+/* ------------------------------------ Mod: Excerpt Snippet and Show More Action ------------------------------------ */
 .show-more-action
 {
     display: inline-block;
@@ -1656,6 +1656,46 @@ div[id^="contact-form-"] > .contact-form-submission
 .excerpt-snippet---a:hover
 {
     text-decoration: none;
+}
+
+
+
+
+
+/* ------------------------------------ Mod: Citation ------------------------------------ */
+.citation-link
+{
+    position: relative;
+}
+
+.citation-link---a_l
+{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    padding: 1em;
+    margin-top: -.5em;
+    
+    font-size: .75em;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.footnote-grp
+{
+    list-style: none;
+    padding-left: 0;
+}
+
+.citation-index---a_l
+{
+    display: inline-block;
+    
+    padding: .5em 1em;
+    
+    font-weight: bold;
 }
 
 

@@ -2667,6 +2667,11 @@ button:hover .dismiss-icon
     width: 100%;
 }
 
+.applicator--main-search--inactive .here .main-actions-aside
+{
+    z-index: 100;
+}
+
 .main-actions-aside---cr
 {
     position: relative;
