@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@Version 2.6.9
+1. Remove 3 subject tags.
 @Version 2.6.8
 1. Update Footer copyright HTML ready.
 @Version 2.6.7
