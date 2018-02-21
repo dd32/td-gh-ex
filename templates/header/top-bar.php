@@ -12,7 +12,7 @@
 			'menu_class' 		=> '',
 			'container' 	 	=> 'nav',
 			'container_class'	=> 'top-menu-container',
-			'fallback_cb' 		=> 'top_menu_fallback'
+			'fallback_cb' 		=> 'ashe_top_menu_fallback'
 		) );
 		
 		// Social Icons

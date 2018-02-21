@@ -11,7 +11,7 @@
 
 		?>
 
-		<img src="<?php echo esc_url( $image_src_1 ); ?>" alt="Link 1">
+		<img src="<?php echo esc_url( $image_src_1 ); ?>" alt="<?php echo esc_attr( $link_title_1 ); ?>">
 		<a href="<?php echo esc_url( ashe_options( 'featured_links_url_1' ) ); ?>">
 			<div class="cv-outer">
 				<div class="cv-inner">
@@ -33,7 +33,7 @@
 
 		?>
 
-		<img src="<?php echo esc_url( $image_src_2 ); ?>" alt="Link 2">
+		<img src="<?php echo esc_url( $image_src_2 ); ?>" alt="<?php echo esc_attr( $link_title_2 ); ?>">
 		<a href="<?php echo esc_url( ashe_options( 'featured_links_url_2' ) ); ?>">
 			<div class="cv-outer">
 				<div class="cv-inner">
@@ -55,7 +55,7 @@
 
 		?>
 
-		<img src="<?php echo esc_url( $image_src_3 ); ?>" alt="Link 3">
+		<img src="<?php echo esc_url( $image_src_3 ); ?>" alt="<?php echo esc_attr( $link_title_3 ); ?>">
 		<a href="<?php echo esc_url( ashe_options( 'featured_links_url_3' ) ); ?>">
 			<div class="cv-outer">
 				<div class="cv-inner">

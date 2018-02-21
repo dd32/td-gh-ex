@@ -93,7 +93,7 @@ jQuery(document).ready(function( $ ) {
 */
 
 	// Sticky Sidebar
-	function stickySidebar() {
+	function asheStickySidebar() {
 		if ( $( '.main-content' ).data('sidebar-sticky') === 1 ) {		
 			var SidebarOffset = 0;
 
@@ -115,12 +115,12 @@ jQuery(document).ready(function( $ ) {
 
 	// on Window Resize
 	$( window ).on( 'resize', function() {
-		stickySidebar();
+		asheStickySidebar();
 	});
 
 	// on Load
 	$( window ).on( 'load', function() {
-		stickySidebar();
+		asheStickySidebar();
 	});
 
 	// Sidebar Alt Scroll

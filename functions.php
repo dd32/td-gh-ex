@@ -101,7 +101,7 @@ add_action( 'wp_head', 'ashe_pingback_header' );
 function ashe_scripts() {
 
 	// Theme Stylesheet
-	wp_enqueue_style( 'ashe-style', get_stylesheet_uri(), array(), '1.3.2' );
+	wp_enqueue_style( 'ashe-style', get_stylesheet_uri(), array(), '1.3.4' );
 
 	// FontAwesome Icons
 	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/font-awesome.css' ) );
@@ -248,7 +248,7 @@ add_image_size( 'ashe-single-navigation', 75, 75, true );
 **  Top Menu Fallback
 */
 
-function top_menu_fallback() {
+function ashe_top_menu_fallback() {
 	if ( current_user_can( 'edit_theme_options' ) ) {
 		echo '<ul id="top-menu">';
 			echo '<li>';
@@ -271,7 +271,7 @@ function ashe_main_menu_fallback() {
 		if ( current_user_can( 'edit_theme_options' ) ) {
 			echo '<ul id="main-menu">';
 				echo '<li>';
-					echo '<a href="'. esc_url( home_url('/') .'wp-admin/nav-menus.php' ) .'">'. esc_html__( 'Set up Menu', 'ashe' ) .'</a>';
+					echo '<a href="'. esc_url( admin_url('nav-menus.php') ) .'">'. esc_html__( 'Set up Menu', 'ashe' ) .'</a>';
 				echo '</li>';
 			echo '</ul>';
 		}
@@ -615,10 +615,10 @@ add_filter( 'loop_shop_per_page', 'ashe_set_shop_post_per_page', 20 );
 // Pagination
 remove_action( 'woocommerce_pagination', 'woocommerce_pagination', 10 );
 
-function woocommerce_pagination() {
+function ashe_woocommerce_pagination() {
 	get_template_part( 'templates/grid/blog', 'pagination' );
 }
-add_action( 'woocommerce_pagination', 'woocommerce_pagination', 10 );
+add_action( 'woocommerce_pagination', 'ashe_woocommerce_pagination', 10 );
 
 /*
 ** Incs: Theme Customizer
