@@ -25,9 +25,9 @@ class Customizer_Library_Imageselect extends WP_Customize_Control {
 			$dropdown .= '<option value="' . $_size . '" ' . selected( $_size, $this->default, false ) . '>';
 
 			if ( in_array( $_size, array('thumbnail', 'medium', 'medium_large', 'large') ) ) {
-				$dropdown .=  ucwords( str_replace( ['_', '-'], ' ', $_size ) ) . ' (' . get_option( "{$_size}_size_w" ) . ' X ' . get_option( "{$_size}_size_h" ) . ')';
+				$dropdown .=  ucwords( str_replace( array('_', '-'), ' ', $_size ) ) . ' (' . get_option( "{$_size}_size_w" ) . ' X ' . get_option( "{$_size}_size_h" ) . ')';
 			} elseif ( isset( $_wp_additional_image_sizes[ $_size ] ) ) {
-				$dropdown .=  ucwords( str_replace( ['_', '-'], ' ', $_size ) ) . ' (' . $_wp_additional_image_sizes[ $_size ]['width'] . ' X ' . $_wp_additional_image_sizes[ $_size ]['height'] . ')';
+				$dropdown .=  ucwords( str_replace( array('_', '-'), ' ', $_size ) ) . ' (' . $_wp_additional_image_sizes[ $_size ]['width'] . ' X ' . $_wp_additional_image_sizes[ $_size ]['height'] . ')';
 			}
 
 			$dropdown .= '</option>';

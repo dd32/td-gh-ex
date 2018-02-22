@@ -68,6 +68,9 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.01
+* Fix ImageSelect setting to be compatible with older php versions
+
 #### 1.1.00
 * WooCommerce & Avant CSS tweaks/fixes
 * Updated WooCommerce deprecated functions
