@@ -57,7 +57,47 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) :
     add_action( 'wp_head', 'responsive_free_render_title' );
 endif;
 
+add_filter( 'body_class', 'responsive_add_site_layout_classes' );
 
+function responsive_add_site_layout_classes( $classes ){
+
+	global $responsive_options;
+
+	if ( !empty( $responsive_options['site_layout_option'] ) ) :
+
+		$classes[] = $responsive_options['site_layout_option'];
+		
+	endif;	
+
+	return $classes;
+
+}
+$responsive_options = get_option( 'responsive_theme_options' );
+if (isset($responsive_options['sticky-header']) && $responsive_options['sticky-header'] =='1' ){
+	add_action( 'wp_footer', 'responsive_fixed_menu_onscroll' );
+	function responsive_fixed_menu_onscroll()
+	{
+		?>
+	<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$(window).scroll(function()  {
+			if ($(this).scrollTop() > 0) {
+				$('#header_section').addClass("sticky-header");
+			}
+			else{
+				$('#header_section').removeClass("sticky-header");
+			}
+
+		});
+	});		
+	</script>
+	<?php
+}
+}
+
+if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
+	define( 'ELEMENTOR_PARTNER_ID', 2126 );
+}
 function responsiveedit_customize_register( $wp_customize ){
 	$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector' => '.site-name a'
@@ -78,7 +118,7 @@ function responsiveedit_customize_register( $wp_customize ){
 			'selector' => '#featured',
 	) );
 	$wp_customize->selective_refresh->add_partial( 'responsive_theme_options[about_title]', array(
-			'selector' => '.about-title',
+			'selector' => '#about_div .section_title',
 	) );
 	$wp_customize->selective_refresh->add_partial( 'responsive_theme_options[about_text]', array(
 			'selector' => '.about_text',
@@ -156,6 +196,39 @@ $wp_customize->selective_refresh->add_partial( 'responsive_theme_options[team_ti
 add_action( 'customize_register', 'responsiveedit_customize_register' );
 add_theme_support( 'customize-selective-refresh-widgets' );
 
+function responsive_custom_category_widget( $arg ) {
+	$cat = get_theme_mod( 'exclude_post_cat' );
+
+	if( $cat ){
+		$cat = array_diff( array_unique( $cat ), array('') );
+		$arg["exclude"] = $cat;
+	}
+	return $arg;
+}
+add_filter( "widget_categories_args", "responsive_custom_category_widget" );
+add_filter( "widget_categories_dropdown_args", "responsive_custom_category_widget" );
+
+function responsive_exclude_post_cat_recentpost_widget($array){
+	$s = '';
+	$i = 1;
+	$cat = get_theme_mod( 'exclude_post_cat' );
+
+	if( $cat ){
+		$cat = array_diff( array_unique( $cat ), array('') );
+		foreach( $cat as $c ){
+			$i++;
+			$s .= '-'.$c;
+			if( count($cat) >= $i )
+				$s .= ', ';
+		}
+	}
+	
+	$array['cat']=array($s);
+
+	return $array;
+}
+add_filter( "widget_posts_args", "responsive_exclude_post_cat_recentpost_widget" );
+
 if( !function_exists('responsive_page_featured_image') ) :
 
 	function responsive_page_featured_image() {
@@ -171,6 +244,26 @@ if( !function_exists('responsive_page_featured_image') ) :
 	}
 
 endif;
+
+/**
+ * Exclude post with Category from blog and archive page.
+ */
+if( !function_exists('responsive_exclude_post_cat') ) : 	
+function responsive_exclude_post_cat( $query ){
+	$responsive_options = responsive_get_options();
+	//$cat = $responsive_options['exclude_post_cat'];
+	$cat = get_theme_mod( 'exclude_post_cat' );
+
+	if( $cat && ! is_admin() && $query->is_main_query() ){
+		$cat = array_diff( array_unique( $cat ), array('') ); 		
+		if( $query->is_home() || $query->is_archive() ) {
+			$query->set( 'category__not_in', $cat );
+			//$query->set( 'cat', '-5,-6,-65,-66' );
+		}
+	}
+}
+endif;	
+add_filter( 'pre_get_posts', 'responsive_exclude_post_cat' );
 
 if( !function_exists('responsive_get_attachment_id_from_url') ) :
 function responsive_get_attachment_id_from_url( $attachment_url = '' ) {
@@ -194,31 +287,6 @@ function responsive_get_attachment_id_from_url( $attachment_url = '' ) {
 }
 endif;
 
-
-function remove_loop_button(){
-	$responsive_options = responsive_get_options();
-	if ( isset($responsive_options['override_woo']) && 1 == $responsive_options['override_woo'] )
-	{
-		remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-	}
-}
-add_action('init','remove_loop_button');
-
-add_action('woocommerce_after_shop_loop_item_title','replace_add_to_cart');
-function replace_add_to_cart() {
-global $product;
-
-$link = get_home_url() . '/cart/?add-to-cart=' . $product->get_ID();
-
-	$responsive_options = responsive_get_options();
-	if ( isset($responsive_options['override_woo']) && 1 == $responsive_options['override_woo'] )
-	{
-	if ( ! $product->managing_stock() && ! $product->is_in_stock() )
-        	echo '<div class="prod_wrap_right" style="color:#ff0000">out of stock</div>';
-        else
-		echo'<div class="prod_wrap_right"><a href="'.$link.'"><button class="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button></a></div>';
-	}
-}
 
 /* Lightbox support for woocommerce templates */
 	$responsive_options = responsive_get_options();

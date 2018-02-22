@@ -30,6 +30,12 @@ $responsive_options = responsive_get_options();
  * Add plugin automation file
  */
 require_once( dirname( __FILE__ ) . '/classes/class-tgm-plugin-activation.php' );
+//require_once( dirname( __FILE__ ) . '/control-checkbox-multiple.php' );
+function responsive_load_customize_controls() {
+
+    require_once( trailingslashit( get_template_directory() ) . 'core/includes/control-checkbox-multiple.php' );
+}
+add_action( 'customize_register', 'responsive_load_customize_controls', 0 );
 
 /*
  * Hook options
@@ -59,6 +65,7 @@ function responsive_get_option_defaults() {
 		'breadcrumb'                      => false,
 		'cta_button'                      => false,
 		'minified_css'                    => false,
+		'sticky-header'                   => false,
 		'front_page'                      => 1,
 		'home_headline'                   => null,
 		'home_subheadline'                => null,
@@ -84,6 +91,14 @@ function responsive_get_option_defaults() {
 		'yelp_uid'                        => '',
 		'vimeo_uid'                       => '',
 		'foursquare_uid'                  => '',
+		'email_uid'						  => '',
+		'testimonial_val'				  => null,
+		'teammember1'					  => null,
+		'teammember2'					  => null,
+		'teammember3'					  => null,
+		'feature1'					  	  => null,	
+		'feature2'						  => null,
+		'feature3'				  		  => null,
 		'responsive_inline_css'           => '',
 		'responsive_inline_js_head'       => '',
 		'responsive_inline_js_footer' => '',
@@ -91,7 +106,10 @@ function responsive_get_option_defaults() {
 		'static_page_layout_default'      => 'default',
 		'single_post_layout_default'      => 'default',
 		'blog_posts_index_layout_default' => 'default',
-                'button_style'                    => 'default'
+		'site_layout_option'			  => 'default-layout',	
+                'button_style'                    => 'default',
+			'home-widgets'				=> false,
+		'site_footer_option'            => 'footer-3-col' 	
 	);
 
 	return apply_filters( 'responsive_option_defaults', $defaults );
@@ -299,7 +317,7 @@ if ( !function_exists( 'responsive_css' ) ) {
 		if ( is_child_theme() ) {
 			wp_enqueue_style( 'responsive-child-style', get_stylesheet_uri(), false, $theme['Version'] );
 		}
-		if ($responsive_options['front_page'] == 1 && (isset( $responsive_options['team']) && $responsive_options['team'] == '1' || isset( $responsive_options['contact']) && $responsive_options['contact'] == '1')) 
+		 
 		wp_enqueue_style( 'fontawesome-style', get_template_directory_uri() . '/core/css/font-awesome.min.css', false, '4.7.0');
 	}
 
@@ -428,7 +446,7 @@ add_filter( 'pre_update_option_show_on_front', 'responsive_front_page_override',
 function responsive_add_class( $classes ) {
 
 	// Get Responsive theme option.
-	global $responsive_options;
+	global $responsive_options;	
 	if ( $responsive_options['front_page'] == 1 && is_front_page() ) {
 		$classes[] = 'front-page';
 	}
@@ -448,7 +466,7 @@ add_filter( 'body_class', 'responsive_add_class' );
 if ( !function_exists( 'responsive_post_meta_data' ) ) {
 
 	function responsive_post_meta_data() {
-		printf( __( '<span class="%1$s">Posted on </span>%2$s<span class="%3$s"> by </span>%4$s', 'responsive' ),
+		printf( __( '<i class="fa fa-calendar" aria-hidden="true"></i><span class="%1$s">Posted on </span>%2$s<span class="%3$s"> by </span>%4$s', 'responsive' ),
 				'meta-prep meta-prep-author posted',
 				sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="timestamp updated" datetime="%3$s">%4$s</time></a>',
 						 esc_url( get_permalink() ),
@@ -464,6 +482,12 @@ if ( !function_exists( 'responsive_post_meta_data' ) ) {
 						 get_avatar( get_the_author_meta( 'ID' ), 32)
 				)
 		);
+?>
+		<span class='posted-in'>
+<?php 		printf( __( 'Posted in %s', 'responsive' ), get_the_category_list( ', ' ) ); ?>
+		</span>
+<?php 
+
 	}
 
 }
@@ -505,3 +529,44 @@ add_action('wp_head','fetch_copyright');
 /**
  * Added the footer copyright setting to the theme customizer - ends
  */
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+add_action( 'customize_controls_print_footer_scripts', 'responsive_add_pro_button' );
+
+function responsive_add_pro_button() {
+$upgrade_link = esc_url_raw( 'https://cyberchimps.com/store/responsivepro/' );
+?>
+<script type="text/javascript">
+		jQuery( document ).ready( function( $ ) {
+			jQuery( '#customize-info .accordion-section-title' ).append( '<a target="_blank" class="button btn-upgrade" href="<?php echo esc_url( $upgrade_link ); ?>"><?php esc_html_e( 'Upgrade To Pro', 'responsive' ); ?></a>' );
+			jQuery( '#customize-info .btn-upgrade' ).click( function( event ) {
+				event.stopPropagation();
+			} );
+		} );
+	</script>
+	<style>
+		.wp-core-ui .btn-upgrade {
+			color: #fff;
+			background: none repeat scroll 0 0 #5BC0DE;
+			border-color: #CCCCCC;
+			box-shadow: 0 1px 0 #5BC0DE inset, 0 1px 0 rgba(0, 0, 0, 0.08);
+			float: right;			
+			margin-top: 15px;
+			font-size: 14px;
+			height: 30px;
+			margin-bottom: 15px;
+
+		}
+		.wp-core-ui .btn-upgrade:hover {
+			color: #fff;
+			background: none repeat scroll 0 0 #39B3D7;
+			box-shadow: 0 1px 0 #39B3D7 inset, 0 1px 0 rgba(0, 0, 0, 0.08);
+		}
+		.wp-core-ui #customize-info .theme-name{
+					word-break: break-all;
+					padding-right: 120px;
+		}
+	 	.wp-full-overlay-sidebar-content #customize-info {background-color: #fff;}
+			
+	</style>
+<?php 
+}

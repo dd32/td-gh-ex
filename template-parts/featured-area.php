@@ -13,7 +13,19 @@ $empty     = ( empty( $responsive_options['home_headline'] ) && empty( $responsi
 $emtpy_cta = ( empty( $responsive_options['cta_text'] ) ) ? false : true;
 
 ?>
-
+<?php
+	$responsive_options = responsive_get_options();
+	
+	$display_slider = (! empty ($responsive_options['enable_slider']))?$responsive_options['enable_slider']:0;
+	
+	if ($display_slider == 1) {
+		$slider_content = $responsive_options['home_slider'];
+	?>
+	<div class='slider'><?php echo do_shortcode($slider_content); ?></div>
+<?php
+}
+?>
+<div id="content-outer">
 <div id="featured" class="grid col-940">
 
 	<div id="featured-content" class="grid col-460">
@@ -82,11 +94,22 @@ $emtpy_cta = ( empty( $responsive_options['cta_text'] ) ) ? false : true;
 	</div><!-- end of #featured-image -->
 
 </div><!-- end of #featured -->
+</div>
 
 <?php if ( isset( $responsive_options['about']) && $responsive_options['about'] == '1') { ?>
-<div id="about_div" class="grid">
-	
-	<div class="about-content">
+<?php 
+if($responsive_options['button_style'] == 'default')
+{
+	$button_class = "blue button";
+}
+else  if($responsive_options['button_style'] == 'flat_style')
+{
+	$button_class = "blue button flat";
+}
+?>
+<div id="about_div" class="grid col-940">
+	<div id="content-outer">
+	<div class="about-content grid col-620">
 	<?php 
 		$responsive_about_title = isset( $responsive_options['about_title']) ?  $responsive_options['about_title'] : 'About Box Title';
 		$responsive_about_text = isset( $responsive_options['about_text']) ?  $responsive_options['about_text'] : '';
@@ -94,7 +117,8 @@ $emtpy_cta = ( empty( $responsive_options['cta_text'] ) ) ? false : true;
 	?>
 	<h2 class="section_title"><?php echo esc_html($responsive_about_title);?></h2>
 	<p class="about_text"><?php echo esc_html( $responsive_about_text ) ; ?></p>
-	<span class="about_cta">
+	</div>
+	<div class="about_cta grid col-300 fit">
 			<a href="<?php echo $responsive_about_cta_url; ?>" class="about-cta-button <?php echo $button_class; ?>">
 			<?php
 			if ( isset( $responsive_options['about_cta_text'] ) )
@@ -102,12 +126,17 @@ $emtpy_cta = ( empty( $responsive_options['cta_text'] ) ) ? false : true;
 			
 			?>
 		</a>
-	</span>	
+	
+	</div>	
 	</div>
+	
+</div> <!--  -->
 		
-</div>
+<!--  </div>-->
 <?php }?>
+
 <?php if ( isset( $responsive_options['feature']) && $responsive_options['feature'] == '1') { ?>
+<div id="content-outer">
 <div id="feature_div" class="grid">
 	<?php 
 	$responsive_feature_title = isset( $responsive_options['feature_title']) ?  $responsive_options['feature_title'] : 'Features';
@@ -126,7 +155,8 @@ $emtpy_cta = ( empty( $responsive_options['cta_text'] ) ) ? false : true;
 		}
 	}
 	else 
-		$responsive_feature1_post_id='';	
+		$responsive_feature1_post_id='';
+		
 	if (isset ($responsive_options['feature2'])) {
 	$responsive_feature2_post_id = $responsive_options['feature2'];
 		if (!$responsive_feature2_post_id ==''){
@@ -167,30 +197,31 @@ $emtpy_cta = ( empty( $responsive_options['cta_text'] ) ) ? false : true;
 		<div class="section-feature grid">
 			<div class="feature_img"><img src="<?php echo esc_url($feature1_showcase_img); ?>" alt="<?php echo esc_attr($responsive_alt1_text); ?>"/></div>
 			<div class="feature_title"><?php echo esc_html($feature1_showcase_title); ?></div>			
-			<div class="feature_desc"><?php echo esc_html($responsive_feature1_desc); ?></div>			
+			<div class="feature_desc"><?php echo $responsive_feature1_desc; ?></div>			
 		</div>
 		<?php }?>
 		<?php if (!$responsive_feature2_post_id ==''){?>
 		<div class="section-feature grid">
 			<div class="feature_img"><img src="<?php echo esc_url($feature2_showcase_img); ?>" alt="<?php echo esc_attr($responsive_alt2_text); ?>"/></div>
 			<div class="feature_title"><?php echo esc_html($feature2_showcase_title); ?></div>			
-			<div class="feature_desc"><?php echo esc_html($responsive_feature2_desc); ?></div>			
+			<div class="feature_desc"><?php echo $responsive_feature2_desc; ?></div>			
 		</div>
 		<?php }?>
 		<?php if (!$responsive_feature3_post_id ==''){?>
 		<div class="section-feature grid">
 			<div class="feature_img"><img src="<?php echo esc_url($feature3_showcase_img); ?>" alt="<?php echo esc_attr($responsive_alt3_text); ?>"/></div>
 			<div class="feature_title"><?php echo esc_html($feature3_showcase_title); ?></div>			
-			<div class="feature_desc"><?php echo esc_html($responsive_feature3_desc); ?></div>			
+			<div class="feature_desc"><?php echo $responsive_feature3_desc; ?></div>			
 		</div>
 		<?php }?>
 	</div>
 	</div>
-		
+</div>		
 <?php } ?>
 
 <?php if ( isset( $responsive_options['testimonials']) && $responsive_options['testimonials'] == '1') { ?>
 <div id="testimonial_div" class="grid col-940">
+<div id="content-outer">
 	<?php 
 	
 		$responsive_testimonial_title = isset( $responsive_options['testimonial_title']) ?  $responsive_options['testimonial_title'] : 'Testimonial';		
@@ -218,76 +249,79 @@ $emtpy_cta = ( empty( $responsive_options['cta_text'] ) ) ? false : true;
 	
 	<div class="grid col-620 fit">	
 		<div class="testimonial_main_text">		
-		<p class="testimonial_text"><?php echo esc_html($responsive_testimonial_desc_content); ?></p>
+		<p class="testimonial_text"><?php echo $responsive_testimonial_desc_content; ?></p>
 		<p class="testimonial_author"><?php echo esc_html($responsive_testimonial_name); ?></p>		
 		</div>
 	</div>	
 	<?php }?>
-		
+</div>		
 </div>
 
 <?php }?>
 <?php if ( isset( $responsive_options['team']) && $responsive_options['team'] == '1') { ?>
+<div id="content-outer">
 <div id="team_div" class="grid">
 	<?php 
 	$responsive_team_title = isset( $responsive_options['team_title']) ?  $responsive_options['team_title'] : 'Team';
 	if (isset ($responsive_options['teammember1'])) {	
-	$responsive_team1_post_id = $responsive_options['teammember1'];
-	if (!$responsive_team1_post_id ==''){
-	$responsive_team1_post = get_post($responsive_team1_post_id);
-	$responsive_team1_desc = $responsive_team1_post->post_content;
-	$team1_showcase_img = wp_get_attachment_url( get_post_thumbnail_id( $responsive_team1_post_id ) );
-	$team1_showcase_title = get_the_title( $responsive_team1_post_id );
-	$team1_showcase_designation = get_post_meta($responsive_team1_post_id, 'responsive_meta_box_designation', true);
-	$team1_showcase_facebook = get_post_meta($responsive_team1_post_id, 'responsive_meta_box_facebook', true);
-	$team1_showcase_twitter = get_post_meta($responsive_team1_post_id, 'responsive_meta_box_twitter', true);
-	$team1_showcase_googleplus = get_post_meta($responsive_team1_post_id, 'responsive_meta_box_googleplus', true);
-	$team1_showcase_linkedin = get_post_meta($responsive_team1_post_id, 'responsive_meta_box_text_linkedin', true);
-	$image_id = responsive_get_attachment_id_from_url($team1_showcase_img);
-	$responsive_alt1_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
-	if ($responsive_alt1_text == "")
-		$responsive_alt1_text = get_the_title( $responsive_team1_post_id );
-	}
+		$responsive_team1_post_id = $responsive_options['teammember1'];
+		if (!$responsive_team1_post_id ==''){
+		$responsive_team1_post = get_post($responsive_team1_post_id);
+		$responsive_team1_desc = $responsive_team1_post->post_content;
+		$team1_showcase_img = wp_get_attachment_url( get_post_thumbnail_id( $responsive_team1_post_id ) );
+		$team1_showcase_title = get_the_title( $responsive_team1_post_id );
+		$team1_showcase_designation = get_post_meta($responsive_team1_post_id, 'responsive_meta_box_designation', true);
+		$team1_showcase_facebook = get_post_meta($responsive_team1_post_id, 'responsive_meta_box_facebook', true);
+		$team1_showcase_twitter = get_post_meta($responsive_team1_post_id, 'responsive_meta_box_twitter', true);
+		$team1_showcase_googleplus = get_post_meta($responsive_team1_post_id, 'responsive_meta_box_googleplus', true);
+		$team1_showcase_linkedin = get_post_meta($responsive_team1_post_id, 'responsive_meta_box_text_linkedin', true);
+		$image_id = responsive_get_attachment_id_from_url($team1_showcase_img);
+		$responsive_alt1_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+		if ($responsive_alt1_text == "")
+			$responsive_alt1_text = get_the_title( $responsive_team1_post_id );
+		}
 	}
 	else 
-	$responsive_team1_post_id='';
+		$responsive_team1_post_id='';	
+	
 	if (isset ($responsive_options['teammember2'])) {
-	$responsive_team2_post_id = $responsive_options['teammember2'];
-	if (!$responsive_team2_post_id ==''){
-	$responsive_team2_post = get_post($responsive_team2_post_id);
-	$responsive_team2_desc = $responsive_team2_post->post_content;
-	$team2_showcase_img = wp_get_attachment_url( get_post_thumbnail_id( $responsive_team2_post_id ) );
-	$team2_showcase_title = get_the_title( $responsive_team2_post_id );
-	$team2_showcase_designation = get_post_meta($responsive_team2_post_id, 'responsive_meta_box_designation', true);
-	$team2_showcase_facebook = get_post_meta($responsive_team2_post_id, 'responsive_meta_box_facebook', true);
-	$team2_showcase_twitter = get_post_meta($responsive_team2_post_id, 'responsive_meta_box_twitter', true);
-	$team2_showcase_googleplus = get_post_meta($responsive_team2_post_id, 'responsive_meta_box_googleplus', true);
-	$team2_showcase_linkedin = get_post_meta($responsive_team2_post_id, 'responsive_meta_box_text_linkedin', true);
-	$image_id = responsive_get_attachment_id_from_url($team2_showcase_img);
-	$responsive_alt2_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
-	if ($responsive_alt2_text == "")
-		$responsive_alt2_text = get_the_title( $responsive_team2_post_id );
-	}
+		$responsive_team2_post_id = $responsive_options['teammember2'];
+		if (!$responsive_team2_post_id ==''){ 
+		$responsive_team2_post = get_post($responsive_team2_post_id);
+		$responsive_team2_desc = $responsive_team2_post->post_content;
+		$team2_showcase_img = wp_get_attachment_url( get_post_thumbnail_id( $responsive_team2_post_id ) );
+		$team2_showcase_title = get_the_title( $responsive_team2_post_id );
+		$team2_showcase_designation = get_post_meta($responsive_team2_post_id, 'responsive_meta_box_designation', true);
+		$team2_showcase_facebook = get_post_meta($responsive_team2_post_id, 'responsive_meta_box_facebook', true);
+		$team2_showcase_twitter = get_post_meta($responsive_team2_post_id, 'responsive_meta_box_twitter', true);
+		$team2_showcase_googleplus = get_post_meta($responsive_team2_post_id, 'responsive_meta_box_googleplus', true);
+		$team2_showcase_linkedin = get_post_meta($responsive_team2_post_id, 'responsive_meta_box_text_linkedin', true);
+		$image_id = responsive_get_attachment_id_from_url($team2_showcase_img);
+		$responsive_alt2_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+		if ($responsive_alt2_text == "")
+			$responsive_alt2_text = get_the_title( $responsive_team2_post_id );
+		}
 	}
 	else
 		$responsive_team2_post_id='';
+	
 	if (isset ($responsive_options['teammember3'])) {
-	$responsive_team3_post_id = $responsive_options['teammember3'];
-	if (!$responsive_team3_post_id ==''){
-	$responsive_team3_post = get_post($responsive_team3_post_id);
-	$responsive_team3_desc = $responsive_team3_post->post_content;
-	$team3_showcase_img = wp_get_attachment_url( get_post_thumbnail_id( $responsive_team3_post_id ) );
-	$team3_showcase_title = get_the_title( $responsive_team3_post_id );
-	$team3_showcase_designation = get_post_meta($responsive_team3_post_id, 'responsive_meta_box_designation', true);
-	$team3_showcase_facebook = get_post_meta($responsive_team3_post_id, 'responsive_meta_box_facebook', true);
-	$team3_showcase_twitter = get_post_meta($responsive_team3_post_id, 'responsive_meta_box_twitter', true);
-	$team3_showcase_googleplus = get_post_meta($responsive_team3_post_id, 'responsive_meta_box_googleplus', true);
-	$team3_showcase_linkedin = get_post_meta($responsive_team3_post_id, 'responsive_meta_box_text_linkedin', true);
-	$image_id = responsive_get_attachment_id_from_url($team3_showcase_img);
-	$responsive_alt3_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
-	if ($responsive_alt3_text == "")
-		$responsive_alt3_text = get_the_title( $responsive_team2_post_id );
-	}
+		$responsive_team3_post_id = $responsive_options['teammember3'];
+		if (!$responsive_team3_post_id ==''){
+		$responsive_team3_post = get_post($responsive_team3_post_id);
+		$responsive_team3_desc = $responsive_team3_post->post_content;
+		$team3_showcase_img = wp_get_attachment_url( get_post_thumbnail_id( $responsive_team3_post_id ) );
+		$team3_showcase_title = get_the_title( $responsive_team3_post_id );
+		$team3_showcase_designation = get_post_meta($responsive_team3_post_id, 'responsive_meta_box_designation', true);
+		$team3_showcase_facebook = get_post_meta($responsive_team3_post_id, 'responsive_meta_box_facebook', true);
+		$team3_showcase_twitter = get_post_meta($responsive_team3_post_id, 'responsive_meta_box_twitter', true);
+		$team3_showcase_googleplus = get_post_meta($responsive_team3_post_id, 'responsive_meta_box_googleplus', true);
+		$team3_showcase_linkedin = get_post_meta($responsive_team3_post_id, 'responsive_meta_box_text_linkedin', true);
+		$image_id = responsive_get_attachment_id_from_url($team3_showcase_img);
+		$responsive_alt3_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+		if ($responsive_alt3_text == "")
+			$responsive_alt3_text = get_the_title( $responsive_team2_post_id );
+		}
 	}
 	else
 		$responsive_team3_post_id='';
@@ -302,7 +336,7 @@ $emtpy_cta = ( empty( $responsive_options['cta_text'] ) ) ? false : true;
 			<div class="team_img"><img src="<?php echo esc_url($team1_showcase_img); ?>" alt="<?php echo esc_attr($responsive_alt1_text); ?>"/></div>
 			<div class="team_member"><?php echo esc_html($team1_showcase_title); ?></div>
 			<div class="team_designation"><?php echo esc_html($team1_showcase_designation); ?></div>
-			<div class="team_desc"><?php echo esc_html($responsive_team1_desc); ?></div>
+			<div class="team_desc"><?php echo $responsive_team1_desc; ?></div>
 			<div class="social">
 			<?php if(!empty($team1_showcase_facebook)) { ?>
 						<a class="tw_showcase_facebook" href="<?php echo esc_url($team1_showcase_facebook); ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -323,7 +357,7 @@ $emtpy_cta = ( empty( $responsive_options['cta_text'] ) ) ? false : true;
 			<div class="team_img"><img src="<?php echo esc_url($team2_showcase_img); ?>" alt="<?php echo esc_attr($responsive_alt2_text); ?>"/></div>
 			<div class="team_member"><?php echo esc_html($team2_showcase_title); ?></div>
 			<div class="team_designation"><?php echo esc_html($team2_showcase_designation); ?></div>
-			<div class="team_desc"><?php echo esc_html($responsive_team2_desc); ?></div>
+			<div class="team_desc"><?php echo $responsive_team2_desc; ?></div>
 			<div class="social">			
 			<?php if(!empty($team2_showcase_facebook)) { ?>
 						<a class="tw_showcase_facebook" href="<?php echo esc_url($team2_showcase_facebook); ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -344,7 +378,7 @@ $emtpy_cta = ( empty( $responsive_options['cta_text'] ) ) ? false : true;
 			<div class="team_img"><img src="<?php echo esc_url($team3_showcase_img); ?>" alt="<?php echo esc_attr($responsive_alt3_text); ?>"/></div>
 			<div class="team_member"><?php echo esc_html($team3_showcase_title); ?></div>
 			<div class="team_designation"><?php echo esc_html($team3_showcase_designation); ?></div>
-			<div class="team_desc"><?php echo esc_html($responsive_team3_desc); ?></div>
+			<div class="team_desc"><?php echo $responsive_team3_desc; ?></div>
 			<div class="social">
 			<?php if(!empty($team3_showcase_facebook)) { ?>
 						<a class="tw_showcase_facebook" href="<?php echo esc_url($team3_showcase_facebook); ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -361,5 +395,6 @@ $emtpy_cta = ( empty( $responsive_options['cta_text'] ) ) ? false : true;
 		</div>
 		<?php }?>
 	</div>
+</div>
 </div>
 <?php }?>

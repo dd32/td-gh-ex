@@ -41,18 +41,20 @@ function responsive_theme_support() {
 			<a class="button" href="<?php echo esc_url( 'http://cyberchimps.com/guides/r-free/' ); ?>" title="<?php esc_attr_e( 'Instructions', 'responsive' ); ?>" target="_blank">
 				<?php _e( 'Instructions', 'responsive' ); ?></a>
 
-			<a class="button button-primary" href="<?php echo esc_url( 'http://cyberchimps.com/forum/free/responsive/' ); ?>" title="<?php esc_attr_e( 'Help', 'responsive' ); ?>" target="_blank">
-				<?php _e( 'Help', 'responsive' ); ?></a>
+			<a class="button" href="<?php echo esc_url( 'http://cyberchimps.com/forum/free/responsive/' ); ?>" title="<?php esc_attr_e( 'Help', 'responsive' ); ?>" target="_blank">
+				<?php _e( 'Help', 'responsive' ); ?></a>			
 
-			<a class="button" href="<?php echo esc_url( 'https://webtranslateit.com/en/projects/3598-Responsive-Theme' ); ?>" title="<?php esc_attr_e( 'Translate', 'responsive' ); ?>" target="_blank">
-				<?php _e( 'Translate', 'responsive' ); ?></a>
-
-			<a class="button" href="<?php echo esc_url( 'http://cyberchimps.com/showcase/' ); ?>" title="<?php esc_attr_e( 'Showcase', 'responsive' ); ?>" target="_blank">
-				<?php _e( 'Showcase', 'responsive' ); ?></a>
-
-			<a class="button" href="<?php echo esc_url( 'https://cyberchimps.com/10-free-responsive-wordpress-themes/?utm_source=orgwpresponsive" target="_blank" title="CyberChimps Free Themes"' ); ?>" title="<?php esc_attr_e( 'More Themes', 'responsive' ); ?>" target="_blank">
-				<?php _e( 'Get More Free Themes', 'responsive' ); ?></a>
-
+				
+			<a class="button button-primary" href="<?php echo esc_url( 'https://wordpress.org/support/theme/responsive/reviews/#new-post/' ); ?>" title="<?php esc_attr_e( 'Leave a star rating', 'responsive' ); ?>" target="_blank">
+				<?php _e( 'Leave a star rating', 'responsive' ); ?></a>
+			
+			<a class="button" href="<?php echo esc_url( 'https://cyberchimps.com/contact/' ); ?>" title="<?php esc_attr_e( 'Need Customization', 'responsive' ); ?>" target="_blank">
+				<?php _e( 'Need Customization?', 'responsive' ); ?></a>
+							
+			<a class="button" href="<?php echo esc_url( 'https://cyberchimps.com/checkout/?add-to-cart=277804' ); ?>" title="<?php esc_attr_e( 'Theme Demo Data', 'responsive' ); ?>" target="_blank">
+				<?php _e( 'Theme Demo Data', 'responsive' ); ?></a>
+<a class="button" href="<?php echo esc_url( 'https://cyberchimps.com/store/responsivepro#whygopro' ); ?>" title="<?php esc_attr_e('Why Go Pro?', 'responsive' ); ?>" target="_blank">	
+				<?php _e( 'Why Go Pro?', 'responsive' ); ?></a>
 		</div>
 	</div>
 
@@ -84,6 +86,16 @@ function responsive_install_plugins() {
 			'required' => false
 		),
 		array(
+			'name'     => ' WP Legal Pages', // The plugin name
+			'slug'     => 'wplegalpages', // The plugin slug (typically the folder name)
+			'required' => false
+		),
+		array(
+			'name'     => 'Elementor', // The plugin name
+			'slug'     => 'elementor', // The plugin slug (typically the folder name)
+			'required' => false
+		),
+		array(
 			'name'     => 'WPForms Lite', // The plugin name
 			'slug'     => 'wpforms-lite', // The plugin slug (typically the folder name)
 			'required' => false
@@ -101,6 +113,8 @@ function responsive_install_plugins() {
 		$activeplugin += 1;	
 	if ( !is_plugin_active( 'wpforms-lite/wpforms.php' ) )
 		$activeplugin += 1;	
+	if ( !is_plugin_active( 'elementor/elementor.php' ) )
+		$activeplugin += 1;
 
 
 	// Change this to your theme text domain, used for internationalising strings

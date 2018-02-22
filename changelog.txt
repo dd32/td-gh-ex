@@ -8,6 +8,46 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(02/22/18) - Changed - Version 3.10
+[+] - Added new 2 column layout for footer widgets area 
+
+(01/05/18) - Changed - Version 3.9
+[*] Enhanced top menu look
+[*] Now Html is allowed in Features, Testimonial & Team section
+[*] Look and feel of social icons changed (Team section and footer) 
+
+(12/26/17) - Changed - Version 3.8
+[*] Visual Improvements to the Admin Dashboard
+
+(11/27/17) - Changed - Version 3.7
+[*] Contact form will be available only on home page 
+[*] Updated WooCommerce template
+
+(10/26/17) - Added New Feature - Version 3.6
+[+] Option added to filter categories from Blog page
+[+] Option added to enable/disable home page widgets
+[*] Improved single post design
+
+(10/09/17) - Added New Feature - Version 3.5
+[+] Sticky header option added
+[+] Email social option added
+[+] New Blog layout with 3 Column added
+[*] Improved scroll to top button look
+[*] Changed About box look
+
+(09/29/17) - Added New Feature - Version 3.4
+[+] Added Full-width Without Boxes Site layout option
+[+] Added option to include SlideDeck slider on home page
+
+(09/13/17) - Added New Feature - Version 3.3
+[+] Added Full-width Site layout option
+
+(09/04/17) - Bug fix - Version 3.2.1
+[!] Fixed color issue for input
+
+(08/31/17) - Added New Feature - Version 3.2
+[+] New WooCommerce templates (for cart, checkout, and my account pages) added
+
 (08/30/17) - Bug fix - Version 3.1.1
 [!] Fixed Team Member not getting display issue
 [*] Features section image size reduced and added border
