@@ -252,7 +252,7 @@ function pinnacle_metaboxes() {
 		'options' => array(
 			'default' => __('Default', 'pinnacle'),
 			'yes' => __('Yes', 'pinnacle'),
-			'noe' => __('No', 'pinnacle'),
+			'no' => __('No', 'pinnacle'),
 		),
 	) );
 	$pinnacle_blog_post_sidebar->add_field( array(

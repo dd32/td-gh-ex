@@ -117,22 +117,22 @@ function pinnacle_sidebar_on_myaccount_page() {
    }
 }
 function pinnacle_sidebar_on_post() {
-  if(is_single() ) {
-    global $post;
-    $postsidebar = get_post_meta( $post->ID, '_kad_post_sidebar', true );
-      if(isset($postsidebar) && $postsidebar == 'no') {
-        return true;
-        } else if(isset($postsidebar) && $postsidebar == 'default') {
-          global $pinnacle;
-          if(isset($pinnacle['blogpost_sidebar_default']) && $pinnacle['blogpost_sidebar_default'] == 'no') {
-            return true;
-          } else {
-            return false;
-          }
-        } else {
-          return false;
-        }
-      }
+	if(is_single() ) {
+		global $post;
+		$postsidebar = get_post_meta( $post->ID, '_kad_post_sidebar', true );
+		if(isset($postsidebar) && ( $postsidebar == 'no' || $postsidebar == 'noe' ) ) {
+			return true;
+		} else if(isset($postsidebar) && $postsidebar == 'default') {
+			global $pinnacle;
+			if(isset($pinnacle['blogpost_sidebar_default']) && $pinnacle['blogpost_sidebar_default'] == 'no') {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
 }
 
 function pinnacle_sidebar_on_home_page() {

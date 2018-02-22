@@ -32,6 +32,10 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.6.1 | 22nd February 2018 = 
+* Update: woo templates.
+* Fix: issue with single post sidebar.
+
 = 1.6.0 | 30th January 2018 = 
 * Update: Meta
 * Update: Woo 3.3
