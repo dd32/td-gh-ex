@@ -258,6 +258,13 @@ class bazaarlite_customize {
 		
 		endif;
 
+		if ( bazaarlite_is_woocommerce_active() ) :
+			
+			$wp_customize->remove_control( 'woocommerce_catalog_rows');
+			$wp_customize->remove_control( 'woocommerce_catalog_columns');
+				
+		endif;
+
 		if ( !bazaarlite_is_woocommerce_active() ) :
 		
 			$wp_customize->remove_control( 'wip_woocommerce_header_cart');

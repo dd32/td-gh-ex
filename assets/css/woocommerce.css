@@ -770,12 +770,12 @@ body.archive.woocommerce .product-category mark.count {
     position: relative;
 }
 
-.product-thumbnail img {
-	width:100%
-}
-
 .product-thumbnail {
 	overflow:hidden;
+}
+
+.product-thumbnail img {
+	width:100%
 }
 
 .woocommerce div.product div.images .woocommerce-product-gallery__image {

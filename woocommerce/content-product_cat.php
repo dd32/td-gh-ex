@@ -36,7 +36,7 @@ if ( empty( $woocommerce_loop['columns'] ) ) {
 $woocommerce_loop['loop']++;
 ?>
 
-<article <?php wc_product_cat_class( 'masonry-item product-container col-md-4', $category ); ?> >
+<article <?php wc_product_cat_class( 'masonry-element product-container col-md-4', $category ); ?> >
 
 	<div class="product-thumbnail">
         

@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.1.0
+ * @version 3.3.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -47,7 +47,7 @@ $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_cl
 
 		if ( has_post_thumbnail() ) {
 			$html  = '<div data-thumb="' . get_the_post_thumbnail_url( $post->ID, 'shop_thumbnail' ) . '" class="product-thumbnail woocommerce-product-gallery__image">';
-			$html .= '<a rel="prettyPhoto[product-gallery]" href="' . esc_url( $full_size_image[0] ) . '">';
+			$html .= '<a data-rel="prettyPhoto[product-gallery]" href="' . esc_url( $full_size_image[0] ) . '">';
 			$html .= get_the_post_thumbnail( $post->ID, 'shop_single', $attributes );
 			$html .= '</a></div>';
 		} else {
