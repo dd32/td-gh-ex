@@ -3,9 +3,9 @@
 Contributors: automattic
 Tags: translation-ready, theme-options, custom-menu, post-formats, threaded-comments
 
-Requires at least: 4.0
+Requires at least: 4.7
 Tested up to: 4.9.3
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,6 +45,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * REMOVED THEME SUPPORT OF CUSTOM-BACKGROUND
 * FIXED SEVERAL TYPOS ON CUSTOMIZER
 
+=1.0.3 23/2/2018=
+
+* ADDED SIDEBAR TEMPLATES (Left,Right or No Sidebar) FROM PAGES AND POSTS(SINGLE)
+* FIXED NOT NEEDED ECHO on POST THUMBNAIL FUNCTION
+* FIXED GALLERY POST FORMAT BOG NOT DISPLAYING PROPERLY
+
 == Copyright ==
 
 Anorya WordPress Theme, Copyright 2017 rebornthemes.com
@@ -73,6 +79,6 @@ Anorya bundles the following third-party resources:
 
 * All images used, included those on screenshot are licensed under the Creative Commons Zero (CC0) license. (https://www.pexels.com/photo-license/)
 
-* Google Fonts Licenses ( https://fonts.google.com/attribution )
+* Google Fonts ( https://fonts.google.com/attribution )
 
 * Font Awesome icons, Copyright Dave Gandy License: SIL Open Font License, version 1.1. Source: http://fontawesome.io/

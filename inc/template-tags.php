@@ -59,7 +59,7 @@
 				<?php if ( has_post_thumbnail() ) : ?>
 					<div class="footer-slider-item">
 						<a href="<?php print esc_url(the_permalink());?>">
-						<?php echo  the_post_thumbnail('anorya_small', array('class'=>'img-responsive')); ?>
+						<?php   the_post_thumbnail('anorya_small', array('class'=>'img-responsive')); ?>
 						</a>
 					</div>
 				<?php endif; ?>				
@@ -96,10 +96,10 @@
 				<?php if ( has_post_thumbnail() ) : ?>
 					<div class="<?php print esc_html($anorya_slider_item_class); ?>">
 						<?php if($anorya_slider_item_class == 'slider2-item'){
-							echo  the_post_thumbnail('anorya_large', array('class'=>'img-responsive'));	
+							  the_post_thumbnail('anorya_large', array('class'=>'img-responsive'));	
 						}
 						else{	
-							echo  the_post_thumbnail('anorya_large', array('class'=>'img-responsive'));
+							  the_post_thumbnail('anorya_large', array('class'=>'img-responsive'));
 						}	?>
 					  
 					<div class="slider-item-overlay">

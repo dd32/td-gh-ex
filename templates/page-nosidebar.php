@@ -1,6 +1,6 @@
 <?php
 	/**
-	* The template for displaying all pages
+	* Template Name: Page - No Sidebar
 	*
 	* @package anorya
 	*/
@@ -15,11 +15,7 @@
 		
 		<div class="row">
 		
-		<?php if(get_theme_mod( 'anorya_single_page_sidebar_setting', 'hidden' ) == 'left'){ 
-					get_sidebar(); 
-				} ?>
-		
-			<div class="<?php echo esc_attr(anorya_main_content_class('PAGE')); ?>">
+			<div class="col-md-12">
 
 			<?php
 			while ( have_posts() ) : the_post();
@@ -35,9 +31,6 @@
 			?>
 			</div>
 			
-			<?php if(get_theme_mod( 'anorya_single_page_sidebar_setting', 'hidden' ) == 'right'){ 
-					get_sidebar(); 
-				} ?>
 		</div>
 	</div>	
 	

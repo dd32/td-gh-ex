@@ -7,23 +7,19 @@
  * @package anorya
  */
 
+	
+	if(has_post_format('gallery')): 
 
- 
- 
-	if(get_post_meta($post->ID,'anorya_g',true)): 
-		$anorya_post_gallery_array = explode(',',get_post_meta($post->ID,'anorya_g',true));
-		
+		$anorya_post_gallery_array  = rwmb_meta( 'anorya_g', 'type=image&size=anorya_xlarge' ); 
+	
 	?>
 	
 		<div id="gallery_post<?php echo esc_html($post->ID); ?>" class="full-width-post-gallery-container owl-carousel owl-theme">
-			
-				<?php
-				foreach ($anorya_post_gallery_array as $key => $anorya_attachment_id): ?>
+			<?php
+				foreach ($anorya_post_gallery_array as $anorya_attachment_id): ?>
 					<div class="full-width-post-gallery-item">
-						<?php echo wp_get_attachment_image( $anorya_attachment_id, 'anorya_xlarge', "", array( "class" => "img-responsive" ) ); ?>
+						<?php echo '<img class="img-responsive" src="'.esc_url_raw($anorya_attachment_id['url']).'" alt="'.esc_html($anorya_attachment_id['alt']).'" />'   ?>
 					</div>
-				<?php endforeach; ?>	
-				
+				<?php endforeach; ?>
 		</div>
-	
-	<?php endif; ?>
+	<?php endif; ?>	
