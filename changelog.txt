@@ -1,5 +1,12 @@
 Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/iconic-one/ for latest version
 
+-------------- 23 February 2018 ----------------
+
+23/02/2018  - Version 1.9.1
+
+- Updated WordPress repo subject tags.
+Note: If you are using v 1.9 you can skip this version.
+
 -------------- 11 February 2018 ----------------
 
 11/02/2018  - Version 1.9
