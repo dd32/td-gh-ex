@@ -52,7 +52,7 @@
 		// Resize post thumbnail in list
 			add_image_size( 'list', 240, 240 ); 
 
-		// Resize page thumbnail
+		// Resize single page thumbnail
 			add_image_size( 'single', 300, 300 ); 
 
 		// This feature adds RSS feed links to html head 

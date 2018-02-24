@@ -1,7 +1,7 @@
 === GridBulletin ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 6.0
+Version: 6.1
 Requires at least: 4.7
 Tested up to: 4.9
 License: GNU General Public License v3 or later
@@ -51,7 +51,7 @@ You can show or hide sidebar and archive title via WordPress Dashboard > Appeara
 * Source: https://fonts.google.com/specimen/Open+Sans
 * Copyright author: Steve Matteson
 * Apache License, version 2.0
-* http://www.apache.org/licenses/LICENSE-2.0.html
+* https://www.apache.org/licenses/LICENSE-2.0.html
 
 = Images =
 * Item: boats.jpg
