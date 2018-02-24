@@ -1,7 +1,7 @@
 === DarkElements ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 5.9
+Version: 6.0
 Requires at least: 4.2
 Tested up to: 4.9
 License: GNU General Public License v3 or later
@@ -51,7 +51,7 @@ And you can change the way how posts are displayed via WordPress Dashboard > App
 * Source: https://fonts.google.com/specimen/Open+Sans
 * Copyright author: Steve Matteson
 * Apache License, version 2.0
-* http://www.apache.org/licenses/LICENSE-2.0.html
+* https://www.apache.org/licenses/LICENSE-2.0.html
 
 = Images =
 * Item: boats.jpg
