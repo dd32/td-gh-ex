@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+OneColumn version 6.3 - february 2018
+- several small adjustments
+- updated files style and custom-editor-style
+
 OneColumn version 6.2 - february 2018
 - several small adjustments
 - updated file style and functions

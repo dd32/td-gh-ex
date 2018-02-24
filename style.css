@@ -1,7 +1,7 @@
 /*
 Theme Name: OneColumn
 Theme URI: https://www.guidovanderleest.nl/onecolumn
-Version: 6.2
+Version: 6.3
 Author: Guido van der Leest
 Author URI: https://www.guidovanderleest.nl
 Description: OneColumn is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, dropdown navigation. For more info please check readme file. Enjoy.
@@ -59,12 +59,12 @@ table {
 
 
 /* BODY AND CONTAINER */
-body {background:#fff; color:#333; font-family:'Open Sans', sans-serif; font-size:16px; line-height:1.5; text-align:left; word-wrap:break-word;}
+body {-webkit-text-size-adjust:100%; background:#fff; color:#333; font-family:'Open Sans', sans-serif; font-size:16px; line-height:1.5; text-align:left; word-wrap:break-word;}
 #container {width:100%; clear:both; float:left;}
 
 
 /* MAIN CONTENT AREA */
-#main-content {max-width:960px; clear:both; position:relative; margin:0 auto 0;}
+#main-content {max-width:960px; clear:both; position:relative; margin:0 auto;}
 #main-content:after {content:''; display:block; height:0; clear:both;}
 
 #content {width:94%; clear:both; float:left; padding:20px 3%; background:#f8f8f8;}
@@ -124,7 +124,7 @@ input[type="submit"], input[type="reset"], input[type="button"], button {cursor:
 input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover {background:#333;}
 input[type="checkbox"] {-webkit-appearance:checkbox; -moz-appearance:checkbox;}
 input[type="radio"] {-webkit-appearance:radio; -moz-appearance:radio;}
-select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist; background:#fff; color:#333;}
+select {-webkit-appearance:menulist; -moz-appearance:menulist; max-width:100%; background:#fff; color:#333;}
 button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
@@ -140,7 +140,7 @@ button {font-size:1em; font-family:'Open Sans', sans-serif;}
 .logo h1 {margin:0; font-size:4em;}
 .logo h1 a {color:#fff;}
 .logo h1 a:hover {text-decoration:none; color:#333;}
-.logo h2 {margin:0; padding:10px 0 0; font-size:2.2em;}
+.logo h2 {margin:0; padding:10px 0 0;}
 
 
 /* HEADER IMAGE */
@@ -223,12 +223,11 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 .wp-post-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
 
-.wp-caption {max-width:100%;}
 .wp-caption-text {text-align:center;}
 
+.gallery-item {margin:0 0 10px !important;}
 .gallery img {border:0 !important;}
-.gallery dl, .gallery dt, .gallery dd {margin:0; padding:0;}
-.gallery-caption {max-width:100%; text-align:center;}
+.gallery-caption {margin:0 !important;}
 
 
 /* SEARCHFORM */
@@ -321,7 +320,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	.home-left, .home-right {width:100%; clear:both; float:left;} 
 
 	/* IMAGES */
-	.wp-post-image, .single-image {width:50%; margin:0.3em 0.5em 0.3em 0;} 
+	.wp-post-image, .single-image {max-width:50%;} 
 
 	/* FOOTER */
 	#footer {width:96%; padding:10px 2%;}
