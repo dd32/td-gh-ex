@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+Shipyard version 6.1 - february 2018
+- several small adjustments
+- updated files style and custom-editor-style
+
 Shipyard version 6.0 - february 2018
 - several small adjustments
 - updated file style and functions
