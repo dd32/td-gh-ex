@@ -1,7 +1,7 @@
 === MyKnowledgeBase ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 5.9
+Version: 6.0
 Requires at least: 4.7
 Tested up to: 4.9
 License: GNU General Public License v3 or later
@@ -10,7 +10,7 @@ Tags: one-column, two-columns, right-sidebar, full-width-template, custom-backgr
 
 
 == Description ==
-MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Link Portal with a custom page template and using the default categories and posts. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
+Description: MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Link Portal with a custom page template and using the native categories and posts. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
 
 
 == Installation ==
@@ -77,7 +77,7 @@ The knowledgebase might not display 100% in IE8 and older because I have used cs
 * Source: https://fonts.google.com/specimen/Open+Sans
 * Copyright author: Steve Matteson
 * Apache License, version 2.0
-* http://www.apache.org/licenses/LICENSE-2.0.html
+* https://www.apache.org/licenses/LICENSE-2.0.html
 
 = Images =
 * Item: boats.jpg
