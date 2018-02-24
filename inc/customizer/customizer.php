@@ -506,6 +506,9 @@ function ashe_customize_register( $wp_customize ) {
 ** Site Identity =====
 */
 
+	$wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
+
 	// Logo Width
 	ashe_number_absint_control( 'title_tagline', 'logo_width', esc_html__( 'Width', 'ashe' ), array( 'step' => '10' ), 'postMessage', 8 );
 

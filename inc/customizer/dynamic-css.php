@@ -57,6 +57,23 @@ function ashe_true_false( $option ) {
 		}
 	';
 
+	if ( ashe_options( 'main_nav_label' ) === true ) {
+		$css .= "
+		@media screen and ( max-width: 979px ) {
+			#top-bar {
+				text-align: center !important;
+			}
+
+			.top-bar-socials {
+				float: none !important;
+			}
+
+			.top-bar-socials a {
+				line-height: 40px !important;
+			}
+		}";
+	}
+
 	// Page Header
 	$header_text_color = get_header_textcolor();
 
@@ -455,7 +472,7 @@ function ashe_true_false( $option ) {
 	// Sidebar Width
 	$css .= '
 		.sidebar-alt {
-			width: '. ( (int)ashe_options( 'general_sidebar_width' ) + 70 ) .'px;
+			max-width: '. ( (int)ashe_options( 'general_sidebar_width' ) + 70 ) .'px;
 			left: -'. ( (int)ashe_options( 'general_sidebar_width' ) + 70 ) .'px; 
 			padding: 85px 35px 0px;
 		}

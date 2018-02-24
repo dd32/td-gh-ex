@@ -16,7 +16,10 @@
     height: 500px;
   }
 
-  .main-menu-container {
+  #top-menu,
+  top-menu-container,
+  .main-menu-container,
+  #main-menu {
     display: none;
   }
 
@@ -156,23 +159,12 @@
   }
 
   .header-logo a {
-    font-size: 45px;
+    font-size: 80px !important;
+    line-height: 1 !important;
   }
 
-  #top-bar {
-    text-align: center !important;
-  }
-
-  #top-menu {
-    display: none;
-  }
-
-  .top-bar-socials {
-    float: none !important;
-  }
-  
-  .top-bar-socials a {
-    line-height: 40px !important;
+  .site-description {
+    font-size: 15px !important; 
   }
 
   .blog-grid > li {
@@ -193,7 +185,6 @@
   }
 
   .sidebar-alt {
-    width: 300px !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
