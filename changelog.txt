@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+MultiColors version 5.9 - february 2018
+- several small adjustments
+- updated files style and custom-editor-style
+
 MultiColors version 5.8 - february 2018
 - several small adjustments
 - updated file style and functions
