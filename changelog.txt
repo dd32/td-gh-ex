@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 3.4.9 - Released: 25.02.2018
+
+-- Fixed  : Notice on WooCommerce checkout form.
+
 - Version 3.4.8 - Released: 20.02.2018
 
 -- Updated : WooCommerce templates.
