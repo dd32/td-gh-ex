@@ -21,10 +21,12 @@ if ( ! function_exists( 'best_reloaded_setup' ) ) {
 	function best_reloaded_setup() {
 
 		// This theme uses wp_nav_menu() in two locations.
-		register_nav_menus( array(
-			'best_reloaded_nav_topbar' => __( 'Topbar Navigation', 'best-reloaded' ),
-			'best_reloaded_nav_footer' => __( 'Footer Navigation', 'best-reloaded' ),
-		) );
+		register_nav_menus(
+			array(
+				'best_reloaded_nav_topbar' => __( 'Topbar Navigation', 'best-reloaded' ),
+				'best_reloaded_nav_footer' => __( 'Footer Navigation', 'best-reloaded' ),
+			)
+		);
 
 		/**
 		 * Fallback function for Topbar Navigation.
@@ -83,15 +85,17 @@ if ( ! function_exists( 'best_reloaded_setup' ) ) {
 		);
 		add_theme_support( 'custom-background', $custom_bg_args );
 
-		add_theme_support( 'gutenberg', array(
-			'wide-images' => true,
-			'colors' => array(
-				'#e5450f',
-				'#f26535',
-				'#f58a65',
-				'#2f2f2f',
-			),
-		) );
+		add_theme_support(
+			'gutenberg', array(
+				'wide-images' => true,
+				'colors'      => array(
+					'#e5450f',
+					'#f26535',
+					'#f58a65',
+					'#2f2f2f',
+				),
+			)
+		);
 
 		// we'll want to use these over built in breadcrumbs.
 		add_theme_support( 'yoast-seo-breadcrumbs' );
@@ -152,6 +156,7 @@ if ( ! function_exists( 'best_reloaded_load_styles' ) ) {
 					break;
 			}
 			wp_add_inline_style( 'best-reloaded', $css, 20 );
+
 		} // End if().
 	}
 } // End if().
@@ -181,6 +186,15 @@ if ( ! function_exists( 'best_reloaded_load_scripts' ) ) {
 			if ( is_single() ) {
 				wp_enqueue_script( 'comment-reply' );
 			}
+
+			// Localize some data to the page for slider settings.
+			$slider_max_capped = get_theme_mod( 'slider_max_cap', best_reloaded_setting_defaults( 'slider_max_cap' ) );
+			if ( $slider_max_capped ) {
+				$data = array(
+					'slider_height_cap' => $slider_max_capped,
+				);
+				wp_localize_script( 'best-reloaded', 'best_reloaded_settings', $data );
+			}
 		}
 	}
 }
@@ -190,9 +204,9 @@ if ( ! function_exists( 'best_reloaded_remove_category_list_rel' ) ) {
 	/**
 	 * Remove rel attribute from the category list
 	 *
-	 * @param  string $output	string containing markup for category lists.
+	 * @param string $output  string containing markup for category lists.
 	 *
-	 * @return string        	returns a modified string with the 'rel' params removed.
+	 * @return string         returns a modified string with the 'rel' params removed.
 	 */
 	function best_reloaded_remove_category_list_rel( $output ) {
 		$output = str_replace( ' rel="category tag"', '', $output );
@@ -206,9 +220,9 @@ if ( ! function_exists( 'best_reloaded_custom_excerpt_length' ) ) {
 	/**
 	 * Custom excerpt length and more text
 	 *
-	 * @param integer $length	This is the currently set excerpt length.
+	 * @param integer $length  This is the currently set excerpt length.
 	 *
-	 * @return integer			New length to use for excerpts.
+	 * @return integer         New length to use for excerpts.
 	 */
 	function best_reloaded_custom_excerpt_length( $length ) {
 		if ( is_admin() ) {
@@ -230,7 +244,8 @@ if ( ! function_exists( 'best_reloaded_new_excerpt_more' ) ) {
 	 * @return string       string containing markup for the read more link.
 	 */
 	function best_reloaded_new_excerpt_more( $more ) {
-		$link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
+		$link = sprintf(
+			'<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
 			esc_url( get_permalink( get_the_ID() ) ),
 			/* translators: %s: Name of current post */
 			sprintf( __( 'Continue Reading<span class="sr-only"> "%s"</span>', 'best-reloaded' ), get_the_title( get_the_ID() ) )
@@ -244,14 +259,14 @@ if ( ! function_exists( 'best_reloaded_custom_tag_cloud_widget' ) ) {
 	/**
 	 * Custom tagcloud tweaks
 	 *
-	 * @param  array $args 	Array of args already passed to tagcloud widget.
+	 * @param array $args  Array of args already passed to tagcloud widget.
 	 *
-	 * @return array 		Updated array with more args appended or udpated.
+	 * @return array       Updated array with more args appended or udpated.
 	 */
 	function best_reloaded_custom_tag_cloud_widget( $args ) {
-		$args['largest'] = 18;
+		$args['largest']  = 18;
 		$args['smallest'] = 14;
-		$args['unit'] = 'px';
+		$args['unit']     = 'px';
 		return $args;
 	}
 }
