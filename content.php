@@ -1,25 +1,25 @@
-<article <?php post_class(); ?> data-name="Post CP">
+<article id="post-<?php the_id(); ?>" <?php post_class(); ?> data-name="Post CP">
     <div class="cr post---cr">
         <header class="hr post---hr entry-header">
             <div class="hr_cr post---hr_cr">
                 
                 <?php
                 
-                // E: Post Title
                 $post_title_obj = '';
                 $post_title = get_the_title();
                 
-                if ( $post_title ) {
+                if ( $post_title )
+                {
                     $post_title = get_the_title();
                     $post_title_attr = $post_title;
                 }
-                else {
+                else
+                {
                     $post_title = __( 'Post', 'applicator' ). ' '. get_the_ID();
                     $post_title_attr = $post_title;
                 }
                 
                 
-                // R: Post Title Object
                 $post_title_obj = applicator_htmlok( array(
                     'name'      => 'Post Title',
                     'structure' => array(
@@ -152,11 +152,10 @@
                 the_content();
                 $content_ob_content = ob_get_clean();
                 
-                if ( is_home() || is_singular() || is_archive() ) {
-                    
-                    if ( has_excerpt() ) {
-                        
-                        // E: Post Excerpt
+                if ( is_home() || is_singular() || is_archive() )
+                {   
+                    if ( has_excerpt() )
+                    {
                         echo $post_excerpt;
                     }
                     
@@ -174,12 +173,9 @@
                         'echo'      => true,
                     ) );
                 }
-                
-                else {
-                    
-                    // E: Post Excerpt
+                else
+                {
                     echo $post_excerpt;
-                
                 }
                 
                 
@@ -188,8 +184,8 @@
                 applicator_post_nav();
                 
                 // Sub-Post
-                if ( is_page_template( 'page-templates/sub-pages.php' ) ) {
-                    
+                if ( is_page_template( 'page-templates/sub-pages.php' ) )
+                {   
                     $parent = $post->ID;
                     $args = array(
                         'post_type'     => 'page',
@@ -200,12 +196,12 @@
 
                     $the_query = new WP_Query( $args );
 
-                    if ( $the_query->have_posts() ) {
-                        
-                        
+                    if ( $the_query->have_posts() )
+                    {   
                         // OB: Query Sub-Post Content
                         ob_start();
-                        while ( $the_query->have_posts() ) {
+                        while ( $the_query->have_posts() )
+                        {
                             $the_query->the_post();
                             get_template_part( 'content', get_post_format() );
                         }
@@ -233,9 +229,10 @@
 
         <?php
         
-        if ( 'post' === get_post_type() ) {
-            
-            if ( get_the_tag_list('', '', '') ) {
+        if ( 'post' === get_post_type() )
+        {   
+            if ( get_the_tag_list('', '', '') )
+            {
             ?>
 
             <footer class="fr post---fr entry-footer">
@@ -243,7 +240,6 @@
 
                     <?php
 
-                    // E: Post Meta
                     $post_meta = applicator_htmlok( array(
                         'name'      => 'Post Meta',
                         'structure' => array(
@@ -251,13 +247,12 @@
                         ),
                         'content'   => array(
                             'component'     => array(
-
-                                // Tags
                                 applicator_post_tags(),
                             ),
                         ),
                         'echo'      => true,
                     ) );
+                    
                     ?>
 
                 </div>

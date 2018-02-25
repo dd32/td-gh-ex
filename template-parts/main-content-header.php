@@ -6,7 +6,8 @@
         <?php
         
         // Main Content Headings - Search
-        if ( is_search() ) {
+        if ( is_search() )
+        {
 
             // Initialize
             $property_text = '';
@@ -72,19 +73,25 @@
 
             // Main Content Heading
             $main_content_heading_obj = applicator_htmlok( array(
-                    'name'      => 'Main Content',
-                    'structure' => array(
-                        'type'          => 'object',
-                        'subtype'       => 'heading',
-                        'elem'          => 'h2'
-                    ),
-                    'content'   => array(
-                        'object'        => array(
-                            array(
-                                'line'      => $line_array,
-                            ),
+                'name'      => 'Main Content',
+                'structure' => array(
+                    'type'          => 'object',
+                    'subtype'       => 'heading',
+                    'elem'          => 'h2',
+                    'linked'        => true,
+                    'attr'          => array(
+                        'a'             => array(
+                            'href'          => esc_url( get_search_link() ),
                         ),
                     ),
+                ),
+                'content'   => array(
+                    'object'        => array(
+                        array(
+                            'line'      => $line_array,
+                        ),
+                    ),
+                ),
                 'echo'  => true,
             ) );
 
