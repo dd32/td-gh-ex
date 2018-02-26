@@ -36,10 +36,10 @@
 										<p><?php esc_html_e( 'Display all of your information on a single page: the Parallax effect provides you a captivating scrolling experience.','quality' ); ?></p>
 										</li>
 										
-										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Mulitple Color Schemes','quality' ); ?></span>
+										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Multiple Color Schemes','quality' ); ?></span>
 										<p><?php esc_html_e( 'Enjoy any if the 9 preset color schemes, or create your own, without adding any code.','quality' ); ?></p>
 										</li>
-										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Google Map','quality' ); ?></span>
+										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Google Maps','quality' ); ?></span>
 										<p><?php esc_html_e( 'Display your Shop and Business location on your website using Google Maps.','quality' ); ?></p>
 										</li>
 										<li><span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Portfolio','quality' ); ?></span>
