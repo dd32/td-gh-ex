@@ -37,7 +37,7 @@ if ( ! function_exists( 'applicator_main_content_headings' ) )
         
         // Single
         if ( is_single() && ! is_attachment() )
-        {
+        {   
             $property_text = esc_html__( 'Entry', 'applicator' );
             $value_text = esc_html__( 'Post', 'applicator' );
             
@@ -66,7 +66,7 @@ if ( ! function_exists( 'applicator_main_content_headings' ) )
         }
         
         // Settings > Reading > A Static Page > Homepage
-        elseif ( is_front_page() )
+        elseif ( is_front_page() && 'posts' !== get_option( 'show_on_front' ) )
         {
             $property_text = esc_html__( 'Entry', 'applicator' );
             $value_text = esc_html__( 'Front Page', 'applicator' );
@@ -84,7 +84,7 @@ if ( ! function_exists( 'applicator_main_content_headings' ) )
         elseif ( is_attachment() )
         {
             $property_text = esc_html__( 'Entry', 'applicator' );
-            $value_text = esc_html__( 'Attachment Post', 'applicator' );
+            $value_text = esc_html__( 'Attachment', 'applicator' );
             
             $line_array = array(
                 'css'   => $value_line_term,
@@ -99,23 +99,7 @@ if ( ! function_exists( 'applicator_main_content_headings' ) )
         elseif ( is_404() )
         {
             $property_text = esc_html__( 'Entry', 'applicator' );
-            $value_text = esc_html__( 'Error 404 Page', 'applicator' );
-            
-            $line_array = array(
-                'css'   => $value_line_term,
-                array(
-                    'sep'   => $GLOBALS['applicator_space_sep'],
-                    'txt'   => $value_text,
-                ),
-            );
-        }
-                
-        
-        // Other
-        else
-        {
-            $property_text = esc_html__( 'Entry', 'applicator' );
-            $value_text = esc_html__( 'Other', 'applicator' );
+            $value_text = esc_html__( 'Error 404', 'applicator' );
             
             $line_array = array(
                 'css'   => $value_line_term,
@@ -145,7 +129,7 @@ if ( ! function_exists( 'applicator_main_content_headings' ) )
             // Daily Archive
             if ( is_day() )
             {
-                $archive_type = esc_html__( 'Daily', 'applicator' );
+                $archive_type = esc_html__( 'Day', 'applicator' );
 
                 $line_array = array(
                     'css'   => $value_line_term,
@@ -170,7 +154,7 @@ if ( ! function_exists( 'applicator_main_content_headings' ) )
             // Monthly Archive
             elseif ( is_month() )
             {
-                $archive_type = esc_html__( 'Monthly', 'applicator' );
+                $archive_type = esc_html__( 'Month', 'applicator' );
 
                 $line_array = array(
                     'css'   => $value_line_term,
@@ -191,7 +175,7 @@ if ( ! function_exists( 'applicator_main_content_headings' ) )
             // Yearly Archive
             elseif ( is_year() )
             {
-                $archive_type = esc_html__( 'Yearly', 'applicator' );
+                $archive_type = esc_html__( 'Year', 'applicator' );
 
                 $line_array = array(
                     'css'   => $value_line_term,

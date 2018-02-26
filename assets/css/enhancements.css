@@ -23,7 +23,6 @@ Enhancements Style
 .go-content-nav--inactive,
 .main-name-description--disabled .main-name,
 .main-name-description--disabled .main-description,
-.blog .main-content-heading,
 .single-post .main-content-heading,
 .attachment .main-content-heading,
 .page-template--multisite-directory .main-content-heading,
@@ -2276,7 +2275,8 @@ button:hover .dismiss-icon
     height: auto;
 }
 
-.author-avatar-default--blank .author-avatar
+.author-avatar-default--blank .author-avatar,
+.author-avatar--disabled .author-avatar
 {
     display: none;
 }
