@@ -50,7 +50,7 @@ function graphene_dynamic_sidebar_params( $params ){
 	$widget_number = $params[1]['number'];
 	$widget = $wp_registered_widgets[$current_widget_id]['callback'][0];
 
-	if ( is_object( $widget ) ) {
+	if ( is_object( $widget ) && method_exists( $widget, 'get_settings' ) ) {
 		$instance = $widget->get_settings();
 		if ( isset( $instance[$widget_number]['device_display'] ) ) {
 			if ( $instance[$widget_number]['device_display'] == 'desktop' ) $params[0]['before_widget'] = str_replace( 'class="', 'class="desktop-only ', $params[0]['before_widget'] );

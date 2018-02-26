@@ -289,6 +289,9 @@ function graphene_exclude_slider_categories( $request ){
 
 	$dummy_query = new WP_Query();
 	$dummy_query->parse_query( $request );
+
+	if ( get_option( 'show_on_front' ) == 'page' && $dummy_query->query_vars['page_id'] == get_option( 'page_on_front' ) ) return $request;
+	
 	$request['category__not_in'] =  graphene_object_id( $graphene_settings['slider_specific_categories'], 'category' );
 	
 	return $request;

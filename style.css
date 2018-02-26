@@ -2,7 +2,7 @@
 Theme Name: 	Graphene
 Theme URI: 		https://www.graphene-theme.com/graphene-theme/
 Description: 	We believe that every theme should facilitate creative writing, not hinder it. We also believe that each site should have the opportunity to be unique. Since the beginning, we have listened to countless suggestions and requests for features that really matter. Here's a theme that's user-friendly, feature-packed, and endlessly customisable, for both beginners and advanced creators. Feel at home with more than 40 languages and backed with active community support, where questions, ideas and suggestions are always welcomed.
-Version: 		2.3
+Version: 		2.3.1
 Author: 		Graphene Themes Solutions
 Author URI: 	https://www.graphene-theme.com/
 Tags: 			one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, rtl-language-support, post-formats, featured-image-header, featured-images, full-width-template, microformats
@@ -118,6 +118,9 @@ input[type="color"],
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+textarea {
+    height: auto;
 }
 iframe,
 embed,
@@ -714,8 +717,7 @@ now override the 3.3 new styles for modern browsers & apply opacity
 	margin-top: -35px;
 	overflow: hidden;
 }
-.term-desc p{
-	font: normal 12px/18px arial;
+.term-desc p {
 	margin-top: 10px;
 }
 .term-desc p:first-child {
@@ -1265,12 +1267,7 @@ h3.author-post-list .fa {
 }
 .comment-nav {
 	color: #929292;
-	font: normal 12px tahoma;
 	text-align: center;
-}
-.comment-link a,
-.comment-link a:visited {
-	font: normal 18px arial;
 }
 .post-nav {
 	margin-bottom: 10px;
@@ -2018,7 +2015,6 @@ legend {
 .wp-email .Forms {
 	border: 1px solid #e3e3e3;
 	color: #2c2b2b;
-	font: normal 12px arial;
 	padding: 4px 3px;
 	width: 250px;
 	height: 16px;
@@ -2117,15 +2113,6 @@ span.vote_total span {
 	float: none !important;
 	font-size: 1em !important;
 }
-.default_product_display .wpsc_product_price,
-.single_product_display .product_description,
-.single_product_display .single_additional_description,
-.single_product_display .wpsc_product_price,
-.default_product_display .wpsc_variation_forms label,
-.single_product_display form.product_form fieldset p, 
-#content .single_product_display form.product_form fieldset p {
-	font: normal 12px/18px arial;
-}
 .wpsc_product_price .currentprice {
 	font-weight: bold;
 }
@@ -2185,20 +2172,11 @@ form.product_form fieldset,
 #content .single_product_display .wpsc_variation_forms table tr td.col2 {
 	width: 80%;
 }
-.single_product_display form.product_form input, 
-#content .single_product_display form.product_form input,
-#checkout_page_container textarea, 
-#checkout_page_container input, 
-#content #checkout_page_container textarea, 
-#content #checkout_page_container input {
-	font: normal 12px arial;
-}
 #checkout_page_container textarea, 
 #checkout_page_container input[type="text"],
 #checkout_page_container select {
 	padding: 3px 5px;
 	border: 1px solid #ddd;
-	font: normal 12px arial;
 }
 .wpsc_checkout_table input[type="text"],
 .wpsc_checkout_table textarea {
