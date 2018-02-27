@@ -14,7 +14,7 @@
 
 get_header(); ?>
 <div class="container">
-	<div id="primary" class="content-area frontpage">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 	<div class="row clearme">
@@ -65,7 +65,7 @@ get_header(); ?>
 	
 
 			endwhile;
-			appsetter_custom_pagination();
+			the_posts_pagination();
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );

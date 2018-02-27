@@ -2,16 +2,16 @@
 
 /**
  * Custom footer credits
- * @package terra
+ * @package appsetter
  */
  
 function appsetter_footer()
 {
-	$footer_text = get_theme_mod('footer_text');
+	$appsetter_footer_text = get_theme_mod('appsetter_footer_text');
 ?>
-	<p><?php echo esc_html($footer_text); ?></p>
+	<p><?php echo esc_html($appsetter_footer_text); ?></p>
 <?php 
-if ( ! class_exists('incredible_planet_license')):
+if ( ! class_exists('appsetter_license')):
 	appsetter_footer_credits(); 
 endif;
 }

@@ -1,0 +1,9 @@
+== Changelog ==
+= 1.0.3 - Feb 27 2018 = 
+* Moved changelog to own file. Fixed all required issues as per theme review, and most of the recommended. Added license information, updated stylesheet and more.
+= 1.0.2 - Jan 10 2018 =
+* Fixed hardcoded leftover lines
+= 1.0.1 - Jan 10 2018 =
+* Fixed textdomain issues and few other warnings
+= 1.0 - Dec. 18 2017 =
+* Initial release

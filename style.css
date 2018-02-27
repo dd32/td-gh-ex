@@ -4,11 +4,11 @@ Theme URI: https://appsetter.com
 Author: makerspender
 Author URI: https://pedersenmark.com
 Description: AppSetter is a free blog theme that will suit many tech sites, review, mobile, and other electronic sites and stores. <br>1. Set up default images to display when there are no featured images. 2. Navigate to Appearance -> Customize -> Static Front Page and choose one of the options. You can have eihter a blog layout or page layout depending on your needs. 3. Go to Settings -> Permalinks and save page without changing the settings unless you also wish to do that.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: appsetter
-Tags: one-column, two-columns, right-sidebar, custom-colors, custom-header, custom-menu, featured-images, theme-options
+Tags: one-column, two-columns, right-sidebar, custom-colors, custom-menu, featured-images, theme-options
 
 This theme, like WordPress, is licensed under the GPL.
 appsetter is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
@@ -123,7 +123,7 @@ input, button, select, textarea {
     font-weight: bold;
 }
 h2.widget-title {
-    font-size: 3rem;
+    font-size: 2.2rem;
 }
 .alignright {
     float: right!important;
@@ -155,6 +155,13 @@ h2.entry-title.featured-title a {
     bottom: 0px;
     left: 0px;
     padding: 0 10% 20px 5%;
+}
+.footer-wrapper input, button, select, textarea {
+    color: black;
+    padding: 3px;
+}
+.sidebar-rules .widget {
+    margin-bottom: 20px;
 }
 .entry-header i.fa.fa-bolt {
     position: absolute;
@@ -247,6 +254,7 @@ body a {
 }
 img {
     max-width: 100%;
+	height:auto;
 }
 .the-excerpt {
     font-size: 90%;
@@ -371,7 +379,7 @@ p.site-desc {
 }
 .footer-bar h2.footer-title {
     text-transform: uppercase;
-    font-size: 7rem;
+    font-size: 4rem;
     font-weight: 800;
     display: inline-block;
     letter-spacing: -5px;
@@ -692,7 +700,7 @@ figure.alignleft {
 	float:left;
 }
 .widget_calendar a {
-    color: white;
+    color: #545454;
     font-weight: bold;
     text-decoration: underline;
 }
@@ -1154,7 +1162,8 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 }
 .sidebar-rules .widget_search {
     clear: both;
-    margin-bottom: 70px;
+    margin-bottom: 80px;
+    margin-top: 15px;
 }
 .widget ul li {
     border-bottom: 1px solid #eee;
@@ -1180,19 +1189,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 .search article {
     background: white;
 }
-.section-title::after, .widget-title:after {
-    background: #f5f5f5 none repeat scroll 0 0;
-    content: "";
-    height: 10px;
-    left: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    width: 100%;
-    z-index: -1;
-}
+
 .type-post p {
     font-family: 'Droid Serif', georgia, sans-serif;
     font-size: 1.7rem;
@@ -1363,4 +1360,8 @@ footer.author_bio_section p {
     .container {
         width: 1600px;
     }
+}
+.single .col-md-9 article {
+    background: white;
+    padding: 10px 50px 50px 50px;
 }

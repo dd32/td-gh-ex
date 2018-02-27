@@ -48,7 +48,7 @@ get_header(); ?>
 
 		endif; ?>
 		<?php
-			 appsetter_custom_pagination(); ?>
+			 the_posts_pagination(); ?>
 		</div>
 		
 		<div class="col-md-3 alignright">

@@ -133,7 +133,7 @@ function appsetter_entry_listmeta() {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ' ', 'appsetter' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( '%1$s', 'appsetter' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="tags-links">' . esc_html( '%1$s', 'appsetter' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 

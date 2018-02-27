@@ -28,10 +28,10 @@ function appsetter_customize_register($wp_customize)
 		'title' => __('Theme Support', 'appsetter') ,
 		'priority' => 201
 	));
-	$wp_customize->add_setting('accent_color', array(
+	$wp_customize->add_setting('appsetter_accent_color', array(
 		'sanitize_callback' => 'appsetter_sanitize_text',
 	));
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'accent_color', array(
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'appsetter_accent_color', array(
 		'label' => __('Accent color', 'appsetter') ,
 		'description' => __('Pick a bold, contrasty color for best results.', 'appsetter') ,
 		'section' => 'colors',
@@ -40,44 +40,20 @@ function appsetter_customize_register($wp_customize)
 	/*
 	* Options for showing tagline
 	*/
-	$wp_customize->add_setting('show_desc', array(
+	$wp_customize->add_setting('appsetter_show_desc', array(
 		'default' => 1,
 		'type' => 'theme_mod',
 		'capability' => 'edit_theme_options',
 		'sanitize_callback' => 'appsetter_sanitize_text'
 	));
-	$wp_customize->add_control('show_desc', array(
+	$wp_customize->add_control('appsetter_show_desc', array(
 		'label' => __('Display tagline', 'appsetter') ,
 		'section' => 'title_tagline',
-		'settings' => 'show_desc',
+		'settings' => 'appsetter_show_desc',
 		'type' => 'checkbox',
 		'std' => 1
 	));
-	/*
-	* Options for showing logo
-	*/
-	$wp_customize->add_setting('show_logo', array(
-		'default' => 1,
-		'type' => 'theme_mod',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'appsetter_sanitize_text'
-	));
-	$wp_customize->add_control('show_logo', array(
-		'label' => __('Display logo', 'appsetter') ,
-		'section' => 'title_tagline',
-		'settings' => 'show_logo',
-		'type' => 'checkbox',
-		'std' => 1
-	));
-	$wp_customize->add_setting('appsetter_logo', array(
-		'default' => get_template_directory_uri() . '/images/default-logo.png',
-		'sanitize_callback' => 'esc_url'
-	));
-	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'appsetter_logo', array(
-		'label' => __('Logo', 'appsetter') ,
-		'section' => 'title_tagline',
-		'settings' => 'appsetter_logo'
-	)));
+	
 	/*
 	* Options for setting missing square image
 	*/
@@ -108,27 +84,27 @@ function appsetter_customize_register($wp_customize)
 	/*
 	* Footer settings
 	*/
-	$wp_customize->add_setting('footer_text', array(
+	$wp_customize->add_setting('appsetter_footer_text', array(
 		'default' => 'Copyright',
 		'type' => 'theme_mod',
 		'capability' => 'edit_theme_options',
 		'transport' => 'postMessage',
 		'sanitize_callback' => 'appsetter_sanitize_text'
 	));
-	$wp_customize->add_control('footer_text', array(
+	$wp_customize->add_control('appsetter_footer_text', array(
 		'label' => __('Copyright text for bottom of footer', 'appsetter') ,
 		'section' => 'appsetter_footer_settings',
-		'settings' => 'footer_text',
+		'settings' => 'appsetter_footer_text',
 		'type' => 'text'
 	));
 	$wp_customize->add_setting('appsetter_upgrade_notice', array(
 		'sanitize_callback' => 'appsetter_sanitize_text'
 	));
 	
-	$upgrade_link = "https://appsetter.com/appsetter";
-	$author_link = "https://appsetter.com";
+	$upgrade_link = "https://appsetter.com/";
+	$author_link = "https://pedersenmark.com/";
 	
-	if (!class_exists('incredible_planet_license')) {
+	if (!class_exists('appsetter_license')) {
 		$wp_customize->add_control(new appsetter_support_info($wp_customize, 'appsetter_upgrade_notice', array(
 			'settings' => 'appsetter_upgrade_notice',
 			'section' => 'appsetter_footer_settings',
@@ -147,7 +123,7 @@ function appsetter_customize_register($wp_customize)
 		'description' => '<div class="support-text"><h3>Setting up the theme</h3><ol><li>Configure all sections in the customizer (Appearance -> Customize)</li><li>Set menu locations to respective settings</li><li>Drag menu widgets to footer area for footer menus</li><li>Regenerate thumbnails (use free plugin found on wordpress.org)</li></ol></div>'
 	)));
 	
-	if (!class_exists('incredible_planet_license')) {
+	if (!class_exists('appsetter_license')) {
 		
 		$wp_customize->add_setting('appsetter_links', array(
 			'sanitize_callback' => 'appsetter_sanitize_text'
@@ -191,11 +167,11 @@ function appsetter_custom_css()
 		$background_color = get_theme_mod('background_color');
 	}
 
-	if ('' == get_theme_mod('accent_color')) {
-		$accent_color = '#a4c639';
+	if ('' == get_theme_mod('appsetter_accent_color')) {
+		$appsetter_accent_color = '#a4c639';
 	}
 	else {
-		$accent_color = get_theme_mod('accent_color');
+		$appsetter_accent_color = get_theme_mod('appsetter_accent_color');
 	}
 
 	// Start adding all the css rules together in one joined variable called $custom_css then join to the actual custom.css file.
@@ -211,7 +187,7 @@ function appsetter_custom_css()
 			";
 	}
 	
-	if ($accent_color != '') {
+	if ($appsetter_accent_color != '') {
 		$custom_css.= "
 			.entry-header i.fa.fa-bolt, 
 			.mini i.fa.fa-bolt, 
@@ -228,31 +204,31 @@ function appsetter_custom_css()
 			.pagination a:hover,
 			.pagination .current 
 			{
-				background:{$accent_color};
+				background:{$appsetter_accent_color};
 			}
 			.current-menu-item a,
 			.sub-menu .current-menu-item li a			
 			{
-				border-bottom: 2px solid {$accent_color};
+				border-bottom: 2px solid {$appsetter_accent_color};
 			}
 		";
 	}
 
-	if ($accent_color != '') {
+	if ($appsetter_accent_color != '') {
 		$custom_css.= "
 			.title-positioning .entry-meta
 			
 			{
-				-webkit-box-shadow: 10px 0 0 {$accent_color}, -10px 0 0 {$accent_color};
-				-moz-box-shadow: 10px 0 0 {$accent_color}, -10px 0 0 {$accent_color};
-				-ms-box-shadow: 10px 0 0 {$accent_color}, -10px 0 0 {$accent_color};
-				-o-box-shadow: 10px 0 0 {$accent_color}, -10px 0 0 {$accent_color};
-				box-shadow: 10px 0 0 {$accent_color}, -10px 0 0 {$accent_color};
+				-webkit-box-shadow: 10px 0 0 {$appsetter_accent_color}, -10px 0 0 {$appsetter_accent_color};
+				-moz-box-shadow: 10px 0 0 {$appsetter_accent_color}, -10px 0 0 {$appsetter_accent_color};
+				-ms-box-shadow: 10px 0 0 {$appsetter_accent_color}, -10px 0 0 {$appsetter_accent_color};
+				-o-box-shadow: 10px 0 0 {$appsetter_accent_color}, -10px 0 0 {$appsetter_accent_color};
+				box-shadow: 10px 0 0 {$appsetter_accent_color}, -10px 0 0 {$appsetter_accent_color};
 			}
 		";
 	}
 
-	if ($accent_color != '') {
+	if ($appsetter_accent_color != '') {
 		$custom_css.= "
 			.list-articles .entry-footer a, 
 			body a, 
@@ -263,7 +239,7 @@ function appsetter_custom_css()
 			p.pop-category i,
 			.entry-footer i			
 			{
-				color:{$accent_color};
+				color:{$appsetter_accent_color};
 			}
 		";
 	}

@@ -27,7 +27,7 @@
 				$appsetter_default_large = esc_url(get_theme_mod('appsetter_default_large')); 
 			}
 		?>
-			<img src="<?php echo $appsetter_default_large; ?>" alt="<?php the_title(); ?>" />
+			<img src="<?php echo esc_html( $appsetter_default_large); ?>" alt="<?php the_title(); ?>" />
 			
 	<?php } ?>
 	
