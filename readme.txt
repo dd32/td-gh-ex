@@ -22,6 +22,7 @@ Scripts used in the site are as below:
 	2. HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2
 	3. Smooth Scroll script (https://gist.github.com/galambalazs/6477177/) licensed under MIT
 	4. imagesLoaded script (http://imagesloaded.desandro.com/) licensed under MIT
+	5. "Pro" theme section examples for the customizer (https://github.com/justintadlock/trt-customizer-pro) licensed under the GNU GPL, version 2 or later.
 
 Images used in Theme Screenshot
 	1. Pixabay (http://pixabay.com/it/home-office-workstation-ufficio-336373/) Free photos for commercial and personal works
@@ -48,6 +49,10 @@ two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, c
 3. Log into your WP admin panel and click on the Design tab. Now click on the Annina theme to activate it.
 
 == Changelog ==
+= Version 1.5.9 =
+* Improved support with Jetpack plugin
+* Minor bug fixes
+
 = Version 1.5.8 =
 * Minor bug fixes
 

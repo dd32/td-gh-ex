@@ -63,7 +63,7 @@ function annina_posted_on() {
 		}
 	}
 	
-	if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
+	if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link"><i class="fa fa-comments-o spaceLeftRight" aria-hidden="true"></i>';
 		comments_popup_link( esc_html__( 'No Comments', 'annina' ), esc_html__( '1 Comment', 'annina' ), esc_html__( '% Comments', 'annina' ) );
 		echo '</span>';
