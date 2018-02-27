@@ -346,6 +346,22 @@ function customizer_library_conica_build_styles() {
 		) );
 
 	}
+	$setting = 'conica-shop-remove-cat-count';
+	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+	if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+		$widget_title_size = esc_attr( $mod );
+
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'ul.products mark.count'
+			),
+			'declarations' => array(
+				'display' => 'none'
+			)
+		) );
+	}
 	
 }
 endif;

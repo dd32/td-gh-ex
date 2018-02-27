@@ -24,6 +24,10 @@
 #customize-theme-controls #accordion-section-conica-plugin-support-section:hover > .accordion-section-title:after {
     color: #FFF;
 }
+#customize-controls .description {
+    font-size: 12px;
+    opacity: 0.8;
+}
 
 .conica-remove-section {
     display: none !important;
@@ -68,6 +72,7 @@
 #customize-control-conica-set-header-layout,
 #customize-control-conica-slider-cats,
 #customize-control-conica-set-blog-layout,
+#customize-control-conica-blog-list-img-cut,
 #customize-control-conica-footer-hide-social,
 #customize-control-conica-set-text-header-add,
 #customize-control-conica-website-error-msg,

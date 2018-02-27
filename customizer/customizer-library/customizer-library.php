@@ -34,6 +34,12 @@ if ( ! class_exists( 'Customizer_Library' ) ) :
 	// Customizer preview functions.
 	require plugin_dir_path( __FILE__ ) . 'extensions/preview.php';
 
+	// Customizer note.
+	require plugin_dir_path( __FILE__ ) . 'custom-controls/note.php';
+
+	// Customizer imageselect functions.
+	require plugin_dir_path( __FILE__ ) . 'custom-controls/imageselect.php';
+
 	// Custom upsell controls for the theme customizer.
 	require plugin_dir_path( __FILE__ ) . 'custom-controls/upsell.php';
 
@@ -41,9 +47,6 @@ if ( ! class_exists( 'Customizer_Library' ) ) :
 	if ( version_compare( $GLOBALS['wp_version'], '4.0', '<' ) ) {
 		require plugin_dir_path( __FILE__ ) . 'custom-controls/textarea.php';
 	}
-
-	// Arbitrary content controls
-	require plugin_dir_path( __FILE__ ) . 'custom-controls/content.php';
 
 	/**
 	 * Class wrapper with useful methods for interacting with the theme customizer.

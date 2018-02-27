@@ -11,7 +11,7 @@ if ( get_theme_mod( 'conica-slider-type' ) == 'conica-no-slider' ) : ?>
         $slider_code = get_theme_mod( 'conica-slider-shortcode' );
     } ?>
     
-    <?php echo ( $slider_code ) ? do_shortcode( esc_html( $slider_code ) ) : ''; ?>
+    <?php echo ( $slider_code ) ? do_shortcode( sanitize_text_field( $slider_code ) ) : ''; ?>
     
 <?php else : ?>
     
@@ -79,6 +79,11 @@ if ( get_theme_mod( 'conica-slider-type' ) == 'conica-no-slider' ) : ?>
     <?php else : ?>
         
         <div class="home-slider-wrap <?php echo ( get_theme_mod( 'conica-slider-size' ) ) ? sanitize_html_class( get_theme_mod( 'conica-slider-size' ) ) : sanitize_html_class( 'conica-slider-size-medium' ); ?> <?php echo ( get_theme_mod( 'conica-slider-style' ) ) ? sanitize_html_class( 'slider-full-width' ) : ''; ?> home-slider-remove" <?php echo ( get_theme_mod( 'conica-slider-bg-color' ) ) ? 'style="background-color: ' . esc_html( get_theme_mod( 'conica-slider-bg-color' ) ) . ';"' : ''; ?>>
+            
+            <div class="home-slider-wrap-hint">
+                <?php _e( 'See how to', 'conica' ); ?> <a href="https://kairaweb.com/documentation/setting-up-the-default-slider/" target="_blank"><?php _e( 'Add your own slides here', 'conica' ); ?></a>
+            </div>
+
             <div class="home-slider-prev"><i class="fa fa-angle-left"></i></div>
             <div class="home-slider-next"><i class="fa fa-angle-right"></i></div>
             

@@ -3,13 +3,16 @@
  * @package Conica
  */
  ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
-	<?php if ( has_post_thumbnail() ) : ?>
+	<?php if ( has_post_thumbnail() ) :
+		$conica_image_cut = customizer_library_get_default( 'conica-blog-list-img-cut' );
+		if ( get_theme_mod( 'conica-blog-list-img-cut' ) ) {
+			$conica_image_cut = get_theme_mod( 'conica-blog-list-img-cut' );
+		} ?>
 		<a href="<?php the_permalink() ?>" class="post-loop-thumbnail">
 			
-			<?php the_post_thumbnail( 'large' ); ?>
+			<?php the_post_thumbnail( $conica_image_cut ); ?>
 			
 		</a>
 	<?php endif; ?>

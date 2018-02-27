@@ -349,6 +349,14 @@ function customizer_library_conica_options() {
         'choices' => $choices,
         'default' => 'blog-left-layout'
     );
+    $options['conica-blog-list-img-cut'] = array(
+        'id' => 'conica-blog-list-img-cut',
+        'label'   => __( 'Blog Image Cut', 'conica' ),
+        'section' => $section,
+        'type'    => 'imageselect',
+        'description' => __( 'Select which cut the Blog list uses<br />Recommended: Optimize images before upload', 'conica' ),
+        'default' => 'large'
+    );
     $options['conica-set-blog-cats'] = array(
         'id' => 'conica-set-blog-cats',
         'label'   => __( 'Exclude Blog Categories', 'conica' ),
@@ -420,6 +428,13 @@ function customizer_library_conica_options() {
             'description' => __( 'Due to the AJAX, This will only change when you open the site again in a new tab', 'conica' ),
             'choices' => $choices,
             'default' => 'fa-shopping-cart'
+        );
+        $options['conica-shop-remove-cat-count'] = array(
+            'id' => 'conica-shop-remove-cat-count',
+            'label'   => __( 'Remove Categories Count', 'conica' ),
+            'section' => $section,
+            'type'    => 'checkbox',
+            'default' => 0,
         );
 
         $options['conica-upsell-woocommerce'] = array(

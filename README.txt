@@ -79,6 +79,16 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.11
+* WooCommerce & Conica CSS tweaks/fixes
+* Fix Home Page Slider do_shortcode not working
+* Updated WooCommerce deprecated functions
+* Updated WooCommerce header cart to work with taxes
+* Added help hint for Default Slider
+* Added setting to select which image cut the Blog uses
+* Added setting to remove Categories count
+* Updated the language .pot file
+
 #### 1.3.10
 * Style tweaks/fixes
 * Neatened Customizer Settings
