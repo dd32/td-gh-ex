@@ -1884,7 +1884,9 @@ class enigma_changelog_Control extends WP_Customize_Control {
 			<div class="col-md-3 col-sm-6">
 				<h2 style="margin-top:10px;color:#fff;background-color: #3ca3e0;padding: 10px;font-size: 19px;"><?php echo _e( 'Enigma Theme Changelog','enigma'); ?></h2>
 				<ul style="padding-top:20px">
-				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1 - <span> Current Version </span></div>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.2 - <span> Current Version </span></div>
+		<ol> <li> Description Updates</li></ol></li>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.1 -</div>
 		<ol> <li> Minor Change</li></ol></li>
 				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1 - </div>
 		<ol> <li> Category option added for blog. </li></ol></li>
