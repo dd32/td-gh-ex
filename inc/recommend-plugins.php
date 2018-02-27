@@ -27,12 +27,12 @@ function bc_business_consulting_register_required_plugins() {
 	 */
 	$plugins = array(
 		array(
-			'name'      => 'Page Builder by SiteOrigin — WordPress Plugins',
+			'name'      => 'Page Builder by SiteOrigin ',
 			'slug'      => 'siteorigin-panels',
 			'required'  => false,
 		),
 		array(
-			'name'      => 'Master Slider – Responsive Touch Slider',
+			'name'      => 'Master Slider',
 			'slug'      => 'master-slider',
 			'required'  => false,
 		),

@@ -1,9 +1,9 @@
-=== Business Consulting ===
+=== BC Business Consulting ===
 
 Contributors: athemeart
 Requires at least: 4.0
-Tested up to: 4.8.1
-Stable tag: 1.0.2
+Tested up to: 4.9.4
+Stable tag: 1.0.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -13,8 +13,8 @@ BC Business Consulting Multipurpose One page WordPress Theme BC Business Consult
 
 
 == Copyright ==
-Business Consulting WordPress Theme, Copyright (C) 2017 aThemeArt.com
-Business Consulting is distributed under the terms of the GNU GPL
+BC Business Consulting WordPress Theme, Copyright (C) 2017 aThemeArt.com
+BC Business Consulting is distributed under the terms of the GNU GPL
 
 == Installation ==
 	
