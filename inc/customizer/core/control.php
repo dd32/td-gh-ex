@@ -12,7 +12,7 @@
  *
  * @see WP_Customize_Control
  */
-class NewsBD24_Dropdown_Taxonomies_Control extends WP_Customize_Control {
+class bc_business_consulting_Taxonomies_Control extends WP_Customize_Control {
 
 	/**
 	 * Control type.

@@ -11,12 +11,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'business_consulting_Admin' ) ) :
+if ( ! class_exists( 'bc_business_consulting_Admin' ) ) :
 
 /**
- * business_consulting_Admin Class.
+ * bc_business_consulting_Admin Class.
  */
-class business_consulting_Admin {
+class bc_business_consulting_Admin {
 
 	/**
 	 * Constructor.
@@ -145,9 +145,7 @@ class business_consulting_Admin {
 				<?php esc_html_e( 'Changelog', 'bc-business-consulting' ); ?>
 			</a>
             
-            <a class="nav-tab <?php if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'club' ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'welcome', 'tab' => 'club' ), 'themes.php' ) ) ); ?>">
-				<?php esc_html_e( 'Theme Club', 'bc-business-consulting' ); ?>
-			</a>
+            
             
             
 		</h2>
@@ -302,6 +300,16 @@ class business_consulting_Admin {
 						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
                      <tr>
+						<td><h4><?php esc_html_e('Page Builder by SiteOrigin with 8+ Widgets  ', 'bc-business-consulting'); ?></h4></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+                     <tr>
+						<td><h4><?php esc_html_e('Home Slider', 'bc-business-consulting'); ?></h4></td>
+						<td>3rd party plugins</td>
+						<td>Included with theme options</td>
+					</tr>
+                     <tr>
 						<td><h4><?php esc_html_e('Navigation Color', 'bc-business-consulting'); ?></h4></td>
 						<td><span class="dashicons dashicons-no"></span></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
@@ -422,58 +430,10 @@ class business_consulting_Admin {
 	}
 	
 	
-	/**
-	 * Output the about screen.
-	 */
-	public function club_screen() {
-		$theme = wp_get_theme( get_template() );
-		
-		$request = wp_remote_get( 'https://athemeart.com/edd-api/v2/products?category=wordpress');
-		if( !is_wp_error( $request ) ) {
-			$body = wp_remote_retrieve_body( $request );
-			$data = json_decode( $body );
-			
-		}else{
-			$data =array(); 
-		}
-		
-		
-		?>
-		<div class="wrap about-wrap">
-
-			<?php $this->intro(); ?>
-
-			<div class="changelog point-releases">
-				<div class="under-the-hood two-col">
-					
-
-				<?php if (!empty($data)) : ?>
-                  
-                   
-					<?php
-                  
-                    foreach( $data->products as $product ) {
-					
-                        echo '<div class="col">';
-                            echo '<a target="_blank" href="' . esc_url( $product->info->link ) . '"><img src=' . esc_url( $product->info->thumbnail ) . '" /><br/>' . esc_attr( $product->info->title ) . '</a>';
-                        echo '</div>';
-                    }
-                   
-                    ?>
-                <?php endif; ?>
-
-					
-					
-				</div>
-			</div>
-
-			
-		</div>
-		<?php
-	}
+	
 
 }
 
 endif;
 
-return new business_consulting_Admin();
+return new bc_business_consulting_Admin();

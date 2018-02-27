@@ -6,7 +6,7 @@
  * @package bc-business-consulting
  */
 
-$default = business_consulting_get_default_theme_options();
+$default = bc_business_consulting_get_default_theme_options();
 
 
 
@@ -36,7 +36,7 @@ $wp_customize->add_section( 'social_option_section_settings',
 			array(
 				'default'           => $default['social_profile'],
 				'capability'        => 'edit_theme_options',
-				'sanitize_callback' => 'business_consulting_sanitize_checkbox',
+				'sanitize_callback' => 'bc_business_consulting_sanitize_checkbox',
 			)
 		);
 		$wp_customize->add_control( 'social_profile',
@@ -52,7 +52,7 @@ $wp_customize->add_section( 'social_option_section_settings',
 			array(
 				'default'           => $default['search_icon'],
 				'capability'        => 'edit_theme_options',
-				'sanitize_callback' => 'business_consulting_sanitize_checkbox',
+				'sanitize_callback' => 'bc_business_consulting_sanitize_checkbox',
 			)
 		);
 		$wp_customize->add_control( 'search_icon',
@@ -87,7 +87,7 @@ $wp_customize->add_section( 'social_option_section_settings',
 			foreach( $options as $k => $val ):
 				// SETTINGS
 				if ( isset( $key ) && isset( $k ) ){
-					$wp_customize->add_setting('business_consulting_social_profile_link['.$key .']['. $k .']',
+					$wp_customize->add_setting('bc_business_consulting_social_profile_link['.$key .']['. $k .']',
 						array(
 							'default'           => esc_url( $default['social_profile_link'] ),
 							'capability'        => 'edit_theme_options',
@@ -95,7 +95,7 @@ $wp_customize->add_section( 'social_option_section_settings',
 						)
 					);
 					// CONTROLS
-					$wp_customize->add_control('business_consulting_social_profile_link['.$key .']['. $k .']', 
+					$wp_customize->add_control('bc_business_consulting_social_profile_link['.$key .']['. $k .']', 
 						array(
 							'label'		 => esc_attr( $val['label'] ), 
 							'section'    => 'social_option_section_settings',
@@ -124,7 +124,7 @@ $wp_customize->add_section( 'theme_option_section_settings',
 			array(
 				'default'           => $default['blog_layout'],
 				'capability'        => 'edit_theme_options',
-				'sanitize_callback' => 'business_consulting_sanitize_select',
+				'sanitize_callback' => 'bc_business_consulting_sanitize_select',
 			)
 		);
 		$wp_customize->add_control( 'blog_layout',
@@ -148,7 +148,7 @@ $wp_customize->add_section( 'theme_option_section_settings',
 			array(
 				'default'           => $default['excerpt_length_blog'],
 				'capability'        => 'edit_theme_options',
-				'sanitize_callback' => 'business_consulting_sanitize_positive_integer',
+				'sanitize_callback' => 'bc_business_consulting_sanitize_positive_integer',
 			)
 		);
 		$wp_customize->add_control( 'excerpt_length_blog',
@@ -167,7 +167,7 @@ $wp_customize->add_section( 'theme_option_section_settings',
 			array(
 				'default'           => $default['blog_loop_content_type'],
 				'capability'        => 'edit_theme_options',
-				'sanitize_callback' => 'business_consulting_sanitize_select',
+				'sanitize_callback' => 'bc_business_consulting_sanitize_select',
 			)
 		);
 		$wp_customize->add_control( 'blog_loop_content_type',
@@ -200,7 +200,7 @@ $wp_customize->add_section( 'page_option_section_settings',
 			array(
 				'default'           => $default['blog_layout'],
 				'capability'        => 'edit_theme_options',
-				'sanitize_callback' => 'business_consulting_sanitize_select',
+				'sanitize_callback' => 'bc_business_consulting_sanitize_select',
 			)
 		);
 		$wp_customize->add_control( 'page_layout',
@@ -258,6 +258,23 @@ $wp_customize->add_section( 'dialog_section',
 	)
 );
 
+	  /*Show dialog Section*/
+		$wp_customize->add_setting( 'social_profile_dialog',
+			array(
+				'default'           => $default['social_profile_dialog'],
+				'capability'        => 'edit_theme_options',
+				'sanitize_callback' => 'bc_business_consulting_sanitize_checkbox',
+			)
+		);
+		$wp_customize->add_control( 'social_profile_dialog',
+			array(
+				'label'    => esc_html__( 'Show Award & Dialog ?', 'bc-business-consulting' ),
+				'section'  => 'dialog_section',
+				'type'     => 'checkbox',
+				
+			)
+		);
+
 	// Setting copyright_text.
 	$wp_customize->add_setting( 'dialog_top',
 		array(
@@ -311,15 +328,15 @@ $wp_customize->add_section( 'dialog_section',
 				// SETTINGS
 				if ( isset( $key ) && isset( $k ) ){
 					
-					$wp_customize->add_setting('business_consulting_award['.$key .']['. $k .']',
+					$wp_customize->add_setting('bc_business_consulting_award['.$key .']['. $k .']',
 						array(
-							'default'           => $default['business_consulting_award'][$key][$k],
+							'default'           => $default['bc_business_consulting_award'][$key][$k],
 							'capability'     => 'edit_theme_options',
 							'sanitize_callback' => 'sanitize_text_field'
 						)
 					);
 					// CONTROLS
-					$wp_customize->add_control('business_consulting_award['.$key .']['. $k .']', 
+					$wp_customize->add_control('bc_business_consulting_award['.$key .']['. $k .']', 
 						array(
 							'label' => esc_html( $val['label'] ), 
 							'section'    => 'dialog_section',

@@ -7,7 +7,7 @@
  * @package Business_Consulting
  */
 
-if ( ! function_exists( 'business_consulting_setup' ) ) :
+if ( ! function_exists( 'bc_business_consulting_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -15,7 +15,7 @@ if ( ! function_exists( 'business_consulting_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function business_consulting_setup() {
+	function bc_business_consulting_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -101,7 +101,7 @@ if ( ! function_exists( 'business_consulting_setup' ) ) :
 		add_theme_support( 'wc-product-gallery-slider' );
 	}
 endif;
-add_action( 'after_setup_theme', 'business_consulting_setup' );
+add_action( 'after_setup_theme', 'bc_business_consulting_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -110,17 +110,17 @@ add_action( 'after_setup_theme', 'business_consulting_setup' );
  *
  * @global int $content_width
  */
-function business_consulting_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'business_consulting_content_width', 640 );
+function bc_business_consulting_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'bc_business_consulting_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'business_consulting_content_width', 0 );
+add_action( 'after_setup_theme', 'bc_business_consulting_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function business_consulting_widgets_init() {
+function bc_business_consulting_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'bc-business-consulting' ),
 		'id'            => 'sidebar-1',
@@ -141,7 +141,7 @@ function business_consulting_widgets_init() {
 		'after_title'   => '</h4>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Front Page Sidebar', 'bc-business-consulting' ),
+		'name'          => esc_html__( 'Front Page Slider', 'bc-business-consulting' ),
 		'id'            => 'front_page_sidebar',
 		'description'   => esc_html__( 'Add widgets here.', 'bc-business-consulting' ),
 		'before_widget' => '<aside class="col-md-3 col-sm-6 col-xs-6 ftr-widget link-widget">',
@@ -150,7 +150,7 @@ function business_consulting_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Blog Page Sidebar', 'bc-business-consulting' ),
+		'name'          => esc_html__( 'Blog Page Slider', 'bc-business-consulting' ),
 		'id'            => 'blog_page_sidebar',
 		'description'   => esc_html__( 'Add widgets here.', 'bc-business-consulting' ),
 		'before_widget' => '<aside class="col-md-3 col-sm-6 col-xs-6 ftr-widget link-widget">',
@@ -159,15 +159,15 @@ function business_consulting_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 }
-add_action( 'widgets_init', 'business_consulting_widgets_init' );
+add_action( 'widgets_init', 'bc_business_consulting_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function business_consulting_scripts() {
+function bc_business_consulting_scripts() {
 	/* FONTS*/
-	wp_enqueue_style( 'Roboto+Condensed', '//fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,700');
-	wp_enqueue_style( 'Roboto', '/fonts.googleapis.com/css?family=Roboto:400,500');
+	wp_enqueue_style( 'bc-business-consulting-Roboto+Condensed', '//fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,700');
+	wp_enqueue_style( 'bc-business-consulting-Roboto', '/fonts.googleapis.com/css?family=Roboto:400,500');
 
 	
 	/* PLUGIN CSS */
@@ -183,31 +183,31 @@ function business_consulting_scripts() {
 
 
 	/* PLUGIN JS */
-	wp_enqueue_script( 'bootstrap-js', get_theme_file_uri( '/vendors/bootstrap/bootstrap.js' ), 0, '3.3.7', true );
+	wp_enqueue_script( 'jquery-bootstrap', get_theme_file_uri( '/vendors/bootstrap/bootstrap.js' ), 0, '3.3.7', true );
 	
-	wp_enqueue_script( 'magnific-popup', get_template_directory_uri().'/vendors/magnific-popup/jquery.magnific-popup.js', 0, '1.1.0',true );
-	wp_enqueue_script( 'owl.carousel', get_theme_file_uri( '/vendors/owl-carousel/owl.carousel.js' ),0,'2.2.1',true );
-	wp_enqueue_script( 'sticky', get_theme_file_uri( '/vendors/sticky/jquery.sticky.js' ),0,'1.0.4',true );
+	wp_enqueue_script( 'jquery-magnific-popup', get_template_directory_uri().'/vendors/magnific-popup/jquery.magnific-popup.js', 0, '1.1.0',true );
+	wp_enqueue_script( 'jquery-owl.carousel', get_theme_file_uri( '/vendors/owl-carousel/owl.carousel.js' ),0,'2.2.1',true );
+	wp_enqueue_script( 'jquery-sticky', get_theme_file_uri( '/vendors/sticky/jquery.sticky.js' ),0,'1.0.4',true );
 	
-	wp_enqueue_script( 'bc-business-consulting', get_template_directory_uri().'/assets/business_consulting.js', array('jquery'), '1.0.0', true);
+	wp_enqueue_script( 'bc-business-consulting-js', get_template_directory_uri().'/assets/bc-business-consulting.js', array('jquery'), '1.0.0', true);
 	
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'business_consulting_scripts' );
+add_action( 'wp_enqueue_scripts', 'bc_business_consulting_scripts' );
 
 
-if( ! function_exists( 'business_consulting_pingback_header' ) ) :
+if( ! function_exists( 'bc_business_consulting_pingback_header' ) ) :
 	/**
 	 * Add a pingback url auto-discovery header for singularly identifiable articles.
 	 */
-	function business_consulting_pingback_header() {
+	function bc_business_consulting_pingback_header() {
 		if ( is_singular() && pings_open() ) {
 			echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
 		}
 	}
-	add_action( 'wp_head', 'business_consulting_pingback_header' );
+	add_action( 'wp_head', 'bc_business_consulting_pingback_header' );
 
 endif;

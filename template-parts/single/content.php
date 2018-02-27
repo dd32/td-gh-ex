@@ -13,17 +13,17 @@
 	
 		<?php
         /**
-        * Hook - business_consulting_posts_blog_media.
+        * Hook - bc_business_consulting_posts_blog_media.
         *
-        * @hooked business_consulting_posts_blog_media - 10
+        * @hooked bc_business_consulting_posts_blog_media - 10
         */
-        do_action( 'business_consulting_posts_blog_media' );
+        do_action( 'bc_business_consulting_posts_blog_media' );
         ?>
 		<?php
         
         if ( 'post' === get_post_type() ) : ?>
         <div class="entry-meta">
-        <?php business_consulting_posted_on(); ?>
+        <?php bc_business_consulting_posted_on(); ?>
         <?php
 			echo ' <a href="'.esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ).'" class="avatar_round">';
 			echo get_avatar( get_the_author_meta('user_email'), $size = '70'); 
@@ -73,7 +73,7 @@
        
     
         <div class="pull-right padding-top-35">
-        <?php business_consulting_entry_footer(); ?>
+        <?php bc_business_consulting_entry_footer(); ?>
         </div>
        
         <div class="clearfix"></div>

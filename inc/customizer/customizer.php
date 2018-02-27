@@ -16,7 +16,7 @@ require get_template_directory() . '/inc/customizer/core/default.php';
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function business_consulting_customize_register( $wp_customize ) {
+function bc_business_consulting_customize_register( $wp_customize ) {
 
 	// Load custom controls.
 	require get_template_directory() . '/inc/customizer/core/control.php';
@@ -49,7 +49,7 @@ function business_consulting_customize_register( $wp_customize ) {
 	);
 
 }
-add_action( 'customize_register', 'business_consulting_customize_register' );
+add_action( 'customize_register', 'bc_business_consulting_customize_register' );
 
 
 /**
@@ -60,8 +60,8 @@ add_action( 'customize_register', 'business_consulting_customize_register' );
 
 function business_consulting_customizer_css() {
 	
-	wp_enqueue_script( 'business_consulting_customize_controls', get_template_directory_uri() . '/inc/customizer/assets/js/customizer-admin.js', array( 'customize-controls' ) );
-	wp_enqueue_style( 'business_consulting_customize_controls', get_template_directory_uri() . '/inc/customizer/assets/css/customizer-controll.css' );
+	wp_enqueue_script( 'bc_business_consulting_customize_controls', get_template_directory_uri() . '/inc/customizer/assets/js/customizer-admin.js', array( 'customize-controls' ) );
+	wp_enqueue_style( 'bc_business_consulting_customize_controls', get_template_directory_uri() . '/inc/customizer/assets/css/customizer-controll.css' );
 	
 }
 add_action( 'customize_controls_enqueue_scripts', 'business_consulting_customizer_css',0 );

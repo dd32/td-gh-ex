@@ -13,12 +13,12 @@
 *----------------------------------------------------------------
 */
 
-if( ! function_exists( 'business_consulting_header_top' ) ) :
+if( ! function_exists( 'bc_business_consulting_header_top' ) ) :
 	/**
 	* content Header
 	*
 	*/
-	function business_consulting_header_top() {
+	function bc_business_consulting_header_top() {
 	?>
         <!-- Top Header -->
         <div class="top-header ">
@@ -27,8 +27,8 @@ if( ! function_exists( 'business_consulting_header_top' ) ) :
               <div class="row">
               	
               	<div class="col-md-6 col-sm-6">
-                	<?php if ( business_consulting_get_option('dialog_top') !="" )  :?>	
-                	<span><?php echo esc_html( business_consulting_get_option('dialog_top') );?></span>
+                	<?php if ( bc_business_consulting_get_option('social_profile_dialog') == 1 && bc_business_consulting_get_option('dialog_top') !="" )  :?>	
+                	<span><?php echo esc_html( bc_business_consulting_get_option('dialog_top') );?></span>
                     <?php endif;?>
                 </div>
                 <div class="col-md-6 col-sm-6">
@@ -37,7 +37,7 @@ if( ! function_exists( 'business_consulting_header_top' ) ) :
                     wp_nav_menu( array(
                         'theme_location'    => 'top_menu',
                         'depth'             => 2,
-						'fallback_cb'    => 'business_consulting_default_menu',
+						'fallback_cb'    => 'bc_business_consulting_default_menu',
 						'container' 	 => '',
                         )
                     );
@@ -50,16 +50,16 @@ if( ! function_exists( 'business_consulting_header_top' ) ) :
         </div><!-- Top Header /- -->
      <?php
 	}
-	add_action( 'business_consulting_header_layout', 'business_consulting_header_top',10 );
+	add_action( 'bc_business_consulting_header_layout', 'bc_business_consulting_header_top',10 );
 endif;
 
 
-if( ! function_exists( 'business_consulting_header_middle' ) ) :
+if( ! function_exists( 'bc_business_consulting_header_middle' ) ) :
 	/**
 	* content Header middle
 	*
 	*/
-	function business_consulting_header_middle() {
+	function bc_business_consulting_header_middle() {
 	?>
         <div class="middle-header container-fluid no-padding">
             <div class="container">
@@ -84,10 +84,10 @@ if( ! function_exists( 'business_consulting_header_middle' ) ) :
                    </div> 
                    <div class="col-md-8 col-sm-7">
                         <div class="header-info">
-                            <?php if ( count( business_consulting_get_option('business_consulting_award') ) > 0 )  :
+                            <?php if ( bc_business_consulting_get_option('social_profile_dialog') == 1 && count( bc_business_consulting_get_option('bc_business_consulting_award') ) > 0 )  :
 								echo '<ul>';
 								
-								foreach ( business_consulting_get_option('business_consulting_award') as $key => $text): 
+								foreach ( bc_business_consulting_get_option('bc_business_consulting_award') as $key => $text): 
 								
 							?>	
                             
@@ -105,7 +105,7 @@ if( ! function_exists( 'business_consulting_header_middle' ) ) :
 
      <?php
 	}
-	add_action( 'business_consulting_header_layout', 'business_consulting_header_middle',20 );
+	add_action( 'bc_business_consulting_header_layout', 'bc_business_consulting_header_middle',20 );
 endif;
 
 
@@ -116,62 +116,62 @@ endif;
 *----------------------------------------------------------------
 */
 
-if( ! function_exists( 'business_consulting_blog_layout_main_start' ) ) :
+if( ! function_exists( 'bc_business_consulting_blog_layout_main_start' ) ) :
 	/**
 	* content start Warppper
 	*
 	*/
-	function business_consulting_blog_layout_main_start() {
+	function bc_business_consulting_blog_layout_main_start() {
 		echo '<main class="site-main page-spacing">';
 	}
-	add_action( 'business_consulting_blog_layout_start', 'business_consulting_blog_layout_main_start',10 );
+	add_action( 'bc_business_consulting_blog_layout_start', 'bc_business_consulting_blog_layout_main_start',10 );
 endif;
 
-if( ! function_exists( 'business_consulting_breadcrumbs' ) ) :
+if( ! function_exists( 'bc_bc_business_consulting_breadcrumbs' ) ) :
 	/**
 	* breadcrumbs
 	*/
-	function business_consulting_breadcrumbs() {
+	function bc_bc_business_consulting_breadcrumbs() {
 		?>
         <div class=" page-breadcrumb">
             <div class="container">
-            	<?php do_action('business_consulting_breadcrumb'); ?>
+            	<?php do_action('bc_business_consulting_breadcrumb'); ?>
             </div>
         </div>
         <?php
 	}
-	add_action( 'business_consulting_blog_layout_start', 'business_consulting_breadcrumbs',20 );
+	add_action( 'bc_business_consulting_blog_layout_start', 'bc_bc_business_consulting_breadcrumbs',20 );
 endif;
 
 
-if( ! function_exists( 'business_consulting_blog_wrapper_start' ) ) :
+if( ! function_exists( 'bc_business_consulting_blog_wrapper_start' ) ) :
 	/**
 	* Blog wrapper
 	*/
-	function business_consulting_blog_wrapper_start() {
+	function bc_business_consulting_blog_wrapper_start() {
 		?>
         <div class="container blog latestnews-section ">
              <div class="row">
         <?php
 	}
-	add_action( 'business_consulting_blog_layout_start', 'business_consulting_blog_wrapper_start',30 );
+	add_action( 'bc_business_consulting_blog_layout_start', 'bc_business_consulting_blog_wrapper_start',30 );
 endif;
 
-if( ! function_exists( 'business_consulting_blog_columns_start' ) ) :
+if( ! function_exists( 'bc_business_consulting_blog_columns_start' ) ) :
 	/**
 	* Blog wrapper
 	*/
-	function business_consulting_blog_columns_start() {
-		 $layout = business_consulting_get_option('blog_layout');
+	function bc_business_consulting_blog_columns_start() {
+		 $layout = bc_business_consulting_get_option('blog_layout');
 		 if( $layout != 'no-sidebar' ): 
 		?>
-        <div class="col-md-8 col-sm-8 content-area <?php echo esc_html($layout);?>">
+        <div class="col-md-8 col-sm-8 content-area <?php echo esc_attr($layout);?>">
           <?php else: ?>
-        <div class="col-md-10 col-sm-10 content-area <?php echo esc_html($layout);?>">
+        <div class="col-md-10 col-sm-10 content-area <?php echo esc_attr($layout);?>">
         <?php
 		endif;
 	}
-	add_action( 'business_consulting_blog_layout_start', 'business_consulting_blog_columns_start',40 );
+	add_action( 'bc_business_consulting_blog_layout_start', 'bc_business_consulting_blog_columns_start',40 );
 endif;
 
 /**--------------------------------------------------------------
@@ -180,25 +180,25 @@ endif;
 *----------------------------------------------------------------
 *----------------------------------------------------------------
 */
-if( ! function_exists( 'business_consulting_blog_columns_end' ) ) :
+if( ! function_exists( 'bc_business_consulting_blog_columns_end' ) ) :
 	/**
 	* Blog wrapper
 	*/
-	function business_consulting_blog_columns_end() {
+	function bc_business_consulting_blog_columns_end() {
 		?>
         </div>
         <?php
 	}
-	add_action( 'business_consulting_blog_layout_end', 'business_consulting_blog_columns_end',10 );
+	add_action( 'bc_business_consulting_blog_layout_end', 'bc_business_consulting_blog_columns_end',10 );
 endif;
 
 
-if( ! function_exists( 'business_consulting_blog_sidebar' ) ) :
+if( ! function_exists( 'bc_business_consulting_blog_sidebar' ) ) :
 	/**
 	* breadcrumbs
 	*/
-	function business_consulting_blog_sidebar() {
-		 $layout = business_consulting_get_option('blog_layout');
+	function bc_business_consulting_blog_sidebar() {
+		 $layout = bc_business_consulting_get_option('blog_layout');
 		 if( $layout != 'no-sidebar' ): 
 		?>
          <div class="col-md-4 col-sm-4 widget-area" >
@@ -207,32 +207,32 @@ if( ! function_exists( 'business_consulting_blog_sidebar' ) ) :
         <?php
 		endif;
 	}
-	add_action( 'business_consulting_blog_layout_end', 'business_consulting_blog_sidebar',20 );
+	add_action( 'bc_business_consulting_blog_layout_end', 'bc_business_consulting_blog_sidebar',20 );
 endif;
 
 
-if( ! function_exists( 'business_consulting_blog_wrapper_end' ) ) :
+if( ! function_exists( 'bc_business_consulting_blog_wrapper_end' ) ) :
 	/**
 	* Blog wrapper
 	*/
-	function business_consulting_blog_wrapper_end() {
+	function bc_business_consulting_blog_wrapper_end() {
 		?>
         	</div>
         </div>
         <?php
 	}
-	add_action( 'business_consulting_blog_layout_end', 'business_consulting_blog_wrapper_end',30 );
+	add_action( 'bc_business_consulting_blog_layout_end', 'bc_business_consulting_blog_wrapper_end',30 );
 endif;
 
-if( ! function_exists( 'business_consulting_blog_layout_main_end' ) ) :
+if( ! function_exists( 'bc_business_consulting_blog_layout_main_end' ) ) :
 	/**
 	* content start Warppper
 	*
 	*/
-	function business_consulting_blog_layout_main_end() {
+	function bc_business_consulting_blog_layout_main_end() {
 		echo '</main>';
 	}
-	add_action( 'business_consulting_blog_layout_end', 'business_consulting_blog_layout_main_end',40 );
+	add_action( 'bc_business_consulting_blog_layout_end', 'bc_business_consulting_blog_layout_main_end',40 );
 endif;
 
 
@@ -244,12 +244,12 @@ endif;
 *----------------------------------------------------------------
 */
 
-if( ! function_exists( 'business_consulting_nav_action' ) ) :
+if( ! function_exists( 'bc_business_consulting_nav_action' ) ) :
 	/**
 	* Navigtion And Header Title
 	*
 	*/
-	function business_consulting_nav_action() {
+	function bc_business_consulting_nav_action() {
 	?>
      <div id="sticker">
     <div class="menu-block menu-block-section container-fluid no-padding">
@@ -271,7 +271,6 @@ if( ! function_exists( 'business_consulting_nav_action' ) ) :
                         </div>
                         <?php
                         wp_nav_menu( array(
-                            'menu'              => 'primary',
                             'theme_location'    => 'primary',
                             'depth'             => 3,
                             'container'         => 'div',
@@ -286,24 +285,29 @@ if( ! function_exists( 'business_consulting_nav_action' ) ) :
                     </nav><!-- Navigation /- -->
                 </div>
                 <div class="col-md-3 mobile-hide">	
-                <?php if ( business_consulting_get_option('social_profile') === 1 && count (  business_consulting_get_option('business_consulting_social_profile_link') ) > 0 ) :?>	
-                	 <?php $social_link = business_consulting_get_option('business_consulting_social_profile_link');?>
-                    <div class="header-social">
-                        <ul>
-						<?php if( count ( $social_link['social'] ) > 0 ): 
+                 <div class="header-social">
+                        <ul> 
+                <?php if ( bc_business_consulting_get_option('social_profile') == 1 && count (  bc_business_consulting_get_option('bc_business_consulting_social_profile_link') ) > 0 ) :?>	
+                
+                	 <?php $social_link = bc_business_consulting_get_option('bc_business_consulting_social_profile_link');?>
+                   
+						<?php 
 						foreach ($social_link['social'] as $key => $link): 
 							if( $link != ""):
 							?>
 							<li><a href="<?php echo esc_url( $link );?>" class="fa <?php echo esc_attr($key);?>" target="_blank"></a></li>
 							<?php endif; 
                         endforeach;
-						endif;?>
-                        	<?php if ( business_consulting_get_option('search_icon') === 1 ) :?>
-                            <li><a href="#" title="behance" id="popup-search"><i class="fa fa-search"></i></a></li>
-                            <?php endif;?>
-                        </ul>
-                    </div>
+						?>
+					
                     <?php endif;?>
+                    
+                    <?php 
+						if ( bc_business_consulting_get_option('search_icon') == 1 ) :?>
+						<li><a href="#" title="behance" id="popup-search"><i class="fa fa-search"></i></a></li>
+                    <?php endif;?>
+                    </ul>
+                    </div>
             	</div>
            
            </div> <!-- Row /- -->
@@ -312,7 +316,7 @@ if( ! function_exists( 'business_consulting_nav_action' ) ) :
   </div>
      <?php
 	}
-	add_action( 'business_consulting_nav_action', 'business_consulting_nav_action',10 );
+	add_action( 'bc_business_consulting_nav_action', 'bc_business_consulting_nav_action',10 );
 endif;
 
 
@@ -322,13 +326,13 @@ endif;
 *----------------------------------------------------------------
 *----------------------------------------------------------------
 */
-if( ! function_exists('business_consulting_default_menu') ):
+if( ! function_exists('bc_business_consulting_default_menu') ):
 /**
 	*  fallback default menu.
 	*
 	* @since 1.0.0
 	*/
-	function business_consulting_default_menu(){
+	function bc_business_consulting_default_menu(){
 		if ( current_user_can( 'edit_theme_options' ) ) {	
 	?>
         <ul>                  
@@ -340,12 +344,12 @@ if( ! function_exists('business_consulting_default_menu') ):
 endif;
 
 
-if( ! function_exists( 'business_consulting_footer_layout' ) ) :
+if( ! function_exists( 'bc_business_consulting_footer_layout' ) ) :
 	/**
 	* Navigtion And Header Title
 	*
 	*/
-	function business_consulting_footer_layout() {
+	function bc_business_consulting_footer_layout() {
 	?>
    
    	<footer class="footer-main ">
@@ -364,7 +368,7 @@ if( ! function_exists( 'business_consulting_footer_layout' ) ) :
                   <div class="col-md-7 col-sm-7"> 
                     
                     <div class="pull-left">
-                    	<?php  echo esc_html ( business_consulting_get_option('copyright_text') ); ?>
+                    	<?php  echo esc_html ( bc_business_consulting_get_option('copyright_text') ); ?>
                         <a href="<?php /* translators:straing */ echo esc_url( esc_html__( 'https://wordpress.org/', 'bc-business-consulting' ) ); ?>"><?php /* translators:straing */  printf( esc_html__( 'Proudly powered by %s .', 'bc-business-consulting' ), 'WordPress' ); ?></a>
                         
                         <?php
@@ -377,7 +381,7 @@ if( ! function_exists( 'business_consulting_footer_layout' ) ) :
                     wp_nav_menu( array(
                         'theme_location'    => 'top_menu',
                         'depth'             => 1,
-						'fallback_cb'    => 'business_consulting_default_menu',
+						'fallback_cb'    => 'bc_business_consulting_default_menu',
 						'container' 	 => '',
                         )
                     );
@@ -392,17 +396,17 @@ if( ! function_exists( 'business_consulting_footer_layout' ) ) :
    
      <?php
 	}
-	add_action( 'business_consulting_footer_layout', 'business_consulting_footer_layout',10 );
+	add_action( 'bc_business_consulting_footer_layout', 'bc_business_consulting_footer_layout',10 );
 endif;
 
 
-if( !function_exists('business_consulting_popup_search') ){
+if( !function_exists('bc_business_consulting_popup_search') ){
 	/**
 	* Add footer popup search
 	*
 	* @since 1.0.0
 	*/
-	function business_consulting_popup_search(){
+	function bc_business_consulting_popup_search(){
 	?>
   	<div class="popup-search">
       
@@ -415,7 +419,7 @@ if( !function_exists('business_consulting_popup_search') ){
     <?php
 	}
 }
-add_action( 'business_consulting_footer_layout', 'business_consulting_popup_search', 20 );
+add_action( 'bc_business_consulting_footer_layout', 'bc_business_consulting_popup_search', 20 );
 
 
 /**--------------------------------------------------------------
@@ -424,14 +428,14 @@ add_action( 'business_consulting_footer_layout', 'business_consulting_popup_sear
 *----------------------------------------------------------------
 *----------------------------------------------------------------*/
 
-if ( ! function_exists( 'business_consulting_custom_header_start' ) ) :
+if ( ! function_exists( 'bc_business_consulting_custom_header_start' ) ) :
 
 	/**
 	 * Add title in custom header.
 	 *
 	 * @since 1.0.0
 	 */
-	function business_consulting_custom_header_start() {
+	function bc_business_consulting_custom_header_start() {
 	 ?>
      	<div class="custom_header">
      <?php
@@ -439,17 +443,17 @@ if ( ! function_exists( 'business_consulting_custom_header_start' ) ) :
 	}
 
 endif;
-add_action( 'business_consulting_custom_static_header', 'business_consulting_custom_header_start',10 );
+add_action( 'bc_business_consulting_custom_static_header', 'bc_business_consulting_custom_header_start',10 );
 
 
-if ( ! function_exists( 'business_consulting_title_in_custom_header' ) ) :
+if ( ! function_exists( 'bc_business_consulting_title_in_custom_header' ) ) :
 
 	/**
 	 * Add title in custom header.
 	 *
 	 * @since 1.0.0
 	 */
-	function business_consulting_title_in_custom_header() {
+	function bc_business_consulting_title_in_custom_header() {
 
 		if ( is_home() ) {
 				echo '<h1 class="display-1">';
@@ -479,16 +483,16 @@ if ( ! function_exists( 'business_consulting_title_in_custom_header' ) ) :
 	}
 
 endif;
-add_action( 'business_consulting_custom_static_header', 'business_consulting_title_in_custom_header',20 );
+add_action( 'bc_business_consulting_custom_static_header', 'bc_business_consulting_title_in_custom_header',20 );
 
-if ( ! function_exists( 'business_consulting_sub_title_in_custom_header' ) ) :
+if ( ! function_exists( 'bc_business_consulting_sub_title_in_custom_header' ) ) :
 
 	/**
 	 * Add title in custom header.
 	 *
 	 * @since 1.0.0
 	 */
-	function business_consulting_sub_title_in_custom_header() {
+	function bc_business_consulting_sub_title_in_custom_header() {
 
 		echo '<div class="subtitle">';
 
@@ -511,18 +515,18 @@ if ( ! function_exists( 'business_consulting_sub_title_in_custom_header' ) ) :
 	}
 
 endif;
-add_action( 'business_consulting_custom_static_header', 'business_consulting_sub_title_in_custom_header',30 );
+add_action( 'bc_business_consulting_custom_static_header', 'bc_business_consulting_sub_title_in_custom_header',30 );
 
 
 
-if ( ! function_exists( 'business_consulting_custom_header_end' ) ) :
+if ( ! function_exists( 'bc_business_consulting_custom_header_end' ) ) :
 
 	/**
 	 * Add title in custom header.
 	 *
 	 * @since 1.0.0
 	 */
-	function business_consulting_custom_header_end() {
+	function bc_business_consulting_custom_header_end() {
 	?>
     	</div>
     <?php
@@ -531,16 +535,16 @@ if ( ! function_exists( 'business_consulting_custom_header_end' ) ) :
 
 endif;
 
-add_action( 'business_consulting_custom_static_header', 'business_consulting_custom_header_end',40 );
+add_action( 'bc_business_consulting_custom_static_header', 'bc_business_consulting_custom_header_end',40 );
 
-if ( ! function_exists( 'business_consulting_custom_static_header_banner' ) ) :
+if ( ! function_exists( 'bc_bc_business_consulting_custom_static_header_banner' ) ) :
 
 	/**
 	 * Add title in custom header.
 	 *
 	 * @since 1.0.0
 	 */
-	function business_consulting_custom_static_header_banner() {
+	function bc_bc_business_consulting_custom_static_header_banner() {
 		$header_image = get_header_image();
 		 if( $header_image !="" ):
    			echo '<img src="'.esc_url( $header_image ).'" class="img-responsive" alt="" title="" />';
@@ -549,52 +553,52 @@ if ( ! function_exists( 'business_consulting_custom_static_header_banner' ) ) :
 
 endif;
 
-add_action( 'business_consulting_custom_static_header', 'business_consulting_custom_static_header_banner',50 );
+add_action( 'bc_business_consulting_custom_static_header', 'bc_bc_business_consulting_custom_static_header_banner',50 );
 
 
 
 
-if ( ! function_exists( 'business_consulting_custom_widgets_or_static_content' ) ) :
+if ( ! function_exists( 'bc_business_consulting_custom_widgets_or_static_content' ) ) :
 
 	/**
 	 * Add title in custom header.
 	 *
 	 * @since 1.0.0
 	 */
-	function business_consulting_custom_widgets_or_static_content() {
+	function bc_business_consulting_custom_widgets_or_static_content() {
 	
 		if ( is_front_page()){
 			if ( is_active_sidebar( 'front_page_sidebar' ) ) {
 				 dynamic_sidebar( 'front_page_sidebar' );
 			}else{
-				do_action('business_consulting_custom_static_header');
+				do_action('bc_business_consulting_custom_static_header');
 			}
 		} elseif ( is_home()){
 			if ( is_active_sidebar( 'blog_page_sidebar' ) ) {
 				 dynamic_sidebar( 'blog_page_sidebar' );
 			}else{
-				do_action('business_consulting_custom_static_header');	
+				do_action('bc_business_consulting_custom_static_header');	
 			}
 		}else{
-			do_action('business_consulting_custom_static_header');		
+			do_action('bc_business_consulting_custom_static_header');		
 		}
 	}
 
 endif;
 
-add_action( 'business_consulting_nav_action', 'business_consulting_custom_widgets_or_static_content',20 );
+add_action( 'bc_business_consulting_nav_action', 'bc_business_consulting_custom_widgets_or_static_content',20 );
 
 
 
 
-if ( ! function_exists( 'business_consulting_breadcrumb' ) ) :
+if ( ! function_exists( 'bc_business_consulting_breadcrumb' ) ) :
 
 	/**
 	 * Breadcrumb.
 	 *
 	 * @since 1.0.0
 	 */
-	function business_consulting_breadcrumb() {
+	function bc_business_consulting_breadcrumb() {
 		
 			
 		
@@ -614,19 +618,19 @@ if ( ! function_exists( 'business_consulting_breadcrumb' ) ) :
 	}
 
 endif;
-add_action( 'business_consulting_breadcrumb', 'business_consulting_breadcrumb',10 );
+add_action( 'bc_business_consulting_breadcrumb', 'bc_business_consulting_breadcrumb',10 );
 
 
 
 
-if ( ! function_exists( 'business_consulting_loop_pagination' ) ) :
+if ( ! function_exists( 'bc_business_consulting_loop_pagination' ) ) :
 
 	/**
 	 * LOOP pagination .
 	 *
 	 * @since 1.0.0
 	 */
-	function business_consulting_loop_pagination() {
+	function bc_business_consulting_loop_pagination() {
 		 the_posts_pagination( array(
 			'format' => '/page/%#%',
 			'type' => 'list',
@@ -638,7 +642,7 @@ if ( ! function_exists( 'business_consulting_loop_pagination' ) ) :
 	}
 
 endif;
-add_action( 'business_consulting_loop_pagination', 'business_consulting_loop_pagination',10 );
+add_action( 'bc_business_consulting_loop_pagination', 'bc_business_consulting_loop_pagination',10 );
 
 
 
@@ -650,39 +654,39 @@ add_action( 'business_consulting_loop_pagination', 'business_consulting_loop_pag
 *----------------------------------------------------------------
 */
 
-if( ! function_exists( 'business_consulting_page_layout_main_start' ) ) :
+if( ! function_exists( 'bc_business_consulting_page_layout_main_start' ) ) :
 	/**
 	* content start Warppper
 	*
 	*/
-	function business_consulting_page_layout_main_start() {
+	function bc_business_consulting_page_layout_main_start() {
 		echo '<main class="site-main page-spacing">';
 	}
-	add_action( 'business_consulting_page_layout_start', 'business_consulting_page_layout_main_start',10 );
+	add_action( 'bc_business_consulting_page_layout_start', 'bc_business_consulting_page_layout_main_start',10 );
 endif;
 
-add_action( 'business_consulting_page_layout_start', 'business_consulting_breadcrumbs',20 );
+add_action( 'bc_business_consulting_page_layout_start', 'bc_bc_business_consulting_breadcrumbs',20 );
 
 
-if( ! function_exists( 'business_consulting_page_wrapper_start' ) ) :
+if( ! function_exists( 'bc_business_consulting_page_wrapper_start' ) ) :
 	/**
 	* Blog wrapper
 	*/
-	function business_consulting_page_wrapper_start() {
+	function bc_business_consulting_page_wrapper_start() {
 		?>
         <div class="container page ">
              <div class="row">
         <?php
 	}
-	add_action( 'business_consulting_page_layout_start', 'business_consulting_page_wrapper_start',30 );
+	add_action( 'bc_business_consulting_page_layout_start', 'bc_business_consulting_page_wrapper_start',30 );
 endif;
 
-if( ! function_exists( 'business_consulting_page_columns_start' ) ) :
+if( ! function_exists( 'bc_business_consulting_page_columns_start' ) ) :
 	/**
 	* Blog wrapper
 	*/
-	function business_consulting_page_columns_start() {
-		 $layout = business_consulting_get_option('page_layout');
+	function bc_business_consulting_page_columns_start() {
+		 $layout = bc_business_consulting_get_option('page_layout');
 		
 		 if( $layout != 'no-sidebar' ): 
 		?>
@@ -692,7 +696,7 @@ if( ! function_exists( 'business_consulting_page_columns_start' ) ) :
         <?php
 		endif;
 	}
-	add_action( 'business_consulting_page_layout_start', 'business_consulting_page_columns_start',40 );
+	add_action( 'bc_business_consulting_page_layout_start', 'bc_business_consulting_page_columns_start',40 );
 endif;
 
 /**--------------------------------------------------------------
@@ -701,25 +705,25 @@ endif;
 *----------------------------------------------------------------
 *----------------------------------------------------------------
 */
-if( ! function_exists( 'business_consulting_page_columns_end' ) ) :
+if( ! function_exists( 'bc_business_consulting_page_columns_end' ) ) :
 	/**
 	* Blog wrapper
 	*/
-	function business_consulting_page_columns_end() {
+	function bc_business_consulting_page_columns_end() {
 		?>
         </div>
         <?php
 	}
-	add_action( 'business_consulting_page_layout_end', 'business_consulting_page_columns_end',10 );
+	add_action( 'bc_business_consulting_page_layout_end', 'bc_business_consulting_page_columns_end',10 );
 endif;
 
 
-if( ! function_exists( 'business_consulting_page_sidebar' ) ) :
+if( ! function_exists( 'bc_business_consulting_page_sidebar' ) ) :
 	/**
 	* breadcrumbs
 	*/
-	function business_consulting_page_sidebar() {
-		 $layout = business_consulting_get_option('page_layout');
+	function bc_business_consulting_page_sidebar() {
+		 $layout = bc_business_consulting_get_option('page_layout');
 		 if( $layout != 'no-sidebar' ): 
 		?>
          <div class="col-md-4 col-sm-4 widget-area" >
@@ -728,30 +732,30 @@ if( ! function_exists( 'business_consulting_page_sidebar' ) ) :
         <?php
 		endif;
 	}
-	add_action( 'business_consulting_page_layout_end', 'business_consulting_page_sidebar',20 );
+	add_action( 'bc_business_consulting_page_layout_end', 'bc_business_consulting_page_sidebar',20 );
 endif;
 
 
-if( ! function_exists( 'business_consulting_page_wrapper_end' ) ) :
+if( ! function_exists( 'bc_business_consulting_page_wrapper_end' ) ) :
 	/**
 	* Blog wrapper
 	*/
-	function business_consulting_page_wrapper_end() {
+	function bc_business_consulting_page_wrapper_end() {
 		?>
         	</div>
         </div>
         <?php
 	}
-	add_action( 'business_consulting_page_layout_end', 'business_consulting_page_wrapper_end',30 );
+	add_action( 'bc_business_consulting_page_layout_end', 'bc_business_consulting_page_wrapper_end',30 );
 endif;
 
-if( ! function_exists( 'business_consulting_page_layout_main_end' ) ) :
+if( ! function_exists( 'bc_business_consulting_page_layout_main_end' ) ) :
 	/**
 	* content start Warppper
 	*
 	*/
-	function business_consulting_page_layout_main_end() {
+	function bc_business_consulting_page_layout_main_end() {
 		echo '</main>';
 	}
-	add_action( 'business_consulting_page_layout_end', 'business_consulting_page_layout_main_end',40 );
+	add_action( 'bc_business_consulting_page_layout_end', 'bc_business_consulting_page_layout_main_end',40 );
 endif;

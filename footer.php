@@ -13,11 +13,11 @@
 
 <?php
 /**
-* Hook - business_consulting_footer_layout.
+* Hook - bc_business_consulting_footer_layout.
 *
-* @hooked business_consulting_footer_layout - 10
+* @hooked bc_business_consulting_footer_layout - 10
 */
-do_action( 'business_consulting_footer_layout' );
+do_action( 'bc_business_consulting_footer_layout' );
 ?>
 
 

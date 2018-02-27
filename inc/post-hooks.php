@@ -8,14 +8,14 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
- if ( ! function_exists( 'business_consulting_posts_formats_thumbnail' ) ) :
+ if ( ! function_exists( 'bc_business_consulting_posts_formats_thumbnail' ) ) :
 
 	/**
 	 * Post formats thumbnail.
 	 *
 	 * @since 1.0.0
 	 */
-	function business_consulting_posts_formats_thumbnail() {
+	function bc_business_consulting_posts_formats_thumbnail() {
 	?>
 		<?php if ( has_post_thumbnail() ) :
 			$post_thumbnail_id = get_post_thumbnail_id( get_the_ID() );
@@ -39,17 +39,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	}
 
 endif;
-add_action( 'business_consulting_posts_formats_thumbnail', 'business_consulting_posts_formats_thumbnail' );
+add_action( 'bc_business_consulting_posts_formats_thumbnail', 'bc_business_consulting_posts_formats_thumbnail' );
 
 
-if ( ! function_exists( 'business_consulting_posts_formats_video' ) ) :
+if ( ! function_exists( 'bc_business_consulting_posts_formats_video' ) ) :
 
 	/**
 	 * Post Formats Video.
 	 *
 	 * @since 1.0.0
 	 */
-	function business_consulting_posts_formats_video() {
+	function bc_business_consulting_posts_formats_video() {
 	
 		$content = apply_filters( 'the_content', get_the_content(get_the_ID()) );
 		$video = false;
@@ -67,24 +67,24 @@ if ( ! function_exists( 'business_consulting_posts_formats_video' ) ) :
 					echo '</div></div>';
 				}
 			else: 
-				do_action('business_consulting_posts_formats_thumbnail');	
+				do_action('bc_business_consulting_posts_formats_thumbnail');	
 			endif;
 		
 		
 	 }
 
 endif;
-add_action( 'business_consulting_posts_formats_video', 'business_consulting_posts_formats_video' ); 
+add_action( 'bc_business_consulting_posts_formats_video', 'bc_business_consulting_posts_formats_video' ); 
 
 
-if ( ! function_exists( 'business_consulting_posts_formats_audio' ) ) :
+if ( ! function_exists( 'bc_business_consulting_posts_formats_audio' ) ) :
 
 	/**
 	 * Post Formats audio.
 	 *
 	 * @since 1.0.0
 	 */
-	function business_consulting_posts_formats_audio() {
+	function bc_business_consulting_posts_formats_audio() {
 		$content = apply_filters( 'the_content', get_the_content() );
 		$audio = false;
 	
@@ -103,26 +103,26 @@ if ( ! function_exists( 'business_consulting_posts_formats_audio' ) ) :
 				echo '</div>';
 			}
 		else: 
-			do_action('business_consulting_posts_formats_video');	
+			do_action('bc_business_consulting_posts_formats_video');	
 		endif;
 	
 		
 	 }
 
 endif;
-add_action( 'business_consulting_posts_formats_audio', 'business_consulting_posts_formats_audio' ); 
+add_action( 'bc_business_consulting_posts_formats_audio', 'bc_business_consulting_posts_formats_audio' ); 
 
 add_filter( 'use_default_gallery_style', '__return_false' );
 
 
-if ( ! function_exists( 'business_consulting_posts_formats_gallery' ) ) :
+if ( ! function_exists( 'bc_business_consulting_posts_formats_gallery' ) ) :
 
 	/**
 	 * Post Formats gallery.
 	 *
 	 * @since 1.0.0
 	 */
-	function business_consulting_posts_formats_gallery() {
+	function bc_business_consulting_posts_formats_gallery() {
 		global $post;
 		if ( get_post_gallery() ) :
 			echo '<div class="gallery-media owlGallery">';
@@ -140,59 +140,59 @@ if ( ! function_exists( 'business_consulting_posts_formats_gallery' ) ) :
 				
 			echo '</div>';
 		else: 
-			do_action('business_consulting_posts_formats_thumbnail');	
+			do_action('bc_business_consulting_posts_formats_thumbnail');	
 		endif;	
 	
 	 }
 
 endif;
-add_action( 'business_consulting_posts_formats_gallery', 'business_consulting_posts_formats_gallery' ); 
+add_action( 'bc_business_consulting_posts_formats_gallery', 'bc_business_consulting_posts_formats_gallery' ); 
 
 
 
 
-if ( ! function_exists( 'business_consulting_posts_formats_header' ) ) :
+if ( ! function_exists( 'bc_business_consulting_posts_blog_media' ) ) :
 
 	/**
-	 * Post business_consulting_posts_blog_media
+	 * Post bc_business_consulting_posts_blog_media
 	 *
 	 * @since 1.0.0
 	 */
-	function business_consulting_posts_blog_media() {
+	function bc_business_consulting_posts_blog_media() {
 		$formats = get_post_format(get_the_ID());
 		
 		switch ( $formats ) {
 			default:
-				do_action('business_consulting_posts_formats_thumbnail');
+				do_action('bc_business_consulting_posts_formats_thumbnail');
 			break;
 			case 'gallery':
-				do_action('business_consulting_posts_formats_gallery');
+				do_action('bc_business_consulting_posts_formats_gallery');
 			break;
 			case 'audio':
-				do_action('business_consulting_posts_formats_audio');
+				do_action('bc_business_consulting_posts_formats_audio');
 			break;
 			case 'video':
-				do_action('business_consulting_posts_formats_video');
+				do_action('bc_business_consulting_posts_formats_video');
 			break;
 		} 
 		
 	 }
 
 endif;
-add_action( 'business_consulting_posts_blog_media', 'business_consulting_posts_blog_media' ); 
+add_action( 'bc_business_consulting_posts_blog_media', 'bc_business_consulting_posts_blog_media' ); 
 
 
 
 
 
-if ( ! function_exists( 'business_consulting_single_post_navigation' ) ) :
+if ( ! function_exists( 'bc_business_consulting_single_post_navigation' ) ) :
 
 	/**
 	 * Post Single Posts Navigation 
 	 *
 	 * @since 1.0.0
 	 */
-	function business_consulting_single_post_navigation( ) {
+	function bc_business_consulting_single_post_navigation( ) {
 		echo '<div class="row single-prev-next">';
 		$prevPost = get_previous_post(true);
 		if( $prevPost ) :
@@ -221,7 +221,7 @@ if ( ! function_exists( 'business_consulting_single_post_navigation' ) ) :
 	} 
 
 endif;
-add_action( 'business_consulting_single_post_navigation', 'business_consulting_single_post_navigation', 10 ); 
+add_action( 'bc_business_consulting_single_post_navigation', 'bc_business_consulting_single_post_navigation', 10 ); 
 
 
  

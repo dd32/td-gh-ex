@@ -14,8 +14,8 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-if( ! function_exists( 'business_consulting_body_classes' ) ) :
-	function business_consulting_body_classes( $classes ) {
+if( ! function_exists( 'bc_business_consulting_body_classes' ) ) :
+	function bc_business_consulting_body_classes( $classes ) {
 		// Adds a class of hfeed to non-singular pages.
 		if ( ! is_singular() ) {
 			$classes[] = 'hfeed';
@@ -23,10 +23,10 @@ if( ! function_exists( 'business_consulting_body_classes' ) ) :
 	
 		return $classes;
 	}
-	add_filter( 'body_class', 'business_consulting_body_classes' );
+	add_filter( 'body_class', 'bc_business_consulting_body_classes' );
 endif;
 
-if ( ! function_exists( 'business_consulting_walker_comment' ) ) : 
+if ( ! function_exists( 'bc_business_consulting_walker_comment' ) ) : 
 	/**
 	 * Implement Custom Comment template.
 	 *
@@ -36,7 +36,7 @@ if ( ! function_exists( 'business_consulting_walker_comment' ) ) :
 	 * @return $html
 	 */
 	  
-	function business_consulting_walker_comment($comment, $args, $depth) {
+	function bc_business_consulting_walker_comment($comment, $args, $depth) {
 		
 		
 		?>
@@ -61,28 +61,28 @@ if ( ! function_exists( 'business_consulting_walker_comment' ) ) :
 		<?php
 	}
 	
-	function business_consulting_replace_reply_link_class($class){
+	function bc_business_consulting_replace_reply_link_class($class){
 		$class = str_replace("class='comment-reply-link", "class='reply", $class);
 		return $class;
 	}
-	add_filter('comment_reply_link', 'business_consulting_replace_reply_link_class');
+	add_filter('comment_reply_link', 'bc_business_consulting_replace_reply_link_class');
 endif;
 
 
 
-if( ! function_exists( 'business_consulting_read_more_link' ) ) :
+if( ! function_exists( 'bc_business_consulting_read_more_link' ) ) :
 	/**
 	* Adds custom Read More.
 	*
 	*/
-	function business_consulting_read_more_link() {
+	function bc_business_consulting_read_more_link() {
 		return '<div class="pull-left padding-top-25"><a class="btn btn-theme" href="' . esc_url( get_permalink() ) . '">'.esc_html__( 'Read More', 'bc-business-consulting' ).'<i class="fa fa-long-arrow-right"></i></a></div>';
 	}
-	add_filter( 'the_content_more_link', 'business_consulting_read_more_link' );
+	add_filter( 'the_content_more_link', 'bc_business_consulting_read_more_link' );
 endif;
 
 
-if( ! function_exists( 'business_consulting_excerpt_more' ) ) :
+if( ! function_exists( 'bc_business_consulting_excerpt_more' ) ) :
 	/**
 	 * Implement Custom Comment template.
 	 *
@@ -91,7 +91,7 @@ if( ! function_exists( 'business_consulting_excerpt_more' ) ) :
 	 * @param $comment, $args, $depth
 	 * @return $html
 	 */
-function business_consulting_excerpt_more( $link ) {
+function bc_business_consulting_excerpt_more( $link ) {
 	if ( is_admin() ) {
 		return $link;
 	}
@@ -102,14 +102,14 @@ function business_consulting_excerpt_more( $link ) {
 	);
 	return  $link;
 }
-add_filter( 'excerpt_more', 'business_consulting_excerpt_more' );
+add_filter( 'excerpt_more', 'bc_business_consulting_excerpt_more' );
 
 endif;
 
 
 
 
-if( ! function_exists( 'business_consulting_blog_expert_excerpt_length' ) ) :
+if( ! function_exists( 'bc_business_consulting_blog_expert_excerpt_length' ) ) :
 
     /**
      * Excerpt length
@@ -119,8 +119,8 @@ if( ! function_exists( 'business_consulting_blog_expert_excerpt_length' ) ) :
      * @param null
      * @return int
      */
-    function business_consulting_blog_expert_excerpt_length( $length ){
-        $excerpt_length = business_consulting_get_option( 'excerpt_length_blog' );
+    function bc_business_consulting_blog_expert_excerpt_length( $length ){
+        $excerpt_length = bc_business_consulting_get_option( 'excerpt_length_blog' );
 		if( is_admin() ){
 			 return $length;
 		}else{
@@ -133,5 +133,5 @@ if( ! function_exists( 'business_consulting_blog_expert_excerpt_length' ) ) :
 
     }
 
-add_filter( 'excerpt_length', 'business_consulting_blog_expert_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'bc_business_consulting_blog_expert_excerpt_length', 999 );
 endif; 

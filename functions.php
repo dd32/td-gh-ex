@@ -24,7 +24,7 @@ require get_template_directory() . '/inc/template-tags.php';
 /**
  * Functions which enhance the theme Posts by hooking into WordPress.
  */
-require get_template_directory() . '/inc/post_hooks.php';
+require get_template_directory() . '/inc/post-hooks.php';
 
 
 /**
@@ -42,7 +42,7 @@ require get_template_directory() . '/inc/customizer/customizer.php';
 /**
  * Functions which enhance the theme by fitter hook into WordPress.
  */
-require get_template_directory() . '/inc/fitter_hook.php';
+require get_template_directory() . '/inc/fitter-hook.php';
 
 /**
  * Load breadcrumbs
@@ -52,4 +52,6 @@ require get_template_directory() . '/vendors/breadcrumbs/breadcrumbs.php';
 
 
 require get_template_directory() . '/inc/pro/admin-page.php';
+
+require get_template_directory() . '/inc/recommend-plugins.php';
 

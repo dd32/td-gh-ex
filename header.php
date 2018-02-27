@@ -25,12 +25,12 @@
 <header class="header-main">
 <?php
 /**
-* Hook - business_consulting_header_layout.
+* Hook - bc_business_consulting_header_layout.
 *
-* @hooked business_consulting_header_top - 10
-* @hooked business_consulting_header_middle - 20
+* @hooked bc_business_consulting_header_top - 10
+* @hooked bc_business_consulting_header_middle - 20
 */
-do_action( 'business_consulting_header_layout' );
+do_action( 'bc_business_consulting_header_layout' );
 ?>
 </header>
     
@@ -40,12 +40,12 @@ do_action( 'business_consulting_header_layout' );
 
 	<?php
     /**
-    * Hook - business_consulting_nav_action.
+    * Hook - bc_business_consulting_nav_action.
     *
-    * @hooked business_consulting_nav_action - 10
-	* @hooked business_consulting_custom_widgets_or_static_content - 20
+    * @hooked bc_business_consulting_nav_action - 10
+	* @hooked bc_business_consulting_custom_widgets_or_static_content - 20
     */
-    do_action( 'business_consulting_nav_action' );
+    do_action( 'bc_business_consulting_nav_action' );
     ?>
     
 

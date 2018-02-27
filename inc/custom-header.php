@@ -14,9 +14,9 @@
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses business_consulting_header_style()
+ * @uses bc_business_consulting_header_style()
  */
-function business_consulting_custom_header_setup() {
+function bc_business_consulting_custom_header_setup() {
 	// Set up Custom Header feature.
 	add_theme_support( 'custom-header', apply_filters( 'business_consulting_custom_header_args', array(
 			'default-image' => get_template_directory_uri() . '/images/custom-header.jpg',
@@ -35,15 +35,15 @@ function business_consulting_custom_header_setup() {
 		),
 	));
 }
-add_action( 'after_setup_theme', 'business_consulting_custom_header_setup' );
+add_action( 'after_setup_theme', 'bc_business_consulting_custom_header_setup' );
 
-if ( ! function_exists( 'business_consulting_header_style' ) ) :
+if ( ! function_exists( 'bc_business_consulting_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see business_consulting_custom_header_setup().
+	 * @see bc_business_consulting_custom_header_setup().
 	 */
-	function business_consulting_header_style() {
+	function bc_business_consulting_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	/*

@@ -11,14 +11,14 @@ get_header(); ?>
 
 <?php
 /**
-* Hook - business_consulting_blog_layout_start.
+* Hook - bc_business_consulting_blog_layout_start.
 *
-* @hooked business_consulting_blog_layout_main_start - 10
-* @hooked business_consulting_breadcrumbs - 20
-* @hooked business_consulting_blog_wrapper_start - 30
-* @hooked business_consulting_blog_columns_start - 40
+* @hooked bc_business_consulting_blog_layout_main_start - 10
+* @hooked bc_bc_business_consulting_breadcrumbs - 20
+* @hooked bc_business_consulting_blog_wrapper_start - 30
+* @hooked bc_business_consulting_blog_columns_start - 40
 */
-do_action('business_consulting_blog_layout_start');
+do_action('bc_business_consulting_blog_layout_start');
 ?>		
 
     
@@ -36,11 +36,11 @@ do_action('business_consulting_blog_layout_start');
 			endwhile;
 
 				/**
-				* Hook - business_consulting_loop_pagination.
+				* Hook - bc_business_consulting_loop_pagination.
 				*
-				* @hooked business_consulting_loop_pagination - 10
+				* @hooked bc_business_consulting_loop_pagination - 10
 				*/
-				do_action( 'business_consulting_loop_pagination' );
+				do_action( 'bc_business_consulting_loop_pagination' );
 
 		else :
 
@@ -50,14 +50,14 @@ do_action('business_consulting_blog_layout_start');
             
 <?php
 /**
-* Hook - business_consulting_blog_layout_end.
+* Hook - bc_business_consulting_blog_layout_end.
 *
-* @hooked business_consulting_blog_columns_end - 10
-* @hooked business_consulting_blog_sidebar -20
-* @hooked business_consulting_blog_wrapper_end - 30
-* @hooked business_consulting_blog_layout_main_end - 10
+* @hooked bc_business_consulting_blog_columns_end - 10
+* @hooked bc_business_consulting_blog_sidebar -20
+* @hooked bc_business_consulting_blog_wrapper_end - 30
+* @hooked bc_business_consulting_blog_layout_main_end - 10
 */
-do_action('business_consulting_blog_layout_end');
+do_action('bc_business_consulting_blog_layout_end');
 ?>	
 <?php
 

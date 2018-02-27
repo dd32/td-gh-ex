@@ -5,7 +5,7 @@
  * @package bc-business-consulting
  */
 
-if ( ! function_exists( 'business_consulting_get_option' ) ) :
+if ( ! function_exists( 'bc_business_consulting_get_option' ) ) :
 
 	/**
 	 * Get theme option.
@@ -15,7 +15,7 @@ if ( ! function_exists( 'business_consulting_get_option' ) ) :
 	 * @param string $key Option key.
 	 * @return mixed Option value.
 	 */
-	function business_consulting_get_option( $key ) {
+	function bc_business_consulting_get_option( $key ) {
 
 		if ( empty( $key ) ) {
 			return;
@@ -23,7 +23,7 @@ if ( ! function_exists( 'business_consulting_get_option' ) ) :
 
 		$value = '';
 
-		$default = business_consulting_get_default_theme_options();
+		$default = bc_business_consulting_get_default_theme_options();
 		$default_value = null;
 
 		if ( is_array( $default ) && isset( $default[ $key ] ) ) {

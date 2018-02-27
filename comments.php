@@ -53,7 +53,7 @@ if ( post_password_required() ) {
 				wp_list_comments( array(
 					
 					'short_ping' => true,
-					'callback' => 'business_consulting_walker_comment',
+					'callback' => 'bc_business_consulting_walker_comment',
 					
 				) );
 			?>

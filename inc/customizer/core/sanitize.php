@@ -5,7 +5,7 @@
  * @package bc-business-consulting
  */
 
-if ( ! function_exists( 'business_consulting_sanitize_select' ) ) :
+if ( ! function_exists( 'bc_business_consulting_sanitize_select' ) ) :
 
 	/**
 	 * Sanitize select.
@@ -16,7 +16,7 @@ if ( ! function_exists( 'business_consulting_sanitize_select' ) ) :
 	 * @param WP_Customize_Setting $setting WP_Customize_Setting instance.
 	 * @return mixed Sanitized value.
 	 */
-	function business_consulting_sanitize_select( $input, $setting ) {
+	function bc_business_consulting_sanitize_select( $input, $setting ) {
 
 		// Ensure input is a slug.
 		$input = sanitize_key( $input );
@@ -32,7 +32,7 @@ if ( ! function_exists( 'business_consulting_sanitize_select' ) ) :
 endif;
 
 
-if ( ! function_exists( 'business_consulting_sanitize_checkbox' ) ) :
+if ( ! function_exists( 'bc_business_consulting_sanitize_checkbox' ) ) :
 
 	/**
 	 * Sanitize checkbox.
@@ -42,7 +42,7 @@ if ( ! function_exists( 'business_consulting_sanitize_checkbox' ) ) :
 	 * @param bool $checked Whether the checkbox is checked.
 	 * @return bool Whether the checkbox is checked.
 	 */
-	function business_consulting_sanitize_checkbox( $checked ) {
+	function bc_business_consulting_sanitize_checkbox( $checked ) {
 
 		return ( ( isset( $checked ) && true === $checked ) ? true : false );
 
@@ -51,7 +51,7 @@ if ( ! function_exists( 'business_consulting_sanitize_checkbox' ) ) :
 endif;
 
 
-if ( ! function_exists( 'business_consulting_sanitize_positive_integer' ) ) :
+if ( ! function_exists( 'bc_business_consulting_sanitize_positive_integer' ) ) :
 
 	/**
 	 * Sanitize positive integer.
@@ -62,7 +62,7 @@ if ( ! function_exists( 'business_consulting_sanitize_positive_integer' ) ) :
 	 * @param WP_Customize_Setting $setting WP_Customize_Setting instance.
 	 * @return int Sanitized number; otherwise, the setting default.
 	 */
-	function business_consulting_sanitize_positive_integer( $input, $setting ) {
+	function bc_business_consulting_sanitize_positive_integer( $input, $setting ) {
 
 		$input = absint( $input );
 
