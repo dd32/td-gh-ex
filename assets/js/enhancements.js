@@ -27,7 +27,7 @@
         tabKeyInactCss = 'tab-key--inactive',
         
         $webProduct = $( '#web-product' ),
-        $webProductContainer = $webProduct.find( '.wbp---cr' ),
+        $webProductContainer = $webProduct.find( '.web-product---cr' ),
         
         $webProductCopyright = $( '#copyright' ),
         copyrightHeight = $webProductCopyright.height(),
@@ -47,9 +47,6 @@
         $mainNav = $( '#main-nav' ),
         $navParentItems = $( '.page_item, .menu-item' ),
         
-        mainContentAsideEnabled = 'main-content-aside--enabled',
-        mainContentAsideDisabled = 'main-content-aside--disabled',
-        $secondaryContent = $( '.secondary-content' ),
             
         $mainSearch,
         
@@ -79,11 +76,11 @@
 
             // Content Markup
             ctCrMU = $( '<div />', {
-                'class': 'ct_cr ' + $cp + '---ct_cr'
+                'class': 'mn_cr ' + $cp + '---mn_cr'
             } );
 
             ctMU = $( '<div />', {
-                'class': 'ct ' + $cp + '---ct'
+                'class': 'mn ' + $cp + '---mn'
             } )
                 .append( ctCrMU);
 
@@ -810,8 +807,8 @@
         // Create the Control Buttons
         ( function() {
             
-            $mainHrAsH = $cp.find( $( '.main-hr-aside---h' ) );
-            $mainHeaderAsideCtCr = $cp.find( $( '.main-hr-aside---ct_cr' ) );
+            $mainHrAsH = $cp.find( $( '.main-header-aside---h' ) );
+            $mainHeaderAsideCtCr = $cp.find( $( '.main-header-aside---mn_cr' ) );
             
             // Toggle
             $mainHrAsH.after(
@@ -840,7 +837,7 @@
         // Defining elements
         ( function() {
         
-            $mainHrAsCt = $cp.find( '.main-hr-aside---ct' );
+            $mainHrAsCt = $cp.find( '.main-header-aside---mn' );
             $mainMenuOverlay = $( '#overlay--' + funcName );
 
             $mainMenuTog = $cp.find( '.main-menu-toggle' );
@@ -1004,7 +1001,7 @@
 		}
         
         $mainActions
-            .find( $( '.main-actions-aside---ct_cr' ) )
+            .find( $( '.main-actions-aside---mn_cr' ) )
                 .children( '.search:first, .widget_search:first' )
                     .attr( 'id', 'main-search' );
     }() );
@@ -1087,7 +1084,7 @@
             );
         }() );
         
-        $mainSearchCt = $cp.find( '.search---ct' );
+        $mainSearchCt = $cp.find( '.search---mn' );
         
         $mainSearchTog = $cp.find( '.main-search-toggle' );
         $mainSearchTogBtn = $( '#main-search-toggle---b' );
@@ -1274,7 +1271,7 @@
     // ------------------------------------ Main Actions
     function applicatorMainActions() {
         
-        var $mainActionsWidgetItems = $mainActions.find( '.main-actions-aside---ct_cr > .widget:not( .main-search-func )' );
+        var $mainActionsWidgetItems = $mainActions.find( '.main-actions-aside---mn_cr > .widget:not( .main-search-func )' );
         
         // Gatekeeper
         ( function() {
@@ -1350,8 +1347,8 @@
             
             $mainSearch = $( '#main-search' );
             $mainActionsWidgets = $( '#main-actions-widgets' );
-            $mainActionsWidgetsCt = $mainActionsWidgets.find( '.main-actions-widgets---ct' );
-            $mainActionsWidgetsCtCr = $mainActionsWidgets.find( '.main-actions-widgets---ct_cr' );
+            $mainActionsWidgetsCt = $mainActionsWidgets.find( '.main-actions-widgets---mn' );
+            $mainActionsWidgetsCtCr = $mainActionsWidgets.find( '.main-actions-widgets---mn_cr' );
             $mainActionsWidgetsH = $mainActionsWidgets.find( '.main-actions-widgets---h' );
             $mainActionsWidgetsWidgetGroup = $mainActionsWidgets.find( '.main-actions-widgets---widget-grp' );
             
@@ -1943,8 +1940,8 @@
         
         
         // Variables
-        var $content = $( '#content' ),
-            $pageNav = $content.find( '.page-nav' ),
+        var $mainContent = $( '#main-content' ),
+            $pageNav = $mainContent.find( '.page-nav' ),
             $pageNavGroup = $pageNav.find( 'ul' ),
             
             $pageNavItem = $pageNav.find( 'li' ),
@@ -2198,7 +2195,7 @@
 
 
             // ------------ <table>
-            $( '.post-content--main > *:has( table ), .comment-content---ct_cr > *:has( table )' ).each(function() {
+            $( '.post-content--main > *:has( table ), .comment-content---mn_cr > *:has( table )' ).each(function() {
                 var $this = $( this ),
                     $table = $this.find( 'table' );
 
@@ -2209,7 +2206,7 @@
 
 
             // ------------ <select>
-            $( '.widget-content---ct_cr select' ).each(function() {
+            $( '.widget-content---mn_cr select' ).each(function() {
                 var $this = $( this );
 
                 $this.wrap( dataFormatBlockCpMu )
@@ -2217,7 +2214,7 @@
                         .addClass( dataFormatPrefixCss + 'select' );
             });
 
-            $( postContentCtCrCss + ' ' + '> table, .comment-content---ct_cr > table' ).each(function() {
+            $( postContentCtCrCss + ' ' + '> table, .comment-content---mn_cr > table' ).each(function() {
                 var $this = $( this );
                 $this.wrap( dataFormatBlockCpMu )
                     .closest( dataFormatCss )
@@ -2915,13 +2912,15 @@
         
         // ------------------------------------ Secondary Content
         ( function() {
+            
+            var $mainContentAside = $( '.main-content-aside' );
 
-            if ( $secondaryContent.css( 'margin' ) == '-1px' || $secondaryContent.is( ':hidden' ) ) {
+            if ( $mainContentAside.css( 'margin' ) == '-1px' || $mainContentAside.is( ':hidden' ) )
+            {
                 $body
-                    .addClass( mainContentAsideDisabled )
-                    .removeClass( mainContentAsideEnabled );
+                    .addClass( 'main-content-aside--disabled' )
+                    .removeClass( 'main-content-aside--enabled' );
             }
-        
         }() );
     
     
