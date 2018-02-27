@@ -79,6 +79,11 @@ Image used in screenshot.png: A photo (https://www.pexels.com/photo/architecture
  by by Aleksandar Pasaric (https://www.pexels.com/u/apasaric/),
  licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 
+ Demo Data items are licensed under the GPLv2 license
+ - atlast-business-export.dat is licensed under the GPLv2 license
+ - atlastbusiness.wordpress.2018-02-26.xml is licensed under the GPLv2 license
+ - justwp.io-widgets.wie is licensed under the GPLv2 license
+
 The following images:
 - A photo (https://www.pexels.com/photo/apple-computer-desk-laptop-209151/ ) -- by pixabay, licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 - A photo ( https://www.pexels.com/photo/silhouette-man-person-stars-12567/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
@@ -117,3 +122,6 @@ Mobile menu shows only the top level elements. You can also add your custom logo
 
 = Version 1.1.1 =
 - Fixed error in init.php so the servers with older PHP version can handle the empty() method.
+
+= Version 1.2.0 =
+- Demo data added successfully so the user can install them with a single click of a button.
