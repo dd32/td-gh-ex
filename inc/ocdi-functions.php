@@ -49,8 +49,9 @@ function best_education_ocdi_after_import() {
 
 	// Assign navigation menu locations.
 	$menu_location_details = array(
-		'primary'      => 'main',
-		'social' => 'social',
+		'primary'      => 'Primary Navigation',
+		'social' => 'Social Navigation',
+		'top' => 'Top Navigation',
 		);
 
 	if ( ! empty( $menu_location_details ) ) {
@@ -69,4 +70,4 @@ function best_education_ocdi_after_import() {
 		set_theme_mod( 'nav_menu_locations', $navigation_settings );
 	}
 }
-//add_action( 'pt-ocdi/after_import', 'best_education_ocdi_after_import' );
+add_action( 'pt-ocdi/after_import', 'best_education_ocdi_after_import' );

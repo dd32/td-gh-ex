@@ -30,7 +30,7 @@ if (!function_exists('best_education_callback_section')) :
                 if (has_excerpt()) {
                     $best_education_callback_main_content = get_the_excerpt();
                 } else {
-                    $best_education_callback_main_content = best_education_words_count($best_education_callback_excerpt_number , get_the_content());
+                    $best_education_callback_main_content = best_education_words_count($best_education_callback_excerpt_number, get_the_content());
                 }
                 if (has_post_thumbnail()) {
                     $thumb = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
@@ -58,16 +58,20 @@ if (!function_exists('best_education_callback_section')) :
                                     </div>
                                     <div class="cta-btn-group" role="group" aria-label="buttons">
                                         <?php if ($best_education_callback_button_enable == 1) { ?>
-                                            <a href="<?php the_permalink();?>" class="btn btn-sm btn-primary tm-shadow"><?php _e( 'View More', 'best-education' ); ?></a>
+                                            <a href="<?php the_permalink(); ?>"
+                                               class="btn btn-sm btn-primary tm-shadow"><?php _e('View More', 'best-education'); ?></a>
                                         <?php } ?>
                                         <?php if (!empty($best_education_callback_button_text)) { ?>
-                                            <a href="<?php echo esc_url($best_education_callback_button_url ); ?>" class="btn btn-sm btn-border"><?php echo esc_html($best_education_callback_button_text); ?></a>
+                                            <a href="<?php echo esc_url($best_education_callback_button_url); ?>"
+                                               class="btn btn-sm btn-border"><?php echo esc_html($best_education_callback_button_text); ?></a>
                                         <?php } ?>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 grid-cta-img">
-                                <img src="<?php echo esc_url($url); ?>">
+                            <div class="col-md-6">
+                                <div class="grid-cta-img">
+                                    <img src="<?php echo esc_url($url); ?>">
+                                </div>
                             </div>
                         </div>
                     </div>

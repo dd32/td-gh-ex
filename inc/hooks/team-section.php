@@ -35,12 +35,27 @@ if (!function_exists('best_education_team_args')) :
                 break;
 
             case 'from-category':
-                $best_education_team_category = esc_attr(best_education_get_option('select_category_for_team'));
-                $qargs = array(
-                    'posts_per_page' => esc_attr($best_education_team_number),
-                    'post_type' => 'post',
-                    'cat' => $best_education_team_category,
-                );
+                if (class_exists('Education_Connect') && post_type_exists('teams' )) {
+                    $best_education_team_category = esc_attr(best_education_get_option('select_category_for_team'));
+                    $qargs = array(
+                        'post_type' => 'teams',
+                        'posts_per_page' => esc_attr($best_education_team_number),
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'team-category',
+                                'field' => 'id',
+                                'terms' => absint($best_education_team_category),
+                            )
+                        ));
+                } else {
+                    $best_education_team_category = esc_attr(best_education_get_option('select_category_for_team'));
+                    $qargs = array(
+                        'posts_per_page' => esc_attr($best_education_team_number),
+                        'post_type' => 'post',
+                        'cat' => $best_education_team_category,
+                    );
+                }
+
                 return $qargs;
                 break;
 
@@ -71,7 +86,21 @@ if (!function_exists('best_education_team')) :
         <section class="section-block section-block-1 team-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
+                        <div class="block-heading">
+                            <div class="section-header">
+                                <h2 class="section-title section-title2">
+                                    <span><?php echo esc_html(best_education_get_option('title_team_section')); ?></span>
+                                </h2>
+                            </div>
+                            <div class="title-divider secondary-bgcolor"></div>
+                            <div class="section-content">
+                                <?php echo esc_html(best_education_get_option('sub_title_team_section')); ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
                         <div class="tm-team">
                             <?php if ($best_education_team_query->have_posts()) :
                                 while ($best_education_team_query->have_posts()) : $best_education_team_query->the_post();
@@ -93,25 +122,21 @@ if (!function_exists('best_education_team')) :
                                                 <p><?php echo wp_kses_post($best_education_team_content); ?></p>
                                             </div>
                                             <div class="move">
-                                                <h5><a href="<?php the_title(); ?>"><?php the_title(); ?></a>
-                                                </h5>
+                                                <h4 class="section-block-title">
+                                                    <a href="<?php the_title(); ?>">
+                                                        <?php the_title(); ?>
+                                                    </a>
+                                                </h4>
+                                                <?php if (class_exists('Education_Connect') && post_type_exists('teams' )) { ?>
+                                                    <div class="tm-designation"><?php education_connect_get_terms('team-designation'); ?></div>
+                                                    <div class="tm-social"><?php education_connect_team_social(); ?></div>
+                                                <?php } ?>
                                             </div>
                                         </div>
                                     </div>
                                 <?php endwhile;
                                 wp_reset_postdata();
                             endif; ?>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="section-header">
-                            <h2 class="section-title section-title2">
-                                <span><?php echo esc_html(best_education_get_option('title_team_section')); ?></span>
-                            </h2>
-                        </div>
-                        <div class="title-divider secondary-bgcolor"></div>
-                        <div class="section-content">
-                            <?php echo esc_html(best_education_get_option('sub_title_team_section')); ?>
                         </div>
                     </div>
                 </div>

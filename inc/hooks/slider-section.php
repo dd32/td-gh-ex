@@ -94,18 +94,20 @@ if (!function_exists('best_education_banner_slider')) :
                             <figcaption class="slider-figcaption">
                                 <div class="table-align">
                                     <div class="table-align-cell v-align-middle">
-                                        <h2 class="slide-title">
-                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                        </h2>
-                                        <div class="slider-content">
-                                            <?php echo wp_kses_post($best_education_slider_content); ?>
+                                        <div class="slider-wrapper">
+                                            <h2 class="slide-title">
+                                                <?php the_title(); ?>
+                                            </h2>
+                                            <div class="slider-content hidden-xs visible">
+                                                <?php echo wp_kses_post($best_education_slider_content); ?>
+                                            </div>
+                                            <?php if (!empty ($best_education_slider_button_text)) { ?>
+                                                <a href="<?php the_permalink(); ?>" class="btn btn-lg btn-primary tm-shadow">
+                                                    <span><?php echo esc_html($best_education_slider_button_text); ?></span>
+                                                    <i class="fa fa-angle-right"></i>
+                                                </a>
+                                            <?php } ?>
                                         </div>
-                                        <?php if (!empty ($best_education_slider_button_text)) { ?>
-                                            <a href="<?php the_permalink(); ?>" class="btn btn-lg btn-primary tm-shadow">
-                                                <span><?php echo esc_html($best_education_slider_button_text); ?></span>
-                                                <i class="fa fa-angle-right"></i>
-                                            </a>
-                                        <?php } ?>
                                     </div>
                                 </div>
                             </figcaption>

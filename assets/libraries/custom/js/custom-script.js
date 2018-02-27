@@ -103,18 +103,18 @@
                 autoplay: true,
                 autoplaySpeed: 8000,
                 infinite: true,
-                dots: false,
-                nextArrow: '<i class="Thememattic-icon slide-icon slide-next fa fa-angle-right"></i>',
-                prevArrow: '<i class="Thememattic-icon slide-icon slide-prev fa fa-angle-left"></i>',
+                dots: true,
+                arrows: false
             });
 
 
-            e('.student-voice').slick({
+            e('.featured-course').slick({
                 slidesToShow: 3,
                 slidesToScroll: 1,
                 nextArrow: '<i class="Thememattic-icon slide-icon slide-next fa fa-angle-right"></i>',
                 prevArrow: '<i class="Thememattic-icon slide-icon slide-prev fa fa-angle-left"></i>',
                 focusOnSelect: true,
+                dots: true,
                 responsive: [
                     {
                         breakpoint: 991,
@@ -141,11 +141,11 @@
             });
 
             e('.tm-team').slick({
-                slidesToShow: 2,
+                slidesToShow: 4,
                 slidesToScroll: 1,
-                nextArrow: '<i class="Thememattic-icon slide-icon slide-next fa fa-angle-right"></i>',
-                prevArrow: '<i class="Thememattic-icon slide-icon slide-prev fa fa-angle-left"></i>',
                 focusOnSelect: true,
+                dots: true,
+                arrows: false,
                 responsive: [
                     {
                         breakpoint: 991,
@@ -169,11 +169,12 @@
             });
 
             e('.testmonial-slides').slick({
-                slidesToShow: 3,
+                slidesToShow: 1,
                 slidesToScroll: 1,
                 nextArrow: '<i class="Thememattic-icon slide-icon slide-next fa fa-angle-right"></i>',
                 prevArrow: '<i class="Thememattic-icon slide-icon slide-prev fa fa-angle-left"></i>',
                 focusOnSelect: true,
+                dots: true,
                 responsive: [
                     {
                         breakpoint: 991,
@@ -212,29 +213,12 @@
             });
         },
 
-        n.ThemematticMarquee = function () {
-            e('.marquee').marquee({
-                direction: 'left',
-                speed: 1500,
-                pauseOnHover: true
-            });
-        },
 
         n.Thememattic_preloader = function () {
             e(window).load(function () {
                 e("body").addClass("page-loaded");
             });
         },
-
-        n.InnerBanner = function () {
-            var pageSection = e(".data-bg");
-            pageSection.each(function (indx) {
-                if (e(this).attr("data-background")) {
-                    e(this).css("background-image", "url(" + e(this).data("background") + ")");
-                }
-            });
-        },
-
 
         n.parellex = function () {
             e.stellar({
@@ -244,7 +228,6 @@
             });
         },
 
-        // SCROLL UP //
         n.scroll_up = function () {
             e("#scroll-up").on("click", function () {
                 e("html, body").animate({
@@ -252,7 +235,6 @@
                 }, 800);
                 return false;
             });
-
 
             e('.smoothscroll').on('click', function () {
                 event.preventDefault();

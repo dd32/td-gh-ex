@@ -21,7 +21,15 @@ $wp_customize->add_panel('theme_option_panel',
 $wp_customize->add_panel('theme_homepage_section',
 	array(
 		'title'      => esc_html__('Homepage Options', 'best-education'),
-		'priority'   => 200,
+		'priority'   => 190,
+		'capability' => 'edit_theme_options',
+	)
+);
+// Add Page Template Panel.
+$wp_customize->add_section('theme_contact_page_section',
+	array(
+		'title'      => esc_html__('Contact Page Options', 'best-education'),
+		'priority'   => 195,
 		'capability' => 'edit_theme_options',
 	)
 );
@@ -29,10 +37,10 @@ $wp_customize->add_panel('theme_homepage_section',
 // our header Main Section.
 $wp_customize->add_section('header_section_settings',
 	array(
-		'title'      => esc_html__('Heading Options', 'best-education'),
+		'title'      => esc_html__('Header Options', 'best-education'),
 		'priority'   => 5,
 		'capability' => 'edit_theme_options',
-		'panel'      => 'theme_homepage_section',
+		'panel'      => 'theme_option_panel',
 	)
 );
 
@@ -122,6 +130,22 @@ $wp_customize->add_control('top_header_email',
 		'priority' => 95,
 
 	)
+);
+
+$wp_customize->add_setting('enable_nav_overlay',
+    array(
+        'default'           => $default['enable_nav_overlay'],
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'best_education_sanitize_checkbox',
+    )
+);
+$wp_customize->add_control('enable_nav_overlay',
+    array(
+        'label'    => esc_html__('Enable Nav Overlay', 'best-education'),
+        'section'  => 'header_section_settings',
+        'type'     => 'checkbox',
+        'priority' => 100,
+    )
 );
 
 // Slider Main Section.
@@ -378,13 +402,19 @@ $wp_customize->add_setting('number_of_content_home_sec_about',
 $wp_customize->add_control('number_of_content_home_sec_about',
 	array(
 		'label'       => __('No of words for Parallax Section', 'best-education'),
-		'section'     => 'about_section_settings',
+        'description' => __('Note: If our plugin Education Connect is active the category will be displayed form Course post types', 'best-education'),
+        'section'     => 'about_section_settings',
 		'type'        => 'number',
 		'priority'    => 140,
 		'input_attrs' => array('min' => 0, 'max' => 200, 'style' => 'width: 150px;'),
 
 	)
 );
+if (class_exists('Education_Connect') && post_type_exists('courses')) {
+    $education_content_course_tax = 'course-category';
+} else {
+    $education_content_course_tax = 'category';
+}
 $wp_customize->add_setting('select_category_sec_about',
 	array(
 		'default'           => $default['select_category_sec_about'],
@@ -394,11 +424,11 @@ $wp_customize->add_setting('select_category_sec_about',
 );
 $wp_customize->add_control(new Best_Education_Dropdown_Taxonomies_Control($wp_customize, 'select_category_sec_about',
 		array(
-			'label'       => __('Select Category For Secondary About Section', 'best-education'),
+			'label'       => __('Select Category For Courses', 'best-education'),
 			'description' => __('Select category to be shown as featured page below about section', 'best-education'),
 			'section'     => 'about_section_settings',
 			'type'        => 'dropdown-taxonomies',
-			'taxonomy'    => 'category',
+			'taxonomy'    => $education_content_course_tax,
 			'priority'    => 150,
 		)));
 
@@ -537,7 +567,9 @@ $wp_customize->add_setting('show_blog_event_tab_section',
 );
 $wp_customize->add_control('show_blog_event_tab_section',
 	array(
-		'label'    => esc_html__('Enable Blog/Event Section', 'best-education'),
+		'label'       => esc_html__('Enable Blog/Event Section', 'best-education'),
+		'description' => __('Note: If our plugin Education Connect is active the category will be displayed form event post types', 'best-education'),
+
 		'section'  => 'tab_section_settings',
 		'type'     => 'checkbox',
 		'priority' => 100,
@@ -629,6 +661,11 @@ $wp_customize->add_control('number_of_content_home_event',
 	)
 );
 
+if (class_exists('Education_Connect') && post_type_exists('events')) {
+	$education_content_event_tax = 'event-category';
+} else {
+	$education_content_event_tax = 'category';
+}
 $wp_customize->add_setting('select_category_event_tab',
 	array(
 		'default'           => $default['select_category_event_tab'],
@@ -638,12 +675,11 @@ $wp_customize->add_setting('select_category_event_tab',
 );
 $wp_customize->add_control(new Best_Education_Dropdown_Taxonomies_Control($wp_customize, 'select_category_event_tab',
 		array(
-			'label'       => __('Category For Event Tab', 'best-education'),
-			'description' => __('Select category to be shown as event', 'best-education'),
-			'section'     => 'tab_section_settings',
-			'type'        => 'dropdown-taxonomies',
-			'taxonomy'    => 'category',
-			'priority'    => 150,
+			'label'    => __('Category For Event Tab', 'best-education'),
+			'section'  => 'tab_section_settings',
+			'type'     => 'dropdown-taxonomies',
+			'taxonomy' => $education_content_event_tax,
+			'priority' => 150,
 		)));
 
 // testimonial Main Section.
@@ -666,7 +702,9 @@ $wp_customize->add_setting('show_testimonial_section',
 );
 $wp_customize->add_control('show_testimonial_section',
 	array(
-		'label'    => __('Enable Testimonial', 'best-education'),
+		'label'       => __('Enable Testimonial', 'best-education'),
+		'description' => __('Note: If our plugin Education Connect is active the category will be displayed form testimonial post types', 'best-education'),
+
 		'section'  => 'testimonial_section_settings',
 		'type'     => 'checkbox',
 		'priority' => 100,
@@ -793,7 +831,11 @@ for ($i = 1; $i <= best_education_get_option('number_of_home_testimonial'); $i++
 		)
 	);
 }
-
+if (class_exists('Education_Connect') && post_type_exists('testimonials')) {
+	$education_content_testimonial_tax = 'testimonials-category';
+} else {
+	$education_content_testimonial_tax = 'category';
+}
 // Setting - drop down category for testimonial.
 $wp_customize->add_setting('select_category_for_testimonial',
 	array(
@@ -808,7 +850,7 @@ $wp_customize->add_control(new Best_Education_Dropdown_Taxonomies_Control($wp_cu
 			'description'     => __('Select category to be shown on tab ', 'best-education'),
 			'section'         => 'testimonial_section_settings',
 			'type'            => 'dropdown-taxonomies',
-			'taxonomy'        => 'category',
+			'taxonomy'        => $education_content_testimonial_tax,
 			'priority'        => 130,
 			'active_callback' => 'best_education_is_select_cat_testimonial',
 
@@ -834,7 +876,9 @@ $wp_customize->add_setting('show_team_section',
 );
 $wp_customize->add_control('show_team_section',
 	array(
-		'label'    => __('Enable Team', 'best-education'),
+		'label'       => __('Enable Team', 'best-education'),
+		'description' => __('Note: If our plugin Education Connect is active the category will be displayed form team post types', 'best-education'),
+
 		'section'  => 'team_section_settings',
 		'type'     => 'checkbox',
 		'priority' => 100,
@@ -957,6 +1001,11 @@ for ($i = 1; $i <= best_education_get_option('number_of_home_team'); $i++) {
 	);
 }
 
+if (class_exists('Education_Connect') && post_type_exists('teams')) {
+	$education_content_team_tax = 'team-category';
+} else {
+	$education_content_team_tax = 'category';
+}
 // Setting - drop down category for team.
 $wp_customize->add_setting('select_category_for_team',
 	array(
@@ -971,11 +1020,128 @@ $wp_customize->add_control(new Best_Education_Dropdown_Taxonomies_Control($wp_cu
 			'description'     => __('Select category to be shown on tab ', 'best-education'),
 			'section'         => 'team_section_settings',
 			'type'            => 'dropdown-taxonomies',
-			'taxonomy'        => 'category',
+			'taxonomy'        => $education_content_team_tax,
 			'priority'        => 130,
 			'active_callback' => 'best_education_is_select_cat_team',
 
 		)));
+
+
+// our Tab Main Section.
+$wp_customize->add_section('footer_page_section_settings',
+    array(
+        'title'      => esc_html__('Footer Call to Action Settings', 'best-education'),
+        'priority'   => 210,
+        'capability' => 'edit_theme_options',
+        'panel'      => 'theme_option_panel',
+    )
+);
+
+// Setting - .
+$wp_customize->add_setting('show_footer_page_section',
+    array(
+        'default'           => $default['show_footer_page_section'],
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'best_education_sanitize_checkbox',
+    )
+);
+$wp_customize->add_control('show_footer_page_section',
+    array(
+        'label'       => esc_html__('Enable Footer Fix Section', 'best-education'),
+        'section'  => 'footer_page_section_settings',
+        'type'     => 'checkbox',
+        'priority' => 100,
+    )
+);
+
+
+// Setting - show-select_footer_page-section.
+$wp_customize->add_setting('select_footer_page',
+    array(
+        'default'           => $default['select_footer_page'],
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'best_education_sanitize_dropdown_pages',
+    )
+);
+$wp_customize->add_control('select_footer_page',
+    array(
+        'label'    => esc_html__('Select Footer Fix Page', 'best-education'),
+        'section'  => 'footer_page_section_settings',
+        'type'     => 'dropdown-pages',
+        'priority' => 130,
+    )
+);
+
+/*content excerpt in footer page*/
+$wp_customize->add_setting('number_of_content_home_footer_page',
+    array(
+        'default'           => $default['number_of_content_home_footer_page'],
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'best_education_sanitize_positive_integer',
+    )
+);
+$wp_customize->add_control('number_of_content_home_footer_page',
+    array(
+        'label'       => __('Select no words for Footer Fix Section', 'best-education'),
+        'section'     => 'footer_page_section_settings',
+        'type'        => 'number',
+        'priority'    => 130,
+        'input_attrs' => array('min' => 1, 'max' => 500, 'style' => 'width: 150px;'),
+
+    )
+);
+
+// Setting .
+$wp_customize->add_setting('show_footer_fix_page_button',
+    array(
+        'default'           => $default['show_footer_fix_page_button'],
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'best_education_sanitize_checkbox',
+    )
+);
+$wp_customize->add_control('show_footer_fix_page_button',
+    array(
+        'label'    => esc_html__('Enable Fix Page Button', 'best-education'),
+        'section'  => 'footer_page_section_settings',
+        'type'     => 'checkbox',
+        'priority' => 140,
+    )
+);
+
+/*button text*/
+$wp_customize->add_setting('fix_page_button_text',
+    array(
+        'default'           => $default['fix_page_button_text'],
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+$wp_customize->add_control('fix_page_button_text',
+    array(
+        'label'       => __('Additional Button Text', 'best-education'),
+        'description' => __('Removing the text from this section will disable the custom button on callback section', 'best-education'),
+        'section'     => 'footer_page_section_settings',
+        'type'        => 'text',
+        'priority'    => 150,
+    )
+);
+
+/*button url*/
+$wp_customize->add_setting('fix_page_button_link',
+    array(
+        'default'           => $default['fix_page_button_link'],
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'esc_url_raw',
+    )
+);
+$wp_customize->add_control('fix_page_button_link',
+    array(
+        'label'    => __('Additional Button URL Link', 'best-education'),
+        'section'  => 'footer_page_section_settings',
+        'type'     => 'text',
+        'priority' => 160,
+    )
+);
 
 /*layout management section start */
 $wp_customize->add_section('theme_option_section_settings',
@@ -1149,28 +1315,43 @@ $wp_customize->add_control('archive_layout_image',
 );
 
 /*single post Layout image*/
-$wp_customize->add_setting('single_post_image_layout',
+$wp_customize->add_setting('single_post_meta_data',
 	array(
-		'default'           => $default['single_post_image_layout'],
+		'default'           => $default['single_post_meta_data'],
 		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'best_education_sanitize_select',
+		'sanitize_callback' => 'best_education_sanitize_checkbox',
 	)
 );
-$wp_customize->add_control('single_post_image_layout',
-	array(
-		'label'     => esc_html__('Single Post/Page Image Alocation', 'best-education'),
-		'section'   => 'theme_option_section_settings',
-		'choices'   => array(
-			'full'     => esc_html__('Full', 'best-education'),
-			'right'    => esc_html__('Right', 'best-education'),
-			'left'     => esc_html__('Left', 'best-education'),
-			'no-image' => esc_html__('No image', 'best-education')
-		),
-		'type'     => 'select',
-		'priority' => 190,
-	)
+$wp_customize->add_control('single_post_meta_data',
+    array(
+        'label'    => esc_html__('Enable Single Header Meta Data', 'best-education'),
+        'section'  => 'theme_option_section_settings',
+        'type'     => 'checkbox',
+        'priority' => 200,
+    )
 );
 
+$wp_customize->add_setting('single_post_image_layout',
+    array(
+        'default'           => $default['single_post_image_layout'],
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'best_education_sanitize_select',
+    )
+);
+$wp_customize->add_control('single_post_image_layout',
+    array(
+        'label'     => esc_html__('Single Post/Page Image Alocation', 'best-education'),
+        'section'   => 'theme_option_section_settings',
+        'choices'   => array(
+            'full'     => esc_html__('Full', 'best-education'),
+            'right'    => esc_html__('Right', 'best-education'),
+            'left'     => esc_html__('Left', 'best-education'),
+            'no-image' => esc_html__('No image', 'best-education')
+        ),
+        'type'     => 'select',
+        'priority' => 190,
+    )
+);
 // Pagination Section.
 $wp_customize->add_section('pagination_section',
 	array(
@@ -1283,4 +1464,23 @@ $wp_customize->add_control('breadcrumb_type',
 		),
 		'priority' => 100,
 	)
+);
+
+
+// Contact page Section.
+// Setting copyright_text.
+$wp_customize->add_setting('contact_form_shortcodes',
+    array(
+        'default'           => $default['contact_form_shortcodes'],
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+$wp_customize->add_control('contact_form_shortcodes',
+    array(
+        'label'    => esc_html__('Contact Form Shortcode', 'best-education'),
+        'section'  => 'theme_contact_page_section',
+        'type'     => 'text',
+        'priority' => 120,
+    )
 );

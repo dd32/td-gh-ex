@@ -18,13 +18,13 @@ function best_education_get_default_theme_options() {
 
 	$defaults = array();
 
-	$defaults['home_grid_layout'] = 'homepage-style-1';
 	// header section
 	$defaults['enable_header_contact_section'] = 0;
 	$defaults['enable_header_logo_center']     = 0;
 	$defaults['top_header_location']           = '';
 	$defaults['top_header_telephone']          = '';
 	$defaults['top_header_email']              = '';
+	$defaults['enable_nav_overlay']              = 0;
 	// Slider Section.
 	$defaults['show_slider_section']           = 1;
 	$defaults['number_of_home_slider']         = 3;
@@ -56,7 +56,7 @@ function best_education_get_default_theme_options() {
 	$defaults['select_category_blog_event_tab'] = 1;
 	$defaults['number_of_content_home_blog']    = 30;
 	$defaults['number_of_content_home_event']   = 30;
-	$defaults['select_category_event_tab']      = 1;
+	$defaults['select_category_event_tab']      = 0;
 	$defaults['blog_title_text']                = esc_html__('Latest Blog', 'best-education');
 	$defaults['event_title_text']               = esc_html__('Our Events', 'best-education');
 
@@ -75,14 +75,22 @@ function best_education_get_default_theme_options() {
 	$defaults['sub_title_team_section']      = '';
 	$defaults['title_team_section']          = esc_html__('Who are we?', 'best-education');
 	$defaults['number_of_home_team']         = 3;
-	$defaults['number_of_content_home_team'] = 30;
+	$defaults['number_of_content_home_team'] = 20;
 	$defaults['select_team_from']            = 'from-category';
 	$defaults['select_page_for_team']        = 0;
 	$defaults['select_category_for_team']    = 1;
+//footer page section
+    $defaults['show_footer_page_section'] = 0;
+    $defaults['select_footer_page'] = 2;
+    $defaults['number_of_content_home_footer_page'] = 30;
+    $defaults['show_footer_fix_page_button'] = 1;
+    $defaults['fix_page_button_text'] = esc_html__('View Our Courses', 'best-education');
+    $defaults['fix_page_button_link'] = '';
 
 	/*layout*/
 	$defaults['home_page_content_status'] = 1;
 	$defaults['enable_overlay_option']    = 1;
+	$defaults['single_post_meta_data']    = 1;
 	$defaults['homepage_layout_option']   = 'full-width';
 	$defaults['global_layout']            = 'right-sidebar';
 	$defaults['excerpt_length_global']    = 50;
@@ -91,9 +99,10 @@ function best_education_get_default_theme_options() {
 	$defaults['single_post_image_layout'] = 'full';
 	$defaults['pagination_type']          = 'default';
 	$defaults['copyright_text']           = esc_html__('Copyright All right reserved', 'best-education');
-	$defaults['social_icon_style']        = 'square';
+	$defaults['social_icon_style']        = 'circle';
 	$defaults['number_of_footer_widget']  = 3;
 	$defaults['breadcrumb_type']          = 'simple';
+	$defaults['contact_form_shortcodes']          = '';
 
 	// Pass through filter.
 	$defaults = apply_filters('best_education_filter_default_theme_options', $defaults);

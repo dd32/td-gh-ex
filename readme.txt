@@ -4,14 +4,22 @@ Contributors: Thememattic
 
 Requires at least: 4.0
 Tested up to: 4.9
-Stable tag: 0.0.6
+Stable tag: 0.0.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 A clean, elegent and professional Magazine WordPress Theme.
 
 == Description ==
-Best Education is a highly customizable modern elegant, responsive and fully customizable WordPress theme by Thememattic. It is made for educational web, LMS, Training Center, Courses Hub, College, Academy, University, School, Kindergarten. It is loaded with powerful features like slideshows, galleries and post types.
+Best Education is the flexible and highly responsive wordpress theme that helps in creating the best website
+for education instituitions like schools, colleges, primary schools, universities and various others business
+related to the education, teaching and learning. It has many features that supports all the functionalities of
+an educational website.
+Loaded with powerful plugin named "Education Connect", helps in creating the outstanding website for your school
+or college within a very less time.
+By featuring a responsive layout, it is clear that visitors can use any mobile device or desktop screen for reaching the website.
+It is perfectly optimized to support all the latest trends in SEO on-page optimization.
+View Live Preview: https://demo.thememattic.com/best-education and For Documentation: https://docs.thememattic.com/best-education
 
 == License ==
 
@@ -29,6 +37,9 @@ Best Education is distributed under the terms of the GNU GPL
 
 = 0.0.6 =
 =Initial release=
+
+= 0.0.7 =
+=Fixed bugs on review=
 
 
 == Credits ==
@@ -63,28 +74,27 @@ Author: Justin Tadlock
 Source: http://themehybrid.com/plugins/breadcrumb-trail
 License: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
-Ionicons:
-Author: Ben Sperry for the Ionic Framework
-Source: https://github.com/driftyco/ionicons
-License: Licensed under the MIT license
+Font Awesome:
+Author: Dave Gandy
+Source: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+License: Licensed under SIL Open Font License (OFL) and MIT License
 
 slick carousel:
 Author: Ken Wheeler
 Source: https://github.com/kenwheeler/slick
 License: Licensed under the MIT license
 
+Stellar:
+Author: Mark Dalgleish
+Source: https://github.com/markdalgleish/stellar.js and https://markdalgleish.mit-license.org/
+License: Licensed under the MIT license
+
 == Image Used ==
-https://pixabay.com/en/dawn-dusk-graduates-hill-people-1840298/
 https://pixabay.com/en/johns-hopkins-university-gilman-hall-1590925/
 
 All are Licensed under CC0
 
 == Google Fonts ==
-Josefin Sans
-Source: https://fonts.google.com/specimen/Josefin+Sans
-License: Open Font License
-
-
-Lato
-Source: https://fonts.google.com/specimen/Lato
-License: Open Font License
+Roboto
+Source: https://fonts.google.com/specimen/Roboto
+License: Apache License, Version 2.0

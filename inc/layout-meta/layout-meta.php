@@ -52,7 +52,21 @@ if ( ! function_exists( 'best_education_render_theme_settings_metabox' ) ) :
 	<div id="best-education-settings-metabox-container" class="best-education-settings-metabox-container">
 		<div id="best-education-settings-metabox-tab-layout">
 			<h4><?php echo __( 'Layout Settings', 'best-education' ); ?></h4>
+
 			<div class="best-education-row-content">
+                <!-- Checkbox Field-->
+                <p>
+                <div class="best-education-row-content">
+                    <label for="best-education-meta-checkbox">
+                        <input type="checkbox" name="best-education-meta-checkbox" id="best-education-meta-checkbox"
+                               value="yes" <?php if (isset($best_education_post_meta_value['best-education-meta-checkbox'])) {
+                            checked($best_education_post_meta_value['best-education-meta-checkbox'][0], 'yes');
+                        }
+                        ?>/>
+                        <?php _e('Check To Use Featured Image As Banner Image', 'best-education') ?>
+                    </label>
+                </div>
+                </p>
 			     <!-- Select Field-->
 			        <p>
 			            <label for="best-education-meta-select-layout" class="best-education-row-title">
@@ -135,6 +149,8 @@ if ( ! function_exists( 'best_education_save_theme_settings_meta' ) ) :
 		} else if ( ! current_user_can( 'edit_post', $post_id ) ) {
 			return;
 		}
+        $best_education_meta_checkbox = isset($_POST['best-education-meta-checkbox']) ? esc_attr($_POST['best-education-meta-checkbox']) : '';
+        update_post_meta($post_id, 'best-education-meta-checkbox', sanitize_text_field($best_education_meta_checkbox));
 
 		$best_education_meta_select_layout =  isset( $_POST[ 'best-education-meta-select-layout' ] ) ? esc_attr($_POST[ 'best-education-meta-select-layout' ]) : '';
 		if(!empty($best_education_meta_select_layout)){

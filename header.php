@@ -45,8 +45,13 @@
 } elseif (best_education_get_option('homepage_layout_option') == 'boxed') {
     $best_education_homepage_layout = 'boxed-layout';
 }
+if (best_education_get_option('show_footer_page_section') == 1) {
+    $best_education_footer_fix_cta = 'footer-cta-enable';
+} else {
+    $best_education_footer_fix_cta = '';
+}
 ?>
-<div id="page" class="site <?php echo esc_attr($best_education_homepage_layout); ?>">
+<div id="page" class="site <?php echo esc_attr($best_education_homepage_layout);?> <?php echo esc_attr($best_education_footer_fix_cta);?>">
     <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e('Skip to content', 'best-education'); ?></a>
     <header id="masthead" class="site-header site-header-second" role="banner">
         <div class="top-bar">
@@ -212,31 +217,33 @@
                 </div>
             </div>
         </div>
-        <div class="top-header">
+        <?php
+            if (best_education_get_option('show_footer_page_section') == 1) {
+                $enable_nav_overlay = 'top-header-overlay';
+            } else {
+                $enable_nav_overlay = '';
+            }
+        ?>
+        <div class="top-header <?php echo esc_attr($enable_nav_overlay); ?>">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-11">
-                        <nav class="main-navigation" role="navigation">
-                            <span class="toggle-menu" aria-controls="primary-menu" aria-expanded="false">
-                                 <span class="screen-reader-text">
-                                    <?php esc_html_e('Primary Menu', 'best-education'); ?>
-                                </span>
-                                <i class="ham"></i>
-                            </span>
+                <nav class="main-navigation" role="navigation">
+                    <span class="toggle-menu" aria-controls="primary-menu" aria-expanded="false">
+                         <span class="screen-reader-text">
+                            <?php esc_html_e('Primary Menu', 'best-education'); ?>
+                        </span>
+                        <i class="ham"></i>
+                    </span>
 
-                            <?php wp_nav_menu(array(
-                                'theme_location' => 'primary',
-                                'menu_id' => 'primary-menu',
-                                'container' => 'div',
-                                'container_class' => 'menu main-menu'
-                            )); ?>
-                        </nav>
-                    </div>
-                    <div class="col-sm-1">
-                        <div class="icon-search pull-left">
-                            <i class="fa fa-search"></i>
-                        </div>
-                    </div>
+                    <?php wp_nav_menu(array(
+                        'theme_location' => 'primary',
+                        'menu_id' => 'primary-menu',
+                        'container' => 'div',
+                        'container_class' => 'menu main-menu'
+                    )); ?>
+                </nav>
+
+                <div class="icon-search pull-right">
+                    <i class="fa fa-search"></i>
                 </div>
             </div>
         </div>

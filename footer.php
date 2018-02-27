@@ -11,10 +11,8 @@
 
 ?>
 </div>
+
 <!-- #content -->
-</div>
-
-
 <footer id="colophon" class="site-footer">
     <?php $best_education_footer_widgets_number = best_education_get_option('number_of_footer_widget');
     if (1 == $best_education_footer_widgets_number) {
@@ -29,33 +27,33 @@
         $col = 'col-md-3';
     }
     if (is_active_sidebar('footer-col-one') || is_active_sidebar('footer-col-two') || is_active_sidebar('footer-col-three') || is_active_sidebar('footer-col-four')) { ?>
-    <div class="footer-widget-area">
-        <div class="container">
-            <div class="row">
-                <?php if (is_active_sidebar('footer-col-one') && $best_education_footer_widgets_number > 0) : ?>
-                    <div class="contact-list <?php echo esc_attr($col); ?>">
-                        <?php dynamic_sidebar('footer-col-one'); ?>
-                    </div>
-                <?php endif; ?>
-                <?php if (is_active_sidebar('footer-col-two') && $best_education_footer_widgets_number > 1) : ?>
-                    <div class="contact-list <?php echo esc_attr($col); ?>">
-                        <?php dynamic_sidebar('footer-col-two'); ?>
-                    </div>
-                <?php endif; ?>
-                <?php if (is_active_sidebar('footer-col-three') && $best_education_footer_widgets_number > 2) : ?>
-                    <div class="contact-list <?php echo esc_attr($col); ?>">
-                        <?php dynamic_sidebar('footer-col-three'); ?>
-                    </div>
-                <?php endif; ?>
-                <?php if (is_active_sidebar('footer-col-four') && $best_education_footer_widgets_number > 3) : ?>
-                    <div class="contact-list <?php echo esc_attr($col); ?>">
-                        <?php dynamic_sidebar('footer-col-four'); ?>
-                    </div>
-                <?php endif; ?>
+        <div class="footer-widget-area">
+            <div class="container">
+                <div class="row">
+                    <?php if (is_active_sidebar('footer-col-one') && $best_education_footer_widgets_number > 0) : ?>
+                        <div class="contact-list <?php echo esc_attr($col); ?>">
+                            <?php dynamic_sidebar('footer-col-one'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (is_active_sidebar('footer-col-two') && $best_education_footer_widgets_number > 1) : ?>
+                        <div class="contact-list <?php echo esc_attr($col); ?>">
+                            <?php dynamic_sidebar('footer-col-two'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (is_active_sidebar('footer-col-three') && $best_education_footer_widgets_number > 2) : ?>
+                        <div class="contact-list <?php echo esc_attr($col); ?>">
+                            <?php dynamic_sidebar('footer-col-three'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (is_active_sidebar('footer-col-four') && $best_education_footer_widgets_number > 3) : ?>
+                        <div class="contact-list <?php echo esc_attr($col); ?>">
+                            <?php dynamic_sidebar('footer-col-four'); ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
             </div>
-            <?php } ?>
         </div>
-    </div>
+    <?php } ?>
 
     <div class="footer-bottom">
         <div class="container">
@@ -101,7 +99,9 @@
                             </div>
 
                             <div class="col-xs-5">
-                                <?php printf(esc_html__('Theme: %1$s by %2$s', 'best-education'), 'Best Education', '<a href="https://thememattic.com" target = "_blank" rel="designer">Themematic </a>'); ?>
+                                <div class="pull-right">
+                                    <?php printf(esc_html__('Theme: %1$s by %2$s', 'best-education'), 'Best Education', '<a href="https://thememattic.com" target = "_blank" rel="designer">Themematic </a>'); ?>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -109,9 +109,70 @@
             </div>
         </div>
     </div>
-
 </footer>
 </div>
+<?php
+if (1 == best_education_get_option('show_footer_page_section')) {
+    $best_education_footer_fix_button_enable = best_education_get_option('show_footer_fix_page_button');
+    $best_education_footer_fix_button_text = best_education_get_option('fix_page_button_text');
+    $best_education_footer_fix_button_url = best_education_get_option('fix_page_button_link');
+    $best_education_footer_fix_page = array();
+    $best_education_footer_fix_page[] = esc_attr(best_education_get_option('select_footer_page'));
+    $best_education_fix_page_page_excerpt_number = absint(best_education_get_option('number_of_content_home_footer_page'));
+    if (!empty($best_education_footer_fix_page)) {
+        $best_education_fix_page_page_args = array(
+            'orderby' => 'post__in',
+            'post_type' => 'page',
+            'post__in' => $best_education_footer_fix_page,
+        );
+    }
+    if (!empty($best_education_fix_page_page_args)) {
+        $best_education_fix_page_page_query = new WP_Query($best_education_fix_page_page_args);
+        while ($best_education_fix_page_page_query->have_posts()): $best_education_fix_page_page_query->the_post();
+            if (has_excerpt()) {
+                $best_education_fix_page_page_main_content = get_the_excerpt();
+            } else {
+                $best_education_fix_page_page_main_content = best_education_words_count($best_education_fix_page_page_excerpt_number, get_the_content());
+            }
+            if (has_post_thumbnail()) {
+                $thumb = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
+                $url = $thumb['0'];
+            } else {
+                $url = NULL;
+            }
+    ?>
+            <div class="footer-cta primary-bgcolor data-bg bg-fixed" data-background="<?php echo esc_url($url); ?>">
+                <div class="container high-index">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="section-header">
+                                <h2 class="section-title section-title2"><?php the_title(); ?></h2>
+                            </div>
+                            <div class="title-divider secondary-bgcolor"></div>
+                            <div class="section-content">
+                                <?php echo esc_html($best_education_fix_page_page_main_content); ?>
+                            </div>
+
+                            <div class="cta-btn-group" role="group" aria-label="buttons">
+                                <?php if ($best_education_footer_fix_button_enable == 1) { ?>
+                                    <a href="<?php the_permalink(); ?>"
+                                       class="btn btn-sm btn-primary tm-shadow"><?php _e('View More', 'best-education'); ?></a>
+                                <?php } ?>
+                                <?php if (!empty($best_education_footer_fix_button_text)) { ?>
+                                    <a href="<?php echo esc_url($best_education_footer_fix_button_url); ?>"
+                                       class="btn btn-sm btn-border"><?php echo esc_html($best_education_footer_fix_button_text); ?></a>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-overlay"></div>
+            </div>
+        <?php endwhile;
+        wp_reset_postdata();
+    }
+} ?>
+
 <?php wp_footer(); ?>
 
 </body>

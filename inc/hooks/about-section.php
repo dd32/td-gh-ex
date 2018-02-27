@@ -110,20 +110,24 @@ if (!function_exists('best_education_about_block')):
                 ?>
                 <section class="section-block about-section-bg primary-bgcolor data-bg bg-fixed low-index" data-stellar-background-ratio="0.5" data-background="<?php echo esc_url($url); ?>">
                     <div class="container">
-                        <div class="stellar-heading">
-                            <div class="section-header">
-                                <h2 class="section-title section-title2">
-				                    <span>
-				                       <?php the_title( ); ?>
-				                    </span>
-                                </h2>
-                            </div>
-                            <div class="title-divider secondary-bgcolor"></div>
-                            <?php if ($best_education_sec_about_excerpt_number != 0 ) { ?>
-                                <div class="section-content">
-                                    <?php echo wp_kses_post($best_education_sec_about_content); ?>
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <div class="block-heading block-heading-1">
+                                    <div class="section-header">
+                                        <h2 class="section-title section-title2">
+                                            <span>
+                                               <?php the_title( ); ?>
+                                            </span>
+                                        </h2>
+                                    </div>
+                                    <div class="title-divider secondary-bgcolor"></div>
+                                    <?php if ($best_education_sec_about_excerpt_number != 0 ) { ?>
+                                        <div class="section-content">
+                                            <?php echo wp_kses_post($best_education_sec_about_content); ?>
+                                        </div>
+                                    <?php } ?>
                                 </div>
-                            <?php } ?>
+                            </div>
                         </div>
                     </div>
                     <div class="bg-overlay primary-bgcolor"></div>
@@ -133,17 +137,37 @@ if (!function_exists('best_education_about_block')):
         wp_reset_postdata(); ?>
 
         <?php
-        $best_education_sec_cat = esc_attr(best_education_get_option('select_category_sec_about'));
-        $best_education_about_sec_cat_args = array(
-            'post_type' => 'post',
-            'cat' => absint($best_education_sec_cat),
-            'posts_per_page' => 6,
-        ); ?>
-        <section class="section-block student-voice-section">
+        $best_education_sec_cat = absint(best_education_get_option('select_category_sec_about'));
+        if (empty($best_education_sec_cat)){
+            return null;
+        }
+
+        if (class_exists('Education_Connect') && post_type_exists('courses' )) {
+            $best_education_sec_cat = absint(best_education_get_option('select_category_sec_about'));
+            $best_education_about_sec_cat_args = array(
+                'post_type' => 'courses',
+                'posts_per_page' => 6,
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'course-category',
+                        'field' => 'id',
+                        'terms' => absint($best_education_sec_cat),
+                    )
+                ));
+        } else {
+            $best_education_testimonial_category = esc_attr(best_education_get_option('select_category_for_testimonial'));
+            $best_education_about_sec_cat_args = array(
+                'posts_per_page' =>  6,
+                'post_type' => 'post',
+                'cat' => absint($best_education_sec_cat),
+            );
+        }
+        ?>
+        <section class="section-block featured-course-section ec-customization-properties">
             <div class="container high-index">
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
-                        <div class="student-voice slick-carousel">
+                        <div class="featured-course slick-carousel">
                             <?php $best_education_about_sec_cat_post_query = new WP_Query($best_education_about_sec_cat_args);
                             if ($best_education_about_sec_cat_post_query->have_posts()) :
                                 while ($best_education_about_sec_cat_post_query->have_posts()) : $best_education_about_sec_cat_post_query->the_post();
@@ -154,14 +178,19 @@ if (!function_exists('best_education_about_block')):
                                         $url = NULL;
                                     }?>
                                     <article class="voice-items">
-                                        <div class="student-voice-wrapper">
+                                        <div class="featured-course-wrapper">
                                             <figure class="bg-image data-bg-cta-1">
                                                 <img src="<?php echo esc_url($url); ?>">
-                                                <div class="tm-date">
-                                                    <span class="tm-date-month"><?php the_time( 'M' ) ?> </span>
-                                                    <span class="tm-date-day"><?php the_time( 'd' ) ?></span>
-                                                </div>
+                                                <?php if (class_exists('Education_Connect') && post_type_exists('courses' )) { ?>
+                                                    <?php education_connect_course_duration(); ?>
+                                                    <?php education_connect_course_price(); ?>
+                                                <?php } ?>
                                             </figure>
+                                            <div class="ec-cpt-format">
+                                                <div class="cpt-format">
+                                                    <i class="ecicon ecicon-ec-mortarboard ec-bgcolor"></i>
+                                                </div>
+                                            </div>
                                             <figcaption class="">
                                                 <div class="block-title-wrapper">
                                                     <h3 class="section-block-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>

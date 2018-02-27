@@ -72,13 +72,18 @@ body .control-section-upsell .accordion-section-title .button {
     margin-top: -4px;
     font-weight: 700;
     margin-left: 8px;
-    border-color: #009688;
-    background-color: #009688;
+    border:none !important;
+    background-color: #37dba9;
     color: #fff;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
 }
 
 body .control-section-upsell .accordion-section-title .button:hover {
-	background-color: #5c995c;
+	background-color: #29a27d;
 }
 
 body #accordion-section-theme_upsell {
@@ -86,7 +91,8 @@ body #accordion-section-theme_upsell {
 }
 
 body #accordion-section-theme_upsell h3 {
-    background: #8BC34A !important;
+    background: #5584ff !important;
     color: #fff !important;
     border-left: 0 !important;
+    font-size: 13px;
 }

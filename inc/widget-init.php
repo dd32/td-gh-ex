@@ -13,37 +13,7 @@ function best_education_widgets_init()
         'description' => esc_html__('Add widgets here.', 'best-education'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
-        'before_title' => '<h2 class="widget-title widget-border-title">',
-        'after_title' => '</h2>',
-    ));
-
-    register_sidebar(array(
-        'name' => esc_html__('Off-Canvas Sidebar', 'best-education'),
-        'id' => 'tab-sidebar-1',
-        'description' => esc_html__('Add widgets here.', 'best-education'),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h2 class="widget-title widget-border-title">',
-        'after_title' => '</h2>',
-    ));
-
-    register_sidebar(array(
-        'name' => esc_html__('Home Page Sidebar One', 'best-education'),
-        'id' => 'sidebar-home-1',
-        'description' => esc_html__('Add widgets here.', 'best-education'),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget' => '</section>',
         'before_title' => '<h2 class="widget-title"><span>',
-        'after_title' => '</span></h2>',
-    ));
-
-    register_sidebar(array(
-        'name' => esc_html__('Home Page Sidebar Two', 'best-education'),
-        'id' => 'sidebar-home-2',
-        'description' => esc_html__('Add widgets here.', 'best-education'),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h2 class="widget-title widget-border-title"><span>',
         'after_title' => '</span></h2>',
     ));
 
@@ -55,8 +25,8 @@ function best_education_widgets_init()
             'description' => esc_html__('Displays items on footer section.', 'best-education'),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget' => '</div>',
-            'before_title' => '<h2 class="widget-title widget-border-title">',
-            'after_title' => '</h2>',
+            'before_title' => '<h2 class="widget-title"><span>',
+            'after_title' => '</span></h2>',
         ));
         if ($best_education_footer_widgets_number > 1) {
             register_sidebar(array(
@@ -65,8 +35,8 @@ function best_education_widgets_init()
                 'description' => esc_html__('Displays items on footer section.', 'best-education'),
                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
                 'after_widget' => '</div>',
-                'before_title' => '<h2 class="widget-title widget-border-title">',
-                'after_title' => '</h2>',
+                'before_title' => '<h2 class="widget-title"><span>',
+                'after_title' => '</span></h2>',
             ));
         }
         if ($best_education_footer_widgets_number > 2) {
@@ -76,8 +46,8 @@ function best_education_widgets_init()
                 'description' => esc_html__('Displays items on footer section.', 'best-education'),
                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
                 'after_widget' => '</div>',
-                'before_title' => '<h2 class="widget-title widget-border-title">',
-                'after_title' => '</h2>',
+                'before_title' => '<h2 class="widget-title"><span>',
+                'after_title' => '</span></h2>',
             ));
         }
     }

@@ -19,7 +19,7 @@ if (!function_exists('best_education_single_page_title')) :
                 }
             }
             ?>
-        <div class="wrapper page-inner-title inner-banner data-bg " data-background="<?php echo esc_url($global_banner_image); ?>">
+        <div class="inner-banner primary-bgcolor data-bg " data-background="<?php echo esc_url($global_banner_image); ?>">
             <header class="entry-header">
                 <div class="container">
                     <div class="row">
@@ -27,13 +27,15 @@ if (!function_exists('best_education_single_page_title')) :
                             <?php if (is_singular()) { ?>
                                 <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
                                 <?php if (!is_page()) { ?>
-                                    <header class="entry-header">
-                                        <div class="entry-meta entry-inner">
-                                            <?php
-                                                best_education_posted_on(); 
-                                            ?>
-                                        </div><!-- .entry-meta -->
-                                    </header><!-- .entry-header -->
+                                    <?php if (best_education_get_option('single_post_meta_data') == 1) { ?>
+                                        <header class="entry-header">
+                                            <div class="entry-meta entry-inner">
+                                                <?php
+                                                    best_education_posted_on();
+                                                ?>
+                                            </div><!-- .entry-meta -->
+                                        </header><!-- .entry-header -->
+                                    <?php }?>
                                 <?php }
                             } elseif (is_404()) { ?>
                                 <h1 class="entry-title"><?php esc_html_e('Oops! That page can&rsquo;t be found.', 'best-education'); ?></h1>
