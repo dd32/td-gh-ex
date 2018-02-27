@@ -1,0 +1,777 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ansia\n"
+"POT-Creation-Date: 2018-02-27 14:59+0100\n"
+"PO-Revision-Date: 2018-02-27 14:59+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:21
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#. translators: %1$s: smiley
+#: 404.php:32
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: archive.php:39 index.php:44 search.php:39
+msgid "Previous"
+msgstr ""
+
+#: archive.php:40 index.php:45 search.php:40
+msgid "Next"
+msgstr ""
+
+#. translators: 1: title.
+#: comments.php:34
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#. translators: 1: comment count number, 2: title.
+#: comments.php:40
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:54
+msgid "Reply"
+msgstr ""
+
+#: comments.php:63
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:74
+msgid "Name *"
+msgstr ""
+
+#: comments.php:75
+msgid "Email *"
+msgstr ""
+
+#: comments.php:76
+msgid "Website"
+msgstr ""
+
+#: comments.php:78
+msgid "Required fields are marked "
+msgstr ""
+
+#. translators: %s: wordpress login url
+#: comments.php:83
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#. translators: 1: profile user link, 2: username, 3: logout link
+#: comments.php:85
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+
+#: comments.php:86
+msgid "Your email address will not be published."
+msgstr ""
+
+#: comments.php:87
+msgid "Leave a Reply"
+msgstr ""
+
+#. translators: %s: name of person to reply
+#: comments.php:89
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: comments.php:90
+msgid "Cancel reply"
+msgstr ""
+
+#: comments.php:91
+msgid "Post Comment"
+msgstr ""
+
+#: comments.php:92
+msgid "Comment *"
+msgstr ""
+
+#: footer.php:39
+msgid "https://wordpress.org/"
+msgstr ""
+
+#. translators: %s: CMS name, i.e. WordPress.
+#: footer.php:41
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#. translators: 1: Theme name, 2: Theme author.
+#: footer.php:46
+#, php-format
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: functions.php:48
+msgid "Primary"
+msgstr ""
+
+#: functions.php:108
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:110 functions.php:119 functions.php:128 functions.php:137
+#: functions.php:146
+msgid "Add widgets here."
+msgstr ""
+
+#: functions.php:117
+msgid "Push Sidebar"
+msgstr ""
+
+#: functions.php:126
+msgid "Footer Left"
+msgstr ""
+
+#: functions.php:135
+msgid "Footer Center"
+msgstr ""
+
+#: functions.php:144
+msgid "Footer Right"
+msgstr ""
+
+#: header.php:30
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:56
+msgid "Menu"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:31 inc/admin/ansia-admin-page.php:104
+msgid "About"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:66
+msgid "Action failed. Please refresh the page and retry."
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:69
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:81
+msgid "Dismiss"
+msgstr ""
+
+#. translators: 1: start option panel link, 2: end option panel link
+#: inc/admin/ansia-admin-page.php:85
+#, php-format
+msgid ""
+"Welcome! Thank you for choosing Ansia theme! To fully take advantage of the "
+"best our theme can offer and read the documentation please make sure you "
+"visit our %1$swelcome page%2$s."
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:89
+msgid "Get started with Ansia"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:110
+msgid "Theme Info"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:112
+msgid "View Demo"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:114
+msgid "View PRO version Demo"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:116
+msgid "Rate this theme"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:129
+msgid "Free Vs PRO"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:132 inc/pro-button/class-customize.php:90
+msgid "Documentation"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:135
+msgid "Changelog"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:163
+msgid "Theme Customizer"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:164
+msgid "All Theme Options are available via Customize screen."
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:165
+msgid "Customize"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:168
+msgid "Got theme support question?"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:169
+msgid "Please put it in our support forum."
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:170
+msgid "Support"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:173
+msgid "Need more features?"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:174 inc/admin/ansia-admin-page.php:364
+msgid "Upgrade to PRO version for more exciting features."
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:175
+msgid "Info about PRO version"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:180 inc/admin/ansia-admin-page.php:188
+msgid "Translate"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:184
+msgid "Click below to translate this theme into your own language."
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:199
+msgid "Return to Updates"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:199
+msgid "Return to Dashboard &rarr; Updates"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:202
+msgid "Go to Dashboard &rarr; Home"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:202
+msgid "Go to Dashboard"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:215
+msgid "View changelog below:"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:260
+msgid "Ansia WordPress Theme Documentation"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:263
+msgid "How to add social icons"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:268
+msgid ""
+"Go to your WordPress Dashboard under \"Appearance-> Customize-> Ansia Theme "
+"Options-> Social Buttons\". Here you can choose which social network to "
+"show, social icons will be displayed in the footer and in the push sidebar."
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:280
+msgid "How to add custom logo"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:285
+msgid ""
+"Go to your WordPress Dashboard under \"Appearance-> Customize-> Site Identity"
+"\". Here you can upload your custom logo (size 500x350px)."
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:297
+msgid "How to change theme colors"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:302
+msgid ""
+"Go to your WordPress Dashboard under \"Appearance-> Customize-> Ansia Theme "
+"Options-> Colors\". Here you can change the theme colors according to "
+"sections of the site (header, content and footer)."
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:314
+msgid "How to display page loader"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:319
+msgid ""
+"Go to your WordPress Dashboard under \"Appearance-> Customize-> Ansia Theme "
+"Options-> General Settings\", find the option called \"Show page loader\" "
+"and check it. The background will be the same of \"Background color\" and "
+"the loader icon the same color of \"Text color\"."
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:331
+msgid "How to highlight a menu item"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:336
+msgid ""
+"If you need to emphasize a menu item (call to action, donate button, etc..) "
+"just go to your WordPress Dashboard under \"Appearance-> Menus\". Create a "
+"new \"Custom Links\" and drag it into the menu. Expand the entry and in the "
+"\"CSS Classes\" section write: crestaMenuButton"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:344
+msgid ""
+"This will be the result (the colors change according to the ones chosen)."
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:368
+msgid "Features"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:369
+msgid "Ansia"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:370
+msgid "Ansia PRO"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:375
+msgid "Theme Options made with the WP Customizer"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:380
+msgid "Responsive Design"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:385
+msgid "Logo Upload"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:390
+msgid "Unlimited Text and Background Color"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:395
+msgid "Choose Social Icons"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:397
+msgid "+ more social buttons"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:400
+msgid "WooCommerce Compatibility"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:405
+msgid "RTL Support"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:410
+msgid "Sidebar and Footer Widgets"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:415
+msgid "Loading Page"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:416
+msgid "1 loader"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:417
+msgid "7 loaders"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:420
+msgid "Post Slider"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:425
+msgid "Google Fonts switcher"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:430
+msgid "Manage sidebar position"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:435
+msgid "Sticky Sidebar"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:440
+msgid "Post views counter"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:445
+msgid "8 Exclusive Widgets"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:450
+msgid "Related Posts Box"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:455
+msgid "Information About Author Box"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:460
+msgid "PowerTip, LightBox, Custom Copyright Text and much more..."
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:468
+msgid "View PRO version demo"
+msgstr ""
+
+#: inc/admin/ansia-admin-page.php:469
+msgid "Get Ansia PRO"
+msgstr ""
+
+#: inc/customizer.php:17
+msgid "Ansia Theme Options"
+msgstr ""
+
+#: inc/customizer.php:21
+msgid "General Settings"
+msgstr ""
+
+#: inc/customizer.php:26
+msgid "Posts and pages settings"
+msgstr ""
+
+#: inc/customizer.php:31
+msgid "Social Buttons"
+msgstr ""
+
+#: inc/customizer.php:46
+msgid "Show page loader"
+msgstr ""
+
+#: inc/customizer.php:60
+msgid "Website structure"
+msgstr ""
+
+#: inc/customizer.php:66
+msgid "Full Width"
+msgstr ""
+
+#: inc/customizer.php:67
+msgid "Boxed"
+msgstr ""
+
+#: inc/customizer.php:78
+msgid "Show search button in the bar"
+msgstr ""
+
+#: inc/customizer.php:92
+msgid "Enable Smooth Scroll"
+msgstr ""
+
+#: inc/customizer.php:106
+msgid "Show scroll to top button also on mobile view"
+msgstr ""
+
+#: inc/customizer.php:120
+msgid "Custom Excerpt Final"
+msgstr ""
+
+#: inc/customizer.php:134
+msgid "Text lenght for blog excerpt (number of words)"
+msgstr ""
+
+#: inc/customizer.php:151
+msgid "Show excerpt or full post in the blog page"
+msgstr ""
+
+#: inc/customizer.php:157
+msgid "Show excerpt"
+msgstr ""
+
+#: inc/customizer.php:158
+msgid "Show full post"
+msgstr ""
+
+#: inc/customizer.php:169
+msgid "Show previous and next post"
+msgstr ""
+
+#: inc/customizer.php:184
+msgid "Inner Background Color"
+msgstr ""
+
+#: inc/customizer.php:190
+msgid "Text Color"
+msgstr ""
+
+#: inc/customizer.php:196
+msgid "Accent Color"
+msgstr ""
+
+#: inc/customizer.php:202
+msgid "Border Color"
+msgstr ""
+
+#: inc/customizer.php:208
+msgid "Footer Background Color"
+msgstr ""
+
+#: inc/customizer.php:214
+msgid "Footer Text Color"
+msgstr ""
+
+#: inc/customizer.php:220
+msgid "Footer Accent Color"
+msgstr ""
+
+#: inc/customizer.php:255
+msgid "Show social buttons in push sidebar"
+msgstr ""
+
+#: inc/customizer.php:269
+msgid "Show social buttons in footer"
+msgstr ""
+
+#: inc/customizer.php:281
+msgid "Facebook URL"
+msgstr ""
+
+#: inc/customizer.php:286
+msgid "Twitter URL"
+msgstr ""
+
+#: inc/customizer.php:291
+msgid "Google Plus URL"
+msgstr ""
+
+#: inc/customizer.php:296
+msgid "Linkedin URL"
+msgstr ""
+
+#: inc/customizer.php:301
+msgid "Instagram URL"
+msgstr ""
+
+#: inc/customizer.php:306
+msgid "YouTube URL"
+msgstr ""
+
+#: inc/customizer.php:311
+msgid "Pinterest URL"
+msgstr ""
+
+#: inc/customizer.php:316
+msgid "Tumblr URL"
+msgstr ""
+
+#: inc/customizer.php:321
+msgid "Flickr URL"
+msgstr ""
+
+#: inc/customizer.php:326
+msgid "VK URL"
+msgstr ""
+
+#: inc/customizer.php:331
+msgid "Xing URL"
+msgstr ""
+
+#: inc/customizer.php:336
+msgid "Reddit URL"
+msgstr ""
+
+#: inc/customizer.php:365
+msgid "Open social links"
+msgstr ""
+
+#: inc/customizer.php:371
+msgid "Same window"
+msgstr ""
+
+#: inc/customizer.php:372
+msgid "New Window"
+msgstr ""
+
+#: inc/customizer.php:519
+msgid "Facebook"
+msgstr ""
+
+#: inc/customizer.php:522
+msgid "Twitter"
+msgstr ""
+
+#: inc/customizer.php:525
+msgid "Google Plus"
+msgstr ""
+
+#: inc/customizer.php:528
+msgid "Linkedin"
+msgstr ""
+
+#: inc/customizer.php:531
+msgid "Instagram"
+msgstr ""
+
+#: inc/customizer.php:534
+msgid "YouTube"
+msgstr ""
+
+#: inc/customizer.php:537
+msgid "Pinterest"
+msgstr ""
+
+#: inc/customizer.php:540
+msgid "Tumblr"
+msgstr ""
+
+#: inc/customizer.php:543
+msgid "Flickr"
+msgstr ""
+
+#: inc/customizer.php:546
+msgid "VK"
+msgstr ""
+
+#: inc/customizer.php:549
+msgid "Xing"
+msgstr ""
+
+#: inc/customizer.php:552
+msgid "Reddit"
+msgstr ""
+
+#: inc/pro-button/class-customize.php:77
+msgid "Ansia PRO Theme"
+msgstr ""
+
+#: inc/pro-button/class-customize.php:78
+msgid "More Info"
+msgstr ""
+
+#: inc/pro-button/class-customize.php:89
+msgid "Ansia documentation"
+msgstr ""
+
+#. translators: %s: post title
+#: inc/template-tags.php:38
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:62
+msgctxt "list item separator"
+msgid " "
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: inc/template-tags.php:72 template-parts/content-page.php:42
+#: template-parts/content.php:69
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:95
+msgid " "
+msgstr ""
+
+#. translators: %s: search query.
+#: search.php:21
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: single.php:22
+msgid "Next Post"
+msgstr ""
+
+#: single.php:23
+msgid "Next post:"
+msgstr ""
+
+#: single.php:25
+msgid "Previous Post"
+msgstr ""
+
+#: single.php:26
+msgid "Previous post:"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:25
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:38
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:44
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:29 template-parts/content-single.php:38
+#: template-parts/content.php:52
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content-single.php:42
+msgid "Page"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content.php:42
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: template-parts/content.php:62
+msgid "Read More"
+msgstr ""
