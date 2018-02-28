@@ -46,7 +46,7 @@ class bc_business_consulting_Admin {
 	 */
 	public function enqueue_styles() {
 
-		wp_enqueue_style( 'business_consulting-welcome', get_template_directory_uri() . '/inc/pro/welcome.css', array(), '1.0' );
+		wp_enqueue_style( 'bc-business-consulting-welcome', get_template_directory_uri() . '/inc/pro/welcome.css', array(), '1.0' );
 	}
 
 	/**
@@ -55,7 +55,7 @@ class bc_business_consulting_Admin {
 	public function admin_notice() {
 		global $pagenow;
 
-		wp_enqueue_style( 'business_consulting-message', get_template_directory_uri() . '/inc/pro/message.css', array(), '1.0' );
+		wp_enqueue_style( 'bc-business-consulting-message', get_template_directory_uri() . '/inc/pro/message.css', array(), '1.0' );
 
 		// Let's bail on theme activation.
 		if ( 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) {
@@ -126,7 +126,7 @@ class bc_business_consulting_Admin {
 
 					<a href="<?php echo esc_url( apply_filters( 'business_consulting_pro_theme_url', 'https://athemeart.com/downloads/bc-business-consulting/?ref=welcome' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version Demo', 'bc-business-consulting' ); ?></a>
 
-					<a href="<?php echo esc_url( apply_filters( 'business_consulting_pro_theme_url', 'http://wordpress.org/support/view/theme-reviews/bc_business_consulting?filter=5#postform' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'bc-business-consulting' ); ?></a>
+					<a href="<?php echo esc_url( apply_filters( 'business_consulting_pro_theme_url', 'https://wordpress.org/support/theme/bc-business-consulting/reviews/#new-post' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'bc-business-consulting' ); ?></a>
 				</p>
 				</div>
 
