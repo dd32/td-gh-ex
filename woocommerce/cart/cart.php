@@ -19,10 +19,10 @@ do_action( 'woocommerce_before_cart' ); ?>
         <tr>
             <th class="product-remove">&nbsp;</th>
             <th class="product-thumbnail">&nbsp;</th>
-            <th class="product-name"><?php echo esc_attr__( 'Product', 'attire' ); ?></th>
-            <th class="product-price"><?php echo esc_attr__( 'Price', 'attire' ); ?></th>
-            <th class="product-quantity"><?php echo esc_attr__( 'Quantity', 'attire' ); ?></th>
-            <th class="product-subtotal"><?php echo esc_attr__( 'Total', 'attire' ); ?></th>
+            <th class="product-name"><?php echo esc_html__( 'Product', 'attire' ); ?></th>
+            <th class="product-price"><?php echo esc_html__( 'Price', 'attire' ); ?></th>
+            <th class="product-quantity"><?php echo esc_html__( 'Quantity', 'attire' ); ?></th>
+            <th class="product-subtotal"><?php echo esc_html__( 'Total', 'attire' ); ?></th>
         </tr>
         </thead>
         <tbody>
@@ -43,7 +43,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 							'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
 							esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
-							__( 'Remove this item', 'attire' ),
+							esc_attr__( 'Remove this item', 'attire' ),
 							esc_attr( $product_id ),
 							esc_attr( $_product->get_sku() )
 						), $cart_item_key );

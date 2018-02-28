@@ -18,7 +18,7 @@ class AttireFramework {
 			$PgaeHeadingMain = get_the_date();
 
         elseif ( is_month() ) :
-			$PgaeHeadingMain = __( "Monthly Archives: ", "attire" ) . get_the_date( 'F Y' );
+			$PgaeHeadingMain = esc_html__( "Monthly Archives: ", "attire" ) . get_the_date( 'F Y' );
 
         elseif ( is_404() ) :
 			$PgaeHeadingMain = "404";
@@ -42,7 +42,7 @@ class AttireFramework {
 			$PgaeHeadingMain = get_the_title();
 
         elseif ( is_search() ):
-			$PgaeHeadingMain = __( "Search Result For:  ", "attire" ) . esc_attr( get_query_var( 's' ) );
+			$PgaeHeadingMain = esc_html__( "Search Result For:  ", "attire" ) . esc_attr( get_query_var( 's' ) );
 
         elseif ( is_tax() ):
 			$PgaeHeadingMain = single_term_title( '', false );
@@ -84,25 +84,12 @@ class AttireFramework {
 			$left_sidebar_width  = intval( $theme_mod['front_page_ls_width'] );
 			$right_sidebar_width = intval( $theme_mod['front_page_rs_width'] );
 		} elseif ( is_page() ) {
-			// else post meta is is the top priority
 
-			$meta = maybe_unserialize( get_post_meta( $post->ID, 'attire_post_meta', true ) );
-//			echo '<pre>' . json_encode( $meta, JSON_PRETTY_PRINT ) . '</pre>';
-
-
-			$page_layout['sidebar_layout']      = esc_attr( $theme_mod['layout_default_page'] );
-			$page_layout['left_sidebar']        = esc_attr( $theme_mod['default_page_ls'] );
-			$page_layout['right_sidebar']       = esc_attr( $theme_mod['default_page_rs'] );
-			$page_layout['left_sidebar_width']  = intval( $theme_mod['default_page_ls_width'] );
-			$page_layout['right_sidebar_width'] = intval( $theme_mod['default_page_rs_width'] );
-
-
-			$sidebar_layout = isset( $meta['sidebar_layout'] ) && $meta['sidebar_layout'] !== '' ? $meta['sidebar_layout'] : $page_layout['sidebar_layout'];
-
-			$left_sidebar        = isset( $meta['left_sidebar'] ) && $meta['left_sidebar'] !== 'default' ? $meta['left_sidebar'] : $page_layout['left_sidebar'];
-			$right_sidebar       = isset( $meta['right_sidebar'] ) && $meta['right_sidebar'] !== 'default' ? $meta['right_sidebar'] : $page_layout['right_sidebar'];
-			$left_sidebar_width  = isset( $meta['left_sidebar_width'] ) && (int) $meta['left_sidebar_width'] !== 0 ? $meta['left_sidebar_width'] : $page_layout['left_sidebar_width'];
-			$right_sidebar_width = isset( $meta['right_sidebar_width'] ) && (int) $meta['right_sidebar_width'] !== 0 ? $meta['right_sidebar_width'] : $page_layout['right_sidebar_width'];
+			$sidebar_layout      = esc_attr( $theme_mod['layout_default_page'] );
+			$left_sidebar        = esc_attr( $theme_mod['default_page_ls'] );
+			$right_sidebar       = esc_attr( $theme_mod['default_page_rs'] );
+			$left_sidebar_width  = intval( $theme_mod['default_page_ls_width'] );
+			$right_sidebar_width = intval( $theme_mod['default_page_rs_width'] );
 
 		} elseif ( is_single() ) {
 			$sidebar_layout      = esc_attr( $theme_mod['layout_default_post'] );
@@ -220,22 +207,16 @@ class AttireFramework {
 			$left_sidebar_width  = intval( $theme_mod['front_page_ls_width'] );
 			$right_sidebar_width = intval( $theme_mod['front_page_rs_width'] );
 		} elseif ( is_single() || is_page() ) {
-			$meta = maybe_unserialize( get_post_meta( $post->ID, 'attire_post_meta', true ) );
 
 			if ( is_page() ) {
-				$page_layout['sidebar_layout']      = esc_attr( $theme_mod['layout_default_page'] );
-				$page_layout['left_sidebar_width']  = intval( $theme_mod['default_page_ls_width'] );
-				$page_layout['right_sidebar_width'] = intval( $theme_mod['default_page_rs_width'] );
-				$page_layout['page_width']          = intval( $theme_mod['default_page_rs_width'] );
+				$sidebar_layout      = esc_attr( $theme_mod['layout_default_page'] );
+				$left_sidebar_width  = intval( $theme_mod['default_page_ls_width'] );
+				$right_sidebar_width = intval( $theme_mod['default_page_rs_width'] );
 			} else {
-				$page_layout['sidebar_layout']      = esc_attr( $theme_mod['layout_default_post'] );
-				$page_layout['left_sidebar_width']  = intval( $theme_mod['default_post_ls_width'] );
-				$page_layout['right_sidebar_width'] = intval( $theme_mod['default_post_rs_width'] );
+				$sidebar_layout      = esc_attr( $theme_mod['layout_default_post'] );
+				$left_sidebar_width  = intval( $theme_mod['default_post_ls_width'] );
+				$right_sidebar_width = intval( $theme_mod['default_post_rs_width'] );
 			}
-
-			$sidebar_layout      = isset( $meta['sidebar_layout'] ) && $meta['sidebar_layout'] != '' ? $meta['sidebar_layout'] : $page_layout['sidebar_layout'];
-			$left_sidebar_width  = isset( $meta['left_sidebar_width'] ) && $meta['left_sidebar_width'] != '' ? $meta['left_sidebar_width'] : $page_layout['left_sidebar_width'];
-			$right_sidebar_width = isset( $meta['right_sidebar_width'] ) && $meta['right_sidebar_width'] != '' ? $meta['right_sidebar_width'] : $page_layout['right_sidebar_width'];
 
 		} elseif ( is_archive() || is_category() || is_search() ) {
 			$sidebar_layout      = esc_attr( $theme_mod['layout_archive_page'] );

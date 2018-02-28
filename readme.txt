@@ -1,12 +1,11 @@
 = Attire =
 
-* More themes at https://wpeden.com/product-category/themes/
-* Attire - WordPress Theme, Copyright 2017 wpeden.com
+* Attire - WordPress Theme, Copyright 2018 wpattire.com
 * Attire - WordPress Theme is distributed under the terms of the GNU GPL v3.0
 
 == Attire documentation ==
 
-* Detailed documentation of Attire will be found here http://docs.attire.com/doc/attire-theme-options/?item=attire
+* Detailed documentation of Attire will be found here http://wpattire.com/documentation/
 
 == License ==
 * Attire is released under GNU General Public License v3.0 [http://www.gnu.org/licenses/gpl-3.0.html]

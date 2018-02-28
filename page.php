@@ -33,7 +33,7 @@ get_header();
 
 							if ( ! $ph_active ) {
 								?>
-                                <h1 class="page-title"><?php echo the_title(); ?></h1>
+                                <h1 class="page-title"><?php the_title(); ?></h1>
 							<?php } ?>
 
 							<?php the_post_thumbnail(); ?>

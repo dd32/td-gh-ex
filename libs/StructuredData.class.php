@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class StructuredData {
+class AttireStructuredData {
 
 	function __construct() {
 		add_action( 'attire_mainframe_div_attrs', array( $this, 'ItemType' ) );
@@ -20,4 +20,4 @@ class StructuredData {
 
 }
 
-new StructuredData();
+new AttireStructuredData();

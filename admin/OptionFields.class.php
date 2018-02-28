@@ -16,10 +16,10 @@ class AttireOptionFields {
 	 */
 	public static function LayoutType( $params ) {
 		$html = "<select  name='" . esc_attr( $params['name'] ) . "' id='" . esc_attr( $params['id'] ) . "' style='width: 100px'>";
-		$html .= "<option value=''>" . __( 'Select', 'attire' ) . "</option>";
-		$html .= "<option value='wide'" . ( $params['selected'] === 'wide' ? 'selected=selected' : '' ) . ">" . __( 'Wide', 'attire' ) . "</option>";
-		$html .= "<option value='boxed'" . ( $params['selected'] === 'boxed' ? 'selected=selected' : '' ) . ">" . __( 'Boxed', 'attire' ) . "</option>";
-		$html .= "<option value='framed'" . ( $params['selected'] === 'framed' ? 'selected=selected' : '' ) . ">" . __( 'Framed', 'attire' ) . "</option>";
+		$html .= "<option value=''>" . esc_html__( 'Select', 'attire' ) . "</option>";
+		$html .= "<option value='wide'" . ( $params['selected'] === 'wide' ? 'selected=selected' : '' ) . ">" . esc_html__( 'Wide', 'attire' ) . "</option>";
+		$html .= "<option value='boxed'" . ( $params['selected'] === 'boxed' ? 'selected=selected' : '' ) . ">" . esc_html__( 'Boxed', 'attire' ) . "</option>";
+		$html .= "<option value='framed'" . ( $params['selected'] === 'framed' ? 'selected=selected' : '' ) . ">" . esc_html__( 'Framed', 'attire' ) . "</option>";
 		$html .= "</select>";
 
 		return $html;
@@ -36,7 +36,7 @@ class AttireOptionFields {
 			$navheads = array_merge( $navheads, scandir( get_stylesheet_directory() . '/templates/headers/' ) );
 		}
 
-		$html     = "<select name='" . esc_attr( $name ) . "' id='" . esc_attr( $id ) . "' style='width: 150px'><option value='" . esc_attr( $default ) . "'>" . __( 'Default', 'attire' ) . "</option>";
+		$html     = "<select name='" . esc_attr( $name ) . "' id='" . esc_attr( $id ) . "' style='width: 150px'><option value='" . esc_attr( $default ) . "'>" . esc_html__( 'Default', 'attire' ) . "</option>";
 		$navheads = array_unique( $navheads );
 		foreach ( $navheads as $navhead ) {
 			if ( strpos( $navhead, '.php' ) && ( file_exists( get_template_directory() . '/templates/headers/' . $navhead ) || file_exists( get_stylesheet_directory() . '/templates/headers/' . $navhead ) ) ) {
@@ -65,8 +65,8 @@ class AttireOptionFields {
 			$sidebars[ $sid ] = $sidebar['name'];
 		}
 
-		$html = "<select name ='{$params['name']}'><option value='no_sidebar'>" . __( 'Do Not Apply', 'attire' ) . "</option>";
-		$html .= "<option value='default'>" . __( 'Theme Default', 'attire' ) . "</option>";
+		$html = "<select name ='{$params['name']}'><option value='no_sidebar'>" . esc_html__( 'Do Not Apply', 'attire' ) . "</option>";
+		$html .= "<option value='default'>" . esc_html__( 'Theme Default', 'attire' ) . "</option>";
 		if ( is_array( $sidebars ) ) {
 			foreach ( $sidebars as $id => $name ) {
 				$html .= "<option " . selected( $params['selected'], $id, false ) . " value='" . esc_attr( $id ) . "'>" . esc_html( $name ) . "</option>";

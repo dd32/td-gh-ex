@@ -70,7 +70,8 @@ class AttireThemeEngine {
 
 		?>
         <!-- Custom page header -->
-        <style><?php echo esc_attr($selector); ?>
+        <style>
+            <?php echo esc_attr($selector); ?>
             {
             <?php echo wp_filter_nohtml_kses($css); ?>
             }
@@ -97,9 +98,9 @@ class AttireThemeEngine {
 	function InitiateWidgets() {
 
 		register_sidebar( array(
-			'name'          => __( 'Left Sidebar', 'attire' ),
+			'name'          => esc_html__( 'Left Sidebar', 'attire' ),
 			'id'            => 'left',
-			'description'   => __( 'Left Sidebar', 'attire' ),
+			'description'   => esc_html__( 'Left Sidebar', 'attire' ),
 			'before_widget' => '<div class="widget widget-default">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4 class="widget-heading widget-title">',
@@ -107,9 +108,9 @@ class AttireThemeEngine {
 		) );
 
 		register_sidebar( array(
-			'name'          => __( 'Right Sidebar', 'attire' ),
+			'name'          => esc_html__( 'Right Sidebar', 'attire' ),
 			'id'            => 'right',
-			'description'   => __( 'Right Sidebar', 'attire' ),
+			'description'   => esc_html__( 'Right Sidebar', 'attire' ),
 			'before_widget' => '<div class="widget widget-default">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h5 class="widget-heading widget-title">',
@@ -117,9 +118,9 @@ class AttireThemeEngine {
 		) );
 
 		register_sidebar( array(
-			'name'          => __( 'Footer1', 'attire' ),
+			'name'          => esc_html__( 'Footer1', 'attire' ),
 			'id'            => 'footer1',
-			'description'   => __( 'Footer1', 'attire' ),
+			'description'   => esc_html__( 'Footer1', 'attire' ),
 			'before_widget' => '<div class="footer-widget  widget">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h5 class="widget-heading widget-title">',
@@ -127,9 +128,9 @@ class AttireThemeEngine {
 		) );
 
 		register_sidebar( array(
-			'name'          => __( 'Footer2', 'attire' ),
+			'name'          => esc_html__( 'Footer2', 'attire' ),
 			'id'            => 'footer2',
-			'description'   => __( 'Footer2', 'attire' ),
+			'description'   => esc_html__( 'Footer2', 'attire' ),
 			'before_widget' => '<div class="footer-widget  widget">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h5 class="widget-heading widget-title">',
@@ -137,27 +138,27 @@ class AttireThemeEngine {
 		) );
 
 		register_sidebar( array(
-			'name'          => __( 'Footer3', 'attire' ),
+			'name'          => esc_html__( 'Footer3', 'attire' ),
 			'id'            => 'footer3',
-			'description'   => __( 'Footer3', 'attire' ),
+			'description'   => esc_html__( 'Footer3', 'attire' ),
 			'before_widget' => '<div class="footer-widget  widget">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h5 class="widget-heading widget-title">',
 			'after_title'   => '</h5>'
 		) );
 		register_sidebar( array(
-			'name'          => __( 'Footer4', 'attire' ),
+			'name'          => esc_html__( 'Footer4', 'attire' ),
 			'id'            => 'footer4',
-			'description'   => __( 'Footer4', 'attire' ),
+			'description'   => esc_html__( 'Footer4', 'attire' ),
 			'before_widget' => '<div class="footer-widget  widget">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h5 class="widget-heading widget-title">',
 			'after_title'   => '</h5>'
 		) );
 		register_sidebar( array(
-			'name'          => __( 'Footer5', 'attire' ),
+			'name'          => esc_html__( 'Footer5', 'attire' ),
 			'id'            => 'footer5',
-			'description'   => __( 'Footer5', 'attire' ),
+			'description'   => esc_html__( 'Footer5', 'attire' ),
 			'before_widget' => '<div class="footer-widget  widget">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h5 class="widget-heading widget-title">',
@@ -173,15 +174,22 @@ class AttireThemeEngine {
 		}
 
 		wp_enqueue_script( 'popper', ATTIRE_TEMPLATE_URL . '/bootstrap/js/popper.min.js', array( 'jquery' ) );
-		wp_enqueue_script( 'blockui-js', ATTIRE_TEMPLATE_URL . '/admin/js/jquery.blockUI.js', array( 'jquery' ) );
+
 		wp_enqueue_script( 'attire-js', ATTIRE_TEMPLATE_URL . '/admin/js/attire-admin.js', array(
 			'jquery',
 			'blockui-js'
 		) );
+
+		wp_localize_script( 'attire-js', 'attire_js_object',
+			array(
+				'media_upload_label' => esc_html__( 'Upload Image', 'attire' ),
+			)
+		);
+
 		wp_enqueue_script( 'bootstrap', ATTIRE_TEMPLATE_URL . '/bootstrap/js/bootstrap.min.js', array( 'jquery' ) );
 		wp_enqueue_script( 'wp-color-picker' );
 		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_style( 'fa-awesome', ATTIRE_TEMPLATE_URL . '/fonts/font-awesome/css/font-awesome.min.css' );
+		wp_enqueue_style( 'font-awesome', ATTIRE_TEMPLATE_URL . '/fonts/font-awesome/css/font-awesome.min.css' );
 	}
 
 	public static function Layout( $default = 'wide' ) {
@@ -570,19 +578,12 @@ class AttireThemeEngine {
 		}
 	}
 
-	public static function attire_get_image_id( $image_url ) {
-		global $wpdb;
-		$attachment = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url ) );
-
-		return $attachment[0];
-	}
 
 	public static function SiteLogo() {
 		$logourl = esc_url( self::NextGetOption( 'site_logo' ) );
 
-
 		if ( $logourl ) {
-			$image_id = self::attire_get_image_id( $logourl );
+			$image_id = attachment_url_to_postid( $logourl );
 			$meta     = wp_prepare_attachment_for_js( $image_id );
 
 			return "<img src='{$logourl}' title='" . esc_attr( $meta['title'] ) . "' alt='" . esc_attr( $meta['alt'] ) . "' />";
@@ -596,7 +597,7 @@ class AttireThemeEngine {
 
 
 		if ( $logourl ) {
-			$image_id = self::attire_get_image_id( $logourl );
+			$image_id = attachment_url_to_postid( $logourl );
 			$meta     = wp_prepare_attachment_for_js( $image_id );
 
 			return "<img src='{$logourl}' title='" . esc_attr( $meta['title'] ) . "' alt='" . esc_attr( $meta['alt'] ) . "' />";

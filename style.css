@@ -1,10 +1,9 @@
 /*
 Theme Name: Attire
 Theme URI: http://wpattire.com/
-Author URI: http://sobuj.info/
 Description: Attire is a fast, mobile responsive, highly customizable, SEO friendly multipurpose theme built with Bootstrap 4. Attire offers hundreds of customisation options which allows to make a website look exactly the way user intended. This theme allows to customise pages with google-fonts, page background, page header and sidebars.
 Author: Shafayat
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, threaded-comments, sticky-post, microformats,  editor-style, custom-menu, full-width-template, theme-options, custom-background, custom-colors, post-formats, translation-ready, custom-header
@@ -1099,3 +1098,24 @@ a.subscription-toggle {
 }
 
 /* END: TODO*/
+
+article.post.product {
+    position: relative;
+}
+
+article.post.product:before {
+    padding: 0 10px;
+    font-family: FontAwesome;
+    content: "\f07a";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 16pt;
+    background: black;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
+
+}

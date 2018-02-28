@@ -8,11 +8,16 @@ if ( ! defined( 'ABSPATH' ) ) {
         <form class="navbar-left nav-search nav-search-form"
               action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" method="get">
             <div class="form-inline">
-                <input name="post_type" value="post" type="hidden">
+                <input name="post_type[]" value="product"
+                       type="hidden">
+                <input name="post_type[]" value="page"
+                       type="hidden">
+                <input name="post_type[]" value="post"
+                       type="hidden">
                 <div class="input-group">
                     <input type="search" required="required"
                            class="search-field form-control"
-                           value="" name="s" title="<?php _e( 'Search for:', 'attire' ); ?>"/>
+                           value="" name="s" title="<?php esc_attr_e( 'Search for:', 'attire' ); ?>"/>
 
                     <span class="input-group-addon" id="mobile-search-icon">
                         <button type="submit"><i class="fa fa-search"></i></button>
@@ -30,11 +35,15 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <form class="navbar-left nav-search search-form"
                       action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" method="get">
                     <div class="form-inline">
-                        <input name="post_type" value="post"
+                        <input name="post_type[]" value="product"
+                               type="hidden">
+                        <input name="post_type[]" value="page"
+                               type="hidden">
+                        <input name="post_type[]" value="post"
                                type="hidden">
                         <input type="search" class="search-field form-control"
-                               value="" name="s"
-                               title="<?php _e( 'Search for:', 'attire' ); ?>"/>
+                               value="<?php echo get_search_query(); ?>" name="s"
+                               title="<?php esc_attr_e( 'Search for:', 'attire' ); ?>"/>
                     </div>
                 </form>
             </li>
@@ -43,12 +52,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 </ul>
 
 <form class="widget-search-form"
-      action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" method="get">
+      action="<?php echo esc_url( home_url( '/  ' ) ); ?>" role="search" method="get">
 
-    <input name="post_type" value="post"
+    <input name="post_type[]" value="product"
+           type="hidden">
+    <input name="post_type[]" value="page"
+           type="hidden">
+    <input name="post_type[]" value="post"
            type="hidden">
     <input type="search" class="search-field form-control"
-           value="" name="s" placeholder="<?php _e( 'Search for...', 'attire' ); ?>"/>
+           value="" name="s" placeholder="<?php esc_attr_e( 'Search for...', 'attire' ); ?>"/>
 
 </form>
 

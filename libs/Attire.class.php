@@ -24,20 +24,13 @@ class Attire {
 	}
 
 	function Filters() {
-//		add_filter( 'style_loader_tag', array( $this, 'EnqueueLessStyles' ), 5, 2 );
 		add_filter( 'template_include', array( $this, 'SearchResultTemplate' ) );
-		//add_filter( 'wp_seo_get_bc_title', array($this, 'BreadcrumbTitle'), 10, 2 );
 	}
 
 	function Actions() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'EnqueueScripts' ) );
-		add_action( 'wp_head', array( $this, 'WPHead' ) );
-//        add_action('wp', array($this, 'SignIn'));
 	}
 
-	function WPHead() {
-		$this->LessVars();
-	}
 
 	/**
 	 * @usage Load all necessary scripts & styles
@@ -93,9 +86,6 @@ class Attire {
 		}
 	}
 
-	function LessVars() {
-
-	}
 
 	/**
 	 * @usage: Register nav menus
@@ -142,7 +132,7 @@ class Attire {
 				?>
                 <li class="post pingback">
                 <p>
-                    Pingback: <?php comment_author_link(); ?><?php edit_comment_link( 'Edit', '<span class="edit-link">', '</span>' ); ?></p>
+                    Pingback: <?php comment_author_link(); ?><?php edit_comment_link( esc_html__( 'Edit', 'attire' ), '<span class="edit-link">', '</span>' ); ?></p>
 				<?php
 				break;
 			default :
@@ -154,7 +144,7 @@ class Attire {
                         <div class="author-box pull-left">
                             <img class="mr-3" style="border-radius: 50%;"
                                  src="<?php echo esc_url( get_avatar_url( $comment, array( 'size' => '64' ) ) ); ?>"
-                                 alt="<?php _e( 'Commenter\'s Avatar', 'attire' ); ?>">
+                                 alt="<?php esc_attr_e( 'Commenter\'s Avatar', 'attire' ); ?>">
                         </div> <!-- end .avatar-box -->
                         <div class="comment-wrap media-body">
                             <b><?php printf( '<span class="fn">%s</span>', get_comment_author_link() ) ?></b>
@@ -166,15 +156,15 @@ class Attire {
                     </div> <!-- end comment-body-->
                     <div class="card-footer">
 						<?php if ( $comment->comment_approved == '0' ) : ?>
-                            <em class="moderation"><?php _e( 'Your comment is awaiting moderation.', 'attire' ) ?></em>
+                            <em class="moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'attire' ) ?></em>
 						<?php endif; ?>
                         <small>
-                            <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( '<i class="fa fa-clock-o"></i> %1$s at %2$s', get_comment_date(), get_comment_time() ); ?></a>
+                            <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( '<i class="fa fa-clock-o"></i> %1$s ' . esc_attr__( 'at', 'attire' ) . ' %2$s', esc_html( get_comment_date() ), esc_html( get_comment_time() ) ); ?></a>
                         </small>
                         <div class="comment-edit-reply">
-                            <small><?php edit_comment_link( '&nbsp;<i class="fa fa-pencil"></i> ' . __( 'Edit', 'attire' ), ' ' ); ?></small>
+                            <small><?php edit_comment_link( '&nbsp;<i class="fa fa-pencil"></i> ' . esc_html__( 'Edit', 'attire' ), ' ' ); ?></small>
                             <small><?php comment_reply_link( array_merge( $args, array(
-									'reply_text' => '&nbsp;<i class="fa fa-reply"></i> ' . __( 'Reply', 'attire' ),
+									'reply_text' => '&nbsp;<i class="fa fa-reply"></i> ' . esc_html__( 'Reply', 'attire' ),
 									'depth'      => $depth,
 									'max_depth'  => $args['max_depth']
 								) ) ) ?></small>
@@ -186,10 +176,6 @@ class Attire {
 				<?php
 				break;
 		endswitch;
-	}
-
-	function BreadcrumbTitle( $title, $id ) {
-		return '';
 	}
 
 
@@ -219,7 +205,7 @@ class Attire {
 	public function GetAttireDefaults() {
 		$this->attire_defaults = array(
 			'footer_widget_number' => '3',
-			'copyright_info'       => '&copy; Copyright ' . date( 'Y' ) . ' | All Rights Reserved.',
+			'copyright_info'       => '&copy;' . esc_attr__( 'Copyright ', 'attire' ) . date( 'Y' ) . ' | ' . esc_attr__( 'All Rights Reserved.', 'attire' ),
 
 			'layout_front_page'   => 'no-sidebar',
 			'front_page_ls'       => 'left',

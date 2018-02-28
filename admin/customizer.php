@@ -343,7 +343,9 @@ function attire_customize_register( $wp_customize ) {
 					'capability'        => $capability,
 					'type'              => $option_type,
 					'transport'         => $transport,
-					'sanitize_callback' => 'attire_sanitize_custom_select',
+					'sanitize_callback' => 'sanitize_text_field',
+					// this has to be sanitized with sanitize_text_field and cant be sanitized with  attire_sanitize_custom_select/attire_sanitize_select
+					// because no choices passed from customizer-control.php for this type (layout), instead it's render manually byt the function Layout_Picker_Custom_Control->render_content
 				) );
 				$wp_customize->add_control( new Layout_Picker_Custom_Control( $wp_customize, $id, array(
 					'label'       => $label,
@@ -615,7 +617,6 @@ function attire_sanitize_custom_select( $input, $setting ) {
 
 
 		if ( $choice['value'] === $input ) {
-
 			return $input;
 		}
 	}

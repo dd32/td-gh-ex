@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class MetaBoxes {
+class AttireMetaBoxes {
 	private $metadata;
 	private $meta_boxes;
 
@@ -108,4 +108,4 @@ class MetaBoxes {
 
 }
 
-new MetaBoxes();
+new AttireMetaBoxes();

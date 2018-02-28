@@ -23,7 +23,7 @@ $content_layout = $theme_mod['footer_content_layout_type'];
                                 <div class="copyright-outer">
 
                                     <p class="text-center copyright-text"><?php if ( isset( $theme_mod['copyright_info'] ) ) {
-											echo esc_attr( $theme_mod['copyright_info'] );
+											echo esc_html( $theme_mod['copyright_info'] );
 										} ?></p>
                                 </div>
                             </li>

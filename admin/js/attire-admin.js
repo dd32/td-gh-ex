@@ -94,7 +94,7 @@ jQuery(function () {
 
 function mediaupload(id) {
     var id = '#' + id;
-    tb_show('Upload Image', 'media-upload.php?TB_iframe=1&width=640&height=624');
+    tb_show(attire_js_object.media_upload_label, 'media-upload.php?TB_iframe=1&width=640&height=624');
     window.send_to_editor = function (html) {
         var imgurl = jQuery('img', "<p>" + html + "</p>").attr('src');
         jQuery(id).val(imgurl);

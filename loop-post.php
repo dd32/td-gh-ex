@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="archive-div">
+<div class="archive-div post">
 	<?php
 	while ( have_posts() ): the_post();
 		?>
