@@ -534,6 +534,24 @@ function customizer_library_topshop_build_styles() {
         ) );
     }
 
+    // Remove WC Categories Count
+    $setting = 'topshop-remove-cats-count';
+    $mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+    if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+        $logo_max_width = esc_attr( $mod );
+
+        Customizer_Library_Styles()->add( array(
+            'selectors' => array(
+                'ul.products mark.count'
+            ),
+            'declarations' => array(
+                'display' => 'none'
+            )
+        ) );
+    }
+
 }
 endif;
 

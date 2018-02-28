@@ -245,6 +245,10 @@ display: inline-block;font-size: 13px;}
 .woocommerce-page ul.products li.product a:hover img {
     box-shadow: 0 0 0 4px rgb(28, 28, 28), 0 2px 18px rgba(0, 0, 0, 0.7);
 }
+.woocommerce .topshop-products-noborder ul.products li.product a:hover img,
+.woocommerce-page .topshop-products-noborder ul.products li.product a:hover img {
+    box-shadow: none !important;
+}
 .woocommerce ul.products li.product a:hover .star-rating,
 .woocommerce-page ul.products li.product a:hover .star-rating {
     opacity: 1;

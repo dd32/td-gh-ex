@@ -231,6 +231,49 @@ function customizer_library_topshop_options() {
         'type'    => 'upsell',
         'description' => __( '<b>Premium Extra Features:</b><br />- Premium offers 3 different footer layouts<br />- Advanced Custom Footer layout to specify columns and column widths', 'topshop' )
     );
+
+    // WooCommerce style Layout
+    if ( topshop_is_woocommerce_activated() ) :
+        
+        $section = 'topshop-panel-layout-section-woocommerce';
+
+        $sections[] = array(
+            'id' => $section,
+            'title' => __( 'WooCommerce', 'topshop' ),
+            'priority' => '70',
+            'panel' => $panel
+        );
+        
+        $options['topshop-remove-product-border'] = array(
+            'id' => 'topshop-remove-product-border',
+            'label'   => __( 'Remove Product Hover Border', 'topshop' ),
+            'section' => $section,
+            'type'    => 'checkbox',
+            'default' => 0,
+        );
+        $options['topshop-remove-cats-count'] = array(
+            'id' => 'topshop-remove-cats-count',
+            'label'   => __( 'Remove Categories Count', 'topshop' ),
+            'section' => $section,
+            'type'    => 'checkbox',
+            'default' => 0,
+        );
+        $choices = array(
+            'fa-shopping-cart' => __( 'Shopping Cart', 'topshop' ),
+            'fa-shopping-basket' => __( 'Shopping Basket', 'topshop' ),
+            'fa-shopping-bag' => __( 'Shopping Bag', 'topshop' )
+        );
+        $options['topshop-cart-icon'] = array(
+            'id' => 'topshop-cart-icon',
+            'label'   => __( 'Cart Icon', 'topshop' ),
+            'section' => $section,
+            'type'    => 'select',
+            'description' => __( 'Due to the AJAX, This will only change when you open the site again in a new tab', 'topshop' ),
+            'choices' => $choices,
+            'default' => 'fa-shopping-cart'
+        );
+        
+    endif;
     
 
 	// Colors

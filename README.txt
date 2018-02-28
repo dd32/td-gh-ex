@@ -70,6 +70,15 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.14
+* WooCommerce & TopShop CSS tweaks/fixes
+* Updated WooCommerce deprecated functions
+* Updated WooCommerce header cart to work with taxes
+* Added setting to remove WooCommerce Categories count
+* Added setting to change WooCommerce cart icon
+* Added setting to remove products hover border
+* Updated language .pot file
+
 #### 1.3.13
 * Styling fixes/tweaks
 * Updated deprecated WC url function
