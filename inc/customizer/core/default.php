@@ -47,7 +47,7 @@ if ( ! function_exists( 'bc_business_consulting_get_default_theme_options' ) ) :
 		$defaults['bc_business_consulting_award']['award_title_3']['text']		= esc_html__( 'Solution Of The Year', 'bc-business-consulting' );
 
 		// Pass through filter.
-		$defaults = apply_filters( 'business_consulting_filter_default_theme_options', $defaults );
+		$defaults = apply_filters( 'bc_business_consulting_filter_default_theme_options', $defaults );
 
 		return $defaults;
 

@@ -32,11 +32,11 @@ function bc_business_consulting_customize_register( $wp_customize ) {
 	require get_template_directory() . '/inc/customizer/theme-option.php';
 
 	// Register custom section types.
-	$wp_customize->register_section_type( 'NewsBD24_Customize_Section_Upsell' );
+	$wp_customize->register_section_type( 'bc_business_consulting_Customize_Section_Upsell' );
 
 	// Register sections.
 	$wp_customize->add_section(
-		new NewsBD24_Customize_Section_Upsell(
+		new bc_business_consulting_Customize_Section_Upsell(
 			$wp_customize,
 			'theme_upsell',
 			array(

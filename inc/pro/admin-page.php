@@ -60,10 +60,10 @@ class bc_business_consulting_Admin {
 		// Let's bail on theme activation.
 		if ( 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) {
 			add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
-			update_option( 'business_consulting_admin_notice_welcome', 1 );
+			update_option( 'bc_business_consulting_admin_notice_welcome', 1 );
 
 		// No option? Let run the notice wizard again..
-		} elseif( ! get_option( 'business_consulting_admin_notice_welcome' ) ) {
+		} elseif( ! get_option( 'bc_business_consulting_admin_notice_welcome' ) ) {
 			add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
 		}
 	}
@@ -84,7 +84,7 @@ class bc_business_consulting_Admin {
 			}
 
 			$hide_notice = sanitize_text_field( wp_unslash( $_GET['business_consulting-hide-notice'] ) );
-			update_option( 'business_consulting_admin_notice_' . $hide_notice, 1 );
+			update_option( 'bc_business_consulting_admin_notice_' . $hide_notice, 1 );
 		}
 	}
 

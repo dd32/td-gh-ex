@@ -304,7 +304,7 @@ if( ! function_exists( 'bc_business_consulting_nav_action' ) ) :
                     
                     <?php 
 						if ( bc_business_consulting_get_option('search_icon') == 1 ) :?>
-						<li><a href="#" title="behance" id="popup-search"><i class="fa fa-search"></i></a></li>
+						<li><a href="javascript:void(0);" title="<?php esc_attr_e('search_icon','bc-business-consulting');?>" id="popup-search"><i class="fa fa-search"></i></a></li>
                     <?php endif;?>
                     </ul>
                     </div>
@@ -336,7 +336,7 @@ if( ! function_exists('bc_business_consulting_default_menu') ):
 		if ( current_user_can( 'edit_theme_options' ) ) {	
 	?>
         <ul>                  
-           <li><a href="<?php echo esc_url( admin_url('nav-menus.php') ); ?>" style="font-weight:normal;"><?php esc_html_e( 'Set Up menu here', 'bc-business-consulting' ); ?></a></li>
+           <li><a href="<?php echo esc_url( admin_url('nav-menus.php') ); ?>"><?php esc_html_e( 'Set Up menu here', 'bc-business-consulting' ); ?></a></li>
         </ul>
 	<?php
 		}
@@ -603,7 +603,8 @@ if ( ! function_exists( 'bc_business_consulting_breadcrumb' ) ) :
 			
 		
 		if ( ! function_exists( 'breadcrumb_trail' ) ) {
-			get_template_part( 'vendors/breadcrumbs/breadcrumbs' );
+			
+			require get_template_directory() . '/vendors/breadcrumbs/breadcrumbs';
 		}
 
 		$breadcrumb_args = array(
@@ -690,9 +691,9 @@ if( ! function_exists( 'bc_business_consulting_page_columns_start' ) ) :
 		
 		 if( $layout != 'no-sidebar' ): 
 		?>
-        <div class="col-md-8 col-sm-8 content-area <?php echo esc_html($layout);?>">
+        <div class="col-md-8 col-sm-8 content-area <?php echo esc_attr($layout);?>">
           <?php else: ?>
-        <div class="col-md-12 col-sm-12 content-area <?php echo esc_html($layout);?>">
+        <div class="col-md-12 col-sm-12 content-area <?php echo esc_attr($layout);?>">
         <?php
 		endif;
 	}

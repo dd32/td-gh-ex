@@ -74,7 +74,7 @@ if ( ! function_exists( 'bc_business_consulting_sanitize_positive_integer' ) ) :
 
 endif;
 
-if ( ! function_exists( 'business_consulting_sanitize_dropdown_pages' ) ) :
+if ( ! function_exists( 'bc_business_consulting_sanitize_dropdown_pages' ) ) :
 
 	/**
 	 * Sanitize dropdown pages.
@@ -85,7 +85,7 @@ if ( ! function_exists( 'business_consulting_sanitize_dropdown_pages' ) ) :
 	 * @param WP_Customize_Setting $setting WP_Customize_Setting instance.
 	 * @return int|string Page ID if the page is published; otherwise, the setting default.
 	 */
-	function business_consulting_sanitize_dropdown_pages( $page_id, $setting ) {
+	function bc_business_consulting_sanitize_dropdown_pages( $page_id, $setting ) {
 
 		// Ensure $input is an absolute integer.
 		$page_id = absint( $page_id );

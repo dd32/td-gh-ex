@@ -95,7 +95,7 @@ class bc_business_consulting_Taxonomies_Control extends WP_Customize_Control {
  * @since  1.0.0
  * @access public
  */
-class NewsBD24_Customize_Section_Upsell extends WP_Customize_Section {
+class bc_business_consulting_Customize_Section_Upsell extends WP_Customize_Section {
 
 	/**
 	 * The type of customize section being rendered.
