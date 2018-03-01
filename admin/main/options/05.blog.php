@@ -11,13 +11,18 @@
 ---------------------------------------------------------------------------------- */
 
 function thinkup_input_blogclass($classes){
+global $thinkup_blog_style;
 global $thinkup_blog_style1layout;
 
 	if ( thinkup_check_isblog() ) {
-		if ( $thinkup_blog_style1layout !== 'option2' ) {
-			$classes[] = 'blog-style1 blog-style1-layout1';
+		if ( empty( $thinkup_blog_style ) or $thinkup_blog_style == 'option1' ) {
+			if ( $thinkup_blog_style1layout !== 'option2' ) {
+				$classes[] = 'blog-style1 blog-style1-layout1';
+			} else {
+				$classes[] = 'blog-style1 blog-style1-layout2';
+			}
 		} else {
-			$classes[] = 'blog-style1 blog-style1-layout2';
+			$classes[] = 'blog-style2';
 		}
 	}
 	return $classes;
@@ -30,7 +35,22 @@ add_action( 'body_class', 'thinkup_input_blogclass');
 ---------------------------------------------------------------------------------- */
 
 function thinkup_input_stylelayout() {
-	echo ' column-1';
+global $thinkup_blog_style;
+global $thinkup_blog_style2layout;
+  
+	if ( $thinkup_blog_style !== 'option2' ) {
+		echo ' column-1';
+	} else if ( $thinkup_blog_style == 'option2' ) {			
+		if ( empty($thinkup_blog_style2layout) or $thinkup_blog_style2layout == 'option1' ) {
+			echo ' column-1';
+		} else if ( $thinkup_blog_style2layout == 'option2' ) {
+			echo ' column-2';
+		} else if ( $thinkup_blog_style2layout == 'option3' ) {
+			echo ' column-3';
+		} else if ( $thinkup_blog_style2layout == 'option4' ) {
+			echo ' column-4';
+		}
+	}
 }
 
 
@@ -41,10 +61,11 @@ function thinkup_input_stylelayout() {
 function thinkup_input_stylelayout_class1() {
 global $post;
 global $thinkup_blog_postswitch;
+global $thinkup_blog_style;
 global $thinkup_blog_style1layout;
 
 	if ( has_post_thumbnail( $post->ID ) and $thinkup_blog_postswitch !== 'option2' ) {
-		if ( $thinkup_blog_style1layout !== 'option2' ) {
+		if ( $thinkup_blog_style !== 'option2' and $thinkup_blog_style1layout !== 'option2' ) {
 			echo ' one_third';
 		}
 	}
@@ -53,10 +74,11 @@ global $thinkup_blog_style1layout;
 function thinkup_input_stylelayout_class2() {
 global $post;
 global $thinkup_blog_postswitch;
+global $thinkup_blog_style;
 global $thinkup_blog_style1layout;
 
 	if ( has_post_thumbnail( $post->ID ) and $thinkup_blog_postswitch !== 'option2' ) {
-		if ( $thinkup_blog_style1layout !== 'option2' ) {
+		if ( $thinkup_blog_style !== 'option2' and $thinkup_blog_style1layout !== 'option2' ) {
 			echo ' two_third last';
 		}
 	}
@@ -106,7 +128,7 @@ global $thinkup_blog_link;
 	$featured_id = get_post_thumbnail_id( $post->ID );
 	$featured_img = wp_get_attachment_image_src($featured_id,'full', true);
 
-	// Determing featured media to input
+	// Determine featured media to input
 	$link  = $featured_img[0];
 	$media = get_the_post_thumbnail( $post->ID, $size );
 
@@ -146,6 +168,12 @@ global $thinkup_blog_link;
 function thinkup_input_blogtext() {
 global $post;
 global $thinkup_blog_postswitch;
+
+	// Output full content - EDD plugin compatibility
+	if( function_exists( 'EDD' ) and is_post_type_archive( 'download' ) ) {
+		the_content();
+		return;
+	}
 
 	// Output post content
 	if ( is_search() ) {
@@ -225,20 +253,28 @@ function thinkup_input_blogauthor() {
 	);
 }
 
+
 //----------------------------------------------------------------------------------
-//	CUSTOM READ MORE FOR the_content() AND the_excerpt().
+//	CUSTOM READ MORE BUTTON.
 //----------------------------------------------------------------------------------
 
-function thinkup_input_readmore() {
+function thinkup_input_readmore( $link ) {
 global $post;
 
 // Set variables to avoid php non-object notice error
 $class_button = NULL;
 
+	// Make no changes if in admin area
+	if ( is_admin() ) {
+		return $link;
+	}
+
 	// Specify button class for blog style
 	$class_button = 'themebutton2';
 
-	return '<p class="more-link"><a href="'. esc_url( get_permalink($post->ID) ) . '" class="' . $class_button . '">' . __( 'READ MORE', 'renden') . '</a></p>';
+	$link = '<p class="more-link"><a href="'. esc_url( get_permalink($post->ID) ) . '" class="' . $class_button . '">' . __( 'Read More', 'renden') . '</a></p>';
+
+	return $link;
 }
 add_filter( 'excerpt_more', 'thinkup_input_readmore' );
 add_filter( 'the_content_more_link', 'thinkup_input_readmore' );

@@ -64,7 +64,7 @@ add_action('wp_head', 'thinkup_custom_favicon');
 ---------------------------------------------------------------------------------- */
 
 /* Add Custom Sidebar css */
-function thinkup_sidebar_css() {
+function thinkup_sidebar_css($classes) {
 global $thinkup_homepage_layout;
 global $thinkup_general_layout;
 global $thinkup_blog_layout;
@@ -79,137 +79,147 @@ if ( ! empty( $post->ID ) ) {
 	$_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true );
 }
 
+	$class_sidebar = NULL;
+
 	if ( is_front_page() ) {
 		if ( $thinkup_homepage_layout == "option1" or empty( $thinkup_homepage_layout ) ) {		
-			echo '';
+			$class_sidebar = '';
 		} else if ( $thinkup_homepage_layout == "option2" ) {
-			wp_enqueue_style ( 'thinkup-sidebarleft' );
+			$class_sidebar = 'layout-sidebar-left';
 		} else if ( $thinkup_homepage_layout == "option3" ) {
-			wp_enqueue_style ( 'thinkup-sidebarleft' );
+			$class_sidebar = 'layout-sidebar-right';
 		}
 	} else if ( is_page() and ! is_page_template( 'template-blog.php' ) ) {	
 		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' ) {
 			if ( $thinkup_general_layout == "option1" or empty( $thinkup_general_layout ) ) {		
-				echo '';
+				$class_sidebar = '';
 			} else if ( $thinkup_general_layout == "option2" ) {
-				wp_enqueue_style ( 'thinkup-sidebarleft' );
+				$class_sidebar = 'layout-sidebar-left';
 			} else if ( $thinkup_general_layout == "option3" ) {
-				wp_enqueue_style ( 'thinkup-sidebarright' );
+				$class_sidebar = 'layout-sidebar-right';
 			}
 		} else if ( $_thinkup_meta_layout == 'option2' ) {
-			echo '';
+			$class_sidebar = '';
 		} else if ( $_thinkup_meta_layout == 'option3' ) {
-			wp_enqueue_style ( 'thinkup-sidebarleft' );
+			$class_sidebar = 'layout-sidebar-left';
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
-			wp_enqueue_style ( 'thinkup-sidebarright' );
+			$class_sidebar = 'layout-sidebar-right';
 		}
 	} else if ( thinkup_check_isblog() and ! is_single() and ! is_post_type_archive( 'portfolio' ) and ! is_post_type_archive( 'product' ) ) {
 		if ( $thinkup_blog_layout == "option1" or empty( $thinkup_blog_layout ) ) {		
-			echo '';
+			$class_sidebar = '';
 		} else if ( $thinkup_blog_layout == "option2" ) {
-			wp_enqueue_style ( 'thinkup-sidebarleft' );
+			$class_sidebar = 'layout-sidebar-left';
 		} else if ( $thinkup_blog_layout == "option3" ) {
-			wp_enqueue_style ( 'thinkup-sidebarright' );
+			$class_sidebar = 'layout-sidebar-right';
 		}
 	} else if ( is_page_template( 'template-blog.php' ) ) {
 		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' ) {
 			if ( $thinkup_blog_layout == "option1" or empty( $thinkup_blog_layout ) ) {		
-				echo '';
+				$class_sidebar = '';
 			} else if ( $thinkup_blog_layout == "option2" ) {
-				wp_enqueue_style ( 'thinkup-sidebarleft' );
+				$class_sidebar = 'layout-sidebar-left';
 			} else if ( $thinkup_blog_layout == "option3" ) {
-				wp_enqueue_style ( 'thinkup-sidebarright' );
+				$class_sidebar = 'layout-sidebar-right';
 			}
 		} else if ( $_thinkup_meta_layout == 'option2' ) {
-			echo '';
+			$class_sidebar = '';
 		} else if ( $_thinkup_meta_layout == 'option3' ) {
-			wp_enqueue_style ( 'thinkup-sidebarleft' );
+			$class_sidebar = 'layout-sidebar-left';
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
-			wp_enqueue_style ( 'thinkup-sidebarright' );
+			$class_sidebar = 'layout-sidebar-right';
 		}
 	} else if ( is_post_type_archive( 'product' ) or is_tax( 'product_cat' ) or is_tax( 'product_tag' ) ) {
 		if ( $thinkup_woocommerce_layout == "option1" or empty( $thinkup_woocommerce_layout ) ) {
-			echo '';
+			$class_sidebar = '';
 		} else if ( $thinkup_woocommerce_layout == "option5" or $thinkup_woocommerce_layout == "option7" ) {
-			wp_enqueue_style ( 'thinkup-sidebarleft' );
+			$class_sidebar = 'layout-sidebar-left';
 		} else if ( $thinkup_woocommerce_layout == "option6" or $thinkup_woocommerce_layout == "option8" ) {
-			wp_enqueue_style ( 'thinkup-sidebarright' );
+			$class_sidebar = 'layout-sidebar-right';
 		} else {
-			echo '';
+			$class_sidebar = '';
 		}
 	} else if ( is_single() and ! is_singular( 'portfolio' ) and ! is_singular( 'product' ) ) {	
 		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' ) {
 			if ( $thinkup_post_layout == "option1" or empty( $thinkup_post_layout ) ) {		
-				echo '';
+				$class_sidebar = '';
 			} else if ( $thinkup_post_layout == "option2" ) {
-				wp_enqueue_style ( 'thinkup-sidebarleft' );
+				$class_sidebar = 'layout-sidebar-left';
 			} else if ( $thinkup_post_layout == "option3" ) {
-				wp_enqueue_style ( 'thinkup-sidebarright' );
+				$class_sidebar = 'layout-sidebar-right';
 			} else {
-				echo '';
+				$class_sidebar = '';
 			}
 		} else if ( $_thinkup_meta_layout == 'option2' ) {
-			echo '';
+			$class_sidebar = '';
 		} else if ( $_thinkup_meta_layout == 'option3' ) {
-			wp_enqueue_style ( 'thinkup-sidebarleft' );
+			$class_sidebar = 'layout-sidebar-left';
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
-			wp_enqueue_style ( 'thinkup-sidebarright' );
+			$class_sidebar = 'layout-sidebar-right';
 		}
 	} else if ( is_singular( 'portfolio' ) ) {	
 		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' ) {
 			if ( $thinkup_project_layout == "option1" or empty( $thinkup_project_layout ) ) {		
-				echo '';
+				$class_sidebar = '';
 			} else if ( $thinkup_project_layout == "option2" ) {
-				wp_enqueue_style ( 'thinkup-sidebarleft' );
+				$class_sidebar = 'layout-sidebar-left';
 			} else if ( $thinkup_project_layout == "option3" ) {
-				wp_enqueue_style ( 'thinkup-sidebarright' );
+				$class_sidebar = 'layout-sidebar-right';
 			} else {
-				echo '';
+				$class_sidebar = '';
 			}
 		} else if ( $_thinkup_meta_layout == 'option2' ) {
-			echo '';
+			$class_sidebar = '';
 		} else if ( $_thinkup_meta_layout == 'option3' ) {
-			wp_enqueue_style ( 'thinkup-sidebarleft' );
+			$class_sidebar = 'layout-sidebar-left';
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
-			wp_enqueue_style ( 'thinkup-sidebarright' );
+			$class_sidebar = 'layout-sidebar-right';
 		}
 	} else if ( is_singular( 'product' ) ) {
 		if ( empty( $_thinkup_meta_layout ) or $_thinkup_meta_layout == 'option1' ) {
 			if ( $thinkup_woocommerce_layoutproduct == "option1" or empty( $thinkup_woocommerce_layoutproduct ) ) {		
-				echo '';
+				$class_sidebar = '';
 			} else if ( $thinkup_woocommerce_layoutproduct == "option2" ) {
-				wp_enqueue_style ( 'thinkup-sidebarleft' );
+				$class_sidebar = 'layout-sidebar-left';
 			} else if ( $thinkup_woocommerce_layoutproduct == "option3" ) {
-				wp_enqueue_style ( 'thinkup-sidebarright' );
+				$class_sidebar = 'layout-sidebar-right';
 			} else {
-				echo '';
+				$class_sidebar = '';
 			}
 		} else if ( $_thinkup_meta_layout == 'option2' ) {
-			echo '';
+			$class_sidebar = '';
 		} else if ( $_thinkup_meta_layout == 'option3' ) {
-			wp_enqueue_style ( 'thinkup-sidebarleft' );
+			$class_sidebar = 'layout-sidebar-left';
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
-			wp_enqueue_style ( 'thinkup-sidebarright' );
+			$class_sidebar = 'layout-sidebar-right';
 		}
 	} else if ( is_search() ) {	
 		if ( $thinkup_general_layout == "option1" or empty( $thinkup_general_layout ) ) {		
-			echo '';
+			$class_sidebar = '';
 		} else if ( $thinkup_general_layout == "option2" ) {
-			wp_enqueue_style ( 'thinkup-sidebarleft' );
+			$class_sidebar = 'layout-sidebar-left';
 		} else if ($thinkup_general_layout == "option3") {
-			wp_enqueue_style ( 'thinkup-sidebarright' );
+			$class_sidebar = 'layout-sidebar-right';
 		}
 	} else {
 		if ( $_thinkup_meta_layout == 'option2' ) {
-			echo '';
+			$class_sidebar = '';
 		} else if ( $_thinkup_meta_layout == 'option3' ) {
-			wp_enqueue_style ( 'sidebarleft' );
+			$class_sidebar = 'layout-sidebar-left';
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
-			wp_enqueue_style ( 'sidebarright' );
+			$class_sidebar = 'layout-sidebar-right';
 		}
 	}
+
+	// Output sidebar class
+	if( ! empty( $class_sidebar ) ) {
+		$classes[] = $class_sidebar;
+	} else {
+		$classes[] = 'layout-sidebar-none';
+	}
+	return $classes;
 }
-add_action( 'wp_enqueue_scripts', 'thinkup_sidebar_css', '11' );
+add_action( 'body_class', 'thinkup_sidebar_css' );
 
 /* Add Custom Sidebar html */
 function thinkup_sidebar_html() {

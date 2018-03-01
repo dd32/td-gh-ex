@@ -70,20 +70,20 @@
 			'comment_notes_after' => '',
 			'comment_field' =>  
 				'<p class="comment-form-comment">' .
-				'<textarea id="comment" name="comment" placeholder="' . __( 'Your Message', 'renden' ) . '" cols="45" rows="8" aria-required="true">' .
+				'<textarea id="comment" name="comment" placeholder="' . esc_attr__( 'Your Message', 'renden' ) . '" cols="45" rows="8" aria-required="true">' .
 				'</textarea></p>',
 			'fields' => apply_filters( 'comment_form_default_fields', array (
 				'author' =>
 					'<p class="comment-form-author one_third">' .
-					'<input id="author" name="author" placeholder="' . __( 'Your Name (Required)', 'renden' ) . '" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+					'<input id="author" name="author" placeholder="' . esc_attr__( 'Your Name (Required)', 'renden' ) . '" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
 					'" size="30" /></p>',
 				'email' =>
 					'<p class="comment-form-email one_third">' .
-					'<input id="email" name="email" placeholder="' . __( 'Your Email (Required)', 'renden' ) . '" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+					'<input id="email" name="email" placeholder="' . esc_attr__( 'Your Email (Required)', 'renden' ) . '" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
 					'" size="30" /></p>',
 				'url' =>
 					'<p class="comment-form-url one_third last">' .
-					'<input id="url" name="url" placeholder="' . __( 'Your Website', 'renden' ). '" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
+					'<input id="url" name="url" placeholder="' . esc_attr__( 'Your Website', 'renden' ). '" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
 					'" size="30" /></p>'
 			) ),
 		);

@@ -7,6 +7,30 @@
 
 
 /* ----------------------------------------------------------------------------------
+	HEADER STYLE
+---------------------------------------------------------------------------------- */
+function thinkup_input_headerstyle($classes) {
+global $thinkup_header_styleswitch;
+global $thinkup_header_locationswitch;
+
+	// Check which header style should be output
+	if ( empty( $thinkup_header_styleswitch ) or $thinkup_header_styleswitch == 'option1' ) {
+		$classes[] = 'header-style1';
+
+			// Check whether header should be output above or below header
+			if ( $thinkup_header_locationswitch == 'option2' ) {
+				$classes[] = 'header-below';
+			}
+
+	} else if ( $thinkup_header_styleswitch == 'option2' ) {	
+		$classes[] = 'header-style2';
+	}
+	return $classes;
+}
+add_action( 'body_class', 'thinkup_input_headerstyle');
+
+
+/* ----------------------------------------------------------------------------------
 	SEARCH - DISABLE SEARCH
 ---------------------------------------------------------------------------------- */
 function thinkup_input_headersearch() {
