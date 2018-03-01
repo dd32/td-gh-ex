@@ -17,7 +17,7 @@ if ( ! function_exists( 'best_education_about_setup' ) ) :
 		$config = array(
 
 			// Welcome content.
-			'welcome_content' => sprintf( esc_html__( ' First off, We’d like to extend a warm welcome and thank you for choosing %1$s. %1$s is now installed and ready to use. We want to make sure you have the best experience using the theme and that is why we gathered here all the necessary information for you. Again, Thanks for using our theme!', 'best-education' ), 'Best Education' ),
+			'welcome_content' => sprintf( esc_html__( ' First off, We’d like to extend a warm welcome and thank you for choosing %1$s. %1$s is now installed and ready to use. We want to make sure you have the best experience using the theme and that is why we gathered here all the necessary information for you. We would like to suggest you to use all our recommend plugins especially Education Connect to get full advantage of this theme. Again, Thanks for using our theme!', 'best-education' ), 'Best Education' ),
 
 			// Tabs.
 			'tabs' => array(
@@ -74,7 +74,7 @@ if ( ! function_exists( 'best_education_about_setup' ) ) :
 				'four' => array(
 					'title'       => esc_html__( 'Widget Ready', 'best-education' ),
 					'icon'        => 'dashicons dashicons-admin-settings',
-					'description' => esc_html__( 'Best Education is widget based Theme. Best Education has 7 predesigned custome additional layout.', 'best-education' ),
+					'description' => esc_html__( 'Best Education is widget based Theme. Best Education has some pre designed custom additional layout.', 'best-education' ),
 					'button_text' => esc_html__( 'View Widgets', 'best-education' ),
 					'button_url'  => admin_url( 'widgets.php' ),
 					'button_type' => 'secondary',
@@ -131,7 +131,7 @@ if ( ! function_exists( 'best_education_about_setup' ) ) :
 
 			// Useful plugins.
 			'useful_plugins' => array(
-				'description' => esc_html__( 'Theme supports some helpful WordPress plugins to enhance your site. But, please enable only those plugins which you need in your site. For example, enable WooCommerce only if you are using e-commerce.', 'best-education' ),
+				'description' => esc_html__( 'Theme supports some helpful WordPress plugins to enhance your site. But, please enable only those plugins which you need in your site. For example, enable Contact Form 7 only if you are using it.', 'best-education' ),
 				),
 
 			// Demo content.

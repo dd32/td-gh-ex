@@ -57,15 +57,15 @@
 
     <div class="footer-bottom">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-xs-12">
-                    <div class="tm-social-share">
+            <div class="row equal-row">
+                <div class="col-sm-4 col-xs-12">
+                    <div class="tm-social-share table-align">
                         <?php if (best_education_get_option('social_icon_style') == 'circle') {
                             $best_education_social_icon = 'bordered-radius';
                         } else {
                             $best_education_social_icon = '';
                         } ?>
-                        <div class="social-icons <?php echo esc_attr($best_education_social_icon); ?>">
+                        <div class="social-icons table-align-cell v-align-middle <?php echo esc_attr($best_education_social_icon); ?>">
                             <?php
                             wp_nav_menu(
                                 array('theme_location' => 'social',
@@ -78,13 +78,47 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-sm-4 col-xs-12">
+                    <?php best_education_the_custom_logo(); ?>
+                </div>
+
+                <div class="col-sm-4 col-xs-12">
+                    <div class="contact-details table-align">
+                        <div class="table-align-cell v-align-middle">
+                        <ul>
+                            <?php $best_education_top_header_location = esc_html(best_education_get_option('top_header_location'));
+                            if (!empty($best_education_top_header_location)) { ?>
+                            <li><?php echo esc_html(best_education_get_option('top_header_location')); ?>
+                            </li>
+                            <?php } ?>
+                            <?php $best_education_top_header_email = esc_html(best_education_get_option('top_header_email'));
+                            if (!empty($best_education_top_header_email)) { ?>
+                            <li><a href="mailto:<?php echo esc_attr( best_education_get_option('top_header_email') ); ?>"><?php echo esc_attr( antispambot(best_education_get_option('top_header_email'))); ?></a>
+                            </li>
+                            <?php } ?>
+                            <?php $best_education_top_header_telephone = esc_html(best_education_get_option('top_header_telephone'));
+                            if (!empty($best_education_top_header_telephone)) { ?>
+                                <li><a href="tel:<?php echo preg_replace( '/\D+/', '', esc_attr( best_education_get_option('top_header_telephone') ) ); ?>">
+                                        <?php echo esc_html( best_education_get_option('top_header_telephone') ); ?>
+                                    </a></li>
+                            <?php } ?>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
                 <div class="col-sm-12 col-xs-12">
                     <span class="footer-divider"></span>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-12 col-xs-12">
                     <div class="site-copyright">
                         <div class="row">
-                            <div class="col-xs-5">
+                            <div class="col-sm-5">
                                 <?php
                                 $best_education_copyright_text = best_education_get_option('copyright_text');
                                 if (!empty ($best_education_copyright_text)) {
@@ -92,13 +126,13 @@
                                 }
                                 ?>
                             </div>
-                            <div class="col-xs-2">
+                            <div class="col-sm-2">
                                 <a id="scroll-up">
                                     <i class="fa fa-angle-up"></i>
                                 </a>
                             </div>
 
-                            <div class="col-xs-5">
+                            <div class="col-sm-5">
                                 <div class="pull-right">
                                     <?php printf(esc_html__('Theme: %1$s by %2$s', 'best-education'), 'Best Education', '<a href="https://thememattic.com" target = "_blank" rel="designer">Themematic </a>'); ?>
                                 </div>
@@ -140,7 +174,7 @@ if (1 == best_education_get_option('show_footer_page_section')) {
             } else {
                 $url = NULL;
             }
-    ?>
+            ?>
             <div class="footer-cta primary-bgcolor data-bg bg-fixed" data-background="<?php echo esc_url($url); ?>">
                 <div class="container high-index">
                     <div class="row">

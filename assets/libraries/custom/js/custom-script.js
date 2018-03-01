@@ -110,11 +110,12 @@
 
             e('.featured-course').slick({
                 slidesToShow: 3,
-                slidesToScroll: 1,
+                slidesToScroll: 3,
                 nextArrow: '<i class="Thememattic-icon slide-icon slide-next fa fa-angle-right"></i>',
                 prevArrow: '<i class="Thememattic-icon slide-icon slide-prev fa fa-angle-left"></i>',
                 focusOnSelect: true,
                 dots: true,
+                arrows: false,
                 responsive: [
                     {
                         breakpoint: 991,
@@ -174,30 +175,7 @@
                 nextArrow: '<i class="Thememattic-icon slide-icon slide-next fa fa-angle-right"></i>',
                 prevArrow: '<i class="Thememattic-icon slide-icon slide-prev fa fa-angle-left"></i>',
                 focusOnSelect: true,
-                dots: true,
-                responsive: [
-                    {
-                        breakpoint: 991,
-                        settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 3
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
+                dots: true
             });
 
             e(".gallery-columns-1").slick({

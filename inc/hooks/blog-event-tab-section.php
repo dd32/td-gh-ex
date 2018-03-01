@@ -92,7 +92,7 @@ if (!function_exists('best_education_blog_event_block')):
                     </div>
                     <?php
 
-                    if (class_exists('Education_Connect') && post_type_exists('events' )) {
+                    if (class_exists('Education_Connect') && post_type_exists('events')) {
                         $best_education_event_section_cat = best_education_get_option('select_category_event_tab');
                         $best_education_event_content_number = absint(best_education_get_option('number_of_content_home_event'));
                         $best_education_event_section_cat_args = array(
@@ -135,6 +135,11 @@ if (!function_exists('best_education_blog_event_block')):
                                         <div class="col-sm-4">
                                             <div class="tm-events">
                                                 <div class="event-item">
+
+                                                    <div class="event-img grid-cta-img">
+                                                        <img src="<?php echo esc_url($url); ?>">
+                                                    </div>
+
                                                     <div class="block-title-wrapper">
                                                         <h3 class="section-block-title">
                                                             <?php the_title(); ?>
@@ -142,13 +147,18 @@ if (!function_exists('best_education_blog_event_block')):
                                                     </div>
 
                                                     <?php
-                                                    if (class_exists('Education_Connect') && post_type_exists('events' )) {
-                                                        education_connect_event_date();
-                                                    } else {?>
-                                                    <div class="tm-metawrap">
-                                                        <span class="tm-metawrap-top"><?php the_time('M') ?></span>
-                                                        <span class="tm-metawrap-bottom"><?php the_time('d') ?></span>
+                                                    if (class_exists('Education_Connect') && post_type_exists('events')) {
+                                                    ?>
+                                                    <div class="event-list-date">
+                                                        <?php education_connect_event_date(); ?>
                                                     </div>
+                                                    <?php
+                                                    } else { ?>
+                                                        <div class="tm-metawrap">
+                                                            <span class="tm-metawrap-top"><?php the_time('M') ?></span>
+                                                            <span
+                                                                class="tm-metawrap-bottom"><?php the_time('d') ?></span>
+                                                        </div>
                                                     <?php } ?>
 
                                                     <div class="section-content">

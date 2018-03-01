@@ -49,9 +49,9 @@ function best_education_ocdi_after_import() {
 
 	// Assign navigation menu locations.
 	$menu_location_details = array(
-		'primary'      => 'Primary Navigation',
-		'social' => 'Social Navigation',
-		'top' => 'Top Navigation',
+		'primary'      => 'Primary',
+        'top' => 'Secondary',
+        'social' => 'Social',
 		);
 
 	if ( ! empty( $menu_location_details ) ) {

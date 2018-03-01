@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Best Education\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-27 11:05+0000\n"
+"POT-Creation-Date: 2018-03-01 04:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -25,7 +25,9 @@ msgid ""
 " First off, We’d like to extend a warm welcome and thank you for choosing "
 "%1$s. %1$s is now installed and ready to use. We want to make sure you have "
 "the best experience using the theme and that is why we gathered here all the "
-"necessary information for you. Again, Thanks for using our theme!"
+"necessary information for you. We would like to suggest you to use all our "
+"recommend plugins especially Education Connect to get full advantage of this "
+"theme. Again, Thanks for using our theme!"
 msgstr ""
 
 #: inc/template-tags.php:59
@@ -115,8 +117,12 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: inc/widgets/widgets.php:69
-msgid "Author Image:"
+#: inc/widgets/widgets.php:93
+msgid "BE: Message Widget"
+msgstr ""
+
+#: inc/widgets/widgets.php:201
+msgid "BE: Social Menu Widget"
 msgstr ""
 
 #. Name of the theme
@@ -141,8 +147,8 @@ msgstr ""
 
 #: inc/about/about.php:77
 msgid ""
-"Best Education is widget based Theme. Best Education has 7 predesigned "
-"custome additional layout."
+"Best Education is widget based Theme. Best Education has some pre designed "
+"custom additional layout."
 msgstr ""
 
 #: inc/customizer/customizer.php:40
@@ -174,10 +180,6 @@ msgctxt "breadcrumbs aria label"
 msgid "Breadcrumbs"
 msgstr ""
 
-#: inc/customizer/customizer-default.php:35
-msgid "Browse More"
-msgstr ""
-
 #: assets/libraries/breadcrumbs/breadcrumbs.php:244
 msgid "Browse:"
 msgstr ""
@@ -186,7 +188,7 @@ msgstr ""
 msgid "Button Text"
 msgstr ""
 
-#: inc/customizer/customizer-default.php:51
+#: inc/customizer/customizer-default.php:50
 msgid "Buy Now"
 msgstr ""
 
@@ -224,6 +226,7 @@ msgid "Category for Testimonial "
 msgstr ""
 
 #: inc/layout-meta/layout-meta.php:66
+#: inc/layout-meta/post-type-layout-meta.php:66
 msgid "Check To Use Featured Image As Banner Image"
 msgstr ""
 
@@ -271,7 +274,7 @@ msgstr ""
 msgid "Contact Form 7"
 msgstr ""
 
-#: inc/customizer/theme-option.php:1481
+#: inc/customizer/theme-option.php:1508
 msgid "Contact Form Shortcode"
 msgstr ""
 
@@ -297,7 +300,7 @@ msgstr ""
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/customizer/customizer-default.php:101
+#: inc/customizer/customizer-default.php:100
 msgid "Copyright All right reserved"
 msgstr ""
 
@@ -319,7 +322,7 @@ msgstr ""
 msgid "Demo Content"
 msgstr ""
 
-#: inc/widgets/widgets.php:176
+#: inc/widgets/widgets.php:196
 msgid "Description:"
 msgstr ""
 
@@ -339,15 +342,15 @@ msgstr ""
 msgid "Dismiss this notice"
 msgstr ""
 
-#: inc/widgets/widgets.php:49
-msgid "Displays authors details in post."
-msgstr ""
-
 #: inc/widget-init.php:25 inc/widget-init.php:35 inc/widget-init.php:46
 msgid "Displays items on footer section."
 msgstr ""
 
-#: inc/widgets/widgets.php:165
+#: inc/widgets/widgets.php:49
+msgid "Displays message details in post."
+msgstr ""
+
+#: inc/widgets/widgets.php:185
 msgid "Displays social menu if you have set it(social menu)"
 msgstr ""
 
@@ -399,6 +402,10 @@ msgstr ""
 msgid "Enable Page Link Button"
 msgstr ""
 
+#: inc/customizer/theme-option.php:1489
+msgid "Enable PageLoader"
+msgstr ""
+
 #: inc/customizer/theme-option.php:1327
 msgid "Enable Single Header Meta Data"
 msgstr ""
@@ -427,7 +434,7 @@ msgstr ""
 msgid "Excerpt Only"
 msgstr ""
 
-#: inc/widgets/widgets.php:73
+#: inc/widgets/widgets.php:77
 msgid "Facebook URL:"
 msgstr ""
 
@@ -487,7 +494,7 @@ msgstr ""
 msgid "Global Layout"
 msgstr ""
 
-#: inc/widgets/widgets.php:83
+#: inc/widgets/widgets.php:87
 msgid "Googleplus URL:"
 msgstr ""
 
@@ -538,6 +545,10 @@ msgid ""
 "no of page(max 3)"
 msgstr ""
 
+#: inc/widgets/widgets.php:69
+msgid "Image:"
+msgstr ""
+
 #: 404.php:17
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
@@ -554,7 +565,7 @@ msgstr ""
 msgid "Know More"
 msgstr ""
 
-#: inc/customizer/customizer-default.php:60
+#: inc/customizer/customizer-default.php:59
 msgid "Latest Blog"
 msgstr ""
 
@@ -563,10 +574,12 @@ msgid "Layout Management"
 msgstr ""
 
 #: inc/layout-meta/layout-meta.php:54
+#: inc/layout-meta/post-type-layout-meta.php:54
 msgid "Layout Settings"
 msgstr ""
 
-#: inc/about/about.php:125
+#: inc/customizer/customizer-default.php:34 inc/about/about.php:125
+#: inc/hooks/testimonial-section.php:123 inc/hooks/calback-section-1.php:62
 msgid "Learn More"
 msgstr ""
 
@@ -589,14 +602,6 @@ msgstr ""
 
 #: inc/about/class.about.php:341 inc/about/class.about.php:382
 msgid "Manage Plugins"
-msgstr ""
-
-#: inc/widgets/widgets.php:89
-msgid "MB: Author Widget"
-msgstr ""
-
-#: inc/widgets/widgets.php:181
-msgid "MB: Social Menu Widget"
 msgstr ""
 
 #. Minute archive title. %s is the minute time format.
@@ -654,7 +659,7 @@ msgstr ""
 msgid "No Sidebar"
 msgstr ""
 
-#: inc/widgets/widgets.php:171
+#: inc/widgets/widgets.php:191
 msgid "Note: Displays social menu if you have set it(social menu)"
 msgstr ""
 
@@ -702,7 +707,7 @@ msgstr ""
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: inc/customizer/customizer-default.php:61
+#: inc/customizer/customizer-default.php:60
 msgid "Our Events"
 msgstr ""
 
@@ -719,6 +724,10 @@ msgstr ""
 #: assets/libraries/breadcrumbs/breadcrumbs.php:252
 #, php-format
 msgid "Page %s"
+msgstr ""
+
+#: inc/customizer/theme-option.php:1472
+msgid "Pageloader Options"
 msgstr ""
 
 #: template-parts/content-single.php:38 template-parts/content-page.php:39
@@ -762,7 +771,7 @@ msgstr ""
 msgid "Published on : %s"
 msgstr ""
 
-#: inc/hooks/blog-event-tab-section.php:158
+#: inc/hooks/blog-event-tab-section.php:168
 msgid "Read More"
 msgstr ""
 
@@ -773,11 +782,12 @@ msgid ""
 msgstr ""
 
 #: inc/customizer/theme-option.php:743
-msgid "Recommended Size %1$px X %2$dpx"
+#, php-format
+msgid "Recommended Size %1$dpx X %2$dpx"
 msgstr ""
 
 #: inc/widgets/widget-base-class.php:289
-msgctxt "Remove"
+msgctxt "Remove Button"
 msgid "X"
 msgstr ""
 
@@ -921,6 +931,10 @@ msgstr ""
 msgid "Set Global Archive Length"
 msgstr ""
 
+#: inc/widgets/widgets.php:73
+msgid "Signature Image:"
+msgstr ""
+
 #: inc/customizer/theme-option.php:1462
 msgid "Simple"
 msgstr ""
@@ -935,6 +949,10 @@ msgstr ""
 
 #: inc/layout-meta/layout-meta.php:22
 msgid "Single Page/Post Settings"
+msgstr ""
+
+#: inc/layout-meta/post-type-layout-meta.php:22
+msgid "Single Post Settings"
 msgstr ""
 
 #: inc/customizer/theme-option.php:1343
@@ -961,7 +979,7 @@ msgstr ""
 msgid "Social Menu"
 msgstr ""
 
-#: inc/widgets/widgets.php:224
+#: inc/widgets/widgets.php:244
 msgid ""
 "Social menu is not set. You need to create menu and assign it to Social Menu "
 "on Menu Settings."
@@ -1033,7 +1051,7 @@ msgstr ""
 msgid ""
 "Theme supports some helpful WordPress plugins to enhance your site. But, "
 "please enable only those plugins which you need in your site. For example, "
-"enable WooCommerce only if you are using e-commerce."
+"enable Contact Form 7 only if you are using it."
 msgstr ""
 
 #: inc/about/about.php:69
@@ -1042,7 +1060,7 @@ msgid ""
 "easily customize different aspects of the theme."
 msgstr ""
 
-#: footer.php:103
+#: footer.php:137
 #, php-format
 msgid "Theme: %1$s by %2$s"
 msgstr ""
@@ -1051,7 +1069,7 @@ msgstr ""
 msgid "Thememattic"
 msgstr ""
 
-#: inc/widgets/widgets.php:54 inc/widgets/widgets.php:170
+#: inc/widgets/widgets.php:54 inc/widgets/widgets.php:190
 msgid "Title:"
 msgstr ""
 
@@ -1073,7 +1091,7 @@ msgstr ""
 msgid "Top Menu"
 msgstr ""
 
-#: inc/widgets/widgets.php:78
+#: inc/widgets/widgets.php:82
 msgid "Twitter URL:"
 msgstr ""
 
@@ -1105,11 +1123,11 @@ msgstr ""
 msgid "View Documentation"
 msgstr ""
 
-#: footer.php:159 inc/hooks/calback-section-1.php:62
+#: footer.php:193
 msgid "View More"
 msgstr ""
 
-#: inc/customizer/customizer-default.php:87
+#: inc/customizer/customizer-default.php:86
 msgid "View Our Courses"
 msgstr ""
 
@@ -1117,7 +1135,7 @@ msgstr ""
 msgid "View Widgets"
 msgstr ""
 
-#: inc/customizer/customizer-default.php:66
+#: inc/customizer/customizer-default.php:65
 msgid "Voice Of Students"
 msgstr ""
 
@@ -1139,7 +1157,7 @@ msgid ""
 "our theme can offer please make sure you visit theme info page."
 msgstr ""
 
-#: inc/customizer/customizer-default.php:76
+#: inc/customizer/customizer-default.php:75
 msgid "Who are we?"
 msgstr ""
 

@@ -2,8 +2,8 @@
 /**
  * Template Name: Contact Form
  *
- * @subpackage education_connect
- * @since Education Connect 1.0.1
+ * @subpackage Best_Education
+ * @since Best Education 1.0.0
  */
 
 get_header(); ?>
@@ -16,7 +16,7 @@ get_header(); ?>
                 </div>
             <?php
             endwhile;
-            wp_reset_query();
+            wp_reset_postdata();
             ?>
             <?php
             $best_education_contact_form = wp_kses_post(best_education_get_option('contact_form_shortcodes'));

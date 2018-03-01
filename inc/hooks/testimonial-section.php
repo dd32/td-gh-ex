@@ -84,11 +84,8 @@ if (!function_exists('best_education_testimonial')) :
         }
         $best_education_testimonial_args = best_education_testimonial_args();
         $best_education_testimonial_query = new WP_Query($best_education_testimonial_args); ?>
-        <section class="section-block section-block-2 data-bg bg-fixed primary-bgcolor testmonial-section"
-                 data-stellar-background-ratio="0.5"
-                 data-background="<?php echo esc_url(best_education_get_option('testimonial_section_background_image')); ?>">
-
-            <div class="testmonial-slides">
+        <section class="section-block section-block-2 data-bg bg-fixed primary-bgcolor testmonial-section" data-stellar-background-ratio="0.5" data-background="<?php echo esc_url(best_education_get_option('testimonial_section_background_image')); ?>">
+            <div class="testmonial-slides high-index">
                 <?php
                 if ($best_education_testimonial_query->have_posts()) :
                     while ($best_education_testimonial_query->have_posts()) : $best_education_testimonial_query->the_post();
@@ -119,9 +116,11 @@ if (!function_exists('best_education_testimonial')) :
                                                 <?php the_title(); ?>
                                             </a>
                                         </h3>
-
-                                        <div class="section-content">
-                                            <?php echo wp_kses_post($best_education_testimonial_content); ?>
+                                        <div class="section-content-wrapper">
+                                            <div class="section-content testmonial-section-content">
+                                                <?php echo wp_kses_post($best_education_testimonial_content); ?>
+                                            </div>
+                                            <a href="<?php the_permalink(); ?>" class="btn btn-sm btn-primary tm-shadow"><?php _e("Learn More","best-education"); ?></a>
                                         </div>
                                     </div>
                                 </div>
@@ -132,6 +131,7 @@ if (!function_exists('best_education_testimonial')) :
                     wp_reset_postdata();
                 endif; ?>
             </div>
+            <div class="bg-overlay primary-bgcolor"></div>
         </section>
         <!-- End Testmonial -->
         <?php

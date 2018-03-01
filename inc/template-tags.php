@@ -50,7 +50,7 @@ function best_education_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ' ', 'best-education' ) );
 		if ( $categories_list && best_education_categorized_blog() ) {
-			printf( '<span class="item-metadata post-category-label">' .'<span class="item-tablecell">'. esc_html__( 'Categorized in :', 'best-education' ).'</span> <span="post-category-label">' .' %1$s'. '</span></span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="item-metadata post-category-label">' .'<span class="screen-reader-text">'. esc_html__( 'Categorized in :', 'best-education' ).'</span> <span class="post-category-label">' .' %1$s'. '</span></span>', $categories_list ); // WPCS: XSS OK.
 		}
 	}
 
@@ -81,7 +81,7 @@ if ( ! function_exists( 'best_education_entry_tags' ) ) :
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ' ', 'best-education' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links item-metadata post-category-label">' .'<span class="item-tablecell">'. esc_html__( 'Tagged in :', 'best-education' ).'</span> <span="post-category-label">' .' %1$s'. '</span></span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="tags-links item-metadata post-category-label">' .'<span class="screen-reader-text">'. esc_html__( 'Tagged in :', 'best-education' ).'</span> <span class="post-category-label">' .' %1$s'. '</span></span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 endif;

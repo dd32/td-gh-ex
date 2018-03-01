@@ -50,12 +50,12 @@ function best_education_setup() {
 
 	// Set up the WordPress core custom header feature.
 	add_theme_support('custom-header', apply_filters('best_education_custom_header_args', array(
-				'width'              => 1400,
-				'height'             => 380,
+				'width'              => 1920,
+				'height'             => 1080,
 				'flex-height'        => true,
 				'header-text'        => false,
 				'default-text-color' => '000',
-				'default-image'      => get_template_directory_uri().'/images/banner-image.jpg',
+				'default-image'      => get_template_directory_uri().'/assets/images/cta-banner.jpg',
 			)));
 
 	// This theme uses wp_nav_menu() in one location.
@@ -164,7 +164,7 @@ endif;
 function best_education_scripts() {
 	$min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG?'':'.min';
 	wp_enqueue_style('font-awesome', get_template_directory_uri().'/assets/libraries/font-awesome/css/font-awesome'.$min.'.css');
-	wp_enqueue_style('compiled', get_template_directory_uri().'/assets/libraries/compiled/assets'.$min.'.css');
+	wp_enqueue_style('best-education-compiled-style', get_template_directory_uri().'/assets/libraries/compiled/assets'.$min.'.css');
 	wp_enqueue_style('best-education-style', get_stylesheet_uri());
 	wp_add_inline_style('best-education-style', best_education_trigger_custom_css_action());
 
@@ -173,7 +173,7 @@ function best_education_scripts() {
 		wp_enqueue_style('best-education-google-fonts', $fonts_url, array(), null);
 	}
 	
-	wp_enqueue_script('compiled', get_template_directory_uri().'/assets/libraries/compiled/assets'.$min.'.js', array('jquery'), '', true);
+	wp_enqueue_script('best-education-compiled-script', get_template_directory_uri().'/assets/libraries/compiled/assets'.$min.'.js', array('jquery'), '', true);
 
 	wp_enqueue_script('best-education-script', get_template_directory_uri().'/assets/libraries/custom/js/custom-script.js', array('jquery'), '', 1);
 
@@ -190,7 +190,8 @@ add_action('wp_enqueue_scripts', 'best_education_scripts');
 function best_education_admin_scripts($hook) {
 	if ('widgets.php' === $hook) {
 		wp_enqueue_media();
-		wp_enqueue_script('best-education-custom-widgets', get_template_directory_uri().'/assets/libraries/custom/js/widgets.js', array('jquery'), '1.0.0', true);
+		wp_enqueue_script('best-education-custom-widgets-script', get_template_directory_uri().'/assets/libraries/custom/js/widgets.js', array('jquery'), '1.0.0', true);
+		wp_enqueue_style('best-education-custom-widgets-style', get_template_directory_uri().'/assets/libraries/custom/css/admin-widget.css');
 	}
 
 }

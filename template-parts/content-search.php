@@ -12,18 +12,14 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php best_education_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php best_education_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+    <?php if (has_excerpt()) {
+    $best_education_search_content = get_the_excerpt();
+    } else {
+    $best_education_search_content = best_education_words_count(50, get_the_content());
+    } ?>
+    <div class="entry-summary">
+        <?php echo esc_html($best_education_search_content); ?>
+    </div><!-- .entry-summary -->
 </article><!-- #post-## -->

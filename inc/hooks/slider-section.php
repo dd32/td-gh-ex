@@ -119,18 +119,18 @@ if (!function_exists('best_education_banner_slider')) :
                 wp_reset_postdata();
                 ?>
             </div>
-
-            <div class="scroll-down-content">
-                <div class="sd-img-icon">
-                    <a href="#about-us" class="smoothscroll">
-                        <div class="mouse-icon"><div class="wheel"></div></div>
-                    </a>
+            <?php if (1 == best_education_get_option('show_about_section')) { ?>
+                <div class="scroll-down-content">
+                    <div class="sd-img-icon">
+                        <a href="#about-us" class="smoothscroll">
+                            <div class="mouse-icon"><div class="wheel"></div></div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-
+            <?php } ?>
         </section>
         <!-- end slider-section -->
         <?php
     }
 endif;
-add_action('best_education_action_front_page', 'best_education_banner_slider', 10);
+add_action('best_education_action_slider_section', 'best_education_banner_slider', 10);

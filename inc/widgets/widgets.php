@@ -46,7 +46,7 @@ if (!class_exists('Best_Education_Author_Post_widget')) :
         {
             $opts = array(
                 'classname' => 'best_education_author_widget',
-                'description' => __('Displays authors details in post.', 'best-education'),
+                'description' => __('Displays message details in post.', 'best-education'),
                 'customize_selective_refresh' => true,
             );
             $fields = array(
@@ -62,11 +62,15 @@ if (!class_exists('Best_Education_Author_Post_widget')) :
                 ),
                 'discription' => array(
                     'label' => __('Discription:', 'best-education'),
-                    'type' => 'textarea',
+                    'type' => 'text',
                     'class' => 'widget-content widefat'
                 ),
                 'image_url' => array(
-                    'label' => __('Author Image:', 'best-education'),
+                    'label' => __('Image:', 'best-education'),
+                    'type' => 'image',
+                ),
+                'signature_image_url' => array(
+                    'label' => __('Signature Image:', 'best-education'),
                     'type' => 'image',
                 ),
                 'url-fb' => array(
@@ -86,7 +90,7 @@ if (!class_exists('Best_Education_Author_Post_widget')) :
                 ),
             );
 
-            parent::__construct('best-education-author-layout', __('MB: Author Widget', 'best-education'), $opts, array(), $fields);
+            parent::__construct('best-education-author-layout', __('BE: Message Widget', 'best-education'), $opts, array(), $fields);
         }
 
         /**
@@ -117,6 +121,25 @@ if (!class_exists('Best_Education_Author_Post_widget')) :
                         </div>
                     <?php } ?>
                 </div> <!-- /#author-image -->
+
+                <div class="author-social">
+                    <?php if (!empty($params['url-fb'])) { ?>
+                        <a href="<?php echo esc_url($params['url-fb']); ?>" target="_blank">
+                            <i class="tm-ion fa fa-facebook"></i>
+                        </a>
+                    <?php } ?>
+                    <?php if (!empty($params['url-tw'])) { ?>
+                        <a href="<?php echo esc_url($params['url-tw']); ?>" target="_blank">
+                            <i class="tm-ion fa fa-twitter"></i>
+                        </a>
+                    <?php } ?>
+                    <?php if (!empty($params['url-gp'])) { ?>
+                        <a href="<?php echo esc_url($params['url-gp']); ?>" target="_blank">
+                            <i class="tm-ion fa fa-google-plus"></i>
+                        </a>
+                    <?php } ?>
+                </div>
+
                 <div class="author-details">
                     <?php if (!empty($params['author-name'])) { ?>
                         <h3 class="author-name"><?php echo esc_html($params['author-name']); ?></h3>
@@ -125,17 +148,14 @@ if (!class_exists('Best_Education_Author_Post_widget')) :
                         <p><?php echo wp_kses_post($params['discription']); ?></p>
                     <?php } ?>
                 </div> <!-- /#author-details -->
-                <div class="author-social">
-                    <?php if (!empty($params['url-fb'])) { ?>
-                        <a href="<?php echo esc_url($params['url-fb']); ?>"><i class="ion-social-facebook"></i></a>
-                    <?php } ?>
-                    <?php if (!empty($params['url-tw'])) { ?>
-                        <a href="<?php echo esc_url($params['url-tw']); ?>"><i class="ion-social-twitter"></i></a>
-                    <?php } ?>
-                    <?php if (!empty($params['url-gp'])) { ?>
-                        <a href="<?php echo esc_url($params['url-gp']); ?>"><i class="ion-social-googleplus"></i></a>
-                    <?php } ?>
-                </div>
+
+                <?php if (!empty($params['signature_image_url'])) { ?>
+                    <div class="signature-image">
+                        <img src="<?php echo esc_url($params['signature_image_url']); ?>">
+                    </div>
+                <?php } ?>
+
+
             </div>
             <?php echo $args['after_widget'];
         }
@@ -178,7 +198,7 @@ if (!class_exists('Best_Education_widget_social')) :
                     'class' => 'widefat',
                 ),
             );
-            parent::__construct('best-education-social-layout', __('MB: Social Menu Widget', 'best-education'), $opts, array(), $fields);
+            parent::__construct('best-education-social-layout', __('BE: Social Menu Widget', 'best-education'), $opts, array(), $fields);
         }
 
         /**

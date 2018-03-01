@@ -740,7 +740,7 @@ $wp_customize->add_control(
 	new WP_Customize_Image_Control($wp_customize, 'testimonial_section_background_image',
 		array(
 			'label'       => __('Testimonial Section Background Image.', 'best-education'),
-			'description' => sprintf(__('Recommended Size %1$px X %2$dpx', 'best-education'), 1400, 335),
+			'description' => sprintf(__('Recommended Size %1$dpx X %2$dpx', 'best-education'), 1920, 1080),
 			'section'     => 'testimonial_section_settings',
 			'priority'    => 104,
 
@@ -1462,6 +1462,33 @@ $wp_customize->add_control('breadcrumb_type',
 			'simple'     => esc_html__('Simple', 'best-education'),
 			'advanced'   => esc_html__('Advanced', 'best-education'),
 		),
+		'priority' => 100,
+	)
+);
+
+// Pageloader Section.
+$wp_customize->add_section('pageloader_section',
+	array(
+		'title'      => esc_html__('Pageloader Options', 'best-education'),
+		'priority'   => 120,
+		'capability' => 'edit_theme_options',
+		'panel'      => 'theme_option_panel',
+	)
+);
+
+// Setting breadcrumb_type.
+$wp_customize->add_setting('page_loader_setting',
+	array(
+		'default'           => $default['page_loader_setting'],
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'best_education_sanitize_checkbox',
+	)
+);
+$wp_customize->add_control('page_loader_setting',
+	array(
+		'label'       => esc_html__('Enable PageLoader', 'best-education'),
+		'section'     => 'pageloader_section',
+		'type'        => 'checkbox',
 		'priority' => 100,
 	)
 );

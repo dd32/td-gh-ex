@@ -17,7 +17,6 @@ if (!function_exists('best_education_get_default_theme_options')):
 function best_education_get_default_theme_options() {
 
 	$defaults = array();
-
 	// header section
 	$defaults['enable_header_contact_section'] = 0;
 	$defaults['enable_header_logo_center']     = 0;
@@ -32,7 +31,7 @@ function best_education_get_default_theme_options() {
 	$defaults['select_slider_from']            = 'from-category';
 	$defaults['select_page_for_slider']        = 0;
 	$defaults['select_category_for_slider']    = 1;
-	$defaults['button_text_on_slider']         = esc_html__('Browse More', 'best-education');
+	$defaults['button_text_on_slider']         = esc_html__('Learn More', 'best-education');
 
 	/*About Default Value*/
 	$defaults['show_about_section']               = 0;
@@ -56,7 +55,7 @@ function best_education_get_default_theme_options() {
 	$defaults['select_category_blog_event_tab'] = 1;
 	$defaults['number_of_content_home_blog']    = 30;
 	$defaults['number_of_content_home_event']   = 30;
-	$defaults['select_category_event_tab']      = 0;
+	$defaults['select_category_event_tab']      = 1;
 	$defaults['blog_title_text']                = esc_html__('Latest Blog', 'best-education');
 	$defaults['event_title_text']               = esc_html__('Our Events', 'best-education');
 
@@ -101,9 +100,16 @@ function best_education_get_default_theme_options() {
 	$defaults['copyright_text']           = esc_html__('Copyright All right reserved', 'best-education');
 	$defaults['social_icon_style']        = 'circle';
 	$defaults['number_of_footer_widget']  = 3;
+	$defaults['page_loader_setting']  = 1;
 	$defaults['breadcrumb_type']          = 'simple';
 	$defaults['contact_form_shortcodes']          = '';
+    if (class_exists('Education_Connect')) {
+        $defaults['select_category_sec_about']        = 21;
+        $defaults['select_category_for_team']    = 27;
+        $defaults['select_category_for_testimonial']      = 26;
+        	$defaults['select_category_event_tab']      = 18;
 
+    }
 	// Pass through filter.
 	$defaults = apply_filters('best_education_filter_default_theme_options', $defaults);
 

@@ -59,7 +59,7 @@ if (!function_exists('best_education_callback_section')) :
                                     <div class="cta-btn-group" role="group" aria-label="buttons">
                                         <?php if ($best_education_callback_button_enable == 1) { ?>
                                             <a href="<?php the_permalink(); ?>"
-                                               class="btn btn-sm btn-primary tm-shadow"><?php _e('View More', 'best-education'); ?></a>
+                                               class="btn btn-sm btn-primary tm-shadow"><?php _e('Learn More', 'best-education'); ?></a>
                                         <?php } ?>
                                         <?php if (!empty($best_education_callback_button_text)) { ?>
                                             <a href="<?php echo esc_url($best_education_callback_button_url); ?>"

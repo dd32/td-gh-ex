@@ -20,7 +20,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-
+<?php if (best_education_get_option('page_loader_setting') == 1){ ?>
 <div class="preloader">
     <div class="preloader-wrapper">
         <div class="loader">
@@ -38,7 +38,7 @@
         </div>
     </div>
 </div>
-
+<?php } ?>
 <!-- full-screen-layout/boxed-layout -->
 <?php if (best_education_get_option('homepage_layout_option') == 'full-width') {
     $best_education_homepage_layout = 'full-screen-layout';
@@ -57,7 +57,7 @@ if (best_education_get_option('show_footer_page_section') == 1) {
         <div class="top-bar">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8 col-sm-6 col-xs-12">
+                    <div class="col-md-8 col-xs-12">
                         <?php wp_nav_menu(array(
                             'theme_location' => 'top',
                             'menu_id' => 'top-menu',
@@ -66,7 +66,7 @@ if (best_education_get_option('show_footer_page_section') == 1) {
                             'container_class' => 'menu top-menu'
                         )); ?>
                     </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 pull-right">
+                    <div class="col-md-4 col-xs-12 pull-right">
                         <div class="tm-top-right">
                             <?php if (best_education_get_option('social_icon_style') == 'circle') {
                                 $best_education_social_icon = 'bordered-radius';
@@ -154,7 +154,7 @@ if (best_education_get_option('show_footer_page_section') == 1) {
                                                 <span class="link-detail">
                                             <strong><?php esc_html_e( 'Phone us', 'best-education' ); ?></strong>
                                             <a href="tel:<?php echo preg_replace( '/\D+/', '', esc_attr( best_education_get_option('top_header_telephone') ) ); ?>">
-                                                        <?php echo esc_attr( best_education_get_option('top_header_telephone') ); ?>
+                                                        <?php echo esc_html( best_education_get_option('top_header_telephone') ); ?>
                                                 </a>
                                         </span>
                                             </div>
@@ -266,5 +266,11 @@ if (best_education_get_option('show_footer_page_section') == 1) {
         do_action('best-education-page-inner-title');
     }
     ?>
+    <?php
+    if (is_front_page()) {
+        do_action('best_education_action_slider_section');
+    }
+    ?>
     <!-- Innerpage Header Ends Here -->
     <div id="content" class="site-content">
+

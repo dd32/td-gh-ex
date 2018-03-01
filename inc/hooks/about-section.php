@@ -181,21 +181,29 @@ if (!function_exists('best_education_about_block')):
                                         <div class="featured-course-wrapper">
                                             <figure class="bg-image data-bg-cta-1">
                                                 <img src="<?php echo esc_url($url); ?>">
-                                                <?php if (class_exists('Education_Connect') && post_type_exists('courses' )) { ?>
-                                                    <?php education_connect_course_duration(); ?>
-                                                    <?php education_connect_course_price(); ?>
-                                                <?php } ?>
                                             </figure>
                                             <div class="ec-cpt-format">
                                                 <div class="cpt-format">
                                                     <i class="ecicon ecicon-ec-mortarboard ec-bgcolor"></i>
                                                 </div>
                                             </div>
-                                            <figcaption class="">
+                                            <figcaption class="featured-course-details">
                                                 <div class="block-title-wrapper">
-                                                    <h3 class="section-block-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>
+                                                    <h3 class="section-block-title">
+                                                        <a href="<?php the_permalink();?>"><?php the_title(); ?></a>
+                                                    </h3>
+                                                </div>
+                                                <div class="featured-coursedetail">
+                                                    <?php if (has_excerpt()) {
+                                                        $best_education_course_content = get_the_excerpt();
+                                                    } else {
+                                                        $best_education_course_content = best_education_words_count(18, get_the_content());
+                                                    }
+                                                    echo esc_html($best_education_course_content);
+                                                    ?>
                                                 </div>
                                             </figcaption>
+                                        </div>
                                     </article>
                                 <?php endwhile;
                             endif;

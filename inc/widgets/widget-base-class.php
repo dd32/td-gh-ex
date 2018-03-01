@@ -286,7 +286,7 @@ class Best_Education_Widget_Base extends WP_Widget {
 						$remove_button_style = 'display:inline-block;';
 					}
 					?>
-					<input type="button" value="<?php echo esc_attr_x( 'X', 'Remove', 'best-education' ); ?>" class="button button-secondary btn-image-remove" style="<?php echo esc_attr( $remove_button_style ); ?>" />
+					<input type="button" value="<?php echo esc_attr_x( 'X', 'Remove Button', 'best-education' ); ?>" class="button button-secondary btn-image-remove" style="<?php echo esc_attr( $remove_button_style ); ?>" />
 					<input type="hidden" class="img" name="<?php echo esc_attr( $this->get_field_name( $key ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( $key ) ); ?>" value="<?php echo esc_attr( $value ); ?>" />
 					<div class="image-preview-wrap">
 					<?php if ( ! empty( $value ) ) : ?>

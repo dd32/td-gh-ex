@@ -123,7 +123,7 @@ if (!function_exists('best_education_team')) :
                                             </div>
                                             <div class="move">
                                                 <h4 class="section-block-title">
-                                                    <a href="<?php the_title(); ?>">
+                                                    <a href="<?php the_permalink(); ?>">
                                                         <?php the_title(); ?>
                                                     </a>
                                                 </h4>

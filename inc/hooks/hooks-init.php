@@ -32,3 +32,8 @@ require get_template_directory().'/inc/hooks/testimonial-section.php';
 /*section hook init*/
 require get_template_directory().'/inc/hooks/breadcrumb.php';
 require get_template_directory().'/inc/hooks/header-inner-page.php';
+
+/* post-type-meta */
+if (class_exists('Education_Connect')){
+    require get_template_directory().'/inc/layout-meta/post-type-layout-meta.php';
+}

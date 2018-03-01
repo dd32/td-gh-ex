@@ -41,6 +41,9 @@ Best Education is distributed under the terms of the GNU GPL
 = 0.0.7 =
 =Fixed bugs on review=
 
+= 1.0.0 =
+=Fixed bugs on review=
+
 
 == Credits ==
 
