@@ -99,19 +99,20 @@
 #customize-control-avant-site-layout,
 #customize-control-avant-remove-content-border,
 #customize-control-avant-page-remove-titlebar,
+#customize-control-avant-page-widget-spacing,
 #customize-control-avant-header-nav-pos,
 #customize-control-avant-blog-break-blocks,
 #customize-control-avant-blog-layout,
 #customize-control-avant-blog-list-img-cut,
 #customize-control-avant-blog-widget-title-style,
-#customize-control-avant-remove-wc-results-sorting,
+#customize-control-avant-remove-cats-count,
 #customize-control-avant-topbar-font-color,
 #customize-control-avant-navi-font-color,
 #customize-control-avant-footer-font-color,
 #customize-control-avant-website-head-no,
 #customize-control-avant-website-error-msg,
 #customize-control-avant-footer-side-fullwidth,
-#customize-control-avant-remove-product-border,
+#customize-control-avant-remove-wc-page-titles,
 #customize-control-avant-website-txt-copy {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	padding: 0 0 20px;
@@ -132,6 +133,7 @@
 #customize-control-avant-blog-cats,
 #customize-control-avant-remove-blog-title,
 #customize-control-avant-article-content-display,
+#customize-control-avant-page-content-spacing,
 #customize-control-avant-bottombar-switch,
 #customize-control-avant-blog-left-sidebar,
 #customize-control-avant-single-remove-meta {

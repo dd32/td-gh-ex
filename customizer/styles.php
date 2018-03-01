@@ -1013,6 +1013,66 @@ function customizer_library_avant_build_styles() {
 		) );
 	}
 
+	// Remove WC Categories Count
+	$setting = 'avant-remove-cats-count';
+	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+	if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+		$cat_count = esc_attr( $mod );
+
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'ul.products mark.count'
+			),
+			'declarations' => array(
+				'display' => 'none'
+			)
+		) );
+	}
+	// Widget Spacing
+	$setting = 'avant-page-widget-spacing';
+	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+	if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+		$widget_spacing = esc_attr( $mod );
+
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.widget-area .widget'
+			),
+			'declarations' => array(
+				'margin' => '0 0 ' . $widget_spacing . 'px'
+			)
+		) );
+	}
+	// Content Border Radius
+	$setting = 'avant-page-content-spacing';
+	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+	if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+		$content_bradius = esc_attr( $mod );
+
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.woocommerce .avant-site-full-width #container,
+				.avant-site-full-width .content-area,
+				.avant-site-full-width .widget-area,
+				.avant-site-full-width .widget-area.sidebar-break-blocks .widget,
+				.blog-break-blocks article.hentry,
+				.blog-break-blocks .site-main > .entry-header,
+				.blog-style-imgblock .blog-post-blocks-inner,
+				.blog-style-postblock .blog-post-blocks-inner'
+			),
+			'declarations' => array(
+				'border-radius' => $content_bradius . 'px',
+				'overflow' => 'hidden'
+			)
+		) );
+	}
+
 }
 endif;
 

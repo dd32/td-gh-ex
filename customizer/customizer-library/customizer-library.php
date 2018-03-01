@@ -38,7 +38,7 @@ if ( ! class_exists( 'Customizer_Library' ) ) : // Helper functions to output th
 // Custom upsell controls for the theme customizer.
 	require plugin_dir_path( __FILE__ ) . 'custom-controls/help.php';
 
-// Custom upsell controls for the theme customizer.
+// Custom ImageSelect controls for the theme customizer.
 	require plugin_dir_path( __FILE__ ) . 'custom-controls/imageselect.php';
 
 // Custom controls for the theme customizer.

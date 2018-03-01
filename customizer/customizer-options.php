@@ -243,6 +243,13 @@ function customizer_library_avant_options() {
         'type'    => 'checkbox',
         'default' => 0,
     );
+    $options['avant-header-remove-social'] = array(
+        'id' => 'avant-header-remove-social',
+        'label'   => __( 'Remove Social Icons', 'avant' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
     if ( avant_is_woocommerce_activated() ) :
         $options['avant-header-remove-cart'] = array(
             'id' => 'avant-header-remove-cart',
@@ -251,14 +258,21 @@ function customizer_library_avant_options() {
             'type'    => 'checkbox',
             'default' => 0,
         );
+        $choices = array(
+            'fa-shopping-cart' => __( 'Shopping Cart', 'avant' ),
+            'fa-shopping-basket' => __( 'Shopping Basket', 'avant' ),
+            'fa-shopping-bag' => __( 'Shopping Bag', 'avant' )
+        );
+        $options['avant-cart-icon'] = array(
+            'id' => 'avant-cart-icon',
+            'label'   => __( 'Cart Icon', 'avant' ),
+            'section' => $section,
+            'type'    => 'select',
+            'description' => __( 'Due to the AJAX, This will only change when you open the site again in a new tab', 'avant' ),
+            'choices' => $choices,
+            'default' => 'fa-shopping-cart'
+        );
     endif;
-    $options['avant-header-remove-social'] = array(
-        'id' => 'avant-header-remove-social',
-        'label'   => __( 'Remove Social Icons', 'avant' ),
-        'section' => $section,
-        'type'    => 'checkbox',
-        'default' => 0,
-    );
     $options['avant-noteon-header'] = array(
         'id' => 'avant-noteon-header',
         'section' => $section,
@@ -580,7 +594,7 @@ function customizer_library_avant_options() {
     
     $options['avant-page-sidebar-blocks'] = array(
         'id' => 'avant-page-sidebar-blocks',
-        'label'   => __( 'Sidebar Blocks', 'avant' ),
+        'label'   => __( 'Break Sidebar into Blocks', 'avant' ),
         'section' => $section,
         'type'    => 'checkbox',
         'default' => 0,
@@ -591,6 +605,18 @@ function customizer_library_avant_options() {
         'section' => $section,
         'type'    => 'checkbox',
         'default' => 0,
+    );
+    $options['avant-page-widget-spacing'] = array(
+        'id' => 'avant-page-widget-spacing',
+        'label'   => __( 'Sidebar Widget Spacing', 'avant' ),
+        'section' => $section,
+        'type'    => 'range',
+        'input_attrs' => array(
+            'min'   => 0,
+            'max'   => 100,
+            'step'  => 2,
+        ),
+        'default' => 50
     );
     $options['avant-blog-widget-title-size'] = array(
         'id' => 'avant-blog-widget-title-size',
@@ -648,6 +674,18 @@ function customizer_library_avant_options() {
         'type'    => 'select',
         'choices' => $choices,
         'default' => 'avant-page-fimage-size-medium'
+    );
+    $options['avant-page-content-spacing'] = array(
+        'id' => 'avant-page-content-spacing',
+        'label'   => __( 'Content Border Radius', 'avant' ),
+        'section' => $section,
+        'type'    => 'range',
+        'input_attrs' => array(
+            'min'   => 0,
+            'max'   => 40,
+            'step'  => 2,
+        ),
+        'default' => 0
     );
     $options['avant-noteon-pages'] = array(
         'id' => 'avant-noteon-pages',
@@ -727,13 +765,6 @@ function customizer_library_avant_options() {
             'panel' => $panel
         );
         
-        $options['avant-remove-product-border'] = array(
-            'id' => 'avant-remove-product-border',
-            'label'   => __( 'Remove Product Border', 'avant' ),
-            'section' => $section,
-            'type'    => 'checkbox',
-            'default' => 0,
-        );
         $options['avant-remove-wc-page-titles'] = array(
             'id' => 'avant-remove-wc-page-titles',
             'label'   => __( 'Remove Shop Page Titles', 'avant' ),
@@ -741,9 +772,23 @@ function customizer_library_avant_options() {
             'type'    => 'checkbox',
             'default' => 0,
         );
+        $options['avant-remove-product-border'] = array(
+            'id' => 'avant-remove-product-border',
+            'label'   => __( 'Remove Product Border', 'avant' ),
+            'section' => $section,
+            'type'    => 'checkbox',
+            'default' => 0,
+        );
         $options['avant-remove-wc-results-sorting'] = array(
             'id' => 'avant-remove-wc-results-sorting',
             'label'   => __( 'Remove Shop Results & Sorting', 'avant' ),
+            'section' => $section,
+            'type'    => 'checkbox',
+            'default' => 0,
+        );
+        $options['avant-remove-cats-count'] = array(
+            'id' => 'avant-remove-cats-count',
+            'label'   => __( 'Remove Categories Count', 'avant' ),
             'section' => $section,
             'type'    => 'checkbox',
             'default' => 0,

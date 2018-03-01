@@ -68,6 +68,14 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.02
+* Style tweaks/fixes
+* Added setting to select/change header WooCommerce cart icon
+* Added setting to remove WooCommerce categories count
+* Added setting to adjust sidebar widget spacing
+* Added setting to set border-radius to content areas
+* Updated the language .pot file
+
 #### 1.1.01
 * Fix ImageSelect setting to be compatible with older php versions
 
