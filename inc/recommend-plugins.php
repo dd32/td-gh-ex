@@ -51,6 +51,16 @@ function bc_business_consulting_register_required_plugins() {
 			'slug'      => 'wp-instagram-widget',
 			'required'  => false,
 		),
+		array(
+			'name'      => 'WooCommerce Popup Cart + ajax',
+			'slug'      => 'woocomm-popup-cart-ajax',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'Smart Variation Swatches for WooCommerce',
+			'slug'      => 'variation-swatches-style',
+			'required'  => false,
+		),
 
 	);
 
