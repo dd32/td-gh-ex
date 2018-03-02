@@ -558,6 +558,9 @@ function ashe_customize_register( $wp_customize ) {
 
 	// Show Sidebar Icon
 	ashe_checkbox_control( 'main_nav', 'show_sidebar', esc_html__( 'Show Sidebar Icon', 'ashe' ), 'refresh', 15 );
+	
+	// Merge to Responsive Menu
+	ashe_checkbox_control( 'main_nav', 'merge_menu', esc_html__( 'Merge to Responsive Menu', 'ashe' ), 'refresh', 17 );
 
 
 /*

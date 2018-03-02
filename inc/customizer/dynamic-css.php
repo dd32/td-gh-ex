@@ -57,13 +57,9 @@ function ashe_true_false( $option ) {
 		}
 	';
 
-	if ( ashe_options( 'main_nav_label' ) === true ) {
+	if ( ashe_options( 'main_nav_label' ) === true || ! has_nav_menu('top') ) {
 		$css .= "
 		@media screen and ( max-width: 979px ) {
-			#top-bar {
-				text-align: center !important;
-			}
-
 			.top-bar-socials {
 				float: none !important;
 			}

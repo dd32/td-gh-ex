@@ -18,7 +18,7 @@
 			'fallback_cb' 		=> 'ashe_top_menu_fallback'
 		) );
 
-		if ( ashe_options( 'main_nav_label' ) === false ) { ?>
+		if ( ashe_options( 'main_nav_label' ) === false && has_nav_menu('top') ) { ?>
 				
 			<!-- Mobile Menu Button -->
 			<span class="mobile-menu-btn">

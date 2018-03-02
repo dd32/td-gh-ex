@@ -22,6 +22,7 @@ function ashe_options( $control ) {
 		'main_nav_align' => 'center',
 		'main_nav_show_search' => true,
 		'main_nav_show_sidebar' => true,
+		'main_nav_merge_menu' => false,
 		'featured_slider_label' => false,
 		'featured_slider_display' => 'all',
 		'featured_slider_category' => 'null',
