@@ -37,6 +37,20 @@ function arctic_black_customize_register( $wp_customize ) {
 	$wp_customize->get_section( 'colors' )->panel 						= 'theme_settings';
 
 
+	// Load custom sections.
+	require_once( get_parent_theme_file_path( "/inc/customizer/controls/class-section-pro.php" ) );
+
+	// Register custom section types.
+	$wp_customize->register_section_type( 'Arctic_Black_Customize_Section_Pro' );
+
+	// Register sections.
+	$wp_customize->add_section( new Arctic_Black_Customize_Section_Pro( $wp_customize, 'arctic_black_pro', array(
+		'title'    			=> esc_html__( 'Campaign Kit', 'arctic-black' ),
+		'pro_text' 			=> esc_html__( 'Learn More', 'arctic-black' ),
+		'pro_url'  			=> esc_url( 'https://campaignkit.co/' ),
+		'priority'			=> 999
+	) ) );
+
 	/** Theme Colors */
 	$wp_customize->add_setting(
 		'primary_color',
@@ -350,6 +364,24 @@ function arctic_black_customize_register( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting(
+		'theme_designer' ,
+		 array(
+		    'default' 			=> $setting['theme_designer'],
+		    'transport'			=> 'postMessage',
+		    'sanitize_callback' => 'arctic_black_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control(
+		'theme_designer',
+		array(
+			'label'    => __( 'Display theme designer at footer?', 'arctic-black' ),
+			'section'  => 'footer_area',
+			'settings' => 'theme_designer',
+			'type'     => 'checkbox'
+		)
+	);
+
     if ( isset( $wp_customize->selective_refresh ) ) {
 
 		$wp_customize->selective_refresh->add_partial(
@@ -366,7 +398,7 @@ function arctic_black_customize_register( $wp_customize ) {
 			array(
 				'selector' 				=> '.site-info',
 				'settings' 				=> array( 'footer_copyright' ),
-				'render_callback' 		=> 'arctic_black_do_footer_copyright',
+				'render_callback' 		=> 'arctic_black_get_footer_copyright',
 				'container_inclusive'	=> false,
 		) );
 
