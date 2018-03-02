@@ -135,3 +135,6 @@ if( ! function_exists( 'bc_business_consulting_blog_expert_excerpt_length' ) ) :
 
 add_filter( 'excerpt_length', 'bc_business_consulting_blog_expert_excerpt_length', 999 );
 endif; 
+
+
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);

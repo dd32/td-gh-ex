@@ -1,4 +1,7 @@
 == Changelog ==
+ 
+= 1.1.0 =
+* Basic woocommerce issue fixed !
 
 = 1.0.9 =
 * Responsive issue fixed !

@@ -95,6 +95,7 @@ if ( ! function_exists( 'bc_business_consulting_setup' ) ) :
 		// Add theme editor style.
 		add_editor_style( 'assets/editor-style.css' );
 		
+	   // Declare WooCommerce support.
 		add_theme_support( 'woocommerce' );
 		add_theme_support( 'wc-product-gallery-zoom' );
 		add_theme_support( 'wc-product-gallery-lightbox' );
