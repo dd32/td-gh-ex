@@ -57,7 +57,7 @@ $args = array(
 	'must_log_in'       => '<p class="must-log-in">' . sprintf( esc_html__( 'You must be', 'attire' ) . ' <a href="%1$s">' . esc_html__( 'logged in', 'attire' ) . '</a> ' . esc_html__( 'to post a comment.', 'attire' ),
 			wp_login_url( get_permalink() )
 		) . '</p>',
-	'logged_in_as'      => '<p class="logged-in-as">' . sprintf( esc_html__( 'Logged in as' ) . ' <a href="%1$s">%2$s</a>. <a href="%3$s" class="comment-logout" title="' . esc_attr__( 'Log out of this account', 'attire' ) . '">' . esc_html__( 'Log out?', 'attire' ) . '</a>', admin_url( 'profile.php' ), $user_identity, wp_logout_url( get_permalink() ) ) . '</p>',
+	'logged_in_as'      => '<p class="logged-in-as">' . sprintf( esc_html__( 'Logged in as', 'attire' ) . ' <a href="%1$s">%2$s</a>. <a href="%3$s" class="comment-logout" title="' . esc_attr__( 'Log out of this account', 'attire' ) . '">' . esc_html__( 'Log out?', 'attire' ) . '</a>', admin_url( 'profile.php' ), $user_identity, wp_logout_url( get_permalink() ) ) . '</p>',
 	'id_form'           => 'commentform',
 	'id_submit'         => 'submit',
 	'title_reply'       => apply_filters( 'attire_title_reply', esc_html__( 'Leave a Comment', 'attire' ) ),
