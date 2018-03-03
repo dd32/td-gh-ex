@@ -862,11 +862,11 @@ $attire_options = array(
 		'type'        => 'typography',
 		'section'     => 'attire_generic_fonts',
 		'default'     => 'Montserrat',
-		'description' => __( 'Font family for H1...H6 html tags', 'attire' )
+		'description' => esc_html__( 'Font family for H1...H6 html tags', 'attire' )
 	),
 	'heading_font_size'   => array(
 		'label'       => __( 'Heading Font Size', 'attire' ),
-		'description' => __( 'For H tags (h1...h6)', 'attire' ),
+		'description' => esc_html__( 'For H tags (h1...h6)', 'attire' ),
 		'transport'   => 'postMessage',
 		'type'        => 'range',
 		'section'     => 'attire_generic_fonts',
