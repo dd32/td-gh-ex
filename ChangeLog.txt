@@ -2,6 +2,11 @@
 
 == CHANGE LOG == 
 
+= Version 1.5.0 = = 03/03/2018
+* Add - Added "Columns" option for Section Gallery
+* Add - Added "Columns" option for Section Service
+* Add - Added "Columns" option  for Section Team
+
 = Version 1.4.9 = = 08/02/2018
 * Fix - Fixed  "Menu Font Color" option issue
 * Optimized Section Team

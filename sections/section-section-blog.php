@@ -13,7 +13,11 @@
   $fullwidth         =  avata_option('section_fullwidth_blog');
   $display_categories=  avata_option('section_display_categories_blog');
   
-  $col               = $columns>0?12/$columns:4;
+  $columns           = $columns==0?4:$columns;
+  $column           = 12/$columns;
+  if($columns == 5)
+  	$column = 15;
+	
   $container         = 'container';
   if ($fullwidth=='1')
  	 $container         = 'container-fullwidth';
@@ -60,7 +64,7 @@ if($the_query->have_posts()):
 					  
 			}
 		
-		$news_item .= '<div class="col-md-'.$col.' '.$avata_animation.'" data-os-animation="fadeInUp" data-os-animation-delay="'.$avata_animation_delay_new.'">
+		$news_item .= '<div class="col-md-'.$column.' '.$avata_animation.'" data-os-animation="fadeInUp" data-os-animation-delay="'.$avata_animation_delay_new.'">
 	  <div class="avata-post" >
 		'.$featured_image.'
 		<div class="avata-post-text">

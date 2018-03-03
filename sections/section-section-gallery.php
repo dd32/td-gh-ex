@@ -4,6 +4,13 @@
   $section_subtitle  = avata_option('section_subtitle_gallery');
   $gallery           = avata_option('section_items_gallery');
   $fullwidth         = avata_option('section_fullwidth_gallery');
+  $columns           = avata_option('columns_gallery');
+  
+  $columns           = $columns==0?6:$columns;
+  $column           = 12/$columns;
+  if($columns == 5)
+  	$column = 15;
+	
   $container         = 'container';
   if ($fullwidth=='1')
  	 $container         = 'container-fluid';
@@ -30,7 +37,7 @@
 				
 				
 	?>
-    <li class="col-lg-2 col-md-4 col-sm-4 work <?php echo $avata_animation;?>" data-download-url="<?php echo esc_url($item['image']);?>" data-src="<?php echo esc_url($item['image']);?>" data-sub-html="<?php echo wp_kses($item['title'], $allowedposttags);?>" data-facebook-share-url="<?php echo esc_url($item['image']);?>" data-twitter-share-url="<?php echo esc_url($item['image']);?>" data-googleplus-share-url="<?php echo esc_url($item['image']);?>" data-pinterest-share-url="<?php echo esc_url($item['image']);?>" data-os-animation="fadeIn" data-os-animation-delay="<?php echo $avata_animation_delay_new;?>"><a href="#" class="work-box"> <img src="<?php echo esc_url($item['image']);?>" class="img-responsive" alt="" />
+    <li class="col-md-<?php echo $column;?> work <?php echo $avata_animation;?>" data-download-url="<?php echo esc_url($item['image']);?>" data-src="<?php echo esc_url($item['image']);?>" data-sub-html="<?php echo wp_kses($item['title'], $allowedposttags);?>" data-facebook-share-url="<?php echo esc_url($item['image']);?>" data-twitter-share-url="<?php echo esc_url($item['image']);?>" data-googleplus-share-url="<?php echo esc_url($item['image']);?>" data-pinterest-share-url="<?php echo esc_url($item['image']);?>" data-os-animation="fadeIn" data-os-animation-delay="<?php echo $avata_animation_delay_new;?>"><a href="#" class="work-box"> <img src="<?php echo esc_url($item['image']);?>" class="img-responsive" alt="" />
         <div class="overlay">
           <div class="overlay-caption">
             <p><i class="fa fa-search" aria-hidden="true"></i></p>

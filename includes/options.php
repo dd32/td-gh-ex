@@ -242,11 +242,15 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 
 			  ),
 			  'background_opacity_'.$id => array(
-					'type'        => 'select',
+					'type'        => 'slider',
 					'label'       => esc_attr__( 'Background Opacity', 'avata' ),
 					'description' =>  esc_attr__( 'Section background color opacity.', 'avata' ),
 					'default'     => $default_options['background_opacity'],
-					'choices'     =>  array('0.1'=>'0.1','0.2'=>'0.2','0.3'=>'0.3','0.4'=>'0.4','0.5'=>'0.5','0.6'=>'0.6','0.7'=>'0.7','0.8'=>'0.8','0.9'=>'0.9','1'=>'1')
+					'choices'     => array(
+													  'min'  => 0.1,
+													  'max'  => 1,
+													  'step' => 0.1,
+												  ),
 			  ),
 			  
 			  'background_image_'.$id => array(
@@ -662,7 +666,21 @@ $service_1_defaults = array(
 
 $service_1_options = avata_public_section_options('service_1',$service_1_defaults,false,$args);
 
-array_splice($service_1_options,3,0,array('section_items_service_1' => array(
+array_splice($service_1_options,3,0,array(
+
+'columns_service_1' => array(
+												  'settings' => 'columns_service_1',
+												  'label'   => __( 'Columns', 'avata' ),
+												  'section' => 'section_service_1',
+												  'type'    => 'slider',
+												  'default' => '3',
+												  'choices'     => array(
+													  'min'  => 2,
+													  'max'  => 5,
+													  'step' => 1,
+												  ),
+											  ),
+'section_items_service_1' => array(
 													'type'        => 'repeater',
 													'label'       => esc_attr__( 'Service Items', 'avata' ),
 													'section'     => 'section_service_1',
@@ -831,7 +849,21 @@ $gallery_defaults = array(
 
 $gallery_options = avata_public_section_options('gallery',$gallery_defaults,false,$args);
 
-array_splice($gallery_options,3,0,array('section_items_gallery' => array(
+array_splice($gallery_options,3,0,array(
+
+'columns_gallery' => array(
+												  'settings' => 'columns_gallery',
+												  'label'   => __( 'Columns', 'avata' ),
+												  'section' => 'section_gallery',
+												  'type'    => 'slider',
+												  'default' => '6',
+												  'choices'     => array(
+													  'min'  => 2,
+													  'max'  => 6,
+													  'step' => 1,
+												  ),
+											  ),
+'section_items_gallery' => array(
 													'type'        => 'repeater',
 													'label'       => esc_attr__( 'Gallery Items', 'avata' ),
 													'section'     => 'section_gallery',
@@ -892,7 +924,21 @@ $team_defaults = array(
 $team_options = avata_public_section_options('team',$team_defaults,false,$args);
 
 		  
-array_splice($team_options,3,0,array('section_items_team' => array(
+array_splice($team_options,3,0,array(
+
+'columns_team' => array(
+												  'settings' => 'columns_team',
+												  'label'   => __( 'Columns', 'avata' ),
+												  'section' => 'section_team',
+												  'type'    => 'slider',
+												  'default' => '3',
+												  'choices'     => array(
+													  'min'  => 2,
+													  'max'  => 5,
+													  'step' => 1,
+												  ),
+											  ),
+'section_items_team' => array(
 													'type'        => 'repeater',
 													'label'       => esc_attr__( 'Members', 'avata' ),
 													'section'     => 'section_team',
@@ -1161,14 +1207,18 @@ $counter_defaults = array(
 $counter_options = avata_public_section_options('counter',$counter_defaults,false,$args);
 
 		  
-array_splice($counter_options,3,0,array(
+array_splice($counter_options,3,0,array(	
 											'columns_counter' => array(
 												  'settings' => 'columns_counter',
 												  'label'   => __( 'Columns', 'avata' ),
 												  'section' => 'section_counter',
-												  'type'    => 'select',
-												  'choices' => array( 2=>2,3=>3,4=>4 ),
-												  'default' => '4'
+												  'type'    => 'slider',
+												  'default' => '4',
+												  'choices'     => array(
+													  'min'  => 2,
+													  'max'  => 5,
+													  'step' => 1,
+												  ),
 											  ),
 
 											'section_items_counter' => array(
@@ -1262,20 +1312,28 @@ $blog_options = avata_public_section_options('blog',$blog_defaults,false,$blog_a
 array_splice($blog_options,3,0,
 		array(
 		'section_post_num_blog' => array(
-				  'type'        => 'select',
+				  'type'        => 'slider',
 				  'settings'    => 'section_post_num_blog',
 				  'label'       => esc_attr__( 'Display Posts Num', 'avata' ),
 				  'description' => '',
 				  'default'     => '3',
-				  'choices'     => array('2'=>'2','3'=>'3','4'=>'4','5'=>'5','6'=>'6','7'=>'7','8'=>'8','9'=>'9')
+				  'choices'     => array(
+													  'min'  => 2,
+													  'max'  => 9,
+													  'step' => 1,
+												  ),
 		),
 		'section_columns_blog' => array(
-				  'type'        => 'select',
+				  'type'        => 'slider',
 				  'settings'    => 'section_columns_blog',
 				  'label'       => esc_attr__( 'Columns', 'avata' ),
 				  'description' => '',
 				  'default'     => '3',
-				  'choices'     => array('2'=>'2','3'=>'3','4'=>'4')
+				  'choices'     => array(
+													  'min'  => 2,
+													  'max'  => 5,
+													  'step' => 1,
+												  ),
 		),
 		'section_category_blog' => array(
 				  'type'        => 'select',
@@ -1707,13 +1765,17 @@ Kirki::add_field( 'avata', array(
 	) );
 
 Kirki::add_field( 'avata', array(
-	'type'     => 'select',
+	'type'     => 'slider',
 	'settings' => 'sticky_header_opacity_frontpage',
 	'label'    => __('Sticky Header Opacity', 'avata'),
 	'section'  => 'avata_frontpage_header',
 	'default'  => '0.4',
 	'priority' => 10,
-	'choices'  => array_combine(range(0.1,1,0.1), range(0.1,1,0.1))
+	'choices'     => array(
+													  'min'  => 0.1,
+													  'max'  => 1,
+													  'step' => 0.1,
+												  ),
 	) );
 
 	

@@ -4,9 +4,13 @@
   $section_subtitle  = avata_option('section_subtitle_counter');
   $counter           = avata_option('section_items_counter');
   $fullwidth         = avata_option('section_fullwidth_counter');
+  
   $columns           = absint(avata_option('columns_counter'));
   $columns           = $columns==0?4:$columns;
-  $columns           = 12/$columns;
+  $column           = 12/$columns;
+  if($columns == 5)
+  	$column = 15;
+	
   $container         = 'container';
   if ($fullwidth=='1')
  	 $container         = 'container-fluid';
@@ -32,7 +36,7 @@
                           <?php
                           $icon  = str_replace('fa-','',$item['icon']);
                           ?>
-							<div class="col-md-<?php echo $columns;?> text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+							<div class="col-md-<?php echo $column;?> text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
 								<div class="icon">
                                 <?php 
 								if($item['image']!=''):

@@ -4,6 +4,13 @@
   $section_subtitle  = avata_option('section_subtitle_service_1');
   $service           = avata_option('section_items_service_1');
   $fullwidth         =  avata_option('section_fullwidth_service_1');
+  
+  $columns           = avata_option('columns_service_1');
+  $columns           = $columns==0?3:$columns;
+  $column           = 12/$columns;
+  if($columns == 5)
+  	$column = 15;
+	
   $container         = 'container';
   if ($fullwidth=='1')
  	 $container         = 'container-fluid';
@@ -25,7 +32,7 @@
 		foreach($service as $item ):
 				
 	?>
-    <div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 avata-feature <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay_new;?>">
+    <div class="col-md-<?php echo $column;?> avata-feature <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay_new;?>">
 					<div class="avata-icon">
                     <?php if($item['image']!=''){
 						if(is_numeric($item['image']))
