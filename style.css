@@ -1,10 +1,10 @@
 /*
 Theme Name: QuickPress
-Theme URI: http://www.quickonlinetips.com/archives/quickpress/
+Theme URI: https://www.quickonlinetips.com/archives/quickpress/
 Description: A lightweight, 2-3 columns, widget ready, SEO optimized, fast loading, easy to customize WordPress theme.
-Version: 1.8.5
+Version: 1.8.6
 Author: QuickOnlineThemes
-Author URI: http://www.quickonlinetips.com/
+Author URI: https://www.quickonlinetips.com/
 Tags: two-columns, three-columns, right-sidebar, threaded-comments, sticky-post, custom-background
 Text Domain: quickpress
 License: GNU General Public License v2.0
@@ -977,7 +977,7 @@ a img {
     text-align: center;
     margin-top: 10px;
     margin-bottom: 60px;
-    font weight: bold;
+    font-weight: bold;
     font-size: 1em;
 }
 
