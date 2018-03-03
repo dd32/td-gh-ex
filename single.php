@@ -9,27 +9,36 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<?php
+$home_layout = get_theme_mod('home_layout', 0);
+if($home_layout){
+?>
+<div class="col-md-12">
+<?php }else{?>
+<div class="col-md-8">
+<?php }?>
 
-		<?php
-		while ( have_posts() ) : the_post();
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main">
 
-			get_template_part( 'template-parts/content', get_post_type() );
+    <?php
+    while ( have_posts() ) : the_post();
 
-			fmi_post_navigation();
+      get_template_part( 'template-parts/content', get_post_type() );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+      fmi_post_navigation();
 
-		endwhile; // End of the loop.
-		?>
+      // If comments are open or we have at least one comment, load up the comment template.
+      if ( comments_open() || get_comments_number() ) :
+        comments_template();
+      endif;
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+    endwhile; // End of the loop.
+    ?>
 
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
 <?php
 fmi_sidebar_select();
 get_footer();

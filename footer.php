@@ -10,11 +10,13 @@
  */
 
 ?>
-		<div class="clear"></div>
-	</div></div><!-- #content -->
+      </div>
+    </div>
+	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer"><div class="inner">
-		<div class="site-info">            
+	<footer id="colophon" class="site-footer">
+    <div class="container">
+		<div class="site-info clearfix">            
 			<div class="site-info-social">
 <?php if(get_theme_mod('social_email')):?>
 <a href="<?php echo esc_url('mailto:'.antispambot(get_theme_mod('social_email'))); ?>" title="<?php esc_attr_e('Send Us an Email', 'fmi'); ?>"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
@@ -49,8 +51,8 @@
 <?php if(get_theme_mod('social_flickr')):?>
 <a href="<?php echo esc_url(get_theme_mod('social_flickr')); ?>" target="_blank" title="<?php esc_attr_e('Find Us on Flickr', 'fmi'); ?>"><i class="fa fa-flickr" aria-hidden="true"></i></a>
 <?php endif; ?>
-        	</div>
-        	<div class="site-info-copyright">
+      </div>
+      <div class="site-info-copyright">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'fmi' ) ); ?>"><?php
 				/* translators: %s: CMS name, i.e. WordPress. */
 				printf( esc_html__( 'Proudly powered by %s', 'fmi' ), 'WordPress' );
@@ -60,13 +62,10 @@
 				/* translators: 1: Theme name, 2: Theme author. */
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'fmi' ), 'Fmi', '<a href="http://forrss.com/">Forrss</a>' );
 			?>
-            </div>  
-            
-            <div class="clear"></div>
+      </div>  
 		</div><!-- .site-info -->
-        
-        <div class="clear"></div>
-	</div></footer><!-- #colophon -->
+    </div>
+  </footer><!-- #colophon -->
     
     <button id="back_top" aria-label="<?php esc_attr_e( 'Top', 'fmi' ); ?>" value="<?php echo esc_attr_x( 'Top', 'top button', 'fmi' ); ?>"><i class="fa fa-angle-up" aria-hidden="true"></i><span class="screen-reader-text"><?php echo esc_html_x( 'Top', 'top button', 'fmi' ); ?></span></button>
 </div><!-- #page -->

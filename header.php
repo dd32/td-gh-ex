@@ -24,48 +24,69 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'fmi' ); ?></a>
 
-	<header id="masthead" class="site-header"><div class="inner">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
-			?>
-            
-			<?php if ( !get_theme_mod( 'header_search' )):?>
-            <div class="site-branding-search">
-                <?php get_search_form(); ?>
-            </div>
-            <?php endif;?>	
-            
-            <div class="clear"></div>
-		</div><!-- .site-branding -->        
-        <div class="clear"></div>
-	</div></header><!-- #masthead -->
+	<header id="masthead" class="site-header">
+    <div class="container">
+  		<div class="site-branding">
+  			<?php
+  			the_custom_logo();
+  			if ( is_front_page() && is_home() ) : ?>
+  				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+  			<?php else : ?>
+  				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+  			<?php
+  			endif;
+  			?>
+              
+  			<?php if ( !get_theme_mod( 'header_search' )):?>
+        <div class="site-branding-search">
+            <?php get_search_form(); ?>
+        </div>
+        <?php endif;?>	
+
+        <button class="menu-toggle navbar-toggle" data-toggle="collapse" data-target="#main-navigation-collapse"><i class="fa fa-bars"></i></button>
+  		</div><!-- .site-branding -->
+    </div>
+	</header><!-- #masthead -->
     
-    <nav id="site-navigation" class="main-navigation"><div class="inner">
-        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" value="<?php echo esc_attr_x( 'Menu', 'primary menu', 'fmi' ); ?>"><i class="fa fa-bars" aria-hidden="true"></i><span class="screen-reader-text"><?php echo esc_html_x( 'Menu', 'primary menu', 'fmi' ); ?></span></button>
+  <div id="site-navigation" class="main-navigation <?php if((is_home())or(is_single())or(is_search())or(is_archive())){echo 'mr';}?>">
+    <div class="container">
+      <div id="main-navigation-collapse" class="collapse navbar-collapse">
         <?php
+          if (has_nav_menu('menu-1')) {
             wp_nav_menu( array(
-                'theme_location' => 'menu-1',
-                'menu_id'        => 'primary-menu',
+              'theme_location' => 'menu-1',
+              'container' => 'nav',
+              'menu_class' => 'nav navbar-nav responsive-nav hidden-md hidden-lg',
             ) );
+          }
         ?>
-        <div class="clear"></div>
-    </div></nav><!-- #site-navigation -->
+      </div>
+      <?php
+        if (has_nav_menu('menu-1')) {
+          wp_nav_menu( array(
+            'theme_location' => 'menu-1',
+            'container' => 'nav',
+            'menu_class' => 'menu hidden-sm hidden-xs',
+          ) );
+        }
+      ?>
+    </div>
+  </div><!-- #site-navigation -->
 
 <?php
 if(get_theme_mod('activate_slider',0)){
 	if(is_front_page()){
 ?>
-		<div class="site-slider"><div class="inner"><?php fmi_slider();?><div class="clear"></div></div></div>
+		<div class="site-slider">
+      <div class="container">
+      <?php fmi_slider();?>
+      </div>
+    </div>
 <?php
 	}
 }
 ?>
 
-	<div id="content" class="site-content"><div class="inner">
+	<div id="content" class="site-content">
+    <div class="container">
+      <div class="row">

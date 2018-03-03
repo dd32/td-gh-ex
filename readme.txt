@@ -1,34 +1,48 @@
 === Fmi ===
 Theme Name: Fmi
 Theme URI: http://forrss.com/themes/fmi/
-Version: 1.3.13
-Requires at least: 4.5
-Tested up to: 4.8
+Description: Fmi is an elegant blog theme with responsive and easily customizable.
+Version: 1.3.14
 Author: Forrss
 Author URI: http://forrss.com/
-Tags: custom-background,two-columns,right-sidebar,custom-colors,custom-menu,featured-images,sticky-post,theme-options,translation-ready,blog
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl.html
+Tags: two-columns,right-sidebar,custom-background,custom-colors,custom-menu,featured-images,sticky-post,theme-options,threaded-comments,translation-ready,blog
+Text Domain: fmi
+Requires at least: 4.7
+Tested up to: 4.9
 
-== Description ==
-Fmi is an elegant blog theme with responsive and easily customizable.
 
-== License ==
-- Font Awesome 4.7.0 - http://fontawesome.io
-Copyright Dave Gandy
-Font files licensed under SIL OFL 1.1 - http://scripts.sil.org/OFL
-CSS files licensed under the MIT license - http://opensource.org/licenses/MIT
+=== License ===
+- Bootstrap
+  http://getbootstrap.com
+  Copyright 2011-2016 Twitter, Inc.
+  Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
-- FitVids.JS http://fitvidsjs.com FitVids.JS WTFPL license
+- OwlCarousel
+  Copyright (c) 2013 Bartosz Wojciechowski
+  http://www.owlgraphic.com/owlcarousel/
+  Licensed under MIT
 
-- Photos https://pixabay.com/en/winter-snow-the-snow-falls-3016302/ [Free-Photos][CC0 License]
+- Font Awesome
+  By @davegandy - http://fontawesome.io - @fontawesome
+  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 
-- The script jquery.cycle.all.min.js is dual licensed under GPL & MIT
+- FitVids
+  Copyright 2011, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
+  Credit to Thierry Koblentz - http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
+  Released under the WTFPL license - http://sam.zoy.org/wtfpl/
 
-- Other custom js files are our own creation and is licensed under the same license as this theme.
+- Open Sans(Font) 
+  https://www.google.com/fonts/specimen/Open+Sans Apache License, version 2.0
+
+- Photos
+  https://www.pexels.com Creative Commons Zero (CC0) license.
+
+- Other theme js files are our own creation and is licensed under the same license as this theme.
 
 All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
 
-Fmi WordPress Theme, Copyright 2017 Forrss
+Fmi WordPress Theme, Copyright 2018 Forrss
 Fmi is distributed under the terms of the GNU GPL
