@@ -3,7 +3,7 @@
 Contributors:       Mystery Themes Team
 Requires at least:  WordPress 4.0
 Tested up to:       WordPress 4.9
-Version:            1.0.0
+Version:            1.0.1
 License:            GPLv3 or later
 License URI:        http://www.gnu.org/licenses/gpl-3.0.html
 Tags:               one-column, two-columns, left-sidebar, right-sidebar, custom-colors, grid-layout, custom-logo, featured-images, translation-ready, blog, education, portfolio
@@ -45,5 +45,7 @@ Architect Lite bundles the following third-party resources:
 
 == Changelog ==
 
+= 1.0.1 =
+	* Re-upload theme due to close in trac.
 = 1.0.0 =
 	* Initial release.
