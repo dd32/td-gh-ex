@@ -57,10 +57,8 @@ function quickchic_excerpt_more( $more ) {
 
 // credits
 function quickchic_credits() {
-    echo '<p class="text-center">
-	<a href="http://www.quickonlinetips.com/archives/quickchic/" title="QuickChic Theme" rel="nofollow" target="_blank">QuickChic Theme</a>' 
- 	. __(' powered by ', 'quickchic') . 
-	'<a href="http://wordpress.org">WordPress</a>
+    echo '<p class="center">
+	QuickChic Theme &bull; Powered by WordPress
 	</p>';
 	}
 	add_action('wp_footer', 'quickchic_credits');

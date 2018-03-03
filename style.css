@@ -1,10 +1,10 @@
 /*
 Theme Name: QuickChic
-Theme URI: http://www.quickonlinetips.com/archives/quickchic/
+Theme URI: https://www.quickonlinetips.com/archives/quickchic/
 Description: 2-columns clean, lightweight, minimalistic, widget ready, SEO optimized, fast loading, easy to customize WordPress theme.
-Version: 1.5.3
+Version: 1.5.4
 Author: QuickOnlineTips
-Author URI: http://www.quickonlinetips.com/
+Author URI: https://www.quickonlinetips.com/
 Tags: two-columns, right-sidebar, threaded-comments, sticky-post, custom-background
 Text Domain: quickchic
 License: GNU General Public License v2.0
@@ -139,7 +139,7 @@ h1 a:visited {
     color: #333;
 }
 
-h1 a:hover,
+h1 a:hover
 {
     text-decoration: none;
     color: #C32364;
@@ -759,7 +759,8 @@ dt,
 dd {
     list-style: none;
     padding: 0;
-    margin: 0 outline: 0;
+    margin: 0 ;
+	outline: 0;
     padding: 0;
     vertical-align: baseline;
 }
@@ -869,7 +870,7 @@ a img {
 .mainnav a {
     background: #C32364;
     color: #FFF !important;
-    padding: 5px;
+    padding: 10px;
     border-radius: 8px;
     -moz-border-radius: 8px;
 }
