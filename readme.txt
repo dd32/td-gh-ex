@@ -1,11 +1,11 @@
 === QuickPic Theme ===
 
 Theme Name: QuickPic
-Theme URI: http://www.quickonlinetips.com/archives/quickpic/
+Theme URI: http://www.quickonlinethemes.com/wordpress/quickpic/
 Description: 1-column, lightweight, widget ready, fast loading, SEO optimized, easy to customize theme, useful for photoblogging.
 
 Author: QuickOnlineTips
-Author URI: http://www.quickonlinetips.com/
+Author URI: http://www.quickonlinethemes.com/
 Tags: green, gray, dark, white, fixed-width, one-column, threaded-comments, sticky-post, photoblogging
 
 License: GNU General Public License v2.0

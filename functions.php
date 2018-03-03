@@ -70,11 +70,9 @@ function quickpic_excerpt_more( $more ) {
 
 // credits
 function quickpic_credits() {
-    echo '<p class="text-center">
-	<a href="http://www.quickonlinetips.com/archives/quickpic/" title="QuickPic Theme" rel="nofollow" target="_blank">QuickPic Theme</a>' 
- 	. __(' powered by ', 'quickpic') . 
-	'<a href="http://wordpress.org">WordPress</a>
-	</p>';
+    echo '<div class="center">
+	QuickPic Theme &bull; Powered by WordPress 
+	</div>';
 	}
 	add_action('wp_footer', 'quickpic_credits');
 
