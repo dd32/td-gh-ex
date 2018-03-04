@@ -79,7 +79,7 @@ function quickpress_excerpt_more( $more ) {
 // credits
 function quickpress_credits() {
     echo '<div class="center">
-	QuickPress Theme &bull; Powered by WordPress
+	<a href="https://wordpress.org/themes/quickpress/" target="_blank" rel="nofollow">QuickPress Theme</a> &bull; Powered by WordPress
 	</div>';
 	}
 	add_action('wp_footer', 'quickpress_credits');
