@@ -71,7 +71,7 @@ function quickpic_excerpt_more( $more ) {
 // credits
 function quickpic_credits() {
     echo '<div class="center">
-	QuickPic Theme &bull; Powered by WordPress 
+	<a href="https://wordpress.org/themes/quickpic/" target="_blank" rel="nofollow">QuickPic Theme</a> &bull; Powered by WordPress 
 	</div>';
 	}
 	add_action('wp_footer', 'quickpic_credits');
