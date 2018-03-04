@@ -58,7 +58,7 @@ function quickchic_excerpt_more( $more ) {
 // credits
 function quickchic_credits() {
     echo '<p class="center">
-	QuickChic Theme &bull; Powered by WordPress
+	<a href="https://wordpress.org/themes/quickchic/" target="_blank" rel="nofollow">QuickChic Theme</a> &bull; Powered by WordPress
 	</p>';
 	}
 	add_action('wp_footer', 'quickchic_credits');
