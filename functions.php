@@ -88,6 +88,17 @@ function bellini_setup() {
 		'default-image' => '',
 	) ) );
 
+
+	add_theme_support( 'gutenberg', array(
+	     'wide-images' 	=> true,
+		 'colors' 		=> array(
+					        '#a156b4',
+					        '#d0a5db',
+					        '#eee',
+					        '#444',
+		),
+	) );
+
 	// Set the default content width.
 	$GLOBALS['content_width'] = apply_filters( 'bellini_content_width', 640 );
 
@@ -130,6 +141,15 @@ function bellini_scripts() {
 	}
 
 }
+
+
+/**
+ * Gutenberg Editor Styles
+ */
+function bellini_editor_styles() {
+	wp_enqueue_style( 'bellini-blog-editor-style', get_template_directory_uri() . '/inc/css/editor-style.css');
+}
+add_action( 'enqueue_block_editor_assets', 'bellini_editor_styles' );
 
 
 

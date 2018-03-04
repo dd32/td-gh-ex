@@ -98,6 +98,14 @@ Bellini bundles the following third-party resources:
 
 == Changelog ==
 
+
+
+= 1.44.6 =
+
+Released: March 04, 2018
+
+* New: Gutenberg support
+
 = 1.43.9 =
 
 Released: September 19, 2017
