@@ -218,7 +218,7 @@ if (best_education_get_option('show_footer_page_section') == 1) {
             </div>
         </div>
         <?php
-            if (best_education_get_option('show_footer_page_section') == 1) {
+            if (best_education_get_option('enable_nav_overlay') == 1) {
                 $enable_nav_overlay = 'top-header-overlay';
             } else {
                 $enable_nav_overlay = '';

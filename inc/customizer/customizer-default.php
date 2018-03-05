@@ -107,7 +107,7 @@ function best_education_get_default_theme_options() {
         $defaults['select_category_sec_about']        = 21;
         $defaults['select_category_for_team']    = 27;
         $defaults['select_category_for_testimonial']      = 26;
-        	$defaults['select_category_event_tab']      = 18;
+        $defaults['select_category_event_tab']      = 18;
 
     }
 	// Pass through filter.

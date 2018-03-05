@@ -15,59 +15,32 @@ add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
  */
 function best_education_ocdi_after_import() {
 
-	// Assign front page and posts page (blog page).
-	$front_page_id = null;
-	$blog_page_id  = null;
+    // check for plugin using plugin name
+    if (is_plugin_active('one-click-demo-import/one-click-demo-import.php')) {
+        //plugin is activated
+        function ocdi_after_import_setup() {
+            // Assign menus to their locations.
+            $main_menu   = get_term_by('name', 'Primary', 'nav_menu');
+            $footer_menu = get_term_by('name', 'Secondary', 'nav_menu');
+            $social_menu = get_term_by('name', 'Social', 'nav_menu');
 
-	$front_page = get_page_by_title( 'Homepage' );
+            set_theme_mod('nav_menu_locations', array(
+                    'primary' => $main_menu->term_id,
+                    'top'  => $footer_menu->term_id,
+                    'social'  => $social_menu->term_id,
+                )
+            );
 
-	if ( $front_page ) {
-		if ( is_array( $front_page ) ) {
-			$first_page = array_shift( $front_page );
-			$front_page_id = $first_page->ID;
-		} else {
-			$front_page_id = $front_page->ID;
-		}
-	}
+            // Assign front page and posts page (blog page).
+            $front_page_id = get_page_by_title('Homepage');
+            $blog_page_id  = get_page_by_title('Blog');
 
-	$blog_page = get_page_by_title( 'Blog' );
+            update_option('show_on_front', 'page');
+            update_option('page_on_front', $front_page_id->ID);
+            update_option('page_for_posts', $blog_page_id->ID);
 
-	if ( $blog_page ) {
-		if ( is_array( $blog_page ) ) {
-			$first_page = array_shift( $blog_page );
-			$blog_page_id = $first_page->ID;
-		} else {
-			$blog_page_id = $blog_page->ID;
-		}
-	}
-
-	if ( $front_page_id && $blog_page_id ) {
-		update_option( 'show_on_front', 'page' );
-		update_option( 'page_on_front', $front_page_id );
-		update_option( 'page_for_posts', $blog_page_id );
-	}
-
-	// Assign navigation menu locations.
-	$menu_location_details = array(
-		'primary'      => 'Primary',
-        'top' => 'Secondary',
-        'social' => 'Social',
-		);
-
-	if ( ! empty( $menu_location_details ) ) {
-		$navigation_settings = array();
-		$current_navigation_menus = wp_get_nav_menus();
-		if ( ! empty( $current_navigation_menus ) && ! is_wp_error( $current_navigation_menus ) ) {
-			foreach ( $current_navigation_menus as $menu ) {
-				foreach ( $menu_location_details as $location => $menu_slug ) {
-					if ( $menu->slug === $menu_slug ) {
-						$navigation_settings[ $location ] = $menu->term_id;
-					}
-				}
-			}
-		}
-
-		set_theme_mod( 'nav_menu_locations', $navigation_settings );
-	}
+        }
+        add_action('pt-ocdi/after_import', 'ocdi_after_import_setup');
+    }
 }
-add_action( 'pt-ocdi/after_import', 'best_education_ocdi_after_import' );
+add_action('admin_init', 'best_education_ocdi_after_import');

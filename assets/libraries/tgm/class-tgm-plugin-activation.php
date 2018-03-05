@@ -364,7 +364,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				'notice_can_activate_recommended' => _n_noop(
 					/* translators: 1: plugin name(s). */
 					'The following recommended plugin is currently inactive: %1$s.',
-					'The following recommended plugins are currently inactive: %1$s.',
+					'We recommend you to activate all the plugins while using one click demo importer. The following recommended plugins are currently inactive: %1$s.',
 					'best-education'
 				),
 				'install_link'                    => _n_noop(
