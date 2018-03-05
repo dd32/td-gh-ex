@@ -58,7 +58,7 @@ function bcorporate_home_about_sec_fnc() {
 						<p><?php echo esc_html( get_theme_mod( 'homepage_about_sub_text' ) );?></p>
 					</div>
 					<div class="about_bottom_text">
-						<a href="<?php echo site_url(); ?>"><span><?php echo esc_html( get_theme_mod( 'homepage_about_bottom_text' ) );?></span></a>
+						<a href="<?php echo esc_url( site_url() ); ?>"><span><?php echo esc_html( get_theme_mod( 'homepage_about_bottom_text' ) );?></span></a>
 					</div>
 				</div>
 			</div></div>

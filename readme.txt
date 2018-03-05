@@ -13,7 +13,7 @@ A starter theme called Bcorporate.
 
 == Description ==
 
-Awesome WordPress Themes
+BCorporate is a Free Corporate Wordpress Theme created using latest trends such as SASS which is a powerful and well performed CSS Extension, with HTML5 / CSS3 and Responsive design. This theme is a Full-Width Layout with includes features and Sections such as: Sliders, Portfolios, Services, Testimonials, Blog Posts, Call To Action (x2) and Contact Form. 
 
 == Installation ==
 
@@ -37,6 +37,10 @@ Bcorporate includes support for Infinite Scroll in Jetpack.
 * Fixed some escaping issues
 
 = 1.0.2 - Feb 20 2018 =
+* fixed themeurl page not found issue
+* Fixed the google font enque issues
+
+= 1.0.3 - March 05 2018 =
 * fixed themeurl page not found issue
 * Fixed the google font enque issues
 
@@ -75,3 +79,9 @@ Bootstrap(v4.0.0):
    License: https://v4-alpha.getbootstrap.com/about/license/
    License url: https://v4-alpha.getbootstrap.com/about/license/
    Url: https://getbootstrap.com/
+
+Animate on scroll library(aos):
+   License: MIT License
+   License Url: https://github.com/michalsnik/aos/blob/master/LICENSE
+   Url: https://github.com/michalsnik/aos
+

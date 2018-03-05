@@ -142,7 +142,7 @@ function bcorporate_customize_register( $wp_customize ) {
 		)
 	 );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'homepage_about_background', array(
-	    'label'    => __( 'About Section Background Image ', 'bcorporate' ),
+	    'label'    => esc_html__( 'About Section Background Image ', 'bcorporate' ),
 	    'section'  => 'home_page_about_section',
 	) ) );
 
