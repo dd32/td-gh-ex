@@ -89,6 +89,16 @@ function fmi_customize_register( $wp_customize ) {
       'navigation'   => esc_html__('Navigation', 'fmi')
     )
   )));
+  $wp_customize->add_setting('header_title',array(
+    'default'     => false,
+    'sanitize_callback' => 'fmi_sanitize_checkbox'
+  ));
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,'header_title',array(
+    'label'      => esc_html__('Hide Header Title Text', 'fmi'),
+    'section'    => 'general',
+    'settings'   => 'header_title',
+    'type'     => 'checkbox'
+  )));
   $wp_customize->add_setting('header_search',array(
     'default'     => false,
     'sanitize_callback' => 'fmi_sanitize_checkbox'
@@ -119,7 +129,7 @@ function fmi_customize_register( $wp_customize ) {
     'type'     => 'checkbox'
   )));
   $wp_customize->add_setting('page_layout',array(
-    'default'    => 'right_sidebar',
+    'default'    => false,
     'sanitize_callback' => 'fmi_sanitize_checkbox'
   ));
   $wp_customize->add_control(new WP_Customize_Control($wp_customize,'page_layout',array(

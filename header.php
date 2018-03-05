@@ -22,21 +22,18 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'fmi' ); ?></a>
 
 	<header id="masthead" class="site-header">
     <div class="container">
-  		<div class="site-branding">
-  			<?php
-  			the_custom_logo();
-  			if ( is_front_page() && is_home() ) : ?>
-  				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-  			<?php else : ?>
-  				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-  			<?php
-  			endif;
-  			?>
-              
+  		<div class="site-branding clearfix">
+  			
+        <div class="site-branding-logo">
+          <?php the_custom_logo();?>
+          <?php if ( !get_theme_mod( 'header_title' )):?>
+          <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+          <?php endif;?>
+        </div>
+
   			<?php if ( !get_theme_mod( 'header_search' )):?>
         <div class="site-branding-search">
             <?php get_search_form(); ?>

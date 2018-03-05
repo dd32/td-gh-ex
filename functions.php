@@ -65,16 +65,11 @@ if ( ! function_exists( 'fmi_setup' ) ) :
     // Add theme support for selective refresh for widgets.
     add_theme_support( 'customize-selective-refresh-widgets' );
 
-    /**
-     * Add support for core custom logo.
-     *
-     * @link https://codex.wordpress.org/Theme_Logo
-     */
+    // Add support for core custom logo.
     add_theme_support( 'custom-logo', array(
-      'height'      => 250,
-      'width'       => 250,
+      'height'      => 60,
+      'width'       => 60,
       'flex-width'  => true,
-      'flex-height' => true,
     ) );
   }
 endif;
@@ -132,9 +127,6 @@ if (!function_exists('fmi_scripts')) {
 
     // owl carousel
     wp_enqueue_script('owl-carousel', get_template_directory_uri().'/assets/owl-carousel/owl.carousel.min.js', array('jquery'), '1.3.3', true);
-
-    // skip link focus fix
-    wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri().'/assets/js/skip-link-focus-fix.js', array(), '20151215', true);
 
     // fitvids
     wp_enqueue_script( 'fitvids-js', get_template_directory_uri().'/assets/js/jquery.fitvids.js', array('jquery'), '1.0' ,true);

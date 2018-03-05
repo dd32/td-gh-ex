@@ -16,7 +16,7 @@ jQuery.noConflict()(function($) {
       slideSpeed : 600,
       paginationSpeed: 600,
       rewindSpeed: 1000,
-      autoPlay: false,
+      autoPlay: 5000,
       stopOnHover: true,
       navigation : true,
       navigationText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
