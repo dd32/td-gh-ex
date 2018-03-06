@@ -52,6 +52,12 @@ endif;
 					<?php if( get_theme_mod( 'social-facebook' ) ) : ?>
 						<li><a href="<?php echo esc_attr( get_theme_mod('social-facebook' ) ); ?>" class="fa fa-facebook"></a></li>
 					<?php endif; ?>
+					<?php if( get_theme_mod( 'social-instagram' ) ) : ?>
+						<li><a href="<?php echo esc_attr( get_theme_mod('social-instagram' ) ); ?>" class="fa fa-instagram"></a></li>
+					<?php endif; ?>
+					<?php if( get_theme_mod( 'social-youtube' ) ) : ?>
+						<li><a href="<?php echo esc_attr( get_theme_mod('social-youtube' ) ); ?>" class="fa fa-youtube"></a></li>
+					<?php endif; ?>
 					
 					<?php if( get_theme_mod( 'social-google' ) ) : ?>     
 						<li><a href="<?php echo esc_attr( get_theme_mod( 'social-google' ) ); ?>" class="fa fa-google-plus"></a></li>

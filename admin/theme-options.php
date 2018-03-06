@@ -1193,6 +1193,20 @@ Greenr_Kirki::add_field( 'greenr', array(
 	'tooltip' => __('Enter Your Twitter link','greenr'),
 ) );
 Greenr_Kirki::add_field( 'greenr', array(
+	'settings' => 'social-instagram',
+	'label'    => __( 'Instagram', 'greenr' ),
+	'section'  => 'header-top-right',
+	'type'     => 'text',
+	'tooltip' => __('Enter Your Instagram link','greenr'),
+) );
+Greenr_Kirki::add_field( 'greenr', array(
+	'settings' => 'social-youtube',
+	'label'    => __( 'YouTube', 'greenr' ),
+	'section'  => 'header-top-right',
+	'type'     => 'text',
+	'tooltip' => __('Enter Your YouTube link','greenr'),
+) );
+Greenr_Kirki::add_field( 'greenr', array(
 	'settings' => 'social-google',
 	'label'    => __( 'Google +', 'greenr' ),
 	'section'  => 'header-top-right',
