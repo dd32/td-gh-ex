@@ -63,7 +63,7 @@ function ace_corporate_setup() {
 
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus( array(
-        'primary'   => __( 'Header Menu','ace-corporate' ),
+        'primary'   => esc_html__( 'Header Menu','ace-corporate' ),
         ) );
 
     /*
@@ -111,9 +111,9 @@ add_action( 'after_setup_theme', 'ace_corporate_setup' );
 if (! function_exists('ace_corporate_widgets_init') ) {
     function ace_corporate_widgets_init() {
         register_sidebar( array(
-            'name'          => __( 'Sidebar','ace-corporate' ),
+            'name'          => esc_html__( 'Sidebar','ace-corporate' ),
             'id'            => 'sidebar-1',
-            'description'   => __( 'CT Corporate Sidebar','ace-corporate' ),
+            'description'   => esc_html__( 'CT Corporate Sidebar','ace-corporate' ),
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget'  => '</aside>',
             'before_title'  => '<h1 class="widget-title">',
@@ -121,9 +121,9 @@ if (! function_exists('ace_corporate_widgets_init') ) {
             ) );
 
         register_sidebar( array(
-            'name'          => __( 'Footer 1','ace-corporate' ),
+            'name'          => esc_html__( 'Footer 1','ace-corporate' ),
             'id'            => 'footer-1',
-            'description'   => __( 'Footer 1','ace-corporate' ),
+            'description'   => esc_html__( 'Footer 1','ace-corporate' ),
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget'  => '</aside>',
             'before_title'  => '<h1 class="widget-title">',
@@ -131,9 +131,9 @@ if (! function_exists('ace_corporate_widgets_init') ) {
             ) );
 
         register_sidebar( array(
-            'name'          => __( 'Footer 2','ace-corporate' ),
+            'name'          => esc_html__( 'Footer 2','ace-corporate' ),
             'id'            => 'footer-2',
-            'description'   => __( 'Footer 2','ace-corporate' ),
+            'description'   => esc_html__( 'Footer 2','ace-corporate' ),
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget'  => '</aside>',
             'before_title'  => '<h1 class="widget-title">',
@@ -141,9 +141,9 @@ if (! function_exists('ace_corporate_widgets_init') ) {
             ) );
 
         register_sidebar( array(
-            'name'          => __( 'Footer 3','ace-corporate' ),
+            'name'          => esc_html__( 'Footer 3','ace-corporate' ),
             'id'            => 'footer-3',
-            'description'   => __( 'Footer 3','ace-corporate' ),
+            'description'   => esc_html__( 'Footer 3','ace-corporate' ),
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget'  => '</aside>',
             'before_title'  => '<h1 class="widget-title">',
@@ -199,9 +199,9 @@ if(! function_exists('ace_corporate_scripts')){
 		}
 
 		wp_enqueue_script( 'ace-corporate-functions-js', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), 'v3.3.2', true );
-		wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/js/slick.js', array( 'jquery' ), 'v3.3.2', true );
+		wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/js/slick.js', array( 'jquery' ), 'v3.3.2', true );
         wp_enqueue_script( 'ace-corporate-vendor-js', get_stylesheet_directory_uri() . '/js/vendor.js');
-        wp_localize_script('slick-js', 'custom_localize', array(
+        wp_localize_script('jquery-slick', 'custom_localize', array(
             'prev' => esc_html__('Previous', 'ace-corporate'),
             'next' => esc_html__('Next', 'ace-corporate'),
         ));
@@ -317,7 +317,7 @@ if(! function_exists('ace_corporate_trim_excerpt')){
             $words = explode( ' ', $text, $excerpt_length + 1 );
             if ( count( $words )> $excerpt_length ) {
                 array_pop( $words );
-                array_push( $words, '<p><a class="readmore" href="'. esc_url( get_permalink( get_the_ID() ) ) . '">' . __('Read More','ace-corporate') . '<span class="meta-nav"><i class="fa fa-long-arrow-right fa-btn"></i></span></a></p>' );
+                array_push( $words, '<p><a class="readmore" href="'. esc_url( get_permalink( get_the_ID() ) ) . '">' . esc_html_e('Read More','ace-corporate') . '<span class="meta-nav"><i class="fa fa-long-arrow-right fa-btn"></i></span></a></p>' );
                 $text = implode( ' ', $words );
             }
         }
@@ -325,6 +325,30 @@ if(! function_exists('ace_corporate_trim_excerpt')){
     }
     add_filter( 'get_the_excerpt', 'ace_corporate_trim_excerpt', 10, 1 );
 }
+
+if (!function_exists('ace_corporate_get_excerpt')) :
+    function ace_corporate_get_excerpt($post_id, $count)
+    {
+        $content_post = get_post($post_id);
+        $excerpt =  apply_filters('the_content', $content_post->post_content);
+        $excerpt = preg_replace('/\s\s+/', ' ', $excerpt);
+        $excerpt = preg_replace('#\[[^\]]+\]#', ' ', $excerpt);
+        $strip = explode(' ', $excerpt);
+        foreach ($strip as $key => $single) {
+            if (!filter_var($single, FILTER_VALIDATE_URL) === false) {
+                unset($strip[$key]);
+            }
+        }
+        $excerpt = implode(' ', $strip);
+
+        $excerpt = substr($excerpt, 0, $count);
+        if (strlen($excerpt) >= $count) {
+            $excerpt = substr($excerpt, 0, strripos($excerpt, ' '));
+            $excerpt = $excerpt . '...';
+        }
+        return $excerpt;
+    }
+endif;
 
 if(! function_exists('ace_corporate_localize_jetpack')){
     function ace_corporate_localize_jetpack() {
@@ -398,11 +422,16 @@ if (!  function_exists('ace_corporate_register_required_plugins') ) {
           $plugins = array(
 
             array(
-                'name'      => 'Jetpack',
-                'slug'      => 'jetpack',
+                'name'      =>  esc_html__('Contact Form 7', 'ace-corporate'),
+                'slug'      => 'contact-form-7',
                 'required'  => false,
                 ),
 
+        array(
+              'name'      =>  esc_html__('Jetpack', 'ace-corporate'),
+              'slug'      => 'jetpack',
+              'required'  => false,
+              ),
           );
 
           /*
@@ -432,48 +461,55 @@ if (!  function_exists('ace_corporate_register_required_plugins') ) {
         }
 }
 
+
 if ( ! function_exists( 'ace_corporate_the_featured_video' ) ) {
-    function ace_corporate_the_featured_video( $content ) {
-        $ori_url = explode( "\n", $content );
+    function ace_corporate_the_featured_video( $content )
+    {
+        $ori_url = explode("\n", $content);
         $url = $ori_url[0];
-
-        $w = get_option( 'embed_size_w' );
-        if ( !is_single() )
-            $url = str_replace( '448', $w, $url );
-        if ( 0 === strpos( $url, 'https://' ) ) {
-
-            echo apply_filters( 'the_content', $url );
-            $content = trim( str_replace( $url, '', $content ) );
+        $w = get_option('embed_size_w');
+        if (!is_single()) {
+            $url = str_replace('448', $w, $url);
+            return $url;
         }
-        elseif ( preg_match ( '#^<(script|iframe|embed|object)#i', $url ) ) {
-            $h = get_option( 'embed_size_h' );
-            echo esc_url($url);
-            if ( !empty( $h ) ) {
 
-                if ( $w === $h ) $h = ceil( $w * 0.75 );
+        if (0 === strpos($url, 'https://') || 0 == strpos($url, 'http://')) {
+            echo esc_url(wp_oembed_get($url));
+            $content = trim(str_replace($url, '', $content));
+        }
+        elseif (preg_match('#^<(script|iframe|embed|object)#i', $url)) {
+            $h = get_option('embed_size_h');
+            echo esc_url($url);
+            if (!empty($h)) {
+
+                if ($w === $h) $h = ceil($w * 0.75);
                 $url = preg_replace(
-                    array( '#height="[0-9]+?"#i', '#height=[0-9]+?#i' ),
-                    array( sprintf( 'height="%d"', $h ), sprintf( 'height=%d', $h ) ),
+                    array('#height="[0-9]+?"#i', '#height=[0-9]+?#i'),
+                    array(sprintf('height="%d"', $h), sprintf('height=%d', $h)),
                     $url
-                    );
+                );
                 echo esc_url($url);
             }
-
-            $content = trim( str_replace( $url, '', $content ) );
+            $content = trim(str_replace($url, '', $content));
 
         }
+
     }
 }
 
 if(!function_exists('ace_corporate_strip_url_content')){
-    function ace_corporate_strip_url_content($posttype, $content_length){
-        $strip = explode( ' ' , strip_shortcodes(wp_trim_words( $posttype->post_content  , $content_length )) );
-        foreach($strip as $key => $single){
-            if (!filter_var($single, FILTER_VALIDATE_URL) === false) {
-                unset($strip[$key]);
-            }
-        }
-        return implode( ' ', $strip );
+    function ace_corporate_strip_url_content($limit, $source = null){
+        global $post;
+
+    if($source == "content" ? ($excerpt = get_the_content()) : ($excerpt = get_the_excerpt()));
+    $excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_tags($excerpt);
+    $excerpt = substr($excerpt, 0, intval($limit));
+    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+    $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+    $excerpt = $excerpt.'... <a href="'.get_permalink($post->ID).'">more</a>';
+    return $excerpt;
     }
 }
 
@@ -516,3 +552,172 @@ if(!function_exists('ace_corporate_check_sidebar')){
             return $sidebar_class;
     }
 }
+
+
+
+if (! function_exists('ace_corporate_blog_post_format')) {
+    function ace_corporate_blog_post_format($post_format, $post_id) {
+
+        if (is_single()){
+            $single_post_format_class = 'single-post-format';
+        } else {
+            $single_post_format_class = '';
+        }
+
+        
+
+        if($post_format == 'video'){  ?>
+            <div class="post-video <?php echo esc_attr($single_post_format_class);?>">
+                <div class="post-video-holder">
+                    <?php
+                        global $post;
+
+        if ($post_format == 'video') {
+            $content = trim(get_post_field('post_content', $post->ID));
+            $ori_url = explode("\n", esc_html($content));
+            $url = $ori_url[0];
+            $url_type = explode(" ", $url);
+            $url_type = explode("[", $url_type[0]);
+
+            if (isset($url_type[1])) {
+                $url_type_shortcode = $url_type[1];
+            }
+            $new_content = get_shortcode_regex();
+            if (isset($url_type[1])) {
+                if (preg_match_all('/' . $new_content . '/s', $post->post_content, $matches)
+                    && array_key_exists(2, $matches)
+                    && in_array($url_type_shortcode, $matches[2])
+                ) {
+                    echo do_shortcode($matches[0][0]);
+                }
+            } else {
+                echo wp_oembed_get(ace_corporate_the_featured_video($content));
+            }
+        }
+                    ?>
+                </div>
+            </div>
+        <?php
+        }
+        elseif($post_format == 'audio'){
+            ?>
+                <div class="post-audio <?php echo esc_attr($single_post_format_class);?>">
+                    <div class="post-audio-holder">
+                        <?php
+                            $content = trim(  get_post_field('post_content', $post_id) );
+                              $ori_url = explode( "\n", esc_html( $content ) );
+                            $new_content =  preg_match_all("/\[[^\]]*\]/", $content, $matches);
+                            if( $new_content){
+                                echo do_shortcode( $matches[0][0] );
+                            }
+                            elseif (preg_match ( '#^<(script|iframe|embed|object)#i', $content )) {
+                                $regex = '/https?\:\/\/[^\" ]+/i';
+                                preg_match_all($regex, $ori_url[0], $matches);
+                                $urls = ($matches[0]);
+                                 print_r('<iframe src="'.$urls[0].'" width="100%" height="240" frameborder="no" scrolling="no"></iframe>');
+                            } elseif (0 === strpos( $content, 'https://' )) {
+                                $embed_url = wp_oembed_get( esc_url( $ori_url[0] ) );
+                                print_r($embed_url);
+                            }
+                        ?>
+                    </div>
+                </div>
+            <?php
+        }
+        elseif ($post_format == 'gallery') {
+            //Get the alt and title of the image
+            if ( ! is_single() ) {
+                $image_url = get_post_gallery_images( $post_id );
+                $post_thumbnail_id = get_post_thumbnail_id( $post_id );
+                $attachment =  get_post($post_thumbnail_id);
+
+                if( $image_url ) {?>
+                        <div class="post-gallery">
+                            <?php foreach ( $image_url as $key => $images ) { ?>
+                                <div class="post-gallery-item">
+                                    <div class="post-gallery-item-holder" style="background-image: url('<?php echo esc_url( $images); ?>');" alt= "<?php echo esc_attr( $attachment->post_excerpt );?>">
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    <?php
+                        }
+                        
+            }
+        }
+        else{
+                    if( has_post_thumbnail()) { ?>
+                        <div class="post-image-content">
+                            <figure class="post-featured-image">
+                                <a href="<?php the_permalink();?>" title="<?php echo the_title_attribute('echo=0'); ?>">
+                                <?php the_post_thumbnail(); ?>
+                                </a>
+                            </figure><!-- end.post-featured-image  -->
+                        </div> <!-- end.post-image-content -->
+        <?php
+                    }
+
+
+        }
+}
+}
+
+// for post video to be display not post format video 
+function theme_oembed_videos() {
+
+    global $post;
+
+    if ( $post && $post->post_content ) {
+
+        global $shortcode_tags;
+        // Make a copy of global shortcode tags - we'll temporarily overwrite it.
+        $theme_shortcode_tags = $shortcode_tags;
+
+        // The shortcodes we're interested in.
+        $shortcode_tags = array(
+            'video' => $theme_shortcode_tags['video'],
+            'embed' => $theme_shortcode_tags['embed']
+        );
+        // Get the absurd shortcode regexp.
+        $video_regex = '#' . get_shortcode_regex() . '#i';
+
+        // Restore global shortcode tags.
+        $shortcode_tags = $theme_shortcode_tags;
+
+        $pattern_array = array( $video_regex );
+
+        // Get the patterns from the embed object.
+        if ( ! function_exists( '_wp_oembed_get_object' ) ) {
+            include ABSPATH . WPINC . '/class-oembed.php';
+        }
+        $oembed = _wp_oembed_get_object();
+        $pattern_array = array_merge( $pattern_array, array_keys( $oembed->providers ) );
+
+        // Or all the patterns together.
+        $pattern = '#(' . array_reduce( $pattern_array, function ( $carry, $item ) {
+            if ( strpos( $item, '#' ) === 0 ) {
+                // Assuming '#...#i' regexps.
+                $item = substr( $item, 1, -2 );
+            } else {
+                // Assuming glob patterns.
+                $item = str_replace( '*', '(.+)', $item );
+            }
+            return $carry ? $carry . ')|('  . $item : $item;
+        } ) . ')#is';
+
+        // Simplistic parse of content line by line.
+        $lines = explode( "\n", $post->post_content );
+        foreach ( $lines as $line ) {
+            $line = trim( $line );
+            if ( preg_match( $pattern, $line, $matches ) ) {
+                if ( strpos( $matches[0], '[' ) === 0 ) {
+                    $ret = do_shortcode( $matches[0] );
+                } else {
+                    $ret = wp_oembed_get( $matches[0] );
+                }
+                return $ret;
+            }
+        }
+    }
+}
+

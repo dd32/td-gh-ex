@@ -6,6 +6,7 @@
  */
 ?>
 <?php
+$metadisplay = get_theme_mod('show_blog_meta',1);
     global $post;
     $featured_image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
     $content =  trim(  get_post_field('post_content', $post->ID) );
@@ -39,9 +40,11 @@
 
                     <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
+                   <?php if($metadisplay==1){?>
                     <div class="entry-meta">
-                        <?php ace_corporate_posted_on(); ?>
+                   <?php ace_corporate_posted_on(); ?>
                     </div>
+                  <?php }?>
                     <!-- End Entry-meta -->
 
                 </header>
@@ -103,10 +106,11 @@
                 }
             ?>
 
-            <div class="entry-meta">
-                <?php ace_corporate_posted_on(); ?>
-            </div>
-
+           <?php if($metadisplay==1){?>
+                    <div class="entry-meta">
+                   <?php ace_corporate_posted_on(); ?>
+                    </div>
+                  <?php }?>
         </header>
 
         <div class="entry-wrap clearfix">

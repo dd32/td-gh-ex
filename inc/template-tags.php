@@ -137,6 +137,7 @@ endif;
  *
  * @return bool
  */
+if (! function_exists('ace_corporate_categorized_blog') ){
 function ace_corporate_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'ace_corporate_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
@@ -161,16 +162,18 @@ function ace_corporate_categorized_blog() {
 		return false;
 	}
 }
-
+}
 /**
  * Flush out the transients used in ace_corporate_categorized_blog.
  */
+if (! function_exists('ace_corporate_category_transient_flusher') ){
 function ace_corporate_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 	// Like, beat it. Dig?
 	delete_transient( 'ace_corporate_categories' );
+}
 }
 add_action( 'edit_category', 'ace_corporate_category_transient_flusher' );
 add_action( 'save_post', 'ace_corporate_category_transient_flusher' );

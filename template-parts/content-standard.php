@@ -6,6 +6,7 @@
  */
 ?>
 <?php
+$metadisplay = get_theme_mod('show_blog_meta',1);
 $featured_image = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
 $featured_image_id = get_post_thumbnail_id();
 $image_alt = get_post_meta($featured_image_id, '_wp_attachment_image_alt', true);
@@ -27,9 +28,7 @@ if (!is_single() && !is_archive() && !is_search() && !is_page_template('page-tem
 
                         <div class="share-mask">
                             <div class="share-wrap">
-                                <div class="share-content">
-                                    <h2><?php esc_html_e('Read More', 'ace-corporate'); ?></h2>
-                                </div>
+
                             </div>
                         </div>
 
@@ -42,9 +41,11 @@ if (!is_single() && !is_archive() && !is_search() && !is_page_template('page-tem
                 <header class="entry-header">
                     <?php the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
 
+                   <?php if($metadisplay==1){?>
                     <div class="entry-meta">
-                        <?php ace_corporate_posted_on(); ?>
+                   <?php ace_corporate_posted_on(); ?>
                     </div>
+                  <?php }?>
                     <!-- End Entry-meta -->
 
                 </header>
@@ -95,9 +96,7 @@ if (!is_single() && !is_archive() && !is_search() && !is_page_template('page-tem
 
                     <div class="share-mask">
                         <div class="share-wrap">
-                            <div class="share-content">
-                                <h2><?php esc_html_e('Read More', 'ace-corporate'); ?></h2>
-                            </div>
+
                         </div>
                     </div>
 
@@ -116,9 +115,11 @@ if (!is_single() && !is_archive() && !is_search() && !is_page_template('page-tem
             the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>');
         } ?>
 
-        <div class="entry-meta">
-            <?php ace_corporate_posted_on(); ?>
-        </div>
+        <?php if($metadisplay==1){?>
+                    <div class="entry-meta">
+                   <?php ace_corporate_posted_on(); ?>
+                    </div>
+                  <?php }?>
 
     </header>
 

@@ -9,7 +9,6 @@ get_header();
 // Boxed or Fullwidth
 $boxedornot = ace_corporate_boxedornot();
 ?>
-	<?php ace_corporate_breadcrumb(); ?>
 	<!-- End the Breadcrumb -->
 
 	<?php if ($boxedornot == 'fullwidth') {?>
@@ -50,9 +49,7 @@ $boxedornot = ace_corporate_boxedornot();
 		</div>
 		<!-- End the #primary -->
 
-		<div id="secondary" class="widget-area clearfix left-sidebar" role="complementary">
-			<?php get_sidebar(); ?>
-		</div>
+		
 		<!-- End the Sidebar -->
 
 	<?php if ($boxedornot == 'fullwidth') {?>

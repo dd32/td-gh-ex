@@ -13,8 +13,6 @@ $sidebar_layout = get_theme_mod('layout_picker');
 
 $sidebar_class = ace_corporate_check_sidebar();
 ?>
-
-	<?php ace_corporate_breadcrumb(); ?>
 	<!-- End the breadcrumb -->
 
 	<?php if ($boxedornot == 'fullwidth') {?>

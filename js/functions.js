@@ -45,28 +45,60 @@ jQuery(document).ready(function($) {
     }
 
     // 3. Slick Js Initiated
-    function slickCall(){
-        jQuery(".slick-slider").slick({
-            dots: true,
-            arrow: true,
-            slidesToScroll: 1,
-            slidesToShow: 1,
-            autoplay: false,
-            autoplaySpeed: 5000,
-            lazyLoad: 'ondemand'
-        });
-    }
-    function slickCall(){
-        jQuery("#testimonial-slider").slick({
-            dots: true,
-            arrow: true,
-            slidesToScroll: 1,
-            slidesToShow: 1,
-            autoplay: false,
-            autoplaySpeed: 5000,
-            lazyLoad: 'ondemand'
-        });
-    }
+
+    jQuery(".featured-slider").slick({
+        dots: true,
+        arrow: true,
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        autoplay: false,
+        autoplaySpeed: 5000,
+        lazyLoad: 'ondemand'
+    });
+
+    jQuery("article .post-gallery").slick({
+        dots: true,
+        arrow: true,
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        autoplay: false,
+        autoplaySpeed: 5000,
+        lazyLoad: 'ondemand'
+    });
+
+    jQuery("#testimonial-slider").slick({
+        dots: true,
+        arrow: true,
+        slidesToScroll: 1,
+        slidesToShow: 3,
+        autoplay: false,
+        autoplaySpeed: 5000,
+        lazyLoad: 'ondemand',
+        responsive: [
+            {
+                breakpoint: 990,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
 
     //4. Responsive Iframes
     function noScrollGMap(){
@@ -132,7 +164,6 @@ jQuery(document).ready(function($) {
         cpScrollTop();
         extendBootstrapNav();
         sideBarHeight();
-        slickCall();
         menuExceed();
 
         noScrollGMap();

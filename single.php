@@ -19,8 +19,6 @@ elseif($sidebar_class == 'no-sidebar'):
 endif;
 
 ?>
-
-	<?php ace_corporate_breadcrumb(); ?>
 	<!-- End the Breadcrumb -->
 
 	<?php if ($boxedornot == 'fullwidth') {?>

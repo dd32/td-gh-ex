@@ -4,6 +4,8 @@
  *
  * @package CT Corporate
  */
+$metadisplay = get_theme_mod('show_blog_meta',1);
+$post_format = get_post_format($post->ID);
 $featured_image = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
 $featured_image_id = get_post_thumbnail_id();
 $image_alt = get_post_meta($featured_image_id, '_wp_attachment_image_alt', true);
@@ -13,7 +15,7 @@ $front = get_option('show_on_front');
 <?php if (!is_single() && !is_archive() && !is_search() && !is_page_template('page-templates/template-blog.php')): ?>
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+        <?php ace_corporate_blog_post_format($post_format, $post->ID);?>
         <div class="post-content entry-content">
             <?php if ($front == "page") :
                 if ($featured_image) { ?>
@@ -25,33 +27,13 @@ $front = get_option('show_on_front');
                                  alt="<?php echo esc_attr($alttxt); ?>">
                             <div class="share-mask">
                                 <div class="share-wrap">
-                                    <div class="share-content">
-                                        <h2><?php esc_html_e('Read More', 'ace-corporate'); ?></h2>
-                                    </div>
+
                                 </div>
                             </div>
                         </a>
                     </div>
-                <?php } else { ?>
-                    <div class="clearfix">
-                        <ul class="gallery_wrap row clearfix">
-                            <?php
-                            $gallery = get_post_gallery();
-                            echo $gallery;
-                            ?>
-                        </ul>
-                    </div>
-                <?php }
-            else: // if front page is latest posts?>
-                <div class="clearfix">
-                    <ul class="gallery_wrap row clearfix">
-                        <?php
-                        $gallery = get_post_gallery();
-                        echo $gallery;
-                        ?>
-                    </ul>
-                </div>
-            <?php endif; ?>
+                <?php } 
+            endif; ?>
 
             <?php if (is_front_page() && $front == 'posts' || is_home()) { ?>
 
@@ -61,6 +43,7 @@ $front = get_option('show_on_front');
 
                 <div class="entry-wrap clearfix">
                     <?php echo wp_kses_post(ace_corporate_strip_url_content($post, 20)); ?>
+                    
                 </div>
 
             <?php } ?>
@@ -87,9 +70,7 @@ $front = get_option('show_on_front');
                 <img src="<?php echo esc_url($featured_image); ?>" class="attachment-custom_post_size wp-post-image" alt="<?php echo esc_attr($alttxt); ?>">
                 <div class="share-mask">
                     <div class="share-wrap">
-                        <div class="share-content">
-                            <h2><?php esc_html_e('Read More', 'ace-corporate'); ?></h2>
-                        </div>
+
                     </div>
                 </div>
             </a>
@@ -103,13 +84,15 @@ $front = get_option('show_on_front');
             the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>');
         } ?>
 
-        <div class="entry-meta">
-            <?php ace_corporate_posted_on(); ?>
-        </div>
+       <?php if($metadisplay==1){?>
+                    <div class="entry-meta">
+                   <?php ace_corporate_posted_on(); ?>
+                    </div>
+                  <?php }?>
 
     </header>
 
-    <?php if (!is_single()) { ?>
+    <?php if (!is_single()&& !is_archive()) { ?>
         <div class="clearfix">
             <ul class="gallery_wrap row clearfix">
                 <?php

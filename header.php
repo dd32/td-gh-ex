@@ -68,12 +68,12 @@ $bodyclass = array($pageclass);
                 <div class="navbar-header">
 
                     <div class="site-branding navbar-brand">
-                        <?php
-                        if (function_exists('the_custom_logo') && has_custom_logo()) {
-                            echo ' <div class="site-brand text-center">';
-                            the_custom_logo();
-                            echo '</div>';
-                        } else { ?>
+                        
+                        
+                             <div class="site-brand text-center">
+                           <?php the_custom_logo(); ?>
+                        </div>
+                        
 
                             <!-- Remove the site title and desc if logo is specified -->
                             <div class="site-desc site-brand text-center">
@@ -81,7 +81,7 @@ $bodyclass = array($pageclass);
                                                           rel="home"><?php bloginfo('name'); ?></a></h1>
                                 <h5 class="site-description"><?php bloginfo('description'); ?></h5>
                             </div>
-                        <?php } ?>
+                        
 
                     </div>
                     <!-- End the Site Brand -->
@@ -125,57 +125,62 @@ $bodyclass = array($pageclass);
         </nav>
         <!-- End #site-navigation -->
         <?php
-        // Get Slider Posts from the customizer
-        if (get_theme_mod('featured_post') != "") {
-            $slider_posts_id = get_theme_mod('featured_post'); // can't be escaped as it returns value in array.
-            $slider_posts_args = array(
-                'post_type' => 'page',
-                'post_status' => 'publish',
-                'posts_per_page' => -1,
-                'post__in' => (array)$slider_posts_id,
-            );
-            $slider_variable = get_posts($slider_posts_args);
-            ?>
+         if (is_page_template('page-templates/template-cpmfront.php')) {
+            // Get Slider Posts from the customizer
+            if (get_theme_mod('featured_post') != "") {
+                $slider_posts_id = get_theme_mod('featured_post'); // can't be escaped as it returns value in array.
+                $slider_posts_args = array(
+                    'post_type' => 'page',
+                    'post_status' => 'publish',
+                    'posts_per_page' => -1,
+                    'post__in' => (array)$slider_posts_id,
+                );
+                $slider_variable = get_posts($slider_posts_args);
+                ?>
 
-            <!-- Home page pro Slider -->
-            <div id="home-slider" class="featured-slider slick-slider">
+                <!-- Home page pro Slider -->
+                <div id="home-slider" class="featured-slider slick-slider">
 
-                <?php
-                foreach ($slider_variable as $key => $slider_value) {
-                    $image = wp_get_attachment_url(get_post_thumbnail_id($slider_value->ID));
-                    ?>
-                    <div class="slide-item" style="background-image: url('<?php echo esc_url($image); ?>');">
-                        <div class="container">
-                        <div class="slider-image">
-                            <div class="slider-desc-wrapper">
+                    <?php
+                    foreach ($slider_variable as $key => $slider_value) {
+                        $image = wp_get_attachment_url(get_post_thumbnail_id($slider_value->ID));
+                        ?>
+                        <div class="slide-item" style="background-image: url('<?php echo esc_url($image); ?>');">
+                            <div class="container">
+                                <div class="slider-image">
+                                    <div class="slider-desc-wrapper">
 
-                                <div class="slider-desc-text">
+                                        <div class="slider-desc-text">
 
-                                    <div class="slider-desc">
-                                        <h1>
-                                            <a href="<?php echo esc_url(get_permalink($slider_value->ID)); ?>"><?php echo wp_kses_post(wp_trim_words($slider_value->post_title, 16)) ?></a>
-                                        </h1>
-                                        <p><?php echo wp_kses_post(ace_corporate_strip_url_content($slider_value, 20)); ?></p>
-                                        <a href="<?php echo esc_url(get_permalink($slider_value->ID)); ?>"
-                                           class="pillbtn promo-btn btn" role="button">
-                                            <?php esc_html_e('Read More ', 'ace-corporate'); ?><i
-                                                    class="fa fa-long-arrow-right"></i>
-                                        </a>
+                                            <div class="slider-desc">
+                                                <h1>
+                                                    <a href="<?php echo esc_url(get_permalink($slider_value->ID)); ?>"><?php echo wp_kses_post(wp_trim_words($slider_value->post_title, 16)) ?></a>
+                                                </h1>
+                                                <p><?php echo wp_kses_post(ace_corporate_strip_url_content($slider_value, 20)); ?></p>
+                                                <a href="<?php echo esc_url(get_permalink($slider_value->ID)); ?>"
+                                                   class="pillbtn promo-btn btn" role="button">
+                                                    <?php esc_html_e('Read More ', 'ace-corporate'); ?><i
+                                                            class="fa fa-long-arrow-right"></i>
+                                                </a>
+                                            </div>
+
+                                        </div>
+
                                     </div>
-
                                 </div>
-
+                                <!-- Slide Desc Wrapper -->
                             </div>
                         </div>
-                        <!-- Slide Desc Wrapper -->
-                        </div>
-                    </div>
-                    <!-- Slide Item -->
-                <?php } ?>
+                        <!-- Slide Item -->
+                    <?php } ?>
 
-            </div>
+                </div>
 
-        <?php } ?>
+            <?php }
+        }
+        if (!is_page_template('page-templates/template-cpmfront.php') ) {
+            ace_corporate_breadcrumb();
+        }?>
     </header>
     <!-- End #masthead -->
 

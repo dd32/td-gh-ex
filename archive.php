@@ -9,8 +9,10 @@
 
 get_header();
 // Boxed or Fullwidth
-$boxedornot = ace_corporate_boxedornot();
 
+
+$boxedornot = ace_corporate_boxedornot();
+  $post_format = get_post_format($post->ID);
 $content_class = "";
 $sidebar_class = ace_corporate_check_sidebar();
 if($sidebar_class == 'pull-left'):
@@ -22,8 +24,6 @@ elseif($sidebar_class == 'no-sidebar'):
 endif;
 
 ?>
-
-	<?php ace_corporate_breadcrumb(); ?>
 	<!-- End the breadcrumb -->
 
 	<?php if ($boxedornot == 'fullwidth') {?>
@@ -53,10 +53,12 @@ endif;
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+					 						
 					<div class="entry-content clearfix">
+
 						<?php
-							get_template_part( 'template-parts/content', get_post_format($post->ID) );
+						get_template_part( 'template-parts/content', get_post_format($post->ID) );
+
 						?>
 					</div>
 

@@ -22,16 +22,18 @@
  * @uses ace_corporate_admin_header_style()
  * @uses ace_corporate_admin_header_image()
  */
+if (! function_exists('ace_corporate_custom_header_setup') ){
 function ace_corporate_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'ace_corporate_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => '000000',
+		'default-text-color'     => 'ffffff',
 		'width'                  => 1170,
 		'height'                 => 150,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'ace_corporate_header_style',
 		'admin-head-callback'    => 'ace_corporate_admin_header_style',
 	) ) );
+}
 }
 add_action( 'after_setup_theme', 'ace_corporate_custom_header_setup' );
 

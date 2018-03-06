@@ -12,7 +12,7 @@ get_header();
 // Boxed or Fullwidth
 $boxedornot = ace_corporate_boxedornot();
 $section_background = get_theme_mod('section_background');
-
+$id = get_the_ID();
 ?>
 <!-- End of Home page slider -->
 
@@ -36,8 +36,10 @@ if ($cat_id != 'none') {
             <div class="container">
                 <?php } ?>
                 <div class="row">
-                    <h2 class="section-title text-center"><?php echo esc_html(get_theme_mod('first_post_title')); ?></h2>
+                    <?php if(get_theme_mod('first_post_title')){?>
+                    <h2 class="section-title text-center" ><?php echo esc_html(get_theme_mod('first_post_title')); ?></h2>
                     <?php
+                    }
                     while ($events->have_posts()) : $events->the_post();
                         $post_thumbnail_id = get_post_thumbnail_id($post->ID);
                         $attachment = get_post_meta($post_thumbnail_id);
@@ -81,36 +83,41 @@ if ($cat_id != 'none') {
 
 ?>
 <?php
-if (is_front_page()) {
-if (get_theme_mod('cta_heading') != '' || get_theme_mod('cta_content_text') != '') { ?>
-    <section id="promo" class="section promo"
-             style="background: #2b2b2b <?php if (!empty($section_background)) { ?>url(<?php echo esc_url($section_background); ?>)repeat center center fixed" <?php } ?>>
-        <?php if ($boxedornot == 'fullwidth') { ?>
-        <div class="container">
-            <?php } ?>
+if (get_theme_mod('homepage_show_content')==1) {
+    $post_thumbnail_id = get_post_thumbnail_id(get_the_ID());
+    $image = wp_get_attachment_image_src($post_thumbnail_id, 'full');
+    if (!empty($image)) {
+        $image_style = "style='background-image:url(" . esc_url($image[0]) . ")'";
+    } else {
+        $image_style = '';
+    }
+   
+    ?>
+
+    <div class="page-content section">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="promo-content">
-                        <h2><?php echo esc_attr(get_theme_mod('cta_heading')); ?> </h2>
-                        <p><?php echo esc_attr(get_theme_mod('cta_content_text')); ?></p>
-                    </div>
-                    <?php
-                    $cta_text = esc_attr(get_theme_mod('cta_link_text'));
-                    $cta_link_url = esc_attr(get_theme_mod('cta_link_url'));
-                    if (!empty($cta_text) && !empty($cta_link_url)) {
-                        ?>
-                        <a href="<?php echo esc_url($cta_link_url); ?>" class="pillbtn promo-btn btn" target="_blank">
-                            <?php echo esc_html($cta_text); ?>
-                        </a>
-                    <?php } ?>
+            <?php if($image_style){?>
+                <div class="page-img" <?php echo wp_kses_post($image_style); ?>>
+
+                </div>
+               <?php  }
+                else{ ?>
+                <div class="page-img page-content-video" ><?php echo theme_oembed_videos(); ?>
+
+                </div>
+               <?php  } ?>
+                <div class="page-content-wrap">
+                    <h2><?php echo  esc_html(get_the_title($id)); ?></h2>
+                    <?php echo wp_kses_post(ace_corporate_get_excerpt($id,900)); ?>
                 </div>
             </div>
-            <?php if ($boxedornot == 'fullwidth') { ?>
         </div>
-    <?php } ?>
-    </section>
-<?php } ?>
+    </div>
+<?php }?>
 <?php
+if (is_front_page()) {
+
 
 if (post_type_exists('jetpack-portfolio')) {
 
@@ -154,32 +161,39 @@ if (post_type_exists('jetpack-portfolio')) {
     <?php }
     wp_reset_postdata();
 }
-?>
 
-<?php
-if (get_theme_mod('homepage_show_content')==1) {
-$post_thumbnail_id = get_post_thumbnail_id(get_the_ID());
-$image = wp_get_attachment_image_src($post_thumbnail_id, 'full');
-if (!empty($image)) {
-    $image_style = "style='background-image:url(" . esc_url($image[0]) . ")'";
-} else {
-    $image_style = "";
-}
-?>
-
-    <div class="page-content section">
-        <div class="container-fluid">
+    if (get_theme_mod('cta_heading') != '' || get_theme_mod('cta_content_text') != '') { ?>
+    <section id="promo" class="section promo"
+             style="background: #2b2b2b <?php if (!empty($section_background)) { ?>url(<?php echo esc_url($section_background); ?>)repeat center center fixed" <?php } ?>>
+        <?php if ($boxedornot == 'fullwidth') { ?>
+        <div class="container">
+            <?php } ?>
             <div class="row">
-                <div class="page-img" <?php echo wp_kses_post($image_style); ?>>
-                </div>
-                <div class="page-content-wrap">
-                    <h2><?php the_title(); ?></h2>
-                    <?php the_content(); ?>
+                <div class="col-md-12 text-center">
+                    <div class="promo-content">
+                        <?php
+                        if(get_theme_mod('cta_heading'))
+                        echo '<h2>'.esc_attr(get_theme_mod('cta_heading')).'</h2>';
+                        if(get_theme_mod('cta_content_text'))
+                            echo '<p>'.esc_attr(get_theme_mod('cta_content_text')).'</p>';
+                        ?>
+                    </div>
+                    <?php
+                    $cta_text = esc_attr(get_theme_mod('cta_link_text'));
+                    $cta_link_url = esc_attr(get_theme_mod('cta_link_url'));
+                    if (!empty($cta_text) && !empty($cta_link_url)) {
+                        ?>
+                        <a href="<?php echo esc_url($cta_link_url); ?>" class="pillbtn promo-btn btn" target="_blank">
+                            <?php echo esc_html($cta_text); ?>
+                        </a>
+                    <?php } ?>
                 </div>
             </div>
+            <?php if ($boxedornot == 'fullwidth') { ?>
         </div>
-    </div>
-<?php }?>
+    <?php } ?>
+    </section>
+<?php } ?>
 <!-- Portfolio section ends -->
 
 <div class="pre-footer">
@@ -239,28 +253,32 @@ if (!empty($image)) {
 
 </div>
 <?php
-
 $args = array(
     'post_type' => 'post',
     'orderby' => 'DATE',
     'order' => 'DESC',
     'posts_per_page' => 3,
 );
-
 $featured = new WP_Query($args);
+  $loop = 1;
 
 if ($featured->have_posts()) :
-
+    
     ?>
     <section id="about" class="section blogroll aboutbox">
         <?php if ($boxedornot == 'fullwidth') { ?>
         <div class="container">
-            <?php } ?>
-            <div class="row">
-
-                <h2 class="section-title text-center"><?php esc_html_e('From the Blog', 'ace-corporate'); ?></h2>
-
-                <?php while ($featured->have_posts()): $featured->the_post(); ?>
+                  <?php }
+            while ($featured->have_posts()): $featured->the_post();
+                global $post;
+                $post_format = get_post_format($post->ID);
+                echo(($loop % 3 == 1 || $loop == 1) ? '<div class="row">' : '');
+                if ($loop == 1) {
+                    echo(($loop == 1 && $blog_title) ? '<h2 class="section-title text-center">' . esc_html($blog_title) . '</h2>' : '');
+                }
+                if ($loop <= 3) {
+                    ?>
+                
                     <div class="col-md-4 col-sm-12 text-center">
                         <div <?php post_class(); ?>>
 
@@ -268,35 +286,36 @@ if ($featured->have_posts()) :
 
                                 <div class="blog-content-image effect-thumb">
                                     <?php get_template_part('template-parts/content', get_post_format($post->ID)); ?>
+                                    <?php if (get_theme_mod('show_blog_meta', 1)) { ?>
+                                        <div class="entry-meta">
+                                            <?php
+                                            $blog_post_author = get_avatar(get_the_author_meta('ID'), 32);
+                                            $author_name = get_the_author_meta('display_name');
+                                            $author_firstname = get_the_author_meta('first_name');
+                                            $author_lastname = get_the_author_meta('last_name');
+                                            $author_id = get_the_author_meta('ID');
+                                            $author_image = get_avatar($author_id); ?>
+                                            <div class="date"><i class="fa fa-clock-o"
+                                                                 aria-hidden="true"></i><span><?php echo esc_html(get_the_date()); ?></span>
+                                            </div>
+                                            <div class="author">
+                                                <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"
+                                                   title="<?php echo esc_attr(get_the_author()); ?>">
+                                                    <span><?php echo esc_html($author_name); ?></span><span
+                                                            class="author-img"><?php echo get_avatar(get_the_author_meta('ID'), 60, '', 'author-image', ''); ?></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
                                 </div>
 
                                 <div class="blog-content-head">
                                     <h4><a href="<?php echo esc_url(get_permalink()); ?>"><?php the_title(); ?></a></h4>
                                 </div>
                                 <div class="blog-content-wrap">
-                                    <p><?php echo wp_kses_post(ace_corporate_strip_url_content($post, esc_attr(get_theme_mod('excerpt_length', 20)))); ?></p>
+                                    <p><?php echo wp_kses_post(ace_corporate_strip_url_content( esc_attr(get_theme_mod('excerpt_length', 20)))); ?></p>
                                 </div>
-                                <?php if (get_theme_mod('show_blog_meta', 1)) { ?>
-                                    <div class="entry-meta">
-                                        <?php
-                                        $blog_post_author = get_avatar(get_the_author_meta('ID'), 32);
-                                        $author_name = get_the_author_meta('display_name');
-                                        $author_firstname = get_the_author_meta('first_name');
-                                        $author_lastname = get_the_author_meta('last_name');
-                                        $author_id = get_the_author_meta('ID');
-                                        $author_image = get_avatar($author_id); ?>
-                                        <div class="date"><i class="fa fa-clock-o"
-                                                             aria-hidden="true"></i><span><?php echo esc_html(get_the_date()); ?></span>
-                                        </div>
-                                        <div class="author">
-                                            <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"
-                                               title="<?php echo esc_attr(get_the_author()); ?>">
-                                                <span><?php echo esc_html($author_name); ?></span><span
-                                                        class="author-img"><?php echo get_avatar(get_the_author_meta('ID'), 60, '', 'author-image', ''); ?></span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                <?php } ?>
+
                             </div>
                             <!-- End Blog Content -->
 
@@ -304,7 +323,11 @@ if ($featured->have_posts()) :
                         <!-- End the Blog wrap -->
                     </div>
 
-                <?php endwhile; ?>
+                     <?php
+                }
+                echo(($loop % 3 == 0&& $loop != 0) ? '</div>' : '');
+                $loop++;
+                endwhile; ?>
 
                 <?php wp_reset_postdata(); ?>
 

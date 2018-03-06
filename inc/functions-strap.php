@@ -3,6 +3,8 @@
 /**
  * Bootstrap menu class injection
  */
+ 
+if (! function_exists('ace_corporate_bootstrap_menu_objects') ){
 function ace_corporate_bootstrap_menu_objects( $sorted_menu_items, $args ) {
     if ( $args->theme_location == 'primary' ) {
         $current = array( 'current-menu-ancestor', 'current-menu-item' );
@@ -20,6 +22,7 @@ function ace_corporate_bootstrap_menu_objects( $sorted_menu_items, $args ) {
         }
     }
     return $sorted_menu_items;
+}
 }
 add_filter( 'wp_nav_menu_objects', 'ace_corporate_bootstrap_menu_objects', 10, 2 );
 

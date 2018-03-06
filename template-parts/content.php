@@ -5,7 +5,10 @@
  * @package CT Corporate
  */
 ?>
+
 <?php
+$metadisplay = get_theme_mod('show_blog_meta',1);
+
 $featured_image = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
 $featured_image_id = get_post_thumbnail_id();
 $image_alt = get_post_meta($featured_image_id, '_wp_attachment_image_alt', true);
@@ -13,7 +16,7 @@ $alttxt = ($image_alt ? $image_alt : '');
 $front = get_option('show_on_front');
 if (!is_single() && !is_archive() && !is_search() && !is_page_template('page-templates/template-blog.php')) {
     ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
 
         <div class="post-content entry-content">
 
@@ -27,9 +30,7 @@ if (!is_single() && !is_archive() && !is_search() && !is_page_template('page-tem
 
                         <div class="share-mask">
                             <div class="share-wrap">
-                                <div class="share-content">
-                                    <h2><?php esc_html_e('Read More', 'ace-corporate'); ?></h2>
-                                </div>
+
                             </div>
                         </div>
 
@@ -41,16 +42,21 @@ if (!is_single() && !is_archive() && !is_search() && !is_page_template('page-tem
 
                 <header class="entry-header">
                     <?php the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
-
+                     <?php if($metadisplay==1){?>
                     <div class="entry-meta">
-                        <?php ace_corporate_posted_on(); ?>
+                   <?php ace_corporate_posted_on(); ?>
                     </div>
+                  <?php }?>
                     <!-- End Entry-meta -->
 
                 </header>
-
+        <?php  $title = get_the_title();
+            if (empty($title)) {
+                     echo '<a href="' . esc_url(get_the_permalink()) . '">';
+                } ?>
                 <div class="entry-wrap clearfix">
                     <?php ace_corporate_post_content(); ?>
+                     
                 </div>
 
             <?php } ?>
@@ -62,6 +68,7 @@ if (!is_single() && !is_archive() && !is_search() && !is_page_template('page-tem
 
             <footer class="entry-footer clearfix">
                 <?php ace_corporate_entry_footer(); ?>
+                 
             </footer>
             <!-- End Entry Footer -->
 
@@ -96,9 +103,7 @@ if (!is_single() && !is_archive() && !is_search() && !is_page_template('page-tem
 
                     <div class="share-mask">
                         <div class="share-wrap">
-                            <div class="share-content">
-                                <h2><?php esc_html_e('Read More', 'ace-corporate'); ?></h2>
-                            </div>
+
                         </div>
                     </div>
 
@@ -117,10 +122,11 @@ if (!is_single() && !is_archive() && !is_search() && !is_page_template('page-tem
             the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>');
         } ?>
 
-        <div class="entry-meta">
-            <?php ace_corporate_posted_on(); ?>
-        </div>
-
+       <?php if($metadisplay==1){?>
+                    <div class="entry-meta">
+                   <?php ace_corporate_posted_on(); ?>
+                    </div>
+                  <?php }?>
     </header>
 
     <div class="entry-wrap clearfix">
@@ -129,9 +135,11 @@ if (!is_single() && !is_archive() && !is_search() && !is_page_template('page-tem
         if (is_search() || is_archive() || is_page_template('page-templates/template-blog.php')) {
             $title = get_the_title();
             if (empty($title)) {
-                echo '<a href="' . esc_url(get_the_permalink()) . '">';
+
+                echo '<a href="' . esc_url(get_the_permalink()) . '"> ';
+
             }
-            echo wp_kses_post(ace_corporate_strip_url_content($post, 40));
+           echo wp_kses_post(ace_corporate_strip_url_content( esc_attr(get_theme_mod('excerpt_length', 20)))); 
             if (empty($title)) {
                 echo '</a>';
             }

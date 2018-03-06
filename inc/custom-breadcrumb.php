@@ -14,8 +14,16 @@ if (! function_exists('ace_corporate_breadcrumb')) {
         if ($boxedornot == 'fullwidth') {?>
             <div class="container full-width-container">
         <?php }
+        if(is_front_page()){
 
-            if ( !is_home() ) {
+                echo '<a href="';
+                echo esc_url(home_url());
+                echo '">';
+                echo '<span class="home"><i class="fa fa-home"></i></span>';
+        }
+
+            if ( is_home()) {
+
                 echo '<a href="';
                 echo esc_url(home_url());
                 echo '">';
@@ -56,7 +64,8 @@ if (! function_exists('ace_corporate_breadcrumb')) {
                     echo'</span>';
                 } elseif ( is_author() ) {
                 echo '<span class="delimiter"> ';
-                    echo esc_html__('Author Archive ','ace-corporate');
+                    echo esc_html__('Author Archive','ace-corporate');
+                    echo '</a><span class="delimiter"><i class="fa fa-angle-right"></i></span>&nbsp;';
                     the_author();
                 echo'</span>';
             } elseif ( has_post_format() ) {
@@ -72,7 +81,9 @@ if (! function_exists('ace_corporate_breadcrumb')) {
                         }
                         echo wp_kses_post($output);
                         echo '<span title="'. esc_attr($title) .'"> '.esc_html($title) .'</span>';
-                    } else {
+                    } 
+
+                    else {
                         echo '<span class="delimiter"> '.esc_html( get_the_title() ) .'</span><span class="delimiter">';
                     }
                 }

@@ -9,8 +9,7 @@
 get_header();
 // Boxed or Fullwidth
 $boxedornot = ace_corporate_boxedornot();
-
-ace_corporate_breadcrumb(); ?>
+?>
 		<!-- Start the container -->
         <div class="container full-width-container">
 			<div class="content-area full-width-posts">

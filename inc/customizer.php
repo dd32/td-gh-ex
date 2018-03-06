@@ -32,10 +32,11 @@ if (!function_exists('ace_corporate_customize_register')) :
 
     add_action('customize_register', 'ace_corporate_customize_register');
 endif;
-
+if (! function_exists('ace_corporate_customize_partial_blogname') ){
 function ace_corporate_customize_partial_blogname()
 {
     bloginfo('name');
+}
 }
 
 /**
@@ -44,11 +45,12 @@ function ace_corporate_customize_partial_blogname()
  *
  * @return void
  */
+if (! function_exists('ace_corporate_customize_partial_blogdescription') ){
 function ace_corporate_customize_partial_blogdescription()
 {
     bloginfo('description');
 }
-
+}
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
@@ -61,7 +63,7 @@ if (!function_exists('ace_corporate_customize_preview_js')) :
 
     add_action('customize_preview_init', 'ace_corporate_customize_preview_js');
 endif;
-
+if (! function_exists('ace_corporate_customize_main_js') ){
 function ace_corporate_customize_main_js()
 {
     wp_enqueue_script('ace-corporate-customizer-main-js', trailingslashit(get_template_directory_uri()) . 'js/customizer-main.js');
@@ -69,7 +71,7 @@ function ace_corporate_customize_main_js()
         'response' => esc_html__('You can select upto 3 pages only', 'ace-corporate'),
     ));
 }
-
+}
 add_action('customize_controls_enqueue_scripts', 'ace_corporate_customize_main_js');
 
 /**
