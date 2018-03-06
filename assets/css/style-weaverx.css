@@ -2853,6 +2853,16 @@ ol.trackbacklist {
 	padding-left:			15px;
 }
 
+.wvrx-aside-margin {
+	margin-bottom:			20px;
+}
+
+.wvrx-infobar-search {
+		padding-right:		4px !important;
+		display:			inline-block;
+		padding-left:		20px;
+}
+
 /* =Search
 ----------------------------------------------- */
 #header-search,
@@ -3086,7 +3096,7 @@ a.page-numbers:hover {
 }
 
 .blog-post-cols-3 .post-title,
-.blog-post-cols-3-span-2 .post-title{
+.blog-post-cols-3-span-2 .post-title {
 	line-height:    1em;
 }
 

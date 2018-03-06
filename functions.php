@@ -64,32 +64,25 @@ function weaverx_setup() {
 	add_editor_style( WEAVERX_GOOGLE_FONTS_URL ); // from settings.php - in %7C format
 
 
-	// Add default posts and comments RSS feed links to <head>.
-	add_theme_support( 'automatic-feed-links' );
-
-	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
+	// ******** add theme support possibilities ********
 
 
-	// html5 for search
+	add_theme_support( 'automatic-feed-links' );					// Add default posts and comments RSS feed links to <head>.
 
-	add_theme_support( 'html5', array(  'search-form' ) );
 
-	// Weaver Xtreme supports two main nav menus
-	register_nav_menus( array(
-		'primary' => __('Primary Navigation: if specified, used instead of Default menu', 'weaver-xtreme' /*adm*/),
-		'secondary' => __('Secondary Navigation: if specified, adds 2nd menu bar', 'weaver-xtreme' /*adm*/),
-		'header-mini' => __('Header Mini Menu: if specified, adds horizontal mini-menu to header', 'weaver-xtreme' /*adm*/)
-	) );
+	add_theme_support( 'customize-selective-refresh-widgets' );	// Add theme support for selective refresh for widgets.
 
-	// Add support for a variety of post formats
-	add_theme_support( 'post-formats', array( 'aside', 'audio', 'gallery',  'image', 'link', 'quote', 'status','video') );
 
-	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
-	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'html5', array(  'search-form' ) );		// html5 for search
 
-	add_theme_support( 'title-tag' );
 
+	add_theme_support( 'post-formats', array( 'aside', 'audio', 'gallery',
+					   'image', 'link', 'quote', 'status','video') );	// Add support for a variety of post formats
+						// not supported: chat
+
+	add_theme_support( 'post-thumbnails' );						// Featured Images
+
+	add_theme_support( 'title-tag' );							//
 
 	// now, need Weaver Xtreme settings available for everything else
 
@@ -146,6 +139,13 @@ function weaverx_setup() {
 	// ... and thus ends the changeable header business.
 	weaverx_register_header_images();
 
+	// Weaver Xtreme supports two main nav menus
+	register_nav_menus( array(
+		'primary' => __('Primary Navigation: if specified, used instead of Default menu', 'weaver-xtreme' /*adm*/),
+		'secondary' => __('Secondary Navigation: if specified, adds 2nd menu bar', 'weaver-xtreme' /*adm*/),
+		'header-mini' => __('Header Mini Menu: if specified, adds horizontal mini-menu to header', 'weaver-xtreme' /*adm*/)
+	) );
+
 }
 } // weaverx_setup
 //--
@@ -172,8 +172,6 @@ function weaverx_init_opts($who='') {
 	$GLOBALS['WVRX_POSTS'] = count($_POST, COUNT_RECURSIVE);	// count all elements
 	$GLOBALS['WVRX_GETS'] = count($_GET, COUNT_RECURSIVE);
 	$GLOBALS['WVRX_COOKIES'] = count($_COOKIE, COUNT_RECURSIVE);
-	// echo 'vars: COOKIE ' . count($_COOKIE) . ' GET: ' . count($_GET) . ' POST: ' . count($_POST);
-	// echo '<pre>'; var_dump($_POST); echo '</pre>';
 }
 }
 //--
@@ -206,7 +204,6 @@ function weaverx_register_header_images() {
 if ( ! function_exists( 'weaverx_admin_header_style' ) ) {
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
- * @since Weaver Xtreme 1.0
  */
 function weaverx_admin_header_style() {
 ?>
@@ -397,11 +394,10 @@ function weaverx_enqueue_scripts() {	// action definition
 		$altsw = '767';
 	$altLabel = weaverx_getopt('mobile_alt_label');
 
-	global $weaverx_cur_page_ID;
 	global $post;
 
-	if (!$weaverx_cur_page_ID && is_object($post))
-		$weaverx_cur_page_ID = get_the_ID();			// this must go before weaverx_get_video_render() call
+	if (!weaverx_get_cur_page_id() && is_object($post))
+		weaverx_set_cur_page_id( get_the_ID() );			// this must go before weaverx_get_video_render() call
 
 	$local = array(
 		'useSmartMenus' => $useSM,

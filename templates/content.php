@@ -26,7 +26,7 @@ if (weaverx_is_checked_page_opt('_pp_pwp_compact_posts')
 	 && ($the_image = weaverx_get_first_post_image()) != '') {  // = Compact Posts
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('post-content content-default content-compact-post ' . weaverx_post_class() ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('post-content content-default content-compact-post ' . weaverx_post_class() ); echo weaverx_schema( 'post' );?>>
 
 <header class="entry-header">
 	<?php weaverx_entry_header( '' ); // compact header ?>
@@ -43,7 +43,7 @@ if (weaverx_is_checked_page_opt('_pp_pwp_compact_posts')
 // -------------------------------------------------- REGULAR POSTS ---------------------------------------
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('content-default ' . weaverx_post_class() ); ?>><!-- POST: standard -->
+<article id="post-<?php the_ID(); ?>" <?php post_class('content-default ' . weaverx_post_class() ); echo weaverx_schema( 'post' ); ?>><!-- POST: standard -->
 <header class="entry-header">
 <?php
 	weaverx_entry_header( '', $do_excerpt );
@@ -68,7 +68,7 @@ if (weaverx_is_checked_page_opt('_pp_pwp_compact_posts')
 	} else {                                // ------------------ FULL POST ------------------------
 		weaverx_post_div('content');
 		weaverx_the_post_full();
-		weaverx_link_pages();
+		weaverx_link_pages();	// <!--nextpage-->
 ?>
 		</div><!-- .entry-content -->
 <?php
@@ -84,7 +84,9 @@ if (weaverx_is_checked_page_opt('_pp_pwp_compact_posts')
 		weaverx_inject_area('postpostcontent');	// inject post comment body
 }
 ?>
-<div class="clear-post-end" style="clear:both;"></div></article><!-- /#post-<?php the_ID(); ?> -->
+<div class="clear-post-end" style="clear:both;"></div>
+<?php echo weaverx_schema( 'mainEntityOfPage'); ?>
+</article><!-- /#post-<?php the_ID(); ?> -->
 
 <?php
 // need the trailing clear:both instead of clarfix on the article to make outside FIs work right

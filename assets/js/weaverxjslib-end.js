@@ -125,7 +125,7 @@ function weaverx_ToggleDIV(his, me, show, hide, text) {
 function wvrxFlowColor() {
     //version 1.1 - 20 oct 2014
     //IE8 Fix
-    if (wvrxEndOpts.flowColor == '0')
+    if ( typeof wvrxEndOpts === 'undefined' || wvrxEndOpts.flowColor == '0')
         return;
 
     var SdbConf = wvrxEndOpts.sbLayout; //get the sidebar layout
@@ -519,7 +519,7 @@ function weaverxBrowserResizeEnd() {
     if (jQuery('.wvrx-fullwidth,.wvrx-expand-full').length) { // Only start monitoring if the class is being used
         weaverxFullWidth(); // run full width script
     }
-    if (wvrxEndOpts.full_browser_height == '1')
+    if ( typeof wvrxEndOpts !== 'undefined' && wvrxEndOpts.full_browser_height == '1')
         weaverxBottomFooter(); // fix full height browser
 
     if (typeof(weaverxUserOnResize) == 'function') // call user function if there
@@ -536,36 +536,39 @@ function weaverx_js_update() {
     weaverxBrowserResizeEnd();
     weaverxResizeEnd();
 
-    if (wvrxEndOpts.hideTip == '1') {
-        jQuery('a[title]').mouseover(function(e) {
-            var tip = jQuery(this).attr('title');
-            jQuery(this).attr('title', '');
-        }).mouseout(function() {
-            jQuery(this).attr('title', jQuery('.tipBody').html());
-        });
-    }
+	if ( typeof wvrxEndOpts !== 'undefined' ) {
 
-    if (wvrxEndOpts.hFontFamily != '0') {
-        var ffamily = 'font-' + wvrxEndOpts.hFontFamily;
-        //alert('ffamily:' + ffamily);
-        jQuery('.entry-content h1').addClass(ffamily);
-        jQuery('.entry-content h2').addClass(ffamily);
-        jQuery('.entry-content h3').addClass(ffamily);
-        jQuery('.entry-content h4').addClass(ffamily);
-        jQuery('.entry-content h5').addClass(ffamily);
-        jQuery('.entry-content h6').addClass(ffamily);
-    }
+		if (wvrxEndOpts.hideTip == '1') {
+			jQuery('a[title]').mouseover(function(e) {
+				var tip = jQuery(this).attr('title');
+				jQuery(this).attr('title', '');
+			}).mouseout(function() {
+				jQuery(this).attr('title', jQuery('.tipBody').html());
+			});
+		}
 
-    if (wvrxEndOpts.hFontMult != 1) {
-        var mult = wvrxEndOpts.hFontMult;
-        // these values computed base on original h sizes times multipler determined in footer.php
-        jQuery('.entry-content h1').css('font-size', (2.25 * mult) + 'em');
-        jQuery('.entry-content h2').css('font-size', (1.875 * mult) + 'em');
-        jQuery('.entry-content h3').css('font-size', (1.5 * mult) + 'em');
-        jQuery('.entry-content h4').css('font-size', (1.125 * mult) + 'em');
-        jQuery('.entry-content h5').css('font-size', (1.0 * mult) + 'em');
-        jQuery('.entry-content h6').css('font-size', (0.875 * mult) + 'em');
-    }
+		if (wvrxEndOpts.hFontFamily != '0') {
+			var ffamily = 'font-' + wvrxEndOpts.hFontFamily;
+			//alert('ffamily:' + ffamily);
+			jQuery('.entry-content h1').addClass(ffamily);
+			jQuery('.entry-content h2').addClass(ffamily);
+			jQuery('.entry-content h3').addClass(ffamily);
+			jQuery('.entry-content h4').addClass(ffamily);
+			jQuery('.entry-content h5').addClass(ffamily);
+			jQuery('.entry-content h6').addClass(ffamily);
+		}
+
+		if (wvrxEndOpts.hFontMult != 1) {
+			var mult = wvrxEndOpts.hFontMult;
+			// these values computed base on original h sizes times multipler determined in footer.php
+			jQuery('.entry-content h1').css('font-size', (2.25 * mult) + 'em');
+			jQuery('.entry-content h2').css('font-size', (1.875 * mult) + 'em');
+			jQuery('.entry-content h3').css('font-size', (1.5 * mult) + 'em');
+			jQuery('.entry-content h4').css('font-size', (1.125 * mult) + 'em');
+			jQuery('.entry-content h5').css('font-size', (1.0 * mult) + 'em');
+			jQuery('.entry-content h6').css('font-size', (0.875 * mult) + 'em');
+		}
+	}
 
     // Target your #container, #wrapper etc
     // if ( ! weaver_disable_fitvids )  // one possible solution to disabling FitVids via localize_script in functions.php

@@ -206,44 +206,44 @@ function weaverx_e_notopt($opt,$str) {
 
 
 // # PER PAGE OPTIONS =========================================================
-function weaverx_get_per_page_value($name) {
+function weaverx_get_cur_page_id() {
 	global $weaverx_cur_page_ID;
-
-	if ( !$weaverx_cur_page_ID )
-		return false;
-
-	//$template = get_page_template();
-	//if (strpos($template,'paget-posts') === false) weaverx_alert('page:' . $template);
-
-	return get_post_meta($weaverx_cur_page_ID,$name,true);
+	return $weaverx_cur_page_ID;
 }
 
-function weaverx_is_checked_page_opt($meta_name) {
+function weaverx_set_cur_page_id( $id ) {
+	global $weaverx_cur_page_ID;
+	$weaverx_cur_page_ID = $id;
+}
+
+
+function weaverx_get_per_page_value( $name ) {
+
+	if ( !( $id = weaverx_get_cur_page_id() ) )
+		return false;
+	return get_post_meta( $id, $name, true);
+}
+
+function weaverx_is_checked_page_opt( $meta_name ) {
 	// the standard is to check options to hide things
 
-	global $weaverx_cur_page_ID;
-	if ( !$weaverx_cur_page_ID)
+	if ( !( $id = weaverx_get_cur_page_id() ) )
 		return false;
 
+	$val = get_post_meta( $id, $meta_name, true);  // retrieve meta value
 
-	//if ( ( is_archive() ) || ( is_author() ) || ( is_category() ) || ( is_home() ) || ( is_single() ) || ( is_tag() ) || ( is_search() ) )
-	//	return false;
-
-	$val = get_post_meta($weaverx_cur_page_ID,$meta_name,true);  // retrieve meta value
-
-	if (!empty($val)) return true;		// value exists - 'on'
-	return false;
+	return !empty($val); 	// if value exists - 'on'
 }
 
-function weaverx_get_per_post_value($meta_name) {
-	return get_post_meta(get_the_ID(),$meta_name,true);  // retrieve meta value
+function weaverx_get_per_post_value( $meta_name ) {
+	return get_post_meta(get_the_ID(), $meta_name, true);  // retrieve meta value
 }
 
 function weaverx_is_checked_post_opt($meta_name) {
 	// the standard is to check options to hide things
-	$val = get_post_meta(get_the_ID(),$meta_name,true);  // retrieve meta value
-	if (!empty($val)) return true;		// value exists - 'on'
-	return false;
+	$val = get_post_meta( get_the_ID(), $meta_name, true );  // retrieve meta value
+
+	return !empty($val); 	// if value exists - 'on'
 }
 
 function weaverx_page_posts_error($info='') {
@@ -471,9 +471,116 @@ function weaverx_echo_css( $css ) {
 }
 
 // # MISC ==============================================================
-function weaverx_show_header_image() {
+
+function weaverx_schema(  $who, $aux='' ) {		// added 3.1.13
+	// apply schema.org info where we can.
+	// NOTE: This filter MUST be defined or else the $who arg will be echoed.
+	//return '';
+
+	switch ( $who ) {
+		case 'archive':
+		case 'author':
+		case 'blog':
+		case 'category':
+		case 'single':
+		case 'tag':
+			$schema = ' itemtype="http://schema.org/Blog" itemscope';
+			break;
+
+		case 'body':
+			if ( is_search() ) {
+				$schema = ' itemtype="http://schema.org/SearchResultsPage" itemscope';
+			} else
+				$schema = ' itemtype="http://schema.org/WebPage" itemscope';
+			break;
+
+		case 'branding':
+			$schema = ' itemtype="http://schema.org/WPHeader" itemscope';
+			break;
+
+		case 'entry-content':
+			$schema = '';	// doesnt work?? ' itemprop="mainEntityOfPage"';
+			break;
+
+		case 'footer':
+			$schema = ' itemtype="http://schema.org/WPFooter" itemscope';
+			break;
+
+		case 'headline':
+			$schema = ' itemprop="headline name"';
+			break;
+
+		case 'image':
+			$fix = str_replace( 'src=', 'itemprop="url" src=', $aux);	// add in url prop
+			$schema = '<span itemtype="http://schema.org/ImageObject" itemprop="image" itemscope>' . $fix . '</span>';
+			break;
+
+		case 'mainEntityOfPage':
+			$schema = '<link itemprop="mainEntityOfPage" href="' . get_permalink() . '" />';
+			break;
+
+		case 'menu':
+			$schema = ' itemtype="http://schema.org/SiteNavigationElement" itemscope';
+			break;
+
+		case 'person':
+			//return '';
+			$schema = '<span itemtype="http://schema.org/Person" itemscope itemprop="author"><span itemprop="name">'
+					  . $aux . '</span></span>';
+			break;
+
+		case 'post':
+			if ( is_search() || (isset($GLOBALS['weaver_show_posts_plugin']) && $GLOBALS['weaver_show_posts_plugin']) ) {
+				$schema =  ' itemtype="http://schema.org/Article" itemscope';		// searches don't want to be Blogs, just articles
+			} else {
+				$schema =  ' itemtype="http://schema.org/BlogPosting" itemscope itemprop="blogPost"';
+			}
+			break;
+
+		case 'image':
+		case 'page':
+			$schema = ' itemtype="http://schema.org/WebPageElement" itemscope itemprop="mainContentOfPage"';
+			break;
+
+		case 'published':// <meta itemprop="datePublished" content="2009-05-08">
+			$schema = '<meta itemprop="datePublished" content="' .  esc_attr( get_the_date( 'c' ))  . '"/>' . "\n"
+						. '<meta itemprop="dateModified" content="' .  esc_attr( get_the_modified_date( 'c' ))  . '"/>' . "\n"
+						. '<span style="display:none" itemscope itemprop="publisher" itemtype="http://schema.org/Organization">'
+						. '<span itemprop="name">' . get_bloginfo('name') . "</span>";
+
+			$logo = weaverx_get_wp_custom_logo_url();
+			if ( $logo != '' ) {
+				$schema .= '<img itemprop="logo" src="' . esc_url($logo) . '" />';
+			} else {
+				$schema .= '<!-- no logo defined -->';
+			}
+			$schema .= "</span>\n";
+			break;
+
+		case 'show_posts_begin':
+			$schema = '<div class="atw-show-posts-schema" itemtype="http://schema.org/Blog" itemscope > <!-- begin Blog -->' . "\n";
+			break;
+
+		case 'show_posts_end':
+			$schema = '</div> <!-- end Blog -->';
+			break;
+
+		case 'sidebar':
+			$schema = ' itemtype="http://schema.org/WPSideBar" itemscope';
+			break;
+
+		default:
+			$schema = '';
+	}
+	return $schema;
+}
 
 
+
+function weaverx_get_the_author() {
+	// to allow person schema
+	return weaverx_schema( 'person', esc_html(get_the_author()) );
+	//weaverx_schema( 'name'), esc_html(get_the_author()) ) . '</span>' . weaverx_schema( 'published' );
 }
 
 function weaverx_header_widget_area( $where_now ) {	// header.php support
@@ -484,20 +591,27 @@ function weaverx_header_widget_area( $where_now ) {	// header.php support
 
 	$sb_position = weaverx_getopt_default('header_sb_position', 'top');
 
-	if ( $sb_position == $where_now  && weaverx_has_widgetarea('header-widget-area') ) {
-		$p_class = weaverx_area_class('header_sb', 'notpad', '-none', 'margin-none');
+	if ( $sb_position == $where_now ) {
+		do_action('weaverx_alt_header_image');				// support plugins to add alternate header image
+		if ( weaverx_has_widgetarea('header-widget-area') ) {
+			$p_class = weaverx_area_class('header_sb', 'notpad', '-none', 'margin-none');
 
-		if ( weaverx_getopt('expand_header-widget-area') && !weaverx_getopt('expand_header') ) $p_class .= ' wvrx-expand-full';
-		if ( weaverx_getopt('header_sb_fixedtop') ) $p_class .= ' wvrx-fixedtop';
+			if ( weaverx_getopt('expand_header-widget-area') && !weaverx_getopt('expand_header') ) $p_class .= ' wvrx-expand-full';
+			if ( weaverx_getopt('header_sb_fixedtop') ) $p_class .= ' wvrx-fixedtop';
 
-		//weaverx_clear_both('header_sb');
-		weaverx_put_widgetarea('header-widget-area', $p_class, 'header');
-		if (weaverx_getopt('header_sb_align') == 'float-right')
-			weaverx_clear_both('header-widget-area');
+			//weaverx_clear_both('header_sb');
+			weaverx_put_widgetarea('header-widget-area', $p_class, 'header');
+			if (weaverx_getopt('header_sb_align') == 'float-right')
+				weaverx_clear_both('header-widget-area');
+		}
 	}
 }
 
 function weaverx_add_ie_scripts() {
+	// Now we need to polyfill IE8. We need 2 scripts loaded AFTER the .css stylesheets. wp_enqueue_script
+	// does not work because it can't add the test for < IE9. And you can't just include the code directly
+	// right here because it ends up before the .css enqueues. So we use a little trick as an action for
+	// wp_head which lets us put the code here, but have it emitted after the .css files.
 	echo '<!--[if lt IE 9]>
 <script src="' . esc_url(get_template_directory_uri()) . '/assets/js/html5.js" type="text/javascript"></script>
 <script src="' . esc_url(get_template_directory_uri()) . '/assets/js/respond.min.js" type="text/javascript"></script>
@@ -632,8 +746,8 @@ function weaverx_post_class($hidecount = false) {
 
 function weaverx_use_inline_css($css_file) {
 	return weaverx_getopt_checked('_inline_style') || !weaverx_f_file_access_available()
-		|| !weaverx_f_exists($css_file) || isset($_REQUEST['wp_customize']);
-											// also force inline from customizer
+		|| !weaverx_f_exists($css_file)
+		|| is_customize_preview();		// also force inline from customizer (Changed: 3.1.10 - used is_customize_preface() )
 }
 
 
@@ -941,7 +1055,7 @@ function weaverx_breadcrumb($echo = true, $pwp = '' ) {
 		$bc = implode($larrow,$list);
 	}
 	// Wrap crumbs
-	$bc = apply_filters('weaverx_breadcrumbs', $containerBefore . $containerCrumb . $bc . $containerCrumbEnd . $containerAfter);
+	$bc = apply_filters('weaverx_breadcrumbs', $containerBefore . $containerCrumb . $bc . $containerCrumbEnd . $containerAfter, $bc);
 
 	if ($echo) echo $bc;
 	else return $bc;

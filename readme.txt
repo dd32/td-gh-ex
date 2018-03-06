@@ -8,8 +8,8 @@ fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red,
 translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.5
-Tested up to: 4.8
-Stable tag: 3.1.9
+Tested up to: 4.9
+Stable tag: 3.2
 
 == Description ==
 
@@ -434,3 +434,31 @@ with testing and feature suggestions.
 * Fix: FI as header image now does have priority over Header HTML Replacement option as stated in option's description.
 * Tweak: Fixed top header widget area will be after Secondary fixed-top menu, and befoe Primary fixed-top menu.
 * Update: Updated to TGMPA v2.6.1 (used for suggested plugins)
+
+= Version 3.1.10 =
+* New: weaverx_fi_after filter added. See Weaver Xtreme API in The Guide.
+* Fix: Weaver Xtreme Plus alternate hamburger setting was not saving.
+* Fix: Customizer live preview update for Global Custom CSS
+* Fix: WP 4.9 issue with customizer color picker fixed
+* Tweak: WP 4.9 compatibility check
+* Tweak: General code cleanup in prep for 3.2
+
+= Version 3.1.11 =
+* Fix: Post single view now handles per-post 'page-head-code' correctly.
+* Tweak: changed post 'updated' <span> to <time> and added support for custom CSS so can make updated revision date visible.
+* Tweak: scroll bar width for extended width to work better with latest browser versions
+* Tweak: changed how extended handled for Safari browser
+* Tweak: More code cleanup, including adding new file: pluggables.php for new pluggable functions for easier child themes
+* Tweak: changed some inline code to child theme overridable actions and filters. This is in prep for 3.2.
+* Tweak: support for Dynamic Headers plugin removed since it hasn't been updated in seven years.
+
+= Version 3.1.12 =
+* Change: removed pluggables.php, returned code to original location due to child theme fractures
+* Fix: issue with Safari only for extended width handling
+* Tweak: account for missing wvrxOpts and wvrxEndOpts variable definitions caused by some plugins messing with loaded JavaScript
+* New: Added do_action('weaverx_alt_header_image') to support plugins to add alternate header image or other content before header widget area
+
+= Version 3.2 =
+* New: Scheme.org structured data tags (microformats)
+* New: New Per Page and Per Post tabbed sections (requires Weaver Xtreme Theme Support 3.2 plugin)
+* Tweak: updated WordPress theme tags included in style.css

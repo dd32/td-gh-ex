@@ -42,7 +42,7 @@ if (weaverx_getopt( 'm_secondary_hide') != 'hide' && (has_nav_menu( $menu ) || $
 			else
 				$hamburger = '<span class="menu-toggle-menu">' . $alt . '</span>';
 		}
-		$left = '<span href="" class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";
+		$left = '<span class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";		// +since: 3.1.10: remove empty href=""
 	}
 	$menu_class = apply_filters('weaverx_menu_class', 'weaverx-theme-menu wvrx-menu menu-hover', 'secondary');
 
@@ -73,7 +73,8 @@ if (weaverx_getopt( 'm_secondary_hide') != 'hide' && (has_nav_menu( $menu ) || $
 		$nav_class .= ' wvrx-secondary-fixedtop';
 	}
 
-	echo "\n\n" . '<div id="nav-secondary" class="' . $nav_class . '">' . "\n";
+	echo "\n\n" . '<div id="nav-secondary" class="' . $nav_class . '"' . weaverx_schema( 'menu' ) . ">\n";
+
 
 	$args = array(
 		'fallback_cb'     => '',

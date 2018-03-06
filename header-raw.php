@@ -80,12 +80,11 @@ html, body, div, span, iframe, wrap
 </style>
 
 <?php
-	global $weaverx_cur_page_ID;
-
 	global $post;
-	$weaverx_cur_page_ID = 0;	// need this for 404 page when this is not valid
 	if (is_object($post))
-        $weaverx_cur_page_ID = get_the_ID();	// we're on a page now, so set the post id for the rest of the session
+        weaverx_set_cur_page_id( get_the_ID() );	// we're on a page now, so set the post id for the rest of the session
+	else
+		weaverx_set_cur_page_id( 0 );	// no page
 
 	$per_page_code = weaverx_get_per_page_value('page-head-code');
 

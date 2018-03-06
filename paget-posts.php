@@ -34,7 +34,8 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 	// and next the content area.
 
-	echo '<div id="content" role="main" '. weaverx_content_class( $sb_layout, 'pwp', false ) . ">\n";
+
+	echo '<div id="content" role="main" '. weaverx_content_class( $sb_layout, 'pwp', false ) . weaverx_schema( 'blog' ) . ">\n";
 	weaverx_inject_area( 'precontent' );
 
 	weaverx_sb_precontent('blog');

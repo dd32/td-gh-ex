@@ -35,7 +35,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 			esc_attr( strip_tags( get_the_title( $post->post_parent ) ) ),
 			get_the_title( $post->post_parent )
 		);
-		weaverx_link_pages();
+		weaverx_link_pages();	// <!--nextpage-->
 		?>
 		</div><!-- .entry-meta -->
 
@@ -85,11 +85,12 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 			<div class="entry-description">
 				<?php
 				weaverx_the_post_full();
-				weaverx_link_pages();
+				weaverx_link_pages();	// <!--nextpage-->
 				?>
 			</div><!-- .entry-description -->
 		</div><!-- .entry-content -->
 
+	<?php echo weaverx_schema( 'mainEntityOfPage'); ?>
 	</article><!-- #post-<?php the_ID(); ?> -->
 	<nav id="nav-below">
 		<h3 class="assistive-text"><?php echo __( 'Image navigation','weaver-xtreme'); ?></h3>

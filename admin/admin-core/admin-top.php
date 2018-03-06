@@ -261,12 +261,6 @@ function do_weaverx_admin_advancedopts() {
 
 // ===================================== include other stuff ==========================
 
-//require_once( get_template_directory().WEAVERX_ADMIN_DIR.'/lib-admin.php' );
-//++++++++ require_once( get_template_directory().WEAVERX_ADMIN_DIR.'/lib-admin-part2.php' );
-
-//++++++ require_once( get_template_directory().WEAVERX_ADMIN_DIR.'/admin-subthemes.php' );
-//++++++ require_once( get_template_directory().WEAVERX_ADMIN_DIR.'/admin-mainopts.php' );
-//++++++ require_once( get_template_directory().WEAVERX_ADMIN_DIR.'/admin-advancedopts.php' );
 require_once( get_template_directory().WEAVERX_ADMIN_DIR.'/admin-plus.php' );
 require_once( get_template_directory().WEAVERX_ADMIN_DIR.'/admin-help.php' );
 ?>

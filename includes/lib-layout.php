@@ -381,7 +381,7 @@ function weaverx_page_lead( $who , $archive = false ) {
 
 	do_action('weaverx_per_page');
 
-	echo '<div id="content" role="main"' . weaverx_content_class( $sb_layout, $who, false ) . ">\n";
+	echo '<div id="content" role="main"' . weaverx_content_class( $sb_layout, $who, false ) . weaverx_schema( $who ) . "> <!-- {$who} -->\n";
 	weaverx_inject_area( 'precontent' );
 
 	return $sb_layout;
@@ -664,7 +664,7 @@ function weaverx_put_widgetarea($area_name, $class = '', $area_class_name = '') 
 
 	$area = apply_filters('weaverx_replace_widget_area',$area_name);
 
-	if ( !$GLOBALS['weaverx_page_is_archive'] && weaverx_is_checked_page_opt('_pp_' . $area_name) ) {
+	if ( isset( $GLOBALS['weaverx_page_is_archive'] ) && !$GLOBALS['weaverx_page_is_archive'] && weaverx_is_checked_page_opt('_pp_' . $area_name) ) {
 		return;
 	}		// hide area option checked
 
@@ -688,7 +688,7 @@ function weaverx_put_widgetarea($area_name, $class = '', $area_class_name = '') 
 		if ($success && $content) {
 ?>
 
-	<div id="<?php echo $area_name; ?>" class="widget-area<?php echo $class; ?>" role="complementary">
+	<div id="<?php echo $area_name; ?>" class="widget-area<?php echo $class; ?>" role="complementary"<?php echo weaverx_schema( 'sidebar' ); ?>>
 		<?php
 		if ( $area_name == 'primary-widget-area')
 			weaverx_inject_area('presidebar');
@@ -884,7 +884,7 @@ function weaverx_has_widgetarea( $area_name ) {
 
 	$area = apply_filters('weaverx_replace_widget_area', $area_name);
 
-	if ( !$GLOBALS['weaverx_page_is_archive'] && weaverx_is_checked_page_opt('_pp_' . $area_name) ) {
+	if ( isset( $GLOBALS['weaverx_page_is_archive'] ) && !$GLOBALS['weaverx_page_is_archive'] && weaverx_is_checked_page_opt('_pp_' . $area_name) ) {
 		return false;		// hide area option checked
 	}
 

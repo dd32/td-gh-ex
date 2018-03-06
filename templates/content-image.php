@@ -27,7 +27,7 @@ if (weaverx_compact_post()) {
 <?php
 	if ($use_link) {
 ?>
-	<a href="<?php esc_url(the_permalink()); ?>" title="<?php the_title_attribute( 'echo=1' ); ?>" rel="bookmark"><?php echo $the_image; ?></a>
+	<a href="<?php esc_url(the_permalink()); ?>" title="<?php the_title_attribute( 'echo=1' ); ?>" rel="bookmark"><?php echo $the_image; echo weaverx_schema( 'post' ); ?></a>
 <?php
 	} else {
 		echo $the_image;
@@ -39,7 +39,7 @@ if (weaverx_compact_post()) {
 <?php
 } else {	// Regular Image Layout
 ?>
-		<article id="post-<?php the_ID(); ?>" <?php post_class('content-image ' . weaverx_post_class()); ?>>
+		<article id="post-<?php the_ID(); ?>" <?php post_class('content-image ' . weaverx_post_class()); echo weaverx_schema( 'post' ); ?>>
 		<header class="page-header">
 <?php 		weaverx_entry_header( 'image' ); ?>
 		</header><!-- .page-header -->
@@ -50,7 +50,7 @@ if (weaverx_compact_post()) {
 		}
 		weaverx_post_div('content');
 		weaverx_the_post_full();
-		weaverx_link_pages();
+		weaverx_link_pages();	// <!--nextpage-->
 ?>
 		</div><!-- .entry-content -->
 <?php
@@ -68,7 +68,7 @@ if (weaverx_compact_post()) {
 						get_the_date(),
 						esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 						sprintf( esc_attr__( 'View all posts by %s','weaver-xtreme'), get_the_author() ),
-						get_the_author()
+						weaverx_get_the_author()
 					);
 
 					/* translators: used between list items, there is a space after the comma */
@@ -106,4 +106,6 @@ if (weaverx_compact_post()) {
 }
 weaverx_inject_area('postpostcontent');	// inject post comment body
 ?>
-	<div style="clear:both;"></div></article><!-- /#post-<?php the_ID(); ?> -->
+	<div style="clear:both;"></div>
+		<?php echo weaverx_schema( 'mainEntityOfPage'); ?>
+		</article><!-- /#post-<?php the_ID(); ?> -->

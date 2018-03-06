@@ -21,10 +21,11 @@ if ($cols != '' && $cols != '1')
 	<div class="entry-content clearfix">
 
 <?php weaverx_the_page_content( 'page' );
-	weaverx_link_pages();
+	weaverx_link_pages();	// <!--nextpage-->
 
 	weaverx_edit_link(); ?>
 	</div><!-- .entry-content -->
+	<?php echo weaverx_schema( 'mainEntityOfPage'); ?>
 
 </article><!-- #post-<?php the_ID(); ?> -->
 <?php weaverx_inject_area('pagecontentbottom'); ?>

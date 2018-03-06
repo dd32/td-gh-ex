@@ -96,6 +96,7 @@ function weaverx_sapi_form_bottom($form_name='end of form') {
 	$non_sapi = apply_filters('weaverx_non_sapi_options',array(		// non-sapi elements in the db
 		'weaverx_version_id', 'style_version',
 		'theme_filename', 'addon_name', '_hide_theme_thumbs',
+		'm_primary_hamburger', 'm_secondary_hamburger',
 		'font_set_vietnamese', 'font_set_cryllic', 'font_set_greek', 'font_set_hebrew',
 		'font_word_spacing_global_dec', 'font_letter_spacing_global_dec',
 		'_options_level', '_PHP_warning_displayed', 'last_option'));

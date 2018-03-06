@@ -23,7 +23,8 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 		// We have a logo. Logo is go.
 		if ( $custom_logo_url ) {
 				//weaverx_alert('custom logo:' . $custom_logo_url);
-				$logo = apply_filters('weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" /></span>');
+				$logo = apply_filters('weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" alt="logo"/></span>', $custom_logo_url);	// +since: 3.1.10: add alt=
+
 		}
 	}
 
@@ -62,7 +63,7 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 			else
 				$hamburger = '<span class="menu-toggle-menu">' . $alt . '</span>';
 		}
-		$left = '<span href="" class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";
+		$left = '<span class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";			// +since: 3.1.10: remove empty href=""
 	}
 
 	$menu_class = apply_filters('weaverx_menu_class', 'weaverx-theme-menu wvrx-menu menu-hover', 'primary');
@@ -91,7 +92,7 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 		$nav_class .= ' wvrx-primary-fixedtop';
 	}
 
-	echo "\n\n" . '<div id="nav-primary" class="' . $nav_class . '">' . "\n";
+	echo "\n\n" . '<div id="nav-primary" class="' . $nav_class . '"' . weaverx_schema( 'menu' ) . ">\n";
 
 	$args = array(
 		'fallback_cb' 	  => 'weaverx_page_menu',

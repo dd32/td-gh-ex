@@ -250,7 +250,7 @@ function weaverx_entry_header( $format_title='', $do_excerpt = false ) {
 
 	weaverx_fi( $arg, 'title-before');
 
-	$lead = '<h2 ' .  weaverx_title_class( 'post_title', false, 'post-title entry-title' ) . '>';
+	$lead = '<h2 ' .  weaverx_title_class( 'post_title', false, 'post-title entry-title' ) . weaverx_schema( 'headline') . '>' ;
 	if ( $format_title != ''  && ! weaverx_getopt( 'hide_post_format_icon' ) && ! weaverx_is_checked_post_opt('_pp_hide_post_format_label' ) ) {
 		$icon = "<span class=\"post-format-icon genericon genericon-{$format_title}\"></span>";
 		$lead .=  $icon;
@@ -277,6 +277,7 @@ function weaverx_post_title($before='', $after='') {
 	   the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php echo $title;?></a>
 <?php
 	echo($after . "\n");
+
 }
 } // if weaverx_post_title
 //--
@@ -423,7 +424,7 @@ if ( ! function_exists( 'weaverx_posted_in' ) ) {
 function weaverx_posted_in($type='') {
 /**
  * Prints HTML with meta information for the current post-date/time and author.
- * Create your own weaverx_posted_on to override in a child theme
+ * Create your own weaverx_posted_in to override in a child theme
  */
 
 	if (weaverx_getopt_checked('post_info_hide_bottom')
@@ -559,6 +560,7 @@ function weaverx_posted_on($type='') {
 			$po .= '</span>';
 	}
 
+
 	$po .= sprintf( __( '<span class="sep posted-on">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>','weaver-xtreme'),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
@@ -566,10 +568,19 @@ function weaverx_posted_on($type='') {
 		esc_html( get_the_date() ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		sprintf( esc_attr(__( 'View all posts by %s','weaver-xtreme')), get_the_author() ),
-		esc_html( get_the_author() )
+		weaverx_get_the_author()
 	);
 
-	$po .= '<span class="updated">' . the_modified_date('F j, Y', '', '', false). '</span>';        // required for Google Structured Data
+
+	// updated time changed 3.1.11 to handle published as well. Can't mess with messages because of translations.
+
+	if ( get_the_time( 'Y/m/d' ) !== get_the_modified_time( 'Y/m/d' ) ) {	// get original and modified dates - ignore revisions on same day
+		$time_string = '<time class="updated" datetime="' . esc_attr( get_the_modified_date( 'c' ) ) . '">'. get_the_modified_date() . '</time>';
+	} else {
+		$time_string = '<time class="published updated" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">'. get_the_date() . '</time>';
+	}
+
+	$po .= $time_string;     // required for Google Structured Data
 
 	if  ( weaverx_getopt_default('show_post_avatar', 'hide') == 'end' ) {
 			$po .= '<span class="post-avatar post-avatar-end">';
@@ -590,6 +601,7 @@ function weaverx_post_top_meta( $type='' ) {
  */
 	// $type for single
 	echo "<div class=\"entry-meta \">\n";
+	echo weaverx_schema('published');
 	weaverx_posted_on($type);
 	weaverx_comments_popup_link();
 	echo "</div><!-- /entry-meta -->\n";
@@ -631,7 +643,7 @@ function weaverx_page_title( $title = '') {
 ?>
 	<header class="page-header">
 	<?php weaverx_fi( 'page', 'title-before'); ?>
-	<h1<?php echo weaverx_title_class( 'page_title', false, 'page-title entry-title') . '>' . $title;?></h1>
+	<h1<?php echo weaverx_title_class( 'page_title', false, 'page-title entry-title') .  weaverx_schema( 'headline') . '>' . $title;?></h1>
 	</header><!-- .page-header -->
 <?php
 	}
@@ -650,7 +662,7 @@ function weaverx_single_title( $title = '' ) {
 ?>
 	<header class="page-header">
 	<?php weaverx_fi( 'post', 'title-before'); ?>
-	<h1 class="page-title entry-title title-single <?php echo weaverx_title_class( 'post_title', true ); ?>"><?php echo $title;?></h1>
+	<h1 class="page-title entry-title title-single <?php echo weaverx_title_class( 'post_title', true ) .  weaverx_schema( 'headline') . '>' . $title; ?></h1>
 		<?php weaverx_post_top_meta('single'); ?>
 	</header><!-- .page-header -->
 <?php
@@ -663,7 +675,7 @@ function weaverx_single_title( $title = '' ) {
 if ( ! function_exists( 'weaverx_fi' ) ) {
 function weaverx_fi( $who, $where ) {
 	// Emit Featured Image depending on settings and who and where called from
-	// $who includes: post, page, post_excerpt,post_full
+	// $who includes: post, page, post_excerpt, post_full
 
 	$hide = weaverx_getopt( $who . '_fi_hide');
 
@@ -740,7 +752,8 @@ background-attachment:fixed;-moz-background-size:cover;-o-background-size:cover;
 				break;
 		}
 
-		echo "{$before}{$selector}{ {$style} }{$after}\n";
+		// echo "{$before}{$selector}{ {$style} }{$after}\n";
+		weaverx_inline_style( "{$before}{$selector}{ {$style} }{$after}\n", 'weaverx-fi:lib-content.php' );
 
 
 		return true;
@@ -793,15 +806,18 @@ background-attachment:fixed;-moz-background-size:cover;-o-background-size:cover;
 				}
 			}
 
-			$fi_img = get_the_post_thumbnail(null, $size, $attr );
+			$fi_img = weaverx_schema( 'image' , get_the_post_thumbnail(null, $size, $attr ));
 
-			$the_fi = "\n{$before}<a class=\"wvrx-fi-link\" href=\"{$href}\">{$fi_img}</a>\n";
+			$fi_after = apply_filters( 'weaverx_fi_after', '' );		// added 3.1.10
 
-			echo apply_filters('weaverx_fi_link', $the_fi, $before, $href, $fi_img, $who);  // Added 3.1.5
+			if ($who == 'page' && weaverx_getopt('page_fi_nolink') )
+				$the_fi = "\n{$before}{$fi_img}{$fi_after}\n";
+			elseif ($who != 'page' && weaverx_getopt('post_fi_nolink'))
+				$the_fi = "\n{$before}{$fi_img}{$fi_after}\n";
+			else
+				$the_fi = "\n{$before}<a class=\"wvrx-fi-link\" href=\"{$href}\">{$fi_img}</a>{$fi_after}\n";
 
-			//echo "\n{$before}<a class=\"wvrx-fi-link\" href=\"{$href}\">";
-			//the_post_thumbnail( $size, $attr );
-			//echo "</a>\n";
+			echo apply_filters('weaverx_fi_link', $the_fi, $before, $href, $fi_img, $who, $fi_after);  // Added 3.1.5; Changed 3.1.11 to add the $fi_after
 
 			if ( $show == 'title-banner' )
 				echo '<div style="clear:both;"></div>';
@@ -842,7 +858,7 @@ function weaverx_post_div($type = 'content') {
 	$cols = weaverx_getopt('post_cols');
 	if ($cols != '' && $cols != '1')
 		$class = ' cols-' . $cols;
-	echo '    <div class="entry-' . $type . ' clearfix' . $class . '">' . "\n";
+	echo '    <div class="entry-' . $type . ' clearfix' . $class . '"' . weaverx_schema('entry-' . $type) . '>' . "\n";
 }
 
 function weaverx_the_post_full() {
@@ -898,11 +914,14 @@ function weaverx_the_post_full_single() {
 
 function weaverx_show_only_title() {
 
+	//echo "\n <!-- ********* end of a post ********** -->\n";
+
 	if ( ! weaverx_t_get( 'showposts' )
 		  &&  ( weaverx_get_per_page_value('_pp_wvrx_pwp_type') == 'title'
 				|| weaverx_t_get('show') == 'title'
 			  )
 	   ) {
+		echo weaverx_schema( 'mainEntityOfPage');
 		echo "\t</article><!-- /#post -->\n";
 		return true;
 	} else if ( ! weaverx_t_get( 'showposts' )
@@ -911,13 +930,17 @@ function weaverx_show_only_title() {
 			  )
 		) {
 		weaverx_fi( 'post_excerpt', 'title_featured');            // show FI
-		echo "\t</article><!-- /#post; --><div style='clear:both'></div>\n";
+		//echo "\t</article><!-- /#post; --><div style='clear:both'></div>\n";
+		echo weaverx_schema( 'mainEntityOfPage');
+		echo "\t</article><!-- /#post; -->\n";
 		return true;
 	} elseif ( weaverx_t_get('showposts') && weaverx_t_get('show') == 'title_featured') {
 		weaverx_fi( 'post_excerpt', 'title_featured');            // show FI
+		echo weaverx_schema( 'mainEntityOfPage');
 		echo "\t</article><!-- /#post. --><div style='clear:both'></div>\n";
 		return true;
 	} elseif ( weaverx_t_get('showposts') && (weaverx_t_get('show') == 'title' || weaverx_t_get('show') == 'titlelist')) {
+		echo weaverx_schema( 'mainEntityOfPage');
 		echo "\t</article><!-- /#post -->\n";
 		return true;
 	}
@@ -972,7 +995,20 @@ function weaverx_do_excerpt() {
 }
 //--
 
+function weaverx_inline_style( $style, $who ) {
+	/* if ( !isset($GLOBALS['weaverx_end_style']) )
+		$GLOBALS['weaverx_end_style'] = '';
+	$GLOBALS['weaverx_end_style'] .= $style . " <!-- {$who} -->\n";
+	*/
+	echo $style;
+}
 
+function weaverx_end_body() {
+	return;	// for now...
+	if ( !isset($GLOBALS['weaverx_end_style']) )
+		return;
+	echo $GLOBALS['weaverx_end_style'];
+}
 
 function weaverx_author_info() {
 	if ( get_the_author_meta( 'description' ) && !weaverx_getopt('hide_author_bio')) { // If a user has filled out their description, show a bio on their entries ?>
@@ -987,7 +1023,7 @@ function weaverx_author_info() {
 				<div id="author-link">
 				<span class="vcard author post-author"><span class="fn">
 					<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-						<?php printf( __( 'View all posts by %s','weaver-xtreme'), get_the_author() ); ?>
+						<?php printf( __( 'View all posts by %s','weaver-xtreme'), weaverx_get_the_author() ); ?>
 					</a></span></span>
 				</div><!-- #author-link	-->
 			</div><!-- #author-description -->

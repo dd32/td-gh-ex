@@ -13,11 +13,12 @@ weaverx_per_post_style();
 weaverx_fi( 'post', 'post-pre' );
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('content-single post-content ' . weaverx_post_class(true)); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('content-single post-content ' . weaverx_post_class(true)); echo weaverx_schema( 'post' ); ?>>
 	<?php weaverx_single_title( '' );
 	weaverx_post_div('content');
 	weaverx_the_post_full_single();
-	wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:','weaver-xtreme') . '</span>', 'after' => '</div>' ) ); ?>
+	weaverx_link_pages();	// <!--nextpage-->
+	?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-utility entry-author-info">
@@ -28,5 +29,6 @@ weaverx_fi( 'post', 'post-pre' );
 
 	</footer><!-- .entry-utility -->
 <?php   weaverx_inject_area('postpostcontent');	// inject post comment body ?>
+<?php echo weaverx_schema( 'mainEntityOfPage'); ?>
 </article><!-- #post-<?php the_ID(); ?> -->
 <?php weaverx_inject_area('pagecontentbottom'); ?>

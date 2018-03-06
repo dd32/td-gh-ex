@@ -12,7 +12,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 weaverx_per_post_style();
 $entry_summary = 'entry-summary';
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('post-content content-gallery ' . weaverx_post_class()); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('post-content content-gallery ' . weaverx_post_class()); echo weaverx_schema( 'post' ); ?>>
 <?php
 	if (!weaverx_compact_post()) {
 ?>
@@ -81,7 +81,8 @@ $entry_summary = 'entry-summary';
 		if ((!weaverx_compact_post() && !$linked) || !$linked)
 			weaverx_the_post_excerpt();
 	}	// display gallery format
-	wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:','weaver-xtreme') . '</span>', 'after' => '</div>' ) ); ?>
+	weaverx_link_pages();	// <!--nextpage-->
+	?>
 	</div><!-- .entry-summary -->
 	<?php if (!weaverx_compact_post()) { ?>
 		<footer class="entry-utility">
@@ -94,4 +95,6 @@ $entry_summary = 'entry-summary';
 	}
 	weaverx_inject_area('postpostcontent');	// inject post comment body
 ?>
-<div style="clear:both;"></div></article><!-- /#post-<?php the_ID(); ?> -->
+<div style="clear:both;"></div>
+<?php echo weaverx_schema( 'mainEntityOfPage'); ?>
+</article><!-- /#post-<?php the_ID(); ?> -->

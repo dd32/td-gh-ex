@@ -10,8 +10,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 	// and next the content area.
 
-	global $weaverx_cur_page_ID;
-	$weaverx_cur_page_ID = 0;
+	weaverx_set_cur_page_id( 0 );	// no page for this type
 
 	weaverx_sb_precontent('blog', true );
 

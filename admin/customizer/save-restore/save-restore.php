@@ -395,8 +395,8 @@ You may need to check your folder permissions or other server settings.', 'weave
 
 			update_option('weaverx_settings',$new_cache);
 
-			$save_dir = weaverx_f_uploads_base_dir() . 'weaverx-subthemes';
-			$usename = 'style-weaverxt.css';
+			$save_dir = weaverx_f_uploads_base_dir() . WEAVERX_SUBTHEMES_DIR;
+			$usename = WEAVERX_STYLE_FILE;
 			$filename = $save_dir . '/'. $usename;
 			@unlink($filename);
 
@@ -624,8 +624,8 @@ You can change colors, sidebar layouts, font family and sizes, borders, spacing 
 
 		update_option('weaverx_settings',$new_cache);
 
-		$save_dir = weaverx_f_uploads_base_dir() . 'weaverx-subthemes';
-		$usename = 'style-weaverxt.css';
+		$save_dir = weaverx_f_uploads_base_dir() . WEAVERX_SUBTHEMES_DIR;
+		$usename = WEAVERX_STYLE_FILE;
 		$filename = $save_dir . '/'. $usename;
 		@unlink($filename);
 

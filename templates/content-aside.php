@@ -13,7 +13,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 weaverx_per_post_style();
 $do_excerpt = weaverx_do_excerpt();
 ?>
-	<article id="post-<?php the_ID(); ?>" <?php post_class('content-aside post-format ' . weaverx_post_class()); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class('content-aside post-format ' . weaverx_post_class()); echo weaverx_schema( 'post' );?>>
 <?php
 	if (!weaverx_compact_post()) {
 ?>
@@ -24,9 +24,9 @@ $do_excerpt = weaverx_do_excerpt();
 	</header><!-- .entry-header -->
 
 <?php
-	if (weaverx_show_only_title()) {
-		return;
-	}
+		if (weaverx_show_only_title()) {
+			return;
+		}
 	}
 	if ( $do_excerpt && !weaverx_compact_post() ) { // Only display Excerpts for Search
 		weaverx_post_div('summary');
@@ -38,13 +38,13 @@ $do_excerpt = weaverx_do_excerpt();
 	} else {
 		weaverx_post_div('content');
 		weaverx_the_post_full();
-		weaverx_link_pages();
+		weaverx_link_pages();	// <!--nextpage-->
 ?>
 		</div><!-- .entry-content -->
 <?php
 	};
 ?>
-	<div class="atw-aside-margin" style="margin-bottom:20px;"></div>
+	<div class="wvrx-aside-margin"></div>
 <?php
 	if (! weaverx_compact_post()) {
 		weaverx_format_posted_on_footer('aside');
@@ -56,4 +56,6 @@ $do_excerpt = weaverx_do_excerpt();
 ?>
 
 <?php weaverx_inject_area('postpostcontent');	// inject post comment body ?>
-	<div style="clear:both;"></div></article><!-- /#post-<?php the_ID(); ?> -->
+	<div style="clear:both;"></div>
+	<?php echo weaverx_schema( 'mainEntityOfPage'); ?>
+	</article><!-- /#post-<?php the_ID(); ?> -->

@@ -7,7 +7,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 weaverx_per_post_style();
 
 ?>
-	<article id="post-<?php the_ID(); ?>" <?php post_class('content-link post-content post-format ' . weaverx_post_class()); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class('content-link post-content post-format ' . weaverx_post_class()); echo weaverx_schema( 'post' ); ?>>
 <?php
 	if (!weaverx_compact_post()) {
 ?>
@@ -28,7 +28,7 @@ weaverx_per_post_style();
 		<?php } else {
 			weaverx_post_div('content');
 			weaverx_the_post_full();
-			weaverx_link_pages();
+			weaverx_link_pages();	// <!--nextpage-->
 ?>
 		</div><!-- .entry-content -->
 		<?php }
@@ -43,4 +43,6 @@ weaverx_per_post_style();
 
 
 <?php   weaverx_inject_area('postpostcontent');	// inject post comment body ?>
-	<div style="clear:both;"></div></article><!-- /#post-<?php the_ID(); ?> -->
+	<div style="clear:both;"></div>
+	<?php echo weaverx_schema( 'mainEntityOfPage'); ?>
+	</article><!-- /#post-<?php the_ID(); ?> -->
