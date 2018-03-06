@@ -100,7 +100,7 @@ function catchbase_demo_slider( $options ) {
 			<article class="post hentry slides demo-image displayblock">
 				<figure class="slider-image">
 					<a title="Slider Image 1" href="'. esc_url( home_url( '/' ) ) .'">
-						<img src="'.get_template_directory_uri().'/images/gallery/slider1-1200x514.jpg" class="wp-post-image" alt="Slider Image 1" title="Slider Image 1">
+						<img src="'.esc_url( get_template_directory_uri() ).'/images/gallery/slider1-1200x514.jpg" class="wp-post-image" alt="Slider Image 1" title="Slider Image 1">
 					</a>
 				</figure>
 				<div class="entry-container">
@@ -118,7 +118,7 @@ function catchbase_demo_slider( $options ) {
 			<article class="post hentry slides demo-image displaynone">
 				<figure class="Slider Image 2">
 					<a title="Slider Image 2" href="'. esc_url( home_url( '/' ) ) .'">
-						<img src="'. get_template_directory_uri() . '/images/gallery/slider2-1200x514.jpg" class="wp-post-image" alt="Slider Image 2" title="Slider Image 2">
+						<img src="'. trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/gallery/slider2-1200x514.jpg" class="wp-post-image" alt="Slider Image 2" title="Slider Image 2">
 					</a>
 				</figure>
 				<div class="entry-container">
@@ -193,7 +193,7 @@ function catchbase_page_slider( $options ) {
 				}
 				else {
 					//Default value if there is no first image
-					$catchbase_image = '<img class="pngfix wp-post-image" src="'.get_template_directory_uri().'/images/gallery/no-featured-image-1200x514.jpg" >';
+					$catchbase_image = '<img class="pngfix wp-post-image" src="'.esc_url( get_template_directory_uri() ).'/images/gallery/no-featured-image-1200x514.jpg" >';
 
 					//Get the first image in page, returns false if there is no image
 					$catchbase_first_image = catchbase_get_first_image( $post->ID, 'medium', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class' => 'attached-page-image' ) );

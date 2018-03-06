@@ -191,7 +191,7 @@ add_action( 'customize_register', 'catchbase_customize_register' );
  * @since Catch Base 1.0
  */
 function catchbase_customize_preview() {
-	wp_enqueue_script( 'catchbase_customizer', get_template_directory_uri() . '/js/catchbase-customizer.min.js', array( 'customize-preview' ), '20120827', true );
+	wp_enqueue_script( 'catchbase_customizer', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchbase-customizer.min.js', array( 'customize-preview' ), '20120827', true );
 
 	//setting home_url value to avail it in catchbase_customizer script in data object
 	$data = array(
@@ -212,7 +212,7 @@ add_action( 'customize_preview_init', 'catchbase_customize_preview' );
  * @since Catch Base 1.0
  */
 function catchbase_customize_scripts() {
-	wp_enqueue_script( 'catchbase_customizer_custom', get_template_directory_uri() . '/js/catchbase-customizer-custom-scripts.min.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20150630', true );
+	wp_enqueue_script( 'catchbase_customizer_custom', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchbase-customizer-custom-scripts.min.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20150630', true );
 
 	$catchbase_misc_links['color_list']    = catchbase_color_list();
 	$catchbase_misc_links['reset_message'] = esc_html__( 'Refresh the customizer page after saving to view reset effects', 'catch-base' );

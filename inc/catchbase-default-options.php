@@ -23,7 +23,7 @@ function catchbase_get_default_theme_options() {
 
 	$default_theme_options = array(
 		//Site Title an Tagline
-		'logo'												=> get_template_directory_uri() . '/images/headers/logo.png',
+		'logo'												=> trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/headers/logo.png',
 		'logo_alt_text' 									=> '',
 		'logo_disable'										=> 1,
 		'move_title_tagline'								=> 0,

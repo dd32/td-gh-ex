@@ -154,7 +154,7 @@ function catchbase_demo_content( $options ) {
 	$catchbase_demo_content = '
 		<article id="featured-post-1" class="post hentry post-demo">
 			<figure class="featured-content-image">
-				<img alt="Durbar Square" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured1-400x225.jpg" />
+				<img alt="Durbar Square" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/gallery/featured1-400x225.jpg" />
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">
@@ -170,7 +170,7 @@ function catchbase_demo_content( $options ) {
 
 		<article id="featured-post-2" class="post hentry post-demo">
 			<figure class="featured-content-image">
-				<img alt="Seto Ghumba" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured2-400x225.jpg" />
+				<img alt="Seto Ghumba" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/gallery/featured2-400x225.jpg" />
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">
@@ -186,7 +186,7 @@ function catchbase_demo_content( $options ) {
 
 		<article id="featured-post-3" class="post hentry post-demo">
 			<figure class="featured-content-image">
-				<img alt="Swayambhunath" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured3-400x225.jpg" />
+				<img alt="Swayambhunath" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/gallery/featured3-400x225.jpg" />
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">
@@ -204,7 +204,7 @@ function catchbase_demo_content( $options ) {
 		$catchbase_demo_content .= '
 		<article id="featured-post-4" class="post hentry post-demo">
 			<figure class="featured-content-image">
-				<img alt="Dhulikhel" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured4-400x225.jpg" />
+				<img alt="Dhulikhel" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/gallery/featured4-400x225.jpg" />
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">

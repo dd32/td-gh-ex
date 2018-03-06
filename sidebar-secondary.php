@@ -29,7 +29,7 @@ do_action( 'catchbase_before_secondary_sidebar' ); ?>
 
            			<div class="textwidget">
                    		<p><?php _e( 'This is the Secondary Sidebar Widget Area if you are using a three column site layout option.', 'catch-base' ); ?></p>
-                   		<p><?php printf( __( 'By default it will load Search and Archives widgets as shown below. You can add widget to this area by visiting your <a href="%s">Widgets Panel</a> which will replace default widgets.', 'catch-base' ), admin_url( 'widgets.php' ) ); ?></p>
+                   		<p><?php printf( __( 'By default it will load Search and Archives widgets as shown below. You can add widget to this area by visiting your <a href="%s">Widgets Panel</a> which will replace default widgets.', 'catch-base' ), esc_url( admin_url( 'widgets.php' ) ) ); ?></p>
                  	</div>
            		</div><!-- .widget-wrap -->
        		</section><!-- #widget-default-text -->

@@ -33,16 +33,16 @@ Images used are released under the CC0 license
 1. http://pixabay.com/en/buddha-deity-himalayan-park-nepal-100706/ - header image
 2. http://pixabay.com/en/new-york-city-manhattan-island-20211/ - 1st slider image and screenshot image
 3. http://pixabay.com/en/bridge-sun-manhattan-brooklyn-370562/ - 2nd slider image
-4. All other images are self shot image by (CatchThemes.com) 
+4. All other images are self shot image by (CatchThemes.com)
 
 Font Icons
 	Genericons by Automattic, Inc.
-  	Genericons is Licensed under the GPL, version 2 or later 
+  	Genericons is Licensed under the GPL, version 2 or later
 	http://genericons.com/
 
 JS Files
     HTML5-Shiv is Licensed under the MIT and GPL licenses
-    https://github.com/afarkas/html5shiv 
+    https://github.com/afarkas/html5shiv
 
     jQuery Cycle 2 is Licensed under the MIT and GPL licenses
     http://jquery.malsup.com/cycle2/
@@ -64,8 +64,8 @@ JS Files
 
 = Custom Menus =
 
-Catch Base theme supports two custom menus that is primary and secondary. 
-To create a custom menu, go to Appearance -> Menus in your dashboard. 
+Catch Base theme supports two custom menus that is primary and secondary.
+To create a custom menu, go to Appearance -> Menus in your dashboard.
 For more about custom menu, check out https://catchthemes.com/blog/custom-menus-wordpress-themes/
 
 = Featured Image =
@@ -76,9 +76,9 @@ If you are migrating your old site to this new them then you need to regenerate 
 
 = Featured Slider =
 
-In Catch Base Free theme, there is only option to use Featured Page Slider, which is created to highlight your Page in the slider. But pro version has additional option to Featured Post Slider, Featured Category Slider and Featured Image Slider. 
+In Catch Base Free theme, there is only option to use Featured Page Slider, which is created to highlight your Page in the slider. But pro version has additional option to Featured Post Slider, Featured Category Slider and Featured Image Slider.
 
-To add featured page slider, 
+To add featured page slider,
 1. Create a Page and then add Featured Image to the Page.
 2. Go to "Appearance -> Customize -> Featured Slider Options" from your WordPress Dashboard
 3. Under Featured Slider Type, you need to select "Featured Page Slider"
@@ -89,9 +89,9 @@ Note: You can also change Enable Slider, slider effects, delay and length under 
 
 = Social Icons =
 
-Catch Base has social icons for various social networking sites. 
+Catch Base has social icons for various social networking sites.
 1. Go to "Appearance -> Customize -> Social Links" form your WordPress Dashboard
-2. Add in your social profile links and click on "Save & Publish" 
+2. Add in your social profile links and click on "Save & Publish"
 
 Note: By default social links will be added in Header Right Section. You can also add that in your sidebar from "Appearance -> Widgets"
 
@@ -125,7 +125,7 @@ Available icons:
 Skype Link:
 Skype link can have several formats which are documented below:
 Username:
-    skype:profile_name?action 
+    skype:profile_name?action
 
     Examples of such actions are
     * call        to call
@@ -139,7 +139,7 @@ Username:
     This will initiate test call use skype usenarme echo123
 
 Number:
-    callto://+*********** 
+    callto://+***********
 
     E.g: callto://+14044627491
     This will initiate Skype to call phone number 14044627491
@@ -150,6 +150,11 @@ For detail instructions, check out theme instructions page at https://catchtheme
 
 
 == Change log ==
+
+= 3.1 (Released: March 06, 2018) =
+* Code Optimization
+* Enhanced Security: Replaced wp_filter_post_kses with wp_kses_post
+* Updated: JS compression update
 
 = 3.0 (Released: October 10, 2017) =
 * Major Update: Enhanced HTML structure

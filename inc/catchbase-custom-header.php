@@ -42,7 +42,7 @@ if ( ! function_exists( 'catchbase_custom_header' ) ) :
 		'default-text-color'     => $default_header_color,
 
 		// Header image default
-		'default-image'			=> get_template_directory_uri() . '/images/headers/buddha.jpg',
+		'default-image'			=> trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/headers/buddha.jpg',
 
 		// Set height and width, with a maximum value for the width.
 		'height'                 => 400,
@@ -235,7 +235,7 @@ if ( ! function_exists( 'catchbase_site_branding' ) ) :
 		endif;
 
 			$catchbase_header_text .= '<p class="site-description">' . get_bloginfo( 'description' ) . '</p>';
-			
+
 		$catchbase_header_text .= '</div><!-- #site-header -->';
 
 		$text_color = get_header_textcolor();
