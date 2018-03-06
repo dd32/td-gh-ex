@@ -9,7 +9,7 @@
  */
 global $catchevolution_options_defaults;
 $catchevolution_options_defaults = array(
-	'featured_logo_header'				=> get_template_directory_uri().'/images/logo.png',
+	'featured_logo_header'				=> esc_url( get_template_directory_uri() ).'/images/logo.png',
 	'disable_header'					=> '0',
  	'remove_header_logo'				=> '1',
  	'remove_site_title'					=> '0',

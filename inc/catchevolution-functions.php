@@ -24,27 +24,27 @@ function catchevolution_scripts_method() {
 	wp_enqueue_style( 'catchevolution_style', get_stylesheet_uri() );
 
 	//For genericons
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', false, '3.4.1' );	
+	wp_enqueue_style( 'genericons', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'genericons/genericons.css', false, '3.4.1' );
 
 	// Register JQuery cycle all and JQuery set up as dependent on Jquery-cycle
-	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
+	wp_register_script( 'jquery-cycle', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 
 	// Slider JS load loop
 	if ( ( 'enable-slider-allpage' == $enableslider ) || ( ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) ) && 'enable-slider-homepage' == $enableslider ) ) {
-		wp_enqueue_script( 'catchevolution-slider', get_template_directory_uri() . '/js/catchevolution.slider.js', array( 'jquery-cycle' ), '1.0', true );
+		wp_enqueue_script( 'catchevolution-slider', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchevolution.slider.js', array( 'jquery-cycle' ), '1.0', true );
 	}
 
 	//Responsive
-	wp_enqueue_style( 'catchevolution-responsive', get_template_directory_uri() . '/css/responsive.css' );
+	wp_enqueue_style( 'catchevolution-responsive', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/responsive.css' );
 
-	wp_enqueue_script( 'catchevolution-menu', get_template_directory_uri() . '/js/catchevolution-menu.min.js', array('jquery'), '20171025', false );
+	wp_enqueue_script( 'catchevolution-menu', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchevolution-menu.min.js', array('jquery'), '20171025', false );
 
 	wp_localize_script( 'catchevolution-menu', 'screenReaderText', array(
 		'expand'   => esc_html__( 'expand child menu', 'catch-evolution' ),
 		'collapse' => esc_html__( 'collapse child menu', 'catch-evolution' ),
 	) );
-	
-	wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/catchevolution-fitvids.min.js', array( 'jquery' ), '20130324', true );
+
+	wp_enqueue_script( 'jquery-fitvids', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchevolution-fitvids.min.js', array( 'jquery' ), '20130324', true );
 
 	/**
 	 * Adds JavaScript to pages with the comment form to support
@@ -62,11 +62,11 @@ function catchevolution_scripts_method() {
 
 	//browser specific queuing
 	//for IE 1-8
-	wp_enqueue_script( 'catchevolution-html5', get_template_directory_uri() . '/js/catchevolution-ielte8.min.js', array(), '3.7.3' );
+	wp_enqueue_script( 'catchevolution-html5', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchevolution-ielte8.min.js', array(), '3.7.3' );
 	wp_script_add_data( 'catchevolution-html5', 'conditional', 'lt IE 9' );
 
 	//for IE 1-6
-	wp_enqueue_script( 'catchevolution-pngfix', get_template_directory_uri() . '/js/pngfix.min.js' );
+	wp_enqueue_script( 'catchevolution-pngfix', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/pngfix.min.js' );
 	wp_script_add_data( 'catchevolution-pngfix', 'conditional', 'lte IE 6' );
 } // catchevolution_scripts_method
 add_action( 'wp_enqueue_scripts', 'catchevolution_scripts_method' );
@@ -82,7 +82,7 @@ add_action( 'wp_enqueue_scripts', 'catchevolution_scripts_method' );
  */
 function catchevolution_register_js() {
 	//jQuery Cookie
-	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
+	wp_register_script( 'jquery-cookie', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
 }
 add_action( 'admin_enqueue_scripts', 'catchevolution_register_js' );
 
@@ -113,7 +113,7 @@ function catchevolution_enqueue_color_scheme() {
 	$color_scheme = $options['color_scheme'];
 
 	if ( 'dark' == $color_scheme )
-		wp_enqueue_style( 'dark', get_template_directory_uri() . '/colors/dark.css', array(), null );
+		wp_enqueue_style( 'dark', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'colors/dark.css', array(), null );
 
 	do_action( 'catchevolution_enqueue_color_scheme', $color_scheme );
 }
@@ -616,12 +616,12 @@ function catchevolution_default_sliders() {
 			<section id="slider-wrap">
 				<div class="slides displayblock">
 					<div class="featured-img">
-						<span><img src="'. get_template_directory_uri() . '/images/slider/slider-1.jpg" class="pngfix wp-post-image" alt="Featured Image-1" title="Featured Image-1"></span>
+						<span><img src="'. trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/slider/slider-1.jpg" class="pngfix wp-post-image" alt="Featured Image-1" title="Featured Image-1"></span>
 					</div>
 				</div> <!-- .slides -->
 				<div class="slides displaynone">
 					<div class="featured-img">
-						<span><img src="'. get_template_directory_uri() . '/images/slider/slider-2.jpg" class="pngfix wp-post-image" alt="Featured Image-2" title="Featured Image-2"></span>
+						<span><img src="'. trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/slider/slider-2.jpg" class="pngfix wp-post-image" alt="Featured Image-2" title="Featured Image-2"></span>
 					</div>
 				</div> <!-- .slides -->
 			</section> <!-- .slider-wrap -->

@@ -36,25 +36,25 @@ $sidebar_layout = array(
 		'id' => 'catchevolution-sidebarlayout',
 		'value' => 'right-sidebar',
 		'label' => __( 'Right sidebar', 'catch-evolution' ),
-		'thumbnail' => get_template_directory_uri() . '/images/right-sidebar.png'
+		'thumbnail' => trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/right-sidebar.png'
 	),
 	'left-sidebar' => array(
 		'id'		=> 'catchevolution-sidebarlayout',
 		'value' 	=> 'left-sidebar',
 		'label' 	=> __( 'Left sidebar', 'catch-evolution' ),
-		'thumbnail' => get_template_directory_uri() . '/images/left-sidebar.png'
+		'thumbnail' => trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/left-sidebar.png'
 	),
 	'no-sidebar' => array(
 		'id'		=> 'catchevolution-sidebarlayout',
 		'value' 	=> 'no-sidebar',
 		'label' 	=> __( 'No sidebar', 'catch-evolution' ),
-		'thumbnail' => get_template_directory_uri() . '/images/no-sidebar.png'
+		'thumbnail' => trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/no-sidebar.png'
 	),
 	'three-columns'			=> array(
 		'id'				=> 'catchevolution-sidebarlayout',
 		'value'				=> 'three-columns',
 		'label'				=> __( 'Three Columns', 'catch-evolution' ),
-		'thumbnail'			=> get_template_directory_uri() . '/images/three-columns.png'
+		'thumbnail'			=> trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/three-columns.png'
 	)
 );
 

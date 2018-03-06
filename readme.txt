@@ -63,8 +63,11 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 
 == Change Log ==
 
+= 3.0.2 (Released: March 06, 2018) =
+* Enhanced Security: Replaced wp_filter_post_kses with wp_kses_post
+
 = 3.0.1 (Released: November 27, 2017 ) =
-* Bug Fixed: Undefined index issue(Reported By: epharim)
+* Bug Fixed: Undefined index issue (Reported By: epharim)
 * Removed: Unnecessary codes
 
 = 3.0 (Released: October 25, 2017) =
