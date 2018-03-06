@@ -34,29 +34,29 @@ function catchkathmandu_scripts() {
 	/**
 	 * Add Genericons font, used in the main stylesheet.
 	 */
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons/genericons.css', false, '3.4.1' );
+	wp_enqueue_style( 'genericons', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/genericons/genericons.css', false, '3.4.1' );
 
 	/**
 	 * Loads up Color Scheme
 	 */
 	$color_scheme = $options['color_scheme'];
 	if ( 'dark' == $color_scheme ) {
-		wp_enqueue_style( 'dark', get_template_directory_uri() . '/css/dark.css', array(), null );
+		wp_enqueue_style( 'dark', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/dark.css', array(), null );
 	}
 	elseif ( 'lightblack' == $color_scheme ) {
-		wp_enqueue_style( 'lightblack', get_template_directory_uri() . '/css/lightblack.css', array(), null );
+		wp_enqueue_style( 'lightblack', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/lightblack.css', array(), null );
 	}
 
 
 	//Responsive Menu
-	wp_register_script('catchkathmandu-menu', get_template_directory_uri() . '/js/catchkathmandu-menu.min.js', array('jquery'), '20140317', true);
-	wp_register_script('catchkathmandu-allmenu', get_template_directory_uri() . '/js/catchkathmandu-allmenu.min.js', array('jquery'), '20140317', true);
+	wp_register_script('catchkathmandu-menu', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchkathmandu-menu.min.js', array('jquery'), '20140317', true);
+	wp_register_script('catchkathmandu-allmenu', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchkathmandu-allmenu.min.js', array('jquery'), '20140317', true);
 
 	/**
 	 * Loads up Responsive stylesheet and Menu JS
 	 */
 	if ( empty ($options['disable_responsive'] ) ) {
-		wp_enqueue_style( 'catchkathmandu-responsive', get_template_directory_uri() . '/css/responsive.css' );
+		wp_enqueue_style( 'catchkathmandu-responsive', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/responsive.css' );
 
 		if ( !empty ($options['enable_menus'] ) ) :
 			wp_enqueue_script( 'catchkathmandu-allmenu' );
@@ -64,7 +64,7 @@ function catchkathmandu_scripts() {
 			wp_enqueue_script( 'catchkathmandu-menu' );
 		endif;
 
-		wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/catchkathmandu.fitvids.min.js', array( 'jquery' ), '20140317', true );
+		wp_enqueue_script( 'jquery-fitvids', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchkathmandu.fitvids.min.js', array( 'jquery' ), '20140317', true );
 	}
 
 	/**
@@ -76,42 +76,42 @@ function catchkathmandu_scripts() {
 	}
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+		wp_enqueue_script( 'keyboard-image-navigation', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 
 	/**
 	 * Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
 	 */
-	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '20140317', true );
+	wp_register_script( 'jquery-cycle', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle.all.min.js', array( 'jquery' ), '20140317', true );
 
 	/**
 	 * Loads up catchkathmandu-slider and jquery-cycle set up as dependent on catchkathmandu-slider
 	 */
 	$enableslider = $options['enable_slider'];
 	if ( ( 'enable-slider-allpage' == $enableslider  ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'enable-slider-homepage' == $enableslider  ) ) {
-		wp_enqueue_script( 'catchkathmandu-slider', get_template_directory_uri() . '/js/catchkathmandu-slider.js', array( 'jquery-cycle' ), '20140317', true );
+		wp_enqueue_script( 'catchkathmandu-slider', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchkathmandu-slider.js', array( 'jquery-cycle' ), '20140317', true );
 	}
 
 	/**
 	 * Loads up Scroll Up script
 	 */
 	if ( empty( $options['disable_scrollup'] ) ) {
-		wp_enqueue_script( 'catchkathmandu-scrollup', get_template_directory_uri() . '/js/catchkathmandu-scrollup.min.js', array( 'jquery' ), '20072014', true  );
+		wp_enqueue_script( 'catchkathmandu-scrollup', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchkathmandu-scrollup.min.js', array( 'jquery' ), '20072014', true  );
 	}
 
 	/**
 	 * Browser Specific Enqueue Script
 	 */
 	// Load the html5 shiv.
-	wp_enqueue_script( 'catchkathmandu-html5', get_template_directory_uri() . '/js/html5.min.js', array(), '3.7.3' );
+	wp_enqueue_script( 'catchkathmandu-html5', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/html5.min.js', array(), '3.7.3' );
 	wp_script_add_data( 'catchkathmandu-html5', 'conditional', 'lt IE 9' );
 
 	// Load Selectivizr
-	wp_enqueue_script( 'jquery-selectivizr', get_template_directory_uri() . '/js/selectivizr.min.js', array( 'jquery' ), '20130114', false );
+	wp_enqueue_script( 'jquery-selectivizr', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/selectivizr.min.js', array( 'jquery' ), '20130114', false );
 	wp_script_add_data( 'jquery-selectivizr', 'conditional', 'lt IE 9' );
 
 	// Load IE CSS
-	wp_enqueue_style( 'catchkathmandu-iecss', get_template_directory_uri() . '/css/ie.css' );
+	wp_enqueue_style( 'catchkathmandu-iecss', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/ie.css' );
 	wp_style_add_data( 'catchkathmandu-iecss', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'catchkathmandu_scripts' );
@@ -859,7 +859,7 @@ function catchkathmandu_default_sliders() {
 				<article class="post hentry slides demo-image displayblock">
 					<figure class="slider-image">
 						<a title="Kathmandu Durbar Square" href="#">
-							<img src="'. get_template_directory_uri() . '/images/demo/kathmandu-durbar-square-1280x600.jpg" class="wp-post-image" alt="Kathmandu Durbar Square" title="Kathmandu Durbar Square">
+							<img src="'. trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/demo/kathmandu-durbar-square-1280x600.jpg" class="wp-post-image" alt="Kathmandu Durbar Square" title="Kathmandu Durbar Square">
 						</a>
 					</figure>
 					<div class="entry-container">
@@ -877,7 +877,7 @@ function catchkathmandu_default_sliders() {
 				<article class="post hentry slides demo-image displaynone">
 					<figure class="slider-image">
 						<a title="Seto Ghumba" href="#">
-							<img src="'. get_template_directory_uri() . '/images/demo/seto-ghumba-1280x600.jpg" class="wp-post-image" alt="Seto Ghumba" title="Seto Ghumba">
+							<img src="'. trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/demo/seto-ghumba-1280x600.jpg" class="wp-post-image" alt="Seto Ghumba" title="Seto Ghumba">
 						</a>
 					</figure>
 					<div class="entry-container">
@@ -895,7 +895,7 @@ function catchkathmandu_default_sliders() {
 				<article class="post hentry slides demo-image displaynone">
 					<figure class="slider-image">
 						<a title="Nagarkot Himalayan Range" href="#">
-							<img src="'. get_template_directory_uri() . '/images/demo/nagarkot-mountain-view1280x600.jpg" class="wp-post-image" alt="Nagarkot Himalayan Range" title="Nagarkot Himalayan Range">
+							<img src="'. trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/demo/nagarkot-mountain-view1280x600.jpg" class="wp-post-image" alt="Nagarkot Himalayan Range" title="Nagarkot Himalayan Range">
 						</a>
 					</figure>
 					<div class="entry-container">
@@ -1057,7 +1057,7 @@ function catchkathmandu_default_featured_content() {
 					<article id="featured-post-1" class="post hentry post-demo">
 						<figure class="featured-homepage-image">
 							<a href="#" title="Spectacular Dhulikhel">
-								<img title="Spectacular Dhulikhel" alt="Spectacular Dhulikhel" class="wp-post-image" src="'.get_template_directory_uri() . '/images/demo/spectacular-dhulikhel-360x240.jpg" />
+								<img title="Spectacular Dhulikhel" alt="Spectacular Dhulikhel" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/demo/spectacular-dhulikhel-360x240.jpg" />
 							</a>
 						</figure>
 						<div class="entry-container">
@@ -1075,7 +1075,7 @@ function catchkathmandu_default_featured_content() {
 					<article id="featured-post-2" class="post hentry post-demo">
 						<figure class="featured-homepage-image">
 							<a href="#" title="Swayambhunath">
-								<img title="Swayambhunath" alt="Swayambhunath" class="wp-post-image" src="'.get_template_directory_uri() . '/images/demo/swayambhunath-360x240.jpg" />
+								<img title="Swayambhunath" alt="Swayambhunath" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/demo/swayambhunath-360x240.jpg" />
 							</a>
 						</figure>
 						<div class="entry-container">
@@ -1093,7 +1093,7 @@ function catchkathmandu_default_featured_content() {
 					<article id="featured-post-3" class="post hentry post-demo">
 						<figure class="featured-homepage-image">
 							<a href="#" title="Wood Art">
-								<img title="Wood Art" alt="Wood Art" class="wp-post-image" src="'.get_template_directory_uri() . '/images/demo/wood-art-360x240.jpg" />
+								<img title="Wood Art" alt="Wood Art" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/demo/wood-art-360x240.jpg" />
 							</a>
 						</figure>
 						<div class="entry-container">
@@ -1112,7 +1112,7 @@ function catchkathmandu_default_featured_content() {
 					<article id="featured-post-4" class="post hentry post-demo">
 						<figure class="featured-homepage-image">
 							<a href="#" title="Nepal Prayer Wheels">
-								<img title="Nepal Prayer Wheels" alt="Nepal Prayer Wheels" class="wp-post-image" src="'.get_template_directory_uri() . '/images/demo/nepal-prayer-wheels-360x240.jpg" />
+								<img title="Nepal Prayer Wheels" alt="Nepal Prayer Wheels" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/demo/nepal-prayer-wheels-360x240.jpg" />
 							</a>
 						</figure>
 						<div class="entry-container">

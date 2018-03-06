@@ -18,15 +18,15 @@ add_action( 'admin_menu', 'catchkathmandu_options_menu' );
  */
 function catchkathmandu_admin_scripts() {
 	//jQuery Cookie
-	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/inc/panel/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
+	wp_register_script( 'jquery-cookie', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'inc/panel/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
 
-	wp_enqueue_script( 'catchkathmandu_admin', get_template_directory_uri().'/inc/panel/js/admin.min.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
+	wp_enqueue_script( 'catchkathmandu_admin', esc_url( get_template_directory_uri() ).'/inc/panel/js/admin.min.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
 
     wp_enqueue_media();
 
-    wp_enqueue_script( 'catchkathmandu_upload', get_template_directory_uri().'/inc/panel/js/add_image_scripts.min.js', array( 'jquery' ) );
+    wp_enqueue_script( 'catchkathmandu_upload', esc_url( get_template_directory_uri() ).'/inc/panel/js/add_image_scripts.min.js', array( 'jquery' ) );
 
-	wp_enqueue_style( 'catchkathmandu_admin_style', get_template_directory_uri().'/inc/panel/admin.min.css', '', '1.0', 'screen' );
+	wp_enqueue_style( 'catchkathmandu_admin_style', esc_url( get_template_directory_uri() ).'/inc/panel/admin.min.css', '', '1.0', 'screen' );
 
 }
 add_action('admin_print_styles-appearance_page_theme_options', 'catchkathmandu_admin_scripts');
@@ -91,7 +91,7 @@ function catchkathmandu_theme_options_do_page() {
                     <h2 class="title"><?php _e( 'Theme Options By', 'catch-kathmandu' ); ?></h2>
                     <h2 class="logo">
                         <a href="<?php echo esc_url( __( 'https://catchthemes.com/', 'catch-kathmandu' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'catch-kathmandu' ); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri().'/inc/panel/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'catch-kathmandu' ); ?>" />
+                            <img src="<?php echo esc_url( get_template_directory_uri() ).'/inc/panel/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'catch-kathmandu' ); ?>" />
                         </a>
                     </h2>
                 </div><!-- #theme-option-title -->
@@ -584,17 +584,17 @@ function catchkathmandu_theme_options_do_page() {
                         			<?php _e( 'Sidebar Layout Options', 'catch-kathmandu' ); ?>
                                	</div>
                                 <div class="col col-options">
-                                    <label title="right-sidebar" class="box first"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/right-sidebar.png" alt="Right Sidebar" /><br />
+                                    <label title="right-sidebar" class="box first"><img src="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>inc/panel/images/right-sidebar.png" alt="Right Sidebar" /><br />
                                     <input type="radio" name="catchkathmandu_options[sidebar_layout]" id="right-sidebar" <?php checked($options['sidebar_layout'], 'right-sidebar'); ?> value="right-sidebar"  />
                                     <?php _e( 'Right Sidebar', 'catch-kathmandu' ); ?>
                                     </label>
 
-                                    <label title="left-Sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/left-sidebar.png" alt="Left Sidebar" /><br />
+                                    <label title="left-Sidebar" class="box"><img src="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>inc/panel/images/left-sidebar.png" alt="Left Sidebar" /><br />
                                     <input type="radio" name="catchkathmandu_options[sidebar_layout]" id="left-sidebar" <?php checked($options['sidebar_layout'], 'left-sidebar'); ?> value="left-sidebar"  />
                                     <?php _e( 'Left Sidebar', 'catch-kathmandu' ); ?>
                                     </label>
 
-                                    <label title="no-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/no-sidebar.png" alt="No Sidebar" /><br />
+                                    <label title="no-sidebar" class="box"><img src="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>inc/panel/images/no-sidebar.png" alt="No Sidebar" /><br />
                                     <input type="radio" name="catchkathmandu_options[sidebar_layout]" id="no-sidebar" <?php checked($options['sidebar_layout'], 'no-sidebar'); ?> value="no-sidebar"  />
                                     <?php _e( 'No Sidebar', 'catch-kathmandu' ); ?>
                                     </label>
@@ -638,15 +638,15 @@ function catchkathmandu_theme_options_do_page() {
                         			<?php _e( 'Default Color Scheme', 'catch-kathmandu' ); ?>
                                	</div>
                                 <div class="col col-options">
-                                    <label title="color-light" class="box first"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/light.png" alt="color-light" /><br />
+                                    <label title="color-light" class="box first"><img src="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>inc/panel/images/light.png" alt="color-light" /><br />
                                         <input type="radio" name="catchkathmandu_options[color_scheme]" id="color-light" <?php checked($options['color_scheme'], 'light'); ?> value="light"  />
                                         <?php _e( 'Light (Blue)', 'catch-kathmandu' ); ?>
                                     </label>
-                                    <label title="color-dark" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/dark.png" alt="color-dark" /><br />
+                                    <label title="color-dark" class="box"><img src="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>inc/panel/images/dark.png" alt="color-dark" /><br />
                                         <input type="radio" name="catchkathmandu_options[color_scheme]" id="color-dark" <?php checked($options['color_scheme'], 'dark'); ?> value="dark"  />
                                         <?php _e( 'Dark', 'catch-kathmandu' ); ?>
                                     </label>
-                                    <label title="color-lightblack" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/lightblank.png" alt="color-lightblack" /><br />
+                                    <label title="color-lightblack" class="box"><img src="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>inc/panel/images/lightblank.png" alt="color-lightblack" /><br />
                                         <input type="radio" name="catchkathmandu_options[color_scheme]" id="color-lightblack" <?php checked($options['color_scheme'], 'lightblack'); ?> value="lightblack"  />
                                         <?php _e( 'Light (Black)', 'catch-kathmandu' ); ?>
                                     </label>
@@ -1616,13 +1616,13 @@ function catchkathmandu_theme_options_validate( $options ) {
 
 	//Webmaster Tool Verification
 	if( isset( $input[ 'google_verification' ] ) ) {
-		$input_validated[ 'google_verification' ] = wp_filter_post_kses( $input[ 'google_verification' ] );
+		$input_validated[ 'google_verification' ] = wp_kses_post( $input[ 'google_verification' ] );
 	}
 	if( isset( $input[ 'yahoo_verification' ] ) ) {
-		$input_validated[ 'yahoo_verification' ] = wp_filter_post_kses( $input[ 'yahoo_verification' ] );
+		$input_validated[ 'yahoo_verification' ] = wp_kses_post( $input[ 'yahoo_verification' ] );
 	}
 	if( isset( $input[ 'bing_verification' ] ) ) {
-		$input_validated[ 'bing_verification' ] = wp_filter_post_kses( $input[ 'bing_verification' ] );
+		$input_validated[ 'bing_verification' ] = wp_kses_post( $input[ 'bing_verification' ] );
 	}
 	if( isset( $input[ 'analytic_header' ] ) ) {
 		$input_validated[ 'analytic_header' ] = wp_kses_stripslashes( $input[ 'analytic_header' ] );

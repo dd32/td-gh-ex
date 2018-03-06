@@ -8,7 +8,7 @@ Catch Kathmandu Theme is a fully responsive WordPress theme that looks elegant o
 black, blue, gray, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout,  custom-background, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 
 == Translation ==
-Catch Kathmandu theme is translation ready. 
+Catch Kathmandu theme is translation ready.
 Added Translation for French by Rico (Email: postmaster@web-automobile.com), Sebastian Chamusard (admin78@orange.fr) and Laurent Juvigny (laurent.juvigny@neuf.fr)
 Added Translation for Russian by XakRu (Email: calvinxakru@gmail.com) and Jose Rainbow (youlold@gmail.com)
 Added Translation for Spanish by Ruben Ramos Fernandez (batmovil69@hotmail.com )
@@ -35,7 +35,7 @@ https://wordpress.org/themes/catch-everest
 Copyright: Catch Themes, catchthemes.com
 Licensed under GPLv3 or later
 
-Unless otherwise specified, all Images are self shot by Catch Themes 
+Unless otherwise specified, all Images are self shot by Catch Themes
 Copyright: Catch Themes, catchthemes.com
 
 JS Files
@@ -58,11 +58,11 @@ JS Files
 
     fitvids is Licensed under the  WTFPL license
     http://fitvidsjs.com/
-	
+
 Font Icons
 	Genericons by Automattic, Inc.
-  	Genericons is Licensed under the GPL, version 2 or later 
-	http://genericons.com/	
+  	Genericons is Licensed under the GPL, version 2 or later
+	http://genericons.com/
 
 
 == Post ID shown in the All Posts Table ==
@@ -82,6 +82,11 @@ Access to free support forum at https://catchthemes.com/support-forum/forum/catc
 4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
 
 == Change log ==
+
+= 3.9.5 (Released: March 06, 2018) =
+* Bug Fixed: typo issue in German language file (Reported by Vladi)
+* Code Optimization
+* Enhanced Security: Replaced wp_filter_post_kses with wp_kses_post
 
 = 3.9.4 (Released: July 24, 2017) =
 * Version bumped due to WordPress.org svn issue

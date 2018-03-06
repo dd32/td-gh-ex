@@ -1476,7 +1476,7 @@ add_action( 'customize_save', 'catchkathmandu_customize_preview' );
  * @since Catch Kathmandu 3.4
  */
 function catchkathmandu_customize_scripts() {
-	wp_enqueue_script( 'catchkathmandu_customizer_custom', get_template_directory_uri() . '/inc/panel/js/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
+	wp_enqueue_script( 'catchkathmandu_customizer_custom', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'inc/panel/js/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
 
     $catchkathmandu_data = array(
 		'reset_message' => esc_html__( 'Refresh the customizer page after saving to view reset effects', 'catch-kathmandu' ),
