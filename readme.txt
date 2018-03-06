@@ -14,4 +14,4 @@
 * Modernizr licensed under MIT [https://modernizr.com/license/]
 * Respond licensed under MIT [https://github.com/scottjehl/Respond/blob/master/LICENSE-MIT]
 * Popper licensed under MIT [https://github.com/FezVrasta/popper.js/blob/master/LICENSE.md]
-* CC0-licensed (GPL-compatible) image from http://unsplash.com/ [https://unsplash.com/license]
+* CC0-licensed image from https://pixabay.com/ [https://pixabay.com/en/service/terms/]

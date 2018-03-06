@@ -29,6 +29,41 @@ class AttireBase {
 
 	function Actions() {
 		//delete_option( 'attire_options' );
+		add_action( 'after_switch_theme', array( $this, 'check_required_theme_plugins' ), 10, 2 );
+
+	}
+
+	function check_required_theme_plugins( $oldtheme_name, $oldtheme ) {
+
+		if ( version_compare( PHP_VERSION, '8.4.0', '<' ) ) {
+
+
+			// Info message: Theme not activated
+			add_action( 'admin_notices', array( $this, 'not_activated_admin_notice' ) );
+
+
+			// Switch back to previous theme
+			switch_theme( $oldtheme->stylesheet );
+
+			return false;
+
+		}
+
+	}
+
+	function not_activated_admin_notice() {
+		?>
+
+        <div class="notice notice-error is-dismissible">
+            <p>
+                <strong><?php esc_html_e( 'Switched back to previous theme. Attire requires PHP version 5.4 or later. Please upgrade your php version for better performance/security.', 'attire' ); ?></strong>
+            </p>
+            <button type="button" class="notice-dismiss">
+                <span class="screen-reader-text"><?php esc_html_e( 'Dismiss this notice.', 'attire' ); ?></span>
+            </button>
+        </div>
+
+		<?php
 	}
 
 	function Filters() {

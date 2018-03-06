@@ -19,7 +19,6 @@ class AttireThemeEngine {
 	}
 
 	function Actions() {
-		add_action( 'admin_enqueue_scripts', array( $this, 'AdminEnqueueScripts' ) );
 		add_action( 'wp_head', array( $this, 'WPHead' ) );
 
 		add_action( 'widgets_init', array( $this, 'InitiateWidgets' ) );
@@ -35,12 +34,29 @@ class AttireThemeEngine {
 	 * @usage Custom Page Header for specific pages
 	 */
 	function CustomPageHeader() {
+		global $post;
+
+		if ( is_page() || is_archive() || is_home() ) {
+			$post_id = get_queried_object_id();
+
+		} else {
+			$post_id = $post->ID;
+
+		}
+
+		$ph_bg_img = '';
+		if ( has_post_thumbnail( $post_id ) ):
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'full' );
+
+			$ph_bg_img = $image[0];
+
+		endif;
 
 		$selector = '.page_header_wrap';
 
 		$css = "";
 
-		$ph_bg_img     = AttireThemeEngine::NextGetOption( 'ph_bg_img', '' );
+		$ph_bg_img     = $ph_bg_img ? $ph_bg_img : AttireThemeEngine::NextGetOption( 'ph_bg_img', '' );
 		$ph_bg_color   = AttireThemeEngine::NextGetOption( 'ph_bg_color', '' );
 		$ph_text_color = AttireThemeEngine::NextGetOption( 'ph_text_color', '' );
 		$pb_height     = AttireThemeEngine::NextGetOption( 'ph_bg_height', 200 );
@@ -59,7 +75,7 @@ class AttireThemeEngine {
 		}
 
 		if ( $pb_height && $pb_height != '' ) {
-			$css .= "min-height: {$pb_height};";
+			$css .= "min-height: {$pb_height}px;";
 		}
 
 		$text_color = '';
@@ -166,31 +182,6 @@ class AttireThemeEngine {
 		) );
 	}
 
-
-	function AdminEnqueueScripts( $hook ) {
-
-		if ( ! in_array( $hook, array( 'post-new.php', 'post.php' ) ) ) {
-			return;
-		}
-
-		wp_enqueue_script( 'popper', ATTIRE_TEMPLATE_URL . '/bootstrap/js/popper.min.js', array( 'jquery' ) );
-
-		wp_enqueue_script( 'attire-js', ATTIRE_TEMPLATE_URL . '/admin/js/attire-admin.js', array(
-			'jquery',
-			'blockui-js'
-		) );
-
-		wp_localize_script( 'attire-js', 'attire_js_object',
-			array(
-				'media_upload_label' => esc_html__( 'Upload Image', 'attire' ),
-			)
-		);
-
-		wp_enqueue_script( 'bootstrap', ATTIRE_TEMPLATE_URL . '/bootstrap/js/bootstrap.min.js', array( 'jquery' ) );
-		wp_enqueue_script( 'wp-color-picker' );
-		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_style( 'font-awesome', ATTIRE_TEMPLATE_URL . '/fonts/font-awesome/css/font-awesome.min.css' );
-	}
 
 	public static function Layout( $default = 'wide' ) {
 		$lot = AttireThemeEngine::NextGetOption( 'main_layout_type', $default );
