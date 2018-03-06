@@ -37,7 +37,7 @@ function catchflames_default_sliders() {
 				<article class="post hentry slides demo-image displayblock">
 					<figure class="slider-image">
 						<a title="Seto Ghumba" href="#">
-							<img src="'. get_template_directory_uri() . '/images/demo/slider-1-1600x650.jpg" class="wp-post-image" alt="Seto Ghumba" title="Seto Ghumba">
+							<img src="'. trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/demo/slider-1-1600x650.jpg" class="wp-post-image" alt="Seto Ghumba" title="Seto Ghumba">
 						</a>
 					</figure>
 				</article><!-- .slides -->
@@ -46,7 +46,7 @@ function catchflames_default_sliders() {
 				<article class="post hentry slides demo-image displaynone">
 					<figure class="slider-image">
 						<a title="Kathmandu Durbar Square" href="#">
-							<img src="'. get_template_directory_uri() . '/images/demo/slider-2-1600x650.jpg" class="wp-post-image" alt="Kathmandu Durbar Square" title="Kathmandu Durbar Square">
+							<img src="'. trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/demo/slider-2-1600x650.jpg" class="wp-post-image" alt="Kathmandu Durbar Square" title="Kathmandu Durbar Square">
 						</a>
 					</figure>
 				</article><!-- .slides -->

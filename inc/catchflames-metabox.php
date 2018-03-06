@@ -38,25 +38,25 @@ $sidebar_layout = array(
 		'id'				=> 'catchflames-sidebarlayout',
 		'value'				=> 'three-columns',
 		'label'				=> __( 'Three Columns (Style 1)', 'catch-flames' ),
-		'thumbnail'			=> get_template_directory_uri() . '/inc/panel/images/three-columns.png'
+		'thumbnail'			=> trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'inc/panel/images/three-columns.png'
 	),
 	'right-sidebar'			=> array(
 		'id'				=> 'catchflames-sidebarlayout',
 		'value'				=> 'right-sidebar',
 		'label'				=> __( 'Right sidebar', 'catch-flames' ),
-		'thumbnail'			=> get_template_directory_uri() . '/inc/panel/images/right-sidebar.png'
+		'thumbnail'			=> trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'inc/panel/images/right-sidebar.png'
 	),
 	'left-sidebar'			=> array(
 		'id'				=> 'catchflames-sidebarlayout',
 		'value'				=> 'left-sidebar',
 		'label'				=> __( 'Left sidebar', 'catch-flames' ),
-		'thumbnail'			=> get_template_directory_uri() . '/inc/panel/images/left-sidebar.png'
+		'thumbnail'			=> trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'inc/panel/images/left-sidebar.png'
 	),
 	'no-sidebar'			=> array(
 		'id'				=> 'catchflames-sidebarlayout',
 		'value'				=> 'no-sidebar',
 		'label'				=> __( 'No sidebar', 'catch-flames' ),
-		'thumbnail'			=> get_template_directory_uri() . '/inc/panel/images/no-sidebar.png'
+		'thumbnail'			=> trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'inc/panel/images/no-sidebar.png'
 	)
 
 );

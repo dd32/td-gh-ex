@@ -18,13 +18,13 @@ add_action( 'admin_menu', 'catchflames_options_menu' );
  */
 function catchflames_admin_scripts() {
 	//jquery-cookie registered in functions.php
-	wp_enqueue_script( 'catchflames_admin', get_template_directory_uri().'/inc/panel/admin.min.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
+	wp_enqueue_script( 'catchflames_admin', esc_url( get_template_directory_uri() ).'/inc/panel/admin.min.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
 
     wp_enqueue_media();
 
-    wp_enqueue_script( 'catchflames_upload', get_template_directory_uri().'/inc/panel/add_image_scripts.min.js', array( 'jquery' ) );
+    wp_enqueue_script( 'catchflames_upload', esc_url( get_template_directory_uri() ).'/inc/panel/add_image_scripts.min.js', array( 'jquery' ) );
 
-	wp_enqueue_style( 'catchflames_admin',get_template_directory_uri().'/inc/panel/admin.css', '', '1.0', 'screen' );
+	wp_enqueue_style( 'catchflames_admin',esc_url( get_template_directory_uri() ).'/inc/panel/admin.css', '', '1.0', 'screen' );
 }
 add_action( 'admin_print_styles-appearance_page_theme_options', 'catchflames_admin_scripts' );
 
@@ -36,7 +36,7 @@ add_action( 'admin_print_styles-appearance_page_theme_options', 'catchflames_adm
  * @Calling jquery, jquery-ui-tabs,jquery-cookie, jquery-ui-sortable, jquery-ui-draggable, media-upload, thickbox, farbtastic, colorpicker
  */
 function catchflames_admin_style() {
-	wp_enqueue_style( 'catchflames_admin_page_post',get_template_directory_uri().'/inc/panel/admin-page-post.css', '1.0', 'screen' );
+	wp_enqueue_style( 'catchflames_admin_page_post',esc_url( get_template_directory_uri() ).'/inc/panel/admin-page-post.css', '1.0', 'screen' );
 }
 add_action( 'admin_print_styles', 'catchflames_admin_style' );
 
@@ -103,7 +103,7 @@ function catchflames_theme_options_do_page() {
                     <h2 class="title"><?php _e( 'Theme Options By', 'catch-flames' ); ?></h2>
                     <h2 class="logo">
                         <a href="<?php echo esc_url( __( 'https://catchthemes.com/', 'catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'catch-flames' ); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri().'/inc/panel/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'catch-flames' ); ?>" />
+                            <img src="<?php echo esc_url( get_template_directory_uri() ).'/inc/panel/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'catch-flames' ); ?>" />
                         </a>
                     </h2>
                 </div><!-- #theme-option-title -->
@@ -167,7 +167,7 @@ function catchflames_theme_options_do_page() {
 									<?php  if ( !empty ( $options['top_menu_logo'] ) ) { ?>
                                     	<input  class="upload-url" size="65" type="text" name="catchflames_options[top_menu_logo]" value="<?php echo esc_url ( $options['top_menu_logo']); ?>" class="upload" />
                                     <?php } else { ?>
-                                     	<input class="upload-url" size="65" type="text" name="catchflames_options[top_menu_logo]" value="<?php echo get_template_directory_uri(); ?>/images/fixed-logo.png" alt="logo" />
+                                     	<input class="upload-url" size="65" type="text" name="catchflames_options[top_menu_logo]" value="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>images/fixed-logo.png" alt="logo" />
                                     <?php }  ?>
                                   	<input ref="<?php esc_attr_e( 'Insert as Header Logo','catch-flames' );?>" class="catchflames_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Header Logo','catch-flames' );?>" />
                            		</div>
@@ -218,7 +218,7 @@ function catchflames_theme_options_do_page() {
     									<?php  if ( !empty ( $options['featured_logo_header'] ) ) { ?>
                                         	<input  class="upload-url" size="65" type="text" name="catchflames_options[featured_logo_header]" value="<?php echo esc_url ( $options['featured_logo_header']); ?>" class="upload" />
                                          <?php } else { ?>
-                                         	<input class="upload-url" size="65" type="text" name="catchflames_options[featured_logo_header]" value="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="logo" />
+                                         	<input class="upload-url" size="65" type="text" name="catchflames_options[featured_logo_header]" value="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>images/logo.png" alt="logo" />
                                          <?php }  ?>
                                         <input ref="<?php esc_attr_e( 'Insert as Logo','catch-flames' );?>" class="catchflames_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Logo','catch-flames' );?>" />
                                		</div>
@@ -232,7 +232,7 @@ function catchflames_theme_options_do_page() {
                                         if ( !empty( $options['featured_logo_header'] ) ) {
                                         	echo '<img src="'.esc_url( $options['featured_logo_header'] ).'" alt=""/>';
                                         } else {
-                                        	echo '<img src="'. get_template_directory_uri().'/images/logo.png" alt="" />';
+                                        	echo '<img src="'. esc_url( get_template_directory_uri() ).'/images/logo.png" alt="" />';
                                         } ?>
                                		</div>
                              	</div><!-- .row -->
@@ -359,7 +359,7 @@ function catchflames_theme_options_do_page() {
                                 	<?php _e( 'Custom Menus', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<a class="button" href="<?php echo admin_url('nav-menus.php'); ?>" title="<?php esc_attr_e( 'Click to Create Custom Menus', 'catch-flames' ); ?>"><?php _e( 'Click Here to Create Menu', 'catch-flames' );?></a>
+                                	<a class="button" href="<?php echo esc_url( admin_url('nav-menus.php') ); ?>" title="<?php esc_attr_e( 'Click to Create Custom Menus', 'catch-flames' ); ?>"><?php _e( 'Click Here to Create Menu', 'catch-flames' );?></a>
                            		</div>
                          	</div><!-- .row -->
                            	<div class="row">
@@ -411,22 +411,22 @@ function catchflames_theme_options_do_page() {
                         			<?php _e( 'Default Layout Options', 'catch-flames' ); ?>
                                	</div>
                                 <div class="col col-options">
-                              		<label title="three-columns" class="box first"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/three-columns.png" alt="Three Columns" /><br />
+                              		<label title="three-columns" class="box first"><img src="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>inc/panel/images/three-columns.png" alt="Three Columns" /><br />
                                 		<input type="radio" name="catchflames_options[sidebar_layout]" id="three-columns" <?php checked($options['sidebar_layout'], 'three-columns') ?> value="three-columns"  />
                                 		<?php _e( 'Three Columns', 'catch-flames' ); ?>
                                 	</label>
 
-                                    <label title="right-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/right-sidebar.png" alt="Content-Sidebar" /><br />
+                                    <label title="right-sidebar" class="box"><img src="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>inc/panel/images/right-sidebar.png" alt="Content-Sidebar" /><br />
                                     	<input type="radio" name="catchflames_options[sidebar_layout]" id="right-sidebar" <?php checked($options['sidebar_layout'], 'right-sidebar') ?> value="right-sidebar"  />
                                     	<?php _e( 'Right Sidebar', 'catch-flames' ); ?>
                                     </label>
 
-                                    <label title="left-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/left-sidebar.png" alt="Content-Sidebar" /><br />
+                                    <label title="left-sidebar" class="box"><img src="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>inc/panel/images/left-sidebar.png" alt="Content-Sidebar" /><br />
                                     	<input type="radio" name="catchflames_options[sidebar_layout]" id="left-sidebar" <?php checked($options['sidebar_layout'], 'left-sidebar') ?> value="left-sidebar"  />
                                     	<?php _e( 'Left Sidebar', 'catch-flames' ); ?>
                                     </label>
 
-                                    <label title="no-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/no-sidebar.png" alt="Content-Sidebar" /><br />
+                                    <label title="no-sidebar" class="box"><img src="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>inc/panel/images/no-sidebar.png" alt="Content-Sidebar" /><br />
                                    		<input type="radio" name="catchflames_options[sidebar_layout]" id="no-sidebar" <?php checked($options['sidebar_layout'], 'no-sidebar') ?> value="no-sidebar"  />
                                     	<?php _e( 'No Sidebar', 'catch-flames' ); ?>
                                     </label>
@@ -437,12 +437,12 @@ function catchflames_theme_options_do_page() {
                         			<?php _e( 'Archive Content Layout', 'catch-flames' ); ?>
                                	</div>
                                 <div class="col col-options">
-									<label title="content-excerpt" class="box first"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/excerpt-blog.jpg" alt="Excerpt/Blog Display" /><br />
+									<label title="content-excerpt" class="box first"><img src="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>inc/panel/images/excerpt-blog.jpg" alt="Excerpt/Blog Display" /><br />
                                 		<input type="radio" name="catchflames_options[content_layout]" id="content-excerpt" <?php checked($options['content_layout'], 'excerpt-border') ?> value="excerpt-border"  />
                                 		<?php _e( 'Excerpt/Blog Display', 'catch-flames' ); ?>
                                 	</label>
 
-                                    <label title="content-full" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/full-content.jpg" alt="Full Content Display" /><br />
+                                    <label title="content-full" class="box"><img src="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>inc/panel/images/full-content.jpg" alt="Full Content Display" /><br />
                                     	<input type="radio" name="catchflames_options[content_layout]" id="content-full" <?php checked($options['content_layout'], 'full') ?> value="full"  />
                                     <?php _e( 'Full Content Display', 'catch-flames' ); ?>
                                     </label>
@@ -590,11 +590,11 @@ function catchflames_theme_options_do_page() {
                         			<?php _e( 'Default Color Scheme', 'catch-flames' ); ?>
                                	</div>
                                 <div class="col col-options">
-                                    <label title="color-light" class="box first"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/light.jpg" alt="color-light" /><br />
+                                    <label title="color-light" class="box first"><img src="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>inc/panel/images/light.jpg" alt="color-light" /><br />
                                     	<input type="radio" name="catchflames_options[color_scheme]" id="color-light" <?php checked($options['color_scheme'], 'light') ?> value="light"  />
                                     	<?php _e( 'Light', 'catch-flames' ); ?>
                                     </label>
-                                    <label title="color-dark" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/dark.jpg" alt="color-dark" /><br />
+                                    <label title="color-dark" class="box"><img src="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>inc/panel/images/dark.jpg" alt="color-dark" /><br />
                                     	<input type="radio" name="catchflames_options[color_scheme]" id="color-dark" <?php checked($options['color_scheme'], 'dark') ?> value="dark"  />
                                     	<?php _e( 'Dark', 'catch-flames' ); ?>
                                     </label>

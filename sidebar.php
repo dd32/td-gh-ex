@@ -82,7 +82,7 @@ do_action( 'catchflames_before_secondary' );
                 	<h3 class="widget-title"><?php _e( 'Primary Sidebar Widget Area', 'catch-flames' ); ?></h3>
                     <div class="textwidget">
                     	<p><?php _e( 'This is the Primary Sidebar Widget Area if you are using a two or three column site layout option.', 'catch-flames' ); ?></p>
-                    	<p><?php printf( __( 'You can add content to this area by visiting your <a href="%s">Widgets Panel</a> and adding new widgets to this area.', 'catch-flames' ), admin_url( 'widgets.php' ) ); ?></p>
+                    	<p><?php printf( __( 'You can add content to this area by visiting your <a href="%s">Widgets Panel</a> and adding new widgets to this area.', 'catch-flames' ), esc_url( admin_url( 'widgets.php' ) ) ); ?></p>
                   	</div>
 				</aside>
             <?php

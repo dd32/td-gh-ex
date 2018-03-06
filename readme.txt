@@ -29,11 +29,11 @@ Images used are released under the CC0 license
 The screenshot's visible images are as follow:
 1. http://pixabay.com/en/new-year-s-eve-sparks-stellina-114011/ - 1st slider image and screenshot image
 2. http://pixabay.com/en/match-sticks-lighter-sulfur-fire-268528/ - 2nd slider image
-3. nature.jpg is self shot image by (CatchThemes.com) - Custom header image 
+3. nature.jpg is self shot image by (CatchThemes.com) - Custom header image
 
 Font Icons
 	Genericons by Automattic, Inc.
-  	Genericons is Licensed under the GPL, version 2 or later 
+  	Genericons is Licensed under the GPL, version 2 or later
 	http://genericons.com/
 
 JS Files
@@ -45,7 +45,7 @@ JS Files
 
     fitvids is Licensed under the  WTFPL license
     http://fitvidsjs.com/
-  
+
   	jQuery Waypoints is Licensed under the MIT License
 	  https://github.com/imakewebthings/jquery-waypoints
 
@@ -74,6 +74,10 @@ black, gray, tan, white, dark, light, one-column, two-columns, three-columns, le
 1. For detail theme instructions please check our theme instructions page at https://catchthemes.com/theme-instructions/catch-flames/
 
 == Change log ==
+
+= 3.3.4 (Released: March 06, 2018) =
+* Code Optimization
+* Enhanced Security: Replaced wp_filter_post_kses with wp_kses_post
 
 = 3.3.3 (Released: September 05, 2017) =
 * Code optimization

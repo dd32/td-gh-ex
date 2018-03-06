@@ -66,13 +66,13 @@ endif;
  */
 global $catchflames_options_defaults;
 $catchflames_options_defaults = array(
-	'featured_logo_header'				=> get_template_directory_uri().'/images/logo.png',
+	'featured_logo_header'				=> esc_url( get_template_directory_uri() ).'/images/logo.png',
  	'remove_header_logo'				=> '1',
  	'disable_header_menu'				=> '0',
 	'search_display_text'				=> esc_attr__( 'Search', 'catch-flames' ),
 	'enable_header_top'					=> '0',
 	'disable_top_menu_logo'				=> '1',
-	'top_menu_logo'						=> get_template_directory_uri().'/images/fixed-logo.png',
+	'top_menu_logo'						=> esc_url( get_template_directory_uri() ).'/images/fixed-logo.png',
 	'enable_featured_header_image'		=> 'excludehome',
 	'featured_header_image_alt'			=> esc_attr( get_bloginfo( 'name', 'display' ) ),
 	'featured_header_image_url'			=> esc_url( home_url( '/' ) ),

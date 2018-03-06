@@ -23,7 +23,7 @@ function catchflames_scripts_method() {
 	wp_enqueue_style( 'catch-flames', get_stylesheet_uri() );
 
 	// Add Genericons font, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons/genericons.css', false, '3.3' );
+	wp_enqueue_style( 'genericons', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/genericons/genericons.css', false, '3.3' );
 
 
 	/**
@@ -36,51 +36,51 @@ function catchflames_scripts_method() {
 
 	// Slider JS load loop
 	if ( ( 'enable-slider-allpage' == $enableslider ) || ( ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) ) && 'enable-slider-homepage' == $enableslider ) ) {
-		wp_register_script( 'jquery.cycle2', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.min.js', array( 'jquery' ), '2.1.5', true );
+		wp_register_script( 'jquery-cycle2', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle/jquery.cycle2.min.js', array( 'jquery' ), '2.1.5', true );
 
 		/**
 		 * Condition checks for additional slider transition plugins
 		 */
 		// Scroll Vertical transition plugin addition
 		if ( 'scrollVert' ==  $options['transition_effect'] ){
-			wp_enqueue_script( 'jquery.cycle2.scrollVert', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.scrollVert.min.js', array( 'jquery.cycle2' ), '20140128', true );
+			wp_enqueue_script( 'jquery-cycle2-scrollVert', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle/jquery.cycle2.scrollVert.min.js', array( 'jquery-cycle2' ), '20140128', true );
 		}
 		// Flip transition plugin addition
 		elseif ( 'flipHorz' ==  $options['transition_effect'] || 'flipVert' ==  $options['transition_effect'] ){
-			wp_enqueue_script( 'jquery.cycle2.flip', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.flip.min.js', array( 'jquery.cycle2' ), '20140128', true );
+			wp_enqueue_script( 'jquery-cycle2-flip', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle/jquery.cycle2.flip.min.js', array( 'jquery-cycle2' ), '20140128', true );
 		}
 		// Shuffle transition plugin addition
 		elseif ( 'tileSlide' ==  $options['transition_effect'] || 'tileBlind' ==  $options['transition_effect'] ){
-			wp_enqueue_script( 'jquery.cycle2.tile', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.tile.min.js', array( 'jquery.cycle2' ), '20140128', true );
+			wp_enqueue_script( 'jquery-cycle2-tile', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle/jquery.cycle2.tile.min.js', array( 'jquery-cycle2' ), '20140128', true );
 		}
 		// Shuffle transition plugin addition
 		elseif ( 'shuffle' ==  $options['transition_effect'] ){
-			wp_enqueue_script( 'jquery.cycle2.shuffle', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.shuffle.min.js', array( 'jquery.cycle2' ), '20140128 ', true );
+			wp_enqueue_script( 'jquery-cycle2-shuffle', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle/jquery.cycle2.shuffle.min.js', array( 'jquery-cycle2' ), '20140128 ', true );
 		}
 		else {
-			wp_enqueue_script( 'jquery.cycle2' );
+			wp_enqueue_script( 'jquery-cycle2' );
 		}
 	}
 
 	//Responsive
-	wp_enqueue_script( 'jquery-sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '2.2.1.1', false );
-	wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '20130324', true );
-	wp_enqueue_style( 'catchflames-responsive', get_template_directory_uri() . '/css/responsive.css' );
+	wp_enqueue_script( 'jquery-sidr', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.sidr.min.js', array('jquery'), '2.2.1.1', false );
+	wp_enqueue_script( 'jquery-fitvids', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/fitvids.min.js', array( 'jquery' ), '20130324', true );
+	wp_enqueue_style( 'catchflames-responsive', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/responsive.css' );
 
 	/**
 	 * Loads default sidr color scheme styles(Does not require handle prefix)
 	 */
 	if ( isset( $options['color_scheme'] ) && ( 'dark' == $options['color_scheme'] ) ) {
-		wp_enqueue_style( 'jquery-sidr', get_template_directory_uri() . '/css/jquery.sidr.dark.min.css', false, '2.1.0' );
+		wp_enqueue_style( 'jquery-sidr', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/jquery.sidr.dark.min.css', false, '2.1.0' );
 	}
 	elseif ( isset( $options['color_scheme'] ) && ( 'light' == $options['color_scheme'] ) ) {
-		wp_enqueue_style( 'jquery-sidr', get_template_directory_uri() . '/css/jquery.sidr.light.min.css', false, '2.1.0' );
+		wp_enqueue_style( 'jquery-sidr', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/jquery.sidr.light.min.css', false, '2.1.0' );
 	}
 
 	/**
 	 * Loads up Waypoint script
 	 */
-	wp_register_script( 'jquery-waypoint', get_template_directory_uri() . '/js/jquery.waypoints.min.js', array( 'jquery' ), '3.1.1', true );
+	wp_register_script( 'jquery-waypoint', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.waypoints.min.js', array( 'jquery' ), '3.1.1', true );
 	if ( '1' == $options['enable_header_top'] || '1' != $options['disable_scrollup'] ) :
 		wp_enqueue_script( 'jquery-waypoint' );
 	endif;
@@ -88,15 +88,15 @@ function catchflames_scripts_method() {
 	/**
 	 * Loads up Custom script
 	 */
-	wp_enqueue_script( 'catchflames-custom', get_template_directory_uri() . '/js/catchflames-custom.min.js', array( 'jquery' ), '20140823', true );
+	wp_enqueue_script( 'catchflames-custom', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchflames-custom.min.js', array( 'jquery' ), '20140823', true );
 
 	//Browser Specific Enqueue Script
 	//for IE 1-8
-	wp_enqueue_script( 'catchflames-html5', get_template_directory_uri() . '/js/catchflames-ielte8.min.js', array(), '3.7.3' );
+	wp_enqueue_script( 'catchflames-html5', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchflames-ielte8.min.js', array(), '3.7.3' );
 	wp_script_add_data( 'catchflames-html5', 'conditional', 'lt IE 9' );
 
 	//for IE 1-6
-	wp_enqueue_script( 'catchflames-pngfix', get_template_directory_uri() . '/js/pngfix.min.js' );
+	wp_enqueue_script( 'catchflames-pngfix', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/pngfix.min.js' );
 	wp_script_add_data( 'catchflames-pngfix', 'conditional', 'lte IE 6' );
 } // catchflames_scripts_method
 add_action( 'wp_enqueue_scripts', 'catchflames_scripts_method' );
@@ -112,7 +112,7 @@ add_action( 'wp_enqueue_scripts', 'catchflames_scripts_method' );
  */
 function catchflames_register_js() {
 	//jQuery Cookie
-	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
+	wp_register_script( 'jquery-cookie', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
 }
 add_action( 'admin_enqueue_scripts', 'catchflames_register_js' );
 
@@ -142,7 +142,7 @@ function catchflames_enqueue_color_scheme() {
 	$color_scheme = $options['color_scheme'];
 
 	if ( 'dark' == $color_scheme )
-		wp_enqueue_style( 'dark', get_template_directory_uri() . '/colors/dark.css', array(), null );
+		wp_enqueue_style( 'dark', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'colors/dark.css', array(), null );
 
 	do_action( 'catchflames_enqueue_color_scheme', $color_scheme );
 }

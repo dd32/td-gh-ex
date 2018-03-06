@@ -26,7 +26,7 @@ function catchflames_custom_header_setup() {
 		'default-text-color'     => '000',
 
 		// Header image default
-		'default-image'			=> get_template_directory_uri() . '/images/headers/nature.jpg',
+		'default-image'			=> trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/headers/nature.jpg',
 
 		// Set height and width, with a maximum value for the width.
 		'height'                 => 400,

@@ -139,7 +139,7 @@ function catchflames_demo_content( $options ) {
 	$catchflames_demo_content = '
 		<article id="featured-post-1" class="post hentry post-demo">
 			<figure class="featured-content-image">
-				<img alt="Travel Map" class="wp-post-image" src="'.get_template_directory_uri() . '/images/demo/featured1-350x263.jpg" />
+				<img alt="Travel Map" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/demo/featured1-350x263.jpg" />
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">
@@ -152,7 +152,7 @@ function catchflames_demo_content( $options ) {
 
 		<article id="featured-post-2" class="post hentry post-demo">
 			<figure class="featured-content-image">
-				<img alt="Volkswagen Camper" class="wp-post-image" src="'.get_template_directory_uri() . '/images/demo/featured2-350x263.jpg" />
+				<img alt="Volkswagen Camper" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/demo/featured2-350x263.jpg" />
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">
@@ -165,7 +165,7 @@ function catchflames_demo_content( $options ) {
 
 		<article id="featured-post-3" class="post hentry post-demo">
 			<figure class="featured-content-image">
-				<img alt="Best Beaches" class="wp-post-image" src="'.get_template_directory_uri() . '/images/demo/featured3-350x263.jpg" />
+				<img alt="Best Beaches" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/demo/featured3-350x263.jpg" />
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">
@@ -180,7 +180,7 @@ function catchflames_demo_content( $options ) {
 		$catchflames_demo_content .= '
 		<article id="featured-post-4" class="post hentry post-demo">
 			<figure class="featured-content-image">
-				<img alt="Santorini Island" class="wp-post-image" src="'.get_template_directory_uri() . '/images/demo/featured4-350x263.jpg" />
+				<img alt="Santorini Island" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/demo/featured4-350x263.jpg" />
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">
