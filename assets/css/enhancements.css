@@ -174,7 +174,7 @@ textarea,
  */
 .html
 {   
-    background-color: #fff;
+    background-color: white;
 }
 
 .body
@@ -899,20 +899,6 @@ img.size-medium
     display: flex;
     justify-content: center;
     flex-direction: column;
-}
-
-.main-banner-aside .widget .input-text,
-.main-banner-aside .widget input[type="text"],
-.main-banner-aside .widget input[type="password"],
-.main-banner-aside .widget select,
-.main-banner-aside .widget textarea
-{
-    border-color: white;
-}
-
-.main-banner-aside .input-text
-{
-    color: #262626;
 }
 
 
@@ -3493,6 +3479,24 @@ img.size-medium
 .page-nav .adjacent-nav---a
 {
     display: inline-block;
+}
+
+
+.dt
+{
+    display: inline-block;
+}
+
+.dt:after
+{
+    content: ':';
+    margin-right: .5em;
+}
+
+.dd
+{
+    display: inline-block;
+    margin-left: 0;
 }
 
 
