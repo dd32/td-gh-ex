@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Avior\n"
-"POT-Creation-Date: 2018-01-31 10:34+0200\n"
+"POT-Creation-Date: 2018-03-07 18:20+0200\n"
 "PO-Revision-Date: 2017-05-25 15:36+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -311,6 +311,10 @@ msgstr ""
 
 #. Theme Name of the plugin/theme
 msgid "Avior"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://motopress.com/products/avior/"
 msgstr ""
 
 #. Description of the plugin/theme
