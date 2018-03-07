@@ -2,10 +2,10 @@
 Contributors: makerspender
 Requires at least: WordPress 4.0
 Tested up to: WordPress 4.8
-Version: 1.0.3
+Version: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, right-sidebar, custom-colors, custom-header, custom-menu, featured-images
+Tags: one-column, two-columns, right-sidebar, custom-colors, custom-menu, featured-images
 
 == Description ==
 
