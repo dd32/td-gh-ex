@@ -1307,7 +1307,6 @@ $wp_customize->add_control('archive_layout_image',
 			'full'     => esc_html__('Full', 'best-education'),
 			'right'    => esc_html__('Right', 'best-education'),
 			'left'     => esc_html__('Left', 'best-education'),
-			'no-image' => esc_html__('No image', 'best-education')
 		),
 		'type'     => 'select',
 		'priority' => 185,

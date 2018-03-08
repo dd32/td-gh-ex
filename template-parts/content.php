@@ -8,8 +8,15 @@
  */
 
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php
+    $post_image_class = '';
+    if (has_post_thumbnail()){
+        $post_image_class='';
+    }else{
+        $post_image_class='post-no-image';
+    }
+?>
+<article id="post-<?php the_ID(); ?>" <?php post_class($post_image_class); ?>>
     <?php if (!is_single()) { ?>
         <?php $archive_layout = best_education_get_option('archive_layout'); ?>
         <?php $archive_layout_image = best_education_get_option('archive_layout_image'); ?>

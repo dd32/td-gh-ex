@@ -4,7 +4,7 @@ Theme URI: https://thememattic.com/theme/best-education
 Author: Thememattic
 Author URI: https://thememattic.com
 Description: Best Education is the flexible and highly responsive wordpress theme that helps in creating the best website for education instituitions like schools, colleges, primary schools, universities and various others business related to the education, teaching and learning. It has many features that supports all the functionalities of an educational website. Loaded with powerful plugin named "Education Connect", helps in creating the outstanding website for your school or college within a very less time. By featuring a responsive layout, it is clear that visitors can use any mobile device or desktop screen for reaching the website. It is perfectly optimized to support all the latest trends in SEO on-page optimization. View Live Preview: https://demo.thememattic.com/best-education and For Documentation: https://docs.thememattic.com/best-education
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: best-education
@@ -1687,6 +1687,7 @@ body.no-sidebar #secondary {
     }
 
     .tm-image-archive.image-right {
+        clear: both;
         float: right;
         width: 35%;
         margin-left: 5%;
@@ -1694,12 +1695,44 @@ body.no-sidebar #secondary {
 }
 
 .tm-archive-details {
-    overflow: hidden;
+    border: 1px solid #e5e5e5;
+    clear: both;
+    margin: 0 auto 40px;
+    padding: 20px 15px;
 }
 
 .tm-archive-details .entry-title {
-    margin: 0 auto;
+    font-size: 22px;
+    font-weight: 700;
     line-height: 1.4;
+    margin: 0 auto 20px;
+    padding: 0;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.tm-archive-details .entry-title a {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    display: block;
+    width: 80%;
+    margin: -60px 0 20px;
+    padding: 20px 30px;
+}
+
+@media screen and (max-width: 767px) {
+    .tm-archive-details .entry-title a {
+        width: 100%;
+    }
+}
+
+.has-post-thumbnail .tm-archive-details .entry-title a {
+    margin-top: -80px;
+}
+
+.post:not(.has-post-thumbnail) .tm-archive-details {
+    margin-top: 80px;
 }
 
 .tm-footer-tags,
