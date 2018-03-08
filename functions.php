@@ -34,6 +34,10 @@ function beetech_setup() {
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
+    add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 
 	/**
 	 * Enable support for custom logo.
@@ -146,6 +150,9 @@ function beetech_scripts() {
 	wp_enqueue_style( 'bxSlider-style', get_template_directory_uri() . '/library/bxSlider/css/jquery.bxslider.css', array(), '4.1.2' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/library/font-awesome/css/font-awesome.min.css', array(), '4.6.3' );
 	wp_enqueue_style ( 'animate', get_template_directory_uri() . '/css/animate.css', array(), '3.5.1' );
+    if(beetech_is_woocommerce_activated()){
+        wp_enqueue_style('woocommerce-style',get_template_directory_uri().'/woocommerce/woocommerce-style.css');
+    }
 	wp_enqueue_style( 'beetech-style', get_stylesheet_uri(), array(), $beetech_theme_version );
     wp_enqueue_style('beetech-responsive',get_template_directory_uri().'/responsive.css');
 
@@ -234,3 +241,8 @@ require  get_template_directory()  . '/inc/customizer/beetech-sanitize.php';
  * Beetech Metabox
  */
 require  get_template_directory()  . '/inc/metabox.php';
+
+if(beetech_is_woocommerce_activated()){
+    /** Woocommerce Functions **/
+    require  get_template_directory()  . '/woocommerce/woocommerce-function.php';
+}

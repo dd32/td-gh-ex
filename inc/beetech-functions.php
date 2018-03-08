@@ -403,3 +403,11 @@ function beetech_breadcrumbs(){
 		echo '</div>';
 	}
 }
+
+/**  Check Woocomerce Activation  **/
+if ( ! function_exists( 'beetech_is_woocommerce_activated' ) ) {
+
+	function beetech_is_woocommerce_activated() {
+		return class_exists( 'woocommerce' ) ? true : false;
+	}
+}

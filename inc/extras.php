@@ -27,6 +27,10 @@ function beetech_body_classes( $classes ) {
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
+    
+    if(beetech_is_woocommerce_activated()){
+        $classes[] = 'woocommerce';
+    }
 
     //Adds extra class while slider is not active
     $beetech_slider_option = esc_attr(get_theme_mod( 'homepage_slider_option', 'hide' ));
