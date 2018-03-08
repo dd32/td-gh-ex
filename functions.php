@@ -142,72 +142,58 @@ if ( ! function_exists( 'ayafreelance_display_slider' ) ) :
 	/**
 	 * Displays Slider
 	 */
-	function ayafreelance_display_slider() {
-
-?>
+	function ayafreelance_display_slider() { ?>
+		 
 		<div class="slider-wrapper">
-	 		<ul id="sb-slider" class="sb-slider">
-<?php
-				$args = array( 'numberposts' => '5',
-						   	   'post_status'=>'publish',
-						 	);
+		 <ul id="sb-slider" class="sb-slider">
+			<?php
+				// display slides
 				$numberOfSlides = 0;
+				for ( $i = 1; $i <= 3; ++$i ) {
 
-				$recent_posts = wp_get_recent_posts( $args );
+					$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
+					$slideImage = get_theme_mod( 'ayafreelance_slide'.$i.'_image', $defaultSlideImage );
 
-				/**
-				 * iterate through the latest 5 published posts
-				 *
-				 * if the latest post has thumbnail image, we display it as slide image
-				 *
-				 */
-				for ( $i = 0; $i < sizeof($recent_posts); ++$i ) {
-
-					$recent = $recent_posts[ $i ];
-
-					if ( has_post_thumbnail( $recent['ID'] ) ) {
+					if ( $slideImage != '' ) :
 
 						++$numberOfSlides;
-?>
+			?>
 						<li>
-							<?php echo get_the_post_thumbnail( $recent['ID'], 'full'); ?>
+							<img src="<?php echo esc_url( $slideImage ); ?>" alt="<?php echo esc_attr( $i ); ?>" />
 						</li>
-<?php
-					}
-				}
-?>
-			</ul><!-- #sb-slider -->
+			<?php
+					endif;
+				} ?>
+		 </ul><!-- #sb-slider -->
 
-			<div id="shadow" class="shadow">
-			</div>
+		 <div id="shadow" class="shadow"></div>
 
-			<?php if ( $numberOfSlides > 1 ) : ?>
+		 <?php if ( $numberOfSlides > 1 ) : ?>
 
 		 		<div id="nav-arrows" class="nav-arrows">
 					<a href="#"><?php esc_html_e('Next', 'ayafreelance'); ?></a>
 					<a href="#"><?php esc_html_e('Previous', 'ayafreelance'); ?></a>
 				</div>
 
-			<?php endif; ?>
+		 <?php endif; ?>
 
-			<div id="nav-dots" class="nav-dots">
-				<?php for ($i = 0; $i < $numberOfSlides; ++$i) { ?>
-			 		
-			 		<?php if ( $i == 0 ) { ?>
+		 <div id="nav-dots" class="nav-dots">
+			 <?php for ($i = 0; $i < $numberOfSlides; ++$i) { ?>
+			 			<?php if ( $i == 0 ) { ?>
 
-			 				<span class="nav-dot-current"></span>
+			 					<span class="nav-dot-current"></span>
 
-			 		<?php } else { ?>
+			 			<?php } else { ?>
 
-			 				<span></span>
+			 					<span></span>
 
-			 		<?php } ?>
-			 	<?php } ?>
-	 		</div><!-- #nav-dots -->
+			 			<?php } ?>
+			 <?php } ?>
+		 </div>
+		</div><!-- .slider-wrapper -->
+	<?php  
 
-	</div><!-- .slider-wrapper --> 
 
-	<?php
 	}
 endif; // ayafreelance_display_slider
 
@@ -542,8 +528,8 @@ if ( ! function_exists( 'ayafreelance_customize_register' ) ) :
 		$wp_customize->add_setting(
 				'ayafreelance_slider_display',
 				array(
-						'default'           => 0,
-						'sanitize_callback' => 'ayafreelance_sanitize_checkbox',
+						'default'           => 1,
+						'sanitize_callback' => 'esc_attr',
 				)
 		);
 
@@ -555,6 +541,57 @@ if ( ! function_exists( 'ayafreelance_customize_register' ) ) :
 									'type'           => 'checkbox',
 								)
 							)
+		);
+		
+		// Add slide 1 background image
+		$wp_customize->add_setting( 'ayafreelance_slide1_image',
+			array(
+				'default' => get_template_directory_uri().'/images/slider/' . '1.jpg',
+	    		'sanitize_callback' => 'esc_url_raw'
+			)
+		);
+
+	    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ayafreelance_slide1_image',
+				array(
+					'label'   	 => __( 'Slide 1 Image', 'ayafreelance' ),
+					'section' 	 => 'ayafreelance_slider_section',
+					'settings'   => 'ayafreelance_slide1_image',
+				) 
+			)
+		);
+		
+		// Add slide 2 background image
+		$wp_customize->add_setting( 'ayafreelance_slide2_image',
+			array(
+				'default' => get_template_directory_uri().'/images/slider/' . '2.jpg',
+	    		'sanitize_callback' => 'esc_url_raw'
+			)
+		);
+
+	    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ayafreelance_slide2_image',
+				array(
+					'label'   	 => __( 'Slide 2 Image', 'ayafreelance' ),
+					'section' 	 => 'ayafreelance_slider_section',
+					'settings'   => 'ayafreelance_slide2_image',
+				) 
+			)
+		);
+		
+		// Add slide 3 background image
+		$wp_customize->add_setting( 'ayafreelance_slide3_image',
+			array(
+				'default' => get_template_directory_uri().'/images/slider/' . '3.jpg',
+	    		'sanitize_callback' => 'esc_url_raw'
+			)
+		);
+
+	    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ayafreelance_slide3_image',
+				array(
+					'label'   	 => __( 'Slide 3 Image', 'ayafreelance' ),
+					'section' 	 => 'ayafreelance_slider_section',
+					'settings'   => 'ayafreelance_slide3_image',
+				) 
+			)
 		);
 
 		/**
@@ -634,3 +671,8 @@ if ( ! function_exists( 'ayafreelance_sanitize_checkbox' ) ) :
 		return ( ( isset( $checked ) && true == $checked ) ? true : false );
 	}
 endif; // ayafreelance_sanitize_checkbox
+
+/**
+ * Plugin Recommendation
+*/
+require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';

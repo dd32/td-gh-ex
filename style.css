@@ -1,10 +1,10 @@
 /*!
 Theme Name: AyaFreelance
-Description: AyaFreelance is fully Responsive Blogging WordPress Theme. Features: Custom Logo, Custom Background, Footer copyright text customizations, Widget Areas: Sidebar, 3 Footer Columns, Built-in Slider, Translation-Ready and much more.
+Description: AyaFreelance is fully Responsive Blogging WordPress Theme. Features: Built-in Homepage Slider, Custom Logo, Custom Background, Footer copyright text customizations, Widget Areas: Sidebar, 3 Footer Columns, Multi-level Drop-down Menu, Footer Menu, Search Engine Optimized, Instagram Widget Plugin Support, Tabs Widget Plugin Support, , Multiple Browsers Support, Translation-Ready and much more.
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayafreelance
-Version: 1.0.7
+Version: 1.0.8
 Text Domain: ayafreelance
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -352,11 +352,6 @@ article ul > li:before {
 	margin-left:3px;
 }
 
-#sidebar > ul:not(.social-widget) li {
-    width:85%;
-}
-
-
 #sidebar .widget {
 	margin-bottom:5px;
     clear: both;
@@ -430,6 +425,40 @@ article,
 .separator {
 	height:1px;
 	margin:20px 1% 10px 0;
+}
+
+.wpt_widget_content li:before {
+	content:none !important;
+}
+
+.wpt_widget_content .entry-title {
+	clear:none;
+}
+
+/* Instagram Classes */
+
+.instagram-pics li {
+	list-style:none !important;
+	display:inline-block;
+	margin-right:1%;
+	display: inline-block;
+  	margin-bottom: 8px;
+  	width: calc(30% - 4px);
+}
+
+.instagram-pics li:before {
+	content:none !important;
+}
+
+.instagram-pics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.instagram-pics img {
+	max-width:100%;
+	height:auto;
 }
 
 #footer-main {

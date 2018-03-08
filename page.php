@@ -14,8 +14,7 @@
 
 	<div id="main-content">
 
-		<?php if ( is_front_page() && get_theme_mod('ayafreelance_slider_display', 0) == 1
-					&& ayafreelance_slider_images_exist() ) : ?>
+		<?php if ( (is_front_page() || is_home()) && get_theme_mod('ayafreelance_slider_display', 1) == 1 ) : ?>
 					
 					<?php ayafreelance_display_slider(); ?>
 

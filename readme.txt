@@ -27,6 +27,11 @@ AyaFreelance WordPress Theme bundles the following third-party resources:
 * js/customize-controls.js
 * css/customize-controls.css
 *
+* TGM Plugin Activation
+* Author: created by Thomas Griffin and is currently maintained by @thomasgriffin, @GaryJones and @jrfnl.
+* License: GPL-2.0 or later license. Reference: https://opensource.org/licenses/GPL-2.0
+* inc/tgmpa/class-tgm-plugin-activation.php
+* inc/tgmpa/recommended-plugins.php
 *
 * css/font-awesome.css - License: MIT License URL: http://opensource.org/licenses/mit-license.html
 *
@@ -48,6 +53,12 @@ AyaFreelance WordPress Theme bundles the following third-party resources:
 * js/modernizr.custom.46884.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
 *
 * js/viewportchecker.js - the MIT license, Reference: http://opensource.org/licenses/MIT
+*
+* images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/hand-laptop-freelance-computer-1757224/
+* images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/startup-start-up-notebooks-creative-593335/
+* images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/computer-mouse-office-co-working-582045/
+*
+* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/office-creative-coffee-designer-581127/
 *
 * screenshot.png (Slider Image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
 * Image Source: https://pixabay.com/en/hand-laptop-freelance-computer-1757224/
