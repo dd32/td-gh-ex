@@ -296,3 +296,7 @@ require get_template_directory() . '/inc/widget-social-links.php';
  * Theme Info
  */
 require get_template_directory() . '/inc/info.php';
+/**
+* Recommended Plugins
+*/
+require_once get_template_directory() . '/inc/tgmpa/recommended-plugins.php';
