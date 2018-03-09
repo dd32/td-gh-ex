@@ -26,7 +26,7 @@ function appsetter_setup() {
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
-
+	add_theme_support( 'custom-logo' );
 	/*
 	 * Let WordPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
@@ -84,6 +84,18 @@ if ( ! function_exists( 'appsetter_custom_excerpt_length' ) ) :
 	}
 	add_filter( 'excerpt_length', 'appsetter_custom_excerpt_length', 999 );
 endif;
+
+function appsetter_custom_logo_setup() {
+    $defaults = array(
+        'height'      => 32,
+        'width'       => 32,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+    );
+    add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'appsetter_custom_logo_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

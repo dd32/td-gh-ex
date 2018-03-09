@@ -2,7 +2,7 @@
 Contributors: makerspender
 Requires at least: WordPress 4.0
 Tested up to: WordPress 4.8
-Version: 1.0.4
+Version: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, custom-colors, custom-menu, featured-images
@@ -18,8 +18,8 @@ For more information about appsetter please go to https://appsetter.com
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
 2. Type in appsetter in the search form and press the 'Enter' key on your keyboard - Click Activate to get started.
 3. Most importantly, you need to setup the menu by assigning a menu to the "primary menu" position.
-4. Go to https://appsetter.com/ for a guide on how to customize this theme.
-5. Navigate to Appearance > Customize in your admin panel and customize the rest of the options to your taste.
+4. Navigate to Appearance > Customize in your admin panel and customize the rest of the options to your taste.
+5. Regenerate thumbnails if you are seeing odd image sizes. 
 
 == Licenses ==
 

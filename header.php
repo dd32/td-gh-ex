@@ -33,10 +33,18 @@
 							<i class="menu-toggle fa fa-bars"></i>
 							
 							<?php
-								if ( is_front_page() && is_home() ) : ?>
+								if ( is_front_page() && is_home() ) : 
+									if ( function_exists( 'the_custom_logo' ) ) {
+										the_custom_logo();
+									}
+								?>
 								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 								<?php if ($appsetter_show_desc == 1) { ?><p class="site-desc"><?php bloginfo( 'description' ); ?></p><?php } ?>
-							<?php else : ?>
+							<?php else : 
+									if ( function_exists( 'the_custom_logo' ) ) {
+										the_custom_logo();
+									}
+								?>
 								<h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
 								<?php if ($appsetter_show_desc == 1) { ?><p class="site-desc"><?php bloginfo( 'description' ); ?></p><?php } ?>
 							<?php
