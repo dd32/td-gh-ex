@@ -2146,45 +2146,37 @@
         
         
         
-        
-
         /**
-         * Definition Lists Enhancements
+         * Description List Enhancements
          */
-        
         ( function() {
             
             var $post_content_main = $( '.post-content--main' ),
                 $dl = $post_content_main.find( 'dl' ),
                 $dt = $post_content_main.find( 'dt' ),
                 $dd = $post_content_main.find( 'dd' );
-
-            var definitionListFn = {
-
-                item: function( $elem ) {
-                    $elem.each( function() {
-                        var $this = $( this );
-                        $this
-                            .nextUntil( $elem )
-                            .addBack()
-                            .wrapAll( $( '<div />', { 'class': 'item' } ) );
-                    } );
-                }
-            };
             
-            definitionListFn.item( $dt );
+            
+            $dt.segregate( {
+                'element': $dt,
+                'class': 'item'
+            } );
+            
             
             $dl.each( function() {
-                $( this ).addClass( 'grp' );
+                $( this ).addClass( 'group' );
             } );
+            
             
             $dt.each( function() {
-                $( this ).addClass( 'dt definition-term' );
+                $( this ).addClass( 'description-term' );
             } );
             
+            
             $dd.each( function() {
-                $( this ).addClass( 'dd definition-description' );
+                $( this ).addClass( 'description-details' );
             } );
+            
             
             fn.wrapTextNode( $( '.post-content--main dt, .post-content--main dd' ) );
 
@@ -2301,7 +2293,7 @@
 
 
             // ------------ <table>
-            $( '.post-content--main > *:has( table ), .comment-content---mn_cr > *:has( table )' ).each(function() {
+            $( '.post-content--main > *:has( table ), .comment-content---main > *:has( table )' ).each(function() {
                 var $this = $( this ),
                     $table = $this.find( 'table' );
 
@@ -2318,7 +2310,7 @@
                 $this.addClass( 'select' + ' ' + dataFormatPrefixCss + 'select' );
             });
 
-            $( postContentCtCrCss + ' ' + '> table, .comment-content---mn_cr > table' ).each(function() {
+            $( postContentCtCrCss + ' ' + '> table, .comment-content---main > table' ).each(function() {
                 var $this = $( this );
                 $this.wrap( dataFormatBlockCpMu )
                     .closest( dataFormatCss )
@@ -2499,10 +2491,7 @@
                     
                 if ( $this.has( 'a' ) )
                 {
-                    $this
-                        .attr( {
-                            'class': headingAnchoredCSS
-                        } );
+                    $this.addClass( headingAnchoredCSS );
                 }
             } );
             
@@ -2532,9 +2521,9 @@
                 
                 $this
                     .attr( {
-                        'id': $id,
-                        'class': headingAnchoredCSS
+                        'id': $id
                     } )
+                    .addClass( headingAnchoredCSS )
                     .contents().filter( function() {
                         return this.nodeType !== 1;
                     } ).wrap( $( '<a/>', { 'href': '#' + $id + '', 'class': headingAnchoredCSS + '---a'  } ) );
