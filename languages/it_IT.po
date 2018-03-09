@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-17 20:24+0100\n"
-"PO-Revision-Date: 2018-02-17 20:27+0100\n"
+"POT-Creation-Date: 2018-03-09 19:32+0100\n"
+"PO-Revision-Date: 2018-03-09 19:33+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;gettext;gettext_noop;_e;_n_noop;esc_html__;"
-"esc_html_e;esc_html_x:1,2c\n"
+"esc_html_e;esc_html_x:1,2c;esc_attr__;esc_attr_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.8.6\n"
@@ -1275,6 +1275,11 @@ msgstr "Sidebar piè di pagina"
 msgid "This sidebar will be shown at the end of your content."
 msgstr "Questa barra laterale verrà mostrata alla fine del tuo sito."
 
+#: core/functions/function-woocommerce.php:93
+#: core/functions/function-woocommerce.php:121
+msgid "View your shopping cart"
+msgstr "Visualizza il carrello"
+
 #: core/includes/class-customize.php:394
 msgid "Upgrade to Sueva Premium."
 msgstr "Aggiorna a Sueva Premium."
@@ -1872,7 +1877,7 @@ msgstr "Archivi: %s"
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: core/main.php:626 core/main.php:632
+#: core/main.php:626 core/main.php:632 core/main.php:653
 msgid "Read More"
 msgstr "Continua"
 
@@ -2066,6 +2071,7 @@ msgid "Shipping"
 msgstr "Spedizione"
 
 #: woocommerce/cart/cart-totals.php:78 woocommerce/cart/cart.php:49
+#: woocommerce/cart/cart.php:135
 msgid "Total"
 msgstr "Totale"
 
@@ -2083,21 +2089,33 @@ msgstr ""
 "Nota: Spedizione e tasse sono calcolate%s e saranno aggiornate nella cassa, "
 "in base alle tue informazioni di spedizione e fatturazione."
 
+#: woocommerce/cart/cart-totals.php:101
+msgid "Update Shopping Cart"
+msgstr "Aggiorna il carrello"
+
+#: woocommerce/cart/cart-totals.php:102
+msgid "Proceed to Checkout"
+msgstr "Vai alla cassa"
+
 #: woocommerce/cart/cart.php:37
 msgid "Cart"
 msgstr "Carrello"
 
-#: woocommerce/cart/cart.php:46
+#: woocommerce/cart/cart.php:46 woocommerce/cart/cart.php:92
 msgid "Product"
 msgstr "Prodotto"
 
-#: woocommerce/cart/cart.php:47
+#: woocommerce/cart/cart.php:47 woocommerce/cart/cart.php:113
 msgid "Price"
 msgstr "Prezzo"
 
-#: woocommerce/cart/cart.php:48
+#: woocommerce/cart/cart.php:48 woocommerce/cart/cart.php:119
 msgid "Quantity"
 msgstr "Quantità"
+
+#: woocommerce/cart/cart.php:75
+msgid "Remove this item"
+msgstr "Rimuovi questo elemento"
 
 #: woocommerce/cart/cart.php:109
 msgid "Available on backorder"
@@ -2107,11 +2125,19 @@ msgstr "Disponibile su ordine inevaso"
 msgid "Coupon:"
 msgstr "Coupon:"
 
-#: woocommerce/checkout/form-checkout.php:20
+#: woocommerce/cart/cart.php:153 woocommerce/checkout/form-coupon.php:46
+msgid "Coupon code"
+msgstr "Codice coupon"
+
+#: woocommerce/cart/cart.php:153 woocommerce/checkout/form-coupon.php:50
+msgid "Apply coupon"
+msgstr "Applica Coupon"
+
+#: woocommerce/checkout/form-checkout.php:29
 msgid "You must be logged in to checkout."
 msgstr "Devi essere registrato per andare alla cassa"
 
-#: woocommerce/checkout/form-checkout.php:52
+#: woocommerce/checkout/form-checkout.php:60
 msgid "Your order"
 msgstr "Il tuo ordine"
 
@@ -2122,10 +2148,6 @@ msgstr "Hai un coupon?"
 #: woocommerce/checkout/form-coupon.php:36
 msgid "Click here to enter your code"
 msgstr "Clicca qui per inserire il tuo codice"
-
-#: woocommerce/checkout/form-coupon.php:50
-msgid "Apply coupon"
-msgstr "Applica Coupon"
 
 #: woocommerce/single-product-reviews.php:36
 msgid "Reviews"
@@ -2265,9 +2287,6 @@ msgstr "Ti potrebbe anche interessare&hellip;"
 #~ msgid "Select the content alignment of posts and pages."
 #~ msgstr "Seleziona l’allineamento per il contenuto di pagine e articoli."
 
-#~ msgid "Remove this item"
-#~ msgstr "Rimuovi questo elemento"
-
 #~ msgid "Thumbnails"
 #~ msgstr "Miniature"
 
@@ -2400,15 +2419,6 @@ msgstr "Ti potrebbe anche interessare&hellip;"
 
 #~ msgid "Live Demo"
 #~ msgstr "Live Demo"
-
-#~ msgid "Update Shopping Cart"
-#~ msgstr "Aggiorna il carrello"
-
-#~ msgid "Proceed to Checkout"
-#~ msgstr "Vai alla cassa"
-
-#~ msgid "Coupon code"
-#~ msgstr "Codice coupon"
 
 #~ msgid "Apply Coupon"
 #~ msgstr "Applica coupon"
@@ -3421,9 +3431,6 @@ msgstr "Ti potrebbe anche interessare&hellip;"
 
 #~ msgid "Here you can paste your google analytics code."
 #~ msgstr "Puoi inserire qui il tuo codice di Google Analytics"
-
-#~ msgid "View your shopping cart"
-#~ msgstr "Visualizza il carrello"
 
 #~ msgid "Username or email"
 #~ msgstr "Nome utente o e-mail"

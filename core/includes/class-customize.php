@@ -397,7 +397,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
                 <ul>
                 
-                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/sueva/?ref=2&campaign=sueva-panel' ); ?>" title="<?php esc_attr_e('Upgrade to Venice Pro','suevafree');?>" target="_blank"><?php esc_html_e('Upgrade to Sueva premium','suevafree');?></a></li>
+                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/sueva/?ref=2&campaign=sueva-panel' ); ?>" title="<?php esc_attr_e('Upgrade to Sueva premium','suevafree');?>" target="_blank"><?php esc_html_e('Upgrade to Sueva premium','suevafree');?></a></li>
                 
                 </ul>
 

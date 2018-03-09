@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-17 20:24+0100\n"
+"POT-Creation-Date: 2018-03-09 19:33+0100\n"
 "PO-Revision-Date: 2015-09-11 19:05+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;gettext;gettext_noop;_e;esc_html_e;esc_html__;"
-"esc_html_x:1,2c\n"
+"esc_html_x:1,2c;esc_attr__;esc_attr_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.8.6\n"
@@ -1947,11 +1947,11 @@ msgstr ""
 msgid "Coupon:"
 msgstr ""
 
-#: woocommerce/checkout/form-checkout.php:20
+#: woocommerce/checkout/form-checkout.php:29
 msgid "You must be logged in to checkout."
 msgstr ""
 
-#: woocommerce/checkout/form-checkout.php:52
+#: woocommerce/checkout/form-checkout.php:60
 msgid "Your order"
 msgstr ""
 
