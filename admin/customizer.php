@@ -140,9 +140,12 @@ function attire_customize_register( $wp_customize ) {
 
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-
+	$wp_customize->get_setting( 'custom_logo' )->transport     = 'postMessage';
+	$wp_customize->get_setting( 'header_image' )->transport    = 'postMessage';
+	$wp_customize->get_control( 'custom_logo' )->section       = 'attire_logo_options';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
+
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 			'selector'        => '.site-description',
 			'render_callback' => 'blogdescription_rcb'
@@ -151,6 +154,17 @@ function attire_customize_register( $wp_customize ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector'        => 'a.site-logo',
 			'render_callback' => 'blogname_rcb'
+		) );
+
+		$wp_customize->selective_refresh->add_partial( 'custom_logo', array(
+			'selector'        => '.site-logo',
+			'render_callback' => 'site_logo_rcb'
+
+		) );
+		$wp_customize->selective_refresh->add_partial( 'header_image', array(
+			'selector'        => '.page_header_wrap',
+			'render_callback' => 'custom_header_rcb'
+
 		) );
 	}
 
@@ -501,80 +515,73 @@ function attire_customize_register( $wp_customize ) {
 				break;
 		}
 
-		if ( $id === 'site_logo' ) {
-			$wp_customize->selective_refresh->add_partial( 'site_logo_partial', array(
-				'settings'            => array( 'attire_options[site_logo]' ),
-				'selector'            => '.site-logo',
-				'render_callback'     => 'site_logo_rcb',
-				'fallback_refresh'    => false,
-				'container_inclusive' => false,
+		if ( isset( $wp_customize->selective_refresh ) ) {
 
-			) );
+			if ( $id === 'site_logo_footer' ) {
+				$wp_customize->selective_refresh->add_partial( 'site_logo_footer_partial', array(
+					'settings'            => array( 'attire_options[site_logo_footer]' ),
+					'selector'            => '.footer-logo',
+					'render_callback'     => 'site_logo_footer_rcb',
+					'fallback_refresh'    => false,
+					'container_inclusive' => false,
 
+				) );
 
-		} elseif ( $id === 'site_logo_footer' ) {
-			$wp_customize->selective_refresh->add_partial( 'site_logo_footer_partial', array(
-				'settings'            => array( 'attire_options[site_logo_footer]' ),
-				'selector'            => '.footer-logo',
-				'render_callback'     => 'site_logo_footer_rcb',
-				'fallback_refresh'    => false,
-				'container_inclusive' => false,
+			} elseif ( $id === 'nav_header' ) {
+				$wp_customize->selective_refresh->add_partial( 'nav_header_partial', array(
+					'settings'            => array( 'attire_options[nav_header]' ),
+					'selector'            => '.header-div',
+					'render_callback'     => 'nav_header_rcb',
+					'fallback_refresh'    => false,
+					'container_inclusive' => false,
 
-			) );
+				) );
 
-		} elseif ( $id === 'nav_header' ) {
-			$wp_customize->selective_refresh->add_partial( 'nav_header_partial', array(
-				'settings'            => array( 'attire_options[nav_header]' ),
-				'selector'            => '.header-div',
-				'render_callback'     => 'nav_header_rcb',
-				'fallback_refresh'    => false,
-				'container_inclusive' => false,
+			} elseif ( $id === 'footer_style' ) {
+				$wp_customize->selective_refresh->add_partial( 'footer_style_partial', array(
+					'settings'            => array( 'attire_options[footer_style]' ),
+					'selector'            => '.footer-div',
+					'render_callback'     => 'footer_style_rcb',
+					'fallback_refresh'    => false,
+					'container_inclusive' => false,
 
-			) );
+				) );
 
-		} elseif ( $id === 'footer_style' ) {
-			$wp_customize->selective_refresh->add_partial( 'footer_style_partial', array(
-				'settings'            => array( 'attire_options[footer_style]' ),
-				'selector'            => '.footer-div',
-				'render_callback'     => 'footer_style_rcb',
-				'fallback_refresh'    => false,
-				'container_inclusive' => false,
+			} elseif ( $id === 'copyright_info' ) {
+				$wp_customize->selective_refresh->add_partial( 'copyright_info_partial', array(
+					'settings'            => array( 'attire_options[copyright_info]' ),
+					'selector'            => '.copyright-text',
+					'render_callback'     => 'copyright_info_rcb',
+					'fallback_refresh'    => false,
+					'container_inclusive' => false,
 
-			) );
-
-		} elseif ( $id === 'copyright_info' ) {
-			$wp_customize->selective_refresh->add_partial( 'copyright_info_partial', array(
-				'settings'            => array( 'attire_options[copyright_info]' ),
-				'selector'            => '.copyright-text',
-				'render_callback'     => 'copyright_info_rcb',
-				'fallback_refresh'    => false,
-				'container_inclusive' => false,
-
-			) );
+				) );
 
 
-		} elseif ( $id === 'copyright_info_visibility' ) {
-			$wp_customize->selective_refresh->add_partial( 'copyright_info_visibility_partial', array(
-				'settings'            => array( 'attire_options[copyright_info_visibility]' ),
-				'selector'            => '.copyright-outer',
-				'render_callback'     => 'copyright_info_visibility_rcb',
-				'fallback_refresh'    => false,
-				'container_inclusive' => false,
+			} elseif ( $id === 'copyright_info_visibility' ) {
+				$wp_customize->selective_refresh->add_partial( 'copyright_info_visibility_partial', array(
+					'settings'            => array( 'attire_options[copyright_info_visibility]' ),
+					'selector'            => '.copyright-outer',
+					'render_callback'     => 'copyright_info_visibility_rcb',
+					'fallback_refresh'    => false,
+					'container_inclusive' => false,
 
-			) );
+				) );
 
-		} elseif ( $id === 'attire_archive_page_post_view' ) {
-			$wp_customize->selective_refresh->add_partial( 'attire_archive_page_post_view_partial', array(
-				'settings'            => array( 'attire_options[attire_archive_page_post_view]' ),
-				'selector'            => '.archive-div',
-				'render_callback'     => 'attire_archive_page_post_view_rcb',
-				'fallback_refresh'    => false,
-				'container_inclusive' => false,
-			) );
+			} elseif ( $id === 'attire_archive_page_post_view' ) {
+				$wp_customize->selective_refresh->add_partial( 'attire_archive_page_post_view_partial', array(
+					'settings'            => array( 'attire_options[attire_archive_page_post_view]' ),
+					'selector'            => '.archive-div',
+					'render_callback'     => 'attire_archive_page_post_view_rcb',
+					'fallback_refresh'    => false,
+					'container_inclusive' => false,
+				) );
 
 
+			}
 		}
 	}
+
 }
 
 add_action( 'customize_register', 'attire_customize_register' );
@@ -692,6 +699,10 @@ function blogname_rcb() {
 
 function site_logo_rcb() {
 	return '<a class="site-logo" href="' . esc_url( home_url( "/" ) ) . '">' . AttireThemeEngine::SiteLogo() . '</a>';
+}
+
+function custom_header_rcb() {
+	AttireThemeEngine::PageHeaderStyle();
 }
 
 function site_logo_footer_rcb() {

@@ -34,14 +34,15 @@ class AttireThemeEngine {
 	 * @usage Custom Page Header for specific pages
 	 */
 	function CustomPageHeader() {
-		global $post;
 
+		$post_id = null;
 		if ( is_page() || is_archive() || is_home() ) {
 			$post_id = get_queried_object_id();
 
-		} else {
-			$post_id = $post->ID;
+		}
 
+		if ( ! $post_id ) {
+			return;
 		}
 
 		$ph_bg_img = '';
@@ -56,7 +57,8 @@ class AttireThemeEngine {
 
 		$css = "";
 
-		$ph_bg_img     = $ph_bg_img ? $ph_bg_img : AttireThemeEngine::NextGetOption( 'ph_bg_img', '' );
+
+		$ph_bg_img     = $ph_bg_img ? $ph_bg_img : get_header_image();
 		$ph_bg_color   = AttireThemeEngine::NextGetOption( 'ph_bg_color', '' );
 		$ph_text_color = AttireThemeEngine::NextGetOption( 'ph_text_color', '' );
 		$pb_height     = AttireThemeEngine::NextGetOption( 'ph_bg_height', 200 );
@@ -571,7 +573,10 @@ class AttireThemeEngine {
 
 
 	public static function SiteLogo() {
-		$logourl = esc_url( self::NextGetOption( 'site_logo' ) );
+
+		$custom_logo_id = get_theme_mod( 'custom_logo' );
+		$image          = wp_get_attachment_image_src( $custom_logo_id, 'full' );
+		$logourl        = esc_url( $image[0] ); // source : https://codex.wordpress.org/Theme_Logo
 
 		if ( $logourl ) {
 			$image_id = attachment_url_to_postid( $logourl );
@@ -627,6 +632,31 @@ class AttireThemeEngine {
 			$style = 'header-1';
 		}
 		load_template( locate_template( "templates/headers/" . $style . ".php" ) );
+		wp_reset_query();
+
+	}
+
+
+	public static function PageHeaderStyle() {
+
+		global $post;
+		$title = '';
+		if ( is_home() ) {
+			$post_id = get_option( 'page_for_posts' );
+			$title   = get_the_title( $post_id );
+		} elseif ( $post ) {
+			$post_id = $post->ID;
+			$title   = get_the_title( $post_id );
+		}
+
+		?>
+
+        <div class="page_header_inner">
+            <h1 id="cph_title"><?php echo esc_html( $title ); ?></h1>
+        </div>
+
+		<?php
+
 		wp_reset_query();
 
 	}

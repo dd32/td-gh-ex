@@ -64,9 +64,8 @@ $page_width = isset( $meta['layout_page'] ) && $meta['layout_page'] !== 'default
 		do_action( ATTIRE_THEME_PREFIX . "before_page_header" );
 		?>
         <div class="page_header_wrap">
-            <div class="page_header_inner">
-                <h1 id="cph_title"><?php echo esc_html( $title ); ?></h1>
-            </div>
+	        <?php AttireThemeEngine::PageHeaderStyle(); ?>
+
         </div>
 		<?php
 		do_action( ATTIRE_THEME_PREFIX . "after_page_header" );

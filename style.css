@@ -3,7 +3,7 @@ Theme Name: Attire
 Theme URI: http://wpattire.com/
 Description: Attire is a fast, mobile responsive, highly customizable, SEO friendly multipurpose theme built with Bootstrap 4. Attire offers hundreds of customisation options which allows to make a website look exactly the way user intended. This theme allows to customise pages with google-fonts, page background, page header and sidebars.
 Author: Shafayat
-Version: 1.0.9
+Version: 1.1.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, threaded-comments, sticky-post, microformats,  editor-style, custom-menu, full-width-template, theme-options, custom-background, custom-colors, post-formats, translation-ready, custom-header
@@ -149,8 +149,14 @@ input:focus {
 
 button, input[type="submit"], input[type="reset"] {
     color: #FFFFFF;
-    background: #161616;
+    background: rgba(0, 0, 0, 0.8);
     padding: 10px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
+    cursor: pointer;
+    background: #161616
 }
 
 .checkbox, .radio {
@@ -309,6 +315,7 @@ span[id*=more-]:before {
 }
 
 .post-meta .single-post {
+    margin-top: 20px;
     padding: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -879,8 +886,8 @@ a.footer-logo {
     list-style: none;
 }
 
-.mx_comments {
-    /*margin-top: 30px;*/
+.mx_comments, .single-post-author {
+    margin-top: 30px;
 }
 
 .mx_comments h2 {
@@ -919,6 +926,7 @@ a.footer-logo {
 #commentform input, #commentform textarea {
     margin-top: 5px;
     margin-bottom: 5px;
+    border-radius: 0;
 }
 
 .comment-card #respond {

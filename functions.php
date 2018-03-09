@@ -13,7 +13,6 @@ require_once( ATTIRE_TEMPLATE_DIR . "/libs/Framework.class.php" );
 require_once( ATTIRE_TEMPLATE_DIR . "/libs/Attire.class.php" );
 require_once( ATTIRE_TEMPLATE_DIR . "/libs/MetaBoxes.class.php" );
 require_once( ATTIRE_TEMPLATE_DIR . "/libs/StructuredData.class.php" );
-
 require_once( ATTIRE_TEMPLATE_DIR . '/admin/customizer.php' );
 
 new Attire();

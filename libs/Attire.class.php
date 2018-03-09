@@ -196,6 +196,17 @@ class Attire {
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-slider' );
 
+		$args = array(
+			'default-image'      => '',
+			'default-text-color' => '000',
+			'width'              => 1000,
+			'height'             => 250,
+			'flex-width'         => true,
+			'flex-height'        => true,
+		);
+		add_theme_support( 'custom-header', $args );
+		add_theme_support( 'custom-logo' );
+
 		if ( ! get_option( 'attire_options' ) ) {
 			add_option( 'attire_options', $this->GetAttireDefaults() );
 		}

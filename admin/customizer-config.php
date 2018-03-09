@@ -75,11 +75,6 @@ $attire_sections = array(
 		'panel'       => 'attire_color_panel',
 		'priority'    => 6,
 	),
-	'attire_ph_section'                   => array(
-		'title'       => __( 'Page Header', 'attire' ),
-		'description' => '',
-		'priority'    => 6,
-	),
 	'attire_footer_widget_color_options'  => array(
 		'title'       => __( 'Footer Widget', 'attire' ),
 		'description' => '',
@@ -260,27 +255,19 @@ $attire_options = array(
 		'default'   => '#ffffff',
 	),
 
-	'site_footer_bg_color'         => array(
+	'site_footer_bg_color'              => array(
 		'label'     => __( 'Footer Background', 'attire' ),
 		'transport' => 'postMessage',
 		'type'      => 'color',
 		'section'   => 'attire_footer_color_options',
 		'default'   => '#151515',
 	),
-	'site_footer_title_text_color' => array(
+	'site_footer_title_text_color'      => array(
 		'label'     => __( 'Site Title', 'attire' ),
 		'transport' => 'postMessage',
 		'type'      => 'color',
 		'section'   => 'attire_footer_color_options',
 		'default'   => '#ffffff',
-	),
-
-	'site_logo'                         => array(
-		'label'     => __( 'Site Logo', 'attire' ),
-		'transport' => 'postMessage',
-		'type'      => 'image',
-		'section'   => 'attire_logo_options',
-		'default'   => '',
 	),
 	'site_logo_height'                  => array(
 		'label'       => __( 'Site Logo Height', 'attire' ),
@@ -1144,37 +1131,32 @@ $attire_options = array(
 	),
 
 	'ph_active'     => array(
-		'label'   => __( 'Show Page Header', 'attire' ),
-		'type'    => 'checkbox',
-		'default' => true,
-		'section' => 'attire_ph_section'
+		'label'     => __( 'Show Page Header', 'attire' ),
+		'transport' => 'postMessage',
+		'type'      => 'checkbox',
+		'default'   => true,
+		'section'   => 'header_image'
 	),
 	'ph_show_on_fp' => array(
-		'label'   => __( 'Show On Front Page', 'attire' ),
-		'type'    => 'checkbox',
-		'default' => false,
-		'section' => 'attire_ph_section'
-	),
-	'ph_bg_img'     => array(
-		'label'     => __( 'Page Header Background Image', 'attire' ),
+		'label'     => __( 'Show On Front Page', 'attire' ),
 		'transport' => 'postMessage',
-		'type'      => 'image',
-		'default'   => '',
-		'section'   => 'attire_ph_section'
+		'type'      => 'checkbox',
+		'default'   => false,
+		'section'   => 'header_image'
 	),
 	'ph_bg_color'   => array(
 		'label'     => __( 'Page Header Background Color', 'attire' ),
 		'transport' => 'postMessage',
 		'type'      => 'color',
 		'default'   => '',
-		'section'   => 'attire_ph_section'
+		'section'   => 'header_image'
 	),
 	'ph_text_color' => array(
 		'label'     => __( 'Page Header Text Color', 'attire' ),
 		'transport' => 'postMessage',
 		'type'      => 'color',
 		'default'   => '',
-		'section'   => 'attire_ph_section'
+		'section'   => 'header_image'
 	),
 	'ph_bg_height'  => array(
 		'label'       => __( 'Page Header Height', 'attire' ),
@@ -1186,7 +1168,7 @@ $attire_options = array(
 			'max'  => 2000,
 			'step' => 5,
 		),
-		'section'     => 'attire_ph_section'
+		'section'     => 'header_image'
 	)
 
 );

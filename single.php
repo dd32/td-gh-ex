@@ -31,7 +31,8 @@ $meta_position = AttireThemeEngine::NextGetOption( 'attire_single_post_meta_posi
                         <div class="entry-content">
 							<?php the_content(); ?>
                         </div>
-						<?php
+                        <div class="clear"></div>
+                        <?php
 						if ( $meta_position === 'after-content' ) {
 							get_template_part( 'single', 'post-meta' );
 						} ?>

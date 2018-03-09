@@ -288,12 +288,11 @@
 
     /**
      *
-     * Page Header
+     * Header Image
      */
 
     setVisibility('ph_active', '.page_header_wrap');
     setVisibility('ph_show_on_fp', 'home .page_header_wrap');
-    setImage('ph_bg_img', '.page_header_wrap', 'background-image');
     setCss('ph_bg_color', '.page_header_wrap', 'background-color');
     setCss('ph_text_color', '.page_header_wrap *', 'color');
     setCss('ph_bg_height', '.page_header_wrap', 'min-height');
