@@ -206,6 +206,39 @@ if ( ! function_exists( 'ayaportfolio_widgets_init' ) ) :
 							'after_title'	 =>  '</h3><div class="sidebar-after-title"></div>',
 						) );
 
+		/**
+		 * Add Homepage Columns Widget areas
+		 */
+		register_sidebar( array (
+								'name'			 =>  __( 'Homepage Column #1', 'ayaportfolio' ),
+								'id' 			 =>  'homepage-column-1-widget-area',
+								'description'	 =>  __( 'The Homepage Column #1 widget area', 'ayaportfolio' ),
+								'before_widget'  =>  '',
+								'after_widget'	 =>  '',
+								'before_title'	 =>  '<h2 class="sidebar-title">',
+								'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
+							) );
+							
+		register_sidebar( array (
+								'name'			 =>  __( 'Homepage Column #2', 'ayaportfolio' ),
+								'id' 			 =>  'homepage-column-2-widget-area',
+								'description'	 =>  __( 'The Homepage Column #2 widget area', 'ayaportfolio' ),
+								'before_widget'  =>  '',
+								'after_widget'	 =>  '',
+								'before_title'	 =>  '<h2 class="sidebar-title">',
+								'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
+							) );
+
+		register_sidebar( array (
+								'name'			 =>  __( 'Homepage Column #3', 'ayaportfolio' ),
+								'id' 			 =>  'homepage-column-3-widget-area',
+								'description'	 =>  __( 'The Homepage Column #3 widget area', 'ayaportfolio' ),
+								'before_widget'  =>  '',
+								'after_widget'	 =>  '',
+								'before_title'	 =>  '<h2 class="sidebar-title">',
+								'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
+							) );
+
 		// Register Footer Column #1
 		register_sidebar( array (
 								'name'			 =>  __( 'Footer Column #1', 'ayaportfolio' ),
@@ -422,6 +455,18 @@ final class ayaportfolio_Customize {
 // Doing this customizer thang!
 ayaportfolio_Customize::get_instance();
 
+/**
+ * Sanitization callback for 'checkbox' type controls. This callback sanitizes `$checked`
+ * as a boolean value, either TRUE or FALSE.
+ *
+ * @param bool $checked Whether the checkbox is checked.
+ * @return bool Whether the checkbox is checked.
+ */
+function ayaportfolio_sanitize_checkbox( $checked ) {
+	// Boolean check.
+	return ( ( isset( $checked ) && true == $checked ) ? true : false );
+}
+
 if ( ! function_exists( 'ayaportfolio_customize_register' ) ) :
 	/**
 	 * Add postMessage support for site title and description for the Theme Customizer.
@@ -471,90 +516,67 @@ if ( ! function_exists( 'ayaportfolio_customize_register' ) ) :
 			)
 		);
 
-		// Add slide 1 background image
-		$wp_customize->add_setting( 'ayaportfolio_slide1_image',
-			array(
-				'default' => get_template_directory_uri().'/images/slider/' . '1.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
-			)
+		// Add display slider option
+		$wp_customize->add_setting(
+				'ayaportfolio_slider_display',
+				array(
+						'default'           => 1,
+						'sanitize_callback' => 'ayaportfolio_sanitize_checkbox',
+				)
 		);
 
-	    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ayaportfolio_slide1_image',
-				array(
-					'label'   	 => __( 'Slide 1 Image', 'ayaportfolio' ),
-					'section' 	 => 'ayaportfolio_slider_section',
-					'settings'   => 'ayaportfolio_slide1_image',
-				) 
-			)
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ayaportfolio_slider_display',
+								array(
+									'label'          => __( 'Display Slider', 'ayaportfolio' ),
+									'section'        => 'ayaportfolio_slider_section',
+									'settings'       => 'ayaportfolio_slider_display',
+									'type'           => 'checkbox',
+								)
+							)
 		);
+
+		for ($i = 1; $i <= 5; ++$i) {
 		
-		// Add slide 2 background image
-		$wp_customize->add_setting( 'ayaportfolio_slide2_image',
-			array(
-				'default' => get_template_directory_uri().'/images/slider/' . '2.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
-			)
-		);
-
-	    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ayaportfolio_slide2_image',
-				array(
-					'label'   	 => __( 'Slide 2 Image', 'ayaportfolio' ),
-					'section' 	 => 'ayaportfolio_slider_section',
-					'settings'   => 'ayaportfolio_slide2_image',
-				) 
-			)
-		);
+			$slideContentId = 'ayaportfolio_slide'.$i.'_content';
+			$slideImageId = 'ayaportfolio_slide'.$i.'_image';
+			$defaultSliderImagePath = get_template_directory_uri().'/images/slider/'.$i.'.jpg';
 		
-		// Add slide 3 background image
-		$wp_customize->add_setting( 'ayaportfolio_slide3_image',
-			array(
-				'default' => get_template_directory_uri().'/images/slider/' . '3.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
-			)
-		);
-
-	    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ayaportfolio_slide3_image',
+			// Add Slide Content
+			$wp_customize->add_setting(
+				$slideContentId,
 				array(
-					'label'   	 => __( 'Slide 3 Image', 'ayaportfolio' ),
-					'section' 	 => 'ayaportfolio_slider_section',
-					'settings'   => 'ayaportfolio_slide3_image',
-				) 
-			)
-		);
-		
-		// Add slide 4 background image
-		$wp_customize->add_setting( 'ayaportfolio_slide4_image',
-			array(
-				'default' => get_template_directory_uri().'/images/slider/' . '4.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
-			)
-		);
-
-	    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ayaportfolio_slide4_image',
+					'default'           => __( '<h2><span>This is Default Slide Title</span></h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'ayaportfolio' ),
+					'sanitize_callback' => 'force_balance_tags',
+				)
+			);
+			
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, $slideContentId,
+										array(
+											'label'          => sprintf( esc_html__( 'Slide #%s Content', 'ayaportfolio' ), $i ),
+											'section'        => 'ayaportfolio_slider_section',
+											'settings'       => $slideContentId,
+											'type'           => 'textarea',
+											)
+										)
+			);
+			
+			// Add Slide Background Image
+			$wp_customize->add_setting( $slideImageId,
 				array(
-					'label'   	 => __( 'Slide 4 Image', 'ayaportfolio' ),
-					'section' 	 => 'ayaportfolio_slider_section',
-					'settings'   => 'ayaportfolio_slide4_image',
-				) 
-			)
-		);
-		
-		// Add slide 5 background image
-		$wp_customize->add_setting( 'ayaportfolio_slide5_image',
-			array(
-				'default' => get_template_directory_uri().'/images/slider/' . '5.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
-			)
-		);
+					'default' => $defaultSliderImagePath,
+					'sanitize_callback' => 'esc_url_raw'
+				)
+			);
 
-	    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ayaportfolio_slide5_image',
-				array(
-					'label'   	 => __( 'Slide 5 Image', 'ayaportfolio' ),
-					'section' 	 => 'ayaportfolio_slider_section',
-					'settings'   => 'ayaportfolio_slide5_image',
-				) 
-			)
-		);
+			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $slideImageId,
+					array(
+						'label'   	 => sprintf( esc_html__( 'Slide #%s Image', 'ayaportfolio' ), $i ),
+						'section' 	 => 'ayaportfolio_slider_section',
+						'settings'   => $slideImageId,
+					) 
+				)
+			);
+		}
 
 		/**
 		 * Add Animations Section
@@ -613,25 +635,33 @@ function ayaportfolio_shoild_display_slider() {
  */
 function ayaportfolio_display_slider() {
 
-	if ( !ayaportfolio_shoild_display_slider() ) {
-		return;
-	}
-
 	?>
 
 	 <div data-carousel-3d="true">
 		<?php
 			// display slides
 			for ( $i = 1; $i <= 5; ++$i ) {
+
+					$defaultSlideContent = __( '<h2><span>This is Default Slide Title</span></h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'ayaportfolio' );
 					
 					$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
+
+					$slideContent = get_theme_mod( 'ayaportfolio_slide'.$i.'_content', html_entity_decode( $defaultSlideContent ) );
 					$slideImage = get_theme_mod( 'ayaportfolio_slide'.$i.'_image', $defaultSlideImage );
 				?>		
 					<?php if ($slideImage != '') : ?>
 							<div class="slide" style="background-image: url('<?php echo esc_url( $slideImage ); ?>');">
+								<?php echo $slideContent; ?>
 							</div>
 					<?php endif; ?>
 <?php		} ?>
 	</div><!-- [data-carousel-3d] -->
 <?php 
 }
+
+/**
+ * Plugin Recommendation
+*/
+require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';
+
+?>

@@ -27,6 +27,10 @@ AyaPortfolio WordPress Theme bundles the following third-party resources:
 * js/customize-controls.js
 * css/customize-controls.css
 *
+* TGM Plugin Activation
+* Author: created by Thomas Griffin and is currently maintained by @thomasgriffin, @GaryJones and @jrfnl.
+* License: GPL-2.0 or later license. Reference: https://opensource.org/licenses/GPL-2.0
+*
 * css/animate.css - the MIT license, Reference: http://opensource.org/licenses/MIT
 * author URL: http://daneden.me/animate
 *
@@ -50,11 +54,22 @@ AyaPortfolio WordPress Theme bundles the following third-party resources:
 * js/viewportchecker.js - the MIT license, Reference: http://opensource.org/licenses/MIT
 *
 * images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: http://pixabay.com/en/man-businessman-consider-face-head-404376/
+*
 * images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: http://pixabay.com/en/beautiful-business-computer-female-15728/
+*
 * images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: http://pixabay.com/en/man-face-head-circle-structure-335401/
+*
 * images/slider/4.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: http://pixabay.com/en/portfolio-briefcase-brown-blue-385530/
+*
 * images/slider/5.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: http://pixabay.com/en/meeting-room-table-screen-730679/
 *
+* screenshot.png (Slider Image) http://pixabay.com/en/portfolio-briefcase-brown-blue-385530/
+*
+* screenshot.png (Pinterest Profile) https://www.pinterest.com/ayadesigntemplates/
+*
+* screenshot.png (Facebook Page) https://web.facebook.com/ayatemplates
+*
+* screenshot.png (Instagram Profile) https://www.instagram.com/aya.templates/
 
 == Installation ==
 

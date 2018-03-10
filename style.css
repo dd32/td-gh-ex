@@ -1,10 +1,10 @@
 /*!
 Theme Name: AyaPortfolio
-Description: AyaPortfolio is fully Responsive Portfolio WordPress Theme. Features: Custom Logo, Custom Background, Footer copyright text customizations, Widget Areas: Sidebar, 3 Footer Columns, Translation-Ready and much more.
+Description: AyaPortfolio is fully Responsive Portfolio WordPress Theme. Features: Built-in Homepage Slider, Custom Logo, Custom Background, Footer copyright text customizations, Widget Areas: Sidebar, 3 Homepage Columns, 3 Footer Columns, Facebook Widget support, Pinterest Widget support, Instagram Widget support, Multi-Level Drop-Down Header Menu, Translation-Ready and much more.
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayaportfolio
-Version: 1.0.4
+Version: 1.0.5
 Text Domain: ayaportfolio
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -402,6 +402,32 @@ article,
 .separator {
 	height:1px;
 	margin:20px 1% 10px 0;
+}
+
+/* Instagram Classes */
+
+.instagram-pics li {
+	list-style:none !important;
+	display:inline-block;
+	margin-right:1%;
+	display: inline-block;
+  	margin-bottom: 8px;
+  	width: calc(30% - 4px);
+}
+
+.instagram-pics li:before {
+	content:none !important;
+}
+
+.instagram-pics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.instagram-pics img {
+	max-width:100%;
+	height:auto;
 }
 
 #footer-menu {
@@ -1310,6 +1336,11 @@ dt.gallery-icon > a:before,
 	display: none;
 }
 
+#home-cols {
+	clear:both;
+	padding:20px 2%;
+}
+
 .post-links .left,
 .post-links .right {
     width: 40%;
@@ -1638,6 +1669,7 @@ dt.gallery-icon > a:before,
 	
 	[data-carousel-3d] .slide {
 		height:420px;
+		padding-top:150px; 
 	}
 	
 	[data-carousel-3d] .slide h2 {
@@ -1873,6 +1905,10 @@ dt.gallery-icon > a:before,
 		height:350px;
 	}
 
+	[data-carousel-3d] .slide h2 {
+		padding-top:50px;
+	}
+
 	/* columns */
 	.col3a,
 	.col3b,
@@ -1975,10 +2011,19 @@ dt.gallery-icon > a:before,
 		width:96%;
 		margin:0 2% 5px 2%;
 	}
+
+	[data-carousel-3d] .slide h2 {
+		padding-top:10px;
+	}
 }
 
 /* Extra-Large Resolution */
 @media screen and (min-width: 1200px) {
+
+	#home-cols-inner {
+        margin:0 auto;
+        width:1150px;
+    }
 
 	#header-content-wrapper {
 		margin:0 auto;
@@ -3633,10 +3678,14 @@ dt.gallery-icon > a:before,
     background-position: center; 
 }
 
-[data-carousel-3d] .slide h2,
+[data-carousel-3d] .slide h2 span,
 [data-carousel-3d] .slide p {
 	background-color:rgba(255, 255, 255, 0.5);
 	color:#000000;
+}
+
+[data-carousel-3d] .slide h2 span {
+	display:block;
 }
 
 [data-carousel-3d] [data-prev-button] {

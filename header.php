@@ -64,7 +64,7 @@
 
 			</header><!-- #header-main-fixed -->
 
-			<?php if ( is_front_page() ) : ?>
+			<?php if ( (is_home() || is_front_page()) && get_theme_mod('ayaportfolio_slider_display', 1) == 1 ) : ?>
 			
 						<?php ayaportfolio_display_slider(); ?>
 
@@ -72,3 +72,12 @@
 						</div>
 			
 			<?php endif; ?>
+
+			<?php if ( is_home() || is_front_page() ) : ?>
+			
+					<?php get_sidebar('home'); ?>
+			
+			<?php endif; ?>
+
+
+			
