@@ -3,17 +3,26 @@
 * Best Startup Customization options
 **/
 //get categories
-function best_startup_sanitize_radio($input) {
-         return sanitize_text_field( $input );
+
+if ( ! function_exists( 'best_startup_field_sanitize_checkbox' ) ) :
+  function best_startup_field_sanitize_checkbox( $checked ) {
+    return ( ( isset( $checked ) && true === $checked ) ? true : false );
 }
-function best_startup_menu_list(){
-  $menus = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
-  $best_startup_menu_list[''] = __('Select','best-startup');
-  foreach ( $menus as $menu ):
-    $best_startup_menu_list[$menu->name] = $menu->name;
-  endforeach;
-  return $best_startup_menu_list;
+endif;
+
+if ( ! function_exists( 'best_startup_field_sanitize_input_choice' ) ) :
+function best_startup_field_sanitize_input_choice( $input, $setting ) {
+
+  // Ensure input is a slug.
+  $input = sanitize_key( $input );
+
+  // Get list of choices from the control associated with the setting.
+  $choices = $setting->manager->get_control( $setting->id )->choices;
+
+  // If the input is a valid key, return it; otherwise, return the default.
+  return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }
+endif;
 
 function best_startup_customize_register( $wp_customize ) {
   $wp_customize->add_panel(
@@ -30,7 +39,7 @@ function best_startup_customize_register( $wp_customize ) {
     array(
       'title' => __('Social Accounts', 'best-startup'),
       'priority' => 120,
-      'description' => balanceTags( 'In first input box, you need to add FONT AWESOME shortcode which you can find <a target="_blank" href="https://fortawesome.github.io/Font-Awesome/icons/">here</a> and in second input box, you need to add your social media profile URL.<br /> Enter the URL of your social accounts. Leave it empty to hide the icon.' , true),
+      'description' => __( 'In first input box, you need to add FONT AWESOME shortcode which you can find ' ,  'best-startup').'<a target="_blank" href="'.esc_url('https://fortawesome.github.io/Font-Awesome/icons/').'">'.__('here' ,  'best-startup').'</a>'.__(' and in second input box, you need to add your social media profile URL.', 'best-startup').'<br />'.__(' Enter the URL of your social accounts. Leave it empty to hide the icon.' ,  'best-startup'),
       'panel' => 'footer'
     )
   );
@@ -51,14 +60,13 @@ foreach($best_startup_social_icon as $best_startup_social_icons){
         $best_startup_social_icons['slug'],
         array(
           'default' => '',
-          'capability'     => 'edit_theme_options',
-          'type' => 'theme_mod',
+          'capability'     => 'edit_theme_options',         
           'sanitize_callback' => 'sanitize_text_field',
         )
     );
     $wp_customize->add_control(
         $best_startup_social_icons['slug'],
-        array(
+        array('type' => 'text',
             'input_attrs' => array( 'placeholder' => esc_attr__('Enter Icon','best-startup') ),
             'section' => 'BestStartupSocialLinks',
             'label'      =>   $best_startup_social_icons['label'],
@@ -78,16 +86,14 @@ foreach($best_startup_social_icon_links as $best_startup_social_icons){
     $wp_customize->add_setting(
         $best_startup_social_icons['slug'],
         array(
-
             'default' => '',
-            'capability'     => 'edit_theme_options',
-            'type' => 'theme_mod',
+            'capability'     => 'edit_theme_options',           
             'sanitize_callback' => 'esc_url_raw',
         )
     );
     $wp_customize->add_control(
         $best_startup_social_icons['slug'],
-        array(
+        array('type' => 'url',
             'input_attrs' => array( 'placeholder' => esc_attr__('Enter URL','best-startup') ),
             'section' => 'BestStartupSocialLinks',
             'priority' => $best_startup_social_icons['priority']
@@ -135,7 +141,7 @@ $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customiz
 
 $wp_customize->add_setting('theme_header_fix', array(
         'default' => false,  
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'best_startup_field_sanitize_checkbox',
 ));
 $wp_customize->add_control('theme_header_fix', array(
     'label'   => esc_html__('Header Fix','best-startup'),
@@ -157,7 +163,7 @@ $wp_customize->add_control(
   array(
     'section' => 'title_tagline',
     'label'      => __('Enter Logo Size', 'best-startup'),
-    'description' => __("Use if you want to increase or decrease logo size (optional) Don't include `px` in the string. e.g. 20 (default: 10px)",'best-startup'),
+    'description' => __("Use if you want to increase or decrease logo size (optional) Don't enter `px` in the string. e.g. 20 (default: 10px)",'best-startup'),
     'type'       => 'text',
     'priority'    => 50,
     )
@@ -168,7 +174,7 @@ $wp_customize->add_setting(
     array(
         'default' => '1',
         'capability'     => 'edit_theme_options',
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'best_startup_field_sanitize_input_choice',
         'priority' => 20, 
     )
 );
@@ -192,7 +198,7 @@ $wp_customize->add_control(
 );
 
 $wp_customize->add_setting( 'customPreloader', array(
-    'sanitize_callback' => 'absint',
+    'sanitize_callback' => 'esc_url_raw',
     'capability'     => 'edit_theme_options',
     'priority' => 40,
 ));
@@ -204,7 +210,7 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'cust
 ) ) );
 
 $wp_customize->add_section( 'homepageSection' , array(
-    'title'       => __( 'Home Settings', 'best-startup' ),
+    'title'       => __( 'Menu Settings', 'best-startup' ),
     'priority'    => 40,
     'capability'     => 'edit_theme_options',
     'panel' => 'general'
@@ -214,7 +220,7 @@ $wp_customize->add_setting( 'menustyle', array(
     'capability'     => 'edit_theme_options',
     'priority' => 40,
     'default' => '0',
-    'sanitize_callback' => 'sanitize_text_field',
+    'sanitize_callback' => 'best_startup_field_sanitize_input_choice',
 ));
 
 $wp_customize->add_control( 'menustyle', array(
@@ -232,7 +238,7 @@ $wp_customize->add_setting( 'pagetitle', array(
     'capability'     => 'edit_theme_options',
     'priority' => 40,
      'default' => '1',
-    'sanitize_callback' => 'sanitize_text_field',
+    'sanitize_callback' => 'best_startup_field_sanitize_input_choice',
 ));
 
 $wp_customize->add_control( 'pagetitle', array(
@@ -248,7 +254,7 @@ $wp_customize->add_setting( 'singlepagetitle', array(
     'capability'     => 'edit_theme_options',
     'priority' => 40,
      'default' => '1',
-    'sanitize_callback' => 'sanitize_text_field',
+    'sanitize_callback' => 'best_startup_field_sanitize_input_choice',
 ));
 
 $wp_customize->add_control( 'singlepagetitle', array(
@@ -515,7 +521,7 @@ $wp_customize->add_setting(
     array(
         'default' => '3',
         'capability'     => 'edit_theme_options',
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'best_startup_field_sanitize_input_choice',
     )
 );
 $wp_customize->add_control(
@@ -536,7 +542,7 @@ $wp_customize->add_setting(
     array(
         'default' => '3',
         'capability'     => 'edit_theme_options',
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'best_startup_field_sanitize_input_choice',
     )
 );
 $wp_customize->add_control(
@@ -557,7 +563,7 @@ $wp_customize->add_setting(
     array(
         'default' => '1',
         'capability'     => 'edit_theme_options',
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'best_startup_field_sanitize_input_choice',
     )
 );
 $wp_customize->add_control(
@@ -577,7 +583,7 @@ $wp_customize->add_setting(
     array(
         'default' => '1',
         'capability'     => 'edit_theme_options',
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'best_startup_field_sanitize_input_choice',
     )
 );
 $wp_customize->add_control(
@@ -598,7 +604,7 @@ $wp_customize->add_setting(
     array(
         'default' => '1',
         'capability'     => 'edit_theme_options',
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'best_startup_field_sanitize_input_choice',
     )
 );
 $wp_customize->add_control(
@@ -634,7 +640,7 @@ $wp_customize->add_setting(
     array(
         'default' => '1',
         'capability'     => 'edit_theme_options',
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'best_startup_field_sanitize_input_choice',
     )
 );
 $wp_customize->add_control(
@@ -670,7 +676,7 @@ $wp_customize->add_section( 'footerWidgetArea' , array(
 
 $wp_customize->add_section( 'footerSocialSection' , array(
     'title'       => __( 'Social Settings', 'best-startup' ),
-    'description' => balanceTags( 'In first input box, you need to add FONT AWESOME shortcode which you can find <a target="_blank" href="https://fortawesome.github.io/Font-Awesome/icons/">here</a> and in second input box, you need to add your social media profile URL.' , true),
+    'description' => __( 'In first input box, you need to add FONT AWESOME shortcode which you can find ' , 'best-startup').'<a target="_blank" href="'.esc_url('https://fortawesome.github.io/Font-Awesome/icons/').'">'.__('here' , 'best-startup').'</a>'.__('and in second input box, you need to add your social media profile URL.' , 'best-startup'),
     'priority'    => 135,
     'capability'     => 'edit_theme_options',
     'panel' => 'footer'
@@ -686,7 +692,7 @@ $wp_customize->add_setting(
   array(
       'default' => '2',
       'capability'     => 'edit_theme_options',
-      'sanitize_callback' => 'sanitize_text_field',
+      'sanitize_callback' => 'best_startup_field_sanitize_input_choice',
       'priority' => 20, 
   )
 );
@@ -707,7 +713,7 @@ $wp_customize->add_setting(
   array(
       'default' => '3',
       'capability'     => 'edit_theme_options',
-      'sanitize_callback' => 'sanitize_text_field',
+      'sanitize_callback' => 'best_startup_field_sanitize_input_choice',
       'priority' => 20, 
   )
 );
@@ -748,28 +754,28 @@ add_action( 'customize_register', 'best_startup_customize_register' );
 
 function best_startup_custom_css(){
  
-  wp_enqueue_style( 'best_startup_style', get_stylesheet_uri() );
+  wp_enqueue_style( 'best_startup_style', get_stylesheet_uri(),null);
   $custom_css='';
 
   $custom_css.="
     .navbar {
-      background: ".get_theme_mod('menuBackgroundColor', 'transparent').";
+      background: ".esc_attr(get_theme_mod('menuBackgroundColor', 'transparent')).";
     }
     .best-startup-fixed-top,.best-startup-fixed-top #cssmenu ul.sub-menu{
-      background-color: ".get_theme_mod('menuBackgroundColor','transparent').";
+      background-color: ".esc_attr(get_theme_mod('menuBackgroundColor','transparent')).";
     }
     #top-menu ul ul li a{
-      background-color: ".get_theme_mod('themeColor','#ea8800').";
+      background-color: ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
     }
     .fixed-header #top-menu ul ul li a{
-      background-color: ".get_theme_mod('menuBackgroundColorScroll','#fff').";
+      background-color: ".esc_attr(get_theme_mod('menuBackgroundColorScroll','#fff')).";
     }
     .fixed-header,.fixed-header #cssmenu ul.sub-menu,.fixed-header #top-menu ul{
-      background-color: ".get_theme_mod('menuBackgroundColorScroll','#fff').";
+      background-color: ".esc_attr(get_theme_mod('menuBackgroundColorScroll','#fff')).";
     }
     .header-top.no-transparent{
       position:relative; 
-      background-color:".get_theme_mod('menuBackgroundColor','transparent').";
+      background-color:".esc_attr(get_theme_mod('menuBackgroundColor','transparent')).";
     }";
 
     /*Main logo height*/
@@ -782,95 +788,95 @@ function best_startup_custom_css(){
 
     $custom_css.= "
     .logo-light, .logo-light a {
-      color: ".get_theme_mod('menuTextColor','#fff').";
+      color: ".esc_attr(get_theme_mod('menuTextColor','#fff')).";
     }    
     
     .logo-dark a, .logo-dark{
-      color: ".get_theme_mod('menuTextColorScroll','#000')."; 
+      color: ".esc_attr(get_theme_mod('menuTextColorScroll','#000'))."; 
     }
 
     *::selection,.silver-package-bg,#menu-line,.menu-left li:hover:before{
-      background-color: ".get_theme_mod('themeColor','#ea8800').";
+      background-color: ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
     }
     .title-data h2 a,.btn-light:focus,.btn-light:hover,a:hover, a:focus,.package-feature h6,.menu-left h6,.sow-slide-nav a:hover .sow-sld-icon-themeDefault-left,.sow-slide-nav a:hover .sow-sld-icon-themeDefault-right, .menu-left ul li a:hover, .menu-left ul li.active a, .recentcomments:hover,.blog-carousel .blog-carousel-title h4,
     .gallery-item .ovelay .content .lightbox:hover, .gallery-item:hover .ovelay .content .imag-alt a:hover{
-      color: ".get_theme_mod('themeColor','#ea8800').";
+      color: ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
     }
        
     .btn-blank{
-      box-shadow: inset 0 0 0 1px ".get_theme_mod('themeColor','#ea8800').";
+      box-shadow: inset 0 0 0 1px ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
     }
     .btn-blank:hover:before, .btn-blank:focus:before, .btn-blank:active:before{
-      box-shadow: inset 10px 0 0 0px ".get_theme_mod('themeColor','#ea8800').";
+      box-shadow: inset 10px 0 0 0px ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
     }
     .contact-me.darkForm input[type=submit],.contact-me.lightForm input[type=submit]:hover {
-      background: ".get_theme_mod('secondaryColor','#000000').";
-      box-shadow: inset 10px 0 0 0px ".get_theme_mod('themeColor','#ea8800').";
+      background: ".esc_attr(get_theme_mod('secondaryColor','#000000')).";
+      box-shadow: inset 10px 0 0 0px ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
     }
     .btn-nav:focus, .btn-nav:hover,.menu-left li a:hover:before, .menu-left li.active:before, .services-tabs-left li:hover:before, .services-tabs-left li.active:before, ul#recentcomments li:hover:before,.btn-speechblue:before,.search-submit:hover, .search-submit:focus {
-      background: ".get_theme_mod('themeColor','#ea8800').";
+      background: ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
     }
     .contact-me.lightForm input[type=submit],.contact-me.darkForm input[type=submit]:hover {
-      background: ".get_theme_mod('themeColor','#ea8800').";
-      box-shadow: inset 10px 0 0 0px ".get_theme_mod('secondaryColor','#000000').";
+      background: ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
+      box-shadow: inset 10px 0 0 0px ".esc_attr(get_theme_mod('secondaryColor','#000000')).";
     }
     .menu-left ul li,.menu-left ul li span, body,.comment-form input, .comment-form textarea,input::-webkit-input-placeholder,textarea::-webkit-input-placeholder,time,.menu-left ul li a, .services-tabs-left li a, .menu-left ul li .comment-author-link a, .menu-left ul li.recentcomments a,caption{
-      color: ".get_theme_mod('bodyTextColor','#424242').";
+      color: ".esc_attr(get_theme_mod('bodyTextColor','#424242')).";
     }
     input:-moz-placeholder{
-      color: ".get_theme_mod('bodyTextColor','#424242').";
+      color: ".esc_attr(get_theme_mod('bodyTextColor','#424242')).";
     }
     input::-moz-placeholder{
-      color: ".get_theme_mod('bodyTextColor','#424242').";
+      color: ".esc_attr(get_theme_mod('bodyTextColor','#424242')).";
     }
     input:-ms-input-placeholder{
-      color: ".get_theme_mod('bodyTextColor','#424242').";
+      color: ".esc_attr(get_theme_mod('bodyTextColor','#424242')).";
     }
     a,.comment .comment-reply-link,.services-tabs-left li a:hover, .services-tabs-left li.active a{
-      color: ".get_theme_mod('secondaryColor','#000000').";
+      color: ".esc_attr(get_theme_mod('secondaryColor','#000000')).";
     }
     .menu-left li:before,.menu-left h6::after,.btn-blank:hover:before, .btn-blank:focus:before, .btn-blank:active:before,.package-feature h6::after,.counter-box p:before,.menu-left li:before, .services-tabs-left li:before,.btn-blank:before,.search-submit {
-      background: ".get_theme_mod('secondaryColor','#000000').";
+      background: ".esc_attr(get_theme_mod('secondaryColor','#000000')).";
     }
     .comment-form p.form-submit,.btn-speechblue{
-      background: ".get_theme_mod('secondaryColor','#000000').";
-      box-shadow: inset 10px 0 0 0px ".get_theme_mod('themeColor','#ea8800').";
+      background: ".esc_attr(get_theme_mod('secondaryColor','#000000')).";
+      box-shadow: inset 10px 0 0 0px ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
     }
     .comment-form .form-submit:hover::before,.btn-speechblue:hover:before, .btn-speechblue:focus:before, .btn-speechblue:active:before{
-      box-shadow: inset 10px 0 0 0px ".get_theme_mod('secondaryColor','#000000').";
-      background: ".get_theme_mod('themeColor','#ea8800').";
+      box-shadow: inset 10px 0 0 0px ".esc_attr(get_theme_mod('secondaryColor','#000000')).";
+      background: ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
     }
     .contact-me.darkForm input:focus, .contact-me.lightForm input:focus, .contact-me.darkForm textarea:focus, .contact-me.lightForm textarea:focus,
     blockquote,
     .comment-form input:focus, .comment-form textarea:focus{
-      border-color: ".get_theme_mod('themeColor','#ea8800').";
+      border-color: ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
     }
     .footer-wrap{
-      background: ".get_theme_mod('themeColor','#ea8800').";
+      background: ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
     }
     .footer-box{
-      background:".get_theme_mod('footerBackgroundColor','#2c3e50').";
+      background:".esc_attr(get_theme_mod('footerBackgroundColor','#2c3e50')).";
     }
     .footer-box div,.footer-box .widget-title,.footer-box p,.footer-box .textwidget, .footer-box .calendar_wrap caption, .footer-box .textwidget p,.footer-box div,.footer-box h1,.footer-box h2,.footer-box h3,.footer-box h4,.footer-box h5,.footer-box h6 {
-      color: ".get_theme_mod('footerTextColor','#ffffff').";
+      color: ".esc_attr(get_theme_mod('footerTextColor','#ffffff')).";
     }    
     .footer-box .footer-widget ul li a,.footer-widget .tagcloud a{
-      color:".get_theme_mod('footerLinkColor','#ffffff').";
+      color:".esc_attr(get_theme_mod('footerLinkColor','#ffffff')).";
     }
     .footer-box .footer-widget ul li a:hover, .footer-widget .tagcloud a:hover{
-      color:".get_theme_mod('footerLinkHoverColor','#ea8800').";
+      color:".esc_attr(get_theme_mod('footerLinkHoverColor','#ea8800')).";
     }
     .footer-box .tagcloud > a:hover{
-      background:".get_theme_mod('footerLinkHoverColor','#ea8800').";
+      background:".esc_attr(get_theme_mod('footerLinkHoverColor','#ea8800')).";
     }
     .footer-wrap .copyright p,.footer-wrap{
-      color: ".get_theme_mod('copyrightTextColor', '#fff').";
+      color: ".esc_attr(get_theme_mod('copyrightTextColor', '#fff')).";
     }
     .footer-wrap a,.footer-wrap.style2 .footer-nav ul li a{
-      color: ".get_theme_mod('copyrightLinkColor', '#ffff').";
+      color: ".esc_attr(get_theme_mod('copyrightLinkColor', '#ffff')).";
     }
     .footer-wrap .copyright a:hover,.footer-wrap a:hover,.footer-wrap.style2 .footer-nav ul li a:hover,.footer-wrap.style2 .copyright a:hover,.footer-wrap.style1 .copyright a:hover{
-      color: ".get_theme_mod('copyrightLinkHoverColor', '#000').";
+      color: ".esc_attr(get_theme_mod('copyrightLinkHoverColor', '#000')).";
     }  
     
 
@@ -903,19 +909,19 @@ function best_startup_custom_css(){
       /*sub menu background color*/
 
       #menu-style-header ul ul li a  {
-        background-color: ".get_theme_mod('secondaryColor','#000000').";
+        background-color: ".esc_attr(get_theme_mod('secondaryColor','#000000')).";
       }
 
       /*sub menu Scroll background color*/
 
       .fixed-header #menu-style-header ul ul li a {
-        background-color: ".get_theme_mod('menuBackgroundColorScroll','#ffffff').";
+        background-color: ".esc_attr(get_theme_mod('menuBackgroundColorScroll','#ffffff')).";
       } 
 
       /*sub menu background hover color*/
 
       #menu-style-header ul ul li a:hover {
-        background-color: ".get_theme_mod('themeColor','#ea8800').";
+        background-color: ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
       } 
       
       /*all top menu hover effect border color*/
@@ -941,45 +947,45 @@ function best_startup_custom_css(){
       /*all menu arrow border color*/
 
       #menu-style-header #menu-button::before, #menu-style-header .menu-opened::after {
-           border-color: ".get_theme_mod('secondaryColor','#2c3e55').";
+           border-color: ".esc_attr(get_theme_mod('secondaryColor','#2c3e55')).";
         }
 
       /*all menu scroll arrow border color*/
 
       .fixed-header #menu-style-header #menu-button::before, .fixed-header #menu-style-header .menu-opened::after {
-           border-color: ".get_theme_mod('menuTextColorScroll','#ffffff')." ;
+           border-color: ".esc_attr(get_theme_mod('menuTextColorScroll','#ffffff'))." ;
         }
 
       /*all menu arrow background border color*/
       
       #menu-style-header #menu-button::after
         {
-          background-color: ".get_theme_mod('secondaryColor','#2c3e55').";
+          background-color: ".esc_attr(get_theme_mod('secondaryColor','#2c3e55')).";
         }
 
       /*all menu scroll arrow background border color*/
       
       .fixed-header #menu-style-header #menu-button::after {
-          background-color: ".get_theme_mod('menuTextColorScroll','#ffffff').";
+          background-color: ".esc_attr(get_theme_mod('menuTextColorScroll','#ffffff')).";
         } 
 
       /*mobile menu background color*/
 
       #menu-style-header .mobilemenu li a{
-           background-color: ".get_theme_mod('menuBackgroundColorScroll','#ffffff').";
+           background-color: ".esc_attr(get_theme_mod('menuBackgroundColorScroll','#ffffff')).";
            color: ".esc_attr(get_theme_mod('menuTextColorScroll','#2c3e55')).";
         }
 
         #menu-style-header .mobilemenu li a:hover{
-           background-color: ".get_theme_mod('themeColor','#ea8800').";
+           background-color: ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
         }
 
         #menu-style-header .mobilemenu li:hover > a  {
-           background-color: ".get_theme_mod('themeColor','#ea8800').";
+           background-color: ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
         }
 
         #menu-style-header .submenu-button::before, #menu-style-header .submenu-button::after{
-           background-color: ".get_theme_mod('menuTextColorScroll','#ffffff').";
+           background-color: ".esc_attr(get_theme_mod('menuTextColorScroll','#ffffff')).";
         }     
 
       }   

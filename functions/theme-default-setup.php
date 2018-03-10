@@ -66,15 +66,12 @@ function best_startup_excerpt($limit) {
   return $excerpt;
 } 
 
-function best_startup_entry_meta() {
-	$BestStartupCategoriesList = get_the_category_list(', ','');
-	$BestStartupTagList = get_the_tag_list('', ', ' );
-	$BestStartupAuthor= ucfirst(get_the_author());
-	$BestStartupAuthorUrl= esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );
-	$BestStartupComments = wp_count_comments(get_the_ID()); 	
-	$BestStartupDate = sprintf('<time datetime="%1$s">%2$s</time>', esc_attr(get_the_date('c')), esc_html(get_the_date('F d , Y')));
-?>	
-    <p><?php _e('By : ', 'best-startup'); ?><a href="<?php echo $BestStartupAuthorUrl; ?>" rel="tag"><?php echo $BestStartupAuthor; ?></a> - <?php echo $BestStartupDate; ?></p>
+function best_startup_entry_meta() {	
+  $best_startup_TagList = get_the_tag_list('', esc_html__( ', #', 'best-startup' )); 
+   if($best_startup_TagList): ?>
+    <p> <?php echo get_the_tag_list('', esc_html__( ', #', 'best-startup' ));?>	</p>
+  <?php endif; ?>
+    <p><?php esc_html_e('By : ', 'best-startup'); ?><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="tag"><?php echo esc_html(ucfirst(get_the_author())); ?></a> - <?php echo sprintf('<time datetime="%1$s">%2$s</time>', esc_attr(get_the_date('c')), esc_html(get_the_date('F d , Y'))); ?></p>
 <?php 	
 }
 

@@ -24,9 +24,13 @@ if( $singlepagetitle == 1 ) : ?>
               if(get_theme_mod('blogsinglesidebar',3) == 1):
                    get_sidebar();
               endif; ?>
-            <div class="col-md-<?php echo $blog_layout_class; ?> col-sm-12 col-xs-12 blog-article ">
+            <div class="col-md-<?php echo esc_attr($blog_layout_class); ?> col-sm-12 col-xs-12 blog-article ">
                 <?php while ( have_posts() ) : the_post(); ?>
                         <?php the_content();
+                            wp_link_pages( array(
+                                'before' => '<div class="page-links">' . esc_html__( 'Page:', 'best-startup' ),
+                                'after'  => '</div>',
+                            ) );
                         // If comments are open or we have at least one comment, load up the comment template.
                         if ( comments_open() || get_comments_number() ) {
                             comments_template();

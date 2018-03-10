@@ -29,9 +29,8 @@ if (!function_exists('best_startup_setup')) :
             'priority' => 11,
             'header-text' => array('img-responsive', 'site-description'),
         ));        
-        add_image_size('BestStartupThumbnailImage', 840, 560, true);
-        add_image_size('BestStartupBlogThumbnailImage', 760, 500, true);
-
+        add_image_size('best-startup-thumbnail-image', 840, 560, true);
+       
         $best_startup_defaults = array(
             'default-image'          => get_template_directory_uri().'/assets/images/best-startup.jpg',
             'width'                  => 0,
@@ -58,7 +57,7 @@ if (!function_exists('best_startup_setup')) :
         
         // Switch default core markup for search form, comment form, and commen, to output valid HTML5.
         add_theme_support('html5', array(
-            'search-form', 'comment-form', 'comment-list',
+            'comment-form', 'comment-list',
         ));
         // Add support for featured content.
         add_theme_support('featured-content', array(
@@ -107,15 +106,4 @@ function best_startup_special_navclass($classes, $item) {
     return $classes;
 }
 
-define('HEADER_IMAGE_WIDTH', apply_filters('basic_header_image_width', 1920));
-define('HEADER_IMAGE_HEIGHT', apply_filters('basic_header_image_height', 1435));
-
-/* Siteorigin in adding tabs */
-function best_startup_wrapper_start() {
-    echo '<div class="container"><div class="row">';
-}
-
-function best_startup_wrapper_end() {
-    echo '</div></div>';
-}
 require get_template_directory() . '/functions/theme-default-setup.php';

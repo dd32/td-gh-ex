@@ -27,7 +27,7 @@ if( $singlepagetitle == 1 ) : ?>
                         get_sidebar();
                  endif;
                 ?>  
-                <div class="col-md-<?php echo $blog_layout_class; ?> col-sm-12 col-xs-12 content">
+                <div class="col-md-<?php echo esc_attr($blog_layout_class); ?> col-sm-12 col-xs-12 content">
                     <?php while ( have_posts() ) : the_post(); ?>
                         <div class="single-blog-content-area fadeIn animated">
                             <div class="single-blog-content">
@@ -39,28 +39,26 @@ if( $singlepagetitle == 1 ) : ?>
                                 </div>
                                 <?php if ( has_post_thumbnail() ) : ?>
                                  <div class="single-blog-images">
-                                    <?php the_post_thumbnail( 'BestStartupThumbnailImage', array( 'alt' => esc_attr(get_the_title()), 'class' => 'img-responsive') ); ?>
+                                    <?php the_post_thumbnail( 'best-startup-thumbnail-image', array( 'class' => 'img-responsive') ); ?>
                                 </div>
                                 <?php endif;
-                                    the_content(); ?>
+                                    the_content(); 
+                                    wp_link_pages( array(
+                                    'before' => '<div class="page-links">' . esc_html__( 'Post:', 'best-startup' ),
+                                    'after'  => '</div>',
+                                    ) );?>
                             </div>                            
-                           <?php comments_template('', true); ?>
-                        </div>
-                        <?php 
-                        wp_link_pages( array(
-                            'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'best-startup' ) . '</span>',
-                            'after'       => '</div>',
-                            'link_before' => '<span>',
-                            'link_after'  => '</span>',
-                            'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'best-startup' ) . ' </span>%',
-                            'separator'   => '<span class="screen-reader-text">, </span>',
-                        ) );
-                    // Previous/next page navigation.
-                    the_posts_pagination( array(
-                        'prev_text'          => __( 'Previous page', 'best-startup' ),
-                        'next_text'          => __( 'Next page', 'best-startup' ),
-                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'best-startup' ) . ' </span>',
-                    ) ); ?>
+                           <?php // Previous/next page navigation.
+                           the_post_navigation( array(
+                                'prev_text'          => esc_html__( 'Previous page', 'best-startup' ),
+                                'next_text'          => esc_html__( 'Next page', 'best-startup' ),
+                                'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'best-startup' ) . ' </span>',
+                            ) );
+                           
+                           if ( comments_open() || get_comments_number() ) :
+                                    comments_template();
+                                endif; ?>
+                        </div>                        
                 <?php endwhile; ?>
                 </div>
                  <?php 

@@ -14,7 +14,7 @@
                                 <div class="blog-content view view-fifth">
                                     <?php if ( has_post_thumbnail() ) : ?>
                                     <div class="blog-images">
-                                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'BestStartupThumbnailImage', array( 'alt' => esc_attr(get_the_title()), 'class' => 'img-responsive') ); ?></a>
+                                        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'best-startup-thumbnail-image', array( 'class' => 'img-responsive') ); ?></a>
                                     </div>
                                     <?php else: ?>                                        
                                         <div class="blog-images">
@@ -29,7 +29,7 @@
                                           <?php endif; ?>
                                         </div>
                                         <?php if(get_theme_mod('blogPostExcerpt',1) == 1): ?> 
-                                          <p><?php echo best_startup_excerpt(absint(get_theme_mod('blogPostExcerptTextLimit',150))); ?></p>
+                                          <p><?php echo esc_html(best_startup_excerpt(absint(get_theme_mod('blogPostExcerptTextLimit',15)))); ?></p>
                                         <?php endif; ?> 
                                         <?php if(get_theme_mod('blogPostReadMore',1) == 1): ?>  
                                         <a href="<?php the_permalink();?>" class="btn-light"><?php esc_html_e('READ MORE','best-startup'); ?></a>

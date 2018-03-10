@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Best Startup\n"
-"POT-Creation-Date: 2018-02-20 16:27+0530\n"
-"PO-Revision-Date: 2018-02-20 16:27+0530\n"
+"POT-Creation-Date: 2018-03-10 12:59+0530\n"
+"PO-Revision-Date: 2018-03-10 12:58+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -51,15 +51,15 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: content.php:35 template-parts/blog-layout.php:53
+#: content.php:35
 msgid "READ MORE"
 msgstr ""
 
-#: content.php:42 template-parts/blog-layout.php:60
+#: content.php:42
 msgid "Back"
 msgstr ""
 
-#: content.php:43 template-parts/blog-layout.php:61
+#: content.php:43
 msgid "Onward"
 msgstr ""
 
@@ -79,7 +79,7 @@ msgstr ""
 msgid "Top Header Menu"
 msgstr ""
 
-#: functions.php:53
+#: functions.php:52
 msgid "Default Header Image"
 msgstr ""
 
@@ -88,13 +88,13 @@ msgid "Install Required Plugins"
 msgstr ""
 
 #: functions/class-tgm-plugin-activation.php:328
-#: functions/theme-default-setup.php:115
+#: functions/theme-default-setup.php:112
 msgid "Install Plugins"
 msgstr ""
 
 #. translators: %s: plugin name.
 #: functions/class-tgm-plugin-activation.php:330
-#: functions/theme-default-setup.php:116
+#: functions/theme-default-setup.php:113
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
@@ -106,13 +106,13 @@ msgid "Updating Plugin: %s"
 msgstr ""
 
 #: functions/class-tgm-plugin-activation.php:333
-#: functions/theme-default-setup.php:117
+#: functions/theme-default-setup.php:114
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #. translators: 1: plugin name(s).
 #: functions/class-tgm-plugin-activation.php:336
-#: functions/theme-default-setup.php:118
+#: functions/theme-default-setup.php:115
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
@@ -121,7 +121,7 @@ msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: functions/class-tgm-plugin-activation.php:342
-#: functions/theme-default-setup.php:119
+#: functions/theme-default-setup.php:116
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
@@ -130,7 +130,7 @@ msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: functions/class-tgm-plugin-activation.php:348
-#: functions/theme-default-setup.php:124
+#: functions/theme-default-setup.php:121
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -151,7 +151,7 @@ msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: functions/class-tgm-plugin-activation.php:360
-#: functions/theme-default-setup.php:121
+#: functions/theme-default-setup.php:118
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
@@ -160,7 +160,7 @@ msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: functions/class-tgm-plugin-activation.php:366
-#: functions/theme-default-setup.php:122
+#: functions/theme-default-setup.php:119
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
@@ -168,7 +168,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: functions/class-tgm-plugin-activation.php:371
-#: functions/theme-default-setup.php:126
+#: functions/theme-default-setup.php:123
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
@@ -181,14 +181,14 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: functions/class-tgm-plugin-activation.php:381
-#: functions/theme-default-setup.php:127
+#: functions/theme-default-setup.php:124
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
 #: functions/class-tgm-plugin-activation.php:385
-#: functions/theme-default-setup.php:128
+#: functions/theme-default-setup.php:125
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
@@ -201,7 +201,7 @@ msgstr ""
 
 #: functions/class-tgm-plugin-activation.php:387
 #: functions/class-tgm-plugin-activation.php:3159
-#: functions/theme-default-setup.php:129
+#: functions/theme-default-setup.php:126
 msgid "Plugin activated successfully."
 msgstr ""
 
@@ -534,253 +534,273 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: functions/theme-customization.php:11
-msgid "Select"
-msgstr ""
-
-#: functions/theme-customization.php:22
+#: functions/theme-customization.php:31
 msgid "General"
 msgstr ""
 
-#: functions/theme-customization.php:23
+#: functions/theme-customization.php:32
 msgid "styling options"
 msgstr ""
 
-#: functions/theme-customization.php:31
+#: functions/theme-customization.php:40
 msgid "Social Accounts"
 msgstr ""
 
-#: functions/theme-customization.php:40 functions/theme-customization.php:100
+#: functions/theme-customization.php:42 functions/theme-customization.php:679
+msgid ""
+"In first input box, you need to add FONT AWESOME shortcode which you can "
+"find "
+msgstr ""
+
+#: functions/theme-customization.php:42 functions/theme-customization.php:679
+msgid "here"
+msgstr ""
+
+#: functions/theme-customization.php:42
+msgid ""
+" and in second input box, you need to add your social media profile URL."
+msgstr ""
+
+#: functions/theme-customization.php:42
+msgid ""
+" Enter the URL of your social accounts. Leave it empty to hide the icon."
+msgstr ""
+
+#: functions/theme-customization.php:49 functions/theme-customization.php:106
 msgid "Header & Logo"
 msgstr ""
 
-#: functions/theme-customization.php:46
+#: functions/theme-customization.php:55
 #, php-format
 msgid "Social Account %s"
 msgstr ""
 
-#: functions/theme-customization.php:62
+#: functions/theme-customization.php:70
 msgid "Enter Icon"
 msgstr ""
 
-#: functions/theme-customization.php:73
+#: functions/theme-customization.php:81
 #, php-format
 msgid "Social Link %s"
 msgstr ""
 
-#: functions/theme-customization.php:91
+#: functions/theme-customization.php:97
 msgid "Enter URL"
 msgstr ""
 
-#: functions/theme-customization.php:127
+#: functions/theme-customization.php:133
 msgid "Upload Dark Logo"
 msgstr ""
 
-#: functions/theme-customization.php:141
+#: functions/theme-customization.php:147
 msgid "Header Fix"
 msgstr ""
 
-#: functions/theme-customization.php:159
+#: functions/theme-customization.php:165
 msgid "Enter Logo Size"
 msgstr ""
 
-#: functions/theme-customization.php:160
+#: functions/theme-customization.php:166
 msgid ""
-"Use if you want to increase or decrease logo size (optional) Don't include "
+"Use if you want to increase or decrease logo size (optional) Don't enter "
 "`px` in the string. e.g. 20 (default: 10px)"
 msgstr ""
 
-#: functions/theme-customization.php:176 functions/theme-customization.php:185
+#: functions/theme-customization.php:182 functions/theme-customization.php:191
 msgid "Preloader"
 msgstr ""
 
-#: functions/theme-customization.php:188
+#: functions/theme-customization.php:194
 msgid "On "
 msgstr ""
 
-#: functions/theme-customization.php:189
+#: functions/theme-customization.php:195
 msgid "Off"
 msgstr ""
 
-#: functions/theme-customization.php:201
+#: functions/theme-customization.php:207
 msgid "Upload Custom Preloader"
 msgstr ""
 
-#: functions/theme-customization.php:207
-msgid "Home Settings"
-msgstr ""
-
-#: functions/theme-customization.php:221
-msgid "Menu Style"
-msgstr ""
-
-#: functions/theme-customization.php:226
-msgid "Transparent"
+#: functions/theme-customization.php:213
+msgid "Menu Settings"
 msgstr ""
 
 #: functions/theme-customization.php:227
+msgid "Menu Style"
+msgstr ""
+
+#: functions/theme-customization.php:232
+msgid "Transparent"
+msgstr ""
+
+#: functions/theme-customization.php:233
 msgid "Non-Transparent"
 msgstr ""
 
-#: functions/theme-customization.php:239
+#: functions/theme-customization.php:245
 msgid "Blog Archive Page Title"
 msgstr ""
 
-#: functions/theme-customization.php:243 functions/theme-customization.php:259
-#: functions/theme-customization.php:571 functions/theme-customization.php:591
-#: functions/theme-customization.php:612 functions/theme-customization.php:648
-#: functions/theme-customization.php:701
+#: functions/theme-customization.php:249 functions/theme-customization.php:265
+#: functions/theme-customization.php:577 functions/theme-customization.php:597
+#: functions/theme-customization.php:618 functions/theme-customization.php:654
+#: functions/theme-customization.php:707
 msgid "Hide"
 msgstr ""
 
-#: functions/theme-customization.php:244 functions/theme-customization.php:260
-#: functions/theme-customization.php:570 functions/theme-customization.php:590
-#: functions/theme-customization.php:611 functions/theme-customization.php:647
-#: functions/theme-customization.php:700
+#: functions/theme-customization.php:250 functions/theme-customization.php:266
+#: functions/theme-customization.php:576 functions/theme-customization.php:596
+#: functions/theme-customization.php:617 functions/theme-customization.php:653
+#: functions/theme-customization.php:706
 msgid "Show"
 msgstr ""
 
-#: functions/theme-customization.php:255
+#: functions/theme-customization.php:261
 msgid "Single Page & Post Title"
 msgstr ""
 
-#: functions/theme-customization.php:278
+#: functions/theme-customization.php:284
 msgid "Theme Color "
 msgstr ""
 
-#: functions/theme-customization.php:297
+#: functions/theme-customization.php:303
 msgid "Secondary Color"
 msgstr ""
 
-#: functions/theme-customization.php:317
+#: functions/theme-customization.php:323
 msgid "Menu Background Color"
 msgstr ""
 
-#: functions/theme-customization.php:337
+#: functions/theme-customization.php:343
 msgid "Menu Background Color (after scroll)"
 msgstr ""
 
-#: functions/theme-customization.php:357
+#: functions/theme-customization.php:363
 msgid "Menu Text Color"
 msgstr ""
 
-#: functions/theme-customization.php:377
+#: functions/theme-customization.php:383
 msgid "Menu Text Color(after scroll)"
 msgstr ""
 
-#: functions/theme-customization.php:397
+#: functions/theme-customization.php:403
 msgid "Body Background Color"
 msgstr ""
 
-#: functions/theme-customization.php:417
+#: functions/theme-customization.php:423
 msgid "Body Text Color"
 msgstr ""
 
-#: functions/theme-customization.php:437
+#: functions/theme-customization.php:443
 msgid "Footer Background Color"
 msgstr ""
 
-#: functions/theme-customization.php:456
+#: functions/theme-customization.php:462
 msgid "Footer Text Color"
 msgstr ""
 
-#: functions/theme-customization.php:475
+#: functions/theme-customization.php:481
 msgid "Footer Link Color"
 msgstr ""
 
-#: functions/theme-customization.php:494
+#: functions/theme-customization.php:500
 msgid "Footer Link Hover Color"
 msgstr ""
 
-#: functions/theme-customization.php:507
+#: functions/theme-customization.php:513
 msgid "Blog Page Options"
 msgstr ""
 
-#: functions/theme-customization.php:508
+#: functions/theme-customization.php:514
 msgid "Blog page option settings. "
 msgstr ""
 
-#: functions/theme-customization.php:525
+#: functions/theme-customization.php:531
 msgid "Select Blog Sidebar Option"
 msgstr ""
 
-#: functions/theme-customization.php:528 functions/theme-customization.php:549
+#: functions/theme-customization.php:534 functions/theme-customization.php:555
 msgid "Left Sidebar"
 msgstr ""
 
-#: functions/theme-customization.php:529 functions/theme-customization.php:550
+#: functions/theme-customization.php:535 functions/theme-customization.php:556
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions/theme-customization.php:530 functions/theme-customization.php:551
+#: functions/theme-customization.php:536 functions/theme-customization.php:557
 msgid "Full Sidebar"
 msgstr ""
 
-#: functions/theme-customization.php:546
+#: functions/theme-customization.php:552
 msgid "Select Single Post Sidebar Option"
 msgstr ""
 
-#: functions/theme-customization.php:567
+#: functions/theme-customization.php:573
 msgid "Select Blog Post Meta Tag Option"
 msgstr ""
 
-#: functions/theme-customization.php:587
+#: functions/theme-customization.php:593
 msgid "Select Single Post Meta Tag Option"
 msgstr ""
 
-#: functions/theme-customization.php:608
+#: functions/theme-customization.php:614
 msgid "Select Blog Post Excerpt Option"
 msgstr ""
 
-#: functions/theme-customization.php:628
+#: functions/theme-customization.php:634
 msgid "Blog Post Excerpt String Limit Option"
 msgstr ""
 
-#: functions/theme-customization.php:644
+#: functions/theme-customization.php:650
 msgid "Select Blog Post Read More Button Option"
 msgstr ""
 
-#: functions/theme-customization.php:659
+#: functions/theme-customization.php:665
 msgid "Footer"
 msgstr ""
 
-#: functions/theme-customization.php:660
+#: functions/theme-customization.php:666
 msgid "Footer options"
 msgstr ""
 
-#: functions/theme-customization.php:665
+#: functions/theme-customization.php:671
 msgid "Footer Widget Area"
 msgstr ""
 
-#: functions/theme-customization.php:672
+#: functions/theme-customization.php:678
 msgid "Social Settings"
 msgstr ""
 
 #: functions/theme-customization.php:679
+msgid "and in second input box, you need to add your social media profile URL."
+msgstr ""
+
+#: functions/theme-customization.php:685
 msgid "Footer Copyright Area"
 msgstr ""
 
-#: functions/theme-customization.php:697
+#: functions/theme-customization.php:703
 msgid "Hide Widget Area"
 msgstr ""
 
-#: functions/theme-customization.php:718
+#: functions/theme-customization.php:724
 msgid "Select Widget Area"
 msgstr ""
 
-#: functions/theme-customization.php:721
+#: functions/theme-customization.php:727
 msgid "2 column"
 msgstr ""
 
-#: functions/theme-customization.php:722
+#: functions/theme-customization.php:728
 msgid "3 column"
 msgstr ""
 
-#: functions/theme-customization.php:723
+#: functions/theme-customization.php:729
 msgid "4 column"
 msgstr ""
 
-#: functions/theme-customization.php:740
+#: functions/theme-customization.php:746
 msgid "Enter Copyright Text"
 msgstr ""
 
@@ -813,27 +833,31 @@ msgstr ""
 msgid "Footer 4"
 msgstr ""
 
-#: functions/theme-default-setup.php:77
+#: functions/theme-default-setup.php:70 functions/theme-default-setup.php:72
+msgid ", #"
+msgstr ""
+
+#: functions/theme-default-setup.php:74
 msgid "By : "
 msgstr ""
 
-#: functions/theme-default-setup.php:90
+#: functions/theme-default-setup.php:87
 msgid "Page Builder by SiteOrigin"
 msgstr ""
 
-#: functions/theme-default-setup.php:95
+#: functions/theme-default-setup.php:92
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions/theme-default-setup.php:100
+#: functions/theme-default-setup.php:97
 msgid "Contact Form 7"
 msgstr ""
 
-#: functions/theme-default-setup.php:114
+#: functions/theme-default-setup.php:111
 msgid "Install Recommended Plugins"
 msgstr ""
 
-#: functions/theme-default-setup.php:120
+#: functions/theme-default-setup.php:117
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %s plugin. "
@@ -846,7 +870,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/theme-default-setup.php:123
+#: functions/theme-default-setup.php:120
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %s "
@@ -859,7 +883,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/theme-default-setup.php:125
+#: functions/theme-default-setup.php:122
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to update the %s plugin. "
@@ -872,13 +896,21 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/theme-default-setup.php:130
+#: functions/theme-default-setup.php:127
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
-#: index.php:12 template-parts/blog-layout.php:9
+#: header.php:51
+msgid "Logo"
+msgstr ""
+
+#: index.php:12
 msgid "Blog "
+msgstr ""
+
+#: page.php:31
+msgid "Page:"
 msgstr ""
 
 #: search.php:10
@@ -906,24 +938,20 @@ msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: single.php:51
-msgid "Pages:"
+#: single.php:47
+msgid "Post:"
 msgstr ""
 
-#: single.php:55 single.php:62
-msgid "Page"
-msgstr ""
-
-#: single.php:60
+#: single.php:53
 msgid "Previous page"
 msgstr ""
 
-#: single.php:61
+#: single.php:54
 msgid "Next page"
 msgstr ""
 
-#: template-parts/header-style/header-style.php:24
-msgid "Logo"
+#: single.php:55
+msgid "Page"
 msgstr ""
 
 #. Theme Name of the plugin/theme
