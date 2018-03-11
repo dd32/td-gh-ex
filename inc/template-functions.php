@@ -437,7 +437,7 @@ function bcorporate_home_ctatwo_sec_fnc() {
 					<h1 data-aos="fade-down"   data-aos-once="true"  data-aos-delay="400">
 						<?php echo esc_html( get_theme_mod( 'homepage_cta_two_main_title' ) );?>
 					</h1>
-					<div class="col-md-12 col-sm-12 col-lg-6 offset-lg-3 "><p  class="bcorporate_home_ctatwo_sub-text" data-aos="fade-up"   data-aos-once="true"  data-aos-delay="450"> <?php echo esc_html( get_theme_mod( 'homepage_cta_two_sub_title' ) );?></p></div>
+					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 "><p  class="bcorporate_home_ctatwo_sub-text" data-aos="fade-up"   data-aos-once="true"  data-aos-delay="450"> <?php echo esc_html( get_theme_mod( 'homepage_cta_two_sub_title' ) );?></p></div>
 					<?php if( get_theme_mod('homepage_cta_two_button_url') ): ?>
 						<div class="BE-btn-primary " data-aos="fade-up"   data-aos-once="true"  data-aos-delay="500"><a href="<?php echo esc_url( get_theme_mod('homepage_cta_two_button_url') ); ?>" class="btn cta-btn">
 							<?php echo esc_html( get_theme_mod( 'homepage_cta_two_button_text' ) );?></a>

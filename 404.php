@@ -9,7 +9,8 @@
 
 get_header(); ?>
 	<div class="bcorporate_banner_section bcorporate_inner_banner_section" style="background-image: url(<?php echo esc_url( get_template_directory_uri() );?>/inc/img/blog_header_img.jpg)">
-			<div class="text-center">
+		<div class="container">
+			<div class="text-center caption-text">
 				<h1 class="inner_page_title"><?php esc_html_e('PAGE 404', 'bcorporate'); ?></h1>
 				<?php
 					// Check if NavXT plugin activated
@@ -18,6 +19,7 @@ get_header(); ?>
 					} 
 				?>
 			</div>
+		</div>
 		</div>
 
 	</header><!-- #masthead -->

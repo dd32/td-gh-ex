@@ -9,6 +9,7 @@
 
 get_header(); ?>
 		<div class="bcorporate_banner_section bcorporate_blog_banner_section"  style="background-image: url(<?php echo esc_url( get_template_directory_uri() );?>/inc/img/blog_header_img.jpg)">
+			<div class="container">
 			<div class="text-center caption-text">
 				<?php 
 				the_archive_title( '<h1 class="page-title inner_page_title">', '</h1>' );
@@ -22,6 +23,7 @@ get_header(); ?>
 				?>
 			</div>
 		</div>
+		</div>
 
 	</header><!-- #masthead -->
 
@@ -32,7 +34,7 @@ get_header(); ?>
 		<main id="main" class="site-main">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-8 col-sm-12">
+					<div class="col-md-8 col-sm-12 order-sm-1 order-md-12">
 
 						<?php
 						if ( have_posts() ) : ?>

@@ -64,8 +64,8 @@
     }
 
     .menu-toggle{ 
-        color:$BE__color__text-screen;
-        top: 45px;
+         color:$BE__color__text-screen;;
+
 
 
         div span{
@@ -246,7 +246,7 @@
     .main-menu-wrap{
         @media (max-width: 992px){
             background-color :#000;
-            width:calc(100% - 75px);
+            width:calc(100% - 120px);
             height:100vh;
             top:0;
             text-align: left;
@@ -330,7 +330,7 @@
             }
 
             li.bcorporate_download_btn{
-            padding:1rem 0;
+            padding:0;
             }
         }
     }
@@ -349,9 +349,21 @@
       width: 7%;
       height: 30px;
       position:fixed;
+      background-color:transparent;
+      border-color:transparent;
+         color:$BE__color__text-screen;
+
+         &:hover{
+            color:$BE__color__text-screen;
+         }
 
       @media (min-width: 768px) {
           color:$BE__color__white-text;
+
+          &:hover{
+           color:$BE__color__white-text;
+
+         }
             
 
         }

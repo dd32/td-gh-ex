@@ -15,6 +15,7 @@
 get_header(); ?>
 
 		<div class="bcorporate_banner_section bcorporate_blog_banner_section"  style="background-image: url(<?php echo esc_url( get_template_directory_uri() );?>/inc/img/blog_header_img.jpg)">
+			<div class="container">
 			<div class="text-center caption-text">
 			<div class="text-center ">
 				<h1 class="inner_page_title"><?php echo single_post_title(); ?>
@@ -27,6 +28,7 @@ get_header(); ?>
 				?>
 			</div>
 		</div>
+	</div>
 
 	</header><!-- #masthead -->
 

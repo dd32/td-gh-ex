@@ -185,7 +185,7 @@ if ( ! function_exists( 'bcorporate_woocommerce_wrapper_before' ) ) {
 			<main id="main" class="site-main" role="main">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-9 col-sm-12 order-sm-1 order-md-12 order-lg-12 main_products_wrap">
+						<div class="col-md-8 col-sm-12 order-sm-1 order-md-12 order-lg-12 main_products_wrap">
 		<?php
 	}
 }

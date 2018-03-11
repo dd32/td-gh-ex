@@ -27,7 +27,7 @@
 			<?php
 				edit_post_link(
 					sprintf(
-						wp_kses(
+						wp_kses_post(
 							/* translators: %s: Name of current post. Only visible to screen readers */
 							__( 'Edit <span class="screen-reader-text">%s</span>', 'bcorporate' ),
 							array(

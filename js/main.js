@@ -63,6 +63,43 @@ jQuery(document).ready(function($) {
         }, 500);
     });
 
+
+// for scroll to certain position
+  var jump=function(e)
+  {
+     if (e){
+         e.preventDefault();
+         var target = $(this).attr("href");
+     }else{
+         var target = location.hash;
+     }
+
+     $('html,body').animate(
+     {
+         scrollTop: $(target).offset().top
+     },500,function()
+     {
+         location.hash = target;
+     });
+
+  }
+
+$('html, body').hide();
+
+$(document).ready(function()
+{
+    $('a[href^=#]').bind("click", jump);
+
+    if (location.hash){
+        setTimeout(function(){
+            $('html, body').scrollTop(0).show();
+            jump();
+        }, 0);
+    }else{
+        $('html, body').show();
+    }
+});
+/*
     $('.bcorp_section li').click(function(){
         var swap_class = $(this).attr('class');
         var act_swap_class = swap_class.split(' ');
@@ -73,7 +110,7 @@ jQuery(document).ready(function($) {
         return false;
     });
 
-
+*/
     AOS.init({
       disable: 'mobile'
     });

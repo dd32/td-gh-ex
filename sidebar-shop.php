@@ -12,7 +12,7 @@ if ( ! is_active_sidebar( 'bcorporate_shop_sidebar' ) ) {
 }
 ?>
 
-<aside id="bcorporate_shop_sidebar" class="bcorporate_shop_sidebar col-md-3 col-sm-12  order-sm-12 order-md-1 order-lg-1">
+<aside id="bcorporate_shop_sidebar" class="bcorporate_shop_sidebar col-md-4 col-sm-12  order-sm-12 order-md-1 order-lg-1">
 	<?php dynamic_sidebar( 'bcorporate_shop_sidebar' ); ?>
 </aside><!-- #secondary -->
 </div> <!-- row wrap -->

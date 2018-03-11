@@ -56,6 +56,15 @@
       color:$BE__color__link-hover;
       }
     }
+
+       .recentcomments{
+          a{
+              &:before{
+                  content:'';
+              }
+          }
+
+       }
     
     span.post-date{
       display: block;
@@ -115,7 +124,7 @@
     }
 
     .search-submit, 
-    input[type="submit"]{
+    input[type="submit"], button[type="submit"]{
       display: none;
     }
 
@@ -198,6 +207,9 @@
     li{
       list-style: none;  
       border:none;
+      padding:.4rem 0;
+
+
       
       a{
         color:$BE__color__white-text; 
@@ -214,6 +226,8 @@
         }
       }
     }
+
+    
   }
 }
  

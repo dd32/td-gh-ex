@@ -9,6 +9,7 @@
 get_header(); ?>
 
 		<div class="bcorporate_banner_section bcorporate_blog_banner_section" style="background-image: url(<?php if( has_post_thumbnail() ): echo esc_url( get_the_post_thumbnail_url() ); endif;?>)">
+			<div class="container">
 			<div class="text-center caption-text">
 				<h1 class="inner_page_title"><?php the_title(); ?>
 				</h1>
@@ -19,6 +20,7 @@ get_header(); ?>
 					} 
 				?>
 			</div>
+		</div>
 		</div>
 
 	</header><!-- #masthead -->

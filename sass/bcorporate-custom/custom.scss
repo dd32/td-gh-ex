@@ -51,6 +51,8 @@ h1.site-title{
   @include font-size(.8);
 }
 
+ 
+
 
  
 
@@ -99,7 +101,15 @@ h1.site-title{
 
 .homepage_sub_text{
    @include font-size(1.2);
+   font-weight:300;
 }
+
+.sub_text{
+  @include font-size(1.2);
+  font-weight:300;
+}
+
+
 
 .bcorporate_banner_section{
   position:relative;
@@ -114,7 +124,12 @@ h1.site-title{
      position:relative;
      background-size:cover;
      background-color:$BE__color__background-blue;
-     height:378px;
+      height:250px;
+
+
+      @media (min-width: 768px) {
+      height:378px;
+    }
 
       &:after{
      content: '';
@@ -130,7 +145,7 @@ h1.site-title{
      .caption-text{
      width: 100%;
     text-align: center;
-    display: table-cell; 
+    
     vertical-align: middle;
     position: relative;
     color:$BE__color__white-text;
@@ -157,8 +172,10 @@ h1.site-title{
     
 
     .caption-text{
-   
-    top: -30px;
+      @media (min-width: 1200px) {
+          top: -30px;
+      }
+
     
 
         .download-btn{
@@ -222,10 +239,7 @@ h1.site-title{
         top:0;
     }
 
-     @media (min-width: 4600px) {
-      height:700px;
-        top:0;
-    }
+ 
 
    
   }
@@ -333,11 +347,7 @@ h1.site-title{
     display: inline-block;
   }
   
-  input[type="number"]{
-    width: 5rem;     
-    padding: 0.35rem; 
-    margin-right: 1rem;
-  }
+ 
 
    
 /* portfolio */
@@ -601,6 +611,7 @@ h1.site-title{
       border-color:$BE__color__border-link;
       text-transform: none;
       padding:.5rem 1rem;
+      background-color:transparent;
     }
 
     .Bcorp_comment{    
@@ -627,7 +638,45 @@ h1.site-title{
       padding: 0.8rem 0.5rem;
       width: calc(100% - 9rem);
     }
+
+    ol.comment-list{
+        margin: 1rem 0 1rem 0rem;
+        padding-left:0;
+        list-style:none;
+
+        ol.children{
+        margin-left:0;
+         padding-left:.5rem;
+        }
+    }
+
+     .comment-body{
+          padding: 1rem 1rem 1rem 5rem;
+          position :relative;
+          margin-bottom:1rem;
   }
+
+   .comment-author img{
+     width: 40px;
+    height: 40px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+
+  footer{
+      padding-bottom:1rem;
+  }
+
+      .comment-respond{
+          padding:2rem 0;
+      }
+  }
+
+
   
 
       /* Testimonials */
@@ -746,7 +795,7 @@ h1.site-title{
       color:$BE__color__white-text;
 
       a{
-        color:$BE__color__white-text;
+        color:$BE__color__link-hover;
       }
     }
   }
@@ -766,6 +815,12 @@ h1.site-title{
      height:100px;
       @include transition(all 0.3s ease);
        @include transform(translate3d(0, 0, 0));   
+       z-index:999;
+
+         .menu-toggle{ 
+       
+        background-color:transparent;
+        border-color:transparent;}
  }
 
  .headermain.shrink{
@@ -785,7 +840,7 @@ h1.site-title{
 
       .site-title{ 
         margin-top:0rem;
-        @include font-size(2);
+        
 
       
         a{
@@ -810,7 +865,8 @@ h1.site-title{
   
  @media (min-width: 320px){
    .headermain{
-   position:static;
+   position:relative;
+   z-index:99
    }
 
      .headerwrap{
@@ -859,6 +915,8 @@ h1.site-title{
 
    
 }
+
+
 
 
 
@@ -972,8 +1030,10 @@ article{
 
 h2.entry-title, .entry-title{
   margin:2rem 0 1rem;
-  @include font-size(2);
-
+  @include font-size(1.5);
+     @media (min-width: 768px){
+      @include font-size(2);
+     }
   a{
     color:$BE__color__heading;
     
@@ -1031,6 +1091,10 @@ nav.pagination{
 }
 
 
+.pagination{
+  padding:1rem 0;
+}
+
 
 /*contact*/
 
@@ -1056,7 +1120,7 @@ nav.pagination{
   }
   
   .fa-icon{
-    display:inline-block; 
+    float:left; 
     vertical-align:top; 
   }
 
@@ -1067,14 +1131,19 @@ nav.pagination{
   }
 
   .contact-desc{
-    display:inline-block;  
+  
     @include font-size(1.1); 
     font-weight:300;
+    padding: 0 0 0 4rem;
   }
 }
 
 .contact_form_wrap{
-  padding:7rem 0 0;
+  padding:3rem 0 0;
+
+   @media (min-width: 768px){
+    padding:7rem 0 0;
+   }
 
   h2{
     margin-bottom:2rem;
@@ -1115,7 +1184,12 @@ nav.pagination{
   }
 
   .contact_map{
-    margin-top:6rem;
+    margin-top:3rem;
+
+     @media (min-width: 768px){
+         margin-top:6rem;
+   }
+
 
     iframe{
       border:.5rem solid $BE__color__border-input;
@@ -1130,7 +1204,11 @@ nav.pagination{
       @include font-size(10);
       font-weight: bold;
       color:$BE__color__heading;
-      margin: 5rem 0 0;
+      margin: 0rem 0 0;
+
+       @media (min-width: 992px){
+          margin: 5rem 0 0;
+       }
       }
 
     .sub_404_title{ 
@@ -1162,6 +1240,11 @@ nav.pagination{
       float:right;
        @include border-radius(0);
         @include transition(all 0.3s ease);
+        margin:1rem 0;
+
+         @media (min-width: 992px){
+          margin: 0;
+       }
     }
   }
 
