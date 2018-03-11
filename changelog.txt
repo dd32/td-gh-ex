@@ -1,5 +1,8 @@
 == Changelog ==
- 
+
+ =  1.1.1 =
+* Slider widget div fixed
+
 = 1.1.0 =
 * Basic woocommerce issue fixed !
 

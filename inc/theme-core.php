@@ -145,8 +145,8 @@ function bc_business_consulting_widgets_init() {
 		'name'          => esc_html__( 'Front Page Slider', 'bc-business-consulting' ),
 		'id'            => 'front_page_sidebar',
 		'description'   => esc_html__( 'Add widgets here.', 'bc-business-consulting' ),
-		'before_widget' => '<aside class="col-md-3 col-sm-6 col-xs-6 ftr-widget link-widget">',
-		'after_widget'  => '</aside>',
+		'before_widget' => '<div id="%1$s" class="%2$s">',
+		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title screen-reader-text">',
 		'after_title'   => '</h3>',
 	) );
@@ -154,8 +154,8 @@ function bc_business_consulting_widgets_init() {
 		'name'          => esc_html__( 'Blog Page Slider', 'bc-business-consulting' ),
 		'id'            => 'blog_page_sidebar',
 		'description'   => esc_html__( 'Add widgets here.', 'bc-business-consulting' ),
-		'before_widget' => '<aside class="col-md-3 col-sm-6 col-xs-6 ftr-widget link-widget">',
-		'after_widget'  => '</aside>',
+		'before_widget' => '<div id="%1$s" class="%2$s">',
+		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title screen-reader-text">',
 		'after_title'   => '</h3>',
 	) );
