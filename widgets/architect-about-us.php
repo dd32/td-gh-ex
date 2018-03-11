@@ -30,27 +30,16 @@ class Architect_lite_About_Us extends WP_Widget {
      * Array is used in update and form functions
      */
     private function widget_fields() {
-        
+
+        $owner_pages = owner_pages_dropdown();
         $fields = array(
 
-            'section_title' => array(
-                'owner_widgets_name'         => 'section_title',
-                'owner_widgets_title'        => __( 'Section Title', 'architect-lite' ),
-                'owner_widgets_field_type'   => 'text'
+            'section_page' => array(
+                'owner_widgets_name'         => 'section_page',
+                'owner_widgets_title'        => __( 'Section Page', 'architect-lite' ),
+                'owner_widgets_field_type'   => 'select',
+                'owner_widgets_field_options' => $owner_pages
             ),
-
-            'section_content' => array(
-                'owner_widgets_name'         => 'section_content',
-                'owner_widgets_title'        => __( 'Section Content', 'architect-lite' ),
-                'owner_widgets_row'          => 5,
-                'owner_widgets_field_type'   => 'textarea'
-            ),
-
-            'section_image' => array(
-                'owner_widgets_name' 		=> 'section_image',
-                'owner_widgets_title' 		=> __( 'Section Image', 'architect-lite' ),
-                'owner_widgets_field_type' 	=> 'upload',
-            )
         );
         return $fields;
     }
@@ -69,30 +58,30 @@ class Architect_lite_About_Us extends WP_Widget {
             return ;
         }
 
-    $section_title    = empty( $instance['section_title'] ) ? '' : $instance['section_title'];
-    $section_content  = empty( $instance['section_content'] ) ? '' : $instance['section_content'];
-    $section_image    = empty( $instance['section_image'] ) ? '' : $instance['section_image'];
+        $section_page = empty( $instance['section_page'] ) ? '' : $instance['section_page'];
+        if(!empty($section_page)):
+            $section_page_detail = get_post($section_page);
+            echo $before_widget;
+            ?>
+            <div class="section-wrapper owner-widget-wrapper clearfix">
+                <div class="mt-container">
 
-   	echo $before_widget;
-?>
-		<div class="section-wrapper owner-widget-wrapper clearfix">
-			<div class="mt-container">
+                    <div class="section-content-wrapper">
+                        <?php echo $before_title . esc_html( $section_page_detail->post_title ) . $after_title; ?>
+                        <div class="section-content"><?php echo apply_filters( 'the_content', $section_page_detail->post_content );; ?></div>                    
+                    </div><!-- .section-content-wrapper -->
 
-                <div class="section-content-wrapper">
-                	<?php echo $before_title . esc_html( $section_title ) . $after_title; ?>
-                	<div class="section-content"><?php echo wp_kses_post( $section_content ); ?></div>                    
-                </div><!-- .section-content-wrapper -->
+                    <div class="section-image-holder">
+                        <?php if ( has_post_thumbnail( $section_page ) ) { ?>
+                        <figure><?php echo get_the_post_thumbnail( $section_page_detail->ID, 'full' );?></figure>
+                        <?php } ?>
+                    </div><!-- .section-content -->
 
-                <div class="section-image-holder">
-                	<?php if( !empty( $section_image ) ) { ?>
-                		<figure><img src="<?php echo esc_url( $section_image ); ?>" /></figure>
-                	<?php } ?>
-                </div><!-- .section-content -->
-
-            </div><!-- .mt-container -->
-		</div><!-- .section-wrapper -->
-<?php
-        echo $after_widget;
+                </div><!-- .mt-container -->
+            </div><!-- .section-wrapper -->
+            <?php
+            echo $after_widget;
+        endif;
     }
 
     /**

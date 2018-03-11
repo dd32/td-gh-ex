@@ -147,7 +147,22 @@ function architect_lite_get_hex2rgba( $color, $opacity ) {
     $output = 'rgba( '.implode( ",", $rgb ).','.$opacity.' )';
     return $output;
 }
-
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/**
+ * Define pages for dropdown
+ *
+ * @return array();
+ */
+if( !function_exists( 'owner_pages_dropdown' ) ):
+    function owner_pages_dropdown() {
+        $owner_pages = get_pages();
+        $owner_pages_dropdown['0'] = __( 'Select Pages', 'architect-lite' );
+        foreach ( $owner_pages as $owner_page ) {
+            $owner_pages_dropdown[$owner_page->ID] = $owner_page->post_title;
+        }
+        return $owner_pages_dropdown;
+    }
+endif;
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 /**
  * Managed widgets

@@ -5,7 +5,7 @@
  Author:       Mystery Themes
  Author URI:   https://mysterythemes.com/
  Template:     owner
- Version:      1.0.1
+ Version:      1.0.2
  License:      GNU General Public License v3 or later
  License URI:  http://www.gnu.org/licenses/gpl-3.0.html
  Tags:         one-column, two-columns, left-sidebar, right-sidebar, custom-colors, featured-images, translation-ready, blog, education, portfolio
@@ -240,28 +240,28 @@ About & Team CSS
 	vertical-align: middle;
 }
 
-.architect_about_us .section-content-wrapper {
+.architect_lite_about_us .section-content-wrapper {
 	float: left;
-	width: 50%;
+	width: 55%;
 }
 
-.architect_about_us .section-image-holder {
+.architect_lite_about_us .section-image-holder {
 	float: right;
-	width: 45%;
+	width: 40%;
 }
 
-.widget.architect_about_us .widget-title {
+.widget.architect_lite_about_us .widget-title {
 	margin-bottom: 40px;
 	border: none;
 	padding: 0;
 	font-size: 36px;
 }
 
-.widget.architect_about_us .section-content {
+.widget.architect_lite_about_us .section-content {
 	font-size: 14px;
 }
 
-.widget.architect_about_us .section-wrapper{
+.widget.architect_lite_about_us .section-wrapper{
 	padding-bottom: 0;
 }
 
@@ -406,12 +406,12 @@ Responsive CSS
 	#site-navigation ul li:hover > a::before{
 		display: none;
 	}
-	.architect_about_us .section-image-holder {
+	.architect_lite_about_us .section-image-holder {
 		float: none;
 		text-align: center;
 		width: 100%;
 	}
-	.architect_about_us .section-content-wrapper {
+	.architect_lite_about_us .section-content-wrapper {
 		float: none;
 		width: 100%;
 		text-align: center;
