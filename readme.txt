@@ -1,37 +1,38 @@
-== Think Up Themes ==
+=== Alante ===
+Contributors: thinkupthemes
+Requires at least: 4.6
+Tested up to: 4.9.4
+Version: 1.1.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
 
-- By Think Up Themes, http://www.thinkupthemes.com/
 
-Requires at least:	4.0.0
-Tested up to:		4.7.2
+== Description ==
 
 Alante is the free version of the multi-purpose professional theme (Alante Pro) ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
 
 
------------------------------------------------------------------------------
-	Support
------------------------------------------------------------------------------
+== Installation ==
 
-- For support for Alante (free) please post a support ticket over at the https://wordpress.org/support/theme/alante.
-
-
------------------------------------------------------------------------------
-	Frequently Asked Questions
------------------------------------------------------------------------------
-
-- None Yet
+1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
+2. Type in Alante in the search form and press the 'Enter' key on your keyboard.
+3. Click on the 'Activate' button to use your new theme right away.
+4. Go to Appearance - About Alante in the admin area of your website for a guide on how to customize this theme.
+5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 
------------------------------------------------------------------------------
-	Limitations
------------------------------------------------------------------------------
+== Frequently Asked Questions ==
 
-- Limitations will be added when raised.
+For support for Alante (free) please post a support ticket over at the https://wordpress.org/support/theme/alante.
 
 
------------------------------------------------------------------------------
-	Copyright, Sources, Credits & Licenses
------------------------------------------------------------------------------
+== Limitations ==
+
+Limitations will be added when raised.
+
+
+== Copyright ==
 
 Alante WordPress Theme, Copyright 2017 Think Up Themes Ltd
 Alante is distributed under the terms of the GNU GPL
@@ -99,45 +100,65 @@ The following opensource projects, graphics, fonts, API's or other files as list
            Licence:     CC0
            Licence URL: https://creativecommons.org/publicdomain/zero/1.0/
 
------------------------------------------------------------------------------
-	Changelog
------------------------------------------------------------------------------
 
-Version 1.0.9
+== Changelog ==
+
+= 1.1.0
+- Updated: Readme file updated to ensure format is consistent with upcoming wordpress.org update to align themes with plugin directory.
+
+= 1.0.15
+- Updated: Improved checks for 'edit_theme_options' capability to ensure demo content only displays to site admins.
+
+= 1.0.14
+- Updated: Sidebar layouts now applied using css classes instead of loading separate stylesheets.
+
+= 1.0.13
+- Updated: Improved escaping in function alante_thinkup_title_select() to ensure page title displays correctly.
+
+= .0.12
+- Fixed:   WooCommerce v3+ gallery support added, ensured image zoom function works correctly.
+
+= 1.0.11
+- Updated: Various styling improvements in style.css
+
+= 1.0.10
+- Updated: Support added for EDD to ensure purchase buttons display correctly on downloads page.
+
+= 1.0.9
 - Fixed:   jQuery for video responsive sizes updated to prevent issues when video sliders are used.
 
-Version 1.0.8
+= 1.0.8
 - Updated: Customizer theme option styling updated.
 
-Version 1.0.7
+= 1.0.7
 - Updated: Slider updated to ensure full compatibility with child themes.
 
-Version 1.0.6
+= 1.0.6
 - Fixed:   Documentation display fixed to ensure compatibilty with WordPress v4.8.
 - Updated: Homepage (Featured) section customizer options display regardless of if switch is on or off.
 
-Version 1.0.5
+= 1.0.5
 - New:     Documentation link added to customizer.
 
-Version 1.0.4
+= 1.0.4
 - Fixed:   Notification for theme information page can now be dismissed permanently.
 - Updated: Global variables removed from 05.blog.php and function "alante_thinkup_var()" used to get option values.
 
-Version 1.0.3
+= 1.0.3
 - New:     Theme information page added under Appearance in admin area.
 
-Version 1.0.2
+= 1.0.2
 - New:     column1-1/3 image size added.
 - Updated: Class blog-style1 changed to blog-article.
 - Updated: Blog layout classes now output via functions.
 - Updated: Blog layout changed to be 1 column with full width image.
 - Updated: Class format-nomedia added to post class when no feature image is assigned.
 
-Version 1.0.1
+= 1.0.1
 - Fixed:   Empty output variables to NULL in function alante_thinkup_input_sliderhomepage() to avoid php errors.
 - Updated: Customizer theme options styling updated.
 - Removed: Sticky header removed.
 - Removed: Unused variables removed from function alante_thinkup_input_breadcrumb().
 
-Version 1.0.0
+= 1.0.0
 - New:     Initial release.
