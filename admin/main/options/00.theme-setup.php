@@ -243,7 +243,7 @@ if ( ! function_exists( 'thinkup_input_addimagesizes' ) ) {
 		// 4 Column Layout
 		add_image_size( 'column4-2/3', 285, 190, true );
 	}
-	add_action( 'init', 'thinkup_input_addimagesizes' );
+	add_action( 'after_setup_theme', 'thinkup_input_addimagesizes' );
 }
 
 if ( ! function_exists( 'thinkup_input_showimagesizes' ) ) {

@@ -158,7 +158,7 @@ if ( ! class_exists( 'engrave_thinkup_toolbox_about_page' ) ) {
 			if ( ! empty( $this->notification ) ) {
 
 				// display notice if not previously dismissed
-				if ( current_user_can( 'edit_theme_options' ) && !get_option( 'engrave_thinkup_notice_welcome' ) ) {
+				if ( current_user_can( 'edit_theme_options' ) && !get_option( 'engrave_thinkup_notice_welcome' ) && 'themes.php' == $pagenow ) {
 
 					echo '<div class="thinkup-toolbox-about updated notice is-dismissible">';
 					echo '<a class="notice-dismiss" href="' . esc_url(wp_nonce_url(remove_query_arg(array('activated'), add_query_arg('engrave-thinkup-hide-notice', 'welcome')), 'engrave_thinkup_hide_notices_nonce', '_engrave_thinkup_notice_nonce')) . '" style="z-index: 0;padding: 10px;text-decoration: none;" >';
