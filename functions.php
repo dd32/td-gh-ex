@@ -6,6 +6,9 @@ function avira_css() {
 	
 	wp_enqueue_style('avira-default',get_stylesheet_directory_uri() .'/css/colors/default.css');
 	wp_dequeue_style('specia-default', get_template_directory_uri() . '/css/colors/default.css');
+	
+	wp_enqueue_style('avira-media-query',get_stylesheet_directory_uri() .'/css/media-query.css');
+	wp_dequeue_style('specia-media-query', get_template_directory_uri() . '/css/media-query.css');
 }
 add_action( 'wp_enqueue_scripts', 'avira_css',999);
    	
@@ -45,8 +48,6 @@ add_action( 'wp_enqueue_scripts', 'avira_scripts_styles' );
 function avira_remove_parent_setting( $wp_customize ) {
 	$wp_customize->remove_panel('features_panel');
 	$wp_customize->remove_control('slider-page3');
-	$wp_customize->remove_panel('header_section');
-	
 }
 add_action( 'customize_register', 'avira_remove_parent_setting',99 );
 
@@ -56,3 +57,10 @@ function avira_remove_widgets(){
 	unregister_sidebar( 'specia_feature_widget' );
 }
 add_action( 'widgets_init', 'avira_remove_widgets', 11 );
+
+require_once( get_stylesheet_directory() . '/inc/customize/avira-premium.php');
+
+/**
+ * Load Sanitization file.
+ */
+require_once get_stylesheet_directory() . '/inc/sanitization.php';
