@@ -1,0 +1,286 @@
+<?php
+/**
+ * nnfy functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package nnfy
+ */
+
+if ( ! function_exists( 'nnfy_setup' ) ) :
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support for post thumbnails.
+ */
+function nnfy_setup() {
+	/*
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
+	 * If you're building a theme based on nnfy, use a find and replace
+	 * to change '99fy' to the name of your theme in all the template files.
+	 */
+	load_theme_textdomain( '99fy', get_template_directory() . '/languages' );
+	
+	// This theme styles the visual editor with editor-style.css to match the theme style.
+	add_editor_style('css/editor-style.css');
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
+
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
+
+	/*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 */
+	add_theme_support( 'post-thumbnails' );
+
+	/**
+	* Add Image Size
+	*/
+	add_image_size('nnfy_blog_img',970,580,true);
+	add_image_size('nnfy_blog_grid_thumb',370,244,true);
+	add_image_size('nnfy_widget_recent_post_thumb',90,90,true);
+
+	add_image_size('nnfy_product_nav_thumb',141,135,true);
+	
+
+	/**
+	* This theme uses wp_nav_menu() in one location.
+	*/
+	register_nav_menus( array(
+		'primary'        => esc_html__( 'Primary', '99fy' ),
+	) );
+
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support( 'html5', array(
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
+	) );
+
+
+	/*
+	 * Enable support for Post Formats.
+	 */
+	add_theme_support( 'post-formats', array(
+		'link',
+		'quote',
+		'gallery',
+		'audio',
+		'video',
+	) );
+
+
+	/**
+	* Set up the WordPress core custom background feature.
+	*/
+	add_theme_support( 'custom-background', apply_filters( 'nnfy_custom_background_args', array(
+		'default-color' => 'ffffff',
+		'default-image' => '',
+	) ) );
+
+	/**
+	* Add theme support for selective refresh for widgets.
+	*/
+	add_theme_support( 'customize-selective-refresh-widgets' );
+}
+endif;
+add_action( 'after_setup_theme', 'nnfy_setup' );
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+
+ if ( !function_exists( 'nnfy_content_width')){
+	 	function nnfy_content_width() {
+		$GLOBALS['content_width'] = apply_filters( 'nnfy_content_width', 640 );
+	}
+} 
+add_action( 'after_setup_theme', 'nnfy_content_width', 0 );
+
+/**
+ * Register custom fonts.
+ */
+ if ( !function_exists( 'nnfy_fonts_url' ) ) :
+function nnfy_fonts_url() {
+	$fonts_url = '';
+	$fonts     = array();
+	$subsets   = 'latin,latin-ext';
+
+	/* translators: If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', '99fy' ) ) {
+		$fonts[] = 'Open Sans:300,400,600,700';
+	}
+
+	/* translators: If there are characters in your language that are not supported by Poppins, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Poppins font: on or off', '99fy' ) ) {
+		$fonts[] = 'Poppins:300,400,500,500i,600,700,800';
+	}
+	if ( $fonts ) {
+		$fonts_url = add_query_arg( array(
+			'family' => urlencode( implode( '|', $fonts ) ),
+			'subset' => urlencode( $subsets ),
+		), 'https://fonts.googleapis.com/css' );
+	}
+
+	return $fonts_url;
+}
+endif;
+
+
+/**
+ * Enqueue scripts and styles.
+ */
+function nnfy_scripts() {
+
+	wp_enqueue_style('nnfy-font',nnfy_fonts_url());
+
+	wp_enqueue_style('font-awesome',get_template_directory_uri() . '/css/font-awesome.min.css');
+	
+	wp_enqueue_style('bootstrap',get_template_directory_uri() . '/css/bootstrap.min.css');
+
+	wp_enqueue_style('magnific-popup',get_template_directory_uri() . '/css/magnific-popup.css');
+
+	wp_enqueue_style('animate',get_template_directory_uri() . '/css/animate.css');
+
+	wp_enqueue_style('owl-carousels',get_template_directory_uri() . '/css/owl.carousel.min.css');
+
+	wp_enqueue_style('ionicons',get_template_directory_uri() . '/css/ionicons.min.css');
+	
+	wp_enqueue_style('easyzoom',get_template_directory_uri() . '/css/easyzoom.css');
+
+	wp_enqueue_style('mean-menu',get_template_directory_uri() . '/css/meanmenu.min.css');
+
+	wp_enqueue_style('nnfy-default-style',get_template_directory_uri() . '/css/theme-default.css');
+
+	wp_enqueue_style('nnfy-blog-style',get_template_directory_uri() . '/css/blog-post.css');
+
+	wp_enqueue_style('nnfy-main-style',get_template_directory_uri() . '/css/theme-style.css');
+
+	wp_enqueue_style( 'nnfy-style', get_stylesheet_uri() );
+
+	wp_enqueue_style('nnfy-responsive',get_template_directory_uri() . '/css/responsive.css');
+
+
+	wp_enqueue_script( 'popper', get_template_directory_uri() . '/js/popper.min.js', array('jquery'), '1.0.0', true );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '4.0.0', true );
+	wp_enqueue_script( 'magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', array('jquery'), '1.1.0', true );
+	wp_enqueue_script( 'owl-carousels', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), '2.2.1', false );
+	wp_enqueue_script( 'jquery-ui-core' );
+	wp_enqueue_script( 'jquery-ui-slider' );
+	wp_enqueue_script( 'easyzoom', get_template_directory_uri() . '/js/easyzoom.min.js', array('jquery'), '', true );
+
+	wp_enqueue_script( 'waypoints', get_template_directory_uri() . '/js/waypoints.js', array('jquery'), '4.0.1', true );
+	wp_enqueue_script( 'imagesloaded' );
+	wp_enqueue_script( 'wow', get_template_directory_uri() . '/js/wow-min.js', array('jquery'), '1.1.2', true );
+
+	wp_enqueue_script( 'nnfy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '', true );
+	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '', true );
+	wp_enqueue_script( 'mean-menu', get_template_directory_uri() . '/js/jquery.meanmenu.min.js', array(), '', true );
+	wp_enqueue_script( 'nnfy-main', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true );
+	
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+
+}
+add_action( 'wp_enqueue_scripts', 'nnfy_scripts' );
+
+
+// nnfy Company Info widget js
+if( !function_exists('nnfy_admin_scripts') ) {
+  function nnfy_admin_scripts() {
+	wp_enqueue_style( 'nnfy-metabox-expand', get_template_directory_uri() . '/css/metabox-expand.css', false, '1.0.0' );
+	wp_enqueue_style( 'font-awesome-admin', get_template_directory_uri() . '/css/font-awesome.min.css', false, '4.7.0' );
+
+    wp_enqueue_media();
+    wp_enqueue_script( 'jquery-ui-tabs' );
+    wp_enqueue_script( 'nnfy-metabox-expand', get_template_directory_uri() .'/js/metabox-expand.js', false, '', true );
+    wp_enqueue_style( 'wp-color-picker' );
+    wp_enqueue_script( 'wp-color-picker-alpha', get_template_directory_uri() .'/js/wp-color-picker-alpha.min.js', array( 'wp-color-picker' ), '2.1.3', true );
+
+    wp_enqueue_script( 'metabox-condition', get_template_directory_uri() .'/js/metabox-conditionals.js', array( 'jquery', 'cmb2-scripts' ), '1.0.0', true );
+    wp_enqueue_script( 'nnfy-logo-uploader', get_template_directory_uri() .'/js/site-logo-uploader.js', false, '', true );
+
+  }
+}
+add_action('admin_enqueue_scripts', 'nnfy_admin_scripts');
+
+
+
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer/customizer.php';
+require get_template_directory() . '/inc/customizer/sanitization-callbacks.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+require get_template_directory() . '/inc/jetpack.php';
+
+
+/*
+	Load breadcrumb
+*/
+require get_template_directory().'/inc/breadcrumb/breadcrumb.php';
+
+/*
+	Load widget
+*/
+require get_template_directory().'/inc/widgets/widget-register.php';
+/*
+	Load tgm plugin
+*/
+require get_template_directory().'/inc/tgm-plugin/required-plugins.php';
+/*
+	Load demo importer
+*/
+require get_template_directory().'/inc/demo-importer.php';
+/*
+	Load global function
+*/
+require get_template_directory().'/inc/global-functions.php';
+/*
+	Comment form
+*/
+require get_template_directory().'/inc/comment-form.php';
+
+/*
+ CMB2 Tabs
+*/
+require get_template_directory().'/inc/metabox-expand.php';
+
+/*
+ Woocommerce config
+*/
+require get_template_directory().'/inc/woo-config.php';
