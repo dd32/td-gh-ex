@@ -2,6 +2,64 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+
+if ( version_compare( PHP_VERSION, '5.4.0', '<' ) ) {
+
+	add_action( 'after_switch_theme', 'AttireCheckPhpVersionBeforeActivation', 10, 2 );
+	add_action( 'load-customize.php', 'AttireBlockCustomizer' );
+	add_action( 'template_redirect', 'AttireBlockPreview' );
+
+	return;
+}
+
+function AttireCheckPhpVersionBeforeActivation( $oldtheme_name, $oldtheme ) {
+
+
+	// Info message: Theme not activated
+	add_action( 'admin_notices', 'AttireNotActivatedAdminNotice' );
+
+
+	// Switch back to previous theme
+	switch_theme( $oldtheme->stylesheet );
+
+	unset( $_GET['activated'] );
+
+
+}
+
+function AttireBlockCustomizer() {
+
+
+	wp_die( esc_html__( 'Attire requires PHP version 5.4 or later. Please upgrade your php version for better performance/security.', 'attire' ), '', array(
+		'back_link' => true,
+	) );
+}
+
+
+function AttireBlockPreview() {
+
+	if ( isset( $_GET['preview'] ) ) {
+		wp_die( esc_html__( 'Attire requires PHP version 5.4 or later. Please upgrade your php version for better performance/security.', 'attire' ) );
+	}
+}
+
+function AttireNotActivatedAdminNotice() {
+	?>
+
+    <div class="notice notice-error is-dismissible">
+        <p>
+            <strong><?php esc_html_e( 'Switched back to previous theme. Attire requires PHP version 5.4 or later. Please upgrade your php version for better performance/security.', 'attire' ); ?></strong>
+        </p>
+        <button type="button" class="notice-dismiss">
+            <span class="screen-reader-text"><?php esc_html_e( 'Dismiss this notice.', 'attire' ); ?></span>
+        </button>
+    </div>
+
+	<?php
+}
+
+
 define( 'ATTIRE_THEME_PREFIX', 'attire_' );
 define( "ATTIRE_TEMPLATE_DIR", get_template_directory() );
 define( "ATTIRE_THEME_URL", get_stylesheet_directory_uri() );
@@ -28,9 +86,6 @@ class AttireBase {
 
 	function Actions() {
 		//delete_option( 'attire_options' );
-		add_action( 'after_switch_theme', array( $this, 'AttireCheckPhpVersionBeforeActivation' ), 10, 2 );
-		add_action( 'load-customize.php', array( $this, 'AttireBlockCustomizer' ) );
-		add_action( 'template_redirect', array( $this, 'AttireBlockPreview' ) );
 
 	}
 
@@ -71,61 +126,6 @@ class AttireBase {
 		$more = AttireThemeEngine::NextGetOption( 'attire_read_more_text', __( 'Read more', 'attire' ) );
 
 		return '... <a class="read-more-link" href="' . esc_url( get_permalink( $post->ID ) ) . '">' . wp_kses_post( $more ) . '</a>';
-	}
-
-	function AttireCheckPhpVersionBeforeActivation( $oldtheme_name, $oldtheme ) {
-
-		if ( version_compare( PHP_VERSION, '5.4.0', '<' ) ) {
-
-
-			// Info message: Theme not activated
-			add_action( 'admin_notices', array( $this, 'AttireNotActivatedAdminNotice' ) );
-
-
-			// Switch back to previous theme
-			switch_theme( $oldtheme->stylesheet );
-
-			unset( $_GET['activated'] );
-
-			return false;
-
-		}
-
-	}
-
-	function AttireBlockCustomizer() {
-		if ( version_compare( PHP_VERSION, '5.4.0', '<' ) ) {
-
-
-			wp_die( esc_html__( 'Attire requires PHP version 5.4 or later. Please upgrade your php version for better performance/security.', 'attire' ), '', array(
-				'back_link' => true,
-			) );
-		}
-	}
-
-
-	function AttireBlockPreview() {
-		if ( version_compare( PHP_VERSION, '5.4.0', '<' ) ) {
-
-			if ( isset( $_GET['preview'] ) ) {
-				wp_die( esc_html__( 'Attire requires PHP version 5.4 or later. Please upgrade your php version for better performance/security.', 'attire' ) );
-			}
-		}
-	}
-
-	function AttireNotActivatedAdminNotice() {
-		?>
-
-        <div class="notice notice-error is-dismissible">
-            <p>
-                <strong><?php esc_html_e( 'Switched back to previous theme. Attire requires PHP version 5.4 or later. Please upgrade your php version for better performance/security.', 'attire' ); ?></strong>
-            </p>
-            <button type="button" class="notice-dismiss">
-                <span class="screen-reader-text"><?php esc_html_e( 'Dismiss this notice.', 'attire' ); ?></span>
-            </button>
-        </div>
-
-		<?php
 	}
 }
 
