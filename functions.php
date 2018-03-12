@@ -6,7 +6,7 @@
  */
 
 // Declare latest theme version
-$GLOBALS['thinkup_theme_version'] = '1.4.9';
+$GLOBALS['thinkup_theme_version'] = '1.5.0';
 
 // Setup content width 
 function thinkup_content_width() {
@@ -73,6 +73,9 @@ if ( ! function_exists( 'thinkup_themesetup' ) ) {
 
 		// Add WooCommerce functions.
 		add_theme_support( 'woocommerce' );
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
 
 		// Register theme menu's.
 		register_nav_menus( array( 'pre_header_menu' => __( 'Pre Header Menu', 'lan-thinkupthemes' ) ) );
@@ -120,8 +123,6 @@ function thinkup_frontscripts() {
 
 	// Register theme stylesheets
 	wp_register_style( 'thinkup-responsive', get_template_directory_uri() . '/styles/style-responsive.css', '', $thinkup_theme_version );
-	wp_register_style( 'thinkup-sidebarleft', get_template_directory_uri() . '/styles/layouts/thinkup-left-sidebar.css', '', $thinkup_theme_version );
-	wp_register_style( 'thinkup-sidebarright', get_template_directory_uri() . '/styles/layouts/thinkup-right-sidebar.css', '', $thinkup_theme_version );
 
 	// Register WooCommerce (theme specific) stylesheets
 
@@ -149,7 +150,7 @@ add_action( 'wp_enqueue_scripts', 'thinkup_frontscripts', 10 );
 
 function thinkup_adminscripts() {
 
-	if ( is_customize_preview() ) {
+//	if ( is_customize_preview() ) {
 
 		global $thinkup_theme_version;
 
@@ -160,7 +161,7 @@ function thinkup_adminscripts() {
 		// Add theme scripts
 		wp_enqueue_script( 'thinkup-backend', get_template_directory_uri() . '/lib/scripts/main-backend.js', array( 'jquery' ), $thinkup_theme_version );
 
-	}
+//	}
 }
 add_action( 'admin_enqueue_scripts', 'thinkup_adminscripts' );
 
