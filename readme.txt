@@ -6,8 +6,15 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 4.1.3 [12-03-2018]
+1. Author name added for single page.
+2. Minor changes in rate banner. 
+
+@Version: 4.1.2 [27-02-2018]
+1. Description Updates.
+
 @Version: 4.1.1 [08-02-2018]
-1.Minor Change
+1.Minor Change.
 
 @Version: 4.1 [03-01-2018]
 1. Category option added for blog.

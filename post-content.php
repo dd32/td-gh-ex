@@ -7,15 +7,23 @@
 		<span class="date"><?php echo get_the_date(); ?></span>
 		<?php endif; ?>
 		</li>
-		<li class="enigma_post_author"><?php echo get_avatar(get_the_author_meta( 'ID' ),96); ?></li>
+		<li class="enigma_post_author enigma_blog_thumb_wrapper_showcase"><?php echo get_avatar(get_the_author_meta( 'ID' ),96); ?>
+		<div class="enigma_blog_thumb_wrapper_showcase_overlays">
+				<div class="enigma_blog_thumb_wrapper_showcase_overlay_inner ">
+					<div class="enigma_blog_thumb_wrapper_showcase_icons1">
+						<a title="<?php the_title_attribute(); ?>" href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php echo get_the_author(); ?></a>
+					</div>
+				</div>
+			</div>
+		</li>
 		<li class="enigma_blog_comment"><i class="fa fa-comments-o"></i><h6><?php comments_popup_link( '0', '1', '%', '', '-'); ?></h6></li>
 	</ul>
 	<div class="post-content-wrap">
 		<?php if(has_post_thumbnail()): 
 		$img = array('class' => 'enigma_img_responsive'); ?>
-		<div class="enigma_blog_thumb_wrapper_showcase">						
+		<div class="enigma_blog_thumb_wrapper_showcase enigma_author">						
 			<div class="enigma_blog-img">
-			<?php the_post_thumbnail('blog_2c_thumb',$img); ?>						
+			<?php the_post_thumbnail('blog_2c_thumb',$img); ?>	
 			</div>
 			<?php if (is_home()) : ?>
 			<div class="enigma_blog_thumb_wrapper_showcase_overlay">

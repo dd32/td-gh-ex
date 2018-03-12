@@ -1,5 +1,5 @@
 .notice-box {
-    background: #4fb9f0 !important;
+    background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%) !important;
     color: #fff;
 }
 .notice-box1 {
@@ -8,7 +8,8 @@
 	border-left-color: #1ABC9C;
 }
 .notice-box p, .notice-box1 p {
-	padding: 10px;
+	line-height: 2.1;
+	padding: 19px;
     font-weight: bold;
     font-size: 16px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -22,24 +23,19 @@
 .notice-box, .notice-box1 {
     box-shadow: 2px 4px 4px #888888 !important;
 }
-.notice-box.notice-success.is-dismissible.flat_responsive_notice {
-    border-left: 3px solid #666666;
-}
 a.rateme {
-    background: #71777b;
+    background: #555d668c;
     text-decoration: none;
     color: #fff;
-    font-size: 15px;
-    padding: 2px;
-    border-radius: 5px;
+    font-size: 13px;
+    padding: 5px;
     margin-left: 10px;
     margin-right: 10px;
 }
 a.dismiss {
-	background: #71777b;
+	background: #555d668c;
     text-decoration: none;
     color: #fff;
-    font-size: 15px;
-    padding: 2px;
-    border-radius: 5px;
+    font-size: 13px;
+    padding: 5px;
 }

@@ -1489,7 +1489,7 @@ $wp_customize->add_section(
 	) );   
 	
 			$wp_customize->add_section( 'enigma_more' , array(
-				'title'      	=> __( 'Upgrade to Enigma Premium 20%OFF', 'enigma' ),
+				'title'      	=> __( 'Upgrade to Enigma Premium 10%OFF', 'enigma' ),
 				'priority'   	=> 999,
 				'panel'=>'enigma_theme_option',
 			) );
@@ -1598,7 +1598,7 @@ class More_Enigma_Control extends WP_Customize_Control {
 		<div class="col-md-4">
 				<div class="stitched">
 				
-				<?php echo __("Coupon Code : MEGA20", "enigma" );?>
+				<?php echo __("Coupon Code : offer", "enigma" );?>
 				</div>
 		</div>
 		</div>
@@ -1884,7 +1884,9 @@ class enigma_changelog_Control extends WP_Customize_Control {
 			<div class="col-md-3 col-sm-6">
 				<h2 style="margin-top:10px;color:#fff;background-color: #3ca3e0;padding: 10px;font-size: 19px;"><?php echo _e( 'Enigma Theme Changelog','enigma'); ?></h2>
 				<ul style="padding-top:20px">
-				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.2 - <span> Current Version </span></div>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.3 - <span> Current Version </span></div>
+		<ol> <li> Author name added for single page. </li></ol></li>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.2 - </div>
 		<ol> <li> Description Updates</li></ol></li>
 				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.1 -</div>
 		<ol> <li> Minor Change</li></ol></li>

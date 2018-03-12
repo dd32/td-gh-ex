@@ -519,7 +519,7 @@ function enigma_custom_admin_notice() {
 			<?php } ?>
 				<strong><?php _e('Rate Us here','enigma');?></strong>
 			</a>
-			<a class="dismiss" href="?-notice-dismissed<?php echo $currentversion;?>"><?php _e('Dismiss','enigma');?></a>
+			<a class="dismiss" href="?-notice-dismissed<?php echo $currentversion;?>"><strong><?php _e('Dismiss','enigma');?></strong></a>
 			</p>
 		</div>
 		
