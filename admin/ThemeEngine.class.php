@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-require_once dirname( __FILE__ ) . '/OptionFields.class.php';
+require_once( ATTIRE_TEMPLATE_DIR . "/admin/OptionFields.class.php" );
 
 
 class AttireThemeEngine {
@@ -214,6 +214,12 @@ class AttireThemeEngine {
 		 *
 		 */
 
+		$header_text_color = get_header_textcolor();
+		if ( $header_text_color === 'blank' ) {
+			$css .= '.site-title,.site-description{display:none;}';
+
+		}
+
 		$search_form_visibility = isset( $theme_mod['attire_search_form_visibility'] ) ? $theme_mod['attire_search_form_visibility'] : 'show';
 		if ( $search_form_visibility === 'hide' ) {
 //			$css .= 'header .mainmenu > .menu-item:last-child > a{padding-right:0;}';
@@ -226,20 +232,12 @@ class AttireThemeEngine {
 
 		/**
 		 *
-		 * Header shadow
-		 *
-		 */
-
-		$css .= "header[id*=header-]{box-shadow:0 3px 10px rgba(0, 0, 0, 0.1)}";
-
-		/**
-		 *
 		 * Container Width
 		 *
 		 */
 
 		$container_width = esc_attr( $theme_mod['container_width'] );
-		$css             .= "@media (min-width: 1200px) {.container{max-width:{$container_width}px;}}";
+		$css             .= "@media screen and (min-width: 1200px) {.container{max-width:{$container_width}px;}}";
 
 		/**
 		 *
@@ -302,6 +300,19 @@ class AttireThemeEngine {
 		$css .= "h6, h6 *{{$font_family}{$h6_font_size}{$heading_font_weight}{$text_color}}";
 		$css .= ".footer-logo, .navbar-brand{{$font_family}{$h1_font_size}}";
 
+
+		/**
+		 *
+		 * Site logo css
+		 *
+		 */
+		$logo_height        = $theme_mod['site_logo_height'] ? intval( $theme_mod['site_logo_height'] ) : 60;
+		$footer_logo_height = $theme_mod['site_logo_footer_height'] ? intval( $theme_mod['site_logo_footer_height'] ) : 60;
+
+		$css .= ".site-logo img{max-height:{$logo_height}px;}";
+		$css .= ".footer-logo img{max-height:{$footer_logo_height}px;}";
+
+
 		/**
 		 *
 		 * Site title/description css
@@ -313,26 +324,19 @@ class AttireThemeEngine {
 		$heading_font_weight = intval( $theme_mod['heading_font_weight'] );
 		$heading_font_weight = $heading_font_weight != '' ? "font-weight:{$heading_font_weight};" : "";
 
-		$site_title_text_color        = 'color:' . esc_attr( $theme_mod['site_title_text_color'] );
-		$site_footer_title_text_color = 'color:' . esc_attr( $theme_mod['site_footer_title_text_color'] );
-		$site_description_text_color  = 'color:' . esc_attr( $theme_mod['site_description_text_color'] );
+		$site_title_text_color        = 'color:' . esc_attr( $theme_mod['site_title_text_color'] ) . ';';
+		$site_footer_title_text_color = 'color:' . esc_attr( $theme_mod['site_footer_title_text_color'] ) . ';';
+		$site_description_text_color  = 'color:' . esc_attr( $theme_mod['site_description_text_color'] ) . ';';
 
-		$css .= ".navbar-light .navbar-brand,.navbar-dark .navbar-brand,.logo-header{{$heading_font_weight}{$site_title_text_color}}";
-		$css .= ".footer-logo{{$heading_font_weight}{$site_footer_title_text_color}}";
+		$site_title_line_height   = "line-height:{$logo_height}px;";
+		$footer_title_line_height = "line-height:{$footer_logo_height}px;";
+
+		$css .= ".navbar-light .navbar-brand,.navbar-dark .navbar-brand,.logo-header{{$heading_font_weight}{$site_title_text_color}{$site_title_line_height}}";
+		$css .= ".footer-logo{{$heading_font_weight}{$site_footer_title_text_color}{$footer_title_line_height}}";
 		$css .= ".logo-header:hover,.footer-logo:hover{{$site_title_text_color}}";
 		$css .= ".site-description,.copyright-text{{$body_font_weight}{$site_description_text_color}}";
 		$css .= ".info-link > li > span, .small-menu i.fa, .social-icons-div i{{$site_description_text_color}}";
 
-		/**
-		 *
-		 * Site logo css
-		 *
-		 */
-		$logo_height        = intval( $theme_mod['site_logo_height'] );
-		$footer_logo_height = intval( $theme_mod['site_logo_footer_height'] );
-
-		$css .= ".site-logo img{max-height:{$logo_height}px;}";
-		$css .= ".footer-logo img{max-height:{$footer_logo_height}px;}";
 
 		/**
 		 *
@@ -464,7 +468,7 @@ class AttireThemeEngine {
 		$main_nav_dd_text = 'color:' . esc_attr( $theme_mod['menu_dropdown_font_color'] );
 		$css              .= "header .mainmenu > .dropdown li *, .default-menu.navbar-light .nav-search .form-control{{$main_nav_dd_text};}"; // Dropdown + search field input text color
 
-		$css                  .= '@media (min-width: 1000px) {';
+		$css                  .= '@media screen and (min-width: 1000px) {';
 		$main_nav_dd_hover_bg = 'background-color:' . esc_attr( $theme_mod['menu_dropdown_hover_bg'] );
 		$css                  .= "header .mainmenu > .dropdown li:hover{{$main_nav_dd_hover_bg};}";
 
@@ -575,8 +579,9 @@ class AttireThemeEngine {
 	public static function SiteLogo() {
 
 		$custom_logo_id = get_theme_mod( 'custom_logo' );
-		$image          = wp_get_attachment_image_src( $custom_logo_id, 'full' );
-		$logourl        = esc_url( $image[0] ); // source : https://codex.wordpress.org/Theme_Logo
+
+		$image   = wp_get_attachment_image_src( $custom_logo_id, 'full' );
+		$logourl = esc_url( $image[0] ); // source : https://codex.wordpress.org/Theme_Logo
 
 		if ( $logourl ) {
 			$image_id = attachment_url_to_postid( $logourl );
@@ -584,7 +589,7 @@ class AttireThemeEngine {
 
 			return "<img src='{$logourl}' title='" . esc_attr( $meta['title'] ) . "' alt='" . esc_attr( $meta['alt'] ) . "' />";
 		} else {
-			return '<h1 class="logo-header">' . esc_html( get_bloginfo( 'name' ) ) . '</h1>';
+			return '<h1 class="logo-header site-title">' . esc_html( get_bloginfo( 'name' ) ) . '</h1>';
 		}
 	}
 
@@ -632,7 +637,7 @@ class AttireThemeEngine {
 			$style = 'header-1';
 		}
 		load_template( locate_template( "templates/headers/" . $style . ".php" ) );
-		wp_reset_query();
+		wp_reset_postdata();
 
 	}
 
@@ -657,7 +662,7 @@ class AttireThemeEngine {
 
 		<?php
 
-		wp_reset_query();
+		wp_reset_postdata();
 
 	}
 
@@ -679,7 +684,7 @@ class AttireThemeEngine {
 			$style = 'footer4';
 		}
 		load_template( locate_template( "templates/footers/" . $style . ".php" ) );
-		wp_reset_query();
+		wp_reset_postdata();
 	}
 
 }

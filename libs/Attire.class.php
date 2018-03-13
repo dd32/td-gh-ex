@@ -24,7 +24,7 @@ class Attire {
 	}
 
 	function Filters() {
-		add_filter( 'template_include', array( $this, 'SearchResultTemplate' ) );
+
 	}
 
 	function Actions() {
@@ -57,7 +57,7 @@ class Attire {
 		wp_register_style( 'bootstrap', ATTIRE_TEMPLATE_URL . '/bootstrap/css/bootstrap.min.css' );
 		wp_enqueue_style( 'attire-main', get_stylesheet_uri(), array( 'bootstrap', 'attire-responsive' ) );
 		wp_enqueue_style( 'font-awesome', ATTIRE_TEMPLATE_URL . '/fonts/font-awesome/css/font-awesome.min.css' );
-		wp_enqueue_style( 'google-fonts', $cssimport, array(), null );
+		wp_enqueue_style( 'attire-google-fonts', $cssimport, array(), null );
 
 
 		wp_enqueue_script( 'attire-html5', get_template_directory_uri() . '/js/html5shiv.js', array(), null );
@@ -70,7 +70,7 @@ class Attire {
 			'jquery',
 			'popper'
 		), null, true );
-		wp_enqueue_script( 'modernizer', ATTIRE_TEMPLATE_URL . '/js/modernizr-custom.js', array(), null, true );
+		wp_enqueue_script( 'attire-modernizer', ATTIRE_TEMPLATE_URL . '/js/modernizr-custom.js', array(), null, true );
 		wp_enqueue_script( 'attire-site', ATTIRE_TEMPLATE_URL . '/js/site.js', array( 'jquery' ), null, true );
 		wp_enqueue_script( 'comment-reply', '', array(), null, true );
 	}
@@ -99,23 +99,6 @@ class Attire {
 		) );
 	}
 
-
-	/**
-	 * @usage Select custom template for search result page
-	 *
-	 * @param $template
-	 *
-	 * @return string
-	 */
-	function SearchResultTemplate( $template ) {
-		global $wp_query;
-		$post_type = get_query_var( 'post_type' );
-		if ( $wp_query->is_search && file_exists( dirname( __FILE__ ) . '/search-' . $post_type[0] . '.php' ) ) {
-			return locate_template( 'search-' . $post_type[0] . '.php' );  //  redirect to archive-search.php
-		}
-
-		return $template;
-	}
 
 	/**
 	 * @usage Post Comments
@@ -188,8 +171,9 @@ class Attire {
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'automatic-feed-links' );
-		add_theme_support( 'excerpt', array( 'post', 'page' ) );
 		add_theme_support( 'custom-background' );
+
+		add_post_type_support( 'page', 'excerpt' );
 
 		add_theme_support( 'woocommerce' );
 		add_theme_support( 'wc-product-gallery-zoom' );

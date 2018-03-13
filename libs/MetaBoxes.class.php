@@ -63,7 +63,7 @@ class AttireMetaBoxes {
 			$default = "selected";
 		}
 
-		wp_nonce_field( 'page_layout_nonce', 'page_layout_nonce' );
+		wp_nonce_field( 'attire_page_layout_nonce', 'attire_page_layout_nonce' );
 		echo '<select class="form-control" id="page_width" name="attire_post_meta[layout_page]">';
 		echo '<option  value="default"  ' . esc_attr( $default ) . '>' . __( 'Theme Default', 'attire' ) . '</option>';
 		echo '<option  value="container-fluid"  ' . esc_attr( $container_fluid ) . '>' . __( 'Full-Width', 'attire' ) . '</option>';
@@ -94,7 +94,7 @@ class AttireMetaBoxes {
 
 			$pagemeta = $_POST['attire_post_meta'];
 
-			if ( wp_verify_nonce( $_POST['page_settings_nonce'], 'page_settings_nonce' ) ) {
+			if ( wp_verify_nonce( $_POST['attire_page_layout_nonce'], 'attire_page_layout_nonce' ) ) {
 
 				$pagemeta['layout_page'] = sanitize_text_field( $pagemeta['layout_page'] );
 

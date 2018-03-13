@@ -143,7 +143,7 @@
      *
      *  Colors -> Header
      */
-    setCss('site_title_text_color', '.navbar-light .navbar-brand,.navbar-dark .navbar-brand,.site-logo', 'color');
+    setCss('site_title_text_color', '.site-logo,.logo-header', 'color');
     setCss('site_description_text_color', '.site-description', 'color');
     setCss('site_header_bg_color', '.header-div', 'background-color');
 

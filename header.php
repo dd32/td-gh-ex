@@ -50,11 +50,12 @@ if ( $post ) {
 
 $page_width = isset( $meta['layout_page'] ) && $meta['layout_page'] !== 'default' && $meta['layout_page'] !== '' ? $meta['layout_page'] : $theme_default_page_width;
 
+
 ?>
 
 <div id="mainframe" class="<?php echo esc_attr( $site_width ); ?>">
 	<?php do_action( ATTIRE_THEME_PREFIX . "before_header" ); ?>
-    <div class="header-div">
+    <div class="header-div site-branding">
 		<?php AttireThemeEngine::HeaderStyle(); ?>
     </div>
 	<?php do_action( ATTIRE_THEME_PREFIX . "after_header" ); ?>

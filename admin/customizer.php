@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 if ( class_exists( 'WP_Customize_Control' ) ) {
 
-	class WP_Customize_Range_Control extends WP_Customize_Control {
+	class Attire_Customize_Range_Control extends WP_Customize_Control {
 		public $type = 'custom_range';
 
 		public function render_content() {
@@ -33,7 +33,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		}
 	}
 
-	class Layout_Picker_Custom_Control extends WP_Customize_Control {
+	class Attire_Layout_Picker_Custom_Control extends WP_Customize_Control {
 
 		public $type = 'layout';
 
@@ -90,7 +90,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		}
 	}
 
-	class Image_Picker_Custom_Control extends WP_Customize_Control {
+	class Attire_Image_Picker_Custom_Control extends WP_Customize_Control {
 
 		public $type = 'image-picker';
 
@@ -141,29 +141,32 @@ function attire_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'custom_logo' )->transport     = 'postMessage';
-	$wp_customize->get_setting( 'header_image' )->transport    = 'postMessage';
-	$wp_customize->get_control( 'custom_logo' )->section       = 'attire_logo_options';
+
+	$wp_customize->get_setting( 'header_image' )->transport = 'postMessage';
+	$wp_customize->get_section( 'header_image' )->title     = 'Page Header';
+
+	$wp_customize->get_control( 'custom_logo' )->section = 'attire_logo_options';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 			'selector'        => '.site-description',
-			'render_callback' => 'blogdescription_rcb'
+			'render_callback' => 'attire_blogdescription_rcb'
 		) );
 
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector'        => 'a.site-logo',
-			'render_callback' => 'blogname_rcb'
+			'render_callback' => 'attire_blogname_rcb'
 		) );
 
 		$wp_customize->selective_refresh->add_partial( 'custom_logo', array(
 			'selector'        => '.site-logo',
-			'render_callback' => 'site_logo_rcb'
+			'render_callback' => 'attire_site_logo_rcb'
 
 		) );
 		$wp_customize->selective_refresh->add_partial( 'header_image', array(
 			'selector'        => '.page_header_wrap',
-			'render_callback' => 'custom_header_rcb'
+			'render_callback' => 'attire_custom_header_rcb'
 
 		) );
 	}
@@ -361,7 +364,7 @@ function attire_customize_register( $wp_customize ) {
 					// this has to be sanitized with sanitize_text_field and cant be sanitized with  attire_sanitize_custom_select/attire_sanitize_select
 					// because no choices passed from customizer-control.php for this type (layout), instead it's render manually byt the function Layout_Picker_Custom_Control->render_content
 				) );
-				$wp_customize->add_control( new Layout_Picker_Custom_Control( $wp_customize, $id, array(
+				$wp_customize->add_control( new Attire_Layout_Picker_Custom_Control( $wp_customize, $id, array(
 					'label'       => $label,
 					'description' => '',
 					'type'        => 'layout',
@@ -378,7 +381,7 @@ function attire_customize_register( $wp_customize ) {
 					'transport'         => $transport,
 					'sanitize_callback' => 'attire_sanitize_custom_select',
 				) );
-				$wp_customize->add_control( new Image_Picker_Custom_Control( $wp_customize, $id, array(
+				$wp_customize->add_control( new Attire_Image_Picker_Custom_Control( $wp_customize, $id, array(
 					'label'       => $label,
 					'description' => '',
 					'type'        => 'image-picker',
@@ -469,7 +472,7 @@ function attire_customize_register( $wp_customize ) {
 				) );
 
 				$wp_customize->add_control(
-					new WP_Customize_Range_Control(
+					new Attire_Customize_Range_Control(
 						$wp_customize,
 						$id,
 						array(
@@ -521,7 +524,7 @@ function attire_customize_register( $wp_customize ) {
 				$wp_customize->selective_refresh->add_partial( 'site_logo_footer_partial', array(
 					'settings'            => array( 'attire_options[site_logo_footer]' ),
 					'selector'            => '.footer-logo',
-					'render_callback'     => 'site_logo_footer_rcb',
+					'render_callback'     => 'attire_site_logo_footer_rcb',
 					'fallback_refresh'    => false,
 					'container_inclusive' => false,
 
@@ -531,7 +534,7 @@ function attire_customize_register( $wp_customize ) {
 				$wp_customize->selective_refresh->add_partial( 'nav_header_partial', array(
 					'settings'            => array( 'attire_options[nav_header]' ),
 					'selector'            => '.header-div',
-					'render_callback'     => 'nav_header_rcb',
+					'render_callback'     => 'attire_nav_header_rcb',
 					'fallback_refresh'    => false,
 					'container_inclusive' => false,
 
@@ -541,7 +544,7 @@ function attire_customize_register( $wp_customize ) {
 				$wp_customize->selective_refresh->add_partial( 'footer_style_partial', array(
 					'settings'            => array( 'attire_options[footer_style]' ),
 					'selector'            => '.footer-div',
-					'render_callback'     => 'footer_style_rcb',
+					'render_callback'     => 'attire_footer_style_rcb',
 					'fallback_refresh'    => false,
 					'container_inclusive' => false,
 
@@ -551,7 +554,7 @@ function attire_customize_register( $wp_customize ) {
 				$wp_customize->selective_refresh->add_partial( 'copyright_info_partial', array(
 					'settings'            => array( 'attire_options[copyright_info]' ),
 					'selector'            => '.copyright-text',
-					'render_callback'     => 'copyright_info_rcb',
+					'render_callback'     => 'attire_copyright_info_rcb',
 					'fallback_refresh'    => false,
 					'container_inclusive' => false,
 
@@ -562,7 +565,7 @@ function attire_customize_register( $wp_customize ) {
 				$wp_customize->selective_refresh->add_partial( 'copyright_info_visibility_partial', array(
 					'settings'            => array( 'attire_options[copyright_info_visibility]' ),
 					'selector'            => '.copyright-outer',
-					'render_callback'     => 'copyright_info_visibility_rcb',
+					'render_callback'     => 'attire_copyright_info_visibility_rcb',
 					'fallback_refresh'    => false,
 					'container_inclusive' => false,
 
@@ -609,7 +612,9 @@ function attire_sanitize_custom_select( $input, $setting ) {
 	$input = sanitize_key( $input );
 
 	if ( strrpos( $setting->id, '[' ) ) {
-		$id = explode( ']', explode( '[', $setting->id )[1] )[0];
+		$id = explode( '[', $setting->id );
+		$id = explode( ']', $id[1] );
+		$id = $id[0];
 
 	} else {
 		$id = $setting->id;
@@ -639,7 +644,9 @@ function attire_sanitize_select( $input, $setting ) {
 	// Get list of choices from the control associated with the setting.
 
 	if ( strrpos( $setting->id, '[' ) ) {
-		$id = explode( ']', explode( '[', $setting->id )[1] )[0];
+		$id = explode( '[', $setting->id );
+		$id = explode( ']', $id[1] );
+		$id = $id[0];
 
 	} else {
 		$id = $setting->id;
@@ -689,23 +696,23 @@ add_action( 'customize_controls_enqueue_scripts', 'attire_customizer_style' );
  *
  */
 
-function blogdescription_rcb() {
+function attire_blogdescription_rcb() {
 	bloginfo( 'description' );
 }
 
-function blogname_rcb() {
+function attire_blogname_rcb() {
 	bloginfo( 'name' );
 }
 
-function site_logo_rcb() {
+function attire_site_logo_rcb() {
 	return '<a class="site-logo" href="' . esc_url( home_url( "/" ) ) . '">' . AttireThemeEngine::SiteLogo() . '</a>';
 }
 
-function custom_header_rcb() {
+function attire_custom_header_rcb() {
 	AttireThemeEngine::PageHeaderStyle();
 }
 
-function site_logo_footer_rcb() {
+function attire_site_logo_footer_rcb() {
 	$logourl = esc_url( AttireThemeEngine::NextGetOption( 'site_logo_footer' ) );
 	if ( $logourl ) {
 		return "<a class='' href='" . esc_url( home_url( '/' ) ) . "'>" . AttireThemeEngine::FooterLogo() . "</a>";
@@ -714,20 +721,20 @@ function site_logo_footer_rcb() {
 	}
 }
 
-function nav_header_rcb() {
+function attire_nav_header_rcb() {
 	AttireThemeEngine::HeaderStyle();
 }
 
-function footer_style_rcb() {
+function attire_footer_style_rcb() {
 	AttireThemeEngine::FooterStyle();
 }
 
-function copyright_info_rcb() {
+function attire_copyright_info_rcb() {
 	return AttireThemeEngine::NextGetOption( 'copyright_info' );
 
 }
 
-function copyright_info_visibility_rcb() {
+function attire_copyright_info_visibility_rcb() {
 	$show = AttireThemeEngine::NextGetOption( 'copyright_info_visibility' );
 	if ( $show === 'show' ) {
 		return '<p class="copyright-text">' . esc_html( AttireThemeEngine::NextGetOption( 'copyright_info' ) ) . '';
