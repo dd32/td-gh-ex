@@ -63,6 +63,7 @@
 		#main-nav li.current-menu-ancestor > a,\
 		#main-nav .sub-menu li.current-menu-item > a,\
 		#main-nav .sub-menu li.current-menu-ancestor> a,\
+		#page-content .ashe-widget.widget_text a,\
 		#page-footer a:hover,\
 		.woocommerce .star-rating::before,\
 		.woocommerce .star-rating span::before,\

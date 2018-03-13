@@ -3,7 +3,7 @@
 Author: Royal-Flush wp-royal.com
 Requires at least: WordPress 4.7+
 Tested up to: WordPress 4.9.4
-Version: 1.3.6
+Version: 1.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: blog, e-commerce, food-and-drink, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -11,7 +11,7 @@ Tags: blog, e-commerce, food-and-drink, one-column, two-columns, three-columns, 
 
 == Theme Documentation ==
 
-Please read the Theme Documentation to undertand the basics: Installation, Setup, etc...
+Please read the Theme Documentation to understand the basics: Installation, Setup, etc...
 http://wp-royal.com/themes/ashe/docs/ 
 
 

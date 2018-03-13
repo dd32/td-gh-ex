@@ -235,7 +235,8 @@ function ashe_true_false( $option ) {
 	
 		/* Accent */
 		#page-content a,
-		.post-categories {
+		.post-categories,
+		#page-content .ashe-widget.widget_text a {
 			color: '. esc_html(ashe_options( 'colors_content_accent' )) .';
 		}
 		

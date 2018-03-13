@@ -101,7 +101,7 @@ jQuery(document).ready(function( $ ) {
 				spacer: '.sidebar-left-wrap,.sidebar-right-wrap'
 			});
 
-			if ( $('#page-wrap').width() <= 1050 ) {
+			if ( $('.mobile-menu-btn').css('display') !== 'none' ) {
 				$('.sidebar-left,.sidebar-right').trigger("sticky_kit:detach");
 			}
 		}

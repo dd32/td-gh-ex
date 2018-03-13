@@ -270,8 +270,8 @@ function ashe_customize_register( $wp_customize ) {
 			new WP_Customize_Cropped_Image_Control( $wp_customize, 'ashe_options['. $section .'_'. $id .']', array(
 				'label'    		=> $name,
 				'section'  		=> 'ashe_'. $section,
-				'flex_width'  	=> false,
-				'flex_height' 	=> false,
+				'flex_width'  	=> true,
+				'flex_height' 	=> true,
 				'width'       	=> $width,
 				'height'      	=> $height,
 				'priority' 		=> $priority
@@ -560,7 +560,7 @@ function ashe_customize_register( $wp_customize ) {
 	ashe_checkbox_control( 'main_nav', 'show_sidebar', esc_html__( 'Show Sidebar Icon', 'ashe' ), 'refresh', 15 );
 	
 	// Merge to Responsive Menu
-	ashe_checkbox_control( 'main_nav', 'merge_menu', esc_html__( 'Merge to Responsive Menu', 'ashe' ), 'refresh', 17 );
+	ashe_checkbox_control( 'main_nav', 'merge_menu', esc_html__( 'Merge Top Menu - Responsive', 'ashe' ), 'refresh', 17 );
 
 
 /*

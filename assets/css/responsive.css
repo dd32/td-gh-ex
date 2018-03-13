@@ -1,6 +1,15 @@
 /* Viewport Size 979px */
 @media screen and ( max-width: 979px ) {
 
+  .header-logo a {
+    font-size: 80px !important;
+    line-height: 1 !important;
+  }
+
+  .site-description {
+    font-size: 13px !important; 
+  }
+
   #top-bar > div,
   #main-nav > div,
   #featured-links,
@@ -105,10 +114,6 @@
     margin-right: 7px;
   }
 
-  #featured-links {
-    display: none;
-  }
-
   .comments-area {
     margin-bottom: 50px;
   }
@@ -159,12 +164,8 @@
   }
 
   .header-logo a {
-    font-size: 80px !important;
+    font-size: 45px !important;
     line-height: 1 !important;
-  }
-
-  .site-description {
-    font-size: 15px !important; 
   }
 
   .blog-grid > li {
@@ -406,4 +407,76 @@
     float: none;
   }
       
+}
+
+
+/* Page Header */
+@media screen and (max-width: 1280px) {
+     .entry-header {
+         height: 430px !important;
+    }
+}
+ @media screen and (max-width: 1080px) {
+     .entry-header {
+         height: 350px !important;
+    }
+     .logo-img {
+         max-width: 400px !important;
+    }
+}
+ @media screen and (max-width: 880px) {
+     .entry-header {
+         height: 290px !important;
+    }
+     .logo-img {
+         max-width: 300px !important;
+    }
+}
+ @media screen and (max-width: 750px) {
+     .entry-header {
+         height: 250px !important;
+    }
+     .logo-img {
+         max-width: 250px !important;
+    }
+}
+ @media screen and (max-width: 690px) {
+     .entry-header {
+         height: 210px !important;
+    }
+     .logo-img {
+         max-width: 200px !important;
+    }
+}
+ @media screen and (max-width: 550px) {
+     .entry-header {
+         height: auto !important;
+         padding: 50px 0 !important;
+    }
+}
+
+
+/* Featured Links */
+@media screen and (max-width: 768px) {
+     #featured-links {
+         padding: 7px 16px !important;
+    }
+}
+ @media screen and (max-width: 768px) {
+     #featured-links h6 {
+         padding: 7px 16px !important;
+         font-size: 13px !important;
+    }
+}
+ @media screen and (max-width: 640px) {
+     #featured-links h6 {
+         padding: 5px 13px !important;
+         font-size: 12px !important;
+    }
+}
+@media screen and (max-width: 640px) {
+     #featured-links h6 {
+         padding: 4px 10px !important;
+         font-size: 10px !important;
+    }
 }
