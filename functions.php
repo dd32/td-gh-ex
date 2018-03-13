@@ -126,24 +126,8 @@
 
 			global $bfastmag_required_actions;
 
-			/*
-			 * id - unique id; required
-			 * title
-			 * description
-			 * check - check for plugins (if installed)
-			 * plugin_slug - the plugin's slug (used for installing the plugin)
-			 *
-			 */
-			$bfastmag_required_actions = array(
-				array(
-					'id'            => 'bfastmag-req-ac-frontpage-latest-news',
-					'title'         => esc_html__( 'Switch "Front page displays" to "A static page"' ,'bfastmag' ),
-					'description'   => esc_html__( 'In order to have the one page look for your website, please go to Customize -> Static Front Page and switch "Front page displays" to "A static page". Then select the template "Frontpage" for that selected page.','bfastmag' ),
-					'check'         => bfastmag_is_not_latest_posts(),
-				),
-			);
-
-			require get_template_directory() . '/inc/welcome_page/welcome_page.php';
+ 
+			require get_template_directory() . '/inc/about/about-bfastmag.php';
 		}
 
  
