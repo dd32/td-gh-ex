@@ -12,7 +12,7 @@
  *
  * @return markup the echo mark up
  */
-function benjamin_the_header() {
+function benjamin_the_header( $pf_exclude = array() ) {
     $template = benjamin_get_template();
 
     $layout_settings = get_theme_mod($template.'_page_layout_setting', '[]');
@@ -28,13 +28,13 @@ function benjamin_the_header() {
         switch($component->name):
             case 'banner':
                 if( get_theme_mod('banner_visibility_setting', 'hide') !== 'hide')
-                    require get_template_directory() . '/inc/frontend/section-banner.php';
+                    require dirname(__FILE__) . '/section-banner.php';
                 break;
             case 'navbar':
-                require get_template_directory() . '/inc/frontend/navbars/navbar.php';
+                require dirname(__FILE__) . '/navbars/navbar.php';
                 break;
             case 'hero':
-                $hero = new BenjaminHero($template);
+                $hero = new BenjaminHero($template, $pf_exclude);
                 echo $hero; //WPCS: xss ok.
                 break;
         endswitch;
@@ -82,16 +82,16 @@ function benjamin_footer() {
 
         switch($name):
             case 'return-to-top':
-                require get_template_directory() . '/inc/frontend/footers/footer-return.php';
+                require dirname(__FILE__) . '/footers/footer-return.php';
                 break;
             case 'footer-menu':
-                require get_template_directory() . '/inc/frontend/footers/footer-menu.php';
+                require dirname(__FILE__) . '/footers/footer-menu.php';
                 break;
             case 'widget-area-1':
-                require get_template_directory() . '/inc/frontend/footers/footer-widgets-1.php';
+                require dirname(__FILE__) . '/footers/footer-widgets-1.php';
                 break;
             case 'widget-area-2':
-                require get_template_directory() . '/inc/frontend/footers/footer-widgets-2.php';
+                require dirname(__FILE__) . '/footers/footer-widgets-2.php';
                 break;
 
         endswitch;

@@ -2,7 +2,7 @@
 
 Requires at least: 4.5
 Tested up to: 4.9.3
-Stable tag: 1.9
+Stable tag: 2.0.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Copyright 2017 Kyle Jennings
@@ -38,7 +38,6 @@ Theme Demo: https://benjamin.kylejennings.codes
 
 == Documentation for site identity  ==
 * The color scheme settings will change Benjamin's colors to a series of preset combinations.
-* The sidebar size setting has 2 options, wide (1/3rd page) and narrow (1/4th)
 * The logo is used for the navbar brand (if the navbar brand setting is changed.)
 
 == Documentation for menus ==
@@ -52,20 +51,22 @@ Theme Demo: https://benjamin.kylejennings.codes
 * As mentioned in the site identity section, the brand can be set from text (default) to the logo
 
 == Documentation for templates setup ==
-* There are template which can be configured: the feed (default), frontpage, single post, single page, and widgetized page
-* Each template can be activated to override the feed (default) template settings
+* There are template which can be configured: default, the feed (archive, search, ect), frontpage, single post, single page, and widgetized page
+* Each template can be activated to override defaulttemplate settings
 * The hero image can be set
 * the hero size can be set to predefined sizes include a fullscreen size
 * the position can be hidden, or set to th left or right of the page
+* The sidebar size setting has 2 options, wide (1/3rd page) and narrow (1/4th)
 * the sizebar's visibility can be hidden or shown on different screen sizes
 
 == Documentation for frontpage setup ==
-* The frontpage has 2 extra settings
 * the "hero callout" button can be set to point to a specific page
 * There are draggable, sortable widget areas which can be ordered
 * 3 widget area rows
 * a row to display the page contents
 
+== Documentation for frontpage setup ==
+* the "hero callout" button can be set to point to a specific page
 
 == Documentation for widgetized page ==
 * There are draggable, sortable widget areas which can be ordered
@@ -165,3 +166,9 @@ GNU General Public License for more details.
 * customizer Bug fixes
 * refactored some code
 * updated licensing information
+
+* 2.0.2
+* Added support for post formats
+* Refactored the customizer
+* Bug fixes
+* More translations

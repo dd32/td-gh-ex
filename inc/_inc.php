@@ -3,6 +3,7 @@
 
 // these files contain functions used by both the admin section and frontend
 $shared_files = array(
+    'audio-markup',
     'custom-post-types',
     'extras',
     'functions',
@@ -11,6 +12,7 @@ $shared_files = array(
     'set-default-settings',
     'template-list',
     'theme-support',
+    'video-markup',
     'widgets',
 );
 
@@ -28,7 +30,9 @@ if (is_admin()) {
         'ajax',
         'assets',
         'columns',
+        'functions',
         'metabox-featured-post',
+        'post-formats'
     );
 
 
@@ -42,23 +46,27 @@ if( !is_admin() ){
 
     $files = array(
         'assets',
-        'filters',
-        'excerpts',
-        'template-tags',
-        'class-BenjaminFeaturedPost',
-        'class-BenjaminHero',
-        'template-parts',
-        'template-settings',
-        'get-sidebar',
-        'sticky-sidenav',
-        'page-sortables',
         'brand',
+        'class-BenjaminFeaturedPost',
+        'hero/BenjaminHero',
+        'hero/BenjaminHeroBG',
+        'hero/BenjaminHeroContent',
+        'excerpts',
+        'filters',
+        'galleries',
+        'get-sidebar',
         'get-width-visibility',
         'nav-settings',
-        'nav-walkers/navbar-walker',
-        'nav-walkers/sidenav-walker',
-        'nav-walkers/navlist-walker',
         'nav-walkers/footer-nav-walker',
+        'nav-walkers/navbar-walker',
+        'nav-walkers/navlist-walker',
+        'nav-walkers/sidenav-walker',
+        'page-sortables',
+        'post-format-markup',
+        'sticky-sidenav',
+        'template-parts',
+        'template-settings',
+        'template-tags',
     );
     foreach($files as $file)
         require dirname(__FILE__) . '/frontend/' . $file . '.php'; // WPCS: xss ok.

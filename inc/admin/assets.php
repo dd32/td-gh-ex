@@ -5,13 +5,14 @@
  */
 function benjamin_admin_assets() {
 
+    $dir = get_stylesheet_directory_uri() . '/assets/admin/';
     // the following style and script files are minified, however non minified
     // versions are incuded with this theme
     wp_enqueue_style( 'admin-style',
-        get_stylesheet_directory_uri() . '/inc/admin/assets/css/benjamin-admin.min.css' );
+        $dir. 'css/benjamin-admin.min.css' );
 
     wp_enqueue_script( 'admin-scripts',
-        get_stylesheet_directory_uri() . '/inc/admin/assets/js/_benjamin-admin-min.js',
+        $dir. 'js/_benjamin-admin-min.js',
         null, '20170215', true
     );
 
@@ -19,15 +20,3 @@ function benjamin_admin_assets() {
     wp_localize_script('admin-scripts', 'ajax_object', $ajax_object);
 }
 add_action( 'admin_enqueue_scripts', 'benjamin_admin_assets' );
-
-
-/**
- * Hide the sticky post
- * @return [type] [description]
- */
-function benjamin_hide_sticky_option() {
-    ?>
-    <style type="text/css">#sticky-span { display:none!important }</style>
-    <?php
-}
-add_action( 'admin_print_styles', 'benjamin_hide_sticky_option' );
