@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Quality\n"
-"POT-Creation-Date: 2018-02-23 11:34+0530\n"
-"PO-Revision-Date: 2018-02-23 11:34+0530\n"
+"POT-Creation-Date: 2018-03-15 19:17+0530\n"
+"PO-Revision-Date: 2018-03-15 19:17+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -711,7 +711,7 @@ msgid ""
 msgstr ""
 
 #: functions/quality-info/sections/getting-started.php:24
-#: functions/quality-info/welcome-screen.php:207
+#: functions/quality-info/welcome-screen.php:233
 msgid "Getting Started"
 msgstr ""
 
@@ -751,7 +751,7 @@ msgid "Premium Theme Details"
 msgstr ""
 
 #: functions/quality-info/sections/github.php:11
-#: functions/quality-info/welcome-screen.php:209
+#: functions/quality-info/welcome-screen.php:235
 msgid "Why should you upgrade to PRO?"
 msgstr ""
 
@@ -885,7 +885,12 @@ msgid ""
 "support you can create a website available in multiple languages."
 msgstr ""
 
-#: functions/quality-info/welcome-screen.php:56
+#: functions/quality-info/welcome-screen.php:61
+#, php-format
+msgid "Welcome to %1$s - Version %2$s"
+msgstr ""
+
+#: functions/quality-info/welcome-screen.php:63
 #, php-format
 msgid ""
 "Welcome! Thank you for choosing Webriti's Quality WordPress theme. To take "
@@ -893,23 +898,23 @@ msgid ""
 "page%s."
 msgstr ""
 
-#: functions/quality-info/welcome-screen.php:57
+#: functions/quality-info/welcome-screen.php:64
 msgid "Get started with Quality"
 msgstr ""
 
-#: functions/quality-info/welcome-screen.php:100
+#: functions/quality-info/welcome-screen.php:126
 msgid "Hooray! There are no required actions for you right now."
 msgstr ""
 
-#: functions/quality-info/welcome-screen.php:137
+#: functions/quality-info/welcome-screen.php:163
 msgid "View Theme Info"
 msgstr ""
 
-#: functions/quality-info/welcome-screen.php:210
+#: functions/quality-info/welcome-screen.php:236
 msgid "Free VS PRO"
 msgstr ""
 
-#: functions/quality-info/welcome-screen.php:211
+#: functions/quality-info/welcome-screen.php:237
 msgid "Child Themes"
 msgstr ""
 
@@ -1006,161 +1011,4 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://webriti.com/"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:8
-#: inc/quality/features/feature-project-section.php:14
-msgid "Project settings"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:33
-msgid "Enable Home Project section"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:43
-#: inc/quality/sections/quality-portfolio-section.php:14
-msgid "Featured portfolio projects"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:50
-#: inc/quality/features/feature-project-section.php:86
-#: inc/quality/features/feature-project-section.php:127
-#: inc/quality/features/feature-project-section.php:166
-#: inc/quality/features/feature-project-section.php:207
-#: inc/quality/features/feature-service-section.php:52
-msgid "Title"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:58
-#: inc/quality/sections/quality-portfolio-section.php:15
-msgid "Most popular of our works."
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:65
-#: inc/quality/features/feature-service-section.php:69
-msgid "Description"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:73
-msgid "Project one"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:80
-#: inc/quality/features/feature-project-section.php:121
-#: inc/quality/features/feature-project-section.php:160
-#: inc/quality/features/feature-project-section.php:201
-#: inc/quality/sections/quality-portfolio-section.php:142
-#: inc/quality/sections/quality-portfolio-section.php:145
-#: inc/quality/sections/quality-portfolio-section.php:148
-#: inc/quality/sections/quality-portfolio-section.php:151
-msgid "Business cards"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:101
-#: inc/quality/features/feature-project-section.php:140
-#: inc/quality/features/feature-project-section.php:180
-#: inc/quality/features/feature-project-section.php:221
-msgid "Image"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:114
-msgid "Project two"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:153
-msgid "Project three"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:194
-msgid "Project four"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:234
-#: inc/quality/sections/quality-portfolio-section.php:16
-msgid "View All Portfolios"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:241
-msgid "Button Text"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:256
-msgid "Button Link"
-msgstr ""
-
-#: inc/quality/features/feature-service-section.php:9
-msgid "Service settings"
-msgstr ""
-
-#: inc/quality/features/feature-service-section.php:13
-#: inc/quality/features/feature-service-section.php:85
-msgid "Service"
-msgstr ""
-
-#: inc/quality/features/feature-service-section.php:34
-msgid "Enable Services on homepage."
-msgstr ""
-
-#: inc/quality/features/feature-service-section.php:43
-#: inc/quality/sections/quality-features-section.php:12
-msgid "Our nice services"
-msgstr ""
-
-#: inc/quality/features/feature-service-section.php:82
-msgid "Service content"
-msgstr ""
-
-#: inc/quality/features/feature-service-section.php:84
-msgid "Add new service"
-msgstr ""
-
-#: inc/quality/sections/quality-features-section.php:13
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque "
-"faucibus risus non iaculis."
-msgstr ""
-
-#: inc/quality/sections/quality-features-section.php:193
-#: inc/quality/sections/quality-features-section.php:235
-msgid "Beautiful Design"
-msgstr ""
-
-#: inc/quality/sections/quality-features-section.php:194
-#: inc/quality/sections/quality-features-section.php:201
-#: inc/quality/sections/quality-features-section.php:208
-#: inc/quality/sections/quality-features-section.php:215
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
-"tempor incididunt ut labore et dolore magna aliqua."
-msgstr ""
-
-#: inc/quality/sections/quality-features-section.php:200
-#: inc/quality/sections/quality-features-section.php:236
-msgid "Global Customer Base"
-msgstr ""
-
-#: inc/quality/sections/quality-features-section.php:207
-#: inc/quality/sections/quality-features-section.php:237
-msgid "Friendly Support"
-msgstr ""
-
-#: inc/quality/sections/quality-features-section.php:214
-#: inc/quality/sections/quality-features-section.php:238
-msgid "A great value"
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-msgid "Webriti Companion"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid "Enhances Webriti themes with extra functionality."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Webriti"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://github.com"
 msgstr ""

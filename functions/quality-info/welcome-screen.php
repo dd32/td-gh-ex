@@ -52,10 +52,36 @@ class quality_screen {
 	 */
 	public function quality_admin_notice() {
 		?>
-			<div class="updated notice is-dismissible">
+		
+		<?php
+            $theme_info = wp_get_theme();
+		?>
+			<div class="updated notice is-dismissible quality-notice">
+			<h1><?php 
+			printf( esc_html__( 'Welcome to %1$s - Version %2$s', 'quality' ), esc_html( $theme_info->Name ), esc_html( $theme_info->Version ) ); ?>
+			</h1>
 				<p><?php echo sprintf( esc_html__( "Welcome! Thank you for choosing Webriti's Quality WordPress theme. To take full advantage of the features this theme has to offer visit our %swelcome page%s.", "quality"), '<a href="' . esc_url( admin_url( 'themes.php?page=quality-info' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=quality-info' ) ); ?>" class="button button-blue-secondary" style="text-decoration: none;"><?php _e( 'Get started with Quality', 'quality' ); ?></a></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=quality-info' ) ); ?>" class="button button-blue-secondary button_quality" style="text-decoration: none;"><?php _e( 'Get started with Quality', 'quality' ); ?></a></p>
 			</div>
+			<style>
+			.quality-notice {
+			background: #e9eff3 !important;
+			border: 10px solid #fff !important;
+			color: #608299 !important;
+			padding: 30px 10px !important;
+			text-align: center !important;
+			box-shadow: none !important;
+			text-align: center !important;
+			padding: 25px !important;
+			position: relative !important;
+			}
+			
+			.button_quality{   
+      			font-size: 14px!important;
+				height: 46px!important;
+				line-height: 44px!important;
+				padding: 0 36px!important;}
+			</style>
 		<?php
 	}
 
