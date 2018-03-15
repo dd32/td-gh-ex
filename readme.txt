@@ -3,8 +3,8 @@
 **Contributors:** Vilhoprogramming  
 **Requires at least:** WordPress 4.0  
 **Tested up to:** WordPress 5.0  
-**Stable tag:** 2.6  
-**Version:** 2.6  
+**Stable tag:** 2.7  
+**Version:** 2.7  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 **Tags:** two-columns, one-column, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, front-page-post-form, sticky-post, theme-options, threaded-comments, translation-ready, blog, portfolio, news
@@ -32,15 +32,15 @@ AppPage is Clean and Modern Responsive App Landing page template. It is Responsi
 * Google Fonts - http://www.google.com/fonts/ - "Lato" - SIL Open Font License, 1.1 
 * html5shiv - http://code.google.com/p/html5shiv/ License Under MIT (http://opensource.org/licenses/MIT)
 
-== AppPage Theme GNU GPL ==
-* AppPage WordPress Theme, Copyright 2017 by Vilhoprogramming
-* AppPage is distributed under the terms of the GNU GPL
-
-
-Check out the rest of my themes right here: https://wordpress.org/themes/author/vilhoprogramming/
-
 == Installation ==
 	
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
+
+== AppPage Theme GNU GPL ==
+* AppPage WordPress Theme, Copyright 2017-2018 by Vilhoprogramming
+* AppPage is distributed under the terms of the GNU GPL
+
+
+Check out the rest of my themes right here: https://wordpress.org/themes/author/vilhoprogramming/
