@@ -462,3 +462,6 @@ with testing and feature suggestions.
 * New: Scheme.org structured data tags (microformats)
 * New: New Per Page and Per Post tabbed sections (requires Weaver Xtreme Theme Support 3.2 plugin)
 * Tweak: updated WordPress theme tags included in style.css
+
+= Version 3.2.1 =
+* Fix: Now correctly supports the Disable Scheme.org option in Theme Support Plugin, add that option to the Customizer.

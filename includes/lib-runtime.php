@@ -477,6 +477,9 @@ function weaverx_schema(  $who, $aux='' ) {		// added 3.1.13
 	// NOTE: This filter MUST be defined or else the $who arg will be echoed.
 	//return '';
 
+	if ( weaverx_getopt_checked ('_no_schemea') )
+		return '';
+
 	switch ( $who ) {
 		case 'archive':
 		case 'author':

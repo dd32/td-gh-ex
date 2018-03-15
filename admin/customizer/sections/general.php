@@ -89,6 +89,17 @@ By default, Weaver Xtreme Plus will create and use the style-weaverxt.css file. 
 				),
 			),
 
+			'_no_schemea' => array(
+				'setting' => array(
+					'transport' => 'postMessage'	// no visual effect, so don't refresh
+				),
+				'control' => array(
+					'label' => __( 'Disable Schema.org Structured Data', 'weaver-xtreme' ) ,
+					'description' => __('Disable adding Schema.org structured data. (We do not recommend removing this SEO feature.) &diams;', 'weaver-xtreme'),
+					'type'  => 'checkbox',
+				),
+			),
+
 			'_print_show_widgets' => array(
 				'setting' => array(
 					'transport' => 'postMessage'	// no visual effect, so don't refresh
