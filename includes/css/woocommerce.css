@@ -78,7 +78,6 @@
 }
 .woocommerce ul.products li.product,
 .woocommerce-page ul.products li.product {
-    width: 24%;
     margin: 0 0.5% 13px;
     padding: 0 0 20px;
     text-align: center;
@@ -86,6 +85,18 @@
     list-style-type: none;
     position: relative;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+.woocommerce ul.products.columns-2 li.product {
+    width: 49%;
+}
+.woocommerce ul.products.columns-3 li.product {
+    width: 32.3333%;
+}
+.woocommerce ul.products.columns-4 li.product {
+    width: 24%;
+}
+.woocommerce ul.products.columns-5 li.product {
+    width: 19%;
 }
 
 .woocommerce ul.products li.product:hover,
@@ -818,17 +829,12 @@
 
 }
 
-@media screen and (max-width: 782px) {
+@media screen and (max-width: 920px) {
 
-    .single-product.woocommerce .woocommerce-breadcrumb,
-    .single-product.woocommerce-page .woocommerce-breadcrumb {
+    .woocommerce #customer_details,
+    .woocommerce-page #customer_details {
+        width: 100%;
         float: none;
-        padding: 0 0 10px;
-    }
-
-    .woocommerce ul.products,
-    .woocommerce-page ul.products {
-        margin: 0 0 10px !important;
     }
 
     .woocommerce #order_review_heading,
@@ -837,6 +843,28 @@
     .woocommerce-page #order_review {
         width: 100%;
         float: none;
+    }
+
+}
+
+@media screen and (max-width: 782px) {
+
+    .woocommerce #container,
+    .woocommerce-page #container {
+        box-shadow: none;
+        width: 100%;
+        float: none;
+    }
+    .single-product.woocommerce .woocommerce-breadcrumb,
+    .single-product.woocommerce-page .woocommerce-breadcrumb {
+        float: none;
+        padding: 0 0 10px;
+    }
+
+    .woocommerce .widget-area,
+    .woocommerce-page .widget-area {
+        padding: 20px;
+        margin: 30px 0 40px;
     }
 
     .woocommerce .cart-collaterals .cross-sells,
@@ -883,7 +911,6 @@
     .woocommerce-page div.product .woocommerce-tabs ul.tabs {
         float: none;
         width: 100%;
-        margin: 0 0 15px;
     }
     .woocommerce div.product .woocommerce-tabs ul.tabs li {
         display: inline-block !important;
@@ -897,13 +924,6 @@
     .woocommerce-cart .wc-proceed-to-checkout,
     .woocommerce-checkout .wc-proceed-to-checkout {
         clear: both;
-    }
-    
-    .woocommerce #review_form #respond .form-submit input,
-    .woocommerce-page #review_form #respond .form-submit input,
-    .woocommerce ul.products li.product a.add_to_cart_button,
-    .woocommerce-page ul.products li.product a.add_to_cart_button {
-        padding: 9px 15px 9px;
     }
 
     /* -- My Account -- */
@@ -939,7 +959,7 @@
     .woocommerce .cart-collaterals .cart_totals,
     .woocommerce-page .cart-collaterals .cart_totals {
         width: 98%;
-        margin: 0;
+        margin: 0 auto;
     }
     .woocommerce table.cart td.actions .coupon input,
     .woocommerce-page table.cart td.actions .coupon input,

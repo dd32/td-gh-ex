@@ -17,7 +17,7 @@ global $woocommerce;
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php if ( get_theme_mod( 'avant-site-add-side-social' ) ) : ?>
+<?php if ( get_theme_mod( 'avant-site-add-side-social', customizer_library_get_default( 'avant-site-add-side-social' ) ) ) : ?>
 	<div class="side-aligned-social hide-side-social">
 		<?php get_template_part( '/templates/social-links' ); ?>
 	</div>
@@ -28,7 +28,7 @@ global $woocommerce;
 	
 <?php echo ( get_theme_mod( 'avant-header-layout' ) != 'avant-header-layout-six' && get_theme_mod( 'avant-site-layout' ) == 'avant-site-boxed' ) ? '<div class="site-boxed">' : ''; ?>
 	
-	<?php echo ( !get_theme_mod( 'avant-remove-topborder' ) ) ? '<div class="site-top-border"></div>' : ''; // Site Top Bar ?>
+	<?php echo ( !get_theme_mod( 'avant-remove-topborder', customizer_library_get_default( 'avant-remove-topborder' ) ) ) ? '<div class="site-top-border"></div>' : ''; // Site Top Bar ?>
 	
 	<?php get_template_part( '/templates/header/header' ); // Get Site Headers ?>
 	

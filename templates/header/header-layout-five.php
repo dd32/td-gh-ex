@@ -4,18 +4,18 @@
  */
 global $woocommerce; ?>
 
-<?php if ( !get_theme_mod( 'avant-header-remove-topbar' ) ) : ?>
+<?php if ( !get_theme_mod( 'avant-header-remove-topbar', customizer_library_get_default( 'avant-header-remove-topbar' ) ) ) : ?>
 	<div class="site-top-bar site-header-layout-five <?php echo ( get_theme_mod( 'avant-header-topbar-switch' ) ) ? sanitize_html_class( 'site-top-bar-switch' ) : ''; ?>">
 		
 		<div class="site-container">
 			
 			<div class="site-top-bar-left">
 			
-				<?php if ( !get_theme_mod( 'avant-header-remove-no' ) ) : ?>
+				<?php if ( !get_theme_mod( 'avant-header-remove-no', customizer_library_get_default( 'avant-header-remove-no' ) ) ) : ?>
 					<span class="site-topbar-no"><?php echo ( get_theme_mod( 'avant-website-head-no-icon' ) ) ? '<i class="fa ' . sanitize_html_class( get_theme_mod( 'avant-website-head-no-icon' ) ) . '"></i>' : '<i class="fa fa-phone"></i>'; ?> <?php echo wp_kses_post( get_theme_mod( 'avant-website-head-no', __( 'Call Us: +2782 444 YEAH', 'avant' ) ) ) ?></span>
 				<?php endif; ?>
 				
-				<?php if ( !get_theme_mod( 'avant-header-remove-add' ) ) : ?>
+				<?php if ( !get_theme_mod( 'avant-header-remove-add', customizer_library_get_default( 'avant-header-remove-add' ) ) ) : ?>
 	            	<span class="site-topbar-ad"><?php echo ( get_theme_mod( 'avant-website-site-add-icon' ) ) ? '<i class="fa ' . sanitize_html_class( get_theme_mod( 'avant-website-site-add-icon' ) ) . '"></i>' : '<i class="fa fa-map-marker"></i>'; ?> <?php echo wp_kses_post( get_theme_mod( 'avant-website-site-add', 'Cape Town, South Africa' ) ) ?></span>
 				<?php endif; ?>
 				
@@ -23,7 +23,7 @@ global $woocommerce; ?>
 			
 			<div class="site-top-bar-right">
 				
-				<?php if ( !get_theme_mod( 'avant-header-search' ) ) : ?>
+				<?php if ( !get_theme_mod( 'avant-header-search', customizer_library_get_default( 'avant-header-search' ) ) ) : ?>
 					<div class="menu-search">
 				    	<i class="fa fa-search search-btn"></i>
 				    </div>
@@ -34,7 +34,7 @@ global $woocommerce; ?>
 			</div>
 			<div class="clearboth"></div>
 			
-			<?php if ( !get_theme_mod( 'avant-header-search' ) ) : ?>
+			<?php if ( !get_theme_mod( 'avant-header-search', customizer_library_get_default( 'avant-header-search' ) ) ) : ?>
 			    <div class="search-block">
 			        <?php get_search_form(); ?>
 			    </div>
@@ -62,7 +62,7 @@ global $woocommerce; ?>
 		
 		<div class="site-header-top">
 			
-			<?php if ( !get_theme_mod( 'avant-header-remove-social' ) ) : ?>
+			<?php if ( !get_theme_mod( 'avant-header-remove-social', customizer_library_get_default( 'avant-header-remove-social' ) ) ) : ?>
 				<div class="site-header-social">
 					<?php get_template_part( '/templates/social-links' ); ?>
 				</div>
@@ -77,7 +77,7 @@ global $woocommerce; ?>
 			</nav><!-- #site-navigation -->
 			
 			<?php if ( avant_is_woocommerce_activated() ) : ?>
-				<?php if ( !get_theme_mod( 'avant-header-remove-cart' ) ) : ?>
+				<?php if ( !get_theme_mod( 'avant-header-remove-cart', customizer_library_get_default( 'avant-header-remove-cart' ) ) ) : ?>
 					<div class="header-cart">
 						
 			            <a class="header-cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'avant' ); ?>">

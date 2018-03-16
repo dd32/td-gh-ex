@@ -10,7 +10,7 @@
         
         <?php echo ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) ? '<div class="site-side-layout-container">' : ''; ?>
         
-            <?php echo ( !get_theme_mod( 'avant-slidermage-fullwidth' ) ) ? '<div class="site-container">' : ''; ?>
+            <?php echo ( !get_theme_mod( 'avant-slidermage-fullwidth', customizer_library_get_default( 'avant-slidermage-fullwidth' ) ) ) ? '<div class="site-container">' : ''; ?>
                 
                 <div class="page-fimage-banner <?php echo ( get_theme_mod( 'avant-slidermage-size' ) == 'avant-slidermage-size-actual' ) ? sanitize_html_class( 'slidermage-banner-actual' ) : ''; ?>" <?php echo ( get_theme_mod( 'avant-slidermage-size' ) != 'avant-slidermage-size-actual' ) ? 'style="background-image: url(' . esc_url( get_the_post_thumbnail_url( $home_page_id ) ) . ');"' : ''; ?>>
                     
@@ -28,7 +28,7 @@
                     
                 </div> <!-- .page-fimage-banner -->
                 
-            <?php echo ( !get_theme_mod( 'avant-slidermage-fullwidth' ) ) ? '</div>' : ''; ?>
+            <?php echo ( !get_theme_mod( 'avant-slidermage-fullwidth', customizer_library_get_default( 'avant-slidermage-fullwidth' ) ) ) ? '</div>' : ''; ?>
         
         <?php echo ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) ? '</div>' : ''; ?>
         
@@ -70,7 +70,7 @@
             
                 <div class="home-slider-wrap home-slider-remove <?php echo ( get_theme_mod( 'avant-site-layout' ) == 'avant-site-boxed' ) ? sanitize_html_class( 'slider-site-boxed' ) : ''; ?> <?php echo ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) ? sanitize_html_class( 'home-slider-header-six' ) : ''; ?>" data-auto="<?php echo ( get_theme_mod( 'avant-slider-auto-scroll' ) ) ? esc_attr( 'false' ) : esc_attr( '6500' ); ?>" data-scroll="<?php echo ( get_theme_mod( 'avant-slider-scroll-effect' ) ) ? esc_attr( get_theme_mod( 'avant-slider-scroll-effect' ) ) : esc_attr( 'crossfade' ); ?>">
                     
-                    <?php echo ( !get_theme_mod( 'avant-slider-full-width' ) ) ? '<div class="site-container">' : ''; ?>
+                    <?php echo ( !get_theme_mod( 'avant-slider-full-width', customizer_library_get_default( 'avant-slider-full-width' ) ) ) ? '<div class="site-container">' : ''; ?>
                         <div class="home-slider-prev"><i class="fa fa-angle-left"></i></div>
                         <div class="home-slider-next"><i class="fa fa-angle-right"></i></div>
                         
@@ -93,14 +93,14 @@
                                         <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_medium.gif" />
                                     <?php endif; ?>
                                     
-                                    <?php if ( !get_theme_mod( 'avant-slider-remove-title' ) ) : ?>
+                                    <?php if ( !get_theme_mod( 'avant-slider-remove-title', customizer_library_get_default( 'avant-slider-remove-title' ) ) ) : ?>
                                     
                                         <div class="home-slider-block-inner">
                                             <div class="home-slider-block-bg">
                                                 <h3>
                                                     <?php the_title(); ?>
                                                 </h3>
-                                                <?php if ( !get_theme_mod( 'avant-slider-remove-sub-title' ) ) : ?>
+                                                <?php if ( !get_theme_mod( 'avant-slider-remove-sub-title', customizer_library_get_default( 'avant-slider-remove-sub-title' ) ) ) : ?>
                                                     <?php if ( has_excerpt() ) : ?>
                                                         <p><?php the_excerpt(); ?></p>
                                                     <?php else : ?>
@@ -122,9 +122,9 @@
                             
                         </div>
                         
-                    <?php echo ( !get_theme_mod( 'avant-slider-full-width' ) ) ? '</div>' : ''; ?>
+                    <?php echo ( !get_theme_mod( 'avant-slider-full-width', customizer_library_get_default( 'avant-slider-full-width' ) ) ) ? '</div>' : ''; ?>
                     
-                    <?php if ( !get_theme_mod( 'avant-slider-remove-pagination' ) ) : ?>
+                    <?php if ( !get_theme_mod( 'avant-slider-remove-pagination', customizer_library_get_default( 'avant-slider-remove-pagination' ) ) ) : ?>
                         <div class="home-slider-pager"></div>
                     <?php endif; ?>
                 </div>
@@ -145,7 +145,7 @@
                 <?php _e( 'See how to', 'avant' ); ?> <a href="https://kairaweb.com/documentation/setting-up-the-default-slider/" target="_blank"><?php _e( 'Add your own slides here', 'avant' ); ?></a>
             </div>
             
-            <?php echo ( !get_theme_mod( 'avant-slider-full-width' ) ) ? '<div class="site-container">' : ''; ?>
+            <?php echo ( !get_theme_mod( 'avant-slider-full-width', customizer_library_get_default( 'avant-slider-full-width' ) ) ) ? '<div class="site-container">' : ''; ?>
                 <div class="home-slider-prev"><i class="fa fa-angle-left"></i></div>
                 <div class="home-slider-next"><i class="fa fa-angle-right"></i></div>
                 
@@ -161,14 +161,14 @@
                             <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_medium.gif" />
                         <?php endif; ?>
                         
-                        <?php if ( !get_theme_mod( 'avant-slider-remove-title' ) ) : ?>
+                        <?php if ( !get_theme_mod( 'avant-slider-remove-title', customizer_library_get_default( 'avant-slider-remove-title' ) ) ) : ?>
                             
                             <div class="home-slider-block-inner">
                                 <div class="home-slider-block-bg">
                                     <h3>
                                         <?php _e( 'Paint A Picture', 'avant' ); ?>
                                     </h3>
-                                    <?php if ( !get_theme_mod( 'avant-slider-remove-sub-title' ) ) : ?>
+                                    <?php if ( !get_theme_mod( 'avant-slider-remove-sub-title', customizer_library_get_default( 'avant-slider-remove-sub-title' ) ) ) : ?>
                                         <p><?php _e( 'Are you shopping anywhere, changed the color of your hair, are you busy?', 'avant' ); ?></p>
                                     <?php endif; ?>
                                 </div>
@@ -180,9 +180,9 @@
                     
                 </div>
                 
-            <?php echo ( !get_theme_mod( 'avant-slider-full-width' ) ) ? '</div>' : ''; ?>
+            <?php echo ( !get_theme_mod( 'avant-slider-full-width', customizer_library_get_default( 'avant-slider-full-width' ) ) ) ? '</div>' : ''; ?>
             
-            <?php if ( !get_theme_mod( 'avant-slider-remove-pagination' ) ) : ?>
+            <?php if ( !get_theme_mod( 'avant-slider-remove-pagination', customizer_library_get_default( 'avant-slider-remove-pagination' ) ) ) : ?>
                 <div class="home-slider-pager"></div>
             <?php endif; ?>
             

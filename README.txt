@@ -68,6 +68,12 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.03
+* Style tweaks/fixes
+* Improved / Fixes WooCommerce checkout page responsiveness
+* Behind the scenes - saving/output checkbox settings values
+* Neatened up theme code
+
 #### 1.1.02
 * Style tweaks/fixes
 * Added setting to select/change header WooCommerce cart icon

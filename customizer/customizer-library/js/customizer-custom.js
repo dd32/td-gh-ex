@@ -125,6 +125,7 @@
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-full-width' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-linkto-post' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-remove-title' ).hide();
+                $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-remove-sub-title' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-auto-scroll' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-remove-pagination' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-shortcode' ).hide();
@@ -137,6 +138,7 @@
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-full-width' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-linkto-post' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-remove-title' ).hide();
+                $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-remove-sub-title' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-auto-scroll' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-remove-pagination' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slidermage-size' ).hide();
@@ -149,6 +151,7 @@
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-full-width' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-linkto-post' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-remove-title' ).hide();
+                $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-remove-sub-title' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-auto-scroll' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-remove-pagination' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-shortcode' ).hide();
@@ -164,6 +167,7 @@
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-full-width' ).show();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-linkto-post' ).show();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-remove-title' ).show();
+                $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-remove-sub-title' ).show();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-auto-scroll' ).show();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-remove-pagination' ).show();
             }
