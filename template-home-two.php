@@ -68,7 +68,8 @@ $busiprof_service_content  = get_option( 'busiprof_theme_options');
 get_template_part('index', 'projects'); }
 ?>
 <!-- footer Section of index Testimonial -->
-<?php
-get_template_part('index', 'testimonials-two') ;
-?>
+<!-- footer Section of index blog -->
+<?php get_template_part('index', 'blog'); ?>
+<!-- footer Section of index Testimonial -->
+<?php get_template_part('index', 'testimonials') ; ?>
 <?php get_footer(); } ?>

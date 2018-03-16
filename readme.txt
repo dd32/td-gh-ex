@@ -55,6 +55,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.9.5
+1. Update customizer order.
 @version 1.9.4
 1. Fixed slider link target issue.
 @version 1.9.3

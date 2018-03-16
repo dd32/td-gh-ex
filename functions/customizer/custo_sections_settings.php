@@ -13,40 +13,11 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		'title'      => __('Homepage section settings', 'busiprof'),
 	) );
 	
-	/* Banner strip section */
-	$wp_customize->add_section( 'bannerstrip_section' , array(
-		'title'      => __('Infobar settings', 'busiprof'),
-		'panel'  => 'section_settings',
-		'priority'   => 0,
-   	) );
-	
-		// Enable banner strip
-		$wp_customize->add_setting( 'busiprof_theme_options[home_banner_strip_enabled]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
-		$wp_customize->add_control(	'busiprof_theme_options[home_banner_strip_enabled]' , array(
-				'label'    => __('Enable Infobar', 'busiprof' ),
-				'section'  => 'bannerstrip_section',
-				'type'     => 'radio',
-				'choices' => array(
-					'on'=>'ON',
-					'off'=>'OFF'
-				)
-		));
-		
-		// Banner strip text
-		$wp_customize->add_setting( 'busiprof_theme_options[slider_head_title]', 
-		array( 'default' => __('Busiprof: the perfect WordPress theme for an app and web developer','busiprof') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
-		$wp_customize->add_control(	'busiprof_theme_options[slider_head_title]', 
-			array(
-				'label'    => __( 'Infobar text', 'busiprof' ),
-				'section'  => 'bannerstrip_section',
-				'type'     => 'textarea',
-		));
-		
 	/* Slider Section */
 	$wp_customize->add_section( 'slider_section' , array(
 		'title'      => __('Slider settings', 'busiprof'),
 		'panel'  => 'section_settings',
-		'priority'   => 1,
+		'priority'   => 0,
    	) );
 		
 		// Enable slider
@@ -191,12 +162,40 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 	)));
 	
 	
+	/* Banner strip section */
+	$wp_customize->add_section( 'bannerstrip_section' , array(
+		'title'      => __('Infobar settings', 'busiprof'),
+		'panel'  => 'section_settings',
+		'priority'   => 1,
+   	) );
+	
+		// Enable banner strip
+		$wp_customize->add_setting( 'busiprof_theme_options[home_banner_strip_enabled]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'busiprof_theme_options[home_banner_strip_enabled]' , array(
+				'label'    => __('Enable Infobar', 'busiprof' ),
+				'section'  => 'bannerstrip_section',
+				'type'     => 'radio',
+				'choices' => array(
+					'on'=>'ON',
+					'off'=>'OFF'
+				)
+		));
+		
+		// Banner strip text
+		$wp_customize->add_setting( 'busiprof_theme_options[slider_head_title]', 
+		array( 'default' => __('Busiprof: the perfect WordPress theme for an app and web developer','busiprof') , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_control(	'busiprof_theme_options[slider_head_title]', 
+			array(
+				'label'    => __( 'Infobar text', 'busiprof' ),
+				'section'  => 'bannerstrip_section',
+				'type'     => 'textarea',
+		));
 	
 	/* Services section */
 	$wp_customize->add_section( 'services_section' , array(
 		'title'    => esc_html__( 'Service settings', 'busiprof' ),
 		'panel'  => 'section_settings',
-		'priority'   => 3,
+		'priority'   => 2,
    	) );
 	
 	
@@ -340,7 +339,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 	$wp_customize->add_section( 'projects_settings' , array(
 		'title'      => __('Project settings', 'busiprof'),
 		'panel'  => 'section_settings',
-		'priority'   => 4,
+		'priority'   => 3,
    	) );
 	
 	
@@ -619,7 +618,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		$wp_customize->add_section( 'recent_blog_settings' , array(
 		'title'      => __('Recent Blog setting', 'busiprof'),
 		'panel'  => 'section_settings',
-		'priority'   => 5,
+		'priority'   => 4,
 		) );
 		
 		
@@ -672,7 +671,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 	$wp_customize->add_section( 'testimonial_settings' , array(
 		'title'      => __('Testimonial settings', 'busiprof'),
 		'panel'  => 'section_settings',
-		'priority'   => 6,
+		'priority'   => 5,
    	) );
 	
 		
@@ -730,7 +729,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 	$wp_customize->add_section( 'clientslider_section' , array(
 		'title'      => __('Client Slider setting', 'busiprof'),
 		'panel'  => 'section_settings',
-		'priority'   => 7,
+		'priority'   => 6,
    	) );
 	
 		

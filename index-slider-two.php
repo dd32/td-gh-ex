@@ -34,6 +34,7 @@ if( $current_options['home_banner_strip_enabled'] == 'on' && $current_options['s
 	
 	?>
 <?php
-} ?>
+} if( $current_options['home_banner_strip_enabled'] == 'on') {?>
 <section class="header-title"><h2><?php echo esc_html($current_options['slider_head_title']); ?> </h2></section>
 <div class="clearfix"></div>
+<?php } ?>

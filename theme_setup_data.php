@@ -46,6 +46,7 @@ function theme_setup_data()
 			'text' =>__('We are a group of passionate designers and developers who really love creating awesome WordPress themes & giving support.','busiprof'),//Caption detail
 			'button_text' => __('Read More','busiprof'),
 			'link' => "#",
+			'readmore_target'=> false,
 			
 			
 			//Slide Heading								
