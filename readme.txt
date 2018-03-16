@@ -1,43 +1,37 @@
-= Semplicemente =
-* by the CrestaProject team, https://crestaproject.com/
-
-== ABOUT Semplicemente ==
-Semplicemente is a simple and minimal WordPress Theme useful for blog or personal page.
-
-== License ==
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2.
-
-License: GNU General Public License v2 or later
+=== Semplicemente ===
+Contributors: CrestaProject
+Tags: two-columns, right-sidebar, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, rtl-language-support, blog, news
+Requires at least: 4.5
+Tested up to: 4.9
+Stable tag: 1.8.5
+License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Semplicemente WordPress Theme, Copyright 2018 Rizzo Andrea
+Semplicemente is distributed under the terms of the GNU GPL
 
-Semplicemente WordPress Theme, Copyright 2012-2014 CrestaProject.com
-Semplicemente is distributed under the terms of the GNU General Public License v2 
+== Description ==
 
-Semplicemente is derived from _S (Underscores) WordPress Theme, copyright 2014.
-http://underscores.me/
-Licensed under GPLv2 or later
-
-Scripts used in the site are as below:
-	1. Font Awesome (http://fontawesome.io/) licensed under SIL OFL 1.1
-	2. HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2
-
-Image used in Theme Screenshot
-	1. Picjumbo (https://picjumbo.com/a-girl-drinking-milkshake-drink-in-caffe/) Free photos for commercial and personal works
-
-== Translation ==
-Semplicemente theme is translation ready. 
-
-== Menus ===
-Semplicemente Theme have 1 menu: Primary
-
-== Tags ==
-two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready
+Simple and Clean WordPress Theme created by CrestaProject.com.
 
 == Installation ==
 
-1. Primary: Login to your wp-admin area and go to Appearance -> Themes. Select Install tab and click on Upload link. Select theme .zip and ckick on Install now button. If you have any errors, use alternate method.
-2. Alternate: Unzip the template file (semplicemente.zip) that you have downloaded. Via FTP, upload the whole folder (semplicemente) to your server and place it in the /wp-content/themes/ folder. Do not change directory name. The template files should thus be here now: /wp-content/themes/semplicemente/index.php (for example).
-3. Log into your WP admin panel and click on the Design tab. Now click on the Semplicemente theme to activate it.
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
+
+== Frequently Asked Questions ==
+
+= Does this theme support any plugins? =
+
+Semplicemente includes support for Infinite Scroll in Jetpack.
+
+== Credits ==
+
+* Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+* FontAwesome (http://fontawesome.io/) Font licensed under SIL OFL 1.1 and Code lisensed under MIT
+* "Pro" theme section examples for the customizer (https://github.com/justintadlock/trt-customizer-pro) licensed under the GNU GPL, version 2 or later.
+* Image used in Theme Screenshot (https://picjumbo.com/a-girl-drinking-milkshake-drink-in-caffe/) Picjumbo Free photos for commercial and personal works
 
 == Changelog ==
 = Version 1.0 =
@@ -192,4 +186,8 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 * Minor bug fixes
 
 = Version 1.8.4 =
+* Minor bug fixes
+
+= Version 1.8.5 =
+* Improved readme.txt file
 * Minor bug fixes
