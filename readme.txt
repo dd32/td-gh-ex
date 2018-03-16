@@ -1,47 +1,45 @@
-= Zenzero Free =
-* by the CrestaProject team, https://crestaproject.com/
-
-== ABOUT Zenzero Free ==
-Zenzero is a modern and Minimal WordPress Theme with generous white space and large legible fonts, one main column e one sidebar column, unlimited colors and theme options.
-
-== License ==
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2.
-
-License: GNU General Public License v2 or later
+=== Zenzero ===
+Contributors: CrestaProject
+Tags: one-column, left-sidebar, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, blog, news
+Requires at least: 4.5
+Tested up to: 4.9
+Stable tag: 1.5.5
+License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Zenzero WordPress Theme, Copyright 2018 Rizzo Andrea
+Zenzero is distributed under the terms of the GNU GPL
 
-Zenzero Free WordPress Theme, Copyright 2012-2014 CrestaProject.com
-Zenzero Free is distributed under the terms of the GNU General Public License v2 
+== Description ==
 
-Zenzero Free is derived from _S (Underscores) WordPress Theme, Copyright 2014.
-http://underscores.me/
-Licensed under GPLv2 or later
-
-Scripts used in the site are as below:
-	1. Font Awesome (http://fontawesome.io/) Font licensed under SIL OFL 1.1 and Code lisensed under MIT
-	2. HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2
-	3. Smooth Scroll script (https://gist.github.com/galambalazs/6477177/) licensed under MIT
-	4. nanoScrollerJS (https://github.com/jamesflorentino/nanoScrollerJS) licensed under MIT
-
-Image used in Theme Screenshot
-	1. Pixabay (http://pixabay.com/it/home-office-workstation-ufficio-336378/) Free photos for commercial and personal works
-
-== Translation ==
-Zenzero Free theme is translation ready. 
-
-== Menus ===
-Zenzero Free Theme have 1 menu: Primary
-
-== Tags ==
-one-column, left-sidebar, responsive-layout, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, editor-style
+Zenzero is a modern and Minimal WordPress Theme with generous white space and large legible fonts, one main column e one sidebar column, unlimited colors and theme options by CrestaProject.com.
 
 == Installation ==
 
-1. Primary: Login to your wp-admin area and go to Appearance -> Themes. Select Install tab and click on Upload link. Select theme .zip and ckick on Install now button. If you have any errors, use alternate method.
-2. Alternate: Unzip the template file (zenzero.zip) that you have downloaded. Via FTP, upload the whole folder (zenzero) to your server and place it in the /wp-content/themes/ folder. Do not change directory name. The template files should thus be here now: /wp-content/themes/zenzero/index.php (for example).
-3. Log into your WP admin panel and click on the Design tab. Now click on the Zenzero theme to activate it.
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
+
+== Frequently Asked Questions ==
+
+= Does this theme support any plugins? =
+
+Zenzero includes support for Infinite Scroll in Jetpack.
+
+== Credits ==
+
+* Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+* FontAwesome (http://fontawesome.io/) Font licensed under SIL OFL 1.1 and Code lisensed under MIT
+* "Pro" theme section examples for the customizer (https://github.com/justintadlock/trt-customizer-pro) licensed under the GNU GPL, version 2 or later.
+* nanoScrollerJS (https://github.com/jamesflorentino/nanoScrollerJS) licensed under MIT
+* Smooth Scroll script (https://gist.github.com/galambalazs/6477177/) licensed under MIT
+* Image used in Theme Screenshot (http://pixabay.com/it/home-office-workstation-ufficio-336378/) Pexels Free photos for commercial and personal works
 
 == Changelog ==
+= Version 1.5.5 =
+* Improved readme.txt
+* Minor bug fixes
+
 = Version 1.5.4 =
 * Added NanoScroller script for sidebar
 * Added support for Jetpack Content Options for featured images
