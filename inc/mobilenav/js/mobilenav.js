@@ -125,11 +125,9 @@ jQuery( function ( $ ) {
                             .attr( 'href', $$.find( '> a' ).attr( 'href' ) )
                             .addClass( 'link' );
                         var li = $( '<li></li>' ).append( ln );
-                        li.find('a').not('.next').click( 
+                        li.find('a[href!="#"]').click(
                             function (e) {
-                                if ( $( this ).attr( 'href' ) === 'undefined' ) {
-                                    frame.mnHideFrame();
-                                }
+                                frame.mnHideFrame();
                             }
                         );
 
@@ -151,7 +149,7 @@ jQuery( function ( $ ) {
                             } );
 
                             // For # links, treat this as a click on next.
-                            li.find( 'a[href*="#"], a:not([href])' ).not( '.next' ).click( function() {
+                            li.find('a[href="#"]').not('.next').click(function(){
                                 next.click();
                                 return false;
                             });

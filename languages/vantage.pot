@@ -124,7 +124,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content.php:47, inc/settings.php:379, inc/template-tags.php:549, loops/loop-circleicon.php:22, loops/loop-grid.php:24
+#: content.php:47, inc/settings.php:375, inc/template-tags.php:549, loops/loop-circleicon.php:22, loops/loop-grid.php:24
 msgid "Continue reading"
 msgstr ""
 
@@ -240,15 +240,15 @@ msgstr ""
 msgid "Back To Top"
 msgstr ""
 
-#: functions.php:607
+#: functions.php:604
 msgid "SiteOrigin Page Builder"
 msgstr ""
 
-#: functions.php:612
+#: functions.php:609
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions.php:617
+#: functions.php:614
 msgid "SiteOrigin CSS"
 msgstr ""
 
@@ -508,7 +508,7 @@ msgstr ""
 msgid "Source"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:2549, inc/settings.php:459
+#: inc/class-tgm-plugin-activation.php:2549, inc/settings.php:455
 msgid "Type"
 msgstr ""
 
@@ -936,7 +936,7 @@ msgstr ""
 msgid "Masthead Background Image Layout"
 msgstr ""
 
-#: inc/customizer.php:554, inc/customizer.php:581, inc/customizer.php:616, inc/settings.php:479
+#: inc/customizer.php:554, inc/customizer.php:581, inc/customizer.php:616, inc/settings.php:475
 msgid "Default"
 msgstr ""
 
@@ -1012,7 +1012,7 @@ msgstr ""
 msgid "Sidebar Position"
 msgstr ""
 
-#: inc/customizer.php:685, inc/menu.php:72, inc/sliders/sliders.php:8, inc/widgets.php:141
+#: inc/customizer.php:685, inc/menu.php:72, inc/metaslider/metaslider.php:9, inc/widgets.php:141
 msgid "None"
 msgstr ""
 
@@ -1040,7 +1040,7 @@ msgstr ""
 msgid "Slider"
 msgstr ""
 
-#: inc/legacy.php:5, inc/legacy.php:6, inc/settings.php:433
+#: inc/legacy.php:5, inc/legacy.php:6, inc/settings.php:429
 msgid "Theme Settings"
 msgstr ""
 
@@ -1060,11 +1060,35 @@ msgstr ""
 msgid "Menu Icon"
 msgstr ""
 
+#: inc/metaslider.php:12
+msgid "Vantage (Flex)"
+msgstr ""
+
+#: inc/metaslider.php:78
+msgid "Page Meta Slider"
+msgstr ""
+
+#: inc/metaslider.php:101
+msgid "Display Page Meta Slider"
+msgstr ""
+
+#: inc/metaslider.php:111
+msgid "Stretch Page Meta Slider"
+msgstr ""
+
+#: inc/metaslider/metaslider.php:11
+msgid "Demo Slider"
+msgstr ""
+
+#: inc/metaslider/metaslider.php:21
+msgid "Slider: "
+msgstr ""
+
 #: inc/mobilenav/mobilenav.php:14, inc/mobilenav/mobilenav.php:68
 msgid "Back"
 msgstr ""
 
-#: inc/mobilenav/mobilenav.php:15, inc/mobilenav/mobilenav.php:69, inc/settings.php:444
+#: inc/mobilenav/mobilenav.php:15, inc/mobilenav/mobilenav.php:69, inc/settings.php:440
 msgid "Close"
 msgstr ""
 
@@ -1280,7 +1304,7 @@ msgstr ""
 msgid "Boxed"
 msgstr ""
 
-#: inc/settings.php:77, inc/settings.php:481
+#: inc/settings.php:77, inc/settings.php:477
 msgid "Full Width"
 msgstr ""
 
@@ -1416,380 +1440,352 @@ msgstr ""
 msgid "Search Icon"
 msgstr ""
 
-#: inc/settings.php:176
-msgid "This theme supports <a href=\"%s\" target=\"_blank\">Smart Slider 3</a>. <a href=\"%s\">Install it</a> for free to create beautiful responsive sliders - <a href=\"%s\" target=\"_blank\">More Info</a>"
-msgstr ""
-
-#: inc/settings.php:183
+#: inc/settings.php:174
 msgid "Home Page Slider"
 msgstr ""
 
-#: inc/settings.php:188
+#: inc/settings.php:177
+msgid "This theme supports <a href=\"%s\" target=\"_blank\">Meta Slider</a>. <a href=\"%s\">Install it</a> for free to create beautiful responsive sliders - <a href=\"%s\" target=\"_blank\">More Info</a>"
+msgstr ""
+
+#: inc/settings.php:184
 msgid "Stretch Home Slider"
 msgstr ""
 
-#: inc/settings.php:189
+#: inc/settings.php:185
 msgid "Stretch"
 msgstr ""
 
-#: inc/settings.php:190
+#: inc/settings.php:186
 msgid "Stretch the home page slider to the width of the screen if using the full width layout."
 msgstr ""
 
-#: inc/settings.php:197
+#: inc/settings.php:193
 msgid "Blog Archive Layout"
 msgstr ""
 
-#: inc/settings.php:199
+#: inc/settings.php:195
 msgid "Choose the layout to be used on blog and archive pages."
 msgstr ""
 
-#: inc/settings.php:202
+#: inc/settings.php:198
 msgid "Post Content"
 msgstr ""
 
-#: inc/settings.php:204
+#: inc/settings.php:200
 msgid "Full Post"
 msgstr ""
 
-#: inc/settings.php:205
+#: inc/settings.php:201
 msgid "Post Excerpt"
 msgstr ""
 
-#: inc/settings.php:207
+#: inc/settings.php:203
 msgid "Choose how to display posts on post archive when using default blog layout."
 msgstr ""
 
-#: inc/settings.php:210
+#: inc/settings.php:206
 msgid "Excerpt Length"
 msgstr ""
 
-#: inc/settings.php:211
+#: inc/settings.php:207
 msgid "If no manual post excerpt is added one will be generated. How many words should it be? Only applicable if Post Excerpt has been selected from the Post Content setting."
 msgstr ""
 
-#: inc/settings.php:215
+#: inc/settings.php:211
 msgid "Featured Image Type"
 msgstr ""
 
-#: inc/settings.php:217, inc/widgets.php:177, inc/widgets.php:346
+#: inc/settings.php:213, inc/widgets.php:177, inc/widgets.php:346
 msgid "Large"
 msgstr ""
 
-#: inc/settings.php:218
+#: inc/settings.php:214
 msgid "Small Icon"
 msgstr ""
 
-#: inc/settings.php:220
+#: inc/settings.php:216
 msgid "Size of the featured image in the blog post archives when using default blog layout."
 msgstr ""
 
-#: inc/settings.php:223
+#: inc/settings.php:219
 msgid "Featured Image"
 msgstr ""
 
-#: inc/settings.php:224, inc/settings.php:229, inc/settings.php:234, inc/settings.php:239, inc/settings.php:244, inc/settings.php:249, inc/settings.php:254, inc/settings.php:259, inc/settings.php:269
+#: inc/settings.php:220, inc/settings.php:225, inc/settings.php:230, inc/settings.php:235, inc/settings.php:240, inc/settings.php:245, inc/settings.php:250, inc/settings.php:255, inc/settings.php:265
 msgid "Display"
 msgstr ""
 
-#: inc/settings.php:225
+#: inc/settings.php:221
 msgid "Show the featured image on a post single page."
 msgstr ""
 
-#: inc/settings.php:228
+#: inc/settings.php:224
 msgid "Post Metadata"
 msgstr ""
 
-#: inc/settings.php:230
+#: inc/settings.php:226
 msgid "Show the post metadata under the post title."
 msgstr ""
 
-#: inc/settings.php:233
+#: inc/settings.php:229
 msgid "Post Date"
 msgstr ""
 
-#: inc/settings.php:235
+#: inc/settings.php:231
 msgid "Show the post date under the post title."
 msgstr ""
 
-#: inc/settings.php:238
+#: inc/settings.php:234
 msgid "Post Author"
 msgstr ""
 
-#: inc/settings.php:240
+#: inc/settings.php:236
 msgid "Show the post author under the post title."
 msgstr ""
 
-#: inc/settings.php:243
+#: inc/settings.php:239
 msgid "Post Comment Count"
 msgstr ""
 
-#: inc/settings.php:245
+#: inc/settings.php:241
 msgid "Show the number of comments under the post title."
 msgstr ""
 
-#: inc/settings.php:248
+#: inc/settings.php:244
 msgid "Post Categories"
 msgstr ""
 
-#: inc/settings.php:250
+#: inc/settings.php:246
 msgid "Show the post categories below the single post."
 msgstr ""
 
-#: inc/settings.php:253
+#: inc/settings.php:249
 msgid "Post Tags"
 msgstr ""
 
-#: inc/settings.php:255
+#: inc/settings.php:251
 msgid "Show the post tags below the single post."
 msgstr ""
 
-#: inc/settings.php:258
+#: inc/settings.php:254
 msgid "Author Box"
 msgstr ""
 
-#: inc/settings.php:260
+#: inc/settings.php:256
 msgid "Show an author box below each blog post."
 msgstr ""
 
-#: inc/settings.php:263
+#: inc/settings.php:259
 msgid "Post Author's Comments"
 msgstr ""
 
-#: inc/settings.php:264
+#: inc/settings.php:260
 msgid "Text displayed as a label next to the post author's comments."
 msgstr ""
 
-#: inc/settings.php:268
+#: inc/settings.php:264
 msgid "Read More Button"
 msgstr ""
 
-#: inc/settings.php:270
+#: inc/settings.php:266
 msgid "Show read more button when Post Excerpt is chosen."
 msgstr ""
 
-#: inc/settings.php:273
+#: inc/settings.php:269
 msgid "Read More Text"
 msgstr ""
 
-#: inc/settings.php:274
+#: inc/settings.php:270
 msgid "The link displayed when post content is split using the \"more\" quicktag or when the read more button is enabled."
 msgstr ""
 
-#: inc/settings.php:277
+#: inc/settings.php:273
 msgid "Circle Icon Archive Column Count"
 msgstr ""
 
-#: inc/settings.php:278
+#: inc/settings.php:274
 msgid "The number of columns to display when the circle icon archive layout is set."
 msgstr ""
 
-#: inc/settings.php:284
+#: inc/settings.php:280
 msgid "Grid Archive Column Count"
 msgstr ""
 
-#: inc/settings.php:285
+#: inc/settings.php:281
 msgid "The number of columns to display when the grid archive layout is set."
 msgstr ""
 
-#: inc/settings.php:295
+#: inc/settings.php:291
 msgid "Ajax Comments"
 msgstr ""
 
-#: inc/settings.php:296
+#: inc/settings.php:292
 msgid "Keep your conversations flowing with ajax comments."
 msgstr ""
 
-#: inc/settings.php:304
+#: inc/settings.php:300
 msgid "Site Information Text"
 msgstr ""
 
-#: inc/settings.php:305
+#: inc/settings.php:301
 msgid "Text displayed in your footer. {site-title}, {copyright} and {year} will be replaced with your website title, a copyright symbol and the current year."
 msgstr ""
 
-#: inc/settings.php:309
+#: inc/settings.php:305
 msgid "SiteOrigin Attribution"
 msgstr ""
 
-#: inc/settings.php:310
+#: inc/settings.php:306
 msgid "Add or remove a link to SiteOrigin in your footer."
 msgstr ""
 
-#: inc/settings.php:314
+#: inc/settings.php:310
 msgid "Enqueue JavaScript in Footer"
 msgstr ""
 
-#: inc/settings.php:315
+#: inc/settings.php:311
 msgid "Enqueue JavaScript files in the footer, if possible."
 msgstr ""
 
-#: inc/settings.php:335
+#: inc/settings.php:331
 msgid "Call me! Maybe?"
 msgstr ""
 
-#: inc/settings.php:434
+#: inc/settings.php:430
 msgid "Settings for your theme"
 msgstr ""
 
-#: inc/settings.php:435
+#: inc/settings.php:431
 msgid "Premium Only"
 msgstr ""
 
-#: inc/settings.php:439
+#: inc/settings.php:435
 msgid "Variant"
 msgstr ""
 
-#: inc/settings.php:440
+#: inc/settings.php:436
 msgid "Subset"
 msgstr ""
 
-#: inc/settings.php:443
+#: inc/settings.php:439
 msgid "Vantage Premium Upgrade"
 msgstr ""
 
-#: inc/settings.php:447
+#: inc/settings.php:443
 msgid "Page settings"
 msgstr ""
 
-#: inc/settings.php:450
+#: inc/settings.php:446
 msgid "Page Template Settings"
 msgstr ""
 
-#: inc/settings.php:451
+#: inc/settings.php:447
 msgid "Change layouts for various pages on your site."
 msgstr ""
 
-#: inc/settings.php:454
+#: inc/settings.php:450
 msgid "Blog Page"
 msgstr ""
 
-#: inc/settings.php:455
+#: inc/settings.php:451
 msgid "Search Results"
 msgstr ""
 
-#: inc/settings.php:456
+#: inc/settings.php:452
 msgid "Date Archives"
 msgstr ""
 
-#: inc/settings.php:457
+#: inc/settings.php:453
 msgid "Not Found"
 msgstr ""
 
-#: inc/settings.php:458
+#: inc/settings.php:454
 msgid "Author Archives"
 msgstr ""
 
-#: inc/settings.php:460
+#: inc/settings.php:456
 msgid "Taxonomy"
 msgstr ""
 
-#: inc/settings.php:477
+#: inc/settings.php:473
 msgid "Page Layout"
 msgstr ""
 
-#: inc/settings.php:480
+#: inc/settings.php:476
 msgid "No Sidebar"
 msgstr ""
 
-#: inc/settings.php:482
+#: inc/settings.php:478
 msgid "Full Width, With Sidebar"
 msgstr ""
 
-#: inc/settings.php:490
+#: inc/settings.php:486
 msgid "Page Featured Image"
 msgstr ""
 
-#: inc/settings.php:491, inc/settings.php:499
+#: inc/settings.php:487, inc/settings.php:495
 msgid "display"
 msgstr ""
 
-#: inc/settings.php:492
+#: inc/settings.php:488
 msgid "Display the page featured image on this page."
 msgstr ""
 
-#: inc/settings.php:498
+#: inc/settings.php:494
 msgid "Page Title"
 msgstr ""
 
-#: inc/settings.php:500
+#: inc/settings.php:496
 msgid "Display the page title on this page."
 msgstr ""
 
-#: inc/settings.php:505
+#: inc/settings.php:501
 msgid "Masthead Bottom Margin"
 msgstr ""
 
-#: inc/settings.php:506, inc/settings.php:513
+#: inc/settings.php:502, inc/settings.php:509
 msgid "enable"
 msgstr ""
 
-#: inc/settings.php:507
+#: inc/settings.php:503
 msgid "Include the margin below the masthead (top area) of your site."
 msgstr ""
 
-#: inc/settings.php:512
+#: inc/settings.php:508
 msgid "Footer Top Margin"
 msgstr ""
 
-#: inc/settings.php:514
+#: inc/settings.php:510
 msgid "Include the margin above your footer."
 msgstr ""
 
-#: inc/settings.php:519
+#: inc/settings.php:515
 msgid "Hide Masthead"
 msgstr ""
 
-#: inc/settings.php:520, inc/settings.php:527
+#: inc/settings.php:516, inc/settings.php:523
 msgid "hide"
 msgstr ""
 
-#: inc/settings.php:521
+#: inc/settings.php:517
 msgid "Hide the masthead on this page."
 msgstr ""
 
-#: inc/settings.php:526
+#: inc/settings.php:522
 msgid "Hide Footer Widgets"
 msgstr ""
 
-#: inc/settings.php:528
+#: inc/settings.php:524
 msgid "Hide the footer widgets on this page."
 msgstr ""
 
-#: inc/settings.php:569
+#: inc/settings.php:565
 msgid "To use these page settings, please use the <strong>Default</strong> template selected under <strong>Page Attributes</strong>"
 msgstr ""
 
-#: inc/settings.php:605
+#: inc/settings.php:601
 msgid "Vantage is a flexible multipurpose theme. Its strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, Meta Slider for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store."
-msgstr ""
-
-#: inc/sliders.php:13
-msgid "Vantage (Flex)"
-msgstr ""
-
-#: inc/sliders.php:89
-msgid "Page Slider"
-msgstr ""
-
-#: inc/sliders.php:124
-msgid "Display Page Slider"
-msgstr ""
-
-#: inc/sliders.php:134
-msgid "Stretch Page Meta Slider"
-msgstr ""
-
-#: inc/sliders/sliders.php:10
-msgid "Demo Slider"
-msgstr ""
-
-#: inc/sliders/sliders.php:21
-msgid "MetaSlider: "
-msgstr ""
-
-#: inc/sliders/sliders.php:30
-msgid "Smart Slider: "
 msgstr ""
 
 #: inc/template-tags.php:28
