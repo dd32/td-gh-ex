@@ -37,25 +37,25 @@ $sidebar_layout = array(
 						'id' => 'catcheverest-sidebarlayout',
 						'value' => 'right-sidebar',
 						'label' => __( 'Right sidebar', 'catch-everest' ),
-						'thumbnail' => get_template_directory_uri() . '/inc/panel/images/right-sidebar.png'
+						'thumbnail' => trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'inc/panel/images/right-sidebar.png'
        				),
         'left-sidebar' => array(
             			'id'		=> 'catcheverest-sidebarlayout',
 						'value' 	=> 'left-sidebar',
 						'label' 	=> __( 'Left sidebar', 'catch-everest' ),
-						'thumbnail' => get_template_directory_uri() . '/inc/panel/images/left-sidebar.png'
+						'thumbnail' => trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'inc/panel/images/left-sidebar.png'
        				),
         'no-sidebar' => array(
             			'id'		=> 'catcheverest-sidebarlayout',
 						'value' 	=> 'no-sidebar',
 						'label' 	=> __( 'No sidebar', 'catch-everest' ),
-						'thumbnail' => get_template_directory_uri() . '/inc/panel/images/no-sidebar.png'
+						'thumbnail' => trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'inc/panel/images/no-sidebar.png'
         			),
 		'no-sidebar-full-width' => array(
             			'id'		=> 'catcheverest-sidebarlayout',
 						'value' 	=> 'no-sidebar-full-width',
 						'label' 	=> __( 'No sidebar, Full Width', 'catch-everest' ),
-						'thumbnail' => get_template_directory_uri() . '/inc/panel/images/no-sidebar-fullwidth.png'
+						'thumbnail' => trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'inc/panel/images/no-sidebar-fullwidth.png'
         			)
     );
 

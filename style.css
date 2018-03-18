@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/catch-everest/
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: Catch Everest is Simple, Clean and Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Translation Ready and currently translated in Polish, Chinese, Spanish, Italian, German(SWITZERLAND), Russian, Japanese, French, Brazilian Portuguese, Dutch, German, Catalan, Turkish and Bosnian. Check out Theme Instructions at https://catchthemes.com/theme-instructions/catch-everest/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/catch-everest/
-Version: 3.1.1
+Version: 3.1.2
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-header, flexible-header, custom-menu, custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, education, portfolio
@@ -229,9 +229,6 @@ article.format-aside .entry-title,
 .page .entry-header .entry-title,
 .tag-post-formats .entry-header .entry-title{
 	padding-bottom: 0;
-}
-.featured-sticky {
-    margin-bottom: 10px;
 }
 
 
@@ -1512,13 +1509,20 @@ a#scrollup:hover {
     width: 100%;
 }
 #content #infinite-handle span {
-    background-color: #3a3d41;
-    display: block;
-    font-size: 14px;
-    padding: 10px 0;
-    width: 100%;
+	background: none transparent;
+	display: block;
+	padding: 0;
 }
-#content #infinite-handle span:hover {
+#content #infinite-handle span button {
+	background-color: #3a3d41;
+	color: #fff;
+	display: inline;
+	font-size: 14px;
+	padding: 10px 30px;
+	width: 100%;
+}
+#content #infinite-handle span button:hover,
+#content #infinite-handle span button:focus {
 	background-color: #000;
 }
 

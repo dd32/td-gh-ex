@@ -18,15 +18,15 @@ add_action( 'admin_menu', 'catcheverest_options_menu' );
  */
 function catcheverest_admin_scripts() {
     //jQuery Cookie
-    wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/inc/panel/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
+    wp_register_script( 'jquery-cookie', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'inc/panel/js/jquery.cookie.min.js', array( 'jquery' ), '1.0', true );
 
-    wp_enqueue_script( 'catcheverest_admin', get_template_directory_uri().'/inc/panel/js/admin.min.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
+    wp_enqueue_script( 'catcheverest_admin', esc_url( get_template_directory_uri() ).'/inc/panel/js/admin.min.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
 
     wp_enqueue_media();
 
-    wp_enqueue_script( 'catcheverest_upload', get_template_directory_uri().'/inc/panel/js/add_image_scripts.js', array( 'jquery' ) );
+    wp_enqueue_script( 'catcheverest_upload', esc_url( get_template_directory_uri() ).'/inc/panel/js/add_image_scripts.js', array( 'jquery' ) );
 
-    wp_enqueue_style( 'catcheverest_admin_style',get_template_directory_uri().'/inc/panel/admin.min.css', '', '1.0', 'screen' );
+    wp_enqueue_style( 'catcheverest_admin_style',esc_url( get_template_directory_uri() ).'/inc/panel/admin.min.css', '', '1.0', 'screen' );
 }
 add_action('admin_print_styles-appearance_page_theme_options', 'catcheverest_admin_scripts');
 
@@ -89,7 +89,7 @@ function catcheverest_theme_options_do_page() {
                     <h2 class="title"><?php _e( 'Theme Options By', 'catch-everest' ); ?></h2>
                     <h2 class="logo">
                         <a href="<?php echo esc_url( __( 'https://catchthemes.com/', 'catch-everest' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'catch-everest' ); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri().'/inc/panel/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'catch-everest' ); ?>" />
+                            <img src="<?php echo esc_url( get_template_directory_uri() ).'/inc/panel/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'catch-everest' ); ?>" />
                         </a>
                     </h2>
                 </div><!-- #theme-option-title -->
@@ -180,7 +180,7 @@ function catcheverest_theme_options_do_page() {
                                             <td><?php if ( !empty ( $options['fav_icon'] ) ) { ?>
                                                     <input class="upload-url" size="65" type="text" name="catcheverest_options[fav_icon]" value="<?php echo esc_url( $options['fav_icon'] ); ?>" />
                                                 <?php } else { ?>
-                                                    <input class="upload-url" size="65" type="text" name="catcheverest_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
+                                                    <input class="upload-url" size="65" type="text" name="catcheverest_options[fav_icon]" value="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>images/favicon.ico" alt="fav" />
                                                 <?php }  ?>
                                                 <input ref="<?php esc_attr_e( 'Insert as Fav Icon','catch-everest' );?>" class="catcheverest_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Fav Icon','catch-everest' );?>" />
                                             </td>
@@ -193,7 +193,7 @@ function catcheverest_theme_options_do_page() {
                                                     if ( !empty( $options['fav_icon'] ) ) {
                                                         echo '<img src="'.esc_url( $options['fav_icon'] ).'" alt="fav" />';
                                                     } else {
-                                                        echo '<img src="'. get_template_directory_uri().'/images/favicon.ico" alt="fav" />';
+                                                        echo '<img src="'. esc_url( get_template_directory_uri() ).'/images/favicon.ico" alt="fav" />';
                                                     }
                                                 ?>
                                             </td>
@@ -219,7 +219,7 @@ function catcheverest_theme_options_do_page() {
                                             <td><?php if ( !empty ( $options['web_clip'] ) ) { ?>
                                                     <input class="upload-url" size="65" type="text" name="catcheverest_options[web_clip]" value="<?php echo esc_url( $options['web_clip'] ); ?>" class="upload" />
                                                 <?php } else { ?>
-                                                    <input size="65" type="text" name="catcheverest_options[web_clip]" value="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="fav" />
+                                                    <input size="65" type="text" name="catcheverest_options[web_clip]" value="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>images/apple-touch-icon.png" alt="fav" />
                                                 <?php }  ?>
                                                 <input ref="<?php esc_attr_e( 'Insert as Web Clip Icon','catch-everest' );?>" class="catcheverest_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon','catch-everest' );?>" />
                                             </td>
@@ -232,7 +232,7 @@ function catcheverest_theme_options_do_page() {
                                                     if ( !empty( $options['web_clip'] ) ) {
                                                         echo '<img src="'.esc_url( $options['web_clip'] ).'" alt="fav" />';
                                                     } else {
-                                                        echo '<img src="'. get_template_directory_uri().'/images/favicon.ico" alt="fav" />';
+                                                        echo '<img src="'. esc_url( get_template_directory_uri() ).'/images/favicon.ico" alt="fav" />';
                                                     }
                                                 ?>
                                             </td>
@@ -330,22 +330,22 @@ function catcheverest_theme_options_do_page() {
                                     <tr>
                                         <th scope="row"><label><?php _e( 'Sidebar Layout Options', 'catch-everest' ); ?></label></th>
                                         <td>
-                                            <label title="right-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/right-sidebar.png" alt="Content-Sidebar" /><br />
+                                            <label title="right-sidebar" class="box"><img src="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>inc/panel/images/right-sidebar.png" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="catcheverest_options[sidebar_layout]" id="right-sidebar" <?php checked($options['sidebar_layout'], 'right-sidebar') ?> value="right-sidebar"  />
                                             <?php _e( 'Right Sidebar', 'catch-everest' ); ?>
                                             </label>
 
-                                            <label title="left-Sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/left-sidebar.png" alt="Content-Sidebar" /><br />
+                                            <label title="left-Sidebar" class="box"><img src="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>inc/panel/images/left-sidebar.png" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="catcheverest_options[sidebar_layout]" id="left-sidebar" <?php checked($options['sidebar_layout'], 'left-sidebar') ?> value="left-sidebar"  />
                                             <?php _e( 'Left Sidebar', 'catch-everest' ); ?>
                                             </label>
 
-                                            <label title="no-sidebar" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/no-sidebar.png" alt="Content-Sidebar" /><br />
+                                            <label title="no-sidebar" class="box"><img src="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>inc/panel/images/no-sidebar.png" alt="Content-Sidebar" /><br />
                                             <input type="radio" name="catcheverest_options[sidebar_layout]" id="no-sidebar" <?php checked($options['sidebar_layout'], 'no-sidebar') ?> value="no-sidebar"  />
                                             <?php _e( 'No Sidebar', 'catch-everest' ); ?>
                                             </label>
 
-                                            <label title="no-sidebar-full-width" class="box"><img src="<?php echo get_template_directory_uri(); ?>/inc/panel/images/no-sidebar-fullwidth.png" alt="No Sidebar, Full Width" /><br />
+                                            <label title="no-sidebar-full-width" class="box"><img src="<?php echo trailingslashit( esc_url( get_template_directory_uri() ) ); ?>inc/panel/images/no-sidebar-fullwidth.png" alt="No Sidebar, Full Width" /><br />
                                             <input type="radio" name="catcheverest_options[sidebar_layout]" id="no-sidebar-full-width" <?php checked($options['sidebar_layout'], 'no-sidebar-full-width'); ?> value="no-sidebar-full-width"  />
                                             <?php _e( 'No Sidebar, Full Width', 'catch-everest' ); ?>
                                             </label>
@@ -1160,13 +1160,13 @@ function catcheverest_theme_options_validate( $options ) {
 
     //Webmaster Tool Verification
     if( isset( $input[ 'google_verification' ] ) ) {
-        $input_validated[ 'google_verification' ] = wp_filter_post_kses( $input[ 'google_verification' ] );
+        $input_validated[ 'google_verification' ] = wp_kses_post( $input[ 'google_verification' ] );
     }
     if( isset( $input[ 'yahoo_verification' ] ) ) {
-        $input_validated[ 'yahoo_verification' ] = wp_filter_post_kses( $input[ 'yahoo_verification' ] );
+        $input_validated[ 'yahoo_verification' ] = wp_kses_post( $input[ 'yahoo_verification' ] );
     }
     if( isset( $input[ 'bing_verification' ] ) ) {
-        $input_validated[ 'bing_verification' ] = wp_filter_post_kses( $input[ 'bing_verification' ] );
+        $input_validated[ 'bing_verification' ] = wp_kses_post( $input[ 'bing_verification' ] );
     }
     if( isset( $input[ 'analytic_header' ] ) ) {
         $input_validated[ 'analytic_header' ] = wp_kses_stripslashes( $input[ 'analytic_header' ] );

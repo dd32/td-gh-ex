@@ -33,7 +33,7 @@ function catcheverest_scripts() {
 	/**
 	 * Add Genericons font, used in the main stylesheet.
 	 */
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
+	wp_enqueue_style( 'genericons', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'genericons/genericons.css', array(), '3.4.1' );
 
 	/**
 	 * Loads up Responsive stylesheet and Menu JS
@@ -41,8 +41,8 @@ function catcheverest_scripts() {
 	$disable_responsive = $options['disable_responsive'];
 
 	if ( $disable_responsive == "0" ) {
-		wp_enqueue_style( 'catcheverest-responsive', get_template_directory_uri() . '/css/responsive.css' );
-		wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/catcheverest-menu.min.js', array( 'jquery' ), '20130224', true );
+		wp_enqueue_style( 'catcheverest-responsive', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/responsive.css' );
+		wp_enqueue_script( 'small-menu', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catcheverest-menu.min.js', array( 'jquery' ), '20130224', true );
 	}
 
 	/**
@@ -54,33 +54,33 @@ function catcheverest_scripts() {
 	}
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+		wp_enqueue_script( 'keyboard-image-navigation', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 
 	/**
 	 * Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
 	 */
-	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
+	wp_register_script( 'jquery-cycle', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 
 	/**
 	 * Loads up catcheverest-slider and jquery-cycle set up as dependent on catcheverest-slider
 	 */
 	$enableslider = $options['enable_slider'];
 	if ( ( 'enable-slider-allpage' == $enableslider ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'enable-slider-homepage' == $enableslider ) ) {
-		wp_enqueue_script( 'catcheverest-slider', get_template_directory_uri() . '/js/catcheverest-slider.js', array( 'jquery-cycle' ), '20130114', true );
+		wp_enqueue_script( 'catcheverest-slider', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catcheverest-slider.js', array( 'jquery-cycle' ), '20130114', true );
 	}
 
 	/**
 	 * Loads up Scroll Up script
 	 */
 	if ( empty( $options['disable_scrollup'] ) ) {
-		wp_enqueue_script( 'catcheverest-scrollup', get_template_directory_uri() . '/js/catcheverest-scrollup.min.js', array( 'jquery' ), '20072014', true  );
+		wp_enqueue_script( 'catcheverest-scrollup', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catcheverest-scrollup.min.js', array( 'jquery' ), '20072014', true  );
 	}
 
 	/**
 	 * Browser Specific Enqueue Script
 	 */
-	wp_enqueue_script( 'catcheverest-html5', get_template_directory_uri() . '/js/html5.min.js', array(), '3.7.3' );
+	wp_enqueue_script( 'catcheverest-html5', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/html5.min.js', array(), '3.7.3' );
 	wp_script_add_data( 'catcheverest-html5', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'catcheverest_scripts' );
@@ -511,7 +511,7 @@ function catcheverest_default_sliders() {
 				<article class="post hentry slides displayblock">
 					<figure class="slider-image">
 						<a title="Mount Everest" href="#">
-							<img src="'. get_template_directory_uri() . '/images/slider1.jpg" class="wp-post-image" alt="Mount Everest" title="Mount Everest">
+							<img src="'. trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/slider1.jpg" class="wp-post-image" alt="Mount Everest" title="Mount Everest">
 						</a>
 					</figure>
 					<div class="entry-container">
@@ -529,7 +529,7 @@ function catcheverest_default_sliders() {
 				<article class="post hentry slides displaynone">
 					<figure class="slider-image">
 						<a title="Nepal Prayer Wheels" href="#">
-							<img src="'. get_template_directory_uri() . '/images/slider2.jpg" class="wp-post-image" alt="Nepal Prayer Wheels" title="Nepal Prayer Wheels">
+							<img src="'. trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/slider2.jpg" class="wp-post-image" alt="Nepal Prayer Wheels" title="Nepal Prayer Wheels">
 						</a>
 					</figure>
 					<div class="entry-container">
@@ -674,7 +674,7 @@ function catcheverest_default_featured_content() {
 				<article class="post hentry first">
 					<figure class="featured-homepage-image">
 						<a href="#" title="Nepal Prayer Wheels">
-							<img title="Nepal Prayer Wheels" alt="Nepal Prayer Wheels" class="wp-post-image" src="'.get_template_directory_uri() . '/images/thumb-390-1.jpg" />
+							<img title="Nepal Prayer Wheels" alt="Nepal Prayer Wheels" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/thumb-390-1.jpg" />
 						</a>
 					</figure>
 					<div class="entry-container">
@@ -692,7 +692,7 @@ function catcheverest_default_featured_content() {
 				<article class="post hentry">
 					<figure class="featured-homepage-image">
 						<a href="#" title="Mount Everest">
-							<img title="Mount Everest" alt="Mount Everest" class="wp-post-image" src="'.get_template_directory_uri() . '/images/thumb-390-2.jpg" />
+							<img title="Mount Everest" alt="Mount Everest" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/thumb-390-2.jpg" />
 						</a>
 					</figure>
 					<div class="entry-container">
@@ -710,7 +710,7 @@ function catcheverest_default_featured_content() {
 				<article class="post hentry">
 					<figure class="featured-homepage-image">
 						<a href="#" title="Mount Kanchengjunga">
-							<img title="Mount Kanchengjunga" alt="Mount Kanchengjunga" class="wp-post-image" src="'.get_template_directory_uri() . '/images/thumb-390-3.jpg" />
+							<img title="Mount Kanchengjunga" alt="Mount Kanchengjunga" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/thumb-390-3.jpg" />
 						</a>
 					</figure>
 					<div class="entry-container">
