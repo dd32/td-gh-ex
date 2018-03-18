@@ -1,7 +1,7 @@
 === Chip Life ===
 Contributors: TutorialChip.com
-Requires at least: WordPress 4.6
-Tested up to: WordPress 4.8.1
+Requires at least: WordPress 4.7
+Tested up to: WordPress 4.9.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
@@ -85,6 +85,14 @@ Source: https://unsplash.com/
 - https://unsplash.com/photos/JmS0fkLlUtA
 
 == Changelog ==
+
+= 2.0.6 =
+Released: March 18, 2017
+
+* Theme support added for `customize-selective-refresh-widgets`.
+* Function `chip_life_widgets_init` changed to `chip_life_register_sidebars`.
+* Code improvements.
+* POT file updated.
 
 = 2.0.5 =
 Released: September 11, 2017

@@ -87,6 +87,9 @@ function chip_life_setup() {
 		'default-image' => '',
 	) ) );
 
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
 }
 endif; // chip_life_setup
 add_action( 'after_setup_theme', 'chip_life_setup' );
@@ -108,7 +111,7 @@ add_action( 'after_setup_theme', 'chip_life_content_width', 0 );
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function chip_life_widgets_init() {
+function chip_life_register_sidebars() {
 
 	// Widget Areas
 	register_sidebar( array(
@@ -121,7 +124,7 @@ function chip_life_widgets_init() {
 	) );
 
 }
-add_action( 'widgets_init', 'chip_life_widgets_init' );
+add_action( 'widgets_init', 'chip_life_register_sidebars' );
 
 /**
  * Enqueue scripts and styles.

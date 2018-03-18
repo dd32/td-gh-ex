@@ -260,14 +260,15 @@ add_action( 'chip_life_credits', 'chip_life_copyright' );
  *
  * @return void
  */
-function chip_life_designer() {
-	$designer_string = sprintf( '<a href="%1$s" title="%2$s">%3$s</a> <span>&sdot;</span> %4$s <a href="%5$s" title="%6$s">%7$s</a>',
-		esc_url( 'http://www.tutorialchip.com/' ),
+function chip_life_credits_designer() {
+	$designer_string = sprintf( '<a href="%1$s" title="%2$s">%3$s</a> %4$s <span>&sdot;</span> %5$s <a href="%6$s" title="%7$s">%8$s</a>',
+		esc_url( 'http://www.tutorialchip.com' ),
 		esc_attr( 'Chip Life Theme' ),
 		esc_html( 'Chip Life Theme' ),
+		esc_html( 'by TutorialChip' ),
 		esc_html__( 'Powered by', 'chip-life' ),
-		esc_url( 'https://wordpress.org/' ),
-		esc_attr( 'WordPress', 'chip-life' ),
+		esc_url( 'https://wordpress.org' ),
+		esc_attr( 'WordPress' ),
 		esc_html( 'WordPress' )
 	);
 
@@ -279,11 +280,11 @@ function chip_life_designer() {
 	 *
 	 * @param string $html Designer HTML.
 	 */
-	$html = apply_filters( 'chip_life_designer_html', $html );
+	$html = apply_filters( 'chip_life_credits_designer_html', $html );
 
 	echo $html; // WPCS: XSS OK.
 }
-add_action( 'chip_life_credits', 'chip_life_designer' );
+add_action( 'chip_life_credits', 'chip_life_credits_designer' );
 
 /**
  * Enqueues front-end CSS to hide elements.
