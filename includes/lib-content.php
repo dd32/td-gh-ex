@@ -662,7 +662,7 @@ function weaverx_single_title( $title = '' ) {
 ?>
 	<header class="page-header">
 	<?php weaverx_fi( 'post', 'title-before'); ?>
-	<h1 class="page-title entry-title title-single <?php echo weaverx_title_class( 'post_title', true ) .  weaverx_schema( 'headline') . '>' . $title; ?></h1>
+	<h1 class="page-title entry-title title-single <?php echo weaverx_title_class( 'post_title', true ) . '"' .  weaverx_schema( 'headline' ) . '>' . $title; ?></h1>
 		<?php weaverx_post_top_meta('single'); ?>
 	</header><!-- .page-header -->
 <?php

@@ -465,3 +465,6 @@ with testing and feature suggestions.
 
 = Version 3.2.1 =
 * Fix: Now correctly supports the Disable Scheme.org option in Theme Support Plugin, add that option to the Customizer.
+
+= Version 3.2.2 =
+* Fix: Issue with schema.org and Post Single View Page Title.
