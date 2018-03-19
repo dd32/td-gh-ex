@@ -9,14 +9,14 @@
 	<div class="container">
 		<div class="blog-title">
 		    <h2><?php _e( 'Nothing Found', 'bar-restaurant' ); ?></h2>
-		    <div class="breadCumbs"><?php bar_retaurant_breadcrumbs(); ?></div>
+		    <div class="breadCumbs"><?php bar_restaurant_breadcrumbs(); ?></div>
 		</div>
 	</div>
 </section>
 <section id="blog-innerpage-content">
 	<div class="container">
 		<div class="row">            
-	   		<div class="col-xs-12 col-sm-12 col-md-9 pull-right">
+	   		<div class="col-xs-12 col-sm-12 col-md-9">
 	        	<div class="search-results">
 					<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 					<h4><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'bar-restaurant' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></h4>

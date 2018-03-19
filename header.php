@@ -15,20 +15,36 @@
         <?php wp_head(); ?>
     </head>
 <body <?php body_class();?>>
-    <div class="preloader"><span style="" class="preloader-gif"></span></div>
+    <div class="preloader"><span class="preloader-gif"></span></div>
     <header class="header">
+    <?php  ?>
         <!-- Header with Brand -->
-        <nav class="navbar-fixed-top fixed-header1">
+        <nav class="navbar-fixed-top">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 top-menu">
                         <div class="logo-description">
                             <div class="header-logo">
-                                <?php if( has_custom_logo() ) { the_custom_logo(); } ?>
+                                <?php if( has_custom_logo() ) { ?>                            
+                                    <?php the_custom_logo(); ?>                            
+                                <?php }
+                                $scroll_logo=get_theme_mod('scroll_logo');
+                                $scroll_logo=wp_get_attachment_url($scroll_logo); 
+                                if($scroll_logo == ''){
+                                    $custom_logo_id = get_theme_mod( 'custom_logo' );
+                                    $scroll_logo = wp_get_attachment_url( $custom_logo_id , 'full' );
+                                }
+                                if($scroll_logo != ''){ ?>
+                                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="custom-logo-link" rel="home" itemprop="url">
+                                        <img class="img-responsive logo-dark" src="<?php echo esc_url($scroll_logo); ?>" alt="<?php esc_attr_e('Logo','bar-restaurant'); ?>">
+                                    </a>
+                                <?php } ?>
                             </div>
-                            <div class="header-text">
-                                <?php echo '<a href='.esc_url( home_url( '/' ) ).' title='.esc_attr( get_bloginfo( 'name', 'display' ) ).' rel="home"><h3 class="site-title logo-box">'.get_bloginfo('name').'</h3><span class="site-description">'.get_bloginfo('description').'</span></a>'; ?>
-                            </div>
+                            <?php if(get_theme_mod('header_text')):?>
+                                <div class="header-text">
+                                    <?php echo '<a href='.esc_url( home_url( '/' ) ).' title='.esc_attr( get_bloginfo( 'name', 'display' ) ).' rel="home"><h3 class="site-title logo-box">'.get_bloginfo('name').'</h3><span class="site-description">'.get_bloginfo('description').'</span></a>'; ?>
+                                </div>
+                            <?php endif; ?>
                         </div>
                         <div id="cssmenu">
                           <?php $defaults = array(

@@ -1,10 +1,10 @@
 <?php 
 // Breadcrumbs
-function bar_retaurant_breadcrumbs() {
+function bar_restaurant_breadcrumbs() {
     // Settings
     $separator          = '&gt;';
-    $breadcrums_id      = 'breadcrumbs';
-    $breadcrums_class   = 'breadcrumbs';
+    $breadcrums_id      = esc_html__('breadcrumbs','bar-restaurant');
+    $breadcrums_class   = esc_html__('breadcrumbs','bar-restaurant');
     $home_title         = esc_html__('Homepage','bar-restaurant');
     // If you have any custom post types with custom taxonomies, put the taxonomy name below (e.g. product_cat)
     $custom_taxonomy    = 'product_cat';
@@ -41,7 +41,6 @@ function bar_retaurant_breadcrumbs() {
             echo '<li class="item-current item-archive"><strong class="bread-current bread-archive">' . esc_html($custom_tax_name) . '</strong></li>';
               
         } else if ( is_single() ) {
-              
             // If post is a custom post type
             $post_type = get_post_type();
               

@@ -1,24 +1,39 @@
-=== Theme Name ===
+=== Bar Restaurant ===
 Contributors: VoilaThemes
-Tags: two-columns, right-sidebar, grid-layout, custom-logo, custom-colors, custom-background, custom-menu, featured-images, translation-ready, blog, footer-widgets, theme-options
+Tags: two-columns, right-sidebar, full-width-template , grid-layout, custom-logo, custom-colors, custom-background, custom-menu, featured-images, translation-ready, blog, footer-widgets, theme-options
 Requires at least: 4.0
-Tested up to: 4.8
-Stable tag: 1.0.1
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tested up to: 4.8.3
+Stable tag: 1.0.10
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: bar-restaurant
 
-Short description. No more than 150 chars.
+== Theme Description ==
+Bar Restaurant theme is a high quality WordPress theme designed specially for Bars, Pubs and Restaurant websites. It is an easily customizable theme which uses WordPress customizer options for logo, colors etc. Bar Restaurant theme is based on twitter bootstrap hence it looks good in mobile, iPads and all other computer devices.
+Step by step documentation and dummy data is here: https://voilathemes.com/documentation/bar-restaurant/
 
-== Description ==
-Theme desc.
-
-== Frequently Asked Questions ==
+== Copyright ==
+Bar Restaurant WordPress Theme, Copyright 2017 VoilaThemes
+Bar Restaurant is distributed under the terms of the GNU GPL
 
 == Installation ==
+1. Primary:
+ = Login to your wp-admin account and go to Appearance -> Themes.
+ = Select "Install" tab and click on the "Upload" link.
+ = Select "bar-restaurant.zip" and click on "Install Now" button.
+ = In case of errors, use an alternate method.
+ 
+2. Alternate:
+ = Unzip the template file (bar-restaurant.zip) that you have downloaded.
+ = Upload the entire folder (bar-restaurant) to your server via FTP and place it in the /wp-content/themes/ folder.
+ = Do not change the directory name.
+ = The template files should be there now: /wp-content/themes/bar-restaurant/index.php (example).
+ 
+3. Log into your WP admin panel and click on "Appearance". Go to "Themes" tab.
 
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload and Choose File, then select the bar-restaurant.zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
+4. Now click on "Bar Restaurant" to activate the theme.
+
+5. Complete all of the required inputs in the Appearance => Custimize option and click "Save & Publish" to make the changes LIVE.
 
 == Changelog ==
 
@@ -26,41 +41,39 @@ Theme desc.
 * Theme submitted to WordPress.org
 = 1.0.1(16 Aug 2017)
 * Misc css Chages
+= 1.0.2(16 Sept 2017)
+* Added customizer scroll logo option, and misc changes.
+= 1.0.3(07 Oct 2017)
+* Updated TGM latest version.
+* Updated Bootstrap css and js files
+* Misc changes.
+= 1.0.4(09 Oct 2017)
+* Misc changes.
+= 1.0.5(09 Oct 2017)
+* Added Pro Plugin url.
+* Theme url change.
+* full width template added.
+= 1.0.6(11 oct 2017)
+* Change home page design.
+* Misc changes.
+= 1.0.7(17 oct 2017)
+* Updated pro theme url.
+= 1.0.8(31 oct 2017)
+* Misc changes in custimizer and pro theme page.
+= 1.0.9(6 Nov 2017)
+* In front page change.
+* main logo image change and added scroll logo.
+= 1.0.10(19 March 2018)
+* Theme Url Change.
 
-
+---------------------------------------------------------
+Resources
+---------------------------------------------------------
 == Resources ==
-i)Bootstrap Library
-===========
-we used are licensed under the Apache License v3.3.6
-Bootstrap - http://getbootstrap.com
-Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-
-ii) Fontawesome Library 
-===========
-License URI:  http://fontawesome.io/license/
-Resource Name: fontawesome
-License Name: Open Font License (OFL) Version 4.6.3
-
-iii)Fonts
-===========
-https://fonts.googleapis.com/css?family=Quicksand
-https://fonts.googleapis.com/css?family=Ruthie
-They are under SIL Open Font.
-
----------------------------------------------------------
-Images
----------------------------------------------------------
-
-https://pixabay.com/en/drinks-groningen-terrace-people-1746272/ @Pixabay(https://pixabay.com/en/service/license/)
-https://pixabay.com/en/bar-street-city-night-dinner-bike-2314410/ @Pixabay(https://pixabay.com/en/service/license/)
-https://www.pexels.com/photo/bottle-pouring-summertime-wine-glass-107556/
-https://pixabay.com/en/beer-celebration-cheese-delicious-2178693/
-https://pixabay.com/en/pasta-spaghetti-food-italian-1463926/
-https://pixabay.com/en/cheese-cheese-plate-food-snacks-1914114/
-https://pixabay.com/en/party-wine-glasses-bar-bartender-2250007/
-https://pixabay.com/en/table-restaurant-glass-drink-2060499/
-https://pixabay.com/en/the-ancient-town-republic-of-china-2210280/
-https://www.pexels.com/photo/interior-of-modern-building-331107/
-https://pixabay.com/en/restaurant-restaurant-atmosphere-bar-826738/
-https://pixabay.com/en/concert-stage-music-entertainment-2171166/
-https://www.pexels.com/photo/cafeteria-roma-italia-105066/
+* Quicksand - https://fonts.googleapis.com/css?family=Quicksand, MIT 
+* Ruthie - https://fonts.googleapis.com/css?family=Ruthie, MIT 
+* bootstrap.js © 2011-2016 Twitter, Inc., MIT Version 3.3.7
+* bootstrap.css © 2011-2016 Twitter, Inc., MIT Version 3.3.7
+* font-awesome.css © @fontawesome, MIT Version 4.6.3
+* https://www.pexels.com/photo/reflection-of-glass-in-bathroom-331114/ © NastyaSensei Sens, CC0
+* https://www.pexels.com/photo/bread-food-restaurant-people-5249/ © Stokpic , CC0

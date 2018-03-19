@@ -7,7 +7,7 @@ get_header(); ?>
 <section id="blog-title-top" style="">
 	<div class="container">
 		<div class="blog-title">
-		    <div class="breadCumbs"><?php bar_retaurant_breadcrumbs(); ?></div>
+		    <div class="breadCumbs"><?php bar_restaurant_breadcrumbs(); ?></div>
 		</div>
 	</div>
 </section>
@@ -27,7 +27,7 @@ get_header(); ?>
 						endwhile; ?>
 					    <!-- Commnet Part -->
 					     <?php 
-					     	echo get_the_tag_list('<p><strong>Tags: </strong>',', ','</p>');
+					     	echo sprintf('%s',get_the_tag_list('<p><strong>Tags: </strong>',', ','</p>'));
 					        if ( comments_open() || get_comments_number() ) {
 								comments_template();
 							} ?>

@@ -25,7 +25,7 @@
                                 </div>
                             <?php } else{ ?>
                                 <div class="blog-image-link">
-                                    <img src="<?php echo esc_url(get_template_directory_uri().'/images/default.png'); ?>" alt="<?php echo get_the_title(); ?>" class="default-feature-image" />
+                                    <img src="<?php echo esc_url(get_template_directory_uri().'/images/default.png'); ?>" alt="<?php the_title(); ?>" class="default-feature-image" />
                                     <div class="blog-image-overlay">
                                         <div class="blog-info-text">
                                             <h4><a href="<?php the_permalink(); ?>" class="blog-title"><?php the_title(); ?></a></h4>

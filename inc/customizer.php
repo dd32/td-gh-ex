@@ -43,7 +43,7 @@ function bar_restaurant_customize_register( $wp_customize ) {
     )
   );
   $wp_customize->add_setting( '404_heading_text', array(
-        'default'        => '',
+        'default'        => esc_html__('404 Page Not Found','bar-restaurant'),
         'sanitize_callback' => 'sanitize_text_field',
         'capability'     => 'edit_theme_options',
     ) );
@@ -55,8 +55,9 @@ function bar_restaurant_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         '404_desc',
         array(
+            'default' => esc_html__('Sorry, but nothing matched your search terms. Please try again with some different keywords.','bar-restaurant'),
             'capability'     => 'edit_theme_options',
-            'sanitize_callback' => 'wp_kses',
+            'sanitize_callback' => 'wp_kses_post',
             'priority' => 20, 
         )
     );
@@ -75,25 +76,21 @@ function bar_restaurant_customize_register( $wp_customize ) {
     array(
       'title' => esc_html__('Social Accounts', 'bar-restaurant'),
       'priority' => 120,
-      'description' => balanceTags( 'In first input box, you need to add FONT AWESOME shortcode which you can find <a target="_blank" href="https://fortawesome.github.io/Font-Awesome/icons/">here</a> and in second input box, you need to add your social media profile URL.<br /> Enter the URL of your social accounts. Leave it empty to hide the icon.' , true),
+      'description' => balanceTags( 'In first input box, you need to add FONT AWESOME shortcode which you can find <a target="_blank" href="https://fontawesome.bootstrapcheatsheets.com/">here</a> and in second input box, you need to add your social media profile URL.<br /> Enter the URL of your social accounts. Leave it empty to hide the icon.' , true),
       'panel' => 'footer'
     )
   );
   $wp_customize->get_section('title_tagline')->panel = 'general'; 
   $wp_customize->get_section('static_front_page')->panel = 'general';
 
-$bar_restaurant_social_icon = array();
-$bar_restaurant_social_icon[] =  array( 'slug'=>'bar_restaurant_social_icon1', 'default' => '', 'label' => esc_html__( 'Social Account 1', 'bar-restaurant' ),'priority' => '1' );
-$bar_restaurant_social_icon[] =  array( 'slug'=>'bar_restaurant_social_icon2', 'default' => '', 'label' => esc_html__( 'Social Account 2', 'bar-restaurant' ),'priority' => '3' );
-$bar_restaurant_social_icon[] =  array( 'slug'=>'bar_restaurant_social_icon3', 'default' => '', 'label' => esc_html__( 'Social Account 3', 'bar-restaurant' ),'priority' => '5' );
-$bar_restaurant_social_icon[] =  array( 'slug'=>'bar_restaurant_social_icon4', 'default' => '', 'label' => esc_html__( 'Social Account 4', 'bar-restaurant' ),'priority' => '7' );
-$bar_restaurant_social_icon[] =  array( 'slug'=>'bar_restaurant_social_icon5', 'default' => '', 'label' => esc_html__( 'Social Account 5', 'bar-restaurant' ),'priority' => '9' );
-$bar_restaurant_social_icon[] =  array( 'slug'=>'bar_restaurant_social_icon6', 'default' => '', 'label' => esc_html__( 'Social Account 6', 'bar-restaurant' ),'priority' => '11' );
-$bar_restaurant_social_icon[] =  array( 'slug'=>'bar_restaurant_social_icon7', 'default' => '', 'label' => esc_html__( 'Social Account 7', 'bar-restaurant' ),'priority' => '13' );
-$bar_restaurant_social_icon[] =  array( 'slug'=>'bar_restaurant_social_icon8', 'default' => '', 'label' => esc_html__( 'Social Account 8', 'bar-restaurant' ),'priority' => '15' );
-$bar_restaurant_social_icon[] =  array( 'slug'=>'bar_restaurant_social_icon9', 'default' => '', 'label' => esc_html__( 'Social Account 9', 'bar-restaurant' ),'priority' => '17' );
-$bar_restaurant_social_icon[] =  array( 'slug'=>'bar_restaurant_social_icon10', 'default' => '', 'label' => esc_html__( 'Social Account 10', 'bar-restaurant' ),'priority' => '19' );
-foreach($bar_restaurant_social_icon as $bar_restaurant_social_icons){
+  $bar_restaurant_social_icon = array();
+  for($i=1;$i <= 10;$i++):
+  $bar_restaurant_social_icon[] =  array( 'slug'=>sprintf('bar_restaurant_social_icon%d',$i),
+   'default' => '',
+   'label' => sprintf(esc_html__( 'Social Account %s', 'bar-restaurant' ),$i),
+   'priority' => sprintf('%d',$i) );
+  endfor;
+  foreach($bar_restaurant_social_icon as $bar_restaurant_social_icons){
     $wp_customize->add_setting(
         $bar_restaurant_social_icons['slug'],
         array(
@@ -111,19 +108,15 @@ foreach($bar_restaurant_social_icon as $bar_restaurant_social_icons){
             'priority' => $bar_restaurant_social_icons['priority']
         )
     );
-}
+  }
 $bar_restaurant_social_iconLink = array();
-$bar_restaurant_social_iconLink[] =  array( 'slug'=>'bar_restaurant_social_iconLink1', 'default' => '', 'label' => esc_html__( 'Social Link 1', 'bar-restaurant' ),'priority' => '1' );
-$bar_restaurant_social_iconLink[] =  array( 'slug'=>'bar_restaurant_social_iconLink2', 'default' => '', 'label' => esc_html__( 'Social Link 2', 'bar-restaurant' ),'priority' => '3' );
-$bar_restaurant_social_iconLink[] =  array( 'slug'=>'bar_restaurant_social_iconLink3', 'default' => '', 'label' => esc_html__( 'Social Link 3', 'bar-restaurant' ),'priority' => '5' );
-$bar_restaurant_social_iconLink[] =  array( 'slug'=>'bar_restaurant_social_iconLink4', 'default' => '', 'label' => esc_html__( 'Social Link 4', 'bar-restaurant' ),'priority' => '7' );
-$bar_restaurant_social_iconLink[] =  array( 'slug'=>'bar_restaurant_social_iconLink5', 'default' => '', 'label' => esc_html__( 'Social Link 5', 'bar-restaurant' ),'priority' => '9' );
-$bar_restaurant_social_iconLink[] =  array( 'slug'=>'bar_restaurant_social_iconLink6', 'default' => '', 'label' => esc_html__( 'Social Link 6', 'bar-restaurant' ),'priority' => '11' );
-$bar_restaurant_social_iconLink[] =  array( 'slug'=>'bar_restaurant_social_iconLink7', 'default' => '', 'label' => esc_html__( 'Social Link 7', 'bar-restaurant' ),'priority' => '13' );
-$bar_restaurant_social_iconLink[] =  array( 'slug'=>'bar_restaurant_social_iconLink8', 'default' => '', 'label' => esc_html__( 'Social Link 8', 'bar-restaurant' ),'priority' => '15' );
-$bar_restaurant_social_iconLink[] =  array( 'slug'=>'bar_restaurant_social_iconLink9', 'default' => '', 'label' => esc_html__( 'Social Link 9', 'bar-restaurant' ),'priority' => '17' );
-$bar_restaurant_social_iconLink[] =  array( 'slug'=>'bar_restaurant_social_iconLink10', 'default' => '', 'label' => esc_html__( 'Social Link 10', 'bar-restaurant' ),'priority' => '19' );
-foreach($bar_restaurant_social_iconLink as $bar_restaurant_social_icons){
+for($i=1;$i <= 10;$i++):
+  $bar_restaurant_social_iconLink[] =  array( 'slug'=>sprintf('bar_restaurant_social_iconLink%d',$i),
+   'default' => '',
+   'label' => sprintf(esc_html__( 'Social Link %s', 'bar-restaurant' ),$i),
+   'priority' => sprintf('%d',$i) );
+  endfor;
+  foreach($bar_restaurant_social_iconLink as $bar_restaurant_social_icons){
     $wp_customize->add_setting(
         $bar_restaurant_social_icons['slug'],
         array(
@@ -141,13 +134,6 @@ foreach($bar_restaurant_social_iconLink as $bar_restaurant_social_icons){
         )
     );
 }
-$wp_customize->add_section(
-  'headerNlogo',
-  array(
-    'title' => esc_html__('Header & Logo','bar-restaurant'),
-    'panel' => 'general'
-  )
-);
 /*
 *Multiple logo upload code
 */
@@ -173,13 +159,61 @@ $wp_customize->add_control(
         'label'   => esc_html__('Preloader','bar-restaurant'),
         'type'    => 'radio',
         'choices'        => array(
-            "1"   => esc_html__( "On ", 'bar-restaurant' ),
+            "1"   => esc_html__( "On", 'bar-restaurant' ),
             "2"   => esc_html__( "Off", 'bar-restaurant' ),
         ),
     )
 );
+$wp_customize->add_setting('header_fix', array(
+        'default' => false,  
+        'sanitize_callback' => 'sanitize_text_field',
+));
+$wp_customize->add_control('header_fix', array(
+    'label'   => esc_html__('Header Fix','bar-restaurant'),
+    'section' => 'title_tagline',
+    'type'    => 'checkbox',
+    'priority' => 20
+));
+/*------Scroll Logo Option---------*/
+$wp_customize->add_setting(
+    'scroll_logo',
+    array(
+        'default' => '',
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'absint',
+    )
+);
+$wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'scroll_logo', array(
+    'section'     => 'title_tagline',
+    'label'       => __( 'Upload Scroll Logo' ,'bar-restaurant'),
+    'description' => __('Logo Size (120 * 60)','bar-restaurant'),
+    'flex_width'  => true,
+    'flex_height' => true,
+    'width'       => 120,
+    'height'      => 50,
+    'priority'    => 19,
+    'default-image' => '',
+) ) );
+$wp_customize->add_setting(
+  'logo_height',
+  array(
+    'default' => '',
+    'capability'     => 'edit_theme_options',
+    'sanitize_callback' => 'absint',
+    )
+  );
+$wp_customize->add_control(
+  'logo_height',
+  array(
+    'section' => 'title_tagline',
+    'label'      => __('Enter Logo Size', 'bar-restaurant'),
+    'description' => __("Use if you want to increase or decrease logo size (optional) Don't include `px` in the string. e.g. 20 (default: 10px)",'bar-restaurant'),
+    'type'       => 'text',
+    'priority'    => 21,
+    )
+  );
 //Remove Background Image Section
-$wp_customize->remove_section( 'background_image' );
+$wp_customize->get_section('background_image')->panel = 'general';
 $wp_customize->add_setting(
     'theme_color',
     array(
@@ -194,7 +228,7 @@ $wp_customize->add_control(
     'theme_color',
     array(
         'label'      => esc_html__('Theme Color ', 'bar-restaurant'),
-        'section' => 'color',
+        'section' => 'colors',
         'priority' => 10
     )
   )
@@ -202,7 +236,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
   'secondary_color',
   array(
-      'default' => '#8C001A',
+      'default' => '#02111B',
       'capability'     => 'edit_theme_options',
       'sanitize_callback' => 'sanitize_hex_color',
     )
@@ -213,7 +247,7 @@ $wp_customize->add_control(
     'secondary_color',
     array(
         'label'      => esc_html__('Secondary Color', 'bar-restaurant'),
-        'section' => 'color',
+        'section' => 'colors',
         'priority' => 11
     )
   )
@@ -234,13 +268,7 @@ $wp_customize->add_section( 'footer_widget_area' , array(
     'panel' => 'footer'
 ) );
 
-$wp_customize->add_section( 'footer_social_section' , array(
-    'title'       => esc_html__( 'Social Settings', 'bar-restaurant' ),
-    'description' => balanceTags( 'In first input box, you need to add FONT AWESOME shortcode which you can find <a target="_blank" href="https://fortawesome.github.io/Font-Awesome/icons/">here</a> and in second input box, you need to add your social media profile URL.' , true),
-    'priority'    => 135,
-    'capability'     => 'edit_theme_options',
-    'panel' => 'footer'
-) );
+
 $wp_customize->add_section( 'footer_copyright' , array(
     'title'       => esc_html__( 'Footer Copyright Area', 'bar-restaurant' ),
     'priority'    => 135,
@@ -312,7 +340,7 @@ $wp_customize->add_setting(
     'copyright_area_text',
     array(
         'capability'     => 'edit_theme_options',
-        'sanitize_callback' => 'wp_kses',
+        'sanitize_callback' => 'wp_kses_post',
         'priority' => 20, 
     )
 );
@@ -324,54 +352,31 @@ $wp_customize->add_control(
         'type'    => 'textarea',
     )
 );
-$wp_customize->add_panel(
-    'styling',
-    array(
-        'title' => esc_html__( 'Styling', 'bar-restaurant' ),
-        'description' => esc_html__('styling options','bar-restaurant'),
-        'priority' => 31, 
-    )
-);
-$wp_customize->add_section( 'color' , array(
-    'title'       => esc_html__( 'Colors', 'bar-restaurant' ),
-    'priority'    => 31,
-    'capability'     => 'edit_theme_options',
-    'panel' => 'styling'
-) );
+
 }
 add_action( 'customize_register', 'bar_restaurant_customize_register' );
 
-function bar_restaurant_custom_css(){ ?>
-  <style type="text/css">
-    .blog-sidebar .widget ul li a:hover,.blog-content-left a{ color : <?php  echo esc_attr(get_theme_mod('theme_color','#240115')); ?>; }
-    .bloginner-content-part ul li a:hover{ color : <?php  echo esc_attr(get_theme_mod('theme_color','#8C001A')); ?>; }
-    .meta-nav-next:hover, .meta-nav-prev:hover{ background : <?php  echo esc_attr(get_theme_mod('theme_color','#FFFFFF')); ?>; }
-    textarea:focus ~ label{ color : <?php  echo esc_attr(get_theme_mod('theme_color','#8C001A')); ?>; }
-    input:focus ~ label, input:valid ~ label{ color : <?php  echo esc_attr(get_theme_mod('theme_color','#8C001A')); ?>; }
-  .page-numbers.current, a.page-numbers:hover,.bar-restaurant-search-form .search-submit,
-    .leave-reply-form p.form-submit:hover, .leave-reply-form p.form-submit:focus, .leave-reply-form p.form-submit:active,button{ background : <?php  echo get_theme_mod('theme_color','#8C001A'); ?>; }
-    input:focus,textarea:focus{border-color: <?php  echo esc_attr(get_theme_mod('theme_color','#8C001A')); ?>; }
-    #blog-innerpage-content .bloginner-content-part blockquote{ border-color :<?php  echo esc_attr(get_theme_mod('theme_color','#8C001A  ')); ?>; }
-    .search-form .screen-reader-text{ color : <?php  echo esc_attr(get_theme_mod('theme_color','#8C001A')); ?>; }
-    .default-feature-image{ background : <?php  echo esc_attr(get_theme_mod('theme_color','#8C001A')); ?>; border: 1px solid <?php  echo esc_attr(get_theme_mod('theme_color','#8C001A')); ?>; }
-    .blog-sidebar input:focus { border-color: <?php  echo esc_attr(get_theme_mod('theme_color','#8C001A')); ?>; }
-    a:focus, a:hover,button.search-submit{ color: <?php  echo esc_attr(get_theme_mod('theme_color','#240115')); ?>; }
-    .blog-sidebar #today{ background : <?php  echo esc_attr(get_theme_mod('theme_color','#5f021f')); ?>;}
-     button{Background-color: <?php echo esc_attr(get_theme_mod('secondary_color','#8C001A')); ?>;}
-    .blog-sidebar th,.widget select,.blog-sidebar .widget ul li a,input, textarea{color: <?php echo esc_attr(get_theme_mod('secondary_color','#8C001A')); ?>;}
-    .header-logo a,.header-text a {color: <?php echo esc_attr(get_theme_mod('secondary_color','#8C001A')); ?>;}
-    /* Preloader */
-    <?php if(get_theme_mod('preloader') == 2) : ?>
-      .preloader .preloader-custom-gif, .preloader .preloader-gif{background:none !important;}
-    <?php endif;
-    /* end Preloader */
-    echo get_theme_mod('custom_css'); ?>
-  </style>
-<?php }
-add_action('wp_head','bar_restaurant_custom_css');
-add_action('wp_footer','bar_restaurant_custom_js');
-function bar_restaurant_custom_js(){ ?>
-  <script type="text/javascript">
-    <?php echo get_theme_mod('custom_js'); ?>
-  </script>
-<?php }
+function bar_restaurant_dynamic_styles(){
+  wp_enqueue_style( 'bar-restaurant-style', get_stylesheet_uri() );
+  $custom_css = '';
+  if(get_theme_mod('preloader') == 2) : 
+     $custom_css.= ".preloader .preloader-custom-gif, .preloader .preloader-gif{background:none !important;}";
+  endif;
+  $custom_css.= ".admin-bar .header .navbar-top{top:0;}.blog-sidebar .widget ul li a:hover,.blog-content-left a, #breadcrumbs li.item-current, #breadcrumbs a:hover, .bloginner-content-part .title-data h2, .blog-sidebar aside h3, .blog-sidebar .widget ul li:hover:before, .meta-nav-prev, .meta-nav-next, .meta-nav-next:hover, .meta-nav-prev:hover, .blog-single-inner-page p a:hover, .comment-metadata a, .reply a:hover, .reply a:focus, .reply a:active, .widget_rss .widget-title a.rsswidget{ color : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }.bloginner-content-part ul li a { color : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }textarea:focus ~ label, .widget .tagcloud a:hover{ color : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }input:focus ~ label, input:valid ~ label, input[type=submit]:hover, #wp-calendar tfoot td a, .blog-title h2{ color : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }.page-numbers.current, a.page-numbers:hover,.leave-reply-form p.form-submit:hover, .leave-reply-form p.form-submit:focus,.leave-reply-form p.form-submit:active,button, .header .navbar-fixed-top, .reply a, input[type=submit], .tagcloud a, #main-footer1, .footer-widget #wp-calendar #today,.home .header .navbar-top-scroll{ background : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }input:focus,textarea:focus, .meta-nav-next:hover, .meta-nav-prev:hover, .reply a:hover, .reply a:focus, .reply a:active, input[type=submit]:hover, .widget .tagcloud a:hover{border-color: ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }#blog-innerpage-content .bloginner-content-part blockquote{ border-color : ".esc_attr(get_theme_mod('theme_color','#8C001A  '))."; }.search-form .screen-reader-text{ color : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }.default-feature-image{ background : ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; border: 1px solid ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }   .blog-sidebar input:focus { border-color: ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }a:focus, a:hover,button.search-submit{ color: ".esc_attr(get_theme_mod('theme_color','#8C001A'))."; }.blog-sidebar #today,#cssmenu ul ul li a{ background : ".esc_attr(get_theme_mod('theme_color','#8C001A')).";} button, #main-footer2, .blog-image-overlay, #cssmenu #menu-button{Background-color: ".esc_attr(get_theme_mod('secondary_color','#02111B')).";}.blog-sidebar th,.widget select,.blog-sidebar .widget ul li a,input, textarea{color: ".esc_attr(get_theme_mod('secondary_color','#02111B')).";}
+    .blog-sidebar aside h3 {border-color: ".esc_attr(get_theme_mod('secondary_color','#02111B')).";}";
+    $logo_height = (get_theme_mod('logo_height'))?(get_theme_mod('logo_height')):45;
+    $custom_css.= ".navbar-fixed-top .header-logo img { max-height: ".esc_attr($logo_height)."px;   }";
+    $custom_css.= ".header-logo a, #breadcrumbs a, #breadcrumbs .separator, .bloginner-content-part ul li a:hover, .bloginner-content-part .title-data ul li, .blog-sidebar .widget ul li:before, .blog-single-inner-page p a, .comment-metadata a:hover, #wp-calendar tfoot td a:hover {color: ".esc_attr(get_theme_mod('secondary_color','#02111B')).";";
+    
+  wp_add_inline_style( 'bar-restaurant-style', $custom_css );  
+  wp_enqueue_script( 'bar-restaurant-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), false, true );
+
+  $header_fix = get_theme_mod('header_fix',0);
+  $script_js = '';
+  if($header_fix == 0){
+      $script_js.="jQuery(window).scroll(function(){jQuery('.navbar-fixed-top').css('position', 'relative');jQuery('.navbar-fixed-top').addClass('navbar-top')});";
+   }else{
+     $script_js.="jQuery(window).scroll(function(){jQuery('.navbar-fixed-top').css('position', 'fixed'); if (jQuery(window).scrollTop()> 50) { jQuery('.navbar-fixed-top').addClass('navbar-top-scroll');} else{jQuery('.navbar-fixed-top').removeClass('navbar-top-scroll');} });";
+   }
+   wp_add_inline_script( 'bar-restaurant-custom', $script_js );
+}

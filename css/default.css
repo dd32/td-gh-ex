@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #02111B;
+    color: #000;
      font-family: 'Quicksand', sans-serif;
     font-size: 16px;
     font-weight: 500;
@@ -40,6 +40,9 @@ button,
     -o-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s;
 }
+.home #blog-title-top{
+    display: none;
+}
 .preloader {
     top: 0;
     left: 0;
@@ -62,26 +65,7 @@ button,
     justify-content: center;
 }
 
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation,
-.site-main .pagination,
-.site-main .woocommerce-pagination {
-    margin: 0 -4em 1.5em;
-    background: rgba(0, 0, 0, 0.03);
-    overflow: hidden;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    font-weight: 400;
-}
-.site-main .pagination .nav-links {
-    padding: 1.5em;
-    text-align: center;
-}
-.site-main .pagination .nav-links > span,
-.page-links > span.page-links-number,
-.woocommerce-pagination .page-numbers span {
+.page-links > span.page-links-number{
     display: inline-block;
     background: #cecece;
     -webkit-border-radius: 2px;
@@ -91,9 +75,7 @@ button,
     padding: 0.5em 0.8em;
     margin: 1px 0;
 }
-.woocommerce-pagination .page-numbers li {
-    display: inline-block;
-}
+
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
@@ -141,31 +123,6 @@ button,
 /*menu*/
 .subtitle {
     margin: 0 0 2em 0;
-}
-.fancy {
-    line-height: 0.4;
-    text-align: center;
-}
-.fancy span {
-    display: inline-block;
-    position: relative;
-}
-.fancy span:before,
-.fancy span:after {
-    content: "";
-    position: absolute;
-    height: 5px;
-    border-top: 1px solid #ad2737;
-    top: 0;
-    width: 600px;
-}
-.fancy span:before {
-    right: 100%;
-    margin-right: 15px;
-}
-.fancy span:after {
-    left: 100%;
-    margin-left: 15px;
 }
 /*masonary grid*/
 * {
@@ -277,6 +234,9 @@ a.btn-effect:hover {
 .header .navbar-fixed-top{
     background: #8C001A;
 }
+.header .fixed-theme{
+    background: #8C001A;
+}
 .admin-bar .header .navbar-fixed-top{
     top: 32px;
 }
@@ -291,13 +251,16 @@ a.btn-effect:hover {
 /* Logo Style*/
 .header-logo,.header-text {
     float: left;
+    margin-top: 10px 0;
+}
+.header-text {
+    margin-top: 15px;
 }
 .header-text h3{
     font-family: 'Ruthie' , 'cursive';
     font-size: 30px;
     line-height: 30px;
     font-weight: 700;
-    padding-top: 15px;
 }
 
 .header-logo img {
@@ -305,12 +268,20 @@ a.btn-effect:hover {
     max-height: 80px;
     width: auto;
     max-width: 100%;
-    margin: 5px 0px;
+    margin: 10px 0px;
 }
-.header-text h3{
+.header-text h3,.header-text span{
     margin: 0px;
+    color: #fff;
+    line-height: 30px;
 }
-
+.navbar-fixed-top .logo-dark{ display: none;}
+.navbar-top-scroll .logo-dark{ display: block;}
+.navbar-top-scroll .custom-logo{ display: none;}
+.home .header { position: absolute; }
+.home .header .navbar-fixed-top { background: transparent; }
+.home .header .navbar-top-scroll { background: #8c001a; }
+.navbar-top-scroll #cssmenu {    height: 60px;  }
 /*Menu Style*/
 #cssmenu{display: flex;height: 90px;align-items: center;}
 #cssmenu ul,
@@ -453,7 +424,7 @@ a.btn-effect:hover {
 }
 
 #cssmenu > ul > li.has-sub:hover > a::after {
-    border-color: #8C001A;
+    border-color: #FFFFFF;
     -webkit-transform: rotate(222deg);
     -moz-transform: rotate(222deg);
     -ms-transform: rotate(222deg);
@@ -480,6 +451,7 @@ ul.sub-menu .submenu-left,ul.children .submenu-left {
 
 #cssmenu ul ul ul {
     top: 0;
+    padding:0;
 }
 
 #cssmenu.align-right ul ul ul {
@@ -569,6 +541,9 @@ ul.sub-menu .submenu-left,ul.children .submenu-left {
     background-color: rgb(255, 255, 255);
     width: 100%;
     border-bottom: 1px solid #e6e6e6;
+}
+.navbar-top-scroll #cssmenu {
+    height: 60px;
 }
 /*menu end*/
 /* footer */
@@ -870,9 +845,11 @@ ul.sub-menu .submenu-left,ul.children .submenu-left {
     height: 0%;
     background: rgba(2,17,27,0.8);
      transition:.6s all ease-in-out;
+     opacity: 0;
 }
 .blog-image-link:hover .blog-image-overlay{
     height: 100%;
+    opacity: 0.8;
 }
 .grid.masonry {
     margin: 22px 0 30px;
@@ -1026,10 +1003,15 @@ ul.sub-menu .submenu-left,ul.children .submenu-left {
     transition: 0.5s;
     font-weight: 400;
     font-size: 16px;
-    margin: 0 15px;
+    margin: 0 15px !important;
 }
 .blog-sidebar .widget ul li a:hover {
     color: #240115;
+}
+.footer-widget .tagcloud a:hover{
+    border: 1px solid #fff !important;
+    color: #fff !important;
+    background:transparent !important;
 }
 .blog-sidebar ul {
     margin: 0;
@@ -1227,7 +1209,7 @@ p.comment-form-comment{margin-bottom: 0;}
     padding-bottom: 30px;
 }
 .comment-reply-title, .comments-count, .comment-notes{
-    color: #02111B;
+    color:#000; /*#02111B*/
 }
 
 .comment-area article {
@@ -1249,6 +1231,7 @@ p.comment-form-comment{margin-bottom: 0;}
 }
 .comment-author-link{
     font-size: 14px;
+    padding-left: 15px;
 }
 .reply{
     float: right;
@@ -1333,7 +1316,7 @@ input[type=submit]:hover {
 }
 /* LABEL */
 label {
-    color: #02111B;
+    color: #000;
     opacity: 0.8;
     left: 10px;
     top: 10px;
@@ -1529,6 +1512,9 @@ table,
     text-align: center;
     font-size: 14px;
 }
+.footer-widget #wp-calendar tfoot td a:hover{
+    color: #fff !important;
+}
 .blog-sidebar th {
     color: #61757c;
 }
@@ -1561,6 +1547,10 @@ table,
     cursor: pointer;
     line-height: 1;
     font-size: 14px;
+}
+.footer-widget select {
+    color: #000;
+    background: #fff;
 }
 .widget .tagcloud a:hover {
     background:transparent;
@@ -1741,147 +1731,6 @@ table,
 }
 
 /*Blog post slider*/
-/*css for upcoming seminar section start*/
-.upcoming-seminars .timeline {
-    position: relative;
-    padding: 0 0 30px;
-}
-
-.upcoming-seminars .timeline:before{
-    content: '';
-    position: absolute;
-    width: 1px;
-    height: 100%;
-    left: 50%;
-    background:#e1e1e1;
-}
- 
-.upcoming-seminars .blog-card{
-    padding: 20px;
-}
-.upcoming-seminars .blog-card a{
-    color: #ad2737;
-}
-.upcoming-seminars .blog-card p{
-    overflow: hidden;
-}
-.upcoming-seminars .blog-card .blog-title{
-    padding-bottom: 10px;
-    font-weight: 600;
-}
-.upcoming-seminars .blog-card .blog-date{
-    padding-bottom: 10px;
-}
-.upcoming-seminars .first-event, .upcoming-seminars .second-event{
-    padding: 15px 50px;
-    position: relative;
-    background: #fff;
-}
-.upcoming-seminars .event-date{
-    margin: 100px 0;
-    padding: 15px 0;
-    background: #fff;
-}
-.upcoming-seminars .event-date .date{
-    color: #4c4d4d;
-    padding-bottom: 60px;
-}
-.upcoming-seminars .event-date .date h1{
-    font-weight: bold;
-    font-size: 70px;
-}
-.upcoming-seminars .event-date .date h3{
-    color: #ad2737;
-    font-weight: 600;
-    margin-top: 0px;
-}
-.upcoming-seminars .event-date .book-seat a {
-    border: 1px solid #ad2737;
-    background-color: #fff;
-    padding: 12px 12px 8px;
-    margin-bottom: 45px;
-    color: #4d4d4d;
-    letter-spacing: 1.5px;
-    line-height: 1;
-    font-weight: bold;
-    display: inline-block;
-}
-
-.upcoming-seminars .event-date .book-seat a:hover, 
-.upcoming-seminars .event-date .book-seat a:focus{
-    background-color: #ad2737;
-    color: #fff;
-}
-.upcoming-seminars .event-date .social-network a {
-    margin: 0 8px;
-    color: #fff;
-    font-size: 20px;
-    padding: 5px;
-    background: #e1e1e1;
-    height: 30px;
-    width: 30px;
-    text-align: center;
-    line-height: 20px;
-}
-
-.upcoming-seminars .event-date .social-network a:hover, .upcoming-seminars .event-date .social-network a:focus {
-    background: #ad2737;
-}
-
-.upcoming-seminars .date .event-month{
-    font-weight: 600;
-    font-size: 20px;
-    color: #ad2737;
-    line-height: 1;
-    letter-spacing: 1.8px;
-}
-.upcoming-seminars .date .event-day{
-    font-weight: bold;
-    font-size: 80px;
-    color: #4d4d4d;
-    line-height: 1;
-    letter-spacing: 7px;
-}
-
-.upcoming-seminars .first-event:before,
-.upcoming-seminars .second-event:after{
-    content: '';
-    height: .4em;
-    width: .4em;
-    background:  #ad2737;
-    display: block;
-    position: absolute;
-    transform: rotate(45deg);
-    top:117px;
-}
-
-.upcoming-seminars .first-event:before{
-    left: -17px;  
-}
-.upcoming-seminars .second-event:after{
-    right: -19px;
-}
-
-.upcoming-seminars .arrow-down{
-    width: 0; 
-    height: 0; 
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-top: 7px solid #000;
-    position: absolute;
-    top: 12px;
-    left: 7px;
-    right: 0;
-    bottom: 0;
-}
-.upcoming-seminars .triangle-border {
-    padding: 10px;
-    border: 1px solid #ad2737;
-    width: 30px;
-    height: 30px;
-    position: relative;
-    margin: auto;
-}
 
 .not-found{
     padding: 60px 0;
@@ -1916,7 +1765,7 @@ ul.ro-list-disc li:before {
 /* Media Query Start */
 /*----testimonail---*/
 .carousel-overlay{
-  position: absolute;
+  /*position: absolute;*/
   width: 100%;
   height: 100%;
   top: 0;
@@ -2258,26 +2107,24 @@ table th, table td{
     }
 }
 @media screen and (max-width: 1024px) {
+    
     /*MENU*/
-    /*.blog-summary p{display:none;}*/
-    /*.blog-info-text .blog-title{font-size:20px;}*/
     .top-menu {
         /*padding-right: 15px;*/
         width: 100%;
     }
-    .header-text h3{padding: 10px 0;}
-    .header-text{padding: 10px 0 25px;}
+    .header-text h3{padding:0;}
+    .header-text{padding:0}
     #cssmenu {
-        width: 100%;
+        /*width: 100%;*/
     }
     #cssmenu ul {
-        width: 100%;
-        display: none;
-        background: #8C001A;
-        position: absolute;
-        top: 0;
-        padding: 5px 15px;
-        left:0px;
+    background: #8c001a none repeat scroll 0 0;
+    left: 0;
+    padding: 5px 15px;
+    position: absolute;
+    top: 89px;
+    width: 100%;
     }
     #cssmenu.align-center > ul,
     #cssmenu.align-right ul ul {
@@ -2309,7 +2156,7 @@ table th, table td{
     #cssmenu > ul > li,
     #cssmenu.align-center > ul > li,
     #cssmenu.align-right > ul > li {
-        float: none;
+        float: left;
         display: block;
     }
     #cssmenu li > ul {
@@ -2336,17 +2183,17 @@ table th, table td{
         color: #FFFFFF;
         background: #8C001A;
         line-height: 24px;
-        padding: 2px 10px;
+        padding: 2px 10px 2px 30px;
     }
     #cssmenu ul ul li:hover > a,
     #cssmenu ul ul li a:hover {
         color: #FFFFFF;
     }
     #cssmenu ul ul ul li a {
-        padding-left: 40px;
-    }
-    #cssmenu ul ul ul li a:last-child {
         padding-left: 60px;
+    }
+    #cssmenu ul ul ul ul li a {
+        padding-left: 90px;
     }
     #cssmenu ul ul,
     #cssmenu ul ul ul {
@@ -2362,20 +2209,22 @@ table th, table td{
     #cssmenu ul ul li.has-sub > a::after {
         display: none;
     }
-    .header-logo img { margin-top: 18px;}
+
     #cssmenu #menu-button {
-        display: block;
-        padding: 17px 10px;
-        color: #8C001A;
-        background-color:#02111B;
-        cursor: pointer;
-        font-size: 12px;
-        text-transform: uppercase;
-        width: 40px;
-        right: 0px;
-        position: absolute;
-        top: -83px;
-        border-radius: 4px;
+    background-color: #02111b;
+    border-radius: 4px;
+    bottom: auto;
+    color: #8c001a;
+    cursor: pointer;
+    display: block;
+    font-size: 12px;
+    height: auto;
+    padding: 17px 9px;
+    position: absolute;
+    right: 15px;
+    text-transform: uppercase;
+    top: 20px;
+    width: 40px;
     }
     #cssmenu #menu-button::after {
         content: '';
@@ -2452,13 +2301,19 @@ table th, table td{
     .grid-sizer, .grid-item{
             width: 100%;
     }
-}
+
     /*menu css */
     /*menu-new-code End*/
+}
+@media screen and (max-width:1000px) {
+        #cssmenu > ul > li > a{
+        float: none;
+    }
 }
 @media screen and (max-width:991px) {
     /*menu*/
     /*Logo-Description*/
+
     .logo-description #cssmenu > ul > li > a {
         padding: 10px 10px;
     }
@@ -2469,11 +2324,11 @@ table th, table td{
         max-height: calc(100vh - 90px);
     }
     #cssmenu > ul > li > a {
-        padding: 17px 9px 17px 9px;
+        padding: 0px 9px 0px 9px;
     }
     #cssmenu ul ul li a {
         width: 100%;
-        padding: 10px 9px;
+        padding: 10px 9px 5px 30px;
     }
     /*menu end*/
     /*Tabs*/
@@ -2490,12 +2345,7 @@ table th, table td{
     /*blgo-page*/
     .blog-content-left2 ul li .news-content {
         max-width: 230px;
-    }
-    /*timeline start*/
-    .upcoming-seminars .first-event, .upcoming-seminars .second-event{
-        padding: 15px 0;
-    }
-    /*timeline end*/
+    } 
 }
 @media screen and (max-width:767px) {
     header{
@@ -2540,18 +2390,7 @@ table th, table td{
         padding: 8px;
     }
     /* footer End */
-    .upcoming-seminars .first-event:before,
-    .upcoming-seminars .second-event:after{
-        top: -50px;
-        left: 0;
-        right: 0;
-        margin: auto;
-    }
-    .upcoming-seminars .blog-image img{
-        display: block;
-        margin: auto;
-    }
-    /*timeline end*/
+    
     /*Blog*/
     .blog-title,#breadcrumbs{
         text-align:center;

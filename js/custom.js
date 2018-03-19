@@ -45,43 +45,43 @@
             return jQuery(window).on('resize', resizeFix);
         });
     };
-    $(document).ready(function () {
-        $("#cssmenu").menumaker({
+    jQuery(document).ready(function () {
+        jQuery("#cssmenu").menumaker({
             title: "",
             format: "multitoggle"
         });
-        $("#cssmenu").prepend("<div id='menu-line'></div>");
+        jQuery("#cssmenu").prepend("<div id='menu-line'></div>");
         var foundActive = false,
             activeElement, linePosition = 0,
-            menuLine = $("#cssmenu #menu-line"),
+            menuLine = jQuery("#cssmenu #menu-line"),
             lineWidth, defaultPosition, defaultWidth;
-        $("#cssmenu > ul > li").each(function () {
-            if ($(this).hasClass('active')) {
-                activeElement = $(this);
+        jQuery("#cssmenu > ul > li").each(function () {
+            if (jQuery(this).hasClass('active')) {
+                activeElement = jQuery(this);
                 foundActive = true;
             }
         });
         if (foundActive === false) {
-            activeElement = $("#cssmenu > ul > li").first();
+            activeElement = jQuery("#cssmenu > ul > li").first();
         }
         jQuery('.header').css('height',jQuery('.navbar-fixed-top').css('height'));
-        defaultWidth = lineWidth = activeElement.width();
+        defaultWidth = lineWidth = activeElement.width();        
         if((activeElement).is(':empty')) {
             defaultPosition = linePosition = activeElement.position().left;
         }
-        menuLine.css("width", lineWidth);
+        menuLine.css("width", '50px');
         menuLine.css("left", linePosition);
 
-        $("#cssmenu > ul > li").hover(function () {
-                activeElement = $(this);
+        jQuery("#cssmenu > ul > li").hover(function () {
+                activeElement = jQuery(this);
                 lineWidth = activeElement.width();
                 linePosition = activeElement.position().left;
-                menuLine.css("width", lineWidth);
+                menuLine.css("width", '50px');
                 menuLine.css("left", linePosition);
             },
             function () {
                 menuLine.css("left", defaultPosition);
-                menuLine.css("width", defaultWidth);
+                menuLine.css("width", '50px');
             });
          /** Set Position of Sub-Menu **/
         var wapoMainWindowWidth = jQuery(window).width();

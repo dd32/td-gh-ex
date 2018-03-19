@@ -10,7 +10,7 @@ get_header(); ?>
 	<div class="container">
 		<div class="blog-title">
 		    <h2><?php printf( esc_html__( 'Search Results for: %s', 'bar-restaurant'), get_search_query(false)); ?></h2>
-		    <div class="breadCumbs"><?php bar_retaurant_breadcrumbs(); ?></div>
+		    <div class="breadCumbs"><?php bar_restaurant_breadcrumbs(); ?></div>
 		</div>
 	</div>
 </section>
