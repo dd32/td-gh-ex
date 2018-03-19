@@ -1,23 +1,14 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * Template part for displaying posts
  *
  * @package fmi
  */
-
-get_header(); ?>
-
+?>
 <div id="content" class="site-content">
   <div class="container">
     <div class="site-content-area">
-
+      
 <?php
 $blog_layout = get_theme_mod('blog_layout', 'right_sidebar');
 
@@ -34,25 +25,37 @@ if ($blog_layout == 'left_sidebar') {
 <?php
 }
 ?>
-
           <div id="primary" class="content-area">
             <main id="main" class="site-main">
 
-              <?php
+            <?php
+            if ( have_posts() ) :
+
+              // archive page header
+              fmi_page_header();
+
+              /* Start the Loop */
               while ( have_posts() ) : the_post();
 
-                get_template_part( 'template-parts/content', 'page' );
+                get_template_part( 'template-parts/content', 'standard' );
 
-                // If comments are open or we have at least one comment, load up the comment template.
-                if ( comments_open() || get_comments_number() ) :
-                  comments_template();
-                endif;
+              endwhile;
 
-              endwhile; // End of the loop.
-              ?>
+              if (get_theme_mod('blog_pagination') == 'navigation') {
+                fmi_posts_navigation();
+              } else {
+                fmi_posts_pagination();
+              }
+
+            else :
+
+              get_template_part( 'template-parts/content', 'none' );
+
+            endif; ?>
 
             </main><!-- #main -->
           </div><!-- #primary -->
+
 <?php
 if ($blog_layout == 'right_sidebar') {
 ?>
@@ -73,9 +76,7 @@ if ($blog_layout == 'left_sidebar') {
 <?php
 }
 ?>
+
     </div>
   </div>
 </div><!-- #content -->
-
-<?php
-get_footer();

@@ -7,58 +7,11 @@
  * @package fmi
  */
 
-get_header(); ?>
+// header
+get_header();
 
-<?php
-$home_layout = get_theme_mod('home_layout', 0);
-if($home_layout){
-?>
-<div class="col-md-12">
-<?php }else{?>
-<div class="col-md-8">
-<?php }?>
+// blog posts
+get_template_part('template-parts/blog-posts');
 
-  <div id="primary" class="content-area">
-    <main id="main" class="site-main">
-
-    <?php
-    if ( have_posts() ) : ?>
-
-      <header class="page-header">
-        <?php
-          the_archive_title( '<h1 class="page-title">', '</h1>' );
-          the_archive_description( '<div class="archive-description">', '</div>' );
-        ?>
-      </header><!-- .page-header -->
-
-      <?php
-      /* Start the Loop */
-      while ( have_posts() ) : the_post();
-
-        /*
-         * Include the Post-Format-specific template for the content.
-         * If you want to override this in a child theme, then include a file
-         * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-         */
-        get_template_part( 'template-parts/content', get_post_format() );
-
-      endwhile;
-
-      if (get_theme_mod('blog_pagination') == 'navigation') {
-        fmi_posts_navigation();
-      } else {
-        fmi_posts_pagination();
-      }
-
-    else :
-
-      get_template_part( 'template-parts/content', 'none' );
-
-    endif; ?>
-
-    </main><!-- #main -->
-  </div><!-- #primary -->
-</div>
-<?php
-fmi_sidebar_select();
+// footer
 get_footer();

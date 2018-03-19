@@ -83,7 +83,7 @@ add_action( 'after_setup_theme', 'fmi_setup' );
  * @global int $content_width
  */
 function fmi_content_width() {
-  $GLOBALS['content_width'] = apply_filters( 'fmi_content_width', 650 );
+  $GLOBALS['content_width'] = apply_filters( 'fmi_content_width', 630 );
 }
 add_action( 'after_setup_theme', 'fmi_content_width', 0 );
 
@@ -91,13 +91,17 @@ add_action( 'after_setup_theme', 'fmi_content_width', 0 );
  * Enqueue styles.
  */
 if (!function_exists('fmi_styles')) {
-  function fmi_styles() {  
+  function fmi_styles() {
+
     // google fonts
-    wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic', array() ,'1.3.14');
+    wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic', array() ,'1.3.16');
 
     // bootstrap
     wp_enqueue_style('bootstrap', get_template_directory_uri().'/assets/bootstrap/css/bootstrap.min.css', array(), '3.3.7');
     wp_enqueue_style('bootstrap-theme', get_template_directory_uri().'/assets/bootstrap/css/bootstrap-theme.min.css', array(), '3.3.7');
+
+    // ie10 viewport bug workaround
+    wp_enqueue_style('ie10-viewport-bug-workaround', get_template_directory_uri().'/assets/css/ie10-viewport-bug-workaround.css', array(), '1.3.16');
 
     // font awesome
     wp_enqueue_style('font-awesome', get_template_directory_uri().'/assets/font-awesome/css/font-awesome.min.css', array() ,'4.7.0');
@@ -105,9 +109,9 @@ if (!function_exists('fmi_styles')) {
     // owl carousel
     wp_enqueue_style('owl-carousel', get_template_directory_uri().'/assets/owl-carousel/owl.carousel.css', array(), '1.3.3');
     wp_enqueue_style('owl-theme', get_template_directory_uri().'/assets/owl-carousel/owl.theme.css', array(), '1.3.3');
-    
+
     // main stylesheet
-    wp_enqueue_style('theme-style', get_stylesheet_directory_uri().'/style.css', array(), '1.3.14');
+    wp_enqueue_style('theme-style', get_stylesheet_directory_uri().'/style.css', array(), '1.3.16');
 
     // custom stylesheet
     if ( function_exists( 'fmi_get_custom_style' ) ) {
@@ -122,17 +126,26 @@ add_action( 'wp_enqueue_scripts', 'fmi_styles' );
  */
 if (!function_exists('fmi_scripts')) {
   function fmi_scripts() {
+
+    // html5shiv.js (for IE)
+    wp_enqueue_script('html5shiv', get_template_directory_uri().'/assets/js/html5shiv.min.js', array(), '3.7.3', false);
+    wp_script_add_data('html5shiv', 'conditional', 'lt IE 9');
+
+    // respond.js (for IE)
+    wp_enqueue_script('respond', get_template_directory_uri().'/assets/js/respond.min.js', array(), '1.4.2', false);
+    wp_script_add_data('respond', 'conditional', 'lt IE 9');
+
     // bootstrap
     wp_enqueue_script('bootstrap', get_template_directory_uri().'/assets/bootstrap/js/bootstrap.min.js', array('jquery'), '3.3.7', true);
 
     // owl carousel
     wp_enqueue_script('owl-carousel', get_template_directory_uri().'/assets/owl-carousel/owl.carousel.min.js', array('jquery'), '1.3.3', true);
 
-    // fitvids
-    wp_enqueue_script( 'fitvids-js', get_template_directory_uri().'/assets/js/jquery.fitvids.js', array('jquery'), '1.0' ,true);
-
+    // IE10 viewport hack for Surface/desktop Windows 8 bug
+    wp_enqueue_script('ie10-viewport-bug-workaround', get_template_directory_uri().'/assets/js/ie10-viewport-bug-workaround.js', array(), '1.3.16', true);
+    
     // theme js
-    wp_enqueue_script( 'theme-js', get_template_directory_uri().'/assets/js/theme.js', array('jquery'), '1.3.14' ,true);
+    wp_enqueue_script( 'theme-js', get_template_directory_uri().'/assets/js/theme.js', array('jquery'), '1.3.16' ,true);
 
     // comments
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -166,10 +179,4 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-  require get_template_directory() . '/inc/jetpack.php';
-}
+require get_template_directory() . '/inc/sanitize.php';

@@ -1,15 +1,25 @@
 jQuery.noConflict()(function($) {
   $(document).ready(function() {
 
-    jQuery('#back_top').click(function(){
-      jQuery('html, body').animate({scrollTop:0}, 'normal');return false;
-    }); 
-    jQuery(window).scroll(function(){
-      if(jQuery(window).scrollTop() !== 0){jQuery('#back_top').css('display','block');}else{jQuery('#back_top').css('display','none');}
-    });
-    if(jQuery(window).scrollTop() !== 0){jQuery('#back_top').css('display','block');}else{jQuery('#back_top').css('display','none');}
-    
-    jQuery("#main").fitVids();
+    function backToTopButton() {
+      var
+        $scrollTopBtn = $('#back_top');
+      if ($scrollTopBtn.hasClass('visible-button')) {
+        $scrollTopBtn.removeClass('visible-button');
+      }
+      $(window).scroll(function() {
+        if ($(window).scrollTop() > 1000) {
+          $scrollTopBtn.addClass('visible-button');
+        } else {
+          $scrollTopBtn.removeClass('visible-button');
+        }
+      });
+      $scrollTopBtn.on('click', function() {
+        $('html:not(:animated), body:not(:animated)').animate({scrollTop: 0}, 0);
+        return false;
+      });
+    }
+    backToTopButton();
 
     $('.slider-cycle').owlCarousel({
       singleItem: true,

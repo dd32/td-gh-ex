@@ -5,71 +5,35 @@
  * @package fmi
  */
 
-/**
- * Adds custom classes to the array of body classes.
- *
- * @param array $classes Classes for the body element.
- * @return array
- */
-function fmi_body_classes( $classes ) {
-  // Adds a class of hfeed to non-singular pages.
-  if ( ! is_singular() ) {
-    $classes[] = 'hfeed';
-  }
+if (!function_exists('fmi_post_excerpt')) {
+  function fmi_post_excerpt() {
+    $excerpt_type = get_theme_mod('blog_excerpt_type', 'excerpt');
+    if ($excerpt_type == 'excerpt') {
+      ?>
 
-  return $classes;
-}
-add_filter( 'body_class', 'fmi_body_classes' );
+      <!-- excerpt -->
+      <div class="entry-content clearfix">
+        <?php the_excerpt(); ?>
+      </div>
+      <!-- end excerpt -->
 
-/**
- * Add a pingback url auto-discovery header for singularly identifiable articles.
- */
-function fmi_pingback_header() {
-  if ( is_singular() && pings_open() ) {
-    echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
-  }
-}
-add_action( 'wp_head', 'fmi_pingback_header' );
+      <?php
+    } else {
+      ?>
 
-function fmi_sidebar_select() { 
-  if(is_page()){
-    $page_layout = get_theme_mod( 'page_layout', 0);
-    if($page_layout){
-    
-    }else{
-      get_sidebar();
-    }
-  }else{
-    $home_layout = get_theme_mod( 'home_layout', 0);
-    if($home_layout){
-    
-    }else{
-      get_sidebar();
+      <!-- excerpt (post content) -->
+      <div class="entry-content clearfix">
+        <?php the_content('[...]', false); ?>
+      </div>
+      <!-- end excerpt (post content) -->
+
+      <?php
     }
   }
 }
 
-function fmi_body_class( $classes ) {
-  if(is_page()){
-    $page_layout = get_theme_mod( 'page_layout', 0);
-    if($page_layout){
-      $classes[] = 'no-sidebar-full-width';
-    }else{
-  
-    }
-  }else{
-    $home_layout = get_theme_mod( 'home_layout', 0);
-    if($home_layout){
-      $classes[] = 'no-sidebar-full-width';
-    }else{
-
-    }
-  }
-  return $classes;
-}
-add_filter( 'body_class', 'fmi_body_class' );
-
-function fmi_slider() {
+if (!function_exists('fmi_slider')) {
+  function fmi_slider() {
 ?>
   <div class="slider-wrap">
     <div class="slider-cycle">
@@ -111,9 +75,51 @@ function fmi_slider() {
     </nav>
   </div>
 <?php
+  }
 }
 
-function fmi_get_custom_style(){
+if (!function_exists('fmi_page_header')) {
+  function fmi_page_header(){
+    // author page
+    if (is_author()) {
+?>
+      <header class="page-header">
+        <h1 class="page-title"><?php the_archive_title();?></h1>
+        <?php if (get_the_author_meta('description')) { ?>
+        <div class="archive-description"><?php the_author_meta('description'); ?></div>
+        <?php }?>
+      </header><!-- .page-header -->
+<?php
+    // category/tag page
+    } else if (is_category() || is_tag()) {
+?>
+      <header class="page-header">
+        <h1 class="page-title"><?php the_archive_title();?></h1>
+        <?php if (get_the_archive_description()) { ?>
+        <div class="archive-description"><?php the_archive_description();?></div>
+        <?php }?>
+      </header><!-- .page-header -->
+<?php
+    // search results page
+    } else if (is_search()) { 
+?>
+      <header class="page-header">
+        <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'fmi' ), '<span>' . get_search_query() . '</span>' );?></h1>
+      </header><!-- .page-header -->
+<?php
+    // archive page
+    } else if (is_archive()) {
+?>
+      <header class="page-header">
+        <h1 class="page-title"><?php the_archive_title();?></h1>
+      </header><!-- .page-header -->
+<?php
+    }
+  }
+}
+
+if (!function_exists('fmi_get_custom_style')) {
+  function fmi_get_custom_style(){
     $css = '';
     $primary_color = esc_attr( get_theme_mod( 'theme_color' ) );
     if ( $primary_color ) {
@@ -241,4 +247,5 @@ a:active{
 ';
     }
     return $css;
+  }
 }

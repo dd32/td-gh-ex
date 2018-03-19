@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Fmi\n"
-"POT-Creation-Date: 2018-03-05 14:35+0800\n"
-"PO-Revision-Date: 2018-03-05 14:36+0800\n"
+"POT-Creation-Date: 2018-03-19 08:27+0800\n"
+"PO-Revision-Date: 2018-03-19 08:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -11,11 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.2\n"
 
-#: 404.php:26
+#: 404.php:21
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:31
+#: 404.php:26
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
@@ -23,69 +23,69 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:22
+#: footer.php:19
 msgid "Send Us an Email"
 msgstr ""
 
-#: footer.php:25
+#: footer.php:22
 msgid "Contact Us on Skype"
 msgstr ""
 
-#: footer.php:28
+#: footer.php:25
 msgid "Find Us on Facebook"
 msgstr ""
 
-#: footer.php:31
+#: footer.php:28
 msgid "Follow Us on Twitter"
 msgstr ""
 
-#: footer.php:34
+#: footer.php:31
 msgid "Find Us on Google Plus"
 msgstr ""
 
-#: footer.php:37
+#: footer.php:34
 msgid "View our YouTube Channel"
 msgstr ""
 
-#: footer.php:40
+#: footer.php:37
 msgid "Follow Us on Instagram"
 msgstr ""
 
-#: footer.php:43
+#: footer.php:40
 msgid "Pin Us on Pinterest"
 msgstr ""
 
-#: footer.php:46
+#: footer.php:43
 msgid "Find Us on LinkedIn"
 msgstr ""
 
-#: footer.php:49
+#: footer.php:46
 msgid "Find Us on Tumblr"
 msgstr ""
 
-#: footer.php:52
+#: footer.php:49
 msgid "Find Us on Flickr"
 msgstr ""
 
-#: footer.php:56
+#: footer.php:53
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: footer.php:58
+#: footer.php:55
 #, php-format
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: footer.php:63
+#: footer.php:60
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: footer.php:70
+#: footer.php:67
 msgid "Top"
 msgstr ""
 
-#: footer.php:70
+#: footer.php:67
 msgctxt "top button"
 msgid "Top"
 msgstr ""
@@ -94,151 +94,163 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: inc/customizer.php:30
+#: inc/customizer.php:11
 msgid "Theme Options"
 msgstr ""
 
-#: inc/customizer.php:37
+#: inc/customizer.php:19
 msgid "Colors"
 msgstr ""
 
-#: inc/customizer.php:47
+#: inc/customizer.php:29
 msgid "Theme Color"
 msgstr ""
 
-#: inc/customizer.php:56
+#: inc/customizer.php:38
 msgid "Theme Color 2"
 msgstr ""
 
-#: inc/customizer.php:64
+#: inc/customizer.php:46
 msgid "General Settings"
 msgstr ""
 
-#: inc/customizer.php:73
-msgid "Disable Sidebar on Home Page, Archive Page, Single Post"
-msgstr ""
-
-#: inc/customizer.php:83
+#: inc/customizer.php:55
 msgid "Blog Pagination or Navigation"
 msgstr ""
 
-#: inc/customizer.php:88
+#: inc/customizer.php:60
 msgid "Pagination"
 msgstr ""
 
-#: inc/customizer.php:89
+#: inc/customizer.php:61
 msgid "Navigation"
 msgstr ""
 
-#: inc/customizer.php:97
+#: inc/customizer.php:69
 msgid "Hide Header Title Text"
 msgstr ""
 
-#: inc/customizer.php:107
+#: inc/customizer.php:79
 msgid "Hide Header Search"
 msgstr ""
 
-#: inc/customizer.php:117
-msgid "Page Settings"
+#: inc/customizer.php:90
+msgid "Blog Layout"
 msgstr ""
 
-#: inc/customizer.php:126
-msgid "Hide Comments"
+#: inc/customizer.php:93
+msgid "Right sidebar"
 msgstr ""
 
-#: inc/customizer.php:136
-msgid "Disable Sidebar on Single Page"
+#: inc/customizer.php:94
+msgid "Left sidebar"
 msgstr ""
 
-#: inc/customizer.php:146
+#: inc/customizer.php:95
+msgid "One column"
+msgstr ""
+
+#: inc/customizer.php:104
+msgid "Use Excerpt or \"Read More tag\""
+msgstr ""
+
+#: inc/customizer.php:107
+msgid "Excerpt"
+msgstr ""
+
+#: inc/customizer.php:108
+msgid "Read More tag"
+msgstr ""
+
+#: inc/customizer.php:116
 msgid "Social Media Icons"
 msgstr ""
 
-#: inc/customizer.php:155
+#: inc/customizer.php:125
 msgid "Email Address"
 msgstr ""
 
-#: inc/customizer.php:165
+#: inc/customizer.php:135
 msgid "Skype"
 msgstr ""
 
-#: inc/customizer.php:175
+#: inc/customizer.php:145
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:185
+#: inc/customizer.php:155
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer.php:195
+#: inc/customizer.php:165
 msgid "Google Plus"
 msgstr ""
 
-#: inc/customizer.php:205
+#: inc/customizer.php:175
 msgid "YouTube"
 msgstr ""
 
-#: inc/customizer.php:215
+#: inc/customizer.php:185
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer.php:225
+#: inc/customizer.php:195
 msgid "Pinterest"
 msgstr ""
 
-#: inc/customizer.php:235
+#: inc/customizer.php:205
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/customizer.php:245
+#: inc/customizer.php:215
 msgid "Tumblr"
 msgstr ""
 
-#: inc/customizer.php:255
+#: inc/customizer.php:225
 msgid "Flickr"
 msgstr ""
 
-#: inc/customizer.php:264
+#: inc/customizer.php:235
 msgid "Slider"
 msgstr ""
 
-#: inc/customizer.php:273
+#: inc/customizer.php:244
 msgid "Check to activate slider"
 msgstr ""
 
-#: inc/customizer.php:284
+#: inc/customizer.php:255
 msgid "Image Upload #1"
+msgstr ""
+
+#: inc/customizer.php:256 inc/customizer.php:297 inc/customizer.php:338
+#: inc/customizer.php:379
+msgid "Upload slider image"
+msgstr ""
+
+#: inc/customizer.php:265 inc/customizer.php:306 inc/customizer.php:347
+#: inc/customizer.php:388
+msgid "Enter title for your slider"
+msgstr ""
+
+#: inc/customizer.php:275 inc/customizer.php:316 inc/customizer.php:357
+#: inc/customizer.php:398
+msgid "Enter your slider description"
 msgstr ""
 
 #: inc/customizer.php:285 inc/customizer.php:326 inc/customizer.php:367
 #: inc/customizer.php:408
-msgid "Upload slider image"
-msgstr ""
-
-#: inc/customizer.php:294 inc/customizer.php:335 inc/customizer.php:376
-#: inc/customizer.php:417
-msgid "Enter title for your slider"
-msgstr ""
-
-#: inc/customizer.php:304 inc/customizer.php:345 inc/customizer.php:386
-#: inc/customizer.php:427
-msgid "Enter your slider description"
-msgstr ""
-
-#: inc/customizer.php:314 inc/customizer.php:355 inc/customizer.php:396
-#: inc/customizer.php:437
 msgid "Enter link to redirect slider when clicked"
 msgstr ""
 
-#: inc/customizer.php:325
+#: inc/customizer.php:296
 msgid "Image Upload #2"
 msgstr ""
 
-#: inc/customizer.php:366
+#: inc/customizer.php:337
 msgid "Image Upload #3"
 msgstr ""
 
-#: inc/customizer.php:407
+#: inc/customizer.php:378
 msgid "Image Upload #4"
 msgstr ""
 
@@ -274,6 +286,11 @@ msgstr ""
 
 #: inc/template-comments.php:60
 msgid "Your comment"
+msgstr ""
+
+#: inc/template-functions.php:107
+#, php-format
+msgid "Search Results for: %s"
 msgstr ""
 
 #: inc/template-tags.php:39
@@ -320,11 +337,6 @@ msgstr ""
 
 #: inc/template-widgets.php:14
 msgid "Add widgets here."
-msgstr ""
-
-#: search.php:30
-#, php-format
-msgid "Search Results for: %s"
 msgstr ""
 
 #: searchform.php:14
