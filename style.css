@@ -4,7 +4,7 @@ Description: ArtGallery is fully Responsive Art WordPress Theme. Features: Anima
 Author: customizablethemes
 Author URI: https://customizablethemes.com
 Theme URI: https://customizablethemes.com/product/artgallery/
-Version: 1.0.0
+Version: 1.0.1
 Text Domain: artgallery
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -192,8 +192,7 @@ dt.gallery-icon:before {
 	margin:0;
 	line-height:1;
 	font-size:38px;
-		color:#1E90FF;
-
+	color:#1E90FF;
 }
 
 #navmain li {
@@ -277,22 +276,6 @@ ul {
 	margin:0;
 }
 
-
-	float:left;
-    height:26px;
-    line-height:26px;
-    text-align:center;
-    width:26px;
-	border-width:1px;
-	border-style:solid;
-	-webkit-border-radius:55px;
-	-moz-border-radius:55px;
-	-ms-border-radius:55px;
-	-o-border-radius:55px;
-	border-radius:55px;
-	margin-right:10px;
-}
-
 #search-popup-content {
 	display:none;
 	position:fixed;
@@ -301,15 +284,6 @@ ul {
 	background-color:#ffffff;
 	padding:10px !important;
 	border:1px solid #f5f5f5;
-}
-
-#hdrtop-searchform-subcontent {
-	line-height:27px;
-}
-
-#hdrtop-searchform-subcontent button {
-	padding-top:4px;
-	padding-bottom:4px;
 }
 
 #hdrtop-cart-subcontent li {
@@ -477,6 +451,7 @@ article ul > li:before {
 	content:"\f105";
 	opacity:0.7;
 }
+
 .col > ul {
 	margin-left:3px;
 }
@@ -490,6 +465,7 @@ article ul > li:before {
 	width:96%;
 	margin:5px 0 5px 0;
 }
+
 #copyright {
 	clear:both;
 	text-align:center;
@@ -1176,7 +1152,6 @@ img.wp-post-image {
     margin: 5px auto 5px auto;
 }
 
-
 .post-date {
 	display:block;
 	margin:-5px 0 10px 13px;
@@ -1652,7 +1627,9 @@ dt.gallery-icon > a:before,
 	.col3c {
 		margin:0 0 5px 0;
 	}
-}
+
+} /* End of Large Resolution: @media screen and (min-width: 800px) */
+
 
 /* Medium Resolution */
 @media screen and (max-width: 799px) {
@@ -1663,11 +1640,6 @@ dt.gallery-icon > a:before,
 	
 	.header-social-widget a {
 		padding-bottom:4px;
-	}
-
-	#hdrtop-searchform-subcontent {
-		font-size:18px;
-		letter-spacing:inherit;
 	}
 
 	#header-main-fixed {
@@ -1748,7 +1720,7 @@ dt.gallery-icon > a:before,
 		text-align:left;
 	}
 
-#navmain ul {
+	#navmain ul {
 		padding:0;
 	}
 				
@@ -1930,7 +1902,9 @@ dt.gallery-icon > a:before,
 	.col3c {
 		clear:both;
 	}
-}
+
+} /* End of Medium Resolution: @media screen and (max-width: 799px) */
+
 
 /* Small Resolution */
 @media screen and (max-width: 360px) {
@@ -2008,7 +1982,9 @@ dt.gallery-icon > a:before,
 		width:96%;
 		margin:0 2% 5px 2%;
 	}
-}
+
+} /* End of Small Resolution: @media screen and (max-width: 360px) */
+
 
 /* Extra-Large Resolution */
 @media screen and (min-width: 1200px) {
@@ -2028,8 +2004,7 @@ dt.gallery-icon > a:before,
 	}
 	
 	#main-content,
-	#container,
-	#hdrtop-searchform-subcontent {
+	#container {
 		margin-left:0;
 	}
 	
@@ -2042,7 +2017,7 @@ dt.gallery-icon > a:before,
 	#top-widget,
 	#home-cols, 
 	.bottom-widget,
-	.top-widget{
+	.top-widget {
 		padding-left:0;
 		padding-right:0;
 	}
@@ -2056,4 +2031,5 @@ dt.gallery-icon > a:before,
 		padding-left:0;
 		padding-right:0;
 	}
-}
+
+} /* End of Extra-Large Resolution: @media screen and (min-width: 1200px) */

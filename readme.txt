@@ -15,6 +15,9 @@ ArtGallery is fully Responsive Moto WordPress Theme. Features: Custom Logo, Cust
 
 == Changelog ==
 
+= 1.0.1 =
+* fix issues with glitches in style.css file
+
 = 1.0.0 =
 * initial release
 
