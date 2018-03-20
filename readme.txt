@@ -3,17 +3,25 @@ Contributors: customizablethemes
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 Requires at least: 4.7.0
 Tested up to: 4.9.2
-Stable tag: 1.0.0
-License: GPLv2 or later
+Stable tag: 1.0.2
+License: License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-ArtGallery WordPress Theme, Copyright 2017 CustomizableThemes.com
+ArtGallery WordPress Theme, Copyright 2017 CustomizableThemes.com.
+
+ArtGallery is distributed under the terms of the GNU GPL v2 or later
 
 == Description ==
 
 ArtGallery is fully Responsive Moto WordPress Theme. Features: Custom Logo, Custom Background, Footer copyright text customizations, Widget Areas: Sidebar, 3 Footer Columns, Translation-Ready and much more.
 
 == Changelog ==
+
+= 1.0.2 =
+- update GPL license declarations in style.css and readme.txt
+- remove searchform.php
+- update load_theme_textdomain without language path.
+- remove double-escaping within artgallery_show_copyright_text function
 
 = 1.0.1 =
 * fix issues with glitches in style.css file

@@ -4,10 +4,10 @@ Description: ArtGallery is fully Responsive Art WordPress Theme. Features: Anima
 Author: customizablethemes
 Author URI: https://customizablethemes.com
 Theme URI: https://customizablethemes.com/product/artgallery/
-Version: 1.0.1
+Version: 1.0.2
 Text Domain: artgallery
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
-License: GNU General Public License v2.0
+License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
@@ -652,7 +652,7 @@ pre {
 }
 
 /* search form */
-.search-wrapper {
+#searchform {
 	border:1px solid #B2AEA3;
 	background-color:#ffffff;
 	-webkit-border-radius:3px;
@@ -664,7 +664,7 @@ pre {
 	display:inline-block;
 }
 
-.search-wrapper .search-textbox {
+#searchform input[type="text"] {
 	border:none;
 	-webkit-border-radius:3px;
 	-moz-border-radius:3px;
@@ -673,9 +673,8 @@ pre {
 	border-radius:3px;
 }
 
-.search-wrapper  .search-button {
+#searchform input[type="submit"] {
 	color:#777777;
-	background-color:#ffffff;
 	-webkit-border-radius:3px;
 	-moz-border-radius:3px;
 	-ms-border-radius:3px;
@@ -684,11 +683,6 @@ pre {
 	box-shadow: none;
 	filter:none;
 	background-image: none;
-}
-
-.search-wrapper  .search-button:before {
-	font-family:'FontAwesome';
-	content:"\f002";
 }
 
 /* comments */
@@ -1208,18 +1202,6 @@ blockquote {
 /* custom page templates classes */
 .custom-entry-title {
 	padding-left:0 !important;
-}
-
-#searchform input[type="text"] {
-	padding: 1px 0 1px 3px;
-	background-color: #FFFFFF;
-    border: 1px solid #B2AEA3;
-    -webkit-border-radius:2px;
-	-moz-border-radius:2px;
-	-ms-border-radius:2px;
-	-o-border-radius:2px;
-	border-radius:2px;
-	padding:8px 5px;
 }
 
 #searchform input[type="submit"] {

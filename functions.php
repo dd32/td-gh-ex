@@ -36,7 +36,7 @@ if ( ! function_exists( 'artgallery_setup' ) ) :
 		 * If you're building a theme based on ArtGallery, use a find and replace
 		 * to change 'artgallery' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'artgallery', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'artgallery' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -229,7 +229,7 @@ if ( ! function_exists( 'artgallery_show_copyright_text' ) ) :
 	 */
 	function artgallery_show_copyright_text() {
 
-		$footerText = esc_html( get_theme_mod('artgallery_footer_copyright', null) );
+		$footerText = get_theme_mod('artgallery_footer_copyright', null);
 
 		if ( !empty( $footerText ) ) {
 
