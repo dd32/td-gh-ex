@@ -468,3 +468,6 @@ with testing and feature suggestions.
 
 = Version 3.2.2 =
 * Fix: Issue with schema.org and Post Single View Page Title.
+
+= Version 3.2.2 =
+* Fix: Issue with schema.org: featured images and author info. Obviously, the schema.org needed better testing for the disable option. Sorry.

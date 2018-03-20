@@ -472,13 +472,13 @@ function weaverx_echo_css( $css ) {
 
 // # MISC ==============================================================
 
-function weaverx_schema(  $who, $aux='' ) {		// added 3.1.13
+function weaverx_schema(  $who, $aux = '' ) {		// added 3.1.13
 	// apply schema.org info where we can.
 	// NOTE: This filter MUST be defined or else the $who arg will be echoed.
 	//return '';
 
 	if ( weaverx_getopt_checked ('_no_schemea') )
-		return '';
+		return $aux;
 
 	switch ( $who ) {
 		case 'archive':
