@@ -164,7 +164,13 @@ class Appointway_Customizer {
                 'appointway_facebook',
                 'appointway_google',
                 'appointway_rss',
-                'appointway_linkdin'
+                'appointway_linkdin',
+               'appointway_instagram',
+               'appointway_twitter',
+               'appointway_pinterest',
+               'appointway_youtube',
+               'appointway_tumblr',
+               'appointway_flickr'
             ),
         );
         return $section_content;
@@ -396,7 +402,48 @@ class Appointway_Customizer {
                 'type' => 'option',
                 'setting_type' => 'link',
                 'default' => '#'
-            )
+            ),
+            'appointway_instagram' => array(
+                'id' => 'appointway_options[appointway_instagram]',
+                'label' => __('Instagram URL', 'appointway'),
+                'description' => __('Mention the URL of your Instagram here.', 'appointway'),
+                'type' => 'option',
+                'setting_type' => 'link',
+                'default' => '#'
+            ),
+            'appointway_pinterest' => array(
+                'id' => 'appointway_options[appointway_pinterest]',
+                'label' => __('Pinterest URL', 'appointway'),
+                'description' => __('Mention the URL of your Pinterest here.', 'appointway'),
+                'type' => 'option',
+                'setting_type' => 'link',
+                'default' => '#'
+            ),
+            'appointway_youtube' => array(
+                'id' => 'appointway_options[appointway_youtube]',
+                'label' => __('Youtube URL', 'appointway'),
+                'description' => __('Mention the URL of your Youtube here.', 'appointway'),
+                'type' => 'option',
+                'setting_type' => 'link',
+                'default' => '#'
+            ),
+            'appointway_tumblr' => array(
+                'id' => 'appointway_options[appointway_tumblr]',
+                'label' => __('Tumblr URL', 'appointway'),
+                'description' => __('Mention the URL of your Tumblr here.', 'appointway'),
+                'type' => 'option',
+                'setting_type' => 'link',
+                'default' => '#'
+            ),
+            'appointway_flickr' => array(
+                'id' => 'appointway_options[appointway_flickr]',
+                'label' => __('Flickr URL', 'appointway'),
+                'description' => __('Mention the URL of your Flickr here.', 'appointway'),
+                'type' => 'option',
+                'setting_type' => 'link',
+                'default' => '#'
+            ),
+            
         );
         return $appointway_settings;
     }

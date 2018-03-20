@@ -2,6 +2,9 @@
 
 = Theme Name: Appointway Theme=
 
+= Version: 1.1.2 =
+1.Few Social Icons options added.
+
 = Version: 1.1.1 =
 1.Theme URI and footer links updated.
 
