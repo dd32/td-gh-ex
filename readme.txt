@@ -5,7 +5,7 @@ Contributors: siteorigin
 Tags: two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 
 Requires at least: 4.7
-Tested up to: 4.9.8
+Tested up to: 4.8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ An advanced multi-purpose theme for WordPress.
 
 == Description ==
 
-Vantage is a flexible multipurpose theme. Its strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, Smart Slider 3 for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store. We offer free support on our <a href="http://siteorigin.com/thread/">forum</a> (http://siteorigin.com/thread/).
+Vantage is a flexible multipurpose theme. Its strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, Smart Slider 3 for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store. We offer free and premium support on our support <a href="http://siteorigin.com/thread/">forums</a> (http://siteorigin.com/thread/).
 
 == Installation ==
 	
@@ -62,8 +62,14 @@ Vantage WordPress Theme is derived from Underscores WordPress Theme, Copyright 2
 
 == Images ==
 
-Miami skyline image sourced from [Pixabay](https://pixabay.com/en/panorama-miami-florida-water-usa-2117310/) by [pixeid](https://pixabay.com/en/users/pixexid-4729217/).
-Licensed under CC0 Creative Commons.
+Cell Phone image sourced from http://www.publicdomainpictures.net/view-image.php?image=15874&picture=woman-showing-a-cell-phone
+Licensed under Public Domain.
+
+Basketball Player image sourced from http://pixabay.com/en/basketball-sports-teams-players-95607/
+Licensed under Public Domain with confirmation of full Public Domain/CC0 license from the author.
+
+Nature Scene photo sourced from http://publicdomainarchive.com/
+Licensed under public domain.
 
 == Bundled Resources ==
 

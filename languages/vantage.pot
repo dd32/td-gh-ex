@@ -3,17 +3,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vantage\n"
+"Report-Msgid-Bugs-To: http://www.siteorigin.com\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language-Team: SiteOrigin <support@siteorigin.com>\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
 "Last-Translator: SiteOrigin <support@siteorigin.com>\n"
-"Report-Msgid-Bugs-To: http://www.siteorigin.com\n"
+"Language-Team: SiteOrigin <support@siteorigin.com>\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: 404.php:23
@@ -30,6 +31,70 @@ msgstr ""
 
 #: 404.php:42
 msgid "Try looking in the monthly archives."
+msgstr ""
+
+#: admin/about/page-free.php:1
+msgid "Forever Free"
+msgstr ""
+
+#: admin/about/page-free.php:3
+msgid "Vantage is a completely free WordPress theme."
+msgstr ""
+
+#: admin/about/page-free.php:4
+msgid "We'll continue developing and enhancing it for years to come."
+msgstr ""
+
+#: admin/about/page-github.php:1
+msgid "Developed on Github"
+msgstr ""
+
+#: admin/about/page-github.php:4
+msgid "Vantage is actively %sdeveloped on Github%s."
+msgstr ""
+
+#: admin/about/page-github.php:5
+msgid "You can watch what's happening with its development and even make contributions yourself."
+msgstr ""
+
+#: admin/about/page-mature.php:1
+msgid "Stable and Mature"
+msgstr ""
+
+#: admin/about/page-mature.php:3
+msgid "Vantage has been around for a while now, and in that time we've been able to refine it into a rock solid WordPress theme."
+msgstr ""
+
+#: admin/about/page-mature.php:4
+msgid "We'll continue evolving it over the years."
+msgstr ""
+
+#: admin/about/page-mature.php:5
+msgid "Vantage is only getting better from here."
+msgstr ""
+
+#: admin/about/page-page-builder.php:1
+msgid "Enhanced by Page Builder"
+msgstr ""
+
+#: admin/about/page-page-builder.php:3
+msgid "Vantage integrates, beautifully, with our %sfree Page Builder%s plugin."
+msgstr ""
+
+#: admin/about/page-page-builder.php:4
+msgid "This powerful plugin gives you full drag and drop capabilities right inside Vantage."
+msgstr ""
+
+#: admin/about/page-support.php:1
+msgid "Lightning Fast Support"
+msgstr ""
+
+#: admin/about/page-support.php:3
+msgid "As a Vantage user, you'll get fast, friendly support on our own %ssupport forums%s."
+msgstr ""
+
+#: admin/about/page-support.php:4
+msgid "You can also read through the %sVantage documentation%s to get to know it even faster."
 msgstr ""
 
 #: comments.php:26
@@ -59,108 +124,8 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content.php:47, inc/settings.php:379, inc/template-tags.php:544, loops/loop-circleicon.php:22, loops/loop-grid.php:24
+#: content.php:47, inc/settings.php:379, inc/template-tags.php:549, loops/loop-circleicon.php:22, loops/loop-grid.php:24
 msgid "Continue reading"
-msgstr ""
-
-#: functions.php:70
-msgid "Primary Menu"
-msgstr ""
-
-#: functions.php:260, inc/customizer.php:36
-msgid "Sidebar"
-msgstr ""
-
-#: functions.php:262
-msgid "Displays to the right or left of the content area."
-msgstr ""
-
-#: functions.php:271
-msgid "Shop"
-msgstr ""
-
-#: functions.php:273
-msgid "Displays on WooCommerce pages."
-msgstr ""
-
-#: functions.php:282, inc/customizer.php:40
-msgid "Footer"
-msgstr ""
-
-#: functions.php:284
-msgid "Displays below the content area."
-msgstr ""
-
-#: functions.php:292
-msgid "Header"
-msgstr ""
-
-#: functions.php:294
-msgid "Displays to the right of the logo."
-msgstr ""
-
-#: functions.php:302
-msgid "Masthead"
-msgstr ""
-
-#: functions.php:304
-msgid "Replaces the logo and header widget area."
-msgstr ""
-
-#: functions.php:399
-msgid "Back To Top"
-msgstr ""
-
-#: functions.php:599
-msgid "SiteOrigin Page Builder"
-msgstr ""
-
-#: functions.php:604
-msgid "SiteOrigin Widgets Bundle"
-msgstr ""
-
-#: functions.php:609
-msgid "SiteOrigin CSS"
-msgstr ""
-
-#: home-panels.php:5
-msgid "Page Builder Home"
-msgstr ""
-
-#: image.php:29
-msgid "&larr; Previous"
-msgstr ""
-
-#: image.php:30
-msgid "Next &rarr;"
-msgstr ""
-
-#: no-results.php:16
-msgid "Nothing Found"
-msgstr ""
-
-#: no-results.php:23
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: no-results.php:27
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr ""
-
-#: no-results.php:32
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr ""
-
-#: search.php:19
-msgid "Search Results for: %s"
-msgstr ""
-
-#: searchform.php:12
-msgid "Search for:"
-msgstr ""
-
-#: searchform.php:13, inc/mobilenav/mobilenav.php:22
-msgid "Search"
 msgstr ""
 
 #: fontawesome/icon-sections.php:4
@@ -227,6 +192,74 @@ msgstr ""
 msgid "Medical Icons"
 msgstr ""
 
+#: functions.php:70
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:261, inc/customizer.php:36
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:263
+msgid "Displays to the right or left of the content area."
+msgstr ""
+
+#: functions.php:272
+msgid "Shop"
+msgstr ""
+
+#: functions.php:274
+msgid "Displays on WooCommerce pages."
+msgstr ""
+
+#: functions.php:283, inc/customizer.php:40
+msgid "Footer"
+msgstr ""
+
+#: functions.php:285
+msgid "Displays below the content area."
+msgstr ""
+
+#: functions.php:293
+msgid "Header"
+msgstr ""
+
+#: functions.php:295
+msgid "Displays to the right of the logo."
+msgstr ""
+
+#: functions.php:303
+msgid "Masthead"
+msgstr ""
+
+#: functions.php:305
+msgid "Replaces the logo and header widget area."
+msgstr ""
+
+#: functions.php:400
+msgid "Back To Top"
+msgstr ""
+
+#: functions.php:607
+msgid "SiteOrigin Page Builder"
+msgstr ""
+
+#: functions.php:612
+msgid "SiteOrigin Widgets Bundle"
+msgstr ""
+
+#: functions.php:617
+msgid "SiteOrigin CSS"
+msgstr ""
+
+#: image.php:29
+msgid "&larr; Previous"
+msgstr ""
+
+#: image.php:30
+msgid "Next &rarr;"
+msgstr ""
+
 #: inc/class-tgm-plugin-activation.php:327
 msgid "Install Required Plugins"
 msgstr ""
@@ -235,12 +268,10 @@ msgstr ""
 msgid "Install Plugins"
 msgstr ""
 
-#. translators: %s: plugin name.
 #: inc/class-tgm-plugin-activation.php:330
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#. translators: %s: plugin name.
 #: inc/class-tgm-plugin-activation.php:332
 msgid "Updating Plugin: %s"
 msgstr ""
@@ -250,37 +281,37 @@ msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:334
-msgid "This theme requires the following plugin: %1$s."
+msgid "/*translators:1:pluginnames.*/This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #: inc/class-tgm-plugin-activation.php:340
-msgid "This theme recommends the following plugin: %1$s."
+msgid "/*translators:1:pluginnames.*/This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #: inc/class-tgm-plugin-activation.php:346
-msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid "/*translators:1:pluginnames.*/The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
 msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #: inc/class-tgm-plugin-activation.php:352
-msgid "There is an update available for: %1$s."
+msgid "/*translators:1:pluginnames.*/There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #: inc/class-tgm-plugin-activation.php:358
-msgid "The following required plugin is currently inactive: %1$s."
+msgid "/*translators:1:pluginnames.*/The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #: inc/class-tgm-plugin-activation.php:364
-msgid "The following recommended plugin is currently inactive: %1$s."
+msgid "/*translators:1:pluginnames.*/The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
@@ -321,17 +352,14 @@ msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 msgstr[1] ""
 
-#. translators: 1: plugin name.
 #: inc/class-tgm-plugin-activation.php:390
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#. translators: 1: plugin name.
 #: inc/class-tgm-plugin-activation.php:392
 msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
 msgstr ""
 
-#. translators: 1: dashboard link.
 #: inc/class-tgm-plugin-activation.php:394
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
@@ -373,7 +401,6 @@ msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr ""
 
-#. translators: %s: version number
 #: inc/class-tgm-plugin-activation.php:1982
 msgid "TGMPA v%s"
 msgstr ""
@@ -422,13 +449,11 @@ msgstr ""
 msgid "Update recommended"
 msgstr ""
 
-#. translators: 1: install status, 2: update status
 #: inc/class-tgm-plugin-activation.php:2342
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr ""
 
-#. translators: 1: number of plugins.
 #: inc/class-tgm-plugin-activation.php:2388
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
@@ -436,21 +461,18 @@ msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#. translators: 1: number of plugins.
 #: inc/class-tgm-plugin-activation.php:2392
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#. translators: 1: number of plugins.
 #: inc/class-tgm-plugin-activation.php:2396
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#. translators: 1: number of plugins.
 #: inc/class-tgm-plugin-activation.php:2400
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
@@ -498,17 +520,14 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#. translators: %2$s: plugin name in screen reader markup
 #: inc/class-tgm-plugin-activation.php:2603
 msgid "Install %2$s"
 msgstr ""
 
-#. translators: %2$s: plugin name in screen reader markup
 #: inc/class-tgm-plugin-activation.php:2608
 msgid "Update %2$s"
 msgstr ""
 
-#. translators: %2$s: plugin name in screen reader markup
 #: inc/class-tgm-plugin-activation.php:2614
 msgid "Activate %2$s"
 msgstr ""
@@ -557,17 +576,14 @@ msgstr ""
 msgid "Plugin activation failed."
 msgstr ""
 
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: inc/class-tgm-plugin-activation.php:3498
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#. translators: 1: plugin name, 2: error message.
 #: inc/class-tgm-plugin-activation.php:3501
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
-#. translators: 1: plugin name.
 #: inc/class-tgm-plugin-activation.php:3503
 msgid "The installation of %1$s failed."
 msgstr ""
@@ -576,7 +592,6 @@ msgstr ""
 msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
-#. translators: 1: plugin name.
 #: inc/class-tgm-plugin-activation.php:3509
 msgid "%1$s installed and activated successfully."
 msgstr ""
@@ -593,7 +608,6 @@ msgstr ""
 msgid "All installations and activations have been completed."
 msgstr ""
 
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: inc/class-tgm-plugin-activation.php:3512
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
@@ -602,7 +616,6 @@ msgstr ""
 msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
-#. translators: 1: plugin name.
 #: inc/class-tgm-plugin-activation.php:3517
 msgid "%1$s installed successfully."
 msgstr ""
@@ -611,7 +624,6 @@ msgstr ""
 msgid "All installations have been completed."
 msgstr ""
 
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: inc/class-tgm-plugin-activation.php:3520
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
@@ -1000,8 +1012,24 @@ msgstr ""
 msgid "Sidebar Position"
 msgstr ""
 
-#: inc/customizer.php:685, inc/menu.php:72, inc/widgets.php:141, inc/sliders/sliders.php:8
+#: inc/customizer.php:685, inc/menu.php:72, inc/sliders/sliders.php:8, inc/widgets.php:141
 msgid "None"
+msgstr ""
+
+#: inc/customizer/customizer.php:403
+msgid "Theme Design"
+msgstr ""
+
+#: inc/customizer/customizer.php:404
+msgid "Theme Specific Customizations For %s."
+msgstr ""
+
+#: inc/customizer/customizer.php:585
+msgid "Are you sure you want to reset your theme customizations?"
+msgstr ""
+
+#: inc/customizer/customizer.php:586
+msgid "Reset Customizations"
 msgstr ""
 
 #: inc/extras.php:135
@@ -1030,6 +1058,18 @@ msgstr ""
 
 #: inc/menu.php:48
 msgid "Menu Icon"
+msgstr ""
+
+#: inc/mobilenav/mobilenav.php:14, inc/mobilenav/mobilenav.php:68
+msgid "Back"
+msgstr ""
+
+#: inc/mobilenav/mobilenav.php:15, inc/mobilenav/mobilenav.php:69, inc/settings.php:444
+msgid "Close"
+msgstr ""
+
+#: inc/mobilenav/mobilenav.php:22, searchform.php:13
+msgid "Search"
 msgstr ""
 
 #: inc/panels.php:18
@@ -1118,6 +1158,14 @@ msgstr ""
 
 #: inc/panels.php:328
 msgid "Vantage Widgets"
+msgstr ""
+
+#: inc/plugin-activation/plugin-activation.php:15, inc/plugin-activation/plugin-activation.php:17
+msgid "Install Theme Plugin"
+msgstr ""
+
+#: inc/plugin-activation/plugin-activation.php:157
+msgid "Installing %s"
 msgstr ""
 
 #: inc/settings.php:19
@@ -1600,10 +1648,6 @@ msgstr ""
 msgid "Vantage Premium Upgrade"
 msgstr ""
 
-#: inc/settings.php:444, inc/mobilenav/mobilenav.php:15, inc/mobilenav/mobilenav.php:69
-msgid "Close"
-msgstr ""
-
 #: inc/settings.php:447
 msgid "Page settings"
 msgstr ""
@@ -1720,20 +1764,32 @@ msgstr ""
 msgid "Vantage is a flexible multipurpose theme. Its strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, Meta Slider for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store."
 msgstr ""
 
-#: inc/sliders.php:42
+#: inc/sliders.php:13
 msgid "Vantage (Flex)"
 msgstr ""
 
-#: inc/sliders.php:118
+#: inc/sliders.php:89
 msgid "Page Slider"
 msgstr ""
 
-#: inc/sliders.php:152
+#: inc/sliders.php:124
 msgid "Display Page Slider"
 msgstr ""
 
-#: inc/sliders.php:162
+#: inc/sliders.php:134
 msgid "Stretch Page Meta Slider"
+msgstr ""
+
+#: inc/sliders/sliders.php:10
+msgid "Demo Slider"
+msgstr ""
+
+#: inc/sliders/sliders.php:21
+msgid "MetaSlider: "
+msgstr ""
+
+#: inc/sliders/sliders.php:30
+msgid "Smart Slider: "
 msgstr ""
 
 #: inc/template-tags.php:28
@@ -1766,7 +1822,6 @@ msgstr ""
 msgid "(Edit)"
 msgstr ""
 
-#. translators: 1: date, 2: time
 #: inc/template-tags.php:163
 msgid "%1$s at %2$s"
 msgstr ""
@@ -1795,53 +1850,51 @@ msgstr ""
 msgid "%s Logo"
 msgstr ""
 
-#: inc/template-tags.php:367
+#: inc/template-tags.php:368
 msgid "Category Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:371
+#: inc/template-tags.php:372
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:376
+#: inc/template-tags.php:377
 msgid "Author Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:381
+#: inc/template-tags.php:382
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:385
+#: inc/template-tags.php:386
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:389
+#: inc/template-tags.php:390
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:396
+#: inc/template-tags.php:397
 msgid "%s: %s"
 msgstr ""
 
-#: inc/template-tags.php:399
+#: inc/template-tags.php:400
 msgid "Archives"
 msgstr ""
 
-#. translators: used between list items, there is a space after the comma
-#. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:414, inc/template-tags.php:417
+#: inc/template-tags.php:416, inc/template-tags.php:419
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:422
+#: inc/template-tags.php:424
 msgid "<strong>Tagged</strong> %2$s."
 msgstr ""
 
-#: inc/template-tags.php:430
+#: inc/template-tags.php:434
 msgid "Posted in %1$s and tagged %2$s."
 msgstr ""
 
-#: inc/template-tags.php:433
+#: inc/template-tags.php:437
 msgid "Posted in %1$s."
 msgstr ""
 
@@ -2061,32 +2114,48 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: inc/widgets.php:452
+#: inc/widgets.php:453
 msgid "Post "
 msgstr ""
 
-#: loops/loop-carousel.php:25
+#: loops/loop-carousel.php:26
 msgid "Post"
+msgstr ""
+
+#: no-results.php:16
+msgid "Nothing Found"
+msgstr ""
+
+#: no-results.php:23
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: no-results.php:27
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: no-results.php:32
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
 #: parts/footer-vertical.php:20, parts/footer.php:20
 msgid "A <a href=\"%s\">SiteOrigin</a> Theme"
 msgstr ""
 
+#: search.php:19
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:12
+msgid "Search for:"
+msgstr ""
+
 #: slider/demo.php:6, slider/demo.php:9, slider/demo.php:14, slider/demo.php:16
 msgid "Demo Slide"
 msgstr ""
 
-#: templates/template-full-notitle.php:9
-msgid "Full Width Page, No Title"
-msgstr ""
-
 #: templates/template-full-notitle.php:26
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: templates/template-full.php:9
-msgid "Full Width Page"
 msgstr ""
 
 #: tour/tour.php:8
@@ -2171,108 +2240,4 @@ msgstr ""
 
 #: tour/tour.php:82
 msgid "More About Vantage Premium"
-msgstr ""
-
-#: admin/about/page-free.php:1
-msgid "Forever Free"
-msgstr ""
-
-#: admin/about/page-free.php:3
-msgid "Vantage is a completely free WordPress theme."
-msgstr ""
-
-#: admin/about/page-free.php:4
-msgid "We'll continue developing and enhancing it for years to come."
-msgstr ""
-
-#: admin/about/page-github.php:1
-msgid "Developed on Github"
-msgstr ""
-
-#: admin/about/page-github.php:4
-msgid "Vantage is actively %sdeveloped on Github%s."
-msgstr ""
-
-#: admin/about/page-github.php:5
-msgid "You can watch what's happening with its development and even make contributions yourself."
-msgstr ""
-
-#: admin/about/page-mature.php:1
-msgid "Stable and Mature"
-msgstr ""
-
-#: admin/about/page-mature.php:3
-msgid "Vantage has been around for a while now, and in that time we've been able to refine it into a rock solid WordPress theme."
-msgstr ""
-
-#: admin/about/page-mature.php:4
-msgid "We'll continue evolving it over the years."
-msgstr ""
-
-#: admin/about/page-mature.php:5
-msgid "Vantage is only getting better from here."
-msgstr ""
-
-#: admin/about/page-page-builder.php:1
-msgid "Enhanced by Page Builder"
-msgstr ""
-
-#: admin/about/page-page-builder.php:3
-msgid "Vantage integrates, beautifully, with our %sfree Page Builder%s plugin."
-msgstr ""
-
-#: admin/about/page-page-builder.php:4
-msgid "This powerful plugin gives you full drag and drop capabilities right inside Vantage."
-msgstr ""
-
-#: admin/about/page-support.php:1
-msgid "Lightning Fast Support"
-msgstr ""
-
-#: admin/about/page-support.php:3
-msgid "As a Vantage user, you'll get fast, friendly support on our own %ssupport forums%s."
-msgstr ""
-
-#: admin/about/page-support.php:4
-msgid "You can also read through the %sVantage documentation%s to get to know it even faster."
-msgstr ""
-
-#: inc/customizer/customizer.php:403
-msgid "Theme Design"
-msgstr ""
-
-#: inc/customizer/customizer.php:404
-msgid "Theme Specific Customizations For %s."
-msgstr ""
-
-#: inc/customizer/customizer.php:585
-msgid "Are you sure you want to reset your theme customizations?"
-msgstr ""
-
-#: inc/customizer/customizer.php:586
-msgid "Reset Customizations"
-msgstr ""
-
-#: inc/mobilenav/mobilenav.php:14, inc/mobilenav/mobilenav.php:68
-msgid "Back"
-msgstr ""
-
-#: inc/plugin-activation/plugin-activation.php:8, inc/plugin-activation/plugin-activation.php:9
-msgid "Install Theme Plugin"
-msgstr ""
-
-#: inc/plugin-activation/plugin-activation.php:79
-msgid "Installing %s"
-msgstr ""
-
-#: inc/sliders/sliders.php:10
-msgid "Demo Slider"
-msgstr ""
-
-#: inc/sliders/sliders.php:19
-msgid "MetaSlider: "
-msgstr ""
-
-#: inc/sliders/sliders.php:28
-msgid "Smart Slider: "
 msgstr ""

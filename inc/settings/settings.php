@@ -43,6 +43,10 @@ class SiteOrigin_Settings {
 		add_action( 'after_setup_theme', array( $this, 'handle_migrations' ) );
 
 		spl_autoload_register( array( $this, '_autoload' ) );
+
+		if( current_user_can( 'install_themes' ) && is_admin() ) {
+			SiteOrigin_Settings_Upgrade::single();
+		}
 	}
 
 	/**
@@ -662,9 +666,7 @@ class SiteOrigin_Settings {
 
 					for( $i = 0; $i < count($matches[0]); $i++ ) {
 						if( strpos('//fonts.googleapis.com/css', $matches[1][$i]) !== -1 ) {
-							if ( ! in_array( $matches[1][ $i ], $webfont_imports ) ) {
-								$webfont_imports[] = $matches[1][$i];
-							}
+							$webfont_imports[] = $matches[1][$i];
 							$css = str_replace( $matches[0][$i], '', $css );
 						}
 					}
@@ -689,8 +691,7 @@ class SiteOrigin_Settings {
 						}
 
 						// Clean up the arguments
-						$args['subset'] = array_unique( $args['subset'] );
-						$args['family'] = array_unique( $args['family'] );
+						$args['subset'] = array_unique($args['subset']);
 
 						$args['family'] = array_map( 'urlencode', $args['family'] );
 						$args['subset'] = array_map( 'urlencode', $args['subset'] );
@@ -704,7 +705,7 @@ class SiteOrigin_Settings {
 
 				// Now lets remove empty rules
 				do {
-					$css = preg_replace('/[^;\{\}]*?\{ *\}/', ' ', $css, -1, $count);
+					$css = preg_replace('/[^\{\}]*?\{ *\}/', ' ', $css, -1, $count);
 				} while( $count > 0 );
 				$css = trim($css);
 

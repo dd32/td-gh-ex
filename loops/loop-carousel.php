@@ -14,9 +14,10 @@
 					<?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'vantage-carousel'); ?>
 					<?php if( $img[0] ) : ?>
 						<a href="<?php the_permalink() ?>" style="background-image: url(<?php echo $img[0] ?>)">
+							<span class="sow-overlay"></span>
 						</a>
 					<?php else : ?>
-						<a href="<?php the_permalink() ?>" class="default-thumbnail"><span class="vantage-overlay"></span></a>
+						<a href="<?php the_permalink() ?>" class="default-thumbnail"><span class="overlay"></span></a>
 					<?php endif; ?>
 				</div>
 				<?php

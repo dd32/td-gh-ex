@@ -3,7 +3,7 @@ Theme Name: Vantage
 Author: SiteOrigin
 Author URI: https://siteorigin.com/
 Theme URI: https://siteorigin.com/theme/vantage/
-Description: Vantage is a flexible multipurpose theme. Its strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, Smart Slider 3 for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store. We offer free support on our <a href="http://siteorigin.com/thread/">forum</a> (http://siteorigin.com/thread/).
+Description: Vantage is a flexible multipurpose theme. Its strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, Smart Slider 3 for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store. We offer free and premium support on our support <a href="http://siteorigin.com/thread/">forums</a> (http://siteorigin.com/thread/).
 Version: dev
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -382,29 +382,44 @@ body {
 		}
 
 		#header-sidebar {
-			box-sizing: border-box;
-			height: 100%;
 			padding-top: 15px;
 			padding-bottom: 15px;
+			height: 100%;
 			position: absolute;
 			right: 0;
 			top: 0;
 
+			.box-sizing(border-box);
+
+			/* Center align layout. Based on old CSS3 spec, so update when new spec is available and supported */
+
+			-ms-flex-pack:center;
+			-ms-flex-align:center;
+			display:-ms-flexbox;
+
+			-moz-box-pack:center;
+			-moz-box-align:center;
+			display:-moz-box;
+
+			-webkit-box-pack:center;
+			-webkit-box-align:center;
+			display:-webkit-box;
+
+			display:box;
+			box-pack:center;
+			box-align:center;
+
 			aside.widget {
-				float: left;
-				margin-right: 25px;
 				margin-bottom: 0;
+				float: left;
 				position: relative;
-				
-				&.widget_circleicon-widget {
-					clear: none;
-				}
+				margin-right: 25px;
 
 				&:last-child {
 					margin-right: 0;
 				}
 			}
-			
+
 			.widget-title {
 				font-weight: bold;
 				margin-bottom: 5px;
@@ -574,6 +589,10 @@ body.sidebar-position-none #secondary {
 
 					}
 				}
+
+				#search-icon-icon {
+					display: none;
+				}
 			}
 		}
 	}
@@ -715,8 +734,7 @@ body.responsive {
 		color: #cccccc;
 	}
 
-	a:hover [class^="fa fa-"],
-	a.focus [class^="fa fa-"] {
+	a:hover [class^="fa fa-"] {
 		color: #ffffff;
 	}
 
@@ -732,12 +750,9 @@ body.responsive {
 			font-size: 13px;
 			position: relative;
 
-			&:hover,
-			&.focus {
-				> a {
-					background: #00bcff;
-					color: #ffffff;
-				}
+			&:hover > a {
+				background: #00bcff;
+				color: #ffffff;
 			}
 
 			a {
@@ -754,10 +769,9 @@ body.responsive {
 		/* Second level menu items */
 		ul {
 			.box-shadow(~"0 1px 2px rgba(0,0,0,0.15)");
-			.transition( 0.25s, opacity, ease );
+
 			background: #464646;
-			visibility: hidden;
-			opacity: 0;
+			display: none;
 
 			position: absolute;
 			top: 100%;
@@ -774,8 +788,7 @@ body.responsive {
 				text-align: left;
 
 				/* Hovering over 2nd level items */
-				&:hover > a,
-				&.focus > a {
+				&:hover > a {
 					background: #00bcff;
 					color: #ffffff;
 				}
@@ -790,11 +803,9 @@ body.responsive {
 			}
 		}
 
-		li:hover,
-		li.focus {
+		li:hover {
 			> ul {
-				visibility: visible;
-				opacity: 1;
+				display: block;
 			}
 		}
 	}
@@ -806,43 +817,12 @@ body.responsive {
 		color: #e2e2e2;
 		font-weight: bold;
 	}
-
-}
-
-/* For when the menu becomes a sticky menu */
-body.sticky-menu {
-	&:not(.layout-boxed) .main-navigation {
-		right: 0;
-		left: 0;
-		margin-right: 0;
-		margin-left: 0;
+	/* For when the menu becomes a sticky menu */
+	&.sticky {
+		top: 0;
 	}
 
-	&.layout-boxed .main-navigation {
-		width: 100%;
-		max-width: 1080px,
-	}
-
-		&.admin-bar .main-navigation.use-sticky-menu {
-			@media (min-width: 783px) {
-				top: 32px;
-			}
-			
-			@media (max-width: 782px) and (min-width: 601px) {
-				top: 42px
-			}
-		}
-}
-
-body.admin-bar:not(.sticky-menu) .main-navigation.use-sticky-menu {
-	top: 0;
-}
-
-.main-navigation.sticky {
-	position: fixed;
-	top: 0;
-
-	&:after {
+	&.sticky:after {
 		bottom: -6px;
  		box-shadow: rgba(0,0,0,0.25) 0 6px 6px -6px inset;
   		content: "";
@@ -1682,7 +1662,6 @@ article.page{
 				width: 100%;
 				margin-bottom: 20px;
 				text-align: center;
-				white-space: normal;
 			}
 		}
 	}
@@ -1816,7 +1795,7 @@ article.page{
 	}
 }
 
-#commentform {
+#commentform{
 
 	label {
 		margin-top: 2px;
@@ -1881,24 +1860,6 @@ article.page{
 		color: #a40802;
 	}
 
-	.comment-form-cookies-consent {
-		align-items: center;
-		clear: both;
-		display: flex;
-		
-		input {
-			line-height: 1;
-			margin-right: 7px;
-			width: auto;
-		}
-		
-		label {
-			display: inline-block;
-			font-weight: normal;
-			margin-bottom: 0;
-			width: auto;
-		}
-	}		
 }
 
 /* Vantage Jetpack Subscription Form */
@@ -2058,7 +2019,7 @@ body.layout-full{
 @import "less/accessibility";
 
 /* Prevent iOS Safari from overriding the colors for phone numbers */
-a[href^="tel"] {
+a[href^="tel"]{
     color:inherit;
     text-decoration:none;
 }
