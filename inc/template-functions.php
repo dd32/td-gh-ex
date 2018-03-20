@@ -118,6 +118,32 @@ if (!function_exists('fmi_page_header')) {
   }
 }
 
+if (!function_exists('fmi_excerpt_length')) {
+  function fmi_excerpt_length($length) {
+    $excerpt_length = get_theme_mod('blog_excerpt_length', 30);
+    if ($excerpt_length) {
+      $excerpt_length = intval($excerpt_length);
+    } else {
+      $excerpt_length = 30;
+    }
+    return $excerpt_length;
+  }
+}
+add_filter('excerpt_length', 'fmi_excerpt_length');
+
+if (!function_exists('fmi_editor_style')) {
+  function fmi_editor_style() {
+
+    // add stylesheets
+    add_editor_style(array(
+      'assets/css/editor-style.css',
+      'assets/font-awesome/css/font-awesome.min.css'
+    ));
+
+  }
+}
+add_action('init', 'fmi_editor_style');
+
 if (!function_exists('fmi_get_custom_style')) {
   function fmi_get_custom_style(){
     $css = '';

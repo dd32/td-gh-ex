@@ -2,12 +2,12 @@
 Theme Name: Fmi
 Theme URI: http://forrss.com/themes/fmi/
 Description: Fmi is an elegant blog theme with responsive and easily customizable.
-Version: 1.3.16
+Version: 1.3.17
 Author: Forrss
 Author URI: http://forrss.com/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-columns,right-sidebar,custom-background,custom-colors,custom-logo,custom-menu,featured-images,sticky-post,theme-options,threaded-comments,translation-ready,blog,news
+Tags: two-columns,left-sidebar,right-sidebar,custom-background,custom-colors,custom-logo,custom-menu,editor-style,featured-images,sticky-post,theme-options,threaded-comments,translation-ready,blog,news
 Text Domain: fmi
 Requires at least: 4.7
 Tested up to: 4.9

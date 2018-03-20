@@ -7,6 +7,20 @@
 
 function fmi_customize_register( $wp_customize ) {
 
+  class fmi_customize_number_control extends WP_Customize_Control {
+    public $type = 'fmi_number_field';
+    public function render_content() {
+      ?>
+      <label>
+        <span class="customize-control-title">
+          <?php echo esc_html($this->label); ?>
+        </span>
+        <input type="number" min="1" max="10000" value="<?php echo esc_attr($this->value()); ?>" <?php $this->link(); ?> />
+      </label>
+      <?php
+    }
+  }
+
   $wp_customize->add_panel( 'theme_options' ,array(
     'title' => esc_html__( 'Theme Options', 'fmi' ),
     'description' => '',
@@ -42,7 +56,7 @@ function fmi_customize_register( $wp_customize ) {
   //----------------------------------------------------------------------------------
   // Section: General Settings
   //----------------------------------------------------------------------------------
-  $wp_customize->add_section( 'general' , array(
+  $wp_customize->add_section( 'general_settings_section' , array(
     'title' => esc_html__('General Settings', 'fmi'),
     'panel' => 'theme_options',
     'priority' => 2,
@@ -53,7 +67,7 @@ function fmi_customize_register( $wp_customize ) {
   ));
   $wp_customize->add_control('blog_pagination',array(
     'label' => esc_html__('Blog Pagination or Navigation', 'fmi'),
-    'section' => 'general',
+    'section' => 'general_settings_section',
     'settings' => 'blog_pagination',
     'type' => 'radio',
     'choices' => array(
@@ -67,7 +81,7 @@ function fmi_customize_register( $wp_customize ) {
   ));
   $wp_customize->add_control('header_title',array(
     'label' => esc_html__('Hide Header Title Text', 'fmi'),
-    'section' => 'general',
+    'section' => 'general_settings_section',
     'settings' => 'header_title',
     'type' => 'checkbox',
   ));
@@ -77,7 +91,7 @@ function fmi_customize_register( $wp_customize ) {
   ));
   $wp_customize->add_control('header_search',array(
     'label' => esc_html__('Hide Header Search', 'fmi'),
-    'section' => 'general',
+    'section' => 'general_settings_section',
     'settings' => 'header_search',
     'type' => 'checkbox',
   ));
@@ -88,7 +102,7 @@ function fmi_customize_register( $wp_customize ) {
   $wp_customize->add_control('blog_layout',array(
     'type' => 'select',
     'label' => esc_html__('Blog Layout', 'fmi'),
-    'section' => 'general',
+    'section' => 'general_settings_section',
     'choices' => array(
       'right_sidebar' => esc_html__('Right sidebar', 'fmi'),
       'left_sidebar' => esc_html__('Left sidebar', 'fmi'),
@@ -102,11 +116,29 @@ function fmi_customize_register( $wp_customize ) {
   $wp_customize->add_control('blog_excerpt_type',array(
     'type' => 'select',
     'label' => esc_html__('Use Excerpt or "Read More tag"', 'fmi'),
-    'section' => 'general',
+    'section' => 'general_settings_section',
     'choices' => array(
       'excerpt' => esc_html__('Excerpt', 'fmi'),
       'more-tag' => esc_html__('Read More tag', 'fmi'),
     ),
+  ));
+  $wp_customize->add_setting('blog_excerpt_length',array(
+    'default' => 30,
+    'sanitize_callback' => 'fmi_sanitize_number_intval',
+  ));
+  $wp_customize->add_control(new fmi_customize_number_control($wp_customize,'blog_excerpt_length',array(
+    'label' => esc_html__('Excerpt Length (Number of Words)', 'fmi'),
+    'section' => 'general_settings_section',
+    'settings' => 'blog_excerpt_length',
+  )));
+  $wp_customize->add_setting('general_show_totop_btn',array(
+    'default' => 1,
+    'sanitize_callback' => 'fmi_sanitize_checkbox',
+  ));
+  $wp_customize->add_control('general_show_totop_btn',array(
+    'type' => 'checkbox',
+    'label' => esc_html__('Show "Back to top" button', 'fmi'),
+    'section' => 'general_settings_section',
   ));
 
   //----------------------------------------------------------------------------------

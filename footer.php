@@ -63,8 +63,16 @@
 		</div><!-- .site-info -->
     </div>
   </footer><!-- #colophon -->
-    
-    <button id="back_top" aria-label="<?php esc_attr_e( 'Top', 'fmi' ); ?>" value="<?php echo esc_attr_x( 'Top', 'top button', 'fmi' ); ?>"><i class="fa fa-angle-up" aria-hidden="true"></i><span class="screen-reader-text"><?php echo esc_html_x( 'Top', 'top button', 'fmi' ); ?></span></button>
+
+<?php
+$show_back_to_top = get_theme_mod('general_show_totop_btn', 1);
+if ($show_back_to_top) { 
+?>
+  <button id="back_top" aria-label="<?php esc_attr_e( 'Top', 'fmi' ); ?>" value="<?php echo esc_attr_x( 'Top', 'top button', 'fmi' ); ?>"><i class="fa fa-angle-up" aria-hidden="true"></i><span class="screen-reader-text"><?php echo esc_html_x( 'Top', 'top button', 'fmi' ); ?></span></button>
+<?php
+}
+?>
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

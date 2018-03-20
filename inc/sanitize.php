@@ -5,6 +5,16 @@
  * @package fmi
  */
 
+// Number field (intval)
+function fmi_sanitize_number_intval($input) {
+  if (is_numeric($input) && $input >= 1) {
+    return intval($input);
+  } else {
+    return '';
+  }
+}
+
+// Checkbox
 function fmi_sanitize_checkbox( $input ){
   if ( $input == 1 || $input == 'true' || $input === true ) {
     return 1;
@@ -13,11 +23,7 @@ function fmi_sanitize_checkbox( $input ){
   }
 }
 
-function fmi_sanitize_number( $number, $setting ) {
-  $number = absint( $number );
-  return ( $number ? $number : $setting->default );
-}
-
+// Blog pagination
 function fmi_sanitize_blog_pagination( $input ) {
   if ( ! in_array( $input, array( 'pagination', 'navigation' ) ) ) {
     $input = 'pagination';
@@ -25,6 +31,7 @@ function fmi_sanitize_blog_pagination( $input ) {
   return $input;
 }
 
+// Blog layout
 function fmi_sanitize_blog_layout($input) {
   $valid = array(
     'right_sidebar' => 'Right sidebar',
@@ -38,6 +45,7 @@ function fmi_sanitize_blog_layout($input) {
   }
 }
 
+// Excerpt / Read more tag
 function fmi_sanitize_blog_excerpt_type($input) {
   $valid = array(
     'excerpt' => 'Excerpt',
