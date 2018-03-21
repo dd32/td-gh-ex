@@ -110,6 +110,10 @@ All the theme files and other un-specified scripts are licensed under GNU Genera
 =================================================================================
 
 == CHANGE LOG ==
+= 2.1.3.4 =
+	- Fix - Unwanted code removed
+			- fixed an issue to support multilangual plugins
+
 = 2.1.3.3 =
 	- Fix - Nav js fixed
 			- Translation fixed

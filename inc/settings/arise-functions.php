@@ -136,7 +136,6 @@ function arise_breadcrumb() {
 /*********************** arise PAGE SLIDERS ***********************************/
 function arise_page_sliders() {
 	$arise_settings = arise_get_theme_options();
-	$excerpt = get_the_excerpt();
 	global $post;
 	$slider_custom_text = $arise_settings['arise_secondary_text'];
 	$slider_custom_url = $arise_settings['arise_secondary_url'];

@@ -91,7 +91,7 @@ class arise_parallax_video_widget extends WP_Widget {
 					<div class="column">
 						<div class="two-column">
 							<?php if(!empty($video_links)): ?>
-							<div class="video-wrapper"><?php echo $video_links; ?></div><!-- end .video-wrapper -->
+							<div class="video-wrapper"><?php echo apply_filters( 'the_title', $video_links); ?></div><!-- end .video-wrapper -->
 							<?php endif; ?>
 						</div><!-- end .two-column -->
 						<?php if(!empty($arise_video_title) || !empty($arise_video_content) || !empty($arise_video_redirect_text)): ?>

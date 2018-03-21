@@ -76,7 +76,7 @@ class arise_parallax_widget extends WP_Widget {
 					<h3><?php echo esc_attr($arise_parallax_title); ?></h3>
 					<?php endif;
 					if(!empty($parallax_content)):?>
-						<h2 class="widget-title"><?php echo $parallax_content; ?></h2>
+						<h2 class="widget-title"><?php echo apply_filters( 'the_title', $parallax_content); ?></h2>
 					<?php endif;
 					if(!empty($arise_redirect_text)): ?>
 						<a class="btn-default light" href="<?php echo esc_url($arise_widget_redirecturl); ?>" title="<?php echo esc_attr($arise_redirect_text); ?>" target="_blank"><?php echo esc_attr($arise_redirect_text); ?></a><!-- end .btn-default -->
