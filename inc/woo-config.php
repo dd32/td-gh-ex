@@ -80,7 +80,7 @@ function nnfy_archive_view_switch(){
 function nnfy_add_to_wishlist_button() {
 	global $product, $yith_wcwl;
 
-	if ( ! class_exists( 'YITH_WCWL' ) ) return;
+	if ( ! class_exists( 'YITH_WCWL' ) || empty(get_option( 'yith_wcwl_wishlist_page_id' ))) return;
 
 	$url          = YITH_WCWL()->get_wishlist_url();
 	$product_type = $product->get_type();
