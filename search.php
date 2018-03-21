@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @package CT Corporate
+ * @package Ace Corporate
  */
 
 get_header();

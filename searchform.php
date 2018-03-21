@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying search forms in CT Corporate Theme
+ * The template for displaying search forms in Ace Corporate Theme
  *
- * @package CT Corporate
+ * @package Ace Corporate
  */
 ?>
 <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" class="form-inline">

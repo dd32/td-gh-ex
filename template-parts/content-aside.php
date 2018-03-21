@@ -2,7 +2,7 @@
 /**
  * The template for displaying Aside post formats
  *
- * @package CT Corporate
+ * @package Ace Corporate
  */
 ?>
 <?php
@@ -21,7 +21,7 @@ $metadisplay = get_theme_mod('show_blog_meta',1);
             <?php  if ( $featured_image ) { ?>
                         <div class="featured-image archive-thumb">
 
-                            <a title="<?php the_title(); ?>" href="<?php echo esc_url( get_permalink() ); ?>" class="post-thumbnail">
+                            <a title="<?php the_title_attribute();?>"<?php the_title(); ?> href="<?php echo esc_url( get_permalink() ); ?>" class="post-thumbnail">
 
                                 <img src="<?php echo esc_url( $featured_image ); ?>" class="attachment-custom_post_size wp-post-image" alt="<?php echo esc_attr($alttxt); ?>">
 
@@ -80,7 +80,7 @@ $metadisplay = get_theme_mod('show_blog_meta',1);
 
             <div class="featured-image archive-thumb">
 
-                <a title="<?php the_title(); ?>" href="<?php echo esc_url( get_permalink() ); ?>" class="post-thumbnail">
+                <a title="<?php the_title_attribute(); ?>" href="<?php echo esc_url( get_permalink() ); ?>" class="post-thumbnail">
                     <img src="<?php echo esc_url( $featured_image ); ?>" class="attachment-custom_post_size wp-post-image" alt="<?php echo esc_attr($alttxt); ?>">
                 </a>
 
@@ -90,7 +90,7 @@ $metadisplay = get_theme_mod('show_blog_meta',1);
 
         <div class="featured-image archive-thumb">
 
-            <a title="<?php the_title(); ?>" href="<?php echo esc_url( get_permalink() ); ?>" class="post-thumbnail">
+            <a title="<?php the_title_attribute(); ?>" href="<?php echo esc_url( get_permalink() ); ?>" class="post-thumbnail">
 
                 <img src="<?php echo esc_url( $featured_image ); ?>" class="attachment-custom_post_size wp-post-image" alt="<?php echo esc_attr($alttxt);; ?>">
 

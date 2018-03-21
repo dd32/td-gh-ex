@@ -2,7 +2,7 @@
 /**
 * The template for displaying Video post formats
 *
-* @package CT Corporate
+* @package Ace Corporate
 */
 ?>
 <?php

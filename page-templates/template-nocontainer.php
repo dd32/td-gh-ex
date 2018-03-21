@@ -3,7 +3,7 @@
   Template Name: Full Width - No Container
  * This is the template that displays the contents in full Width
  *
- * @package CT Corporate
+ * @package Ace Corporate
  */
 
 get_header();

@@ -7,7 +7,7 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package CT Corporate
+ * @package Ace Corporate
  */
 
 get_header();

@@ -2,7 +2,7 @@
 /**
  * The template for displaying single content.
  *
- * @package CT Corporate
+ * @package Ace Corporate
  */
 ?>
 

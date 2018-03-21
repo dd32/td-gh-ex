@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package CT Corporate
+ * @package Ace Corporate
  */
 
 get_header();

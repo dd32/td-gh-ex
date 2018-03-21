@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package CT Corporate
+ * @package Ace Corporate
  */
 
 get_header();

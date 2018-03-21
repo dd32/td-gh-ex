@@ -1,5 +1,5 @@
 /*
-    CT Corporate Theme by YUDLEE Themes
+    Ace Corporate Theme by YUDLEE Themes
     https://yudleethemes.com/
 */
 $=jQuery.noConflict();

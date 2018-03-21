@@ -5,7 +5,7 @@
  * Description: A page template that displays the Homepage or a Front page as in theme main page with slider and some other contents of the
  * post.
  *
- * @package CT Corporate
+ * @package Ace Corporate
  */
 
 get_header();
@@ -52,15 +52,15 @@ if ($cat_id != 'none') {
 
                                     <div class="media-wrapper">
                                         <div class="media-wrap"
-                                             style="background-image:url('<?php echo esc_url($featured_image[0]); ?>">
+                                             style="background-image:url(<?php echo esc_url($featured_image[0]); ?>)">
                                         </div>
                                     </div>
                                     <div class="service-body">
                                         <h3>
                                             <a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>"> <?php the_title(); ?></a>
                                         </h3>
-                                        <p><?php echo wp_kses_post(ace_corporate_strip_url_content($post, 10)); ?></p>
-                                        <a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>"
+                                        <p><?php echo wp_kses_post(ace_corporate_strip_url_content( esc_attr(get_theme_mod('excerpt_length', 20)))); ?> </p>
+                                        <a href="<?php echo esc_url(get_permalink($events->ID)); ?>"
                                            class="btn service-read"><?php esc_html_e('Read More', 'ace-corporate'); ?></a>
                                     </div>
                                 </div>
@@ -272,6 +272,7 @@ if ($featured->have_posts()) :
             while ($featured->have_posts()): $featured->the_post();
                 global $post;
                 $post_format = get_post_format($post->ID);
+                $blog_title= get_theme_mod('blog_section_title');
                 echo(($loop % 3 == 1 || $loop == 1) ? '<div class="row">' : '');
                 if ($loop == 1) {
                     echo(($loop == 1 && $blog_title) ? '<h2 class="section-title text-center">' . esc_html($blog_title) . '</h2>' : '');
@@ -283,9 +284,9 @@ if ($featured->have_posts()) :
                         <div <?php post_class(); ?>>
 
                             <div class="blog-content clearfix">
-
+                                
                                 <div class="blog-content-image effect-thumb">
-                                    <?php get_template_part('template-parts/content', get_post_format($post->ID)); ?>
+                                    <?php get_template_part('template-parts/content', get_post_format($post->ID)); ?>   
                                     <?php if (get_theme_mod('show_blog_meta', 1)) { ?>
                                         <div class="entry-meta">
                                             <?php
@@ -314,6 +315,8 @@ if ($featured->have_posts()) :
                                 </div>
                                 <div class="blog-content-wrap">
                                     <p><?php echo wp_kses_post(ace_corporate_strip_url_content( esc_attr(get_theme_mod('excerpt_length', 20)))); ?></p>
+                                     <a href="<?php echo esc_url(get_permalink($post->ID)); ?>"
+                                           class="btn service-read"><?php esc_html_e('Read More', 'ace-corporate'); ?></a>
                                 </div>
 
                             </div>

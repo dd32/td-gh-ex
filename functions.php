@@ -1,8 +1,8 @@
 <?php
 /**
- * CT Corporate Theme functions and definitions
+ * Ace Corporate Theme functions and definitions
  *
- * @package CT Corporate
+ * @package Ace Corporate
  */
 
 /**
@@ -113,7 +113,7 @@ if (! function_exists('ace_corporate_widgets_init') ) {
         register_sidebar( array(
             'name'          => esc_html__( 'Sidebar','ace-corporate' ),
             'id'            => 'sidebar-1',
-            'description'   => esc_html__( 'CT Corporate Sidebar','ace-corporate' ),
+            'description'   => esc_html__( 'Ace-corporate-sidebar','ace-corporate' ),
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
             'after_widget'  => '</aside>',
             'before_title'  => '<h1 class="widget-title">',
@@ -192,7 +192,7 @@ if(! function_exists('ace_corporate_scripts')){
 	function ace_corporate_scripts() {
         wp_enqueue_style( 'ace-corporate-lite-fonts', ACE_Corporate_fonts_url() , array(), null);
         wp_enqueue_style( 'ace-corporate-style', get_stylesheet_uri() );
-		wp_enqueue_style( 'ace-corporate-css', get_stylesheet_directory_uri() . '/css/ace-corporate.css' );
+		wp_enqueue_style( 'ace-corporate-css', get_template_directory_uri () . '/css/ace-corporate.css' );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -200,7 +200,7 @@ if(! function_exists('ace_corporate_scripts')){
 
 		wp_enqueue_script( 'ace-corporate-functions-js', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), 'v3.3.2', true );
 		wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/js/slick.js', array( 'jquery' ), 'v3.3.2', true );
-        wp_enqueue_script( 'ace-corporate-vendor-js', get_stylesheet_directory_uri() . '/js/vendor.js');
+        wp_enqueue_script( 'ace-corporate-vendor-js', get_template_directory_uri () . '/js/vendor.js');
         wp_localize_script('jquery-slick', 'custom_localize', array(
             'prev' => esc_html__('Previous', 'ace-corporate'),
             'next' => esc_html__('Next', 'ace-corporate'),
@@ -508,7 +508,7 @@ if(!function_exists('ace_corporate_strip_url_content')){
     $excerpt = substr($excerpt, 0, intval($limit));
     $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
     $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
-    $excerpt = $excerpt.'... <a href="'.get_permalink($post->ID).'">more</a>';
+    $excerpt = $excerpt.'... <a href="'.get_permalink($post->ID).'"></a>';
     return $excerpt;
     }
 }

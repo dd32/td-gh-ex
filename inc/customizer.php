@@ -388,6 +388,21 @@ if (!function_exists('ace_corporate_front_page_customize')) {
             )
         );
 
+         $wp_customize->add_setting('blog_section_title', array(
+                'default' => '',
+                'capability' => 'edit_theme_options',
+                'sanitize_callback' => 'sanitize_text_field'
+            )
+        );
+
+        $wp_customize->add_control('blog_section_title', array(
+                'label' => __('Blog Title', 'ace-corporate'),
+                'section' => 'ACECorporate_blog',
+                'type' => 'text',
+                'priority' => 1,
+            )
+        );
+
         $wp_customize->add_setting('show_blog_meta', array(
             'default' => 1,
             'sanitize_callback' => 'ace_corporate_sanitize_checkbox'

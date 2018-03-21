@@ -2,7 +2,7 @@
 /**
  * The template for displaying posts in the Gallery post format
  *
- * @package CT Corporate
+ * @package Ace Corporate
  */
 $metadisplay = get_theme_mod('show_blog_meta',1);
 $post_format = get_post_format($post->ID);
@@ -20,7 +20,7 @@ $front = get_option('show_on_front');
             <?php if ($front == "page") :
                 if ($featured_image) { ?>
                     <div class="featured-image archive-thumb">
-                        <a title="<?php the_title(); ?>" href="<?php echo esc_url(get_permalink()); ?>"
+                        <a title="<?php the_title_attribute();?>"<?php the_title(); ?> href="<?php echo esc_url(get_permalink()); ?>"
                            class="post-thumbnail">
                             <img src="<?php echo esc_url($featured_image); ?>"
                                  class="attachment-custom_post_size wp-post-image"
@@ -66,7 +66,7 @@ $front = get_option('show_on_front');
     <!-- If the post is single or archive display this block  -->
     <?php if (is_single() && !empty($featured_image)) { ?>
         <div class="featured-image archive-thumb">
-            <a title="<?php the_title(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="post-thumbnail">
+            <a title="<?php the_title_attribute();?>"<?php the_title(); ?> href="<?php echo esc_url(get_permalink()); ?>" class="post-thumbnail">
                 <img src="<?php echo esc_url($featured_image); ?>" class="attachment-custom_post_size wp-post-image" alt="<?php echo esc_attr($alttxt); ?>">
                 <div class="share-mask">
                     <div class="share-wrap">

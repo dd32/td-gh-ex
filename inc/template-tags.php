@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package CT Corporate
+ * @package Ace Corporate
  */
 
 
@@ -199,7 +199,7 @@ if( !function_exists( 'ace_corporate_post_thumbnail' ) ) :
 			<?php else : ?>
 				<?php if ( has_post_thumbnail() ) :?>
 					<div class="featured-image archive-thumb">
-						<a title="<?php the_title(); ?>" href="<?php echo esc_url( get_permalink() ); ?>" class="post-thumbnail">
+						<a title="<?php the_title_attribute(); ?>" href="<?php echo esc_url( get_permalink() ); ?>" class="post-thumbnail">
 							<?php the_post_thumbnail( 'custom_post_size' ); ?>
 							<div class="share-mask">
 					        	<div class="share-wrap">

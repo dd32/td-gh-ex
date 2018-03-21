@@ -12,7 +12,7 @@
 	<?php endif; // End header image check. ?>
 
  *
- * @package CT Corporate
+ * @package Ace Corporate
  */
 
 /**

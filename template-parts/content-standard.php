@@ -2,7 +2,7 @@
 /**
  * The template for displaying Stardard post formats
  *
- * @package CT Corporate
+ * @package Ace Corporate
  */
 ?>
 <?php
@@ -21,7 +21,7 @@ if (!is_single() && !is_archive() && !is_search() && !is_page_template('page-tem
             <?php if ($featured_image) { ?>
                 <div class="featured-image archive-thumb">
 
-                    <a title="<?php the_title(); ?>" href="<?php echo esc_url(get_permalink()); ?>"
+                    <a title="<?php the_title_attribute();?>"<?php the_title(); ?>href="<?php echo esc_url(get_permalink()); ?>"
                        class="post-thumbnail">
 
                         <img src="<?php echo esc_url($featured_image); ?>" class="attachment-custom_post_size wp-post-image" alt="<?php echo esc_attr($alttxt); ?>">
@@ -80,7 +80,7 @@ if (!is_single() && !is_archive() && !is_search() && !is_page_template('page-tem
 
             <div class="featured-image archive-thumb">
 
-                <a title="<?php the_title(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="post-thumbnail">
+                <a title="<?php the_title_attribute();?>"<?php the_title(); ?> href="<?php echo esc_url(get_permalink()); ?>" class="post-thumbnail">
                     <img src="<?php echo esc_url($featured_image); ?>" class="attachment-custom_post_size wp-post-image" alt="<?php echo esc_attr($alttxt); ?>">
                 </a>
 
@@ -90,7 +90,7 @@ if (!is_single() && !is_archive() && !is_search() && !is_page_template('page-tem
 
             <div class="featured-image archive-thumb">
 
-                <a title="<?php the_title(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="post-thumbnail">
+                <a title="<?php the_title_attribute();?>"<?php the_title(); ?> href="<?php echo esc_url(get_permalink()); ?>" class="post-thumbnail">
 
                     <img src="<?php echo esc_url($featured_image); ?>" class="attachment-custom_post_size wp-post-image" alt="<?php echo esc_attr($alttxt); ?>">
 
