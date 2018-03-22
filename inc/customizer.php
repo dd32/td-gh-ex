@@ -7,6 +7,25 @@
  * @since Esteem 1.2.7
  */
 function esteem_customize_register($wp_customize) {
+   // Transport postMessage variable set
+   $customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
+
+   $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+   $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+   $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+
+   if ( isset( $wp_customize->selective_refresh ) ) {
+     $wp_customize->selective_refresh->add_partial( 'blogname', array(
+        'selector'        => '#site-title a',
+        'render_callback' => 'esteem_customize_partial_blogname',
+     ) );
+
+     $wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+        'selector'        => '.site-description',
+        'render_callback' => 'esteem_customize_partial_blogdescription',
+     ) );
+   }
 
 	// Theme important links started
    class Esteem_Important_Links extends WP_Customize_Control {
@@ -148,14 +167,23 @@ function esteem_customize_register($wp_customize) {
    ));
 
 	$wp_customize->add_setting('esteem_slogan', array(
-		'default' => '',
-      'capability' => 'edit_theme_options',
+		'default'           => '',
+      'capability'        => 'edit_theme_options',
+      'transport'         => $customizer_selective_refresh,
       'sanitize_callback' => 'esteem_text_sanitize'
 	));
 	$wp_customize->add_control('esteem_slogan', array(
-		'label' => __( 'Enter the main Slogan', 'esteem' ),
+		'label'   => __( 'Enter the main Slogan', 'esteem' ),
 		'section' => 'esteem_slogan_setting'
 	));
+
+   // Selective refresh for slogan
+   if ( isset( $wp_customize->selective_refresh ) ) {
+      $wp_customize->selective_refresh->add_partial( 'esteem_slogan', array(
+         'selector'        => '.promo-title',
+         'render_callback' => 'esteem_slogan',
+      ) );
+   }
 
 	// Promo Sub Slogan
    $wp_customize->add_section('esteem_sub_slogan_setting', array(
@@ -165,14 +193,24 @@ function esteem_customize_register($wp_customize) {
    ));
 
 	$wp_customize->add_setting('esteem_sub_slogan', array(
-		'default' => '',
-      'capability' => 'edit_theme_options',
+		'default'           => '',
+      'capability'        => 'edit_theme_options',
+      'transport'         => $customizer_selective_refresh,
       'sanitize_callback' => 'esteem_text_sanitize'
 	));
+
 	$wp_customize->add_control('esteem_sub_slogan', array(
 		'label' => __( 'Enter the sub slogan', 'esteem' ),
 		'section' => 'esteem_sub_slogan_setting'
 	));
+
+   // Selective refresh for sub slogan
+   if ( isset( $wp_customize->selective_refresh ) ) {
+      $wp_customize->selective_refresh->add_partial( 'esteem_sub_slogan', array(
+         'selector'        => '.promo-text',
+         'render_callback' => 'esteem_sub_slogan',
+      ) );
+   }
 
 	// Promo Button Text
    $wp_customize->add_section('esteem_button_text_setting', array(
@@ -182,14 +220,23 @@ function esteem_customize_register($wp_customize) {
    ));
 
 	$wp_customize->add_setting('esteem_button_text', array(
-		'default' => '',
-      'capability' => 'edit_theme_options',
+		'default'           => '',
+      'capability'        => 'edit_theme_options',
+      'transport'         => $customizer_selective_refresh,
       'sanitize_callback' => 'wp_filter_nohtml_kses'
 	));
 	$wp_customize->add_control('esteem_button_text', array(
 		'label' => __( 'Button Text', 'esteem' ),
 		'section' => 'esteem_button_text_setting'
 	));
+
+   // Selective refresh for read more button
+   if ( isset( $wp_customize->selective_refresh ) ) {
+      $wp_customize->selective_refresh->add_partial( 'esteem_button_text', array(
+         'selector'        => '.promo-action',
+         'render_callback' => 'esteem_button_text',
+      ) );
+   }
 
 	// Promo Button Text Link
    $wp_customize->add_section('esteem_button_link_setting', array(
@@ -225,13 +272,14 @@ function esteem_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('esteem_site_layout', array(
-      'default' => 'box',
-      'capability' => 'edit_theme_options',
+      'default'           => 'box',
+      'capability'        => 'edit_theme_options',
+      'transport'         => 'postMessage',
       'sanitize_callback' => 'esteem_radio_sanitize'
    ));
    $wp_customize->add_control('esteem_site_layout', array(
-      'type' => 'radio',
-      'label' => __('Choose your site layout. The change is reflected in whole site.', 'esteem'),
+      'type'    => 'radio',
+      'label'   => __('Choose your site layout. The change is reflected in whole site.', 'esteem'),
       'section' => 'esteem_site_layout_setting',
       'choices' => array(
          'box' => __('Boxed layout', 'esteem'),
@@ -410,9 +458,10 @@ function esteem_customize_register($wp_customize) {
    ));
 
    $wp_customize->add_setting('esteem_primary_color', array(
-      'default' => '#ED564B',
-      'capability' => 'edit_theme_options',
-      'sanitize_callback' => 'esteem_color_option_hex_sanitize',
+      'default'              => '#ED564B',
+      'capability'           => 'edit_theme_options',
+      'transport'            => 'postMessage',
+      'sanitize_callback'    => 'esteem_color_option_hex_sanitize',
       'sanitize_js_callback' => 'esteem_color_escaping_option_sanitize'
    ));
    $wp_customize->add_control(
@@ -528,8 +577,9 @@ function esteem_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('esteem_activate_slider',	array(
-		'default' => 0,
-      'capability' => 'edit_theme_options',
+		'default'           => 0,
+      'capability'        => 'edit_theme_options',
+      'transport'         => $customizer_selective_refresh,
 		'sanitize_callback' => 'esteem_sanitize_checkbox'
 	));
 	$wp_customize->add_control('esteem_activate_slider',	array(
@@ -537,6 +587,14 @@ function esteem_customize_register($wp_customize) {
 		'label' => __('Check to activate slider.', 'esteem' ),
 		'section' => 'esteem_activate_slider_setting'
 	));
+
+   // Selective refresh for slider activation
+   if ( isset( $wp_customize->selective_refresh ) ) {
+      $wp_customize->selective_refresh->add_partial( 'esteem_activate_slider', array(
+         'selector'        => '#featured-slider',
+         'render_callback' => '',
+      ) );
+   }
 
 	// Slide options
 	for( $i=1; $i<=4; $i++) {
@@ -658,6 +716,52 @@ function esteem_customize_register($wp_customize) {
    }
 }
 add_action('customize_register', 'esteem_customize_register');
+
+/**
+ * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ *
+ * @since Ample 1.1.8
+ */
+function esteem_customize_preview_js() {
+   wp_enqueue_script( 'esteem-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), false, true );
+}
+add_action( 'customize_preview_init', 'esteem_customize_preview_js' );
+
+/**
+ * Render the site title for the selective refresh partial.
+ *
+ * @return void
+ */
+function esteem_customize_partial_blogname() {
+   bloginfo( 'name' );
+}
+
+/**
+ * Render the site tagline for the selective refresh partial.
+ *
+ * @return void
+ */
+function esteem_customize_partial_blogdescription() {
+   bloginfo( 'description' );
+}
+
+// Function for slogan to support selective refresh
+function esteem_slogan() {
+   $esteem_slogan = get_theme_mod('esteem_slogan');
+   echo esc_html( $esteem_slogan );
+}
+
+// Function for sub slogan to support selective refresh
+function esteem_sub_slogan() {
+   $esteem_sub_slogan = get_theme_mod('esteem_sub_slogan');
+   echo esc_html( $esteem_sub_slogan );
+}
+
+// Function for slogn readmor button to support selective refresh
+function esteem_button_text() {
+   $esteem_button_text = get_theme_mod('esteem_button_text');
+   echo esc_html( $esteem_button_text );
+}
 
 /*****************************************************************************************/
 
