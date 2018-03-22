@@ -3222,3 +3222,13 @@ text-align: center;
     }    
 }
 
+.no-post-thumbnail {
+    min-height: 450px;
+    background-color: #ea8800;
+    text-align: center;
+    color: #fff;
+    font-size: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

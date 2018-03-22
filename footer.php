@@ -28,7 +28,7 @@ $hide_footer_widget_bar = get_theme_mod('hideFooterWidgetBar',1); ?>
                 <div class="row">
                     <div class="col-md-4 col-xs-12 col-sm-4">
                         <div class="copyright fadeIn animated">                            
-                            <p><?php esc_html_e('Powered by ','best-startup');?><a href="<?php echo esc_url('https://electrathemes.com/best-startup-wordpress-theme/ ','best-startup'); ?>" target="_blank"><?php esc_html_e('Best Startup WordPress Theme','best-startup'); ?></a></p>
+                            <p><?php esc_html_e('Powered by ','best-startup');?><a href="<?php echo esc_url('https://electrathemes.com/wordpress-themes/best-startup/ ','best-startup'); ?>" target="_blank"><?php esc_html_e('Best Startup WordPress Theme','best-startup'); ?></a></p>
                             
                         </div>
                     </div>

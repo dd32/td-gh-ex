@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Best Startup\n"
-"POT-Creation-Date: 2018-03-10 12:59+0530\n"
+"POT-Creation-Date: 2018-03-22 18:52+0530\n"
 "PO-Revision-Date: 2018-03-10 12:58+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -51,15 +51,15 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: content.php:35
+#: content.php:37
 msgid "READ MORE"
 msgstr ""
 
-#: content.php:42
+#: content.php:44
 msgid "Back"
 msgstr ""
 
-#: content.php:43
+#: content.php:45
 msgid "Onward"
 msgstr ""
 
@@ -88,13 +88,12 @@ msgid "Install Required Plugins"
 msgstr ""
 
 #: functions/class-tgm-plugin-activation.php:328
-#: functions/theme-default-setup.php:112
+#: functions/theme-default-setup.php:111
 msgid "Install Plugins"
 msgstr ""
 
 #. translators: %s: plugin name.
 #: functions/class-tgm-plugin-activation.php:330
-#: functions/theme-default-setup.php:113
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
@@ -106,13 +105,11 @@ msgid "Updating Plugin: %s"
 msgstr ""
 
 #: functions/class-tgm-plugin-activation.php:333
-#: functions/theme-default-setup.php:114
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #. translators: 1: plugin name(s).
 #: functions/class-tgm-plugin-activation.php:336
-#: functions/theme-default-setup.php:115
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
@@ -121,7 +118,6 @@ msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: functions/class-tgm-plugin-activation.php:342
-#: functions/theme-default-setup.php:116
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
@@ -130,7 +126,6 @@ msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: functions/class-tgm-plugin-activation.php:348
-#: functions/theme-default-setup.php:121
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -151,7 +146,6 @@ msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: functions/class-tgm-plugin-activation.php:360
-#: functions/theme-default-setup.php:118
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
@@ -160,7 +154,6 @@ msgstr[1] ""
 
 #. translators: 1: plugin name(s).
 #: functions/class-tgm-plugin-activation.php:366
-#: functions/theme-default-setup.php:119
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
@@ -168,7 +161,6 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: functions/class-tgm-plugin-activation.php:371
-#: functions/theme-default-setup.php:123
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
@@ -181,14 +173,12 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: functions/class-tgm-plugin-activation.php:381
-#: functions/theme-default-setup.php:124
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
 #: functions/class-tgm-plugin-activation.php:385
-#: functions/theme-default-setup.php:125
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
@@ -201,7 +191,6 @@ msgstr ""
 
 #: functions/class-tgm-plugin-activation.php:387
 #: functions/class-tgm-plugin-activation.php:3159
-#: functions/theme-default-setup.php:126
 msgid "Plugin activated successfully."
 msgstr ""
 
@@ -841,64 +830,20 @@ msgstr ""
 msgid "By : "
 msgstr ""
 
-#: functions/theme-default-setup.php:87
+#: functions/theme-default-setup.php:86
 msgid "Page Builder by SiteOrigin"
 msgstr ""
 
-#: functions/theme-default-setup.php:92
+#: functions/theme-default-setup.php:91
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions/theme-default-setup.php:97
+#: functions/theme-default-setup.php:96
 msgid "Contact Form 7"
 msgstr ""
 
-#: functions/theme-default-setup.php:111
+#: functions/theme-default-setup.php:110
 msgid "Install Recommended Plugins"
-msgstr ""
-
-#: functions/theme-default-setup.php:117
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %s plugin. "
-"Contact the administrator of this site for help on getting the plugin "
-"installed."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to install the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins installed."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions/theme-default-setup.php:120
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugin. Contact the administrator of this site for help on getting the "
-"plugin activated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins activated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions/theme-default-setup.php:122
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to update the %s plugin. "
-"Contact the administrator of this site for help on getting the plugin "
-"updated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to update the %s plugins. "
-"Contact the administrator of this site for help on getting the plugins "
-"updated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions/theme-default-setup.php:127
-#, php-format
-msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
 #: header.php:51
@@ -924,8 +869,7 @@ msgid ""
 msgstr ""
 
 #: searchform.php:8
-msgctxt "label"
-msgid "Search for:"
+msgid "Search for :"
 msgstr ""
 
 #: searchform.php:9
@@ -934,7 +878,6 @@ msgid "Search..."
 msgstr ""
 
 #: searchform.php:11
-msgctxt "submit button"
 msgid "Search"
 msgstr ""
 

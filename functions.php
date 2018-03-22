@@ -107,3 +107,6 @@ function best_startup_special_navclass($classes, $item) {
 }
 
 require get_template_directory() . '/functions/theme-default-setup.php';
+require get_template_directory() . '/functions/class-tgm-plugin-activation.php';
+require get_template_directory() . '/functions/enqueue-files.php';
+require get_template_directory() . '/functions/theme-customization.php';

@@ -18,7 +18,9 @@
                                     </div>
                                     <?php else: ?>                                        
                                         <div class="blog-images">
-                                            <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url(get_template_directory_uri());?>/assets/images/no-image.jpg"></a>
+                                            <a href="<?php the_permalink(); ?>">
+                                                <div class="no-post-thumbnail"><i class="fa fa-image"></i> </div>
+                                            </a>
                                         </div>
                                     <?php endif; ?>
                                     <div class="blog-inner-content mask">
