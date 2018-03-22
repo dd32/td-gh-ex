@@ -91,6 +91,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 
 == Changelog ==
 
+= 1.9.1
+- Updated: Version bump as wp.org upload failed.
+
 = 1.9.0
 - Updated: Readme file updated to ensure format is consistent with upcoming wordpress.org update to align themes with plugin directory.
 
