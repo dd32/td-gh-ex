@@ -1,30 +1,33 @@
-= Annina Free =
-* by the CrestaProject team, https://crestaproject.com/
-
-== ABOUT Annina Free ==
-Annina is clean & fresh responsive WordPress Blog Theme, full width and masonry based, one main column e one sidebar column, unlimited colors and theme options.
-
-== License ==
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2.
-
-License: GNU General Public License v2 or later
+=== Annina ===
+Contributors: CrestaProject
+Tags: two-columns, right-sidebar, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, editor-style, full-width-template, rtl-language-support, blog, news
+Requires at least: 4.5
+Tested up to: 4.9
+Stable tag: 1.6.0
+License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Annina WordPress Theme, Copyright 2018 Rizzo Andrea
+Annina is distributed under the terms of the GNU GPL
 
-Annina Free WordPress Theme, Copyright 2012-2014 CrestaProject.com
-Annina Free is distributed under the terms of the GNU General Public License v2 
+== Description ==
 
-Annina Free is derived from _S (Underscores) WordPress Theme, Copyright 2014.
-http://underscores.me/
-Licensed under GPLv2 or later
+Annina is clean & fresh responsive WordPress Blog Theme, full width and masonry based, one main column e one sidebar column, unlimited colors and theme options by CrestaProject.com.
 
-Scripts used in the site are as below:
-	1. Font Awesome (http://fontawesome.io/) licensed under SIL OFL 1.1
-	2. HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2
-	3. Smooth Scroll script (https://gist.github.com/galambalazs/6477177/) licensed under MIT
-	4. imagesLoaded script (http://imagesloaded.desandro.com/) licensed under MIT
-	5. "Pro" theme section examples for the customizer (https://github.com/justintadlock/trt-customizer-pro) licensed under the GNU GPL, version 2 or later.
+== Installation ==
 
-Images used in Theme Screenshot
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
+
+== Credits ==
+
+* Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+* FontAwesome (http://fontawesome.io/) Font licensed under SIL OFL 1.1 and Code lisensed under MIT
+* "Pro" theme section examples for the customizer (https://github.com/justintadlock/trt-customizer-pro) licensed under the GNU GPL, version 2 or later.
+* Smooth Scroll script (https://gist.github.com/galambalazs/6477177/) licensed under MIT
+* imagesLoaded script (http://imagesloaded.desandro.com/) licensed under MIT
+* Images used in Theme Screenshot
 	1. Pixabay (http://pixabay.com/it/home-office-workstation-ufficio-336373/) Free photos for commercial and personal works
 	2. Pixabay (http://pixabay.com/it/iphone-6-apple-ios-iphone-ios-8-458153/) Free photos for commercial and personal works
 	3. Pixabay (http://pixabay.com/it/servizio-computer-riparazione-428540/) Free photos for commercial and personal works
@@ -33,22 +36,11 @@ Images used in Theme Screenshot
 	6. Pixabay (http://pixabay.com/it/notebook-penne-stilografiche-penna-428293/) Free photos for commercial and personal works
 	7. Pixabay (http://pixabay.com/it/iphone-modello-mockup-mock-up-500291/) Free photos for commercial and personal works
 
-== Translation ==
-Annina Free theme is translation ready. 
-
-== Menus ===
-Annina Free Theme have 1 menu: Primary
-
-== Tags ==
-two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, editor-style, full-width-template, rtl-language-support, white, red, black, light, dark
-
-== Installation ==
-
-1. Primary: Login to your wp-admin area and go to Appearance -> Themes. Select Install tab and click on Upload link. Select theme .zip and ckick on Install now button. If you have any errors, use alternate method.
-2. Alternate: Unzip the template file (annina.zip) that you have downloaded. Via FTP, upload the whole folder (annina) to your server and place it in the /wp-content/themes/ folder. Do not change directory name. The template files should thus be here now: /wp-content/themes/annina/index.php (for example).
-3. Log into your WP admin panel and click on the Design tab. Now click on the Annina theme to activate it.
-
 == Changelog ==
+= Version 1.6.0 =
+* Improved readme.txt file
+* Minor bug fixes
+
 = Version 1.5.9 =
 * Improved support with Jetpack plugin
 * Minor bug fixes
