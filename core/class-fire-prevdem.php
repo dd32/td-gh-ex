@@ -21,7 +21,7 @@ if ( ! class_exists( 'CZR_prevdem' ) ) :
 
       //FEATURED PAGES
       add_filter( 'tc_opt_tc_show_featured_pages', '__return_true' );
-      add_filter( 'fp_img_src', array( $this, 'czr_fn_set_fp_img_src'), 100 );
+      add_filter( 'fp_img_src', array( $this, 'czr_fn_set_fp_img_src'), 100, 3 );
       add_filter( 'czr_fp_title', array( $this, 'czr_fn_set_fp_title'), 100, 3 );
       add_filter( 'czr_fp_text', array( $this, 'czr_fn_set_fp_text'), 100 );
       add_filter( 'czr_fp_link_url', array( $this, 'czr_fn_set_fp_link'), 100 );
@@ -38,6 +38,7 @@ if ( ! class_exists( 'CZR_prevdem' ) ) :
       //adds infos in the caption data of the demo slider
       add_filter( 'czr_slide_caption_data' , array( $this, 'czr_fn_set_demo_slide_data'), 100, 3 );
       add_filter( 'tc_opt_tc_slider_delay', array( $this, 'czr_fn_set_demo_slider_delay') );
+      add_filter( 'tc_opt_tc_slider_img_smart_load', '__return_false' );
 
       //SINGLE POSTS AND PAGES
       add_filter( 'tc_show_single_post_thumbnail', '__return_true');
@@ -46,6 +47,11 @@ if ( ! class_exists( 'CZR_prevdem' ) ) :
       add_filter( 'tc_single_page_thumb_hook', array( $this, 'czr_fn_set_singular_thumb_hook') );
       add_filter( 'tc_single_post_thumb_height', array( $this, 'czr_fn_set_singular_thumb_height') );
       add_filter( 'tc_single_page_thumb_height', array( $this, 'czr_fn_set_singular_thumb_height') );
+      add_filter( 'tc_opt_tc_single_post_thumb_location', array( $this, 'czr_fn_display_single_post_thumbnail') );
+      //block locations
+      add_filter( 'tc_opt_tc_single_author_block_location', array( $this, 'czr_fn_set_single_block_location') );
+      add_filter( 'tc_opt_tc_single_related_posts_block_location', array( $this, 'czr_fn_set_single_block_location') );
+      add_filter( 'tc_opt_tc_singular_comments_block_location', array( $this, 'czr_fn_set_single_block_location') );
 
       //SOCIALS
       add_filter( 'option_tc_theme_options', array( $this, 'czr_fn_set_socials'), 100 );
@@ -56,6 +62,7 @@ if ( ! class_exists( 'CZR_prevdem' ) ) :
       //add_filter( 'tc_has_footer_widgets_zone', '__return_true');
       add_filter( 'tc_has_sidebar_widgets', '__return_true');
     }//construct
+
 
 
     /* ------------------------------------------------------------------------- *
@@ -115,8 +122,17 @@ if ( ! class_exists( 'CZR_prevdem' ) ) :
      *  Featured Pages
     /* ------------------------------------------------------------------------- */
     //hook : fp_img_src
-    function czr_fn_set_fp_img_src($fp_img) {
-      return czr_fn_get_thumbnail_model( array( 'requested_size' => 'tc-thumb' ) );
+    function czr_fn_set_fp_img_src($fp_img, $fp_single_id, $featured_page_id ) {
+      /*
+      * if no featured page set, pass the post_id as -1 so that:
+      * 1) czr_fn_get_thumbnail_model will not fall back on the global post_id (WP_QUery already set)
+      * 2) an empy tc_thumb will be passed to the czr_thumb_html filter hook
+      * 3) the filter callback czr_fn_filter_thumb_src (see below) will filter the thumb in 2) and return a random 'prevdem' image
+      *
+      * This is needed because otherwise, if the first post to be shown in the home page displaying the latest posts
+      * has a 'thumbnail candidate' (feateured image or first attachment), it will be used for the all the not set featured pages!
+      */
+      return czr_fn_get_thumbnail_model( array( 'requested_size' => 'tc-thumb', 'post_id' => empty( $featured_page_id ) ? -1 : $featured_page_id ) );
     }
 
     function czr_fn_set_fp_title( $text, $fp_single_id, $featured_page_id ) {
@@ -140,7 +156,7 @@ if ( ! class_exists( 'CZR_prevdem' ) ) :
       return '';
     }
 
-    function czr_fn_set_fp_link() {
+    function czr_fn_set_fp_link( $a ) {
       return 'javascript:void(0)';
     }
 
@@ -337,7 +353,13 @@ if ( ! class_exists( 'CZR_prevdem' ) ) :
     function czr_fn_set_singular_thumb_height() {
       return 350;
     }
-
+    function czr_fn_set_single_block_location() {
+      return 'below_post_content';
+    }
+    //hook : tc_opt_tc_single_post_thumb_location
+    function czr_fn_display_single_post_thumbnail() {
+      return  '__before_main_wrapper|200';
+    }
 
 
     /* ------------------------------------------------------------------------- *

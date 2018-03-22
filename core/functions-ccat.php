@@ -1,33 +1,42 @@
 <?php
 /*
- * @since 3.5.0
- */
-//shortcut function to echo the column content wrapper class
+* An handly function to print the page wrapper class
+*/
+//shortcut function to echo the #tc-page-wrap class
+if ( ! function_exists( 'czr_fn_page_wrapper_class' ) ) {
+      function czr_fn_page_wrapper_class() {
+            echo czr_fn_stringify_array( czr_fn_get_page_wrapper_class() );
+      }
+}
+
+/*
+* An handly function to print the content wrapper class
+*/
 if ( ! function_exists( 'czr_fn_column_content_wrapper_class' ) ) {
       function czr_fn_column_content_wrapper_class() {
-            return CZR() -> czr_fn_column_content_wrapper_class();
+            echo czr_fn_stringify_array( czr_fn_get_column_content_wrapper_class() );
       }
 }
 
+
 /*
- * @since 3.5.0
- */
-//shortcut function to echo the column content wrapper class
+* An handly function to print the main container class
+*/
 if ( ! function_exists( 'czr_fn_main_container_wrapper_class' ) ) {
       function czr_fn_main_container_class() {
-            return CZR() -> czr_fn_main_container_class();
+            echo czr_fn_stringify_array( czr_fn_get_main_container_class() );
       }
 }
 
 /*
- * @since 3.5.0
- */
-//shortcut function to echo the article container class
+* An handly function to print the article containerr class
+*/
 if ( ! function_exists( 'czr_fn_article_container_class' ) ) {
       function czr_fn_article_container_class() {
-            return CZR() -> czr_fn_article_container_class();
+            echo czr_fn_stringify_array( czr_fn_get_article_container_class() );
       }
 }
+
 
 /*
  * @since 3.5.0
@@ -310,18 +319,24 @@ if ( ! function_exists( 'czr_fn_maybe_register' ) ) {
 *
 */
 /**
-* hook : after_setup_theme
+* hook : 'wp_head'
 * @package Customizr
 * @since Customizr 3.3.0
 */
 function czr_fn_wp_filters() {
     add_filter( 'the_content'     , 'czr_fn_fancybox_content_filter'  );
+    if ( apply_filters( 'czr_enable_lightbox_in_wc_short_description', false  ) ) {
+        add_filter( 'woocommerce_short_description', 'czr_fn_fancybox_content_filter' );
+    }
     /*
     * Smartload disabled for content retrieved via ajax
     */
     if ( apply_filters( 'czr_globally_enable_img_smart_load', !czr_fn_is_ajax() && esc_attr( czr_fn_opt( 'tc_img_smart_load' ) ) ) ) {
         add_filter( 'the_content'    , 'czr_fn_parse_imgs', PHP_INT_MAX );
         add_filter( 'czr_thumb_html' , 'czr_fn_parse_imgs'  );
+        if ( apply_filters( 'czr_enable_img_smart_load_in_wc_short_description', false  ) ) {
+            add_filter( 'woocommerce_short_description', 'czr_fn_parse_imgs' );
+        }
     }
     add_filter( 'wp_title'        , 'czr_fn_wp_title' , 10, 2 );
 }
@@ -377,7 +392,7 @@ function czr_fn_get_layout( $post_id , $sidebar_or_class = 'class' ) {
       if ( is_404() ) {
             $czr_screen_layout = array(
                 'sidebar' => false,
-                'class'   => 'col-12 col-md-8 push-md-2'
+                'class'   => 'col-12 col-md-8 offset-md-2'
             );
             return apply_filters( 'czr_screen_layout' , $czr_screen_layout[$sidebar_or_class], $post_id , $sidebar_or_class );
       }
@@ -403,10 +418,10 @@ function czr_fn_get_layout( $post_id , $sidebar_or_class = 'class' ) {
       $is_singular_layout          = false;
 
 
-      if ( apply_filters( 'czr_is_post_layout', is_single( $post_id ), $post_id ) ) {
+      if ( apply_filters( 'czr_is_post_layout', is_single( $post_id ), $post_id ) || czr_fn_is_attachment_image() ) {
             $_czr_sidebar_default_layout  = esc_attr( czr_fn_opt('tc_sidebar_post_layout') );
             $is_singular_layout           = true;
-      } if ( apply_filters( 'czr_is_page_layout', is_page( $post_id ), $post_id ) ) {
+      } elseif ( apply_filters( 'czr_is_page_layout', is_page( $post_id ), $post_id ) ) {
             $_czr_sidebar_default_layout  = esc_attr( czr_fn_opt('tc_sidebar_page_layout') );
             $is_singular_layout           = true;
       }
@@ -424,13 +439,17 @@ function czr_fn_get_layout( $post_id , $sidebar_or_class = 'class' ) {
       //The following lines set the post specific layout if any, and if not keeps the default layout previously defined
       $czr_specific_post_layout    = false;
 
-      //if we are displaying an attachement, we use the parent post/page layout
+      //if we are displaying an attachement, we use the parent post/page layout by default
+      //=> but if the attachment has a layout, it will win.
       if ( isset($post) && is_singular() && 'attachment' == $post->post_type ) {
-            $czr_specific_post_layout  = esc_attr( get_post_meta( $post->post_parent , $key = 'layout_key' , $single = true ) );
+            $czr_specific_post_layout  = esc_attr( get_post_meta( $post_id, $key = 'layout_key' , $single = true ) );
+            if ( ! $czr_specific_post_layout ) {
+                $czr_specific_post_layout  = esc_attr( get_post_meta( $post->post_parent , $key = 'layout_key' , $single = true ) );
+            }
       }
 
       //for a singular post or page OR for the posts page
-      elseif ( $is_singular_layout || is_singular() || $wp_query -> is_posts_page ) {
+      elseif ( $is_singular_layout || is_singular() || czr_fn_is_attachment_image() || $wp_query -> is_posts_page ) {
             $czr_specific_post_layout  = esc_attr( get_post_meta( $post_id, $key = 'layout_key' , $single = true ) );
       }
 
@@ -454,6 +473,21 @@ function czr_fn_get_layout( $post_id , $sidebar_or_class = 'class' ) {
       return apply_filters( 'czr_screen_layout' , $czr_screen_layout[$sidebar_or_class], $post_id , $sidebar_or_class );
 }
 
+/**
+* This function returns the column content wrapper class
+*
+* @package Customizr
+*/
+function czr_fn_get_page_wrapper_class() {
+    if ( 'boxed' == esc_attr( czr_fn_opt( 'tc_site_layout') ) ) {
+        $tc_page_wrap_class = array( 'container', 'czr-boxed' );
+    } else {
+        $tc_page_wrap_class = array();
+    }
+
+    return apply_filters( 'czr_page_wrapper_class' , $tc_page_wrap_class );
+}
+
 
 /**
 * This function returns the column content wrapper class
@@ -464,6 +498,7 @@ function czr_fn_get_layout( $post_id , $sidebar_or_class = 'class' ) {
 function czr_fn_get_column_content_wrapper_class() {
     return apply_filters( 'czr_column_content_wrapper_classes' , array( 'flex-row', 'row', 'column-content-wrapper') );
 }
+
 
 /**
 * This function returns the main container class
@@ -775,6 +810,9 @@ function czr_fn_is_there_any_visible_menu_location_assigned() {
 
 
 
+function czr_fn_li_wrap( $el, $attrs = '' ) {
+  return "<li $attrs>$el</li>";
+}
 
 
 
@@ -867,16 +905,21 @@ function czr_fn_is_single_post() {
     return apply_filters( 'czr_is_single_post', isset($post)
         && is_singular()
         && 'page' != $post -> post_type
-        && 'attachment' != $post -> post_type
+        && ! czr_fn_is_attachment_image()
         && ! czr_fn_is_home_empty()
         && ! czr_fn_is_real_home()
         );
 }
 
+function czr_fn_is_single_attachment_image() {
+    global $post;
+    return apply_filters( 'czr_is_single_attachment_image',
+        ! ( ! isset($post) || empty($post) || ! czr_fn_is_attachment_image() || !is_singular() ) );
+}
 
 function czr_fn_is_single_attachment() {
     global $post;
-    return apply_filters( 'czr_is_single_attacment',
+    return apply_filters( 'czr_is_single_attachment',
         ! ( ! isset($post) || empty($post) || 'attachment' != $post -> post_type || !is_singular() ) );
 }
 

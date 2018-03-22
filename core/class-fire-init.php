@@ -20,7 +20,7 @@ if ( ! class_exists( 'CZR_init' ) ) :
       public $global_layout;
       public $font_selectors;
       public $footer_widgets;
-      public $widgets;
+      public $footer_horizontal_widgets;
 
       public $css_container_widths;
       public $css_mq_breakpoints;
@@ -88,7 +88,7 @@ if ( ! class_exists( 'CZR_init' ) ) :
                   'lg' => '960',
                   'md' => '720',
                   'sm' => '540'
-          )); 
+          ));
 
           $this -> css_mq_breakpoints = apply_filters( 'czr_css_mq_breakpoints', array(
                   'xl' => '1200',
@@ -124,6 +124,16 @@ if ( ! class_exists( 'CZR_init' ) ) :
                               'before_title'            => '<h5 class="widget-title">',
                               'after_title'             => '</h5>'
               )
+          );//end of array
+
+          //Default horizontal footer widget area
+          $this -> footer_horizontal_widgets     = array(
+              'footer_horizontal'    => array(
+                              'name'                 => __( 'Footer Horizontal Widget Area' , 'customizr' ),
+                              'description'          => __( 'Appears before the site footer' , 'customizr' ),
+                              'before_title'            => '<h5 class="widget-title">',
+                              'after_title'             => '</h5>'
+              ),
           );//end of array
       }//end of constructor
 
@@ -170,13 +180,14 @@ if ( ! class_exists( 'CZR_init' ) ) :
             );
           }
           //IMAGE CENTERED
-          if ( (bool) esc_attr( czr_fn_opt( 'tc_center_img') ) ){
+          if ( (bool) esc_attr( czr_fn_opt( 'tc_center_img') ) ) {
             $_classes[] = 'tc-center-images';
           }
 
-          //SKIN CLASS
-          // $_skin = sprintf( 'skin-%s' , basename( $this->czr_fn_get_style_src() ) );
-          // $_classes[] = substr( $_skin , 0 , strpos($_skin, '.') );
+          //BOXED LAYOUT
+          if ( 'boxed' == esc_attr( czr_fn_opt( 'tc_site_layout') ) ) {
+            $_classes[] = 'czr-boxed-layout';
+          }
 
           //SIDENAV POSITIONING
           if ( czr_fn_is_possible('sidenav') ) {

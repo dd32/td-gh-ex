@@ -6,13 +6,16 @@
  * ( Woocommerce Cart Icon )
  */
 ?>
-<div class="topbar-nav__utils nav__utils col-auto" <?php czr_fn_echo('element_attributes') ?>>
+<div class="topbar-nav__utils nav__utils col-auto <?php czr_fn_echo('element_class') ?>" <?php czr_fn_echo('element_attributes') ?>>
     <ul class="nav utils flex-row flex-nowrap regular-nav">
       <?php
       if ( czr_fn_is_registered_or_possible( 'desktop_topbar_search' ) ) {
 
-        czr_fn_render_template( 'header/parts/desktop_search', array(
-          'model_id' => 'desktop_topbar_search'
+        czr_fn_render_template( 'header/parts/nav_search', array(
+          'model_id' => 'desktop_topbar_search',
+          'model_args' => array(
+            'search_toggle_class' => array( 'czr-overlay-toggle_btn' ),
+          )
         ) );
 
       }

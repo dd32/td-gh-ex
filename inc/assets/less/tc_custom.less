@@ -23,6 +23,7 @@
  => ADMIN BAR
  => MEDIA PRINT
  => DEBUG
+ => PURE CSS LOADER
  ***** END OF CONTENT *****/
 
 /* ELEMENTS
@@ -101,8 +102,6 @@ section {
 .tc-wc-menu .nav > li > a:before,
 #wp-admin-bar-tc-customizr-help .ab-item:before, li#wp-admin-bar-tc-customizr-help a:before,
 a + span.tc-external:after,
-.tc-placeholder-wrap:before,
-.tc-admin-notice:before,
 h2.comments-title:before,
 h3#reply-title:before,
 .btt-arrow,
@@ -110,15 +109,20 @@ h3#reply-title:before,
 .icon-bubble:before,
 .widget h3:before,
 .colophon .credits a[class*=icon-]:before {
-  font-family: 'FontAwesome';
-  speak: none;
-  font-weight: normal;
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
   font-variant: normal;
   text-transform: none;
   font-style: normal;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.colophon .credits a[class*=icon-]:before {
+  font-family: 'Font Awesome\ 5 Brands';
+  font-style: normal;
+  font-weight: normal;
 }
 
 #footer .white-icons .widget-title:before,
@@ -184,7 +188,7 @@ h3#reply-title:before,
   content: "\f0a1";
 }
 .widget_meta h3:before {
-  content: "\f08e";
+  content: "\f35d";
   top: 0.5px;
 }
 .widget_calendar h3:before {
@@ -215,7 +219,7 @@ h3#reply-title:before,
   }
   opacity: 0.2;
   position: relative;
-  top: -1.3px;
+  font-size: .85em;
 }
 .entry-summary.format-icon:before, .entry-content.format-icon:before {
   padding-right: 13px;
@@ -226,11 +230,12 @@ h3#reply-title:before,
   margin-top: -12px;
 }
 article.page .format-icon:before {
-  content: "\f0f6";
+  content: "\f15c";
+  font-weight: 400;
 }
 
 article.format-standard .format-icon:before {
-  content: "\f040";
+  content: "\f303";
 }
 
 article.format-image .format-icon:before, article.format-gallery .format-icon:before, article.attachment .format-icon:before {
@@ -254,13 +259,13 @@ article.format-video .format-icon:before  {
 article.format-status .format-icon:before  {
   content: "\f0e7";
 }
-article.format-quote .format-icon:before, article.error404 .format-icon:before {
+article.format-quote .format-icon:before {
   content: "\f10e";
   font-size: 3em;
 }
 /* ie11 hack: In ie11 looks like the above font-size rule makes the overall icon size too big
 as it multiplicates 4em (general rule) and 3em, instead of override the general rule with the one above */
-.ie11 article.format-quote .format-icon:before, .ie11 article.error404 .format-icon:before {
+.ie11 article.format-quote .format-icon:before {
   font-size: .3em;
 }
 article.format-link .format-icon:before {
@@ -269,7 +274,6 @@ article.format-link .format-icon:before {
 /* ARCHIVES */
 .search .search-header .format-icon:before {
   content: "\f002";
-  top: -1.9px;
 }
 
 .archive.date .archive-header .format-icon:before {
@@ -314,11 +318,10 @@ h2.comments-title:before {
 
 /* External Links style */
 a + span.tc-external:after {
-  content: "\f08e";
+  content: "\f35d";
   line-height: 0;
   padding-left: 0;
   text-decoration: none!important;
-  top: .1em;
   left: .2em;
   position: relative;
 }
@@ -645,16 +648,6 @@ h2.site-description {
 
 /* REGULAR MENU
     -------------------------------------------------- */
-.navbar .tc-main-menu-notice {
-  clear: both;
-  padding: 13px 15px 3px;
-  font-size: 17px;
-}
-
-.sticky-enabled .tc-main-menu-notice {
-  display: none;
-}
-
 .dropdown-menu {
   border: 0px solid rgba(0, 0, 0, 0.2);
 }
@@ -1144,19 +1137,6 @@ style when side nav visible is actually rendered inline TC_menu.tc_set_sidenav_s
   padding-bottom: 30px;
 }
 
-.navbar .tc-menu-placeholder {
-  float: left;
-  width: 86%;
-  margin-left: 10px;
-  clear: left;
-  padding: 9px 3% 0;
-  font-size: 17px;
-}
-
-.sticky-enabled .tc-menu-placeholder {
-  display: none;
-}
-
 /* BREADCRUMB
   -------------------------------------------------- */
 
@@ -1333,16 +1313,6 @@ footer#footer .colophon .credits a[class*=icon-] {
 
 /* SLIDER
     -------------------------------------------------- */
-.customizr-slide .tc-slider-notice {
-  position: absolute;
-  right: 30px;
-  z-index: 50;
-  bottom: 0px;
-  padding: 18px 14px 3px;
-  font-size: 17px;
-  width: 50%;
-}
-
 /* Carousel base class */
 .carousel {
   margin-bottom: 0px;
@@ -1453,6 +1423,13 @@ footer#footer .colophon .credits a[class*=icon-] {
   transition-timing-function: ease-in-out;
   /* max-height: 100%; */
 }
+
+.disable-transitions-for-smartload .carousel-image img {
+  transition : none;
+  -webkit-transition:none;
+  -moz-transition:none;
+  -o-transition:none;
+}
 .carousel-image.slider-full img {
   max-width: 100%;
 }
@@ -1562,8 +1539,6 @@ footer#footer .colophon .credits a[class*=icon-] {
 }
 .tc-css-loader {
   display: none;
-}
-.csstransforms3d .tc-css-loader {
   width: 50px;
   height: 50px;
   position: absolute;
@@ -1572,6 +1547,8 @@ footer#footer .colophon .credits a[class*=icon-] {
           transform: translate3d(-50%, -50%, 0);
   top: 50%;
   left: 50%;
+}
+.csstransforms3d .tc-css-loader {
   display: block;
 }
 .tc-mr-loader > div:nth-child(0) {
@@ -1594,8 +1571,10 @@ footer#footer .colophon .credits a[class*=icon-] {
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
   position: absolute;
-  top: -4%;
-  left: -4%;
+  /*top: -4%;
+  left: -4%;*/
+  top: -0%;
+  left: -0%;
   width: 100%;
   height: 100%;
   border-radius: 100%;
@@ -1610,13 +1589,7 @@ footer#footer .colophon .credits a[class*=icon-] {
 
 /* FEATURED PAGES
     -------------------------------------------------- */
-.marketing .tc-fp-notice {
-  float: right;
-  padding: 18px 14px 3px;
-  font-size: 17px;
-  width: 50%;
-  margin-top: 20px;
-}
+
 /*
 * round-divs and featured pages container compatibility with bootstrap3+
 *
@@ -1854,7 +1827,7 @@ article.format-chat .entry-content {
   border-left: 18px solid @FormatQuoteBorder;
 }
 
-article.format-quote .entry-content, article.error404 .entry-content {
+article.format-quote .entry-content {
   & when (@is_rtl = true) {
     padding: 24px 0 24px;
     border-right: 18px solid@FormatQuoteBorder;
@@ -1867,7 +1840,7 @@ article.format-quote .entry-content, article.error404 .entry-content {
   background: @FormatQuoteBg;
 }
 
-article.format-quote .entry-content blockquote , article.error404 .entry-content blockquote {
+article.format-quote .entry-content blockquote {
   border:0px;
   background: inherit;
 }
@@ -1930,14 +1903,18 @@ article.format-gallery p.format-icon, article.format-image p.format-icon {
   color: @PostFormatText;
 }
 
-article .author-info , .archive-header .author-info {
+article .author-info-wrapper , .archive-header .author-info {
   background: #FFF;
   padding: 15px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   font-style: italic;
   font-size: inherit;
 }
-
+article .author-info + .author-info {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
 article .author-info h2 , .archive-header .author-info h2 {
   margin:0px;
 }
@@ -2114,41 +2091,6 @@ max-width: 100%;
   display: none;
 }
 
-/* SIDEBARS STUFF
-      -------------------------------------------------- */
-
-.tc-sidebar .tc-placeholder-wrap {
-  margin-top: 15px;
-}
-.tc-placeholder-wrap p {
-  font-style: italic;
-  font-size: 80%;
-  color: #5A5A5A!important;
-}
-#footer .tc-placeholder-wrap h4 {
-  color: #5A5A5A;
-}
-#footer .tc-placeholder-wrap a, .tc-sidebar .tc-placeholder-wrap a{
-  color: #5A5A5A;
-  text-decoration: underline;
-}
-.tc-admin-notice {
-  font-size: 12px;
-  font-weight: bold;
-  color: #5A5A5A!important;
-}
-.tc-dismiss-notice {
-  font-size: 11px;
-  font-weight: bold;
-  position: absolute;
-  top: 1px;
-  right: 6px;
-}
-.tc-admin-notice:before {
-  content: '\f084';
-  font-size: 15px;
-  padding-right: 3px;
-}
 /* POST THUMBNAILS
       -------------------------------------------------- */
 .tc-rectangular-thumb {
@@ -2563,29 +2505,6 @@ article .no-thumb figcaption {
   background: none;
 }
 
-
-
-/*
-PLACEHOLDERS / DISMISS NOTICES
-    -------------------------------------------------- */
-.tc-placeholder-wrap {
-  padding: 19px;
-  background-color: #F5F5F5;
-  border: 1px solid #E3E3E3;
-  -webkit-box-shadow: inset 0 0px 10px rgba(0, 0, 0, 0.6);
-  -moz-box-shadow: inset 0 0px 10px rgba(0, 0, 0, 0.6);
-  box-shadow: inset 0 0px 10px rgba(0, 0, 0, 0.6);
-  position: relative;
-}
-.tc-placeholder-wrap::before {
-  font-size: 1em;
-  content: "\f05a";
-  padding-left: 0;
-  position: absolute;
-  text-decoration: none!important;
-  top: 5px;
-  left: 5px;
-}
 
 
 /* WP SPECIFICS
@@ -3044,7 +2963,7 @@ footer ul, footer ol {
     -ms-transition: all, 0.45s ease-in-out;
     -o-transition: all, 0.45s ease-in-out;
     transition: all 0.45s ease-in-out;
-    font-size: 1.25em
+    font-size: 1em
 }
 #bottom-front-notification h2 {
   font-size: 1.5em;
@@ -3064,7 +2983,7 @@ footer ul, footer ol {
   margin-bottom: 1em;
 }
 #bottom-front-notification .note-content p, #bottom-front-notification .note-content a {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.5rem;
 }
 #bottom-front-notification .fa:before {
@@ -3089,6 +3008,7 @@ footer ul, footer ol {
   margin-right: 0;
   top: 2px;
   position: relative;
+  font-weight: normal;
 }
 
 
@@ -3121,4 +3041,83 @@ li#wp-admin-bar-tc-customizr-help a {
   @page {
     margin: 1cm;
     }
+}
+
+
+/* PURE CSS LOADER */
+// Pure CSS loader
+@-webkit-keyframes czr-mr-loader {
+  0% {
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 1;
+  }
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.0;
+  }
+}
+@keyframes czr-mr-loader {
+  0% {
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 1;
+  }
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.0;
+  }
+}
+.czr-css-loader {
+  display: none;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  top: 50%;
+  left: 50%;
+}
+.csstransforms3d .czr-css-loader {
+  display: block;
+}
+.czr-mr-loader > div:nth-child(0) {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+.czr-mr-loader > div:nth-child(1) {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+}
+.czr-mr-loader > div:nth-child(2) {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s;
+}
+.czr-mr-loader > div:nth-child(3) {
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s;
+}
+.czr-mr-loader > div {
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  position: absolute;
+  /*top: -4%;
+  left: -4%;*/
+  top: -0%;
+  left: -0%;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 2px solid #777;
+  -webkit-animation: czr-mr-loader 1.25s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
+  animation: czr-mr-loader 1.25s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
 }

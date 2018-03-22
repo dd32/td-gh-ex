@@ -273,12 +273,11 @@ if ( ! class_exists( 'CZR_header_main' ) ) :
 
         <?php
           do_action( '__before_logo' );
-
             printf('<%1$s><a class="site-title" href="%2$s" title="%3$s">%4$s</a></%1$s>',
-    	          		apply_filters( 'tc_site_title_tag', 'h1' ) ,
-    	          		apply_filters( 'tc_logo_link_url', esc_url( home_url( '/' ) ) ) ,
-    					     apply_filters( 'tc_site_title_link_title', sprintf( '%1$s | %2$s' , __( esc_attr( get_bloginfo( 'name' ) ) ) , __( esc_attr( get_bloginfo( 'description' ) ) ) ) ),
-    	          		__( esc_attr( get_bloginfo( 'name' ) ) )
+                    apply_filters( 'tc_site_title_tag', 'h1' ) ,
+                    apply_filters( 'tc_logo_link_url', esc_url( home_url( '/' ) ) ) ,
+                    apply_filters( 'tc_site_title_link_title', sprintf( '%1$s | %2$s' , get_bloginfo( 'name', 'display' )  , get_bloginfo( 'description', 'display' ) ) ),
+                    get_bloginfo( 'name', 'display' )
             );
   		 	  do_action( '__after_logo' )
         ?>
@@ -336,13 +335,11 @@ if ( ! class_exists( 'CZR_header_main' ) ) :
         <div class="<?php echo implode( " ", apply_filters( 'tc_logo_class', $logo_class ) ) ?>">
         <?php
             do_action( '__before_logo' );
-
-            printf( '<a class="site-logo" href="%1$s" title="%2$s">%3$s</a>',
-                apply_filters( 'tc_logo_link_url', esc_url( home_url( '/' ) ) ) ,
-                apply_filters( 'tc_logo_link_title', sprintf( '%1$s | %2$s' , __( esc_attr( get_bloginfo( 'name' ) ) ) , __( esc_attr( get_bloginfo( 'description' ) ) ) ) ),
-                implode( '', $logos_img )
-        	);
-
+              printf( '<a class="site-logo" href="%1$s" title="%2$s">%3$s</a>',
+                  apply_filters( 'tc_logo_link_url', esc_url( home_url( '/' ) ) ) ,
+                  apply_filters( 'tc_logo_link_title', sprintf( '%1$s | %2$s' , get_bloginfo( 'name', 'display' )  , get_bloginfo( 'description', 'display' ) ) ),
+                  implode( '', $logos_img )
+              );
             do_action( '__after_logo' );
         ?>
         </div> <!-- brand span3 -->
@@ -739,10 +736,8 @@ if ( ! class_exists( 'CZR_menu' ) ) :
       if ( $this -> czr_fn_is_sidenav_enabled() ){
         add_action( 'wp_head'                     , array( $this , 'czr_fn_set_sidenav_hooks') );
         add_filter( 'tc_user_options_style'       , array( $this , 'czr_fn_set_sidenav_style') );
-      } else {
-        // add main menu notice
-        add_action( '__navbar'                    , array( $this, 'czr_fn_maybe_display_main_menu_notice'), 50 );
       }
+
       //this adds css classes to the navbar-wrapper :
       //1) to the main menu if regular (sidenav not enabled)
       //2) to the secondary menu if enabled
@@ -774,8 +769,6 @@ if ( ! class_exists( 'CZR_menu' ) ) :
 
       // add side menu before the page wrapper
       add_action( '__before_page_wrapper'   , array( $this, 'czr_fn_sidenav_display'), 0 );
-      // add side menu help block
-      add_action( '__sidenav'               , array( $this, 'czr_fn_maybe_display_sidenav_help') );
       // add menu button to the sidebar
       add_action( '__sidenav'               , array( $this, 'czr_fn_sidenav_toggle_button_display'), 5 );
       // add menu
@@ -783,31 +776,7 @@ if ( ! class_exists( 'CZR_menu' ) ) :
     }
 
 
-    /**
-    * Displays a dismissable block of information in the sidenav wrapper when conditions are met
-    * hook : __sidenav
-    */
-    function czr_fn_maybe_display_sidenav_help() {
-      if (  ! CZR_placeholders::czr_fn_is_sidenav_help_on() )
-        return;
-      ?>
-      <div class="tc-placeholder-wrap tc-sidenav-help">
-        <?php
-          printf('<p><strong>%1$s</strong></p><p>%2$s</p><p>%3$s</p>',
-              __( "This is a default page menu.", "customizr" ),
-              __( "( If you don't have any pages in your website, then this side menu is empty for the moment. )" , "customizr"),
-              sprintf( __("If you have already created menu(s), you can %s. If you need to create a new menu, jump to the %s.", "customizr"),
-                sprintf( '<a href="%1$s" title="%2$s">%3$s</a>', czr_fn_get_customizer_url( array( "section" => "nav") ), __( "change the default menu", "customizr"), __("replace this default menu by another one", "customizr") ),
-                sprintf( '<a href="%1$s" title="%2$s" target="blank">%2$s</a>', admin_url('nav-menus.php'), __( "menu creation screen", "customizr") )
-              )
-          );
-          printf('<a class="tc-dismiss-notice" href="#" title="%1$s">%1$s x</a>',
-                __( 'dismiss notice', 'customizr')
-          );
-        ?>
-      </div>
-      <?php
-    }
+
 
 
     /***************************************
@@ -830,8 +799,6 @@ if ( ! class_exists( 'CZR_menu' ) ) :
           $this -> czr_fn_sidenav_toggle_button_display();
           if ( $this -> czr_fn_is_second_menu_enabled() )
             $this -> czr_fn_regular_menu_display( 'secondary' );
-          else
-            $this -> czr_fn_maybe_display_second_menu_placeholder();
         }
 
       $html = ob_get_contents();
@@ -1035,61 +1002,6 @@ if ( ! class_exists( 'CZR_menu' ) ) :
     }
 
 
-    /***************************************
-    * PLACEHOLDERS VIEW
-    ****************************************/
-    /**
-    * Displays the placeholder view if conditions are met in CZR_placeholders::czr_fn_is_main_menu_notice_on()
-    * fired in czr_fn_menu_display(), hook : __navbar
-    * @since Customizr 3.4+
-    */
-    function czr_fn_maybe_display_main_menu_notice() {
-      if (  ! CZR_placeholders::czr_fn_is_main_menu_notice_on() )
-          return;
-      ?>
-      <div class="tc-placeholder-wrap tc-main-menu-notice">
-        <?php
-          printf('<p><strong>%1$s<br/>%2$s</strong></p>',
-              __( "You can now display your menu as a vertical and mobile friendly side menu, animated when revealed.", "customizr" ),
-              sprintf( __("%s or %s.", "customizr"),
-                sprintf( '<a href="%1$s" title="%2$s" target="blank">%2$s</a><span class="tc-external"></span>', esc_url('demo.presscustomizr.com?design=nav'), __( "Try it with the demo", "customizr") ),
-                sprintf( '<a href="%1$s" title="%2$s">%3$s</a>', czr_fn_get_customizer_url( array( "section" => "nav") ), __( "open the customizer menu section", "customizr"), __("change your menu design now", "customizr") )
-              )
-          );
-          printf('<a class="tc-dismiss-notice" href="#" title="%1$s">%1$s x</a>',
-                __( 'dismiss notice', 'customizr')
-          );
-        ?>
-      </div>
-      <?php
-    }
-
-
-    /**
-    * Displays the placeholder view if conditions are met in CZR_placeholders::czr_fn_is_second_menu_placeholder_on()
-    * fired in czr_fn_menu_display(), hook : __navbar
-    * @since Customizr 3.4
-    */
-    function czr_fn_maybe_display_second_menu_placeholder() {
-      if (  ! CZR_placeholders::czr_fn_is_second_menu_placeholder_on() )
-          return;
-      ?>
-      <div class="nav-collapse collapse tc-placeholder-wrap tc-menu-placeholder">
-        <?php
-          printf('<p><strong>%1$s<br/>%2$s</strong></p>',
-              __( "You can display your main menu or a second menu here horizontally.", "customizr" ),
-              sprintf( __("%s or read the %s.", "customizr"),
-                sprintf( '<a href="%1$s" title="%2$s">%3$s</a>', czr_fn_get_customizer_url( array( "section" => "nav") ), __( "Manage menus in the header", "customizr"), __("Manage your menus in the header now", "customizr") ),
-                sprintf( '<a href="%1$s" title="%2$s" target="blank">%2$s</a><span class="tc-external"></span>', esc_url('http://docs.presscustomizr.com/article/101-customizr-theme-options-header-settings/#navigation'), __( "documentation", "customizr") )
-              )
-          );
-          printf('<a class="tc-dismiss-notice" href="#" title="%1$s">%1$s x</a>',
-                __( 'dismiss notice', 'customizr')
-          );
-        ?>
-      </div>
-      <?php
-    }
 
 
 
@@ -1801,19 +1713,12 @@ if ( ! class_exists( 'CZR_404' ) ) :
           if ( !is_404() )
               return;
 
-          $content_404    = apply_filters( 'tc_404', CZR_init::$instance -> content_404 );
-
           echo apply_filters( 'tc_404_content',
-              sprintf('<div class="%1$s"><div class="entry-content %2$s">%3$s</div>%4$s</div>',
-                  apply_filters( 'tc_404_wrapper_class', 'tc-content span12 format-quote' ),
-                  apply_filters( 'tc_404_content_icon', 'format-icon' ),
-                  sprintf('<blockquote><p>%1$s</p><cite>%2$s</cite></blockquote><p>%3$s</p>%4$s',
-                                call_user_func( '__' , $content_404['quote'] , 'customizr' ),
-                                call_user_func( '__' , $content_404['author'] , 'customizr' ),
-                                call_user_func( '__' , $content_404['text'] , 'customizr' ),
-                                get_search_form( $echo = false )
-                  ),
-                  apply_filters( 'tc_no_results_separator', '<hr class="featurette-divider '.current_filter().'">' )
+              sprintf('<div class="%1$s"><div class="entry-content"><p>%2$s</p> %3$s</div>%4$s</div>',
+                  'tc-content span12',
+                  __( 'Sorry, but the requested page is not found. You might try a search below.' , 'customizr' ),
+                  get_search_form( $echo = false ),
+                  '<hr class="featurette-divider '.current_filter().'">'
               )
           );
       }
@@ -3503,16 +3408,17 @@ if ( ! class_exists( 'CZR_comments' ) ) :
         $_bool = ( post_password_required() || czr_fn__f( '__is_home' ) || ! is_singular() )  ? false : true;
 
         //2) if user has enabled comment for this specific post / page => true
-        //@todo contx : update default value user's value)
         $_bool = ( 'closed' != $post -> comment_status ) ? true : $_bool;
 
         //3) check global user options for pages and posts
-        if ( is_page() )
+        if ( is_page() ) {
           $_bool = 1 == esc_attr( czr_fn_opt( 'tc_page_comments' )) && $_bool;
-        else
+        } else {
           $_bool = 1 == esc_attr( czr_fn_opt( 'tc_post_comments' )) && $_bool;
-      } else
+        }
+      } else {
         $_bool = false;
+      }
 
       return apply_filters( 'tc_are_comments_enabled', $_bool );
     }
@@ -3570,39 +3476,6 @@ if ( ! class_exists( 'CZR_featured_pages' ) ) :
     function __construct () {
         self::$instance =& $this;
         add_action( '__before_main_container'     , array( $this , 'czr_fn_fp_block_display'), 10 );
-        add_action( '__after_fp'                  , array( $this , 'czr_fn_maybe_display_dismiss_notice'));
-    }
-
-
-
-    /******************************
-    * FP NOTICE VIEW
-    *******************************/
-    /**
-    * hook : __after_fp
-    * @since v3.4+
-    */
-    function czr_fn_maybe_display_dismiss_notice() {
-      if ( ! CZR_placeholders::czr_fn_is_fp_notice_on() )
-        return;
-
-      $_customizer_lnk = apply_filters( 'tc_fp_notice_customizer_url', czr_fn_get_customizer_url( array( 'control' => 'tc_show_featured_pages', 'section' => 'frontpage_sec') ) );
-
-      ?>
-      <div class="tc-placeholder-wrap tc-fp-notice">
-        <?php
-          printf('<p><strong>%1$s</strong></p>',
-            sprintf( __("Edit those featured pages %s, or %s (you'll be able to add yours later)." , "customizr"),
-              sprintf( '<a href="%3$s" title="%1$s">%2$s</a>', __( "Edit those featured pages", "customizr" ), __( "now", "customizr" ), $_customizer_lnk ),
-              sprintf( '<a href="#" class="tc-inline-remove" title="%1$s">%2$s</a>', __( "Remove the featured pages", "customizr" ), __( "remove them", "customizr" ) )
-            )
-          );
-          printf('<a class="tc-dismiss-notice" href="#" title="%1$s">%1$s x</a>',
-            __( 'dismiss notice', 'customizr')
-          );
-        ?>
-      </div>
-      <?php
     }
 
 
@@ -3738,7 +3611,7 @@ if ( ! class_exists( 'CZR_featured_pages' ) ) :
             $text                           =  apply_filters(
                                                 'tc_fp_text',
                                                 sprintf( '%1$s %2$s',
-                                                  __( 'Featured page description text : use the page excerpt or set your own custom text in the Customizr screen.' , 'customizr' ),
+                                                  __( 'Featured page description text : use the page excerpt or set your own custom text in the customizer screen.' , 'customizr' ),
                                                   $customizr_link
                                                 ),
                                                 $fp_single_id,
@@ -4548,19 +4421,12 @@ if ( ! class_exists( 'CZR_no_results' ) ) :
           if ( !is_search() || (is_search() && 0 != $wp_query -> post_count) )
               return;
 
-          $content_no_results    = apply_filters( 'tc_no_results', CZR_init::$instance -> content_no_results );
-
           echo apply_filters( 'tc_no_result_content',
-              sprintf('<div class="%1$s"><div class="entry-content %2$s">%3$s</div>%4$s</div>',
-                  apply_filters( 'tc_no_results_wrapper_class', 'tc-content span12 format-quote' ),
-                  apply_filters( 'tc_no_results_content_icon', 'format-icon' ),
-                  sprintf('<blockquote><p>%1$s</p><cite>%2$s</cite></blockquote><p>%3$s</p>%4$s',
-                                call_user_func( '__' , $content_no_results['quote'] , 'customizr' ),
-                                call_user_func( '__' , $content_no_results['author'] , 'customizr' ),
-                                call_user_func( '__' , $content_no_results['text'] , 'customizr' ),
-                                get_search_form( $echo = false )
-                  ),
-                  apply_filters( 'tc_no_results_separator', '<hr class="featurette-divider '.current_filter().'">' )
+              sprintf('<div class="%1$s"><div class="entry-content"><p>%2$s</p> %3$s</div>%4$s</div>',
+                  'tc-content span12',
+                  __( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'customizr' ),
+                  get_search_form( $echo = false ),
+                  '<hr class="featurette-divider '.current_filter().'">'
               )//end sprintf
           );//end filter
       }
@@ -4610,8 +4476,6 @@ if ( ! class_exists( 'CZR_page' ) ) :
     function czr_fn_set_page_hooks() {
       //add page content and footer to the __loop
       add_action( '__loop'              , array( $this , 'czr_fn_page_content' ) );
-      //smartload help block
-      add_filter( 'the_content'         , array( $this, 'czr_fn_maybe_display_img_smartload_help') , PHP_INT_MAX );
     }
 
 
@@ -4623,10 +4487,6 @@ if ( ! class_exists( 'CZR_page' ) ) :
     * @since Customizr 3.5+
     */
     function czr_fn_set_single_page_thumbnail_hooks() {
-      if ( $this -> czr_fn_page_display_controller() && ! czr_fn_is_real_home() ) {
-        add_action( '__before_content'        , array( $this, 'czr_fn_maybe_display_featured_image_help') );
-      }
-
       //__before_main_wrapper, 200
       //__before_content 0
       //__before_content 20
@@ -4726,55 +4586,6 @@ if ( ! class_exists( 'CZR_page' ) ) :
       );
     }
 
-
-
-
-    /***************************
-    * SINGLE PAGE THUMBNAIL HELP VIEW
-    ****************************/
-    /**
-    * Displays a help block about featured images for single pages
-    * hook : __before_content
-    * @since Customizr 3.5+
-    */
-    function czr_fn_maybe_display_featured_image_help() {
-      if ( ! CZR_placeholders::czr_fn_is_thumbnail_help_on() )
-        return;
-      ?>
-      <div class="tc-placeholder-wrap tc-thumbnail-help">
-        <?php
-          printf('<p><strong>%1$s</strong></p><p>%2$s</p><p>%3$s</p>',
-              __( "You can display your page's featured image here if you have set one.", "customizr" ),
-              sprintf( __("%s to display a featured image here.", "customizr"),
-                sprintf( '<strong><a href="%1$s" title="%2$s">%2$s</a></strong>', czr_fn_get_customizer_url( array( "section" => "single_pages_sec") ), __( "Jump to the customizer now", "customizr") )
-              ),
-              sprintf( __( "Don't know how to set a featured image to a page? Learn how in the %s.", "customizr" ),
-                sprintf('<a href="%1$s" title="%2$s" target="_blank">%2$s</a><span class="tc-external"></span>' , esc_url('codex.wordpress.org/Post_Thumbnails#Setting_a_Post_Thumbnail'), __("WordPress documentation" , "customizr" ) )
-              )
-          );
-          printf('<a class="tc-dismiss-notice" href="#" title="%1$s">%1$s x</a>',
-                __( 'dismiss notice', 'customizr')
-          );
-        ?>
-      </div>
-      <?php
-    }
-
-
-    /***************************
-    * Page IMG SMARTLOAD HELP VIEW
-    ****************************/
-    /**
-    * Displays a help block about images smartload for single pages prepended to the content
-    * hook : the_content
-    * @since Customizr 3.5+
-    */
-    function czr_fn_maybe_display_img_smartload_help( $the_content ) {
-      if ( ! ( $this -> czr_fn_page_display_controller()  &&  in_the_loop() && CZR_placeholders::czr_fn_is_img_smartload_help_on( $the_content ) ) )
-        return $the_content;
-
-      return CZR_placeholders::czr_fn_get_smartload_help_block() . $the_content;
-    }
 
 
 
@@ -4911,9 +4722,6 @@ if ( ! class_exists( 'CZR_post' ) ) :
       add_action( '__loop'              , array( $this , 'czr_fn_post_content' ));
       //posts parts actions
       add_action( '__after_content'     , array( $this , 'czr_fn_post_footer' ));
-      //smartload help block
-      add_filter( 'the_content'         , array( $this, 'czr_fn_maybe_display_img_smartload_help') , PHP_INT_MAX );
-
     }
 
 
@@ -4925,10 +4733,6 @@ if ( ! class_exists( 'CZR_post' ) ) :
     * @since Customizr 3.2.0
     */
     function czr_fn_set_single_post_thumbnail_hooks() {
-      if ( $this -> czr_fn_single_post_display_controller() ) {
-        add_action( '__before_content'        , array( $this, 'czr_fn_maybe_display_featured_image_help') );
-      }
-
       //__before_main_wrapper, 200
       //__before_content 0
       //__before_content 20
@@ -4990,30 +4794,48 @@ if ( ! class_exists( 'CZR_post' ) ) :
       //check conditional tags : we want to show single post or single custom post types
       if ( ! $this -> czr_fn_single_post_display_controller() || ! apply_filters( 'tc_show_single_post_footer', true ) )
           return;
+
       //@todo check if some conditions below not redundant?
-      if ( ! is_singular() || ! get_the_author_meta( 'description' ) || ! apply_filters( 'tc_show_author_metas_in_post', true ) || ! esc_attr( czr_fn_opt( 'tc_show_author_info' ) ) )
+      if ( ! is_singular() || ! apply_filters( 'tc_show_author_metas_in_post', true ) || ! esc_attr( czr_fn_opt( 'tc_show_author_info' ) ) ) {
         return;
+      }
 
-      $html = sprintf('<footer class="entry-meta">%1$s<div class="author-info"><div class="%2$s">%3$s %4$s</div></div></footer>',
-                   '<hr class="featurette-divider">',
 
-                  apply_filters( 'tc_author_meta_wrapper_class', 'row-fluid' ),
 
-                  sprintf('<div class="%1$s">%2$s</div>',
-                          apply_filters( 'tc_author_meta_avatar_class', 'comment-avatar author-avatar span2'),
-                          get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'tc_author_bio_avatar_size' , 100 ) )
-                    ),
+      $author_id       = get_the_author_meta( 'ID' );
+      $authors_id      = apply_filters( 'tc_post_author_id', array( $author_id ) );
+      $authors_id      = is_array( $authors_id ) ? $authors_id : array( $author_id );
+      //author candidates must have a bio to be displayed
+      $authors_id      = array_filter( $authors_id, 'czr_fn_get_author_meta_description_by_id' );
 
-                  sprintf('<div class="%1$s"><h3>%2$s</h3><p>%3$s</p><div class="author-link">%4$s</div></div>',
-                          apply_filters( 'tc_author_meta_content_class', 'author-description span10' ),
-                          sprintf( __( 'About %s' , 'customizr' ), get_the_author() ),
-                          get_the_author_meta( 'description' ),
-                          sprintf( '<a href="%1$s" rel="author">%2$s</a>',
-                            esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-                            sprintf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>' , 'customizr' ), get_the_author() )
-                          )
-                    )
-      );//end sprintf
+      if ( empty( $authors_id ) ) {
+        return;
+      }
+
+      $html            = '<footer class="entry-meta"><hr class="featurette-divider"><div class="author-info-wrapper">';
+
+      foreach ( $authors_id as $author_id ) {
+        $author_name   = get_the_author_meta( 'display_name', $author_id );
+        $html         .= sprintf('<div class="author-info"><div class="%1$s">%2$s %3$s</div></div>',
+                            apply_filters( 'tc_author_meta_wrapper_class', 'row-fluid' ),
+
+                            sprintf('<div class="%1$s">%2$s</div>',
+                                    apply_filters( 'tc_author_meta_avatar_class', 'comment-avatar author-avatar span2'),
+                                    get_avatar( get_the_author_meta( 'user_email', $author_id ), apply_filters( 'tc_author_bio_avatar_size' , 100 ) )
+                            ),
+                            sprintf('<div class="%1$s"><h3>%2$s</h3><p>%3$s</p><div class="author-link">%4$s</div></div>',
+                                    apply_filters( 'tc_author_meta_content_class', 'author-description span10' ),
+                                    sprintf( __( 'About %s' , 'customizr' ), $author_name ),
+                                    get_the_author_meta( 'description', $author_id ),
+                                    sprintf( '<a href="%1$s" rel="author">%2$s</a>',
+                                      esc_url( get_author_posts_url( $author_id ) ),
+                                      sprintf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>' , 'customizr' ), $author_name )
+                                    )
+                            )
+        );//end sprintf
+      }//end for
+      $html .= '</div></footer>';
+
       echo apply_filters( 'tc_post_footer', $html );
     }
 
@@ -5058,53 +4880,6 @@ if ( ! class_exists( 'CZR_post' ) ) :
           CZR_post_thumbnails::$instance -> czr_fn_render_thumb_view( $_thumb_model, 'span12', false )
         )
       );
-    }
-
-
-    /***************************
-    * SINGLE POST THUMBNAIL HELP VIEW
-    ****************************/
-    /**
-    * Displays a help block about featured images for single posts
-    * hook : __before_content
-    * @since Customizr 3.4
-    */
-    function czr_fn_maybe_display_featured_image_help() {
-      if ( ! CZR_placeholders::czr_fn_is_thumbnail_help_on() )
-        return;
-      ?>
-      <div class="tc-placeholder-wrap tc-thumbnail-help">
-        <?php
-          printf('<p><strong>%1$s</strong></p><p>%2$s</p><p>%3$s</p>',
-              __( "You can display your post's featured image here if you have set one.", "customizr" ),
-              sprintf( __("%s to display a featured image here.", "customizr"),
-                sprintf( '<strong><a href="%1$s" title="%2$s">%2$s</a></strong>', czr_fn_get_customizer_url( array( "section" => "single_posts_sec") ), __( "Jump to the customizer now", "customizr") )
-              ),
-              sprintf( __( "Don't know how to set a featured image to a post? Learn how in the %s.", "customizr" ),
-                sprintf('<a href="%1$s" title="%2$s" target="_blank">%2$s</a><span class="tc-external"></span>' , esc_url('codex.wordpress.org/Post_Thumbnails#Setting_a_Post_Thumbnail'), __("WordPress documentation" , "customizr" ) )
-              )
-          );
-          printf('<a class="tc-dismiss-notice" href="#" title="%1$s">%1$s x</a>',
-                __( 'dismiss notice', 'customizr')
-          );
-        ?>
-      </div>
-      <?php
-    }
-
-    /***************************
-    * SINGLE POST IMG SMARTLOAD HELP VIEW
-    ****************************/
-    /**
-    * Displays a help block about images smartload for single posts prepended to the content
-    * hook : the_content
-    * @since Customizr 3.4+
-    */
-    function czr_fn_maybe_display_img_smartload_help( $the_content ) {
-      if ( ! ( $this -> czr_fn_single_post_display_controller()  &&  in_the_loop() && CZR_placeholders::czr_fn_is_img_smartload_help_on( $the_content ) ) )
-        return $the_content;
-
-      return CZR_placeholders::czr_fn_get_smartload_help_block() . $the_content;
     }
 
 
@@ -5266,9 +5041,6 @@ class CZR_post_list {
 
     //ARTICLE CONTAINER CSS CLASSES
     add_filter( 'tc_article_container_class' , array( $this, 'czr_fn_article_container_set_classes' ) );
-
-    //page help blocks
-    add_filter( '__before_loop'              , array( $this , 'czr_fn_maybe_display_img_smartload_help') );
 
     //based on customizer user options
     add_filter( 'tc_post_list_layout'        , array( $this , 'czr_fn_set_post_list_layout') );
@@ -5673,21 +5445,6 @@ class CZR_post_list {
     return str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $_content ) );
   }
 
-
-  /***************************
-  * LIST OF POSTS IMG SMARTLOAD HELP VIEW
-  ****************************/
-  /**
-  * Displays a help block about images smartload for list of posts before the actual list
-  * hook : __before_loop
-  * @since Customizr 3.4+
-  */
-  function czr_fn_maybe_display_img_smartload_help( $the_content ) {
-    if ( ! ( $this -> czr_fn_post_list_controller() && CZR_placeholders::czr_fn_is_img_smartload_help_on( $text = '', $min_img_num = 0 ) ) )
-      return;
-
-    CZR_placeholders::czr_fn_get_smartload_help_block( $echo = true );
-  }
 
 }//end of class
 endif;
@@ -7204,14 +6961,38 @@ if ( ! class_exists( 'CZR_post_metas' ) ) :
         * @since Customizr 3.2.6
         */
         private function czr_fn_get_meta_author() {
-            return apply_filters(
-                'tc_author_meta',
-                sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>' ,
-                    esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-                    esc_attr( sprintf( __( 'View all posts by %s' , 'customizr' ), get_the_author() ) ),
-                    get_the_author()
-                )
-            );//end filter
+
+            $author_id = null;
+
+            if ( is_single() ) {
+                if ( ! in_the_loop() ) {
+                    global $post;
+                    $author_id = $post->post_author;
+                }
+            }
+
+            $author_id_array = apply_filters( 'tc_post_author_id', array( $author_id ) );
+            $author_id_array = is_array( $author_id_array ) ? $author_id_array : array( $author_id );
+
+            $_html  = '';
+            $_i     = 0;
+
+            foreach ( $author_id_array as $author_id ) {
+                $_i         +=1;
+                $author_name = get_the_author_meta( 'display_name', $author_id );
+
+                if ( ! ( 1 == $_i || count( $author_id ) == $_i ) ) {
+                    $_html  .= ', ';
+                }
+
+                $_html      .= sprintf( '<span class="author vcard author_name"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>' ,
+                      esc_url( get_author_posts_url( $author_id ) ),
+                      esc_attr( sprintf( __( 'View all posts by %s' , 'customizr' ), $author_name ) ),
+                      $author_name
+                );
+            }
+
+            return apply_filters('tc_author_meta', $_html );
         }
 
 
@@ -7970,7 +7751,6 @@ if ( ! class_exists( 'CZR_sidebar' ) ) :
       ******************************************/
       /**
       * Displays the sidebar or the front page featured pages area
-      * If no widgets are set, displays a placeholder
       * hook : '__before_article_container'
       * @param Name of the widgetized area
       * @package Customizr
@@ -8012,8 +7792,6 @@ if ( ! class_exists( 'CZR_sidebar' ) ) :
 
                 if ( apply_filters( 'tc_has_sidebar_widgets', is_active_sidebar( $position ), $position ) ) {
                     get_sidebar( $position );
-                } else {
-                    $this -> czr_fn_display_sidebar_placeholder( $position );
                 }
 
                 do_action( "__after_{$position}_sidebar" );
@@ -8030,56 +7808,6 @@ if ( ! class_exists( 'CZR_sidebar' ) ) :
 
 
 
-      /**
-      * fired in a callback of hook : '__before_article_container'
-      * When do we display this placeholder ?
-      * User logged in
-      * + Admin
-      * + User did not dismissed the notice
-      * @param : string position left or right
-      * @since Customizr 3.3
-      */
-      private function czr_fn_display_sidebar_placeholder( $position ) {
-        if ( ! CZR_placeholders::czr_fn_is_widget_placeholder_enabled( 'sidebar' ) )
-          return;
-        ?>
-        <aside class="tc-placeholder-wrap tc-widget-placeholder">
-          <?php
-            printf('<span class="tc-admin-notice">%1$s</span>',
-              __( 'This block is visible for admin users only.', 'customizr')
-            );
-
-            printf('<h4>%1$s</h4>',
-              sprintf( __( 'The %s sidebar has no widgets.', 'customizr'), $position )
-            );
-
-            printf('<p><strong>%1$s</strong></p>',
-                sprintf( __("Add widgets to this sidebar %s or %s.", "customizr"),
-                    sprintf( '<a href="%1$s" title="%2$s">%3$s</a>',
-                        czr_fn_get_customizer_url( array( 'panel' => 'widgets') ),
-                        __( "Add widgets", "customizr"),
-                        __("now", "customizr")
-                    ),
-                    sprintf('<a class="tc-inline-dismiss-notice" data-position="sidebar" href="#" title="%1$s">%1$s</a>',
-                      __( 'dismiss this notice', 'customizr')
-                    )
-                )
-            );
-
-            printf('<p><i>%1s <a href="http:%2$s" title="%3$s" target="blank">%4$s</a></i></p>',
-              __( 'You can also remove this sidebar by changing the current page layout.', 'customizr' ),
-              '//docs.presscustomizr.com/article/107-customizr-theme-options-pages-and-posts-layout',
-              __( 'Changing the layout in the Customizr theme' , 'customizr'),
-              __( 'See the theme documentation.' , 'customizr' )
-            );
-
-            printf('<a class="tc-dismiss-notice" data-position="sidebar" href="#" title="%1$s">%1$s x</a>',
-              __( 'dismiss notice', 'customizr')
-            );
-        ?>
-        </aside>
-        <?php
-      }
 
 
 
@@ -8204,12 +7932,6 @@ class CZR_slider {
     //wrap the slide into a link
     add_filter( 'tc_slide_background'       , array( $this, 'czr_fn_link_whole_slide'), 5, 5 );
 
-    //display a notice for first time users
-    if ( 'tc_posts_slider' == $slider_name_id ) {
-      //display a notice for first time users
-      add_action( '__after_carousel_inner'   , array( $this, 'czr_fn_maybe_display_dismiss_notice') );
-    }
-
     //display an edit deep link to the Slider section in the Customize or post/page
     add_action( '__after_carousel_inner'    , array( $this, 'czr_fn_render_slider_edit_link_view'), 10, 2 );
 
@@ -8292,6 +8014,10 @@ class CZR_slider {
       }
     $slide_background       = wp_get_attachment_image( $id, $img_size, false, $slide_background_attr );
 
+    if ( czr_fn_is_checked( 'tc_slider_img_smart_load' ) ) {
+        $slide_background = czr_fn_parse_imgs( $slide_background ); //<- to prepare the img smartload
+    }
+
     //adds all values to the slide array only if the content exists (=> handle the case when an attachment has been deleted for example). Otherwise go to next slide.
     if ( !isset($slide_background) || empty($slide_background) )
       return;
@@ -8372,6 +8098,10 @@ class CZR_slider {
 
     //background image
     $slide_background       = apply_filters( 'tc_posts_slide_background', $slide_background, $ID );
+    if ( czr_fn_is_checked( 'tc_slider_img_smart_load' ) ) {
+        $slide_background = czr_fn_parse_imgs( $slide_background ); //<- to prepare the img smartload
+    }
+
 
     // we don't want to show slides with no image
     if ( ! $slide_background )
@@ -9045,33 +8775,6 @@ class CZR_slider {
   }
 
 
-  /******************************
-  * SLIDER NOTICE VIEW
-  *******************************/
-  /**
-  * hook : __after_carousel_inner
-  * @since v3.4+
-  */
-  function czr_fn_maybe_display_dismiss_notice() {
-    if ( ! CZR_placeholders::czr_fn_is_slider_notice_on() )
-      return;
-    $_customizer_lnk = czr_fn_get_customizer_url( array( 'control' => 'tc_front_slider', 'section' => 'frontpage_sec') );
-    ?>
-    <div class="tc-placeholder-wrap tc-slider-notice">
-      <?php
-        printf('<p><strong>%1$s</strong></p>',
-          sprintf( __("Select your own slider %s, or %s (you'll be able to add one back later)." , "customizr"),
-            sprintf( '<a href="%3$s" title="%1$s">%2$s</a>', __( "Select your own slider", "customizr" ), __( "now", "customizr" ), $_customizer_lnk ),
-            sprintf( '<a href="#" class="tc-inline-remove" title="%1$s">%2$s</a>', __( "Remove the home page slider", "customizr" ), __( "remove this demo slider", "customizr" ) )
-          )
-        );
-        printf('<a class="tc-dismiss-notice" href="#" title="%1$s">%1$s x</a>',
-          __( 'dismiss notice', 'customizr')
-        );
-      ?>
-    </div>
-    <?php
-  }
 
 
 
@@ -9601,9 +9304,8 @@ if ( ! class_exists( 'CZR_footer_main' ) ) :
     		$status = is_active_sidebar( $key ) ? true : $status;
     	}
 
-      //if no active widget area yet, display the footer widget placeholder
+      //if no active widget area yet, return
 			if ( ! apply_filters( 'tc_has_footer_widgets', $status ) ) {
-        $this -> czr_fn_display_footer_placeholder();
         return;
       }
 
@@ -9637,47 +9339,6 @@ if ( ! class_exists( 'CZR_footer_main' ) ) :
 	        echo apply_filters( 'tc_widgets_footer', $html , $footer_widgets );
 		}//end of function
 
-
-
-    /**
-    * When do we display this placeholder ?
-    * -User logged in
-    * -Admin
-    * -User did not dismiss the notice
-    * @param : string position left or right
-    * @since Customizr 3.3
-    */
-    private function czr_fn_display_footer_placeholder() {
-      if ( ! CZR_placeholders::czr_fn_is_widget_placeholder_enabled( 'footer' ) )
-        return;
-
-      ?>
-      <aside class="tc-placeholder-wrap tc-widget-placeholder">
-        <?php
-          printf('<span class="tc-admin-notice">%1$s</span>',
-            __( 'This block is visible for admin users only.', 'customizr')
-          );
-
-          printf('<h4>%1$s</h4>',
-            __( 'The footer has no widgets', 'customizr')
-          );
-
-          printf('<p><strong>%1$s</strong></p>',
-              sprintf( __("Add widgets to the footer %s or %s.", "customizr"),
-                sprintf( '<a href="%1$s" title="%2$s">%3$s</a>', czr_fn_get_customizer_url( array( 'panel' => 'widgets') ), __( "Add widgets", "customizr"), __("now", "customizr") ),
-                sprintf('<a class="tc-inline-dismiss-notice" data-position="footer" href="#" title="%1$s">%1$s</a>',
-                  __( 'dismiss this notice', 'customizr')
-                )
-              )
-          );
-
-          printf('<a class="tc-dismiss-notice" data-position="footer" href="#" title="%1$s">%1$s x</a>',
-              __( 'dismiss notice', 'customizr')
-          );
-      ?>
-      </aside>
-      <?php
-    }
 
 
 
@@ -9760,9 +9421,8 @@ if ( ! class_exists( 'CZR_footer_main' ) ) :
                                   )
                               ),
                               apply_filters( 'tc_credit_link',
-                                  sprintf( '<span class="tc-credits-text">%1$s</span> %2$s &middot;',
-                                      __('Designed with', 'customizr'),
-                                      sprintf( '<a href="%1$s">%2$s</a>', esc_url( CZR_WEBSITE . 'customizr' ), __('the Customizr theme', 'customizr') )
+                                  sprintf( '<span class="tc-credits-text">%1$s </span> &middot;',
+                                      sprintf( __('Designed with the %s', 'customizr'), sprintf( '<a class="czr-designer-link" href="%1$s" title="%2$s">%2$s</a>', esc_url( CZR_WEBSITE . 'customizr' ), __('Customizr theme', 'customizr') ) )
                                   )
                               )
   					   )

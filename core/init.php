@@ -135,6 +135,8 @@ if ( ! class_exists( 'CZR___' ) ) :
 
         public $slider_resp_shrink_ratio;
 
+        private $_hide_update_notification_for_versions;
+
 
 
         function __construct( $_args = array()) {
@@ -142,7 +144,7 @@ if ( ! class_exists( 'CZR___' ) ) :
             add_filter( 'czr_ms'             , '__return_true' );
             //define a constant we can use everywhere
             //that will tell us we're in the new Customizr:
-            //Will be highly used during the transion between the two themes
+            //Will be highly used during the transion between the two styles
             if( ! defined( 'CZR_IS_MODERN_STYLE' ) ) define( 'CZR_IS_MODERN_STYLE' , true );
 
 
@@ -183,6 +185,14 @@ if ( ! class_exists( 'CZR___' ) ) :
             $this -> tc_slider_small_size        = array( 'width' => 517  , 'height' => 235, 'crop' => true ); //size name : tc-slider-small
 
             add_action( 'czr_after_load'         , array( $this, 'czr_maybe_prevdem') );
+
+            //don't display update notification for a list of versions
+            //typically useful when several versions are released in a short time interval
+            //to avoid hammering the wp admin dashboard with a new admin notice each time
+            $this -> _hide_update_notification_for_versions = array();
+            if( ! defined( 'DISPLAY_UPDATE_NOTIFICATION' ) ) {
+                define( 'DISPLAY_UPDATE_NOTIFICATION' , ! in_array( CUSTOMIZR_VER, $this -> _hide_update_notification_for_versions ) );
+            }
 
         }
 
@@ -240,6 +250,7 @@ if ( ! class_exists( 'CZR___' ) ) :
                         array('core'       , 'resources_fonts'),
                         array('core'       , 'resources_scripts'),
                         array('core'       , 'widgets'),//widget factory
+                        array('core'       , 'placeholders'),//front end placeholders ajax actions for widgets, menus.... Must be fired if is_admin === true to allow ajax actions.
                         array('core/back'  , 'admin_init'),//loads admin style and javascript ressources. Handles various pure admin actions (no customizer actions)
                         array('core/back'  , 'admin_page')//creates the welcome/help panel including changelog and system config
                     ),
@@ -276,15 +287,7 @@ if ( ! class_exists( 'CZR___' ) ) :
             require_once( CZR_BASE . CZR_CORE_PATH . 'core-settings-map.php' );
 
             //loads utils
-            if ( CZR_DEV_MODE ) {
-                require_once( CZR_BASE . CZR_CORE_PATH . '_dev/_utils/fn-0-base.php' );
-                require_once( CZR_BASE . CZR_CORE_PATH . '_dev/_utils/fn-1-utils.php' );
-                require_once( CZR_BASE . CZR_CORE_PATH . '_dev/_utils/fn-2-query.php' );
-                require_once( CZR_BASE . CZR_CORE_PATH . '_dev/_utils/fn-3-thumbnails.php' );
-                require_once( CZR_BASE . CZR_CORE_PATH . '_dev/_utils/fn-4-colors.php' );
-            } else {
-                require_once( CZR_BASE . CZR_CORE_PATH . 'functions-ccat.php' );
-            }
+            require_once( CZR_BASE . CZR_CORE_PATH . 'functions-ccat.php' );
 
             do_action( 'czr_load' );
 
@@ -415,7 +418,7 @@ if ( ! class_exists( 'CZR___' ) ) :
                     if ( defined( 'DOING_AJAX' ) )
                       $_to_load = $this -> czr_fn_unset_core_classes( $_to_load, array( 'header' , 'content' , 'footer' ), array( 'admin|core/back|customize' ) );
                     else
-                      $_to_load = $this -> czr_fn_unset_core_classes( $_to_load, array( 'header' , 'content' , 'footer' ), array( 'admin|core/back|customize', 'fire|core|placehloders' ) );
+                      $_to_load = $this -> czr_fn_unset_core_classes( $_to_load, array( 'header' , 'content' , 'footer' ), array( 'admin|core/back|customize', 'fire|core|placeholders' ) );
                 }
                 else {
                     //Skips all admin classes
@@ -635,27 +638,6 @@ if ( ! class_exists( 'CZR___' ) ) :
             */
             $prop_value = $prop_value && is_array( $prop_value ) ? czr_fn_stringify_array( $prop_value ) : $prop_value;
             echo empty( $prop_value ) ? '' : $prop_value;
-        }
-
-        /*
-        * An handly function to print the content wrapper class
-        */
-        function czr_fn_column_content_wrapper_class() {
-            echo czr_fn_stringify_array( czr_fn_get_column_content_wrapper_class() );
-        }
-
-        /*
-        * An handly function to print the main container class
-        */
-        function czr_fn_main_container_class() {
-            echo czr_fn_stringify_array( czr_fn_get_main_container_class() );
-        }
-
-        /*
-        * An handly function to print the article containerr class
-        */
-        function czr_fn_article_container_class() {
-            echo czr_fn_stringify_array( czr_fn_get_article_container_class() );
         }
 
 

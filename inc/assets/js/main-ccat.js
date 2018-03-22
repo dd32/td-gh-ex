@@ -312,7 +312,7 @@ czrapp.methods = {};
 
               to = this._setter.apply( this, arguments );
               to = this.validate( to );
-              args = _.extend( { silent : false }, _.isObject( o ) ? o : {} );
+              var args = _.extend( { silent : false }, _.isObject( o ) ? o : {} );
               if ( null === to || _.isEqual( from, to ) ) {
                     return dfd.resolveWith( self, [ to, from, o ] ).promise();
               }
@@ -329,7 +329,7 @@ czrapp.methods = {};
                     });
 
                     $.when.apply( null, _promises )
-                          .fail( function() { api.errorLog( 'A deferred callback failed in api.Value::set()'); })
+                          .fail( function() { czrapp.errorLog( 'A deferred callback failed in api.Value::set()'); })
                           .then( function() {
                                 self.callbacks.fireWith( self, [ to, from, o ] );
                                 dfd.resolveWith( self, [ to, from, o ] );
@@ -341,8 +341,7 @@ czrapp.methods = {};
               return dfd.promise( self );
         },
         silent_set : function( to, dirtyness ) {
-              var from = this._value,
-                  _save_state = api.state('saved')();
+              var from = this._value;
 
               to = this._setter.apply( this, arguments );
               to = this.validate( to );
@@ -354,7 +353,7 @@ czrapp.methods = {};
               this._dirty = ( _.isUndefined( dirtyness ) || ! _.isBoolean( dirtyness ) ) ? this._dirty : dirtyness;
 
               this.callbacks.fireWith( this, [ to, from, { silent : true } ] );
-              api.state('saved')( _save_state );
+
               return this;
         },
 
@@ -540,14 +539,14 @@ var czrapp = czrapp || {};
             matchMedia : function( _maxWidth ) {
                   if ( window.matchMedia )
                     return ( window.matchMedia("(max-width: "+_maxWidth+"px)").matches );
-                  $_window = czrapp.$_window || $(window);
+                  var $_window = czrapp.$_window || $(window);
                   return $_window.width() <= ( _maxWidth - 15 );
             },
             emitCustomEvents : function() {
 
                   var that = this;
-                  czrapp.$_window.resize( function(e) {
-                        var $_windowWidth     = czrapp.$_window.width(),
+                  czrapp.$_window.resize( function() {
+                        var //$_windowWidth     = czrapp.$_window.width(),
                             _current          = czrapp.current_device,//<= stored on last resize event or on load
                             _to               = that.getDevice();
                         czrapp.is_responsive  = that.isResponsive();
@@ -568,7 +567,7 @@ var czrapp = czrapp || {};
                   var self = this;
                   _.map( cbs, function(cb) {
                         if ( 'function' == typeof(self[cb]) ) {
-                              args = 'undefined' == typeof( args ) ? Array() : args ;
+                              args = 'undefined' == typeof( args ) ? [] : args ;
                               self[cb].apply(self, args );
                               czrapp.trigger( cb, _.object( _.keys(args), args ) );
                         }
@@ -613,7 +612,7 @@ var czrapp = czrapp || {};
                   return czrapp.$_body.hasClass('is-customizing') || ( 'undefined' !== typeof wp && 'undefined' !== typeof wp.customize );
             },
             _has_iframe : function ( $_elements ) {
-                  var that = this,
+                  var //that = this,
                       to_return = [];
                   _.each( $_elements, function( $_el, container ){
                         if ( $_el.length > 0 && $_el.find('IFRAME').length > 0 )
@@ -655,6 +654,52 @@ var czrapp = czrapp || {};
               var self = this;
               setTimeout( function(){ self.emit('centerImages'); }, delay || 300 );
             },
+
+            centerInfinity : function() {
+                  var centerInfiniteImagesClassicStyle = function( collection, _container ) {
+                        var   $_container = $(_container);
+
+                        if ( 'object' !== typeof collection || 1 > $_container.length) {
+                              return;
+                        }
+                        _.each( collection, function( elementSelector ) {
+                              var $_img = $(  elementSelector + ' .thumb-wrapper', $_container ).centerImages( {
+                                    enableCentering : 1 == czrapp.localized.centerAllImg,
+                                    enableGoldenRatio : false,
+                                    disableGRUnder : 0,//<= don't disable golden ratio when responsive
+                                    oncustom : [ 'simple_load']
+                              }).find( 'img' );
+
+                              if ( $_img.length < 1 ) {
+                                    $_img = $( elementSelector + ' .tc-rectangular-thumb',  $_container ).centerImages( {
+                                          enableCentering : 1 == czrapp.localized.centerAllImg,
+                                          enableGoldenRatio : true,
+                                          goldenRatioVal : czrapp.localized.goldenRatio || 1.618,
+                                          disableGRUnder : 0,//<= don't disable golden ratio when responsive
+                                          oncustom : [ 'simple_load']
+                                    }).find( 'img' );
+                              }
+                              if ( $_img.length < 1 ) {
+                                    $_img = $( elementSelector + ' .tc-grid-figure', $_container ).centerImages( {
+                                          enableCentering : 1 == czrapp.localized.centerAllImg,
+                                          oncustom : [ 'simple_load'],
+                                          enableGoldenRatio : true,
+                                          goldenRatioVal : czrapp.localized.goldenRatio || 1.618,
+                                          goldenRatioLimitHeightTo : czrapp.localized.gridGoldenRatioLimit || 350
+                                    }).find( 'img' );
+                              }
+                              czrapp.methods.Base.triggerSimpleLoad( $_img );
+                        });
+                  };//end centerInfiniteImagesClassicStyle
+                  czrapp.$_body.on( 'post-load', function( e, response ) {
+                        if ( 'success' == response.type && response.collection && response.container ) {
+                              centerInfiniteImagesClassicStyle(
+                                  response.collection,
+                                  '#'+response.container //_container
+                              );
+                        }
+                  } );
+            },
             imgSmartLoad : function() {
               var smartLoadEnabled = 1 == TCParams.imgSmartLoadEnabled,
                   _where           = TCParams.imgSmartLoadOpts.parentSelectors.join();
@@ -669,7 +714,7 @@ var czrapp = czrapp || {};
                           return $(img).is(TCParams.imgSmartLoadOpts.opts.excludeImg.join());
                         }) ): //filter
                         $( _where ).find('img');
-                    $_to_center_with_delay = $( _.filter( $_to_center, function( img ) {
+                    var $_to_center_with_delay = $( _.filter( $_to_center, function( img ) {
                         return $(img).hasClass('tc-holder-img');
                     }) );
                 setTimeout( function(){
@@ -729,7 +774,7 @@ var czrapp = czrapp || {};
                   $( this ).centerImages( {
                     enableCentering : 1 == TCParams.centerSliderImg,
                     imgSel : '.czr-item .carousel-image img',
-                    oncustom : ['customizr.slid', 'simple_load'],
+                    oncustom : ['customizr.slid', 'simple_load', 'smartload'],
                     defaultCSSVal : { width : '100%' , height : 'auto' },
                     useImgAttr : true
                   });
@@ -802,12 +847,106 @@ var czrapp = czrapp || {};
 
 
             fireSliders : function(name, delay, hover) {
-              var _name   = name || TCParams.SliderName,
-                  _delay  = delay || TCParams.SliderDelay;
-                  _hover  = hover || TCParams.SliderHover;
+              var self = this,
+                  _name   = name || TCParams.SliderName,
+                  _delay  = delay || TCParams.SliderDelay,
+                  _hover  = hover || TCParams.SliderHover,
+                  _cellSelector = '.czr-item',
+                  _cssLoaderClass = 'tc-css-loader',
+                  _css_loader = '<div class="' + _cssLoaderClass + ' tc-mr-loader" style="display:none"><div></div><div></div><div></div></div>';
 
-              if ( 0 === _name.length )
+              if ( 0 === _name.length || 1 > self.$_sliders.length )
                 return;
+              if ( czrapp.localized.imgSmartLoadsForSliders ) {
+                    self.$_sliders.addClass('disable-transitions-for-smartload');
+                    self.$_sliders.find( _cellSelector + '.active').imgSmartLoad().data( 'czr_smartLoaded', true );
+
+                    var _maybeRemoveLoader = function( $_cell ) {
+                          $_cell.find('.czr-css-loader').fadeOut( {
+                                duration: 'fast',
+                                done : function() { $(this).remove();}
+                          } );
+                    };
+
+
+                    var _smartLoadCellImg = function( _event_ ) {
+                          _event_ = _event_ || 'czr-smartloaded';
+                          var $_cell = this;
+                          if ( 1 > $_cell.find('img[data-src], img[data-smartload]').length )
+                            return;
+                          if ( ! $_cell.data( 'czr_smartLoaded' ) ) {
+                                if ( 1 > $_cell.find('.czr-css-loader').length ) {
+                                      $_cell.append( _css_loader ).find('.czr-css-loader').fadeIn( 'slow' );
+                                }
+                                $_cell.imgSmartLoad().data( 'czr_smartLoaded', true ).addClass( _event_ );
+                                $_cell.data( 'czr_loader_timer' , $.Deferred( function() {
+                                      var self = this;
+                                      _.delay( function() {
+                                            self.resolve();
+                                      }, 2000 );
+                                      return this.promise();
+                                }) );
+                                $_cell.data( 'czr_loader_timer' ).done( function() {
+                                      _maybeRemoveLoader( $_cell );
+                                });
+                          }
+                    };
+                    self.$_sliders.data( 'czr_smartload_scheduled', $.Deferred().done( function() {
+                          self.$_sliders.addClass('czr-smartload-scheduled');
+                    }) );
+                    var _isSliderDataSetup = function() {
+                          return 1 <= self.$_sliders.length && ! _.isUndefined( self.$_sliders.data( 'czr_smartload_scheduled' ) );
+                    };
+                    self.$_sliders.data( 'czr_schedule_select',
+                          $.Deferred( function() {
+                                var dfd = this;
+                                self.$_sliders.parent().one( 'customizr.slide click' , function() {
+                                      dfd.resolve();
+                                } );
+                          }).done( function() {
+                                if ( ! _isSliderDataSetup() || 'resolved' == self.$_sliders.data( 'czr_smartload_scheduled' ).state() )
+                                    return;
+
+                                self.$_sliders.find( _cellSelector ).each( function() {
+                                      _smartLoadCellImg.call( $(this), 'czr-smartloaded-on-select' );
+                                });
+                                self.$_sliders.data( 'czr_smartload_scheduled').resolve();
+                          })
+                    );//data( 'czr_schedule_select' )
+                    self.$_sliders.data( 'czr_schedule_scroll_resize',
+                          $.Deferred( function() {
+                                var dfd = this;
+                                czrapp.$_window.one( 'scroll resize', function() {
+                                      _.delay( function() { dfd.resolve(); }, 5000 );
+                                });
+                          }).done( function() {
+                                if ( ! _isSliderDataSetup() || 'resolved' == self.$_sliders.data( 'czr_smartload_scheduled' ).state() )
+                                    return;
+
+                                self.$_sliders.find( _cellSelector ).each( function() {
+                                      _smartLoadCellImg.call( $(this), 'czr-smartloaded-on-scroll' );
+                                });
+                                self.$_sliders.data( 'czr_smartload_scheduled').resolve();
+                          })
+                    );//data( 'czr_schedule_scroll_resize' )
+                    self.$_sliders.data( 'czr_schedule_autoload',
+                          $.Deferred( function() {
+                                var dfd = this;
+                                _.delay( function() { dfd.resolve(); }, 10000 );
+                          }).done( function() {
+                                if ( ! _isSliderDataSetup() || 'resolved' == self.$_sliders.data( 'czr_smartload_scheduled' ).state() )
+                                    return;
+
+                                self.$_sliders.find( _cellSelector ).each( function() {
+                                      _smartLoadCellImg.call( $(this), 'czr-auto-smartloaded' );
+                                });
+                                self.$_sliders.data( 'czr_smartload_scheduled').resolve();
+                          })
+                    );
+                    self.$_sliders.on( 'smartload', _cellSelector , function() {
+                          _maybeRemoveLoader( $(this) );
+                    });
+              }//if czrapp.localized.imgSmartLoadsForSliders
 
               if ( 0 !== _delay.length && ! _hover ) {
                 this.$_sliders.czrCarousel({
@@ -924,7 +1063,7 @@ var czrapp = czrapp || {};
               var _excl_sels = ( TCParams.anchorSmoothScrollExclude && _.isArray( TCParams.anchorSmoothScrollExclude.simple ) ) ? TCParams.anchorSmoothScrollExclude.simple.join(',') : '',
                   self = this,
                   $_links = $('a[href^="#"]', '#content').not(_excl_sels);
-              _deep_excl = _.isObject( TCParams.anchorSmoothScrollExclude.deep ) ? TCParams.anchorSmoothScrollExclude.deep : null ;
+              var _links, _deep_excl = _.isObject( TCParams.anchorSmoothScrollExclude.deep ) ? TCParams.anchorSmoothScrollExclude.deep : null ;
               if ( _deep_excl )
                 _links = _.toArray($_links).filter( function ( _el ) {
                   return ( 2 == ( ['ids', 'classes'].filter(
@@ -1031,12 +1170,11 @@ var czrapp = czrapp || {};
               _sidebarLayout = _sidebarLayout || 'normal';
               var that = this,
                   LeftSidebarClass    = TCParams.LeftSidebarClass || '.span3.left.tc-sidebar',
-                  RightSidebarClass   = TCParams.RightSidebarClass || '.span3.right.tc-sidebar',
-                  $_WindowWidth       = czrapp.$_window.width();
+                  RightSidebarClass   = TCParams.RightSidebarClass || '.span3.right.tc-sidebar';
               that.$_content      = that.$_content || $("#main-wrapper .container .article-container");
               that.$_left         = that.$_left || $("#main-wrapper .container " + LeftSidebarClass);
               that.$_right        = that.$_right || $("#main-wrapper .container " + RightSidebarClass);
-              iframeContainers = that._has_iframe( { 'content' : this.$_content, 'left' : this.$_left } ) ;
+              var iframeContainers = that._has_iframe( { 'content' : this.$_content, 'left' : this.$_left } ) ;
 
               var leftIframe    = $.inArray('left', iframeContainers) > -1,
                   contentIframe = $.inArray('content', iframeContainers) > -1;
@@ -1053,7 +1191,7 @@ var czrapp = czrapp || {};
             dropdownMenuEventsHandler : function() {
               var $dropdown_ahrefs    = $('.tc-open-on-click .menu-item.menu-item-has-children > a[href!="#"]'),
                   $dropdown_submenus  = $('.tc-open-on-click .dropdown .dropdown-submenu');
-              $dropdown_ahrefs.on('tap click', function(evt) {
+              $dropdown_ahrefs.on('click', function() {
                 if ( ( $(this).next('.dropdown-menu').css('visibility') != 'hidden' &&
                         $(this).next('.dropdown-menu').is(':visible')  &&
                         ! $(this).parent().hasClass('dropdown-submenu') ) ||
@@ -1064,8 +1202,8 @@ var czrapp = czrapp || {};
               $dropdown_submenus.each(function(){
                 var $parent = $(this),
                     $children = $parent.children('[data-toggle="dropdown"]');
-                $children.on('tap click', function(){
-                    var submenu   = $(this).next('.dropdown-menu'),
+                $children.on('click', function(){
+                    var //submenu   = $(this).next('.dropdown-menu'),
                         openthis  = false;
                     if ( ! $parent.hasClass('open') ) {
                       openthis = true;
@@ -1083,10 +1221,10 @@ var czrapp = czrapp || {};
             menuButtonHover : function() {
               var $_menu_btns = $('.btn-toggle-nav');
               $_menu_btns.hover(
-                function( evt ) {
+                function() {
                   $(this).addClass('hover');
                 },
-                function( evt ) {
+                function() {
                   $(this).removeClass('hover');
                 }
               );
@@ -1148,10 +1286,11 @@ var czrapp = czrapp || {};
 
             _manageMenuSeparator : function( _to, userOption ) {
               var that = this;
-              if ( 'navbar' == _to )
+              if ( 'navbar' == _to ) {
                 $( '.secondary-menu-separator', that.$_sn_wrap).remove();
+              }
               else {
-                $_sep = $( '<li class="menu-item secondary-menu-separator"><hr class="featurette-divider"></hr></li>' );
+                var $_sep = $( '<li class="menu-item secondary-menu-separator"><hr class="featurette-divider"></hr></li>' );
 
                 switch(userOption) {
                   case 'in-sn-before' :
@@ -1182,8 +1321,7 @@ var czrapp = czrapp || {};
                 }
             },
             _has_iframe : function ( $_elements ) {
-              var that = this,
-                  to_return = [];
+              var to_return = [];
               _.map( $_elements, function( $_el, container ){
                 if ( $_el.length > 0 && $_el.find('IFRAME').length > 0 )
                   to_return.push(container);
@@ -1206,10 +1344,10 @@ var czrapp = czrapp || {};
               if ( _.isEmpty( czrapp.localized.frontNotifications ) || ! _.isObject( czrapp.localized.frontNotifications ) )
                 return;
 
-              var self = this,
-                  _hasCandidate = false;
+              var self = this;
               czrapp.frontNotificationVisible = new czrapp.Value( false );
-              _.each( czrapp.localized.frontNotifications, function( _notification, _id ) {
+              czrapp.frontNotificationRendered = false;
+              _.each( czrapp.localized.frontNotifications, function( _notification ) {
                     if ( ! _.isUndefined( czrapp.frontNotification ) )
                       return;
 
@@ -1238,6 +1376,9 @@ var czrapp = czrapp || {};
               var self = this,
                   dfd = $.Deferred();
 
+              if ( czrapp.frontNotificationRendered && czrapp.frontNotificationVisible() )
+                return dfd.resolve().promise();
+
               var _hideAndDestroy = function() {
                     return $.Deferred( function() {
                           var _dfd_ = this,
@@ -1246,6 +1387,8 @@ var czrapp = czrapp || {};
                                 $notifWrap.css( { bottom : '-100%' } );
                                 _.delay( function() {
                                       $notifWrap.remove();
+                                      czrapp.$_body.find('#tc-footer-btt-wrapper').fadeIn('slow');
+                                      czrapp.frontNotificationRendered = false;
                                       _dfd_.resolve();
                                 }, 450 );// consistent with css transition: all 0.45s ease-in-out;
                           } else {
@@ -1265,7 +1408,7 @@ var czrapp = czrapp || {};
                               _wrapHtml = [
                                     '<div id="bottom-front-notification">',
                                       '<div class="note-content">',
-                                        '<span class="fa fa-times close-note" title="' + czrapp.localized.i18n['Permanently dismiss'] + '"></span>',
+                                        '<span class="fas fa-times close-note" title="' + czrapp.localized.i18n['Permanently dismiss'] + '"></span>',
                                       '</div>',
                                     '</div>'
                               ].join('');
@@ -1273,6 +1416,8 @@ var czrapp = czrapp || {};
                           if ( 1 == $footer.length && ! _.isEmpty( _notifHtml ) ) {
                                 $.when( $footer.append( _wrapHtml ) ).done( function() {
                                     $(this).find( '.note-content').prepend( _notifHtml );
+                                    czrapp.$_body.find('#tc-footer-btt-wrapper').fadeOut('slow');
+                                    czrapp.frontNotificationRendered = true;
                                 });
 
                                 _.delay( function() {
@@ -1430,7 +1575,7 @@ var czrapp = czrapp || {};
                 }
           },
           _is_sticky_enabled : function() {
-                return czrapp.$_body.hasClass('tc-sticky-header') ? true : false;
+                return czrapp.$_body.hasClass('tc-sticky-header');
           },
           _get_top_offset : function() {
                 var initialOffset   = 0,
@@ -1464,10 +1609,8 @@ var czrapp = czrapp || {};
                 else {
                   return $_el.outerHeight() || +this.customOffset[_context] || 0;
                 }
-                return;
           },
           _set_sticky_offsets : function() {
-                var self = this;
                 czrapp.$_header.css('top' , '');
                 czrapp.$_header.css('height' , 'auto' );
                 this.$_resetMarginTop.css('margin-top' , '' ).show();
@@ -1699,7 +1842,7 @@ var czrapp = czrapp || {};
               }
             },
             _is_sn_on : function() {
-              return this.$_sidenav.length > 0 ? true : false;
+              return this.$_sidenav.length > 0;
             },
             _get_initial_offset : function() {
               var _initial_offset = czrapp.$_wpadminbar.length > 0 ? czrapp.$_wpadminbar.height() : 0;
@@ -1965,7 +2108,7 @@ var czrapp = czrapp || {};
                         czrapp.errorLog( 'Error when loading ' + name + ' | ' + er );
                   }
             });
-            $(function ($) {
+            $(function () {
                   _.each( newMap, function( params, name ) {
                         if ( czrapp[ name ] && czrapp[ name ].isReady && 'resolved' == czrapp[ name ].isReady.state() )
                           return;
@@ -2001,155 +2144,16 @@ var czrapp = czrapp || {};
                 }
           });
           if ( pluginCompatParams.optimizepress_compat && pluginCompatParams.optimizepress_compat.remove_fancybox_loading ) {
-                if (typeof(opjq) !== 'undefined') {
+                  var opjq = opjq || 'undefined';
+                  if ( ! _.isUndefined( opjq ) ) {
                       opjq(document).ready( function() {
                           opjq('#fancybox-loading').remove();
                       } );
                 }
           }
-          if ( czrapp.localized.frontHelpNoticesOn && ! _.isEmpty( frontHelpNoticeParams ) ) {
-                var _doAjax = function( _query_ ) {
-                          var ajaxUrl = czrapp.localized.adminAjaxUrl, dfd = $.Deferred();
-                          $.post( ajaxUrl, _query_ )
-                                .done( function( _r ) {
-                                      if ( '0' === _r ||  '-1' === _r )
-                                        czrapp.errorLog( 'placeHolder dismiss : ajax error for : ', _query_.action, _r );
-                                })
-                                .fail( function( _r ) {
-                                      czrapp.errorLog( 'placeHolder dismiss : ajax error for : ', _query_.action, _r );
-                                })
-                                .always( function() {
-                                      dfd.resolve();
-                                });
-                          return dfd.promise();
-                    },
-                    _ajaxDismiss = function( _params_ ) {
-                          var _query = {},
-                              dfd = $.Deferred();
-
-                          if ( ! _.isObject( _params_ ) ) {
-                                czrapp.errorLog( 'placeHolder dismiss : wrong params' );
-                                return;
-                          }
-                          _params_ = _.extend( {
-                                action : '',
-                                nonce : { 'id' : '', 'handle' : '' },
-                                class : '',
-                                remove_action : null,//for slider and fp
-                                position : null,//for widgets
-                          }, _params_ );
-                          _query.action = _params_.action;
-                          if ( ! _.isNull( _params_.remove_action ) )
-                            _query.remove_action = _params_.remove_action;
-                          if ( ! _.isNull( _params_.position ) )
-                            _query.position = _params_.position;
-
-                          _query[ _params_.nonce.id ] = _params_.nonce.handle;
-                          _doAjax( _query ).done( function() { dfd.resolve(); });
-                          return dfd.promise();
-                    };
-                _.each( frontHelpNoticeParams, function( _params_, _id_ ) {
-                      _params_ = _.extend( {
-                            active : false,
-                            args : {
-                                  action : '',
-                                  nonce : { 'id' : '', 'handle' : '' },
-                                  class : '',
-                                  remove_action : null,//for slider and fp
-                                  position : null,//for widgets
-                            }
-                      }, _params_ );
-
-                      switch( _id_ ) {
-                            case 'thumbnail' :
-                            case 'smartload' :
-                            case 'sidenav' :
-                            case 'secondMenu' :
-                            case 'mainMenu' :
-                                  if ( _params_.active ) {
-                                        $( function($) {
-                                              $( '.tc-dismiss-notice', '.' + _params_.args.class ).click( function( ev ) {
-                                                    ev.preventDefault();
-                                                    var $_el = $(this);
-                                                    _ajaxDismiss( _params_.args ).done( function() {
-                                                          $_el.closest('.' + _params_.args.class ).slideToggle( 'fast' );
-                                                    });
-                                              } );
-                                        } );
-                                  }
-                            break;
-                            case 'slider' :
-                                  if ( _params_.active ) {
-                                        $( function($) {
-                                              $('.tc-dismiss-notice', '.' + _params_.args.class ).click( function( ev ) {
-                                                    ev.preventDefault();
-                                                    var $_el = $(this);
-                                                    _params_.args.remove_action = 'remove_notice';
-                                                    _ajaxDismiss( _params_.args ).done( function() {
-                                                          $_el.closest( '.' + _params_.args.class ).slideToggle('fast');
-                                                    });
-                                              } );
-                                              $('.tc-inline-remove', '.' + _params_.args.class ).click( function( ev ) {
-                                                    ev.preventDefault();
-                                                    _params_.args.remove_action = 'remove_slider';
-                                                    _ajaxDismiss( _params_.args ).done( function() {
-                                                          $( 'div[id*="customizr-slider"]' ).fadeOut('slow');
-                                                    });
-
-                                              } );
-                                        } );
-                                  }
-                            break;
-                            case 'fp' :
-                                  if ( _params_.active ) {
-                                        $( function($) {
-                                              $('.tc-dismiss-notice', '.' + _params_.args.class ).click( function( ev ) {
-                                                    ev.preventDefault();
-                                                    var $_el = $(this);
-                                                    _params_.args.remove_action = 'remove_notice';
-                                                    _ajaxDismiss(  _params_.args ).done( function() {
-                                                          $_el.closest( '.' + _params_.args.class ).slideToggle('fast');
-                                                    });
-                                              } );
-                                              $('.tc-inline-remove', '.' + _params_.args.class ).click( function( ev ) {
-                                                    ev.preventDefault();
-                                                    _params_.args.remove_action = 'remove_fp';
-                                                    _ajaxDismiss( _params_.args ).done( function() {
-                                                          $('#main-wrapper > .marketing').fadeOut('slow');
-                                                    });
-
-                                              } );
-                                        } );
-                                  }
-                            break;
-                            case 'widget' :
-                                  if ( _params_.active ) {
-                                        $( function($) {
-                                              $('.tc-dismiss-notice, .tc-inline-dismiss-notice').click( function( ev ) {
-                                                    ev.preventDefault();
-                                                    var $_el = $(this);
-                                                    var _position = $_el.attr('data-position');
-                                                    if ( ! _position || ! _position.length )
-                                                      return;
-
-                                                     _params_.args.position = _position;
-                                                    _ajaxDismiss(  _params_.args ).done( function() {
-                                                          if ( 'sidebar' == _position )
-                                                            $('.tc-widget-placeholder' , '.tc-sidebar').slideToggle('fast');
-                                                          else
-                                                            $_el.closest('.tc-widget-placeholder').slideToggle('fast');
-                                                    });
-                                              } );
-                                        } );
-                                  }
-                            break;
-                      }//switch
-                });//_.each()
-          }//if czrapp.localized.frontHelpNoticesOn && ! _.isEmpty( frontHelpNoticeParams
     });
-
 })(jQuery, czrapp, _ );var czrapp = czrapp || {};
-( function ( czrapp, $, _ ) {
+( function ( czrapp ) {
       czrapp.localized = TCParams || {};
       var appMap = {
                 base : {
@@ -2167,6 +2171,7 @@ var czrapp = czrapp || {};
                       ctor : czrapp.Base.extend( czrapp.methods.JQPlugins ),
                       ready : [
                             'centerImagesWithDelay',
+                            'centerInfinity',
                             'imgSmartLoad',
                             'dropCaps',
                             'extLinks',
@@ -2233,4 +2238,4 @@ var czrapp = czrapp || {};
       };//map
       czrapp.appMap( appMap , true );//true for isInitial map
 
-})( czrapp, jQuery, _ );
+})( czrapp );

@@ -68,6 +68,11 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
             //prevent rendering the comments template more than once
             add_filter( 'tc_render_comments_template'            , array( $this,  'czr_fn_control_coments_template_rendering' ) );
 
+
+            //remove hentry class when the current $post type is a page
+            add_filter( 'post_class'                             , array( $this, 'czr_fn_maybe_remove_hentry_class' ), 20 );
+
+
             //Default images sizes
             $this -> tc_thumb_size      = array( 'width' => 270 , 'height' => 250, 'crop' => true ); //size name : tc-thumb
             $this -> slider_full_size   = array( 'width' => 9999 , 'height' => 500, 'crop' => true ); //size name : slider-full
@@ -293,7 +298,11 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
              * Makes Customizr available for translation.
              * Translations can be added to the /inc/lang/ directory.
              */
-            load_theme_textdomain( 'customizr' , czr_fn_is_pro() ? TC_BASE . '/inc/lang_pro' : TC_BASE . '/inc/lang' );
+            if ( czr_fn_is_pro() ) {
+              load_theme_textdomain( 'customizr-pro', TC_BASE . 'lang' );
+            }else {
+              load_theme_textdomain( 'customizr' , TC_BASE . '/inc/lang' );
+            }
 
             /* Adds RSS feed links to <head> for posts and comments. */
             add_theme_support( 'automatic-feed-links' );
@@ -390,7 +399,7 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
             register_nav_menu( 'main' , __( 'Main Menu' , 'customizr' ) );
             register_nav_menu( 'secondary' , __( 'Secondary (horizontal) Menu' , 'customizr' ) );
             if ( CZR_IS_MODERN_STYLE ) {
-              register_nav_menu( 'topbar' , __( 'Topnav (horizontal) Menu' , 'customizr' ) );
+              register_nav_menu( 'topbar' , __( 'Horizontal Top Bar Menu. (make sure that the topbar is displayed in the header settings ).' , 'customizr' ) );
               register_nav_menu( 'mobile' , __( 'Mobile Menu' , 'customizr' ) );
             }
         }
@@ -422,10 +431,11 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
 
 
       /**
+      * hook : 'wp_before_admin_bar_render'
       * Add help button
       */
       function czr_fn_add_help_button() {
-          if ( current_user_can( 'edit_theme_options' ) ) {
+          if ( czr_fn_is_pro() ) {
               global $wp_admin_bar;
               $wp_admin_bar->add_menu( array(
                   'parent' => 'top-secondary', // Off on the right side
@@ -574,8 +584,22 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
 
 
 
+        /**
+        * Remove hentry class when the current $post type is a page
+        * @param array $class
+        * @return array $class
+        * hook : post_class
+        *
+        */
+        function czr_fn_maybe_remove_hentry_class( $class ) {
+            $remove_bool = 'page' == czr_fn_get_post_type();
 
+            if ( apply_filters( 'czr_post_class_remove_hentry_class', $remove_bool ) ) {
+                $class = array_diff( $class, array( 'hentry' ) );
+            }
 
+            return $class;
+        }
 
 
 
@@ -854,69 +878,16 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
               // theme_name
               // db_options
               // default_options
-              // started using customizr(-pro) transient
               do_action( 'czr_before_caching_options' );
 
               self::$theme_name         = CZR_SANITIZED_THEMENAME;
               self::$db_options         = false === get_option( CZR_THEME_OPTIONS ) ? array() : (array)get_option( CZR_THEME_OPTIONS );
               self::$default_options    = czr_fn_get_default_options();
-              $_trans                   = CZR_IS_PRO ? 'started_using_customizr_pro' : 'started_using_customizr';
-
-              //What was the theme version when the user started to use Customizr?
-              //new install = no options yet
-              //very high duration transient, this transient could actually be an option but as per the themes guidelines, too much options are not allowed.
-              $is_customizr_free_or_pro_fresh_install = 1 >= count( self::$db_options );
-
-              if ( $is_customizr_free_or_pro_fresh_install ) {
-                  set_transient(
-                      $_trans,
-                      sprintf('%s|%s' , 'with', CUSTOMIZR_VER ),
-                      60*60*24*9999
-                  );
-              }
-              //it can be a fresh install of the pro because the free options are not enough to check
-              else if ( ! esc_attr( get_transient( $_trans ) ) ) {
-                  //this might be :
-                  //1) a free user updating to pro => with
-                  //2) a free user updating and has cleaned transient (edge case but possible ) => before
-                  //3) a pro user updating and has cleaned transient ( edge also ) => before
-                  //How do make the difference between 1) and ( 2 or 3 )
-                  //=> we need something written by the pro => the last update notice in options
-                  if ( CZR_IS_PRO ) {
-                      $is_already_pro_user = array_key_exists( 'last_update_notice_pro', self::$db_options );
-                      $is_pro_fresh_install = ! $is_already_pro_user;
-                      if ( $is_already_pro_user ) {
-                          $pro_infos = self::$db_options['last_update_notice_pro'];
-                          $is_pro_fresh_install = is_array( $pro_infos ) && array_key_exists( 'version', $pro_infos ) && $pro_infos['version'] == CUSTOMIZR_VER;
-                      }
-                      $user_starter_with_this_version = $is_pro_fresh_install;
-                      if ( $is_already_pro_user && ! $is_pro_fresh_install ) {
-                        $user_starter_with_this_version = false;
-                      }
-
-                      //if already pro user, we are in the case of the transient that have been cleaned in db
-                      //if not, then it's a free user upgrading to pro
-                      set_transient(
-                          $_trans,
-                          sprintf('%s|%s' , $user_starter_with_this_version ? 'with' : 'before', CUSTOMIZR_VER ),
-                          60*60*24*9999
-                      );
-                  } else {
-                      $has_already_installed_free = array_key_exists( 'last_update_notice', self::$db_options );
-                      //we are in the case of a free user updating the free theme but has previously cleaned the transients in db
-                      set_transient(
-                          $_trans,
-                          sprintf('%s|%s' , $has_already_installed_free ? 'before' : 'with', CUSTOMIZR_VER ),
-                          60*60*24*9999
-                      );
-                  }
-              }
 
               //fire an action hook after theme main properties have been set up
               // theme_name
               // db_options
               // default_options
-              // started using customizr(-pro) transient
               do_action( 'czr_after_caching_options' );
         }
 
@@ -977,4 +948,55 @@ if ( file_exists( get_template_directory() . '/core/init-pro.php' ) )
 
 //setup constants
 czr_fn_setup_constants();
+
+//setup started using theme option ( before checking czr_fn_is_ms() that uses the user_started_before_Version function to determine it )
+czr_fn_setup_started_using_theme_option_and_constants();
+
+// load the czr-base-fmk
+if ( ! isset( $GLOBALS['czr_base_fmk'] ) ) {
+    require_once(  dirname( __FILE__ ) . '/czr-base-fmk/czr-base-fmk.php' );
+    \czr_fn\CZR_Fmk_Base( array(
+       'text_domain' => 'customizr',
+       'base_url' => CZR_BASE_URL . 'core/czr-base-fmk',
+       'version' => CUSTOMIZR_VER
+    ) );
+} else {
+    error_log('Warning => the czr_base_fmk should be loaded and instantiated by the theme.');
+}
+
+
+// load the social links module
+require_once( CZR_BASE . CZR_CORE_PATH . 'czr-modules/social-links/index.php' );
+czr_fn_register_social_links_module(
+    array(
+        'id' => 'tc_theme_options[tc_social_links]',
+
+        'text-domain' => 'customizr',
+        'base_url_path' => CZR_BASE_URL . '/core/czr-modules/social-links',
+        'version' => CUSTOMIZR_VER,
+
+        'option_value' => czr_fn_opt( 'tc_social_links' ), // for dynamic registration
+        'setting' => array(
+            'type' => 'option',
+            'default'  => array(),
+            'transport' => czr_fn_is_partial_refreshed_on() ? 'postMessage' : 'refresh',
+            'sanitize_callback' => 'czr_fn_sanitize_callback__czr_social_module',
+            'validate_callback' => 'czr_fn_validate_callback__czr_social_module'
+        ),
+
+        'section' => array(
+            'id' => 'socials_sec',
+            'title' => __( 'Social links', 'customizr' ),
+            'panel' => 'tc-global-panel',
+            'priority' => 20
+        ),
+
+        'control' => array(
+            'priority' => 10,
+            'label' => __( 'Create and organize your social links', 'customizr' ),
+            'type'  => 'czr_module',
+        )
+    )
+);
+
 require_once( get_template_directory() . ( czr_fn_is_ms() ? '/core/init.php' : '/inc/czr-init-ccat.php' ) );

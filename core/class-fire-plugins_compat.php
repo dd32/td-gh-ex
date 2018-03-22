@@ -58,6 +58,7 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
       add_theme_support( 'uris' );
       add_theme_support( 'tc-unlimited-featured-pages' );
       add_theme_support( 'learnpress' );
+      add_theme_support( 'coauthors' );
     }
 
 
@@ -138,9 +139,13 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
       if ( current_theme_supports( 'uris' ) && $this -> czr_fn_is_plugin_active('ultimate-responsive-image-slider/ultimate-responsive-image-slider.php') )
         $this -> czr_fn_set_uris_compat();
 
-      /* LearnPress  */
+      /* LearnPress */
       if ( current_theme_supports( 'learnpress' ) && $this -> czr_fn_is_plugin_active('learnpress/learnpress.php') )
         $this -> czr_fn_set_lp_compat();
+
+      /* Coauthors-Plus */
+      if ( current_theme_supports( 'coauthors' ) && $this -> czr_fn_is_plugin_active('co-authors-plus/co-authors-plus.php') )
+        $this -> czr_fn_set_coauthors_compat();
     }//end of plugin compatibility function
 
 
@@ -777,6 +782,17 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
       add_action('sensei_before_main_content', 'czr_fn_sensei_wrappers', 10);
       add_action('sensei_after_main_content', 'czr_fn_sensei_wrappers', 10);
 
+      //removes related posts on __after_loop/__after_content hook
+      add_filter( 'tc_opt_tc_related_posts', 'czr_fn_sensei_disable_related_posts' );
+      function czr_fn_sensei_disable_related_posts( $bool ) {
+          return ( function_exists('is_sensei') && is_sensei() ) ? 'disabled' : $bool;
+      }
+
+      //removes author info on __after_loop/__after_content hook
+      add_filter( 'tc_opt_tc_show_author_info', 'czr_fn_sensei_disable_author_info' );
+      function czr_fn_sensei_disable_author_info( $bool ) {
+          return ( function_exists('is_sensei') && is_sensei() ) ? false : $bool;
+      }
 
       function czr_fn_sensei_wrappers() {
         switch ( current_filter() ) {
@@ -834,6 +850,18 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
       function czr_fn_woocommerce_shop_enable( $bool ){
         return ( function_exists('is_woocommerce') && is_woocommerce() && function_exists('is_shop') && is_shop() ) ? true : $bool;
       }
+      //Helper
+      function czr_fn_is_woocommerce_disable( $bool ) {
+        return ( function_exists('is_woocommerce') && is_woocommerce() ) ? false : $bool;
+      }
+
+      //enable lightbox for images in the wc short description
+      add_filter( 'czr_enable_lightbox_in_wc_short_description', '__return_true' );
+
+
+      //enable images smartload in the wc short description
+      add_filter( 'czr_enable_img_smart_load_in_wc_short_description', '__return_true' );
+
 
       //when in the woocommerce shop page use the "shop" id
       add_filter( 'czr_id', 'czr_fn_woocommerce_shop_page_id' );
@@ -846,6 +874,18 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
       //allow page layout post meta in 'shop'
       add_filter( 'czr_is_page_layout', 'czr_fn_woocommerce_shop_enable' );
 
+
+      //removes post comment action on __after_loop/__after_content hook
+      add_filter( 'czr_are_comments_enabled', 'czr_fn_is_woocommerce_disable' );
+
+      //removes related posts on __after_loop/__after_content hook
+      add_filter( 'tc_opt_tc_related_posts', 'czr_fn_woocommerce_disable_related_posts' );
+      function czr_fn_woocommerce_disable_related_posts( $bool ) {
+          return ( function_exists('is_woocommerce') && is_woocommerce() ) ? 'disabled' : $bool;
+      }
+
+      //removes author info on __after_loop/__after_content hook
+      add_filter( 'tc_opt_tc_show_author_info', 'czr_fn_is_woocommerce_disable' );
 
       //handles the woocomerce sidebar : removes action if sidebars not active
       if ( !is_active_sidebar( 'shop') ) {
@@ -904,6 +944,7 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
 
       function czr_fn_wc_skin_color_color_prop_selectors( $selectors ) {
          return array_merge( $selectors, array(
+            '.woocommerce button.button[type=submit]:hover',
             '.woocommerce #respond input#submit:hover',
             '.woocommerce input#submit:hover',
             '.woocommerce input.button:hover',
@@ -924,6 +965,7 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
 
       function czr_fn_wc_skin_color_background_color_prop_selectors( $selectors ) {
          return array_merge( $selectors, array(
+            '.woocommerce button.button[type=submit]',
             '.woocommerce #respond input#submit',
             '.woocommerce input#submit',
             '.woocommerce input.button',
@@ -936,21 +978,25 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
          return array_merge( $selectors, array(
             '.woocommerce .woocommerce-info',
             '.woocommerce .woocommerce-message',
+            '.woocommerce button.button[type=submit]',
             '.woocommerce #respond input#submit',
             '.woocommerce input#submit',
             '.woocommerce input.button',
             '.woocommerce a.button',
             '.woocommerce .button.add_to_cart_button',
+            '.woocommerce button.button[type=submit]:hover',
             '.woocommerce #respond input#submit:hover',
             '.woocommerce input#submit:hover',
             '.woocommerce input.button:hover',
             '.woocommerce a.button:hover',
             '.woocommerce .button.add_to_cart_button:hover',
+            '.woocommerce button.button[type=submit]:focus',
             '.woocommerce #respond input#submit:focus',
             '.woocommerce input#submit:focus',
             '.woocommerce input.button:focus',
             '.woocommerce a.button:focus',
             '.woocommerce .button.add_to_cart_button:focus',
+            '.woocommerce button.button[type=submit]:active',
             '.woocommerce #respond input#submit:active',
             '.woocommerce input#submit:active',
             '.woocommerce input.button:active',
@@ -986,6 +1032,8 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
             '.woocommerce input.button.alt.disabled:active',
             '.woocommerce button.button.alt.disabled:active',
             '.woocommerce a.button.alt.disabled:active',
+            '.woocommerce #content div.product .woocommerce-tabs ul.tabs li a:hover',
+            '.woocommerce #content div.product .woocommerce-tabs ul.tabs li.active a',
          ));
       }
 
@@ -998,7 +1046,8 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
             '.woocommerce input#submit.alt.disabled',
             '.woocommerce input.button.alt.disabled',
             '.woocommerce button.button.alt.disabled',
-            '.woocommerce a.button.alt.disabled'
+            '.woocommerce a.button.alt.disabled',
+            '.woocommerce #content div.product .woocommerce-tabs ul.tabs li.active a::before'
          ));
       }
 
@@ -1193,6 +1242,27 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
 
     }//end lp compat
 
+
+    /* same in czr classic */
+    /*
+    * Coauthors-Plus plugin compat hooks
+    */
+    private function czr_fn_set_coauthors_compat() {
+      if ( !function_exists( 'coauthors_ids' )  ) {
+        return;
+      }
+
+      add_filter( 'tc_post_author_id', 'tc_coauthors_post_author_ids' );
+      if ( !function_exists( 'tc_coauthors_post_author_ids' ) ) {
+        function tc_coauthors_post_author_ids() {
+          $author_ids = coauthors_ids( $between = ',', $betweenLast = ',', $before = null, $after = null, $echo = false );
+          return explode(  ',' , $author_ids );
+        }
+      }
+    }
+
+
+
     /* same in czr classic */
     /**
     * TC Unlimited Featured Pages compat hooks
@@ -1302,31 +1372,48 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
 
             <div id="content" class="<?php czr_fn_article_container_class() ?>">
 
-              <?php
+              <?php do_action ('__before_loop');
 
     }
 
 
-    /* no comments, no related posts, no navigation */
+    /* no navigation */
     function czr_fn_mainwrapper_end() {
+                    /*
+                     * Optionally attached to this hook :
+                     * - In single posts:
+                     *   - Author bio | 10
+                     *   - Related posts | 20
+                     * - In posts and pages
+                     *   - Comments | 30
+                     */
+                    do_action ('__after_loop');
       ?>
             </div>
 
-            <?php do_action('__after_content'); ?>
-
             <?php
-              /*
-              * SIDEBARS
-              */
-              /* By design do not display sidebars in 404 or home empty */
-              if ( ! ( czr_fn_is_home_empty() || is_404() ) ) {
-                if ( czr_fn_is_registered_or_possible('left_sidebar') )
-                  get_sidebar( 'left' );
+                /*
+                 * Optionally attached to this hook :
+                 * - In single posts:
+                 *   - Author bio | 10
+                 *   - Related posts | 20
+                 * - In posts and pages
+                 *   - Comments | 30
+                 */
+                do_action('__after_content');
 
-                if ( czr_fn_is_registered_or_possible('right_sidebar') )
-                  get_sidebar( 'right' );
+                /*
+                * SIDEBARS
+                */
+                /* By design do not display sidebars in 404 or home empty */
+                if ( ! ( czr_fn_is_home_empty() || is_404() ) ) {
+                  if ( czr_fn_is_registered_or_possible('left_sidebar') )
+                    get_sidebar( 'left' );
 
-              }
+                  if ( czr_fn_is_registered_or_possible('right_sidebar') )
+                    get_sidebar( 'right' );
+
+                }
             ?>
           </div><!-- .column-content-wrapper -->
 
