@@ -3,9 +3,9 @@
 /*----------------------------------------------------------------------------*/
 
 Theme Name      :   BB Ecommerce Store
-Theme URI       :   https://www.themeshopy.com/premium/ecommerce-store-wordpress-theme/
-Version         :   1.3
-Tested up to    :   WP 4.9.1
+Theme URI       :   https://www.themeshopy.com/free/wp-ecommerce-store-wordpress-theme/
+Version         :   1.3.1
+Tested up to    :   WP 4.9.4
 Author          :   Themeshopy
 Author URI      :   https://www.themeshopy.com/
 license         :   License: GNU General Public License v3 or later
@@ -165,6 +165,12 @@ ii)  Remove the esc_url from the conditions.
 iii) Added wp_reset_postdata in custom homepage template.
 iv)  Followed the late scaping and did changes accordingly.
 v)   Fixed the template part issue i.e. get_template_part( 'no-results', 'archive' );
+
+Version 1.3.1
+i) Change font_url code in function.php file.
+ii) Update fontawesome.
+iii) Update Woocommerce.
+iv)  change text to url in customizer.php.
 
 Ecommerce Store Premium version
 ==========================================================

@@ -16,17 +16,10 @@ function bb_ecommerce_store_the_attached_image() {
 	$post                = get_post();
 	$attachment_size     = apply_filters( 'bb_ecommerce_store_attachment_size', array( 1200, 1200 ) );
 	$next_attachment_url = wp_get_attachment_url();
-
-	/**
-	 * Grab the IDs of all the image attachments in a gallery so we can get the
-	 * URL of the next adjacent image in a gallery, or the first image (if
-	 * we're looking at the last image in a gallery), or, in a gallery of one,
-	 * just the link to that image file.
-	*/
 	$attachment_ids = get_posts( array(
 		'post_parent'    => $post->post_parent,
 		'fields'         => 'ids',
-		'numberposts'    => -1,
+		'numberposts'    =>  1,
 		'post_status'    => 'inherit',
 		'post_type'      => 'attachment',
 		'post_mime_type' => 'image',
@@ -45,11 +38,11 @@ function bb_ecommerce_store_the_attached_image() {
 
 		// get the URL of the next image attachment...
 		if ( $next_id )
-			$next_attachment_url = ( get_attachment_link( $next_id ) );
+			$next_attachment_url = get_attachment_link( $next_id );
 
 		// or get the URL of the first image attachment.
 		else
-			$next_attachment_url = ( get_attachment_link( array_shift( $attachment_ids ) ) );
+			$next_attachment_url = get_attachment_link( array_shift( $attachment_ids ) );
 	}
 
 	printf( '<a href="%1$s" rel="attachment">%2$s</a>',

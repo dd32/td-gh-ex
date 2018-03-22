@@ -1,10 +1,10 @@
 /*
 Theme Name: BB Ecommerce Store
-Theme URI: https://www.themeshopy.com/premium/ecommerce-store-wordpress-theme/
+Theme URI: https://www.themeshopy.com/free/wp-ecommerce-store-wordpress-theme/
 Author: ThemeShopy
 Author URI: https://www.themeshopy.com
 Description: E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce Store is an elegant E-commerce/Woo-Commerce WordPress theme suitable for E-commerce websites of any store type such as online bookstore, electronic store, apparel & clothing store, fashion store, sport & athletic goods store, handbags & feminine products store, cosmetics & saloon item shop, jewelry & luxury item store and various multipurpose online stores. The modern design and smooth coding standard make them perfect for business, corporate, companies and freelancers. Who wants to have an impactful and awesome online presence? We also utilize best and clean coding standard that functions well with the latest WordPress version. This Free customizable responsive Woo-commerce WordPress theme includes plenty of customization options that are fairly easy to use. You can easily customize them, using the short codes and hook. Setting up, an astonishing e-store that's a dazzling beauty was never this easy before. Main features of our Free e-commerce-store includes Customizer theme options, background image, and color, SEO optimized, fully responsive, fast loading. Why stop there? If you can setup your website, easily utilizing our free business WordPress theme.  why not take it a notch further?  Upgrade to your premium theme, as it offers an army of features, along with customization options with a customer care support that will resolve your problems in no time. We have a devoted team of developers that believes in perfection and providing the best product for the users. This team will be ready at the helm to provide you with support and being your ultimate back-up. If you ever required our assistance. Customer satisfaction is our top priority; we strive to deliver the best and aren’t going to be ever content with anything less. If it doesn’t satisfy the user then it won’t please us either. You can easily set up and dip your hands into the world E-marketing with our free corporate WordPress theme. Our free themes are user and mobile friendly, very responsive and have a beautiful professional look.  It is not going to be enough in a longer run. Your business is bound to grow and with a booming business, you would need to make upgrades in almost every business aspect. The way your website appears and works is significant for an online store.  Upgrading to premium WordPress theme should take first priority, in that case. The first impression is the last impression and you can leave an ever-lasting one, with the aid of our premium WordPress theme.  Upgrade your free theme to premium now! You can take a free demo tour of our premium theme and see how it will sit on your website. Click on the click below to being your demo tour. https://www.themeshopy.com/ecommerce-store-wordpress-theme/
-Version: 1.3
+Version: 1.3.1
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-ecommerce-store
@@ -460,10 +460,10 @@ a.blog-more{
   border-radius: 50%;
 }
 button.search-submit {
-    background: #e22626;
-    border: none;
-    padding: 11px 15px;
-    color: #fff;
+  background: #e22626;
+  border: none;
+  padding: 11px 15px;
+  color: #fff;
 }
 input#woocommerce-product-search-field {
     width: 90%;
@@ -479,34 +479,34 @@ h2.woocommerce-loop-product__title {
     font-size: 18px !important;
 }
 #our-products a.button {
-    border: 2px solid;
-    color: #000;
-    font-size: 14px;
-    padding: 8px 18px;
-    background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
-    border-color: #a88734 #9c7e31 #846a29;
+  border: 2px solid;
+  color: #000;
+  font-size: 14px;
+  padding: 8px 18px;
+  background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+  border-color: #a88734 #9c7e31 #846a29;
 }
 #our-products a.button:hover {
-    background: #f1c860;
-    background: -webkit-linear-gradient(top,#f5d78e,#eeb933);
-    background: linear-gradient(to bottom,#f5d78e,#eeb933);
-    border-color: #a88734 #9c7e31 #846a29;
+  background: #f1c860;
+  background: -webkit-linear-gradient(top,#f5d78e,#eeb933);
+  background: linear-gradient(to bottom,#f5d78e,#eeb933);
+  border-color: #a88734 #9c7e31 #846a29;
 }
 #our-products .woocommerce ul.products li.product{
-    margin: 0 4px 2.992em;
-    width: 24%;
+  margin: 0 4px 2.992em;
+  width: 24%;
 }
 #our-products li.product {
-    padding: 15px !important;
-    background: #f5f5f5;
+  padding: 15px !important;
+  background: #f5f5f5;
 }
 .static-sidebar {
-    background: #f3f3f3;
-    color: #222222;
+  background: #f3f3f3;
+  color: #222222;
 }
 .static-sidebar h3 {
-    font-size: 20px;
-    padding-bottom: 0;
+  font-size: 20px;
+  padding-bottom: 0;
 }
 .static-sidebar caption {
   font-weight: bold;
@@ -516,28 +516,28 @@ h2.woocommerce-loop-product__title {
 .static-sidebar table,
 .static-sidebar th,
 .static-sidebar td {
-    border: 1px solid #d1d1d1;
-    text-align: center;
+  border: 1px solid #d1d1d1;
+  text-align: center;
 }
 .static-sidebar td {
-    padding: 10px;
-    color: #e22626;
+  padding: 10px;
+  color: #e22626;
 }
 .static-sidebar th {
-    text-align: center;
-    padding: 10px;
-    color: #e22626;
+  text-align: center;
+  padding: 10px;
+  color: #e22626;
 }
 .static-sidebar select {
-    padding: 8px 5px;
+  padding: 8px 5px;
 }
 .static-sidebar li a {
   color: #e22626;
   font-size: 15px;
 }
 .static-sidebar ul li {
-    list-style: none;
-    padding: 5px 0;
+  list-style: none;
+  padding: 5px 0;
 }
 .static-sidebar ul {
   margin: 0;
@@ -547,17 +547,17 @@ h2.woocommerce-loop-product__title {
 }
 /* --------- Homepage --------- */
 #our-products {
-    padding: 20px 15px 0 15px;
-    border: 2px solid #f1f1f1;
-    margin-top: 4%;
-    margin-bottom: 4%;
+  padding: 20px 15px 0 15px;
+  border: 2px solid #f1f1f1;
+  margin-top: 4%;
+  margin-bottom: 4%;
 }
 #our-products h3 {
-    text-align: left;
-    font-size: 30px;
-    color: #000;
-    font-weight: bold;
-    letter-spacing: 2px;
+  text-align: left;
+  font-size: 30px;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 section { 
   width:100%;
@@ -568,12 +568,10 @@ section {
   font: 26px 'PT sans';
   margin: 0;
 }
-
 .services {
   padding:0;
   margin-top: 3%;
 }
-
 .services .section-title a{
   color:#a94442;
   font-size:24px;
@@ -583,30 +581,29 @@ section {
   text-decoration:none;
 }
 .services .new-text p {
-    color: #636060;
-    margin: 0 0 10px;
-    line-height: 20px;
-    font-size: 15px;
-    padding: 0 15px;
-    letter-spacing: 1px;
+  color: #636060;
+  margin: 0 0 10px;
+  line-height: 20px;
+  font-size: 15px;
+  padding: 0 15px;
+  letter-spacing: 1px;
 }
 .inner-service {
-    background: #fff;
-    margin-bottom: 4%;
-    border-top: solid 4px #e22626;
+  background: #fff;
+  margin-bottom: 4%;
+  border-top: solid 4px #e22626;
 }
 h3.ecomercepost-title {
-    padding: 15px 15px 0;
-    font-size: 30px;
+  padding: 15px 15px 0;
+  font-size: 30px;
 }
 .read-btn {
-    padding: 0 15px 15px;
+  padding: 0 15px 15px;
 }
 .services .about-us{
   padding: 10px;
   margin-top:20px;
 }
-
 .services  .about-us a{
   border: 1px solid #000;
   padding:8px 20px;
@@ -615,7 +612,6 @@ h3.ecomercepost-title {
   text-transform: uppercase;
   font-size: 19px;
 }
-
 .services .button{
   margin: 0 18%;
   display: inline-block;
@@ -896,7 +892,8 @@ h3.ecomercepost-title {
 #sidebar ul li a{
   color:#fff;
 }
-#sidebar .tagcloud a{
+#sidebar .tagcloud a,
+.copyright-wrapper .tagcloud a{
   background:#eeeeee;
   color:#000;
   font-size:15px !important;
@@ -904,17 +901,13 @@ h3.ecomercepost-title {
   margin:0 0 5px;
   display:inline-block;
 }
-#sidebar .tagcloud a:hover{
+#sidebar .tagcloud a:hover,
+.copyright-wrapper .tagcloud a:hover{
   background:#a94442;
   color: #fff;
 }
 
 /* woocommerce */
-.woocommerce #sidebar{
-  width: 28%;
-  float: left;
-  margin-left: 2%;
-}
 .woocommerce-checkout #content-bb ul li{
   list-style-type: none;
   padding: 1em 2em 1em 3.5em;
@@ -1106,20 +1099,17 @@ a.button {
 .copyright-wrapper .widget {
     padding: 20px 0;
 }
-.copyright-wrapper .tagcloud a {
-    color: #fff;
-}
 .copyright-wrapper input[type="submit"]{
   margin-top: 0;
   padding: 10px 9px;
   font-size: 15px;  
 }
 .copyright-wrapper input.search-submit {
-    float: right;
-    width: 39%;
+  float: right;
+  width: 39%;
 }
 .copyright-wrapper .search-form .search-field {
-    width: 100%;
+  width: 100%;
 }
 .copyright-wrapper caption {
   font-weight: bold;
@@ -1129,33 +1119,33 @@ a.button {
 .copyright-wrapper table,
 .copyright-wrapper th,
 .copyright-wrapper td {
-    border: 1px solid #d1d1d1;
-    text-align: center;
+  border: 1px solid #d1d1d1;
+  text-align: center;
 }
 .copyright-wrapper td {
-    padding: 10px;
-    color: #fff;
+  padding: 10px;
+  color: #fff;
 }
 .copyright-wrapper th {
-    text-align: center;
-    padding: 10px;
-    color: #fff;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
 }
 .copyright-wrapper select {
-    padding: 8px 5px;
+  padding: 8px 5px;
 }
 .copyright-wrapper h3 {
-    color: #e22626;
-    font-weight: 600;
-    font-size: 25px;
+  color: #e22626;
+  font-weight: 600;
+  font-size: 25px;
 }
 .copyright-wrapper li a {
   color: #fff;
   font-size: 15px;
 }
 .copyright-wrapper ul li {
-    list-style: none;
-    padding: 5px 0;
+  list-style: none;
+  padding: 5px 0;
 }
 .copyright-wrapper ul {
   margin: 0;
@@ -1607,11 +1597,5 @@ nav.post-navigation{
   #our-products .woocommerce ul.products li.product {
       margin: 0 4px 2.992em;
       width: 23.8%;
-  }
-}
-@media screen and (max-width:991px){
-  #slider .slide-cap h2{
-    font-size:150%;
-    color:#ffffff;
   }
 }

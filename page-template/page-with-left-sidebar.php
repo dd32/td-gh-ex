@@ -9,14 +9,14 @@ get_header(); ?>
 
 <div class="container">
     <div class="middle-align">       
-		<div class="col-md-3">
+		<div id="sidebar" class="col-md-4">
 			<?php dynamic_sidebar('sidebar-2'); ?>
 		</div>		 
-		<div class="col-md-9" id="content-bb" >
+		<div class="col-md-8" id="content-bb" >
 			<?php while ( have_posts() ) : the_post(); ?>
                 
                 <h1><?php the_title();?></h1>
-
+                <img src="<?php the_post_thumbnail_url(); ?>" width="100%">
                 <?php the_content();
                 
                 wp_link_pages( array(

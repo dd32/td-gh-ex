@@ -17,9 +17,9 @@ get_header(); ?>
 <div id="content-bb" class="container">
     <div class="middle-align">       
         <div class="col-md-12">
-            <?php 
-            while ( have_posts() ) : the_post(); ?>
+            <?php while ( have_posts() ) : the_post(); ?>
                 <h1><?php the_title();?></h1>
+                <img src="<?php the_post_thumbnail_url(); ?>" width="100%">
                 <?php the_content();
 
                 wp_link_pages( array(
@@ -30,13 +30,16 @@ get_header(); ?>
                     'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>%',
                     'separator'   => '<span class="screen-reader-text">, </span>',
                 ) );
-                
-                ?>               
+
+                //If comments are open or we have at least one comment, load up the comment template
+                    if ( comments_open() || '0' != get_comments_number() )
+                        comments_template();
+                ?>
             <?php endwhile; // end of the loop. ?>            
         </div>        
         <div class="clear"></div>    
     </div>
-</div><!-- container -->
+</div>
 
 <?php do_action( 'bb_ecommerce_store_page_footer' ); ?>
 

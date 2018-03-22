@@ -30,15 +30,14 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('bb_ecommerce_store_theme_options',array(
-	        'default' => '',
-	        'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'	        
-	    )
-    );
+        'default' => '',
+        'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'	        
+	) );
 
 	$wp_customize->add_control('bb_ecommerce_store_theme_options',
 	    array(
 	        'type' => 'radio',
-	        'label' => 'Change Layouts',
+	        'label' => __('Change Layouts','bb-ecommerce-store'),
 	        'section' => 'bb_ecommerce_store_left_right',
 	        'choices' => array(
 	            'Left Sidebar' => __('Left Sidebar','bb-ecommerce-store'),
@@ -48,8 +47,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	            'Four Columns' => __('Four Columns','bb-ecommerce-store'),
 	            'Grid Layout' => __('Grid Layout','bb-ecommerce-store')
 	        ),
-	    )
-    );
+	) );
 
     //Topbar section
 	$wp_customize->add_section('bb_ecommerce_store_topbar',array(
@@ -94,50 +92,50 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('bb_ecommerce_store_youtube_url',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
-	));
+	) );
 	
 	$wp_customize->add_control('bb_ecommerce_store_youtube_url',array(
 		'label'	=> __('Add Youtube link','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_social',
 		'setting'	=> 'bb_ecommerce_store_youtube_url',
-		'type'		=> 'text'
-	));
+		'type'		=> 'url'
+	) );
 
 	$wp_customize->add_setting('bb_ecommerce_store_facebook_url',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
-	));
+	) );
 	
 	$wp_customize->add_control('bb_ecommerce_store_facebook_url',array(
 		'label'	=> __('Add Facebook link','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_social',
 		'setting'	=> 'bb_ecommerce_store_facebook_url',
-		'type'	=> 'text'
-	));
+		'type'	=> 'url'
+	) );
 
 	$wp_customize->add_setting('bb_ecommerce_store_twitter_url',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
-	));
+	) );
 	
 	$wp_customize->add_control('bb_ecommerce_store_twitter_url',array(
 		'label'	=> __('Add Twitter link','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_social',
 		'setting'	=> 'bb_ecommerce_store_twitter_url',
-		'type'	=> 'text'
-	));
+		'type'	=> 'url'
+	) );
 
 	$wp_customize->add_setting('bb_ecommerce_store_rss_url',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
-	));
+	) );
 	
 	$wp_customize->add_control('bb_ecommerce_store_rss_url',array(
 		'label'	=> __('Add RSS link','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_social',
 		'setting'	=> 'bb_ecommerce_store_rss_url',
-		'type'	=> 'text'
-	));
+		'type'	=> 'url'
+	) );
 
     //home page slider
 	$wp_customize->add_section( 'bb_ecommerce_store_slidersettings' , array(
@@ -159,7 +157,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 			'section'  => 'bb_ecommerce_store_slidersettings',
 			'type'     => 'dropdown-pages'
 		) );
-
 	}
 
 	//OUR services
@@ -281,7 +278,8 @@ final class bb_ecommerce_store_customize {
 				$manager,
 				'example_1',
 				array(
-					'title'    => esc_html__( 'BB Ecommerce Store Pro', 'bb-ecommerce-store' ),
+					'priority'   => 9,
+					'title'    => esc_html__( 'BB Ecommerce Pro', 'bb-ecommerce-store' ),
 					'pro_text' => esc_html__( 'Go Pro',         'bb-ecommerce-store' ),
 					'pro_url'  => 'https://www.themeshopy.com/premium/ecommerce-store-wordpress-theme/'
 				)

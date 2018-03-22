@@ -33,16 +33,16 @@
         </div>
         <div class="social-media col-md-6 col-sm-4 col-xs-12">
            <?php if( get_theme_mod( 'bb_ecommerce_store_youtube_url','' ) != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_youtube_url','' ) ); ?>"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_youtube_url','' ) ); ?>"><i class="fab fa-youtube" aria-hidden="true"></i></a>
           <?php } ?>
           <?php if( get_theme_mod( 'bb_ecommerce_store_facebook_url','' ) != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_facebook_url','' ) ); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_facebook_url','' ) ); ?>"><i class="fab fa-facebook" aria-hidden="true"></i></a>
           <?php } ?>
           <?php if( get_theme_mod( 'bb_ecommerce_store_twitter_url','' ) != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_twitter_url','' ) ); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_twitter_url','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i></a>
           <?php } ?>
           <?php if( get_theme_mod( 'bb_ecommerce_store_rss_url','' ) != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_rss_url','' ) ); ?>"><i class="fa fa-rss" aria-hidden="true"></i></a>
+            <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_rss_url','' ) ); ?>"><i class="fas fa-rss" aria-hidden="true"></i></a>
           <?php } ?>
         </div>
         <div class="clearfix"></div>

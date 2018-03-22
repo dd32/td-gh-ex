@@ -27,7 +27,7 @@ if ( post_password_required() )
             if ( 1 === $comments_number ) {
 
                 /* translators: %s: post title */
-                printf( esc_html(_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'bb-ecommerce-store' ), get_the_title() ) );
+                printf( esc_html( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'bb-ecommerce-store' ), get_the_title() );
             } else {
                 printf(
                 /* translators: 1: number of comments, 2: post title */
