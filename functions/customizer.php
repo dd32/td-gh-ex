@@ -15,7 +15,7 @@ class Appointway_Customizer {
          * General Section
          */
         $wp_customize->add_section('general_setting_section', array(
-            'title' => __('General Settings', 'appointway'),
+            'title' => __('Header Settings', 'appointway'),
             'description' => __('Allows you to customize header logo, favicon, background etc settings for Appointway Theme.', 'appointway'), //Descriptive tooltip
             'panel' => '',
             'priority' => '10',
@@ -583,9 +583,9 @@ function inkthemes_registers() {
 	wp_enqueue_script( 'inkthemes_customizer_script' );
 	wp_localize_script( 'inkthemes_customizer_script', 'ink_advert', array(
 	'pro' => __('View PRO version','appointway'),
-	'url' => esc_url('http://www.inkthemes.com/wp-themes/appointway-wordpress-theme/'),
+	'url' => esc_url('https://www.inkthemes.com/market/appointway-wordpress-theme/'),
 	'support_text' => __('Need Help!','appointway'),
-	'support_url' => esc_url('http://www.inkthemes.com/lets-connect/'),
+	'support_url' => esc_url('http://www.inkthemes.com/contact-us/'),
 	)			
 	);
 }
