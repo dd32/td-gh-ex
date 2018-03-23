@@ -9,6 +9,7 @@
  */
 
 get_header();
+
 // Boxed or Fullwidth
 $boxedornot = ace_corporate_boxedornot();
 $section_background = get_theme_mod('section_background');
@@ -103,7 +104,7 @@ if (get_theme_mod('homepage_show_content')==1) {
                 </div>
                <?php  }
                 else{ ?>
-                <div class="page-img page-content-video" ><?php echo theme_oembed_videos(); ?>
+                <div class="page-img page-content-video" ><?php ace_corporate_blog_post_format($post_format, $post_id); ?>
 
                 </div>
                <?php  } ?>
@@ -286,7 +287,7 @@ if ($featured->have_posts()) :
                             <div class="blog-content clearfix">
                                 
                                 <div class="blog-content-image effect-thumb">
-                                    <?php get_template_part('template-parts/content', get_post_format($post->ID)); ?>   
+                                    <?php get_template_part('template-parts/content', get_post_format($post->ID)); ?> 
                                     <?php if (get_theme_mod('show_blog_meta', 1)) { ?>
                                         <div class="entry-meta">
                                             <?php

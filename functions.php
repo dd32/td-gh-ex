@@ -465,6 +465,7 @@ if (!  function_exists('ace_corporate_register_required_plugins') ) {
 if ( ! function_exists( 'ace_corporate_the_featured_video' ) ) {
     function ace_corporate_the_featured_video( $content )
     {
+       
         $ori_url = explode("\n", $content);
         $url = $ori_url[0];
         $w = get_option('embed_size_w');
@@ -476,8 +477,7 @@ if ( ! function_exists( 'ace_corporate_the_featured_video' ) ) {
         if (0 === strpos($url, 'https://') || 0 == strpos($url, 'http://')) {
             echo esc_url(wp_oembed_get($url));
             $content = trim(str_replace($url, '', $content));
-        }
-        elseif (preg_match('#^<(script|iframe|embed|object)#i', $url)) {
+        } elseif (preg_match('#^<(script|iframe|embed|object)#i', $url)) {
             $h = get_option('embed_size_h');
             echo esc_url($url);
             if (!empty($h)) {
@@ -490,10 +490,10 @@ if ( ! function_exists( 'ace_corporate_the_featured_video' ) ) {
                 );
                 echo esc_url($url);
             }
+
             $content = trim(str_replace($url, '', $content));
 
         }
-
     }
 }
 
@@ -555,22 +555,11 @@ if(!function_exists('ace_corporate_check_sidebar')){
 
 
 
-if (! function_exists('ace_corporate_blog_post_format')) {
-    function ace_corporate_blog_post_format($post_format, $post_id) {
+if (!function_exists('ace_corporate_blog_post_format')) {
+    function ace_corporate_blog_post_format($post_format, $post_id)
+    {
 
-        if (is_single()){
-            $single_post_format_class = 'single-post-format';
-        } else {
-            $single_post_format_class = '';
-        }
-
-        
-
-        if($post_format == 'video'){  ?>
-            <div class="post-video <?php echo esc_attr($single_post_format_class);?>">
-                <div class="post-video-holder">
-                    <?php
-                        global $post;
+        global $post;
 
         if ($post_format == 'video') {
             $content = trim(get_post_field('post_content', $post->ID));
@@ -593,131 +582,63 @@ if (! function_exists('ace_corporate_blog_post_format')) {
             } else {
                 echo wp_oembed_get(ace_corporate_the_featured_video($content));
             }
-        }
-                    ?>
-                </div>
-            </div>
-        <?php
-        }
-        elseif($post_format == 'audio'){
-            ?>
-                <div class="post-audio <?php echo esc_attr($single_post_format_class);?>">
-                    <div class="post-audio-holder">
-                        <?php
-                            $content = trim(  get_post_field('post_content', $post_id) );
-                              $ori_url = explode( "\n", esc_html( $content ) );
-                            $new_content =  preg_match_all("/\[[^\]]*\]/", $content, $matches);
-                            if( $new_content){
-                                echo do_shortcode( $matches[0][0] );
-                            }
-                            elseif (preg_match ( '#^<(script|iframe|embed|object)#i', $content )) {
-                                $regex = '/https?\:\/\/[^\" ]+/i';
-                                preg_match_all($regex, $ori_url[0], $matches);
-                                $urls = ($matches[0]);
-                                 print_r('<iframe src="'.$urls[0].'" width="100%" height="240" frameborder="no" scrolling="no"></iframe>');
-                            } elseif (0 === strpos( $content, 'https://' )) {
-                                $embed_url = wp_oembed_get( esc_url( $ori_url[0] ) );
-                                print_r($embed_url);
-                            }
-                        ?>
+        } elseif ($post_format == 'audio') {
+            $html = "";
+            $content = trim(get_post_field('post_content', $post_id));
+            $ori_url = explode("\n", esc_html($content));
+            $new_content = preg_match_all('/\[[^\]]*\]/', $content, $matches);
+            if ($new_content) {
+                echo do_shortcode($matches[0][0]);
+            } elseif (preg_match('#^<(script|iframe|embed|object)#i', $content)) {
+                $regex = '/https?\:\/\/[^\" ]+/i';
+                preg_match_all($regex, $ori_url[0], $matches);
+                $urls = ($matches[0]);
+                $html .= ('<iframe src="' . $urls[0] . '" width="100%" height="240" frameborder="no" scrolling="no"></iframe>');
+            } elseif (0 === strpos($content, 'https://')) {
+                $embed_url = wp_oembed_get(esc_url($ori_url[0]));
+                $html .= ($embed_url);
+            }
+            echo esc_html($html);
+        } elseif ($post_format == 'gallery') {
+            $image_url = get_post_gallery_images($post_id);
+            $post_thumbnail_id = get_post_thumbnail_id($post_id);
+            $attachment = get_post($post_thumbnail_id);
+            if ($image_url) {
+                ?>
+
+                <div class="post-gallery">
+
+                    <div class="post-format-gallery">
+                        <?php foreach ($image_url as $key => $images) { ?>
+                            <div class="slider-item" style="background-image: url('<?php echo esc_url($images); ?>');"
+                                 alt="<?php echo esc_attr($attachment->post_excerpt); ?>">
+                            </div>
+                        <?php } ?>
                     </div>
+
                 </div>
-            <?php
-        }
-        elseif ($post_format == 'gallery') {
-            //Get the alt and title of the image
-            if ( ! is_single() ) {
-                $image_url = get_post_gallery_images( $post_id );
-                $post_thumbnail_id = get_post_thumbnail_id( $post_id );
-                $attachment =  get_post($post_thumbnail_id);
-
-                if( $image_url ) {?>
-                        <div class="post-gallery">
-                            <?php foreach ( $image_url as $key => $images ) { ?>
-                                <div class="post-gallery-item">
-                                    <div class="post-gallery-item-holder" style="background-image: url('<?php echo esc_url( $images); ?>');" alt= "<?php echo esc_attr( $attachment->post_excerpt );?>">
-                                    </div>
-                                </div>
-                            <?php } ?>
-                        </div>
-                    <?php
-                        }
-                        
-            }
-        }
-        else{
-                    if( has_post_thumbnail()) { ?>
-                        <div class="post-image-content">
-                            <figure class="post-featured-image">
-                                <a href="<?php the_permalink();?>" title="<?php echo the_title_attribute('echo=0'); ?>">
-                                <?php the_post_thumbnail(); ?>
-                                </a>
-                            </figure><!-- end.post-featured-image  -->
-                        </div> <!-- end.post-image-content -->
-        <?php
-                    }
-
-
-        }
-}
-}
-
-// for post video to be display not post format video 
-function theme_oembed_videos() {
-
-    global $post;
-
-    if ( $post && $post->post_content ) {
-
-        global $shortcode_tags;
-        // Make a copy of global shortcode tags - we'll temporarily overwrite it.
-        $theme_shortcode_tags = $shortcode_tags;
-
-        // The shortcodes we're interested in.
-        $shortcode_tags = array(
-            'video' => $theme_shortcode_tags['video'],
-            'embed' => $theme_shortcode_tags['embed']
-        );
-        // Get the absurd shortcode regexp.
-        $video_regex = '#' . get_shortcode_regex() . '#i';
-
-        // Restore global shortcode tags.
-        $shortcode_tags = $theme_shortcode_tags;
-
-        $pattern_array = array( $video_regex );
-
-        // Get the patterns from the embed object.
-        if ( ! function_exists( '_wp_oembed_get_object' ) ) {
-            include ABSPATH . WPINC . '/class-oembed.php';
-        }
-        $oembed = _wp_oembed_get_object();
-        $pattern_array = array_merge( $pattern_array, array_keys( $oembed->providers ) );
-
-        // Or all the patterns together.
-        $pattern = '#(' . array_reduce( $pattern_array, function ( $carry, $item ) {
-            if ( strpos( $item, '#' ) === 0 ) {
-                // Assuming '#...#i' regexps.
-                $item = substr( $item, 1, -2 );
-            } else {
-                // Assuming glob patterns.
-                $item = str_replace( '*', '(.+)', $item );
-            }
-            return $carry ? $carry . ')|('  . $item : $item;
-        } ) . ')#is';
-
-        // Simplistic parse of content line by line.
-        $lines = explode( "\n", $post->post_content );
-        foreach ( $lines as $line ) {
-            $line = trim( $line );
-            if ( preg_match( $pattern, $line, $matches ) ) {
-                if ( strpos( $matches[0], '[' ) === 0 ) {
-                    $ret = do_shortcode( $matches[0] );
-                } else {
-                    $ret = wp_oembed_get( $matches[0] );
+            <?php } else {
+                if (has_post_thumbnail() && !is_single() && is_page_template( 'page-templates/cpmfront.php' )) {
+                    the_post_thumbnail();
                 }
-                return $ret;
+
             }
+
+
+        } else {
+            if (has_post_thumbnail() && !is_single() && is_page_template( 'page-templates/cpmfront.php' )) {
+                echo '<div class="image">';
+                echo '<a  href="'.esc_url(get_the_permalink()).'">';
+                the_post_thumbnail();
+                echo '</a></div>';
+            }
+            else{
+                the_post_thumbnail();
+            }
+
         }
+
     }
+
 }
 
