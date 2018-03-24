@@ -4,8 +4,8 @@
 
 Theme Name      :   Awesomeone
 Theme URI       :    https://www.flythemes.net/wordpress-themes/awesomeone-corporate-wordpress-theme/
-Version         :   1.2.9
-Tested up to    :   WP 4.7.2
+Version         :   1.3
+Tested up to    :   WP 4.9.4
 Author          :   Flythemes
 Author URI      :   https://www.flythemes.net/
 

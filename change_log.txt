@@ -34,3 +34,6 @@ i) Added field for purchase button link.
 
 Version 1.2.9
 i) Enabled logo option and fix css bugs.
+
+Version 1.3
+i) Added footer color option in customizer.

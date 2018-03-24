@@ -99,6 +99,19 @@ function awesomeone_sanitize_checkbox( $input ) {
 		))
 	);
 	
+	$wp_customize->add_setting('footer_color', array(
+		'default' => '#2e2e2e',
+		'sanitize_callback'	=> 'sanitize_hex_color',
+	));
+	
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control($wp_customize,'footer_color',array(
+			'description'	=> __('Select footer background color.','awesomeone'),
+			'section' => 'colors',
+			'settings' => 'footer_color'
+		))
+	);
+	
 	$wp_customize->add_section('social_section',array(
 		'title'	=> __('Social Links','awesomeone'),
 		'description'	=> 'Add your social links here. <br><strong>More social links in <a href="'.esc_url(pro_theme_url).'" target="_blank">PRO version</a>.</strong>',
@@ -429,6 +442,7 @@ function awesomeone_css(){
 				input.search-submit{
 					background-color:<?php echo get_theme_mod('color_scheme','#0fa5d9'); ?>;
 				}
+				.copyright-wrapper{ background-color:<?php echo get_theme_mod('footer_color','#2e2e2e'); ?>;}
 		</style>
 	<?php }
 add_action('wp_head','awesomeone_css');
