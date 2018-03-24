@@ -13,7 +13,7 @@ get_header(); ?>
       // Get pages set in the customizer (if any)
       $pages = array();
       for ( $count = 1; $count <= 5; $count++ ) {
-        $mod = intval( get_theme_mod( 'bb_wedding_bliss_slidersettings-page-' . $count ) );
+        $mod = absint( get_theme_mod( 'bb_wedding_bliss_slidersettings-page-' . $count ) );
         if ( 'page-none-selected' != $mod ) {
           $pages[] = $mod;
         }

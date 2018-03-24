@@ -25,25 +25,25 @@
       <div class="container">
         <div class="social-media col-md-6 col-sm-4 col-xs-12">
            <?php if( get_theme_mod( 'bb_wedding_bliss_youtube_url','' ) != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_youtube_url','' ) ); ?>"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_youtube_url','' ) ); ?>"><i class="fab fa-youtube" aria-hidden="true"></i></a>
           <?php } ?>
           <?php if( get_theme_mod( 'bb_wedding_bliss_facebook_url','' ) != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_facebook_url','' ) ); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
           <?php } ?>
           <?php if( get_theme_mod( 'bb_wedding_bliss_twitter_url','' ) != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_twitter_url','' ) ); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_twitter_url','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i></a>
           <?php } ?>
           <?php if( get_theme_mod( 'bb_wedding_bliss_rss_url','' ) != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_rss_url','' ) ); ?>"><i class="fa fa-rss" aria-hidden="true"></i></a>
+            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_rss_url','' ) ); ?>"><i class="fas fa-rss" aria-hidden="true"></i></a>
           <?php } ?>
           <?php if( get_theme_mod( 'bb_wedding_bliss_insta_url','' ) != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_insta_url','' ) ); ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_insta_url','' ) ); ?>"><i class="fab fa-instagram" aria-hidden="true"></i></a>
           <?php } ?>
           <?php if( get_theme_mod( 'bb_wedding_bliss_google_url','' ) != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_google_url','' ) ); ?>"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_google_url','' ) ); ?>"><i class="fab fa-google-plus-g" aria-hidden="true"></i></a>
           <?php } ?>
           <?php if( get_theme_mod( 'bb_wedding_bliss_pint_url','' ) != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_pint_url','' ) ); ?>"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+            <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_pint_url','' ) ); ?>"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
           <?php } ?>
         </div>
         <div class="top-contact col-md-2 col-xs-12 col-sm-4">

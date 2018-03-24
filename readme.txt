@@ -4,8 +4,8 @@
 
 Theme Name      :   BB Wedding Bliss
 Theme URI       :   https://www.themeshopy.com/free/bb-free-wedding-bliss-wordpress-theme/
-Version         :   1.0.4
-Tested up to    :   WP 4.9.2
+Version         :   1.0.5
+Tested up to    :   WP 4.9.4
 Author          :   Themeshopy
 Author URI      :   https://www.themeshopy.com/
 license         :   GNU General Public License v3.0
@@ -106,6 +106,12 @@ i)   Resolved the error of template tag.
 ii)  Tested upto Wordpress version 4.9.2
 iii) Added Hooks.
 iv)  Removed unwanted css.
+
+Version 1.0.5
+i)   Fontawesome update.  
+ii)  Resolved theme errors.
+iii) Removed the js files.
+
 
 BB Wedding Bliss Premium version
 ==========================================================

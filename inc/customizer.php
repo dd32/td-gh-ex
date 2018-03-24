@@ -38,7 +38,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	$wp_customize->add_control('bb_wedding_bliss_layout_options',
 	    array(
 	        'type' => 'radio',
-	        'label' => 'Change Layouts',
+	        'label' => __('Change Layouts','bb-wedding-bliss'),
 	        'section' => 'bb_wedding_bliss_left_right',
 	        'choices' => array(
 	            'Left Sidebar' => __('Left Sidebar','bb-wedding-bliss'),
@@ -100,7 +100,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'label'	=> __('Add Youtube link','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_topbar_header',
 		'setting'	=> 'bb_wedding_bliss_youtube_url',
-		'type'		=> 'text'
+		'type'		=> 'url'
 	));
 
 	$wp_customize->add_setting('bb_wedding_bliss_facebook_url',array(
@@ -112,7 +112,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'label'	=> __('Add Facebook link','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_topbar_header',
 		'setting'	=> 'bb_wedding_bliss_facebook_url',
-		'type'	=> 'text'
+		'type'	=> 'url'
 	));
 
 	$wp_customize->add_setting('bb_wedding_bliss_twitter_url',array(
@@ -124,7 +124,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'label'	=> __('Add Twitter link','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_topbar_header',
 		'setting'	=> 'bb_wedding_bliss_twitter_url',
-		'type'	=> 'text'
+		'type'	=> 'url'
 	));
 
 	$wp_customize->add_setting('bb_wedding_bliss_rss_url',array(
@@ -136,7 +136,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'label'	=> __('Add RSS link','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_topbar_header',
 		'setting'	=> 'bb_wedding_bliss_rss_url',
-		'type'	=> 'text'
+		'type'	=> 'url'
 	));
 
 	$wp_customize->add_setting('bb_wedding_bliss_insta_url',array(
@@ -148,7 +148,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'label'	=> __('Add Instagram link','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_topbar_header',
 		'setting'	=> 'bb_wedding_bliss_insta_url',
-		'type'	=> 'text'
+		'type'	=> 'url'
 	));
 
 	$wp_customize->add_setting('bb_wedding_bliss_google_url',array(
@@ -160,7 +160,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'label'	=> __('Add Google link','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_topbar_header',
 		'setting'	=> 'bb_wedding_bliss_google_url',
-		'type'	=> 'text'
+		'type'	=> 'url'
 	));
 
 	$wp_customize->add_setting('bb_wedding_bliss_pint_url',array(
@@ -172,7 +172,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'label'	=> __('Add Pintrest link','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_topbar_header',
 		'setting'	=> 'bb_wedding_bliss_pint_url',
-		'type'	=> 'text'
+		'type'	=> 'url'
 	));	
 
 	//home page slider
@@ -353,6 +353,7 @@ final class bb_wedding_bliss_customize {
 				$manager,
 				'example_1',
 				array(
+					'priority'  => 9,
 					'title'    => esc_html__( 'Upgrade to Pro', 'bb-wedding-bliss' ),
 					'pro_text' => esc_html__( 'Go Pro',         'bb-wedding-bliss' ),
 					'pro_url'  => 'https://www.themeshopy.com/premium/bb-wedding-bliss-wordpress-theme/'

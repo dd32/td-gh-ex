@@ -12,7 +12,7 @@
 </header>
 
 <?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
-	<p><?php printf('Ready to publish your first post? <a href="%1$s">Get started here</a>.', esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+	<p><?php printf(esc_html('Ready to publish your first post? Get started here.','bb-wedding-bliss'), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 	<?php elseif ( is_search() ) : ?>
 		<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'bb-wedding-bliss' ); ?></p><br />
 		<?php get_search_form(); ?>

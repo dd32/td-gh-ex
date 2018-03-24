@@ -10,18 +10,11 @@
  */
 
 if ( ! function_exists( 'bb_wedding_bliss_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which runs
- * before the init hook. The init hook is too late for some features, such as indicating
- * support post thumbnails.
- */ 
 
 /* Theme Setup */
 function bb_wedding_bliss_setup() {
-	if ( ! isset( $content_width ) )
-		$content_width = 640; /* pixels */
+
+	$GLOBALS['content_width'] = apply_filters( 'bb_wedding_bliss_content_width', 640 );
 
 	load_theme_textdomain( 'bb-wedding-bliss', get_template_directory() . '/languages' );
 	add_theme_support( 'automatic-feed-links' );
@@ -124,60 +117,18 @@ function bb_wedding_bliss_widgets_init() {
 add_action( 'widgets_init', 'bb_wedding_bliss_widgets_init' );
 
 /* Theme Font URL */
-function bb_wedding_bliss_font_url() {
+function bb_wedding_bliss_font_url(){
 	$font_url = '';
-	/* Translators: If there are any character that are
-	* not supported by PT Sans, translate this to off, do not
-	* translate into your own language.
-	*/
-	$ptsans = _x('on','PT Sans font:on or off','bb-wedding-bliss');
-	
-	/* Translators: If there are any character that are
-	* not supported by Roboto, translate this to off, do not
-	* translate into your own language.
-	*/
-	$roboto = _x('on','Roboto font:on or off','bb-wedding-bliss');
-
-	/* Translators: If there are any character that are
-	* not supported by Roboto Condensed, translate this to off, do not
-	* translate into your own language.
-	*/
-	$roboto_cond = _x('on','Roboto Condensed font:on or off','bb-wedding-bliss');
-
-	/* Translators: If there are any character that are
-	* not supported by Roboto Condensed, translate this to off, do not
-	* translate into your own language.
-	*/
-	$Unica_One = _x('on','Unica_One:on or off','bb-wedding-bliss');
-	
-	/* Translators: If there are any character that are
-	* not supported by Roboto Condensed, translate this to off, do not
-	* translate into your own language.
-	*/
-	$Vollkorn = _x('on','Vollkorn:on or off','bb-wedding-bliss');
-
-	if('off' !== $ptsans || 'off' !==  $roboto || 'off' !== $roboto_cond){
-		$font_family = array();		
-		if('off' !== $ptsans){
-			$font_family[] = 'PT Sans:300,400,600,700,800,900';
-		}
-		if('off' !== $roboto){
-			$font_family[] = 'Roboto:400,700';
-		}
-		if('off' !== $roboto_cond){
-			$font_family[] = 'Roboto Condensed:400,700';
-		}
-		if('off' !== $Unica_One){
-			$font_family[] = 'Unica One';
-		}
-		if('off' !== $Vollkorn){
-			$font_family[] = 'Vollkorn';
-		}
-		$query_args = array(
-			'family'	=> urlencode(implode('|',$font_family)),
-		);
-		$font_url = add_query_arg($query_args,'//fonts.googleapis.com/css');
-	}		
+	$font_family = array();
+	$font_family[] = 'PT Sans:300,400,600,700,800,900';
+	$font_family[] = 'Roboto:400,700';
+	$font_family[] = 'Roboto Condensed:400,700';
+	$font_family[] = 'Vollkorn';
+	$font_family[] = 'Unica One';
+	$query_args = array(
+		'family'	=> urlencode(implode('|',$font_family)),
+	);
+	$font_url = add_query_arg($query_args,'//fonts.googleapis.com/css');
 	return $font_url;
 }
 
@@ -188,40 +139,29 @@ function bb_wedding_bliss_scripts() {
 	wp_enqueue_style( 'bb-wedding-bliss-basic-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'bb-wedding-bliss-effect', get_template_directory_uri().'/css/effect.css' );
 	wp_enqueue_style( 'bb-wedding-bliss-customcss', get_template_directory_uri() . '/css/custom.css' );
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/font-awesome.css' );
-	if ( is_home() || is_front_page() ) { 
-		wp_enqueue_style( 'jquery-nivo-slider', get_template_directory_uri().'/css/nivo-slider.css' );
-		wp_enqueue_script( 'jquery-nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
-		wp_enqueue_script( 'bb-wedding-bliss-custom-front', get_template_directory_uri() . '/js/custom-front.js', array('jquery') ,'',true);
-	}
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/fontawesome-all.css' );
+	wp_enqueue_style( 'jquery-nivo-slider', get_template_directory_uri().'/css/nivo-slider.css' );
+	wp_enqueue_script( 'jquery-nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
 	wp_enqueue_script( 'bb-wedding-bliss-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
-	/** Load our IE-only stylesheet for all versions of IE.
-	*   <!--[if lt IE 9]> ... <![endif]-->
-	*
-	*  Note: It is also possible to just check and see if the $is_IE global in WordPress is set to true before
-	*  calling the wp_enqueue_style() function. If you are trying to load a stylesheet for all browsers
-	*  EXCEPT for IE, then you would HAVE to check the $is_IE global since WordPress doesn't have a way to
-	*  properly handle non-IE conditional comments.
-	*/
-	wp_enqueue_style('bb-wedding-bliss-ie', get_template_directory_uri().'/css/ie.css', array('bb-wedding-bliss-ie-style'));
+	wp_enqueue_style('bb-wedding-bliss-ie', get_template_directory_uri().'/css/ie.css', array('bb-wedding-bliss-basic-style'));
 	wp_style_add_data( 'bb-wedding-bliss-ie', 'conditional', 'IE' );
 }
 add_action( 'wp_enqueue_scripts', 'bb_wedding_bliss_scripts' );
 
-define('bb_wedding_bliss_CREDIT','https://www.themeshopy.com/premium/bb-wedding-bliss-wordpress-theme/','bb-wedding-bliss');
+define('BB_WEDDING_BLISS_BUY_NOW','https://www.themeshopy.com/premium/bb-wedding-bliss-wordpress-theme/','bb-ecommerce-store');
+define('BB_WEDDING_BLISS_LIVE_DEMO','https://themeshopy.com/bb-wedding-bliss-theme/','bb-ecommerce-store');
+define('BB_WEDDING_BLISS_PRO_DOC','https://themeshopy.com/docs/bb-wedding-bliss/','bb-ecommerce-store');
+define('BB_WEDDING_BLISS_FREE_DOC','https://www.themeshopy.com/docs/free-bb-wedding-bliss/','bb-ecommerce-store');
+define('BB_WEDDING_BLISS_CONTACT','https://www.themeshopy.com/free-theme-support//','bb-ecommerce-store');
+define('BB_WEDDING_BLISS_CREDIT','https://www.themeshopy.com/premium/bb-wedding-bliss-wordpress-theme/','bb-wedding-bliss');
 if ( ! function_exists( 'bb_wedding_bliss_credit' ) ) {
 	function bb_wedding_bliss_credit(){
-			echo "<a href=".esc_url(bb_wedding_bliss_CREDIT)." target='_blank'>Wedding WorPress Theme</a>";
+		echo "<a href=".esc_url(BB_WEDDING_BLISS_CREDIT)." target='_blank'>Wedding WorPress Theme</a>";
 	}
 }
-
-define('BB_WEDDING_BLISS_THEMESHOPY_PRO_THEME_URL','https://www.themeshopy.com/premium/bb-wedding-bliss-wordpress-theme/','bb-wedding-bliss');
-define('BB_WEDDING_BLISS_THEMESHOPY_THEME_DOC','https://themeshopy.com/docs/bb-wedding-bliss/','bb-wedding-bliss');
-define('BB_WEDDING_BLISS_THEMESHOPY_LIVE_DEMO','https://themeshopy.com/bb-wedding-bliss-theme/','bb-wedding-bliss');
 
 /*radio button sanitization*/
  function bb_wedding_bliss_sanitize_choices( $input, $setting ) {
@@ -235,21 +175,13 @@ define('BB_WEDDING_BLISS_THEMESHOPY_LIVE_DEMO','https://themeshopy.com/bb-weddin
 }
 
 /* Custom header additions. */
-
 require get_template_directory() . '/inc/custom-header.php';
 
 /* Custom template tags for this theme. */
-
 require get_template_directory() . '/inc/template-tags.php';
 
-/**
- * Custom template for about theme.
- */
-require get_template_directory() . '/inc/about-themes.php';
-
+/* Custom template for about theme. */
+require get_template_directory() . '/inc/admin/admin.php';
 
 /* Customizer additions. */
-
 require get_template_directory() . '/inc/customizer.php';
-
-?>

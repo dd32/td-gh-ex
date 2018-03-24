@@ -4,7 +4,7 @@ Theme URI:  https://www.themeshopy.com/free/bb-free-wedding-bliss-wordpress-them
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: BB Wedding Bliss is a wedding WordPress theme to construct websites for marriage, engagement, couples, wedding planners, wedding band, personal, portfolio, art, design, business, photography, girlie or feminine blogs and websites, as well as photographer type of clients. You can make beautiful wedding websites with this multipurpose theme that caters to businesses such as hospitality, lodge, hotel, restaurant, café, food joints, cuisines, recipe, eatery, etc. It’s a completely mobile-friendly theme which is built using Bootstrap – an excellent framework. It has powerful shortcodes that will set up a pleasing website for you. It has a well-integrated versatile banner with attractive Call to Action Button (CTA). From the testimonial section, you can spread client reviews about your site. This theme has many features such social media tools, amazing typography options, color choices, customizable admin panel, etc. The optimized codes support faster page load time to give a stunning user experience. BB Wedding WordPress Theme is SEO friendly that gets over the top in search result pages. Take away this professional Wedding WordPress Theme which will give a beautiful touch to your wedding website. Demo: http://themeshopy.com/bb-wedding-bliss-theme/
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-wedding-bliss
@@ -287,17 +287,8 @@ input[type="submit"] {
 }
 
 /* ---------Buttons--------- */
-a.button-all{
-	border:2px solid #000;
-	color:#000;
-	padding:8px 50px;
-	margin:20px 0 0 0;
-	font-weight:bold;
-}
-
 a.button{
-	border: 2px solid #3890cb ;
-	background:#3890cb;
+	background:rgb(21, 28, 39);
     color: #fff;
     font-size: 16px;
     margin: 20px 0 0;
@@ -393,25 +384,25 @@ a.button{
     border: solid 2px #fff;
     border-radius: 50%;
 }
-.social-media i.fa.fa-youtube {
+.social-media i.fab.fa-youtube {
     padding: 10px 12px;
 }
-.social-media i.fa.fa-facebook {
+.social-media i.fab.fa-facebook-f {
     padding: 10px 14px;
 }
-.social-media i.fa.fa-twitter {
+.social-media i.fab.fa-twitter {
     padding: 10px 11px;
 }
-.social-media i.fa.fa-rss {
+.social-media i.fas.fa-rss {
     padding: 10px 12px;
 }
-.social-media i.fa.fa-instagram {
+.social-media i.fab.fa-instagram {
     padding: 10px 12px;
 }
-.social-media i.fa.fa-google-plus {
+.social-media i.fab.fa-google-plus-g {
     padding: 10px 10px;
 }
-.social-media i.fa.fa-pinterest-p {
+.social-media i.fab.fa-pinterest-p {
     padding: 10px 13px;
 }
 #header .social-media{

@@ -11,9 +11,6 @@
 function bb_wedding_bliss_custom_header_setup() {
 
 	add_theme_support( 'custom-header', apply_filters( 'bb_wedding_bliss_custom_header_args', array(
-
-		//'default-image'          => get_template_directory_uri().'/images/banner_bg.jpg',
-
 		'default-text-color'     => 'fff',
 		'header-text' 			 =>	false,
 		'width'                  => 1600,
@@ -49,6 +46,4 @@ function bb_wedding_bliss_header_style() {
 	</style>
 	<?php
 }
-
 endif; // bb_wedding_bliss_header_style
-
