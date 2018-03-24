@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Fmi\n"
-"POT-Creation-Date: 2018-03-20 13:07+0800\n"
-"PO-Revision-Date: 2018-03-20 13:07+0800\n"
+"POT-Creation-Date: 2018-03-23 15:08+0800\n"
+"PO-Revision-Date: 2018-03-23 15:08+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -170,95 +170,115 @@ msgstr ""
 msgid "Show \"Back to top\" button"
 msgstr ""
 
-#: inc/customizer.php:148
-msgid "Social Media Icons"
+#: inc/customizer.php:149
+msgid "Show date"
 msgstr ""
 
-#: inc/customizer.php:157
-msgid "Email Address"
+#: inc/customizer.php:158
+msgid "Show author"
 msgstr ""
 
 #: inc/customizer.php:167
+msgid "Show comments counter"
+msgstr ""
+
+#: inc/customizer.php:176
+msgid "Show categories"
+msgstr ""
+
+#: inc/customizer.php:185
+msgid "Show tags"
+msgstr ""
+
+#: inc/customizer.php:193
+msgid "Social Media Icons"
+msgstr ""
+
+#: inc/customizer.php:202
+msgid "Email Address"
+msgstr ""
+
+#: inc/customizer.php:212
 msgid "Skype"
 msgstr ""
 
-#: inc/customizer.php:177
+#: inc/customizer.php:222
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:187
+#: inc/customizer.php:232
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer.php:197
+#: inc/customizer.php:242
 msgid "Google Plus"
 msgstr ""
 
-#: inc/customizer.php:207
+#: inc/customizer.php:252
 msgid "YouTube"
 msgstr ""
 
-#: inc/customizer.php:217
+#: inc/customizer.php:262
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer.php:227
+#: inc/customizer.php:272
 msgid "Pinterest"
 msgstr ""
 
-#: inc/customizer.php:237
+#: inc/customizer.php:282
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/customizer.php:247
+#: inc/customizer.php:292
 msgid "Tumblr"
 msgstr ""
 
-#: inc/customizer.php:257
+#: inc/customizer.php:302
 msgid "Flickr"
 msgstr ""
 
-#: inc/customizer.php:267
+#: inc/customizer.php:312
 msgid "Slider"
 msgstr ""
 
-#: inc/customizer.php:276
+#: inc/customizer.php:321
 msgid "Check to activate slider"
 msgstr ""
 
-#: inc/customizer.php:287
+#: inc/customizer.php:332
 msgid "Image Upload #1"
 msgstr ""
 
-#: inc/customizer.php:288 inc/customizer.php:329 inc/customizer.php:370
-#: inc/customizer.php:411
+#: inc/customizer.php:333 inc/customizer.php:374 inc/customizer.php:415
+#: inc/customizer.php:456
 msgid "Upload slider image"
 msgstr ""
 
-#: inc/customizer.php:297 inc/customizer.php:338 inc/customizer.php:379
-#: inc/customizer.php:420
+#: inc/customizer.php:342 inc/customizer.php:383 inc/customizer.php:424
+#: inc/customizer.php:465
 msgid "Enter title for your slider"
 msgstr ""
 
-#: inc/customizer.php:307 inc/customizer.php:348 inc/customizer.php:389
-#: inc/customizer.php:430
+#: inc/customizer.php:352 inc/customizer.php:393 inc/customizer.php:434
+#: inc/customizer.php:475
 msgid "Enter your slider description"
 msgstr ""
 
-#: inc/customizer.php:317 inc/customizer.php:358 inc/customizer.php:399
-#: inc/customizer.php:440
+#: inc/customizer.php:362 inc/customizer.php:403 inc/customizer.php:444
+#: inc/customizer.php:485
 msgid "Enter link to redirect slider when clicked"
 msgstr ""
 
-#: inc/customizer.php:328
+#: inc/customizer.php:373
 msgid "Image Upload #2"
 msgstr ""
 
-#: inc/customizer.php:369
+#: inc/customizer.php:414
 msgid "Image Upload #3"
 msgstr ""
 
-#: inc/customizer.php:410
+#: inc/customizer.php:455
 msgid "Image Upload #4"
 msgstr ""
 
@@ -301,41 +321,48 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: inc/template-tags.php:39
-#, php-format
-msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+#: inc/template-tags.php:52 page.php:64
+msgid "No Comments"
 msgstr ""
 
-#: inc/template-tags.php:62
+#: inc/template-tags.php:52 inc/template-tags.php:56 page.php:64 page.php:68
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:52 inc/template-tags.php:56 page.php:64 page.php:68
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:80
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:68
+#: inc/template-tags.php:87
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:78
+#: inc/template-tags.php:102
 msgid "Older posts"
 msgstr ""
 
-#: inc/template-tags.php:79
+#: inc/template-tags.php:103
 msgid "Newer posts"
 msgstr ""
 
-#: inc/template-tags.php:85
+#: inc/template-tags.php:111
 msgid "Previous Post"
 msgstr ""
 
-#: inc/template-tags.php:86
+#: inc/template-tags.php:112
 msgid "Next Post"
 msgstr ""
 
-#: inc/template-tags.php:92
+#: inc/template-tags.php:120
 msgid "Older comments"
 msgstr ""
 
-#: inc/template-tags.php:93
+#: inc/template-tags.php:121
 msgid "Newer comments"
 msgstr ""
 
@@ -345,6 +372,10 @@ msgstr ""
 
 #: inc/template-widgets.php:14
 msgid "Add widgets here."
+msgstr ""
+
+#: page.php:84 template-parts/content.php:24
+msgid "Pages:"
 msgstr ""
 
 #: searchform.php:14
@@ -366,38 +397,24 @@ msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: template-parts/content-none.php:14
+#: template-parts/content-none.php:11
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:26
+#: template-parts/content-none.php:23
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:39
+#: template-parts/content-none.php:36
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:45
+#: template-parts/content-none.php:42
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr ""
-
-#: template-parts/content-page.php:29 template-parts/content.php:52
-msgid "Pages:"
-msgstr ""
-
-#: template-parts/content-page.php:42
-#, php-format
-msgid "Edit <span class=\"screen-reader-text\">%s</span>"
-msgstr ""
-
-#: template-parts/content.php:41
-#, php-format
-msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""

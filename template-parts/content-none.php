@@ -2,11 +2,8 @@
 /**
  * Template part for displaying a message that posts cannot be found
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
  * @package fmi
  */
-
 ?>
 
 <section class="no-results not-found">
@@ -14,7 +11,7 @@
     <h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'fmi' ); ?></h1>
   </header><!-- .page-header -->
 
-  <div class="entry-info">
+  <div class="post-content">
   <div class="page-content clearfix">
     <?php
     if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>

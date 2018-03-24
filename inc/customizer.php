@@ -123,7 +123,7 @@ function fmi_customize_register( $wp_customize ) {
     ),
   ));
   $wp_customize->add_setting('blog_excerpt_length',array(
-    'default' => 30,
+    'default' => 40,
     'sanitize_callback' => 'fmi_sanitize_number_intval',
   ));
   $wp_customize->add_control(new fmi_customize_number_control($wp_customize,'blog_excerpt_length',array(
@@ -138,6 +138,51 @@ function fmi_customize_register( $wp_customize ) {
   $wp_customize->add_control('general_show_totop_btn',array(
     'type' => 'checkbox',
     'label' => esc_html__('Show "Back to top" button', 'fmi'),
+    'section' => 'general_settings_section',
+  ));
+  $wp_customize->add_setting('blog_show_date',array(
+    'default' => 1,
+    'sanitize_callback' => 'fmi_sanitize_checkbox',
+  ));
+  $wp_customize->add_control('blog_show_date',array(
+    'type' => 'checkbox',
+    'label' => esc_html__('Show date', 'fmi'),
+    'section' => 'general_settings_section',
+  ));
+  $wp_customize->add_setting('blog_show_author',array(
+    'default' => 1,
+    'sanitize_callback' => 'fmi_sanitize_checkbox',
+  ));
+  $wp_customize->add_control('blog_show_author',array(
+    'type' => 'checkbox',
+    'label' => esc_html__('Show author', 'fmi'),
+    'section' => 'general_settings_section',
+  ));
+  $wp_customize->add_setting('blog_show_comments_counter',array(
+    'default' => 1,
+    'sanitize_callback' => 'fmi_sanitize_checkbox',
+  ));
+  $wp_customize->add_control('blog_show_comments_counter',array(
+    'type' => 'checkbox',
+    'label' => esc_html__('Show comments counter', 'fmi'),
+    'section' => 'general_settings_section',
+  ));
+  $wp_customize->add_setting('blog_show_categories',array(
+    'default' => 1,
+    'sanitize_callback' => 'fmi_sanitize_checkbox',
+  ));
+  $wp_customize->add_control('blog_show_categories',array(
+    'type' => 'checkbox',
+    'label' => esc_html__('Show categories', 'fmi'),
+    'section' => 'general_settings_section',
+  ));
+  $wp_customize->add_setting('blog_show_tags',array(
+    'default' => 1,
+    'sanitize_callback' => 'fmi_sanitize_checkbox',
+  ));
+  $wp_customize->add_control('blog_show_tags',array(
+    'type' => 'checkbox',
+    'label' => esc_html__('Show tags', 'fmi'),
     'section' => 'general_settings_section',
   ));
 

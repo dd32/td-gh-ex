@@ -5,8 +5,8 @@
  * @package fmi
  */
 
-if (!function_exists('fmi_post_excerpt')) {
-  function fmi_post_excerpt() {
+if (!function_exists('fmi_entry_content')) {
+  function fmi_entry_content() {
     $excerpt_type = get_theme_mod('blog_excerpt_type', 'excerpt');
     if ($excerpt_type == 'excerpt') {
       ?>
@@ -120,11 +120,11 @@ if (!function_exists('fmi_page_header')) {
 
 if (!function_exists('fmi_excerpt_length')) {
   function fmi_excerpt_length($length) {
-    $excerpt_length = get_theme_mod('blog_excerpt_length', 30);
+    $excerpt_length = get_theme_mod('blog_excerpt_length', 40);
     if ($excerpt_length) {
       $excerpt_length = intval($excerpt_length);
     } else {
-      $excerpt_length = 30;
+      $excerpt_length = 40;
     }
     return $excerpt_length;
   }
@@ -202,6 +202,9 @@ a{
 .entry-meta a:focus{
   color:'.$primary_color.';
 }
+.sticky .entry-content{
+  color:'.$primary_color.';
+}
 .entry-footer a:hover,
 .entry-footer a:focus{
   color:'.$primary_color.';
@@ -266,6 +269,9 @@ a:active{
 }
 .widget-title{
   color:'.$primary_color2.';
+}
+.widget_tag_cloud a:hover {
+  background-color: '.$primary_color2.';
 }
 .post-navigation span{
   color:'.$primary_color2.';

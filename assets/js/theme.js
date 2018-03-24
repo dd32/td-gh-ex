@@ -8,7 +8,7 @@ jQuery.noConflict()(function($) {
         $scrollTopBtn.removeClass('visible-button');
       }
       $(window).scroll(function() {
-        if ($(window).scrollTop() > 1000) {
+        if ($(window).scrollTop() > 0) {
           $scrollTopBtn.addClass('visible-button');
         } else {
           $scrollTopBtn.removeClass('visible-button');

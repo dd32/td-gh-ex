@@ -21,7 +21,7 @@ get_header(); ?>
               <h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'fmi' ); ?></h1>
             </header><!-- .page-header -->
 
-            <div class="entry-info">
+            <div class="post-content">
             <div class="page-content">
               <p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'fmi' ); ?></p>
               <?php get_search_form();?>
