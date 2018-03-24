@@ -1,4 +1,9 @@
 == Changelog ==
+= 1.0.6 - March 24 2018 =
+* Removed old jQuery.js file
+* Fixed links in customizer
+* Prevented excerpt mods in admin panel
+* Escaped functions as needed
 = 1.0.5 - March 09 2018 =
 * Added theme_support for logo: updated CSS to match logo and added call to the_custom_logo in header.php
 = 1.0.4 - March 07 2018 =

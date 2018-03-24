@@ -19,7 +19,7 @@ get_header(); ?>
 
 	<div class="row clearme">
 		<div class="col-md-9">
-		<?php appsetter_posted_on_name(); ?>
+		<?php appsetter_author(); ?>
 		
 		<?php
 		if ( have_posts() ) :

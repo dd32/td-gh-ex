@@ -101,8 +101,9 @@ function appsetter_customize_register($wp_customize)
 		'sanitize_callback' => 'appsetter_sanitize_text'
 	));
 	
-	$upgrade_link = "https://appsetter.com/";
+	$upgrade_link = "https://appsetter.com/appsetter-theme/";
 	$author_link = "https://pedersenmark.com/";
+	$demo_link = "https://appsetter.com";
 	
 	if (!class_exists('appsetter_license')) {
 		$wp_customize->add_control(new appsetter_support_info($wp_customize, 'appsetter_upgrade_notice', array(
@@ -132,7 +133,7 @@ function appsetter_customize_register($wp_customize)
 		$wp_customize->add_control(new appsetter_support_info($wp_customize, 'appsetter_links', array(
 			'settings' => 'appsetter_links',
 			'section' => 'appsetter_theme_support',
-			'description' => '<div class="links"><a href=" '. $author_link .' " target="_blank">' . __('Demo', 'appsetter') . '</a><br /><a href=" '. $upgrade_link .' " target="_blank">' . __('Documentation', 'appsetter') . '</a><br /><a href=" '. $upgrade_link .' " target="_blank">' . __('Upgrade to remove footer link', 'appsetter') . '</a>',
+			'description' => '<div class="links"><a href=" '. $demo_link .' " target="_blank">' . __('Demo', 'appsetter') . '</a><br /><a href=" '. $upgrade_link .' " target="_blank">' . __('Documentation', 'appsetter') . '</a><br /><a href=" '. $upgrade_link .' " target="_blank">' . __('Upgrade to remove footer link', 'appsetter') . '</a>',
 		)));
 		
 		$wp_customize->add_setting('appsetter_support_text_after', array(

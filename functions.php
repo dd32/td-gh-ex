@@ -79,8 +79,10 @@ endif;
 add_action( 'after_setup_theme', 'appsetter_setup' );
 
 if ( ! function_exists( 'appsetter_custom_excerpt_length' ) ) :
-	function appsetter_custom_excerpt_length( $length ) {
-		return 24;
+	if ( ! is_admin() ) {
+		function appsetter_custom_excerpt_length( $length ) {
+			return 24;
+		}
 	}
 	add_filter( 'excerpt_length', 'appsetter_custom_excerpt_length', 999 );
 endif;
@@ -220,64 +222,12 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-if ( ! function_exists( 'appsetter_posted_on_name' ) ) :
-/**
- * Prints HTML with meta information for the current post-date/time and author.
- */
-function appsetter_posted_on_name() {
-	
-	global $post;
-	$user_posts = get_author_posts_url( get_the_author_meta( 'ID' , $post->post_author));
-	$user_description = get_the_author_meta( 'user_description', $post->post_author );
-	$user_mail = get_the_author_meta('user_email', $post->post_author);
-	$user_link = get_the_author_meta('url', $post->post_author);
 
-	$byline = sprintf(
-		'<footer class="author_bio_section"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"><p class="author_name">' . esc_html( get_the_author() ) . '</p></a></span><p class="author_details">' . get_avatar( get_the_author_meta('user_email') , 90 ) . nl2br( $user_description ). '</p><p><a href="' . $user_link .'" target="_blank" rel="external">Website</a></p></footer>'
-	);
-
-	echo '<span class="author-name">' . $byline . '</span>'; // WPCS: XSS OK.
-
-}
-endif;
-
-if ( ! function_exists( 'appsetter_author_meta' ) ) :
-
-	function appsetter_author_meta( $content ) {
-		global $post;
-
-		if ( is_single() && isset( $post->post_author ) ) {
-			$display_name = get_the_author_meta( 'display_name', $post->post_author );
-
-		if ( empty( $display_name ) )
-			$display_name = get_the_author_meta( 'nickname', $post->post_author );
-			$user_description = get_the_author_meta( 'user_description', $post->post_author );
-			$user_website = get_the_author_meta('url', $post->post_author);
-			$user_mailadd = get_the_author_meta('user_email', $post->post_author);
-			$user_posts = get_author_posts_url( get_the_author_meta( 'ID' , $post->post_author));
-	 
-		if ( ! empty( $display_name ) )
-			$author_details = '<p class="author_name">' . $display_name . '</p>';
-
-		if ( ! empty( $user_description ) )
-			$author_details .= '<p class="author_details">' . get_avatar( get_the_author_meta('user_email') , 90 ) . nl2br( $user_description ). '</p>';
-			$author_details .= '<p class="author_links"><a href="'. $user_posts .'">View all posts by ' . $display_name . '</a>';  
-
-		if ( ! empty( $user_website ) ) {
-			$author_details .= ' | <a href="mailto:' . $user_mailadd .' ">Contact</a> | <a href="' . $user_website .'" target="_blank" rel="nofollow">Website</a></p>';
-
-		} else { 
-			$author_details .= '</p>';
-		}
-			$content = $content . '<footer class="author_bio_section" >' . $author_details . '</footer>';
-		}
-		return $content;
-	}
-	
-endif;
 
 function appsetter_new_excerpt_more( $more ) {
-	return '';
+	if ( ! is_admin() ) {
+		return '';
+	}
 }
 add_filter('excerpt_more', 'appsetter_new_excerpt_more');
 

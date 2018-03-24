@@ -16,7 +16,6 @@ function appsetter_posted_on() {
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	}
-
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
@@ -69,7 +68,7 @@ function appsetter_author() {
 
 	$user_description = get_the_author_meta( 'user_description', $post->post_author );
 	$byline = sprintf(
-		'<footer class="author_bio_section"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"><p class="author_name">' . esc_html( get_the_author() ) . '</p></a></span><p class="author_details_bar">' . get_avatar( get_the_author_meta('user_email') , 90 ) .'</p><p class="author_links"><a href="'. $user_posts .'">View all posts</a></p></footer>'
+		'<footer class="author_bio_section"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"><p class="author_name">' . esc_html( get_the_author() ) . '</p></a></span><p class="author_details_bar">' . nl2br( $user_description ). '</p><p class="author_links"><a href="'. $user_posts .'">View all posts</a></p></footer>'
 	);
 
 	echo '<span class="author-name">' . $byline . '</span>'; // WPCS: XSS OK.
@@ -147,7 +146,7 @@ if ( ! function_exists( 'appsetter_footer_credits' ) ):
  */
 function appsetter_footer_credits() {
 	$inc_link = "https://appsetter.com";
-	echo '<div class="footer-credits"><p>By <a href="'. esc_url($inc_link) .'">App Setter</a></p></div>';
+	echo '<div class="footer-credits"><p>By <a href="'. esc_url($inc_link) .'">appsetter</a></p></div>';
 }
 endif;
 /**
