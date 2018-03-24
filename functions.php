@@ -78,14 +78,6 @@ function appsetter_setup() {
 endif;
 add_action( 'after_setup_theme', 'appsetter_setup' );
 
-if ( ! function_exists( 'appsetter_custom_excerpt_length' ) ) :
-	if ( ! is_admin() ) {
-		function appsetter_custom_excerpt_length( $length ) {
-			return 24;
-		}
-	}
-	add_filter( 'excerpt_length', 'appsetter_custom_excerpt_length', 999 );
-endif;
 
 function appsetter_custom_logo_setup() {
     $defaults = array(
@@ -222,14 +214,43 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+if ( ! function_exists( 'appsetter_posted_on_name' ) ) :
+/**
+ * Prints HTML with meta information for the current post-date/time and author.
+ */
+function appsetter_posted_on_name() {
+	
+	global $post;
+	$user_posts = sprintf(get_author_posts_url( get_the_author_meta( 'ID' , $post->post_author)));
+	$user_description = get_the_author_meta( 'user_description', $post->post_author );
+	$user_mail = get_the_author_meta('user_email', $post->post_author);
+	$user_link = get_the_author_meta('url', $post->post_author);
 
+	$byline = sprintf(
+		'<footer class="author_bio_section"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"><p class="author_name">' . esc_html( get_the_author() ) . '</p></a></span><p class="author_details">' . get_avatar( get_the_author_meta('user_email') , 90 ) . nl2br( $user_description ). '</p><p><a href="' . $user_link .'" target="_blank" rel="external">Website</a></p></footer>'
+	);
 
-function appsetter_new_excerpt_more( $more ) {
-	if ( ! is_admin() ) {
-		return '';
-	}
+	echo '<span class="author-name">' . $byline . '</span>'; // WPCS: XSS OK.
+
 }
-add_filter('excerpt_more', 'appsetter_new_excerpt_more');
+endif;
+
+if ( ! function_exists( 'appsetter_custom_excerpt_length' ) ) :
+         function appsetter_custom_excerpt_length( $length ) {
+                 if ( ! is_admin() ) {
+                         $length = 24;
+                 }
+                 return $length;
+         }
+ endif;
+ add_filter( 'excerpt_length', 'appsetter_custom_excerpt_length', 999 );
+ function appsetter_new_excerpt_more( $more ) {
+         if ( ! is_admin() ) {
+                 $more = '';
+         }
+         return $more;
+ }
+ add_filter('excerpt_more', 'appsetter_new_excerpt_more');
 
 function appsetter_theme_add_editor_styles() {
     add_editor_style( 'custom-editor-style.css' );

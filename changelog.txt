@@ -1,4 +1,6 @@
 == Changelog ==
+= 1.0.7 - March 24 2018 =
+* Fixed admin excerpt modifications 
 = 1.0.6 - March 24 2018 =
 * Removed old jQuery.js file
 * Fixed links in customizer
