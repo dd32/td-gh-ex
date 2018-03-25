@@ -31,8 +31,9 @@
         <!-- .Post Content--> 
         
 	<div class="entry-content entry-content-home">
-	    
-	<?php if( strpos( get_the_content(), 'more-link' ) === false ) { // Strip Content + Add Button
+	
+	<?php if ( true == get_theme_mod( 'read_more_button', true ) ) : ?>	    
+		<?php if( strpos( get_the_content(), 'more-link' ) === false ) { // Strip Content + Add Button
             $content = get_the_content();
             $content = strip_tags($content);
             echo substr($content, 0, 350);
@@ -46,7 +47,15 @@
                 the_content(__('Continue reading', '2016-vcready'));
             }
         ?>
-        
+
+    <?php else : ?>
+
+<?php if( strpos( get_the_content(), 'more-link' ) === false ) { // Strip Content + Add Button
+            $content = get_the_content();
+            $content = strip_tags($content);
+            echo substr($content, 0, 350);
+            echo '&hellip;<br />'; } ?>
+<?php endif; ?>       
          <!-- .Continue-->   
 			
 		<?php 	

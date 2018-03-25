@@ -52,6 +52,38 @@ add_filter( 'body_class', 'vcready_2016_body_classes' , 30 );
 	return $classes;
 }
 
+// Allow user to change blog archive layout from customizer
+add_action( 'wp_head', 'vcready_2016_switch_layout' );
+function vcready_2016_switch_layout() {
+?>
+<?php if ( true == get_theme_mod( 'switch_layout', true ) ) : ?>
+	 
+<?php else : ?>
+	<style type="text/css">
+		.entry-content-home {
+    		background: #fff!important;
+    		position: relative;
+    		width: 85%!important;
+    		margin: auto;
+    		padding: 40px 20px 30px 30px;
+    		margin-top: -119px;
+}	 
+		@media screen and (max-width: 770px) {
+			.entry-content-home {
+    			padding: 25px 20px 30px 30px!important;
+    			margin-top: -25px!important;
+			}
+			.custom-button-container {
+    			float: none;
+    			text-align: center;
+			}
+		}
+	 </style>
+<?php endif; ?>
+	
+<?php
+} 
+
 // 2016 VCReady Child Theme functions and definitions
 require_once( get_stylesheet_directory() . '/inc/include-kirki.php' );
 require_once( get_stylesheet_directory() . '/inc/class-2016-vcready-child-kirki.php' );

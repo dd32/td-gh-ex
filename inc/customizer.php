@@ -130,7 +130,51 @@ class Vcready_2016_Kirki_Fields {
 			'element'  => array( '.entry-title', '.widget .widget-title', '.site-title'),
 		),
 	),
-    ) );
+) );
+    
+      /**
+ 		* Add the typography section
+	 	*/
+		Vcready_2016_Kirki::add_section( 'vc_ready_read_more_button', array(
+		'title'      => esc_attr__( 'Blog Layout', '2016-vcready' ),
+		'priority'   => 30,
+		'capability' => 'edit_theme_options',
+		) );
+      
+      
+      /**
+ 		* Add option to remove read more button
+ 		*/
+		Vcready_2016_Kirki::add_field( 'Vcready_2016_config_id', array(
+			'type'        => 'switch',
+			'settings'    => 'read_more_button',
+			'label'       => esc_attr__( 'Disable/Enable Read More Button', '2016-vcready' ),
+			'description' => esc_attr__( 'Disable or enable the read more button on your homepage or blog.', '2016-vcready' ),
+			'section'     => 'vc_ready_read_more_button',
+			'default'     => '1',
+			'priority'    => 30,
+			'choices'     => array(
+				'on'  => esc_attr__( 'Enable', '2016-vcready' ),
+				'off' => esc_attr__( 'Disable', '2016-vcready' ),
+			),
+		) );
+      
+      /**
+ 		* Add option switch layout
+ 		*/
+		Vcready_2016_Kirki::add_field( 'Vcready_2016_config_id', array(
+			'type'        => 'switch',
+			'settings'    => 'switch_layout',
+			'label'       => esc_attr__( 'Switch archive post display', '2016-vcready' ),
+			'description' => esc_attr__( 'Switch blog archive display from full width to boxed. Boxed layout should only be enabled if your blog has featured images.', '2016-vcready' ),
+			'section'     => 'vc_ready_read_more_button',
+			'default'     => '1',
+			'priority'    => 30,
+			'choices'     => array(
+				'on'  => esc_attr__( 'Full Width', '2016-vcready' ),
+				'off' => esc_attr__( 'Boxed', '2016-vcready' ),
+			),
+		) );
 
 	}
 }

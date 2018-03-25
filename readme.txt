@@ -1,8 +1,8 @@
 === 20/16 VCReady - Twentysixteen Child Theme ===
 Contributors: WebsiteHelper
 Requires at least: 4.8
-Tested up to: 4.8
-Version: 1.5.7
+Tested up to: 4.9
+Version: 1.5.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, full-width, accessibility-ready, custom-colors, custom-header
@@ -10,7 +10,7 @@ Tags: one-column, two-columns, right-sidebar, full-width, accessibility-ready, c
 
 == Description ==
 
-Twentysixteen child theme with toppings. The theme is now Visual Composer friendly, has full width page templates and has the added options to change fonts and colors (header + social icons).
+Twentysixteen child theme with toppings. The theme is now Visual Composer and Elementor friendly, has full width page templates and has the added options to change fonts and colors (header + social icons). You can see a live demo at: https://demos.websitehelper.co.uk/wordpress/vc-2016/
 
 == Installation ==
 
@@ -19,11 +19,11 @@ Twentysixteen child theme with toppings. The theme is now Visual Composer friend
 3. Click on the 'Activate' button to use your new theme right away.
 4. Go to https://codex.wordpress.org/Twenty_Seventeen for a guide on how to customize this theme.
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
-6. Got to https://demos.temas.co.uk/2016/installation/ for further information.
+6. Got to https://demos.websitehelper.co.uk/wordpress/vc-2016/installation/ for further information.
 
 == Copyright ==
 
-2016-vcready WordPress Theme, Copyright 2017 Website Helper
+2016-vcready WordPress Theme, Copyright 2018 Website Helper
 Based on the Twenty Sixteen WordPress Theme, Copyright 2016 WordPress.org
 2016-vcready is distributed under the terms of the GNU GPL
 
@@ -125,6 +125,12 @@ Date format fixed on post meta
 * Fixed: August 15, 2017
 
 Updated theme URL in Style.css
+
+== 1.5.8 ==
+* Fixed: March 25, 2018
+
+Minor CSS adjustments
+Added new customizer support to allow enabling and disabling the read more button and archive layout
 
 == Resources ==
 
