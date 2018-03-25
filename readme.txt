@@ -51,8 +51,14 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-=Version 1.1.3 2017-05-10 =
- * Tweaks - Add TGMPA to recommend ThemeGrill Demo Importer plugin
+
+= Version 1.1.4 2018-03-23 =
+* Tweak - Add theme support for Jetpack Responsive Videos.
+* Fix - Submenu issue fix
+* Tweaks - Introduce selective refresh for site title and description
+
+= Version 1.1.3 2017-05-10 =
+* Tweaks - Add TGMPA to recommend ThemeGrill Demo Importer plugin
 
 = Version 1.1.2 2017-05-01 =
 * Added - Support for Video Headers introduced in WordPress 4.7.
