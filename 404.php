@@ -37,7 +37,9 @@ get_header(); ?>
 							<h2><?php esc_html_e('Sorry, Page Not Found', 'bcorporate'); ?></h2>
 							<div class="main_404_title"><?php esc_html_e('404', 'bcorporate'); ?></div>
 							<div class="sub_404_title"><?php esc_html_e('Feel Free Contact Us', 'bcorporate'); ?></div>
-							<div class="main_404_text col-md-12 col-sm-12 col-lg-6 offset-lg-3">Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsuy veli. Nam nec tellus a odio tincidunt auctor</div>
+							<div class="main_404_text col-md-12 col-sm-12 col-lg-6 offset-lg-3">
+								<?php esc_html_e ('It looks like nothing was found at this location. Maybe try one of the links below or a search?','bcorporate'); ?>
+							</div>
 						
 							<div class="BE-btn-primary "><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn  cta-btn"><?php esc_html_e('back to homepage','bcorporate'); ?></a></div>
 						</section><!-- .error-404 -->

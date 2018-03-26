@@ -134,18 +134,6 @@ function bcorporate_customize_register( $wp_customize ) {
 	  ),
 	) );
 
-
-	//About section background image
-	$wp_customize->add_setting( 'homepage_about_background',
-		array(
-			'sanitize_callback' => 'bcorporate_sanitize_image',
-		)
-	 );
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'homepage_about_background', array(
-	    'label'    => esc_html__( 'About Section Background Image ', 'bcorporate' ),
-	    'section'  => 'home_page_about_section',
-	) ) );
-
 	/* 1.2 Homepage Feature section **/
 	$wp_customize->add_section( 'home_page_feature_section' , array(
 	    'title'       => esc_html__( 'Homepage feature Section', 'bcorporate' ),
@@ -345,7 +333,7 @@ function bcorporate_customize_register( $wp_customize ) {
 	  'section' => 'home_page_cta_one_section', // Add a default or your own section
 	  'label' => esc_html__( 'CTA Button URL', 'bcorporate' ),
 	  'input_attrs' => array(
-	    'placeholder' => esc_attr__( 'http://abc.com/about-us', 'bcorporate' ),
+	    'placeholder' => esc_attr__( 'http://example.com', 'bcorporate' ),
 	  ),
 	) );
 
@@ -630,7 +618,7 @@ function bcorporate_customize_register( $wp_customize ) {
 	  'section' => 'home_page_cta_two_section', // Add a default or your own section
 	  'label' => esc_html__( 'CTA Button URL', 'bcorporate' ),
 	  'input_attrs' => array(
-	    'placeholder' => esc_attr__( 'http://abc.com/about-us', 'bcorporate' ),
+	    'placeholder' => esc_attr__( 'http://example.com/', 'bcorporate' ),
 	  ),
 	) );
 

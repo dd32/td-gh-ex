@@ -6,7 +6,7 @@
  Description: BCorporate is a Free Corporate Wordpress Theme created using latest trends such as SASS which is a powerful and well performed CSS Extension, with HTML5 / CSS3 and Responsive design. This theme is a Full-Width Layout with includes features and Sections such as: Sliders, Portfolios, Services, Testimonials, Blog Posts, Call To Action (x2) and Contact Form. 
  BCorporate is suitable for any kind of businesses, with WooCommerce integrated in the theme BCorporate can serve all ecommerce related companies, corporate services & many other industries. It is created with more simplistic clean codes with easy to customize blogs, news and article publishing. Easy to navigate through its articles, it has clean Comment and Social Share features.  
  This theme is built on Bootstrap which makes it highly responsive and all browsers compatible. It is tested and supported by all screen-size. A cutting-edge mobile friendly performance, its SEO Friendly nature and beautifully integrated social shares will boost your online presence and help your website reach the top search results.
- Version: 1.0.4
+ Version: 1.0.5
  License: GNU General Public License v2 or later
  License URI: LICENSE
  Text Domain: bcorporate
@@ -1080,6 +1080,9 @@ span.onsale {
 .headermain.shrink .main-navigation .main-menu-wrap > ul > li ul.sub-menu {
   top: 150%;
 }
+.headermain.shrink .main-navigation .main-menu-wrap > ul > li ul.sub-menu a {
+  width: 180px;
+}
 .headermain.shrink .main-navigation .main-menu-wrap > ul > li ul.sub-menu a:hover {
   color: #006fe5;
 }
@@ -1244,6 +1247,7 @@ span.onsale {
     color: #757577;
     padding: 0.5rem 0;
     text-transform: none;
+    width: 180px;
   }
   .headermain .main-navigation .main-menu-wrap > ul > li ul.sub-menu a:hover {
     color: #006fe5;
@@ -1987,6 +1991,9 @@ h1.site-title {
   font-size: 21px;
   font-size: 1.5rem;
   z-index: 9;
+}
+.bcorporate_home_banner_section .blaze_down_btn i {
+  cursor: pointer;
 }
 @media (min-width: 1366px) {
   .bcorporate_home_banner_section {
@@ -2806,6 +2813,9 @@ p.form-submit input {
 .search-results section.content-area {
   margin-top: 0;
   margin-bottom: 0;
+}
+input[type="submit"].search-submit {
+  padding: 0.8rem 0.5rem;
 }
 .gallery-caption {
   text-decoration: none;

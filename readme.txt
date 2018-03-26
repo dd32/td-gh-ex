@@ -1,15 +1,11 @@
 === Bcorporate ===
-
-Contributors: automattic
+Contributor: blezthemes
+Requires at least: 4.7
+Tested up to: 4.9.4
+Stable tag: 1.0.2
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
-Requires at least: 4.0
-Tested up to: 4.9.1
-Stable tag: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
-
-A starter theme called Bcorporate.
+Multi-purpose WordPress theme
 
 == Description ==
 
@@ -43,6 +39,10 @@ Bcorporate includes support for Infinite Scroll in Jetpack.
 = 1.0.3 - March 05 2018 =
 * fixed themeurl page not found issue
 * Fixed the google font enque issues
+
+= 1.0.5 - March 26 2018 =
+* fixed readme.txt issues
+* Added demo data to import demo content for user
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
@@ -84,4 +84,13 @@ Animate on scroll library(aos):
    License: MIT License
    License Url: https://github.com/michalsnik/aos/blob/master/LICENSE
    Url: https://github.com/michalsnik/aos
+
+== Credits ==
+
+* Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+* Font Awesome: http://fontawesome.io/, (C) Dave Gandy, CSS - [MIT](http://opensource.org/licenses/MIT) ; Fonts - [SIL OFL 1.1](http://scripts.sil.org/OFL)
+* Sidr https://www.berriart.com/sidr/, (C) 2013-2016 Alberto Varela, [MIT](http://opensource.org/licenses/MIT)
+* TGM (http://tgmpluginactivation.com/), (C) 2011 Thomas Griffin, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* TRT Customizer Pro https://github.com/justintadlock/trt-customizer-pro, (c) 2016 Justin Tadlock, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 

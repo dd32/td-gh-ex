@@ -65,52 +65,15 @@ jQuery(document).ready(function($) {
 
 
 // for scroll to certain position
-  var jump=function(e)
-  {
-     if (e){
-         e.preventDefault();
-         var target = $(this).attr("href");
-     }else{
-         var target = location.hash;
-     }
 
-     $('html,body').animate(
-     {
-         scrollTop: $(target).offset().top
-     },500,function()
-     {
-         location.hash = target;
-     });
+$(document).on('click', 'a[href^="#"]', function (event) {
+    event.preventDefault();
 
-  }
-
-$('html, body').hide();
-
-$(document).ready(function()
-{
-    $('a[href^=#]').bind("click", jump);
-
-    if (location.hash){
-        setTimeout(function(){
-            $('html, body').scrollTop(0).show();
-            jump();
-        }, 0);
-    }else{
-        $('html, body').show();
-    }
+    $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+    }, 500);
 });
-/*
-    $('.bcorp_section li').click(function(){
-        var swap_class = $(this).attr('class');
-        var act_swap_class = swap_class.split(' ');
-        $('html, body').animate({
-            scrollTop: $('#'+act_swap_class[0]
-                +'').offset().top-100
-        }, 500);
-        return false;
-    });
 
-*/
     AOS.init({
       disable: 'mobile'
     });

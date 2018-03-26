@@ -18,10 +18,9 @@ get_header(); ?>
 		?>
 		<div class="bcorporate_banner_section bcorporate_home_banner_section" style="background-image: url(<?php if( has_post_thumbnail() ): echo esc_url( get_the_post_thumbnail_url() ); endif;?>)">
 			<div class="center_text caption-text text-center">
-				<h1 class="caption-text-heading">
-					 <?php the_content(); ?> 
-				</h1>
+				 <?php the_content(); ?> 
 			</div>
+			
 			<div class="blaze_down_btn"  data-aos-once="true" data-aos="fade-up" data-aos-delay="550"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></div>
 		</div>
 

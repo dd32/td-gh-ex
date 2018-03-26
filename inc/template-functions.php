@@ -45,9 +45,8 @@ if ( ! function_exists( 'bcorporate_home_about_sec_fnc' ) ) :
 
 function bcorporate_home_about_sec_fnc() {
 	if( get_theme_mod( 'home_page_about_enable', '1' ) ): // check if about section is enabled
-		$bcorporate_about_image = get_theme_mod('homepage_about_background');
 		?>
-		<section id="bcorporate_home_about_wrap"  style="background-image: url(<?php if($bcorporate_about_image){ echo esc_url( $bcorporate_about_image );}?>)">
+		<section id="bcorporate_home_about_wrap">
 			<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12 text-center">
@@ -175,7 +174,7 @@ function bcorporate_home_portfolio_sec_fnc() {
 					    		<img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(),'bcorporate_portfolio') );?>">
 					    	</div>
 					    	<div class="content_part_portfolio text-left">
-					    		<h3><a href="#"><?php the_title(); ?></a></h3>
+					    		<h3><span><?php the_title(); ?></span></h3>
 					    		<div class="category">
 					    			<?php the_category(); ?>
 					    		</div>	
@@ -219,7 +218,7 @@ function bcorporate_home_ctaone_sec_fnc() {
 					<p class=" homepage_sub_text" data-aos="fade-up"   data-aos-once="true"  data-aos-delay="450"><?php echo esc_html( get_theme_mod( 'homepage_cta_one_sub_title' ) );?></p>
 					<?php if( get_theme_mod('homepage_cta_one_button_url') ): ?>
 						<div class=" BE-btn-primary" data-aos="fade-up"   data-aos-once="true"  data-aos-delay="500"><a href="<?php echo esc_url( get_theme_mod('homepage_cta_one_button_url') ); ?>" class="btn cta-btn">
-							<?php echo esc_html( get_theme_mod( 'homepage_cta_one_button_text' ) );?></a>
+							<?php echo esc_html( get_theme_mod( 'homepage_cta_one_button_text', 'View Page' ) );?></a>
 						</a>
 					<?php endif; ?>
 				</div>
@@ -269,7 +268,7 @@ function bcorporate_home_services_sec_fnc() {
 					    		<img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(),'bcorporate_portfolio') );?>">
 					    	</div>
 					    	<div class="content_part_services">
-					    		<h3><a href="#"><?php the_title(); ?></a></h3>
+					    		<h3><span><?php the_title(); ?></span></h3>
 					    		<div class="main_content_services">
 					    			<p><?php echo wp_kses_post( get_the_content() ); ?></p>
 					    		</div>	
@@ -400,9 +399,9 @@ function bcorporate_home_testimonial_sec_fnc() {
 					    		<p><?php echo wp_kses_post( wp_trim_words( get_the_content(), 20, '...' ) ); ?></p>
 					    	</div>
 					    	<div class="testimonial_image">
-					    		<a href="<?php the_permalink();?>">
+					    		<span>
 					    			<img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(),'bcorporate_testimonial') );?>">
-					    		</a>
+					    		</span>
 					    	</div>
 					    	<div class="testimonial_author">
 					    		<h3><?php the_title(); ?></h3>
@@ -440,7 +439,7 @@ function bcorporate_home_ctatwo_sec_fnc() {
 					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 "><p  class="bcorporate_home_ctatwo_sub-text" data-aos="fade-up"   data-aos-once="true"  data-aos-delay="450"> <?php echo esc_html( get_theme_mod( 'homepage_cta_two_sub_title' ) );?></p></div>
 					<?php if( get_theme_mod('homepage_cta_two_button_url') ): ?>
 						<div class="BE-btn-primary " data-aos="fade-up"   data-aos-once="true"  data-aos-delay="500"><a href="<?php echo esc_url( get_theme_mod('homepage_cta_two_button_url') ); ?>" class="btn cta-btn">
-							<?php echo esc_html( get_theme_mod( 'homepage_cta_two_button_text' ) );?></a>
+							<?php echo esc_html( get_theme_mod( 'homepage_cta_two_button_text', 'View Page' ) );?></a>
 						</a>
 					<?php endif; ?>
 				</div>

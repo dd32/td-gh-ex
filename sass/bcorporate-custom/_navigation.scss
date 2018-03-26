@@ -12,6 +12,7 @@
                         top:150%;
                     
                         a{
+                            width:180px;
                             &:hover{
                                 color:$BE__color__link-hover;
                             }
@@ -24,7 +25,9 @@
                         }
                     }
                 }
-                >  li, 
+
+
+                > li, 
                 > li.current-menu-item{
                    
                     padding: 1.6rem 0;
@@ -35,6 +38,7 @@
 
                 a{
                     color:$BE__color__text-screen;
+                   
 
                     &:before{
                     background: $BE__color__text-screen;
@@ -160,6 +164,7 @@
                     position:relative;
                     margin:0 1rem;
                     display:block;
+
                     
 
 
@@ -190,6 +195,7 @@
                 > li {
                         ul.sub-menu{
                                 a{
+
                                 font-weight:normal;
                                 }
                         }
@@ -213,6 +219,7 @@
                             color:$BE__color__text-screen; 
                             padding: .5rem 0; 
                             text-transform: none;
+                            width:180px;
                 
                             &:hover{
                                 color:$BE__color__link-hover;
