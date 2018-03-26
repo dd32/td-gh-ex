@@ -44,7 +44,7 @@ if($wl_theme_options['blog_title'] !='') { ?>
 				<p class="enigma_tags"><?php the_tags('Tags :&nbsp;', '', '<br />'); ?></p>
 				<?php } ?>
 				<p><?php echo substr(get_the_excerpt(),0,$wl_theme_options['excerpt_blog'] ); ?></p>
-				<a href="<?php the_permalink(); ?>" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i><?php _e('Read More','enigma'); ?></a>
+				<a href="<?php the_permalink(); ?>" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i><?php if($wl_theme_options['read_more']) { echo esc_attr($wl_theme_options['read_more']); } ?></a>
 				<div class="enigma_blog_thumb_footer">
 					<ul class="enigma_blog_thumb_date">
 						<li><i class="fa fa-user"></i><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author(); ?></a></li>
@@ -114,7 +114,7 @@ if($wl_theme_options['blog_title'] !='') { ?>
                         duration : <?php echo $wl_theme_options['blog_speed'] ?>,
                         timeoutDuration : 2000
                     },
-                    circular: true,
+                    circular: <?php if($wl_theme_options['autoplay']=='1') { ?> true <?php } else { ?> false <?php } ?>,
                     direction: 'left',
                     items: {
                         height: 'variable',
@@ -127,7 +127,7 @@ if($wl_theme_options['blog_title'] !='') { ?>
                      prev: '#port-prev',
                     next: '#port-next',
                     auto: {
-                        play: true
+                        play: <?php if($wl_theme_options['autoplay']=='1') { ?> true <?php } else { ?> false <?php } ?>
                     } 
                 });
 </script>

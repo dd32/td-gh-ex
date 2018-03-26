@@ -39,6 +39,8 @@
 			'home_reorder'=>'',
 			'upload_image_favicon'=>'',
 			'snoweffect'=>'0',
+			'read_more'=>__('Read More', 'enigma' ),
+			'autoplay'=>'1',
 
 			'slider_image_speed' => '',
 			'slide_image_1' => $ImageUrl,

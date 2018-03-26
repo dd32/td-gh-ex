@@ -532,7 +532,7 @@ $wp_customize->add_section(
 			'capability'        => 'edit_theme_options',
 		)
 	);
-	$wp_customize->add_control( 'enigma_search_box', array(
+	$wp_customize->add_control( 'enigma_options_search_box', array(
 		'label'        => __( 'Enable Search Box in header', 'enigma' ),
 		'type'=>'checkbox',
 		'section'    => 'search_sec',
@@ -1038,6 +1038,35 @@ $wp_customize->add_section(
 		'settings'   => 'enigma_options[blog_category]',
 	) ) );
 	
+	$wp_customize->add_setting( 'enigma_options[read_more]', array(
+            'type'    => 'option',
+            'default'=>$wl_theme_options['read_more'],
+            'sanitize_callback'=>'enigma_sanitize_text',
+            'capability'        => 'edit_theme_options',
+        )
+    );
+    $wp_customize->add_control( 'read_more', array(
+        'label'        => __( 'Blog Read More Button', 'enigma' ),
+        'description' => 'Enter Read More button text',
+        'type'=>'text',
+        'section'    => 'blog_section',
+        'settings'   => 'enigma_options[read_more]',
+    ) );
+	
+	$wp_customize->add_setting( 'enigma_options[autoplay]', array(
+            'type'    => 'option',
+            'default'=>$wl_theme_options['autoplay'],
+            'sanitize_callback'=>'enigma_sanitize_integer',
+            'capability'        => 'edit_theme_options',
+        )
+    );
+    $wp_customize->add_control( 'autoplay', array(
+        'label'        => __( 'Blog AutoPlay', 'enigma' ),
+        'description' => 'blog autoplay on/off',
+        'type'=>'checkbox',
+        'section'    => 'blog_section',
+        'settings'   => 'enigma_options[autoplay]',
+    ) );
 	
 /* Font Family Section */
 	$wp_customize->add_section('font_section', array(
@@ -1489,7 +1518,7 @@ $wp_customize->add_section(
 	) );   
 	
 			$wp_customize->add_section( 'enigma_more' , array(
-				'title'      	=> __( 'Upgrade to Enigma Premium 10%OFF', 'enigma' ),
+				'title'      	=> __( 'Upgrade to Enigma Premium 20%OFF', 'enigma' ),
 				'priority'   	=> 999,
 				'panel'=>'enigma_theme_option',
 			) );
@@ -1598,7 +1627,7 @@ class More_Enigma_Control extends WP_Customize_Control {
 		<div class="col-md-4">
 				<div class="stitched">
 				
-				<?php echo __("Coupon Code : offer", "enigma" );?>
+				<?php echo __("Coupon Code : MEGA20", "enigma" );?>
 				</div>
 		</div>
 		</div>

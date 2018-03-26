@@ -6,6 +6,10 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 4.1.6 [24-03-2018]
+1. Autoplay Option added in blog options. 
+2. Read More button option added in blog options. 
+
 @Version: 4.1.3 [12-03-2018]
 1. Author name added for single page.
 2. Minor changes in rate banner. 
