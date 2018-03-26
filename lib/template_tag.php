@@ -324,4 +324,15 @@ function backyard_get_standard_fonts() {
 	);
 	return $font;
 }
+function backyard_submenu_bgcolor()
+{
+$bdcolor = get_theme_mod('submenu_bg');
+?>
+<style>
+<?php if(isset($bdcolor) && $bdcolor!==''){?>
+#nav ul ul{background-color: <?php echo esc_html($bdcolor)?>;}
+<?php }?>
+</style>
+<?php }
+add_action('wp_head','backyard_submenu_bgcolor');
 ?>

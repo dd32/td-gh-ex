@@ -72,4 +72,6 @@ Changelog
 3.1 - Added typography options in Customizer.
       -Fix customizer css. 
       
-3.2 - Added typography font family options in Customizer. 
+3.2 - Added typography font family options in Customizer.
+
+3.3 - Added submenu background color options in Customizer. 

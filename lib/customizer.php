@@ -562,6 +562,27 @@ $wp_customize->add_control( 'single_blog_layouts', array(
         'singleleftsidebar' => esc_html__('Single Blog with Left Sidebar', 'backyard')
   ),
 ) );
+$wp_customize->add_section(
+   'subbg_color_settings',
+   array(
+       'title' => esc_html__('Submenu background color', 'backyard'),
+       'priority' => 20,
+	   'panel'       => 'backyard_options',
+   )
+);
+$wp_customize->add_setting( 'submenu_bg' , array(
+    'default'     => '',
+    'transport'   => 'refresh',
+    'sanitize_callback' => 'sanitize_text_field',
+) );
+
+$wp_customize->add_control(
+  new WP_Customize_Color_Control( $wp_customize, 'submenu_bg',
+  array(
+    'label' => esc_html__( 'Color Setting','backyard' ),
+    'description' =>'',
+    'section' => 'subbg_color_settings', // Add a default or your own section
+) ) );
 //
 }
 add_action('customize_register', 'backyard_themes_customizer');
