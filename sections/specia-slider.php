@@ -4,7 +4,7 @@
 ?>
 
 <?php 
-	for($slide =1; $slide<4; $slide++) 
+	for($slide =1; $slide<3; $slide++) 
 	{
 		if( get_theme_mod('slider-page'.$slide)) 
 		{
