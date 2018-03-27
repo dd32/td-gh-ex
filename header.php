@@ -23,7 +23,7 @@
                 </span>
             </div>
         <?php } else{ ?>
-            <div class="preloader"><span class="preloader-gif" style="background: url(<?php echo esc_url(get_theme_mod('customPreloader')); ?>) no-repeat;background-size: contain;animation: none;"></span></div>
+            <div class="preloader"><span class="preloader-gif customPreloader"></span></div>
     <?php } endif; 
      
     $header_menu=1;

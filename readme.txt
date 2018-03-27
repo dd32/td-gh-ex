@@ -5,7 +5,7 @@ Author: ElectraThemes
 Author URI: http://electathemes.com/
 Requires at least: 4.0
 Tested up to: 4.9.4
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, right-sidebar,left-sidebar,full-width-template, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, featured-image-header, theme-options, threaded-comments, translation-ready, blog
@@ -61,6 +61,11 @@ Responsive design(Bootstrap), Customization Options, Custom Menu, supports socia
 
 = 1.0.4 (22th March 2018) 
 * Remove no-image and misc changes
+
+= 1.0.5 (27th March 2018) 
+* Header file inlice style removed
+* Sanitize_callback set up in customizer file.
+* Misc Changes in other files.	
 
 
 ---------------------------------------------------------

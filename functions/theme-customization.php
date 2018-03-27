@@ -155,7 +155,7 @@ $wp_customize->add_setting(
   array(
     'default' => '',
     'capability'     => 'edit_theme_options',
-    'sanitize_callback' => 'absint',
+    'sanitize_callback' => 'sanitize_text_field',
     )
   );
 $wp_customize->add_control(
@@ -992,6 +992,13 @@ function best_startup_custom_css(){
       }   
 
       /*  Menu Css Cutomization */
+
+      .preloader-gif.customPreloader{
+        background: url(".esc_url(get_theme_mod('customPreloader')).") no-repeat;
+        background-size: contain;
+        animation: none;
+      }
+
     ";
   if(has_header_image()){
      

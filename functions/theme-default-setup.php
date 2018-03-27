@@ -58,7 +58,7 @@ function best_startup_excerpt($limit) {
   $excerpt = explode(' ', get_the_excerpt(), $limit);
   if (count($excerpt)>=$limit) {
     array_pop($excerpt);
-    $excerpt = implode(" ",$excerpt).'...';
+    $excerpt = implode(" ",$excerpt).'&hellip;';
   } else {
     $excerpt = implode(" ",$excerpt);
   } 
