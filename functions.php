@@ -1,31 +1,20 @@
 <?php
 /**
- * fmi functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ * Functions and definitions
  *
  * @package fmi
  */
 
-if ( ! function_exists( 'fmi_setup' ) ) :
-  /**
-   * Sets up theme defaults and registers support for various WordPress features.
-   *
-   * Note that this function is hooked into the after_setup_theme hook, which
-   * runs before the init hook. The init hook is too late for some features, such
-   * as indicating support for post thumbnails.
-   */
+if (!function_exists('fmi_setup')) {
   function fmi_setup() {
     /*
      * Make theme available for translation.
      * Translations can be filed in the /languages/ directory.
-     * If you're building a theme based on fmi, use a find and replace
-     * to change 'fmi' to the name of your theme in all the template files.
      */
-    load_theme_textdomain( 'fmi', get_template_directory() . '/languages' );
+    load_theme_textdomain('fmi', get_template_directory() . '/languages');
 
     // Add default posts and comments RSS feed links to head.
-    add_theme_support( 'automatic-feed-links' );
+    add_theme_support('automatic-feed-links');
 
     /*
      * Let WordPress manage the document title.
@@ -33,47 +22,51 @@ if ( ! function_exists( 'fmi_setup' ) ) :
      * hard-coded <title> tag in the document head, and expect WordPress to
      * provide it for us.
      */
-    add_theme_support( 'title-tag' );
+    add_theme_support('title-tag');
 
     /*
      * Enable support for Post Thumbnails on posts and pages.
      *
      * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
      */
-    add_theme_support( 'post-thumbnails' );
+    add_theme_support('post-thumbnails');
 
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus( array(
-      'menu-1' => esc_html__( 'Primary', 'fmi' ),
-    ) );
+      'menu-1' => esc_html__('Primary', 'fmi'),
+    ));
 
     /*
      * Switch default core markup for search form, comment form, and comments
      * to output valid HTML5.
      */
-    add_theme_support( 'html5', array(
-      'gallery',
-      'caption',
-    ) );
+    add_theme_support('html5', array(
+      'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+    ));
+
+    // Enable support for Post Formats.
+    add_theme_support('post-formats', array(
+      'image', 'gallery', 'video', 'audio', 'aside', 'link', 'quote', 'status', 'chat'
+    ));
 
     // Set up the WordPress core custom background feature.
-    add_theme_support( 'custom-background', apply_filters( 'fmi_custom_background_args', array(
+    add_theme_support('custom-background', apply_filters('fmi_custom_background_args', array(
       'default-color' => 'ffffff',
       'default-image' => get_template_directory_uri() . '/assets/images/bg.png',
-    ) ) );
+    )) );
 
     // Add theme support for selective refresh for widgets.
-    add_theme_support( 'customize-selective-refresh-widgets' );
+    add_theme_support('customize-selective-refresh-widgets');
 
     // Add support for core custom logo.
-    add_theme_support( 'custom-logo', array(
+    add_theme_support('custom-logo', array(
       'height'      => 60,
       'width'       => 60,
       'flex-width'  => true,
-    ) );
+    ));
   }
-endif;
-add_action( 'after_setup_theme', 'fmi_setup' );
+}
+add_action('after_setup_theme', 'fmi_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -83,9 +76,9 @@ add_action( 'after_setup_theme', 'fmi_setup' );
  * @global int $content_width
  */
 function fmi_content_width() {
-  $GLOBALS['content_width'] = apply_filters( 'fmi_content_width', 630 );
+  $GLOBALS['content_width'] = apply_filters('fmi_content_width', 630 );
 }
-add_action( 'after_setup_theme', 'fmi_content_width', 0 );
+add_action('after_setup_theme', 'fmi_content_width', 0 );
 
 /**
  * Enqueue styles.
@@ -112,14 +105,9 @@ if (!function_exists('fmi_styles')) {
 
     // main stylesheet
     wp_enqueue_style('theme-style', get_stylesheet_directory_uri().'/style.css', array(), '1.3.16');
-
-    // custom stylesheet
-    if ( function_exists( 'fmi_get_custom_style' ) ) {
-      wp_add_inline_style( 'theme-style', fmi_get_custom_style() );
-    }
   }
 }
-add_action( 'wp_enqueue_scripts', 'fmi_styles' );
+add_action('wp_enqueue_scripts', 'fmi_styles');
 
 /**
  * Enqueue scripts.
@@ -145,38 +133,39 @@ if (!function_exists('fmi_scripts')) {
     wp_enqueue_script('ie10-viewport-bug-workaround', get_template_directory_uri().'/assets/js/ie10-viewport-bug-workaround.js', array(), '1.3.16', true);
     
     // theme js
-    wp_enqueue_script( 'theme-js', get_template_directory_uri().'/assets/js/theme.js', array('jquery'), '1.3.16' ,true);
+    wp_enqueue_script('theme-js', get_template_directory_uri().'/assets/js/theme.js', array('jquery'), '1.3.16' ,true);
 
     // comments
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-      wp_enqueue_script( 'comment-reply' );
+    if ( is_singular() && comments_open() && get_option('thread_comments')) {
+      wp_enqueue_script('comment-reply');
     }
   }
 }
-add_action( 'wp_enqueue_scripts', 'fmi_scripts' );
+add_action('wp_enqueue_scripts', 'fmi_scripts');
 
 /**
  * Custom template widgets for this theme.
  */
-require get_template_directory() . '/inc/template-widgets.php';
+require_once get_template_directory() . '/inc/template-widgets.php';
 
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-comments.php';
+require_once get_template_directory() . '/inc/template-comments.php';
 
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require_once get_template_directory() . '/inc/template-tags.php';
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
-require get_template_directory() . '/inc/template-functions.php';
+require_once get_template_directory() . '/inc/template-functions.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
-require get_template_directory() . '/inc/sanitize.php';
+require_once get_template_directory() . '/inc/customizer.php';
+require_once get_template_directory() . '/inc/sanitize.php';
+require_once get_template_directory() . '/inc/inline-styles.php';

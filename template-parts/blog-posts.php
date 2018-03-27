@@ -37,7 +37,12 @@ if ($blog_layout == 'left_sidebar') {
               /* Start the Loop */
               while ( have_posts() ) : the_post();
 
-                get_template_part( 'template-parts/content', 'standard' );
+                $format = get_post_format();
+                if (false === $format) {
+                  get_template_part('template-parts/content', 'standard');
+                } else {
+                  get_template_part('template-parts/content', $format);
+                }
 
               endwhile;
 

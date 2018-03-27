@@ -48,16 +48,16 @@ function fmi_comment_form_default_fields( $fields ) {
   $req = get_option( 'require_name_email' );
   $commenter = wp_get_current_commenter();
   $aria_req = ( $req ? " aria-required='true'" : '' );
-  $fields['author'] = '<div class="comment-item"><label for="author" class="screen-reader-text">Name</label><input id="author" type="text" aria-required="true" size="22" value="'.esc_attr($commenter['comment_author']).'" name="author" '.$aria_req.' placeholder="'.esc_attr__('Your Name','fmi').' '.($req?'*':'').'" /></div>';
-  $fields['email'] = '<div class="comment-item"><label for="email" class="screen-reader-text">Email</label><input id="email" type="text" aria-required="true" size="22" value="'.esc_attr($commenter['comment_author_email']).'" name="email" '.$aria_req.' placeholder="'.esc_attr__('Your Email','fmi').' '.($req?'*':'').'" /></div>';
-  $fields['url'] = '<div class="comment-item"><label for="url" class="screen-reader-text">Website</label><input id="url" type="text" aria-required="true" size="22" value="'.esc_url($commenter['comment_author_url']).'" name="url" placeholder="'.esc_attr__('Your Website','fmi').'" /></div>';
+  $fields['author'] = '<div class="comment-item"><input id="author" type="text" aria-required="true" size="22" value="'.esc_attr($commenter['comment_author']).'" name="author" '.$aria_req.' placeholder="'.esc_attr__('Your Name','fmi').' '.($req?'*':'').'" /></div>';
+  $fields['email'] = '<div class="comment-item"><input id="email" type="text" aria-required="true" size="22" value="'.esc_attr($commenter['comment_author_email']).'" name="email" '.$aria_req.' placeholder="'.esc_attr__('Your Email','fmi').' '.($req?'*':'').'" /></div>';
+  $fields['url'] = '<div class="comment-item"><input id="url" type="text" aria-required="true" size="22" value="'.esc_url($commenter['comment_author_url']).'" name="url" placeholder="'.esc_attr__('Your Website','fmi').'" /></div>';
   return $fields;
 }
 add_filter( 'comment_form_default_fields', 'fmi_comment_form_default_fields' );
 
 function fmi_comment_form_field_comment( $comment_field ) {
   $req = get_option( 'require_name_email' );
-  $comment_field = '<div class="comment-item"><label for="comment" class="screen-reader-text">Comment</label><textarea id="comment" name="comment" placeholder="'.esc_attr__('Your comment','fmi').' '.($req?'*':'').'" /></textarea></div>';
+  $comment_field = '<div class="comment-item"><textarea id="comment" name="comment" placeholder="'.esc_attr__('Your comment','fmi').' '.($req?'*':'').'" /></textarea></div>';
   return $comment_field;
 }
 add_filter( 'comment_form_field_comment', 'fmi_comment_form_field_comment' );

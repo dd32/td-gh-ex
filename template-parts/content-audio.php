@@ -18,7 +18,20 @@
     
     <div class="entry-content clearfix">
       <?php
-      the_content();
+      $content = apply_filters( 'the_content', get_the_content() );
+      $audio = false;
+
+      if ( false === strpos( $content, 'wp-playlist-script' ) ) {
+        $audio = get_media_embedded_in_content( $content, array( 'audio' ) );
+      }
+
+      if ( ! empty( $audio ) ) {
+        foreach ( $audio as $audio_html ) {
+          echo '<div class="entry-audio">';
+            echo $audio_html;
+          echo '</div><!-- .entry-audio -->';
+        }
+      };
 
       wp_link_pages(array(
         'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'fmi' ),

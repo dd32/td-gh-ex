@@ -37,12 +37,12 @@ if (!function_exists('fmi_entry_header')) {
           );
 
           $time_string = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
-          echo '<span class="posted-on"><i class="fa fa-calendar" aria-hidden="true"></i> ' . $time_string . '</span>';
+          echo '<span class="posted-on"><i class="fa fa-calendar"></i> ' . $time_string . '</span>';
         }
 
         if ($show_author) {
           $byline = '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
-          echo '<span class="byline"><i class="fa fa-user" aria-hidden="true"></i> ' . $byline . '</span>';
+          echo '<span class="byline"><i class="fa fa-user"></i> ' . $byline . '</span>';
         }
 
         if ($show_comments_counter) {
@@ -79,14 +79,14 @@ if (!function_exists('fmi_entry_footer')) {
         if ($show_categories) {
           $categories_list = get_the_category_list( esc_html__( ', ', 'fmi' ) );
           if ( $categories_list ) {
-            echo '<span class="cat-links"><i class="fa fa-list" aria-hidden="true"></i> ' . $categories_list . '</span>';
+            echo '<span class="cat-links"><i class="fa fa-list"></i> ' . $categories_list . '</span>';
           }
         }
 
         if ($show_tags) {
           $tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'fmi' ) );
           if ( $tags_list ) {
-            echo '<span class="tags-links"><i class="fa fa-tags" aria-hidden="true"></i> ' . $tags_list . '</span>';
+            echo '<span class="tags-links"><i class="fa fa-tags"></i> ' . $tags_list . '</span>';
           }
         }
         
@@ -99,8 +99,8 @@ if (!function_exists('fmi_entry_footer')) {
 if (!function_exists('fmi_posts_navigation')) {
   function fmi_posts_navigation() {
     the_posts_navigation(array(
-      'prev_text' => '<i class="fa fa-caret-left" aria-hidden="true"></i> '.esc_html__('Older posts','fmi'),
-      'next_text'  => esc_html__('Newer posts','fmi').' <i class="fa fa-caret-right" aria-hidden="true"></i>'      
+      'prev_text' => '<i class="fa fa-caret-left"></i> '.esc_html__('Older posts','fmi'),
+      'next_text'  => esc_html__('Newer posts','fmi').' <i class="fa fa-caret-right"></i>'      
     ));
   }
 }
@@ -117,8 +117,8 @@ if (!function_exists('fmi_post_navigation')) {
 if (!function_exists('fmi_comments_navigation')) {
   function fmi_comments_navigation(){
     the_comments_navigation(array(
-      'prev_text' => '<i class="fa fa-caret-left" aria-hidden="true"></i> '.esc_html__( 'Older comments' ,'fmi'),
-      'next_text' => esc_html__( 'Newer comments' ,'fmi').' <i class="fa fa-caret-right" aria-hidden="true"></i>'
+      'prev_text' => '<i class="fa fa-caret-left"></i> '.esc_html__( 'Older comments' ,'fmi'),
+      'next_text' => esc_html__( 'Newer comments' ,'fmi').' <i class="fa fa-caret-right"></i>'
     ));
   }
 }
@@ -126,8 +126,38 @@ if (!function_exists('fmi_comments_navigation')) {
 if (!function_exists('fmi_posts_pagination')) {
   function fmi_posts_pagination(){
     the_posts_pagination(array(
-      'prev_text' => '<i class="fa fa-caret-left" aria-hidden="true"></i>',
-      'next_text' => '<i class="fa fa-caret-right" aria-hidden="true"></i>'
+      'prev_text' => '<i class="fa fa-caret-left"></i>',
+      'next_text' => '<i class="fa fa-caret-right"></i>'
     ));
+  }
+}
+
+if (!function_exists('fmi_about_the_author')) {
+  function fmi_about_the_author() {
+    $author_ID = get_the_author_meta('ID');
+    $author_email = get_the_author_meta('user_email');
+    $author_display_name = get_the_author_meta('display_name');
+    $author_posts_url = get_author_posts_url($author_ID);
+    ?>
+    <div class="about-author clearfix">
+      <div class="about-author-avatar">
+        <a href="<?php echo esc_url($author_posts_url); ?>">
+          <?php echo get_avatar($author_email, '60', '', esc_attr($author_display_name)); ?>
+        </a>
+      </div>
+      <div class="about-author-bio-wrap">
+        <div class="about-author-name">
+          <?php the_author_posts_link(); ?>
+          <span>(<?php the_author_posts(); esc_html_e(' Posts', 'fmi'); ?>)</span>
+        </div>
+        <div class="about-author-bio">
+          <?php the_author_meta('description'); ?>
+        </div>
+        <a href="<?php echo esc_url($author_posts_url); ?>" class="about-author-link">
+          <?php esc_html_e('View all author&rsquo;s posts', 'fmi'); ?><i class="fa fa-caret-right"></i>
+        </a>
+      </div>
+    </div>
+    <?php
   }
 }

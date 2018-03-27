@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts in the standard post format
+ * Template part for displaying posts
  *
  * @package fmi
  */
@@ -15,8 +15,21 @@
 
   <div class="post-content">
     <?php fmi_entry_header(); ?>
+    
+    <div class="entry-content clearfix">
+      <?php
+      if ( get_post_gallery() ) {
+        echo '<div class="entry-gallery">';
+          echo get_post_gallery();
+        echo '</div>';
+      };
 
-    <?php fmi_entry_content();?>
+      wp_link_pages(array(
+        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'fmi' ),
+        'after' => '</div>',
+      ));
+      ?>
+    </div><!-- .entry-content -->
 
     <?php fmi_entry_footer(); ?>
   </div>

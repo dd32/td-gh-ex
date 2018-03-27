@@ -140,6 +140,15 @@ function fmi_customize_register( $wp_customize ) {
     'label' => esc_html__('Show "Back to top" button', 'fmi'),
     'section' => 'general_settings_section',
   ));
+  $wp_customize->add_setting('blog_images_hover_effects',array(
+    'default' => 0,
+    'sanitize_callback' => 'fmi_sanitize_checkbox',
+  ));
+  $wp_customize->add_control('blog_images_hover_effects',array(
+    'type' => 'checkbox',
+    'label' => esc_html__('Enable hover effects when you hover on featured images', 'fmi'),
+    'section' => 'general_settings_section',
+  ));
   $wp_customize->add_setting('blog_show_date',array(
     'default' => 1,
     'sanitize_callback' => 'fmi_sanitize_checkbox',
@@ -183,6 +192,24 @@ function fmi_customize_register( $wp_customize ) {
   $wp_customize->add_control('blog_show_tags',array(
     'type' => 'checkbox',
     'label' => esc_html__('Show tags', 'fmi'),
+    'section' => 'general_settings_section',
+  ));
+  $wp_customize->add_setting('single_show_post_nav',array(
+    'default' => 1,
+    'sanitize_callback' => 'fmi_sanitize_checkbox',
+  ));
+  $wp_customize->add_control('single_show_post_nav',array(
+    'type' => 'checkbox',
+    'label' => esc_html__('Show post navigation (single post page)', 'fmi'),
+    'section' => 'general_settings_section',
+  ));
+  $wp_customize->add_setting('single_show_about_author',array(
+    'default' => 0,
+    'sanitize_callback' => 'fmi_sanitize_checkbox',
+  ));
+  $wp_customize->add_control('single_show_about_author',array(
+    'type' => 'checkbox',
+    'label' => esc_html__('Show "About the author" block (single post page)', 'fmi'),
     'section' => 'general_settings_section',
   ));
 

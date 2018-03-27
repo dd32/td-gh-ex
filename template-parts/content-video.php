@@ -18,7 +18,20 @@
     
     <div class="entry-content clearfix">
       <?php
-      the_content();
+      $content = apply_filters( 'the_content', get_the_content() );
+      $video = false;
+
+      if ( false === strpos( $content, 'wp-playlist-script' ) ) {
+        $video = get_media_embedded_in_content( $content, array( 'video', 'object', 'embed', 'iframe' ) );
+      }
+
+      if ( ! empty( $video ) ) {
+        foreach ( $video as $video_html ) {
+          echo '<div class="entry-video">';
+            echo $video_html;
+          echo '</div>';
+        }
+      };
 
       wp_link_pages(array(
         'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'fmi' ),

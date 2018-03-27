@@ -2,8 +2,6 @@
 /**
  * The template for displaying all single posts
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
  * @package fmi
  */
 
@@ -35,12 +33,44 @@ if ($blog_layout == 'left_sidebar') {
 
             <?php
             while ( have_posts() ) : the_post();
+            ?>
 
-              get_template_part( 'template-parts/content', get_post_type() );
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+              <?php if (has_post_thumbnail()) {?> 
+                <div class="post-media">
+                  <?php the_post_thumbnail();?>
+                </div>
+              <?php }?>
 
-              fmi_post_navigation();
+              <div class="post-content">
+                <?php fmi_entry_header(); ?>
+                
+                <div class="entry-content clearfix">
+                  <?php
+                  the_content();
 
-              // If comments are open or we have at least one comment, load up the comment template.
+                  wp_link_pages(array(
+                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'fmi' ),
+                    'after' => '</div>',
+                  ));
+                  ?>
+                </div><!-- .entry-content -->
+
+                <?php fmi_entry_footer(); ?>
+              </div>
+            </article><!-- #post-<?php the_ID(); ?> -->
+            
+            <?php
+              $show_about_author = get_theme_mod('single_show_about_author', 0);
+              if (!post_password_required() && $show_about_author) {
+                fmi_about_the_author();
+              }
+
+              $show_post_nav = get_theme_mod('single_show_post_nav', 1);
+              if ($show_post_nav) {
+                fmi_post_navigation();
+              }
+
               if ( comments_open() || get_comments_number() ) :
                 comments_template();
               endif;
