@@ -8705,7 +8705,7 @@ body {
 #site-content {
   padding-top: 40px;
   padding-bottom: 40px;
-  flex: 1;
+  /*flex: 1;*/
 }
 #secondary .widget {
   min-height: 20px;
