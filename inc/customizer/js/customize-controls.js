@@ -73,6 +73,7 @@
 
 		// General Layouts
 		ashe_customizer_label( 'general_sidebar_width', 'General' );
+		ashe_customizer_label( 'general_home_layout', 'Page Layouts' );
 		ashe_customizer_label( 'general_header_width', 'Boxed Controls' );
 
 		// Top Bar

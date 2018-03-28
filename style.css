@@ -4,7 +4,7 @@ Theme URI: https://wp-royal.com/themes/item-ashe-free/
 Author: Royal Flush
 Author URI: http://wp-royal.com/
 Description: Personal and Multi-Author Free WordPress Blog Theme.  Perfect for personal, lifestyle, food, travel, fashion, corporate, photography and any other kind of amazing blogs.  Well documented and very easy to use even for WordPress beginners. Clean and Modern Responsive design will perfectly showcase your content on any device. You just need to write and be awesome!
-Version: 1.4
+Version: 1.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: ashe
@@ -570,15 +570,19 @@ blockquote a {
   font-style: italic;
 }
 
-.post-content ul {
+.post-content ul,
+.woocommerce-product-details__short-description ul,
+.woocommerce-Tabs-panel--description ul {
   padding-left: 15px;
   margin-bottom: 15px;
   list-style: disc;
   list-style-position: inside;
 }
 
-.post-content ol {
-  padding-left: 25px;
+.post-content ol,
+.woocommerce-product-details__short-description ol,
+.woocommerce-Tabs-panel--description ol {
+  padding-left: 15px;
   margin-bottom: 15px;
   list-style: decimal;
   list-style-position: inside;
@@ -1407,6 +1411,19 @@ sup {
   font-style: italic;
 }
 
+.post-meta span.meta-sep:last-child {
+  display: none;
+}
+
+.meta-sep {
+  display: none;
+}
+
+.post-date + span.meta-sep,
+.post-author + span.meta-sep {
+  display: inline;
+}
+
 .post-content {
   text-align: justify;
   overflow: hidden;
@@ -1490,6 +1507,65 @@ sup {
   margin: 30px auto 0px;
 }
 
+/* 10.1 List layout  */
+.blog-grid {
+   padding-left: 0 !important; 
+   list-style: none !important; 
+}
+
+[data-layout*="list"] .blog-grid > li {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+[data-layout*="list"] .post-title {
+  font-size: 32px;
+  line-height: 38px;
+}
+
+[data-layout*="list"] .post-share {
+  float: none;
+}
+
+[data-layout*="list"] .post-author {
+  float: none;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+[data-layout*="list"] .post-author a {
+  vertical-align: baseline;
+}
+
+[data-layout*="list"] .post-comments {
+  float: none;
+}
+
+[data-layout*="list"] .post-media {
+  margin-bottom: 0;
+}
+
+[data-layout*="list"] .post-categories {
+  margin-bottom: 4px;
+}
+
+[data-layout*="list"] .post-meta {
+  margin-bottom: 17px;
+}
+
+[data-layout*="list"] .read-more {
+    margin: 10px 0 0;
+}
+
+[data-layout*="list"] .post-footer {
+  padding: 10px 0;
+}
+
+[data-layout*="list"] .related-posts {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
 
 
 /*--------------------------------------------------------------
@@ -1822,8 +1898,8 @@ sup {
 
 .related-posts section {
   float: left;
-  width: calc((100% - (2 * 23px)) / 3);
-  width: -webkit-calc((100% - (2 * 23px)) / 3);
+  width: calc((100% - (2 * 23px)) / 3 - 1px);
+  width: -webkit-calc((100% - (2 * 23px)) / 3 - 1px);
 }
 
 .related-posts section {
@@ -2014,43 +2090,43 @@ sup {
 }
 
 .gallery-columns-2 .gallery-item {
-  width: -webkit-calc((100% - (5px * 1)) / 2);
-  width: calc((100% - (5px * 1)) / 2);
+  width: -webkit-calc((100% - (5px * 1)) / 2 - 1px);
+  width: calc((100% - (5px * 1)) / 2 - 1px);
 }
 
 .gallery-columns-3 .gallery-item {
-  width: -webkit-calc((100% - (5px * 2)) / 3);
-  width: calc((100% - (5px * 2)) / 3);
+  width: -webkit-calc((100% - (5px * 2)) / 3 - 1px);
+  width: calc((100% - (5px * 2)) / 3 - 1px);
 }
 
 .gallery-columns-4 .gallery-item {
-  width: -webkit-calc((100% - (5px * 3)) / 4);
-  width: calc((100% - (5px * 3)) / 4);
+  width: -webkit-calc((100% - (5px * 3)) / 4 - 1px);
+  width: calc((100% - (5px * 3)) / 4 - 1px);
 }
 
 .gallery-columns-5 .gallery-item {
-  width: -webkit-calc((100% - (5px * 4)) / 5);
-  width: calc((100% - (5px * 4)) / 5);
+  width: -webkit-calc((100% - (5px * 4)) / 5 - 1px);
+  width: calc((100% - (5px * 4)) / 5 - 1px);
 }
 
 .gallery-columns-6 .gallery-item {
-  width: -webkit-calc((100% - (5px * 5)) / 6);
-  width: calc((100% - (5px * 5)) / 6);
+  width: -webkit-calc((100% - (5px * 5)) / 6 - 1px);
+  width: calc((100% - (5px * 5)) / 6 - 1px);
 }
 
 .gallery-columns-7 .gallery-item {
-  width: -webkit-calc((100% - (5px * 6)) / 7);
-  width: calc((100% - (5px * 6)) / 7);
+  width: -webkit-calc((100% - (5px * 6)) / 7 - 1px);
+  width: calc((100% - (5px * 6)) / 7 - 1px);
 }
 
 .gallery-columns-8 .gallery-item {
-  width: -webkit-calc((100% - (5px * 7)) / 8);
-  width: calc((100% - (5px * 7)) / 8);
+  width: -webkit-calc((100% - (5px * 7)) / 8 - 1px);
+  width: calc((100% - (5px * 7)) / 8 - 1px);
 }
 
 .gallery-columns-9 .gallery-item {
-  width: -webkit-calc((100% - (5px * 8)) / 9);
-  width: calc((100% - (5px * 8)) / 9);
+  width: -webkit-calc((100% - (5px * 8)) / 9 - 1px);
+  width: calc((100% - (5px * 8)) / 9 - 1px);
 }
 
 
@@ -2347,8 +2423,8 @@ sup {
 }
 
 .ashe-widget.null-instagram-feed li a {
-  width: calc(95%/3);
-  width: -webkit-calc(95%/3);
+  width: calc( 95% / 3 - 1px );
+  width: -webkit-calc( 95% / 3 - 1px );
   margin-right: 2.5%; 
   margin-bottom:2.5%; 
 }

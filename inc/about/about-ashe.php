@@ -69,9 +69,9 @@ function ashe_about_page_output() {
 
 			<div class="four-columns-wrap">
 			
-				<h2><?php esc_html_e( 'Ashe Pro - Predefined Styles', 'ashe' ); ?></h2>
+				<h2 id="ashe-predefined-styles"><?php esc_html_e( 'Ashe Pro - Predefined Styles', 'ashe' ); ?></h2>
 				<p>
-					<?php esc_html_e( 'Ashe Pro\'s powerful setup allows you to easily create unique looking sites. Here are a few included examples that can be installed with one click in the ', 'ashe' ); ?>
+					<?php esc_html_e( 'Ashe Pro\'s powerful setup allows you to easily create unique looking sites. Here are a few included examples that can be installed with one click in the Pro Version.', 'ashe' ); ?>
 					<a target="_blank" href="http://wp-royal.com/themes/ashe/docs/?ref=ashe-free-backend-about-predefined-styles#predefined"><?php esc_html_e( 'Ashe Pro Theme.', 'ashe' ); ?></a>
 					<?php esc_html_e( 'More details in the theme Documentation.', 'ashe' ); ?>
 				</p>
@@ -89,6 +89,13 @@ function ashe_about_page_output() {
 					<div>
 						<h2><?php esc_html_e( 'Food', 'ashe' ); ?></h2>
 						<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-pro/food/?ref=ashe-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'ashe' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/lifestyle.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Lifestyle', 'ashe' ); ?></h2>
+						<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-pro/lifestyle/?ref=ashe-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'ashe' ); ?></a>
 					</div>
 				</div>
 				<div class="column-wdith-4">
@@ -196,6 +203,9 @@ function ashe_about_page_output() {
 				// Instagram Widget
 				ashe_recommended_plugin( 'wp-instagram-widget', 'wp-instagram-widget', esc_html__( 'WP Instagram Widget', 'ashe' ), esc_html__( 'A WordPress widget for showing your latest Instagram photos.', 'ashe' ) );
 
+				// Ajax Thumbnail Rebuild
+				ashe_recommended_plugin( 'ajax-thumbnail-rebuild', 'ajax-thumbnail-rebuild', 'Ajax Thumbnail Rebuild', 'AJAX Thumbnail Rebuild allows you to rebuild all thumbnails at once without script timeouts on your server.' );
+
 				// Facebook Widget
 				ashe_recommended_plugin( 'facebook-pagelike-widget', 'facebook_widget', esc_html__( 'Facebook Widget', 'ashe' ), esc_html__( 'This widget adds a Simple Facebook Page Like Widget into your WordPress website sidebar within few minutes.', 'ashe' ) );
 
@@ -270,9 +280,6 @@ function ashe_about_page_output() {
 						<th>
 							<a href="<?php echo esc_url('https://wp-royal.com/themes/item-ashe-pro/?ref=ashe-free-backend-about-section-getpro-btn'); ?>" target="_blank" class="button button-primary button-hero">
 								<?php esc_html_e( 'Get Ashe Pro', 'ashe' ); ?>
-							</a>
-							<a href="<?php echo esc_url('https://wp-royal.com/ashe-trial/?ref=ashe-free-backend-about-section-trypro-btn'); ?>" target="_blank" class="button button-primary button-hero">
-								<?php esc_html_e( 'Try Ashe Pro Trial', 'ashe' ); ?>
 							</a>
 						</th>
 						<th><?php esc_html_e( 'Ashe', 'ashe' ); ?></th>
@@ -351,6 +358,18 @@ function ashe_about_page_output() {
 								<?php esc_html_e( 'Display up to 3 eye-catching linked images under header area, which could be a Custom Page Links or Banners(ads).', 'ashe' ); ?> 
 								<br>
 								<strong class="only-pro"><?php esc_html_e( 'Pro Version:', 'ashe' ); ?></strong> <?php esc_html_e( 'You can have 5 Featured Links.', 'ashe' ); ?>
+							</p>
+						</td>
+						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
+						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td>
+							<h3><?php esc_html_e( 'List Layout', 'ashe' ); ?></h3>
+							<p>
+								<?php esc_html_e( 'Nice list style layout, perfect for the Food based websites.', 'ashe' ); ?> 
+								<br>
+								<strong class="only-pro"><?php esc_html_e( 'Pro Version:', 'ashe' ); ?></strong> <?php esc_html_e( 'Adjust Featured Image crop width and height sizes.', 'ashe' ); ?>
 							</p>
 						</td>
 						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
@@ -441,6 +460,14 @@ function ashe_about_page_output() {
 					</tr>
 					<tr>
 						<td>
+							<h3><?php esc_html_e( 'Advanced Header Background', 'ashe' ); ?></h3>
+							<p><?php esc_html_e( 'Upload custom header background Video or display images as a Slider.', 'ashe' ); ?></p>
+						</td>
+						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
+						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td>
 							<h3><?php esc_html_e( 'Advanced WooCommerce Support', 'ashe' ); ?></h3>
 							<p><?php esc_html_e( 'Set 2, 3 or 4 Columns on WooCommerce Product Grid. Enable/Disable Left & Right WooCommerce widgetized areas.', 'ashe' ); ?></p>
 						</td>
@@ -506,7 +533,7 @@ function ashe_about_page_output() {
 					<tr>
 						<td>
 							<h3><?php esc_html_e( 'Instagram Widget Area', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Showcase your Instagram photos on your website footer area.', 'ashe' ); ?></p>
+							<p><?php esc_html_e( 'Showcase your Instagram photos in your website Footer or Header.', 'ashe' ); ?></p>
 						</td>
 						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
 						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
@@ -552,9 +579,6 @@ function ashe_about_page_output() {
 								<?php esc_html_e( 'Get Ashe Pro', 'ashe' ); ?>
 							</a>
 							<br><br>
-							<a href="<?php echo esc_url('https://wp-royal.com/ashe-trial/?ref=ashe-free-backend-about-section-trypro-btn'); ?>" target="_blank" class="button button-primary button-hero">
-								<?php esc_html_e( 'Try Ashe Pro Trial', 'ashe' ); ?>
-							</a>
 						</td>
 					</tr>
 				</tbody>
@@ -586,7 +610,12 @@ function ashe_recommended_plugin( $slug, $filename, $name, $description) {
 		<div class="name column-name">
 			<h3>
 				<?php echo esc_html( $name ); ?>
-				<img src="<?php echo esc_url('https://ps.w.org/'. $slug .'/assets/icon-'. $size .'.png') ?>" class="plugin-icon" alt="">
+
+				<?php if ( $slug === 'ajax-thumbnail-rebuild' ) : ?>
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/ajax-thumbnail-rebuild.jpeg'; ?>" class="plugin-icon" alt="">
+				<?php else: ?>
+					<img src="<?php echo esc_url('https://ps.w.org/'. $slug .'/assets/icon-'. $size .'.png') ?>" class="plugin-icon" alt="">
+				<?php endif; ?>
 			</h3>
 		</div>
 		<div class="action-links">

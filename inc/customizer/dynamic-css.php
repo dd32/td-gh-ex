@@ -204,6 +204,7 @@ function ashe_true_false( $option ) {
 		#page-content .post-date,
 		#page-content .post-comments,
 		#page-content .post-author,
+		#page-content [data-layout*="list"] .post-author a,
 		#page-content .related-post-date,
 		#page-content .comment-meta a,
 		#page-content .author-share a,
@@ -265,6 +266,7 @@ function ashe_true_false( $option ) {
 
 		/* Border */
 		#page-content .post-footer,
+		[data-layout*="list"] .blog-grid > li,
 		#page-content .author-description,
 		#page-content .related-posts,
 		#page-content .entry-comments,
@@ -520,6 +522,59 @@ function ashe_true_false( $option ) {
 	}
 	';
 
+	// List Layout
+	if ( strpos( ashe_options( 'general_home_layout' ), 'list' ) !== false ) {
+		$css .= '
+			[data-layout*="list"] .blog-grid .has-post-thumbnail .post-media {
+				float: left;
+				max-width: 300px;
+				width: 100%;
+			}
+
+			[data-layout*="list"] .blog-grid .has-post-thumbnail .post-content-wrap {
+				width: calc(100% - 300px);
+				width: -webkit-calc(100% - 300px);
+				float: left;
+				padding-left: 37px;
+			}
+
+			[data-layout*="list"] .blog-grid > li {
+				padding-bottom: 39px;
+			}
+
+			[data-layout*="list"] .blog-grid > li {
+				margin-bottom: 39px;
+			}
+
+			[data-layout*="list"] .blog-grid .post-header, 
+			[data-layout*="list"] .blog-grid .read-more {
+				text-align: left;
+			}
+		';
+
+		if ( is_rtl() ) {
+			$css .= '
+				[data-layout*="list"] .blog-grid .post-media {
+					float: right;
+				}
+
+				[data-layout*="list"] .blog-grid .post-content-wrap {
+					float: right;
+					padding-left: 0;
+					padding-right: 37px;
+
+				}
+
+				[data-layout*="list"] .blog-grid .post-header, 
+				[data-layout*="list"] .blog-grid .read-more {
+					text-align: right;
+				}
+			';
+
+		}
+	}
+
+
 
 /*
 ** Top Bar =====
@@ -650,8 +705,8 @@ function ashe_true_false( $option ) {
 	// Columns
 	$css .= '
 		#featured-links .featured-link {
-			width: calc( (100% - '. ( ($featured_links - 1) * $featured_links_gutter ) .'px) / '. $featured_links .');
-			width: -webkit-calc( (100% - '. ( ($featured_links - 1) * $featured_links_gutter ) .'px) / '. $featured_links .');
+			width: calc( (100% - '. ( ($featured_links - 1) * $featured_links_gutter ) .'px) / '. $featured_links .' - 1px);
+			width: -webkit-calc( (100% - '. ( ($featured_links - 1) * $featured_links_gutter ) .'px) / '. $featured_links .'- 1px);
 		}
 	';
 

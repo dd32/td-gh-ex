@@ -8,6 +8,7 @@ function ashe_options( $control ) {
 		'colors_header_bg' => '#ffffff',
 		'general_sidebar_width' => '270',
 		'general_sidebar_sticky' => true,
+		'general_home_layout' => 'col1-rsidebar',
 		'general_header_width' => 'contained',
 		'general_slider_width' => 'boxed',
 		'general_links_width' => 'boxed',

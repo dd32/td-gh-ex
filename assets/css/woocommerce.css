@@ -9,8 +9,8 @@
 }
 
 .woocommerce div.product div.images .flex-control-thumbs li {
-    width: calc((100% - 15px) / 4);
-    width: -width-calc((100% - 15px) / 4);
+    width: calc((100% - 15px) / 4 - 1px);
+    width: -width-calc((100% - 15px) / 4 - 1px);
     margin-top: 5px;
     margin-right: 5px;
 }

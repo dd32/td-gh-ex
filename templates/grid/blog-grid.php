@@ -90,9 +90,7 @@
 				</footer>
 
 				<!-- Related Posts -->
-				<?php
-				ashe_related_posts( esc_html__( 'You May Also Like','ashe' ), ashe_options( 'blog_page_related_orderby' ) );
-				?>
+				<?php ashe_related_posts( esc_html__( 'You May Also Like','ashe' ), ashe_options( 'blog_page_related_orderby' ) ); ?>
 
 			</article>
 		
@@ -113,8 +111,7 @@
 		<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'ashe' ); ?></p>
 		<div class="ashe-widget widget_search">
 			<?php get_search_form(); ?>
-		</div> 
-		
+		</div>
 	</div>
 
 	<?php
