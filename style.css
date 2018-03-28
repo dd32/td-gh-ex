@@ -4,7 +4,7 @@ Theme URI: https://themecot.com/keratin/
 Author: ThemeCot
 Author URI: https://themecot.com/
 Description: Keratin is a modern and responsive WordPress theme suitable for magazines, newspapers or blogs. It is clean, flat and beautiful masonry grid based theme.
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: keratin
@@ -1445,6 +1445,10 @@ textarea {
 /*--------------------------------------------------------------
 10.1 HEntry
 --------------------------------------------------------------*/
+.sticky {
+  /* Sticky post is enhanced with a special icon */
+}
+
 .hentry {
   margin: 0 0 65px;
   padding: 0 0 65px;
