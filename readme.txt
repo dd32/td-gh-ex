@@ -66,7 +66,7 @@ Source: http://users.tpg.com.au/j_birch/plugins/superfish/
 == Changelog ==
 
 = 1.0.9 =
-Released: March 27, 2018
+Released: March 28, 2018
 
 * Background color logic improvements.
 

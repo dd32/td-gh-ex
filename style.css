@@ -4,7 +4,7 @@ Theme URI: https://themecot.com/aileron/
 Author: ThemeCot
 Author URI: https://themecot.com/
 Description: Aileron is a magazine and blog WordPress theme with a clean design and modern look. It is well suited for magazine, news, editorial, blog, photography or review site.
-Version: 1.0.9
+Version: 2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aileron
@@ -1547,6 +1547,10 @@ form.search-form:before {
 /*--------------------------------------------------------------
 11.3 HEntry
 --------------------------------------------------------------*/
+.sticky {
+  /* Sticky post is enhanced with a special icon */
+}
+
 .hentry {
   border-bottom: 1px solid #eee;
   margin: 0 0 65px;
