@@ -47,7 +47,7 @@ function agency_x_customize_register_services_section( $wp_customize ) {
         'sanitize_callback' => 'wp_kses_post',
     ) );
     $wp_customize->add_control( 'services_section_description', array(
-        'type' => 'textarea',
+        'type' => 'text',
         'priority' => 10,
         'section' => 'services_section',
         'label' => esc_attr__( 'Short Description', 'agency-x' ),

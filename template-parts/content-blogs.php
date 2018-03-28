@@ -19,8 +19,10 @@
         <figure>
             <?php if ( has_post_thumbnail() ) : ?>
                 <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_post_thumbnail(); ?></a>
-                <?php else : ?>
-                <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><img src="<?php echo get_template_directory_uri(); ?>/images/no-blog-thumbnail.jpg" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>" class="img-responsive" /></a>
+            <?php else : ?>
+                <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/images/no-blog-thumbnail.jpg' ); ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>" class="img-responsive" />
+                </a>
             <?php endif; ?>  
             <figcaption><?php the_post_thumbnail_caption(); ?></figcaption>
         </figure>

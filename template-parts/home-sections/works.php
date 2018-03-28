@@ -6,7 +6,7 @@
 		$description = get_theme_mod( 'works_section_description' );
 
 		$args = array(
-        	'cat' => esc_attr( $category_id ),
+        	'cat' => absint( $category_id ),
     		'posts_per_page'  => 6
         );
         $query = new WP_Query( $args );        

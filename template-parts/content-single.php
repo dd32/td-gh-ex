@@ -20,9 +20,9 @@
         <a class="icon" href="#"><i class="fa fa-link"></i></a>
       </div>
       <div class="blog-info">
-        <h4><a href="blog-single.html"><?php the_title(); ?></a></h4>
+        <h4><?php the_title(); ?></h4>
         <div class="meta">
-          <span><i class="fa fa-user"></i><?php echo esc_html( get_author_role() ); ?></span>
+          <span><i class="fa fa-user"></i><?php echo esc_html( agency_x_get_author_role() ); ?></span>
           <span><i class="fa fa-comments"></i><?php comments_number( __( 'No comments', 'agency-x' ), __( 'one comment', 'agency-x' ), __( '% comments', 'agency-x' ) ); ?></span>
         </div>
        <?php the_content(); ?>

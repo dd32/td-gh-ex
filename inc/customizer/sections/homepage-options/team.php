@@ -47,7 +47,7 @@ function agency_x_customize_register_team_section( $wp_customize ) {
         'sanitize_callback' => 'wp_kses_post',
     ) );
     $wp_customize->add_control( 'team_section_description', array(
-        'type' => 'textarea',
+        'type' => 'text',
         'priority' => 10,
         'section' => 'team_section',
         'label' => esc_attr__( 'Short Description', 'agency-x' ),

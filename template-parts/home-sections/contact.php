@@ -1,12 +1,15 @@
 <?php if( get_theme_mod( 'contact_display', true ) ) : ?>
-	<?php
-		global $post;
+	<?php		
 		$page_id = get_theme_mod( 'contact_section_page' );
-		$post = get_post( $page_id );
-		setup_postdata( $post );
+		$args = array(
+			'page_id' => $page_id,
+			'post_type' => 'page',
+			'post_status' => 'publish'
+		); 
+		$query = new WP_Query( $args );
 	?>
 
-	<?php if( $post->ID ) : ?>
+	<?php if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post(); ?>
 		<!-- Contact Us -->
 		<section id="contact" class="section">
 			<div class="container">				
@@ -39,7 +42,7 @@
 			</div>
 		</section>
 		<!--/ End Clients Us -->
-	<?php endif; ?>
+	<?php endwhile; endif; ?>
 <?php wp_reset_postdata(); endif; ?>
 
 

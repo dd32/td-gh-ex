@@ -6,7 +6,7 @@
 		$description = get_theme_mod( 'latest_posts_section_description' );	
 
 		$args = array(
-        	'cat' => esc_attr( $category_id ),
+        	'cat' => absint( $category_id ),
     		'posts_per_page'  => 6
         );
         $query = new WP_Query( $args );
@@ -41,7 +41,7 @@
 									<div class="blog-info">
 										<h4><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php the_title(); ?></a></h4>
 										<div class="meta">
-											<span><i class="fa fa-user"></i><?php echo esc_html( get_author_role() ); ?></span>
+											<span><i class="fa fa-user"></i><?php echo esc_html( agency_x_get_author_role() ); ?></span>
 											<span><i class="fa fa-comments"></i>
 												<?php comments_number( __( 'No comments', 'agency-x' ), __( 'one comment', 'agency-x' ), __( '% comments', 'agency-x' ) ); ?>
 											</span>

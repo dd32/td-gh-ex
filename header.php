@@ -39,13 +39,15 @@
 	<div class="header-inner">
 		<div class="container">
 			<div class="row">
+				
 				<div class="col-md-2 col-sm-12 col-xs-12">
 					<!-- Logo -->
 					<div class="logo">
-						<a href="<?php home_url(); ?>"><?php the_custom_logo(); ?></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php the_custom_logo(); ?></a>
 					</div>
 					<!--/ End Logo -->
 				</div>
+				
 				<?php if( has_nav_menu( 'primary' ) ) : ?>
 					<div class="col-md-10 col-sm-12 col-xs-12">
 						<div class="nav-area">

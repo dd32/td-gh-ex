@@ -4,7 +4,7 @@
 		$category_id = get_theme_mod( 'clients_category' );
 
 		$args = array(
-        	'cat' => esc_attr( $category_id ),
+        	'cat' => absint( $category_id ),
     		'posts_per_page'  => 6
         );
         $query = new WP_Query( $args );

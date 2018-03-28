@@ -5,7 +5,7 @@
 		$title = get_theme_mod( 'testimonial_section_title' );		
 		
 		$args = array(
-        	'cat' => esc_attr( $category_id ),
+        	'cat' => absint( $category_id ),
     		'posts_per_page'  => 6
         );
         $query = new WP_Query( $args );

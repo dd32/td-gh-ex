@@ -6,7 +6,7 @@
 		$description = get_theme_mod( 'team_section_description' );
 		
 		$args = array(
-        	'cat' => esc_attr( $category_id ),
+        	'cat' => absint( $category_id ),
     		'posts_per_page'  => 6
         );
         $query = new WP_Query( $args );
@@ -35,10 +35,7 @@
 											<img src="<?php echo esc_url( $image[0] ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
 										<?php } ?>
 									<ul class="team-social">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-										<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+										<li><a href="<?php the_permalink(); ?>"><?php esc_html_e('Detail & Experience','agency-x'); ?></a></li>
 									</ul>
 								</div>
 								<div class="team-info">

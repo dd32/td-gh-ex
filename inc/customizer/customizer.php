@@ -5,7 +5,7 @@
  * @package agency-x
  */
 
-$panels   = array( 'homepage' );
+$panels   = array( 'homepage', 'social-media' );
 $homepage_sections = array( 'banner-slider', 'welcome', 'counter', 'services', 'team', 'works', 'testimonial', 'skills', 'latest-posts', 'contact', 'clients' );
 
 
@@ -16,6 +16,9 @@ foreach( $panels as $panel ){
 foreach( $homepage_sections as $section ){
     require get_template_directory() . '/inc/customizer/sections/homepage-options/' . $section . '.php';
 }
+
+
+require get_template_directory() . '/inc/customizer/sections/social-media.php';
 
 /**
  * Sanitization Functions

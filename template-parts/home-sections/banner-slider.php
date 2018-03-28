@@ -30,8 +30,8 @@
 										<h1><?php the_title(); ?></h1>
 										<?php the_excerpt(); ?>
 										<div class="slide-button">
-											<a href="#" class="button hvr-bounce-to-top"><?php esc_html_e( 'Start Now', 'agency-x' ); ?></a>
-											<a href="#" class="button hvr-bounce-to-top primary"><?php esc_html_e( 'Buy Jalil', 'agency-x' ); ?></a>
+											<a href="<?php the_permalink(); ?>" class="button hvr-bounce-to-top"><?php esc_html_e( 'Read More', 'agency-x' ); ?></a>
+							
 										</div>
 									</div>
 								</div>

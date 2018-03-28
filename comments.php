@@ -28,7 +28,7 @@ if ( post_password_required() ) {
 						/* translators: %s: post title */
 						printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'agency-x' ), get_the_title() );
 					} else {
-						printf(	_nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comments_number, 'comments title', 'agency-x' ) ),
+						printf(	esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comments_number, 'comments title', 'agency-x' ) ),
 							number_format_i18n( $comments_number ),
 							'<span>' . get_the_title() . '</span>'
 						);

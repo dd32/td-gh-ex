@@ -28,18 +28,10 @@ get_header();?>
             <div class="row">
                     <div class="col-md-12">
                         <!-- Pagination -->
-                        <ul class="pagination">
-                            <!-- <li class="prev"><a href="#"><span class="fa fa-angle-left"></span></a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li class="next"><a href="#"><span class="fa fa-angle-right"></span></a></li> -->
+                        <ul class="pagination">                            
                             <?php
                                 global $wp_query;
-
                                 $big = 999999999; // need an unlikely integer
-
                                 echo paginate_links( array(
                                     'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
                                     'format' => '?paged=%#%',

@@ -6,12 +6,15 @@
 	?>
 
 	<?php
-		global $post;
 		$page_id = esc_attr( get_theme_mod( 'welcome_section_page' ) );
-		$post = get_post( $page_id );
-		setup_postdata( $post );
+		$args = array(
+			'page_id' => $page_id,
+			'post_type' => 'page',
+			'post_status' => 'publish'
+		); 
+		$query = new WP_Query( $args );	
 	?>
-	<?php if( $post->ID ) : ?>
+	<?php if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post(); ?>
 		<!-- Start About -->
 		<section id="about-us" class="section">
 			<div class="container">
@@ -51,6 +54,6 @@
 			</div>
 		</section>
 		<!--/ End About -->
-	<?php endif; ?>
+	<?php endwhile; endif; ?>
 		<?php wp_reset_postdata(); ?>
 <?php endif; ?>

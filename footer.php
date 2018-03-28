@@ -8,28 +8,34 @@
  */
 
 ?>
-<?php if( dynamic_sidebar('footer-1') || dynamic_sidebar('footer-1')|| dynamic_sidebar('footer-1') ): ?>
+<?php if( is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') ): ?>
 	<!-- Footer Top -->
 		<section id="footer-top" class="section wow fadeInUp">
 			<div class="container">
 				<div class="row">
-					<!-- Single Widget -->					
-					<div class="col-md-4 col-sm-4 col-xs-12">							
-						<?php dynamic_sidebar( 'footer-1' ); ?>
-					</div>
-					<!--/ End Single Widget -->
+					<?php if( is_active_sidebar('footer-1') ) : ?>
+						<!-- Single Widget -->					
+						<div class="col-md-4 col-sm-4 col-xs-12">							
+							<?php dynamic_sidebar( 'footer-1' ); ?>
+						</div>
+						<!--/ End Single Widget -->
+					<?php endif; ?>
 
-					<!-- Single Widget -->					
-					<div class="col-md-4 col-sm-4 col-xs-12">						
-						<?php dynamic_sidebar( 'footer-2' ); ?>
-					</div>			
-					<!--/ End Single Widget -->
+					<?php if( is_active_sidebar('footer-2') ) : ?>
+						<!-- Single Widget -->					
+						<div class="col-md-4 col-sm-4 col-xs-12">						
+							<?php dynamic_sidebar( 'footer-2' ); ?>
+						</div>			
+						<!--/ End Single Widget -->
+					<?php endif; ?>
 
-					<!-- Single Widget -->					
-					<div class="col-md-4 col-sm-4 col-xs-12">						
-						<?php dynamic_sidebar( 'footer-3' ); ?>
-					</div>
-					<!--/ End Single Widget -->
+					<?php if( is_active_sidebar('footer-3') ) : ?>
+						<!-- Single Widget -->					
+						<div class="col-md-4 col-sm-4 col-xs-12">						
+							<?php dynamic_sidebar( 'footer-3' ); ?>
+						</div>
+						<!--/ End Single Widget -->
+					<?php endif; ?>
 				</div>
 			</div>
 		</section>
@@ -41,7 +47,7 @@
 				<div class="row">
 					<div class="col-md-6 col-sm-6 col-xs-12">
 						<div class="copyright">
-							<p>&copy;Copyright 2017<span><i class="fa fa-heart"></i></span>Jalil.</p>
+							<p>&copy;<?php esc_html_e( 'Copyright 2017', 'agency-x' ); ?><span><i class="fa fa-heart"></i></span><?php esc_html_e( 'Samurai Themes', 'agency-x' ); ?></p>
 						</div>
 					</div>
 					<div class="col-md-6 col-sm-6 col-xs-12">
@@ -56,8 +62,9 @@
 					        $social['instagram'] = get_theme_mod( 'instagram_textbox' );
 					        $social = array_filter( $social );
 					    ?>
+
 						<ul class="social">
-							<li>Follow Us</li>							
+							<li><?php esc_html_e( 'Follow Us', 'agency-x' ); ?></li>
 							<?php foreach ( $social as $key => $value ) { ?>
 			                    <li><a href="<?php echo esc_url( $value ); ?>" target="_blank"><i class="fa fa-<?php echo esc_attr($key); ?>"></i></a></li>
 			            	<?php } ?>

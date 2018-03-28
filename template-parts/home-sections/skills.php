@@ -1,11 +1,14 @@
 <?php if( get_theme_mod( 'skills_display', true ) ) : ?>
-	<?php
-		global $post;
+	<?php		
 		$page_id = get_theme_mod( 'skills_section_page' );
-		$post = get_post( $page_id );
-		setup_postdata( $post );
+		$args = array(
+			'page_id' => $page_id,
+			'post_type' => 'page',
+			'post_status' => 'publish'
+		); 
+		$query = new WP_Query( $args );		
 	?>
-	<?php if( $post->ID ) : ?>
+	<?php if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post(); ?>
 		<section id="skills-experience" class="section" data-stellar-background-ratio="0.3">
 			<div class="container">
 				<div class="row">
@@ -25,5 +28,5 @@
 				</div>
 			</div>
 		</section>
-	<?php endif; ?>
+	<?php endwhile; endif; ?>
 <?php wp_reset_postdata(); endif; ?>
