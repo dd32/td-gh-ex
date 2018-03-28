@@ -208,7 +208,7 @@
 	   				<?php $section = isset($_REQUEST['section']) ? $_REQUEST['section'] : 'getting_started'; ?>
    					
    					<div class="welcome-section <?php echo esc_attr($section); ?> clearfix">
-   						<?php require_once get_template_directory() . '/welcome/sections/'.esc_html($section).'.php'; ?>
+   						<?php require_once get_template_directory() . '/welcome/sections/' . esc_attr($section) . '.php'; ?>
 					</div>
 			   	</div>
 			   	</div>

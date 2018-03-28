@@ -47,6 +47,9 @@ Images
 
 
 == Changelog ==
+= 2.2.7 =
+** Made Customizer Fields Translatable.
+
 = 2.2.5 =
 ** Fixed Woocommerce outdated template issue.
 

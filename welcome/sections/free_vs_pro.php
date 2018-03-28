@@ -286,11 +286,20 @@
 	</tr>
 	<tr>
 		<td>
-			<span><?php esc_html_e('Upgrade to Pro', 'accesspress-store'); ?></span>
+			<span><?php esc_html_e('Upgrade to AccessPress Pro', 'accesspress-store'); ?></span>
 			<p><?php esc_html_e('Upgrade to pro version for additional features and better supports.', 'accesspress-store'); ?></p>
 		</td>
 		<td colspan="2">
-			<a class="buy-pro-btn" href="https://accesspressthemes.com/wordpress-themes/accesspress-store-pro/"><?php esc_html_e('Buy Now', 'accesspress-store'); ?></a>
+			<a class="buy-pro-btn" href="https://accesspressthemes.com/wordpress-themes/accesspress-store-pro/"><?php esc_html_e('AccessPress Store Pro', 'accesspress-store'); ?></a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span><?php esc_html_e('Upgrade to Fashstore Pro ( Pro theme for the child theme ) ', 'accesspress-store'); ?></span>
+			<p><?php esc_html_e('Upgrade to pro version of Fashstore for additional features and better supports.', 'accesspress-store'); ?></p>
+		</td>
+		<td colspan="2">
+			<a class="buy-pro-btn" href="https://accesspressthemes.com/wordpress-themes/fashstore-pro/"><?php esc_html_e('Fashstore Pro', 'accesspress-store'); ?></a>
 		</td>
 	</tr>
 </table>

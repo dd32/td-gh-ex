@@ -120,7 +120,6 @@ if( class_exists( 'WP_Customize_control') && class_exists( 'WP_Customize_Section
 	         * @access public
 	         * @var    string
 	         */
-	        public $pro_text = '';
 	        public $pro_text1 = '';
 	        public $title1 = '';
 
@@ -131,7 +130,6 @@ if( class_exists( 'WP_Customize_control') && class_exists( 'WP_Customize_Section
 	         * @access public
 	         * @var    string
 	         */
-	        public $pro_url = '';
 	        public $pro_url1 = '';
 
 	        /**
@@ -161,12 +159,6 @@ if( class_exists( 'WP_Customize_control') && class_exists( 'WP_Customize_Section
 	        protected function render_template() { ?>
 
 	            <li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand">
-	                <h3 class="accordion-section-title">
-	                    {{ data.title }}
-	                    <# if ( data.pro_text && data.pro_url ) { #>
-	                        <a href="{{ data.pro_url }}" class="button button-secondary alignright" target="_blank">{{ data.pro_text }}</a>
-	                    <# } #>
-	                </h3>
 	                <h3 class="accordion-section-title">
 	                    {{ data.title1 }}
 	                    <# if ( data.pro_text1 && data.pro_url1 ) { #>

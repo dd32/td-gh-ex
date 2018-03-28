@@ -28,11 +28,8 @@ function accesspress_store_customize_register( $wp_customize ) {
 	        $wp_customize,
 	        'accesspress-store-pro',
 	        array(
-	            'title'    => esc_html__( 'Upgrade To Pro', 'accesspress-store' ),
 	            'title1'    => esc_html__( 'Free Vs Pro', 'accesspress-store' ),
-	            'pro_text' => esc_html__( 'Buy Now','accesspress-store' ),
 	            'pro_text1' => esc_html__( 'Compare','accesspress-store' ),
-	            'pro_url'  => 'https://accesspressthemes.com/wordpress-themes/accesspress-store-pro/',
 	            'pro_url1'  => admin_url( 'themes.php?page=accesspressstore-welcome&section=free_vs_pro'),
 	            'priority' => 1,
 	        )
