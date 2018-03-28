@@ -133,6 +133,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.6.7
+1. Added code for demo import plugin active redirect on import page .
 @version 1.6.6
 1. Update screen reader css.
 @version 1.6.5

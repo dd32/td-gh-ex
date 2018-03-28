@@ -169,4 +169,38 @@ function rambo_customize_preview_js() {
 	wp_enqueue_script( 'rambo-customize-preview', get_template_directory_uri() . '/js/customize-preview.js', array( 'customize-preview' ), '20160816', true );
 }
 add_action( 'customize_preview_init', 'rambo_customize_preview_js' );
+
+
+
+function rambo_one_click_demo_import_activation_redirect( $plugin ) {
+	
+	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+	if ( is_plugin_active( 'one-click-demo-import/one-click-demo-import.php' ) ):
+			$plugin_installed = get_option('rambo-plugin'); 
+		if(!$plugin_installed){
+				update_option('rambo-plugin','activated');
+		 exit( wp_redirect( admin_url( 'themes.php?page=pt-one-click-demo-import' ) ) );
+			}
+	endif;
+	
+	
+}
+add_action( 'activated_plugin', 'rambo_one_click_demo_import_activation_redirect' );
+
+
+function rambo_one_click_demo_import_detect_plugin_deactivation() {
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+	$pluginList = get_option( 'active_plugins' );
+$plugin = 'one-click-demo-import/one-click-demo-import.php'; 
+if ( in_array( $plugin , $pluginList ) ) {
+	
+		delete_option('rambo-plugin');
+	
+}		
+	
+}
+add_action( 'deactivated_plugin', 'rambo_one_click_demo_import_detect_plugin_deactivation');
+
+
+
 ?>
