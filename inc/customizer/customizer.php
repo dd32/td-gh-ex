@@ -431,12 +431,12 @@ function ashe_customize_register( $wp_customize ) {
 
 	// Page Layout Combinations
 	$page_layouts = array(
-		'col1-rsidebar' => esc_html__( '1 Column', 'ashe-pro' ),
-		'list-rsidebar' => esc_html__( 'List Style', 'ashe-pro' ),
+		'col1-rsidebar' => esc_html__( '1 Column', 'ashe' ),
+		'list-rsidebar' => esc_html__( 'List Style', 'ashe' ),
 	);
 
 	// Blog Page Layout
-	ashe_select_control( 'general', 'home_layout', esc_html__( 'Blog Page', 'ashe-pro' ), $page_layouts, 'refresh', 13 );
+	ashe_select_control( 'general', 'home_layout', esc_html__( 'Blog Page', 'ashe' ), $page_layouts, 'refresh', 13 );
 
 	$boxed_width = array(
 		'full' 		=> esc_html__( 'Full', 'ashe' ),
