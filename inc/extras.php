@@ -15,13 +15,13 @@
  */
 function cell_default( $theme_mod = 'cell_theme_style' ) {
 
-	$default = array (
+	$default = apply_filters( 'cell_default', array (
 		'cell_theme_style'      => 'wide',
 		'cell_sidebar_position' => 'right',
 		'cell_author_name'      => true,
 		'cell_copyright'        => sprintf( '&copy; Copyright %1$s - <a href="%2$s">%3$s</a>', esc_html( date_i18n( __( 'Y', 'cell' ) ) ), esc_attr( esc_url( home_url( '/' ) ) ), esc_html( get_bloginfo( 'name' ) ) ),
 		'cell_credit'           => true,
-	);
+	) );
 
 	if ( isset ( $default[$theme_mod] ) ) {
 		return $default[$theme_mod];
