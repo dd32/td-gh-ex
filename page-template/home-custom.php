@@ -80,10 +80,9 @@
       <?php 
         $page_query = new WP_Query(array( 'category_name' => esc_html(get_theme_mod('academic_education_category'),'theblog')));?>
         <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
-            <div class="col-md-4 col-sm-4">
-              <div class="course-box">
-                <a href="<?php the_permalink(); ?>"><div><?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?></div></a>
-              </div>
+            <div class="col-md-4 col-sm-4 course-box">
+                <a href="<?php the_permalink(); ?>"><?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?></a>
+              <div class="borderbox"></div>
             </div>
         <?php endwhile;
         wp_reset_postdata();

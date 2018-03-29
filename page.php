@@ -13,7 +13,7 @@ get_header(); ?>
         <div class="col-md-12">
             <?php while ( have_posts() ) : the_post(); ?>
                 <img src="<?php the_post_thumbnail_url('full'); ?>" width="100%">
-                <h3><?php the_title(); ?></h3>
+                <h1><?php the_title(); ?></h1>
                 <?php the_content();
                 wp_link_pages( array(
                     'before' => '<div class="page-links">' . __( 'Pages:', 'academic-education' ),
@@ -28,7 +28,7 @@ get_header(); ?>
         </div>        
         <div class="clear"></div>    
     </div>
-</div><!-- container -->
+</div>
 
 <?php do_action( 'academic_education_page_footer' ); ?>
 

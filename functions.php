@@ -4,13 +4,14 @@
  * @package Academic Education
  */
 
-if ( ! function_exists( 'academic_education_setup' ) ) :
 
 /* Theme Setup */
+if ( ! function_exists( 'academic_education_setup' ) ) :
 
 function academic_education_setup() {
 
 	$GLOBALS['content_width'] = apply_filters( 'academic_education_content_width', 640 );
+
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'title-tag' );
@@ -37,7 +38,7 @@ add_action( 'after_setup_theme', 'academic_education_setup' );
 define('ACADEMIC_EDUCATION_CREDIT','https://www.logicalthemes.com/','academic-education');
 if ( ! function_exists( 'academic_education_credit' ) ) {
 	function academic_education_credit(){
-			echo "<a href=".esc_url(ACADEMIC_EDUCATION_CREDIT)." target='_blank'>".esc_html('Logical Themes','academic-education')."</a>";
+			echo "<a href=".esc_url(ACADEMIC_EDUCATION_CREDIT)." target='_blank'>".esc_html__('Logical Themes','academic-education')."</a>";
 	}
 }
 
@@ -145,14 +146,12 @@ function academic_education_font_url(){
 function academic_education_scripts() {
 	wp_enqueue_style( 'academic-education-font', academic_education_font_url(), array() );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css');
-	wp_enqueue_style( 'academic-education-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'academic-education-basic-style', get_stylesheet_uri() );
 	wp_style_add_data( 'academic-education-style', 'rtl', 'replace' );
 	wp_enqueue_style( 'academic-education-customcss', get_template_directory_uri() . '/assets/css/custom.css' );
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/assets/css/fontawesome-all.css' );
-	if ( is_home() || is_front_page() ) { 
-		wp_enqueue_style( 'nivo-style', get_template_directory_uri().'/assets/css/nivo-slider.css' );
-		wp_enqueue_script( 'nivo-slider', get_template_directory_uri() . '/assets/js/jquery.nivo.slider.js', array('jquery') );
-	}
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/assets/css/fontawesome-all.css' );	 
+	wp_enqueue_style( 'nivo-style', get_template_directory_uri().'/assets/css/nivo-slider.css' );
+	wp_enqueue_script( 'nivo-slider', get_template_directory_uri() . '/assets/js/jquery.nivo.slider.js', array('jquery') );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.js', array('jquery') ,'',true);
 	wp_enqueue_script( 'academic-education-customscripts', get_template_directory_uri() . '/assets/js/custom.js', array('jquery') );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -162,7 +161,7 @@ function academic_education_scripts() {
 add_action( 'wp_enqueue_scripts', 'academic_education_scripts' );
 
 function academic_education_ie_stylesheet(){
-	wp_enqueue_style('academic-education-ie', get_template_directory_uri().'/assets/css/ie.css', array('academic-education-ie-style'));
+	wp_enqueue_style('academic-education-ie', get_template_directory_uri().'/assets/css/ie.css', array('academic-education-basic-style'));
 	wp_style_add_data( 'academic-education-ie', 'conditional', 'IE' );
 }
 add_action('wp_enqueue_scripts','academic_education_ie_stylesheet');

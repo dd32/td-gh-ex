@@ -1,2 +1,8 @@
 Version 0.1
 	i. Initial version Released.
+
+Version 0.2
+	i.   Reolved Error.
+	ii.  Done responsive menu css.
+	iii. Resolved the translation error in footer.
+	iv.  Added image tag in page template.

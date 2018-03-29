@@ -2,7 +2,7 @@
 
 Theme Name : Academic Education
 Theme URI : 
-Version : 0.1
+Version : 0.2
 Tested up to : 4.9.4
 Author : LogicalThemes
 Author URI : https://www.logicalthemes.com/
