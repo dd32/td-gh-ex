@@ -1,4 +1,7 @@
-  <?php 
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
   get_header(); 
     /**
     * @hooked ascend_archive_title - 20

@@ -1809,7 +1809,7 @@ span.onsale {
 .shopcolumn1 .product_item .product_action_wrap:before {
   display: none;
 }
-.shopcolumn1 .product_item .add_to_cart_button {
+.shopcolumn1 .product_item .product_action_wrap .button {
   opacity: 1;
   width: auto;
   padding-left: 10px;

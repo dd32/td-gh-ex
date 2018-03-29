@@ -6,7 +6,7 @@ if ( post_password_required() ) {
 ?>
 <div id="comments" class="comments-area">
 
-  <?php if ( have_comments() ) : ?>
+  <?php if ( have_comments() && ( comments_open() || get_comments_number() ) ) : ?>
   	<div class="have-comments-area">
 	    <h4 class="comments-title kt-title">
 	        <span>

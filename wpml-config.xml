@@ -28,32 +28,32 @@
                 <key name="0">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="1">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="2">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="3">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="4">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="5">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
             </key>
             <key name="home_shortcode_entry" />
@@ -74,32 +74,32 @@
                 <key name="0">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="1">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="2">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="3">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="4">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="5">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
             </key>
             <key name="home_mobile_shortcode_entry" />
@@ -115,64 +115,64 @@
                 <key name="0">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="1">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="2">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="3">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="4">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="5">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
             </key>
             <key name="icon_menu">
                 <key name="0">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="1">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="2">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="3">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="4">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="5">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
             </key>
             <key name="home_icon_menu_btn" />
@@ -183,32 +183,32 @@
                 <key name="0">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="1">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="2">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="3">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="4">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="5">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
             </key>
             <key name="portfolio_full_title" />
@@ -217,32 +217,32 @@
                 <key name="0">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="1">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="2">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="3">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="4">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
                 <key name="5">
                     <key name="link" />
                     <key name="title" />
-                    <key name="subtitle" />
+                    <key name="description" />
                 </key>
             </key>
             <key name="shop_shortcode_entry" />

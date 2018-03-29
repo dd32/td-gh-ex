@@ -28,6 +28,12 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.2.4 | 29th March 2018 =
+* Update: Fix comments showing in BuddyPress (because their profiles are odd).
+* Update: Fix issue with missing strings in polylang & WPML
+* Update: Add "change" for image widget to trigger update.
+* Update: Few css tweaks.
+
 = Version 1.2.3 | 20th February 2018 =
 * Update: Woo Templates
 

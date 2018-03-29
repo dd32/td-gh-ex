@@ -95,6 +95,7 @@ $.imgupload = function(){
                         thumbSrc = attachment.attributes.icon;
                     }
                     current_imgupload.find('.kad_custom_media_image').attr('src', thumbSrc);
+                    current_imgupload.find('.kad_custom_media_id').trigger('change');
                 });
 
                 // Finally, open the modal.
@@ -179,7 +180,7 @@ $.imgupload = function(){
                         return e.id;
                     });
                     current_gallery.find('.gallery_values').val(ids.join(','));
-                     current_gallery.find( '.gallery_values' );
+                     current_gallery.find( '.gallery_values' ).trigger('change');
     
                 });
 
@@ -238,7 +239,7 @@ $.imgupload = function(){
                         return e.id;
                     });
                     current_gallery.find('.gallery_values').val(ids.join(','));
-                    current_gallery.find( '.gallery_values' );
+                    current_gallery.find( '.gallery_values' ).trigger('change');
     
                 });
 
