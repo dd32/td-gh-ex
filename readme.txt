@@ -91,7 +91,7 @@ Source: https://unsplash.com/
 
 == Changelog ==
 
-= 1.2.4 =
+= 1.2.6 =
 Released: March 29, 2018
 
 * Code Update.
