@@ -24,7 +24,6 @@
  => MEDIA PRINT
  => DEBUG
  => PURE CSS LOADER
- => NIMBLE BUILDER
  ***** END OF CONTENT *****/
 
 /* ELEMENTS
@@ -2062,18 +2061,7 @@ input[type="submit"]:hover {
   -o-transition: background-position 0.1s linear;
   transition: background-position 0.1s linear;
 }
-.comment-form-cookies-consent label {
-    display: inline;
-    & when (@is_rtl = true) {
-      padding-right: 5px;
-    }
-    & when (@is_rtl = false) {
-      padding-left: 5px;
-    }
-}
-.comment-form-cookies-consent input[type="checkbox" ] {
-    margin-top: -.1em;
-}
+
 /* CODE FOR COMMENTS */
 code {
   white-space: normal;
@@ -2835,33 +2823,6 @@ ul {
     word-break: break-all;
     white-space: normal;
 }
-/* checkout label/radio/checkboxe alignment */
-#add_payment_method #payment ul.payment_methods label,
-.woocommerce-cart #payment ul.payment_methods label,
-.woocommerce-checkout #payment ul.payment_methods label {
-    display: inline-block;
-    margin-bottom: 0;
-}
-
-#add_payment_method #payment .payment_method_paypal .about_paypal,
-.woocommerce-cart #payment .payment_method_paypal .about_paypal,
-.woocommerce-checkout #payment .payment_method_paypal .about_paypal {
-    line-height: 47px;
-}
-
-.woocommerce form .form-row .input-checkbox {
-    float: none;
-}
-.woocommerce form .form-row label.checkbox,
-.woocommerce-page form .form-row label.checkbox {
-    & when (@is_rtl = true) {
-      padding-right: 0;
-    }
-    & when (@is_rtl = false) {
-      padding-left: 0;
-    }
-}
-
 /* FOOTER
     -------------------------------------------------- */
 
@@ -3159,27 +3120,4 @@ li#wp-admin-bar-tc-customizr-help a {
   border: 2px solid #777;
   -webkit-animation: czr-mr-loader 1.25s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
   animation: czr-mr-loader 1.25s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
-}
-
-
-/*
-* NIMBLE BUILDER
-* Reduce the default spacing for Customizr custom locations
-*/
-.is-customizing .sektion-wrapper[data-sek-id="__before_main_wrapper"] {
-  min-height: inherit;
-  margin-top: 0;
-}
-.is-customizing .sektion-wrapper[data-sek-id="__after_header"] {
-  min-height: 20px;
-  margin-top: 10px;
-}
-.is-customizing .sektion-wrapper[data-sek-id="__after_header"] .sek-empty-location-placeholder, .is-customizing .sektion-wrapper[data-sek-id="__before_main_wrapper"] .sek-empty-location-placeholder {
-  min-height:inherit;
-  margin: 0;
-}
-/* fix for https://github.com/presscustomizr/nimble-builder/issues/186 */
-.sek-dragging .sektion-wrapper[data-sek-id="__after_header"] {
-    z-index: 1000;
-    position: relative;
 }

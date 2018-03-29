@@ -72,12 +72,6 @@ if ( ! class_exists( 'CZR_placeholders' ) ) :
         if ( is_admin() || czr_fn_is_customizing() || ! czr_fn_is_front_help_enabled() )
             return;
 
-        //do nothing when user not logged in or cannot edit theme options, unless is CZR_DEV == true
-        if ( !( defined('CZR_DEV') && true === CZR_DEV ) ) {
-            if ( ! ( is_user_logged_in() && current_user_can('edit_theme_options') ) )
-                return;
-        }
-
         //enqueue resources
         add_filter( 'czr_enqueue_placeholders_resources', '__return_true' );
 
@@ -601,7 +595,7 @@ if ( ! class_exists( 'CZR_placeholders' ) ) :
           'tc_is_fp_notice_on',
             ! is_admin() && is_user_logged_in() && current_user_can('edit_theme_options')
             && ! czr_fn_is_pro()
-            && ! czr_fn_is_plugin_active('tc-unlimited-featured-pages/tc_unlimited_featured_pages.php')
+            && ! CZR_plugins_compat::$instance->czr_fn_is_plugin_active('tc-unlimited-featured-pages/tc_unlimited_featured_pages.php')
             && czr_fn_is_real_home() && false != (bool)czr_fn_opt('tc_show_featured_pages')
             && 'disabled' != get_transient("tc_fp_notice")
             && ! apply_filters( 'czr_is_one_fp_set', false )

@@ -41,65 +41,44 @@ var czrapp = czrapp || {};
               return '';
             return string.length > length ? string.substr( 0, length - 1 ) : string;
       };
-      var _prettyPrintLog = function( args ) {
+      czrapp._prettyfy = function( args ) {
             var _defaults = {
                   bgCol : '#5ed1f5',
                   textCol : '#000',
-                  consoleArguments : []
+                  consoleArguments : [],
+                  prettyfy : true
             };
             args = _.extend( _defaults, args );
 
-            var _toArr = Array.from( args.consoleArguments ),
-                _truncate = function( string ){
-                      if ( ! _.isString( string ) )
-                        return '';
-                      return string.length > 300 ? string.substr( 0, 299 ) + '...' : string;
-                };
+            var _toArr = Array.from( args.consoleArguments );
             if ( ! _.isEmpty( _.filter( _toArr, function( it ) { return ! _.isString( it ); } ) ) ) {
-                  _toArr =  JSON.stringify( _toArr.join(' ') );
+                  _toArr =  JSON.stringify( _toArr );
             } else {
                   _toArr = _toArr.join(' ');
             }
-            return [
-                  '%c ' + _truncate( _toArr ),
-                  [ 'background:' + args.bgCol, 'color:' + args.textCol, 'display: block;' ].join(';')
-            ];
-      };
-
-      var _wrapLogInsideTags = function( title, msg, bgColor ) {
-            if ( ( _.isUndefined( console ) && typeof window.console.log != 'function' ) )
-              return;
-            if ( czrapp.localized.isDevMode ) {
-                  if ( _.isUndefined( msg ) ) {
-                        console.log.apply( console, _prettyPrintLog( { bgCol : bgColor, textCol : '#000', consoleArguments : [ '<' + title + '>' ] } ) );
-                  } else {
-                        console.log.apply( console, _prettyPrintLog( { bgCol : bgColor, textCol : '#000', consoleArguments : [ '<' + title + '>' ] } ) );
-                        console.log( msg );
-                        console.log.apply( console, _prettyPrintLog( { bgCol : bgColor, textCol : '#000', consoleArguments : [ '</' + title + '>' ] } ) );
-                  }
-            } else {
-                  console.log.apply( console, _prettyPrintLog( { bgCol : bgColor, textCol : '#000', consoleArguments : [ title ] } ) );
-            }
+            if ( args.prettyfy )
+              return [
+                    '%c ' + czrapp._truncate( _toArr ),
+                    [ 'background:' + args.bgCol, 'color:' + args.textCol, 'display: block;' ].join(';')
+              ];
+            else
+              return czrapp._truncate( _toArr );
       };
       czrapp.consoleLog = function() {
             if ( ! czrapp.localized.isDevMode )
               return;
             if ( ( _.isUndefined( console ) && typeof window.console.log != 'function' ) )
               return;
-            console.log.apply( console, _prettyPrintLog( { consoleArguments : arguments } ) );
-            console.log( 'Unstyled console message : ', arguments );
+
+            console.log.apply( console, czrapp._prettyfy( { consoleArguments : arguments } ) );
       };
 
       czrapp.errorLog = function() {
             if ( ( _.isUndefined( console ) && typeof window.console.log != 'function' ) )
               return;
 
-            console.log.apply( console, _prettyPrintLog( { bgCol : '#ffd5a0', textCol : '#000', consoleArguments : arguments } ) );
+            console.log.apply( console, czrapp._prettyfy( { bgCol : '#ffd5a0', textCol : '#000', consoleArguments : arguments } ) );
       };
-
-
-      czrapp.errare = function( title, msg ) { _wrapLogInsideTags( title, msg, '#ffd5a0' ); };
-      czrapp.infoLog = function( title, msg ) { _wrapLogInsideTags( title, msg, '#5ed1f5' ); };
       czrapp.doAjax = function( queryParams ) {
             queryParams = queryParams || ( _.isObject( queryParams ) ? queryParams : {} );
 
@@ -127,16 +106,12 @@ var czrapp = czrapp || {};
 
             $.post( ajaxUrl, _query_ )
                   .done( function( _r ) {
-                        if ( '0' === _r ||  '-1' === _r || false === _r.success ) {
-                              czrapp.errare( 'czrapp.doAjax : done ajax error for action : ' + _query_.action , _r );
-                              dfd.reject( _r );
+                        if ( '0' === _r ||  '-1' === _r ) {
+                              czrapp.errorLog( 'czrapp.doAjax : done ajax error for : ', _query_.action, _r );
                         }
-                        dfd.resolve( _r );
                   })
-                  .fail( function( _r ) {
-                        czrapp.errare( 'czrapp.doAjax : failed ajax error for : ' + _query_.action, _r );
-                        dfd.reject( _r );
-                  });
+                  .fail( function( _r ) { czrapp.errorLog( 'czrapp.doAjax : failed ajax error for : ', _query_.action, _r ); })
+                  .always( function( _r ) { dfd.resolve( _r ); });
             return dfd.promise();
       };
 })(jQuery, czrapp);
@@ -177,8 +152,7 @@ var czrapp = czrapp || {};
                           czrapp.errorLog( 'setupDOMListeners : selector must be a string not empty. Aborting setup of action(s) : ' + _event.actions.join(',') );
                           return;
                     }
-                    var once = _event.once ? _event.once : false;
-                    args.dom_el[ once ? 'one' : 'on' ]( _event.trigger , _event.selector, function( e, event_params ) {
+                    args.dom_el.on( _event.trigger , _event.selector, function( e, event_params ) {
                           e.stopPropagation();
                           if ( czrapp.isKeydownButNotEnterEvent( e ) ) {
                             return;
@@ -718,7 +692,7 @@ var czrapp = czrapp || {};
                         });
                   };//end centerInfiniteImagesClassicStyle
                   czrapp.$_body.on( 'post-load', function( e, response ) {
-                        if ( ( 'undefined' !== typeof response ) && 'success' == response.type && response.collection && response.container ) {
+                        if ( 'success' == response.type && response.collection && response.container ) {
                               centerInfiniteImagesClassicStyle(
                                   response.collection,
                                   '#'+response.container //_container
