@@ -15,11 +15,11 @@
  */
 function bandana_default( $theme_mod = '' ) {
 
-	$default = array (
+	$default = apply_filters( 'bandana_default', array (
 		'bandana_sidebar_position' => 'right',
 		'bandana_copyright'        => sprintf( '&copy; Copyright %1$s - <a href="%2$s">%3$s</a>', esc_html( date_i18n( __( 'Y', 'bandana' ) ) ), esc_attr( esc_url( home_url( '/' ) ) ), esc_html( get_bloginfo( 'name' ) ) ),
 		'bandana_credit'           => true,
-	);
+	) );
 
 	return ( isset ( $default[$theme_mod] ) ? $default[$theme_mod] : '' );
 

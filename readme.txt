@@ -1,7 +1,7 @@
 === Bandana ===
 Contributors: DesignOrbital.com
-Requires at least: WordPress 4.6
-Tested up to: WordPress 4.8.3
+Requires at least: WordPress 4.7
+Tested up to: WordPress 4.9.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,6 +90,11 @@ Licensed under the terms of CC0
 Source: https://unsplash.com/
 
 == Changelog ==
+
+= 1.2.4 =
+Released: March 29, 2018
+
+* Code Update.
 
 = 1.2.3 =
 Released: November 10, 2017
