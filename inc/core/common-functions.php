@@ -242,10 +242,11 @@ if ( ! function_exists( 'astra_get_css_value' ) ) {
 			case 'font':
 				if ( 'inherit' != $value ) {
 					$value   = astra_get_font_family( $value );
-					$css_val = $value;
+					$css_val = esc_attr( $value );
 				} elseif ( '' != $default ) {
-					$css_val = $default;
+					$css_val = esc_attr( $default );
 				}
+
 				break;
 
 			case 'px':
