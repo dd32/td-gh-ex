@@ -860,7 +860,9 @@ function ashe_customize_register( $wp_customize ) {
 		'snapchat' 				=> '&#xf2ab;',
 		'snapchat-ghost' 		=> '&#xf2ac;',
 		'snapchat-square'		=> '&#xf2ad;',
-		'meetup' 				=> '&#xf2e0;'
+		'meetup' 				=> '&#xf2e0;',
+		'cc-paypal' 			=> '&#xf1f4;',
+		'credit-card' 			=> '&#xf09d;',
 	);
 
 	// Social #1 Icon
