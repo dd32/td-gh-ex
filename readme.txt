@@ -103,6 +103,10 @@ Access to free support forum at https://catchthemes.com/support-forum/forum/adve
 
 == Changelog ==
 
+= 3.0.1 (Released: March 30, 2018) =
+* Bug Fixed: Design issue with Catch Infinite Scroll plugin
+* Bug Fixed: Escaping get_template_directory_uri()
+
 = 3.0 =
 * Major Update: Enhanced HTML structure
 * Removed changelog.txt, moved changelog to readme file
