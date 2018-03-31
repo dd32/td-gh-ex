@@ -66,7 +66,7 @@ class Bakery_Shop_Listed_Post extends WP_Widget {
                     <li>
                         <?php if( has_post_thumbnail() && $show_thumb ){ ?>
                             <a href="<?php the_permalink();?>" class="post-thumbnail">
-                                <?php the_post_thumbnail( 'bakery-shop-listed-post' );?>
+                                <?php the_post_thumbnail( 'thumbnail' );?>
                             </a>
                         <?php }?>
                         <div class="entry-header">

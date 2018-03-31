@@ -14,9 +14,10 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php bakery_shop_post_content_image(); ?>
+	<?php do_action( 'bakery_shop_before_page_entry_content' ); ?>
 
 	<div class="entry-content">
+
 		<?php
 			the_content();
 
@@ -50,3 +51,5 @@
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
+
+

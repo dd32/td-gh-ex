@@ -37,6 +37,13 @@ add_action( 'edit_category', 'bakery_shop_category_transient_flusher' );
 add_action( 'save_post',     'bakery_shop_category_transient_flusher' );
 
 /**
+ * @see bakery_shop_excerpt_more
+ * @see bakery_shop_excerpt_length
+*/
+add_filter( 'excerpt_more', 'bakery_shop_excerpt_more' );
+add_filter( 'excerpt_length', 'bakery_shop_excerpt_length', 999 );
+
+/**
  * Move comment field to the bottm
  * @see bakery_shop_move_comment_field_to_bottom
 */

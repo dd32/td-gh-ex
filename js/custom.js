@@ -42,4 +42,55 @@ jQuery(document).ready(function($){
 		autoplayTimeout: bakery_shop_data.pause
 	});
 
+    
+    $('.featured-slider').owlCarousel({
+        loop: true, // loop
+        margin: 10,
+        nav: true,
+        navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+        autoplay: true, //auto play
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            480:{
+                items:2,
+                nav:false
+            },
+            768:{
+                items:4,
+                nav:true,
+                loop:false
+            }
+        }
+    });
+
+    $('.testimonial-slider').owlCarousel({
+        thumbs: true,
+        loop: true, // loop
+        margin: 10,
+        nav: true,
+        navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+        autoplay: true, //auto play
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            480:{
+                items:1,
+                nav:false
+            },
+            768:{
+                items:2,
+                nav:true,
+                loop:false
+            }
+        }
+    });
+    
+    
 });

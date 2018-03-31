@@ -10,43 +10,20 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php bakery_shop_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php bakery_shop_post_content_image(); ?>
+	<?php 
+		/**
+		 * Before Post entry content
+		 * 
+		 * @see bakery_shop_post_content_image - 10
+		 * @see bakery_shop_post_entry_header  - 20
+		*/
+		do_action( 'bakery_shop_before_post_entry_content' ); 
+	?>
 
 	<div class="entry-content">
 		<?php
-			the_content( sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'bakery-shop' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			) );
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bakery-shop' ),
-				'after'  => '</div>',
-			) );
+			the_excerpt();
 		?>
 	</div><!-- .entry-content -->
 

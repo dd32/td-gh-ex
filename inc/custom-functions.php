@@ -68,7 +68,18 @@ if ( ! function_exists( 'bakery_shop_setup' ) ) :
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		add_image_size( 'bakery-shop-slider', 1400, 400, true );
+		// Custom Image Size
+		
+	    add_image_size( 'bakery-shop-slider', 1400, 450, true );
+	    add_image_size( 'bakery-shop-with-sidebar', 833, 474, true );
+	    add_image_size( 'bakery-shop-without-sidebar', 1110, 474, true );
+	    add_image_size( 'bakery-shop-welcome', 560, 360, true );
+
+	    add_image_size( 'bakery-shop-recent-post', 78, 78, true );
+	    add_image_size( 'bakery-shop-portfolio', 230, 230, true ); 
+	    add_image_size( 'bakery-shop-three-col', 360 , 240, true );
+	    add_image_size( 'bakery-shop-services-thumb', 100 , 100, true );
+	    add_image_size( 'bakery-shop-teams', 360 , 480, true );
 
 		/**
 		 * Add support for core custom logo.
@@ -115,7 +126,7 @@ function bakery_shop_template_redirect_content_width() {
  */
 function bakery_shop_scripts() {
 	$bakery_shop_query_args = array(
-		'family' => 'Cardo:400,700|Lato:400,700,400italic',
+		'family' => 'Niconne:400,700|Lato:400,700,400italic',
 		);
 
 	wp_enqueue_style( 'bakery-shop-google-fonts', add_query_arg( $bakery_shop_query_args, "//fonts.googleapis.com/css" ) );
@@ -258,4 +269,35 @@ function bakery_shop_category_transient_flusher() {
 	}
 	// Like, beat it. Dig?
 	delete_transient( 'bakery_shop_categories' );
+}
+
+
+if ( ! function_exists( 'bakery_shop_excerpt_more' ) && ! is_admin() ) :
+/**
+ * Replaces "[...]" (appended to automatically generated excerpts) with ... * 
+ */
+function bakery_shop_excerpt_more() {
+	return ' &hellip; ';
+}
+endif;
+
+if ( ! function_exists( 'bakery_shop_excerpt_length' ) ) :
+/**
+ * Changes the default 55 character in excerpt 
+*/
+function bakery_shop_excerpt_length( $length ) {
+	if ( ! is_admin() ){
+    	return 20;
+	}
+}
+endif;
+
+/**
+ * Query WooCommerce activation
+ */
+if ( ! function_exists( 'bakery_shop_is_woocommerce_activated' ) ) {
+	
+	function bakery_shop_is_woocommerce_activated() {
+		if ( class_exists( 'woocommerce' ) ) { return true; } else { return false; }
+	}
 }

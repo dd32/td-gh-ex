@@ -12,28 +12,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php 
 		do_action( 'bakery_shop_breadcrumbs' );
-		do_action( 'bakery_shop_content_image' ); 
+		do_action( 'bakery_shop_before_post_entry_content' ); 
 	?>
-	
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php 
-				bakery_shop_posted_on(); 
-				bakery_shop_categories();
-				bakery_shop_comments();
-			?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php

@@ -14,6 +14,21 @@ if ( !defined( 'BAKERY_SHOP_THEME_VERSION' ) ) {
 	define ( 'BAKERY_SHOP_THEME_VERSION', $theme_data->get( 'Version' ) );
 }
 
+/* Declare Global Default Page ID*/
+$bakery_shop_default_page = '';
+$bakery_shop_page_array = get_pages();
+if(is_array($bakery_shop_page_array)){
+    $bakery_shop_default_page = $bakery_shop_page_array[0]->ID;
+}
+
+/* Declare Global Default Post ID*/
+$bakery_shop_default_post = '';
+$bakery_shop_post_array = get_posts();
+if(is_array($bakery_shop_post_array)){
+    $bakery_shop_default_post = $bakery_shop_post_array[0]->ID;
+}
+
+
 
 /**
  * Load Jetpack compatibility file.

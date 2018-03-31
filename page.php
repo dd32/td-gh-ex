@@ -12,6 +12,8 @@
  * @package Bakery_Shop
  */
 
+$sidebar_layout = bakery_shop_sidebar_layout();
+
 get_header(); ?>
 
 	<div id="primary" class="content-area">
@@ -34,5 +36,6 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
+if( $sidebar_layout == 'right-sidebar' )
 get_sidebar();
 get_footer();

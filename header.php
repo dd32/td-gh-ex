@@ -24,43 +24,21 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bakery-shop' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		
-		<div class="header-top">
-			<div class="container">
-				<div class="site-branding">
-		            <?php 
-		                if( function_exists( 'has_custom_logo' ) && has_custom_logo() ){
-		                          the_custom_logo();
-		                      } 
-		            ?>
-		                <div class="text-logo">
-		                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		                  <?php
-		                        $description = get_bloginfo( 'description', 'display' );
-		                        if ( $description || is_customize_preview() ) { ?>
-		                          <p class="site-description"><?php echo esc_html( $description ); /* WPCS: xss ok. */ ?></p>
-		                  <?php } ?>
-		                </div>  
-		        </div><!-- .site-branding -->
-		    </div>
-		</div>
-		<div class="container">    
-	        <div class="header-bottom">
-				<div id="mobile-header">
-				    <a id="responsive-menu-button" href="#sidr-main">
-				    	<i class="fa fa-bars"></i>
-				    </a>
-				</div>
-				<nav id="site-navigation" class="main-navigation" /*role="navigation"*/>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		        </nav><!-- #site-navigation -->
-		    </div>
-	    </div>
-	</header><!-- #masthead -->
+	<?php
+		/**
+		 * @hooked bakery_shop_header_start  - 20 
+		 * @hooked bakery_shop_header_bottom - 40 
+		 * @hooked bakery_shop_header_menu 	 - 50 
+		 * @hooked bakery_shop_header_end 	 - 60 
+		 * @hooked bakery_shop_slider_cb
+		 */
 
-	<?php do_action( 'bakery_shop_slider' ); ?>
+		do_action( 'bakery_shop_header' );
+		do_action( 'bakery_shop_slider' ); 
 
-	<div id="content" class="site-content">
-		<div class="container">
-             <div class="row">
+		/**
+		 * bakery_shop Content
+		 * 
+		 * @see bakery_shop_content_start
+		*/
+		do_action( 'bakery_shop_before_content' );

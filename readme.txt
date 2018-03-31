@@ -1,19 +1,18 @@
 === Bakery Shop ===
 
-Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Author: Prosys Theme (http://prosystheme.com)
+
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-logo, custom-menu, featured-image-header, featured-images, post-formats, sticky-post, threaded-comments, translation-ready, theme-options, footer-widgets, blog, full-width-template, custom-colors , portfolio, e-commerce, food-and-drink 
 
 Requires at least: 4.0
-Tested up to: 4.8
-Stable tag: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
-
-A starter theme called Bakery Shop.
+Tested up to: 4.9.4
+Stable tag: 1.0.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Description
+Bakery Shop is a modern Multipurpose responsive Bakery Shop style WordPress theme suitable for business, portfolio, food, bakery shop, cake shop, travel, blogs, publishing and any kind of sites. This theme supports Ecommerce so that this theme can be used in any kind of shops. The theme is built on Customizer and it allows you to easily customize your website with live previews. The theme is Speed and Search Engine Optimized (SEO) to help you easily climb the google rank. Other feature includes social media integration, custom widgets, author bio, breadcrumb, custom CSS, translation ready and more. Check demo at http://prosystheme.com/preview/bakery-shop/ and documentation at http://prosystheme.com/documentation/bakery-shop. Read theme details at http://prosystheme.com/wordpress-themes/bakery-shop and get free support at http://prosystheme.com/request-a-support.
 
 == Installation ==
 
@@ -21,16 +20,59 @@ Description
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-== Frequently Asked Questions ==
 
-= Does this theme support any plugins? =
+== Font-Awesome ==
+* Font Awesome
+https://fontawesome.github.io/Font-Awesome/, 
+Copyright (c); Dave Gandy, http://fontawesome.io/license/
 
-Bakery Shop includes support for Infinite Scroll in Jetpack.
+== Google font ==
+* Niconne Font by through Google Font 
+https://www.google.com/fonts/specimen/Niconne
 
-== Changelog ==
+* Lato Font by through Google Font 
+https://fonts.google.com/specimen/Lato
 
-= 1.0 - May 12 2015 =
-* Initial release
+# Images
+All images are under Creative Commons Public Domain deed CC0.
+
+1. https://pixabay.com/en/cake-piece-of-pie-black-forest-1227842/
+2. https://pixabay.com/en/strawberry-roll-strawberry-1263099/
+3. https://pixabay.com/en/strawberry-ice-cream-strawberries-2239377/
+
+# JS
+All the JS are licensed under GPLv2 or later
+
+* jquery.sidr.js, https://github.com/artberri/sidr, (C) 2013 Alberto Varela, MIT License, https://github.com/artberri/sidr/blob/master/LICENSE
+
+* owl.carousel.js, https://github.com/OwlCarousel2/OwlCarousel2, (C) 2013-2017 David Deutsch, MIT License, https://github.com/OwlCarousel2/OwlCarousel2/blob/develop/LICENSE
+ 
+
+All other resources and theme elements are licensed under the GPLv2 or later
+
+
+Bakery Shop WordPress Theme, Copyright Prosys Theme 2017, Prosystheme.com
+Bakery Shop WordPress Theme is distributed under the terms of the GPLv2 or later
+
+
+*  This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+
+== Change Log ==
+
+1.0.1
+* Description changed
+* Template Taglist fixed
+* Front page Added.
+* Homepage section added.
+* Screenshot changed.
+* fixed found bugs. 
+
+1.0.0
+* Initial Release
 
 == Credits ==
 

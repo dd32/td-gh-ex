@@ -30,17 +30,35 @@ add_action( 'bakery_shop_before_header', 'bakery_shop_page_start', 20 );
  * bakery_shop Header
  * 
  * @see bakery_shop_header_start  - 20 
- * @see bakery_shop_header_top 	 - 30 
- * @see bakery_shop_header_bottom - 40 
- * @see bakery_shop_header_menu 	 - 50 
- * @see bakery_shop_header_end 	 - 60 
+ * @see bakery_shop_header_top    - 40 
+ * @see bakery_shop_header_bottom - 50 
+ * @see bakery_shop_header_end 	  - 60 
 */
 
 add_action( 'bakery_shop_header', 'bakery_shop_header_start', 20 );
-add_action( 'bakery_shop_header', 'bakery_shop_header_top', 30 );
-add_action( 'bakery_shop_header', 'bakery_shop_header_bottom', 40 );
-add_action( 'bakery_shop_header', 'bakery_shop_header_menu', 50 );
+add_action( 'bakery_shop_header', 'bakery_shop_header_top', 40 );
+add_action( 'bakery_shop_header', 'bakery_shop_header_bottom', 50 );
 add_action( 'bakery_shop_header', 'bakery_shop_header_end', 60 );
+
+/**
+ * Home Page Contents
+ * 
+ * @see bakery_shop_featured    - 20
+ * @see bakery_shop_welcome     - 30
+ * @see bakery_shop_blog        - 40 
+ * @see bakery_shop_cta  	   - 60
+ * @see bakery_shop_team  	   - 80
+ * @see bakery_shop_testimonial - 90
+*/
+add_action( 'bakery_shop_home_page', 'bakery_shop_featured', 20 );
+add_action( 'bakery_shop_home_page', 'bakery_shop_welcome', 30 );
+add_action( 'bakery_shop_home_page', 'bakery_shop_products', 40 );
+add_action( 'bakery_shop_home_page', 'bakery_shop_cta', 60 );
+add_action( 'bakery_shop_home_page', 'bakery_shop_team', 80 );
+add_action( 'bakery_shop_home_page', 'bakery_shop_testimonial', 90 );
+add_action( 'bakery_shop_home_page', 'bakery_shop_blog', 95 );
+
+
 
 /**
  * Home Page Contents
