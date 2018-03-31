@@ -1,11 +1,14 @@
 <?php
 /**
- * The Sidebar containing the main widget areas.
+ * The sidebar containing the main widget area
  *
  * @package fmi
  */
+
+if (!is_active_sidebar('sidebar-1')) {
+	return;
+}
 ?>
-<div id="sidebar">
-	<?php dynamic_sidebar('sidebar');?>
-    <div class="clear"></div>
-</div>
+<aside id="secondary" class="widget-area">
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+</aside><!-- #secondary -->

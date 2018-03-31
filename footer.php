@@ -1,46 +1,76 @@
 <?php
 /**
- * @package fmi
+ * The template for displaying the footer
  *
+ * @package fmi
  */
 ?>
-<div id="footer"><div class="inner">
-	<div id="foot">
-		<div class="div1"><a href="https://wordpress.org/"><?php printf( __( 'Proudly powered by %s', 'fmi' ), 'WordPress' ); ?></a>. Theme:Fmi by <a href="http://www.forrss.com/" rel="external">Forrss</a>.</div>
-		<div class="div2">
+
+	<footer id="colophon" class="site-footer">
+    <div class="container">
+		<div class="site-info clearfix">            
+			<div class="site-info-social">
+<?php if(get_theme_mod('social_email')):?>
+<a href="<?php echo esc_url('mailto:'.antispambot(get_theme_mod('social_email'))); ?>" title="<?php esc_attr_e('Send Us an Email', 'fmi'); ?>"><i class="fa fa-envelope-o"></i></a>
+<?php endif; ?>
+<?php if(get_theme_mod('social_skype')):?>
+<a href="skype:<?php echo esc_html(get_theme_mod('social_skype')); ?>?userinfo" title="<?php esc_attr_e('Contact Us on Skype', 'fmi'); ?>"><i class="fa fa-skype"></i></a>
+<?php endif; ?>
+<?php if(get_theme_mod('social_facebook')):?>
+<a href="<?php echo esc_url(get_theme_mod('social_facebook')); ?>" target="_blank" title="<?php esc_attr_e('Find Us on Facebook', 'fmi'); ?>"><i class="fa fa-facebook"></i></a>
+<?php endif; ?>
+<?php if(get_theme_mod('social_twitter')):?>
+<a href="<?php echo esc_url(get_theme_mod('social_twitter')); ?>" target="_blank" title="<?php esc_attr_e('Follow Us on Twitter', 'fmi'); ?>"><i class="fa fa-twitter"></i></a>
+<?php endif; ?>
+<?php if(get_theme_mod('social_google_plus')):?>
+<a href="<?php echo esc_url(get_theme_mod('social_google_plus')); ?>" target="_blank" title="<?php esc_attr_e('Find Us on Google Plus', 'fmi'); ?>"><i class="fa fa-google-plus"></i></a>
+<?php endif; ?>
+<?php if(get_theme_mod('social_youtube')):?>
+<a href="<?php echo esc_url(get_theme_mod('social_youtube')); ?>" target="_blank" title="<?php esc_attr_e('View our YouTube Channel', 'fmi'); ?>"><i class="fa fa-youtube"></i></a>
+<?php endif; ?>
+<?php if(get_theme_mod('social_instagram')):?>
+<a href="<?php echo esc_url(get_theme_mod('social_instagram')); ?>" target="_blank" title="<?php esc_attr_e('Follow Us on Instagram', 'fmi'); ?>"><i class="fa fa-instagram"></i></a>
+<?php endif; ?>
+<?php if(get_theme_mod('social_pinterest')):?>
+<a href="<?php echo esc_url(get_theme_mod('social_pinterest')); ?>" target="_blank" title="<?php esc_attr_e('Pin Us on Pinterest', 'fmi'); ?>"><i class="fa fa-pinterest"></i></a>
+<?php endif; ?>
+<?php if(get_theme_mod('social_linkedin')):?>
+<a href="<?php echo esc_url(get_theme_mod('social_linkedin')); ?>" target="_blank" title="<?php esc_attr_e('Find Us on LinkedIn', 'fmi'); ?>"><i class="fa fa-linkedin"></i></a>
+<?php endif; ?>
+<?php if(get_theme_mod('social_tumblr')):?>
+<a href="<?php echo esc_url(get_theme_mod('social_tumblr')); ?>" target="_blank" title="<?php esc_attr_e('Find Us on Tumblr', 'fmi'); ?>"><i class="fa fa-tumblr"></i></a>
+<?php endif; ?>
+<?php if(get_theme_mod('social_flickr')):?>
+<a href="<?php echo esc_url(get_theme_mod('social_flickr')); ?>" target="_blank" title="<?php esc_attr_e('Find Us on Flickr', 'fmi'); ?>"><i class="fa fa-flickr"></i></a>
+<?php endif; ?>
+      </div>
+      <div class="site-info-copyright">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'fmi' ) ); ?>"><?php
+				/* translators: %s: CMS name, i.e. WordPress. */
+				printf( esc_html__( 'Proudly powered by %s', 'fmi' ), 'WordPress' );
+			?></a>
+			<span class="sep"> | </span>
+			<?php
+				/* translators: 1: Theme name, 2: Theme author. */
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'fmi' ), 'Fmi', '<a href="http://forrss.com/">Forrss</a>' );
+			?>
+      </div>  
+		</div><!-- .site-info -->
+    </div>
+  </footer><!-- #colophon -->
+
 <?php
-if( fmi_theme_option( 'vs-social-email' ) ) :
-    echo '<a href="' . esc_url( 'mailto:' . antispambot( fmi_theme_option( 'vs-social-email' ), 1 ) ) . '" title="' . __( 'Send Us an Email', 'fmi' ) . '"><i class="fa fa-envelope-o"></i></a>';endif;
-if( fmi_theme_option( 'vs-social-skype' ) ) :
-    echo '<a href="skype:' . esc_html( fmi_theme_option( 'vs-social-skype' ) ) . '?userinfo" title="' . __( 'Contact Us on Skype', 'fmi' ) . '"><i class="fa fa-skype"></i></a>';endif;
-if( fmi_theme_option( 'vs-social-facebook' ) ) :
-    echo '<a href="' . esc_url( fmi_theme_option( 'vs-social-facebook' ) ) . '" target="_blank" title="' . __( 'Find Us on Facebook', 'fmi' ) . '"><i class="fa fa-facebook"></i></a>';endif;
-if( fmi_theme_option( 'vs-social-twitter' ) ) :
-    echo '<a href="' . esc_url( fmi_theme_option( 'vs-social-twitter' ) ) . '" target="_blank" title="' . __( 'Follow Us on Twitter', 'fmi' ) . '"><i class="fa fa-twitter"></i></a>';endif;
-if( fmi_theme_option( 'vs-social-google-plus' ) ) :
-    echo '<a href="' . esc_url( fmi_theme_option( 'vs-social-google-plus' ) ) . '" target="_blank" title="' . __( 'Find Us on Google Plus', 'fmi' ) . '"><i class="fa fa-google-plus"></i></a>';endif;
-if( fmi_theme_option( 'vs-social-youtube' ) ) :
-    echo '<a href="' . esc_url( fmi_theme_option( 'vs-social-youtube' ) ) . '" target="_blank" title="' . __( 'View our YouTube Channel', 'fmi' ) . '"><i class="fa fa-youtube"></i></a>';endif;
-if( fmi_theme_option( 'vs-social-instagram' ) ) :
-    echo '<a href="' . esc_url( fmi_theme_option( 'vs-social-instagram' ) ) . '" target="_blank" title="' . __( 'Follow Us on Instagram', 'fmi' ) . '"><i class="fa fa-instagram"></i></a>';endif;
-if( fmi_theme_option( 'vs-social-pinterest' ) ) :
-    echo '<a href="' . esc_url( fmi_theme_option( 'vs-social-pinterest' ) ) . '" target="_blank" title="' . __( 'Pin Us on Pinterest', 'fmi' ) . '"><i class="fa fa-pinterest"></i></a>';endif;
-if( fmi_theme_option( 'vs-social-linkedin' ) ) :
-    echo '<a href="' . esc_url( fmi_theme_option( 'vs-social-linkedin' ) ) . '" target="_blank" title="' . __( 'Find Us on LinkedIn', 'fmi' ) . '"><i class="fa fa-linkedin"></i></a>';endif;
-if( fmi_theme_option( 'vs-social-tumblr' ) ) :
-    echo '<a href="' . esc_url( fmi_theme_option( 'vs-social-tumblr' ) ) . '" target="_blank" title="' . __( 'Find Us on Tumblr', 'fmi' ) . '"><i class="fa fa-tumblr"></i></a>';endif;
-if( fmi_theme_option( 'vs-social-flickr' ) ) :
-    echo '<a href="' . esc_url( fmi_theme_option( 'vs-social-flickr' ) ) . '" target="_blank" title="' . __( 'Find Us on Flickr', 'fmi' ) . '"><i class="fa fa-flickr"></i></a>';endif;
+$show_back_to_top = get_theme_mod('general_show_totop_btn', 1);
+if ($show_back_to_top) { 
 ?>
-        </div>
-		<div class="clear"></div>
-	</div>
-</div></div>
+  <div id="back_top"><i class="fa fa-angle-up"></i></div>
+<?php
+}
+?>
 
-<div id="back_top"><i class="fa fa-angle-up"></i></div>
+</div><!-- #page -->
 
-</div>
+<?php wp_footer(); ?>
 
-<?php wp_footer();?>
 </body>
 </html>

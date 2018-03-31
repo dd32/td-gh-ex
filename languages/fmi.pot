@@ -1,387 +1,415 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: fmi\n"
-"POT-Creation-Date: 2015-02-15 22:21+0800\n"
-"PO-Revision-Date: 2015-02-15 22:21+0800\n"
+"Project-Id-Version: Fmi\n"
+"POT-Creation-Date: 2018-03-27 18:01+0800\n"
+"PO-Revision-Date: 2018-03-27 18:01+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: zh\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7\n"
-"X-Poedit-Basepath: D:\\Mu06\\web\\html\\m1\\wp-content\\themes\\fmi\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __\n"
-"X-Poedit-SearchPath-0: .\n"
+"X-Generator: Poedit 2.0.2\n"
 
-#: 404.php:19 content-none.php:19 content-none.php:27
-msgid "Return Home"
+#: 404.php:18
+msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: archive.php:19
+#: comments.php:35
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:14
+msgid "Send Us an Email"
+msgstr ""
+
+#: footer.php:17
+msgid "Contact Us on Skype"
+msgstr ""
+
+#: footer.php:20
+msgid "Find Us on Facebook"
+msgstr ""
+
+#: footer.php:23
+msgid "Follow Us on Twitter"
+msgstr ""
+
+#: footer.php:26
+msgid "Find Us on Google Plus"
+msgstr ""
+
+#: footer.php:29
+msgid "View our YouTube Channel"
+msgstr ""
+
+#: footer.php:32
+msgid "Follow Us on Instagram"
+msgstr ""
+
+#: footer.php:35
+msgid "Pin Us on Pinterest"
+msgstr ""
+
+#: footer.php:38
+msgid "Find Us on LinkedIn"
+msgstr ""
+
+#: footer.php:41
+msgid "Find Us on Tumblr"
+msgstr ""
+
+#: footer.php:44
+msgid "Find Us on Flickr"
+msgstr ""
+
+#: footer.php:48
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: footer.php:50
 #, php-format
-msgid "Archive for the &#8216;<span>%1$s</span>&#8217; Category"
+msgid "Proudly powered by %s"
 msgstr ""
 
-#: archive.php:22
+#: footer.php:55
 #, php-format
-msgid "Posts Tagged &#8216;<span>%1$s</span>&#8217;"
+msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: archive.php:25 archive.php:28 archive.php:31
+#: functions.php:36
+msgid "Primary"
+msgstr ""
+
+#: inc/customizer.php:25
+msgid "Theme Options"
+msgstr ""
+
+#: inc/customizer.php:33
+msgid "Colors"
+msgstr ""
+
+#: inc/customizer.php:43
+msgid "Theme Color"
+msgstr ""
+
+#: inc/customizer.php:52
+msgid "Theme Color 2"
+msgstr ""
+
+#: inc/customizer.php:60
+msgid "General Settings"
+msgstr ""
+
+#: inc/customizer.php:69
+msgid "Blog Pagination or Navigation"
+msgstr ""
+
+#: inc/customizer.php:74
+msgid "Pagination"
+msgstr ""
+
+#: inc/customizer.php:75
+msgid "Navigation"
+msgstr ""
+
+#: inc/customizer.php:83
+msgid "Hide Header Title Text"
+msgstr ""
+
+#: inc/customizer.php:93
+msgid "Hide Header Search"
+msgstr ""
+
+#: inc/customizer.php:104
+msgid "Blog Layout"
+msgstr ""
+
+#: inc/customizer.php:107
+msgid "Right sidebar"
+msgstr ""
+
+#: inc/customizer.php:108
+msgid "Left sidebar"
+msgstr ""
+
+#: inc/customizer.php:109
+msgid "One column"
+msgstr ""
+
+#: inc/customizer.php:118
+msgid "Use Excerpt or \"Read More tag\""
+msgstr ""
+
+#: inc/customizer.php:121
+msgid "Excerpt"
+msgstr ""
+
+#: inc/customizer.php:122
+msgid "Read More tag"
+msgstr ""
+
+#: inc/customizer.php:130
+msgid "Excerpt Length (Number of Words)"
+msgstr ""
+
+#: inc/customizer.php:140
+msgid "Show \"Back to top\" button"
+msgstr ""
+
+#: inc/customizer.php:149
+msgid "Enable hover effects when you hover on featured images"
+msgstr ""
+
+#: inc/customizer.php:158
+msgid "Show date"
+msgstr ""
+
+#: inc/customizer.php:167
+msgid "Show author"
+msgstr ""
+
+#: inc/customizer.php:176
+msgid "Show comments counter"
+msgstr ""
+
+#: inc/customizer.php:185
+msgid "Show categories"
+msgstr ""
+
+#: inc/customizer.php:194
+msgid "Show tags"
+msgstr ""
+
+#: inc/customizer.php:203
+msgid "Show post navigation (single post page)"
+msgstr ""
+
+#: inc/customizer.php:212
+msgid "Show \"About the author\" block (single post page)"
+msgstr ""
+
+#: inc/customizer.php:220
+msgid "Social Media Icons"
+msgstr ""
+
+#: inc/customizer.php:229
+msgid "Email Address"
+msgstr ""
+
+#: inc/customizer.php:239
+msgid "Skype"
+msgstr ""
+
+#: inc/customizer.php:249
+msgid "Facebook"
+msgstr ""
+
+#: inc/customizer.php:259
+msgid "Twitter"
+msgstr ""
+
+#: inc/customizer.php:269
+msgid "Google Plus"
+msgstr ""
+
+#: inc/customizer.php:279
+msgid "YouTube"
+msgstr ""
+
+#: inc/customizer.php:289
+msgid "Instagram"
+msgstr ""
+
+#: inc/customizer.php:299
+msgid "Pinterest"
+msgstr ""
+
+#: inc/customizer.php:309
+msgid "LinkedIn"
+msgstr ""
+
+#: inc/customizer.php:319
+msgid "Tumblr"
+msgstr ""
+
+#: inc/customizer.php:329
+msgid "Flickr"
+msgstr ""
+
+#: inc/customizer.php:339
+msgid "Slider"
+msgstr ""
+
+#: inc/customizer.php:348
+msgid "Check to activate slider"
+msgstr ""
+
+#: inc/customizer.php:359
+msgid "Image Upload #1"
+msgstr ""
+
+#: inc/customizer.php:360 inc/customizer.php:401 inc/customizer.php:442
+#: inc/customizer.php:483
+msgid "Upload slider image"
+msgstr ""
+
+#: inc/customizer.php:369 inc/customizer.php:410 inc/customizer.php:451
+#: inc/customizer.php:492
+msgid "Enter title for your slider"
+msgstr ""
+
+#: inc/customizer.php:379 inc/customizer.php:420 inc/customizer.php:461
+#: inc/customizer.php:502
+msgid "Enter your slider description"
+msgstr ""
+
+#: inc/customizer.php:389 inc/customizer.php:430 inc/customizer.php:471
+#: inc/customizer.php:512
+msgid "Enter link to redirect slider when clicked"
+msgstr ""
+
+#: inc/customizer.php:400
+msgid "Image Upload #2"
+msgstr ""
+
+#: inc/customizer.php:441
+msgid "Image Upload #3"
+msgstr ""
+
+#: inc/customizer.php:482
+msgid "Image Upload #4"
+msgstr ""
+
+#: inc/template-comments.php:16
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-comments.php:16 inc/template-comments.php:30
+msgid "Edit"
+msgstr ""
+
+#: inc/template-comments.php:29
 #, php-format
-msgid "Archive for <span>%1$s</span>"
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
 msgstr ""
 
-#: archive.php:25
-msgid "F jS, Y"
+#: inc/template-comments.php:33
+msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: archive.php:28
-msgid "F, Y"
+#: inc/template-comments.php:51
+msgid "Your Name"
 msgstr ""
 
-#: archive.php:31
-msgid "Y"
+#: inc/template-comments.php:52
+msgid "Your Email"
 msgstr ""
 
-#: archive.php:34
-msgid "Author Archive"
+#: inc/template-comments.php:53
+msgid "Your Website"
 msgstr ""
 
-#: archive.php:37
-msgid "Blog Archives"
+#: inc/template-comments.php:60
+msgid "Your comment"
 msgstr ""
 
-#: archive.php:55 index.php:27 search.php:30
-msgid "Page"
+#: inc/template-functions.php:107
+#, php-format
+msgid "Search Results for: %s"
 msgstr ""
 
-#: archive.php:61 index.php:33 search.php:36
+#: inc/template-tags.php:52 page.php:57
+msgid "No Comments"
+msgstr ""
+
+#: inc/template-tags.php:52 inc/template-tags.php:56 page.php:57 page.php:61
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:52 inc/template-tags.php:56 page.php:57 page.php:61
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:80
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:87
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:102
 msgid "Older posts"
 msgstr ""
 
-#: archive.php:65 index.php:37 search.php:40
+#: inc/template-tags.php:103
 msgid "Newer posts"
 msgstr ""
 
-#: comments.php:36
-msgid "Name"
+#: inc/template-tags.php:111
+msgid "Previous Post"
 msgstr ""
 
-#: comments.php:37
-msgid "Email"
+#: inc/template-tags.php:112
+msgid "Next Post"
 msgstr ""
 
-#: comments.php:38
-msgid "Website"
+#: inc/template-tags.php:120
+msgid "Older comments"
 msgstr ""
 
-#: content-none.php:12
+#: inc/template-tags.php:121
+msgid "Newer comments"
+msgstr ""
+
+#: inc/template-tags.php:151
+msgid " Posts"
+msgstr ""
+
+#: inc/template-tags.php:157
+msgid "View all author&rsquo;s posts"
+msgstr ""
+
+#: inc/template-widgets.php:12
+msgid "Sidebar"
+msgstr ""
+
+#: inc/template-widgets.php:14
+msgid "Add widgets here."
+msgstr ""
+
+#: page.php:77 single.php:53 template-parts/content-audio.php:37
+#: template-parts/content-gallery.php:28 template-parts/content-video.php:37
+#: template-parts/content.php:24
+msgid "Pages:"
+msgstr ""
+
+#: searchform.php:14
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: template-parts/content-none.php:11
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:23
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: content-page.php:14 content-single.php:14 content.php:15
-msgid "(no title)"
-msgstr ""
-
-#: content-page.php:19 content-single.php:19 content.php:20
-#: inc/template-tags.php:9 inc/template-tags.php:22
-msgid "Edit"
-msgstr ""
-
-#: content-page.php:22 content-single.php:22 content.php:23
-msgid "Leave a comment"
-msgstr ""
-
-#: content-page.php:22 content-single.php:22 content.php:23
-msgid "1 Comment"
-msgstr ""
-
-#: content-page.php:22 content-single.php:22 content.php:23
-msgid "% Comments"
-msgstr ""
-
-#: content-page.php:31 content-single.php:31 content.php:32
-msgid "Pages:"
-msgstr ""
-
-#: content.php:36
-msgid "Featured"
-msgstr ""
-
-#: footer.php:9
-#, php-format
-msgid "Proudly powered by %s"
-msgstr ""
-
-#: footer.php:13
-msgid "Send Us an Email"
-msgstr ""
-
-#: footer.php:15
-msgid "Contact Us on Skype"
-msgstr ""
-
-#: footer.php:17
-msgid "Find Us on Facebook"
-msgstr ""
-
-#: footer.php:19
-msgid "Follow Us on Twitter"
-msgstr ""
-
-#: footer.php:21
-msgid "Find Us on Google Plus"
-msgstr ""
-
-#: footer.php:23
-msgid "View our YouTube Channel"
-msgstr ""
-
-#: footer.php:25
-msgid "Follow Us on Instagram"
-msgstr ""
-
-#: footer.php:27
-msgid "Pin Us on Pinterest"
-msgstr ""
-
-#: footer.php:29
-msgid "Find Us on LinkedIn"
-msgstr ""
-
-#: footer.php:31
-msgid "Find Us on Tumblr"
-msgstr ""
-
-#: footer.php:33
-msgid "Find Us on Flickr"
-msgstr ""
-
-#: functions.php:73
-#, php-format
-msgid "Page %s"
-msgstr ""
-
-#: functions.php:82
-msgid "Sidebar"
-msgstr ""
-
-#: header.php:42
-msgid "Menu"
-msgstr ""
-
-#: inc/template-tags.php:9
-msgid "Pingback:"
-msgstr ""
-
-#: inc/template-tags.php:25
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: inc/template-tags.php:46
-msgid "Previous Post"
-msgstr ""
-
-#: inc/template-tags.php:47
-msgid "Next Post"
-msgstr ""
-
-#: search.php:14
-#, php-format
-msgid "Search Results for: %s"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:12
-msgid "General Settings"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:13
-msgid "Styling Settings"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:14
-msgid "Social Links"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:15
-msgid "Website Text"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:42 settings/fmi-theme-settings.php:84
-msgid "Theme Settings"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:53
-msgid "Fmi Setting"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:54
-msgid "This is a default description."
-msgstr ""
-
-#: settings/fmi-theme-settings.php:87
-msgid "Theme options updated."
-msgstr ""
-
-#: settings/fmi-theme-settings.php:105
-msgid "Save Changes"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:206
-msgid "Upgrade to premium to get all features"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:224
-msgid "Favicon"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:225
+#: template-parts/content-none.php:36
 msgid ""
-"Upload a favicon to your website, this needs to be 16 pixels by 16 pixels"
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
 msgstr ""
 
-#: settings/fmi-theme-settings.php:233
-msgid "Header Settings"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:238
-msgid "Header Search"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:239
-msgid "Select this to show the search in the header"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:246
-msgid "Body font URL"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:247
+#: template-parts/content-none.php:42
 msgid ""
-"Enter ONLY the fonts URL here. Eg: link href='<b><big> //fonts.googleapis."
-"com/css?family=Open"
-"+Sans:400,300,300italic,400italic,600,600italic,700,700italic </big></b>' "
-"rel='stylesheet' type='text/css'"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:253
-msgid "Body font name"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:254
-msgid ""
-"Enter the FULL name. Eg:<b><big> font-family: 'Open Sans', sans-serif; </"
-"big></b>"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:260
-msgid "Heading font URL"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:261
-msgid ""
-"Enter ONLY the fonts URL here. Eg: link href='<b><big> //fonts.googleapis."
-"com/css?"
-"family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic </"
-"big></b>' rel='stylesheet' type='text/css'"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:267
-msgid "Heading font name"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:268
-msgid ""
-"Enter the FULL name. Eg:<b><big> font-family: 'Roboto', sans-serif; </big></"
-"b>"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:276
-msgid "Custom Styling"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:281
-msgid "Custom CSS"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:282
-msgid "Add Custom CSS to add your own styling to the Theme"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:291
-msgid "Email Address"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:298
-msgid "Skype"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:305
-msgid "Facebook"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:312
-msgid "Twitter"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:319
-msgid "Google Plus"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:326
-msgid "YouTube"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:333
-msgid "Instagram"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:340
-msgid "Pinterest"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:347
-msgid "LinkedIn"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:354
-msgid "Tumblr"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:361
-msgid "Flickr"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:368
-msgid "404 Error Page Heading"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:369
-msgid "Enter the heading for the 404 Error page"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:375
-msgid "Error 404 Message"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:376
-msgid "Enter the default text on the 404 error page (Page not found)"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:385
-msgid "Search Results Page"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:390
-msgid "No Search Results"
-msgstr ""
-
-#: settings/fmi-theme-settings.php:391
-msgid "Enter the default text for when no search results are found"
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr ""

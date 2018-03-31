@@ -1,46 +1,77 @@
-<?php
-/**
- * @package fmi
- *
- */
-?>
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo('charset');?>">
-<meta name="viewport" content="width=device-width" />
+  <meta charset="<?php bloginfo('charset'); ?>">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<?php if ( ! function_exists( '_wp_render_title_tag' ) ) {?>
-<title><?php wp_title('|',true,'right');?></title>
-<?php }?>
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo('pingback_url');?>">
-<?php if(fmi_theme_option('vs-favicon')):echo '<link rel="icon" href="'.esc_url(fmi_theme_option('vs-favicon')).'">';endif;?>
-
-<?php wp_head();?>
+  <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<div id="container">
 
-<div id="header"><div class="inner">
-	<div id="caption">
-    	<div id="title"><a href="<?php echo esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>" rel="home"><?php bloginfo('name'); ?></a></div>
-        <?php if ( fmi_theme_option( 'vs-header-search' )):?>
-        <div id="divsearch">
+<div id="page" class="site">
+
+	<header id="masthead" class="site-header">
+    <div class="container">
+  		<div class="site-branding clearfix">
+  			
+        <div class="site-branding-logo">
+          <?php the_custom_logo();?>
+          <?php if ( !get_theme_mod( 'header_title' )):?>
+          <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+          <?php endif;?>
+        </div>
+
+  			<?php if ( !get_theme_mod( 'header_search' )):?>
+        <div class="site-branding-search">
             <?php get_search_form(); ?>
         </div>
-        <?php endif;?>
-        
-        <div class="clear"></div>
-	</div>
-</div></div>
+        <?php endif;?>	
 
-<div id="navigation"><div class="inner">
-	<div id="nav" <?php if((is_home())or(is_single())or(is_search())){echo 'class="mr"';}?>>
-		<div class="menu-toggle"><a href="javascript:void(0)"><?php echo __( 'Menu', 'fmi' ); ?></a></div>
-        
-		<?php wp_nav_menu(array('theme_location'=>'menu-1'));?>
+        <button class="menu-toggle navbar-toggle" data-toggle="collapse" data-target="#main-navigation-collapse"><i class="fa fa-bars"></i></button>
+  		</div><!-- .site-branding -->
     </div>
-</div></div>
+	</header><!-- #masthead -->
+    
+  <div id="site-navigation" class="main-navigation <?php if((is_home())or(is_single())or(is_search())or(is_archive())){echo 'mr';}?>">
+    <div class="container">
+      <div id="main-navigation-collapse" class="collapse navbar-collapse">
+        <?php
+          if (has_nav_menu('menu-1')) {
+            wp_nav_menu( array(
+              'theme_location' => 'menu-1',
+              'container' => 'nav',
+              'menu_class' => 'nav navbar-nav responsive-nav hidden-md hidden-lg',
+            ) );
+          }
+        ?>
+      </div>
+      <?php
+        if (has_nav_menu('menu-1')) {
+          wp_nav_menu( array(
+            'theme_location' => 'menu-1',
+            'container' => 'nav',
+            'menu_class' => 'menu clearfix hidden-sm hidden-xs',
+          ) );
+        }
+      ?>
+    </div>
+  </div><!-- #site-navigation -->
+
+<?php
+if(get_theme_mod('activate_slider',0)){
+	if(is_front_page()){
+?>
+		<div class="site-slider">
+      <div class="container">
+      <?php fmi_slider();?>
+      </div>
+    </div>
+<?php
+	}
+}
+?>
