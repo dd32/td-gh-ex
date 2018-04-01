@@ -75,6 +75,8 @@ Theta provides support at https://www.coothemes.com/forum/best-food-theme/.
 
 
 === Changelog ===
+version 1.0.1 20180401
+
 
 version 1.0.0 20180331
 
