@@ -1,8 +1,9 @@
 <?php if ( bard_options('header_image_label') === true ) : ?>
 
-	<div class="entry-header">
+	<div class="entry-header" data-parallax="<?php echo esc_attr(bard_options( 'header_image_parallax' )); ?>">
 		<div class="cv-outer">
 		<div class="cv-inner">
+
 			<div class="header-logo">
 				
 				<?php 
@@ -19,13 +20,19 @@
 				</a>
 				
 				<?php else : ?>
+
 				<a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo bloginfo( 'title' ); ?></a>
+				
 				<?php endif; ?>
 
 				<br>
 				<p class="site-description"><?php echo bloginfo( 'description' ); ?></p>
 				
 			</div>
+
+			<!-- Social Icons -->
+			<?php bard_social_media( 'header-socials', false ); ?>
+
 		</div>
 		</div>
 	</div>

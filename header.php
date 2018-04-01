@@ -21,6 +21,9 @@
 
 		<?php
 
+		// Top Bar
+		get_template_part( 'templates/header/top', 'bar' );
+
 		// Page Header
 		get_template_part( 'templates/header/page', 'header' );
 
@@ -33,3 +36,5 @@
 
 		<!-- Page Content -->
 		<div id="page-content">
+			
+			<?php get_template_part( 'templates/sidebars/sidebar', 'alt' ); // Sidebar Alt ?>

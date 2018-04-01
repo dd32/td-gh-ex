@@ -3,39 +3,50 @@
 		<!-- Page Footer -->
 		<footer id="page-footer" class="<?php echo esc_attr(bard_options( 'general_footer_width' )) === 'boxed' ? 'boxed-wrapper ': ''; ?>clear-fix">
 				
-			<!-- Footer Widgets -->
-			<?php echo get_template_part( 'templates/sidebars/footer', 'widgets' ); ?>
+			<?php
 
+			// Instagram Widget
+			get_template_part( 'templates/sidebars/instagram', 'widget' );
+
+			// Footer Socials
+			if ( bard_options( 'page_footer_show_socials' ) === true ) {
+				bard_social_media( 'footer-socials', true );
+			}
+			
+			// Footer Widgets
+			echo get_template_part( 'templates/sidebars/footer', 'widgets' );
+
+			?>
+			
 			<div class="footer-copyright">
 			<div class="page-footer-inner <?php echo bard_options( 'general_footer_width' ) === 'contained' ? 'boxed-wrapper': ''; ?>">
 				<div class="copyright-info">
-				<?php
+					<?php
 
-				$copyright = bard_options( 'page_footer_copyright' );
-				$copyright = str_replace( '$year', date_i18n( __('Y','bard') ), $copyright );
-				$copyright = str_replace( '$copy', '&copy;', $copyright );
+					$copyright = bard_options( 'page_footer_copyright' );
+					$copyright = str_replace( '$year', date_i18n( __('Y','bard') ), $copyright );
+					$copyright = str_replace( '$copy', '&copy;', $copyright );
 
-				if ( bard_is_preview() ) {
-					echo esc_html__( '&copy; 2018 - All Rights Reserved.', 'bard' );
-				} else {
 					echo wp_kses_post( $copyright );
-				}
 
-				?>
-				</div>
-				
-				<div class="credit">
-					<?php esc_html_e( 'Bard Theme by ', 'bard' ); ?>
-					<a href="<?php echo esc_url( 'http://wp-royal.com/' ); ?>">
-					<?php esc_html_e( 'Royal-Flush', 'bard' ); ?>
-					</a>
-				</div>
+					if ( $copyright !== '' ) {
+						esc_html_e( ' | ', 'bard' );
+					}
 
+					?>
+
+					<span class="credit">
+						<?php esc_html_e( 'Bard Theme by ', 'bard' ); ?>
+						<a href="<?php echo esc_url( 'http://wp-royal.com/' ); ?>">
+						<?php esc_html_e( 'Royal-Flush', 'bard' ); ?>
+						</a>
+					</span>
+				</div>
+	
 				<!-- Scroll Top Button -->
 				<span class="scrolltop">
-					<i class="fa fa fa-angle-up"></i>
-					<br>
-					<?php esc_html_e( 'Back to top', 'bard' ); ?>
+					<i class="fas fa-angle-double-up"></i>
+					<span><?php esc_html_e( 'Back to top', 'bard' ); ?></span>
 				</span>
 				
 			</div>

@@ -73,6 +73,7 @@
 
 		// General Layouts
 		bard_customizer_label( 'general_sidebar_width', 'General' );
+		bard_customizer_label( 'general_home_layout', 'Page Layouts' );
 		bard_customizer_label( 'general_header_width', 'Boxed Controls' );
 
 		// Page Header
@@ -107,6 +108,10 @@
 		bard_customizer_label( 'social_media_icon_2', 'Social Icon #2' );
 		bard_customizer_label( 'social_media_icon_3', 'Social Icon #3' );
 		bard_customizer_label( 'social_media_icon_4', 'Social Icon #4' );
+
+		// Typography
+		bard_customizer_label( 'typography_logo_family', 'Logo' );
+		bard_customizer_label( 'typography_nav_family', 'Navigation' );
 
 		// Contditional Logics
 		bard_customizer_select( 'featured_slider_display', '#customize-control-bard_options-featured_slider_category', 'category' );

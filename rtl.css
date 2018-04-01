@@ -352,3 +352,12 @@ table td {
 	}
 
 }
+
+/* Viewport Size 320px */
+@media screen and ( max-width: 320px ) {
+  
+  .post-content {
+    text-align: right;
+  }
+
+}

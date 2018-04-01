@@ -37,7 +37,7 @@ if ( $post_pagination === 'numeric' ) {
 
 	//  Previous Page
 	if ( $paged > 1 ) {
-		echo '<a href="'. esc_url( get_pagenum_link( $paged - 1 ) ) .'" class="numeric-prev-page" ><i class="fa fa-long-arrow-left"></i></a>';
+		echo '<a href="'. esc_url( get_pagenum_link( $paged - 1 ) ) .'" class="numeric-prev-page" ><i class="fas fa-long-arrow-alt-left"></i></a>';
 	}
 	
 	// Pagination
@@ -53,7 +53,7 @@ if ( $post_pagination === 'numeric' ) {
 
 	// Next Page
 	if ( $paged < $pages ) {
-		echo '<a href="'. esc_url( get_pagenum_link( $paged + 1 ) ).'" class="numeric-next-page" ><i class="fa fa-long-arrow-right"></i></a>';
+		echo '<a href="'. esc_url( get_pagenum_link( $paged + 1 ) ).'" class="numeric-next-page" ><i class="fas fa-long-arrow-alt-right"></i></a>';
 	}
 
 // Default Pagination
@@ -61,13 +61,13 @@ if ( $post_pagination === 'numeric' ) {
 
 	if ( get_next_posts_link() ) {
 		echo '<div class="previous-page">';
-			next_posts_link( '<i class="fa fa-long-arrow-left"></i>&nbsp;'.esc_html__( 'Older Posts', 'bard' ) );
+			next_posts_link( '<i class="fas fa-long-arrow-alt-left"></i>&nbsp;'.esc_html__( 'Older Posts', 'bard' ) );
 		echo '</div>';
 	}
 	
 	if ( get_previous_posts_link() ) {
 		echo '<div class="next-page">';
-			previous_posts_link( esc_html__( 'Newer Posts', 'bard' ).'&nbsp;<i class="fa fa-long-arrow-right"></i>' );
+			previous_posts_link( esc_html__( 'Newer Posts', 'bard' ).'&nbsp;<i class="fas fa-long-arrow-alt-right"></i>' );
 		echo '</div>';
 	}
 

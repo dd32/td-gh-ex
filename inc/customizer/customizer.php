@@ -16,9 +16,6 @@ function bard_customize_register( $wp_customize ) {
 	// select
 	function bard_sanitize_select( $input, $setting ) {
 		
-		// check for slug
-		$input = sanitize_key( $input );
-		
 		// get all select options
 		$options = $setting->manager->get_control( $setting->id )->choices;
 		
@@ -273,8 +270,8 @@ function bard_customize_register( $wp_customize ) {
 			new WP_Customize_Cropped_Image_Control( $wp_customize, 'bard_options['. $section .'_'. $id .']', array(
 				'label'    		=> $name,
 				'section'  		=> 'bard_'. $section,
-				'flex_width'  	=> false,
-				'flex_height' 	=> false,
+				'flex_width'  	=> true,
+				'flex_height' 	=> true,
 				'width'       	=> $width,
 				'height'      	=> $height,
 				'priority' 		=> $priority
@@ -427,6 +424,15 @@ function bard_customize_register( $wp_customize ) {
 	// Sticky Sidebar
 	bard_checkbox_control( 'general', 'sidebar_sticky', esc_html__( 'Enable Sticky Sidebar', 'bard' ), 'refresh', 5 );
 
+	// Page Layout Combinations
+	$page_layouts = array(
+		'col2-rsidebar' => esc_html__( '2 Columns', 'bard' ),
+		'list-rsidebar' => esc_html__( 'List Style', 'bard' ),
+	);
+
+	// Blog Page Layout
+	bard_select_control( 'general', 'home_layout', esc_html__( 'Blog Page', 'bard' ), $page_layouts, 'refresh', 13 );
+	
 	$boxed_width = array(
 		'full' 		=> esc_html__( 'Full', 'bard' ),
 		'contained' => esc_html__( 'Contained', 'bard' ),
@@ -473,6 +479,21 @@ function bard_customize_register( $wp_customize ) {
 
 
 /*
+** Top Bar =====
+*/
+
+	// add Top Bar section
+	$wp_customize->add_section( 'bard_top_bar' , array(
+		'title'		 => esc_html__( 'Top Bar', 'bard' ),
+		'priority'	 => 5,
+		'capability' => 'edit_theme_options'
+	) );
+
+	// Top Bar label
+	bard_checkbox_control( 'top_bar', 'label', esc_html__( 'Top Bar', 'bard' ), 'refresh', 1 );
+
+
+/*
 ** Header Image =====
 */
 
@@ -489,6 +510,9 @@ function bard_customize_register( $wp_customize ) {
 	// Background Image Size
 	bard_radio_control( 'header_image', 'bg_image_size', esc_html__( 'Background Image Size', 'bard' ), $bg_image_size, 'refresh', 10 );
 
+	// Enable Parallax
+	bard_checkbox_control( 'header_image', 'parallax', esc_html__( 'Enable Parallax Scrolling', 'bard' ), 'refresh', 19 );
+
 
 /*
 ** Site Identity =====
@@ -498,21 +522,6 @@ function bard_customize_register( $wp_customize ) {
 	bard_number_absint_control( 'title_tagline', 'logo_width', esc_html__( 'Width', 'bard' ), array( 'step' => '10' ), 'postMessage', 8 );
 
 	$wp_customize->get_control( 'custom_logo' )->transport = 'selective_refresh';
-
-	// Pro Version
-	$wp_customize->add_setting( 'pro_version_logo', array(
-		'sanitize_callback' => 'bard_sanitize_custom_control'
-	) );
-	$wp_customize->add_control( new Bard_Customize_Pro_Version ( $wp_customize,
-			'pro_version_logo', array(
-				'section'	  => 'title_tagline',
-				'type'		  => 'pro_options',
-				'label' 	  => esc_html__( 'Logo Options', 'bard' ),
-				'description' => esc_html( 'http://wp-royal.com/themes/bard/customizer/free/typography-logo.html?ref=bard-free-site-identity-customizer' ),
-				'priority'	  => 50
-			)
-		)
-	);
 
 
 /*
@@ -537,11 +546,17 @@ function bard_customize_register( $wp_customize ) {
 	// Align
 	bard_select_control( 'main_nav', 'align', esc_html__( 'Align', 'bard' ), $main_nav_align, 'refresh', 7 );
 
-	// Show Social Icons
-	bard_checkbox_control( 'main_nav', 'show_socials', esc_html__( 'Show Social Icons', 'bard' ), 'refresh', 11 );
+	// Show Random Post Icons
+	bard_checkbox_control( 'main_nav', 'show_random_btn', esc_html__( 'Show Random Post Icon', 'bard' ), 'refresh', 11 );
 
 	// Show Search Icon
 	bard_checkbox_control( 'main_nav', 'show_search', esc_html__( 'Show Search Icon', 'bard' ), 'refresh', 13 );
+
+	// Show Sidebar Icon
+	bard_checkbox_control( 'main_nav', 'show_sidebar', esc_html__( 'Show Sidebar Icon', 'bard' ), 'refresh', 15 );
+
+	// Merge to Responsive Menu
+	bard_checkbox_control( 'main_nav', 'merge_menu', esc_html__( 'Merge Top Menu - Responsive', 'bard' ), 'refresh', 17 );
 
 
 /*
@@ -576,7 +591,7 @@ function bard_customize_register( $wp_customize ) {
 	bard_select_control( 'featured_slider', 'category', esc_html__( 'Select Category', 'bard' ), $slider_cats, 'refresh', 3 );
 
 	// Amount
-	bard_number_absint_control( 'featured_slider', 'amount', esc_html__( 'Number of Slides', 'bard' ), array( 'step' => '1', 'max' => '5' ), 'refresh', 10 );
+	bard_number_absint_control( 'featured_slider', 'amount', esc_html__( 'Number of Slides', 'bard' ), array( 'step' => '1', 'max' => '3' ), 'refresh', 10 );
 
 	$slider_culumns = array( 'step' => '1', 'min' => '1', 'max' => '4' );
 
@@ -761,61 +776,63 @@ function bard_customize_register( $wp_customize ) {
 
 	// Social Icons Array
 	$social_icons = array(
-		'facebook' 				=> '&#xf09a;',
-		'facebook-official'		=> '&#xf230;',
-		'facebook-square' 		=> '&#xf082;',
-		'twitter' 				=> '&#xf099;',
-		'twitter-square' 		=> '&#xf081;',
-		'google' 				=> '&#xf1a0;',
-		'google-plus' 			=> '&#xf0d5;',
-		'google-plus-official'	=> '&#xf2b3;',
-		'google-plus-square'	=> '&#xf0d4;',
-		'linkedin'				=> '&#xf0e1;',
-		'linkedin-square' 		=> '&#xf08c;',
-		'pinterest' 			=> '&#xf0d2;',
-		'pinterest-p' 			=> '&#xf231;',
-		'pinterest-square'		=> '&#xf0d3;',
-		'behance' 				=> '&#xf1b4;',
-		'behance-square'		=> '&#xf1b5;',
-		'tumblr' 				=> '&#xf173;',
-		'tumblr-square' 		=> '&#xf174;',
-		'reddit' 				=> '&#xf1a1;',
-		'reddit-alien' 			=> '&#xf281;',
-		'reddit-square' 		=> '&#xf1a2;',
-		'dribbble' 				=> '&#xf17d;',
-		'vk' 					=> '&#xf189;',
-		'skype' 				=> '&#xf17e;',
-		'film' 					=> '&#xf008;',
-		'youtube-play' 			=> '&#xf16a;',
-		'youtube' 				=> '&#xf167;',
-		'youtube-square' 		=> '&#xf166;',
-		'vimeo-square' 			=> '&#xf194;',
-		'soundcloud' 			=> '&#xf1be;',
-		'instagram' 			=> '&#xf16d;',
-		'flickr' 				=> '&#xf16e;',
-		'rss' 					=> '&#xf09e;',
-		'rss-square' 			=> '&#xf143;',
-		'heart' 				=> '&#xf004;',
-		'heart-o' 				=> '&#xf08a;',
-		'github' 				=> '&#xf09b;',
-		'github-alt' 			=> '&#xf113;',
-		'github-square' 		=> '&#xf092;',
-		'stack-overflow' 		=> '&#xf16c;',
-		'qq' 					=> '&#xf1d6;',
-		'weibo' 				=> '&#xf18a;',
-		'weixin' 				=> '&#xf1d7;',
-		'xing' 					=> '&#xf168;',
-		'xing-square' 			=> '&#xf169;',
-		'gamepad' 				=> '&#xf11b;',
-		'medium' 				=> '&#xf23a;',
-		'envelope' 				=> '&#xf0e0;',
-		'envelope-o' 			=> '&#xf003;',
-		'envelope-square ' 		=> '&#xf199;',
-		'etsy' 					=> '&#xf2d7;',
-		'snapchat' 				=> '&#xf2ab;',
-		'snapchat-ghost' 		=> '&#xf2ac;',
-		'snapchat-square'		=> '&#xf2ad;',
-		'meetup' 				=> '&#xf2e0;'
+		'facebook-f' 			=> 'Facebook 1',
+		'facebook'				=> 'Facebook 2',
+		'twitter' 				=> 'Twitter 1',
+		'twitter-square' 		=> 'Twitter 2',
+		'instagram' 			=> 'Instagram',
+		'google' 				=> 'Google',
+		'google-plus-g'			=> 'Google Plus',
+		'linkedin-in'			=> 'Linkedin 1',
+		'linkedin' 				=> 'Linkedin 2',
+		'pinterest' 			=> 'Pinterest 1',
+		'pinterest-p' 			=> 'Pinterest 2',
+		'pinterest-square'		=> 'Pinterest 3',
+		'behance' 				=> 'Behance 1',
+		'behance-square'		=> 'Behance 2',
+		'tumblr' 				=> 'Tumblr 1',
+		'tumblr-square' 		=> 'Tumblr 2',
+		'reddit' 				=> 'Reddit 1',
+		'reddit-alien' 			=> 'Reddit 2',
+		'reddit-square' 		=> 'Reddit 3',
+		'dribbble' 				=> 'Dribbble',
+		'vk' 					=> 'vKontakte',
+		'skype' 				=> 'Skype',
+		'film' 					=> 'Film',
+		'youtube' 				=> 'Youtube 1',
+		'youtube-square' 		=> 'Youtube 2',
+		'vimeo-v' 				=> 'Vimeo 1',
+		'vimeo' 				=> 'Vimeo 2',
+		'soundcloud' 			=> 'Soundcloud',
+		'flickr' 				=> 'Flickr',
+		'rss' 					=> 'RSS',
+		'heart' 				=> 'Heart',
+		'github' 				=> 'Github 1',
+		'github-alt' 			=> 'Github 2',
+		'github-square' 		=> 'Github 3',
+		'stack-overflow' 		=> 'Stack Overflow',
+		'qq' 					=> 'QQ',
+		'weibo' 				=> 'Weibo',
+		'weixin' 				=> 'Weixin',
+		'xing' 					=> 'Xing 1',
+		'xing-square' 			=> 'Xing 2',
+		'gamepad' 				=> 'Gamepad',
+		'medium' 				=> 'Medium',
+		'envelope' 				=> 'Envelope',
+		'etsy' 					=> 'Etsy',
+		'snapchat' 				=> 'Snapchat 1',
+		'snapchat-ghost' 		=> 'Snapchat 2',
+		'snapchat-square'		=> 'Snapchat 3',
+		'meetup' 				=> 'Meetup',
+		'book' 					=> 'Book',
+		'tablet-alt'			=> 'Tablet',
+		'amazon' 				=> 'Amazon',
+		'paypal' 				=> 'PayPal 1',
+		'cc-paypal' 			=> 'PayPal 2',
+		'credit-card' 			=> 'Credit Card',
+		'cc-visa' 				=> 'Visa Card',
+		'goodreads' 			=> 'Goodreads 1',
+		'goodreads-g' 			=> 'Goodreads 2',
 	);
 
 	// Social #1 Icon
@@ -824,23 +841,73 @@ function bard_customize_register( $wp_customize ) {
 	// Social #1 Icon
 	bard_url_control( 'social_media', 'url_1', esc_html__( 'URL', 'bard' ), 'refresh', 5 );
 
-	// Social #2 Icon
-	bard_select_control( 'social_media', 'icon_2', esc_html__( 'Select Icon', 'bard' ), $social_icons, 'refresh', 7 );
+	// Social #1 Title
+	bard_text_control( 'social_media', 'title_1', esc_html__( 'Title', 'bard' ), 'refresh', 7 );
 
 	// Social #2 Icon
-	bard_url_control( 'social_media', 'url_2', esc_html__( 'URL', 'bard' ), 'refresh', 9 );
+	bard_select_control( 'social_media', 'icon_2', esc_html__( 'Select Icon', 'bard' ), $social_icons, 'refresh', 9 );
+
+	// Social #2 Icon
+	bard_url_control( 'social_media', 'url_2', esc_html__( 'URL', 'bard' ), 'refresh', 11 );
+
+	// Social #2 Title
+	bard_text_control( 'social_media', 'title_2', esc_html__( 'Title', 'bard' ), 'refresh', 13 );
 
 	// Social #3 Icon
-	bard_select_control( 'social_media', 'icon_3', esc_html__( 'Select Icon', 'bard' ), $social_icons, 'refresh', 11 );
+	bard_select_control( 'social_media', 'icon_3', esc_html__( 'Select Icon', 'bard' ), $social_icons, 'refresh', 15 );
 
 	// Social #3 Icon
-	bard_url_control( 'social_media', 'url_3', esc_html__( 'URL', 'bard' ), 'refresh', 13 );
+	bard_url_control( 'social_media', 'url_3', esc_html__( 'URL', 'bard' ), 'refresh', 17 );
+
+	// Social #3 Title
+	bard_text_control( 'social_media', 'title_3', esc_html__( 'Title', 'bard' ), 'refresh', 19 );
 
 	// Social #4 Icon
-	bard_select_control( 'social_media', 'icon_4', esc_html__( 'Select Icon', 'bard' ), $social_icons, 'refresh', 15 );
+	bard_select_control( 'social_media', 'icon_4', esc_html__( 'Select Icon', 'bard' ), $social_icons, 'refresh', 21 );
 
 	// Social #4 Icon
-	bard_url_control( 'social_media', 'url_4', esc_html__( 'URL', 'bard' ), 'refresh', 17 );
+	bard_url_control( 'social_media', 'url_4', esc_html__( 'URL', 'bard' ), 'refresh', 23 );
+
+	// Social #4 Title
+	bard_text_control( 'social_media', 'title_4', esc_html__( 'Title', 'bard' ), 'refresh', 25 );
+
+
+/*
+** Typography =====
+*/
+	// add Typography section
+	$wp_customize->add_section( 'bard_typography' , array(
+		'title'		 => esc_html__( 'Typography', 'bard' ),
+		'priority'	 => 34,
+		'capability' => 'edit_theme_options'
+	) );
+
+	$font_family = array(
+		'Open+Sans' => esc_html__( 'Open Sans', 'bard' ),
+		'Rokkitt' 	=> esc_html__( 'Rokkitt', 'bard' ),
+		'Kalam' 	=> esc_html__( 'Kalam', 'bard' )
+	);
+
+	// Logo Font Family
+	bard_select_control( 'typography', 'logo_family', esc_html__( 'Font Family', 'bard' ), $font_family, 'refresh', 1 );
+
+	// Navigation Font Family
+	bard_select_control( 'typography', 'nav_family', esc_html__( 'Font Family', 'bard' ), $font_family, 'refresh', 5 );
+
+	// Pro Version
+	$wp_customize->add_setting( 'pro_version_typography', array(
+		'sanitize_callback' => 'bard_sanitize_custom_control'
+	) );
+	$wp_customize->add_control( new bard_Customize_Pro_Version ( $wp_customize,
+			'pro_version_typography', array(
+				'section'	  => 'bard_typography',
+				'type'		  => 'pro_options',
+				'label' 	  => esc_html__( 'Typography Options', 'bard' ),
+				'description' => esc_html( 'wp-royal.com/themes/bard/customizer/free/typography-logo.html?ref=bard-free-typography-customizer' ),
+				'priority'	  => 10
+			)
+		)
+	);
 
 
 /*
@@ -853,6 +920,9 @@ function bard_customize_register( $wp_customize ) {
 		'priority'	 => 35,
 		'capability' => 'edit_theme_options'
 	) );
+
+	// Show Socials
+	bard_checkbox_control( 'page_footer', 'show_socials', esc_html__( 'Show Social Icons', 'bard' ), 'refresh', 1 );
 
 	$copyright_description = 'Enter <strong>$year</strong> to update the year automatically and <strong>$copy</strong> for the copyright symbol.<br><br>Example: $year Bard Theme $copy.';
 
@@ -906,7 +976,6 @@ add_action( 'customize_preview_init', 'bard_customize_preview_js' );
 ** Load dynamic logic for the customizer controls area.
 */
 function bard_panels_js() {
-	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/font-awesome.css' ) );
 	wp_enqueue_style( 'bard-customizer-ui-css', get_theme_file_uri( '/inc/customizer/css/customizer-ui.css' ) );
 	wp_enqueue_script( 'bard-customize-controls', get_theme_file_uri( '/inc/customizer/js/customize-controls.js' ), array(), '1.0', true );
 

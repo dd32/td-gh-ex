@@ -47,6 +47,7 @@ function bard_setup() {
 
 	// This theme uses wp_nav_menu() in two locations
 	register_nav_menus( array(
+		'top' 	=> __( 'Top Menu', 'bard' ),
 		'main' 	=> __( 'Main Menu', 'bard' ),
 	) );
 
@@ -102,9 +103,6 @@ function bard_scripts() {
 	// Theme Stylesheet
 	wp_enqueue_style( 'bard-style', get_stylesheet_uri() );
 
-	// FontAwesome Icons
-	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/font-awesome.css' ) );
-
 	// Fontello Icons
 	wp_enqueue_style( 'fontello', get_theme_file_uri( '/assets/css/fontello.css' ) );
 
@@ -134,12 +132,12 @@ add_action( 'wp_enqueue_scripts', 'bard_scripts' );
 
 
 /*
-** Enqueue Google Fonts
+** Google Fonts
 */
-function bard_montserrat_font_url() {
+function bard_playfair_font_url() {
     $font_url = '';
     if ( 'off' !== _x( 'on', 'Google font: on or off', 'bard' ) ) {
-        $font_url = add_query_arg( 'family', urlencode( 'Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i' ), "//fonts.googleapis.com/css" );
+        $font_url = add_query_arg( 'family', urlencode( 'Playfair Display:400,700' ), "//fonts.googleapis.com/css" );
     }
     return $font_url;
 }
@@ -152,9 +150,36 @@ function bard_opensans_font_url() {
     return $font_url;
 }
 
+function bard_kalam_font_url() {
+    $font_url = '';
+    if ( 'off' !== _x( 'on', 'Google font: on or off', 'bard' ) ) {
+        $font_url = add_query_arg( 'family', urlencode( 'Kalam' ), "//fonts.googleapis.com/css" );
+    }
+    return $font_url;
+}
+
+function bard_rokkitt_font_url() {
+    $font_url = '';
+    if ( 'off' !== _x( 'on', 'Google font: on or off', 'bard' ) ) {
+        $font_url = add_query_arg( 'family', urlencode( 'Rokkitt' ), "//fonts.googleapis.com/css" );
+    }
+    return $font_url;
+}
+
+// Enqueue Fonts
 function bard_gfonts_scripts() {
-    wp_enqueue_style( 'bard-montserrat-font', bard_montserrat_font_url(), array(), '1.0.0' );
+    wp_enqueue_style( 'bard-playfair-font', bard_playfair_font_url(), array(), '1.0.0' );
     wp_enqueue_style( 'bard-opensans-font', bard_opensans_font_url(), array(), '1.0.0' );
+
+    // Load Kalam if selected
+    if ( bard_options( 'typography_logo_family' ) == 'Kalam' || bard_options( 'typography_nav_family' ) == 'Kalam' ) {
+    	wp_enqueue_style( 'bard-kalam-font', bard_kalam_font_url(), array(), '1.0.0' );
+    }
+
+    // Load Rokkitt if selected
+    if ( bard_options( 'typography_logo_family' ) == 'Rokkitt' || bard_options( 'typography_nav_family' ) == 'Rokkitt' ) {
+    	wp_enqueue_style( 'bard-rokkitt-font', bard_rokkitt_font_url(), array(), '1.0.0' );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'bard_gfonts_scripts' );
 
@@ -185,6 +210,16 @@ function bard_widgets_init() {
 	) );
 
 	register_sidebar( array(
+		'name'          => __( 'Sidebar Alt', 'bard' ),
+		'id'            => 'sidebar-alt',
+		'description'   => __( 'Add widgets here to appear in your alternative/fixed sidebar.', 'bard' ),
+		'before_widget' => '<div id="%1$s" class="bard-widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="widget-title"><h2>',
+		'after_title'   => '</h2></div>',
+	) );
+
+	register_sidebar( array(
 		'name'          => __( 'Footer Widgets', 'bard' ),
 		'id'            => 'footer-widgets',
 		'description'   => __( 'Add widgets here to appear in your footer.', 'bard' ),
@@ -194,6 +229,15 @@ function bard_widgets_init() {
 		'after_title'   => '</h2></div>',
 	) );
 
+	register_sidebar( array(
+		'name'          => __( 'Instagram Widget', 'bard' ),
+		'id'            => 'instagram-widget',
+		'description'   => __( 'Add widget here to appear in your Footer Instagram Area.', 'bard' ),
+		'before_widget' => '<div id="%1$s" class="bard-instagram-widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<div class="instagram-title"><h2>',
+		'after_title'   => '</h2></div>',
+	) );
 }
 add_action( 'widgets_init', 'bard_widgets_init' );
 
@@ -203,6 +247,7 @@ add_action( 'widgets_init', 'bard_widgets_init' );
 add_image_size( 'bard-slider-full-thumbnail', 1080, 540, true );
 add_image_size( 'bard-full-thumbnail', 1140, 0, true );
 add_image_size( 'bard-grid-thumbnail', 500, 330, true );
+add_image_size( 'bard-list-thumbnail', 300, 300, true );
 add_image_size( 'bard-single-navigation', 75, 75, true );
 
 
@@ -211,20 +256,46 @@ add_image_size( 'bard-single-navigation', 75, 75, true );
 */
 
 function bard_main_menu_fallback() {
-	if ( bard_is_preview() ) {
+	if ( current_user_can( 'edit_theme_options' ) ) {
 		echo '<ul id="main-menu">';
-			bard_preview_navigation();
+			echo '<li>';
+				echo '<a href="'. esc_url( home_url('/') .'wp-admin/nav-menus.php' ) .'">'. esc_html__( 'Set up Menu', 'bard' ) .'</a>';
+			echo '</li>';
 		echo '</ul>';
-	} else {
-		if ( current_user_can( 'edit_theme_options' ) ) {
-			echo '<ul id="main-menu">';
-				echo '<li>';
-					echo '<a href="'. esc_url( home_url('/') .'wp-admin/nav-menus.php' ) .'">'. esc_html__( 'Set up Menu', 'bard' ) .'</a>';
-				echo '</li>';
-			echo '</ul>';
-		}
 	}
 }
+
+
+/*
+**  Random Post Button
+*/
+
+if ( ! function_exists( 'bard_random_post_button' ) ) {
+	function bard_random_post_button() {
+
+		$args = array(
+			'post_type'			=> 'post',
+			'orderby' 			=> 'rand',
+			'posts_per_page'	=> 1
+		);
+		$random_post = new WP_Query( $args );
+
+		while ( $random_post->have_posts() ) : $random_post->the_post(); ?>
+
+		<a class="random-post-btn" href="<?php the_permalink(); ?>">
+			<span class="btn-tooltip"><?php esc_html_e( 'Random Article', 'bard' ); ?></span>
+			<i class="fas fa-retweet"></i>
+		</a>
+
+		<?php
+
+		endwhile;
+
+		wp_reset_postdata();
+
+	}
+}
+
 
 /*
 **  Custom Excerpt Length
@@ -296,37 +367,55 @@ function bard_hex2rgba( $color, $opacity = 1 ) {
 // Social Media
 if ( ! function_exists( 'bard_social_media' ) ) {
 
-	function bard_social_media( $social_class='' ) {
+	function bard_social_media( $social_class, $title  ) {
+	
+	$social_window = ( bard_options( 'social_media_window' ) === true )?'_blank':'_self';
 
 	?>
 
 		<div class="<?php echo esc_attr( $social_class ); ?>">
 
-			<?php
-			$social_window = ( bard_options( 'social_media_window' ) === true )?'_blank':'_self';
-			if ( bard_options( 'social_media_url_1' ) !== '' ) :
-			?>
-
-			<a href="<?php echo esc_url( bard_options( 'social_media_url_1' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
-				<i class="fa fa-<?php echo esc_attr(bard_options( 'social_media_icon_1' )); ?>"></i>
-			</a>
+			<?php if ( bard_options( 'social_media_url_1' ) !== '' ) : ?>
+				<a href="<?php echo esc_url( bard_options( 'social_media_url_1' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
+					<span class="<?php echo esc_attr( $social_class ); ?>-icon">
+						<i class="fab fa-<?php echo esc_attr(bard_options( 'social_media_icon_1' )); ?>"></i>
+					</span>
+					<?php if ( $title ) : ?>
+					<span><?php echo esc_attr(bard_options( 'social_media_title_1' )); ?></span>
+					<?php endif ;?>
+				</a>
 			<?php endif; ?>
 
 			<?php if ( bard_options( 'social_media_url_2' ) !== '' ) : ?>
 				<a href="<?php echo esc_url( bard_options( 'social_media_url_2' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
-					<i class="fa fa-<?php echo esc_attr(bard_options( 'social_media_icon_2' )); ?>"></i>
+					<span class="<?php echo esc_attr( $social_class ); ?>-icon">
+						<i class="fab fa-<?php echo esc_attr(bard_options( 'social_media_icon_2' )); ?>"></i>
+					</span>
+					<?php if ( $title ) : ?>
+					<span><?php echo esc_attr(bard_options( 'social_media_title_2' )); ?></span>
+					<?php endif ;?>
 				</a>
 			<?php endif; ?>
 
 			<?php if ( bard_options( 'social_media_url_3' ) !== '' ) : ?>
 				<a href="<?php echo esc_url( bard_options( 'social_media_url_3' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
-					<i class="fa fa-<?php echo esc_attr(bard_options( 'social_media_icon_3' )); ?>"></i>
+					<span class="<?php echo esc_attr( $social_class ); ?>-icon">
+						<i class="fab fa-<?php echo esc_attr(bard_options( 'social_media_icon_3' )); ?>"></i>
+					</span>
+					<?php if ( $title ) : ?>
+					<span><?php echo esc_attr(bard_options( 'social_media_title_3' )); ?></span>
+					<?php endif ;?>
 				</a>
 			<?php endif; ?>
 
 			<?php if ( bard_options( 'social_media_url_4' ) !== '' ) : ?>
 				<a href="<?php echo esc_url( bard_options( 'social_media_url_4' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
-					<i class="fa fa-<?php echo esc_attr(bard_options( 'social_media_icon_4' )); ?>"></i>
+					<span class="<?php echo esc_attr( $social_class ); ?>-icon">
+						<i class="fab fa-<?php echo esc_attr(bard_options( 'social_media_icon_4' )); ?>"></i>
+					</span>
+					<?php if ( $title ) : ?>
+					<span><?php echo esc_attr(bard_options( 'social_media_title_4' )); ?></span>
+					<?php endif ;?>
 				</a>
 			<?php endif; ?>
 
@@ -370,10 +459,6 @@ if ( ! function_exists( 'bard_related_posts' ) ) {
 			    )
 			);
 
-			// if ( bard_is_preview() ) {
-			// 	array_pop($args);
-			// }
-
 			$similar_posts = new WP_Query( $args );	
 
 			if ( $similar_posts->have_posts() ) {
@@ -415,9 +500,11 @@ function bard_custom_search_form( $html ) {
 
 	$html  = '<form role="search" method="get" id="searchform" class="clear-fix" action="'. esc_url( home_url( '/' ) ) .'">';
 	$html .= '<input type="search" name="s" id="s" placeholder="'. esc_attr__( 'Search...', 'bard' ) .'" data-placeholder="'. esc_attr__( 'Type & hit Enter...', 'bard' ) .'" value="'. get_search_query() .'" />';
-	$html .= '<i class="fa fa-search"></i>';
+	$html .= '<span class="svg-fa-wrap"><i class="fa fa-search"></i></span>';
 	$html .= '<input type="submit" id="searchsubmit" value="st" />';
 	$html .= '</form>';
+
+	return $html;
 
 	return $html;
 }
@@ -500,6 +587,34 @@ add_filter( 'comment_form_fields', 'bard_move_comments_field' );
 
 
 /*
+** Full Post Layout Post Per Page
+*/
+
+// Check for Full Post
+function bard_full_width_post() {
+    if ( bard_options( 'blog_page_full_width_post' ) === true && ! is_paged() && strpos( bard_options( 'general_home_layout' ), 'col' ) === 0 ) {
+     return true;
+    } else {
+    	false;
+    }
+
+}
+
+// Set Post Per Page
+function bard_home_posts_per_page( $query ) {
+
+    if ( $query->is_home() && $query->is_main_query() && bard_full_width_post() ) {
+    	$posts_on_first = get_option( 'posts_per_page' );
+		$posts_on_first++;
+		$query->set( 'posts_per_page', $posts_on_first );
+    }
+
+}
+
+add_action( 'pre_get_posts',  'bard_home_posts_per_page'  );
+
+
+/*
 ** WooCommerce
 */
 
@@ -576,7 +691,6 @@ add_action( 'woocommerce_pagination', 'woocommerce_pagination', 10 );
 require get_parent_theme_file_path( '/inc/customizer/customizer.php' );
 require get_parent_theme_file_path( '/inc/customizer/customizer-defaults.php' );
 require get_parent_theme_file_path( '/inc/customizer/dynamic-css.php' );
-require get_parent_theme_file_path( '/inc/preview/demo-preview.php' );
 
 // About Bard
 require get_parent_theme_file_path( '/inc/about/about-bard.php' );

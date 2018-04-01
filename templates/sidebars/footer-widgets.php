@@ -1,6 +1,6 @@
 <?php
 
-if ( ! is_active_sidebar( 'footer-widgets' ) && ! bard_is_preview() ) {
+if ( ! is_active_sidebar( 'footer-widgets' ) ) {
 	return;
 }
 
@@ -8,15 +8,7 @@ if ( ! is_active_sidebar( 'footer-widgets' ) && ! bard_is_preview() ) {
 
 <div class="footer-widgets clear-fix">
 	<div class="page-footer-inner <?php echo bard_options( 'general_footer_width' ) === 'contained' ? 'boxed-wrapper': ''; ?>">
-
-		<?php
-
-		if ( bard_is_preview() ) {
-			bard_preview_footer_sidebar();
-		} else {
-			dynamic_sidebar( 'footer-widgets' );
-		}
-
-		?>
+		<?php dynamic_sidebar( 'footer-widgets' ); ?>
+		<div class="clear"></div>
 	</div>
 </div>

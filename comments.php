@@ -24,11 +24,11 @@ if ( have_comments() ) : ?>
 
 		<div>				
 			<div class="default-previous">
-			<?php  previous_comments_link( '<i class="fa fa-long-arrow-left" ></i>&nbsp;'. esc_html__( 'Older Comments', 'bard' )  ); ?>
+			<?php  previous_comments_link( '<i class="fas fa-long-arrow-alt-left" ></i>&nbsp;'. esc_html__( 'Older Comments', 'bard' )  ); ?>
 			</div>
 
 			<div class="default-next">
-				<?php  next_comments_link( esc_html__( 'Newer Comments', 'bard' ) . '&nbsp;<i class="fa fa-long-arrow-right" ></i>'  ); ?>
+				<?php  next_comments_link( esc_html__( 'Newer Comments', 'bard' ) . '&nbsp;<i class="fas fa-long-arrow-alt-right" ></i>'  ); ?>
 			</div>
 			
 			<div class="clear"></div>

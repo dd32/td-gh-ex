@@ -1,18 +1,13 @@
 <div id="featured-links" class="<?php echo esc_attr(bard_options( 'general_links_width' )) === 'boxed' ? ' boxed-wrapper': ''; ?> clear-fix">
 
 	<!-- Link 1 -->
-	<?php if ( bard_options( 'featured_links_image_1' ) !== '' ||  bard_is_preview() ): ?>
+	<?php if ( bard_options( 'featured_links_image_1' ) !== '' ): ?>
 	<div class="featured-link">
 
 		<?php
 
-		if ( bard_is_preview() ) {
-			$image_src_1 = get_template_directory_uri() . '/assets/images/image_1.jpg';
-			$link_title_1 = 'Promo Box 1';
-		} else {
-			$image_src_1 = wp_get_attachment_url( bard_options( 'featured_links_image_1' ) );
-			$link_title_1 = bard_options( 'featured_links_title_1' );
-		}
+		$image_src_1 = wp_get_attachment_url( bard_options( 'featured_links_image_1' ) );
+		$link_title_1 = bard_options( 'featured_links_title_1' );
 
 		?>
 
@@ -28,18 +23,13 @@
 	<?php endif; ?>
 
 	<!-- Link 2 -->
-	<?php if ( bard_options( 'featured_links_image_2' ) !== '' ||  bard_is_preview() ): ?>
+	<?php if ( bard_options( 'featured_links_image_2' ) !== '' ): ?>
 	<div class="featured-link">
 
 		<?php
 
-		if ( bard_is_preview() ) {
-			$image_src_2 = get_template_directory_uri() . '/assets/images/image_2.jpg';
-			$link_title_2 = 'Promo Box 2';
-		} else {
-			$image_src_2 = wp_get_attachment_url( bard_options( 'featured_links_image_2' ) );
-			$link_title_2 = bard_options( 'featured_links_title_2' );
-		}
+		$image_src_2 = wp_get_attachment_url( bard_options( 'featured_links_image_2' ) );
+		$link_title_2 = bard_options( 'featured_links_title_2' );
 
 		?>
 
@@ -55,18 +45,13 @@
 	<?php endif; ?>
 
 	<!-- Link 3 -->
-	<?php if ( bard_options( 'featured_links_image_3' ) !== '' ||  bard_is_preview() ): ?>
+	<?php if ( bard_options( 'featured_links_image_3' ) !== '' ): ?>
 	<div class="featured-link">
 
 		<?php
 
-		if ( bard_is_preview() ) {
-			$image_src_3 = get_template_directory_uri() . '/assets/images/image_4.jpg';
-			$link_title_3 = 'Promo Box 3';
-		} else {
-			$image_src_3 = wp_get_attachment_url( bard_options( 'featured_links_image_3' ) );
-			$link_title_3 = bard_options( 'featured_links_title_3' );
-		}
+		$image_src_3 = wp_get_attachment_url( bard_options( 'featured_links_image_3' ) );
+		$link_title_3 = bard_options( 'featured_links_title_3' );
 
 		?>
 

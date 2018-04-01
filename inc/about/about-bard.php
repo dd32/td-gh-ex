@@ -90,8 +90,14 @@ function bard_about_page_output() {
 				// Recent Posts Widget
 				bard_recommended_plugin( 'recent-posts-widget-with-thumbnails', 'recent-posts-widget-with-thumbnails', esc_html__( 'Recent Posts Widget With Thumbnails', 'bard' ), esc_html__( 'Small and fast plugin to display in the sidebar a list of linked titles and thumbnails of the most recent postings.', 'bard' ) );
 
+				// Instagram Slider
+				bard_recommended_plugin( 'instagram-slider-widget', 'instaram_slider', esc_html__( 'Instagram Slider Widget', 'bard' ), esc_html__( 'Instagram Widget is a responsive slider widget that shows up to 18 images latest images from a public instagram user hashtag.', 'bard' ) );
+
 				// Instagram Widget
 				bard_recommended_plugin( 'wp-instagram-widget', 'wp-instagram-widget', esc_html__( 'WP Instagram Widget', 'bard' ), esc_html__( 'A WordPress widget for showing your latest Instagram photos.', 'bard' ) );
+
+				// Ajax Thumbnail Rebuild
+				bard_recommended_plugin( 'ajax-thumbnail-rebuild', 'ajax-thumbnail-rebuild', esc_html__( 'Ajax Thumbnail Rebuild', 'bard' ), esc_html__( 'AJAX Thumbnail Rebuild allows you to rebuild all thumbnails at once without script timeouts on your server.', 'bard' ) );
 
 				// Facebook Widget
 				bard_recommended_plugin( 'facebook-pagelike-widget', 'facebook_widget', esc_html__( 'Facebook Widget', 'bard' ), esc_html__( 'This widget adds a Simple Facebook Page Like Widget into your wordpress website sidebar within few minutes.', 'bard' ) );
@@ -167,9 +173,6 @@ function bard_about_page_output() {
 						<th>
 							<a href="<?php echo esc_url('https://wp-royal.com/themes/item-bard-pro/?ref=bard-free-backend-about-section-getpro-btn'); ?>" target="_blank" class="button button-primary button-hero">
 								<?php esc_html_e( 'Get Bard Pro', 'bard' ); ?>
-							</a>
-							<a href="<?php echo esc_url('https://wp-royal.com/bard-trial/?ref=bard-free-backend-about-section-trypro-btn'); ?>" target="_blank" class="button button-primary button-hero">
-								<?php esc_html_e( 'Try Bard Pro Trial', 'bard' ); ?>
 							</a>
 						</th>
 						<th><?php esc_html_e( 'Bard', 'bard' ); ?></th>
@@ -441,9 +444,6 @@ function bard_about_page_output() {
 								<?php esc_html_e( 'Get Bard Pro', 'bard' ); ?>
 							</a>
 							<br><br>
-							<a href="<?php echo esc_url('https://wp-royal.com/bard-trial/?ref=bard-free-backend-about-section-trypro-btn'); ?>" target="_blank" class="button button-primary button-hero">
-								<?php esc_html_e( 'Try Bard Pro Trial', 'bard' ); ?>
-							</a>
 						</td>
 					</tr>
 				</tbody>
@@ -475,7 +475,12 @@ function bard_recommended_plugin( $slug, $filename, $name, $description) {
 		<div class="name column-name">
 			<h3>
 				<?php echo esc_html( $name ); ?>
-				<img src="<?php echo esc_url('https://ps.w.org/'. $slug .'/assets/icon-'. $size .'.png') ?>" class="plugin-icon" alt="">
+
+				<?php if ( $slug === 'ajax-thumbnail-rebuild' ) : ?>
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/ajax-thumbnail-rebuild.jpeg'; ?>" class="plugin-icon" alt="">
+				<?php else: ?>
+					<img src="<?php echo esc_url('https://ps.w.org/'. $slug .'/assets/icon-'. $size .'.png') ?>" class="plugin-icon" alt="">
+				<?php endif; ?>
 			</h3>
 		</div>
 		<div class="action-links">

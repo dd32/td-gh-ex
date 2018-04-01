@@ -2,10 +2,19 @@ jQuery(document).ready(function( $ ) {
 	"use strict";
 
 /*
+** Header Image =====
+*/
+	// Parallax Effect
+	if ( $('.entry-header').attr('data-parallax') == '1' ) {
+		$('.entry-header').paroller({ factor: '0.5' });
+	}
+
+
+/*
 ** Main Navigation =====
 */
 	// Navigation Hover 
-	$('#main-menu').find('li').hover(function () {
+	$('#top-menu, #main-menu').find('li').hover(function () {
 	    $(this).children('.sub-menu').stop().fadeToggle( 200 );
 	}, function() {
 		$(this).children('.sub-menu').stop().fadeToggle( 200 );
@@ -18,12 +27,12 @@ jQuery(document).ready(function( $ ) {
 
 	// Responsive Menu 
 	$( '#mobile-menu .menu-item-has-children' ).prepend( '<div class="sub-menu-btn"></div>' );
-	$( '#mobile-menu .sub-menu' ).before( '<span class="sub-menu-btn-icon"><i class="fa fa-angle-down"></i></span>' );
+	$( '#mobile-menu .sub-menu' ).before( '<span class="sub-menu-btn-icon"><i class="fas fa-angle-down"></i></span>' );
 
 	// Responsive sub-menu btn
-	$('.sub-menu-btn').click(function(){
+	$('.sub-menu-btn').on( 'click', function(){
 		$(this).closest('li').children('.sub-menu').slideToggle();
-		$(this).closest('li').children('.sub-menu-btn-icon').children('i').toggleClass( 'fa-rotate-270' );
+		$(this).closest('li').children('.sub-menu-btn-icon').children('svg').toggleClass( 'fa-rotate-270' );
 	});
 
 	$( window ).on( 'resize', function() {
@@ -38,15 +47,15 @@ jQuery(document).ready(function( $ ) {
 	
 	mainNavSearch.find('#s').attr( 'placeholder', mainNavSearch.find('#s').data('placeholder') );
 
-	$('.main-nav-search').click(function() {
+	$('.main-nav-search').on( 'click', function() {
 		if ( mainNavSearch.css('display') === 'none' ) {
 			mainNavSearch.fadeIn();
-			$('.main-nav-search i:last-of-type').show();
-			$('.main-nav-search i:first-of-type').hide();
+			$('.main-nav-search .svg-inline--fa:last-of-type').show();
+			$('.main-nav-search .svg-inline--fa:first-of-type').hide();
 		} else {
 			mainNavSearch.fadeOut();
-			$('.main-nav-search i:last-of-type').hide();
-			$('.main-nav-search i:first-of-type').show();
+			$('.main-nav-search .svg-inline--fa:last-of-type').hide();
+			$('.main-nav-search .svg-inline--fa:first-of-type').show();
 		}
 	});
 
@@ -60,8 +69,8 @@ jQuery(document).ready(function( $ ) {
 	}
 
 	$('#featured-slider').slick({
-		prevArrow: '<span class="prev-arrow"><i class="fa fa-angle-left"></i></span>',
-		nextArrow: '<span class="next-arrow"><i class="fa fa-angle-right"></i></span>',
+		prevArrow: '<span class="prev-arrow"><i class="fas fa-angle-left"></i></span>',
+		nextArrow: '<span class="next-arrow"><i class="fas fa-angle-right"></i></span>',
 		dotsClass: 'slider-dots',
 		adaptiveHeight: true,
 		rtl: RTL,
@@ -77,7 +86,7 @@ jQuery(document).ready(function( $ ) {
 */
 
 	// Sticky Sidebar
-	function stickySidebar() {
+	function bardstickySidebar() {
 		if ( $( '.main-content' ).data('sidebar-sticky') === 1 ) {		
 			var SidebarOffset = 0;
 
@@ -91,20 +100,34 @@ jQuery(document).ready(function( $ ) {
 				spacer: '.sidebar-left-wrap,.sidebar-right-wrap'
 			});
 
-			if ( $('#page-wrap').width() <= 1050 ) {
+			if ( $('.mobile-menu-btn').css('display') !== 'none' ) {
 				$('.sidebar-left,.sidebar-right').trigger("sticky_kit:detach");
 			}
 		}
 	}
 
-	// on Window Resize
-	$( window ).on( 'resize', function() {
-		stickySidebar();
+	// Sidebar Alt Scroll
+	$('.sidebar-alt').perfectScrollbar({
+		suppressScrollX : true,
+		includePadding : true,
+		wheelSpeed: 3.5
 	});
 
-	// on Load
-	$( window ).on( 'load', function() {
-		stickySidebar();
+	// Sidebar Alt
+	$('.main-nav-sidebar').on('click', function () {
+		$('.sidebar-alt').css( 'left','0' );
+		$('.sidebar-alt-close').fadeIn( 500 );
+	});
+
+	// Sidebar Alt Close
+	function bardAltSidebarClose() {
+		var leftPosition = parseInt( $( ".sidebar-alt" ).outerWidth(), 10 ) + 30;
+		$('.sidebar-alt').css( 'left','-'+ leftPosition +'px' );
+		$('.sidebar-alt-close').fadeOut( 500 );
+	}
+	
+	$('.sidebar-alt-close, .sidebar-alt-close-btn').on('click', function () {
+		bardAltSidebarClose();
 	});
 
 
@@ -142,10 +165,36 @@ jQuery(document).ready(function( $ ) {
 
 
 /*
+** Window Resize =====
+*/
+
+	$( window ).on( 'resize', function() {
+
+		if ( $('.mobile-menu-btn').css('display') === 'none' ) {
+			$( '.mobile-menu-container' ).css({ 'display' : 'none' });
+		}
+		
+		bardstickySidebar();
+
+		bardAltSidebarClose();
+	});
+
+
+/*
+** Window Load =====
+*/
+
+	$( window ).on( 'load', function() {
+		bardstickySidebar();
+	});
+
+
+/*
 ** Run Functions =====
 */
 	// FitVids
 	$('.slider-item, .post-media').fitVids();
+
 
 
 }); // end dom ready

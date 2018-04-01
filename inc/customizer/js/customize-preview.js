@@ -53,11 +53,12 @@
 		var css = '\
 		.post-categories,\
 		#main-nav a:hover,\
-		#main-nav i:hover,\
+		#main-nav .svg-inline--fa:hover,\
 		#main-nav li.current-menu-item > a,\
 		#main-nav li.current-menu-ancestor > a,\
 		#main-nav .sub-menu li.current-menu-item > a,\
 		#main-nav .sub-menu li.current-menu-ancestor> a,\
+		#page-content .bard-widget.widget_text a,\
 		#page-footer a:hover,\
 		.woocommerce .star-rating::before,\
 		.woocommerce .star-rating span::before,\
