@@ -1,0 +1,84 @@
+=== Best Food ===
+Contributors: CooThemes
+Tags: Blog, Custom-Background, Custom-Logo, Custom-Menu, Custom-Colors, Custom-Header, Flexible-Header, Featured-Images, Footer-Widgets, Two-Columns, Right-Sidebar, Left-Sidebar, Theme-Options, E-Commerce, Food-and-Drink, Full-Width-Template, Portfolio, Translation-Ready
+
+Requires at least: 4.0
+Tested up to: 4.9.4
+Stable tag: 1.0.0
+
+Author URI:  https://www.coothemes.com/
+Theme URI:  https://www.coothemes.com/theme-best-food/
+License: GNU General Public License v2 or later
+License URI: License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+
+=== Description ===
+Best Food is a clean and beautiful, polished and feature-rich, robust and easy to use, fully responsive premium WordPress theme that is ideal for restaurant, caf¨¦, bakery, cuisine, fast food, pizzerias, drinks and food related business. The theme is loaded with many pre-built home page sections to help you create an amazing modern one-page website without having to write a single line of code. The Best Food free theme displays full screen image banner, About Us section, Service Section, Recent Posts Section and Contact Us form as well as Footer widgets. You have full control including font, font size, color, button, opacity of every open section. The theme is optimized for fast loading and extremely responsive with various devices. Demo here: https://www.coothemes.com/demos/best-food/
+
+=== License ===
+Best Food WordPress Theme  is a child theme of Theta WordPress Theme, Copyright 2018 Coothemes.com
+Best Food is distributed under the terms of the GNU General Public License v2
+
+=== Resources ===
+     animate.css, Copyright 2016 Daniel Eden
+     License: MIT license
+     Source:  http://opensource.org/licenses/MIT
+
+
+     jquery.waypoints.js, Copyright 2011-2015 Caleb Troughton
+     License: MIT license
+     Source:  https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
+
+
+     parallax.js, copyright 2016 PixelCog, Inc.
+     License: MIT license
+     Source:  https://github.com/pixelcog/parallax.js/blob/master/LICENSE
+
+
+
+    advantage.jpg, Copyright Pexels.com
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://www.pexels.com/photo/food-on-white-background-256318/
+
+    service.jpg, Copyright Pexels.com
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://www.pexels.com/photo/beef-cuisine-delicious-dinner-299347/
+
+
+    testimonial.jpg, Copyright Pexels.com
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://www.pexels.com/photo/baked-bread-on-table-top-900104/
+
+
+    contact.jpg, Copyright Pexels.com
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://unsplash.com/photos/dDAM6LlicQQ
+
+
+    fact.jpg, Copyright Pexels.com
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://www.pexels.com/photo/assorted-foods-892649/
+
+
+    default.jpg, Copyright Pexels.com
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://www.pexels.com/photo/1-teacup-with-saucer-and-magazine-on-white-surface-818650/
+    
+
+
+
+=== Frequently Asked Questions ===
+
+Does this theme have a support forum? 
+
+Theta provides support at https://www.coothemes.com/forum/best-food-theme/.
+
+
+=== Changelog ===
+
+version 1.0.0 20180331
+
+- initial release
+--------------------------------------------------------------------------------------------
+
+	For any help you can contact us at support[at]coothemes.com
