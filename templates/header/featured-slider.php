@@ -5,7 +5,7 @@ $slider_pagination 	= bard_options( 'featured_slider_pagination' );
 
 $slider_data = '{';
 
-	$slider_data .= '"slidesToShow":1, "fade":true';
+	$slider_data .= '"slidesToShow":1, "slidesToScroll":1';
 
 	if ( ! $slider_navigation ) {
 		$slider_data .= ', "arrows":false';
@@ -85,7 +85,7 @@ $slider_data .= '}';
 				</div>
 			</div>
 		</div>
-
+		
 	</div>
 
 	<?php
