@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION', '1.7.2' );
+define( 'SITEORIGIN_THEME_VERSION', '1.7.3' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', '.min' );
 define( 'SITEORIGIN_THEME_CSS_PREFIX', '.min' );
 
@@ -525,7 +525,7 @@ if( !function_exists('vantage_get_site_width') ) :
 /**
  * Get the site width.
  *
- * @return int The side width in pixels.
+ * @return int The site width in pixels.
  */
 function vantage_get_site_width(){
 	return apply_filters('vantage_site_width', !empty($GLOBALS['vantage_site_width']) ? $GLOBALS['vantage_site_width'] : 1080);

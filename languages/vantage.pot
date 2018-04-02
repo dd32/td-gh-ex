@@ -1772,11 +1772,11 @@ msgstr ""
 msgid "Page Slider"
 msgstr ""
 
-#: inc/sliders.php:124
+#: inc/sliders.php:123
 msgid "Display Page Slider"
 msgstr ""
 
-#: inc/sliders.php:134
+#: inc/sliders.php:133
 msgid "Stretch Page Meta Slider"
 msgstr ""
 
@@ -1784,11 +1784,11 @@ msgstr ""
 msgid "Demo Slider"
 msgstr ""
 
-#: inc/sliders/sliders.php:21
+#: inc/sliders/sliders.php:19
 msgid "MetaSlider: "
 msgstr ""
 
-#: inc/sliders/sliders.php:30
+#: inc/sliders/sliders.php:28
 msgid "Smart Slider: "
 msgstr ""
 
