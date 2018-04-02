@@ -5,7 +5,7 @@ Author: ElectraThemes
 Author URI: http://electathemes.com/
 Requires at least: 4.0
 Tested up to: 4.9.4
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, right-sidebar,left-sidebar,full-width-template, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, featured-image-header, theme-options, threaded-comments, translation-ready, blog
@@ -67,6 +67,9 @@ Responsive design(Bootstrap), Customization Options, Custom Menu, supports socia
 * Sanitize_callback set up in customizer file.
 * Misc Changes in other files.	
 
+= 1.1.1 (2nd April 2018) 
+* Pro Featured Link Added.
+
 
 ---------------------------------------------------------
 License and Copyrights for Resources used in this theme
@@ -100,6 +103,8 @@ Licensed under GNU GPL - https://github.com/TGMPA/TGM-Plugin-Activation
 
 == Resources ==
 
+https://www.pexels.com/photo/man-in-white-dress-shirt-and-maroon-necktie-holding-hands-with-girl-in-white-dress-573565/   rawpixel.com ,CC0
+https://www.pexels.com/photo/beverage-cafe-coffee-cup-586335/   rawpixel.com ,CC0
 https://www.pexels.com/photo/apple-laptop-notebook-office-39284/  Pixabay , CC0
 https://www.pexels.com/photo/adults-airport-architectural-design-architecture-301930/  Riccardo Bresciani, CC0
 https://www.pexels.com/photo/business-chairs-company-coworking-7070/  Startup Stock Photos , CC0

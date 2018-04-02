@@ -105,6 +105,18 @@ function best_startup_special_navclass($classes, $item) {
     }
     return $classes;
 }
+add_action( 'admin_menu', 'best_startup_admin_menu');
+function best_startup_admin_menu( ) {
+    add_theme_page( __('Pro Feature','best-startup'), __('Best StartUp Plus','best-startup'), 'manage_options', 'best-startup-plus-buynow', 'best_startup_plus_buy_now', 300 );   
+}
+function best_startup_plus_buy_now(){ ?>
+<div class="best_startup_plus_version">
+  <a href="<?php echo esc_url('https://electrathemes.com/wordpress-themes/best-startup-plus/'); ?>" target="_blank">
+    <img src ="<?php echo esc_url('https://s3.amazonaws.com/themeshops/electrathemes/best-startup-plus/best-startup-plus-features.png') ?>" width="100%" height="auto" />
+  </a>
+</div>
+<?php
+}
 
 require get_template_directory() . '/functions/theme-default-setup.php';
 require get_template_directory() . '/functions/class-tgm-plugin-activation.php';

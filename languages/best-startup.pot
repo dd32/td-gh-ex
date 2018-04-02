@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Best Startup\n"
-"POT-Creation-Date: 2018-03-28 13:10+0530\n"
-"PO-Revision-Date: 2018-03-28 13:10+0530\n"
+"POT-Creation-Date: 2018-04-02 15:35+0530\n"
+"PO-Revision-Date: 2018-04-02 13:09+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -81,6 +81,14 @@ msgstr ""
 
 #: functions.php:52
 msgid "Default Header Image"
+msgstr ""
+
+#: functions.php:110
+msgid "Pro Feature"
+msgstr ""
+
+#: functions.php:110
+msgid "Best StartUp Plus"
 msgstr ""
 
 #: functions/class-tgm-plugin-activation.php:327
