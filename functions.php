@@ -1,7 +1,7 @@
 <?php if(!isset($content_width)) $content_width = 640;
 define('CPOTHEME_ID', 'affluent');
 define('CPOTHEME_NAME', 'Affluent');
-define('CPOTHEME_VERSION', '1.0.6');
+define('CPOTHEME_VERSION', '1.0.7');
 //Other constants
 define('CPOTHEME_LOGO_WIDTH', '175');
 define('CPOTHEME_USE_SLIDES', true);
@@ -24,4 +24,8 @@ require_once($include_path.'setup.php');
 // Add Welcome Screen & Epsilon Framework
 if ( ! class_exists( 'CPO_Theme' ) ) {
 	require get_template_directory() . '/includes/class-cpo-theme.php';
+}
+
+if ( ! defined( 'SHORTPIXEL_AFFILIATE_CODE' ) ) {
+    define( 'SHORTPIXEL_AFFILIATE_CODE', '3AXNUKA28044' );
 }
