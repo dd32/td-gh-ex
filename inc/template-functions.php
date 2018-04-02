@@ -123,7 +123,7 @@ function bcorporate_home_feature_sec_fnc() {
 				    	</div>
 				    	<div class="content_part_feature">
 				    		<h3><?php the_title(); ?></h3>
-				    		<p><?php echo wp_kses_post( wp_trim_words(get_the_content(), '22', '') ); ?></p>
+				    		<p><?php the_excerpt(); ?></p>
 				    	</div>
 			    	</div>	
 			 	<?php $bcorporate_feat_aos_delay = $bcorporate_feat_aos_delay+50; endwhile;  wp_reset_postdata(); } ?>
@@ -179,7 +179,7 @@ function bcorporate_home_portfolio_sec_fnc() {
 					    			<?php the_category(); ?>
 					    		</div>	
 					    		<div class="main_content_portfolio">
-					    			<p><?php echo esc_html( wp_trim_words(get_the_content(), '22', '') ); ?></p>
+					    			<p><?php the_excerpt();?></p>
 					    		</div>
 					    			
 					    	</div>
@@ -218,7 +218,10 @@ function bcorporate_home_ctaone_sec_fnc() {
 					<p class=" homepage_sub_text" data-aos="fade-up"   data-aos-once="true"  data-aos-delay="450"><?php echo esc_html( get_theme_mod( 'homepage_cta_one_sub_title' ) );?></p>
 					<?php if( get_theme_mod('homepage_cta_one_button_url') ): ?>
 						<div class=" BE-btn-primary" data-aos="fade-up"   data-aos-once="true"  data-aos-delay="500"><a href="<?php echo esc_url( get_theme_mod('homepage_cta_one_button_url') ); ?>" class="btn cta-btn">
-							<?php echo esc_html( get_theme_mod( 'homepage_cta_one_button_text', 'View Page' ) );?></a>
+							<?php
+								$cta_one_button_text = get_theme_mod( 'homepage_cta_one_button_text', __( 'View More', 'bcorporate' ) );
+ 								echo esc_html( $cta_one_button_text );
+ 							?></a>
 						</a>
 					<?php endif; ?>
 				</div>
@@ -333,10 +336,12 @@ function bcorporate_home_blog_sec_fnc() {
 						    			<span class="bcorp_blog_author"><?php echo esc_html( get_the_author(),'bcorporate' );?></span> | 
 						    			<span class="bcorp_blog_date"> <?php echo esc_html( get_the_date(), 'bcorporate' );?> </span></p>
 						    		<div class="main_content_blog"><p>
-						    			<?php echo wp_kses_post( wp_trim_words( get_the_content(), 24, '...' ) ); ?></p>
+						    			<?php the_excerpt() ?></p>
 						    		</div>
 						    		<div class="BE-btn-primary pull-left ">
-						    			<a href="<?php the_permalink(); ?>" class="read_me_blog btn">Read Full Story</a>
+						    			<a href="<?php the_permalink(); ?>" class="read_me_blog btn">
+						    				<?php esc_html_e('Read Full Story', 'bcorporate'); ?>
+						    			</a>
 						    			
 			  						</div>
 			  						<div class="Bcorp_comment pull-right">
@@ -396,7 +401,7 @@ function bcorporate_home_testimonial_sec_fnc() {
 				    <div class="col-md-4 col-sm-4 testimonial_single">
 				    	<div  data-aos="fade-up" data-aos-delay="<?php echo esc_attr( $bcorporate_testimonial_aos_delay ); ?>" data-aos-once="true">
 					    	<div class="main_content_testimonial">
-					    		<p><?php echo wp_kses_post( wp_trim_words( get_the_content(), 20, '...' ) ); ?></p>
+					    		<p><?php the_excerpt(); ?></p>
 					    	</div>
 					    	<div class="testimonial_image">
 					    		<span>
@@ -436,10 +441,12 @@ function bcorporate_home_ctatwo_sec_fnc() {
 					<h1 data-aos="fade-down"   data-aos-once="true"  data-aos-delay="400">
 						<?php echo esc_html( get_theme_mod( 'homepage_cta_two_main_title' ) );?>
 					</h1>
-					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 "><p  class="bcorporate_home_ctatwo_sub-text" data-aos="fade-up"   data-aos-once="true"  data-aos-delay="450"> <?php echo esc_html( get_theme_mod( 'homepage_cta_two_sub_title' ) );?></p></div>
+					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 "><p  class="bcorporate_home_ctatwo_sub-text" data-aos="fade-up" data-aos-once="true"  data-aos-delay="450"><?php echo esc_html( get_theme_mod( 'homepage_cta_two_sub_title' ) );?></p></div>
 					<?php if( get_theme_mod('homepage_cta_two_button_url') ): ?>
 						<div class="BE-btn-primary " data-aos="fade-up"   data-aos-once="true"  data-aos-delay="500"><a href="<?php echo esc_url( get_theme_mod('homepage_cta_two_button_url') ); ?>" class="btn cta-btn">
-							<?php echo esc_html( get_theme_mod( 'homepage_cta_two_button_text', 'View Page' ) );?></a>
+							<?php 
+								$cta_two_button_text = get_theme_mod( 'homepage_cta_two_button_text', __( 'View Page', 'bcorporate' ) );
+								echo esc_html( $cta_two_button_text );?></a>
 						</a>
 					<?php endif; ?>
 				</div>

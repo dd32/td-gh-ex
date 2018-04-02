@@ -3,7 +3,7 @@ Contributor: blezthemes
 Requires at least: 4.7
 Tested up to: 4.9.4
 Stable tag: 1.0.2
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: left-sidebar, custom-background, custom-logo, portfolio
 
 Multi-purpose WordPress theme
 
@@ -16,6 +16,19 @@ BCorporate is a Free Corporate Wordpress Theme created using latest trends such 
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
+
+==Documentation for Bcorporate Theme==
+Homepage Setup
+1. To setup home page create page and select "Home Page" as page template then all the homepage setting in customier will work.
+
+Data Import
+1. For demo data Import use this wordpress plugin https://wordpress.org/plugins/one-click-demo-import/
+2. All the necessary demo data is provided in theme (inside bcorporate_demo_data file)
+
+Sass
+1. If you want to edit theme css using sass please use https://wordpress.org/plugins/wp-scss/ wordpress plugin.
+
+
 
 == Frequently Asked Questions ==
 
@@ -44,10 +57,14 @@ Bcorporate includes support for Infinite Scroll in Jetpack.
 * fixed readme.txt issues
 * Added demo data to import demo content for user
 
+= 1.0.6 - March 26 2018 =
+* fixed readme.txt issues
+* fixed translation issues
+
 == License ==
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
-License: GNU General Public License v3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html   
+Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License  v2 or later
+License: GNU General Public License v2 or later
+License URI: http://www.opensource.org/licenses/gpl-license.php GPL v2 (or later) 
 
 Screenshot Image
 	* https://pixabay.com/en/office-business-company-2360063/
@@ -71,12 +88,12 @@ Fonts:
    Font URL: https://fonts.google.com/specimen/Sacramento
 
 Light Slider (v1.1.3 ):
-   License: MIT LIcense
+   License: MIT license
    License url: https://opensource.org/licenses/MIT
    Slider Url: https://github.com/sachinchoolur/lightslider
 
 Bootstrap(v4.0.0): 
-   License: https://v4-alpha.getbootstrap.com/about/license/
+   License: MIT license
    License url: https://v4-alpha.getbootstrap.com/about/license/
    Url: https://getbootstrap.com/
 

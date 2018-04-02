@@ -251,7 +251,7 @@ function bcorporate_customize_register( $wp_customize ) {
 	    array(
 	        'label' => esc_html__( 'Choose Portfolio Category', 'bcorporate' ),
 	        'section' => 'home_page_portfolio_section',
-	        'description' => esc_html__(' Select Category to show posts in Poortolio section ','bcorporate'),
+	        'description' => esc_html__(' Select Category to show posts in Portfolio section ','bcorporate'),
 	        'type' => 'select',
 	        'priority' => 2,
 	    )

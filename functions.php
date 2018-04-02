@@ -84,6 +84,12 @@ if ( ! function_exists( 'bcorporate_setup' ) ) :
 		/** custom image size bcorporate **/
 		add_image_size('bcorporate_services', 39, 34, true);
 		add_image_size('bcorporate_portfolio', 350, 250, true);
+
+		// changing exceprtlength
+		function bcorporate_excerpt_length() {
+		    return 24;
+		}
+		add_filter( 'excerpt_length', 'bcorporate_excerpt_length');
 	}
 endif;
 add_action( 'after_setup_theme', 'bcorporate_setup' );
@@ -224,11 +230,6 @@ function bcorporate_fonts_url() {
 
 	return esc_url_raw( $fonts_url );
 }
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
