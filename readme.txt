@@ -5,7 +5,7 @@ Author: ElectraThemes
 Author URI: http://electathemes.com/
 Requires at least: 4.0
 Tested up to: 4.9.4
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, right-sidebar,left-sidebar,full-width-template, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, featured-image-header, theme-options, threaded-comments, translation-ready, blog
@@ -69,6 +69,9 @@ Responsive design(Bootstrap), Customization Options, Custom Menu, supports socia
 
 = 1.1.1 (2nd April 2018) 
 * Pro Featured Link Added.
+
+= 1.1.2 (2nd April 2018) 
+* Css Added and Misc Changes
 
 
 ---------------------------------------------------------

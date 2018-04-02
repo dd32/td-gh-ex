@@ -852,7 +852,7 @@ function best_startup_custom_css(){
       border-color: ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
     }
     .footer-wrap{
-      background: ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
+      background: ".esc_attr(get_theme_mod('secondaryColor','#001530')).";
     }
     .footer-box{
       background:".esc_attr(get_theme_mod('footerBackgroundColor','#2c3e50')).";
@@ -874,10 +874,10 @@ function best_startup_custom_css(){
     }
     .footer-wrap a,.footer-wrap.style2 .footer-nav ul li a{
       color: ".esc_attr(get_theme_mod('copyrightLinkColor', '#ffff')).";
-    }
-    .footer-wrap .copyright a:hover,.footer-wrap a:hover,.footer-wrap.style2 .footer-nav ul li a:hover,.footer-wrap.style2 .copyright a:hover,.footer-wrap.style1 .copyright a:hover{
-      color: ".esc_attr(get_theme_mod('copyrightLinkHoverColor', '#000')).";
-    }  
+    }    
+    .footer-wrap a:hover,.footer-wrap.style2 .footer-nav ul li a:hover,.footer-wrap.style2 .copyright a:hover{
+      color: ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
+    }    
     .no-post-thumbnail { background-color: ".esc_attr(get_theme_mod('themeColor','#ea8800')).";
     }
 

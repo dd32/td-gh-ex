@@ -31,18 +31,19 @@ if( $singlepagetitle == 1 ) : ?>
                     <?php while ( have_posts() ) : the_post(); ?>
                         <div class="single-blog-content-area fadeIn animated">
                             <div class="single-blog-content">
-                                <div class="title-data fadeIn animated">
+                               
+                                <?php if ( has_post_thumbnail() ) : ?>
+                                 <div class="single-blog-images">
+                                    <?php the_post_thumbnail( 'best-startup-thumbnail-image', array( 'class' => 'img-responsive') ); ?>
+                                </div>
+                                <?php endif; ?>
+                                 <div class="title-data fadeIn animated">
                                     <h2><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
                                     <?php if(get_theme_mod('blogSingleMetaTag',1) == 1): ?>
                                             <?php best_startup_entry_meta(); ?>
                                     <?php endif; ?>
                                 </div>
-                                <?php if ( has_post_thumbnail() ) : ?>
-                                 <div class="single-blog-images">
-                                    <?php the_post_thumbnail( 'best-startup-thumbnail-image', array( 'class' => 'img-responsive') ); ?>
-                                </div>
-                                <?php endif;
-                                    the_content(); 
+                                <?php   the_content(); 
                                     wp_link_pages( array(
                                     'before' => '<div class="page-links">' . esc_html__( 'Post:', 'best-startup' ),
                                     'after'  => '</div>',

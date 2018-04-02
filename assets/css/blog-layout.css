@@ -10,8 +10,8 @@
    -ms-transition: all 0.3s ease-in-out;
    transition: all 0.3s ease-in-out;
 }
-.blog-layout-one .view-fifth .mask {
-   background-color: rgba(219,127,8, 0.7);
+.blog-layout-one .view-fifth .mask { 
+    background-color: #4f96ce;
    -webkit-transform: translateX(-100%);
    -moz-transform: translateX(-100%);
    -o-transform: translateX(-100%);
@@ -27,7 +27,7 @@
    transition: all 0.3s ease-in-out;
 }
 .blog-layout-one .view-fifth h2 {
-   background: rgba(255, 255, 255, 0.5);
+   background: rgba(255, 255, 255, 0.2);
    color: #000;
    -webkit-box-shadow: 0px 1px 3px rgba(159, 141, 140, 0.5);
    -moz-box-shadow: 0px 1px 3px rgba(159, 141, 140, 0.5);
@@ -95,17 +95,17 @@
     margin-bottom: 30px;
 }
 .blog-layout-one .title-data h2 a {
-    font-size: 20px;
-    color: #000;
+    font-size: 14px;
+    color: #fff;
     font-weight: normal;
     padding: 15px;
     display: block;
     text-align: center;
 }
 .blog-layout-one .blog-inner-content p {
-    color: #000;
+    color: #fff;
     padding: 0 10%;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
 }
 .blog-layout-one .title-data p, .blog-layout-one .title-data p a, .blog-layout-one .title-data p time {
@@ -113,11 +113,12 @@
     font-size: 20px;
     margin: 20px 0;
 }
-.blog-layout-one .btn-light {
-    background: rgba(255, 255, 255, 0.5);
-   color: #000;
+.blog-layout-one .btn-light {   
+   color: #fff;
    padding: 10px 20px;
-   margin-top: 20px;
+   margin: 10px 0;
+   background: rgba(255, 255, 255, 0.2);
+   font-size:14px;
 }
 .blog-layout-one .btn-light:hover {
     background: rgba(0, 0, 0, 0.8);

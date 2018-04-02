@@ -507,7 +507,8 @@ p {
     line-height: 30px;
     font-weight: bolder;
     text-align: left;
-    text-transform: uppercase;
+    text-transform: capitalize;
+    font-size:18px;
 }
 .title-data h2 a:hover {
     color: #000;
@@ -1498,7 +1499,7 @@ span.wpcf7-not-valid-tip {
 }
 /*copyright style 2*/
 .footer-wrap.style2{
-    text-align: center;
+    text-align: left;
 }
 .footer-wrap.style2 .footer-logo img {
     margin: 0 auto;
@@ -1507,6 +1508,7 @@ span.wpcf7-not-valid-tip {
 .footer-wrap.style2 .footer-social-icon ul{
     padding-left: 0;
     margin: 0;
+    text-align:right;
 }
 .footer-wrap.style2 .footer-nav ul {
     padding: 10px 0;
@@ -3231,4 +3233,98 @@ text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/*Customizer 02-04-2018*/
+.contact-form .sow-submit-styled .sow-submit {
+    background:#ea8800;
+    padding: 10px 50px !important;
+}
+.contact-form .sow-submit-styled .sow-submit:hover {
+    background:#2c3e50;
+    border:1px solid #2c3e50;
+}
+.heading-wrap .heading-title h4 {
+    font-size:34px;
+}
+.contact-form-main .panel-grid-cell .widget_sow-headline {
+    margin-bottom:10px !important;
+}
+.contact-form-main .panel-grid-cell h1 {
+    margin:0 0 10px;
+}
+.lsow-testimonial .lsow-testimonial-text p {
+    color:#fff;
+    font-size:16px;
+}
+.lsow-testimonial .lsow-testimonial-text .lsow-icon-quote {
+    display:none;
+}
+.lsow-testimonial .lsow-testimonial-user .lsow-text .lsow-author-name {
+    color:#fff;
+}
+.lsow-testimonials-slider .lsow-testimonial-user .lsow-image-wrapper img {
+    max-width: 80px;
+}
+.professionals .sow-headline-container  h1 {
+    margin:0 0 5px;
+}
+.trance-bg {
+    background:rgba(0, 0, 0, 0.5);
+    padding:30px 30px 0 30px;
+}
+.trance-bg-new {
+    background:rgba(0, 0, 0, 0.5);
+    padding:15px 30px 30px 30px;
+}
+.main-slide-content .widget_sow-headline {
+    margin-bottom:0 !important;
+}
+.theme-features .sow-features-feature {
+    margin-bottom:0 !important;
+    padding: 16px 20px !important;
+}
+.footer-social-icon ul {
+    margin:20px 0 0;
+    padding:0;
+}
+.footer-wrap.style2 .footer-social-icon ul li i::before {
+    font-size:20px !important;
+}
+.blog-layout-one .btn-light {
+    margin-top: 5px;
+}
+.single-blog-content p {
+    padding:0;
+}
+.lsow-team-members.lsow-style2 .lsow-team-member-wrapper {
+    margin-top: 20px;
+}
+.lsow-team-members .lsow-team-member .lsow-team-member-details {
+    font-size:13px;
+}
+#menu-style-header ul li:before {
+    left:49%;
+}
+.startup-features{
+    border-bottom:2px solid #3081a0;
+}
+.client-testimonial-image img{
+    max-width:150px !important;
+    border-radius:100px;
+}
+.footer-wrap {
+    background: #001530;
+}
+.footer-box h1, .footer-box h2, .footer-box h3, .footer-box h4, .footer-box h5, .footer-box h6 {
+    font-family: Merriweather Sans;
+}
+.footer-box div, .footer-box .widget-title, .footer-box p, .footer-box .textwidget, .footer-box .calendar_wrap caption, .footer-box .textwidget p, .footer-box div{
+    font-family: PT Sans;
+}
+.about-us-logo .sow-image-container img{
+    max-width:150px !important;
+}
+.so-widget-sow-contact-form-default-dc649a8cd3e3 .sow-contact-form .sow-submit-styled .sow-submit{
+    background-color:#4f96ce;
 }
