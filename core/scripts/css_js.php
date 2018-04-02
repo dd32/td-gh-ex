@@ -25,7 +25,6 @@ function weblizar_scripts()
                 if(is_front_page()){
                 /*Carofredsul Slides*/
                 wp_enqueue_script('jquery.carouFredSel', get_template_directory_uri() .'/js/carouFredSel-6.2.1/jquery.carouFredSel-6.2.1.js');
-                wp_enqueue_script('carouFredSel-element', get_template_directory_uri() .'/js/carouFredSel-6.2.1/caroufredsel-element.js');
                 /*PhotoBox JS*/
                 wp_enqueue_script('photobox-js', get_template_directory_uri() .'/js/jquery.photobox.js');
                 wp_enqueue_style('photobox', get_template_directory_uri() . '/css/photobox.css');

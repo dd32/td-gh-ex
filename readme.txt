@@ -6,7 +6,11 @@ Enigma
 
 CHANGE-LOG:
 
-@Version: 4.1.6 [24-03-2018]
+@Version: 4.1.5 [02-04-2018]
+1. Snow effect issue fixed.
+2. Updated Pro Themes and Plugins Page.
+
+@Version: 4.1.4 [24-03-2018]
 1. Autoplay Option added in blog options. 
 2. Read More button option added in blog options. 
 

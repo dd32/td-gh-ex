@@ -66,7 +66,7 @@ $wp_customize->add_section(
 		'section'    => 'general_sec',
 		'settings'   => 'enigma_options[_frontpage]',
 	) );
-	
+	/*
 	$wp_customize->add_setting(
 		'enigma_options[snoweffect]',
 		array(
@@ -82,7 +82,7 @@ $wp_customize->add_section(
 		'section'    => 'general_sec',
 		'settings'   => 'enigma_options[snoweffect]',
 	) );
-	
+	*/
 	$wp_customize->add_setting(
 		'enigma_options[title_position]',
 		array(
@@ -1913,7 +1913,11 @@ class enigma_changelog_Control extends WP_Customize_Control {
 			<div class="col-md-3 col-sm-6">
 				<h2 style="margin-top:10px;color:#fff;background-color: #3ca3e0;padding: 10px;font-size: 19px;"><?php echo _e( 'Enigma Theme Changelog','enigma'); ?></h2>
 				<ul style="padding-top:20px">
-				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.3 - <span> Current Version </span></div>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.5 - <span> Current Version </span></div>
+		<ol> <li> Snow effect issue fixed. </li></ol></li>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.4 - </div>
+		<ol> <li> Autoplay Option added in blog options.  </li><li>Read More button option added in blog options. </li></ol></li>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.3 - </div>
 		<ol> <li> Author name added for single page. </li></ol></li>
 				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.2 - </div>
 		<ol> <li> Description Updates</li></ol></li>
@@ -1923,7 +1927,6 @@ class enigma_changelog_Control extends WP_Customize_Control {
 		<ol> <li> Category option added for blog. </li></ol></li>
 				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.0 - </div>
 		<ol> <li> Review Request Banner dismiss option added. </li></ol></li>
-				<li class="upsell-enigma"> <div class="versionhd"> Version: 3.9 - </div>
 		</ul>
 			</div>
 			<div class="col-md-2 col-sm-6 upsell-btn">					

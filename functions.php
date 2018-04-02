@@ -38,7 +38,7 @@
 			'excerpt_blog'=>'55',
 			'home_reorder'=>'',
 			'upload_image_favicon'=>'',
-			'snoweffect'=>'0',
+			'snoweffect'=>'',
 			'read_more'=>__('Read More', 'enigma' ),
 			'autoplay'=>'1',
 
@@ -544,9 +544,9 @@ function enigma_notice_dismissed() {
 add_action( 'admin_init', 'enigma_notice_dismissed' );
 
 $theme_options = weblizar_get_options();
-if($theme_options['snoweffect']!=''){
+if($theme_options['snoweffect'] =='1'){
 	function snow_script() {
-	wp_enqueue_script('snow', get_template_directory_uri() .'/js/snowstorm.js');
+	wp_dequeue_script('snow', get_template_directory_uri() .'/js/snowstorm.js');
 	}
 	add_action( 'wp_enqueue_scripts', 'snow_script' );
 }
