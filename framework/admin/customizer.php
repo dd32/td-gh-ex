@@ -379,6 +379,63 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		),
 		'default'		=> 'sticky'
 	) );
+    Kirki::add_field( 'agama_options', array(
+		'label'				=> __( 'Top Navigation', 'agama' ),
+		'tooltip'		    => __( 'Enable top navigation. Working only with header V2 & V3.', 'agama' ),
+		'section'			=> 'agama_header_section',
+		'settings'			=> 'agama_top_navigation',
+		'type'				=> 'switch',
+		'default'			=> true,
+        'active_callback'   => array(
+            array(
+                'setting'   => 'agama_header_style',
+                'operator'  => '!==',
+                'value'     => 'transparent'
+            )
+        ),
+        'partial_refresh'   => array(
+            'agama_top_navigation' => array(
+                'selector'         => array( 'nav#top-navigation', 'div.top-links div' ),
+                'render_callback'  => array( 'Agama_Partial_Refresh', 'preview_top_navigation' )
+            )
+        )
+	) );
+    Kirki::add_field( 'agama_options', array(
+		'label'			    => __( 'Social Icons', 'agama' ),
+		'tooltip'	        => __( 'Enable social icons in top right navigation area.', 'agama' ),
+		'section'		    => 'agama_header_section',
+		'settings'		    => 'agama_top_nav_social',
+		'type'			    => 'switch',
+		'default'		    => true,
+        'active_callback'   => array(
+            array(
+                'setting'   => 'agama_header_style',
+                'operator'  => '!==',
+                'value'     => 'transparent'
+            )
+        ),
+        'partial_refresh'   => array(
+            'agama_top_nav_social' => array(
+                'selector'        => array( '#top-social' ),
+                'render_callback' => array( 'Agama_Partial_Refresh', 'preview_top_nav_social_icons' )
+            )
+        )
+	) );
+    Kirki::add_field( 'agama_options', array(
+        'label'             => __( 'Header Shrinking', 'agama' ),
+        'tooltip'           => __( 'Enable header shrinking feature.', 'agama' ),
+        'section'           => 'agama_header_section',
+        'settings'          => 'agama_header_shrink',
+        'type'              => 'switch',
+        'default'           => true,
+        'active_callback'   => array(
+            array(
+                'setting'   => 'agama_header_style',
+                'operator'  => '!==',
+                'value'     => 'default'
+            )
+        )
+    ) );
 	Kirki::add_field( 'agama_options', array(
 		'label'	           => __( 'Top Margin', 'agama' ),
 		'tooltip'          => __( 'Set header top margin in PX. This feature works only with header V2', 'agama' ),
@@ -618,7 +675,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 ###############################################
 	Kirki::add_panel( 'agama_nav_panel', array(
 		'title'			=> __( 'Navigations', 'agama' ),
-		'priority'		=> 40,
+		'priority'		=> 40
 	) );
 	###################################################
 	# NAVIGATION TOP SECTION
@@ -627,27 +684,6 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'title'			=> __( 'Navigation Top', 'agama' ),
 		'panel'			=> 'agama_nav_panel',
 		'capability'	=> 'edit_theme_options'
-	) );
-    Kirki::add_field( 'agama_options', array(
-		'label'				=> __( 'Top Navigation', 'agama' ),
-		'tooltip'		    => __( 'Enable top navigation. Working only with header V2 & V3.', 'agama' ),
-		'section'			=> 'agama_nav_top_section',
-		'settings'			=> 'agama_top_navigation',
-		'type'				=> 'switch',
-		'default'			=> true,
-        'active_callback'   => array(
-            array(
-                'setting'   => 'agama_header_style',
-                'operator'  => '!==',
-                'value'     => 'transparent'
-            )
-        ),
-        'partial_refresh'   => array(
-            'agama_top_navigation' => array(
-                'selector'         => array( 'nav#top-navigation', 'div.top-links div' ),
-                'render_callback'  => array( 'Agama_Partial_Refresh', 'preview_top_navigation' )
-            )
-        )
 	) );
     Kirki::add_field( 'agama_options', array(
         'label'             => __( 'Font', 'agama' ),
@@ -785,13 +821,20 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'type'			=> 'text',
 		'default'		=> ''
 	) );
+#########################################
+# MENUS PANEL
+#########################################
+    Kirki::add_panel( 'nav_menus', array(
+        'title'     => __( 'Menus', 'agama' ),
+        'priority'  => 50
+    ) );
 ##################################################
 # SLIDER
 ##################################################
 	Kirki::add_panel( 'agama_slider_panel', array(
 		'title'			=> __( 'Slider', 'agama' ),
 		'tooltip'	    => __( 'Slider settings.', 'agama' ),
-		'priority'		=> 40,
+		'priority'		=> 60,
 	) );
 	##########################################################
 	# SLIDER GENERAL SECTION
@@ -1265,7 +1308,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 	Kirki::add_panel( 'agama_frontpage_boxes_panel', array(
 		'title'			=> __( 'Front Page Boxes', 'agama' ),
 		'tooltip'	    => __( 'Front page boxes section.', 'agama' ),
-		'priority'		=> 60
+		'priority'		=> 70
 	) );
 	#############################################################
 	# FRONTPAGE BOXES GENERAL SECTION
@@ -1815,7 +1858,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 	Kirki::add_panel( 'agama_blog_panel', array(
 		'title'			=> __( 'Blog', 'agama' ),
 		'tooltip'	    => __( 'Blog panel.', 'agama' ),
-		'priority'		=> 70
+		'priority'		=> 80
 	) );
 	########################################################
 	# BLOG GENERAL SECTION
@@ -2025,34 +2068,6 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'title'			=> __( 'Social Icons', 'agama' ),
 		'capability'	=> 'edit_theme_options',
 		'priority'		=> 90,
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			    => __( 'Top Nav Social Icons', 'agama' ),
-		'tooltip'	        => __( 'Enable social icons in top right navigation area. Works only with header V2 & V3.', 'agama' ),
-		'section'		    => 'agama_social_icons_section',
-		'settings'		    => 'agama_top_nav_social',
-		'type'			    => 'switch',
-		'default'		    => true,
-        'partial_refresh'   => array(
-            'agama_top_nav_social' => array(
-                'selector'        => array( '#top-social' ),
-                'render_callback' => array( 'Agama_Partial_Refresh', 'preview_top_nav_social_icons' )
-            )
-        )
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			    => __( 'Footer', 'agama' ),
-		'tooltip'	        => __( 'Enable social icons in footer area.', 'agama' ),
-		'section'		    => 'agama_social_icons_section',
-		'settings'		    => 'agama_footer_social',
-		'type'			    => 'switch',
-		'default'		    => true,
-        'partial_refresh'   => array(
-            'agama_footer_social' => array(
-                'selector'        => '.footer-sub-wrapper div.social',
-                'render_callback' => array( 'Agama_Partial_Refresh', 'preview_footer_social_icons' )
-            )
-        )
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			=> __( 'URL Target', 'agama' ),
@@ -2267,16 +2282,44 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'default'		=> ''
 	) );
 ###################################################################################
+# WOOCOMMERCE
+###################################################################################
+    Kirki::add_panel( 'woocommerce', array(
+        'title'     => __( 'WooCommerce', 'agama' ),
+        'priority'  => 110
+    ) );
+###################################################################################
+# WIDGETS PANEL
+###################################################################################
+    Kirki::add_panel( 'widgets', array(
+		'title'			=> __( 'Widgets', 'agama' ),
+		'priority'		=> 120
+	) );
+###################################################################################
 # FOOTER
 ###################################################################################
     Kirki::add_panel( 'agama_footer_panel', array(
         'title'         => __( 'Footer', 'agama' ),
-        'priority'      => 110
+        'priority'      => 130
     ) );
 	Kirki::add_section( 'agama_footer_general_section', array(
 		'title'			=> __( 'General', 'agama' ),
 		'capability'	=> 'edit_theme_options',
         'panel'         => 'agama_footer_panel'
+	) );
+    Kirki::add_field( 'agama_options', array(
+		'label'			    => __( 'Social Icons', 'agama' ),
+		'tooltip'	        => __( 'Enable social icons in footer right area.', 'agama' ),
+		'section'		    => 'agama_footer_general_section',
+		'settings'		    => 'agama_footer_social',
+		'type'			    => 'switch',
+		'default'		    => true,
+        'partial_refresh'   => array(
+            'agama_footer_social' => array(
+                'selector'        => '.footer-sub-wrapper div.social',
+                'render_callback' => array( 'Agama_Partial_Refresh', 'preview_footer_social_icons' )
+            )
+        )
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			    => __( 'Copyright', 'agama' ),
@@ -2353,14 +2396,14 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 	Kirki::add_section( 'agama_support_section', array(
 		'title'			=> __( 'Agama Support', 'agama' ),
 		'capability'	=> 'edit_theme_options',
-		'priority'		=> 130
+		'priority'		=> 140
 	) );
 ###################################################################################
 # PRO FEATURES
 ###################################################################################
 	Kirki::add_panel( 'agama_pro_panel', array(
 		'title'			=> __( 'Agama PRO Features', 'agama' ),
-		'priority'		=> 140
+		'priority'		=> 150
 	) );
 	Kirki::add_section( 'agama_headings_section', array(
 		'title'			=> __( 'Headings', 'agama' ),
@@ -2407,17 +2450,6 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'capability'	=> 'edit_theme_options',
 		'panel'			=> 'agama_pro_panel'
 	) );
-###################################################################################
-# Re-order WordPress Options
-###################################################################################
-	Kirki::add_panel( 'nav_menus', array(
-		'title'			=> __( 'Menus', 'agama' ),
-		'priority'		=> 210
-	) );
-	Kirki::add_panel( 'widgets', array(
-		'title'			=> __( 'Widgets', 'agama' ),
-		'priority'		=> 240
-	) );
 
 /**
  * Enqueue Javascript postMessage handlers for the Customizer.
@@ -2451,8 +2483,21 @@ function agama_customize_css() { ?>
 		max-height: <?php echo esc_attr( get_theme_mod( 'agama_logo_max_height', '90' ) ); ?>px;
 	}
 	#masthead .sticky-header-shrink .logo {
-		max-height: 65px !important;
+		max-height: 65px;
 	}
+        
+    <?php if( ! get_theme_mod( 'agama_header_shrink', true ) ): // Header Shrinking Feature = Off ?>
+    .site-header .sticky-header.sticky-header-shrink h1, 
+    .sticky-header-shrink .sticky-nav li a {
+        line-height: 86px;
+    }
+    #masthead .sticky-header-shrink .site-title a {
+        font-size: 35px;
+    }
+    #masthead .sticky-header-shrink .logo {
+        max-height: 93px;
+    }
+    <?php endif; ?>
     
     <?php $mobile_nav = get_theme_mod( 'agama_mobile_navigation_font', array( 'color' => '#757575' ) ); ?>
     #vision-mobile-nav ul > li.menu-item-has-children > .dropdown-toggle,
@@ -2618,6 +2663,9 @@ function customize_styles_agama_support( $input ) { ?>
         }
         #accordion-section-agama_social_icons_section h3:before {
             content: '\f230';
+        }
+        #accordion-panel-woocommerce h3:before {
+            content: '\f291';
         }
         #accordion-panel-agama_footer_panel h3:before {
             content: '\f2d1';

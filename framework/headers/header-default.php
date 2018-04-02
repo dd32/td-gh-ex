@@ -36,11 +36,17 @@ global $top_nav, $social_icons; ?>
     <?php if( is_customize_preview() ) { echo '<div class="customize_preview_logo" style="display:block;">'; } ?>
 
     <?php if( get_theme_mod( 'agama_logo' ) ): ?>
-    <a href="<?php echo esc_url( home_url('/') ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-        <img src="<?php echo esc_url( get_theme_mod( 'agama_logo', '' ) ); ?>" class="logo">
+    <a href="<?php echo esc_url( home_url('/') ); ?>" 
+       title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+        <img src="<?php echo esc_url( get_theme_mod( 'agama_logo', '' ) ); ?>" 
+             alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" class="logo">
     </a>
     <?php else: ?>
-    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+    <h1 class="site-title">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" 
+           title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" 
+           rel="home"><?php bloginfo( 'name' ); ?></a>
+    </h1>
     <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
     <?php endif; ?>
 

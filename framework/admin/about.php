@@ -77,10 +77,10 @@ if( ! class_exists( 'Agama_About' ) ) {
 				
 				echo '<div class="changelog point-releases">';
 					echo sprintf( '<h3>Changelog Agama v%s</h3>', Agama_Core::version() );
-                    echo '<p>* Added phone number social icon feature.</p>';
-                    echo '<p>* Updated Kirki framework to the latest version.</p>';
-                    echo '<p>* Updated (improved) social icons code.</p>';
-                    echo '<p>* Fixed social email icon not showing issue.</p>';
+                    echo '<p>* Added header shrinking feature on/off.</p>';
+                    echo '<p>* Added alt attribute to logo image.</p>';
+                    echo '<p>* Minor updates in customizer area.</p>';
+                    echo '<p>* Fixed footer phone social icon not displaying.</p>';
 				echo '</div>';
 				
 			echo '</div>';

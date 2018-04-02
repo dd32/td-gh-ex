@@ -26,7 +26,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
 		 * @rewritten
 		 * @since 1.1.5
 		 */
-		static private $version = '1.3.2';
+		static private $version = '1.3.3';
 		
 		/**
 		 * Development Mode

@@ -3,6 +3,12 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.3.3 - 30 March 2018 =
+* Added header shrinking feature on/off.
+* Added alt attribute to logo image.
+* Minor updates in customizer area.
+* Fixed footer phone social icon not displaying.
+
 = 1.3.2 - 14 February 2018 =
 * Added phone number social icon feature.
 * Updated Kirki framework to the latest version.
