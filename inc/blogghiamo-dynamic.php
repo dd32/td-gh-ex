@@ -149,6 +149,11 @@ function blogghiamo_color_primary_register( $wp_customize ) {
 	'default' => '',
 	'label' => __('Xing URL', 'blogghiamo')
 	);
+	$socialmedia[] = array(
+	'slug'=>'telegramurl', 
+	'default' => '',
+	'label' => __('Telegram URL', 'blogghiamo')
+	);
 	
 	foreach( $socialmedia as $blogghiamo_theme_options ) {
 		// SETTINGS
