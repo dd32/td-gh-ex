@@ -1072,6 +1072,51 @@ function customizer_library_avant_build_styles() {
 			)
 		) );
 	}
+	$setting = 'avant-wc-mobile-prod-full-width';
+	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+	if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+		$title_bottom_margin = esc_attr( $mod );
+
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.woocommerce ul.products,
+    			.woocommerce-page ul.products'
+			),
+			'declarations' => array(
+				'margin' => '0 0 10px !important'
+			),
+			'media' => '(max-width: 580px)'
+		) );
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.woocommerce ul.products li.product,
+    			.woocommerce-page ul.products li.product'
+			),
+			'declarations' => array(
+				'width' => '100% !important',
+				'margin' => '0 0 24px !important'
+			),
+			'media' => '(max-width: 580px)'
+		) );
+	}
+	$setting = 'avant-site-title-uc';
+	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+	if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+		$container_width = esc_attr( $mod );
+
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.site-title'
+			),
+			'declarations' => array(
+				'text-transform' => 'uppercase'
+			)
+		) );
+	}
 
 }
 endif;

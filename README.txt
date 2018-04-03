@@ -68,6 +68,12 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.04
+* Changed default to show 2 WooCommerce products on mobile
+* Added option to set products to Full Width on mobile
+* Added setting to change Site Title to uppercase
+* Updated the language .pot file
+
 #### 1.1.03
 * Style tweaks/fixes
 * Improved / Fixes WooCommerce checkout page responsiveness

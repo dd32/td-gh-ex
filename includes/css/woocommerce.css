@@ -973,18 +973,7 @@
 }
 
 @media screen and (max-width: 420px) {
-
-    .woocommerce ul.products,
-    .woocommerce-page ul.products {
-        margin: 0 0 10px !important;
-    }
-
-    .woocommerce ul.products li.product,
-    .woocommerce-page ul.products li.product {
-        width: 100% !important;
-        margin: 0 0 24px !important;
-    }
-
+    
     .woocommerce .woocommerce-result-count,
     .woocommerce-page .woocommerce-result-count {
         width: 100%;

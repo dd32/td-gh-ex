@@ -801,6 +801,13 @@ function customizer_library_avant_options() {
             'description' => __( 'Try keep titles to 2 lines, if more then you can <a href="https://kairaweb.com/documentation/add-custom-css-to-align-the-woocommerce-titles/" target="_blank">add CSS to align the titles</a>', 'avant' ),
             'default' => 0,
         );
+        $options['avant-wc-mobile-prod-full-width'] = array(
+            'id' => 'avant-wc-mobile-prod-full-width',
+            'label'   => __( 'Products Full Width on Mobile', 'avant' ),
+            'section' => $section,
+            'type'    => 'checkbox',
+            'default' => 0,
+        );
         $options['avant-noteon-woocommerce'] = array(
             'id' => 'avant-noteon-woocommerce',
             'section' => $section,
@@ -830,6 +837,13 @@ function customizer_library_avant_options() {
         'panel' => $panel
     );
 
+    $options['avant-site-title-uc'] = array(
+        'id' => 'avant-site-title-uc',
+        'label'   => __( 'Site Title - Uppercase', 'avant' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
     $options['avant-title-font'] = array(
         'id' => 'avant-title-font',
         'label'   => __( 'Site Title Font', 'avant' ),
