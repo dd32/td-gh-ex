@@ -23,10 +23,10 @@ Homepage Setup
 
 Data Import
 1. For demo data Import use this wordpress plugin https://wordpress.org/plugins/one-click-demo-import/
-2. All the necessary demo data is provided in theme (inside bcorporate_demo_data file)
+2. All the necessary demo data is provided in theme (inside bcorporate_demo_data folder)
 
 Sass
-1. If you want to edit theme css using sass please use https://wordpress.org/plugins/wp-scss/ wordpress plugin.
+1. If you want to edit theme css using sass please use https://wordpress.org/plugins/wp-scss/ wordpress plugin otherwide you can edit style.css by creating child theme of bcorporate.
 
 
 

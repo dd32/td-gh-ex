@@ -52,7 +52,7 @@ get_header(); ?>
 
 							?>
 							<div class="clearfix"></div>
-								<ul class="pagination text-center justify-content-center" role="navigation" aria-label="Pagination">
+								<ul class="pagination text-center justify-content-center" role="navigation" aria-label="<?php esc_attr_e('Pagination', 'bcorporate'); ?>">
 									<?php echo paginate_links(); ?>
 								</ul>
 							<?php
