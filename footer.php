@@ -6,13 +6,13 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package nnfy
+ * @package 99fy
  */
 
 $newsletter_shortcode = get_theme_mod('nnfy_newsletter_shortcode');
-$footer_top = get_theme_mod('nnfy_footer_top');
-$footer_copyright = get_theme_mod('nnfy_footer_copyright');
-$footer_copyright_text = get_theme_mod('nnfy_footer_copyright_text');
+$footer_top = get_theme_mod('nnfy_footer_top', 'on');
+$footer_copyright = get_theme_mod('nnfy_footer_copyright','on');
+$footer_copyright_text = get_theme_mod('nnfy_footer_copyright_text', __('Copyright &copy; 2018 99fy All Right Reserved.','99fy'));
 
 ?>
 
@@ -36,7 +36,6 @@ $footer_copyright_text = get_theme_mod('nnfy_footer_copyright_text');
 
 <?php endif; ?>
 
-
 <?php
     if(
         $footer_top && 
@@ -53,7 +52,7 @@ $footer_copyright_text = get_theme_mod('nnfy_footer_copyright_text');
 
     if($footer_top):
 
-        $footer_col_size = get_theme_mod('nnfy_footer_col_size', 5);
+        $footer_col_size = get_theme_mod('nnfy_footer_col_size', 4);
 
 ?>
 <div class="footer-top-area black-bg pt-120 pb-75">

@@ -33,7 +33,7 @@
 
 
 			?>
-			<?php echo $args['before_widget']; ?>
+			<?php echo wp_kses_post( $args['before_widget'] ); ?>
 				<div class="single-footer">
 					<div class="footer-logo">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-footer"><img src="<?php echo esc_url( $image ) ; ?>
@@ -68,7 +68,7 @@
 					</ul>
 
 				</div>
-			<?php echo $args['after_widget']; ?>
+			<?php echo wp_kses_post( $args['after_widget'] ); ?>
 
 			<?php
 		}

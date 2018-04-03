@@ -1,7 +1,7 @@
 <?php
 /**
  * Adds Recent post Widget.
- * @package nnfy
+ * @package 99fy
  */
 if( !class_exists('NNfy_Recent_Post') ){
 	class NNfy_Recent_Post extends WP_Widget{
@@ -45,11 +45,11 @@ if( !class_exists('NNfy_Recent_Post') ){
 		$show_date = isset( $instance['show_date'] ) ? $instance['show_date'] : false;
 
 
-			echo $args['before_widget']; 
+			echo wp_kses_post( $args['before_widget'] ); 
 			if( $title ): 
-		    echo $args['before_title'];  
-			echo $title;  
-		 	echo $args['after_title']; 
+		    echo wp_kses_post( $args['before_title'] );  
+			echo wp_kses_post( $title );  
+		 	echo wp_kses_post( $args['after_title'] ); 
 			endif; 
 
 				$posts = new WP_Query(array(
@@ -87,7 +87,7 @@ if( !class_exists('NNfy_Recent_Post') ){
 					<?php endwhile; ?>
 				</ul>
 
-			<?php echo $args['after_widget']; ?>
+			<?php echo wp_kses_post( $args['after_widget'] ); ?>
 			
 			<?php wp_reset_postdata();
 		}

@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package nnfy
+ * @package 99fy
  */
 
 /**

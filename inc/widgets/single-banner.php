@@ -36,9 +36,9 @@ if ( !class_exists('NNfy_Single_Banner') ) {
 
 			?>
 			
-	        <?php echo $args['before_widget']; 
+	        <?php echo wp_kses_post( $args['before_widget'] ); 
 		        if ( !empty( $title ) ) {
-				 	echo $args['before_title']; echo esc_html( $title ); echo $args['after_title'];
+				 	echo wp_kses_post( $args['before_title'] ); echo esc_html( $title ); echo wp_kses_post( $args['after_title'] );
 				}  
 				if ( !empty($image) ): ?>
         			<div class="sidebar-banner">
@@ -47,7 +47,7 @@ if ( !class_exists('NNfy_Single_Banner') ) {
         				<?php endif ?>
         			</div>
         		<?php endif ?>
-	        <?php echo $args['after_widget']; ?>
+	        <?php echo wp_kses_post( $args['after_widget'] ); ?>
 
 		<?php }
 

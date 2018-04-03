@@ -2,7 +2,7 @@
 /**
  * Comment Form
  *
- * @package nnfy
+ * @package 99fy
  */
 
 

@@ -44,7 +44,7 @@ if ( !class_exists('NNfy_Author_About_Widget') ) {
 
 			?>
 			
-	        <?php echo $args['before_widget']; ?>
+	        <?php echo wp_kses_post( $args['before_widget'] ); ?>
 	        	<div class="author--info--wrap">
 	        		<?php if ( !empty($image) ): ?>
 	        			<img src="<?php echo esc_url( $image ) ; ?>" alt="<?php esc_html_e('Author Image', '99fy'); ?>">
@@ -100,7 +100,7 @@ if ( !class_exists('NNfy_Author_About_Widget') ) {
                         </div>
                     </div>
 	            </div>
-	        <?php echo $args['after_widget']; ?>
+	        <?php echo wp_kses_post( $args['after_widget'] ); ?>
 
 		<?php }
 

@@ -25,8 +25,8 @@ global $product;
 	<?php do_action( 'woocommerce_widget_product_item_start', $args ); ?>
 
 	<a href="<?php echo esc_url( $product->get_permalink() ); ?>">
-		<?php echo $product->get_image(); ?>
-		<span class="product-title"><?php echo $product->get_name(); ?></span>
+		<?php echo wp_kses_post( $product->get_image() ); ?>
+		<span class="product-title"><?php echo wp_kses_post( $product->get_name() ); ?></span>
 	</a>
 
 	<?php if ( ! empty( $show_rating ) ) : ?>
@@ -34,7 +34,7 @@ global $product;
 	<?php endif; ?>
 	
 	<span class="price">
-		<?php echo $product->get_price_html(); ?>
+		<?php echo wp_kses_post( $product->get_price_html() ); ?>
 	</span>
 
 	<?php do_action( 'woocommerce_widget_product_item_end', $args ); ?>

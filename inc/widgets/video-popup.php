@@ -37,10 +37,10 @@ if ( !class_exists('NNfy_Video_Popup') ) {
 
 			?>
 			
-	        <?php echo $args['before_widget']; 
+	        <?php echo wp_kses_post( $args['before_widget'] ); 
 
 			if ( !empty( $title ) ) {
-			 	echo $args['before_title']; echo esc_html( $title ); echo $args['after_title'];
+			 	echo wp_kses_post( $args['before_title'] ); echo esc_html( $title ); echo wp_kses_post( $args['after_title'] );
 			 }  ?>
 
             <div class="sidebar-video">
@@ -63,7 +63,7 @@ if ( !class_exists('NNfy_Video_Popup') ) {
                 <?php endif ?>
             </div>
 	        	
-	        <?php echo $args['after_widget']; ?>
+	        <?php echo wp_kses_post( $args['after_widget'] ); ?>
 
 		<?php }
 

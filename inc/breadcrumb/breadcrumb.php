@@ -12,13 +12,13 @@
 		$breadcrumbs_cat = '';
 
 	  /* === OPTIONS === */
-		$text['home']     = 'Home'; // text for the 'Home' link
-		$text['category'] = 'Archive by Category "%s"'; // text for a category page
-		$text['tax'] 	  = 'Archive for "%s"'; // text for a taxonomy page
-		$text['search']   = 'Search Results for "%s" Query'; // text for a search results page
-		$text['tag']      = 'Posts Tagged "%s"'; // text for a tag page
-		$text['author']   = 'Articles Posted by %s'; // text for an author page
-		$text['404']      = 'Error 404'; // text for the 404 page
+		$text['home']     = __('Home', '99fy'); // text for the 'Home' link
+		$text['category'] = __('Archive by Category "%s"', '99fy'); // text for a category page
+		$text['tax'] 	  = __('Archive for "%s"', '99fy'); // text for a taxonomy page
+		$text['search']   = __('Search Results for "%s" Query', '99fy'); // text for a search results page
+		$text['tag']      = __('Posts Tagged "%s"', '99fy'); // text for a tag page
+		$text['author']   = __('Articles Posted by %s', '99fy'); // text for an author page
+		$text['404']      = __('Error 404','99fy'); // text for the 404 page
 
 		$showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
 		$showOnHome  = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show

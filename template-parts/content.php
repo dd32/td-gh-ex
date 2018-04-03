@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package nnfy
+ * @package 99fy
  */
 
 $blog_col_size = get_theme_mod('nnfy_blog_col_size', 3);
@@ -50,7 +50,7 @@ for($i = 1; $i <= $blog_col_size; $i++){
 	            <h6><?php echo esc_html__( 'By ', '99fy' ); ?><a href="<?php the_author_link(); ?>"><?php the_author_meta('nickname') ?></a> <?php echo esc_html__( 'on', '99fy' ); ?> <span><?php echo get_the_date(  get_option( 'date_format' ) ); ?></span></h6>
 
 	            <p><?php nnfy_post_excerpt(); ?></p>
-	            <a href="<?php the_permalink( ); ?>" class="read_more">Read More</a>
+	            <a href="<?php the_permalink( ); ?>" class="read_more"><?php echo esc_html__( 'Read More', '99fy' ); ?></a>
 	        </div>
 	    </div>
 	</article>

@@ -26,15 +26,15 @@
 			$shortcode   = isset( $instance['shortcode'] ) ? $instance['shortcode'] : '';
 			?>
 				<div class="news-letter">
-					<?php echo $args['before_widget']; ?>
-					<?php echo $args['before_title']; ?><?php echo $title; ?><?php echo $args['after_title']; ?>
+					<?php echo wp_kses_post( $args['before_widget'] ); ?>
+					<?php echo wp_kses_post( $args['before_title'] ); ?><?php echo wp_kses_post( $title ); ?><?php echo wp_kses_post( $args['after_title'] ); ?>
 					
 					<div class="footer-top-newsletter">
-						 <p class="newsletter-text"><?php echo $description; ?></p>
+						 <p class="newsletter-text"><?php echo wp_kses_post( $description ); ?></p>
 						<?php echo do_shortcode($shortcode); ?>
 					</div>
 				</div>
-				<?php echo $args['after_widget']; ?>
+				<?php echo wp_kses_post( $args['after_widget'] ); ?>
 		<?php
 		}
 		/**

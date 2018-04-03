@@ -289,7 +289,7 @@ function nnfy_woocommerce_single_product_sharing(){
 	?>
 	<div class="product-share">
 	    <ul>
-	        <li class="categories-title"><?php esc_html_e( 'Share :', '99fy' ); ?></li>
+	        <li class="categories-title"><?php echo esc_html( 'Share :', '99fy' ); ?></li>
 	        <li>
 	            <a href="<?php echo esc_url($twitter_url); ?>" target="_blank">
 	                <i class="ion-social-twitter"></i>

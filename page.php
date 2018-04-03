@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package nnfy
+ * @package 99fy
  */
 get_header(); 
 ?>	

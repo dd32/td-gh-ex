@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package nnfy
+ * @package 99fy
  */
 
 $layout = get_theme_mod('nnfy_blog_layout', 'none');

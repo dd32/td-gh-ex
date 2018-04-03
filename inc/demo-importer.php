@@ -42,6 +42,22 @@ function nnfy_after_import_setup() {
     update_option( 'show_on_front', 'page' );
     update_option( 'page_on_front', $front_page_id->ID );
     update_option( 'page_for_posts', $blog_page_id->ID );
+
+    // update shop page
+    $shop_page_id = get_page_by_title('shop');
+    $shop_page_id = $shop_page_id ? $shop_page_id->ID : get_option( 'woocommerce_shop_page_id');
+    update_option( 'woocommerce_shop_page_id', $shop_page_id);
+
+    // update cart page
+    $cart_page_id = get_page_by_title('cart');
+    $cart_page_id = $cart_page_id ? $cart_page_id->ID : get_option( 'woocommerce_cart_page_id');
+    update_option( 'woocommerce_cart_page_id', $cart_page_id);
+
+    // update checkout page
+    $checkout_page_id = get_page_by_title('checkout');
+    $checkout_page_id = $checkout_page_id ? $checkout_page_id->ID : get_option( 'woocommerce_checkout_page_id');
+    update_option( 'woocommerce_checkout_page_id', $checkout_page_id);
+    
     flush_rewrite_rules();
 }
 

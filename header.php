@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package nnfy
+ * @package 99fy
  */
 
 $page_title_status = get_theme_mod('nnfy_page_title', true);

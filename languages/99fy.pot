@@ -1,0 +1,1055 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 99fy\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-03 12:27+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: template-parts/content-single.php:34
+msgid "% Comments"
+msgstr ""
+
+#: inc/comment-form.php:45 inc/comment-form.php:117
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:73
+#, php-format
+msgid "(estimated for %s)"
+msgstr ""
+
+#: inc/customizer/customizer.php:268 inc/customizer/customizer.php:288
+msgid "1 Column"
+msgstr ""
+
+#: template-parts/content-single.php:34
+msgid "1 Comment"
+msgstr ""
+
+#: woocommerce/single-product/rating.php:44
+#, php-format
+msgid "1 Rating"
+msgid_plural "%1$s Rating (S)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/customizer/customizer.php:269 inc/customizer/customizer.php:289
+msgid "2 Column"
+msgstr ""
+
+#: inc/customizer/customizer.php:270 inc/customizer/customizer.php:290
+msgid "3 Column"
+msgstr ""
+
+#: inc/customizer/customizer.php:271 inc/customizer/customizer.php:291
+msgid "4 column"
+msgstr ""
+
+#: 404.php:18
+msgid "404"
+msgstr ""
+
+#: inc/customizer/customizer.php:272
+msgid "5 Column"
+msgstr ""
+
+#. Name of the theme
+msgid "99fy"
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:63
+msgid "99fy Core"
+msgstr ""
+
+#: inc/customizer/customizer.php:32
+msgid "99FY Options"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:261
+msgid "Add the selected products to the cart"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:107
+msgid "Add to cart"
+msgstr ""
+
+#: inc/widgets/widget-register.php:20 inc/widgets/widget-register.php:30
+#: inc/widgets/widget-register.php:40 inc/widgets/widget-register.php:50
+#: inc/widgets/widget-register.php:60 inc/widgets/widget-register.php:70
+#: inc/widgets/widget-register.php:80 inc/widgets/widget-register.php:90
+msgid "Add widgets here."
+msgstr ""
+
+#: woocommerce/wishlist-view.php:182
+#, php-format
+msgid "Added on : %s"
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:207
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: woocommerce/cart/cart.php:148
+msgid "Apply coupon"
+msgstr ""
+
+#: inc/breadcrumb/breadcrumb.php:16
+#, php-format
+msgid "Archive by Category \"%s\""
+msgstr ""
+
+#: inc/breadcrumb/breadcrumb.php:17
+#, php-format
+msgid "Archive for \"%s\""
+msgstr ""
+
+#: inc/breadcrumb/breadcrumb.php:20
+#, php-format
+msgid "Articles Posted by %s"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:269 woocommerce/wishlist-view.php:316
+msgid "Ask for an estimate"
+msgstr ""
+
+#: inc/widgets/author-info.php:50
+msgid "Author Image"
+msgstr ""
+
+#: inc/customizer/customizer.php:239
+msgid "Auto"
+msgstr ""
+
+#: woocommerce/cart/cart.php:80
+msgid "Available on backorder"
+msgstr ""
+
+#: woocommerce/single-product/product-image.php:69
+msgid "Awaiting product image"
+msgstr ""
+
+#: inc/customizer/customizer.php:214
+msgid "Background Color"
+msgstr ""
+
+#: inc/customizer/customizer.php:223
+msgid "Background Image"
+msgstr ""
+
+#: inc/widgets/single-banner.php:45
+msgid "Banner Image"
+msgstr ""
+
+#: inc/widgets/single-banner.php:113
+msgid "Banner Link:"
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:197
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgm-plugin/required-plugins.php:187
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgm-plugin/required-plugins.php:192
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#. Name of the template
+msgid "Blank Template"
+msgstr ""
+
+#: inc/customizer/customizer.php:285
+msgid "Blog column size"
+msgstr ""
+
+#: inc/customizer/customizer.php:319
+msgid "Blog excerpt length"
+msgstr ""
+
+#: inc/customizer/customizer.php:303
+msgid "Blog Layout"
+msgstr ""
+
+#: inc/customizer/customizer.php:49
+msgid "Blog Options"
+msgstr ""
+
+#. Name of the template
+msgid "Both Sidebar"
+msgstr ""
+
+#. Name of the template
+msgid "Both Sidebar Full"
+msgstr ""
+
+#: template-parts/content.php:50
+msgid "By "
+msgstr ""
+
+#: template-parts/content-single.php:30
+msgid "By :"
+msgstr ""
+
+#: inc/customizer/customizer.php:77
+msgid ""
+"Call Us : 012036 039 &nbsp; &nbsp;|&nbsp; &nbsp;  Email : yourmail@gmail.com"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:45
+msgid "Cancel"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:30
+msgid "Cart totals"
+msgstr ""
+
+#: template-parts/content-single.php:39
+msgid "Categories :"
+msgstr ""
+
+#: woocommerce/single-product/add-to-cart/variable.php:42
+msgid "Clear"
+msgstr ""
+
+#: comments.php:98
+msgid "Comment *"
+msgstr ""
+
+#: comments.php:69
+msgid "Comments are closed."
+msgstr ""
+
+#: template-parts/content-single.php:34
+msgid "Comments off"
+msgstr ""
+
+#: comments.php:35
+#, php-format
+msgctxt "comments title"
+msgid "One Comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Comments on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgm-plugin/required-plugins.php:74
+msgid "Contact Form 7"
+msgstr ""
+
+#: inc/customizer/customizer.php:241
+msgid "Contain"
+msgstr ""
+
+#: inc/widgets/author-info.php:187 inc/widgets/company-info-widget.php:130
+#: inc/widgets/video-popup.php:137
+msgid "Content:"
+msgstr ""
+
+#: woocommerce/cart/cart.php:140
+msgid "Continue Shopping"
+msgstr ""
+
+#: inc/customizer/customizer.php:175
+msgid "Copyright &copy; 2018 99fy All Right Reserved."
+msgstr ""
+
+#: woocommerce/cart/cart.php:147
+msgid "Coupon code"
+msgstr ""
+
+#: woocommerce/cart/cart.php:145
+msgid "Coupon:"
+msgstr ""
+
+#: inc/customizer/customizer.php:240
+msgid "Cover"
+msgstr ""
+
+#: inc/global-functions.php:43
+msgid "Create Menu"
+msgstr ""
+
+#: inc/customizer/customizer.php:238
+msgid "Default"
+msgstr ""
+
+#: inc/widgets/newsletter.php:76
+msgid "Description:"
+msgstr ""
+
+#. Author of the theme
+msgid "DevItems"
+msgstr ""
+
+#: inc/customizer/customizer.php:70
+msgid "Disable"
+msgstr ""
+
+#: inc/widgets/recent-post.php:143
+msgid "Display post date?"
+msgstr ""
+
+#. %s: Name of current post
+#: template-parts/content-page.php:35
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:32
+msgid "Edit title"
+msgstr ""
+
+#: inc/customizer/customizer.php:69
+msgid "Enable"
+msgstr ""
+
+#: inc/customizer/customizer.php:203
+msgid "Enable / Disable Breadcrumb"
+msgstr ""
+
+#: inc/customizer/customizer.php:130
+msgid "Enable / Disable Cart"
+msgstr ""
+
+#: inc/customizer/customizer.php:167
+msgid "Enable / Disable Copyright"
+msgstr ""
+
+#: inc/customizer/customizer.php:155
+msgid "Enable / Disable Footer"
+msgstr ""
+
+#: inc/customizer/customizer.php:106
+msgid "Enable / Disable Myaccount"
+msgstr ""
+
+#: inc/customizer/customizer.php:191
+msgid "Enable / Disable Page title"
+msgstr ""
+
+#: inc/customizer/customizer.php:94
+msgid "Enable / Disable Search"
+msgstr ""
+
+#: inc/customizer/customizer.php:66
+msgid "Enable / Disable topbar"
+msgstr ""
+
+#: inc/customizer/customizer.php:118
+msgid "Enable / Disable Wishlist"
+msgstr ""
+
+#: woocommerce/cart/cart.php:146
+msgid "Enter your coupon code if you have one."
+msgstr ""
+
+#: inc/breadcrumb/breadcrumb.php:21
+msgid "Error 404"
+msgstr ""
+
+#: inc/widgets/author-info.php:197 inc/widgets/company-info-widget.php:134
+msgid "Facebook Link:"
+msgstr ""
+
+#: inc/widgets/widget-register.php:48
+msgid "Footer 1"
+msgstr ""
+
+#: inc/widgets/widget-register.php:58
+msgid "Footer 2"
+msgstr ""
+
+#: inc/widgets/widget-register.php:68
+msgid "Footer 3"
+msgstr ""
+
+#: inc/widgets/widget-register.php:78
+msgid "Footer 4"
+msgstr ""
+
+#: inc/widgets/widget-register.php:88
+msgid "Footer 5"
+msgstr ""
+
+#: inc/customizer/customizer.php:265
+msgid "Footer column size"
+msgstr ""
+
+#: inc/customizer/customizer.php:179
+msgid "Footer copyright text"
+msgstr ""
+
+#: inc/customizer/customizer.php:53
+msgid "Footer Optinos"
+msgstr ""
+
+#. Description of the theme
+msgid "Free WordPress WooCommerce Theme"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:166
+msgid "Free!"
+msgstr ""
+
+#. Name of the template
+msgid "Full Width"
+msgstr ""
+
+#: inc/customizer/customizer.php:37
+msgid "General Optinos"
+msgstr ""
+
+#: 404.php:22
+msgid "Go back to Home Page"
+msgstr ""
+
+#: inc/widgets/author-info.php:201 inc/widgets/company-info-widget.php:138
+msgid "Google Plus Link:"
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:109
+msgid "HashBar"
+msgstr ""
+
+#: inc/customizer/customizer.php:41
+msgid "Header Optinos"
+msgstr ""
+
+#: inc/breadcrumb/breadcrumb.php:15
+msgid "Home"
+msgstr ""
+
+#. URI of the theme
+msgid "http://demo.wphash.com/99fy/"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://devitems.com"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:173
+msgid "In Stock"
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:84
+msgid "Instagram Feed"
+msgstr ""
+
+#: inc/widgets/author-info.php:221
+msgid "Instagram Link:"
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:139
+msgid "Install Plugins"
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:138
+msgid "Install Required Plugins"
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:140
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: template-parts/content-none.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:69
+msgid "King Composer"
+msgstr ""
+
+#: comments.php:100
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/customizer/customizer.php:307 inc/widgets/widget-register.php:28
+msgid "Left Sidebar"
+msgstr ""
+
+#. Name of the template
+msgid "Left sidebar"
+msgstr ""
+
+#: inc/widgets/author-info.php:213 inc/widgets/company-info-widget.php:152
+msgid "Linkedin Link:"
+msgstr ""
+
+#: inc/header/header-top-bar.php:49
+msgid "login"
+msgstr ""
+
+#: inc/header/header-top-bar.php:53
+msgid "Logout"
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:79
+msgid "Mailchimp For WP"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:194
+msgid "Move"
+msgstr ""
+
+#: inc/header/header-top-bar.php:52
+msgid "Myaccount"
+msgstr ""
+
+#: inc/comment-nav.php:11
+msgid "Newer Comments"
+msgstr ""
+
+#: inc/customizer/customizer.php:143
+msgid "Newsletter Shortcode"
+msgstr ""
+
+#: inc/widgets/recent-post.php:14
+msgid "NNfy blog recent post here"
+msgstr ""
+
+#: inc/widgets/newsletter.php:11
+msgid "NNfy contact for address email and phone no."
+msgstr ""
+
+#: inc/widgets/author-info.php:19
+msgid "NNfy: Author Informations"
+msgstr ""
+
+#: inc/widgets/single-banner.php:19
+msgid "NNfy: Banner"
+msgstr ""
+
+#: inc/widgets/newsletter.php:13
+msgid "NNfy: Newsletter"
+msgstr ""
+
+#: inc/widgets/recent-post.php:18
+msgid "NNfy: Recent Post"
+msgstr ""
+
+#: inc/widgets/company-info-widget.php:12
+msgid "NNfy: Short Description"
+msgstr ""
+
+#: inc/widgets/video-popup.php:19
+msgid "NNfy: Video PopUp"
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:205
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: template-parts/content-single.php:34
+msgid "No Comments"
+msgstr ""
+
+#: woocommerce/cart/mini-cart.php:100
+msgid "No products in the cart."
+msgstr ""
+
+#: woocommerce/wishlist-view.php:244
+msgid "No products were added to the wishlist"
+msgstr ""
+
+#: inc/customizer/customizer.php:306
+msgid "No sidebar"
+msgstr ""
+
+#: inc/widgets/recent-post.php:132
+msgid "No. of Item of posts to show:"
+msgstr ""
+
+#: template-parts/content-none.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: inc/comment-nav.php:6
+msgid "Older Comments"
+msgstr ""
+
+#: template-parts/content.php:50
+msgid "on"
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:104
+msgid "One Click Demo Import"
+msgstr ""
+
+#. If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language.
+#: functions.php:126
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/widgets/company-info-widget.php:11
+msgid "Our short description  ."
+msgstr ""
+
+#: woocommerce/wishlist-view.php:173
+msgid "Out of Stock"
+msgstr ""
+
+#: template-parts/content-page.php:23 template-parts/content-single.php:23
+#: inc/breadcrumb/breadcrumb.php:128
+msgid "Page"
+msgstr ""
+
+#: 404.php:19
+msgid "PAGE NOT FOUND"
+msgstr ""
+
+#: inc/customizer/customizer.php:45
+msgid "Page title Options"
+msgstr ""
+
+#: inc/customizer/customizer.php:253
+msgid "Page title section Top and bottom padding"
+msgstr ""
+
+#: template-parts/content-page.php:19 template-parts/content-single.php:19
+msgid "Pages:"
+msgstr ""
+
+#: inc/comment-form.php:53
+msgid "Permalink"
+msgstr ""
+
+#: inc/widgets/author-info.php:217
+msgid "Pinterest Link:"
+msgstr ""
+
+#: searchform.php:13
+msgctxt "placeholder"
+msgid "Search Here"
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:208
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:203
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:206
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#. If there are characters in your language that are not supported by Poppins, translate this to 'off'. Do not translate into your own language.
+#: functions.php:131
+msgctxt "Poppins font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/breadcrumb/breadcrumb.php:19
+#, php-format
+msgid "Posts Tagged \"%s\""
+msgstr ""
+
+#: woocommerce/cart/cart.php:36 woocommerce/cart/cart.php:84
+msgid "Price"
+msgstr ""
+
+#: functions.php:57
+msgid "Primary"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:209
+msgid "Private"
+msgstr ""
+
+#: woocommerce/cart/cart.php:35 woocommerce/cart/cart.php:68
+msgid "Product"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:76
+msgid "Product Name"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:34
+msgctxt "Product quantity input tooltip"
+msgid "Qty"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:212
+msgid "Public"
+msgstr ""
+
+#: woocommerce/cart/cart.php:37 woocommerce/cart/cart.php:90
+#: woocommerce/global/quantity-input.php:32
+msgid "Quantity"
+msgstr ""
+
+#: template-parts/content.php:53
+msgid "Read More"
+msgstr ""
+
+#: template-parts/content-none.php:20
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: inc/widgets/recent-post.php:37
+msgid "Recent Posts"
+msgstr ""
+
+#: inc/header/header-top-bar.php:50
+msgid "register"
+msgstr ""
+
+#: woocommerce/single-product/related.php:28
+msgid "Related Products"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:116 woocommerce/wishlist-view.php:226
+#: woocommerce/cart/cart.php:39
+msgid "Remove"
+msgstr ""
+
+#: woocommerce/cart/cart.php:118 woocommerce/cart/mini-cart.php:65
+msgid "Remove this item"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:226 woocommerce/wishlist-view.php:233
+msgid "Remove this product"
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:202
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: inc/customizer/customizer.php:308 inc/widgets/widget-register.php:18
+msgid "Right Sidebar"
+msgstr ""
+
+#. Name of the template
+msgid "Right sidebar"
+msgstr ""
+
+#: inc/widgets/company-info-widget.php:146
+msgid "Rss Link:"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:41
+msgid "Save"
+msgstr ""
+
+#: woocommerce/product-searchform.php:25
+msgid "Search Products..."
+msgstr ""
+
+#: inc/breadcrumb/breadcrumb.php:18
+#, php-format
+msgid "Search Results for \"%s\" Query"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:206
+msgid "Shared"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:57 woocommerce/cart/cart-totals.php:58
+msgid "Shipping"
+msgstr ""
+
+#: inc/widgets/widget-register.php:38
+msgid "Shop sidebar"
+msgstr ""
+
+#: inc/widgets/newsletter.php:80
+msgid "Shortcode:"
+msgstr ""
+
+#. %d: total results
+#: woocommerce/loop/result-count.php:44
+#, php-format
+msgid "Showing the single result"
+msgid_plural "Showing all %d results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/customizer/customizer.php:234
+msgid "Size"
+msgstr ""
+
+#: inc/widgets/author-info.php:192
+msgid "Social Title:"
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:141
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: template-parts/content-none.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:182
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgm-plugin/required-plugins.php:152
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgm-plugin/required-plugins.php:167
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %1$s plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/loop/orderby.php:26
+msgid "Sort By :"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:96
+msgid "Stock Status"
+msgstr ""
+
+#: comments.php:96
+msgid "Submit Comment"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:35 woocommerce/cart/cart-totals.php:36
+msgid "Subtotal"
+msgstr ""
+
+#: template-parts/content-single.php:46
+msgid "Tags :"
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:157
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgm-plugin/required-plugins.php:204
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:177
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgm-plugin/required-plugins.php:172
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: 404.php:20
+msgid "The page you are looking for does not exist or has been moved."
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:162
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/single-product/add-to-cart/variable.php:32
+msgid "This product is currently out of stock and unavailable."
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:147
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgm-plugin/required-plugins.php:142
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/widgets/author-info.php:15
+msgid "This widget show author informations"
+msgstr ""
+
+#: inc/widgets/single-banner.php:15
+msgid "This widget show banner"
+msgstr ""
+
+#: inc/widgets/video-popup.php:15
+msgid "This widget show video thumbnail and video"
+msgstr ""
+
+#: inc/widgets/recent-post.php:74
+msgid "Thumb"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:73 woocommerce/cart/cart.php:34
+msgid "Thumbnail"
+msgstr ""
+
+#: inc/widgets/recent-post.php:137
+msgid "Title Word"
+msgstr ""
+
+#: inc/widgets/author-info.php:183 inc/widgets/newsletter.php:72
+#: inc/widgets/recent-post.php:127 inc/widgets/single-banner.php:100
+#: inc/widgets/video-popup.php:120
+msgid "Title:"
+msgstr ""
+
+#: inc/customizer/customizer.php:82
+msgid "Topbar left"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:94 woocommerce/cart/cart-totals.php:95
+#: woocommerce/cart/cart.php:38 woocommerce/cart/cart.php:106
+#: woocommerce/cart/mini-cart.php:85
+msgid "Total"
+msgstr ""
+
+#: inc/widgets/author-info.php:205 inc/widgets/company-info-widget.php:142
+msgid "Twitter Link:"
+msgstr ""
+
+#: woocommerce/wishlist-view.php:83
+msgid "Unit Price"
+msgstr ""
+
+#: woocommerce/cart/cart.php:137
+msgid "Update Cart"
+msgstr ""
+
+#: woocommerce/cart/cart.php:137
+msgid "Update cart"
+msgstr ""
+
+#: inc/widgets/company-info-widget.php:127
+msgid "Upload"
+msgstr ""
+
+#: inc/widgets/author-info.php:174 inc/widgets/single-banner.php:105
+#: inc/widgets/video-popup.php:125
+msgid "Upload Image"
+msgstr ""
+
+#: inc/widgets/company-info-widget.php:123
+msgid "Upload Image:"
+msgstr ""
+
+#: inc/widgets/video-popup.php:133
+msgid "Video Link:"
+msgstr ""
+
+#: inc/widgets/video-popup.php:50
+msgid "video popup bg image"
+msgstr ""
+
+#: woocommerce/loop/result-count.php:49
+#, php-format
+msgctxt "with first and last result"
+msgid "Showing the single result"
+msgid_plural "<span>%3$d</span> Products Found of <span>50</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgm-plugin/required-plugins.php:89
+msgid "WooCommerce"
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:94
+msgid "WooCommerce Variation Swatches"
+msgstr ""
+
+#: inc/tgm-plugin/required-plugins.php:99
+msgid "YITH WooCommerce Wishlist"
+msgstr ""
+
+#: woocommerce/single-product/up-sells.php:28
+msgid "You may also like&hellip;"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:29
+msgid "You must be logged in to checkout."
+msgstr ""
+
+#: inc/comment-form.php:36 inc/comment-form.php:107
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: woocommerce/wishlist-view.php:306
+msgid "Your email"
+msgstr ""
+
+#: comments.php:86
+msgid "Your Email *"
+msgstr ""
+
+#: comments.php:83
+msgid "Your Name *"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:50
+msgid "Your order"
+msgstr ""
+
+#: comments.php:89
+msgid "Your Website"
+msgstr ""
+
+#: inc/widgets/author-info.php:209
+msgid "Youtube Link:"
+msgstr ""

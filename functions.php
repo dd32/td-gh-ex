@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package nnfy
+ * @package 99fy
  */
 
 if ( ! function_exists( 'nnfy_setup' ) ) :
@@ -45,13 +45,9 @@ function nnfy_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	/**
-	* Add Image Size
+	* Custom logo support
 	*/
-	add_image_size('nnfy_blog_img',970,580,true);
-	add_image_size('nnfy_blog_grid_thumb',370,244,true);
-	add_image_size('nnfy_widget_recent_post_thumb',90,90,true);
-
-	add_image_size('nnfy_product_nav_thumb',141,135,true);
+	add_theme_support( 'custom-logo' );
 	
 
 	/**
@@ -209,16 +205,11 @@ add_action( 'wp_enqueue_scripts', 'nnfy_scripts' );
 // nnfy Company Info widget js
 if( !function_exists('nnfy_admin_scripts') ) {
   function nnfy_admin_scripts() {
-	wp_enqueue_style( 'nnfy-metabox-expand', get_template_directory_uri() . '/css/metabox-expand.css', false, '1.0.0' );
-	wp_enqueue_style( 'font-awesome-admin', get_template_directory_uri() . '/css/font-awesome.min.css', false, '4.7.0' );
-
     wp_enqueue_media();
     wp_enqueue_script( 'jquery-ui-tabs' );
-    wp_enqueue_script( 'nnfy-metabox-expand', get_template_directory_uri() .'/js/metabox-expand.js', false, '', true );
     wp_enqueue_style( 'wp-color-picker' );
     wp_enqueue_script( 'wp-color-picker-alpha', get_template_directory_uri() .'/js/wp-color-picker-alpha.min.js', array( 'wp-color-picker' ), '2.1.3', true );
 
-    wp_enqueue_script( 'metabox-condition', get_template_directory_uri() .'/js/metabox-conditionals.js', array( 'jquery', 'cmb2-scripts' ), '1.0.0', true );
     wp_enqueue_script( 'nnfy-logo-uploader', get_template_directory_uri() .'/js/site-logo-uploader.js', false, '', true );
 
   }
@@ -274,11 +265,6 @@ require get_template_directory().'/inc/global-functions.php';
 	Comment form
 */
 require get_template_directory().'/inc/comment-form.php';
-
-/*
- CMB2 Tabs
-*/
-require get_template_directory().'/inc/metabox-expand.php';
 
 /*
  Woocommerce config

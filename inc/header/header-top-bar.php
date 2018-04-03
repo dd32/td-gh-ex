@@ -1,10 +1,6 @@
 <?php 
 /*
  * NNfy Header top bar
- * Author: Hastech
- * Author URI: http://hastech.company
- * Version: 1.0.0
- * ======================================================
  */
 ?>
 
@@ -35,10 +31,7 @@ if(get_theme_mod('nnfy_topbar_status', 'off')  == 'on'):
                                 <i class="ion-ios-search"></i>
                             </button>
                             <div class="toogle-content" style="display: none;">
-                                <form id="searchbox" action="<?php echo esc_url(home_url( '/' )); ?>" method="GET">
-                                    <input placeholder="Search" type="text" name="s">
-                                    <button class="button-search"></button>
-                                </form>
+                                <?php get_search_form( ); ?>
                             </div>
                         </div>
                         <?php endif; ?>
