@@ -151,6 +151,9 @@ For detail instructions, check out theme instructions page at https://catchtheme
 
 == Change log ==
 
+= 3.1.1 (Released: April 03, 2018) =
+* Bug Fixed: Design issue with Catch Infinite Scroll plugin
+
 = 3.1 (Released: March 06, 2018) =
 * Code Optimization
 * Enhanced Security: Replaced wp_filter_post_kses with wp_kses_post

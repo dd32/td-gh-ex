@@ -6,7 +6,12 @@ body,
 .rtl blockquote {
     background-color: #111;
 }
-body, button, input, select, textarea {
+body,
+button,
+input,
+select,
+textarea,
+#nav-below .wp-pagenavi span.pages {
 	color: #aaa;
 }
 .site {
@@ -14,16 +19,18 @@ body, button, input, select, textarea {
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 a,
-.catchbase-nav-menu .current-menu-item > a, 
-.catchbase-nav-menu .current-menu-ancestor > a, 
-.catchbase-nav-menu .current_page_item > a, 
-.catchbase-nav-menu .current_page_ancestor > a, 
-.sidebar-header-right .widget_nav_menu .current-menu-item > a, 
+.catchbase-nav-menu .current-menu-item > a,
+.catchbase-nav-menu .current-menu-ancestor > a,
+.catchbase-nav-menu .current_page_item > a,
+.catchbase-nav-menu .current_page_ancestor > a,
+.sidebar-header-right .widget_nav_menu .current-menu-item > a,
 .sidebar-header-right .widget_nav_menu .current-menu-ancestor > a,
 .catchbase-nav-menu li a:hover,
 .catchbase-nav-menu li a:focus,
 .sidebar-header-right .widget_nav_menu li a:hover,
-.sidebar-header-right .widget_nav_menu li a:focus {
+.sidebar-header-right .widget_nav_menu li a:focus,
+.entry-title a:hover,
+#featured-content .entry-title a:hover {
     color: #e4741f;
 }
 a:hover {
@@ -56,8 +63,8 @@ a:hover {
 #site-generator {
     border-top: 1px solid #222;
 }
-input[type="text"], 
-input[type="email"], 
+input[type="text"],
+input[type="email"],
 textarea {
 	background-color: transparent;
 }
@@ -74,8 +81,9 @@ input#s {
 .site-title a,
 .widget-title,
 #search-toggle,
-.entry-header .entry-title a,
-.entry-title, .entry-title a,
+.entry-title,
+.entry-title a,
+#featured-content .entry-title a,
 .page-header .page-title,
 article.sticky .featured-sticky,
 input[type=text]:focus,
@@ -86,7 +94,7 @@ textarea:focus,
 article.format-image .entry-title a,
 .post-format .entry-header .entry-title,
 #site-generator a,
-.catchbase-nav-menu a, 
+.catchbase-nav-menu a,
 .sidebar-header-right .widget_nav_menu a {
 	color: #ddd;
 }
@@ -130,31 +138,34 @@ hr {
 }
 .nav-primary,
 .nav-footer,
-.catchbase-nav-menu .sub-menu a, 
-.catchbase-nav-menu .children a, 
+.catchbase-nav-menu .sub-menu a,
+.catchbase-nav-menu .children a,
 .sidebar-header-right .widget_nav_menu .sub-menu a {
 	background-color: #333;
 }
 #promotion-message,
 #featured-content,
 .nav-primary,
+.nav-footer,
 #featured-post,
 #featured-post #feature-heading,
 #secondary .widget,
 #colophon,
-.catchbase-nav-menu .sub-menu a, 
-.catchbase-nav-menu .children a, 
+.catchbase-nav-menu .sub-menu a,
+.catchbase-nav-menu .children a,
 .sidebar-header-right .widget_nav_menu .sub-menu a,
-.catchbase-nav-menu .sub-menu .sub-menu, 
-.catchbase-nav-menu .children .children, 
+.catchbase-nav-menu .sub-menu .sub-menu,
+.catchbase-nav-menu .children .children,
 .sidebar-header-right .widget_nav_menu .sub-menu .sub-menu,
-.blog #main .entry-container, 
-.archive #main .entry-container, 
-.page-header .page-title {
+.blog #main .entry-container,
+.archive #main .entry-container,
+.archive-post-wrap,
+.page-header .page-title,
+#supplementary {
     border-color: #444;
 }
-.header-sidebar .widget ul.menu a, 
-#secondary-menu ul.menu a, 
+.header-sidebar .widget ul.menu a,
+#secondary-menu ul.menu a,
 #footer-menu ul.menu a {
     color: #ddd;
 }
@@ -162,18 +173,18 @@ hr {
 #homepage-message,
 .site-content article,
 article.sticky .featured-sticky,
-input[type="text"], 
-input[type="email"], 
+input[type="text"],
+input[type="email"],
 textarea,
 #footer-sidebar,
 .wp-caption,
-.entry-content table, 
+.entry-content table,
 .comment-content table,
 .entry-content th,
-.comment-content th, 
-.entry-content td, 
+.comment-content th,
+.entry-content td,
 .comment-content td {
-    border-color: #333;	
+    border-color: #333;
 }
 button,
 input[type="submit"],
@@ -218,8 +229,27 @@ th, h1, h2, h3 {
     background-color: #111;
 }
 
-.nav-secondary .catchbase-nav-menu .sub-menu a,  
-.nav-secondary .catchbase-nav-menu .sub-menu .sub-menu, 
+.nav-secondary .catchbase-nav-menu .sub-menu a,
+.nav-secondary .catchbase-nav-menu .sub-menu .sub-menu,
 .nav-secondary .sidebar-header-right .widget_nav_menu .sub-menu .sub-menu {
     border-color: #222;
+}
+
+#content #infinite-handle span button,
+#nav-below .wp-pagenavi a,
+#nav-below .wp-pagenavi span {
+    background-color: #444;
+}
+#content #infinite-handle span button,
+#nav-below .wp-pagenavi a,
+#nav-below .wp-pagenavi span,
+.page-links span {
+    color: #e4741f;
+}
+
+#content #infinite-handle span button:hover,
+#content #infinite-handle span button:focus,
+#nav-below .wp-pagenavi span.current {
+    background-color: #ddd;
+    color: #000;
 }
