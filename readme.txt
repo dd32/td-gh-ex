@@ -43,9 +43,9 @@ AyaMagazine WordPress Theme bundles the following third-party resources:
 *
 * js/viewportchecker.js - the MIT license, Reference: http://opensource.org/licenses/MIT
 *
-* screenshot (first post thumbnail image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/reservoir-jacqueline-kennedy-2375013/
+* screenshot (first post thumbnail image) License: CC0 1.0, Reference: https://unsplash.com/license, Image Source: https://unsplash.com/photos/VFs2fZEVkXo
 *
-* screenshot (second post thumbnail image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/squirrel-central-park-new-york-1172381/
+* screenshot (second post thumbnail image) License: CC0 1.0, Reference: https://unsplash.com/license, Image Source: https://unsplash.com/photos/5WbYFH0kf_8
 
 == Installation ==
 

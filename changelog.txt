@@ -1,3 +1,7 @@
+AyaMagazine 1.0.1, 2018-04-05
+------------------------
+- update screenshot
+
 AyaMagazine 1.0.1, 2018-03-27
 ------------------------
 - remove unnecessary escape of get_search_query()
