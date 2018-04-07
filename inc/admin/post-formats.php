@@ -1,10 +1,11 @@
 <?php
 
-class PostFormat {
+class PostFormat
+{
     
     public static $screens = array();
     public static $formats = array();
-    public static $supported = array('audio', 'aside', 'chat', 'image', 'link', 'quote', 'video', 'status');
+    public static $supported = array('audio', 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'video', 'status');
 
     public static function init($screens = array())
     {
@@ -17,7 +18,6 @@ class PostFormat {
         add_action('add_meta_boxes', array('PostFormat', 'register_meta'));
         // creates the forms for each psot format type.
         foreach ($forms as $format) {
-
             // so long the class exists, add teh metabox and save meta code.
             if (class_exists('PostFormat' . ucfirst($format))) {
                 $class_name = 'PostFormat' . ucfirst($format);
@@ -52,7 +52,7 @@ class PostFormat {
                     $screen,
                     'top',
                     'default'
-               );
+                );
             }
         }
     }
@@ -91,7 +91,6 @@ class PostFormat {
             $file .=  '_benjamin-post-formats-min.js';
 
             wp_enqueue_script('post_formats_js', $file, array('jquery'), null, true);
-
         }
     }
 
@@ -122,12 +121,14 @@ class PostFormat {
             return;
         }
 
+        // examine($_POST);
         if (isset($_POST['post_format_value'])) {
             update_post_meta($post_id, '_post_format_value', benjamin_sanitize_text_or_array_field(wp_unslash($_POST['post_format_value'])));
         }
     }
 
-    public static function meta_box_saved_value($post_id = null, $format = null, $default = null) {
+    public static function meta_box_saved_value($post_id = null, $format = null, $default = null)
+    {
         
         return benjamin_get_post_format_value($post_id, $format, $default);
     }

@@ -82,7 +82,7 @@ class BenjaminHeroContent
                 $output .= '404';
             $output .= '</span>';
 
-            $output .= '<h1 class="hero__title">Page not found</h1>';
+            $output .= '<h1 class="hero__title">' . __('Page not found', 'benjamin') . '</h1>';
 
             return $output;
         }
@@ -100,9 +100,7 @@ class BenjaminHeroContent
     {
         $output = '';
 
-
         $output .= $this->getSingularTitle();
-
 
         return $output;
     }
@@ -135,12 +133,7 @@ class BenjaminHeroContent
             . benjamin_get_post_format_icon( get_post_format() ) . get_the_title()
             . '</h1>';
         
-        if( $this->getPostFormatContent( $format ) && in_array( $format, $this->pf_include, true ) ) {
-
-            $output .= '<div class="hero__post_format">';
-            $output .= $this->getPostFormatContent( $format );
-            $output .= '</div>';
-        } elseif ( 'page' !== get_post_type() ) {
+        if ( 'page' !== get_post_type() ) {
             $output .= '<div class="post-meta">';
             $output .= benjamin_get_hero_meta();
             $output .= '</div>';
@@ -258,14 +251,13 @@ class BenjaminHeroContent
     {
         global $post;
         $output = '';
-
         $value = benjamin_get_post_format_value( $post->ID, 'gallery', null );
 
         if ( !$value ) {
             return null;
         }
 
-        $output .= benjamin_get_carousel_markup( $value, 'large' );
+        // $output .= benjamin_get_carousel_markup( $value, 'large' );
 
         return $output;
     }
