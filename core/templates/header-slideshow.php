@@ -22,11 +22,16 @@ if (!function_exists('bazaarlite_header_slideshow_function')) {
             for ( $i = 1;  $i<= 6; ++$i ) {
 				
 				if ( !get_theme_mod('wip_slideshow_'.$i.'_default_image') || get_theme_mod('wip_slideshow_'.$i.'_default_image') == 'off' ) :
+				
+					$defaultImage = get_template_directory_uri().'/assets/images/slideshow/img0'.$i.'.jpg';
                 
-                    echo '<div class="slick-image" style="background-image:url('.esc_url( get_theme_mod('wip_slideshow_'.$i.'_image', get_template_directory_uri().'/assets/images/slideshow/img0'.$i.'.jpg')).')">';
-                    echo '<p class="slick-title">'.esc_html(get_theme_mod('wip_slideshow_'.$i.'_title','Welcome to Bazaar')).'</p>';
-                    echo '<a class="button" href="'.esc_url( get_theme_mod('wip_slideshow_'.$i.'_url','#')).'">'.esc_html(get_theme_mod('wip_slideshow_'.$i.'_cta','Get Now')).'</a>';
-                    echo '</div>';
+                    echo '<div class="slick-image" style="background-image:url(' . esc_url( get_theme_mod('wip_slideshow_' . $i . '_image', $defaultImage)) . ')">';
+					echo '<p class="slick-title">' . esc_html(get_theme_mod('wip_slideshow_' . $i . '_title','Welcome to Bazaar')) . '</p>';
+					
+					if ( get_theme_mod('wip_slideshow_'.$i.'_url') && get_theme_mod('wip_slideshow_' . $i . '_cta') )
+						echo '<a class="button" href="' . esc_url( get_theme_mod('wip_slideshow_' . $i . '_url')) . '">' . esc_html(get_theme_mod('wip_slideshow_' . $i . '_cta')) . '</a>';
+                    
+					echo '</div>';
         		
 				endif;
             

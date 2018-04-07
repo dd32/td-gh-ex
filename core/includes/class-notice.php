@@ -10,7 +10,7 @@ if( !class_exists( 'bazaarlite_admin_notice' ) ) {
 		 
 		public function __construct( $fields = array() ) {
 
-			if ( !get_user_meta( get_current_user_id(), 'bazaar-lite_notice_userid_' . get_current_user_id() , TRUE ) ) {
+			if ( !get_user_meta( get_current_user_id(), 'bazaarLite_notice_userid_' . get_current_user_id() , TRUE ) ) {
 
 				add_action( 'admin_notices', array(&$this, 'admin_notice') );
 				add_action( 'admin_head', array( $this, 'dismiss' ) );
@@ -26,7 +26,7 @@ if( !class_exists( 'bazaarlite_admin_notice' ) ) {
 		 */
 
 		public function update_dismiss() {
-			delete_metadata( 'user', null, 'bazaar-lite_notice_userid_' . get_current_user_id(), null, true );
+			delete_metadata( 'user', null, 'bazaarLite_notice_userid_' . get_current_user_id(), null, true );
 		}
 
 		/**
@@ -37,7 +37,7 @@ if( !class_exists( 'bazaarlite_admin_notice' ) ) {
 		
 			if ( isset( $_GET['bazaar-lite-dismiss'] ) ) {
 		
-				update_user_meta( get_current_user_id(), 'bazaar-lite_notice_userid_' . get_current_user_id() , $_GET['bazaar-lite-dismiss'] );
+				update_user_meta( get_current_user_id(), 'bazaarLite_notice_userid_' . get_current_user_id() , $_GET['bazaar-lite-dismiss'] );
 				remove_action( 'admin_notices', array(&$this, 'admin_notice') );
 				
 			} 
