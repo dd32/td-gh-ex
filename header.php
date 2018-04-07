@@ -37,7 +37,7 @@
     </div>
 	</header><!-- #masthead -->
     
-  <div id="site-navigation" class="main-navigation <?php if((is_home())or(is_single())or(is_search())or(is_archive())){echo 'mr';}?>">
+  <div id="site-navigation" class="main-navigation">
     <div class="container">
       <div id="main-navigation-collapse" class="collapse navbar-collapse">
         <?php

@@ -8,54 +8,58 @@
 
 	<footer id="colophon" class="site-footer">
     <div class="container">
-		<div class="site-info clearfix">            
-			<div class="site-info-social">
-<?php if(get_theme_mod('social_email')):?>
-<a href="<?php echo esc_url('mailto:'.antispambot(get_theme_mod('social_email'))); ?>" title="<?php esc_attr_e('Send Us an Email', 'fmi'); ?>"><i class="fa fa-envelope-o"></i></a>
-<?php endif; ?>
-<?php if(get_theme_mod('social_skype')):?>
-<a href="skype:<?php echo esc_html(get_theme_mod('social_skype')); ?>?userinfo" title="<?php esc_attr_e('Contact Us on Skype', 'fmi'); ?>"><i class="fa fa-skype"></i></a>
-<?php endif; ?>
-<?php if(get_theme_mod('social_facebook')):?>
-<a href="<?php echo esc_url(get_theme_mod('social_facebook')); ?>" target="_blank" title="<?php esc_attr_e('Find Us on Facebook', 'fmi'); ?>"><i class="fa fa-facebook"></i></a>
-<?php endif; ?>
-<?php if(get_theme_mod('social_twitter')):?>
-<a href="<?php echo esc_url(get_theme_mod('social_twitter')); ?>" target="_blank" title="<?php esc_attr_e('Follow Us on Twitter', 'fmi'); ?>"><i class="fa fa-twitter"></i></a>
-<?php endif; ?>
-<?php if(get_theme_mod('social_google_plus')):?>
-<a href="<?php echo esc_url(get_theme_mod('social_google_plus')); ?>" target="_blank" title="<?php esc_attr_e('Find Us on Google Plus', 'fmi'); ?>"><i class="fa fa-google-plus"></i></a>
-<?php endif; ?>
-<?php if(get_theme_mod('social_youtube')):?>
-<a href="<?php echo esc_url(get_theme_mod('social_youtube')); ?>" target="_blank" title="<?php esc_attr_e('View our YouTube Channel', 'fmi'); ?>"><i class="fa fa-youtube"></i></a>
-<?php endif; ?>
-<?php if(get_theme_mod('social_instagram')):?>
-<a href="<?php echo esc_url(get_theme_mod('social_instagram')); ?>" target="_blank" title="<?php esc_attr_e('Follow Us on Instagram', 'fmi'); ?>"><i class="fa fa-instagram"></i></a>
-<?php endif; ?>
-<?php if(get_theme_mod('social_pinterest')):?>
-<a href="<?php echo esc_url(get_theme_mod('social_pinterest')); ?>" target="_blank" title="<?php esc_attr_e('Pin Us on Pinterest', 'fmi'); ?>"><i class="fa fa-pinterest"></i></a>
-<?php endif; ?>
-<?php if(get_theme_mod('social_linkedin')):?>
-<a href="<?php echo esc_url(get_theme_mod('social_linkedin')); ?>" target="_blank" title="<?php esc_attr_e('Find Us on LinkedIn', 'fmi'); ?>"><i class="fa fa-linkedin"></i></a>
-<?php endif; ?>
-<?php if(get_theme_mod('social_tumblr')):?>
-<a href="<?php echo esc_url(get_theme_mod('social_tumblr')); ?>" target="_blank" title="<?php esc_attr_e('Find Us on Tumblr', 'fmi'); ?>"><i class="fa fa-tumblr"></i></a>
-<?php endif; ?>
-<?php if(get_theme_mod('social_flickr')):?>
-<a href="<?php echo esc_url(get_theme_mod('social_flickr')); ?>" target="_blank" title="<?php esc_attr_e('Find Us on Flickr', 'fmi'); ?>"><i class="fa fa-flickr"></i></a>
-<?php endif; ?>
-      </div>
-      <div class="site-info-copyright">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'fmi' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'fmi' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'fmi' ), 'Fmi', '<a href="http://forrss.com/">Forrss</a>' );
-			?>
-      </div>  
-		</div><!-- .site-info -->
+  		<div class="site-info clearfix">            
+        <?php
+        $show_social = get_theme_mod('footer_show_social', 0);
+        $show_menu = get_theme_mod('footer_show_menu', 0);
+
+        $social_url = array();
+        $social_list = array('twitter', 'facebook', 'google-plus', 'pinterest', 'vk', 'flickr', 'instagram', '500px', 'youtube', 'vimeo', 'soundcloud', 'dribbble', 'behance', 'github', 'rss');
+        foreach ($social_list as $social_list_value) {
+          $social_url[$social_list_value] = get_theme_mod('social_'.$social_list_value);
+        }
+        $social_url_empty = true;
+        foreach ($social_url as $social_url_key => $social_url_value) {
+          if ($social_url_value) {
+            $social_url_empty = false;
+            break;
+          }
+        }
+
+        if (($show_social && !$social_url_empty) || ($show_menu && has_nav_menu('menu-2'))){
+          echo '<div class="site-info-nav hidden-sm hidden-xs">';
+          if ($show_social && !$social_url_empty) {
+            echo '<div class="site-info-social">';
+            foreach ($social_url as $social_url_key => $social_url_value) {
+              if ($social_url_value) {
+                echo '<a href="'.esc_url($social_url_value).'" target="_blank"><i class="fa fa-'.esc_attr($social_url_key).'"></i></a>';
+              }
+            }
+            echo '</div>';
+          }
+          if ($show_menu && has_nav_menu('menu-2')) {
+            echo '<div class="site-info-menu">';
+            wp_nav_menu(array(
+              'theme_location' => 'menu-2',
+              'container' => 'nav',
+              'menu_class' => 'footer-menu list-unstyled clearfix'
+            ));
+            echo '</div>';
+          }
+          echo '</div>';
+        }
+        ?>
+
+        <div class="site-info-copyright <?php if (($show_social && !$social_url_empty) || ($show_menu && has_nav_menu('menu-2'))){?>have-site-info-nav<?php }?>">
+  			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'fmi' ) ); ?>"><?php
+  				printf( esc_html__( 'Proudly powered by %s', 'fmi' ), 'WordPress' );
+  			?></a>
+  			<span class="sep"> | </span>
+  			<?php
+  				printf( esc_html__( 'Theme: %1$s by %2$s.', 'fmi' ), 'Fmi', '<a href="http://forrss.com/">Forrss</a>' );
+  			?>
+        </div>  
+  		</div><!-- .site-info -->
     </div>
   </footer><!-- #colophon -->
 

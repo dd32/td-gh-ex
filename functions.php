@@ -11,7 +11,7 @@ if (!function_exists('fmi_setup')) {
      * Make theme available for translation.
      * Translations can be filed in the /languages/ directory.
      */
-    load_theme_textdomain('fmi', get_template_directory() . '/languages');
+    load_theme_textdomain('fmi', get_template_directory().'/languages');
 
     // Add default posts and comments RSS feed links to head.
     add_theme_support('automatic-feed-links');
@@ -33,7 +33,8 @@ if (!function_exists('fmi_setup')) {
 
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus( array(
-      'menu-1' => esc_html__('Primary', 'fmi'),
+      'menu-1' => esc_html__('Main menu', 'fmi'),
+      'menu-2' => esc_html__('Footer menu', 'fmi')
     ));
 
     /*
@@ -60,9 +61,9 @@ if (!function_exists('fmi_setup')) {
 
     // Add support for core custom logo.
     add_theme_support('custom-logo', array(
-      'height'      => 60,
-      'width'       => 60,
-      'flex-width'  => true,
+      'height' => 60,
+      'width' => 60,
+      'flex-width' => true,
     ));
   }
 }
@@ -76,9 +77,9 @@ add_action('after_setup_theme', 'fmi_setup');
  * @global int $content_width
  */
 function fmi_content_width() {
-  $GLOBALS['content_width'] = apply_filters('fmi_content_width', 700 );
+  $GLOBALS['content_width'] = apply_filters('fmi_content_width', 700);
 }
-add_action('after_setup_theme', 'fmi_content_width', 0 );
+add_action('after_setup_theme', 'fmi_content_width', 0);
 
 /**
  * Enqueue styles.
@@ -87,24 +88,24 @@ if (!function_exists('fmi_styles')) {
   function fmi_styles() {
 
     // google fonts
-    wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic', array() ,'1.3.19');
+    wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic', array(), '1.3.21');
 
     // bootstrap
     wp_enqueue_style('bootstrap', get_template_directory_uri().'/assets/bootstrap/css/bootstrap.min.css', array(), '3.3.7');
     wp_enqueue_style('bootstrap-theme', get_template_directory_uri().'/assets/bootstrap/css/bootstrap-theme.min.css', array(), '3.3.7');
 
     // ie10 viewport bug workaround
-    wp_enqueue_style('ie10-viewport-bug-workaround', get_template_directory_uri().'/assets/css/ie10-viewport-bug-workaround.css', array(), '1.3.19');
+    wp_enqueue_style('ie10-viewport-bug-workaround', get_template_directory_uri().'/assets/css/ie10-viewport-bug-workaround.css', array(), '1.3.21');
 
     // font awesome
-    wp_enqueue_style('font-awesome', get_template_directory_uri().'/assets/font-awesome/css/font-awesome.min.css', array() ,'4.7.0');
+    wp_enqueue_style('font-awesome', get_template_directory_uri().'/assets/font-awesome/css/font-awesome.min.css', array(), '4.7.0');
 
     // owl carousel
     wp_enqueue_style('owl-carousel', get_template_directory_uri().'/assets/owl-carousel/owl.carousel.css', array(), '1.3.3');
     wp_enqueue_style('owl-theme', get_template_directory_uri().'/assets/owl-carousel/owl.theme.css', array(), '1.3.3');
 
     // main stylesheet
-    wp_enqueue_style('theme-style', get_stylesheet_directory_uri().'/style.css', array(), '1.3.19');
+    wp_enqueue_style('theme-style', get_stylesheet_directory_uri().'/style.css', array(), '1.3.21');
   }
 }
 add_action('wp_enqueue_scripts', 'fmi_styles');
@@ -130,10 +131,10 @@ if (!function_exists('fmi_scripts')) {
     wp_enqueue_script('owl-carousel', get_template_directory_uri().'/assets/owl-carousel/owl.carousel.min.js', array('jquery'), '1.3.3', true);
 
     // IE10 viewport hack for Surface/desktop Windows 8 bug
-    wp_enqueue_script('ie10-viewport-bug-workaround', get_template_directory_uri().'/assets/js/ie10-viewport-bug-workaround.js', array(), '1.3.19', true);
+    wp_enqueue_script('ie10-viewport-bug-workaround', get_template_directory_uri().'/assets/js/ie10-viewport-bug-workaround.js', array(), '1.3.21', true);
     
     // theme js
-    wp_enqueue_script('theme-js', get_template_directory_uri().'/assets/js/theme.js', array('jquery'), '1.3.19' ,true);
+    wp_enqueue_script('theme-js', get_template_directory_uri().'/assets/js/theme.js', array('jquery'), '1.3.21', true);
 
     // comments
     if ( is_singular() && comments_open() && get_option('thread_comments')) {
@@ -146,26 +147,26 @@ add_action('wp_enqueue_scripts', 'fmi_scripts');
 /**
  * Custom template widgets for this theme.
  */
-require_once get_template_directory() . '/inc/template-widgets.php';
+require_once get_template_directory().'/inc/template-widgets.php';
 
 /**
  * Custom template tags for this theme.
  */
-require_once get_template_directory() . '/inc/template-comments.php';
+require_once get_template_directory().'/inc/template-comments.php';
 
 /**
  * Custom template tags for this theme.
  */
-require_once get_template_directory() . '/inc/template-tags.php';
+require_once get_template_directory().'/inc/template-tags.php';
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
-require_once get_template_directory() . '/inc/template-functions.php';
+require_once get_template_directory().'/inc/template-functions.php';
 
 /**
  * Customizer additions.
  */
-require_once get_template_directory() . '/inc/customizer.php';
-require_once get_template_directory() . '/inc/sanitize.php';
-require_once get_template_directory() . '/inc/inline-styles.php';
+require_once get_template_directory().'/inc/customizer.php';
+require_once get_template_directory().'/inc/sanitize.php';
+require_once get_template_directory().'/inc/inline-styles.php';

@@ -43,6 +43,9 @@ textarea:focus{
 a{
   color:'.$theme_color.';
 }
+a:hover, a:focus, a:active {
+  color: '.$theme_color.';
+}
 .site-title a{
   color:'.$theme_color.';
 }
@@ -51,11 +54,13 @@ a{
 .site-title a:active{
   color:'.$theme_color.';
 }
-.main-navigation .menu {
-  background: '.$theme_color.';
+.main-navigation .menu >li >a:hover,
+.main-navigation .menu >li >a:focus{
+  color: '.$theme_color.';
 }
-.main-navigation .menu >li ul{
-  background:'.$theme_color.';
+.main-navigation .menu >li ul li a:hover,
+.main-navigation .menu >li ul li a:focus{
+  color: '.$theme_color.';
 }
 .responsive-nav >li a:hover,
 .responsive-nav >li a:focus{
@@ -64,14 +69,14 @@ a{
 .about-author-name a:hover{
   color: '.$theme_color.';
 }
-.entry-title{
+.entry-title a:hover{
+  color:'.$theme_color.';
+}
+.sticky .entry-title a{
   color:'.$theme_color.';
 }
 .entry-meta a:hover,
 .entry-meta a:focus{
-  color:'.$theme_color.';
-}
-.sticky .entry-content{
   color:'.$theme_color.';
 }
 .entry-footer a:hover,
@@ -82,6 +87,10 @@ a{
 .widget a:focus{
   color:'.$theme_color.';
 }
+.widget_tag_cloud a:hover {
+  background-color: '.$theme_color.';
+}
+
 .comment-meta a:hover,
 .comment-meta a:focus{
   color:'.$theme_color.';
@@ -100,9 +109,6 @@ a{
 .site-info a:hover,
 .site-info a:focus{
   color:'.$theme_color.';
-}   
-#back_top{
-  background:'.$theme_color.';
 }
 .slider-title a {
   background: '.$theme_color.';
@@ -115,30 +121,6 @@ a{
 }
 .slider-wrap .owl-theme .owl-controls .owl-buttons div {
   color: '.$theme_color.';
-}
-    ';
-  }
-
-  $theme_color2 = esc_attr( get_theme_mod( 'theme_color_2' ) );
-  if ($theme_color2) {
-    $theme_color2 = '#'.$theme_color2;
-    $inline_styles .= '
-a:hover,
-a:focus, 
-a:active{
-  color:'.$theme_color2.';
-}
-.menu-toggle i{
-  color:'.$theme_color2.';
-}
-.widget-title{
-  color:'.$theme_color2.';
-}
-.widget_tag_cloud a:hover {
-  background-color: '.$theme_color2.';
-}
-.post-navigation span{
-  color:'.$theme_color2.';
 }
     ';
   }

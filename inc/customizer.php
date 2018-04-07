@@ -21,42 +21,33 @@ function fmi_customize_register( $wp_customize ) {
     }
   }
 
-  $wp_customize->add_panel( 'theme_options' ,array(
-    'title' => esc_html__( 'Theme Options', 'fmi' ),
+  $wp_customize->add_panel('theme_options' ,array(
+    'title' => esc_html__('Theme Options', 'fmi'),
     'description' => '',
   ));
 
   //----------------------------------------------------------------------------------
   // Section: Colors
   //----------------------------------------------------------------------------------
-  $wp_customize->add_section( 'colors_general' , array(
+  $wp_customize->add_section('colors_general' , array(
     'title' => esc_html__('Colors', 'fmi'),
     'panel' => 'theme_options',
     'priority' => 1,
   ));
-  $wp_customize->add_setting( 'theme_color', array(
-    'default' => '#23b2dd',
+  $wp_customize->add_setting('theme_color', array(
+    'default' => '#105cb6',
     'sanitize_callback' => 'sanitize_hex_color_no_hash',
     'sanitize_js_callback' => 'maybe_hash_hex_color',
   ));
-  $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'theme_color', array(
-    'label' => esc_html__( 'Theme Color', 'fmi' ),
+  $wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'theme_color', array(
+    'label' => esc_html__('Theme Color', 'fmi'),
     'section' => 'colors_general',
   )));
-  $wp_customize->add_setting( 'theme_color_2', array(
-    'default' => '#68c3a3',
-    'sanitize_callback' => 'sanitize_hex_color_no_hash',
-    'sanitize_js_callback' => 'maybe_hash_hex_color',
-  ));
-  $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'theme_color_2', array(
-    'label' => esc_html__( 'Theme Color 2', 'fmi' ),
-    'section' => 'colors_general',
-  )));  
 
   //----------------------------------------------------------------------------------
   // Section: General Settings
   //----------------------------------------------------------------------------------
-  $wp_customize->add_section( 'general_settings_section' , array(
+  $wp_customize->add_section('general_settings_section' , array(
     'title' => esc_html__('General Settings', 'fmi'),
     'panel' => 'theme_options',
     'priority' => 2,
@@ -216,127 +207,167 @@ function fmi_customize_register( $wp_customize ) {
   //----------------------------------------------------------------------------------
   // Section: Social Media Icons 
   //----------------------------------------------------------------------------------
-  $wp_customize->add_section( 'fmi_social', array(
-    'title' => esc_html__( 'Social Media Icons', 'fmi' ),
+  $wp_customize->add_section('fmi_social', array(
+    'title' => esc_html__('Social Links & RSS', 'fmi'),
     'panel' => 'theme_options',
     'priority' => 3,
   ));
-  $wp_customize->add_setting( 'social_email', array(
+  $wp_customize->add_setting('social_twitter', array(
     'default' => '',
-    'sanitize_callback' => 'sanitize_email',
+    'sanitize_callback' => 'fmi_sanitize_url',
   ));
-  $wp_customize->add_control( 'social_email', array(
-    'label' => esc_html__( 'Email Address', 'fmi' ),
-    'section' => 'fmi_social',
-    'settings' => 'social_email',
-    'type' => 'text',
-  ));
-  $wp_customize->add_setting( 'social_skype', array(
-    'default' => '',
-    'sanitize_callback' => 'sanitize_text_field',
-  ));
-  $wp_customize->add_control( 'social_skype', array(
-    'label' => esc_html__( 'Skype', 'fmi' ),
-    'section' => 'fmi_social',
-    'settings' => 'social_skype',
-    'type' => 'text',
-  ));
-  $wp_customize->add_setting( 'social_facebook', array(
-    'default' => '',
-    'sanitize_callback' => 'esc_url_raw',
-  ));
-  $wp_customize->add_control( 'social_facebook', array(
-    'label' => esc_html__( 'Facebook', 'fmi' ),
-    'section' => 'fmi_social',
-    'settings' => 'social_facebook',
-    'type' => 'text',
-  ));
-  $wp_customize->add_setting( 'social_twitter', array(
-    'default' => '',
-    'sanitize_callback' => 'esc_url_raw',
-  ));
-  $wp_customize->add_control( 'social_twitter', array(
-    'label' => esc_html__( 'Twitter', 'fmi' ),
+  $wp_customize->add_control('social_twitter', array(
+    'label' => esc_html__('Twitter URL', 'fmi'),
     'section' => 'fmi_social',
     'settings' => 'social_twitter',
     'type' => 'text',
   ));
-  $wp_customize->add_setting( 'social_google_plus', array(
+  $wp_customize->add_setting('social_facebook', array(
     'default' => '',
-    'sanitize_callback' => 'esc_url_raw',
+    'sanitize_callback' => 'fmi_sanitize_url',
   ));
-  $wp_customize->add_control( 'social_google_plus', array(
-    'label' => esc_html__( 'Google Plus', 'fmi' ),
+  $wp_customize->add_control('social_facebook', array(
+    'label' => esc_html__('Facebook URL', 'fmi'),
     'section' => 'fmi_social',
-    'settings' => 'social_google_plus',
+    'settings' => 'social_facebook',
     'type' => 'text',
   ));
-  $wp_customize->add_setting( 'social_youtube', array(
+  $wp_customize->add_setting('social_google-plus', array(
     'default' => '',
-    'sanitize_callback' => 'esc_url_raw',
+    'sanitize_callback' => 'fmi_sanitize_url',
   ));
-  $wp_customize->add_control( 'social_youtube', array(
-    'label' => esc_html__( 'YouTube', 'fmi' ),
+  $wp_customize->add_control('social_google-plus', array(
+    'label' => esc_html__('Google+ URL', 'fmi'),
     'section' => 'fmi_social',
-    'settings' => 'social_youtube',
+    'settings' => 'social_google-plus',
     'type' => 'text',
   ));
-  $wp_customize->add_setting( 'social_instagram', array(
+  $wp_customize->add_setting('social_pinterest', array(
     'default' => '',
-    'sanitize_callback' => 'esc_url_raw',
+    'sanitize_callback' => 'fmi_sanitize_url',
   ));
-  $wp_customize->add_control( 'social_instagram', array(
-    'label' => esc_html__( 'Instagram', 'fmi' ),
-    'section' => 'fmi_social',
-    'settings' => 'social_instagram',
-    'type' => 'text',
-  ));
-  $wp_customize->add_setting( 'social_pinterest', array(
-    'default' => '',
-    'sanitize_callback' => 'esc_url_raw',
-  ));
-  $wp_customize->add_control( 'social_pinterest', array(
-    'label' => esc_html__( 'Pinterest', 'fmi' ),
+  $wp_customize->add_control('social_pinterest', array(
+    'label' => esc_html__('Pinterest URL', 'fmi'),
     'section' => 'fmi_social',
     'settings' => 'social_pinterest',
     'type' => 'text',
   ));
-  $wp_customize->add_setting( 'social_linkedin', array(
+  $wp_customize->add_setting('social_vk', array(
     'default' => '',
-    'sanitize_callback' => 'esc_url_raw',
+    'sanitize_callback' => 'fmi_sanitize_url',
   ));
-  $wp_customize->add_control( 'social_linkedin', array(
-    'label' => esc_html__( 'LinkedIn', 'fmi' ),
+  $wp_customize->add_control('social_vk', array(
+    'label' => esc_html__('VK URL', 'fmi'),
     'section' => 'fmi_social',
-    'settings' => 'social_linkedin',
+    'settings' => 'social_vk',
     'type' => 'text',
   ));
-  $wp_customize->add_setting( 'social_tumblr', array(
+  $wp_customize->add_setting('social_flickr', array(
     'default' => '',
-    'sanitize_callback' => 'esc_url_raw',
+    'sanitize_callback' => 'fmi_sanitize_url',
   ));
-  $wp_customize->add_control( 'social_tumblr', array(
-    'label' => esc_html__( 'Tumblr', 'fmi' ),
-    'section' => 'fmi_social',
-    'settings' => 'social_tumblr',
-    'type' => 'text',
-  ));
-  $wp_customize->add_setting( 'social_flickr', array(
-    'default' => '',
-    'sanitize_callback' => 'esc_url_raw',
-  ));
-  $wp_customize->add_control( 'social_flickr', array(
-    'label' => esc_html__( 'Flickr', 'fmi' ),
+  $wp_customize->add_control('social_flickr', array(
+    'label' => esc_html__('Flickr URL', 'fmi'),
     'section' => 'fmi_social',
     'settings' => 'social_flickr',
+    'type' => 'text',
+  ));
+  $wp_customize->add_setting('social_instagram', array(
+    'default' => '',
+    'sanitize_callback' => 'fmi_sanitize_url',
+  ));
+  $wp_customize->add_control('social_instagram', array(
+    'label' => esc_html__('Instagram URL', 'fmi'),
+    'section' => 'fmi_social',
+    'settings' => 'social_instagram',
+    'type' => 'text',
+  ));
+  $wp_customize->add_setting('social_500px', array(
+    'default' => '',
+    'sanitize_callback' => 'fmi_sanitize_url',
+  ));
+  $wp_customize->add_control('social_500px', array(
+    'label' => esc_html__('500px URL', 'fmi'),
+    'section' => 'fmi_social',
+    'settings' => 'social_500px',
+    'type' => 'text',
+  ));
+  $wp_customize->add_setting('social_youtube', array(
+    'default' => '',
+    'sanitize_callback' => 'fmi_sanitize_url',
+  ));
+  $wp_customize->add_control('social_youtube', array(
+    'label' => esc_html__('YouTube URL', 'fmi'),
+    'section' => 'fmi_social',
+    'settings' => 'social_youtube',
+    'type' => 'text',
+  ));
+  $wp_customize->add_setting('social_vimeo', array(
+    'default' => '',
+    'sanitize_callback' => 'fmi_sanitize_url',
+  ));
+  $wp_customize->add_control('social_vimeo', array(
+    'label' => esc_html__('Vimeo URL', 'fmi'),
+    'section' => 'fmi_social',
+    'settings' => 'social_vimeo',
+    'type' => 'text',
+  ));
+  $wp_customize->add_setting('social_soundcloud', array(
+    'default' => '',
+    'sanitize_callback' => 'fmi_sanitize_url',
+  ));
+  $wp_customize->add_control('social_soundcloud', array(
+    'label' => esc_html__('SoundCloud URL', 'fmi'),
+    'section' => 'fmi_social',
+    'settings' => 'social_soundcloud',
+    'type' => 'text',
+  ));
+  $wp_customize->add_setting('social_dribbble', array(
+    'default' => '',
+    'sanitize_callback' => 'fmi_sanitize_url',
+  ));
+  $wp_customize->add_control('social_dribbble', array(
+    'label' => esc_html__('Dribbble URL', 'fmi'),
+    'section' => 'fmi_social',
+    'settings' => 'social_dribbble',
+    'type' => 'text',
+  ));
+  $wp_customize->add_setting('social_behance', array(
+    'default' => '',
+    'sanitize_callback' => 'fmi_sanitize_url',
+  ));
+  $wp_customize->add_control('social_behance', array(
+    'label' => esc_html__('Behance URL', 'fmi'),
+    'section' => 'fmi_social',
+    'settings' => 'social_behance',
+    'type' => 'text',
+  ));
+  $wp_customize->add_setting('social_github', array(
+    'default' => '',
+    'sanitize_callback' => 'fmi_sanitize_url',
+  ));
+  $wp_customize->add_control('social_github', array(
+    'label' => esc_html__('GitHub URL', 'fmi'),
+    'section' => 'fmi_social',
+    'settings' => 'social_github',
+    'type' => 'text',
+  ));
+  $wp_customize->add_setting('social_rss', array(
+    'default' => '',
+    'sanitize_callback' => 'fmi_sanitize_url',
+  ));
+  $wp_customize->add_control('social_rss', array(
+    'label' => esc_html__('RSS URL', 'fmi'),
+    'section' => 'fmi_social',
+    'settings' => 'social_rss',
     'type' => 'text',
   ));
 
   //----------------------------------------------------------------------------------
   // Section: Slider
   //----------------------------------------------------------------------------------
-  $wp_customize->add_section( 'fmi_slider', array(
-    'title' => esc_html__( 'Slider', 'fmi' ),
+  $wp_customize->add_section('fmi_slider', array(
+    'title' => esc_html__('Slider', 'fmi'),
     'panel' => 'theme_options',
     'priority' => 4,
   ));
@@ -351,168 +382,195 @@ function fmi_customize_register( $wp_customize ) {
     'type' => 'checkbox',
   ));
 
-  $wp_customize->add_setting( 'slider_image1', array(
+  $wp_customize->add_setting('slider_image1', array(
     'default' => '',
     'sanitize_callback' => 'sanitize_text_field',
   ));
-  $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'slider_image1', array(
-    'label' => esc_html__( 'Image Upload #1', 'fmi' ),
-    'description' => esc_html__( 'Upload slider image', 'fmi' ),
+  $wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'slider_image1', array(
+    'label' => esc_html__('Image Upload #1', 'fmi'),
+    'description' => esc_html__('Upload slider image', 'fmi'),
     'section' => 'fmi_slider',
     'settings' => 'slider_image1',
   )));
-  $wp_customize->add_setting( 'slider_title1', array(
+  $wp_customize->add_setting('slider_title1', array(
     'default' => '',
     'sanitize_callback' => 'sanitize_text_field',
   ));
-  $wp_customize->add_control( 'slider_title1', array(
-    'description' => esc_html__( 'Enter title for your slider', 'fmi' ),
+  $wp_customize->add_control('slider_title1', array(
+    'description' => esc_html__('Enter title for your slider', 'fmi'),
     'section' => 'fmi_slider',
     'settings' => 'slider_title1',
     'type' => 'text',
   ));
-  $wp_customize->add_setting( 'slider_text1', array(
+  $wp_customize->add_setting('slider_text1', array(
     'default' => '',
     'sanitize_callback' => 'sanitize_text_field',
   ));
-  $wp_customize->add_control( 'slider_text1', array(
-    'description' => esc_html__( 'Enter your slider description', 'fmi' ),
+  $wp_customize->add_control('slider_text1', array(
+    'description' => esc_html__('Enter your slider description', 'fmi'),
     'section' => 'fmi_slider',
     'settings' => 'slider_text1',
     'type' => 'text',
   ));
-  $wp_customize->add_setting( 'slider_link1', array(
+  $wp_customize->add_setting('slider_link1', array(
     'default' => '',
     'sanitize_callback' => 'esc_url_raw',
   ));
-  $wp_customize->add_control( 'slider_link1', array(
-    'description' => esc_html__( 'Enter link to redirect slider when clicked', 'fmi' ),
+  $wp_customize->add_control('slider_link1', array(
+    'description' => esc_html__('Enter link to redirect slider when clicked', 'fmi'),
     'section' => 'fmi_slider',
     'settings' => 'slider_link1',
     'type' => 'text',
   ));
 
-  $wp_customize->add_setting( 'slider_image2', array(
+  $wp_customize->add_setting('slider_image2', array(
     'default' => '',
     'sanitize_callback' => 'sanitize_text_field',
   ));
-  $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'slider_image2', array(
-    'label' => esc_html__( 'Image Upload #2', 'fmi' ),
-    'description' => esc_html__( 'Upload slider image', 'fmi' ),
+  $wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'slider_image2', array(
+    'label' => esc_html__('Image Upload #2', 'fmi'),
+    'description' => esc_html__('Upload slider image', 'fmi'),
     'section' => 'fmi_slider',
     'settings' => 'slider_image2',
   )));
-  $wp_customize->add_setting( 'slider_title2', array(
+  $wp_customize->add_setting('slider_title2', array(
     'default' => '',
     'sanitize_callback' => 'sanitize_text_field',
   ));
-  $wp_customize->add_control( 'slider_title2', array(
-    'description' => esc_html__( 'Enter title for your slider', 'fmi' ),
+  $wp_customize->add_control('slider_title2', array(
+    'description' => esc_html__('Enter title for your slider', 'fmi'),
     'section' => 'fmi_slider',
     'settings' => 'slider_title2',
     'type' => 'text',
   ));
-  $wp_customize->add_setting( 'slider_text2', array(
+  $wp_customize->add_setting('slider_text2', array(
     'default' => '',
     'sanitize_callback' => 'sanitize_text_field',
   ));
-  $wp_customize->add_control( 'slider_text2', array(
-    'description' => esc_html__( 'Enter your slider description', 'fmi' ),
+  $wp_customize->add_control('slider_text2', array(
+    'description' => esc_html__('Enter your slider description', 'fmi'),
     'section' => 'fmi_slider',
     'settings' => 'slider_text2',
     'type' => 'text',
   ));
-  $wp_customize->add_setting( 'slider_link2', array(
+  $wp_customize->add_setting('slider_link2', array(
     'default' => '',
     'sanitize_callback' => 'esc_url_raw',
   ));
-  $wp_customize->add_control( 'slider_link2', array(
-    'description' => esc_html__( 'Enter link to redirect slider when clicked', 'fmi' ),
+  $wp_customize->add_control('slider_link2', array(
+    'description' => esc_html__('Enter link to redirect slider when clicked', 'fmi'),
     'section' => 'fmi_slider',
     'settings' => 'slider_link2',
     'type' => 'text',
   ));
 
-  $wp_customize->add_setting( 'slider_image3', array(
+  $wp_customize->add_setting('slider_image3', array(
     'default' => '',
     'sanitize_callback' => 'sanitize_text_field',
   ));
-  $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'slider_image3', array(
-    'label' => esc_html__( 'Image Upload #3', 'fmi' ),
-    'description' => esc_html__( 'Upload slider image', 'fmi' ),
+  $wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'slider_image3', array(
+    'label' => esc_html__('Image Upload #3', 'fmi'),
+    'description' => esc_html__('Upload slider image', 'fmi'),
     'section' => 'fmi_slider',
     'settings' => 'slider_image3',
   )));
-  $wp_customize->add_setting( 'slider_title3', array(
+  $wp_customize->add_setting('slider_title3', array(
     'default' => '',
     'sanitize_callback' => 'sanitize_text_field',
   ));
-  $wp_customize->add_control( 'slider_title3', array(
-    'description' => esc_html__( 'Enter title for your slider', 'fmi' ),
+  $wp_customize->add_control('slider_title3', array(
+    'description' => esc_html__('Enter title for your slider', 'fmi'),
     'section' => 'fmi_slider',
     'settings' => 'slider_title3',
     'type' => 'text',
   ));
-  $wp_customize->add_setting( 'slider_text3', array(
+  $wp_customize->add_setting('slider_text3', array(
     'default' => '',
     'sanitize_callback' => 'sanitize_text_field',
   ));
-  $wp_customize->add_control( 'slider_text3', array(
-    'description' => esc_html__( 'Enter your slider description', 'fmi' ),
+  $wp_customize->add_control('slider_text3', array(
+    'description' => esc_html__('Enter your slider description', 'fmi'),
     'section' => 'fmi_slider',
     'settings' => 'slider_text3',
     'type' => 'text',
   ));
-  $wp_customize->add_setting( 'slider_link3', array(
+  $wp_customize->add_setting('slider_link3', array(
     'default' => '',
     'sanitize_callback' => 'esc_url_raw',
   ));
-  $wp_customize->add_control( 'slider_link3', array(
-    'description' => esc_html__( 'Enter link to redirect slider when clicked', 'fmi' ),
+  $wp_customize->add_control('slider_link3', array(
+    'description' => esc_html__('Enter link to redirect slider when clicked', 'fmi'),
     'section' => 'fmi_slider',
     'settings' => 'slider_link3',
     'type' => 'text',
   ));
 
-  $wp_customize->add_setting( 'slider_image4', array(
+  $wp_customize->add_setting('slider_image4', array(
     'default' => '',
     'sanitize_callback' => 'sanitize_text_field',
   ));
-  $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'slider_image4', array(
-    'label' => esc_html__( 'Image Upload #4', 'fmi' ),
-    'description' => esc_html__( 'Upload slider image', 'fmi' ),
+  $wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'slider_image4', array(
+    'label' => esc_html__('Image Upload #4', 'fmi'),
+    'description' => esc_html__('Upload slider image', 'fmi'),
     'section' => 'fmi_slider',
     'settings' => 'slider_image4',
   )));
-  $wp_customize->add_setting( 'slider_title4', array(
+  $wp_customize->add_setting('slider_title4', array(
     'default' => '',
     'sanitize_callback' => 'sanitize_text_field',
   ));
-  $wp_customize->add_control( 'slider_title4', array(
-    'description' => esc_html__( 'Enter title for your slider', 'fmi' ),
+  $wp_customize->add_control('slider_title4', array(
+    'description' => esc_html__('Enter title for your slider', 'fmi'),
     'section' => 'fmi_slider',
     'settings' => 'slider_title4',
     'type' => 'text',
   ));
-  $wp_customize->add_setting( 'slider_text4', array(
+  $wp_customize->add_setting('slider_text4', array(
     'default' => '',
     'sanitize_callback' => 'sanitize_text_field',
   ));
-  $wp_customize->add_control( 'slider_text4', array(
-    'description' => esc_html__( 'Enter your slider description', 'fmi' ),
+  $wp_customize->add_control('slider_text4', array(
+    'description' => esc_html__('Enter your slider description', 'fmi'),
     'section' => 'fmi_slider',
     'settings' => 'slider_text4',
     'type' => 'text',
   ));
-  $wp_customize->add_setting( 'slider_link4', array(
+  $wp_customize->add_setting('slider_link4', array(
     'default' => '',
     'sanitize_callback' => 'esc_url_raw',
   ));
-  $wp_customize->add_control( 'slider_link4', array(
-    'description' => esc_html__( 'Enter link to redirect slider when clicked', 'fmi' ),
+  $wp_customize->add_control('slider_link4', array(
+    'description' => esc_html__('Enter link to redirect slider when clicked', 'fmi'),
     'section' => 'fmi_slider',
     'settings' => 'slider_link4',
     'type' => 'text',
   ));
+
+  //----------------------------------------------------------------------------------
+  // Section: Footer
+  //----------------------------------------------------------------------------------
+  $wp_customize->add_section('fmi_footer', array(
+    'title' => esc_html__('Footer', 'fmi'),
+    'panel' => 'theme_options',
+    'priority' => 5,
+  ));
+  $wp_customize->add_setting('footer_show_social',array(
+    'default' => 0,
+    'sanitize_callback' => 'fmi_sanitize_checkbox',
+  ));
+  $wp_customize->add_control('footer_show_social',array(
+    'type' => 'checkbox',
+    'label' => esc_html__('Show "Social Links & RSS" block', 'fmi'),
+    'section' => 'fmi_footer',
+  ));
+  $wp_customize->add_setting('footer_show_menu',array(
+    'default' => 0,
+    'sanitize_callback' => 'fmi_sanitize_checkbox',
+  ));
+  $wp_customize->add_control('footer_show_menu',array(
+    'type' => 'checkbox',
+    'label' => esc_html__('Show "Footer menu" block', 'fmi'),
+    'section' => 'fmi_footer',
+  ));
 }
-add_action( 'customize_register', 'fmi_customize_register' );
+add_action('customize_register', 'fmi_customize_register');

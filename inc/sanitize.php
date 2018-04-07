@@ -5,6 +5,11 @@
  * @package fmi
  */
 
+// URL (esc_url)
+function fmi_sanitize_url($input) {
+  return esc_url_raw($input);
+}
+
 // Number field (intval)
 function fmi_sanitize_number_intval($input) {
   if (is_numeric($input) && $input >= 1) {

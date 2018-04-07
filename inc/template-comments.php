@@ -18,7 +18,7 @@ function fmi_list_comments($comment,$args,$depth){
 ?>
   <li id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
     <article id="div-comment-<?php comment_ID(); ?>" class="comment-body clearfix">
-      <div class="comment-author"><?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, 40); ?></div>
+      <div class="comment-author"><?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, 46); ?></div>
         
       <div class="comment-info">
         <div class="comment-meta">
