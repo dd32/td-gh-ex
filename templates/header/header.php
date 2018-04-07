@@ -1,8 +1,8 @@
-<?php if ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-seven' ) :  // Site Header ?>
+<?php if ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-seven' ) : ?>
 	
 	<?php get_template_part( '/templates/header/header-layout-seven' ); ?>
 	
-<?php elseif ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) :  // Site Header ?>
+<?php elseif ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) : ?>
 	
 	<?php get_template_part( '/templates/header/header-layout-six' ); ?>
 	

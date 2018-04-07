@@ -1,8 +1,8 @@
 <?php
 /**
- * Avant -X Child functions and definitions
+ * Avant-X Child functions and definitions
  */
-define( 'AVANTX_THEME_VERSION' , '1.0.0' );
+define( 'AVANTX_THEME_VERSION' , '1.0.1' );
 
 /**
  * Enqueue parent theme style
@@ -32,7 +32,7 @@ function avantx_child_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'avantx_child_enqueue_styles' );
 
 /**
- * Enqueue Avant -X custom customizer styling.
+ * Enqueue Avant-X custom customizer styling.
  */
 function avantx_load_customizer_settings() {
     global $wp_customize;
