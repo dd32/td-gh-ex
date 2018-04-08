@@ -41,7 +41,7 @@ function bcorporate_customize_register( $wp_customize ) {
 	    'priority'       => 50,
 	    'capability'     => 'edit_theme_options',
 	    'title'          => esc_html__('Home Page', 'bcorporate'),
-	    'description'    => esc_html__('Changes the home page settings', 'bcorporate'),
+	    'description'    => esc_html__('To function all the controls under this panel you should select page template as Home Page', 'bcorporate'),
 	));
 
 	/* 1.1 Homepage About section **/

@@ -85,11 +85,17 @@ if ( ! function_exists( 'bcorporate_setup' ) ) :
 		add_image_size('bcorporate_services', 39, 34, true);
 		add_image_size('bcorporate_portfolio', 350, 250, true);
 
-		// changing exceprtlength
-		function bcorporate_excerpt_length() {
-		    return 24;
+		/**
+		 * Changing excerpt length for bcorporate theme
+		 */
+		function bcorporate_excerpt_length( $length ) {
+			if ( ! is_admin() ) {
+				return 24;
+			} else {
+				return $length;
+			}
 		}
-		add_filter( 'excerpt_length', 'bcorporate_excerpt_length');
+		add_filter( 'excerpt_length', 'bcorporate_excerpt_length', 999 );
 	}
 endif;
 add_action( 'after_setup_theme', 'bcorporate_setup' );

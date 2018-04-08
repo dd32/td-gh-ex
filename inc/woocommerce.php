@@ -295,3 +295,4 @@ if ( ! function_exists( 'bcorporate_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+

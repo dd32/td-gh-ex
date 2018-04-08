@@ -113,8 +113,8 @@ h1.site-title{
 
 .bcorporate_banner_section{
   position:relative;
-  display:flex;
-  overflow:hidden;
+ /* display:flex;*/
+ /* overflow:hidden;*/
   z-index:2;
 
   width:100%;
@@ -124,11 +124,11 @@ h1.site-title{
      position:relative;
      background-size:cover;
      background-color:$BE__color__background-blue;
-      height:250px;
+     /* height:250px;*/
 
 
       @media (min-width: 768px) {
-      height:378px;
+     /* height:378px;*/
     }
 
       &:after{
@@ -150,7 +150,8 @@ h1.site-title{
     position: relative;
     color:$BE__color__white-text;
     
-    z-index: 2;}
+    z-index: 2;
+     padding:6rem 0;}
 
 
    
@@ -167,13 +168,14 @@ h1.site-title{
   
   .bcorporate_home_banner_section{
    
-     height:480px;
+     /*height:480px;*/
 
     
 
     .caption-text{
       @media (min-width: 1200px) {
-          top: -30px;
+          /*top: -30px;*/
+          padding:10rem 0;
       }
 
     
@@ -240,7 +242,7 @@ h1.site-title{
         }  
 
     @media (min-width: 1366px) {
-      height:640px;
+     /* height:640px;*/
         top:0;
     }
 

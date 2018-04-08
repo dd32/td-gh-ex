@@ -11,15 +11,21 @@ Multi-purpose WordPress theme
 
 BCorporate is a Free Corporate Wordpress Theme created using latest trends such as SASS which is a powerful and well performed CSS Extension, with HTML5 / CSS3 and Responsive design. This theme is a Full-Width Layout with includes features and Sections such as: Sliders, Portfolios, Services, Testimonials, Blog Posts, Call To Action (x2) and Contact Form. 
 
+=== Menu support in theme ==
+It support menu depth upto 4 only.
+
 == Installation ==
 
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-==Documentation for Bcorporate Theme==
+== Options ==
+All options are in the Customizer.
+
 Homepage Setup
 1. To setup home page create page and select "Home Page" as page template then all the homepage setting in customier will work.
+2. Homepage content area text is only displayed in homepage banner section.
 
 Data Import
 1. For demo data Import use this wordpress plugin https://wordpress.org/plugins/one-click-demo-import/
@@ -28,6 +34,11 @@ Data Import
 Sass
 1. If you want to edit theme css using sass please use https://wordpress.org/plugins/wp-scss/ wordpress plugin otherwide you can edit style.css by creating child theme of bcorporate.
 
+Menus
+The theme has two menus. The main menu supports 4 levels, while the footer menu only supports one level.
+
+Custom template
+There are two custom page templates. You must select homepage template to work all the homepage settings in customizer. And contact us page template to get contact page layout.
 
 
 == Frequently Asked Questions ==
@@ -60,6 +71,10 @@ Bcorporate includes support for Infinite Scroll in Jetpack.
 = 1.0.6 - March 26 2018 =
 * fixed readme.txt issues
 * fixed translation issues
+
+= 1.0.8 - April 8 2018 =
+* fixed readme.txt issues
+* fixed exeprt lengh issue
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License  v2 or later
