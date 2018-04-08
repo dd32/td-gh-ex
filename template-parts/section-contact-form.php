@@ -6,14 +6,14 @@
  * @since Bassist 1.0
  */
 $bassist_theme_options = bassist_get_options( 'bassist_theme_options' );
-$contact_page = $bassist_theme_options['contact_page_slug'];
+$contact_page = $bassist_theme_options['contact_page'];
 ?>
 
 <section id="contact" class="contact-section">
 	<div class="inner">
 
 <?php
-	$contact = new WP_Query( array( 'pagename' => $contact_page ) );   
+	$contact = new WP_Query( array( 'page_id' => $contact_page ) );   
 
 	if ($contact->have_posts()) :
 		while ( $contact->have_posts() ): $contact->the_post(); ?>
@@ -25,7 +25,7 @@ $contact_page = $bassist_theme_options['contact_page_slug'];
 	elseif ( is_customize_preview() ):
 		printf( '<h1>%1$s</h1><p>%2$s</p>',
 				__('This is the contact section', 'bassist'),
-				__('To fill up this section, create a page with the title "Contact", "Contact me" or something similar and write the shortcode of your preferred contact plugin in the content of the page. You can also add some text before the shortcode. Go to Contact Section Settings in the Customizer and write the slug of the page. This section can have a background picture.', 'bassist') );
+				__('To fill up this section, create a page with the title "Contact", "Contact me" or something similar and write the shortcode of your preferred contact plugin in the content of the page. You can also add some text before the shortcode. Go to Contact Section Settings in the Customizer and select the page. This section can have a background picture.', 'bassist') );
 	endif;
 ?>   
 	</div>

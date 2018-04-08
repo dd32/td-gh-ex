@@ -80,6 +80,11 @@ function bassist_setup() {
 	) );
 
 	/*
+	 * Add support for selective refresh of widget sidebars in the Customizer.
+	 */
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */

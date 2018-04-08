@@ -6,7 +6,7 @@
  * @since Bassist 1.0.0
  */
 $bassist_theme_options = bassist_get_options( 'bassist_theme_options' );
-$about_page = $bassist_theme_options['about_slug'];
+$about_page = $bassist_theme_options['about_page'];
 ?>
 
 <section id="about" class="about-section">
@@ -14,7 +14,7 @@ $about_page = $bassist_theme_options['about_slug'];
 			
 	<div class="inner">
 <?php
-   $about = new WP_Query( array( 'pagename' => $about_page ) );   
+   $about = new WP_Query( array( 'page_id' => $about_page ) );   
 
 	if ($about->have_posts()) :
 		while ( $about->have_posts() ): $about->the_post(); ?>

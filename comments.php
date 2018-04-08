@@ -23,7 +23,7 @@ if ( post_password_required() ) {
 
 	<h2 class="comments-title">
 		<?php
-			printf( _n( 'One thought on', '%1$s thoughts on', get_comments_number(), 'bassist' ), number_format_i18n( get_comments_number()) );
+			printf( _n( 'One thought on', '%1$s thoughts on', get_comments_number(), 'bassist' ), number_format_i18n( get_comments_number() ) );
 			printf( ' &ldquo;%1$s&rdquo;', get_the_title() );
 
 		?>

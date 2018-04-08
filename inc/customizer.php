@@ -92,18 +92,20 @@ $wp_customize->add_section( 'about_section', array(
 ) );
 
 //===============================
-$wp_customize->add_setting( 'bassist_theme_options[about_slug]', array(
-	'default'		=> 'about',
-	'sanitize_callback'	=> 'sanitize_text_field',
+$wp_customize->add_setting( 'bassist_theme_options[about_page]', array(
+	'default'		=> '',
+	'sanitize_callback'	=> 'absint',
 	'type'				=> 'option',
 	'capability'		=> 'edit_theme_options',
 ) );
 
-$wp_customize->add_control( 'about_slug', array(
-	'label'			=> __('Slug of your About Page', 'bassist'),
-	'description'	=> __('Create a page with an introduction about yourself and write the slug of the page below.', 'bassist'),
+$wp_customize->add_control( 'about_page', array(
+	'label'			=> __('Your About Page', 'bassist'),
+	'description'	=> __('Create a page with an introduction about yourself and select it with the dropdown.', 'bassist'),
 	'section'		=> 'about_section',
-	'settings'		=> 'bassist_theme_options[about_slug]',
+	'settings'		=> 'bassist_theme_options[about_page]',
+	'type' => 'dropdown-pages',
+	'allow_addition' => true,
 ));
 
 //===============================
@@ -413,18 +415,20 @@ $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'conta
 )));
 
 //===============================
-$wp_customize->add_setting( 'bassist_theme_options[contact_page_slug]', array(
-	'default'			=> 'contact',
-	'sanitize_callback'	=> 'sanitize_text_field',
+$wp_customize->add_setting( 'bassist_theme_options[contact_page]', array(
+	'default'			=> '',
+	'sanitize_callback'	=> 'absint',
 	'type'				=> 'option',
 	'capability'		=> 'edit_theme_options',
 ) );
 
-$wp_customize->add_control( 'contact_page_slug', array(
-	'label'			=> __('Slug of your Contact Page', 'bassist'),
-	'description'	=> __('Install the contact plugin of your preference. Create a page with a title like Contact or Contact me, write the shortcode given by the Contact plugin in the content of the page and write the slug of the page below.', 'bassist'),
+$wp_customize->add_control( 'contact_page', array(
+	'label'			=> __('Your Contact Page', 'bassist'),
+	'description'	=> __('Install the contact plugin of your preference. Create a page with a title like Contact or Contact me, write the shortcode given by the Contact plugin in the content of the page and select it with the dropdown.', 'bassist'),
 	'section'		=> 'Contact',
-	'settings'		=> 'bassist_theme_options[contact_page_slug]',
+	'settings'		=> 'bassist_theme_options[contact_page]',
+	'type' => 'dropdown-pages',
+	'allow_addition' => true,
 ));
 
 // =============================
@@ -443,35 +447,39 @@ $wp_customize->add_panel( 'theme_options', array(
 $wp_customize->add_section( 'Special Pages Settings', array(
 	'title'			=> __( 'Special Pages', 'bassist' ),
 	'priority'		=> 172,
-	'description'	=> __( 'This section saves the slug (i.e. its URL valid name) of the pages made with the special page templates, so they can be used across the theme. Write the pages slug here.', 'bassist'),
+	'description'	=> __( 'In this section you can select the pages made with the special page templates, so they can be used across the theme. Select the pages with the dropdown menu.', 'bassist'),
 	'panel'			=> 'theme_options',
 ) );
 //===============================
-$wp_customize->add_setting( 'bassist_theme_options[contributors_slug]', array(
-	'default'			=> 'contributors',
-	'sanitize_callback'	=> 'sanitize_text_field',
+$wp_customize->add_setting( 'bassist_theme_options[contributors_page]', array(
+	'default'			=> '',
+	'sanitize_callback'	=> 'absint',
 	'type'				=> 'option',
 	'capability'		=> 'edit_theme_options',
 ) );
 
-$wp_customize->add_control( 'contributors_slug', array(
-	'label'		=> __('Slug of your Contributors Page', 'bassist'),
+$wp_customize->add_control( 'contributors_page', array(
+	'label'		=> __('Your Contributors Page', 'bassist'),
 	'section'	=> 'Special Pages Settings',
-	'settings'	=> 'bassist_theme_options[contributors_slug]',
+	'settings'	=> 'bassist_theme_options[contributors_page]',
+	'type' => 'dropdown-pages',
+	'allow_addition' => true,
 ));
 
 //===============================
-$wp_customize->add_setting( 'bassist_theme_options[featured_articles_slug]', array(
-	'default'			=> 'featured',
-	'sanitize_callback'	=> 'sanitize_text_field',
+$wp_customize->add_setting( 'bassist_theme_options[featured_articles_page]', array(
+	'default'			=> '',
+	'sanitize_callback'	=> 'absint',
 	'type'				=> 'option',
 	'capability'		=> 'edit_theme_options',
 ) );
 
-$wp_customize->add_control( 'featured_articles_slug', array(
-	'label'		=> __('Slug of your Featured Articles Page', 'bassist'),
+$wp_customize->add_control( 'featured_articles_page', array(
+	'label'		=> __('Your Featured Articles Page', 'bassist'),
 	'section'	=> 'Special Pages Settings',
-	'settings'	=> 'bassist_theme_options[featured_articles_slug]',
+	'settings'	=> 'bassist_theme_options[featured_articles_page]',
+	'type' => 'dropdown-pages',
+	'allow_addition' => true,
 ));
 
 // =============================
@@ -601,25 +609,27 @@ function bassist_theme_custom_styling() {
 	$css .= '.audio-format-section { background-color: ' . $audio_section_background_color . '}' . "\n";
 
 	if ( bassist_relative_luminance($audio_section_background_color) <= 0.324 ) {
-	$css .= '.audio-format-section .entry-meta, .audio-format-section .entry-meta a, .audio-format-section .entry-title a:hover { color: #bbb}' . "\n";
-	$css .= '.audio-format-section .entry-meta a:hover { color: #eee}' . "\n";
-	$css .= '.audio-format-section .entry-title a:hover { color: #bbb}' . "\n";
+	$css .= '.audio-format-section .entry-meta, .audio-format-section .entry-meta a { color: #ccc}' . "\n";
+	$css .= '.audio-format-section .entry-meta a:hover, .audio-format-section .entry-meta a:focus { color: #eee}' . "\n";
+	$css .= '.audio-format-section .entry-title a:hover, .audio-format-section .entry-title a:focus { color: #ccc}' . "\n";
 }
 
 	if ( $video_section_background_color )
 	$css .= '.video-format-section { background-color: ' . $video_section_background_color . '}' . "\n";
 
 	if ( bassist_relative_luminance($video_section_background_color) <= 0.324 ) {
-	$css .= '.video-format-section .entry-meta, .video-format-section .entry-meta a, .video-format-section .entry-title a:hover { color: #bbb}' . "\n";
-	$css .= '.video-format-section .entry-meta a:hover { color: #eee}' . "\n";
+	$css .= '.video-format-section .entry-meta, .video-format-section .entry-meta a { color: #ccc}' . "\n";
+	$css .= '.video-format-section .entry-meta a:hover, .video-format-section .entry-meta a:focus { color: #eee}' . "\n";
+	$css .= '.video-format-section .entry-title a:hover, .video-format-section .entry-title a:focus { color: #ccc}' . "\n";
 }
 
 if ( $image_section_background_color )
 	$css .= '.image-format-section { background-color: ' . $image_section_background_color . '}' . "\n";
 
 	if ( bassist_relative_luminance( $image_section_background_color ) <= 0.324 ) {
-	$css .= '.image-format-section .entry-meta, .image-format-section .entry-meta a, .image-format-section .entry-title a:hover, .image-format-section .wp-caption .wp-caption-text { color: #bbb}' . "\n";
-	$css .= '.image-format-section .entry-meta a:hover { color: #eee}' . "\n";
+	$css .= '.image-format-section .entry-meta, .image-format-section .entry-meta a, .image-format-section .wp-caption .wp-caption-text { color: #ccc}' . "\n";
+	$css .= '.image-format-section .entry-meta a:hover, .image-format-section .entry-meta a:focus { color: #eee}' . "\n";
+	$css .= '.image-format-section .entry-title a:hover, .image-format-section .entry-title a:focus { color: #ccc}' . "\n";
 }
 
 	if ( $contact_section_background_color )
@@ -689,9 +699,9 @@ function bassist_get_option_defaults() {
 		'image_section_background_color' => '#177091',
 		'image_section_title' => 'Images',
 		'hide_image_section' => false,
-		'about_slug' => 'about',
-		'contributors_slug' => 'contributors',
-		'featured_articles_slug' => 'featured',
+		'about_page' => '',
+		'contributors_page' => '',
+		'featured_articles_page' => '',
 		'blog_navigation' => 'navigation',	
 		'parallax_background_image_1' => '',
 		'parallax_background_image_2' => '',
@@ -699,7 +709,7 @@ function bassist_get_option_defaults() {
 		'parallax_background_image_4' => '',
 		'contact_section_background_color' => '#12a7a8',
 		'contact_section_background_image' => '',
-		'contact_page_slug' => 'contact',
+		'contact_page' => '',
 	);
 	return apply_filters( 'bassist_get_option_defaults', $defaults );
 }
