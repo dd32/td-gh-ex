@@ -64,6 +64,9 @@ function virality_setup() {
 			'chat' /* A chat transcript */
 		)
 	);
+
+	add_theme_support( 'title-tag' );
+	add_theme_support( 'custom-logo' );
 }
 endif;
 add_action( 'after_setup_theme', 'virality_setup' );
@@ -88,8 +91,6 @@ if ( ! function_exists( 'virality_theme_customizer' ) ) :
 
 	function virality_theme_customizer( $wp_customize ) {
 		
-		$wp_customize->remove_section( 'title_tagline');
-		
 		/* header bg color option */
 		$wp_customize->add_setting( 'virality_header_bg_color', array (
 			'default'	=> '#FFFFFF',
@@ -101,24 +102,6 @@ if ( ! function_exists( 'virality_theme_customizer' ) ) :
 			'section'  => 'colors',
 			'settings' => 'virality_header_bg_color',
 			'priority' => 100
-		) ) );
-		
-
-		/* logo option */
-		$wp_customize->add_section( 'virality_logo_section' , array(
-			'title'       => __( 'Site Logo', 'virality' ),
-			'priority'    => 31,
-			'description' => __( 'Upload a logo to replace the default site name in the header', 'virality' ),
-		) );
-		
-		$wp_customize->add_setting( 'virality_logo', array (
-			'sanitize_callback' => 'esc_url_raw',
-		) );
-		
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'virality_logo', array(
-			'label'    => __( 'Choose your logo (ideal width is 100-300px and ideal height is 40-100px)', 'virality' ),
-			'section'  => 'virality_logo_section',
-			'settings' => 'virality_logo',
 		) ) );
 		
 		/* site title color option */
@@ -543,7 +526,6 @@ if ( ! function_exists( 'virality_comment' ) ) :
  * Template for comments and pingbacks.
  */
 function virality_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
@@ -559,7 +541,7 @@ function virality_comment( $comment, $args, $depth ) {
 			<footer class="clearfix comment-head">
 				<div class="comment-author vcard">
 					<?php echo get_avatar( $comment, 60 ); ?>
-					<?php printf( __( '%s', 'virality' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( '%s', sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 				</div><!-- .comment-author .vcard -->
 
 				<div class="comment-meta commentmetadata">
@@ -688,8 +670,8 @@ class virality_latest_thumb extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'virality_latest_thumb', // Base ID
-			__( 'Recent Posts w/ Thumbnails', 'text_domain' ), // Name
-			array( 'description' => __( 'Recent Posts w/ Thumbnails', 'text_domain' ), ) // Args
+			__( 'Recent Posts w/ Thumbnails', 'virality' ), // Name
+			array( 'description' => __( 'Recent Posts w/ Thumbnails', 'virality' ), ) // Args
 		);		
 	}
 	
