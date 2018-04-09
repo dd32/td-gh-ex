@@ -38,6 +38,7 @@ function agency_x_customize_register_banner_slider( $wp_customize ) {
     ) );
 
     $wp_customize->add_control( 'banner_slider_'.$i, array(
+      /* translators: %s: count */
       'label'                 =>  sprintf( __( 'Select Page For Slider %s', 'agency-x' ), $i),
       'section'               => 'banner_slider_section',
       'type'                  => 'dropdown-pages',

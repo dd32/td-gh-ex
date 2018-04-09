@@ -228,26 +228,7 @@
         activeOverlay: false,        // Set CSS color to display scrollUp active point, e.g '#00FFFF'
         zIndex: 2147483647           // Z-Index for the overlay
     });
-	
-	/*======================================
-	// Google Map
-	======================================*/ 
-	var map = new GMaps({
-			el: '.map',
-			lat: 23.810332,
-			lng: 90.412518,
-			scrollwheel: false,
-		});
-		map.addMarker({
-			lat: 23.810332,
-			lng: 90.412518,
-			title: 'Marker with InfoWindow',
-			infoWindow: {
-			content: '<p>Welcome to Codeglim</p>'
-		}
-	});
-	
-    });
+});
 	
 	/*======================================
 	// Extra JS

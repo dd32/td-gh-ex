@@ -30,7 +30,7 @@
 				<!-- Single Service -->
 				<div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
 					<div class="single-service">
-						<div class="number"><p><?php echo esc_html( $count ); ?></p></div>
+						<div class="number"><p><?php echo absint( $count ); ?></p></div>
 						<h4><?php the_title(); ?></h4>
 						<?php the_excerpt(); ?>
 						<i class="ico-bg fa fa-pencil"></i>

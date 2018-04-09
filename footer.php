@@ -47,7 +47,7 @@
 				<div class="row">
 					<div class="col-md-6 col-sm-6 col-xs-12">
 						<div class="copyright">
-							<p>&copy;<?php esc_html_e( 'Copyright 2017', 'agency-x' ); ?><span><i class="fa fa-heart"></i></span><?php esc_html_e( 'Samurai Themes', 'agency-x' ); ?></p>
+							<p><?php echo esc_html('&copy;','agency-x'); ?><?php esc_html_e( 'Copyright 2018', 'agency-x' ); ?><span><i class="fa fa-heart"></i></span><?php echo esc_html( 'Samurai Themes', 'agency-x' ); ?></p>
 						</div>
 					</div>
 					<div class="col-md-6 col-sm-6 col-xs-12">
@@ -64,7 +64,6 @@
 					    ?>
 
 						<ul class="social">
-							<li><?php esc_html_e( 'Follow Us', 'agency-x' ); ?></li>
 							<?php foreach ( $social as $key => $value ) { ?>
 			                    <li><a href="<?php echo esc_url( $value ); ?>" target="_blank"><i class="fa fa-<?php echo esc_attr($key); ?>"></i></a></li>
 			            	<?php } ?>

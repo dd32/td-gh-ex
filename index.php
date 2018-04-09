@@ -45,8 +45,6 @@ get_header();?>
                         <!--/ End Pagination -->
                     </div>
                 </div>
-                <div class="map"></div>
-                <div id="particles-js"></div>
         <?php else : ?>
             <?php get_template_part( 'template-parts/content', 'none' ); ?>
         <?php endif; ?>

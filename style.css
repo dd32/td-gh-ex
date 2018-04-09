@@ -4,14 +4,14 @@ Theme URI: https://samuraithemes.com/themes/agency-x-free-wordpress-theme/
 Author: samuraithemes
 Author URI: https://samuraithemes.com
 Description: Agency X is responsive WordPress theme which can be used for web design firms or any other corporate, business, agencies, consulting, legal, attorney, law firms, online shops, digital, medical, clinic, dental, spa, beauty, massage, gym, fitness, trainer, coach, restaurant, cafe, food, recipes, technology and any other kind of website purpose. It can also be used for portfolio, photography, personal and blogging as well. This theme is simple, white, minimal, clean
-Version: 1.0.4
+Version: 1.0.6
 License: GNU General Public License v3 or later
 License URI: https://samuraithemes.com/#colophon
 Text Domain: agency-x
 Tags: one-column, two-columns,right-sidebar,grid-layout,custom-background,custom-colors,custom-menu,custom-logo,featured-images,footer-widgets,full-width-template,sticky-post,theme-options,threaded-comments,blog,portfolio
 
 Agency X WordPress Theme, Copyright 2017 by SamuraiThemes
-Agency X is distributed under the terms of the GNU General Public License v2
+Agency X is distributed under the terms of the GNU General Public License v3
 
 Agency X is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
@@ -225,7 +225,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 #header .logo a{
     color:#fff;
     text-transform:uppercase;
-    font-size:40px;
+    font-size:24px;
     font-weight:400;
 }
 #header .logo span{

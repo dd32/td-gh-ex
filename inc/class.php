@@ -38,14 +38,14 @@ class Agency_X_Customize_Dropdown_Taxonomies_Control extends WP_Customize_Contro
     ?>
     <label>
       <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-         <select <?php echo $this->link(); ?>>
+         <select <?php echo esc_url($this->link()); ?>>
             <?php
-              printf('<option value="%s" %s>%s</option>', '', selected($this->value(), '', false),__('Select', 'agency-x') );
+              printf('<option value="%s" %s>%s</option>', '', selected($this->value(), '', false),esc_html_e('Select', 'agency-x') );
              ?>
             <?php if ( ! empty( $all_taxonomies ) ): ?>
               <?php foreach ( $all_taxonomies as $key => $tax ): ?>
                 <?php
-                  printf('<option value="%s" %s>%s</option>', $tax->term_id, selected($this->value(), $tax->term_id, false), $tax->name );
+                  printf('<option value="%s" %s>%s</option>', esc_html($tax->term_id), selected($this->value(), esc_html($tax->term_id), false), esc_html($tax->name) );
                  ?>
               <?php endforeach ?>
            <?php endif ?>

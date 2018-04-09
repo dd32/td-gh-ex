@@ -11,7 +11,7 @@ function agency_x_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => esc_html__( 'Default Sidebar', 'agency-x' ),
-		'id'            => 'siderbar-1',
+		'id'            => 'sidebar',
 		'description'   => '',
 		'before_widget' => '<div id="%1$s" class="single-sidebar  %2$s">',
 		'after_widget'  => '</div>',

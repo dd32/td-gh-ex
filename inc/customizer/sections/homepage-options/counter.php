@@ -26,6 +26,7 @@ function agency_x_customize_register_counter( $wp_customize ) {
     ) );
 
     $wp_customize->add_control( 'counter_value_'.$i, array(
+      /* translators: %s: count */
       'label' => sprintf(__( 'Counter Value %s','agency-x' ), $i),
       'section' => 'counter_section',
       'settings' => 'counter_value_'.$i,
@@ -38,6 +39,7 @@ function agency_x_customize_register_counter( $wp_customize ) {
     ) );
 
     $wp_customize->add_control( 'counter_title_'.$i, array(
+      /* translators: %s: count */
       'label' => sprintf(__( 'Counter Value Title %s','agency-x' ), $i),
       'section' => 'counter_section',
       'settings' => 'counter_title_'.$i,

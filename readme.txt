@@ -5,10 +5,10 @@ Tags: one-column, two-columns,right-sidebar,grid-layout,custom-background,custom
 
 
 Requires at least: 4.7
-Tested up to: 4.9.4
-Stable tag: 1.0.4
-License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Tested up to: 4.9.5
+Stable tag: 1.0.6
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 == Description ==
 
@@ -48,8 +48,24 @@ Agency-X includes support for contact form 7
 
 
 == Changelog ==
+
+= 1.0.6 - 09 April 2018 =
+* bloginfo('url') removed 
+* single text-domain
+
+= 1.0.5 - 09 April 2018 =
+* Fixed Several issue of theme check
+* Removed Unused Files
+
 = 1.0.4 - 04 Feb 2018 =
 * Fixed Several issue of theme check
 
 = 1.0.3 - 04 Feb 2018 =
 * Initial release
+
+== Images == 
+
+All images used in the theme designed by buzthemes under GPL License
+
+Image used in screenshot
+https://pixabay.com/en/nurse-medicine-doctor-hospital-2019420/

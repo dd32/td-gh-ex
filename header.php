@@ -9,7 +9,7 @@
 
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
+<html <?php language_attributes(); ?>>
 <head>
 	<!-- Meta tag -->
 		<meta charset="utf-8">
@@ -21,17 +21,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-<!-- Preloader -->
-<div class="loader">
-	<div class="loader-inner">
-		<div class="k-line k-line11-1"></div>
-		<div class="k-line k-line11-2"></div>
-		<div class="k-line k-line11-3"></div>
-		<div class="k-line k-line11-4"></div>
-		<div class="k-line k-line11-5"></div>
-	</div>
-</div>
-<!-- End Preloader -->
 
 <!-- Start Header -->
 <header id="header">
@@ -40,16 +29,17 @@
 		<div class="container">
 			<div class="row">
 				
-				<div class="col-md-2 col-sm-12 col-xs-12">
+				<div class="col-md-3 col-sm-6 col-xs-12">
 					<!-- Logo -->
 					<div class="logo">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php the_custom_logo(); ?></a>
+						<?php the_custom_logo(); ?>
+						<h1 class='site-title'><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo(); ?></a></h1>
 					</div>
 					<!--/ End Logo -->
 				</div>
 				
 				<?php if( has_nav_menu( 'primary' ) ) : ?>
-					<div class="col-md-10 col-sm-12 col-xs-12">
+					<div class="col-md-9 col-sm-6 col-xs-12">
 						<div class="nav-area">
 							<!-- Main Menu -->
 							<nav class="mainmenu">
@@ -87,3 +77,31 @@
 	<!--/ End Header Inner -->
 </header>
 <!--/ End Header -->
+
+<?php if(!is_home() || !is_front_page()): ?>
+<!-- Start Breadcrumbs -->
+		<section id="breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<?php
+								if ( is_archive() ) {
+								the_archive_title( '<h2>', '</h2>' );
+													}
+							else{
+								echo '<h2>';
+								echo esc_html( get_the_title() );
+								echo '</h2>';
+							}
+							?>
+						<ul>
+							<?php
+									do_action( 'agency_x_breadcrumb' );		
+								?>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+<!--/ End Breadcrumbs -->
+<?php endif; ?>

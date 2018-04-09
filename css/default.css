@@ -133,10 +133,11 @@ ul li {
 #breadcrumbs {
 	text-align: center;
 	padding: 55px 0;
-	background: url('../images/breadcrumb-bg.jpg');
+	background: url('../images/skill-bg.jpg');
 	position:relative;
 	background-repeat:no-repeat;
 	background-attachment:fixed;
+	color:white;
 }
 #breadcrumbs:before{
 	content:"";
@@ -294,90 +295,153 @@ ul li {
 		transform:translateY(-3px)
 	}
 }
+#footer-top table{
+color:white;
+}
+#footer-top th, #footer-top td{
+	padding-left:10px;
+}
+#footer-top cite{
+color:white;
+}
+#footer-top span.rss-date{
+color:white;
+}
+#footer-top .rssSummary{
+color:white;
+}
+#footer-top {
 
-/*MP Color*/  
-.mp-color {
-	position: fixed;
-	display: block;
-	z-index: 99;
+}
+.comments-area {
+        margin-top: 30px;
+    }
+    .comments-area h2 {
+        margin-bottom: 15px;
+    }
+    .comments-area ol {
+        margin: 0;
+        list-style: none;
+    }
+    .comments-area ol.comment-list {
+        padding: 0;
+    }
+    .comments-area ol.comment-list article {
+        margin-bottom: 15px;
+        background: #fff;
+        padding: 15px;
+        border-radius: 5px;
+    }
+    .comments-area footer {
+        background: none;
+        padding: 0;
+        text-align: left;
+    }
+    .comments-area .comment-form label,
+    .comments-area .comment-form input {
+        display: block;
+        font-weight: 300;
+    }
+    .comments-area .comment-form input,
+    .comments-area .comment-form textarea {
+        border: 1px solid #ddd;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 10px;
+        width: 100%;
+    }
+    .comments-area .comment-form .form-submit input {
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        border: none;
+        margin-top:15px;
+    }
+/* Blog Comments */
+#blog .blog-comments {
+	margin-top: 30px;
+	background: #fff;
+	padding: 20px;
+}
+#blog .blog-comments h2{
+	text-align:center;
+	text-transform:capitalize;
+	font-size:20px;
+}
+#blog .single-comments {
+	overflow: hidden;
+	border-bottom: 1px solid #e2e2e2;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+}
+#blog .single-comments:last-child{
+	border-bottom:0px solid;
+	padding:0px;
+	margin:0;
+}
+#blog .single-comments .main {
+	overflow: hidden;
+	padding-bottom: 15px;
+}
+#blog .single-comments .head {
+	float: left;
+	margin-right: 20px;
 	text-align: center;
-	padding: 50px 5px;
-	width: 200px;
-	min-height: 300px;
-	top: 50%;
-	right: 0px;
-	background: #fff;
-	box-shadow: -3px 0px 50px -2px rgba(0,0,0,0.14);
-	margin-top: -150px;
-	border-bottom: 6px solid #ddd;
+	width: 12%;
 }
-.mp-color .icon {
-	width: 25px;
-	height: 25px;
-	background: #968A8C;
-	margin-top:-13.5px;
-	border-radius: 0px;
-	top: 50%;
-	line-height: 25px;
-	cursor: pinter;
-	font-size: 16px;
-	position: absolute;
-	bottom: -24px;
-	left: -50px;
-	width: 50px;
-	height: 50px;
-	line-height: 50px;
-	font-size: 32px;
-	border-radius: 6px 0 0 6px;
-	background: #fff;
-	color: #444;
+#blog .single-comments .head img {
+	border-radius: 100%;
+	width: 80px;
+	height: 80px;
+	line-height: 80px;
 }
-.mp-color .icon i {
-	color: #444;
-	cursor: pointer;
+#blog .single-comments .body {
+	float: left;
+	width: 80%;
 }
-.mp-color h4 {
-	display: block;
+#blog .single-comments .comment-list {
+	margin-top: 30px;
+	padding-top: 30px;
+	border-top: 1px solid #e2e2e2;
+}
+#blog .single-comments h4 {
+	margin: 0 0 3px;
+	font-size: 18px;
+	text-align: left;
+	font-weight: 600;
+}
+#blog .single-comments .meta {
+	font-size: 13px;
+	margin: 0;
+	color: #666;
+	font-weight: 400;
+}
+#blog .single-comments p {
+	font-size: 13px;
+}
+#blog .single-comments a {
 	text-transform: uppercase;
-	font-size: 15px;
-	margin-bottom: 10px;
+	font-size: 13px;
+	font-weight: 600;
 }
-.mp-color .link{
-	margin-bottom:20px;
-}
-.mp-color .link li i{
+#blog .single-comments a i{
 	margin-right:5px;
 }
-.mp-color .link li a{
-	color:#444;
+#blog .comment-list {
+	padding-left:50px;
 }
-.mp-color .button {
-	margin: 20px 0 0;
+#blog .single-comments.login{
+	text-align:center;
 }
-.mp-color .button:hover{
-	cursor:pointer;
+#blog .single-comments.login i{
+	font-size:20px;
 }
-.mp-color .button i{
-	color:#fff;
-	margin-right:5px;
+#blog .single-comments.login a{
+	text-align:center;
 }
-.mp-color .btn {
-	padding: 12px 25px;
+#blog .single-comments.login a:hover{
+	color:#353535;
 }
-.mp-color span {
-	margin: 0 5px;
-	width: 30px;
-	height: 25px;
-	border-radius: 0;
-	cursor: pointer;
-	display: inline-block;
-	margin-top: 10px;
+#blog .comment-author.vcard img{
+	float:left;
 }
-.mp-color span.color1{background-color:#F2784B}
-.mp-color span.color2{background-color:#D2527F}
-.mp-color span.color3{background-color:#BF55EC;}
-.mp-color span.color4{background-color:#C0392B;}
-.mp-color span.color5{background-color:#16A085;}
-.mp-color span.color6{background-color:#3065B5;}
-.mp-color span.color7{background-color:#59ABE3;}
-.mp-color span.color8{background-color:#82B440;}

@@ -12,8 +12,10 @@ get_header(); ?>
         <main id="main" class="site-main" role="main">
 
         <?php if ( have_posts() ) : ?>
-
-                <h4><?php printf( esc_html__( 'Search Results for: %s', 'agency-x' ), '<span>' . get_search_query() . '</span>' ); ?></h4>
+                
+                <h4><?php 
+                  /* translators: %s: serach query */
+                printf( esc_html__( 'Search Results for: %s', 'agency-x' ), '<span>' . get_search_query() . '</span>' ); ?></h4>
 
             <?php /* Start the Loop */ ?>
             <?php while ( have_posts() ) : the_post(); ?>

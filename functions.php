@@ -62,8 +62,8 @@ if ( ! function_exists( 'agency_x_setup' ) ) :
 		 * See http://codex.wordpress.org/Post_Formats
 		 */
 		add_theme_support( 'custom-logo', array(
-	   'height'      => 90,
-	   'width'       => 400,
+	   'height'      => 45,
+	   'width'       => 250,
 	   'flex-width' => true,
 		));
 
@@ -82,14 +82,51 @@ if ( ! function_exists( 'agency_x_setup' ) ) :
 endif; 
 add_action( 'after_setup_theme', 'agency_x_setup' );
 
+/**
+ * Google Fonts.
+ */
 
+if ( ! function_exists( 'agency_x_fonts_url' ) ) :
+	/**
+	 * Register Google fonts for ithemer
+	 *
+	 * Create your own agency_x_fonts_url() function to override in a child theme.
+	 *
+	 * @since ithemer 1.0.3
+	 *
+	 * @return string Google fonts URL for the theme.
+	 */
+	function agency_x_fonts_url() {
+		$fonts_url = '';
+		$fonts     = array();
+		$subsets   = 'latin,latin-ext';
 
+		/* translators: If there are characters in your language that are not supported by Lato, translate this to 'off'. Do not translate into your own language. */
+		if ( 'off' !== _x( 'on', 'Roboto font: on or off', 'agency-x' ) ) {
+			$fonts[] = 'Roboto:300,300i,400,400i,500,700';
+		}
+
+		/* translators: If there are characters in your language that are not supported by Playfair Display, translate this to 'off'. Do not translate into your own language. */
+		if ( 'off' !== _x( 'on', 'Playfair Display font: on or off', 'agency-x' ) ) {
+			$fonts[] = 'Playfair Display:400,700,400italic,700italic';
+		}
+
+		if ( $fonts ) {
+			$fonts_url = add_query_arg( array(
+				'family' => urlencode( implode( '|', $fonts ) ),
+				'subset' => urlencode( $subsets ),
+			), 'https://fonts.googleapis.com/css' );
+		}
+
+		return esc_url( $fonts_url );
+	}
+endif;
 
 /**
  * Enqueue scripts and styles.
  */
 function agency_x_scripts() {
-	wp_enqueue_style( 'agency-x-googlefonts', 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700');
+	wp_enqueue_style( 'google-fonts', agency_x_fonts_url(), array(), null );
 	wp_enqueue_style( 'hover', get_template_directory_uri().'/css/hover.css' );	
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/font-awesome.css' );
 	wp_enqueue_style( 'slicknav', get_template_directory_uri().'/css/slicknav.css' );
@@ -115,7 +152,7 @@ function agency_x_scripts() {
 	wp_enqueue_script( 'counterup', get_template_directory_uri() . '/js/jquery.counterup.js', array('jquery'), '1.0.0', true );
 	wp_enqueue_script( 'carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), '1.0.0', true );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), '1.0.0', true );
-	wp_enqueue_script( 'gmap', get_template_directory_uri() . '/js/gmap.js', array('jquery'), '1.0.0', true );
+	
 	wp_enqueue_script( 'agency-x-scripts', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true );
 
 
@@ -186,6 +223,9 @@ require get_template_directory() . '/inc/customizer/customizer.php';
 
 // Register Custom Navigation Walker
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
+
+// Register Custom Navigation Walker
+require get_template_directory() . '/inc/breadcrumbs.php';
 
 
 /**

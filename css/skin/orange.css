@@ -1,4 +1,8 @@
+ a{
+    color: #F2784B;;
+ }
  /* Section Title */
+ }
 .section-title span{
 	color:#F2784B;	
 }
@@ -238,6 +242,9 @@
 .k-line{
 	background:#F2784B;
 }
+.comments-area .comment-form .form-submit input {
+	background: #F2784B;
+	}
 /* Footer Top */
 #footer-top .single-widget h2 {
 	border-bottom-color:#F2784B

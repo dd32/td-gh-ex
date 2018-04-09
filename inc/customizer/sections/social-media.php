@@ -28,7 +28,7 @@ function agency_x_customize_register_social_media_section( $wp_customize ) {
           'label' => ucwords( $value ),
           'section' => 'social_section',
           'settings' => $value . '_textbox',
-          'type' => 'text',
+          'type' => 'url',
           'default' =>''
         ) );
     }

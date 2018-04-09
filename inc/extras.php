@@ -27,3 +27,29 @@ function agency_x_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'agency_x_body_classes' );
+
+if ( ! function_exists( 'agency_x_simple_breadcrumb' ) ) :
+
+    /**
+     * Simple breadcrumb.
+     *
+     * @since 1.0.0
+     */
+    function agency_x_simple_breadcrumb() {
+
+        // Load Breadcrumb.
+        if ( ! function_exists( 'agency_x_breadcrumb_trail' ) ) {
+            require_once get_template_directory() . '/inc/breadcrumbs.php';
+        }
+
+        $breadcrumb_args = array(
+            'container'   => 'div',
+            'show_browse' => false,
+        );
+        agency_x_breadcrumb_trail( $breadcrumb_args );
+
+    }
+
+endif;
+
+add_action( 'agency_x_breadcrumb', 'agency_x_simple_breadcrumb', 10 );

@@ -7,7 +7,6 @@
 
 ?>
 
-<div class="col-md-8">
   <div class="entry-blog">
     <!-- Single Blog -->
     <div class="single-blog">
@@ -26,6 +25,7 @@
           <span><i class="fa fa-comments"></i><?php comments_number( __( 'No comments', 'agency-x' ), __( 'one comment', 'agency-x' ), __( '% comments', 'agency-x' ) ); ?></span>
         </div>
        <?php the_content(); ?>
+       <?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'agency-x' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
       </div>
       
       <!-- Blog Prev Next -->
@@ -40,5 +40,4 @@
     </div>
     <!--/ End Single Blog -->
   </div>
-</div>
          

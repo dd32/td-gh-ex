@@ -22,7 +22,7 @@
 					<div class="col-md-12 wow fadeInUp">
 						<div class="section-title">
 							<h2><?php echo esc_html( $title ); ?></h2>
-							<?php echo wpautop( $description, $br = true ); ?>
+							<?php echo esc_html(wpautop( $description, $br = true )); ?>
 						</div>
 					</div>
 				</div>
