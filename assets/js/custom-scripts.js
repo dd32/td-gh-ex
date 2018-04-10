@@ -162,6 +162,13 @@ jQuery(document).ready(function( $ ) {
 			}, 300);
 		});
 
+		if ( $('body').hasClass('elementor-editor-active') ) {
+			setTimeout(function(){
+				$('.ashe-preloader-wrap > div').fadeOut( 600 );
+				$('.ashe-preloader-wrap').fadeOut( 1500 );
+			}, 300);
+		}
+
 	}
 
 

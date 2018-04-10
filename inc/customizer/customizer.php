@@ -324,6 +324,11 @@ function ashe_customize_register( $wp_customize ) {
 					<p><?php esc_html_e( 'Ashe Pro\'s powerful setup allows you to easily create unique looking sites. Here are a few included examples that can be installed with one click in the Pro Version.', 'ashe' ); ?></p>
 					<a href="<?php echo admin_url('themes.php?page=about-ashe#ashe-predefined-styles'); ?>" class="button button-primary widefat"><?php esc_html_e( 'Predefined Styles', 'ashe' ); ?></a>
 				</li>
+				<li class="customize-control">
+					<h3><?php esc_html_e( 'Changelog', 'ashe' ); ?></h3>
+					<p><?php esc_html_e( 'Stay always up to date, check for fixes, updates and some new feauters you should not miss.', 'ashe' ); ?></p>
+					<a href="<?php echo esc_url('https://wp-royal.com/ashe-free-changelog/?ref=ashe-free-customizer-about-section-changelog'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'View Changelog', 'ashe' ); ?></a>
+				</li>
 			</ul>
 			<?php
 		}
