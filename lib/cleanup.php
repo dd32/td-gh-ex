@@ -3,7 +3,7 @@
 /**
  * Add body_class() classes
  */
-function kadence_body_class($classes) {
+function virtue_body_class($classes) {
   // Add post/page slug
   if (is_single() || is_page() && !is_front_page()) {
     $classes[] = basename(get_permalink());
@@ -11,24 +11,32 @@ function kadence_body_class($classes) {
 
   return $classes;
 }
-add_filter('body_class', 'kadence_body_class');
+add_filter('body_class', 'virtue_body_class');
 
 /**
  * Add class="thumbnail" to attachment items
  */
-function kadence_attachment_link_class($html) {
+function virtue_attachment_link_class($html) {
   $postid = get_the_ID();
   $html = str_replace('<a', '<a class="thumbnail"', $html);
   return $html;
 }
-add_filter('wp_get_attachment_link', 'kadence_attachment_link_class', 10, 1);
+add_filter('wp_get_attachment_link', 'virtue_attachment_link_class', 10, 1);
+
+/**
+ * Wrap embedded media
+ */
+function virtue_embed_wrap($cache, $url, $attr = '', $post_ID = '') {
+  	return '<div class="entry-content-asset videofit">' . $cache . '</div>';
+}
+add_filter('embed_oembed_html', 'virtue_embed_wrap', 10, 4);
 
 /**
  * Add Bootstrap thumbnail styling to images with captions
  *
  * @link http://justintadlock.com/archives/2011/07/01/captions-in-wordpress
  */
-function kadence_caption($output, $attr, $content) {
+function virtue_caption($output, $attr, $content) {
   if (is_feed()) {
     return $output;
   }
@@ -59,33 +67,33 @@ function kadence_caption($output, $attr, $content) {
 
   return $output;
 }
-add_filter('img_caption_shortcode', 'kadence_caption', 10, 3);
+add_filter('img_caption_shortcode', 'virtue_caption', 10, 3);
 
 /**
  * Clean up the_excerpt()
  */
-function kadence_excerpt_length($length) {
+function virtue_excerpt_length($length) {
   return POST_EXCERPT_LENGTH;
 }
 
-function kadence_remove_more_link_scroll( $link ) {
+function virtue_remove_more_link_scroll( $link ) {
   $link = preg_replace( '|#more-[0-9]+|', '', $link );
   return $link;
 }
-add_filter( 'the_content_more_link', 'kadence_remove_more_link_scroll' );
+add_filter( 'the_content_more_link', 'virtue_remove_more_link_scroll' );
 
-function kadence_excerpt_more($more) {
+function virtue_excerpt_more($more) {
   return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'virtue') . '</a>';
 }
-add_filter('excerpt_length', 'kadence_excerpt_length');
-add_filter('excerpt_more', 'kadence_excerpt_more');
+add_filter('excerpt_length', 'virtue_excerpt_length');
+add_filter('excerpt_more', 'virtue_excerpt_more');
 
 /**
  * Add additional classes onto widgets
  *
  * @link http://wordpress.org/support/topic/how-to-first-and-last-css-classes-for-sidebar-widgets
  */
-function kadence_widget_first_last_classes($params) {
+function virtue_widget_first_last_classes($params) {
   global $my_widget_num;
 
   $this_id = $params[0]['id'];
@@ -117,4 +125,4 @@ function kadence_widget_first_last_classes($params) {
 
   return $params;
 }
-add_filter('dynamic_sidebar_params', 'kadence_widget_first_last_classes');
+add_filter('dynamic_sidebar_params', 'virtue_widget_first_last_classes');

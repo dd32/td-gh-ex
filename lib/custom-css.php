@@ -36,8 +36,7 @@ if( isset( $virtue[ 'menu_margin_bottom' ] ) ) {
 //Typography
 if( ! empty( $virtue[ 'font_h1' ] ) ) {
 	$font_family = '.headerfont, .tp-caption {font-family:'.esc_attr( $virtue[ 'font_h1' ][ 'font-family' ] ).';} 
-.topbarmenu ul li {font-family:'.esc_attr( $virtue[ 'font_primary_menu' ][ 'font-family' ] ).';}
-#kadbreadcrumbs {font-family:'.esc_attr( $virtue[ 'font_p' ][ 'font-family' ] ).';}';
+.topbarmenu ul li {font-family:'.esc_attr( $virtue[ 'font_primary_menu' ][ 'font-family' ] ).';}';
 } else {
 	$font_family = '';
 }

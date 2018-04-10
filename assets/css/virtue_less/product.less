@@ -121,6 +121,8 @@ margin-top: 40px;
   -webkit-transition: opacity .6s ease-out;
   -moz-transition: opacity .6s ease-out;
   -o-transition: opacity .6s ease-out;
+      -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 .product_item:hover a.product_item_link img {
   opacity: 0.8;
@@ -321,6 +323,12 @@ div.product .woocommerce-tabs ul.tabs:before {
     display: block !important;
     height: auto !important;
     overflow: visible !important;
+}
+.product_item .notrated {
+    display: block;
+    height: 14px;
+    margin: 3px 0 4px;
+    line-height: 10px;
 }
 #review_form #respond p.comment-form-author, #review_form #respond p.comment-form-email {
     padding: 0 15px;

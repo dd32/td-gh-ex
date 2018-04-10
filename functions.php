@@ -22,7 +22,6 @@ require_once( trailingslashit( get_template_directory() ) . 'lib/cleanup.php'); 
 require_once( trailingslashit( get_template_directory() ) . 'lib/nav.php');            						// Custom nav modifications
 require_once( trailingslashit( get_template_directory() ) . 'lib/metaboxes.php');     						// Custom metaboxes
 require_once( trailingslashit( get_template_directory() ) . 'lib/comments.php');        					// Custom comments modifications
-require_once( trailingslashit( get_template_directory() ) . 'lib/aq_resizer.php');      					// Resize on the fly
 require_once( trailingslashit( get_template_directory() ) . 'lib/image_functions.php');        				// Image functions
 require_once( trailingslashit( get_template_directory() ) . 'lib/class-virtue-get-image.php');        		// Image Class
 require_once( trailingslashit( get_template_directory() ) . 'lib/custom.php');          					// Custom functions
@@ -31,8 +30,10 @@ require_once( trailingslashit( get_template_directory() ) . 'lib/virtuetoolkit-a
 /*
 * Woomcommerce Support
 */
-require_once( trailingslashit( get_template_directory() ) . 'lib/custom-woocommerce.php'); 					// Woocommerce functions
-require_once( trailingslashit( get_template_directory() ) . 'lib/woo-account.php'); 						// Woocommerce functions
+require_once( trailingslashit( get_template_directory() ) . 'lib/woocommerce/woo-core-hooks.php'); 					// Woocommerce Core functions
+require_once( trailingslashit( get_template_directory() ) . 'lib/woocommerce/woo-archive-hooks.php'); 				// Woocommerce Archive functions
+require_once( trailingslashit( get_template_directory() ) . 'lib/woocommerce/woo-single-product-hooks.php'); 		// Woocommerce single product functions
+require_once( trailingslashit( get_template_directory() ) . 'lib/woo-account.php'); 								// Woocommerce account functions
 
 /*
  * Template Hooks
@@ -58,4 +59,3 @@ require_once( trailingslashit( get_template_directory() ) . 'lib/custom-css.php'
  * Note: Do not add any custom code here. Please use a custom plugin or child theme so that your customizations aren't lost during updates.
  * https://www.kadencethemes.com/child-themes/
  */
-			

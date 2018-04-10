@@ -510,11 +510,19 @@ class Kadence_Recent_Posts_Widget extends WP_Widget {
 		<?php
 			if(has_post_thumbnail( $post->ID ) ) { 
 				the_post_thumbnail( 'widget-thumb' ); 
-			} else { 
-				$image_url = virtue_post_widget_default_placeholder();
-				$image = aq_resize($image_url, 80, 50, true);
-				if(empty($image)) { $image = $image_url; }
-				echo '<img width="80" height="50" src="'.esc_attr($image).'" class="attachment-widget-thumb wp-post-image" alt="">'; 
+			} else {
+				// Placeholder Id
+				$image_id = virtue_get_options_placeholder_image();
+				if( ! empty( $image_id ) ) {
+					$img = virtue_get_image_array( 80, 50, true, null, null, $image_id );
+				} else {
+					$image = virtue_post_widget_default_placeholder();
+					$img = array(
+						'src' => $image,
+						'srcset' => ''
+					);
+				}
+				echo '<img width="80" height="50" src="'.esc_attr( $img[ 'src' ] ).'" class="attachment-widget-thumb wp-post-image" '.wp_kses_post( $img[ 'srcset' ] ).' alt="'.the_title_attribute('echo=0').'">'; 
 			} ?>
         </a>
         <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>" class="recentpost_title"><?php the_title() ?></a>

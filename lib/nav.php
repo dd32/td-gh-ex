@@ -26,9 +26,13 @@ class kadence_Nav_Walker extends Walker_Nav_Menu {
     $classes[] = 'menu-item-'. $item->ID;
 
     if ($custom_classes = get_post_meta($item->ID, '_menu_item_classes', true)) {
-      foreach ($custom_classes as $custom_class) {
-        //$classes[] = $custom_class;
-      }
+      	foreach ($custom_classes as $custom_class) {
+      		if (strpos($custom_class, 'icon') !== false) {
+			   $icon_class =  $custom_class;
+			} else {
+        		$classes[] = $custom_class;
+        	}
+      	}
     }
 
     $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
@@ -41,13 +45,12 @@ class kadence_Nav_Walker extends Walker_Nav_Menu {
     $attributes .= ! empty($item->xfn)        ? ' rel="'    . esc_attr($item->xfn       ) .'"' : '';
     $attributes .= ! empty($item->url)        ? ' href="'   . esc_attr($item->url       ) .'"' : '';
   
-  $description  = ! empty( $item->description ) ? '<span class="sf-description">'.esc_attr( $item->description ).'</span>' : '';
-  $icon  = ! empty( $custom_class) ? '<i class="'. $custom_class . '"></i>' : '';
+	$description  = ! empty( $item->description ) ? '<span class="sf-description">'.esc_attr( $item->description ).'</span>' : '';
+	$icon  = ! empty( $icon_class) ? '<i class="'. esc_attr($icon_class) . '"></i>' : '';
   
-  if($depth != 0)
-           {
-                     $description = "";
-           }
+	if($depth != 0) {
+		$description = "";
+	}
 
     $item_output  = $args->before;
     $item_output .= '<a'. $attributes . '>'.$icon;

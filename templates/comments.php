@@ -2,8 +2,7 @@
 if ( post_password_required() ) {
 	return;
 }
-
-if ( have_comments() ) : ?>
+if ( have_comments() && ( comments_open() || get_comments_number() ) ) : ?>
 	<section id="comments">
 		<h3 class="comments-title">
 			<?php

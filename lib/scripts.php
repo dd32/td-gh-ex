@@ -6,7 +6,7 @@
 
 function virtue_scripts() {
 	global $virtue;
-	wp_enqueue_style( 'kadence_theme', get_template_directory_uri() . '/assets/css/virtue.css', false, "318" );
+	wp_enqueue_style( 'kadence_theme', get_template_directory_uri() . '/assets/css/virtue.css', false, "320" );
 	if( isset( $virtue['skin_stylesheet'] ) || !empty( $virtue['skin_stylesheet'] ) ) {
 		$skin = $virtue['skin_stylesheet'];
 	} else { 
@@ -27,7 +27,7 @@ function virtue_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script('virtue_plugins', get_template_directory_uri() . '/assets/js/min/plugins-min.js', array( 'jquery', 'masonry' ), '318', true);
+	wp_enqueue_script('virtue_plugins', get_template_directory_uri() . '/assets/js/min/plugins-min.js', array( 'jquery', 'masonry' ), '320', true);
 	wp_enqueue_script('virtue_main', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery', 'masonry' ), '318', true);
   
 	if(class_exists('woocommerce')) {

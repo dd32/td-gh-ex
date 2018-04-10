@@ -1,69 +1,44 @@
+<?php
+global $virtue;
+$slideheight = ( isset( $virtue['slider_size'] ) ? $virtue['slider_size'] : 400 );
+$slidewidth = ( isset( $virtue['slider_size_width'] ) ? $virtue['slider_size_width'] : 1140 );
+$captions = ( isset( $virtue['slider_captions'] ) ? $virtue['slider_captions'] : '' );
+$slides = ( isset( $virtue['home_slider'] ) ? $virtue['home_slider'] : '' );
+$autoplay = ( isset( $virtue['slider_autoplay'] ) && 0 == $virtue['slider_autoplay'] ? 'false' : 'true' );
+$pausetime = ( isset( $virtue['slider_pausetime'] ) ? $virtue['slider_pausetime'] : '7000' );
+$transtype = ( isset( $virtue['trans_type'] ) ? $virtue['trans_type'] : 'slide' );
+$transtime = ( isset( $virtue['slider_transtime'] ) ? $virtue['slider_transtime'] : '300' );
+?>
 <div class="sliderclass kad-desktop-slider">
-  <?php  global $virtue; 
-        if(isset($virtue['slider_size'])) {
-          $slideheight = $virtue['slider_size'];
-        } else {
-          $slideheight = 400;
-        }
-        if(isset($virtue['slider_size_width'])) {
-          $slidewidth = $virtue['slider_size_width'];
-        } else {
-          $slidewidth = 1140;
-        }
-        if(isset($virtue['slider_captions'])) {
-          $captions = $virtue['slider_captions'];
-        } else {
-          $captions = '';
-        }
-        if(isset($virtue['home_slider'])) {
-          $slides = $virtue['home_slider'];
-        } else {
-          $slides = '';
-        }
-        if(isset($virtue['trans_type'])) {
-          $transtype = $virtue['trans_type'];
-        } else {
-          $transtype = 'slide';
-        }
-        if(isset($virtue['slider_transtime'])) {
-          $transtime = $virtue['slider_transtime'];
-        } else {
-          $transtime = '300';
-        }
-        if(isset($virtue['slider_autoplay'])) {
-          $autoplay = $virtue['slider_autoplay'];
-        } else {
-          $autoplay = 'true';
-        }
-        if(isset($virtue['slider_pausetime'])) {
-          $pausetime = $virtue['slider_pausetime'];
-        } else {
-          $pausetime = '7000';
-        } ?>
-  <div id="imageslider" class="container">
-    <div class="flexslider kt-flexslider loading" style="max-width:<?php echo esc_attr($slidewidth);?>px; margin-left: auto; margin-right:auto;" data-flex-speed="<?php echo esc_attr($pausetime);?>" data-flex-anim-speed="<?php echo esc_attr($transtime);?>" data-flex-animation="<?php echo esc_attr($transtype); ?>" data-flex-auto="<?php echo esc_attr($autoplay);?>">
-        <ul class="slides">
-            <?php foreach ($slides as $slide) : 
-                    if(!empty($slide['target']) && $slide['target'] == 1) {$target = '_blank';} else {$target = '_self';}
-                    $image = aq_resize($slide['url'], $slidewidth, $slideheight, true);
-                    if(empty($image)) {$image = $slide['url'];} ?>
-                      <li> 
-                        <?php if($slide['link'] != '') echo '<a href="'.esc_url($slide['link']).'" target="'.esc_attr($target).'">'; ?>
-                          <img src="<?php echo esc_url($image); ?>" width="<?php echo esc_attr($slidewidth);?>" height="<?php echo esc_attr($slideheight);?>" alt="<?php echo esc_attr($slide['title']); ?>" />
-                              <?php if ($captions == '1') { ?> 
-                                <div class="flex-caption">
-              								  <?php if (!empty($slide['title'])) {
-                                  echo '<div class="captiontitle headerfont">'.esc_html( $slide['title'] ).'</div>'; 
-                                }
-              								  if (!empty($slide['description'])) {
-                                  echo '<div><div class="captiontext headerfont"><p>'.wp_kses_post( $slide['description'] ).'</p></div></div>';
-                                } ?>
-                                </div> 
-                              <?php } ?>
-                        <?php if($slide['link'] != '') echo '</a>'; ?>
-                      </li>
-                  <?php endforeach; ?>
-        </ul>
-      </div> <!--Flex Slides-->
-  </div><!--Container-->
+	<div id="imageslider" class="container">
+		<div class="flexslider kt-flexslider loading" style="max-width:<?php echo esc_attr( $slidewidth );?>px; margin-left: auto; margin-right:auto;" data-flex-speed="<?php echo esc_attr( $pausetime );?>" data-flex-anim-speed="<?php echo esc_attr( $transtime );?>" data-flex-animation="<?php echo esc_attr( $transtype ); ?>" data-flex-auto="<?php echo esc_attr( $autoplay );?>">
+			<ul class="slides">
+				<?php
+				foreach ($slides as $slide) : 
+					$target = ( ! empty( $slide['target'] ) && 1 == $slide['target'] ? '_blank' : '_self');
+					echo '<li>'; 
+						if ( ! empty( $slide['link'] ) ){
+							echo '<a href="'.esc_url( $slide['link'] ).'" target="'.esc_attr( $target ).'">';
+						}
+						echo virtue_get_full_image_output($slidewidth, $slideheight, true, null, null, $slide['attachment_id'] );
+						if ($captions == '1') {
+							echo '<div class="flex-caption">';
+								if ( ! empty( $slide['title']) ) {
+									echo '<div class="captiontitle headerfont">'.esc_html( $slide['title'] ).'</div>'; 
+								}
+								if ( ! empty( $slide['description'] ) ) {
+									echo '<div><div class="captiontext headerfont"><p>'.wp_kses_post( $slide['description'] ).'</p></div></div>';
+								}
+							echo '</div>'; 
+						} 
+						
+						if( ! empty( $slide['link'] ) ) {
+							echo '</a>';
+						} 
+					echo '</li>';
+				endforeach;
+				?>
+			</ul>
+		</div> <!--Flex Slides-->
+	</div><!--Container-->
 </div><!--sliderclass-->

@@ -30,6 +30,18 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.2.0 | 9th April 2018 = 
+* Update: Nav Class.
+* Update: Post footer Meta.
+* Update: Code refactoring Woocommerce hooks.
+* Update: Code refactoring home sliders.
+* Update: Better shop image rendering
+* Fix: issue with comments and buddypress
+
+= Version 3.1.9 | 26th March 2018 = 
+* Update: Video Issue.
+* Update: Issue with rating in FF.
+
 = Version 3.1.8 | 20th Febuary 2018 = 
 * Wordpress svn not working forced to update version.
 
