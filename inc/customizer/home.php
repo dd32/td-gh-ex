@@ -221,7 +221,6 @@ function bakery_shop_customize_register_home( $wp_customize ) {
                 'choices' => $bakery_shop_options_posts,
             )
         );
-
     }
 
      /** Slider Readmore */
@@ -239,25 +238,6 @@ function bakery_shop_customize_register_home( $wp_customize ) {
             'label' => __( 'Readmore Text', 'bakery-shop' ),
             'section' => 'bakery_shop_slider_section_settings',
             'type' => 'text',
-        )
-    );
-
-    
-    /** Enable/Disable Slider */
-    $wp_customize->add_setting(
-        'bakery_shop_ed_curtain',
-        array(
-            'default' => '',
-            'sanitize_callback' => 'bakery_shop_sanitize_checkbox',
-        )
-    );
-    
-    $wp_customize->add_control(
-        'bakery_shop_ed_curtain',
-        array(
-            'label' => __( 'Enable Header Curtain', 'bakery-shop' ),
-            'section' => 'bakery_shop_slider_section_settings',
-            'type' => 'checkbox',
         )
     );
     
@@ -323,32 +303,11 @@ function bakery_shop_customize_register_home( $wp_customize ) {
         $wp_customize->add_control(
             'bakery_shop_feature_post_'.$i,
             array(
-                'label'   => __( 'Select Featured Post ', 'bakery-shop' ) .$i ,
+                'label' => __( 'Select Featured Post ', 'bakery-shop' ) .$i ,
                 'section' => 'bakery_shop_feature_section_settings',
-                'type'    => 'select',
+                'type' => 'select',
                 'choices' => $bakery_shop_options_posts
             ));
-
-        $wp_customize->add_setting(
-            'bakery_shop_feature_icon_'.$i,
-            array(
-                'default'           => 'fa fa-bell',
-                'sanitize_callback' => 'sanitize_text_field',
-                'transport'         => 'postMessage'
-            )
-        );
-
-        $wp_customize->add_control(
-            new Bakery_Shop_Fontawesome_Icon_Chooser(
-            $wp_customize,
-            'bakery_shop_feature_icon_'.$i,
-                array(
-                    'settings' => 'bakery_shop_feature_icon_'.$i,
-                    'section'  => 'bakery_shop_feature_section_settings',
-                    'label'    => __( 'FontAwesome Icon ', 'bakery-shop' ) .$i,
-                )
-            )
-        );
         
     }
 

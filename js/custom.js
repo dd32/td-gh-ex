@@ -1,61 +1,6 @@
 jQuery(document).ready(function($){
-	
-    /** navigation menu */
-    var menuItems1 = document.querySelectorAll('.main-navigation li.menu-item-has-children');
-    var menuItems2 = document.querySelectorAll('.main-navigation li.page_item_has_children');
 
-    if( $('.page_item_has_children').length > 0 ){ 
-        var menuItems = menuItems2;
-
-        Array.prototype.forEach.call(menuItems, function(el, i){
-            var activatingA = el.querySelector('a');
-            var btn = '<button class="btn-submenu" aria-expanded="false"></button>';
-            activatingA.insertAdjacentHTML('afterend', btn);
-            el.querySelector('button').parentNode.querySelector('a').setAttribute('aria-expanded', "false");
-            el.querySelector('button').addEventListener("click",  function(event){
-                
-                if ( !( this.parentNode.classList.contains( "open" ) ) ) {
-                    //this.parentNode.className = "menu-item-has-children open";
-                    this.parentNode.classList.add('open');
-                    this.parentNode.querySelector('a').setAttribute('aria-expanded', "true");
-                    this.parentNode.querySelector('button').setAttribute('aria-expanded', "true");
-                } else {
-                    this.parentNode.classList.remove('open');
-                    //this.parentNode.className = "menu-item-has-children";
-                    this.parentNode.querySelector('a').setAttribute('aria-expanded', "false");
-                    this.parentNode.querySelector('button').setAttribute('aria-expanded', "false");
-                }
-                event.preventDefault();
-            });
-        });
-
-    }else if(  $('.menu-item-has-children').length > 0  ){
-        var menuItems = menuItems1;
-            Array.prototype.forEach.call(menuItems, function(el, i){
-            var activatingA = el.querySelector('a');
-            var btn = '<button class="btn-submenu" aria-expanded="false"></button>';
-            activatingA.insertAdjacentHTML('afterend', btn);
-            el.querySelector('button').parentNode.querySelector('a').setAttribute('aria-expanded', "false");
-            el.querySelector('button').addEventListener("click",  function(event){
-                
-                if ( !( this.parentNode.classList.contains( "open" ) ) ) {
-                    //this.parentNode.className = "menu-item-has-children open";
-                    this.parentNode.classList.add('open');
-                    this.parentNode.querySelector('a').setAttribute('aria-expanded', "true");
-                    this.parentNode.querySelector('button').setAttribute('aria-expanded', "true");
-                } else {
-                    this.parentNode.classList.remove('open');
-                    //this.parentNode.className = "menu-item-has-children";
-                    this.parentNode.querySelector('a').setAttribute('aria-expanded', "false");
-                    this.parentNode.querySelector('button').setAttribute('aria-expanded', "false");
-                }
-                event.preventDefault();
-            });
-        });
-    }
-
-
-    /** Variables from Customizer for Slider settings */
+	  /** Variables from Customizer for Slider settings */
     if( bakery_shop_data.auto == '1' ){
         var slider_auto = true;
     }else{
@@ -146,13 +91,6 @@ jQuery(document).ready(function($){
             }
         }
     });
-
-    // responsive menu
-
-    $('#responsive-menu-button').sidr({
-        name: 'sidr-main',
-        source: '#site-navigation',
-        side: 'right'
-    });
-        
+    
+    
 });

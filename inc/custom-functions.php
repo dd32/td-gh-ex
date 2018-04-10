@@ -70,7 +70,7 @@ if ( ! function_exists( 'bakery_shop_setup' ) ) :
 
 		// Custom Image Size
 		
-	    add_image_size( 'bakery-shop-slider', 1400, 420, true );
+	    add_image_size( 'bakery-shop-slider', 1400, 450, true );
 	    add_image_size( 'bakery-shop-with-sidebar', 833, 474, true );
 	    add_image_size( 'bakery-shop-without-sidebar', 1110, 474, true );
 	    add_image_size( 'bakery-shop-welcome', 560, 360, true );
@@ -135,9 +135,11 @@ function bakery_shop_scripts() {
     wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css' );
     wp_enqueue_style( 'owl-theme-default', get_template_directory_uri() . '/css/owl.theme.default.css' );
     wp_enqueue_style( 'jquery-sidr-light', get_template_directory_uri() . '/css/jquery.sidr.light.css' );
-    wp_enqueue_style( 'bakery-shop-style', get_stylesheet_uri(), BAKERY_SHOP_THEME_VERSION );   
+    wp_enqueue_style( 'bakery-shop-style', get_stylesheet_uri(), BAKERY_SHOP_THEME_VERSION );
 
-    wp_enqueue_script( 'font-awesome', get_template_directory_uri() . '/js/skip-link-focus-fix.js' );
+
+    
+
     wp_enqueue_script( 'jquery-sidr', get_template_directory_uri() . '/js/jquery.sidr.js', array('jquery'), '2.2.1', true );
 	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), '2.2.1', true );
     wp_register_script( 'bakery-shop-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), BAKERY_SHOP_THEME_VERSION, true );
@@ -167,29 +169,6 @@ function bakery_shop_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'bakery_shop_scripts' );
 
-if ( is_admin() ) : // Load only if we are viewing an admin page
-
-function bakery_shop_admin_scripts() {
-	
-	wp_enqueue_style( 'bakery-shop-admin-style',get_template_directory_uri().'/inc/css/admin.css', '1.0', 'screen' );
-    
-}
-
-add_action( 'admin_enqueue_scripts', 'bakery_shop_admin_scripts' );
-
-endif;
-
-if( ! function_exists( 'bakery_shop_customizer_js' ) ) :
-/** 
- * Registering and enqueuing scripts/stylesheets for Customizer controls.
- */ 
-function bakery_shop_customizer_js() {
-    wp_enqueue_script( 'bakery-shop-customizer-js', get_template_directory_uri() . '/inc/js/admin.js', array('jquery'), BAKERY_SHOP_THEME_VERSION, true  );
-}
-endif;
-add_action( 'customize_controls_enqueue_scripts', 'bakery_shop_customizer_js' );
-
-
 /**
  * Adds custom classes to the array of body classes.
  *
@@ -210,7 +189,7 @@ function bakery_shop_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
-	if( $ed_slider && is_front_page() && !is_home() ) {
+	if( ( $ed_slider && is_page_template( 'template-home.php') ) || ( $ed_slider && is_front_page() ) ) {
         $classes[] = 'has-slider';
     }
 
@@ -293,15 +272,13 @@ function bakery_shop_category_transient_flusher() {
 }
 
 
-if ( ! function_exists( 'bakery_shop_excerpt_more' ) ) :
+if ( ! function_exists( 'bakery_shop_excerpt_more' ) && ! is_admin() ) :
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... * 
  */
-function bakery_shop_excerpt_more( $more ) {
+function bakery_shop_excerpt_more() {
 	if ( ! is_admin() ){
 		return ' &hellip; ';
-	}else{
-		return $more;
 	}
 }
 endif;
