@@ -64,12 +64,17 @@ License: CC0 License
 License http://www.pexels.com/photo-license/
 
 == Changelog ==
+= 1.3.0 - March 6 2018
+* Styled: Update a link transition
+* Styled: Update meta info style
+* Remove below header widget
+* Updated footer widget when no choose
+
 = 1.0.2 - May 24 2017
 * Update postmeta info
 * Add color customize
 * Add BasePress Support Addon
 
-== Changelog ==
 = 1.0.1 - May 19 2017
 * Update readme.txt
 * Add Customize option

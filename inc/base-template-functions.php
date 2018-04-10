@@ -82,7 +82,7 @@ if ( ! function_exists( 'basepress_site_title_or_logo' ) ) {
 		
 		} else {
 			
-			$tag = is_home() ? 'h1' : 'div';
+			$tag = is_home() || is_page_template( 'template-homepage.php' ) ? 'h1' : 'h2';
 
 			$html = '<' . esc_attr( $tag ) . ' class="beta site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . esc_html( get_bloginfo( 'name' ) ) . '</a></' . esc_attr( $tag ) .'>';
 
@@ -544,17 +544,6 @@ if ( !function_exists( 'basepress_entry_meta_footer' )) {
 	function basepress_entry_meta_footer() {
 
 		basepress_post_metadata();
-
-		// Edit link
-		edit_post_link(
-			sprintf(
-				/* translators: %s: Name of current post */
-				esc_html__( 'Edit %s', 'basepress' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
 	}
 }
 
@@ -672,8 +661,7 @@ function basepress_post_metadata() {
 				
 				break;
 		}
-	}
-	
+	}	
 
 	if ( $postmeta ) { ?>
 
@@ -682,6 +670,17 @@ function basepress_post_metadata() {
 			<?php
 
 				echo $postmeta;
+
+				// Edit link
+				edit_post_link(
+					sprintf(
+						/* translators: %s: Name of current post */
+						esc_html__( 'Edit %s', 'basepress' ),
+						the_title( '<span class="screen-reader-text">"', '"</span>', false )
+					),
+					'<span class="edit-link">',
+					'</span>'
+				);
 
 			?>
 		
@@ -868,7 +867,7 @@ if ( ! function_exists( 'basepress_footer_widgets' ) ) {
 			$widget_columns = apply_filters( 'basepress_footer_widget_regions', 0 );
 		}
 
-		if ( $widget_columns > 0 ) : ?>
+		if ( $widget_columns > 0 && ( is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) || is_active_sidebar( 'footer-3' ) || is_active_sidebar( 'footer-4' ) ) ) : ?>
 				<div class="container">
 					<div class="widget-area footer-widgets col-<?php echo intval( $widget_columns ); ?>">
 						<?php

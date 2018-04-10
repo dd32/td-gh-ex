@@ -61,16 +61,6 @@
 	
 	do_action( 'basepress_after_header' ); ?>
 
-	<?php
-		// TODO: Need to check and apply class in body tag
-		$class = '';
-		if (is_page()) {
-			if ( is_page_template( 'page-left-sidebar.php' )) {
-				$class = ' left-sidebar';
-			}
-		}
-	?>
-
 	<div id="content" class="site-content">
 		
 		<div class="container">

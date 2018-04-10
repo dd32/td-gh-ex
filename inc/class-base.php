@@ -24,15 +24,15 @@ if ( ! class_exists( 'basepress' ) ) :
 		
 		function __construct() {
 
-			add_action( 'after_setup_theme',          array( $this, 'setup' ) );
-			add_action( 'widgets_init',               array( $this, 'widgets_init' ) );
-			add_action( 'wp_enqueue_scripts',         array( $this, 'scripts' ),       10 );
-			add_action( 'wp_enqueue_scripts',         array( $this, 'child_scripts' ), 30 ); 
+			add_action( 'after_setup_theme',			array( $this, 'setup' ) );
+			add_action( 'widgets_init',					array( $this, 'widgets_init' ),		10 );
+			add_action( 'wp_enqueue_scripts',			array( $this, 'scripts' ),			10 );
+			add_action( 'wp_enqueue_scripts',			array( $this, 'child_scripts' ),	30 ); 
 
 			// After WooCommerce.
-			add_filter( 'body_class',                 array( $this, 'body_classes' ) );
-			//add_filter( 'wp_page_menu_args',          array( $this, 'page_menu_args' ) );
-			add_action( 'wp_footer',                  array( $this, 'get_structured_data' ) );
+			add_filter( 'body_class',					array( $this, 'body_classes' ) );
+			//add_filter( 'wp_page_menu_args',			array( $this, 'page_menu_args' ) );
+			add_action( 'wp_footer',					array( $this, 'get_structured_data' ) );
 			
 		}
 
@@ -163,38 +163,32 @@ if ( ! class_exists( 'basepress' ) ) :
 		public function widgets_init() {
 
 			$sidebar_args['sidebar'] = array(
-				'name'          => __( 'Sidebar', 'basepress' ),
-				'id'            => 'sidebar-1',
-				'description'   => ''
-			);
-
-			$sidebar_args['header'] = array(
-				'name'        	=> __( 'Below Header', 'basepress' ),
-				'id'          	=> 'header-1',
-				'description' 	=> __( 'Widgets added to this region will appear beneath the header and above the main content.', 'basepress' ),
+				'name'				=> __( 'Sidebar', 'basepress' ),
+				'id'				=> 'sidebar-1',
+				'description'		=> ''
 			);
 
 			$footer_widget_regions = apply_filters( 'basepress_footer_widget_regions', 4 );
 
-			if ( $footer_widget_regions > 0) {
+			if ( $footer_widget_regions > 0 ) {
 
 				for ( $i = 1; $i <= intval( $footer_widget_regions ); $i++ ) {
 					$footer = sprintf( 'footer_%d', $i );
 
 					$sidebar_args[ $footer ] = array(
-						'name'        => sprintf( __( 'Footer %d', 'basepress' ), $i ),
-						'id'          => sprintf( 'footer-%d', $i ),
-						'description' => sprintf( __( 'Widgetized Footer Region %d.', 'basepress' ), $i )
+						'name'			=> sprintf( __( 'Footer %d', 'basepress' ), $i ),
+						'id'			=> sprintf( 'footer-%d', $i ),
+						'description'	=> sprintf( __( 'Widgetized Footer Region %d.', 'basepress' ), $i )
 					);
 				}
 			}
 
 			foreach ( $sidebar_args as $sidebar => $args ) {
 				$widget_tags = array(
-					'before_widget' => '<div id="%1$s" class="widget %2$s">',
-					'after_widget'  => '</div>',
-					'before_title'  => '<span class="gamma widget-title">',
-					'after_title'   => '</span>'
+					'before_widget'		=> '<div id="%1$s" class="widget %2$s">',
+					'after_widget'		=> '</div>',
+					'before_title'		=> '<span class="gamma widget-title">',
+					'after_title'		=> '</span>'
 				);
 
 				/**
@@ -236,13 +230,13 @@ if ( ! class_exists( 'basepress' ) ) :
 			 * Fonts
 			 */
 			$google_fonts = apply_filters( 'basepress_google_font_families', array(
-				'open-sanse' 	=> 'Open+Sans:300,400,700&subset=latin,latin-ext'
+				'open-sanse'	=> 'Open+Sans:300,400,700&subset=latin,latin-ext'
 			) );
 
 			if ( $google_fonts ) {
 
 				$query_args = array(
-					'family' => implode( '|', $google_fonts )
+					'family'	=> implode( '|', $google_fonts )
 				);
 
 				$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );

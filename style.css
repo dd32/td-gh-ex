@@ -5,7 +5,7 @@ Theme URI: https://themecountry.com/basepress
 Author: ThemeCountry
 Author URI: https://themecountry.com
 Description: BasePress is a fast loading WordPress theme which is mainly focused on clean design & beautiful typography which to make sure your content is properly served to the reader. Start a Clean design, fast loading & SEO Optimized WordPress Website now with Basepress. Forget the difficulty of customizing website by using Basepress’s state-of-the-art theme option that allows unlimited font & color options as well as very flexible ads management system & more. See demo: https://themecountry.com/demo/?theme=BasePress
-Version: 1.2.1
+Version: 1.3.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: basepress
@@ -2784,7 +2784,12 @@ th {
 a {
   color: #cb2027;
   text-decoration: none;
-  font-weight: normal; }
+  font-weight: normal;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  -ms-transition: all 0.25s linear;
+  transition: all 0.25s linear; }
   a:focus {
     outline: none; }
 
@@ -2798,7 +2803,7 @@ a {
   box-sizing: border-box; }
 
 body {
-  color: #333333;
+  color: #333;
   font-size: 16px;
   font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
@@ -3181,16 +3186,15 @@ li > ul, li > ol {
   width: 100%;
   background: #fff;
   margin: 0 0 30px 0;
-  border: 1px solid #f2f2f2;
-  box-sizing: border-box;
   padding: 32px 40px 40px;
-  word-wrap: break-word; }
-
-.post-item .thumbnail {
-  margin: 8px 0 15px; }
-
-.thumbnail img {
-  width: 100%; }
+  word-wrap: break-word;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  .post-item .thumbnail {
+    margin: 8px 0 15px; }
+    .post-item .thumbnail img {
+      width: 100%; }
 
 .page-title {
   font-size: 38px; }
@@ -3253,15 +3257,16 @@ li > ul, li > ol {
   margin-bottom: 11px; }
 
 .entry-content p {
-  line-height: 26px;
+  line-height: 1.625;
   word-wrap: break-word;
-  margin-bottom: 26px; }
-
-.entry-content a:hover {
-  text-decoration: underline; }
+  margin-bottom: 20px; }
+  .entry-content p a:hover {
+    text-decoration: underline; }
 
 .entry-content ol {
   margin: 15px; }
+  .entry-content ol > li::before {
+    content: ""; }
 
 .entry-content ul {
   margin: 15px;
@@ -3269,22 +3274,25 @@ li > ul, li > ol {
   list-style: none;
   line-height: 26px;
   word-wrap: break-word; }
+  .entry-content ul li {
+    line-height: 26px;
+    word-wrap: break-word;
+    margin-left: 21px; }
+    .entry-content ul li a {
+      color: #333; }
+      .entry-content ul li a:hover {
+        color: #cb2027;
+        text-decoration: underline; }
+    .entry-content ul li::before {
+      font: normal normal normal 14px/1 FontAwesome;
+      content: "\f105";
+      float: left;
+      margin-left: -16px;
+      line-height: 26px;
+      font-size: 14px; }
 
-.entry-content li {
-  line-height: 26px;
-  word-wrap: break-word;
-  margin-left: 21px; }
-
-.entry-content ul li::before {
-  font: normal normal normal 14px/1 FontAwesome;
-  content: "\f105";
-  float: left;
-  margin-left: -16px;
-  line-height: 26px;
-  font-size: 14px; }
-
-.entry-content ol > li::before {
-  content: ""; }
+.entry-content ul.toc_list li::before {
+  display: none; }
 
 /*--------------------------------------------------------------
 ## Entry-Header
@@ -3311,11 +3319,7 @@ li > ul, li > ol {
 --------------------------------------------------------------*/
 .entry-footer,
 .entry-meta {
-  width: 100%;
-  font-size: 0.875em;
-  padding-top: 30px;
-  border-top: 1px solid #eaeaea;
-  clear: both; }
+  width: 100%; }
 
 .entry-footer i {
   font-size: 14px;
@@ -3324,8 +3328,9 @@ li > ul, li > ol {
 .entry-footer > span,
 .entry-meta > span {
   position: relative;
-  display: inline-block;
-  padding-right: 16px; }
+  padding-right: 10px;
+  margin-right: 10px;
+  font-size: 14px; }
 
 .entry-footer > span:last-child,
 .entry-meta > span:last-child {
@@ -3333,36 +3338,17 @@ li > ul, li > ol {
 
 .entry-footer > span::after,
 .entry-meta > span::after {
-  content: '|';
+  content: '';
+  border-right: 1px solid #cb2027;
+  height: 10px;
   position: absolute;
-  right: 4px;
-  line-height: normal; }
+  right: 0;
+  top: 50%;
+  margin-top: -5px; }
 
-.entry-footer > .author-by {
-  margin-right: 16px; }
-
-.entry-footer > .author-by::after {
-  content: ':';
-  right: -10px; }
-
-.entry-footer > span:last-child:after,
-.entry-meta > span:last-child:after {
-  content: ''; }
-
-.entry-footer span a {
-  color: #979797;
-  text-decoration: underline; }
-
-.entry-footer span a:hover {
-  text-decoration: none; }
-
-.post-edit-link {
-  margin-top: 10px;
-  display: inline-block;
-  font-size: 16px; }
-
-.entry-footer .meta-author a {
-  text-transform: capitalize; }
+.entry-footer > span:last-child::after,
+.entry-meta > span:last-child::after {
+  display: none; }
 
 /*--------------------------------------------------------------
 # Infinite scroll
@@ -3397,7 +3383,7 @@ li > ul, li > ol {
   background: #fff;
   padding: 16px 26px;
   font-size: 16px;
-  color: #333333;
+  color: #333;
   border: 1px solid #e0e0e0;
   line-height: 1; }
 
@@ -3511,8 +3497,9 @@ object {
   margin: 0;
   width: 100%;
   clear: both;
-  box-sizing: border-box;
-  background: #ffffff; }
+  box-sizing: border-box; }
+  .site-header .main-header {
+    background: #fff; }
 
 /*--------------------------------------------------------------
 # 12.0 - Header-Images
@@ -3547,7 +3534,7 @@ object {
   margin: 0; }
 
 .site-title a {
-  color: #333333;
+  color: #333;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 700; }
@@ -3779,27 +3766,34 @@ object {
     text-align: right; }
 
 .post-navigation .nav-links a {
+  color: #333;
   position: relative;
   text-decoration: none;
-  padding: 0 18px;
-  white-space: nowrap;
   display: block;
-  overflow: hidden;
   text-overflow: ellipsis;
   line-height: normal; }
   .post-navigation .nav-links a:before {
     font-family: FontAwesome;
     position: absolute; }
   .post-navigation .nav-links a:hover {
-    text-decoration: underline; }
+    text-decoration: underline;
+    color: #b2070e; }
 
-.post-navigation .nav-links .nav-previous a:before {
-  content: '\f060';
-  left: 0; }
+.post-navigation .nav-links .nav-previous a {
+  padding: 0 0 0 24px; }
+  .post-navigation .nav-links .nav-previous a:before {
+    content: '\f060';
+    left: 0;
+    margin-top: -8px;
+    top: 50%; }
 
-.post-navigation .nav-links .nav-next a:before {
-  content: '\f061';
-  right: 0; }
+.post-navigation .nav-links .nav-next a {
+  padding: 0 24px 0 0; }
+  .post-navigation .nav-links .nav-next a:before {
+    content: '\f061';
+    right: 0;
+    margin-top: -8px;
+    top: 50%; }
 
 /*--------------------------------------------------------------
 ## Comments
@@ -3967,7 +3961,6 @@ input#submit {
   transition: background 0.25s linear; }
 
 input#submit:hover {
-  border-color: #c5c5c5;
   color: #666666; }
 
 .logged-in-as a {
@@ -4017,7 +4010,8 @@ input#submit:hover {
   margin: 0 0 30px 0;
   padding: 40px;
   background: #fff;
-  border: 1px solid #f2f2f2;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 .widget-title {
@@ -4032,6 +4026,7 @@ input#submit:hover {
   color: #cb2027; }
 
 .widget li {
+  position: relative;
   margin-bottom: 12px;
   padding-bottom: 12px;
   border-bottom: 1px solid #eaeaea; }
@@ -4049,7 +4044,8 @@ input#submit:hover {
 
 .widget ul ul li:last-child {
   margin-bottom: 0;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  border-bottom: none; }
 
 /* Facebook Like Box */
 .widget.facebook_like .fb-like-box {
@@ -4059,7 +4055,7 @@ input#submit:hover {
 /* Widget Recent Comments */
 .widget ul li.recentcomments a:hover {
   text-decoration: underline;
-  color: #333333; }
+  color: #333; }
 
 /*-------------------------------------------------
 # Search
@@ -4068,31 +4064,29 @@ input#submit:hover {
   position: relative;
   box-sizing: border-box;
   margin-bottom: 0; }
-
-.search-form .search-field {
-  width: 100%;
-  height: 46px;
-  line-height: 46px;
-  display: inline-block;
-  outline: none;
-  border: 1px solid #eaeaea;
-  padding: 8px 15px;
-  box-shadow: none;
-  box-sizing: border-box;
-  -webkit-appearance: none; }
-
-.search-form .search-submit {
-  height: 46px;
-  width: 46px;
-  line-height: 46px;
-  margin: 0;
-  background: url(assets/images/search.png) no-repeat center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: none;
-  font-size: 0;
-  box-shadow: none; }
+  .search-form .search-field {
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    display: inline-block;
+    outline: none;
+    border: 1px solid #eaeaea;
+    padding: 8px 15px;
+    box-shadow: none;
+    box-sizing: border-box;
+    -webkit-appearance: none; }
+  .search-form .search-submit {
+    height: 46px;
+    width: 46px;
+    line-height: 46px;
+    margin: 0;
+    background: url(assets/images/search.png) no-repeat center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    font-size: 0;
+    box-shadow: none; }
 
 input::-webkit-input-placeholder {
   color: #999; }
@@ -4112,58 +4106,46 @@ input:input-placeholder {
 /*-------------------------------------------------
 # Tags Cloud
 --------------------------------------------------*/
-.tagcloud {
-  padding-left: 10px; }
-
 .tagcloud a {
-  color: #333333;
-  margin: 0 15px 5px 0;
+  color: #333 !important;
+  margin: 0 2px 3px 0;
   position: relative;
-  display: inline-block; }
-
-.tagcloud a::before {
-  content: '#';
-  position: absolute;
-  top: 0;
-  left: -10px; }
-
-.tagcloud a:hover {
-  color: #cb2027;
-  text-decoration: underline; }
+  display: inline-block;
+  border: 1px solid #f5f5f5;
+  padding: 2px 10px;
+  border-radius: 2px; }
+  .tagcloud a:hover {
+    background: #f5f5f5;
+    text-decoration: none; }
 
 /* widget Calendar */
 #wp-calendar {
   margin-bottom: 0;
   border: 0; }
-
-#wp-calendar caption {
-  font-size: 16px;
-  font-weight: 400;
-  text-transform: uppercase;
-  padding-top: 10px;
-  padding-bottom: 10px; }
+  #wp-calendar caption {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  #wp-calendar td {
+    text-align: center;
+    padding: 5px 0;
+    border: 0; }
+  #wp-calendar td#today {
+    color: #cb2027; }
+  #wp-calendar #prev {
+    text-align: left;
+    padding-left: 12px; }
+  #wp-calendar #next {
+    text-align: right;
+    padding-right: 12px; }
 
 #wp-calendar thead th {
   font-weight: 700;
   padding: 10px 0;
   text-align: center;
   border: 0; }
-
-#wp-calendar td {
-  text-align: center;
-  padding: 5px 0;
-  border: 0; }
-
-#wp-calendar td#today {
-  color: #cb2027; }
-
-#wp-calendar #prev {
-  text-align: left;
-  padding-left: 12px; }
-
-#wp-calendar #next {
-  text-align: right;
-  padding-right: 12px; }
 
 /*-------------------------------------------------
 # Text Widget
@@ -4180,14 +4162,12 @@ input:input-placeholder {
   font-size: 12px;
   color: #999;
   margin: 8px 0 4px; }
-
-.post-meta span {
-  display: inline-block;
-  position: relative;
-  margin-right: 5px; }
-
-.post-meta span:last-child {
-  margin-right: 0; }
+  .post-meta span {
+    display: inline-block;
+    position: relative;
+    margin-right: 5px; }
+    .post-meta span:last-child {
+      margin-right: 0; }
 
 .tc-sidebar-widget li p {
   font-size: 13px;
@@ -4285,7 +4265,8 @@ input:input-placeholder {
 .site-footer {
   position: relative;
   width: 100%;
-  background: #fff; }
+  background: #fff;
+  margin: 30px 0 0 0; }
 
 .site-info {
   text-align: center;
@@ -4323,14 +4304,11 @@ input:input-placeholder {
   padding: 0 8px;
   display: block;
   font-size: 14px;
-  color: #333333; }
+  color: #333; }
 
 .footer-menu li:hover a {
   color: #cb2027;
   text-decoration: underline; }
-
-.copyrights {
-  margin: 30px 0 0 0; }
 
 .copyrights .site-info a::hover {
   border-bottom: dotted 1px;
@@ -4340,31 +4318,20 @@ input:input-placeholder {
 # Back To Top
 --------------------------------------------------*/
 .back-to-top {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
   color: #fff;
   font-size: 16px;
-  line-height: 50px;
   text-align: center;
   position: fixed;
   right: 20px;
   bottom: 10px;
   z-index: 9;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 2px;
   transition: background 0.25s linear;
   background: #cb2027; }
-
-.back-to-top i {
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  border: none;
-  border-radius: 3px;
-  transition: background 0.25s linear; }
-
-.back-to-top:hover i {
-  background: rgba(0, 0, 0, 0.1); }
 
 /*--------------------------------------------------------------
 # Ads Management

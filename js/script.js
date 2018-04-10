@@ -26,7 +26,7 @@ jQuery.fn.exists = function(callback) {
 					var $this = $(this);
 
 					time = setTimeout(function(){ 
-						$this.children('ul.sub-menu').slideDown(600); 
+						$this.children('ul.sub-menu').slideDown(300); 
 					}, delay);
 				},
 
