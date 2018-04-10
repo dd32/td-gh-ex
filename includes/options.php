@@ -2176,7 +2176,7 @@ Kirki::add_field( 'avata', array(
 
 // Blog
 Kirki::add_section( 'avata_blog', array(
-    'title'          => __( 'Avata: Blog', 'avata'  ),
+    'title'          => __( 'Avata: Posts & Pages', 'avata'  ),
     'description'    => '',
     'panel'          => '', 
     'priority'       => 15,
@@ -2232,3 +2232,43 @@ Kirki::add_field( 'avata', array(
 	'default'  => '',
 	'priority' => 10,
 	) );
+
+Kirki::add_field( 'avata', array(
+	'settings' => 'code_before_post',
+	'label'    => __( 'HTML Code Before Post Content', 'avata' ),
+	'section'  => 'avata_blog',
+	'type'     => 'code',
+	'description' => __('You can add code(e.g. addthis, sharethis) before blog post content.', 'avata'),
+	'priority' => 10,
+	'default'  => '',
+) );
+
+Kirki::add_field( 'avata', array(
+	'settings' => 'code_after_post',
+	'label'    => __( 'HTML Code Before Post Content', 'avata' ),
+	'section'  => 'avata_blog',
+	'type'     => 'code',
+	'description' => __('You can add code(e.g. addthis, sharethis) after blog post content.', 'avata'),
+	'priority' => 10,
+	'default'  => '',
+) );
+
+Kirki::add_field( 'avata', array(
+	'settings' => 'code_before_page',
+	'label'    => __( 'HTML Code Before Page Content', 'avata' ),
+	'section'  => 'avata_blog',
+	'type'     => 'code',
+	'description' => __('You can add code(e.g. addthis, sharethis) before page content.', 'avata'),
+	'priority' => 10,
+	'default'  => '',
+) );
+
+Kirki::add_field( 'avata', array(
+	'settings' => 'code_after_page',
+	'label'    => __( 'HTML Code Before Page Content', 'avata' ),
+	'section'  => 'avata_blog',
+	'type'     => 'code',
+	'description' => __('You can add code(e.g. addthis, sharethis) after page content.', 'avata'),
+	'priority' => 10,
+	'default'  => '',
+) );

@@ -47,7 +47,7 @@ if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $righ
                             <div class="page-content">
                                 <!--blog list begin-->
                                 <div class="post-list">
-                                
+                                <?php do_action('avata_before_post_list');?>
                           <?php
 			if ( have_posts() ) :
 				while ( have_posts() ) : the_post();
@@ -67,7 +67,7 @@ if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $righ
 
 			endif;
 			?>         
-                                    
+                           <?php do_action('avata_after_post_list');?>         
                                     
                                 </div>
                                 <!--blog list end-->

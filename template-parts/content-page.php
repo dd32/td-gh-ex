@@ -13,6 +13,7 @@
   </div>
   <?php endif;?>
   <div class="entry-content">
+  <?php do_action('avata_before_page');?>
     <?php the_content(); ?>
     <?php
 	
@@ -31,6 +32,7 @@
  
         wp_link_pages( $args  );
 		?>
+       <?php do_action('avata_after_page');?>
     <div class="comments-area text-left">
       <?php
 		  if ( comments_open() ) :

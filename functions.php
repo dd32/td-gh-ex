@@ -635,20 +635,26 @@ function avata_get_sidebar_class( $sidebar = '' ){
 function avata_get_sidebar($sidebar, $template_part)
 {
     if ($sidebar == 'left' || $sidebar == 'both') { ?>
+    
         <div class="col-aside-left">
+         <?php do_action('avata_before_left_sidebar');?>
             <aside class="blog-side left text-left">
                 <div class="widget-area">
                 <?php get_sidebar($template_part.'-left');?>
                 </div>
             </aside>
+            <?php do_action('avata_after_left_sidebar');?>
         </div>
+        
     <?php 
     }
     if ($sidebar == 'right' || $sidebar == 'both') { ?>
         <div class="col-aside-right">
+        <?php do_action('avata_before_right_sidebar');?>
             <div class="widget-area">
             <?php get_sidebar($template_part.'-right');?>
             </div>
+            <?php do_action('avata_after_right_sidebar');?>
         </div>
     <?php 
     }
@@ -833,6 +839,43 @@ add_action('wp_head', 'avata_space_before_head');
 
 add_action('wp_footer', 'avata_space_before_body'); 
 
+// Code before post content
+ function avata_code_before_post(){
+	 
+   $code_before_post = avata_option('code_before_post');
+   echo $code_before_post;
+   
+ } 
+ add_action('avata_before_post', 'avata_code_before_post');
+ 
+ // Code after post content
+  function avata_code_after_post(){
+	 
+   $code_after_post = avata_option('code_after_post');
+   echo $code_after_post;
+   
+ } 
+ add_action('avata_after_post', 'avata_code_after_post'); 
+ 
+  // Code before page content
+ function avata_code_before_page(){
+	 
+   $code_before_page = avata_option('code_before_page');
+   echo $code_before_page;
+   
+ } 
+ add_action('avata_before_page', 'avata_code_before_page');
+ 
+ // Code after page content
+  function avata_code_after_page(){
+	 
+   $code_after_page = avata_option('code_after_page');
+   echo $code_after_page;
+   
+ } 
+ add_action('avata_after_page', 'avata_code_after_page'); 
+
+			
 /**
 * Get sections
 */

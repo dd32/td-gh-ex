@@ -2,6 +2,12 @@
 
 == CHANGE LOG == 
 
+= Version 1.5.1 = = 10/04/2018
+* Add - Added option "HTML Code Before Post Content"
+* Add - Added option "HTML Code After Post Content"
+* Add - Added option "HTML Code Before Page Content"
+* Add - Added option "HTML Code After Page Content"
+
 = Version 1.5.0 = = 03/03/2018
 * Add - Added "Columns" option for Section Gallery
 * Add - Added "Columns" option for Section Service

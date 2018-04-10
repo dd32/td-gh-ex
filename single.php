@@ -51,8 +51,9 @@ if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $righ
         <?php echo avata_posted_on();?>
         <?php while ( have_posts() ) : the_post();?>
         <div class="post-content">
+        
           <?php
-
+			do_action('avata_before_post');
 			the_content();
 
 			the_posts_pagination( array(
@@ -60,6 +61,8 @@ if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $righ
 			'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'avata' ) . '</span><i class="fa fa-arrow-right"></i>' ,
 			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'avata' ) . ' </span>',
 		) );
+		
+			do_action('avata_after_post');
 			?>
             
              <div class="comments-area text-left">

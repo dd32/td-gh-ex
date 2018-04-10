@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Avata 1.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-03 14:59+0800\n"
+"POT-Creation-Date: 2018-04-10 17:46+0800\n"
 "PO-Revision-Date: 2016-08-24 18:55+0800\n"
 "Last-Translator: HooThemes <support@hoosoft.com>\n"
 "Language-Team: HooThemes <support@hoosoft.com>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 2.0.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -34,7 +34,7 @@ msgstr ""
 msgid "Next Page"
 msgstr ""
 
-#: archive.php:63 index.php:61 search.php:63 single.php:61
+#: archive.php:63 index.php:61 search.php:63 single.php:62
 msgid "Page"
 msgstr ""
 
@@ -133,44 +133,44 @@ msgid ""
 "this feature."
 msgstr ""
 
-#: functions.php:687
+#: functions.php:693
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:692
+#: functions.php:698
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:728
+#: functions.php:734
 msgid "<i class=\"fa fa-comment\"></i> 1 "
 msgstr ""
 
-#: functions.php:728
+#: functions.php:734
 msgid "<i class=\"fa fa-comment\"></i> % "
 msgstr ""
 
-#: functions.php:745 functions.php:806
+#: functions.php:751 functions.php:812
 msgid "No Comments"
 msgstr ""
 
-#: functions.php:746 functions.php:808
+#: functions.php:752 functions.php:814
 msgid "1 Comment"
 msgstr ""
 
-#: functions.php:747 functions.php:804
+#: functions.php:753 functions.php:810
 msgid "% Comments"
 msgstr ""
 
-#: functions.php:748
+#: functions.php:754
 msgid "Comments Off"
 msgstr ""
 
-#: functions.php:786
+#: functions.php:792
 #, php-format
 msgid "Comment on %s"
 msgstr ""
 
-#: functions.php:1026
+#: functions.php:1069
 msgid "Hoo Contact Form"
 msgstr ""
 
@@ -858,7 +858,7 @@ msgid "Load Google Fonts"
 msgstr ""
 
 #: includes/options.php:2179
-msgid "Avata: Blog"
+msgid "Avata: Posts & Pages"
 msgstr ""
 
 #: includes/options.php:2190
@@ -885,6 +885,30 @@ msgstr ""
 msgid "Hide \"Read More\" on Post List Page"
 msgstr ""
 
+#: includes/options.php:2238 includes/options.php:2248
+msgid "HTML Code Before Post Content"
+msgstr ""
+
+#: includes/options.php:2241
+msgid "You can add code(e.g. addthis, sharethis) before blog post content."
+msgstr ""
+
+#: includes/options.php:2251
+msgid "You can add code(e.g. addthis, sharethis) after blog post content."
+msgstr ""
+
+#: includes/options.php:2258 includes/options.php:2268
+msgid "HTML Code Before Page Content"
+msgstr ""
+
+#: includes/options.php:2261
+msgid "You can add code(e.g. addthis, sharethis) before page content."
+msgstr ""
+
+#: includes/options.php:2271
+msgid "You can add code(e.g. addthis, sharethis) after page content."
+msgstr ""
+
 #: includes/theme-widgets.php:25
 msgid "Footer Area One"
 msgstr ""
@@ -901,11 +925,11 @@ msgstr ""
 msgid "Footer Area Four"
 msgstr ""
 
-#: index.php:59 single.php:59 template-parts/content-page.php:27
+#: index.php:59 single.php:60 template-parts/content-page.php:28
 msgid "Previous page"
 msgstr ""
 
-#: index.php:60 single.php:60 template-parts/content-page.php:26
+#: index.php:60 single.php:61 template-parts/content-page.php:27
 msgid "Next page"
 msgstr ""
 
@@ -913,7 +937,7 @@ msgstr ""
 msgid "Search for"
 msgstr ""
 
-#: single.php:79
+#: single.php:82
 msgid "Tags: "
 msgstr ""
 
@@ -933,7 +957,7 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:20
+#: template-parts/content-page.php:21
 msgid "Pages:"
 msgstr ""
 
