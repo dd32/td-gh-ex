@@ -83,6 +83,9 @@ Access to free support forum at https://catchthemes.com/support-forum/forum/catc
 
 == Change log ==
 
+= 3.9.6 (Released: April 10, 2018) =
+* Bug Fixed: Design issue with Catch Infinite Scroll plugin
+
 = 3.9.5 (Released: March 06, 2018) =
 * Bug Fixed: typo issue in German language file (Reported by Vladi)
 * Code Optimization
