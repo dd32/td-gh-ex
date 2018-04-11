@@ -17,18 +17,15 @@ if ( have_posts() ) :
 
 	<header class="post-header">
 
-		<?php
-
-		$category_list = get_the_category_list( ',&nbsp;&nbsp;' );
-		if ( bard_options( 'single_page_show_categories' ) === true && $category_list ) {
-			echo '<div class="post-categories">' . $category_list . ' </div>';
-		}
-
-		?>
+		<?php if ( bard_options( 'single_page_show_categories' ) === true ) : ?>
+		<div class="post-categories"><?php the_category( ',&nbsp;&nbsp;' ); ?></div>
+		<?php endif; ?>
 
 		<?php if ( get_the_title() ) : ?>
 		<h1 class="post-title"><?php the_title(); ?></h1>
 		<?php endif; ?>
+		
+		<span class="border-divider"></span>
 
 		<?php if ( bard_options( 'single_page_show_date' ) === true ) : ?>
 		<span class="post-date"><?php the_time( get_option( 'date_format' ) ); ?></span>	
@@ -56,16 +53,7 @@ if ( have_posts() ) :
 
 	<footer class="post-footer">
 
-		<?php 
-
-		// The Tags
-		$tag_list = get_the_tag_list( '<div class="post-tags">','','</div>');
-		
-		if ( $tag_list ) {
-			echo ''. $tag_list;
-		}
-
-		?>
+		<?php the_tags( '<div class="post-tags">','','</div>' ); ?>
 
 		<?php if ( bard_options( 'single_page_show_author' ) === true ) : ?>
 		<span class="post-author"><?php esc_html_e( 'By', 'bard' ); ?>&nbsp;<?php the_author_posts_link(); ?></span>

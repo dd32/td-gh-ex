@@ -4,7 +4,7 @@ Theme URI: https://wp-royal.com/themes/item-bard-free/
 Author: Royal Flush
 Author URI: http://wp-royal.com/
 Description: Clean and Minimalist WordPress Theme.
-Version: 0.9.4
+Version: 0.9.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: bard
@@ -546,7 +546,7 @@ blockquote {
 }
 
 blockquote p {
-  font-family: 'Montserrat';
+  font-family: 'Open Sans';
   font-size: 19px;
   line-height: 30.7px;
   letter-spacing: 0.5px;
@@ -860,7 +860,7 @@ sup {
   display: inline-block;
   max-width: 840px;
   padding: 40px 60px;
-  font-family: "Montserrat";
+  font-family: "Open Sans";
 }
 
 #featured-slider:hover .slick-arrow {
@@ -876,14 +876,11 @@ sup {
   z-index: 1001;
   width: 30px;
   height: 30px;
-  line-height: 24px;
-  font-size: 18px;
-  border: 2px solid #fff;
+  line-height: 28px;
+  font-size: 16px;
+  border: 1px solid #fff;
   border-radius: 50%;
   -webkit-border-radius: 50%;
-  opacity: 0;
-  transition: opacity 0.1s ease-in;
-  -webkit-transition: opacity 0.1s ease-in;
   text-align: center;
   cursor: pointer;
 }
@@ -917,11 +914,6 @@ sup {
   cursor: pointer;
 }
 
-.post-slider .prev-arrow:hover,
-.post-slider .next-arrow:hover {
-  opacity: 1;
-}
-
 .post-slider .prev-arrow {
   left: 15px;
 }
@@ -931,7 +923,7 @@ sup {
 }
 
 .slider-categories {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 16px;
@@ -941,6 +933,7 @@ sup {
   font-size: 36px;
   line-height: 44px;
   letter-spacing: 1px;
+  text-transform: uppercase;
   margin-bottom: 25px;
 }
 
@@ -948,7 +941,7 @@ sup {
   display: inline-block;
   padding: 10px 12px 10px 13px;
   border: 2px solid;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 2px;
   line-height: 1.2;
@@ -1494,7 +1487,7 @@ sup {
 }
 
 .post-categories a {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -1542,9 +1535,10 @@ sup {
 .read-more a {
   display: inline-block;
   padding: 0 25px;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 40px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
+  font-weight: 400;
   text-transform: uppercase;
   cursor: pointer;
   color: #111111 !important;
@@ -1789,7 +1783,6 @@ sup {
 }
 
 
-
 /*--------------------------------------------------------------
 11.0 Blog Single
 --------------------------------------------------------------*/
@@ -1911,8 +1904,6 @@ sup {
   display: inline-block;
   max-width: 800px;
   margin-bottom: 10px;
-  font-size: 15px;
-  line-height: 24.2px;
 }
 
 /* Related Post */
@@ -1961,7 +1952,6 @@ sup {
 }
 
 
-
 /*--------------------------------------------------------------
 12.0 Comments
 --------------------------------------------------------------*/
@@ -1992,8 +1982,6 @@ sup {
   margin-bottom: 40px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  font-size: 15px;
-  line-height: 24.2px;
 }
 
 .comment-content {
@@ -2038,7 +2026,6 @@ sup {
 .comment-meta {
   margin-bottom: 7px;
   font-size: 11px;
-  line-height: 25px;
   text-transform: uppercase;
 }
 
@@ -2063,34 +2050,40 @@ sup {
 
 .comment-form label {
   display: block;
-  margin-bottom: 3px;
+  margin-bottom: 6px;
   font-size: 15px;
+}
+
+.comment-notes{
+  margin-bottom: 20px;
 }
 
 .comments-area input,
 .comments-area textarea {
+  width: 100%;
   padding: 13px;
   font-size: 14px;
   border-width: 1px;
   border-style: solid;
 }
 
-.comment-form-author input,
-.comment-form-email input, 
-.comment-form-url input,
-.comments-area textarea {
-  margin-bottom: 10px;
+.comment-form-author,
+.comment-form-email, 
+.comment-form-url,
+.comments-area {
+  margin-bottom: 20px;
 }
 
-.comment-form-author input,
-.comment-form-email input, 
-.comment-form-url input {
-  width: 60% !important;
+.comment-form-author,
+.comment-form-email, 
+.comment-form-url {
+  width: 31% !important;
+  float: left;
 }
 
-.comments-area textarea {
-  width: 100% !important;
-
+.comment-form-author,
+.comment-form-email {
+  margin-right: 3.5%;
 }
 
 .comments-area textarea {
@@ -2221,44 +2214,9 @@ sup {
   font-weight: 600;
 }
 
-.sidebar-left .widget-title,
-.sidebar-right .widget-title {
-  position: relative;
-  background-color: #222222;
-}
-
-.sidebar-left .widget-title h2:after,
-.sidebar-right .widget-title h2:after {
-  content: "";
-  display: block;
-  position: absolute;
-  border-top: 5px solid;
-  border-top-color: #161616;
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent;
-  bottom: -5px;
-  left: 50%;
-  width: 0;
-  height: 0;
-  margin-left: -5px;
-}
-
-#page-content .sidebar-left .widget-title h2,
-#page-content .sidebar-right .widget-title h2 {
-  color: #ffffff;
-}
-
-.footer-widgets .page-footer-inner:after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 1px;
-  margin-top: 20px;
-}
-
 .footer-widgets .widget-title {
   text-align: left;
-  border-bottom-width: 2px;
+  border-bottom-width: 1px;
   border-bottom-style: solid;
 }
 
@@ -2549,8 +2507,8 @@ sup {
 }
 
 /* MailPoet Widgets */
-.widget_wysija_cont {
-  padding: 40px 30px;
+.bard-widget.widget_wysija {
+  padding: 28px 30px;
   background: #f7f7f7;
 }
 
@@ -2661,7 +2619,6 @@ sup {
 .footer-widgets {
   overflow: hidden;
   padding: 60px 0 0px;
-  background: #111111;
 }
 
 .page-footer-inner {
@@ -2676,17 +2633,11 @@ sup {
   margin-bottom: 20px;
 }
 
-.footer-copyright {
-  overflow: hidden;
-  padding: 30px 0 35px;
-  text-align: center;
-  background-color: #111111;
-}
-
 .footer-socials {
-  background: #222;
   text-align: center;
   padding: 20px 0px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
 }
 
 .footer-socials a {
@@ -2719,6 +2670,18 @@ sup {
   letter-spacing: 1px;
 }
 
+.footer-logo a {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.footer-copyright {
+  overflow: hidden;
+  padding: 30px 0 35px;
+  text-align: center;
+  background-color: #F9F9F9;
+}
+
 .scrolltop {
   display: inline-block;
   font-size: 13px;
@@ -2739,18 +2702,13 @@ sup {
 16.0 Typography
 --------------------------------------------------------------*/
 
-body {
-  font-size: 15px;
-  line-height: 24.6px;
-}
-
 /* Menu Fonts */
 #main-menu li a {
-  font-family: 'Montserrat';
+  font-family: 'Open Sans';
   font-size: 14px;
   line-height: 60px;
   letter-spacing: 1px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 #main-menu li a {
@@ -2764,7 +2722,7 @@ body {
 }
 
 #mobile-menu li {
-  font-family: 'Montserrat';
+  font-family: 'Open Sans';
   font-size: 15px;
   line-height: 50px;
   letter-spacing: 1px;
@@ -2799,20 +2757,26 @@ h6,
 #reply-title,
 #reply-title a {
   font-family: 'Montserrat';
-  font-weight: 400;
+  font-weight: 600;
 }
 
 /* Body Text */
-body,
+body {
+  font-family: 'Open Sans';
+  font-size: 15px;
+  letter-spacing: 0px;
+  line-height: 25px;
+}
+
 .page-404 h2,
 .comment-author {
   font-family: 'Open Sans';
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: 0px;
 }
 
 .copyright-info {
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 10px;
 }
 

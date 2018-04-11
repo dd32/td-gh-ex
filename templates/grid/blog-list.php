@@ -8,15 +8,9 @@
 	<div class="post-content-wrap">
 		<header class="post-header">
 
-	 		<?php
-
-			$category_list = get_the_category_list( ',&nbsp;&nbsp;' );
-
-			if ( bard_options( 'blog_page_show_categories' ) === true && $category_list ) {
-				echo '<div class="post-categories">' . $category_list . ' </div>';
-			}
-
-			?>
+			<?php if ( bard_options( 'blog_page_show_categories' ) === true ) : ?>
+			<div class="post-categories"><?php the_category( ',&nbsp;&nbsp;' ); ?></div>
+			<?php endif; ?>
 
 			<?php if ( get_the_title() ) : ?>
 			<h1 class="post-title">

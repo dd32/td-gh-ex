@@ -34,10 +34,10 @@ if ( is_home() ) {
 		$custom_post_class = '';
 
 		if ( is_home() && $wp_query->current_post == 0 && bard_full_width_post() ) {
-			$custom_post_class	= ' class="full-width-post"';
+			$custom_post_class	= 'full-width-post';
 		}
 
-		echo '<li'. $custom_post_class .'>';
+		echo '<li class="'. esc_attr( $custom_post_class ) .'">';
 		
 		// Blog Feed Wrapper
 		if ( is_home() && $wp_query->current_post == 0 && bard_full_width_post() ) {

@@ -73,6 +73,7 @@ function bard_options( $control ) {
 		'typography_logo_family' => 'Open+Sans',
 		'typography_nav_family' => 'Open+Sans',
 		'page_footer_show_socials' => true,
+		'page_footer_logo' => '',
 		'page_footer_copyright' => '',
 		'preloader_label' => false
 	);

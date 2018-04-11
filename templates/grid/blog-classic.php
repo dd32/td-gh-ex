@@ -1,21 +1,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post' ); ?>>
-
-	<div class="post-media">
-		<a href="<?php echo esc_url( get_permalink() ); ?>"></a>
-		<?php the_post_thumbnail('bard-full-thumbnail'); ?>
-	</div>
 	
 	<header class="post-header">
-
- 		<?php
-
-		$category_list = get_the_category_list( ',&nbsp;&nbsp;' );
-
-		if ( bard_options( 'blog_page_show_categories' ) === true && $category_list ) {
-			echo '<div class="post-categories">' . $category_list . ' </div>';
-		}
-
-		?>
+	
+		<?php if ( bard_options( 'blog_page_show_categories' ) === true ) : ?>
+		<div class="post-categories"><?php the_category( ',&nbsp;&nbsp;' ); ?></div>
+		<?php endif; ?>
 
 		<?php if ( get_the_title() ) : ?>
 		<h1 class="post-title">
@@ -30,6 +19,11 @@
 		<?php endif; ?>
 		
 	</header>
+
+	<div class="post-media">
+		<a href="<?php echo esc_url( get_permalink() ); ?>"></a>
+		<?php the_post_thumbnail('bard-full-thumbnail'); ?>
+	</div>
 
 	<?php if ( bard_options( 'blog_page_post_description' ) !== 'none' ) : ?>
 	<div class="post-content">

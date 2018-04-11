@@ -89,7 +89,7 @@ function bard_activation_notice() {
  */
 function bard_pingback_header() {
 	if ( is_singular() && pings_open() ) {
-		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+		printf( '<link rel="pingback" href="%s">' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
 add_action( 'wp_head', 'bard_pingback_header' );
@@ -134,10 +134,10 @@ add_action( 'wp_enqueue_scripts', 'bard_scripts' );
 /*
 ** Google Fonts
 */
-function bard_playfair_font_url() {
+function bard_montserrat_font_url() {
     $font_url = '';
     if ( 'off' !== _x( 'on', 'Google font: on or off', 'bard' ) ) {
-        $font_url = add_query_arg( 'family', urlencode( 'Playfair Display:400,700' ), "//fonts.googleapis.com/css" );
+        $font_url = add_query_arg( 'family', urlencode( 'Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i' ), "//fonts.googleapis.com/css" );
     }
     return $font_url;
 }
@@ -145,7 +145,7 @@ function bard_playfair_font_url() {
 function bard_opensans_font_url() {
     $font_url = '';
     if ( 'off' !== _x( 'on', 'Google font: on or off', 'bard' ) ) {
-        $font_url = add_query_arg( 'family', urlencode( 'Open Sans:400italic,400,600italic,600,700italic,700' ), "//fonts.googleapis.com/css" );
+        $font_url = add_query_arg( 'family', urlencode( 'Open Sans:400,400i,600,600i,700,700i' ), "//fonts.googleapis.com/css" );
     }
     return $font_url;
 }
@@ -168,7 +168,7 @@ function bard_rokkitt_font_url() {
 
 // Enqueue Fonts
 function bard_gfonts_scripts() {
-    wp_enqueue_style( 'bard-playfair-font', bard_playfair_font_url(), array(), '1.0.0' );
+    wp_enqueue_style( 'bard-montserratr-font', bard_montserrat_font_url(), array(), '1.0.0' );
     wp_enqueue_style( 'bard-opensans-font', bard_opensans_font_url(), array(), '1.0.0' );
 
     // Load Kalam if selected
@@ -336,7 +336,7 @@ add_filter( 'excerpt_more', 'bard_new_excerpt' );
 if ( ! function_exists( 'bard_excerpt' ) ) {
 
 	function bard_excerpt( $limit = 50 ) {
-	    echo '<p>'. wp_trim_words(get_the_excerpt(), $limit) .'</p>';
+	    echo '<p>'. esc_html( wp_trim_words( get_the_excerpt(), $limit ) ) .'</p>';
 	}
 
 }
@@ -473,7 +473,7 @@ if ( ! function_exists( 'bard_related_posts' ) ) {
 					<section>
 						<a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_post_thumbnail('bard-grid-thumbnail'); ?></a>
 						<h4><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h4>
-						<span class="related-post-date"><?php echo get_the_time( get_option('date_format') ); ?></span>
+						<span class="related-post-date"><?php echo esc_html( get_the_time( get_option('date_format') ) ); ?></span>
 					</section>
 
 				<?php endwhile; ?>
@@ -623,7 +623,7 @@ function bard_woocommerce_output_content_wrapper() {
 
 	$layout = bard_options( 'general_content_width' ) === 'boxed' ? ' boxed-wrapper': '';
 
-	echo '<div class="main-content clear-fix'. $layout .'">';
+	echo '<div class="main-content clear-fix'. esc_html( $layout ) .'">';
 		echo '<div class="main-container">';
 
 }

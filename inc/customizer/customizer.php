@@ -924,10 +924,14 @@ function bard_customize_register( $wp_customize ) {
 	// Show Socials
 	bard_checkbox_control( 'page_footer', 'show_socials', esc_html__( 'Show Social Icons', 'bard' ), 'refresh', 1 );
 
+
+	// Logo Upload
+	bard_image_crop_control( 'page_footer', 'logo', esc_html__( 'Logo Upload', 'bard' ), 600, 350, 'refresh', 3 );
+
 	$copyright_description = 'Enter <strong>$year</strong> to update the year automatically and <strong>$copy</strong> for the copyright symbol.<br><br>Example: $year Bard Theme $copy.';
 
 	// Copyright
-	bard_textarea_control( 'page_footer', 'copyright', esc_html__( 'Copyright', 'bard' ), $copyright_description, 'refresh', 3 );
+	bard_textarea_control( 'page_footer', 'copyright', esc_html__( 'Copyright', 'bard' ), $copyright_description, 'refresh', 5 );
 
 	// Pro Version
 	$wp_customize->add_setting( 'pro_version_page_footer', array(

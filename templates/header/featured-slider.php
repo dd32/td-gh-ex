@@ -67,11 +67,9 @@ $slider_data .= '}';
 
 						<?php $category_list = get_the_category_list( ', ' ); ?>		
 
-						<?php if ( $category_list ) : ?>
 						<div class="slider-categories">
-							<?php echo '' . $category_list; ?>
+							<?php the_category( ', ' ); ?>
 						</div> 
-						<?php endif; ?>
 
 						<h2 class="slider-title"> 
 							<a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a>	

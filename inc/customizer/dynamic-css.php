@@ -2,8 +2,6 @@
 
 function bard_dynamic_css() {
 
-// begin style block
-$css = '<style id="bard_dynamic_css">';
 
 /*
 ** Reusable Functions =====
@@ -349,24 +347,24 @@ function bard_true_false( $option ) {
 		#page-footer input,
 		#page-footer textarea,
 		.scrolltop:hover {
-			color: #bdbaba;
+			color: #222222;
 		}
 
 		#page-footer .footer-socials a {
-			color: #ffffff;
+			color: #000000;
 		}
 
 		#page-footer #s::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-		  color: #bdbaba;
+		  color: #222222;
 		}
 		#page-footer #s::-moz-placeholder { /* Firefox 19+ */
-		  color: #bdbaba;
+		  color: #222222;
 		}
 		#page-footer #s:-ms-input-placeholder { /* IE 10+ */
-		  color: #bdbaba;
+		  color: #222222;
 		}
 		#page-footer #s:-moz-placeholder { /* Firefox 18- */
-		  color: #bdbaba;
+		  color: #222222;
 		}
 
 		/* Title */
@@ -376,7 +374,7 @@ function bard_true_false( $option ) {
 		#page-footer h4,
 		#page-footer h5,
 		#page-footer h6 {
-			color: #cec8c8;
+			color: #111111;
 		}
 
 		#page-footer a:hover,
@@ -406,12 +404,9 @@ function bard_true_false( $option ) {
 		#page-footer textarea,
 		#page-footer .widget-title h2:before,
 		#page-footer .widget-title h2:after,
-		.footer-widgets .widget-title {
-			border-color: #404040;
-		}
-
-		.footer-widgets .page-footer-inner:after {
-			background-color: #404040;
+		.footer-widgets .widget-title,
+		.footer-socials {
+			border-color: #e8e8e8;
 		}
 	';
 
@@ -1008,11 +1003,8 @@ function bard_true_false( $option ) {
 
 
 
-// end style block
-$css .= '</style>';
-
 // return generated & compressed CSS
-echo str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $css); 
+echo '<style id="bard_dynamic_css">'. str_replace( array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $css ) .'</style>'; 
 
 
 } // end bard_dynamic_css()

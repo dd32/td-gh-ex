@@ -8,7 +8,9 @@ $showitems = ( $range * 2 ) + 1;
 $post_pagination = bard_options( 'blog_page_post_pagination' );
 
 if ( empty( $paged ) ) {
-	$paged = 1;
+	$pagedd = 1;
+} else {
+	$pagedd = $paged;
 }
 
 if ( ! $pages ) {
@@ -36,24 +38,24 @@ if ( class_exists( 'WooCommerce' ) ) {
 if ( $post_pagination === 'numeric' ) {
 
 	//  Previous Page
-	if ( $paged > 1 ) {
-		echo '<a href="'. esc_url( get_pagenum_link( $paged - 1 ) ) .'" class="numeric-prev-page" ><i class="fas fa-long-arrow-alt-left"></i></a>';
+	if ( $pagedd > 1 ) {
+		echo '<a href="'. esc_url( get_pagenum_link( $pagedd - 1 ) ) .'" class="numeric-prev-page" ><i class="fas fa-long-arrow-alt-left"></i></a>';
 	}
 	
 	// Pagination
 	for ( $i = 1; $i <= $pages; $i++ ) {
-		if ( 1 != $pages &&( !( $i >= $paged + $range + 1 || $i <= $paged - $range - 1 ) || $pages <= $showitems ) ) {
-			if ( $paged == $i ) {
-				echo '<span class="numeric-current-page">'. $i .'</span>';
+		if ( 1 != $pages &&( !( $i >= $pagedd + $range + 1 || $i <= $pagedd - $range - 1 ) || $pages <= $showitems ) ) {
+			if ( $pagedd == $i ) {
+				echo '<span class="numeric-current-page">'. esc_html( $i ) .'</span>';
 			} else {
-				echo '<a href="'. esc_url( get_pagenum_link( $i ) ). '">'. $i .'</a>';
+				echo '<a href="'. esc_url( get_pagenum_link( $i ) ). '">'. esc_html( $i ) .'</a>';
 			}
 		}
 	}
 
 	// Next Page
-	if ( $paged < $pages ) {
-		echo '<a href="'. esc_url( get_pagenum_link( $paged + 1 ) ).'" class="numeric-next-page" ><i class="fas fa-long-arrow-alt-right"></i></a>';
+	if ( $pagedd < $pages ) {
+		echo '<a href="'. esc_url( get_pagenum_link( $pagedd + 1 ) ).'" class="numeric-next-page" ><i class="fas fa-long-arrow-alt-right"></i></a>';
 	}
 
 // Default Pagination

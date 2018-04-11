@@ -15,9 +15,19 @@ function bard_about_page_output() {
 			<?php esc_html_e( 'Bard is free personal and multi-author Wordpress Blog theme. It\'s perfect for any kind of blog: personal, multi-author, food, lifestyle, etc... Is fully Responsive and Retina Display ready, clean, modern and minimal. Bard is WooCommerce compatible, also has RTL support and for sure it\'s SEO friendly. Coded with latest Wordpress\' standards.', 'bard' ); ?>
 		</p>
 
-		<!-- Tabs -->
-		<?php $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'bard_tab_1'; ?>  
+		<?php
 
+		// Get Active Tab
+		if ( isset($_GET[ 'tab' ]) ) {
+			$active_tab = sanitize_key($_GET[ 'tab' ]);
+		} else {
+			$active_tab = 'bard_tab_1';
+		}
+
+
+		?>
+
+		<!-- Tabs -->
 		<div class="nav-tab-wrapper">
 			<a href="?page=about-bard&tab=bard_tab_1" class="nav-tab <?php echo $active_tab == 'bard_tab_1' ? 'nav-tab-active' : ''; ?>">
 				<?php esc_html_e( 'Getting Started', 'bard' ); ?>
@@ -477,7 +487,7 @@ function bard_recommended_plugin( $slug, $filename, $name, $description) {
 				<?php echo esc_html( $name ); ?>
 
 				<?php if ( $slug === 'ajax-thumbnail-rebuild' ) : ?>
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/ajax-thumbnail-rebuild.jpeg'; ?>" class="plugin-icon" alt="">
+					<img src="<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/ajax-thumbnail-rebuild.jpeg'; ?>" class="plugin-icon" alt="">
 				<?php else: ?>
 					<img src="<?php echo esc_url('https://ps.w.org/'. $slug .'/assets/icon-'. $size .'.png') ?>" class="plugin-icon" alt="">
 				<?php endif; ?>
