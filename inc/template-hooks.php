@@ -45,10 +45,11 @@ add_action( 'bakery_shop_header', 'bakery_shop_header_end', 60 );
  * 
  * @see bakery_shop_featured    - 20
  * @see bakery_shop_welcome     - 30
- * @see bakery_shop_blog        - 40 
- * @see bakery_shop_cta  	   - 60
- * @see bakery_shop_team  	   - 80
+ * @see bakery_shop_products    - 40 
+ * @see bakery_shop_cta  	    - 60
+ * @see bakery_shop_team  	    - 80
  * @see bakery_shop_testimonial - 90
+ * @see bakery_shop_blog        - 95 
 */
 add_action( 'bakery_shop_home_page', 'bakery_shop_featured', 20 );
 add_action( 'bakery_shop_home_page', 'bakery_shop_welcome', 30 );

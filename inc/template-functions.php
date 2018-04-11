@@ -583,7 +583,7 @@ function bakery_shop_team(){
                             <div class="team-item">
                                 <?php if( has_post_thumbnail() ){ the_post_thumbnail( 'bakery-shop-teams' ); }
                                     else{
-                                        echo '<img src="' . get_template_directory_uri().'/images/team-one.png">';
+                                        echo '<img src="' . esc_url( get_template_directory_uri() ).'/images/team-one.png">';
                                     } ?>
                                 <div class="team-mask">
                                     <a href="<?php the_permalink(); ?>"><?php the_title( '<h3>', '</h3>'); ?></a>
@@ -651,7 +651,7 @@ function bakery_shop_testimonial(){
                                 <div class="testimonial-thumbnail">
                                     <?php if( has_post_thumbnail() ){ the_post_thumbnail( 'thumbnail' ); }
                                     else{
-                                        echo '<img src="' . get_template_directory_uri().'/images/team-profile-non.jpg">';
+                                        echo '<img src="' . esc_url( get_template_directory_uri() ).'/images/team-profile-non.jpg">';
                                     } ?>
                                     <div class="testimonial-info">
                                         <h3><?php the_title(); ?></h3>

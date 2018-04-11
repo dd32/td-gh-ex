@@ -2,11 +2,11 @@
 
 Author: Prosys Theme (http://prosystheme.com)
 
-Tags: one-column, two-columns, right-sidebar, custom-background, custom-logo, custom-menu, featured-image-header, featured-images,  threaded-comments, translation-ready, theme-options, footer-widgets, blog, full-width-template, custom-colors , portfolio, e-commerce, food-and-drink 
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-logo, custom-menu, featured-image-header, featured-images,  threaded-comments, translation-ready, theme-options, footer-widgets, blog, full-width-template, custom-colors, e-commerce, food-and-drink 
 
 Requires at least: 4.0
-Tested up to: 4.9.4
-Stable tag: 1.0.2
+Tested up to: 4.9.5
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,8 +62,12 @@ Bakery Shop WordPress Theme is distributed under the terms of the GPLv2 or later
    
 
 == Change Log ==
+
+1.0.3
+* fixed issue mentioned in trac.
+
 1.0.2
-* fixed issue mentioned in slack.
+* fixed issue mentioned in trac.
 
 1.0.1
 * Description changed
