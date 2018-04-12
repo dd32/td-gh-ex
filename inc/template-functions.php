@@ -50,14 +50,17 @@ function bcorporate_home_about_sec_fnc() {
 			<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12 text-center">
-					<h1 >
+					<h1>
 						<?php echo esc_html( get_theme_mod( 'homepage_about_main_text' ) );?>
 					</h1>
 					<div class="about_mid_text col-md-12 col-sm-12 col-lg-8 offset-lg-2 homepage_sub_text">
 						<p><?php echo esc_html( get_theme_mod( 'homepage_about_sub_text' ) );?></p>
 					</div>
 					<div class="about_bottom_text">
-						<a href="<?php echo esc_url( site_url() ); ?>"><span><?php echo esc_html( get_theme_mod( 'homepage_about_bottom_text' ) );?></span></a>
+						<a href="<?php echo esc_url( site_url() ); ?>">
+							<span>
+								<?php esc_html_e( 'Check out How our themes works', 'bcorporate' );?>
+							</span></a>
 					</div>
 				</div>
 			</div></div>
@@ -94,19 +97,19 @@ if ( ! function_exists( 'bcorporate_home_feature_sec_fnc' ) ) :
 
 function bcorporate_home_feature_sec_fnc() {
 	if( get_theme_mod( 'home_page_feature_enable', '1') ):
+		$bcorporate_featured_id = get_theme_mod('homepage_feature_category');
 		?>
 		<section id="bcorporate_home_feature_wrap" class="text-center  ">
 			<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12 col-sm-12 ">
 					<h1>
-						<?php echo esc_html( get_theme_mod( 'homepage_feature_main_title' ) );?>
+						<?php echo wp_kses_post( category_description( absint( $bcorporate_featured_id ) ) );?>
 					</h1>
 				</div>
 			</div>
 			<div class="row home_feature_post_wrap">
 				<?php
-			    	$bcorporate_featured_id = get_theme_mod('homepage_feature_category');
 			    	if(!empty($bcorporate_featured_id)){
 			    		$bcorporate_feat_aos_delay = 0;
 			    		$bcorporate_feature_query  = new WP_Query( array( 
@@ -146,20 +149,24 @@ if ( ! function_exists( 'bcorporate_home_portfolio_sec_fnc' ) ) :
 
 function bcorporate_home_portfolio_sec_fnc() {
 	if( get_theme_mod( 'home_page_portfolio_enable', '1') ):
+		$bcorporate_portfolio_id = get_theme_mod('homepage_portfolio_category');
 		?>
 		<section id="bcorporate_home_portfolio_wrap" class="text-center bcorporate_home_feature_wrap-bg">
 			<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12">
 					<h1>
-						<?php echo esc_html( get_theme_mod( 'homepage_portfolio_main_title' ) );?>
+						<?php
+							echo esc_html( get_cat_name(absint( $bcorporate_portfolio_id ) ) );
+						 ?>
 					</h1>
-					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 homepage_sub_text"><p ><?php echo esc_html( get_theme_mod( 'homepage_portfolio_sub_text' ) );?></p>
+					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 homepage_sub_text"><p >
+						<?php echo wp_kses_post( category_description( absint( $bcorporate_portfolio_id ) ) );?>
+						</p>
 				</div></div>
 			</div>
 			<div class="row home_portfolio_post_wrap">
 				<?php
-			    	$bcorporate_portfolio_id = get_theme_mod('homepage_portfolio_category');
 			    	if(!empty($bcorporate_portfolio_id)){
 			    		$bcorporate_portfolio_query  = new WP_Query( array( 
 																'cat' => absint( $bcorporate_portfolio_id ) , 
@@ -243,20 +250,28 @@ if ( ! function_exists( 'bcorporate_home_services_sec_fnc' ) ) :
 
 function bcorporate_home_services_sec_fnc() {
 	if( get_theme_mod( 'home_page_services_enable', '1') ):
+		$bcorporate_services_id = get_theme_mod('homepage_services_category');
 		?>
 		<section id="bcorporate_home_services_wrap" class="text-center ">
 			<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12">
 					<h1>
-						<?php echo esc_html( get_theme_mod( 'homepage_services_main_title' ) );?>
+						<?php
+							echo esc_html( get_cat_name(absint( $bcorporate_services_id ) ) );
+						?>
 					</h1>
-					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 homepage_sub_text"><p><?php echo esc_html( get_theme_mod( 'homepage_services_sub_title' ) );?></p>
+					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 homepage_sub_text">
+						<p>
+						<?php 
+							echo wp_kses_post( category_description( absint( $bcorporate_services_id ) ) );
+						?>		
+					</p>
 				</div></div>
 			</div>
 			<div class="row home_services_post_wrap">
 				<?php
-			    	$bcorporate_services_id = get_theme_mod('homepage_services_category');
+			    	
 			    	if(!empty($bcorporate_services_id)){
 			    		$bcorporate_services_query  = new WP_Query( array( 
 																'cat' => absint( $bcorporate_services_id ) , 
@@ -298,21 +313,20 @@ if ( ! function_exists( 'bcorporate_home_blog_sec_fnc' ) ) :
 
 function bcorporate_home_blog_sec_fnc() {
 	if( get_theme_mod( 'home_page_blog_enable', '1') ):
+		$bcorporate_blog_id = get_theme_mod('homepage_blog_category');
 		?>
 		<section id="bcorporate_home_blog_wrap" class="text-center bcorporate_home_feature_wrap-bg">
 			<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12">
 					<h1>
-						<?php echo esc_html( get_theme_mod( 'homepage_blog_main_title' ) );?>
+						<?php echo esc_html( get_cat_name(absint( $bcorporate_blog_id ) ) );?>
 					</h1>
-					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 homepage_sub_text"><p><?php echo esc_html( get_theme_mod( 'homepage_blog_sub_title' ) );?></p></div>
+					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 homepage_sub_text"><p><?php echo wp_kses_post( category_description( absint( $bcorporate_blog_id ) ) );?></p></div>
 				</div>
 			</div>
 			<div class="row home_blog_post_wrap">
 				<?php
-				
-			    	$bcorporate_blog_id = get_theme_mod('homepage_blog_category');
 			    	if(!empty($bcorporate_blog_id)){
 			    		$bcorporate_about_aos_delay = 0;
 			    		$bcorporate_blog_query  = new WP_Query( array( 
@@ -375,21 +389,21 @@ if ( ! function_exists( 'bcorporate_home_testimonial_sec_fnc' ) ) :
 
 function bcorporate_home_testimonial_sec_fnc() {
 	if( get_theme_mod( 'home_page_testimonial_enable', '1') ):
+		$bcorporate_testimonial_id = get_theme_mod('homepage_testimonial_category');
 		?>
 		<section id="bcorporate_home_testimonial_wrap" class="text-center bcorporate_home_feature_wrap-bg">
 			<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12">
-					<span class=" homepage_sub_text"><?php echo esc_html( get_theme_mod( 'homepage_testimonial_sub_title' ) );?></span>
+					<span class=" homepage_sub_text"><?php echo wp_kses_post( category_description( absint( $bcorporate_testimonial_id ) ) );?></span>
 					<h1 class="homepage_testimonial_main_title">
-						<?php echo esc_html( get_theme_mod( 'homepage_testimonial_main_title' ) );?>
+						<?php echo esc_html( get_cat_name(absint( $bcorporate_testimonial_id ) ) );?>
 					</h1>
 					
 				</div>
 			</div>
 			<div class="row home_blog_post_wrap">
 				<?php
-			    	$bcorporate_testimonial_id = get_theme_mod('homepage_testimonial_category');
 			    	if(!empty($bcorporate_testimonial_id)){
 			    		$bcorporate_testimonial_query  = new WP_Query( array( 
 																'cat' => absint( $bcorporate_testimonial_id ) , 

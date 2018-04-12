@@ -75,7 +75,7 @@ function bcorporate_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'homepage_about_main_text', array(
 		'label'    => esc_html__( 'About Section Main Title', 'bcorporate' ),
 		'section'  => 'home_page_about_section',
-		'type'     => 'textarea',
+		'type'     => 'text',
 		'priority' => 2,
 	) );
 
@@ -88,20 +88,6 @@ function bcorporate_customize_register( $wp_customize ) {
 	);
 	$wp_customize->add_control( 'homepage_about_sub_text', array(
 		'label'    => esc_html__( 'About Section Sub Title', 'bcorporate' ),
-		'section'  => 'home_page_about_section',
-		'type'     => 'textarea',
-		'priority' => 2,
-	) );
-
-	//About bottom text
-	$wp_customize->add_setting( 
-		'homepage_about_bottom_text', 
-		array(
-			'sanitize_callback' => 'bcorporate_sanitize_text',	
-			)
-	);
-	$wp_customize->add_control( 'homepage_about_bottom_text', array(
-		'label'    => esc_html__( 'About Section Bottom Title', 'bcorporate' ),
 		'section'  => 'home_page_about_section',
 		'type'     => 'textarea',
 		'priority' => 2,
@@ -156,20 +142,6 @@ function bcorporate_customize_register( $wp_customize ) {
 	  'priority' => 2,
 	) );
 
-	//Feature main title
-	$wp_customize->add_setting( 
-		'homepage_feature_main_title', 
-		array(
-			'sanitize_callback' => 'bcorporate_sanitize_text',	
-			)
-	);
-	$wp_customize->add_control( 'homepage_feature_main_title', array(
-		'label'    => esc_html__( 'Feature Section Main Title', 'bcorporate' ),
-		'section'  => 'home_page_feature_section',
-		'type'     => 'textarea',
-		'priority' => 2,
-	) );
-
 	//Feature category dropdown
 	$wp_customize->add_setting(
 	    'homepage_feature_category',
@@ -208,34 +180,6 @@ function bcorporate_customize_register( $wp_customize ) {
 	  'label' => esc_html__( 'Enable Homepage Portfolio Section', 'bcorporate' ),
 	  'description' => esc_html__( 'Uncheck to disable Portfolio section', 'bcorporate' ),
 	  'priority' => 2,
-	) );
-
-	//portfolio main title
-	$wp_customize->add_setting( 
-		'homepage_portfolio_main_title', 
-		array(
-			'sanitize_callback' => 'bcorporate_sanitize_text',	
-			)
-	);
-	$wp_customize->add_control( 'homepage_portfolio_main_title', array(
-		'label'    => esc_html__( 'Portfolio Section Main Title', 'bcorporate' ),
-		'section'  => 'home_page_portfolio_section',
-		'type'     => 'textarea',
-		'priority' => 2,
-	) );
-
-	//portfolio main sub title
-	$wp_customize->add_setting( 
-		'homepage_portfolio_sub_text', 
-		array(
-			'sanitize_callback' => 'bcorporate_sanitize_text',	
-			)
-	);
-	$wp_customize->add_control( 'homepage_portfolio_sub_text', array(
-		'label'    => esc_html__( 'Portfolio Section Sub Text', 'bcorporate' ),
-		'section'  => 'home_page_portfolio_section',
-		'type'     => 'textarea',
-		'priority' => 2,
 	) );
 
 
@@ -291,7 +235,7 @@ function bcorporate_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'homepage_cta_one_main_title', array(
 		'label'    => esc_html__( 'CTA One Main Title', 'bcorporate' ),
 		'section'  => 'home_page_cta_one_section',
-		'type'     => 'textarea',
+		'type'     => 'text',
 		'priority' => 2,
 	) );
 
@@ -359,34 +303,6 @@ function bcorporate_customize_register( $wp_customize ) {
 	  'priority' => 2,
 	) );
 
-	//Services title
-	$wp_customize->add_setting( 
-		'homepage_services_main_title', 
-		array(
-			'sanitize_callback' => 'bcorporate_sanitize_text',	
-			)
-	);
-	$wp_customize->add_control( 'homepage_services_main_title', array(
-		'label'    => esc_html__( 'Services Main Title', 'bcorporate' ),
-		'section'  => 'home_page_services_section',
-		'type'     => 'textarea',
-		'priority' => 2,
-	) );
-
-	//Services Subtitle
-	$wp_customize->add_setting( 
-		'homepage_services_sub_title', 
-		array(
-			'sanitize_callback' => 'bcorporate_sanitize_text',	
-			)
-	);
-	$wp_customize->add_control( 'homepage_services_sub_title', array(
-		'label'    => esc_html__( 'Services Sub Title', 'bcorporate' ),
-		'section'  => 'home_page_services_section',
-		'type'     => 'textarea',
-		'priority' => 2,
-	) );
-
 	//Services category dropdown
 	$wp_customize->add_setting(
 	    'homepage_services_category',
@@ -428,33 +344,6 @@ function bcorporate_customize_register( $wp_customize ) {
 	  'priority' => 2,
 	) );
 
-	//Blog title
-	$wp_customize->add_setting( 
-		'homepage_blog_main_title', 
-		array(
-			'sanitize_callback' => 'bcorporate_sanitize_text',	
-			)
-	);
-	$wp_customize->add_control( 'homepage_blog_main_title', array(
-		'label'    => esc_html__( 'Blog Main Title', 'bcorporate' ),
-		'section'  => 'home_page_blog_section',
-		'type'     => 'textarea',
-		'priority' => 2,
-	) );
-
-	//Blog Subtitle
-	$wp_customize->add_setting( 
-		'homepage_blog_sub_title', 
-		array(
-			'sanitize_callback' => 'bcorporate_sanitize_text',	
-			)
-	);
-	$wp_customize->add_control( 'homepage_blog_sub_title', array(
-		'label'    => esc_html__( 'Blog Sub Title', 'bcorporate' ),
-		'section'  => 'home_page_blog_section',
-		'type'     => 'textarea',
-		'priority' => 2,
-	) );
 
 	//Blog category dropdown
 	$wp_customize->add_setting(
@@ -494,34 +383,6 @@ function bcorporate_customize_register( $wp_customize ) {
 	  'label' => esc_html__( 'Enable homepage testimonial section', 'bcorporate' ),
 	  'description' => esc_html__( 'Uncheck to homepage testimonial section', 'bcorporate' ),
 	  'priority' => 2,
-	) );
-
-	//Testimonial title
-	$wp_customize->add_setting( 
-		'homepage_testimonial_main_title', 
-		array(
-			'sanitize_callback' => 'bcorporate_sanitize_text',	
-			)
-	);
-	$wp_customize->add_control( 'homepage_testimonial_main_title', array(
-		'label'    => esc_html__( 'Testimonial Main Title', 'bcorporate' ),
-		'section'  => 'home_page_testimonial_section',
-		'type'     => 'textarea',
-		'priority' => 2,
-	) );
-
-	//Testimonial Subtitle
-	$wp_customize->add_setting( 
-		'homepage_testimonial_sub_title', 
-		array(
-			'sanitize_callback' => 'bcorporate_sanitize_text',	
-			)
-	);
-	$wp_customize->add_control( 'homepage_testimonial_sub_title', array(
-		'label'    => esc_html__( 'Testimonial Sub Title', 'bcorporate' ),
-		'section'  => 'home_page_testimonial_section',
-		'type'     => 'textarea',
-		'priority' => 2,
 	) );
 
 	//Testimonial category dropdown
@@ -576,7 +437,7 @@ function bcorporate_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'homepage_cta_two_main_title', array(
 		'label'    => esc_html__( 'CTA Two Main Title', 'bcorporate' ),
 		'section'  => 'home_page_cta_two_section',
-		'type'     => 'textarea',
+		'type'     => 'text',
 		'priority' => 2,
 	) );
 
