@@ -4,7 +4,7 @@ Theme URI:
 Author: Vilhoprogramming
 Author URI: 
 Description: AppPage is Clean and Modern Responsive App Landing page template. It is Responsive HTML5/CSS3 Template based on hand made CSS. It works nicely on all smart devices: smart phones, tablet, PCs and desktops. AppPage is a Mobile App Landing Page, AppPage Showcase Template for online professional/creative person who wants to showcase their app details on the internet in the modern way. It’s a fresh and clean design. It’s a 100% bootstrap responsive design and compatible with all major browsers, tablets and phones. Hello, short said AppPage is a mix of a landing page and a blog! It is a new clean responsive corporate, business and agency WordPress blogging theme. If you are an author, writer, business owner or blogger who likes to blog and write about things such as fashion, music, technology, travel, lifestyle, food, business, finance, videos, books, entertainment or perhaps need a personal journal, then this light responsive business theme is made for you. This coporate agency theme also has lots of sidebar widgets, so you can use ads like adsense and drive your blog or portfolio with affiliate marketing. AppPage is seo optimized and will do wonders in Googles and Bings search results, so it is also great for a modern corporate review magazine with editorial articles and posts. It’s easy to get started with blogging and writing because the theme is easy to set up, so you can get creative and own a nice minimalistic single page or one pager with a blog incorperated fast. This is the best landing page and blog theme, it works on mobile phones, tablets and desktop computers. So start writing your pages and start your own business, agency or finance website today with our awesome fast and light weight landing page theme!
-Version: 2.7
+Version: 2.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: apppage
@@ -1553,7 +1553,9 @@ text-transform: uppercase;
 .single .entry-thumb {
 margin-bottom:20px;
 }
-
+.site-info .container span a {
+	text-decoration:none;
+}
 h2.entry-title, h1.entry-title {
 font-size: 35px;
 letter-spacing: 0px;

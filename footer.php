@@ -35,7 +35,7 @@
 
 <div class="site-info">
 	<div class="container">
-    <?php echo '&copy; '.date_i18n(__('Y','apppage')); ?> <?php bloginfo( 'name' ); ?>
+    <?php echo '&copy; '.date_i18n(__('Y','apppage')); ?> <?php bloginfo( 'name' ); ?> <span><?php echo esc_html__( '- ', 'apppage' ) ?><a href="<?php echo esc_url( 'http://vilhodesign.com/themes/apppage/', 'apppage' ) ?>"><?php echo esc_html__( 'AppPage', 'apppage' ) ?></a> <?php echo esc_html__( 'Powered', 'apppage' ) ?></span>
 	</div>
 </div>
 
