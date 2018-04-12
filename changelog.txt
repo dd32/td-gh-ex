@@ -1,5 +1,12 @@
 Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/iconic-one/ for latest version
 
+
+-------------- 12 April 2018 ----------------
+
+12/04/2018  - Version 1.9.2
+
+- Updated Google Font scripts.
+
 -------------- 23 February 2018 ----------------
 
 23/02/2018  - Version 1.9.1

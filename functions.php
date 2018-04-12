@@ -83,22 +83,15 @@ function themonic_scripts_styles() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 
- /*
-	 * Adds Selectnav.js JavaScript for handling the navigation menu and creating a select based navigation for reposive layout.
- */
+	/*
+	* Adds Selectnav.js JavaScript for handling the navigation menu and creating a select based navigation for reposive layout.
+	*/
    wp_enqueue_script('themonic-mobile-navigation', get_template_directory_uri() . '/js/selectnav.js', array(), '1.0', true );
-/*
+	/*
      * Loads the awesome readable ubuntu font CSS file for Iconic One.
-*/
-    if ( 'off' !== _x( 'on', 'Ubuntu font: on or off', 'iconic-one' ) ) {
-        $subsets = 'latin,latin-ext';
-        $protocol = is_ssl() ? 'https' : 'http';
-        $query_args = array(
-            'family' => 'Ubuntu:400,700',
-            'subset' => $subsets,
-        );
-        wp_enqueue_style( 'themonic-fonts', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null );
-    }
+	*/
+	wp_enqueue_style( 'themonic-fonts', iconic_one_fonts_url(), array(), null );
+    
 	/*
 	 * Loads Themonic's main stylesheet and the custom stylesheet.
 	 */
@@ -125,6 +118,29 @@ function themonic_page_menu_args( $args ) {
 }
 add_filter( 'wp_page_menu_args', 'themonic_page_menu_args' );
 
+function iconic_one_fonts_url() {
+	$fonts_url = '';
+	/*
+	 * Translators: If there are characters in your language that are not
+	 * supported by Ubuntu, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$ubuntu = _x( 'on', 'Ubuntu font: on or off', 'iconic-one' );
+
+	if ( 'off' !== $ubuntu ) {
+		$font_families = array();
+
+		$font_families[] = 'Ubuntu:400,700';
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+
+	return esc_url_raw( $fonts_url );
+	}
 /**
  * Registers the main widgetized sidebar area.
  *
