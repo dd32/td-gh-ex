@@ -22,7 +22,11 @@
 				<?php while( $query->have_posts() ) : $query->the_post(); ?>
 					<!-- Single Slider -->
 					<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?> 
+					<?php if(has_post_thumbnail()): ?>
 					<div class="single-slider" style="background-image:url(<?php echo esc_url( $image[0] ); ?>);" >
+					<?php else: ?>
+					<div class="single-slider" style="background-image:url(<?php echo esc_url(get_template_directory().'images/skill-bg.jpg');?> );">
+					<?php endif; ?>
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12 col-sm-12 col-xs-12">

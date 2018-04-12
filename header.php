@@ -38,7 +38,6 @@
 					<!--/ End Logo -->
 				</div>
 				
-				<?php if( has_nav_menu( 'primary' ) ) : ?>
 					<div class="col-md-9 col-sm-6 col-xs-12">
 						<div class="nav-area">
 							<!-- Main Menu -->
@@ -46,18 +45,21 @@
 								<div class="mobile-nav"></div>
 
 								<?php
+									if(has_nav_menu('primary')): 
 									$args = array(
 										'theme_location'	=>	'primary',									
 										'container'			=>	'div',
 										'container_class'	=>	'collapse navbar-collapse',
 										'menu_class'		=>	'nav navbar-nav',
 										'walker'			=>	new Agency_X_Wp_Bootstrap_Navwalker()
-									);
-								?>
-
-								<?php 
+									); 
 									 wp_nav_menu( $args );
-								 ?>					
+									else:
+										 ?>	
+										 <ul class="nav navbar-nav">
+			                                                <?php wp_list_pages( array( 'title_li' => '','depth' =>1 ) ); ?>
+			                              </ul>
+	                          	<?php endif;?>				
 							</nav>
 							<!--/ End Main Menu -->
 							<!-- Search Form -->
@@ -70,7 +72,6 @@
 							<!--/ End Search Form -->
 						</div>
 					</div>
-				<?php endif; ?>
 			</div>
 		</div>
 	</div>
@@ -78,13 +79,22 @@
 </header>
 <!--/ End Header -->
 
-<?php if(!is_home() || !is_front_page()): ?>
+<?php if(!is_front_page() || is_home()): ?>
 <!-- Start Breadcrumbs -->
 		<section id="breadcrumbs">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
+						<?php if(is_home()): ?>
+						<h2><?php bloginfo(); ?></h2>
+						<ul>
+							<li>
+								<?php bloginfo('description'); ?>
+							</li>
+						</ul>
+
 						<?php
+						else:
 								if ( is_archive() ) {
 								the_archive_title( '<h2>', '</h2>' );
 													}
@@ -99,6 +109,7 @@
 									do_action( 'agency_x_breadcrumb' );		
 								?>
 						</ul>
+					<?php endif; ?>
 					</div>
 				</div>
 			</div>

@@ -13,43 +13,42 @@
 
 get_header();?>
 
-
-
 <section id="blog" class="section page">
     <div class="container">
         <?php if ( have_posts() ) : ?>
             <div class="row">
+                <div class="col-md-8">
                 <?php while ( have_posts() ) : the_post(); ?>
                     <?php                       
                         get_template_part( 'template-parts/content' );
                     ?>
                 <?php endwhile; ?>
-            </div>
-            <div class="row">
-                    <div class="col-md-12">
-                        <!-- Pagination -->
-                        <ul class="pagination">                            
-                            <?php
-                                global $wp_query;
-                                $big = 999999999; // need an unlikely integer
-                                echo paginate_links( array(
-                                    'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-                                    'format' => '?paged=%#%',
-                                    'current' => max( 1, get_query_var('paged') ),
-                                    'total' => $wp_query->max_num_pages,
-                                    'prev_text' => "<span class='fa fa-angle-left'></span>",
-                                    'next_text' => "<span class='fa fa-angle-right'></span>",
-                                ) );
-                            ?>
-                        </ul>
-                        <!--/ End Pagination -->
-                    </div>
-                </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!-- Pagination -->
+                                    <ul class="pagination">                            
+                                        <?php
+                                            global $wp_query;
+                                            $big = 999999999; // need an unlikely integer
+                                            echo paginate_links( array(
+                                                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                                                'format' => '?paged=%#%',
+                                                'current' => max( 1, get_query_var('paged') ),
+                                                'total' => $wp_query->max_num_pages,
+                                                'prev_text' => "<span class='fa fa-angle-left'></span>",
+                                                'next_text' => "<span class='fa fa-angle-right'></span>",
+                                            ) );
+                                        ?>
+                                    </ul>
+                                    <!--/ End Pagination -->
+                            </div>
+                        </div>
+                </div> <!-- end of col-md-8 -->
         <?php else : ?>
             <?php get_template_part( 'template-parts/content', 'none' ); ?>
         <?php endif; ?>
-        
-    <div class="col-sm-4"><?php get_sidebar(); ?></div>
+        <div class="col-sm-4"><?php get_sidebar(); ?></div>
+    </div>
    </div>
 </section>
 <?php get_footer(); ?>

@@ -6,12 +6,11 @@
  */
 
 get_header(); ?>
-<div class="spacer post-list">
-    <div class="container">
-<section id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
-
-        <?php if ( have_posts() ) : ?>
+<section id="blog" class="section page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+      <?php if ( have_posts() ) : ?>
                 
                 <h4><?php 
                   /* translators: %s: serach query */
@@ -38,8 +37,10 @@ get_header(); ?>
             <?php get_template_part( 'template-parts/content', 'none' ); ?>
 
         <?php endif; ?>
-
-        </main><!-- #main -->
-    </section><!-- #primary -->
-</div></div>
-<?php get_footer(); ?>
+      </div>
+      <div class="col-md-4">
+        <?php get_sidebar(); ?>        
+      </div>
+    </div>
+  </div>
+</section>

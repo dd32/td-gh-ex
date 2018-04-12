@@ -8,7 +8,7 @@
 
 
     <!-- Single Blog -->
-    <div class="col-md-4">              
+    <div class="col-md-6">              
         <div class="single-blog">
             <div class="blog-head">
                 <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' ); ?> 

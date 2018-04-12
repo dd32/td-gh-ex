@@ -4,7 +4,7 @@ Theme URI: https://samuraithemes.com/themes/agency-x-free-wordpress-theme/
 Author: samuraithemes
 Author URI: https://samuraithemes.com
 Description: Agency X is responsive WordPress theme which can be used for web design firms or any other corporate, business, agencies, consulting, legal, attorney, law firms, online shops, digital, medical, clinic, dental, spa, beauty, massage, gym, fitness, trainer, coach, restaurant, cafe, food, recipes, technology and any other kind of website purpose. It can also be used for portfolio, photography, personal and blogging as well. This theme is simple, white, minimal, clean
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v3 or later
 License URI: https://samuraithemes.com/#colophon
 Text Domain: agency-x
@@ -1357,28 +1357,28 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     width: 25px;
 }
 /*----- Blog Pagination -----*/
-#blog .pagination {
+#blog ul.pagination {
     text-align: center;
     display: block;
     margin-top: 30px;
 }
-#blog .pagination li {
+#blog ul.pagination li {
     display: inline-block;
 }
-#blog .pagination li a{
+#blog ul.pagination li a{
     color:#252525;
 }
-#blog .pagination li:hover a,
+#blog ul.pagination li:hover a,
 #blog .pagination li a:focus {
     color:#fff;
     border-color:transparent;
 }
-#blog .pagination li.prev a,
-#blog .pagination li.next a {
+#blog ul.pagination li.prev a,
+#blog ul.pagination li.next a {
     color:#fff;
     border-color:transparent;
 }
-#blog .pagination li a:hover {
+#blog ul.pagination li a:hover {
     -webkit-animation-name: hvr-icon-wobble-horizontal;
     animation-name: hvr-icon-wobble-horizontal;
     -webkit-animation-duration: 1s;
@@ -1439,14 +1439,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 #blog .latest .post-info p{
     margin:0;
 }
-#blog .category ul li {
+#blog .widget_categories ul li {
     margin-bottom: 10px;
     font-size: 16px;
 }
-#blog .category ul li:last-child{
+#blog .widget_categories ul li:last-child{
     margin-bottom:0px;
 }
-#blog .category ul li a i {
+#blog .widget_categories ul li a i {
     width: 20px;
     height: 20px;
     line-height: 18px;
@@ -1456,16 +1456,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     margin-right: 5px;
     vertical-align: middle;
 }
-#blog .tags ul li {
+#blog .widget_tag_cloud ul li {
     display: inline-block;
     margin-right: 5px;
 }
-#blog .tags ul li a {
+#blog .widget_tag_cloud ul li a {
     color: #fff;
     display: block;
     padding: 5px 10px;
 }
-#blog .tags ul li a:hover{
+#blog .widget_tag_cloud ul li a:hover{
     background:#252525;
 }
 
