@@ -106,12 +106,14 @@ function atlast_business_load_scripts()
     wp_register_style('spectre', get_template_directory_uri() . '/assets/css/spectre.min.css', '', '', 'all');
     wp_register_style('sidr', get_template_directory_uri() . '/assets/css/sidr/stylesheets/jquery.sidr.light.css', '', '', 'all');
     wp_register_style('atlast-business-fonts', get_template_directory_uri() . '/assets/css/fonts/font-styles-dist.css', '', '1.0.0', 'all');
-    wp_register_style('atlast-business-main-styles', get_template_directory_uri() . '/assets/css/main-styles.css', '', rand(0, 8888), 'all');
+    wp_register_style('atlast-business-main-styles', get_template_directory_uri() . '/assets/css/main-styles.css', '', '', 'all');
+    wp_register_style('atlast-style', get_stylesheet_uri(), '', 'all');
 
     wp_enqueue_style('spectre');
     wp_enqueue_style('sidr');
     wp_enqueue_style('atlast-business-fonts');
     wp_enqueue_style('atlast-business-main-styles');
+    wp_enqueue_style('atlast-style');
 
 
     wp_enqueue_script('jquery');

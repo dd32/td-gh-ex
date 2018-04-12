@@ -131,3 +131,8 @@ Mobile menu shows only the top level elements. You can also add your custom logo
 
 = Version 1.2.2 =
 - Changed the theme URI in styles.css
+
+= Version 1.2.3 =
+- Fixed PHP notice in comments
+- Add to the styles the default style.css
+- Fixed the custom logo function
