@@ -42,8 +42,10 @@ if ( ! function_exists( 'gridalicious_head' ) ) :
 		?>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 		<?php
+		if ( is_singular() && pings_open() ) {
+			echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
+		}
 	}
 endif;
 add_action( 'gridalicious_before_wp_head', 'gridalicious_head', 10 );

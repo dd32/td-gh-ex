@@ -33,11 +33,11 @@ Images used are released under the CC0 license
 5. http://pixabay.com/en/clock-city-antique-architecture-426079/ - 2nd Featured Content Image
 6. http://pixabay.com/en/vespa-street-night-city-517227/ - 3rd Featued Content Image
 7. http://pixabay.com/en/buddha-deity-himalayan-park-nepal-100706/ - Custom Header Image
-8. All other images are self shot image by (CatchThemes.com) 
+8. All other images are self shot image by (CatchThemes.com)
 
 Font Icons
 	Genericons by Automattic, Inc.
-  	Genericons is Licensed under the GPL, version 2 or later 
+  	Genericons is Licensed under the GPL, version 2 or later
 	http://genericons.com/
 
 JS Files
@@ -61,8 +61,8 @@ JS Files
 
 = Custom Menus =
 
-Gridalicious theme supports two custom menus that is primary and secondary. 
-To create a custom menu, go to Appearance -> Menus in your dashboard. 
+Gridalicious theme supports two custom menus that is primary and secondary.
+To create a custom menu, go to Appearance -> Menus in your dashboard.
 For more about custom menu, check out https://catchthemes.com/blog/custom-menus-wordpress-themes/
 
 = Featured Image =
@@ -73,9 +73,9 @@ If you are migrating your old site to this new them then you need to regenerate 
 
 = Featured Grid Content =
 
-In Gridalicious Free theme, there is only option to use Featured Page Grid Content, which is created to highlight your Page in the Featured Grid. But pro version has additional option to Featured Post Grid, Featured Category Grid and Featured Image Grid. 
+In Gridalicious Free theme, there is only option to use Featured Page Grid Content, which is created to highlight your Page in the Featured Grid. But pro version has additional option to Featured Post Grid, Featured Category Grid and Featured Image Grid.
 
-To add featured page grid, 
+To add featured page grid,
 1. Create a Page and then add Featured Image to the Page.
 2. Go to "Appearance -> Customize -> Featured Grid Content Options" from your WordPress Dashboard
 3. Under Featured Grid Content Type, you need to select "Featured Page Grid Content"
@@ -84,9 +84,9 @@ To add featured page grid,
 
 = Social Icons =
 
-Gridalicious has social icons for various social networking sites. 
+Gridalicious has social icons for various social networking sites.
 1. Go to "Appearance -> Customize -> Social Links" form your WordPress Dashboard
-2. Add in your social profile links and click on "Save & Publish" 
+2. Add in your social profile links and click on "Save & Publish"
 
 Note: By default social links will be added in Header Right Section. You can also add that in your sidebar from "Appearance -> Widgets"
 
@@ -120,7 +120,7 @@ Available icons:
 Skype Link:
 Skype link can have several formats which are documented below:
 Username:
-    skype:profile_name?action 
+    skype:profile_name?action
 
     Examples of such actions are
     * call        to call
@@ -134,7 +134,7 @@ Username:
     This will initiate test call use skype usenarme echo123
 
 Number:
-    callto://+*********** 
+    callto://+***********
 
     E.g: callto://+14044627491
     This will initiate Skype to call phone number 14044627491
@@ -149,4 +149,131 @@ For detail instructions, check out theme instructions page at https://catchtheme
 
 == Change Log ==
 
-Please refer to changelog.txt file or change log page at https://catchthemes.com/changelogs/gridalicious-theme/
+= 1.8 (Released: April 12, 2018) =
+* Bug Fixed: Breadcrumb custom post archive link
+* Bug Fixed: Design issue with Catch Infinite Scroll plugin
+* Code optimization
+* Removed: changelog.txt file and added changelog in readme.txt file
+* Updated: JS compression
+
+= 1.7.1 (Released: June 08, 2017) =
+* Added: Option to Display all Categories in Customizer
+* Added: Hide meta on archive page option
+* Removed: Support for custom favicon and web clip icon
+* Code Optimization
+* Compatible with WordPress 4.8
+
+= 1.7 =
+* Removed: HTML script loading from catchbase_head() function and added it as wp_enqueue_script() in catchbase_head() function
+* Updated: fitvids handle to 'jquery-fitvids', sidr handle to 'jquery-sidr'
+* Updated: Used the_archive_title() and the_archive_description() in archive.php
+* Updated: Upgrade Button in customizer with respect to trt decision
+* Updated: Custom CSS to Additional CSS( Core Support ) for WP version 4.7
+* Code Optimization
+
+= 1.6.2 =
+* Updated: Reset all settings compatibility with WordPress v4.6
+
+= 1.6.1 =
+* Bug Fixed: German language translation (Reported by Thorsten Rotter)
+
+= 1.6 =
+* Added German translation de_DE.po and de_DE.mo
+* Bug Fixed: White space issue
+* Updated: All instances of http://catchthemes.com changed to https://catchthemes.com
+* Bug Fixed: `sprintf() too few arguments` issue on other languages
+
+= 1.5 =
+* Added: Disable scrollup option.
+* Added: Social Icons for Phone, Handset, Cart, Cloud, Link( Custom Link )
+* Bug Fixed: Sanitize Callback typo in Featured Content Sub-headline
+* Enhancement: Used antispambot() function on emails output on social icons
+* Fixed: Genericions issue with To Top plugin
+* Updated: Genericons to 3.4.1
+* Updated: Jetpack Scroll Pagination Option to enable infinite scroll in Reading Settings
+* Updated: Sidr menu script to version 2.1.1.1
+* Updated: Meta viewport for better responsive support
+* Updated: Content Width Implementation
+* Updated: Theme Layout retrieval via function
+* Updated: Favicon and Web Clip Migration to Site Icon( Core Support )
+* Updated: Logo to Custom Logo( Core Support ) for WP version 4.5
+
+= 1.4 =
+* Bug Fixed: Breadcrumb css issue in IE 11
+* Bug Fixed: Featured Slider Transition Effect Not Updating
+* Removed panel for featured content and featured slider for WordPress version greater than 4.2
+* Removed Custom Textarea control for customizer
+* Updated Customizer active callback scripts (previously handled by jQuery)
+* Updated Customizer Color Scheme Script for changing values of colors on change of color scheme
+
+= 1.3 =
+* Added: French translation fr_FR.po and fr_FR.mo
+
+= 1.2 =
+* Added: Single Post navigation
+* Bug Fixed: Changed esc_attr_e to echo esc_attr in searchform.php
+* Compatible with WordPress 4.3
+* Removed support for WordPress version less than 4.1
+* Updated: Sidr script
+* Updated: codes to comply with deprecating PHP4 style constructors in WordPress 4.3
+
+= 1.1 =
+* Added: Support for Random Header Image
+* Added Featured Content "Display Content" option
+* Bug Fixed: Removal of extra '/' in sub-categories in breadcrumb and updates in breadcrumb
+* Bug Fixed: Blog page featured image not overwriting default header image
+* Bug Fixed: Header Text only CSS change when not displaying site title and tagline
+* Bug Fixed: Metabox Options not saving properly
+* Combined options for Featured Content and renamed the section From Featured Content Options to Featured Content in Customizer
+* Combined options for Featured Slider and renamed the section From Featured Slider Options to Featured Slider in Customizer
+* Removed unnecessary js from custom customizer js as support for WordPress versions less than 4.0 is not required
+* Updated Social Widget name
+
+= 1.0 =
+* Bug Fixed: Html is now allowed in Featured Content Headline and Sub-headline
+* Bug Fixed: Header Right Social Icon
+* Bug fixed: Check class logo left or logo right only when there is logo and logo is not disabled
+* Bug Fixed: Featured Content Layout Type css issue
+* Bug Fixed: added missing keyword _nx:1,2,4c and esc_html__ in language file gridalicious.pot
+* Bug Fixed: Skype Social icon and open link in new window for email issues
+* Bug Fixed: Sidebar layout option
+* Bug Fixed: Social icon wrap
+* Removed unnecessary file gridalicious-menu.js
+* Removed duplicate class site-­header as ID found
+* Replaced the_title() with the_title_attribute() where title is used as attribute
+* Replaced all require_once with require
+* Replaced demo featured content text
+
+= 0.5 =
+* Added Option in Enable Header Image: Excluding Home, Page/Post Featured Image
+* Fixed header text condition for Sidebar
+* Removed jquery cookie and its dependencies
+
+= 0.4 =
+* Added gridalicious- prefix to some js handles
+* Bug Fixed: undefined index $page_for_posts for Featured Header Image
+* Bug Fixed: featured-heading-wrap, $headline and $subheadline empty check in featured content
+* Bug Fixed: Featured Content missing classes entry-header and entry-title
+* Bug Fixed: Html is now allowed in Promotion Headline
+* Bug Fixed: Breadcrumb undefined index issue
+* Changed get_page to get_post as get_page is depreciated
+* Renamed "custom_meta_box_nonce" renamed to  "gridalicious_custom_meta_box_nonce"
+* Sanitized custom metabox settings
+
+= 0.3 =
+* Bug Fixed: Homepage Category Options ( missing function gridalicious_sanitize_category_list )
+
+= 0.2 =
+* Bug Fixed: classes for excerpt and content fixed in content.php
+* Bug Fixed: missing breadcrumb separator in category
+* Bug Fixed: Dark color scheme css
+* Initial Release in Catchthemes.com
+* Removed unnecessary options from Default Layout and Archive Content Layout
+* Removed unnecessary secondary sidebar
+* Removed unnecessary mobile menu script
+* Renamed CATCHBASE_* to GRIDALICIOUS_*
+* Updated image sizes
+* Updated options for Single page/post image layout
+
+= 0.1 =
+* Submitted to WordPress.org

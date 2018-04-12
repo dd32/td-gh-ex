@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Gridalicious
- * @since Gridalicious 0.1 
+ * @since Gridalicious 0.1
  */
 
  if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
@@ -16,10 +16,10 @@
   	$wp_customize->add_panel( 'gridalicious_color_options', array(
 	    'capability'     => 'edit_theme_options',
 	    'description'    => __( 'Color Options', 'gridalicious' ),
-	    'priority'       => 300,			
+	    'priority'       => 300,
 	    'title'    		 => __( 'Color Options', 'gridalicious' ),
 	) );
-	
+
 	//Basic Color Options
 	$wp_customize->add_section( 'gridalicious_color_scheme', array(
 		'panel'	   => 'gridalicious_color_options',
@@ -33,16 +33,8 @@
 		'sanitize_callback'	=> 'gridalicious_sanitize_select'
 	) );
 
-	$schemes = gridalicious_color_schemes();
-
-	$choices = array();
-
-	foreach ( $schemes as $scheme ) {
-		$choices[ $scheme['value'] ] = $scheme['label'];
-	}
-
 	$wp_customize->add_control( 'gridalicious_theme_options[color_scheme]', array(
-		'choices'  => $choices,
+		'choices'  => gridalicious_color_schemes(),
 		'label'    => __( 'Color Scheme', 'gridalicious' ),
 		'priority' => 5,
 		'section'  => 'gridalicious_color_scheme',

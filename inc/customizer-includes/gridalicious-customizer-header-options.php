@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Gridalicious
- * @since Gridalicious 0.1 
+ * @since Gridalicious 0.1
  */
 
 if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
@@ -20,20 +20,14 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'gridalicious_sanitize_select'
 	) );
 
-	$gridalicious_enable_featured_header_image_options = gridalicious_enable_featured_header_image_options();
-	$choices = array();
-	foreach ( $gridalicious_enable_featured_header_image_options as $gridalicious_enable_featured_header_image_option ) {
-		$choices[$gridalicious_enable_featured_header_image_option['value']] = $gridalicious_enable_featured_header_image_option['label'];
-	}
-
 	$wp_customize->add_control( 'gridalicious_theme_options[enable_featured_header_image]', array(
-			'choices'  	=> $choices,
+			'choices'  	=> gridalicious_enable_featured_header_image_options(),
 			'label'		=> __( 'Enable Featured Header Image on ', 'gridalicious' ),
 			'section'   => 'header_image',
 	        'settings'  => 'gridalicious_theme_options[enable_featured_header_image]',
 	        'type'	  	=> 'select',
 	) );
-	
+
 
 	$wp_customize->add_setting( 'gridalicious_theme_options[featured_image_size]', array(
 		'capability'		=> 'edit_theme_options',
@@ -41,14 +35,8 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 		'sanitize_callback'	=> 'gridalicious_sanitize_select'
 	) );
 
-	$gridalicious_featured_image_size_options = gridalicious_featured_image_size_options();
-	$choices = array();
-	foreach ( $gridalicious_featured_image_size_options as $gridalicious_featured_image_size_option ) {
-		$choices[$gridalicious_featured_image_size_option['value']] = $gridalicious_featured_image_size_option['label'];
-	}
-
 	$wp_customize->add_control( 'gridalicious_theme_options[featured_image_size]', array(
-			'choices'  	=> $choices,
+			'choices'  	=> gridalicious_featured_image_size_options(),
 			'label'		=> __( 'Page/Post Featured Header Image Size', 'gridalicious' ),
 			'section'   => 'header_image',
 			'settings'  => 'gridalicious_theme_options[featured_image_size]',
@@ -92,5 +80,5 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 		'section'  	=> 'header_image',
 		'settings' 	=> 'gridalicious_theme_options[featured_header_image_base]',
 		'type'     	=> 'checkbox',
-	) );	
+	) );
 // Header Options End

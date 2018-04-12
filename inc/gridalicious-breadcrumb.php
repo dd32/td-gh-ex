@@ -1,10 +1,10 @@
 <?php
 /**
- * The template for displaying the Breadcrumb 
+ * The template for displaying the Breadcrumb
  *
  * @package Catch Themes
  * @subpackage Gridalicious
- * @since Gridalicious 0.1 
+ * @since Gridalicious 0.1
  */
 
 if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
@@ -73,16 +73,16 @@ if( !function_exists( 'gridalicious_custom_breadcrumbs' ) ) :
 		$linkAttr   = ' rel="v:url" property="v:title"';
 		$link       = $linkBefore . '<a' . $linkAttr . ' href="%1$s">%2$s ' . $delimiter . '</a>' . $linkAfter;
 
-		
+
 		if( is_front_page() ) {
 
 			if( $showOnHome ) {
 				echo '<div id="breadcrumb-list">
 					<div class="wrapper">';
-					
+
 					echo $linkBefore . '<a href="' . esc_url( $homeLink ) . '">' . $text['home'] . '</a>' . $linkAfter;
-					
-					echo '</div><!-- .wrapper --> 
+
+					echo '</div><!-- .wrapper -->
 				</div><!-- #breadcrumb-list -->';
 			}
 
@@ -90,7 +90,7 @@ if( !function_exists( 'gridalicious_custom_breadcrumbs' ) ) :
 		else {
 			echo '<div id="breadcrumb-list">
 					<div class="wrapper">';
-			
+
 			echo sprintf( $link, $homeLink, $text['home'] );
 
 			if( is_home() ) {
@@ -132,8 +132,9 @@ if( !function_exists( 'gridalicious_custom_breadcrumbs' ) ) :
 			elseif( is_single() && !is_attachment() ) {
 				if( get_post_type() != 'post' ) {
 					$post_type = get_post_type_object( get_post_type() );
-					$slug      = $post_type->rewrite;
-					printf( $link, $homeLink . '/' . $slug['slug'] . '/', $post_type->labels->singular_name );
+					$post_link = get_post_type_archive_link( $post_type->name );
+
+					printf( $link, esc_url( $post_link ), $post_type->labels->singular_name );
 					if( $showCurrent == 1 ) {
 						echo $before . get_the_title() . $after;
 					}
@@ -155,7 +156,7 @@ if( !function_exists( 'gridalicious_custom_breadcrumbs' ) ) :
 			}
 			elseif( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
 				$post_type = get_post_type_object( get_post_type() );
-				echo $before . $post_type->labels->singular_name . $after;
+				echo isset( $post_type->labels->singular_name ) ? $before . $post_type->labels->singular_name . $after : '';
 			}
 			elseif( is_attachment() ) {
 				$parent = get_post( $post->post_parent );
@@ -225,10 +226,10 @@ if( !function_exists( 'gridalicious_custom_breadcrumbs' ) ) :
 				}
 			}
 
-			echo '</div><!-- .wrapper --> 
+			echo '</div><!-- .wrapper -->
 			</div><!-- #breadcrumb-list -->';
 		}
-		
-		
+
+
 	} // end gridalicious_breadcrumb_lists
 endif;

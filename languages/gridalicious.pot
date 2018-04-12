@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gridalicious 1.6.3\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-06-08 14:04+0545\n"
+"POT-Creation-Date: 2018-04-12 22:52+0545\n"
 "PO-Revision-Date: 2016-12-07 17:00-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-KeywordsList: __;_e;_x;esc_html_e;esc_html__;esc_attr_e;esc_attr__;"
 "_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext_noop:1,2;"
 "_c,_nc:4c,1,2\n"
@@ -103,8 +103,8 @@ msgstr ""
 msgid "Basic Color Options"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-color-options.php:46
-#: ../inc/customizer-includes/gridalicious-customizer.php:120
+#: ../inc/customizer-includes/gridalicious-customizer-color-options.php:38
+#: ../inc/customizer-includes/gridalicious-customizer.php:112
 msgid "Color Scheme"
 msgstr ""
 
@@ -138,12 +138,12 @@ msgid "Review"
 msgstr ""
 
 #: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:74
-#: ../inc/gridalicious-default-options.php:410
+#: ../inc/gridalicious-default-options.php:302
 msgid "Facebook"
 msgstr ""
 
 #: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:78
-#: ../inc/gridalicious-default-options.php:414
+#: ../inc/gridalicious-default-options.php:306
 msgid "Twitter"
 msgstr ""
 
@@ -152,7 +152,7 @@ msgid "Google+"
 msgstr ""
 
 #: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:86
-#: ../inc/gridalicious-default-options.php:442
+#: ../inc/gridalicious-default-options.php:334
 msgid "Pinterest"
 msgstr ""
 
@@ -170,54 +170,54 @@ msgstr ""
 msgid "Featured Content Options"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:52
+#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:46
 msgid "Enable Featured Content on"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:74
+#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:62
 msgid "Select Featured Content Layout"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:89
+#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:77
 msgid "Check to Move above Footer"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:111
+#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:93
 msgid "Select Content Type"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:127
+#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:109
 msgid "Leave field empty if you want to remove Headline"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:128
+#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:110
 msgid "Headline for Featured Content"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:144
+#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:126
 msgid "Leave field empty if you want to remove Sub-headline"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:145
+#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:127
 msgid "Sub-headline for Featured Content"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:161
+#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:143
 msgid ""
 "Save and refresh the page if No. of Featured Content is changed (Max no of Featured "
 "Content is 20)"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:168
+#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:150
 msgid "No of Featured Content"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:191
+#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:167
 msgid "Display Content"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:207
-#: ../inc/customizer-includes/gridalicious-customizer-featured-grid-content.php:112
+#: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:183
+#: ../inc/customizer-includes/gridalicious-customizer-featured-grid-content.php:100
 msgid "Featured Page"
 msgstr ""
 
@@ -231,42 +231,42 @@ msgstr ""
 msgid "Featured Grid Content"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-featured-grid-content.php:51
+#: ../inc/customizer-includes/gridalicious-customizer-featured-grid-content.php:45
 msgid "Enable Grid Content on"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-featured-grid-content.php:73
+#: ../inc/customizer-includes/gridalicious-customizer-featured-grid-content.php:61
 msgid "Select Grid Content Type"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-featured-grid-content.php:88
+#: ../inc/customizer-includes/gridalicious-customizer-featured-grid-content.php:76
 msgid ""
 "Save and refresh the page if No. of Grid Content is changed (Max no of grid content "
 "is 30). No. of Grid Content in set as a multiple of 3"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-featured-grid-content.php:95
+#: ../inc/customizer-includes/gridalicious-customizer-featured-grid-content.php:83
 msgid "No of Grid Content"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-header-options.php:31
+#: ../inc/customizer-includes/gridalicious-customizer-header-options.php:25
 msgid "Enable Featured Header Image on "
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-header-options.php:52
+#: ../inc/customizer-includes/gridalicious-customizer-header-options.php:40
 msgid "Page/Post Featured Header Image Size"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-header-options.php:65
+#: ../inc/customizer-includes/gridalicious-customizer-header-options.php:53
 msgid "Featured Header Image Alt/Title Tag "
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-header-options.php:78
+#: ../inc/customizer-includes/gridalicious-customizer-header-options.php:66
 msgid "Featured Header Image Link URL"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-header-options.php:91
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:386
+#: ../inc/customizer-includes/gridalicious-customizer-header-options.php:79
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:355
 msgid "Check to Open Link in New Window/Tab"
 msgstr ""
 
@@ -363,20 +363,20 @@ msgstr ""
 msgid "Layout Options"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:189
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:183
 msgid "Default Layout"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:209
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:197
 msgid "Archive Content Layout"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:229
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:210
 #: ../inc/gridalicious-metabox.php:95
 msgid "Single Page/Post Image Layout "
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:240
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:221
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%1$s\">WP-PageNavi Plugin</a>."
@@ -384,84 +384,84 @@ msgid ""
 "Plugin</a> with Infinite Scroll module Enabled."
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:247
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:228
 #, php-format
 msgid ""
 "Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack Plugin</"
 "a> with Infinite Scroll module Enabled."
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:258
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:239
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:269
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:250
 msgid "Pagination Options"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:286
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:261
 msgid "Pagination type"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:295
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:270
 msgid "To disable the fields, simply leave them empty."
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:298
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:273
 msgid "Promotion Headline Options"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:315
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:284
 msgid "Enable Promotion Headline on"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:329
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:298
 msgid "Appropriate Words: 10"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:330
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:299
 msgid "Promotion Headline Text"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:343
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:312
 msgid "Appropriate Words: 15"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:344
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:313
 msgid "Promotion Subheadline Text"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:357
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:326
 msgid "Appropriate Words: 3"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:358
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:327
 msgid "Promotion Headline Button Text "
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:372
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:341
 msgid "Promotion Headline Link"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:398
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:367
 msgid "Scrollup Options"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:408
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:377
 msgid "Check to disable Scroll Up"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:417
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:386
 msgid "Change default placeholder text in Search."
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:420
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:389
 msgid "Search Options"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:430
+#: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:399
 msgid "Default Display Text in Search"
 msgstr ""
 
@@ -481,26 +481,26 @@ msgstr ""
 msgid "Check to move Site Title and Tagline before logo"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer.php:145
+#: ../inc/customizer-includes/gridalicious-customizer.php:137
 msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view full "
 "effects."
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer.php:147
+#: ../inc/customizer-includes/gridalicious-customizer.php:139
 msgid "Reset all settings"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer.php:158
+#: ../inc/customizer-includes/gridalicious-customizer.php:150
 msgid "Check to reset all settings to default"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer.php:168
-#: ../inc/customizer-includes/gridalicious-customizer.php:179
+#: ../inc/customizer-includes/gridalicious-customizer.php:160
+#: ../inc/customizer-includes/gridalicious-customizer.php:171
 msgid "Important Links"
 msgstr ""
 
-#: ../inc/customizer-includes/gridalicious-customizer.php:213
+#: ../inc/customizer-includes/gridalicious-customizer.php:205
 msgid "Refresh the customizer page after saving to view reset effects"
 msgstr ""
 
@@ -540,7 +540,7 @@ msgstr ""
 msgid "Error 404"
 msgstr ""
 
-#: ../inc/gridalicious-breadcrumb.php:222
+#: ../inc/gridalicious-breadcrumb.php:223
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -670,292 +670,292 @@ msgstr ""
 msgid "Search..."
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:112
+#: ../inc/gridalicious-default-options.php:110
 msgid "Light"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:116
+#: ../inc/gridalicious-default-options.php:111
 msgid "Dark"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:133
-#: ../inc/gridalicious-default-options.php:561
+#: ../inc/gridalicious-default-options.php:125
+#: ../inc/gridalicious-default-options.php:453
 msgid "Primary Sidebar, Content"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:137
-#: ../inc/gridalicious-default-options.php:566
+#: ../inc/gridalicious-default-options.php:126
+#: ../inc/gridalicious-default-options.php:458
 msgid "Content, Primary Sidebar"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:141
-#: ../inc/gridalicious-default-options.php:571
+#: ../inc/gridalicious-default-options.php:127
+#: ../inc/gridalicious-default-options.php:463
 msgid "No Sidebar ( Content Width )"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:157
+#: ../inc/gridalicious-default-options.php:140
 msgid "Show Excerpt (Image Left)"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:161
+#: ../inc/gridalicious-default-options.php:141
 msgid "Show Full Content (No Featured Image)"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:178
-#: ../inc/gridalicious-default-options.php:244
+#: ../inc/gridalicious-default-options.php:155
+#: ../inc/gridalicious-default-options.php:191
 msgid "Homepage / Frontpage"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:182
+#: ../inc/gridalicious-default-options.php:156
 msgid "Excluding Homepage"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:186
+#: ../inc/gridalicious-default-options.php:157
 msgid "Excluding Homepage, Page/Post Featured Image"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:190
-#: ../inc/gridalicious-default-options.php:248
+#: ../inc/gridalicious-default-options.php:158
+#: ../inc/gridalicious-default-options.php:192
 msgid "Entire Site"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:194
+#: ../inc/gridalicious-default-options.php:159
 msgid "Entire Site, Page/Post Featured Image"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:198
+#: ../inc/gridalicious-default-options.php:160
 msgid "Pages and Posts"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:202
-#: ../inc/gridalicious-default-options.php:252
-#: ../inc/gridalicious-default-options.php:394
+#: ../inc/gridalicious-default-options.php:161
+#: ../inc/gridalicious-default-options.php:193
+#: ../inc/gridalicious-default-options.php:287
 msgid "Disabled"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:219
+#: ../inc/gridalicious-default-options.php:175
 msgid "Featured Header Size"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:223
+#: ../inc/gridalicious-default-options.php:176
 msgid "Featured Size"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:227
-#: ../inc/gridalicious-default-options.php:390
-#: ../inc/gridalicious-default-options.php:624
+#: ../inc/gridalicious-default-options.php:177
+#: ../inc/gridalicious-default-options.php:286
+#: ../inc/gridalicious-default-options.php:516
 msgid "Full Size"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:270
+#: ../inc/gridalicious-default-options.php:208
 msgid "Demo Featured Content"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:274
+#: ../inc/gridalicious-default-options.php:209
 msgid "Featured Page Content"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:291
+#: ../inc/gridalicious-default-options.php:223
 msgid "3 columns"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:295
+#: ../inc/gridalicious-default-options.php:224
 msgid "4 columns"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:311
+#: ../inc/gridalicious-default-options.php:237
 msgid "Show Excerpt"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:315
+#: ../inc/gridalicious-default-options.php:238
 msgid "Show Full Content"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:319
+#: ../inc/gridalicious-default-options.php:239
 msgid "Hide Content"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:336
+#: ../inc/gridalicious-default-options.php:253
 msgid "Demo Featured Grid Content"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:340
+#: ../inc/gridalicious-default-options.php:254
 msgid "Featured Page Grid Content"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:357
+#: ../inc/gridalicious-default-options.php:268
 msgid "Default(Older Posts/Newer Posts)"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:361
+#: ../inc/gridalicious-default-options.php:269
 msgid "Numeric"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:365
+#: ../inc/gridalicious-default-options.php:270
 msgid "Infinite Scroll (Click)"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:369
+#: ../inc/gridalicious-default-options.php:271
 msgid "Infinite Scroll (Scroll)"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:386
+#: ../inc/gridalicious-default-options.php:285
 msgid "Featured"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:418
+#: ../inc/gridalicious-default-options.php:310
 msgid "Googleplus"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:422 ../inc/gridalicious-social-icons.php:37
+#: ../inc/gridalicious-default-options.php:314 ../inc/gridalicious-social-icons.php:37
 msgid "Email"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:426
+#: ../inc/gridalicious-default-options.php:318
 msgid "Feed"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:430
+#: ../inc/gridalicious-default-options.php:322
 msgid "WordPress"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:434
+#: ../inc/gridalicious-default-options.php:326
 msgid "GitHub"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:438
+#: ../inc/gridalicious-default-options.php:330
 msgid "LinkedIn"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:446
+#: ../inc/gridalicious-default-options.php:338
 msgid "Flickr"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:450
+#: ../inc/gridalicious-default-options.php:342
 msgid "Vimeo"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:454
+#: ../inc/gridalicious-default-options.php:346
 msgid "YouTube"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:458
+#: ../inc/gridalicious-default-options.php:350
 msgid "Tumblr"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:462
+#: ../inc/gridalicious-default-options.php:354
 msgid "Instagram"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:466
+#: ../inc/gridalicious-default-options.php:358
 msgid "PollDaddy"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:470
+#: ../inc/gridalicious-default-options.php:362
 msgid "CodePen"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:474
+#: ../inc/gridalicious-default-options.php:366
 msgid "Path"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:478
+#: ../inc/gridalicious-default-options.php:370
 msgid "Dribbble"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:482
+#: ../inc/gridalicious-default-options.php:374
 msgid "Skype"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:486
+#: ../inc/gridalicious-default-options.php:378
 msgid "Digg"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:490
+#: ../inc/gridalicious-default-options.php:382
 msgid "Reddit"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:494
+#: ../inc/gridalicious-default-options.php:386
 msgid "Stumbleupon"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:498
+#: ../inc/gridalicious-default-options.php:390
 msgid "Pocket"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:502
+#: ../inc/gridalicious-default-options.php:394
 msgid "DropBox"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:506
+#: ../inc/gridalicious-default-options.php:398
 msgid "Spotify"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:510
+#: ../inc/gridalicious-default-options.php:402
 msgid "Foursquare"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:514
+#: ../inc/gridalicious-default-options.php:406
 msgid "Twitch"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:518
+#: ../inc/gridalicious-default-options.php:410
 msgid "Website"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:522
+#: ../inc/gridalicious-default-options.php:414
 msgid "Phone"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:526
+#: ../inc/gridalicious-default-options.php:418
 msgid "Handset"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:530
+#: ../inc/gridalicious-default-options.php:422
 msgid "Cart"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:534
+#: ../inc/gridalicious-default-options.php:426
 msgid "Cloud"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:538
+#: ../inc/gridalicious-default-options.php:430
 msgid "Link"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:556
-#: ../inc/gridalicious-default-options.php:587
-#: ../inc/gridalicious-default-options.php:614
+#: ../inc/gridalicious-default-options.php:448
+#: ../inc/gridalicious-default-options.php:479
+#: ../inc/gridalicious-default-options.php:506
 msgid "Default"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:592
+#: ../inc/gridalicious-default-options.php:484
 msgid "Enable"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:597
+#: ../inc/gridalicious-default-options.php:489
 msgid "Disable"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:619
+#: ../inc/gridalicious-default-options.php:511
 msgid "Featured Image"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:629
+#: ../inc/gridalicious-default-options.php:521
 msgid "Disable Image"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:644
+#: ../inc/gridalicious-default-options.php:536
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL"
 msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:644
+#: ../inc/gridalicious-default-options.php:536
 msgid "Y"
 msgstr ""
 
-#: ../inc/gridalicious-default-options.php:646
+#: ../inc/gridalicious-default-options.php:538
 msgid "by"
 msgstr ""
 
@@ -1031,7 +1031,7 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: ../searchform.php:14 ../searchform.php:15
+#: ../searchform.php:15
 msgctxt "label"
 msgid "Search for:"
 msgstr ""

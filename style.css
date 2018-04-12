@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/gridalicious
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: Gridalicious is a Simple, Clean, Grid Base Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready and also currently translated in French and German language. Check out Theme Instructions at https://catchthemes.com/theme-instructions/gridalicious/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/gridalicious/
-Version: 1.7.1
+Version: 1.8
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: gridalicious
@@ -294,7 +294,7 @@ big {
 }
 
 .sidebar-header-right .widget-title,
-#infinite-handle span {
+.site-main #infinite-handle span button {
     font-size: 16px;
 }
 
@@ -327,7 +327,7 @@ big {
 3. Elements
 --------------------------------------------------------------*/
 body {
-    background: url("images/bg.jpg") repeat scroll 0 0 #eee;
+    background-color: #eee;
 }
 
 .site {
@@ -642,6 +642,7 @@ p,
 .hentry,
 .no-results,
 .not-found,
+.error-404 .widget,
 .sidebar,
 #comments,
 #nav-below,
@@ -1272,19 +1273,24 @@ textarea {
 
 /* Jetpack Infinite Scroll */
 #infinite-handle span {
-    background-color: #f2f2f2;
-    border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-    color: #21759b;
-    cursor: pointer;
+	background-color: transparent;
     display: block;
-    padding: 10px 0;
     text-align: center;
     width: 100%;
 }
 
-#infinite-handle span:hover {
+.site-main #infinite-handle span button {
+	background-color: #f2f2f2;
+    border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+    color: #21759b;
+    padding: 14px 28px;
+    text-shadow: none;
+}
+
+.site-main #infinite-handle span button:hover,
+.site-main #infinite-handle span button:focus {
 	background-color: #222;
     color: #fff;
     text-decoration: none;
@@ -2156,7 +2162,10 @@ caption {
 	background-color: #000;
 	border-color: #000;
     color: #fff;
-    text-decoration: none;
+}
+
+.site .widget_gridalicious_social_icons a:hover {
+	text-decoration: none;
 }
 
 .site .widget_gridalicious_social_icons .genericon-facebook-alt:hover {
@@ -2312,12 +2321,19 @@ caption {
 	border-color: #2e6da4;
 }
 
-.site .widget_gridalicious_social_icons .custom-icon {
+.site .widget_gridalicious_social_icons a.custom-icon {
 	border: none;
 	background: transparent;
 	padding: 0;
 }
 
-.site .widget_gridalicious_social_icons .custom-icon:hover {
+.site .widget_gridalicious_social_icons .icon-hover,
+.site .widget_gridalicious_social_icons .has-hover:hover .icon-static {
+	display: none;
+}
+
+.site .widget_gridalicious_social_icons .has-hover:hover .icon-hover {
+	display: inline-block;
 	text-decoration: none;
+	border: none;
 }

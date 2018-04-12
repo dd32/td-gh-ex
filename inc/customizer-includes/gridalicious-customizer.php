@@ -107,16 +107,8 @@ function gridalicious_customize_register( $wp_customize ) {
 		'sanitize_callback'	=> 'gridalicious_sanitize_select'
 	) );
 
-	$schemes = gridalicious_color_schemes();
-
-	$choices = array();
-
-	foreach ( $schemes as $scheme ) {
-		$choices[ $scheme['value'] ] = $scheme['label'];
-	}
-
 	$wp_customize->add_control( 'gridalicious_theme_options[color_scheme]', array(
-		'choices'  => $choices,
+		'choices'  => gridalicious_color_schemes(),
 		'label'    => __( 'Color Scheme', 'gridalicious' ),
 		'priority' => 5,
 		'section'  => 'colors',

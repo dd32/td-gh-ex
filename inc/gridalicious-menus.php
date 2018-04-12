@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Gridalicious
- * @since Gridalicious 0.1 
+ * @since Gridalicious 0.1
  */
 
 if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
@@ -16,7 +16,7 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 
 if ( ! function_exists( 'gridalicious_primary_menu' ) ) :
 /**
- * Shows the Primary Menu 
+ * Shows the Primary Menu
  *
  * default load in sidebar-header-right.php
  */
@@ -27,7 +27,7 @@ function gridalicious_primary_menu() {
             <h1 class="assistive-text"><?php _e( 'Primary Menu', 'gridalicious' ); ?></h1>
             <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'gridalicious' ); ?>"><?php _e( 'Skip to content', 'gridalicious' ); ?></a></div>
             <?php
-                if ( has_nav_menu( 'primary' ) ) { 
+                if ( has_nav_menu( 'primary' ) ) {
                     $gridalicious_primary_menu_args = array(
                         'theme_location'    => 'primary',
                         'menu_class'        => 'menu gridalicious-nav-menu',
@@ -38,10 +38,10 @@ function gridalicious_primary_menu() {
                 else {
                     wp_page_menu( array( 'menu_class'  => 'menu gridalicious-nav-menu' ) );
                 }
-                
+
                 ?>
                 <div id="search-toggle" class="genericon">
-                    <a class="screen-reader-text" href="#search-container"><?php _e( 'Search', 'gridalicious' ); ?></a>
+                    <a class="screen-reader-text" href="#search-container"><?php esc_html_e( 'Search', 'gridalicious' ); ?></a>
                 </div>
 
                 <div id="search-container" class="displaynone">
@@ -57,18 +57,18 @@ add_action( 'gridalicious_after_header', 'gridalicious_primary_menu', 20 );
 
 if ( ! function_exists( 'gridalicious_secondary_menu' ) ) :
 /**
- * Shows the Secondary Menu 
+ * Shows the Secondary Menu
  *
  * default load in sidebar-header-right.php
  */
 function gridalicious_secondary_menu() {
-    if ( has_nav_menu( 'secondary' ) ) { 
+    if ( has_nav_menu( 'secondary' ) ) {
 	?>
     	<nav class="nav-secondary" role="navigation">
             <div class="wrapper">
                 <h1 class="assistive-text"><?php _e( 'Secondary Menu', 'gridalicious' ); ?></h1>
                 <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'gridalicious' ); ?>"><?php _e( 'Skip to content', 'gridalicious' ); ?></a></div>
-                <?php             
+                <?php
                     $gridalicious_secondary_menu_args = array(
                         'theme_location'    => 'secondary',
                         'menu_class' => 'menu gridalicious-nav-menu'
@@ -102,7 +102,7 @@ function gridalicious_mobile_menus() {
             );
             wp_nav_menu( $args );
         }
-        else { 
+        else {
             wp_page_menu( array( 'menu_class'  => 'menu' ) );
         }
     echo '</nav><!-- #mobile-header-left-nav -->';
@@ -131,24 +131,24 @@ if ( ! function_exists( 'gridalicious_mobile_header_nav_anchor' ) ) :
  * @uses gridalicious_header action to add in the Header
  */
 function gridalicious_mobile_header_nav_anchor() {
-    
-    // Header Left Mobile Menu Anchor 
+
+    // Header Left Mobile Menu Anchor
     if ( has_nav_menu( 'primary' ) ) {
         $classes = "mobile-menu-anchor primary-menu";
     }
     else {
-        $classes = "mobile-menu-anchor page-menu"; 
+        $classes = "mobile-menu-anchor page-menu";
     }
     ?>
-    
+
     <div id="mobile-header-left-menu" class="<?php echo $classes; ?>">
         <a href="#mobile-header-left-nav" id="header-left-menu" class="genericon genericon-menu">
             <span class="mobile-menu-text"><?php _e( 'Menu', 'gridalicious' );?></span>
         </a>
     </div><!-- #mobile-header-menu -->
-    <?php    
+    <?php
 }
-endif; //gridalicious_mobile_menus    
+endif; //gridalicious_mobile_menus
 add_action( 'gridalicious_header', 'gridalicious_mobile_header_nav_anchor', 30 );
 
 
@@ -158,15 +158,15 @@ if ( ! function_exists( 'gridalicious_mobile_secondary_nav_anchor' ) ) :
  * @uses gridalicious_header action to add in the Header
  */
 function gridalicious_mobile_secondary_nav_anchor() {
-    if ( has_nav_menu( 'secondary' ) ) {  
-        ?>    
+    if ( has_nav_menu( 'secondary' ) ) {
+        ?>
         <div id="mobile-header-right-menu" class="mobile-menu-anchor secondary-menu">
             <a href="#mobile-header-right-menu" id="secondary-menu" class="genericon genericon-menu">
                 <span class="mobile-menu-text"><?php _e( 'Menu', 'gridalicious' );?></span>
             </a>
         </div><!-- #mobile-header-menu -->
-    <?php    
+    <?php
     }
 }
-endif; //gridalicious_mobile_secondary_nav_anchor    
+endif; //gridalicious_mobile_secondary_nav_anchor
 add_action( 'gridalicious_header', 'gridalicious_mobile_secondary_nav_anchor', 50 );

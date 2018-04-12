@@ -53,7 +53,7 @@ function gridalicious_get_default_theme_options() {
 
 		//Excerpt Options
 		'excerpt_length'									=> '40',
-		'excerpt_more_text'									=> __( 'Read More ...', 'gridalicious' ),
+		'excerpt_more_text'									=> esc_html__( 'Read More ...', 'gridalicious' ),
 
 		//Homepage / Frontpage Settings
 		'front_page_category'								=> '0',
@@ -63,14 +63,14 @@ function gridalicious_get_default_theme_options() {
 
 		//Promotion Headline Options
 		'promotion_headline_option'							=> 'homepage',
-		'promotion_headline'								=> __( 'Gridalicious is a Premium Responsive WordPress Theme', 'gridalicious' ),
-		'promotion_subheadline'								=> __( 'This is promotion headline. You can edit this from Appearance -> Customize -> Theme Options -> Promotion Headline Options', 'gridalicious' ),
-		'promotion_headline_button'							=> __( 'Reviews', 'gridalicious' ),
+		'promotion_headline'								=> esc_html__( 'Gridalicious is a Premium Responsive WordPress Theme', 'gridalicious' ),
+		'promotion_subheadline'								=> esc_html__( 'This is promotion headline. You can edit this from Appearance -> Customize -> Theme Options -> Promotion Headline Options', 'gridalicious' ),
+		'promotion_headline_button'							=> esc_html__( 'Reviews', 'gridalicious' ),
 		'promotion_headline_url'							=> esc_url( 'http://wordpress.org/support/view/theme-reviews/gridalicious' ),
 		'promotion_headline_target'							=> 1,
 
 		//Search Options
-		'search_text'										=> __( 'Search...', 'gridalicious' ),
+		'search_text'										=> esc_html__( 'Search...', 'gridalicious' ),
 
 		//Basic Color Options
 		'color_scheme' 										=> 'light',
@@ -107,14 +107,8 @@ function gridalicious_get_default_theme_options() {
  */
 function gridalicious_color_schemes() {
 	$color_scheme_options = array(
-		'light' => array(
-			'value' 				=> 'light',
-			'label' 				=> __( 'Light', 'gridalicious' ),
-		),
-		'dark' => array(
-			'value' 				=> 'dark',
-			'label' 				=> __( 'Dark', 'gridalicious' ),
-		),
+		'light' => esc_html__( 'Light', 'gridalicious' ),
+		'dark'  => esc_html__( 'Dark', 'gridalicious' ),
 	);
 
 	return apply_filters( 'gridalicious_color_schemes', $color_scheme_options );
@@ -128,18 +122,9 @@ function gridalicious_color_schemes() {
  */
 function gridalicious_layouts() {
 	$layout_options = array(
-		'left-sidebar' 	=> array(
-			'value' => 'left-sidebar',
-			'label' => __( 'Primary Sidebar, Content', 'gridalicious' ),
-		),
-		'right-sidebar' => array(
-			'value' => 'right-sidebar',
-			'label' => __( 'Content, Primary Sidebar', 'gridalicious' ),
-		),
-		'no-sidebar'	=> array(
-			'value' => 'no-sidebar',
-			'label' => __( 'No Sidebar ( Content Width )', 'gridalicious' ),
-		),
+		'left-sidebar' 	=> esc_html__( 'Primary Sidebar, Content', 'gridalicious' ),
+		'right-sidebar' => esc_html__( 'Content, Primary Sidebar', 'gridalicious' ),
+		'no-sidebar'	=> esc_html__( 'No Sidebar ( Content Width )', 'gridalicious' ),
 	);
 	return apply_filters( 'gridalicious_layouts', $layout_options );
 }
@@ -152,14 +137,8 @@ function gridalicious_layouts() {
  */
 function gridalicious_get_archive_content_layout() {
 	$layout_options = array(
-		'excerpt-image-left' => array(
-			'value' => 'excerpt-image-left',
-			'label' => __( 'Show Excerpt (Image Left)', 'gridalicious' ),
-		),
-		'full-content' => array(
-			'value' => 'full-content',
-			'label' => __( 'Show Full Content (No Featured Image)', 'gridalicious' ),
-		),
+		'excerpt-image-left' => esc_html__( 'Show Excerpt (Image Left)', 'gridalicious' ),
+		'full-content'       => esc_html__( 'Show Full Content (No Featured Image)', 'gridalicious' ),
 	);
 
 	return apply_filters( 'gridalicious_get_archive_content_layout', $layout_options );
@@ -173,34 +152,13 @@ function gridalicious_get_archive_content_layout() {
  */
 function gridalicious_enable_featured_header_image_options() {
 	$enable_featured_header_image_options = array(
-		'homepage' 		=> array(
-			'value'	=> 'homepage',
-			'label' => __( 'Homepage / Frontpage', 'gridalicious' ),
-		),
-		'exclude-home' 		=> array(
-			'value'	=> 'exclude-home',
-			'label' => __( 'Excluding Homepage', 'gridalicious' ),
-		),
-		'exclude-home-page-post' 	=> array(
-			'value' => 'exclude-home-page-post',
-			'label' => __( 'Excluding Homepage, Page/Post Featured Image', 'gridalicious' ),
-		),
-		'entire-site' 	=> array(
-			'value' => 'entire-site',
-			'label' => __( 'Entire Site', 'gridalicious' ),
-		),
-		'entire-site-page-post' 	=> array(
-			'value' => 'entire-site-page-post',
-			'label' => __( 'Entire Site, Page/Post Featured Image', 'gridalicious' ),
-		),
-		'pages-posts' 	=> array(
-			'value' => 'pages-posts',
-			'label' => __( 'Pages and Posts', 'gridalicious' ),
-		),
-		'disabled'		=> array(
-			'value' => 'disabled',
-			'label' => __( 'Disabled', 'gridalicious' ),
-		),
+		'homepage'               => esc_html__( 'Homepage / Frontpage', 'gridalicious' ),
+		'exclude-home'           => esc_html__( 'Excluding Homepage', 'gridalicious' ),
+		'exclude-home-page-post' => esc_html__( 'Excluding Homepage, Page/Post Featured Image', 'gridalicious' ),
+		'entire-site'            => esc_html__( 'Entire Site', 'gridalicious' ),
+		'entire-site-page-post'  => esc_html__( 'Entire Site, Page/Post Featured Image', 'gridalicious' ),
+		'pages-posts'            => esc_html__( 'Pages and Posts', 'gridalicious' ),
+		'disabled'               => esc_html__( 'Disabled', 'gridalicious' ),
 	);
 
 	return apply_filters( 'gridalicious_enable_featured_header_image_options', $enable_featured_header_image_options );
@@ -214,18 +172,9 @@ function gridalicious_enable_featured_header_image_options() {
  */
 function gridalicious_featured_image_size_options() {
 	$featured_image_size_options = array(
-		'featured-header' => array(
-			'value' => 'featured-header',
-			'label' => __( 'Featured Header Size', 'gridalicious' ),
-		),
-		'featured' => array(
-			'value' => 'featured',
-			'label' => __( 'Featured Size', 'gridalicious' ),
-		),
-		'full-size' => array(
-			'value' => 'full-size',
-			'label' => __( 'Full Size', 'gridalicious' ),
-		),
+		'featured-header' => esc_html__( 'Featured Header Size', 'gridalicious' ),
+		'featured'        => esc_html__( 'Featured Size', 'gridalicious' ),
+		'full-size'       => esc_html__( 'Full Size', 'gridalicious' ),
 	);
 
 	return apply_filters( 'gridalicious_featured_image_size_options', $featured_image_size_options );
@@ -239,18 +188,9 @@ function gridalicious_featured_image_size_options() {
  */
 function gridalicious_featured_grid_content_options() {
 	$featured_grid_content_content_options = array(
-		'homepage' 		=> array(
-			'value'	=> 'homepage',
-			'label' => __( 'Homepage / Frontpage', 'gridalicious' ),
-		),
-		'entire-site' 	=> array(
-			'value' => 'entire-site',
-			'label' => __( 'Entire Site', 'gridalicious' ),
-		),
-		'disabled'		=> array(
-			'value' => 'disabled',
-			'label' => __( 'Disabled', 'gridalicious' ),
-		),
+		'homepage'    => esc_html__( 'Homepage / Frontpage', 'gridalicious' ),
+		'entire-site' => esc_html__( 'Entire Site', 'gridalicious' ),
+		'disabled'    => esc_html__( 'Disabled', 'gridalicious' ),
 	);
 
 	return apply_filters( 'gridalicious_featured_grid_content_options', $featured_grid_content_content_options );
@@ -265,14 +205,8 @@ function gridalicious_featured_grid_content_options() {
  */
 function gridalicious_featured_content_types() {
 	$featured_content_types = array(
-		'demo-featured-content' => array(
-			'value' => 'demo-featured-content',
-			'label' => __( 'Demo Featured Content', 'gridalicious' ),
-		),
-		'featured-page-content' => array(
-			'value' => 'featured-page-content',
-			'label' => __( 'Featured Page Content', 'gridalicious' ),
-		)
+		'demo-featured-content' => esc_html__( 'Demo Featured Content', 'gridalicious' ),
+		'featured-page-content' => esc_html__( 'Featured Page Content', 'gridalicious' ),
 	);
 
 	return apply_filters( 'gridalicious_featured_content_types', $featured_content_types );
@@ -286,14 +220,8 @@ function gridalicious_featured_content_types() {
  */
 function gridalicious_featured_content_layout_options() {
 	$featured_content_layout_option = array(
-		'layout-three' 		=> array(
-			'value'	=> 'layout-three',
-			'label' => __( '3 columns', 'gridalicious' ),
-		),
-		'layout-four' 	=> array(
-			'value' => 'layout-four',
-			'label' => __( '4 columns', 'gridalicious' ),
-		),
+		'layout-three' => esc_html__( '3 columns', 'gridalicious' ),
+		'layout-four'  => esc_html__( '4 columns', 'gridalicious' ),
 	);
 
 	return apply_filters( 'gridalicious_featured_content_layout_options', $featured_content_layout_option );
@@ -306,18 +234,9 @@ function gridalicious_featured_content_layout_options() {
  */
 function gridalicious_featured_content_show() {
 	$featured_content_show_option = array(
-		'excerpt' 		=> array(
-			'value'	=> 'excerpt',
-			'label' => __( 'Show Excerpt', 'gridalicious' ),
-		),
-		'full-content' 	=> array(
-			'value' => 'full-content',
-			'label' => __( 'Show Full Content', 'gridalicious' ),
-		),
-		'hide-content' 	=> array(
-			'value' => 'hide-content',
-			'label' => __( 'Hide Content', 'gridalicious' ),
-		),
+		'excerpt'      => esc_html__( 'Show Excerpt', 'gridalicious' ),
+		'full-content' => esc_html__( 'Show Full Content', 'gridalicious' ),
+		'hide-content' => esc_html__( 'Hide Content', 'gridalicious' ),
 	);
 
 	return apply_filters( 'gridalicious_featured_content_show', $featured_content_show_option );
@@ -331,14 +250,8 @@ function gridalicious_featured_content_show() {
  */
 function gridalicious_featured_grid_content_types() {
 	$featured_grid_content_types = array(
-		'demo-featured-grid-content' => array(
-			'value' => 'demo-featured-grid-content',
-			'label' => __( 'Demo Featured Grid Content', 'gridalicious' ),
-		),
-		'featured-page-grid-content' => array(
-			'value' => 'featured-page-grid-content',
-			'label' => __( 'Featured Page Grid Content', 'gridalicious' ),
-		),
+		'demo-featured-grid-content' => esc_html__( 'Demo Featured Grid Content', 'gridalicious' ),
+		'featured-page-grid-content' => esc_html__( 'Featured Page Grid Content', 'gridalicious' ),
 	);
 
 	return apply_filters( 'gridalicious_featured_grid_content_types', $featured_grid_content_types );
@@ -352,22 +265,10 @@ function gridalicious_featured_grid_content_types() {
  */
 function gridalicious_get_pagination_types() {
 	$pagination_types = array(
-		'default' => array(
-			'value' => 'default',
-			'label' => __( 'Default(Older Posts/Newer Posts)', 'gridalicious' ),
-		),
-		'numeric' => array(
-			'value' => 'numeric',
-			'label' => __( 'Numeric', 'gridalicious' ),
-		),
-		'infinite-scroll-click' => array(
-			'value' => 'infinite-scroll-click',
-			'label' => __( 'Infinite Scroll (Click)', 'gridalicious' ),
-		),
-		'infinite-scroll-scroll' => array(
-			'value' => 'infinite-scroll-scroll',
-			'label' => __( 'Infinite Scroll (Scroll)', 'gridalicious' ),
-		),
+		'default'                => esc_html__( 'Default(Older Posts/Newer Posts)', 'gridalicious' ),
+		'numeric'                => esc_html__( 'Numeric', 'gridalicious' ),
+		'infinite-scroll-click'  => esc_html__( 'Infinite Scroll (Click)', 'gridalicious' ),
+		'infinite-scroll-scroll' => esc_html__( 'Infinite Scroll (Scroll)', 'gridalicious' ),
 	);
 
 	return apply_filters( 'gridalicious_get_pagination_types', $pagination_types );
@@ -381,18 +282,9 @@ function gridalicious_get_pagination_types() {
  */
 function gridalicious_single_post_image_layout_options() {
 	$single_post_image_layout_options = array(
-		'featured' => array(
-			'value' => 'featured',
-			'label' => __( 'Featured', 'gridalicious' ),
-		),
-		'full-size' => array(
-			'value' => 'full-size',
-			'label' => __( 'Full Size', 'gridalicious' ),
-		),
-		'disabled' => array(
-			'value' => 'disabled',
-			'label' => __( 'Disabled', 'gridalicious' ),
-		),
+		'featured'  => esc_html__( 'Featured', 'gridalicious' ),
+		'full-size' => esc_html__( 'Full Size', 'gridalicious' ),
+		'disabled'  => esc_html__( 'Disabled', 'gridalicious' ),
 	);
 	return apply_filters( 'gridalicious_single_post_image_layout_options', $single_post_image_layout_options );
 }
@@ -553,22 +445,22 @@ function gridalicious_metabox_layouts() {
 		'default' 	=> array(
 			'id' 	=> 'gridalicious-layout-option',
 			'value' => 'default',
-			'label' => __( 'Default', 'gridalicious' ),
+			'label' => esc_html__( 'Default', 'gridalicious' ),
 		),
 		'left-sidebar' 	=> array(
 			'id' 	=> 'gridalicious-layout-option',
 			'value' => 'left-sidebar',
-			'label' => __( 'Primary Sidebar, Content', 'gridalicious' ),
+			'label' => esc_html__( 'Primary Sidebar, Content', 'gridalicious' ),
 		),
 		'right-sidebar' => array(
 			'id' 	=> 'gridalicious-layout-option',
 			'value' => 'right-sidebar',
-			'label' => __( 'Content, Primary Sidebar', 'gridalicious' ),
+			'label' => esc_html__( 'Content, Primary Sidebar', 'gridalicious' ),
 		),
 		'no-sidebar'	=> array(
 			'id' 	=> 'gridalicious-layout-option',
 			'value' => 'no-sidebar',
-			'label' => __( 'No Sidebar ( Content Width )', 'gridalicious' ),
+			'label' => esc_html__( 'No Sidebar ( Content Width )', 'gridalicious' ),
 		),
 	);
 	return apply_filters( 'gridalicious_layouts', $layout_options );
@@ -584,17 +476,17 @@ function gridalicious_metabox_header_featured_image_options() {
 		'default' => array(
 			'id'		=> 'gridalicious-header-image',
 			'value' 	=> 'default',
-			'label' 	=> __( 'Default', 'gridalicious' ),
+			'label' 	=> esc_html__( 'Default', 'gridalicious' ),
 		),
 		'enable' => array(
 			'id'		=> 'gridalicious-header-image',
 			'value' 	=> 'enable',
-			'label' 	=> __( 'Enable', 'gridalicious' ),
+			'label' 	=> esc_html__( 'Enable', 'gridalicious' ),
 		),
 		'disable' => array(
 			'id'		=> 'gridalicious-header-image',
 			'value' 	=> 'disable',
-			'label' 	=> __( 'Disable', 'gridalicious' )
+			'label' 	=> esc_html__( 'Disable', 'gridalicious' )
 		)
 	);
 	return apply_filters( 'header_featured_image_options', $header_featured_image_options );
@@ -611,22 +503,22 @@ function gridalicious_metabox_featured_image_options() {
 		'default' => array(
 			'id'		=> 'gridalicious-featured-image',
 			'value' 	=> 'default',
-			'label' 	=> __( 'Default', 'gridalicious' ),
+			'label' 	=> esc_html__( 'Default', 'gridalicious' ),
 		),
 		'featured' => array(
 			'id'		=> 'gridalicious-featured-image',
 			'value' 	=> 'featured',
-			'label' 	=> __( 'Featured Image', 'gridalicious' )
+			'label' 	=> esc_html__( 'Featured Image', 'gridalicious' )
 		),
 		'full' => array(
 			'id' => 'gridalicious-featured-image',
 			'value' => 'full',
-			'label' => __( 'Full Size', 'gridalicious' )
+			'label' => esc_html__( 'Full Size', 'gridalicious' )
 		),
 		'disable' => array(
 			'id' => 'gridalicious-featured-image',
 			'value' => 'disable',
-			'label' => __( 'Disable Image', 'gridalicious' )
+			'label' => esc_html__( 'Disable Image', 'gridalicious' )
 		)
 	);
 	return apply_filters( 'featured_image_options', $featured_image_options );
@@ -641,9 +533,9 @@ function gridalicious_metabox_featured_image_options() {
 function gridalicious_get_content() {
 	$theme_data = wp_get_theme();
 
-	$gridalicious_content['left'] 	= sprintf( _x( 'Copyright &copy; %1$s %2$s. All Rights Reserved.', '1: Year, 2: Site Title with home URL', 'gridalicious' ), esc_attr( date_i18n( __( 'Y', 'gridalicious' ) ) ), '<a href="'. esc_url( home_url( '/' ) ) .'">'. esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>' );
+	$gridalicious_content['left'] 	= sprintf( _x( 'Copyright &copy; %1$s %2$s. All Rights Reserved.', '1: Year, 2: Site Title with home URL', 'gridalicious' ), esc_attr( date_i18n( esc_html__( 'Y', 'gridalicious' ) ) ), '<a href="'. esc_url( home_url( '/' ) ) .'">'. esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>' );
 
-	$gridalicious_content['right']	= esc_attr( $theme_data->get( 'Name') ) . '&nbsp;' . __( 'by', 'gridalicious' ). '&nbsp;<a target="_blank" href="'. esc_url( $theme_data->get( 'AuthorURI' ) ) .'">'. esc_attr( $theme_data->get( 'Author' ) ) .'</a>';
+	$gridalicious_content['right']	= esc_attr( $theme_data->get( 'Name') ) . '&nbsp;' . esc_html__( 'by', 'gridalicious' ). '&nbsp;<a target="_blank" href="'. esc_url( $theme_data->get( 'AuthorURI' ) ) .'">'. esc_attr( $theme_data->get( 'Author' ) ) .'</a>';
 
 	return apply_filters( 'gridalicious_get_content', $gridalicious_content );
 }

@@ -5,7 +5,7 @@
 * @package Catch Themes
 * @subpackage Gridalicious
 * @since Gridalicious 0.1
-*/	
+*/
 
 
 //Theme Options
@@ -178,14 +178,8 @@ $wp_customize->add_setting( 'gridalicious_theme_options[theme_layout]', array(
 	'sanitize_callback'	=> 'gridalicious_sanitize_select'
 ) );
 
-$layouts = gridalicious_layouts();
-$choices = array();
-foreach ( $layouts as $layout ) {
-	$choices[ $layout['value'] ] = $layout['label'];
-}
-
 $wp_customize->add_control( 'gridalicious_theme_options[theme_layout]', array(
-	'choices'	=> $choices,
+	'choices'	=> gridalicious_layouts(),
 	'label'		=> __( 'Default Layout', 'gridalicious' ),
 	'section'	=> 'gridalicious_layout',
 	'settings'   => 'gridalicious_theme_options[theme_layout]',
@@ -198,14 +192,8 @@ $wp_customize->add_setting( 'gridalicious_theme_options[content_layout]', array(
 	'sanitize_callback'	=> 'gridalicious_sanitize_select'
 ) );
 
-$layouts = gridalicious_get_archive_content_layout();
-$choices = array();
-foreach ( $layouts as $layout ) {
-	$choices[ $layout['value'] ] = $layout['label'];
-}
-
 $wp_customize->add_control( 'gridalicious_theme_options[content_layout]', array(
-	'choices'   => $choices,
+	'choices'   => gridalicious_get_archive_content_layout(),
 	'label'		=> __( 'Archive Content Layout', 'gridalicious' ),
 	'section'   => 'gridalicious_layout',
 	'settings'  => 'gridalicious_theme_options[content_layout]',
@@ -218,19 +206,12 @@ $wp_customize->add_setting( 'gridalicious_theme_options[single_post_image_layout
 	'sanitize_callback'	=> 'gridalicious_sanitize_select'
 ) );
 
-
-$single_post_image_layouts = gridalicious_single_post_image_layout_options();
-$choices = array();
-foreach ( $single_post_image_layouts as $single_post_image_layout ) {
-	$choices[$single_post_image_layout['value']] = $single_post_image_layout['label'];
-}
-
 $wp_customize->add_control( 'gridalicious_theme_options[single_post_image_layout]', array(
 		'label'		=> __( 'Single Page/Post Image Layout ', 'gridalicious' ),
 		'section'   => 'gridalicious_layout',
         'settings'  => 'gridalicious_theme_options[single_post_image_layout]',
         'type'	  	=> 'select',
-		'choices'  	=> $choices,
+		'choices'  	=> gridalicious_single_post_image_layout_options(),
 ) );
 	// Layout Options End
 
@@ -275,14 +256,8 @@ $wp_customize->add_setting( 'gridalicious_theme_options[pagination_type]', array
 	'sanitize_callback'	=> 'gridalicious_sanitize_select'
 ) );
 
-$pagination_types = gridalicious_get_pagination_types();
-$choices = array();
-foreach ( $pagination_types as $pagination_type ) {
-	$choices[$pagination_type['value']] = $pagination_type['label'];
-}
-
 $wp_customize->add_control( 'gridalicious_theme_options[pagination_type]', array(
-	'choices'  => $choices,
+	'choices'  => gridalicious_get_pagination_types(),
 	'label'    => __( 'Pagination type', 'gridalicious' ),
 	'section'  => 'gridalicious_pagination_options',
 	'settings' => 'gridalicious_theme_options[pagination_type]',
@@ -304,14 +279,8 @@ $wp_customize->add_setting( 'gridalicious_theme_options[promotion_headline_optio
 	'sanitize_callback'	=> 'gridalicious_sanitize_select'
 ) );
 
-$gridalicious_featured_grid_content_options = gridalicious_featured_grid_content_options();
-$choices = array();
-foreach ( $gridalicious_featured_grid_content_options as $gridalicious_featured_grid_content_option ) {
-	$choices[$gridalicious_featured_grid_content_option['value']] = $gridalicious_featured_grid_content_option['label'];
-}
-
 $wp_customize->add_control( 'gridalicious_theme_options[promotion_headline_option]', array(
-	'choices'  	=> $choices,
+	'choices'  	=> gridalicious_featured_grid_content_options(),
 	'label'    	=> __( 'Enable Promotion Headline on', 'gridalicious' ),
 	'priority'	=> '0.5',
 	'section'  	=> 'gridalicious_promotion_headline_options',
