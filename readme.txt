@@ -188,3 +188,6 @@ GNU General Public License for more details.
 * Fixed more untranslated text
 * Refactored some files to be more legible
 * Moved the post format markup out of the hero to just before the content
+
+* 2.0.7
+* removed some unused vars from the primary menu
