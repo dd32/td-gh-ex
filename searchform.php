@@ -1,9 +1,9 @@
 <?php
 /**
- * The template for displaying search forms in Shape
+ * The template for displaying search forms in Agency X
  *
- * @package Shape
- * @since Shape 1.0
+ * @package Agency X
+ * @since Agency X 1.0
  */
  ?>
 <form class="form" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" id="searchform" role="search">

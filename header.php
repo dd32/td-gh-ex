@@ -56,7 +56,7 @@
 									 wp_nav_menu( $args );
 									else:
 										 ?>	
-										 <ul class="nav navbar-nav">
+										 <ul id="menu-top-menu" class="nav navbar-nav">
 			                                                <?php wp_list_pages( array( 'title_li' => '','depth' =>1 ) ); ?>
 			                              </ul>
 	                          	<?php endif;?>				

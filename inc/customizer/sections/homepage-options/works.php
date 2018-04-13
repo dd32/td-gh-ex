@@ -44,7 +44,7 @@ function agency_x_customize_register_works_section( $wp_customize ) {
 
     $wp_customize->add_setting( 'works_section_description', array(
         'default' => '',        
-        'sanitize_callback' => 'wp_kses_post',
+        'sanitize_callback' => 'sanitize_text_field',
     ) );
     $wp_customize->add_control( 'works_section_description', array(
         'type' => 'text',

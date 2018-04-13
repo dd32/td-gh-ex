@@ -6,7 +6,7 @@ Tags: one-column, two-columns,right-sidebar,grid-layout,custom-background,custom
 
 Requires at least: 4.7
 Tested up to: 4.9.5
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -15,8 +15,8 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Agency X is responsive WordPress theme which can be used for web design firms or any other corporate, business, agencies, consulting, legal, attorney, law firms, online shops, digital, medical, clinic, dental, spa, beauty, massage, gym, fitness, trainer, coach, restaurant, cafe, food, recipes, technology and any other kind of website purpose. It can also be used for portfolio, photography, personal and blogging as well. This theme is simple, white, minimal, clean
 
 == License ==
-Agency-X WordPress Theme, Copyright 2017 by Theme samuraithemes
-Agency-X is distributed under the terms of the GNU General
+Agency X is based on Underscores https://underscores.me/, (C) Samuraithemes
+Agency X is distributed under the terms of the GNU GPL v2 or later.
 
 == Credits ==
 
@@ -49,7 +49,12 @@ Agency-X includes support for contact form 7
 
 == Changelog ==
 
-= 1.0.6 - 12 April 2018 =
+= 1.0.8 - 13 April 2018 =
+* Fixed prefixing css and js
+* Fixed Sanitization
+* Licensed to image are added 
+
+= 1.0.7 - 12 April 2018 =
 * Minor Changes in default page
 
 = 1.0.6 - 09 April 2018 =
@@ -71,4 +76,8 @@ Agency-X includes support for contact form 7
 All images used in the theme designed by buzthemes under GPL License
 
 Image used in screenshot
-https://pixabay.com/en/nurse-medicine-doctor-hospital-2019420/
+https://pixabay.com/en/people-business-adult-paper-3295555/ CC0
+
+Image Included
+Image used in screenshot
+https://pixabay.com/en/people-business-adult-paper-3295555/ CC0
