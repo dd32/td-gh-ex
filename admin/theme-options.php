@@ -308,6 +308,21 @@ Boxy_Kirki::add_field( 'boxy', array(
 			'operator' => '==',
 			'value'    => true,
 		),
+
+    ),
+) );
+
+Boxy_Kirki::add_field( 'boxy', array(
+	'settings' => 'recent_posts_exclude', 
+	'label'    => __( 'Exclude the Posts from Home Page. Post IDs, separated by commas', 'boxy' ),
+	'section'  => 'latest_blog_section',
+	'type'     => 'text',
+	'active_callback' => array(
+		array(
+			'setting'  => 'enable_recent_post_service',
+			'operator' => '==',
+			'value'    => true,
+		),
 		
     ),
 ) );

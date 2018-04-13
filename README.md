@@ -41,6 +41,9 @@ https://pixabay.com/en/man-handsome-male-model-guy-885223/
 
 == Change Log ==
 
+= 1.3.6 =
+* Post Exclude Option added. 
+
 v. 1.3.5 
 * Added site Creation Ads in Theme Upgrade Page. 
 

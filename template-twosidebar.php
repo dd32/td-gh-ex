@@ -5,17 +5,10 @@
 
 get_header(); ?>
 
-<div class="breadcrumb-wrap">
-	<div class="container">
-		<div class="ten columns">
-			<header class="entry-header">
-				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			</header><!-- .entry-header -->			
-		</div>
-		<?php  get_template_part('breadcrumb'); ?>		
-	</div>
-</div>
+<?php  get_template_part('breadcrumb'); ?>	
+
 	<?php do_action('boxy_before_content'); ?>
+	<?php do_action('boxy_single_page_flexslider_featured_image'); ?>
 <div id="content" class="site-content">
 	<div class="container">
 
