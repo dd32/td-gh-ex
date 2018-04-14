@@ -2,7 +2,8 @@
 function theme_data_setup()
 {	$slider_image = WEBRITI_TEMPLATE_DIR_URI . "/images/slider.jpg";
 	$service_image = WEBRITI_TEMPLATE_DIR_URI . "/images/service.jpg";
-	$portfolio_image = WEBRITI_TEMPLATE_DIR_URI . "/images/portfolio.jpg";
+	$portfolio_image = WEBRITI_TEMPLATE_DIR_URI . "/images";
+	
 	return $theme_options=array(
 			//Logo and Fevicon header
 			'custom_background_enabled'=>'off',
@@ -64,7 +65,7 @@ function theme_data_setup()
 			'upload_image_logo'=>'',
 			'height'=>'50',
 			'width'=>'250',
-			'text_title'=>true,
+			'text_title'=>false,
 			
 			//header search Bar setting
 			'header_search_bar_enabled' => true,
@@ -91,15 +92,15 @@ function theme_data_setup()
 			
 			'portfolio_one_title' => __('Growing your business','elitepress'),
 			'portfolio_one_description' => 'Morbi leo risus, porta ac consectetur vestibulum eros cras 	mattis consectetur purus sit...',
-			'portfolio_one_image' => $portfolio_image,
+			'portfolio_one_image' => $portfolio_image ."/portfolio1.jpg",
 
 			'portfolio_two_title' => __('Functional elegance','elitepress'),
 			'portfolio_two_description' => 'Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...',
-			'portfolio_two_image' => $portfolio_image,
+			'portfolio_two_image' => $portfolio_image."/portfolio2.jpg",
 			
 			'portfolio_three_title' => __('Planning your next move','elitepress'),
 			'portfolio_three_description' => 'Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...',
-			'portfolio_three_image' => $portfolio_image,
+			'portfolio_three_image' => $portfolio_image."/portfolio3.jpg",
 			
 			
 			// service

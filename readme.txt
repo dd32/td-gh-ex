@@ -56,6 +56,11 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.7.4
+1. Fixed undefined color error in service section oh homepage.
+2. Fixed header layout.
+3. Added go to customizer button in about page.
+4. Change portfolio images.
 @version 1.7.3
 1. Added Image support in service.
 @version 1.7.2
@@ -177,6 +182,14 @@ LIcense: CC0 Public Domain
 
 Portfolio Image
 URL: https://cdn.pixabay.com/photo/2017/08/02/01/11/people-2569404_960_720.jpg
+Source:http://pixabay.com
+LIcense: CC0 Public Domain
+
+URL: https://www.pexels.com/photo/adult-chill-computer-connection-450271
+Source:http://pexels.com
+LIcense: CC0 Public Domain
+
+URL: https://pixabay.com/en/calm-freedom-location-travel-2752102
 Source:http://pixabay.com
 LIcense: CC0 Public Domain
 

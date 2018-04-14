@@ -23,7 +23,6 @@ class elitepress_screen {
 
 		/* load welcome screen */
 		add_action( 'elitepress_info_screen', array( $this, 'elitepress_getting_started' ), 10 );
-		add_action( 'elitepress_info_screen', array( $this, 'elitepress_action_required' ), 20 );
 		add_action( 'elitepress_info_screen', array( $this, 'elitepress_github' ), 40 );
 		add_action( 'elitepress_info_screen', array( $this, 'elitepress_welcome_free_pro' ), 50 );
 
@@ -204,7 +203,7 @@ class elitepress_screen {
 		<div class="col-md-12">
 		<ul class="elitepress-nav-tabs" role="tablist">
 			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting Started','elitepress'); ?></a></li>
-			<li role="presentation"><a href="#actions_required" aria-controls="actions_required" role="tab" data-toggle="tab"><?php esc_html_e( 'Actions Required','elitepress'); ?></a></li>
+			
 			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Why Upgrade to Pro?','elitepress'); ?></a></li>
 			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free vs PRO','elitepress'); ?></a></li>
 			
@@ -230,13 +229,7 @@ class elitepress_screen {
 	}
 
 	
-	/**
-	 * Action Requerd
-	 *
-	 */
-	public function elitepress_action_required() {
-		require_once( get_template_directory() . '/functions/elitepress-info/sections/actions-required.php' );
-	}
+	
 	
 	/**
 	 * Contribute

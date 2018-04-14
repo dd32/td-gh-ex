@@ -21,12 +21,24 @@ $customizer_url = admin_url() . 'customize.php' ;
 				<p>
 				<?php esc_html_e( 'The premium version, ElitePress PRO, offers more enhancements and features. Like a boxed layout with background patterns, 7 predefined color schemes plus the opportunity to create your own color, an eye-catching Slider, a Layout Manager, and unlimited Services, Testimonials, Portfolios, Clients/Sponsors, Blog, and Latest News. You will also get many page templates: About, Service, Portfolio, Blog, and Contact Us. The theme supports popular plugins like WPML, Polylang and the JetPack Gallery Extensions. Just navigate to Appearance/Customize to start personalising your theme. You can see the premium version, ElitePress PRO at https://webriti.com/demo/wp/elitepress.', 'elitepress' ); ?>
 				</p>
+				
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="elitepress-tab-pane-half elitepress-tab-pane-first-half">
 				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/elitepress-info/img/elitepress.png'; ?>" alt="<?php esc_html_e( 'Appointment Blue Child Theme', 'elitepress' ); ?>" />
+				
+					<h3 ><?php esc_html_e( "Getting Started", 'quality' ); ?></h3>
+				<div style="border-top: 1px solid #eaeaea;">
+				<p style="margin-top: 9px; font-size: 15px;">
+				
+				<?php esc_html_e( 'You can customize every aspect of the theme Using the WordPress Customizer.', 'quality' ); ?>
+				
+				</p>
+				<p><a target="_blank" href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Go to the Customizer','quality');?></a></p>
 				</div>
+				</div>
+				
 			</div>	
 		</div>
 	
@@ -62,6 +74,9 @@ $customizer_url = admin_url() . 'customize.php' ;
 					
 					<a href="<?php echo 'https://wordpress.org/support/view/theme-reviews/elitepress'; ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-smiley info-icon"></div>
 					<p class="info-text"><?php echo _e('Your feedback is valuable to us','elitepress'); ?></p></a>
+					
+					<a href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-admin-settings info-icon"></div>
+					<p class="info-text"><?php echo _e('Go to the Customizer','elitepress'); ?></p></a>
 				</div>
 			</div>
 			

@@ -85,7 +85,7 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 		'type' => 'text',
     ));
 	//portfolio one image
-	$wp_customize->add_setting( 'elitepress_lite_options[portfolio_one_image]',array('default' => get_template_directory_uri().'/images/portfolio.jpg',
+	$wp_customize->add_setting( 'elitepress_lite_options[portfolio_one_image]',array('default' => get_template_directory_uri().'/images/portfolio1.jpg',
 	'type' => 'option','sanitize_callback' => 'esc_url_raw',));
  
 	$wp_customize->add_control(
@@ -141,7 +141,7 @@ function elitepress_portfolio_customizer( $wp_customize ) {
     ));
 	
 	//portfolio two image
-	$wp_customize->add_setting( 'elitepress_lite_options[portfolio_two_image]',array('default' => get_template_directory_uri().'/images/portfolio.jpg','type' => 'option','sanitize_callback' => 'esc_url_raw',));	
+	$wp_customize->add_setting( 'elitepress_lite_options[portfolio_two_image]',array('default' => get_template_directory_uri().'/images/portfolio2.jpg','type' => 'option','sanitize_callback' => 'esc_url_raw',));	
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
 			$wp_customize,
@@ -198,7 +198,7 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	
 	
 	//portfolio three image
-	$wp_customize->add_setting( 'elitepress_lite_options[portfolio_three_image]',array('default' => get_template_directory_uri().'/images/portfolio.jpg','type' => 'option','sanitize_callback' => 'esc_url_raw',));
+	$wp_customize->add_setting( 'elitepress_lite_options[portfolio_three_image]',array('default' => get_template_directory_uri().'/images/portfolio3.jpg','type' => 'option','sanitize_callback' => 'esc_url_raw',));
  
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(

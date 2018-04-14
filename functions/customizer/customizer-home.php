@@ -57,7 +57,7 @@ function elitepress_header_customizer( $wp_customize ) {
 	//Enable/Disable logo text
 	$wp_customize->add_setting(
     'elitepress_lite_options[text_title]',array(
-	'default'    => true,
+	'default'    => false,
 	'sanitize_callback' => 'sanitize_text_field',
 	'type' => 'option'
 	));

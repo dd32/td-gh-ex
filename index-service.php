@@ -148,7 +148,7 @@ function elitepress_service_content( $elitepress_service_content, $is_callback =
 			for($i=0; $i<=3; $i++) { ?>
 			<div class="col-md-6 col-sm-6">
 				<div class="media service-area">
-					<div class="service-box" style="color:<?php echo $colors[$i]; ?>">
+					<div class="service-box">
 						<i class="<?php echo $icon[$i]; ?>"></i>
 					</div>
 					<h4 class="entry-title"><?php echo $title[$i]; ?></h4>

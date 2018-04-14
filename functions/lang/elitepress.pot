@@ -1,25 +1,24 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: ElitePress\n"
-"POT-Creation-Date: 2017-12-14 11:39+0530\n"
-"PO-Revision-Date: 2017-12-14 11:39+0530\n"
+"POT-Creation-Date: 2018-04-02 19:27+0530\n"
+"PO-Revision-Date: 2018-04-02 19:29+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.4\n"
-"X-Poedit-Basepath: ../..\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:12
 msgid "Error 404"
@@ -75,9 +74,9 @@ msgstr ""
 #: functions/customizer/customizer_banner.php:172
 #: functions/customizer/customizer_banner.php:218
 #: functions/customizer/customizer_banner.php:266
-#: functions/widget/elitepress_header_widget.php:85 theme_setup_data.php:131
-#: theme_setup_data.php:134 theme_setup_data.php:137 theme_setup_data.php:143
-#: theme_setup_data.php:146
+#: functions/widget/elitepress_header_widget.php:85 theme_setup_data.php:132
+#: theme_setup_data.php:135 theme_setup_data.php:138 theme_setup_data.php:144
+#: theme_setup_data.php:147
 msgid "Title"
 msgstr ""
 
@@ -171,9 +170,9 @@ msgstr ""
 msgid "Leave a Reply"
 msgstr ""
 
-#: content.php:20 fullwidth.php:13 functions.php:125 functions.php:142
+#: content.php:20 fullwidth.php:13 functions.php:126 functions.php:143
 #: functions/customizer/customizer-homecallout.php:50 index-slider.php:100
-#: page.php:13 theme_setup_data.php:75
+#: page.php:13 theme_setup_data.php:76
 msgid "Read More"
 msgstr ""
 
@@ -186,11 +185,11 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:75
+#: functions.php:76
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:76
+#: functions.php:77
 msgid "Footer Menu"
 msgstr ""
 
@@ -353,7 +352,7 @@ msgstr ""
 msgid "Latest News Settings"
 msgstr ""
 
-#: functions/customizer/customizer-blog.php:15 theme_setup_data.php:127
+#: functions/customizer/customizer-blog.php:15 theme_setup_data.php:128
 msgid "Latest news"
 msgstr ""
 
@@ -362,12 +361,12 @@ msgstr ""
 msgid "Footer copyright settings"
 msgstr ""
 
-#: functions/customizer/customizer-copyright.php:23 theme_setup_data.php:81
+#: functions/customizer/customizer-copyright.php:23 theme_setup_data.php:82
 msgid "©2017 All Rights Reserved - Webriti. - Designed and Developed by"
 msgstr ""
 
 #. Author of the plugin/theme
-#: functions/customizer/customizer-copyright.php:23 theme_setup_data.php:81
+#: functions/customizer/customizer-copyright.php:23 theme_setup_data.php:82
 msgid "Webriti"
 msgstr ""
 
@@ -422,7 +421,7 @@ msgstr ""
 msgid "Home header callout setting"
 msgstr ""
 
-#: functions/customizer/customizer-homecallout.php:21 theme_setup_data.php:73
+#: functions/customizer/customizer-homecallout.php:21 theme_setup_data.php:74
 msgid "Want to say hey or find out more?"
 msgstr ""
 
@@ -462,7 +461,7 @@ msgstr ""
 msgid "Enable project section on home Page"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:41 theme_setup_data.php:89
+#: functions/customizer/customizer-project.php:41 theme_setup_data.php:90
 msgid "Latest projects"
 msgstr ""
 
@@ -470,7 +469,7 @@ msgstr ""
 msgid "Portfolio one"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:77 theme_setup_data.php:92
+#: functions/customizer/customizer-project.php:77 theme_setup_data.php:93
 msgid "Growing your business"
 msgstr ""
 
@@ -478,7 +477,7 @@ msgstr ""
 msgid "Portfolio two"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:132 theme_setup_data.php:96
+#: functions/customizer/customizer-project.php:132 theme_setup_data.php:97
 msgid "Functional elegance"
 msgstr ""
 
@@ -486,7 +485,7 @@ msgstr ""
 msgid "Portfolio three"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:187 theme_setup_data.php:100
+#: functions/customizer/customizer-project.php:187 theme_setup_data.php:101
 msgid "Planning your next move"
 msgstr ""
 
@@ -510,7 +509,7 @@ msgstr ""
 msgid "Enable Service section on front page"
 msgstr ""
 
-#: functions/customizer/customizer-service.php:34 theme_setup_data.php:107
+#: functions/customizer/customizer-service.php:34 theme_setup_data.php:108
 msgid "Our services"
 msgstr ""
 
@@ -570,23 +569,23 @@ msgstr ""
 msgid "A clean and fresh design"
 msgstr ""
 
-#: functions/customizer/customizer.php:130 index-service.php:141
-#: theme_setup_data.php:111
+#: functions/customizer/customizer.php:130 index-service.php:146
+#: theme_setup_data.php:112
 msgid "Responsive design"
 msgstr ""
 
-#: functions/customizer/customizer.php:137 index-service.php:141
-#: theme_setup_data.php:115
+#: functions/customizer/customizer.php:137 index-service.php:146
+#: theme_setup_data.php:116
 msgid "Twitter Bootstrap 3.2.0"
 msgstr ""
 
-#: functions/customizer/customizer.php:144 index-service.php:141
-#: theme_setup_data.php:119
+#: functions/customizer/customizer.php:144 index-service.php:146
+#: theme_setup_data.php:120
 msgid "Exclusive support"
 msgstr ""
 
-#: functions/customizer/customizer.php:152 index-service.php:141
-#: theme_setup_data.php:123
+#: functions/customizer/customizer.php:152 index-service.php:146
+#: theme_setup_data.php:124
 msgid "Incredibly flexible"
 msgstr ""
 
@@ -622,7 +621,7 @@ msgstr ""
 msgid "404"
 msgstr ""
 
-#: functions/customizer/customizer_banner.php:163 theme_setup_data.php:140
+#: functions/customizer/customizer_banner.php:163 theme_setup_data.php:141
 msgid "404 title"
 msgstr ""
 
@@ -669,35 +668,6 @@ msgstr ""
 
 #: functions/customizer/customizer_theme_style.php:54
 msgid "Theme Layout"
-msgstr ""
-
-#: functions/elitepress-info/sections/actions-required.php:13
-msgid "1. Creating Homepage using Home Page Template."
-msgstr ""
-
-#: functions/elitepress-info/sections/actions-required.php:14
-msgid ""
-"To set up an exact replica of the Homepage as shown in our demo, you have to "
-"create a WordPress page using the Home Page Template. The Business Template "
-"has all the sections like banners, services, portfolio, etc., which are "
-"ideal for any business site. Kindly refer to the snapshot."
-msgstr ""
-
-#: functions/elitepress-info/sections/actions-required.php:21
-msgid "2. Assign Homepage as Front Page Display"
-msgstr ""
-
-#: functions/elitepress-info/sections/actions-required.php:22
-msgid ""
-"Do you want to show the Homepage as a Front Page? You need to set the "
-"Homepage as a static page, as shown in the snapshot below. Now go to the "
-"Customizer and start configuring the sections in the Business Template. We "
-"hope you will find this theme useful."
-msgstr ""
-
-#: functions/elitepress-info/sections/actions-required.php:30
-#: functions/elitepress-info/sections/actions-required.php:37
-msgid "ElitePress Blue Child Theme"
 msgstr ""
 
 #: functions/elitepress-info/sections/free_pro.php:13
@@ -887,36 +857,51 @@ msgid ""
 "elitepress."
 msgstr ""
 
-#: functions/elitepress-info/sections/getting-started.php:28
+#: functions/elitepress-info/sections/getting-started.php:29
 msgid "Appointment Blue Child Theme"
 msgstr ""
 
+#: functions/elitepress-info/sections/getting-started.php:31
+#: functions/elitepress-info/welcome-screen.php:205
+msgid "Getting Started"
+msgstr ""
+
+#: functions/elitepress-info/sections/getting-started.php:35
+msgid ""
+"You can customize every aspect of the theme Using the WordPress Customizer."
+msgstr ""
+
 #: functions/elitepress-info/sections/getting-started.php:38
+#: functions/elitepress-info/sections/getting-started.php:79
+msgid "Go to the Customizer"
+msgstr ""
+
+#: functions/elitepress-info/sections/getting-started.php:50
 msgid "Useful Links"
 msgstr ""
 
-#: functions/elitepress-info/sections/getting-started.php:46
+#: functions/elitepress-info/sections/getting-started.php:58
 msgid "Lite Demo"
 msgstr ""
 
-#: functions/elitepress-info/sections/getting-started.php:49
+#: functions/elitepress-info/sections/getting-started.php:61
 msgid "Pro Demo"
 msgstr ""
 
-#: functions/elitepress-info/sections/getting-started.php:52
+#: functions/elitepress-info/sections/getting-started.php:64
 msgid "Premium Theme Support"
 msgstr ""
 
-#: functions/elitepress-info/sections/getting-started.php:61
+#: functions/elitepress-info/sections/getting-started.php:73
 msgid "Premium Theme Details"
 msgstr ""
 
-#: functions/elitepress-info/sections/getting-started.php:64
+#: functions/elitepress-info/sections/getting-started.php:76
 msgid "Your feedback is valuable to us"
 msgstr ""
 
 #: functions/elitepress-info/sections/github.php:11
-#: functions/elitepress-info/welcome-screen.php:208
+#: functions/elitepress-info/welcome-screen.php:207
 msgid "Why Upgrade to Pro?"
 msgstr ""
 
@@ -1042,34 +1027,26 @@ msgid ""
 "support you can create a website available in multiple languages."
 msgstr ""
 
-#: functions/elitepress-info/welcome-screen.php:55
+#: functions/elitepress-info/welcome-screen.php:54
 #, php-format
 msgid ""
 "Welcome! Thank you for choosing ElitePress Lite! To take full advantage of "
 "all of our theme's best features, please visit our %swelcome page%s."
 msgstr ""
 
-#: functions/elitepress-info/welcome-screen.php:56
+#: functions/elitepress-info/welcome-screen.php:55
 msgid "Get started with ElitePress Lite"
 msgstr ""
 
-#: functions/elitepress-info/welcome-screen.php:99
+#: functions/elitepress-info/welcome-screen.php:98
 msgid "Hooray! There are no required actions for you right now."
 msgstr ""
 
-#: functions/elitepress-info/welcome-screen.php:136
+#: functions/elitepress-info/welcome-screen.php:135
 msgid "View Theme Info"
 msgstr ""
 
-#: functions/elitepress-info/welcome-screen.php:206
-msgid "Getting Started"
-msgstr ""
-
-#: functions/elitepress-info/welcome-screen.php:207
-msgid "Actions Required"
-msgstr ""
-
-#: functions/elitepress-info/welcome-screen.php:209
+#: functions/elitepress-info/welcome-screen.php:208
 msgid "Free vs PRO"
 msgstr ""
 
@@ -1089,7 +1066,8 @@ msgstr ""
 msgid "In"
 msgstr ""
 
-#: functions/widget/custom-sidebar.php:8 functions/widget/custom-sidebar.php:10
+#: functions/widget/custom-sidebar.php:8
+#: functions/widget/custom-sidebar.php:10
 msgid "Sidebar widget area"
 msgstr ""
 
@@ -1171,6 +1149,18 @@ msgstr ""
 
 #: functions/widget/elitepress_social_icon.php:245
 msgid "Dribble URL"
+msgstr ""
+
+#: header-logo-section.php:33
+msgid "California, United States."
+msgstr ""
+
+#: header-logo-section.php:33
+msgid "info@elitesupport.com"
+msgstr ""
+
+#: header-logo-section.php:33
+msgid "Mon-Sat: 9.30am To 7.00pm"
 msgstr ""
 
 #: index-slider.php:91
