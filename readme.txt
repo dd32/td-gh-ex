@@ -6,7 +6,7 @@ Tags: one-column, two-columns,right-sidebar,grid-layout,custom-background,custom
 
 Requires at least: 4.7
 Tested up to: 4.9.5
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -48,6 +48,9 @@ Agency-X includes support for contact form 7
 
 
 == Changelog ==
+
+= 1.0.8 - 14 April 2018 =
+* Pro Version Release
 
 = 1.0.8 - 13 April 2018 =
 * Fixed prefixing css and js
