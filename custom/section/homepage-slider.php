@@ -8,7 +8,7 @@
   
 	//youtube video
 	if($video_select_enable =='youtube'){
-		$video_youtobe_id = get_theme_mod( 'video_youtobe_id','e1c-n1dRxwc');	  
+		$video_youtobe_id = esc_html(get_theme_mod( 'video_youtobe_id','e1c-n1dRxwc'));	  
 		$video_mute = get_theme_mod( 'video_mute',0);	
 		if($video_mute == ''){ $video_mute =0;}
 		  

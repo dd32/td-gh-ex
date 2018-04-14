@@ -7,12 +7,9 @@ function cts_section_default_order()
 		'slider',//free
 		'about',//free			
 		'service',//free
-			
-		
-		'contact',//free
 					
 		'blog',//free
-
+		'contact',//free
 		'tool',//free
 				
 	);		

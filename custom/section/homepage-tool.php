@@ -11,11 +11,11 @@
   $tool_1_logo     = esc_url(get_theme_mod( 'tool_1_logo',$imagepath.'logo.png' ));  
   
   
- $tool_1_description     = get_theme_mod( 'tool_1_description',__( 'Donec at eui smod nibh, eu bibendum quam. Nullam  non gravida pDonec at eui smod nibh, eu bibendum quam. Nullam  non gravida peu bibendum quam. Nullam  non gravida peu bibendum quam. Nullam  non gravida p', 'best-food' ) );
+ $tool_1_description     = esc_html(get_theme_mod( 'tool_1_description',__( 'Donec at eui smod nibh, eu bibendum quam. Nullam  non gravida pDonec at eui smod nibh, eu bibendum quam. Nullam  non gravida peu bibendum quam. Nullam  non gravida peu bibendum quam. Nullam  non gravida p', 'best-food' ) ));
  
- $tool_2_title     = get_theme_mod( 'tool_2_title',__( 'Contact Us', 'best-food' ) ); 
+ $tool_2_title     = esc_html(get_theme_mod( 'tool_2_title',__( 'Contact Us', 'best-food' ) )); 
  
- $tool_3_title     = get_theme_mod( 'tool_3_title',__( 'Opening Hours', 'best-food' ) ); 
+ $tool_3_title     = esc_html(get_theme_mod( 'tool_3_title',__( 'Opening Hours', 'best-food' ) )); 
  
   
 ?>
@@ -76,7 +76,7 @@
                               if ( isset( $row[ 'tool_3_text' ] ) && !empty( $row[ 'tool_3_text' ] ) ) :
                         ?>
             					<p>
-									<?php echo $row[ 'tool_3_text' ];?>
+									<?php echo esc_html($row[ 'tool_3_text' ]);?>
                                 </p>
                         <?php
                               endif;
@@ -105,7 +105,7 @@
                               if ( isset( $row[ 'tool_2_icon' ] ) && !empty( $row[ 'tool_2_icon' ] ) ) :
                         ?>
             					<li><i class="fa <?php echo esc_html($row[ 'tool_2_icon' ]);?>" aria-hidden="true"></i>
-									<?php echo $row[ 'tool_2_text' ];?>
+									<?php echo esc_html($row[ 'tool_2_text' ]);?>
                                 </li>
                         <?php
                               endif;

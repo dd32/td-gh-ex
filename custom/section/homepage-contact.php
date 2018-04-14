@@ -11,7 +11,7 @@
 
   $enable_parallax_background = get_theme_mod( $key.'_enable_parallax_background',$default['parallax']); 
   
-  $section_background_image     = esc_url(get_theme_mod( $key.'_section_background_image', $imagepath.'fact.jpg')); 
+  $section_background_image     = esc_url(get_theme_mod( $key.'_section_background_image', $imagepath.'contact.jpg')); 
   
   $parallax_str = '';
   

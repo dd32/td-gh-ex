@@ -15,6 +15,10 @@ function best_food_setup(){
 }
 add_action( 'after_setup_theme', 'best_food_setup' );
 	
+function theta_about_page(){
+	require_once( get_stylesheet_directory().'/custom/ct-about-page/about-page.php');	
+}
+add_action( 'after_setup_theme', 'theta_about_page' );	
 	
 function best_food_custom_scripts()
 {
@@ -146,7 +150,7 @@ if ( ! function_exists( 'best_food_get_blog_thumbnail' ) ) {
 		
 		if($thumb_array['fullpath']=="" )
 		{
-			$thumb_array['fullpath'] = esc_url(get_theme_mod( 'blog_feature_img',get_stylesheet_directory_uri()."/images/default.jpg"));		
+			$thumb_array['fullpath'] = esc_url(get_theme_mod( 'blog_feature_img',get_stylesheet_directory_uri()."/custom/images/default.jpg"));		
 		}		
 
 		return $thumb_array;
@@ -209,4 +213,3 @@ function best_food_get_testimonial_details($page_id)
 	
 	return 	$testimonial;
 }
-

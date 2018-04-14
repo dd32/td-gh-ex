@@ -14,7 +14,7 @@
 
   $enable_parallax_background = get_theme_mod( $key.'_enable_parallax_background',0); 
   
-  $section_background_image     = esc_url(get_theme_mod( $key.'_section_background_image', $imagepath.'service.jpg')); 
+  $section_background_image     = ''; 
   
   $parallax_str = '';
   
@@ -50,12 +50,12 @@
 				echo best_food_get_page_details($about_page , 'content');
             ?> 
             <p><a class="btn btn-lg btn-primary" href="<?php echo esc_url( get_theme_mod( 'about_button_url','#') ); ?>" role="button">
-            	<?php if(get_theme_mod( 'about_button_text','' ) !='' ){ echo  get_theme_mod( 'about_button_text','' ) ;}else{ echo __( 'Read More', 'best-food' );} ?> 
+            	<?php if(get_theme_mod( 'about_button_text','' ) !='' ){ echo  esc_html(get_theme_mod( 'about_button_text','' )) ;}else{ echo __( 'Read More', 'best-food' );} ?> 
             </a></p>
                                   
             </div>
             <div class="col-md-6">
-            	<img src="<?php echo get_theme_mod( 'about_image',esc_url($imagepath.'about-us.jpg')); ?>" />
+            	<img src="<?php echo esc_url(get_theme_mod( 'about_image','' )); ?>" />
             </div>
             
             

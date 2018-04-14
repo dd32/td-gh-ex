@@ -76,7 +76,7 @@ final class best_food_Customize {
 					'title'    => esc_html__( 'Best Food Pro', 'best-food' ),
 					'priority'	=> 8,	
 					'pro_text' => esc_html__( 'Upgrade to Pro',         'best-food' ),
-					'pro_url'  => 'https://www.coothemes.com/best-food-free/'
+					'pro_url'  => 'https://www.coothemes.com/theme-best-food-pro/'
 				)
 			)
 		);

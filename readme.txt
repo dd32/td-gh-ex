@@ -52,7 +52,7 @@ Best Food is distributed under the terms of the GNU General Public License v2
 
     contact.jpg, Copyright Pexels.com
     License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://unsplash.com/photos/dDAM6LlicQQ
+    https://www.pexels.com/photo/coffee-lifestyle-starbucks-coffee-shop-17746/
 
 
     fact.jpg, Copyright Pexels.com
@@ -75,6 +75,8 @@ Theta provides support at https://www.coothemes.com/forum/best-food-theme/.
 
 
 === Changelog ===
+version 1.0.2 20180414
+
 version 1.0.1 20180401
 
 

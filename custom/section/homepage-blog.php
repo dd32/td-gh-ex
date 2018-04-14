@@ -14,7 +14,7 @@
 
   $enable_parallax_background = get_theme_mod( $key.'_enable_parallax_background',$default['parallax']); 
   
-  $section_background_image     = esc_url(get_theme_mod( $key.'_section_background_image', $imagepath.'fact.jpg')); 
+  $section_background_image     = ''; 
   
   $parallax_str = '';
   
@@ -100,6 +100,7 @@
                                     <?php
 										$exclude_id = get_the_ID();
 										$thumb_array = best_food_get_blog_thumbnail($exclude_id);
+										
                                     ?>
                                         <img src="<?php if($thumb_array['fullpath'] != ''){echo esc_url($thumb_array['fullpath']);}?>" /> 
 
