@@ -3,7 +3,7 @@ function qt_custom_breadcrumbs() {
  
   $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
   $delimiter = ''; // delimiter between crumbs
-  $home = 'Home'; // text for the 'Home' link
+  $home = __('Home','appointment'); // text for the 'Home' link
   $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
   $before = '<li class="active">'; // tag before the current crumb
   $after = '</li>'; // tag after the current crumb
@@ -22,10 +22,10 @@ function qt_custom_breadcrumbs() {
     if ( is_category() ) {
       $thisCat = get_category(get_query_var('cat'), false);
       if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, ' ' . ' ');
-      echo $before . 'Archive by category "' . single_cat_title('', false) . '"' . $after;
+      echo $before . __('Archive by category','appointment'). ' "' . single_cat_title('', false) . '"' . $after;
  
     } elseif ( is_search() ) {
-      echo $before . 'Search results for "' . get_search_query() . '"' . $after;
+	  echo $before . __('Search results for','appointment').' "' . get_search_query() . '"' . $after;
  
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . '&nbsp &#47; &nbsp';
@@ -86,15 +86,15 @@ function qt_custom_breadcrumbs() {
       if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
  
     } elseif ( is_tag() ) {
-      echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
+      echo $before . __('Posts tagged','appointment').' "' . single_tag_title('', false) . '"' . $after;
  
     } elseif ( is_author() ) {
        global $author;
       $userdata = get_userdata($author);
-      echo $before . 'Articles posted by ' . $userdata->display_name . $after;
+      echo $before . __('Articles posted by','appointment').' ' . $userdata->display_name . $after;
  
     } elseif ( is_404() ) {
-      echo $before . 'Error 404' . $after;
+      echo $before . __('Error 404','appointment') . $after;
     }
  
     if ( get_query_var('paged') ) {
@@ -102,9 +102,14 @@ function qt_custom_breadcrumbs() {
       echo ' ( ' . __('Page','appointment') . '' . get_query_var('paged'). ' )';
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo '';
     }
+	
+	if ( get_query_var('paged') ) {
+      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo '';
+      echo ' ( ' . __('Page','appointment') . '' . get_query_var('paged'). ' )';
+      if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo '';
+    }
  
     echo '</li>';
- 
   }
 } // end qt_custom_breadcrumbs()
 ?>

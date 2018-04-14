@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@Version 2.7
+1. fixed string translation issue in breadcrumb file.
 @Version 2.6.9
 1. Remove 3 subject tags.
 @Version 2.6.8
