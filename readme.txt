@@ -17,6 +17,10 @@ ArtGallery is fully Responsive Moto WordPress Theme. Features: Custom Logo, Cust
 
 == Changelog ==
 
+= 1.0.3 =
+- add homepage slider
+- add facebook widget support
+
 = 1.0.2 =
 - update GPL license declarations in style.css and readme.txt
 - remove searchform.php
@@ -46,8 +50,20 @@ ArtGallery is fully Responsive Moto WordPress Theme. Features: Custom Logo, Cust
 *
 * assets/js/viewportchecker.js - the MIT license, Reference: http://opensource.org/licenses/MIT
 *
-* screenshot.png (Post Image), © Pexels
-* image source: https://pixabay.com/en/woman-art-creative-relaxation-girl-1283009/, CC0
+* assets/js/camera.min.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
+* assets/js/camera.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
+* assets/js/jquery.easing.1.3.js BSD License Reference: http://www.linfo.org/bsdlicense.html
+* assets/js/jquery.mobile.customized.js MIT license Reference: http://jquery.org/license
+* assets/js/jquery.mobile.customized.min.js MIT license Reference: http://jquery.org/license
+*
+*
+* images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/woman-art-creative-relaxation-girl-1283009/
+*
+* images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/macwhirter-art-artistic-artistry-86737/
+*
+* images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/arthur-parton-art-artistic-artistry-89413/
+*
+* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/woman-art-creative-relaxation-girl-1283009/
 *
 * inc/customize-pro/class-customize.php, © Justin Tadlock (justintadlock), GNU Version 2
 * inc/customize-pro/customize-controls.css, © Justin Tadlock (justintadlock), GNU Version 2

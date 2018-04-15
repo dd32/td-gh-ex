@@ -22,6 +22,79 @@ if ( ! function_exists( 'artgallery_customize_register' ) ) :
 	function artgallery_customize_register( $wp_customize ) {
 
 		/**
+		 * Add Slider Section
+		 */
+		$wp_customize->add_section(
+			'artgallery_slider_section',
+			array(
+				'title'       => __( 'Slider', 'artgallery' ),
+				'capability'  => 'edit_theme_options',
+			)
+		);
+
+		// Add display slider option
+		$wp_customize->add_setting(
+				'artgallery_slider_display',
+				array(
+						'default'           => 1,
+						'sanitize_callback' => 'artgallery_sanitize_checkbox',
+				)
+		);
+
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'artgallery_slider_display',
+								array(
+									'label'          => __( 'Display Slider', 'artgallery' ),
+									'section'        => 'artgallery_slider_section',
+									'settings'       => 'artgallery_slider_display',
+									'type'           => 'checkbox',
+								)
+							)
+		);
+		
+		for ($i = 1; $i <= 3; ++$i) {
+		
+			$slideContentId = 'artgallery_slide'.$i.'_content';
+			$slideImageId = 'artgallery_slide'.$i.'_image';
+			$defaultSliderImagePath = get_template_directory_uri().'/images/slider/'.$i.'.jpg';
+		
+			// Add Slide Content
+			$wp_customize->add_setting(
+				$slideContentId,
+				array(
+					'default'           => __( '<h2>This is Default Slide Title</h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'artgallery' ),
+					'sanitize_callback' => 'force_balance_tags',
+				)
+			);
+			
+			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, $slideContentId,
+										array(
+											'label'          => sprintf( esc_html__( 'Slide #%s Content', 'artgallery' ), $i ),
+											'section'        => 'artgallery_slider_section',
+											'settings'       => $slideContentId,
+											'type'           => 'textarea',
+											)
+										)
+			);
+			
+			// Add Slide Background Image
+			$wp_customize->add_setting( $slideImageId,
+				array(
+					'default' => $defaultSliderImagePath,
+					'sanitize_callback' => 'esc_url_raw'
+				)
+			);
+
+			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $slideImageId,
+					array(
+						'label'   	 => sprintf( esc_html__( 'Slide #%s Image', 'artgallery' ), $i ),
+						'section' 	 => 'artgallery_slider_section',
+						'settings'   => $slideImageId,
+					) 
+				)
+			);
+		}
+
+		/**
 	     * Add Animations Section
 	     */
 	    $wp_customize->add_section(

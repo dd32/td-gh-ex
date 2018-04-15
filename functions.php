@@ -166,6 +166,10 @@ if ( ! function_exists( 'artgallery_load_scripts' ) ) :
 	        'loading_effect' => ( get_theme_mod('artgallery_animations_display', 1) == 1 ),
 	    );
 	    wp_localize_script('artgallery-utilities', 'artgallery_options', $data);
+
+	    wp_enqueue_script( 'jquery.mobile.customized', get_template_directory_uri() . '/assets/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
+		wp_enqueue_script( 'jquery.easing.1.3', get_template_directory_uri() . '/assets/js/jquery.easing.1.3.js', array( 'jquery' ) );
+		wp_enqueue_script( 'camera', get_template_directory_uri() . '/assets/js/camera.min.js', array( 'jquery' ) );
 	}
 endif; // artgallery_load_scripts
 add_action( 'wp_enqueue_scripts', 'artgallery_load_scripts' );
@@ -238,6 +242,37 @@ if ( ! function_exists( 'artgallery_show_copyright_text' ) ) :
 	}
 endif; // artgallery_show_copyright_text
 
+if ( ! function_exists( 'artgallery_display_slider' ) ) :
+	/**
+	 * Displays the slider
+	 */
+	function artgallery_display_slider() {
+	?>
+		<div class="camera_wrap camera_emboss" id="camera_wrap">
+			<?php
+				// display slides
+				for ( $i = 1; $i <= 3; ++$i ) {
+
+						$defaultSlideContent = __( '<h3>This is Default Slide Title</h3><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'artgallery' );
+						
+						$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
+
+						$slideContent = get_theme_mod( 'artgallery_slide'.$i.'_content', html_entity_decode( $defaultSlideContent ) );
+						$slideImage = get_theme_mod( 'artgallery_slide'.$i.'_image', $defaultSlideImage );
+
+					?>
+
+						<div data-thumb="<?php echo esc_attr( $slideImage ); ?>" data-src="<?php echo esc_attr( $slideImage ); ?>">
+							<div class="camera_caption fadeFromBottom">
+								<?php echo $slideContent; ?>
+							</div>
+						</div>
+	<?php		} ?>
+		</div><!-- #camera_wrap -->
+	<?php 
+	}
+endif; // artgallery_display_slider
+
 /**
  * Implement the Custom Header feature.
  */
@@ -247,4 +282,9 @@ require get_template_directory() . '/inc/custom-header.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Plugin Recommendation
+*/
+require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';
 

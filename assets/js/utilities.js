@@ -133,6 +133,18 @@
 
 			return false;
 		});
+
+
+		$(function(){
+			$('#camera_wrap').camera({
+				height: '450px',
+				loader: 'bar',
+				pagination: true,
+				thumbnails: false,
+				time: 4500
+			});
+		});
+
 	});
 
 })(jQuery);
