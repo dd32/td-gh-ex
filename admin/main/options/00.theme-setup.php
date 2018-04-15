@@ -46,7 +46,7 @@ function thinkup_title_select() {
 	} elseif ( is_attachment() ) {
 		printf( __( 'Blog Post Image: %s', 'lan-thinkupthemes' ), esc_html( get_the_title( $post->post_parent ) ) );
 	} else if ( is_single() ) {
-		printf( '%s', esc_html( get_the_title() ) );
+		printf( '%s', html_entity_decode( esc_html( get_the_title() ) ) );
 	} else if ( is_search() ) {
 		printf( __( 'Search Results: %s', 'lan-thinkupthemes' ), get_search_query() );
 	} else if ( is_404() ) {
@@ -65,12 +65,25 @@ function thinkup_title_select() {
 		printf( __( 'Monthly Archives: %s', 'lan-thinkupthemes' ), get_the_date( 'F Y' ) );
 	} elseif ( is_year() ) {
 		printf( __( 'Yearly Archives: %s', 'lan-thinkupthemes' ), get_the_date( 'Y' ) );
+	} elseif ( is_archive() ) {
+		printf( get_the_archive_title() );
+	} elseif ( is_tax() ) {
+		printf( get_queried_object()->name );
 	} elseif ( thinkup_check_isblog() ) {
 		printf( __( 'Blog', 'lan-thinkupthemes' ) );
 	} else {
-		printf( '%s', esc_html( get_the_title() ) );
+		printf( '%s', html_entity_decode( esc_html( get_the_title() ) ) );
 	}
 }
+
+// Remove "archive" text from custom post type archive pages
+function thinkup_title_select_cpt($title) {
+    if ( is_post_type_archive() ) {
+		$title = post_type_archive_title( '', false );
+	}
+	return $title;
+};
+add_filter( 'get_the_archive_title', 'thinkup_title_select_cpt' );
 
 
 /* ----------------------------------------------------------------------------------
