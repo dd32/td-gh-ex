@@ -103,6 +103,14 @@ See templates/index.php for rendering flow.
 /**
 * Fires the theme : constants definition, core classes loading
 *
+*
+* @package      Customizr
+* @subpackage   classes
+* @since        4.0
+* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
+* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
+* @link         http://presscustomizr.com/customizr
+* @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'CZR___' ) ) :
 
@@ -178,9 +186,9 @@ if ( ! class_exists( 'CZR___' ) ) :
 
             add_action( 'czr_after_load'         , array( $this, 'czr_maybe_prevdem') );
 
-            // control the display of the update notification for a list of versions
-            // typically useful when several versions are released in a short time interval
-            // to avoid hammering the wp admin dashboard with a new admin notice each time
+            //don't display update notification for a list of versions
+            //typically useful when several versions are released in a short time interval
+            //to avoid hammering the wp admin dashboard with a new admin notice each time
             $this -> _hide_update_notification_for_versions = array();
             if( ! defined( 'DISPLAY_UPDATE_NOTIFICATION' ) ) {
                 define( 'DISPLAY_UPDATE_NOTIFICATION' , ! in_array( CUSTOMIZR_VER, $this -> _hide_update_notification_for_versions ) );
@@ -313,7 +321,7 @@ if ( ! class_exists( 'CZR___' ) ) :
             }
 
             //load the new framework classes
-            if ( !CZR_IS_PRO && CZR_DEV_MODE ) {
+            if ( CZR_DEV_MODE ) {
                 $this -> czr_fn_require_once( CZR_FRAMEWORK_PATH . 'class-model.php' );
                 $this -> czr_fn_require_once( CZR_FRAMEWORK_PATH . 'class-collection.php' );
                 $this -> czr_fn_require_once( CZR_FRAMEWORK_PATH . 'class-view.php' );

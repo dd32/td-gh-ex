@@ -63,7 +63,7 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
 
             //add retina support for high resolution devices
             add_filter( 'wp_generate_attachment_metadata'        , array( $this , 'czr_fn_add_retina_support') , 10 , 2 );
-            add_action( 'delete_attachment'                      , array( $this , 'czr_fn_clean_retina_images') );
+            add_filter( 'delete_attachment'                      , array( $this , 'czr_fn_clean_retina_images') );
 
             //prevent rendering the comments template more than once
             add_filter( 'tc_render_comments_template'            , array( $this,  'czr_fn_control_coments_template_rendering' ) );
@@ -72,11 +72,6 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
             //remove hentry class when the current $post type is a page
             add_filter( 'post_class'                             , array( $this, 'czr_fn_maybe_remove_hentry_class' ), 20 );
 
-            // WP 5.0.0 compat. until the bug is fixed
-            // this hook fires before the customize changeset is inserter / updated in database
-            // Removing the wp_targeted_link_rel callback from the 'content_save_pre' filter prevents corrupting the changeset JSON
-            // more details in this ticket : https://core.trac.wordpress.org/ticket/45292
-            add_action( 'customize_save_validation_before'       , array( $this, 'czr_fn_remove_callback_wp_targeted_link_rel' ) );
 
             //Default images sizes
             $this -> tc_thumb_size      = array( 'width' => 270 , 'height' => 250, 'crop' => true ); //size name : tc-thumb
@@ -316,14 +311,6 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
             $post_formats   = apply_filters( 'tc_post_formats', array( 'aside' , 'gallery' , 'link' , 'image' , 'quote' , 'status' , 'video' , 'audio' , 'chat' ) );
             add_theme_support( 'post-formats' , $post_formats );
 
-            // Add theme support for Custom Logo.
-            add_theme_support( 'custom-logo', array(
-              'width'       => 250,
-              'height'      => 100,
-              'flex-width'  => true,
-              'flex-height' => true,
-            ) );
-
             /* support for page excerpt (added in v3.0.15) */
             add_post_type_support( 'page', 'excerpt' );
 
@@ -337,9 +324,6 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
             //remove theme support => generates notice in admin @todo fix-it!
              /* remove_theme_support( 'custom-background' );
               remove_theme_support( 'custom-header' );*/
-
-            // Add support for Gutenberg responsive embeds
-            add_theme_support( 'responsive-embeds' );
 
             //post thumbnails for featured pages and post lists (archive, search, ...)
             $tc_thumb_size    = apply_filters( 'tc_thumb_size' , CZR___::$instance -> tc_thumb_size );
@@ -382,6 +366,10 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
 
             //add support for svg and svgz format in media upload
             add_filter( 'upload_mimes'                        , array( $this , 'czr_fn_custom_mtypes' ) );
+
+            //add help button to admin bar
+            add_action ( 'wp_before_admin_bar_render'         , array( $this , 'czr_fn_add_help_button' ));
+
 
             // Add theme support for selective refresh for widgets.
             // Only add if the link manager is not enabled
@@ -441,6 +429,32 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
 
 
 
+
+      /**
+      * hook : 'wp_before_admin_bar_render'
+      * Add help button
+      */
+      function czr_fn_add_help_button() {
+          if ( czr_fn_is_pro() ) {
+              global $wp_admin_bar;
+              $wp_admin_bar->add_menu( array(
+                  'parent' => 'top-secondary', // Off on the right side
+                  'id' => 'tc-customizr-help' ,
+                  'title' =>  '',
+                  'href' => admin_url( 'themes.php?page=welcome.php&help=true' ),
+                  'meta'   => array(
+                      'title'  => __( 'Need help with Customizr? Click here!', 'customizr' ),
+                  ),
+              ));
+          }
+      }
+
+
+
+
+
+
+
         /**
        * This function handles the support for high resolution devices
        *
@@ -457,86 +471,17 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
           if ( ! is_array($metadata) )
             return $metadata;
 
-
           //Create the retina image for the main file
-          /*
-          when the attachment is a pdf:
-          isset($metadata['width']) && isset($metadata['height'])
-          is false as $metadata is like:
-          Array
-          (
-              [sizes] => Array
-                  (
-                      [thumbnail] => Array
-                          (
-                              [file] => 15626866-1-pdf-116x150.jpg
-                              [width] => 116
-                              [height] => 150
-                              [mime-type] => image/jpeg
-                          )
-
-                      [medium] => Array
-                          (
-                              [file] => 15626866-1-pdf-232x300.jpg
-                              [width] => 232
-                              [height] => 300
-                              [mime-type] => image/jpeg
-                          )
-
-                      [large] => Array
-                          (
-                              [file] => 15626866-1-pdf-791x1024.jpg
-                              [width] => 791
-                              [height] => 1024
-                              [mime-type] => image/jpeg
-                          )
-
-                      [full] => Array
-                          (
-                              [file] => 15626866-1-pdf.jpg
-                              [width] => 1088
-                              [height] => 1408
-                              [mime-type] => image/jpeg
-                          )
-
-                  )
-
-          )
-          */
-          if ( apply_filters( 'czr_build_retina_files_for_pdf_thumbnails', 'application/pdf' == get_post_mime_type( $attachment_id ) ) ) {
-              if ( empty( $metadata[ 'sizes' ][ 'full' ][ 'file' ] ) ) {
-                return $metadata;
-              }
-              //build attached file image from url
-              $original_pdf_file = get_attached_file( $attachment_id );
-              $dirname           = dirname( $original_pdf_file );
-              $full_image_file   = trailingslashit( $dirname ) . $metadata[ 'sizes' ][ 'full' ][ 'file' ];
-          }
-
-          //Because of the structure of the metadata array for pdf files, this will be skipped
-          if ( isset($metadata['width']) && isset($metadata['height']) )
+          if ( is_array($metadata) && isset($metadata['width']) && isset($metadata['height']) )
             $this -> czr_fn_create_retina_images( get_attached_file( $attachment_id ), $metadata['width'], $metadata['height'] , false, $_is_intermediate = false );
 
-
-          //if the full_image_file var is defined (because we built it for pdf files), use it
-          $full_image_file = isset( $full_image_file ) ? $full_image_file : get_attached_file( $attachment_id );
-
           //Create the retina images for each WP sizes
-          $sizes = ! empty( $metadata[ 'sizes' ] ) ? $metadata[ 'sizes' ] : null;
-
-          if ( is_array( $sizes ) ) {
-              foreach ( $sizes as $_size_name => $_attr ) {
-                  if ( is_array( $_attr ) && isset($_attr['width']) && isset($_attr['height']) ) {
-                      $this -> czr_fn_create_retina_images(
-                        $full_image_file,
-                        $_attr['width'],
-                        $_attr['height'],
-                        //as for the pdf metadata structure, the full size name refers to the full jpg thumbnail, which we don't want to crop
-                        $crop = 'full' != $_size_name,
-                        //as for the pdf metadata structure, the full size name refers to the full jpg thumbnail, which is not what we intend as intermediate
-                        $_is_intermediate = 'full' != $_size_name
-                      );
-                  }
+          foreach ( $metadata as $key => $data ) {
+              if ( 'sizes' != $key )
+                continue;
+              foreach ( $data as $_size_name => $_attr ) {
+                  if ( is_array( $_attr ) && isset($_attr['width']) && isset($_attr['height']) )
+                      $this -> czr_fn_create_retina_images( get_attached_file( $attachment_id ), $_attr['width'], $_attr['height'], true, $_is_intermediate = true );
               }
           }
           return $metadata;
@@ -565,10 +510,9 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
               $resized_file -> resize( $width * 2, $height * 2, $crop );
               $resized_file -> save( $filename );
 
-              /*
               $info = $resized_file -> get_size();
 
-              return array(
+              /*return array(
                   'file' => wp_basename( $filename ),
                   'width' => $info['width'],
                   'height' => $info['height'],
@@ -590,42 +534,22 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
        */
         function czr_fn_clean_retina_images( $attachment_id ) {
           $meta = wp_get_attachment_metadata( $attachment_id );
-
-          if ( ! isset( $meta['file'] ) ) {
-            //pdf case
-            if ( apply_filters( 'czr_build_retina_files_for_pdf_thumbnails', 'application/pdf' == get_post_mime_type( $attachment_id ) ) ) {
-                if ( empty( $meta[ 'sizes' ][ 'full' ][ 'file' ] ) ) {
-                  return;
-                }
-                $original_pdf_file = get_attached_file( $attachment_id );
-                $dirname           = dirname( $original_pdf_file );
-                $full_image_file   = trailingslashit( $dirname ) . $meta[ 'sizes' ][ 'full' ][ 'file' ];
-            } else {
-              return;
-            }
-          }
-
-          //if the full_image_file var is defined (because we built it for pdf files), use it
-          $full_image_file = isset( $full_image_file ) ? $full_image_file : get_attached_file( $attachment_id );
-
-          $sizes           = $meta['sizes'];
-
-          if ( !is_array( $sizes ) )
+          if ( !isset( $meta['file']) )
             return;
 
+          $upload_dir = wp_upload_dir();
+          $path = pathinfo( $meta['file'] );
+          $sizes = $meta['sizes'];
           // append to the sizes the original file
-          if ( !isset( $sizes[ 'full' ] ) ) {
-            $sizes['full'] = array( 'file' => basename( $full_image_file ) );
-          }
+          $sizes['original'] = array( 'file' => $path['basename'] );
 
-          //Remove the retina images for each WP sizes
           foreach ( $sizes as $size ) {
-            $original_filename = str_replace( basename( $full_image_file ), $size['file'], $full_image_file );
+            $original_filename = $upload_dir['basedir'] . '/' . $path['dirname'] . '/' . $size['file'];
             $retina_filename = substr_replace( $original_filename, '@2x.', strrpos( $original_filename, '.' ), strlen( '.' ) );
-            if ( file_exists( $retina_filename ) )
-              @ unlink( $retina_filename );
-          }
 
+            if ( file_exists( $retina_filename ) )
+              unlink( $retina_filename );
+          }
         }//end of function
 
 
@@ -694,14 +618,11 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
         */
         function czr_fn_set_early_hooks() {
             //Filter home/blog postsa (priority 9 is to make it act before the grid hook for expanded post)
-            add_action ( 'pre_get_posts'                , array( $this , 'czr_fn_filter_home_blog_posts_by_tax' ), 9);
-            // Make sure the infinite scroll query object is filtered as well
-            // Fix for https://github.com/presscustomizr/customizr-pro/issues/46
-            add_filter ( 'infinite_scroll_query_object' , array( $this , 'czr_fn_filter_home_blog_infinite_posts_by_tax' ) );
+            add_action ( 'pre_get_posts'         , array( $this , 'czr_fn_filter_home_blog_posts_by_tax' ), 9);
             //Include attachments in search results
-            add_action ( 'pre_get_posts'                , array( $this , 'czr_fn_include_attachments_in_search' ));
+            add_action ( 'pre_get_posts'         , array( $this , 'czr_fn_include_attachments_in_search' ));
             //Include all post types in archive pages
-            add_action ( 'pre_get_posts'                , array( $this , 'czr_fn_include_cpt_in_lists' ));
+            add_action ( 'pre_get_posts'         , array( $this , 'czr_fn_include_cpt_in_lists' ));
         }
 
 
@@ -714,36 +635,18 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
         * @since Customizr 3.4.10
         */
         function czr_fn_filter_home_blog_posts_by_tax( $query ) {
-          $this->_czr_fn_filter_home_blog_posts_by_tax( $query );
-        }
-
-
-        /**
-        * hook : infinite_scroll_query_object
-        * Filter home/blog posts by tax: cat
-        * @return modified query object
-        * @package Customizr
-        */
-        function czr_fn_filter_home_blog_infinite_posts_by_tax( $query ) {
-          return $this->_czr_fn_filter_home_blog_posts_by_tax( $query, $reset_cat_category_name = true );
-        }
-
-        // this method was implemented to fix https://github.com/presscustomizr/customizr-pro/issues/46
-        private function _czr_fn_filter_home_blog_posts_by_tax( $query, $reset_cat_category_name = false ) {
             // when we have to filter?
             // in home and blog page
-            if ( is_admin() || ! $query->is_main_query()
+            if ( ! $query->is_main_query()
               || ! ( ( is_home() && 'posts' == get_option('show_on_front') ) || $query->is_posts_page )
-            ) {
-                return $query;
-            }
+            )
+              return;
 
             //temp: do not filter in classic style when classic grid enabled and infinite scroll enabled in home/blog
             if ( ! CZR_IS_MODERN_STYLE &&
               'grid'== esc_attr( czr_fn_opt( 'tc_post_list_grid' ) ) &&
-               class_exists( 'PC_init_infinite' ) && esc_attr( czr_fn_opt( 'tc_infinite_scroll' ) ) && esc_attr( czr_fn_opt( 'tc_infinite_scroll_in_home' ) ) ) {
-                return $query;
-            }
+               class_exists( 'PC_init_infinite' ) && esc_attr( czr_fn_opt( 'tc_infinite_scroll' ) ) && esc_attr( czr_fn_opt( 'tc_infinite_scroll_in_home' ) ) )
+            return;
 
             // categories
             // we have to ignore sticky posts (do not prepend them)
@@ -752,27 +655,11 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
             $cats = array_filter( $cats, 'czr_fn_category_id_exists' );
 
             if ( is_array( $cats ) && ! empty( $cats ) ){
-              // Fix for https://github.com/presscustomizr/customizr-pro/issues/46
-              // Basically when we filter the blog with more than one category
-              // "infinite posts" are filtered by the category with the smaller ID defined in $cats.
-              // The reason is that the infinite scroll query takes as arguments the query vars of the
-              // "first page" query, that are localized and then sent back in the ajax request, and
-              // when we apply the category__in 'filter' to the blog page, for some reason, the main wp_query
-              // vars "cat" and "category_name" are set as the ID and the name of the smaller ID defined in $cats.
-              // With the if block below we avoid this unwanted behavior.
-              if ( $reset_cat_category_name ) {
-                $query->set( 'cat', '' );
-                $query->set( 'category_name', '' );
-              }
-
-              $query->set('category__in', $cats );
-              $query->set('ignore_sticky_posts', 1 );
-              add_filter('tc_grid_expand_featured', '__return_false');
+               $query->set('category__in', $cats );
+               $query->set('ignore_sticky_posts', 1 );
+               add_filter('tc_grid_expand_featured', '__return_false');
             }
-            return $query;
         }
-
-
 
 
         /**
@@ -1048,15 +935,6 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
         }
 
 
-        /**
-         * hook : customize_save_validation_before'
-         */
-        function czr_fn_remove_callback_wp_targeted_link_rel() {
-            if ( false !== has_filter( 'content_save_pre', 'wp_targeted_link_rel' ) ) {
-                remove_filter( 'content_save_pre', 'wp_targeted_link_rel' );
-            }
-        }
-
   }
 endif;
 
@@ -1074,214 +952,50 @@ czr_fn_setup_constants();
 //setup started using theme option ( before checking czr_fn_is_ms() that uses the user_started_before_Version function to determine it )
 czr_fn_setup_started_using_theme_option_and_constants();
 
-
-add_action( 'after_setup_theme', 'czr_fn_load_czr_base_fmk', 15 );
-function czr_fn_load_czr_base_fmk() {
-    // load the czr-base-fmk
-    if ( ! isset( $GLOBALS['czr_base_fmk_namespace'] ) ) {
-        require_once(  dirname( __FILE__ ) . '/czr-base-fmk/czr-base-fmk.php' );
-        \czr_fn\CZR_Fmk_Base( array(
-           'text_domain' => 'customizr',
-           'base_url' => CZR_BASE_URL . 'core/czr-base-fmk',
-           'version' => CUSTOMIZR_VER
-        ) );
-    } else {
-        //error_log('Warning => the czr_base_fmk should be loaded and instantiated by the theme.');
-    }
+// load the czr-base-fmk
+if ( ! isset( $GLOBALS['czr_base_fmk_namespace'] ) ) {
+    require_once(  dirname( __FILE__ ) . '/czr-base-fmk/czr-base-fmk.php' );
+    \czr_fn\CZR_Fmk_Base( array(
+       'text_domain' => 'customizr',
+       'base_url' => CZR_BASE_URL . 'core/czr-base-fmk',
+       'version' => CUSTOMIZR_VER
+    ) );
+} else {
+    error_log('Warning => the czr_base_fmk should be loaded and instantiated by the theme.');
 }
 
-add_action( 'after_setup_theme', 'czr_fn_load_social_links_module', 20 );
-function czr_fn_load_social_links_module() {
-    // load the social links module
-    require_once( CZR_BASE . CZR_CORE_PATH . 'czr-modules/social-links/social_links_module.php' );
-    czr_fn_register_social_links_module(
-        array(
-            'setting_id' => 'tc_theme_options[tc_social_links]',
 
-            'base_url_path' => CZR_BASE_URL . '/core/czr-modules/social-links',
-            'version' => CUSTOMIZR_VER,
+// load the social links module
+require_once( CZR_BASE . CZR_CORE_PATH . 'czr-modules/social-links/social_links_module.php' );
+czr_fn_register_social_links_module(
+    array(
+        'setting_id' => 'tc_theme_options[tc_social_links]',
 
-            'option_value' => czr_fn_opt( 'tc_social_links' ), // for dynamic registration
-            'setting' => array(
-                'type' => 'option',
-                'default'  => array(),
-                'transport' => czr_fn_is_partial_refreshed_on() ? 'postMessage' : 'refresh',
-                'sanitize_callback' => 'czr_fn_sanitize_callback__czr_social_module',
-                // we only sanitize for now, to avoid : https://github.com/presscustomizr/social-links-modules/issues/1
-                'validate_callback' => ''//czr_fn_validate_callback__czr_social_module'
-            ),
+        'base_url_path' => CZR_BASE_URL . '/core/czr-modules/social-links',
+        'version' => CUSTOMIZR_VER,
 
-            'section' => array(
-                'id' => 'socials_sec',
-                'title' => __( 'Social links', 'customizr' ),
-                'panel' => 'tc-global-panel',
-                'priority' => 20
-            ),
+        'option_value' => czr_fn_opt( 'tc_social_links' ), // for dynamic registration
+        'setting' => array(
+            'type' => 'option',
+            'default'  => array(),
+            'transport' => czr_fn_is_partial_refreshed_on() ? 'postMessage' : 'refresh',
+            'sanitize_callback' => 'czr_fn_sanitize_callback__czr_social_module',
+            'validate_callback' => 'czr_fn_validate_callback__czr_social_module'
+        ),
 
-            'control' => array(
-                'priority' => 10,
-                'label' => __( 'Create and organize your social links', 'customizr' ),
-                'type'  => 'czr_module',
-            )
+        'section' => array(
+            'id' => 'socials_sec',
+            'title' => __( 'Social links', 'customizr' ),
+            'panel' => 'tc-global-panel',
+            'priority' => 20
+        ),
+
+        'control' => array(
+            'priority' => 10,
+            'label' => __( 'Create and organize your social links', 'customizr' ),
+            'type'  => 'czr_module',
         )
-    );
-}
+    )
+);
 
 require_once( get_template_directory() . ( czr_fn_is_ms() ? '/core/init.php' : '/inc/czr-init-ccat.php' ) );
-
-/* ------------------------------------------------------------------------- *
- *  Register a location for Nimble Builder
-/* ------------------------------------------------------------------------- */
-add_action( 'init', 'czr_fn_maybe_register_nimble_location');
-function czr_fn_maybe_register_nimble_location() {
-    if ( function_exists('nimble_register_location') ) {
-        nimble_register_location('__after_header', array( 'priority' => PHP_INT_MAX ) );// fired in templates/parts/header.php
-        nimble_register_location('__before_main_wrapper', array( 'priority' => PHP_INT_MAX ) );// fired in templates/index-no-model.php
-        //nimble_register_location('__after_main_wrapper', array( 'priority' => PHP_INT_MAX ) ); // fired in /wp-content/themes/customizr/templates/parts/footer.php
-        nimble_register_location('__before_footer', array( 'priority' => PHP_INT_MAX ) ); // fired in templates/parts/footer.php
-    }
-}
-// added to fix the problem of locations not rendered when using Nimble templates for content and / or header and footer
-// see https://github.com/presscustomizr/nimble-builder/issues/369
-foreach( [ 'after_nimble_header', 'nimble_template_before_content_sections', 'before_nimble_footer' ] as $nimble_hook ) {
-    add_action( $nimble_hook, 'czr_fn_render_locations_when_using_nimble_templates' );
-}
-function czr_fn_render_locations_when_using_nimble_templates() {
-    if ( !function_exists('Nimble\Nimble_Manager') )
-      return;
-    $location = '';
-    switch( current_filter() ) {
-        case 'after_nimble_header' :
-            $location = '__after_header';
-        break;
-        case 'nimble_template_before_content_sections' :
-            $location = '__before_main_wrapper';
-        break;
-        case 'before_nimble_footer' :
-            $location = '__before_footer';
-        break;
-    }
-    if ( ! empty( $location ) ) {
-        \Nimble\Nimble_Manager()->render_nimble_locations( $location );
-    }
-}
-
-/* ------------------------------------------------------------------------- *
- *  Loads Required Plugin Class and Setup
-/* ------------------------------------------------------------------------- */
-if ( is_admin() && ! czr_fn_is_customizing() && ! czr_fn_is_pro() && ! czr_fn_is_plugin_active('nimble-builder/nimble-builder.php') ) {
-    /**
-    * Include the CZR_Plugin_Activation class.
-    * prefixed CZR_Plugin_Activation because of the possible issue : https://github.com/presscustomizr/customizr/issues/1603
-    */
-    load_template( get_template_directory() . '/core/class-tgm-plugin-activation.php' );
-    add_action( 'tgmpa_register', 'czr_fn_register_required_plugins');
-}
-
-/**
- * Register the required plugins for this theme.
- *
- * In this example, we register two plugins - one included with the TGMPA library
- * and one from the .org repo.
- *
- * The variable passed to tgmpa_register_plugins() should be an array of plugin
- * arrays.
- *
- * This function is hooked into tgmpa_init, which is fired within the
- * CZR_Plugin_Activation class constructor.
- */
-function czr_fn_register_required_plugins() {
-
-  /**
-   * Array of plugin arrays. Required keys are name and slug.
-   * If the source is NOT from the .org repo, then source is also required.
-   */
-  $plugins = array(
-
-    // This is an example of how to include a plugin pre-packaged with a theme
-    // array(
-    //   'name'            => 'TGM Example Plugin', // The plugin name
-    //   'slug'            => 'tgm-example-plugin', // The plugin slug (typically the folder name)
-    //   'source'          => get_stylesheet_directory() . '/lib/plugins/tgm-example-plugin.zip', // The plugin source
-    //   'required'        => true, // If false, the plugin is only 'recommended' instead of required
-    //   'version'         => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-    //   'force_activation'    => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-    //   'force_deactivation'  => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-    //   'external_url'      => '', // If set, overrides default API URL and points to an external URL
-    // ),
-
-    // This is an example of how to include a plugin from the WordPress Plugin Repository
-    array(
-      'name'    => 'Nimble Builder',
-      'slug'    => 'nimble-builder',
-      'required'  => false,
-    ),
-
-  );
-
-
-  /**
-   * Array of configuration settings. Amend each line as needed.
-   * If you want the default strings to be available under your own theme domain,
-   * leave the strings uncommented.
-   * Some of the strings are added into a sprintf, so see the comments at the
-   * end of each line for what each argument will be.
-   */
-  $config = array(
-      'id'           => 'customizr',                 // Unique ID for hashing notices for multiple instances of TGMPA.
-      'default_path' => '',                      // Default absolute path to bundled plugins.
-      'menu'         => 'tgmpa-install-plugins', // Menu slug.
-      'has_notices'  => true,                    // Show admin notices or not.
-      'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
-      'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
-      'is_automatic' => false,                   // Automatically activate plugins after installation or not.
-      'message'      => '',                      // Message to output right before the plugins table.
-      'message'       => '',              // Message to output right before the plugins table
-      'strings'         => array(
-          'page_title'                            => __( 'Install Required Plugins', 'customizr' ),
-          'menu_title'                            => __( 'Install Plugins', 'customizr' ),
-          'installing'                            => __( 'Installing Plugin: %s', 'customizr' ), // %1$s = plugin name
-          'oops'                                  => __( 'Something went wrong with the plugin API.', 'customizr' ),
-          'notice_can_install_required'           => _n_noop( 'The Customizr theme requires the following plugin: %1$s.', 'This theme requires the following plugins : %1$s.', 'customizr' ), // %1$s = plugin name(s)
-          'notice_can_install_recommended'      => _n_noop( 'The Customizr theme recommends the Nimble drag-and-drop section builder : %1$s.', 'This theme recommends the following plugins : %1$s.', 'customizr' ), // %1$s = plugin name(s)
-          'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'customizr' ), // %1$s = plugin name(s)
-          'notice_can_activate_required'          => _n_noop( 'The Nimble Builder required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'customizr' ), // %1$s = plugin name(s)
-          'notice_can_activate_recommended'     => _n_noop( 'The Nimble Builder plugin, recommended for the Customizr theme, is installed but currently inactive : %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'customizr' ), // %1$s = plugin name(s)
-          'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'customizr' ), // %1$s = plugin name(s)
-          'notice_ask_to_update'            => _n_noop( 'The Nimble Builder plugin needs to be updated to its latest version to ensure maximum compatibility with the Customizr theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'customizr' ), // %1$s = plugin name(s)
-          'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'customizr' ), // %1$s = plugin name(s)
-          'install_link'                  => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'customizr' ),
-          'activate_link'                 => _n_noop( 'Activate Nimble Builder', 'Activate installed plugins', 'customizr' ),
-          'return'                                => __( 'Return to Required Plugins Installer', 'customizr' ),
-          'plugin_activated'                      => __( 'Plugin activated successfully.', 'customizr' ),
-          'complete'                  => __( 'All plugins installed and activated successfully. %s', 'customizr' ), // %1$s = dashboard link
-          'nag_type'                  => 'updated' // Determines admin notice type - can only be 'updated' or 'error'
-      )
-  );
-
-  tgmpa( $plugins, $config );
-
-}
-
-// @filter czr_model_map => removes 'main_content' model from the map since we don't need it when using the Nimble template.
-// @see core/init.php
-function czr_fn_filter_model_map_when_nimble_template_set( $map ) {
-    if ( function_exists('Nimble\sek_get_locale_template') ) {
-        $tmpl_name = \Nimble\sek_get_locale_template();
-        // when using the full nimble template, we don't need to load any Customizr model
-        // when using the mixed Nimble template ( header and footer from theme, content from Nimble), we don't need the main_content model
-        if ( czr_fn_is_full_nimble_tmpl() ) {
-            $map = array();
-        } else if ( !empty( $tmpl_name ) ) {
-            $new_map = array();
-            foreach ($map as $model) {
-                if ( !empty( $model['id'] ) && 'main_content' === $model['id'] )
-                  continue;
-                $new_map[] = $model;
-            }
-            $map = $new_map;
-        }
-    }
-    return $map;
-}
-add_filter( 'czr_model_map', 'czr_fn_filter_model_map_when_nimble_template_set');

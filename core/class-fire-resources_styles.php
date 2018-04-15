@@ -51,10 +51,6 @@ if ( ! class_exists( 'CZR_resources_styles' ) ) :
               $_ver        = $this->_resouces_version;
               $_ext        = $this->_is_css_minified ? '.min.css' : '.css';
 
-              // Even if using the full nimble template, we still need the Customizr stylesheet to style the widget zones.
-              // if ( czr_fn_is_full_nimble_tmpl() )
-              //   return;
-
               //wp_enqueue_style( 'customizr-flickity'       , czr_fn_get_theme_file_url( "{$_path}flickity{$_ext}" ), array(), $_ver, 'all' );
               //wp_enqueue_style( 'customizr-magnific'       , czr_fn_get_theme_file_url( "{$_path}magnific-popup{$_ext}" ), array(), $_ver, 'all' );
               //wp_enqueue_style( 'customizr-scrollbar'      , czr_fn_get_theme_file_url( "{$_path}jquery.mCustomScrollbar.min.css" ), array(), $_ver, 'all' );
@@ -137,7 +133,7 @@ if ( ! class_exists( 'CZR_resources_styles' ) ) :
          //hook : czr_user_options_style
          function czr_fn_maybe_write_header_custom_skin_inline_css( $_css ) {
                //retrieve the current option
-               $skin_color                             = czr_fn_get_header_skin();
+               $skin_color                             = czr_fn_opt( 'tc_header_skin' );
 
                if ( 'custom' != $skin_color )
                      return $_css;
@@ -306,9 +302,7 @@ if ( ! class_exists( 'CZR_resources_styles' ) ) :
                                  'background-color' => array(
                                        '.sticky-transparent.is-sticky .mobile-sticky',  //the alpha param is actually set at 0.7 for the dark_skin in the header skin scss, here we set it always at 0.9 which is the value used for the light skin
                                        '.sticky-transparent.is-sticky .desktop-sticky', //the alpah param is actually set at 0.7 for the dark_skin in the header skin scss, here we set it always at 0.9 which is the value used for the light skin
-                                       '.sticky-transparent.is-sticky .mobile-nav__nav',
-                                       '.header-transparent:not(.is-sticky) .mobile-nav__nav',
-                                       '.header-transparent:not(.is-sticky) .dropdown-menu'
+                                       '.sticky-transparent.is-sticky .mobile-nav__nav'
                                  )
                            )
                      ),
@@ -574,16 +568,7 @@ if ( ! class_exists( 'CZR_resources_styles' ) ) :
                                        '.grid-container__classic .post-type__icon:hover',
                                        'button[type=submit]',
                                        'input[type=submit]',
-                                       '.czr-link-hover-underline .widgets-list-layout-links a:not(.btn)::before', //<-jetpack top post/pages textual links only
-                                       '.czr-link-hover-underline .widget_archive a:not(.btn)::before',
-                                       '.czr-link-hover-underline .widget_nav_menu a:not(.btn)::before',
-                                       '.czr-link-hover-underline .widget_rss ul a:not(.btn)::before',
-                                       '.czr-link-hover-underline .widget_recent_entries a:not(.btn)::before',
-                                       '.czr-link-hover-underline .widget_categories a:not(.btn)::before',
-                                       '.czr-link-hover-underline .widget_meta a:not(.btn)::before',
-                                       '.czr-link-hover-underline .widget_recent_comments a:not(.btn)::before',
-                                       '.czr-link-hover-underline .widget_pages a:not(.btn)::before',
-                                       '.czr-link-hover-underline .widget_calendar a:not(.btn)::before',
+                                       '.widget-area .widget a:not(.btn):before',
                                        "[class*='grid-container__'] .hover .entry-title a::after",
                                        'a.czr-format-link::before',
                                        '.comment-author a::before',
@@ -690,7 +675,7 @@ if ( ! class_exists( 'CZR_resources_styles' ) ) :
                //Add some rules from sm up
                //add padding
                $css_container[]        = sprintf( '@media (min-width: %1$spx){ %2$s{ padding-right: %3$spx; padding-left:  %3$spx; } }',
-                           $css_mq_breakpoints[ 'sm' ],
+                           $css_container_widths[ 'sm' ],
                            $container_selector,
                            $additional_width
                );
