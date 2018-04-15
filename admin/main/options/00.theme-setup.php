@@ -48,6 +48,15 @@ function alante_thinkup_title_select() {
 	}
 }
 
+// Remove "archive" text from custom post type archive pages
+function alante_thinkup_title_select_cpt($title) {
+    if ( is_post_type_archive() ) {
+		$title = post_type_archive_title( '', false );
+	}
+	return $title;
+};
+add_filter( 'get_the_archive_title', 'alante_thinkup_title_select_cpt' );
+
 
 /* ----------------------------------------------------------------------------------
 	ADD BREADCRUMBS FUNCTIONALITY
