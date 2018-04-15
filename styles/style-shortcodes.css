@@ -28,10 +28,6 @@
 /*	01.	ANIMATION							 	*/
 /* ---------------------------------------------------------------------------- */
 
-.animated[class*="start-"] {
-	opacity: 0 !important;
-}
-
 .anim-start-ltr,
 .anim-start-btt,
 .anim-start-ttb,
@@ -206,6 +202,7 @@ float: left;
 
 .button.style2 {
 	border: none;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.4);
 	-webkit-box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2);
 	-moz-box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2);
 	-ms-box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2);
@@ -221,6 +218,7 @@ float: left;
 }
 
 .button.style3 {
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
 	border: 1px solid rgba(51, 51, 51, 0.2);
 	-webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5);
 	-moz-box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5);
@@ -240,6 +238,7 @@ float: left;
 }
 
 .button.style4 {
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	-webkit-box-shadow: 0 1px 2px rgba(255, 255, 255, 0.3) inset,0 1px 2px rgba(255, 255, 255, 0.3) inset,0 1px 2px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 0 1px 2px rgba(255, 255, 255, 0.3) inset,0 1px 2px rgba(255, 255, 255, 0.3) inset,0 1px 2px rgba(0, 0, 0, 0.3);
@@ -817,17 +816,6 @@ div.wpcf7-mail-sent-ok {
 .sc-featured .entry-header {
 	margin-bottom: 15px !important;
 }
-.sc-featured .image-overlay-inner {
-	display: table;
-	opacity: 0.9;
-}
-.sc-featured .prettyphoto-wrap {
-	display: table-cell;
-	vertical-align: middle;
-}
-.sc-featured .prettyphoto-wrap i {
-	font-size: 50px;
-}
 
 
 /* ---------------------------------------------------------------------------- */
@@ -995,7 +983,6 @@ div.pp_pic_holder {
 	max-width: 100%;
 	position: relative; 
 	display: inline-block; 
-	vertical-align: top;
 }
 .sc-lightbox {
 	max-width: 100%;
@@ -1649,32 +1636,9 @@ span.bar-per {
 /*	21. TITLES								*/
 /* ---------------------------------------------------------------------------- */
 
-.customtitle.aligncenter,
-.customtitle.alignleft,
-.customtitle.alignright {
-	float: none;
-	margin: 0;
-}
-.customtitle.aligncenter {
-	text-align: center;
-}
-.customtitle.alignleft {
-	text-align: left;
-}
-.customtitle.alignright {
-	text-align: right;
-}
-.customtitle.aligncenter span:after{
-	margin-left: auto !important;
-	margin-right: auto !important;
-}
-.customtitle.alignleft span:after{
-	margin-left: 0 !important;
-	margin-right: auto !important;
-}
-.customtitle.alignright span:after{
-	margin-left: auto !important;
-	margin-right: 0 !important;
+.customtitle {
+	display: table;
+	margin-bottom: 20px;
 }
 .customtitle h1,
 .customtitle h2,
@@ -1693,7 +1657,7 @@ span.bar-per {
 .customtitle.style0 h4,
 .customtitle.style0 h5,
 .customtitle.style0 h6 {
-	display: block;
+display: block;
 }
 .customtitle .title-div {
 	width: 100%;
