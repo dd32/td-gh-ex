@@ -134,7 +134,7 @@ global $thinkup_general_breadcrumbdelimeter;
 			$category = get_the_category();
 			$num_cat = count($category);
 			if ($num_cat <=1) {
-				$output .= ' ' . html_entity_decode( esc_html( get_the_title() ) );
+				$output .= ' ' . esc_html( get_the_title() );
 			} else {
 
 				// Count Total categories
@@ -189,6 +189,8 @@ global $thinkup_general_breadcrumbdelimeter;
 			$output .= __( 'Archived Article(s) by Author: ', 'renden' ) . esc_html( $user_info->display_name );
 		} elseif ( is_404() ) {
 			$output .= __( 'Error 404 - Not Found.', 'renden' );
+		} elseif( is_tax() ) {
+			$output .= get_queried_object()->name;
 		} elseif ( is_post_type_archive( 'portfolio' )	) {
 			$output .= __( 'Portfolio', 'renden' );
 		} elseif ( is_post_type_archive( 'client' )	) {
@@ -199,19 +201,10 @@ global $thinkup_general_breadcrumbdelimeter;
 			$output .= __( 'Testimonials', 'renden' );
 		} elseif ( is_post_type_archive( 'product' ) and function_exists( 'thinkup_woo_titleshop_archive' ) ) {
 //			$output .= thinkup_woo_titleshop_archive();
-		} elseif ( is_archive() ) {
-			$output .= get_the_archive_title();
-		} elseif( is_tax() ) {
-			$output .= esc_html( get_queried_object()->name );
-		} elseif ( thinkup_check_isblog() ) {
-			$output .= __( 'Blog', 'renden' );
-		} else {
-			$output .= html_entity_decode( esc_html( get_the_title() ) );
 		}
-
-		$output .=  '</div></div>';
+       $output .=  '</div></div>';
 	   
-		return $output;
+	   return $output;
     }
 }
 

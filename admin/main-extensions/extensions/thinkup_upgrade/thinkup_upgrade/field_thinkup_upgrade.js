@@ -9,7 +9,7 @@
 			// 1. UPGRADE NOW BUTTON
 			// ----------------------------------------------------------------------------------------------------------
 
-			$( '#customize-header-actions' ).after( '<div id="customize-thinkup-upgrade" class=""><p><a href="https://www.thinkupthemes.com/themes/renden/" target="_blank" class="promotion-button" style="">Upgrade Now</a></p></div>' );
+			$( '#customize-header-actions' ).after( '<div id="customize-thinkup-upgrade" class=""><p><a href="//www.thinkupthemes.com/themes/renden/" target="_blank" class="promotion-button" style="">Upgrade Now</a></p></div>' );
 
 
 			// ----------------------------------------------------------------------------------------------------------

@@ -1429,7 +1429,7 @@ msgstr ""
 #: admin/main/options.php:1600
 msgid ""
 "For premium support direct from the theme developers, or advice on "
-"customizations please <a href=\"https://www.thinkupthemes.com/themes/renden/"
+"customizations please <a href=\"http://www.thinkupthemes.com/themes/renden/"
 "\" target=\"_blank\">upgrade</a> to Renden Pro or purchase a <a href="
 "\"http://www.thinkupthemes.com/pricing/\" target=\"_blank\">Theme "
 "Subscription</a>."
