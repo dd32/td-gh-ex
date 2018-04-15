@@ -194,7 +194,7 @@ jQuery(document).ready(function($) {
 
 	/* Content Area */
 	wp.customize('graphene_settings[content_wrapper_bg]', function(value){ value.bind(function(to){
-		$('#graphene-preview-css').append('#content {background-color: ' + to + '}');
+		$('#graphene-preview-css').append('#content, #header {background-color: ' + to + '}');
 	});	});
 	wp.customize('graphene_settings[content_bg]', function(value){ value.bind(function(to){
 		$('#graphene-preview-css').append('.post, .singular .hentry {background-color: ' + to + ';}');

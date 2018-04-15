@@ -75,18 +75,22 @@ if ( ! function_exists( 'graphene_related_posts' ) ) :
 /**
  * Manages the display of related posts
  */
-function graphene_related_posts(){
+function graphene_related_posts( $in_custom_layout = false ){
 	global $graphene_settings;
 	
 	/* Display a notice if YARPP has not been installed */
-	if ( ! function_exists( 'yarpp_related' ) && current_user_can( 'manage_options' ) ) { ?>
+	if ( ! function_exists( 'yarpp_related' ) ) { 
+		if ( current_user_can( 'manage_options' ) && $in_custom_layout ) { ?>
 		<p class="alert alert-warning"><?php printf( __( '<strong>NOTICE:</strong> Please install and activate %s in order to use the Related Posts feature.', 'graphene' ), '<a target="_blank" href="' . admin_url( 'plugin-install.php?s=yarpp&tab=search&type=term' ) . '">Yet Another Related Posts (YARPP)</a>' ); ?></p>
-		<?php return;
+		<?php } 
+		return;
 	}
 	
-	$display_settings = get_option( 'yarpp' );
-	$display_settings = $display_settings['auto_display_post_types'];
-	if ( ! is_singular() || ! in_array( get_post_type(), $display_settings ) ) return;
+	$yarpp_options = get_option( 'yarpp', array() );
+	if ( $yarpp_options ) {
+		$display_settings = $display_settings['auto_display_post_types'];
+		if ( ! is_singular() || ! in_array( get_post_type(), $display_settings ) ) return;
+	}
 	
 	$args = array(
 		'template'	=> 'yarpp-template-single.php',

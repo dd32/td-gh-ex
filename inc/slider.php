@@ -164,7 +164,7 @@ function graphene_display_slider(){
 	if ( $graphene_settings['slider_as_header'] ) {
 		add_action( 'graphene_header_slider', 'graphene_slider' );
 	} elseif ( ! $graphene_settings['slider_position'] ) {
-		if ( $graphene_settings['slider_full_width'] ) add_action( 'graphene_before_content', 'graphene_slider' );
+		if ( $graphene_settings['slider_full_width'] ) add_action( 'graphene_before_content-main', 'graphene_slider' );
 		else add_action( 'graphene_top_content', 'graphene_slider' );	
 	} else {
 		if ( $graphene_settings['slider_full_width'] ) add_action( 'graphene_after_content', 'graphene_slider' );

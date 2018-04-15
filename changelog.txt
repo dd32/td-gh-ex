@@ -4,6 +4,10 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.4.1
+	* Fixed: PHP warning when YARPP has not been installed
+	* Fixed: Slider has no background colour when extended to full width
+
 Version 2.4
 	* Added: Yet Another Related Posts plugin integration
 	* Added: Full width boxed container layout in addition to existing full width stretched container layout
