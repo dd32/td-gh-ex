@@ -42,4 +42,18 @@ function agency_x_customize_register_contact_section( $wp_customize ) {
       'settings' => 'contact_section_page'
     ) );
 
-}
+    $wp_customize->add_setting( 'contact_form_code', array(
+    'capability'            => 'edit_theme_options',
+    'default'               => '',
+    'sanitize_callback'     => 'sanitize_text_field'
+    ) );
+
+    $wp_customize->add_control( 'contact_form_code', array(
+        'label'                 =>  __( 'Contact Section Use Shortcode', 'agency-x' ),
+        'description'           =>  __( 'eg [contact-form-7 id="108" title="Contact form 1"]', 'agency-x' ),
+        'section'               => 'contact_section',
+        'type'                  => 'text',
+        'priority'              => 40,
+        'settings' => 'contact_form_code',
+    ) );
+ }

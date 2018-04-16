@@ -1,0 +1,23 @@
+/**
+ * Customizer Custom CSS
+ */
+.agency-x-ads {
+	background-color: #F2784B;
+	text-align: center;
+}
+.agency-x-ads .button {
+	background-color: #F2784B;
+    border: 1px solid #FFF;
+    border-radius: 4px;
+    color: #ffffff;
+	margin: 15px 0;
+	transition: all 0.5s ease-in-out 0s;
+	-webkit-transition:all 0.5s ease-in-out 0s;
+	-moz-transition:all 0.5s ease-in-out 0s;
+}
+.agency-x-ads .button:hover,
+.agency-x-ads .button:focus
+{
+	background-color: #666666 ;
+	color: #ffffff;
+}

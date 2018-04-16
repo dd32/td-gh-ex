@@ -25,7 +25,6 @@ require get_template_directory() . '/inc/customizer/sections/social-media.php';
 */
 require get_template_directory() . '/inc/customizer/sanitization-functions.php';
 
-
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
@@ -35,3 +34,12 @@ function agency_x_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'agency_x_customize_preview_js' );
 
+function agency_x_customizer_js() {
+    wp_enqueue_script('agency-x-customizer', get_template_directory_uri() . '/js/agency-x-customizer.js', array('jquery'), '1.3.0', true);
+
+    wp_localize_script( 'agency-x-customizer', 'agency_x_customizer_js_obj', array(
+        'pro' => __('Upgrade To Agency Plus','agency-x')
+    ) );
+    wp_enqueue_style( 'agency-x-customizer', get_template_directory_uri() . '/css/agency-x-customizer.css');
+}
+add_action( 'customize_controls_enqueue_scripts', 'agency_x_customizer_js' );
