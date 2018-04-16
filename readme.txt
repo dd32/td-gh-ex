@@ -18,20 +18,20 @@ This Product is provided "as is" with no warranty or liabilities of D5 Creation.
 License of the Images used : 
 ----------------------------------------------------
 1. 	Author:		Mariamichelle
-	License:	Public Domain CC0
+	License:		Public Domain CC0
 	Source:		http://pixabay.com/en/oia-santorini-greece-sunset-island-416136/
 
 2. 	Author:		Ben_Kerckx
-	License:	Public Domain CC0
+	License:		Public Domain CC0
 	Source:		http://pixabay.com/en/wine-glass-holiday-parasol-391674/
 
 3. 	Author:		dMz
-	License:	Public Domain CC0
+	License:		Public Domain CC0
 	Source:		http://pixabay.com/en/santorini-sea-greece-stairs-home-360216/
 
 
 4. 	Author:		danigeza
-	License:	Public Domain CC0
+	License:		Public Domain CC0
 	Source:		http://pixabay.com/en/hand-phone-red-174283/
 
 
@@ -47,7 +47,7 @@ You can set your Social Page Links and the Top Phone Number from Appearance > Se
 Changelog
 ==================
 
-Version 1.3
+Version 1.7
 ___________________
 - Style Cleanup
 
