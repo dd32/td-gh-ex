@@ -137,8 +137,8 @@ function agency_x_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/css/bootstrap.css' );	
 	wp_enqueue_style( 'agency-x-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'default', get_template_directory_uri().'/css/default.css' );	
-	wp_enqueue_style( 'agency-x-responsive', get_template_directory_uri().'/css/responsive.css' );
-	wp_enqueue_style( 'agency-x-orange', get_template_directory_uri().'/css/skin/orange.css' );	
+	wp_enqueue_style( 'responsive', get_template_directory_uri().'/css/responsive.css' );
+	wp_enqueue_style( 'orange', get_template_directory_uri().'/css/skin/orange.css' );	
 
 	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', array('jquery'), '1.0.0', true );
 	wp_enqueue_script( 'scrollUp', get_template_directory_uri() . '/js/jquery.scrollUp.js', array('jquery'), '1.0.0', true );

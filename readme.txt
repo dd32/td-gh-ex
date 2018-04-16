@@ -49,7 +49,10 @@ Agency-X includes support for contact form 7
 
 == Changelog ==
 
-= 1.0.8 - 14 April 2018 =
+= 1.1.0 - 16 April 2018 =
+*Error Fixed
+
+= 1.0.9 - 14 April 2018 =
 * Pro Version Release
 
 = 1.0.8 - 13 April 2018 =
