@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Innovation Lite\n"
-"POT-Creation-Date: 2016-06-10 16:37+0600\n"
+"POT-Creation-Date: 2018-04-16 20:14+0600\n"
 "PO-Revision-Date: 2015-10-29 02:02+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -68,7 +68,7 @@ msgstr ""
 msgid "Comments are Closed"
 msgstr ""
 
-#: front-page.php:21
+#: front-page.php:19
 msgid "Learn More"
 msgstr ""
 
@@ -300,7 +300,7 @@ msgid "Selfie"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://d5creation.com/theme/selfie/"
+msgid "https://d5creation.com/theme/selfie/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -317,5 +317,5 @@ msgid "D5 Creation"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://d5creation.com/"
+msgid "https://d5creation.com/"
 msgstr ""

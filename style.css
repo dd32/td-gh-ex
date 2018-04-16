@@ -1,13 +1,13 @@
 /*
 Theme Name: Selfie
-Theme URI: http://d5creation.com/theme/selfie/
+Theme URI: https://d5creation.com/theme/selfie/
 
 Author: D5 Creation
-Author URI: http://d5creation.com/
+Author URI: https://d5creation.com/
 
 Description: Selfie is CSS3 Powered and Latest WordPress Version Ready Responsive Theme.  Super Elegant and Professional Selfie Theme will be adjusted automatically with all smart devices.  Full Wide Template can be used for showing showcase or other pages. You can Visit the Selfie Demo at http://demo.d5creation.com/themes/?theme=Selfie
 
-Version: 1.3
+Version: 1.5
 
 Tags: one-column, two-columns, right-sidebar, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, rtl-language-support, translation-ready, theme-options 
 
@@ -118,7 +118,7 @@ img.site-logo,.site-title{width:25%;height:auto;padding:5px 0;float:left; font-s
 #selfie-main-menu .current_page_ancestor > a{background: #0a96d8; color: #FFFFFF; border-radius: 5px 5px 0 0;}
 #selfie-main-menu li ul{float:left;position:relative;margin:0;}
 #selfie-main-menu ul ul,
-.sub-menu, .sub-menu ul ul{display:none;float:left;left:0;position:absolute;border-radius:5px;background:#0a96d8;padding:5px;z-index:10000; border-radius: 0 5px 5px 5px;}
+.sub-menu, .sub-menu ul ul{display:none;float:left;left:0;position:absolute;background:#0a96d8;padding:5px;z-index:10000; border-radius: 0 5px 5px 5px;}
 #selfie-main-menu ul li ul li{margin:0;}
 #selfie-main-menu ul ul ul{left:100%;top:0;}
 #selfie-main-menu ul ul a{ border-bottom: 1px solid rgba(0, 0, 0, 0.15);color:#FFFFFF;padding:9px 15px;width:200px;text-align:left;text-transform:none; font-weight: 100; border-radius: 0;}
@@ -147,7 +147,7 @@ img.site-logo,.site-title{width:25%;height:auto;padding:5px 0;float:left; font-s
 #selfie-top-menu .menu a:hover { background: #DDDDDD; color: #777777; }
 
 #selfie-top-menu #searchform { float: right; margin-top: 3px;  }
-#selfie-top-menu input#s { padding: 5px 10px; width: 120px; min-width: 100px; border-radius: 5px 0 0 5px; border-color: #DDDDDD; background: #FFFFFF;  -webkit-transition-duration: 400ms; -webkit-transition-property: width, background; -webkit-transition-timing-function: ease; -moz-transition-duration: 400ms; -moz-transition-property: width, background; -moz-transition-timing-function: ease; -o-transition-duration: 400ms; -o-transition-property: width, background; -o-transition-timing-function: ease; width: 72px; color: #AAAAAA; }
+#selfie-top-menu input#s { padding: 5px 10px; min-width: 100px; border-radius: 5px 0 0 5px; border-color: #DDDDDD; background: #FFFFFF;  transition-duration: 400ms; transition-property: width, background; transition-timing-function: ease;  width: 72px; color: #AAAAAA; }
 #selfie-top-menu #searchsubmit { background: url("images/search.png") no-repeat scroll center center #09a0e7; border-radius: 0 5px 5px 0; font-size: 14px; font-weight: normal;
 padding: 5px 20px;  text-indent: -90000px; margin-left: -5px; }
 
@@ -232,7 +232,7 @@ a:hover { color:#076896; }
 b, strong{font-weight:bold;}
 .displaynone{display:none;}
 .clear{clear:both;}
-table{background-color:#EEEEEE;border:1px solid #FFFFFF;border-radius:3px 3px 3px 3px;padding:5px;-moz-border-radius:3px;-webkit-border-radius:3px;min-width:200px;color:#333333;}
+table{background-color:#EEEEEE;border:1px solid #FFFFFF;border-radius:3px;padding:5px;min-width:200px;color:#333333;}
 td{padding:5px 7px;vertical-align:top;}
 #wp-calendar td{padding:0px 7px;}
 th{font-weight:bold;line-height:1;padding:5px 7px;text-shadow:0 1px 0 rgba(255, 255, 255, 0.7);background:#CCCCCC;}
@@ -297,7 +297,7 @@ input#s{width:70%;min-width:235px;}
 .effect:hover img { opacity:0.9; -moz-transform:scale(1.5,1.5); -webkit-transform:scale(1.5,1.5); -o-transform:scale(1.5,1.5); -ms-transform:scale(1.5,1.5); transform:scale(1.5,1.5); }
 .effect:hover .mask { opacity: 1; -webkit-transform: translateY(-20px); -moz-transform: translateY(-20px); -o-transform: translateY(-20px); -ms-transform: translateY(-20px); transform: translateY(-20px); }
 
-blockquote, q {background:#DDDDDD;background:rgba(200, 200, 200, 0.10);border-left:10px solid #CCCCCC;margin:20px 10px;padding:10px;quotes:quotes:'<<' '>>';}
+blockquote, q {background:#DDDDDD;background:rgba(200, 200, 200, 0.10);border-left:10px solid #CCCCCC;margin:20px 10px;padding:10px;quotes:'<<' '>>';}
 blockquote:before, q:before {color:#CCCCCC;content:'\201C';font-size:4em;line-height:.1em;margin-right:.20em;vertical-align:-.4em; font-family: Georgia,serif;}
 blockquote:after, q:after {color:#CCCCCC;content:'\201D';font-size:4em;line-height:.1em;margin-left:.20em;vertical-align:-.4em; font-family: Georgia,serif;}
 blockquote p, q p {display:inline;}
@@ -390,7 +390,7 @@ h3 span{color:#777777;}
 .heading1vcenter { width:90%; margin: 0 auto; display: table;}
 .heading1container .vcenter { width: 30%; display:table-cell; vertical-align: middle; }
 .heading1container .vcenter button { float: right; }
-#heading1{color:#141414;font-size:23px;text-align:left;font-weight:100; width: 100%; color: #FFFFFF; float: left; }
+#heading1{font-size:23px;text-align:left;font-weight:100; width: 100%; color: #FFFFFF; float: left; }
 .heading-desc1{color:#AAAAAA;font-size:17px;text-align:left;width: 100%; font-weight: 100; line-height: 25px; float: left;}
 #heading1 em { color: #09a0e7; font-weight: 100; }
 .bannerimage , .bannerimage img{ width: 100%; }

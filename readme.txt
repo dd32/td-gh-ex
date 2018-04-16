@@ -1,11 +1,11 @@
 ----------------------------------
 Selfie
 ----------------------------------
-Version: 	1.3
+Version: 	1.5
 Developer: 	D5 Creation
-Author URI: 	http://d5creation.com
+Author URI: 	https://d5creation.com
 
-Donation Link: 	http://d5creation.com/donate/
+Donation Link: 	https://d5creation.com/donate/
 
 Copyright: 	D5 Creation
 License: 	GNU General Public License v2 or later
@@ -46,6 +46,10 @@ You can set your Social Page Links and the Top Phone Number from Appearance > Se
 
 Changelog
 ==================
+
+Version 1.3
+___________________
+- Style Cleanup
 
 Version 1.3
 ___________________

@@ -6,9 +6,7 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since Selfie 1.0
 */
-?>
-
-<?php get_header(); ?>
+get_header(); ?>
 <div class="clear"></div>
 <div class="bannerimage"><img src="<?php echo esc_url(of_get_option('banner-image', get_template_directory_uri() . '/images/banner-image.jpg')); ?>" /></div>
 <div class="clear"></div>
