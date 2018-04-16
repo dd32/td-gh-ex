@@ -19,7 +19,7 @@ $about_page = get_theme_mod($prefix . '_about_section_page', '');
                         <div class="about-section-image pad-all-10">
                             <?php
                             $thumbID = get_post_thumbnail_id($page->ID);
-                            $src = wp_get_attachment_image_src($thumbID, 'front-about');
+                            $src = wp_get_attachment_image_src($thumbID, 'atlast_business_front-about');
                             ?>
                             <img src="<?php echo esc_url($src[0]); ?>"
                                  class="front-about-image img-responsive border-radius-3" alt="<?php echo esc_attr($page->post_title); ?>"/>
