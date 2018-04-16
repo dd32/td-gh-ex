@@ -2,7 +2,7 @@
 Contributors: ArchimidisM
 Requires at least: WordPress 4.5.1
 Tested up to: WordPress 4.9.4
-Version: 1.2.2
+Version: 1.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: theme-options,full-width-template,two-columns
@@ -51,7 +51,7 @@ Spectre.css 0.5.0 by (c) 2014 Picturepan 2
 Licenses: - MIT License
 Source: https://picturepan2.github.io/spectre/
 
-Font Awesome 5.0.6 by @davegandy - @fontawesome
+Font Awesome 5.0.10 by @davegandy - @fontawesome
 Licenses - (Font: SIL OFL 1.1, CSS: MIT License)
 Source:  https://fontawesome.io
 
@@ -136,3 +136,8 @@ Mobile menu shows only the top level elements. You can also add your custom logo
 - Fixed PHP notice in comments
 - Add to the styles the default style.css
 - Fixed the custom logo function
+
+= Version 1.2.4 =
+- Added the latest FontAwesome library
+- Fixed some styles
+- Fixed a minor error in category breadcrumb

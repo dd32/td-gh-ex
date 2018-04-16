@@ -1294,7 +1294,7 @@ if (!function_exists('atlast_business_breadcrumb')):
 
             if (is_category() || is_single()) {
                 echo '<li class="breadcrumb-item">';
-                the_category('title_li=');
+                    the_archive_title();
                 echo '</li>';
             } elseif (is_archive() || is_single()) {
                 echo '<li class="breadcrumb-item">';
