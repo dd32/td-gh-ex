@@ -2,7 +2,7 @@
 Contributors: ArchimidisM
 Requires at least: WordPress 4.5.1
 Tested up to: WordPress 4.9.4
-Version: 1.2.4
+Version: 1.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: theme-options,full-width-template,two-columns
@@ -141,3 +141,11 @@ Mobile menu shows only the top level elements. You can also add your custom logo
 - Added the latest FontAwesome library
 - Fixed some styles
 - Fixed a minor error in category breadcrumb
+
+= Version 1.2.5 =
+- Better screenshot 1200x900 provided
+- Fixed customizer prefix
+- Removed author.php
+- Removed unused PHP file
+- Constant prefixed
+- Escaped admin_url with esc_url & get_header_url

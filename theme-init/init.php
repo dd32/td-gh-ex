@@ -7,7 +7,7 @@
  * @package justwp-business/theme-init
  * @since 0.0.1
  */
-DEFINE('THEME_INIT_PATH', get_template_directory() . '/theme-init/');
+DEFINE('ATLAST_BUSINESS_THEME_INIT_PATH', get_template_directory() . '/theme-init/');
 
 if (!function_exists('atlast_business_wp_menu_fallback')):
     function atlast_business_wp_menu_fallback()
@@ -17,7 +17,7 @@ if (!function_exists('atlast_business_wp_menu_fallback')):
          */
         if (current_user_can('edit_others_pages')):
             echo '<ul class="top-menu no-menu-items"><li>
-<a href="' . admin_url('nav-menus.php') . '">' . esc_html__('Add a Menu', 'atlast-business') . '</a>
+<a href="' . esc_url(admin_url('nav-menus.php')) . '">' . esc_html__('Add a Menu', 'atlast-business') . '</a>
 </li></ul>';
         endif;
     }
@@ -52,7 +52,7 @@ if (!function_exists('atlast_business_set_header_image')):
     function atlast_business_set_header_image()
     {
 
-    	$header_image_url = get_header_image();
+    	$header_image_url = esc_url(get_header_image());
         if (empty($header_image_url)): return; endif;
 
         $prefix = atlast_business_get_prefix();
@@ -101,9 +101,9 @@ add_action('atlast_business_after_header', 'atlast_business_set_header_image', 5
  *
  * @since 1.0.0
  */
-add_action('customize_register', 'atlast_customizer_settings');
+add_action('customize_register', 'atlast_business_customizer_settings');
 if (!function_exists('atlast_customizer_settings')):
-    function atlast_customizer_settings($wp_customize)
+    function atlast_business_customizer_settings($wp_customize)
     {
 
         $prefix = 'atlast_business';
