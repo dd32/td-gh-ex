@@ -17,7 +17,7 @@ function beka_customize_register( $wp_customize ) {
 	 * Header Section.
 	 */
 	$wp_customize->add_section( 'header_section', array(
-		'title'    => __( 'Header', 'beka' ),
+		'title'    => esc_html__( 'Header', 'beka' ),
 		'priority' => 30,
 	) );
 
@@ -28,7 +28,7 @@ function beka_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'wp_filter_post_kses',
 	) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'header_text', array(
-		'label'    => __( 'Header Text', 'beka' ),
+		'label'    => esc_html__( 'Header Text', 'beka' ),
 		'section'  => 'header_section',
 		'settings' => "header_text",
 		'type'     => 'textarea',
@@ -42,7 +42,7 @@ function beka_customize_register( $wp_customize ) {
 		'transport'            => 'refresh',
 	) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'social_button', array(
-		'label'    => __( 'Show Social Button', 'beka' ),
+		'label'    => esc_html__( 'Show Social Button', 'beka' ),
 		'section'  => 'header_section',
 		'settings' => "social_button",
 		'type'     => 'checkbox',
@@ -56,7 +56,7 @@ function beka_customize_register( $wp_customize ) {
 		'transport'            => 'refresh',
 	) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'facebook_url', array(
-		'label'    => __( 'Facebook URL', 'beka' ),
+		'label'    => esc_html__( 'Facebook URL', 'beka' ),
 		'section'  => 'header_section',
 		'settings' => "facebook_url",
 		'type'     => 'url',
@@ -70,7 +70,7 @@ function beka_customize_register( $wp_customize ) {
 		'transport'            => 'refresh',
 	) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'twitter_url', array(
-		'label'    => __( 'Twitter URL', 'beka' ),
+		'label'    => esc_html__( 'Twitter URL', 'beka' ),
 		'section'  => 'header_section',
 		'settings' => "twitter_url",
 		'type'     => 'url',
@@ -84,7 +84,7 @@ function beka_customize_register( $wp_customize ) {
 		'transport'            => 'refresh',
 	) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gp_url', array(
-		'label'    => __( 'Google Plus URL', 'beka' ),
+		'label'    => esc_html__( 'Google Plus URL', 'beka' ),
 		'section'  => 'header_section',
 		'settings' => "gp_url",
 		'type'     => 'url',
@@ -98,7 +98,7 @@ function beka_customize_register( $wp_customize ) {
 		'transport'            => 'refresh',
 	) );
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'instagram_url', array(
-			'label'    => __( 'Instagram URL', 'beka' ),
+			'label'    => esc_html__( 'Instagram URL', 'beka' ),
 			'section'  => 'header_section',
 			'settings' => "instagram_url",
 			'type'     => 'url',

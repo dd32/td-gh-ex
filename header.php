@@ -23,7 +23,7 @@
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'beka' ); ?></a>
 
 	<?php
-	$header_text   = get_theme_mod( 'header_text', __( 'Welcome to Awesome Blog Design perfect blog', 'beka' ) );
+	$header_text   = get_theme_mod( 'header_text', esc_html__( 'Welcome to Awesome Blog Design perfect blog', 'beka' ) );
 	$social_button = get_theme_mod( 'social_button' );
 
 	if ( $header_text != '' && $social_button != '' ) :

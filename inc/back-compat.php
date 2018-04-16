@@ -32,7 +32,7 @@ add_action( 'after_switch_theme', 'beka_switch_theme' );
  * @global string $wp_version WordPress version.
  */
 function beka_upgrade_notice() {
-	$message = sprintf( __( 'Beka requires at least WordPress version 4.5. You are running version %s. Please upgrade and try again.', 'beka' ), $GLOBALS['wp_version'] );
+	$message = sprintf( esc_html__( 'Beka requires at least WordPress version 4.5. You are running version %s. Please upgrade and try again.', 'beka' ), $GLOBALS['wp_version'] );
 	printf( '<div class="error"><p>%s</p></div>', $message );
 }
 
@@ -43,7 +43,7 @@ function beka_upgrade_notice() {
  * @global string $wp_version WordPress version.
  */
 function beka_customize() {
-	wp_die( sprintf( __( 'Beka requires at least WordPress version 4.5. You are running version %s. Please upgrade and try again.', 'beka' ), $GLOBALS['wp_version'] ), '', array(
+	wp_die( sprintf( esc_html__( 'Beka requires at least WordPress version 4.5. You are running version %s. Please upgrade and try again.', 'beka' ), $GLOBALS['wp_version'] ), '', array(
 		'back_link' => true,
 	) );
 }
@@ -58,7 +58,7 @@ add_action( 'load-customize.php', 'beka_customize' );
  */
 function beka_preview() {
 	if ( isset( $_GET['preview'] ) ) {
-		wp_die( sprintf( __( 'Beka requires at least WordPress version 4.5. You are running version %s. Please upgrade and try again.', 'beka' ), $GLOBALS['wp_version'] ) );
+		wp_die( sprintf( esc_html__( 'Beka requires at least WordPress version 4.5. You are running version %s. Please upgrade and try again.', 'beka' ), $GLOBALS['wp_version'] ) );
 	}
 }
 

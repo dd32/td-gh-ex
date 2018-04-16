@@ -3,8 +3,8 @@
 class Beka_Widget_Recent_Posts extends WP_Widget {
 
 	function __construct() {
-		parent::__construct( 'beka_recent_posts', __( '(Beka) Recent Posts', 'beka' ), array(
-			'description' => __( 'A widget to show recent posts', 'beka' ),
+		parent::__construct( 'beka_recent_posts', esc_html__( '(Beka) Recent Posts', 'beka' ), array(
+			'description' => esc_html__( 'A widget to show recent posts', 'beka' ),
 		) );
 	}
 
@@ -53,7 +53,7 @@ class Beka_Widget_Recent_Posts extends WP_Widget {
 						<?php
 					endwhile;
 				else:
-                    ?><li><?php _e( 'Nothing to show.', 'beka' ); ?></li><?php
+                    ?><li><?php esc_html_e( 'Nothing to show.', 'beka' ); ?></li><?php
 				endif;
 
 				wp_reset_postdata();
@@ -77,7 +77,7 @@ class Beka_Widget_Recent_Posts extends WP_Widget {
 
 	public function form( $instance ) {
 		$defaults   = array(
-			'title'      => __( 'Recent Posts', 'beka' ),
+			'title'      => esc_html__( 'Recent Posts', 'beka' ),
 			'quantity'   => 4,
 			'show_thumb' => 1,
 			'show_cat'   => 1,
@@ -88,14 +88,14 @@ class Beka_Widget_Recent_Posts extends WP_Widget {
 		$show_cat   = isset( $instance['show_cat'] ) ? intval( $instance['show_cat'] ) : 1;
 		?>
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php _e( 'Title:', 'beka' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'beka' ); ?></label>
             <input type="text" class="widefat"
                    id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
                    name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
                    value="<?php echo esc_attr( esc_html( $instance['title'] ) ); ?>"/>
         </p>
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'quantity' ) ); ?>"><?php _e( 'Number of posts to show:', 'beka' ); ?></label>
+            <label for="<?php echo esc_attr( $this->get_field_id( 'quantity' ) ); ?>"><?php esc_html_e( 'Number of posts to show:', 'beka' ); ?></label>
             <select id="<?php echo esc_attr( $this->get_field_id( 'quantity' ) ); ?>"
                     name="<?php echo esc_attr( $this->get_field_name( 'quantity' ) ); ?>">
                 <option value="1" <?php selected( 1, $quantity ); ?>><?php echo number_format_i18n( 1 ); ?></option>
@@ -121,7 +121,7 @@ class Beka_Widget_Recent_Posts extends WP_Widget {
                        id="<?php echo esc_attr( $this->get_field_id( "show_thumb" ) ); ?>"
                        name="<?php echo esc_attr( $this->get_field_name( "show_thumb" ) ); ?>"
                        value="1" <?php checked( 1, $show_thumb, true ); ?> />
-				<?php _e( 'Show Thumbnails', 'beka' ); ?>
+				<?php esc_html_e( 'Show Thumbnails', 'beka' ); ?>
             </label>
         </p>
         <p>
@@ -130,7 +130,7 @@ class Beka_Widget_Recent_Posts extends WP_Widget {
                        id="<?php echo esc_attr( $this->get_field_id( "show_cat" ) ); ?>"
                        name="<?php echo esc_attr( $this->get_field_name( "show_cat" ) ); ?>"
                        value="1" <?php checked( 1, $show_cat, true ); ?> />
-				<?php _e( 'Show Catogory', 'beka' ); ?>
+				<?php esc_html_e( 'Show Catogory', 'beka' ); ?>
             </label>
         </p>
 		<?php

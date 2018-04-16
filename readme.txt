@@ -39,8 +39,8 @@ The following resources are included within the theme package.
   and Blueprint http://www.blueprintcss.org/
 * Font Awesome 4.7.0 by Dave Gandy, http://fontawesome.io
   Font Licensed under the SIL OFL 1.1, http://scripts.sil.org/OFL, CSS Licensed under the MIT License, http://opensource.org/licenses/MIT
-* Photographs used on Screenshot, https://unsplash.com/photos/T7Lnl3PFISM (by Max Boettinger),
-  https://unsplash.com/photos/GdTLaWamFHw (by Artur Rutskowski)
+* Photographs used on Screenshot, by Nic,
+  http://littlevisuals.co
   Licensed under the CC0 Public Domain, https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 All other resources and theme elements are licensed under the GNU GPL, version 2 or later, http://www.gnu.org/licenses/old-licenses/gpl-2.0.html

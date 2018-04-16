@@ -6,7 +6,7 @@
         <div class="author-info">
             <div class="author-head">
                 <h5><?php printf(
-						__( '%s (Author)', 'beka' ),
+						esc_html__( '%s (Author)', 'beka' ),
 						get_the_author_meta( 'display_name' )
 					); ?></h5>
                 <div class="author-social">

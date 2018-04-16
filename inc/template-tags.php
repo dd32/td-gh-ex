@@ -106,10 +106,10 @@ if ( ! function_exists( 'beka_post_navigation' ) ) :
         <nav class="navigation post-navigation textcenter clearfix" role="navigation">
 			<?php
 			if ( is_attachment() ) :
-				previous_post_link( '<div class="post-nav-links prev-link-wrapper"><div class="next-link"><span class="uppercase">' . __( "Published In", "beka" ) . '</span> %link' . "</div></div>" );
+				previous_post_link( '<div class="post-nav-links prev-link-wrapper"><div class="next-link"><span class="uppercase">' . esc_html__( "Published In", "beka" ) . '</span> %link' . "</div></div>" );
 			else :
-				previous_post_link( '<div class="post-nav-links prev-link-wrapper"><div class="post-nav-link-bg"></div><div class="prev-link"><span class="uppercase"><span class="fa fa-arrow-circle-left"></span> &nbsp;' . __( "Previous Article", "beka" ) . '</span><div class="nav-title"> %link</div>' . "</div></div>" );
-				next_post_link( '<div class="post-nav-links next-link-wrapper"><div class="post-nav-link-bg"></div><div class="next-link"><span class="uppercase">' . __( "Next Article", "beka" ) . ' &nbsp;<span class="fa fa-arrow-circle-right"></span></span> <div class="nav-title"> %link</div>' . "</div></div>" );
+				previous_post_link( '<div class="post-nav-links prev-link-wrapper"><div class="post-nav-link-bg"></div><div class="prev-link"><span class="uppercase"><span class="fa fa-arrow-circle-left"></span> &nbsp;' . esc_html__( "Previous Article", "beka" ) . '</span><div class="nav-title"> %link</div>' . "</div></div>" );
+				next_post_link( '<div class="post-nav-links next-link-wrapper"><div class="post-nav-link-bg"></div><div class="next-link"><span class="uppercase">' . esc_html__( "Next Article", "beka" ) . ' &nbsp;<span class="fa fa-arrow-circle-right"></span></span> <div class="nav-title"> %link</div>' . "</div></div>" );
 			endif;
 			?>
         </nav>
@@ -146,7 +146,7 @@ if ( ! function_exists( 'beka_related_posts' ) ) :
 			$my_query = new wp_query( $args );
 			if ( $my_query->have_posts() ) {
 				echo '<div class="related-posts">';
-				echo '<h4>' . __( 'Related Posts', 'beka' ) . '</h4>';
+				echo '<h4>' . esc_html__( 'Related Posts', 'beka' ) . '</h4>';
 				echo '<ul>';
 
 				while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
@@ -159,9 +159,9 @@ if ( ! function_exists( 'beka_related_posts' ) ) :
                                     </h2>
                                 </header>
 								<?php
-								$categories_list = get_the_category_list( __( ', ', 'beka' ) );
+								$categories_list = get_the_category_list( esc_html__( ', ', 'beka' ) );
 								if ( $categories_list && beka_categorized_blog() ) {
-									printf( '<span class="cat-links">' . __( 'In %s', 'beka' ) . '</span>', $categories_list );
+									printf( '<span class="cat-links">' . esc_html__( 'In %s', 'beka' ) . '</span>', $categories_list );
 								}
 								?>
                             </div>
@@ -225,7 +225,7 @@ function beka_comment( $comment, $args, $depth ) {
 				<?php comment_reply_link( array_merge( $args, array(
 					'depth'      => $depth,
 					'max_depth'  => $args['max_depth'],
-					'reply_text' => __( ' Reply', 'beka' )
+					'reply_text' => esc_html__( ' Reply', 'beka' )
 				) ) ); ?>
             </div>
 
@@ -234,12 +234,12 @@ function beka_comment( $comment, $args, $depth ) {
                 <time itemprop="commentTime" datetime="<?php echo esc_attr( get_comment_date( 'c' ) ); ?>">
                     <?php
                     /* translators: 1) Comment Date. 2) Comment Time. */
-                    printf( __( '%1$s at %2$s', 'beka' ), get_comment_date(), get_comment_time() ); ?></time>
-				<?php edit_comment_link( __( '(Edit)', 'beka' ), '  ', '' ); ?>
+                    printf( esc_html__( '%1$s at %2$s', 'beka' ), get_comment_date(), get_comment_time() ); ?></time>
+				<?php edit_comment_link( esc_html__( '(Edit)', 'beka' ), '  ', '' ); ?>
             </span>
 
 			<?php if ( $comment->comment_approved == '0' ) : ?>
-                <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'beka' ) ?></em>
+                <em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'beka' ) ?></em>
                 <br/>
 			<?php endif; ?>
 

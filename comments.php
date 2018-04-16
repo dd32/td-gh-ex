@@ -24,7 +24,7 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
         <h2 class="comments-title">
-			<?php _e( 'Comments', 'beka' ); ?>
+			<?php esc_html_e( 'Comments', 'beka' ); ?>
         </h2>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
