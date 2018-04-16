@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ansia\n"
-"POT-Creation-Date: 2018-02-27 14:59+0100\n"
-"PO-Revision-Date: 2018-02-27 14:59+0100\n"
+"POT-Creation-Date: 2018-04-16 17:42+0100\n"
+"PO-Revision-Date: 2018-04-16 17:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -223,7 +223,7 @@ msgstr ""
 msgid "Free Vs PRO"
 msgstr ""
 
-#: inc/admin/ansia-admin-page.php:132 inc/pro-button/class-customize.php:90
+#: inc/admin/ansia-admin-page.php:132
 msgid "Documentation"
 msgstr ""
 
@@ -685,7 +685,11 @@ msgid "More Info"
 msgstr ""
 
 #: inc/pro-button/class-customize.php:89
-msgid "Ansia documentation"
+msgid "Need help?"
+msgstr ""
+
+#: inc/pro-button/class-customize.php:90
+msgid "Theme Documentation"
 msgstr ""
 
 #. translators: %s: post title

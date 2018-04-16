@@ -86,8 +86,8 @@ final class Ansia_Updgrade_Pro_Button {
 				'cresta_ansia_documentation',
 				array(
 					'priority' => 999,
-					'title'    => esc_html__( 'Ansia documentation', 'ansia' ),
-					'pro_text' => esc_html__( 'Documentation',         'ansia' ),
+					'title'    => esc_html__( 'Need help?', 'ansia' ),
+					'pro_text' => esc_html__( 'Theme Documentation',         'ansia' ),
 					'pro_url'  => admin_url( add_query_arg( array( 'page' => 'ansia-welcome', 'tab' => 'documentation' ), 'themes.php' ) ),
 				)
 			)
