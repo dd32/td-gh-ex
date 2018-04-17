@@ -2,7 +2,7 @@
 Contributors: ArchimidisM
 Requires at least: WordPress 4.5.1
 Tested up to: WordPress 4.9.4
-Version: 1.2.9
+Version: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: theme-options,full-width-template,two-columns
@@ -162,3 +162,6 @@ Mobile menu shows only the top level elements. You can also add your custom logo
 = Version 1.2.9 =
 - Minor styling fixes
 - Minor bug fixed
+
+= Version 1.3.0 =
+- Minor issue fixed

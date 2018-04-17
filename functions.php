@@ -209,7 +209,7 @@ if (!function_exists('atlast_business_comment')):
                             </time>
 
                             <?php if ($comment->comment_approved == '0') : ?>
-                                <p class="comment-meta-item">Your comment is awaiting moderation.</p>
+                                <p class="comment-meta-item"><?php echo esc_html__('Your comment is awaiting moderation.','atlast-business');?></p>
                             <?php endif; ?>
                         </div>
 
