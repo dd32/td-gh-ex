@@ -23,13 +23,13 @@ function atlast_business_setup()
     ));
     add_theme_support('automatic-feed-links');
     add_theme_support('post-thumbnails');
-    add_image_size('atlast_business_layout-1-image', 850, 480, true);
-    add_image_size('atlast_business_fullwidth-boxed-image', 1280, 580, true);
-    add_image_size('atlast_business_front-about', 680, 460, true);
-    add_image_size('atlast_business_single-team', 308, 420, true);
-    add_image_size('atlast_business_front-team', 200, 200, true);
-    add_image_size('atlast_business_front-projects', 310, 220, true);
-    add_image_size('atlast_business_front-blog', 310, 275, true);
+    add_image_size('atlast-business-layout-1-image', 850, 480, true);
+    add_image_size('atlast-business-fullwidth-boxed-image', 1280, 580, true);
+    add_image_size('atlast-business-front-about', 680, 460, true);
+    add_image_size('atlast-business-single-team', 308, 420, true);
+    add_image_size('atlast-business-front-team', 200, 200, true);
+    add_image_size('atlast-business-front-projects', 310, 220, true);
+    add_image_size('atlast-business-front-blog', 310, 275, true);
 
     add_theme_support('woocommerce');
     global $content_width;

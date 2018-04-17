@@ -7,7 +7,7 @@ if (!empty($team_members)):
         <div class="column col-3 col-xs-12">
             <div class="single-team-item text-center">
                 <?php
-                $thumbUrl = get_the_post_thumbnail_url($page->ID, 'atlast_business_front-team');
+                $thumbUrl = get_the_post_thumbnail_url($page->ID, 'atlast-business-front-team');
                 if ($thumbUrl != false): ?>
                     <div class="single-team-item-image">
                         <img class="circle single-team-item-image img-responsive" src="<?php echo esc_url($thumbUrl); ?>"

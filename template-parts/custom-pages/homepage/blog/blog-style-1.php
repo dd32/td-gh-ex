@@ -7,7 +7,7 @@ if ($blogQ->have_posts()):
         <div class="column col-3 col-md-6 col-sm-6 col-xs-12">
             <div class="single-blog-item">
                 <?php if (has_post_thumbnail()):
-                    the_post_thumbnail('atlast_business_front-blog', array(
+                    the_post_thumbnail('atlast-business-front-blog', array(
                         'class' => 'img-responsive single-blog-img',
                         'alt' => get_the_title()
                     ));

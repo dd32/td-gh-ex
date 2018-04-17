@@ -2,7 +2,7 @@
 Contributors: ArchimidisM
 Requires at least: WordPress 4.5.1
 Tested up to: WordPress 4.9.4
-Version: 1.2.8
+Version: 1.2.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: theme-options,full-width-template,two-columns
@@ -14,7 +14,7 @@ Atlast Business theme contains over 30 customizer settings. It is maybe the most
 * Custom Colors
 * Custom Header
 * Custom background-color
-* Over 60 options using the native WordPress customizer
+* Over 30 options using the native WordPress customizer
 * Different headers,footers etc.
 * Top Bar
 * 
@@ -158,3 +158,7 @@ Mobile menu shows only the top level elements. You can also add your custom logo
 
 = Version 1.2.8 =
 - Minor styling fixes
+
+= Version 1.2.9 =
+- Minor styling fixes
+- Minor bug fixed

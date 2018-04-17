@@ -5,7 +5,7 @@ if (!empty($pages)):
         $page = get_post($pg); ?>
         <div class="column col-3 col-md-6 col-xs-12">
             <div class="front-single-project">
-                <?php  $thumbUrl = get_the_post_thumbnail_url($page->ID, 'atlast_business_front-projects'); ?>
+                <?php  $thumbUrl = get_the_post_thumbnail_url($page->ID, 'atlast-business-front-projects'); ?>
 
                 <figure class="front-single-project-img">
                     <img class="border-radius-5 img-responsive" src="<?php echo esc_url($thumbUrl); ?>" alt="<?php echo esc_attr($page->post_title); ?>"/>

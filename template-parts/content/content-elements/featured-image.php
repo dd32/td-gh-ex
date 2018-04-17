@@ -6,7 +6,7 @@ if (has_post_thumbnail()): ?>
 
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                 <?php
-                the_post_thumbnail('atlast_business_layout-1-image', array(
+                the_post_thumbnail('atlast-business-layout-1-image', array(
                         'class' => 'blog-item-image img-responsive',
                         'alt' => get_the_title()
                     )
@@ -14,19 +14,19 @@ if (has_post_thumbnail()): ?>
             </a>
         <?php
         elseif(is_page_template('page-templates/fullwidth-page.php')):
-	        the_post_thumbnail('atlast_business_fullwidth-boxed-image', array(
+	        the_post_thumbnail('atlast-business-fullwidth-boxed-image', array(
 			        'class' => 'page-image img-responsive',
 			        'alt' => get_the_title()
 		        )
 	        );
         elseif(is_page_template('page-templates/team-member-page.php')):
-	        the_post_thumbnail('atlast_business_single-team', array(
+	        the_post_thumbnail('atlast-business-single-team', array(
 			        'class' => 'page-image single-team-image img-responsive',
 			        'alt' => get_the_title()
 		        )
 	        );
         else:
-            the_post_thumbnail('atlast_business_layout-1-image', array(
+            the_post_thumbnail('atlast-business-layout-1-image', array(
                     'class' => 'blog-item-image img-responsive',
                     'alt' => get_the_title()
                 )
