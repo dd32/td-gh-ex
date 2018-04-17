@@ -11,7 +11,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
     include( get_home_template() );
     }
     else{
-		?> 
+		?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<section id="slider" class="slider<?php echo Kirki::get_option( 'front_page_text_slider_parallax' ) == '1' ? ' slider-parallax' : ''; ?> nopadding clearfix">
@@ -19,7 +19,8 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 					<div class="container slider-caption text-center clearfix">
 						<?php
 							if ( Kirki::get_option( 'front_page_text_slider_title' ) != '' ) {
-								echo '<h1>' . wp_kses( Kirki::get_option( 'front_page_text_slider_title' ), array( 'span' => array() ) ) . '</h1>';
+
+								echo '<h1>' .  html_entity_decode(wp_kses( Kirki::get_option( 'front_page_text_slider_title' ), array( 'span' => array() ) )) . '</h1>';
 							}
 						?>
 
@@ -47,7 +48,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
                     <div class="row">
 						<?php if ( Kirki::get_option( 'front_page_icon_service_module_title' ) != '' ) : ?>
 							<div class="module-caption col-md-12 text-center">
-								<h2><?php echo wp_kses( Kirki::get_option( 'front_page_icon_service_module_title' ), '<span>' ); ?></h2>
+								<h2><?php echo html_entity_decode(wp_kses( Kirki::get_option( 'front_page_icon_service_module_title' ), '<span>' )); ?></h2>
 
 								<?php if ( Kirki::get_option( 'front_page_icon_service_module_subtitle' ) != '' ) : ?>
 									<p><?php echo esc_html(Kirki::get_option( 'front_page_icon_service_module_subtitle' )); ?></p>
@@ -96,7 +97,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 
 									<div class="spacer"></div>
 								</div><!-- .icon-service-box -->
-							<?php endforeach; ?> 
+							<?php endforeach; ?>
 						<?php endif; ?>
 					</div><!-- .row -->
 				</div><!-- .container -->
@@ -107,7 +108,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
                     <div class="row row-nopadding">
 						<?php if ( Kirki::get_option( 'front_page_portfolio_module_title' ) != '' ) : ?>
 							<div class="module-caption col-md-12 text-center">
-								<h2><?php echo wp_kses( Kirki::get_option( 'front_page_portfolio_module_title' ), '<span>' ); ?></h2>
+								<h2><?php echo html_entity_decode(wp_kses( Kirki::get_option( 'front_page_portfolio_module_title' ), '<span>' )); ?></h2>
 
 								<?php if ( Kirki::get_option( 'front_page_portfolio_module_subtitle' ) != '' ) : ?>
 									<p><?php echo esc_html(Kirki::get_option( 'front_page_portfolio_module_subtitle' )); ?></p>
@@ -181,7 +182,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 						<div class="promo-box-ver col-md-10 col-md-offset-1 text-center">
 							<?php
 								if ( Kirki::get_option( 'front_page_ver_promo_title' ) != '' ) {
-									echo '<h2>' . wp_kses( Kirki::get_option( 'front_page_ver_promo_title' ), '<span>' ) . '</h2>';
+									echo '<h2>' . html_entity_decode(wp_kses( Kirki::get_option( 'front_page_ver_promo_title' ), '<span>' )) . '</h2>';
 								}
 							?>
 
@@ -206,7 +207,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
                     <div class="row row-nopadding">
 						<?php if ( Kirki::get_option( 'front_page_blog_module_title' ) != '' ) : ?>
 							<div class="module-caption col-md-12 text-center">
-								<h2><?php echo wp_kses( Kirki::get_option( 'front_page_blog_module_title' ), '<span>' ); ?></h2>
+								<h2><?php echo html_entity_decode(wp_kses( Kirki::get_option( 'front_page_blog_module_title' ), '<span>' )); ?></h2>
 
 								<?php if ( Kirki::get_option( 'front_page_blog_module_subtitle' ) != '' ) : ?>
 									<p><?php echo esc_html(Kirki::get_option( 'front_page_blog_module_subtitle' )); ?></p>
@@ -274,7 +275,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
                     <div class="row">
 						<?php if ( Kirki::get_option( 'front_page_contact_module_title' ) != '' ) : ?>
 							<div class="module-caption col-md-12 text-center">
-								<h2><?php echo wp_kses( Kirki::get_option( 'front_page_contact_module_title' ), '<span>' ); ?></h2>
+								<h2><?php echo html_entity_decode(wp_kses( Kirki::get_option( 'front_page_contact_module_title' ), '<span>' )); ?></h2>
 
 								<?php if ( Kirki::get_option( 'front_page_contact_module_subtitle' ) != '' ) : ?>
 									<p><?php echo esc_html(Kirki::get_option( 'front_page_contact_module_subtitle' )); ?></p>
@@ -310,7 +311,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 											<?php endif; ?>
 										<?php endif; ?>
 									</div><!-- .contact-info -->
-								<?php endforeach; ?> 
+								<?php endforeach; ?>
 							</div><!-- .contact-item  -->
 						<?php endif; ?>
 
