@@ -6,7 +6,7 @@
  Description: BCorporate is a Free Corporate Wordpress Theme created using latest trends such as SASS which is a powerful and well performed CSS Extension, with HTML5 / CSS3 and Responsive design. This theme is a Full-Width Layout with includes features and Sections such as: Sliders, Portfolios, Services, Testimonials, Blog Posts, Call To Action (x2) and Contact Form. 
  BCorporate is suitable for any kind of businesses, with WooCommerce integrated in the theme BCorporate can serve all ecommerce related companies, corporate services & many other industries. It is created with more simplistic clean codes with easy to customize blogs, news and article publishing. Easy to navigate through its articles, it has clean Comment and Social Share features.  
  This theme is built on Bootstrap which makes it highly responsive and all browsers compatible. It is tested and supported by all screen-size. A cutting-edge mobile friendly performance, its SEO Friendly nature and beautifully integrated social shares will boost your online presence and help your website reach the top search results.
- Version: 1.0.9
+ Version: 2.0.0
  License: GPLv2 or later
  License URI: https://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: bcorporate
@@ -2823,4 +2823,25 @@ input[type="submit"].search-submit {
 }
 .gallery-caption {
   text-decoration: none;
+}
+.bcorporate_move_to_top {
+  float: right;
+  bottom: 1em;
+  border: 1px solid #000;
+  padding: 0.5em 0.75em;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 99999;
+  position: fixed;
+  right: 2%;
+  display: none;
+}
+.bcorporate_move_to_top:hover, .bcorporate_move_to_top:focus, .bcorporate_move_to_top:visited {
+  background-color: #000;
+  color: #fff;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
 }

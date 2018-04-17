@@ -12,6 +12,10 @@
 ?>
 
 	</div><!-- #content -->
+	<div class="bcorporate_move_to_top"> 
+		<i class="fa fa-arrow-up"></i>
+	</div>
+
 
 	<footer id="colophon" class="site-footer">
 
@@ -60,6 +64,7 @@
 		</div></div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
+
 
 <?php wp_footer(); ?>
 

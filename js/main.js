@@ -77,5 +77,25 @@ $(document).on('click', 'a[href^="#"]', function (event) {
     AOS.init({
       disable: 'mobile'
     });
+
+    //Scroll To Top
+    var window_height = $(window).height();
+    var window_height = (window_height) + (50);
+
+$(window).scroll(function() {
+        var scroll_top = $(window).scrollTop();
+        if (scroll_top > window_height) {
+            $('.bcorporate_move_to_top').show();
+        }
+        else {
+            $('.bcorporate_move_to_top').hide();   
+        }
+    });
+
+    $('.bcorporate_move_to_top').click(function(){
+        $('html, body').animate({scrollTop:0}, 'slow');
+        return false;
+        
+    });
     
 });
