@@ -41,6 +41,10 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == Changelog ==
+= Version 1.3.8 - 2018-04-12 =
+* Tweak - Submenu accessible in touchscreen.
+* Fix   - Submenu issue on menu item click in desktop.
+
 = Version 1.3.7 - 2018-03-21 =
 * Tweak - Add theme support for Jetpack Responsive Videos.
 * Feature - jQuery cycle plugin for slider upgraded to jQuery cycle2 v2.1.6 with swipe.
