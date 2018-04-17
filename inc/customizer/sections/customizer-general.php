@@ -13,10 +13,10 @@ function rubine_customize_register_general_settings( $wp_customize ) {
 	$wp_customize->add_section( 'rubine_section_general', array(
         'title'    => esc_html__( 'General Settings', 'rubine-lite' ),
         'priority' => 10,
-		'panel' => 'rubine_options_panel' 
+		'panel' => 'rubine_options_panel'
 		)
 	);
-	
+
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting( 'rubine_theme_options[layout]', array(
         'default'           => 'right-sidebar',
@@ -72,42 +72,7 @@ function rubine_customize_register_general_settings( $wp_customize ) {
 		'priority' => 5
 		)
 	);
-	
-	// Add Default Fonts Header
-	$wp_customize->add_setting( 'rubine_theme_options[default_fonts]', array(
-        'default'           => '',
-		'type'           	=> 'option',
-        'transport'         => 'refresh',
-        'sanitize_callback' => 'esc_attr'
-        )
-    );
-    $wp_customize->add_control( new Rubine_Customize_Header_Control(
-        $wp_customize, 'rubine_theme_options[default_fonts]', array(
-            'label' => esc_html__( 'Default Fonts', 'rubine-lite' ),
-            'section' => 'rubine_section_general',
-            'settings' => 'rubine_theme_options[default_fonts]',
-            'priority' => 6
-            )
-        )
-    );
-	
-	// Add Settings and Controls for Deactivate Google Font setting
-	$wp_customize->add_setting( 'rubine_theme_options[deactivate_google_fonts]', array(
-        'default'           => false,
-		'type'           	=> 'option',
-        'transport'         => 'refresh',
-        'sanitize_callback' => 'rubine_sanitize_checkbox'
-		)
-	);
-    $wp_customize->add_control( 'rubine_theme_options[deactivate_google_fonts]', array(
-        'label'    => esc_html__( 'Deactivate Google Fonts in case your language is not compatible.', 'rubine-lite' ),
-        'section'  => 'rubine_section_general',
-        'settings' => 'rubine_theme_options[deactivate_google_fonts]',
-        'type'     => 'checkbox',
-		'priority' => 7
-		)
-	);
-	
+
 }
 
 ?>
