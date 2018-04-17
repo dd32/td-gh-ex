@@ -3,7 +3,7 @@
 Author: Royal-Flush wp-royal.com
 Requires at least: WordPress 4.7+
 Tested up to: WordPress 4.9.3
-Version: 0.9.5
+Version: 0.9.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: blog, e-commerce, food-and-drink, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -58,19 +58,4 @@ Image Credits (screenshot.png):
 License: https://pixabay.com/en/service/terms/#usage
 
 Header Image, Copyright StockSnap
-https://pixabay.com/en/trees-plants-woods-fence-park-2561373/
-
-First Post, Copyright rawpixel
-https://pixabay.com/en/adventure-carefree-casual-caucasian-2579921/
-
-About Me Widget, Copyright rawpixel
-https://pixabay.com/en/freedom-holding-relax-2218621/
-
-Starter Content Image Credits
-https://pixabay.com/en/beach-beautiful-beetle-classic-1853939/
-https://pixabay.com/en/beach-girls-relax-sunshine-455752/
-https://pixabay.com/en/golden-gate-bridge-women-back-1030999/
-https://pixabay.com/en/freedom-holding-relax-2218621/
-https://pixabay.com/en/computer-browser-research-study-2562651/
-https://pixabay.com/en/people-woman-girl-clothing-eye-2563491/
-https://pixabay.com/en/berries-cream-food-fruits-plate-1845626/
+https://pixabay.com/en/sea-nature-horizon-blue-sky-2564090/

@@ -69,8 +69,8 @@ jQuery(document).ready(function( $ ) {
 	}
 
 	$('#featured-slider').slick({
-		prevArrow: '<span class="prev-arrow"><i class="fas fa-angle-left"></i></span>',
-		nextArrow: '<span class="next-arrow"><i class="fas fa-angle-right"></i></span>',
+		prevArrow: '<span class="prev-arrow icon-angle-left"></span>',
+		nextArrow: '<span class="next-arrow icon-angle-right"></span>',
 		dotsClass: 'slider-dots',
 		adaptiveHeight: true,
 		rtl: RTL,
@@ -130,6 +130,13 @@ jQuery(document).ready(function( $ ) {
 		bardAltSidebarClose();
 	});
 
+	// Instagram Columns
+	var instagram = $( '.footer-instagram-widget .null-instagram-feed li a' ),
+	instagramColumn = $( '.footer-instagram-widget .null-instagram-feed li' ).length;
+	instagram.css({
+		 'width'	: '' + 100 / instagramColumn +'%',
+		 'opacity'	: '1'
+	});
 
 /*
 ** Scroll Top Button =====

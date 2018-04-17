@@ -12,7 +12,7 @@ function bard_about_page_output() {
 	<div class="wrap">
 		<h1><?php esc_html_e( 'Welcome to Bard!', 'bard' ); ?></h1>
 		<p class="welcome-text">
-			<?php esc_html_e( 'Bard is free personal and multi-author Wordpress Blog theme. It\'s perfect for any kind of blog: personal, multi-author, food, lifestyle, etc... Is fully Responsive and Retina Display ready, clean, modern and minimal. Bard is WooCommerce compatible, also has RTL support and for sure it\'s SEO friendly. Coded with latest Wordpress\' standards.', 'bard' ); ?>
+			<?php esc_html_e( 'Bard is free personal and multi-author WordPress Blog theme. It\'s perfect for any kind of blog: personal, multi-author, food, lifestyle, etc... Is fully Responsive and Retina Display ready, clean, modern and minimal. Bard is WooCommerce compatible, also has RTL support and for sure it\'s SEO friendly. Coded with latest WordPress\' standards.', 'bard' ); ?>
 		</p>
 
 		<?php
@@ -61,7 +61,7 @@ function bard_about_page_output() {
 				<div class="column-wdith-3">
 					<h3><?php esc_html_e( 'Demo Content', 'bard' ); ?></h3>
 					<p>
-						<?php esc_html_e( 'If you are a Wordpress beginner it\'s highly recomended to install the Demo Content. This file includes: Menus, Posts, Pages, Widgets, etc. Read More about demo import in the ', 'bard' ); ?>
+						<?php esc_html_e( 'If you are a WordPress beginner it\'s highly recomended to install the Demo Content. This file includes: Menus, Posts, Pages, Widgets, etc. Read More about demo import in the ', 'bard' ); ?>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard/docs/?ref=bard-free-backend-about-docs/#demo'); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation.', 'bard' ); ?></a>
 					</p>
 					<a target="_blank" target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/bard/democontent/bard_free_demo_content.html?ref=bard-free-backend-about-demoxml-btn'); ?>" class="button button-primary"><?php esc_html_e( 'Download Import File', 'bard' ); ?></a>
@@ -110,7 +110,7 @@ function bard_about_page_output() {
 				bard_recommended_plugin( 'ajax-thumbnail-rebuild', 'ajax-thumbnail-rebuild', esc_html__( 'Ajax Thumbnail Rebuild', 'bard' ), esc_html__( 'AJAX Thumbnail Rebuild allows you to rebuild all thumbnails at once without script timeouts on your server.', 'bard' ) );
 
 				// Facebook Widget
-				bard_recommended_plugin( 'facebook-pagelike-widget', 'facebook_widget', esc_html__( 'Facebook Widget', 'bard' ), esc_html__( 'This widget adds a Simple Facebook Page Like Widget into your wordpress website sidebar within few minutes.', 'bard' ) );
+				bard_recommended_plugin( 'facebook-pagelike-widget', 'facebook_widget', esc_html__( 'Facebook Widget', 'bard' ), esc_html__( 'This widget adds a Simple Facebook Page Like Widget into your WordPress website sidebar within few minutes.', 'bard' ) );
 
 				?>
 
@@ -218,7 +218,7 @@ function bard_about_page_output() {
 						<td>
 							<h3><?php esc_html_e( 'WooCommerce Integration', 'bard' ); ?></h3>
 							<p>
-								<?php esc_html_e( 'The best eCommerce solution for Wordpress websites. Add your own Shop and sell anything from digital Goods to Coconuts.', 'bard' ); ?>
+								<?php esc_html_e( 'The best eCommerce solution for WordPress websites. Add your own Shop and sell anything from digital Goods to Coconuts.', 'bard' ); ?>
 								<br>
 								<strong class="only-pro"><?php esc_html_e( 'Pro Version:', 'bard' ); ?></strong> <?php esc_html_e( 'Left &amp; Right WooCommerce widgetised areas. Perfectly styled to fit the theme design.', 'bard' ); ?>
 							</p>
@@ -511,14 +511,14 @@ function bard_recommended_plugin( $slug, $filename, $name, $description) {
 }
 
 // enqueue ui CSS/JS
-function enqueue_about_bard_page_scripts($hook) {
+function bard_enqueue_about_page_scripts($hook) {
 
 	if ( 'appearance_page_about-bard' != $hook ) {
 		return;
 	}
 
 	// enqueue CSS
-	wp_enqueue_style( 'about-bard-bard-css', get_theme_file_uri( '/inc/about/css/about-page.css' ) );
+	wp_enqueue_style( 'bard-about-css', get_theme_file_uri( '/inc/about/css/about-page.css' ) );
 
 }
-add_action( 'admin_enqueue_scripts', 'enqueue_about_bard_page_scripts' );
+add_action( 'admin_enqueue_scripts', 'bard_enqueue_about_page_scripts' );

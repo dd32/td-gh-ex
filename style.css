@@ -4,7 +4,7 @@ Theme URI: https://wp-royal.com/themes/item-bard-free/
 Author: Royal Flush
 Author URI: http://wp-royal.com/
 Description: Clean and Minimalist WordPress Theme.
-Version: 0.9.5
+Version: 0.9.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: bard
@@ -296,6 +296,7 @@ textarea,
 select {
   font-family: 'Open Sans';
   outline: 0;
+  font-size: 14px;
   -webkit-border-radius: 0;
 }
 
@@ -373,10 +374,10 @@ html {
 
 .main-content {
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 92px;
 }
 
-/* Wordpress Default Class */
+/* WordPress Default Class */
 .sticky {
   background: #f7f7f7;
   padding: 40px;
@@ -774,9 +775,30 @@ sup {
 }
 
 .site-description {
+  position: relative;
   display: inline-block;
   margin-bottom: 0;
 }
+
+.site-description:before,
+.site-description:after {
+  content: ' ';
+  position: absolute;
+  top: 11px;
+  display: block;
+  width: 30px;
+  height: 1px;
+  background-color: #000;
+}
+
+.site-description:before {
+  left: -40px;
+}
+
+.site-description:after {
+  right: -40px;
+}
+
 
 .title-tagline-shown .header-logo a:not(.logo-img),
 .title-tagline-shown .site-description {
@@ -874,11 +896,12 @@ sup {
   top: 50%;
   margin-top: -15px;
   z-index: 1001;
-  width: 30px;
-  height: 30px;
-  line-height: 28px;
-  font-size: 16px;
-  border: 1px solid #fff;
+  width: 33px;
+  height: 33px;
+  line-height: 32px;
+  font-size: 14px;  
+  background: #ffffff;
+  color: #111111;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   text-align: center;
@@ -893,12 +916,12 @@ sup {
   right: 15px;
 }
 
-#featured-slider .prev-arrow i {
-  padding-right: 2px;
+#featured-slider .prev-arrow:before {
+  margin-right: 2px;
 }
 
-#featured-slider .next-arrow i {
-  padding-left: 2px;
+#featured-slider .next-arrow:before { 
+  margin-left: 2px;
 }
 
 .post-slider .prev-arrow,
@@ -926,27 +949,39 @@ sup {
   font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 11px;
 }
 
 .slider-title {
-  font-size: 36px;
-  line-height: 44px;
-  letter-spacing: 1px;
+  position: relative;
+  font-size: 31px;
+  line-height: 46px;
+  letter-spacing: 1.3px;
+  font-weight:600;
   text-transform: uppercase;
-  margin-bottom: 25px;
+  margin-bottom: 51px;
+}
+
+.slider-title:after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: calc(50% - 24px);
+  margin-top: 18px;
+  width: 48px;
+  height: 1px;
+  background: #fff;
 }
 
 .slider-read-more a {
   display: inline-block;
-  padding: 10px 12px 10px 13px;
-  border: 2px solid;
+  padding: 0 22px;
+  border: 1px solid;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: bold;
   letter-spacing: 2px;
-  line-height: 1.2;
+  line-height: 37px;
   text-transform: uppercase;
-  margin-bottom: 30px;
   cursor: pointer;
 }
 
@@ -999,6 +1034,7 @@ sup {
 /* 5.1 Menu */
 #main-menu {
   width: auto;
+  padding: 0 55px;
 }
 
 #main-menu li {
@@ -1010,10 +1046,31 @@ sup {
   list-style: none;
 }
 
+#main-menu > li:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -3px;
+  bottom: 0;
+  z-index: 100;
+  width: 5px;
+  height: 5px;
+  margin: auto 0;
+  -ms-transform: rotateZ(-45deg);
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  background-color: #e8e8e8;
+}
+
+#main-menu > li:last-child:after,
+#main-menu li.menu-item-has-children > a:after {
+  display: none !important;
+}
+
 #main-menu li a {
   display: block;
   position: relative;
-  padding: 0 16px;
+  padding: 0 17px;
   margin-left: 5px;
 }
 
@@ -1184,7 +1241,6 @@ sup {
   border-top-color: #111;
 }
 
-
 .main-nav-search {
   float: right;
   margin-left: 18px;
@@ -1214,7 +1270,7 @@ sup {
   bottom: -3px;
 }
 
-.main-nav-search:hover span {
+.main-nav-search:hover .btn-tooltip {
   top: -11px;
   visibility: visible;
   opacity: 1;
@@ -1271,7 +1327,7 @@ sup {
 .main-nav-sidebar {
   position: relative;
   float: left;
-  margin-right: 18px;
+  margin-right: 17px;
   height: 60px;
   cursor: pointer;
 }
@@ -1373,9 +1429,10 @@ sup {
 /* 5.4 Random Post Button */
 .random-post-btn {
   position: relative;
+  top: 0;
   display: inline-block;
   line-height: 60px;
-  font-size: 18px;
+  font-size: 16px;
   -webkit-transition: all 230ms ease-in-out 0s;
   transition: all 230ms ease-in-out 0s;
   cursor: pointer;
@@ -1404,7 +1461,8 @@ sup {
 --------------------------------------------------------------*/
 
 #featured-links {
-  padding-top: 30px;
+  padding-top: 25px;
+  margin-bottom: 15px;
 }
 
 #featured-links .boxed-wrapper {
@@ -1438,8 +1496,9 @@ sup {
   display: inline-block;
   padding: 8px 20px;
   font-family: 'Open Sans';
-  font-size: 12px;
-  letter-spacing: 2px;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
@@ -1464,7 +1523,11 @@ sup {
 
 .post-media {
   position: relative;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
+}
+
+.page .post-media {
+  margin-bottom: 23px;
 }
  
 .post-media > a {
@@ -1479,47 +1542,56 @@ sup {
 
 .post-header {
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 17px;
 }
 
-.full-width-post .post-header {
+.blog-classic-style .post-header {
   margin-bottom: 20px;
 }
 
 .post-categories a {
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 1.7px;
   text-transform: uppercase;
 }
 
-.post-title,
+.blog-classic-style .post-categories,
+.single .post-categories {
+  margin-bottom: 4px;
+}
+
+.blog-classic-style .post-title,
+.single .post-title,
 .page-title {
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 22px;
+  line-height: 34px;
   letter-spacing: 0.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
-
-.post-title {
-  margin-bottom: 13px;
-}
-
-.page-title {
-  margin-bottom: 24px;
+.blog-grid-style .post-title {
+  font-size: 16px;
+  line-height: 31px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .post-title em,
 .page-title em {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .border-divider {
   display: block;
-  height: 2px;
-  max-width: 50px;
-  margin: 0 auto 12px;
-  background-color: #181818;
+  height: 1px;
+  max-width: 45px;
+  margin: 0 auto 7px;
+  background-color: #e8e8e8;
 }
 
 .post-content {
@@ -1528,7 +1600,7 @@ sup {
 }
 
 .read-more {
-  margin: 30px 0 50px;
+  margin: 18px 0 34px;
   text-align: center;
 }
 
@@ -1552,26 +1624,37 @@ sup {
   margin: 0 auto;
 }
 
-.post-footer .post-date {
-  float: right;
-  font-size: 13px;
-  line-height: 2;
+.blog-grid-style .post-footer {
+  padding: 5px 0;
 }
 
 .post-footer {
   overflow: hidden;
   position: relative;
   text-align: center;
-  padding: 5px 0;
+  padding: 10px 0;
   border-bottom: 1px solid;
+}
+
+.blog-grid-style .post-author {
+  font-size: 13px;
+}
+
+.blog-grid-style .post-date {
+  float: right;
+}
+
+.post-date {
+  font-size: 13px;
+  line-height: 30px;
+  font-style: italic;
 }
 
 .post-author {
   float: left;
-  font-size: 13px;
-  font-style: italic;
-  letter-spacing: 0.5px;
+  font-size: 14px;
   line-height: 30px;
+  font-style: italic;
 }
 
 .post-author a {
@@ -1583,7 +1666,7 @@ sup {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  margin-right: 3px;
+  margin-right: 6px;
 }
 
 .post-share {
@@ -1599,6 +1682,7 @@ sup {
 .post-comments {
   float: right;
   font-style: italic;
+  font-size: 14px;
   line-height: 30px;
 }
 
@@ -1691,10 +1775,11 @@ sup {
 --------------------------------------------------------------*/
 
 .blog-pagination {
+  font-family: 'Montserrat';
   position: relative;
   overflow: hidden;
   text-align: center;
-  padding: 0px 0 50px;
+  margin-top: 25px; 
 }
 
 /* 10.1 Default */
@@ -1707,11 +1792,13 @@ sup {
 
 #page-content .blog-pagination.default .previous-page a,
 #page-content .blog-pagination.default .next-page a {
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 2px;
   text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1.6px;
 }
+
+
 
 .blog-pagination.default .previous-page {
   float: left;
@@ -1722,11 +1809,15 @@ sup {
 }
 
 /* 10.2 Numeric */
+.blog-pagination.numeric {
+  margin-top: 40px;
+}
+
 .blog-pagination.numeric a,
 .blog-pagination.numeric span {
   display: inline-block;
   padding: 14px 15px;
-  font-weight: bold;
+  font-weight: 600;
   text-transform: uppercase;
   line-height: 1;
   margin: 0 2px;
@@ -1752,7 +1843,7 @@ sup {
 .blog-pagination.load-more a {
   display: inline-block;
   padding: 14px 15px;
-  font-weight: bold;
+  font-weight: 600;
   text-transform: uppercase;
   line-height: 1;
 }
@@ -1809,7 +1900,7 @@ sup {
 .single-navigation {
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  padding: 20px 0;
+  padding: 20px 0 22px;
   overflow: hidden;
 }
 .single-navigation .previous-post {
@@ -1837,17 +1928,20 @@ sup {
 .single-navigation span {
   display: block;
   padding-top: 12px;
-  line-height: 24px;
-  font-size: 12px;
-  letter-spacing: 2px;
-  font-weight: bold;
+  line-height: 2.2;
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: 600;
   text-transform: uppercase;
+  color:#a1a1a1;
 }
 
 .single-navigation > div h5 {
   padding-bottom: 19px;
-  font-size: 19px;
-  letter-spacing: 0.5px;
+  font-size: 13px;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .single-navigation  .previous-post  > div {
@@ -1869,7 +1963,7 @@ sup {
 /* Post Author */
 .author-description {
   overflow: hidden;
-  padding: 35px 0 39px;
+  padding: 50px 0 49px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   text-align: center;
@@ -1884,11 +1978,8 @@ sup {
 }
 
 .author-description h4 {
-  margin: 1px 0;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+  margin-top: 5px;
+  margin-bottom:11px;
 }
 
 .author-share a {
@@ -1902,26 +1993,19 @@ sup {
 
 .author-description p {
   display: inline-block;
-  max-width: 800px;
+  max-width: 630px;
   margin-bottom: 10px;
 }
 
 /* Related Post */
 .related-posts {
-  padding: 27px 0 33px;
+  padding-bottom: 34px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
 }
 
 .related-posts h3 {
-  font-family: 'Open Sans';
-  margin-bottom: 19px;
-  text-align: center;
-  line-height: 1;
-  font-size: 14px;
-  letter-spacing: 2px;
-  font-weight: 600;
-  text-transform: uppercase;
+  margin-bottom: 27px;
 }
 
 .related-posts h4 {
@@ -1929,12 +2013,13 @@ sup {
 }
 
 .related-posts h4 a {
-  font-size: 18px;
-  letter-spacing: 0.5px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .related-post-date {
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .related-posts section {
@@ -1956,33 +2041,28 @@ sup {
 12.0 Comments
 --------------------------------------------------------------*/
 
-.comments-area {
-  margin-top: 30px;
-}
-
 #reply-title,
 #reply-title a,
 .comment-title h2,
 .comment-title {
   margin-bottom: 44px;
-  text-align: center;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
 }
 
 .comments-area .children {
-  margin-left: 50px;
+  margin-left: 30px;
 }
 
 .entry-comments {
   overflow: hidden;
-  padding: 0px 0 55px;
-  margin-bottom: 40px;
+  padding-bottom: 37px;
+  margin-bottom: 41px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
 }
+
+.commentslist > li:last-child .entry-comments {
+  margin-bottom: 0;
+} 
 
 .comment-content {
   overflow: hidden;
@@ -2000,7 +2080,7 @@ sup {
 }
 
 .comment-author {
-  font-family: 'Open Sans';
+  font-family: 'Montserrat';
   font-size: 13px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -2026,7 +2106,7 @@ sup {
 .comment-meta {
   margin-bottom: 7px;
   font-size: 11px;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .comment-date {
@@ -2035,13 +2115,10 @@ sup {
 
 .comment-reply-link {
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 600;
   float: right;
-  margin-top: -27px;
-}
-
-.comment-notes {
-  margin-bottom: 15px;
+  margin-top: -20px;
+  text-transform: capitalize;
 }
 
 .comment-form {
@@ -2054,48 +2131,60 @@ sup {
   font-size: 15px;
 }
 
-.comment-notes{
-  margin-bottom: 20px;
+.comment-notes {
+  font-style: italic;
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 25px;
 }
 
 .comments-area input,
 .comments-area textarea {
   width: 100%;
-  padding: 13px;
-  font-size: 14px;
+  padding: 12px 15px;
   border-width: 1px;
   border-style: solid;
 }
 
 .comment-form-author,
 .comment-form-email, 
-.comment-form-url,
-.comments-area {
-  margin-bottom: 20px;
+.comment-form-url {
+  margin-bottom: 15px;
+}
+
+.comment-form-comment {
+  margin-bottom: 10px;
 }
 
 .comment-form-author,
 .comment-form-email, 
 .comment-form-url {
-  width: 31% !important;
+  width: calc( (100% - 44px) / 3 );
+  width: -webkit-calc( (100% -44px) / 3- 1px) !important;
   float: left;
 }
 
 .comment-form-author,
 .comment-form-email {
-  margin-right: 3.5%;
+  margin-right: 22px;
 }
 
 .comments-area textarea {
   height: 250px;
 }
 
+.form-submit {
+  margin-bottom: 0;
+}
+
 .comments-area #submit {
+  font-family: 'Montserrat';
+  font-size: 11px;
   border: none;
   width: auto;
   cursor: pointer;
-  font-weight: bold;
-  letter-spacing: 2px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
 }
 
@@ -2182,6 +2271,11 @@ sup {
   overflow: hidden;
 }
 
+.sidebar-right .bard-widget:last-child,
+.sidebar-left .bard-widget:last-child {
+  margin-bottom: 0;
+}
+
 .bard-widget input[type="text"],
 .bard-widget input[type="email"],
 .bard-widget input[type="url"],
@@ -2200,31 +2294,19 @@ sup {
 .widget-title {
   position: relative;
   z-index: 0;
-  text-align: center;
-  margin-bottom: 12px;
   clear: both;
 }
 
 .widget-title h2 {
-  font-family: 'Open Sans';
-  font-size: 13px;
+  font-family: 'Montserrat';
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
   line-height: 32px;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  font-weight: 600;
-}
-
-.footer-widgets .widget-title {
-  text-align: left;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-}
-
-.footer-widgets .widget-title h2 {
-  font-size: 14px;
-  line-height: 29px;
-  letter-spacing: 1.5px;
-  font-weight: 400;
+  margin-bottom: 25px;
+  border: 1px solid #ebebeb;
 }
 
 .bard-widget > ul li span,
@@ -2427,11 +2509,11 @@ sup {
   z-index: 110;
   top: 50%;
   left: 50%;
-  padding: 10px;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background:rgba( 51, 51, 51, 0.85 );
+  background:rgba( 255, 255, 255, 0.85 );
+  padding: 0 15px;
 }
 
 .instagram-title h2 {
@@ -2439,12 +2521,9 @@ sup {
   font-size: 14px;
   letter-spacing: 1px;
   font-weight: bold;
-  line-height: 38px;
-  padding: 0px 10px;
+  line-height: 42px;
   text-align: center;
   text-transform: uppercase;
-  border-width: 1px;
-  border-style: solid;
 }
 
 .jr-insta-slider {
@@ -2452,18 +2531,27 @@ sup {
 }
 
 .null-instagram-feed {
-  display: inline-block;
+  display: block;
   width: 100%;
+  overflow: hidden;
 }
 
 .null-instagram-feed li a {
+  display: block;
+  width: 130px;
   float: left;
+  opacity: 0;
   overflow: hidden; 
 }
 
+.null-instagram-feed .clear {
+  display: none;
+}
+
 .bard-widget.null-instagram-feed li a {
-  width: calc(95%/3 - 1px);
-  width: -webkit-calc(95%/3 - 1px);
+  width: calc( 95% / 3 - 1px );
+  width: -webkit-calc( 95% / 3 - 1px );
+  opacity: 1;
   margin-right: 2.5%; 
   margin-bottom:2.5%; 
 }
@@ -2512,6 +2600,34 @@ sup {
   background: #f7f7f7;
 }
 
+
+
+.widget_wysija .widget-title h2 {
+  border: 0;
+  line-height: 1;
+}
+
+.widget_wysija .widget-title h2:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: calc(50% - 9px);
+  margin-top: 14px;
+  width: 18px;
+  height: 1px;
+  background: #b4b4b4;
+}
+
+.widget_wysija p {
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.widget_wysija p label {
+  text-align: left;
+}
+
 .widget_wysija {
   width: 100%;
 }
@@ -2530,9 +2646,10 @@ sup {
 }
 
 .widget_wysija input[type="submit"] {
-  font-weight: bold;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
+  font-style: 13px;
   margin-top: 12px;
   border: none;
   cursor: pointer;
@@ -2617,6 +2734,8 @@ sup {
 
 /* 11.1 Widgets */
 .footer-widgets {
+  border-top-width: 1px;
+  border-top-style: solid;
   overflow: hidden;
   padding: 60px 0 0px;
 }
@@ -2629,72 +2748,79 @@ sup {
   float: left;
 }
 
-.footer-widgets .widget-title {
+.footer-widget-title {
+  text-align: left;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
   margin-bottom: 20px;
+}
+
+.footer-widget-title h2 {
+  font-family: 'Montserrat';
+  font-size: 14px;
+  line-height: 39px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .footer-socials {
   text-align: center;
   padding: 20px 0px;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
 }
 
 .footer-socials a {
   display: inline-block;
-  margin-right: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #222;
+  line-height: 27px;
+  text-transform: uppercase;
+  margin-right: 35px;
+}
+
+.footer-socials-icon {
+  font-size: 13px;
+  margin-right: 9px;
 }
 
 .footer-socials a:last-child {
   margin: 0;
 }
 
-.footer-socials-icon {
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  font-size: 14px;
-  line-height: 35px;
-  text-align: center;
-  border-width: 1px;
-  border-style: solid;
-  margin-right: 10px; 
-}
-
-.footer-socials a span {
-  display: inline-block;
-  text-transform: uppercase;
-  font-family: 'Open Sans';
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
 .footer-logo a {
   display: inline-block;
-  margin: 0 auto;
+  margin: 0 auto 30px;
 }
 
 .footer-copyright {
   overflow: hidden;
-  padding: 30px 0 35px;
+  padding: 60px 0 50px;
   text-align: center;
   background-color: #F9F9F9;
 }
 
+.copyright-info {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
 .scrolltop {
   display: inline-block;
-  font-size: 13px;
-  font-weight: bold;
+  font-size: 12px;
+  font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   cursor: pointer;
 }
 
-.scrolltop .svg-inline--fa {
+.scrolltop .icon-angle-up {
+  position: relative;
   display: block;
-  font-size: 16px;
+  bottom: -3px;
   margin: 0 auto;
+  font-size: 20px;
 }
 
 
@@ -2738,7 +2864,7 @@ sup {
 
 .main-nav-search,
 #main-nav #s {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 60px;
 }
 
@@ -2753,12 +2879,37 @@ h2,
 h3,
 h4,
 h5,
-h6,
-#reply-title,
-#reply-title a {
+h6 {
   font-family: 'Montserrat';
   font-weight: 600;
 }
+
+.author-description h4,
+.related-posts h3,
+#reply-title,
+#reply-title a,
+.comment-title h2,
+.comment-title {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+}
+
+#reply-title,
+#respond,
+.related-posts,
+.comments-area {
+  margin-top: 43px;
+}
+
+#respond + li {
+  margin-top: 37px;
+}
+
 
 /* Body Text */
 body {
@@ -2768,22 +2919,27 @@ body {
   line-height: 25px;
 }
 
-.page-404 h2,
-.comment-author {
+.page-404 h2 {
   font-family: 'Open Sans';
   font-size: 15px;
   letter-spacing: 0px;
 }
 
-.copyright-info {
-  font-size: 13px;
-  margin-bottom: 10px;
+.woocommerce div.product .product_title {
+  font-size: 22px;
+  line-height: 34px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .woocommerce ul.products li.product .woocommerce-loop-category__title,
 .woocommerce ul.products li.product .woocommerce-loop-product__title,
 .woocommerce ul.products li.product h3 {
-  font-size: 23px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .woocommerce nav.woocommerce-pagination ul li a,
@@ -2795,28 +2951,8 @@ body {
 .upsells.products > h2,
 .crosssells.products > h2,
 .related.products > h2 {
-  font-family: 'Open Sans';
   font-size: 14px;
-}
-
-.woocommerce div.product .woocommerce-tabs .panel > h2,
-.woocommerce #reviews #comments h2,
-.woocommerce .cart-collaterals .cross-sells > h2,
-.woocommerce-page .cart-collaterals .cross-sells > h2,
-.woocommerce .cart-collaterals .cart_totals > h2,
-.woocommerce-page .cart-collaterals .cart_totals > h2,
-.woocommerce-billing-fields > h3,
-.woocommerce-shipping-fields > h3,
-#order_review_heading,
-#customer_login h2,
-.woocommerce-Address-title h3,
-.woocommerce-order-details__title,
-.woocommerce-customer-details h2,
-.woocommerce-columns--addresses h3,
-.upsells.products > h2,
-.crosssells.products > h2,
-.related.products > h2 {
-  letter-spacing: 1.5px;
+  letter-spacing: 0.5px;
 }
 
 .woocommerce div.product .woocommerce-tabs .panel > h2,
@@ -2833,7 +2969,24 @@ body {
 .woocommerce-order-details__title,
 .woocommerce-customer-details h2,
 .woocommerce-columns--addresses h3 {
-  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel > h2,
+.woocommerce #reviews #comments h2,
+.woocommerce .cart-collaterals .cross-sells > h2,
+.woocommerce-page .cart-collaterals .cross-sells > h2,
+.woocommerce .cart-collaterals .cart_totals > h2,
+.woocommerce-page .cart-collaterals .cart_totals > h2,
+.woocommerce-billing-fields > h3,
+.woocommerce-shipping-fields > h3,
+#order_review_heading,
+#customer_login h2,
+.woocommerce-Address-title h3,
+.woocommerce-order-details__title,
+.woocommerce-customer-details h2,
+.woocommerce-columns--addresses h3 {
+  font-size: 14px;
 }
 
 
@@ -2851,7 +3004,8 @@ body {
 /* letter-spacing 2+ */
 .woocommerce #page-content ul.products li.product .button,
 #page-content .woocommerce ul.products li.product .button {
-  letter-spacing: 2px;
+  font-family: 'Montserrat';
+  letter-spacing: 1.4px;
 }
 
 /* Font Size 13px */
@@ -2881,9 +3035,14 @@ body {
 .woocommerce #page-content #respond input#submit,
 .woocommerce #page-content .woocommerce-message .button,
 .woocommerce-page #page-content .woocommerce-message .button,
-.woocommerce form .form-row .required {
-  font-size: 14px;
-  letter-spacing: 1px;
+.woocommerce form .form-row .required,
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+  font-family: 'Montserrat';
+  font-size: 11px;
+  letter-spacing: 1.5px;
 }
 
 .woocommerce-pagination .page-numbers {

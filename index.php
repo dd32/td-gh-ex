@@ -31,10 +31,17 @@ if ( is_home() ) {
 		// Loop Start
 		if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-		$custom_post_class = '';
+		// Grid Class
+		$custom_post_class = 'blog-grid-style';
 
+		// List Class
+		if ( strpos( bard_options( 'general_home_layout' ), 'list' ) === 0 ) {
+			$custom_post_class	= 'blog-list-style';
+		}
+
+		// Classic Class
 		if ( is_home() && $wp_query->current_post == 0 && bard_full_width_post() ) {
-			$custom_post_class	= 'full-width-post';
+			$custom_post_class	= 'blog-classic-style';
 		}
 
 		echo '<li class="'. esc_attr( $custom_post_class ) .'">';

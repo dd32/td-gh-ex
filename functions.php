@@ -75,18 +75,33 @@ function bard_setup() {
 }
 add_action( 'after_setup_theme', 'bard_setup' );
 
-// Notice after Theme Activation
+
+/*
+** Notice after Theme Activation.
+*/
 function bard_activation_notice() {
-	echo '<div class="notice notice-success is-dismissible">';
-		echo '<p>'. esc_html__( 'Thank you for choosing Bard! Now, we higly recommend you to visit our welcome page.', 'bard' ) .'</p>';
-		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=about-bard' ) ) .'" class="button button-primary">'. esc_html__( 'Get Started with Bard', 'bard' ) .'</a></p>';
+	echo '<div class="notice notice-success is-dismissible bard-activation-notice">';
+		echo '<h1>'. esc_html__( 'Welcome to Bard', 'bard' ) .'</h1>';
+		echo '<p>'. esc_html__( 'Thank you for choosing Bard! Now, we higly recommend you to visit our ', 'bard' ) .'<a href="'. esc_url( admin_url( 'themes.php?page=about-bard' ) ) .'">'. esc_html__( 'welcome page.', 'bard' ) .'</a></p>';
+		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=about-bard' ) ) .'" class="button button-primary button-hero">'. esc_html__( 'Get Started with Bard', 'bard' ) .'</a></p>';
 	echo '</div>';
 }
 
+function bard_admin_scripts() {
+	global $pagenow;
+	
+	// Theme Activation Notice
+	if ( 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) {
+		wp_enqueue_style( 'bard-admin', get_theme_file_uri( '/assets/css/admin.css' ) );
+	}
 
-/**
- * Add a pingback url auto-discovery header for singularly identifiable articles.
- */
+}
+add_action( 'admin_enqueue_scripts', 'bard_admin_scripts' );
+
+
+/*
+** Add a pingback url auto-discovery header for singularly identifiable articles.
+*/
 function bard_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
@@ -225,7 +240,7 @@ function bard_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your footer.', 'bard' ),
 		'before_widget' => '<div id="%1$s" class="bard-widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<div class="widget-title"><h2>',
+		'before_title'  => '<div class="footer-widget-title"><h2>',
 		'after_title'   => '</h2></div>',
 	) );
 
@@ -274,9 +289,10 @@ if ( ! function_exists( 'bard_random_post_button' ) ) {
 	function bard_random_post_button() {
 
 		$args = array(
-			'post_type'			=> 'post',
-			'orderby' 			=> 'rand',
-			'posts_per_page'	=> 1
+			'post_type'				=> 'post',
+			'orderby' 				=> 'rand',
+			'posts_per_page'		=> 1,
+    		'ignore_sticky_posts' 	=> 1
 		);
 		$random_post = new WP_Query( $args );
 
@@ -367,63 +383,139 @@ function bard_hex2rgba( $color, $opacity = 1 ) {
 // Social Media
 if ( ! function_exists( 'bard_social_media' ) ) {
 
-	function bard_social_media( $social_class, $title  ) {
+	function bard_social_media( $class, $title  ) {
 	
 	$social_window = ( bard_options( 'social_media_window' ) === true )?'_blank':'_self';
 
 	?>
 
-		<div class="<?php echo esc_attr( $social_class ); ?>">
+	<div class="<?php echo esc_attr( $class ); ?>">
 
-			<?php if ( bard_options( 'social_media_url_1' ) !== '' ) : ?>
-				<a href="<?php echo esc_url( bard_options( 'social_media_url_1' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
-					<span class="<?php echo esc_attr( $social_class ); ?>-icon">
-						<i class="fab fa-<?php echo esc_attr(bard_options( 'social_media_icon_1' )); ?>"></i>
-					</span>
-					<?php if ( $title ) : ?>
-					<span><?php echo esc_attr(bard_options( 'social_media_title_1' )); ?></span>
-					<?php endif ;?>
-				</a>
-			<?php endif; ?>
+		<?php if ( bard_options( 'social_media_url_1' ) !== '' ) : ?>
+			<a href="<?php echo esc_url( bard_options( 'social_media_url_1' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
+				<span class="<?php echo esc_attr( $class ); ?>-icon"><?php bard_social_media_icon( '1' ); ?></span>
+				<?php if ( $title ) : ?>
+				<span><?php echo esc_attr(bard_options( 'social_media_title_1' )); ?></span>
+				<?php endif ;?>
+			</a>
+		<?php endif; ?>
 
-			<?php if ( bard_options( 'social_media_url_2' ) !== '' ) : ?>
-				<a href="<?php echo esc_url( bard_options( 'social_media_url_2' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
-					<span class="<?php echo esc_attr( $social_class ); ?>-icon">
-						<i class="fab fa-<?php echo esc_attr(bard_options( 'social_media_icon_2' )); ?>"></i>
-					</span>
-					<?php if ( $title ) : ?>
-					<span><?php echo esc_attr(bard_options( 'social_media_title_2' )); ?></span>
-					<?php endif ;?>
-				</a>
-			<?php endif; ?>
+		<?php if ( bard_options( 'social_media_url_2' ) !== '' ) : ?>
+			<a href="<?php echo esc_url( bard_options( 'social_media_url_2' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
+				<span class="<?php echo esc_attr( $class ); ?>-icon"><?php bard_social_media_icon( '2' ); ?></span>
+				<?php if ( $title ) : ?>
+				<span><?php echo esc_attr(bard_options( 'social_media_title_2' )); ?></span>
+				<?php endif ;?>
+			</a>
+		<?php endif; ?>
 
-			<?php if ( bard_options( 'social_media_url_3' ) !== '' ) : ?>
-				<a href="<?php echo esc_url( bard_options( 'social_media_url_3' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
-					<span class="<?php echo esc_attr( $social_class ); ?>-icon">
-						<i class="fab fa-<?php echo esc_attr(bard_options( 'social_media_icon_3' )); ?>"></i>
-					</span>
-					<?php if ( $title ) : ?>
-					<span><?php echo esc_attr(bard_options( 'social_media_title_3' )); ?></span>
-					<?php endif ;?>
-				</a>
-			<?php endif; ?>
+		<?php if ( bard_options( 'social_media_url_3' ) !== '' ) : ?>
+			<a href="<?php echo esc_url( bard_options( 'social_media_url_3' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
+				<span class="<?php echo esc_attr( $class ); ?>-icon"><?php bard_social_media_icon( '3' ); ?></span>
+				<?php if ( $title ) : ?>
+				<span><?php echo esc_attr(bard_options( 'social_media_title_3' )); ?></span>
+				<?php endif ;?>
+			</a>
+		<?php endif; ?>
 
-			<?php if ( bard_options( 'social_media_url_4' ) !== '' ) : ?>
-				<a href="<?php echo esc_url( bard_options( 'social_media_url_4' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
-					<span class="<?php echo esc_attr( $social_class ); ?>-icon">
-						<i class="fab fa-<?php echo esc_attr(bard_options( 'social_media_icon_4' )); ?>"></i>
-					</span>
-					<?php if ( $title ) : ?>
-					<span><?php echo esc_attr(bard_options( 'social_media_title_4' )); ?></span>
-					<?php endif ;?>
-				</a>
-			<?php endif; ?>
+		<?php if ( bard_options( 'social_media_url_4' ) !== '' ) : ?>
+			<a href="<?php echo esc_url( bard_options( 'social_media_url_4' ) ); ?>" target="<?php echo esc_attr($social_window); ?>">
+				<span class="<?php echo esc_attr( $class ); ?>-icon"><?php bard_social_media_icon( '4' ); ?></span>
+				<?php if ( $title ) : ?>
+				<span><?php echo esc_attr(bard_options( 'social_media_title_4' )); ?></span>
+				<?php endif ;?>
+			</a>
+		<?php endif; ?>
 
-		</div>
+	</div>
 
 	<?php
 
 	} // bard_social_media()
+
+	function bard_social_media_icon( $icon ) {
+
+		$icon = bard_options( 'social_media_icon_'. $icon );
+
+		$social_icons_fab = array(
+			'facebook-f',
+			'facebook',
+			'twitter',
+			'twitter-square',
+			'google',
+			'google-plus-g',
+			'linkedin-in',
+			'linkedin',
+			'pinterest',
+			'pinterest-p',
+			'pinterest-square',
+			'behance',
+			'behance-square',
+			'tumblr',
+			'tumblr-square',
+			'reddit',
+			'reddit-alien',
+			'reddit-square',
+			'dribbble',
+			'vk',
+			'skype',
+			'youtube',
+			'youtube-square',
+			'vimeo-v',
+			'vimeo',
+			'soundcloud',
+			'instagram',
+			'flickr',
+			'github',
+			'github-alt',
+			'github-square',
+			'stack-overflow',
+			'qq',
+			'weibo',
+			'weixin',
+			'xing',
+			'xing-square',
+			'medium',
+			'etsy',
+			'snapchat',
+			'snapchat-ghost',
+			'snapchat-square',
+			'meetup',
+			'amazon',
+			'paypal',
+			'cc-paypal',
+			'amazon',
+			'cc-visa',
+			'goodreads',
+			'goodreads-g'
+		);
+
+		$social_icons_fas = array(
+			'film',
+			'rss',
+			'heart',
+			'gamepad',
+			'envelope',
+			'book',
+			'tablet-alt',
+			'credit-card',
+			'user-circle',
+			'bookmark',
+			'comments',
+			'phone',
+			'user',
+
+		);
+
+		if ( in_array( $icon, $social_icons_fab ) ) {
+		    echo '<i class="fab fa-'.  $icon .'"></i>';
+		}
+
+		if ( in_array( $icon, $social_icons_fas ) ) {
+		    echo '<i class="fas fa-'.  $icon .'"></i>';
+		}
+		
+	}
 
 } // function_exists( 'bard_social_media' )
 
@@ -543,7 +635,7 @@ if ( ! function_exists( 'bard_comments' ) ) {
 			
 			<article <?php comment_class( 'entry-comments' ); ?> >					
 				<div class="comment-avatar">
-					<?php echo get_avatar( $comment, 75 ); ?>
+					<?php echo get_avatar( $comment, 65 ); ?>
 				</div>
 				<div class="comment-content">
 					<h3 class="comment-author"><?php comment_author_link(); ?></h3>
@@ -678,10 +770,10 @@ add_filter( 'loop_shop_per_page', 'bard_set_shop_post_per_page', 20 );
 // Pagination
 remove_action( 'woocommerce_pagination', 'woocommerce_pagination', 10 );
 
-function woocommerce_pagination() {
+function bard_woocommerce_pagination() {
 	get_template_part( 'templates/grid/blog', 'pagination' );
 }
-add_action( 'woocommerce_pagination', 'woocommerce_pagination', 10 );
+add_action( 'woocommerce_pagination', 'bard_woocommerce_pagination', 10 );
 
 /*
 ** Incs: Theme Customizer

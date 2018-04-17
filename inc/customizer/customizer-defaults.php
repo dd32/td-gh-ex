@@ -3,7 +3,7 @@
 function bard_options( $control ) {
 
 	$bard_defaults = array(
-		'colors_content_accent' => '#ca9b52',
+		'colors_content_accent' => '#00a9ff',
 		'colors_content_bg' => '#ffffff',
 		'colors_header_bg' => '#ffffff',
 		'general_sidebar_width' => '270',
@@ -21,9 +21,9 @@ function bard_options( $control ) {
 		'header_image_parallax' => false,
 		'title_tagline_logo_width' => '500',
 		'main_nav_label' => true,
-		'main_nav_align' => 'left',
+		'main_nav_align' => 'center',
 		'main_nav_show_random_btn' => true,
-		'main_nav_show_search' => false,
+		'main_nav_show_search' => true,
 		'main_nav_show_sidebar' => true,
 		'main_nav_merge_menu' => false,
 		'featured_slider_label' => false,
@@ -72,7 +72,7 @@ function bard_options( $control ) {
 		'social_media_title_4' => '',
 		'typography_logo_family' => 'Open+Sans',
 		'typography_nav_family' => 'Open+Sans',
-		'page_footer_show_socials' => true,
+		'page_footer_show_socials' => false,
 		'page_footer_logo' => '',
 		'page_footer_copyright' => '',
 		'preloader_label' => false

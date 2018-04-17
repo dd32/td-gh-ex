@@ -638,7 +638,7 @@ function bard_customize_register( $wp_customize ) {
 	bard_url_control( 'featured_links', 'url_1', esc_html__( 'URL', 'bard' ), 'refresh', 11 );
 
 	// Link #1 Image
-	bard_image_crop_control( 'featured_links', 'image_1', esc_html__( 'Image', 'bard' ), 600, 350, 'refresh', 13 );
+	bard_image_crop_control( 'featured_links', 'image_1', esc_html__( 'Image', 'bard' ), 600, 370, 'refresh', 13 );
 
 	// Link #2 Title
 	bard_text_control( 'featured_links', 'title_2', esc_html__( 'Title', 'bard' ), 'refresh', 15 );
@@ -647,7 +647,7 @@ function bard_customize_register( $wp_customize ) {
 	bard_url_control( 'featured_links', 'url_2', esc_html__( 'URL', 'bard' ), 'refresh', 17 );
 
 	// Link #2 Image
-	bard_image_crop_control( 'featured_links', 'image_2', esc_html__( 'Image', 'bard' ), 600, 350, 'refresh', 19 );
+	bard_image_crop_control( 'featured_links', 'image_2', esc_html__( 'Image', 'bard' ), 600, 370, 'refresh', 19 );
 
 	// Link #3 Title
 	bard_text_control( 'featured_links', 'title_3', esc_html__( 'Title', 'bard' ), 'refresh', 21 );
@@ -656,7 +656,7 @@ function bard_customize_register( $wp_customize ) {
 	bard_url_control( 'featured_links', 'url_3', esc_html__( 'URL', 'bard' ), 'refresh', 23 );
 
 	// Link #3 Image
-	bard_image_crop_control( 'featured_links', 'image_3', esc_html__( 'Image', 'bard' ), 600, 350, 'refresh', 25 );
+	bard_image_crop_control( 'featured_links', 'image_3', esc_html__( 'Image', 'bard' ), 600, 370, 'refresh', 25 );
 
 
 /*
@@ -923,7 +923,6 @@ function bard_customize_register( $wp_customize ) {
 
 	// Show Socials
 	bard_checkbox_control( 'page_footer', 'show_socials', esc_html__( 'Show Social Icons', 'bard' ), 'refresh', 1 );
-
 
 	// Logo Upload
 	bard_image_crop_control( 'page_footer', 'logo', esc_html__( 'Logo Upload', 'bard' ), 600, 350, 'refresh', 3 );

@@ -4,8 +4,9 @@
 
 	<div <?php echo esc_attr(bard_options( 'general_header_width' )) === 'contained' ? 'class="boxed-wrapper"': ''; ?>>	
 		
-		<!-- Alt Sidebar Icon -->
 		<div class="main-nav-buttons">
+
+			<!-- Alt Sidebar Icon -->
 			<?php if ( bard_options( 'main_nav_show_sidebar' ) === true ) : ?>
 			<div class="main-nav-sidebar">
 				<span class="btn-tooltip"><?php esc_html_e( 'Alt Sidebar', 'bard' ); ?></span>
@@ -16,7 +17,8 @@
 				</div>
 			</div>
 			<?php endif; ?>
-			
+
+			<!-- Random Post Button -->			
 			<?php if ( bard_options( 'main_nav_show_random_btn' ) === true ) : ?>
 				<?php bard_random_post_button(); ?>
 			<?php endif; ?>
