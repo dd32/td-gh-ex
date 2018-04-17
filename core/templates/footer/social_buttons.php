@@ -59,14 +59,14 @@ if (!function_exists('suevafree_socials_function')) {
 		);
 
 		$i = 0;
-		$html = "";
+		$html = '';
 		
-		foreach ( $socials as $name => $attrs) { 
+		foreach ( $socials as $k => $v) { 
 		
-			if ( suevafree_setting('suevafree_footer_'.$name.'_button') ): 
+			if ( suevafree_setting('suevafree_footer_'.$k.'_button') ): 
 
 				$i++;	
-				$html.= '<a href="'.esc_url(suevafree_setting('suevafree_footer_'.$name.'_button'), array( 'http', 'https', 'tel', 'skype', 'mailto' ) ).'" target="'.$attrs['target'].'" title="'.$name.'" class="social"> <i class="'.$attrs['icon'].'" ></i> </a> ';
+				$html.= '<a href="'.esc_url(suevafree_setting('suevafree_footer_'.$k.'_button'), array( 'http', 'https', 'tel', 'skype', 'mailto' ) ).'" target="'.$v['target'].'" title="'.$k.'" class="social"> <i class="'.$v['icon'].'" ></i></a> ';
 			
 			endif;
 			
@@ -75,14 +75,18 @@ if (!function_exists('suevafree_socials_function')) {
 		if ( suevafree_setting('suevafree_footer_rss_button') == "on" ): 
 		
 			$i++;	
-			$html.= '<a href="'. esc_url(get_bloginfo('rss2_url')). '" title="Rss" class="social rss"> <i class="fa fa-rss" ></i>  </a> ';
+			$html.= '<a href="'. esc_url(get_bloginfo('rss2_url')). '" title="Rss" class="social rss"><i class="fa fa-rss" ></i></a> ';
 		
 		endif; 
 			
-		if ( $i > 0 ) {
+		if ( $i > 0 && !suevafree_setting('suevafree_footer_social_buttons') || suevafree_setting('suevafree_footer_social_buttons') == 'on' ) {
 			
+			echo '<div class="col-md-7">';
+			echo '<div class="social-buttons">';
 			echo wp_kses($html, $allowed);
-	
+			echo '</div>';
+			echo '</div>';
+
 		}
 		
 	}

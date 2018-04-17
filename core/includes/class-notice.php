@@ -23,7 +23,7 @@ if( !class_exists( 'suevafree_admin_notice' ) ) {
 		 
 		public function __construct( $fields = array() ) {
 
-			if ( !get_user_meta( get_current_user_id(), 'SuevaFree_UserID_Notice_' . get_current_user_id() , TRUE ) ) {
+			if ( !get_user_meta( get_current_user_id(), 'SuevaFree_AdminID_Notice_' . get_current_user_id() , TRUE ) ) {
 
 				add_action( 'admin_notices', array(&$this, 'admin_notice') );
 				add_action( 'admin_head', array( $this, 'dismiss' ) );
@@ -39,7 +39,7 @@ if( !class_exists( 'suevafree_admin_notice' ) ) {
 		 */
 
 		public function update_dismiss() {
-			delete_metadata( 'user', null, 'SuevaFree_UserID_Notice_' . get_current_user_id(), null, true );
+			delete_metadata( 'user', null, 'SuevaFree_AdminID_Notice_' . get_current_user_id(), null, true );
 		}
 
 		/**
@@ -50,7 +50,7 @@ if( !class_exists( 'suevafree_admin_notice' ) ) {
 		
 			if ( isset( $_GET['sueva-free-dismiss'] ) ) {
 		
-				update_user_meta( get_current_user_id(), 'SuevaFree_UserID_Notice_' . get_current_user_id() , intval($_GET['sueva-free-dismiss']) );
+				update_user_meta( get_current_user_id(), 'SuevaFree_AdminID_Notice_' . get_current_user_id() , intval($_GET['sueva-free-dismiss']) );
 				remove_action( 'admin_notices', array(&$this, 'admin_notice') );
 				
 			} 

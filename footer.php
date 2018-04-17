@@ -14,19 +14,7 @@
 				
                 </div>
             
-            	<?php if ( !suevafree_setting('suevafree_footer_social_buttons') || suevafree_setting('suevafree_footer_social_buttons') == "on" ) : ?>
-                
-                    <div class="col-md-7" >
-        
-                        <div class="social-buttons">
-                        
-                            <?php do_action( 'suevafree_socials' ); ?>
-                        
-                        </div>
-                        
-                    </div>
-    
-				<?php endif; ?>
+            	<?php do_action( 'suevafree_socials' ); ?>
 
             </div>
             
