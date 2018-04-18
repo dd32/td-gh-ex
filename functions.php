@@ -38,7 +38,7 @@ add_action( 'after_setup_theme', 'academic_education_setup' );
 define('ACADEMIC_EDUCATION_CREDIT','https://www.logicalthemes.com/','academic-education');
 if ( ! function_exists( 'academic_education_credit' ) ) {
 	function academic_education_credit(){
-			echo "<a href=".esc_url(ACADEMIC_EDUCATION_CREDIT)." target='_blank'>".esc_html__('Logical Themes','academic-education')."</a>";
+		echo "<a href=".esc_url(ACADEMIC_EDUCATION_CREDIT)." target='_blank'>".esc_html__('Logical Themes','academic-education')."</a>";
 	}
 }
 
@@ -139,8 +139,7 @@ function academic_education_font_url(){
 	);
 	$font_url = add_query_arg($query_args,'//fonts.googleapis.com/css');
 	return $font_url;
-}
-	
+}	
 
 /* Theme enqueue scripts */
 function academic_education_scripts() {

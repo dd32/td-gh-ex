@@ -42,8 +42,7 @@
                   <img src="<?php the_post_thumbnail_url('full'); ?>" title="#slidecaption<?php echo esc_attr( $academic_education_n ); ?>" />
                 <?php
               $count++;
-            endwhile;
-            ?>
+            endwhile; wp_reset_postdata(); ?>
           </div>
 
           <?php

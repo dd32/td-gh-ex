@@ -202,7 +202,6 @@ function academic_education_customize_register( $wp_customize ) {
 			'section'  => 'academic_education_slidersettings',
 			'type'     => 'dropdown-pages'
 		) );
-
 	}
 
 	//Courses
@@ -272,15 +271,6 @@ function academic_education_customize_register( $wp_customize ) {
 	
 }
 add_action( 'customize_register', 'academic_education_customize_register' );	
-
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- */
-function academic_education_customize_preview_js() {
-	wp_enqueue_script( 'academic_education_customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20130508', true );
-}
-add_action( 'customize_preview_init', 'academic_education_customize_preview_js' );
-
 
 /**
  * Singleton class for handling the theme's customizer integration.
@@ -359,7 +349,7 @@ final class academic_education_customize {
 					'priority' => 9,
 					'title'    => esc_html__( 'Academic Education Pro', 'academic-education' ),
 					'pro_text' => esc_html__( 'Update Pro',         'academic-education' ),
-					'pro_url'  => ''
+					'pro_url'  => 'https://www.logicalthemes.com/themes/premium-academic-education-wordpress-theme'
 				)
 			)
 		);

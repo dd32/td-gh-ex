@@ -14,7 +14,8 @@ get_header(); ?>
                 <h1><?php the_title();?></h1>
                 <img src="<?php the_post_thumbnail_url(); ?>" width="100%">
                 <?php the_content();
-                if ( comments_open() || '0' != get_comments_number() )
+                
+                    if ( comments_open() || '0' != get_comments_number() )
                     	comments_template();
                 ?>
             <?php endwhile; // end of the loop. ?>            

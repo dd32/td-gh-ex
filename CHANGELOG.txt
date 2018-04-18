@@ -6,3 +6,8 @@ Version 0.2
 	ii.  Done responsive menu css.
 	iii. Resolved the translation error in footer.
 	iv.  Added image tag in page template.
+
+Version 0.2.1
+	i.   Added the License information of image url with given format.
+	ii.  Resolved the console error of customizer.js 
+	iii. Added the theme url.
