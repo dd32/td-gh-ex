@@ -1,15 +1,18 @@
-=== air ===
+=== air-light ===
+
+Air-light WordPress Theme, Copyright 2018 Digitoimisto Dude Oy, Roni Laukkarinen
+Air-light is distributed under the terms of the GNU GPL
 
 Contributors: Digitoimisto Dude Oy
 Tags: one-column, accessibility-ready, translation-ready
 
 Requires at least: 4.0
 Tested up to: 4.9.3
-Stable tag: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
+Stable tag: 4.0.5
+License: MIT License
+License URI: https://opensource.org/licenses/MIT
 
-A starter theme called air.
+A starter theme called air-light.
 
 == Description ==
 
@@ -21,7 +24,7 @@ Air starter theme is built to be very straightforward, front end developer frien
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-Or just get from GitHub: https://github.com/digitoimistodude/air
+Or just get from GitHub: https://github.com/digitoimistodude/air-light
 
 == Frequently Asked Questions ==
 
