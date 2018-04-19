@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.2.1 | 19th April 2018 = 
+* Update: Grid widget to make sure all is all.
+
 = Version 3.2.0 | 9th April 2018 = 
 * Update: Nav Class.
 * Update: Post footer Meta.

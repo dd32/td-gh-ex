@@ -58,7 +58,11 @@ function virtue_woocommerce_single_product_hooks() {
 	add_filter( 'woocommerce_related_products_args', 'virtue_woo_related_products_limit' );
 	function virtue_woo_related_products_limit() {
 		global $product, $woocommerce;
-		$related = $product->get_related();
+		if ( version_compare( WC_VERSION, '3.0', '>' ) ) {
+			$related = wc_get_related_products($product->get_id(), 12);
+		} else {
+			$related = $product->get_related(12);
+		}
 		$args = array(
 			'post_type'           => 'product',
 			'no_found_rows'       => 1,

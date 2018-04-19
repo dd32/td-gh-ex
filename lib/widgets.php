@@ -600,10 +600,16 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
 		switch ($instance['gridchoice']) {
       
 	        case "portfolio" :
+
+	        	if ( empty( $instance['thetype'] ) || 'null' == $instance['thetype'] ) {
+	        		$type = '';
+	        	} else {
+	        		$type = $instance['thetype'];
+	        	}
 	        
 				$r = new WP_Query( apply_filters('widget_posts_args', array( 
 				'post_type' => 'portfolio', 
-				'portfolio-type' => $instance['thetype'], 
+				'portfolio-type' => $type, 
 				'no_found_rows' => true, 
 				'posts_per_page' => $number, 
 				'post_status' => 'publish', 
@@ -672,15 +678,15 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
     if (isset($instance['thetype'])) { $thetype = esc_attr($instance['thetype']); } else {$thetype = '';}
      $types= get_terms('portfolio-type');
      $type_options = array();
-          $type_options[] = '<option value="null">All</option>';
+          $type_options[] = '<option value="">All</option>';
  
-    foreach ($types as $type) {
-      if ($thetype == $type->slug) { $selected=' selected="selected"';} else { $selected=""; }
-      $type_options[] = '<option value="' . $type->slug .'"' . $selected . '>' . $type->name . '</option>';
-    }
-     $categories= get_categories();
-     $cat_options = array();
-          $cat_options[] = '<option value="">All</option>';
+	foreach ($types as $type) {
+		if ($thetype == $type->slug) { $selected=' selected="selected"';} else { $selected=""; }
+		$type_options[] = '<option value="' . $type->slug .'"' . $selected . '>' . $type->name . '</option>';
+	}
+	$categories= get_categories();
+	$cat_options = array();
+	$cat_options[] = '<option value="">All</option>';
  
     foreach ($categories as $cat) {
       if ($thecat==$cat->slug) { $selected=' selected="selected"';} else { $selected=""; }
