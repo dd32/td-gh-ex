@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-17 20:27+0100\n"
-"PO-Revision-Date: 2018-02-17 20:27+0100\n"
+"POT-Creation-Date: 2018-04-19 19:46+0200\n"
+"PO-Revision-Date: 2018-04-19 19:46+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -1251,37 +1251,29 @@ msgid "You can also choose one of available premium child themes for SuevaFree"
 msgstr ""
 
 #: core/includes/class-customize.php:414
-msgid "Upgrade to ValePro"
-msgstr "Atualizar para ValePro"
+msgid "SuevaFree child themes"
+msgstr ""
 
-#: core/includes/class-customize.php:415
-msgid "Upgrade to SvevaPro"
-msgstr "Atualizar para SuevaPro"
-
-#: core/includes/class-customize.php:416
-msgid "Upgrade to Avana"
-msgstr "Atualizar para Avana"
-
-#: core/includes/class-customize.php:424
+#: core/includes/class-customize.php:422
 msgid "WordPress Support Service."
 msgstr "Servicio suporte para WordPress"
 
-#: core/includes/class-customize.php:426
+#: core/includes/class-customize.php:424
 msgid ""
 "We are excited to announce the opening of our new Premium WordPress Support "
 "Service, to solve all technical issues like code issues, white screen "
 "issues, theme and plugin issues and much more."
 msgstr ""
 
-#: core/includes/class-customize.php:430
+#: core/includes/class-customize.php:428
 msgid "WordPress Support"
 msgstr "Suporte para WordPress"
 
-#: core/includes/class-customize.php:438
+#: core/includes/class-customize.php:436
 msgid "SuevaFree Support"
 msgstr "SuevaFree Suporte"
 
-#: core/includes/class-customize.php:440
+#: core/includes/class-customize.php:438
 msgid ""
 "If you've opened a new support ticket from <strong>WordPress.org</strong>, "
 "please send a reminder to <strong>support@wpinprogress.com</strong>, to get "
@@ -1291,15 +1283,15 @@ msgstr ""
 "favor envie um lembrete para <strong>support@wpinprogress.com</strong> para "
 "ser respondido mais rápido."
 
-#: core/includes/class-customize.php:444
+#: core/includes/class-customize.php:442
 msgid "Open a new ticket"
 msgstr "Abrir novo chamado"
 
-#: core/includes/class-customize.php:445
+#: core/includes/class-customize.php:443
 msgid "Send a reminder"
 msgstr "Enviar um lembrete"
 
-#: core/includes/class-customize.php:450
+#: core/includes/class-customize.php:448
 msgid ""
 "If you like this theme and support, <strong>I'd appreciate</strong> any of "
 "the following:"
@@ -1307,19 +1299,19 @@ msgstr ""
 "Caso tenha gostado deste tema e queira nos apoiar, <strong>eu ficaria muito "
 "grato</strong> por qualquer um dos seguintes:"
 
-#: core/includes/class-customize.php:454
+#: core/includes/class-customize.php:452
 msgid "Rate this Theme"
 msgstr "Qualifique este Tema"
 
-#: core/includes/class-customize.php:455
+#: core/includes/class-customize.php:453
 msgid "Like on Facebook"
 msgstr "Like no Facebook"
 
-#: core/includes/class-customize.php:456
+#: core/includes/class-customize.php:454
 msgid "Subscribe our newsletter"
 msgstr "Assine nossa newsletter"
 
-#: core/includes/class-customize.php:457
+#: core/includes/class-customize.php:455
 msgid "Download our free WordPress themes"
 msgstr "Baixe nossos temas WordPress gratuitos"
 
@@ -2003,11 +1995,11 @@ msgstr "Available on backorder"
 msgid "Coupon:"
 msgstr "Cupom:"
 
-#: woocommerce/checkout/form-checkout.php:20
+#: woocommerce/checkout/form-checkout.php:29
 msgid "You must be logged in to checkout."
 msgstr "Você deve estar logado para concluir o pagamento."
 
-#: woocommerce/checkout/form-checkout.php:52
+#: woocommerce/checkout/form-checkout.php:60
 msgid "Your order"
 msgstr "Seu pedido"
 
@@ -2132,6 +2124,15 @@ msgstr "Informação adicional"
 #: woocommerce/single-product/up-sells.php:32
 msgid "You may also like&hellip;"
 msgstr "Você também pode gostar&hellip;"
+
+#~ msgid "Upgrade to ValePro"
+#~ msgstr "Atualizar para ValePro"
+
+#~ msgid "Upgrade to SvevaPro"
+#~ msgstr "Atualizar para SuevaPro"
+
+#~ msgid "Upgrade to Avana"
+#~ msgstr "Atualizar para Avana"
 
 #~ msgid "Styles"
 #~ msgstr "Estilos"

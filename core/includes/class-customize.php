@@ -411,9 +411,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
                 <ul>
                 
-                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/valepro-free-clean-magazine-wordpress-child-theme/?ref=2&campaign=sueva-panel' ); ?>" title="<?php esc_attr_e('Upgrade to ValePro','suevafree');?>" target="_blank"><?php esc_html_e('Upgrade to ValePro','suevafree');?></a></li>
-                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/sveva-pro-beauty-and-clean-suevafree-child-theme/?ref=2&campaign=sueva-panel' ); ?>" title="<?php esc_attr_e('Upgrade to SvevaPro','suevafree');?>" target="_blank"><?php esc_html_e('Upgrade to SvevaPro','suevafree');?></a></li>
-                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/avana-clean-and-minimal-suevafree-child-theme/?ref=2&campaign=sueva-panel' ); ?>" title="<?php esc_attr_e('Upgrade to Avana','suevafree');?>" target="_blank"><?php esc_html_e('Upgrade to Avana','suevafree');?></a></li>
+                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/products-tag/suevafree-wordpress-child-themes/?ref=2&campaign=sueva-panel' ); ?>" title="<?php esc_attr_e('SuevaFree child themes','suevafree');?>" target="_blank"><?php esc_html_e('SuevaFree child themes','suevafree');?></a></li>
                 
                 </ul>
 
@@ -427,7 +425,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
                 <ul>
                 
-                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/wordpress-premium-support-service/?ref=2&campaign=sueva-panel' ); ?>" title="<?php esc_attr_e('WordPress Support','suevafree');?>" target="_blank"><?php esc_html_e('WordPress Support','suevafree');?></a></li>
+                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/products/wordpress-services/?ref=2&campaign=sueva-panel' ); ?>" title="<?php esc_attr_e('WordPress Support','suevafree');?>" target="_blank"><?php esc_html_e('WordPress Support','suevafree');?></a></li>
                 
                 </ul>
 

@@ -1,5 +1,11 @@
 SuevaFree Changelog
 
+- Version 3.5.3 - Released: 19.04.2018
+
+-- Fixed : WooCommerce product header on mobile version. 
+-- Fixed : Children items on mobile menu. 
+-- Edit  : Code optimized.
+
 - Version 3.5.2 - Released: 17.04.2018
 
 -- Fixed : Blank space when there are no social links on the footer. 

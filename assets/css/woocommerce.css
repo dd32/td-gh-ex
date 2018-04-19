@@ -1299,6 +1299,18 @@ body.disable_box_shadow.woocommerce nav.woocommerce-pagination ul li span {
 		margin-top:0;
 	}
 	
+	.products-list h1.title,
+	.woocommerce-ordering select.orderby,
+	.woocommerce .woocommerce-ordering, 
+	.woocommerce .woocommerce-result-count{
+		text-align:center;
+		width: 100%;
+	}
+
+	.woocommerce .woocommerce-result-count {
+		margin-bottom: 50px;
+	}
+	
 	.header-cart,
 	.header_2 .header-cart a.cart-contents {
 		display:none;

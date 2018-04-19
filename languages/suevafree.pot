@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-09 19:33+0100\n"
+"POT-Creation-Date: 2018-04-19 19:46+0200\n"
 "PO-Revision-Date: 2015-09-11 19:05+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
@@ -1195,6 +1195,11 @@ msgstr ""
 msgid "This sidebar will be shown at the end of your content."
 msgstr ""
 
+#: core/functions/function-woocommerce.php:93
+#: core/functions/function-woocommerce.php:121
+msgid "View your shopping cart"
+msgstr ""
+
 #: core/includes/class-customize.php:394
 msgid "Upgrade to Sueva Premium."
 msgstr ""
@@ -1218,70 +1223,62 @@ msgid "You can also choose one of available premium child themes for SuevaFree"
 msgstr ""
 
 #: core/includes/class-customize.php:414
-msgid "Upgrade to ValePro"
+msgid "SuevaFree child themes"
 msgstr ""
 
-#: core/includes/class-customize.php:415
-msgid "Upgrade to SvevaPro"
-msgstr ""
-
-#: core/includes/class-customize.php:416
-msgid "Upgrade to Avana"
-msgstr ""
-
-#: core/includes/class-customize.php:424
+#: core/includes/class-customize.php:422
 msgid "WordPress Support Service."
 msgstr ""
 
-#: core/includes/class-customize.php:426
+#: core/includes/class-customize.php:424
 msgid ""
 "We are excited to announce the opening of our new Premium WordPress Support "
 "Service, to solve all technical issues like code issues, white screen "
 "issues, theme and plugin issues and much more."
 msgstr ""
 
-#: core/includes/class-customize.php:430
+#: core/includes/class-customize.php:428
 msgid "WordPress Support"
 msgstr ""
 
-#: core/includes/class-customize.php:438
+#: core/includes/class-customize.php:436
 msgid "SuevaFree Support"
 msgstr ""
 
-#: core/includes/class-customize.php:440
+#: core/includes/class-customize.php:438
 msgid ""
 "If you've opened a new support ticket from <strong>WordPress.org</strong>, "
 "please send a reminder to <strong>support@wpinprogress.com</strong>, to get "
 "a faster reply."
 msgstr ""
 
-#: core/includes/class-customize.php:444
+#: core/includes/class-customize.php:442
 msgid "Open a new ticket"
 msgstr ""
 
-#: core/includes/class-customize.php:445
+#: core/includes/class-customize.php:443
 msgid "Send a reminder"
 msgstr ""
 
-#: core/includes/class-customize.php:450
+#: core/includes/class-customize.php:448
 msgid ""
 "If you like this theme and support, <strong>I'd appreciate</strong> any of "
 "the following:"
 msgstr ""
 
-#: core/includes/class-customize.php:454
+#: core/includes/class-customize.php:452
 msgid "Rate this Theme"
 msgstr ""
 
-#: core/includes/class-customize.php:455
+#: core/includes/class-customize.php:453
 msgid "Like on Facebook"
 msgstr ""
 
-#: core/includes/class-customize.php:456
+#: core/includes/class-customize.php:454
 msgid "Subscribe our newsletter"
 msgstr ""
 
-#: core/includes/class-customize.php:457
+#: core/includes/class-customize.php:455
 msgid "Download our free WordPress themes"
 msgstr ""
 
@@ -1716,7 +1713,7 @@ msgstr ""
 msgid "%1$s: %2$s"
 msgstr ""
 
-#: core/main.php:626 core/main.php:632
+#: core/main.php:626 core/main.php:632 core/main.php:653
 msgid "Read More"
 msgstr ""
 
@@ -1908,6 +1905,7 @@ msgid "Shipping"
 msgstr ""
 
 #: woocommerce/cart/cart-totals.php:78 woocommerce/cart/cart.php:49
+#: woocommerce/cart/cart.php:135
 msgid "Total"
 msgstr ""
 
@@ -1923,20 +1921,32 @@ msgid ""
 "based on your billing and shipping information."
 msgstr ""
 
+#: woocommerce/cart/cart-totals.php:101
+msgid "Update Shopping Cart"
+msgstr ""
+
+#: woocommerce/cart/cart-totals.php:102
+msgid "Proceed to Checkout"
+msgstr ""
+
 #: woocommerce/cart/cart.php:37
 msgid "Cart"
 msgstr ""
 
-#: woocommerce/cart/cart.php:46
+#: woocommerce/cart/cart.php:46 woocommerce/cart/cart.php:92
 msgid "Product"
 msgstr ""
 
-#: woocommerce/cart/cart.php:47
+#: woocommerce/cart/cart.php:47 woocommerce/cart/cart.php:113
 msgid "Price"
 msgstr ""
 
-#: woocommerce/cart/cart.php:48
+#: woocommerce/cart/cart.php:48 woocommerce/cart/cart.php:119
 msgid "Quantity"
+msgstr ""
+
+#: woocommerce/cart/cart.php:75
+msgid "Remove this item"
 msgstr ""
 
 #: woocommerce/cart/cart.php:109
@@ -1945,6 +1955,14 @@ msgstr ""
 
 #: woocommerce/cart/cart.php:153
 msgid "Coupon:"
+msgstr ""
+
+#: woocommerce/cart/cart.php:153 woocommerce/checkout/form-coupon.php:46
+msgid "Coupon code"
+msgstr ""
+
+#: woocommerce/cart/cart.php:153 woocommerce/checkout/form-coupon.php:50
+msgid "Apply coupon"
 msgstr ""
 
 #: woocommerce/checkout/form-checkout.php:29
@@ -1961,10 +1979,6 @@ msgstr ""
 
 #: woocommerce/checkout/form-coupon.php:36
 msgid "Click here to enter your code"
-msgstr ""
-
-#: woocommerce/checkout/form-coupon.php:50
-msgid "Apply coupon"
 msgstr ""
 
 #: woocommerce/single-product-reviews.php:36
