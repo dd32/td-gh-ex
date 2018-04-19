@@ -57,5 +57,6 @@ if ( isset( $theme_mod['attire_nav_behavior'] ) && $theme_mod['attire_nav_behavi
     </header>
 
 </div>
+<?php
 
-
+load_template( locate_template( "templates/headers/mobile.php" ) );

@@ -53,6 +53,15 @@ class Attire {
 		$cssimport = '//fonts.googleapis.com/css?family=' . implode( "|", $family );
 		$cssimport = str_replace( '||', '|', $cssimport );
 
+
+		//attire-mbl-menu
+		wp_enqueue_style( 'attire-gn-comp', ATTIRE_TEMPLATE_URL . '/mobile-menu-rss/css/component.css' );
+
+		wp_enqueue_script( 'attire-gn-modernizr', ATTIRE_TEMPLATE_URL . '/mobile-menu-rss/js/modernizr.custom.js', array(), null, false );
+		wp_enqueue_script( 'attire-gn-classie', ATTIRE_TEMPLATE_URL . '/mobile-menu-rss/js/classie.js', array(), null, true );
+		wp_enqueue_script( 'attire-gn-gnm', ATTIRE_TEMPLATE_URL . '/mobile-menu-rss/js/gnmenu.js', array(), null, true );
+
+
 		wp_register_style( 'attire-responsive', ATTIRE_TEMPLATE_URL . '/css/responsive.css' );
 		wp_register_style( 'bootstrap', ATTIRE_TEMPLATE_URL . '/bootstrap/css/bootstrap.min.css' );
 		wp_enqueue_style( 'attire-main', get_stylesheet_uri(), array( 'bootstrap', 'attire-responsive' ) );
@@ -71,8 +80,15 @@ class Attire {
 			'popper'
 		), null, true );
 		wp_enqueue_script( 'attire-modernizer', ATTIRE_TEMPLATE_URL . '/js/modernizr-custom.js', array(), null, true );
-		wp_enqueue_script( 'attire-site', ATTIRE_TEMPLATE_URL . '/js/site.js', array( 'jquery' ), null, true );
+		wp_enqueue_script( 'attire-site', ATTIRE_TEMPLATE_URL . '/js/site.js', array(
+			'jquery',
+			'attire-gn-gnm'
+		), null, true );
 		wp_enqueue_script( 'comment-reply', '', array(), null, true );
+
+		wp_localize_script( 'attire-site', 'sitejs_local_obj', array(
+			'home_url' => esc_url( home_url( '/' ) )
+		) );
 	}
 
 	function sanitize_hex_color_front( $color ) {
@@ -121,38 +137,42 @@ class Attire {
 			default :
 				?>
             <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
-                <div class="card comment-card">
+                <div class="card">
 
-                    <div id="comment-<?php comment_ID(); ?>" class="media card-body">
-                        <div class="author-box pull-left">
-                            <img class="mr-3" style="border-radius: 50%;"
+                    <div id="comment-<?php comment_ID(); ?>" class="card-body">
+
+                        <div class="media">
+                            <img class="align-self-start mr-3 circle pull-left"
                                  src="<?php echo esc_url( get_avatar_url( $comment, array( 'size' => '64' ) ) ); ?>"
                                  alt="<?php esc_attr_e( 'Commenter\'s Avatar', 'attire' ); ?>">
-                        </div> <!-- end .avatar-box -->
-                        <div class="comment-wrap media-body">
-                            <b><?php printf( '<span class="fn">%s</span>', get_comment_author_link() ) ?></b>
+                            <!-- end .avatar-box -->
+                            <div class="media-body">
+                                <b><?php printf( '<span class="fn">%s</span>', get_comment_author_link() ) ?></b>
+                                <small class="text-muted">
+                                    <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( '&mdash; %1$s ' . esc_attr__( 'at', 'attire' ) . ' %2$s', esc_html( get_comment_date() ), esc_html( get_comment_time() ) ); ?></a>
+                                </small>
 
-                            <div class="comment-content"><?php comment_text() ?></div> <!-- end comment-content-->
+								<?php comment_text() ?> <!-- end comment-content-->
 
-                        </div> <!-- end comment-wrap-->
-                        <div class="comment-arrow"></div>
-                    </div> <!-- end comment-body-->
-                    <div class="card-footer">
-						<?php if ( $comment->comment_approved == '0' ) : ?>
-                            <em class="moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'attire' ) ?></em>
-						<?php endif; ?>
-                        <small>
-                            <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( '<i class="fa fa-clock-o"></i> %1$s ' . esc_attr__( 'at', 'attire' ) . ' %2$s', esc_html( get_comment_date() ), esc_html( get_comment_time() ) ); ?></a>
-                        </small>
-                        <div class="comment-edit-reply">
-                            <small><?php edit_comment_link( '&nbsp;<i class="fa fa-pencil"></i> ' . esc_html__( 'Edit', 'attire' ), ' ' ); ?></small>
-                            <small><?php comment_reply_link( array_merge( $args, array(
-									'reply_text' => '&nbsp;<i class="fa fa-reply"></i> ' . esc_html__( 'Reply', 'attire' ),
-									'depth'      => $depth,
-									'max_depth'  => $args['max_depth']
-								) ) ) ?></small>
+                                <div class="well">
+									<?php if ( $comment->comment_approved == '0' ) : ?>
+                                        <em class="moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'attire' ) ?></em>
+									<?php endif; ?>
+                                    <div class="text-muted">
+                                        <small><?php edit_comment_link( '<i class="fa fa-pencil"></i> ' . esc_html__( 'Edit', 'attire' ), ' ' ); ?></small>
+                                        <small><?php comment_reply_link( array_merge( $args, array(
+												'reply_text' => '&nbsp;<i class="fa fa-refresh"></i> ' . esc_html__( 'Reply', 'attire' ),
+												'depth'      => $depth,
+												'max_depth'  => $args['max_depth']
+											) ) ) ?></small>
+                                    </div>
+                                </div>
+
+                            </div> <!-- end comment-wrap-->
+
                         </div>
-                    </div>
+                    </div> <!-- end comment-body-->
+
                 </div> <!-- end comment-body-->
 
 
@@ -200,7 +220,7 @@ class Attire {
 	public function GetAttireDefaults() {
 		$this->attire_defaults = array(
 			'footer_widget_number' => '3',
-			'copyright_info'       => '&copy;' . esc_attr__( 'Copyright ', 'attire' ) . date( 'Y' ) . ' | ' . esc_attr__( 'All Rights Reserved.', 'attire' ),
+			'copyright_info'       => '&copy;' . esc_attr__( 'Copyright ', 'attire' ) . date( 'Y' ) . '.' ,
 
 			'layout_front_page'   => 'no-sidebar',
 			'front_page_ls'       => 'left',

@@ -22,8 +22,12 @@ $content_layout = $theme_mod['footer_content_layout_type']; // container or cont
                             <li class="list-inline-item">
                                 <div class="copyright-outer">
 
-                                    <p class="copyright-text"><?php if ( isset( $theme_mod['copyright_info'] ) )
-											echo esc_html( $theme_mod['copyright_info'] ) ?></p>
+                                    <p class="copyright-text"><?php if ( isset( $theme_mod['copyright_info'] ) ) {
+											echo esc_html( $theme_mod['copyright_info'] );
+										}
+	                                    echo wp_kses_post( esc_attr( ' Built with', 'attire' ) ) ?>
+                                        <a href="http://wpattire.com/" target="_blank"><strong>Attire</strong>.</a>
+                                    </p>
                                 </div>
 
                             </li>

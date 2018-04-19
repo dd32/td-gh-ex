@@ -278,8 +278,8 @@ class AttireThemeEngine {
 		$header_color        = esc_attr( $theme_mod['header_color'] );
 		$heading_font        = esc_attr( $theme_mod['heading_font'] );
 		$h1_font_size        = 'font-size:' . $heading_font_size . 'px;';
-		$h2_font_size        = 'font-size:' . ceil( $heading_font_size * .75 ) . 'px;';
-		$h3_font_size        = 'font-size:' . ceil( $heading_font_size * .6 ) . 'px;';
+		$h2_font_size        = 'font-size:' . ceil( $heading_font_size * .85 ) . 'px;';
+		$h3_font_size        = 'font-size:' . ceil( $heading_font_size * .80 ) . 'px;';
 		$h4_font_size        = 'font-size:' . ceil( $heading_font_size * .56 ) . 'px;';
 		$h5_font_size        = 'font-size:' . ceil( $heading_font_size * .415 ) . 'px;';
 		$h6_font_size        = 'font-size:' . ceil( $heading_font_size * .375 ) . 'px;';
@@ -294,7 +294,7 @@ class AttireThemeEngine {
 
 		$css .= "h1, h1 *{{$font_family}{$h1_font_size}{$heading_font_weight}{$text_color}}";
 		$css .= "h2, h2 *{{$font_family}{$h2_font_size}{$heading_font_weight}{$text_color}}";
-		$css .= "h3, h3 *{{$font_family}{$h3_font_size}{$heading_font_weight}{$text_color}}";
+		$css .= "h3, h3 *, .archive-item .cart-title.post-title a{{$font_family}{$h3_font_size}{$heading_font_weight}{$text_color}}";
 		$css .= "h4, h4 *{{$font_family}{$h4_font_size}{$heading_font_weight}{$text_color}}";
 		$css .= "h5, h5 *{{$font_family}{$h5_font_size}{$heading_font_weight}{$text_color}}";
 		$css .= "h6, h6 *{{$font_family}{$h6_font_size}{$heading_font_weight}{$text_color}}";
@@ -344,11 +344,13 @@ class AttireThemeEngine {
 		 *
 		 */
 
-		$site_header_bg = 'background-color:' . esc_attr( $theme_mod['site_header_bg_color'] );
-		$css            .= ".header-div{ {$site_header_bg}}";
-		$css            .= ".sticky-menu{ {$site_header_bg}}";
-		$site_footer_bg = 'background-color:' . esc_attr( $theme_mod['site_footer_bg_color'] );
-		$css            .= ".footer-div{ {$site_footer_bg}}";
+		$site_header_bg_color = esc_attr( $theme_mod['site_header_bg_color'] );
+		$site_header_bg       = "background-color: $site_header_bg_color;";
+		$css                  .= ".header-div,#attire-mbl-menu{ {$site_header_bg}}";
+		$css                  .= "a.gn-icon.gn-icon-menu i{ color:$site_header_bg_color;-webkit-filter: invert(100%);filter: invert(100%);}";
+		$css                  .= ".sticky-menu{ {$site_header_bg}}";
+		$site_footer_bg       = 'background-color:' . esc_attr( $theme_mod['site_footer_bg_color'] );
+		$css                  .= ".footer-div{ {$site_footer_bg}}";
 
 
 		/**
@@ -415,7 +417,7 @@ class AttireThemeEngine {
 			$font_family = '';
 		}
 
-		$css .= "header .mainmenu > .menu-item a,footer .footermenu > .menu-item a, .info-link{{$font_family}{$font_size}{$font_weight}}";
+		$css .= "header .mainmenu > .menu-item a,footer .footermenu > .menu-item a, .info-link,.attire-mbl-menu li.nav-item a,input.gn-search{{$font_family}{$font_size}{$font_weight}}";
 
 		/**
 		 *
@@ -434,7 +436,7 @@ class AttireThemeEngine {
 			$font_family = '';
 		}
 
-		$css .= "header .dropdown ul li a.dropdown-item, footer .dropdown ul li a.dropdown-item{{$font_family}{$font_size}{$font_weight}}";
+		$css .= "header .dropdown ul li a.dropdown-item, footer .dropdown ul li a.dropdown-item,.attire-mbl-menu .dropdown-menu li.nav-item a{{$font_family}{$font_size}{$font_weight}}";
 
 		/**
 		 *
@@ -443,17 +445,17 @@ class AttireThemeEngine {
 		 */
 
 		$color = "color:" . esc_attr( $theme_mod['menu_top_font_color'] ) . ";";
-		$css   .= "header .mainmenu > .menu-item:not(.active) > a, header .nav i.fa.fa-search, header .dropdown-toggler, header .mobile-menu-toggle{{$color}}";
+		$css   .= "header .mainmenu > .menu-item:not(.active) > a, header .nav i.fa.fa-search, header .dropdown-toggler, header .mobile-menu-toggle,.attire-mbl-menu li.nav-item a, input.gn-search,.attire-mbl-menu-main a.gn-icon-search,.attire-mbl-menu .dropdown-toggler i:before{{$color}}";
 
 		$main_nav_bg = 'background-color:' . esc_attr( $theme_mod['main_nav_bg'] );
-		$css         .= ".short-nav .collapse.navbar-collapse,.long-nav{ {$main_nav_bg};}";
+		$css         .= ".short-nav .collapse.navbar-collapse,.long-nav,.attire-mbl-menu-wrapper{ {$main_nav_bg};}";
 
 		$main_nav_hover_active_bg = 'background-color:' . esc_attr( $theme_mod['menuhbg_color'] );
-		$css                      .= "header .mainmenu > .menu-item:hover, header .mainmenu > .menu-item.active{ {$main_nav_hover_active_bg};}";
+		$css                      .= "header .mainmenu > .menu-item:hover, header .mainmenu > .menu-item.active,.attire-mbl-menu li.active{ {$main_nav_hover_active_bg};}";
 
 
 		$main_nav_hover_active_text_color = 'color:' . esc_attr( $theme_mod['menuht_color'] );
-		$css                              .= "header .mainmenu > .menu-item:hover > a, header .mainmenu > .menu-item.active > a, header .mainmenu > .menu-item:hover > .dropdown-toggler, header .mainmenu > .menu-item.active > .dropdown-toggler,#search-top:hover i{ {$main_nav_hover_active_text_color};}";
+		$css                              .= "header .mainmenu > .menu-item:hover > a, header .mainmenu > .menu-item.active > a, header .mainmenu > .menu-item:hover > .dropdown-toggler, header .mainmenu > .menu-item.active > .dropdown-toggler,#search-top:hover i,.attire-mbl-menu li.active a, .attire-mbl-menu li.active .dropdown-toggler i:before{ {$main_nav_hover_active_text_color};}";
 
 
 		/**
@@ -463,10 +465,10 @@ class AttireThemeEngine {
 		 */
 
 		$main_nav_dd_bg = 'background-color:' . esc_attr( $theme_mod['menuhbg_color'] );
-		$css            .= "header .mainmenu > .dropdown > li, .default-menu.navbar-light .nav-search .form-control{{$main_nav_dd_bg};}"; // Search box bg color + main nav dd bg
+		$css            .= "header .mainmenu > .dropdown > li, .default-menu.navbar-light .nav-search .form-control,.attire-mbl-menu .dropdown-menu li{{$main_nav_dd_bg};}"; // Search box bg color + main nav dd bg
 
 		$main_nav_dd_text = 'color:' . esc_attr( $theme_mod['menu_dropdown_font_color'] );
-		$css              .= "header .mainmenu > .dropdown li *, .default-menu.navbar-light .nav-search .form-control{{$main_nav_dd_text};}"; // Dropdown + search field input text color
+		$css              .= "header .mainmenu > .dropdown li *, .default-menu.navbar-light .nav-search .form-control,.attire-mbl-menu .dropdown-menu li a{{$main_nav_dd_text};}"; // Dropdown + search field input text color
 
 		$css                  .= '@media screen and (min-width: 1000px) {';
 		$main_nav_dd_hover_bg = 'background-color:' . esc_attr( $theme_mod['menu_dropdown_hover_bg'] );
@@ -531,10 +533,10 @@ class AttireThemeEngine {
 		 *
 		 */
 		$a_color = 'color:' . esc_attr( $theme_mod['a_color'] );
-		$css     .= ".attire-content a,.small-menu a{{$a_color};}";
+		$css     .= ".attire-content a:not(.btn),.small-menu a:not(.btn){{$a_color};}";
 
 		$a_hover_color = 'color:' . esc_attr( $theme_mod['ah_color'] );
-		$css           .= ".attire-content a:hover,.small-menu a:hover{{$a_hover_color};}";
+		$css           .= ".attire-content a:not(.btn):hover,.small-menu a:not(.btn):hover{{$a_hover_color};}";
 
 		return apply_filters( ATTIRE_THEME_PREFIX . 'customisation_css', $css );
 	}

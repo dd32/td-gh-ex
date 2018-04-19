@@ -50,7 +50,7 @@ jQuery(function ($) {
     function toggleDropdownMobile(_this) {
 
         if ($(_this).next('ul').css('display') === 'none') {
-            $(_this).next('ul').css('display', 'block');
+            $(_this).next('ul').css('display', 'grid');
             $(_this).children('i').removeClass('fa-caret-down');
             $(_this).children('i').addClass('fa-caret-up');
 
@@ -164,5 +164,45 @@ jQuery(function ($) {
     });
 
     // END: Back to top
+
+
+// START: Full-Screen search form
+
+    var wHeight = window.innerHeight;
+    //search bar middle alignment
+    $('#mk-fullscreen-searchform').css('top', wHeight / 2);
+    //reform search bar
+    jQuery(window).resize(function () {
+        wHeight = window.innerHeight;
+        $('#mk-fullscreen-searchform').css('top', wHeight / 2);
+    });
+    // Search
+    $('#search-button').click(function (e) {
+        e.preventDefault();
+        $("div.mk-fullscreen-search-overlay").addClass("mk-fullscreen-search-overlay-show");
+    });
+    $("a.mk-fullscreen-close").click(function (e) {
+        e.preventDefault();
+        $("div.mk-fullscreen-search-overlay").removeClass("mk-fullscreen-search-overlay-show");
+    });
+//END : Full-Screen search form
+
+    //mobile menu
+
+    $(document).ready(function () {
+
+        new gnMenu(document.getElementById('attire-mbl-menu'));
+
+        $('.attire-mbl-menu').prepend('<li class="gn-search-item">' +
+            '<form action="' + sitejs_local_obj.home_url + '">' +
+            '<input name="post_type[]" value="product" type="hidden">' +
+            '<input name="post_type[]" value="page" type="hidden">' +
+            '<input name="post_type[]" value="post" type="hidden">' +
+            '<input placeholder="Search" value="" name="s" type="search" required="required" class="gn-search">' +
+            '<a class="gn-icon gn-icon-search"></a>' +
+            '</form>' +
+            '</li>'
+        );
+    });
 
 });

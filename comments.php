@@ -15,7 +15,7 @@ endif;
 ?>
 <?php if ( have_comments() ) :
 	?>
-    <h2><?php echo esc_html( apply_filters( ATTIRE_THEME_PREFIX . 'discussion_title', __( 'Discussion', 'attire' ) ) ); ?></h2>
+    <h2 id="comments-title"><?php echo esc_html( apply_filters( ATTIRE_THEME_PREFIX . 'discussion_title', __( 'Discussion', 'attire' ) ) ); ?></h2>
 
 	<?php
 	if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>

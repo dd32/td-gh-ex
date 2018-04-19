@@ -593,10 +593,6 @@ msgstr ""
 msgid "Copyright "
 msgstr ""
 
-#: admin/customizer-config.php:1122 libs/Attire.class.php:219
-msgid "All Rights Reserved."
-msgstr ""
-
 #: admin/customizer-config.php:1125
 msgid "Show Copyright Visibility"
 msgstr ""

@@ -24,7 +24,9 @@ $content_layout = $theme_mod['footer_content_layout_type'];
 
                                     <p class="text-center copyright-text"><?php if ( isset( $theme_mod['copyright_info'] ) ) {
 											echo esc_html( $theme_mod['copyright_info'] );
-										} ?></p>
+										}
+										echo wp_kses_post( __( ' Built with', 'attire' ) ) ?>
+                                        <a href="http://wpattire.com/" target="_blank"><strong>Attire</strong>.</a></p>
                                 </div>
                             </li>
                         </ul>

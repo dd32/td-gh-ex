@@ -172,7 +172,7 @@ function attire_customize_register( $wp_customize ) {
 	}
 
 	/* Load Panels, Sections, Settings, Controls array */
-	require_once( dirname( __FILE__ ) . '/customizer-config.php' );
+	require_once( ATTIRE_TEMPLATE_DIR . '/admin/customizer-config.php' );
 
 
 	/* Adding support for Child Themes */

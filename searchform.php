@@ -27,27 +27,24 @@ if ( ! defined( 'ABSPATH' ) ) {
         </form>
     </li>
     <li class="dropdown nav-item desktop-search">
-        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-            <i class="fa fa-search"></i>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-right list-search">
-            <li class="dropdown-item">
-                <form class="navbar-left nav-search search-form"
-                      action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search" method="get">
-                    <div class="form-inline">
-                        <input name="post_type[]" value="product"
-                               type="hidden">
-                        <input name="post_type[]" value="page"
-                               type="hidden">
-                        <input name="post_type[]" value="post"
-                               type="hidden">
-                        <input type="search" class="search-field form-control"
-                               value="<?php echo get_search_query(); ?>" name="s"
-                               title="<?php esc_attr_e( 'Search for:', 'attire' ); ?>"/>
-                    </div>
-                </form>
-            </li>
-        </ul>
+        <div class="overlay desktop-search">
+            <a class="mk-search-trigger mk-fullscreen-trigger" href="#" id="search-button-listener">
+                <div id="search-button"><i class="fa fa-search"></i></div>
+            </a>
+            <div class="mk-fullscreen-search-overlay" id="mk-search-overlay">
+                <a href="#" class="mk-fullscreen-close" id="mk-fullscreen-close-button"><i
+                            class="fa fa-times"></i></a>
+                <div id="mk-fullscreen-search-wrapper">
+                    <form id="mk-fullscreen-searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>"
+                          role="search" method="get">
+                        <input name="s" type="search" value="" placeholder="Search..."
+                               id="mk-fullscreen-search-input">
+                        <input name="post_type" value="wpdmpro" type="hidden">
+                        <i class="fa fa-search fullscreen-search-icon"><input value="" type="submit"></i>
+                    </form>
+                </div>
+            </div>
+        </div>
     </li>
 </ul>
 
