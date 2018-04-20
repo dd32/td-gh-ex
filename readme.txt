@@ -72,6 +72,9 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.4.7
+ * Made Translation Ready
+
 Version 2.4.6
  * Added Welcome Page
  * Added Support for Editor Style
