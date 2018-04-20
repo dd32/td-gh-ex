@@ -1,5 +1,4 @@
-<?php 
-function elitepress_home_callout_customizer( $wp_customize ){
+<?php function elitepress_home_callout_customizer( $wp_customize ){
 $wp_customize->add_panel( 'home_callout_setting', array(
 		'priority'       => 400,
 		'capability'     => 'edit_theme_options',

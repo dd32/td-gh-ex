@@ -1,5 +1,4 @@
-<?php
-// Adding customizer home page settings
+<?php // Adding customizer home page settings
 function elitepress_header_widget_customizer( $wp_customize ){
 //Header widget section
 	$wp_customize->add_section('header_widget_settings' , array(
@@ -48,4 +47,4 @@ function elitepress_header_widget_customizer( $wp_customize ){
 		))
 	);
 }
-add_action( 'customize_register', 'elitepress_header_widget_customizer' );	
+add_action( 'customize_register', 'elitepress_header_widget_customizer' );

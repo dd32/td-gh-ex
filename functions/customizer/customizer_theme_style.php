@@ -1,5 +1,4 @@
-<?php
-function elitepress_theme_style_customizer( $wp_customize ) {
+<?php function elitepress_theme_style_customizer( $wp_customize ) {
 	
 //Theme color
 class WP_color_Customize_Control extends WP_Customize_Control {

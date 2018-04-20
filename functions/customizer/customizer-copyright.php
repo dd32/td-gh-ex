@@ -1,5 +1,4 @@
-<?php
-// Footer copyright section 
+<?php // Footer copyright section 
 	function elitepress_copyright_customizer( $wp_customize ) {
 	$wp_customize->add_panel( 'elitepress_copyright_setting', array(
 		'priority'       => 900,

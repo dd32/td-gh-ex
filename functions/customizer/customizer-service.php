@@ -1,5 +1,4 @@
-<?php
-function elitepress_service_customizer( $wp_customize ) {
+<?php function elitepress_service_customizer( $wp_customize ) {
  
 	//Service section panel
 	$wp_customize->add_section( 'service_section_head' , array(

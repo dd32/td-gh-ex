@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 // Adding customizer home page settings
 
 function elitepress_banner_page_customizer( $wp_customize ){

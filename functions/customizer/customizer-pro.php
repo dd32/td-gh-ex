@@ -1,6 +1,4 @@
-<?php
-//Pro Button
-
+<?php //Pro Button
 function elitepress_pro_customizer( $wp_customize ) {
 class WP_Pro_Customize_Control extends WP_Customize_Control {
     public $type = 'new_menu';

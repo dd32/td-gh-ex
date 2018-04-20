@@ -1,5 +1,4 @@
-<?php
-function elitepress_portfolio_customizer( $wp_customize ) {
+<?php function elitepress_portfolio_customizer( $wp_customize ) {
 
 //Home portfolio Section
 	$wp_customize->add_panel( 'elitepress_portfolio_setting', array(

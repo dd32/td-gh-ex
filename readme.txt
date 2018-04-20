@@ -56,6 +56,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.7.5
+1. Fixed white space issue in customizer.
 @version 1.7.4
 1. Fixed undefined color error in service section oh homepage.
 2. Fixed header layout.

@@ -28,14 +28,14 @@ $customizer_url = admin_url() . 'customize.php' ;
 				<div class="elitepress-tab-pane-half elitepress-tab-pane-first-half">
 				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/elitepress-info/img/elitepress.png'; ?>" alt="<?php esc_html_e( 'Appointment Blue Child Theme', 'elitepress' ); ?>" />
 				
-					<h3 ><?php esc_html_e( "Getting Started", 'quality' ); ?></h3>
+					<h3 ><?php esc_html_e( "Getting Started", 'elitepress' ); ?></h3>
 				<div style="border-top: 1px solid #eaeaea;">
 				<p style="margin-top: 9px; font-size: 15px;">
 				
-				<?php esc_html_e( 'You can customize every aspect of the theme Using the WordPress Customizer.', 'quality' ); ?>
+				<?php esc_html_e( 'You can customize every aspect of the theme Using the WordPress Customizer.', 'elitepress' ); ?>
 				
 				</p>
-				<p><a target="_blank" href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Go to the Customizer','quality');?></a></p>
+				<p><a target="_blank" href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Go to the Customizer','elitepress');?></a></p>
 				</div>
 				</div>
 				

@@ -37,4 +37,4 @@ $wp_customize->add_setting(
 	 
 }
 add_action( 'customize_register', 'elitepress_blog_customizer' );
-?>	 
+?>

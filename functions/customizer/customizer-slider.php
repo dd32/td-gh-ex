@@ -1,5 +1,4 @@
-<?php
-$repeater_path = trailingslashit( get_template_directory() ) . '/functions/customizer-repeater/functions.php';
+<?php $repeater_path = trailingslashit( get_template_directory() ) . '/functions/customizer-repeater/functions.php';
 if ( file_exists( $repeater_path ) ) {
 require_once( $repeater_path );
 }
