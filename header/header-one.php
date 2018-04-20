@@ -105,6 +105,7 @@
                                         wp_nav_menu(array(
                                             'theme_location' => 'primary',
                                             'container_class' => 'store-menu',
+                                            'menu_class' => 'menu',
                                             'fallback_cb' => 'accesspress_store_fallback_menu',
                                         ));
                                     ?>

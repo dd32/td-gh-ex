@@ -667,11 +667,15 @@ function accesspress_store_before_top_header_enabled(){
 
 if ( ! function_exists( 'accesspress_store_fallback_menu' ) ) {
 	function accesspress_store_fallback_menu(){
-		$args = array(
+		/*$args = array(
 			'menu_class'  => 'store-menu',
+			'container_class' => 'menu',
 			'echo'        => true,
 		);
-		wp_page_menu( $args );
+		wp_page_menu( $args );*/
+		echo '<div class="menu-notif">';
+		printf( __( 'Create %s and set the menu to display at Primary Menu Location.', 'accesspress-store' ), '<a target="_blank" href="'.admin_url( 'nav-menus.php' ).'">Custom Menu</a>' );
+		echo '</div>';
 	}
 }
 

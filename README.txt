@@ -47,6 +47,9 @@ Images
 
 
 == Changelog ==
+= 2.2.8 =
+** Fixed Minor Design Issues
+
 = 2.2.7 =
 ** Made Customizer Fields Translatable.
 
