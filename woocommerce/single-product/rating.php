@@ -41,7 +41,7 @@ if ( $rating_count > 0 ) : ?>
 	    	<a href="#reviews" class="woocommerce-review-link" rel="nofollow">
 		        <?php
 		        	printf(	
-			        	_n( '1 Rating', '%1$s Rating (S)', $review_count, '99fy' ),
+			        	_n( '%d Rating', '%1$s Rating (S)', $review_count, '99fy' ),
 			        	esc_html( $review_count )
 			        );
 		        ?>

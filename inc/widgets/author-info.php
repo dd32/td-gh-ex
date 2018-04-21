@@ -174,7 +174,7 @@ if ( !class_exists('NNfy_Author_About_Widget') ) {
 					<?php esc_html_e('Upload Image', '99fy'); ?>
 				</button>
 				<div class="image_box widefat">
-					<img src="<?php if( !empty($image)){echo esc_html($image);} ?>" style="margin:15px 0 0 0;padding:0;max-width: 100%;display:inline-block; height: auto;" alt="<?php esc_html_e('', '99fy'); ?>" />
+					<img src="<?php if( !empty($image)){echo esc_html($image);} ?>" style="margin:15px 0 0 0;padding:0;max-width: 100%;display:inline-block; height: auto;" alt="<?php esc_html_e('Author image', '99fy'); ?>" />
 				</div>
 				<input type="text" class="widefat image_link" name="<?php echo esc_attr($this->get_field_name('image')); ?>" id="<?php echo esc_attr($this->get_field_id('image')); ?>" value="<?php echo esc_attr($image); ?>" style="margin:15px 0 0 0;">
 			</div>

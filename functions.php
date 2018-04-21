@@ -207,8 +207,6 @@ if( !function_exists('nnfy_admin_scripts') ) {
   function nnfy_admin_scripts() {
     wp_enqueue_media();
     wp_enqueue_script( 'jquery-ui-tabs' );
-    wp_enqueue_style( 'wp-color-picker' );
-    wp_enqueue_script( 'wp-color-picker-alpha', get_template_directory_uri() .'/js/wp-color-picker-alpha.min.js', array( 'wp-color-picker' ), '2.1.3', true );
 
     wp_enqueue_script( 'nnfy-logo-uploader', get_template_directory_uri() .'/js/site-logo-uploader.js', false, '', true );
 
@@ -252,11 +250,8 @@ require get_template_directory().'/inc/widgets/widget-register.php';
 /*
 	Load tgm plugin
 */
-require get_template_directory().'/inc/tgm-plugin/required-plugins.php';
-/*
-	Load demo importer
-*/
-require get_template_directory().'/inc/demo-importer.php';
+require get_template_directory().'/inc/tgm-plugin/plugins.php';
+
 /*
 	Load global function
 */

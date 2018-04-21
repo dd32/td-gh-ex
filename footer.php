@@ -39,11 +39,11 @@ $footer_copyright_text = get_theme_mod('nnfy_footer_copyright_text', __('Copyrig
 <?php
     if(
         $footer_top && 
-        is_active_sidebar( 'sidebar-footer-1' ) ||
-        is_active_sidebar( 'sidebar-footer-2' ) ||
-        is_active_sidebar( 'sidebar-footer-3' ) ||
-        is_active_sidebar( 'sidebar-footer-4' ) ||
-        is_active_sidebar( 'sidebar-footer-5' )
+        is_active_sidebar( 'sidebar-2' ) ||
+        is_active_sidebar( 'sidebar-3' ) ||
+        is_active_sidebar( 'sidebar-4' ) ||
+        is_active_sidebar( 'sidebar-5' ) ||
+        is_active_sidebar( 'sidebar-6' )
     ){
         $footer_top = true;
     } else {
@@ -52,7 +52,7 @@ $footer_copyright_text = get_theme_mod('nnfy_footer_copyright_text', __('Copyrig
 
     if($footer_top):
 
-        $footer_col_size = get_theme_mod('nnfy_footer_col_size', 4);
+        $footer_col_size = get_theme_mod('nnfy_footer_col_size', 2);
 
 ?>
 <div class="footer-top-area black-bg pt-120 pb-75">
@@ -87,7 +87,7 @@ $footer_copyright_text = get_theme_mod('nnfy_footer_copyright_text', __('Copyrig
 
             <div class="<?php echo esc_attr($col_class); ?>">
                 <div class="footer-widget mb-40">
-                    <?php dynamic_sidebar( 'sidebar-footer-'.$i ); ?>
+                    <?php dynamic_sidebar( 'footer-'.$i ); ?>
                 </div>
             </div>
 

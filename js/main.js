@@ -165,34 +165,10 @@
 		$(".loading-init").fadeOut(500);
 	});
 
-	/**
-	* Blog Masonry
-	*/
-
-	// $('.blog-masonry').imagesLoaded( function() {
-	// 	// init Isotope
-	// 	var $grid = $('.blog-masonry').isotope({
-	// 	  itemSelector: '.grid-item',
-	// 	  percentPosition: true,
-	// 	  masonry: {
-	// 		// use outer width of grid-sizer for columnWidth
-	// 		columnWidth: '.grid-item',
-	// 	  }
-	// 	});
-
-	// });
-
-
-	/**
-	* 99fy js
-	*/
 
     $(".toggle-active").on("click", function() {
         $(this).parent().find('.toogle-content, .login-content, .cart-content').slideToggle('medium');
     })
-    
-
-
     
     /* brand logo active */
     $('.brand-logo-active').owlCarousel({
@@ -299,6 +275,29 @@
     }
 
 
+	$('.shop-filter-tab .shop-tab a').on('click', function(){
+	    var $proStyle = $(this).data('toggle');
+	    
+	    $('.shop-filter-tab .shop-tab a').removeClass('active');
+	    $(this).addClass('active');
+	    
+	    $('.shop-product-content').removeClass('grid_view list_view').addClass($proStyle);
+	    
+	});
+
+
+	/* related product active */
+	$('.qwick-view-left .product-details-small').owlCarousel({
+	    loop: true,
+	    nav: true,
+	    item: 3,
+	    responsive: {
+	        0: {
+	            items: 3
+	        },
+	    }
+	});
+
 
 	//Quickview
 
@@ -326,6 +325,7 @@
 	 		  'data':   productID
 	 		 },
 	 		 function(response){
+	 		 	console.log(response);
 	 		 	jQuery('.modal-body').html(response);
 	 		 });
 
@@ -341,30 +341,6 @@
 	  jQuery('body').removeClass('quickview');
 	 }, 500);
 
-	});
-
-
-	$('.shop-filter-tab .shop-tab a').on('click', function(){
-	    var $proStyle = $(this).data('toggle');
-	    
-	    $('.shop-filter-tab .shop-tab a').removeClass('active');
-	    $(this).addClass('active');
-	    
-	    $('.shop-product-content').removeClass('grid_view list_view').addClass($proStyle);
-	    
-	});
-
-
-	/* related product active */
-	$('.qwick-view-left .product-details-small').owlCarousel({
-	    loop: true,
-	    nav: true,
-	    item: 3,
-	    responsive: {
-	        0: {
-	            items: 3
-	        },
-	    }
 	});
 
 	

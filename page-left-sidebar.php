@@ -13,7 +13,7 @@ get_header();
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-lg-4 col-12">
-					<?php get_sidebar('left'); ?>
+					<?php get_sidebar(); ?>
 				</div>
 				<div class="col-md-12 col-lg-8 col-12">
 					<?php

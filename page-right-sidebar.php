@@ -20,7 +20,7 @@ get_header();
 					?>
 				</div>
 				<div class="col-md-12 col-lg-4 col-12">
-					<?php get_sidebar('right'); ?>
+					<?php get_sidebar(); ?>
 				</div>
 			</div>
 		</div><!-- #primary -->

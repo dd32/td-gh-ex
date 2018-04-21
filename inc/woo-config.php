@@ -44,8 +44,6 @@
 
  	// cart page
  	add_action( 'woocommerce_after_cart_table', 'woocommerce_cart_totals', 10 );
-
- 	
  }
 
 
@@ -80,7 +78,9 @@ function nnfy_archive_view_switch(){
 function nnfy_add_to_wishlist_button() {
 	global $product, $yith_wcwl;
 
-	if ( ! class_exists( 'YITH_WCWL' ) || empty(get_option( 'yith_wcwl_wishlist_page_id' ))) return;
+	$wishlist_page_id = get_option( 'yith_wcwl_wishlist_page_id' );
+
+	if ( ! class_exists( 'YITH_WCWL' ) || empty($wishlist_page_id)) return;
 
 	$url          = YITH_WCWL()->get_wishlist_url();
 	$product_type = $product->get_type();
@@ -181,9 +181,9 @@ function nnfy_woocommerce_template_loop_product_thumbnail(){
         <div class="product-action">
             <div class="product-action-style">
 				<?php woocommerce_template_loop_add_to_cart(); ?>
-
+				
                 <a class="action-eye quickview" title="Quick View" data-toggle="modal" data-target="#exampleModal" data-quick-id="<?php the_ID(); ?>" href="<?php the_permalink(); ?>">
-                    <i class="ion-ios-eye-outline"></i>
+                	<i class="ion-ios-eye-outline"></i>
                 </a>
                
                 <?php
@@ -315,7 +315,6 @@ function nnfy_woocommerce_single_product_sharing(){
 	<?php
 }
 
-
 // WooCommerce Ajax
 add_action('wp_head','nnfy_woo_ajaxurl');
 function nnfy_woo_ajaxurl() {
@@ -332,18 +331,17 @@ function nnfy_woo_ajaxurl() {
 add_action( 'wp_ajax_nnfy_product_quickview', 'nnfy_product_quickview' );
 add_action( 'wp_ajax_nopriv_nnfy_product_quickview', 'nnfy_product_quickview' );
 function nnfy_product_quickview() {
-	global $product, $post, $woocommerce_loop;
+	$product_id = (int) $_POST['data'];
 
-	if($_POST['data']){
-		$product_id = $_POST['data'];
-		$post = get_post( $product_id );
-		$product = get_product( $product_id );
+	$params = array('p' => $product_id,'post_type' => array('product','product_variation'));
+	$query = new WP_Query($params);
+	if($query->have_posts()){
+		while ($query->have_posts()){
+			$query->the_post();
+
+			include get_template_directory().'/woocommerce/content-quickview.php';
+		}
 	}
-
-	if($product){
-		include get_template_directory().'/woocommerce/content-quickview.php';
-	}
-
-
+	wp_reset_postdata();
 	die();
 }

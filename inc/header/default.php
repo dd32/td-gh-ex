@@ -5,7 +5,7 @@
  * @package 99fy
  */
 
-$logo = get_theme_mod('custom_logo') ? wp_get_attachment_image_src( get_theme_mod('custom_logo'), 'full')[0] : '';
+$logo = get_theme_mod('custom_logo') ? wp_get_attachment_image_src( get_theme_mod('custom_logo'), 'full') : '';
 $logo_alt_text = '';
 if(get_theme_mod('custom_logo')){
 	$logo_alt_text = get_post_meta(get_theme_mod('custom_logo') , '_wp_attachment_image_alt', true );
@@ -28,7 +28,7 @@ if(get_theme_mod('custom_logo')){
 							<?php if ( $logo ): ?>
 								<a href="<?php echo esc_url( home_url('/')); ?>" title="<?php echo esc_attr($logo_alt_text); ?>" rel="home" >
 										
-										<img src="<?php echo esc_url($logo); ?>" alt="<?php echo esc_attr($logo_alt_text); ?>">
+										<img src="<?php echo esc_url($logo[0]); ?>" alt="<?php echo esc_attr($logo_alt_text); ?>">
 								 </a>
 
 							<?php else: ?>

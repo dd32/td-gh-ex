@@ -146,7 +146,7 @@ function nnfy_customizer_settings( $wp_customize ){
 
 
 	$wp_customize->add_setting('nnfy_footer_top',array(
-		'default'     => 'on',
+		'default'     => 'off',
 		'transport'   => 'refresh',
 		'sanitize_callback'	=> 'nnfy_sanitize_checkbox'
 	));
@@ -256,7 +256,7 @@ function nnfy_customizer_settings( $wp_customize ){
 
 
 	$wp_customize->add_setting('nnfy_footer_col_size',array(
-		'default'     => '4',
+		'default'     => '2',
 		'transport'   => 'refresh',
 		'sanitize_callback'	=> 'nnfy_sanitize_select'
 	));

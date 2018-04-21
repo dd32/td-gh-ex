@@ -1016,13 +1016,20 @@ form#searchbox input {
 
 /* product area */
 
-.section-title  h3 {
+.section-title  h3,
+.related.products > h2,
+.upsells.products > h2 {
   color: #4f4f4f;
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 1px;
   margin-bottom: 8px;
   text-transform: uppercase;
+}
+.related.products > h2,
+.upsells.products > h2{
+    margin-bottom: 65px;
+    text-align: center;
 }
 .section-title  p {
   color: #848383;
@@ -1053,7 +1060,7 @@ form#searchbox input {
   border-radius: 20px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   display: inline-block;
-  padding: 4px 13px 7px;
+  padding: 7px 13px 7px;
 }
 .woocommerce .product-action-style > a {
   color: #4b4a48;
@@ -1061,42 +1068,33 @@ form#searchbox input {
   padding: 0 15px;
   position: relative;
   display: inline-block;
+  border: 0;
+  background: none;
+  line-height: 22px;
+}
+.woocommerce .product-action-style > a.action-eye{
+    overflow: initial;
+    font-size: 20px;
+    vertical-align: middle;
+    line-height: 22px;
+}
+.woocommerce .product-action-style > a.action-same:hover{
+    background-color: unset;
 }
 
-.woocommerce .product-action-style > a:hover {
-  color: #96bf48;
+.woocommerce .product-action-style > a + a::before{
+    content: "";
 }
-
-.woocommerce .product-action-style > a.action-same {
-    font-size: 19px;
-    background: none;
+.woocommerce .product-action-style > a + a::before {
+    content: "";
+    position: absolute;
+    height: 22px;
+    border-left: 1px solid #cccccc;
+    display: block;
+    left: -2px;
 }
 .woocommerce .product-action-style > a.action-same span{
     display: none;
-}
-.woocommerce .product-action-style > a.action-same:hvoer{
-    background: none;
-}
-
-.product-action-style > a.action-eye {
-    font-size: 27px;
-    top: 3px;
-}
-
-.product-action-style > a:last-child::before {
-  content: none;
-}
-
-
-.product-action-style > a::before {
-  background: #cccccc none repeat scroll 0 0;
-  content: "";
-  height: 21px;
-  position: absolute;
-  right: 4px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1px;
 }
 
 
@@ -2334,7 +2332,8 @@ div.tawcvs-swatches{
   display: flex;
   margin-top: -3px;
 }
-.shop-found > p {
+.shop-found > p,
+.shop-found-selector p {
   color: #6c6c6c;
   font-size: 18px;
   font-weight: 500;
@@ -3505,4 +3504,7 @@ a.read_more:hover{
 }
 .footer-widget .sidebar-widget + .sidebar-widget{
     margin-top: 30px;
+}
+.products .xoo-qv-button{
+    display: none;
 }

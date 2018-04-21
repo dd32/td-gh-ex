@@ -14,12 +14,12 @@
 <div class="col-lg-7 col-12">
     <div class="qwick-view-right">
         <div class="qwick-view-content">
-            <h3><?php echo esc_html( $product->get_title() ); ?></h3>
+            <h3><?php the_title(); ?></h3>
             <?php woocommerce_template_loop_price(); ?>
 
             <?php woocommerce_template_loop_rating(); ?>
                         
-            <p><?php echo esc_html( $product->get_short_description() ); ?></p>
+            <p><?php woocommerce_template_single_excerpt(); ?></p>
 
             <?php woocommerce_template_single_add_to_cart(); ?>
         </div>

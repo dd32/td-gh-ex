@@ -44,10 +44,10 @@
 					$cats = get_category_parents($thisCat->parent, TRUE, $delimiter);
 					$cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
 					$cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
-					if($breadcrumbs_cat){ echo $cats;}
+					if($breadcrumbs_cat){ echo wp_kses_post( $cats );}
 					
 				}
-				echo $before . sprintf($text['category'], single_cat_title('', false)) . $after;
+				echo wp_kses_post($before) . sprintf($text['category'], single_cat_title('', false)) . wp_kses_post($after);
 
 			} elseif( is_tax() ){
 				$thisCat = get_category(get_query_var('cat'), false);
@@ -55,50 +55,50 @@
 					$cats = get_category_parents($thisCat->parent, TRUE, $delimiter);
 					$cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
 					$cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
-					if($breadcrumbs_cat){ echo $cats;}
+					if($breadcrumbs_cat){ echo wp_kses_post( $cats );}
 				}
-				echo $before . sprintf($text['tax'], single_cat_title('', false)) . $after;
+				echo wp_kses_post($before) . sprintf($text['tax'], single_cat_title('', false)) . wp_kses_post($after);
 		
 			}elseif ( is_search() ) {
-				echo $before . sprintf($text['search'], get_search_query()) . $after;
+				echo wp_kses_post($before) . sprintf($text['search'], get_search_query()) . wp_kses_post($after);
 			} elseif ( is_day() ) {
 				echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y')) . $delimiter;
 				echo sprintf($link, get_month_link(get_the_time('Y'),get_the_time('m')), get_the_time('F')) . $delimiter;
-				echo $before . get_the_time('d') . $after;
+				echo wp_kses_post($before) . get_the_time('d') . wp_kses_post($after);
 			} elseif ( is_month() ) {
 				echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y')) . $delimiter;
-				echo $before . get_the_time('F') . $after;
+				echo wp_kses_post($before) . get_the_time('F') . wp_kses_post($after);
 			} elseif ( is_year() ) {
-				echo $before . get_the_time('Y') . $after;
+				echo wp_kses_post($before) . get_the_time('Y') . wp_kses_post($after);
 			} elseif ( is_single() && !is_attachment() ) {
 				if ( get_post_type() != 'post' ) {
 					$post_type = get_post_type_object(get_post_type());
 					$slug = $post_type->rewrite;
 					printf($link, $homeLink . '/' . $slug['slug'] . '/', $post_type->labels->singular_name);
-					if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
+					if ($showCurrent == 1) echo wp_kses_post($delimiter) . $before . get_the_title() . wp_kses_post($after);
 				} else {
 					$cat = get_the_category(); $cat = $cat[0];
 					$cats = get_category_parents($cat, TRUE, $delimiter);
 					if ($showCurrent == 0) $cats = preg_replace("#^(.+)$delimiter$#", "$1", $cats);
 					$cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
 					$cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
-					if($breadcrumbs_cat){ echo $cats;}
-					if ($showCurrent == 1) echo $before . get_the_title() . $after;
+					if($breadcrumbs_cat){ echo wp_kses_post( $cats );}
+					if ($showCurrent == 1) echo wp_kses_post($before) . get_the_title() . wp_kses_post($after);
 				}
 			} elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
 				$post_type = get_post_type_object(get_post_type());
-				echo $before . $post_type->labels->singular_name . $after;
+				echo wp_kses_post($before) . $post_type->labels->singular_name . wp_kses_post($after);
 			} elseif ( is_attachment() ) {
 				$parent = get_post($post->post_parent);
 				$cat = get_the_category($parent->ID); $cat = $cat[0];
 				$cats = get_category_parents($cat, TRUE, $delimiter);
 				$cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
 				$cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
-				if($breadcrumbs_cat){ echo $cats;}
+				if($breadcrumbs_cat){ echo wp_kses_post( $cats );}
 				printf($link, get_permalink($parent), $parent->post_title);
-				if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
+				if ($showCurrent == 1) echo wp_kses_post($delimiter) . $before . get_the_title() . wp_kses_post($after);
 			} elseif ( is_page() && !$post->post_parent ) {
-				if ($showCurrent == 1) echo $before . get_the_title() . $after;
+				if ($showCurrent == 1) echo wp_kses_post($before) . get_the_title() . wp_kses_post($after);
 			} elseif ( is_page() && $post->post_parent ) {
 				$parent_id  = $post->post_parent;
 				$breadcrumbs = array();
@@ -109,19 +109,19 @@
 				}
 				$breadcrumbs = array_reverse($breadcrumbs);
 				for ($i = 0; $i < count($breadcrumbs); $i++) {
-					echo $breadcrumbs[$i];
-					if ($i != count($breadcrumbs)-1) echo $delimiter;
+					echo wp_kses_post( $breadcrumbs[$i] );
+					if ($i != count($breadcrumbs)-1) echo wp_kses_post($delimiter);
 				}
-				if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
+				if ($showCurrent == 1) echo wp_kses_post($delimiter) . $before . get_the_title() . wp_kses_post($after);
 			} elseif ( is_tag() ) {
-				echo $before . sprintf($text['tag'], single_tag_title('', false)) . $after;
+				echo wp_kses_post($before) . sprintf($text['tag'], single_tag_title('', false)) . wp_kses_post($after);
 			} elseif ( is_author() ) {
 				global $author;
 				$userdata = get_userdata($author);
-				echo $before . sprintf($text['author'], $userdata->display_name) . $after;
+				echo wp_kses_post($before) . sprintf($text['author'], $userdata->display_name) . wp_kses_post($after);
 
 			} elseif ( is_404() ) {
-				echo $before . $text['404'] . $after;
+				echo wp_kses_post( $before ) . $text['404'] . wp_kses_post( $after );
 			}
 			if ( get_query_var('paged') ) {
 				if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
