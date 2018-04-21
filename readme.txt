@@ -45,6 +45,10 @@ Source: https://github.com/dachcom-digital/jquery-doubletaptogo
 
 == Changelog ==
 
+Version 1.23 (2018-04-21)
+-------------------------
+- Fixed error in comments.php
+
 Version 1.22 (2018-04-21)
 -------------------------
 - Added a Customizer setting for displaying the sidebar on tablet and mobile

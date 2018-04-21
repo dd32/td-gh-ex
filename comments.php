@@ -146,7 +146,7 @@ if ( have_comments() ) : ?>
 				<label for="url">' . __( 'Website', 'lovecraft' ) . '</label>
 				<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" />
 			</p>',
-	), ),
+	) ),
 );
 
 if ( comments_open() ) {
