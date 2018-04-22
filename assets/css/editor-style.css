@@ -16,7 +16,7 @@ textarea {
 
 /* links */
 a {
-  color: #105cb6;
+  color: #23b2dd;
   text-decoration:none;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
@@ -34,7 +34,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border: none;
-  background: #105cb6;
+  background: #23b2dd;
   color: #ffffff;
   text-transform:uppercase;
   font-size: 12px;
@@ -119,7 +119,7 @@ input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
   color: #111;
-  border:1px solid #105cb6;
+  border:1px solid #23b2dd;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -155,7 +155,7 @@ dfn, cite, em, i {
 }
 blockquote {
   background-color: #f3f3f3;
-  border-left: 4px solid #105cb6;
+  border-left: 4px solid #23b2dd;
   font-style: italic;
   margin: 0 0 10px;
   padding: 15px;

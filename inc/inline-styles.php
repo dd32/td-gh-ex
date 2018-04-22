@@ -150,7 +150,7 @@ a:hover, a:focus, a:active {
     ';
   }
 
-  wp_add_inline_style('theme-style', $inline_styles);
+  wp_add_inline_style('fmi-style', $inline_styles);
 
 }
 add_action('wp_enqueue_scripts', 'fmi_inline_styles');
