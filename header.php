@@ -22,7 +22,7 @@
 
 <body <?php body_class( 'no-js' );; ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_attr_e( 'Skip to content', 'air-light' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'air-light' ); ?></a>
 
   <div class="nav-container">
       <header class="site-header">
@@ -58,9 +58,9 @@
                 'menu_class'        => 'menu-items',
                 'menu_id'           => 'main-menu',
                 'echo'              => true,
-                'fallback_cb'       => 'Air_light_Walker::fallback',
+                'fallback_cb'       => 'Air_Light_Navwalker::fallback',
                 'items_wrap'        => '<ul class="%2$s" id="%1$s">%3$s</ul>',
-                'walker'            => new Air_light_Walker(),
+                'walker'            => new Air_Light_Navwalker(),
               ) ); ?>
 
             </nav><!-- #nav -->
