@@ -121,45 +121,14 @@ jQuery(document).ready(function($) {
         astore_topbar_right_tpl();
     });
 
-
-    /*menu tpl*/
-    function astore_menu_tpl() {
-
-        var html = '';
-        $('#customize-control-astore-frontpage_menu .repeater-fields > li').each(function(index, element) {
-
-            var title = $(this).find('input[data-field="title"]').val();
-            var link = $(this).find('input[data-field="link"]').val();
-			var icon = $(this).find('input[data-field="icon"]').val();
-			var icon_str = '';
-			if(icon !=='')
-				icon_str = '<i class="fa '+icon+'"></i> ' ;
-            if (title !== '')
-                html += '<li><a href="' + link + '"><span>'+icon_str+ title + '</span></a></li>';
-
-        });
-        customize.previewer.send('frontpage_menu_selective', html);
-
-    }
-
-    wp.customize('astore[frontpage_menu]', function(value) {
-        value.bind(function(to) {
-            astore_menu_tpl();
-        });
-    });
-
-    $(document).on('click', '#customize-control-astore-frontpage_menu .repeater-row-remove', function() {
-        $(this).parents('li.repeater-row').remove();
-        astore_menu_tpl();
-    });
-
 	wp.customize( 'astore[sticky_header_background_color]', function( value ) {
 		value.bind( function( to ) {
 				var patt = /^#([\da-fA-F]{2})([\da-fA-F]{2})([\da-fA-F]{2})$/;
 				var matches = patt.exec(to);
-				var opacity = $('#customize-control-astore-sticky_header_background_opacity select').val();
+				var opacity = $('#customize-control-astore-sticky_header_background_opacity input').val();
 				var rgba = "rgba("+parseInt(matches[1], 16)+","+parseInt(matches[2], 16)+","+parseInt(matches[3], 16)+","+opacity+")";
 				customize.previewer.send('sticky_header_background_color', rgba);
+				console.log(rgba);
 		} );
 	} );
 	
@@ -173,8 +142,6 @@ jQuery(document).ready(function($) {
 				customize.previewer.send('sticky_header_background_color', rgba);
 		} );
 	} );
-
-
 
     /*footer icons tpl*/
     function astore_footer_icons_tpl() {

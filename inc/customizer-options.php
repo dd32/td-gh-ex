@@ -140,7 +140,7 @@ function astore_customizer_library_options() {
 				),
 			array(
 				"icon" => 'fa-clock-o',
-				"text" => "Monday – Friday 10 AM – 8 PM",
+				"text" => "Monday - Friday 10 AM - 8 PM",
 				"link" => "",
 				"target" => "_self",
 				),
@@ -267,6 +267,25 @@ function astore_customizer_library_options() {
 			'suffix' => '',
   	),
 	);
+	
+	$options['categories_menu_toggle'] = array(
+			'id' => 'categories_menu_toggle',
+			'label'   => __( 'Display Categories Menu Toggle', 'astore' ),
+			'section' => $section,
+			'type'    => 'checkbox',
+			'default' => '1',
+			//'transport' => $transport,
+		);
+	
+	$options['categories_menu_toggle_text'] = array(
+			'id' => 'categories_menu_toggle_text',
+			'label'   => __( 'Categories Menu Toggle Text', 'astore' ),
+			'section' => $section,
+			'type'    => 'text',
+			'default' => 'Browse Categories',
+			//'transport' => $transport,
+		);
+	
 		
 	// Panel Footer
 	$section = 'panel-footer';
@@ -656,6 +675,20 @@ function astore_customizer_library_options() {
 		'title' => __( 'Posts archive', 'astore' ),
 		'priority' => '10',
 		'panel' => $panel
+	);
+	
+	$options['blog_list_style'] = array(
+		'id' => 'blog_list_style',
+		'label'   => __( 'Posts Archive Layout', 'astore' ),
+		'section' => $section,
+		'type'    => 'radio-image',
+		//'transport' => $transport,
+		'choices' => array(
+				'1'=> array('label'=>__( 'Full Width Image', 'astore' ),'url'=> $imagepath.'customize/blog-style1.png'),
+				'2'=> array('label'=>__( 'Side Image', 'astore' ),'url'=> $imagepath.'customize/blog-style2.png'),
+				'3'=> array('label'=>__( 'Grid', 'astore' ),'url'=> $imagepath.'customize/blog-style3.png'),
+				),
+		'default' => '1'
 	);
 	
 	//Display: Full Post/Excerpt

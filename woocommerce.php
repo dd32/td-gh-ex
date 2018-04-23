@@ -93,14 +93,18 @@ function astore_before_shop_loop_item_title()
 	endif; 
 
 	echo  '<a href="' . get_the_permalink() . '" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">'.$onsale.'
-					  '.$product_image.'
+					
+					  <div class="product-image">'.$product_image.'</div>
 					  <h2 class="woocommerce-loop-product__title">'.get_the_title().'</h2>';
 											 do_action( 'astore_template_loop_rating' );
-										echo '<span class="price">';
+						echo '</a>';
+						
+						do_action('astore_after_loop_title');
+						
+						echo '<span class="price">';
                                               do_action( 'astore_template_loop_price' );
-                                        echo '</span>
+                         echo '</span>';
 	
-				  </a>';
 }
 	
 function astore_template_loop_product_title()

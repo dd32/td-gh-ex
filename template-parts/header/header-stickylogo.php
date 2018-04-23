@@ -21,9 +21,9 @@ if ( $logo || get_theme_mod( 'custom_logo' ) ) {
 <?php if ( 'blank' != $header_text_color ) :?>
 
   <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-  <h1 class="site-name">
+  <h2 class="site-name">
     <?php bloginfo( 'name' ); ?>
-  </h1>
+  </h2>
   </a>
 <?php endif;?>
 

@@ -13,10 +13,9 @@ require_once($template_directory . '/inc/plugin-install/class-plugin-install-hel
 require_once($template_directory . '/inc/customizer-library/customizer-library.php');
 // Define options for the theme customizer.
 require_once($template_directory . '/inc/customizer-options.php');
-require_once($template_directory . '/inc/class-video.php');
 require_once($template_directory . '/inc/demo-preview-images/init-prevdem.php');
 require_once($template_directory . 'inc/customizer-library/custom-controls/editor/editor-page.php');
-
+require_once($template_directory . 'inc/wc-list-grid.php');
 
 function astore_setup() {
 
@@ -145,7 +144,7 @@ function astore_scripts() {
 	
 	wp_enqueue_script( 'respond', get_template_directory_uri() . '/assets/plugins/respond.min.js' , array( 'jquery' ), null, true);
 	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/assets/plugins/owl-carousel/js/owl.carousel.min.js' , array( 'jquery' ), null, true);
-	
+	wp_enqueue_script( 'jquery-cookie', get_template_directory_uri() . '/assets/plugins/jquery.cookie.min.js' , array( 'jquery' ), null, true);
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -206,7 +205,7 @@ function astore_scripts() {
 	for($i=1;$i<=6;$i++){
 		$heading_font_size = absint(astore_option('h'.$i.'_font_size'));
 		$custom_css .=  "h".$i."{font-size:".$heading_font_size."px;}";
-		}
+	}
 		
 	// Section Font size
 	$section_title_font_size = absint(astore_option('section_title_font_size'));
@@ -825,10 +824,15 @@ require get_template_directory() . '/inc/customizer-notify/class-astore-customiz
 
 $config_customizer = array(
 	'recommended_plugins'       => array(
+		'elementor' => array(
+			'recommended' => true,
+			'description' => sprintf( esc_html__( 'Install and activate %s plugin to build your front page.', 'astore' ), 'Elementor Page Builder' ),
+		),
 		'astore-companion' => array(
 			'recommended' => true,
 			'description' => sprintf( esc_html__( 'Install and activate %s plugin to take full advantage of AStore theme. More options could be found at Customize and page meta options.', 'astore' ), sprintf( '<strong>%s</strong>', 'AStore Companion' ) ),
 		),
+		
 	),
 	'recommended_actions'       => array(),
 	'recommended_actions_title' => esc_html__( 'Recommended Actions', 'astore' ),
@@ -842,7 +846,7 @@ AStore_Customizer_Notify::init( apply_filters( 'astore_customizer_notify_array',
 /**
  * Include the TGM_Plugin_Activation class.
  */
-if ( class_exists( 'TGM_Plugin_Activation' ) ) 
+if ( !class_exists( 'TGM_Plugin_Activation' ) ) 
 	load_template( trailingslashit( get_template_directory() ) . 'inc/class-tgm-plugin-activation.php' );
 
 //add_action( 'tgmpa_register', 'astore_theme_register_required_plugins' );
@@ -854,11 +858,34 @@ if ( class_exists( 'TGM_Plugin_Activation' ) )
 function astore_theme_register_required_plugins() {
 
     $plugins = array(
+		
+		array(
+			'name'     				=> __('Elementor Page Builder','astore'),
+			'slug'     				=> 'elementor',
+			'source'   				=> '',
+			'required' 				=> true,
+			'version' 				=> '2.0.5',
+			'force_activation' 		=> false,
+			'force_deactivation' 	=> false,
+			'external_url' 			=> '',
+		),
+		
+		array(
+			'name'     				=> __('WooCommerce','astore'),
+			'slug'     				=> 'woocommerce',
+			'source'   				=> '',
+			'required' 				=> true,
+			'version' 				=> '3.3.5',
+			'force_activation' 		=> false,
+			'force_deactivation' 	=> false,
+			'external_url' 			=> '',
+		),
+		
 		array(
 			'name'     				=> __('AStore Companion','astore'), // The plugin name
 			'slug'     				=> 'astore-companion', // The plugin slug (typically the folder name)
-			'source'   				=> esc_url('https://downloads.wordpress.org/plugin/astore-companion.zip'), // The plugin source
-			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
+			'source'   				=> '', // The plugin source
+			'required' 				=> true, // If false, the plugin is only 'recommended' instead of required
 			'version' 				=> '1.0.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
 			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
 			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
@@ -884,6 +911,8 @@ function astore_theme_register_required_plugins() {
     tgmpa( $plugins, $config );
 
 }
+
+add_action( 'tgmpa_register', 'astore_theme_register_required_plugins' );
 
 /**
  * Welcome notice.
@@ -961,9 +990,8 @@ function astore_about_theme_callback() {
 	
 	echo '<div class="astore-info-wrap">
 	<h1>'.sprintf(esc_attr__('Welcome to %s Version %s', 'astore'),$theme_info->get( 'Name' ), $theme_info->get( 'Version' ) ).'</h1>
-	<p>'.$theme_info->get( 'Name' ).' is the best choice for building online store since it\'s fully compatible with WooCommerce, the most popular ecommerce plugin. Using Elementor page builder plugin, you could simply edit your site using just drag & drop.</p>
-	
-	
+	<p>'.sprintf(esc_attr__('%s is the best choice for building online store since it\'s fully compatible with WooCommerce, the most popular ecommerce plugin. Using Elementor page builder plugin, you could simply edit your site using just drag & drop.', 'astore'),$theme_info->get( 'Name' ) ).'</p>
+	<p>'.esc_attr__('Documentation', 'astore' ).': <a href="'.esc_url('https://velathemes.com/astore-documentation/').'" target="_brank">https://velathemes.com/astore-documentation/</a></p>
 	</div>';
 		
     echo '</div>';
@@ -1096,6 +1124,10 @@ function astore_hide_footer(){
 add_filter('astore_hide_header','astore_hide_header');
 add_filter('astore_hide_footer','astore_hide_header');
 
+/**
+ * Filter woocommerce_subcategory_count_html
+ */
+
 function astore_subcategory_count_html( $string ){
 	
 	$num = str_replace('<mark class="count">(','',$string);
@@ -1108,3 +1140,20 @@ function astore_subcategory_count_html( $string ){
 	return $string;
 	}
 add_filter('woocommerce_subcategory_count_html','astore_subcategory_count_html');
+
+/**
+ * Redirect to edit frontpage
+ */
+function astore_redirect_e_frontpage(){
+	
+	$frontpage_id = get_option( 'page_on_front' );
+	
+	$redirect_url = add_query_arg( array(
+			'post'   => $frontpage_id,
+			'action' => 'elementor',
+		), admin_url( 'post.php' ) );
+	echo @json_encode( array('redirect_url'=>$redirect_url) );
+	exit(0);
+	}
+add_action('wp_ajax_astore_redirect_e_frontpage', 'astore_redirect_e_frontpage');
+add_action('wp_ajax_nopriv_astore_redirect_e_frontpage', 'astore_redirect_e_frontpage');

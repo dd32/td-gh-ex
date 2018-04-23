@@ -21,8 +21,11 @@
 
   <div class="wrapper">
         <!--Header-->
-        <?php get_template_part( 'template-parts/header/header', 'image' ); ?>
-        <?php 
-			get_template_part( 'template-parts/header/header','default' ); 
+        <?php
+			$hide_header = apply_filters('astore_hide_header',0);
+			if( $hide_header != '1' ){
+				get_template_part( 'template-parts/header/header', 'image' ); 
+				get_template_part( 'template-parts/header/header','default' ); 
+			}
 		
 		?>

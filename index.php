@@ -32,7 +32,6 @@
 		
 ?>
  <!--Main Area-->
-<?php echo apply_filters('astore_page_title_bar','','category');?> 
         <div class="page-wrap">
         <?php do_action('astore_before_page_wrap');?>
             <div class="container">

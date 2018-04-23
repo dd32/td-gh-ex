@@ -1,21 +1,9 @@
-/**
- * Customizer notification system
- *
- * @package Hestia
- */
-
-/* global wp */
-/* global ccCustomizerNotifyObject */
-/* global console */
 (function (api) {
-
 	api.sectionConstructor['cc-customizer-notify-section'] = api.Section.extend(
 		{
-
 			// No events for this type of section.
 			attachEvents: function () {
 			},
-
 			// Always make the section active.
 			isContextuallyActive: function () {
 				return true;
@@ -25,10 +13,9 @@
 
 })( wp.customize );
 
-					jQuery( document ).ready(
-						function () {
-
-							jQuery( '.cc-customizer-notify-dismiss-recommended-action' ).click(
+jQuery( document ).ready(
+	function () {
+		jQuery( '.cc-customizer-notify-dismiss-recommended-action' ).click(
 								function () {
 
 									var id = jQuery( this ).attr( 'id' ),
@@ -70,7 +57,7 @@
 								}
 							);
 
-										jQuery( '.cc-customizer-notify-dismiss-button-recommended-plugin' ).click(
+		jQuery( '.cc-customizer-notify-dismiss-button-recommended-plugin' ).click(
 											function () {
 												var id = jQuery( this ).attr( 'id' ),
 												action = jQuery( this ).attr( 'data-action' );
@@ -101,10 +88,10 @@
 											}
 										);
 
-										// Remove activate button and replace with activation in progress button.
-										jQuery( document ).on(
-											'DOMNodeInserted','.activate-now', function () {
+		// Remove activate button and replace with activation in progress button.
+		jQuery( document ).on('DOMNodeInserted','.activate-now', function () {
 												var activateButton = jQuery( '.activate-now' );
+												var slug = $(this).data('slug');
 												if (activateButton.length) {
 													var url = jQuery( activateButton ).attr( 'href' );
 													if (typeof url !== 'undefined') {
@@ -118,8 +105,29 @@
 																type: 'GET',
 																url: url,
 																success: function () {
+																	if(slug == 'astore-companion'){
+																		jQuery.ajax(
+																					{
+																						type: 'POST',
+																						dataType:"json",
+																						url: ccCustomizerNotifyObject.ajaxurl,
+																						data:{action:'astore_redirect_e_frontpage'},
+																						success: function (data) {
+																							// Reload the page.
+																							window.location = data.redirect_url;
+																							
+																						},
+																						error: function(data){
+																							location.reload();
+																							
+																							}
+																					}
+																				);
+																	}else{
+																		location.reload();
+																		}
 																	// Reload the page.
-																	location.reload();
+																	//location.reload();
 																}
 															}
 														);
@@ -127,5 +135,51 @@
 												}
 											}
 										);
+										
+										
+		jQuery('.activate-now').on('click', function (e) {
+			var activateButton = $(this);
+			var slug = $(this).data('slug');
+			e.preventDefault();
+			if ($(activateButton).length) {
+				var url = $(activateButton).attr('href');
+				if (typeof url !== 'undefined') {
+					//Request plugin activation.
+					$.ajax({
+						beforeSend: function () {
+							$(activateButton).replaceWith('<a class="button updating-message">' + ccCustomizerNotifyObject.activating_string + '...</a>');
+						},
+						async: true,
+						type: 'GET',
+						url: url,
+						success: function () {
+							if(slug == 'astore-companion'){
+							jQuery.ajax(
+									  {
+										  type: 'POST',
+										  dataType:"json",
+										  url: ccCustomizerNotifyObject.ajaxurl,
+										  data:{action:'astore_redirect_e_frontpage'},
+										  success: function (data) {
+											  // Reload the page.
+											  window.location = data.redirect_url;
+											  
+										  },
+										  error: function(data){
+											  location.reload();
+											  
+											  }
+									  }
+								  );
+							}else{
+								location.reload();
+								}
 						}
-					);
+					});
+				}
+			}
+		});
+										
+										
+		}
+);

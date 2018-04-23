@@ -83,9 +83,9 @@
 	wp.customize( 'astore[sticky_header]', function( value ) {
 		value.bind( function( to ) {
 			if(to=='1'){
-				$('.astore-fixed-header-wrap').removeClass('hide');
+				$('.cactus-fixed-header-wrap').removeClass('hide');
 				}else{
-					$('.astore-fixed-header-wrap').addClass('hide');
+					$('.cactus-fixed-header-wrap').addClass('hide');
 					}
 			} );
 	} );

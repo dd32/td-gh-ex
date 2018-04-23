@@ -1,7 +1,5 @@
 <?php
 /**
- * Plugin install helper.
-/**
  * Class AStore_Plugin_Install_Helper
  */
 class AStore_Plugin_Install_Helper {
@@ -55,7 +53,7 @@ class AStore_Plugin_Install_Helper {
 						),
 						'install-plugin_' . $slug
 					);
-					$button .= '<a data-slug="' . $slug . '" class="install-now astore-install-plugin button  " href="' . esc_url( $nonce ) . '" data-name="' . $slug . '" aria-label="Install ' . $slug . '">' . __( 'Install and activate', 'astore' ) . '</a>';
+					$button .= '<a data-slug="' . $slug . '" class="install-now astore-install-plugin button  " href="' . esc_url( $nonce ) . '" data-name="' . $slug . '" aria-label="' . sprintf(__( 'Install %s', 'astore' ),$slug) . '">' . __( 'Install and activate', 'astore' ) . '</a>';
 					break;
 
 				case 'activate':

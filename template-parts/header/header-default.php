@@ -9,6 +9,8 @@
                         <div class="cactus-microwidget cactus-search-full">
                             <form role="search" class="searchform searchform-cats" method="get" id="searchform" action="<?php echo esc_url( home_url( '/'  ) );?>">
                                 <div><?php
+								
+								if ( class_exists( 'WooCommerce' ) ) {	
 
 								$args = array(
 								  'taxonomy' => 'product_cat',
@@ -19,10 +21,11 @@
 								  'selected' => isset($_GET['product_cat'])?$_GET['product_cat']:'',
 								);
 								wp_dropdown_categories( $args );
+								}
 								?>
                                     
                                     <label class="screen-reader-text"><?php esc_attr__('Search for','astore');?>:</label>
-                                    <input type="text" class="search-field" placeholder="<?php esc_attr_e('Search','astore');?> …" value="<?php echo get_search_query(); ?>" name="s">
+                                    <input type="text" class="search-field" placeholder="<?php esc_attr_e('Search','astore');?> ..." value="<?php echo get_search_query(); ?>" name="s">
                                     <input type="hidden" value="product" name="post_type" id="post_type" />
                                     <input type="submit" class="search-submit" value="Search">
                                 </div>                                    
@@ -31,7 +34,7 @@
                     </div>
                     <?php
 					$display_shopping_cart_icon = astore_option('display_shopping_cart_icon');
-					
+					$display_shopping_cart_icon = apply_filters('astore_display_shopping_cart_icon', $display_shopping_cart_icon);
 					?>
                     <div class="cactus-f-microwidgets">
                     <?php
@@ -60,46 +63,18 @@
                     </div>
                     
                 </div>
+                
                 <nav class="cactus-navigation cactus-style-top-line-full">
-                    <div class="cactus-cate-menu-wrap">
-                        <div class="cactus-cate-menu-toggle"><i class="fa fa-list-ul"></i> 
-						<?php esc_attr_e('Browse Categories','astore');?>
-                        </div>
-                        <?php
-							global $post;
-			
-							$postid = isset($post->ID)?$post->ID:0;
-							if(is_home()){
-								$postid = get_option( 'page_for_posts' );
-							}
-
-							$expand_menu = get_post_meta($postid , 'astore_expand_menu', true);
-							
-							
-							$expand_menu = apply_filters( 'astore_expand_menu', $expand_menu );
-	
-							$menu_class = 'cactus-cate-menu';
-							if ( $expand_menu == '1' || $expand_menu == 'on' )
-								$menu_class .= ' show';
-						?>
-                        <div class="<?php echo $menu_class;?>" style="display:none;">
-                        
-                         <?php
-	
-						   wp_nav_menu( array(
-							'theme_location' => 'browse-categories',
-							'menu_id'        => 'browse-categories',
-							'menu_class' => 'cactus-cate-nav',
-							'fallback_cb'    => '',
-							'container' =>'',
-							'link_before' => '<span>',
-							'link_after' => '</span>',
-						) );
-				
-					?>
-                        </div>
-                    </div>
-                    
+                <?php
+					
+					$categories_menu_toggle = astore_option('categories_menu_toggle');
+					$categories_menu_toggle = apply_filters('astore_categories_menu_toggle', $categories_menu_toggle);
+					
+					if( $categories_menu_toggle == '1' ){
+						get_template_part( 'template-parts/header/header', 'cate-menu' );
+						}
+				?>
+      
               <?php get_template_part( 'template-parts/header/header', 'top-menu' ); ?>
                 </nav>                
             </div>
@@ -123,7 +98,7 @@
             <div class="cactus-header cactus-inline-header right shadow">
                 <div class="cactus-main-header">
                     <div class="cactus-logo">
-                        <?php get_template_part( 'template-parts/header/header', 'logo' ); ?>
+                        <?php get_template_part( 'template-parts/header/header', 'stickylogo' ); ?>
                     </div>
                      <?php get_template_part( 'template-parts/header/header', 'top-menu' ); ?>
                    

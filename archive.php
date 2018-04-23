@@ -31,8 +31,6 @@
 		};
 ?>
 <!--Main Area-->
-<?php echo apply_filters('astore_page_title_bar','','category');?> 
-
 <div class="page-wrap">
   <div class="container">
     <div class="<?php echo $aside_class; ?>">

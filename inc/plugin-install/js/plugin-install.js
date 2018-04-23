@@ -1,9 +1,7 @@
-/* global astore_plugin_helper */
-
 //Remove activate button and replace with activation in progress button.
 jQuery(document).on('DOMNodeInserted','.activate-now', function (e) {
 	e.preventDefault();
-
+console.log('aaaaaaaa');
     var activateButton = jQuery('.activate-now');
     if (activateButton.length) {
         var url = jQuery(activateButton).attr('href');
@@ -29,7 +27,7 @@ jQuery(document).on('DOMNodeInserted','.activate-now', function (e) {
 jQuery(document).ready(function ($) {
     $('body').on('click', '.astore-install-plugin', function () {
         var slug = $(this).attr('data-slug');
-
+console.log('bbbbbbbb');
         wp.updates.installPlugin({
             slug: slug
         });
@@ -39,6 +37,7 @@ jQuery(document).ready(function ($) {
     $('.activate-now').on('click', function (e) {
         var activateButton = $(this);
         e.preventDefault();
+		console.log('cccccccccc');
         if ($(activateButton).length) {
             var url = $(activateButton).attr('href');
             if (typeof url !== 'undefined') {
@@ -52,7 +51,7 @@ jQuery(document).ready(function ($) {
                     url: url,
                     success: function () {
                         //Reload the page.
-                        location.reload();
+                       location.reload();
                     }
                 });
             }
