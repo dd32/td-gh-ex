@@ -53,7 +53,7 @@
 					<div class="container inner-table">
 						<div class="inner-table-cell">
 							<div class="caption verticle-center text-center wow zoomIn">
-								<h1 class="wow fadeInDown animated" data-wow-delay="0.4s"><?php echo $title; ?></span></h1>
+								<h1 class="wow fadeInDown animated" data-wow-delay="0.4s"><?php echo wp_filter_post_kses($title); ?></span></h1>
 								<?php echo $content; ?>
 								
 								<?php if( get_post_meta(get_the_ID(),'slidebutton', true ) ): ?>
