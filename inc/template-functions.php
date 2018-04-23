@@ -683,7 +683,7 @@ function bakery_shop_content_start(){
     $ed_slider = get_theme_mod( 'bakery_shop_ed_slider','1' );
     $class = is_404() ? 'error-holder' : 'row' ;
     
-    if( ! is_page_template( 'template-home.php' ) && !( $ed_slider && is_front_page() ) ){
+    if( !( $ed_slider && is_front_page() && !is_home()) ){
     ?>
     <div id="content" class="site-content">
         <div class="container">
@@ -837,7 +837,7 @@ function bakery_shop_content_end(){
 
     $ed_slider = get_theme_mod( 'bakery_shop_ed_slider','1' );
     
-    if( ! is_page_template( 'template-home.php' ) && !( $ed_slider && is_front_page() ) ){
+    if( !( $ed_slider && is_front_page() && ! is_home() ) ){
         echo '</div></div></div>';// .row /#content /.container
     }
 }

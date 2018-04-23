@@ -70,7 +70,7 @@ if ( ! function_exists( 'bakery_shop_setup' ) ) :
 
 		// Custom Image Size
 		
-	    add_image_size( 'bakery-shop-slider', 1400, 450, true );
+	    add_image_size( 'bakery-shop-slider', 1400, 420, true );
 	    add_image_size( 'bakery-shop-with-sidebar', 833, 474, true );
 	    add_image_size( 'bakery-shop-without-sidebar', 1110, 474, true );
 	    add_image_size( 'bakery-shop-welcome', 560, 360, true );
@@ -189,7 +189,7 @@ function bakery_shop_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
-	if( ( $ed_slider && is_page_template( 'template-home.php') ) || ( $ed_slider && is_front_page() ) ) {
+	if( $ed_slider && is_front_page() && !is_home() ) {
         $classes[] = 'has-slider';
     }
 

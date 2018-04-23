@@ -6,7 +6,7 @@ Tags: one-column, two-columns, right-sidebar, custom-background, custom-logo, cu
 
 Requires at least: 4.0
 Tested up to: 4.9.5
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,7 @@ All images are under Creative Commons Public Domain deed CC0.
 1. https://pixabay.com/en/cake-piece-of-pie-black-forest-1227842/
 2. https://pixabay.com/en/strawberry-roll-strawberry-1263099/
 3. https://pixabay.com/en/strawberry-ice-cream-strawberries-2239377/
+4. https://pixabay.com/en/france-confectionery-raspberry-cake-83373/
 
 # JS
 All the JS are licensed under GPLv2 or later
@@ -62,6 +63,11 @@ Bakery Shop WordPress Theme is distributed under the terms of the GPLv2 or later
    
 
 == Change Log ==
+
+1.0.4
+* screenshot change.
+* slider Image size change.
+
 
 1.0.3
 * fixed issue mentioned in trac.
