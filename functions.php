@@ -41,6 +41,7 @@
 			'snoweffect'=>'',
 			'read_more'=>__('Read More', 'enigma' ),
 			'autoplay'=>'1',
+			'breadcrumb'=>'1',
 
 			'slider_image_speed' => '',
 			'slide_image_1' => $ImageUrl,
@@ -57,7 +58,8 @@
 			'slide_title_3' => __('Contrary to popular ', 'enigma' ),
 			'slide_desc_3' => __('Aldus PageMaker including versions of Lorem Ipsum, rutrum turpi', 'enigma' ),
 			'slide_btn_text_3' => __('Read More', 'enigma' ),
-			'slide_btn_link_3' => '#',			
+			'slide_btn_link_3' => '#',
+			'slider_anim'=>'',
 			// Footer Call-Out
 			'fc_home'=>'1',			
 			'fc_title' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'enigma' ),

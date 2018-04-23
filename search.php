@@ -1,4 +1,6 @@
-<?php get_header(); ?>
+<?php get_header(); 
+$wl_theme_options = weblizar_get_options(); 
+if($wl_theme_options['breadcrumb']!='') { ?>
 <div class="enigma_header_breadcrum_title">	
 	<div class="container">
 		<div class="row">
@@ -12,6 +14,7 @@
 		</div>
 	</div>	
 </div>
+<?php } ?>
 <div class="container">	
 	<div class="row enigma_blog_wrapper">
 	<div class="col-md-8">

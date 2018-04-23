@@ -1,5 +1,7 @@
 <?php get_header(); 
-get_template_part('breadcrums'); ?>
+$wl_theme_options = weblizar_get_options(); 
+if($wl_theme_options['breadcrumb']!='') { 
+get_template_part('breadcrums'); } ?>
 <div class="container">	
 	<div class="row enigma_blog_wrapper">
 	<div class="col-md-8">

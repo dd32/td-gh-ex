@@ -99,6 +99,21 @@ $wp_customize->add_section(
 		'settings'   => 'enigma_options[title_position]',
 	) );
 	
+	$wp_customize->add_setting(
+		'enigma_options[breadcrumb]',
+		array(
+			'type'    => 'option',
+			'default'=>$wl_theme_options['breadcrumb'],
+			'sanitize_callback'=>'enigma_sanitize_checkbox',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control( 'breadcrumb', array(
+		'label'        => __( 'Enable Breadcrumb', 'enigma' ),
+		'type'=>'checkbox',
+		'section'    => 'general_sec',
+		'settings'   => 'enigma_options[breadcrumb]',
+	) );
 	
 	// site title and logo position : left and center //
 	$wp_customize->add_setting(
@@ -194,6 +209,25 @@ $wp_customize->add_section(
 	) );
 
     //
+	//slider animation
+	$wp_customize->add_setting('enigma_options[slider_anim]',
+		array(
+			'type'    => 'option',
+			'default'=>'',
+			'sanitize_callback'=>'enigma_sanitize_text',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	
+	$wp_customize->add_control('slider_anim', array(
+		'label'        => __( 'Slider Animation', 'enigma' ),
+		'type'=>'select',
+		'section'    => 'slider_sec',
+		'settings'   => 'enigma_options[slider_anim]',
+		'choices'=>array(
+			'slide'=>__('Slide','enigma'),
+			'fadeIn'=>__('Fade','enigma'),
+	) ) );
 	
 	$wp_customize->add_setting('enigma_options[animate_type_title]',
 		array(
@@ -1913,7 +1947,9 @@ class enigma_changelog_Control extends WP_Customize_Control {
 			<div class="col-md-3 col-sm-6">
 				<h2 style="margin-top:10px;color:#fff;background-color: #3ca3e0;padding: 10px;font-size: 19px;"><?php echo _e( 'Enigma Theme Changelog','enigma'); ?></h2>
 				<ul style="padding-top:20px">
-				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.5 - <span> Current Version </span></div>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.6 - <span> Current Version </span></div>
+		<ol> <li> Slider Animation option added. </li><li> Breadcrumb option added. </li></ol></li>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.5 - </div>
 		<ol> <li> Snow effect issue fixed. </li></ol></li>
 				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.4 - </div>
 		<ol> <li> Autoplay Option added in blog options.  </li><li>Read More button option added in blog options. </li></ol></li>

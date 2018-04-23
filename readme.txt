@@ -6,6 +6,10 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 4.1.6 [23-04-2018]
+1. Slider Animation option added.
+2. Breadcrumb option added.
+
 @Version: 4.1.5 [02-04-2018]
 1. Snow effect issue fixed.
 2. Updated Pro Themes and Plugins Page.

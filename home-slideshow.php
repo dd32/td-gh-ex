@@ -1,6 +1,7 @@
 <!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+ <?php $wl_theme_options = weblizar_get_options(); ?>
+    <div id="myCarousel" class="carousel <?php if($wl_theme_options['slider_anim']=="fadeIn") echo fadein; else echo slide;?>" data-ride="carousel">
       <div class="carousel-inner">
 	  <?php $wl_theme_options = weblizar_get_options(); 
 $wl_theme_options['slider_image_speed'];
