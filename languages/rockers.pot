@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Rockers\n"
-"POT-Creation-Date: 2018-04-23 13:41+0530\n"
-"PO-Revision-Date: 2018-04-23 13:41+0530\n"
+"POT-Creation-Date: 2018-04-24 11:56+0530\n"
+"PO-Revision-Date: 2018-04-24 11:56+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -46,11 +46,11 @@ msgid "California - United States"
 msgstr ""
 
 #: functions/widgets/wdl_header_topbar_info_ct_widget.php:120
-msgid "Fontawesome icon"
+msgid "Font Awesome icon"
 msgstr ""
 
 #: functions/widgets/wdl_header_topbar_info_ct_widget.php:122
-msgid "Link to get fa-icon "
+msgid "Link to get Font Awesome icons"
 msgstr ""
 
 #: functions/widgets/wdl_header_topbar_info_ct_widget.php:122
@@ -87,7 +87,7 @@ msgid "ST: Social icon"
 msgstr ""
 
 #: functions/widgets/wdl_social_icon.php:16
-msgid "rockers social icons widget"
+msgid "Rockers social icons widget"
 msgstr ""
 
 #: functions/widgets/wdl_social_icon.php:195
@@ -111,7 +111,7 @@ msgid "Instagram URL"
 msgstr ""
 
 #: functions/widgets/wdl_social_icon.php:225
-msgid "Youtube URL"
+msgid "YouTube URL"
 msgstr ""
 
 #: functions/widgets/wdl_social_icon.php:231
@@ -148,15 +148,15 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Rockers is a responsive multi-purpose WordPress theme. It is a flexible "
-"theme suitable for agency, blog, business, corporate, finance, account, "
-"consulting or portfolios. This theme is easy and straight forward for "
-"customization. We have provided Several customization options in the theme "
-"allows you to setup site as per your targeted online presence."
+"Rockers is a responsive, multi-purpose WordPress theme. It's flexible and "
+"suitable for agency, blog, business, corporate, finance, account, consulting "
+"or portfolios. Customization is easy and straight-forward, with options "
+"provided that allow you to setup your site to perfectly fit your desired "
+"online presence."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "spicethemes"
+msgid "SpiceThemes"
 msgstr ""
 
 #. Author URI of the plugin/theme

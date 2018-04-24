@@ -117,9 +117,9 @@
 	// Widget admin form
 	?>
 	
-	<label for="<?php echo $this->get_field_id( 'fa_icon' ); ?>"><?php _e( 'Fontawesome icon','rockers' ); ?></label>
+	<label for="<?php echo $this->get_field_id( 'fa_icon' ); ?>"><?php _e('Font Awesome icon','rockers' ); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'fa_icon' ); ?>" name="<?php echo $this->get_field_name( 'fa_icon' ); ?>" type="text" value="<?php if($fa_icon) echo esc_attr( $fa_icon ); else echo 'fa-map-marker';?>" />
-	<span><?php _e('Link to get fa-icon ','rockers'); ?><a href="<?php echo 'http://fortawesome.github.io/Font-Awesome/icons/'; ?>" target="_blank" ><?php _e('fa-icon','rockers'); ?></a></span><br><br>
+	<span><?php _e('Link to get Font Awesome icons','rockers'); ?><a href="<?php echo 'http://fortawesome.github.io/Font-Awesome/icons/'; ?>" target="_blank" ><?php _e('fa-icon','rockers'); ?></a></span><br><br>
 	
 	<label for="<?php echo $this->get_field_id( 'header_title' ); ?>"><?php _e( 'Title','rockers' ); ?></label>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'header_title' ); ?>" name="<?php echo $this->get_field_name( 'header_title' ); ?>" type="text" value="<?php if($header_title) echo htmlspecialchars_decode($header_title); else _e( 'Chestnut Road,', 'rockers' );?>" /><br><br>

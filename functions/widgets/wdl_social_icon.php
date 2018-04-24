@@ -13,7 +13,7 @@
 			__('ST: Social icon','rockers'), // Widget Name
 			array(
 				'classname' => 'rockers_social_icon_widget',
-				'description' => __('rockers social icons widget','rockers'),
+				'description' => __('Rockers social icons widget','rockers'),
 			),
 			array(
 				'width' => 300,
@@ -222,7 +222,7 @@
 	<label for="<?php echo $this->get_field_id( 'instagram_target' ); ?>"><?php _e( 'Open link in new tab','rockers' ); ?></label>
 	
 	<!-- Youtube Link -->
-	<h4 for="<?php echo $this->get_field_id( 'youtube_link' ); ?>"><?php _e( 'Youtube URL','rockers' ); ?></h4>
+	<h4 for="<?php echo $this->get_field_id( 'youtube_link' ); ?>"><?php _e('YouTube URL','rockers' ); ?></h4>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'youtube_link' ); ?>" name="<?php echo $this->get_field_name( 'youtube_link' ); ?>" type="text" value="<?php if($youtube_link) echo esc_attr( $youtube_link );?>" />
 	<input class="checkbox" type="checkbox" <?php if($instance['youtube_target']==true){ echo 'checked'; } ?> id="<?php echo $this->get_field_id( 'youtube_target' ); ?>" name="<?php echo $this->get_field_name( 'youtube_target' ); ?>" />
 	<label for="<?php echo $this->get_field_id( 'youtube_target' ); ?>"><?php _e( 'Open link in new tab','rockers' ); ?></label>

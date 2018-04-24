@@ -19,6 +19,10 @@ Rockers is a responsive multi-purpose WordPress theme. It is a flexible theme su
 
 == Changelog ==
 
+= 2.8.1 ==
+
+1. Update Strings.
+
 = 2.8 ==
 
 1. Update Descritpion.
