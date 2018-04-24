@@ -158,3 +158,7 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 
 = Version 1.5.2 =
 * Minor bug fixes
+
+= Version 1.5.3 =
+* Fixed version tag for styles and scripts
+* Minor bug fixes
