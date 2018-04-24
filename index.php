@@ -56,12 +56,7 @@ if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
       <!-- next,prev,pages  -->
       <div class="clearfix"></div>
         
-        <!--Pagination Start-->
-        <?php if(function_exists('faster_pagination')) { ?> 
-            <nav class="col-md-12 foodrecipes-box-paging"> 
-            <?php faster_pagination();?>
-            </nav>
-        <?php } else { ?>
+        <!--Pagination Start-->        
         <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
         <nav class="col-md-12 foodrecipes-box-paging clearfix foodrecipes-main-pagination foodrecipes-nav"> 
         <span class="foodrecipes-nav-previous">
@@ -70,8 +65,7 @@ if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
           <span class="foodrecipes-nav-next">
           <?php next_posts_link(); ?>
           </span> </nav>
-        <?php } ?>
-        <?php }//is plugin active ?>
+        <?php } ?>        
         <!--Pagination End-->
     </div>
       <?php get_sidebar() ?>

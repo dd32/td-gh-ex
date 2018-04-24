@@ -90,3 +90,7 @@ Version 1.4.7 (20th Aug 2015)
 
 Version 1.4.8 (02nd Jan 2017)
     i) Minor fixes.
+
+Version 1.4.9 (24th April 2018)
+    i) Random post widget updated.
+    i) TGM removed and also remove faster pagination plugin function.

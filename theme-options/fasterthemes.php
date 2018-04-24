@@ -52,7 +52,7 @@ function fastertheme_framework_page(){
     <div class="logo">
       <?php
 		$foodrecipes_image=get_template_directory_uri().'/theme-options/images/logo.png';
-		echo "<a href='http://fasterthemes.com' target='_blank'><img src='".$foodrecipes_image."' alt='FasterThemes' /></a>";
+		echo "<a href='https://fasterthemes.com' target='_blank'><img src='".$foodrecipes_image."' alt='FasterThemes' /></a>";
 		?>
     </div>
     <div class="header-right">
@@ -171,7 +171,7 @@ function fastertheme_framework_page(){
           <div id="options-group-3" class="group faster-inner-tabs fasterthemes-pro-image">
           	<div class="fasterthemes-pro-header">
               <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/theme-logo.png" class="fasterthemes-pro-logo" />
-              <a href="http://fasterthemes.com/wordpress-themes/FoodRecipes" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
+              <a href="https://fasterthemes.com/wordpress-themes/FoodRecipes" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
               </div>
           	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/pro-featured.png" />
           </div>
@@ -181,7 +181,7 @@ function fastertheme_framework_page(){
 	</div>
 	<div class="fasterthemes-footer">
       	<ul>
-        	<li>&copy; <a href="http://fasterthemes.com" target="_blank"><?php _e('fasterthemes.com','food-recipes') ?></a></li>
+        	<li>&copy; <a href="https://fasterthemes.com" target="_blank"><?php _e('fasterthemes.com','food-recipes') ?></a></li>
             <li class="btn-save"><input type="submit" class="button-primary" value="<?php _e('Save Options','food-recipes') ?>" /></li>
         </ul>
     </div>

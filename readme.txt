@@ -1,10 +1,10 @@
 == Food Recipes ==
 Theme Name: Food Recipes
-Theme URI: http://fasterthemes.com/wordpress-themes/foodrecipes
+Theme URI: https://fasterthemes.com/wordpress-themes/foodrecipes
 Author: FasterThemes
-Author URI: http://fasterthemes.com/
+Author URI: https://fasterthemes.com/
 Description: Food Recipes is a Twitter bootstrap based responsive WordPress theme mainly designed for those bloggers who are interested in writing their blogs on food recipes and other food related blogs. This theme can also be used for creating personal and professional blogging websites.
-Version: 1.4.7
+Version: 1.4.9
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: left-sidebar, right-sidebar, full-width-template, one-column, two-columns, fluid-layout, responsive-layout, theme-options, custom-background, custom-header, custom-menu, editor-style, featured-images, post-formats, sticky-post , translation-ready
@@ -97,7 +97,7 @@ http://pixabay.com/en/spaghetti-pasta-italian-food-bacon-237907/ - Public Domain
 http://pixabay.com/en/rice-ladle-rice-sausage-potatoes-378946/  - Public Domain CC0 License
 http://pixabay.com/en/new-year-s-eve-feuerzangenbowle-325149/ - Public Domain CC0 License
  
-Icons - http://www.fasterthemes.com
+Icons - https://fasterthemes.com
 License: General Public License (GPL)
 
 ---------------------------------------------------------

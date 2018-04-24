@@ -8,7 +8,7 @@
       <?php if(!empty($foodrecipes_options['footertext'])) {
                	 echo wp_filter_nohtml_kses($foodrecipes_options['footertext']).' '; 
 			}
-		printf( __( 'Powered by %1$s', 'food-recipes' ), '<a href="http://fasterthemes.com/wordpress-themes/foodrecipes" target="_blank">Food Recipes WordPress Theme.</a>'); ?>
+		printf( __( 'Powered by %1$s', 'food-recipes' ), '<a href="https://fasterthemes.com/wordpress-themes/foodrecipes" target="_blank">Food Recipes WordPress Theme</a>'); ?>
     </h2>
   </div>
 </footer>
