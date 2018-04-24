@@ -1,9 +1,9 @@
 === Automobile Car Dealer WordPress Theme ===
 
 Theme Name      :   Automobile Car Dealer
-Theme URI       :   
-Version         :   0.1
-Tested up to    :   WP 4.9.4
+Theme URI       :   https://www.buywptemplates.com/themes/free-car-dealer-wordpress-theme
+Version         :   0.2
+Tested up to    :   WP 4.9.5
 Author          :   Buywptemplates
 Author URI      :   https://www.buywptemplates.com/
 license         :   GNU General Public License v3.0
@@ -85,11 +85,7 @@ Theme is Built using the following resource bundles.
 	Roboto font - https://fonts.google.com/specimen/Roboto
 	License: Distributed under the terms of the Apache License, version 2.0 http://www.apache.org/licenses/LICENSE-2.0.html
 
-2 - Images used from pexels.
-	pexels provides images under CC0 license (https://www.pexels.com/photo-license/)
-		https://www.pexels.com/photo/house-luxury-villa-swimming-pool-32870/
-
-3	CSS bootstrap.css
+2	CSS bootstrap.css
 	-- Code and documentation copyright 2011-2016 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.
 	CSS nivo-slider.css
 	-- Copyright 2012, Dev7studios Free to use and abuse under the MIT license.
@@ -98,20 +94,37 @@ Theme is Built using the following resource bundles.
     --Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  	License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 
-5   Customizer Licence
+3   Customizer Licence
 		All code, unless otherwise noted, is licensed under the GNU GPL, version 2 or later.
 		2016 © Justin Tadlock.
 
-6 	Tether MIT License
+4 	Tether MIT License
 	https://github.com/HubSpot/tether/blob/master/LICENSE
 	https://github.com/HubSpot/tether
 
-7   Images urls
-	https://www.pexels.com/photo/white-coupe-car-near-green-grass-9808/
-	https://www.pexels.com/photo/auto-automobile-automotive-car-358070/
-	https://www.pexels.com/photo/blue-forest-car-beetle-105032/
-	https://www.pexels.com/photo/alloy-asphalt-auto-automobile-241316/
-	https://www.pexels.com/photo/winter-vehicle-sport-black-80465/
+5   Pexels image,
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://www.pexels.com/photo-license/
+
+	Header image, Copyright Snapwire
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://www.pexels.com/photo/white-coupe-car-near-green-grass-9808/
+
+	Post image, Copyright skeeze
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://www.pexels.com/photo/auto-automobile-automotive-car-358070/
+
+	Post image, Copyright Burak Kebapci
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://www.pexels.com/photo/blue-forest-car-beetle-105032/
+
+	Post image, Copyright Mikes Photos
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://www.pexels.com/photo/alloy-asphalt-auto-automobile-241316/
+
+	Post image, Copyright oskaline
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://www.pexels.com/photo/winter-vehicle-sport-black-80465/
 
 === Automobile Car Dealer Free version ===
 
@@ -122,3 +135,8 @@ For any help you can mail us at support[at]buywptemplates.com
 
 Version 0.1
 	i. Initial version Released.
+
+Version 0.2
+	i.   Added the proper format of image url.
+	ii.  Added get_search_form() instead of hardcoding.
+	iii. Added proper translation.

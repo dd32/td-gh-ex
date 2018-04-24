@@ -205,7 +205,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('automobile_car_dealer_project_single_post',array(
 		'default' =>'select post',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'automobile_car_dealer_sanitize_choices',
 	));
 
 	$wp_customize->add_control('automobile_car_dealer_project_single_post',array(
@@ -228,7 +228,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('automobile_car_dealer_project_category',array(
 		'default'	=> 'select',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'automobile_car_dealer_sanitize_choices',
 	));
 	$wp_customize->add_control('automobile_car_dealer_project_category',array(
 		'type'    => 'select',
@@ -341,9 +341,9 @@ final class automobile_car_dealer_customize {
 				$manager,
 				'example_1',
 				array(
-					'title'    => esc_html__( 'Automobile Pro', 'automobile-car-dealer' ),
+					'title'   =>  esc_html__( 'Automobile Pro', 'automobile-car-dealer' ),
 					'pro_text' => esc_html__( 'Go Pro', 'automobile-car-dealer' ),
-					'pro_url'  => '#',
+					'pro_url'  => 'https://www.buywptemplates.com/themes/premium-automotive-wordpress-theme',
 					'priority'   => 9
 				)
 			)

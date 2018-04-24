@@ -43,7 +43,7 @@ get_header(); ?>
                 <?php
               $count++;
             endwhile;
-            ?>
+            wp_reset_postdata(); ?>
           </div>
 
           <?php

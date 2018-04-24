@@ -63,11 +63,7 @@
         <div class="serach_outer">
           <div class="closepop"><i class="far fa-window-close"></i></div>
           <div class="serach_inner">
-            <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">          <input type="search" id="<?php echo esc_attr($unique_id); ?>" class="search-field" placeholder="<?php echo esc_attr_x( 'Type to search..', 'placeholder', 'automobile-car-dealer' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
-                  <button type="submit" class="search-submit"><span class="screen-reader-text"><?php echo esc_html_e( 'Search', 'automobile-car-dealer' ); ?></span>
-                  <span><i class="fas fa-search"></i></span></button>
-                  <input type="hidden" name="post_type" value="properties">
-            </form>
+            <?php get_search_form(); ?>
           </div>
         </div>
       </div>

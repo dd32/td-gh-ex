@@ -39,6 +39,6 @@ get_header(); ?>
         </div>        
         <div class="clear"></div>    
     </div>
-</div><!-- container -->
+</div>
 
 <?php get_footer(); ?>

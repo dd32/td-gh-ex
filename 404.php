@@ -13,14 +13,11 @@ get_header(); ?>
                 <p class="text-404"><?php esc_html_e( 'Looks like you have taken a wrong turn', 'automobile-car-dealer' ); ?></p>
                 <p class="text-404"><?php esc_html_e( 'Dont worry it happens to the best of us.', 'automobile-car-dealer' ); ?></p>
                 <div class="read-moresec">
-                    <div>
-                        <a href="<?php echo esc_url( home_url() ); ?>" class="button hvr-sweep-to-right"><?php esc_html_e( 'Back to Home Page', 'automobile-car-dealer' ); ?></a>
-                    </div>
+                    <a href="<?php echo esc_url( home_url() ); ?>" class="button hvr-sweep-to-right"><?php esc_html_e( 'Back to Home Page', 'automobile-car-dealer' ); ?></a>
                 </div>
             </div>
             <div class="clearfix"></div>
         </div>
-        <div class="clearfix"></div>
     </div>
 </div>
 
