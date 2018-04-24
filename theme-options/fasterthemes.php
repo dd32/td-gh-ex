@@ -64,7 +64,7 @@ function fastertheme_framework_page(){
     <div class="logo">
       <?php
 		$customizable_image=get_template_directory_uri().'/theme-options/images/logo.png';
-		echo "<a href='http://fasterthemes.com' target='_blank'><img src='".$customizable_image."' alt='FasterThemes' /></a>";
+		echo "<a href='https://fasterthemes.com' target='_blank'><img src='".$customizable_image."' alt='FasterThemes' /></a>";
 		?>
     </div>
     <div class="header-right">
@@ -278,7 +278,7 @@ function fastertheme_framework_page(){
 	</div>
 	<div class="fasterthemes-footer">
       	<ul>
-        	<li>&copy; <a href="http://fasterthemes.com" target="_blank"><?php _e('fasterthemes.com','customizable') ?></a></li>
+        	<li>&copy; <a href="https://fasterthemes.com" target="_blank"><?php _e('fasterthemes.com','customizable') ?></a></li>
             <li><a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/fb.png"/> </a></li>
             <li><a href="https://twitter.com/FasterThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/tw.png"/> </a></li>
             <li class="btn-save"><input type="submit" class="button-primary" value="<?php _e('Save Options','customizable') ?>" /></li>

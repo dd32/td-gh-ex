@@ -68,8 +68,6 @@ require_once('inc/social-custom-widget.php');
 // Implement Custom Header features.
 require get_template_directory() . '/inc/custom-header.php';
 
-// Custome social widget
-require_once('inc/tgm-plugins.php');
 
 add_action('wp_enqueue_scripts','customizable_load_scripts');
 function customizable_load_scripts(){

@@ -62,3 +62,7 @@ Version 2.2.1 (20-03-2017)
 
 Version 2.2.2 (20-03-2017)
     i) Changed feature image.
+
+Version 2.2.3 (24-04-2018)
+    i) Minor changes
+    ii) TGM code removed.

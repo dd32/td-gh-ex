@@ -1,11 +1,11 @@
 == Customizable ==
 
 Theme Name: Customizable
-Theme URI: http://fasterthemes.com/wordpress-themes/customizable
+Theme URI: https://fasterthemes.com/wordpress-themes/customizable
 Author: FasterThemes
-Author URI: http://fasterthemes.com/
+Author URI: https://fasterthemes.com/
 Description: Customizable is a WordPress responsive cooperate theme based on Twitter bootstrap framework which can be used for personal or corporate websites. Customizable is a free WordPress theme with premium functionality and design. Customizable Pro version is a paid version which has several other options like 6 color schemes, different page templates, more Google Fonts options etc.   
-Version: 2.2
+Version: 2.2.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: right-sidebar, one-column, two-columns, full-width-template, theme-options, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, post-formats, sticky-post, translation-ready
@@ -75,9 +75,9 @@ Scripts:
 Options Framework Theme -  For the Administration Panel, we have used our own custom options panel.
 License: GNU General Public License v3
 
-respond.min js  - http://www.fasterthemes.com
+respond.min js  - https://fasterthemes.com
 License: MIT/GPL2
-Copyright: Fasterthemes, http://www.fasterthemes.com/
+Copyright: Fasterthemes, https://fasterthemes.com/
 
 
 Fonts:
@@ -87,12 +87,10 @@ Images:
 http://picjumbo.com/girl-on-rialto-bridge-venice-italy/
 http://picjumbo.com/just-a-happy-yorkshire/
 http://picjumbo.com/prague-after-winter/
-Icons - http://www.fasterthemes.com
+Icons - https://fasterthemes.com
 License: CCO	 
 
 ---------------------------------------------------------
-TGM Plugin license and link
+license and link
 ---------------------------------------------------------
-
  license -  http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
- link    -  https://github.com/thomasgriffin/TGM-Plugin-Activation
