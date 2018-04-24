@@ -41,6 +41,8 @@
 					<!-- Copyright -->
 					<p class="copyright text-center">
 						<?php if ( get_theme_mod( 'footer_text_setting' ) ) : ?>
+							<p class="copyright text-center">
+											
 							<?php
 							$bcorporate_footer_text = get_theme_mod( 'footer_text_setting' );
 							     echo wp_kses( $bcorporate_footer_text, array(
@@ -53,7 +55,7 @@
 							                'target' => array(),
 							            )
 							    ) );
-							?>
+							?></p>
 						<?php else :
 							esc_html_e( 'bCorporate WordPress Theme by', 'bcorporate' ); ?>
 							<a href="<?php echo esc_url('https://blazethemes.com/'); ?>" target="_blank"><?php esc_html_e( 'Blaze Themes', 'bcorporate' ); ?></a>

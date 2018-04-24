@@ -44,6 +44,31 @@ function bcorporate_customize_register( $wp_customize ) {
 	    'description'    => esc_html__('To function all the controls under this panel you should select page template as Home Page', 'bcorporate'),
 	));
 
+	/* 1.0 Homepage Banner Section **/
+	$wp_customize->add_section( 'home_page_banner_section' , array(
+	    'title'       => esc_html__( 'Homepage banner Section', 'bcorporate' ),
+	    'priority'    => 1,
+	    'panel' => 'homepage_setting_panel',
+	) );
+
+	// add color picker setting
+	$wp_customize->add_setting( 'banner_bk_color', array(
+		'default' => '#000000',
+		'sanitize_callback' => 'bcorporate_sanitize_hex_color',
+	) );
+
+	// add color picker control
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'banner_bk_color', 
+		array(
+			'label'      => __( 'Header Banner Background Color', 'bcorporate' ),
+			'section'    => 'home_page_banner_section',
+			'settings'   => 'banner_bk_color',
+		) ) 
+	);
+
 	/* 1.1 Homepage About section **/
 	$wp_customize->add_section( 'home_page_about_section' , array(
 	    'title'       => esc_html__( 'Homepage about Section', 'bcorporate' ),
@@ -90,6 +115,21 @@ function bcorporate_customize_register( $wp_customize ) {
 		'label'    => esc_html__( 'About Section Sub Title', 'bcorporate' ),
 		'section'  => 'home_page_about_section',
 		'type'     => 'textarea',
+		'priority' => 2,
+	) );
+
+	//About bottom text
+	$wp_customize->add_setting( 
+		'homepage_about_bottom_text', 
+		array(
+			'sanitize_callback' => 'bcorporate_sanitize_text',	
+			)
+	);
+	$wp_customize->add_control( 'homepage_about_bottom_text', array(
+		'label'    => esc_html__( 'About Section Bottom Title', 'bcorporate' ),
+		'section'  => 'home_page_about_section',
+		'type'     => 'textarea',
+		'default'	=> 'Check out How our themes works',
 		'priority' => 2,
 	) );
 
@@ -142,6 +182,21 @@ function bcorporate_customize_register( $wp_customize ) {
 	  'priority' => 2,
 	) );
 
+	//Feature main title
+	$wp_customize->add_setting( 
+		'homepage_feature_main_title', 
+		array(
+			'sanitize_callback' => 'bcorporate_sanitize_text',	
+			)
+	);
+	$wp_customize->add_control( 'homepage_feature_main_title', array(
+		'label'    => esc_html__( 'Feature Section Main Title', 'bcorporate' ),
+		'section'  => 'home_page_feature_section',
+		'type'     => 'text',
+		'default'	=> esc_html__('Quality Cost Effective Services','bcorporate'),
+		'priority' => 2,
+	) );
+
 	//Feature category dropdown
 	$wp_customize->add_setting(
 	    'homepage_feature_category',
@@ -180,6 +235,20 @@ function bcorporate_customize_register( $wp_customize ) {
 	  'label' => esc_html__( 'Enable Homepage Portfolio Section', 'bcorporate' ),
 	  'description' => esc_html__( 'Uncheck to disable Portfolio section', 'bcorporate' ),
 	  'priority' => 2,
+	) );
+
+	//portfolio main title
+	$wp_customize->add_setting( 
+		'homepage_portfolio_main_title', 
+		array(
+			'sanitize_callback' => 'bcorporate_sanitize_text',	
+			)
+	);
+	$wp_customize->add_control( 'homepage_portfolio_main_title', array(
+		'label'    => esc_html__( 'Portfolio Section Main Title', 'bcorporate' ),
+		'section'  => 'home_page_portfolio_section',
+		'type'     => 'text',
+		'priority' => 2,
 	) );
 
 
@@ -559,18 +628,22 @@ function bcorporate_customize_register( $wp_customize ) {
 	
 	
 
-
-
-
-
-
-
-
-
-
-
 }
 add_action( 'customize_register', 'bcorporate_customize_register' );
+
+// for banner background color
+function bcorporate_customize_colors() {
+	$bcorporate_bk_color = get_theme_mod('banner_bk_color');
+	if($bcorporate_bk_color != '#000000'){ ?>
+		<style type="text/css">
+			.bcorporate_banner_section:after {
+				background: <?php echo $bcorporate_bk_color; ?>;
+			}
+		</style>
+	<?php 
+	}
+}
+add_action( 'wp_head', 'bcorporate_customize_colors' );
 
 /**
  * Render the site title for the selective refresh partial.
@@ -670,5 +743,13 @@ function bcorporate_sanitize_html( $input ) {
 			);
 
 	return wp_kses( $input, $allowed );
+}
+// sanitize hex color
+function bcorporate_sanitize_hex_color( $hex_color, $setting ) {
+  // Sanitize $input as a hex value without the hash prefix.
+  $hex_color = sanitize_hex_color( $hex_color );
+
+  // If $input is a valid hex value, return it; otherwise, return the default.
+  return ( ! null( $hex_color ) ? $hex_color : $setting->default );
 }
 

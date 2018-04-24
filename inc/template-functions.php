@@ -54,12 +54,12 @@ function bcorporate_home_about_sec_fnc() {
 						<?php echo esc_html( get_theme_mod( 'homepage_about_main_text' ) );?>
 					</h1>
 					<div class="about_mid_text col-md-12 col-sm-12 col-lg-8 offset-lg-2 homepage_sub_text">
-						<p><?php echo esc_html( get_theme_mod( 'homepage_about_sub_text' ) );?></p>
+						<p><?php echo esc_html( get_theme_mod( 'homepage_about_sub_text','Check out How our themes works') );?></p>
 					</div>
 					<div class="about_bottom_text">
 						<a href="<?php echo esc_url( site_url() ); ?>">
 							<span>
-								<?php esc_html_e( 'Check out How our themes works', 'bcorporate' );?>
+								<?php echo esc_html( get_theme_mod('homepage_about_bottom_text' ) ); ?>
 							</span></a>
 					</div>
 				</div>
@@ -104,7 +104,7 @@ function bcorporate_home_feature_sec_fnc() {
 			<div class="row">
 				<div class="col-md-12 col-sm-12 ">
 					<h1>
-						<?php echo wp_kses_post( category_description( absint( $bcorporate_featured_id ) ) );?>
+						<?php echo esc_html( get_theme_mod('homepage_feature_main_title', 'Quality Cost Effective Services')); ?>
 					</h1>
 				</div>
 			</div>
@@ -157,7 +157,7 @@ function bcorporate_home_portfolio_sec_fnc() {
 				<div class="col-md-12 col-sm-12">
 					<h1>
 						<?php
-							echo esc_html( get_cat_name(absint( $bcorporate_portfolio_id ) ) );
+							echo esc_html( get_theme_mod('homepage_portfolio_main_title', 'Portfolio') );
 						 ?>
 					</h1>
 					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 homepage_sub_text"><p >

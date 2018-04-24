@@ -76,8 +76,11 @@ Bcorporate includes support for Infinite Scroll in Jetpack.
 * fixed readme.txt issues
 * fixed exeprt lengh issue
 
-= 2.0.0 -April 7 2017 =
+= 2.0.0 -April 7 2018 =
 * Added move to top feature
+
+= 2.1.0 -April 24 2018 =
+* Added Banner background option for user
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License  v2 or later
