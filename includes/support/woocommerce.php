@@ -45,11 +45,20 @@ class Best_Commerce_Woocommerce {
 		// Modify global layout.
 		add_filter( 'best_commerce_filter_theme_global_layout', array( $this, 'modify_global_layout' ), 15 );
 
+		// Customizer options.
+		add_action( 'customize_register', array( $this, 'customizer_fields' ) );
+
+		// Add default options.
+		add_filter( 'best_commerce_filter_default_theme_options', array( $this, 'default_options' ) );
+
 		// Remove archive title.
 		add_filter( 'woocommerce_show_page_title', '__return_false' );
 
 		// Remove product title.
 		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+
+		// Loop per page.
+		add_filter( 'loop_shop_per_page', array( $this, 'custom_loop_shop_per_page' ) );
 
 		// Loop columns.
 		add_filter( 'loop_shop_columns', array( $this, 'custom_loop_columns' ) );
@@ -62,6 +71,22 @@ class Best_Commerce_Woocommerce {
 
 		// Loop image size.
 		add_filter( 'single_product_archive_thumbnail_size', array( $this, 'loop_image_size' ) );
+	}
+
+	/**
+	 * Default options.
+	 *
+	 * @param  array $input Passed default options.
+	 * @return array Modified default options.
+	 */
+	function default_options( $input ) {
+
+		$input['woo_page_layout']       = 'right-sidebar';
+		$input['woo_product_per_page']  = 12;
+		$input['woo_product_per_row']   = 3;
+		$input['woo_sorting_dropdown']  = true;
+		return $input;
+
 	}
 
 	/**
@@ -100,6 +125,12 @@ class Best_Commerce_Woocommerce {
 			remove_action( 'best_commerce_action_custom_header_title', 'best_commerce_add_title_in_custom_header' );
 			add_action( 'best_commerce_action_custom_header_title', array( $this, 'custom_shop_title' ) );
 		}
+
+		$woo_sorting_dropdown = best_commerce_get_option( 'woo_sorting_dropdown' );
+		if ( false === $woo_sorting_dropdown ) {
+			// Hide sorting dropdown.
+			remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+		}
 	}
 
 	/**
@@ -126,6 +157,108 @@ class Best_Commerce_Woocommerce {
 		}
 
 		return $layout;
+	}
+
+	/**
+	 * Add extra customizer options for WooCommerce.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+	 */
+	function customizer_fields( $wp_customize ) {
+
+		$default = best_commerce_get_default_theme_options();
+
+		// WooCommerce Section.
+		$wp_customize->add_section( 'section_theme_woocommerce',
+			array(
+				'title'       => esc_html__( 'WooCommerce Options', 'best-commerce' ),
+				'description' => esc_html__( 'Settings specific to WooCommerce. Note: WooCommerce Page means shop page, product page and product archive page.', 'best-commerce' ),
+				'priority'    => 100,
+				'capability'  => 'edit_theme_options',
+				'panel'       => 'theme_option_panel',
+			)
+		);
+
+		// Setting - woo_page_layout.
+		$wp_customize->add_setting( 'theme_options[woo_page_layout]',
+			array(
+				'default'           => $default['woo_page_layout'],
+				'capability'        => 'edit_theme_options',
+				'sanitize_callback' => 'best_commerce_sanitize_select',
+			)
+		);
+		$wp_customize->add_control( 'theme_options[woo_page_layout]',
+			array(
+				'label'   => esc_html__( 'Content Layout', 'best-commerce' ),
+				'section' => 'section_theme_woocommerce',
+				'type'    => 'select',
+				'choices' => best_commerce_get_global_layout_options(),
+			)
+		);
+
+		// Setting - woo_product_per_page.
+		$wp_customize->add_setting(
+			'theme_options[woo_product_per_page]',
+			array(
+				'default'           => $default['woo_product_per_page'],
+				'sanitize_callback' => 'best_commerce_sanitize_positive_integer',
+			)
+		);
+		$wp_customize->add_control(
+			'theme_options[woo_product_per_page]',
+			array(
+				'label'       => esc_html__( 'Products Per Page', 'best-commerce' ),
+				'section'     => 'section_theme_woocommerce',
+				'type'        => 'number',
+				'input_attrs' => array(
+					'min'   => 1,
+					'max'   => 100,
+					'style' => 'width: 55px;',
+				),
+			)
+		);
+
+		// Setting - woo_product_per_row.
+		$wp_customize->add_setting(
+			'theme_options[woo_product_per_row]',
+			array(
+				'default'           => $default['woo_product_per_row'],
+				'sanitize_callback' => 'best_commerce_sanitize_positive_integer',
+			)
+		);
+		$wp_customize->add_control(
+			'theme_options[woo_product_per_row]',
+			array(
+				'label'       => esc_html__( 'Products Per Row', 'best-commerce' ),
+				'section'     => 'section_theme_woocommerce',
+				'type'        => 'number',
+				'input_attrs' => array(
+					'min'   => 3,
+					'max'   => 4,
+					'style' => 'width: 55px;',
+				),
+			)
+		);
+
+		// Setting - woo_sorting_dropdown.
+		$wp_customize->add_setting(
+			'theme_options[woo_sorting_dropdown]',
+			array(
+				'default'           => $default['woo_sorting_dropdown'],
+				'sanitize_callback' => 'best_commerce_sanitize_checkbox',
+			)
+		);
+		$wp_customize->add_control(
+			'theme_options[woo_sorting_dropdown]',
+			array(
+				'label'   => esc_html__( 'Enable Sorting Dropdown', 'best-commerce' ),
+				'section' => 'section_theme_woocommerce',
+				'type'    => 'checkbox',
+			)
+		);
+
 	}
 
 	/**
@@ -190,16 +323,39 @@ class Best_Commerce_Woocommerce {
 	}
 
 	/**
+	 * Custom loop shop per page.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param int $col Number.
+	 * @return int Modified number.
+	 */
+	function custom_loop_shop_per_page( $col ) {
+		$woo_product_per_page = best_commerce_get_option( 'woo_product_per_page' );
+
+		if ( absint( $woo_product_per_page ) > 0 ) {
+			$col = absint( $woo_product_per_page );
+		}
+
+		return $col;
+	}
+
+	/**
 	 * Custom loop columns.
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $input Number.
+	 * @param string $column Number.
 	 * @return string Modified number.
 	 */
 	function custom_loop_columns( $column ) {
+		$woo_product_per_row = best_commerce_get_option( 'woo_product_per_row' );
 
-		return 3;
+		if ( absint( $woo_product_per_row ) > 0 ) {
+			$column = absint( $woo_product_per_row );
+		}
+
+		return $column;
 	}
 
 	/**
@@ -207,12 +363,17 @@ class Best_Commerce_Woocommerce {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $input Number.
+	 * @param string $column Number.
 	 * @return string Modified number.
 	 */
 	function custom_upsell_columns( $column ) {
+		$woo_product_per_row = best_commerce_get_option( 'woo_product_per_row' );
 
-		return 3;
+		if ( absint( $woo_product_per_row ) > 0 ) {
+			$column = absint( $woo_product_per_row );
+		}
+
+		return $column;
 	}
 
 	/**
@@ -220,12 +381,17 @@ class Best_Commerce_Woocommerce {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $input Number.
+	 * @param string $column Number.
 	 * @return string Modified number.
 	 */
-	function custom_related_products_columns( $input ) {
+	function custom_related_products_columns( $column ) {
+		$woo_product_per_row = best_commerce_get_option( 'woo_product_per_row' );
 
-		return 3;
+		if ( absint( $woo_product_per_row ) > 0 ) {
+			$column = absint( $woo_product_per_row );
+		}
+
+		return $column;
 	}
 
 	/**
