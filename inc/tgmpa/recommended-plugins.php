@@ -70,6 +70,12 @@ function ayafreelance_register_required_plugins() {
 			'slug'      => 'wp-tab-widget',
 			'required'  => false,
 		),
+
+		array(
+			'name'      => 'Facebook Widget',
+			'slug'      => 'facebook-pagelike-widget',
+			'required'  => false,
+		),
 	);
 
 	/*

@@ -1,10 +1,10 @@
 /*!
 Theme Name: AyaFreelance
-Description: AyaFreelance is fully Responsive Blogging WordPress Theme. Features: Built-in Homepage Slider, Custom Logo, Custom Background, Footer copyright text customizations, Widget Areas: Sidebar, 3 Footer Columns, Multi-level Drop-down Menu, Footer Menu, Search Engine Optimized, Instagram Widget Plugin Support, Tabs Widget Plugin Support, , Multiple Browsers Support, Translation-Ready and much more.
+Description: AyaFreelance is fully Responsive Blogging WordPress Theme. Features: Built-in Homepage Slider, Custom Logo, Custom Background, Footer copyright text customizations, Widget Areas: Sidebar, 3 Footer Columns, Multi-level Drop-down Menu, Footer Menu, Search Engine Optimized, WP Instagram Widget Plugin Support, WP Tab Widget Plugin Support, Facebook Widget support, Multiple Browsers Support, Translation-Ready and much more.
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayafreelance
-Version: 1.0.8
+Version: 1.0.9
 Text Domain: ayafreelance
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -137,7 +137,6 @@ td, th {
 }
 
 embed,
-iframe,
 object,
 video {
 	margin-bottom: 24px;
@@ -1367,6 +1366,15 @@ dt.gallery-icon > a:before,
     width: 40%;
 }
 
+.fb_iframe_widget span {
+	display: block !important;
+}
+
+#pin-save-button span {
+	margin-top: -19px !important;
+	position: absolute;
+}
+
 /* Large Resolution */
 @media screen and (min-width: 800px) {
 
@@ -1753,8 +1761,6 @@ dt.gallery-icon > a:before,
 	}
 	
 	#header-logo {
-		float:none;
-		display:inline-block;
 		margin-left:5px;
 	}
 

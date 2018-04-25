@@ -108,35 +108,6 @@ if ( ! function_exists( 'ayafreelance_setup' ) ) :
 endif; // ayafreelance_setup
 add_action( 'after_setup_theme', 'ayafreelance_setup' );
 
-if ( ! function_exists( 'ayafreelance_slider_images_exist' ) ) :
-	/**
-	 * Returns true if there is at least 2 recent posts with Feature Image set
-	 */
-	function ayafreelance_slider_images_exist() {
-
-		$args = array( 'numberposts' => '5',
-						'post_status'=>'publish',
-					);
-
-		$recent_posts = wp_get_recent_posts( $args );
-
-		$postsWithFeatureImage = 0;
-
-		for ( $i = 0; $i < sizeof($recent_posts); ++$i ) {
-
-			$recent = $recent_posts[ $i ];
-
-			if ( has_post_thumbnail( $recent['ID'] ) ) {
-
-				++$postsWithFeatureImage;
-			}
-		}
-
-		wp_reset_postdata();
-
-		return ($postsWithFeatureImage >= 2);
-	}
-endif; // ayafreelance_slider_images_exist
 
 if ( ! function_exists( 'ayafreelance_display_slider' ) ) :
 	/**

@@ -58,14 +58,11 @@ AyaFreelance WordPress Theme bundles the following third-party resources:
 * images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/startup-start-up-notebooks-creative-593335/
 * images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/computer-mouse-office-co-working-582045/
 *
-* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/office-creative-coffee-designer-581127/
-*
 * screenshot.png (Slider Image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
 * Image Source: https://pixabay.com/en/hand-laptop-freelance-computer-1757224/
 *
-* screenshot.png (Post Image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
-* Image Source: https://pixabay.com/en/ux-design-webdesign-app-mobile-787980/
-
+* screenshot.png (Logo Image) Creative Commons 3.0 License: https://creativecommons.org/licenses/by/3.0/
+* Image Source: https://www.iconfinder.com/icons/1296369/book_note_icon#size=64
 
 == Installation ==
 
