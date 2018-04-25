@@ -6,7 +6,6 @@ class AStore_Customizer_Notify_Section extends WP_Customize_Section {
 	/**
 	 * The type of customize section being rendered.
 	 *
-	 * @since  1.0.0
 	 * @access public
 	 * @var    string
 	 */
@@ -14,7 +13,6 @@ class AStore_Customizer_Notify_Section extends WP_Customize_Section {
 	/**
 	 * Custom button text to output.
 	 *
-	 * @since  1.0.0
 	 * @access public
 	 * @var    string
 	 */
@@ -158,7 +156,6 @@ class AStore_Customizer_Notify_Section extends WP_Customize_Section {
 	/**
 	 * Add custom parameters to pass to the JS via JSON.
 	 *
-	 * @since  1.0.0
 	 * @access public
 	 * @return array
 	 */
@@ -278,7 +275,6 @@ class AStore_Customizer_Notify_Section extends WP_Customize_Section {
 	/**
 	 * Outputs the structure for the customizer control
 	 *
-	 * @since  1.0.0
 	 * @access public
 	 * @return void
 	 */

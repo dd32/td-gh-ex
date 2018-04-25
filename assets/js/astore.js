@@ -243,7 +243,7 @@ jQuery(document).ready(function($) {
     $('button.single_add_to_cart_button').prepend('<i class="fa fa-shopping-cart"></i> ');
     $('body.admin-bar').addClass('astore-adminbar');
 
- /*woocommerce*/
+ /* woocommerce */
 
 	$('#grid').click(function() {
 		$(this).addClass('active');
@@ -281,6 +281,49 @@ jQuery(document).ready(function($) {
 
 	$('#gridlist-toggle a').click(function(event) {
 	    event.preventDefault();
+	});
+
+ /* woocommerce quantity button */
+	$('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
+
+	$('.quantity').each(function() {
+
+		var spinner = $(this),
+		input   = spinner.find('input[type="number"]'),
+		btnUp   = spinner.find('.quantity-up'),
+		btnDown = spinner.find('.quantity-down'),
+		
+		min = input.attr('min'),
+		max = input.attr('max');
+		
+		btnUp.click(function() {
+			var oldValue = parseFloat(input.val());
+			if ( max !='' && oldValue >= max) {
+				var newVal = oldValue;
+			} else {
+				var newVal = oldValue + 1;
+			}
+			
+			spinner.find("input").val(newVal);
+			spinner.find("input").trigger("change");
+		
+		});
+		
+		btnDown.click(function() {
+		
+			var oldValue = parseFloat(input.val());
+			
+			if (oldValue <= min) {
+				var newVal = oldValue;
+			} else {
+				var newVal = oldValue - 1;
+			}
+			
+			spinner.find("input").val(newVal);
+			spinner.find("input").trigger("change");
+		
+		});
+
 	});
 
 });

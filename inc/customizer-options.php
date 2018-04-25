@@ -723,7 +723,7 @@ function astore_customizer_library_options() {
 			'default' => '1',
 		);
 	$options['excerpt_display_author'] = array(
-			'id' => 'display_author',
+			'id' => 'excerpt_display_author',
 			'label'   => __( 'Display Author', 'astore' ),
 			'section' => $section,
 			'type'    => 'checkbox',
@@ -731,7 +731,7 @@ function astore_customizer_library_options() {
 			'default' => '1',
 		);
 	$options['excerpt_display_date'] = array(
-			'id' => 'display_date',
+			'id' => 'excerpt_display_date',
 			'label'   => __( 'Display Date', 'astore' ),
 			'section' => $section,
 			'type'    => 'checkbox',

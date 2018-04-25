@@ -13,7 +13,6 @@ require_once($template_directory . '/inc/plugin-install/class-plugin-install-hel
 require_once($template_directory . '/inc/customizer-library/customizer-library.php');
 // Define options for the theme customizer.
 require_once($template_directory . '/inc/customizer-options.php');
-require_once($template_directory . '/inc/demo-preview-images/init-prevdem.php');
 require_once($template_directory . 'inc/customizer-library/custom-controls/editor/editor-page.php');
 require_once($template_directory . 'inc/wc-list-grid.php');
 
@@ -295,18 +294,16 @@ function astore_customize_controls_enqueue(){
 	$loading         = __('Updating','astore');
 	$complete        = __('Complete','astore');
 	$error           = __('Error','astore');
-	$import_options  = __('Rastore Defaults','astore');
 	$confirm         = esc_js( __( 'Click OK to reset. Any AStore options will be rastored!', 'astore' ) );
-	$confirm_import  = esc_js( __( 'Click OK to import. Any AStore options will be overwritten!', 'astore' ) );
+
 	wp_localize_script( 'astore_library_customizer_controls', 'astore_customize_params', array(
 			'ajaxurl'        => admin_url('admin-ajax.php'),
 			'themeurl' => get_template_directory_uri(),
 			'loading' => $loading,
 			'complete' => $complete,
 			'error' => $error,
-			'import_options' =>$import_options,
 			'confirm' =>$confirm,
-			'confirm_import' =>$confirm_import,
+
 		)  );
 		
 }
@@ -317,17 +314,6 @@ function astore_customize_preview_enqueue(){
 	}
 add_action( 'customize_preview_init', 'astore_customize_preview_enqueue' );
 
-/*
-*  rastore default
-*/
-function astore_otpions_rastore(){
-  	add_option(ASTORE_TEXTDOMAIN.'_backup_'.time(),get_option(ASTORE_TEXTDOMAIN));
-  	delete_option(ASTORE_TEXTDOMAIN);
-	echo 'done';
-	exit(0);
-}
-add_action( 'wp_ajax_astore_otpions_rastore', 'astore_otpions_rastore' );
-add_action( 'wp_ajax_nopriv_astore_otpions_rastore', 'astore_otpions_rastore' );
 
 /**
  * Prints HTML with meta information for the current post-date/time and author.
@@ -715,14 +701,6 @@ function astore_register_partials( WP_Customize_Manager $wp_customize ) {
 }
 add_action( 'customize_register', 'astore_register_partials' );
 
-/* frontpage menu selective*/
-function astore_frontpage_menu(){
-	
-	$astore_options = get_option(ASTORE_TEXTDOMAIN);
-	if( isset($astore_options['frontpage_menu']) )
-		return $astore_options['frontpage_menu'];
-		
-	}
 
 /* footer */
 function astore_copyright(){
@@ -743,51 +721,6 @@ function astore_header_site_descriptione(){
 	return get_bloginfo( 'description' );
 	}
 
-function astore_ajax_get_image_url(){
-	
-	$id = $_POST['id'];
-	$image = $id;
-	if (is_numeric($id)) {
-			$image_attributes = wp_get_attachment_image_src($id, 'full');
-			$image   = $image_attributes[0];
-		  }
-	echo $image;
-	exit(0);
-	
-	}
-add_action('wp_ajax_astore_ajax_get_image_url', 'astore_ajax_get_image_url');
-add_action('wp_ajax_nopriv_astore_ajax_get_image_url', 'astore_ajax_get_image_url');
-
-/*
- * Get header widgets
- */
-function astore_get_header_widgets( $key, $output = true ){
-	
-	$widgets = astore_option($key);
-	$html = '';
-	if(is_array($widgets) && !empty($widgets)):
-		$html = "";
-		foreach($widgets as $item):
-			$html .= '<span class="astore-microwidget">';
-			if($item['link']!=''){
-				$html .= '<a href="'.esc_url($item['link']).'" target="'.esc_attr($item['target']).'">';
-			}
-			if($item['icon']!=''){
-				$html .= '<i class="fa '.esc_attr($item['icon']).'"></i>&nbsp;&nbsp;';
-			}
-			$html .= esc_attr($item['text']);
-			if($item['link']!=''){
-				$html .= '</a>';
-			}
-			$html .= '</span>';
-		endforeach;
-	endif;
-	if( $output == true)
-		echo $html;
-	else
-		return $html;
-	
-	}
 
 /**
  * Get WooCommerce products categories.
@@ -842,77 +775,6 @@ $config_customizer = array(
 	'deactivate_button_label'   => esc_html__( 'Deactivate', 'astore' ),
 );
 AStore_Customizer_Notify::init( apply_filters( 'astore_customizer_notify_array', $config_customizer ) );
-
-/**
- * Include the TGM_Plugin_Activation class.
- */
-if ( !class_exists( 'TGM_Plugin_Activation' ) ) 
-	load_template( trailingslashit( get_template_directory() ) . 'inc/class-tgm-plugin-activation.php' );
-
-//add_action( 'tgmpa_register', 'astore_theme_register_required_plugins' );
-
-/**
- * Register the required plugins for this theme.
- *
- */
-function astore_theme_register_required_plugins() {
-
-    $plugins = array(
-		
-		array(
-			'name'     				=> __('Elementor Page Builder','astore'),
-			'slug'     				=> 'elementor',
-			'source'   				=> '',
-			'required' 				=> true,
-			'version' 				=> '2.0.5',
-			'force_activation' 		=> false,
-			'force_deactivation' 	=> false,
-			'external_url' 			=> '',
-		),
-		
-		array(
-			'name'     				=> __('WooCommerce','astore'),
-			'slug'     				=> 'woocommerce',
-			'source'   				=> '',
-			'required' 				=> true,
-			'version' 				=> '3.3.5',
-			'force_activation' 		=> false,
-			'force_deactivation' 	=> false,
-			'external_url' 			=> '',
-		),
-		
-		array(
-			'name'     				=> __('AStore Companion','astore'), // The plugin name
-			'slug'     				=> 'astore-companion', // The plugin slug (typically the folder name)
-			'source'   				=> '', // The plugin source
-			'required' 				=> true, // If false, the plugin is only 'recommended' instead of required
-			'version' 				=> '1.0.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
-		),
-		
-	);
-
-    /**
-     * Array of configuration settings. Amend each line as needed.
-     */
-    $config = array(
-        'id'           => 'astore-companion',                 // Unique ID for hashing notices for multiple instances of TGMPA.
-        'default_path' => '',                      // Default absolute path to pre-packaged plugins.
-        'menu'         => 'tgmpa-install-plugins', // Menu slug.
-        'has_notices'  => true,                    // Show admin notices or not.
-        'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
-        'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
-        'is_automatic' => false,                   // Automatically activate plugins after installation or not.
-        'message'      => '',                      // Message to output right before the plugins table.
-    );
-
-    tgmpa( $plugins, $config );
-
-}
-
-add_action( 'tgmpa_register', 'astore_theme_register_required_plugins' );
 
 /**
  * Welcome notice.
@@ -1058,41 +920,6 @@ function astore_hex2rgb( $hex ) {
 /**
  * Mini cart
  */
- 
-function astore_wcmenucart() {
-
-	// Check if WooCommerce is active
-	if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) )  )
-		return '';
-
-	ob_start();
-		global $woocommerce;
-		$viewing_cart = __('View your shopping cart', 'astore');
-		$start_shopping = __('Start shopping', 'astore');
-		$cart_url = wc_get_cart_url();
-		$shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
-		$cart_contents_count = $woocommerce->cart->cart_contents_count;
-		$cart_contents = sprintf(_n('%d item', '%d items', $cart_contents_count, 'astore'), $cart_contents_count);
-		$cart_total = $woocommerce->cart->get_cart_total();
-		// Uncomment the line below to hide nav menu cart item when there are no items in the cart
-		// if ( $cart_contents_count > 0 ) {
-			if ($cart_contents_count == 0) {
-				$menu_item = '<li class="right"><a class="wcmenucart-contents" href="'. $shop_page_url .'" title="'. $start_shopping .'">';
-			} else {
-				$menu_item = '<li class="right"><a class="wcmenucart-contents" href="'. $cart_url .'" title="'. $viewing_cart .'">';
-			}
-
-			$menu_item .= '<i class="fa fa-shopping-cart"></i> ';
-
-			$menu_item .= $cart_contents.' - '. $cart_total;
-			$menu_item .= '</a></li>';
-		// Uncomment the line below to hide nav menu cart item when there are no items in the cart
-		// }
-		echo $menu_item;
-	$social = ob_get_clean();
-	return $social;
-
-}
 
 add_filter('astore_shopping_cart','astore_add_cart_single_ajax', 10, 2);
 
@@ -1144,7 +971,7 @@ add_filter('woocommerce_subcategory_count_html','astore_subcategory_count_html')
 /**
  * Redirect to edit frontpage
  */
-function astore_redirect_e_frontpage(){
+function astore_redirect_edit_frontpage(){
 	
 	$frontpage_id = get_option( 'page_on_front' );
 	
@@ -1155,5 +982,5 @@ function astore_redirect_e_frontpage(){
 	echo @json_encode( array('redirect_url'=>$redirect_url) );
 	exit(0);
 	}
-add_action('wp_ajax_astore_redirect_e_frontpage', 'astore_redirect_e_frontpage');
-add_action('wp_ajax_nopriv_astore_redirect_e_frontpage', 'astore_redirect_e_frontpage');
+add_action('wp_ajax_astore_redirect_e_frontpage', 'astore_redirect_edit_frontpage');
+add_action('wp_ajax_nopriv_astore_redirect_e_frontpage', 'astore_redirect_edit_frontpage');

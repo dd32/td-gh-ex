@@ -174,20 +174,6 @@ jQuery(document).ready(function($) {
         astore_footer_icons_tpl();
     });
 
-	$(document).on('click','#import-theme-options',function(){
-			
-		if(confirm( astore_customize_params.confirm )){
-			
-		$('#accordion-section-importer .import-status').text(astore_customize_params.loading);							
-		$.ajax({type:"POST",dataType:"html",url:ajaxurl,data:{action:'astore_otpions_rastore'},
-			success:function(data){
-				$('#accordion-section-importer .import-status').text(astore_customize_params.complete);
-				location.reload() ;
-			},error:function(e){
-				$('#accordion-section-importer .import-status').text(astore_customize_params.error);
-		}});
-		}
-	});
 	
 	/* === Checkbox Multiple Control === */
 

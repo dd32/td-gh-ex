@@ -1,7 +1,7 @@
 //Remove activate button and replace with activation in progress button.
 jQuery(document).on('DOMNodeInserted','.activate-now', function (e) {
 	e.preventDefault();
-console.log('aaaaaaaa');
+
     var activateButton = jQuery('.activate-now');
     if (activateButton.length) {
         var url = jQuery(activateButton).attr('href');
@@ -27,7 +27,7 @@ console.log('aaaaaaaa');
 jQuery(document).ready(function ($) {
     $('body').on('click', '.astore-install-plugin', function () {
         var slug = $(this).attr('data-slug');
-console.log('bbbbbbbb');
+
         wp.updates.installPlugin({
             slug: slug
         });
@@ -37,7 +37,7 @@ console.log('bbbbbbbb');
     $('.activate-now').on('click', function (e) {
         var activateButton = $(this);
         e.preventDefault();
-		console.log('cccccccccc');
+
         if ($(activateButton).length) {
             var url = $(activateButton).attr('href');
             if (typeof url !== 'undefined') {

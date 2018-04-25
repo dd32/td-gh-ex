@@ -39,9 +39,4 @@ Copyrights for Resources used in this theme.
   * license GPL-2.0+
       * https://github.com/devinsays/customizer-library
 
-  ## TGM-Plugin-Activation
-  * Copyright (c) 2011, Thomas Griffin
-  * @license   GPL-2.0+
- 
-  * http://tgmpluginactivation.com/
   
