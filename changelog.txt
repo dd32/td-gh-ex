@@ -1,3 +1,7 @@
+AyaPortfolio 1.0.6, 2018-04-25
+------------------------
+- fix issue with instagram plugin slug path
+
 AyaPortfolio 1.0.5, 2018-03-10
 ------------------------
 - improve homepage Slider
