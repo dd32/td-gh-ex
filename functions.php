@@ -215,7 +215,7 @@ if (!function_exists('atlast_business_comment')):
 
                         <figure class="column gravatar hide-sm comments-gravatar">
                             <?php echo get_avatar($comment, 65); ?>
-                        </figure>
+                        </figure> 
 
                     </div>
 
@@ -255,9 +255,14 @@ function atlast_business_register_required_plugins()
 {
 
     $plugins = array(
+
         array(
             'name' => 'One Click Demo Import',
             'slug' => 'one-click-demo-import',
+            'required' => false,
+        ),array(
+            'name' => 'Atlast Business Styling Customizer',
+            'slug' => 'atlast-business-styling-customizer/',
             'required' => false,
         ), array(
             'name' => 'Contact Form 7',
