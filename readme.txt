@@ -1,11 +1,11 @@
 ----------------------------------
 Searchlight
 ----------------------------------
-Version: 	2.1
+Version: 	2.3
 Developer: 	D5 Creation
-Author URI: 	http://d5creation.com
+Author URI: 	https://d5creation.com
 
-Donation Link: 	http://d5creation.com/donate/
+Donation Link: 	https://d5creation.com/donate/
 
 Copyright: 	D5 Creation
 License: 		GNU General Public License v2 or later
@@ -16,11 +16,11 @@ This Product is provided "as is" with no warranty or liabilities of D5 Creation.
 
 Source, Photographer and License of the Images used 
 screenshot.png and
-		https://pixabay.com/en/ipad-mockup-apple-business-605420
-		https://pixabay.com/en/macbook-laptop-computer-technology-925614
-1.jpg:		https://pixabay.com/en/laptop-pencil-office-developer-1512838
-2.jpg:		https://pixabay.com/en/banner-header-monitor-binary-909710
-3.jpg:		https://pixabay.com/en/imac-apple-mockup-app-ipad-mouse-606765
+			https://pixabay.com/en/book-reading-read-relaxation-791824
+			https://pixabay.com/en/macbook-laptop-computer-technology-925614
+1.jpg:			https://pixabay.com/en/woman-posing-female-girl-young-1149475
+2.jpg:			https://pixabay.com/en/call-center-headset-woman-human-2537390
+3.jpg:			https://pixabay.com/en/pretty-woman-traffic-young-vintage-635245
 
 Genericons Fonts, License: GPL, Author: AUTOMATTIC, Source: http://genericons.com
 FontAwesome		: GPL Friendly Licenses, Source -  http://fortawesome.github.io/Font-Awesome

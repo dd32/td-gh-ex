@@ -9,7 +9,7 @@ function searchlight_customize_register($wp_customize){
 		'title'    		=> __('SEARCHLIGHT OPTIONS', 'searchlight'),
 		'description'   => ' <div class="infohead">' . __('We appreciate an','searchlight') . ' <a href="https://wordpress.org/support/theme/searchlight/reviews" target="_blank">' . __('Honest Review','searchlight') . '</a> ' . __('of this Theme if you Love our Work','searchlight') . '<br /> <br />
 
-' . __('Need More Features and Options including Exciting Slide and 100+ Advanced Features? Try ','searchlight') . '<a href="' . esc_url('http://d5creation.com/theme/searchlight/') .'
+' . __('Need More Features and Options including Exciting Unlimited Slide, E-Commerce, Drag and Drop Page Building, Useful ShortCodes, Unlimited Colors, Portfolio/Gallery, Featured Boxes, Clients List, Testimonial, Layout Options and 100+ Advanced Features? Try ','searchlight') . '<a href="' . esc_url('https://d5creation.com/theme/searchlight/') .'
 " target="_blank"><strong>' . __('Searchlight Extend','searchlight') . '</strong></a><br /> <br /> 
         
         

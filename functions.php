@@ -43,7 +43,7 @@
 	'default-image'          => '',
 	'random-default'         => false,
 	'width'                  => 300,
-	'height'                 => 90,
+	//'height'                 => 90,
 	'flex-height'            => false,
 	'flex-width'             => false,
 	'default-text-color'     => '03d56b',
@@ -84,7 +84,7 @@
 	add_action( 'admin_enqueue_scripts', 'searchlight_admin_style' );
 	
 function searchlight_creditline () {
-	echo '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | Searchlight ' . __('Theme by:', 'searchlight') . ' <a href="'.  esc_url('http://d5creation.com/theme/searchlight/') .'" target="_blank"> D5 Creation</a> | ' . __('Powered by:', 'searchlight') . ' <a href="http://wordpress.org" target="_blank">WordPress</a>';
+	echo '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | Searchlight ' . __('Theme by:', 'searchlight') . ' <a href="'.  esc_url('https://d5creation.com/theme/searchlight/') .'" target="_blank"> D5 Creation</a> | ' . __('Powered by:', 'searchlight') . ' <a href="http://wordpress.org" target="_blank">WordPress</a>';
     }
 	
 

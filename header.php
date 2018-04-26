@@ -24,7 +24,9 @@
                 
 		<h2 class="site-title-hidden"><?php echo esc_attr( bloginfo( 'description' )); ?></h2>
 	    <nav id="top-menu-con">
-		<?php get_search_form(); if (esc_textarea(searchlight_get_option ('contactnumber', '(000) 111-222')) != ''):echo '<div class="connumber">'.  esc_textarea(searchlight_get_option ('contactnumber', '(000) 111-222')). '</div>';  endif; ?>
+		<?php get_search_form();			
+		if (esc_textarea(searchlight_get_option ('contactnumber', '(000) 111-222')) != ''):echo '<div class="connumber">'.  esc_textarea(searchlight_get_option ('contactnumber', '(000) 111-222')). '</div>';  endif; ?>
+		<div class="social social-link"><?php foreach (range(1, 5 ) as $searchlight_sll) { if ( searchlight_get_option('sl' .$searchlight_sll, '#') != '' ): echo '<a href="'. esc_url(searchlight_get_option('sl' . $searchlight_sll, '#')) .'"target="_blank"> </a>'; endif; } ?> </div>
 		<?php if ( has_nav_menu( 'top-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'top-menu' )); endif; ?>
         </nav>
         <!-- Site Main Menu Goes Here -->

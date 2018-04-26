@@ -55,8 +55,7 @@
 	#main-menu-con ul ul a { margin: 0 auto; width: 100%; }
 	img.site-logo,.site-title { width: 85%; max-width: 300px; }
 	#main-menu-con ul ul ul { left: 15px;; top: 20px; }
-	#top-menu-con { display: table; float: none; width: auto; margin: 0 auto; }
-	#top-menu-con ul.menu { display: none; }
+	#top-menu-con, #top-menu-con #searchform, .connumber, #header .social, #top-menu-con ul.menu { display: table; float: none; width: auto; margin: 0 auto; }
 	.bqpcontainer .featured-boxs { margin: 0 auto; }
 	.bqpcontainer .tesheading .read-more { position: relative; }
 	#filter-gallery a { margin: 5px;  }
