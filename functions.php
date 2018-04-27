@@ -49,7 +49,7 @@ function beonepage_setup() {
 	register_nav_menus( array(
 		'primary'   => esc_html__( 'Header Menu', 'beonepage' ),
 	) );
-	
+
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'beonepage_custom_background_args', array(
 		'default-color' => '#18191b',
@@ -60,13 +60,13 @@ function beonepage_setup() {
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
-	add_theme_support( 'html5', array( 
-	'comment-list', 
-	'comment-form', 
-	'search-form', 
-	'gallery', 
-	'caption' 
-	) ); 
+	add_theme_support( 'html5', array(
+	'comment-list',
+	'comment-form',
+	'search-form',
+	'gallery',
+	'caption'
+	) );
 
 	/*
 	 * Enable support for Post Formats.
@@ -75,7 +75,7 @@ function beonepage_setup() {
 	add_theme_support( 'post-formats', array(
 		'image'
 	) );
-	
+
 	add_theme_support( 'custom-background' );
 }
 endif; // beonepage_setup
@@ -125,7 +125,7 @@ function beonepage_scripts() {
 
 	wp_enqueue_style( 'beonepage-responsive', get_template_directory_uri() . '/layouts/responsive.css', array(), beonepage_get_version() );
 
-	wp_enqueue_script( 'jRespond', get_template_directory_uri() . '/js/jrespond.min.js', array(), '0.10', true ); 
+	wp_enqueue_script( 'jRespond', get_template_directory_uri() . '/js/jrespond.min.js', array(), '0.10', true );
 
 	wp_enqueue_script( 'smooth-scroll', get_template_directory_uri() . '/js/smooth.scroll.js', array(), '1.4.1', true );
 
@@ -144,7 +144,7 @@ function beonepage_scripts() {
 	wp_enqueue_script( 'jquery-magnific-popup', get_template_directory_uri() . '/js/jquery.magnific.popup.min.js', array(), '1.0.1', true );
 
 	wp_enqueue_script( 'jquery-validate', get_template_directory_uri() . '/js/jquery.validate.min.js', array(), '1.14.0', true );
- 
+
 	wp_enqueue_script( 'beonepage-app', get_template_directory_uri() . '/js/app.js', array( 'jquery' ), beonepage_get_version(), true );
 
 	// Localize the script with new data.
@@ -155,7 +155,7 @@ function beonepage_scripts() {
 		'accent_color'     => '#ffcc00',
 		'nonce' => wp_create_nonce('ajax-nonce')
 	) );
-  
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -170,14 +170,14 @@ require_once get_template_directory() . '/inc/tgmpa/tgm-plugin-activation.php';
 /**
  * Load Kirki Customizer Toolkit.
  */
- require_once get_template_directory() . '/inc/kirki/kirki.php'; 
+ require_once get_template_directory() . '/inc/kirki/kirki.php';
 
 /**
  * Load Customizer configuration.
  */
 require_once get_template_directory() . '/inc/kirki/config.php';
 
-/** 
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -196,3 +196,28 @@ require_once get_template_directory() . '/inc/breadcrumb.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
+
+if ( ! function_exists( 'beonepage_post_navigation' ) ) :
+/**
+ * Display navigation to next/previous post when applicable.
+ */
+function beonepage_post_navigation() {
+	// Don't print empty markup if there's nowhere to navigate.
+	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+	$next     = get_adjacent_post( false, '', false );
+	if ( ! $next && ! $previous ) {
+		return;
+	}
+	?>
+	<nav class="post-navigation clearfix" role="navigation">
+		<h2 class="sr-only"><?php esc_html_e( 'Post navigation', 'beonepage' ); ?></h2>
+		<ul class="nav-links">
+			<?php
+				previous_post_link( '<li class="nav-previous">%link</li>', '%title' );
+				next_post_link( '<li class="nav-next pull-right">%link</li>', '%title' );
+			?>
+		</ul><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	<?php
+}
+endif;
