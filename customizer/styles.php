@@ -51,6 +51,7 @@ function customizer_library_avant_build_styles() {
 				.woocommerce #review_form #respond .form-submit input,
 				.woocommerce-page #review_form #respond .form-submit input,
 				.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover,
+				.woocommerce button.button.alt.disabled,.woocommerce button.button.alt.disabled:hover,
 				.single-product span.onsale,
 				.main-navigation ul ul a:hover,
 				.main-navigation ul ul li.current-menu-item > a,
@@ -1114,6 +1115,75 @@ function customizer_library_avant_build_styles() {
 			),
 			'declarations' => array(
 				'text-transform' => 'uppercase'
+			)
+		) );
+	}
+	$setting = 'avant-slider-mobile-set-height';
+	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+	if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+		$container_width = esc_attr( $mod );
+
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.home-slider-block'
+			),
+			'declarations' => array(
+				'height' => '260px'
+			),
+			'media' => '(max-width: 700px)'
+		) );
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.home-slider-block img'
+			),
+			'declarations' => array(
+				'width' => '100%',
+				'height' => '100%'
+			),
+			'media' => '(max-width: 700px)'
+		) );
+	}
+	$setting = 'avant-slider-mobile-remove-txt';
+	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+	if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+		$container_width = esc_attr( $mod );
+
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.home-slider-block-inner'
+			),
+			'declarations' => array(
+				'display' => 'none !important'
+			),
+			'media' => '(max-width: 700px)'
+		) );
+	}
+	// Set WC Product Page Col Widths
+	$setting = 'avant-set-wc-single-col-width';
+	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+	if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+		$wc_col_width = esc_attr( $mod );
+
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.woocommerce div.product div.summary'
+			),
+			'declarations' => array(
+				'width' => ( 96 - $wc_col_width ) . '%'
+			)
+		) );
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.woocommerce div.product div.images'
+			),
+			'declarations' => array(
+				'width' => $wc_col_width . '%'
 			)
 		) );
 	}

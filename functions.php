@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.04' );
+define( 'AVANT_THEME_VERSION' , '1.1.05' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -101,6 +101,8 @@ function avant_setup() {
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
+
+	add_theme_support( 'header-footer-elementor' );
 }
 endif; // avant_setup
 add_action( 'after_setup_theme', 'avant_setup' );

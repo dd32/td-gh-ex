@@ -126,6 +126,13 @@ function customizer_library_avant_options() {
         'description' => __( 'Add <a href="#avant-social-section" rel="tc-section">Social Icons</a> for this to show', 'avant' ),
         'default' => 0,
     );
+    $options['avant-enable-bttb'] = array(
+        'id' => 'avant-enable-bttb',
+        'label'   => __( 'Add Back To Top Button', 'avant' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
     $options['avant-noteon-layout'] = array(
         'id' => 'avant-noteon-layout',
         'section' => $section,
@@ -213,14 +220,6 @@ function customizer_library_avant_options() {
         'type'    => 'select',
         'choices' => $choices,
         'default' => 'avant-nav-align-right'
-    );
-    $options['avant-header-menu-text'] = array(
-        'id' => 'avant-header-menu-text',
-        'label'   => __( 'Menu Button Text', 'avant' ),
-        'section' => $section,
-        'type'    => 'text',
-        'default' => 'menu',
-        'description' => __( 'This is the text for the mobile menu button', 'avant' )
     );
     $options['avant-header-search'] = array(
         'id' => 'avant-header-search',
@@ -793,6 +792,19 @@ function customizer_library_avant_options() {
             'type'    => 'checkbox',
             'default' => 0,
         );
+        $options['avant-set-wc-single-col-width'] = array(
+            'id' => 'avant-set-wc-single-col-width',
+            'label'   => __( 'Product Single Page Column Width', 'avant' ),
+            'section' => $section,
+            'type'    => 'range',
+            'input_attrs' => array(
+                'min'   => 15,
+                'max'   => 48,
+                'step'  => 1,
+            ),
+            'description' => __( 'Set the width of the Product Single Page Columns', 'avant' ),
+            'default' => 48
+        );
         $options['avant-align-product-titles'] = array(
             'id' => 'avant-align-product-titles',
             'label'   => __( 'Align Product Titles', 'avant' ),
@@ -883,11 +895,11 @@ function customizer_library_avant_options() {
         'default' => 0,
     );
     $options['avant-noteon-fonts-title'] = array(
-            'id' => 'avant-noteon-fonts-title',
-            'section' => $section,
-            'type'    => 'note',
-            'description' => __( '<b>Premium Extra Features:</b><br />- Set custom Title & Tagline colors', 'avant' )
-        );
+        'id' => 'avant-noteon-fonts-title',
+        'section' => $section,
+        'type'    => 'note',
+        'description' => __( '<b>Premium Extra Features:</b><br />- Set custom Title & Tagline colors', 'avant' )
+    );
 
     $section = 'avant-typography-section-default';
 
@@ -1010,6 +1022,12 @@ function customizer_library_avant_options() {
         'type'    => 'color',
         'default' => $secondary_color,
     );
+    $options['avant-noteon-mobile-color'] = array(
+        'id' => 'avant-noteon-mobile-color',
+        'section' => $section,
+        'type'    => 'note',
+        'description' => __( '<b>Premium Extra Features:</b><br />- Edit Mobile slide out menu colors', 'avant' )
+    );
 
     $section = 'avant-panel-colors-section-header';
 
@@ -1117,6 +1135,12 @@ function customizer_library_avant_options() {
         'section' => $section,
         'type'    => 'color',
         'default' => $primary_color,
+    );
+    $options['avant-noteon-mobile-navi'] = array(
+        'id' => 'avant-noteon-mobile-navi',
+        'section' => $section,
+        'type'    => 'note',
+        'description' => __( '<b>Premium Extra Features:</b><br />- Full Mobile navigation color settings', 'avant' )
     );
     
     $section = 'avant-panel-colors-section-pages';
@@ -1273,6 +1297,57 @@ function customizer_library_avant_options() {
         'section' => $section,
         'type'    => 'textarea',
         'default' => __( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'avant')
+    );
+
+
+
+    // Mobile Settings
+    $panel = 'avant-panel-mobile-settings';
+
+    $panels[] = array(
+        'id' => $panel,
+        'title' => __( 'Avant Mobile Settings', 'avant' ),
+        'priority' => '70'
+    );
+    
+    $section = 'avant-mobile-panel-section-header';
+
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'Header', 'avant' ),
+        'priority' => '10',
+        'panel' => $panel
+    );
+
+    $options['avant-header-menu-text'] = array(
+        'id' => 'avant-header-menu-text',
+        'label'   => __( 'Menu Button Text', 'avant' ),
+        'section' => $section,
+        'type'    => 'text',
+        'default' => 'menu'
+    );
+
+    $section = 'avant-mobile-panel-section-slider';
+
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'Home Page Slider', 'avant' ),
+        'priority' => '20',
+        'panel' => $panel
+    );
+    $options['avant-slider-mobile-set-height'] = array(
+        'id' => 'avant-slider-mobile-set-height',
+        'label'   => __( 'Add set height to Slides', 'avant' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
+    $options['avant-slider-mobile-remove-txt'] = array(
+        'id' => 'avant-slider-mobile-remove-txt',
+        'label'   => __( 'Remove Slider Text', 'avant' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
     );
 
 

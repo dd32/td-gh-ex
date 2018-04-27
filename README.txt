@@ -68,6 +68,20 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.05
+* Style tweaks/fixes
+* Added new theme Mobile Settings section to the Customizer
+* Added an option to enable a Back To Top button - Customize -> Avant Theme Settings -> Site Layout
+* Added setting to set Home Page Slider mobile size to a set height
+* Added setting to remove Home Page Slider text on mobile
+* Added setting to set Column width for the WooCommerce Product Single Pages
+* Added compatibility for Header Footer Elementor plugin: https://wordpress.org/plugins/header-footer-elementor/
+* Updated the language .pot file
+Premium: Changed sticky navigation to show on mobile by default
+Premium: Added setting to remove sticky nav on mobile - Customize -> Avant Mobile Settings
+Premium: Added settings to change Mobile Slide our Navigation colors
+Premium: Added extra setting to center Footer Custom Layout One width custom width
+
 #### 1.1.04
 * Changed default to show 2 WooCommerce products on mobile
 * Added option to set products to Full Width on mobile

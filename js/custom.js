@@ -28,6 +28,18 @@
         },function(){
             $( 'body').removeClass( 'show-site-search' );
         });
+
+        // Scroll To Top Button Functionality
+        $(".scroll-to-top").bind("click", function() {
+            $('html, body').animate( { scrollTop: 0 }, 800 );
+        });
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 400) {
+                $('.scroll-to-top').fadeIn();
+            } else {
+                $('.scroll-to-top').fadeOut();
+            }
+        });
 		
     });
     
@@ -43,7 +55,7 @@
         $( '.side-aligned-social' ).removeClass( 'hide-side-social' );
     });
     
-    // Hide Search is user clicks anywhere else
+    // Hide Search if user clicks anywhere else
     $( document ).mouseup( function (e) {
         var container = $( '.search-block' );
         if ( !container.is( e.target ) && container.has( e.target ).length === 0 ) {

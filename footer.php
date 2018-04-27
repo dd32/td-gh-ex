@@ -39,6 +39,9 @@
 <?php echo ( get_theme_mod( 'avant-header-layout' ) != 'avant-header-layout-six' && get_theme_mod( 'avant-site-layout' ) == 'avant-site-boxed' ) ? '</div>' : ''; ?>
 
 </div><!-- #page -->
+<?php if ( get_theme_mod( 'avant-enable-bttb' ) ) : ?>
+	<div class="scroll-to-top"><i class="fa fa-angle-up"></i></div> <!-- Scroll To Top Button -->
+<?php endif; ?>
 <?php wp_footer(); ?>
 </body>
 </html>

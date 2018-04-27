@@ -30,7 +30,11 @@ global $woocommerce;
 	
 	<?php echo ( !get_theme_mod( 'avant-remove-topborder', customizer_library_get_default( 'avant-remove-topborder' ) ) ) ? '<div class="site-top-border"></div>' : ''; // Site Top Bar ?>
 	
-	<?php get_template_part( '/templates/header/header' ); // Get Site Headers ?>
+	<?php if ( function_exists( 'hfe_render_header' ) ) :
+		hfe_render_header(); ?>
+	<?php else : ?>
+		<?php get_template_part( '/templates/header/header' ); // Get Site Headers ?>
+	<?php endif; ?>
 	
 <?php echo ( get_theme_mod( 'avant-header-layout' ) != 'avant-header-layout-six' && get_theme_mod( 'avant-site-layout' ) == 'avant-site-boxed' ) ? '</div>' : ''; ?>
 	

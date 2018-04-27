@@ -71,7 +71,8 @@
 .hide {
     display: none;
 }
-.avant-note-savant {
+.avant-note-savant,
+.avant-note-avant-x {
     display: block;
 }
 
@@ -114,6 +115,8 @@
 #customize-control-avant-footer-side-fullwidth,
 #customize-control-avant-align-product-titles,
 #customize-control-avant-remove-wc-page-titles,
+#customize-control-avant-slider-mobile-set-height,
+#customize-control-avant-set-wc-single-col-width,
 #customize-control-avant-website-txt-copy {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	padding: 0 0 20px;
@@ -121,8 +124,8 @@
 }
 #customize-control-blogname,
 #customize-control-avant-site-add-side-social,
+#customize-control-avant-enable-bttb,
 #customize-control-avant-header-layout,
-#customize-control-avant-header-menu-text,
 #customize-control-avant-header-search,
 #customize-control-avant-wc-product-title-size,
 #customize-control-avant-slider-cats,
