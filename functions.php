@@ -10,7 +10,7 @@
 /**
  * Define constants
  */
-define( 'AEROBLOG_VERSION', '1.0' );
+define( 'AEROBLOG_VERSION', '1.1' );
 define( 'AEROBLOG_URI', get_template_directory_uri() );
 define( 'AEROBLOG_DIR', get_template_directory() );
 define( 'AEROBLOG_SUPPORT_FONTAWESOME', true );
