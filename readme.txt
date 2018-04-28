@@ -2,15 +2,18 @@
 Contributors: ArchimidisM
 Requires at least: WordPress 4.5.1
 Tested up to: WordPress 4.9.5
-Version: 1.3.2
+Version: 1.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: theme-options,full-width-template,two-columns
+Tags: theme-options,full-width-template,two-columns, custom-header, custom-background,custom-logo, custom-menu,flexible-header,translation-ready, featured-images
 
 == Description ==
-Atlast Business theme contains over 30 customizer settings and one click demo install. With its companion plugin you can have over 70 colorpicker options to style each section. It is maybe the most complete and ultra fast free business WordPress theme. There a lot of layout options in some of the theme's key elements. It contains 3 headers, 3 footers, a top bar with a combination of text and widgets , 3 navigation menus, 4 copyright styles, widgetized areas ,  two post options and many more options. This business WordPress theme is 100% compatible with the native WordPress customizer. From the customizer settings you can easily set your homepage really easy and fast. The main documentation of this theme is here (https://documentation.akisthemes.com) and you can find a fully working demo here (https://akisthemes.com/themes-demos/atlast-business/). Atlast Business theme is a top free theme that can be used from different types of businesses. At last but not least this theme is translation ready and fully responsive. Also it is very friendly to caching plugins like W3 Total Cache , WP Fastest Cache etc.
+Atlast Business theme contains over 30 customizer settings, one click demo install and a nice slider feature (v 1.4.0).With its companion plugin you can have over 70 colorpicker options to style each section. It is maybe the most complete and ultra fast free business WordPress theme. There a lot of layout options in some of the theme's key elements. It contains 3 headers, 3 footers, a top bar with a combination of text and widgets , 3 navigation menus, 4 copyright styles, widgetized areas ,  two post options and many more options. This business WordPress theme is 100% compatible with the native WordPress customizer. From the customizer settings you can easily set your homepage really easy and fast. The main documentation of this theme is here (https://documentation.akisthemes.com) and you can find a fully working demo here (https://akisthemes.com/themes-demos/atlast-business/). Atlast Business theme is a top free theme that can be used from different types of businesses. At last but not least this theme is translation ready and fully responsive. Also it is very friendly to caching plugins like W3 Total Cache , WP Fastest Cache etc.
 * Mobile-first, Responsive Layout
 * Custom Colors
+* Slider
+* Custom templates
+* Caching compatibility
 * Custom Header
 * Custom background-color
 * Over 30 options using the native WordPress customizer
@@ -58,6 +61,10 @@ Abel Font by MADTYPE
 Licenses: SIL OFL 1.1
 https://fonts.google.com/specimen/Abel
 
+Poppins Font by Indian Type Foundry
+Licenses: SIL OFL 1.1
+https://fonts.google.com/specimen/Poppins
+
 Source Sans Pro Font by Paul D. Hunt
 Licenses: SIL OFL 1.1
 https://fonts.google.com/specimen/Source+Sans+Pro
@@ -70,13 +77,17 @@ MatchHeight  v 0.7.2 by @liabru
 License: MIT
 Source: http://brm.io/jquery-match-height/
 
+Slick Carousel v1.9.0 @ Ken Wheeler
+License: MIT
+Source:  http://kenwheeler.github.io
+
 TGM Plugin activation class by Thomas Griffin v 2.6.1
 License: GPLv2
 Source: http://tgmpluginactivation.com/
 
 Image used in screenshot.png: A photo (https://www.pexels.com/photo/architecture-buildings-business-city-325185/)
- by by Aleksandar Pasaric (https://www.pexels.com/u/apasaric/),
- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+ by by Rawpixel.com (https://rawpixel.com),
+ licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/) / https://stocksnap.io/license
 
  Demo Data items are licensed under the GPLv2 license
  - atlast-business-export.dat is licensed under the GPLv2 license
@@ -97,6 +108,8 @@ The following images:
 - A photo (https://pixabay.com/en/student-typing-keyboard-text-woman-849825/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 - A photo ( https://pixabay.com/en/christmas-holiday-yuletide-workshop-3013762/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 - A photo ( https://pixabay.com/en/ux-prototyping-design-webdesign-788002/ ) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo (https://stocksnap.io/photo/EAP0KLXBA8) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
+- A photo (https://stocksnap.io/photo/VP98M357OV) -- licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 
 == Notes ==
 
@@ -153,7 +166,7 @@ Mobile menu shows only the top level elements. You can also add your custom logo
 - Image size prefixed
 
 = Version 1.2.7 =
-- Minor change in description
+- Minor change in description 
 
 = Version 1.2.8 =
 - Minor styling fixes
@@ -170,3 +183,8 @@ Mobile menu shows only the top level elements. You can also add your custom logo
 
 = Version 1.3.2 =
 Removed unnecessary files
+
+= Version 1.4.0 =
+- A bit major update
+- Added a slider option with 3 slides
+- We added the Poppins font for the slider via the native customizer.

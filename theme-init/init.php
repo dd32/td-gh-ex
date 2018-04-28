@@ -52,11 +52,12 @@ if (!function_exists('atlast_business_set_header_image')):
     function atlast_business_set_header_image()
     {
 
-    	$header_image_url = esc_url(get_header_image());
+        $header_image_url = esc_url(get_header_image());
         if (empty($header_image_url)): return; endif;
 
         $prefix = atlast_business_get_prefix();
         $where_to_show = get_theme_mod($prefix . '_everywhere_header', '0');
+
 
         $html = '<div class="header-image-container" style="background-image: url(' . get_header_image() . ') ">';
         /* Has header text? */
@@ -85,6 +86,7 @@ if (!function_exists('atlast_business_set_header_image')):
 
         $html .= '</div>'; // .header-image-container
 
+
         if ($where_to_show == 0) {
             if (is_front_page() || is_home()) {
                 echo $html;
@@ -96,6 +98,17 @@ if (!function_exists('atlast_business_set_header_image')):
     }
 endif;
 add_action('atlast_business_after_header', 'atlast_business_set_header_image', 5);
+if (!function_exists('atlast_business_slider_element')):
+    function atlast_business_slider_element()
+    {
+        $sliderStatus = atlast_business_check_slider_status();
+        if($sliderStatus != false && isset($sliderStatus)){
+            get_template_part('template-parts/slider/slider-tpl');
+        }
+
+    }
+endif;
+add_action('atlast_business_after_header', 'atlast_business_slider_element', 6);
 /*
  * Register the WordPress customizer
  *
@@ -105,6 +118,9 @@ add_action('customize_register', 'atlast_business_customizer_settings');
 if (!function_exists('atlast_customizer_settings')):
     function atlast_business_customizer_settings($wp_customize)
     {
+        require trailingslashit(get_template_directory()) . 'theme-init/extra-customizer-controls.php';
+
+        $wp_customize->register_section_type('Atlast_Business_Customize_Section_Changelog');
 
         $prefix = 'atlast_business';
 
@@ -115,6 +131,7 @@ if (!function_exists('atlast_customizer_settings')):
             'title' => esc_html__('Atlast Business Homepage Layout', 'atlast-business'),
             'description' => esc_html__('Set the sections you like, reorder them and you are set to go.', 'atlast-business'),
         ));
+
 
         /*Sections of homepage panel */
 
@@ -157,8 +174,6 @@ if (!function_exists('atlast_customizer_settings')):
             'label' => esc_html__('Select the page to show in the about section.', 'atlast-business'),
             'description' => esc_html__('Do not forget to add a featured image as well.', 'atlast-business'),
         ));
-
-
         /*Home services section */
 
         $wp_customize->add_section($prefix . '_home_services_section', array(
@@ -727,6 +742,8 @@ if (!function_exists('atlast_customizer_settings')):
             'description' => esc_html__('Set the homepage layout easily', 'atlast-business'),
             'panel' => $prefix . '_theme_panel',
         ));
+
+
         $wp_customize->add_section($prefix . '_topbar_section', array(
             'priority' => 10,
             'capability' => 'edit_theme_options',
@@ -736,8 +753,17 @@ if (!function_exists('atlast_customizer_settings')):
             'panel' => $prefix . '_theme_panel',
         ));
 
-        $wp_customize->add_section($prefix . '_header_section', array(
+        $wp_customize->add_section($prefix . '_slider_section', array(
             'priority' => 11,
+            'capability' => 'edit_theme_options',
+            'theme_supports' => '',
+            'title' => __('Slider section', 'atlast-business'),
+            'description' => '',
+            'panel' => $prefix . '_theme_panel',
+        ));
+
+        $wp_customize->add_section($prefix . '_header_section', array(
+            'priority' => 12,
             'capability' => 'edit_theme_options',
             'theme_supports' => '',
             'title' => __('Header section', 'atlast-business'),
@@ -746,7 +772,7 @@ if (!function_exists('atlast_customizer_settings')):
         ));
 
         $wp_customize->add_section($prefix . '_blog_section', array(
-            'priority' => 12,
+            'priority' => 13,
             'capability' => 'edit_theme_options',
             'theme_supports' => '',
             'title' => __('Blog section', 'atlast-business'),
@@ -755,7 +781,7 @@ if (!function_exists('atlast_customizer_settings')):
         ));
 
         $wp_customize->add_section($prefix . '_single_section', array(
-            'priority' => 13,
+            'priority' => 14,
             'capability' => 'edit_theme_options',
             'theme_supports' => '',
             'title' => __('Single Post section', 'atlast-business'),
@@ -829,8 +855,60 @@ if (!function_exists('atlast_customizer_settings')):
             )
         ));
 
-        /*= Homepage section settings =*/
+        /*= Slider section settings =*/
+        $wp_customize->add_setting($prefix . '_enable_slider', array(
+            'default' => false,
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'atlast_business_sanitize_checkbox',
+        ));
 
+        $wp_customize->add_setting($prefix . '_slide_1', array(
+            'default' => '',
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
+        ));
+        $wp_customize->add_setting($prefix . '_slide_2', array(
+            'default' => '',
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
+        ));
+        $wp_customize->add_setting($prefix . '_slide_3', array(
+            'default' => '',
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
+        ));
+
+        $wp_customize->add_control($prefix . '_enable_slider', array(
+            'type' => 'checkbox',
+            'priority' => 9,
+            'section' => $prefix . '_slider_section',
+            'label' => esc_html__('Enable the slider or not.', 'atlast-business'),
+            'description' => esc_html__('If you enable the slider please be sure that you will have content.', 'atlast-business'),
+        ));
+
+        $wp_customize->add_control($prefix . '_slide_1', array(
+            'type' => 'dropdown-pages',
+            'priority' => 10,
+            'section' => $prefix . '_slider_section',
+            'label' => esc_html__('Select the first slide.', 'atlast-business'),
+            'description' => esc_html__('You should use a featured image with this page. The title of the page will also appear on the slide', 'atlast-business'),
+        ));
+
+        $wp_customize->add_control($prefix . '_slide_2', array(
+            'type' => 'dropdown-pages',
+            'priority' => 11,
+            'section' => $prefix . '_slider_section',
+            'label' => esc_html__('Select the second slide.', 'atlast-business'),
+            'description' => esc_html__('You should use a featured image with this page. The title of the page will also appear on the slide', 'atlast-business'),
+        ));
+
+        $wp_customize->add_control($prefix . '_slide_3', array(
+            'type' => 'dropdown-pages',
+            'priority' => 12,
+            'section' => $prefix . '_slider_section',
+            'label' => esc_html__('Select the third slide.', 'atlast-business'),
+            'description' => esc_html__('You should use a featured image with this page. The title of the page will also appear on the slide', 'atlast-business'),
+        ));
 
         /*== Header section settings ==*/
         $wp_customize->add_setting($prefix . '_header_layout', array(
@@ -1157,8 +1235,33 @@ if (!function_exists('atlast_customizer_settings')):
             'label' => esc_html__('Copyright', 'atlast-business'),
             'description' => esc_html__('Add your copyright text here. You can use this text with the available copyright layouts.', 'atlast-business'),
         ));
+
+
+        $wp_customize->add_section(
+            new Atlast_Business_Customize_Section_Changelog(
+                $wp_customize,
+                'changelog',
+                array(
+                    'title' => esc_html__('Whats New in 1.4.0', 'atlast-business'),
+                    'changelog_text' => esc_html__('Version 1.4.0 - Slider feature with 3 slides! You try it in the Atlast Business Options customizer section.', 'atlast-business'),
+                    'priority' => 1,
+                    'capability' => 'edit_theme_options',
+                )
+            )
+        );
+
     }
 endif;
+
+if (!function_exists('atlast_business_customizer_scripts')):
+    function atlast_business_customizer_scripts()
+    {
+        wp_enqueue_style('atlast-business-customize-controls-styles', get_template_directory_uri() . '/assets/css/customizer-controls.css', '', '', 'all');
+        wp_enqueue_script('atlast-business-customize-controls', get_template_directory_uri() . '/assets/js/customizer-controls.js', array('customize-controls'));
+    }
+endif;
+add_action('customize_controls_enqueue_scripts', 'atlast_business_customizer_scripts', 0);
+
 
 /*
  * Function tha returns the single blog posts categories
@@ -1246,8 +1349,46 @@ if (!function_exists('atlast_business_get_author_id')):
         return absint($authorID);
     }
 endif;
+/*
+ * Function that returns false if the slider is not enable nor there are not
+ * any slides, or the slider arguments ,page IDS etc.
+ */
 
+if (!function_exists('atlast_business_check_slider_status')):
+    function atlast_business_check_slider_status()
+    {
+        $prefix = atlast_business_get_prefix();
+        $isSliderEnabled = esc_attr(get_theme_mod($prefix . '_enable_slider', false));
+        if ($isSliderEnabled == false) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+endif;
 
+/*
+ * Function that returns the active slides of the slider
+ * via the native Customizer.
+ */
+if (!function_exists('atlast_business_get_slides')):
+    function atlast_business_get_slides()
+    {
+
+        $slideArray = array();
+        for ($i = 1; $i < 4; $i++) {
+            $slideID =  absint(get_theme_mod('atlast_business_slide_' . $i, ''));
+            if($slideID != 0){
+                $slideArray[] = $slideID;
+            }
+        }
+        if (empty($slideArray)):
+            return false;
+        else:
+            return $slideArray;
+        endif;
+    }
+endif;
 /*
  * Theme Customizer Sanitization function
  * for extra elements.
@@ -1294,7 +1435,7 @@ if (!function_exists('atlast_business_breadcrumb')):
 
             if (is_category() || is_single()) {
                 echo '<li class="breadcrumb-item">';
-                    the_archive_title();
+                the_archive_title();
                 echo '</li>';
             } elseif (is_archive() || is_single()) {
                 echo '<li class="breadcrumb-item">';

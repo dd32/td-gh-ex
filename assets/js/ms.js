@@ -2,8 +2,6 @@ jQuery(document).ready(function ($) {
     'use-strict';
 
     var stickyHeader, stickyNavTop, mobileTrigger, mobileNavContainer, mobileNav;
-
-
     mobileNavContainer = $('.mobile-nav-container');
     mobileTrigger = $('a.mobile-trigger');
     var header = $('#header');
@@ -42,6 +40,16 @@ jQuery(document).ready(function ($) {
         if (header.hasClass('sticky-header')) {
             stickyNav();
         }
+    });
+
+    /*
+    * Apply carousel
+    */
+    $('.atlast-slider-container').slick({
+        arrows: false,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 5500
     });
 });
 

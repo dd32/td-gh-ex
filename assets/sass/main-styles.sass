@@ -36,7 +36,7 @@ a
     -o-transition: all 400ms ease-out
     transition: all 400ms ease-out
   &:focus
-    outline: none !important 
+    outline: none !important
 
 h1, h2, h3, h4, h5, h6
   font-family: $header-font-family
@@ -71,66 +71,66 @@ small, .font_small
 
 .show-element
   display: block
-  
 
-.alignleft 
+.alignleft
   float: left
   margin: 0 15px 30px 0
 
-.aligncenter 
+.aligncenter
   display: block
   margin: 0 auto 30px auto
 
-.alignright 
+.alignright
   float: right
   margin: 0 0 30px 15px
 
-.alignnone 
+.alignnone
   float: none
   display: block
   margin: 0 0 30px 0
 
-.size-full 
+.size-full
   width: 100%
   height: auto
   margin: 0 0 30px 0
 
-p .alignleft 
+p .alignleft
   float: left
   margin: 5px 15px 30px 0
 
-p .aligncenter 
+p .aligncenter
   display: block
   margin: 5px auto 30px auto
 
-p .alignright 
+p .alignright
   float: right
   margin: 5px 0 30px 15px
 
-p .alignnone 
+p .alignnone
   float: none
   display: block
   margin: 5px 0 0 0
 
-p .size-full 
+p .size-full
   width: 100%
   height: auto
   margin: 5px 0 0 0
 
-.wp-caption 
+.wp-caption
   background: #fff
   border: 1px solid #f0f0f0
-  max-width: 96% /* Image does not overflow the content area */
+  max-width: 96%
+  /* Image does not overflow the content area */
   padding: 5px 3px 10px
   text-align: center
 
-.wp-caption.alignnone 
+.wp-caption.alignnone
   margin: 5px 20px 20px 0
 
-.wp-caption.alignleft 
+.wp-caption.alignleft
   margin: 5px 20px 20px 0
 
-.wp-caption.alignright 
+.wp-caption.alignright
   margin: 5px 0 20px 20px
 
 .wp-caption img
@@ -156,6 +156,7 @@ p .size-full
 .sticky
   & .sticky-icon
     color: $button-bg
+
 .gallery
   margin: 0 auto 18px
   &.gallery-item
@@ -163,15 +164,19 @@ p .size-full
     margin-top: 0
     text-align: center
     width: 33%
+
 .gallery-columns-2 .gallery-item
   width: 50%
+
 .gallery-columns-4 .gallery-item
   width: 25%
+
 .gallery img
   box-shadow: 0px 0px 4px #999
   border: 1px solid white
   padding: 8px
   background: #f2f2f2
+
 .gallery img:hover
   background: white
 
@@ -190,7 +195,8 @@ p .size-full
 
 .gallery dl, .gallery dt
   margin: 0
-.gallery br+br
+
+.gallery br + br
   display: none
 /*=====================*/
 /** Top Bar
@@ -207,6 +213,7 @@ p .size-full
       margin-top: 10px
   & .widget-container
     margin-bottom: 0
+
 .topbar-menu
   padding: 0
   list-style-type: none
@@ -222,9 +229,10 @@ p .size-full
       margin-right: 0
       border-right: none
   & a
-    color : $topbar-color
+    color: $topbar-color
     &:hover
       color: $link-hover
+
 .top-menu
   margin: 0
   padding: 0
@@ -237,11 +245,55 @@ p .size-full
   z-index: 100
   border-top: 0
   background: inherit
+
 .transparent-header
   width: 100%
   position: absolute
   z-index: 9999
   border-bottom: none !important
+
+/*======================*/
+/** Slider Area         */
+/*======================*/
+.slider-insider
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 100%
+  & .slide-content
+    width: 60%
+    & h3
+      font-family: 'Poppins', sans-serif
+      @include for-big-desktop-up
+        font-size: 95px
+      @include for_desktop-only
+        font-size: 80px
+      @include for-tablet-landscape-only
+        font-size: 52px
+      @include for-tablet-portait-only
+        font-size: 42px
+      font-weight: 900
+      margin: 0
+      color: #333333
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.4)
+    & p
+      margin: 0
+    & .slide-btn
+      margin-top: 20px
+      text-transform: uppercase
+      border: 2px solid #FFC80A
+      border-radius: 50px
+      padding: 15px 40px
+      min-width: 200px
+      font-family: 'Source Sans Pro',sans-serif
+      font-weight: 800
+      font-size: 16px
+      display: inline-block
+      text-align: center
+      background: #f8f8f8
+      &:hover
+        background: #FFC80A
+        color: #333333
 /*=====================*/
 /** Header Area        */
 /*=====================*/
@@ -333,6 +385,7 @@ p .size-full
 /*= Header style specific CSS =*/
 header.header-style-1, header.header-style-2
   border-bottom: 1px solid #eee
+
 .header-style-2
   & ul.social-menu li
     margin: 0 4px 0 4px !important
@@ -372,7 +425,7 @@ header.header-style-1, header.header-style-2
     & h2
       color: $header-title-color
       margin: 0 0 20px 0
-      text-shadow: 0 1px 1px rgba(100,100,100,0.8)
+      text-shadow: 0 1px 1px rgba(100, 100, 100, 0.8)
       @include for-big-desktop-up
         font-size: 80px
       @include for-desktop-up
@@ -470,6 +523,7 @@ header.header-style-1, header.header-style-2
   &:hover
     border: 1px solid $link-hover
     color: inherit
+
 .pagination-link
   padding: 3px 8px
 
@@ -500,7 +554,6 @@ header.header-style-1, header.header-style-2
   & li:before
     color: $breadcrumb-sep-color
 
-
 /*======================*/
 /** Home Page
 /*======================*/
@@ -527,11 +580,13 @@ header.header-style-1, header.header-style-2
     content: ''
     top: 53%
     right: -32px
+
 .section-subtitle
   margin: 0
   font-size: $section-subtitle-size
+
 .section-editor-content
-  & h1,h2, h3, h4, h5, h6
+  & h1, h2, h3, h4, h5, h6
     margin: 0 0 15px 0
   & p
     margin: 8px 0 20px 0
@@ -549,8 +604,8 @@ header.header-style-1, header.header-style-2
     background: $service-item-bg
     color: $service-item-txt
     margin-bottom: 55px
-    border: 5px solid rgba(200,200,200,0.3)
-    border-radius: 3px 
+    border: 5px solid rgba(200, 200, 200, 0.3)
+    border-radius: 3px
     @include for-phone-only
       margin-bottom: 20px
     &:hover
@@ -584,6 +639,7 @@ header.header-style-1, header.header-style-2
       font-size: 18px
       color: #888888
       padding: 15px 0
+
 .front-single-project-img
   position: relative
   display: inline-block
@@ -597,19 +653,19 @@ header.header-style-1, header.header-style-2
 
 .front-single-project-img *,
 .front-single-project-img:before,
-.front-single-project-img:after 
+.front-single-project-img:after
   -webkit-box-sizing: border-box
   box-sizing: border-box
   -webkit-transition: all 0.4s ease
   transition: all 0.4s ease
 
-.front-single-project-img img 
+.front-single-project-img img
   max-width: 100%
   backface-visibility: hidden
   vertical-align: top
 
 .front-single-project-img:before,
-.front-single-project-img:after 
+.front-single-project-img:after
   content: ''
   background-color: #000
   position: absolute
@@ -620,49 +676,56 @@ header.header-style-1, header.header-style-2
   -webkit-transform: translate(-50%, -50%)
   transform: translate(-50%, -50%)
 
-.front-single-project-img:before 
+.front-single-project-img:before
   width: 100%
   height: 2px
 
-.front-single-project-img:after 
+.front-single-project-img:after
   height: 100%
   width: 2px
-.front-single-project-img figcaption 
+
+.front-single-project-img figcaption
   position: absolute
   left: 0
   bottom: 0
 
-.front-single-project-img h3 
+.front-single-project-img h3
   font-weight: 400
   padding: 8px 15px
   margin: 0
   opacity: 0
   -webkit-transform: translateY(100%)
   transform: translateY(100%)
-.front-single-project-img a 
+
+.front-single-project-img a
   position: absolute
   top: 0
   bottom: 0
   left: 0
   right: 0
   z-index: 1
+
 .front-single-project-img:hover img,
-.front-single-project-img.hover img 
+.front-single-project-img.hover img
   zoom: 1
   filter: alpha(opacity=25)
   -webkit-opacity: 0.25
   opacity: 0.25
+
 .front-single-project-img:hover:before,
 .front-single-project-img.hover:before,
 .front-single-project-img:hover:after,
-.front-single-project-img.hover:after 
+.front-single-project-img.hover:after
   opacity: 1
+
 .front-single-project-img:hover:before,
-.front-single-project-img.hover:before 
+.front-single-project-img.hover:before
   width: 50px
+
 .front-single-project-img:hover:after,
-.front-single-project-img.hover:after 
+.front-single-project-img.hover:after
   height: 50px
+
 .front-single-project-img:hover h3,
 .front-single-project-img.hover h3
   -webkit-transform: translateY(0%)
@@ -720,11 +783,11 @@ header.header-style-1, header.header-style-2
       font-size: 15px
       letter-spacing: 0.03em
       margin-right: 5px
-      color: $blog-link-color  
+      color: $blog-link-color
       font-family: $header-font-family
       &:hover
         & span
-           color: $link-hover
+          color: $link-hover
       & span
         margin-left: 5px
         font-size: 10px
@@ -736,6 +799,7 @@ header.header-style-1, header.header-style-2
 .avatar
   height: 64px
   width: 64px
+
 .gravatar
   flex: 3
   & img
@@ -813,7 +877,7 @@ header.header-style-1, header.header-style-2
       &:first-child
         margin-top: 0
       &:before
-        font-family: 'Font Awesome 5 Free',Serif
+        font-family: 'Font Awesome 5 Free', Serif
         content: "\f192"
         margin-right: 6px
         vertical-align: text-top
@@ -850,7 +914,7 @@ header.header-style-1, header.header-style-2
       color: $text-color
       &:hover
         background: #eeeeee
-        border: 1px solid rgba(200,200,200,1)
+        border: 1px solid rgba(200, 200, 200, 1)
 
 /*=====================*/
 /** Footer Area        */
@@ -892,7 +956,7 @@ header.header-style-1, header.header-style-2
     color: $text-color
     &:hover
       background: #eeeeee
-      border: 1px solid rgba(200,200,200,1)
+      border: 1px solid rgba(200, 200, 200, 1)
 /*=====================*/
 /** Copyright Area        */
 /*=====================*/
