@@ -53,7 +53,7 @@
                       <span class="entry-date"><a href="<?php echo get_month_link(get_the_time('Y'), get_the_time('m'));?>"><?php echo get_the_date("M d, Y");?></a></span> 
                       <?php endif; ?>
                       <?php if($display_author == '1' ):?>
-                      | <span class="entry-author"><?php echo esc_attr__('By' ,'astore');?> <?php echo get_the_author_link();?></span>
+                      | <span class="entry-author"><?php esc_attr_e('By' ,'astore');?> <?php echo get_the_author_link();?></span>
                       <?php endif; ?>
                   </div>
               </div>
@@ -69,14 +69,14 @@
     <?php
 		  
 	$args  = array(
-		'before'           => '<p>' . __( 'Pages:', 'astore' ),
+		'before'           => '<p>' . esc_attr__( 'Pages:', 'astore' ),
 		'after'            => '</p>',
 		'link_before'      => '',
 		'link_after'       => '',
 		'next_or_number'   => 'number',
 		'separator'        => ' ',
-		'nextpagelink'     => __( 'Next page', 'astore' ),
-		'previouspagelink' => __( 'Previous page', 'astore' ),
+		'nextpagelink'     => esc_attr__( 'Next page', 'astore' ),
+		'previouspagelink' => esc_attr__( 'Previous page', 'astore' ),
 		'pagelink'         => '%',
 		'echo'             => 1
 	);
@@ -88,13 +88,13 @@
          <?php if ( !is_single() ) : ?>
               <div class="entry-footer clearfix">
                   <div class="pull-left">
-                      <div class="entry-more"><a href="<?php the_permalink(); ?>"><?php _e('Continue Reading...', 'astore');?></a></div>
+                      <div class="entry-more"><a href="<?php the_permalink(); ?>"><?php esc_attr_e('Continue Reading...', 'astore');?></a></div>
                   </div>
                   <div class="pull-right">
                       <div class="entry-comments"> <?php
               if ( comments_open() ) :
                 
-                comments_popup_link( 'No comments yet', '1 comment', '% comments', 'comments-link', '');
+                comments_popup_link( esc_attr__( 'No comments yet', 'astore' ), esc_attr__( '1 comment', 'astore' ), esc_attr__( '% comments', 'astore' ), 'comments-link', '');
                 
               endif;
               ?></div>

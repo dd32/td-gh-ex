@@ -1,4 +1,4 @@
-var RepeaterRow = function( rowIndex, container, label, control ) {
+var AstoreRepeaterRow = function( rowIndex, container, label, control ) {
 
 	'use strict';
 
@@ -686,7 +686,7 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend({
 			template = template( templateData );
 
 			// Create a new row object and append the element
-			newRow = new RepeaterRow(
+			newRow = new AstoreRepeaterRow(
 				control.currentIndex,
 				jQuery( template ).appendTo( control.repeaterFieldsContainer ),
 				control.params.row_label,

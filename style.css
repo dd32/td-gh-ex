@@ -2,12 +2,12 @@
 Theme Name: AStore
 Author: VelaThemes
 Description: AStore is the best choice for building online store since it's fully compatible with WooCommerce, the most popular ecommerce plugin. Using Elementor page builder plugin, you could simply edit your site using just drag & drop.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: astore
 Tags: one-column, two-columns, custom-background, custom-header, custom-menu, theme-options, right-sidebar, translation-ready, editor-style, featured-images, threaded-comments, rtl-language-support, custom-logo, featured-image-header, footer-widgets
-Theme URI: https://velathemes.com/astore/
+Theme URI: https://velathemes.com/astore-theme/
 Author URI: https://velathemes.com
 AStore Wordpress Theme has been created by velathemes.com, Copyright 2018 velathemes.com
 AStore Wordpress theme is released under the terms of GNU GPL.
@@ -711,7 +711,7 @@ header a {
 }
 
 header a:hover {
-    color: #bc2944;
+    color: #1e69c6;
 }
 
 .fxd-header.logo-center .logo-box {
@@ -818,7 +818,7 @@ header a:hover {
 
 /*For onepage*/
 .site-nav  > div > ul > li.current > a {
-    color: #bc2944;
+    color: #1e69c6;
 }
 
 .menu-dropdown-icon {
@@ -1351,7 +1351,7 @@ h1.entry-title {
 }
 
 .entry-meta a:hover {
-    color: #bc2944;
+    color: #1e69c6;
 }
 
 .post-entry .entry-footer {
@@ -1576,7 +1576,7 @@ a .entry-title:hover {
     top: -10px;
     left: 15px;
     padding: 0 5px;
-    background-color: #bc2944;
+    background-color: #1e69c6;
 }
 
 .entry-box.grid .img-box-caption .entry-category a {
@@ -1594,6 +1594,10 @@ a .entry-title:hover {
 .blog-list-wrap .entry-footer {
     margin-top: 10px;
     padding: 0;
+}
+
+.blog-list-wrap .entry-image {
+    margin-bottom: 15px;
 }
 
 .entry-image .img-box,
@@ -1843,11 +1847,19 @@ a .entry-title:hover {
 }
 
 .widget-box a {
-    
+    color: #647E9E;
 }
 
 .widget-box a:hover {
-    
+    color: #1e69c6;
+}
+
+.product_list_widget .product-title {
+    color: #647E9E;
+}
+
+.widget_astore_recent_posts a {
+    font-weight: 700;
 }
 
 .searchform,
@@ -2366,7 +2378,7 @@ a.btn-normal:hover {
     white-space: nowrap;
     cursor: pointer;
     color: #fff;
-    background-color: #bc2944;
+    background-color: #1e69c6;
     line-height: 1;
     padding: 10px 20px;
     border-radius: 100px;
@@ -2606,8 +2618,13 @@ body:not(.touch-device) .mp-carousel .owl-next:hover:before {
 .page-numbers {
     padding: 0 10px;
 }
+
 .entry-title a {
     color: inherit;
+}
+
+.entry-title a:hover {
+    color: #1e69c6;
 }
 
 /*Woocommerce*/
@@ -2867,7 +2884,7 @@ div.product form.cart {
 .woocommerce nav.woocommerce-pagination ul li a:focus,
 .woocommerce nav.woocommerce-pagination ul li a:hover {
     background-color: transparent;
-    color: #bc2944;
+    color: #1e69c6;
 }
 .woocommerce .star-rating span {
     font-family: star;
@@ -3030,12 +3047,12 @@ div.product form.cart {
 }
 
 .woocommerce a.remove {
-    color: #BC2944!important;
+    color: #1e69c6!important;
 }
 
 .woocommerce a.remove:hover {
     color: #fff!important;
-    background: #BC2944;
+    background: #1e69c6;
 }
 
 .woocommerce ul.products li.product .woocommerce-loop-category__title {
@@ -3071,6 +3088,10 @@ div.product form.cart {
     opacity: 1;
 }
 
+.woocommerce-price-wrap {
+    position: relative;
+}
+
 .woocommerce ul.products li.product .button {
     padding: 0;
     background-color: transparent;
@@ -3078,8 +3099,10 @@ div.product form.cart {
     text-decoration: underline;
     margin-top: 0;
     position: absolute;
-    bottom:-10px;left: 50%;
-    margin-left: -46px;
+    bottom:-10px;
+    width: 100%;
+    left:0;
+	margin-left: 0;
     opacity: 0;
     transition: .2s ease;
     text-transform: uppercase;
@@ -5991,7 +6014,6 @@ body.dark .cactus-shopping-cart-inner {
 }
 
 /* woocommerce */
-
 .quantity {
     position: relative;
 }
@@ -6058,4 +6080,50 @@ body.dark .cactus-shopping-cart-inner {
 .quantity-button.quantity-down {
     position: absolute;
     bottom: -1px;
+}
+
+.wc-tabs-wrapper {
+    overflow: hidden;
+    padding: 50px 0;
+}
+
+.wc-tabs-wrapper:before,
+.wc-tabs-wrapper:after {
+    content: " ";
+    display: table;
+}
+
+.wc-tabs-wrapper:after {
+    clear: all;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+    float: left;
+    width: 150px;
+    margin-right: 50px;
+    border-left: 0;
+    border-top: 1px dashed #ccc;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel {
+    float: left;
+    width: calc(100% - 200px);
+}
+
+.woocommerce #content div.product .woocommerce-tabs ul.tabs li,
+.woocommerce div.product .woocommerce-tabs ul.tabs li,
+.woocommerce-page #content div.product .woocommerce-tabs ul.tabs li,
+.woocommerce-page div.product .woocommerce-tabs ul.tabs li {
+    float: none;
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    padding: 10px 20px;
+}
+
+.products .woocommerce-product-details__short-description {
+	display:none;
+}
+
+.products.list .woocommerce-product-details__short-description {
+	display:block;
 }

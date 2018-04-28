@@ -1,42 +1,81 @@
+=== AStore ===
+Contributors: VelaThemes
+Requires at least: WordPress 4.7
+Tested up to: WordPress 5.0-trunk
+Version: 1.0.3
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, two-columns, custom-background, custom-header, custom-menu, theme-options, right-sidebar, translation-ready, editor-style, featured-images, threaded-comments, rtl-language-support, custom-logo, featured-image-header, footer-widgets
+
+== Description ==
+
 AStore is the best choice for building online store since it's fully compatible with WooCommerce, the most popular ecommerce plugin. Using Elementor page builder plugin, you could simply edit your site using just drag & drop.
 
-Documentation: https://velathemes.com/astore-documentation/
+For more information about AStore please go to https://velathemes.com/astore-theme/.
 
-Copyrights for Resources used in this theme.
-============
+== Installation ==
 
-== JS
-  ## plugins/bootstrap/js/bootstrap.js
-    * License: under the MIT license
-    * Copyright: Twitter, Inc.
+1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
+2. Type in Twenty Seventeen in the search form and press the 'Enter' key on your keyboard.
+3. Click on the 'Activate' button to use your new theme right away.
+4. Go to https://velathemes.com/astore-documentation/ for a guide on how to customize this theme.
+5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
-  ## respond.js
-   * Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas.
-   * Dual MIT/BSD license
-     https://cdnjs.com/libraries/respond.js/
-	
-  ## owl.carousel.js
-   * License: Licensed under MIT
-   * Copyright:  Copyright (c) 2013 Bartosz Wojciechowski
+== Copyright ==
 
-== CSS
-  ## plugins/bootstrap/css/bootstrap.css
-  * Copyright 2011-2016 Twitter, Inc.
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+AStore WordPress Theme, Copyright 2018 velathemes.com
+AStore is distributed under the terms of the GNU GPL
 
-== Fonts
+AStore bundles the following third-party resources:
 
-  ## FontAwesome 4.4.0
-  * Copyright 2012 Dave Gandy
-  * Font License: SIL OFL 1.1
-  * Code License: MIT License
-  * http://fontawesome.io/license/
+Bootstrap, Copyright 2011-2016 Twitter, Inc.
+Licenses: MIT
+Source: http://getbootstrap.com
+
+respond.js, Copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas.
+Licenses: MIT/BSD
+Source: https://cdnjs.com/libraries/respond.js/
+
+Owl Carousel, Copyright 2013-2017 David Deutsch
+Licenses: MIT
+Source: https://github.com/OwlCarousel2/OwlCarousel2
+
+Font Awesome, Copyright @davegandy - http://fontawesome.io - @fontawesome
+Licenses: MIT
+Source: http://fontawesome.io
+
+Animate.css, Copyright (c) 2014 Daniel Eden
+Licenses: MIT
+Source: http://daneden.me/animate
+
+fbg1.jpg in screenshot.jpg, Copyright Pete Bellis
+License: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://unsplash.com/photos/AreMq4SKhPA
+
+fba1.jpg in screenshot.jpg, Copyright Pete Bellis
+License: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://unsplash.com/photos/7cnbXtCFG7E
+
+fba2.jpg in screenshot.jpg, Copyright Charisse Kenion
+License: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://unsplash.com/photos/69epvVgm0Ws
+
+fba3.jpg in screenshot.jpg, Copyright Flaunter .com
+License: https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://unsplash.com/photos/WcXxxQYp_aM
+
+FEATURED PRODUCTS images in screenshot.jpg, Copyright WooCommerce
+License: GPL
+Source: https://woocommerce.com/
 
 
-== PHP Library
-  ## Customizer Library
-  * author Devin Price, The Theme Foundry
-  * license GPL-2.0+
-      * https://github.com/devinsays/customizer-library
+== Changelog ==
 
-  
+= 1.0.3 =
+* Released: April 28, 2018
+  Fixed escaping issues
+  Fixed content creation issue
+  Fixed licensing issues
+  Fixed prefix issues
+  Fixed plugin territory issue
+  Fixed sanitization issue

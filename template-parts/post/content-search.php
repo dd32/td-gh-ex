@@ -34,14 +34,14 @@
         <?php
 		  
 	$args  = array(
-		'before'           => '<p>' . __( 'Pages:', 'astore' ),
+		'before'           => '<p>' . esc_attr__( 'Pages:', 'astore' ),
 		'after'            => '</p>',
 		'link_before'      => '',
 		'link_after'       => '',
 		'next_or_number'   => 'number',
 		'separator'        => ' ',
-		'nextpagelink'     => __( 'Next page', 'astore' ),
-		'previouspagelink' => __( 'Previous page', 'astore' ),
+		'nextpagelink'     => esc_attr__( 'Next page', 'astore' ),
+		'previouspagelink' => esc_attr__( 'Previous page', 'astore' ),
 		'pagelink'         => '%',
 		'echo'             => 1
 	);
@@ -55,7 +55,7 @@
     <div class="entry-footer clearfix">
       <div class="pull-left">
         <div class="entry-more"><a href="<?php the_permalink(); ?>">
-          <?php _e('Continue Reading...', 'astore');?>
+          <?php esc_attr_e('Continue Reading...', 'astore');?>
           </a></div>
       </div>
       <div class="pull-right">
@@ -63,7 +63,7 @@
           <?php
 		  if ( comments_open() ) :
 			
-			comments_popup_link( 'No comments yet', '1 comment', '% comments', 'comments-link', '');
+			 comments_popup_link( esc_attr__( 'No comments yet', 'astore' ), esc_attr__( '1 comment', 'astore' ), esc_attr__( '% comments', 'astore' ), 'comments-link', '');
 			
 		  endif;
 		  ?>

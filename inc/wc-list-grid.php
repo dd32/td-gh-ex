@@ -28,7 +28,7 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 					add_action( 'woocommerce_after_shop_loop_item', array( $this, 'gridlist_buttonwrap_close' ), 11);
 					add_action( 'astore_after_loop_title', 'woocommerce_template_single_excerpt', 5);
 					add_action( 'woocommerce_after_subcategory', array( $this, 'gridlist_cat_desc' ) );
-					add_action( 'wp_footer', array( $this, 'gridlist_set_default_view' ) );
+					
 				}
 			}
 
@@ -50,24 +50,6 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 			}
 			function gridlist_buttonwrap_close() {
 				echo apply_filters( 'gridlist_button_wrap_end', '</div>' );
-			}
-
-		
-
-			function gridlist_set_default_view() {
-				
-				$default = apply_filters( 'astore_glt_default','grid' );
-				
-				?>
-					<script>
-					jQuery(document).ready(function($) {
-						if ($.cookie( 'gridcookie' ) == null) {
-					    	$( '.archive .post-wrap ul.products' ).addClass( '<?php echo $default; ?>' );
-					    	$( '.gridlist-toggle #<?php echo $default; ?>' ).addClass( 'active' );
-					    }
-					});
-					</script>
-				<?php
 			}
 
 			function gridlist_cat_desc( $category ) {

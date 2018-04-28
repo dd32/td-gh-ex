@@ -1,15 +1,15 @@
 <?php
 
 	if ( post_password_required() ) { ?>
-		<p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.', 'astore'); ?></p> 
+		<p class="nocomments"><?php esc_attr_e('This post is password protected. Enter the password to view comments.', 'astore'); ?></p> 
 	<?php
 		return;
 	}
 ?>
 
 <?php if ( have_comments() ) : ?>
-	<h3 id="comments"><?php comments_number(__('No comment', 'astore'), __('Has one comment', 'astore'), __('% comments', 'astore'));?> <?php printf(__('to &#8220;%s&#8221;', 'astore'), the_title('', '', false)); ?></h3>
-<div class="upcomment"><?php _e('You can ','astore'); ?><a id="leaverepond" href="#comments"><?php _e('leave a reply','astore'); ?></a>  <?php _e(' or ','astore'); ?> <a href="<?php trackback_url(true); ?>" rel="trackback"><?php _e('Trackback','astore'); ?></a> <?php _e('this post.','astore'); ?></div>
+	<h3 id="comments"><?php comments_number(esc_attr__('No comment', 'astore'), esc_attr__('Has one comment', 'astore'), esc_attr__('% comments', 'astore'));?> <?php printf(esc_attr__('to &#8220;%s&#8221;', 'astore'), the_title('', '', false)); ?></h3>
+<div class="upcomment"><?php esc_attr_e('You can ','astore'); ?><a id="leaverepond" href="#comments"><?php esc_attr_e('leave a reply','astore'); ?></a>  <?php esc_attr_e(' or ','astore'); ?> <a href="<?php trackback_url(true); ?>" rel="trackback"><?php esc_attr_e('Trackback','astore'); ?></a> <?php esc_attr_e('this post.','astore'); ?></div>
 	<ol id="thecomments" class="commentlist comments-list">
 	<?php wp_list_comments('type=comment&callback=astore_comment');?>
 	</ol>
@@ -21,7 +21,7 @@
 		if ($comment_pages) {
 ?>
 		<div id="commentnavi">
-			<span class="pages"><?php _e('Comment pages', 'astore'); ?></span>
+			<span class="pages"><?php esc_attr_e('Comment pages', 'astore'); ?></span>
 			<div id="commentpager">
 				<?php echo $comment_pages; ?>
 				
@@ -60,9 +60,9 @@ global $required_text;
 $comments_args = array(
 'class_submit' => 'submit',
          'comment_notes_before' => '<p class="comment-notes">' .
-    __( 'Your email address will not be published.', 'astore' ) . ( $req ? $required_text : '' ) .
+    esc_attr__( 'Your email address will not be published.', 'astore' ) . ( $req ? $required_text : '' ) .
     '</p>',
-        'title_reply'=>__('Leave a Reply', 'astore'),
+        'title_reply'=>esc_attr__('Leave a Reply', 'astore'),
         'comment_notes_after' => '',
         'comment_field' => '<div class="clear"></div><p class="form-allowed-tags"></p>
 <section class="comment-form-comment form-group"><div id="comment-textarea"><textarea id="comment" name="comment" placeholder="'.esc_attr__('Message', 'astore').'"  cols="45" rows="8"  class="textarea-comment form-control" aria-required="true"></textarea></div></section>',

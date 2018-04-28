@@ -132,7 +132,7 @@ function customizer_sanitize_repeater_setting( $value ) {
 			if ( empty( $_value ) ) {
 				unset( $sanitized[ $key ] );
 			} else {
-				$sanitized[ $key ] = (array) $_value;
+				$sanitized[ $key ] = (array)  $_value ;
 			}
 		}
 
@@ -140,8 +140,29 @@ function customizer_sanitize_repeater_setting( $value ) {
 		if ( is_array( $sanitized ) ) {
 			$sanitized = array_values( $sanitized );
 		}
+		
+		$return = array();
+		foreach ( $sanitized as $index=>$items ){
+			$return[$index] = array();
+			if(  !empty( $items ) ||  is_array( $items ) ){
+				foreach($items as $k=>$v ){
+					switch($k){
+						
+						case "link":
+							$return[$index][$k] = esc_url_raw($v);
+						break;
+						case "icon":
+						case "text":
+						case "target":
+						default:
+							$return[$index][$k] = customizer_library_sanitize_text($v);
+						break;
+						}
+					}
+				}
+			}
 
-		return $sanitized;
+		return $return;
 
 	}
 endif;

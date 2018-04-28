@@ -46,10 +46,10 @@ if ( ! function_exists( 'customizer_library_register' ) ) : /**
 			if ( isset( $option['type'] ) ) {
 
 				$loop ++;
-
+				
 				// Apply a default sanitization if one isn't set
 				if ( ! isset( $option['sanitize_callback'] ) ) {
-					$option['sanitize_callback'] = customizer_library_get_sanitization( $option['type'] );
+					$option['sanitize_callback'] = customizer_library_get_sanitization( $option['type']);
 				}
 
 				// Set blank active_callback if one isn't set
@@ -356,7 +356,7 @@ function customizer_library_get_sanitization( $type ) {
 		return 'customizer_library_sanitize_file_url';
 	}
 
-	if ( 'text' == $type || 'textarea' == $type ) {
+	if ( 'text' == $type || 'textarea' == $type || 'iconpicker' == $type ) {
 		return 'customizer_library_sanitize_text';
 	}
 

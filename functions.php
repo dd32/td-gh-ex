@@ -143,7 +143,7 @@ function astore_scripts() {
 	
 	wp_enqueue_script( 'respond', get_template_directory_uri() . '/assets/plugins/respond.min.js' , array( 'jquery' ), null, true);
 	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/assets/plugins/owl-carousel/js/owl.carousel.min.js' , array( 'jquery' ), null, true);
-	wp_enqueue_script( 'jquery-cookie', get_template_directory_uri() . '/assets/plugins/jquery.cookie.min.js' , array( 'jquery' ), null, true);
+	
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -165,11 +165,11 @@ function astore_scripts() {
 	
 	wp_enqueue_script( 'astore-main', get_template_directory_uri() . '/assets/js/astore.js' , array( 'jquery' ), null, true);
 	wp_localize_script( 'astore-main', 'astore_params', array(
-		'ajaxurl'  => admin_url('admin-ajax.php'),
+		'ajaxurl'  => esc_url(admin_url('admin-ajax.php')),
 		'themeurl' => get_template_directory_uri(),
 		'page_preloader' => $page_preloader,
 		'preloader_background' => $preloader_bg,
-		'preloader_image' => $preloader_image,
+		'preloader_image' => esc_url($preloader_image),
 	)  );
 	
 	$custom_css = '';
@@ -279,7 +279,7 @@ function astore_admin_scripts(){
 	endif;
 	
 	wp_localize_script( 'astore-admin', 'astore_admin', array(
-			'ajaxurl' => admin_url('admin-ajax.php'),
+			'ajaxurl' => esc_url( admin_url('admin-ajax.php') ),
 		)  );
 	}
 add_action( 'admin_enqueue_scripts', 'astore_admin_scripts' );
@@ -291,10 +291,10 @@ function astore_customize_controls_enqueue(){
 	wp_enqueue_style( 'astore_library_customizer', get_template_directory_uri() . '/assets/css/customizer.css', '', '1.0.0', false );
 	wp_enqueue_script( 'astore_library_customizer_controls', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview'), '1.0.0', true );
 	
-	$loading         = __('Updating','astore');
-	$complete        = __('Complete','astore');
-	$error           = __('Error','astore');
-	$confirm         = esc_js( __( 'Click OK to reset. Any AStore options will be rastored!', 'astore' ) );
+	$loading         = esc_attr__('Updating','astore');
+	$complete        = esc_attr__('Complete','astore');
+	$error           = esc_attr__('Error','astore');
+	$confirm         = esc_attr__( 'Click OK to reset. Any AStore options will be rastored!', 'astore' );
 
 	wp_localize_script( 'astore_library_customizer_controls', 'astore_customize_params', array(
 			'ajaxurl'        => admin_url('admin-ajax.php'),
@@ -323,7 +323,7 @@ function astore_posted_on() {
 	// Get the author name; wrap it in a link.
 	$byline = sprintf(
 		/* translators: %s: post author */
-		__( 'by %s', 'astore' ),
+		esc_attr__( 'by %s', 'astore' ),
 		'<span class="entry-author"> <a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></span>'
 	);
 	
@@ -346,7 +346,7 @@ function astore_time_link() {
 	// Wrap the time string in a link, and preface it with 'Posted on'.
 	return sprintf(
 		/* translators: %s: post date */
-		__( '<span class="screen-reader-text">Posted on</span> %s ', 'astore' ),
+		esc_attr__( '<span class="screen-reader-text">Posted on</span> %s ', 'astore' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 }
@@ -359,7 +359,7 @@ function astore_edit_link() {
 	$link = edit_post_link(
 		sprintf(
 			/* translators: %s: Name of current post */
-			__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'astore' ),
+			esc_attr__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'astore' ),
 			get_the_title()
 		),
 		'<span class="edit-link">',
@@ -375,9 +375,9 @@ function astore_edit_link() {
  */
 function astore_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'astore' ),
+		'name'          => esc_attr__( 'Sidebar', 'astore' ),
 		'id'            => 'sidebar-1',
-		'description'   => __( 'Add widgets here to appear in your sidebar.', 'astore' ),
+		'description'   => esc_attr__( 'Add widgets here to appear in your sidebar.', 'astore' ),
 		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -385,9 +385,9 @@ function astore_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'Page Sidebar', 'astore' ),
+		'name'          => esc_attr__( 'Page Sidebar', 'astore' ),
 		'id'            => 'sidebar-page',
-		'description'   => __( 'Add widgets here to appear in your pages sidebar.', 'astore' ),
+		'description'   => esc_attr__( 'Add widgets here to appear in your pages sidebar.', 'astore' ),
 		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -395,9 +395,9 @@ function astore_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'Blog Sidebar', 'astore' ),
+		'name'          => esc_attr__( 'Blog Sidebar', 'astore' ),
 		'id'            => 'sidebar-blog',
-		'description'   => __( 'Add widgets here to appear in your posts sidebar.', 'astore' ),
+		'description'   => esc_attr__( 'Add widgets here to appear in your posts sidebar.', 'astore' ),
 		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -405,9 +405,9 @@ function astore_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'Archives', 'astore' ),
+		'name'          => esc_attr__( 'Archives', 'astore' ),
 		'id'            => 'sidebar-archives',
-		'description'   => __( 'Add widgets here to appear in your posts list sidebar.', 'astore' ),
+		'description'   => esc_attr__( 'Add widgets here to appear in your posts list sidebar.', 'astore' ),
 		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -416,9 +416,9 @@ function astore_widgets_init() {
 	
 	
 	register_sidebar( array(
-		'name'          => __( 'WooCommerce Single Product', 'astore' ),
+		'name'          => esc_attr__( 'WooCommerce Single Product', 'astore' ),
 		'id'            => 'sidebar-woo-single',
-		'description'   => __( 'Add widgets here to appear in your products sidebar.', 'astore' ),
+		'description'   => esc_attr__( 'Add widgets here to appear in your products sidebar.', 'astore' ),
 		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -426,9 +426,9 @@ function astore_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'WooCommerce Archives', 'astore' ),
+		'name'          => esc_attr__( 'WooCommerce Archives', 'astore' ),
 		'id'            => 'sidebar-woo-archives',
-		'description'   => __( 'Add widgets here to appear in your products list sidebar.', 'astore' ),
+		'description'   => esc_attr__( 'Add widgets here to appear in your products list sidebar.', 'astore' ),
 		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -436,9 +436,9 @@ function astore_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'Footer 1', 'astore' ),
+		'name'          => esc_attr__( 'Footer 1', 'astore' ),
 		'id'            => 'footer-1',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'astore' ),
+		'description'   => esc_attr__( 'Add widgets here to appear in your footer.', 'astore' ),
 		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -446,9 +446,9 @@ function astore_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer 2', 'astore' ),
+		'name'          => esc_attr__( 'Footer 2', 'astore' ),
 		'id'            => 'footer-2',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'astore' ),
+		'description'   => esc_attr__( 'Add widgets here to appear in your footer.', 'astore' ),
 		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -456,9 +456,9 @@ function astore_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'Footer 3', 'astore' ),
+		'name'          => esc_attr__( 'Footer 3', 'astore' ),
 		'id'            => 'footer-3',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'astore' ),
+		'description'   => esc_attr__( 'Add widgets here to appear in your footer.', 'astore' ),
 		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -466,9 +466,9 @@ function astore_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'Footer 4', 'astore' ),
+		'name'          => esc_attr__( 'Footer 4', 'astore' ),
 		'id'            => 'footer-4',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'astore' ),
+		'description'   => esc_attr__( 'Add widgets here to appear in your footer.', 'astore' ),
 		'before_widget' => '<section id="%1$s" class="widget-box %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -497,7 +497,7 @@ function astore_comment($comment, $args, $depth) {
           </h4>
           
           <?php if ($comment->comment_approved == '0') : ?>
-                   <em><?php _e('Your comment is awaiting moderation.','astore') ;?></em>
+                   <em><?php esc_attr_e('Your comment is awaiting moderation.','astore') ;?></em>
                    <br />
                 <?php endif; ?>
                 
@@ -577,26 +577,26 @@ function astore_breadcrumbs() {
 			echo $before . get_the_title() . $after;
 		} elseif ( is_search() ) {
 			echo $before ;
-			printf( __( 'Search Results for: %s', 'astore' ),  get_search_query() );
+			printf( esc_attr__( 'Search Results for: %s', 'astore' ),  get_search_query() );
 			echo  $after;
 		} elseif ( is_tag() ) {
 			echo $before ;
-			printf( __( 'Tag Archives: %s', 'astore' ), single_tag_title( '', false ) );
+			printf( esc_attr__( 'Tag Archives: %s', 'astore' ), single_tag_title( '', false ) );
 			echo  $after;
 		} elseif ( is_author() ) {
 			global $author;
 			$userdata = get_userdata($author);
 			echo $before ;
-			printf( __( 'Author Archives: %s', 'astore' ),  $userdata->display_name );
+			printf( esc_attr__( 'Author Archives: %s', 'astore' ),  $userdata->display_name );
 			echo  $after;
 		} elseif ( is_404() ) {
 			echo $before;
-			_e( 'Not Found', 'astore' );
+			esc_attr_e( 'Not Found', 'astore' );
 			echo  $after;
 		}
 		if ( get_query_var('paged') ) {
 			if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() )
-				echo sprintf( __( '( Page %s )', 'astore' ), get_query_var('paged') );
+				echo sprintf( esc_attr__( '( Page %s )', 'astore' ), get_query_var('paged') );
 		}
 		echo '</div>';
 	}
@@ -757,6 +757,12 @@ require get_template_directory() . '/inc/customizer-notify/class-astore-customiz
 
 $config_customizer = array(
 	'recommended_plugins'       => array(
+		
+		'woocommerce' => array(
+			'recommended' => true,
+			'description' => sprintf( esc_html__( 'Install and activate %s plugin to build your front page.', 'astore' ), 'WooCommerce' ),
+		),
+		
 		'elementor' => array(
 			'recommended' => true,
 			'description' => sprintf( esc_html__( 'Install and activate %s plugin to build your front page.', 'astore' ), 'Elementor Page Builder' ),
@@ -804,11 +810,11 @@ function astore_welcome_notice() {
     <div class="updated notice is-dismissible astore-welcome-notice">   
     <p> 
    <?php
-	printf( 'Welcome! Thanks for choosing AStore! To gain full demo contents of the theme you need to go to Customize to install & activate <a href="%1s" target="_blank">AStore Companion</a> plugin.', esc_url('https://wordpress.org/plugins/astore-companion/') );
+	printf(__('Welcome! Thanks for choosing AStore! To gain full demo contents of the theme you need to go to Customize to install & activate %1$s plugin.', 'astore' ),'<a href="https://wordpress.org/plugins/astore-companion/" target="_blank">AStore Companion</a>');
 	?></p>
     <p> 
     <?php
-	echo '<a href="' . esc_url( admin_url( 'customize.php') ) . '" class="button button-primary" style="text-decoration: none;">' .  __('Go to Customize', 'astore') . '</a> ';
+	echo '<a href="' . esc_url( admin_url( 'customize.php') ) . '" class="button button-primary" style="text-decoration: none;">' .  esc_attr__('Go to Customize', 'astore') . '</a> ';
 	?>
 
 </p>
@@ -851,9 +857,9 @@ function astore_about_theme_callback() {
         echo '<h2>'.esc_attr__('About AStore', 'astore' ).'</h2>';
 	
 	echo '<div class="astore-info-wrap">
-	<h1>'.sprintf(esc_attr__('Welcome to %s Version %s', 'astore'),$theme_info->get( 'Name' ), $theme_info->get( 'Version' ) ).'</h1>
-	<p>'.sprintf(esc_attr__('%s is the best choice for building online store since it\'s fully compatible with WooCommerce, the most popular ecommerce plugin. Using Elementor page builder plugin, you could simply edit your site using just drag & drop.', 'astore'),$theme_info->get( 'Name' ) ).'</p>
-	<p>'.esc_attr__('Documentation', 'astore' ).': <a href="'.esc_url('https://velathemes.com/astore-documentation/').'" target="_brank">https://velathemes.com/astore-documentation/</a></p>
+	<h1>'.sprintf(esc_attr__('Welcome to %1$s Version %2$s', 'astore'),$theme_info->get( 'Name' ), $theme_info->get( 'Version' ) ).'</h1>
+	<p>'.sprintf(esc_attr__('%1$s is the best choice for building online store since it\'s fully compatible with WooCommerce, the most popular ecommerce plugin. Using Elementor page builder plugin, you could simply edit your site using just drag & drop.', 'astore'),$theme_info->get( 'Name' ) ).'</p>
+	<p>'.esc_attr__('Documentation', 'astore' ).': <a href="https://velathemes.com/astore-documentation/" target="_brank">https://velathemes.com/astore-documentation/</a></p>
 	</div>';
 		
     echo '</div>';
@@ -967,20 +973,3 @@ function astore_subcategory_count_html( $string ){
 	return $string;
 	}
 add_filter('woocommerce_subcategory_count_html','astore_subcategory_count_html');
-
-/**
- * Redirect to edit frontpage
- */
-function astore_redirect_edit_frontpage(){
-	
-	$frontpage_id = get_option( 'page_on_front' );
-	
-	$redirect_url = add_query_arg( array(
-			'post'   => $frontpage_id,
-			'action' => 'elementor',
-		), admin_url( 'post.php' ) );
-	echo @json_encode( array('redirect_url'=>$redirect_url) );
-	exit(0);
-	}
-add_action('wp_ajax_astore_redirect_e_frontpage', 'astore_redirect_edit_frontpage');
-add_action('wp_ajax_nopriv_astore_redirect_e_frontpage', 'astore_redirect_edit_frontpage');

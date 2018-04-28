@@ -105,29 +105,7 @@ jQuery( document ).ready(
 																type: 'GET',
 																url: url,
 																success: function () {
-																	if(slug == 'astore-companion'){
-																		jQuery.ajax(
-																					{
-																						type: 'POST',
-																						dataType:"json",
-																						url: ccCustomizerNotifyObject.ajaxurl,
-																						data:{action:'astore_redirect_e_frontpage'},
-																						success: function (data) {
-																							// Reload the page.
-																							window.location = data.redirect_url;
-																							
-																						},
-																						error: function(data){
-																							location.reload();
-																							
-																							}
-																					}
-																				);
-																	}else{
 																		location.reload();
-																		}
-																	// Reload the page.
-																	//location.reload();
 																}
 															}
 														);
@@ -153,27 +131,7 @@ jQuery( document ).ready(
 						type: 'GET',
 						url: url,
 						success: function () {
-							if(slug == 'astore-companion'){
-							jQuery.ajax(
-									  {
-										  type: 'POST',
-										  dataType:"json",
-										  url: ccCustomizerNotifyObject.ajaxurl,
-										  data:{action:'astore_redirect_e_frontpage'},
-										  success: function (data) {
-											  // Reload the page.
-											  window.location = data.redirect_url;
-											  
-										  },
-										  error: function(data){
-											  location.reload();
-											  
-											  }
-									  }
-								  );
-							}else{
 								location.reload();
-								}
 						}
 					});
 				}
