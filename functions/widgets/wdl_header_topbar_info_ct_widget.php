@@ -11,10 +11,10 @@
 	function __construct() {
 		parent::__construct(
 			'rockers_header_topbar_info_classic_widget', // Base ID
-			__('ST: Classic Header Info Widget','rockers'), // Widget Name
+			__('ST: Classic Header info widget','rockers'), // Widget Name
 			array(
 				'classname' => 'rockers_header_topbar_info_classic_widget',
-				'description' => __('Topbar classic header info widget.','rockers'),
+				'description' => __('Topbar Classic Header info widget.','rockers'),
 			),
 			array(
 				'width' => 600,

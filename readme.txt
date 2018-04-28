@@ -3,13 +3,13 @@
 Contributors: spicethemes
 Requires at least: 4.7
 Tested up to: 4.9.5
-Stable tag: 2.8
+Stable tag: 2.8.3
 
 Multi-purpose WordPress theme
 
 == Description ==
 
-Rockers is a responsive multi-purpose WordPress theme. It is a flexible theme suitable for agency, blog, business, corporate, finance, account, consulting or portfolios. This theme is easy and straight forward for customization. We have provided Several customization options in the theme allows you to setup site as per your targeted online presence.
+Rockers is a responsive, multi-purpose WordPress theme. It's flexible and perfect to build websites for agencies, blogs, businesses, finance, accounting, consulting, corporations, or portfolios. Customization is easy and straight-forward, with options provided that allow you to set up your site to perfectly fit your desired online presence.
 
 == Installation ==
 
@@ -18,6 +18,13 @@ Rockers is a responsive multi-purpose WordPress theme. It is a flexible theme su
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 2.8.3 ==
+
+1. Update Strings.
+
+= 2.8.2 ==
+
+1. Update Strings.
 
 = 2.8.1 ==
 

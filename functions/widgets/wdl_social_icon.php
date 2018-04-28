@@ -10,7 +10,7 @@
 	function __construct() {
 		parent::__construct(
 			'rockers_social_icon_widget', // Base ID
-			__('ST: Social icon','rockers'), // Widget Name
+			__('ST: Social icons','rockers'), // Widget Name
 			array(
 				'classname' => 'rockers_social_icon_widget',
 				'description' => __('Rockers social icons widget','rockers'),
