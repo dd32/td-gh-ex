@@ -82,7 +82,7 @@ endif; // bhost_setup
 add_action( 'after_setup_theme', 'bhost_setup' );
 
 define('BHOST_PRO_THEME_URL','https://themesvila.com/item/bhost-pro/','bhost');
-define('BHOST_LIVE_DEMO','//getmasum.net/preview/bhost/','bhost');
+define('BHOST_LIVE_DEMO','https://getmasum.com/themes-wp/bhost/','bhost');
 
 
 /**
