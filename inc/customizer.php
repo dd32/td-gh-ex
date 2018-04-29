@@ -372,6 +372,35 @@ function bcorporate_customize_register( $wp_customize ) {
 	  'priority' => 2,
 	) );
 
+	//Services title
+	$wp_customize->add_setting( 
+		'homepage_services_main_title', 
+		array(
+			'sanitize_callback' => 'bcorporate_sanitize_text',	
+			)
+	);
+	$wp_customize->add_control( 'homepage_services_main_title', array(
+		'label'    => esc_html__( 'Services Main Title', 'bcorporate' ),
+		'section'  => 'home_page_services_section',
+		'type'     => 'textarea',
+		'priority' => 2,
+	) );
+
+	//Services Subtitle
+	$wp_customize->add_setting( 
+		'homepage_services_sub_title', 
+		array(
+			'sanitize_callback' => 'bcorporate_sanitize_text',	
+			)
+	);
+	$wp_customize->add_control( 'homepage_services_sub_title', array(
+		'label'    => esc_html__( 'Services Sub Title', 'bcorporate' ),
+		'section'  => 'home_page_services_section',
+		'type'     => 'textarea',
+		'priority' => 2,
+	) );
+
+
 	//Services category dropdown
 	$wp_customize->add_setting(
 	    'homepage_services_category',
@@ -413,6 +442,20 @@ function bcorporate_customize_register( $wp_customize ) {
 	  'priority' => 2,
 	) );
 
+	//Blog title
+	$wp_customize->add_setting( 
+		'homepage_blog_main_title', 
+		array(
+			'sanitize_callback' => 'bcorporate_sanitize_text',	
+			)
+	);
+	$wp_customize->add_control( 'homepage_blog_main_title', array(
+		'label'    => esc_html__( 'Blog Main Title', 'bcorporate' ),
+		'section'  => 'home_page_blog_section',
+		'type'     => 'textarea',
+		'priority' => 2,
+	) );
+
 
 	//Blog category dropdown
 	$wp_customize->add_setting(
@@ -452,6 +495,20 @@ function bcorporate_customize_register( $wp_customize ) {
 	  'label' => esc_html__( 'Enable homepage testimonial section', 'bcorporate' ),
 	  'description' => esc_html__( 'Uncheck to homepage testimonial section', 'bcorporate' ),
 	  'priority' => 2,
+	) );
+
+	//Testimonial title
+	$wp_customize->add_setting( 
+		'homepage_testimonial_main_title', 
+		array(
+			'sanitize_callback' => 'bcorporate_sanitize_text',	
+			)
+	);
+	$wp_customize->add_control( 'homepage_testimonial_main_title', array(
+		'label'    => esc_html__( 'Testimonial Main Title', 'bcorporate' ),
+		'section'  => 'home_page_testimonial_section',
+		'type'     => 'textarea',
+		'priority' => 2,
 	) );
 
 	//Testimonial category dropdown

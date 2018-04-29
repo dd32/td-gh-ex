@@ -274,3 +274,7 @@ if ( class_exists( 'WooCommerce' ) ) {
  */
 require get_template_directory() . '/inc/tgm-plugin-activation/bcorporate-plugin-activation.php';
 
+/**
+ * Load class for upsells links
+ */
+require get_template_directory(). '/inc/blaze-upsells/blaze-pro-btn/class-customize.php';

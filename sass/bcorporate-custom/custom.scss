@@ -8,6 +8,16 @@
 @import "_navigation";
 @import "woocommerce";
 
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    } 
+}
 
 h1.site-title{
   margin-bottom:0
@@ -503,6 +513,13 @@ h1.site-title{
 
     .services_single-wrap{
       padding:0 1rem;
+      a{
+        color:$BE__color__sub-link;
+          &:hover {
+              color: $BE__color__link;
+          }
+      }
+
     }
 
     .lSSlideOuter {
@@ -824,6 +841,9 @@ h1.site-title{
       @include transition(all 0.3s ease);
        @include transform(translate3d(0, 0, 0));   
        z-index:999;
+       animation-direction: normal;
+    animation-duration: 0.3s;
+    transform: translateZ(0);
 
          .menu-toggle{ 
        
@@ -839,12 +859,15 @@ h1.site-title{
     position: fixed;
     top: 0;
     z-index:999;
+    animation:slide-down 0.7s;
+    height:100px;
 
     .headerwrap{
       opacity:1;
       visibility:visible;
       background-color:$BE__color__background-body;
       padding:1rem;
+      @include box-shadow(0, 0px, 20px, rgba(166, 166, 166, 0.25));
 
       .site-title{ 
         margin-top:0rem;

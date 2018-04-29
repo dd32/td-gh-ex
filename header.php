@@ -48,7 +48,7 @@
 					</div><!-- .site-branding -->
 							
 					<nav id="site-navigation" class="main-navigation col-4 col-sm-8 col-lg-9 col-xl-8   clearfix ">
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'bcorporate' ); ?>
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( '', 'bcorporate' ); ?>
 							<div class="burger-menu">
 								<span></span>
 								<span></span>

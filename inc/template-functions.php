@@ -104,7 +104,8 @@ function bcorporate_home_feature_sec_fnc() {
 			<div class="row">
 				<div class="col-md-12 col-sm-12 ">
 					<h1>
-						<?php echo esc_html( get_theme_mod('homepage_feature_main_title', 'Quality Cost Effective Services')); ?>
+						<?php 
+						echo get_theme_mod('homepage_feature_main_title', 'Quality Cost Effective Services'); ?>
 					</h1>
 				</div>
 			</div>
@@ -125,7 +126,9 @@ function bcorporate_home_feature_sec_fnc() {
 				    		
 				    	</div>
 				    	<div class="content_part_feature">
-				    		<h3><?php the_title(); ?></h3>
+				    		<h3>
+				    			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+				    		</h3>
 				    		<p><?php the_excerpt(); ?></p>
 				    	</div>
 			    	</div>	
@@ -157,7 +160,7 @@ function bcorporate_home_portfolio_sec_fnc() {
 				<div class="col-md-12 col-sm-12">
 					<h1>
 						<?php
-							echo esc_html( get_theme_mod('homepage_portfolio_main_title', 'Portfolio') );
+							echo esc_html( get_theme_mod('homepage_portfolio_main_title', 'Showcase Portfolio') );
 						 ?>
 					</h1>
 					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 homepage_sub_text"><p >
@@ -181,7 +184,7 @@ function bcorporate_home_portfolio_sec_fnc() {
 					    		<img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(),'bcorporate_portfolio') );?>">
 					    	</div>
 					    	<div class="content_part_portfolio text-left">
-					    		<h3><span><?php the_title(); ?></span></h3>
+					    		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 					    		<div class="category">
 					    			<?php the_category(); ?>
 					    		</div>	
@@ -220,9 +223,9 @@ function bcorporate_home_ctaone_sec_fnc() {
 			<div class="row">
 				<div class="col-md-12 col-sm-12">
 					<h1 data-aos="fade-down" data-aos-once="true"  data-aos-delay="400">
-						<?php echo esc_html( get_theme_mod( 'homepage_cta_one_main_title' ) );?>
+						<?php echo esc_html( get_theme_mod( 'homepage_cta_one_main_title', 'Ready to get started with BCorporate Pro?' ) );?>
 					</h1>
-					<p class=" homepage_sub_text" data-aos="fade-up"   data-aos-once="true"  data-aos-delay="450"><?php echo esc_html( get_theme_mod( 'homepage_cta_one_sub_title' ) );?></p>
+					<p class=" homepage_sub_text" data-aos="fade-up"   data-aos-once="true"  data-aos-delay="450"><?php echo esc_html( get_theme_mod( 'homepage_cta_one_sub_title', 'Let me take the maximum benefit by exploring the Pro Version.' ) );?></p>
 					<?php if( get_theme_mod('homepage_cta_one_button_url') ): ?>
 						<div class=" BE-btn-primary" data-aos="fade-up"   data-aos-once="true"  data-aos-delay="500"><a href="<?php echo esc_url( get_theme_mod('homepage_cta_one_button_url') ); ?>" class="btn cta-btn">
 							<?php
@@ -258,8 +261,7 @@ function bcorporate_home_services_sec_fnc() {
 				<div class="col-md-12 col-sm-12">
 					<h1>
 						<?php
-							echo esc_html( get_cat_name(absint( $bcorporate_services_id ) ) );
-						?>
+							echo esc_html( get_theme_mod('homepage_services_main_title','Services') ); ?>
 					</h1>
 					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 homepage_sub_text">
 						<p>
@@ -286,7 +288,7 @@ function bcorporate_home_services_sec_fnc() {
 					    		<img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(),'bcorporate_portfolio') );?>">
 					    	</div>
 					    	<div class="content_part_services">
-					    		<h3><span><?php the_title(); ?></span></h3>
+					    		<h3><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>
 					    		<div class="main_content_services">
 					    			<p><?php echo wp_kses_post( get_the_content() ); ?></p>
 					    		</div>	
@@ -320,7 +322,7 @@ function bcorporate_home_blog_sec_fnc() {
 			<div class="row">
 				<div class="col-md-12 col-sm-12">
 					<h1>
-						<?php echo esc_html( get_cat_name(absint( $bcorporate_blog_id ) ) );?>
+						<?php echo esc_html( get_theme_mod('homepage_blog_main_title', 'Blog') ); ?>
 					</h1>
 					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 homepage_sub_text"><p><?php echo wp_kses_post( category_description( absint( $bcorporate_blog_id ) ) );?></p></div>
 				</div>
@@ -395,9 +397,14 @@ function bcorporate_home_testimonial_sec_fnc() {
 			<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12">
-					<span class=" homepage_sub_text"><?php echo wp_kses_post( category_description( absint( $bcorporate_testimonial_id ) ) );?></span>
+					<span class=" homepage_sub_text">
+						<?php echo wp_kses_post( category_description( absint( $bcorporate_testimonial_id ) ) );?>
+								
+					</span>
 					<h1 class="homepage_testimonial_main_title">
-						<?php echo esc_html( get_cat_name(absint( $bcorporate_testimonial_id ) ) );?>
+						<?php 
+							echo esc_html( get_theme_mod('homepage_testimonial_main_title', 'Testimonial') );
+						?>
 					</h1>
 					
 				</div>
@@ -453,9 +460,9 @@ function bcorporate_home_ctatwo_sec_fnc() {
 			<div class="row">
 				<div class="col-md-12 col-sm-12">
 					<h1 data-aos="fade-down"   data-aos-once="true"  data-aos-delay="400">
-						<?php echo esc_html( get_theme_mod( 'homepage_cta_two_main_title' ) );?>
+						<?php echo esc_html( get_theme_mod( 'homepage_cta_two_main_title', 'Learn More About Our Theme' ) );?>
 					</h1>
-					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 "><p  class="bcorporate_home_ctatwo_sub-text" data-aos="fade-up" data-aos-once="true"  data-aos-delay="450"><?php echo esc_html( get_theme_mod( 'homepage_cta_two_sub_title' ) );?></p></div>
+					<div class="col-md-12 col-sm-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 "><p  class="bcorporate_home_ctatwo_sub-text" data-aos="fade-up" data-aos-once="true"  data-aos-delay="450"><?php echo esc_html( get_theme_mod( 'homepage_cta_two_sub_title', 'Detail information about theme features, updates and upcoming release on our site or - Download Theme Documentation' ) );?></p></div>
 					<?php if( get_theme_mod('homepage_cta_two_button_url') ): ?>
 						<div class="BE-btn-primary " data-aos="fade-up"   data-aos-once="true"  data-aos-delay="500"><a href="<?php echo esc_url( get_theme_mod('homepage_cta_two_button_url') ); ?>" class="btn cta-btn">
 							<?php 

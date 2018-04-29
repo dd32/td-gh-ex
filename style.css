@@ -6,7 +6,7 @@
  Description: BCorporate is a Free Corporate Wordpress Theme created using latest trends such as SASS which is a powerful and well performed CSS Extension, with HTML5 / CSS3 and Responsive design. This theme is a Full-Width Layout with includes features and Sections such as: Sliders, Portfolios, Services, Testimonials, Blog Posts, Call To Action (x2) and Contact Form. 
  BCorporate is suitable for any kind of businesses, with WooCommerce integrated in the theme BCorporate can serve all ecommerce related companies, corporate services & many other industries. It is created with more simplistic clean codes with easy to customize blogs, news and article publishing. Easy to navigate through its articles, it has clean Comment and Social Share features.  
  This theme is built on Bootstrap which makes it highly responsive and all browsers compatible. It is tested and supported by all screen-size. A cutting-edge mobile friendly performance, its SEO Friendly nature and beautifully integrated social shares will boost your online presence and help your website reach the top search results.
- Version: 2.1.0
+ Version: 2.2.0
  License: GPLv2 or later
  License URI: https://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: bcorporate
@@ -1264,8 +1264,8 @@ span.onsale {
 /***** toggled ***/
 @media (max-width: 992px) {
   .headermain .main-navigation .main-menu-wrap {
-    background-color: #000;
-    width: calc(100% - 120px);
+    background-color: #3b3b3b;
+    width: calc(100% - 160px);
     height: 100vh;
     top: 0;
     text-align: left;
@@ -1281,6 +1281,7 @@ span.onsale {
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
+    box-shadow: none;
   }
 }
 .headermain .main-navigation.toggled .main-menu-wrap {
@@ -1292,11 +1293,11 @@ span.onsale {
 .headermain .main-navigation.toggled .main-menu-wrap ul li {
   padding: 1rem 0;
   width: 100%;
-  margin: 0 0.5rem;
+  margin: 0;
 }
 .headermain .main-navigation.toggled .main-menu-wrap ul li ul.sub-menu {
-  background-color: #000;
-  width: calc(100% - 75px);
+  background-color: #3b3b3b;
+  width: calc(100% - 160px);
   height: 100vh;
   top: 0;
   text-align: left;
@@ -1312,6 +1313,7 @@ span.onsale {
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
+  box-shadow: none;
 }
 .headermain .main-navigation.toggled .main-menu-wrap ul li ul.sub-menu a {
   width: 100%;
@@ -1344,14 +1346,38 @@ span.onsale {
 .headermain .main-navigation.toggled .main-menu-wrap ul li.bcorporate_download_btn {
   padding: 0;
 }
+.headermain .main-navigation.toggled .burger-menu span:nth-child(1) {
+  transform-origin: right top;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.headermain .main-navigation.toggled .burger-menu span:nth-child(2) {
+  opacity: 0;
+  visibility: hidden;
+}
+.headermain .main-navigation.toggled .burger-menu span:nth-child(3) {
+  transform-origin: right top;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
 /* Responsive nav menu */
+.burger-menu {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .menu-toggle {
-  top: 30px;
+  top: 35px;
   right: 30px;
   text-transform: uppercase;
-  width: auto !important;
-  width: 7%;
-  height: 30px;
+  width: 36px;
+  height: 31px;
   position: fixed;
   background-color: transparent;
   border-color: transparent;
@@ -1363,37 +1389,27 @@ span.onsale {
 @media (min-width: 768px) {
   .menu-toggle {
     color: #fff;
+    right: 60px;
   }
   .menu-toggle:hover {
     color: #fff;
   }
 }
-.menu-toggle > div {
-  height: 12px;
-  width: 10px;
-  margin-left: 0.35vw;
-  display: inline-block;
-  position: relative;
-}
-.menu-toggle div span {
+.menu-toggle .burger-menu span {
   display: block;
-  position: absolute;
-  top: 8px;
-  width: 12px;
+  width: 100%;
   height: 2px;
-  margin-top: -1px;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
   background-color: #757577;
 }
 @media (min-width: 768px) {
-  .menu-toggle div span {
+  .menu-toggle .burger-menu span {
     background-color: #fff;
   }
-}
-.menu-toggle div span:first-child {
-  margin-top: -5px;
-}
-.menu-toggle div span:last-child {
-  margin-top: 3px;
 }
 .headermain .main-navigation .main-menu-wrap ul .brorp_features .sub-menu {
   width: 500px;
@@ -1808,6 +1824,16 @@ table.woocommerce-checkout-review-order-table .product-name {
 .form-row input[type=checkbox], .form-row input[type=radio] {
   width: auto;
 }
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 h1.site-title {
   margin-bottom: 0;
 }
@@ -2221,6 +2247,12 @@ h1.caption-text-heading span {
 #bcorporate_home_feature_wrap .services_single-wrap {
   padding: 0 1rem;
 }
+#bcorporate_home_feature_wrap .services_single-wrap a {
+  color: #252525;
+}
+#bcorporate_home_feature_wrap .services_single-wrap a:hover {
+  color: #004998;
+}
 #bcorporate_home_feature_wrap .lSSlideOuter {
   margin: 2rem 0;
 }
@@ -2489,6 +2521,9 @@ h1.caption-text-heading span {
   -o-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   z-index: 999;
+  animation-direction: normal;
+  animation-duration: 0.3s;
+  transform: translateZ(0);
 }
 .headermain .menu-toggle {
   background-color: transparent;
@@ -2501,12 +2536,17 @@ h1.caption-text-heading span {
   position: fixed;
   top: 0;
   z-index: 999;
+  animation: slide-down 0.7s;
+  height: 100px;
 }
 .headermain.shrink .headerwrap {
   opacity: 1;
   visibility: visible;
   background-color: #fff;
   padding: 1rem;
+  -webkit-box-shadow: 0 0px 20px rgba(166, 166, 166, 0.25);
+  -moz-box-shadow: 0 0px 20px rgba(166, 166, 166, 0.25);
+  box-shadow: 0 0px 20px rgba(166, 166, 166, 0.25);
 }
 .headermain.shrink .headerwrap .site-title {
   margin-top: 0rem;
