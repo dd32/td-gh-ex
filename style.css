@@ -4,7 +4,7 @@ Description: AyaEstate is Fully Responsive WordPress Theme. Features include Ani
 Theme URI: https://ayatemplates.com/product/ayaestate
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.0.0
+Version: 1.0.1
 Text Domain: ayaestate
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2.0
@@ -229,6 +229,7 @@ ul {
 	margin:0;
 	width:100%;
 	color:#222222;
+	min-height:40px;
 }
 
 #header-main-fixed h1,
@@ -1276,12 +1277,6 @@ dt.gallery-icon > a:before,
 
 	#header-content-wrapper {
 	    position: relative;
-	}
-
-	#navmain {
-	    position: absolute;
-	    right: 0;
-	    bottom: 0;
 	}
 	
 	#navmain ul {
