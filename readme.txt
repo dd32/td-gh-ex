@@ -3,13 +3,13 @@
 Contributors: spicethemes
 Requires at least: 4.7
 Tested up to: 4.9.5
-Stable tag: 1.2
+Stable tag: 1.3
 
 Multi-purpose WordPress theme
 
 == Description ==
 
-Content is a responsive multi-purpose WordPress theme. It is a flexible theme suitable for agency, blog, business, corporate or portfolios. it is easy and straightforward for customization. It comes with multiple widgets with which you can create custom layouts with less efforts. For quick start. With several customization options provided in the theme allows you to setup site as per your targeted online presence.
+Content is a responsive, multi-purpose WordPress theme. It’s flexible and suitable for agencies, blogs, business, corporate or portfolios. Customization is easy and straight-forward, with options provided that allow you to setup your site to perfectly fit your desired online presence. Content offers a beautifully designed masonry blog layout. For more details, visit this link https://wordpress.org/themes/spicepress/. We hope you will find the Content theme useful.
 
 == Installation ==
 
@@ -18,6 +18,9 @@ Content is a responsive multi-purpose WordPress theme. It is a flexible theme su
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.3 ==
+1. Update Theme Description.
 
 = 1.2 ==
 1. Update Description.
