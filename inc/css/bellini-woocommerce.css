@@ -764,7 +764,7 @@ mark.count {background-color: transparent; opacity: .35;}
 .woocommerce div.product .woocommerce-tabs ul.tabs li {
     padding: 0 25px;
     border-radius: 0;
-    border: 1px solid rgba(211, 206, 210, 0.36);
+    border: none;
 }
 
 .woocommerce div.product .woocommerce-tabs .panel {
@@ -1424,3 +1424,7 @@ form.woocommerce-ordering {
 }
 
 .woocommerce-cart .container--card-content {padding:0;}
+
+    .woocommerce ul.products li.product .price .from{
+      color:inherit !important;
+    }
