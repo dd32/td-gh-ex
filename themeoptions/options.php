@@ -4240,7 +4240,6 @@ function ascend_customizer_save_after( $wp_customize ) {
 		update_option( 'ascend',  $options);
 	}
 	$background_color = get_theme_mod( 'background_color' );
-	error_log($background_color);
 	if(isset($background_color)){
 		$options = get_option( 'ascend' );
 		if(!is_array($options['body_background'])) {

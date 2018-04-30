@@ -12,15 +12,9 @@
     <admin-texts>
         <key name="ascend">
             <key name="home_page_title_typed">
-            	<key name="0">
-                    <key name="text" />
-                </key>
-                <key name="1">
-                    <key name="text" />
-                </key>
-                <key name="2">
-                    <key name="text" />
-                </key>
+            	<key name="0" />
+                <key name="1" />
+                <key name="2" />
             </key>
             <key name="home_page_title" />
             <key name="home_page_sub_title" />
@@ -58,15 +52,9 @@
             </key>
             <key name="home_shortcode_entry" />
             <key name="home_mobile_page_title_typed">
-            	<key name="0">
-                    <key name="text" />
-                </key>
-                <key name="1">
-                    <key name="text" />
-                </key>
-                <key name="2">
-                    <key name="text" />
-                </key>
+				<key name="0" />
+				<key name="1" />
+				<key name="2" />
             </key>
             <key name="home_mobile_page_title" />
             <key name="home_mobile_page_sub_title" />

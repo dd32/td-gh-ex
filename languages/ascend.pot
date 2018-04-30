@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ascend\n"
-"POT-Creation-Date: 2018-01-26 10:35-0700\n"
+"POT-Creation-Date: 2018-04-12 15:07-0600\n"
 "PO-Revision-Date: 2015-05-08 13:15-0700\n"
 "Last-Translator: \n"
 "Language-Team: Kadence Themes\n"
@@ -10,9 +10,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr_e;esc_attr__;esc_html_e;"
-"esc_html__\n"
+"esc_html__;esc_attr_x;_x\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -30,7 +30,7 @@ msgid ""
 "date link"
 msgstr ""
 
-#: archive-portfolio.php:17 archive.php:44 index.php:15 search.php:40
+#: archive-portfolio.php:17 archive.php:44 index.php:18 search.php:40
 #: templates/home/blog-main-loop.php:32
 msgid "Sorry, no results were found."
 msgstr ""
@@ -329,6 +329,12 @@ msgstr ""
 msgid "Update recommended"
 msgstr ""
 
+#. translators: 1: install status, 2: update status
+#: lib/classes/class-plugin-activation.php:2342
+#, php-format
+msgid "%1$s, %2$s"
+msgstr ""
+
 #. translators: 1: number of plugins.
 #: lib/classes/class-plugin-activation.php:2392
 #, php-format
@@ -352,6 +358,10 @@ msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
+
+#: lib/classes/class-plugin-activation.php:2482
+msgid "unknown"
+msgstr ""
 
 #: lib/classes/class-plugin-activation.php:2490
 msgid "Installed version:"
@@ -1525,6 +1535,7 @@ msgid "Search &hellip;"
 msgstr ""
 
 #: searchform.php:14 woocommerce/product-searchform.php:26
+#: woocommerce/product-searchform.php:27
 msgid "Search for:"
 msgstr ""
 
@@ -3762,7 +3773,7 @@ msgid "Footer Base Background"
 msgstr ""
 
 #: themeoptions/options.php:3311 themeoptions/options.php:3318
-#: themeoptions/options.php:4293
+#: themeoptions/options.php:4292
 msgid "Body Background"
 msgstr ""
 
@@ -4352,6 +4363,10 @@ msgstr ""
 #: woocommerce/single-product/sale-flash.php:29
 #: woocommerce/single-product/sale-flash.php:37
 msgid "Sale!"
+msgstr ""
+
+#: woocommerce/product-searchform.php:27
+msgid "Search Products&hellip;"
 msgstr ""
 
 #: woocommerce/single-product/product-image.php:121
