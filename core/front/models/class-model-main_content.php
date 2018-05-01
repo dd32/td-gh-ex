@@ -105,9 +105,8 @@ class CZR_main_content_model_class extends CZR_Model {
             $context =  is_single() ? 'post' : 'page';
 
             //do nothing if we don't display regular {context} heading
-            if ( ! czr_fn_is_registered_or_possible( "regular_{$context}_heading" ) ) {
+            if ( ! czr_fn_is_registered_or_possible( "regular_{$context}_heading" ) )
                   return;
-            }
 
             //__before_main_wrapper, 200
             //__before_regular_{post|page}_heading_title
@@ -115,16 +114,21 @@ class CZR_main_content_model_class extends CZR_Model {
             $_singular_thumb_option = czr_fn_opt( "tc_single_${context}_thumb_location" );
 
             //nothing to do:
-            if ( ! ( $_singular_thumb_option && 'hide' !== $_singular_thumb_option ) ) {
+            if ( ! ( $_singular_thumb_option && 'hide' != $_singular_thumb_option ) ) {
+
                   return;
+
             }
 
             //define old customizr compatibility map:
             $_compat_location_hook_map = array(
+
                   //old hook                => new_hook
+
                   '__before_main_wrapper'   => '__before_main_wrapper',
                   '__before_content'        => '__before_regular_heading_title',
                   '__after_content_title'   => '__after_regular_heading_title',
+
             );
 
 
@@ -138,9 +142,11 @@ class CZR_main_content_model_class extends CZR_Model {
             //let's prepare the thumb
             //register the model and the template for displaying the thumbnail at a specific hook
             $singular_thumb_model_id = czr_fn_register( array( 'template' => 'content/common/media',
+
                   'id'         => 'singular_thumbnail',
                   'hook'       => $_hook,
                   'args'       => array(
+
                         'media_type'               => 'wp_thumb',
                         'has_permalink'            => false,
                         'has_lightbox'             => false,
@@ -184,7 +190,7 @@ class CZR_main_content_model_class extends CZR_Model {
 
         $_slider_shown = ( did_action( '__after_carousel_inner' ) );
 
-        return '__before_main_wrapper' == $_hook && $_slider_shown ? false : $bool;
+        return '__before_main_wrapper' == $_hook && $_slider_shown ? false : true;
 
       }
 
