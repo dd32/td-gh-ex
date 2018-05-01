@@ -3,7 +3,7 @@
 - By Think Up Themes, http://www.thinkupthemes.com/
 
 Requires at least:	4.0.0
-Tested up to:		4.8.0
+Tested up to:		4.9.5
 
 Alante Engage is the free version of the multi-purpose professional theme (Alante Pro) ideal for a engage or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
 
@@ -53,6 +53,9 @@ Alante Engage is a child theme or Alante and as such uses the same opensource pr
 -----------------------------------------------------------------------------
 	Changelog
 -----------------------------------------------------------------------------
+
+Version 1.0.1
+- Updated: Version bump for .org upload.
 
 Version 1.0.0
 - New:     Initial release.
