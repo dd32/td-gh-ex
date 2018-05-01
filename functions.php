@@ -2,7 +2,7 @@
 /**
  * aVogue Child functions and definitions
  */
-define( 'AVOGUE_THEME_VERSION' , '1.0.0' );
+define( 'AVOGUE_THEME_VERSION' , '1.0.1' );
 
 /**
  * Enqueue parent theme style

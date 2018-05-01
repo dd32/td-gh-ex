@@ -12,7 +12,7 @@ aVogue is a new redesigned look for the popular multipurpose WooCommerce theme, 
 
 == License / Bundled Licenses ==
 
-aVogue WordPress Theme, Copyright 2017 Zack Viljoen.
+aVogue, WordPress Child Theme is Copyright 2017 Zack Viljoen.
 aVogue is distributed under the terms of the GNU GPL.
 
 aVogue is a child theme and as such uses the same opensource projects as its parent theme, Vogue.
@@ -46,7 +46,7 @@ https://pixabay.com/en/service/terms/
 
 aVogue's Customizer Settings:
 ---------------
-The theme settings for aVogue uses the same open source project built into the WordPress Customizer, using "Customizer Library" by Devin Price, situated in /customizer/.
+The theme settings for aVogue comes from parent theme, Vogue, which uses the same open source project built into the WordPress Customizer, using "Customizer Library" by Devin Price, situated in /customizer/.
 
 All setting are self explanatory or have notes explaining what they do or how to use the theme settings.
 View the theme settings under "Appearance" -> Customize.
@@ -56,6 +56,10 @@ View the theme settings under "Appearance" -> Customize.
 1. Featured Images work best at a minimum of 1400 wide and 700 high.
 
 == Changelog ==
+
+#### 1.0.1
+* License readme.txt changes/updates
+* Added theme uri to live website
 
 #### 1.0.0
 * Initial release.
