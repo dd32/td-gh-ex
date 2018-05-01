@@ -10,7 +10,7 @@ if ( ! empty( $authordesc ) ) : ?>
 		<?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?>
 	</a>
 
-	<h4><?php the_author_posts_link(); ?></h4>
+	<h3><?php the_author_posts_link(); ?></h3>
 
 	<p><?php the_author_meta( 'description' ); ?></p>
 

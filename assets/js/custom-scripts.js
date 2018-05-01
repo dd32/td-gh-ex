@@ -4,11 +4,12 @@ jQuery(document).ready(function( $ ) {
 /*
 ** Header Image =====
 */
+	var entryHeader = $('.entry-header');
+	
 	// Parallax Effect
-	if ( $('.entry-header').attr('data-parallax') == '1' ) {
-		$('.entry-header').paroller({ factor: '0.5' });
+	if ( entryHeader.attr('data-parallax') == '1' ) {
+		entryHeader.parallax({ imageSrc: entryHeader.attr('data-image') });
 	}
-
 
 /*
 ** Main Navigation =====
@@ -27,12 +28,12 @@ jQuery(document).ready(function( $ ) {
 
 	// Responsive Menu 
 	$( '#mobile-menu .menu-item-has-children' ).prepend( '<div class="sub-menu-btn"></div>' );
-	$( '#mobile-menu .sub-menu' ).before( '<span class="sub-menu-btn-icon"><i class="fas fa-angle-down"></i></span>' );
+	$( '#mobile-menu .sub-menu' ).before( '<span class="sub-menu-btn-icon icon-angle-down"></span>' );
 
 	// Responsive sub-menu btn
 	$('.sub-menu-btn').on( 'click', function(){
 		$(this).closest('li').children('.sub-menu').slideToggle();
-		$(this).closest('li').children('.sub-menu-btn-icon').children('svg').toggleClass( 'fa-rotate-270' );
+		$(this).closest('li').children('.sub-menu-btn-icon').toggleClass( 'fa-rotate-270' );
 	});
 
 	$( window ).on( 'resize', function() {
@@ -145,14 +146,6 @@ jQuery(document).ready(function( $ ) {
 	$('.scrolltop').on( 'click', function() {
 		$('html, body').animate( { scrollTop : 0 }, 800 );
 		return false;
-	});
-
-	$( window ).on( 'scroll', function() {
-		if ($(this).scrollTop() >= 800 ) {
-			$('.scrolltop').fadeIn(350);
-		} else {
-			$('.scrolltop').fadeOut(350);
-		}
 	});
 
 

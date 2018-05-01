@@ -29,8 +29,11 @@ function bard_customize_register( $wp_customize ) {
 		// ensure $number is an absolute integer
 		$number = absint( $number );
 
-		// return default if not integer
-		return ( $number ? $number : $setting->default );
+		if ( $setting->id === 'bard_options[featured_slider_amount]' ) {
+			return ( $number < 4 ? $number : $setting->default );
+		} else {
+			return ( $number ? $number : $setting->default );
+		}
 
 	}
 
@@ -75,7 +78,7 @@ function bard_customize_register( $wp_customize ) {
 	function bard_checkbox_control( $section, $id, $name, $transport, $priority ) {
 		global $wp_customize;
 
-		if ( $section !== 'header_image' ) {
+		if ( $section !== 'title_tagline' && $section !== 'header_image' ) {
 			$section_id = 'bard_'. $section;
 		} else {
 			$section_id = $section;
@@ -257,8 +260,30 @@ function bard_customize_register( $wp_customize ) {
 		) );
 	}
 
-	// image crop
+	// Image Crop
 	function bard_image_crop_control( $section, $id, $name, $width, $height, $transport, $priority ) {
+		global $wp_customize;
+		$wp_customize->add_setting( 'bard_options['. $section .'_'. $id .']', array(
+			'default' 	=> '',
+			'type' 		=> 'option',
+			'transport' => $transport,
+			'sanitize_callback' => 'bard_sanitize_number_absint'
+		) );
+		$wp_customize->add_control(
+			new WP_Customize_Cropped_Image_Control( $wp_customize, 'bard_options['. $section .'_'. $id .']', array(
+				'label'    		=> $name,
+				'section'  		=> 'bard_'. $section,
+				'flex_width'  	=> false,
+				'flex_height' 	=> false,
+				'width'       	=> $width,
+				'height'      	=> $height,
+				'priority' 		=> $priority
+			)
+		) );
+	}
+
+	// Image Crop Flex
+	function bard_image_crop_flex_control( $section, $id, $name, $width, $height, $transport, $priority ) {
 		global $wp_customize;
 		$wp_customize->add_setting( 'bard_options['. $section .'_'. $id .']', array(
 			'default' 	=> '',
@@ -278,6 +303,7 @@ function bard_customize_register( $wp_customize ) {
 			)
 		) );
 	}
+
 
 	// Pro Version
 	class Bard_Customize_Pro_Version extends WP_Customize_Control {
@@ -319,11 +345,15 @@ function bard_customize_register( $wp_customize ) {
 					<p><?php esc_html_e( 'You can download and import this demo file to get same content as shown on our website. For more details please read theme documentation.', 'bard' ); ?></p>
 					<a href="<?php echo esc_url('http://wp-royal.com/themes/bard/democontent/bard_free_demo_content.html?ref=bard-free-customizer-about-section-demoxml-btn'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Download Demo Content', 'bard' ); ?></a>
 				</li>
+				<li class="customize-control">
+					<h3><?php esc_html_e( 'Changelog', 'bard' ); ?></h3>
+					<p><?php esc_html_e( 'Stay always up to date, check for fixes, updates and some new feauters you should not miss.', 'bard' ); ?></p>
+					<a href="<?php echo esc_url('https://wp-royal.com/bard-free-changelog/?ref=bard-free-customizer-about-section-changelog'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'View Changelog', 'bard' ); ?></a>
+				</li>
 			</ul>
 			<?php
 		}
 	}	
-
 
 
 /*
@@ -366,9 +396,13 @@ function bard_customize_register( $wp_customize ) {
 	// Content Accent
 	bard_color_control( 'colors', 'content_accent', esc_html__( 'Accent', 'bard' ), 'postMessage', 3 );
 
+	// Header Text Color
 	$wp_customize->get_control( 'header_textcolor' )->section = 'bard_colors';
 	$wp_customize->get_control( 'header_textcolor' )->priority = 6;
 	$wp_customize->get_setting( 'header_textcolor' )->transport  = 'postMessage';
+
+	// Header Text Hover Color
+	bard_color_control( 'colors', 'header_text_hover', esc_html__( 'Header Text Hover Color', 'bard' ), 'postMessage', 7 );
 
 	// Header Background
 	bard_color_control( 'colors', 'header_bg', esc_html__( 'Header Background Color', 'bard' ), 'postMessage', 9 );
@@ -523,6 +557,9 @@ function bard_customize_register( $wp_customize ) {
 
 	$wp_customize->get_control( 'custom_logo' )->transport = 'selective_refresh';
 
+	// Show Social Icons
+	bard_checkbox_control( 'title_tagline', 'show_socials', esc_html__( 'Show Social Icons', 'bard' ), 'refresh', 50 );
+
 
 /*
 ** Main Navigation =====
@@ -540,20 +577,21 @@ function bard_customize_register( $wp_customize ) {
 
 	$main_nav_align = array(
 		'left' => esc_html__( 'Left', 'bard' ),
-		'center' => esc_html__( 'Center', 'bard' )
+		'center' => esc_html__( 'Center', 'bard' ),
+		'right' => esc_html__( 'Right', 'bard' )
 	);
 
 	// Align
 	bard_select_control( 'main_nav', 'align', esc_html__( 'Align', 'bard' ), $main_nav_align, 'refresh', 7 );
 
+	// Show Sidebar Icon
+	bard_checkbox_control( 'main_nav', 'show_sidebar', esc_html__( 'Show Sidebar Icon', 'bard' ), 'refresh', 11 );
+
 	// Show Random Post Icons
-	bard_checkbox_control( 'main_nav', 'show_random_btn', esc_html__( 'Show Random Post Icon', 'bard' ), 'refresh', 11 );
+	bard_checkbox_control( 'main_nav', 'show_random_btn', esc_html__( 'Show Random Post Icon', 'bard' ), 'refresh', 13 );
 
 	// Show Search Icon
-	bard_checkbox_control( 'main_nav', 'show_search', esc_html__( 'Show Search Icon', 'bard' ), 'refresh', 13 );
-
-	// Show Sidebar Icon
-	bard_checkbox_control( 'main_nav', 'show_sidebar', esc_html__( 'Show Sidebar Icon', 'bard' ), 'refresh', 15 );
+	bard_checkbox_control( 'main_nav', 'show_search', esc_html__( 'Show Search Icon', 'bard' ), 'refresh', 15 );
 
 	// Merge to Responsive Menu
 	bard_checkbox_control( 'main_nav', 'merge_menu', esc_html__( 'Merge Top Menu - Responsive', 'bard' ), 'refresh', 17 );
@@ -638,7 +676,7 @@ function bard_customize_register( $wp_customize ) {
 	bard_url_control( 'featured_links', 'url_1', esc_html__( 'URL', 'bard' ), 'refresh', 11 );
 
 	// Link #1 Image
-	bard_image_crop_control( 'featured_links', 'image_1', esc_html__( 'Image', 'bard' ), 600, 370, 'refresh', 13 );
+	bard_image_crop_control( 'featured_links', 'image_1', esc_html__( 'Image', 'bard' ), 800, 490, 'refresh', 13 );
 
 	// Link #2 Title
 	bard_text_control( 'featured_links', 'title_2', esc_html__( 'Title', 'bard' ), 'refresh', 15 );
@@ -647,7 +685,7 @@ function bard_customize_register( $wp_customize ) {
 	bard_url_control( 'featured_links', 'url_2', esc_html__( 'URL', 'bard' ), 'refresh', 17 );
 
 	// Link #2 Image
-	bard_image_crop_control( 'featured_links', 'image_2', esc_html__( 'Image', 'bard' ), 600, 370, 'refresh', 19 );
+	bard_image_crop_control( 'featured_links', 'image_2', esc_html__( 'Image', 'bard' ), 800, 490, 'refresh', 19 );
 
 	// Link #3 Title
 	bard_text_control( 'featured_links', 'title_3', esc_html__( 'Title', 'bard' ), 'refresh', 21 );
@@ -656,7 +694,7 @@ function bard_customize_register( $wp_customize ) {
 	bard_url_control( 'featured_links', 'url_3', esc_html__( 'URL', 'bard' ), 'refresh', 23 );
 
 	// Link #3 Image
-	bard_image_crop_control( 'featured_links', 'image_3', esc_html__( 'Image', 'bard' ), 600, 370, 'refresh', 25 );
+	bard_image_crop_control( 'featured_links', 'image_3', esc_html__( 'Image', 'bard' ), 800, 490, 'refresh', 25 );
 
 
 /*
@@ -671,7 +709,7 @@ function bard_customize_register( $wp_customize ) {
 	) );
 
 	// Full Width Post
-	bard_checkbox_control( 'blog_page', 'full_width_post', esc_html__( 'Make First Post Full Width', 'bard' ), 'refresh', 1 );
+	bard_checkbox_control( 'blog_page', 'full_width_post', esc_html__( 'Make First Grid Post Full Width', 'bard' ), 'refresh', 1 );
 
 	$post_description = array(
 		'none' 		=> esc_html__( 'None', 'bard' ),
@@ -921,11 +959,14 @@ function bard_customize_register( $wp_customize ) {
 		'capability' => 'edit_theme_options'
 	) );
 
-	// Show Socials
-	bard_checkbox_control( 'page_footer', 'show_socials', esc_html__( 'Show Social Icons', 'bard' ), 'refresh', 1 );
-
 	// Logo Upload
-	bard_image_crop_control( 'page_footer', 'logo', esc_html__( 'Logo Upload', 'bard' ), 600, 350, 'refresh', 3 );
+	bard_image_crop_flex_control( 'page_footer', 'logo', esc_html__( 'Logo Upload', 'bard' ), 600, 350, 'refresh', 1 );
+
+	// Show Socials
+	bard_checkbox_control( 'page_footer', 'show_socials', esc_html__( 'Show Social Icons', 'bard' ), 'refresh', 3 );
+
+	// Show Scroll-Top Button
+	bard_checkbox_control( 'page_footer', 'show_scrolltop', esc_html__( 'Show Scroll-Top Button', 'bard' ), 'refresh', 5 );
 
 	$copyright_description = 'Enter <strong>$year</strong> to update the year automatically and <strong>$copy</strong> for the copyright symbol.<br><br>Example: $year Bard Theme $copy.';
 

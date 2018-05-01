@@ -12,17 +12,55 @@
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( val ) {
 			if ( 'blank' === val ) {
-				$( '.header-logo a, .site-description' ).css( 'color', $('.site-description').css('color') );
+				
+				var css = '\
+				.header-logo a,.site-description,\
+				.header-socials-icon {\
+					color: '+  $('.site-description').css('color') +' ;\
+				}\
+				.site-description:before,\
+				.site-description:after {\
+					background: '+  $('.site-description').css('color') +' ;\
+				}\
+				';
 				$( 'body' ).removeClass( 'title-tagline-shown' );
 				$( 'body' ).addClass( 'title-tagline-hidden' );
+			
 			} else {
-				$( '.header-logo a, .site-description' ).css( 'color', val );
+				
+				var css = '\
+				.header-logo a,.site-description,\
+				.header-socials-icon {\
+					color: '+  val +' ;\
+				}\
+				.site-description:before,\
+				.site-description:after {\
+					background: '+  val +' ;\
+				}\
+				';
 				$( 'body' ).removeClass( 'title-tagline-hidden' );
 				$( 'body' ).addClass( 'title-tagline-shown' );
+			
 			}
+
+			bardStyle( 'colors_header_text', css );
 		});
 	});
 
+	// Header Text Hover Color
+	bardLivePreview( 'colors_header_text_hover', function( val ) {
+
+		var css = '\
+		.header-logo a:hover,\
+		.header-socials-icon:hover {\
+			color: '+ val +' ;\
+		}';
+
+		bardStyle( 'colors_header_text_hover', css );
+
+	});
+
+	// Header Background Color
 	bardLivePreview( 'colors_header_bg', function( val ) {
 		$('.entry-header').css( 'background-color', val );
 	});
@@ -35,8 +73,8 @@
 			#page-content .post-author a,\
 			#page-content .post-share a,\
 		 	#page-content .bard-widget a,\
-			#page-content .related-posts h4 a,\
-			#page-content .author-description h4 a,\
+			#page-content .related-posts h5 a,\
+			#page-content .author-description h3 a,\
 			#page-content .blog-pagination a,\
 			#page-content .post-date,\
 			#page-content .post-author,\
@@ -45,41 +83,49 @@
 			#page-content .author-share a,\
 			#page-content .slider-title a,\
 			#page-content .slider-categories a,\
-			#page-content .slider-read-more a\
+			#page-content .slider-read-more a,\
+			#page-content .read-more a\
 		';
 
 		$( '#page-content a' ).not( selectors ).css( 'color', val );
 
 		var css = '\
-		.post-categories,\
+		#top-bar a:hover,\
+		#top-bar li.current-menu-item > a,\
+		#top-bar li.current-menu-ancestor > a,\
+		#top-bar .sub-menu li.current-menu-item > a,\
+		#top-bar .sub-menu li.current-menu-ancestor> a,\
 		#main-nav a:hover,\
 		#main-nav .svg-inline--fa:hover,\
 		#main-nav li.current-menu-item > a,\
 		#main-nav li.current-menu-ancestor > a,\
 		#main-nav .sub-menu li.current-menu-item > a,\
-		#main-nav .sub-menu li.current-menu-ancestor> a,\
-		#page-content .bard-widget.widget_text a,\
+		#main-nav .sub-menu li.current-menu-ancestor > a,\
+		.post-categories,\
 		#page-footer a:hover,\
+		#page-content .bard-widget.widget_text a,\
+		#page-content .rpwwt-widget a,\
+		.scrolltop,\
+		.required,\
 		.woocommerce .star-rating::before,\
 		.woocommerce .star-rating span::before,\
 		.woocommerce #page-content ul.products li.product .button,\
 		#page-content .woocommerce ul.products li.product .button,\
 		#page-content .woocommerce-MyAccount-navigation-link.is-active a,\
 		#page-content .woocommerce-MyAccount-navigation-link a:hover,\
-		.woocommerce #page-content nav.woocommerce-pagination ul li a.prev:hover,\
-		.woocommerce #page-content nav.woocommerce-pagination ul li a.next:hover {\
+		.woocommerce-message::before {\
 		color: '+ val +' ;\
 		}';
 
-
 		css += '\
+		.main-nav-sidebar:hover div span,\
 		.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y,\
+		.read-more a:after,\
 		#page-content .submit:hover,\
 		#page-content .blog-pagination.numeric a:hover,\
 		#page-content .blog-pagination.numeric span,\
-		#page-content .blog-pagination.load-more a:hover,\
-		#page-content .bard-subscribe-box input[type="submit"]:hover,\
-		#page-content .widget_wysija input[type="submit"]:hover,\
+		#page-content .bard-subscribe-box input[type="submit"],\
+		#page-content .widget_wysija input[type="submit"],\
 		#page-content .post-password-form input[type="submit"]:hover,\
 		#page-content .wpcf7 [type="submit"]:hover,\
 		p.demo_store,\
@@ -97,15 +143,18 @@
 		.woocommerce #page-content #respond input#submit:hover,\
 		.woocommerce #page-content .widget_price_filter .button:hover,\
 		.woocommerce #page-content .woocommerce-message .button:hover,\
-		.woocommerce-page #page-content .woocommerce-message .button:hover,\
-		.woocommerce #page-content nav.woocommerce-pagination ul li a:hover,\
-		.woocommerce #page-content nav.woocommerce-pagination ul li span.current {\
+		.woocommerce-page #page-content .woocommerce-message .button:hover {\
 			background-color: '+ val +';\
 		}';
 
 		css += '\
 		blockquote {\
 			border-color: '+ val +';\
+		}';
+
+		css += '\
+		.widget-title h4 {\
+			border-top-color: '+ val +';\
 		}';
 
 		css += '\
@@ -117,7 +166,7 @@
 		}';
 
 		css += '\
-		#page-content a:hover {\
+		.scrolltop:hover {\
 			color: '+ bardHex2Rgba( val, 0.8 ) +';\
 		}';	
 

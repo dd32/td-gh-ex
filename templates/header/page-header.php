@@ -1,6 +1,6 @@
 <?php if ( bard_options('header_image_label') === true ) : ?>
 
-	<div class="entry-header" data-parallax="<?php echo esc_attr(bard_options( 'header_image_parallax' )); ?>">
+	<div class="entry-header" data-parallax="<?php echo esc_attr(bard_options( 'header_image_parallax' )); ?>" data-image="<?php echo esc_attr(get_header_image()); ?>">
 		<div class="cv-outer">
 		<div class="cv-inner">
 
@@ -30,8 +30,11 @@
 				
 			</div>
 
-			<!-- Social Icons -->
-			<?php bard_social_media( 'header-socials', false ); ?>
+			<?php // Social Icons
+				if ( bard_options( 'title_tagline_show_socials' ) === true ) {
+					bard_social_media( 'header-socials', false );
+				}
+			?>
 
 		</div>
 		</div>

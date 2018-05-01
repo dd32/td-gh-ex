@@ -5,7 +5,7 @@ get_header();
 if ( is_home() ) {
 
 	// Featured Slider, Carousel
-	if ( bard_options( 'featured_slider_label' ) === true ) {
+	if ( bard_options( 'featured_slider_label' ) === true || bard_is_preview() ) {
 		get_template_part( 'templates/header/featured', 'slider' );
 	}
 

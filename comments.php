@@ -9,9 +9,9 @@ if ( post_password_required() ) {
 // if post has comments
 if ( have_comments() ) : ?>
 
-	<h2  class="comment-title">
+	<h3 class="comment-title">
 		<?php comments_number( esc_html__( 'No Comments', 'bard' ), esc_html__( 'One Comment', 'bard' ), esc_html__( '% Comments', 'bard' ) ); ?>
-	</h2>
+	</h3>
 	
 	<ul class="commentslist" >
 		<?php wp_list_comments( 'callback=bard_comments' ); ?>

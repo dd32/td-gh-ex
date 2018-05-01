@@ -210,8 +210,8 @@ function bard_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your sidebar.', 'bard' ),
 		'before_widget' => '<div id="%1$s" class="bard-widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<div class="widget-title"><h2>',
-		'after_title'   => '</h2></div>',
+		'before_title'  => '<div class="widget-title"><h4>',
+		'after_title'   => '</h4></div>',
 	) );
 
 	register_sidebar( array(
@@ -220,8 +220,8 @@ function bard_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your sidebar.', 'bard' ),
 		'before_widget' => '<div id="%1$s" class="bard-widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<div class="widget-title"><h2>',
-		'after_title'   => '</h2></div>',
+		'before_title'  => '<div class="widget-title"><h4>',
+		'after_title'   => '</h4></div>',
 	) );
 
 	register_sidebar( array(
@@ -230,8 +230,8 @@ function bard_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your alternative/fixed sidebar.', 'bard' ),
 		'before_widget' => '<div id="%1$s" class="bard-widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<div class="widget-title"><h2>',
-		'after_title'   => '</h2></div>',
+		'before_title'  => '<div class="alt-widget-title"><h4>',
+		'after_title'   => '</h4></div>',
 	) );
 
 	register_sidebar( array(
@@ -240,8 +240,8 @@ function bard_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your footer.', 'bard' ),
 		'before_widget' => '<div id="%1$s" class="bard-widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<div class="footer-widget-title"><h2>',
-		'after_title'   => '</h2></div>',
+		'before_title'  => '<div class="alt-widget-title"><h4>',
+		'after_title'   => '</h4></div>',
 	) );
 
 	register_sidebar( array(
@@ -250,11 +250,12 @@ function bard_widgets_init() {
 		'description'   => __( 'Add widget here to appear in your Footer Instagram Area.', 'bard' ),
 		'before_widget' => '<div id="%1$s" class="bard-instagram-widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<div class="instagram-title"><h2>',
-		'after_title'   => '</h2></div>',
+		'before_title'  => '<div class="instagram-title"><h4>',
+		'after_title'   => '</h4></div>',
 	) );
 }
 add_action( 'widgets_init', 'bard_widgets_init' );
+
 
 /*
 ** Custom Image Sizes
@@ -267,16 +268,37 @@ add_image_size( 'bard-single-navigation', 75, 75, true );
 
 
 /*
+**  Top Menu Fallback
+*/
+
+function bard_top_menu_fallback() {
+	if ( current_user_can( 'edit_theme_options' ) ) {
+		echo '<ul id="top-menu">';
+			echo '<li>';
+				echo '<a href="'. esc_url( admin_url('nav-menus.php') ) .'">'. esc_html__( 'Set up Menu', 'bard' ) .'</a>';
+			echo '</li>';
+		echo '</ul>';
+	}
+}
+
+
+/*
 **  Main Menu Fallback
 */
 
 function bard_main_menu_fallback() {
-	if ( current_user_can( 'edit_theme_options' ) ) {
+	if ( bard_is_preview() ) {
 		echo '<ul id="main-menu">';
-			echo '<li>';
-				echo '<a href="'. esc_url( home_url('/') .'wp-admin/nav-menus.php' ) .'">'. esc_html__( 'Set up Menu', 'bard' ) .'</a>';
-			echo '</li>';
+			bard_preview_navigation();
 		echo '</ul>';
+	} else {
+		if ( current_user_can( 'edit_theme_options' ) ) {
+			echo '<ul id="main-menu">';
+				echo '<li>';
+					echo '<a href="'. esc_url( home_url('/') .'wp-admin/nav-menus.php' ) .'">'. esc_html__( 'Set up Menu', 'bard' ) .'</a>';
+				echo '</li>';
+			echo '</ul>';
+		}
 	}
 }
 
@@ -564,7 +586,7 @@ if ( ! function_exists( 'bard_related_posts' ) ) {
 
 					<section>
 						<a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_post_thumbnail('bard-grid-thumbnail'); ?></a>
-						<h4><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h4>
+						<h5><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h5>
 						<span class="related-post-date"><?php echo esc_html( get_the_time( get_option('date_format') ) ); ?></span>
 					</section>
 
@@ -617,7 +639,7 @@ if ( ! function_exists( 'bard_comments' ) ) {
 		<li class="pingback" id="comment-<?php comment_ID(); ?>">
 			<article <?php comment_class('entry-comments'); ?> >
 				<div class="comment-content">
-					<h3 class="comment-author"><?php esc_html_e( 'Pingback:', 'bard' ); ?></h3>	
+					<h6 class="comment-author"><?php esc_html_e( 'Pingback:', 'bard' ); ?></h6>	
 					<div class="comment-meta">		
 						<a class="comment-date" href=" <?php echo esc_url( get_comment_link() ); ?> "><?php comment_date( get_option('date_format') ); esc_html_e( '&nbsp;at&nbsp;', 'bard' ); comment_time( get_option('time_format') ); ?></a>
 						<?php echo edit_comment_link( esc_html__('[Edit]', 'bard' ) ); ?>
@@ -638,7 +660,7 @@ if ( ! function_exists( 'bard_comments' ) ) {
 					<?php echo get_avatar( $comment, 65 ); ?>
 				</div>
 				<div class="comment-content">
-					<h3 class="comment-author"><?php comment_author_link(); ?></h3>
+					<h6 class="comment-author"><?php comment_author_link(); ?></h6>
 					<div class="comment-meta">		
 						<a class="comment-date" href=" <?php echo esc_url( get_comment_link() ); ?> "><?php comment_date( get_option('date_format') ); esc_html_e( '&nbsp;at&nbsp;', 'bard' ); comment_time( get_option('time_format') ); ?></a>
 			
@@ -715,7 +737,7 @@ function bard_woocommerce_output_content_wrapper() {
 
 	$layout = bard_options( 'general_content_width' ) === 'boxed' ? ' boxed-wrapper': '';
 
-	echo '<div class="main-content clear-fix'. esc_html( $layout ) .'">';
+	echo '<div class="main-content clear-fix'. esc_attr( $layout ) .'">';
 		echo '<div class="main-container">';
 
 }
@@ -757,23 +779,19 @@ if ( ! function_exists('bard_remove_wc_breadcrumbs') ) {
 }
 add_action( 'init', 'bard_remove_wc_breadcrumbs' );
 
-
-
 // Shop Per Page
 function bard_set_shop_post_per_page() {
 	return 9;
 }
 add_filter( 'loop_shop_per_page', 'bard_set_shop_post_per_page', 20 );
 
-
-
 // Pagination
-remove_action( 'woocommerce_pagination', 'woocommerce_pagination', 10 );
-
 function bard_woocommerce_pagination() {
 	get_template_part( 'templates/grid/blog', 'pagination' );
 }
-add_action( 'woocommerce_pagination', 'bard_woocommerce_pagination', 10 );
+add_action( 'woocommerce_after_shop_loop', 'bard_woocommerce_pagination', 10 );
+remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
+
 
 /*
 ** Incs: Theme Customizer
@@ -783,6 +801,7 @@ add_action( 'woocommerce_pagination', 'bard_woocommerce_pagination', 10 );
 require get_parent_theme_file_path( '/inc/customizer/customizer.php' );
 require get_parent_theme_file_path( '/inc/customizer/customizer-defaults.php' );
 require get_parent_theme_file_path( '/inc/customizer/dynamic-css.php' );
+require get_parent_theme_file_path( '/inc/preview/demo-preview.php' );
 
 // About Bard
 require get_parent_theme_file_path( '/inc/about/about-bard.php' );

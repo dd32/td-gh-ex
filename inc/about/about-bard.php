@@ -77,7 +77,6 @@ function bard_about_page_output() {
 
 			</div>
 
-
 		<?php elseif ( $active_tab == 'bard_tab_2' ) : ?>
 			
 			<div class="three-columns-wrap">
@@ -156,18 +155,6 @@ function bard_about_page_output() {
 						<?php esc_html_e( 'Stay always up to date, check for fixes, updates and some new feauters you should not miss.', 'bard' ); ?>
 						<hr>
 						<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/bard-free-changelog/?ref=bard-free-backend-about-changelog/'); ?>"><?php esc_html_e( 'See Changelog', 'bard' ); ?></a>
-					</p>
-				</div>
-
-				<div class="column-wdith-3">
-					<h3>
-						<span class="dashicons dashicons-smiley"></span>
-						<?php esc_html_e( 'Donation', 'bard' ); ?>
-					</h3>
-					<p>
-						<?php esc_html_e( 'Even a small sum can help us a lot with theme development. If the Bard theme is useful and our support is helpful, please don\'t hesitate to donate a little bit, at least buy us a Coffee or a Beer :)', 'bard' ); ?>
-						<hr>
-						<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/bard/bard-donate.html'); ?>"><?php esc_html_e( 'Donate with PayPal', 'bard' ); ?></a>
 					</p>
 				</div>
 

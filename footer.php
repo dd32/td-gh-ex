@@ -23,7 +23,7 @@
 				<div class="page-footer-inner <?php echo bard_options( 'general_footer_width' ) === 'contained' ? 'boxed-wrapper': ''; ?>">
 					
 					<!-- Footer Logo -->
-					<?php if ( bard_options( 'page_footer_logo' ) !== '' ) : ?>
+					<?php if ( bard_options( 'page_footer_logo' ) != '' ) : ?>
 					<div class="footer-logo">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr( bloginfo('name') ); ?>">
 							<img src="<?php echo esc_url( wp_get_attachment_url( bard_options( 'page_footer_logo' ) ) ); ?>" alt="<?php esc_attr( bloginfo('name') ); ?>">
@@ -54,11 +54,12 @@
 						</span>
 					</div>
 		
-					<!-- Scroll Top Button -->
+					<?php if ( bard_options('page_footer_show_scrolltop') === true ) : ?>
 					<span class="scrolltop">
 						<span class="icon-angle-up"></span>
 						<span><?php esc_html_e( 'Back to top', 'bard' ); ?></span>
 					</span>
+					<?php endif; ?>
 					
 				</div>
 

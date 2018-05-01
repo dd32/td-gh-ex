@@ -35,6 +35,10 @@ $css = '';
 	// Top Bar
 	$css .= '
 
+		#top-bar {
+		  background-color: #ffffff;
+		}
+
 		#top-bar a {
 		  color: #000000;
 		}
@@ -64,20 +68,38 @@ $css = '';
 			.header-socials-icon {
 				color: #111111;
 			}
+
+			.site-description:before,
+			.site-description:after {
+				background: #111111;
+			}
 		';	
 	} else {
 		$css .= '
 			.header-logo a,
 			.site-description,
 			.header-socials-icon {
-				color: #'. esc_attr ( $header_text_color ) .';
+				color: #'. esc_html( $header_text_color ) .';
+			}
+
+			.site-description:before,
+			.site-description:after {
+				background: #'. esc_html( $header_text_color ) .';
 			}
 		';			
 	}
 
+	// Header Text Hover Color
+	$css .= '
+		.header-logo a:hover,
+		.header-socials-icon:hover {
+			color: '. esc_html(bard_options( 'header_text_hover' )) .';
+		}
+	';
+
 	$css .= '
 		.entry-header {
-			background-color: '. bard_options( 'colors_header_bg' ) .';
+			background-color: '. esc_html(bard_options( 'colors_header_bg' )) .';
 		}
 	';
 	
@@ -95,8 +117,13 @@ $css = '';
 		}
 
 		.main-nav-sidebar div span,
-		.sidebar-alt-close-btn span {
+		.sidebar-alt-close-btn span,
+		.btn-tooltip {
 			background-color: #000000;
+		}
+
+		.btn-tooltip:before {
+			border-top-color: #000000;
 		}
 
 		#main-nav a:hover,
@@ -104,7 +131,7 @@ $css = '';
 		#main-nav li.current-menu-item > a,
 		#main-nav li.current-menu-ancestor > a,
 		#main-nav .sub-menu li.current-menu-item > a,
-		#main-nav .sub-menu li.current-menu-ancestor> a {
+		#main-nav .sub-menu li.current-menu-ancestor > a {
 			color: '. esc_html(bard_options( 'colors_content_accent' )) .';
 		}
 
@@ -142,18 +169,19 @@ $css = '';
 		.sidebar-alt,
 		.main-content,
 		.featured-slider-area,
+		#featured-links,
 		#page-content select,
 		#page-content input,
 		#page-content textarea {
 			background-color: '. esc_html(bard_options( 'colors_content_bg' )) .';
 		}
 
-		#featured-links .cv-inner {
-			border-color: rgba( 255,255,255,0.4 );
+		.featured-link .cv-inner {
+			border-color: '. esc_html(bard_hex2rgba( bard_options( 'colors_content_bg' ), 0.4 )) .';
 		}
 
-		#featured-link:hover .cv-inner {
-			border-color: rgba( 255,255,255,1 );
+		.featured-link:hover .cv-inner {
+			border-color: '. esc_html(bard_hex2rgba( bard_options( 'colors_content_bg' ), 0.8 )) .';
 		}
 
 		#featured-links h6 {
@@ -180,24 +208,32 @@ $css = '';
 		#page-content h4,
 		#page-content h5,
 		#page-content h6,
-		#page-content .author-description h4 a,
-		#page-content .related-posts h4 a,
+		#page-content .post-author a,
+		#page-content .author-description h3 a,
+		#page-content .related-posts h5 a,
 		#page-content .blog-pagination .previous-page a,
       	#page-content .blog-pagination .next-page a,
       	blockquote,
-		#page-content .post-share a {
+		#page-content .post-share a,
+		#page-content .read-more a {
 			color: #030303;
 		}
 
+		.widget_wysija .widget-title h4:after {
+			background-color: #030303;
+		}
+
+		#page-content .read-more a:hover,
 		#page-content h1 a:hover {
-			color: '. esc_html(bard_hex2rgba( '#030303', 0.75 )).';
+			color: '. esc_html( bard_hex2rgba( '#030303', 0.75 ) ) .';
 		}
 	
 		/* Meta */
-		#page-content .post-date,
-		#page-content .post-comments,
 		#page-content .post-author,
-		#page-content [data-layout*="list"] .post-author a,
+		#page-content .post-comments,
+		#page-content .post-date,
+		#page-content .post-meta,
+		#page-content .post-meta a,
 		#page-content .related-post-date,
 		#page-content .comment-meta a,
 		#page-content .author-share a,
@@ -211,7 +247,9 @@ $css = '';
 		.rpwwt-post-date,
 		.rpwwt-post-comments-number,
 		.copyright-info,
-		#page-footer .copyright-info a {
+		#page-footer .copyright-info a,
+		.single-navigation span,
+		.comment-notes {
 			color: #a1a1a1;
 		}
 
@@ -243,7 +281,8 @@ $css = '';
 			background: '. esc_html(bard_options( 'colors_content_accent' )) .';
 		}
 
-		#page-content a:hover {
+		#page-content a:hover,
+		.scrolltop:hover {
 			color: '. esc_html(bard_hex2rgba( bard_options( 'colors_content_accent' ), 0.8 )) .';
 		}
 
@@ -251,7 +290,7 @@ $css = '';
 			border-color: '. esc_html(bard_options( 'colors_content_accent' )) .';
 		}
 
-		.widget-title h2 {
+		.widget-title h4 {
 		  border-top-color: '. esc_html(bard_options( 'colors_content_accent' )) .';
 		}
 
@@ -281,8 +320,6 @@ $css = '';
 		#page-content select,
 		#page-content input,
 		#page-content textarea,
-		.widget-title h2:before,
-		.widget-title h2:after,
 		.post-tags a,
 		.gallery-caption,
 		.wp-caption-text,
@@ -294,6 +331,8 @@ $css = '';
 			border-color: #e8e8e8;
 		}
 
+		#main-menu > li:after,
+		.border-divider,
 		hr {
 			background-color: #e8e8e8;
 		}
@@ -303,7 +342,6 @@ $css = '';
 		.widget_search #searchsubmit,
 		#page-content .submit,
 		#page-content .blog-pagination.numeric a,
-		#page-content .blog-pagination.load-more a,
 		#page-content .post-password-form input[type="submit"],
 		#page-content .wpcf7 [type="submit"] {
 			color: #ffffff;
@@ -312,7 +350,6 @@ $css = '';
 		#page-content .submit:hover,
 		#page-content .blog-pagination.numeric a:hover,
 		#page-content .blog-pagination.numeric span,
-		#page-content .blog-pagination.load-more a:hover,
 		#page-content .bard-subscribe-box input[type="submit"],
 		#page-content .widget_wysija input[type="submit"],
 		#page-content .post-password-form input[type="submit"]:hover,
@@ -342,24 +379,31 @@ $css = '';
 			background: '. esc_html(bard_hex2rgba( '#ffffff', 0.95 )) .';
 		}
 
-		#featured-slider .slick-active {
+		#featured-slider .prev-arrow,
+		#featured-slider .next-arrow,
+		#featured-slider .slick-active,
+		.slider-title:after {
 			background: #ffffff;
 		}
 	';
 
 	// Footer
-	$css .= '
+	$css .= '	
+		.footer-socials,
+		.footer-widgets {
+			background: #ffffff;
+		}
+
+		.instagram-title {
+			background: '. esc_html(bard_hex2rgba( '#ffffff', 0.85 )) .';
+		}
+
 		#page-footer,
 		#page-footer a,
 		#page-footer select,
 		#page-footer input,
-		#page-footer textarea,
-		.scrolltop:hover {
+		#page-footer textarea {
 			color: #222222;
-		}
-
-		#page-footer .footer-socials a {
-			color: #000000;
 		}
 
 		#page-footer #s::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -381,22 +425,13 @@ $css = '';
 		#page-footer h3,
 		#page-footer h4,
 		#page-footer h5,
-		#page-footer h6 {
+		#page-footer h6,
+		#page-footer .footer-socials a  {
 			color: #111111;
 		}
 
-		#page-footer a:hover,
-		.footer-socials a:hover span {
+		#page-footer a:hover {
 			color: '. esc_html(bard_options( 'colors_content_accent' )) .';
-		}
-
-		.footer-socials a:hover .footer-socials-icon {
-			border-color: '. esc_html(bard_options( 'colors_content_accent' )) .';
-		}
-
-		.footer-socials a:hover .footer-socials-icon {
-			background: '. esc_html(bard_options( 'colors_content_accent' )) .';
-			color: #ffffff;
 		}
 
 		/* Border */
@@ -409,12 +444,19 @@ $css = '';
 		#page-footer select,
 		#page-footer input,
 		#page-footer textarea,
-		#page-footer .widget-title h2:before,
-		#page-footer .widget-title h2:after,
-		.footer-widget-title,
+		#page-footer .widget-title h4:before,
+		#page-footer .widget-title h4:after,
+		.alt-widget-title,
 		.footer-widgets {
 			border-color: #e8e8e8;
 		}
+		
+		.sticky,
+		.footer-copyright,
+		.bard-widget.widget_wysija {
+			background-color: #f6f6f6;
+		}
+
 	';
 
 	// Preloader
@@ -464,7 +506,7 @@ $css = '';
 		';
 
 	// Left or Right
-	} else if ( is_active_sidebar( 'sidebar-left' ) || is_active_sidebar( 'sidebar-right' ) ) {
+	} else if ( is_active_sidebar( 'sidebar-left' ) || is_active_sidebar( 'sidebar-right' ) || bard_is_preview() ) {
 		$css .= '
 			.main-container {
 				width: calc(100% - '. ( (int)bard_options( 'general_sidebar_width' ) + $blog_page_gutter_horz ) .'px);
@@ -500,7 +542,7 @@ $css = '';
 			[data-layout*="list"] .blog-grid > li,
 			[data-layout*="list"] .blog-grid > li {
 				width: 100%;
-				padding-bottom: 39px;
+				padding-bottom: 35px;
 			}
 
 			[data-layout*="list"] .blog-grid .has-post-thumbnail .post-media {
@@ -513,7 +555,7 @@ $css = '';
 				width: calc(100% - 300px);
 				width: -webkit-calc(100% - 300px);
 				float: left;
-				padding-left: 37px;
+				padding-left: 32px;
 			}
 
 			[data-layout*="list"] .blog-grid .post-header, 
@@ -531,7 +573,7 @@ $css = '';
 				[data-layout*="list"] .blog-grid .post-content-wrap {
 					float: right;
 					padding-left: 0;
-					padding-right: 37px;
+					padding-right: 32px;
 
 				}
 
@@ -546,13 +588,31 @@ $css = '';
 
 
 /*
+** Top Bar =====
+*/
+
+	if ( bard_options( 'main_nav_label' ) === true || ! has_nav_menu('top') || bard_options( 'top_bar_show_menu' ) === false ) {
+		$css .= "
+		@media screen and ( max-width: 979px ) {
+			.top-bar-socials {
+				float: none !important;
+			}
+
+			.top-bar-socials a {
+				line-height: 40px !important;
+			}
+		}";
+	}
+
+
+/*
 ** Header Image =====
 */
 	// Height / Background
 	$css .= '
 		.entry-header {
 			height: 350px;
-			background-image:url('. esc_url( get_header_image() ) .');
+			background-image: url('. esc_url( get_header_image() ) .');
 			background-size: '. esc_html(bard_options( 'header_image_bg_image_size' )) .';
 
 		}
@@ -573,6 +633,16 @@ $css = '';
 			max-width: '. (int)bard_options( 'title_tagline_logo_width' ) .'px;
 		}
 	';
+
+	// Parallax
+	if ( bard_options( 'header_image_parallax' ) === true ) {
+		$css .= '
+			.entry-header {
+				background-color: transparent !important;
+				background-image: none;
+			}
+		';	
+	}
 
 
 /*
@@ -620,18 +690,25 @@ $css = '';
 		';
 	} else {
 		$css .= '					
-			.main-nav-icons {
-			 float: right;
-			 margin-left: 15px;
+			.main-nav-buttons {
+			 float: left;
+			 margin-right: 20px;
 			}
 
-			.main-nav-buttons {
+			.main-nav-icons {
 			 float: right;
-			 margin-left: 15px;
+			 margin-left: 20px;
 			}
 		';
 	}
 
+	if ( bard_options( 'main_nav_show_sidebar' ) === false && bard_options( 'main_nav_show_random_btn' ) === false ) {
+		$css .= '
+			#main-menu {
+				padding-left: 0 !important;
+			}
+		';
+	}
 
 
 /*
@@ -714,11 +791,25 @@ $css = '';
 		}
 
 		@media screen and ( min-width: 979px ) {
+
+			.blog-grid > .blog-list-style:nth-last-of-type(-n+1) {
+				margin-bottom: 0;
+			}
+
 			.blog-grid > .blog-grid-style:nth-last-of-type(-n+2) {
 			 	margin-bottom: 0;
 			}
+			
 		}
+
+		@media screen and ( max-width: 640px ) {
+			.blog-grid > li:nth-last-of-type(-n+1) {
+				margin-bottom: 0;
+			}
+		}
+
 	';
+
 
 	if ( is_home() && bard_full_width_post() ) {
 		$css .= '
@@ -733,6 +824,32 @@ $css = '';
 			}
 		';
 	}
+
+
+	if ( is_rtl() ) {
+		
+		$css .= '
+		.blog-grid > li {
+			margin-right: 0;
+			margin-left: 32px;
+		}';
+
+		if ( is_home() && bard_full_width_post() ) {
+			$css .= '
+				.blog-grid > li:nth-of-type(2n+1) {
+					margin-left: 0;
+				}
+			';
+		} else {
+			$css .= '
+				.blog-grid > li:nth-of-type(2n+2) {
+					margin-left: 0;
+				}
+			';
+		}
+
+	}
+
 
 	if ( is_active_sidebar( 'sidebar-left' ) && is_active_sidebar( 'sidebar-right' ) ) {
 		$css .= '
@@ -749,7 +866,7 @@ $css = '';
 				padding-right: ' . $blog_page_gutter_horz . 'px;
 			}
 		';
-	} else if ( is_active_sidebar( 'sidebar-right' ) ) {
+	} else if ( is_active_sidebar( 'sidebar-right' )  || bard_is_preview() ) {
 		$css .= '
 			.sidebar-right {
 				padding-left: ' . $blog_page_gutter_horz . 'px;
@@ -764,7 +881,7 @@ $css = '';
 			article.page .post-content > p:first-child:first-letter,
 			li.blog-classic-style .post-content > p:first-child:first-letter {
 			  font-family: "Montserrat";
-			  font-weight: 400;
+			  font-weight: normal;
 			  float: left;
 			  margin: 6px 9px 0 -1px;
 			  font-size: 81px;
@@ -775,7 +892,9 @@ $css = '';
 			}
 
 			@-moz-document url-prefix() {
-				.post-content > p:first-child:first-letter {
+				body.single .post-content > p:first-child:first-letter,
+				article.page .post-content > p:first-child:first-letter,
+				li.blog-classic-style .post-content > p:first-child:first-letter {
 				    margin-top: 10px !important;
 				}
 			}
@@ -894,7 +1013,8 @@ $css = '';
 		.woocommerce #page-content ul.products li.product .button,
 		#page-content .woocommerce ul.products li.product .button,
 		#page-content .woocommerce-MyAccount-navigation-link.is-active a,
-		#page-content .woocommerce-MyAccount-navigation-link a:hover {
+		#page-content .woocommerce-MyAccount-navigation-link a:hover,
+		.woocommerce-message::before {
 		   color: '. esc_html(bard_options( 'colors_content_accent' )) .';
 		}
 	';
@@ -960,9 +1080,7 @@ $css = '';
 		.woocommerce #page-content #respond input#submit,
 		.woocommerce #page-content .widget_price_filter .button,
 		.woocommerce #page-content .woocommerce-message .button,
-		.woocommerce-page #page-content .woocommerce-message .button,
-		.woocommerce #page-content nav.woocommerce-pagination ul li a,
-		.woocommerce #page-content nav.woocommerce-pagination ul li span {
+		.woocommerce-page #page-content .woocommerce-message .button {
 			color: #ffffff;
 			background-color: #333333;
 		}
@@ -979,32 +1097,11 @@ $css = '';
 		.woocommerce #page-content #respond input#submit:hover,
 		.woocommerce #page-content .widget_price_filter .button:hover,
 		.woocommerce #page-content .woocommerce-message .button:hover,
-		.woocommerce-page #page-content .woocommerce-message .button:hover,
-		.woocommerce #page-content nav.woocommerce-pagination ul li a:hover,
-		.woocommerce #page-content nav.woocommerce-pagination ul li span.current {
+		.woocommerce-page #page-content .woocommerce-message .button:hover {
 			color: #ffffff;
 			background-color: '. esc_html(bard_options( 'colors_content_accent' )) .';
 		}
 
-		.woocommerce #page-content nav.woocommerce-pagination ul li a.prev,
-		.woocommerce #page-content nav.woocommerce-pagination ul li a.next {
-			color: #333333;
-		}
-
-		.woocommerce #page-content nav.woocommerce-pagination ul li a.prev:hover,
-		.woocommerce #page-content nav.woocommerce-pagination ul li a.next:hover {
-			color: '. esc_html(bard_options( 'colors_content_accent' )) .';
-		}
-
-		.woocommerce #page-content nav.woocommerce-pagination ul li a.prev:after,
-		.woocommerce #page-content nav.woocommerce-pagination ul li a.next:after {
-			color: #ffffff;
-		}
-
-		.woocommerce #page-content nav.woocommerce-pagination ul li a.prev:hover:after,
-		.woocommerce #page-content nav.woocommerce-pagination ul li a.next:hover:after {
-			color: #ffffff;
-		}
 	';
 
 

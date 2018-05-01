@@ -55,9 +55,11 @@
 		<?php endif; ?>
 
 		<div class="read-more">
-			<a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e( 'read more','bard' ); ?></a>
+			<a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e( 'Read More','bard' ); ?></a>
 		</div>
 		
 	</div>
+
+	<?php bard_related_posts( esc_html__( 'You May Also Like', 'bard' ), bard_options('blog_page_related_orderby') ); ?>
 
 </article>

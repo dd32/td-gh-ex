@@ -36,7 +36,7 @@
     display: inline-block;
   }
 
-  .main-nav-sidebar {
+  .main-nav-buttons {
     position: absolute;
     top: 0px;
     left: 30px;
@@ -67,11 +67,12 @@
   .sidebar-right {
     width: 100% !important;
     padding: 0 !important;
+    margin-top: 40px;
   }
 
   .sidebar-left-wrap,
   .sidebar-right-wrap,
-  .footer-widgets .ashe-widget {
+  .footer-widgets .bard-widget {
     float: none !important;
     width: 65% !important;
     margin-left: auto !important;
@@ -82,8 +83,12 @@
     padding: 0 !important;
   }
 
-  #featured-slider .slick-arrow {
-    display: none !important;
+  .footer-socials a {
+    margin-right: 10px;
+  }
+
+  .footer-socials a span:last-child {
+    display: none;
   }
 
 }
@@ -97,8 +102,8 @@
     height: 360px;
   }
 
-  .slider-content,
-  .slider-read-more {
+  #featured-slider .slick-arrow,
+  .slider-content {
     display: none !important;
   }
 
@@ -131,9 +136,23 @@
     width: 100% !important;
   }
 
-  .scrolltop {
-    right: 30px;
-    bottom: 60px;
+  .previous-post > a,
+  .next-post > a {
+    display: none;
+  }
+
+  .comment-avatar {
+    display: none;
+  }
+
+  .comments-area .children {
+    margin-left: 15px;
+  }
+
+  .comment-form-author,
+  .comment-form-email,
+  .comment-form-url {
+    width: 100%;
   }
 
 }
@@ -147,14 +166,19 @@
     height: 330px;
   }
 
-  .related-posts {
-    display: none !important;
+  .slider-dots {
+    bottom: 14px;
+  }
+
+  .related-posts section {
+    width: 100%;
+    margin: 0 0 25px 0;
   }
 
   .sidebar-left-wrap,
   .sidebar-right-wrap,
   .related-posts section img,
-  .footer-widgets .ashe-widget {
+  .footer-widgets .bard-widget {
     width: 100% !important;
   }
 
@@ -253,19 +277,17 @@
 
   .slider-item-bg,
   #featured-slider.boxed-wrapper .slider-item-bg {
-    height: 260px;
-  }
-
-  #featured-slider .prev-arrow,
-  #featured-slider .next-arrow,
-  .single-navigation {
-    display: none !important;
+    height: 280px;
   }
 
   .slider-title {
     font-size: 28px;
-    line-height: 30px;
+    line-height: 38px;
     margin-bottom: 18px;
+  }
+
+  .slider-title:after {
+    display: none;
   }
 
   #featured-links h6 {
@@ -280,7 +302,7 @@
     line-height: 38px !important;
   }
 
-  .main-nav-sidebar {
+  .main-nav-buttons {
     left: 20px !important;
   }
   
@@ -292,6 +314,17 @@
     display: block;
     float: none;
     margin: 0;
+  }
+
+  .single-navigation .previous-post,
+  .single-navigation .next-post {
+    width: 100%;
+  }
+
+  .single-navigation .previous-post > div,
+  .single-navigation .next-post > div {
+    float: none;
+    text-align: center;
   }
 
 }

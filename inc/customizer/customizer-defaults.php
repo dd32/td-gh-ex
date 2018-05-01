@@ -4,6 +4,7 @@ function bard_options( $control ) {
 
 	$bard_defaults = array(
 		'colors_content_accent' => '#00a9ff',
+		'header_text_hover' => '#111111',
 		'colors_content_bg' => '#ffffff',
 		'colors_header_bg' => '#ffffff',
 		'general_sidebar_width' => '270',
@@ -20,6 +21,7 @@ function bard_options( $control ) {
 		'header_image_bg_image_size' => 'cover',
 		'header_image_parallax' => false,
 		'title_tagline_logo_width' => '500',
+		'title_tagline_show_socials' => true,
 		'main_nav_label' => true,
 		'main_nav_align' => 'center',
 		'main_nav_show_random_btn' => true,
@@ -50,7 +52,7 @@ function bard_options( $control ) {
 		'blog_page_show_comments' => true,
 		'blog_page_show_dropcaps' => false,
 		'blog_page_show_author' => true,
-		'blog_page_related_orderby' => 'related',
+		'blog_page_related_orderby' => 'none',
 		'single_page_show_categories' => true,
 		'single_page_show_date' => true,
 		'single_page_show_author' => true,
@@ -75,6 +77,7 @@ function bard_options( $control ) {
 		'page_footer_show_socials' => false,
 		'page_footer_logo' => '',
 		'page_footer_copyright' => '',
+		'page_footer_show_scrolltop' => true,
 		'preloader_label' => false
 	);
 
