@@ -3,6 +3,18 @@
  * Theme.al
  */
 
+( function( $ ) {
+    //---- Fix body padding related to navbar ----
+    function fixBodyPadding(){
+        jQuery('body').css('paddingTop',jQuery('#navbar').height());
+    }
+    $( window ).resize(function() {
+        fixBodyPadding();
+    });
+    $( window ).trigger('resize');
+    // -------------------------------------------
+} )( jQuery );
+
 jQuery(document).ready(function( $ ) {
 
   // - initialize Bootstrap tooltips and popovers

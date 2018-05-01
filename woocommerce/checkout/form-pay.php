@@ -13,7 +13,7 @@
  * @see      https://docs.woocommerce.com/document/template-structure/
  * @author   WooThemes
  * @package  WooCommerce/Templates
- * @version  2.5.0
+ * @version  3.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -26,13 +26,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<table class="shop_table">
 		<thead>
 			<tr>
-				<th class="product-name"><?php _e( 'Product', 'basicstore' ); ?></th>
-				<th class="product-quantity"><?php _e( 'Qty', 'basicstore' ); ?></th>
-				<th class="product-total"><?php _e( 'Totals', 'basicstore' ); ?></th>
+				<th class="product-name"><?php esc_html_e( 'Product', 'basicstore' ); ?></th>
+				<th class="product-quantity"><?php esc_html_e( 'Qty', 'basicstore' ); ?></th>
+				<th class="product-total"><?php esc_html_e( 'Totals', 'basicstore' ); ?></th>
 			</tr>
 		</thead>
 		<tbody>
-			<?php if ( sizeof( $order->get_items() ) > 0 ) : ?>
+			<?php if ( count( $order->get_items() ) > 0 ) : ?>
 				<?php foreach ( $order->get_items() as $item_id => $item ) : ?>
 					<?php
 						if ( ! apply_filters( 'woocommerce_order_item_visible', true, $item ) ) {
@@ -42,17 +42,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_order_item_class', 'order_item', $item, $order ) ); ?>">
 						<td class="product-name">
 							<?php
-								echo apply_filters( 'woocommerce_order_item_name', esc_html( $item->get_name() ), $item, false );
+								echo apply_filters( 'woocommerce_order_item_name', esc_html( $item->get_name() ), $item, false ); // @codingStandardsIgnoreLine
 
-								do_action( 'woocommerce_order_item_meta_start', $item_id, $item, $order );
+								do_action( 'woocommerce_order_item_meta_start', $item_id, $item, $order, false );
 
 								wc_display_item_meta( $item );
 
-								do_action( 'woocommerce_order_item_meta_end', $item_id, $item, $order );
+								do_action( 'woocommerce_order_item_meta_end', $item_id, $item, $order, false );
 							?>
 						</td>
-						<td class="product-quantity"><?php echo apply_filters( 'woocommerce_order_item_quantity_html', ' <strong class="product-quantity">' . sprintf( '&times; %s', esc_html( $item->get_quantity() ) ) . '</strong>', $item ); ?></td>
-						<td class="product-subtotal"><?php echo $order->get_formatted_line_subtotal( $item ); ?></td>
+						<td class="product-quantity"><?php echo apply_filters( 'woocommerce_order_item_quantity_html', ' <strong class="product-quantity">' . sprintf( '&times; %s', esc_html( $item->get_quantity() ) ) . '</strong>', $item ); ?></td><?php // @codingStandardsIgnoreLine ?>
+						<td class="product-subtotal"><?php echo $order->get_formatted_line_subtotal( $item ); ?></td><?php // @codingStandardsIgnoreLine ?>
 					</tr>
 				<?php endforeach; ?>
 			<?php endif; ?>

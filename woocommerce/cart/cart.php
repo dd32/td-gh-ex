@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.1.0
+ * @version 3.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -55,7 +55,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 							<?php
 								echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 									'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
-									esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
+									esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 									__( 'Remove this item', 'basicstore' ),
 									esc_attr( $product_id ),
 									esc_attr( $_product->get_sku() )
@@ -84,7 +84,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 								}
 
 								// Meta data
-								echo WC()->cart->get_item_data( $cart_item );
+								echo wc_get_formatted_cart_item_data( $cart_item );
 
 								// Backorder notification
 								if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
@@ -134,7 +134,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 					<?php if ( wc_coupons_enabled() ) { ?>
 						<div class="coupon">
-							<label for="coupon_code"><?php _e( 'Coupon:', 'basicstore' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'basicstore' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'basicstore' ); ?>" />
+							<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'basicstore' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'basicstore' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'basicstore' ); ?>" />
 							<?php do_action( 'woocommerce_cart_coupon' ); ?>
 						</div>
 					<?php } ?>
