@@ -2,7 +2,7 @@
 Contributors: VelaThemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.0-trunk
-Version: 1.0.3
+Version: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, custom-background, custom-header, custom-menu, theme-options, right-sidebar, translation-ready, editor-style, featured-images, threaded-comments, rtl-language-support, custom-logo, featured-image-header, footer-widgets
@@ -16,7 +16,7 @@ For more information about AStore please go to https://velathemes.com/astore-the
 == Installation ==
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in Twenty Seventeen in the search form and press the 'Enter' key on your keyboard.
+2. Type AStore in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
 4. Go to https://velathemes.com/astore-documentation/ for a guide on how to customize this theme.
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
@@ -64,15 +64,15 @@ fba3.jpg in screenshot.jpg, Copyright Flaunter .com
 License: https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://unsplash.com/photos/WcXxxQYp_aM
 
-FEATURED PRODUCTS images in screenshot.jpg, Copyright WooCommerce
+"FEATURED PRODUCTS" images in screenshot.jpg, Copyright WooCommerce
 License: GPL
 Source: https://woocommerce.com/
 
 
 == Changelog ==
 
-= 1.0.3 =
-* Released: April 28, 2018
+= 1.0.5 =
+* Released: May 2, 2018
   Fixed escaping issues
   Fixed content creation issue
   Fixed licensing issues
