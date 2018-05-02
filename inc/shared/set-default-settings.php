@@ -116,7 +116,10 @@ function benjamin_set_default_menu($args = array())
 function benjamin_default_header_order()
 {
     $arr = array(
-
+        (object) array(
+            'name' => 'banner',
+            'label' => __('Banner', 'benjamin')
+        ),
         (object) array (
             'name' => 'navbar',
             'label' => __('Navbar', 'benjamin')
@@ -126,15 +129,6 @@ function benjamin_default_header_order()
             'label' => __('Hero', 'benjamin')
         ),
     );
-
-    $banner = (object) array(
-        'name' => 'banner',
-        'label' => __('Banner', 'benjamin')
-    );
-
-    if (benjamin_is_dot_gov()) {
-        array_unshift($arr, $banner);
-    }
 
     return $arr;
 }

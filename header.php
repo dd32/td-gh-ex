@@ -18,8 +18,7 @@
 
 
 <?php
-    $pf_include = json_decode(POST_FORMATS);
-    benjamin_the_header($pf_include);
+    benjamin_the_header();
 ?>
 
 
