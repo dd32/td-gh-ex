@@ -153,7 +153,8 @@ li.blog-classic-style .post-content > p:first-child:first-letter {
 	margin-right: 0;
 }
 
-.post-comments {
+.blog-classic-style .post-comments,
+.single .post-comments {
 	float: left;
 }
 

@@ -786,8 +786,11 @@ function bard_customize_register( $wp_customize ) {
 	bard_checkbox_control( 'single_page', 'show_date', esc_html__( 'Show Date', 'bard' ), 'refresh', 7 );
 
 	// Show Comments
-	bard_checkbox_control( 'single_page', 'show_comments', esc_html__( 'Show Comments', 'bard' ), 'refresh', 13 );
+	bard_checkbox_control( 'single_page', 'show_comments', esc_html__( 'Show Comments', 'bard' ), 'refresh', 10 );
 
+	// Show Drop Caps
+	bard_checkbox_control( 'single_page', 'show_dropcaps', esc_html__( 'Show Drop Caps', 'bard-pro' ), 'refresh', 13 );
+	
 	// Show Author
 	bard_checkbox_control( 'single_page', 'show_author', esc_html__( 'Show Author', 'bard' ), 'refresh', 15 );
 

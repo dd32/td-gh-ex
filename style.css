@@ -4,7 +4,7 @@ Theme URI: https://wp-royal.com/themes/item-bard-free/
 Author: Royal Flush
 Author URI: http://wp-royal.com/
 Description: Personal and Multi-Author Free WordPress Blog Theme.  Perfect for personal, lifestyle, food, travel, fashion, corporate, photography and any other kind of amazing blogs.  Well documented and very easy to use even for WordPress beginners. Clean and Modern Responsive design will perfectly showcase your content on any device. You just need to write and be awesome!
-Version: 1.0
+Version: 1.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: bard
@@ -764,6 +764,7 @@ sup {
 .site-description {
   position: relative;
   display: inline-block;
+  font-family: "Open Sans";
   margin-bottom: 0;
 }
 
@@ -1525,6 +1526,12 @@ sup {
   width: 100%;
   height: 100%;
   z-index: 10;
+  transition: background-color 0.3s ease 0s;
+  -webkit-transition: background-color 0.3s ease 0s;
+}
+
+.post-media > a:hover {
+  background-color: rgba(255,255,255, 0.1);
 }
 
 .post-header {
@@ -1577,11 +1584,11 @@ sup {
   display: block;
   height: 1px;
   max-width: 45px;
-  margin: 0 auto 10px;
+  margin: 0 auto;
 }
 
 .post-meta {
-  margin: 0 2px;
+  margin: 10px 2px 0;
 }
 
 .post-meta span.meta-sep:last-child {
@@ -1679,8 +1686,12 @@ sup {
 }
 
 .post-comments {
-  float: right;
   font-style: italic;
+}
+
+.blog-classic-style .post-comments,
+.single .post-comments {
+  float: right;
 }
 
 .no-result-found {
@@ -1737,10 +1748,6 @@ sup {
   font-size: inherit;
   line-height: inherit;
   letter-spacing: inherit;
-}
-
-[data-layout*="list"] .post-comments {
-  float: none;
 }
 
 [data-layout*="list"] .post-media {
@@ -2571,7 +2578,7 @@ sup {
 
 .widget_wysija .widget-title h4 {
   border: 0;
-  line-height: 1;
+  line-height: 1.6;
 }
 
 .widget_wysija .widget-title h4:before {

@@ -111,6 +111,9 @@ function bard_about_page_output() {
 				// Facebook Widget
 				bard_recommended_plugin( 'facebook-pagelike-widget', 'facebook_widget', esc_html__( 'Facebook Widget', 'bard' ), esc_html__( 'This widget adds a Simple Facebook Page Like Widget into your WordPress website sidebar within few minutes.', 'bard' ) );
 
+				// Simple Social Icons
+				bard_recommended_plugin( 'simple-social-icons', 'simple-social-icons', esc_html__( 'Simple Social Icons', 'bard' ), esc_html__( 'This plugin allows you to insert social icons in any widget area.', 'bard' ) );
+
 				?>
 
 

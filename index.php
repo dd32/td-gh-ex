@@ -48,7 +48,7 @@ if ( is_home() ) {
 		
 		// Blog Feed Wrapper
 		if ( is_home() && $wp_query->current_post == 0 && bard_full_width_post() ) {
-			get_template_part( 'templates/grid/blog', 'classic' );
+			get_template_part( 'templates/grid/blog', 'full' );
 		} else if ( strpos( bard_options( 'general_home_layout' ), 'list' ) === 0 ) {
 			get_template_part( 'templates/grid/blog', 'list' );
 		} else {

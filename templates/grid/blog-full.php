@@ -68,7 +68,7 @@
 		<?php endif; ?>
 
 		<?php
-		if ( bard_options( 'blog_page_show_comments' ) === true ) {
+		if ( bard_options( 'single_page_show_comments' ) === true ) {
 			comments_popup_link( esc_html__( 'No Comments', 'bard' ), esc_html__( '1 Comment', 'bard' ), '% '. esc_html__( 'Comments', 'bard' ), 'post-comments');
 		}
 		?>

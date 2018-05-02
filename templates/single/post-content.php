@@ -27,9 +27,11 @@ if ( have_posts() ) :
 		
 		<span class="border-divider"></span>
 
-		<?php if ( bard_options( 'single_page_show_date' ) === true ) : ?>
-		<span class="post-date"><?php the_time( get_option( 'date_format' ) ); ?></span>	
-		<?php endif; ?>
+		<div class="post-meta clear-fix">
+			<?php if ( bard_options( 'single_page_show_date' ) === true ) : ?>
+			<span class="post-date"><?php the_time( get_option( 'date_format' ) ); ?></span>
+			<?php endif; ?>
+		</span>
 		
 	</header>
 
