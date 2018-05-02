@@ -30,6 +30,7 @@ function atlast_business_setup()
     add_image_size('atlast-business-front-team', 200, 200, true);
     add_image_size('atlast-business-front-projects', 310, 220, true);
     add_image_size('atlast-business-front-blog', 310, 275, true);
+    add_image_size('atlast-business-front-testimonial', 70, 70, true);
 
     add_theme_support('woocommerce');
     global $content_width;

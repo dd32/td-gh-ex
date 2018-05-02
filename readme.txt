@@ -2,7 +2,7 @@
 Contributors: ArchimidisM
 Requires at least: WordPress 4.5.1
 Tested up to: WordPress 4.9.5
-Version: 1.4.0
+Version: 1.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: theme-options,full-width-template,two-columns, custom-header, custom-background,custom-logo, custom-menu,flexible-header,translation-ready, featured-images
@@ -188,3 +188,6 @@ Removed unnecessary files
 - A bit major update
 - Added a slider option with 3 slides
 - We added the Poppins font for the slider via the native customizer.
+
+= Version 1.4.1 =
+- Added testimonials section with 4 testimonials
