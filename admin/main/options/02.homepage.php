@@ -175,9 +175,9 @@ function alante_thinkup_input_sliderhome() {
 
 // Get theme options values.
 $thinkup_homepage_sliderswitch       = alante_thinkup_var ( 'thinkup_homepage_sliderswitch' );
-$thinkup_homepage_sliderimage1_image = alante_thinkup_var ( 'thinkup_homepage_sliderimage1_image', 'url' );
-$thinkup_homepage_sliderimage2_image = alante_thinkup_var ( 'thinkup_homepage_sliderimage2_image', 'url' );
-$thinkup_homepage_sliderimage3_image = alante_thinkup_var ( 'thinkup_homepage_sliderimage3_image', 'url' );
+$thinkup_homepage_sliderimage1_image = alante_thinkup_var ( 'thinkup_homepage_sliderimage1_image' );
+$thinkup_homepage_sliderimage2_image = alante_thinkup_var ( 'thinkup_homepage_sliderimage2_image' );
+$thinkup_homepage_sliderimage3_image = alante_thinkup_var ( 'thinkup_homepage_sliderimage3_image' );
 
 $slider_default = NULL;
 
@@ -339,7 +339,6 @@ $thinkup_homepage_section3_link  = alante_thinkup_var ( 'thinkup_homepage_sectio
 			echo	'</div>',
 					'</div>',
 				'</article>';
-
 			echo '<article class="section2 one_third">',
 					'<div class="services-builder style1">',
 					'<div class="iconimage">';

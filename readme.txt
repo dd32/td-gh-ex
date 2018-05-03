@@ -1,9 +1,8 @@
 === Alante ===
 Contributors: thinkupthemes
-Requires at least: 4.7
-Tested up to: 5.6.0
-Requires PHP: 5.6.0
-Version: 1.1.15
+Requires at least: 4.6
+Tested up to: 4.9.4
+Version: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
@@ -35,7 +34,7 @@ Limitations will be added when raised.
 
 == Copyright ==
 
-Alante WordPress Theme, Copyright 2020 Think Up Themes Ltd
+Alante WordPress Theme, Copyright 2017 Think Up Themes Ltd
 Alante is distributed under the terms of the GNU GPL
 
 The following opensource projects, graphics, fonts, API's or other files as listed have been used in developing this theme. Thanks to the author for the creative work they made. All creative works are licensed as being GPL or GPL compatible.
@@ -92,65 +91,17 @@ The following opensource projects, graphics, fonts, API's or other files as list
            Licence URL: These items have been produced by Think Up Themes. Released under CC0.
 
     [1.11] Item:        image shown in mobile device on screenshot.png.
-           Item URL:    https://pxhere.com/en/photo/101039
+           Item URL:    https://unsplash.com/photos/p-rN-n6Miag
            Licence:     CC0
            Licence URL: https://creativecommons.org/publicdomain/zero/1.0/
 
     [1.12] Item:        image shown in background.
-           Item URL:    https://pxhere.com/en/photo/3031
+           Item URL:    https://unsplash.com/photos/3MNzGlQM7qs
            Licence:     CC0
            Licence URL: https://creativecommons.org/publicdomain/zero/1.0/
 
 
 == Changelog ==
-
-= 1.1.15
-- Updated: Tested up to version updated to ensure users know full compatibility with WordPress v5.6.0.
-
-= 1.1.14
-- Fixed:   Improved focus styling on buttons for accessible users.
-
-= 1.1.13
-- Fixed:   Logo changes now reflected in customizer preview.
-- Fixed:   Accessibility links in header now appear correctly. Issue where header cut of link is now fixed.
-- Updated: Improved accessibility styling of buttons when focused.
-- Removed: Custom hook thinkup_hook_bodyhtml() removed given inclusion of wp_body_open().
-
-= 1.1.12
-- New:     "Tested up to" header field added to style.css.
-- New:     "Requires PHP" header field added to style.css. 
-- New:     wp_body_open() add after body tag in header.php.
-- Fixed:   Screenshot image license updated.
-- Fixed:   wp_nav_menu in 01.general-settings.php passes array directly instead of $args variable.
-
-= 1.1.11
-- Updated: Responsive dropdown menu fully accessible with keyboard navigation.
-
-= 1.1.10
-- Updated: Copyright date updated to be 2020 within readme.txt.
-
-= 1.1.9
-- Updated: Tested up to version updated to ensure users know full compatibility with WordPress v5.2.3.
-
-= 1.1.8
-- Updated: Tested up to version updated to ensure users know full compatibility with WordPress v5.1.1.
-
-= 1.1.7
-- Updated: "Requires PHP" information added to readme.txt.
-
-= 1.1.6
-- Updated: Improved escaping of breadcrumbs output in 00.theme-setup.php.
-- Removed: License folder removed and license in style.css linked directly to GPL page.
-
-= 1.1.5
-- Updated: Screenshot updated to comply with latst wordpress.org guidelines to not show descriptive text.
-
-= 1.1.4
-- Updated: All upgrade links changed to point directly to https.
-- Updated: Global variables for $thinkup_homepage_sliderimageX_image changed to point to 'url' in array.
-
-= 1.1.3
-- Updated: Theme and author url's in style.css updated to use https.
 
 = 1.1.2
 - Updated: main-frontend.js updated to be consistent with all themes.

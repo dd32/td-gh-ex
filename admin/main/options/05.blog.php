@@ -280,43 +280,6 @@ function alante_thinkup_input_blogmeta_2() {
 /* ----------------------------------------------------------------------------------
 	INPUT POST META CONTENT
 ---------------------------------------------------------------------------------- */
-
-function thinkup_input_postmedia() {
-global $post;
-
-	// Set output variable to avoid php errors
-	$output = NULL;
-
-	if ( get_post_format() == 'image' ) {
-
-		$output .= '<div class="post-thumb">' . get_the_post_thumbnail( $post->ID, 'column1-1/4' ) . '</div>';
-
-	}
-
-	// Output featured items if set
-	if ( ! empty( $output ) ) {
-		echo $output;
-	}
-}
-
-// Add format-media class to post article for featured image, gallery and video
-function thinkup_input_postmediaclass($classes) {
-global $post;
-global $wp_embed;
-
-	if ( is_singular( 'post' ) ) {
-		if ( get_post_format() == 'image' or get_post_format() == 'gallery' or get_post_format() == 'video' ) {
-			if( has_post_thumbnail() ) {
-				$classes[] = 'format-media';
-			}
-		} else {
-			$classes[] = 'format-nomedia';			
-		}
-	}
-	return $classes;
-}
-add_action( 'post_class', 'thinkup_input_postmediaclass');
-
 function alante_thinkup_input_postmeta() {
 
 	echo '<header class="entry-header entry-meta">';

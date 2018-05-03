@@ -5,18 +5,6 @@
  * @package ThinkUpThemes
  */
 
-
-/* ----------------------------------------------------------------------------------
-	BACKWARD COMPATIBILITY FOR WORDPRESS CORE FUNCTIONS
----------------------------------------------------------------------------------- */
-
-if ( ! function_exists( 'wp_body_open' ) ) {
-	function wp_body_open() {
-		do_action( 'wp_body_open' );
-	}
-}
-
-
 /* ----------------------------------------------------------------------------------
 	ADD CUSTOM HOOKS
 ---------------------------------------------------------------------------------- */
@@ -24,6 +12,11 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 /* Used at top of header.php */
 function alante_thinkup_hook_header() { 
 	do_action('alante_thinkup_hook_header');
+}
+
+/* Used after <body> tag in header.php */
+function alante_thinkup_hook_bodyhtml() { 
+	do_action('alante_thinkup_hook_bodyhtml');
 }
 
 
@@ -100,7 +93,7 @@ $thinkup_general_breadcrumbdelimeter = alante_thinkup_var ( 'thinkup_general_bre
 			$category = get_the_category();
 			$num_cat = count($category);
 			if ($num_cat <=1) {
-				$output .= ' ' . html_entity_decode( esc_html( get_the_title() ) );
+				$output .= ' ' . get_the_title();
 			} else {
 
 				// Count Total categories
@@ -142,17 +135,14 @@ $thinkup_general_breadcrumbdelimeter = alante_thinkup_var ( 'thinkup_general_bre
 			$output .= __( 'Error 404 - Not Found.', 'alante' );
 		} elseif ( is_archive() ) {
 			$output .= get_the_archive_title();
-		} elseif( is_tax() ) {
-			$output .= esc_html( get_queried_object()->name );
 		} elseif ( alante_thinkup_check_isblog() ) {
 			$output .= __( 'Blog', 'alante' );
 		} else {
-			$output .= html_entity_decode( esc_html( get_the_title() ) );
+			$output .= esc_html( get_the_title() );
 		}
-
 		$output .=  '</div></div>';
 	   
-		return $output;
+	   return $output;
     }
 }
 

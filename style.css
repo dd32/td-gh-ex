@@ -1,17 +1,14 @@
 /*
 Theme Name: Alante
-Text Domain: alante
-Version: 1.1.15
-Requires at least: 4.7
-Tested up to: 5.6.0
-Requires PHP: 5.6.0
-Description: Alante is the free version of the multi-purpose professional theme (Alante Pro) ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
-Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
+Theme URI: http://www.thinkupthemes.com/free/alante-free/
 Author: ThinkUpThemes
-Author URI: https://www.thinkupthemes.com
-Theme URI: https://www.thinkupthemes.com/free/alante-free/
-License: GNU General Public License v2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Author URI: http://www.ThinkUpThemes.com
+Description: Alante is the free version of the multi-purpose professional theme (Alante Pro) ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
+Version: 1.1.2
+License: GNU General Public License
+License URI: /licenses/license.txt
+Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
+Text Domain: alante
 */
 
 /*  TABLE OF CONTENTS
@@ -397,14 +394,6 @@ a,
 a:visited {
 	text-decoration: none;	
 }
-a:focus {
-	outline: 1px dotted #d33d33;
-	-webkit-transition: all 0s ease;
-	-moz-transition: all 0s ease;
-	-ms-transition: all 0s ease;
-	-o-transition: all 0s ease;
-	transition: all 0s ease;
-}
 
 /* Alignment */
 .alignleft {
@@ -769,8 +758,6 @@ li.pag-next {
 #site-header {
 	line-height: 1.5;
 	border-bottom: 1px solid #DDD;
-	position: relative;
-	z-index: 9999;
 }
 .home #site-header {
 	border-bottom: none;
@@ -780,10 +767,6 @@ li.pag-next {
 #pre-header {
 	background: #F5F5F5;
 	border-bottom: 1px solid #DDD;
-}
-#pre-header:hover,
-#pre-header:focus-within {
-	z-index: 99991;
 }
 #pre-header li {
 	float: left;
@@ -981,7 +964,7 @@ li.pag-next {
 /* Header */
 #header {
 	width: 100%;
-	z-index: 9999;
+	z-index: 999999;
 	background: white;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
@@ -1151,9 +1134,7 @@ body.custom-background .is-sticky #header {
 .main-navigation ul ul :hover > a {
 }
 #pre-header .main-navigation ul li:hover > ul,
-#pre-header .main-navigation ul li:focus-within > ul,
-#header .main-navigation ul li:hover > ul,
-#header .main-navigation ul li:focus-within > ul {
+#header .main-navigation ul li:hover > ul {
 	display: block;
 }
 
@@ -1748,7 +1729,7 @@ input[type="submit"]:hover {
 /* =Breadcrumbs
 ----------------------------------------------------------------------------- */
 #breadcrumbs {
-	font-size: 12px;
+	font-size: 10px;
 	padding-bottom: 20px;
 }
 #breadcrumbs .delimiter {
@@ -3191,9 +3172,6 @@ padding: 0;
 }
 
 /* Featured Image Specific */
-.single .format-image .post-thumb {
-	padding-bottom: 10px;
-}
 .single .format-image .post-thumb img {
 	display: block;
 }

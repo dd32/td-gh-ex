@@ -99,12 +99,8 @@
 	background: none;
 	}
 	.nav-collapse {
-		visibility: hidden;
 		overflow: hidden;
 		height: 0;
-	}
-	.nav-collapse.in {
-		visibility: visible;
 	}
 	.btn-navbar {
 		width: 20px;
@@ -252,9 +248,6 @@
 	#header-responsive .sub-menu-toggle {
 		z-index: 3;
 	}
-	#header-responsive .sub-menu-toggle:focus {
-		outline: thin dotted;
-	}
 	#header-responsive .menu-item-has-children > a:after {
 		font-family: fontawesome;
 		content: "\f067";
@@ -266,11 +259,10 @@
 		content: "\f068";
 	}
 	#header-responsive .sub-menu {
-		overflow: hidden;
-		height: 0;
+		display: none;
 	}
 	#header-responsive .sub-menu-show > .sub-menu {
-		height: auto;
+		display: block;
 	}
 	#header-responsive .sub-menu-show > a {
 		color: #FFF;
