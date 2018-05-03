@@ -547,6 +547,21 @@ function bard_customize_register( $wp_customize ) {
 	// Enable Parallax
 	bard_checkbox_control( 'header_image', 'parallax', esc_html__( 'Enable Parallax Scrolling', 'bard' ), 'refresh', 19 );
 
+	// Pro Version
+	$wp_customize->add_setting( 'pro_version_header', array(
+		'sanitize_callback' => 'bard_sanitize_custom_control'
+	) );
+	$wp_customize->add_control( new bard_Customize_Pro_Version ( $wp_customize,
+			'pro_version_header', array(
+				'section'	  => 'header_image',
+				'type'		  => 'pro_options',
+				'label' 	  => esc_html__( 'Header Options', 'bard' ),
+				'description' => esc_html( 'wp-royal.com/themes/bard/customizer/free/header-image2.html?ref=bard-free-header-customizer' ),
+				'priority'	  => 100
+			)
+		)
+	);
+
 
 /*
 ** Site Identity =====
@@ -559,6 +574,21 @@ function bard_customize_register( $wp_customize ) {
 
 	// Show Social Icons
 	bard_checkbox_control( 'title_tagline', 'show_socials', esc_html__( 'Show Social Icons', 'bard' ), 'refresh', 50 );
+
+	// Pro Version
+	$wp_customize->add_setting( 'pro_version_logo', array(
+		'sanitize_callback' => 'bard_sanitize_custom_control'
+	) );
+	$wp_customize->add_control( new bard_Customize_Pro_Version ( $wp_customize,
+			'pro_version_logo', array(
+				'section'	  => 'title_tagline',
+				'type'		  => 'pro_options',
+				'label' 	  => esc_html__( 'Logo Options', 'bard' ),
+				'description' => esc_html( 'http://wp-royal.com/themes/bard/customizer/free/typography-logo.html?ref=bard-free-site-identity-customizer' ),
+				'priority'	  => 55
+			)
+		)
+	);
 
 
 /*
@@ -789,7 +819,7 @@ function bard_customize_register( $wp_customize ) {
 	bard_checkbox_control( 'single_page', 'show_comments', esc_html__( 'Show Comments', 'bard' ), 'refresh', 10 );
 
 	// Show Drop Caps
-	bard_checkbox_control( 'single_page', 'show_dropcaps', esc_html__( 'Show Drop Caps', 'bard-pro' ), 'refresh', 13 );
+	bard_checkbox_control( 'single_page', 'show_dropcaps', esc_html__( 'Show Drop Caps', 'bard' ), 'refresh', 13 );
 	
 	// Show Author
 	bard_checkbox_control( 'single_page', 'show_author', esc_html__( 'Show Author', 'bard' ), 'refresh', 15 );

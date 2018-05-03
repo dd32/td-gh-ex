@@ -23,7 +23,7 @@
 		<div class="post-meta clear-fix">
 			<?php
 			if ( bard_options( 'blog_page_show_comments' ) === true && comments_open() ) {
-				comments_popup_link( esc_html__( 'No Comments', 'bard-pro' ), esc_html__( '1 Comment', 'bard-pro' ), '% '. esc_html__( 'Comments', 'bard-pro' ), 'post-comments');
+				comments_popup_link( esc_html__( 'No Comments', 'bard' ), esc_html__( '1 Comment', 'bard' ), '% '. esc_html__( 'Comments', 'bard' ), 'post-comments');
 			}
 			?>
 		</div>
