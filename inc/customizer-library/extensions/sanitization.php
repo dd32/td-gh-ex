@@ -118,12 +118,19 @@ function customizer_library_sanitize_range( $value ) {
 }
 endif;
 
+/**
+ * Sanitizes repeater
+ * @return array
+ */
+
 if ( ! function_exists( 'customizer_sanitize_repeater_setting' ) ) :
-function customizer_sanitize_repeater_setting( $value ) {
+function customizer_sanitize_repeater_setting( $value, $setting ) {
 
 		if ( ! is_array( $value ) ) {
 			$value = json_decode( urldecode( $value ) );
 		}
+		
+		$default_decoded = $setting->default;
 		
 		$sanitized = ( empty( $value ) || ! is_array( $value ) ) ? array() : $value;
 
@@ -141,28 +148,33 @@ function customizer_sanitize_repeater_setting( $value ) {
 			$sanitized = array_values( $sanitized );
 		}
 		
-		$return = array();
+		$icons_array =  astore_fontawsome_icons();
+		
+		array_walk(
+			$icons_array,
+			function (&$s, $k, $prefix = 'fa-') {
+				$s = str_pad($s, strlen($prefix) + strlen($s), $prefix, STR_PAD_LEFT);
+			}
+		);
+		
 		foreach ( $sanitized as $index=>$items ){
-			$return[$index] = array();
 			if(  !empty( $items ) ||  is_array( $items ) ){
 				foreach($items as $k=>$v ){
-					switch($k){
 						
-						case "link":
-							$return[$index][$k] = esc_url_raw($v);
-						break;
-						case "icon":
-						case "text":
-						case "target":
-						default:
-							$return[$index][$k] = customizer_library_sanitize_text($v);
-						break;
+						if( $k == "link" ){
+							$sanitized[$index][$k] = esc_url_raw($v);
+						}elseif( $k == "icon" ){
+							$default = $default_decoded[ $index ][ 'icon' ];
+							$sanitized[$index][$k] = in_array( $v, $icons_array ) ? $v : $default;
+						}else{
+							$sanitized[$index][$k] = wp_kses_post($v);
 						}
+
 					}
 				}
 			}
 
-		return $return;
+		return $sanitized;
 
 	}
 endif;

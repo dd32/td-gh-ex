@@ -1,7 +1,7 @@
 ( function( $ ) {
 
 	$( function() {
-		$( '.icp' ).iconpicker().on( 'iconpickerUpdated', function() {
+		$( '.icp' ).iconpicker({icons:astore_iconpicker.icons}).on( 'iconpickerUpdated', function() {
 			$( this ).trigger( 'change' );
 		} );
 	} );

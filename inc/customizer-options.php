@@ -332,27 +332,27 @@ function astore_customizer_library_options() {
 				),
 				'default' =>  array(
 					array(
-						"icon" => 'twitter',
+						"icon" => 'fa-twitter',
 						"title" => "",
 						"link" => "",
 						),
 					array(
-						"icon" => 'facebook',
+						"icon" => 'fa-facebook',
 						"title" => "",
 						"link" => "",
 						),
 					array(
-						"icon" => 'instagram',
+						"icon" => 'fa-instagram',
 						"title" => "",
 						"link" => "",
 						),
 					array(
-						"icon" => 'google-plus',
+						"icon" => 'fa-google-plus',
 						"title" => "",
 						"link" => "",
 						),
 					array(
-						"icon" => 'youtube',
+						"icon" => 'fa-youtube',
 						"title" => "",
 						"link" => "",
 						),

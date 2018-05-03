@@ -2,7 +2,7 @@
 Contributors: VelaThemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.0-trunk
-Version: 1.0.4
+Version: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, custom-background, custom-header, custom-menu, theme-options, right-sidebar, translation-ready, editor-style, featured-images, threaded-comments, rtl-language-support, custom-logo, featured-image-header, footer-widgets
@@ -16,7 +16,7 @@ For more information about AStore please go to https://velathemes.com/astore-the
 == Installation ==
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type AStore in the search form and press the 'Enter' key on your keyboard.
+2. Type in AStore in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
 4. Go to https://velathemes.com/astore-documentation/ for a guide on how to customize this theme.
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
@@ -48,23 +48,19 @@ Animate.css, Copyright (c) 2014 Daniel Eden
 Licenses: MIT
 Source: http://daneden.me/animate
 
-fbg1.jpg in screenshot.jpg, Copyright Pete Bellis
-License: https://creativecommons.org/publicdomain/zero/1.0/
-Source: https://unsplash.com/photos/AreMq4SKhPA
+screenshot.png
+License: CC0 Creative Commons
+Source:
+https://pixabay.com/photo-1333433/
+https://pixabay.com/photo-1842328/
 
-fba1.jpg in screenshot.jpg, Copyright Pete Bellis
-License: https://creativecommons.org/publicdomain/zero/1.0/
-Source: https://unsplash.com/photos/7cnbXtCFG7E
+License: CC0 License
+Source:
+https://www.pexels.com/photo/woman-sitting-on-the-floor-with-left-on-her-knees-and-the-right-hand-in-her-face-709807/
+https://www.pexels.com/photo/black-make-up-brush-near-silver-make-up-palette-60571/
 
-fba2.jpg in screenshot.jpg, Copyright Charisse Kenion
-License: https://creativecommons.org/publicdomain/zero/1.0/
-Source: https://unsplash.com/photos/69epvVgm0Ws
 
-fba3.jpg in screenshot.jpg, Copyright Flaunter .com
-License: https://creativecommons.org/publicdomain/zero/1.0/
-Source: https://unsplash.com/photos/WcXxxQYp_aM
-
-"FEATURED PRODUCTS" images in screenshot.jpg, Copyright WooCommerce
+"FEATURED PRODUCTS" images in screenshot.jpg
 License: GPL
 Source: https://woocommerce.com/
 
@@ -72,6 +68,10 @@ Source: https://woocommerce.com/
 == Changelog ==
 
 = 1.0.5 =
+  Fixed sanitization issue
+  updated screenshot.png
+
+= 1.0.4 =
 * Released: May 2, 2018
   Fixed escaping issues
   Fixed content creation issue

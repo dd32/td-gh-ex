@@ -34,6 +34,7 @@ function astore_iconpicker_customize_register(){
 		public function enqueue() {
 			wp_enqueue_script( 'astore-fontawesome-iconpicker', get_template_directory_uri() . '/inc/customizer-library/custom-controls/iconpicker-control/assets/js/fontawesome-iconpicker.min.js', array( 'jquery' ), '1.0.0', true );
 			wp_enqueue_script( 'astore-iconpicker-control', get_template_directory_uri() . '/inc/customizer-library/custom-controls/iconpicker-control/assets/js/iconpicker-control.js', array( 'jquery' ), '1.0.0', true );
+			
 			wp_enqueue_style( 'astore-fontawesome-iconpicker', get_template_directory_uri() . '/inc/customizer-library/custom-controls/iconpicker-control/assets/css/fontawesome-iconpicker.min.css' );
 			wp_enqueue_style( 'astore-fontawesome', get_template_directory_uri() . '/inc/customizer-library/custom-controls/iconpicker-control/assets/css/font-awesome.min.css' );
 		}
