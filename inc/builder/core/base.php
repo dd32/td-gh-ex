@@ -56,8 +56,10 @@ class TTFMAKE_Builder_Base {
 		add_action( 'admin_print_styles-post-new.php', array( $this, 'admin_print_styles' ) );
 		add_filter( 'admin_body_class', array( $this, 'admin_body_class' ) );
 		add_action( 'admin_footer', array( $this, 'print_templates' ) );
-		add_action( 'post_submitbox_misc_actions', array( $this, 'builder_toggle' ) );
 		add_filter( 'make_get_section_data', array( $this, 'massage_legacy_format' ), 20, 2 );
+
+		// HappyForms ad
+		require_once get_template_directory() . '/inc/happyforms.php';
 	}
 
 	/**
@@ -80,41 +82,63 @@ class TTFMAKE_Builder_Base {
 	 */
 	public function add_meta_boxes() {
 		foreach ( ttfmake_get_post_types_supporting_builder() as $name ) {
+			$builder_metabox_label = esc_html__( 'Page Builder', 'make' );
+
+			if ( 'page' !== $name ) {
+				$builder_metabox_label = esc_html__( 'Post Builder', 'make' );
+			}
+
 			add_meta_box(
 				'ttfmake-builder',
-				esc_html__( 'Page Builder', 'make' ),
+				$builder_metabox_label,
 				array( $this, 'display_builder' ),
 				$name,
 				'normal',
 				'high'
 			);
+
+			if ( 'page' !== $name ) {
+				add_meta_box(
+					'ttfmake-builder-toggle',
+					esc_html__( 'Post builder', 'make' ),
+					array( $this, 'display_builder_toggle' ),
+					$name,
+					'side',
+					'high'
+				);
+			}
 		}
 	}
 
-	/**
-	 * Display the checkbox to turn the builder on or off.
-	 *
-	 * @since  1.2.0.
-	 *
-	 * @return void
-	 */
-	public function builder_toggle() {
-		// Do not show the toggle for pages as the builder is controlled by page templates
-		if ( 'page' === get_post_type() ) {
-			return;
-		}
+	public function display_builder_toggle() {
+		global $pagenow;
 
-		// Only show the builder toggle for CPTs that support the builder
-		if ( ! ttfmake_post_type_supports_builder( get_post_type() ) ) {
-			return;
-		}
+		/**
+		 * Filter: Modify whether new pages default to the Builder template.
+		 *
+		 * @since 1.7.0.
+		 *
+		 * @param bool $is_default
+		 */
+		$builder_is_default = apply_filters( 'make_builder_is_default', true );
 
-		$using_builder = get_post_meta( get_the_ID(), '_ttfmake-use-builder', true );
+		$post_id = get_the_ID();
+		$builder_meta = get_post_meta( $post_id, '_ttfmake_layout', true );
+
+		// Show the builder if the current post holds a builder layout.
+		$using_builder = $builder_is_default || $builder_meta ? 1 : 0;
+		$using_builder_meta_exists = metadata_exists( 'post', $post_id, '_ttfmake-use-builder' );
+		$using_builder_meta = get_post_meta( $post_id, '_ttfmake-use-builder', true );
+
+		// Hide the builder if user explicitly turned it off
+		if ( $using_builder_meta_exists && '' === $using_builder_meta ) {
+			$using_builder = 0;
+		}
 	?>
-		<div class="misc-pub-section">
+		<p>
 			<input type="checkbox" value="1" name="use-builder" id="use-builder"<?php checked( $using_builder, 1 ); ?> />
-			&nbsp;<label for="use-builder"><?php esc_html_e( 'Use Page Builder', 'make' ); ?></label>
-		</div>
+			&nbsp;<label for="use-builder"><?php esc_html_e( 'Enable post builder', 'make' ); ?></label>
+		</p>
 	<?php
 	}
 
@@ -334,6 +358,7 @@ class TTFMAKE_Builder_Base {
 		 * @param bool $is_default
 		 */
 		$data['defaultTemplate'] = apply_filters( 'make_builder_is_default', true );
+		$data['useBuilder'] = get_post_meta( get_the_ID(), '_ttfmake-use-builder', true );
 
 		wp_localize_script(
 			'ttfmake-builder-edit-page',
@@ -687,10 +712,10 @@ function ttfmake_load_section_header() {
 	 *
 	 * @param array    $ttfmake_section_data    The array of data for the section.
 	 */
-	do_action( 'make_section_' . $ttfmake_section_data['section']['id'] . '_before', $ttfmake_section_data );
+	do_action( 'make_section_' . $ttfmake_section_data['id'] . '_before', $ttfmake_section_data );
 
 	// Backcompat
-	do_action( 'ttfmake_section_' . $ttfmake_section_data['section']['id'] . '_before', $ttfmake_section_data );
+	do_action( 'ttfmake_section_' . $ttfmake_section_data['id'] . '_before', $ttfmake_section_data );
 }
 endif;
 
@@ -716,10 +741,10 @@ function ttfmake_load_section_footer() {
 	 *
 	 * @param array    $ttfmake_section_data    The array of data for the section.
 	 */
-	do_action( 'make_section_' . $ttfmake_section_data['section']['id'] . '_after', $ttfmake_section_data );
+	do_action( 'make_section_' . $ttfmake_section_data['id'] . '_after', $ttfmake_section_data );
 
 	// Backcompat
-	do_action( 'ttfmake_section_' . $ttfmake_section_data['section']['id'] . '_after', $ttfmake_section_data );
+	do_action( 'ttfmake_section_' . $ttfmake_section_data['id'] . '_after', $ttfmake_section_data );
 }
 endif;
 

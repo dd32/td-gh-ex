@@ -1,10 +1,10 @@
 === Make ===
 
 Contributors: thethemefoundry
-Tags: black, blue, green, gray, orange, red, white, yellow, dark, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, grid-layout, buddypress, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, footer-widgets, blog, e-commerce, portfolio
+Tags: black, blue, green, gray, orange, red, white, yellow, dark, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, grid-layout, buddypress, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, footer-widgets, blog, e-commerce, portfolio, accessibility-ready, custom-logo, featured-image-header, rtl-language-support
 
-Requires at least: 4.4
-Tested up to: 4.8.1
+Requires at least: 4.7
+Tested up to: 4.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,45 @@ Build a website that means business. With Make’s powerful drag and drop page b
 Please see the Make documentation: https://thethemefoundry.com/make-help/
 
 == Changelog ==
+
+= 1.9.10 - May 3 2018 =
+* Improvement: disable Customize styles in section previews to avoid white-on-white scenarios.
+* Bug fix: Hide HappyForms notice if Make Plus is active.
+
+= 1.9.9 - May 2 2018 =
+* Improvement: added a Custom CSS option to Button format for easier global customization.
+* Bug fix: Column sorting was messing up column resizing in Content sections.
+* Bug fix: Global discussion settings were being ignored in posts and pages.
+* Bug fix: Make color picker customizations were interfering with core and third party color pickers.
+* Bug fix: Headings font weight configuration didn't apply correctly.
+* Bug fix: Content section was ignoring filtered default amount of columns.
+
+= 1.9.8 - November 14 2017 =
+* Bug fix: Color picker controls misbehave on WordPress 4.9.
+* Improved: Removed double serialization of Make data which was causing issues with migration plugins.
+
+= 1.9.7 - November 1 2017 =
+* Bug fix: Content editor was ignoring background color settings in Customize screen.
+
+= 1.9.6 - October 7 2017 =
+* Bug fix: Typography settings weren't applying correctly to the mobile menu.
+* Bug fix: Section tiled backgrounds were misbehaving.
+
+= 1.9.5 - September 8 2017 =
+* Bug fix: A missing check in post save routines resulted in a PHP notice.
+* Bug fix: Typography settings didn't apply correctly to the header and header bar.
+* Improved: Header Bar border now respects opacity settings.
+* Updated: Theme screenshot.
+
+= 1.9.4 - August 26 2017 =
+* Updated: Theme screenshot.
+
+= 1.9.3 - August 24 2017 =
+* Bug fix: Gallery items at the end of rows were missing the correct CSS class.
+
+= 1.9.2 - August 22 2017 =
+* Bug fix: Content embed filters weren't running causing embeds to disappear.
+* Bug fix: Background images saved on versions 1.8.x were being preserved, resulting in image duplication.
 
 = 1.9.1 - August 18 2017 =
 * Bug fix: Clearing the background color of a section wouldn't reset the corresponding setting.
@@ -554,6 +593,33 @@ Please see the Make documentation: https://thethemefoundry.com/make-help/
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.9.10 =
+* Minor bug fixes and improvements.
+
+= 1.9.9 =
+* Miscellaneous bug fixes and improvements.
+
+= 1.9.8 =
+* Compatibility bug fixes and improvements.
+
+= 1.9.7 =
+* Minor bug fixes.
+
+= 1.9.6 =
+* Mobile menu typography and tiled background fixes.
+
+= 1.9.5 =
+* Header typography and other minor fixes, updated theme screenshot.
+
+= 1.9.4 =
+* Updated theme screenshot.
+
+= 1.9.3 =
+Fix for Gallery items at the end of rows.
+
+= 1.9.2 =
+Embeds and Column background images fixes.
 
 = 1.9.1 =
 Content editor bug fixes, better compatibility handling.
