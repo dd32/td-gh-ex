@@ -22,7 +22,7 @@
     </div>      
 	<div class="inner">
         <div class="copyright-wrapper">
-            <p><?php echo esc_html(get_theme_mod('automobile_car_dealer_footer_copy',__('Automobile Theme Design & Developed By','automobile-car-dealer'))); ?> <?php automobile_car_dealer_credit(); ?></p>
+            <p><?php echo esc_html(get_theme_mod('automobile_car_dealer_footer_copy',__('Automobile Theme Design & Developed By','automobile-car-dealer'))); ?> <a href="https://www.buywptemplates.com/"><?php echo esc_html_e('BuywpTemplate','automobile-car-dealer') ?></p>
         </div>
         <div class="clear"></div>
     </div>

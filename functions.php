@@ -169,14 +169,6 @@ function automobile_car_dealer_ie_stylesheet(){
 }
 add_action('wp_enqueue_scripts','automobile_car_dealer_ie_stylesheet');
 
-define('automobile_car_dealer_CREDIT','https://www.buywptemplates.com/','automobile-car-dealer');
-
-if ( ! function_exists( 'automobile_car_dealer_credit' ) ) {
-	function automobile_car_dealer_credit(){
-		echo "<a href=".esc_url(automobile_car_dealer_CREDIT)." target='_blank'>".esc_html__('BuywpTemplate','automobile-car-dealer')."</a>";
-	}
-}
-
 /* Excerpt Limit Begin */
 function automobile_car_dealer_string_limit_words($string, $word_limit) {
 	$words = explode(' ', $string, ($word_limit + 1));

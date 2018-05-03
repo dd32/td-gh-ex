@@ -5,7 +5,7 @@
  * @since  1.0.0
  * @access public
  */
-class automobile_car_dealer_customize_Section_Pro extends WP_Customize_Section {
+class Automobile_Car_Dealer_Customize_Section_Pro extends WP_Customize_Section {
 
 	/**
 	 * The type of customize section being rendered.

@@ -2,7 +2,7 @@
 
 Theme Name      :   Automobile Car Dealer
 Theme URI       :   https://www.buywptemplates.com/themes/free-car-dealer-wordpress-theme
-Version         :   0.2
+Version         :   0.3
 Tested up to    :   WP 4.9.5
 Author          :   Buywptemplates
 Author URI      :   https://www.buywptemplates.com/
@@ -87,6 +87,7 @@ Theme is Built using the following resource bundles.
 
 2	CSS bootstrap.css
 	-- Code and documentation copyright 2011-2016 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.
+	-- https://github.com/twbs/bootstrap/blob/master/LICENSE
 	CSS nivo-slider.css
 	-- Copyright 2012, Dev7studios Free to use and abuse under the MIT license.
     -- http://www.opensource.org/licenses/mit-license.php
@@ -140,3 +141,8 @@ Version 0.2
 	i.   Added the proper format of image url.
 	ii.  Added get_search_form() instead of hardcoding.
 	iii. Added proper translation.
+
+Version 0.3
+	i.   Added bootstrap license url in readme.txt file.
+	ii.  Changed the class name to capital letter.
+	iii. Added footer link followed by twentyseventeen.

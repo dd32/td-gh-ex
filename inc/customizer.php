@@ -259,15 +259,6 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'automobile_car_dealer_customize_register' );	
 
 /**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- */
-function automobile_car_dealer_customize_preview_js() {
-	wp_enqueue_script( 'automobile_car_dealer_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
-}
-add_action( 'customize_preview_init', 'automobile_car_dealer_customize_preview_js' );
-
-
-/**
  * Singleton class for handling the theme's customizer integration.
  *
  * @since  1.0.0
@@ -333,11 +324,11 @@ final class automobile_car_dealer_customize {
 		load_template( trailingslashit( get_template_directory() ) . '/inc/section-pro.php' );
 
 		// Register custom section types.
-		$manager->register_section_type( 'automobile_car_dealer_customize_Section_Pro' );
+		$manager->register_section_type( 'Automobile_Car_Dealer_Customize_Section_Pro' );
 
 		// Register sections.
 		$manager->add_section(
-			new automobile_car_dealer_customize_Section_Pro(
+			new Automobile_Car_Dealer_Customize_Section_Pro(
 				$manager,
 				'example_1',
 				array(
