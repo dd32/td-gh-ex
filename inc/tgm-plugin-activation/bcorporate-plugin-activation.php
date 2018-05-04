@@ -79,8 +79,8 @@ function bcorporate_register_required_plugins() {
 		),
 
 		array(
-			'name'      => 'Simple Share Buttons Adder',
-			'slug'      => 'simple-share-buttons-adder',
+			'name'      => 'One Click Demo Import',
+			'slug'      => 'one-click-demo-import',
 			'required'  => false,
 		),
 

@@ -477,3 +477,39 @@ function bcorporate_home_ctatwo_sec_fnc() {
 	endif;
 	} 
 endif;
+
+// navigation fallback
+if ( ! function_exists( 'bcorporate_primary_navigation_fallback' ) ) :
+
+	/**
+	 * Fallback for primary navigation.
+	 *
+	 * @since 1.0.0
+	 */
+	function bcorporate_primary_navigation_fallback() {
+
+		echo '<ul id="primary-menu" class="header-menu nav-menu" aria-expanded="false">';
+		echo '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'Home', 'bcorporate' ) . '</a></li>';
+
+		$args = array(
+			'posts_per_page' => 5,
+			'post_type'      => 'page',
+			'orderby'        => 'name',
+			'order'          => 'ASC',
+			);
+
+		$the_query = new WP_Query( $args );
+
+		if ( $the_query->have_posts() ) {
+			while ( $the_query->have_posts() ) {
+				$the_query->the_post();
+				the_title( '<li><a href="' . esc_url( get_permalink() ) . '">', '</a></li>' );
+			}
+
+			wp_reset_postdata();
+		}
+
+		echo '</ul>';
+	}
+
+endif;

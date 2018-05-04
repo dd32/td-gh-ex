@@ -57,8 +57,8 @@
 
 						</button>
 
-						<?php if ( has_nav_menu( 'header_menu' ) ) : ?>
-								<div class="main-menu-wrap">	
+
+						<div class="main-menu-wrap">	
 						    <?php
 							    wp_nav_menu(
 								    array(
@@ -67,18 +67,12 @@
 									    'menu_id'        => 'primary-menu',
 									    'menu_class'     => 'header-menu',
 									    'depth'          => '4',
+									    'fallback_cb'    => 'bcorporate_primary_navigation_fallback',
 								    )
 							    );
 						    ?>
 						</div>
-							
-							<?php else : ?>
-							
-							<div class="main-menu-wrap"><ul id="nav" >
-								<?php wp_list_pages( 'title_li=&depth=1' ); ?>
-							</ul></div>
-							
-						<?php endif; ?>
+
 					</nav><!-- #site-navigation -->
 				</div>
 			</div>	

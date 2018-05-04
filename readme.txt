@@ -86,6 +86,11 @@ Bcorporate includes support for Infinite Scroll in Jetpack.
 * Added options to change section titles.
 * Smooth scroll for header menu
 
+= 2.5.0 -April 24 2018 =
+* Added one click demo as importer.
+* Added callback function for header menu
+* Updated font awesome with latest version available
+
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License  v2 or later
 License: GNU General Public License v2 or later
