@@ -4,7 +4,7 @@ Requires at least: 4.5
 Tested up to: 4.9.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: blog, one-column, custom-header, custom-background, custom-menu, custom-colors, two-columns, three-columns, right-sidebar, left-sidebar, threaded-comments, translation-ready, accessibility-ready, featured-images, theme-options, post-formats, flexible-header, editor-style, rtl-language-support
+Tags: blog, one-column, custom-header, custom-background, custom-menu, custom-colors, two-columns, three-columns, right-sidebar, left-sidebar, threaded-comments, translation-ready, featured-images, theme-options, post-formats, flexible-header, editor-style, rtl-language-support
 
 Aeroblog WordPress Theme, Copyright 2017 Jitendra Banjara
 Aeroblog is distributed under the terms of the GNU GPL
@@ -34,7 +34,7 @@ License: Font: SIL OFL 1.1, CSS: MIT License,  http://fontawesome.io/license
 
 == Changelog ==
 
-= 1.1.1 =
+= 1.1.2 =
 * Released: April 01, 2018
 
 Initial release
