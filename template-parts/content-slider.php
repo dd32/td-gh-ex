@@ -34,7 +34,7 @@ if ( $arctic_black_featured->have_posts() ) : ?>
 		?>
 
 		<article id="featured-post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<div class="featured-image" <?php echo $background_image;?>></div>
+			<div class="featured-image" <?php echo $background_image; // WPCS: XSS OK.?>></div>
 			<div class="slider-content">
 
 				<header class="entry-header">

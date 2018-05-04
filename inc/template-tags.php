@@ -150,9 +150,9 @@ function arctic_black_do_breadcrumb(){
 	$breadcrumb_markup_close = '</div>';
 
 	if ( function_exists( 'bcn_display' ) ) {
-		echo $breadcrumb_markup_open;
+		echo $breadcrumb_markup_open; // WPCS: XSS OK.
 		bcn_display();
-		echo $breadcrumb_markup_close;
+		echo $breadcrumb_markup_close; // WPCS: XSS OK.
 	}
 	elseif ( function_exists( 'breadcrumbs' ) ) {
 		breadcrumbs();
@@ -217,9 +217,9 @@ function arctic_black_posts_navigation(){
 	} else {
 		the_posts_pagination( array(
 			// Translators: %1$s: Arrow left icon, %2$s: Previous page
-			'prev_text'          => sprintf( '%1$s <span class="screen-reader-text">%2$s</span>', arctic_black_get_svg( array( 'icon' => 'chevron-left' ) ), esc_html__( 'Previous Page', 'arctic-black' ) ),
+			'prev_text'          => sprintf( '%1$s <span class="screen-reader-text">%2$s</span>', arctic_black_get_svg( array( 'icon' => 'chevron-left' ) ), esc_html__( 'Previous Page', 'arctic-black' ) ), // WPCS: XSS OK.
 			// Translators: %1$s: Arrow left icon, %2$s: Previous page
-			'next_text'          => sprintf( '%1$s <span class="screen-reader-text">%2$s</span>', arctic_black_get_svg( array( 'icon' => 'chevron-right' ) ), esc_html__( 'Next Page', 'arctic-black' ) ),
+			'next_text'          => sprintf( '%1$s <span class="screen-reader-text">%2$s</span>', arctic_black_get_svg( array( 'icon' => 'chevron-right' ) ), esc_html__( 'Next Page', 'arctic-black' ) ), // WPCS: XSS OK.
 			'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'arctic-black' ) . ' </span>',
 		) );
 	}
@@ -237,7 +237,7 @@ function arctic_black_get_footer_copyright(){
 	$default_footer_copyright =	sprintf( __( 'Copyright &copy; %1$s %2$s. Proudly powered by %3$s.', 'arctic-black' ),
 		date_i18n( __( 'Y', 'arctic-black' ) ),
 		'<a href="'. esc_url( home_url('/') ) .'">'. esc_html( get_bloginfo( 'name' ) ) .'</a>',
-		'<a href="'. esc_url( __( 'https://wordpress.org/', 'arctic-black' ) ) .'">'. __( 'WordPress', 'arctic-black' ) .'</a>' );
+		'<a href="'. esc_url( __( 'https://wordpress.org/', 'arctic-black' ) ) .'">'. esc_html__( 'WordPress', 'arctic-black' ) .'</a>' );
 
 	apply_filters( 'arctic_black_get_footer_copyright', $default_footer_copyright );
 
@@ -263,8 +263,10 @@ function arctic_black_do_footer_copyright(){
 
 	echo '<div class="site-info">'. wp_kses_post( arctic_black_get_footer_copyright() ) . '</div>';
 	if ( get_theme_mod( 'theme_designer', true ) ) {
+		echo '<div class="site-designer">';
 		// Translators: %1$s: Theme designer logo, %2$s: Theme designer site link
-		echo '<div class="site-designer">'. sprintf( esc_html__( 'Theme design by %1$s %2$s.', 'arctic-black' ), arctic_black_get_svg( array( 'icon' => 'campaignkit' ) ), '<a href="'. esc_url( 'https://campaignkit.co/' ) .'">Campaign Kit</a>' ) .'</div>';
+		echo sprintf( esc_html__( 'Theme design by %1$s %2$s.', 'arctic-black' ), arctic_black_get_svg( array( 'icon' => 'campaignkit' ) ), '<a href="'. esc_url( 'https://campaignkit.co/' ) .'">Campaign Kit</a>' ); // WPCS: XSS OK.
+		echo '</div>';
 	}
 
 }

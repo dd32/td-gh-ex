@@ -1,3 +1,62 @@
+/**
+ * File skip-link-focus-fix.js.
+ *
+ * Helps with accessibility for keyboard only users.
+ *
+ * Learn more: https://git.io/vWdr2
+ */
+(function() {
+	var isIe = /(trident|msie)/i.test( navigator.userAgent );
+
+	if ( isIe && document.getElementById && window.addEventListener ) {
+		window.addEventListener( 'hashchange', function() {
+			var id = location.hash.substring( 1 ),
+				element;
+
+			if ( ! ( /^[A-z0-9_-]+$/.test( id ) ) ) {
+				return;
+			}
+
+			element = document.getElementById( id );
+
+			if ( element ) {
+				if ( ! ( /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) ) ) {
+					element.tabIndex = -1;
+				}
+
+				element.focus();
+			}
+		}, false );
+	}
+})();
+
+( function() {
+	var container, button, body;
+
+	container = document.getElementById( 'site-navigation' );
+	if ( ! container ) {
+		return;
+	}
+
+	button = container.getElementsByTagName( 'button' )[0];
+	if ( 'undefined' === typeof button ) {
+		return;
+	}
+
+	body = document.getElementsByTagName( 'body' )[0];
+
+
+	button.onclick = function() {
+		if ( -1 !== body.className.indexOf( 'sidebar-toggled' ) ) {
+			body.className = body.className.replace( ' sidebar-toggled', ' sidebar-closed' );
+		} else {
+			body.className = body.className.replace( ' sidebar-closed', '' );
+			body.className += ' sidebar-toggled';
+		}
+	};
+
+} )();
+
 ( function( $ ) {
 
 	var arcticBlack = arcticBlack || {};
@@ -164,61 +223,3 @@
 	});
 
 } )( jQuery );
-
-( function() {
-	var container, button, body;
-
-	container = document.getElementById( 'site-navigation' );
-	if ( ! container ) {
-		return;
-	}
-
-	button = container.getElementsByTagName( 'button' )[0];
-	if ( 'undefined' === typeof button ) {
-		return;
-	}
-
-	body = document.getElementsByTagName( 'body' )[0];
-
-
-	button.onclick = function() {
-		if ( -1 !== body.className.indexOf( 'sidebar-toggled' ) ) {
-			body.className = body.className.replace( ' sidebar-toggled', ' sidebar-closed' );
-		} else {
-			body.className = body.className.replace( ' sidebar-closed', '' );
-			body.className += ' sidebar-toggled';
-		}
-	};
-
-} )();
-/**
- * File skip-link-focus-fix.js.
- *
- * Helps with accessibility for keyboard only users.
- *
- * Learn more: https://git.io/vWdr2
- */
-(function() {
-	var isIe = /(trident|msie)/i.test( navigator.userAgent );
-
-	if ( isIe && document.getElementById && window.addEventListener ) {
-		window.addEventListener( 'hashchange', function() {
-			var id = location.hash.substring( 1 ),
-				element;
-
-			if ( ! ( /^[A-z0-9_-]+$/.test( id ) ) ) {
-				return;
-			}
-
-			element = document.getElementById( id );
-
-			if ( element ) {
-				if ( ! ( /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) ) ) {
-					element.tabIndex = -1;
-				}
-
-				element.focus();
-			}
-		}, false );
-	}
-})();
