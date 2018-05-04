@@ -3,7 +3,7 @@
 	$bg_color = get_theme_mod('nnfy_pt_section_bg_color','#ddd');
 	$bg_size = get_theme_mod('nnfy_pt_section_bg_size','cover');
 
-	$css = "background:url($bg_image) no-repeat center/$bg_size $bg_color";
+	$css = "background:url(". esc_url($bg_image) .") no-repeat center/$bg_size $bg_color";
 ?>
 <div class="breadcrumb-area pt-150 pb-150" style="<?php echo esc_html($css); ?>">
     <div class="container">

@@ -507,24 +507,11 @@ footer.fixed-footer-enable {
 -----------------------------------------------------------------------------------*/
 
 /*woocommerce color customize*/
-/*green color*/
-.woocommerce div.product p.price,
-.woocommerce div.product span.price,
-.woocommerce div.product .stock,
-.woocommerce ul.products li.product .price,
-#add_payment_method .cart-collaterals .cart_totals .discount td,
-.woocommerce-cart .cart-collaterals .cart_totals .discount td,
-.woocommerce-checkout .cart-collaterals .cart_totals .discount td{
-    /*color: #77a464;*/
-    /*color: #fff;*/
-}
-
 .woocommerce-info::before{
      color: #96bf48;
 }
 
 .woocommerce span.onsale{
-    /*background-color: #77a464;*/
     background-color: #96bf48;
     z-index: 999;
 }
@@ -562,7 +549,6 @@ p.demo_store,
 .woocommerce input.button.alt:disabled[disabled]:hover,
 .woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
 .woocommerce .widget_price_filter .ui-slider .ui-slider-range{
-    /*background-color: #a46497;*/
     background-color: #96bf48;
     border-radius: 0;
 }
@@ -571,7 +557,6 @@ p.demo_store,
 .woocommerce-error,
 .woocommerce-info,
 .woocommerce-message{
-    /*border-color: #a46497;*/
     border-color: #96bf48;
 }
 
@@ -580,7 +565,6 @@ p.demo_store,
 .woocommerce a.button.alt:hover,
 .woocommerce button.button.alt:hover,
 .woocommerce input.button.alt:hover{
-    /* background-color:#935386; */
      background-color:#96bf48; 
 }
 
@@ -1082,16 +1066,17 @@ form#searchbox input {
     background-color: unset;
 }
 
-.woocommerce .product-action-style > a + a::before{
-    content: "";
-}
-.woocommerce .product-action-style > a + a::before {
+.woocommerce .product-action-style > a::before {
     content: "";
     position: absolute;
     height: 22px;
     border-left: 1px solid #cccccc;
     display: block;
     left: -2px;
+}
+.woocommerce .product-action-style > a:first-child::before,
+.woocommerce .product-action-style > a.added_to_cart::before{
+    display: none;
 }
 .woocommerce .product-action-style > a.action-same span{
     display: none;

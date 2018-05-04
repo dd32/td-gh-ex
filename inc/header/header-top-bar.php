@@ -8,9 +8,9 @@
 
 if(get_theme_mod('nnfy_topbar_status', 'off')  == 'on'):
     $search = get_theme_mod('nnfy_topbar_search', 'on');
-    $myaccount = get_theme_mod('nnfy_topbar_myaccount', 'on');
-    $wishlist = get_theme_mod('nnfy_topbar_wishlist', 'on');
-    $cart = get_theme_mod('nnfy_topbar_cart', 'on');
+    $myaccount = get_theme_mod('nnfy_topbar_myaccount', 'off');
+    $wishlist = get_theme_mod('nnfy_topbar_wishlist', 'off');
+    $cart = get_theme_mod('nnfy_topbar_cart', 'off');
 ?>
 
 <div class="header-top-area theme-bg ptb-15">
@@ -59,7 +59,7 @@ if(get_theme_mod('nnfy_topbar_status', 'off')  == 'on'):
 
                         <?php
                             $wishlist_page_url = get_permalink( get_option( 'yith_wcwl_wishlist_page_id' ) );
-                            if($wishlist && $wishlist_page_url):
+                            if(class_exists('WooCommerce') && $wishlist && $wishlist_page_url):
                         ?>
                         <div class="header-wishlist common-btn">
                             <a class="toggle-active" href="<?php echo esc_url($wishlist_page_url);?>">
@@ -68,7 +68,7 @@ if(get_theme_mod('nnfy_topbar_status', 'off')  == 'on'):
                         </div>
                          <?php endif; ?>
 
-                        <?php if($cart && class_exists('WooCommerce')): ?>
+                        <?php if(class_exists('WooCommerce') && $cart ): ?>
                         <div class="header-cart common-btn">
                             <button class="toggle-active">
                                 <i class="ion-bag"></i>

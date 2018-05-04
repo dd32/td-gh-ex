@@ -318,8 +318,6 @@ textarea {
         Input
 *************************/
 input {
-    /*background: #eceff8;*/
-    /*border: 2px solid #eceff8;*/
     height: 45px;
     box-shadow: none;
     padding-left: 10px;
@@ -349,7 +347,6 @@ input:focus {
 }
 textarea {
     resize: vertical;
-    /*background: #eceff8;*/
     border: 2px solid #eceff8;
     padding: 10px;
     width: 100%;

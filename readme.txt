@@ -91,7 +91,7 @@ License: GPLv3
 Image used in Theme Screenshot:
 
 * Image used in Theme Screenshot (https://www.pexels.com/photo/architecture-carpet-chair-comfort-276534/) Pexels Free photos for commercial and personal works
-37
+License: Creative Commons Zero (CC0) license
 
 == Changelog ==
 

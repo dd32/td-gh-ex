@@ -16,6 +16,12 @@ function nnfy_sanitize_input($input){
 	return wp_kses_post( $input );
 }
 
+function nnfy_sanitize_absinteger( $input ) {
+	if ( is_numeric( $input ) && $input != '0' ) {
+		return absint( $input );
+	} else return '';
+}
+
 /**
  * - Sanitization: hex_color
  * - Control: text, WP_Customize_Color_Control

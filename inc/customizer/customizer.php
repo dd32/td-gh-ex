@@ -97,7 +97,7 @@ function nnfy_customizer_settings( $wp_customize ){
 
 
 	$wp_customize->add_setting('nnfy_topbar_myaccount',array(
-		'default'     => 'on',
+		'default'     => 'off',
 		'transport'   => 'refresh',
 		'sanitize_callback'	=> 'nnfy_sanitize_checkbox'
 	));
@@ -109,7 +109,7 @@ function nnfy_customizer_settings( $wp_customize ){
 
 
 	$wp_customize->add_setting('nnfy_topbar_wishlist',array(
-		'default'     => 'on',
+		'default'     => 'off',
 		'transport'   => 'refresh',
 		'sanitize_callback'	=> 'nnfy_sanitize_checkbox'
 	));
@@ -121,7 +121,7 @@ function nnfy_customizer_settings( $wp_customize ){
 
 
 	$wp_customize->add_setting('nnfy_topbar_cart',array(
-		'default'     => 'on',
+		'default'     => 'off',
 		'transport'   => 'refresh',
 		'sanitize_callback'	=> 'nnfy_sanitize_checkbox'
 	));
@@ -172,7 +172,7 @@ function nnfy_customizer_settings( $wp_customize ){
 	$wp_customize->add_setting('nnfy_footer_copyright_text',array(
 		'sanitize_callback'			=> 'nnfy_sanitize_input',
 		'transport'   				=> 'postMessage',
-		'default'     				=> __('Copyright &copy; 2018 99fy All Right Reserved.','99fy'),
+		'default'     				=> __('Copyright &copy; 2018 All Right Reserved.','99fy'),
 	));
 	$wp_customize->add_control( 'nnfy_footer_copyright_text', array(
 		'section'	=> 'nnfy_footer_settings',
@@ -216,8 +216,8 @@ function nnfy_customizer_settings( $wp_customize ){
 	) ) );
 
 	$wp_customize->add_setting( 'nnfy_pt_section_bg_image', array(
-		'transport' 			=> 'postMessage',
-		'sanitize_callback'		=> 'esc_url_raw'
+		'transport' 			=> 'refresh',
+		'sanitize_callback'		=> 'sanitize_text_field'
 	) );
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'nnfy_pt_section_bg_image', array(
 		'label'	   				=> __('Background Image','99fy'),
@@ -226,7 +226,7 @@ function nnfy_customizer_settings( $wp_customize ){
 
 
 	$wp_customize->add_setting( 'nnfy_pt_section_bg_image_size', array(
-		'transport' 			=> 'postMessage',
+		'transport' 			=> 'refresh',
 		'default' 				=> 'initial',
 		'sanitize_callback'	=> 'nnfy_sanitize_select'
 	) );
@@ -312,7 +312,7 @@ function nnfy_customizer_settings( $wp_customize ){
 	$wp_customize->add_setting('nnfy_blog_excerpt_length',array(
 		'default'     => '20',
 		'transport'   => 'refresh',
-		'sanitize_callback'	=> 'nnfy_sanitize_input'
+		'sanitize_callback'	=> 'nnfy_sanitize_absinteger'
 	));
 	$wp_customize->add_control( 'nnfy_blog_excerpt_length', array(
 		'section'	=> 'nnfy_blog_settings',
