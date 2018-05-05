@@ -28,15 +28,9 @@ $slider_data .= '}';
 	
 	<?php
 
-	if ( ashe_is_preview() ) {
-		$post_types = array( 'post' );
-	} else {
-		$post_types = array( 'post', 'page' );
-	}
-
 	// Query Args
 	$args = array(
-		'post_type'		      	=> $post_types,
+		'post_type'		      	=> array( 'post' ),
 	 	'orderby'		      	=> 'rand',
 		'order'			      	=> 'DESC',
 		'posts_per_page'      	=> ashe_options( 'featured_slider_amount' ),
