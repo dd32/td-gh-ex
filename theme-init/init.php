@@ -185,6 +185,12 @@ if ( ! function_exists( 'atlast_customizer_settings' ) ):
 			'sanitize_callback' => 'atlast_business_sanitize_checkbox',
 		) );
 
+		$wp_customize->add_setting( $prefix . '_services_section_style', array(
+			'default'           => 1,
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'atlast_business_sanitize_number_absint',
+		) );
+
 		$wp_customize->add_setting( $prefix . '_services_section_title', array(
 			'default'           => esc_html__( 'Tailor made solutions for every client. We specialize in..', 'atlast-business' ),
 			'capability'        => 'edit_theme_options',
@@ -278,6 +284,18 @@ if ( ! function_exists( 'atlast_customizer_settings' ) ):
 			'label'    => esc_html__( 'Enable this section.', 'atlast-business' ),
 		) );
 
+        $wp_customize->add_control( $prefix . '_services_section_style', array(
+            'type'        => 'select',
+            'priority'    => 11,
+            'section'     => $prefix . '_home_services_section',
+            'label'       => esc_html__( 'Select the services style.', 'atlast-business' ),
+            'description' => esc_html__( 'There are more than one to choose from.', 'atlast-business' ),
+            'choices'     => array(
+                1 => esc_html__( 'Default', 'atlast-business' ),
+                2 => esc_html__( 'Style 1', 'atlast-business' ),
+
+            )
+        ) );
 
 		$wp_customize->add_control( $prefix . '_services_section_title', array(
 			'type'        => 'text',
@@ -1345,8 +1363,8 @@ if ( ! function_exists( 'atlast_customizer_settings' ) ):
 				$wp_customize,
 				'changelog',
 				array(
-					'title'          => esc_html__( 'Whats New in 1.4.1', 'atlast-business' ),
-					'changelog_text' => esc_html__( 'Version 1.4.1 - Added testimonials section in the Homepage Layout Builder.', 'atlast-business' ),
+					'title'          => esc_html__( 'Whats New in 1.4.2', 'atlast-business' ),
+					'changelog_text' => esc_html__( 'Version 1.4.2 - Added alternative style services section.', 'atlast-business' ),
 					'priority'       => 1,
 					'capability'     => 'edit_theme_options',
 				)

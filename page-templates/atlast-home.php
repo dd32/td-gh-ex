@@ -31,7 +31,9 @@ get_header(); ?>
                                     </h3>
 								<?php endif; ?>
                             </div>
-							<?php get_template_part( 'template-parts/custom-pages/homepage/services/services-style-1' ); ?>
+							<?php
+                             $services_style = absint( get_theme_mod( $prefix . '_services_section_style', 1 ));
+                            get_template_part( 'template-parts/custom-pages/homepage/services/services-style-'.$services_style ); ?>
                         </div>
                     </div>
 
@@ -112,7 +114,7 @@ get_header(); ?>
                                     <h3 class="section-subtitle">
 										<?php echo esc_html( atlast_business_get_citem( '_team_section_subtitle', 'Meet our team of experts' ) ); ?>
                                     </h3>
-								<?php endif; ?>
+								<?php endif; ?> 
                             </div>
 							<?php get_template_part( 'template-parts/custom-pages/homepage/team/team-style-1' ); ?>
                         </div>
