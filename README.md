@@ -90,6 +90,9 @@ Yes! You can choose your color scheme under Appearance -> Theme Options -> Styli
 
 = Changelog =
 
+### Version 2.0.7
+- Update: Theme version
+
 ### Version 2.0.6
 - Update: Cleanup JS file
 
@@ -116,7 +119,6 @@ Yes! You can choose your color scheme under Appearance -> Theme Options -> Styli
 ### Version 2.0.2
 - Added Custom Theme Color theme-option(User can customize the theme color)
 - Added video option for home page slider
-
 
 ### Version 2.0.1
 - Updated Swipebox
