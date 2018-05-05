@@ -116,7 +116,7 @@ add_action( 'wp_head', 'bard_pingback_header' );
 function bard_scripts() {
 
 	// Theme Stylesheet
-	wp_enqueue_style( 'bard-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'bard-style', get_stylesheet_uri(), array(), '1.2' );
 
 	// Fontello Icons
 	wp_enqueue_style( 'fontello', get_theme_file_uri( '/assets/css/fontello.css' ) );
