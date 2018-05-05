@@ -611,7 +611,7 @@ $css = '';
 	// Height / Background
 	$css .= '
 		.entry-header {
-			height: 350px;
+			height: 450px;
 			background-image: url('. esc_url( get_header_image() ) .');
 			background-size: '. esc_html(bard_options( 'header_image_bg_image_size' )) .';
 

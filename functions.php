@@ -149,6 +149,14 @@ add_action( 'wp_enqueue_scripts', 'bard_scripts' );
 /*
 ** Google Fonts
 */
+function bard_arizonia_font_url() {
+    $font_url = '';
+    if ( 'off' !== _x( 'on', 'Google font: on or off', 'bard' ) ) {
+        $font_url = add_query_arg( 'family', urlencode( 'Arizonia:300,300i,400,400i,500,500i,600,600i,700,700i' ), "//fonts.googleapis.com/css" );
+    }
+    return $font_url;
+}
+
 function bard_montserrat_font_url() {
     $font_url = '';
     if ( 'off' !== _x( 'on', 'Google font: on or off', 'bard' ) ) {
@@ -185,6 +193,11 @@ function bard_rokkitt_font_url() {
 function bard_gfonts_scripts() {
     wp_enqueue_style( 'bard-montserratr-font', bard_montserrat_font_url(), array(), '1.0.0' );
     wp_enqueue_style( 'bard-opensans-font', bard_opensans_font_url(), array(), '1.0.0' );
+
+    // Load Arizonia if selected
+    if ( bard_options( 'typography_logo_family' ) == 'Arizonia' || bard_options( 'typography_nav_family' ) == 'Arizonia' ) {
+    	wp_enqueue_style( 'bard-arizonia-font', bard_arizonia_font_url(), array(), '1.0.0' );
+    }
 
     // Load Kalam if selected
     if ( bard_options( 'typography_logo_family' ) == 'Kalam' || bard_options( 'typography_nav_family' ) == 'Kalam' ) {

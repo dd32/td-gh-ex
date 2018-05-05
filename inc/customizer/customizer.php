@@ -954,6 +954,7 @@ function bard_customize_register( $wp_customize ) {
 	) );
 
 	$font_family = array(
+		'Arizonia' 	=> esc_html__( 'Arizonia', 'bard' ),
 		'Open+Sans' => esc_html__( 'Open Sans', 'bard' ),
 		'Rokkitt' 	=> esc_html__( 'Rokkitt', 'bard' ),
 		'Kalam' 	=> esc_html__( 'Kalam', 'bard' )

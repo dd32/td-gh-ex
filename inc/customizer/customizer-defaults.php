@@ -73,7 +73,7 @@ function bard_options( $control ) {
 		'social_media_icon_4' => 'pinterest',
 		'social_media_url_4' => '',
 		'social_media_title_4' => '',
-		'typography_logo_family' => 'Open+Sans',
+		'typography_logo_family' => 'Arizonia',
 		'typography_nav_family' => 'Open+Sans',
 		'page_footer_show_socials' => false,
 		'page_footer_logo' => '',
