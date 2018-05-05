@@ -42,6 +42,9 @@ Activiation and Use
 
 == Changelog ==
 
+= 1.0.2 =
+* add license/source of images used in screenshot.png 
+
 = 1.0.1 =
 * update readme.txt file
 * fix issue with main menu when no primary menu is set
@@ -81,6 +84,27 @@ AyaEstate WordPress Theme bundles the following third-party resources:
 * fonts/fontawesome-webfont.wof, FontAwesom, MIT
 * fonts/fontawesome-webfont.woff2, FontAwesom, MIT
 * js/viewportchecker.js, MIT
-* screenshot (Thumbnail Image), https://pixabay.com/en/white-outdoor-patio-furniture-1547092/, CC0
-* screenshot (Facebook Page Images), AyaTemplates, https://web.facebook.com/ayatemplates/, GPL-2.0
-* screenshot (Instagram Images), AyaTemplates, https://www.instagram.com/aya.templates/, GPL-2.0 
+*
+* screenshot.png (Thumbnail Image), https://pixabay.com/en/white-outdoor-patio-furniture-1547092/, CC0
+*
+* screenshot.png (Facebook Page Images), AyaTemplates, https://web.facebook.com/ayatemplates/, GPL-2.0
+*
+* screenshot.png (Instagram Images), AyaTemplates, https://www.instagram.com/aya.templates/, GPL-2.0
+*
+* screenshot.png (Facebook Cover Image), CC0, Andrej Zitnik, https://dribbble.com/shots/4128786-Free-mockup-Stylish-Workspace-With-iMac-in-a-Bright-Interior
+*
+* screenshot.png (Facebook Page Logo Image), GPL-2.0, AyaTemplates, https://ayatemplates.com/
+*
+* screenshot.png (Facebook Page Angel Logo Image), GPL-2.0, AyaTemplates, https://ayatemplates.com/product/angel-logo-design-from-the-flower-of-life/
+*
+* screenshot.png (Instagram Image #1), CC0, AyaTemplates, https://www.instagram.com/p/Bhn7poph_Q5/?taken-by=aya.templates
+*
+* screenshot.png (Instagram Image #2), CC0, AyaTemplates, https://www.instagram.com/p/Bhn7fH1BewL/?taken-by=aya.templates
+*
+* screenshot.png (Instagram Image #3), CC0, AyaTemplates, https://www.instagram.com/p/BhmL37Thn2Y/?taken-by=aya.templates
+*
+* screenshot.png (Instagram Image #4), CC0, AyaTemplates, https://www.instagram.com/p/BiGl_8mh-Hp/?taken-by=aya.templates
+*
+* screenshot.png (Instagram Image #5), CC0, AyaTemplates, https://www.instagram.com/p/BhjdSW7h7-d/?taken-by=aya.templates
+*
+* screenshot.png (Instagram Image #6), CC0, AyaTemplates, https://www.instagram.com/p/BhhIRMmhbrY/?taken-by=aya.templates
