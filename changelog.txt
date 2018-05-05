@@ -4,6 +4,15 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.4.2
+	* Added: Separate slider colours option when using the card display option
+	* Updated: Removed translation files for the following languages since there are better translations in GlotPress: pt_BR, ru_RU
+	* Fixed: graphene_navbar_header action hook does not appear in Action Hook Widget Areas option
+	* Fixed: Carousel script error when the primary header menu is not in use
+	* Fixed: PHP warning when using YARPP
+	* Fixed: PHP warning in 404.php file
+	* Fixed: Reorganised top bar and bottom footer elements using floats for more robust styling
+
 Version 2.4.1
 	* Fixed: PHP warning when YARPP has not been installed
 	* Fixed: Slider has no background colour when extended to full width

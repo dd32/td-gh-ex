@@ -88,7 +88,7 @@ function graphene_related_posts( $in_custom_layout = false ){
 	
 	$yarpp_options = get_option( 'yarpp', array() );
 	if ( $yarpp_options ) {
-		$display_settings = $display_settings['auto_display_post_types'];
+		$display_settings = $yarpp_options['auto_display_post_types'];
 		if ( ! is_singular() || ! in_array( get_post_type(), $display_settings ) ) return;
 	}
 	

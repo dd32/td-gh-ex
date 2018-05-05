@@ -113,7 +113,7 @@
                             <?php echo "<$desc_tag class=\"header_desc\">"; ?><?php bloginfo( 'description' ); ?><?php echo "</$desc_tag>"; ?>
                         <?php endif; ?>
 
-                    <?php do_action( 'grahene_navbar_header' ); ?>
+                    <?php do_action( 'graphene_navbar_header' ); ?>
                 </div>
 
                 <?php graphene_container_wrapper( 'start' ); ?>

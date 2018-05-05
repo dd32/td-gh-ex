@@ -204,6 +204,9 @@ function graphene_get_customizer_transport_settings(){
 
 		'slider_caption_bg',
 		'slider_caption_text',
+		'slider_card_bg',
+		'slider_card_text',
+		'slider_card_link',
 
 		'button_bg',
 		'button_label',

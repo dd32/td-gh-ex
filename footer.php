@@ -46,27 +46,31 @@ global $graphene_settings;
 <div id="footer" class="row">
     <?php graphene_container_wrapper( 'start' ); ?>
 
-        <div class="footer-right col-md-8 col-md-push-4 flip">
-            <?php if ( stripos( $graphene_settings['social_media_location'], 'footer' ) !== false ) graphene_social_profiles(); ?>
+        <?php 
+            if ( ( stripos( $graphene_settings['social_media_location'], 'footer' ) !== false && $graphene_settings['social_profiles'] ) || has_nav_menu( 'footer-menu' ) ) :
+        ?>
+            <div class="footer-right">
+                <?php if ( stripos( $graphene_settings['social_media_location'], 'footer' ) !== false ) graphene_social_profiles(); ?>
 
-            <?php if ( has_nav_menu( 'footer-menu' ) ) : ?>
-                <div class="footer-menu-wrap flip">
-                    <?php
-                        /* Footer menu */
-                        $args = array(
-                            'container'         => false,
-                            'fallback_cb'       => 'none',
-                            'depth'             => 2,
-                            'theme_location'    => 'footer-menu',
-                            'items_wrap'        => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                        );
-                        wp_nav_menu( apply_filters( 'graphene_footer_menu_args', $args ) );
-                    ?>
-                </div>
-            <?php endif; ?>
-        </div>
+                <?php if ( has_nav_menu( 'footer-menu' ) ) : ?>
+                    <div class="footer-menu-wrap flip">
+                        <?php
+                            /* Footer menu */
+                            $args = array(
+                                'container'         => false,
+                                'fallback_cb'       => 'none',
+                                'depth'             => 2,
+                                'theme_location'    => 'footer-menu',
+                                'items_wrap'        => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                            );
+                            wp_nav_menu( apply_filters( 'graphene_footer_menu_args', $args ) );
+                        ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
 
-        <div class="copyright-developer col-md-4 col-md-pull-8 flip">
+        <div class="copyright-developer">
             <?php if ( ! $graphene_settings['hide_copyright'] ) : ?>
                 <div id="copyright">
                     <?php 

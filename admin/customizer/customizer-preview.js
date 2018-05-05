@@ -190,6 +190,15 @@ jQuery(document).ready(function($) {
 	wp.customize('graphene_settings[slider_caption_text]', function(value){ value.bind(function(to){
 		$('#graphene-preview-css').append('.carousel-caption, .carousel .slider_post_title, .carousel .slider_post_title a {color: ' + to + '}');
 	});	});
+	wp.customize('graphene_settings[slider_card_bg]', function(value){ value.bind(function(to){
+		$('#graphene-preview-css').append('.carousel.style-card {background: ' + to + '}');
+	});	});
+	wp.customize('graphene_settings[slider_card_text]', function(value){ value.bind(function(to){
+		$('#graphene-preview-css').append('.carousel.style-card {color: ' + to + '}');
+	});	});
+	wp.customize('graphene_settings[slider_card_link]', function(value){ value.bind(function(to){
+		$('#graphene-preview-css').append('.carousel.style-card a {color: ' + to + '}');
+	});	});
 
 
 	/* Content Area */

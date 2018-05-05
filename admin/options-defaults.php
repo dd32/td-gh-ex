@@ -226,6 +226,9 @@ $graphene_defaults = apply_filters( 'graphene_defaults', array(
 
 	'slider_caption_bg' 		=> 'rgba(0,0,0,0.8)',
 	'slider_caption_text'	 	=> '#ffffff',
+	'slider_card_bg' 			=> '#ffffff',
+	'slider_card_text'	 		=> '#4a474b',
+	'slider_card_link'	 		=> '#783d98',
 
 	'button_bg' 				=> '#4F2D69',
 	'button_label'	 			=> '#ffffff',

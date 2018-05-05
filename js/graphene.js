@@ -46,7 +46,7 @@ jQuery(document).ready(function($) {
 
 		/* Position the carousel caption when using full-width-boxed layout */
 		function graphenePositionCarouselCaption(){
-			if ( $(window).width() <= 991 ) return;
+			if ( $(window).width() <= 991 || $('#header-menu-wrap').length == 0 ) return;
 			$('.layout-full-width-boxed .carousel-caption-content').css('left', $('#header-menu-wrap').position().left + 15 + 'px' );
 		}
 		$(window).resize(function(){graphenePositionCarouselCaption();});

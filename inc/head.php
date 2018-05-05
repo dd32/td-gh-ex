@@ -279,7 +279,10 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 
 		// Slider
 		$colours = array(
-			'slider_caption_bg|slider_caption_bg@0.8|slider_caption_text'	=> '.carousel-caption {background-color: %1$s; background-color: %2$s; color: %3$s} .carousel .slider_post_title, .carousel .slider_post_title a {color: %3$s}'
+			'slider_caption_bg|slider_caption_bg@0.8|slider_caption_text'	=> '.carousel-caption {background-color: %1$s; background-color: %2$s; color: %3$s} .carousel .slider_post_title, .carousel .slider_post_title a {color: %3$s}',
+			'slider_card_bg'	=> '.carousel.style-card {background: %s}',
+			'slider_card_text'	=> '.carousel.style-card {color: %s}',
+			'slider_card_link'	=> '.carousel.style-card a {color: %s}',
 		);
 		$style .= graphene_build_style( $colours );
 
