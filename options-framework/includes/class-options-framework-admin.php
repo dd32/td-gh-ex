@@ -193,7 +193,7 @@ class Options_Framework_Admin {
 	    </h2>
 
 	    <?php settings_errors( 'options-framework' ); ?>
-
+      <?php echo __('For <a style="margin: 10px 3px;" href="https://support.nettantra.com/cart.php?gid=1" class="button-primary">Premium Support!</a>', 'ascent'); ?>
 	    <div id="optionsframework-metabox" class="metabox-holder">
 		    <div id="optionsframework" class="postbox">
 				<form action="options.php" method="post">

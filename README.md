@@ -19,7 +19,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Description ==
 
 Ascent Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight WordPress theme based on the most modern technologies like HTML5 and CSS3. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10.
-If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Ascent is your perfect find. You can check out the demo at http://testbase.info/c/theme/wp/ascent/, and get support: https://support.nettantra.com/cart.php?gid=1.
+If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Ascent is your perfect find. You can check out the demo at http://testbase.info/c/theme/wp/ascent/, and get premium support: https://support.nettantra.com/cart.php?gid=1.
 
 
 * Fully Bootstrap Power
@@ -90,9 +90,11 @@ Yes! You can choose your color scheme under Appearance -> Theme Options -> Styli
 
 = Changelog =
 
+### Version 2.0.6
+- Update: Cleanup JS file
+
 ### Version 2.0.5
 - Update: Theme version
-
 
 ### Version 2.0.4
 - New: Added two Theme color scheme(Dodger blue and Medium slate blue)
