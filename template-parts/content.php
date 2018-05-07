@@ -8,7 +8,6 @@
  */
 
 $blog_col_size = get_theme_mod('nnfy_blog_col_size', 3);
-$blog_col_size = isset($_GET['columns']) ? $_GET['columns'] : $blog_col_size;
 
 for($i = 1; $i <= $blog_col_size; $i++){
 

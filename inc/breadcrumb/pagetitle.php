@@ -30,10 +30,10 @@
 			          if(is_woocommerce()){
 			           woocommerce_breadcrumb();
 			          } else {
-			           nnfy_breadcrumbs();
+                       nnfy_breadcrumbs();
 			          }
 			         } else {
-			          nnfy_breadcrumbs();
+                      nnfy_breadcrumbs();
 			         }
 	            }
             ?>

@@ -13,7 +13,6 @@
  */
 
 $layout = get_theme_mod('nnfy_blog_layout', 'none');
-$layout = isset($_GET['layout']) ? $_GET['layout'] : $layout;
 
 $content_class = ($layout == 'left' || $layout == 'right') ? 'col-md-12 col-lg-8 col-12' : 'col-lg-12 col-12';
 

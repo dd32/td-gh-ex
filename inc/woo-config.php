@@ -38,10 +38,6 @@
  	add_action( 'woocommerce_before_shop_loop_item_title', 'nnfy_woocommerce_template_loop_product_thumbnail',10 );
  	add_action( 'woocommerce_before_shop_loop_item_title', 'nnfy_woocommerce_template_loop_product_content_list',15 );
 
- 	// single product
- 	add_action( 'woocommerce_share', 'nnfy_woocommerce_single_product_sharing',10 );
-
-
  	// cart page
  	add_action( 'woocommerce_after_cart_table', 'woocommerce_cart_totals', 10 );
  }
@@ -269,62 +265,6 @@ function nnfy_woocommerce_template_loop_product_content_list(){
 	    </div>
 	</div>
 	<?php
-}
-
-
-function nnfy_woocommerce_single_product_sharing(){
-
-	$product_title 	= get_the_title();
-	$product_url	= get_permalink();
-	$product_img	= wp_get_attachment_url( get_post_thumbnail_id() );
-
-	$facebook_url 	= 'https://www.facebook.com/sharer/sharer.php?u=' . $product_url;
-
-	$twitter_url	= 'http://twitter.com/intent/tweet?status=' . rawurlencode( $product_title ) . '+' . $product_url;
-
-	$pinterest_url	= 'http://pinterest.com/pin/create/bookmarklet/?media=' . $product_img . '&url=' . $product_url . '&is_video=false&description=' . rawurlencode( $product_title );
-
-	$gplus_url		= 'https://plus.google.com/share?url='. $product_url;
-
-	?>
-	<div class="product-share">
-	    <ul>
-	        <li class="categories-title"><?php echo esc_html( 'Share :', '99fy' ); ?></li>
-	        <li>
-	            <a href="<?php echo esc_url($twitter_url); ?>" target="_blank">
-	                <i class="ion-social-twitter"></i>
-	            </a>
-	        </li>
-	        <li>
-	            <a href="<?php echo esc_url($gplus_url); ?>" target="_blank">
-	                <i class="ion-social-googleplus"></i>
-	            </a>
-	        </li>
-	        <li>
-	            <a href="<?php echo esc_url($facebook_url); ?>" target="_blank">
-	                <i class="ion-social-facebook"></i>
-	            </a>
-	        </li>
-	        <li>
-	            <a href="<?php echo esc_url($pinterest_url); ?>" target="_blank">
-	                <i class="ion-social-pinterest-outline"></i>
-	            </a>
-	        </li>
-	    </ul>
-	</div>
-	<?php
-}
-
-// WooCommerce Ajax
-add_action('wp_head','nnfy_woo_ajaxurl');
-function nnfy_woo_ajaxurl() {
-	?>
-	<script type="text/javascript">
-	var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
-	</script>
-	<?php
-	// Enqueue variation scripts
-	wp_enqueue_script( 'wc-add-to-cart-variation' );
 }
 
 // quickview ajax

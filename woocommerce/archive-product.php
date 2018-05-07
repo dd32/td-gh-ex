@@ -20,6 +20,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+$col_class = is_active_sidebar( 'sidebar-shop' ) ? 'col-lg-9' : 'col-lg-12';
+
 get_header( 'shop' ); ?>
 
 	<?php
@@ -45,7 +47,9 @@ get_header( 'shop' ); ?>
 			?>
 		</div><!-- /.col-lg-3 -->
 
-		<div class="col-lg-9">
+		<div class="<?php echo esc_attr( $col_class ); ?>">
+			<?php echo wc_print_notices(); ?>
+
 			<div class="shop-product-wrapper">
 
 

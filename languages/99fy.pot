@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 99fy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-03 12:27+0000\n"
+"POT-Creation-Date: 2018-05-07 14:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -23,12 +23,24 @@ msgstr ""
 msgid "%1$s at %2$s"
 msgstr ""
 
+#: woocommerce/single-product/rating.php:44
+#, php-format
+msgid "%d Rating"
+msgid_plural "%1$s Rating (S)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/breadcrumb/breadcrumb.php:13
+#, php-format
+msgid "%s posts"
+msgstr ""
+
 #: woocommerce/cart/cart-totals.php:73
 #, php-format
 msgid "(estimated for %s)"
 msgstr ""
 
-#: inc/customizer/customizer.php:268 inc/customizer/customizer.php:288
+#: inc/customizer/customizer.php:257 inc/customizer/customizer.php:277
 msgid "1 Column"
 msgstr ""
 
@@ -36,22 +48,15 @@ msgstr ""
 msgid "1 Comment"
 msgstr ""
 
-#: woocommerce/single-product/rating.php:44
-#, php-format
-msgid "1 Rating"
-msgid_plural "%1$s Rating (S)"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/customizer/customizer.php:269 inc/customizer/customizer.php:289
+#: inc/customizer/customizer.php:258 inc/customizer/customizer.php:278
 msgid "2 Column"
 msgstr ""
 
-#: inc/customizer/customizer.php:270 inc/customizer/customizer.php:290
+#: inc/customizer/customizer.php:259 inc/customizer/customizer.php:279
 msgid "3 Column"
 msgstr ""
 
-#: inc/customizer/customizer.php:271 inc/customizer/customizer.php:291
+#: inc/customizer/customizer.php:260 inc/customizer/customizer.php:280
 msgid "4 column"
 msgstr ""
 
@@ -59,16 +64,12 @@ msgstr ""
 msgid "404"
 msgstr ""
 
-#: inc/customizer/customizer.php:272
+#: inc/customizer/customizer.php:261
 msgid "5 Column"
 msgstr ""
 
 #. Name of the theme
 msgid "99fy"
-msgstr ""
-
-#: inc/tgm-plugin/required-plugins.php:63
-msgid "99fy Core"
 msgstr ""
 
 #: inc/customizer/customizer.php:32
@@ -83,10 +84,8 @@ msgstr ""
 msgid "Add to cart"
 msgstr ""
 
-#: inc/widgets/widget-register.php:20 inc/widgets/widget-register.php:30
-#: inc/widgets/widget-register.php:40 inc/widgets/widget-register.php:50
-#: inc/widgets/widget-register.php:60 inc/widgets/widget-register.php:70
-#: inc/widgets/widget-register.php:80 inc/widgets/widget-register.php:90
+#: inc/widgets/widget-register.php:16 inc/widgets/widget-register.php:27
+#: inc/widgets/widget-register.php:45
 msgid "Add widgets here."
 msgstr ""
 
@@ -95,28 +94,13 @@ msgstr ""
 msgid "Added on : %s"
 msgstr ""
 
-#: inc/tgm-plugin/required-plugins.php:207
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
-
 #: woocommerce/cart/cart.php:148
 msgid "Apply coupon"
 msgstr ""
 
-#: inc/breadcrumb/breadcrumb.php:16
+#: inc/breadcrumb/breadcrumb.php:10
 #, php-format
-msgid "Archive by Category \"%s\""
-msgstr ""
-
-#: inc/breadcrumb/breadcrumb.php:17
-#, php-format
-msgid "Archive for \"%s\""
-msgstr ""
-
-#: inc/breadcrumb/breadcrumb.php:20
-#, php-format
-msgid "Articles Posted by %s"
+msgid "Archive \"%s\""
 msgstr ""
 
 #: woocommerce/wishlist-view.php:269 woocommerce/wishlist-view.php:316
@@ -127,7 +111,11 @@ msgstr ""
 msgid "Author Image"
 msgstr ""
 
-#: inc/customizer/customizer.php:239
+#: inc/widgets/author-info.php:177
+msgid "Author image"
+msgstr ""
+
+#: inc/customizer/customizer.php:228
 msgid "Auto"
 msgstr ""
 
@@ -139,53 +127,27 @@ msgstr ""
 msgid "Awaiting product image"
 msgstr ""
 
-#: inc/customizer/customizer.php:214
+#: inc/customizer/customizer.php:203
 msgid "Background Color"
 msgstr ""
 
-#: inc/customizer/customizer.php:223
+#: inc/customizer/customizer.php:212
 msgid "Background Image"
 msgstr ""
-
-#: inc/widgets/single-banner.php:45
-msgid "Banner Image"
-msgstr ""
-
-#: inc/widgets/single-banner.php:113
-msgid "Banner Link:"
-msgstr ""
-
-#: inc/tgm-plugin/required-plugins.php:197
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/tgm-plugin/required-plugins.php:187
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/tgm-plugin/required-plugins.php:192
-msgid "Begin updating plugin"
-msgid_plural "Begin updating plugins"
-msgstr[0] ""
-msgstr[1] ""
 
 #. Name of the template
 msgid "Blank Template"
 msgstr ""
 
-#: inc/customizer/customizer.php:285
+#: inc/customizer/customizer.php:274
 msgid "Blog column size"
 msgstr ""
 
-#: inc/customizer/customizer.php:319
+#: inc/customizer/customizer.php:308
 msgid "Blog excerpt length"
 msgstr ""
 
-#: inc/customizer/customizer.php:303
+#: inc/customizer/customizer.php:292
 msgid "Blog Layout"
 msgstr ""
 
@@ -193,15 +155,7 @@ msgstr ""
 msgid "Blog Options"
 msgstr ""
 
-#. Name of the template
-msgid "Both Sidebar"
-msgstr ""
-
-#. Name of the template
-msgid "Both Sidebar Full"
-msgstr ""
-
-#: template-parts/content.php:50
+#: template-parts/content.php:49
 msgid "By "
 msgstr ""
 
@@ -230,11 +184,11 @@ msgstr ""
 msgid "Clear"
 msgstr ""
 
-#: comments.php:98
+#: comments.php:109
 msgid "Comment *"
 msgstr ""
 
-#: comments.php:69
+#: comments.php:80
 msgid "Comments are closed."
 msgstr ""
 
@@ -242,24 +196,29 @@ msgstr ""
 msgid "Comments off"
 msgstr ""
 
-#: comments.php:35
+#: inc/breadcrumb/breadcrumb.php:16
+#, php-format
+msgid "Comments page %s"
+msgstr ""
+
+#. 1: comment count number, 2: title.
+#: comments.php:45
 #, php-format
 msgctxt "comments title"
-msgid "One Comment on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s Comments on &ldquo;%2$s&rdquo;"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin/required-plugins.php:74
+#: inc/tgm-plugin/plugins.php:68
 msgid "Contact Form 7"
 msgstr ""
 
-#: inc/customizer/customizer.php:241
+#: inc/customizer/customizer.php:230
 msgid "Contain"
 msgstr ""
 
-#: inc/widgets/author-info.php:187 inc/widgets/company-info-widget.php:130
-#: inc/widgets/video-popup.php:137
+#: inc/widgets/author-info.php:187
 msgid "Content:"
 msgstr ""
 
@@ -267,8 +226,12 @@ msgstr ""
 msgid "Continue Shopping"
 msgstr ""
 
-#: inc/customizer/customizer.php:175
+#: footer.php:14
 msgid "Copyright &copy; 2018 99fy All Right Reserved."
+msgstr ""
+
+#: inc/customizer/customizer.php:164
+msgid "Copyright &copy; 2018 All Right Reserved."
 msgstr ""
 
 #: woocommerce/cart/cart.php:147
@@ -279,7 +242,7 @@ msgstr ""
 msgid "Coupon:"
 msgstr ""
 
-#: inc/customizer/customizer.php:240
+#: inc/customizer/customizer.php:229
 msgid "Cover"
 msgstr ""
 
@@ -287,12 +250,8 @@ msgstr ""
 msgid "Create Menu"
 msgstr ""
 
-#: inc/customizer/customizer.php:238
+#: inc/customizer/customizer.php:227
 msgid "Default"
-msgstr ""
-
-#: inc/widgets/newsletter.php:76
-msgid "Description:"
 msgstr ""
 
 #. Author of the theme
@@ -301,10 +260,6 @@ msgstr ""
 
 #: inc/customizer/customizer.php:70
 msgid "Disable"
-msgstr ""
-
-#: inc/widgets/recent-post.php:143
-msgid "Display post date?"
 msgstr ""
 
 #. %s: Name of current post
@@ -321,7 +276,7 @@ msgstr ""
 msgid "Enable"
 msgstr ""
 
-#: inc/customizer/customizer.php:203
+#: inc/customizer/customizer.php:192
 msgid "Enable / Disable Breadcrumb"
 msgstr ""
 
@@ -329,11 +284,11 @@ msgstr ""
 msgid "Enable / Disable Cart"
 msgstr ""
 
-#: inc/customizer/customizer.php:167
+#: inc/customizer/customizer.php:156
 msgid "Enable / Disable Copyright"
 msgstr ""
 
-#: inc/customizer/customizer.php:155
+#: inc/customizer/customizer.php:144
 msgid "Enable / Disable Footer"
 msgstr ""
 
@@ -341,7 +296,7 @@ msgstr ""
 msgid "Enable / Disable Myaccount"
 msgstr ""
 
-#: inc/customizer/customizer.php:191
+#: inc/customizer/customizer.php:180
 msgid "Enable / Disable Page title"
 msgstr ""
 
@@ -361,39 +316,23 @@ msgstr ""
 msgid "Enter your coupon code if you have one."
 msgstr ""
 
-#: inc/breadcrumb/breadcrumb.php:21
+#: inc/breadcrumb/breadcrumb.php:14
 msgid "Error 404"
 msgstr ""
 
-#: inc/widgets/author-info.php:197 inc/widgets/company-info-widget.php:134
+#: inc/widgets/author-info.php:197
 msgid "Facebook Link:"
 msgstr ""
 
-#: inc/widgets/widget-register.php:48
-msgid "Footer 1"
+#: inc/widgets/widget-register.php:43
+msgid "Footer "
 msgstr ""
 
-#: inc/widgets/widget-register.php:58
-msgid "Footer 2"
-msgstr ""
-
-#: inc/widgets/widget-register.php:68
-msgid "Footer 3"
-msgstr ""
-
-#: inc/widgets/widget-register.php:78
-msgid "Footer 4"
-msgstr ""
-
-#: inc/widgets/widget-register.php:88
-msgid "Footer 5"
-msgstr ""
-
-#: inc/customizer/customizer.php:265
+#: inc/customizer/customizer.php:254
 msgid "Footer column size"
 msgstr ""
 
-#: inc/customizer/customizer.php:179
+#: inc/customizer/customizer.php:168
 msgid "Footer copyright text"
 msgstr ""
 
@@ -421,19 +360,15 @@ msgstr ""
 msgid "Go back to Home Page"
 msgstr ""
 
-#: inc/widgets/author-info.php:201 inc/widgets/company-info-widget.php:138
+#: inc/widgets/author-info.php:201
 msgid "Google Plus Link:"
-msgstr ""
-
-#: inc/tgm-plugin/required-plugins.php:109
-msgid "HashBar"
 msgstr ""
 
 #: inc/customizer/customizer.php:41
 msgid "Header Optinos"
 msgstr ""
 
-#: inc/breadcrumb/breadcrumb.php:15
+#: inc/breadcrumb/breadcrumb.php:9
 msgid "Home"
 msgstr ""
 
@@ -449,25 +384,12 @@ msgstr ""
 msgid "In Stock"
 msgstr ""
 
-#: inc/tgm-plugin/required-plugins.php:84
+#: inc/tgm-plugin/plugins.php:78
 msgid "Instagram Feed"
 msgstr ""
 
 #: inc/widgets/author-info.php:221
 msgid "Instagram Link:"
-msgstr ""
-
-#: inc/tgm-plugin/required-plugins.php:139
-msgid "Install Plugins"
-msgstr ""
-
-#: inc/tgm-plugin/required-plugins.php:138
-msgid "Install Required Plugins"
-msgstr ""
-
-#: inc/tgm-plugin/required-plugins.php:140
-#, php-format
-msgid "Installing Plugin: %s"
 msgstr ""
 
 #: template-parts/content-none.php:29
@@ -476,15 +398,15 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: inc/tgm-plugin/required-plugins.php:69
+#: inc/tgm-plugin/plugins.php:63
 msgid "King Composer"
 msgstr ""
 
-#: comments.php:100
+#: comments.php:111
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/customizer/customizer.php:307 inc/widgets/widget-register.php:28
+#: inc/customizer/customizer.php:296
 msgid "Left Sidebar"
 msgstr ""
 
@@ -492,7 +414,7 @@ msgstr ""
 msgid "Left sidebar"
 msgstr ""
 
-#: inc/widgets/author-info.php:213 inc/widgets/company-info-widget.php:152
+#: inc/widgets/author-info.php:213
 msgid "Linkedin Link:"
 msgstr ""
 
@@ -504,7 +426,7 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: inc/tgm-plugin/required-plugins.php:79
+#: inc/tgm-plugin/plugins.php:73
 msgid "Mailchimp For WP"
 msgstr ""
 
@@ -520,45 +442,12 @@ msgstr ""
 msgid "Newer Comments"
 msgstr ""
 
-#: inc/customizer/customizer.php:143
-msgid "Newsletter Shortcode"
-msgstr ""
-
-#: inc/widgets/recent-post.php:14
-msgid "NNfy blog recent post here"
-msgstr ""
-
-#: inc/widgets/newsletter.php:11
-msgid "NNfy contact for address email and phone no."
-msgstr ""
-
 #: inc/widgets/author-info.php:19
 msgid "NNfy: Author Informations"
 msgstr ""
 
-#: inc/widgets/single-banner.php:19
-msgid "NNfy: Banner"
-msgstr ""
-
-#: inc/widgets/newsletter.php:13
-msgid "NNfy: Newsletter"
-msgstr ""
-
-#: inc/widgets/recent-post.php:18
-msgid "NNfy: Recent Post"
-msgstr ""
-
-#: inc/widgets/company-info-widget.php:12
-msgid "NNfy: Short Description"
-msgstr ""
-
-#: inc/widgets/video-popup.php:19
-msgid "NNfy: Video PopUp"
-msgstr ""
-
-#: inc/tgm-plugin/required-plugins.php:205
-#, php-format
-msgid "No action taken. Plugin %1$s was already active."
+#: inc/breadcrumb/breadcrumb.php:110
+msgid "No Categories"
 msgstr ""
 
 #: template-parts/content-single.php:34
@@ -573,12 +462,8 @@ msgstr ""
 msgid "No products were added to the wishlist"
 msgstr ""
 
-#: inc/customizer/customizer.php:306
+#: inc/customizer/customizer.php:295
 msgid "No sidebar"
-msgstr ""
-
-#: inc/widgets/recent-post.php:132
-msgid "No. of Item of posts to show:"
 msgstr ""
 
 #: template-parts/content-none.php:13
@@ -589,22 +474,20 @@ msgstr ""
 msgid "Older Comments"
 msgstr ""
 
-#: template-parts/content.php:50
+#: template-parts/content.php:49
 msgid "on"
 msgstr ""
 
-#: inc/tgm-plugin/required-plugins.php:104
-msgid "One Click Demo Import"
+#. 1: title.
+#: comments.php:39
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
 #. If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language.
-#: functions.php:126
+#: functions.php:125
 msgctxt "Open Sans font: on or off"
 msgid "on"
-msgstr ""
-
-#: inc/widgets/company-info-widget.php:11
-msgid "Our short description  ."
 msgstr ""
 
 #: woocommerce/wishlist-view.php:173
@@ -612,8 +495,12 @@ msgid "Out of Stock"
 msgstr ""
 
 #: template-parts/content-page.php:23 template-parts/content-single.php:23
-#: inc/breadcrumb/breadcrumb.php:128
 msgid "Page"
+msgstr ""
+
+#: inc/breadcrumb/breadcrumb.php:15
+#, php-format
+msgid "Page %s"
 msgstr ""
 
 #: 404.php:19
@@ -624,7 +511,7 @@ msgstr ""
 msgid "Page title Options"
 msgstr ""
 
-#: inc/customizer/customizer.php:253
+#: inc/customizer/customizer.php:242
 msgid "Page title section Top and bottom padding"
 msgstr ""
 
@@ -645,30 +532,15 @@ msgctxt "placeholder"
 msgid "Search Here"
 msgstr ""
 
-#: inc/tgm-plugin/required-plugins.php:208
-msgid "Please contact the administrator of this site for help."
-msgstr ""
-
-#: inc/tgm-plugin/required-plugins.php:203
-msgid "Plugin activated successfully."
-msgstr ""
-
-#: inc/tgm-plugin/required-plugins.php:206
-#, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-
 #. If there are characters in your language that are not supported by Poppins, translate this to 'off'. Do not translate into your own language.
-#: functions.php:131
+#: functions.php:130
 msgctxt "Poppins font: on or off"
 msgid "on"
 msgstr ""
 
-#: inc/breadcrumb/breadcrumb.php:19
+#: inc/breadcrumb/breadcrumb.php:12
 #, php-format
-msgid "Posts Tagged \"%s\""
+msgid "Posts with tag \"%s\""
 msgstr ""
 
 #: woocommerce/cart/cart.php:36 woocommerce/cart/cart.php:84
@@ -705,7 +577,7 @@ msgstr ""
 msgid "Quantity"
 msgstr ""
 
-#: template-parts/content.php:53
+#: template-parts/content.php:52
 msgid "Read More"
 msgstr ""
 
@@ -715,16 +587,8 @@ msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: inc/widgets/recent-post.php:37
-msgid "Recent Posts"
-msgstr ""
-
 #: inc/header/header-top-bar.php:50
 msgid "register"
-msgstr ""
-
-#: woocommerce/single-product/related.php:28
-msgid "Related Products"
 msgstr ""
 
 #: woocommerce/wishlist-view.php:116 woocommerce/wishlist-view.php:226
@@ -740,20 +604,12 @@ msgstr ""
 msgid "Remove this product"
 msgstr ""
 
-#: inc/tgm-plugin/required-plugins.php:202
-msgid "Return to Required Plugins Installer"
-msgstr ""
-
-#: inc/customizer/customizer.php:308 inc/widgets/widget-register.php:18
+#: inc/customizer/customizer.php:297
 msgid "Right Sidebar"
 msgstr ""
 
 #. Name of the template
 msgid "Right sidebar"
-msgstr ""
-
-#: inc/widgets/company-info-widget.php:146
-msgid "Rss Link:"
 msgstr ""
 
 #: woocommerce/wishlist-view.php:41
@@ -764,9 +620,9 @@ msgstr ""
 msgid "Search Products..."
 msgstr ""
 
-#: inc/breadcrumb/breadcrumb.php:18
+#: inc/breadcrumb/breadcrumb.php:11
 #, php-format
-msgid "Search Results for \"%s\" Query"
+msgid "Search results for \"%s\""
 msgstr ""
 
 #: woocommerce/wishlist-view.php:206
@@ -777,23 +633,15 @@ msgstr ""
 msgid "Shipping"
 msgstr ""
 
-#: inc/widgets/widget-register.php:38
+#: inc/widgets/widget-register.php:25
 msgid "Shop sidebar"
 msgstr ""
 
-#: inc/widgets/newsletter.php:80
-msgid "Shortcode:"
+#: inc/widgets/widget-register.php:14
+msgid "Sidebar"
 msgstr ""
 
-#. %d: total results
-#: woocommerce/loop/result-count.php:44
-#, php-format
-msgid "Showing the single result"
-msgid_plural "Showing all %d results"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/customizer/customizer.php:234
+#: inc/customizer/customizer.php:223
 msgid "Size"
 msgstr ""
 
@@ -801,47 +649,11 @@ msgstr ""
 msgid "Social Title:"
 msgstr ""
 
-#: inc/tgm-plugin/required-plugins.php:141
-msgid "Something went wrong with the plugin API."
-msgstr ""
-
 #: template-parts/content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-
-#: inc/tgm-plugin/required-plugins.php:182
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %1$s "
-"plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to activate the %1$s "
-"plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/tgm-plugin/required-plugins.php:152
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %1$s "
-"plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to install the %1$s "
-"plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/tgm-plugin/required-plugins.php:167
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to update the %1$s plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to update the %1$s "
-"plugins."
-msgstr[0] ""
-msgstr[1] ""
 
 #: woocommerce/loop/orderby.php:26
 msgid "Sort By :"
@@ -851,7 +663,7 @@ msgstr ""
 msgid "Stock Status"
 msgstr ""
 
-#: comments.php:96
+#: comments.php:107
 msgid "Submit Comment"
 msgstr ""
 
@@ -863,91 +675,23 @@ msgstr ""
 msgid "Tags :"
 msgstr ""
 
-#: inc/tgm-plugin/required-plugins.php:157
-#, php-format
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/tgm-plugin/required-plugins.php:204
-msgid "The following plugin was activated successfully:"
-msgstr ""
-
-#: inc/tgm-plugin/required-plugins.php:177
-#, php-format
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/tgm-plugin/required-plugins.php:172
-#, php-format
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
 #: 404.php:20
 msgid "The page you are looking for does not exist or has been moved."
 msgstr ""
-
-#: inc/tgm-plugin/required-plugins.php:162
-#, php-format
-msgid "There is an update available for: %1$s."
-msgid_plural "There are updates available for the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
 
 #: woocommerce/single-product/add-to-cart/variable.php:32
 msgid "This product is currently out of stock and unavailable."
 msgstr ""
 
-#: inc/tgm-plugin/required-plugins.php:147
-#, php-format
-msgid "This theme recommends the following plugin: %1$s."
-msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/tgm-plugin/required-plugins.php:142
-#, php-format
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
 #: inc/widgets/author-info.php:15
 msgid "This widget show author informations"
-msgstr ""
-
-#: inc/widgets/single-banner.php:15
-msgid "This widget show banner"
-msgstr ""
-
-#: inc/widgets/video-popup.php:15
-msgid "This widget show video thumbnail and video"
-msgstr ""
-
-#: inc/widgets/recent-post.php:74
-msgid "Thumb"
 msgstr ""
 
 #: woocommerce/wishlist-view.php:73 woocommerce/cart/cart.php:34
 msgid "Thumbnail"
 msgstr ""
 
-#: inc/widgets/recent-post.php:137
-msgid "Title Word"
-msgstr ""
-
-#: inc/widgets/author-info.php:183 inc/widgets/newsletter.php:72
-#: inc/widgets/recent-post.php:127 inc/widgets/single-banner.php:100
-#: inc/widgets/video-popup.php:120
+#: inc/widgets/author-info.php:183
 msgid "Title:"
 msgstr ""
 
@@ -961,7 +705,7 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
-#: inc/widgets/author-info.php:205 inc/widgets/company-info-widget.php:142
+#: inc/widgets/author-info.php:205
 msgid "Twitter Link:"
 msgstr ""
 
@@ -977,49 +721,20 @@ msgstr ""
 msgid "Update cart"
 msgstr ""
 
-#: inc/widgets/company-info-widget.php:127
-msgid "Upload"
-msgstr ""
-
-#: inc/widgets/author-info.php:174 inc/widgets/single-banner.php:105
-#: inc/widgets/video-popup.php:125
+#: inc/widgets/author-info.php:174
 msgid "Upload Image"
 msgstr ""
 
-#: inc/widgets/company-info-widget.php:123
-msgid "Upload Image:"
-msgstr ""
-
-#: inc/widgets/video-popup.php:133
-msgid "Video Link:"
-msgstr ""
-
-#: inc/widgets/video-popup.php:50
-msgid "video popup bg image"
-msgstr ""
-
-#: woocommerce/loop/result-count.php:49
-#, php-format
-msgctxt "with first and last result"
-msgid "Showing the single result"
-msgid_plural "<span>%3$d</span> Products Found of <span>50</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/tgm-plugin/required-plugins.php:89
+#: inc/tgm-plugin/plugins.php:83
 msgid "WooCommerce"
 msgstr ""
 
-#: inc/tgm-plugin/required-plugins.php:94
+#: inc/tgm-plugin/plugins.php:88
 msgid "WooCommerce Variation Swatches"
 msgstr ""
 
-#: inc/tgm-plugin/required-plugins.php:99
+#: inc/tgm-plugin/plugins.php:93
 msgid "YITH WooCommerce Wishlist"
-msgstr ""
-
-#: woocommerce/single-product/up-sells.php:28
-msgid "You may also like&hellip;"
 msgstr ""
 
 #: woocommerce/checkout/form-checkout.php:29
@@ -1034,11 +749,11 @@ msgstr ""
 msgid "Your email"
 msgstr ""
 
-#: comments.php:86
+#: comments.php:97
 msgid "Your Email *"
 msgstr ""
 
-#: comments.php:83
+#: comments.php:94
 msgid "Your Name *"
 msgstr ""
 
@@ -1046,7 +761,7 @@ msgstr ""
 msgid "Your order"
 msgstr ""
 
-#: comments.php:89
+#: comments.php:100
 msgid "Your Website"
 msgstr ""
 

@@ -9,7 +9,6 @@
  * @package 99fy
  */
 
-$newsletter_shortcode = get_theme_mod('nnfy_newsletter_shortcode');
 $footer_top = get_theme_mod('nnfy_footer_top', 'on');
 $footer_copyright = get_theme_mod('nnfy_footer_copyright','on');
 $footer_copyright_text = get_theme_mod('nnfy_footer_copyright_text', __('Copyright &copy; 2018 99fy All Right Reserved.','99fy'));
@@ -17,24 +16,6 @@ $footer_copyright_text = get_theme_mod('nnfy_footer_copyright_text', __('Copyrig
 ?>
 
 </div><!-- #content -->
-
-<?php if($newsletter_shortcode): ?>
-
-<div class="subscribe-area gray-bg pt-120 pb-130">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="subscribe-content text-center">
-                    <div id="mc_embed_signup" class="subscribe-form">
-                        <?php echo do_shortcode( $newsletter_shortcode ); ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<?php endif; ?>
 
 <?php
     if(

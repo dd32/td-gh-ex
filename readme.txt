@@ -3,10 +3,10 @@
 Contributors: devitemsllc
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.0-trunk
-Version: 1.0.4
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-columns, right-sidebar, footer-widgets, blog, custom-menu, post-formats, sticky-post, editor-style, threaded-comments, custom-colors, featured-images, full-width-template, theme-options, e-commerce
+Tags: two-columns, right-sidebar, footer-widgets, blog, custom-menu, sticky-post, editor-style, threaded-comments, custom-colors, featured-images, full-width-template, theme-options, woocommerce
 
 == Description ==
 
@@ -94,6 +94,15 @@ Image used in Theme Screenshot:
 License: Creative Commons Zero (CC0) license
 
 == Changelog ==
+= 1.0.6 =
+* Released: May 7, 2018
+* Fix page templates
+* Removed sharing option
+
+= 1.0.5 =
+* Released: May 4, 2018
+* Bugs/Error Removal
+* Added licence of image used in screenshot
 
 = 1.0.4 =
 * Released: April 19, 2018

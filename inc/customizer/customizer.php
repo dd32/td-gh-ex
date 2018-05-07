@@ -133,17 +133,6 @@ function nnfy_customizer_settings( $wp_customize ){
 
 	$wp_customize->get_control( 'custom_logo' )->section  = 'nnfy_header_settings';
 
-	$wp_customize->add_setting('nnfy_newsletter_shortcode',array(
-		'default'     => '',
-		'transport'   => 'refresh',
-		'sanitize_callback'	=> 'nnfy_sanitize_input'
-	));
-	$wp_customize->add_control( 'nnfy_newsletter_shortcode', array(
-		'section'	=> 'nnfy_footer_settings',
-	    'label' => __('Newsletter Shortcode','99fy'),
-		'type'	 => 'text',
-	) );
-
 
 	$wp_customize->add_setting('nnfy_footer_top',array(
 		'default'     => 'off',

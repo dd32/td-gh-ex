@@ -163,6 +163,7 @@ function nnfy_scripts() {
 	wp_enqueue_style('99fy-responsive',get_template_directory_uri() . '/css/responsive.css');
 
 
+	wp_enqueue_script( 'wc-add-to-cart-variation' );
 	wp_enqueue_script( 'popper', get_template_directory_uri() . '/js/popper.min.js', array('jquery'), '1.0.0', true );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '4.0.0', true );
 	wp_enqueue_script( 'jquery-magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', array('jquery'), '1.1.0', true );
@@ -182,6 +183,12 @@ function nnfy_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+
+	// localization
+	$nnfy_localize_vars = array();
+	$nnfy_localize_vars['ajaxurl'] = esc_url( admin_url( 'admin-ajax.php') );
+
+	wp_localize_script( "99fy-jquery-main", "nnfy_localize_vars", $nnfy_localize_vars );
 }
 add_action( 'wp_enqueue_scripts', 'nnfy_scripts' );
 

@@ -319,13 +319,12 @@
 	 	window.setTimeout(function(){
 	 		
 	 		jQuery.post(
-	 		 ajaxurl, 
+	 		 nnfy_localize_vars.ajaxurl, 
 	 		 {
 	 		  'action': 'nnfy_product_quickview',
 	 		  'data':   productID
 	 		 },
 	 		 function(response){
-	 		 	console.log(response);
 	 		 	jQuery('.modal-body').html(response);
 	 		 });
 
