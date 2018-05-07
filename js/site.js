@@ -170,11 +170,11 @@ jQuery(function ($) {
 
     var wHeight = window.innerHeight;
     //search bar middle alignment
-    $('#mk-fullscreen-searchform').css('top', wHeight / 2);
+    $('.mk-fullscreen-searchform').css('top', wHeight / 2);
     //reform search bar
     jQuery(window).resize(function () {
         wHeight = window.innerHeight;
-        $('#mk-fullscreen-searchform').css('top', wHeight / 2);
+        $('.mk-fullscreen-searchform').css('top', wHeight / 2);
     });
     // Search
     $('#search-button').click(function (e) {

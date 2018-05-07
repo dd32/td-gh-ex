@@ -3,7 +3,7 @@ Theme Name: Attire
 Theme URI: http://wpattire.com/
 Description: Attire is a fast, mobile responsive, highly customizable, SEO friendly multipurpose theme built with Bootstrap 4. Attire offers hundreds of customisation options which allows to make a website look exactly the way user intended. This theme allows to customise pages with google-fonts, page background, page header and sidebars.
 Author: Shafayat
-Version: 1.1.3
+Version: 1.1.4
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, threaded-comments, sticky-post, microformats,  editor-style, custom-menu, full-width-template, theme-options, custom-background, custom-colors, post-formats, translation-ready, custom-header
@@ -61,6 +61,15 @@ pre,
 table,
 blockquote {
     margin-top: 0;
+}
+
+table, td, tr, th {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    padding: 5px;
+}
+
+.calendar_wrap table, .calendar_wrap td, .calendar_wrap tr, .calendar_wrap th {
+    border: none;
 }
 
 select {
@@ -1177,7 +1186,7 @@ article.post.product:before {
     padding-left: 20px;
 }
 
-.mk-fullscreen-search-overlay #mk-fullscreen-search-wrapper #mk-fullscreen-searchform input[type=submit] {
+.mk-fullscreen-search-overlay #mk-fullscreen-search-wrapper .mk-fullscreen-searchform input[type=submit] {
     position: absolute;
     width: 100px;
     height: 100%;
@@ -1187,12 +1196,12 @@ article.post.product:before {
     top: 0;
 }
 
-#mk-fullscreen-searchform:focus {
+.mk-fullscreen-searchform:focus {
     outline: none;
     border: none;
 }
 
-.mk-fullscreen-search-overlay #mk-fullscreen-search-wrapper #mk-fullscreen-searchform .fullscreen-search-icon {
+.mk-fullscreen-search-overlay #mk-fullscreen-search-wrapper .mk-fullscreen-searchform .fullscreen-search-icon {
     font-size: 25px;
     position: absolute;
     right: 15px;
@@ -1220,12 +1229,12 @@ article.post.product:before {
 
 }
 
-#mk-fullscreen-searchform {
+.mk-fullscreen-searchform {
     position: relative;
     verticle-align: middle;
 }
 
-.mk-fullscreen-search-overlay #mk-fullscreen-search-wrapper #mk-fullscreen-searchform #mk-fullscreen-search-input {
+.mk-fullscreen-search-overlay #mk-fullscreen-search-wrapper .mk-fullscreen-searchform .mk-fullscreen-search-input {
     width: 800px;
     background-color: transparent;
     -webkit-box-shadow: 0 3px 0 0 rgba(255, 255, 255, .1);
@@ -1243,7 +1252,7 @@ article.post.product:before {
     transition: all .3s ease-out;
 }
 
-.mk-fullscreen-search-overlay #mk-fullscreen-search-wrapper #mk-fullscreen-searchform #mk-fullscreen-search-input:focus {
+.mk-fullscreen-search-overlay #mk-fullscreen-search-wrapper .mk-fullscreen-searchform .mk-fullscreen-search-input:focus {
     boder: none;
     outline: none;
 }
@@ -1363,7 +1372,7 @@ article.post.product:before {
     -o-transition: all 400ms;
 }
 
-#mk-fullscreen-search-input:focus {
+.mk-fullscreen-search-input:focus {
     box-shadow: 0px 3px 0px 0px rgba(255, 255, 255, 0.54) !important;
 }
 
