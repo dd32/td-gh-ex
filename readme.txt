@@ -65,6 +65,10 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.76
+* Pot file updated
+* Typo mistake fixed in theme option panel
+
 Version 2.75
 * Fixed Woocommerce Outdated template issue in Woocommerce 3.3.0
 
