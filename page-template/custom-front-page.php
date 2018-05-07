@@ -58,7 +58,6 @@ get_header(); ?>
               </div>
               <?php $bb_mobile_application_k++;
           }
-          wp_reset_postdata();
         else : ?>
             <div class="header-no-slider"></div>
           <?php

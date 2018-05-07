@@ -37,7 +37,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	$wp_customize->add_control('bb_mobile_application_theme_options',
 	    array(
 	        'type' => 'radio',
-	        'label' => 'Change Layouts',
+	        'label' => __( 'Change Layouts', 'bb-mobile-application' ),
 	        'section' => 'bb_mobile_application_left_right',
 	        'choices' => array(
 	            'Left Sidebar' => __('Left Sidebar','bb-mobile-application'),
@@ -255,9 +255,10 @@ final class bb_mobile_application_customize {
 				$manager,
 				'example_1',
 				array(
+					'priority'	=> 9,
 					'title'    => esc_html__( 'Upgrade to Pro', 'bb-mobile-application' ),
 					'pro_text' => esc_html__( 'Go Pro',         'bb-mobile-application' ),
-					'pro_url'  => 'http://www.themeshopy.com/bb-mobile-application-theme/'
+					'pro_url'  => 'https://www.themeshopy.com/premium/bb-mobile-application-theme/'
 				)
 			)
 		);

@@ -11,16 +11,12 @@
 function bb_mobile_application_custom_header_setup() {
 
 	add_theme_support( 'custom-header', apply_filters( 'bb_mobile_application_custom_header_args', array(
-
-		//'default-image'          => get_template_directory_uri().'/images/banner_bg.jpg',
-
 		'default-text-color'     => 'fff',
 		'header-text' 			 =>	false,
 		'width'                  => 1600,
 		'height'                 => 400,
 		'wp-head-callback'       => 'bb_mobile_application_header_style',
 	) ) );
-
 }
 
 add_action( 'after_setup_theme', 'bb_mobile_application_custom_header_setup' );
@@ -51,8 +47,3 @@ function bb_mobile_application_header_style() {
 }
 
 endif; // bb_mobile_application_header_style
-
-add_action( 'admin_head', 'bb_mobile_application_admin_header_css' );
-function bb_mobile_application_admin_header_css(){ ?>
-	<style>pre{white-space: pre-wrap;}</style><?php
-}

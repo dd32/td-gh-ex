@@ -15,17 +15,10 @@ function bb_mobile_application_the_attached_image() {
 	$post                = get_post();
 	$attachment_size     = apply_filters( 'bb_mobile_application_attachment_size', array( 1200, 1200 ) );
 	$next_attachment_url = wp_get_attachment_url();
-
-	/**
-	 * Grab the IDs of all the image attachments in a gallery so we can get the
-	 * URL of the next adjacent image in a gallery, or the first image (if
-	 * we're looking at the last image in a gallery), or, in a gallery of one,
-	 * just the link to that image file.
-	 */
 	$attachment_ids = get_posts( array(
 		'post_parent'    => $post->post_parent,
 		'fields'         => 'ids',
-		'numberposts'    => -1,
+		'numberposts'    =>  1,
 		'post_status'    => 'inherit',
 		'post_type'      => 'attachment',
 		'post_mime_type' => 'image',
@@ -91,19 +84,19 @@ endif;
  * Returns true if a blog has more than 1 category
  */
 function bb_mobile_application_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
+	if ( false === ( $bb_mobile_application_all_the_cool_cats = get_transient( 'bb_mobile_application_all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts
-		$all_the_cool_cats = get_categories( array(
+		$bb_mobile_application_all_the_cool_cats = get_categories( array(
 			'hide_empty' => 1,
 		) );
 
 		// Count the number of categories that are attached to the posts
-		$all_the_cool_cats = count( $all_the_cool_cats );
+		$bb_mobile_application_all_the_cool_cats = count( $bb_mobile_application_all_the_cool_cats );
 
-		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
+		set_transient( 'bb_mobile_application_all_the_cool_cats', $bb_mobile_application_all_the_cool_cats );
 	}
 
-	if ( '1' != $all_the_cool_cats ) {
+	if ( '1' != $bb_mobile_application_all_the_cool_cats ) {
 		// This blog has more than 1 category so bb_mobile_application_categorized_blog should return true
 		return true;
 	} else {
@@ -134,7 +127,7 @@ endif;
  */
 function bb_mobile_application_category_transient_flusher() {
 	// Like, beat it. Dig?
-	delete_transient( 'all_the_cool_cats' );
+	delete_transient( 'bb_mobile_application_all_the_cool_cats' );
 }
 add_action( 'edit_category', 'bb_mobile_application_category_transient_flusher' );
 add_action( 'save_post',     'bb_mobile_application_category_transient_flusher' );

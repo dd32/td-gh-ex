@@ -23,10 +23,10 @@
         </div>  
       </div>
       <div class="inner">
-          <div class="copyright text-center">
-            <p><?php echo esc_html(get_theme_mod('bb_mobile_application_footer_copy',__('Mobile Application Theme By ','bb-mobile-application'))); ?> <?php echo esc_html(bb_mobile_application_credit(),'bb-mobile-application'); ?></p>
-          </div>
-          <div class="clear"></div>           
+        <div class="copyright text-center">
+          <p><?php echo esc_html(get_theme_mod('bb_mobile_application_footer_copy',__('Mobile Application Theme By ','bb-mobile-application'))); ?> <?php echo esc_html(bb_mobile_application_credit(),'bb-mobile-application'); ?></p>
+        </div>
+        <div class="clear"></div>
       </div>
     </div>
     <?php wp_footer(); ?>

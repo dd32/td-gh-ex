@@ -22,10 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-	<div class="container">
-		<div class="col-md-8 col-sm-8">
-
-			<?php
+	<div class="container space-top">
+	    <div class="col-md-8 col-sm-8">
+	 		<?php
 				/**
 				 * woocommerce_before_main_content hook.
 				 *
@@ -35,11 +34,11 @@ get_header( 'shop' ); ?>
 				do_action( 'woocommerce_before_main_content' );
 			?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php wc_get_template_part( 'content', 'single-product' ); ?>
+					<?php wc_get_template_part( 'content', 'single-product' ); ?>
 
-			<?php endwhile; // end of the loop. ?>
+				<?php endwhile; // end of the loop. ?>
 
 			<?php
 				/**
@@ -48,9 +47,6 @@ get_header( 'shop' ); ?>
 				 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
 				 */
 				do_action( 'woocommerce_after_main_content' );
-			?>
-
-			<?php add_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 100 );
 			?>
 		</div>
 		<div class="col-md-4 col-sm-4">

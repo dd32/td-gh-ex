@@ -3,11 +3,11 @@
 /*-----------------------------------------------------------------------------------*/
 
 Theme Name      :   BB Mobile Application
-Theme URI       :   http://www.themeshopy.com/free/wp-bb-mobile-application-theme/
-Version         :   1.2.3.1
-Tested up to    :   WP 4.8.1
+Theme URI       :   https://www.themeshopy.com/free/wp-bb-mobile-application-theme/
+Version         :   1.2.3.2
+Tested up to    :   WP 4.9.4
 Author          :   ThemeShopy
-Author URI      :   http://www.themeshopy.com/
+Author URI      :   https://www.themeshopy.com/
 license         :   GNU General Public License v3.0
 License URI     :   http://www.gnu.org/licenses/gpl.html
 
@@ -132,11 +132,16 @@ ii) Added translation ready tag.
 iii) Addded rtl tag.
 iv) Added changelog content in readme file.
 
+Version 1.2.3.2
+i) Update woocommerce.
+ii) Update Fontawesome.
+iii) Resolved the theme url.
+iv)  Add the css in style.css file.
+v)  Update rtl.css file.
 
 
 BB Mobile Application Premium version
 ==========================================================
 BB Mobile Application Premium version is compatible with GPL licensed.
 
-
-For any help you can mail us at support[at]burhanuddinbohra.com
+For any help you can mail us at support[at]themeshopy.com

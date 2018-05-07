@@ -7,10 +7,9 @@ get_header(); ?>
 
 <div class="container">
     <div class="middle-align">       
-		<div class="col-md-9" id="content-ts">
-
+		<div class="col-md-8" id="content-ts">
 			<?php while ( have_posts() ) : the_post(); ?>	
-                
+                <img src="<?php the_post_thumbnail_url(); ?>" width="100%">
                 <h1><?php the_title();?></h1>       		
                 
                 <?php the_content();
@@ -22,7 +21,7 @@ get_header(); ?>
             <?php endwhile; // end of the loop. ?>
             
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
 			<?php dynamic_sidebar('sidebar-2'); ?>
 		</div>
         <div class="clear"></div>    

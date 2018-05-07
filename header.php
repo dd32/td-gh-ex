@@ -14,7 +14,6 @@
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width">
   <link rel="profile" href="http://gmpg.org/xfn/11">
-  <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
   <?php wp_head(); ?>
 </head>
 
@@ -24,19 +23,18 @@
     <div class="container">
       <div class="menubox col-md-8 col-sm-8 col-md-push-4">
         <div class="nav">
-		 <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
-        </div><?php /** nav  **/ ?>
-      </div><?php /** menubox **/ ?>
+		      <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
+        </div>
+      </div>
       <div class="logo col-md-4 col-sm-4 wow  col-md-pull-8 bounceInDown">
-	<?php bb_mobile_application_the_custom_logo(); ?>
-	<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-
+        <?php bb_mobile_application_the_custom_logo(); ?>
+        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
         <?php
         $description = get_bloginfo( 'description', 'display' );
         if ( $description || is_customize_preview() ) : ?>
             <p class="site-description"><?php echo esc_html( $description ); ?></p>
         <?php endif; ?>
-      </div><?php /** logo **/ ?>
+      </div>
       <div class="clear"></div>
     </div>
-  </div><?php /** header **/ ?>
+  </div>
