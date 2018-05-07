@@ -8,7 +8,7 @@ get_header(); ?>
 <?php do_action( 'academic_education_pageright_header' ); ?>
 
 <div class="container">
-    <div class="wrapper">
+    <div class="wrapper row">
 		<div class="col-md-8 col-sm-8" id="main-content">
 			<?php while ( have_posts() ) : the_post(); ?>                
                 <h1><?php the_title();?></h1>

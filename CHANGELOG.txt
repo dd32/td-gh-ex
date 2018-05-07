@@ -11,3 +11,9 @@ Version 0.2.1
 	i.   Added the License information of image url with given format.
 	ii.  Resolved the console error of customizer.js 
 	iii. Added the theme url.
+
+Version 0.2.2
+	i.   Changed esc_attr_x to esc_html_x in searchform.php.
+	ii.  Done the text capital of class.
+	iii. include post format tag.
+	iv.  Added updated bootstrap file. 

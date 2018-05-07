@@ -2,7 +2,7 @@
 
 Theme Name : Academic Education
 Theme URI : https://www.logicalthemes.com/themes/free-academic-education-wordpress-theme/
-Version : 0.2.1
+Version : 0.2.2
 Tested up to : 4.9.5
 Author : LogicalThemes
 Author URI : https://www.logicalthemes.com/
@@ -11,7 +11,7 @@ License URI : http://www.gnu.org/licenses/gpl.html
 
 == Contact Details ==
 
-email : support@logicalthemes.com
+Support : https://www.logicalthemes.com/support/
 
 == Description ==
 
@@ -72,7 +72,6 @@ Theme is Built using the following resource bundles.
 	Screenshot banner image: Copyright patrykd
 	License: CC0 1.0 Universal (CC0 1.0)
 	Source: https://www.pexels.com/photo/brown-building-near-grass-field-83133/
-
 
 == Academic Education Plus version ==
 

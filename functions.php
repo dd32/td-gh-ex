@@ -28,13 +28,48 @@ function academic_education_setup() {
 		'default-color' => 'f1f1f1'
 	) );
 
+	/*
+	 * Enable support for Post Formats.
+	 *
+	 * See: https://codex.wordpress.org/Post_Formats
+	 */
+	add_theme_support(
+		'post-formats', array(
+			'image',
+			'video',
+			'gallery',
+			'audio',
+		)
+	);
+
 	add_editor_style( array( 'assets/css/editor-style.css', academic_education_font_url() ) );
 
+	// Theme Activation Notice
+	global $pagenow;
+	
+	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
+		add_action( 'admin_notices', 'academic_education_activation_notice' );
+	}
 }
 endif; // academic_education_setup
 add_action( 'after_setup_theme', 'academic_education_setup' );
 
+// Notice after Theme Activation
+function academic_education_activation_notice() {
+	echo '<div class="welcomepage notice notice-success is-dismissible">';
+		echo '<h3>'. esc_html__( 'Warm Greetings to you!!', 'academic-education' ) .'</h3>';
+		echo '<p>'. esc_html__( ' Our sincere thanks for choosing our academic education theme. We assure you a high performing theme for your academic business. Please proceed towards welcome section to start an amazing journey with us. ', 'academic-education' ) .'</p>';
+		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=academic_education_guide' ) ) .'" class="button button-primary">'. esc_html__( 'Welcome...', 'academic-education' ) .'</a></p>';
+	echo '</div>';
+}
+
 /*Site URL*/
+define('ACADEMIC_EDUCATION_FREE_THEME_DOC','https://logicalthemes.com/docs/free-academic-education/','academic-education');
+define('ACADEMIC_EDUCATION_SUPPORT','https://wordpress.org/support/theme/academic-education/','academic-education');
+define('ACADEMIC_EDUCATION_BUY_NOW','https://www.logicalthemes.com/themes/premium-academic-education-wordpress-theme/','academic-education');
+define('ACADEMIC_EDUCATION_LIVE_DEMO','https://logicalthemes.com/academic-education-pro/','academic-education');
+define('ACADEMIC_EDUCATION_PRO_DOC','https://logicalthemes.com/docs/academic-education-pro/','academic-education');
+define('ACADEMIC_EDUCATION_DEMO_DATA','https://logicalthemes.com/docs/academic-education.xml.zip','academic-education');
 define('ACADEMIC_EDUCATION_CREDIT','https://www.logicalthemes.com/','academic-education');
 if ( ! function_exists( 'academic_education_credit' ) ) {
 	function academic_education_credit(){
@@ -167,4 +202,4 @@ add_action('wp_enqueue_scripts','academic_education_ie_stylesheet');
 
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/customizer.php';
-require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/get-started/get-started.php';

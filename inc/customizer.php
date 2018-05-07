@@ -218,7 +218,7 @@ function academic_education_customize_register( $wp_customize ) {
 	}
 
 	$wp_customize->add_setting('academic_education_single_post',array(
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'academic_education_sanitize_choices',
 	));
 
 	$wp_customize->add_control('academic_education_single_post',array(
@@ -241,7 +241,7 @@ function academic_education_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('academic_education_category',array(
 		'default'	=> 'select',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'academic_education_sanitize_choices',
 	));
 
 	$wp_customize->add_control('academic_education_category',array(
@@ -338,17 +338,17 @@ final class academic_education_customize {
 		load_template( trailingslashit( get_template_directory() ) . '/inc/section-pro.php' );
 
 		// Register custom section types.
-		$manager->register_section_type( 'academic_education_customize_Section_Pro' );
+		$manager->register_section_type( 'Academic_Education_Customize_Section_Pro' );
 
 		// Register sections.
 		$manager->add_section(
-			new academic_education_customize_Section_Pro(
+			new Academic_Education_Customize_Section_Pro(
 				$manager,
 				'example_1',
 				array(
 					'priority' => 9,
 					'title'    => esc_html__( 'Academic Education Pro', 'academic-education' ),
-					'pro_text' => esc_html__( 'Update Pro',         'academic-education' ),
+					'pro_text' => esc_html__( 'Go Pro',         'academic-education' ),
 					'pro_url'  => 'https://www.logicalthemes.com/themes/premium-academic-education-wordpress-theme'
 				)
 			)

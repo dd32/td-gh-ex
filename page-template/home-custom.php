@@ -75,41 +75,51 @@
 <?php /*--Courses--*/?>
 <section id="courses">
   <div class="container">
-    <div class="col-md-8 col-sm-8">
-      <?php 
-        $page_query = new WP_Query(array( 'category_name' => esc_html(get_theme_mod('academic_education_category'),'theblog')));?>
-        <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
+    <div class="row">
+      <div class="col-md-8 col-sm-8 row">
+        <?php 
+          $page_query = new WP_Query(array( 'category_name' => esc_html(get_theme_mod('academic_education_category'),'theblog')));?>
+          <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
             <div class="col-md-4 col-sm-4 course-box">
                 <a href="<?php the_permalink(); ?>"><?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?></a>
               <div class="borderbox"></div>
             </div>
-        <?php endwhile;
-        wp_reset_postdata();
-      ?>
-      <div class="clearfix"></div>
-    </div>
-    <div class="col-md-4 col-sm-4">
-      <div class="single-layout">
-        <?php
-          $args = array( 'name' => get_theme_mod('academic_education_single_post',''));
-          $query = new WP_Query( $args );
-          if ( $query->have_posts() ) :
-            while ( $query->have_posts() ) : $query->the_post(); ?>
-              <h3><?php the_title(); ?></h3>
-              <p><?php the_excerpt(); ?></p>
-              <div class="button">
-                <a href="<?php the_permalink(); ?>"><?php esc_html_e('More','academic-education'); ?></a>
-              </div>            
-          <?php endwhile; 
-          wp_reset_postdata();?>
-          <?php else : ?>
-          <div class="no-postfound"></div>
-         <?php
-        endif; ?>
+          <?php endwhile;
+          wp_reset_postdata();
+        ?>
         <div class="clearfix"></div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="single-layout">
+          <?php
+            $args = array( 'name' => get_theme_mod('academic_education_single_post',''));
+            $query = new WP_Query( $args );
+            if ( $query->have_posts() ) :
+              while ( $query->have_posts() ) : $query->the_post(); ?>
+                <h3><?php the_title(); ?></h3>
+                <p><?php the_excerpt(); ?></p>
+                <div class="button">
+                  <a href="<?php the_permalink(); ?>"><?php esc_html_e('More','academic-education'); ?></a>
+                </div>            
+            <?php endwhile; 
+            wp_reset_postdata();?>
+            <?php else : ?>
+            <div class="no-postfound"></div>
+           <?php
+          endif; ?>
+          <div class="clearfix"></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<?php do_action( 'academic_education_after_courses' ); ?>
+
+<div class="container">
+  <?php while ( have_posts() ) : the_post(); ?>
+    <?php the_content(); ?>
+  <?php endwhile; // end of the loop. ?>
+</div>
 
 <?php get_footer(); ?>
