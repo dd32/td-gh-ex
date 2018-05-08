@@ -144,6 +144,9 @@ Copyright: @jamigibbs
 
 == Changelog ==
 
+= 1.0.5 - 2018-5-7 =
+* Tested with support for 4.9.5
+
 = 1.0.4 - 2017-10-17 = 
 
 * Tested with 4.8.2
