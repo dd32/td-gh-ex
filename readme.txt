@@ -2,7 +2,7 @@
 Contributors: ArchimidisM
 Requires at least: WordPress 4.5.1
 Tested up to: WordPress 4.9.5
-Version: 1.4.2
+Version: 1.4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: theme-options,full-width-template,two-columns, custom-header, custom-background,custom-logo, custom-menu,flexible-header,translation-ready, featured-images
@@ -194,3 +194,7 @@ Removed unnecessary files
 
 = Version 1.4.2 =
 - Added alternative style for the services section
+
+= Version 1.4.3 =
+- FAQ page template added
+- Newer Demo Data Added (08/05/2018)

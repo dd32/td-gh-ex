@@ -51,5 +51,17 @@ jQuery(document).ready(function ($) {
         autoplay: true,
         autoplaySpeed: 5500
     });
+
+    /*
+    * Apply the faq accordion
+    */
+    $('.faq-item-title').on('click', function () {
+        $('.faq-item-title').not(this).removeClass('active');
+        var contentToBeShown = $(this).attr('data-content');
+        $(this).addClass("active");
+
+        $('#'+contentToBeShown).slideDown(800);
+        $('.faq-item-content').not('#'+contentToBeShown).slideUp(800);
+    });
 });
 

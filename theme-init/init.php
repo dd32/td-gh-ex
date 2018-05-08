@@ -1791,6 +1791,27 @@ if ( ! function_exists( 'atlast_business_allowed_HTML' ) ):
 			'br'     => array(),
 			'em'     => array(),
 			'strong' => array(),
+            'ul'    => array(),
+            'li'    => array()
 		);
 	}
+endif;
+
+if(!function_exists('atlast_business_get_faq')):
+    function atlast_business_get_faq(){
+        $parent_ID = absint(get_the_id());
+        /*
+         * Lets get ALL the children which are the FAQ's
+         */
+        $args = array(
+            'child_of'=>$parent_ID,
+        );
+        $faqPages = get_pages($args);
+
+        if($faqPages != false){
+            return $faqPages;
+        }else{
+            return false;
+        }
+    }
 endif;

@@ -124,7 +124,7 @@ function atlast_business_load_scripts()
 
     wp_enqueue_script('jquery');
     wp_enqueue_script('plugins', get_template_directory_uri() . '/assets/js/plugins.js', array('jquery'), '', true);
-    wp_enqueue_script('atlast-business-mainjs', get_template_directory_uri() . '/assets/js/ms-dist.js', array('jquery'), '', true);
+    wp_enqueue_script('atlast-business-mainjs', get_template_directory_uri() . '/assets/js/ms-dist.js', array('jquery'), '1.4.3', true);
 
     if (get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -400,7 +400,7 @@ function atlast_business_import_demo()
     return array(
         array(
             'import_file_name' => esc_html__('Demo Import', 'atlast-business'),
-            'local_import_file' => trailingslashit(get_template_directory()) . 'demo_data/atlastbusiness.wordpress.2018-02-26.xml',
+            'local_import_file' => trailingslashit(get_template_directory()) . 'demo_data/atlastbusiness.wordpress.2018-05-08.xml',
             'local_import_widget_file' => trailingslashit(get_template_directory()) . 'demo_data/atlast-business-widgets.wie',
             'local_import_customizer_file' => trailingslashit(get_template_directory()) . 'demo_data/atlast-business-export.dat',
             'import_notice' => __('After importing this data everything will be in place like the demo.', 'atlast-business'),
