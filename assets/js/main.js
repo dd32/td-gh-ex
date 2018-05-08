@@ -36,6 +36,19 @@
             easing: "linear"
         });
 
+        $(".gallery-columns-1").each(function() {
+            $(this).slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                fade: true,
+                autoplay: true,
+                autoplaySpeed: 8000,
+                infinite: true,
+                nextArrow: '<i class="navcontrol-icon slide-next la la-angle-right"></i>',
+                prevArrow: '<i class="navcontrol-icon slide-prev la la-angle-left"></i>',
+                dots: true
+            });
+        });
     });
 
 

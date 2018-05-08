@@ -68,12 +68,12 @@ if (!function_exists('advance_blog_render_theme_settings_metabox')) :
         </script>
         <div class="pagebox">
             <p><?php esc_attr_e('Choose a color for your Post Backgorund.', 'advance-blog' ); ?></p>
-            <input class="color_field" type="hidden" name="advance_blog_background_color" value="<?php esc_attr_e( $bg_color ); ?>"/>
+            <input class="color_field" type="hidden" name="advance_blog_background_color" value="<?php echo esc_html( $bg_color ); ?>"/>
         </div>
 
         <div class="pagebox">
             <p><?php esc_attr_e('Choose a color for your Post Text.', 'advance-blog' ); ?></p>
-            <input class="color_field" type="hidden" name="advance_blog_text_color" value="<?php esc_attr_e( $text_color ); ?>"/>
+            <input class="color_field" type="hidden" name="advance_blog_text_color" value="<?php echo esc_html( $text_color ); ?>"/>
         </div>
         <?php
     }

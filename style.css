@@ -1,10 +1,10 @@
 /*
 Theme Name: Advance Blog
-Theme URI:
+Theme URI: https://wpinterface.com/themes/advance-blog/
 Author: WPInterface
 Author URI: http://wpinterface.com
 Description: Advance Blog is a modern, clean, responsive and retina-ready WordPress blog theme also suitable for magazines, newspapers, or review sites. The theme comes with several awesome features, including a featured posts slideshow, a magazine homepage template, and a two columned layout
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-blog
@@ -431,8 +431,8 @@ select,
 textarea {
     color: #555;
     font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    font-size: 0.875rem;
+    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.6;
     word-wrap: break-word;
 }
@@ -444,8 +444,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry-title {
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.3;
+}
+
+.content-area .entry-header .entry-meta {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 3px;
 }
 
 p {
@@ -948,6 +954,7 @@ body .jetpack-social-navigation-genericons a:before {
     line-height: 50px;
     display: block;
     position: relative;
+    padding-left: 30px;
     padding-right: 30px;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -1174,13 +1181,13 @@ body, html {
 
 @media (min-width: 1200px) {
     .wrapper {
-        width: 1120px;
+        width: 1170px;
     }
 }
 
 @media (min-width: 1600px) {
     .wrapper {
-        width: 1540px;
+        width: 1400px;
     }
 }
 
@@ -1266,7 +1273,7 @@ body, html {
 
 .style-archive .post-content a,
 .site .post .style-archive header:before,
-.site .sticky header:after{
+.site .sticky header:after {
     color: inherit;
     border-color: inherit;
 }
@@ -1290,12 +1297,16 @@ body, html {
 }
 
 .style-archive .post-thumbnail a {
-    display: block;
+    display: table;
+    height: 100%;
     position: relative;
+    width: 100%;
 }
 
 .style-archive .post-thumbnail img {
     display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .style-archive .entry-header {
@@ -1321,10 +1332,7 @@ body, html {
         right: 0;
     }
 
-    body .site-content .style-archive .post-thumbnail a {
-        padding-left: 40px;
-        padding-right: 40px;
-    }
+
 
     body .site-content .style-archive .post-content {
         margin: 0 auto;
@@ -2333,22 +2341,25 @@ object {
 }
 
 .site-footer {
-    border-top: 1px solid;
+    background: #c9efee;
     padding-top: 3em;
+}
+
+.footer-widget-area li, .footer-widget-area li a {
+    border-color: #b2dcdb !important;
+    letter-spacing: 1px;
+    font-size: 14px;
 }
 
 .site-info {
     padding-top: 4em;
     padding-bottom: 4em;
-    border-top: 1px solid;
 }
 
 .site-branding .site-title a {
     color: #555;
 }
 
-.site-footer,
-.site-info,
 .main-navigation .menu .menu-mobile li,
 #wp-calendar,
 #wp-calendar tbody td {
