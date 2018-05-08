@@ -5,7 +5,7 @@ custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 theme-options, footer-widgets, full-width-template, editor-style
 Requires at least: 4.8.0
 Tested up to: 4.9.5
-Stable tag: 1.0.1
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,9 @@ Activiation and Use
 2. See Appearance -> Customize to change theme specific options
 
 == Changelog ==
+
+= 1.0.3 =
+* update images in screenshot.png
 
 = 1.0.2 =
 * add license/source of images used in screenshot.png 
@@ -87,24 +90,6 @@ AyaEstate WordPress Theme bundles the following third-party resources:
 *
 * screenshot.png (Thumbnail Image), https://pixabay.com/en/white-outdoor-patio-furniture-1547092/, CC0
 *
-* screenshot.png (Facebook Page Images), AyaTemplates, https://web.facebook.com/ayatemplates/, GPL-2.0
-*
-* screenshot.png (Instagram Images), AyaTemplates, https://www.instagram.com/aya.templates/, GPL-2.0
-*
-* screenshot.png (Facebook Cover Image), CC0, Andrej Zitnik, https://dribbble.com/shots/4128786-Free-mockup-Stylish-Workspace-With-iMac-in-a-Bright-Interior
+* screenshot.png (Facebook Page), AyaTemplates, https://web.facebook.com/ayatemplates/, GPL-2.0
 *
 * screenshot.png (Facebook Page Logo Image), GPL-2.0, AyaTemplates, https://ayatemplates.com/
-*
-* screenshot.png (Facebook Page Angel Logo Image), GPL-2.0, AyaTemplates, https://ayatemplates.com/product/angel-logo-design-from-the-flower-of-life/
-*
-* screenshot.png (Instagram Image #1), CC0, AyaTemplates, https://www.instagram.com/p/Bhn7poph_Q5/?taken-by=aya.templates
-*
-* screenshot.png (Instagram Image #2), CC0, AyaTemplates, https://www.instagram.com/p/Bhn7fH1BewL/?taken-by=aya.templates
-*
-* screenshot.png (Instagram Image #3), CC0, AyaTemplates, https://www.instagram.com/p/BhmL37Thn2Y/?taken-by=aya.templates
-*
-* screenshot.png (Instagram Image #4), CC0, AyaTemplates, https://www.instagram.com/p/BiGl_8mh-Hp/?taken-by=aya.templates
-*
-* screenshot.png (Instagram Image #5), CC0, AyaTemplates, https://www.instagram.com/p/BhjdSW7h7-d/?taken-by=aya.templates
-*
-* screenshot.png (Instagram Image #6), CC0, AyaTemplates, https://www.instagram.com/p/BhhIRMmhbrY/?taken-by=aya.templates
