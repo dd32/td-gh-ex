@@ -13,6 +13,8 @@
   background-color: #fff;
   position: relative;
   min-height: 100px;
+  max-width: $layout-max-width;
+  margin: 0 auto;
 }
 
 // Default shade on top of blocks
@@ -74,6 +76,12 @@
     padding-top: $container-default-pad-y / 2;
     padding-bottom: $container-default-pad-y / 2;
   }
+}
+
+// Clear block containers by default
+.site-main .container {
+  overflow: hidden;
+  clear: both;
 }
 
 // Meta actions

@@ -89,14 +89,6 @@ p {
   }
 }
 
-// Paragraphs. OpenType ligatures and oldstyle figures enabled if available.
-p,
-dd,
-dt,
-figcaption {
-  font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-}
-
 // Heading defaults
 h1,
 h2,
@@ -104,191 +96,40 @@ h3,
 h4,
 h5,
 h6 {
-  font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   color: $color-headings;
   font-family: $font-headings;
   font-weight: $headings-weight;
 }
 
 // Define heading scales
-@if $headings-scale == large {
-  h1,
-  %h1 {
-    @include responsive-font(4vw, 38px, 80px);
-  }
-
-  h2,
-  %h2 {
-    @include responsive-font(3.2vw, 32px, 68px);
-  }
-
-  h3,
-  %h3,
-  .gform_wrapper h3.gform_title {
-    @include responsive-font(2.4vw, 24px, 46px);
-  }
-
-  h4,
-  %h4 {
-    @include responsive-font(1.6vw, 21px, 34px);
-  }
-
-  h5,
-  %h5 {
-    @include responsive-font(1.4vw, 18px, 21px);
-  }
-
-  h6,
-  %h6 {
-    @include responsive-font(1.2vw, 14px, 18px);
-  }
-} @else if $headings-scale == medium {
-  h1,
-  %h1 {
-    @include responsive-font(3.2vw, 32px, 68px);
-  }
-
-  h2,
-  %h2 {
-    @include responsive-font(2.4vw, 24px, 46px);
-  }
-
-  h3,
-  %h3,
-  .gform_wrapper h3.gform_title {
-    @include responsive-font(1.6vw, 21px, 34px);
-  }
-
-  h4,
-  %h4 {
-    @include responsive-font(1.4vw, 18px, 21px);
-  }
-
-  h5,
-  %h5 {
-    @include responsive-font(1.2vw, 14px, 18px);
-  }
-
-  h6,
-  %h6 {
-    @include responsive-font(1.2vw, 14px, 18px);
-  }
-} @else if $headings-scale == small {
-  h1,
-  %h1 {
-    @include responsive-font(2.4vw, 24px, 46px);
-  }
-
-  h2,
-  %h2 {
-    @include responsive-font(1.6vw, 21px, 34px);
-  }
-
-  h3,
-  %h3,
-  .gform_wrapper h3.gform_title {
-    @include responsive-font(1.4vw, 18px, 21px);
-  }
-
-  h4,
-  %h4 {
-    @include responsive-font(1.2vw, 14px, 18px);
-  }
-
-  h5,
-  %h5 {
-    @include responsive-font(1.2vw, 14px, 18px);
-  }
-
-  h6,
-  %h6 {
-    @include responsive-font(1.2vw, 14px, 18px);
-  }
-}
-
 h1,
 %h1 {
-  letter-spacing: -.02em;
-
-  @if $headings-line-height-setup == flexible {
-    line-height: 3.8rem;
-  } @else {
-    line-height: $headings-line-height-forced;
-  }
-
-  &:first-child {
-    margin-top: 0;
-  }
+  @include responsive-font(3.2vw, 32px, 68px);
 }
 
 h2,
 %h2 {
-  letter-spacing: -.02em;
-
-  @if $headings-line-height-setup == flexible {
-    line-height: 3.2rem;
-  } @else {
-    line-height: $headings-line-height-forced;
-  }
-
-  &:first-child {
-    margin-top: 0;
-  }
+  @include responsive-font(2.4vw, 24px, 46px);
 }
 
 h3,
-%h3,
-.gform_wrapper h3.gform_title {
-  letter-spacing: -.02em;
-
-  @if $headings-line-height-setup == flexible {
-    line-height: 2.2rem;
-  } @else {
-    line-height: $headings-line-height-forced;
-  }
-
-  &:first-child {
-    margin-top: 0;
-  }
+%h3 {
+  @include responsive-font(1.6vw, 21px, 34px);
 }
 
 h4,
 %h4 {
-  @if $headings-line-height-setup == flexible {
-    line-height: 1.4rem;
-  } @else {
-    line-height: $headings-line-height-forced;
-  }
-
-  &:first-child {
-    margin-top: 0;
-  }
+  @include responsive-font(1.4vw, 18px, 21px);
 }
 
 h5,
 %h5 {
-  @if $headings-line-height-setup == flexible {
-    line-height: 1.2rem;
-  } @else {
-    line-height: $headings-line-height-forced;
-  }
-
-  &:first-child {
-    margin-top: 0;
-  }
+  @include responsive-font(1.2vw, 14px, 18px);
 }
 
 h6,
 %h6 {
-  @if $headings-line-height-setup == flexible {
-    line-height: 1rem;
-  } @else {
-    line-height: $headings-line-height-forced;
-  }
-
-  &:first-child {
-    margin-top: 0;
-  }
+  @include responsive-font(1.2vw, 14px, 18px);
 }
 
 // Lists
@@ -308,10 +149,6 @@ ol {
 ol,
 ul {
   padding-bottom: 1rem;
-}
-
-li {
-  font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
 }
 
 // Bold.
