@@ -2,25 +2,7 @@
    
 function belfast_customize_register ( $wp_customize ) {
 	
-	// Logo Uploader
 	
-	$wp_customize->add_section( 'belfast_logo_fav_section' , array(
-    'title'       => __( 'Site Logo', 'belfast' ),
-    'priority'    => 30,
-    'description' =>  __('Upload a logo to replace the default site name and description in the header','belfast'),) );
-	
-   $wp_customize->add_setting( 'belfast_logo', array(
-		'sanitize_callback' => 'esc_url_raw') );
-
-    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'belfast_logo', array(
-    'label'    => __( 'Site Logo ( Max height - 60px)', 'belfast' ),
-    'section'  => 'belfast_logo_fav_section',
-    'settings' => 'belfast_logo',
-    ) ) );
-	function belfast_check_header_video($file){
-  return validate_file($file, array('', 'mp4'));
-    }
-	// Logo  Uploader Ends
 	// Social Links
 	
 	$wp_customize->add_section( 'sociallinks', array(
@@ -59,7 +41,7 @@ function belfast_customize_register ( $wp_customize ) {
 	$wp_customize->add_control( 'belfast_footer_cr_left', array('label' => __('Copyright Note Left','belfast'),'section' => 'fcopyright',) );
 
 	function belfast_sanitize_footer_text( $input ) {
-    return wp_kses_post( force_balance_tags( $input ) );}
+    return wp_kses_post(  $input  );}
 }
     
 	// Footer Copyright Section Ends

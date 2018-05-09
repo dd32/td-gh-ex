@@ -23,27 +23,20 @@ get_header(); ?>
 
 			<header class="archive-header">
 
-				<h1 class="archive-title"><?php
-
-					if ( is_day() ) :
-
-						printf( __( 'Daily Archives: %s', 'belfast' ), get_the_date() );
-
-					elseif ( is_month() ) :
-
-						printf( __( 'Monthly Archives: %s', 'belfast' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'belfast' ) ) );
-
-					elseif ( is_year() ) :
-
-						printf( __( 'Yearly Archives: %s', 'belfast' ), get_the_date( _x( 'Y', 'yearly archives date format', 'belfast' ) ) );
-
-					else :
-
-						_e( 'Archives', 'belfast' );
-
-					endif;
-
-				?></h1>
+				<?php 
+				
+				if ( is_archive() ){
+					the_archive_title('<h1 class="archive-title">', '</h1>');
+				}elseif ( is_home() ){
+					echo '<h1 class="archive-title">'.esc_html__( 'Blog', 'belfast' ).'</h1>';
+				}elseif(is_search()){
+					echo '<h1 class="archive-title">'.esc_html__( 'Search Result', 'belfast' ).'</h1>';
+				} else{
+					the_title( '<h1 class="archive-title">', '</h1>' );
+				
+				}
+				
+				?>
 
 			</header><!-- .archive-header -->
 

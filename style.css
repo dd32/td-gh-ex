@@ -1,9 +1,10 @@
 /*
 Theme Name: Belfast
+Theme URI: http://jonnyjordan.com/belfast
 Author: Jonny Jordan
 Author URI: http://jonnyjordan.com/
 Description: Belfast is a beautiful, responsive and retina-ready Pinterest-style theme for creative minded people. Belfast can be used for personal, photography, art, fashion, nature, health or any minimalistic style website you want to create. It is highly optimised for SEO and very lightweight to ensure lightning quick loading speeds.
-Version: 1.1.1
+Version: 1.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: portfolio, photography, news, blog, food-and-drink, one-column, two-columns, three-columns, grid-layout, right-sidebar, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options
@@ -97,13 +98,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
  */
 
 
-
-/*@import url('css/base.css');
-
-@import url('css/main.css');*/
-
-@import url('css/single.css');
- @import url('fonts/stylesheet.css');
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing:    border-box;
@@ -206,6 +200,12 @@ mark {
 p {
 	margin: 0 0 24px;
 }
+blockquote p {
+    margin: 0;
+}
+form label{
+	margin-bottom: 0px;
+}
 code, kbd, pre, samp {
 	font-family: 'Lato', sans-serif;
 	font-size: 14px;
@@ -301,8 +301,12 @@ nav ul, nav ol {
 li > ul, li > ol {
 	margin: 0;
 }
+#sidebar li > ul, li > ol.children {
+	display:block;
+}
 #sidebar li > ul, li > ol {
-	margin: 0; display:none;
+	margin: 0; 
+	display:none;
 }
 img {
 	-ms-interpolation-mode: bicubic;
@@ -673,13 +677,15 @@ img.wp-smiley, .rsswidget img {
 	list-style-position: inside;
 }
 
-.content_begin {margin-top: 41px;}
+.content_begin {
+	margin-top: 41px;
+    word-break: break-word;
+}
+.content_begin img {
+	max-width: 100%;
+	margin-right: 15px;
+}
 /*---------------  Header Style  ----------------*/
-
-
-
-
-
 
 
 a {
@@ -765,8 +771,7 @@ position:absolute;
 	left:100%;
 }
 .primary-navigation ul li {
-	float:left;
-	display:inline;
+	display:inline-block;
 	position:relative;
 }
 .primary-navigation ul ul li {
@@ -810,7 +815,7 @@ margin: auto;
 .separate {margin-top:10px; border-top: 1px solid #8D7777;}
 
 .primary-navigation .menu {
-	float:left;
+	text-align:center;
 }
 .primary-navigation ul a {
 	font-weight:500;
@@ -821,7 +826,7 @@ margin: auto;
  transition:.75s; text-transform:uppercase;
  color:#333;
 }
-.primary-navigation ul a:hover, .primary-navigation ul li:hover a, .primary-navigation ul li.iehover a {
+.primary-navigation ul a:hover, .primary-navigation ul li:hover a, .primary-navigation ul li.iehover a, .primary-navigation ul li ul li:hover a {
 	/*background:none; */
 	color:#ff4171;
 	}
@@ -829,6 +834,13 @@ margin: auto;
 .slicknav_menu {
 	display:none;
 }
+.slicknav_nav ul{
+	padding:0px;
+}
+.slicknav_nav a:hover{
+	color:#cccccc;
+}
+
 .genericon {
 	line-height: 1.5; color:#333;
 }
@@ -1044,8 +1056,9 @@ footer .copyright p.alignleft{font-size:13px;}
 	list-style-type: none;
 	padding: 16px 10px 0;
 }
-.icon-fonts {
-	float:right;
+.icon-fonts.social-icons > li {
+	float: none;
+	display: inline-block;
 }
 #colophon .utility-wrap ul li a {
 	padding: 1rem 0;
@@ -1066,7 +1079,13 @@ ol {
 	-moz-border-left-colors: none;
 	-moz-border-right-colors: none;
 	-moz-border-top-colors: none;
-	
+}
+.children .comment-meta{
+	border-top: 0px;
+	padding-top: 0;
+	margin-top: 0;
+}
+.comment-list .children li{
 	padding: 1.5rem 1.5rem 0;
 }
 .comment-list, .comment-list ol {
@@ -1152,9 +1171,9 @@ ol {
 	padding: 0;
 }
 
-.entry-thumbnail{width:30%; float:left;}
 
-.entry-thumbnail img {width:100%;
+.entry-thumbnail img {
+	max-width:100%;
 	display: block;
 	margin: 0 auto 10px;
 }
@@ -1165,11 +1184,7 @@ ol {
 
 .entry-title {
 	font-weight: bold;
-	  width: 65%;
-  float: left;
-  margin-left: 17px;
-  line-height: 1.4em;
-  margin-top: -10px;
+	line-height: 1.4em;
 	word-wrap:break-word;
 	
 }
@@ -1457,7 +1472,7 @@ footer.entry-meta {
  */
 
 /* Aside */
-.format-aside {
+/* .format-aside {
 	background-color: #eeeeee;
 }
 
@@ -1467,7 +1482,7 @@ footer.entry-meta {
 .format-aside + .format-link,
 .format-link + .format-aside {
 	box-shadow: inset 0 2px 2px rgba(173, 165, 105, 0.2);
-}
+} */
 
 .format-aside .entry-meta {
 	margin-top: 0;
@@ -1585,14 +1600,14 @@ footer.entry-meta {
   right: 0;
   height: 100%;
   width: 100%;
-  opacity: 0;
+  opacity: 0.7;
   transition: .5s ease;
   background-color: #000;
     padding: 15px;
 }
 
 .container1:hover .overlay {
-  opacity: 0.8;
+  opacity: 0;
 }
 
 .overlay-links{color:#fff;}
@@ -1604,5 +1619,8 @@ footer.entry-meta {
 	
 	.primary-navigation ul a {
  color:#fff!important;
+}
+.overlay h1 {
+    font-size: 18px;
 }
 }

@@ -26,9 +26,21 @@
                     echo esc_html(get_theme_mod( 'belfast_footer_top' )); 
                 }?> <br/>
 
-<?php if(is_home() AND !is_paged()) { ?><a href="https://jonnyjordan.com" >Jonny Jordan Web Design</a> Theme. <?php }  else { ?>belfast Theme.<?php  } ?> Powered by <a href="https://wordpress.org/themes/belfast/">WordPress</a>.
-
-</p> 
+				
+				<?php 
+				$url   = 'https://jonnyjordan.com';
+				$wpurl = 'https://wordpress.org/themes/belfast/';
+				
+				if( is_home() && !is_paged() ){
+					$text = sprintf( '<a href="%s" >'.esc_html__( 'Web Design Belfast', 'belfast' ).'</a> '.esc_html__( 'Theme ', 'belfast' ).'.', esc_url( $url ) );
+				}else{
+					$text = __( 'belfast Theme. ', 'belfast' );
+				}
+				
+				echo sprintf( $text.esc_html__( 'Powered by ', 'belfast' ).'<a href="%s">'.esc_html__( 'WordPress', 'belfast' ).'</a>', $wpurl  );
+				?>
+				
+			</p> 
 					
         </div>
 

@@ -16,14 +16,17 @@
 
         <header class="entry-header">
 
-            <?php if ( has_post_thumbnail() && ! post_password_required() && ! is_attachment() ) : ?>
+            
 
             <div class="entry-thumbnail">
-
-                <?php the_post_thumbnail('medium'); ?>
-
+				<?php 
+				if ( has_post_thumbnail() && ! post_password_required() && ! is_attachment() ){
+					the_post_thumbnail();
+				}
+				
+				?>
 				<div class="entry-meta">
-              <?php _e('By ', 'belfast'); ?> <?php if ( 'post' == get_post_type() ) {
+				<?php _e('By ', 'belfast'); ?> <?php if ( 'post' == get_post_type() ) {
 
                     printf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 
@@ -37,13 +40,8 @@
 
                 } ?>, <?php belfast_entry_date(); ?>
 
-            </div><!-- .entry-meta -->
-				
+				</div><!-- .entry-meta -->
             </div>
-
-            <?php endif; ?>
-
-    
 
             <?php if ( is_single() ) : ?>
 
@@ -71,7 +69,11 @@
 
         <div class="entry-summary">
 
-            <?php the_content(); ?>
+            <?php 
+			the_content();
+			//
+			belfast_link_pages();
+			?>
             
 
         </div><!-- .entry-summary -->

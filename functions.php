@@ -23,12 +23,24 @@ function belfast_setup() {
 	// Adds RSS feed links to <head> for posts and comments.
 
 	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'custom-header' );
+	add_theme_support( 'custom-background' );
 
 	add_theme_support( 'html5', array(
 
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 
 	) );
+	
+	add_theme_support( 'custom-logo', array(
+		'height'      => 80,
+		'width'       => 150,
+		'flex-height' => true,
+		'flex-width'  => true,
+		'header-text' => array( 'site-title', 'site-description' ),
+	) );
+	
+	
 
 	// This theme uses wp_nav_menu() in one location.
 
@@ -114,7 +126,7 @@ function belfast_scripts_styles() {
 		wp_enqueue_script( 'jquery-masonry' );
 
 	// Loads JavaScript file with functionality specific to belfast.
-
+	
 	wp_enqueue_script( 'belfast-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2014-03-18', true );
 
 	// Add Source Sans Pro and Lato fonts, used in the main stylesheet.
@@ -125,23 +137,31 @@ function belfast_scripts_styles() {
 
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/fonts/genericons.css', array(), '2.09' );
 
+	// Add single stylesheet.
+
+	wp_enqueue_style( 'belfast-single', get_template_directory_uri() . '/css/single.css', array(), '2.09' );
+	
+	// Add stylesheet.
+
+	wp_enqueue_style( 'belfast-stylesheet', get_template_directory_uri() . '/fonts/stylesheet.css', array(), '2.09' );
+
 	// Loads our main stylesheet.
 
 	wp_enqueue_style( 'belfast-style', get_stylesheet_uri(), array(), '2013-07-18' );
 
 	// Loads the Internet Explorer specific stylesheet.
 
-	wp_enqueue_style( 'belfast-ie', get_template_directory_uri() . '/css/ie.css', array( 'belfast-style' ), '2013-07-18' );
+	wp_enqueue_style( 'ie', get_template_directory_uri() . '/css/ie.css', array( 'belfast-style' ), '2013-07-18' );
 
-	wp_style_add_data( 'belfast-ie', 'conditional', 'lt IE 9' );
+	wp_style_add_data( 'ie', 'conditional', 'lt IE 9' );
 	
-	wp_enqueue_style( 'belfast-bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
-	wp_enqueue_style( 'belfast-slicknav-css', get_template_directory_uri() . '/css/slicknav.css');
-	wp_enqueue_style( 'belfast-responsive-css', get_template_directory_uri().'/css/responsive.css');
-	wp_enqueue_script( 'belfast-jquery-slicknav', get_template_directory_uri() . '/js/jquery.slicknav.js');
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
+	wp_enqueue_style( 'slicknav', get_template_directory_uri() . '/css/slicknav.css');
+	wp_enqueue_style( 'belfast-responsive', get_template_directory_uri().'/css/responsive.css');
+	wp_enqueue_script( 'slicknav', get_template_directory_uri() . '/js/jquery.slicknav.js');
 	wp_enqueue_script( 'belfast-custom-script', get_template_directory_uri() . '/js/scripts.js');
-	wp_enqueue_script( 'belfast-html5-script', get_template_directory_uri().'/js/html5.js');
-	wp_enqueue_script( 'belfast-imageloaded-script', get_template_directory_uri().'/js/imagesloaded.pkgd.min.js');
+	wp_enqueue_script( 'html5', get_template_directory_uri().'/js/html5.js');
+	wp_enqueue_script( 'imagesloaded-pkgd', get_template_directory_uri().'/js/imagesloaded.pkgd.min.js');
 
 	}
 
@@ -318,6 +338,23 @@ function belfast_post_nav() {
 }
 endif;
 
+
+
+// WP post link pages
+function belfast_link_pages(){
+    
+    wp_link_pages( array(
+    'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'belfast' ) . '</span>',
+    'after'       => '</div>',
+    'link_before' => '<span>',
+    'link_after'  => '</span>',
+    'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'belfast' ) . ' </span>%',
+    'separator'   => '<span class="screen-reader-text">, </span>',
+    ) );
+}
+
+
+
 if ( ! function_exists( 'belfast_entry_meta' ) ) :
 
 /* Print HTML with meta information for current post: categories, tags, permalink, author, and date. */
@@ -417,7 +454,7 @@ function belfast_entry_date( $echo = true ) {
 
 	if ( $echo )
 
-		echo $date;
+		echo wp_kses_post( $date );
 
 
 
@@ -519,20 +556,6 @@ function belfast_the_attached_image() {
 }
 
 endif;
-
-/* Return the post URL. */
-
-function belfast_get_link_url() {
-
-	$content = get_the_content();
-
-	$has_url = get_url_in_content( $content );
-
-
-
-	return ( $has_url ) ? $has_url : apply_filters( 'the_permalink', get_permalink() );
-
-}
 
 
 function belfast_body_class( $classes ) {
