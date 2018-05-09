@@ -6,6 +6,9 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 4.1.7 [09-05-2018]
+1. Box Layout option added.
+
 @Version: 4.1.6 [23-04-2018]
 1. Slider Animation option added.
 2. Breadcrumb option added.

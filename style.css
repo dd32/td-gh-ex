@@ -4,7 +4,7 @@ Theme URI:http://weblizar.com/themes/enigma/
 Author: weblizar
 Author URI: http://weblizar.com/
 Description: Enigma  is an outstanding superfine creation from weblizar, Enigma has become one of the most popular superfine multipurpose responsive theme with WPMLlovers by many professionals for its amazing capabilities and great designs. Enigma is multi function free WordPress theme with responsive and flexible light-weighted WooCommerce theme built by using core WordPress functions (BOOTSTRAP CSS framework) that works on All leading web browsers weather its mobile device or any other this makes it fast, simple and easy to customize! It has a promising design and powerful features with page layouts and sidebar widget that let your websites easy to design. This theme can be used for different kinds of websites including business, blogging, portfolio, agency, landing page etc. Enigma has Filkr as a custom widget to showing up your Flickr Photos .Enigma provide you a platform for business template, awesome BOOTSTRAP Carousel slider for full CMS control option to match your logo & website, wide layout and many more.
-Version: 4.1.6
+Version: 4.1.7
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: two-columns, three-columns, four-columns, custom-menu, right-sidebar, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, translation-ready ,rtl-language-support , E-Commerce , Education , Entertainment , Portfolio
@@ -22,6 +22,9 @@ body {
    background-color: #fff;
 
    }
+.boxed  #enigma_nav_top.affix{
+max-width: 1230px;
+}
 #wrapper{	
     position: relative;
     transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
@@ -2513,5 +2516,18 @@ li.enigma_post_author.enigma_blog_thumb_wrapper_showcase {
 .header_section .hd-img {
     width: 100% !important;
     height: 65% !important;
+}
+}
+@media(min-width:1200px){
+body.boxed {
+    width: 1230px;
+	box-shadow: 0 0 10px 0 rgba(48, 48, 48, 0.5) ;
+    -webkit-box-shadow: 0 0 10px 0 rgba(48, 48, 48, 0.5);
+	-moz-box-shadow: 0 0 10px 0 rgba(48, 48, 48, 0.5);
+    margin: 0 auto;
+}
+body.boxed #header .main-header {
+	width:1230px;
+	margin:0 auto;
 }
 }

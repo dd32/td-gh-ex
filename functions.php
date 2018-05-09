@@ -42,6 +42,7 @@
 			'read_more'=>__('Read More', 'enigma' ),
 			'autoplay'=>'1',
 			'breadcrumb'=>'1',
+			'box_layout'=>'1',
 
 			'slider_image_speed' => '',
 			'slide_image_1' => $ImageUrl,

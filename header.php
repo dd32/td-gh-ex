@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php if($wl_theme_options['box_layout']==2) { body_class('boxed'); } else body_class(); ?>>
 <div>
 	<!-- Header Section -->
 	<div class="header_section hd_cover" <?php if ( has_header_image() ) { ?> style='background-image: url("<?php header_image(); ?>")' <?php  } ?> >		

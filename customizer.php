@@ -1552,7 +1552,7 @@ $wp_customize->add_section(
 	) );   
 	
 			$wp_customize->add_section( 'enigma_more' , array(
-				'title'      	=> __( 'Upgrade to Enigma Premium 20%OFF', 'enigma' ),
+				'title'      	=> __( 'Upgrade to Enigma Premium', 'enigma' ),
 				'priority'   	=> 999,
 				'panel'=>'enigma_theme_option',
 			) );
@@ -1599,23 +1599,42 @@ $wp_customize->add_section(
     'priority' => 37,
     ));
 	$wp_customize->add_setting('home_reorder',
-            array(
+        array(
 				'type'=>'theme_mod',
                 'sanitize_callback' => 'sanitize_json_string',
 				'capability'        => 'edit_theme_options',
-            )
-        );
-        $wp_customize->add_control(new enigma_Custom_sortable_Control($wp_customize,'home_reorder', array(
-			'label'=>__( 'Front Page Layout Option', 'enigma' ),
-            'section' => 'Home_Page_Layout',
-            'type'    => 'home-sortable',
-            'choices' => array(
-                'services'      => __('Home Services', 'enigma'),
-                'portfolio'     => __('Home Portfolio', 'enigma'),
-                'blog'        => __('Home Blog', 'enigma'),
-            ),
-			'settings'=>'home_reorder',
-        ))); 
+        )
+    );
+    $wp_customize->add_control(new enigma_Custom_sortable_Control($wp_customize,'home_reorder', array(
+		'label'=>__( 'Front Page Layout Option', 'enigma' ),
+        'section' => 'Home_Page_Layout',
+        'type'    => 'home-sortable',
+        'choices' => array(
+            'services'      => __('Home Services', 'enigma'),
+            'portfolio'     => __('Home Portfolio', 'enigma'),
+            'blog'        => __('Home Blog', 'enigma'),
+        ),
+		'settings'=>'home_reorder',
+    ))); 
+	
+	$wp_customize->add_setting('enigma_options[box_layout]',
+        array(
+			'type'=>'option',
+			'default'=>$wl_theme_options['box_layout'],
+            'sanitize_callback' => 'enigma_sanitize_integer',
+			'capability'        => 'edit_theme_options',
+        )
+    );
+    $wp_customize->add_control('box_layout', array(
+		'label'=>__( 'Boxed Layout', 'enigma' ),
+        'section' => 'Home_Page_Layout',
+        'type'    => 'select',
+        'choices' => array(
+            '1'      => __('Full-Width', 'enigma'),
+            '2'     => __('Boxed', 'enigma'),
+        ),
+		'settings'=>'enigma_options[box_layout]',
+    )); 
 	// home layout close // 
 }
 function enigma_sanitize_text( $input ) {
@@ -1657,14 +1676,14 @@ class More_Enigma_Control extends WP_Customize_Control {
 	*/
 	public function render_content() {
 		?>
-		<div class="row">
+		<!-- <div class="row">
 		<div class="col-md-4">
 				<div class="stitched">
 				
-				<?php echo __("Coupon Code : MEGA20", "enigma" );?>
+				<?php //echo __("Coupon Code : MEGA20", "enigma" );?>
 				</div>
 		</div>
-		</div>
+		</div> -->
 		<label style="overflow: hidden; zoom: 1;">
 			<div class="col-md-2 col-sm-6 upsell-btn">					
 					<a style="margin-bottom:20px;margin-left:20px;" href="http://weblizar.com/themes/enigma-premium/" target="blank" class="btn btn-success btn"><?php _e('Upgrade to Enigma Premium','enigma'); ?> </a>
@@ -1947,7 +1966,9 @@ class enigma_changelog_Control extends WP_Customize_Control {
 			<div class="col-md-3 col-sm-6">
 				<h2 style="margin-top:10px;color:#fff;background-color: #3ca3e0;padding: 10px;font-size: 19px;"><?php echo _e( 'Enigma Theme Changelog','enigma'); ?></h2>
 				<ul style="padding-top:20px">
-				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.6 - <span> Current Version </span></div>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.7 - <span> Current Version </span></div>
+		<ol> <li> Box Layout option added. </li></ol></li>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.6 - </div>
 		<ol> <li> Slider Animation option added. </li><li> Breadcrumb option added. </li></ol></li>
 				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.5 - </div>
 		<ol> <li> Snow effect issue fixed. </li></ol></li>
