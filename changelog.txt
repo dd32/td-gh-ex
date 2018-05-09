@@ -1,3 +1,8 @@
+fGymm 1.6.5, 2018-05-09
+------------------------
+- add option for show/hide Slider
+- bug fixes
+
 fGymm 1.6.4, 2017-12-17
 ------------------------
 - improve animations effect

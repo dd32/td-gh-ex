@@ -12,7 +12,7 @@ require_once( trailingslashit( get_template_directory() ) . 'customize-pro/class
 
 if ( ! function_exists( 'fgymm_setup' ) ) :
 /**
- * fGymm setup.
+ * fgymm setup.
  *
  * Set up theme defaults and registers support for various WordPress features.
  *
@@ -86,7 +86,7 @@ endif; // fgymm_setup
 add_action( 'after_setup_theme', 'fgymm_setup' );
 
 /**
- * the main function to load scripts in the fGymm theme
+ * the main function to load scripts in the fgymm theme
  * if you add a new load of script, style, etc. you can use that function
  * instead of adding a new wp_enqueue_scripts action for it.
  */
@@ -208,7 +208,7 @@ function fgymm_widgets_init() {
 add_action( 'widgets_init', 'fgymm_widgets_init' );
 
 /**
- *	Load google font url used in the fGymm theme
+ *	Load google font url used in the fgymm theme
  */
 function fgymm_fonts_url() {
 
@@ -433,6 +433,25 @@ function fgymm_customize_register( $wp_customize ) {
 			'title'       => __( 'Slider', 'fgymm' ),
 			'capability'  => 'edit_theme_options',
 		)
+	);
+
+	// Add display slider option
+	$wp_customize->add_setting(
+			'fgymm_slider_display',
+			array(
+					'default'           => 1,
+					'sanitize_callback' => 'fgymm_sanitize_checkbox',
+			)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fgymm_slider_display',
+							array(
+								'label'          => __( 'Display Slider', 'fgymm' ),
+								'section'        => 'fgymm_slider_section',
+								'settings'       => 'fgymm_slider_display',
+								'type'           => 'checkbox',
+							)
+						)
 	);
 	
 	for ($i = 1; $i <= 3; ++$i) {
@@ -785,17 +804,16 @@ add_action('customize_register', 'fgymm_customize_register');
  */
 function fgymm_show_post_date() { 
 
-	$postDate = strtotime( get_the_time( get_option( 'date_format' ) ) );
-?>
+	?>
 	<div class="postdate">
 		<div class="day">
-			<?php echo date( 'd', $postDate ); ?>
+			<?php echo get_the_date( 'd' ); ?>
 		</div>
 		<div class="month">
-			<?php echo date( 'M', $postDate); ?>
+			<?php echo get_the_date( 'M' ); ?>
 		</div>
 		<div class="year">
-			<?php echo date( 'Y', $postDate); ?>
+			<?php echo get_the_date( 'Y' ); ?>
 		</div>
 	</div>
 <?php
@@ -824,7 +842,7 @@ function fgymm_header_style() {
         <?php if ( get_theme_support( 'custom-header', 'default-text-color' ) !== $header_text_color
                     && 'blank' !== $header_text_color ) : ?>
 
-                #header-main-fixed, #header-main-fixed h1.entry-title {color: #<?php echo esc_attr( $header_text_color ); ?>;}
+                #header-main-fixed, #header-main-fixed h1.entry-title {color: #<?php echo sanitize_hex_color_no_hash( $header_text_color ); ?>;}
 
         <?php endif; ?>
     </style>
