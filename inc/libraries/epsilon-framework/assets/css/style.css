@@ -345,6 +345,7 @@ ul.epsilon-upsell-requirements {
     min-height: 50px;
     border-radius: 5px;
     left: -75px; /* half of its width */
+    bottom: 25px;
     z-index: 10;
     display: none;
     padding: 12px;
