@@ -8,7 +8,13 @@
                     <div class="cactus-f-microwidgets">
                         <div class="cactus-microwidget cactus-search-full">
                             <form role="search" class="searchform searchform-cats" method="get" id="searchform" action="<?php echo esc_url( home_url( '/'  ) );?>">
-                                <div><?php
+                                <div>
+								
+                                    
+                                    <label class="screen-reader-text"><?php esc_attr__('Search for','astore');?>:</label>
+                                    <input type="text" class="search-field" placeholder="<?php esc_attr_e('Search','astore');?> ..." value="<?php echo get_search_query(); ?>" name="s">
+                                    <input type="hidden" value="product" name="post_type" id="post_type" />
+                                    <?php
 								
 								if ( class_exists( 'WooCommerce' ) ) {	
 
@@ -23,10 +29,6 @@
 								wp_dropdown_categories( $args );
 								}
 								?>
-                                    
-                                    <label class="screen-reader-text"><?php esc_attr__('Search for','astore');?>:</label>
-                                    <input type="text" class="search-field" placeholder="<?php esc_attr_e('Search','astore');?> ..." value="<?php echo get_search_query(); ?>" name="s">
-                                    <input type="hidden" value="product" name="post_type" id="post_type" />
                                     <input type="submit" class="search-submit" value="Search">
                                 </div>                                    
                             </form>
@@ -64,7 +66,7 @@
                     
                 </div>
                 
-                <nav class="cactus-navigation cactus-style-top-line-full">
+                <nav class="cactus-navigation">
                 <?php
 					
 					$categories_menu_toggle = astore_option('categories_menu_toggle');

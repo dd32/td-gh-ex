@@ -128,6 +128,7 @@ function astore_scripts() {
 	$theme_info = wp_get_theme();
 	
 	wp_enqueue_style( 'astore-google-fonts', customizer_library_get_google_font_uri($fonts), false, '', false );
+	wp_enqueue_style( 'simple-line-icons',  get_template_directory_uri() .'/assets/plugins/simple-line-icons/css/simple-line-icons.css', false, '', false );
 	wp_enqueue_style( 'bootstrap',  get_template_directory_uri() .'/assets/plugins/bootstrap/css/bootstrap.css', false, '', false );
 	wp_enqueue_style( 'font-awesome',  get_template_directory_uri() .'/assets/plugins/font-awesome/css/font-awesome.min.css', false, '', false );
 	wp_enqueue_style( 'owl-carousel',  get_template_directory_uri() .'/assets/plugins/owl-carousel/css/owl.carousel.css', false, '', false );

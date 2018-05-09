@@ -399,7 +399,7 @@ function astore_customizer_library_options() {
 		'section' => $section,
 		'type'    => 'select',
 		'choices' => customizer_library_get_font_choices(),
-		'default' => 'Montserrat'
+		'default' => 'Oswald'
 	);
 	
 	$options['body_font_family'] = array(
@@ -408,7 +408,7 @@ function astore_customizer_library_options() {
 		'section' => $section,
 		'type'    => 'select',
 		'choices' => customizer_library_get_font_choices(),
-		'default' => 'Montserrat'
+		'default' => 'Open Sans'
 	);
 	
 	$section = 'section-font-size';
@@ -424,7 +424,7 @@ function astore_customizer_library_options() {
 		'label'   => __( 'Body Font Size', 'astore' ),
 		'section' => $section,
 		'type'    => 'range-value',
-		'default' => '14',
+		'default' => '13',
 		'input_attrs' => array(
 			'min'    => 1,
 			'max'    => 60,

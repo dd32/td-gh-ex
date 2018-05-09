@@ -2,7 +2,7 @@
 Contributors: VelaThemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.0-trunk
-Version: 1.0.5
+Version: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, custom-background, custom-header, custom-menu, theme-options, right-sidebar, translation-ready, editor-style, featured-images, threaded-comments, rtl-language-support, custom-logo, featured-image-header, footer-widgets
@@ -48,28 +48,26 @@ Animate.css, Copyright (c) 2014 Daniel Eden
 Licenses: MIT
 Source: http://daneden.me/animate
 
-screenshot.png
-License: CC0 Creative Commons
-Source:
-https://pixabay.com/photo-1333433/
-https://pixabay.com/photo-1842328/
+Simple line icons, Copyright (c) 2016 Sabbir Ahmed & All Contributors
+Licenses: MIT
+Source: https://github.com/thesabbir/simple-line-icons
 
+screenshot.jpg
 License: CC0 License
 Source:
-https://www.pexels.com/photo/woman-sitting-on-the-floor-with-left-on-her-knees-and-the-right-hand-in-her-face-709807/
-https://www.pexels.com/photo/black-make-up-brush-near-silver-make-up-palette-60571/
-
-
-"FEATURED PRODUCTS" images in screenshot.jpg
-License: GPL
-Source: https://woocommerce.com/
+https://www.pexels.com/photo/adolescent-casual-cute-elegant-428338/
+https://www.pexels.com/photo/blue-boots-classic-comfort-266840/
+https://www.pexels.com/photo/analog-analogue-classic-emporio-armani-277459/
 
 
 == Changelog ==
 
+= 1.0.6 =
+  Updated front page template
+
 = 1.0.5 =
   Fixed sanitization issue
-  updated screenshot.png
+  Updated screenshot.png
 
 = 1.0.4 =
 * Released: May 2, 2018

@@ -6,7 +6,7 @@ $css_class = 'cactus-top-bar';
 if( $display_topbar !=1 && is_customize_preview() )
 	$css_class  .= ' hide';
 	
-$css_class  .= ' cactus-style-solid-bg';
+$css_class  .= ' cactus-style-bottom-line-full';
 	
 ?>
 
