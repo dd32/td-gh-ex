@@ -23,7 +23,19 @@ if (!function_exists('fmi_entry_content')) {
 
       <!-- excerpt (post content) -->
       <div class="entry-content clearfix">
-        <?php the_content('[...]', false); ?>
+        <?php
+        the_content( sprintf(
+          wp_kses(
+            __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'fmi' ),
+            array(
+              'span' => array(
+                'class' => array(),
+              ),
+            )
+          ),
+          get_the_title()
+        ) );
+        ?>
       </div>
       <!-- end excerpt (post content) -->
 

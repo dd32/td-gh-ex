@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Fmi\n"
-"POT-Creation-Date: 2018-04-05 14:41+0800\n"
-"PO-Revision-Date: 2018-04-05 14:41+0800\n"
+"POT-Creation-Date: 2018-05-10 14:50+0800\n"
+"PO-Revision-Date: 2018-05-10 14:50+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -41,227 +41,227 @@ msgstr ""
 msgid "Footer menu"
 msgstr ""
 
-#: inc/customizer.php:25
+#: inc/customizer.php:27
 msgid "Theme Options"
 msgstr ""
 
-#: inc/customizer.php:33
+#: inc/customizer.php:38
 msgid "Colors"
 msgstr ""
 
-#: inc/customizer.php:43
+#: inc/customizer.php:56
 msgid "Theme Color"
 msgstr ""
 
-#: inc/customizer.php:51
+#: inc/customizer.php:68
 msgid "General Settings"
 msgstr ""
 
-#: inc/customizer.php:60
+#: inc/customizer.php:83
 msgid "Blog Pagination or Navigation"
 msgstr ""
 
-#: inc/customizer.php:65
+#: inc/customizer.php:88
 msgid "Pagination"
 msgstr ""
 
-#: inc/customizer.php:66
+#: inc/customizer.php:89
 msgid "Navigation"
 msgstr ""
 
-#: inc/customizer.php:74
+#: inc/customizer.php:103
 msgid "Hide Header Title Text"
 msgstr ""
 
-#: inc/customizer.php:84
+#: inc/customizer.php:119
 msgid "Hide Header Search"
 msgstr ""
 
-#: inc/customizer.php:95
+#: inc/customizer.php:136
 msgid "Blog Layout"
 msgstr ""
 
-#: inc/customizer.php:98
+#: inc/customizer.php:139
 msgid "Right sidebar"
 msgstr ""
 
-#: inc/customizer.php:99
+#: inc/customizer.php:140
 msgid "Left sidebar"
 msgstr ""
 
-#: inc/customizer.php:100
+#: inc/customizer.php:141
 msgid "One column"
 msgstr ""
 
-#: inc/customizer.php:109
+#: inc/customizer.php:156
 msgid "Use Excerpt or \"Read More tag\""
 msgstr ""
 
-#: inc/customizer.php:112
+#: inc/customizer.php:159
 msgid "Excerpt"
 msgstr ""
 
-#: inc/customizer.php:113
+#: inc/customizer.php:160
 msgid "Read More tag"
 msgstr ""
 
-#: inc/customizer.php:121
+#: inc/customizer.php:176
 msgid "Excerpt Length (Number of Words)"
 msgstr ""
 
-#: inc/customizer.php:131
+#: inc/customizer.php:193
 msgid "Show \"Back to top\" button"
 msgstr ""
 
-#: inc/customizer.php:140
+#: inc/customizer.php:208
 msgid "Enable hover effects when you hover on featured images"
 msgstr ""
 
-#: inc/customizer.php:149
+#: inc/customizer.php:223
 msgid "Show date"
 msgstr ""
 
-#: inc/customizer.php:158
+#: inc/customizer.php:238
 msgid "Show author"
 msgstr ""
 
-#: inc/customizer.php:167
+#: inc/customizer.php:253
 msgid "Show comments counter"
 msgstr ""
 
-#: inc/customizer.php:176
+#: inc/customizer.php:268
 msgid "Show categories"
 msgstr ""
 
-#: inc/customizer.php:185
+#: inc/customizer.php:283
 msgid "Show tags"
 msgstr ""
 
-#: inc/customizer.php:194
+#: inc/customizer.php:298
 msgid "Show post navigation (single post page)"
 msgstr ""
 
-#: inc/customizer.php:203
+#: inc/customizer.php:313
 msgid "Show \"About the author\" block (single post page)"
 msgstr ""
 
-#: inc/customizer.php:211
+#: inc/customizer.php:324
 msgid "Social Links & RSS"
 msgstr ""
 
-#: inc/customizer.php:220
+#: inc/customizer.php:339
 msgid "Twitter URL"
 msgstr ""
 
-#: inc/customizer.php:230
+#: inc/customizer.php:355
 msgid "Facebook URL"
 msgstr ""
 
-#: inc/customizer.php:240
+#: inc/customizer.php:371
 msgid "Google+ URL"
 msgstr ""
 
-#: inc/customizer.php:250
+#: inc/customizer.php:387
 msgid "Pinterest URL"
 msgstr ""
 
-#: inc/customizer.php:260
+#: inc/customizer.php:403
 msgid "VK URL"
 msgstr ""
 
-#: inc/customizer.php:270
+#: inc/customizer.php:419
 msgid "Flickr URL"
 msgstr ""
 
-#: inc/customizer.php:280
+#: inc/customizer.php:435
 msgid "Instagram URL"
 msgstr ""
 
-#: inc/customizer.php:290
+#: inc/customizer.php:451
 msgid "500px URL"
 msgstr ""
 
-#: inc/customizer.php:300
+#: inc/customizer.php:467
 msgid "YouTube URL"
 msgstr ""
 
-#: inc/customizer.php:310
+#: inc/customizer.php:483
 msgid "Vimeo URL"
 msgstr ""
 
-#: inc/customizer.php:320
+#: inc/customizer.php:499
 msgid "SoundCloud URL"
 msgstr ""
 
-#: inc/customizer.php:330
+#: inc/customizer.php:515
 msgid "Dribbble URL"
 msgstr ""
 
-#: inc/customizer.php:340
+#: inc/customizer.php:531
 msgid "Behance URL"
 msgstr ""
 
-#: inc/customizer.php:350
+#: inc/customizer.php:547
 msgid "GitHub URL"
 msgstr ""
 
-#: inc/customizer.php:360
+#: inc/customizer.php:563
 msgid "RSS URL"
 msgstr ""
 
-#: inc/customizer.php:370
+#: inc/customizer.php:576
 msgid "Slider"
 msgstr ""
 
-#: inc/customizer.php:379
+#: inc/customizer.php:591
 msgid "Check to activate slider"
 msgstr ""
 
-#: inc/customizer.php:390
+#: inc/customizer.php:610
 msgid "Image Upload #1"
 msgstr ""
 
-#: inc/customizer.php:391 inc/customizer.php:432 inc/customizer.php:473
-#: inc/customizer.php:514
+#: inc/customizer.php:611 inc/customizer.php:679 inc/customizer.php:747
+#: inc/customizer.php:815
 msgid "Upload slider image"
 msgstr ""
 
-#: inc/customizer.php:400 inc/customizer.php:441 inc/customizer.php:482
-#: inc/customizer.php:523
+#: inc/customizer.php:627 inc/customizer.php:695 inc/customizer.php:763
+#: inc/customizer.php:831
 msgid "Enter title for your slider"
 msgstr ""
 
-#: inc/customizer.php:410 inc/customizer.php:451 inc/customizer.php:492
-#: inc/customizer.php:533
+#: inc/customizer.php:643 inc/customizer.php:711 inc/customizer.php:779
+#: inc/customizer.php:847
 msgid "Enter your slider description"
 msgstr ""
 
-#: inc/customizer.php:420 inc/customizer.php:461 inc/customizer.php:502
-#: inc/customizer.php:543
+#: inc/customizer.php:659 inc/customizer.php:727 inc/customizer.php:795
+#: inc/customizer.php:863
 msgid "Enter link to redirect slider when clicked"
 msgstr ""
 
-#: inc/customizer.php:431
+#: inc/customizer.php:678
 msgid "Image Upload #2"
 msgstr ""
 
-#: inc/customizer.php:472
+#: inc/customizer.php:746
 msgid "Image Upload #3"
 msgstr ""
 
-#: inc/customizer.php:513
+#: inc/customizer.php:814
 msgid "Image Upload #4"
 msgstr ""
 
-#: inc/customizer.php:553
+#: inc/customizer.php:876
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer.php:563
+#: inc/customizer.php:892
 msgid "Show \"Social Links & RSS\" block"
 msgstr ""
 
-#: inc/customizer.php:572
+#: inc/customizer.php:907
 msgid "Show \"Footer menu\" block"
 msgstr ""
 
@@ -299,7 +299,12 @@ msgstr ""
 msgid "Your comment"
 msgstr ""
 
-#: inc/template-functions.php:107
+#: inc/template-functions.php:29
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: inc/template-functions.php:119
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
