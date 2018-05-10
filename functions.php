@@ -149,3 +149,53 @@ if ( ! function_exists( 'arke_the_posts_navigation' ) ) :
 endif;
 
 $tags_list = get_the_tag_list( '', esc_html__( ', ', 'arke' ) );
+
+
+/**
+ * Display the admin notice.
+ */
+function arke_admin_notice() {
+	global $current_user ;
+	$user_id = $current_user->ID;
+
+	if ( class_exists( 'Olympus_Google_Fonts' ) ) {
+		return;
+	}
+	/* Check that the user hasn't already clicked to ignore the message */
+	if ( ! current_user_can( 'install_plugins' ) ) {
+		return;
+	}
+	if ( ! get_user_meta( $user_id, 'arke_ignore_notice' ) ) {
+		?>
+
+		<div class="notice notice-info">
+			<p>
+				<?php
+				printf(
+					/* translators: 1: plugin link */
+					esc_html__( 'Easily change the font of your website with our new plugin - %1$s', 'arke' ),
+					'<a href="' . esc_url( admin_url( 'plugin-install.php?s=olympus+google+fonts&tab=search&type=term' ) ) . '">Google Fonts for WordPress</a>'
+				);
+				?>
+				<span style="float:right">
+					<a href="?arke_ignore_notice=0"><?php esc_html_e( 'Hide Notice', 'arke' ); ?></a>
+				</span>
+			</p>
+		</div>
+
+		<?php
+	}
+}
+add_action( 'admin_notices', 'arke_admin_notice' );
+/**
+ * Dismiss the admin notice.
+ */
+function arke_dismiss_admin_notice() {
+	global $current_user;
+	$user_id = $current_user->ID;
+	/* If user clicks to ignore the notice, add that to their user meta */
+	if ( isset( $_GET['arke_ignore_notice'] ) && '0' === $_GET['arke_ignore_notice'] ) {
+		add_user_meta( $user_id, 'arke_ignore_notice', 'true', true );
+	}
+}
+add_action( 'admin_init', 'arke_dismiss_admin_notice' );

@@ -3,7 +3,7 @@
 Contributors: DannyCooper
 Requires at least: 4.0
 Tested up to: 4.9
-Stable tag: 1.2.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 GitHub Theme URI: https://github.com/DannyCooper/arke
@@ -35,6 +35,9 @@ The clean, fast, standards-compliant code ensures Arke is Search Engine Optimize
 Arke includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+
+= 1.0.1 - May 10 2018 =
+* Add notice
 
 = 1.0.0 - May 10 2018 =
 * Initial release
