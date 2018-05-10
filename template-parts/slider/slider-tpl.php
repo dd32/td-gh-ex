@@ -4,7 +4,6 @@ if ($slides == false):return false; endif;
 /*
  * Lets create the slider
  */
-
 ?>
 <div class="atlast-slider-container">
     <!-- Slides -->
