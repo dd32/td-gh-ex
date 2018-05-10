@@ -528,13 +528,13 @@
 	'default'     =>  cts_section_content_default('service'),
   	'fields'	 => array(
   		'service_icon'	 => array(
-  			'type'		 => 'image',
+  			'type'		 => 'text',
   			'label'		 => __( 'Service Icon Image', 'best-food' ),
   			'default'	 =>'',
   		),	
 
   		'service_icon_hover'	 => array(
-  			'type'		 => 'image',
+  			'type'		 => 'text',
   			'label'		 => __( 'Service Icon Hover Image', 'best-food' ),
   			'default'	 => '',
   		),	
