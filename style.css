@@ -4,7 +4,7 @@ Description: ArtGallery is fully Responsive Art WordPress Theme. Features: Anima
 Author: customizablethemes
 Author URI: https://customizablethemes.com
 Theme URI: https://customizablethemes.com/product/artgallery/
-Version: 1.0.3
+Version: 1.0.4
 Text Domain: artgallery
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2 or later
@@ -230,6 +230,7 @@ ul {
 
 /* header */
 #header-main-fixed {
+	min-height:40px;
 	clear:both;
 	background-color:#FFFFFF; 
 	margin:0;
@@ -2472,13 +2473,13 @@ dt.gallery-icon > a:before,
 }
 .camera_caption > div {
 	background: #1E90FF;
-	background: rgba(30, 144, 255, 0.8);
+	background: rgba(0, 0, 0, 0.8);
 }
 .camera_wrap .camera_pag .camera_pag_ul li {
-	background: #1E90FF;
+	background: #000000;
 }
 .camera_wrap .camera_pag .camera_pag_ul li:hover > span {
-	background: #1E90FF;
+	background: #000000;
 }
 .camera_wrap .camera_pag .camera_pag_ul li.cameracurrent > span {
 	background: #BCB6B7;
@@ -2496,7 +2497,7 @@ dt.gallery-icon > a:before,
 
 .camera_prevThumbs, .camera_nextThumbs, .camera_prev, .camera_next, .camera_commands, .camera_thumbs_cont {
 	background: #1E90FF;
-	background: rgba(30, 144, 255, 0.85);
+	background: rgba(0, 0, 0, 0.85);
 	-webkit-border-radius:2px;
 	-moz-border-radius:2px;
 	-ms-border-radius:2px;

@@ -17,6 +17,9 @@ ArtGallery is fully Responsive Moto WordPress Theme. Features: Custom Logo, Cust
 
 == Changelog ==
 
+= 1.0.4 =
+- change homepage slider images
+
 = 1.0.3 =
 - add homepage slider
 - add facebook widget support
@@ -57,11 +60,11 @@ ArtGallery is fully Responsive Moto WordPress Theme. Features: Custom Logo, Cust
 * assets/js/jquery.mobile.customized.min.js MIT license Reference: http://jquery.org/license
 *
 *
-* images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/woman-art-creative-relaxation-girl-1283009/
+* images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/istanbul-turkey-art-gallery-168774/ 
 *
-* images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/macwhirter-art-artistic-artistry-86737/
+* images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/gallery-women-images-despair-2932005/
 *
-* images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/arthur-parton-art-artistic-artistry-89413/
+* images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/copenhagen-denmark-art-gallery-169052/ 
 *
 * screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/woman-art-creative-relaxation-girl-1283009/
 *
