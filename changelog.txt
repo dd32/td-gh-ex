@@ -1,3 +1,8 @@
+
+AyaSpirit 1.1.3, 2018-05-11
+------------------------
+- changing slider images 
+
 AyaSpirit 1.1.2, 2017-12-20
 ------------------------
 - improve animation effects

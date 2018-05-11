@@ -13,7 +13,11 @@
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo('charset'); ?>" />
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+		<?php
+            if ( is_singular() && pings_open() ) :
+                printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+            endif;
+        ?>
 		<meta name="viewport" content="width=device-width" />
 		<?php wp_head(); ?>
 	</head>

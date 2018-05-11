@@ -71,7 +71,7 @@ The exceptions to this license are as follows:
 * js/viewportchecker.js - the MIT license, Reference: http://opensource.org/licenses/MIT
 *
 * images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms,
-* Image Source: https://pixabay.com/en/sun-sunrise-ray-view-indonesian-866451/
+* Image Source: https://pixabay.com/en/travel-sunset-landscape-sky-sand-3098815/
 *
 * images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms,
 * Image Source: https://pixabay.com/en/banner-header-gull-bird-fly-1090835/
@@ -85,7 +85,7 @@ The exceptions to this license are as follows:
 * images/slider/5.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms,
 * Image Source: https://pixabay.com/en/sun-fireball-sunset-sea-evening-sky-404062/
 *
-* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/sun-sunrise-ray-view-indonesian-866451/
+* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/travel-sunset-landscape-sky-sand-3098815/
 
 == Homepage Slider ==
 
