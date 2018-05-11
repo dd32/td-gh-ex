@@ -76,7 +76,7 @@ function bar_restaurant_admin_menu( ) {
 function bar_restaurant_pro_buy_now(){ ?>  
   <div class="business_consultant_plus_version">
   <a href="<?php echo esc_url('https://voilathemes.com/wordpress-themes/bar-restaurant-pro/'); ?>" target="_blank">
-    <img src ="<?php echo esc_url('https://s3.amazonaws.com/voilathemesdotcom/wp-content/uploads/bar-restaurant-pro-features.png') ?>" width="100%" height="auto" />
+    <img src ="<?php echo esc_url(get_template_directory_uri().'/images/bar-restaurant-pro-features.png') ?>" width="100%" height="auto" />
   </a>
 </div>
 <?php }
