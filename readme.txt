@@ -46,7 +46,11 @@ AyaMagazine WordPress Theme bundles the following third-party resources:
 * screenshot (first post thumbnail image) License: CC0 1.0, Reference: https://unsplash.com/license, Image Source: https://unsplash.com/photos/VFs2fZEVkXo
 *
 * screenshot (second post thumbnail image) License: CC0 1.0, Reference: https://unsplash.com/license, Image Source: https://unsplash.com/photos/5WbYFH0kf_8
-
+*
+* screenshot (first sidebar image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/pink-magazine-gloss-zephyr-sweet-2791366/
+*
+* screenshot (second sidebar image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/green-plant-white-table-work-desk-2599771/
+*
 == Installation ==
 
 Manual installation:
