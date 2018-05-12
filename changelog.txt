@@ -1,3 +1,8 @@
+AyaClub 1.0.4, 2018-05-12
+------------------------
+- changing slider images
+- fix issue with posts date format
+
 AyaClub 1.0.3, 2018-01-23
 ------------------------
 - add Slider

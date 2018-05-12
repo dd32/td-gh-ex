@@ -359,7 +359,7 @@ if ( ! function_exists( 'ayaclub_header_style' ) ) :
           <?php if ( get_theme_support( 'custom-header', 'default-text-color' ) !== $header_text_color
                       && 'blank' !== $header_text_color ) : ?>
 
-                  #header-main-fixed, #header-main-fixed h1.entry-title {color: #<?php echo esc_attr( $header_text_color ); ?>;}
+                  #header-main-fixed, #header-main-fixed h1.entry-title {color: #<?php echo sanitize_hex_color_no_hash( $header_text_color ); ?>;}
 
           <?php endif; ?>
       </style>

@@ -4,7 +4,7 @@ Description: AyaClub is fully Responsive Music Club WordPress Theme. Features: A
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayaclub
-Version: 1.0.3
+Version: 1.0.4
 Text Domain: ayaclub
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -137,7 +137,6 @@ td, th {
 }
 
 embed,
-iframe,
 object,
 video {
 	margin-bottom: 24px;
@@ -170,9 +169,11 @@ dt.gallery-icon:before {
 	margin-right:10px;
 }
 
-#header-logo > a.custom-logo-link,
-#header-logo #site-identity {
-    float:left;
+
+
+#header-logo {
+    display: flex;
+    align-items: center;
 }
 
 #header-logo h1 {
@@ -222,6 +223,7 @@ dd {
 
 /* header */
 #header-main-fixed {
+	min-height:40px;
 	clear:both;
 	background-color:#FFFFFF;
 	margin:0;
@@ -1293,6 +1295,15 @@ dt.gallery-icon > a:before,
     width: 40%;
 }
 
+.fb_iframe_widget span {
+	display: block !important;
+}
+
+#pin-save-button span {
+	margin-top: -19px !important;
+	position: absolute;
+}
+
 /* Large Resolution */
 @media screen and (min-width: 800px) {
 	
@@ -1644,8 +1655,6 @@ dt.gallery-icon > a:before,
 	}
 	
 	#header-logo {
-		float:none;
-		display:inline-block;
 		margin-left:5px;
 	}
 

@@ -43,13 +43,13 @@ AyaClub WordPress Theme bundles the following third-party resources:
 *
 * js/viewportchecker.js - the MIT license, Reference: http://opensource.org/licenses/MIT
 *
-* images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/concert-performance-audience-336695/
+* images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/occur-music-live-going-out-disco-376810/
 *
-* images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/concert-music-crowd-dancings-1149979/
+* images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/cocktail-bar-nightlife-icee-drink-3327242/
 *
-* images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/drinks-groningen-terrace-people-1746272/
+* images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/concert-stage-light-spotlight-2565999/
 *
-* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/concert-performance-audience-336695/
+* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/occur-music-live-going-out-disco-376810/
 *
 * js/camera.min.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
 * js/camera.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php

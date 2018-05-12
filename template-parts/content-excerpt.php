@@ -22,14 +22,14 @@
 
 						<span class="clock-icon">
 							<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
-								<time datetime="<?php the_time( 'Y-m-d' ); ?>"><?php the_time(get_option('date_format')); ?></time>
+								<time datetime="<?php the_date( DATE_W3C ); ?>"><?php echo get_the_date(); ?></time>
 							</a>
 						</span><!-- .clock-icon -->
 			
 				<?php else : ?>
 
 						<span class="clock-icon">
-							<time datetime="<?php the_time( 'Y-m-d' ); ?>"><?php the_time(get_option('date_format')); ?></time>
+							<time datetime="<?php the_date( DATE_W3C ); ?>"><?php echo get_the_date(); ?></time>
 						</span><!-- .clock-icon -->
 					
 				<?php endif; ?>
