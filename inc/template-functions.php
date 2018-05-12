@@ -361,8 +361,8 @@ function bcorporate_home_blog_sec_fnc() {
 						    			
 			  						</div>
 			  						<div class="Bcorp_comment pull-right">
-			  							<a href="<?php the_permalink();?>" class="comment_num">
-						    				<i class="fa fa-comment-o" aria-hidden="true"></i>
+			  							<a href="<?php the_permalink();?>/#comments" class="comment_num">
+						    				<i class="far fa-comment" aria-hidden="true"></i>
 			  								<?php echo absint( get_comments_number() ); ?>
 			  							</a>
 			  						</div>

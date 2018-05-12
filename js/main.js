@@ -1,4 +1,12 @@
 jQuery(document).ready(function($) {
+    $(".bcorporate_banner_inner_wrap").lightSlider({
+        item: 1,
+        loop: true,
+        slideMargin:0,
+        controls: false,
+
+    });
+    
 	$(".home_feature_post_wrap").lightSlider({
 	    item:4,
         loop:true,
@@ -35,6 +43,7 @@ jQuery(document).ready(function($) {
         ]
 	});
 
+   
     $(function(){
          var shrinkHeader = 300;
           $(window).scroll(function() {

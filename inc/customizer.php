@@ -69,6 +69,41 @@ function bcorporate_customize_register( $wp_customize ) {
 		) ) 
 	);
 
+	$wp_customize->add_setting( 'home_page_slider_enable', array(
+	  'capability' => 'edit_theme_options',
+	  'default' => '',
+	  'sanitize_callback' => 'bcorporate_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'home_page_slider_enable', array(
+	  'type' => 'checkbox',
+	  'section' => 'home_page_banner_section', // Add a default or your own section
+	  'label' => esc_html__( 'Enable Slider Section', 'bcorporate' ),
+	  'description' => esc_html__( 'Uncheck to disable Slider', 'bcorporate' ),
+	) );
+
+
+	//Slider category dropdown
+	$wp_customize->add_setting(
+	    'homepage_slider_category',
+	    array(
+	        'sanitize_callback' => 'bcorporate_sanitize_select',
+	        )
+	);
+
+	$wp_customize->add_control( new Bcorporate_Category_Dropdown( $wp_customize, 'homepage_slider_category',
+	    array(
+	        'label' => esc_html__( 'Choose Slider Category', 'bcorporate' ),
+	        'section' => 'home_page_banner_section',
+	        'description' => esc_html__( 'Select Category to show posts in banner slider','bcorporate' ),
+	        'type' => 'select',
+	    )
+	) );
+
+
+
+
+
 	/* 1.1 Homepage About section **/
 	$wp_customize->add_section( 'home_page_about_section' , array(
 	    'title'       => esc_html__( 'Homepage about Section', 'bcorporate' ),

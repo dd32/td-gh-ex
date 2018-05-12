@@ -60,6 +60,34 @@ h1.site-title{
 .site-description sub{
   @include font-size(.8);
 }
+.lSSlideWrapper {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.lSSlideOuter {
+    .lSPager.lSpg {
+
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 30px;
+
+    @media (min-width: 1024px){
+     bottom: 60px;
+    }
+  }
+}
+
+.lSSlideOuter .lSPager.lSpg > li a {
+    width: 25px;
+    height: 3px;
+    -webkit-border-radius: 0rem;
+    -moz-border-radius: 0rem;
+    -ms-border-radius: 0rem;
+    border-radius: 0rem;
+    background-color: #fff;
+}
 
  
 
@@ -175,19 +203,56 @@ h1.site-title{
     color:$BE__color__white-text;
   }
 }
-
+.bcorporate_banner_slider_wrap{
+  position: relative;
+}
   
   .bcorporate_home_banner_section{
-   
-     /*height:480px;*/
+ 
+     height:480px;
+     @media (min-width: 1366px){
+         height: 80vh;
+        top: 0;
+     }
+    @media (min-width: 1024px) {
+    height: 640px;
+}
+   @media (min-width: 768px){
+
+    height: 600px;
+}
+ 
+
+
+
+  h1 p{
+  margin:0;
+  padding:0;
+}
+
+
 
     
 
     .caption-text{
+
+       padding:10rem 0;
       @media (min-width: 1200px) {
+ 
+      padding:10rem 0;}
+ 
+       @media (min-width: 1366px) {
+ 
           /*top: -30px;*/
           padding:10rem 0;
       }
+
+      @media (min-width: 1200px) {
+          /*top: -30px;*/
+          padding:8rem 0;
+      }
+
+     
 
     
 

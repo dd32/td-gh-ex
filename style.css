@@ -6,7 +6,7 @@
  Description: BCorporate is a Free Corporate Wordpress Theme created using latest trends such as SASS which is a powerful and well performed CSS Extension, with HTML5 / CSS3 and Responsive design. This theme is a Full-Width Layout with includes features and Sections such as: Sliders, Portfolios, Services, Testimonials, Blog Posts, Call To Action (x2) and Contact Form. 
  BCorporate is suitable for any kind of businesses, with WooCommerce integrated in the theme BCorporate can serve all ecommerce related companies, corporate services & many other industries. It is created with more simplistic clean codes with easy to customize blogs, news and article publishing. Easy to navigate through its articles, it has clean Comment and Social Share features.  
  This theme is built on Bootstrap which makes it highly responsive and all browsers compatible. It is tested and supported by all screen-size. A cutting-edge mobile friendly performance, its SEO Friendly nature and beautifully integrated social shares will boost your online presence and help your website reach the top search results.
- Version: 2.5.0
+ Version: 3.0.0
  License: GPLv2 or later
  License URI: https://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: bcorporate
@@ -1868,6 +1868,31 @@ h1.site-title {
   font-size: 11.2px;
   font-size: 0.8rem;
 }
+.lSSlideWrapper {
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.lSSlideOuter .lSPager.lSpg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+}
+@media (min-width: 1024px) {
+  .lSSlideOuter .lSPager.lSpg {
+    bottom: 60px;
+  }
+}
+.lSSlideOuter .lSPager.lSpg > li a {
+  width: 25px;
+  height: 3px;
+  -webkit-border-radius: 0rem;
+  -moz-border-radius: 0rem;
+  -ms-border-radius: 0rem;
+  border-radius: 0rem;
+  background-color: #fff;
+}
 .pagination .page-numbers {
   display: inline-block;
   vertical-align: middle;
@@ -1960,15 +1985,50 @@ h1.site-title {
 .bcorporate_banner_section span[property="itemListElement"] span {
   color: #fff;
 }
+.bcorporate_banner_slider_wrap {
+  position: relative;
+}
 .bcorporate_home_banner_section {
-  /*height:480px;*/
+  height: 480px;
+}
+@media (min-width: 1366px) {
+  .bcorporate_home_banner_section {
+    height: 80vh;
+    top: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .bcorporate_home_banner_section {
+    height: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .bcorporate_home_banner_section {
+    height: 600px;
+  }
+}
+.bcorporate_home_banner_section h1 p {
+  margin: 0;
+  padding: 0;
 }
 .bcorporate_home_banner_section .caption-text {
-  /*top: -30px;*/
+  padding: 10rem 0;
 }
 @media (min-width: 1200px) {
   .bcorporate_home_banner_section .caption-text {
     padding: 10rem 0;
+  }
+}
+@media (min-width: 1366px) {
+  .bcorporate_home_banner_section .caption-text {
+    /*top: -30px;*/
+    padding: 10rem 0;
+  }
+}
+@media (min-width: 1200px) {
+  .bcorporate_home_banner_section .caption-text {
+    /*top: -30px;*/
+    padding: 8rem 0;
   }
 }
 .bcorporate_home_banner_section .caption-text .download-btn a {
