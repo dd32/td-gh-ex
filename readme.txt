@@ -2,7 +2,7 @@
 Contributors: HooThemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.0-trunk
-Version: 1.5.2
+Version: 1.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready, custom-logo, featured-image-header, footer-widgets, right-sidebar, left-sidebar, e-commerce
@@ -82,12 +82,15 @@ https://www.pexels.com/photo/person-mixing-cereal-milk-and-strawberry-jam-on-whi
 https://www.pexels.com/photo/1-teacup-with-saucer-and-magazine-on-white-surface-818650/
 https://www.pexels.com/photo/beverage-blur-breakfast-caffeine-265186/
 https://www.pexels.com/photo/silver-macbook-pro-990819/
-https://www.pexels.com/photo/person-holding-ceramic-teacups-958169/
-https://www.pexels.com/photo/four-ceramic-teacups-filled-with-teas-924006/
 https://www.pexels.com/photo/photography-of-laptop-computer-camera-smartphone-headphones-and-mug-705164/
+https://www.pexels.com/photo/person-holding-white-newspaper-on-brown-wooden-surface-884454/
+https://www.pexels.com/photo/white-and-gray-pen-beside-succulent-flower-and-white-line-paper-near-orange-ceramic-mug-with-black-coffee-64778/
 
 
 == Changelog ==
+
+= Version 1.5.3 = = 14/05/2018
+* Fix - Fixed front page menu fornt color issue
 
 = Version 1.5.2 = = 14/05/2018
 * Add - Added option - Page Title Bar Text Align

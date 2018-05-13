@@ -554,7 +554,7 @@ array_splice($banner_1_options,1,0,array('section_slider_banner_1' => array(
 													  'settings'    => 'section_timeout_banner_1',
 													  'label'       => esc_attr__( 'Auto Paly Timeout', 'avata' ),
 													  'description' => '',
-													  'default'     => '3000',
+													  'default'     => '5000',
 												  ),
 													
 													));
