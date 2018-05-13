@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Small Business\n"
-"POT-Creation-Date: 2017-10-22 01:06+0600\n"
+"POT-Creation-Date: 2018-05-14 02:39+0600\n"
 "PO-Revision-Date: 2016-01-23 02:33+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -64,11 +64,11 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: fullwidth.php:20 page.php:19 single.php:23
+#: fullwidth.php:20 page.php:19 single.php:19
 msgid "Pages:"
 msgstr ""
 
-#: functions.php:19
+#: functions.php:19 header.php:53
 msgid "Main Menu"
 msgstr ""
 
@@ -132,11 +132,11 @@ msgstr ""
 msgid "Footer Area Four"
 msgstr ""
 
-#: image.php:22 single.php:28
+#: image.php:22 single.php:24
 msgid "Previous Image"
 msgstr ""
 
-#: image.php:23 single.php:29
+#: image.php:23 single.php:25
 msgid "Next Image"
 msgstr ""
 
@@ -199,15 +199,15 @@ msgstr ""
 msgid "Meta"
 msgstr ""
 
-#: single.php:24
+#: single.php:20
 msgid "Previous News"
 msgstr ""
 
-#: single.php:25
+#: single.php:21
 msgid "Next News"
 msgstr ""
 
-#: single.php:51
+#: single.php:46
 msgid "Related News"
 msgstr ""
 
@@ -216,7 +216,7 @@ msgid "NewsPress Lite"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://d5creation.com/theme/newspress"
+msgid "https://d5creation.com/theme/newspress"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -234,5 +234,5 @@ msgid "D5 Creation"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://d5creation.com/"
+msgid "https://d5creation.com/"
 msgstr ""

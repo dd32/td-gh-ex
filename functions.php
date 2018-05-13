@@ -79,7 +79,7 @@
 	add_action( 'admin_enqueue_scripts', 'newspress_admin_style' );
 	
 	function newspress_creditline () {
-	echo '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | NewsPress Theme by: <a href="'.esc_url('http://d5creation.com').'" target="_blank"> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a>';
+	echo '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | NewsPress Theme by: <a href="'.esc_url('https://d5creation.com').'" target="_blank"> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a>';
     }
 
 	

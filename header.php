@@ -49,9 +49,10 @@ wp_head(); ?>
         
         </div><!-- header-content -->
         <div class="heading-date"><?php echo date("l, F j, Y");  ?></div>  
-        </div><!-- header -->    
+        </div><!-- header -->   
+        <div class="mobile-menu"><?php echo __('Main Menu','newspress-lite'); ?></div><div class="clear"></div>  
         <!-- Site Main Menu Goes Here -->
-        <nav id="newspress-main-menu">
+        <nav id="main-menu-con">
 		<?php if ( has_nav_menu( 'main-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'main-menu' )); else: wp_page_menu(); endif; ?>
        </nav>
       <div class="clear"> </div>
