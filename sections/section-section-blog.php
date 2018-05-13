@@ -57,7 +57,7 @@ if($the_query->have_posts()):
 		if( has_post_thumbnail()  ){
 			$image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), "large" );
 			$featured_image = '<div class="avata-post-image">
-								 <div class="avata-overlay"></div>';
+								 <a href="'.get_permalink().'"><div class="avata-overlay"></div></a>';
 			if($display_categories == '1')
 				$featured_image .= '<div class="avata-category">'.get_the_category_list(', ').'</div>';
 			$featured_image .= '<img src="'.$image_attributes[0].'" alt="'.get_the_title().'" class="img-responsive"> </div>';		

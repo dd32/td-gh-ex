@@ -13,10 +13,15 @@ $logo           =  $image[0];
 
 $header_class  = 'main-header normal-header';
 
+$logo_class = 'site-brand-inner';
+if ( $logo != "" ) { 
+	$logo_class .= ' has-logo-img no-desc';
+}
+
 $html = '<header id="main-header" class="'.$header_class.'">
 <div class="container">
   <div class="site-branding">
-    <div class="site-brand-inner has-logo-img no-desc">
+     <div class="'.$logo_class.'">
       <div class="site-logo-div">';
       
 if ( $logo!="") { 
@@ -25,7 +30,7 @@ if ( $logo!="") {
 
 $html .= '<div class="name-box">
 <a href="'.esc_url(home_url('/')).'">
-  <h1 class="site-name">' .get_bloginfo('name').'</h1>
+  <h2 class="site-name">' .get_bloginfo('name').'</h2>
   </a> <span class="site-tagline">
   '.get_bloginfo('description').'
   </span> </div>
@@ -65,15 +70,20 @@ if (has_nav_menu('home')){
 
 if($sticky_header=='1'){
 	$header_class .= ' fixed';
-}	
+}
+
+$logo_class = 'site-brand-inner';
+if ( $logo != "" ) { 
+	$logo_class .= ' has-logo-img no-desc';
+}
 
 $html = '<header id="main-header" class="'.$header_class.'">
 <div class="container">
   <div class="site-branding">
-    <div class="site-brand-inner has-logo-img no-desc">
+    <div class="'.$logo_class.'">
       <div class="site-logo-div">';
       
-if ( $logo!="") { 
+if ( $logo != "" ) { 
 	$html .= '<a class="custom-logo-link"  rel="home" itemprop="url" href="'.esc_url(home_url('/')).'"> <img src="'.esc_url($logo).'" class="site-logo" alt="'.get_bloginfo('name').'" /> </a>';
  } 
 

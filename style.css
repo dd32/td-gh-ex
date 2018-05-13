@@ -4,7 +4,7 @@ Theme URI: https://www.hoothemes.com/themes/avata.html
 Author: HooThemes
 Author URI: http://www.hoothemes.com/
 Description: Based on Bootstrap and coded with HTML5 and CSS3 language, Avata WordPress theme is fully responsive in desktops and mobile devices. With enriched customizer settings, you can easily create a homepage with pre-built layouts such as banner, service, video, gallery, team, testimonial, progress bar, counter up, blog, slogan and so on, you can also sort them by dragging and dropping. Avata theme is WooCommerce compatible we can use it for e-commerce site, multilingual ready (WPML & Polylang) and translateable. You can check the demo at http://demo.hoosoft.com/avata/.
-Version: 1.5.1
+Version: 1.5.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avata
@@ -776,11 +776,24 @@ img.site-logo {
 a.hoomenu-reveal {
 	display:none;
 }
+.hoo-container .avata-nav-right-container{
+	display:none;
+}
+.hoo-container .has-logo-img .name-box{
+	display:none;
+}
+#main-header.homepage-header.hoo-container {
+    position:relative;
+}
 /* when under viewport size,.hoo-container is added to body */
+.hoo-container .site-branding{
+	position:absolute;
+	z-index:999;
+}
 .hoo-container .hoo-bar {
 	float:left;
 	width:100%;
-	position:absolute;
+	/*position:absolute;*/
 	padding:4px 0;
 	min-height:89px;
 	z-index:998;
@@ -901,6 +914,9 @@ a.hoomenu-reveal {
 	width:100%;
 	padding:0;
 	margin:0;
+}
+.hoo-nav > ul{
+	background:#363636;
 }
 /* Fix for box sizing on Foundation Framework etc. */
 .hoo-container .hoo-bar,.hoo-container .hoo-bar * {
@@ -1436,10 +1452,6 @@ a:hover .lnk-icon-right {
   }
 }
 
-
-
-
-
 /* 
 ///////////////////////////////////////////////////
 2.0 PAGE 
@@ -1451,6 +1463,7 @@ a:hover .lnk-icon-right {
     background-size: cover;
 	padding: 60px 0 60px;
     background-color: #3f5267;
+	width: 100%;
 }
 
 .page-title h2 {
@@ -1796,7 +1809,10 @@ a:hover .lnk-icon-right {
 	letter-spacing: 2px;
     font-weight: 400;
 	}
-
+.page-title-bar h1,
+.page-title-bar .subtitle{
+	color:#fff;
+	}
 /* 
 ///////////////////////////////////////////////////
 2.0 BLOGS 

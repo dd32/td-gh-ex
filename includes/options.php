@@ -1882,37 +1882,6 @@ Kirki::add_field( 'avata', array(
 	'default'  => '#f9ae40',
 ) );
 
-Kirki::add_field( 'avata', array(
-	'settings' => 'hide_breadcrumb',
-	'label'    => __( 'Hide Breadcrumb', 'avata' ),
-	'section'  => 'avata_panel_basic_settings',
-	'type'     => 'checkbox',
-	'priority' => 10,
-	'default'  => '',
-) );
-
-Kirki::add_field( 'avata', array(
-	'settings' => 'hide_page_titlebar',
-	'label'    => __( 'Hide Page Title Bar', 'avata' ),
-	'section'  => 'avata_panel_basic_settings',
-	'type'     => 'checkbox',
-	'priority' => 10,
-	'default'  => '',
-) );
-
-Kirki::add_field( 'avata', array(
-	'type'     => 'background',
-	'settings' => 'page_title_bar_background',
-	'label'    => __('Page Title Bar Background', 'avata' ),
-	'section'  => 'avata_panel_basic_settings',
-	'default'  => array('background-color'=>'#3f5267'),
-	'priority' => 10,
-	'output' => array(
-	array(
-		'element' => '.page-title-bar, .post-title-bar',
-	),
-	),
-) );
 
 Kirki::add_field( 'avata', array(
 	'settings' => 'header_code',
@@ -2184,6 +2153,50 @@ Kirki::add_section( 'avata_blog', array(
     'theme_supports' => '',
 ) );
 
+
+Kirki::add_field( 'avata', array(
+	'settings' => 'hide_breadcrumb',
+	'label'    => __( 'Hide Breadcrumb', 'avata' ),
+	'section'  => 'avata_blog',
+	'type'     => 'checkbox',
+	'priority' => 10,
+	'default'  => '',
+) );
+
+Kirki::add_field( 'avata', array(
+	'settings' => 'hide_page_titlebar',
+	'label'    => __( 'Hide Page Title Bar', 'avata' ),
+	'section'  => 'avata_blog',
+	'type'     => 'checkbox',
+	'priority' => 10,
+	'default'  => '',
+) );
+
+Kirki::add_field( 'avata', array(
+	'type'     => 'background',
+	'settings' => 'page_title_bar_background',
+	'label'    => __('Page Title Bar Background', 'avata' ),
+	'section'  => 'avata_blog',
+	'default'  => array('background-color'=>'#3f5267'),
+	'priority' => 10,
+	'description' => __( 'You can set the header overlay, subtitle, page title bar background, padding, slider, etc. for each page in the <strong>Pro version</strong>', 'avata' ),
+	'output' => array(
+	array(
+		'element' => '.page-title-bar, .post-title-bar',
+	),
+	),
+) );
+
+Kirki::add_field( 'avata', array(
+	'type'     => 'radio',
+	'settings' => 'page_title_bar_text_align',
+	'label'    => __('Page Title Bar Text Align', 'avata' ),
+	'section'  => 'avata_blog',
+	'default'  => 'center',
+	'choices'  => array('center' => __( 'Center', 'avata' ), 'left' => __( 'Left', 'avata' ), 'right' => __( 'Right', 'avata' )),
+	'priority' => 10,
+	) );
+	
 Kirki::add_field( 'avata', array(
 	'type'     => 'checkbox',
 	'settings' => 'hide_post_meta',

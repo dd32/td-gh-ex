@@ -14,6 +14,7 @@ $sidebar = 'none';
 $left_sidebar  = esc_attr(avata_option('left_sidebar_pages'));
 $right_sidebar = esc_attr(avata_option('right_sidebar_pages'));
 $hide_page_titlebar = esc_attr(avata_option('hide_page_titlebar'));
+$page_title_bar_text_align = esc_attr(avata_option('page_title_bar_text_align'));
 
 $left_sidebar = apply_filters('avata_left_sidebar_pages',$left_sidebar);
 $right_sidebar = apply_filters('avata_right_sidebar_pages',$right_sidebar);
@@ -27,16 +28,21 @@ if ($right_sidebar != '' && $right_sidebar != '0')
 
 if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $right_sidebar != '0')
 	$sidebar = 'both';
-
+if( $page_title_bar_text_align == '' )
+	$page_title_bar_text_align = 'center';
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<?php if($hide_page_titlebar !='1'){?>
-  <section class="page-title-bar title-center no-subtitle" >
+<?php if($hide_page_titlebar !='1'){
+	$cssstyle = '';	
+	if (isset($avata_page_meta->page_title_bar_padding  ) && $avata_page_meta->page_title_bar_padding !='')
+		$cssstyle  = 'style="padding:'.esc_attr($avata_page_meta->page_title_bar_padding).'"';
+	?>
+  <section class="page-title-bar title-<?php echo esc_attr($page_title_bar_text_align);?> no-subtitle" <?php echo $cssstyle;?> >
     <div class="<?php echo $container;?>">
-      <hgroup class="page-title text-light text-center">
-        <h2><?php the_title();?></h2>
+      <hgroup class="page-title text-<?php echo esc_attr($page_title_bar_text_align);?>">
+        <h1><?php the_title();?></h1>
       </hgroup>
-      <div class="breadcrumb-nav breadcrumbs text-center text-light" itemprop="breadcrumb"> <?php avata_breadcrumbs();?></div>
+      <div class="breadcrumb-nav breadcrumbs text-<?php echo esc_attr($page_title_bar_text_align);?>" itemprop="breadcrumb"> <?php avata_breadcrumbs();?></div>
       <div class="clearfix"></div>
     </div>
   </section>
