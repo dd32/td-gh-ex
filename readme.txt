@@ -2,12 +2,15 @@
 
 Author: Royal-Flush wp-royal.com
 Requires at least: WordPress 4.7+
-Tested up to: WordPress 4.9.4
-Version: 1.5.4
+Tested up to: WordPress 4.9.5
+Version: 1.5.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: blog, e-commerce, food-and-drink, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
+== Description ==
+
+Personal and Multi-Author Free WordPress Blog Theme.  Perfect for personal, lifestyle, food, travel, fashion, corporate, photography and any other kind of amazing blogs.  Well documented and very easy to use even for WordPress beginners. Clean and Modern Responsive design will perfectly showcase your content on any device. You just need to write and be awesome!
 
 == Theme Documentation ==
 
