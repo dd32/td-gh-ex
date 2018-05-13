@@ -59,7 +59,7 @@ function bard_options( $control ) {
 		'single_page_show_dropcaps' => true,
 		'single_page_show_comments' => true,
 		'single_page_show_author_desc' => true,
-		'single_page_related_orderby' => 'related',
+		'single_page_related_orderby' => 'random',
 		'social_media_window' => true,
 		'social_media_icon_1' => 'facebook-f',
 		'social_media_url_1' => '',

@@ -3,8 +3,8 @@ Theme Name: Bard
 Theme URI: https://wp-royal.com/themes/item-bard-free/
 Author: Royal Flush
 Author URI: http://wp-royal.com/
-Description: Personal and Multi-Author Free WordPress Blog Theme.  Perfect for personal, lifestyle, food, travel, fashion, corporate, photography and any other kind of amazing blogs.  Well documented and very easy to use even for WordPress beginners. Clean and Modern Responsive design will perfectly showcase your content on any device. You just need to write and be awesome!
-Version: 1.2
+Description: Personal and Multi-Author Free WordPress Blog Theme. Perfect for personal, news, journal, lifestyle, fitness, food, cooking, bakery, travel, beauty, fashion, wedding, interior design, photography, photographer, artist, game, quotes blog, auto blog, corporate, small business website and any other kind of amazing blogs. Minimal, elegant, mobile friendly layout with WooCommerce shop support and best SEO practices which has RTL - right to left website direction, logo font options, Instagram slider and many more, will WOW and inspire your visitors. Well documented and very easy to use even for WordPress beginners. Clean and Modern Responsive design will perfectly showcase your content on any device. You just need to write and be awesome!
+Version: 1.2.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: bard
@@ -1083,7 +1083,7 @@ sup {
   display: none;
   position: absolute;
   z-index: 130;   
-  width: 200px;
+  width: 210px;
   text-align: left;
   border-style: solid;
   border-width: 1px; 
@@ -1630,10 +1630,6 @@ sup {
   height: 1px;
   max-width: 40px;
   margin: 0 auto;
-}
-
-.blog-grid-style .post-footer {
-  padding: 5px 0;
 }
 
 .post-footer {

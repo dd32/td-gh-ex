@@ -775,7 +775,8 @@ function bard_customize_register( $wp_customize ) {
 
 	$related_posts = array(
 		'none' 		=> esc_html__( 'None', 'bard' ),
-		'related' 	=> esc_html__( 'Related', 'bard' )
+		'related' 	=> esc_html__( 'Related', 'bard' ),
+		'random' 	=> esc_html__( 'Random', 'bard' ),
 	);
 
 	// Related Posts Orderby

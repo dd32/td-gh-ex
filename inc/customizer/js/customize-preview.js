@@ -103,7 +103,7 @@
 		#main-nav .sub-menu li.current-menu-ancestor > a,\
 		.post-categories,\
 		#page-footer a:hover,\
-		#page-content .bard-widget.widget_text a,\
+		#page-wrap .bard-widget.widget_text a,\
 		#page-content .rpwwt-widget a,\
 		.scrolltop,\
 		.required,\

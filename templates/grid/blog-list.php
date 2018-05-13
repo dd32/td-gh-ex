@@ -46,7 +46,7 @@
 			if ( bard_options( 'blog_page_post_description' ) === 'content' ) {
 				the_content('');
 			} elseif ( bard_options( 'blog_page_post_description' ) === 'excerpt' ) {
-				bard_excerpt( 35 );												
+				bard_excerpt( 37 );												
 			}
 			
 			?>

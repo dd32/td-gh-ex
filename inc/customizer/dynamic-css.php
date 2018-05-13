@@ -270,7 +270,7 @@ $css = '';
 		/* Accent */
 		#page-content a,
 		.post-categories,
-		#page-content .bard-widget.widget_text a,
+		#page-wrap .bard-widget.widget_text a,
 		.scrolltop,
 		.required {
 			color: '. esc_html(bard_options( 'colors_content_accent' )) .';
@@ -811,7 +811,7 @@ $css = '';
 	';
 
 
-	if ( is_home() && bard_full_width_post() ) {
+	if ( is_home() && ! is_paged() && bard_full_width_post() ) {
 		$css .= '
 			.blog-grid > li:nth-of-type(2n+1) {
 				margin-right: 0;
@@ -834,7 +834,7 @@ $css = '';
 			margin-left: 32px;
 		}';
 
-		if ( is_home() && bard_full_width_post() ) {
+		if ( is_home() && ! is_paged() && bard_full_width_post() ) {
 			$css .= '
 				.blog-grid > li:nth-of-type(2n+1) {
 					margin-left: 0;

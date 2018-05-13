@@ -570,21 +570,40 @@ if ( ! function_exists( 'bard_related_posts' ) ) {
 		if ( $current_categories ) {
 
 			$first_category	= $current_categories[0]->term_id;
+			
+			// Random
+			if ( $orderby === 'random' ) {
+				$args = array(
+					'post_type'				=> 'post',
+					'post__not_in'			=> array( $post->ID ),
+					'orderby'				=> 'rand',
+					'posts_per_page'		=> 3,
+					'ignore_sticky_posts'	=> 1,
+				    'meta_query' => array(
+				        array(
+				         'key' => '_thumbnail_id',
+				         'compare' => 'EXISTS'
+				        ),
+				    )
+				);
 
-			$args = array(
-				'post_type'				=> 'post',
-				'category__in'			=> array( $first_category ),
-				'post__not_in'			=> array( $post->ID ),
-				'orderby'				=> 'rand',
-				'posts_per_page'		=> 3,
-				'ignore_sticky_posts'	=> 1,
-			    'meta_query' => array(
-			        array(
-			         'key' => '_thumbnail_id',
-			         'compare' => 'EXISTS'
-			        ),
-			    )
-			);
+			// Similar
+			} else {
+				$args = array(
+					'post_type'				=> 'post',
+					'category__in'			=> array( $first_category ),
+					'post__not_in'			=> array( $post->ID ),
+					'orderby'				=> 'rand',
+					'posts_per_page'		=> 3,
+					'ignore_sticky_posts'	=> 1,
+				    'meta_query' => array(
+				        array(
+				         'key' => '_thumbnail_id',
+				         'compare' => 'EXISTS'
+				        ),
+				    )
+				);
+			}
 
 			$similar_posts = new WP_Query( $args );	
 
@@ -719,10 +738,10 @@ add_filter( 'comment_form_fields', 'bard_move_comments_field' );
 
 // Check for Full Post
 function bard_full_width_post() {
-    if ( bard_options( 'blog_page_full_width_post' ) === true && ! is_paged() && strpos( bard_options( 'general_home_layout' ), 'col' ) === 0 ) {
-     return true;
+    if ( bard_options( 'blog_page_full_width_post' ) === true && strpos( bard_options( 'general_home_layout' ), 'col' ) === 0 ) {
+		return true;
     } else {
-    	false;
+    	return false;
     }
 
 }
@@ -730,15 +749,31 @@ function bard_full_width_post() {
 // Set Post Per Page
 function bard_home_posts_per_page( $query ) {
 
+	$query_paged = $query->query_vars['paged'];
+	$posts_per_page = get_option('posts_per_page');
+
     if ( $query->is_home() && $query->is_main_query() && bard_full_width_post() ) {
-    	$posts_on_first = get_option( 'posts_per_page' );
-		$posts_on_first++;
-		$query->set( 'posts_per_page', $posts_on_first );
+    	if ( $query_paged == 0 ) {
+    		$query->set( 'posts_per_page', $posts_per_page + 1 );
+    	} else {
+			$post_offset = ( ( $query_paged - 1 ) * $posts_per_page ) + 1;
+			$query->set( 'offset', $post_offset );
+    	}
     }
 
 }
-
 add_action( 'pre_get_posts',  'bard_home_posts_per_page'  );
+
+// Remove Extra Page
+function bard_adjust_offset_pagination( $found_posts, $query ) {
+
+    if ( $query->is_home() && $query->is_main_query() && bard_full_width_post() ) {
+        return $found_posts - 1;
+    }
+
+    return $found_posts;
+}
+add_filter('found_posts', 'bard_adjust_offset_pagination', 1, 2 );
 
 
 /*

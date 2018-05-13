@@ -482,9 +482,6 @@
      .entry-header {
          height: 350px !important;
     }
-     .logo-img {
-         max-width: 400px !important;
-    }
 }
  @media screen and (max-width: 880px) {
      .entry-header {

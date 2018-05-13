@@ -683,6 +683,10 @@ a.added_to_cart.wc-forward {
     margin-top: 20px !important;
 }
 
+.woocommerce .loader::before {
+    display: none !important;
+}
+
 
 /*--------------------------------------------------------------
 5.0 Spacing
