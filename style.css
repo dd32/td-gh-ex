@@ -4,8 +4,8 @@ Theme Name: Bayn Lite
 Theme URI: https://gretathemes.com/wordpress-themes/bayn/
 Author: GretaThemes
 Author URI: https://gretathemes.com
-Description: A WordPress theme made for architecture and design businesses. Bayn is perfect for showing off your designs and make more customers come to you. Build on the latest technology, Bayn is totally responsive and run elegantly on any kind of devices.
-Version: 1.0.0
+Description: A WordPress theme made for architecture and design businesses. Bayn Lite is perfect for showing off your designs and make more customers come to you. Build on the latest technology, Bayn is totally responsive and run elegantly on any kind of devices.
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bayn-lite
@@ -13,7 +13,7 @@ Tags: two-columns, custom-menu, custom-header, custom-logo, featured-images, pos
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Bayn is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Bayn Lite is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -1429,7 +1429,6 @@ a:hover, a:focus, a:active {
 	padding-bottom: 80px;
 }
 
-.single-jetpack-portfolio .content-area,
 .no-sidebar .content-area,
 .error404 .content-area {
 	float: none;
@@ -1464,7 +1463,6 @@ a:hover, a:focus, a:active {
 		width: 100%;
 		padding-right: 0;
 	}
-	.single-jetpack-portfolio .content-area,
 	.no-sidebar .content-area,
 	.error404 .content-area {
 		width: 100%;
@@ -1600,6 +1598,7 @@ a:hover, a:focus, a:active {
 	font-size: 2.37834em;
 	line-height: 1.1;
 	margin: 0;
+	word-wrap: break-word;
 }
 
 .slick-slide .slide__title {
@@ -1693,7 +1692,6 @@ a:hover, a:focus, a:active {
 /* Services Section */
 .service {
 	position: relative;
-	cursor: pointer;
 	overflow: hidden;
 	transition: all .6s;
 	min-height: 40vw;
@@ -1753,54 +1751,6 @@ a:hover, a:focus, a:active {
 .service__title a:visited {
 	color: #fff;
 	text-decoration: none;
-}
-
-.service.is-open {
-	flex: 1;
-	cursor: default;
-}
-
-.service.is-open:before {
-	opacity: 0;
-}
-
-.service.is-open .project__content {
-	right: auto;
-	max-width: 400px;
-}
-
-.service.is-collapse {
-	width: 60px;
-}
-
-.service.is-collapse:before {
-	opacity: 1;
-}
-
-.service.is-collapse .service__content {
-	position: absolute;
-	top: 30px;
-	left: 30px;
-	right: 30px;
-	transform: rotate(90deg);
-	transform-origin: left top;
-	margin-left: 37px;
-	margin-top: -31px;
-}
-
-.service.is-collapse .service__content p {
-	display: none;
-}
-
-.service.is-collapse .service__title {
-	white-space: nowrap;
-	letter-spacing: 5px;
-	font-size: 0.8409em;
-	font-weight: 500;
-}
-
-.service.is-collapse + .service.is-collapse {
-	border-left: 1px solid #313131;
 }
 
 /** Recent Projects Section */
@@ -2273,18 +2223,6 @@ a:hover, a:focus, a:active {
 	.comment-form textarea {
 		width: 100%;
 	}
-}
-
-.tiled-gallery-item {
-	opacity: 0;
-	transform: translate3d(0, 80px, 0);
-	display: inline-block;
-	transition: 1s;
-}
-
-.tiled-gallery-item.animated {
-	opacity: 1;
-	transform: translate3d(0, 0, 0);
 }
 
 .site-footer {

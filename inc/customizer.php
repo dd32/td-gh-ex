@@ -33,18 +33,6 @@ function bayn_lite_customize_register( $wp_customize ) {
 		'description'     => wp_kses_post( __( 'The content of this page will be displayed below the slider on your static front page.', 'bayn-lite' ) ),
 	) );
 
-	// Switch on/off the smoothscroll.
-	$wp_customize->add_setting( 'switch_smooth_scroll', array(
-		'sanitize_callback' => 'bayn_lite_sanitize_checkbox',
-		'default'           => true,
-	) );
-	$wp_customize->add_control( 'switch_smooth_scroll', array(
-		'label'           => esc_html__( 'Switch on/off smooth-scroll feature', 'bayn-lite' ),
-		'section'         => 'bayn-lite',
-		'type'            => 'checkbox',
-		'active_callback' => 'is_front_page',
-	) );
-
 	// Change hero slider speed.
 	$wp_customize->add_setting( 'slider_speed', array(
 		'sanitize_callback' => 'absint',

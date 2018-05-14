@@ -153,20 +153,9 @@ function bayn_lite_scripts() {
 	wp_enqueue_script( 'bayn-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_front_page() && ! is_home() ) {
-		wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.min.js', array( 'jquery' ), '1.6.0', true );
+		wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.js', array( 'jquery' ), '1.8.0', true );
 	}
-	wp_enqueue_script( 'ScrollToPlugin', get_template_directory_uri() . '/js/ScrollToPlugin.min.js', array( 'jquery' ), '1.8.0', true );
-	wp_enqueue_script( 'TweenLite', get_template_directory_uri() . '/js/TweenLite.min.js', array( 'jquery' ), '1.19.0', true );
-	wp_enqueue_script( 'bayn-script', get_template_directory_uri() . '/js/script.js', array(
-		'TweenLite',
-		'ScrollToPlugin',
-	), '1.0', true );
-
-	// Pass smooth scroll option value to script.js.
-	$smooth_scroll = array(
-		'value' => get_theme_mod( 'switch_smooth_scroll' ),
-	);
-	wp_localize_script( 'bayn-script', 'smoothScroll', $smooth_scroll );
+	wp_enqueue_script( 'bayn-script', get_template_directory_uri() . '/js/script.js', '', '1.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

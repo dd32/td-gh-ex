@@ -29,8 +29,6 @@
 			if ( $categories_list && bayn_lite_categorized_blog() ) {
 				echo '<div class="entry-category">', $categories_list, '</div>'; // WPCS: XSS OK.
 			}
-		} elseif ( 'jetpack-portfolio' === get_post_type() ) {
-			the_terms( get_the_ID(), 'jetpack-portfolio-type', '<div class="entry-category">', ' / ', '</div>' );
 		}
 		if ( empty( get_the_title() ) ) {
 			bayn_lite_content_more();

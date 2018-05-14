@@ -82,7 +82,7 @@ function bayn_lite_header_image_singular( $image ) {
 	/**
 	 * List of supported post types that use featured image for the header image.
 	 */
-	$post_types = array( 'post', 'page', 'jetpack-portfolio' );
+	$post_types = array( 'post', 'page' );
 
 	$post_types = apply_filters( 'bayn_lite_header_image_post_types', $post_types );
 	if ( ! is_singular( $post_types ) || ! has_post_thumbnail() ) {

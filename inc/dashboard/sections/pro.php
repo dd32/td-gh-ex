@@ -45,7 +45,7 @@
 					<h3><?php esc_html_e( 'Portfolios', 'bayn-lite' ); ?></h3>
 					<p><?php esc_html_e( 'Give you an easy way to manage and showcase projects on your site.', 'bayn-lite' ); ?></p>
 				</td>
-				<td><span class="dashicons dashicons-yes"></span></td>
+				<td><span class="dashicons dashicons-no"></span></td>
 				<td><span class="dashicons dashicons-yes"></span></td>
 			</tr>
 			<tr>
@@ -93,7 +93,7 @@
 					<h3><?php esc_html_e( 'Call To Action', 'bayn-lite' ); ?></h3>
 					<p><?php esc_html_e( 'Add some marketing text and a call-to-action button.', 'bayn-lite' ); ?></p>
 				</td>
-				<td><span class="dashicons dashicons-no"></span></td>
+				<td><span class="dashicons dashicons-yes"></span></td>
 				<td><span class="dashicons dashicons-yes"></span></td>
 			</tr>
 			<tr>
@@ -101,7 +101,7 @@
 					<h3><?php esc_html_e( 'Recent Posts', 'bayn-lite' ); ?></h3>
 					<p><?php esc_html_e( 'Display your latest recent posts from your blog.', 'bayn-lite' ); ?></p>
 				</td>
-				<td><span class="dashicons dashicons-no"></span></td>
+				<td><span class="dashicons dashicons-yes"></span></td>
 				<td><span class="dashicons dashicons-yes"></span></td>
 			</tr>
 			<tr>

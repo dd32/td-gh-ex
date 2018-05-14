@@ -22,7 +22,7 @@
 			<p>
 				<?php
 				/* translators: theme name. */
-				echo esc_html( sprintf( __( '%s uses Jetpack to support featured content, social menu. Connect to Jetpack to use these features as well as variety of other tools.', 'bayn-lite' ), $this->theme->name ) );
+				echo esc_html( sprintf( __( '%s uses Jetpack to support featured content, social media icons. Connect to Jetpack to use these features as well as variety of other tools.', 'bayn-lite' ), $this->theme->name ) );
 				?>
 			</p>
 			<a class="button button-primary" href="<?php echo esc_url( admin_url( 'themes.php?page=jetpack#/dashboard' ) ); ?>"><?php esc_html_e( 'Connect To Jetpack', 'bayn-lite' ); ?></a>
