@@ -3,13 +3,13 @@
 Contributors: specia
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.9.5
-Stable tag: 1.0.28
-Version: 1.0.28
+Stable tag: 1.0.29
+Version: 1.0.29
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-logo, translation-ready, blog
 
-Avira WordPress Theme, Copyright 2017 Specia Theme
+Avira WordPress Theme, Copyright 2018 Specia Theme
 Avira is distributed under the terms of the GNU GPL
 
 ##Description
@@ -30,11 +30,14 @@ Avira WordPress Theme is distributed under the terms of the GNU GPL
 Images
 =================================================================================================
 Screenshot Image
-URL: https://www.pexels.com/photo/woman-in-white-t-shirt-holding-smartphone-in-front-of-laptop-914931/
+URL: https://www.pexels.com/photo/man-holding-teacup-infront-of-laptop-on-top-of-table-inside-the-room-925786/
 Source: https://www.pexels.com/
 License: CC0 License
 
 ##Changelog
+version 1.0.29
+* Changed Screenshot and Copyright
+
 version 1.0.28
 * Added [wp_reset_postdata();] for templates.
 
