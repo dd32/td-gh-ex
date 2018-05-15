@@ -1,18 +1,11 @@
 <?php
 /**
- * Widget Product 1
- * 
- * 
- * 
- */
-
+ ** Widget Product 1
+ **/
 add_action('widgets_init', 'register_product_widget');
-
 function register_product_widget(){
   register_widget('accesspress_store_product');
 }
-
-if( !class_exists( 'accesspress_store_product' ) ) :
 class accesspress_store_product extends WP_Widget {
     /**
      * Register Widget with Wordpress
@@ -59,7 +52,7 @@ class accesspress_store_product extends WP_Widget {
             );
           $woocommerce_categories = array();
           $woocommerce_categories_obj = get_categories($args);
-          $woocommerce_categories[''] = 'Select Product Category:';
+          $woocommerce_categories[''] = 'Select Product Category: ';
           foreach ($woocommerce_categories_obj as $category) {
             $woocommerce_categories[$category->term_id] = $category->name;
           }
@@ -80,7 +73,7 @@ class accesspress_store_product extends WP_Widget {
               ),
             'product_category' => array(
               'accesspress_store_widgets_name' => 'product_category',
-              'accesspress_store_widgets_title' => __('Select Product Category', 'accesspress-store'),
+              'accesspress_store_widgets_title' => __('Select Product Category (This category option does not work on Feature Product and On Sale Products)', 'accesspress-store'),
               'accesspress_store_widgets_field_type' => 'select',
               'accesspress_store_widgets_field_options' => $woocommerce_categories
 
@@ -96,64 +89,74 @@ class accesspress_store_product extends WP_Widget {
             );
 return $fields;
 }
-
 public function widget($args, $instance){
   extract($args);
-  $product_title      =   $instance['product_title'];
-  $product_type       =   $instance['product_type'];
-  $product_category   =   $instance['product_category'];
-  $product_number     =   $instance['number_of_prod'];
-  $product_label_custom = '';
-  $product_args       =   '';
-  if($product_type == 'category'){
-    $product_args = array(
-      'post_type' => 'product',
-      'tax_query' => array(array('taxonomy'  => 'product_cat',
-       'field'     => 'term_id', 
-       'terms'     => $product_category                                                                 
-       )),
-      'posts_per_page' => $product_number
+  if($instance!=null){
+    $product_title      =   $instance['product_title'];
+    $product_type       =   $instance['product_type'];
+    $product_category   =   $instance['product_category'];
+    $product_number     =   $instance['number_of_prod'];
+    $product_label_custom = '';
+    $product_args       =   '';
+    if($product_type == 'category'){
+      $product_args = array(
+        'post_type' => 'product',
+        'tax_query' => array(array('taxonomy'  => 'product_cat',
+         'field'     => 'term_id', 
+         'terms'     => $product_category                                                                 
+         )),
+        'posts_per_page' => $product_number
+        );
+    }
+    elseif($product_type == 'latest_product'){
+      $product_label_custom = __('New!', 'accesspress-store');
+      $product_args = array(
+        'post_type' => 'product',
+        'tax_query' => array(array('taxonomy'  => 'product_cat',
+         'field'     => 'term_id', 
+         'terms'     => $product_category                                                                 
+         )),
+        'posts_per_page' => $product_number
+        );
+    }
+
+    elseif($product_type == 'upsell_product'){
+      $product_args = array(
+        'post_type'         => 'product',
+        'posts_per_page'    => 10,
+        'meta_key'          => 'total_sales',
+        'orderby'           => 'meta_value_num',
+        'tax_query' => array(array('taxonomy'  => 'product_cat',
+         'field'     => 'term_id', 
+         'terms'     => $product_category                                                                 
+         )),
+        'posts_per_page'    => $product_number
+        );
+    }
+
+    elseif($product_type == 'feature_product'){
+      $tax_query[] = array(
+        'taxonomy' => 'product_visibility',
+        'field'    => 'name',
+        'terms'    => 'featured',
+        'operator' => 'IN',
       );
-  }
+      $product_args = array(
+        'post_type'        => 'product',   
+        'post_status'         => 'publish',
+        'ignore_sticky_posts' => 1,
+        'orderby'  => 'date',
+        'order'    => 'desc',         
+        'posts_per_page'   => $product_number,
+        'tax_query'           => $tax_query,
+       );
+    }
 
-  elseif($product_type == 'latest_product'){
-    $product_label_custom = __('New!', 'accesspress-store');
-    $product_args = array(
-      'post_type' => 'product',
-      'posts_per_page' => $product_number
-      );
-  }
-
-  elseif($product_type == 'upsell_product'){
-    $product_args = array(
-      'post_type'         => 'product',
-      'posts_per_page'    => 10,
-      'meta_key'          => 'total_sales',
-      'orderby'           => 'meta_value_num',
-      'posts_per_page'    => $product_number
-      );
-  }
-
-  elseif($product_type == 'feature_product'){
-    $product_args = array(
-     'post_type'        => 'product',  
-     'tax_query' => array(
-          array(
-              'taxonomy' => 'product_visibility',
-              'field'    => 'name',
-              'terms'    => 'featured',
-              'operator' => 'IN'
-          )
-      ), 
-     'posts_per_page'   => $product_number   
-     );
-  }
-
-  elseif($product_type == 'on_sale'){
-    $product_args = array(
-      'post_type'      => 'product',
-      'meta_query'     => array(
-        'relation' => 'OR',
+    elseif($product_type == 'on_sale'){
+      $product_args = array(
+        'post_type'      => 'product',
+        'meta_query'     => array(
+          'relation' => 'OR',
           array( // Simple products type
             'key'           => '_sale_price',
             'value'         => 0,
@@ -167,59 +170,66 @@ public function widget($args, $instance){
             'type'          => 'numeric'
             )
           )
-      );
-  }
+        );
+    }
 
-  ?>
-  <section title="product-slider">
-    <div class="ak-container">
-      <?php echo $before_widget; ?>
-      <?php echo $before_title.esc_attr($product_title).$after_title; ?>
-      <ul class="new-prod-slide">
+    if($product_type == 'category' && !empty($product_category)){
+    // category link view all
+      $cat_id = get_term($product_category,'product_cat');
+      $category_id = $cat_id->term_id;
+      $category_link = get_term_link( $category_id,'product_cat' );
+
+    }
+    else{
+      $category_link = get_permalink( wc_get_page_id( 'shop' ) );
+    }
+    ?>
+    <section class="product-slider">
+      <div class="ak-container">
+        <?php echo $before_widget; ?>
+        <div class="title-bg">
+         <h2 class="prod-title"><?php echo esc_attr($product_title); ?></h2>
+       </div>
+       <ul class="new-prod-slide remove-overload">
         <?php
-        $count = 0;
-        $product_loop = new WP_Query( $product_args );
-        while ( $product_loop->have_posts() ) : $product_loop->the_post(); 
-        global $product; 
-        $count+=0.5;
+            $count = 0;        
+            $product_loop = new WP_Query( $product_args );
+            while ( $product_loop->have_posts() ) : $product_loop->the_post();
+            $productcount = $product_loop->found_posts;
+            global $product; 
+            $count+=0.5;
         ?>
-        <li class="span3 wow flipInY" data-wow-delay="<?php echo $count ?>s">
-          <div class="item-img">
+          <li class="span3 wow flipInY <?php if($productcount <= 3){ echo 'access_tab_product_full'; } ?>" data-wow-delay="<?php echo $count ?>s">
+            <div class="item-img">
+              <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">  
+                <?php
+                  if ($product_label_custom != ''){
+                    echo '<span class="label-new">'.$product_label_custom.'</span>';
+                  }
+                ?>
+                <?php
+                  /**
+                   * woocommerce_before_shop_loop_item_title hook
+                   *
+                   * @hooked woocommerce_show_product_loop_sale_flash - 10
+                   * @hooked woocommerce_template_loop_product_thumbnail - 10
+                   */
+                  do_action( 'woocommerce_before_shop_loop_item_title' );
+                ?>
+              </a>            
+            </div>
             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">  
-              <?php
-              if ($product_label_custom != ''){
-                echo '<span class="label-new">'.$product_label_custom.'</span>';
-              }
-              ?>
-              <?php
-              /**
-               * woocommerce_before_shop_loop_item_title hook
-               *
-               * @hooked woocommerce_show_product_loop_sale_flash - 10
-               * @hooked woocommerce_template_loop_product_thumbnail - 10
-               */
-              do_action( 'woocommerce_before_shop_loop_item_title' );
-              ?>
+              <h3><?php the_title(); ?></h3>
+              <p class="short_desc"><?php echo(get_the_excerpt()); ?></p>
+              <span class="price"><?php echo $product->get_price_html(); ?></span>
             </a>
             <?php
             woocommerce_template_loop_add_to_cart( $product_loop->post, $product );
-            ?>
-          </div>
-          <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">  
-            <h3><?php the_title(); ?></h3>
-            <p class="short_desc"><?php $home_exc = strip_shortcodes(substr(strip_tags(get_the_content()),0,32)); echo $home_exc.'...'; ?></p>
-            <span class="price"><?php echo $product->get_price_html(); ?></span>
-          </a>
-          <?php 
-          if( function_exists( 'YITH_WCWL' ) ){
-            $url = add_query_arg( 'add_to_wishlist', $product->id );
-            ?>
-            <a class="item-wishlist" href="<?php echo $url ?>"><?php _e('Wishlist','accesspress-store'); ?></a>
-            <?php
-          }
-          ?>
-        </li>
-      <?php endwhile; ?>
+            ?>         
+          </li>
+        <?php endwhile; 
+      }
+      ?>
       <?php wp_reset_query(); ?>
     </ul>
     <?php 
@@ -229,7 +239,6 @@ public function widget($args, $instance){
 </section>
 <?php
 }
-
 /**
      * Sanitize widget form values as they are saved.
      *
@@ -246,19 +255,15 @@ public function update($new_instance, $old_instance) {
   $instance = $old_instance;
 
   $widget_fields = $this->widget_fields();
-
         // Loop through fields
   foreach ($widget_fields as $widget_field) {
 
     extract($widget_field);
-
             // Use helper function to get updated field values
     $instance[$accesspress_store_widgets_name] = accesspress_store_widgets_updated_field_value($widget_field, $new_instance[$accesspress_store_widgets_name]);
   }
-
   return $instance;
 }
-
     /**
      * Back-end widget form.
      *
@@ -281,4 +286,3 @@ public function update($new_instance, $old_instance) {
       }
     }
   }
-endif;

@@ -47,6 +47,11 @@ Images
 
 
 == Changelog ==
+= 2.2.9 =
+** Product slider widget Feature product option not showing - Fixed 
+** Product slider widget  on sale option not showing - Fixed 
+** Added feature category option support for latest product and upsale product
+
 = 2.2.8 =
 ** Fixed Minor Design Issues
 
