@@ -32,6 +32,9 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.6.2 | 15th May 2018 = 
+* Update: srcset with home portfolio carousel and single post header image.
+
 = 1.6.1 | 22nd February 2018 = 
 * Update: woo templates.
 * Fix: issue with single post sidebar.
