@@ -139,7 +139,7 @@ add_action( 'wp_enqueue_scripts', 'gump_scripts' );
 /**
  * Add notice after active theme.
  */
-function pk_notice() {
+function gump_notice() {
 	global $pagenow;
 	if ( is_admin() && isset( $_GET['activated'] ) && 'themes.php' === $pagenow ) {
 	?>
@@ -157,7 +157,7 @@ function pk_notice() {
 	<?php
 	}
 }
-add_action( 'admin_notices', 'pk_notice' );
+add_action( 'admin_notices', 'gump_notice' );
 
 /**
  * Load dashboard
@@ -291,17 +291,17 @@ remove_action('wp_head', 'adjacent_posts_rel_link'); //Next and Prev Posts
 /**
  * Add Google Fonts
  */
-function add_google_fonts() {
+function gump_add_google_fonts() {
 
 wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i|Pacifico&subset=cyrillic,latin-ext,vietnamese');
 	wp_enqueue_style( 'googleFonts');
 }
-add_action('wp_print_styles', 'add_google_fonts');
+add_action('wp_print_styles', 'gump_add_google_fonts');
 
 /**
  * Add Google Analytics
  */
-function pk_analytics() {
+function gump_analytics() {
 ?>
 <!-- Google Analytics -->
 <script>
@@ -317,13 +317,13 @@ function pk_analytics() {
 <!-- /Google Analytics -->
 <?php
 }
-add_action('wp_head', 'pk_analytics',99);
+add_action('wp_head', 'gump_analytics',99);
 
 /**
  * Add Search Box to the Menu
  *
  */
-function add_search_form($items, $args) {
+function gump_add_search_form($items, $args) {
           if( $args->theme_location == 'primary' ){
           $items .= '<li class="menu-item search-box">'
                   . '<form role="search" method="get" class="search-form" action="'.home_url( '/' ).'">'
@@ -337,4 +337,59 @@ function add_search_form($items, $args) {
           }
         return $items;
 }
-add_filter('wp_nav_menu_items', 'add_search_form', 10, 2);
+add_filter('wp_nav_menu_items', 'gump_add_search_form', 10, 2);
+
+/**
+ * Custom Comments
+ */
+function gump_comment($comment, $args, $depth) {
+    if ( 'div' === $args['style'] ) {
+        $tag       = 'div';
+        $add_below = 'comment';
+    } else {
+        $tag       = 'li';
+        $add_below = 'div-comment';
+    }?>
+    <<?php echo $tag; ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?> id="comment-<?php comment_ID() ?>"><?php 
+    if ( 'div' != $args['style'] ) { ?>
+        <div id="div-comment-<?php comment_ID() ?>" class="comment-body"><?php
+    } ?>
+        <div class="comment-author vcard"><?php 
+            if ( $args['avatar_size'] != 0 ) {
+                echo get_avatar( $comment, $args['avatar_size'] ); 
+            } 
+            printf( __( '<cite class="fn">%s</cite> <span class="says">says:</span>', 'gump' ), get_comment_author_link() ); ?>
+        </div><?php 
+        if ( $comment->comment_approved == '0' ) { ?>
+            <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'gump' ); ?></em><br/><?php 
+        } ?>
+        <div class="comment-meta commentmetadata">
+            <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>"><?php
+                /* translators: 1: date, 2: time */
+                printf( 
+                    __('%1$s at %2$s', 'gump'), 
+                    get_comment_date(),  
+                    get_comment_time() 
+                ); ?>
+            </a><?php 
+            edit_comment_link( __( '(Edit)', 'gump' ), '  ', '' ); ?>
+        </div>
+
+        <div class="comment-content"><?php comment_text(); ?></div>
+
+        <div class="reply"><?php 
+                comment_reply_link( 
+                    array_merge( 
+                        $args, 
+                        array( 
+                            'add_below' => $add_below, 
+                            'depth'     => $depth, 
+                            'max_depth' => $args['max_depth'] 
+                        ) 
+                    ) 
+                ); ?>
+        </div><?php 
+    if ( 'div' != $args['style'] ) : ?>
+        </div><?php 
+    endif;
+}

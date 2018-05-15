@@ -34,69 +34,6 @@ function gump_paging_nav() {
 }
 endif;
 
-if ( ! function_exists( 'gump_comment' ) ) :
-/**
- * Template for comments and pingbacks.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- */
-function gump_comment( $comment, $args, $depth ) {
-	global $post;
-	$GLOBALS['comment'] = $comment;
-
-	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
-
-	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
-		<div class="comment-body">
-			<?php _e( 'Pingback:', 'gump' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'gump' ), '<span class="edit-link">', '</span>' ); ?>
-		</div>
-
-	<?php else : ?>
-
-	<li id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
-		<article id="div-comment-<?php comment_ID(); ?>" class="comment-body clear<?php if ( '' == get_avatar( $comment ) ) echo ' no-avatar'; ?>">
-			<?php if ( '' != get_avatar( $comment ) ) : ?>
-			<div class="comment-author vcard">
-				<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-			</div><!-- .comment-author -->
-			<?php endif; ?>
-
-			<div class="comment-content">
-				<footer class="comment-meta">
-					<div>
-						<?php printf( '<cite class="fn">%s</cite>', get_comment_author_link() ); ?>
-					</div>
-					<div class="comment-meta-details">
-						<span class="comment-meta-time"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time datetime="<?php comment_time( 'c' ); ?>"><?php printf( _x( '%1$s at %2$s', '1: date, 2: time', 'gump' ), get_comment_date(), get_comment_time() ); ?></time></a></span>
-						<?php
-							if ( $comment->user_id === $post->post_author ) {
-								echo '<span class="comment-bypostauthor">' . __( 'Author', 'gump' ) . '</span>';
-							}
-						?>
-						<?php
-							comment_reply_link( array_merge( $args, array(
-								'add_below'  => 'div-comment',
-								'depth'      => $depth,
-								'max_depth'  => $args['max_depth'],
-								'before'     => '<span class="reply">',
-								'after'      => '</span>',
-							) ) );
-						?>
-						<?php edit_comment_link( __( 'Edit', 'gump' ), '<span class="edit-link">', '</span>' ); ?>
-					</div>
-				</footer><!-- .comment-meta -->
-				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'gump' ); ?></p>
-				<?php endif; ?>
-				<?php comment_text(); ?>
-			</div><!-- .comment-content -->
-		</article><!-- .comment-body -->
-
-	<?php
-	endif;
-}
-endif; // ends check for gump_comment()
-
 if ( ! function_exists( 'gump_post_nav' ) ) :
 /**
  * Display navigation to next/previous post when applicable.

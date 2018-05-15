@@ -41,7 +41,7 @@ add_action( 'customize_controls_print_styles', 'gump_enqueue_customizer_controls
  * Data Satinization
  */
 // text input
-function pk_sanitize_text( $input ) {
+function gump_sanitize_text( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );
 }
 
@@ -50,14 +50,14 @@ function pk_sanitize_text( $input ) {
  */
 if ( class_exists( 'WP_Customize_Control' ) ) {
 
-	class PK_Read_More extends WP_Customize_Control {
+	class Gump_Read_More extends WP_Customize_Control {
 
     	public $type = "pk-read-more";
 	
 		public function render_content() {
         $read_more = array(
 			'upgrade' => array(
-			'link' => esc_url('https://www.pankogut.com/wordpress-themes/gump-pro/?utm_source=customizer_read_more&utm_medium=wordpress_dashboard&utm_campaign=gump_pro'),
+			'link' => esc_url('https://www.pankogut.com/pro/wordpress-themes/gump-pro/?utm_source=customizer_read_more&utm_medium=wordpress_dashboard&utm_campaign=gump_pro'),
 			'text' => __('Try Gump Pro', 'gump'),
 			),
 			'theme' => array(
@@ -104,7 +104,7 @@ function gump_theme_customizer( $wp_customize ) {
 		'sanitize_callback' => 'esc_url_raw',
 	) );
 	
-	$wp_customize->add_control(new PK_Read_More($wp_customize, 'read_more', array(
+	$wp_customize->add_control(new gump_Read_More($wp_customize, 'read_more', array(
 		'section' => 'read_more_section',
 		'settings' => 'read_more',
 	) ) );
@@ -207,7 +207,7 @@ function gump_theme_customizer( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'gump_css', array(
-        'sanitize_callback' => 'pk_sanitize_text',
+        'sanitize_callback' => 'gump_sanitize_text',
     ) );
 	 
 	$wp_customize->add_control(
@@ -226,26 +226,26 @@ function gump_theme_customizer( $wp_customize ) {
 		Google Analytics
 	--------------------------------------------------------------*/
 	// Google Analytics
-    $wp_customize->add_section( 'pk_start_here_analytics' , array(
+    $wp_customize->add_section( 'gump_start_here_analytics' , array(
         'title' => __( 'Google Analytics', 'gump' ),
         'description' => 'Copy and Paste your Google Analytics Code like UA-XXXXXXXX-X',
         'priority' => 90,
     ) );
 
     // GOOGLE ANALYTICS
-    $wp_customize->add_setting( 'pk_start_here_analytics', array(
+    $wp_customize->add_setting( 'gump_start_here_analytics', array(
         'sanitize_callback' => 'sanitize_text_field',
     ) );
      
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
-            'pk_start_here_analytics',
+            'gump_start_here_analytics',
             array(
                 'label' => 'Google Analytics Code',
                 'priority' => 10,
-                'section' => 'pk_start_here_analytics',
-                'settings' => 'pk_start_here_analytics'
+                'section' => 'gump_start_here_analytics',
+                'settings' => 'gump_start_here_analytics'
             )
         )
     );

@@ -75,7 +75,7 @@ final class Gump_Pro_Customize {
 				array(
 					'title'    => esc_html__( 'Gump Pro', 'gump' ),
 					'pro_text' => esc_html__( 'View Gump Pro', 'gump' ),
-					'pro_url'  => 'https://www.pankogut.com/wordpress-themes/gump-pro/?utm_source=customizer_button&utm_medium=wordpress_dashboard&utm_campaign=gump_pro',
+					'pro_url'  => 'https://www.pankogut.com/pro/wordpress-themes/gump-pro/?utm_source=customizer_button&utm_medium=wordpress_dashboard&utm_campaign=gump_pro',
 					'priority' => 1
 				)
 			)

@@ -47,7 +47,7 @@
 				if ( $categories_list ) :
 			?>
 			<span class="cat-links">
-				<?php printf( __( '%1$s', 'gump' ), $categories_list ); ?>
+				<?php printf( __( 'Posted in %1$s', 'gump' ), $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories ?>
 			<?php
