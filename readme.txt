@@ -2,7 +2,7 @@
 
 Requires at least: 4.5
 Tested up to: 4.9.4
-Stable tag: 2.0.9
+Stable tag: 2.0.9.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Copyright 2017 Kyle Jennings
@@ -22,7 +22,7 @@ Standards are a library of design guidelines and code to help government
 developers and designers quickly create trustworthy, accessible, and consistent
 digital government services.
 
-Theme Demo: https://benjamin.kylejennings.codes
+
 
 == Installation ==
 
