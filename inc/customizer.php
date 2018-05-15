@@ -368,6 +368,19 @@ if (!function_exists('ace_corporate_front_page_customize')) {
             'settings' => 'homepage_show_content',
             'type' => 'checkbox'
         ));
+        $wp_customize->add_setting('homepage_excerpt_length', array(
+            'default' => 20,
+            
+            'sanitize_callback' => 'sanitize_text_field'
+        ));
+
+        $wp_customize->add_control('homepage_excerpt_length', array(
+            'label' => esc_attr(__('Homepage Excerpt Length', 'ace-corporate')),
+            'section' => 'homepage_content',
+            'settings' => 'homepage_excerpt_length',
+            'type' => 'text'
+        ));
+
 
         $wp_customize->add_section('ACECorporate_blog', array(
             'title' => __('Blog Options', 'ace-corporate'),

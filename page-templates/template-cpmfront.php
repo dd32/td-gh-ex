@@ -110,7 +110,12 @@ if (get_theme_mod('homepage_show_content')==1) {
                <?php  } ?>
                 <div class="page-content-wrap">
                     <h2><?php echo  esc_html(get_the_title($id)); ?></h2>
-                    <?php echo wp_kses_post(ace_corporate_get_excerpt($id,900)); ?>
+                    <?php 
+                    $home_excerpt = esc_attr(get_theme_mod('homepage_excerpt_length', 20));
+                    if(!$home_excerpt){
+                        $home_excerpt = esc_attr('800','ace-corporate');
+                    }
+                    echo esc_html(ace_corporate_get_excerpt($id, $home_excerpt)); ?>
                 </div>
             </div>
         </div>

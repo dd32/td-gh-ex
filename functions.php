@@ -343,9 +343,10 @@ if (!function_exists('ace_corporate_get_excerpt')) :
 
         $excerpt = substr($excerpt, 0, $count);
         if (strlen($excerpt) >= $count) {
-            $excerpt = substr($excerpt, 0, strripos($excerpt, ' '));
+            $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
             $excerpt = $excerpt . '...';
         }
+        
         return $excerpt;
     }
 endif;
