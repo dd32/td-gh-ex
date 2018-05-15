@@ -1,5 +1,5 @@
 <!-- Mobile Logo -->
-<div class="column col-sm-9 show-md">
+<div class="column col-9 col-sm-9 show-md">
     <?php
     $custom_logo_id = get_theme_mod('custom_logo');
     $logo = wp_get_attachment_image_src($custom_logo_id, 'full');

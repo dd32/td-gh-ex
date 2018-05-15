@@ -7,7 +7,7 @@ get_header();
 	<section id="content" role="main">
 		<div class="main-content pad-tb-60">
 			<div class="container grid-xl">
-				<div class="columns">
+				<div class="columns"> 
 					<?php if (have_posts()): while (have_posts()): the_post(); ?>
 						<div class="column col-12">
 							<section id="content" role="main">
