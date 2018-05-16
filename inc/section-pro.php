@@ -5,7 +5,7 @@
  * @since  1.0.0
  * @access public
  */
-class bb_wedding_bliss_customize_Section_Pro extends WP_Customize_Section {
+class BB_Wedding_Bliss_Customize_Section_Pro extends WP_Customize_Section {
 
 	/**
 	 * The type of customize section being rendered.

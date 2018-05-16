@@ -27,9 +27,9 @@
     </div>
       <div class="abovecopyright">
           <div class="copyright text-center">
-            <p><?php echo esc_html(bb_wedding_bliss_credit(),'bb-wedding-bliss'); ?> <?php echo esc_html(get_theme_mod('bb_wedding_bliss_footer_copy',__('By ThemeShopy','bb-wedding-bliss'))); ?> </p>
+            <p><?php echo esc_html(get_theme_mod('bb_wedding_bliss_footer_copy',__('Wedding WordPress Theme','bb-wedding-bliss'))); ?> <?php bb_wedding_bliss_credit(); ?> </p>
           </div>
-          <div class="clear"></div>           
+          <div class="clear"></div>
       </div>
     <?php wp_footer(); ?>
   </body>

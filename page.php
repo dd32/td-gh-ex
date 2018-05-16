@@ -14,38 +14,23 @@ get_header(); ?>
 
 <?php do_action( 'bb_wedding_bliss_header_page' ); ?>
 
-<?php 
-while ( have_posts() ) : the_post(); ?>
-    <div class="title-box">
-    	<div class="container">
-    		<h1><?php the_title();?></h1>		
-    	</div>
-    </div>
-
-    <div id="content-ts" class="container">
-        <div class="middle-align">       
-    		<div class="col-md-12">
+<div class="container">
+    <div class="middle-align row">    
+        <div id="content-ts" >
+            <?php while ( have_posts() ) : the_post(); ?>        
+                <h1><?php the_title();?></h1>
                 <img src="<?php the_post_thumbnail_url(); ?>" width="100%">
                 <?php the_content();
-                wp_link_pages( array(
-                    'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bb-wedding-bliss' ) . '</span>',
-                    'after'       => '</div>',
-                    'link_before' => '<span>',
-                    'link_after'  => '</span>',
-                    'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'bb-wedding-bliss' ) . ' </span>%',
-                    'separator'   => '<span class="screen-reader-text">, </span>',
-                ) ); ?>               
-            </div>
-            <div class="clear"></div>    
+                
+                //If comments are open or we have at least one comment, load up the comment template
+                    if ( comments_open() || '0' != get_comments_number() )
+                        comments_template();
+                ?>
+            <?php endwhile; // end of the loop. ?>
         </div>
-        <?php
-            // If comments are open or we have at least one comment, load up the comment template.
-            if ( comments_open() || get_comments_number() ) {
-                comments_template();
-            }
-        ?>
+        <div class="clear"></div>    
     </div>
-<?php endwhile; // end of the loop. ?>
+</div>
 
 <?php do_action( 'bb_wedding_bliss_footer_page' ); ?>
 

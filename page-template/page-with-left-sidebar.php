@@ -8,7 +8,7 @@ get_header(); ?>
 <?php do_action( 'bb_wedding_bliss_header_pageleft' ); ?>
 
 <div class="container">
-    <div class="middle-align">  
+    <div class="middle-align row">  
     	<div class="col-md-4">
     		<?php dynamic_sidebar('sidebar-2'); ?>
     	</div>		 

@@ -4,7 +4,7 @@ Theme URI:  https://www.themeshopy.com/free/bb-free-wedding-bliss-wordpress-them
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: BB Wedding Bliss is a wedding WordPress theme to construct websites for marriage, engagement, couples, wedding planners, wedding band, personal, portfolio, art, design, business, photography, girlie or feminine blogs and websites, as well as photographer type of clients. You can make beautiful wedding websites with this multipurpose theme that caters to businesses such as hospitality, lodge, hotel, restaurant, café, food joints, cuisines, recipe, eatery, etc. It’s a completely mobile-friendly theme which is built using Bootstrap – an excellent framework. It has powerful shortcodes that will set up a pleasing website for you. It has a well-integrated versatile banner with attractive Call to Action Button (CTA). From the testimonial section, you can spread client reviews about your site. This theme has many features such social media tools, amazing typography options, color choices, customizable admin panel, etc. The optimized codes support faster page load time to give a stunning user experience. BB Wedding WordPress Theme is SEO friendly that gets over the top in search result pages. Take away this professional Wedding WordPress Theme which will give a beautiful touch to your wedding website. Demo: http://themeshopy.com/bb-wedding-bliss-theme/
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-wedding-bliss
@@ -27,10 +27,10 @@ body{
 	padding:0;
 	-ms-word-wrap:break-word;
 	word-wrap:break-word;
-	background-color:#f1f1f1;
-	font:12px/22px arial;
-	color:#5b5b5b;
-	font-family:Open sans;
+	background-color:#fff;
+	font-size:12px;
+	color:#000;
+	font-family: 'Vollkorn', serif;
 }
 img{
 	margin:0;
@@ -272,16 +272,15 @@ input[type="submit"] {
 	transition-duration: 0.3s;
 	-webkit-transition-timing-function: ease-out;
 	transition-timing-function: ease-out;
-
 }
 .hvr-sweep-to-right:hover,
- .hvr-sweep-to-right:focus,
- .hvr-sweep-to-right:active {
+.hvr-sweep-to-right:focus,
+.hvr-sweep-to-right:active {
 	  color: #fff;
 }
 .hvr-sweep-to-right:hover:before,
- .hvr-sweep-to-right:focus:before,
- .hvr-sweep-to-right:active:before {
+.hvr-sweep-to-right:focus:before,
+.hvr-sweep-to-right:active:before {
 	-webkit-transform: scaleX(1);
 	transform: scaleX(1);
 }
@@ -300,20 +299,6 @@ a.button{
 /* ---------HEADER--------- */
 .top-head {
     background: rgb(21, 28, 39);
-    float: left;
-    width: 100%;
-}
-.header-no-slider{
-	height: 100px;
-}
-#header.fixed{
-	position:fixed !important;
-	top:0 !important;
-	margin:0;
-	padding:15px 0;
-	z-index:99999999;
-	background-color:#ffffff;
-	opacity:inherit;
 }
 #header .logo{
 	margin:0;
@@ -321,7 +306,6 @@ a.button{
 	text-align:left;
 }
 #header .logo h1{
-	font-weight:700;
 	text-transform:uppercase;
 	padding:0;
 	margin-bottom:8px;
@@ -332,20 +316,16 @@ a.button{
 }
 #header .logo a{
 	color: rgb(21, 28, 39);
-	font-family:'Roboto';
 }
 #header .logo p{
 	font-size:12px;
-	font-family:arimo;
 	color: rgb(21, 28, 39);
 }
-
 #header {
     background: #ffffff;
     border-bottom: 5px solid rgb(21, 28, 39);
     box-shadow: 0 0 30px 2px #333;
 }
-
 #header{
 	z-index:999;
 	width:100%;
@@ -354,9 +334,11 @@ a.button{
 }
 #header .header-top{
 	background:#000;
-	color:#aaaaaa}
+	color:#aaaaaa
+}
 #header .header-top a{
-	color:#aaaaaa}
+	color:#aaaaaa
+}
 #header .top-contact{
 	padding:12px 0;
 	font-size:15px;
@@ -416,21 +398,6 @@ a.button{
 #header .social-media a:hover{
 	color:#3890cb;
 }
-
-.buttonbox a{
-	background:#3890cb;
-	color:#fff;
-	padding:8px 15px;
-	display:block;
-	margin:27px 0 0 0;
-	border-radius:5px;
-	text-align:center;
-}
-.buttonbox a:hover{
-	background:#000;
-	color:#fff;
-}
-
 #header .nav{
 	margin:5px 0 0 0;
 	padding:0;
@@ -441,7 +408,6 @@ a.button{
 	float:right;
 	margin:0;
 	padding:0;
-	font-family:'Roboto';
 	font-weight:400;
 	font-size:14px;
 	text-transform: uppercase;
@@ -473,14 +439,13 @@ a.button{
 	margin-top:30px;
 }
 #our-services .page-box {
-    color: #4D4D4D;
     border-radius: 5px;
-    padding: 30px 0;
+    padding: 30px;
     margin: 0 0 4% 0;
-    background: #fff;
+    background: #f5f5f5;
 }
 #our-services .page-box h4 a{
-	color:#4d4d4d;
+	color:rgb(21, 28, 39);
 	margin:0 0 29px 0;
 	padding:0;
 }
@@ -506,7 +471,6 @@ a.button{
 	border:1px solid #fff;
 	width:100%;
 }
-
 #our-services .services-box{
 	margin:40px 0 20px 0;
 }
@@ -537,36 +501,10 @@ section h5{
 	margin:0 0 10px 0;
 	padding:0;
 }
-
-.new-line,
-.box-content p{
-	margin-bottom: 2em;
-}
-.box-content h3{
-	color:#000;
-	font-weight: bold;
-}
-.text-center{
-	text-align: center!important;
-}
-a.r_button {
-	background: #3790ca;
-	padding: 0.5em 2em;
-	color: #fff;
-}
-
-section{
-	font-family:Open sans;
-}
 section .innerlightbox{
 	background-size:100% 100%;
 	padding:4.5em 0;
 	color:#000;
-}
-section .innerdarkbox{
-	background-size:100% 100%;
-	padding:4.5em 0;
-	color:#fff;
 }
 
 /* Footer Section */
@@ -617,8 +555,7 @@ table#wp-calendar {
 	color:#737171 !important;
 	padding: 10px;
 }
-#footer td
- {
+#footer td {
     padding: 10px;
     color: #fff;
 }
@@ -663,11 +600,9 @@ table#wp-calendar {
 #footer p{
 	font-size:14px;
 }
-
 #footer .news-form{
 	margin-top:24px;
 }
-
 #footer input[type="text"]{width:60%;
 	padding:8px 5%;
 	float:left;
@@ -683,7 +618,6 @@ table#wp-calendar {
     border-radius: 5px;
     margin: 0;
 }
-
 #footer .copyright{
 	text-align:center;
 }
@@ -696,24 +630,21 @@ table#wp-calendar {
     color: #fff;
 }
 .abovecopyright {
-    background: #4d4d4d;
+    background: rgb(21, 28, 39);
     padding: 20px 0px;
 }
 /* --------- Bride & Groom ------- */
 .contentbox a {
     color: rgb(21, 28, 39);
     font-size: 18px;
-    font-family: 'Vollkorn', serif;
 }
 .contentbox p {
     padding: 0 14%;
-    font-family: 'Vollkorn', serif;
     font-size: 16px;
     color: #666;
 }
 .contentbox h4 {
     color: #666;
-    font-family: 'Vollkorn', serif;
     font-style: italic;
     font-weight: normal;
     font-size: 25px;
@@ -724,7 +655,6 @@ table#wp-calendar {
 .heading-line p {
     color: #666;
     font-size: 15px;
-    font-family: 'Vollkorn', serif;
 }
 .heading-line h3 {
     color: #b79338;
@@ -759,7 +689,6 @@ table#wp-calendar {
     padding-bottom: 0;
 }
 #love-Story p {
-    font-family: 'Vollkorn', serif;
     font-size: 13px;
     color: #666;
     padding: 0 12px;
@@ -775,26 +704,9 @@ table#wp-calendar {
 	margin:0 0 5px;
 	font-weight:bold;
 }
-.postbox  a.blogbutton {
-	background:none;
-	color:#fff;
-	font-size:12px;
-	font-weight:bold;
-	color:#fff;
-	padding:6px 25px;
-	border:1px solid #000;
-	color:#000;
-	font-size:18px;
-	text-transform:uppercase;
-	margin:25px 0 0 0;
-	display:table;
-}
 .blogbutton-small{
 	background:none;
-	color:#fff;
-	font-size:12px;
 	font-weight:bold;
-	color:#fff;
 	padding:6px 25px;
 	border:2px solid rgb(21, 28, 39);
 	color:rgb(21, 28, 39);
@@ -807,7 +719,7 @@ table#wp-calendar {
 	color:#000;
 	padding:15px 0;
 	clear:both;
-	 }
+}
 .metabox .entry-date{
 	background:url('images/date.png') no-repeat;
 	padding: 0 0 0 20px;
@@ -822,14 +734,6 @@ table#wp-calendar {
 	background:url('images/comments.png') no-repeat;
 	padding: 0 0 0 20px;
 }
-#content-ts  h6{
-	margin:0 0 15px;
-	font-size:18px;
-	padding:0;
-	font-weight:bold;
-	line-height:normal;
-}
-
 /* --------- POST --------- */
 .bradcrumbs{
 	padding:30px 0;
@@ -941,38 +845,17 @@ table#wp-calendar {
 	top:20%!important;
 }
 #slider .slide-cap{
-	 position:relative;
+	position:relative;
 	margin:auto;
 	width:90%;
 	margin-right:auto;
 	margin-left:auto;
 	top:25%;
 }
-#slider .slide-cap h4{
-	text-transform:uppercase;
-	font-size:25px;
-	width:30%;
-	margin:0 auto;
-	background:url('images/welcome.png') center no-repeat;
-	background-position: center;
-	padding:5px 0;
-	font-weight:bold;
-}
 #slider .slide-cap h2{
 	padding:0 25px 5% 0;
-	font:700 80px 'Roboto';
-	text-transform:uppercase;
-	left:50%;
-}
-#slider .slide-cap p{
-	color:#ffffff;
-	font-weight:700;
-	margin:0 0 0 0;
-	line-height:20px;
-	border-radius:0 0 5px 5px;
-	font:25px/20px arial;
-	text-transform:uppercase;
-	font-weight:bold;
+	font-size: 45px;
+	font-weight: bold;
 }
 #slider .slide-cap a.read-more{
 	border-radius:3px;
@@ -985,24 +868,8 @@ table#wp-calendar {
 	display:table;
 	margin:0 auto;
 }
-a.blog-more{
-	display:inline-block;
-	font:400 16px 'Roboto Condensed', sans-serif;
-	padding:10px 30px;
-	margin-top:21px;
-	border-radius:4px;
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
-	-o-border-radius:4px;
-	-ms-border-radius:4px;
-	margin-right:15px;
-}
 
 /* Sidebar */
-
-#sidebar{
-	font-family:Helvetica;
-}
 #sidebar form{
  	display: table;
 	width: 100%;
@@ -1011,9 +878,7 @@ a.blog-more{
     margin: -40px 0 20px;
     padding: 10px 15px;
     font-weight: bold;
-    border-radius: 30px;
     font-size: 18px;
-    font-family: Roboto;
     background: rgb(21, 28, 39);
     color: #b79338;
     text-transform: uppercase;
@@ -1080,24 +945,6 @@ label{
 }
 
 /* Page */
-.title-box{
-	background-repeat:no-repeat;
-	background-size:100% 100%;
-	color:#fff;
-	text-transform:uppercase;
-	padding:75px 0;
-	font-weight:bold;
-	text-align:center;
-	margin-bottom:25px;
-	font-family:Roboto;
-	background-color: rgb(21, 28, 39);
-}
-.single .title-box{
-	background-size:100% auto;
-}
-#content-ts {
-	font-family:Helvetica;
-}
 #content-ts p{
 	text-align:justify;
 	line-height: 25px;
@@ -1117,7 +964,6 @@ label{
 	padding:0;
 	color:#000;
 	margin:0 0 25px;
-	font-family:Roboto;
 }
 #content-ts h3{
 	font-size:36px;
@@ -1126,7 +972,6 @@ label{
 	padding:0;
 	color:#000;
 	margin:0 0 25px;
-	font-family:Roboto;
 }
 #content-ts h4{
 	font-size:20px;
@@ -1135,9 +980,9 @@ label{
 	padding:0;
 	color:#333;
 	margin:0 0 25px;
-	font-family:Roboto;
 }
-#content-ts ul{list-style:none;
+#content-ts ul{
+	list-style:none;
 	margin:0 0 0 10px;
 	padding:10px 0 0;
 	font-size:16px;
@@ -1221,7 +1066,7 @@ label{
 	.toggle a{
 		width:100%;
 		color:#fff;
-		background:url('images/responsive_menu.png') no-repeat right center rgb(21, 28, 39);
+		background:url('images/mobile_nav_right.png') no-repeat right center rgb(21, 28, 39);
 		padding:10px 10px;
 		font-size:16px;
 	}
@@ -1289,7 +1134,7 @@ label{
 		background:rgb(21, 28, 39);
 		width:200px;
 		position:absolute;
-		top:25px;
+		top:20px;
 		left:0;
 		text-align:left;
 		padding:10px 0;
@@ -1325,8 +1170,7 @@ label{
 	#header .nav ul li a{
 		color:#25333c;
 		padding:7px 10px;
-		display:block;		
-    	font-family: 'Vollkorn', serif;
+		display:block;
     	letter-spacing: 2px;
 	}
 }
@@ -1353,4 +1197,8 @@ label{
 		margin-bottom: 15px;
 		padding-bottom: 20px;
 	}
+}
+/*video*/
+iframe{
+	width: 100%;
 }

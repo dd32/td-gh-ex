@@ -4,8 +4,8 @@
 
 Theme Name      :   BB Wedding Bliss
 Theme URI       :   https://www.themeshopy.com/free/bb-free-wedding-bliss-wordpress-theme/
-Version         :   1.0.5
-Tested up to    :   WP 4.9.4
+Version         :   1.0.6
+Tested up to    :   WP 4.9.5
 Author          :   Themeshopy
 Author URI      :   https://www.themeshopy.com/
 license         :   GNU General Public License v3.0
@@ -52,12 +52,12 @@ Theme is Built using the following resource bundles.
 	License: Distributed under the terms of the Apache License, version 2.0 http://www.apache.org/licenses/LICENSE-2.0.html
 
 3. - All CSS that have been used are within folder /css of theme.
-		- nivo-slider.css, Copyright 2012, Dev7studios
-		 * Free to use and abuse under the MIT license.
-		 * http://www.opensource.org/licenses/mit-license.php
-		- bootstrap.css
-		 * Bootstrap v3.3.2 (http://getbootstrap.com)
- 		 * Copyright 2011-2015 Twitter, Inc.
+	- nivo-slider.css, Copyright 2012, Dev7studios
+	 	* Free to use and abuse under the MIT license.
+	 	* http://www.opensource.org/licenses/mit-license.php
+	- bootstrap.css
+	 	* Bootstrap v3.3.2 (http://getbootstrap.com)
+	 	* Copyright 2011-2015 Twitter, Inc.
 
 4 - CSS bootstrap.css
         Code and documentation copyright 2011-2016 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.
@@ -73,12 +73,18 @@ Theme is Built using the following resource bundles.
 
 6 - Images used from Pixabay.
 	Pixabay provides images under CC0 license (https://creativecommons.org/about/cc0)
-	https://pixabay.com/en/life-beauty-scene-bride-bridal-863708/
-	https://pixabay.com/en/bride-love-wedding-couple-groom-1520821/
-	https://pixabay.com/en/wedding-grooms-embracing-each-other-1183278/
 
-		
-All the slider images taken from pixabay under Creative Commons Deed CC0 - https://pixabay.com/en/service/terms/
+	Bundled header image, Copyright scottwebb
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://pixabay.com/en/life-beauty-scene-bride-bridal-863708/
+
+	Bundled header image, Copyright MiguelRPerez
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://pixabay.com/en/bride-love-wedding-couple-groom-1520821/
+
+	Bundled header image, Copyright Alvin Engler
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://pixabay.com/en/wedding-grooms-embracing-each-other-1183278/
 
 All the icons taken from genericons licensed under GPL License v2.0.
 http://genericons.com/ 
@@ -112,9 +118,14 @@ i)   Fontawesome update.
 ii)  Resolved theme errors.
 iii) Removed the js files.
 
-
-BB Wedding Bliss Premium version
+Version 1.0.6
+i) 	 Removed the unused css.
+ii)	 Resolved the errors.
+iii) Update the bootstrap to version 4.0.0.
+iv)  Added the post format tag and done the changes in template files.
+v)   Update the pot file in language folder.
+	
+BB Wedding Bliss Free version
 ==========================================================
-BB Wedding Bliss Premium version is compatible with GPL licensed.
-
+BB Wedding Bliss Free version is compatible with GPL licensed.
 For any help you can mail us at support[at]themeshopy.com

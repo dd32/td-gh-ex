@@ -212,7 +212,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	}
 
 	$wp_customize->add_setting('bb_wedding_bliss_love_post_setting',array(
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices',
 	));
 
 	$wp_customize->add_control('bb_wedding_bliss_love_post_setting',array(
@@ -223,57 +223,75 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	));
 
 	//More Event
-	  $wp_customize->add_section('bb_wedding_bliss_event_section',array(
+  	$wp_customize->add_section('bb_wedding_bliss_event_section',array(
 	    'title' => __('More Event Section','bb-wedding-bliss'),
 	    'description' => '',
 	    'priority'  => null,
 	    'panel' => 'bb_wedding_bliss_panel_id',
-	  ));
+	));
 	  
-	  $wp_customize->add_setting('bb_wedding_bliss_main_title',array(
+  	$wp_customize->add_setting('bb_wedding_bliss_main_title',array(
 	    'default' => '',
 	    'sanitize_callback' => 'sanitize_text_field',
-	  ));
+  	));
 
-	  $wp_customize->add_control('bb_wedding_bliss_main_title',array(
+  	$wp_customize->add_control('bb_wedding_bliss_main_title',array(
 	    'label' => __('Title','bb-wedding-bliss'),
 	    'section' => 'bb_wedding_bliss_event_section',
 	    'type'  => 'text'
-	  ));
+  	));
 
-	  $wp_customize->add_setting('bb_wedding_bliss_short_line',array(
+	$wp_customize->add_setting('bb_wedding_bliss_short_line',array(
 	    'default' => '',
 	    'sanitize_callback' => 'sanitize_text_field',
-	  ));
+ 	));
 
-	  $wp_customize->add_control('bb_wedding_bliss_short_line',array(
+  	$wp_customize->add_control('bb_wedding_bliss_short_line',array(
 	    'label' => __('Short Line','bb-wedding-bliss'),
 	    'section' => 'bb_wedding_bliss_event_section',
 	    'type'  => 'text'
-	  ));
+	));
 
-	  $categories = get_categories();
-	  $cats = array();
-	  $i = 0;
-	  foreach($categories as $category){
-	  if($i==0){
-	  $default = $category->slug;
-	  $i++;
-	  }
-	  $cats[$category->slug] = $category->name;
-	  }
+	$categories = get_categories();
+	$cats = array();
+	$i = 0;
+	foreach($categories as $category){
+		if($i==0){
+			$default = $category->slug;
+			$i++;
+		}
+		$cats[$category->slug] = $category->name;
+	}
 
-	  $wp_customize->add_setting('bb_wedding_bliss_event_setting',array(
+	$wp_customize->add_setting('bb_wedding_bliss_event_setting',array(
 	    'default' => 'select',
-	    'sanitize_callback' => 'sanitize_text_field',
-	  ));
+	    'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices',
+  	));
 
-	  $wp_customize->add_control('bb_wedding_bliss_event_setting',array(
+  	$wp_customize->add_control('bb_wedding_bliss_event_setting',array(
 	    'type'    => 'select',
 	    'choices' => $cats,
 	    'label' => __('Select Category to display Latest Post','bb-wedding-bliss'),
 	    'section' => 'bb_wedding_bliss_event_section',
-	  ));
+  	));
+
+	//footer
+	$wp_customize->add_section('bb_wedding_bliss_footer_section',array(
+		'title'	=> __('Footer Text','bb-wedding-bliss'),
+		'description'	=> __('Add some text for footer like copyright etc.','bb-wedding-bliss'),
+		'priority'	=> null,
+		'panel' => 'bb_wedding_bliss_panel_id',
+	));
+	
+	$wp_customize->add_setting('bb_wedding_bliss_footer_copy',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'sanitize_text_field',
+	));	
+	$wp_customize->add_control('bb_wedding_bliss_footer_copy',array(
+		'label'	=> __('Copyright Text','bb-wedding-bliss'),
+		'section'	=> 'bb_wedding_bliss_footer_section',
+		'type'		=> 'text'
+	));
 		
 }
 add_action( 'customize_register', 'bb_wedding_bliss_customize_register' );	
@@ -345,11 +363,11 @@ final class bb_wedding_bliss_customize {
 		load_template( trailingslashit( get_template_directory() ) . '/inc/section-pro.php' );
 
 		// Register custom section types.
-		$manager->register_section_type( 'bb_wedding_bliss_customize_Section_Pro' );
+		$manager->register_section_type( 'BB_Wedding_Bliss_Customize_Section_Pro' );
 
 		// Register sections.
 		$manager->add_section(
-			new bb_wedding_bliss_customize_Section_Pro(
+			new BB_Wedding_Bliss_Customize_Section_Pro(
 				$manager,
 				'example_1',
 				array(

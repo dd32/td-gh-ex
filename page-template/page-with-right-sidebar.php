@@ -8,7 +8,7 @@ get_header(); ?>
 <?php do_action( 'bb_wedding_bliss_header_pageright' ); ?>
 
 <div class="container">
-    <div class="middle-align">       
+    <div class="middle-align row">       
 		<div class="col-md-8" id="content-ts" >
             <?php while ( have_posts() ) : the_post(); ?>        
                 <h1><?php the_title();?></h1>

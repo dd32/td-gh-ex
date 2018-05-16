@@ -33,14 +33,37 @@ function bb_wedding_bliss_setup() {
 		'default-color' => 'f1f1f1'
 	) );
 
-/*
- * This theme styles the visual editor to resemble the theme style,
- * specifically font, colors, icons, and column width.
- */
+	/*
+	* Enable support for Post Formats.
+	*
+	* See: https://codex.wordpress.org/Post_Formats
+	*/
+	add_theme_support( 'post-formats', array('image','video','gallery','audio',) );
+
+	/*
+	 * This theme styles the visual editor to resemble the theme style,
+	 * specifically font, colors, icons, and column width.
+	 */
 	add_editor_style( array( 'css/editor-style.css', bb_wedding_bliss_font_url() ) );
+
+	// Theme Activation Notice
+	global $pagenow;
+	
+	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
+		add_action( 'admin_notices', 'bb_wedding_bliss_activation_notice' );
+	}
+
 }
 endif;
 add_action( 'after_setup_theme', 'bb_wedding_bliss_setup' );
+
+// Notice after Theme Activation
+function bb_wedding_bliss_activation_notice() {
+	echo '<div class="notice notice-success is-dismissible get-started">';
+		echo '<p>'. esc_html__( 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you.', 'bb-wedding-bliss' ) .'</p>';
+		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=bb_wedding_bliss_guide' ) ) .'" class="button button-primary">'. esc_html__( 'Click here...', 'bb-wedding-bliss' ) .'</a></p>';
+	echo '</div>';
+}
 
 /* Theme Widgets Setup */
 function bb_wedding_bliss_widgets_init() {
@@ -143,6 +166,7 @@ function bb_wedding_bliss_scripts() {
 	wp_enqueue_style( 'jquery-nivo-slider', get_template_directory_uri().'/css/nivo-slider.css' );
 	wp_enqueue_script( 'jquery-nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
 	wp_enqueue_script( 'bb-wedding-bliss-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -151,15 +175,16 @@ function bb_wedding_bliss_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'bb_wedding_bliss_scripts' );
 
-define('BB_WEDDING_BLISS_BUY_NOW','https://www.themeshopy.com/premium/bb-wedding-bliss-wordpress-theme/','bb-ecommerce-store');
-define('BB_WEDDING_BLISS_LIVE_DEMO','https://themeshopy.com/bb-wedding-bliss-theme/','bb-ecommerce-store');
-define('BB_WEDDING_BLISS_PRO_DOC','https://themeshopy.com/docs/bb-wedding-bliss/','bb-ecommerce-store');
-define('BB_WEDDING_BLISS_FREE_DOC','https://www.themeshopy.com/docs/free-bb-wedding-bliss/','bb-ecommerce-store');
-define('BB_WEDDING_BLISS_CONTACT','https://www.themeshopy.com/free-theme-support//','bb-ecommerce-store');
-define('BB_WEDDING_BLISS_CREDIT','https://www.themeshopy.com/premium/bb-wedding-bliss-wordpress-theme/','bb-wedding-bliss');
+define('BB_WEDDING_BLISS_BUY_NOW','https://www.themeshopy.com/premium/bb-wedding-bliss-wordpress-theme/','bb-wedding-bliss');
+define('BB_WEDDING_BLISS_LIVE_DEMO','https://themeshopy.com/bb-wedding-bliss-theme/','bb-wedding-bliss');
+define('BB_WEDDING_BLISS_PRO_DOC','https://themeshopy.com/docs/bb-wedding-bliss/','bb-wedding-bliss');
+define('BB_WEDDING_BLISS_FREE_DOC','https://www.themeshopy.com/docs/free-bb-wedding-bliss/','bb-wedding-bliss');
+define('BB_WEDDING_BLISS_CONTACT','https://wordpress.org/support/theme/bb-wedding-bliss/','bb-wedding-bliss');
+define('BB_WEDDING_BLISS_CREDIT','https://www.themeshopy.com/','bb-wedding-bliss');
+
 if ( ! function_exists( 'bb_wedding_bliss_credit' ) ) {
 	function bb_wedding_bliss_credit(){
-		echo "<a href=".esc_url(BB_WEDDING_BLISS_CREDIT)." target='_blank'>Wedding WorPress Theme</a>";
+		echo "<a href=".esc_url(BB_WEDDING_BLISS_CREDIT)." target='_blank'>By ThemeShopy</a>";
 	}
 }
 
