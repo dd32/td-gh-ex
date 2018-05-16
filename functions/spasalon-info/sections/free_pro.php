@@ -17,89 +17,78 @@
 					<ul class="feature">
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Frontpage Sections','spasalon' ); ?></span>
-							<p><?php esc_html_e( 'You will find number of sections on front-page','spasalon' ); ?></p>
+							<p><?php esc_html_e( 'You will find number of sections on frontpage','spasalon' ); ?></p>
 						</li>
 						
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Page Templates Support','spasalon' ); ?></span>
-							<p><?php esc_html_e( 'Various Page Template included in Spasalon Premium Theme.','spasalon' ); ?></p>
-						</li>
-						
-						
-						<li>
-							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'No of  sidebar on Homepage','spasalon' ); ?></span>
-							<p> <?php esc_html_e('Theme have many sidebar on Front page.','spasalon');?></p>
+							<p><?php esc_html_e( 'Various page templates are included in SpaSalon PRO.','spasalon' ); ?></p>
 						</li>
 						
 						<li>
-							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Custom Widget','spasalon' ); ?></span>
+							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Custom Widgets','spasalon' ); ?></span>
 							<p> <?php esc_html_e('Theme Have number of beautifuly designed Custom Widgets','spasalon');?></p>
 						</li>
 						
 						<li>
-							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Service Content type Widget','spasalon' ); ?></span>
-							<p> <?php esc_html_e('Add Services by using widget Spasalon: Page / Service Widget','spasalon');?></p>
+							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( '"Service Content" type Repeater control','spasalon' ); ?></span>
+							<p> <?php esc_html_e('Add Services by using the Repeater control','spasalon');?></p>
 						</li>
 						
 						<li>
-							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Homepage Section / Sidebar Layout','spasalon' ); ?></span>
-							<p> <?php esc_html_e('Customize Home page Sections Layout','spasalon');?></p>
+							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Jetpack gallery support','spasalon' ); ?></span>
+							<p> <?php esc_html_e('Create awesome galleries with overlays','spasalon');?></p>
 						</li>
 						
 						<li>
-							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Jetpack Gallery Support','spasalon' ); ?></span>
-							<p> <?php esc_html_e('Create Awesome Gallery with Overlay','spasalon');?></p>
-						</li>
-						
-						<li>
-							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'WooCommerce Support','spasalon' ); ?></span>
-							<p> <?php esc_html_e('Create your online shop with Spasalon Theme','spasalon');?></p>
+							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'WooCommerce support','spasalon' ); ?></span>
+							<p> <?php esc_html_e('Create your online shop with the SpaSalon theme','spasalon');?></p>
 						</li>
 						
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Mobile Friendly','spasalon' ); ?></span>
-							<p><?php esc_html_e( 'Responsive  layout in all devices.','spasalon' ); ?></p>
+							<p><?php esc_html_e( 'A responsive layout for all devices.','spasalon' ); ?></p>
 						</li>
 						
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Products','spasalon' ); ?></span>
-							<p><?php esc_html_e( 'Create Categorized Products by using product templates. Also show Diffrent set of product on diffrent page. ','spasalon' ); ?></p>
+							<p><?php esc_html_e( 'Categorize products by using the product templates, and show different sets of products on different pages.','spasalon' ); ?></p>
 						</li>
 						
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Contact Form Support','spasalon' ); ?></span>
-							<p><?php esc_html_e( 'Default WordPress Contact Form and Contact Form 7 support. Add the forms using predefined Contact Page Templates','spasalon' ); ?></p>
+							<p><?php esc_html_e( 'SpaSalon supports the default WordPress Contact Form and Contact Form 7. Add the forms by using the predefined Contact Page Template','spasalon' ); ?></p>
 						</li>
 						
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'SEO Friendly URL','spasalon' ); ?></span>
-							<p><?php esc_html_e( 'This feature allow you to change custom post type slug names in the url.','spasalon' ); ?></p>
+							<p><?php esc_html_e( 'This feature allows you to change the custom post type slug names in the url.','spasalon' ); ?></p>
 						</li>
 						
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Mulitple Color Schemes','spasalon' ); ?></span>
-							<p><?php esc_html_e( 'Enjoy with 9 preset color schemes. You can also create custom skin without adding any code.','spasalon' ); ?></p>
+							<p><?php esc_html_e( 'Enjoy 9 preset color schemes. You can also create custom color skins without adding any code.','spasalon' ); ?></p>
 						</li>
 						
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Google Map','spasalon' ); ?></span>
-							<p><?php esc_html_e( 'Display your Shop and Business location on your website. Support for all the Google Map plugins which generates shortcode.  ','spasalon' ); ?></p>
+							<p><?php esc_html_e( 'Display your shop and/or business location on your website. SpaSalon supports all GoogleMaps plugins that generate shortcodes.','spasalon' ); ?></p>
 						</li>
 						
 						
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'WPML Support','spasalon' ); ?></span>
-							<p><?php esc_html_e( 'Create Multilingual Website. Support for famous plugin like: WPML / Polylang ','spasalon' ); ?></p>
+							<p><?php esc_html_e( 'Create multilingual websites: SpaSalon supports popular plugins WPML and Polylang','spasalon' ); ?></p>
 						</li>
 						
 						<li>
-							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Access to Dummy Data File','spasalon' ); ?></span>
-							<p><?php esc_html_e( 'Create exact replica of our demo site by importing the dummy data file.','spasalon' ); ?></p>
+							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Access to demo data file','spasalon' ); ?></span>
+							<p><?php esc_html_e( 'Create an exact replica of our demo site by importing the demo data file.','spasalon' ); ?></p>
 						</li>
 						
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Support Forum','spasalon' ); ?></span>
-							<p><?php esc_html_e( 'Get instant 24x7 support on Our Support Forum.','spasalon' ); ?></p>
+							<p><?php esc_html_e( 'Get instant 24x7 support on our support forum.','spasalon' ); ?></p>
 						</li>
 					</ul><!-- /.features -->
 					
@@ -110,20 +99,18 @@
 				<div class="plan text-center">
 					
 					<header>
-						<h2><?php echo __('Spasalon Lite','spasalon'); ?></h2>
+						<h2><?php echo __('SpaSalon Lite','spasalon'); ?></h2>
 					</header>
 					
 					<ul class="feature">
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Banner Image, Service, Static Product, Latest News, 4 Column Footer Widgetizeds area','spasalon'); ?> </li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Banner image, Services, static products, Latest news, 4-column footer widget area','spasalon'); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Business Template, Full Width Template','spasalon'); ?> </li>
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php echo '7'; ?> </li>
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Spasalon: Page Widget [Service, Product], Spasalon: Latest News Widget','spasalon'); ?> </li>
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Support For Featured Image','spasalon'); ?> </li>
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Not Customizable','spasalon'); ?> </li>
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Simple Thumbnail Gallery','spasalon'); ?> </li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Support for featured image','spasalon'); ?> </li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Simple thumbnail gallery','spasalon'); ?> </li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
+						<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 						<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 						<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 						<li><span class="dashicons-before dashicons-no-alt red"></span></li>
@@ -142,17 +129,14 @@
 				<div class="plan text-center border-right">
 					
 					<header>
-						<h2><?php echo __('Spasalon Pro','spasalon'); ?></h2>
+						<h2><?php echo __('SpaSalon PRO','spasalon'); ?></h2>
 					</header>
 					
 					<ul class="feature">
-						<li style="font-size:16px; line-height:25px; padding:19px"><?php _e('Slider [Unlimited Slides], Service [Unlimited Services], Products [Unlimited Products], Latest News, Additional Section and 4 Column Footer Widgetizeds area','spasalon'); ?></li>
+						<li style="font-size:16px; line-height:25px; padding:19px"><?php _e('Slider [Unlimited Slides], Service [Unlimited Services], Products [Unlimited Products], Testimonial[Unlimited Testimonial], Latest News, Team[Unlimited Team], Gallery, Client[Unlimited Client], Callout, Additional Section and 4-column footer widget area','spasalon'); ?></li>
 						<li style="font-size:16px; line-height:25px; padding:18px"><?php _e('Homepage, Homepage 2, About us, Blog Left Sidebar, Blog Right Sidebar, Blog Full Width, Page Full Width, Product Page and Contact Page.','spasalon'); ?></li>
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php echo '8'; ?></li>
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Spasalon: Page / Service Widget, Spasalon: Product Category Widget, Spasalon: Recent Products Widget, Spasalon: Team Widget, Spasalon: Latest News Widget, Spasalon: Latest Post and Spasalon: Contact Widget','spasalon'); ?> </li>
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Support for thousands of Font-Awesome Icon , Featured Images and Read More Button / Link','spasalon'); ?> </li>
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Customizable' ,'spasalon'); ?> </li>
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Overlay Effects Gallery' ,'spasalon'); ?> </li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Support for thousands of Font-Awesome icons, Featured Images, and Read More button/link','spasalon'); ?> </li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Overlay effects gallery' ,'spasalon'); ?> </li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
@@ -161,6 +145,7 @@
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li> 
+						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li style="font-size:16px; line-height:80px; padding:15px;"><?php _e('Premium Support Forum','spasalon'); ?></li>
 						
@@ -173,7 +158,7 @@
 		<div class="offer-content clearfix">
 			<div class="media pricing-content text-center padding10">
 				<div class="media-body">
-					<a href="<?php echo esc_url( 'http://webriti.com/spasalon/' ); ?>" target="_blank" class="btn btn-info btn-lg"><?php esc_html_e( 'Get Spasalon PRO Now!','spasalon' ); ?></a>
+					<a href="<?php echo esc_url( 'http://webriti.com/spasalon/' ); ?>" target="_blank" class="btn btn-info btn-lg"><?php esc_html_e('Get SpaSalon PRO now!','spasalon' ); ?></a>
 				</div>
 			</div>
 		</div>

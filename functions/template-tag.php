@@ -138,7 +138,7 @@ function spasalon_page_banner_strip(){
 
 if ( ! function_exists( 'spasalon_post_thumbnail' ) ) :
 function spasalon_post_thumbnail() {
-	
+	if(has_post_thumbnail()) {
 	if ( is_singular() ) : ?>
 		<figure class="post-thumbnail-full">
 		<?php the_post_thumbnail(); ?>
@@ -153,7 +153,7 @@ function spasalon_post_thumbnail() {
 		<?php
 		}
 	endif; // End is_singular()
-	}
+	}}
 endif;
 
 
@@ -182,7 +182,8 @@ function spasalon_pink_banner_strip()
 $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), default_data() );
 $call_us         = $current_options['call_us'];
 $call_us_text    = $current_options['call_us_text']; 	
-	
+if( $current_options['spa_bannerstrip_enable']=='yes' )
+	{	
 global $wp_query;
 $postid = $wp_query->post->ID;
 if( is_home() ){
@@ -223,5 +224,6 @@ if ( get_post_meta($postid, 'spa-page-banner-h1', true) || get_post_meta($postid
 </section>
 <div class="clearfix"></div>
 <?php
+}
 } }
 ?>

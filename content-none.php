@@ -20,7 +20,7 @@
 
 			<?php else : ?>
 
-				<p><?php _e('It seems we can not find what you are looking for. Perhaps searching can help.','spasalon' ); ?></p>
+				<p><?php _e("It seems we can't find what you are looking for. Perhaps searching can help.","spasalon"); ?></p>
 				<?php get_search_form(); ?>
 
 			<?php endif; ?>

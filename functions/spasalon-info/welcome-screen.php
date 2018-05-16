@@ -23,12 +23,10 @@ class spasalon_screen {
 
 		/* load welcome screen */
 		add_action( 'spasalon_info_screen', array( $this, 'spasalon_getting_started' ), 	    10 );
-		add_action( 'spasalon_info_screen', array( $this, 'spasalon_action_required' ), 	    20 );
-		add_action( 'spasalon_info_screen', array( $this, 'spasalon_child_themes' ), 		    30 );
-		add_action( 'spasalon_info_screen', array( $this, 'spasalon_upgrade' ), 		        40 );
-		add_action( 'spasalon_info_screen', array( $this, 'spasalon_welcome_free_pro' ), 		50 );
-		add_action( 'spasalon_info_screen', array( $this, 'spasalon_import_data' ), 			60 );
-
+		add_action( 'spasalon_info_screen', array( $this, 'spasalon_child_themes' ), 		    20 );
+		add_action( 'spasalon_info_screen', array( $this, 'spasalon_upgrade' ), 		        30 );
+		add_action( 'spasalon_info_screen', array( $this, 'spasalon_welcome_free_pro' ), 		40 );
+		
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_spasalon_dismiss_required_action', array( $this, 'spasalon_dismiss_required_action_callback') );
 		add_action( 'wp_ajax_nopriv_spasalon_dismiss_required_action', array($this, 'spasalon_dismiss_required_action_callback') );
@@ -44,7 +42,7 @@ class spasalon_screen {
 
 		if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
 			add_action( 'admin_notices', array( $this, 'spasalon_admin_notice' ), 99 );
-			add_action( 'admin_notices', array( $this, 'spasalon_admin_import_notice' ), 99 );
+			
 		}
 	}
 
@@ -54,20 +52,38 @@ class spasalon_screen {
 	 */
 	public function spasalon_admin_notice() {
 		?>
-			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing Spasalon! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'spasalon' ), '<a href="' . esc_url( admin_url( 'themes.php?page=spasalon-info' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=spasalon-info' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Spasalon', 'spasalon' ); ?></a></p>
+		
+		<?php
+            $theme_info = wp_get_theme();
+		?>
+			<div class="updated notice is-dismissible spasalon-notice">
+			<h1><?php 
+			printf( esc_html__( 'Welcome to %1$s - Version %2$s', 'spasalon' ), esc_html( $theme_info->Name ), esc_html( $theme_info->Version ) ); ?>
+			</h1>
+				<p><?php echo sprintf( esc_html__( "Welcome! Thank you for choosing Spasalon WordPress theme. To take full advantage of the features this theme has to offer visit our %swelcome page%s.", "spasalon"), '<a href="' . esc_url( admin_url( 'themes.php?page=spasalon-info' ) ) . '">', '</a>' ); ?></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=spasalon-info' ) ); ?>" class="button button-blue-secondary button_spasalon" style="text-decoration: none;"><?php _e( 'Get started with SpaSalon','spasalon'); ?></a></p>
 			</div>
+			<style>
+			.spasalon-notice {
+			background: #e9eff3 !important;
+			border: 10px solid #fff !important;
+			color: #608299 !important;
+			padding: 30px 10px !important;
+			text-align: center !important;
+			box-shadow: none !important;
+			text-align: center !important;
+			padding: 25px !important;
+			position: relative !important;
+			}
+			
+			.button_spasalon{   
+      			font-size: 14px!important;
+				height: 46px!important;
+				line-height: 44px!important;
+				padding: 0 36px!important;}
+			</style>
 		<?php
 	}
-	
-	function spasalon_admin_import_notice(){
-    ?>
-    <div class="updated notice notice-success notice-alt is-dismissible">
-        <p><?php printf( esc_html__( 'Save time by import our demo data, your website will be set up and ready to customize in minutes. %s', 'spasalon' ), '<a class="button button-secondary" href="'.esc_url( add_query_arg( array( 'page' => 'spasalon-info#demo_import' ), admin_url( 'themes.php' ) ) ).'">'.esc_html__( 'Import Demo Data', 'spasalon' ).'</a>'  ); ?></p>
-    </div>
-    <?php
-}
 
 	/**
 	 * Load welcome screen css and javascript
@@ -215,11 +231,9 @@ class spasalon_screen {
 		<div class="col-md-12">
 		<ul class="spasalon-nav-tabs" role="tablist">
 			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting Started','spasalon'); ?></a></li>
-			<li role="presentation"><a href="#actions_required" aria-controls="actions_required" role="tab" data-toggle="tab"><?php esc_html_e( 'Actions Required','spasalon'); ?></a></li>
-			<li role="presentation"><a href="#upgrade" aria-controls="upgrade" role="tab" data-toggle="tab"><?php esc_html_e( 'Why Upgrade Pro','spasalon'); ?></a></li>
+			<li role="presentation"><a href="#upgrade" aria-controls="upgrade" role="tab" data-toggle="tab"><?php esc_html_e( 'Why upgrade to PRO?','spasalon'); ?></a></li>
 			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free VS PRO','spasalon'); ?></a></li>
 			<li role="presentation"><a href="#child_themes" aria-controls="child_themes" role="tab" data-toggle="tab"><?php esc_html_e( 'Child Themes','spasalon'); ?></a></li>
-			<li role="presentation"><a href="#demo_import" aria-controls="demo_import" role="tab" data-toggle="tab"><?php esc_html_e( 'One Click Demo Import','spasalon'); ?></a></li>
 			
 		</ul>
 		</div>
@@ -243,13 +257,6 @@ class spasalon_screen {
 	}
 
 	
-	/**
-	 * Action Requerd
-	 *
-	 */
-	public function spasalon_action_required() {
-		require_once( get_template_directory() . '/functions/spasalon-info/sections/actions-required.php' );
-	}
 	
 	/**
 	 * Child themes
@@ -274,14 +281,6 @@ class spasalon_screen {
 	 */
 	public function spasalon_welcome_free_pro() {
 		require_once( get_template_directory() . '/functions/spasalon-info/sections/free_pro.php' );
-	}
-	
-	/**
-	 * Import Data
-	 *
-	 */
-	public function spasalon_import_data() {
-		require_once( get_template_directory() . '/functions/spasalon-info/sections/import-data.php' );
 	}
 	
 }

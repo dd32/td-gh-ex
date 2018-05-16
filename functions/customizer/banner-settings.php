@@ -206,7 +206,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			
 		/* woo template page */
 		$wp_customize->add_section( 'banner_woo_section' , array(
-			'title'      => __('Woocommerce', 'spasalon'),
+			'title'      => __('WooCommerce', 'spasalon'),
 			'panel'  => 'banner_settings'
 		) );
 		

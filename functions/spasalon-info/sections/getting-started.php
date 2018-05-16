@@ -11,29 +11,31 @@ $customizer_url = admin_url() . 'customize.php' ;
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-				<h1 class="spasalon-info-title text-center"><?php echo __('About Spasalon Lite Theme','spasalon'); ?><?php if( !empty($spasalon['Version']) ): ?> <sup id="spasalon-theme-version"><?php echo esc_attr( $spasalon['Version'] ); ?> </sup><?php endif; ?></h1>
+				<h1 class="spasalon-info-title text-center"><?php echo __('About SpaSalon Lite','spasalon'); ?><?php if( !empty($spasalon['Version']) ): ?> <sup id="spasalon-theme-version"><?php echo esc_attr( $spasalon['Version'] ); ?> </sup><?php endif; ?></h1>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
 				<div class="spasalon-tab-pane-half spasalon-tab-pane-first-half">
-				<p><?php esc_html_e( 'SpaSalon is a responsive multipurpose WordPress theme best suitable for beauty industry like Cosmetology, Hair Styling, Spa, Beauty Salon, Massage & Therapy Center and Beauty Care website. Theme is not only limited to beauty sector rather you can use it for any type of business.','spasalon');?></p>
+				<p><?php esc_html_e( 'SpaSalon is a responsive multipurpose WordPress theme best suitable for the beauty industry, to build websites for cosmetologists, hair styling, SPAs, beauty salons, massage and therapy centres, beauty care, etc. In any case, SpaSalon is not limited to the beauty sector, so you can use it for any type of business.','spasalon');?></p>
 
-				<p><?php esc_html_e( 'Packed with everything you need to launch your site hassle free! Powerful and user friendly Customize Theme Options, Sidebar enabled HomePage Sections having support for all the WordPress core widgets. Premium theme is packed with many widgets like Service Page Widget, Product Widget, Team Widget, Latest News Widget and Contact Widget etc ','spasalon');?></p>
+				<p><?php esc_html_e( 'You can use this theme for any type of activity. SpaSalon is compatible with popular plugins like WPML and Polylang, and has predefined versions of Contact pages, Services pages, Portfolio columned layout pages, About Us and Blog layout pages to help you create an effective and impactful web presence.','spasalon');?></p>
 				
-				<p>
-				<?php esc_html_e( 'Premium version even allows you to configure the layout of sidebars, for example if you want to show Services, Products, Latest News and Team than you are not required to add any css of php code just specify the section layout and get the desired result. Theme also support famous Page Builders since number of widgets are built in. ', 'spasalon' ); ?>
+				<h1 style="margin-top: 73px;"><?php esc_html_e( "Getting Started", 'spasalon' ); ?></h1>
+				<div style="border-top: 1px solid #eaeaea;">
+				<p style="margin-top: 16px;">
+				
+				<?php esc_html_e( 'Install and activate the Webriti Companion plugin to take full advantage of all the features this theme has to offer. Go to Customize and install the Webriti Companion plugin.', 'spasalon' ); ?>
+				
 				</p>
-				<b>
-				<p>
-				<?php esc_html_e( 'Note: Intresting fact about this theme is, after upgrade you can start from where you have left in the lite version. You have to install the premium version as a separate package like any other WordPress Theme.', 'spasalon' ); ?>
-				</p>
-				</b>
+				<p><a target="_blank" href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Go to the Customizer','spasalon');?></a></p>
+				</div>
+				
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="spasalon-tab-pane-half spasalon-tab-pane-first-half">
-				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/spasalon-info/img/spasalon.png'; ?>" alt="<?php esc_html_e( 'spasalon Blue Child Theme', 'spasalon' ); ?>" />
+				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/spasalon-info/img/spasalon.png'; ?>" alt="<?php esc_html_e( 'SpaSalon Blue child theme', 'spasalon' ); ?>" />
 				</div>
 			</div>	
 		</div>
@@ -55,7 +57,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 					
 					
 					<a href="<?php echo esc_url('http://webriti.com/demo/wp/preview/?prev=spasalon/'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-book-alt info-icon"></div>
-					<p class="info-text"><?php echo __('View Pro','spasalon'); ?></p></a>
+					<p class="info-text"><?php echo __('View PRO','spasalon'); ?></p></a>
 					
 					<a href="<?php echo esc_url('http://webriti.com/support/categories/spasalon'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-sos info-icon"></div>
 					<p class="info-text"><?php echo __('Premium Theme Support','spasalon'); ?></p></a>
@@ -67,7 +69,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 				<div class="spasalon-tab-pane-half spasalon-tab-pane-first-half">
 					
 					<a href="<?php echo esc_url('https://wordpress.org/support/theme/spasalon/reviews/#new-post'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-smiley info-icon"></div>
-					<p class="info-text"><?php echo __('Rate This Theme','spasalon'); ?></p></a>
+					<p class="info-text"><?php echo __('Rate this theme','spasalon'); ?></p></a>
 					
 					<a href="<?php echo esc_url('https://wordpress.org/support/theme/spasalon'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-sos info-icon"></div>
 					<p class="info-text"><?php echo __('Support','spasalon'); ?></p></a>

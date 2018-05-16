@@ -7,11 +7,9 @@
  */
 	get_header(); 
 
-	get_template_part('index','slider');
-
-	get_template_part('index','service');
-
-	get_template_part('index','product');
+	$spa_theme_options=default_data(); 
+	$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), $spa_theme_options );
+	do_action( 'spasalon_sections', false );
 
 	get_template_part('index','news');
 

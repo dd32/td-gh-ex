@@ -20,13 +20,9 @@ function spasalon_widgets_init(){
 	register_sidebar( array(
 	'name' => __( 'Service content widget area', 'spasalon' ),
 	'id' => 'sidebar-service',
-	'description' => __( 'Service content widget area', 'spasalon' ),
-	'before_widget' => '<div id="%1$s" class="col-md-'.$service_layout.' col-sm-6 col-xs-12 widget %2$s">',
-	'after_widget' => '</div>',
-	'before_title' => '<h4 class="widget-title">',
-	'after_title' => '</h4>'
 	) );
 	
+
 	register_sidebar( array(
 	'name' => __( 'Project content widget area', 'spasalon' ),
 	'id' => 'sidebar-project',

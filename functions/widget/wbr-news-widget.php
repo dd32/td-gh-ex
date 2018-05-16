@@ -21,7 +21,7 @@ class wbr_news_widget extends WP_Widget{
 		
 			'wbr_news_widget', // Base ID
 			
-			__('WBR : Recent News Widget', 'spasalon'), // Name
+			__('WBR: Recent news widget', 'spasalon'), // Name
 			
 			array( 'description' => __( 'To display your recent post', 'spasalon'), ) // Args
 			
@@ -143,7 +143,7 @@ class wbr_news_widget extends WP_Widget{
 		?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'news_cat' ); ?>"><?php _e( 'Select posts category','spasalon' ); ?></label> 
+			<label for="<?php echo $this->get_field_id( 'news_cat' ); ?>"><?php _e( 'Select post category','spasalon' ); ?></label> 
 			<select class="widefat" id="<?php echo $this->get_field_id( 'news_cat' ); ?>" name="<?php echo $this->get_field_name( 'news_cat' ); ?>">
 				<option value>--Select--</option>
 				<?php

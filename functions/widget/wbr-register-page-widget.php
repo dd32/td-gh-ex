@@ -19,9 +19,9 @@ class wbr_feature_page_widget extends WP_Widget{
 		
 			'wbr_feature_page_widget', // Base ID
 			
-			__('WBR : Page Widget', 'spasalon'), // Name
+			__('WBR: Page widget', 'spasalon'), // Name
 			
-			array( 'description' => __( 'Feature Page Item Widget', 'spasalon'), ) // Args
+			array( 'description' => __( 'Feature page item widget', 'spasalon'), ) // Args
 			
 		);
 	}
@@ -122,7 +122,7 @@ class wbr_feature_page_widget extends WP_Widget{
 		?>
 		
 		<p>
-			<label for="<?php echo $this->get_field_id( 'selected_page' ); ?>"><?php _e( 'Select Pages','spasalon' ); ?></label> 
+			<label for="<?php echo $this->get_field_id( 'selected_page' ); ?>"><?php _e( 'Select pages','spasalon' ); ?></label> 
 			
 			<select class="widefat" id="<?php echo $this->get_field_id( 'selected_page' ); ?>" name="<?php echo $this->get_field_name( 'selected_page' ); ?>">
 				

@@ -124,6 +124,10 @@ Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank y
 
 
 ============================Change Log================================
+@Version 1.9
+1. Added home page section banner section, service section, Product section through webriti companion plugin.
+@Version 1.8.4
+1. Update screen reader css.
 @Version 1.8.3
 1. Added demo images preview for wordpress.org
 @Version 1.8.2

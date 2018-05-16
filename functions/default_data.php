@@ -90,8 +90,8 @@ function default_data(){
 	// home page news settings
 	'enable_news'=>true,
 	'news_layout' => 2,
-	'news_title'=>'',
-	'news_contents'=>'',
+	'news_title'=> __('Our Latest News & Events','spasalon'),
+	'news_contents'=> 'The SpaSalon Produc Heading Title In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis quam eu ante ornare hendrerit.',
 	'blog_selected_category_id'=> 1,
 	'posts_per_page' => 2,
 	

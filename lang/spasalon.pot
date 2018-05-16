@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Spasalon\n"
-"POT-Creation-Date: 2017-07-12 11:21+0530\n"
-"PO-Revision-Date: 2017-07-12 11:20+0530\n"
+"POT-Creation-Date: 2018-05-16 17:03+0530\n"
+"PO-Revision-Date: 2018-05-16 17:02+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -97,12 +97,11 @@ msgstr ""
 
 #: content-none.php:23
 msgid ""
-"It seems we can not find what you are looking for. Perhaps searching can "
-"help."
+"It seems we can't find what you are looking for. Perhaps searching can help."
 msgstr ""
 
-#: content.php:24 functions.php:165 functions.php:183
-#: functions/widget/wbr-news-widget.php:108 index-news.php:92
+#: content.php:24 functions.php:212 functions.php:230
+#: functions/widget/wbr-news-widget.php:108 index-news.php:88
 msgid "Read More"
 msgstr ""
 
@@ -110,61 +109,40 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: functions.php:93
+#: functions.php:99
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:95
+#: functions.php:101
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:322
-msgid ""
-"Click the large blue button to start the dummy data import process.</br></"
-"br>Please be patient while WordPress imports all the content.</br></br>\n"
-"\t\t\t<h3>Recommended Plugins</h3>Spasalon theme supports the following "
-"plugins:</br> </br><li> <a href=\"https://wordpress.org/plugins/contact-"
-"form-7/\"> Contact form 7</a> </l1> </br> <li> <a href=\"https://wordpress."
-"org/plugins/woocommerce/\"> WooCommerce </a> </li><li> <a href=\"https://"
-"wordpress.org/plugins/spoontalk-social-media-icons-widget/\"> Spoon talk "
-"social media icon </a></li>"
+#: functions/customizer-notify/spasalon-customizer-notify.php:111
+msgid "Activating"
 msgstr ""
 
-#: functions/custom_control/class-dummy-import-control.php:10
-msgid "Import Dummy Data"
+#: functions/customizer-repeater/class/customizer-repeater-control.php:33
+msgid "Add new field"
 msgstr ""
 
-#: functions/custom_control/class-dummy-import-control.php:13
-#, php-format
-msgid ""
-"Save time by importing our demo data and make your site ready in minutes. %s"
+#: functions/customizer-repeater/class/customizer-repeater-control.php:38
+msgid "Customizer Repeater"
 msgstr ""
 
-#: functions/custom_control/class-dummy-import-control.php:13
-#: functions/spasalon-info/welcome-screen.php:67
-msgid "Import Demo Data"
-msgstr ""
-
-#: functions/customizer/banner-settings.php:9
-msgid "Banner settings"
-msgstr ""
-
-#: functions/customizer/banner-settings.php:14
-msgid "Category"
-msgstr ""
-
+#: functions/customizer-repeater/class/customizer-repeater-control.php:256
+#: functions/customizer-repeater/class/customizer-repeater-control.php:405
 #: functions/customizer/banner-settings.php:24
 #: functions/customizer/banner-settings.php:63
 #: functions/customizer/banner-settings.php:102
 #: functions/customizer/banner-settings.php:141
 #: functions/customizer/banner-settings.php:180
 #: functions/customizer/banner-settings.php:219
-#: functions/customizer/home-page.php:240
-#: functions/customizer/home-page.php:311
-#: functions/customizer/home-page.php:395 functions/widget/post-widget.php:60
+#: functions/customizer/home-page.php:59 functions/widget/post-widget.php:60
 msgid "Title"
 msgstr ""
 
+#: functions/customizer-repeater/class/customizer-repeater-control.php:263
+#: functions/customizer-repeater/class/customizer-repeater-control.php:412
 #: functions/customizer/banner-settings.php:35
 #: functions/customizer/banner-settings.php:74
 #: functions/customizer/banner-settings.php:113
@@ -174,16 +152,136 @@ msgstr ""
 msgid "Subtitle"
 msgstr ""
 
+#: functions/customizer-repeater/class/customizer-repeater-control.php:270
+#: functions/customizer-repeater/class/customizer-repeater-control.php:419
 #: functions/customizer/banner-settings.php:46
 #: functions/customizer/banner-settings.php:85
 #: functions/customizer/banner-settings.php:124
 #: functions/customizer/banner-settings.php:163
 #: functions/customizer/banner-settings.php:202
 #: functions/customizer/banner-settings.php:241
-#: functions/customizer/home-page.php:251
-#: functions/customizer/home-page.php:324
-#: functions/customizer/home-page.php:407
+#: functions/customizer/home-page.php:72
 msgid "Description"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:279
+#: functions/customizer-repeater/class/customizer-repeater-control.php:427
+msgid "Button Text"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:290
+#: functions/customizer-repeater/class/customizer-repeater-control.php:437
+#: functions/customizer-repeater/class/customizer-repeater-control.php:627
+#: functions/customizer-repeater/class/customizer-repeater-control.php:649
+msgid "Link"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:309
+msgid "Video URL"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:333
+#: functions/customizer-repeater/class/customizer-repeater-control.php:397
+msgid "Color"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:343
+#: functions/customizer-repeater/class/customizer-repeater-control.php:466
+msgid "Shortcode"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:351
+#: functions/customizer-repeater/class/customizer-repeater-control.php:475
+msgid "Designation"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:367
+#: functions/customizer-repeater/class/customizer-repeater-control.php:486
+msgid "Delete field"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:455
+msgid "Video Url"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:523
+msgid "Open link in new tab"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:534
+#: functions/customizer-repeater/class/customizer-repeater-control.php:603
+msgid "Icon"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:539
+#, php-format
+msgid ""
+"Note: Some icons may not be displayed here. You can see the full list of "
+"icons at %1$s."
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:558
+#: functions/customizer-repeater/class/customizer-repeater-control.php:604
+msgid "Image"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:561
+msgid "Upload Image"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:570
+msgid "Slide Format"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:574
+msgid "Standard"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:578
+msgid "Aside"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:582
+msgid "Quote"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:586
+msgid "Status"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:590
+msgid "Video"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:600
+msgid "Image type"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:605
+msgid "None"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:613
+msgid "Social icons"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:630
+#: functions/customizer-repeater/class/customizer-repeater-control.php:660
+msgid "Remove Icon"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:635
+#: functions/customizer-repeater/class/customizer-repeater-control.php:668
+msgid "Add Icon"
+msgstr ""
+
+#: functions/customizer/banner-settings.php:9
+#: functions/customizer/general-settings.php:15
+msgid "Banner settings"
+msgstr ""
+
+#: functions/customizer/banner-settings.php:14
+msgid "Category"
 msgstr ""
 
 #: functions/customizer/banner-settings.php:53
@@ -203,7 +301,7 @@ msgid "404"
 msgstr ""
 
 #: functions/customizer/banner-settings.php:209
-msgid "Woocommerce"
+msgid "WooCommerce"
 msgstr ""
 
 #: functions/customizer/customizer-pro.php:15
@@ -233,24 +331,40 @@ msgid ""
 "serve you better."
 msgstr ""
 
+#: functions/customizer/customizer_recommended_plugin.php:16
+msgid "Recommended Actions"
+msgstr ""
+
+#: functions/customizer/customizer_recommended_plugin.php:17
+msgid "Recommended Plugin"
+msgstr ""
+
+#: functions/customizer/customizer_recommended_plugin.php:18
+msgid "Install and Activate"
+msgstr ""
+
+#: functions/customizer/customizer_recommended_plugin.php:19
+msgid "Activate"
+msgstr ""
+
+#: functions/customizer/customizer_recommended_plugin.php:20
+msgid "Deactivate"
+msgstr ""
+
 #: functions/customizer/general-settings.php:10
 msgid "General settings"
 msgstr ""
 
-#: functions/customizer/general-settings.php:15
-msgid "Banner setting"
-msgstr ""
-
 #: functions/customizer/general-settings.php:26
-msgid "Banner strip"
+msgid "Banner Strip"
 msgstr ""
 
 #: functions/customizer/general-settings.php:40
-msgid "Call us on"
+msgid "Call us at"
 msgstr ""
 
 #: functions/customizer/general-settings.php:51
-msgid "Call us text"
+msgid "Call us field text"
 msgstr ""
 
 #: functions/customizer/general-settings.php:58
@@ -266,139 +380,44 @@ msgstr ""
 msgid "Copyright text"
 msgstr ""
 
-#: functions/customizer/home-page.php:12
-msgid "Slider section"
+#: functions/customizer/home-page.php:11
+msgid "Homepage section settings"
 msgstr ""
 
-#: functions/customizer/home-page.php:19
-msgid "Choose Post"
+#: functions/customizer/home-page.php:17
+msgid "News section"
 msgstr ""
 
-#: functions/customizer/home-page.php:26 functions/customizer/home-page.php:194
-#: functions/customizer/home-page.php:278
-#: functions/customizer/home-page.php:347
-msgid "Settings"
+#: functions/customizer/home-page.php:30
+msgid "Enable News section"
 msgstr ""
 
-#: functions/customizer/home-page.php:37
-msgid "Slider banner enable in home page"
-msgstr ""
-
-#: functions/customizer/home-page.php:52
-msgid "Banner title"
-msgstr ""
-
-#: functions/customizer/home-page.php:63
-msgid "Banner subtitle"
-msgstr ""
-
-#: functions/customizer/home-page.php:74
-msgid "Banner description"
-msgstr ""
-
-#: functions/customizer/home-page.php:88
-msgid "Select post"
-msgstr ""
-
-#: functions/customizer/home-page.php:102
-msgid "Slider thumbnails enable in home page"
-msgstr ""
-
-#: functions/customizer/home-page.php:119
-#: functions/customizer/home-page.php:133
-#: functions/customizer/home-page.php:147
-msgid "Select thumbnail post"
-msgstr ""
-
-#: functions/customizer/home-page.php:160
-msgid "Click here to add slides"
-msgstr ""
-
-#: functions/customizer/home-page.php:189
-msgid "Service section"
-msgstr ""
-
-#: functions/customizer/home-page.php:206
-msgid "Hide service section"
-msgstr ""
-
-#: functions/customizer/home-page.php:218
-#: functions/customizer/home-page.php:372
+#: functions/customizer/home-page.php:42
 #: functions/widget/wbr-news-widget.php:179
 msgid "Select column layout"
 msgstr ""
 
-#: functions/customizer/home-page.php:229
-#: functions/customizer/home-page.php:299
-msgid "Section Header"
-msgstr ""
-
-#: functions/customizer/home-page.php:273
-msgid "Product section"
-msgstr ""
-
-#: functions/customizer/home-page.php:291
-msgid "Hide Product section"
-msgstr ""
-
-#: functions/customizer/home-page.php:342
-msgid "News section"
-msgstr ""
-
-#: functions/customizer/home-page.php:360
-msgid "Enable News Section"
-msgstr ""
-
-#: functions/customizer/home-page.php:384
-msgid "News Header"
-msgstr ""
-
-#: functions/spasalon-info/sections/actions-required.php:13
-msgid "1. Creating Homepage using Home Page Template."
-msgstr ""
-
-#: functions/spasalon-info/sections/actions-required.php:14
-msgid ""
-"To setup exact replica of home page as shown in our demo, you have to create "
-"a WordPress page using a template \"Business Template\". Business Template "
-"shows all the section like banner, services, products, Latest News, 4 Column "
-"Footer etc which is ideal for any business site. Kindly refer the snapshot."
-msgstr ""
-
-#: functions/spasalon-info/sections/actions-required.php:21
-msgid "2. Assign Homepage as Front Page Displays."
-msgstr ""
-
-#: functions/spasalon-info/sections/actions-required.php:22
-msgid ""
-"If you want to show Homepage as Front Page? You need to set the Homepage as "
-"static page as shown in the snapshot below. Now go to custmizer and start "
-"configuring the sections in  Business Template. Hope you will find this "
-"theme useful."
-msgstr ""
-
-#: functions/spasalon-info/sections/actions-required.php:30
-#: functions/spasalon-info/sections/actions-required.php:37
-#: functions/spasalon-info/sections/getting-started.php:36
-msgid "spasalon Blue Child Theme"
+#: functions/customizer/home-page.php:56 functions/default_data.php:93
+msgid "Our Latest News & Events"
 msgstr ""
 
 #: functions/spasalon-info/sections/child-themes.php:16
-msgid "Install & Use Spasalon Child Themes"
+msgid "Install and use the SpaSalon child themes"
 msgstr ""
 
 #: functions/spasalon-info/sections/child-themes.php:18
 msgid ""
-"Below you will find a selection of spasalon center lite child themes that "
-"will totally transform the look of your site."
+"Below you will find a selection of SpaSalon child themes that will totally "
+"transform the look of your site."
 msgstr ""
 
 #: functions/spasalon-info/sections/child-themes.php:27
-msgid "Dream Spa Child Theme"
+msgid "Dream Spa child theme"
 msgstr ""
 
 #: functions/spasalon-info/sections/child-themes.php:29
 #: functions/spasalon-info/sections/child-themes.php:35
+#: functions/spasalon-info/sections/child-themes.php:44
 msgid "Dream Spa"
 msgstr ""
 
@@ -409,10 +428,6 @@ msgstr ""
 
 #: functions/spasalon-info/sections/child-themes.php:38
 msgid "Live Preview"
-msgstr ""
-
-#: functions/spasalon-info/sections/child-themes.php:44
-msgid "dream-spa - Current theme"
 msgstr ""
 
 #: functions/spasalon-info/sections/child-themes.php:45
@@ -428,7 +443,7 @@ msgid "Frontpage Sections"
 msgstr ""
 
 #: functions/spasalon-info/sections/free_pro.php:20
-msgid "You will find number of sections on front-page"
+msgid "You will find number of sections on frontpage"
 msgstr ""
 
 #: functions/spasalon-info/sections/free_pro.php:24
@@ -436,336 +451,270 @@ msgid "Page Templates Support"
 msgstr ""
 
 #: functions/spasalon-info/sections/free_pro.php:25
-msgid "Various Page Template included in Spasalon Premium Theme."
+msgid "Various page templates are included in SpaSalon PRO."
+msgstr ""
+
+#: functions/spasalon-info/sections/free_pro.php:29
+msgid "Custom Widgets"
 msgstr ""
 
 #: functions/spasalon-info/sections/free_pro.php:30
-msgid "No of  sidebar on Homepage"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:31
-msgid "Theme have many sidebar on Front page."
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:35
-msgid "Custom Widget"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:36
 msgid "Theme Have number of beautifuly designed Custom Widgets"
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:40
-msgid "Service Content type Widget"
+#: functions/spasalon-info/sections/free_pro.php:34
+msgid "\"Service Content\" type Repeater control"
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:41
-msgid "Add Services by using widget Spasalon: Page / Service Widget"
+#: functions/spasalon-info/sections/free_pro.php:35
+msgid "Add Services by using the Repeater control"
+msgstr ""
+
+#: functions/spasalon-info/sections/free_pro.php:39
+msgid "Jetpack gallery support"
+msgstr ""
+
+#: functions/spasalon-info/sections/free_pro.php:40
+msgid "Create awesome galleries with overlays"
+msgstr ""
+
+#: functions/spasalon-info/sections/free_pro.php:44
+#: functions/spasalon-info/sections/upgrade.php:24
+msgid "WooCommerce support"
 msgstr ""
 
 #: functions/spasalon-info/sections/free_pro.php:45
-msgid "Homepage Section / Sidebar Layout"
+msgid "Create your online shop with the SpaSalon theme"
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:46
-msgid "Customize Home page Sections Layout"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:50
-msgid "Jetpack Gallery Support"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:51
-msgid "Create Awesome Gallery with Overlay"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:55
-#: functions/spasalon-info/sections/upgrade.php:24
-msgid "WooCommerce Support"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:56
-msgid "Create your online shop with Spasalon Theme"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:60
+#: functions/spasalon-info/sections/free_pro.php:49
 msgid "Mobile Friendly"
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:61
-msgid "Responsive  layout in all devices."
+#: functions/spasalon-info/sections/free_pro.php:50
+msgid "A responsive layout for all devices."
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:65
+#: functions/spasalon-info/sections/free_pro.php:54
 msgid "Products"
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:66
+#: functions/spasalon-info/sections/free_pro.php:55
 msgid ""
-"Create Categorized Products by using product templates. Also show Diffrent "
-"set of product on diffrent page. "
+"Categorize products by using the product templates, and show different sets "
+"of products on different pages."
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:70
+#: functions/spasalon-info/sections/free_pro.php:59
 msgid "Contact Form Support"
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:71
+#: functions/spasalon-info/sections/free_pro.php:60
 msgid ""
-"Default WordPress Contact Form and Contact Form 7 support. Add the forms "
-"using predefined Contact Page Templates"
+"SpaSalon supports the default WordPress Contact Form and Contact Form 7. Add "
+"the forms by using the predefined Contact Page Template"
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:75
+#: functions/spasalon-info/sections/free_pro.php:64
 #: functions/spasalon-info/sections/upgrade.php:16
 msgid "SEO Friendly URL"
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:76
+#: functions/spasalon-info/sections/free_pro.php:65
 msgid ""
-"This feature allow you to change custom post type slug names in the url."
+"This feature allows you to change the custom post type slug names in the url."
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:80
+#: functions/spasalon-info/sections/free_pro.php:69
 #: functions/spasalon-info/sections/upgrade.php:88
 msgid "Mulitple Color Schemes"
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:81
+#: functions/spasalon-info/sections/free_pro.php:70
 msgid ""
-"Enjoy with 9 preset color schemes. You can also create custom skin without "
+"Enjoy 9 preset color schemes. You can also create custom color skins without "
 "adding any code."
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:85
+#: functions/spasalon-info/sections/free_pro.php:74
 msgid "Google Map"
+msgstr ""
+
+#: functions/spasalon-info/sections/free_pro.php:75
+msgid ""
+"Display your shop and/or business location on your website. SpaSalon "
+"supports all GoogleMaps plugins that generate shortcodes."
+msgstr ""
+
+#: functions/spasalon-info/sections/free_pro.php:80
+msgid "WPML Support"
+msgstr ""
+
+#: functions/spasalon-info/sections/free_pro.php:81
+msgid ""
+"Create multilingual websites: SpaSalon supports popular plugins WPML and "
+"Polylang"
+msgstr ""
+
+#: functions/spasalon-info/sections/free_pro.php:85
+msgid "Access to demo data file"
 msgstr ""
 
 #: functions/spasalon-info/sections/free_pro.php:86
 msgid ""
-"Display your Shop and Business location on your website. Support for all the "
-"Google Map plugins which generates shortcode.  "
+"Create an exact replica of our demo site by importing the demo data file."
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:91
-msgid "WPML Support"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:92
-msgid ""
-"Create Multilingual Website. Support for famous plugin like: WPML / Polylang "
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:96
-msgid "Access to Dummy Data File"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:97
-msgid "Create exact replica of our demo site by importing the dummy data file."
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:101
+#: functions/spasalon-info/sections/free_pro.php:90
 msgid "Support Forum"
 msgstr ""
 
+#: functions/spasalon-info/sections/free_pro.php:91
+msgid "Get instant 24x7 support on our support forum."
+msgstr ""
+
 #: functions/spasalon-info/sections/free_pro.php:102
-msgid "Get instant 24x7 support on Our Support Forum."
+msgid "SpaSalon Lite"
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:113
-msgid "Spasalon Lite"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:117
+#: functions/spasalon-info/sections/free_pro.php:106
 msgid ""
-"Banner Image, Service, Static Product, Latest News, 4 Column Footer "
-"Widgetizeds area"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:118
-msgid "Business Template, Full Width Template"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:120
-msgid "Spasalon: Page Widget [Service, Product], Spasalon: Latest News Widget"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:121
-msgid "Support For Featured Image"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:122
-msgid "Not Customizable"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:123
-msgid "Simple Thumbnail Gallery"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:133
-msgid "On WordPress.org Support Forum"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:145
-msgid "Spasalon Pro"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:149
-msgid ""
-"Slider [Unlimited Slides], Service [Unlimited Services], Products [Unlimited "
-"Products], Latest News, Additional Section and 4 Column Footer Widgetizeds "
+"Banner image, Services, static products, Latest news, 4-column footer widget "
 "area"
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:150
+#: functions/spasalon-info/sections/free_pro.php:107
+msgid "Business Template, Full Width Template"
+msgstr ""
+
+#: functions/spasalon-info/sections/free_pro.php:108
+msgid "Support for featured image"
+msgstr ""
+
+#: functions/spasalon-info/sections/free_pro.php:109
+msgid "Simple thumbnail gallery"
+msgstr ""
+
+#: functions/spasalon-info/sections/free_pro.php:120
+msgid "On WordPress.org Support Forum"
+msgstr ""
+
+#: functions/spasalon-info/sections/free_pro.php:132
+msgid "SpaSalon PRO"
+msgstr ""
+
+#: functions/spasalon-info/sections/free_pro.php:136
+msgid ""
+"Slider [Unlimited Slides], Service [Unlimited Services], Products [Unlimited "
+"Products], Testimonial[Unlimited Testimonial], Latest News, Team[Unlimited "
+"Team], Gallery, Client[Unlimited Client], Callout, Additional Section and 4-"
+"column footer widget area"
+msgstr ""
+
+#: functions/spasalon-info/sections/free_pro.php:137
 msgid ""
 "Homepage, Homepage 2, About us, Blog Left Sidebar, Blog Right Sidebar, Blog "
 "Full Width, Page Full Width, Product Page and Contact Page."
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:152
+#: functions/spasalon-info/sections/free_pro.php:138
 msgid ""
-"Spasalon: Page / Service Widget, Spasalon: Product Category Widget, "
-"Spasalon: Recent Products Widget, Spasalon: Team Widget, Spasalon: Latest "
-"News Widget, Spasalon: Latest Post and Spasalon: Contact Widget"
+"Support for thousands of Font-Awesome icons, Featured Images, and Read More "
+"button/link"
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:153
-msgid ""
-"Support for thousands of Font-Awesome Icon , Featured Images and Read More "
-"Button / Link"
+#: functions/spasalon-info/sections/free_pro.php:139
+msgid "Overlay effects gallery"
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:154
-msgid "Customizable"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:155
-msgid "Overlay Effects Gallery"
-msgstr ""
-
-#: functions/spasalon-info/sections/free_pro.php:165
+#: functions/spasalon-info/sections/free_pro.php:150
 msgid "Premium Support Forum"
 msgstr ""
 
-#: functions/spasalon-info/sections/free_pro.php:176
-msgid "Get Spasalon PRO Now!"
+#: functions/spasalon-info/sections/free_pro.php:161
+msgid "Get SpaSalon PRO now!"
 msgstr ""
 
 #: functions/spasalon-info/sections/getting-started.php:14
-msgid "About Spasalon Lite Theme"
+msgid "About SpaSalon Lite"
 msgstr ""
 
 #: functions/spasalon-info/sections/getting-started.php:20
 msgid ""
-"SpaSalon is a responsive multipurpose WordPress theme best suitable for "
-"beauty industry like Cosmetology, Hair Styling, Spa, Beauty Salon, Massage & "
-"Therapy Center and Beauty Care website. Theme is not only limited to beauty "
-"sector rather you can use it for any type of business."
+"SpaSalon is a responsive multipurpose WordPress theme best suitable for the "
+"beauty industry, to build websites for cosmetologists, hair styling, SPAs, "
+"beauty salons, massage and therapy centres, beauty care, etc. In any case, "
+"SpaSalon is not limited to the beauty sector, so you can use it for any type "
+"of business."
 msgstr ""
 
 #: functions/spasalon-info/sections/getting-started.php:22
 msgid ""
-"Packed with everything you need to launch your site hassle free! Powerful "
-"and user friendly Customize Theme Options, Sidebar enabled HomePage Sections "
-"having support for all the WordPress core widgets. Premium theme is packed "
-"with many widgets like Service Page Widget, Product Widget, Team Widget, "
-"Latest News Widget and Contact Widget etc "
+"You can use this theme for any type of activity. SpaSalon is compatible with "
+"popular plugins like WPML and Polylang, and has predefined versions of "
+"Contact pages, Services pages, Portfolio columned layout pages, About Us and "
+"Blog layout pages to help you create an effective and impactful web presence."
 msgstr ""
 
-#: functions/spasalon-info/sections/getting-started.php:25
+#: functions/spasalon-info/sections/getting-started.php:24
+#: functions/spasalon-info/welcome-screen.php:233
+msgid "Getting Started"
+msgstr ""
+
+#: functions/spasalon-info/sections/getting-started.php:28
 msgid ""
-"Premium version even allows you to configure the layout of sidebars, for "
-"example if you want to show Services, Products, Latest News and Team than "
-"you are not required to add any css of php code just specify the section "
-"layout and get the desired result. Theme also support famous Page Builders "
-"since number of widgets are built in. "
+"Install and activate the Webriti Companion plugin to take full advantage of "
+"all the features this theme has to offer. Go to Customize and install the "
+"Webriti Companion plugin."
 msgstr ""
 
-#: functions/spasalon-info/sections/getting-started.php:29
-msgid ""
-"Note: Intresting fact about this theme is, after upgrade you can start from "
-"where you have left in the lite version. You have to install the premium "
-"version as a separate package like any other WordPress Theme."
+#: functions/spasalon-info/sections/getting-started.php:31
+msgid "Go to the Customizer"
 msgstr ""
 
-#: functions/spasalon-info/sections/getting-started.php:46
+#: functions/spasalon-info/sections/getting-started.php:38
+msgid "SpaSalon Blue child theme"
+msgstr ""
+
+#: functions/spasalon-info/sections/getting-started.php:48
 msgid "Useful Links"
 msgstr ""
 
-#: functions/spasalon-info/sections/getting-started.php:54
+#: functions/spasalon-info/sections/getting-started.php:56
 msgid "Lite Demo"
 msgstr ""
 
-#: functions/spasalon-info/sections/getting-started.php:58
-msgid "View Pro"
+#: functions/spasalon-info/sections/getting-started.php:60
+msgid "View PRO"
 msgstr ""
 
-#: functions/spasalon-info/sections/getting-started.php:61
+#: functions/spasalon-info/sections/getting-started.php:63
 msgid "Premium Theme Support"
 msgstr ""
 
-#: functions/spasalon-info/sections/getting-started.php:70
-msgid "Rate This Theme"
+#: functions/spasalon-info/sections/getting-started.php:72
+msgid "Rate this theme"
 msgstr ""
 
-#: functions/spasalon-info/sections/getting-started.php:73
+#: functions/spasalon-info/sections/getting-started.php:75
 msgid "Support"
 msgstr ""
 
-#: functions/spasalon-info/sections/import-data.php:11
-msgid "Install Now"
-msgstr ""
-
-#: functions/spasalon-info/sections/import-data.php:34
-msgid "Active Now"
-msgstr ""
-
-#: functions/spasalon-info/sections/import-data.php:50
-msgid "Importing Dummy Content"
-msgstr ""
-
-#: functions/spasalon-info/sections/import-data.php:51
-msgid ""
-"<p><strong>One Click Demo Import</strong> is the WordPress Plugin which "
-"helps in creating the exact replica of our demo site. Just click the button "
-"to proceed further.</p>"
-msgstr ""
-
-#: functions/spasalon-info/sections/import-data.php:52
-msgid "Key Notes:"
-msgstr ""
-
-#: functions/spasalon-info/sections/import-data.php:54
-msgid "Click the button to install the plugin. Ignore if already installed."
-msgstr ""
-
-#: functions/spasalon-info/sections/import-data.php:55
-msgid ""
-"Activate the plugin so that they can read the dummy data files from the "
-"theme folder and import the content for you."
-msgstr ""
-
-#: functions/spasalon-info/sections/import-data.php:56
-msgid "After activation go to Appreance >> Import Demo Data."
-msgstr ""
-
 #: functions/spasalon-info/sections/upgrade.php:11
-#: functions/spasalon-info/welcome-screen.php:219
-msgid "Why Upgrade Pro"
+#: functions/spasalon-info/welcome-screen.php:234
+msgid "Why upgrade to PRO?"
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:17
 msgid ""
-"This feature helps you to rename the slug names from the URL allowing you to "
-"make it SEO friendly."
+"This feature allows you to rename the slug from the URL allowing you to make "
+"it more SEO friendly."
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:25
 msgid ""
-"Want to create online store, Its really easy using our theme, It transform "
-"your website in a online store. Spasalon Pro has given special attention to "
-"its WooCommerce integration."
+"It's really easy to create an online store with SpaSalon PRO: we have given "
+"extra care to its WooCommerce integration."
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:33
@@ -774,19 +723,19 @@ msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:34
 msgid ""
-"Beautifully style navigation/menu in spasalon Theme. You can make multi "
-"level menu. Multi Level menu means that you can create sub menu."
+"SpaSalon features beautifully styled navigation/menu. You can create multi "
+"level menus, that is sub menus to your primary navigation."
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:42
-msgid "Front Page Slider"
+msgid "Front page slider"
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:43
 msgid ""
-"Premium theme have 2 type of sliders each can be shown usign different "
-"homepage templates. Add any number of slides having title, subtitle and "
-"custom read more button."
+"SpaSalon PRO features 2 types of sliders, and each can be shown using a "
+"different homepage templates. Add any number of slides with titles, "
+"subtitles and a custom \"read more\" button."
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:51
@@ -795,27 +744,24 @@ msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:53
 msgid ""
-"HomePage Service section is created via Service Sidebar. Use the Spasalon: "
-"Page Widget, Featured Page for adding service type content. You can display "
-"as many services you want having support for thousands of Font Awesome "
-"Icons, custom icons and image graphics. Setting is provided for the changing "
-"the postion of image / icon around the title. Setting in customize screen "
-"allow you to select column layout for service section sidebar. "
+"The HomePage Services section is created through the Repeater control. Use "
+"the Repeater control to add content like services. You can display as many "
+"services as you want and use thousands of Font Awesome icons, custom icons, "
+"and image graphics."
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:61
-msgid "Product Features"
+msgid "Product features"
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:62
 msgid ""
-"Showcase any number of product. Theme will provide you an option for "
-"creating product by using product page template. If you have number of "
-"products to show than these templates will be the answer. You can display "
-"products on homepage with carousel effects and you can also create "
-"categorised products, which displays all the product categories on single "
-"place. In fact we have coded in such a manner so that you can create any "
-"number of different set of products."
+"Showcase any number of product. SpaSalon provides you an option to create a "
+"product by using a product page template. If you have a number of products "
+"to show, than using this template is the answer. Display products on your "
+"homepage with carousel effects, and create products' categories, which will "
+"display all products of a category in a single place. In fact, we have coded "
+"SpaSalon so that you can create any number of different sets of products."
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:70
@@ -824,26 +770,27 @@ msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:71
 msgid ""
-"Commonly this section is used to display  Latest News, Announcement and "
-"Events type of content. Since this section is created via News Sidebar you "
-"can easily use other WordPress widgets. Powerful styling of all the sidebar "
-"areas on HomePage makes this theme very flexible. "
+"Commonly this section is used to display Latest news, Announcements and "
+"Events. Since this section is created through the News sidebar, you can "
+"easily also use other WordPress widgets. Powerful styling of all the sidebar "
+"areas on HomePage makes this theme very flexible."
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:78
-msgid "Team Feature"
+msgid "Team feature"
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:79
 msgid ""
-"Team features are a powerful way to display your team member via Homepage "
-"Additional Sidebar. Use the Spasalon: Team Widget for showig team member."
+"The Team features are a powerful way to display the members of your team "
+"through the Homepage's additional sidebar. Use the SpaSalon: Team widget to "
+"show your team!"
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:89
 msgid ""
-"You will get 9 predefined color skins and you can even make yours favorite "
-"color schemes using Custom Color Setting in the Customizer."
+"You get 9 predefined color skins and you can even make your own favorite "
+"color scheme using the Custom color setting in the Customizer."
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:97
@@ -852,8 +799,8 @@ msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:98
 msgid ""
-"We provide good  knowledge base articles which helps you to create an "
-"effective wesbite. You can visit these articles on our  "
+"We provide good knowledge base articles to help you create an effective "
+"wesbite. You can see these articles on our"
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:99
@@ -866,20 +813,20 @@ msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:108
 msgid ""
-"Building website with our custom widgets is very simple. Just place them in "
-"inside the available Sidebar or even in the content"
+"Personalizing your website with our custom widgets is very simple: just "
+"place them inside the sidebar, or drop them inside the content"
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:117
 msgid ""
-"<p><strong> Jetpack Gallery Support</strong></p><p>The native WordPress "
-"image gallery displays as a grid of image thumbnails. If you want to show "
-"overlay effects on the gallery images? You need to install <a href=\"https://"
-"wordpress.org/plugins/jetpack/\" target=\"_blank\">Jetpack plugin,</a> Using "
-"Jetpack you can create four types of gallery style like Tiled Mosaic, Square "
-"Tiles, Circles and Tiled Columns. See gallery look on Spasalon theme demo.<a "
-"href=\"http://webriti.com/demo/wp/spasalon/gallery/\" target=\"_blank\"> "
-"Click Here</a></p>"
+"<p><strong> Jetpack gallery support</strong></p><p>The native WordPress "
+"image gallery displays a grid of image thumbnails. If you want to show an "
+"overlay effects on the gallery images you need to install the <a href="
+"\"https://wordpress.org/plugins/jetpack/\" target=\"_blank\">Jetpack plugin,"
+"</a> Using Jetpack, you can create four types of gallery styles, like Tiled "
+"Mosaic, Square Tiles, Circles and Tiled Columns. See the gallery looks on "
+"the SpaSalon demo.<a href=\"http://webriti.com/demo/wp/spasalon/gallery/\" "
+"target=\"_blank\"> Click Here</a></p>"
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:127
@@ -888,54 +835,40 @@ msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:128
 msgid ""
-"Theme supports  yet another famous plugin WPML / Polylang. With the help of "
-"this support you can create website in multiple languages."
+"Theme supports popular plugins WPML and Polylang. With these plugins you can "
+"translate your website in multiple languages."
 msgstr ""
 
-#: functions/spasalon-info/welcome-screen.php:58
+#: functions/spasalon-info/welcome-screen.php:61
+#, php-format
+msgid "Welcome to %1$s - Version %2$s"
+msgstr ""
+
+#: functions/spasalon-info/welcome-screen.php:63
 #, php-format
 msgid ""
-"Welcome! Thank you for choosing Spasalon! To fully take advantage of the "
-"best our theme can offer please make sure you visit our %swelcome page%s."
+"Welcome! Thank you for choosing Spasalon WordPress theme. To take full "
+"advantage of the features this theme has to offer visit our %swelcome page%s."
 msgstr ""
 
-#: functions/spasalon-info/welcome-screen.php:59
-msgid "Get started with Spasalon"
+#: functions/spasalon-info/welcome-screen.php:64
+msgid "Get started with SpaSalon"
 msgstr ""
 
-#: functions/spasalon-info/welcome-screen.php:67
-#, php-format
-msgid ""
-"Save time by import our demo data, your website will be set up and ready to "
-"customize in minutes. %s"
-msgstr ""
-
-#: functions/spasalon-info/welcome-screen.php:110
+#: functions/spasalon-info/welcome-screen.php:126
 msgid "Hooray! There are no required actions for you right now."
 msgstr ""
 
-#: functions/spasalon-info/welcome-screen.php:147
+#: functions/spasalon-info/welcome-screen.php:163
 msgid "View Theme Info"
 msgstr ""
 
-#: functions/spasalon-info/welcome-screen.php:217
-msgid "Getting Started"
-msgstr ""
-
-#: functions/spasalon-info/welcome-screen.php:218
-msgid "Actions Required"
-msgstr ""
-
-#: functions/spasalon-info/welcome-screen.php:220
+#: functions/spasalon-info/welcome-screen.php:235
 msgid "Free VS PRO"
 msgstr ""
 
-#: functions/spasalon-info/welcome-screen.php:221
+#: functions/spasalon-info/welcome-screen.php:236
 msgid "Child Themes"
-msgstr ""
-
-#: functions/spasalon-info/welcome-screen.php:222
-msgid "One Click Demo Import"
 msgstr ""
 
 #: functions/widget/post-widget.php:13
@@ -943,7 +876,7 @@ msgid "WBR : Latest Posts"
 msgstr ""
 
 #: functions/widget/post-widget.php:14
-msgid "Latest Post Widget"
+msgid "Latest post widget"
 msgstr ""
 
 #: functions/widget/post-widget.php:65
@@ -954,40 +887,40 @@ msgstr ""
 msgid "Sidebar widget area"
 msgstr ""
 
-#: functions/widget/sidebars.php:21 functions/widget/sidebars.php:23
+#: functions/widget/sidebars.php:21
 msgid "Service content widget area"
 msgstr ""
 
-#: functions/widget/sidebars.php:31 functions/widget/sidebars.php:33
+#: functions/widget/sidebars.php:27 functions/widget/sidebars.php:29
 msgid "Project content widget area"
 msgstr ""
 
-#: functions/widget/sidebars.php:41 functions/widget/sidebars.php:43
+#: functions/widget/sidebars.php:37 functions/widget/sidebars.php:39
 msgid "News section widget area"
 msgstr ""
 
-#: functions/widget/sidebars.php:51 functions/widget/sidebars.php:53
+#: functions/widget/sidebars.php:47 functions/widget/sidebars.php:49
 msgid "Footer sidebar one"
 msgstr ""
 
-#: functions/widget/sidebars.php:61 functions/widget/sidebars.php:63
+#: functions/widget/sidebars.php:57 functions/widget/sidebars.php:59
 msgid "Footer sidebar two"
 msgstr ""
 
-#: functions/widget/sidebars.php:71 functions/widget/sidebars.php:73
+#: functions/widget/sidebars.php:67 functions/widget/sidebars.php:69
 msgid "Footer sidebar three"
 msgstr ""
 
-#: functions/widget/sidebars.php:81 functions/widget/sidebars.php:83
+#: functions/widget/sidebars.php:77 functions/widget/sidebars.php:79
 msgid "Footer sidebar four"
 msgstr ""
 
-#: functions/widget/sidebars.php:91 functions/widget/sidebars.php:93
+#: functions/widget/sidebars.php:87 functions/widget/sidebars.php:89
 msgid "Woocommerce sidebar widget area"
 msgstr ""
 
 #: functions/widget/wbr-news-widget.php:24
-msgid "WBR : Recent News Widget"
+msgid "WBR: Recent news widget"
 msgstr ""
 
 #: functions/widget/wbr-news-widget.php:26
@@ -995,7 +928,7 @@ msgid "To display your recent post"
 msgstr ""
 
 #: functions/widget/wbr-news-widget.php:146
-msgid "Select posts category"
+msgid "Select post category"
 msgstr ""
 
 #: functions/widget/wbr-news-widget.php:199
@@ -1003,15 +936,15 @@ msgid "Exclude post id ( like : 1,2,3 )"
 msgstr ""
 
 #: functions/widget/wbr-register-page-widget.php:22
-msgid "WBR : Page Widget"
+msgid "WBR: Page widget"
 msgstr ""
 
 #: functions/widget/wbr-register-page-widget.php:24
-msgid "Feature Page Item Widget"
+msgid "Feature page item widget"
 msgstr ""
 
 #: functions/widget/wbr-register-page-widget.php:125
-msgid "Select Pages"
+msgid "Select pages"
 msgstr ""
 
 #: functions/widget/wbr-register-page-widget.php:165
@@ -1032,7 +965,7 @@ msgid "Spasalon"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://webriti.com/spasalon-lite-description/"
+msgid "https://webriti.com/spasalon-lite-description/"
 msgstr ""
 
 #. Author of the plugin/theme
@@ -1040,5 +973,223 @@ msgid "webriti"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://www.webriti.com"
+msgid "https://www.webriti.com"
+msgstr ""
+
+#: inc/spasalon/features/feature-project-section.php:8
+msgid "Project settings"
+msgstr ""
+
+#: inc/spasalon/features/feature-project-section.php:29
+msgid "Enable Home Project section"
+msgstr ""
+
+#: inc/spasalon/features/feature-project-section.php:39
+#: inc/spasalon/sections/spasalon-portfolio-section.php:14
+msgid "Spasalon Our Product Range"
+msgstr ""
+
+#: inc/spasalon/features/feature-project-section.php:46
+#: inc/spasalon/features/feature-project-section.php:94
+#: inc/spasalon/features/feature-project-section.php:143
+#: inc/spasalon/features/feature-project-section.php:190
+#: inc/spasalon/features/feature-project-section.php:238
+#: inc/spasalon/features/feature-project-section.php:285
+#: inc/spasalon/features/feature-service-section.php:34
+msgid "Title"
+msgstr ""
+
+#: inc/spasalon/features/feature-project-section.php:61
+#: inc/spasalon/features/feature-project-section.php:108
+#: inc/spasalon/features/feature-project-section.php:157
+#: inc/spasalon/features/feature-project-section.php:204
+#: inc/spasalon/features/feature-project-section.php:252
+#: inc/spasalon/features/feature-project-section.php:299
+#: inc/spasalon/features/feature-service-section.php:45
+msgid "Description"
+msgstr ""
+
+#: inc/spasalon/features/feature-project-section.php:77
+#: inc/spasalon/features/feature-project-section.php:125
+#: inc/spasalon/features/feature-project-section.php:173
+#: inc/spasalon/features/feature-project-section.php:219
+#: inc/spasalon/features/feature-project-section.php:268
+msgid "Image"
+msgstr ""
+
+#: inc/spasalon/features/feature-project-section.php:88
+msgid "Make-up Products"
+msgstr ""
+
+#: inc/spasalon/features/feature-project-section.php:137
+msgid "Golden Cream"
+msgstr ""
+
+#: inc/spasalon/features/feature-project-section.php:184
+msgid "Facial Toner"
+msgstr ""
+
+#: inc/spasalon/features/feature-project-section.php:232
+msgid "Premium Cleanser"
+msgstr ""
+
+#: inc/spasalon/features/feature-project-section.php:279
+msgid "Silver Cleanser"
+msgstr ""
+
+#: inc/spasalon/features/feature-service-section.php:8
+msgid "Service Settings"
+msgstr ""
+
+#: inc/spasalon/features/feature-service-section.php:20
+msgid "Enable Home service section"
+msgstr ""
+
+#: inc/spasalon/features/feature-service-section.php:29
+#: inc/spasalon/sections/spasalon-features-section.php:12
+msgid "Treatment we are offering"
+msgstr ""
+
+#: inc/spasalon/features/feature-service-section.php:41
+#: inc/spasalon/sections/spasalon-features-section.php:13
+msgid ""
+"In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor "
+"turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, "
+"ullamcorper vitae accumsan eu,congue in nulla. Cras hendrerit mi quis nisi "
+"semper in sodales nisl faucibus. Sed quis quam eu ante ornare hendrerit."
+msgstr ""
+
+#: inc/spasalon/features/feature-service-section.php:56
+msgid "Service content"
+msgstr ""
+
+#: inc/spasalon/features/feature-service-section.php:58
+msgid "Add new service"
+msgstr ""
+
+#: inc/spasalon/features/feature-service-section.php:59
+msgid "Service"
+msgstr ""
+
+#: inc/spasalon/features/feature-slider-section.php:9
+msgid "Slider settings"
+msgstr ""
+
+#: inc/spasalon/features/feature-slider-section.php:30
+msgid "Enable Home slider section"
+msgstr ""
+
+#: inc/spasalon/features/feature-slider-section.php:50
+msgid "Enable Banner strip section"
+msgstr ""
+
+#: inc/spasalon/features/feature-slider-section.php:62
+#: inc/spasalon/sections/spasalon-slider-section.php:58
+msgid "Producing"
+msgstr ""
+
+#: inc/spasalon/features/feature-slider-section.php:69
+msgid "Banner title"
+msgstr ""
+
+#: inc/spasalon/features/feature-slider-section.php:77
+#: inc/spasalon/sections/spasalon-slider-section.php:59
+msgid "Experience"
+msgstr ""
+
+#: inc/spasalon/features/feature-slider-section.php:85
+msgid "Banner subtitle"
+msgstr ""
+
+#: inc/spasalon/features/feature-slider-section.php:101
+msgid "Banner description"
+msgstr ""
+
+#: inc/spasalon/features/feature-slider-section.php:109
+#: inc/spasalon/sections/spasalon-slider-section.php:61
+msgid "Call us on"
+msgstr ""
+
+#: inc/spasalon/features/feature-slider-section.php:117
+msgid "Banner call title"
+msgstr ""
+
+#: inc/spasalon/features/feature-slider-section.php:126
+#: inc/spasalon/sections/spasalon-slider-section.php:62
+msgid "201 567 89785"
+msgstr ""
+
+#: inc/spasalon/features/feature-slider-section.php:134
+msgid "Banner call number"
+msgstr ""
+
+#: inc/spasalon/features/feature-slider-section.php:154
+msgid "Slider Image"
+msgstr ""
+
+#: inc/spasalon/features/feature-slider-section.php:177
+msgid "Enable Thumbnail section"
+msgstr ""
+
+#: inc/spasalon/features/feature-slider-section.php:195
+#: inc/spasalon/features/feature-slider-section.php:215
+#: inc/spasalon/features/feature-slider-section.php:236
+msgid "Thumbnail Image"
+msgstr ""
+
+#: inc/spasalon/sections/spasalon-features-section.php:205
+msgid "Spa Treatment"
+msgstr ""
+
+#: inc/spasalon/sections/spasalon-features-section.php:215
+msgid "Detox Treatment"
+msgstr ""
+
+#: inc/spasalon/sections/spasalon-features-section.php:225
+msgid "Facial Treatment"
+msgstr ""
+
+#: inc/spasalon/sections/spasalon-features-section.php:235
+msgid "Other Treatment"
+msgstr ""
+
+#: inc/spasalon/sections/spasalon-portfolio-section.php:15
+msgid ""
+"A SpaSalon Produc Heading Title In commodo pulvinar metus, id tristique "
+"massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus "
+"sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in "
+"nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis "
+"quam eu ante ornare hendrerit."
+msgstr ""
+
+#: inc/spasalon/sections/spasalon-portfolio-section.php:164
+#: inc/spasalon/sections/spasalon-portfolio-section.php:168
+#: inc/spasalon/sections/spasalon-portfolio-section.php:172
+#: inc/spasalon/sections/spasalon-portfolio-section.php:176
+#: inc/spasalon/sections/spasalon-portfolio-section.php:180
+msgid "Business cards"
+msgstr ""
+
+#: inc/spasalon/sections/spasalon-slider-section.php:60
+msgid ""
+"Donec justo odio, lobortis eget congue sed, rutrum sit amet mauris. "
+"Curabitur sed lectus nulla. Curabitur sed lectus nulla.lobortis eget congue "
+"sed, rutrum sit amet mauris. Curabitur sed lectus nulla rutrum sit amet "
+"mauris."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Webriti Companion"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Enhances Webriti themes with extra functionality."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Webriti"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://github.com"
 msgstr ""

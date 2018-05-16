@@ -8,21 +8,21 @@
 <div class="container-fluid">
 	<div class="row">
 	<div class="spasalon-pane-center">
-		<h1><?php esc_html_e( 'Why Upgrade Pro', 'spasalon' ); ?></h1>
+		<h1><?php esc_html_e( 'Why upgrade to PRO?', 'spasalon' ); ?></h1>
 	</div>
 
 	<div class="col-md-6">
 	<div class="spasalon-tab-pane-half">
 		<p><strong><?php esc_html_e( 'SEO Friendly URL','spasalon'); ?></strong></p>
-		<p><?php esc_html_e( 'This feature helps you to rename the slug names from the URL allowing you to make it SEO friendly.','spasalon' ); ?></p>
+		<p><?php esc_html_e( 'This feature allows you to rename the slug from the URL allowing you to make it more SEO friendly.','spasalon' ); ?></p>
 		<hr>
 	</div>
 	</div>
 	
 	<div class="col-md-6">
 	<div class="spasalon-tab-pane-half">
-		<p><strong><?php esc_html_e( 'WooCommerce Support', 'spasalon' ); ?></strong></p>
-		<p><?php esc_html_e( 'Want to create online store, Its really easy using our theme, It transform your website in a online store. Spasalon Pro has given special attention to its WooCommerce integration.', 'spasalon' ); ?></p>
+		<p><strong><?php esc_html_e( 'WooCommerce support', 'spasalon' ); ?></strong></p>
+		<p><?php esc_html_e("It's really easy to create an online store with SpaSalon PRO: we have given extra care to its WooCommerce integration.", 'spasalon' ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -31,7 +31,7 @@
 	<div class="col-md-6">
 	<div class="spasalon-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Multi Level Navigation','spasalon'); ?></strong></p>
-		<p><?php esc_html_e( "Beautifully style navigation/menu in spasalon Theme. You can make multi level menu. Multi Level menu means that you can create sub menu.","spasalon" ); ?></p>
+		<p><?php esc_html_e( "SpaSalon features beautifully styled navigation/menu. You can create multi level menus, that is sub menus to your primary navigation.","spasalon" ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -39,8 +39,8 @@
 	
 	<div class="col-md-6">
 	<div class="spasalon-tab-pane-half">
-		<p><strong><?php esc_html_e( 'Front Page Slider', 'spasalon' ); ?></strong></p>
-		<p><?php esc_html_e( 'Premium theme have 2 type of sliders each can be shown usign different homepage templates. Add any number of slides having title, subtitle and custom read more button.', 'spasalon' ); ?></p>
+		<p><strong><?php esc_html_e( 'Front page slider', 'spasalon' ); ?></strong></p>
+		<p><?php esc_html_e( 'SpaSalon PRO features 2 types of sliders, and each can be shown using a different homepage templates. Add any number of slides with titles, subtitles and a custom "read more" button.', 'spasalon' ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -50,7 +50,7 @@
 	<div class="spasalon-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Service Features', 'spasalon' ); ?></strong></p>
 
-		<p><?php esc_html_e( 'HomePage Service section is created via Service Sidebar. Use the Spasalon: Page Widget, Featured Page for adding service type content. You can display as many services you want having support for thousands of Font Awesome Icons, custom icons and image graphics. Setting is provided for the changing the postion of image / icon around the title. Setting in customize screen allow you to select column layout for service section sidebar. ', 'spasalon' ); ?></p>
+		<p><?php esc_html_e('The HomePage Services section is created through the Repeater control. Use the Repeater control to add content like services. You can display as many services as you want and use thousands of Font Awesome icons, custom icons, and image graphics.', 'spasalon' ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -58,8 +58,8 @@
 	
 	<div class="col-md-6">
 	<div class="spasalon-tab-pane-half">
-		<p><strong><?php esc_html_e( 'Product Features', 'spasalon' ); ?></strong></p>
-		<p><?php esc_html_e( 'Showcase any number of product. Theme will provide you an option for creating product by using product page template. If you have number of products to show than these templates will be the answer. You can display products on homepage with carousel effects and you can also create categorised products, which displays all the product categories on single place. In fact we have coded in such a manner so that you can create any number of different set of products.', 'spasalon' ); ?></p>
+		<p><strong><?php esc_html_e('Product features', 'spasalon' ); ?></strong></p>
+		<p><?php esc_html_e( "Showcase any number of product. SpaSalon provides you an option to create a product by using a product page template. If you have a number of products to show, than using this template is the answer. Display products on your homepage with carousel effects, and create products' categories, which will display all products of a category in a single place. In fact, we have coded SpaSalon so that you can create any number of different sets of products.", 'spasalon' ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -68,15 +68,15 @@
 	<div class="col-md-6">
 	<div class="spasalon-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Latest News Section', 'spasalon' ); ?></strong></p>
-		<p><?php esc_html_e( "Commonly this section is used to display  Latest News, Announcement and Events type of content. Since this section is created via News Sidebar you can easily use other WordPress widgets. Powerful styling of all the sidebar areas on HomePage makes this theme very flexible. ", 'spasalon' ); ?></p>
+		<p><?php esc_html_e( "Commonly this section is used to display Latest news, Announcements and Events. Since this section is created through the News sidebar, you can easily also use other WordPress widgets. Powerful styling of all the sidebar areas on HomePage makes this theme very flexible.", 'spasalon' ); ?></p>
 		<hr>
 	</div>
 	</div>
 	
 	<div class="col-md-6">
 	<div class="spasalon-tab-pane-half">
-	<p><strong><?php esc_html_e( 'Team Feature', 'spasalon' ); ?></strong></p>
-		<p><?php esc_html_e( 'Team features are a powerful way to display your team member via Homepage Additional Sidebar. Use the Spasalon: Team Widget for showig team member.', 'spasalon' ); ?></p>
+	<p><strong><?php esc_html_e('Team feature', 'spasalon' ); ?></strong></p>
+		<p><?php esc_html_e("The Team features are a powerful way to display the members of your team through the Homepage's additional sidebar. Use the SpaSalon: Team widget to show your team!" ,"spasalon" ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -86,7 +86,7 @@
 	<div class="col-md-6">
 	<div class="spasalon-tab-pane-half">
 	  <p><strong><?php esc_html_e( 'Mulitple Color Schemes', 'spasalon' ); ?></strong></p>
-		<p><?php esc_html_e( 'You will get 9 predefined color skins and you can even make yours favorite color schemes using Custom Color Setting in the Customizer.', 'spasalon' ); ?></p>
+		<p><?php esc_html_e( 'You get 9 predefined color skins and you can even make your own favorite color scheme using the Custom color setting in the Customizer.', 'spasalon' ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -95,7 +95,7 @@
 	<div class="col-md-6">
 	<div class="spasalon-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Well Documented', 'spasalon' ); ?></strong></p>
-		<p><?php esc_html_e( 'We provide good  knowledge base articles which helps you to create an effective wesbite. You can visit these articles on our  ', 'spasalon' ); ?>
+		<p><?php esc_html_e( 'We provide good knowledge base articles to help you create an effective wesbite. You can see these articles on our', 'spasalon' ); ?>
 		<a href="<?php echo esc_url('http://webriti.com/help/themes/spasalon/spasalon-wordpress-theme/');?>" target="_blank"><?php _e('Help Section','spasalon'); ?></a></a></p>
 		<hr>
 	</div>
@@ -105,7 +105,7 @@
 	<div class="col-md-6">
 	<div class="spasalon-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Custom widget ', 'spasalon' ); ?></strong></p>
-		<p><?php esc_html_e( 'Building website with our custom widgets is very simple. Just place them in inside the available Sidebar or even in the content', 'spasalon' ); ?></p>
+		<p><?php esc_html_e( 'Personalizing your website with our custom widgets is very simple: just place them inside the sidebar, or drop them inside the content', 'spasalon' ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -114,7 +114,7 @@
 
 	<div class="col-md-6">
 	<div class="spasalon-tab-pane-half">
-		<?php echo sprintf(__('<p><strong> Jetpack Gallery Support</strong></p><p>The native WordPress image gallery displays as a grid of image thumbnails. If you want to show overlay effects on the gallery images? You need to install <a href="https://wordpress.org/plugins/jetpack/" target="_blank">Jetpack plugin,</a> Using Jetpack you can create four types of gallery style like Tiled Mosaic, Square Tiles, Circles and Tiled Columns. See gallery look on Spasalon theme demo.<a href="http://webriti.com/demo/wp/spasalon/gallery/" target="_blank"> Click Here</a></p>','spasalon')); ?>
+		<?php echo sprintf(__('<p><strong> Jetpack gallery support</strong></p><p>The native WordPress image gallery displays a grid of image thumbnails. If you want to show an overlay effects on the gallery images you need to install the <a href="https://wordpress.org/plugins/jetpack/" target="_blank">Jetpack plugin,</a> Using Jetpack, you can create four types of gallery styles, like Tiled Mosaic, Square Tiles, Circles and Tiled Columns. See the gallery looks on the SpaSalon demo.<a href="http://webriti.com/demo/wp/spasalon/gallery/" target="_blank"> Click Here</a></p>','spasalon')); ?>
 		<hr>
 	</div>
 	</div>
@@ -125,7 +125,7 @@
 	<div class="col-md-6">
 	<div class="spasalon-tab-pane-half">
 		<p><strong><?php esc_html_e('Translation Ready', 'spasalon' ); ?></strong></p>
-		<p><?php esc_html_e( 'Theme supports  yet another famous plugin WPML / Polylang. With the help of this support you can create website in multiple languages.','spasalon' ); ?></p>
+		<p><?php esc_html_e( 'Theme supports popular plugins WPML and Polylang. With these plugins you can translate your website in multiple languages.','spasalon' ); ?></p>
 		<hr>
 	</div>
 	</div>

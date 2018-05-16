@@ -1,8 +1,8 @@
 /*
 * Theme Name: Spasalon
 * Theme URI: https://webriti.com/spasalon-lite-description/
-* Description: SpaSalon is a Full Responsive Multi-Purpose Theme suitable for spa, salons, beauty, care, girly, hair, health, hospitality, massage, medical, parlor, physiotherapy, wellness, yoga, health blog  and for any type of business's. Spasalon is a fast, lightweight, mobile responsive WordPress theme built with speed, SEO and usability in mind. Theme has 9 widget ready areas which helps you in creating any type of site, support for drop-down menus, in built core widgets and contact form 7 styling support. Create your website exactly the way you want it using the Customizer and see your changes take place right in front of you before publishing. Create an effective online shop presence since theme have a support for very famous plugin, WooCommerce. Separate Woocommerce Sidebar added in the shop pages so that you can add different set of widgets from default templates. Premium version of Spasalon Theme supports Contact Form 7 and Google Maps plugin, offers you more number of widget ready areas, built in core widgets like Team Widget, Services Widget, Product Slider Widget etc, number of predefined template like about us , contact us, portfolio etc and even you can customize the layouts of sidebars on Business Template without adding a single line of code. Navigate to Appearance / Customize to start customizing.
-* Version: 1.8.3
+* Description: SpaSalon is a fully responsive multi-purpose theme, best suitable for SPAs, salons, beauty, care, hair, health, hospitality, massage, medical, parlor, physiotherapy, wellness, yoga, health blogs, and for any type of business. SpaSalon is fast and lightweight, and built with speed, SEO and usability in mind. SpaSalon has 9 widget-ready areas to help you create any type of site. It supports drop-down menus, built-in widgets, and Contact Form 7 styling. Make your website exactly the way you want it: using the Customizer, you see the changes take place right in front of you, before publishing. You can also create an effective online shop presence, since SpaSalon supports WooCommerce, and separate Woocommerce sidebars were added to the shop pages, to add different sets of widgets from the default templates. SpaSalon PRO supports Contact Form 7 and Google Maps; offers you more widget-ready areas and built-in widgets for Teams, Services, Product Sliders, etc. SpaSalon PRO also includes a number of predefined templates (about us, contact us, portfolio etc.) and even let's you customize the layout of the sidebars on the Business Template without adding a single line of code. Navigate to Appearance > Customize to start personalizing SpaSalon.
+* Version: 1.9
 * Author: webriti
 * Author URI: https://www.webriti.com
 * Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, footer-widgets
@@ -227,9 +227,9 @@ a.thumb-btn:hover:before, a.thumb-btn:focus:before, a.thumb-btn:active:before {
 /*  SERVICE SECTION CSS
 /*===================================================================================*/
 
-.col-md-3:nth-child(4n+1){ clear:left; }
-.col-md-4:nth-child(3n+1){ clear:left; }
-.col-md-6:nth-child(2n+1){ clear:left; }
+#service_content_section .col-md-3:nth-child(4n+1){ clear:left; }
+#service_content_section .col-md-4:nth-child(3n+1){ clear:left; }
+#service_content_section .col-md-6:nth-child(2n+1){ clear:left; }
  
 #section { margin: 0; padding: 65px 0 25px; }
 .service .post, .home-post .post { margin: 0 0 40px; }
@@ -503,6 +503,9 @@ span.entry-date .month-year { display: block; font-size: 14px; line-height: 20px
 .product-name { margin-bottom: 8px; }
 .product-description { font-size: 15px; line-height: 25px; font-weight: 400; margin-bottom: 18px; } 
 
+.one-thumb .customize-partial-edit-shortcut button, .two-thumb .customize-partial-edit-shortcut button, .three-thumb .customize-partial-edit-shortcut button, .four-thumb .customize-partial-edit-shortcut button, .five-thumb .customize-partial-edit-shortcut button, .slider-thumb-container .customize-partial-edit-shortcut button, .thumb-img-container .customize-partial-edit-shortcut button   {
+    margin-left: 30px !important;
+}
 
 /*===================================================================================*/
 /*  ALL WIDGETS SECTION CSS
@@ -860,11 +863,25 @@ div[class*="wbr_feature_page_widget"] p .more-link { margin: 24px 0 0; }
 
 /* Text meant only for screen readers. */
 .screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
+	border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+.no-js .some-element .screen-reader-text {
+    position: static;
+    -webkit-clip-path: none;
+    clip-path: none;
+    width: auto;
+    height: auto;
+    margin: 0;
 }
 
 .screen-reader-text:focus {

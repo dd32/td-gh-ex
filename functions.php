@@ -32,7 +32,7 @@ require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/home-page.php');
 
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
 
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_import_data.php');
+require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_recommended_plugin.php');
 
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/font/font.php');
 
@@ -52,7 +52,10 @@ require( WEBRITI_THEME_FUNCTIONS_PATH . '/spasalon-info/welcome-screen.php');
 // Spasalon Demo Image
 require_once( get_template_directory() . '/spasalon-demo-image/spasalon-prevdem.php' );
 
-
+$repeater_path = trailingslashit( get_template_directory() ) . '/functions/customizer-repeater/functions.php';
+	if ( file_exists( $repeater_path ) ) {
+	require_once( $repeater_path );
+	}
 
 if ( ! function_exists( 'spasalon_setup' ) ) :
 
@@ -153,7 +156,48 @@ function spasalon_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'spasalon_excerpt_length', 999 );
 
 
+function spasalon_inline_style() {
+	$custom_css              = '';
+	
+$current_options = wp_parse_args(  get_option( 'spa_theme_options'));
+	$spasalon_service_content = ! empty($current_options['spasalon_service_content']) ? $current_options['spasalon_service_content'] : json_encode(
+			array(
+				array(
+					'color'      => '#f22853',
+				),
+				array(
+					'color'      => '#00bcd4',
+				),
+				array(
+					'color'      => '#fe8000',
+				),
+				array(
+					'color'      => '#1abac8',
+				),
+			)
+		);
+	
+	if ( ! empty( $spasalon_service_content ) ) {
+		$spasalon_service_content = json_decode( $spasalon_service_content );
+		
+		foreach ( $spasalon_service_content as $key => $service_item ) {
+			$box_nb = $key + 1;
+			if ( ! empty( $service_item->color ) ) {
+				
+				$color = ! empty( $service_item->color ) ? apply_filters( 'spasalon_translate_single_string', $service_item->color, 'searvice section' ) : '';
+				
+				$custom_css .= '.service-box:nth-child(' . esc_attr( $box_nb ) . ') .service-icon i {
+                            background-color: ' . esc_attr( $color ) . ';
+				}';
+				
+				
+			}
+		}
+	}
+	wp_add_inline_style( 'style', $custom_css );
+}
 
+add_action( 'wp_enqueue_scripts', 'spasalon_inline_style' );
 
 // Replaces the excerpt "more" text by a link
 
@@ -313,42 +357,12 @@ add_action('wp_head','spasalon_custom_css_function');
 
 the_tags();
 
-
-function spasalon_import_files() {
-  return array(
-    array(
-      'import_file_name'           => 'Demo Import 1',
-      'categories'                 => array( 'Category 1', 'Category 2' ),
-      'import_file_url'            => 'https://webriti.com/themes/dummydata/spasalon/lite/spasalon-content.xml',
-      'import_widget_file_url'     => 'https://webriti.com/themes/dummydata/spasalon/lite/spasalon-widget.json',
-      'import_customizer_file_url' => 'https://webriti.com/themes/dummydata/spasalon/lite/spasalon-customize.dat',
-      'import_notice'              => sprintf(__( 'Click the large blue button to start the dummy data import process.</br></br>Please be patient while WordPress imports all the content.</br></br>
-			<h3>Recommended Plugins</h3>Spasalon theme supports the following plugins:</br> </br><li> <a href="https://wordpress.org/plugins/contact-form-7/"> Contact form 7</a> </l1> </br> <li> <a href="https://wordpress.org/plugins/woocommerce/"> WooCommerce </a> </li><li> <a href="https://wordpress.org/plugins/spoontalk-social-media-icons-widget/"> Spoon talk social media icon </a></li>', 'spasalon' )),
-			),
-    	
-    	
-    	
-	);
+add_action('admin_head', 'spasalon_remove_wiget');
+function spasalon_remove_wiget() {
+  echo '<style>
+#sidebar-service {
+    display: none !important;
 }
-add_filter( 'pt-ocdi/import_files', 'spasalon_import_files' );
-
-
-function spasalon_after_import_setup() {
-
-	// Menus to assign after import.
-	$main_menu   = get_term_by( 'name', 'Main Menu', 'nav_menu' );
-
-	set_theme_mod( 'nav_menu_locations', array(
-		'primary'   => $main_menu->term_id,
-	));
-	
- // Assign front page and posts page (blog page).
-    $front_page_id = get_page_by_title( 'Home' );
-    $blog_page_id  = get_page_by_title( 'Blog' );
-
-    update_option( 'show_on_front', 'page' );
-    update_option( 'page_on_front', $front_page_id->ID );
-    update_option( 'page_for_posts', $blog_page_id->ID );	
-	
+</style>';
 }
-add_action( 'pt-ocdi/after_import', 'spasalon_after_import_setup' );
+?>

@@ -48,12 +48,10 @@ if( $current_options['enable_news'] == true ):
 				
 				$i = 1;
 				
-				$cat_id = $current_options['blog_selected_category_id'];
-				$no_of_post = $current_options['posts_per_page'];
 				
 				$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 				
-				$args = array( 'post_type' => 'post','ignore_sticky_posts' => 1 , 'category__in' => $cat_id, 'posts_per_page' => $no_of_post,'paged' => $paged );
+				$args = array( 'post_type' => 'post','ignore_sticky_posts' => 1 , 'posts_per_page' => 4,'paged' => $paged );
 				
 				$post_type_data = new WP_Query( $args );
 				
@@ -63,7 +61,7 @@ if( $current_options['enable_news'] == true ):
 				?>
 				<div class="col-md-<?php echo $news_layout; ?>">
 					<article class="post">
-					
+					<?php if( has_post_thumbnail() ): ?>
 						<figure class="post-thumbnail">
 							<span class="entry-date">
 								<div class="date"><?php echo get_the_date('j'); ?> 
@@ -74,12 +72,10 @@ if( $current_options['enable_news'] == true ):
 							</span>
 							
 							<?php 
-								if( has_post_thumbnail() ): 
-									the_post_thumbnail(); 
-								endif;
+							the_post_thumbnail(); 	
 							?>
 						</figure>
-						
+						<?php endif; ?>
 						<div class="entry-header">
 							<h4 class="entry-title">
 								<a href="<?php the_permalink(); ?>">

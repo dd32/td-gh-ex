@@ -12,7 +12,7 @@ function spasalon_general_settings_customizer( $wp_customize ){
 	
 	/* Banner section */
 		$wp_customize->add_section( 'banner_section' , array(
-			'title'      => __('Banner setting', 'spasalon'),
+			'title'      => __('Banner settings', 'spasalon'),
 			'panel'  => 'general_settings'
 		) );
 		
@@ -23,7 +23,7 @@ function spasalon_general_settings_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[spa_bannerstrip_enable]' , array(
-			'label'          => __('Banner strip', 'spasalon' ),
+			'label'          => __('Banner Strip', 'spasalon' ),
 			'section'        => 'banner_section',
 			'type'           => 'radio',
 			'choices'        => array(
@@ -37,7 +37,7 @@ function spasalon_general_settings_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[call_us]' , array(
-			'label' => __('Call us on','spasalon'),
+			'label' => __('Call us at','spasalon'),
 			'section'        => 'banner_section',
 			'type'           => 'text'
 			) );
@@ -48,7 +48,7 @@ function spasalon_general_settings_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[call_us_text]' , array(
-			'label'          => __( 'Call us text', 'spasalon' ),
+			'label'          => __( 'Call us field text', 'spasalon' ),
 			'section'        => 'banner_section',
 			'type'           => 'text'
 			) );
@@ -97,3 +97,21 @@ function spasalon_copyright_sanitize_text( $input ) {
 			return wp_kses_post( force_balance_tags( $input ) );
 
 }
+
+function spasalon_register_copyright_partials( $wp_customize ){
+
+$wp_customize->selective_refresh->add_partial( 'spa_theme_options[footer_tagline]', array(
+		'selector'            => '.site-info p',
+		'settings'            => 'spa_theme_options[footer_tagline]',
+	
+	) );
+
+$wp_customize->selective_refresh->add_partial( 'header_site_title', array(
+        'selector' => '.navbar-brand',
+        'settings' => array( 'blogname' ),
+        'render_callback' => function() {
+            return get_bloginfo( 'name', 'display' );
+        },
+    ) );	
+}
+add_action( 'customize_register', 'spasalon_register_copyright_partials' );
