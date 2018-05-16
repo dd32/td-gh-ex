@@ -42,7 +42,7 @@ if( $blog_section_title || $blog_section_content ){
                 <div class="columns-3">
     				<div class="post">
                         <?php if( has_post_thumbnail() ){ ?>
-    					<a href="<?php the_permalink(); ?>" class="post-thumbnail"><?php the_post_thumbnail( 'benevolent-blog' ); ?></a>
+    					<a href="<?php the_permalink(); ?>" class="post-thumbnail"><?php the_post_thumbnail( 'benevolent-blog', array( 'itemprop' => 'image' ) ); ?></a>
                         <?php } ?>
     					<div class="text-holder">
     						<header class="entry-header">

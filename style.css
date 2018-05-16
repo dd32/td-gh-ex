@@ -4,7 +4,7 @@ Theme URI: http://raratheme.com/wordpress-themes/benevolent/
 Author: Rara Theme
 Author URI: http://raratheme.com/
 Description: Benevolent is an easy to use, clean modern and  flexible multipurpose theme.   Although the theme was designed with nonprofit organizations in mind , the theme is very versatile and can be used by any business websites, digital agency, consultancy, corporate business, freelancers, and bloggers. The theme is SEO friendly with optimized codes, which  make it easy for your site to rank on Google and other search engines. Benevolent comes with several features to make user-friendly, interactive and visually stunning website. Such features include custom menu with Call to Action Button, advance full width slider,  community section, Stats counter,  Client Section, Banner with Call to Action Button  (CTA),  and social media. It has four footer area and a right sidebar and includes  four custom widgets for the recent posts, popular posts, social media and the featured post. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Benevolent helps you to easily and intuitively create professional and appealing websites. Check the demo at http://raratheme.com/preview/benevolent/, documentation at http://raratheme.com/documentation/benevolent and get support at http://raratheme.com/support-forum/. 
-Version: 1.1.2
+Version: 1.1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: benevolent
@@ -555,6 +555,24 @@ textarea {
 .site-header .site-branding{
 	float: left;
 	margin: 4px 0 0;
+	max-width: 300px;
+}
+
+.logo-text .site-logo {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+    line-height: 0;
+}
+
+.logo-text .site-title-wrap {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+.logo-text .site-title-wrap .site-title {
+    font-size: 1.5em;
 }
 .site-header .site-branding .site-title{
 	margin: 0;
@@ -993,6 +1011,11 @@ a:active {
 	vertical-align: top;
 }
 .banner{position: relative;}
+.banner ul.owl-carousel {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 .banner .banner-text{
 	position: absolute;
 	left: 0;
@@ -1040,14 +1063,19 @@ a:active {
 	position: relative;
 }
 
-.banner .lSPager {
+.banner .owl-carousel .owl-dots {
 	position: absolute;
 	bottom: 10px;
 	width: 100%;
 	text-align: center;
 }
 
-.banner .lSPager.lSpg li a{
+.banner .owl-carousel .owl-dots .owl-dot {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.banner .owl-carousel .owl-dots span{
 	border: 1px solid #fff;
 	border-radius: 0;
 	width: 12px;
@@ -1059,8 +1087,8 @@ a:active {
 	transition: all ease 0.1s;
 }
 
-.banner .lSPager.lSpg li.active a,
-.banner .lSPager.lSpg li a:hover{
+.banner .owl-carousel .owl-dots span:hover, 
+.banner .owl-carousel .owl-dots .active > span{
 	background: #fff;
 }
 /*--------------------------------------------------------------

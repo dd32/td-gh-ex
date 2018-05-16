@@ -4,7 +4,7 @@ jQuery(document).ready(function($){
     if( benevolent_data.auto == '1' ){
         var slider_auto = true;
     }else{
-        slider_auto = false;
+        var slider_auto = false;
     }
     
     if( benevolent_data.loop == '1' ){
@@ -16,27 +16,34 @@ jQuery(document).ready(function($){
     if( benevolent_data.pager == '1' ){
         var slider_control = true;
     }else{
-        slider_control = false;
+        var slider_control = false;
     }
     if( benevolent_data.rtl == '1' ){
         var rtl = true;
     }else{
         var rtl = false;
     }
+
+    if( benevolent_data.animation == 'slide' ){
+        var slider_animation = '';
+    }else{
+        var slider_animation = 'fadeOut';
+    }
     
     /** Home Page Slider */
-    $('#banner-slider').lightSlider({
-        item        : 1,
-        slideMargin : 0,
-        mode        : benevolent_data.animation,
-        speed       : benevolent_data.a_speed, //ms'
-        auto        : slider_auto,
-        loop        : slider_loop,
-        pause       : benevolent_data.speed,
-        controls    : false,
-        pager       : slider_control,
-        enableDrag  : false,
-        rtl         : rtl,
+    $("#banner-slider").owlCarousel({
+        items           : 1,
+        margin          : 0,
+        loop            : slider_loop,
+        autoplay        : slider_auto,
+        nav             : false,
+        dots            : slider_control,
+        animateOut      : slider_animation,
+        autoplayTimeout : benevolent_data.speed,
+        lazyLoad        : true,
+        mouseDrag       : false,
+        rtl             : rtl,
+        autoplaySpeed   : benevolent_data.a_speed,
     });
    
    $('.number').counterUp({

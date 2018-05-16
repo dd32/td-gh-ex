@@ -62,7 +62,7 @@ if ( ! class_exists('Benevolent_Popular_Post') ) {
 						<li>
 							<?php if( has_post_thumbnail() && $show_thumb ){ ?>
 								<a href="<?php the_permalink();?>" class="post-thumbnail">
-									<?php the_post_thumbnail( 'benevolent-recent-post' );?>
+									<?php the_post_thumbnail( 'benevolent-recent-post', array( 'itemprop' => 'image' ) );?>
 								</a>
 							<?php }?>
 							<div class="entry-header">

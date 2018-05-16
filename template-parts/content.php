@@ -29,7 +29,7 @@
     <?php 
         if( has_post_thumbnail() ){
             echo ( is_single() ) ? '<div class="post-thumbnail">' : '<a href="' . esc_url( get_the_permalink() ) . '" class="post-thumbnail">';
-            ( is_active_sidebar( 'right-sidebar' ) ) ? the_post_thumbnail( 'benevolent-with-sidebar' ) : the_post_thumbnail( 'benevolent-without-sidebar' );
+            ( is_active_sidebar( 'right-sidebar' ) ) ? the_post_thumbnail( 'benevolent-with-sidebar', array( 'itemprop' => 'image' ) ) : the_post_thumbnail( 'benevolent-without-sidebar', array( 'itemprop' => 'image' ) );
             echo ( is_single() ) ? '</div>' : '</a>' ; 
         }
     ?>

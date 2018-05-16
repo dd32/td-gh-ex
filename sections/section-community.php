@@ -32,7 +32,7 @@ $community_post_four     = get_theme_mod( 'benevolent_community_post_four' );
             if( has_post_thumbnail() ){
             ?>
             <div class="columns-2">
-				<?php the_post_thumbnail( 'benevolent-community' ); ?>
+				<?php the_post_thumbnail( 'benevolent-community', array( 'itemprop' => 'image' ) ); ?>
 				<div class="text-holder">
                     <div class="table">
                         <div class="table-row">

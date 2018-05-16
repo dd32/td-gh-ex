@@ -1776,6 +1776,8 @@ add_action( 'customize_register', 'benevolent_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function benevolent_customize_preview_js() {
-    wp_enqueue_script( 'benevolent_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+    $build  = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '/build' : '';
+    $suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+    wp_enqueue_script( 'benevolent_customizer', get_template_directory_uri() . '/js' . $build . '/customizer' . $suffix . '.js', array( 'customize-preview' ), '20130508', true );
 }
 add_action( 'customize_preview_init', 'benevolent_customize_preview_js' );

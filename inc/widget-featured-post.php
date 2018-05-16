@@ -57,7 +57,7 @@ if ( ! class_exists('Benevolent_Featured_Post') ) {
 					<?php if( has_post_thumbnail() && $show_thumbnail ){ ?>                    
 					<div class="img-holder">
 						<a href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail( 'benevolent-featured-post' ); ?>
+							<?php the_post_thumbnail( 'benevolent-featured-post', array( 'itemprop' => 'image' ) ); ?>
 						</a>
 					</div>    				
 					<?php } ?>

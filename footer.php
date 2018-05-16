@@ -12,7 +12,7 @@
     if( is_home() || ! $enabled_sections || !( is_front_page() || is_page_template( 'template-home.php' ) ) ) echo '</div></div></div>' ; //<!-- .row --><!-- #content --><!-- .container -->
 
 ?>            
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 		
         <?php if( is_page_template( 'template-home.php' ) ) do_action( 'benevolent_promotional' ); ?>
         

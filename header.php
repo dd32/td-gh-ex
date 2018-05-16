@@ -11,7 +11,7 @@
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<head>
+<head itemtype="http://schema.org/WebSite">
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
@@ -20,10 +20,10 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 <div id="page" class="site">
 	
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
         
         <div class="header-top">
             <div class="container">
@@ -33,7 +33,7 @@
     			    <a id="responsive-secondary-menu-button" href="#sidr-main2"><?php esc_html_e( 'Menu', 'benevolent' ); ?></a>
     			</div>
                 
-                <nav id="top-navigation" class="secondary-navigation" role="navigation">
+                <nav id="top-navigation" class="secondary-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
         			<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu', 'fallback_cb' => false ) ); ?>
         		</nav><!-- #site-navigation -->
                 <?php } ?>
@@ -45,18 +45,34 @@
             
             <div class="container">
         	
-                <div class="site-branding">
-        			<?php
-                        if( function_exists( 'has_custom_logo' ) && has_custom_logo() ){
-                            the_custom_logo();
-                        } 
-                    ?>
-       				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-        			<?php
-        			$description = get_bloginfo( 'description', 'display' );
-        			if ( $description || is_customize_preview() ) : ?>
-        				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-        			<?php endif; ?>
+                <?php 
+                $site_title = get_bloginfo( 'name' );
+                $description = get_bloginfo( 'description', 'display' );
+                
+                if( has_custom_logo() && ( $site_title || $description ) ) {
+                    $add_class = 'logo-text';
+                }else{
+                    $add_class = '';
+                }?>
+                <div class="site-branding <?php echo esc_attr( $add_class ); ?>" itemscope itemtype="http://schema.org/Organization">
+                
+                    <?php if( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
+                        echo '<div class="site-logo">';
+                        the_custom_logo();
+                        echo '</div>';
+                    }?>
+                    <div class="site-title-wrap">
+                        <?php if ( is_front_page() ) : ?>
+                            <h1 class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
+                        <?php else : ?>
+                            <p class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a></p>
+                        <?php endif;  
+                    
+                        $description = get_bloginfo( 'description', 'display' );
+                        if ( $description || is_customize_preview() ) : ?>
+                            <p class="site-description" itemprop="description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+                        <?php endif; ?>
+                    </div>
         		</div><!-- .site-branding -->
                 
                 <?php 
@@ -65,7 +81,7 @@
                     if( $button_text && $button_url ) echo '<a href="' . esc_url( $button_url ). '" class="btn-donate">' . esc_html( $button_text ) . '</a>';
                 ?>
                 
-        		<nav id="site-navigation" class="main-navigation" role="navigation">
+        		<nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
         			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
         		</nav><!-- #site-navigation -->
                 
