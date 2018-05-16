@@ -1,9 +1,9 @@
 == Description ==
-BirdSITE is a photoblogging theme. The theme has grid layout and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color.
+BirdSITE built for photobloggers and photographers. It has good appearance for photos by grid layout. and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the main color, text color and link color.
 
 
 === Tags ===
-two-columns, left-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready, photography
+two-columns, left-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, photography
 
 
 === Features ===
@@ -15,9 +15,7 @@ The Theme has customizable footer.
 
 
 == Theme Customize ==
-Text Color: set at Colors section.
-Link Color: set at Colors section.
-Header, Footer Background Color: set at Colors section.
+Main Color, Text Color, Link Color: set at Colors section.
 Display Copyright and Credit: set at Footer section.
 Display Postdate and Author, Category, Tags, Comment Number: set at Home section.
 Recommend Blog pages show at most 9 posts at Reading Settings.
@@ -33,21 +31,34 @@ The headers and icon images are created by theme author and are released under G
 
 
 == Third-party Resources ==
-html5shiv.js
-License: MIT/GPL2 Licensed
-Source:  https://github.com/aFarkas/html5shiv
-
 Font Awesome
 License: SIL Open Font License, 1.1/MIT License
 Source:  http://fortawesome.github.io/Font-Awesome/
+
+Flexible drawer menu using jQuery, iScroll and CSS.
+License: MIT License
+Source:  http://git.blivesta.com/drawer
 
 
 == Author ==
 The theme built by TORIYAMA Yuko at Sysbird.
 http://www.sysbird.jp
+https://profiles.wordpress.org/sysbird/
 
 
 == Changelog ==
+v1.11
+* fix the WordPress 4.9.
+* support the theme tag rtl-language-support.
+* add hook 'birdsite_content_header' for example bread crumb.
+* add hook 'birdsite_content_footer' for example ad.
+* change header line and footer background color to main color in theme customize.
+* change navigation to Flexible drawer menu using jQuery, iScroll and CSS.
+* change translation to GlotPress.
+* remove languages files. and theme translation migrated to GlotPress.
+* remove /css/ja.css.
+* remove html5shiv.js.
+
 v1.10
 * use the filter post_thumbnail_html when display the Featured Image.
 * add add_theme_support for html5.

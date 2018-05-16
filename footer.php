@@ -7,7 +7,7 @@
  * @since BirdSITE 1.0
  */
 ?>
-		</div> <!-- /content -->
+			</div> <!-- /content -->
 		</div><!-- /main -->
 	</div> <!-- /container -->
 
@@ -38,8 +38,6 @@
 	</footer>
 
 </div><!-- wrapper -->
-
-<div class="overlay"></div>
 
 <?php wp_footer(); ?>
 

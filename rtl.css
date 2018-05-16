@@ -1,0 +1,262 @@
+/*
+Theme Name: BirdSIE
+
+Description: Adds support for languages written in a Right To Left (RTL) direction.
+It's easy, just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+See: https://codex.wordpress.org/Right_to_Left_Language_Support
+*/
+
+caption, th, td {
+	text-align: right;
+}
+
+/* Elements
+--------------------------------------------- */
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+/* Pagination at archive
+-------------------------------------------------------------------- */
+.pagination a.page-numbers.prev:before {
+	content: "\f054";
+	padding-left: 0.4em;
+	padding-right: 0;
+}
+
+.pagination a.page-numbers.next:after {
+	content: "\f053";
+	padding-left: 0;
+	padding-right: 0.4em;
+}
+
+/* Footer
+--------------------------------------------- */
+#footer #back-top {
+	right: auto;
+	left: 10px;
+}
+
+#footer #back-top a span {
+	text-align: right;
+}
+
+.widget ul li {
+	padding: 0.4em 0.8em 0.4em 0;
+}
+
+.widget ul li:before {
+	content: "\f0d9";
+}
+
+/* Menu
+-------------------------------------------------------------- */
+#menu-wrapper .menu ul li {
+	text-align: left;
+}
+
+#menu-wrapper .menu ul li.menu-item-has-children > a::after {
+	right: auto;
+	left: 0;
+	content: "\f0d9";
+}
+
+#menu-wrapper .menu ul li ul {
+	right: auto;
+	left: -240px;
+}
+
+#menu-wrapper .menu ul#menu-primary-items li {
+	text-align: right;
+}
+
+#menu-wrapper .menu ul li ul li ul {
+	margin: -1px 0 0 2px;
+}
+
+@media screen and (max-width: 600px) {
+	#menu-wrapper .menu ul#menu-primary-items li ul li {
+		margin-left: 0;
+		margin-right: 2em;
+	}
+}
+
+/* Posts
+--------------------------------------------- */
+#content h3 {
+	border-left: none;
+	border-right: solid 7px;
+	padding-left: 0;
+	padding-right: 10px;
+}
+
+#content blockquote {
+	border-left: none;
+	border-right: 5px solid #CCC;
+	padding-left: 0;
+	padding-right: 1em;
+	margin-right: 0;
+	margin-right: 1em;
+}
+
+#content ul,
+#content ol {
+	margin: 0 1em 1.6em 0;
+	padding: 0 1em 0 0;
+}
+
+#content .hentry .entry-meta .icon:before {
+	padding-left: 0.4em;
+	padding-right: 0;
+}
+
+/* home
+--------------------------------------------- */
+.home #content ul.row li .more-link a {
+	text-align: right;
+}
+
+.home #content ul.row li .caption .more-link a:after {
+	text-align: right;
+	right: auto;
+	left: 0;
+	padding-left: 0.4em;
+	padding-right: 0;
+}
+
+.home #content ul.row li.sticky i {
+	right: auto;
+	left: -15px;
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-ms-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+
+.home #content .pagination {
+	padding-left: 0;
+	padding-right: 20px;
+}
+
+.home #content ul.row li .caption .more-link a::after {
+	content: "\f053";
+}
+
+/* Post Navigation at Single page
+-------------------------------------------------------------------- */
+.nav-links .nav-next a:before {
+	content: "\f054";
+	padding-left: 0.4em;
+	padding-right: 0;
+}
+
+.nav-links .nav-previous a:after {
+	content: "\f053";
+	padding-left: 0;
+	padding-right: 0.4em;
+}
+
+.nav-links .nav-previous {
+	float: left;
+}
+
+/* Comments
+-------------------------------------------------------------- */
+#comments ol.commentlist li.pingback,
+#comments ol.commentlist li.comment {
+	padding: 0 10px 0 0;
+	border-left: none;
+	border-right: 2px solid #CCC;
+}
+
+
+#comments ol.commentlist li.pingback .comment-author img,
+#comments ol.commentlist li.comment .comment-author img {
+	float: right;
+	margin: 0 0 10px 10px;
+}
+
+/* Archive
+-------------------------------------------------------------------- */
+.archive #content ul li .postdate::before,
+.search #content ul li .postdate::before,
+.error404 #content ul li .postdate::before {
+	padding-left: 0.4em;
+	padding-right: 0;
+}
+
+.archive #content ul li img,
+.search #content ul li img,
+.error404 #content ul li img {
+	float: right;
+	margin-left: 10px;
+	margin-right: 0;
+}
+
+.archive #content ul li p,
+.search #content ul li p,
+.error404 #content ul li p {
+	margin: 0 60px 0 0;
+}
+
+/* Widget
+-------------------------------------------------------------- */
+.widget #wp-calendar tfoot #next {
+	text-align: left;
+}
+
+/* Searcform
+-------------------------------------------------------------- */
+#searchform #searchsubmit {
+	text-align: left;
+}
+
+/* Media queries for responsive design
+--------------------------------------------- */
+/* --- PCs --- */
+@media screen and (min-width: 811px) {
+	.home #content ul.row li {
+		float: right;
+	}
+
+	#footer ul.row > li {
+		float: right;
+		margin: 0 3% 0 0;
+	}
+
+	#footer .site-title {
+		padding: 40px 20px 0 0;
+	}
+}
+
+/* --- iPad Landscape --- */
+@media screen and (min-width: 601px) {
+	#header .branding {
+		text-align: left;
+		padding-left: 0;
+		padding-right: 1.4em;
+	}
+
+	#content .hentry {
+		margin: 0 20px 0 0;
+	}
+
+	.home #content ul.row li {
+		margin: 20px 20px 0 0;
+	}
+}
+
+/* --- Smartphones and small Tablet PCs --- */
+@media screen and (max-width: 810px) {
+	.home #content ul.row li .more-link a::after {
+		right: auto;
+		left: 0;
+		content: "\f053";
+		padding-left: 0.4em;
+		padding-right: 0;
+	}
+}

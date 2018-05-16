@@ -1,14 +1,14 @@
 @charset "utf-8";
 /*
 Theme Name: BirdSITE
-Theme URI: http://www.sysbird.jp/birdsite/theme/
-Description: BirdSITE built for photobloggers and photographers. It has good appearance for photos by grid layout. and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the text color, link color, header line and footer background color and navigation color.
+Theme URI: http://www.sysbird.jp/birdsite-theme/
+Description: BirdSITE built for photobloggers and photographers. It has good appearance for photos by grid layout. and uses CSS3 media queries for its responsive layout and is therefore optimized for tablet pcs and smart phones. Features include the Theme Customize. You can choose the main color, text color and link color.
 Author: Sysbird
-Author URI: http://www.sysbird.jp
-Version: 1.10
+Author URI: https://profiles.wordpress.org/sysbird/
+Version: 1.11
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-columns, left-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready, photography
+Tags: two-columns, left-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, photography
 Text Domain: birdsite
 
 This theme, like WordPress, is licensed under the GPL.
@@ -21,8 +21,7 @@ This theme, like WordPress, is licensed under the GPL.
 $background-color: #F5F5F5;
 $text-color: #555;
 $link-color: #06A;
-$accent_color: #000;
-$navigation_color: #555;
+$main_color: #000;
 $border-color: #CCC;
 $meta-color: #999;
 $menu-width: 240px;
@@ -32,21 +31,18 @@ Font Awesome
 -----------------------------*/
 @font-face {
 	font-family: 'FontAwesome';
-	src: url("font-awesome/fontawesome-webfont.eot?v=4.1.0");
-	src: url("font-awesome/fontawesome-webfont.eot?#iefix&v=4.1.0") format("embedded-opentype"), url("font-awesome/fontawesome-webfont.woff?v=4.1.0") format("woff"), url("font-awesome/fontawesome-webfont.ttf?v=4.1.0") format("truetype"), url("font-awesome/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular") format("svg");
+	src: url("font-awesome/fontawesome-webfont.eot?v=4.7.0");
+	src: url("font-awesome/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("font-awesome/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("font-awesome/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("font-awesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
 
-@mixin font-awesome( $param, $padding-left:0, $padding-right:0 ) {
-	content: $param;
+@mixin font-awesome() {
 	display: inline-block;
 	font-family: FontAwesome;
 	font-style: normal;
 	font-weight: normal;
 	line-height: 1;
-	padding-left: $padding-left;
-	padding-right: $padding-right;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -56,7 +52,7 @@ Font Awesome
 h1, h2, h3, h4, h5, h6 {
 	margin: 0.7em 0;
 	line-height:1.2;
-	color: $accent_color;
+	color: $main_color;
 }
 
 h1 {font-size:2.4rem;}
@@ -79,6 +75,16 @@ a {
 
 /* Structure
 --------------------------------------------- */
+html {
+	* {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
+
 body {
 	margin:0;
 	padding:0;
@@ -88,33 +94,37 @@ body {
 
 .container {
 	max-width: 1060px;
+	position: relative;
+}
+
+.wrapper > .container {
+	@include display-flex();
+	align-items: flex-start;
 }
 
 #header {
-	float: left;
 	width: $menu-width;
-	margin-right: -($menu-width);
-	position: relative;
-	z-index: 2;
-}
-
-.main {
-	float: left;
-	min-height: 300px;
-	width: 100%;
-}
-
-#content {
-	margin-left: $menu-width;
-	position: relative;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 7px;
 	z-index: 1;
 }
 
+.main {
+	@include flex(1);
+}
+
+/* Fixed Footer
+--------------------------------------------- */
+body,
+.wrapper {
+	@include display-flex();
+	flex-direction: column;
+	min-height: 100vh;
+}
+
 #footer {
-	overflow: hidden;
-	clear: both;
-	width: 100%;
-	margin: 0 auto;
+  margin-top: auto;
 }
 
 /* Body
@@ -126,20 +136,11 @@ body {
 /* Wrapper
 -------------------------------------------------------------- */
 .wrapper {
-	font-family: 'Lucida Grande','Verdana','Hiragino Kaku Gothic ProN',Meiryo, sans-serif;
- 	font-size: 0.92em;
+	font-family: 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial','Hiragino Sans', YuGothic, 'Yu Gothic', Meiryo, 'MS PGothic';
+	font-size: 0.92em;
 	color: $text-color;
-	border-top: solid 7px $accent_color;
 	word-wrap:break-word;
-	overflow: hidden;
-
-	* {
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-o-box-sizing: border-box;
-		-ms-box-sizing: border-box;
-		box-sizing: border-box;
-	}
+	border-top: solid 7px $main_color;
 }
 
 /* Header
@@ -148,9 +149,8 @@ body {
 	padding-top: 40px;
 
 	.branding {
-		font-family: Georgia,"Bitstream Charter",serif;
 		padding-left: 1.4em;
-		color: $accent_color;
+		color: $main_color;
 		margin-bottom: 20px;
 		text-align: right;
 
@@ -161,7 +161,7 @@ body {
 			margin: 0;
 
 			a {
-				color: $accent_color;
+				color: $main_color;
 			}
 		}
 
@@ -189,7 +189,6 @@ body {
 			.site-title,
 			.site-description {
 				position: absolute !important;
-				clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 				clip: rect(1px, 1px, 1px, 1px);
 			}
 		}
@@ -199,7 +198,7 @@ body {
 /* Footer
 -------------------------------------------------------------- */
 #footer {
-	background: $accent_color;
+	background: $main_color;
 	padding: 40px 0;
 	color: #FFF;
 
@@ -235,7 +234,10 @@ body {
 			font-style: italic;
 
 			&:after {
-			    @include font-awesome( "\f19a", 0.4em, 0.4em );
+				@include font-awesome();
+				content: "\f19a";
+				padding-left: 0.4em;
+				padding-right: 0.4em;
 			}
 		}
 	}
@@ -267,7 +269,8 @@ body {
 			}
 
 			&:before {
-				@include font-awesome( "\f077" );
+				@include font-awesome();
+				content: "\f077";
 				font-size: 30px;
 				display: block;
 				text-align: center;
@@ -281,11 +284,13 @@ body {
 /* Menu
 -------------------------------------------------------------- */
 #menu-wrapper {
-	.menu {
-		width: $menu-width;
+	#small-menu {
+		display: none; /* hide small menu initially */
+	}
 
-		#small-menu {
-			display: none; /* hide small menu initially */
+	.menu {
+		&:not(.drawer-nav) ul#menu-primary-items {
+			transform: translate(0, 0) translateZ(0px) !important;
 		}
 
 		ul {
@@ -309,14 +314,13 @@ body {
 				}
 
 				a {
-					border-top: dotted 1px $navigation_color;
+					border-top: dotted 1px $main_color;
 					padding: 0.6em;
 					display: block;
 					width: $menu-width - 2;
-					color: $navigation_color;
+					color: $main_color;
 					text-decoration: none;
 					line-height: 1.2;
-					*white-space: nowrap; /* IE7 and below */
 
 					&:hover {
 						background: #FFF;
@@ -325,7 +329,7 @@ body {
 
 				&:first-child {
 					> a {
-						border: none;
+						border-top-width: 0px;
 					}
 				}
 
@@ -336,13 +340,14 @@ body {
 						right: 0;
 						width: 0.6em;
 						height: 0.8em;
-						@include font-awesome("\f0da");
+						@include font-awesome();
+						content: "\f0da";
 					}
 				}
 
 				ul {
-					background: $background-color;
-					border: dotted 1px $navigation_color;
+					background: #FFF;
+					border: dotted 1px $main_color;
 					display: none; /* hide dropdown */
 					width: $menu-width;
 					position: absolute;
@@ -358,6 +363,10 @@ body {
 
 						a {
 							white-space: normal;
+
+							&:hover {
+								font-weight: bold;
+							}
 						}
 
 						ul {
@@ -435,7 +444,6 @@ body {
 			border: 1px solid $border-color;
 			line-height: 1.4;
 			padding: 0.4em;
-			text-align: left;
 			vertical-align: top;
 		}
 
@@ -466,25 +474,18 @@ body {
 	}
 
 	hr {
-	    background-color: $border-color;
-	    border: 0 none;
-	    height: 1px;
-	    margin-bottom: 1.6m;
-	}
-
-	hr {
-	    background-color: $border-color;
-	    border: 0 none;
-	    height: 1px;
-	    margin-bottom: 1.6m;
+		background-color: $border-color;
+		border: 0 none;
+		height: 1px;
+		margin-bottom: 1.6m;
 	}
 
 	sup, sub {
-	    font-size: 80%;
-	    height: 0;
-	    line-height: 0;
-	    position: relative;
-	    vertical-align: baseline;
+		font-size: 80%;
+		height: 0;
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
 	}
 
 	sub {
@@ -590,6 +591,10 @@ body {
 					color: $text-color;
 				}
 			}
+
+			.taxonomy-description {
+				margin-top: 1.6em;
+			}
 		}
 
 		.entry-content {
@@ -608,46 +613,48 @@ body {
 				color: $text-color;
 			}
 
-			div {
+			.icon {
 				margin-bottom: 0.4em;
 				&:before {
 					color: $border-color;
+					@include font-awesome();
+					padding-right: 0.4em;
 				}
 			}
 
 			.postdate {
 				&:before {
-				    @include font-awesome( "\f017", 0, 0.4em );
+					content: "\f017";
 				}
 			}
 
 			.author {
 				&:before {
-				    @include font-awesome( "\f007", 0, 0.4em );
+					content: "\f007";
 				}
 			}
 
 			.category {
 				&:before {
-				    @include font-awesome( "\f07b", 0, 0.4em );
+					content: "\f07b";
 				}
 			}
 
 			.tag {
 				&:before {
-				    @include font-awesome( "\f02b", 0, 0.4em );
+					content: "\f02b";
 				}
 			}
 
 			.comment {
 				&:before {
-				    @include font-awesome( "\f075", 0, 0.4em );
+					content: "\f075";
 				}
 			}
 
 			.parent-post-link {
 				&:before {
-				    @include font-awesome( "\f1c5", 0, 0.4em );
+					content: "\f1c5";
 				}
 			}
 		}
@@ -762,7 +769,9 @@ body {
 							width: 0.5em;
 							height: 1.2em;
 							color: #FFF;
-							@include font-awesome( "\f054", 0, 0.4em );
+							@include font-awesome();
+							content: "\f054";
+							padding-right: 0.4em;
 							font-size: 3em;
 							text-indent: 0;
 						}
@@ -795,15 +804,16 @@ body {
 					top: -3px;
 					right: -15px;
 					font-size: 12px;
-					background: $accent-color;
+					background: $main-color;
 					color: #fff;
 					text-align: center;
 					width: 50px;
 					padding: 3px;
 					@include rotate(45deg);
 
-					 &:before {
-					     @include font-awesome("\f005");
+					&:before {
+						@include font-awesome();
+						content: "\f005";
 					}
 				}
 			}
@@ -902,12 +912,12 @@ a:hover img {
 
 .gallery {
 	margin: 0 auto;
-	@include clearfix;
+	@include display-flex();
+	@include flex-wrap( wrap );
+
 
 	.gallery-item {
-		float: left;
-		padding: 0 5px;
-		margin-bottom: 10px;
+		padding: 5px;
 		text-align: center;
 		width: 33%;
 
@@ -920,35 +930,39 @@ a:hover img {
 		}
 	}
 
+	&.gallery-columns-1 .gallery-item {
+		width: 100%;
+	}
+
 	&.gallery-columns-2 .gallery-item {
-		max-width: 50%;
+		width: 50%;
 	}
 
 	&.gallery-columns-3 .gallery-item {
-		max-width: 33.33%;
+		width: 33.33%;
 	}
 	&.gallery-columns-4 .gallery-item {
-		max-width: 25%;
+		width: 25%;
 	}
 
 	&.gallery-columns-5 .gallery-item {
-		max-width: 20%;
+		width: 20%;
 	}
 
 	&.gallery-columns-6 .gallery-item {
-		max-width: 16.66%;
+		width: 16.66%;
 	}
 
 	&.gallery-columns-7 .gallery-item {
-		max-width: 14.28%;
+		width: 14.28%;
 	}
 
 	&.gallery-columns-8 .gallery-item {
-		max-width: 12.5%;
+		width: 12.5%;
 	}
 
 	&.gallery-columns-9 .gallery-item {
-		max-width: 11.11%;
+		width: 11.11%;
 	}
 }
 
@@ -1041,7 +1055,9 @@ video {
 		padding-right: 0;
 
 		&:after {
-			@include font-awesome( "\f054", 0.4em );
+			@include font-awesome();
+			content: "\f054";
+			padding-left: 0.4em;
 		}
 	}
 
@@ -1049,7 +1065,9 @@ video {
 		padding-left: 0;
 
 		&:before {
-			@include font-awesome( "\f053", 0, 0.4em );
+			@include font-awesome();
+			content: "\f053";
+			padding-right: 0.4em;
 		}
 	}
 }
@@ -1096,7 +1114,9 @@ video {
 	.nav-next {
 		a {
 			&:before {
-				@include font-awesome( "\f053", 0, 0.4em );
+				@include font-awesome();
+				content: "\f053";
+				padding-right: 0.4em;
 			}
 		}
 	}
@@ -1107,7 +1127,9 @@ video {
 
 		a {
 			&:after {
-				@include font-awesome( "\f054", 0.4em );
+				@include font-awesome();
+				content: "\f054";
+				padding-left: 0.4em;
 			}
 		}
 	}
@@ -1132,7 +1154,9 @@ video {
 			padding-left: 1em;
 
 			&:after {
-				@include font-awesome( "\f054", 0.4em );
+				@include font-awesome();
+				content: "\f054";
+				padding-left: 0.4em;
 			}
 		}
 
@@ -1143,7 +1167,9 @@ video {
 			padding-right: 1em;
 
 			&:before {
-				@include font-awesome( "\f053", 0, 0.4em );
+				@include font-awesome();
+				content: "\f053";
+				padding-right: 0.4em;
 			}
 		}
 	}
@@ -1201,7 +1227,7 @@ video {
 			}
 
 			&.bypostauthor .comment-author .fn {
-				color: $accent_color;
+				color: $main_color;
 			}
 
 			.reply {
@@ -1209,7 +1235,9 @@ video {
 
 				a.comment-reply-link {
 					&:before {
-						@include font-awesome( "\f112", 0, 0.2em );
+						@include font-awesome();
+						content: "\f112";
+						padding-right: 0.2em;
 					}
 				}
 			}
@@ -1271,7 +1299,9 @@ video {
 					display: block;
 
 					&:before {
-						@include font-awesome( "\f017", 0, 0.4em );
+						@include font-awesome();
+						content: "\f017";
+						padding-right: 0.4em;
 					}
 				}
 			}
@@ -1320,7 +1350,8 @@ video {
 			text-indent: -0.4em;
 
 			&:before {
-				@include font-awesome( "\f0da", 0, 0.2em);
+				@include font-awesome();
+				content: "\f0da";
 			}
 
 			a {
@@ -1370,7 +1401,7 @@ video {
 					padding: 2px 0;
 					margin: 0 auto;
 					background: #FFF;
-					color: $accent_color;
+					color: $main_color;
 
 					&:hover {
 						background: $border-color;
@@ -1472,41 +1503,36 @@ form {
 --------------------------------------------- */
 #searchform {
 	width: 100%;
-	height: 30px;
 	position: relative;
+	border: solid 1px $main-color;
+	padding: 1%;
+	border-radius: 4px;
+	background: #FFF;
+	max-width: 500px;
+	@include display-flex();
 
 	#s {
-		width: 80%;
 		padding: 5px 10px 5px 5px;
-		height: 30px;
 		line-height: 1;
-		border-radius: 4px 0 0 4px;
 		border: none;
-		border: solid 1px $border-color;
+		@include flex(1);
 	}
 
 	#searchsubmit {
-		position: absolute;
-		top: 0;
-		right: 1px;
-		border: 0 none;
+		border: none;
 		cursor: pointer;
 		width: 20%;
-		height: 30px;
-		border-radius: 0 4px 4px 0;
 		margin: 0;
-		background: $border-color;
-		color: #FFF;
+		background: #FFF;
+		color: $main-color;
 		-webkit-appearance: button;
-		@include font-awesome( "\f005" );
 		font-size: 1.2em;
-	}
-}
+		text-align: right;
 
-#footer {
-	#searchform {
-		#s {
-			border: none;
+		&:before {
+			font-size: 1.4rem;
+			@include font-awesome();
+			content: "\f002";
 		}
 	}
 }
@@ -1533,7 +1559,9 @@ form {
 							width: 0.5em;
 							height: 1.2em;
 							color: #FFF;
-							@include font-awesome( "\f054", 0, 0.4em );
+							@include font-awesome();
+							content: "\f054";
+							padding-right: 0.4em;
 							font-size: 3em;
 							text-indent: 0;
 						}
@@ -1588,17 +1616,8 @@ form {
 	}
 
 	.gallery {
-		margin: 0 10%;
-
 		.gallery-item {
-			width: 31%;
-			padding-right: 2%;
-			margin: 0;
-
-			img {
-				width: 100%;
-				height: auto;
-			}
+			padding: 2px;
 		}
 
 		.wp-caption,
@@ -1610,17 +1629,33 @@ form {
 
 /* --- Smartphones and small Tablet PCs --- */
 @media screen and (max-width: 600px) {
+
+	body,
 	.wrapper {
-	 	font-size: 1em;
+		display: block;
+	}
+
+	#footer {
+		margin-top: 0;
+	}
+
+	.wrapper {
+		font-size: 1em;
+	}
+
+	.wrapper > .container {
+		display: block;
+		align-items: stretch;
 	}
 
 	.main {
-		float: none;
+		display: block;
+		flex: none;
+		width: 100%;
 	}
 
 	#header {
 		width: 100%;
-		float: none;
 		padding: 0;
 		position: static;
 
@@ -1709,41 +1744,14 @@ form {
 
 	/* small menu */
 	#menu-wrapper {
-		position: absolute;
-		top: 0;
-		left: -($menu-width);
-		z-index: 3;
+		#small-menu {
+			display: block;
+		}
 
 		.menu {
-			margin-top: 0;
-
-			#small-menu {
-				cursor: pointer;
-				display: block;
-				position: absolute;
-				top: 0;
-				left: $menu-width;
-				width: 2.8em;
-				height: 2.4em;
-				background-color: $navigation_color;
-				color: #FFF;
-				text-align: center;
-				border-bottom-right-radius : 8px;
-				padding: 0.2em;
-
-				&:after {
-					@include font-awesome( "\f0c9" );
-					font-size: 2em;
-				}
-			}
-
 			ul#menu-primary-items {
 				clear: both;
-				width: $menu-width;
-				background: $navigation_color;
-				border-bottom-right-radius : 8px;
 				padding: 0 5px 5px;
-				z-index: 3;
 
 				li {
 					clear: both;
@@ -1754,21 +1762,25 @@ form {
 					text-align: left;
 
 					a {
-						border-color: #FFF;
-						color: #FFF;
 						white-space: normal;
 						padding: 0.4em;
 						width: auto;
 
 						&:hover {
 							background: none;
-							color: $border-color;
+						}
+					}
+
+					&:first-child {
+						> a {
+							border-top-width: 1px;
 						}
 					}
 
 					&.menu-item-has-children {
 						>a:after {
-							@include font-awesome("");
+							@include font-awesome();
+							content: "";
 						}
 					}
 
@@ -1789,40 +1801,6 @@ form {
 						}
 					}
 				}
-
-				.current-menu-item > a,
-				.current-menu-ancestor > a {
-					color: $border-color;
-				}
-			}
-		}
-	}
-
-	body {
-		position: relative;
-
-		&.open-menu {
-			//overflow: hidden;
-
-			.overlay {
-				position: absolute;
-				z-index: 2;
-				top: 0;
-				left: 0;
-				width:100%;
-				height: 100%;
-				background: #000;
-				@include opacity( 0.7 );
-			}
-
-			#menu-wrapper {
-				.menu {
-					#small-menu {
-						&:after {
-							@include font-awesome( "\f00d" );
-						}
-					}
-				}
 			}
 		}
 	}
@@ -1833,5 +1811,16 @@ form {
 	/* ensure .menu is visible on desktop version */
 	ul#menu-primary-items {
 		display: block !important;
+	}
+}
+
+/* admin-bar
+--------------------------------------------- */
+@media screen and (max-width: 600px) {
+	.admin-bar {
+		.drawer-hamburger,
+		.drawer-nav {
+			top: 46px;
+		}
 	}
 }
