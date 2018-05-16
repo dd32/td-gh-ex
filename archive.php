@@ -17,8 +17,8 @@ get_header(); ?>
 				
 				<?php
 				// if archive pages are set to be blocks
-				echo ( get_theme_mod( 'avant-blog-layout' ) == 'blog-blocks-layout' ) ? '<div class="blog-blocks-wrap blog-blocks-wrap-remove blog-style-postblock blog-columns-three">' : '';
-					echo ( get_theme_mod( 'avant-blog-layout' ) == 'blog-blocks-layout' ) ? '<div class="blog-blocks-wrap-inner">' : ''; ?>
+				echo ( get_theme_mod( 'avant-blog-layout', customizer_library_get_default( 'avant-blog-layout' ) ) == 'blog-blocks-layout' ) ? '<div class="blog-blocks-wrap blog-blocks-wrap-remove blog-style-postblock blog-columns-three">' : '';
+					echo ( get_theme_mod( 'avant-blog-layout', customizer_library_get_default( 'avant-blog-layout' ) ) == 'blog-blocks-layout' ) ? '<div class="blog-blocks-wrap-inner">' : ''; ?>
 				
 					<?php /* Start the Loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
@@ -35,8 +35,8 @@ get_header(); ?>
 					
 					<?php
 					// Close the divs for the blocks layout
-					echo ( get_theme_mod( 'avant-blog-layout' ) == 'blog-blocks-layout' ) ? '<div class="clearboth"></div></div>' : '';
-				echo ( get_theme_mod( 'avant-blog-layout' ) == 'blog-blocks-layout' ) ? '</div>' : ''; ?>
+					echo ( get_theme_mod( 'avant-blog-layout', customizer_library_get_default( 'avant-blog-layout' ) ) == 'blog-blocks-layout' ) ? '<div class="clearboth"></div></div>' : '';
+				echo ( get_theme_mod( 'avant-blog-layout', customizer_library_get_default( 'avant-blog-layout' ) ) == 'blog-blocks-layout' ) ? '</div>' : ''; ?>
 				
 				<?php
 				if ( function_exists( 'wp_paginate' ) ):

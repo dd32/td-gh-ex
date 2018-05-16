@@ -68,6 +68,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.06
+* Style tweaks/fixes
+* Fix set default to work with child themes
+
 #### 1.1.05
 * Style tweaks/fixes
 * Added new theme Mobile Settings section to the Customizer

@@ -5,7 +5,7 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
-	<?php if ( get_theme_mod( 'avant-blog-layout' ) == 'blog-blocks-layout' ) : // Blocks Layout ?>
+	<?php if ( get_theme_mod( 'avant-blog-layout', customizer_library_get_default( 'avant-blog-layout' ) ) == 'blog-blocks-layout' ) : // Blocks Layout ?>
 			
 		<div class="blog-post-blocks-inner <?php echo ( get_theme_mod( 'avant-blog-post-shape' ) ) ? sanitize_html_class( get_theme_mod( 'avant-blog-post-shape' ) ) : sanitize_html_class( 'blog-post-shape-square' ); ?>">
 		    

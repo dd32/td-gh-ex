@@ -13,8 +13,8 @@ get_header(); ?>
 
 				<?php get_template_part( '/templates/titlebar' ); ?>
 				
-				<?php echo ( get_theme_mod( 'avant-blog-layout' ) == 'blog-blocks-layout' ) ? '<div class="blog-blocks-wrap blog-blocks-wrap-remove blog-style-postblock blog-columns-three">' : ''; ?>
-					<?php echo ( get_theme_mod( 'avant-blog-layout' ) == 'blog-blocks-layout' ) ? '<div class="blog-blocks-wrap-inner">' : ''; ?>
+				<?php echo ( get_theme_mod( 'avant-blog-layout', customizer_library_get_default( 'avant-blog-layout' ) ) == 'blog-blocks-layout' ) ? '<div class="blog-blocks-wrap blog-blocks-wrap-remove blog-style-postblock blog-columns-three">' : ''; ?>
+					<?php echo ( get_theme_mod( 'avant-blog-layout', customizer_library_get_default( 'avant-blog-layout' ) ) == 'blog-blocks-layout' ) ? '<div class="blog-blocks-wrap-inner">' : ''; ?>
 					
 						<?php /* Start the Loop */ ?>
 						<?php while ( have_posts() ) : the_post(); ?>
@@ -30,8 +30,8 @@ get_header(); ?>
 
 						<?php endwhile; ?>
 						
-					<?php echo ( get_theme_mod( 'avant-blog-layout' ) == 'blog-blocks-layout' ) ? '<div class="clearboth"></div></div>' : ''; ?>
-				<?php echo ( get_theme_mod( 'avant-blog-layout' ) == 'blog-blocks-layout' ) ? '</div>' : ''; ?>
+					<?php echo ( get_theme_mod( 'avant-blog-layout', customizer_library_get_default( 'avant-blog-layout' ) ) == 'blog-blocks-layout' ) ? '<div class="clearboth"></div></div>' : ''; ?>
+				<?php echo ( get_theme_mod( 'avant-blog-layout', customizer_library_get_default( 'avant-blog-layout' ) ) == 'blog-blocks-layout' ) ? '</div>' : ''; ?>
 
 			<?php else : ?>
 

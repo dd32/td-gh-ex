@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.05' );
+define( 'AVANT_THEME_VERSION' , '1.1.06' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -176,7 +176,7 @@ function avant_scripts() {
 	wp_enqueue_script( 'caroufredsel-js', get_template_directory_uri() . "/js/caroufredsel/jquery.carouFredSel-6.2.1-packed.js", array('jquery'), AVANT_THEME_VERSION, true );
     wp_enqueue_script( 'avant-home-slider', get_template_directory_uri() . '/js/home-slider.js', array('jquery'), AVANT_THEME_VERSION, true );
 	
-	if ( get_theme_mod( 'avant-blog-layout' ) == 'blog-blocks-layout' ) :
+	if ( get_theme_mod( 'avant-blog-layout', customizer_library_get_default( 'avant-blog-layout' ) ) == 'blog-blocks-layout' ) :
 		wp_enqueue_script( 'jquery-masonry' );
         wp_enqueue_script( 'avant-masonry-custom', get_template_directory_uri() . '/js/layout-blocks.js', array('jquery'), AVANT_THEME_VERSION, true );
 	endif;
@@ -263,7 +263,7 @@ function avant_add_blog_post_classes ( $classes ) {
 	global $current_class;
 
 	if ( is_home() || is_archive() || is_search() ) :
-		$avant_blog_layout = sanitize_html_class( 'blog-left-layout' );
+		$avant_blog_layout = sanitize_html_class( customizer_library_get_default( 'avant-blog-layout' ) );
 		if ( get_theme_mod( 'avant-blog-layout' ) ) :
 		    $avant_blog_layout = sanitize_html_class( get_theme_mod( 'avant-blog-layout' ) );
 		endif;
