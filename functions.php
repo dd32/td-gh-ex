@@ -166,7 +166,7 @@ if ( ! function_exists( 'ayaestate_load_scripts' ) ) :
 			array( 'jquery', 'viewportchecker' ) );
 
 		$data = array(
-    		'loading_effect' => ( get_theme_mod('ayaestate_animations_display', 1) == 1 ),
+    		'ayaestate_loading_effect' => ( get_theme_mod('ayaestate_animations_display', 1) == 1 ),
     	);
     	wp_localize_script('ayaestate-utilities', 'ayaestate_options', $data);
 	}

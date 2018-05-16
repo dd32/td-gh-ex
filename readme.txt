@@ -5,7 +5,7 @@ custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 theme-options, footer-widgets, full-width-template, editor-style
 Requires at least: 4.8.0
 Tested up to: 4.9.5
-Stable tag: 1.0.3
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,17 @@ Activiation and Use
 2. See Appearance -> Customize to change theme specific options
 
 == Changelog ==
+
+= 1.0.5 =
+* add language folder and .pot language file
+* bump theme stable version number to match with one that has entered on style.css file.
+* add changelog record for 1.0.4.
+* remove Facebook Page image licensing from the readme.txt file.
+* remove one of duplicate conditional statements for header ping-back
+* add prefixed with theme-slug for variable loading_effect passed with wp_localize_script
+
+= 1.0.4 =
+* update images in screenshot.png (remove Instagram images)
 
 = 1.0.3 =
 * update images in screenshot.png
@@ -89,7 +100,5 @@ AyaEstate WordPress Theme bundles the following third-party resources:
 * js/viewportchecker.js, MIT
 *
 * screenshot.png (Thumbnail Image), https://pixabay.com/en/white-outdoor-patio-furniture-1547092/, CC0
-*
-* screenshot.png (Facebook Page), AyaTemplates, https://web.facebook.com/ayatemplates/, GPL-2.0
 *
 * screenshot.png (Facebook Page Logo Image), GPL-2.0, AyaTemplates, https://ayatemplates.com/

@@ -14,13 +14,6 @@
                 printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
             endif;
         ?>
-		<?php
-			if ( is_singular() && pings_open() ) :
-		        printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
-		    endif;
-		?>
-
-
 		<meta name="viewport" content="width=device-width" />
 		<?php wp_head(); ?>
 	</head>

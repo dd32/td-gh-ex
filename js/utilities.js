@@ -34,7 +34,7 @@
 
 		ayaestate_mainMenuInit();
 
-		if (ayaestate_options && ayaestate_options.loading_effect) {
+		if (ayaestate_options && ayaestate_options.ayaestate_loading_effect) {
 			ayaestate_init_loading_effects();
 		}
 
