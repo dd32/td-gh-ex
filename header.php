@@ -19,9 +19,9 @@ global $woocommerce;
 </head>
 <body <?php body_class(); ?>>
 <div id="page">
-<header id="masthead" class="site-header border-bottom topshop-header-layout-standard" role="banner">
+<header id="masthead" class="site-header border-bottom <?php echo ( get_theme_mod( 'topshop-header-layout' ) ) ? get_theme_mod( 'topshop-header-layout' ) : 'topshop-header-layout-standard'; ?>" role="banner">
     
-    <?php get_template_part( '/templates/header/header-layout-standard' ); ?>
+    <?php get_template_part( '/templates/header/header' ); ?>
     
 </header><!-- #masthead -->
 

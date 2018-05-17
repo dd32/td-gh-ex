@@ -1,31 +1,42 @@
 <?php global $woocommerce; ?>
 
-<?php if( get_theme_mod( 'topshop-show-header-top-bar', false ) ) : ?>
+<?php if( get_theme_mod( 'topshop-show-header-top-bar', customizer_library_get_default( 'topshop-show-header-top-bar' ) ) ) : ?>
     
     <div class="site-top-bar border-bottom">
         <div class="site-container">
             
             <div class="site-top-bar-left">
                 
+                <?php do_action ( 'topshop_inside_top_bar_left_left' ); ?>
+                
                 <?php wp_nav_menu( array( 'theme_location' => 'top-bar', 'fallback_cb' => false, 'depth'  => 1 ) ); ?>
+                
+                <?php do_action ( 'topshop_inside_top_bar_left_right' ); ?>
                 
             </div>
             <div class="site-top-bar-right">
                 
-                <?php if ( topshop_is_woocommerce_activated() ) : ?>
-                    <div class="site-top-bar-left-text"><?php echo wp_kses_post( get_theme_mod( 'topshop-header-info-text', 'Call Us: 082 444 BOOM' ) ) ?></div>
-                <?php endif; ?>
+                <?php do_action ( 'topshop_inside_top_bar_right_left' ); ?>
                 
-                <?php if( get_theme_mod( 'topshop-header-search', false ) ) : ?>
-                    <i class="fa fa-search search-btn"></i>
-                <?php endif; ?>
+                <?php
+                if ( topshop_is_woocommerce_activated() ) { ?>
+                    <div class="site-top-bar-left-text"><?php echo wp_kses_post( get_theme_mod( 'topshop-header-info-text', 'Call Us: 082 444 BOOM' ) ) ?></div>
+                <?php
+                } ?>
+                <?php get_template_part( '/templates/social-links' ); ?>
+                
+                <?php do_action ( 'topshop_inside_top_bar_right_right' ); ?>
                 
             </div>
             <div class="clearboth"></div>
             
-            <?php if( get_theme_mod( 'topshop-header-search', false ) ) : ?>
+            <?php if ( get_theme_mod( 'topshop-header-search' ) ) : ?>
                 <div class="search-block">
-                    <?php get_search_form(); ?>
+                    <?php if ( get_theme_mod( 'topshop-search-shortcode' ) ) : ?>
+                        <?php echo do_shortcode( sanitize_text_field( get_theme_mod( 'topshop-search-shortcode' ) ) ); ?>
+                    <?php else : ?>
+                        <?php get_search_form(); ?>
+                    <?php endif; ?>
                 </div>
             <?php endif; ?>
             
@@ -53,9 +64,9 @@
         <?php if ( topshop_is_woocommerce_activated() ) : ?>
             <?php if ( !get_theme_mod( 'topshop-header-remove-acc' ) ) : ?>
                 <?php if ( is_user_logged_in() ) { ?>
-                    <div class="site-header-right-link"><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('My Account','topshop'); ?>"><?php _e('My Account','topshop'); ?></a></div>
+                    <div class="site-header-right-link"><a href="<?php echo get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ); ?>" title="<?php _e( 'My Account','topshop' ); ?>"><?php _e( 'My Account','topshop' ); ?></a></div>
                 <?php } else { ?>
-                    <div class="site-header-right-link"><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Login','topshop'); ?>"><?php _e('Sign In / Register','topshop'); ?></a></div>
+                    <div class="site-header-right-link"><a href="<?php echo get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ); ?>" title="<?php _e( 'Login','topshop' ); ?>"><?php _e( 'Sign In / Register','topshop' ); ?></a></div>
                 <?php } ?>
             <?php endif; ?>
             <?php if ( !get_theme_mod( 'topshop-header-remove-cart' ) ) : ?>
@@ -68,6 +79,12 @@
                             <i class="fa <?php echo ( get_theme_mod( 'topshop-cart-icon' ) ) ? sanitize_html_class( get_theme_mod( 'topshop-cart-icon' ) ) : sanitize_html_class( 'fa-shopping-cart' ); ?>"></i>
                         </span>
                     </a>
+                    
+                    <?php if ( get_theme_mod( 'topshop-header-add-drop-cart' ) ) : ?>
+                        <div class="site-header-cart">
+                            <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             <?php endif; ?>
         <?php else : ?>

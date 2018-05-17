@@ -49,6 +49,7 @@ function customizer_library_topshop_build_styles() {
             'selectors' => array(
                 'a,
                 .search-btn,
+                .social-icon:hover,
                 .site-title a,
                 .error-404.not-found .page-header .page-title span,
                 .search-button .fa-search'

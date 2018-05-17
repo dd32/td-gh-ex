@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.14' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.15' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -136,7 +136,13 @@ function topshop_theme_scripts() {
 	wp_enqueue_style( 'topshop-style', get_stylesheet_uri(), array(), TOPSHOP_THEME_VERSION );
     wp_enqueue_style( 'topshop-woocommerce-style', get_template_directory_uri().'/templates/css/topshop-woocommerce-style.css', array(), TOPSHOP_THEME_VERSION );
 	
-	wp_enqueue_style( 'topshop-header-standard-style', get_template_directory_uri().'/templates/css/topshop-header-standard.css', array(), TOPSHOP_THEME_VERSION );
+	if ( get_theme_mod( 'topshop-header-layout' ) == 'topshop-header-layout-three' ) :
+		wp_enqueue_style( 'topshop-header-three-style', get_template_directory_uri().'/templates/css/topshop-header-three.css', array(), TOPSHOP_THEME_VERSION );
+	elseif ( get_theme_mod( 'topshop-header-layout' ) == 'topshop-header-layout-centered' ) :
+		wp_enqueue_style( 'topshop-header-centered-style', get_template_directory_uri().'/templates/css/topshop-header-centered.css', array(), TOPSHOP_THEME_VERSION );
+	else :
+		wp_enqueue_style( 'topshop-header-standard-style', get_template_directory_uri().'/templates/css/topshop-header-standard.css', array(), TOPSHOP_THEME_VERSION );
+	endif;
 
 	wp_enqueue_script( 'topshop-navigation', get_template_directory_uri() . '/js/navigation.js', array(), TOPSHOP_THEME_VERSION, true );
 	wp_enqueue_script( 'topshop-caroufredSel', get_template_directory_uri() . '/js/jquery.carouFredSel-6.2.1-packed.js', array('jquery'), TOPSHOP_THEME_VERSION, true );

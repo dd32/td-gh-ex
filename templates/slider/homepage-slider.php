@@ -12,7 +12,7 @@ elseif ( get_theme_mod( 'topshop-slider-type', false ) == 'topshop-meta-slider' 
         $slider_code = get_theme_mod( 'topshop-meta-slider-shortcode' );
     } ?>
     
-    <?php echo do_shortcode( esc_html( $slider_code ) ); ?>
+    <?php echo do_shortcode( sanitize_text_field( $slider_code ) ); ?>
     
 <?php else : ?>
     

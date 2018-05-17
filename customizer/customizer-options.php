@@ -69,6 +69,19 @@ function customizer_library_topshop_options() {
         'type'    => 'checkbox',
         'default' => 0,
     );
+    $choices = array(
+        'topshop-header-layout-standard' => __( 'Standard Layout', 'topshop' ),
+        'topshop-header-layout-centered' => __( 'Centered Layout', 'topshop' ),
+        'topshop-header-layout-three' => __( 'Standard Social Layout', 'topshop' )
+    );
+    $options['topshop-header-layout'] = array(
+        'id' => 'topshop-header-layout',
+        'label'   => __( 'Header Layout', 'topshop' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => 'topshop-header-layout-standard'
+    );
     $options['topshop-header-search'] = array(
         'id' => 'topshop-header-search',
         'label'   => __( 'Show Search', 'topshop' ),
@@ -103,7 +116,7 @@ function customizer_library_topshop_options() {
         'id' => 'topshop-upsell-layout',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Enable WooCommerce Drop Down Cart/Basket<br />- Set custom website width<br />- Set custom sidebar width<br />- Change the site layout to boxed or full width<br />- Select between 3 header layouts<br />- Remove Page Titles<br />- Change WooCommerce cart icon', 'topshop' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Enable WooCommerce Drop Down Cart/Basket<br />- Set custom website width<br />- Set custom sidebar width<br />- Change the site layout to boxed or full width<br />- Select between 3 header layouts<br />- Remove Page Titles<br />- Change WooCommerce cart icon<br />- Add shortcode for better Product search (an added plugin)', 'topshop' )
     );
     
     
@@ -490,6 +503,78 @@ function customizer_library_topshop_options() {
         'priority' => '50'
     );
     
+    $options['topshop-social-email'] = array(
+        'id' => 'topshop-social-email',
+        'label'   => __( 'Email Address', 'topshop' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['topshop-social-skype'] = array(
+        'id' => 'topshop-social-skype',
+        'label'   => __( 'Skype Name', 'topshop' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['topshop-social-facebook'] = array(
+        'id' => 'topshop-social-facebook',
+        'label'   => __( 'Facebook', 'topshop' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['topshop-social-twitter'] = array(
+        'id' => 'topshop-social-twitter',
+        'label'   => __( 'Twitter', 'topshop' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['topshop-social-google-plus'] = array(
+        'id' => 'topshop-social-google-plus',
+        'label'   => __( 'Google Plus', 'topshop' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['topshop-social-linkedin'] = array(
+        'id' => 'topshop-social-linkedin',
+        'label'   => __( 'LinkedIn', 'topshop' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['topshop-social-behance'] = array(
+        'id' => 'topshop-social-behance',
+        'label'   => __( 'Behance', 'topshop' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['topshop-social-houzz'] = array(
+        'id' => 'topshop-social-houzz',
+        'label'   => __( 'Houzz', 'topshop' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['topshop-social-vk'] = array(
+        'id' => 'topshop-social-vk',
+        'label'   => __( 'Vkontakte', 'topshop' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['topshop-social-tumblr'] = array(
+        'id' => 'topshop-social-tumblr',
+        'label'   => __( 'Tumblr', 'topshop' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['topshop-social-flickr'] = array(
+        'id' => 'topshop-social-flickr',
+        'label'   => __( 'Flickr', 'topshop' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
+    $options['topshop-social-tripadvisor'] = array(
+        'id' => 'topshop-social-tripadvisor',
+        'label'   => __( 'TripAdvisor', 'topshop' ),
+        'section' => $section,
+        'type'    => 'text',
+    );
     $options['topshop-upsell-social'] = array(
         'id' => 'topshop-upsell-social',
         'section' => $section,

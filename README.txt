@@ -70,6 +70,14 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.15
+* Styling fixes/tweaks
+* Fix/Update setting to add shortcode as the default slider
+* Added 2 new header layouts into Customizer settings
+* Added a bunch of Social Link settings to the header - Customize -> Social Links
+* Updated language .pot file
+Premium: Added option to change search to use WooCommerce Product Search Plugin - shortcode
+
 #### 1.3.14
 * WooCommerce & TopShop CSS tweaks/fixes
 * Updated WooCommerce deprecated functions

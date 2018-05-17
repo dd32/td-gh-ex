@@ -99,7 +99,9 @@ TopShop Premium - Header Standard Styling
     margin: 0;
     padding: 4px 0 21px;
     font-size: 12px;
-    color: inherit;
+}
+.header-cart .site-header-cart {
+    top: 28px;
 }
 
 @media screen and (max-width: 782px) {
