@@ -28,15 +28,21 @@
     padding: 4px 0 0;
 }
 
-.kaira-upsell {
+.kaira-help {
     margin-top: 30px;
     font-size: 11px;
     color: rgb(142, 142, 142);
 }
-.kaira-upsell b {
+.kaira-help b {
     font-weight: 500;
     color: #006cc9;
 }
+.hide {
+    display: none;
+}
+/*.topshop-note-topstore {
+    display: block;
+}*/
 
 #customize-control-blogdescription,
 #customize-control-topshop-header-image-logo-max-width,

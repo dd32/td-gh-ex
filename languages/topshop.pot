@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TopShop\n"
-"POT-Creation-Date: 2018-05-17 11:53+0700\n"
+"POT-Creation-Date: 2018-05-17 15:43+0700\n"
 "PO-Revision-Date: 2016-06-01 15:20+0200\n"
 "Last-Translator: Kaira <zack@kairaweb.com>\n"
 "Language-Team: \n"
@@ -1200,18 +1200,6 @@ msgstr ""
 
 #: templates/slider/homepage-slider.php:87
 msgid "It's that little extra thought that counts"
-msgstr ""
-
-#: templates/slider/homepage-slider.php:95
-msgid "Demo Slide Two"
-msgstr ""
-
-#: templates/slider/homepage-slider.php:100
-msgid "Online Shopping"
-msgstr ""
-
-#: templates/slider/homepage-slider.php:102
-msgid "Install WooCommerce to start building your online store"
 msgstr ""
 
 #: templates/social-links.php:3

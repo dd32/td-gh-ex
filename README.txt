@@ -70,6 +70,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.16
+* Edit/Fix settings to work with child theme defaults
+* Neaten code and add missing sanitization
+* Updated language .pot file
+
 #### 1.3.15
 * Styling fixes/tweaks
 * Fix/Update setting to add shortcode as the default slider

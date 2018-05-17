@@ -112,10 +112,10 @@ function customizer_library_topshop_options() {
         'default' => 0,
     );
     
-    $options['topshop-upsell-layout'] = array(
-        'id' => 'topshop-upsell-layout',
+    $options['topshop-help-layout'] = array(
+        'id' => 'topshop-help-layout',
         'section' => $section,
-        'type'    => 'upsell',
+        'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />- Enable WooCommerce Drop Down Cart/Basket<br />- Set custom website width<br />- Set custom sidebar width<br />- Change the site layout to boxed or full width<br />- Select between 3 header layouts<br />- Remove Page Titles<br />- Change WooCommerce cart icon<br />- Add shortcode for better Product search (an added plugin)', 'topshop' )
     );
     
@@ -158,10 +158,10 @@ function customizer_library_topshop_options() {
         'description' => __( 'For a more advanced slider we recommend <a href="https://getdpd.com/cart/hoplink/15318?referrer=9jtzbgs34v8k4c0gs" target="_blank">Meta Slider</a><br /><br />Enter the slider shortcode here', 'topshop' )
     );
     
-    $options['topshop-upsell-slider'] = array(
-        'id' => 'topshop-upsell-slider',
+    $options['topshop-help-slider'] = array(
+        'id' => 'topshop-help-slider',
         'section' => $section,
-        'type'    => 'upsell',
+        'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />- Change Slider scroll effect<br />- Link slide to single post<br />- Remove slider text<br />- Stop slider auto scroll', 'topshop' )
     );
     
@@ -221,10 +221,10 @@ function customizer_library_topshop_options() {
         'default' => '...Read More'
     );
     
-    $options['topshop-upsell-blog'] = array(
-        'id' => 'topshop-upsell-blog',
+    $options['topshop-help-blog'] = array(
+        'id' => 'topshop-help-blog',
         'section' => $section,
-        'type'    => 'upsell',
+        'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />- Select between blog side or top layouts<br />- Set Blog, Archive & Single pages to Left Sidebar<br />- Set Blog, Archive & Single pages to full width<br />- Set WooCommerce Shop, Archive & Product pages to Left Sidebar<br />- Set WooCommerce Shop, Archive & Product pages to Full Width', 'topshop' )
     );
     
@@ -238,10 +238,10 @@ function customizer_library_topshop_options() {
         'panel' => $panel
     );
     
-    $options['topshop-upsell-footer'] = array(
-        'id' => 'topshop-upsell-footer',
+    $options['topshop-help-footer'] = array(
+        'id' => 'topshop-help-footer',
         'section' => $section,
-        'type'    => 'upsell',
+        'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />- Premium offers 3 different footer layouts<br />- Advanced Custom Footer layout to specify columns and column widths', 'topshop' )
     );
 
@@ -486,10 +486,10 @@ function customizer_library_topshop_options() {
         'default' => $secondary_color,
     );
     
-    $options['topshop-upsell-colors'] = array(
-        'id' => 'topshop-upsell-colors',
+    $options['topshop-help-colors'] = array(
+        'id' => 'topshop-help-colors',
         'section' => $section,
-        'type'    => 'upsell',
+        'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />Premium offers a bunch of custom color settings to change colors for the Header, Top Bar, Navigation & Footer', 'topshop' )
     );
     
@@ -575,10 +575,10 @@ function customizer_library_topshop_options() {
         'section' => $section,
         'type'    => 'text',
     );
-    $options['topshop-upsell-social'] = array(
-        'id' => 'topshop-upsell-social',
+    $options['topshop-help-social'] = array(
+        'id' => 'topshop-help-social',
         'section' => $section,
-        'type'    => 'upsell',
+        'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />Premium offers over 20 different social icons to add to your site, as well as the setting to add any custom icon you may need.', 'topshop' )
     );
     
@@ -625,10 +625,10 @@ function customizer_library_topshop_options() {
         'description' => __( 'Enter the default text for when no search results are found', 'topshop' )
     );
     
-    $options['topshop-upsell-website'] = array(
-        'id' => 'topshop-upsell-website',
+    $options['topshop-help-website'] = array(
+        'id' => 'topshop-help-website',
         'section' => $section,
-        'type'    => 'upsell',
+        'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />- Change the site attribution text to your own', 'topshop' )
     );
     

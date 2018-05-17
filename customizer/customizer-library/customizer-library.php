@@ -35,7 +35,7 @@ require plugin_dir_path( __FILE__ ) . 'extensions/utilities.php';
 require plugin_dir_path( __FILE__ ) . 'extensions/preview.php';
 
 // Custom upsell controls for the theme customizer.
-require plugin_dir_path( __FILE__ ) . 'custom-controls/upsell.php';
+require plugin_dir_path( __FILE__ ) . 'custom-controls/help.php';
 
 // Custom controls for the theme customizer.
 if ( version_compare( $GLOBALS['wp_version'], '4.0', '<' ) ) {
