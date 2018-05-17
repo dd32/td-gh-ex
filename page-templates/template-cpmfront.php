@@ -115,7 +115,7 @@ if (get_theme_mod('homepage_show_content')==1) {
                     if(!$home_excerpt){
                         $home_excerpt = esc_attr('800','ace-corporate');
                     }
-                    echo esc_html(ace_corporate_get_excerpt($id, $home_excerpt)); ?>
+                    echo wp_kses_post(ace_corporate_get_excerpt($id, $home_excerpt)); ?>
                 </div>
             </div>
         </div>
