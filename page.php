@@ -21,7 +21,7 @@ while ( have_posts() ) : the_post(); ?>
     </div>
 
     <div id="content-ts" class="container">
-        <div class="middle-align">
+        <div class="middle-align row">
     		<div class="col-md-12">
                 <img src="<?php the_post_thumbnail_url(); ?>" width="100%">
                 <?php the_content();

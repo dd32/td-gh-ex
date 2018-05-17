@@ -37,9 +37,17 @@ function bb_mobile_application_setup() {
 	) );
 
 	/*
+	* Enable support for Post Formats.
+	*
+	* See: https://codex.wordpress.org/Post_Formats
+	*/
+	add_theme_support( 'post-formats', array('image','video','gallery','audio',) );
+
+	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
+
 	add_editor_style( array( 'css/editor-style.css', bb_mobile_application_font_url() ) );
 }
 endif;
@@ -125,7 +133,7 @@ function bb_mobile_application_font_url(){
 	$font_family = array();
 	$font_family[] = 'PT Sans:300,400,600,700,800,900';
 	$font_family[] = 'Roboto:400,700';
-	$font_family[] = 'Roboto Condensed:400,700';
+	$font_family[] = 'Montserrat';
 	$query_args = array(
 		'family'	=> urlencode(implode('|',$font_family)),
 	);
@@ -136,7 +144,7 @@ function bb_mobile_application_font_url(){
 /* Theme enqueue scripts */
 function bb_mobile_application_scripts() {
 	wp_enqueue_style( 'bb-mobile-application-font', bb_mobile_application_font_url(), array() );
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/css/bootstrap.css' );
+	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri().'/css/bootstrap.css' );
 	wp_enqueue_style( 'bb-mobile-application-basic-style', get_stylesheet_uri() );
 	wp_style_add_data( 'bb-mobile-application-style', 'rtl', 'replace' );
 	wp_enqueue_style( 'effect', get_template_directory_uri().'/css/effect.css' );
@@ -145,6 +153,7 @@ function bb_mobile_application_scripts() {
 	wp_enqueue_style( 'jquery-nivo-slider', get_template_directory_uri().'/css/nivo-slider.css' );
 	wp_enqueue_script( 'jquery-nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
 	wp_enqueue_script( 'bb-mobile-application-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -157,12 +166,12 @@ define('BB_MOBILE_APPLICATION_BUY_NOW','https://www.themeshopy.com/premium/bb-mo
 define('BB_MOBILE_APPLICATION_LIVE_DEMO','https://www.themeshopy.com/bb-mobile-application-theme/','bb-mobile-application');
 define('BB_MOBILE_APPLICATION_PRO_DOC','https://themeshopy.com/docs/bb-app/','bb-mobile-application');
 define('BB_MOBILE_APPLICATION_FREE_DOC','https://themeshopy.com/docs/free-bb-app/','bb-mobile-application');
-define('BB_MOBILE_APPLICATION_CONTACT','https://www.themeshopy.com/free-theme-support/','bb-mobile-application');
+define('BB_MOBILE_APPLICATION_CONTACT','https://wordpress.org/support/theme/bb-mobile-application/','bb-mobile-application');
 define('BB_MOBILE_APPLICATION_CREDIT','https://themeshopy.com','bb-mobile-application');
 
 if ( ! function_exists( 'bb_mobile_application_credit' ) ) {
 	function bb_mobile_application_credit(){
-		echo "<a href=".esc_url(BB_MOBILE_APPLICATION_CREDIT)." target='_blank'>ThemeShopy</a>";
+		echo "<a href=".esc_url(BB_MOBILE_APPLICATION_CREDIT)." target='_blank'>". esc_html__('ThemeShopy','bb-mobile-application')."</a>";
 	}
 }
 

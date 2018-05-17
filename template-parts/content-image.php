@@ -7,13 +7,13 @@
  * @since BB Mobile Application 1.0
  */
 ?>
-<div id="post-<?php the_ID(); ?>" <?php post_class(''); ?>> 
+<div id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
   <div class="page-box">
     <div class="box-image">
       <?php 
-        if(has_post_thumbnail()) { 
-          the_post_thumbnail(); 
-        }
+          if(has_post_thumbnail()) { 
+            the_post_thumbnail(); 
+          }
       ?>
     </div>
     <div class="new-text"<?php if(has_post_thumbnail()) { ?><?php } ?>>
@@ -24,4 +24,3 @@
     <div class="clearfix"></div>
   </div>
 </div>
-  

@@ -6,8 +6,8 @@
 get_header(); ?>
 
 <div class="container">
-    <div class="middle-align">  
-    	<div class="col-md-4">
+    <div class="middle-align row">  
+    	<div class="col-md-4" id="sidebar">
     		<?php dynamic_sidebar('sidebar-2'); ?>
     	</div>		 
     	<div class="col-md-8" id="content-ts" >

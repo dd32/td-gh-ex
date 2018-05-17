@@ -5,7 +5,7 @@
  * @since  1.0.0
  * @access public
  */
-class bb_mobile_application_customize_Section_Pro extends WP_Customize_Section {
+class BB_Mobile_Application_Customize_Section_Pro extends WP_Customize_Section {
 
 	/**
 	 * The type of customize section being rendered.

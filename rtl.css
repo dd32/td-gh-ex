@@ -9,10 +9,10 @@ body{
 	padding:0;
 	-ms-word-wrap:break-word;
 	word-wrap:break-word;
-	background-color:#f1f1f1;
-	font:12px/22px arial;
-	color:#5b5b5b;
-	font-family:Open sans;
+	background-color:#fff;
+	font-size:12px;
+	color:#000;
+	font-family: 'Montserrat', sans-serif;
 }
 img{
 	margin:0;
@@ -209,55 +209,6 @@ input[type="submit"]:hover{
 	background:#3890cb;
 }
 
-/* Sweep To Right */
-.hvr-sweep-to-right {
-	display: inline-block;
-	vertical-align: middle;
-	-webkit-transform: translateZ(0);
-	transform: translateZ(0);
-	box-shadow: 0 0 1px rgba(0,0,0,0);
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-	-moz-osx-font-smoothing: grayscale;
-	position: relative;
-	-webkit-transition-property: color;
-	transition-property: color;
-	-webkit-transition-duration: 0.3s;
-	transition-duration: 0.3s;
-}
-.hvr-sweep-to-right:before {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-	background: #4d6dc1;
-	-webkit-transform: scaleX(0);
-	transform: scaleX(0);
-	-webkit-transform-origin: 100% 50%;
-	transform-origin: 100% 50%;
-	-webkit-transition-property: transform;
-	transition-property: transform;
-	-webkit-transition-duration: 0.3s;
-	transition-duration: 0.3s;
-	-webkit-transition-timing-function: ease-out;
-	transition-timing-function: ease-out;
-
-}
-.hvr-sweep-to-right:hover,
-.hvr-sweep-to-right:focus,
-.hvr-sweep-to-right:active {
-  color: #fff;
-}
-.hvr-sweep-to-right:hover:before,
-.hvr-sweep-to-right:focus:before,
-.hvr-sweep-to-right:active:before {
-	-webkit-transform: scaleX(1);
-	transform: scaleX(1);
-}
-
 /* ---------Buttons--------- */
 a.button{
 	background:#14c2a0;
@@ -267,8 +218,7 @@ a.button{
     padding: 7px 30px;
     text-transform: uppercase;
 	font-weight:bold;
-}
-	
+}	
 /* ---------HEADER--------- */
 .header-no-slider{
 	height: 100px;
@@ -299,11 +249,9 @@ a.button{
 }
 #header .logo a{
 	color:#fff;
-	font-family:'Roboto';
 }
 #header .logo p{
 	font-size:12px;
-	font-family:arimo;
 	color: #fff;
 }
 #header{
@@ -322,7 +270,6 @@ a.button{
 	float:left;
 	margin:0;
 	padding:0;
-	font-family:'Roboto';
 	font-weight:400;
 	font-size:14px;
 	text-transform: uppercase;
@@ -344,7 +291,9 @@ a.button{
 #header .nav ul li a:active{
 	color:#3890cb;
 }
-
+.page-content {
+    padding: 3% 0;
+}
 /*creative feature*/
 .featuered-image img {
     width: 65%;
@@ -355,20 +304,17 @@ a.button{
 #about h4 {
     color: #717171;
     font-weight: bold;
-    font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;    
     text-align: right;
 }
 #about p {
     line-height: 28px;
     font-size: 17px;
-    font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
     color: #777777;
 }
 .creative-feature h3 {
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
     font-size: 36px;
     color: #4e4e4e;
     font-weight: normal;
@@ -404,7 +350,6 @@ a.button{
     font-size: 15px;
     margin: 0;
     line-height: 25px;
-    font-family: Roboto;
     letter-spacing: 1px;
     color:rgba(51, 51, 51, 0.67);
 }
@@ -502,6 +447,7 @@ a.r_button {
     width: 100%;
     border: none;
     padding: 8px;
+    color: #000;
 }
 .copyright-wrapper caption {
   font-weight: bold;
@@ -533,7 +479,6 @@ a.r_button {
 	color:#fff;
 	padding:40px 0 30px;
 	text-align:right;
-	font-family:Helvetica;
     clear:both;
 }
 #footer h3 {
@@ -617,7 +562,6 @@ h2.woocommerce-loop-product__title{
   display: block !important;
   position: absolute;
   top: 0px;
-  font-family: Roboto;
   padding: 20px 0 !important;
   font-size: 18px;
   margin: 0 auto !important;
@@ -655,19 +599,16 @@ h2.woocommerce-loop-product__title{
   background: #fff;
   color: #14c2a0;
   letter-spacing: 1px;
-  font-family: Roboto;
 }
 p.woocommerce-result-count {
   font-size: 17px;
   color: #14c2a0;
   letter-spacing: 1px;
-  font-family: Roboto;
 }
 h1.woocommerce-products-header__title {
   font-weight: bold;
   font-size: 30px;
   letter-spacing: 1px;
-  font-family: Roboto;
   color: #14c2a0;
 }
 .woocommerce div.product .product_title {
@@ -711,12 +652,10 @@ h1.woocommerce-products-header__title {
 .woocommerce-product-details__short-description p {
   font-size: 15px;
   color: #000;
-  font-family: Roboto;
 }
 .woocommerce span.onsale {
   background-color: #14c2a0;
   font-size: 15px;
-  font-family: Roboto;
   padding: 0;
 }
 .woocommerce .star-rating {
@@ -879,38 +818,18 @@ section#blog{
 	top:20%!important;
 }
 #slider .slide-cap{
-	 position:relative;
+	position:relative;
 	margin:auto;
 	width:90%;
 	margin-left:auto;
 	margin-right:auto;
 	top:25%;
 }
-#slider .slide-cap h4{
-	text-transform:uppercase;
-	font-size:25px;
-	width:30%;
-	margin:0 auto;
-	background:url('images/welcome.png') center no-repeat;
-	background-position: center;
-	padding:5px 0;
-	font-weight:bold;
-}
 #slider .slide-cap h2{
 	padding:0 0 5% 25px;
-	font:700 80px 'Roboto';
+	font-size: 50px;
 	text-transform:uppercase;
-	right:50%;
-}
-#slider .slide-cap p{
-	color:#ffffff;
-	font-weight:700;
-	margin:0 0 0 0;
-	line-height:20px;
-	border-radius:0 0 5px 5px;
-	font:25px/20px arial;
-	text-transform:uppercase;
-	font-weight:bold;
+	font-weight: bold;
 }
 #slider .slide-cap a.read-more{
 	border-radius:3px;
@@ -922,18 +841,6 @@ section#blog{
 	height:auto;
 	display:table;
 	margin:0 auto;
-}
-a.blog-more{
-	display:inline-block;
-	font:400 16px 'Roboto Condensed', sans-serif;
-	padding:10px 30px;
-	margin-top:21px;
-	border-radius:4px;
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
-	-o-border-radius:4px;
-	-ms-border-radius:4px;
-	margin-left:15px;
 }
 
 /* Sidebar */
@@ -965,9 +872,6 @@ a.blog-more{
     padding: 8px 5px;
     color: #333;
 }
-#sidebar{
-	font-family:Helvetica;
-}
 #sidebar form{
  	display: table;
 	width: 100%;
@@ -978,7 +882,6 @@ a.blog-more{
     text-transform: none;
     font-weight: bold;
     font-size: 22px;
-    font-family: Roboto;
     background: rgba(20, 194, 160, 0.32);
     color: #111;
     letter-spacing: 1px;
@@ -1027,7 +930,6 @@ label{
 }
 #sidebar ul li a {
     color: #333;
-    font-family: Roboto;
     letter-spacing: 1px;
 }
 #sidebar ul li a:hover{
@@ -1056,14 +958,10 @@ label{
 	font-weight:bold;
 	text-align:center;
 	margin-bottom:25px;
-	font-family:Roboto;
 	background-color: #11b292;
 }
 .single .title-box{
 	background-size:100% auto;
-}
-#content-ts {
-	font-family:Helvetica;
 }
 #content-ts p{
 	text-align:justify;
@@ -1084,7 +982,6 @@ label{
 	padding:0;
 	color:#000;
 	margin:0 0 25px;
-	font-family:Roboto;
 }
 #content-ts h3{
 	font-size:36px;
@@ -1093,7 +990,6 @@ label{
 	padding:0;
 	color:#000;
 	margin:0 0 25px;
-	font-family:Roboto;
 }
 #content-ts h4{
 	font-size:20px;
@@ -1102,7 +998,6 @@ label{
 	padding:0;
 	color:#333;
 	margin:0 0 25px;
-	font-family:Roboto;
 }
 #content-ts ul{list-style:none;
 	margin:0 10px 0 0;
@@ -1130,10 +1025,8 @@ label{
 	clear:both;
 	position:relative;
 	font-size:14px;
-	/* Pagination text size */
 	line-height:13px;
 	float:left;
-	/* Pagination float direction */
 	font-weight:bold;
 } 
 .pagination span,
@@ -1145,9 +1038,7 @@ label{
     text-decoration:none;
     width:auto;
     color:#fff;
-	/* Pagination text color */
     background: #18cfab ;
-	/* Pagination non-active background color */
     -webkit-transition: background .15s ease-in-out;
     -moz-transition: background .15s ease-in-out;
     -ms-transition: background .15s ease-in-out;
@@ -1307,4 +1198,12 @@ label{
 	.woocommerce a.button, .woocommerce a.added_to_cart{
 		width: 70%
 	}
+}
+/*video*/
+iframe{
+	width: 100%;
+}
+/*VIDEO*/
+.innerlightbox {
+    margin-top: 34px;
 }

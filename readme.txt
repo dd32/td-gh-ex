@@ -4,8 +4,8 @@
 
 Theme Name      :   BB Mobile Application
 Theme URI       :   https://www.themeshopy.com/free/wp-bb-mobile-application-theme/
-Version         :   1.2.3.2
-Tested up to    :   WP 4.9.4
+Version         :   1.2.3.3
+Tested up to    :   WP 4.9.5
 Author          :   ThemeShopy
 Author URI      :   https://www.themeshopy.com/
 license         :   GNU General Public License v3.0
@@ -56,15 +56,13 @@ Theme is Built using the following resource bundles.
 		 * Bootstrap v3.3.2 (http://getbootstrap.com)
  		 * Copyright 2011-2015 Twitter, Inc.
 
-4. Screenshot Images
-   -- https://pixabay.com/en/iphone-smartphone-apps-apple-inc-410311/
-   --  	
+    Bundled header image, Copyright JESHOOTScom
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://pixabay.com/en/iphone-smartphone-apps-apple-inc-410311/
 
-5 - All the icons taken from fontawesome licensed under GPL License.
+4 - All the icons taken from fontawesome licensed under GPL License.
     https://github.com/FortAwesome/Font-Awesome [MIT](http://opensource.org/licenses/MIT)
 
-
-	
 All the slider images taken from pixabay under Creative Commons Deed CC0 - https://pixabay.com/en/service/terms/
 
 All the icons taken from genericons licensed under GPL License.
@@ -138,6 +136,13 @@ ii) Update Fontawesome.
 iii) Resolved the theme url.
 iv)  Add the css in style.css file.
 v)  Update rtl.css file.
+
+Version 1.2.3.3
+i)   Update the bootstrap upto 4.0.0.
+ii)  Removed the hover css from style.css file.
+iii) Added the post format tag and add the files in template part folder.
+iv)  Upadte the language folder.
+v)   Resolved the minor theme error.
 
 
 BB Mobile Application Premium version

@@ -30,10 +30,9 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('bb_mobile_application_theme_options',array(
-	        'default' => '',
-	        'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
+        'default' => '',
+        'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
 	));
-
 	$wp_customize->add_control('bb_mobile_application_theme_options',
 	    array(
 	        'type' => 'radio',
@@ -85,7 +84,6 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field',
 	));
-
 	$wp_customize->add_control('bb_mobile_application_title',array(
 		'label'	=> __('Title','bb-mobile-application'),
 		'section'	=> 'bb_mobile_application_creative_section',
@@ -106,9 +104,8 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('bb_mobile_application_blogcategory_left_setting',array(
 		'default'	=> 'select',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'bb_mobile_application_sanitize_choices',
 	));
-
 	$wp_customize->add_control('bb_mobile_application_blogcategory_left_setting',array(
 		'type'    => 'select',
 		'choices' => $cats,
@@ -126,7 +123,6 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('the_wp_business_middle_image_setting',array(
 		'sanitize_callback' => 'sanitize_text_field',
 	));
-
 	$wp_customize->add_control('the_wp_business_middle_image_setting',array(
 		'type'    => 'select',
 		'choices' => $posts,
@@ -148,9 +144,8 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting('bb_mobile_application_blogcategory_right_setting',array(
 		'default'	=> 'select',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'bb_mobile_application_sanitize_choices',
 	));
-
 	$wp_customize->add_control('bb_mobile_application_blogcategory_right_setting',array(
 		'type'    => 'select',
 		'choices' => $cats,
@@ -158,25 +153,23 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 		'section' => 'bb_mobile_application_creative_section',
 	));
 	
-
+	//Footer
 	$wp_customize->add_section('bb_mobile_application_footer_section',array(
 		'title'	=> __('Footer Text','bb-mobile-application'),
 		'description'	=> '',
 		'priority'	=> null,
 		'panel' => 'bb_mobile_application_panel_id',
 	));
-	
+
 	$wp_customize->add_setting('bb_mobile_application_footer_copy',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field',
-	));
-	
+	));	
 	$wp_customize->add_control('bb_mobile_application_footer_copy',array(
 		'label'	=> __('Copyright Text','bb-mobile-application'),
 		'section'	=> 'bb_mobile_application_footer_section',
 		'type'		=> 'textarea'
-	));
-	
+	));	
 }
 add_action( 'customize_register', 'bb_mobile_application_customize_register' );	
 
@@ -247,11 +240,11 @@ final class bb_mobile_application_customize {
 		load_template( trailingslashit( get_template_directory() ) . '/inc/section-pro.php' );
 
 		// Register custom section types.
-		$manager->register_section_type( 'bb_mobile_application_customize_Section_Pro' );
+		$manager->register_section_type( 'BB_Mobile_Application_Customize_Section_Pro' );
 
 		// Register sections.
 		$manager->add_section(
-			new bb_mobile_application_customize_Section_Pro(
+			new BB_Mobile_Application_Customize_Section_Pro(
 				$manager,
 				'example_1',
 				array(

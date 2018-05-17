@@ -7,13 +7,31 @@
  * @since BB Mobile Application 1.0
  */
 ?>
-<div id="post-<?php the_ID(); ?>" <?php post_class(''); ?>> 
+
+<?php
+  $content = apply_filters( 'the_content', get_the_content() );
+  $audio = false;
+
+  // Only get audio from the content if a playlist isn't present.
+  if ( false === strpos( $content, 'wp-playlist-script' ) ) {
+    $audio = get_media_embedded_in_content( $content, array( 'audio' ) );
+  }
+
+?>  
+<div id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
   <div class="page-box">
     <div class="box-image">
-      <?php 
-        if(has_post_thumbnail()) { 
-          the_post_thumbnail(); 
-        }
+      <?php
+        if ( ! is_single() ) {
+          // If not a single post, highlight the audio file.
+          if ( ! empty( $audio ) ) {
+            foreach ( $audio as $audio_html ) {
+              echo '<div class="entry-audio">';
+                echo $audio_html;
+              echo '</div><!-- .entry-audio -->';
+            }
+          };
+        };
       ?>
     </div>
     <div class="new-text"<?php if(has_post_thumbnail()) { ?><?php } ?>>
@@ -24,4 +42,3 @@
     <div class="clearfix"></div>
   </div>
 </div>
-  

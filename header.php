@@ -21,19 +21,21 @@
   <div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','bb-mobile-application'); ?></a></div>
   <div id="header">
     <div class="container">
-      <div class="menubox col-md-8 col-sm-8 col-md-push-4">
-        <div class="nav">
-		      <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
+      <div class="row">
+        <div class="logo col-md-4 col-sm-4">
+          <?php bb_mobile_application_the_custom_logo(); ?>
+          <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+          <?php
+          $description = get_bloginfo( 'description', 'display' );
+          if ( $description || is_customize_preview() ) : ?>
+              <p class="site-description"><?php echo esc_html( $description ); ?></p>
+          <?php endif; ?>
         </div>
-      </div>
-      <div class="logo col-md-4 col-sm-4 wow  col-md-pull-8 bounceInDown">
-        <?php bb_mobile_application_the_custom_logo(); ?>
-        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-        <?php
-        $description = get_bloginfo( 'description', 'display' );
-        if ( $description || is_customize_preview() ) : ?>
-            <p class="site-description"><?php echo esc_html( $description ); ?></p>
-        <?php endif; ?>
+        <div class="menubox col-md-8 col-sm-8">
+          <div class="nav">
+  		      <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
+          </div>
+        </div>        
       </div>
       <div class="clear"></div>
     </div>
