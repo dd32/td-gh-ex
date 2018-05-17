@@ -1,0 +1,215 @@
+/*
+Theme Name: A Magazine
+Theme URI:
+Author: shivashankerbhatta
+Author URI: https://profiles.wordpress.org/shivashankerbhatta/profile/
+Description: A Magazine is a child theme of Elegant Magazine. The theme has modified main banner section and featured news section. Furthermore, it is coming with different font, various color and background color changes.  It is typically designed for a blog, fashion news portal and magazine with an immense research on contemporary online newspapers. With the help of parent customizer options along with widgets, you can implement layouts as a trending news journals, modern fashion magazine, travel blogging & magazine, clean and minimal news sites, blogging site and even more. The theme is SEO friendly with optimized codes and awesome supports.
+Template: elegant-magazine
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: a-magazine
+Tags: news, blog, entertainment, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, custom-header, translation-ready, theme-options, threaded-comments
+*/
+
+body,
+body button,
+body input,
+body select,
+body optgroup,
+body textarea {
+    font-family: 'Lato', sans-serif;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body .main-navigation a,
+body .font-family-1,
+body .site-description,
+body .trending-posts-line,
+body .widget-title,
+body .em-widget-subtitle,
+body .grid-item-metadata .item-metadata,
+body .af-navcontrols .slide-count,
+body .figure-categories .cat-links,
+body .nav-links a {
+    font-family: 'Lato', sans-serif;
+}
+
+body .offcanvas-menu span,
+body .data-bg,
+body .primary-color {
+    background-color: #606060;
+}
+
+body{
+    color: #606060;
+}
+
+body .secondary-color,
+body button,
+body input[type="button"],
+body input[type="reset"],
+body input[type="submit"],
+body .site-content .search-form .search-submit,
+body .site-footer .search-form .search-submit,
+body .figure-categories-bg .cat-links a,
+body .tagcloud a:hover{
+    background: #d6210b;
+}
+
+
+
+body a:hover,
+body a:focus,
+body a:active,
+body .figure-categories-2 .cat-links a,
+body .elegant_magazine_single_col_categorised_posts .figure-categories .cat-links a,
+body .categorised-article-list .figure-categories .cat-links a,
+body .elegant_magazine_express_col_categorised_posts .em-express-article-lists .figure-categories .cat-links a {
+    color: #d6210b;
+}
+
+a{
+    color: #1b1b1b;
+
+}
+
+a:visited {
+    color: #1b1b1b;
+}
+
+.top-masthead, .top-masthead a {
+    color: #d2d2d2;
+
+}
+
+.top-masthead a:visited{
+    color: #d2d2d2;
+}
+
+
+.top-masthead a:hover{
+    color: #ffffff;
+}
+
+.site-footer a:visited {
+    color: #ffffff;
+}
+
+
+
+
+
+.af-tabs.nav-tabs > li.active > a,
+.af-tabs.nav-tabs > li:hover > a,
+.af-tabs.nav-tabs > li:focus > a{
+    color: #1b1b1b;
+}
+
+.social-widget-menu ul li a,
+.em-author-details ul li a,
+.tagcloud a {
+    border-color: #0c5e87;
+}
+
+
+
+body h1,
+body h2,
+body h2 span,
+body h3,
+body h4,
+body h5,
+body h6 {
+    color: #3e3e3e;
+}
+
+
+.article-title, .site-branding .site-title, .main-navigation .menu ul li a, .slider-figcaption .slide-title {
+    letter-spacing: 0;
+    line-height: 1.3;
+}
+
+article.archive-layout-grid{
+    padding-left: 1px;
+    padding-right: 1px;
+
+}
+
+article.archive-layout-grid .spotlight-post{
+    margin-bottom: 0;
+}
+
+body #primary .widget .article-title.article-title-2,
+.em-latest-post-carousel .slider-figcaption .slide-title-1{
+    font-size:18px;
+}
+
+.figure-categories-bg .em-post-format{
+    background: #9e9e9e;
+    font-size: 12px;
+    padding: 2px;
+}
+.em-post-format{
+    color: #9e9e9e;
+}
+
+body .slider-figcaption-1 .slide-title a {
+    box-decoration-break: clone;
+    -webkit-box-shadow: 10px 0 0 rgba(255, 255, 255, 0.75), -10px 0 0 rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 10px 0 0 rgba(255, 255, 255, 0.75), -10px 0 0 rgba(255, 255, 255, 0.75);
+    -ms-box-shadow: 10px 0 0 rgba(255, 255, 255, 0.75), -10px 0 0 rgba(255, 255, 255, 0.75);
+    -o-box-shadow: 10px 0 0 rgba(255, 255, 255, 0.75), -10px 0 0 rgba(255, 255, 255, 0.75);
+    box-shadow: 10px 0 0 rgba(255, 255, 255, 0.75), -10px 0 0 rgba(255, 255, 255, 0.75);
+}
+
+body .slider-figcaption-1 .slide-title a, body .slider-figcaption-1 .slide-title a, body .grid-item-metadata-1 {
+    background: rgba(255, 255, 255, 0.75);
+}
+
+body .slider-figcaption-1 .slide-title a {
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.slider-figcaption-1 .slide-title a, .grid-item-metadata-1, .slider-figcaption a {
+    color: #000000;
+}
+
+.full-section-slider .data-bg-slide {
+    height: 520px;
+}
+
+.full-section-slider .banner-half {
+    border-width: 1px 1px 1px 0;
+
+}
+
+.full-section-slider .no-gutter-col {
+    margin-bottom: 20px;
+}
+
+@media (min-width: 1600px) {
+
+    .full-section-slider .data-bg-slide {
+        height: 660px;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+    .full-section-slider .no-gutter-col:nth-child(2),
+    .full-section-slider .no-gutter-col:nth-child(6),
+    .full-section-slider .no-gutter-col:nth-child(10),
+    .full-section-slider .no-gutter-col:nth-child(14),
+    .full-section-slider .no-gutter-col:nth-child(18) {
+        border-left-width: 1px;
+    }
+}
+
+
+
