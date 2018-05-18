@@ -738,7 +738,7 @@ add_filter( 'comment_form_fields', 'bard_move_comments_field' );
 
 // Check for Full Post
 function bard_full_width_post() {
-    if ( bard_options( 'blog_page_full_width_post' ) === true && strpos( bard_options( 'general_home_layout' ), 'col' ) === 0 ) {
+    if ( bard_options( 'blog_page_full_width_post' ) === true ) {
 		return true;
     } else {
     	return false;

@@ -77,6 +77,118 @@ function bard_about_page_output() {
 
 			</div>
 
+			<!-- Predefined Styles -->
+			<div class="four-columns-wrap">
+			
+				<h2><?php esc_html_e( 'Predefined Styles', 'bard' ); ?></h2>
+				<p>
+					<?php esc_html_e( 'Just activate any of these styles and you will get the same design(layouts, fonts, colors, etc..) as shown on our demo website.', 'bard' ); ?>
+					<?php esc_html_e( 'More details in the theme ', 'bard' ); ?>
+					<a target="_blank" href="http://wp-royal.com/themes/bard/docs/?ref=bard-free-backend-about-predefined-styles#predefined"><?php esc_html_e( 'Documentation.', 'bard' ); ?></a>
+				</p>
+
+				<div class="column-wdith-4">
+					<div class="active-style"><?php esc_html_e( 'Active', 'bard' ); ?></div>
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/main.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Main', 'bard' ); ?></h2>
+						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/demo/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/food.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Food', 'bard' ); ?></h2>
+						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/food/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/lifestyle.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Lifestyle', 'bard' ); ?></h2>
+						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/lifestyle/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/dark.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Dark', 'bard' ); ?></h2>
+						<a href="<?php echo esc_url('http://wp-royal.com/themes/bard-pro/color-black/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
+					</div>
+				</div>	
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img1.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 1', 'bard' ); ?></h2>
+						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/typography-v1/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img2.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 2', 'bard' ); ?></h2>
+						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/sample-v3/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img3.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 3', 'bard' ); ?></h2>
+						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/columns2-sidebar/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img4.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 4', 'bard' ); ?></h2>
+						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/sample-v5/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img5.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 5', 'bard' ); ?></h2>
+						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/color-colorful/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img6.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 6', 'bard' ); ?></h2>
+						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/columns4/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img7.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 7', 'bard' ); ?></h2>
+						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/columns3-sidebar/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img8.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 8', 'bard' ); ?></h2>
+						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/color-black-white/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img9.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 9', 'bard' ); ?></h2>
+						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/columns3-nsidebar/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
+					</div>
+				</div>
+				<div class="column-wdith-4">
+					<img src="<?php echo get_template_directory_uri() . '/assets/images/img10.jpg'; ?>" alt="">
+					<div>
+						<h2><?php esc_html_e( 'Style 10', 'bard' ); ?></h2>
+						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/columns2-nsidebar/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
+					</div>
+				</div>
+
+			</div>
+			
 		<?php elseif ( $active_tab == 'bard_tab_2' ) : ?>
 			
 			<div class="three-columns-wrap">

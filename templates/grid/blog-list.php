@@ -21,6 +21,7 @@
 			<div class="post-meta clear-fix">
 
 				<?php if ( bard_options( 'blog_page_show_author' ) === true ) : ?>
+				<span><?php echo esc_html__( 'By ', 'bard' ); ?></span>
 				<span class="post-author"><?php the_author_posts_link(); ?></span>
 				<?php endif; ?>
 

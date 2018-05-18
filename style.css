@@ -4,7 +4,7 @@ Theme URI: https://wp-royal.com/themes/item-bard-free/
 Author: Royal Flush
 Author URI: http://wp-royal.com/
 Description: Personal and Multi-Author Free WordPress Blog Theme. Perfect for personal, news, journal, lifestyle, fitness, food, cooking, bakery, travel, beauty, fashion, wedding, interior design, photography, photographer, artist, game, quotes blog, auto blog, corporate, small business website and any other kind of amazing blogs. Minimal, elegant, mobile friendly layout with WooCommerce shop support and best SEO practices which has RTL - right to left website direction, logo font options, Instagram slider and many more, will WOW and inspire your visitors. Well documented and very easy to use even for WordPress beginners. Clean and Modern Responsive design will perfectly showcase your content on any device. You just need to write and be awesome!
-Version: 1.2.1
+Version: 1.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: bard
@@ -1715,17 +1715,17 @@ sup {
    list-style: none !important; 
 }
 
-[data-layout*="list"] .blog-grid > li {
+.blog-list-style {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   margin-right: 0;
 }
 
-[data-layout*="list"] .blog-grid .post-header {
+.blog-list-style .post-header {
   margin-bottom: 10px;
 }
 
-[data-layout*="list"] .post-title {
+.blog-list-style .post-title {
   font-size: 16px;
   line-height: 31px;
   letter-spacing: 1px;
@@ -1734,34 +1734,34 @@ sup {
   margin-bottom: 5px;
 }
 
-[data-layout*="list"] .post-share {
+.blog-list-style .post-share {
   float: none;
 }
 
-[data-layout*="list"] .post-author {
+.blog-list-style .post-author {
   float: none;
   font-size: inherit;
   line-height: inherit;
   letter-spacing: inherit;
 }
 
-[data-layout*="list"] .post-media {
+.blog-list-style .post-media {
   margin-bottom: 0;
 }
 
-[data-layout*="list"] .post-categories {
+.blog-list-style .post-categories {
   margin-bottom: 4px;
 }
 
-[data-layout*="list"] .read-more {
+.blog-list-style .read-more {
   margin: 0;
 }
 
-[data-layout*="list"] .read-more a {
+.blog-list-style .read-more a {
   padding: 0;
 }
 
-[data-layout*="list"] .read-more a:after {
+.blog-list-style .read-more a:after {
   display: none;
 }
 

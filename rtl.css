@@ -173,7 +173,7 @@ li.blog-classic-style .post-content > p:first-child:first-letter {
 	margin-left: 5px;
 }
 
-[data-layout*="list"] .blog-grid .has-post-thumbnail .post-media {
+.blog-list-style .has-post-thumbnail .post-media {
 	float: right !important;
 }
 

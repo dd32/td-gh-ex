@@ -81,6 +81,27 @@
 	right: 10px;
 }
 
+.column-wdith-4 {
+	position: relative;
+}
+
+.column-wdith-4 .active-style {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 38px;
+	line-height: 38px;
+	padding: 0;
+	color: #fff;
+	font-size: 14px;
+	letter-spacing: 0.7px;
+	font-weight: 600;
+	background-color: #0085BA;
+	text-align: center;
+	cursor: default;
+}
+
 
 /* Recommended Plugins */
 .three-columns-wrap .plugin-card {

@@ -307,7 +307,7 @@ $css = '';
 
 		/* Border */
 		#page-content .post-footer,
-		[data-layout*="list"] .blog-grid > li,
+		.blog-list-style,
 		#page-content .author-description,
 		#page-content .related-posts,
 		#page-content .entry-comments,
@@ -539,46 +539,45 @@ $css = '';
 	// List Layout
 	if ( strpos( bard_options( 'general_home_layout' ), 'list' ) !== false ) {
 		$css .= '
-			[data-layout*="list"] .blog-grid > li,
-			[data-layout*="list"] .blog-grid > li {
+			.blog-list-style {
 				width: 100%;
 				padding-bottom: 35px;
 			}
 
-			[data-layout*="list"] .blog-grid .has-post-thumbnail .post-media {
+			.blog-list-style .has-post-thumbnail .post-media {
 				float: left;
 				max-width: 300px;
 				width: 100%;
 			}
 
-			[data-layout*="list"] .blog-grid .has-post-thumbnail .post-content-wrap {
+			.blog-list-style .has-post-thumbnail .post-content-wrap {
 				width: calc(100% - 300px);
 				width: -webkit-calc(100% - 300px);
 				float: left;
 				padding-left: 32px;
 			}
 
-			[data-layout*="list"] .blog-grid .post-header, 
-			[data-layout*="list"] .blog-grid .read-more {
+			.blog-list-style .post-header, 
+			.blog-list-style .read-more {
 				text-align: left;
 			}
 		';
 
 		if ( is_rtl() ) {
 			$css .= '
-				[data-layout*="list"] .blog-grid .post-media {
+				.blog-list-style .post-media {
 					float: right;
 				}
 
-				[data-layout*="list"] .blog-grid .post-content-wrap {
+				.blog-list-style .post-content-wrap {
 					float: right;
 					padding-left: 0;
 					padding-right: 32px;
 
 				}
 
-				[data-layout*="list"] .blog-grid .post-header, 
-				[data-layout*="list"] .blog-grid .read-more {
+				.blog-list-style .post-header, 
+				.blog-list-style .read-more {
 					text-align: right;
 				}
 			';
@@ -642,6 +641,15 @@ $css = '';
 				background-image: none;
 			}
 		';	
+	}
+
+	// Disable Tooltips
+	if ( bard_options( 'header_image_label' ) !== true && bard_options('top_bar_label') !== true ) {
+		$css .= '
+			.btn-tooltip {
+				display: none !important;
+			}
+		';		
 	}
 
 
@@ -781,13 +789,9 @@ $css = '';
 			margin-bottom: '. $blog_page_gutter_vert .'px;
 		}
 
-		.blog-grid > li {
+		.blog-grid > li.blog-grid-style {
 			width: calc((100% - '. $blog_page_gutter_horz .'px ) /2 - 1px);
 			width: -webkit-calc((100% - '. $blog_page_gutter_horz .'px ) /2 - 1px);
-		}
-
-		.blog-grid > li.blog-classic-style {
-			width: 100%;
 		}
 
 		@media screen and ( min-width: 979px ) {

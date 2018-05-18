@@ -32,7 +32,7 @@ function bard_options( $control ) {
 		'featured_slider_display' => 'all',
 		'featured_slider_category' => 'null',
 		'featured_slider_amount' => '3',
-		'featured_slider_navigation' => true,
+		'featured_slider_navigation' => 'on',
 		'featured_slider_pagination' => true,
 		'featured_links_label' => false,
 		'featured_links_title_1' => '',

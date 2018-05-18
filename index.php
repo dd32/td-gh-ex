@@ -40,14 +40,14 @@ if ( is_home() ) {
 		}
 
 		// Classic Class
-		if ( is_home() && ! is_paged() && $wp_query->current_post == 0 && bard_full_width_post() ) {
+		if ( is_home() && ! is_paged() && $wp_query->current_post == 0 && true && bard_full_width_post() ) {
 			$custom_post_class	= 'blog-classic-style';
 		}
 
 		echo '<li class="'. esc_attr( $custom_post_class ) .'">';
 		
 		// Blog Feed Wrapper
-		if ( is_home() && ! is_paged() && $wp_query->current_post == 0 && bard_full_width_post() ) {
+		if ( is_home() && ! is_paged() && $wp_query->current_post == 0 && true && bard_full_width_post() ) {
 			get_template_part( 'templates/grid/blog', 'full' );
 		} else if ( strpos( bard_options( 'general_home_layout' ), 'list' ) === 0 ) {
 			get_template_part( 'templates/grid/blog', 'list' );

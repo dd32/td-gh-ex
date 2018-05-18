@@ -54,7 +54,6 @@
 
 	<footer class="post-footer">
 
-		<?php if ( bard_options( 'blog_page_show_author' ) === true ) : ?>
 		<span class="post-author">
 			<?php
 
@@ -65,7 +64,6 @@
 
 			?>
 		</span>
-		<?php endif; ?>
 
 		<?php
 		if ( bard_options( 'single_page_show_comments' ) === true ) {

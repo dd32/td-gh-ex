@@ -664,7 +664,12 @@ function bard_customize_register( $wp_customize ) {
 	$slider_culumns = array( 'step' => '1', 'min' => '1', 'max' => '4' );
 
 	// Navigation
-	bard_checkbox_control( 'featured_slider', 'navigation', esc_html__( 'Show Navigation Arrows', 'bard' ), 'refresh', 25 );
+	$slider_navigation = array(
+		'off'	=> esc_html__( 'Off', 'bard' ),
+		'on' 	=> esc_html__( 'On', 'bard' ),
+	);
+
+	bard_select_control( 'featured_slider', 'navigation', esc_html__( 'Show Navigation Arrows', 'bard' ), $slider_navigation, 'refresh', 25 );
 
 	// Pagination
 	bard_checkbox_control( 'featured_slider', 'pagination', esc_html__( 'Show Pagination Dots', 'bard' ), 'refresh', 30 );
@@ -739,7 +744,7 @@ function bard_customize_register( $wp_customize ) {
 	) );
 
 	// Full Width Post
-	bard_checkbox_control( 'blog_page', 'full_width_post', esc_html__( 'Make First Grid Post Full Width', 'bard' ), 'refresh', 1 );
+	bard_checkbox_control( 'blog_page', 'full_width_post', esc_html__( 'Make First Post Full Width', 'bard' ), 'refresh', 1 );
 
 	$post_description = array(
 		'none' 		=> esc_html__( 'None', 'bard' ),

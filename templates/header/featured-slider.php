@@ -7,7 +7,7 @@ $slider_data = '{';
 
 	$slider_data .= '"slidesToShow":1, "slidesToScroll":1';
 
-	if ( ! $slider_navigation ) {
+	if ( $slider_navigation === 'off' ) {
 		$slider_data .= ', "arrows":false';
 	}
 
