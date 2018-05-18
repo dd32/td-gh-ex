@@ -4,7 +4,7 @@ Theme URI: https://axlethemes.com/downloads/best-commerce/
 Author: Axle Themes
 Author URI: https://axlethemes.com/
 Description: Best Commerce is an aesthetically pure and clean and highly customizable, professionally composed and very lightweight and fast loading, responsive WordPress e-commerce theme. It smoothly integrates WooCommerce, one of the best e-commerce plugin, to make professional and stunning stores. It comes with an eye-catching layout design that will instantly draw the attention of anyone who visits your website. It is designed with strong focus on usability and overall excellent user experience. It exists so that you can speedily and efficiently craft powerful e-Commerce websites across all niches and markets in a matter of minutes, without having to write a line of code.
-Version: 1.0.4
+Version: 1.0.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: best-commerce
@@ -1046,10 +1046,6 @@ span.comments-link::before {
     width: 97%;
 }
 
-#commentform label {
-    display: inline-block;
-    width: 100px;
-}
 
 .comment-content a {
     word-wrap: break-word;
@@ -1207,11 +1203,6 @@ a.comment-reply-link:hover {
     word-wrap: break-word;
 }
 
-.comment-respond label {
-    display: block;
-    font-weight: normal;
-}
-
 .comments-title {
     font-weight: normal;
     margin: 25px 0 0;
@@ -1226,8 +1217,20 @@ a.comment-reply-link:hover {
 }
 
 #commentform label {
-    display: inline-block;
-    width: 100px;
+    display: inline;
+}
+
+#commentform input[type="checkbox"],
+#commentform input[type="radio"] {
+	margin-right: 10px;
+}
+
+#commentform  p.form-submit {
+    margin-top: 30px;
+}
+
+#commentform  span.required {
+    color: #f0632b;
 }
 
 /*==========================================================
@@ -3451,10 +3454,6 @@ div.wpcf7 {
         width: 100%;
     }
 
-    #comments input {
-        width: 100%;
-    }
-
     #comments input#submit {
         width: auto;
     }
@@ -4142,6 +4141,10 @@ div.wpcf7 {
          float: none;
          display: inline-block;
     }
+    a.custom-logo-link {
+	    margin: 5px auto;
+	    max-width: 180px;
+	}
     .site-logo-link, #site-identity, .site-title {
         display: block;
         float: none;
