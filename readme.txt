@@ -4,8 +4,8 @@
 
 Theme Name      :   BB Ecommerce Store
 Theme URI       :   https://www.themeshopy.com/free/wp-ecommerce-store-wordpress-theme/
-Version         :   1.3.1
-Tested up to    :   WP 4.9.4
+Version         :   1.3.2
+Tested up to    :   WP 4.9.5
 Author          :   Themeshopy
 Author URI      :   https://www.themeshopy.com/
 license         :   License: GNU General Public License v3 or later
@@ -43,11 +43,20 @@ Theme is Built using the following resource bundles.
 	License: Distributed under the terms of the Apache License, version 2.0 http://www.apache.org/licenses/LICENSE-2.0.html
 
 2 - Images used from Pixabay.
+    Pixabay provides images under CC0 license (https://creativecommons.org/about/cc0)
+    Source: https://pixabay.com/en/service/terms/
+
+    Copyright Pezibear / 6418 images
 	Pixabay provides images under CC0 license (https://creativecommons.org/about/cc0)
-	Screenshot Image: 
-        https://pixabay.com/en/child-person-human-girl-teddy-830725/        
-        https://pixabay.com/en/holiday-shopping-smartphone-phone-1921658/
-        https://pixabay.com/en/shopping-shopping-cart-sale-meadow-2291966/
+	Source: https://pixabay.com/en/child-person-human-girl-teddy-830725/ 
+
+    Copyright PhotoMIX-Company / 314 images
+    Pixabay provides images under CC0 license (https://creativecommons.org/about/cc0)
+    Source: https://pixabay.com/en/holiday-shopping-smartphone-phone-1921658/
+
+    Copyright Alexas_Fotos / 18509 images
+    Pixabay provides images under CC0 license (https://creativecommons.org/about/cc0)
+    Source: https://pixabay.com/en/shopping-shopping-cart-sale-meadow-2291966/
 
 3 - CSS bootstrap.css
         Code and documentation copyright 2011-2016 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.
@@ -60,7 +69,7 @@ Theme is Built using the following resource bundles.
     https://github.com/FortAwesome/Font-Awesome [MIT](http://opensource.org/licenses/MIT)
 
 
-All the slider images taken from pixabay under Creative Commons Deed CC0 - https://pixabay.com/en/service/terms/
+All the slider images taken from pixabay under Creative Commons Deed CC0 - 
 
 All the icons taken from genericons licensed under GPL License.
 http://genericons.com/
@@ -172,8 +181,14 @@ ii) Update fontawesome.
 iii) Update Woocommerce.
 iv)  change text to url in customizer.php.
 
-Ecommerce Store Premium version
+Version 1.3.2
+i)  Added post format tag and added the files in template folder.
+ii) Removed the unused css.
+iii) Update the bootstrap upto 4.0.0.
+iv) Update the language folder.
+
+Ecommerce Store Free version
 ==========================================================
-Ecommerce Store Premium version is compatible with GPL licensed.
+Ecommerce Store Free version is compatible with GPL licensed.
 
 For any help you can mail us at support[at]themeshopy.com

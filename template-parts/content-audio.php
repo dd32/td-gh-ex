@@ -7,6 +7,15 @@
  * @since Ecommerce Store 1.0
  */
 ?>
+<?php
+  $content = apply_filters( 'the_content', get_the_content() );
+  $audio = false;
+
+  // Only get audio from the content if a playlist isn't present.
+  if ( false === strpos( $content, 'wp-playlist-script' ) ) {
+    $audio = get_media_embedded_in_content( $content, array( 'audio' ) );
+  }
+?> 
 <div id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
   <h3 class="ecomercepost-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h3>
   <div class="metabox">
@@ -15,11 +24,18 @@
         <span class="entry-comments"> <?php comments_number( __('0 Comment', 'bb-ecommerce-store'), __('0 Comments', 'bb-ecommerce-store'), __('% Comments', 'bb-ecommerce-store') ); ?> </span>
   </div>
   <div class="box-image">
-    <?php 
-      if(has_post_thumbnail()) { 
-        the_post_thumbnail(); 
-      }
-    ?>	
+     <?php
+        if ( ! is_single() ) {
+          // If not a single post, highlight the audio file.
+          if ( ! empty( $audio ) ) {
+            foreach ( $audio as $audio_html ) {
+              echo '<div class="entry-audio">';
+                echo $audio_html;
+              echo '</div><!-- .entry-audio -->';
+            }
+          };
+        };
+      ?>  
   </div>
   <div class="new-text">
     <p><?php the_excerpt();?></p>

@@ -25,7 +25,7 @@
     <div class="new-text">
       <p><?php the_excerpt();?></p>
       <div class="read-btn">
-        <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small hvr-sweep-to-right" title="<?php esc_attr_e( 'Read More', 'bb-ecommerce-store' ); ?>"><?php esc_html_e('Read More','bb-ecommerce-store'); ?></a>
+        <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small" title="<?php esc_attr_e( 'Read More', 'bb-ecommerce-store' ); ?>"><?php esc_html_e('Read More','bb-ecommerce-store'); ?></a>
       </div>
     </div>	
     <div class="clearfix"></div>

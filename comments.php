@@ -56,7 +56,7 @@ if ( post_password_required() )
                     'avatar_size' => 42,
                 ) );
             ?>
-        </ol><!-- .comment-list -->
+        </ol>
 
         <?php the_comments_navigation(); ?>
 
@@ -74,4 +74,4 @@ if ( post_password_required() )
             'title_reply_after'  => '</h2>',
         ) );
     ?>
-</div><!-- .comments-area -->
+</div>

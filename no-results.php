@@ -19,6 +19,6 @@
 <?php else : ?>
 	<p><?php esc_html_e( 'Dont worry... it happens to the best of us.', 'bb-ecommerce-store' ); ?></p><br />
 	<div class="read-moresec">
-		<div><a href="<?php echo esc_url( home_url() ); ?>" class="button hvr-sweep-to-right"><?php esc_html_e( 'Back to Home Page', 'bb-ecommerce-store' ); ?></a></div>
+		<a href="<?php echo esc_url( home_url() ); ?>" class="button"><?php esc_html_e( 'Back to Home Page', 'bb-ecommerce-store' ); ?></a>
 	</div>
 <?php endif; ?>

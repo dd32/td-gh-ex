@@ -46,7 +46,7 @@ function bb_ecommerce_store_mostrar_guide() {
 				</ul>
 		  	</div>
 		  	<div class="doc-image">
-		  		<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/home-page-template.jpg" alt="" />	
+		  		<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/home-page-template.png" alt="" />	
 		  	</div>
 		  	<div class="clearfixed">
 				<div class="doc-image1">

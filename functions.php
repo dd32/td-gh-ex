@@ -9,16 +9,9 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 
-if ( ! function_exists( 'bb_ecommerce_store_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which runs
- * before the init hook. The init hook is too late for some features, such as indicating
- * support post thumbnails.
- */
-
 /* Theme Setup */
+if ( ! function_exists( 'bb_ecommerce_store_setup' ) ) :
+
 function bb_ecommerce_store_setup() {
 
 	$GLOBALS['content_width'] = apply_filters( 'bb_ecommerce_store_content_width', 640 );
@@ -40,6 +33,13 @@ function bb_ecommerce_store_setup() {
 	add_theme_support( 'custom-background', array(
 		'default-color' => 'f1f1f1'
 	) );
+
+	/*
+	* Enable support for Post Formats.
+	*
+	* See: https://codex.wordpress.org/Post_Formats
+	*/
+	add_theme_support( 'post-formats', array('image','video','gallery','audio',) );
 
 	/*
 	 * This theme styles the visual editor to resemble the theme style,
@@ -85,7 +85,7 @@ function bb_ecommerce_store_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Footer 1', 'bb-ecommerce-store' ),
-		'description'   => __( 'Appears on posts and pages', 'bb-ecommerce-store' ),
+		'description'   => __( 'Appears on footer', 'bb-ecommerce-store' ),
 		'id'            => 'footer-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -95,7 +95,7 @@ function bb_ecommerce_store_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Footer 2', 'bb-ecommerce-store' ),
-		'description'   => __( 'Appears on posts and pages', 'bb-ecommerce-store' ),
+		'description'   => __( 'Appears on footer', 'bb-ecommerce-store' ),
 		'id'            => 'footer-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -105,7 +105,7 @@ function bb_ecommerce_store_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Footer 3', 'bb-ecommerce-store' ),
-		'description'   => __( 'Appears on posts and pages', 'bb-ecommerce-store' ),
+		'description'   => __( 'Appears on footer', 'bb-ecommerce-store' ),
 		'id'            => 'footer-3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -115,7 +115,7 @@ function bb_ecommerce_store_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Footer 4', 'bb-ecommerce-store' ),
-		'description'   => __( 'Appears on posts and pages', 'bb-ecommerce-store' ),
+		'description'   => __( 'Appears on footer', 'bb-ecommerce-store' ),
 		'id'            => 'footer-4',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -160,6 +160,7 @@ function bb_ecommerce_store_scripts() {
 	wp_enqueue_style( 'nivo-style', get_template_directory_uri().'/css/nivo-slider.css' );
 	wp_enqueue_script( 'jquery-nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
 	wp_enqueue_script( 'bb-ecommerce-store-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
+	wp_enqueue_script( 'bb-ecommerce-store-bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -177,12 +178,12 @@ define('BB_ECOMMERCE_STORE_BUY_NOW','https://www.themeshopy.com/premium/ecommerc
 define('BB_ECOMMERCE_STORE_LIVE_DEMO','https://www.themeshopy.com/ecommerce-store-wordpress-theme/','bb-ecommerce-store');
 define('BB_ECOMMERCE_STORE_PRO_DOC','https://themeshopy.com/docs/bb-ecommerce-store/','bb-ecommerce-store');
 define('BB_ECOMMERCE_STORE_FREE_DOC','https://themeshopy.com/docs/free-bb-ecommerce/','bb-ecommerce-store');
-define('BB_ECOMMERCE_STORE_CONTACT','https://www.themeshopy.com/free-theme-support//','bb-ecommerce-store');
-define('bb_ecommerce_store_CREDIT','https://www.themeshopy.com/premium/ecommerce-store-wordpress-theme/','bb-ecommerce-store');
+define('BB_ECOMMERCE_STORE_CONTACT','https://wordpress.org/support/theme/bb-ecommerce-store/','bb-ecommerce-store');
+define('bb_ecommerce_store_CREDIT','https://www.themeshopy.com/','bb-ecommerce-store');
 
 if ( ! function_exists( 'bb_ecommerce_store_credit' ) ) {
 	function bb_ecommerce_store_credit(){
-			echo "<a href=".esc_url(bb_ecommerce_store_CREDIT)." target='_blank'>Ecommerce WordPress Theme</a>";
+		echo "<a href=".esc_url(bb_ecommerce_store_CREDIT)." target='_blank'>".esc_html__('ThemeShopy','bb-ecommerce-store')."</a>";
 	}
 }
 

@@ -8,7 +8,7 @@ get_header(); ?>
 <?php do_action( 'bb_ecommerce_store_pageleft_header' ); ?>
 
 <div class="container">
-    <div class="middle-align">       
+    <div class="middle-align row">       
 		<div id="sidebar" class="col-md-4">
 			<?php dynamic_sidebar('sidebar-2'); ?>
 		</div>		 

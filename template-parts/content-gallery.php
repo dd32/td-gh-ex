@@ -15,16 +15,22 @@
         <span class="entry-comments"> <?php comments_number( __('0 Comment', 'bb-ecommerce-store'), __('0 Comments', 'bb-ecommerce-store'), __('% Comments', 'bb-ecommerce-store') ); ?> </span>
   </div>
   <div class="box-image">
-    <?php 
-      if(has_post_thumbnail()) { 
-        the_post_thumbnail(); 
-      }
-    ?>	
+    <?php
+      if ( ! is_single() ) {
+        // If not a single post, highlight the gallery.
+        if ( get_post_gallery() ) {
+          echo '<div class="entry-gallery">';
+            echo ( get_post_gallery() );
+          echo '</div>';
+        };
+
+      };
+    ?>  
   </div>
   <div class="new-text">
     <p><?php the_excerpt();?></p>
     <div class="read-btn">
-      <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small" title="<?php esc_attr_e( 'Read More', 'bb-ecommerce-store' ); ?>"><?php esc_html_e('Read More','bb-ecommerce-store'); ?></a>
+      <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small " title="<?php esc_attr_e( 'Read More', 'bb-ecommerce-store' ); ?>"><?php esc_html_e('Read More','bb-ecommerce-store'); ?></a>
     </div>
   </div>
   <div class="clearfix"></div>

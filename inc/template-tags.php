@@ -16,7 +16,7 @@ function bb_ecommerce_store_the_attached_image() {
 	$post                = get_post();
 	$attachment_size     = apply_filters( 'bb_ecommerce_store_attachment_size', array( 1200, 1200 ) );
 	$next_attachment_url = wp_get_attachment_url();
-	$attachment_ids = get_posts( array(
+	$attachment_ids      = get_posts( array(
 		'post_parent'    => $post->post_parent,
 		'fields'         => 'ids',
 		'numberposts'    =>  1,

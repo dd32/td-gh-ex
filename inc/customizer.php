@@ -190,18 +190,29 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 			'section'  => 'bb_ecommerce_store_product',
 			'type'     => 'dropdown-pages'
 		));
-	}	
+	}
+
+	//footer
+	$wp_customize->add_section('bb_ecommerce_store_footer_section',array(
+		'title'	=> __('Footer Text','bb-ecommerce-store'),
+		'description'	=> __('Add some text for footer like copyright etc.','bb-ecommerce-store'),
+		'priority'	=> null,
+		'panel' => 'bb_ecommerce_store_panel_id',
+	));
+	
+	$wp_customize->add_setting('bb_ecommerce_store_footer_copy',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'sanitize_text_field',
+	));	
+	$wp_customize->add_control('bb_ecommerce_store_footer_copy',array(
+		'label'	=> __('Copyright Text','bb-ecommerce-store'),
+		'section'	=> 'bb_ecommerce_store_footer_section',
+		'type'		=> 'text'
+	));
+	
 	
 }
 add_action( 'customize_register', 'bb_ecommerce_store_customize_register' );	
-
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- */
-function bb_ecommerce_store_customize_preview_js() {
-	wp_enqueue_script( 'bb_ecommerce_store_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
-}
-add_action( 'customize_preview_init', 'bb_ecommerce_store_customize_preview_js' );
 
 
 /**
@@ -270,11 +281,11 @@ final class bb_ecommerce_store_customize {
 		load_template( trailingslashit( get_template_directory() ) . '/inc/section-pro.php' );
 
 		// Register custom section types.
-		$manager->register_section_type( 'bb_ecommerce_store_customize_Section_Pro' );
+		$manager->register_section_type( 'BB_Ecommerce_Store_Customize_Section_Pro' );
 
 		// Register sections.
 		$manager->add_section(
-			new bb_ecommerce_store_customize_Section_Pro(
+			new BB_Ecommerce_Store_Customize_Section_Pro(
 				$manager,
 				'example_1',
 				array(
