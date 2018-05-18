@@ -585,14 +585,35 @@ header.header-style-1, header.header-style-2
   margin: 0
   font-size: $section-subtitle-size
 
-.section-editor-content
+.section-editor-content, .section-editor-content:not(h2.section-title-inline), .section-editor-content:not(h3.section-subtitle-inline)
   & h1, h2, h3, h4, h5, h6
     margin: 0 0 15px 0
   & p
     margin: 8px 0 20px 0
 
+/*=================================
+/** Inline Section title, subtitle
+/*=================================
+.section-title-inline
+  font-size: 20px
+  font-weight: 900
+  margin: 0
+.section-subtitle-inline
+  font-size: 21px
+  font-weight: 100
+  margin: 4px 0 30px 0
+
 /*======================*/
 /** Specific Sections   */
+/*======================*/
+/*=======================*/
+/** Home About
+/*======================*/
+.home-about-2
+  & .about-texts-wrapper
+    background: #fcfcfc
+/*=======================*/
+/** Home Services
 /*======================*/
 .home-services
   background: $services-bg

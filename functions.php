@@ -7,6 +7,7 @@ function atlast_business_setup()
     load_theme_textdomain('atlast-business', get_template_directory() . '/languages');
     add_theme_support('title-tag');
     add_editor_style(get_template_directory_uri() . '/assets/css/main-styles.css');
+    add_post_type_support( 'page', 'excerpt' );
 
     add_theme_support('custom-header', array(
         'flex-width' => true,

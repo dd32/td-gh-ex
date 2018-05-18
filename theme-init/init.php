@@ -157,6 +157,12 @@ if (!function_exists('atlast_customizer_settings')):
 
         /* Home about section */
 
+        $wp_customize->add_setting($prefix . '_about_section_style', array(
+            'default' => 1,
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'atlast_business_sanitize_number_absint',
+        ));
+
         $wp_customize->add_setting($prefix . '_about_section_subtitle', array(
             'default' => '',
             'capability' => 'edit_theme_options',
@@ -169,13 +175,25 @@ if (!function_exists('atlast_customizer_settings')):
             'sanitize_callback' => 'atlast_business_sanitize_dropdown_pages',
         ));
 
+        $wp_customize->add_control($prefix . '_about_section_style', array(
+            'type' => 'select',
+            'priority' => 11,
+            'section' => $prefix . '_home_about_section',
+            'label' => esc_html__('Select the about style.', 'atlast-business'),
+            'description' => esc_html__('There are more than one to choose from.', 'atlast-business'),
+            'choices' => array(
+                1 => esc_html__('Default', 'atlast-business'),
+                2 => esc_html__('Style 1', 'atlast-business'),
+
+            )
+        ));
 
         $wp_customize->add_control($prefix . '_about_section_subtitle', array(
             'type' => 'text',
             'priority' => 11,
             'section' => $prefix . '_home_about_section',
-            'label' => esc_html__('A simple subtitle.', 'atlast-business'),
-            'description' => esc_html__('A simple subtitle that shows under the title in the frontpage.', 'atlast-business'),
+            'label' => esc_html__('A simple subtitle. ', 'atlast-business'),
+            'description' => esc_html__('A simple subtitle that shows under the title in the frontpage. Applies to the default style. For the other styles consider using the page excerpt.', 'atlast-business'),
         ));
 
         $wp_customize->add_control($prefix . '_about_section_page', array(
@@ -1426,8 +1444,8 @@ if (!function_exists('atlast_customizer_settings')):
                 $wp_customize,
                 'changelog',
                 array(
-                    'title' => esc_html__('Whats New in 1.4.6', 'atlast-business'),
-                    'changelog_text' => esc_html__('Version 1.4.6 - Alternative Mobile Menu Added with the logo in the center.', 'atlast-business'),
+                    'title' => esc_html__('Whats New in 1.4.7', 'atlast-business'),
+                    'changelog_text' => esc_html__('Version 1.4.7 - Two new layouts in about section and services section!', 'atlast-business'),
                     'priority' => 1,
                     'capability' => 'edit_theme_options',
                 )
