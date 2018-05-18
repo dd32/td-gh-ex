@@ -4,7 +4,7 @@ Theme URI: https://wpinterface.com/themes/advance-blog/
 Author: WPInterface
 Author URI: http://wpinterface.com
 Description: Advance Blog is a modern, clean, responsive and retina-ready WordPress blog theme also suitable for magazines, newspapers, or review sites. The theme comes with several awesome features, including a featured posts slideshow, a magazine homepage template, and a two columned layout
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-blog
@@ -228,7 +228,7 @@ input::-moz-focus-inner {
     font-size: 14px;
     letter-spacing: 2px;
     height: 50px;
-    margin-left: auto;
+    margin-left: 0;
     margin-right: auto;
     padding-left: 25px;
     padding-right: 25px;
@@ -1146,6 +1146,7 @@ body, html {
 #content {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    margin-top: 50px;
     margin-bottom: 50px;
 }
 
@@ -1247,7 +1248,7 @@ body, html {
 }
 
 .featured-item-button .short-underline {
-    background: #000;
+
     margin: 10px auto 0;
     width: 37px;
     height: 1px;
@@ -1303,10 +1304,12 @@ body, html {
     width: 100%;
 }
 
-.style-archive .post-thumbnail img {
+.style-archive .post-thumbnail .background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #333;
     display: block;
-    width: 100%;
-    height: 100%;
 }
 
 .style-archive .entry-header {
@@ -1331,8 +1334,6 @@ body, html {
         left: 0;
         right: 0;
     }
-
-
 
     body .site-content .style-archive .post-content {
         margin: 0 auto;
@@ -1360,6 +1361,7 @@ body, html {
 }
 
 #mini-loader {
+    background: #fff;
     height: 100%;
     width: 100%;
     position: fixed;
@@ -1462,7 +1464,7 @@ body, html {
 /*--------------------------------------------------------------
 ## Homepage
 --------------------------------------------------------------*/
-#mini-loader,
+#mini-loader .object,
 .slider-background,
 button,
 input[type="button"],
@@ -1475,7 +1477,6 @@ input[type="submit"],
 }
 
 .main-slider {
-    margin-top: 40px;
     margin-bottom: 40px;
 }
 
@@ -1801,7 +1802,7 @@ input[type="submit"],
 }
 
 .hentry {
-    margin: 0 auto;
+    margin: 0 auto 30px;
 }
 
 .byline,
@@ -2030,6 +2031,12 @@ ul.comment-list li {
 --------------------------------------------------------------*/
 .widget {
     margin: 0 0 1.5em;
+}
+
+.widget-title {
+    text-align: center;
+    padding: 10px 15px;
+    margin-bottom: 30px;
 }
 
 .widget ul {
@@ -2341,19 +2348,27 @@ object {
 }
 
 .site-footer {
-    background: #c9efee;
+    background: #efe9dd;
     padding-top: 3em;
 }
 
-.footer-widget-area li, .footer-widget-area li a {
-    border-color: #b2dcdb !important;
-    letter-spacing: 1px;
+.footer-widget-area,
+.footer-widget-area li,
+.footer-widget-area li a,
+.site-info{
+    border-color: #dcd1bb !important;
     font-size: 14px;
 }
 
+.widget_categories li a {
+    text-transform: uppercase;
+}
+
 .site-info {
-    padding-top: 4em;
-    padding-bottom: 4em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    text-align: center;
+    border-top: 1px solid;
 }
 
 .site-branding .site-title a {
@@ -2367,8 +2382,6 @@ object {
 }
 
 #scroll-top {
-    background: #000;
-    color: #fff;
     cursor: pointer;
     position: fixed;
     bottom: 40px;
@@ -2422,4 +2435,15 @@ object {
         content: none;
         display: none;
     }
+
+    .style-archive .post-thumbnail .background{
+        height: 340px;
+    }
+}
+
+.widget-title,
+.featured-item-button .short-underline,
+#scroll-top {
+    background: #000;
+    color: #fff;
 }

@@ -51,6 +51,14 @@
         });
     });
 
+    $(document).ready(function () {
+        $('.background').each(function () {
+            var src = $(this).children('img').attr('src');
+            $(this).css('background-image', 'url(' + src + ')').children('img').hide();
+        });
+
+    });
+
 
     $(document).ready(function () {
         $("#scroll-top").on("click", function () {

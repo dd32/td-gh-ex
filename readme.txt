@@ -4,7 +4,7 @@ Contributors: WPinterface
 
 Requires at least:4.0
 Tested up to:4.9
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ Description Advance Blog is a modern, clean, responsive and retina-ready WordPre
 Advance Blog includes support for Jetpack's Infinite Scroll as well as other features.
 
 == Changelog ==
+
+= 1.0.2 - [18-may-2018] =
+* Fixed bugs on update
 
 = 1.0.1 - [08-may-2018] =
 * Fixed bugs on update

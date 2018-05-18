@@ -27,7 +27,7 @@ global $advance_blog_post_counter;
     <div class="style-archive style-bordered <?php echo $content_class; ?>">
         <?php if ( '' != get_the_post_thumbnail() ) : ?>
             <div class="post-thumbnail" data-mh="equal-height">
-                <a href="<?php the_permalink(); ?>">
+                <a href="<?php the_permalink(); ?>" class="background">
                     <?php the_post_thumbnail( 'advance-blog-featured-image' ); ?>
                 </a>
             </div>
