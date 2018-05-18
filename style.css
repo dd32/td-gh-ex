@@ -4,7 +4,7 @@ Theme URI: https://axlethemes.com/downloads/best-business/
 Author: Axle Themes
 Author URI: https://axlethemes.com/
 Description: Best Business is a modern and trendy, useful and resourceful, versatile and flexible, powerful and easy to use and responsive WordPress creative multipurpose website theme. It is a theme that allows everyone to construct an impressive business page, regardless of their skill level. It comes packed with many useful features, and a design that never fails to impress. It is perfect for all sorts of applications and website archetypes, from professional and personal projects to business and corporate endeavors. Regardless of your previous development or coding experience, it delivers sharp, polished results. Personal, corporate, professional and business users alike find this theme an ideal solution for their purpose.
-Version: 1.0.7
+Version: 1.0.8
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: best-business
@@ -1078,11 +1078,6 @@ span.comments-link::before {
     width: 97%;
 }
 
-#commentform label {
-    display: inline-block;
-    width: 100px;
-}
-
 .comment-content a {
     word-wrap: break-word;
 }
@@ -1257,9 +1252,22 @@ a.comment-reply-link:hover {
     display: block;
 }
 
+
 #commentform label {
-    display: inline-block;
-    width: 100px;
+    display: inline;
+}
+
+#commentform input[type="checkbox"],
+#commentform input[type="radio"] {
+	margin-right: 10px;
+}
+
+#commentform  p.form-submit {
+    margin-top: 30px;
+}
+
+#commentform  span.required {
+    color: #f0632b;
 }
 
 /*==========================================================
@@ -1967,23 +1975,27 @@ a.cart-contents {
     width: 400px;
 }
 
-.search-form input.search-field {
-    border: 1px solid #dddddd;
-    height: 25px;
-    padding: 10px 3% 10px 20px;
-    width: 86%;
-    border-radius: 27px 0 0 27px;
-}
 
 .search-box-wrap .search-form input.search-field  {
     color: #222222;
 }
 
-.search-form {
+.search-form,
+.woocommerce-product-search {
     position: relative;
 }
 
-.search-form .search-submit {
+.search-form input.search-field,
+.woocommerce-product-search .search-field  {
+    border: 1px solid #dddddd;
+    height: 47px;
+    padding: 10px 65px 10px 20px;
+    width: 100%;
+    box-sizing: inherit;
+}
+
+.search-form .search-submit,
+.woocommerce-product-search button {
     border: medium none;
     border-radius: 0;
     color: #ffffff;
@@ -1997,6 +2009,9 @@ a.cart-contents {
     font-family: FontAwesome;
 }
 
+.woocommerce-product-search button {
+	font-family: inherit;
+}
 
 /*===========================================================
 *********************** Custom Header  *****************
@@ -3620,9 +3635,6 @@ div.wpcf7 {
         width: 100%;
     }
 
-    #comments input {
-        width: 100%;
-    }
 
     #comments input#submit {
         width: auto;
@@ -3851,7 +3863,9 @@ div.wpcf7 {
         top: 45px;
         height: 49px;
     }
-
+.sidr-open .mobile-nav-wrap {
+    top: 0;
+}
     #mobile-trigger i {
         border: 2px solid #fffffe;
         box-shadow: 0 1px 2px #242424;
@@ -3903,8 +3917,9 @@ div.wpcf7 {
     body .sidebar,
     body #primary {
         width: 100%;
+        padding-bottom: 30px;
+        float: left;
     }
-
 
     #main-slider .slider-buttons a {
         padding: 10px 25px;
@@ -4057,12 +4072,15 @@ div.wpcf7 {
         margin-top: 0;
         width: 70%;
     }
-    #quick-contact li:first-child, #quick-contact li {
-        margin: 0;
-        width: 100%;
-        margin: 15px;
-    }
-
+	.right-head {
+	    margin: 15px 0 0;
+	}
+	#quick-contact li::before {
+	    width: 35px;
+	    height: 35px;
+	    font-size: 14px;
+	    padding: 11px 0;
+	}
     .sidr-main-open  a#mobile-trigger span,
     .sidr-quick-open #mobile-trigger-quick span,
      .sidr-main-open #mobile-trigger-quick span,
@@ -4136,7 +4154,10 @@ div.wpcf7 {
     .site-content {
         padding-top: 15px;
     }
-
+	#content {
+	    padding: 25px 0;
+	    clear: both;
+	}
     /*featured slider style*/
 
     #main-slider .cycle-caption {
@@ -4214,6 +4235,7 @@ div.wpcf7 {
         width: 100%;
         clear: both;
         float: none;
+        padding-bottom: 30px;
     }
 
     .global-layout-three-columns #primary,
@@ -4335,11 +4357,45 @@ div.wpcf7 {
         padding: 10px;
         width: 100%;
     }
-
+	.navigation .nav-links .nav-previous,
+	.navigation .nav-links .nav-previous {
+	    float: left;
+	    width: 100%;
+	    margin-bottom: 10px;
+	}
+	.navigation .nav-links .nav-next, .navigation .nav-links .nav-next {
+	    float: left;
+	    width: 100%;
+	}
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width:479px) {
+
+
+	#quick-contact li strong {
+		display: none;
+	}
+	#quick-contact li::before {
+	    background: no-repeat;
+	    border: none;
+	    padding: 0;
+	    top: 0;
+	    width: auto;
+	}
+	#quick-contact li:first-child, #quick-contact li {
+	    margin: 0;
+	    width: 100%;
+	    margin: 10px;
+	    padding-left: 10px;
+	}
+	.sidebar .widget {
+	    padding: 15px;
+	}
+	.blog article.hentry, .archive article.hentry {
+	    margin-bottom: 30px;
+	    padding-bottom: 30px;
+	}
     .sidr-quick-open a#mobile-trigger {
         display: none;
     }
@@ -4349,11 +4405,11 @@ div.wpcf7 {
     .sidr-quick-open #mobile-trigger-quick {
         padding-right: 220px;
     }
-    .site-branding {
-        float: none;
-        text-align: center;
-        margin: 0 auto 30px;
-    }
+	.site-branding {
+	    float: none;
+	    text-align: center;
+	    margin: 0 auto 10px;
+	}
 
     .featured-page-widget {
         clear: both;
@@ -4375,16 +4431,21 @@ div.wpcf7 {
         padding: 5px 13px;
         transition: all 0.2s ease 0s;
     }
-    .custom-logo-link,
-    #site-identity,
-    .site-title {
-        display: block;
-        float: none;
-        margin-right: 0;
-        text-align: center;
-        width: 100%;
-        margin-bottom: 5px;
-    }
+	.custom-logo-link,
+	#site-identity,
+	.site-title {
+	    display: block;
+	    float: none;
+	    margin-right: 0;
+	    text-align: center;
+	    width: 100%;
+	    margin-bottom: 5px;
+	    margin-top: 0;
+	}
+	.custom-logo-link {
+		margin-bottom: 10px;
+	}
+
     .site-branding {
         float: none;
         max-width: 100%;
