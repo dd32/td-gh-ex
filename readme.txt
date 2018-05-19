@@ -6,6 +6,11 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 4.1.8 [19-05-2018]
+1. screen-shot image change
+2. Image url change as per theme review guide line
+
+
 @Version: 4.1.7 [09-05-2018]
 1. Box Layout option added.
 
@@ -380,9 +385,12 @@ Licensed under GPL
 Images Taken from :
 pixabay.com
 
+Image Header : https://pixabay.com/en/snow-nature-panoramic-winter-3193865/
+
 Image Slide 1: http://pixabay.com/en/new-york-city-brooklyn-bridge-night-336475/
-Image Slide 2:http://pixabay.com/en/tractor-field-landscape-campaign-396477/
+Image Slide 2:https://pixabay.com/en/fantasy-landscape-mountains-human-2925250/
 Image Slide 3:http://pixabay.com/en/nice-c%C3%B4te-d---azur-france-398051/
+
 
 =================Portfolio Images URL ====================
 http://pixabay.com/en/girl-portrait-outdoors-pretty-344335/
