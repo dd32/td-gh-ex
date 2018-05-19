@@ -3,8 +3,8 @@
 **Contributors:** Vilhoprogramming  
 **Requires at least:** WordPress 4.0  
 **Tested up to:** WordPress 5.0  
-**Stable tag:** 2.8  
-**Version:** 2.8  
+**Stable tag:** 2.9  
+**Version:** 2.9  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 **Tags:** two-columns, one-column, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, front-page-post-form, sticky-post, theme-options, threaded-comments, translation-ready, blog, portfolio, news
