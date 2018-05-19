@@ -39,7 +39,7 @@
             </div>
              <div class="team-content">
               <div class="name">
-                <h4><?php the_title(); ?><span><?php echo esc_html( $teamposition[$k] ); ?></span></h4>
+                <h4><a href="<?php esc_url(the_permalink());?>"><?php the_title(); ?></a><span><?php echo esc_html( $teamposition[$k] ); ?></span></h4>
               </div>
             </div>
           </div>

@@ -41,7 +41,11 @@ if ( ! function_exists( 'a_portfolio_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-
+		add_image_size('a-portfolio-banner-thumb',1160,660,true);
+		add_image_size('a-portfolio-work-thumb',400,300,true);
+		add_image_size('a-portfolio-team-thumb',211,227,true);
+		add_image_size('a-portfolio-testimonials-thumb',211,227,true);
+		add_image_size('a-portfolio-blog-thumb',270,268,true);
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Primary', 'a-portfolio' ),
@@ -135,7 +139,7 @@ function a_portfolio_scripts() {
 	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() .'/assets/css/bootstrap.min.css', array(), '4.0.0' );
 
 	// Load font Awesome css
-	wp_enqueue_style( 'font-awesome-css', get_template_directory_uri() .'/assets/css/font-awesome.min.css', array(), '4.7.0' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() .'/assets/css/font-awesome.min.css', array(), '4.7.0' );
 
 	// Load Slick css
 	wp_enqueue_style( 'slick-css', get_template_directory_uri() .'/assets/slick/slick.css', array(), '4.7.0' );
@@ -149,16 +153,16 @@ function a_portfolio_scripts() {
 	wp_enqueue_style( 'default-css', get_template_directory_uri() .'/assets/css/default.css', array(), '4.7.0' );
 
 	// bootstrap JS
-	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '4.0.0', true );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '4.0.0', true );
 
 	//Isotope package 
-	wp_enqueue_script( 'isotope-js', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array('jquery'), '3.0.5', true ); 
+	wp_enqueue_script( 'jquery-isotope', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array('jquery'), '3.0.5', true ); 
 
 	// jquery match height
 	wp_enqueue_script( 'jquery-matchHeight-js', get_template_directory_uri() . '/assets/js/jquery.matchHeight.js', array('jquery'), '3.0.1', true ); 
 
 	//Jquery Slick
-	wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/assets/slick/slick.min.js', array('jquery'), '3.0.1', true ); 
+	wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/assets/slick/slick.min.js', array('jquery'), '3.0.1', true ); 
 
 	// Jquery nav js
 	wp_enqueue_script( 'jquery-nav-js', get_template_directory_uri() . '/assets/js/jquery.nav.js', array('jquery'), '3.0.1', true ); 

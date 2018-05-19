@@ -18,7 +18,7 @@
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <ul id="filters" class="nav nav-tabs justify-content-center">  
-          <li class="nav-item" data-filter="*"> <a class="nav-link active" >All</a></li>
+          <li class="nav-item" data-filter="*"> <a class="nav-link active"><?php esc_html_e( 'All', 'a-portfolio' ) ;?></a></li>
             <?php 
             $work_category_id = get_theme_mod( 'a_portfolio_work_category_id' );
             $args = array('child_of' =>$work_category_id);

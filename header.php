@@ -68,12 +68,13 @@
             <?php if(get_theme_mod( 'a_portfolio_banner_page_subtitle' )):?>
               <span class="subheading"><?php echo esc_html(get_theme_mod( 'a_portfolio_banner_page_subtitle' ));?></span>
             <?php endif;?>
-
+            <?php if(is_front_page()): ?>
             <?php if(get_theme_mod( 'a_portfolio_banner_button_title' )):?>
              <div class="slide-button">
                 <a href="<?php echo esc_url(get_theme_mod('a_portfolio_banner_button_url_title'));?>" class="button primary contact-us-btn"><?php echo esc_html(get_theme_mod( 'a_portfolio_banner_button_title' ));?></a>
               </div>
             <?php endif;?>
+          <?php endif;?>
           </div>
         
         </div>
