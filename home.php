@@ -37,8 +37,8 @@ do_action('bellini_before_main_content'); ?>
 				<?php get_sidebar('blog');?>
 			</div>
 			</div>
-	</div><!-- #primary -->
-</main><!-- #main -->
+	</div>
+</main>
 <?php
 do_action('bellini_after_main_content');
 get_footer(); ?>

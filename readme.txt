@@ -2,14 +2,14 @@
 Contributors: Pangolin Themes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 4.9-trunk
-Version: 1.44.7
+Version: 1.44.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: e-commerce, blog, entertainment, one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 
 == Description ==
-Bellini brings your site to life with beautiful WooCommerce layouts and is the perfect ecommerce theme for your online store or shop. Responsive & flexible layout built with Bootstrap & underscores.me. It is built with SEO in mind and have Structured Data (Schema) implemented. If you are looking for beautiful theme with out of the box SEO compatibility, look no further!
+Bellini brings your site to life with beautiful WooCommerce layouts and is the perfect ecommerce theme for your online storefront or shop. Responsive & flexible layout built with Bootstrap & underscores.me. It is built with SEO in mind and have Structured Data (Schema) implemented. If you are looking for beautiful theme with out of the box SEO compatibility, look no further! Check out the live demo at http://demo.atlantisthemes.com/front-page/
 
 For more information about Bellini please go to https://atlantisthemes.com/bellini-woocommerce-theme
 
@@ -98,6 +98,9 @@ Bellini bundles the following third-party resources:
 
 == Changelog ==
 
+= 1.44.8 =
+
+Released: May 20, 2018
 
 = 1.44.7 =
 

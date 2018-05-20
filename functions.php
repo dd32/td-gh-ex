@@ -105,10 +105,9 @@ function bellini_setup() {
 	add_editor_style();
 }
 
-endif; // bellini_setup
+endif;
 
 require_once( get_template_directory() . '/core-functions/core-defaults.php');
-require_once( get_template_directory() . '/core-functions/core-optimize.php');
 require_once( get_template_directory() . '/core-functions/core-seo.php');
 require_once( get_template_directory() . '/core-functions/core-sidebar.php');
 
