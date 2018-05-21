@@ -18,7 +18,7 @@ if (!empty($pages)):
                         <?php echo wp_trim_words($post_content,'12','..');?>
                     </p>
                 </div>
-                <a href="<?php echo esc_url(get_permalink(absint($page->ID))); ?>"><?php echo esc_html__('Learn More','akisthemes'); ?></a>
+                <a href="<?php echo esc_url(get_permalink(absint($page->ID))); ?>"><?php echo esc_html__('Learn More','atlast-business'); ?></a>
             </div>
         </div>
     <?php endforeach;

@@ -401,7 +401,7 @@ function atlast_business_import_demo()
     return array(
         array(
             'import_file_name' => esc_html__('Demo Import', 'atlast-business'),
-            'local_import_file' => trailingslashit(get_template_directory()) . 'demo_data/atlastbusiness.wordpress.2018-05-08.xml',
+            'local_import_file' => trailingslashit(get_template_directory()) . 'demo_data/atlastbusiness.wordpress.2018-05-21.xml',
             'local_import_widget_file' => trailingslashit(get_template_directory()) . 'demo_data/atlast-business-widgets.wie',
             'local_import_customizer_file' => trailingslashit(get_template_directory()) . 'demo_data/atlast-business-export.dat',
             'import_notice' => __('After importing this data everything will be in place like the demo.', 'atlast-business'),

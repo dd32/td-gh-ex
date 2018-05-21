@@ -1,14 +1,14 @@
 === Atlast Business WordPress Theme ===
 Contributors: ArchimidisM
 Requires at least: WordPress 4.5.1
-Tested up to: WordPress 4.9.5
-Version: 1.4.7
+Tested up to: WordPress 4.9.6
+Version: 1.4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: theme-options,full-width-template,two-columns, custom-header, custom-background,custom-logo, custom-menu,flexible-header,translation-ready, featured-images
 
 == Description ==
-Atlast Business theme contains over 35 customizer settings , one click demo content installation ,a nice slider feature (v 1.4.0) and countless other features. With its companion plugin you can have over 70 colorpicker options to style each section. It is maybe the most complete and ultra fast free business WordPress theme. There a lot of layout options in some of the theme's key elements. It contains 3 headers, 3 footers, a top bar with a combination of text and widgets , 3 navigation menus, 4 copyright styles, widgetized areas ,  two post options and many more options. This business WordPress theme is 100% compatible with the native WordPress customizer. From the customizer settings you can easily set your homepage really easy and fast. The main documentation of this theme is here (https://documentation.akisthemes.com) and you can find a fully working demo here (https://akisthemes.com/themes-demos/atlast-business/). Atlast Business theme is a top free theme that can be used from different types of businesses. At last but not least this theme is translation ready and fully responsive. Also it is very friendly to caching plugins like W3 Total Cache , WP Fastest Cache etc.
+Atlast Business theme contains over 35 customizer settings , one click demo content installation ,a nice slider feature (v 1.4.0) and countless other features. With its companion plugin you can have over 70 colorpicker options to style each section. It is maybe the most complete and ultra fast free business WordPress theme. There a lot of layout options in some of the theme's key elements. It contains 3 headers, 3 footers, a top bar with a combination of text and widgets , 3 navigation menus, 4 copyright styles, widgetized areas ,  two post options and many more options. This business WordPress theme is 100% compatible with the native WordPress customizer. From the customizer settings you can easily set your homepage really easy and fast. The main documentation of this theme is here (https://akisthemes.com/docs/atlast-business-documentation/) and you can find a fully working demo here (https://akisthemes.info/demos/atlast-business/). Atlast Business theme is a top free theme that can be used from different types of businesses. At last but not least this theme is translation ready and fully responsive. Also it is very friendly to caching plugins like W3 Total Cache , WP Fastest Cache etc.
 * Mobile-first, Responsive Layout
 * Custom Colors
 * Slider
@@ -214,3 +214,8 @@ Removed unnecessary files
 = Version 1.4.7 =
 - One new style in about section added
 - Pages now can use excerpts
+
+= Version 1.4.8 =
+- Changed the demo domain
+- Added new demo content
+- Fixed textdomain issue for better translation
