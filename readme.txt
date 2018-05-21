@@ -6,8 +6,8 @@ Tags: education, translation-ready, custom-background, theme-options, custom-men
 
 Contributors: Theme Palace
 Requires at least: 4.5
-Tested up to: 4.9.4
-Stable tag: 1.4
+Tested up to: 4.9.6
+Stable tag: 1.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -129,7 +129,10 @@ Whereas in Category blog second, you can choose what to display either the categ
 
 == Changelog ==
 
-= 1.4 - February 9, 2018 =
+= 1.5 - May 21, 2018 =
+* Updated comment form checkbox design.
+
+= 1.4 - February 8, 2018 =
 * Add Upcoming Event Section in Homepage.
 
 = 1.3 - September 26, 2017 =
