@@ -2,27 +2,39 @@
 /**
  * @package mwsmall
  */
-?>		
+?>
 	</div><!-- .container -->
 
 	<footer id="colophon" role="contentinfo">
 
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-4">
-					<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Widget 1') ) : ?>
-					<?php endif; ?>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-4">
-					<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Widget 2') ) : ?>
-					<?php endif; ?>
-				</div>	
-				<div class="col-lg-4 col-md-4 col-sm-4">
-					<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Widget 3') ) : ?>
-					<?php endif; ?>
-				</div>
-			</div>
+		<div class="footer-widget-instagram">
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer_ist') ) : ?><?php endif; ?>
 		</div>
+		<div class="clearfix"></div>
+		<?php 
+			$hide_footer = get_theme_mod( 'mwsmall_hide_footer' );
+			if ( $hide_footer == '' ) { ?>
+				<div class="footer-widget">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Widget 1') ) : ?>
+								<?php endif; ?>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Widget 2') ) : ?>
+								<?php endif; ?>
+							</div>	
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Widget 3') ) : ?>
+								<?php endif; ?>
+							</div>
+						</div>
+					</div>
+				</div>
+				<?php
+			} 
+		?>
 		
 		<div class="footer_info">
 			<div class="container">
@@ -39,7 +51,7 @@
 		</div><!-- .footer_info -->
 
 	</footer><!-- #colophon -->
-		
+
 </div><!-- #page -->
 
 <?php wp_footer();?>

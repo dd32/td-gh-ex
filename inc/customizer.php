@@ -109,16 +109,17 @@ function mwsmall_customize_register($wp_customize){
 		'type'       => 'select',
 		'choices'    => array(
 			'default' => __( 'Default', 'mw-small' ),
-			'dark' => __( 'Dark', 'mw-small' ),
-			'orange' => __( 'Orange', 'mw-small' ),
-			'gray' => __( 'Gray', 'mw-small' ),
 			'black' => __( 'Black', 'mw-small' ),
+			'coffee' => __( 'Coffee', 'mw-small' ),
+			'dark' => __( 'Dark', 'mw-small' ),
+			'gray' => __( 'Gray', 'mw-small' ),
+			'orange' => __( 'Orange', 'mw-small' ),
 		),
 	));
 	
 	// Home Box
 	$wp_customize->add_section( 'mwsmall_homepage_settings', array(
-		'title' => __( 'Homepage Settings', 'mw-small' ),
+		'title' => __( 'Homepage Custom Text', 'mw-small' ),
 		'priority' => 42
 	));
 	
@@ -147,13 +148,13 @@ function mwsmall_customize_register($wp_customize){
 	// Blog Options
 	$wp_customize->add_section( 'mwsmall_blog_settings', array(
 		'title' => __( 'Blog Options', 'mw-small' ),
-		'description' => '<span>' . __( 'Option available in the <a target="_blank" href="http://mwthemes.net/portfolio/mw-small-pro">PRO version.</a>', 'mw-small' ) . '</span>',
+		'description' => sprintf( __( '<a target="_blank" href="%1$s">%2$s</a>', 'mw-small' ), esc_url( get_admin_url() .'themes.php?page=mwsmall' ), __('If you need more useful options, see the MW Small PRO version.', 'mw-small') ),
 		'priority' => 43,
 		)
 	);
 	
 	$wp_customize->add_setting( 'mwsmall_blog_settings_options', array(
-		'sanitize_callback' => 'esc_attr',
+		'sanitize_callback' => 'mwsmall_sanitize_text',
 	));
 	
 	$wp_customize->add_control( 'mwsmall_blog_settings_options', array(
@@ -164,13 +165,13 @@ function mwsmall_customize_register($wp_customize){
 	// Featured Posts Area
 	$wp_customize->add_section( 'mwsmall_featured', array(
 		'title' => __( 'Featured Posts Area', 'mw-small' ),
-		'description' => '<span>' . __( 'Option available in the <a target="_blank" href="http://mwthemes.net/portfolio/mw-small-pro">PRO version.</a>', 'mw-small' ) . '</span>',
+		'description' => sprintf( __( '<a target="_blank" href="%1$s">%2$s</a>', 'mw-small' ), esc_url( get_admin_url() .'themes.php?page=mwsmall' ), __('If you need more useful options, see the MW Small PRO version.', 'mw-small') ),
 		'priority' => 44,
 		)
 	);
 	
 	$wp_customize->add_setting( 'mwsmall_show_post_top_info', array(
-		'sanitize_callback' => 'esc_attr',
+		'sanitize_callback' => 'mwsmall_sanitize_text',
 	));
 	
 	$wp_customize->add_control('show_post_top_info', array(
@@ -178,10 +179,67 @@ function mwsmall_customize_register($wp_customize){
 		'settings' => 'mwsmall_show_post_top_info'
 	));
 	
+	// Slider BIG
+	$wp_customize->add_section( 'mwsmall_slider_big', array(
+		'title' => __( 'Home Page Slider Posts Big', 'mw-small' ),
+		'priority' => 45,
+	));
+	
+	$wp_customize->add_setting( 'hide_slider_big_post', array(
+		'default' => '',
+		'sanitize_callback' => 'mwsmall_sanitize_checkbox',
+	));
+	
+	$wp_customize->add_control( 'hide_slider_big_post', array(
+		'label' => __( 'Hide slider post.', 'mw-small' ),
+		'section' => 'mwsmall_slider_big',
+		'settings' => 'hide_slider_big_post',
+		'type' => 'checkbox'
+	));
+	
+	$wp_customize->add_setting( 'mwsmall_slider_big_cat', array(
+		'sanitize_callback' => 'mwsmall_sanitize_category'
+	) );	
+	
+	$wp_customize->add_control( 
+		new WP_Customize_Category_Control( 
+			$wp_customize,
+			'mwsmall_slider_big_cat', 
+			array(
+				'label' => __( 'Select the category for slider.', 'mw-small' ),
+				'section' => 'mwsmall_slider_big',
+				'settings' => 'mwsmall_slider_big_cat',
+			)
+		) 
+	);
+	
+	$wp_customize->add_setting( 'mwsmall_slider_big_number' , array(
+		'default' => 4,
+		'sanitize_callback' => 'mwsmall_sanitize_number'
+	));
+	
+	$wp_customize->add_control( 'mwsmall_slider_big_number' , array(
+		'label' => __( 'Number of posts you want to show in slider area', 'mw-small' ),
+		'section' => 'mwsmall_slider_big',
+		'settings' => 'mwsmall_slider_big_number',
+		'type' => 'number',		
+	));
+	
+	$wp_customize->add_setting( 'mwsmall_slider_big_button_text', array(
+		'default' => __( 'Read More', 'mw-small' ),
+		'sanitize_callback' => 'mwsmall_sanitize_text',
+	));
+
+	$wp_customize->add_control( 'mwsmall_slider_big_button_text', array(
+		'label' => __( 'Your Button Text.', 'mw-small' ),
+		'section' => 'mwsmall_slider_big',
+		'settings' => 'mwsmall_slider_big_button_text',		
+	));
+	
 	// Slider Posts
 	$wp_customize->add_section( 'mwsmall_slider', array(
 		'title' => __( 'Slider Posts Area', 'mw-small' ),
-		'priority' => 45,
+		'priority' => 46,
 		)
 	);
 	
@@ -215,7 +273,7 @@ function mwsmall_customize_register($wp_customize){
 	
 	$wp_customize->add_setting( 'mwsmall_slider_text', array(
 		'default' => 'center',
-		'sanitize_callback' => 'mwsmall_sanitize_slider_text',
+		'sanitize_callback' => 'mwsmall_sanitize_text',
 	));
 	
 	$wp_customize->add_control( 'mwsmall_slider_text', array(
@@ -243,24 +301,24 @@ function mwsmall_customize_register($wp_customize){
 	
 	$wp_customize->add_setting( 'mwsmall_pro_slider', array(
 		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
+		'sanitize_callback' => 'mwsmall_sanitize_text'
 	));
 
 	$wp_customize->add_control( new WP_Customize_Notice( $wp_customize, 'mwsmall_pro_slider', array(
 		'section' => 'mwsmall_slider',
-		'description' => __( 'More options available in the <a target="_blank" href="http://mwthemes.net/portfolio/mw-small-pro">PRO version.</a>', 'mw-small' ),
+		'description' => sprintf( __( '<a target="_blank" href="%1$s">%2$s</a>', 'mw-small' ), esc_url( get_admin_url() .'themes.php?page=mwsmall' ), __('If you need more useful options, see the MW Small PRO version.', 'mw-small') ),
 	)));
 	
 	// Google Fonts 
 	$wp_customize->add_section( 'mwsmall_fonts', array(
         'title'    => __( 'Google Fonts', 'mw-small' ),
-		'description' => '<span>' . __( 'Option available in the <a target="_blank" href="http://mwthemes.net/portfolio/mw-small-pro">PRO version.</a>', 'mw-small' ) . '</span>',
-		'priority' => 46,
+		'description' => sprintf( __( '<a target="_blank" href="%1$s">%2$s</a>', 'mw-small' ), esc_url( get_admin_url() .'themes.php?page=mwsmall' ), __('If you need more useful options, see the MW Small PRO version.', 'mw-small') ),
+		'priority' => 47,
 		)
 	);
 	
 	$wp_customize->add_setting( 'mwsmall_fonts', array(
-		'sanitize_callback' => 'esc_attr',
+		'sanitize_callback' => 'mwsmall_sanitize_text',
 	));
 	
 	$wp_customize->add_control('mwsmall_fonts', array(
@@ -271,7 +329,7 @@ function mwsmall_customize_register($wp_customize){
 	// Icon
 	$wp_customize->add_section('mwsmall_social', array(
         'title'    => __('Social Media Links', 'mw-small'),
-        'priority' => 47,
+        'priority' => 48,
     ));
 	
     $wp_customize->add_setting('icon_facebook', array(
@@ -388,11 +446,44 @@ function mwsmall_customize_register($wp_customize){
         'default'        => '',
 		'sanitize_callback' => 'esc_url_raw',
 	));
-	   
+	
 	$wp_customize->add_control('mwsmall_icon_dribbble', array(
         'label'      => __('Dribbble', 'mw-small'),
         'section'    => 'mwsmall_social',
         'settings'   => 'icon_dribbble',
+    ));
+	
+	$wp_customize->add_setting('icon_whatsapp', array(
+        'default'        => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
+	
+	$wp_customize->add_control('mwsmall_icon_whatsapp', array(
+        'label'      => __('Whatsapp', 'mw-small'),
+        'section'    => 'mwsmall_social',
+        'settings'   => 'icon_whatsapp',
+    ));
+	
+	$wp_customize->add_setting('icon_vk', array(
+        'default'        => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
+	
+	$wp_customize->add_control('mwsmall_icon_vk', array(
+        'label'      => __('VK', 'mw-small'),
+        'section'    => 'mwsmall_social',
+        'settings'   => 'icon_vk',
+    ));	
+	
+	$wp_customize->add_setting('icon_github', array(
+        'default'        => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
+	   
+	$wp_customize->add_control('mwsmall_icon_github', array(
+        'label'      => __('GitHub', 'mw-small'),
+        'section'    => 'mwsmall_social',
+        'settings'   => 'icon_github',
     ));
 	
 	$wp_customize->add_setting('icon_rss', array(
@@ -417,6 +508,18 @@ function mwsmall_customize_register($wp_customize){
         'label'    => __('Header Background Color', 'mw-small'),
         'section'  => 'colors',
         'settings' => 'header_bg_color',
+    )));
+	
+    $wp_customize->add_setting('menu_top_color', array(
+        'default'           => '#ffffff',
+        'sanitize_callback' => 'sanitize_hex_color',
+        //'transport'   => 'postMessage',
+    ));
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'menu_top_color', array(
+        'label'    => __('Header Menu Color', 'mw-small'),
+        'section'  => 'colors',
+        'settings' => 'menu_top_color',
     )));
 
 	// Info Theme 
@@ -450,7 +553,7 @@ function mwsmall_customize_register($wp_customize){
 	$wp_customize->add_section('mwsmall_info_up', array(
         'title'    => __('Upgrade MW Small ', 'mw-small'),
 		'description' => sprintf( __( '<a target="_blank" href="%1$s">%2$s</a><br><img class="img_promo" src="%3$s">', 'mw-small' ), 
-		esc_url( 'http://mwthemes.net/portfolio/mw-small-pro' ),
+		esc_url( get_admin_url() .'themes.php?page=mwsmall' ),
 		__('If you need more useful options, see the MW Small PRO version.', 'mw-small'),
 		esc_url( get_template_directory_uri() .'/inc/images/mw-small-pro.jpg' )
 		),
@@ -484,15 +587,27 @@ function mwsmall_customize_register($wp_customize){
 		'settings' => 'mwsmall_text_footer',
 		'priority' => 1
 	));
+	
+	$wp_customize->add_setting( 'mwsmall_hide_footer', array (
+		'default'        => '',
+		'sanitize_callback' => 'mwsmall_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control('hide_footer', array(
+		'label' => __( 'Hide Footer Widget Area.', 'mw-small' ),
+		'section' => 'mwsmall_footer',
+		'settings' => 'mwsmall_hide_footer',
+		'type' => 'checkbox',
+	));
 
 	$wp_customize->add_setting( 'mwsmall_pro_footer', array(
 		'default' => '',
-		'sanitize_callback' => 'sanitize_text_field'
+		'sanitize_callback' => 'mwsmall_sanitize_text'
 	));
 
 	$wp_customize->add_control( new WP_Customize_Notice( $wp_customize, 'mwsmall_pro_footer', array(
 		'section' => 'mwsmall_footer',
-		'description' => __( 'More options available in the <a target="_blank" href="http://mwthemes.net/portfolio/mw-small-pro">PRO version.</a>', 'mw-small' ),
+		'description' => sprintf( __( '<a target="_blank" href="%1$s">%2$s</a>', 'mw-small' ), esc_url( get_admin_url() .'themes.php?page=mwsmall' ), __('If you need more useful options, see the MW Small PRO version.', 'mw-small') )
 	)));
 }
 
@@ -542,11 +657,12 @@ function mwsmall_sanitize_sidebar_position( $content ) {
 // Color
 function mwsmall_sanitize_color( $input ) {
 	$valid = array(
-		'default'  => __( 'Default', 'mw-small' ),
-		'dark'   => __( 'Dark', 'mw-small' ),
-		'orange'   => __( 'Orange', 'mw-small' ),
-		'gray'   => __( 'Gray', 'mw-small' ),
-		'black'   => __( 'Black', 'mw-small' ),
+		'default' => __( 'Default', 'mw-small' ),
+		'black' => __( 'Black', 'mw-small' ),
+		'coffee' => __( 'Coffee', 'mw-small' ),
+		'dark' => __( 'Dark', 'mw-small' ),
+		'gray' => __( 'Gray', 'mw-small' ),
+		'orange' => __( 'Orange', 'mw-small' ),
 	);
  
 	if ( array_key_exists( $input, $valid  ) ) {
@@ -629,6 +745,7 @@ add_action( 'customize_preview_init', 'mwsmall_customize' );
 
 function mwsmall_css() {
 	$header_text_color = get_header_textcolor();
+	$menu_top_color = get_theme_mod( 'menu_top_color' );
     ?>
 		<style type="text/css">
 			#masthead,
@@ -638,6 +755,12 @@ function mwsmall_css() {
 			.mw_header_image h2 {
 				color: #<?php echo $header_text_color; ?>;
 			}
+			<?php
+			if ( $menu_top_color ) { ?>
+				.navbar-nav > li > a {
+					color: <?php echo $menu_top_color; ?>;
+				} <?php
+			} ?>
 		</style>
     <?php
 }
@@ -649,6 +772,7 @@ function promo_info_none(){
 		#customize-control-mwsmall_blog_settings_options input,
 		#customize-control-show_post_top_info input,
 		#customize-control-up_mwsmall input,
+		#customize-control-mwsmall_fonts input,
 		#customize-control-more_info_mwthemes input{
 			display: none;
 		}

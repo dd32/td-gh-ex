@@ -9,34 +9,33 @@ body {
 .sticky-post,
 #wp-calendar caption,
 button, html input[type="button"], input[type="reset"], input[type="submit"], .paging-navigation a, .mw_title .post-icon, .mw_title .entry-time, nav .sf-menu li a:hover, nav  .sf-menu li.sfHover > a, nav  .sf-menu li.current_page_item > a, nav .sf-menu li.current-menu-item > a, .mwpage .dots, #comments .comment-reply-link, .page-header, .mw-slider .header-slider, .mw-slider .link-more {
-    background-color: #95a5a6;
+    background-color: #A38671;
 }
 button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover,
 .paging-navigation .current, 
 .paging-navigation a:hover,
 .widget-area .widget_nav_menu a,
 #comments .comment-reply-link:hover {
-	background-color: #bdc3c7;
+	background-color: #8E725E;
 }
 .mw-slider .entry-slider {
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(255, 255, 255, 0.65);
 }
 .stwo .entry-time,.stwo .post-icon {
 	background-color: rgba(0,0,0,0);
 }
-.navbar-toggle,
 button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover,
 .paging-navigation .current, .paging-navigation a:hover,
 .stwo .post-icon span,
 .stwo .mw_title i,
-.widget-title, .footer_info .top-icon i, .header-top .top-icon i, .mw-go-top:hover, .top-icon i:hover, .top-icon i:hover, .tagcloud a {
-    border-color: #95a5a6;
+.widget-title, .footer_info .top-icon i, .header-top .top-icon i, .mw-go-top:hover, .top-icon i:hover, .top-icon i:hover, .tagcloud a, .navbar-toggle {
+    border-color: #A38671;
 }
 .searchform input,
 .tagcloud a:hover,
 button, html input[type="button"], input[type="reset"], input[type="submit"],
 input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, textarea:focus, blockquote, .top-icon i, .mw-go-top, .sticky .entry-header, .flex-direction-nav a:hover, .paging-navigation span, .navigation.post-navigation, .stwo .mw_title, .paging-navigation a {
-	border-color: #bdc3c7;
+	border-color: #8E725E;
 }
 a,
 .top-icon a:hover i,
@@ -49,7 +48,7 @@ a,
 .entry-title,
 .footer_menu .current_page_item > a, .footer_menu .current-menu-item > a, .footer_menu a:hover,
 h1, h2, h3, h4, h5, h6, .flex-direction-nav a:hover:before, .widget a, .widget li:before, .widget li a:before, #wp-calendar #today, .header-main .navbar-toggle:hover, body .mw-go-top:hover, .header-main .top-icon i:hover, .entry-meta .fa, .entry-meta a, .post-navigation a, .logged-in-as a, .comment-author .fn, .more-link, .post-title a, .stwo .entry-time, .stwo .mw_title a, .stwo .mw_top_featured.style_2 .cat-link i {
-    color: #95a5a6;
+    color: #A38671;
 }
 .stwo .mw_top_featured.style_2 .entry-time,
 .searchform .searchsubmit:hover,
@@ -62,7 +61,7 @@ a:hover, a:focus,
 .mw_top_featured.style_2 .cat-link i,
 .stwo .entry-title a:hover,
 .entry-title a:hover, .home_text h2, .widget li:hover:before, .widget li a:hover:before, .widget a:hover, .post-title a:hover, .entry-meta a:hover, .post-navigation a:hover, .logged-in-as a:hover, .more-link:hover, .stwo .mw_title a:hover {
-	color: #bdc3c7;
+	color: #8E725E;
 }
 input[type="submit"]:hover,
 .stwo .sticky-post .fa,

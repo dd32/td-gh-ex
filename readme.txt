@@ -1,7 +1,7 @@
 Copyright
 ---------------
 
-MW Small WordPress Theme, Copyright 2014 MW Themes
+MW Small WordPress Theme, Copyright 2014-2018 MW Themes
 
 Author: MWThemes
 Author URI: http://mwthemes.net
@@ -9,7 +9,7 @@ Author URI: http://mwthemes.net
 Theme Name: MW Small
 Theme URI: http://mwthemes.net/portfolio/mw-small-blog-responsive-theme/
 
-MW Small is a minimalistic responsive and customizable free blogging WordPress theme, built with Twitter Bootstrap 3.0. Support WordPress post formats: Image, Gallery, Video,  Status, Quote, Audio and Link. Easily customized from the theme customizer. You can upload your own Logo, set left sidebar or right, add your Social Links, custom color schemes, FontAwesome icons, translation ready and many other. Has 3 Footer Widget Areas.
+MW Small is a minimalistic responsive and customizable free blogging WordPress theme, built with Twitter Bootstrap 3.0. Support WordPress post formats: Image, Gallery, Video,  Status, Quote, Audio and Link. Easily customized from the theme customizer. You can upload your own Logo, set left sidebar or right, add your Social Links, custom color schemes, FontAwesome icons, 2 header layouts, 2 featured slider layouts, translation ready and many other. Has 3 Footer Widget Areas and Footer Widget Instagram. MW small is a perfect WordPress theme for personal, fashion, travel, business minimal blog or lifestyle blog.
 
 Demo: http://demo.mwthemes.net/mw-small/
 
@@ -30,10 +30,21 @@ Screenshot image licensed : Public Domain => CCO
 https://pixabay.com/en/mountain-view-panorama-person-984277/
 https://pixabay.com/en/recreation-adventure-outdoors-one-1209450/
 http://pixabay.com/en/life-guard-lifeguard-beach-tower-351484/
+https://www.pexels.com/photo/woman-in-white-tank-top-745766/
 
 /*-----------------------------
 		Changelog 
 -----------------------------*/
+
+### 1.2.0 * 21-05-2018
+* Add Big Slider Post
+* Add Sidebar Footer Instagram
+* Full-width Page Template
+* Add Info Theme Page
+* Updated Font Awesome
+* Updated screenshot
+* New icon social media
+* Add new color scheme (Coffee)
 
 ### 1.1.0 * 07-07-2016
 * Add posts slider on Home Page

@@ -17,6 +17,7 @@ function mwsmall_setup() {
 	
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'blog_img', 870, 400, true );
+	add_image_size('slider_img', 1170, 500, true );
 	
 	add_theme_support( "title-tag" );
 	
@@ -139,6 +140,14 @@ function mwsmall_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
+	register_sidebar(array(
+		'name' => __( 'Footer Instagram', 'mw-small' ),
+		'id' => 'footer_ist',
+		'before_widget' => '<div id="%1$s" class="widget-ist %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widget-title-ist">',
+		'after_title' => '</h4>',
+	));
 }
 add_action( 'widgets_init', 'mwsmall_widgets_init');
 
@@ -243,4 +252,8 @@ add_filter( 'wp_title', 'mwsmall_wp_title', 10, 2 );
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+/**
+ * Page info theme
+ */
+require get_template_directory() . '/inc/theme-info.php';
 ?>

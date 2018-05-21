@@ -3,9 +3,9 @@ Theme Name: MW Small
 Theme URI: http://mwthemes.net/portfolio/mw-small-blog-responsive-theme/
 Author: MWThemes
 Author URI: http://mwthemes.net
-Description: MW Small is a minimalistic responsive and customizable free blogging WordPress theme, built with Twitter Bootstrap 3.0. Support WordPress post formats: Image, Gallery, Video,  Status, Quote, Audio and Link. Easily customized from the theme customizer. You can upload your own Logo, set left sidebar or right, add your Social Links, custom color schemes, FontAwesome icons, translation ready and many other. Has 3 Footer Widget Areas. Demo: http://demo.mwthemes.net/mw-small/
-Version: 1.1.0
-Tags:  blog, custom-header, white, blue, light, dark, orange, custom-background, custom-menu,  featured-images, flexible-header, post-formats, translation-ready, two-columns, right-sidebar, left-sidebar, footer-widgets, featured-image-header, responsive-layout, custom-background, theme-options
+Description: MW Small is a minimalistic responsive and customizable free blogging WordPress theme, built with Twitter Bootstrap 3.0. Support WordPress post formats: Image, Gallery, Video,  Status, Quote, Audio and Link. Easily customized from the theme customizer. You can upload your own Logo, set left sidebar or right, add your Social Links, custom color schemes, FontAwesome icons, 2 header layouts, 2 featured slider layouts, translation ready and many other. Has 3 Footer Widget Areas and Footer Widget Instagram. MW small is a perfect WordPress theme for personal, fashion, travel, business minimal blog or lifestyle blog. Demo: http://demo.mwthemes.net/mw-small/
+Version: 1.2.0
+Tags:  blog, custom-header, custom-background, custom-menu,  featured-images, flexible-header, post-formats, translation-ready, two-columns, right-sidebar, left-sidebar, footer-widgets, featured-image-header, custom-background, theme-options
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: mw-small
@@ -643,11 +643,16 @@ header.center .navbar-nav li a {
 .navbar-nav li a {
     padding: 28px 10px;
 }
+.navbar-nav li.sfHover a,
+.navbar-nav li.current-menu-item a {
+	color: #fff;
+}
 .sf-menu li:hover > ul,
 .sf-menu li.sfHover > ul {
 	display: block;
 }
-.main-navigation ul ul .current_page_item > a, .main-navigation ul ul .current-menu-item > a {
+.main-navigation ul ul .current_page_item > a,
+.main-navigation ul ul .current-menu-item > a {
     color: #004466;
 }
 .sf-menu li a:hover,
@@ -781,7 +786,10 @@ header.center .navbar-nav li a {
     padding: 3px 6px;
     position: inherit;
 }
-.mw-slider .header-slider .cat-link, .mw-slider .cat-link a, .mw-slider .link-more {
+.mw-slider .header-slider .cat-link,
+.mw-slider .cat-link a, 
+.mw-slider .link-more,
+.mw-slider-big .entry-slider p {
     color: #ffffff;
 }
 .mw-slider .cat-link a:hover, .mw-slider .link-more:hover {
@@ -1052,10 +1060,10 @@ article {
 }
 #colophon {
     background-color: #262E36;
-	padding: 25px 0 0;
+	padding: 0;
 }
-#colophon .container {
-
+#colophon .footer-widget {
+	padding-top: 25px;
 }
 .footer_info {
 	color: #999999;
@@ -1205,6 +1213,14 @@ article {
 
 /* ------------ Widget ------------ */
 /* -------------------------------- */
+#secondary.widget-area {
+    padding-right: 0;
+    padding-left: 20px;
+}
+.mw_left_sidebar #secondary.widget-area {
+    padding-right: 20px;
+    padding-left: 0;
+}
 .mw_left_sidebar .content-area {
 	float: right;
 }
@@ -1431,6 +1447,49 @@ article {
 .tagcloud a:hover {
     border: 1px solid #003366;
 }
+.widget-area ul.instagram-pics,
+.footer-widget ul.instagram-pics {
+    padding: 7px;
+}
+.widget-area ul.instagram-pics li,
+.footer-widget ul.instagram-pics li {
+    float:left;
+    width:33%;
+    padding:1px
+}
+.widget-area ul.instagram-pics li a:before,
+.footer-widget ul.instagram-pics li a:before {
+	display:none
+}
+.widget-area p,
+.footer-widget p {
+	text-align:center;
+	padding-bottom: 10px;
+}
+.footer-widget-instagram {
+	display: block;
+}
+.footer-widget-instagram .widget-title-ist {    
+    padding-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 24px;
+}
+ul.instagram-pics {
+    margin: 0;
+    list-style: none;
+}
+ul.instagram-pics li {
+    float:  left;
+}
+.footer-widget-instagram ul.instagram-pics.instagram-size-small li {
+    width: 12.5%;
+}.footer-widget-instagram ul.instagram-pics.instagram-size-large li {
+    width: 16.66%;
+}
+.footer-widget-instagram .clear a {
+    display: none;
+}
 /* ------------ wp style ---------- */
 /* -------------------------------- */
 .wp-caption.alignnone,
@@ -1546,7 +1605,10 @@ embed, iframe, object, video {
 	.entry-header.post-gallery .mw_title {
 		z-index: 2;
 	}
-	#secondary {
+	#secondary.widget-area,
+	.mw_left_sidebar #secondary.widget-area	{
+		padding-right: 15px;
+		padding-left: 15px;
 		padding-top: 30px;
 	}
 	.format-video iframe, .format-video object, .format-video embed {

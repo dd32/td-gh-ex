@@ -14,6 +14,11 @@
  
  get_header(); ?>
 <?php 
+	$hide_slider_big = get_theme_mod( 'hide_slider_big_post' );
+	if ( $hide_slider_big == '' && is_front_page() ) {
+		get_template_part( 'inc/slider-post-big' );
+	}
+	
 	$htitle = get_theme_mod( 'mwsmall_home_title' );
 	$home_text = get_theme_mod( 'mwsmall_home_text' );
 	if ( !empty( $htitle ) || !empty( $home_text ) ) {

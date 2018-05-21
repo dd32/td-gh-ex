@@ -17,6 +17,10 @@ jQuery(document).ready(function($){
 		slideshowSpeed: 5000,
 		controlNav: false,
 	});
+	
+	$('.mw-slider.mw-slider-big .flexslider').flexslider({
+		animation: "slide",
+	});
   
 	$('.top-icon .fa-search').click(function() {		
 		$("header .search-box-wrapper").slideToggle('slow', function(){
