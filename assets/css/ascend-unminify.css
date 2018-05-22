@@ -2276,9 +2276,21 @@ body.body-style-boxed #wrapper {
   padding-top: 30px;
   padding-bottom: 30px;
 }
-body.siteorigin-panels:not(.single-product) #content {
+body.siteorigin-panels:not(.single-product):not(.woocommerce-checkout):not(.single-post) #content {
   padding-top: 0px;
   padding-bottom: 0px;
+}
+body.siteorigin-panels:not(.single-product):not(.woocommerce-checkout):not(.single-post) #ktsidebar {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+body.kt-single-post-no-inner-title.siteorigin-panels.single-post #content {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+body.kt-single-post-no-inner-title.siteorigin-panels.single-post #ktsidebar {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 #content.page-content-no-padding {
   padding-top: 0;
@@ -5843,6 +5855,7 @@ ul.product_list_widget li dl dt {
   width: auto;
   height: 100%;
   flex: 0 0 auto;
+  object-fit: scale-down;
 }
 #kad-mobile-banner {
   display: none;
@@ -5888,6 +5901,9 @@ ul.product_list_widget li dl dt {
   left: 0;
   z-index: 1;
   padding: 0 80px;
+}
+.mobile-headerclass .ascend-mobile-trans-logo {
+  display: none;
 }
 .kad-mobile-logo-left {
   -webkit-flex-grow: 2;
@@ -7106,6 +7122,10 @@ article.kad_blog_item header h3 {
 .comment-respond label {
   display: block;
   font-weight: 700;
+}
+.comment-respond .comment-form-cookies-consent label {
+  display: inline-block;
+  margin-left: 5px;
 }
 .comment-respond p {
   margin-bottom: 16px;

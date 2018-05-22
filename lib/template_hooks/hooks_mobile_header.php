@@ -43,7 +43,7 @@ function ascend_mobile_right() {
 	if(isset($ascend['mobile_header_cart']) && $ascend['mobile_header_cart'] == 'right')  {
 		ascend_mobile_header_cart('right');
 	}
-	if((isset($ascend['mobile_header_menu']) && $ascend['mobile_header_menu'] == 'right') || !isset($ascend['mobile_header_cart'])) {
+	if( ( isset( $ascend['mobile_header_menu'] ) && $ascend['mobile_header_menu'] == 'right' ) || ! isset( $ascend['mobile_header_menu'] ) ) {
 		ascend_mobile_menu_ouput('right');
 	}
 }

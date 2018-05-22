@@ -52,6 +52,9 @@ function ascend_body_classes($classes) {
     } else {
         // Do nothing
     }
+    if ( isset( $ascend['blog_post_title_inpost'] ) && 0 == $ascend['blog_post_title_inpost'] && is_single() ) {
+    	$classes[] = 'kt-single-post-no-inner-title';
+    }
     $width = ascend_max_width();
     if($width == 'none') {
         $widthclass = 'kt-width-large kt-width-xlarge kt-width-full';

@@ -28,6 +28,13 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.2.6 | 21st May 2018 =
+* Fix: logo shrink isssue on some browsers.
+* Fix: Mobile transparent logo issue.
+* Fix: Pagebuilder padding on posts with pagetitle showing.
+* Fix: Mobile menu showing on both sides bug.
+* Update: WC files for version 3.4.0
+
 = Version 1.2.5 | 30th April 2018 =
 * Fix: Issue with polylang not picking up typed text to translate.
 * Fix: Issue with single post header default.
