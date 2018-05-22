@@ -19,12 +19,11 @@
 				} else {
 					$portfolio_item_types = true;
 				}?>
-				<div id="carouselcontainer-portfolio" class="rowtight">
-            	<div id="portfolio-carousel" class="caroufedselclass initcaroufedsel clearfix" data-carousel-container="#carouselcontainer-portfolio" data-carousel-transition="300" data-carousel-scroll="1" data-carousel-auto="true" data-carousel-speed="9000" data-carousel-id="portfolio" data-carousel-md="<?php echo esc_attr($md);?>" data-carousel-sm="<?php echo esc_attr($sm);?>" data-carousel-xs="<?php echo esc_attr($xs);?>" data-carousel-ss="<?php echo esc_attr($ss);?>">
-                <?php $temp = $wp_query; 
-				  $wp_query = null; 
-				  $wp_query = new WP_Query();
-				  $wp_query->query(array(
+				<div id="carouselcontainer-portfolio" class="rowtight fadein-carousel">
+            	<div id="portfolio-carousel" class="slick-slider kt-slickslider kt-content-carousel loading clearfix"  data-slider-fade="false" data-slider-type="content-carousel" data-slider-anim-speed="300" data-slider-scroll="1" data-slider-auto="true" data-slider-speed="9000" data-slider-xxl="<?php echo esc_attr($md);?>" data-slider-xl="<?php echo esc_attr($md);?>" data-slider-md="<?php echo esc_attr($md);?>" data-slider-sm="<?php echo esc_attr($sm);?>" data-slider-xs="<?php echo esc_attr($xs);?>" data-slider-ss="<?php echo esc_attr($ss);?>">
+                <?php 
+				  $loop = new WP_Query();
+				  $loop->query(array(
 					'orderby' 		 => 'date',
 					'order' 		 => 'DESC',
 					'post_type' 	 => 'portfolio',
@@ -32,8 +31,8 @@
 					'posts_per_page' => '8'
 					)
 				  );
-					if ( $wp_query ) : 
-					while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+					if ( $loop ) : 
+					while ( $loop->have_posts() ) : $loop->the_post(); ?>
 						<div class="<?php echo esc_attr($itemsize); ?>">
 							<div class="grid_item portfolio_item all postclass">
 								<?php if ( has_post_thumbnail( $post->ID ) ) { ?>
@@ -62,8 +61,6 @@
 					<div class="error-not-found"><?php esc_html_e('Sorry, no portfolio entries found.', 'virtue');?></div>
 						
 				<?php endif;
-				$wp_query = null; 
-				$wp_query = $temp;  // Reset
 				wp_reset_query(); ?>
 				</div>									
 			</div>

@@ -30,6 +30,16 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.2.3 | 21st May 2018 = 
+* Update: main.js with some changes in prep to remove flex, carousel libraries changed and load the min.
+* Update: css for better support of comment checkbox.
+* Remove: edits to comment form for better compatibility.
+* Update: Woo templates for 3.4.0 support.
+
+= Version 3.2.2 | 2th May 2018 = 
+* Update: Remove hentry from post class.
+* Update: Move widget_upload.js to virtue_admin.js
+
 = Version 3.2.1 | 19th April 2018 = 
 * Update: Grid widget to make sure all is all.
 

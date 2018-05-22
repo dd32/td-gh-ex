@@ -126,3 +126,13 @@ function virtue_widget_first_last_classes($params) {
   return $params;
 }
 add_filter('dynamic_sidebar_params', 'virtue_widget_first_last_classes');
+/**
+ * Remove hentry class from portfolio posts
+ */
+function virtue_portfolio_remove_hentry( $classes ) {
+	if ( is_singular('portfolio') ) {
+		$classes = array_diff( $classes, array( 'hentry' ) );
+	}
+	return $classes;
+}
+add_filter( 'post_class', 'virtue_portfolio_remove_hentry' );

@@ -1,42 +1,42 @@
+<?php 
+global $post; 
+if ( virtue_display_sidebar() ) {
+	$itemsize = 'tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12';
+	$catimgwidth = 266;
+	$catimgheight = 266;
+	$md = 3;
+	$sm = 3;
+	$xs = 2;
+	$ss = 1; 
+} else {
+	$itemsize = 'tcol-md-3 tcol-sm-3 tcol-xs-4 tcol-ss-12';
+	$catimgwidth = 276;
+	$catimgheight = 276;
+	$md = 4;
+	$sm = 3;
+	$xs = 2;
+	$ss = 1; 
+} ?>
 <div id="blog_carousel_container" class="carousel_outerrim">
-    <?php global $post; 
+    <?php
     $text = get_post_meta( $post->ID, '_kad_blog_carousel_title', true ); 
-    if(!empty($text)) {
+    if( ! empty( $text ) ) {
     	echo '<h3 class="title">'.$text.'</h3>';
     } else {
     	echo '<h3 class="title">'.esc_html__('Recent Posts', 'virtue').'</h3>';
     } ?>
     <div class="blog-carouselcase fredcarousel">
-    <?php if (virtue_display_sidebar()) {
-    	$itemsize = 'tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12';
-    	$catimgwidth = 266;
-    	$catimgheight = 266;
-    	$md = 3;
-    	$sm = 3;
-    	$xs = 2;
-    	$ss = 1; 
-    } else {
-    	$itemsize = 'tcol-md-3 tcol-sm-3 tcol-xs-4 tcol-ss-12';
-    	$catimgwidth = 276;
-    	$catimgheight = 276;
-    	$md = 4;
-    	$sm = 3;
-    	$xs = 2;
-    	$ss = 1; 
-    } ?>
-		<div id="carouselcontainer-blog" class="rowtight">
-		<div id="blog_carousel" class="blog_carousel caroufedselclass initcaroufedsel clearfix" data-carousel-container="#carouselcontainer-blog" data-carousel-transition="300" data-carousel-scroll="1" data-carousel-auto="true" data-carousel-speed="9000" data-carousel-id="blog" data-carousel-md="<?php echo esc_attr($md);?>" data-carousel-sm="<?php echo esc_attr($sm);?>" data-carousel-xs="<?php echo esc_attr($xs);?>" data-carousel-ss="<?php echo esc_attr($ss);?>">
-            <?php
-				$temp = $wp_query; 
-				$wp_query = null; 
-				$wp_query = new WP_Query();
-				$wp_query->query(array(
+		<div id="carouselcontainer-blog" class="rowtight fadein-carousel">
+		<div id="blog_carousel" class="blog_carousel slick-slider kt-slickslider kt-content-carousel loading clearfix" data-slider-fade="false" data-slider-type="content-carousel" data-slider-anim-speed="300" data-slider-scroll="1" data-slider-auto="true" data-slider-speed="9000" data-slider-xxl="<?php echo esc_attr($md);?>" data-slider-xl="<?php echo esc_attr($md);?>" data-slider-md="<?php echo esc_attr($md);?>" data-slider-sm="<?php echo esc_attr($sm);?>" data-slider-xs="<?php echo esc_attr($xs);?>" data-slider-ss="<?php echo esc_attr($ss);?>">
+			<?php
+				$loop = new WP_Query();
+				$loop->query(array(
 					'post__not_in' 	=> array($post->ID),
 					'posts_per_page'=>6
 					)
 				);
-				 if ( $wp_query ) : 
-					while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+				 if ( $loop ) : 
+					while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				<div class="<?php echo esc_attr( $itemsize );?>">
 					<div <?php post_class('blog_item grid_item'); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
 						<div class="imghoverclass">
@@ -61,13 +61,8 @@
 		<?php endwhile; else: ?>
 			<div class="error-not-found"><?php esc_html_e('Sorry, no blog entries found.', 'virtue');?></div>	
 				<?php endif;
-				$wp_query = null; 
-				$wp_query = $temp;  // Reset
 				wp_reset_query(); ?>
 			</div>
-     <div class="clearfix"></div>
-            <a id="prevport-blog" class="prev_carousel icon-chevron-left" href="#"></a>
-			<a id="nextport-blog" class="next_carousel icon-chevron-right" href="#"></a>
-            </div>
-            </div>
+		</div>
+	</div>
 </div><!-- Carousel Container-->

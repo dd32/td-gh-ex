@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version 3.0.0
+ * @version 3.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,7 +19,7 @@ $attribute_keys = array_keys( $attributes );
 <?php do_action('woocommerce_before_add_to_cart_form'); ?>
 
 
-<form class="variations_form cart" method="post" enctype='multipart/form-data' data-product_id="<?php echo absint( $product->get_id() ); ?>" data-product_variations="<?php echo htmlspecialchars( json_encode( $available_variations ) ) ?>">
+<form class="variations_form cart" method="post" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" enctype='multipart/form-data' data-product_id="<?php echo absint( $product->get_id() ); ?>" data-product_variations="<?php echo htmlspecialchars( json_encode( $available_variations ) ) ?>">
 	<?php do_action( 'woocommerce_before_variations_form' ); ?>
 
 	<?php if ( empty( $available_variations ) && false !== $available_variations ) : ?>
@@ -44,7 +44,9 @@ $attribute_keys = array_keys( $attributes );
 		</tbody>
 	</table>
 
-	<?php do_action('woocommerce_before_add_to_cart_button'); ?>
+	<?php if ( version_compare( WC_VERSION, '3.4', '<' ) ) {
+		do_action( 'woocommerce_before_add_to_cart_button' ); 
+	} ?>
 
 	<div class="single_variation_wrap_kad single_variation_wrap" style="display:block;">
 		<?php do_action( 'woocommerce_before_single_variation' ); 
@@ -60,10 +62,12 @@ $attribute_keys = array_keys( $attributes );
 
 	</div>
 
-	<?php do_action('woocommerce_after_add_to_cart_button'); ?>
+	<?php if ( version_compare( WC_VERSION, '3.4', '<' ) ) {
+		do_action( 'woocommerce_after_add_to_cart_button' ); 
+	} ?>
 
 	<?php endif; ?>
-<?php do_action( 'woocommerce_after_variations_form' ); ?>
+	<?php do_action( 'woocommerce_after_variations_form' ); ?>
 </form>
 
 <?php do_action('woocommerce_after_add_to_cart_form'); ?>

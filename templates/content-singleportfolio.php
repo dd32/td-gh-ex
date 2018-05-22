@@ -110,18 +110,18 @@
 						</ul>
               		</div> <!--Flex Slides-->
               	<?php } else if ($ppost_type == 'carousel') { ?>
-					 <div id="imageslider" class="loading carousel_outerrim">
-					    <div class="carousel_slider_outer fredcarousel fadein-carousel" style="overflow:hidden; max-width:<?php echo esc_attr($slidewidth);?>px; height: <?php echo esc_attr($slideheight);?>px; margin-left: auto; margin-right:auto;">
-					        <div class="carousel_slider kad-light-gallery initcarouselslider" data-carousel-container=".carousel_slider_outer" data-carousel-transition="600" data-carousel-height="<?php echo esc_attr($slideheight); ?>" data-carousel-auto="<?php echo esc_attr( $slideauto );?>" data-carousel-speed="9000" data-carousel-id="carouselslider">
+					 <div id="imageslider" class="carousel_outerrim">
+					    <div class="carousel_slider_outer fredcarousel" style="overflow:hidden; max-width:<?php echo esc_attr($slidewidth);?>px; height: <?php echo esc_attr($slideheight);?>px; margin-left: auto; margin-right:auto;">
+					        <div class="carousel_slider kad-light-gallery slick-slider kt-slickslider kt-content-carousel kt-slider-different-image-ratio loading clearfix" data-slider-fade="false" data-slider-type="slider" data-slider-anim-speed="600" data-slider-scroll="1" data-slider-auto="<?php echo esc_attr( $slideauto );?>" data-slider-speed="9000">
 					            <?php
 								$image_gallery = get_post_meta( $post->ID, '_kad_image_gallery', true );
-								if(!empty($image_gallery)) {
+								if( ! empty( $image_gallery ) ) {
 									$attachments = array_filter( explode( ',', $image_gallery ) );
 									if ($attachments) {
 										foreach ( $attachments as $attachment ) {
 											$caption = get_post($attachment)->post_excerpt;
 											$img = virtue_get_image_array( null, $slideheight, false, null, null, $attachment, false );
-											echo '<div class="carousel_gallery_item" style="float:left; display: table; position: relative; text-align: center; margin: 0; width:auto; height:'.esc_attr( $img[ 'height' ] ).'px;">';
+											echo '<div class="carousel_gallery_item" style="display: table; position: relative; text-align: center; margin: 0; width:100%; height:'.esc_attr( $img[ 'height' ] ).'px;">';
 												echo '<div class="carousel_gallery_item_inner" style="vertical-align: middle; display: table-cell;">';
 													echo '<a href="'.esc_url( $img[ 'full' ] ).'" data-rel="lightbox" title="'.esc_attr( $caption ).'" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">';
 														echo '<img src="'.esc_url( $img[ 'src' ] ).'" width="'.esc_attr( $img[ 'width' ] ).'" height="'.esc_attr( $img[ 'height' ] ).'" '.wp_kses_post( $img[ 'srcset' ] ).'  />';
@@ -135,9 +135,6 @@
 									}
 								} ?>
 					            </div>
-					            <div class="clearfix"></div>
-					              <a id="prevport-carouselslider" class="prev_carousel icon-arrow-left" href="#"></a>
-					              <a id="nextport-carouselslider" class="next_carousel icon-arrow-right" href="#"></a>
 					          </div> <!--fredcarousel-->
 					  </div><!--carousel_outerrim-->
 				<?php 

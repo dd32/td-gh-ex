@@ -24,25 +24,23 @@
         	$xs = 2;
         	$ss = 1; 
         } ?>
-			<div id="carouselcontainer-blog" class="rowtight">
-			    <div id="blog_carousel" class="blog_carousel caroufedselclass initcaroufedsel clearfix" data-carousel-container="#carouselcontainer-blog" data-carousel-transition="300" data-carousel-scroll="1" data-carousel-auto="true" data-carousel-speed="9000" data-carousel-id="blog" data-carousel-md="<?php echo esc_attr($md);?>" data-carousel-sm="<?php echo esc_attr($sm);?>" data-carousel-xs="<?php echo esc_attr($xs);?>" data-carousel-ss="<?php echo esc_attr($ss);?>">
+			<div id="carouselcontainer-blog" class="rowtight fadein-carousel">
+			    <div id="blog_carousel" class="blog_carousel slick-slider kt-slickslider kt-content-carousel loading clearfix" data-slider-fade="false" data-slider-type="content-carousel" data-slider-anim-speed="300" data-slider-scroll="1" data-slider-auto="true" data-slider-speed="9000" data-slider-xxl="<?php echo esc_attr($md);?>" data-slider-xl="<?php echo esc_attr($md);?>" data-slider-md="<?php echo esc_attr($md);?>" data-slider-sm="<?php echo esc_attr($sm);?>" data-slider-xs="<?php echo esc_attr($xs);?>" data-slider-ss="<?php echo esc_attr($ss);?>">
             	<?php $categories = get_the_category($post->ID);
 				if ($categories) {
 					$category_ids = array();
 					foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id; 
 				}
-					$temp 	  = $wp_query; 
-					$wp_query = null; 
-					$wp_query = new WP_Query();
-					$wp_query->query(array(
+					$loop = new WP_Query();
+					$loop->query(array(
 					  	'orderby' 	 	 => 'rand',
 						'category__in' 	 => $category_ids,
 						'post__not_in' 	 => array($post->ID),
 						'posts_per_page' => 6
 						)
 					);
-				 	if ( $wp_query ) :  
-					while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+				 	if ( $loop ) :  
+					while ( $loop->have_posts() ) : $loop->the_post(); ?>
                 	<div class="<?php echo esc_attr( $itemsize );?>">
                 		<div <?php post_class('blog_item grid_item'); ?> itemscope itemtype="http://schema.org/BlogPosting">
 								<div class="imghoverclass">
@@ -67,14 +65,9 @@
             		<?php endwhile; else: ?>
 					<div class="error-not-found"><?php esc_html_e( 'Sorry, no blog entries found.', 'virtue' );?></div>	
 					<?php endif; 
-					  $wp_query = null; 
-					  $wp_query = $temp;
 					  wp_reset_query(); ?>
 													
 			</div>
-     		<div class="clearfix"></div>
-            <a id="prevport-blog" class="prev_carousel icon-chevron-left" href="#"></a>
-			<a id="nextport-blog" class="next_carousel icon-chevron-right" href="#"></a>
         </div>
     </div>
 </div><!-- Blog Carousel Container-->

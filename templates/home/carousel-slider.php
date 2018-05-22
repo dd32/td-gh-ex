@@ -7,14 +7,14 @@ $autoplay = ( isset( $virtue['slider_autoplay'] ) && 0 == $virtue['slider_autopl
 $pausetime = ( isset( $virtue['slider_pausetime'] ) ? $virtue['slider_pausetime'] : '7000' );
 ?>
 <div class="sliderclass carousel_outerrim kad-desktop-slider">
-	<div id="imageslider" class="loading">
-		<div class="carousel_slider_outer fredcarousel fadein-carousel" style=" overflow:hidden; max-width:<?php echo esc_attr( $slidewidth );?>px; height: <?php echo esc_attr( $slideheight );?>px; margin-left: auto; margin-right:auto;">
-			<div class="carousel_slider initcarouselslider" data-carousel-container=".carousel_slider_outer" data-carousel-transition="600" data-carousel-height="<?php echo esc_attr( $slideheight ); ?>" data-carousel-auto="<?php echo esc_attr( $autoplay ); ?>" data-carousel-speed="<?php echo esc_attr( $pausetime ); ?>" data-carousel-id="carouselslider">
+	<div id="imageslider">
+		<div class="carousel_slider_outer fredcarousel" style=" overflow:hidden; max-width:<?php echo esc_attr( $slidewidth );?>px; height: <?php echo esc_attr( $slideheight );?>px; margin-left: auto; margin-right:auto;">
+			<div class="carousel_slider slick-slider kt-slickslider kt-content-carousel kt-slider-different-image-ratio loading clearfix" data-slider-fade="false" data-slider-type="slider" data-slider-anim-speed="600" data-slider-scroll="1" data-slider-auto="<?php echo esc_attr( $autoplay ); ?>" data-slider-speed="<?php echo esc_attr( $pausetime ); ?>">
 				<?php
 				foreach ($slides as $slide) : 
 					$target = ( ! empty( $slide['target'] ) && 1 == $slide['target'] ? '_blank' : '_self');
 					$img = virtue_get_image_array(null, $slideheight, false, null, null, $slide['attachment_id'], false);
-					echo '<div class="carousel_gallery_item" style="float:left; display: table; position: relative; text-align: center; margin: 0; width:auto; height:'.esc_attr($img['height']).'px;">';
+					echo '<div class="carousel_gallery_item" style="display: table; position: relative; text-align: center; margin: 0; width:100%; height:'.esc_attr($img['height']).'px;">';
 						echo '<div class="carousel_gallery_item_inner" style="vertical-align: middle; display: table-cell;">';
 						if ( ! empty( $slide['link'] ) )	{
 							echo '<a href="'.esc_url($slide['link']).'" target="'.esc_attr($target).'">';
@@ -43,9 +43,6 @@ $pausetime = ( isset( $virtue['slider_pausetime'] ) ? $virtue['slider_pausetime'
 				endforeach;
 				?>
 			</div>
-			<div class="clearfix"></div>
-				<a id="prevport-carouselslider" class="prev_carousel icon-arrow-left" href="#"></a>
-				<a id="nextport-carouselslider" class="next_carousel icon-arrow-right" href="#"></a>
 		</div> <!--fredcarousel-->
 	</div><!--Container-->
 </div><!--sliderclass-->

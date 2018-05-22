@@ -1,63 +1,64 @@
- (function($){
-    "use strict";
+(function($){
+	"use strict";
 
-    $.imgupload = $.imgupload || {};
-    
-    $(document).ready(function () {
-         $.imgupload();
-    });
-$.imgupload = function(){
-        // When the user clicks on the Add/Edit gallery button, we need to display the gallery editing
-        $('body').on({
-             click: function(event){
-                var current_imgupload = $(this).closest('.kad_img_upload_widget');
+	$.imgupload = $.imgupload || {};
 
-                // Make sure the media gallery API exists
-                if ( typeof wp === 'undefined' || ! wp.media ) {
-                    return;
-                }
-                event.preventDefault();
+	$(document).ready(function () {
+		$.imgupload();
+	});
+	$.imgupload = function(){
+	// When the user clicks on the Add/Edit gallery button, we need to display the gallery editing
+		$('body').on({
+			click: function(event){
+				var current_imgupload = $(this).closest('.kad_img_upload_widget');
 
-                var frame;
-                // Activate the media editor
-                var $$ = $(this);
+				// Make sure the media gallery API exists
+				if ( typeof wp === 'undefined' || ! wp.media ) {
+				    return;
+				}
+				event.preventDefault();
 
-                // If the media frame already exists, reopen it.
-                if ( frame ) {
-                        frame.open();
-                        return;
-                    }
+				var frame;
+				// Activate the media editor
+				var $$ = $(this);
 
-                    // Create the media frame.
-                    frame = wp.media({
-                        multiple: false,
-                        library: {type: 'image'}
-                    });
+				// If the media frame already exists, reopen it.
+				if ( frame ) {
+				        frame.open();
+				        return;
+				    }
 
-                        // When an image is selected, run a callback.
-                frame.on( 'select', function() {
+				    // Create the media frame.
+				    frame = wp.media({
+				        multiple: false,
+				        library: {type: 'image'}
+				    });
 
-                    // Grab the selected attachment.
-                    var attachment = frame.state().get('selection').first();
-                    frame.close();
+				        // When an image is selected, run a callback.
+				frame.on( 'select', function() {
 
-                    current_imgupload.find('.kad_custom_media_url').val(attachment.attributes.url);
-                    current_imgupload.find('.kad_custom_media_id').val(attachment.attributes.id);
-                    var thumbSrc = attachment.attributes.url;
-                    if (typeof attachment.attributes.sizes !== 'undefined' && typeof attachment.attributes.sizes.thumbnail !== 'undefined') {
-                        thumbSrc = attachment.attributes.sizes.thumbnail.url;
-                    } else {
-                        thumbSrc = attachment.attributes.icon;
-                    }
-                    current_imgupload.find('.kad_custom_media_image').attr('src', thumbSrc);
-                });
+				    // Grab the selected attachment.
+				    var attachment = frame.state().get('selection').first();
+				    frame.close();
 
-                // Finally, open the modal.
-                frame.open();
-            }
+				    current_imgupload.find('.kad_custom_media_url').val(attachment.attributes.url);
+				    current_imgupload.find('.kad_custom_media_id').val(attachment.attributes.id);
+				    var thumbSrc = attachment.attributes.url;
+				    if (typeof attachment.attributes.sizes !== 'undefined' && typeof attachment.attributes.sizes.thumbnail !== 'undefined') {
+				        thumbSrc = attachment.attributes.sizes.thumbnail.url;
+				    } else {
+				        thumbSrc = attachment.attributes.icon;
+				    }
+				    current_imgupload.find('.kad_custom_media_image').attr('src', thumbSrc);
+				    current_imgupload.find('.kad_custom_media_url').trigger('change');
+				});
 
-        }, '.kad_custom_media_upload');
-     };
+				// Finally, open the modal.
+				frame.open();
+			}
+
+		}, '.kad_custom_media_upload');
+	 };
 })(jQuery);
 
  (function($){
@@ -82,6 +83,7 @@ $.imgupload = function(){
 
                     //remove preview images
                     current_gallery.find(".gallery_images").html("");
+                    current_gallery.find( '.gallery_values' ).trigger('change');
 
                     return;
 
@@ -122,7 +124,7 @@ $.imgupload = function(){
                         return e.id;
                     });
                     current_gallery.find('.gallery_values').val(ids.join(','));
-                     current_gallery.find( '.gallery_values' );
+                    current_gallery.find( '.gallery_values' ).trigger('change');
     
                 });
 

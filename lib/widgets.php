@@ -723,16 +723,7 @@ function kad_is_edit_page(){
       return true;
     }
 }
-function virtue_admin_script() {
-  if(is_admin()){ if(kad_is_edit_page()){
-    function kadence_widget_uploadScript(){
-      wp_enqueue_media();
-      wp_enqueue_script('kadadsScript', get_template_directory_uri() . '/assets/js/widget_upload.js');
-    }
-    add_action('admin_enqueue_scripts', 'kadence_widget_uploadScript');
-    }}
-}
-add_action('init', 'virtue_admin_script');
+
 
 if ( ! class_exists( 'Simple_About_With_Image' ) ) {
 class Simple_About_With_Image extends WP_Widget {

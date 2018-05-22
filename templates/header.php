@@ -24,7 +24,7 @@
   <div class="row">
       <div class="<?php echo esc_attr($logocclass); ?> clearfix kad-header-left">
             <div id="logo" class="logocase">
-              <a class="brand logofont" href="<?php echo esc_url( home_url() ); ?>/">
+              <a class="brand logofont" href="<?php echo esc_url( home_url('/') ); ?>/">
                 <?php if (!empty($virtue['x1_virtue_logo_upload']['url'])) { ?>
                   <div id="thelogo">
                     <img src="<?php echo esc_url($virtue['x1_virtue_logo_upload']['url']); ?>" alt="<?php bloginfo('name');?>" width="<?php echo esc_attr($virtue['x1_virtue_logo_upload']['width']); ?>" height="<?php echo esc_attr($virtue['x1_virtue_logo_upload']['height']); ?>" class="kad-standard-logo" />

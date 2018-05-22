@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 
-add_action( 'init', 'virtue_woocommerce_archive_hooks' );
+add_action( 'init', 'virtue_woocommerce_archive_hooks', 5 );
 function virtue_woocommerce_archive_hooks() {
 	// Remove Results Count ( re-add in the page header )
 	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
@@ -36,6 +36,14 @@ function virtue_woocommerce_archive_hooks() {
 			return $virtue['products_per_page'];
 		}
 	}
+	function virtue_woocommerce_archive_content_wrap_start() {
+    	echo '<div class="details_product_item">';
+	}
+	add_action( 'woocommerce_shop_loop_item_title', 'virtue_woocommerce_archive_content_wrap_start', 5 );
+	function virtue_woocommerce_archive_title_wrap_start() {
+		echo '<div class="product_details">';
+	}
+	add_action( 'woocommerce_shop_loop_item_title', 'virtue_woocommerce_archive_title_wrap_start', 6 );
 
 	// Wrap the title in a link
 	add_action( 'woocommerce_shop_loop_item_title', 'virtue_woocommerce_archive_title_link_start', 7 );
@@ -55,6 +63,30 @@ function virtue_woocommerce_archive_hooks() {
 		echo '</a>';
 	}
 
+	function virtue_woocommerce_archive_excerpt() {
+		if ( apply_filters( 'kadence_product_archive_excerpt', true ) ) : 
+			global $post ?>
+			<div class="product_excerpt">
+				<?php
+				if ( $post->post_excerpt ){
+					echo apply_filters( 'archive_woocommerce_short_description', $post->post_excerpt );
+				} else {
+					the_excerpt();
+				} ?>
+			</div>
+		<?php endif; 
+	}
+	add_action( 'woocommerce_shop_loop_item_title', 'virtue_woocommerce_archive_excerpt', 20 );
+
+	function virtue_woocommerce_archive_title_wrap_end() {
+    	echo '</div>';
+	}
+	add_action( 'woocommerce_shop_loop_item_title', 'virtue_woocommerce_archive_title_wrap_end', 50 );
+
+	function virtue_after_shop_loop_wrap_end() {
+    	echo '</div>';
+	}
+	add_action( 'woocommerce_after_shop_loop_item', 'virtue_after_shop_loop_wrap_end', 50 );
 
 	// Shop Page Image link open
 	add_action( 'woocommerce_before_shop_loop_item_title', 'virtue_woocommerce_image_link_open', 5 );
