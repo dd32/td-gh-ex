@@ -215,6 +215,19 @@ Boxy_Kirki::add_field('boxy',array(
 	'type'     =>'textarea',
 	'default'  => sprintf(__('<p>Featured page description text : use the page excerpt or set your own custom text. Click  <a href="%1$s"target="_blank"> Customizer </a> and Goto Home => Sercice Section -1.</p>', 'boxy' ), admin_url('customize.php') ),
 ));
+Boxy_Kirki::add_field('boxy',array(
+	'settings' =>'service-external-text-1',
+	'label'    =>__('Service Text: Enter button/Text Name', 'boxy'),
+	'section'  =>'service_section-1',
+	'type'     =>'text',
+	'default'  =>'Read More',
+));
+Boxy_Kirki::add_field('boxy',array(
+	'settings' =>'service-external-link-1',
+	'label'    =>__('Service Link: Enter External Link', 'boxy'),
+	'section'  =>'service_section-1',
+	'type'     =>'text',
+));
 Boxy_Kirki::add_section( 'service_section-2', array(
 	'title'          => __( 'Service Section-2','boxy' ),
 	'description'    => __( 'Home Page - Service Related Options', 'boxy'),
@@ -240,6 +253,19 @@ Boxy_Kirki::add_field('boxy',array(
 	'section'  =>'service_section-2',
 	'type'     =>'textarea',
 	'default'  => sprintf(__('<p>Featured page description text : use the page excerpt or set your own custom text. Click  <a href="%1$s"target="_blank"> Customizer </a> and Goto Home => Sercice Section -2.</p>', 'boxy' ), admin_url('customize.php') ),
+));
+Boxy_Kirki::add_field('boxy',array(
+	'settings' =>'service-external-text-2',
+	'label'    =>__('Service Text: Enter button/Text Name', 'boxy'),
+	'section'  =>'service_section-2',
+	'type'     =>'text',
+	'default'  =>'Read More',
+));
+Boxy_Kirki::add_field('boxy',array(
+	'settings' =>'service-external-link-2',
+	'label'    =>__('Service Link: Enter External Link', 'boxy'),
+	'section'  =>'service_section-2',
+	'type'     =>'text',
 ));
 Boxy_Kirki::add_section( 'service_section-3', array(
 	'title'          => __( 'Service Section-3','boxy' ),
@@ -267,7 +293,19 @@ Boxy_Kirki::add_field('boxy',array(
 	'type'     =>'textarea',
 	'default'  => sprintf(__('<p>Featured page description text : use the page excerpt or set your own custom text. Click  <a href="%1$s"target="_blank"> Customizer </a> and Goto Home => Sercice Section -3.</p>', 'boxy' ), admin_url('customize.php') ),
 ));
-
+Boxy_Kirki::add_field('boxy',array(
+	'settings' =>'service-external-text-3',
+	'label'    =>__('Service Text: Enter button/Text Name', 'boxy'),
+	'section'  =>'service_section-3',
+	'type'     =>'text',
+	'default'  =>'Read More',
+));
+Boxy_Kirki::add_field('boxy',array(
+	'settings' =>'service-external-link-3',
+	'label'    =>__('Service Link: Enter External Link', 'boxy'),
+	'section'  =>'service_section-3',
+	'type'     =>'text',
+));
 
 // latest blog section 
 
@@ -567,7 +605,9 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'section'  => 'primary_color_field',
 	'type'     => 'color',   
 	'default'  => '',
-	"choices['alpha']"  => true,
+	"choices"  => array (
+		'alpha' => true,
+	),
 	'active_callback' => array(
 		array (
 			'setting'  => 'enable_primary_color',
@@ -591,7 +631,7 @@ Boxy_Kirki::add_field( 'boxy', array(
 							.paging-navigation .nav-next a,.site-main .post-navigation .nav-links a span,.widget_social-networks-widget ul li a,
 							.share-box ul li a,.tabs-container .ui-tabs-panel,.ui-accordion .ui-accordion-content,
 							.post-navigation .nav-next a,.page-links a,.page-navigation ol li a,.site-footer .circle-icon-box p.more-button a,.page-navigation ol li.bpn-current,.page-navigation ol li.bpn-current:hover,a.more-link,
-							.share-box ul li a, .top-right ul li a,.main-navigation li.current_page_item > a, .main-navigation li.current-menu-item > a, .main-navigation li.current_page_ancestor > a, .main-navigation li.current_page_parent > a,.main-navigation li:hover > a,.services .service-title, .services .service,.flex-recent-posts ul.slides .recent-post:hover',
+							.share-box ul li a, .services .service-more,.top-right ul li a,.main-navigation li.current_page_item > a, .main-navigation li.current-menu-item > a, .main-navigation li.current_page_ancestor > a, .main-navigation li.current_page_parent > a,.main-navigation li:hover > a,.services .service-title, .services .service,.flex-recent-posts ul.slides .recent-post:hover',
 			'property' => 'border-color',
 		),
 		array(
@@ -601,7 +641,7 @@ Boxy_Kirki::add_field( 'boxy', array(
 							.flex-control-paging li a:hover,.dropcap-circle,.withtip:before,.callout-widget .callout-btn a,.callout-widget .callout-btn a:hover,
 							.dropcap-box,.toggle .toggle-title:hover,.site-footer .footer-bottom ul.menu li.current_page_item a,.circle-icon-box .service p.more-button a:hover,
 							.flex-container .flex-control-paging li a:hover,.flex-container p.btn-slider a:hover,
-							.btn-slider a:hover,
+							.btn-slider a:hover,#site-navigation,
 							.circle-icon-box .circle-icon-wrapper:hover,
 							.portfolio-excerpt a.btn-readmore:hover,
 							.service p.more-button a:hover,.woocommerce #content div.product .woocommerce-tabs ul.tabs li a:hover,
@@ -643,7 +683,7 @@ Boxy_Kirki::add_field( 'boxy', array(
 							.pullleft:before,.page-links a:hover,.order-total .amount,.woocommerce #content table.cart a.remove,
 							.woocommerce table.cart a.remove,
 							.woocommerce-page #content table.cart a.remove,
-							.woocommerce-page table.cart a.remove,.service a,
+							.woocommerce-page table.cart a.remove,.service a,.services .service-more a,.flex-caption a,
 							.cart-subtotal .amount,.pullnone:before,.page-navigation ol li a:hover,.page-navigation ol li.bpn-current:hover,a.more-link:hover,.site-main .post-navigation .nav-links a:hover,.widget-title,.widget #wp-calendar tbody td a',
 			'property' => 'color',
 		),
@@ -681,7 +721,9 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'section'  => 'primary_color_field',
 	'type'     => 'color',
 	'default'  => '#d7d7d7',
-	"choices['alpha']"  => true,
+	"choices"  => array (
+		'alpha' => true,
+	),
 	'active_callback' => array(
 		array(
 			'setting'  => 'enable_nav_bg_color',
@@ -713,7 +755,9 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'section'  => 'primary_color_field',
 	'type'     => 'color',
 	'default'  => '#d7d7d7',
-	"choices['alpha']"  => true,
+	"choices"  => array (
+		'alpha' => true,
+	),
 	'active_callback' => array(
 		array(
 			'setting'  => 'enable_dd_bg_color',
@@ -745,7 +789,9 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'section'  => 'primary_color_field',
 	'type'     => 'color',
 	'default'  => '#fff',
-	"choices['alpha']"  => true,
+	"choices"  => array (
+		'alpha' => true,
+	),
 	'active_callback' => array(
 		array(
 			'setting'  => 'enable_nav_hover_color',
@@ -780,7 +826,9 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'section'  => 'primary_color_field',
 	'type'     => 'color',
 	'default'  => '#3a3a3a',
-	"choices['alpha']"  => true,
+	"choices"  => array (
+		'alpha' => true,
+	),
 	'active_callback' => array(
 		array(
 			'setting'  => 'enable_secondary_color',
@@ -1277,7 +1325,9 @@ Boxy_Kirki::add_section( 'header', array(
 	'label'    => __( 'Header Text Color', 'boxy' ),
 	'section'  => 'header',
 	'type'     => 'color',
-	"choices['alpha']"  => true,
+	"choices"  => array (
+		'alpha' => true,
+	),
 	'default'  => '', 
 	'output'   => array(
 		array(
@@ -1551,7 +1601,9 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'label'    => __( 'Header Overlay ( Background )color', 'boxy' ),
 	'section'  => 'header_image',
 	'type'     => 'color',
-	"choices['alpha']"  => true,
+	"choices"  => array (
+		'alpha' => true,
+	),
 	'default'  => '', 
 	'output'   => array(
 		array(
@@ -2236,7 +2288,9 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'label'    => __( 'Footer Overlay ( Background )color', 'boxy' ),
 	'section'  => 'footer_image',
 	'type'     => 'color',
-	"choices['alpha']"  => true,
+	"choices"  => array (
+		'alpha' => true,
+	),
 	'default'  => '#E5493A', 
 	'active_callback' => array(
 		array(
@@ -2357,7 +2411,9 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'section'  => 'flex_caption_section',
 	'type'     => 'color',
 	'default'  => 'rgba(1, 1, 1, 0.6)',
-	"choices['alpha']"  => true,
+	"choices"  => array (
+		'alpha' => true,
+	),
 	'output'   => array(
 		array(
 			'element'  => '.flex-container .flex-caption h1, .flex-container .flex-caption h2, .flex-container .flex-caption h3, .flex-container .flex-caption h4, .flex-container .flex-caption h5, .flex-container .flex-caption h6, .flex-container .flex-caption p, .flex-container .flex-caption ul',
@@ -2515,7 +2571,9 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'section'  => 'flex_caption_section',
 	'type'     => 'color',
 	'default'  => '',
-	"choices['alpha']"  => true,
+	"choices"  => array (
+		'alpha' => true,
+	),
 	'output'   => array(
 		array(
 			'element'  => '.flex-caption,.home .flexslider .slides .flex-caption  a,.home .flexslider .slides .flex-caption p,.flexslider .slides .flex-caption p,.home .flexslider .slides .flex-caption h1, .home .flexslider .slides .flex-caption h2, .home .flexslider .slides .flex-caption h3, .home .flexslider .slides .flex-caption h4, .home .flexslider .slides .flex-caption h5, .home .flexslider .slides .flex-caption h6,.flexslider .slides .flex-caption h1,.flexslider .slides .flex-caption h2,.flexslider .slides .flex-caption h3,.flexslider .slides .flex-caption h4,.flexslider .slides .flex-caption h5,.flexslider .slides .flex-caption h6',
@@ -2567,7 +2625,9 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'label'    => __( 'General Background Color', 'boxy' ),
 	'section'  => 'colors',
 	'type'     => 'color',
-	"choices['alpha']"  => true,
+	"choices"  => array (
+		'alpha' => true,
+	),
 	'default'  => '#ffffff',
 	'output'   => array(
 		array(
@@ -2582,7 +2642,9 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'section'  => 'colors',
 	'type'     => 'color',
 	'description' => __('when you are select boxed layout content background color will reflect the grid area','boxy'), 
-	"choices['alpha']"  => true, 
+	"choices"  => array (
+		'alpha' => true,
+	), 
 	'default'  => '#ffffff',
 	'output'   => array(
 		array(

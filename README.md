@@ -41,6 +41,10 @@ https://pixabay.com/en/man-handsome-male-model-guy-885223/
 
 == Change Log ==
 
+= 1.3.7 =
+* Read More field added in service sections. 
+* Alpha Option added in theme Options.
+
 = 1.3.6 =
 * Post Exclude Option added. 
 

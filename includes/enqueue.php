@@ -42,7 +42,7 @@ function boxy_scripts() {
 				wp_enqueue_style( 'boxy-style2', BOXY_PARENT_URL . '/css/red.css' );
 				break;
 			case '3':
-				wp_enqueue_style( 'boxy-style2', BOXY_PARENT_URL . '/blue.css');  
+				wp_enqueue_style( 'boxy-style2', BOXY_PARENT_URL . '/css/blue.css');  
 				break;
 			case '4':
 				wp_enqueue_style( 'boxy-style2', BOXY_PARENT_URL . '/css/skyblue.css');  

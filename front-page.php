@@ -39,12 +39,17 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 				$output = '<div class="services">';
 				$output .= '<div class="container">'; 
 
+				$more_text_1 = get_theme_mod('service-external-text-1');
+				$more_url_1 = get_theme_mod('service-external-link-1');
 
 				if ( get_theme_mod('service-icon-1') || get_theme_mod('service-title-1') || get_theme_mod('service-description-1') ) {
 					$output .= '<div class="one-third column" class="service">';
 					$output .= '<div class="service-title"><p><i class="' . esc_attr( get_theme_mod('service-icon-1') ) . '"></i></p>';
 					$output .= '<h3>' . esc_html(  get_theme_mod('service-title-1') ) . '</h3></div>';
 					$output .= '<div class="service">' .  get_theme_mod('service-description-1') . '</div>';
+					if ($more_text_1) {
+						$output .= '<div class="service-more"><a href= " '.esc_url($more_url_1).' " target="_blank">' .$more_text_1. '</a></div>';
+					}
 					$output .= '</div><!-- .one-third -->';
 				} else {
 					$output .= '<div class="one-third column" class="service">';
@@ -55,11 +60,18 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 					$output .= '</div></div><!-- .one-third -->';
 				}
 
+				$more_text_2 = get_theme_mod('service-external-text-2');
+				$more_url_2 = get_theme_mod('service-external-link-2');
+
 				if ( get_theme_mod('service-icon-2') || get_theme_mod('service-title-2') || get_theme_mod('service-description-2') )  {
 					$output .= '<div class="one-third column" class="service">';
 					$output .= '<div class="service-title"><p><i class="' . esc_attr( get_theme_mod('service-icon-2') ) . '"></i></p>';
 					$output .= '<h3>' . esc_html(  get_theme_mod('service-title-2') ) . '</h3></div>';
-					$output .= '<div class="service">' .  get_theme_mod('service-description-2') . '</div>';
+					$output .= '<div class="service">' .  get_theme_mod('service-description-2') . '</div>'; 
+					if ($more_text_2) {
+						$output .= '<div class="service-more"><a href= " '.esc_url($more_url_2).' " target="_blank">' .$more_text_2. '</a></div>';
+					}
+
 					$output .= '</div><!-- .one-third -->';
 				} else {
 					$output .= '<div class="one-third column" class="service">';
@@ -70,11 +82,17 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 					$output .= '</div></div><!-- .one-third -->';
 				}
 
-				if ( get_theme_mod('service-icon-3') || get_theme_mod('service-title-3') || get_theme_mod('service-description-3') )  {
+				$more_text_3 = get_theme_mod('service-external-text-3');
+				$more_url_3 = get_theme_mod('service-external-link-3');
+
+				if ( get_theme_mod('service-icon-3') || get_theme_mod('service-title-3') || get_theme_mod('service-description-3') ) {
 					$output .= '<div class="one-third column" class="service">';
 					$output .= '<div class="service-title"><p><i class="' . esc_attr( get_theme_mod('service-icon-3') ) . '"></i></p>';
 					$output .= '<h3>' . esc_html(  get_theme_mod('service-title-3') ) . '</h3></div>';
 					$output .= '<div class="service">' .  get_theme_mod('service-description-3') . '</div>';
+					if ( $more_text_3) {
+						$output .= '<div class="service-more"><a href= " '.esc_url($more_url_3).' " target="_blank">' .$more_text_3. '</a></div>';
+					}
 					$output .= '</div><!-- .one-third -->';
 				} else {
 					$output .= '<div class="one-third column" class="service">';

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Boxy\n"
-"POT-Creation-Date: 2018-04-11 15:49+0530\n"
-"PO-Revision-Date: 2018-04-11 15:50+0530\n"
+"POT-Creation-Date: 2018-05-21 17:00+0530\n"
+"PO-Revision-Date: 2018-05-21 17:00+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: English\n"
@@ -99,7 +99,7 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: ../front-page.php:54
+#: ../front-page.php:59
 #, php-format
 msgid ""
 "<h3>Responsive Layout</h3><p>Featured page description text : use the page "
@@ -107,7 +107,7 @@ msgid ""
 "\"> Customizer </a> and Goto Home => Sercice Section -1.</p>"
 msgstr ""
 
-#: ../front-page.php:69
+#: ../front-page.php:81
 #, php-format
 msgid ""
 "<h3>Retina Ready</h3><p>Featured page description text : use the page "
@@ -115,7 +115,7 @@ msgid ""
 "\"> Customizer </a> and Goto Home => Sercice Section -2.</p>"
 msgstr ""
 
-#: ../front-page.php:84
+#: ../front-page.php:102
 #, php-format
 msgid ""
 "<h3>Awesome Sliders</h3><p>Featured page description text : use the page "
@@ -285,8 +285,8 @@ msgstr ""
 msgid "Home Page Related Options"
 msgstr ""
 
-#: ../admin/theme-options.php:61 ../admin/theme-options.php:392
-#: ../admin/theme-options.php:856 ../admin/theme-options.php:857
+#: ../admin/theme-options.php:61 ../admin/theme-options.php:430
+#: ../admin/theme-options.php:894 ../admin/theme-options.php:895
 msgid "General Settings"
 msgstr ""
 
@@ -368,8 +368,8 @@ msgstr ""
 msgid "Service Section-1"
 msgstr ""
 
-#: ../admin/theme-options.php:182 ../admin/theme-options.php:220
-#: ../admin/theme-options.php:246
+#: ../admin/theme-options.php:182 ../admin/theme-options.php:233
+#: ../admin/theme-options.php:272
 msgid "Home Page - Service Related Options"
 msgstr ""
 
@@ -381,18 +381,18 @@ msgstr ""
 msgid "Enable service section in home page"
 msgstr ""
 
-#: ../admin/theme-options.php:199 ../admin/theme-options.php:225
-#: ../admin/theme-options.php:251
+#: ../admin/theme-options.php:199 ../admin/theme-options.php:238
+#: ../admin/theme-options.php:277
 msgid "Service Icon: Enter Font Awesome Icon name. e.g. fa fa-bullhorn"
 msgstr ""
 
-#: ../admin/theme-options.php:206 ../admin/theme-options.php:232
-#: ../admin/theme-options.php:258
+#: ../admin/theme-options.php:206 ../admin/theme-options.php:245
+#: ../admin/theme-options.php:284
 msgid "Service Title: Enter title of this service"
 msgstr ""
 
-#: ../admin/theme-options.php:213 ../admin/theme-options.php:239
-#: ../admin/theme-options.php:265
+#: ../admin/theme-options.php:213 ../admin/theme-options.php:252
+#: ../admin/theme-options.php:291
 msgid "Service Description"
 msgstr ""
 
@@ -404,11 +404,21 @@ msgid ""
 "Goto Home => Sercice Section -1.</p>"
 msgstr ""
 
-#: ../admin/theme-options.php:219
+#: ../admin/theme-options.php:220 ../admin/theme-options.php:259
+#: ../admin/theme-options.php:298
+msgid "Service Text: Enter button/Text Name"
+msgstr ""
+
+#: ../admin/theme-options.php:227 ../admin/theme-options.php:266
+#: ../admin/theme-options.php:305
+msgid "Service Link: Enter External Link"
+msgstr ""
+
+#: ../admin/theme-options.php:232
 msgid "Service Section-2"
 msgstr ""
 
-#: ../admin/theme-options.php:242
+#: ../admin/theme-options.php:255
 #, php-format
 msgid ""
 "<p>Featured page description text : use the page excerpt or set your own "
@@ -416,11 +426,11 @@ msgid ""
 "Goto Home => Sercice Section -2.</p>"
 msgstr ""
 
-#: ../admin/theme-options.php:245
+#: ../admin/theme-options.php:271
 msgid "Service Section-3"
 msgstr ""
 
-#: ../admin/theme-options.php:268
+#: ../admin/theme-options.php:294
 #, php-format
 msgid ""
 "<p>Featured page description text : use the page excerpt or set your own "
@@ -428,139 +438,139 @@ msgid ""
 "Goto Home => Sercice Section -3.</p>"
 msgstr ""
 
-#: ../admin/theme-options.php:275
+#: ../admin/theme-options.php:313
 msgid "Latest Blog Section"
 msgstr ""
 
-#: ../admin/theme-options.php:276
+#: ../admin/theme-options.php:314
 msgid "Home Page - Latest Blog Options"
 msgstr ""
 
-#: ../admin/theme-options.php:282
+#: ../admin/theme-options.php:320
 msgid "Enable Recent Post Section"
 msgstr ""
 
-#: ../admin/theme-options.php:291
+#: ../admin/theme-options.php:329
 msgid "Enable recent post section in home page"
 msgstr ""
 
-#: ../admin/theme-options.php:296
+#: ../admin/theme-options.php:334
 msgid "No. of Recent Posts"
 msgstr ""
 
-#: ../admin/theme-options.php:317
+#: ../admin/theme-options.php:355
 msgid "Exclude the Posts from Home Page. Post IDs, separated by commas"
 msgstr ""
 
-#: ../admin/theme-options.php:330
+#: ../admin/theme-options.php:368
 msgid "Client Logo Carousel"
 msgstr ""
 
-#: ../admin/theme-options.php:336
+#: ../admin/theme-options.php:374
 msgid "Enable Client Carousel Section"
 msgstr ""
 
-#: ../admin/theme-options.php:344
+#: ../admin/theme-options.php:382
 msgid "Enable client carousel section in home page"
 msgstr ""
 
-#: ../admin/theme-options.php:348
+#: ../admin/theme-options.php:386
 msgid "Upload Image - Client 1"
 msgstr ""
 
-#: ../admin/theme-options.php:356
+#: ../admin/theme-options.php:394
 msgid "Upload Image - Client 2"
 msgstr ""
 
-#: ../admin/theme-options.php:362
+#: ../admin/theme-options.php:400
 msgid "Upload Image - Client 3"
 msgstr ""
 
-#: ../admin/theme-options.php:369
+#: ../admin/theme-options.php:407
 msgid "Upload Image - Client 4"
 msgstr ""
 
-#: ../admin/theme-options.php:376
+#: ../admin/theme-options.php:414
 msgid "Upload Image - Client 5"
 msgstr ""
 
-#: ../admin/theme-options.php:383
+#: ../admin/theme-options.php:421
 msgid "Upload Image - Client 6"
 msgstr ""
 
-#: ../admin/theme-options.php:393
+#: ../admin/theme-options.php:431
 msgid "general settings"
 msgstr ""
 
-#: ../admin/theme-options.php:399
+#: ../admin/theme-options.php:437
 msgid "Page Title Bar & Breadcrumb"
 msgstr ""
 
-#: ../admin/theme-options.php:400
+#: ../admin/theme-options.php:438
 msgid "Page Title bar related options"
 msgstr ""
 
-#: ../admin/theme-options.php:406
+#: ../admin/theme-options.php:444
 msgid "Page Title Bar"
 msgstr ""
 
-#: ../admin/theme-options.php:411
+#: ../admin/theme-options.php:449
 msgid "Show Bar and Content"
 msgstr ""
 
-#: ../admin/theme-options.php:412
+#: ../admin/theme-options.php:450
 msgid "Show Content Only "
 msgstr ""
 
-#: ../admin/theme-options.php:413 ../admin/theme-options.php:425
+#: ../admin/theme-options.php:451 ../admin/theme-options.php:463
 msgid "Hide"
 msgstr ""
 
-#: ../admin/theme-options.php:419
+#: ../admin/theme-options.php:457
 msgid "Page Title Bar Text"
 msgstr ""
 
-#: ../admin/theme-options.php:424
+#: ../admin/theme-options.php:462
 msgid "Show"
 msgstr ""
 
-#: ../admin/theme-options.php:431
+#: ../admin/theme-options.php:469
 msgid "Breadcrumb"
 msgstr ""
 
-#: ../admin/theme-options.php:443
+#: ../admin/theme-options.php:481
 msgid "Breadcrumb Character"
 msgstr ""
 
-#: ../admin/theme-options.php:448
+#: ../admin/theme-options.php:486
 msgid " >> "
 msgstr ""
 
-#: ../admin/theme-options.php:449
+#: ../admin/theme-options.php:487
 msgid " / "
 msgstr ""
 
-#: ../admin/theme-options.php:450
+#: ../admin/theme-options.php:488
 msgid " > "
 msgstr ""
 
-#: ../admin/theme-options.php:466
+#: ../admin/theme-options.php:504
 msgid "Pagination"
 msgstr ""
 
-#: ../admin/theme-options.php:467
+#: ../admin/theme-options.php:505
 msgid "Pagination related options"
 msgstr ""
 
-#: ../admin/theme-options.php:472
+#: ../admin/theme-options.php:510
 msgid "Numeric Pagination"
 msgstr ""
 
-#: ../admin/theme-options.php:485 ../admin/theme-options.php:486
+#: ../admin/theme-options.php:523 ../admin/theme-options.php:524
 msgid "Image Crop Mode"
 msgstr ""
 
-#: ../admin/theme-options.php:491
+#: ../admin/theme-options.php:529
 #, php-format
 msgid ""
 "Install <a href=\"%1$s\">Regenerate Thumbnails</a> Plugin and Once your "
@@ -568,740 +578,740 @@ msgid ""
 "order to crop the image"
 msgstr ""
 
-#: ../admin/theme-options.php:493
+#: ../admin/theme-options.php:531
 #, php-format
 msgid ""
 " Once your select the option Click <a href=\"%2$s\">Regenerate All "
 "Thumbnails</a> in order to crop the image "
 msgstr ""
 
-#: ../admin/theme-options.php:498
+#: ../admin/theme-options.php:536
 msgid "Choose Image Crop Mode"
 msgstr ""
 
-#: ../admin/theme-options.php:511
+#: ../admin/theme-options.php:549
 msgid "Skin Color"
 msgstr ""
 
-#: ../admin/theme-options.php:512
+#: ../admin/theme-options.php:550
 msgid "Color Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:517
+#: ../admin/theme-options.php:555
 msgid "Color Scheme"
 msgstr ""
 
-#: ../admin/theme-options.php:518 ../admin/theme-options.php:525
+#: ../admin/theme-options.php:556 ../admin/theme-options.php:563
 msgid "Select your color scheme"
 msgstr ""
 
-#: ../admin/theme-options.php:548
+#: ../admin/theme-options.php:586
 msgid "Change Color Options"
 msgstr ""
 
-#: ../admin/theme-options.php:549
+#: ../admin/theme-options.php:587
 msgid ""
 "This will reflect in links, buttons,Navigation and many others. Choose a "
 "color to match your site."
 msgstr ""
 
-#: ../admin/theme-options.php:555
+#: ../admin/theme-options.php:593
 msgid "Enable Custom Primary color"
 msgstr ""
 
-#: ../admin/theme-options.php:566
+#: ../admin/theme-options.php:604
 msgid "Primary color"
 msgstr ""
 
-#: ../admin/theme-options.php:669
+#: ../admin/theme-options.php:707
 msgid "Enable Navigation Bar BG Color"
 msgstr ""
 
-#: ../admin/theme-options.php:680
+#: ../admin/theme-options.php:718
 msgid "Navigation Bar BG Color"
 msgstr ""
 
-#: ../admin/theme-options.php:701
+#: ../admin/theme-options.php:739
 msgid "Enable Navigation DropDown BG Color"
 msgstr ""
 
-#: ../admin/theme-options.php:712
+#: ../admin/theme-options.php:750
 msgid "Navigation DropDown BG Color"
 msgstr ""
 
-#: ../admin/theme-options.php:733
+#: ../admin/theme-options.php:771
 msgid "Enable Navigation Hover color"
 msgstr ""
 
-#: ../admin/theme-options.php:744
+#: ../admin/theme-options.php:782
 msgid "Navigation Hover Color"
 msgstr ""
 
-#: ../admin/theme-options.php:768
+#: ../admin/theme-options.php:806
 msgid "Enable Custom Secondary color"
 msgstr ""
 
-#: ../admin/theme-options.php:779
+#: ../admin/theme-options.php:817
 msgid "Secondary Color"
 msgstr ""
 
-#: ../admin/theme-options.php:851 ../includes/theme_upgrade.php:12
+#: ../admin/theme-options.php:889 ../includes/theme_upgrade.php:12
 msgid "Typography"
 msgstr ""
 
-#: ../admin/theme-options.php:852
+#: ../admin/theme-options.php:890
 msgid "Typography and Link Color Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:870
+#: ../admin/theme-options.php:908
 msgid "Body Font"
 msgstr ""
 
-#: ../admin/theme-options.php:871
+#: ../admin/theme-options.php:909
 msgid "Specify the body font properties"
 msgstr ""
 
-#: ../admin/theme-options.php:877
+#: ../admin/theme-options.php:915
 msgid "Enable Custom body Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:884
+#: ../admin/theme-options.php:922
 msgid "Turn on to body typography and turn off for default typography"
 msgstr ""
 
-#: ../admin/theme-options.php:890
+#: ../admin/theme-options.php:928
 msgid "Body Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:918
+#: ../admin/theme-options.php:956
 msgid "Heading Font"
 msgstr ""
 
-#: ../admin/theme-options.php:919
+#: ../admin/theme-options.php:957
 msgid "Specify typography of H1, H2, H3, H4, H5, H6"
 msgstr ""
 
-#: ../admin/theme-options.php:925
+#: ../admin/theme-options.php:963
 msgid "Enable Custom H1 Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:932
+#: ../admin/theme-options.php:970
 msgid "Turn on to H1 typography and turn off for default typography"
 msgstr ""
 
-#: ../admin/theme-options.php:944
+#: ../admin/theme-options.php:982
 msgid "H1 Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:972
+#: ../admin/theme-options.php:1010
 msgid "Enable Custom H2 Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:979
+#: ../admin/theme-options.php:1017
 msgid "Turn on to H2 typography and turn off for default typography"
 msgstr ""
 
-#: ../admin/theme-options.php:992
+#: ../admin/theme-options.php:1030
 msgid "H2 Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:1020
+#: ../admin/theme-options.php:1058
 msgid "Enable Custom H3 Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:1027
+#: ../admin/theme-options.php:1065
 msgid "Turn on to H3 typography and turn off for default typography"
 msgstr ""
 
-#: ../admin/theme-options.php:1040
+#: ../admin/theme-options.php:1078
 msgid "H3 Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:1068
+#: ../admin/theme-options.php:1106
 msgid "Enable Custom H4 Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:1075
+#: ../admin/theme-options.php:1113
 msgid "Turn on to H4 typography and turn off for default typography"
 msgstr ""
 
-#: ../admin/theme-options.php:1089
+#: ../admin/theme-options.php:1127
 msgid "H4 Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:1117
+#: ../admin/theme-options.php:1155
 msgid "Enable Custom H5 Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:1124
+#: ../admin/theme-options.php:1162
 msgid "Turn on to H5 typography and turn off for default typography"
 msgstr ""
 
-#: ../admin/theme-options.php:1138
+#: ../admin/theme-options.php:1176
 msgid "H5 Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:1166
+#: ../admin/theme-options.php:1204
 msgid "Enable Custom H6 Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:1173
+#: ../admin/theme-options.php:1211
 msgid "Turn on to H6 typography and turn off for default typography"
 msgstr ""
 
-#: ../admin/theme-options.php:1187
+#: ../admin/theme-options.php:1225
 msgid "H6 Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:1215
+#: ../admin/theme-options.php:1253
 msgid "Navigation Font"
 msgstr ""
 
-#: ../admin/theme-options.php:1216
+#: ../admin/theme-options.php:1254
 msgid "Specify Navigation font properties"
 msgstr ""
 
-#: ../admin/theme-options.php:1222
+#: ../admin/theme-options.php:1260
 msgid "Enable Navigation Font Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:1229
+#: ../admin/theme-options.php:1267
 msgid ""
 "Turn on to Navigation Font typography and turn off for default typography"
 msgstr ""
 
-#: ../admin/theme-options.php:1236
+#: ../admin/theme-options.php:1274
 msgid "Navigation Font Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:1265
+#: ../admin/theme-options.php:1303
 msgid "Header"
 msgstr ""
 
-#: ../admin/theme-options.php:1266
+#: ../admin/theme-options.php:1304
 msgid "Header Related Options"
 msgstr ""
 
-#: ../admin/theme-options.php:1270
+#: ../admin/theme-options.php:1308
 msgid "General Header"
 msgstr ""
 
-#: ../admin/theme-options.php:1271
+#: ../admin/theme-options.php:1309
 msgid "Header options"
 msgstr ""
 
-#: ../admin/theme-options.php:1291
+#: ../admin/theme-options.php:1329
 msgid "Enable to Show Search box in Header"
 msgstr ""
 
-#: ../admin/theme-options.php:1346
+#: ../admin/theme-options.php:1384
 msgid "Sticky Menu"
 msgstr ""
 
-#: ../admin/theme-options.php:1347
+#: ../admin/theme-options.php:1385
 msgid "sticky header"
 msgstr ""
 
-#: ../admin/theme-options.php:1352
+#: ../admin/theme-options.php:1390
 msgid "Enable Sticky Header"
 msgstr ""
 
-#: ../admin/theme-options.php:1363
+#: ../admin/theme-options.php:1401
 msgid "Enable Sticky Header Position"
 msgstr ""
 
-#: ../admin/theme-options.php:1408
+#: ../admin/theme-options.php:1446
 msgid "Header Background Image & Video"
 msgstr ""
 
-#: ../admin/theme-options.php:1409
+#: ../admin/theme-options.php:1447
 msgid "Custom Header Image & Video options"
 msgstr ""
 
-#: ../admin/theme-options.php:1415
+#: ../admin/theme-options.php:1453
 msgid "Header Background Size"
 msgstr ""
 
-#: ../admin/theme-options.php:1438
+#: ../admin/theme-options.php:1476
 msgid "Header Background Image Size"
 msgstr ""
 
-#: ../admin/theme-options.php:1455
+#: ../admin/theme-options.php:1493
 msgid "Header Background Repeat"
 msgstr ""
 
-#: ../admin/theme-options.php:1482
+#: ../admin/theme-options.php:1520
 msgid "Header Background Position"
 msgstr ""
 
-#: ../admin/theme-options.php:1514
+#: ../admin/theme-options.php:1552
 msgid "Header Background Attachment"
 msgstr ""
 
-#: ../admin/theme-options.php:1539
+#: ../admin/theme-options.php:1577
 msgid "Enable Header( Background ) Overlay"
 msgstr ""
 
-#: ../admin/theme-options.php:1551
+#: ../admin/theme-options.php:1589
 msgid "Header Overlay ( Background )color"
 msgstr ""
 
-#: ../admin/theme-options.php:1588
+#: ../admin/theme-options.php:1626
 msgid "Blog"
 msgstr ""
 
-#: ../admin/theme-options.php:1589 ../admin/theme-options.php:1593
+#: ../admin/theme-options.php:1627 ../admin/theme-options.php:1631
 msgid "Blog Related Options"
 msgstr ""
 
-#: ../admin/theme-options.php:1592
+#: ../admin/theme-options.php:1630
 msgid "Blog Page"
 msgstr ""
 
-#: ../admin/theme-options.php:1598
+#: ../admin/theme-options.php:1636
 msgid "Enable to show the slider on blog page"
 msgstr ""
 
-#: ../admin/theme-options.php:1606
+#: ../admin/theme-options.php:1644
 msgid "To show the slider on posts page"
 msgstr ""
 
-#: ../admin/theme-options.php:1610
+#: ../admin/theme-options.php:1648
 msgid "Select Blog Page Layout you prefer"
 msgstr ""
 
-#: ../admin/theme-options.php:1625
+#: ../admin/theme-options.php:1663
 msgid "Enable Featured Image"
 msgstr ""
 
-#: ../admin/theme-options.php:1633
+#: ../admin/theme-options.php:1671
 msgid "Enable Featured Image for blog page"
 msgstr ""
 
-#: ../admin/theme-options.php:1637
+#: ../admin/theme-options.php:1675
 msgid "More Text"
 msgstr ""
 
-#: ../admin/theme-options.php:1640
+#: ../admin/theme-options.php:1678
 msgid "Text to display in case of text too long"
 msgstr ""
 
-#: ../admin/theme-options.php:1641 ../includes/hooks-filters.php:36
+#: ../admin/theme-options.php:1679 ../includes/hooks-filters.php:36
 msgid "Read More"
 msgstr ""
 
-#: ../admin/theme-options.php:1645
+#: ../admin/theme-options.php:1683
 msgid "Choose the Featured Image Size for Blog Page"
 msgstr ""
 
-#: ../admin/theme-options.php:1664
+#: ../admin/theme-options.php:1702
 msgid "Set large and medium image size: Goto Dashboard => Settings => Media"
 msgstr ""
 
-#: ../admin/theme-options.php:1668
+#: ../admin/theme-options.php:1706
 msgid "Enable to display top post meta data"
 msgstr ""
 
-#: ../admin/theme-options.php:1676 ../admin/theme-options.php:1711
+#: ../admin/theme-options.php:1714 ../admin/theme-options.php:1749
 msgid ""
 "Enable to Display Top Post Meta Details. This will reflect for blog page, "
 "single blog page, blog full width & blog large templates"
 msgstr ""
 
-#: ../admin/theme-options.php:1680
+#: ../admin/theme-options.php:1718
 msgid "Activate and Arrange the Order of Top Post Meta elements"
 msgstr ""
 
-#: ../admin/theme-options.php:1699 ../admin/theme-options.php:1735
+#: ../admin/theme-options.php:1737 ../admin/theme-options.php:1773
 msgid ""
 "Click above eye icon in order to activate the field, This will reflect for "
 "blog page, single blog page, blog full width & blog large templates"
 msgstr ""
 
-#: ../admin/theme-options.php:1704
+#: ../admin/theme-options.php:1742
 msgid "Enable to display bottom post meta data"
 msgstr ""
 
-#: ../admin/theme-options.php:1716
+#: ../admin/theme-options.php:1754
 msgid "Activate and arrange the Order of Bottom Post Meta elements"
 msgstr ""
 
-#: ../admin/theme-options.php:1742
+#: ../admin/theme-options.php:1780
 msgid "Single Blog Page"
 msgstr ""
 
-#: ../admin/theme-options.php:1743
+#: ../admin/theme-options.php:1781
 msgid "Single Blog Page Related Options"
 msgstr ""
 
-#: ../admin/theme-options.php:1748
+#: ../admin/theme-options.php:1786
 msgid "Enable Single Post Featured Image"
 msgstr ""
 
-#: ../admin/theme-options.php:1756
+#: ../admin/theme-options.php:1794
 msgid "Enable Featured Image for Single Post Page"
 msgstr ""
 
-#: ../admin/theme-options.php:1760
+#: ../admin/theme-options.php:1798
 msgid "Choose the featured image display type for Single Post Page"
 msgstr ""
 
-#: ../admin/theme-options.php:1780
+#: ../admin/theme-options.php:1818
 msgid "Enable Author Bio Box below single post"
 msgstr ""
 
-#: ../admin/theme-options.php:1791
+#: ../admin/theme-options.php:1829
 msgid "Show social sharing options box below single post"
 msgstr ""
 
-#: ../admin/theme-options.php:1802
+#: ../admin/theme-options.php:1840
 msgid "Show Related Posts"
 msgstr ""
 
-#: ../admin/theme-options.php:1810
+#: ../admin/theme-options.php:1848
 msgid "Show the Related Post for Single Blog Page"
 msgstr ""
 
-#: ../admin/theme-options.php:1814
+#: ../admin/theme-options.php:1852
 msgid "Related Posts Must Be Shown As:"
 msgstr ""
 
-#: ../admin/theme-options.php:1829
+#: ../admin/theme-options.php:1867
 msgid "Select the Hierarchy"
 msgstr ""
 
-#: ../admin/theme-options.php:1834
+#: ../admin/theme-options.php:1872
 msgid " Show Comments"
 msgstr ""
 
-#: ../admin/theme-options.php:1842
+#: ../admin/theme-options.php:1880
 msgid "Show the Comments for Single Blog Page"
 msgstr ""
 
-#: ../admin/theme-options.php:1849
+#: ../admin/theme-options.php:1887
 msgid "Single Page"
 msgstr ""
 
-#: ../admin/theme-options.php:1850
+#: ../admin/theme-options.php:1888
 msgid "Single Page Related Options"
 msgstr ""
 
-#: ../admin/theme-options.php:1854
+#: ../admin/theme-options.php:1892
 msgid "Enable Single Page Featured Image"
 msgstr ""
 
-#: ../admin/theme-options.php:1865
+#: ../admin/theme-options.php:1903
 msgid "Single Page Featured Image Size"
 msgstr ""
 
-#: ../admin/theme-options.php:1885
+#: ../admin/theme-options.php:1923
 msgid "Layout"
 msgstr ""
 
-#: ../admin/theme-options.php:1886
+#: ../admin/theme-options.php:1924
 msgid "Layout Related Options"
 msgstr ""
 
-#: ../admin/theme-options.php:1890
+#: ../admin/theme-options.php:1928
 msgid "Site Style"
 msgstr ""
 
-#: ../admin/theme-options.php:1900
+#: ../admin/theme-options.php:1938
 msgid "Select the default site layout. Defaults to \"Wide\"."
 msgstr ""
 
-#: ../admin/theme-options.php:1904
+#: ../admin/theme-options.php:1942
 msgid "Main Layout"
 msgstr ""
 
-#: ../admin/theme-options.php:1907
+#: ../admin/theme-options.php:1945
 msgid "Select main content and sidebar arranboxyent."
 msgstr ""
 
-#: ../admin/theme-options.php:1918
+#: ../admin/theme-options.php:1956
 msgid ""
 "This layout will be reflected in all pages unless unique layout template is "
 "set for specific page"
 msgstr ""
 
-#: ../admin/theme-options.php:1923
+#: ../admin/theme-options.php:1961
 msgid "Body Top Margin"
 msgstr ""
 
-#: ../admin/theme-options.php:1924
+#: ../admin/theme-options.php:1962
 msgid "Select the top margin of body element in pixels"
 msgstr ""
 
-#: ../admin/theme-options.php:1950
+#: ../admin/theme-options.php:1988
 msgid "Body Bottom Margin"
 msgstr ""
 
-#: ../admin/theme-options.php:1951
+#: ../admin/theme-options.php:1989
 msgid "Select the bottom margin of body element in pixels"
 msgstr ""
 
-#: ../admin/theme-options.php:2025 ../admin/theme-options.php:2030
+#: ../admin/theme-options.php:2063 ../admin/theme-options.php:2068
 msgid "Footer"
 msgstr ""
 
-#: ../admin/theme-options.php:2026
+#: ../admin/theme-options.php:2064
 msgid "Footer Related Options"
 msgstr ""
 
-#: ../admin/theme-options.php:2031
+#: ../admin/theme-options.php:2069
 msgid "Footer related options"
 msgstr ""
 
-#: ../admin/theme-options.php:2037
+#: ../admin/theme-options.php:2075
 msgid "Footer Widget Area"
 msgstr ""
 
-#: ../admin/theme-options.php:2038
+#: ../admin/theme-options.php:2076
 #, php-format
 msgid ""
 "Select widgets, Goto <a href=\"%1$s\"target=\"_blank\"> Customizer </a> => "
 "Widgets"
 msgstr ""
 
-#: ../admin/theme-options.php:2050
+#: ../admin/theme-options.php:2088
 msgid "Choose No.of widget area you want in footer"
 msgstr ""
 
-#: ../admin/theme-options.php:2064
+#: ../admin/theme-options.php:2102
 msgid "Footer Copyright Text"
 msgstr ""
 
-#: ../admin/theme-options.php:2070
+#: ../admin/theme-options.php:2108
 msgid "Footer Top Margin"
 msgstr ""
 
-#: ../admin/theme-options.php:2071
+#: ../admin/theme-options.php:2109
 msgid "Select the top margin of footer in pixels"
 msgstr ""
 
-#: ../admin/theme-options.php:2093
+#: ../admin/theme-options.php:2131
 msgid "Footer Image"
 msgstr ""
 
-#: ../admin/theme-options.php:2094
+#: ../admin/theme-options.php:2132
 msgid "Custom Footer Image options"
 msgstr ""
 
-#: ../admin/theme-options.php:2100
+#: ../admin/theme-options.php:2138
 msgid "Upload Footer Background Image"
 msgstr ""
 
-#: ../admin/theme-options.php:2113
+#: ../admin/theme-options.php:2151
 msgid "Footer Background Size"
 msgstr ""
 
-#: ../admin/theme-options.php:2136
+#: ../admin/theme-options.php:2174
 msgid "Footer Background Image Size"
 msgstr ""
 
-#: ../admin/theme-options.php:2140
+#: ../admin/theme-options.php:2178
 msgid "Footer Background Repeat"
 msgstr ""
 
-#: ../admin/theme-options.php:2167
+#: ../admin/theme-options.php:2205
 msgid "Footer Background Position"
 msgstr ""
 
-#: ../admin/theme-options.php:2199
+#: ../admin/theme-options.php:2237
 msgid "Footer Background Attachment"
 msgstr ""
 
-#: ../admin/theme-options.php:2224
+#: ../admin/theme-options.php:2262
 msgid "Enable Footer( Background ) Overlay"
 msgstr ""
 
-#: ../admin/theme-options.php:2236
+#: ../admin/theme-options.php:2274
 msgid "Footer Overlay ( Background )color"
 msgstr ""
 
-#: ../admin/theme-options.php:2258
+#: ../admin/theme-options.php:2296
 msgid "Social Networks"
 msgstr ""
 
-#: ../admin/theme-options.php:2259
+#: ../admin/theme-options.php:2297
 msgid "social networks"
 msgstr ""
 
-#: ../admin/theme-options.php:2266
+#: ../admin/theme-options.php:2304
 msgid "Social Sharing Box"
 msgstr ""
 
-#: ../admin/theme-options.php:2267
+#: ../admin/theme-options.php:2305
 msgid "Social Sharing box related options"
 msgstr ""
 
-#: ../admin/theme-options.php:2273
+#: ../admin/theme-options.php:2311
 msgid "Enable facebook sharing option below single post"
 msgstr ""
 
-#: ../admin/theme-options.php:2284
+#: ../admin/theme-options.php:2322
 msgid "Enable twitter sharing option below single post"
 msgstr ""
 
-#: ../admin/theme-options.php:2295
+#: ../admin/theme-options.php:2333
 msgid "Enable linkedin sharing option below single post"
 msgstr ""
 
-#: ../admin/theme-options.php:2306
+#: ../admin/theme-options.php:2344
 msgid "Enable googleplus sharing option below single post"
 msgstr ""
 
-#: ../admin/theme-options.php:2318
+#: ../admin/theme-options.php:2356
 msgid "Enable email sharing option below single post"
 msgstr ""
 
-#: ../admin/theme-options.php:2331
+#: ../admin/theme-options.php:2369
 msgid "Slider Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:2332
+#: ../admin/theme-options.php:2370
 msgid "Flex slider related options"
 msgstr ""
 
-#: ../admin/theme-options.php:2339
+#: ../admin/theme-options.php:2377
 msgid "Flexcaption Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:2340
+#: ../admin/theme-options.php:2378
 msgid "Flexcaption Related Options"
 msgstr ""
 
-#: ../admin/theme-options.php:2345
+#: ../admin/theme-options.php:2383
 msgid "Enable Custom Flexcaption Settings"
 msgstr ""
 
-#: ../admin/theme-options.php:2356
+#: ../admin/theme-options.php:2394
 msgid "Select Flexcaption Background Color"
 msgstr ""
 
-#: ../admin/theme-options.php:2378
+#: ../admin/theme-options.php:2416
 msgid "Select Flexcaption Alignment"
 msgstr ""
 
-#: ../admin/theme-options.php:2405
+#: ../admin/theme-options.php:2443
 msgid "Select Flexcaption Background Horizontal Position"
 msgstr ""
 
-#: ../admin/theme-options.php:2406
+#: ../admin/theme-options.php:2444
 msgid "Select how far from right, Default value Right = 5 ( in % )"
 msgstr ""
 
-#: ../admin/theme-options.php:2432
+#: ../admin/theme-options.php:2470
 msgid "Select Flexcaption Background Vertical Position"
 msgstr ""
 
-#: ../admin/theme-options.php:2433
+#: ../admin/theme-options.php:2471
 msgid "Select how far from top, Default value top = 10 ( in % )"
 msgstr ""
 
-#: ../admin/theme-options.php:2459
+#: ../admin/theme-options.php:2497
 msgid "Select Flexcaption Background Width"
 msgstr ""
 
-#: ../admin/theme-options.php:2463
+#: ../admin/theme-options.php:2501
 msgid "Select Flexcaption Background Width , Default width value 45"
 msgstr ""
 
-#: ../admin/theme-options.php:2486
+#: ../admin/theme-options.php:2524
 msgid "Select Responsive Flexcaption Background Width"
 msgstr ""
 
-#: ../admin/theme-options.php:2490
+#: ../admin/theme-options.php:2528
 msgid ""
 "Select Responsive Flexcaption Background Width, Default width value 100 "
 "( This value will apply for max-width: 768px )"
 msgstr ""
 
-#: ../admin/theme-options.php:2514
+#: ../admin/theme-options.php:2552
 msgid "Select Flexcaption Font Color"
 msgstr ""
 
-#: ../admin/theme-options.php:2536
+#: ../admin/theme-options.php:2574
 msgid "WooCommerce"
 msgstr ""
 
-#: ../admin/theme-options.php:2537
+#: ../admin/theme-options.php:2575
 msgid "Theme options related to woocommerce"
 msgstr ""
 
-#: ../admin/theme-options.php:2544
+#: ../admin/theme-options.php:2582
 msgid "Enable Woocommerce Sidebar"
 msgstr ""
 
-#: ../admin/theme-options.php:2545
+#: ../admin/theme-options.php:2583
 msgid "Enable Sidebar for shop page"
 msgstr ""
 
-#: ../admin/theme-options.php:2560
+#: ../admin/theme-options.php:2598
 msgid "Background Color"
 msgstr ""
 
-#: ../admin/theme-options.php:2561
+#: ../admin/theme-options.php:2599
 msgid "This will affect overall site background color"
 msgstr ""
 
-#: ../admin/theme-options.php:2567
+#: ../admin/theme-options.php:2605
 msgid "General Background Color"
 msgstr ""
 
-#: ../admin/theme-options.php:2581
+#: ../admin/theme-options.php:2619
 msgid "Content Background Color"
 msgstr ""
 
-#: ../admin/theme-options.php:2584
+#: ../admin/theme-options.php:2622
 msgid ""
 "when you are select boxed layout content background color will reflect the "
 "grid area"
 msgstr ""
 
-#: ../admin/theme-options.php:2604
+#: ../admin/theme-options.php:2642
 msgid "General Background Image"
 msgstr ""
 
-#: ../admin/theme-options.php:2621
+#: ../admin/theme-options.php:2659
 msgid "General Background Repeat"
 msgstr ""
 
-#: ../admin/theme-options.php:2649
+#: ../admin/theme-options.php:2687
 msgid "General Background Size"
 msgstr ""
 
-#: ../admin/theme-options.php:2677
+#: ../admin/theme-options.php:2715
 msgid "General Background Attachment"
 msgstr ""
 
-#: ../admin/theme-options.php:2702
+#: ../admin/theme-options.php:2740
 msgid "General Background Position"
 msgstr ""
 
-#: ../admin/theme-options.php:2738
+#: ../admin/theme-options.php:2776
 msgid "Content Background Image"
 msgstr ""
 
-#: ../admin/theme-options.php:2739
+#: ../admin/theme-options.php:2777
 msgid ""
 "when you are select boxed layout content background image will reflect the "
 "grid area"
 msgstr ""
 
-#: ../admin/theme-options.php:2759
+#: ../admin/theme-options.php:2797
 msgid "Content Background Repeat"
 msgstr ""
 
-#: ../admin/theme-options.php:2792
+#: ../admin/theme-options.php:2830
 msgid "Content Background Size"
 msgstr ""
 
-#: ../admin/theme-options.php:2825
+#: ../admin/theme-options.php:2863
 msgid "Content Background Attachment"
 msgstr ""
 
-#: ../admin/theme-options.php:2855
+#: ../admin/theme-options.php:2893
 msgid "Content Background Position"
 msgstr ""
 
