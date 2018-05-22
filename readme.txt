@@ -3,8 +3,8 @@
 Contributors: specia
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.9.6
-Stable tag: 1.0.30
-Version: 1.0.30
+Stable tag: 1.0.31
+Version: 1.0.31
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-logo, translation-ready, blog
@@ -24,7 +24,7 @@ Avira is the right theme for you if you are looking for a multipurpose theme tha
 
 ## Credit & Copyright
 
-Avira WordPress Theme is child theme of Specia WordPress Theme, Copyright 2017 Specia Theme
+Avira WordPress Theme is child theme of Specia WordPress Theme, Copyright 2018 Specia Theme
 Avira WordPress Theme is distributed under the terms of the GNU GPL
 
 Images
@@ -35,6 +35,9 @@ Source: https://www.pexels.com/
 License: CC0 License
 
 ##Changelog
+version 1.0.31
+* Updated License Information
+
 version 1.0.30
 * WordPress 4.9.6 Compatibility Tested.
 
