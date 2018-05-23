@@ -95,7 +95,7 @@ h3#site-title {
 
 .search-wrap button {
 	border-radius: 0;
-	line-height: 32px;
+	height: 32px;
 	margin-bottom: 0;
 	margin-left: -6px;
 	padding: 0;
@@ -108,7 +108,7 @@ h3#site-title {
 	font: normal 18px/1 'Genericons';
 	content: '\f400';
 	vertical-align: middle;
-	padding: 0 7px;
+	padding: 3px 7px;
 }
 
 /* =NAVIGATION
@@ -353,10 +353,17 @@ li.default-menu {
 	}
 }
 
+.spacious-header-style-two {
+
+	.main-small-navigation {
+		background-color: #000000;
+		padding-top: 0;
+	}
+}
+
 .main-small-navigation {
 	float: none;
 	padding-top: 0;
-	background-color: #000000;
 	margin-top: 5px;
 
 	ul {
