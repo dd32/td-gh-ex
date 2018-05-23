@@ -29,7 +29,7 @@ if ( ! wc_coupons_enabled() ) {
 <?php
 
 if ( empty( WC()->cart->applied_coupons ) ) {
-	$info_message = apply_filters( 'woocommerce_checkout_coupon_message', __( 'Have a coupon?', 'bc-shop-lang' ) . ' <a href="#" class="showcoupon">' . __( 'Click here to enter your code', 'bc-shop-lang' ) . '</a>' );
+	$info_message = apply_filters( 'woocommerce_checkout_coupon_message', __( 'Have a coupon?', 'bc-shop' ) . ' <a href="#" class="showcoupon">' . __( 'Click here to enter your code', 'bc-shop' ) . '</a>' );
 	wc_print_notice( $info_message, 'notice' );
 }
 ?>
@@ -37,11 +37,11 @@ if ( empty( WC()->cart->applied_coupons ) ) {
 <form class="checkout_coupon" method="post" style="display:none">
 
 	<p class="form-row form-row-first">
-		<input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'bc-shop-lang' ); ?>" id="coupon_code" value="" />
+		<input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'bc-shop' ); ?>" id="coupon_code" value="" />
 	</p>
 
 	<p class="form-row form-row-last">
-		<button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'bc-shop-lang' ); ?>"><?php esc_html_e( 'Apply coupon', 'bc-shop-lang' ); ?></button>
+		<button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'bc-shop' ); ?>"><?php esc_html_e( 'Apply coupon', 'bc-shop' ); ?></button>
 	</p>
 
 	<div class="clear"></div>

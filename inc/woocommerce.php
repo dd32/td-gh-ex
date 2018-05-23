@@ -34,10 +34,10 @@ add_filter( 'woocommerce_show_page_title', 'woocommerce_show_page_title_callback
  *
  * @return integer number of products.
  */
-function multipurpose_shop_woocommerce_products_per_page() {
+function bcshop_woocommerce_products_per_page() {
 	return 12;
 }
-add_filter( 'loop_shop_per_page', 'multipurpose_shop_woocommerce_products_per_page' );
+add_filter( 'loop_shop_per_page', 'bcshop_woocommerce_products_per_page' );
 
 /**
  * WooCommerce setup function.
@@ -62,11 +62,11 @@ add_action( 'after_setup_theme', 'bcshop_shop_woocommerce_setup' );
  * @return void
  */
  
-function woocommerce_register_post_type_product_filter( $filters ){
+function bcshop_register_post_type_product_filter( $filters ){
 	$filters['description'] = '';
 	return $filters;
 }
-add_filter('woocommerce_register_post_type_product','woocommerce_register_post_type_product_filter');
+add_filter('woocommerce_register_post_type_product','bcshop_register_post_type_product_filter');
 
 
 function bcshop_shop_woocommerce_scripts() {
@@ -107,10 +107,10 @@ if ( ! function_exists( 'bcshop_shop_woocommerce_wrapper_before' ) ) {
 	 */
 	function bcshop_shop_woocommerce_wrapper_before() {
 		/**
-		* Hook - multipurpose_shop_page_container_start.
+		* Hook - bcshop_page_container_start.
 		*
-		* @hooked multipurpose_shop_page_wrp_container_start - 10
-		* @hooked multipurpose_shop_page_column - 20
+		* @hooked bcshop_page_wrp_container_start - 10
+		* @hooked bcshop_page_column - 20
 		*/
 		//Shop Page Layout Style 
 		 
@@ -129,11 +129,11 @@ if ( ! function_exists( 'bcshop_woocommerce_wrapper_after' ) ) {
 	 */
 	function bcshop_woocommerce_wrapper_after() {
 		/**
-		* Hook - multipurpose_shop_page_container_end.
+		* Hook - bcshop_page_container_end.
 		*
-		* @hooked multipurpose_shop_page_column_end - 10
-		* @hooked multipurpose_shop_page_sidebar - 20
-		* @hooked multipurpose_shop_page_wrp_container_end - 30
+		* @hooked bcshop_page_column_end - 10
+		* @hooked bcshop_page_sidebar - 20
+		* @hooked bcshop_page_wrp_container_end - 30
 		*/
 		do_action('bc_business_consulting_page_layout_end','no-sidebar');
 		
@@ -151,27 +151,27 @@ add_action( 'woocommerce_after_main_content', 'bcshop_woocommerce_wrapper_after'
  BASE ON LOOP PRODUCT ( content-product.php )
 */
 
-if ( ! function_exists( 'multipurpose_shop_woocommerce_template_loop_product_link_open' ) ) {
+if ( ! function_exists( 'bcshop_woocommerce_template_loop_product_link_open' ) ) {
 	/**
 	 * Insert the opening anchor tag for products in the loop.
 	 */
-	function multipurpose_shop_woocommerce_template_loop_product_link_open() {
+	function bcshop_woocommerce_template_loop_product_link_open() {
 		echo '<div class="product-wrap">';
 	}
 	remove_action('woocommerce_before_shop_loop_item','woocommerce_template_loop_product_link_open',10);
-	add_action('woocommerce_before_shop_loop_item','multipurpose_shop_woocommerce_template_loop_product_link_open',40);
+	add_action('woocommerce_before_shop_loop_item','bcshop_woocommerce_template_loop_product_link_open',40);
 }
 
-if ( ! function_exists( 'multipurpose_shop_woocommerce_template_loop_product_link_close' ) ) {
+if ( ! function_exists( 'bcshop_woocommerce_template_loop_product_link_close' ) ) {
 	/**
 	 * Insert the opening anchor tag for products in the loop.
 	 */
-	function multipurpose_shop_woocommerce_template_loop_product_link_close() {
+	function bcshop_woocommerce_template_loop_product_link_close() {
 		
 		echo '</div><div class="clearfix"></div> ';
 	}
 	remove_action('woocommerce_after_shop_loop_item','woocommerce_template_loop_product_link_close',10);
-	add_action('woocommerce_after_shop_loop_item','multipurpose_shop_woocommerce_template_loop_product_link_close',10);
+	add_action('woocommerce_after_shop_loop_item','bcshop_woocommerce_template_loop_product_link_close',10);
 }
 
 
@@ -209,7 +209,7 @@ if ( ! function_exists( 'bcshop_thumbnail_template_loop_add_to_cart' ) ) {
 	}
 }
 
-if ( ! function_exists( 'multipurpose_shop_woocommerce_template_loop_product_thumbnail' ) ) {
+if ( ! function_exists( 'bcshop_woocommerce_template_loop_product_thumbnail' ) ) {
 	
 	//remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 		
@@ -218,7 +218,7 @@ if ( ! function_exists( 'multipurpose_shop_woocommerce_template_loop_product_thu
 	/**
 	 * Get the product thumbnail for the loop.
 	 */
-	function multipurpose_shop_woocommerce_template_loop_product_thumbnail() {
+	function bcshop_woocommerce_template_loop_product_thumbnail() {
 		global $product;
 		$attachment_ids   = $product->get_gallery_image_ids();
 		
@@ -248,7 +248,7 @@ if ( ! function_exists( 'multipurpose_shop_woocommerce_template_loop_product_thu
 				do_action( 'bcshop_loop_add_to_cart' );
 			echo '</li>';
 				
-			echo '<li><a href="' . esc_url( $link ) . '" data-toggle="tooltip" title="'.esc_html__( 'Read more', 'bc-shop-lang' ).'"><i class="fa fa-eye" aria-hidden="true"></i></a></li>';
+			echo '<li><a href="' . esc_url( $link ) . '" data-toggle="tooltip" title="'.esc_html__( 'Read more', 'bc-shop' ).'"><i class="fa fa-eye" aria-hidden="true"></i></a></li>';
 				
 				
 			  echo '</ul></div>';	
@@ -258,7 +258,7 @@ if ( ! function_exists( 'multipurpose_shop_woocommerce_template_loop_product_thu
 	}
 	remove_action( 'woocommerce_before_shop_loop_item_title','woocommerce_template_loop_product_thumbnail',10 );
 	
-	add_action( 'woocommerce_before_shop_loop_item_title','multipurpose_shop_woocommerce_template_loop_product_thumbnail',10 );
+	add_action( 'woocommerce_before_shop_loop_item_title','bcshop_woocommerce_template_loop_product_thumbnail',10 );
 	
 
 	
@@ -266,18 +266,18 @@ if ( ! function_exists( 'multipurpose_shop_woocommerce_template_loop_product_thu
 
 
 
-if ( ! function_exists( 'multipurpose_shop_template_loop_product_title' ) ) {
+if ( ! function_exists( 'bcshop_template_loop_product_title' ) ) {
 
 	/**
 	 * Show the product title in the product loop. By default this is an H2.
 	 */
-	function multipurpose_shop_template_loop_product_title() {
+	function bcshop_template_loop_product_title() {
 		
 		echo '<h5 class="theme-loop-product__title"><a href="'.esc_url( get_the_permalink() ).'" rel="bookmark">' . get_the_title() . '</a></h5>';
 	}
 	
 	remove_action( 'woocommerce_shop_loop_item_title','woocommerce_template_loop_product_title',10 );
-	add_action( 'woocommerce_shop_loop_item_title','multipurpose_shop_template_loop_product_title',10 );
+	add_action( 'woocommerce_shop_loop_item_title','bcshop_template_loop_product_title',10 );
 }
 
 
@@ -309,8 +309,8 @@ function custom_woocommerce_upsell_display_args( $args ) {
   return $args;
 }
 
-add_filter( 'woocommerce_cross_sells_columns', 'bbloomer_change_cross_sells_columns' );
+add_filter( 'woocommerce_cross_sells_columns', 'bcshop_change_cross_sells_columns' );
  
-function bbloomer_change_cross_sells_columns( $columns ) {
+function bcshop_change_cross_sells_columns( $columns ) {
 	return 3;
 }

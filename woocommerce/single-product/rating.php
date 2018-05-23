@@ -36,7 +36,7 @@ if ( $rating_count > 0 ) : ?>
 
 	<div class="woocommerce-product-rating">
 		<?php echo wc_get_rating_html( $average, $rating_count ); ?>
-		<?php if ( comments_open() ) : ?><a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<?php printf( /* translators:straing */ _n( '%s customer review', '%s customer reviews', $review_count, 'bc-shop-lang' ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); ?>)</a><?php endif ?>
+		<?php if ( comments_open() ) : ?><a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<?php printf( /* translators:straing */ _n( '%s customer review', '%s customer reviews', $review_count, 'bc-shop' ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); ?>)</a><?php endif ?>
 	</div>
 
 <?php endif; ?>

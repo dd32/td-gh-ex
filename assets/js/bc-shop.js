@@ -51,7 +51,7 @@
 				url : postajax.ajax_url,
 				type : 'post',
 				data : {
-					action : 'multipurpose_shop_wishlist_save',
+					action : 'bcshop_wishlist_save',
 					post_id : post_id
 				},
 				success : function( response ) {

@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: BC Shop\n"
-"POT-Creation-Date: 2018-05-23 13:14+0600\n"
-"PO-Revision-Date: 2018-05-23 13:14+0600\n"
+"POT-Creation-Date: 2018-05-23 14:00+0600\n"
+"PO-Revision-Date: 2018-05-23 13:59+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,75 +20,98 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: inc/helper.php:59
+#: inc/helper.php:39
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: inc/helper.php:39
+#, php-format
+msgid "Proudly powered by %s ."
+msgstr ""
+
+#: inc/helper.php:42
+#, php-format
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: inc/helper.php:42
+msgid "https://athemeart.com"
+msgstr ""
+
+#. Author of the plugin/theme
+#: inc/helper.php:42
+msgid "aThemeArt"
+msgstr ""
+
+#: inc/helper.php:156
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: inc/helper.php:63
+#: inc/helper.php:160
 msgid "404 Error"
 msgstr ""
 
-#: inc/helper.php:82
+#: inc/helper.php:179
 msgid "Add a review"
 msgstr ""
 
-#: inc/helper.php:82
+#: inc/helper.php:179
 #, php-format
 msgid "Be the first to review &ldquo;%s&rdquo;"
 msgstr ""
 
-#: inc/helper.php:83
+#: inc/helper.php:180
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: inc/helper.php:89
+#: inc/helper.php:186
 msgid "Your Name"
 msgstr ""
 
-#: inc/helper.php:92
+#: inc/helper.php:189
 msgid "Your Email"
 msgstr ""
 
-#: inc/helper.php:97
+#: inc/helper.php:194
 msgid "Submit Review "
 msgstr ""
 
-#: inc/helper.php:107
+#: inc/helper.php:204
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a review."
 msgstr ""
 
-#: inc/helper.php:111
+#: inc/helper.php:208
 msgid "Your rating"
 msgstr ""
 
-#: inc/helper.php:112
+#: inc/helper.php:209
 msgid "Rate&hellip;"
 msgstr ""
 
-#: inc/helper.php:113
+#: inc/helper.php:210
 msgid "Perfect"
 msgstr ""
 
-#: inc/helper.php:114
+#: inc/helper.php:211
 msgid "Good"
 msgstr ""
 
-#: inc/helper.php:115
+#: inc/helper.php:212
 msgid "Average"
 msgstr ""
 
-#: inc/helper.php:116
+#: inc/helper.php:213
 msgid "Not that bad"
 msgstr ""
 
-#: inc/helper.php:117
+#: inc/helper.php:214
 msgid "Very poor"
 msgstr ""
 
-#: inc/helper.php:122
+#: inc/helper.php:219
 msgid "Your review"
 msgstr ""
 
@@ -206,10 +229,6 @@ msgstr ""
 
 #. Theme URI of the plugin/theme
 msgid "https://athemeart.com/downloads/bc-shop/"
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "aThemeArt"
 msgstr ""
 
 #. Author URI of the plugin/theme

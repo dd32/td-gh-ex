@@ -26,7 +26,7 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 echo '</div>';
 // If checkout registration is disabled and not logged in, the user cannot checkout
 if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ) {
-	echo apply_filters( 'woocommerce_checkout_must_be_logged_in_message', esc_html__( 'You must be logged in to checkout.', 'bc-shop-lang' ) );
+	echo apply_filters( 'woocommerce_checkout_must_be_logged_in_message', esc_html__( 'You must be logged in to checkout.', 'bc-shop' ) );
 	return;
 }
 
@@ -58,7 +58,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 	<div class="col-xs-12 col-sm-12 col-md-5">
 
 		<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
-    	<h3 id="order_review_heading"><?php esc_attr_e( 'Your order', 'bc-shop-lang' ); ?></h3>
+    	<h3 id="order_review_heading"><?php esc_attr_e( 'Your order', 'bc-shop' ); ?></h3>
         <div id="order_review" class="woocommerce-checkout-review-order">
             <?php do_action( 'woocommerce_checkout_order_review' ); ?>
         </div>

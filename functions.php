@@ -6,7 +6,7 @@
 function bcshop_shop_theme_setup(){
 
 	// Make theme available for translation.
-	load_theme_textdomain( 'bc-shop-lang', get_stylesheet_directory_uri() . '/languages' );
+	load_theme_textdomain( 'bc-shop', get_stylesheet_directory_uri() . '/languages' );
 
 }
 
@@ -26,7 +26,7 @@ function bcshop_enqueue_child_styles() {
     wp_enqueue_style( 'bc-business-consulting-css', get_stylesheet_directory_uri() . '/style.css', array( $parent_style ) );
 	
 	wp_enqueue_script( 'customselect', get_stylesheet_directory_uri(). '/assets/js/customselect.js', 0, '', true );
-	wp_enqueue_script( 'multipurpose-shop-js', get_stylesheet_directory_uri().'/assets/js/multipurpose-shop.js', 0, '', true );
+	wp_enqueue_script( 'multipurpose-shop-js', get_stylesheet_directory_uri().'/assets/js/bc-shop.js', 0, '', true );
 	
 	}
 add_action( 'wp_enqueue_scripts', 'bcshop_enqueue_child_styles',999 );
@@ -53,6 +53,9 @@ if( !function_exists('bcshop_disable_from_parent') ):
 	function bcshop_disable_from_parent(){
 		
 		remove_action( 'bc_business_consulting_custom_static_header', 'bc_business_consulting_title_in_custom_header',20 );
+		remove_action( 'bc_business_consulting_posts_formats_thumbnail', 'bc_business_consulting_posts_formats_thumbnail' );
+		
+		remove_action( 'bc_business_consulting_footer_layout', 'bc_business_consulting_footer_layout',10 );
 	}
 
 endif;
