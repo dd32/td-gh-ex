@@ -1,5 +1,8 @@
 == Changelog ==
 
+ =  1.1.2 =
+* Bug fixed and child theme requriment 
+
  =  1.1.1 =
 * Slider widget div fixed
 

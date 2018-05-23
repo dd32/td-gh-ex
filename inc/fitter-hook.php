@@ -76,7 +76,7 @@ if( ! function_exists( 'bc_business_consulting_read_more_link' ) ) :
 	*
 	*/
 	function bc_business_consulting_read_more_link() {
-		return '<div class="pull-left padding-top-25"><a class="btn btn-theme" href="' . esc_url( get_permalink() ) . '">'.esc_html__( 'Read More', 'bc-business-consulting' ).'<i class="fa fa-long-arrow-right"></i></a></div>';
+		return '<div class="clearfix"></div><div class="pull-left padding-top-25"><a class="btn btn-theme" href="' . esc_url( get_permalink() ) . '">'.esc_html__( 'Read More', 'bc-business-consulting' ).'<i class="fa fa-long-arrow-right"></i></a></div>';
 	}
 	add_filter( 'the_content_more_link', 'bc_business_consulting_read_more_link' );
 endif;
@@ -95,7 +95,7 @@ function bc_business_consulting_excerpt_more( $link ) {
 	if ( is_admin() ) {
 		return $link;
 	}
-	$link = sprintf( ' <div class="pull-left padding-top-25"><a href="%1$s" class="btn btn-theme">%2$s <i class="fa fa-fw fa-long-arrow-right"></i> </a>  </div>',
+	$link = sprintf( '<div class="clearfix"></div> <div class="pull-left padding-top-25"><a href="%1$s" class="btn btn-theme">%2$s <i class="fa fa-fw fa-long-arrow-right"></i> </a>  </div>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		/* translators: %s: Name of current post */
 		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'bc-business-consulting' ), get_the_title( get_the_ID() ) )

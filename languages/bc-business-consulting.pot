@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: BC Business Consulting\n"
-"POT-Creation-Date: 2018-02-27 21:36+0600\n"
-"PO-Revision-Date: 2018-02-27 21:36+0600\n"
+"POT-Creation-Date: 2018-05-23 13:12+0600\n"
+"PO-Revision-Date: 2018-05-23 13:12+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -831,153 +831,189 @@ msgid "Ticket, email , Skype & Teamviewer"
 msgstr ""
 
 #: inc/pro/admin-page.php:298
-msgid "visual composer bc toolkit addons  "
+msgid "Pagebulider addons  "
 msgstr ""
 
 #: inc/pro/admin-page.php:303
-msgid "Page Builder by SiteOrigin with 8+ Widgets  "
+msgid "visual composer Theme toolkit addons  "
 msgstr ""
 
 #: inc/pro/admin-page.php:308
-msgid "Home Slider"
+msgid "visual composer bc toolkit addons  "
 msgstr ""
 
 #: inc/pro/admin-page.php:313
-msgid "Navigation Color"
+msgid "Page Builder by SiteOrigin with 8+ Widgets  "
 msgstr ""
 
 #: inc/pro/admin-page.php:318
-msgid "Responsive Design"
+msgid "Home Slider"
 msgstr ""
 
 #: inc/pro/admin-page.php:323
-msgid "Post format"
+msgid "Navigation Color"
 msgstr ""
 
 #: inc/pro/admin-page.php:328
-msgid "Change Background"
+msgid "Responsive Design"
 msgstr ""
 
 #: inc/pro/admin-page.php:333
-msgid "Unlimited Text Color"
+msgid "Post format"
 msgstr ""
 
 #: inc/pro/admin-page.php:338
-msgid "Logo Upload"
+msgid "Change Background"
 msgstr ""
 
 #: inc/pro/admin-page.php:343
-msgid "Choose Social Icon "
+msgid "Unlimited Text Color"
 msgstr ""
 
 #: inc/pro/admin-page.php:348
+msgid "Logo Upload"
+msgstr ""
+
+#: inc/pro/admin-page.php:353
+msgid "Choose Social Icon "
+msgstr ""
+
+#: inc/pro/admin-page.php:358
 msgid "jQuery Lightbox Popup "
 msgstr ""
 
-#: inc/pro/admin-page.php:356
+#: inc/pro/admin-page.php:366
 msgid "Extended Theme Options Panel"
 msgstr ""
 
-#: inc/pro/admin-page.php:361
+#: inc/pro/admin-page.php:371
 msgid "Styling for all sections"
 msgstr ""
 
-#: inc/pro/admin-page.php:366
+#: inc/pro/admin-page.php:376
 msgid "Google Fonts Supported (500+ Fonts)"
 msgstr ""
 
-#: inc/pro/admin-page.php:371
+#: inc/pro/admin-page.php:381
 msgid "Homepage Sections"
 msgstr ""
 
-#: inc/pro/admin-page.php:376
+#: inc/pro/admin-page.php:386
 msgid "Sub Title"
 msgstr ""
 
-#: inc/pro/admin-page.php:382 inc/pro/admin-page.php:387
+#: inc/pro/admin-page.php:392 inc/pro/admin-page.php:397
 msgid "Page Layout Style"
 msgstr ""
 
-#: inc/pro/admin-page.php:392
+#: inc/pro/admin-page.php:402
 msgid "Blog Layout Style"
 msgstr ""
 
-#: inc/pro/admin-page.php:397
+#: inc/pro/admin-page.php:407
 msgid "Blog Gird Style"
 msgstr ""
 
-#: inc/pro/admin-page.php:402
+#: inc/pro/admin-page.php:412
 msgid "Breadcrumb"
 msgstr ""
 
-#: inc/pro/admin-page.php:407
+#: inc/pro/admin-page.php:417
 msgid "  Footer Branding Our Site"
 msgstr ""
 
-#: inc/pro/admin-page.php:408
+#: inc/pro/admin-page.php:418
 msgid "Yes"
 msgstr ""
 
-#: inc/pro/admin-page.php:409
+#: inc/pro/admin-page.php:419
 msgid "No"
 msgstr ""
 
-#: inc/pro/admin-page.php:413
+#: inc/pro/admin-page.php:423
 msgid "WP-Admin Welcome Section"
 msgstr ""
 
-#: inc/pro/admin-page.php:422
+#: inc/pro/admin-page.php:429
+msgid "WooCommerce"
+msgstr ""
+
+#: inc/pro/admin-page.php:434
+msgid "WooCommerce Custom Plugins"
+msgstr ""
+
+#: inc/pro/admin-page.php:439
+msgid "WooCommerce Customizable Options"
+msgstr ""
+
+#: inc/pro/admin-page.php:444
+msgid "WooCommerce Child Theme"
+msgstr ""
+
+#: inc/pro/admin-page.php:449
+msgid "WooCommerce Layout Options"
+msgstr ""
+
+#: inc/pro/admin-page.php:454
+msgid "You can control overall everything without code"
+msgstr ""
+
+#: inc/pro/admin-page.php:463
 msgid "More Information"
 msgstr ""
 
-#: inc/template-functions.php:266
+#: inc/template-functions.php:270
 msgid "Toggle navigation"
 msgstr ""
 
-#: inc/template-functions.php:339
+#: inc/template-functions.php:311
+msgid "search_icon"
+msgstr ""
+
+#: inc/template-functions.php:343
 msgid "Set Up menu here"
 msgstr ""
 
-#: inc/template-functions.php:372
+#: inc/template-functions.php:376
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: inc/template-functions.php:372
+#: inc/template-functions.php:376
 #, php-format
 msgid "Proudly powered by %s ."
 msgstr ""
 
-#: inc/template-functions.php:375
+#: inc/template-functions.php:379
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: inc/template-functions.php:375
+#: inc/template-functions.php:379
 msgid "https://athemeart.com"
 msgstr ""
 
-#: inc/template-functions.php:375
+#: inc/template-functions.php:379
 msgid "aThemeArt"
 msgstr ""
 
-#: inc/template-functions.php:475
+#: inc/template-functions.php:479
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: inc/template-functions.php:479
+#: inc/template-functions.php:483
 msgid "404 Error"
 msgstr ""
 
-#: inc/template-functions.php:638
+#: inc/template-functions.php:643
 msgid "Previous"
 msgstr ""
 
-#: inc/template-functions.php:639
+#: inc/template-functions.php:644
 msgid "Next"
 msgstr ""
 
-#: inc/template-functions.php:640
+#: inc/template-functions.php:645
 msgid "&nbsp;"
 msgstr ""
 
@@ -1028,24 +1064,24 @@ msgstr ""
 msgid "Footer Right"
 msgstr ""
 
-#: inc/theme-core.php:125
+#: inc/theme-core.php:126
 msgid "Sidebar"
 msgstr ""
 
-#: inc/theme-core.php:127 inc/theme-core.php:137 inc/theme-core.php:146
-#: inc/theme-core.php:155
+#: inc/theme-core.php:128 inc/theme-core.php:138 inc/theme-core.php:147
+#: inc/theme-core.php:156
 msgid "Add widgets here."
 msgstr ""
 
-#: inc/theme-core.php:135
+#: inc/theme-core.php:136
 msgid "Footer"
 msgstr ""
 
-#: inc/theme-core.php:144
+#: inc/theme-core.php:145
 msgid "Front Page Slider"
 msgstr ""
 
-#: inc/theme-core.php:153
+#: inc/theme-core.php:154
 msgid "Blog Page Slider"
 msgstr ""
 

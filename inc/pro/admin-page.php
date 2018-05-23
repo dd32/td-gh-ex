@@ -122,7 +122,7 @@ class bc_business_consulting_Admin {
 				<p class="cresta-actions">
 					<a href="<?php echo esc_url( 'https://athemeart.com/downloads/bc-business-consulting/?ref=welcome' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'bc-business-consulting' ); ?></a>
 
-					<a href="<?php echo esc_url( apply_filters( 'business_consulting_pro_theme_url', 'https://athemeart.com/demo/bc/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'bc-business-consulting' ); ?></a>
+					<a href="<?php echo esc_url( apply_filters( 'business_consulting_pro_theme_url', 'https://athemeart.com/demo/bc-source/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'bc-business-consulting' ); ?></a>
 
 					<a href="<?php echo esc_url( apply_filters( 'business_consulting_pro_theme_url', 'https://athemeart.com/downloads/bc-business-consulting/?ref=welcome' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version Demo', 'bc-business-consulting' ); ?></a>
 
@@ -295,6 +295,16 @@ class bc_business_consulting_Admin {
 						<td><?php esc_html_e('Ticket, email , Skype & Teamviewer', 'bc-business-consulting'); ?></td>
 					</tr>
                     <tr>
+						<td><h4><?php esc_html_e('Pagebulider addons  ', 'bc-business-consulting'); ?></h4></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+                    <tr>
+						<td><h4><?php esc_html_e('visual composer Theme toolkit addons  ', 'bc-business-consulting'); ?></h4></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+                    <tr>
 						<td><h4><?php esc_html_e('visual composer bc toolkit addons  ', 'bc-business-consulting'); ?></h4></td>
 						<td><span class="dashicons dashicons-no"></span></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
@@ -413,6 +423,37 @@ class bc_business_consulting_Admin {
 						<td><h4><?php esc_html_e('WP-Admin Welcome Section', 'bc-business-consulting'); ?></h4></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
 						<td><span class="dashicons dashicons-no"></span></td>
+					</tr>
+                    
+                    <tr>
+						<td><h4><?php esc_html_e('WooCommerce', 'bc-business-consulting'); ?></h4></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+                     <tr>
+						<td><h4><?php esc_html_e('WooCommerce Custom Plugins', 'bc-business-consulting'); ?></h4></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+                      <tr>
+						<td><h4><?php esc_html_e('WooCommerce Customizable Options', 'bc-business-consulting'); ?></h4></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+                     <tr>
+						<td><h4><?php esc_html_e('WooCommerce Child Theme', 'bc-business-consulting'); ?></h4></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+                     <tr>
+						<td><h4><?php esc_html_e('WooCommerce Layout Options', 'bc-business-consulting'); ?></h4></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+                     <tr>
+						<td><h4><?php esc_html_e('You can control overall everything without code', 'bc-business-consulting'); ?></h4></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td></td>
