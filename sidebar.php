@@ -8,12 +8,38 @@ display widgets on the bottom of the page. This is the footer sidebar that is as
 widget area in the customizer and widget area.
 
 @package        Silver Quantum WordPress Theme
-@copyright      Copyright (C) 2014-2017. Benjamin Lu
+@copyright      Copyright (C) 2014-2018. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (https://www.lumiathemes.com/)
+@author         Benjamin Lu (https://www.benjlu.com/)
 ================================================================================================
 */
 ?>
-<div id="widget-area" class="widget-area">
-    <?php dynamic_sidebar('primary'); ?>
+<div id="widget-area" class="widget-area footer-area">
+    <?php if (!dynamic_sidebar('primary-sidebar')) { ?>
+        <?php the_widget('WP_Widget_Categories', array(
+            'dropdown'  => true,
+            'hierarchical' => true), array(
+            'before_widget' => '<aside id="widget" class="widget widget_categories">',
+            'after_widget'  => '</aside>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )); 
+        ?>
+    
+        <?php the_widget('WP_Widget_Tag_Cloud', array(), array(
+            'before_widget' => '<aside id="widget" class="widget widget_tag_cloud">',
+            'after_widget'  => '</aside>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )); 
+        ?>
+    
+        <?php the_widget('WP_Widget_Meta', array(), array(
+            'before_widget' => '<aside id="widget" class="widget widget_meta">',
+            'after_widget'  => '</aside>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )); 
+        ?>
+    <?php } ?>
 </div>

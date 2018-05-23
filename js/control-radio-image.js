@@ -1,15 +1,14 @@
-<?php
 /*
 ================================================================================================
-Silver Quantum - misc.php
+Silver Quantum - control-radio-image.js
 ================================================================================================
-This is the most generic template file in a WordPress theme and is one of the requirements to add
-more features to the theme if necessary.
+This is the most generic template file in a WordPress theme and is one of required files to able
+to navigation left, right or no sidebar by using radio-images.
 
 @package        Silver Quantum WordPress Theme
-@copyright      Copyright (C) 2014-2017. Benjamin Lu
+@copyright      Copyright (C) 2014-2018. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (https://www.lumiathemes.com/)
+@author         Benjamin Lu (https://www.benjlu.com/)
 ================================================================================================
 */
 
@@ -17,20 +16,25 @@ more features to the theme if necessary.
 ================================================================================================
 Table of Content
 ================================================================================================
- 1.0 - Pingback Setup
+ 1.0 - Layout JS
 ================================================================================================
 */
 
 /*
 ================================================================================================
-Table of Content
-================================================================================================
- 1.0 - Pingback Setup
+ 1.0 - Layout JS
 ================================================================================================
 */
-function silver_quantum_pingback_setup() {
-    if (is_singular() && pings_open()) {
-        echo '<link href="', esc_url(get_bloginfo('pingback_url')), '" rel="pingback" />';
-    }
-}
-add_action('wp_head', 'silver_quantum_pingback_setup');
+jQuery(document).ready(function(){
+    wp.customize.controlConstructor['radio-image'] = wp.customize.Control.extend({
+        ready: function() {
+            var control = this;
+            var value = (undefined !== control.setting._value) ? control.setting._value : '';
+
+            this.container.on('change', 'input:radio', function() {
+                value = jQuery(this).val();
+                control.setting.set(value);
+            });
+        }
+    });
+});

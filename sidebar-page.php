@@ -1,7 +1,7 @@
 <?php
 /*
 ================================================================================================
-Silver Quantum - sidebar-custom.php
+Silver Quantum - sidebar-page.php
 ================================================================================================
 This is the most generic template file in a WordPress theme and is one of the requirements to 
 display widgets on the bottom of the page. This is the footer sidebar that is assigned in the 
@@ -15,7 +15,7 @@ widget area in the customizer and widget area.
 */
 ?>
 <div id="widget-area" class="widget-area">
-    <?php if (!dynamic_sidebar('custom-sidebar')) { ?>
+    <?php if (!dynamic_sidebar('secondary-sidebar')) { ?>
         <?php the_widget('WP_Widget_Categories', array(
             'dropdown'  => true,
             'hierarchical' => true), array(
