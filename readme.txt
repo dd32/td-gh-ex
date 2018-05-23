@@ -114,6 +114,11 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.26 (2018-05-23)
+-------------------------
+- Fixed untranslateable string in functions.php
+- Fixed the cookie consent checkbox not being displayed
+
 Version 1.25 (2017-12-04)
 -------------------------
 - Fixed a typo in content-link.php
