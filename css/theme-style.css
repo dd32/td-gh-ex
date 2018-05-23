@@ -368,7 +368,7 @@ section.page__title__wrapper .page__title__inner {
 .page-wrapper {
     padding: 130px 0;
 }
-.page-template-page-full-width .page-wrapper{
+.page-template-template-full-width .page-wrapper{
      padding: 0;
 }
 .page-sub-title p {
@@ -856,6 +856,7 @@ form#searchbox input {
   align-items: center;
   display: flex;
   position: relative;
+  height: 840px;
 }
 
 .slider-content-style-1 h3 {
