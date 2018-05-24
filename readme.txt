@@ -63,6 +63,10 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.17 (2018-05-24)
+-------------------------
+- Fixed output of cookie checkbox in comments
+
 Version 1.16 (2017-12-01)
 -------------------------
 - Updated to the new readme.txt format, with changelog.txt incorporated into it

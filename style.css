@@ -3,7 +3,7 @@
 	Theme Name: Rams
     Text Domain: rams
 	Theme URI: http://www.andersnoren.se/teman/rams-wordpress-theme/
-	Version: 1.16
+	Version: 1.17
 	Description: A clean, minimalist and responsive theme for bloggers. Features responsive and retina-ready design, support for the gallery and quote post formats, custom accent color support, Jetpack infinite scroll integration, editor styles and translation ready code. Demo: http://www.andersnoren.se/themes/rams/
 	Tags: blog, two-columns, left-sidebar, custom-colors, custom-menu, editor-style, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -1335,8 +1335,18 @@ li.comment { position: relative; }
 /* Comment form --------------------------------------- */
 
 
-.comment-form p { margin-bottom: 30px; }
-.comment-form .form-submit { margin-bottom: 0; }
+.comment-form p { 
+	margin-bottom: 30px; 
+}
+
+.comment-form p:last-child { 
+	margin-bottom: 0; 
+}
+
+.comment-form p.comment-notes {
+	margin: -20px 0 50px;
+	line-height: 1.4;
+}
 
 .comment-form-author, 
 .comment-form-email {
@@ -1354,6 +1364,13 @@ li.comment { position: relative; }
 	font-weight: 700;
 	text-transform: uppercase;
 	color: #767676;
+}
+
+.comment-form input[type="checkbox"] + label {
+	display: inline;
+	font-weight: 400;
+	margin: 0 0 0 5px;
+	text-transform: none;
 }
 
 .comment-form label .required {
@@ -1776,6 +1793,10 @@ li.comment { position: relative; }
 	.comment-reply-title { margin-bottom: 30px; }
 	
 	.comment-form p { margin-bottom: 20px; }
+
+	.comment-form p.comment-notes {
+		margin-bottom: 25px;
+	}
 	
 	.comment-form-author,
 	.comment-form-email {
