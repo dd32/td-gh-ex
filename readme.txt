@@ -59,6 +59,10 @@ Source: http://flexslider.woothemes.com
 
 == Changelog ==
 
+Version 1.13 (2018-05-24)
+-------------------------
+- Fixed output of cookie checkbox in comments
+
 Version 1.12 (2017-12-03)
 -------------------------
 - Replaced ternany shorthands will full-length version, to retain support for PHP pre 5.3 

@@ -3,7 +3,7 @@
 	Theme Name: Fukasawa
     Text Domain: fukasawa
 	Theme URI: http://www.andersnoren.se/teman/fukasawa-wordpress-theme/
-	Version: 1.12
+	Version: 1.13
 	Description: Fukasawa is a minimal masonry style blog theme for photographers and collectors. It features responsive & retina-ready design, support for the image, gallery and video post formats, five custom widgets, an archive page template, a gallery slideshow, custom accent color support, custom logo support, editor styles and translation ready code. Demo: http://www.andersnoren.se/themes/fukasawa
 	Tags: blog, three-columns, left-sidebar, custom-colors, custom-menu, editor-style, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, portfolio, grid-layout
 	Author: Anders Norén
@@ -1741,6 +1741,14 @@ p.comment-form-author { margin-right: 5%; }
 	letter-spacing: 1px;
 	margin-bottom: 6px;
 	color: #666;
+}
+
+.comment-form input[type="checkbox"] + label {
+	display: inline;
+	font-weight: 400;
+	letter-spacing: 0;
+	margin: 0 0 0 5px;
+	text-transform: none;
 }
 
 .comment-form .required { 
