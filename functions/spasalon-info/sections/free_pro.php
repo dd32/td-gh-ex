@@ -17,7 +17,7 @@
 					<ul class="feature">
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Frontpage Sections','spasalon' ); ?></span>
-							<p><?php esc_html_e( 'You will find number of sections on frontpage','spasalon' ); ?></p>
+							<p><?php esc_html_e( 'You will find a number of sections in the front page','spasalon' ); ?></p>
 						</li>
 						
 						<li>
@@ -26,8 +26,8 @@
 						</li>
 						
 						<li>
-							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Custom Widgets','spasalon' ); ?></span>
-							<p> <?php esc_html_e('Theme Have number of beautifuly designed Custom Widgets','spasalon');?></p>
+							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Custom widgets','spasalon' ); ?></span>
+							<p> <?php esc_html_e('This theme has numerous beautifully designed custom widgets','spasalon');?></p>
 						</li>
 						
 						<li>
@@ -57,7 +57,7 @@
 						
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Contact Form Support','spasalon' ); ?></span>
-							<p><?php esc_html_e( 'SpaSalon supports the default WordPress Contact Form and Contact Form 7. Add the forms by using the predefined Contact Page Template','spasalon' ); ?></p>
+							<p><?php esc_html_e( 'SpaSalon supports WordPress Contact Form 7 plugin. Add the forms by using the predefined Contact Page Template','spasalon' ); ?></p>
 						</li>
 						
 						<li>
@@ -72,7 +72,7 @@
 						
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Google Map','spasalon' ); ?></span>
-							<p><?php esc_html_e( 'Display your shop and/or business location on your website. SpaSalon supports all GoogleMaps plugins that generate shortcodes.','spasalon' ); ?></p>
+							<p><?php esc_html_e( 'Display your shop and/or business location on your website. SpaSalon supports all Google Maps plugins that generate shortcodes.','spasalon' ); ?></p>
 						</li>
 						
 						
@@ -133,7 +133,7 @@
 					</header>
 					
 					<ul class="feature">
-						<li style="font-size:16px; line-height:25px; padding:19px"><?php _e('Slider [Unlimited Slides], Service [Unlimited Services], Products [Unlimited Products], Testimonial[Unlimited Testimonial], Latest News, Team[Unlimited Team], Gallery, Client[Unlimited Client], Callout, Additional Section and 4-column footer widget area','spasalon'); ?></li>
+						<li style="font-size:16px; line-height:25px; padding:19px"><?php _e('Unlimited Slides, Services, Products, Testimonials, Teams, Clients, Latest News, Gallery, Callout, Additional Section and 4-column footer widget area','spasalon'); ?></li>
 						<li style="font-size:16px; line-height:25px; padding:18px"><?php _e('Homepage, Homepage 2, About us, Blog Left Sidebar, Blog Right Sidebar, Blog Full Width, Page Full Width, Product Page and Contact Page.','spasalon'); ?></li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Support for thousands of Font-Awesome icons, Featured Images, and Read More button/link','spasalon'); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Overlay effects gallery' ,'spasalon'); ?> </li>

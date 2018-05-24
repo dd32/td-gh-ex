@@ -23,7 +23,7 @@ function spasalon_general_settings_customizer( $wp_customize ){
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[spa_bannerstrip_enable]' , array(
-			'label'          => __('Banner Strip', 'spasalon' ),
+			'label'          => __('Menu Banner', 'spasalon' ),
 			'section'        => 'banner_section',
 			'type'           => 'radio',
 			'choices'        => array(

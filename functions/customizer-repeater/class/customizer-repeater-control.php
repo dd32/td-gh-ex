@@ -452,7 +452,7 @@ class Spasalon_Repeater extends WP_Customize_Control {
 						
 					if($this->customizer_repeater_video_url_control){
 							$this->input_control(array(
-							'label' => apply_filters('repeater_input_labels_filter', esc_html__('Video Url',
+							'label' => apply_filters('repeater_input_labels_filter', esc_html__('Video URL',
 							'spasalon'), $this->id, 'customizer_repeater_video_url_control'),
 							'class' => 'customizer-repeater-video-url-control',
 							'type'  => apply_filters('customizer_repeater_video_url_control', 'textarea', $this->id, 'customizer_repeater_video_url_control' ),

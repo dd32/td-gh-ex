@@ -35,7 +35,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 			</div>
 			<div class="col-md-6">
 				<div class="spasalon-tab-pane-half spasalon-tab-pane-first-half">
-				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/spasalon-info/img/spasalon.png'; ?>" alt="<?php esc_html_e( 'SpaSalon Blue child theme', 'spasalon' ); ?>" />
+				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/spasalon-info/img/spasalon.png'; ?>" />
 				</div>
 			</div>	
 		</div>

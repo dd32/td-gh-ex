@@ -60,7 +60,7 @@ class spasalon_screen {
 			<h1><?php 
 			printf( esc_html__( 'Welcome to %1$s - Version %2$s', 'spasalon' ), esc_html( $theme_info->Name ), esc_html( $theme_info->Version ) ); ?>
 			</h1>
-				<p><?php echo sprintf( esc_html__( "Welcome! Thank you for choosing Spasalon WordPress theme. To take full advantage of the features this theme has to offer visit our %swelcome page%s.", "spasalon"), '<a href="' . esc_url( admin_url( 'themes.php?page=spasalon-info' ) ) . '">', '</a>' ); ?></p>
+				<p><?php echo sprintf( esc_html__( "Welcome! Thank you for choosing SpaSalon WordPress theme. To take full advantage of the features this theme has to offer visit our %swelcome page%s.", "spasalon"), '<a href="' . esc_url( admin_url( 'themes.php?page=spasalon-info' ) ) . '">', '</a>' ); ?></p>
 				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=spasalon-info' ) ); ?>" class="button button-blue-secondary button_spasalon" style="text-decoration: none;"><?php _e( 'Get started with SpaSalon','spasalon'); ?></a></p>
 			</div>
 			<style>

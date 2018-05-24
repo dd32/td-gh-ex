@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Spasalon\n"
-"POT-Creation-Date: 2018-05-16 17:03+0530\n"
-"PO-Revision-Date: 2018-05-16 17:02+0530\n"
+"POT-Creation-Date: 2018-05-23 13:20+0530\n"
+"PO-Revision-Date: 2018-05-23 13:20+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -177,6 +177,7 @@ msgid "Link"
 msgstr ""
 
 #: functions/customizer-repeater/class/customizer-repeater-control.php:309
+#: functions/customizer-repeater/class/customizer-repeater-control.php:455
 msgid "Video URL"
 msgstr ""
 
@@ -198,10 +199,6 @@ msgstr ""
 #: functions/customizer-repeater/class/customizer-repeater-control.php:367
 #: functions/customizer-repeater/class/customizer-repeater-control.php:486
 msgid "Delete field"
-msgstr ""
-
-#: functions/customizer-repeater/class/customizer-repeater-control.php:455
-msgid "Video Url"
 msgstr ""
 
 #: functions/customizer-repeater/class/customizer-repeater-control.php:523
@@ -356,7 +353,7 @@ msgid "General settings"
 msgstr ""
 
 #: functions/customizer/general-settings.php:26
-msgid "Banner Strip"
+msgid "Menu Banner"
 msgstr ""
 
 #: functions/customizer/general-settings.php:40
@@ -443,7 +440,7 @@ msgid "Frontpage Sections"
 msgstr ""
 
 #: functions/spasalon-info/sections/free_pro.php:20
-msgid "You will find number of sections on frontpage"
+msgid "You will find a number of sections in the front page"
 msgstr ""
 
 #: functions/spasalon-info/sections/free_pro.php:24
@@ -455,11 +452,11 @@ msgid "Various page templates are included in SpaSalon PRO."
 msgstr ""
 
 #: functions/spasalon-info/sections/free_pro.php:29
-msgid "Custom Widgets"
+msgid "Custom widgets"
 msgstr ""
 
 #: functions/spasalon-info/sections/free_pro.php:30
-msgid "Theme Have number of beautifuly designed Custom Widgets"
+msgid "This theme has numerous beautifully designed custom widgets"
 msgstr ""
 
 #: functions/spasalon-info/sections/free_pro.php:34
@@ -511,8 +508,8 @@ msgstr ""
 
 #: functions/spasalon-info/sections/free_pro.php:60
 msgid ""
-"SpaSalon supports the default WordPress Contact Form and Contact Form 7. Add "
-"the forms by using the predefined Contact Page Template"
+"SpaSalon supports WordPress Contact Form 7 plugin. Add the forms by using "
+"the predefined Contact Page Template"
 msgstr ""
 
 #: functions/spasalon-info/sections/free_pro.php:64
@@ -543,7 +540,7 @@ msgstr ""
 #: functions/spasalon-info/sections/free_pro.php:75
 msgid ""
 "Display your shop and/or business location on your website. SpaSalon "
-"supports all GoogleMaps plugins that generate shortcodes."
+"supports all Google Maps plugins that generate shortcodes."
 msgstr ""
 
 #: functions/spasalon-info/sections/free_pro.php:80
@@ -605,10 +602,8 @@ msgstr ""
 
 #: functions/spasalon-info/sections/free_pro.php:136
 msgid ""
-"Slider [Unlimited Slides], Service [Unlimited Services], Products [Unlimited "
-"Products], Testimonial[Unlimited Testimonial], Latest News, Team[Unlimited "
-"Team], Gallery, Client[Unlimited Client], Callout, Additional Section and 4-"
-"column footer widget area"
+"Unlimited Slides, Services, Products, Testimonials, Teams, Clients, Latest "
+"News, Gallery, Callout, Additional Section and 4-column footer widget area"
 msgstr ""
 
 #: functions/spasalon-info/sections/free_pro.php:137
@@ -672,10 +667,6 @@ msgstr ""
 msgid "Go to the Customizer"
 msgstr ""
 
-#: functions/spasalon-info/sections/getting-started.php:38
-msgid "SpaSalon Blue child theme"
-msgstr ""
-
 #: functions/spasalon-info/sections/getting-started.php:48
 msgid "Useful Links"
 msgstr ""
@@ -734,8 +725,8 @@ msgstr ""
 #: functions/spasalon-info/sections/upgrade.php:43
 msgid ""
 "SpaSalon PRO features 2 types of sliders, and each can be shown using a "
-"different homepage templates. Add any number of slides with titles, "
-"subtitles and a custom \"read more\" button."
+"different homepage template. Add any number of slides with titles, subtitles "
+"and a custom \"read more\" button."
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:51
@@ -758,7 +749,7 @@ msgstr ""
 msgid ""
 "Showcase any number of product. SpaSalon provides you an option to create a "
 "product by using a product page template. If you have a number of products "
-"to show, than using this template is the answer. Display products on your "
+"to show, then using this template is the answer. Display products on your "
 "homepage with carousel effects, and create products' categories, which will "
 "display all products of a category in a single place. In fact, we have coded "
 "SpaSalon so that you can create any number of different sets of products."
@@ -800,7 +791,7 @@ msgstr ""
 #: functions/spasalon-info/sections/upgrade.php:98
 msgid ""
 "We provide good knowledge base articles to help you create an effective "
-"wesbite. You can see these articles on our"
+"website. You can see these articles on our"
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:99
@@ -825,8 +816,8 @@ msgid ""
 "\"https://wordpress.org/plugins/jetpack/\" target=\"_blank\">Jetpack plugin,"
 "</a> Using Jetpack, you can create four types of gallery styles, like Tiled "
 "Mosaic, Square Tiles, Circles and Tiled Columns. See the gallery looks on "
-"the SpaSalon demo.<a href=\"http://webriti.com/demo/wp/spasalon/gallery/\" "
-"target=\"_blank\"> Click Here</a></p>"
+"the<a href=\"http://webriti.com/demo/wp/spasalon/gallery/\" target=\"_blank"
+"\"> SpaSalon demo</a>.</p>"
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:127
@@ -835,8 +826,8 @@ msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:128
 msgid ""
-"Theme supports popular plugins WPML and Polylang. With these plugins you can "
-"translate your website in multiple languages."
+"The theme supports popular plugins WPML and Polylang. With these plugins you "
+"can translate your website in multiple languages."
 msgstr ""
 
 #: functions/spasalon-info/welcome-screen.php:61
@@ -847,7 +838,7 @@ msgstr ""
 #: functions/spasalon-info/welcome-screen.php:63
 #, php-format
 msgid ""
-"Welcome! Thank you for choosing Spasalon WordPress theme. To take full "
+"Welcome! Thank you for choosing SpaSalon WordPress theme. To take full "
 "advantage of the features this theme has to offer visit our %swelcome page%s."
 msgstr ""
 
@@ -876,7 +867,7 @@ msgid "WBR : Latest Posts"
 msgstr ""
 
 #: functions/widget/post-widget.php:14
-msgid "Latest post widget"
+msgid "Latest posts widget"
 msgstr ""
 
 #: functions/widget/post-widget.php:65
@@ -966,6 +957,14 @@ msgstr ""
 
 #. Theme URI of the plugin/theme
 msgid "https://webriti.com/spasalon-lite-description/"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "webriti"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.webriti.com"
 msgstr ""
 
 #. Author of the plugin/theme

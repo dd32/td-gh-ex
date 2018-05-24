@@ -124,6 +124,14 @@ Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank y
 
 
 ============================Change Log================================
+@Version 1.9.4
+1. Update Strings.
+@Version 1.9.3
+1. Update Strings.
+@Version 1.9.2
+1. Update Strings.
+@Version 1.9.1
+1. Update Strings.
 @Version 1.9
 1. Added home page section banner section, service section, Product section through webriti companion plugin.
 @Version 1.8.4

@@ -40,7 +40,7 @@
 	<div class="col-md-6">
 	<div class="spasalon-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Front page slider', 'spasalon' ); ?></strong></p>
-		<p><?php esc_html_e( 'SpaSalon PRO features 2 types of sliders, and each can be shown using a different homepage templates. Add any number of slides with titles, subtitles and a custom "read more" button.', 'spasalon' ); ?></p>
+		<p><?php esc_html_e( 'SpaSalon PRO features 2 types of sliders, and each can be shown using a different homepage template. Add any number of slides with titles, subtitles and a custom "read more" button.', 'spasalon' ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -59,7 +59,7 @@
 	<div class="col-md-6">
 	<div class="spasalon-tab-pane-half">
 		<p><strong><?php esc_html_e('Product features', 'spasalon' ); ?></strong></p>
-		<p><?php esc_html_e( "Showcase any number of product. SpaSalon provides you an option to create a product by using a product page template. If you have a number of products to show, than using this template is the answer. Display products on your homepage with carousel effects, and create products' categories, which will display all products of a category in a single place. In fact, we have coded SpaSalon so that you can create any number of different sets of products.", 'spasalon' ); ?></p>
+		<p><?php esc_html_e( "Showcase any number of product. SpaSalon provides you an option to create a product by using a product page template. If you have a number of products to show, then using this template is the answer. Display products on your homepage with carousel effects, and create products' categories, which will display all products of a category in a single place. In fact, we have coded SpaSalon so that you can create any number of different sets of products.", 'spasalon' ); ?></p>
 		<hr>
 	</div>
 	</div>
@@ -95,7 +95,7 @@
 	<div class="col-md-6">
 	<div class="spasalon-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Well Documented', 'spasalon' ); ?></strong></p>
-		<p><?php esc_html_e( 'We provide good knowledge base articles to help you create an effective wesbite. You can see these articles on our', 'spasalon' ); ?>
+		<p><?php esc_html_e( 'We provide good knowledge base articles to help you create an effective website. You can see these articles on our', 'spasalon' ); ?>
 		<a href="<?php echo esc_url('http://webriti.com/help/themes/spasalon/spasalon-wordpress-theme/');?>" target="_blank"><?php _e('Help Section','spasalon'); ?></a></a></p>
 		<hr>
 	</div>
@@ -114,7 +114,7 @@
 
 	<div class="col-md-6">
 	<div class="spasalon-tab-pane-half">
-		<?php echo sprintf(__('<p><strong> Jetpack gallery support</strong></p><p>The native WordPress image gallery displays a grid of image thumbnails. If you want to show an overlay effects on the gallery images you need to install the <a href="https://wordpress.org/plugins/jetpack/" target="_blank">Jetpack plugin,</a> Using Jetpack, you can create four types of gallery styles, like Tiled Mosaic, Square Tiles, Circles and Tiled Columns. See the gallery looks on the SpaSalon demo.<a href="http://webriti.com/demo/wp/spasalon/gallery/" target="_blank"> Click Here</a></p>','spasalon')); ?>
+		<?php echo sprintf(__('<p><strong> Jetpack gallery support</strong></p><p>The native WordPress image gallery displays a grid of image thumbnails. If you want to show an overlay effects on the gallery images you need to install the <a href="https://wordpress.org/plugins/jetpack/" target="_blank">Jetpack plugin,</a> Using Jetpack, you can create four types of gallery styles, like Tiled Mosaic, Square Tiles, Circles and Tiled Columns. See the gallery looks on the<a href="http://webriti.com/demo/wp/spasalon/gallery/" target="_blank"> SpaSalon demo</a>.</p>','spasalon')); ?>
 		<hr>
 	</div>
 	</div>
@@ -125,7 +125,7 @@
 	<div class="col-md-6">
 	<div class="spasalon-tab-pane-half">
 		<p><strong><?php esc_html_e('Translation Ready', 'spasalon' ); ?></strong></p>
-		<p><?php esc_html_e( 'Theme supports popular plugins WPML and Polylang. With these plugins you can translate your website in multiple languages.','spasalon' ); ?></p>
+		<p><?php esc_html_e( 'The theme supports popular plugins WPML and Polylang. With these plugins you can translate your website in multiple languages.','spasalon' ); ?></p>
 		<hr>
 	</div>
 	</div>
