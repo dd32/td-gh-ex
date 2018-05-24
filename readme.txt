@@ -118,6 +118,10 @@ The rest of the content...
 == Changelog ==
 
 
+Version 1.13 (2018-05-24)
+-------------------------
+- Fixed styling of cookie checkbox in comments
+
 Version 1.12 (2017-12-03)
 -------------------------
 - Updated author description on single to work with new wrapping paragraph

@@ -2,7 +2,7 @@
 
 	Theme Name: Garfunkel
     Text Domain: garfunkel
-	Version: 1.12
+	Version: 1.13
 	Description: Garfunkel is a stylish and responsive Pinterest-style theme with Masonry layout. It features responsive and retina-ready design, support for six post formats (including a gallery slideshow), six custom widgets, two page templates, Jetpack Infinite Scroll support, editor styling and translation-ready code. Demo: http://www.andersnoren.se/themes/garfunkel/
 	Tags: blog, three-columns, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, grid-layout, portfolio
 	Author: Anders Norén
@@ -2121,6 +2121,12 @@ p.comment-form-author { margin-right: 5%; }
 	font-weight: 500;
 	margin-bottom: 6px;
 	color: #666;
+}
+
+.comment-form input[type="checkbox"] + label {
+	display: inline;
+	font-weight: 400;
+	margin: 0 0 0 5px;
 }
 
 .comment-form .required { 
