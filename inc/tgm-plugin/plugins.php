@@ -58,7 +58,12 @@ function nnfy_register_required_plugins() {
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	$plugins = array(
-
+		// One Click Demo Import
+		array(
+			'name'      => esc_html__('One Click Demo Import', '99fy'), 
+			'slug'      => 'one-click-demo-import', 
+			'required'  => false,
+		),
 		array(
 			'name'      => esc_html__('King Composer', '99fy'), 
 			'slug'      => 'kingcomposer', 

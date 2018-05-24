@@ -3,7 +3,7 @@
 Contributors: devitemsllc
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.0-trunk
-Version: 1.0.7
+Version: 1.0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, right-sidebar, footer-widgets, blog, custom-menu, sticky-post, editor-style, threaded-comments, custom-colors, featured-images, full-width-template, theme-options, woocommerce
@@ -94,6 +94,10 @@ Image used in Theme Screenshot:
 License: Creative Commons Zero (CC0) license
 
 == Changelog ==
+= 1.0.8 =
+* Released: June 6, 2018
+* Fix one click demo import
+
 = 1.0.7 =
 * Released: June 5, 2018
 * Fix some issue
