@@ -75,6 +75,9 @@ Source: http://flexslider.woothemes.com
 
 == Changelog ==
 
+Version 1.21 (2018-05-24)
+-------------------------
+- Fixed output of cookie checkbox in comments
 
 Version 1.20 (2017-12-03)
 -------------------------

@@ -3,7 +3,7 @@
 	Theme Name: Hoffman
     Text Domain: hoffman
 	Theme URI: http://www.andersnoren.se/teman/hoffman-wordpress-theme/
-	Version: 1.20
+	Version: 1.21
 	Description: Hoffman is a beautifully minimal, responsive and retina-ready theme for bloggers. It features a social icon menu, Jetpack support for infinite scroll, five custom widgets, two page templates, editor styling, translation-ready code, custom accent color support, custom background support, support for the gallery post format and much more. Included translations: Swedish/svenska. Demo: http://www.andersnoren.se/themes/hoffman/
 	Tags: blog, one-column, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -1877,12 +1877,17 @@ div.comment {
 	border-radius: 3px;
 }
 
+.comment-form p.comment-notes {
+	display: none;
+}
+
 .comment-form-comment + .comment-form-author,
 .comment-form-comment + .comment-form-author + .comment-form-email {
     margin-top: 25px;
 }
 
 .comment-form p + p { margin-top: 25px; }
+.comment-form p.comment-notes + p { margin-top: 0; }
 
 .comment-form input[type="text"],
 .comment-form input[type="email"],
@@ -1907,6 +1912,14 @@ div.comment {
 	font-weight: 700;
 	color: #666;
 	margin-bottom: 10px;
+}
+
+.comment-form input[type="checkbox"] + label {
+	display: inline;
+	font-weight: 400;
+	letter-spacing: 0;
+	margin: 0 0 0 5px;
+	text-transform: none;
 }
 
 .comment-form .required { 
