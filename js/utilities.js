@@ -39,7 +39,7 @@ jQuery( document ).ready(function() {
 
 	jQuery(function(){
 		jQuery('#camera_wrap').camera({
-			height: '650px',
+			height: '500px',
 			loader: 'bar',
 			pagination: true,
 			thumbnails: false,

@@ -147,8 +147,8 @@ function fgymm_widgets_init() {
 							'description'	 =>  __( 'The Homepage Column #1 widget area', 'fgymm' ),
 							'before_widget'  =>  '',
 							'after_widget'	 =>  '',
-							'before_title'	 =>  '<h2 class="sidebar-title">',
-							'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
+							'before_title'	 =>  '<h2 class="home-col-title">',
+							'after_title'	 =>  '</h2><div class="home-col-after-title"></div>',
 						) );
 						
 	register_sidebar( array (
@@ -157,8 +157,8 @@ function fgymm_widgets_init() {
 							'description'	 =>  __( 'The Homepage Column #2 widget area', 'fgymm' ),
 							'before_widget'  =>  '',
 							'after_widget'	 =>  '',
-							'before_title'	 =>  '<h2 class="sidebar-title">',
-							'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
+							'before_title'	 =>  '<h2 class="home-col-title">',
+							'after_title'	 =>  '</h2><div class="home-col-after-title"></div>',
 						) );
 
 	register_sidebar( array (
@@ -167,8 +167,8 @@ function fgymm_widgets_init() {
 							'description'	 =>  __( 'The Homepage Column #3 widget area', 'fgymm' ),
 							'before_widget'  =>  '',
 							'after_widget'	 =>  '',
-							'before_title'	 =>  '<h2 class="sidebar-title">',
-							'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
+							'before_title'	 =>  '<h2 class="home-col-title">',
+							'after_title'	 =>  '</h2><div class="home-col-after-title"></div>',
 						) );
 
 

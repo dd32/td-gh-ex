@@ -5,7 +5,7 @@ Theme URI: https://tishonator.com/product/fgymm
 Author: tishonator
 Author URI: https://tishonator.com
 Text Domain: fgymm
-Version: 1.6.5
+Version: 1.6.6
 Tags: blog, entertainment, news, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -143,22 +143,26 @@ ul {
 #header-main-fixed {
 	min-height:40px;
 	clear:both;
-	background-color:#555555;
+	background-color:#ffffff;
 	margin:0;
 	position:fixed;
 	width:100%;
 	z-index:5000;
-    box-shadow: 0 5px 10px -2px #777;
-	color:#CCCCCC;
+    box-shadow:0 1px 1px -1px #777;
+	color:#555555;
 }
 
 #header-main-fixed a h1,
 #header-main-fixed a {
-	color:#CCCCCC;
+	color:#555555;
 }
 
 #header-main-fixed a:hover {
-	color:#FFFFFF;
+	color:#AAAAAA;
+}
+
+#site-identity strong {
+	font-weight:normal;
 }
 
 #header-spacer {
@@ -304,8 +308,8 @@ dt.gallery-icon:before {
 	float:right;
 }
 
-#navmain a, .cart-contents-icon, .search-form-icon {
-	color:#FFFFFF;
+#navmain a {
+	color:#111111;
 }
 
 #navmain a:hover {
@@ -1392,6 +1396,32 @@ img.wp-post-image {
 	padding:0;
 }
 
+.home-title,
+.home-col-title {
+	padding:0 5px 1px 1px;
+	font-weight:normal;
+	font-size:14px;
+	letter-spacing:1px;
+	float:left;
+	clear:both;
+	border-bottom:4px solid #81b441;
+	margin-bottom:-2px;
+}
+
+.home-col-title .advanced-text-icon {
+    font-size:inherit !important;
+    text-shadow:none !important;
+}
+
+.home-after-title,
+.home-col-after-title {
+	clear:both;
+	height:1px;
+	background:#cccccc;
+	margin-bottom:5px;
+	width:100%;
+}
+
 .sidebar-title {
 	padding:0 5px 1px 1px;
 	margin-bottom:-2px;
@@ -1691,7 +1721,7 @@ img.wp-post-image {
 		position:absolute;
 		z-index:5000;
 		display:none;
-		background-color:#555555;
+		background-color:#FAFAFA;
 	}
 
 	#navmain ul ul:not(.cart_list) {
@@ -1817,6 +1847,10 @@ img.wp-post-image {
 	.comment-form-url  {
 		width:150px;
 		float:left;
+	}
+
+	.comment-form-cookies-consent {
+		clear:both;
 	}
 
 	.form-submit {
@@ -1955,7 +1989,7 @@ img.wp-post-image {
 	}
 				
 	#navmain div > ul {
-		background-color:#555555;
+		background-color:#FAFAFA;
 		display:none;
 		list-style:none;
 		margin:0 0 0 2px;
