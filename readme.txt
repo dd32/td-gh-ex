@@ -45,6 +45,11 @@ Source: https://github.com/dachcom-digital/jquery-doubletaptogo
 
 == Changelog ==
 
+Version 1.24 (2018-05-24)
+-------------------------
+- Fixed output of cookie checkbox in comments
+- Added missing paranthesis in image.php
+
 Version 1.23 (2018-04-21)
 -------------------------
 - Fixed error in comments.php
