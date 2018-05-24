@@ -4,8 +4,8 @@ Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-h
 custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 theme-options, footer-widgets, full-width-template, editor-style
 Requires at least: 4.8.0
-Tested up to: 4.9.5
-Stable tag: 1.0.5
+Tested up to: 4.9.6
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,9 @@ Activiation and Use
 2. See Appearance -> Customize to change theme specific options
 
 == Changelog ==
+
+= 1.0.6 =
+* fix css issue with display of GDPR checkbox in the comment form
 
 = 1.0.5 =
 * add language folder and .pot language file
