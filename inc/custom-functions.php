@@ -220,19 +220,6 @@ function bakes_and_cakes_breadcrumbs_cb() {
 
 add_action( 'bakes_and_cakes_breadcrumbs', 'bakes_and_cakes_breadcrumbs_cb' );
 
-/**
- * Hook to move comment text field to the bottom in WP 4.4
- * 
- * @link http://www.wpbeginner.com/wp-tutorials/how-to-move-comment-text-field-to-bottom-in-wordpress-4-4/  
- */
-function bakes_and_cakes_move_comment_field_to_bottom( $fields ) {
-    $comment_field = $fields['comment'];
-    unset( $fields['comment'] );
-    $fields['comment'] = $comment_field;
-    return $fields;
-}
-add_filter( 'comment_form_fields', 'bakes_and_cakes_move_comment_field_to_bottom' );
-
 if( ! function_exists( 'bakes_and_cakes_slider_cb' )):
 /**
  * Callback for Home Page Slider 
@@ -431,6 +418,13 @@ function bakes_and_cakes_footer_info(){
             <?php echo esc_html__( 'Bakes and Cakes by Rara Theme.', 'bakes-and-cakes' ); ?>
         </a>
         <?php printf(esc_html__('Powered by %s', 'bakes-and-cakes'), '<a href="' . esc_url(__('https://wordpress.org/', 'bakes-and-cakes')) . '">WordPress.</a>'); ?>
+
+        <?php 
+            if ( function_exists( 'the_privacy_policy_link' ) ) {
+                the_privacy_policy_link( '<span class="policy_link">', '</span>');
+            } 
+        ?>
+
     </div><!-- .site-info -->
 <?php
 }
@@ -497,3 +491,50 @@ add_action( 'wp_ajax_nopriv_bakes_and_cakes_team_ajax', 'bakes_and_cakes_home_te
 function is_rocdi_activated(){
     return class_exists( 'RDDI_init' ) ? true : false;
 }
+
+if( ! function_exists( 'bakes_and_cakes_change_comment_form_default_fields' ) ) :
+    /**
+     * Change Comment form default fields i.e. author, email & url.
+     * https://blog.josemcastaneda.com/2016/08/08/copy-paste-hurting-theme/
+     */
+    function bakes_and_cakes_change_comment_form_default_fields( $fields ){
+        
+        // get the current commenter if available
+        $commenter = wp_get_current_commenter();
+     
+        // core functionality
+        $req = get_option( 'require_name_email' );
+        $aria_req = ( $req ? " aria-required='true'" : '' );    
+     
+        // Change just the author field
+        $fields['author'] = '<p class="comment-form-author"><input id="author" name="author" type="text" placeholder="' . __( 'Name*', 'bakes-and-cakes' ) . '" value="' . esc_attr( $commenter['comment_author'] ) .
+            '" size="30"' . $aria_req . ' /></p>';
+        
+        $fields['email'] = '<p class="comment-form-email"><input id="email" name="email" type="text" placeholder="' . __( 'Email*', 'bakes-and-cakes' ) . '" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+            '" size="30"' . $aria_req . ' /></p>';
+        
+        $fields['url'] = '<p class="comment-form-url"><input id="url" name="url" type="text" placeholder="' . __( 'Website', 'bakes-and-cakes' ) . '" value="' . esc_attr( $commenter['comment_author_url'] ) .
+            '" size="30" /></p>'; 
+        
+        return $fields;
+        
+    }
+endif;
+add_filter( 'comment_form_default_fields', 'bakes_and_cakes_change_comment_form_default_fields' );
+
+
+if( ! function_exists( 'bakes_and_cakes_change_comment_form_defaults' ) ) :
+    /**
+     * Change Comment Form defaults
+     * https://blog.josemcastaneda.com/2016/08/08/copy-paste-hurting-theme/
+    */
+    function bakes_and_cakes_change_comment_form_defaults( $defaults ){
+        
+        $defaults['comment_field'] = '<p class="comment-form-comment"><textarea id="comment" name="comment" placeholder="' . __( 'Comment', 'bakes-and-cakes' ) . '" cols="45" rows="8" aria-required="true">' .
+            '</textarea></p>';
+        
+        return $defaults;
+        
+    }
+endif;
+add_filter( 'comment_form_defaults', 'bakes_and_cakes_change_comment_form_defaults' );

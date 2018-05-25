@@ -4,9 +4,9 @@ Author: Rara Theme (http://raratheme.com)
 Tags: blog, one-column, two-columns, right-sidebar, footer-widgets, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options, food-and-drink, e-commerce, custom-colors, custom-logo    
 
 
-Requires at least: 4.0
-Tested up to: 4.8.2
-Stable tag: 1.1.4
+Requires at least: 4.7 
+Tested up to: 4.9.6
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -226,6 +226,12 @@ Bakes and Cakes WordPress Theme is distributed under the terms of the GPLv2 or l
    GNU General Public License for more details.
 
 == Changelog ==
+    
+    1.1.5 
+    * Some css tweaks.
+    * Updated to WP 4.9.6 changes.
+    * Comment field set to default order.
+
     1.1.4 
     * Go to top design issue fixed.
     

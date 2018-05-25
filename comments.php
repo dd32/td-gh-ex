@@ -68,62 +68,9 @@ if ( post_password_required() ) {
 	<?php  endif; ?>
 
 	<div class="comment-form">
-    <div class="comments-area form">
-    <?php 
-    
-    //https://codex.wordpress.org/Function_Reference/comment_form
-    $commenter = wp_get_current_commenter();
-    $req = get_option( 'require_name_email' );
-    $aria_req = ( $req ? " aria-required='true'" : '' );
-    
-    $fields =  array(
-        'author' =>
-            '<p class="comment-form-author"><input id="author" name="author" type="text" placeholder="' . __( 'Name*', 'bakes-and-cakes' ) . '" value="' . esc_attr( $commenter['comment_author'] ) .
-            '" size="30"' . $aria_req . ' /></p>',
-        'email' =>
-            '<p class="comment-form-email"><input id="email" name="email" type="text" placeholder="' . __( 'Email*', 'bakes-and-cakes' ) . '" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-            '" size="30"' . $aria_req . ' /></p>',
-        'url' =>
-            '<p class="comment-form-url"><input id="url" name="url" type="text" placeholder="' . __( 'Website', 'bakes-and-cakes' ) . '" value="' . esc_attr( $commenter['comment_author_url'] ) .
-            '" size="30" /></p>',
-    );
-        
-    $comment_arg = array(
-        'id_form'           => 'commentform',
-        'id_submit'         => 'submit',
-        'class_submit'      => 'submit',
-        'name_submit'       => 'submit',
-        'title_reply'       => __( 'Leave a Reply', 'bakes-and-cakes' ),
-        'title_reply_to'    => __( 'Leave a Reply to %s', 'bakes-and-cakes' ),
-        'cancel_reply_link' => __( 'Cancel Reply', 'bakes-and-cakes' ),
-        'label_submit'      => __( 'Post Comment', 'bakes-and-cakes' ),
-        'format'            => 'xhtml',
-
-        'comment_field' =>  '<p class="comment-form-comment"><textarea id="comment" name="comment" placeholder="' . __( 'Comment', 'bakes-and-cakes' ) . '" cols="45" rows="8" aria-required="true">' .
-            '</textarea></p>',
-
-        'must_log_in' => '<p class="must-log-in">' .
-        sprintf(
-        __( 'You must be <a href="%s">logged in</a> to post a comment.', 'bakes-and-cakes' ),
-        wp_login_url( apply_filters( 'the_permalink', get_permalink() ) )
-        ) . '</p>',
-
-        'logged_in_as' => '<p class="logged-in-as">' .
-        sprintf(
-        __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'bakes-and-cakes' ),
-        admin_url( 'profile.php' ),
-        $user_identity,
-        wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
-        ) . '</p>',            
-        
-        'comment_notes_before' => __( '<p class="comment-notes"><span>Your email address will not be published. Required fields are marked *</span></p>', 'bakes-and-cakes' ),
-        'comment_notes_after' => '',
-
-        'fields' => apply_filters( 'comment_form_default_fields', $fields ),
-    );
-    
-    comment_form( $comment_arg );?>
+        <div class="comments-area form">
+        <?php comment_form(); ?>
+        </div>
     </div>
-</div>
 
 </div><!-- #comments -->

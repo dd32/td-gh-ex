@@ -4,7 +4,7 @@ Theme URI: http://raratheme.com/wordpress-themes/bakes-and-cakes/
 Author: Rara Theme
 Author URI: http://raratheme.com/
 Description: Bakes and Cakes is a beautifully designed WordPress theme for Bakery website. The theme is SEO friendly with optimized codes, which make it easy for your site to rank on Google and other search engines. Bakes and Cakes comes with several features to make user-friendly, interactive and visually stunning website. It has various useful section such as testimonial section, Product section, about section, team section, banner, and Call to action section etc.  The theme is Woocommerce compatible. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Bakes and Cakes helps you to easily and intuitively create professional and appealing websites for your bakery, restaurant and cafe. Check the demo at https://raratheme.com/preview/bakes-and-cakes/ , video documentation at https://raratheme.com/documentation/bakes-cakes/ and get support at http://raratheme.com/support-ticket/
-Version: 1.1.4
+Version: 1.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bakes-and-cakes
@@ -2366,7 +2366,7 @@ object {
     border: 1px solid #dddcda;
     border-radius: 0;
     padding: 10px 20px;
-    width: 70%;
+    width: 100%;
 }
 
 .comment-form textarea{
@@ -2395,6 +2395,21 @@ object {
 .comment-form input[type="submit"]:hover{
 	background: #74b5b3;
 }
+
+.comments-area .comment-form .comment-form-cookies-consent{
+    margin-top : 0;
+}
+
+.comments-area .comment-form .comment-form-cookies-consent input[type="checkbox"]{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.comments-area .comment-form label[for="wp-comment-cookies-consent"]{
+   display: inline-block;
+   margin-left: 5px;
+}
+
 
 .full-width .content-area,
 .error .content-area,
