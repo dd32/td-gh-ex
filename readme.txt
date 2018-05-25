@@ -3,9 +3,9 @@
 Author: Rara Theme (http://raratheme.com)
 Tags: one-column, two-columns, right-sidebar, custom-logo, footer-widgets, full-width-template, custom-menu, custom-background, featured-images, sticky-post, threaded-comments, translation-ready, theme-options, blog, portfolio
 
-Requires at least: 4.6
-Tested up to: 4.7.2
-Stable tag: 1.0.5
+Requires at least: 4.7
+Tested up to: 4.9.6
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -193,8 +193,15 @@ App Landing Page WordPress Theme is distributed under the terms of the GPLv2 or 
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
 
-   == Change Log ==
-
+== Change Log ==
+    1.0.6
+    * Privacy Policy link and WP Comment Cookies Consent features were added after 4.9.6 wp installation.
+    * Fixed headers already sent issue.
+    * Made theme RTL Compatible
+    * Fixed issue on counter section.
+    * Added front-page.php so that home page can be setup without choosing page template.
+    * Added Footer settings option on customizer.
+    
     1.0.5
     * Issue fixed mentioned in theme tracs.
     * Bug fixes.

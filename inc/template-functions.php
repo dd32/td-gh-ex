@@ -106,11 +106,12 @@ function app_landing_page_breadcrumbs_cb() {
   $showCurrent = get_theme_mod( 'app_landing_page_ed_current', '1' ); // 1 - show current post/page title in breadcrumbs, 0 - don't show
   $before = '<span class="current">'; // tag before the current crumb
   $after = '</span>'; // tag after the current crumb
+  $ed_breadcrumb = get_theme_mod( 'app_landing_page_ed_breadcrumb' );
  
   global $post;
   $homeLink = esc_url( home_url() );
   
-  if( ( get_theme_mod( 'app_landing_page_ed_breadcrumb' ) ) && !is_page_template( 'template-home.php' ) ){
+  if( $ed_breadcrumb ){
   
   if ( is_front_page()) {
  
@@ -261,10 +262,10 @@ if( ! function_exists( 'app_landing_page_content_start' ) ) :
  * @since 1.0.1
 */
 function app_landing_page_content_start(){ 
-    
-    if( !is_page_template( 'template-home.php' ) ) { 
+  $ed_section = app_landing_page_ed_section(); 
+  if( is_home() || ! $ed_section || ! ( is_front_page()  || is_page_template( 'template-home.php' ) ) ) { 
         
-	echo '<div id="content" class="site-content">';
+	   echo '<div id="content" class="site-content">';
         if( is_404() ) { 
             do_action( 'app_landing_page_header_main');
             echo '<div class="error-page">'; 
@@ -408,8 +409,8 @@ if( ! function_exists( 'app_landing_page_content_end' ) ) :
  * @since 1.0.1
 */
 function app_landing_page_content_end(){
-
-    if( !is_page_template( 'template-home.php' ) ) {
+  $ed_section = app_landing_page_ed_section();
+  if( is_home() || ! $ed_section || ! ( is_front_page()  || is_page_template( 'template-home.php' ) ) ) { 
         echo '</div>';
     if( is_404() ){ 
         echo '</div>'; 
@@ -458,12 +459,20 @@ if( ! function_exists( 'app_landing_page_footer_credit' ) ) :
  * Footer Credits 
  */
 function app_landing_page_footer_credit(){
-      
+
+    $copyright_text = get_theme_mod( 'app_landing_page_footer_copyright_text' );
     echo '<div class="site-info">&copy;&nbsp;';
-    echo esc_html( date_i18n( 'Y' ), 'app-landing-page' );
-    echo ' &nbsp;<a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>.&nbsp;';
-    printf( '%s', '<a href="'. esc_url( 'http://raratheme.com/wordpress-themes/app-landing-page/' ) .'" target="_blank">'. esc_html__( 'App Landing Page By Rara Theme. ', 'app-landing-page' ) .'</a>' );
-    printf( esc_html__( 'Powered by %s', 'app-landing-page' ), '<a href="'. esc_url( 'https://wordpress.org/', 'app-landing-page' ) .'" target="_blank">'. esc_html__( 'WordPress', 'app-landing-page' ) . '</a>' );
+    if( $copyright_text ){
+      echo wp_kses_post( $copyright_text );
+    }else{
+      echo date_i18n( esc_html__( 'Y', 'app-landing-page' ) );
+      echo ' &nbsp;<a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>.&nbsp;';
+    }
+    printf( ' %s', '<a href="'. esc_url( 'http://raratheme.com/wordpress-themes/app-landing-page/' ) .'" target="_blank">'. esc_html__( 'App Landing Page By Rara Theme', 'app-landing-page' ) .'</a>. ' );
+    printf( esc_html__( 'Powered by %s', 'app-landing-page' ), '<a href="'. esc_url( 'https://wordpress.org/', 'app-landing-page' ) .'" target="_blank">'. esc_html__( 'WordPress', 'app-landing-page' ) . '</a>. ' );
+    if ( function_exists( 'the_privacy_policy_link' ) ) {
+        the_privacy_policy_link();
+    }
     echo '</div>';
 }
 endif;

@@ -228,17 +228,41 @@ function app_landing_page_category_transient_flusher() {
 	delete_transient( 'app_landing_page_categories' );
 }
 
-/** 
- * Hook to move comment text field to the bottom in WP 4.4 
- *
- * @link http://www.wpbeginner.com/wp-tutorials/how-to-move-comment-text-field-to-bottom-in-wordpress-4-4/  
- */
-function app_landing_page_move_comment_field_to_bottom( $fields ) {
-    $comment_field = $fields['comment'];
-    unset( $fields['comment'] );
-    $fields['comment'] = $comment_field;
-    return $fields;
+if( ! function_exists( 'app_landing_page_change_comment_form_default_fields' ) ) :
+/**
+ * Change Comment form default fields i.e. author, email & url.
+*/
+function app_landing_page_change_comment_form_default_fields( $fields ){    
+    // get the current commenter if available
+    $commenter = wp_get_current_commenter();
+ 
+    // core functionality
+    $req = get_option( 'require_name_email' );
+    $aria_req = ( $req ? " aria-required='true'" : '' );    
+ 
+    // Change just the author field
+    $fields['author'] = '<p class="comment-form-author"><input id="author" name="author" placeholder="' . esc_attr__( 'Name*', 'app-landing-page' ) . '" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
+    
+    $fields['email'] = '<p class="comment-form-email"><input id="email" name="email" placeholder="' . esc_attr__( 'Email*', 'app-landing-page' ) . '" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
+    
+    $fields['url'] = '<p class="comment-form-url"><input id="url" name="url" placeholder="' . esc_attr__( 'Website', 'app-landing-page' ) . '" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>'; 
+    
+    return $fields;    
 }
+endif;
+add_filter( 'comment_form_default_fields', 'app_landing_page_change_comment_form_default_fields' );
+
+if( ! function_exists( 'app_landing_page_change_comment_form_defaults' ) ) :
+/**
+ * Change Comment Form defaults
+*/
+function app_landing_page_change_comment_form_defaults( $defaults ){    
+    $defaults['comment_field'] = '<p class="comment-form-comment"><textarea id="comment" name="comment" placeholder="' . esc_attr__( 'Comment*', 'app-landing-page' ) . '" cols="45" rows="8" aria-required="true"></textarea></p>';
+    $defaults['title_reply'] = esc_html__( 'Leave a Reply', 'app-landing-page' );
+    return $defaults;    
+}
+endif;
+add_filter( 'comment_form_defaults', 'app_landing_page_change_comment_form_defaults' );
 
 if ( ! function_exists( 'app_landing_page_excerpt_more' ) && ! is_admin() ) :
 /**

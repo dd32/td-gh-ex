@@ -38,12 +38,6 @@ add_action( 'save_post',     'app_landing_page_category_transient_flusher' );
 add_filter( 'body_class', 'app_landing_page_body_classes' );
 
 /**
- * Move comment field to the bottm
- * @see app_landing_page_move_comment_field_to_bottom
-*/
-add_filter( 'comment_form_fields', 'app_landing_page_move_comment_field_to_bottom' );
-
-/**
  * @see app_landing_page_excerpt_more
  * @see app_landing_page_excerpt_length
 */

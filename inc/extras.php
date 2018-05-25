@@ -272,3 +272,22 @@ if( ( $cur_month == 2 ) && ( ( ( $cur_year - 1 ) % 4 ) != 0  ) ){
     return true; 
 }else { return false; }
 }
+
+
+if( ! function_exists( 'app_landing_page_ed_section') ):
+    /**
+     * Check if home page section are enable or not.
+    */
+
+    function app_landing_page_ed_section(){
+        global $app_landing_page_sections;
+        $en_sec = false;
+        foreach( $app_landing_page_sections as $section ){ 
+            if( get_theme_mod( 'app_landing_page_ed_' . $section . '_section' ) == 1 ){
+                $en_sec = true;
+            }
+        }
+        return $en_sec;
+    }
+
+endif;

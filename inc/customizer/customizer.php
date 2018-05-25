@@ -11,9 +11,9 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 
-$app_landing_page_sections = array( 'banner' , 'featured', 'features', 'vedio', 'intro', 'service', 'stats', 'subscribe', 'social' );
+$app_landing_page_sections = array( 'banner' , 'featured', 'features', 'video', 'intro', 'service', 'stats', 'subscribe', 'social' );
 
-$app_landing_page_settings = array( 'default', 'home', 'breadcrumb' );
+$app_landing_page_settings = array( 'default', 'home', 'breadcrumb', 'footer' );
 
 /* Option list of all post */	
 $app_landing_page_options_posts = array();
@@ -71,13 +71,13 @@ function app_landing_page_customize_preview_js() {
 add_action( 'customize_preview_init', 'app_landing_page_customize_preview_js' );
 
 if(app_landing_page_newsletter_activated()){
-/** 
- * Registering and enqueuing scripts/stylesheets for Customizer controls.
- */ 
-function app_landing_page_customizer_js() {
-  wp_enqueue_script( 'app-landing-page-customizer-js', get_template_directory_uri() . '/inc/js/customizer.js', array("jquery"), '20160512', true  );
-}
+  /** 
+   * Registering and enqueuing scripts/stylesheets for Customizer controls.
+   */ 
+  function app_landing_page_customizer_js() {
+    wp_enqueue_script( 'app-landing-page-customizer-js', get_template_directory_uri() . '/inc/js/customizer.js', array("jquery"), '20160512', true  );
+  }
 
-add_action( 'customize_controls_enqueue_scripts', 'app_landing_page_customizer_js' );
+  add_action( 'customize_controls_enqueue_scripts', 'app_landing_page_customizer_js' );
 
 }
