@@ -312,19 +312,6 @@ function benevolent_social_links_cb(){
 }
 add_action( 'benevolent_social_links' , 'benevolent_social_links_cb' );
 
-/** 
- * Hook to move comment text field to the bottom in WP 4.4 
- *
- * @link http://www.wpbeginner.com/wp-tutorials/how-to-move-comment-text-field-to-bottom-in-wordpress-4-4/  
- */
-function benevolent_move_comment_field_to_bottom( $fields ) {
-    $comment_field = $fields['comment'];
-    unset( $fields['comment'] );
-    $fields['comment'] = $comment_field;
-    return $fields;
-}
-add_filter( 'comment_form_fields', 'benevolent_move_comment_field_to_bottom' );
-
 /**
  * Callback function for Comment List *
  * 
@@ -608,6 +595,9 @@ function benevolent_footer_credit(){
         $text .= ' <a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>';
       }
     $text .= '.</span>';
+    if ( function_exists( 'the_privacy_policy_link' ) ) {
+       $text .= get_the_privacy_policy_link();
+   }
     $text .= '<span class="by">';
     $text .= '<a href="' . esc_url( 'http://raratheme.com/wordpress-themes/benevolent/' ) .'" rel="author" target="_blank">' . esc_html__( 'Benevolent by Rara Theme', 'benevolent' ) . '</a>. ';
     $text .= sprintf( esc_html__( 'Powered by %s', 'benevolent' ), '<a href="'. esc_url( __( 'https://wordpress.org/', 'benevolent' ) ) .'" target="_blank">WordPress</a>.' );
@@ -736,3 +726,40 @@ function benevolent_escape_text_tags( $text ) {
     return (string) str_replace( array( "\r", "\n" ), '', strip_tags( $text ) );
 }
 endif;
+
+if( ! function_exists( 'benevolent_change_comment_form_default_fields' ) ) :
+/**
+ * Change Comment form default fields i.e. author, email & url.
+*/
+function benevolent_change_comment_form_default_fields( $fields ){    
+    // get the current commenter if available
+    $commenter = wp_get_current_commenter();
+ 
+    // core functionality
+    $req = get_option( 'require_name_email' );
+    $aria_req = ( $req ? " aria-required='true'" : '' );    
+ 
+    // Change just the author field
+    $fields['author'] = '<p class="comment-form-author"><input id="author" name="author" placeholder="' . esc_attr__( 'Name*', 'benevolent' ) . '" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
+    
+    $fields['email'] = '<p class="comment-form-email"><input id="email" name="email" placeholder="' . esc_attr__( 'Email*', 'benevolent' ) . '" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
+    
+    $fields['url'] = '<p class="comment-form-url"><input id="url" name="url" placeholder="' . esc_attr__( 'Website', 'benevolent' ) . '" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>'; 
+    
+    return $fields;    
+}
+endif;
+add_filter( 'comment_form_default_fields', 'benevolent_change_comment_form_default_fields' );
+
+if( ! function_exists( 'benevolent_change_comment_form_defaults' ) ) :
+/**
+ * Change Comment Form defaults
+*/
+function benevolent_change_comment_form_defaults( $fields ){ 
+    $comment_field = $fields['comment'];   
+    $fields['comment'] = '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="40" rows="8" required="required" placeholder="' . esc_attr__( 'Comment','benevolent' ) . '"></textarea></p>';;
+    
+    return $fields;    
+}
+endif;
+add_filter( 'comment_form_fields', 'benevolent_change_comment_form_defaults' );
