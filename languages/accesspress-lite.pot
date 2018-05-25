@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-07 10:44+0000\n"
+"POT-Creation-Date: 2018-05-25 06:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -100,25 +100,20 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: comments.php:28
+#. 1: title.
+#: comments.php:33
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#. 1: comment count number, 2: title.
+#: comments.php:39
 #, php-format
 msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
-
-#: comments.php:35 comments.php:52
-msgid "Comment navigation"
-msgstr ""
-
-#: comments.php:36 comments.php:53
-msgid "&larr; Older Comments"
-msgstr ""
-
-#: comments.php:37 comments.php:54
-msgid "Newer Comments &rarr;"
-msgstr ""
 
 #: comments.php:64
 msgid "Comments are closed."
@@ -211,7 +206,7 @@ msgid ""
 "it to create your next superb website in no time and all for FREE."
 msgstr ""
 
-#: index-one.php:82 index-one.php:368 inc/extras.php:648 inc/extras.php:656
+#: index-one.php:82 index-one.php:368 inc/extras.php:615 inc/extras.php:623
 msgid "Read More"
 msgstr ""
 
@@ -378,115 +373,115 @@ msgid ""
 "in Sidebar tab"
 msgstr ""
 
-#: inc/extras.php:76
+#: inc/extras.php:43
 msgid "Left Sidebar"
 msgstr ""
 
-#: inc/extras.php:78 inc/extras.php:98
+#: inc/extras.php:45 inc/extras.php:65
 msgid "Display items in the Left Sidebar of the inner pages"
 msgstr ""
 
-#: inc/extras.php:86
+#: inc/extras.php:53
 msgid "Right Sidebar"
 msgstr ""
 
-#: inc/extras.php:88
+#: inc/extras.php:55
 msgid "Display items in the Right Sidebar of the inner pages"
 msgstr ""
 
-#: inc/extras.php:96
+#: inc/extras.php:63
 msgid "Event Sidebar"
 msgstr ""
 
-#: inc/extras.php:106
+#: inc/extras.php:73
 msgid "Blog Right Sidebar"
 msgstr ""
 
-#: inc/extras.php:108
+#: inc/extras.php:75
 msgid ""
 "Display items for the blog category in the Right Sidebar of the inner pages"
 msgstr ""
 
-#: inc/extras.php:116
+#: inc/extras.php:83
 msgid "Footer Area One"
 msgstr ""
 
-#: inc/extras.php:118
+#: inc/extras.php:85
 msgid "Display items in First Footer Area"
 msgstr ""
 
-#: inc/extras.php:126
+#: inc/extras.php:93
 msgid "Footer Area Two"
 msgstr ""
 
-#: inc/extras.php:128
+#: inc/extras.php:95
 msgid "Display items in Second Footer Area"
 msgstr ""
 
-#: inc/extras.php:136
+#: inc/extras.php:103
 msgid "Footer Area Three"
 msgstr ""
 
-#: inc/extras.php:138
+#: inc/extras.php:105
 msgid "Display items in Third Footer Area"
 msgstr ""
 
-#: inc/extras.php:146
+#: inc/extras.php:113
 msgid "Footer Area Four"
 msgstr ""
 
-#: inc/extras.php:148
+#: inc/extras.php:115
 msgid "Display items in Fourth Footer Area"
 msgstr ""
 
-#: inc/extras.php:156
+#: inc/extras.php:123
 msgid "Left Block above footer"
 msgstr ""
 
-#: inc/extras.php:158
+#: inc/extras.php:125
 msgid "Display items in the left just above the footer"
 msgstr ""
 
-#: inc/extras.php:166
+#: inc/extras.php:133
 msgid "Middle Block above footer"
 msgstr ""
 
-#: inc/extras.php:168
+#: inc/extras.php:135
 msgid ""
 "Display items in the middle just above the footer and replaces defaul gallery"
 msgstr ""
 
-#: inc/extras.php:176
+#: inc/extras.php:143
 msgid "Right Block above footer"
 msgstr ""
 
-#: inc/extras.php:178
+#: inc/extras.php:145
 msgid ""
 "Display items in the Right just above the footer and replaces Testimonials"
 msgstr ""
 
-#: inc/extras.php:617
+#: inc/extras.php:584
 #, php-format
 msgid "Go to <a href=\"%s\">Theme Options Panel</a> to set up the website."
 msgstr ""
 
-#: inc/extras.php:644
+#: inc/extras.php:611
 msgid "Call us : 984187523XX"
 msgstr ""
 
-#: inc/extras.php:652
+#: inc/extras.php:619
 msgid "Feature Posts"
 msgstr ""
 
-#: inc/extras.php:708
+#: inc/extras.php:675
 msgid "View All"
 msgstr ""
 
-#: inc/extras.php:712
+#: inc/extras.php:679
 msgid "Check Our AccessPress Pro Theme - A premium version of AccessPres Lite"
 msgstr ""
 
-#: inc/extras.php:713
+#: inc/extras.php:680
 msgid "Check Now"
 msgstr ""
 
@@ -566,7 +561,7 @@ msgstr ""
 
 #: welcome/welcome.php:151
 #, php-format
-msgid "Welcome to %s - Version %s"
+msgid "Welcome to %1$s - Version %2$s"
 msgstr ""
 
 #: welcome/welcome.php:152
@@ -1342,7 +1337,7 @@ msgid "Build a feature rich website using inbuilt easy to use shortcodes."
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:173 welcome/sections/free_vs_pro.php:185
-msgid "0"
+msgid "Zero"
 msgstr ""
 
 #: welcome/sections/free_vs_pro.php:176

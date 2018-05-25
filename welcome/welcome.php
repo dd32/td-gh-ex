@@ -148,7 +148,7 @@
 				$section_inline_style = '';
 				?>
 				<div class="wrap about-wrap access-wrap">
-					<h1><?php printf( esc_html__( 'Welcome to %s - Version %s', 'accesspress-lite' ), $this->theme_name, $this->theme_version ); ?></h1>
+					<h1><?php printf( esc_html__( 'Welcome to %1$s - Version %2$s', 'accesspress-lite' ), $this->theme_name, $this->theme_version ); ?></h1>
 					<div class="about-text"><?php printf( esc_html__( 'The %s is a responsive multipurpose WordPress business theme with clean, highly professional design and lots of useful features like a premium theme - and strong theme options panel to manage theme all! It is probably the most feature-rich free theme with lots of useful options events layout, portfolio layout, testimonial layout, blog layout, gallery layout, featured posts on home page, quick contact, social media integration, full width slider, team member layout, sidebar layout, multiple home page layout, call to action and many other page layouts.', 'accesspress-lite' ), $this->theme_name ); ?></div>
 
 					<a target="_blank" href="http://www.accesspressthemes.com" class="accesspress-badge wp-badge"><span><?php echo esc_html('AccessPressThemes'); ?></span></a>

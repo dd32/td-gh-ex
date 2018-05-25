@@ -67,6 +67,10 @@ Images
 == Changelog ==
 Version 2.76
 * Pot file updated
+* Theme Sniffer error fixed
+
+Version 2.76
+* Pot file updated
 * Typo mistake fixed in theme option panel
 
 Version 2.75

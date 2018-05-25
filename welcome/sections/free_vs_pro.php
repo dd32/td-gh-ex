@@ -170,7 +170,7 @@
 			<p><?php esc_html_e('Build a feature rich website using inbuilt easy to use shortcodes.', 'accesspress-lite'); ?></p>
 		</td>
 		<td>
-			<span><?php esc_html_e('0', 'accesspress-lite') ?></span>
+			<span><?php esc_html_e('Zero', 'accesspress-lite') ?></span>
 		</td>
 		<td>
 			<span><?php esc_html_e('13', 'accesspress-lite') ?></span>
@@ -182,7 +182,7 @@
 			<p><?php esc_html_e('Build a feature rich website using inbuilt easy to use widgets.', 'accesspress-lite'); ?></p>
 		</td>
 		<td>
-			<span><?php esc_html_e('0', 'accesspress-lite') ?></span>
+			<span><?php esc_html_e('Zero', 'accesspress-lite') ?></span>
 		</td>
 		<td>
 			<span><?php esc_html_e('16', 'accesspress-lite') ?></span>
