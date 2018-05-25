@@ -2,16 +2,15 @@
 /**
  * Custom widgets.
  *
- * @package PT_Magazine
  */
-if ( !class_exists( 'balanced_blog_Popular_Posts' ) ) :
+if ( !class_exists( 'Balanced_Blog_Popular_Posts' ) ) :
 
 	/**
 	 * Popular posts widget class.
 	 *
 	 * @since 1.0.0
 	 */
-	class balanced_blog_Popular_Posts extends WP_Widget {
+	class Balanced_Blog_Popular_Posts extends WP_Widget {
 
 		function __construct() {
 			$opts = array(

@@ -1,11 +1,11 @@
 <?php
+
 /**
  * Custom widgets.
  *
  * @package balanced_blog
  */
-
-if ( ! function_exists( 'balanced_blog_load_widgets' ) ) :
+if ( !function_exists( 'balanced_blog_load_widgets' ) ) :
 
 	/**
 	 * Load widgets.
@@ -19,7 +19,6 @@ if ( ! function_exists( 'balanced_blog_load_widgets' ) ) :
 
 		// Popular Post.
 		register_widget( 'balanced_blog_Popular_Posts' );
-
 	}
 
 endif;

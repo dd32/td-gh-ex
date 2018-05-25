@@ -273,7 +273,7 @@ if ( !function_exists( 'balanced_blog_generate_construct_footer' ) ) :
 		<p class="footer-credits-text text-center">
 			<?php printf( __( 'Proudly powered by %s', 'balanced-blog' ), '<a href="' . esc_url( __( 'https://wordpress.org/', 'balanced-blog' ) ) . '">WordPress</a>' ); ?>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s', 'balanced-blog' ), '<a href="http://headthemes.com/">Balanced Blog</a>' ); ?>
+			<?php printf( esc_html__( 'Theme: %1$s', 'balanced-blog' ), '<a href="' . esc_url( 'http://headthemes.com/' ) . '">Balanced Blog</a>' ); ?>
 		</p> 
 		<?php
 	}
@@ -341,13 +341,13 @@ if ( ! function_exists( 'balanced_blog_thumb_img' ) ) :
 	function balanced_blog_thumb_img( $img = 'full', $col = '', $link = '' ) {
 
 		if ( has_post_thumbnail() && $link != '' ) { ?>
-			<div class="news-thumb <?php echo $col; ?>">
+			<div class="news-thumb <?php echo esc_attr( $col ); ?>">
 				<a href="<?php the_permalink(); ?>">
 					<img src="<?php the_post_thumbnail_url( $img ); ?>" alt="<?php the_title_attribute(); ?>" />
 				</a>
 			</div><!-- .news-thumb -->	
 		<?php } elseif ( has_post_thumbnail() ) { ?>
-			<div class="news-thumb <?php echo $col; ?>">
+			<div class="news-thumb <?php echo esc_attr( $col ); ?>">
 				<img src="<?php the_post_thumbnail_url( $img ); ?>" alt="<?php the_title_attribute(); ?>" />
 			</div><!-- .news-thumb -->
 		<?php

@@ -2,16 +2,15 @@
 /**
  * Custom widgets.
  *
- * @package PT_Magazine
  */
-if ( !class_exists( 'balanced_blog_Extended_Recent_Posts' ) ) :
+if ( !class_exists( 'Balanced_Blog_Extended_Recent_Posts' ) ) :
 
 	/**
 	 * Extended recent posts widget class.
 	 *
 	 * @since 1.0.0
 	 */
-	class balanced_blog_Extended_Recent_Posts extends WP_Widget {
+	class Balanced_Blog_Extended_Recent_Posts extends WP_Widget {
 
 		function __construct() {
 			$opts = array(
