@@ -853,6 +853,24 @@ if (!function_exists('atlast_customizer_settings')):
             'sanitize_callback' => 'sanitize_text_field',
         ));
 
+        $wp_customize->add_setting($prefix . '_blog_section_style', array(
+            'default' => 1,
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'atlast_business_sanitize_number_absint',
+        ));
+
+        $wp_customize->add_setting($prefix . '_blog_section_latest_posts_number', array(
+            'default' => 4,
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'atlast_business_sanitize_number_absint',
+        ));
+
+        $wp_customize->add_setting($prefix . '_blog_section_carousel_number_show', array(
+            'default' => 4,
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'atlast_business_sanitize_number_absint',
+        ));
+
         $wp_customize->add_control($prefix . '_enable_blog_section', array(
             'type' => 'checkbox',
             'priority' => 10,
@@ -875,6 +893,39 @@ if (!function_exists('atlast_customizer_settings')):
             'label' => esc_html__('Add a section subtitle', 'atlast-business'),
             'description' => esc_html__('A simple subtitle that shows under the title in that section.', 'atlast-business'),
         ));
+
+        $wp_customize->add_control($prefix . '_blog_section_latest_posts_number', array(
+            'type' => 'text',
+            'priority' => 13,
+            'section' => $prefix . '_home_blog_section',
+            'label' => esc_html__('How many posts to show?', 'atlast-business'),
+            'description' => esc_html__('Write a number of posts to show. This should be an integer.', 'atlast-business'),
+        ));
+        $wp_customize->add_control($prefix . '_blog_section_style', array(
+            'type' => 'select',
+            'priority' => 14,
+            'section' => $prefix . '_home_blog_section',
+            'label' => esc_html__('Select the style of the blog section.', 'atlast-business'),
+            'description' => esc_html__('There are more than one to choose from.', 'atlast-business'),
+            'choices' => array(
+                1 => esc_html__('Default', 'atlast-business'),
+                2 => esc_html__('Style 2 - Carousel Posts', 'atlast-business'),
+
+            )
+        ));
+        $wp_customize->add_control($prefix . '_blog_section_carousel_number_show', array(
+            'type' => 'select',
+            'priority' => 15,
+            'section' => $prefix . '_home_blog_section',
+            'label' => esc_html__('Carousel: How many posts to show?', 'atlast-business'),
+            'description' => esc_html__('This applies when you use the carousel style.', 'atlast-business'),
+            'choices' => array(
+                3 => esc_html__('3', 'atlast-business'),
+                4 => esc_html__('4', 'atlast-business'),
+                5 => esc_html__('5', 'atlast-business'),
+            )
+        ));
+
         /*============================================================*/
         /* GENERAL Settings
         /*=============================================================*/
@@ -1444,8 +1495,8 @@ if (!function_exists('atlast_customizer_settings')):
                 $wp_customize,
                 'changelog',
                 array(
-                    'title' => esc_html__('Whats New in 1.4.7', 'atlast-business'),
-                    'changelog_text' => esc_html__('Version 1.4.7 - Two new layouts in about section and services section!', 'atlast-business'),
+                    'title' => esc_html__('Whats New in 1.4.9', 'atlast-business'),
+                    'changelog_text' => esc_html__('Version 1.4.9 - Added Blog Carousel and New FontAwesome Fonts! We are getting for the major update 1.5.0 in the next days..', 'atlast-business'),
                     'priority' => 1,
                     'capability' => 'edit_theme_options',
                 )

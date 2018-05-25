@@ -153,10 +153,12 @@ get_header(); ?>
             <?php endif; ?>
             <!-- Testimonials section ends -->
             <!-- Blog section -->
-            <?php if (atlast_business_is_section_enabled('_enable_blog_section')): ?>
+            <?php if (atlast_business_is_section_enabled('_enable_blog_section')):
+                $blog_style = absint(get_theme_mod($prefix.'_blog_section_style',1));
+                ?>
                 <section class="home-blog pad-tb-80" id="home-blog-section">
                     <div class="container grid-xl">
-                        <div class="columns">
+                        <div class="<?php echo ($blog_style == 1 ? 'columns' : 'carousel-wrap'); ?> ">
                             <div class="column col-12 text-center mb-100">
                                 <?php if (atlast_business_get_citem('_blog_section_title', 'Latest from the blog') != false): ?>
                                     <h2 class="section-title">
@@ -169,7 +171,9 @@ get_header(); ?>
                                     </h3>
                                 <?php endif; ?>
                             </div>
-                            <?php get_template_part('template-parts/custom-pages/homepage/blog/blog-style-1'); ?>
+                            <?php
+
+                            get_template_part('template-parts/custom-pages/homepage/blog/blog-style-'.$blog_style); ?>
                         </div>
                     </div>
                 </section>

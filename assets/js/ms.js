@@ -52,6 +52,49 @@ jQuery(document).ready(function ($) {
         autoplaySpeed: 5500
     });
 
+    $('.blog-carousel-wrapper').slick({
+       arrows: true,
+       autoplay: true,
+       infinite: true,
+       autoplaySpeed: 4000,
+       slidesToShow: atlast_business_vars.carousel_slidesToShow,
+       slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    autoplay: true,
+                    infinite: true,
+                    autoplaySpeed: 3000,
+                }
+            },
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    arrows: false,
+                    autoplay: true,
+                    infinite: true,
+                    autoplaySpeed: 3000,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    infinite: true,
+                    autoplaySpeed: 3000,
+                    arrows: false
+                }
+            },
+        ]
+    });
+
     /*
     * Apply the faq accordion
     */

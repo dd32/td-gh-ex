@@ -1,5 +1,7 @@
 <?php
-$args = array('post_type' => 'post', 'posts_per_page' => 4, 'ignore_sticky_posts' => true);
+$prefix = atlast_business_get_prefix();
+$latest_post = absint(get_theme_mod($prefix . '_blog_section_latest_posts_number', 4));
+$args = array('post_type' => 'post', 'posts_per_page' => $latest_post, 'ignore_sticky_posts' => true);
 $blogQ = new WP_Query($args);
 if ($blogQ->have_posts()):
     while ($blogQ->have_posts()): $blogQ->the_post();

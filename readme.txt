@@ -2,7 +2,7 @@
 Contributors: ArchimidisM
 Requires at least: WordPress 4.5.1
 Tested up to: WordPress 4.9.6
-Version: 1.4.8
+Version: 1.4.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: theme-options,full-width-template,two-columns, custom-header, custom-background,custom-logo, custom-menu,flexible-header,translation-ready, featured-images
@@ -53,7 +53,7 @@ Spectre.css 0.5.0 by (c) 2014 Picturepan 2
 Licenses: - MIT License
 Source: https://picturepan2.github.io/spectre/
 
-Font Awesome 5.0.10 by @davegandy - @fontawesome
+Font Awesome 5.0.13 by @davegandy - @fontawesome
 Licenses - (Font: SIL OFL 1.1, CSS: MIT License)
 Source:  https://fontawesome.io
 
@@ -219,3 +219,7 @@ Removed unnecessary files
 - Changed the demo domain
 - Added new demo content
 - Fixed textdomain issue for better translation
+
+= Version 1.4.9 =
+- Updated the FontAwesome Library
+- Create Blog carousel as 2nd blog section style

@@ -7,7 +7,7 @@ function atlast_business_setup()
     load_theme_textdomain('atlast-business', get_template_directory() . '/languages');
     add_theme_support('title-tag');
     add_editor_style(get_template_directory_uri() . '/assets/css/main-styles.css');
-    add_post_type_support( 'page', 'excerpt' );
+    add_post_type_support('page', 'excerpt');
 
     add_theme_support('custom-header', array(
         'flex-width' => true,
@@ -104,13 +104,14 @@ endif;
 add_action('wp_enqueue_scripts', 'atlast_business_load_scripts');
 function atlast_business_load_scripts()
 {
-
+    $prefix = atlast_business_get_prefix();
     wp_register_style('spectre', get_template_directory_uri() . '/assets/css/spectre.min.css', '', '', 'all');
     wp_register_style('sidr', get_template_directory_uri() . '/assets/css/sidr/stylesheets/jquery.sidr.light.css', '', '', 'all');
     wp_register_style('slick', get_template_directory_uri() . '/assets/css/slick/slick-dist.css', '', '', 'all');
     wp_register_style('slick-theme', get_template_directory_uri() . '/assets/css/slick/slick-theme-dist.css', '', '', 'all');
 
     wp_register_style('atlast-business-fonts', get_template_directory_uri() . '/assets/css/fonts/font-styles-dist.css', '', '1.0.0', 'all');
+    wp_register_style('fontawesome', get_template_directory_uri() . '/assets/css/fonts/fontawesome-all.min.css', '', '1.0.0', 'all');
     wp_register_style('atlast-business-main-styles', get_template_directory_uri() . '/assets/css/main-styles.css', '', '', 'all');
     wp_register_style('atlast-style', get_stylesheet_uri(), '', 'all');
 
@@ -118,6 +119,7 @@ function atlast_business_load_scripts()
     wp_enqueue_style('sidr');
     wp_enqueue_style('slick');
     wp_enqueue_style('slick-theme');
+    wp_enqueue_style('fontawesome');
     wp_enqueue_style('atlast-business-fonts');
     wp_enqueue_style('atlast-business-main-styles');
     wp_enqueue_style('atlast-style');
@@ -126,6 +128,10 @@ function atlast_business_load_scripts()
     wp_enqueue_script('jquery');
     wp_enqueue_script('plugins', get_template_directory_uri() . '/assets/js/plugins.js', array('jquery'), '', true);
     wp_enqueue_script('atlast-business-mainjs', get_template_directory_uri() . '/assets/js/ms-dist.js', array('jquery'), '1.4.3', true);
+    wp_localize_script('atlast-business-mainjs', 'atlast_business_vars', array(
+        'carousel_slidesToShow' => absint(get_theme_mod($prefix.'_blog_section_carousel_number_show',4)),
+        'carousel_slidesToScroll' => absint(get_theme_mod($prefix.'_blog_section_carousel_number_scroll',1)),
+    ));
 
     if (get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -216,13 +222,13 @@ if (!function_exists('atlast_business_comment')):
                             </time>
 
                             <?php if ($comment->comment_approved == '0') : ?>
-                                <p class="comment-meta-item"><?php echo esc_html__('Your comment is awaiting moderation.','atlast-business');?></p>
+                                <p class="comment-meta-item"><?php echo esc_html__('Your comment is awaiting moderation.', 'atlast-business'); ?></p>
                             <?php endif; ?>
                         </div>
 
                         <figure class="column gravatar hide-sm comments-gravatar">
                             <?php echo get_avatar($comment, 65); ?>
-                        </figure> 
+                        </figure>
 
                     </div>
 
@@ -267,7 +273,7 @@ function atlast_business_register_required_plugins()
             'name' => 'One Click Demo Import',
             'slug' => 'one-click-demo-import',
             'required' => false,
-        ),array(
+        ), array(
             'name' => 'Atlast Business Styling Customizer',
             'slug' => 'atlast-business-styling-customizer/',
             'required' => false,
@@ -435,4 +441,5 @@ function atlast_business_after_demo_import()
     update_option('page_for_posts', $blog_page_id->ID);
 
 }
+
 add_action('pt-ocdi/after_import', 'atlast_business_after_demo_import');
