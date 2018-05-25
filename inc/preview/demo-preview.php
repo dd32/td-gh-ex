@@ -75,7 +75,7 @@ function bard_preview_right_sidebar() {
 }
 
 function bard_preview_alt_sidebar() {
-	the_widget('WP_Widget_Search', 'title=' . esc_html__('', 'bard'), 'before_title=<div class="widget-title"><h4>&after_title=</h4></div>&before_widget=<div class="bard-widget widget_search">&after_widget=</div>');
+	the_widget('WP_Widget_Search', 'title=' . esc_html__('Search', 'bard'), 'before_title=<div class="widget-title"><h4>&after_title=</h4></div>&before_widget=<div class="bard-widget widget_search">&after_widget=</div>');
 	the_widget('WP_Widget_Pages', 'title=' . esc_html__('Pages', 'bard'), 'before_title=<div class="widget-title"><h4>&after_title=</h4></div>&before_widget=<div class="bard-widget widget_pages">&after_widget=</div>');
 	the_widget('WP_Widget_Archives', 'title=' . esc_html__('Archives', 'bard'), 'before_title=<div class="widget-title"><h4>&after_title=</h4></div>&before_widget=<div class="bard-widget widget_archive">&after_widget=</div>');
 }
