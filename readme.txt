@@ -55,6 +55,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.9.6
+1. Fixed Upgrade css issue.
 @version 1.9.5
 1. Update customizer order.
 @version 1.9.4
