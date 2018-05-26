@@ -51,7 +51,7 @@ if(get_theme_mod('custom_logo')){
                                 	wp_nav_menu(array(
                                 		'theme_location' => 'primary',
                                 		'container'      => false,
-                                		'fallback_cb'    => 'nnfy_fallback'
+                                		// 'fallback_cb'    => 'nnfy_fallback'
                                 	));
                                 ?>
 							</nav>

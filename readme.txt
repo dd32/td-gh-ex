@@ -94,12 +94,16 @@ Image used in Theme Screenshot:
 License: Creative Commons Zero (CC0) license
 
 == Changelog ==
+= 1.0.9 =
+* Released: May 26, 2018
+* WooCommerce Compatibility Fix
+
 = 1.0.8 =
-* Released: June 6, 2018
+* Released: May 24, 2018
 * Fix one click demo import
 
 = 1.0.7 =
-* Released: June 5, 2018
+* Released: May 23, 2018
 * Fix some issue
 
 = 1.0.6 =
