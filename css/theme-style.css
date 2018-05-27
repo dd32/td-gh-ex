@@ -671,7 +671,7 @@ form#searchbox input {
 }
 .button-search::before {
   color: #000;
-  content: "";
+  content: "ï’¥";
   display: block;
   font-family: "Ionicons";
   font-size: 16px;
@@ -815,7 +815,8 @@ form#searchbox input {
   font-weight: 500;
   text-transform: uppercase;
 }
-.primary-nav-wrap .menu li ul.sub-menu {
+.primary-nav-wrap .menu li ul.sub-menu,
+.primary-nav-wrap .menu li ul.children {
   background-color: #fff;
   padding: 15px 0;
   position: absolute;
@@ -826,20 +827,27 @@ form#searchbox input {
   left: 0;
   display: none;
 }
-.header-area .menu li ul.sub-menu li {
+.primary-nav-wrap .menu li:hover ul.children{
+    display:block;
+}
+.header-area .menu li ul.sub-menu li,
+.header-area .menu li ul.children li {
     display: block;
     padding: 4px 0;
 }
-.header-area .menu li ul.sub-menu li:last-child {
+.header-area .menu li ul.sub-menu li:last-child,
+.header-area .menu li ul.children li:last-child {
     padding: 4px 0;
 }
-.header-area .menu li ul.sub-menu li a {
+.header-area .menu li ul.sub-menu li a,
+.header-area .menu li ul.children li a {
   display: block;
     color: #5b5b5b;
     text-transform: capitalize;
 }
 
-.header-area .menu li ul.sub-menu li a:hover {
+.header-area .menu li ul.sub-menu li a:hover,
+.header-area .menu li ul.children li a:hover {
     color: #96bf48;
 }
 .header-area .menu li:hover a {

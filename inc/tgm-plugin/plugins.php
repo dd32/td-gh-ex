@@ -98,7 +98,13 @@ function nnfy_register_required_plugins() {
 			'name'      => esc_html__('YITH WooCommerce Wishlist', '99fy'), 
 			'slug'      => 'yith-woocommerce-wishlist', 
 			'required'  => false,
-		)
+		),
+		// HashBar
+		array(
+			'name'      => esc_html__('HashBar','99fy'), 
+			'slug'      => 'hashbar-wp-notification-bar',
+			'required'  => false,
+		),
 
 	);
 
