@@ -2,7 +2,7 @@
 /**
  * Avantage Child functions and definitions
  */
-define( 'AVANTPORTFOLIO_THEME_VERSION' , '1.0.0' );
+define( 'AVANTPORTFOLIO_THEME_VERSION' , '1.0.1' );
 
 /**
  * Enqueue parent theme style
