@@ -1,4 +1,4 @@
-<div class="site-header container-fluid" style="background-image: url(<?php esc_url( header_image() ); ?>)">
+<div class="site-header container-fluid" style="background-image: url(<?php header_image(); ?>)">
 	<div class="custom-header container" >
 		<div class="site-heading text-center">
 			<div class="site-branding-logo">
@@ -16,7 +16,7 @@
 				if ( $description || is_customize_preview() ) :
 					?>
 					<p class="site-description">
-						<?php echo $description; ?>
+						<?php echo esc_html( $description ); ?>
 					</p>
 				<?php endif; ?>
 			</div><!-- .site-branding-text -->

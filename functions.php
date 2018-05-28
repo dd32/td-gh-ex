@@ -273,7 +273,7 @@ if ( !function_exists( 'balanced_blog_generate_construct_footer' ) ) :
 		<p class="footer-credits-text text-center">
 			<?php printf( __( 'Proudly powered by %s', 'balanced-blog' ), '<a href="' . esc_url( __( 'https://wordpress.org/', 'balanced-blog' ) ) . '">WordPress</a>' ); ?>
 			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s', 'balanced-blog' ), '<a href="' . esc_url( 'http://headthemes.com/' ) . '">Balanced Blog</a>' ); ?>
+			<?php printf( esc_html__( 'Theme: %1$s', 'balanced-blog' ), '<a href="' . esc_url( 'https://headthemes.com/' ) . '">Balanced Blog</a>' ); ?>
 		</p> 
 		<?php
 	}
