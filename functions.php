@@ -156,8 +156,9 @@ add_action('wp_enqueue_scripts', 'advance_blog_scripts');
  */
 function advance_blog_admin_scripts()
 {
-    wp_enqueue_script('upsell-js', get_template_directory_uri() . '/inc/customizer/upsell.js');
+    if (is_customize_preview()) {
     wp_enqueue_style('admin-style', get_template_directory_uri() . '/assets/css/admin-style.css');
+    }
 }
 
 add_action('admin_enqueue_scripts', 'advance_blog_admin_scripts');

@@ -33,8 +33,10 @@ add_action('add_meta_boxes', 'advance_blog_add_theme_meta_box');
 add_action( 'admin_enqueue_scripts', 'advance_blog_backend_scripts');
 if ( ! function_exists( 'advance_blog_backend_scripts' ) ){
     function advance_blog_backend_scripts( $hook ) {
-        wp_enqueue_style( 'wp-color-picker');
-        wp_enqueue_script( 'wp-color-picker');
+        if(('post.php' === $hook) ||('page.php' === $hook) || ('page-new.php' === $hook)||('post-new.php' === $hook)){
+            wp_enqueue_style( 'wp-color-picker');
+            wp_enqueue_script( 'wp-color-picker');
+        }
     }
 }
 

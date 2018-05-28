@@ -30,11 +30,3 @@ function advance_blog_wpcom_setup() {
 	add_theme_support( 'print-styles' );
 }
 add_action( 'after_setup_theme', 'advance_blog_wpcom_setup' );
-
-/*
- * WordPress.com-specific styles
- */
-function advance_blog_wpcom_styles() {
-	wp_enqueue_style( 'advance-blog-wpcom', get_template_directory_uri() . '/inc/style-wpcom.css', '20160411' );
-}
-add_action( 'wp_enqueue_scripts', 'advance_blog_wpcom_styles' );

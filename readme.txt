@@ -13,6 +13,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description Advance Blog is a modern, clean, responsive and retina-ready WordPress blog theme also suitable for magazines, newspapers, or review sites. The theme comes with several awesome features, including a featured posts slideshow, a magazine homepage template, and a two columned layout
 
 
+== License ==
+
+Advance Blog WordPress Theme, Copyright (C) 2018, Themematic
+Advance Blog is distributed under the terms of the GNU GPL
+
 == Installation ==
 
 1. In your admin panel, go to Appearance > Themes and click the Add New button.

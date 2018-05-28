@@ -24,7 +24,7 @@ global $advance_blog_post_counter;
     $text_color_single_post = get_post_meta($post->ID, 'advance_blog_text_color', true);
 
     ?>
-    <div class="style-archive style-bordered <?php echo $content_class; ?>">
+    <div class="style-archive style-bordered <?php echo esc_attr($content_class); ?>">
         <?php if ( '' != get_the_post_thumbnail() ) : ?>
             <div class="post-thumbnail" data-mh="equal-height">
                 <a href="<?php the_permalink(); ?>" class="background">
@@ -32,7 +32,7 @@ global $advance_blog_post_counter;
                 </a>
             </div>
         <?php endif; ?>
-        <div class="post-content" data-mh="equal-height" style="background-color: <?php echo $background_color_single_post; ?>; color: <?php  echo $text_color_single_post; ?>;">
+        <div class="post-content" data-mh="equal-height" style="background-color: <?php echo esc_attr($background_color_single_post); ?>; color: <?php  echo esc_attr($text_color_single_post); ?>;">
             <header class="entry-header">
                 <?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" >', '</a></h2>' );
 
