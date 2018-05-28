@@ -2,8 +2,8 @@
 Contributors: Webulous
 Tags: custom-menu, featured-images, fixed-layout, responsive-layout, right-sidebar, sticky-post, threaded-comments, translation-ready, two-columns, blog
 Requires at least: 4.2
-Tested up to: 4.9.5
-Stable tag: 1.0.1
+Tested up to: 4.9.6
+Stable tag: 1.0.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -46,13 +46,18 @@ Enable/Disable featured images visibility.
 
 == Changelog ==
 
+= 1.0.2 =
+ * Social Sharing Box option added in Single post.
+ * Added site Creation Ads in Theme Upgrade Page.
+
 = 1.0.1 =
 * Initial Release
 
 == Upgrade Notice ==
 
-=  1.0.1 =
-* Initial Release
+= 1.0.2 =
+ * Social Sharing Box option added in Single post.
+ * Added site Creation Ads in Theme Upgrade Page.
 
 Beautify WordPress Theme bundles the following third-party resources:
 == Resources ==
