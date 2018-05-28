@@ -20,6 +20,7 @@ Table of Content
  1.0 - Require Files
 ===========================================================================================================
 */
+require_once(get_template_directory() . '/framework/includes/functions-head.php');
 require_once(get_template_directory() . '/framework/includes/functions-header.php');
 require_once(get_template_directory() . '/framework/includes/functions-layouts.php');
 require_once(get_template_directory() . '/framework/includes/functions-templates.php');

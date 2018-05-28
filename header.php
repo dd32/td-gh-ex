@@ -16,9 +16,6 @@ of this theme. This also displays the navigation menu as well or any extra featu
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
     <head>
-        <meta charset="<?php bloginfo('charset'); ?>" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href="http://gmpg.org/xfn/11" rel="profile" />
         <?php wp_head(); ?>
     </head>
 <body <?php body_class(); ?>>

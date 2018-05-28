@@ -96,6 +96,14 @@ function silver_quantum_theme_setup() {
     =======================================================================================================
     */
     add_image_size('silver-quantum-banner-thumbnail', 1208, 300, true);
+
+    /*
+    =======================================================================================================
+    Enable and activate load_theme_textdomain('silver-quantum'); for Silver Quantum WordPress Theme. This 
+    feature will let the WordPress core translations to do its job to translate the theme.
+    =======================================================================================================
+    */
+    load_theme_textdomain('silver-quantum');
 }
 add_action('after_setup_theme', 'silver_quantum_theme_setup');
 
