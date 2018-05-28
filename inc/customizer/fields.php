@@ -5,6 +5,32 @@ Kirki::add_config( 'advance', array(
 	'option_type' => 'theme_mod',
 ) );
 
+//**** advance upsell pro */
+Kirki::add_field( 'advance', array(
+	'type'        => 'custom',
+	'settings'    => 'advance_view_link_pro',
+	'section'     => 'advance_upgradepro_options',
+	'default'     => '<a class="button-error  button-upsell" target="_blank" href="' . esc_url( 'https://www.imonthemes.com/advance-pro/' ) . '">'.esc_html__( 'Upgrade To Pro ($49)', 'advance' ).'</a>',
+	'priority'    => 10,
+) );
+
+
+Kirki::add_field( 'advance', array(
+	'type'        => 'custom',
+	'settings'    => 'advance_view_link2',
+	'section'     => 'advance_upgradepro_options',
+	'default'     => '<a class="button-blue  button-upsell" target="_blank" href="' . esc_url( 'https://wordpress.org/support/theme/advance' ) . '">'.esc_html__( 'Support', 'advance' ).'</a>',
+	'priority'    => 30,
+) );
+
+
+Kirki::add_field( 'advance', array(
+	'type'        => 'custom',
+	'settings'    => 'advance_view_link3',
+	'section'     => 'advance_upgradepro_options',
+	'default'     => '<a class="button-warning  button-upsell" target="_blank" href="' . esc_url( 'https://advance.imonthemes.com/docs/' ) . '">'.esc_html__( 'Read the documentation', 'advance' ).'</a>',
+	'priority'    => 50,
+) );
 
 /* adding layout_front_page_setting field */
 
@@ -80,11 +106,11 @@ Kirki::add_field( 'advance', array(
             'element'  => '.copytext',
             'function' => 'html',
             'property' => '',
-            
+
         ),
-    ), 
-	
-    
+    ),
+
+
 ) );
 
 
@@ -99,8 +125,8 @@ Kirki::add_field( 'advance', array(
     'priority'    => 10,
 ) );
 
-		
-		
+
+
 /*  title typography */
 
 Kirki::add_field( 'advance', array(
@@ -118,7 +144,7 @@ Kirki::add_field( 'advance', array(
 		'subsets'        => array( 'latin-ext' ),
 		'color'          => '#fff',
 		'text-transform' => 'none',
-		
+
 	),
 	'priority'    => 10,
 	'output'      => array(
@@ -144,7 +170,7 @@ Kirki::add_field( 'advance', array(
 		'subsets'        => array( 'latin-ext' ),
 		'color'          => '#fff',
 		'text-transform' => 'none',
-		
+
 	),
 	'priority'    => 10,
 	'output'      => array(
@@ -171,7 +197,7 @@ Kirki::add_field( 'advance', array(
 		'subsets'        => array( 'latin-ext' ),
 		'color'          => '#fff',
 		'text-transform' => 'uppercase ',
-		
+
 	),
 	'priority'    => 10,
 	'output'      => array(
@@ -182,7 +208,7 @@ Kirki::add_field( 'advance', array(
 ) );
 
 
-	
+
 
 
 /*color and reorder */
@@ -195,11 +221,11 @@ Kirki::add_field( 'advance', array(
     'section'     => 'advance_color_settings',
     'default'     => '#1cbac8',
     'priority'    => 10,
-	
+
 	'output' => array(
         array(
             'element'  => '.postitle_lay a,#footer .widgets .widgettitle, #midrow .widgets .widgettitle a,#sidebar .widgettitle, #sidebar .widgettitle a,#commentform a ,.feature-box i,#our-team-advance h1,.comments-title, .post_content a,.node h1 a,#navmenu ul li.current-menu-item > a,a',
-			
+
             'property' => 'color',
             'units'    => '',
         ),
@@ -213,7 +239,7 @@ Kirki::add_field( 'advance', array(
             'property' => 'border-color',
             'units'    => '',
         ),
-		
+
 		 array(
             'element'  => '.pagination .current,.overlay-search,.advance-search .search-form,.advance-search .search-form .search-submit',
             'property' => 'background',
@@ -232,11 +258,11 @@ Kirki::add_field( 'advance', array(
     'section'     => 'advance_color_settings',
     'default'     => '#ff6699',
     'priority'    => 10,
-	
+
 	'output' => array(
         array(
             'element'  => '#navmenu li a:hover,.post_info a:hover,.comment-author vcard:hover',
-			
+
             'property' => 'color',
             'units'    => '',
         ),
@@ -246,7 +272,7 @@ Kirki::add_field( 'advance', array(
             'property' => 'background-color',
             'units'    => '',
         ),
-		
+
 		  array(
             'element'  => '#slider .hero_btn:hover,#slider  .hero_btn_full:hover,.read_more:hover',
             'property' => 'border-color',
@@ -293,7 +319,7 @@ Kirki::add_field( 'advance', array(
     'default'     => '0',
     'priority'    => 1,
 ) );
- 
+
 Kirki::add_field('advance', array(
                 'type' => 'select',
                 'settings' => 'Staticimage_post',
@@ -305,10 +331,10 @@ Kirki::add_field('advance', array(
                 'priority' => 10,
                 'choices'     => Kirki_Helper::get_posts( array( 'posts_per_page' => -1, 'post_type' => 'post' ) ),
             ));
- 
 
-            
-           
+
+
+
 
 
 Kirki::add_field( 'advance', array(
@@ -324,11 +350,11 @@ Kirki::add_field( 'advance', array(
             'element'  => '#slider .hero_btn',
             'function' => 'html',
             'property' => '',
-            
+
         ),
-    ), 
-	
-    ));	
+    ),
+
+    ));
 
 Kirki::add_field( 'advance', array(
         'type'     => 'text',
@@ -343,10 +369,10 @@ Kirki::add_field( 'advance', array(
             'element'  => '#slider .hero_btn_full',
             'function' => 'html',
             'property' => '',
-            
+
         ),
-    ), 
-    ));	
+    ),
+    ));
 
 
 
@@ -357,7 +383,7 @@ Kirki::add_field( 'advance', array(
     'section'     => 'slider_setup',
     'default'     => '#ffffff',
     'priority'    => 1,
-	
+
 	'output' => array(
         array(
             'element'  => '#slider .masthead h1,.masthead .masthead-dsc p',
@@ -370,17 +396,17 @@ Kirki::add_field( 'advance', array(
             'element'  => '#slider .masthead h1,.masthead .masthead-dsc p',
             'function' => 'css',
             'property' => 'color',
-            
+
         ),
-    ), 
-		
+    ),
+
 ) );
 
 
 /* static slider settings */
 
-	
-	
+
+
 	Kirki::add_field( 'advance', array(
         'type'     => 'image',
         'settings'  => 'advance_staticslider_image',
@@ -388,8 +414,8 @@ Kirki::add_field( 'advance', array(
         'section'  => 'slider_setup',
 		'default'     => get_template_directory_uri() . '/images/slider.jpg',
         'priority' => 10,
-    ));	
-	
+    ));
+
 
 
 Kirki::add_field( 'advance', array(
@@ -412,11 +438,11 @@ Kirki::add_field( 'advance', array(
         ),
     ),
 	'transport' => 'auto',
-	
+
 ) );
 
 
-	
+
 Kirki::add_field( 'advance', array(
 	'type'        => 'slider',
 	'settings'    => 'slider_tagline_font_size',
@@ -437,33 +463,33 @@ Kirki::add_field( 'advance', array(
         ),
     ),
 	'transport' => 'auto',
-	
+
 ) );
-	
+
 Kirki::add_field( 'advance', array(
         'type'     => 'text',
         'settings'  => 'advance_staticslider_uri1',
         'label'    => esc_attr__( 'static slider link 1', 'advance' ),
         'section'  => 'slider_setup',
         'priority' => 10,
-		
+
     ));
-	
+
 Kirki::add_field( 'advance', array(
         'type'     => 'text',
         'settings'  => 'advance_staticslider_uri2',
         'label'    => esc_attr__( 'static slider link 2', 'advance' ),
         'section'  => 'slider_setup',
         'priority' => 10,
-		
+
     ));
 
 
-	
+
 
 
 /* social icon */
-	
+
 Kirki::add_field( 'advance', array(
     'type'        => 'toggle',
     'settings'    => 'advance_social1_checkbox',
@@ -492,13 +518,13 @@ Kirki::add_field( 'advance', array(
 ) );
 
 
-	
+
 Kirki::add_field( 'advance', array(
         'type'     => 'text',
         'settings'  => 'fbsoc_text_advance',
         'label'    => esc_attr__( 'Facebook', 'advance' ),
         'section'  => 'advance_social',
-        
+
         'priority' => 1,
     ));
 
@@ -509,7 +535,7 @@ Kirki::add_field( 'advance', array(
         'section'  => 'advance_social',
         'priority' => 2,
     ));
-	
+
 Kirki::add_field( 'advance', array(
         'type'     => 'text',
         'settings'  => 'gpsoc_text_advance',
@@ -517,7 +543,7 @@ Kirki::add_field( 'advance', array(
         'section'  => 'advance_social',
         'priority' => 3,
     ));
-	
+
 Kirki::add_field( 'advance', array(
         'type'     => 'text',
         'settings'  => 'pinsoc_text_advance',
@@ -525,7 +551,7 @@ Kirki::add_field( 'advance', array(
         'section'  => 'advance_social',
         'priority' => 4,
     ));
-	
+
 Kirki::add_field( 'advance', array(
         'type'     => 'text',
         'settings'  => 'ytbsoc_text_advance',
@@ -542,7 +568,7 @@ Kirki::add_field( 'advance', array(
         'section'  => 'advance_social',
         'priority' => 6,
     ));
-	
+
 Kirki::add_field( 'advance', array(
         'type'     => 'text',
         'settings'  => 'instagram_text_advance',
@@ -550,8 +576,8 @@ Kirki::add_field( 'advance', array(
         'section'  => 'advance_social',
         'priority' => 7,
     ));
-	
-	
+
+
 Kirki::add_field( 'advance', array(
         'type'     => 'text',
         'settings'  => 'flisoc_text_advance',
@@ -559,7 +585,7 @@ Kirki::add_field( 'advance', array(
         'section'  => 'advance_social',
         'priority' => 8,
     ));
-	
+
 Kirki::add_field( 'advance', array(
         'type'     => 'text',
         'settings'  => 'vimsoc_text_advance',
@@ -567,7 +593,7 @@ Kirki::add_field( 'advance', array(
         'section'  => '',
         'priority' => 9,
     ));
-	
+
 Kirki::add_field( 'advance', array(
         'type'     => 'text',
         'settings'  => 'rsssoc_text_advance',
@@ -577,7 +603,7 @@ Kirki::add_field( 'advance', array(
     ));
 
 
-		
+
 /* Typography settings */
 
 
