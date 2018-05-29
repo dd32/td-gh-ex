@@ -1,41 +1,41 @@
 <?php 
 
-function agensy_counter_page(){
-	$agensy_enable_counter_section = get_theme_mod('agensy_enable_counter_section','on');
-	if($agensy_enable_counter_section == 'on'){
+function agency_lite_counter_page(){
+	$agency_lite_enable_counter_section = get_theme_mod('agency_lite_enable_counter_section','on');
+	if($agency_lite_enable_counter_section == 'on'){
 		?>
-		<section class = "agensy-counter-wrap agensy-home-section" id = "agensy-scroll-counter">
-			<div class = "agensy-container">
+		<section class = "agency-lite-counter-wrap agency-lite-home-section" id = "agency-lite-scroll-counter">
+			<div class = "agency-lite-container">
 				<div class="counter-of-agency clearfix">
 				<?php 
-					$team_counters = array('one','two', 'three' );
-					foreach( $team_counters as $team_counter ){
-						$agensy_counter_value = get_theme_mod('agensy_team_'.$team_counter.'_counter_value');
-						if($agensy_counter_value){
+					$t_counters = array('one','two', 'three' );
+					foreach( $t_counters as $t_counter ){
+						$agency_lite_counter_value = get_theme_mod('agency_lite_'.$t_counter.'_counter_value');
+						if($agency_lite_counter_value){
 							?>
 							<div class="counter-inner-wrapper">
-								<div id = "agensy-scroll" class = "agensy-counter-scroll">
-									<div class = "agensy-counter-scroll-value" data-count="<?php echo absint($agensy_counter_value) ?>">0</div>
+								<div class = "agency-lite-counter-scroll">
+									<div class = "agency-lite-counter-scroll-value" data-count="<?php echo absint($agency_lite_counter_value) ?>">0</div>
 								</div>
 							 	<?php 	
-								$agensy_counter_pages = get_theme_mod('agensy_team_'.$team_counter.'_counter_pages');
-								if($agensy_counter_pages){
-									$agensy_counter_args = array(
+								$agency_lite_counter_pages = get_theme_mod('agency_lite_'.$t_counter.'_counter_pages');
+								if($agency_lite_counter_pages){
+									$agency_lite_counter_args = array(
 							            'post_type' => 'page',
 							            'post_status' => 'publish',
-							            'p' => $agensy_counter_pages
+							            'p' => $agency_lite_counter_pages
 							      		  );
-									$agensy_counter_query = new WP_Query($agensy_counter_args);
-									if($agensy_counter_query->have_posts()):
-										while($agensy_counter_query->have_posts()):
-											$agensy_counter_query->the_post();
+									$agency_lite_counter_query = new WP_Query($agency_lite_counter_args);
+									if($agency_lite_counter_query->have_posts()):
+										while($agency_lite_counter_query->have_posts()):
+											$agency_lite_counter_query->the_post();
 										?>
-						                <div class="agensy-counter-page">
-											 <div class = "agensy-feature-title">
+						                <div class="agency-lite-counter-page">
+											 <div class = "agency-lite-feature-title">
 						                         <?php the_title();?>
 						                	 </div>
 
-						            		 <div class = "agensy-feature-description">
+						            		 <div class = "agency-lite-feature-description">
 						                 		<?php the_content(); ?>
 						           			 </div>
 						               	 </div>
@@ -53,5 +53,5 @@ function agensy_counter_page(){
 	}
 }
 
-add_action('agensy_counter_page_roles','agensy_counter_page');
+add_action('agency_lite_counter_page','agency_lite_counter_page');
 

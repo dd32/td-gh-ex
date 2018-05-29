@@ -2,7 +2,7 @@
 /**
 * Dynamic style file for the theme 
 */
-function agensy_hex2rgba($color, $opacity = false) {
+function agency_lite_hex2rgba($color, $opacity = false) {
      $default = 'rgb(0,0,0)';
      //Return default if no color provided
      if(empty($color))
@@ -35,15 +35,15 @@ function agensy_hex2rgba($color, $opacity = false) {
         return $output;
 }
 
-function agensy_dynamic_style(){
+function agency_lite_dynamic_style(){
     
     $custom_css = "";
         
-    $agensy_faq_background_image = get_theme_mod('agensy_faq_background_image');
-    if( $agensy_faq_background_image ){
+    $agency_lite_faq_background_image = get_theme_mod('agency_lite_faq_background_image');
+    if( $agency_lite_faq_background_image ){
          $custom_css .="
-         .agensy-faq-wrap{
-            background-image: url(".esc_url($agensy_faq_background_image).");
+         .agency-lite-faq-wrap{
+            background-image: url(".esc_url($agency_lite_faq_background_image).");
             background-position:center;
             background-repeat:no-repeat;
             background-size: cover;
@@ -61,45 +61,45 @@ function agensy_dynamic_style(){
 
     }
 
-    $agensy_skin_color = get_theme_mod('agensy_skin_color','#cba14c');
-    $agensy_rgba_bg_color = agensy_hex2rgba($agensy_skin_color,0.6);
-    if($agensy_skin_color != '#cba14c'){
+    $agency_lite_skin_color = get_theme_mod('agency_lite_skin_color','#cba14c');
+    $agency_lite_rgba_bg_color = agency_lite_hex2rgba($agency_lite_skin_color,0.6);
+    if($agency_lite_skin_color != '#cba14c'){
         $custom_css .="
-           .info-wrapper,.agensy-counter-wrap,.blog-bttn a,.agensy-contact-form-wrap + p input[type=submit],.woocommerce .agensy-container ul.products li.product .onsale,.agensy-container ul.products li.product .button,article a.read-more,.nav-links span, .nav-links a,.widget_search input[type='submit'], .widget_product_search button[type='submit'],.about-content-wrap .left-about-content .about-posts span a:hover,.slider-content-wrap .slider-btn a:hover,.member-social-profile a:hover{
-                background-color:$agensy_skin_color
+           .info-wrapper,.agency-lite-counter-wrap,.blog-bttn a,.agency-lite-contact-form-wrap + p input[type=submit],.woocommerce .agency-lite-container ul.products li.product .onsale,.agency-lite-container ul.products li.product .button,article a.read-more,.nav-links span, .nav-links a,.widget_search input[type='submit'], .widget_product_search button[type='submit'],.about-content-wrap .left-about-content .about-posts span a:hover,.slider-content-wrap .slider-btn a:hover,.member-social-profile a:hover,.navigation.post-navigation .nav-links .nav-previous a, .navigation.post-navigation .nav-links .nav-next a,.navigation.post-navigation .nav-links .nav-previous a:hover, .navigation.post-navigation .nav-links .nav-next a:hover{
+                background-color:$agency_lite_skin_color
             }";
 
         $custom_css .= 
-                    ".header-banner-container .img-overlay,.agensy-team-wrap .widget_agensy_team .agensy-team-logo-icon:before{
-                            background: {$agensy_rgba_bg_color}
+                    ".header-banner-container .img-overlay,.agency-lite-team-wrap .widget_agency_lite_team  .agency-lite-team-logo-icon:before{
+                            background: {$agency_lite_rgba_bg_color}
                 }";
 
         $custom_css .= 
-                    ".site-header .main-navigation .primary-menu li.current_page_item > a, .site-header .main-navigation .primary-menu li > a:hover,.agensy-footer-nav-menu .menu li a:hover, .agensy-social-icons a:hover, .site-footer .team-members-contents a:hover, .agensy-footer-copyright a:hover,.blog-title a:hover,.blog-bttn a:hover,.blog-author a:hover,.widget_tag_cloud a:hover,.recent-post-widget .recent-post-date,.woocommerce ul.products li.product .price,.recent-post-widget .date-title-recent-post .recent-post-title a:hover,.agensy-contact-form-wrap + p input[type=submit]:hover,.woocommerce.woocommerce-page .content-area ul.products li.product .add_to_cart_button:hover, .woocommerce.woocommerce-page .content-area ul.products li.product .product_type_simple:hover, .woocommerce .cart .coupon input.button[type='submit']:hover, .woocommerce .place-order .button.alt:hover, .widget_shopping_cart_content a.button:hover, .widget_price_filter .price_slider_amount button[type=submit]:hover, .woocommerce .cart button[type=submit].single_add_to_cart_button:hover, .woocommerce #review_form #respond .form-submit input:hover,h1.blog-wrap-title a,.comment-author-date span a:hover,footer.entry-footer a:hover,header.entry-header a:hover,a.woocommerce-LoopProduct-link.woocommerce-loop-product__link:hover .woocommerce-loop-product__title,.widget ul li a:hover,.comment-respond .form-submit input:hover,.woocommerce div.product p.price, .woocommerce div.product span.price,.agensy-container div.product form.cart .button:hover,.agensy-contact-info a:hover,p.logged-in-as a:hover,a.added_to_cart.wc-forward:hover,span.posted_in a:hover,p.stars.selected a:hover,.woocommerce-info a:hover,a:hover, a:active{
-                            color: {$agensy_skin_color}
+                    ".site-header .main-navigation .primary-menu li.current_page_item > a, .site-header .main-navigation .primary-menu li > a:hover,.agency-lite-footer-nav-menu .menu li a:hover, .agency-lite-social-icons a:hover, .site-footer .team-members-contents a:hover, .agency-lite-footer-copyright a:hover,.blog-title a:hover,.blog-bttn a:hover,.blog-author a:hover,.widget_tag_cloud a:hover,.recent-post-widget .recent-post-date,.woocommerce ul.products li.product .price,.recent-post-widget .date-title-recent-post .recent-post-title a:hover,.agency-lite-contact-form-wrap + p input[type=submit]:hover,.woocommerce.woocommerce-page .content-area ul.products li.product .add_to_cart_button:hover, .woocommerce.woocommerce-page .content-area ul.products li.product .product_type_simple:hover, .woocommerce .cart .coupon input.button[type='submit']:hover, .woocommerce .place-order .button.alt:hover, .widget_shopping_cart_content a.button:hover, .widget_price_filter .price_slider_amount button[type=submit]:hover, .woocommerce .cart button[type=submit].single_add_to_cart_button:hover, .woocommerce #review_form #respond .form-submit input:hover,h1.blog-wrap-title a,.comment-author-date span a:hover,footer.entry-footer a:hover,header.entry-header a:hover,a.woocommerce-LoopProduct-link.woocommerce-loop-product__link:hover .woocommerce-loop-product__title,.widget ul li a:hover,.comment-respond .form-submit input:hover,.woocommerce div.product p.price, .woocommerce div.product span.price,.agency-lite-container div.product form.cart .button:hover,.agency-lite-contact-info a:hover,p.logged-in-as a:hover,a.added_to_cart.wc-forward:hover,span.posted_in a:hover,p.stars.selected a:hover,.woocommerce-info a:hover,a:hover, a:active{
+                            color: {$agency_lite_skin_color}
                 }"; 
 
         $custom_css .= 
-                    ".blog-bttn a,.about-content-wrap .left-about-content .about-posts span a:hover,.serv-btn a:hover, .feat-btn a:hover,.header-banner-container .page-title-wrap #agensy-breadcrumb,.widget_tag_cloud a:hover,.agensy-container div.product form.cart .button{
-                            border-color: {$agensy_skin_color}
+                    ".blog-bttn a,.about-content-wrap .left-about-content .about-posts span a:hover,.serv-btn a:hover, .feat-btn a:hover,.header-banner-container .page-title-wrap .breadcrumb-trail,.widget_tag_cloud a:hover,.agency-lite-container div.product form.cart .button,.navigation.post-navigation .nav-links .nav-previous a, .navigation.post-navigation .nav-links .nav-next a{
+                            border-color: {$agency_lite_skin_color}
                 }"; 
 
         $custom_css .= 
-                    ".agensy-container span.onsale:before,.comment-respond .form-submit input:hover,.woocommerce .cart .coupon input.button[type='submit'], .woocommerce .place-order .button.alt, .widget_shopping_cart_content a.button, .widget_price_filter .price_slider_amount button[type=submit], .woocommerce .cart button[type=submit].single_add_to_cart_button,.comment-respond .form-submit input,.woocommerce #review_form #respond .form-submit input{
-                            border-color:{$agensy_skin_color}
+                    ".agency-lite-container span.onsale:before,.comment-respond .form-submit input:hover,.woocommerce .cart .coupon input.button[type='submit'], .woocommerce .place-order .button.alt, .widget_shopping_cart_content a.button, .widget_price_filter .price_slider_amount button[type=submit], .woocommerce .cart button[type=submit].single_add_to_cart_button,.comment-respond .form-submit input,.woocommerce #review_form #respond .form-submit input{
+                            border-color:{$agency_lite_skin_color}
                 }"; 
 
-        $custom_css .= ".agensy-container ul.products li.product .button,.agensy-contact-form-wrap + p input[type=submit]{
-                    border: 2px solid {$agensy_skin_color};
+        $custom_css .= ".agency-lite-container ul.products li.product .button,.agency-lite-contact-form-wrap + p input[type=submit]{
+                    border: 2px solid {$agency_lite_skin_color};
                 }";
 
-         $custom_css .= "article a.read-more:hover,.error-404 input[type=submit], .search-no-results .no-results form input[type=submit],.serv-btn a:hover, .feat-btn a:hover,.agensy-container div.product form.cart .button,.woocommerce .wc-proceed-to-checkout a.button.alt,.woocommerce .cart .coupon input.button[type='submit'], .woocommerce .place-order .button.alt, .widget_shopping_cart_content a.button, .widget_price_filter .price_slider_amount button[type=submit], .woocommerce .cart button[type=submit].single_add_to_cart_button, .woocommerce #review_form #respond .form-submit input,.comment-respond .form-submit input{
-                    background:{$agensy_skin_color};
+         $custom_css .= "article a.read-more:hover,.error-404 input[type=submit], .search-no-results .no-results form input[type=submit],.serv-btn a:hover, .feat-btn a:hover,.agency-lite-container div.product form.cart .button,.woocommerce .wc-proceed-to-checkout a.button.alt,.woocommerce .cart .coupon input.button[type='submit'], .woocommerce .place-order .button.alt, .widget_shopping_cart_content a.button, .widget_price_filter .price_slider_amount button[type=submit], .woocommerce .cart button[type=submit].single_add_to_cart_button, .woocommerce #review_form #respond .form-submit input,.comment-respond .form-submit input{
+                    background:{$agency_lite_skin_color};
                 }";    
     }
 
         
-wp_add_inline_style( 'agensy-style', $custom_css );
+wp_add_inline_style( 'agency-lite-style', $custom_css );
 }
-add_action( 'wp_enqueue_scripts', 'agensy_dynamic_style' );
+add_action( 'wp_enqueue_scripts', 'agency_lite_dynamic_style' );
 

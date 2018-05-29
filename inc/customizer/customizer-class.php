@@ -7,7 +7,7 @@ if(class_exists('WP_Customize_Control')):
 *For Switch Enable Disable
 *
 **/
- class agensy_Switch_Control extends WP_Customize_Control{
+ class agency_lite_Switch_Control extends WP_Customize_Control{
         public $type = 'switch';
         public $on_off_label = array();
 
@@ -52,7 +52,7 @@ if(class_exists('WP_Customize_Control')):
 
 
 /** section seperator **/
-    class Agensy_Section_Typo_Seperator extends WP_Customize_Control {
+    class agency_lite_Section_Typo_Seperator extends WP_Customize_Control {
             public function render_content() { ?>
             <div class="section-seperator">
                 <?php echo esc_html( $this->label ); ?>
@@ -63,7 +63,7 @@ if(class_exists('WP_Customize_Control')):
 
         
     //to display an instruction
-    class Agensy_Notice_Instruction extends WP_Customize_Control{
+    class agency_lite_Notice_Instruction extends WP_Customize_Control{
         public function render_content() { ?>
         <div class="map-info-wrapper">
             <?php 
@@ -84,7 +84,7 @@ if(class_exists('WP_Customize_Control')):
 
 
      /** Section background color picker field **/
-    class Agensy_Bg_Color_Picker extends WP_Customize_Control {
+    class Agency_Lite_Bg_Color_Picker extends WP_Customize_Control {
         public function render_content() { ?>
         <span class="customize-control-title">
             <?php echo esc_html( $this->label ); ?>
@@ -92,7 +92,7 @@ if(class_exists('WP_Customize_Control')):
         <span class="desc clearfix">
             <?php echo esc_html( $this->description ); ?>
         </span>
-        <input type='text' id="agensy-color-picker" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); ?> />
+        <input type='text' id="agency-lite-color-picker" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); ?> />
     <?php
         }
     }

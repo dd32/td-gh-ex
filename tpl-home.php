@@ -5,14 +5,14 @@
 **/
 get_header();
 
-do_action('agensy_slider_role');
-do_action('agensy_home_section_role');
-do_action('agensy_faq_home_page_role');
-do_action('agensy_home_features_roles');
-do_action('agensy_services_pages_roles');
-do_action('agensy_team_page_role');
-do_action('agensy_counter_page_roles');
-do_action('agensy_blog_page_role');
-do_action('agensy_logo_page_roles');
+do_action('agency_lite_slider_control');
+do_action('agency_lite_home_section');
+do_action('agency_lite_faq_home_page');
+do_action('agency_lite_home_features');
+do_action('agency_lite_services_pages');
+do_action('agency_lite_team_page');
+do_action('agency_lite_counter_page');
+do_action('agency_lite_blog_page');
+do_action('agency_lite_logo_page');
 
 get_footer(); ?>

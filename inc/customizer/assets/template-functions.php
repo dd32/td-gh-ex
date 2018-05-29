@@ -1,15 +1,15 @@
 <?php 
-function agensy_cat_list(){
-    $agensy_cat_list = get_categories(
+function agency_lite_cat_list(){
+    $agency_lite_cat_list = get_categories(
         array(
             'hide_empty' => '0',
             'exclude' => '1',
         )
     );
-    $agensy_cat_list = array();
-    $agensy_cat_list[''] = esc_html__('-- Choose --','agensy');
-    foreach($agensy_cat_list as $agensy_cat_list){
-        $agensy_cat_list_array[$agensy_cat_list->slug] = $agensy_cat_list->name;
+    $agency_lite_cat_list = array();
+    $agency_lite_cat_list[''] = esc_html__('-- Choose --','agency-lite');
+    foreach($agency_lite_cat_list as $agency_lite_cat_list){
+        $agency_lite_cat_list_array[$agency_lite_cat_list->slug] = $agency_lite_cat_list->name;
     }
-    return $agensy_cat_list_array;
+    return $agency_lite_cat_list_array;
 }

@@ -9,12 +9,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Agensy
+ * @package Agency Lite
  */
 
 get_header(); 
 ?>
-	<div class = "agensy-container clearfix">
+	<div class = "agency-lite-container clearfix">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 

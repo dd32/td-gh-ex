@@ -1,9 +1,9 @@
 <?php
 /**
-* Agensy Pro customizer repeater class
+* Agency Lite customizer repeater class
 *
 *
-* @package agensy
+* @package Agency Lite
 */
 
 if( class_exists('WP_Customize_Control')):
@@ -12,7 +12,7 @@ if( class_exists('WP_Customize_Control')):
     /**
      * Repeater Custom Control
     */
-    class agensy_Repeater_Controler extends WP_Customize_Control {
+    class Agency_Lite_Repeater_Controler extends WP_Customize_Control {
     	/**
     	 * The control type.
     	 *
@@ -24,9 +24,9 @@ if( class_exists('WP_Customize_Control')):
         
     	public $type = 'repeater';
 
-    	public $agensy_box_label = '';
+    	public $agency_lite_box_label = '';
 
-    	public $agensy_box_add_control = '';
+    	public $agency_lite_box_add_control = '';
 
     	private $cats = '';
         
@@ -48,8 +48,8 @@ if( class_exists('WP_Customize_Control')):
     	 */
     	public function __construct( $manager, $id, $args = array(), $fields = array() ) {
     		$this->fields = $fields;
-    		$this->agensy_box_label = $args['agensy_box_label'] ;
-    		$this->agensy_box_add_control = $args['agensy_box_add_control'];
+    		$this->agency_lite_box_label = $args['agency_lite_box_label'] ;
+    		$this->agency_lite_box_add_control = $args['agency_lite_box_add_control'];
     		$this->cats       = get_categories(array( 'hide_empty' => false ));
             $this->pages      = get_pages(array('post_type' => 'page'));
             
@@ -79,33 +79,33 @@ if( class_exists('WP_Customize_Control')):
     			</span>
     		<?php } ?>
 
-    		<ul class="agensy-repeater-field-control-wrap">
+    		<ul class="agency-lite-repeater-field-control-wrap">
     			<?php
-    			$this->agensy_get_fields();
+    			$this->agency_lite_get_fields();
     			?>
     		</ul>
 
-    		<input type="hidden" <?php esc_attr( $this->link() ); ?> class="agensy-repeater-collector" value="<?php echo esc_attr( $this->value() ); ?>" />
-    		<button type="button" class="button agensy-add-control-field"><?php echo esc_html( $this->agensy_box_add_control ); ?></button>
+    		<input type="hidden" <?php esc_attr( $this->link() ); ?> class="agency-lite-repeater-collector" value="<?php echo esc_attr( $this->value() ); ?>" />
+    		<button type="button" class="button agency-lite-add-control-field"><?php echo esc_html( $this->agency_lite_box_add_control ); ?></button>
     		<?php
     	}
 
-    	private function agensy_get_fields(){
+    	private function agency_lite_get_fields(){
     		$fields = $this->fields;
     		$values = json_decode($this->value());
 
     		if(is_array($values)){
     		foreach($values as $value){
     		?>
-    		<li class="agensy-repeater-field-control">
-    		<h3 class="agensy-repeater-field-title"><?php echo esc_html( $this->agensy_box_label ); ?></h3>
+    		<li class="agency-lite-repeater-field-control">
+    		<h3 class="agency-lite-repeater-field-title"><?php echo esc_html( $this->agency_lite_box_label ); ?></h3>
     		
-    		<div class="agensy-repeater-fields">
+    		<div class="agency-lite-repeater-fields">
     		<?php
     			foreach ($fields as $key => $field) {
     			$class = isset($field['class']) ? $field['class'] : '';
     			?>
-    			<div class="agensy-fields agensy-type-<?php echo esc_attr($field['type']).' '.$class; ?>">
+    			<div class="agency-lite-fields agency-lite-type-<?php echo esc_attr($field['type']).' '.esc_attr($class); ?>">
 	    			<?php 
 	    				$label = isset($field['label']) ? $field['label'] : '';
 	    				$description = isset($field['description']) ? $field['description'] : '';
@@ -137,17 +137,17 @@ if( class_exists('WP_Customize_Control')):
 	    							$image = '<img src="'.esc_url($new_value).'" style="max-width:100%;"/>';	
 	    							$image_class = ' hidden';
 	    						}
-	    						echo '<div class="agensy-fields-wrap">';
+	    						echo '<div class="agency-lite-fields-wrap">';
 	    						echo '<div class="attachment-media-view">';
-	    						echo '<div class="placeholder'.$image_class.'">';
-	    						_e('No image selected', 'agensy');
+	    						echo '<div class="placeholder'.esc_attr($image_class).'">';
+	    						esc_html_e('No image selected', 'agency-lite');
 	    						echo '</div>';
 	    						echo '<div class="thumbnail thumbnail-image">';
-	    						echo $image;
+	    						echo esc_url($image);
 	    						echo '</div>';
 	    						echo '<div class="actions clearfix">';
-	    						echo '<button type="button" class="button agensy-delete-button align-left">'.esc_html__('Remove', 'agensy').'</button>';
-	    						echo '<button type="button" class="button agensy-upload-button alignright">'.esc_html__('Select Image', 'agensy').'</button>';
+	    						echo '<button type="button" class="button agency-lite-delete-button align-left">'.esc_html__('Remove', 'agency-lite').'</button>';
+	    						echo '<button type="button" class="button agency-lite-upload-button alignright">'.esc_html__('Select Image', 'agency-lite').'</button>';
 	    						echo '<input data-default="'.esc_attr($default).'" class="upload-id" data-name="'.esc_attr($key).'" type="hidden" value="'.esc_attr($new_value).'"/>';
 	    						echo '</div>';
 	    						echo '</div>';
@@ -156,8 +156,8 @@ if( class_exists('WP_Customize_Control')):
 
 	    					case 'category':
 	    						echo '<select data-default="'.esc_attr($default).'"  data-name="'.esc_attr($key).'">';
-	    						echo '<option value="0">'.esc_html__('Select Category', 'agensy').'</option>';
-	    						echo '<option value="-1">'.esc_html__('Latest Posts', 'agensy').'</option>';
+	    						echo '<option value="0">'.esc_html__('Select Category', 'agency-lite').'</option>';
+	    						echo '<option value="-1">'.esc_html__('Latest Posts', 'agency-lite').'</option>';
 	                                foreach ( $this->cats as $cat )
 	                                {
 	                                    printf('<option value="%s" %s>%s</option>', esc_attr($cat->term_id), selected($new_value, $cat->term_id, false), esc_html($cat->name));
@@ -177,19 +177,19 @@ if( class_exists('WP_Customize_Control')):
 
 	    					case 'checkbox':
 	    						echo '<label>';
-	    						echo '<input data-default="'.esc_attr($default).'" value="'.$new_value.'" data-name="'.esc_attr($key).'" type="checkbox" '.checked($new_value, 'yes', false).'/>';
+	    						echo '<input data-default="'.esc_attr($default).'" value="'.esc_attr($new_value).'" data-name="'.esc_attr($key).'" type="checkbox" '.checked($new_value, 'yes', false).'/>';
 	    						echo esc_html( $label );
 	    						echo '<span class="description customize-control-description">'.esc_html( $description ).'</span>';
 	    						echo '</label>';
 	    						break;
 	    					
 	    					case 'colorpicker':
-	    						echo '<input data-default="'.esc_attr($default).'" class="agensy-color-picker" data-alpha="true" data-name="'.esc_attr($key).'" type="text" value="'.esc_attr($new_value).'"/>';
+	    						echo '<input data-default="'.esc_attr($default).'" class="agency-lite-color-picker" data-alpha="true" data-name="'.esc_attr($key).'" type="text" value="'.esc_attr($new_value).'"/>';
 	    						break;
                             
                             case 'page':
                                 echo '<select data-default="'.esc_attr($default).'"  data-name="'.esc_attr($key).'">';
-	    						echo '<option value="0">'.esc_html__('Select Page', 'agensy').'</option>';
+	    						echo '<option value="0">'.esc_html__('Select Page', 'agency-lite').'</option>';
 	                                foreach ( $this->pages as $page )
 	                                {
 	                                    printf('<option value="%s" %s>%s</option>', esc_attr($page->ID), selected($new_value, $page->ID, false), esc_html($page->post_title));
@@ -199,7 +199,7 @@ if( class_exists('WP_Customize_Control')):
                                 
                              case 'page_cpt':
                                 echo '<select data-default="'.esc_attr($default).'"  data-name="'.esc_attr($key).'">';
-	    						echo '<option value="0">'.esc_html__('Select Page', 'agensy').'</option>';
+	    						echo '<option value="0">'.esc_html__('Select Page', 'agency-lite').'</option>';
                                 
 	                                foreach ( $this->pags as $pag_ID =>$pag_name )
 	                                {
@@ -214,7 +214,7 @@ if( class_exists('WP_Customize_Control')):
 	    						echo '<div class="selector-labels">';
 	    						foreach ( $options as $option => $val ){
 	    							$class = ( $new_value == $option ) ? 'selector-selected': '';
-	    							echo '<label class="'.$class.'" data-val="'.esc_attr($option).'">';
+	    							echo '<label class="'.esc_attr($class).'" data-val="'.esc_attr($option).'">';
 	    							echo '<img src="'.esc_url($val).'"/>';
 	    							echo '</label>'; 
 	    						}
@@ -228,7 +228,7 @@ if( class_exists('WP_Customize_Control')):
 	    						foreach ( $options as $option => $val ){
 	    							echo '<label>';
 	    							echo '<input value="'.esc_attr($option).'" type="radio" '.checked($new_value, $option, false).'/>';
-	    							echo $val;
+	    							echo esc_html($val);
 	    							echo '</label>'; 
 	    						}
 	    						echo '</div>';
@@ -238,7 +238,7 @@ if( class_exists('WP_Customize_Control')):
 	    					case 'switch':
 	    						$switch = $field['switch'];
 	    						$switch_class = ($new_value == 'on') ? 'switch-on' : '';
-	    						echo '<div class="onoffswitch '.$switch_class.'">';
+	    						echo '<div class="onoffswitch '.esc_attr($switch_class).'">';
 	    	                        echo '<div class="onoffswitch-inner">';
 	    	                            echo '<div class="onoffswitch-active">';
 	    	                                echo '<div class="onoffswitch-switch">'.esc_html($switch["on"]).'</div>';
@@ -254,7 +254,7 @@ if( class_exists('WP_Customize_Control')):
 	    					case 'range':
 	    						$options = $field['options'];
 	    						$new_value = $new_value ? $new_value : $options['val'];
-	    						echo '<div class="agensy-range-slider" >';
+	    						echo '<div class="agency-lite-range-slider" >';
 	    						echo '<div class="range-input" data-defaultvalue="'. esc_attr($options['val']) .'" data-value="' . esc_attr($new_value) . '" data-min="' . esc_attr($options['min']) . '" data-max="' . esc_attr($options['max']) . '" data-step="' . esc_attr($options['step']) . '"></div>';
 	    						echo '<input  class="range-input-selector" type="text" value="'.esc_attr($new_value).'"  data-name="'.esc_attr($key).'"/>';
 	    						echo '<span class="unit">' . esc_html($options['unit']) . '</span>';
@@ -262,15 +262,15 @@ if( class_exists('WP_Customize_Control')):
 	    						break;
 
 	    					case 'icon':
-	    						echo '<div class="agensy-selected-icon">';
+	    						echo '<div class="agency-lite-selected-icon">';
 	    						echo '<i class="'.esc_attr($new_value).'"></i>';
 	    						echo '<span><i class="fa fa-chevron-down"></i></span>';
 	    						echo '</div>';
-	    						echo '<ul class="agensy-icon-list clearfix">';
-	    						$agensy_icons_array = agensy_icons_array();
-	    						foreach ($agensy_icons_array as $agensy_font_awesome_icon) {
-	    							$icon_class = $new_value == $agensy_font_awesome_icon ? 'icon-active' : '';
-	    							echo '<li class='.$icon_class.'><i class="fa '.$agensy_font_awesome_icon.'"></i></li>';
+	    						echo '<ul class="agency-lite-icon-list clearfix">';
+	    						$agency_lite_icons_array = agency_lite_icons_array();
+	    						foreach ($agency_lite_icons_array as $agency_lite_font_awesome_icon) {
+	    							$icon_class = $new_value == $agency_lite_font_awesome_icon ? 'icon-active' : '';
+	    							echo '<li class='.esc_attr($icon_class).'><i class="fa '.esc_attr($agency_lite_font_awesome_icon).'"></i></li>';
 	    						}
 	    						echo '</ul>';
 	    						echo '<input data-default="'.esc_attr($default).'" type="hidden" value="'.esc_attr($new_value).'" data-name="'.esc_attr($key).'"/>';
@@ -278,13 +278,13 @@ if( class_exists('WP_Customize_Control')):
 
 	    					case 'multicategory':
 	    						$new_value_array = !is_array( $new_value ) ? explode( ',', $new_value ) : $new_value;
-	    						echo '<ul class="agensy-multi-category-list">';
-	    						echo '<li><label><input type="checkbox" value="-1" '. checked('-1', $new_value, false ) .'/>'.esc_html__( 'Latest Posts', 'agensy' ).'</label></li>';
+	    						echo '<ul class="agency-lite-multi-category-list">';
+	    						echo '<li><label><input type="checkbox" value="-1" '. checked('-1', $new_value, false ) .'/>'.esc_html__( 'Latest Posts', 'agency-lite' ).'</label></li>';
 	    						foreach ( $this->cats as $cat ){
 	    							$checked = in_array( $cat->term_id, $new_value_array) ? 'checked="checked"' : '';
 	    							echo '<li>';
 	    							echo '<label>';
-	    	                        echo '<input type="checkbox" value="'.esc_attr($cat->term_id).'" '. $checked .'/>'; 
+	    	                        echo '<input type="checkbox" value="'.esc_attr($cat->term_id).'" '. esc_attr($checked) .'/>'; 
 	    	                        echo esc_html( $cat->name );
 	    	                    	echo '</label>';
 	    							echo '</li>';
@@ -301,10 +301,10 @@ if( class_exists('WP_Customize_Control')):
     			<?php
     			} ?>
 
-    			<div class="clearfix agensy-repeater-footer">
+    			<div class="clearfix agency-lite-repeater-footer">
     				<div class="alignright">
-    				<a class="agensy-repeater-field-remove" href="#remove"><?php _e('Delete', 'agensy') ?></a> |
-    				<a class="agensy-repeater-field-close" href="#close"><?php _e('Close', 'agensy') ?></a>
+    				<a class="agency-lite-repeater-field-remove" href="#remove"><?php esc_html_e('Delete', 'agency-lite') ?></a> |
+    				<a class="agency-lite-repeater-field-close" href="#close"><?php esc_html_e('Close', 'agency-lite') ?></a>
     				</div>
     			</div>
     		</div>

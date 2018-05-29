@@ -1,26 +1,26 @@
 <?php
 /**
-Agensy Pro Contact Info
+Agency Lite Contact Info
 */
 
-add_action('widgets_init', 'agensy_contact_details');
+add_action('widgets_init', 'agency_lite_contact_details');
     
-function agensy_contact_details(){
-    register_widget('agensy_pro_contact_info_widget');
+function agency_lite_contact_details(){
+    register_widget('agency_lite_pro_contact_info_widget');
 }
 
    /**
    * 
    */
-   class agensy_Pro_Contact_Info_Widget extends WP_Widget
+   class agency_lite_Pro_Contact_Info_Widget extends WP_Widget
    {
    			public function __construct()
 		   	{
 			   		parent::__construct(
-	                'agensy_contact_info',
-	                esc_html__('Agensy: Contact Information', 'agensy'),
+	                'agency_lite_contact_info',
+	                esc_html__('Agency: Contact Information', 'agency-lite'),
 	                array(
-	                    'description' => __('A widget that shows contact information', 'agensy')
+	                    'description' => __('A widget that shows contact information', 'agency-lite')
 	                )
 	           	 );
 		   	}
@@ -29,33 +29,33 @@ function agensy_contact_details(){
 		   	{
 		   		$fields = array(
 		   			'gmap_contact_title' => array(
-                    'agensy_widgets_name' => 'gmap_contact_title',
-                    'agensy_widgets_title' => __('Title', 'agensy'),
-                    'agensy_widgets_field_type' => 'text',
+                    'agency_lite_widgets_name' => 'gmap_contact_title',
+                    'agency_lite_widgets_title' => __('Title', 'agency-lite'),
+                    'agency_lite_widgets_field_type' => 'text',
                 ),
             'gmap_phone' => array(
-            'agensy_widgets_name' => 'gmap_phone',
-            'agensy_widgets_title' => __(' Phone', 'agensy'),
-            'agensy_widgets_field_type' => 'text',
+            'agency_lite_widgets_name' => 'gmap_phone',
+            'agency_lite_widgets_title' => __(' Phone', 'agency-lite'),
+            'agency_lite_widgets_field_type' => 'text',
               
               ),
 
             'gmap_support_email' => array(
-            'agensy_widgets_name' => 'gmap_support_email',
-            'agensy_widgets_title' => __('Support', 'agensy'),
-            'agensy_widgets_field_type' => 'text',
+            'agency_lite_widgets_name' => 'gmap_support_email',
+            'agency_lite_widgets_title' => __('Support', 'agency-lite'),
+            'agency_lite_widgets_field_type' => 'text',
                ),
 
             'gmap_contact_email' => array(
-            'agensy_widgets_name' => 'gmap_contact_email',
-            'agensy_widgets_title' => __('Email', 'agensy'),
-            'agensy_widgets_field_type' => 'text',
+            'agency_lite_widgets_name' => 'gmap_contact_email',
+            'agency_lite_widgets_title' => __('Email', 'agency-lite'),
+            'agency_lite_widgets_field_type' => 'text',
                ),
 
            'gmap_location' => array(
-            'agensy_widgets_name' => 'gmap_location',
-            'agensy_widgets_title' => __('Address', 'agensy'),
-            'agensy_widgets_field_type' => 'text',
+            'agency_lite_widgets_name' => 'gmap_location',
+            'agency_lite_widgets_title' => __('Address', 'agency-lite'),
+            'agency_lite_widgets_field_type' => 'text',
                ),
 		   			);
 		   		return $fields;
@@ -77,38 +77,37 @@ function agensy_contact_details(){
               $gmap_contact_email = isset($instance['gmap_contact_email']) ? $instance['gmap_contact_email'] : '';
               $gmap_location = isset($instance['gmap_location']) ? $instance['gmap_location'] : '';
 
-
                echo $before_widget;
                ?>
-               <div class = "agensy-contact-info-warp">
+               <div class = "agency-lite-contact-info-warp">
                 <?php 
                //Show title
               if(!empty($gmap_contact_title)){
-                   echo $before_title . $gmap_contact_title . $after_title;
+                   echo $before_title . esc_html($gmap_contact_title) . $after_title;
                }
 
               if( $gmap_phone || $gmap_support_email || $gmap_contact_email || $gmap_location ){ ?>
-                <div class="agensy-contact-info">
+                <div class="agency-lite-contact-info">
                   <span class="contact_phone">
                    <i class="fa fa-mobile" aria-hidden="true"></i>
                   <a href="tel:<?php echo esc_html($gmap_phone); ?>">
-                  <?php _e('Phone:','agensy'); ?><?php echo esc_html($gmap_phone); ?>
+                  <?php esc_html_e('Phone:','agency-lite'); ?><?php echo esc_html($gmap_phone); ?>
                   </a>
                   </span>
                   <span class="contact_email">
                      <i class="fa fa-headphones" aria-hidden="true"></i>
                     <a href="mailto:<?php echo esc_attr($gmap_support_email); ?>">
-                   <?php _e('Support:','agensy'); ?><?php echo esc_attr($gmap_support_email); ?>
+                   <?php esc_html_e('Support:','agency-lite'); ?><?php echo esc_attr($gmap_support_email); ?>
                     </a>
                   </span>
                   <span class="contact_web">
                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
                     <a href="<?php echo esc_attr($gmap_contact_email); ?>" target="_blank">
-                    <?php _e('Email:','agensy'); ?><?php echo esc_attr($gmap_contact_email); ?>
+                    <?php esc_html_e('Email:','agency-lite'); ?><?php echo esc_attr($gmap_contact_email); ?>
                     </a>  
                   </span>
                   <span class="contact_address">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i><?php _e('Location:','agensy'); ?><?php echo esc_attr($gmap_location); ?>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i><?php esc_html_e('Location:','agency-lite'); ?><?php echo esc_attr($gmap_location); ?>
                   </span>
                 </div>
           <?php } ?>
@@ -130,7 +129,7 @@ function agensy_contact_details(){
       extract( $widget_field );
   
       // Use helper function to get updated field values
-      $instance[$agensy_widgets_name] = agensy_widgets_updated_field_value( $widget_field, $new_instance[$agensy_widgets_name] );
+      $instance[$agency_lite_widgets_name] = agency_lite_widgets_updated_field_value( $widget_field, $new_instance[$agency_lite_widgets_name] );
       
     }
         
@@ -146,8 +145,8 @@ function agensy_contact_details(){
     foreach( $widget_fields as $widget_field ) {
       // Make array elements available as variables 
       extract( $widget_field );
-      $agensy_widgets_field_value = isset( $instance[$agensy_widgets_name] ) ? esc_attr( $instance[$agensy_widgets_name] ) : '';
-      agensy_widgets_show_widget_field( $this, $widget_field, $agensy_widgets_field_value );
+      $agency_lite_widgets_field_value = isset( $instance[$agency_lite_widgets_name] ) ? esc_attr( $instance[$agency_lite_widgets_name] ) : '';
+      agency_lite_widgets_show_widget_field( $this, $widget_field, $agency_lite_widgets_field_value );
     } 
   }
    }

@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Agensy
+ * @package Agency Lite
  */
 
 /*
@@ -28,12 +28,13 @@ if ( post_password_required() ) {
 		<h2 class="comments-title">
 			<?php
 			$comment_count = get_comments_number();
-			if ( 1 === $comment_count ) {
-				printf(
+			if ($comment_count > 0  ) {
 					/* translators: 1: title. */
-					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'agensy' ),
-					'<span>' . get_the_title() . '</span>'
-				);
+			
+					echo absint($comment_count),
+					esc_html_e( ' thought on ', 'agency-lite' ),
+					'<span>' . get_the_title() . '</span>';
+
 			}
 			?>
 		</h2><!-- .comments-title -->
@@ -53,7 +54,7 @@ if ( post_password_required() ) {
 
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) : ?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'agensy' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'agency-lite' ); ?></p>
 		<?php
 		endif;
 

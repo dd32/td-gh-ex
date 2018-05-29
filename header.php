@@ -6,12 +6,11 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Agensy
+ * @package Agency Lite
  */
-
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> itemscope itemtype="http://schema.org/WebPage">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,10 +22,10 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
-	<?php do_action('agensy_top_header'); ?>
+	<?php do_action('agency_lite_top_header'); ?>
 	
 	<header id="masthead" class="site-header">
-		<div class = "agensy-container">
+		<div class = "agency-lite-container">
 		<div class="site-branding">
 			<?php
 			if(has_custom_logo()){
@@ -38,7 +37,6 @@
 					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 				endif;
-
 				$description = get_bloginfo( 'description', 'display' );
 				if ( $description || is_customize_preview() ) : ?>
 					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
@@ -52,9 +50,10 @@
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-align-justify"></i></button>
 			<?php
 				wp_nav_menu( array(
-					'theme_location' 		=> 'agensy-primary-menu',
+					'theme_location' 		=> 'agency-lite-primary-menu',
 					'menu_id'        		=> 'primary-menu',
-					'container_class'		=> 'primary-menu'
+					'container_class'		=> 'primary-menu',
+					'fallback_cb'			=> false
 				) );
 			?>
 		</nav><!-- #site-navigation -->
@@ -62,7 +61,7 @@
 	</header><!-- #masthead -->
 	<?php 
 	  if(!is_front_page() ){
-            do_action('agensy_header_banner'); 
+            do_action('agency_lite_header_banner'); 
         }
 
 

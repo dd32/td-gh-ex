@@ -1,12 +1,12 @@
 jQuery(document).ready(function($) {	
     
-function agensy_refresh_repeater_values(){
-        $(".agensy-repeater-field-control-wrap").each(function(){
+function agency_lite_refresh_repeater_values(){
+        $(".agency-lite-repeater-field-control-wrap").each(function(){
             
             var values = []; 
             var $this = $(this);
             
-            $this.find(".agensy-repeater-field-control").each(function(){
+            $this.find(".agency-lite-repeater-field-control").each(function(){
             var valueToPush = {};   
 
             $(this).find('[data-name]').each(function(){
@@ -18,7 +18,7 @@ function agensy_refresh_repeater_values(){
             values.push(valueToPush);
             });
 
-            $this.next('.agensy-repeater-collector').val(JSON.stringify(values)).trigger('change');
+            $this.next('.agency-lite-repeater-collector').val(JSON.stringify(values)).trigger('change');
         });
     }
      /**
@@ -35,14 +35,14 @@ function agensy_refresh_repeater_values(){
     });
     $(document).on('click','.removeimage',function() {
         $(this).parent().html("");
-        $("#agensy_bread_bg_image").val('');
+        $("#agency_lite_bread_bg_image").val('');
     });
-    $("body").on("click",'.agensy-add-control-field', function(){
+    $("body").on("click",'.agency-lite-add-control-field', function(){
 
         var $this = $(this).parent();
         if(typeof $this != 'undefined') {
 
-            var field = $this.find(".agensy-repeater-field-control:first").clone();
+            var field = $this.find(".agency-lite-repeater-field-control:first").clone();
             if(typeof field != 'undefined'){
                 
                 field.find("input[type='text'][data-name]").each(function(){
@@ -96,7 +96,7 @@ function agensy_refresh_repeater_values(){
                         step: parseFloat($dis.attr('data-step')),
                         slide: function( event, ui ) {
                             $dis.siblings(".range-input-selector").val(ui.value );
-                            agensy_refresh_repeater_values();
+                            agency_lite_refresh_repeater_values();
                         }
                     });
                 });
@@ -111,14 +111,14 @@ function agensy_refresh_repeater_values(){
                     }
                 });
 
-                field.find('.agensy-color-picker').each(function(){
+                field.find('.agency-lite-color-picker').each(function(){
                     $(this).wpColorPicker({
                         change: function(event, ui){
                             setTimeout(function(){
-                            agensy_refresh_repeater_values();
+                            agency_lite_refresh_repeater_values();
                             }, 100);
                         }
-                    }).parents('.agensy-type-colorpicker').find('.wp-color-result').first().remove();
+                    }).parents('.agency-lite-type-colorpicker').find('.wp-color-result').first().remove();
                 });
 
                 field.find(".attachment-media-view").each(function(){
@@ -131,10 +131,10 @@ function agensy_refresh_repeater_values(){
                     }
                 });
                 
-                field.find(".agensy-icon-list").each(function(){
+                field.find(".agency-lite-icon-list").each(function(){
                     var defaultValue = $(this).next('input[data-name]').attr('data-default');
                     $(this).next('input[data-name]').val(defaultValue);
-                    $(this).prev('.agensy-selected-icon').children('i').attr('class','').addClass(defaultValue);
+                    $(this).prev('.agency-lite-selected-icon').children('i').attr('class','').addClass(defaultValue);
                     
                     $(this).find('li').each(function(){
                         var icon_class = $(this).find('i').attr('class');
@@ -146,7 +146,7 @@ function agensy_refresh_repeater_values(){
                     });
                 });
 
-                field.find(".agensy-multi-category-list").each(function(){
+                field.find(".agency-lite-multi-category-list").each(function(){
                     var defaultValue = $(this).next('input[data-name]').attr('data-default');
                     $(this).next('input[data-name]').val(defaultValue);
                     
@@ -159,66 +159,66 @@ function agensy_refresh_repeater_values(){
                     });
                 });
                 
-                field.find('.agensy-fields').show();
+                field.find('.agency-lite-fields').show();
 
-                $this.find('.agensy-repeater-field-control-wrap').append(field);
+                $this.find('.agency-lite-repeater-field-control-wrap').append(field);
 
-                field.addClass('expanded').find('.agensy-repeater-fields').show(); 
+                field.addClass('expanded').find('.agency-lite-repeater-fields').show(); 
                 $('.accordion-section-content').animate({ scrollTop: $this.height() }, 1000);
-                agensy_refresh_repeater_values();
+                agency_lite_refresh_repeater_values();
             }
 
         }
         return false;
     });
-    $('body').on('click', '.agensy-icon-list li', function(){
+    $('body').on('click', '.agency-lite-icon-list li', function(){
         var icon_class = $(this).find('i').attr('class');
         $(this).addClass('icon-active').siblings().removeClass('icon-active');
-        $(this).parent('.agensy-icon-list').prev('.agensy-selected-icon').children('i').attr('class','').addClass(icon_class);
-        $(this).parent('.agensy-icon-list').next('input').val(icon_class).trigger('change');
-        agensy_refresh_repeater_values();
+        $(this).parent('.agency-lite-icon-list').prev('.agency-lite-selected-icon').children('i').attr('class','').addClass(icon_class);
+        $(this).parent('.agency-lite-icon-list').next('input').val(icon_class).trigger('change');
+        agency_lite_refresh_repeater_values();
     });
     //MultiCheck box Control JS
-    $( 'body' ).on( 'change', '.agensy-type-multicategory input[type="checkbox"]' , function() {
-        var checkbox_values = $( this ).parents( '.agensy-type-multicategory' ).find( 'input[type="checkbox"]:checked' ).map(function(){
+    $( 'body' ).on( 'change', '.agency-lite-type-multicategory input[type="checkbox"]' , function() {
+        var checkbox_values = $( this ).parents( '.agency-lite-type-multicategory' ).find( 'input[type="checkbox"]:checked' ).map(function(){
             return $( this ).val();
         }).get().join( ',' );
-        $( this ).parents( '.agensy-type-multicategory' ).find( 'input[type="hidden"]' ).val( checkbox_values ).trigger( 'change' );
-        agensy_refresh_repeater_values();
+        $( this ).parents( '.agency-lite-type-multicategory' ).find( 'input[type="hidden"]' ).val( checkbox_values ).trigger( 'change' );
+        agency_lite_refresh_repeater_values();
     });
 
-    $('body').on('click', '.agensy-selected-icon', function(){
+    $('body').on('click', '.agency-lite-selected-icon', function(){
         $(this).next().slideToggle();
     });
-    $("#customize-theme-controls").on("click", ".agensy-repeater-field-remove",function(){
+    $("#customize-theme-controls").on("click", ".agency-lite-repeater-field-remove",function(){
         if( typeof  $(this).parent() != 'undefined'){
-            $(this).closest('.agensy-repeater-field-control').slideUp('normal', function(){
+            $(this).closest('.agency-lite-repeater-field-control').slideUp('normal', function(){
                 $(this).remove();
-                agensy_refresh_repeater_values();
+                agency_lite_refresh_repeater_values();
             });
             
         }
         return false;
     });
-    $('#customize-theme-controls').on('click', '.agensy-repeater-field-close', function(){
-        $(this).closest('.agensy-repeater-fields').slideUp();;
-        $(this).closest('.agensy-repeater-field-control').toggleClass('expanded');
+    $('#customize-theme-controls').on('click', '.agency-lite-repeater-field-close', function(){
+        $(this).closest('.agency-lite-repeater-fields').slideUp();;
+        $(this).closest('.agency-lite-repeater-field-control').toggleClass('expanded');
     });
-    $('#customize-theme-controls').on('click','.agensy-repeater-field-title',function(){
+    $('#customize-theme-controls').on('click','.agency-lite-repeater-field-title',function(){
         $(this).next().slideToggle();
-        $(this).closest('.agensy-repeater-field-control').toggleClass('expanded');
+        $(this).closest('.agency-lite-repeater-field-control').toggleClass('expanded');
     });
     /*Drag and drop to change order*/
     
-    $(".agensy-repeater-field-control-wrap").sortable({
+    $(".agency-lite-repeater-field-control-wrap").sortable({
         orientation: "vertical",
         update: function( event, ui ) {
-            agensy_refresh_repeater_values();
+            agency_lite_refresh_repeater_values();
         }
     });
     
     $("#customize-theme-controls").on('keyup change', '[data-name]',function(){
-         agensy_refresh_repeater_values();
+         agency_lite_refresh_repeater_values();
          return false;
     });
 
@@ -228,17 +228,17 @@ function agensy_refresh_repeater_values(){
         }else{
             $(this).val('no');
         }
-        agensy_refresh_repeater_values();
+        agency_lite_refresh_repeater_values();
         return false;
     });
     // ADD IMAGE LINK
 
-    $('body').on( 'click', '.agensy-upload-button', function( event ){
+    $('body').on( 'click', '.agency-lite-upload-button', function( event ){
         
     event.preventDefault();
 
-    var imgContainer = $(this).closest('.agensy-fields-wrap').find( '.thumbnail-image'),
-    placeholder = $(this).closest('.agensy-fields-wrap').find( '.placeholder'),
+    var imgContainer = $(this).closest('.agency-lite-fields-wrap').find( '.thumbnail-image'),
+    placeholder = $(this).closest('.agency-lite-fields-wrap').find( '.placeholder'),
     imgIdInput = $(this).siblings('.upload-id');
 
     // Create a new media frame
@@ -269,11 +269,11 @@ function agensy_refresh_repeater_values(){
     frame.open();
     });
     // DELETE IMAGE LINK
-    $('body').on( 'click', '.agensy-delete-button', function( event ){
+    $('body').on( 'click', '.agency-lite-delete-button', function( event ){
 
     event.preventDefault();
-    var imgContainer = $(this).closest('.agensy-fields-wrap').find( '.thumbnail-image'),
-    placeholder = $(this).closest('.agensy-fields-wrap').find( '.placeholder'),
+    var imgContainer = $(this).closest('.agency-lite-fields-wrap').find( '.thumbnail-image'),
+    placeholder = $(this).closest('.agency-lite-fields-wrap').find( '.placeholder'),
     imgIdInput = $(this).siblings('.upload-id');
 
     // Clear out the preview image

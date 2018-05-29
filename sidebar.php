@@ -4,14 +4,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Agensy
+ * @package Agency Lite
  */
 
-if ( ! is_active_sidebar( 'agensy-sidebar' ) ) {
+if ( ! is_active_sidebar( 'agency-lite-sidebar' ) ) {
 	return;
 }
 ?>
 
 <aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'agensy-sidebar' ); ?>
+	<?php dynamic_sidebar( 'agency-lite-sidebar' ); ?>
 </aside><!-- #secondary -->

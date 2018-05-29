@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Agensy
+ * @package Agency Lite
  */
 
 ?>
@@ -14,23 +14,22 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer clear">
-		<div class="agensy-container">
+		<div class="agency-lite-container">
+			<?php 
+			do_action('agency_lite_footer_section_page');
+			?>
+		<div class = "agency-lite-footer-all clear">
 		<?php 
-		do_action('agensy_footer_section_page_roles');
+			do_action('agency_lite_footer_nav_menu');
+			do_action('agency_lite_after_footer');
 		?>
-	<div class = "agensy-footer-all clear">
-	<?php 
-		do_action('agensy_footer_nav_menu_role');
-		do_action('agensy_after_footer');
-	?>
-	</div>
+		</div>
 	</div>
 	<?php 
-	do_action('agensy_footer_copyright_roles');
+	do_action('agency_lite_footer_copyright_fn');
 	 ?>
 	
 	</footer><!-- #colophon -->
-</div><!-- #page -->
 
 <?php wp_footer(); ?>
 

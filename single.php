@@ -4,12 +4,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Agensy
+ * @package Agency Lite
  */
 
 get_header();
 ?>
-<div class = "agensy-container clearfix">
+<div class = "agency-lite-container clearfix">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -18,7 +18,7 @@ get_header();
 
 			get_template_part( 'template-parts/content', 'post');
 
-			//the_post_navigation();
+			the_post_navigation();
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :

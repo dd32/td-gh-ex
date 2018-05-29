@@ -1,13 +1,13 @@
 <?php
 /**
- * Agensy functions and definitions
+ * Agency Lite functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Agensy
+ * @package Agency Lite
  */
 
-if ( ! function_exists( 'agensy_setup' ) ) :
+if ( ! function_exists( 'agency_lite_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'agensy_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function agensy_setup() {
+	function agency_lite_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Agensy, use a find and replace
-		 * to change 'agensy' to the name of your theme in all the template files.
+		 * If you're building a theme based on Agency Lite, use a find and replace
+		 * to change 'agency-lite' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'agensy', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'agency-lite', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -49,10 +49,18 @@ if ( ! function_exists( 'agensy_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
+		/**
+		*define image size
+		**/
+		add_image_size('agency-lite-slider-image', 1920, 928, true);
+		add_image_size('agency-lite-team-image', 370, 490, true);
+		add_image_size('agency-lite-blog-image', 571, 353, true);
+		add_image_size('agency-lite-about-image', 440, 440, true);
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'agensy-primary-menu' => esc_html__( 'Primary', 'agensy' ),
-			'agensy-footer-menu' => esc_html__('Footer Menu', 'agensy'),
+			'agency-lite-primary-menu' => esc_html__( 'Primary', 'agency-lite' ),
+			'agency-lite-footer-menu' => esc_html__('Footer Menu', 'agency-lite'),
 		) );
 
 		/*
@@ -68,7 +76,7 @@ if ( ! function_exists( 'agensy_setup' ) ) :
 		) );
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'agensy_custom_background_args', array(
+		add_theme_support( 'custom-background', apply_filters( 'agency_lite_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
@@ -89,7 +97,7 @@ if ( ! function_exists( 'agensy_setup' ) ) :
 		) );
 	}
 endif;
-add_action( 'after_setup_theme', 'agensy_setup' );
+add_action( 'after_setup_theme', 'agency_lite_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -98,21 +106,21 @@ add_action( 'after_setup_theme', 'agensy_setup' );
  *
  * @global int $content_width
  */
-function agensy_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'agensy_content_width', 640 );
+function agency_lite_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'agency_lite_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'agensy_content_width', 0 );
+add_action( 'after_setup_theme', 'agency_lite_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function agensy_widgets_init() {
+function agency_lite_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'agensy' ),
-		'id'            => 'agensy-sidebar',
-		'description'   => esc_html__( 'Add widgets here.', 'agensy' ),
+		'name'          => esc_html__( 'Sidebar', 'agency-lite' ),
+		'id'            => 'agency-lite-sidebar',
+		'description'   => esc_html__( 'Add widgets here.', 'agency-lite' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -120,9 +128,9 @@ function agensy_widgets_init() {
 	) );
 
 	register_sidebar(array(
-		'name'			=>esc_html__('Home Team Area','agensy'),
+		'name'			=>esc_html__('Home Team Area','agency-lite'),
 		'id'            => 'home-team-area',
-		'description'   => esc_html__( 'Add Team Widgets here.', 'agensy' ),
+		'description'   => esc_html__( 'Add Team Widgets here.', 'agency-lite' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -130,9 +138,9 @@ function agensy_widgets_init() {
 	));
 
 	register_sidebar(array(
-		'name'			=>esc_html__('Footer Widget Area One','agensy'),
+		'name'			=>esc_html__('Footer Widget Area One','agency-lite'),
 		'id'            => 'footer-widget-area-one',
-		'description'   => esc_html__( 'Add Footer Widgets One here.', 'agensy' ),
+		'description'   => esc_html__( 'Add Footer Widgets One here.', 'agency-lite' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -140,9 +148,9 @@ function agensy_widgets_init() {
 	));
 
 	register_sidebar(array(
-		'name'			=>esc_html__('Footer Widget Area Two','agensy'),
+		'name'			=>esc_html__('Footer Widget Area Two','agency-lite'),
 		'id'            => 'footer-widget-area-two',
-		'description'   => esc_html__( 'Add Footer Widgets Two here.', 'agensy' ),
+		'description'   => esc_html__( 'Add Footer Widgets Two here.', 'agency-lite' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -150,9 +158,9 @@ function agensy_widgets_init() {
 	));
 
 	register_sidebar(array(
-		'name'			=>esc_html__('Footer Widget Area Three','agensy'),
+		'name'			=>esc_html__('Footer Widget Area Three','agency-lite'),
 		'id'            => 'footer-widget-area-three',
-		'description'   => esc_html__( 'Add Footer Widgets Three here.', 'agensy' ),
+		'description'   => esc_html__( 'Add Footer Widgets Three here.', 'agency-lite' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -160,58 +168,51 @@ function agensy_widgets_init() {
 	));
 
 	register_sidebar(array(
-		'name'			=>esc_html__('Footer Widget Area Four','agensy'),
+		'name'			=>esc_html__('Footer Widget Area Four','agency-lite'),
 		'id'            => 'footer-widget-area-four',
-		'description'   => esc_html__( 'Add Footer Widgets Four here.', 'agensy' ),
+		'description'   => esc_html__( 'Add Footer Widgets Four here.', 'agency-lite' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	));
 }
-add_action( 'widgets_init', 'agensy_widgets_init' );
-
-/**
-*define image size
-**/
-add_image_size('agensy-slider-image', 1920, 928, true);
-add_image_size('agensy-team-image', 370, 490, true);
-add_image_size('agensy-blog-image', 571, 353, true);
-add_image_size('agensy-about-image', 440, 440, true);
+add_action( 'widgets_init', 'agency_lite_widgets_init' );
 
 
 /**
  * Enqueue scripts and styles.
  */
-function agensy_scripts() {
-
+function agency_lite_scripts() {
 
 	$query_args = array('family' => 'Playfair+Display:400,300,700|Hind:400,500,600,700');
 
-  	wp_enqueue_style('agensy-google-fonts', add_query_arg($query_args, "//fonts.googleapis.com/css"));
-	wp_enqueue_style( 'agensy-style', get_stylesheet_uri());
-	wp_enqueue_style( 'agensy-font-awesome', get_template_directory_uri() . '/assets/externals/font-awesome/css/font-awesome.min.css' );
-	wp_enqueue_style( 'agensy-owl-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.min.css' );
+  	wp_enqueue_style('agency-lite-google-fonts', add_query_arg($query_args, "//fonts.googleapis.com/css"));
+	wp_enqueue_style( 'agency-lite-style', get_stylesheet_uri());
+	wp_enqueue_style( 'agency-lite-font-awesome', get_template_directory_uri() . '/assets/externals/font-awesome/css/font-awesome.min.css' );
+	wp_enqueue_style( 'agency-lite-owl-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.min.css' );
 
 
-	wp_enqueue_script( 'agensy-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '1.0', true );
-	wp_enqueue_script( 'agensy-owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), '1.0', true );
-	wp_enqueue_script( 'agensy-custom', get_template_directory_uri() . '/assets/js/custom.js', array(), '1.0', true );
+	wp_enqueue_script( 'agency-lite-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '1.0', true );
+	wp_enqueue_script( 'agency-lite-owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), '1.0', true );
+	wp_enqueue_script( 'agency-lite-custom', get_template_directory_uri() . '/assets/js/custom.js', array(), '1.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
 }
-add_action( 'wp_enqueue_scripts', 'agensy_scripts' );
+add_action( 'wp_enqueue_scripts', 'agency_lite_scripts' );
+
 
 /**
 *enqueue scripts and styles in backend
 */
-function agensy_admin_scripts() {
-	wp_enqueue_style( 'agensy-customizer-style', get_template_directory_uri() . '/inc/customizer/assets/customizer-style.css' );
-	wp_enqueue_script( 'agensy-customizer-scripts', get_template_directory_uri() . '/inc/customizer/assets/customizer-scripts.js', array(), '1.0', true );
+function agency_lite_admin_scripts() {
+	wp_enqueue_style( 'agency-lite-customizer-style', get_template_directory_uri() . '/inc/customizer/assets/customizer-style.css' );
+	wp_enqueue_script( 'agency-lite-customizer-scripts', get_template_directory_uri() . '/inc/customizer/assets/customizer-scripts.js', array(), '1.0', true );
 }
-add_action( 'admin_enqueue_scripts', 'agensy_admin_scripts' );
+add_action( 'admin_enqueue_scripts', 'agency_lite_admin_scripts' );
 
 /**
  * Calling the init file
@@ -219,8 +220,8 @@ add_action( 'admin_enqueue_scripts', 'agensy_admin_scripts' );
 require get_template_directory() . '/inc/init.php';
 
 /*removing breadcrumb header*/
-add_action( 'wp_head', 'agensy_remove_wc_breadcrumbs' );
-function agensy_remove_wc_breadcrumbs() {
+add_action( 'wp_head', 'agency_lite_remove_wc_breadcrumbs' );
+function agency_lite_remove_wc_breadcrumbs() {
     remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 }
 
@@ -230,7 +231,7 @@ function agensy_remove_wc_breadcrumbs() {
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
-if ( ! function_exists( 'agensy_woocommerce_wrapper_before' ) ) {
+if ( ! function_exists( 'agency_lite_woocommerce_wrapper_before' ) ) {
 	/**
 	 * Before Content.
 	 *
@@ -238,17 +239,17 @@ if ( ! function_exists( 'agensy_woocommerce_wrapper_before' ) ) {
 	 *
 	 * @return void
 	 */
-	function agensy_woocommerce_wrapper_before() {
+	function agency_lite_woocommerce_wrapper_before() {
 		?>
-        <div class="agensy-container">
+        <div class="agency-lite-container">
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 		<?php
 	}
 }
-add_action( 'woocommerce_before_main_content', 'agensy_woocommerce_wrapper_before' );
+add_action( 'woocommerce_before_main_content', 'agency_lite_woocommerce_wrapper_before' );
 
-if ( ! function_exists( 'agensy_woocommerce_wrapper_after' ) ) {
+if ( ! function_exists( 'agency_lite_woocommerce_wrapper_after' ) ) {
 	/**
 	 * After Content.
 	 *
@@ -256,7 +257,7 @@ if ( ! function_exists( 'agensy_woocommerce_wrapper_after' ) ) {
 	 *
 	 * @return void
 	 */
-	function agensy_woocommerce_wrapper_after() {
+	function agency_lite_woocommerce_wrapper_after() {
 		?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
@@ -265,21 +266,21 @@ if ( ! function_exists( 'agensy_woocommerce_wrapper_after' ) ) {
 <?php
 	}
 }
-add_action( 'woocommerce_after_main_content', 'agensy_woocommerce_wrapper_after' );
+add_action( 'woocommerce_after_main_content', 'agency_lite_woocommerce_wrapper_after' );
 
 /** remove woocommerce breadcrumb **/
 remove_action('woocommerce_before_main_content','woocommerce_breadcrumb',20);
 
 
 
-function agensy_woocommerce_loop_columns() {
+function agency_lite_woocommerce_loop_columns() {
 	return 3;
 }
-add_filter( 'loop_shop_columns', 'agensy_woocommerce_loop_columns' );
+add_filter( 'loop_shop_columns', 'agency_lite_woocommerce_loop_columns' );
 
 /** Adding Editor Styles **/
-function agensy_add_editor_styles() {
+function agency_lite_add_editor_styles() {
     add_editor_style( get_template_directory_uri().'assets/css/custom-editor-style.css' );
 }
 
-add_action( 'admin_init', 'agensy_add_editor_styles' );
+add_action( 'admin_init', 'agency_lite_add_editor_styles' );

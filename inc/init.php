@@ -4,7 +4,6 @@
 *
 */
 
-
 /**
  * Implement the Custom Header feature.
  */
@@ -19,7 +18,12 @@ require get_template_directory() . '/inc/etc/template-tags.php';
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
-require get_template_directory() . '/inc/agensy-functions.php';
+require get_template_directory() . '/inc/agency-lite-functions.php';
+
+/**
+ * BreadCrumb
+ */
+require get_template_directory() . '/inc/etc/breadcrumbs.php';
 
 /**
  * Header hoooks
@@ -60,8 +64,8 @@ require get_template_directory() . '/inc/home-section/section-service.php';
 /**
  * Implement the team widget
  **/
-require get_template_directory() . '/inc/widgets/agensy-widget.php';
-require get_template_directory() . '/inc/widgets/agensy-team.php';
+require get_template_directory() . '/inc/widgets/agency-lite-widget.php';
+require get_template_directory() . '/inc/widgets/agency-lite-team.php';
 require get_template_directory() . '/inc/home-section/section-team.php';
 
 /**
@@ -80,18 +84,14 @@ require get_template_directory() . '/inc/home-section/section-blog.php';
 require get_template_directory() . '/inc/home-section/section-logo.php';
 
 /**
- * Implement the Agensy Recent Post Widgets
+ * Implement the Agency Lite Recent Post Widgets
  */
-require get_template_directory() . '/inc/widgets/agensy-recent-posts.php';
+require get_template_directory() . '/inc/widgets/agency-lite-recent-posts.php';
 
 /**
- * Agensy Map Widgets
+ * Agency Lite Info Widgets
  */
-require get_template_directory() . '/inc/widgets/agensy-map.php';
-/**
- * Agensy Info Widgets
- */
-require get_template_directory() . '/inc/widgets/agensy-info.php';
+require get_template_directory() . '/inc/widgets/agency-lite-info.php';
 /**
  * Load Jetpack compatibility file.
  */

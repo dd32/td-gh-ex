@@ -2,14 +2,14 @@
 /**
  * Client Logo  Section
  */
-function agensy_logo_page(){
-    $agensy_client_logo_enable = get_theme_mod('agensy_client_logo_enable','on');
-    if($agensy_client_logo_enable == 'on'){
+function agency_lite_logo_page(){
+    $agency_lite_client_logo_enable = get_theme_mod('agency_lite_client_logo_enable','on');
+    if($agency_lite_client_logo_enable == 'on'){
     ?>
-    <section class = "agensy-section-logo agensy-home-section" id = "agensy-scroll-logo">
-        <div class = "agensy-container clearfix">
-            <div class="agensy-logo-container owl-carousel">
-                <?php do_action('agensy_client_logo');  ?>
+    <section class = "agency-lite-section-logo agency-lite-home-section" id = "agency-lite-scroll-logo">
+        <div class = "agency-lite-container clearfix">
+            <div class="agency-lite-logo-container owl-carousel">
+                <?php do_action('agency_lite_client_logo');  ?>
             </div>
         </div>
     </section>
@@ -17,22 +17,22 @@ function agensy_logo_page(){
     }
 }
 
-add_action('agensy_logo_page_roles','agensy_logo_page');
+add_action('agency_lite_logo_page','agency_lite_logo_page');
 
 
 /*
 * Client logo function
 *
 */
-if( ! function_exists('agensy_client_logo') ){
-    function agensy_client_logo(){
-        $agensy_client_logo_rep = get_theme_mod('agensy_client_logo_rep');
-        $agensy_logos = json_decode( $agensy_client_logo_rep );
+if( ! function_exists('agency_lite_client_logo') ){
+    function agency_lite_client_logo(){
+        $agency_lite_client_logo_rep = get_theme_mod('agency_lite_client_logo_rep');
+        $agency_lite_logos = json_decode( $agency_lite_client_logo_rep );
         
-        if($agensy_logos){
-            foreach( $agensy_logos as $agensy_logo ){ 
-            $logo_url = $agensy_logo->cl_logo;
-            $cl_link  = $agensy_logo->cl_url;
+        if($agency_lite_logos){
+            foreach( $agency_lite_logos as $agency_lite_logo ){ 
+            $logo_url = $agency_lite_logo->cl_logo;
+            $cl_link  = $agency_lite_logo->cl_url;
 
             $link_open = '';
             $link_close = '';
@@ -40,6 +40,7 @@ if( ! function_exists('agensy_client_logo') ){
               $link_open = '<a href="'.esc_url($cl_link).'" target="_blank">';
               $link_close = '</a>';
             }
+
             if( $logo_url ){ ?>
                 <div class="client-contents wow fadeInUp">
                    <?php echo $link_open; ?>
@@ -48,10 +49,10 @@ if( ! function_exists('agensy_client_logo') ){
                     </div>
                     <?php echo $link_close; ?>
                 </div>
-    <?php
+            <?php
            }
            }
     }
          }
 }
-add_action( 'agensy_client_logo', 'agensy_client_logo' );
+add_action( 'agency_lite_client_logo', 'agency_lite_client_logo' );

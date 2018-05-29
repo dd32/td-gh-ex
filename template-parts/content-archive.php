@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package agensy_cat_lists 
+ * @package Agency Lite_cat_lists 
  */
 ?>
 
@@ -12,10 +12,10 @@
 	<header class="entry-header">
 		<?php
 
-        $agensy_post_image = wp_get_attachment_image_src(get_post_thumbnail_id(),'agensy');
-        if($agensy_post_image){
+        $agency_lite_post_image = wp_get_attachment_image_src(get_post_thumbnail_id(),'agency-lite');
+        if($agency_lite_post_image){
             ?>
-            <img src="<?php echo esc_url($agensy_post_image[0]) ?>" alt="<?php the_title_attribute()?>" title="<?php the_title_attribute()?>" />
+            <img src="<?php echo esc_url($agency_lite_post_image[0]) ?>" alt="<?php the_title_attribute()?>" title="<?php the_title_attribute()?>" />
             <?php
         }
         ?>
@@ -41,7 +41,7 @@
         	<?php echo apply_filters('the_content' , wp_kses_post(wp_trim_words(get_the_content(),70,'...')));?>
         </div>
         <a class="read-more" href="<?php the_permalink() ?>">
-        	<?php _e('Read More','agensy'); ?>
+        	<?php esc_html_e('Read More','agency-lite'); ?>
         </a>
 		</div>
 	</div><!-- .entry-content -->

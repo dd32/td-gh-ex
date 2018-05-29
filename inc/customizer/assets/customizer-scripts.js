@@ -15,52 +15,52 @@ jQuery(document).ready(function ($) {
   /** 
   *scroll home page sections on clicking related customizer sections
   */
-   $('body').on('click', '#sub-accordion-panel-agensy_home_page_setting .control-subsection .accordion-section-title', function(event) {
+   $('body').on('click', '#sub-accordion-panel-agency_lite_home_page_setting .control-subsection .accordion-section-title', function(event) {
        var section_id = $(this).parent('.control-subsection').attr('id');
        scrollToSection( section_id );
    });
 
     function scrollToSection( section_id ){
-       var preview_section_id = "agensy-about-us-section";
+       var preview_section_id = "agency-lite-about-us-section";
 
        var $contents = jQuery('#customize-preview iframe').contents();
 
        switch ( section_id ) {
            
-           case 'accordion-section-agensy_slider_section':
+           case 'accordion-section-agency_lite_slider_section':
            preview_section_id = "header-slider-wrap";
            break;
            
-           case 'accordion-section-agensy_home_page_section':
-           preview_section_id = "agensy-scroll-about";
+           case 'accordion-section-agency_lite_home_page_section':
+           preview_section_id = "agency-lite-scroll-about";
            break;
 
-           case 'accordion-section-agensy_faq_section':
-           preview_section_id = "agensy-scroll-faq";
+           case 'accordion-section-agency_lite_faq_section':
+           preview_section_id = "agency-lite-scroll-faq";
            break;
 
-           case 'accordion-section-agensy_features_section':
-           preview_section_id = "agensy-scroll-features";
+           case 'accordion-section-agency_lite_features_section':
+           preview_section_id = "agency-lite-scroll-features";
            break;
 
-           case 'accordion-section-agensy_service_slider_section':
-           preview_section_id = "agensy-scroll-service";
+           case 'accordion-section-agency_lite_service_slider_section':
+           preview_section_id = "agency-lite-scroll-service";
            break;
 
-           case 'accordion-section-agensy_team_page_section':
-           preview_section_id = "agensy-scroll-team";
+           case 'accordion-section-agency_lite_team_page_section':
+           preview_section_id = "agency-lite-scroll-team";
            break;
 
-           case 'accordion-section-agensy_counter_section':
-           preview_section_id = "agensy-scroll-counter";
+           case 'accordion-section-agency_lite_counter_section':
+           preview_section_id = "agency-lite-scroll-counter";
            break;
 
-           case 'accordion-section-agensy_blog_page_section':
-           preview_section_id = "agensy-scroll-blog";
+           case 'accordion-section-agency_lite_blog_page_section':
+           preview_section_id = "agency-lite-scroll-blog";
            break;
 
-           case 'accordion-section-agensy_logo_section':
-           preview_section_id = "agensy-scroll-logo";
+           case 'accordion-section-agency_lite_logo_section':
+           preview_section_id = "agency-lite-scroll-logo";
            break;
        }
 

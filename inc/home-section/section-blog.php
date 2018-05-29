@@ -1,55 +1,55 @@
 <?php 
 
-function agensy_blog_page(){
+function agency_lite_blog_page(){
 
-    $agensy_blog_page_enable = get_theme_mod('agensy_blog_page_enable','on');
-    if($agensy_blog_page_enable == 'on'){
-        $agensy_blog_title = get_theme_mod('agensy_blog_title');
-        $agensy_blog_description = get_theme_mod('agensy_blog_description');
+    $agency_lite_blog_page_enable = get_theme_mod('agency_lite_blog_page_enable','on');
+    if($agency_lite_blog_page_enable == 'on'){
+        $agency_lite_blog_title = get_theme_mod('agency_lite_blog_title');
+        $agency_lite_blog_description = get_theme_mod('agency_lite_blog_description');
         ?>
-        <section class = "agensy-blog-main agensy-home-section" id = "agensy-scroll-blog">
+        <section class = "agency-lite-blog-main agency-lite-home-section" id = "agency-lite-scroll-blog">
         <?php 
-        if($agensy_blog_title || $agensy_blog_description){
+        if($agency_lite_blog_title || $agency_lite_blog_description){
             ?>
-            <div class = "agensy-container">
-                <div class = "agensy-wrap-content">
-                    <?php if($agensy_blog_title || $agensy_blog_description){?>
+            <div class = "agency-lite-container">
+                <div class = "agency-lite-wrap-content">
+                    <?php if($agency_lite_blog_title || $agency_lite_blog_description){?>
                     <div class="section-title-sub-wrap wow fadeInUp">
-                        <?php if($agensy_blog_title){ ?>
+                        <?php if($agency_lite_blog_title){ ?>
                             <div class="section-title">
-                                <h2><?php echo esc_html($agensy_blog_title); ?></h2>
+                                <h2><?php echo esc_html($agency_lite_blog_title); ?></h2>
                             </div>
                         <?php } ?>
-                        <?php if($agensy_blog_description) { ?>
+                        <?php if($agency_lite_blog_description) { ?>
                             <div class="section-description">
-                                <?php echo esc_html($agensy_blog_description); ?>
+                                <?php echo esc_html($agency_lite_blog_description); ?>
                             </div>
                         <?php } ?>
                     </div>
                     <?php } ?>
                     <?php
-                            $agensy_blog_args = array(
+                            $agency_lite_blog_args = array(
                                 'post_type' => 'post',
                                 'order'     => 'DESC',
                                 'posts_per_page' => 2,
                                 'post_status' => 'publish',
                             );
-                            $agensy_blog_query = new WP_Query($agensy_blog_args);
-                            if($agensy_blog_query->have_posts()):
+                            $agency_lite_blog_query = new WP_Query($agency_lite_blog_args);
+                            if($agency_lite_blog_query->have_posts()):
                   
                             ?>
                             <div class="blogs-contents clearfix">
                                 <div id="blog-content-wrap" class="blog-content-wrap-main">
-                                <?php while($agensy_blog_query->have_posts()):
-                                    $agensy_blog_query->the_post();
-                                    $agensy_blog_image_src = wp_get_attachment_image_src(get_post_thumbnail_id(),'agensy-blog-image', true);
-                                    $agensy_blog_image_url = $agensy_blog_image_src[0]; 
-                                    if($agensy_blog_image_url || get_the_title() || get_the_content()){?>
+                                <?php while($agency_lite_blog_query->have_posts()):
+                                    $agency_lite_blog_query->the_post();
+                                    $agency_lite_blog_image_src = wp_get_attachment_image_src(get_post_thumbnail_id(),'agency-lite-blog-image', true);
+                                    $agency_lite_blog_image_url = $agency_lite_blog_image_src[0]; 
+                                    if($agency_lite_blog_image_url || get_the_title() || get_the_content()){?>
                                         <div class="blogs-loop wow fadeInUp">
-                                            <?php if($agensy_blog_image_url){ ?>
+                                            <?php if($agency_lite_blog_image_url){ ?>
                                                 <div class="image-wrap-blog">
                                                     <a href="<?php the_permalink() ?>">
-                                                        <img src="<?php echo esc_url($agensy_blog_image_url); ?>" title="<?php the_title_attribute() ?>" alt="<?php the_title_attribute() ?>" />
+                                                        <img src="<?php echo esc_url($agency_lite_blog_image_url); ?>" title="<?php the_title_attribute() ?>" alt="<?php the_title_attribute() ?>" />
                                                     </a>
                                                 </div>
                                             <?php } ?>
@@ -95,7 +95,7 @@ function agensy_blog_page(){
         }
             $blog_id = get_option('page_for_posts');
             if( $blog_id ):
-                $view_all       = get_theme_mod('agensy_blog_view','Go to Blog');
+                $view_all       = get_theme_mod('agency_lite_blog_view','Go to Blog');
                 $archive_link = get_permalink(get_option('page_for_posts')); ?>
 
                 <div class="blog-bttn">
@@ -109,4 +109,4 @@ function agensy_blog_page(){
     <?php 
     }
 }
-add_action('agensy_blog_page_role','agensy_blog_page');
+add_action('agency_lite_blog_page','agency_lite_blog_page');

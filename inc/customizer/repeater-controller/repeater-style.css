@@ -8,19 +8,19 @@
   border-radius: 2px;
   color: #fff;
 }
-.agensy-repeater-field-control{
+.agency-lite-repeater-field-control{
   background: #FFF;
   margin-bottom: 12px;
   display: block;
 }
-.agensy-repeater-footer{
+.agency-lite-repeater-footer{
   margin-top: 15px;
   text-align: right;
 }
-.agensy-repeater-field-control:first-child .agensy-repeater-footer{
+.agency-lite-repeater-field-control:first-child .agency-lite-repeater-footer{
   display: none;
 }
-.agensy-repeater-field-title{
+.agency-lite-repeater-field-title{
   padding: 13px 15px;
   line-height: 1;
   overflow: hidden;
@@ -33,7 +33,7 @@
   position: relative;
   border-bottom: 0;
 }
-.agensy-repeater-field-title:after {
+.agency-lite-repeater-field-title:after {
   content: "\f142";
   font: 400 20px/1 dashicons;
   position: absolute;
@@ -46,11 +46,11 @@
   border-radius: 50%;
   cursor: pointer;
 }
-.agensy-repeater-field-control.expanded .agensy-repeater-field-title:after{
+.agency-lite-repeater-field-control.expanded .agency-lite-repeater-field-title:after{
   content: "\f140";
 }
 
-.agensy-repeater-fields{
+.agency-lite-repeater-fields{
   padding: 0 10px 10px;
   border-top: none;
   line-height: 16px;
@@ -58,16 +58,16 @@
   box-shadow: 0 1px 1px rgba(0,0,0,.04);
   display: none;
 }
-.agensy-repeater-fields .customize-control-title{
+.agency-lite-repeater-fields .customize-control-title{
   margin-top: 10px;
 }
-.agensy-repeater-field-control.expanded .agensy-repeater-fields{
+.agency-lite-repeater-field-control.expanded .agency-lite-repeater-fields{
   display: block;
 }
-.agensy-add-control-field {
+.agency-lite-add-control-field {
   float: right;
 }
-.agensy-add-control-field:before {
+.agency-lite-add-control-field:before {
     content: "\f132";
     display: inline-block;
     position: relative;
@@ -76,31 +76,31 @@
     font: 400 18px/1 dashicons;
     vertical-align: middle;
 }
-.agensy-fields textarea{
+.agency-lite-fields textarea{
   width: 100%;
   min-height: 100px;
 }
-.agensy-fields select{
+.agency-lite-fields select{
   width: 100%;
   min-width: none;
 }
-.agensy-type-checkbox{
+.agency-lite-type-checkbox{
   margin-top: 10px;
 }
-.agensy-type-checkbox label{
+.agency-lite-type-checkbox label{
     line-height: 20px;
     display: block;
     margin-left: 24px;
     padding-top: 6px;
 }
-.agensy-type-checkbox input[type=checkbox]{
+.agency-lite-type-checkbox input[type=checkbox]{
     margin-right: 8px;
     margin-left: -24px;
 }
-.agensy-type-selector .selector-labels{
+.agency-lite-type-selector .selector-labels{
   margin: 0 -5px;
 }
-.agensy-type-selector .selector-labels label{
+.agency-lite-type-selector .selector-labels label{
   display: inline-block;
   padding: 10px 5px 0;
   position: relative;
@@ -109,10 +109,10 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
-.agensy-type-selector .selector-labels label img{
+.agency-lite-type-selector .selector-labels label img{
   vertical-align: middle;
 }
-.agensy-type-selector .selector-labels label.selector-selected:after{
+.agency-lite-type-selector .selector-labels label.selector-selected:after{
   content: "";
   height: 35px;
   width: 35px;
@@ -121,7 +121,7 @@
   position: absolute;
   background: url(assets/images/selected.png) no-repeat right top;
 }
-.agensy-type-radio .radio-labels label{
+.agency-lite-type-radio .radio-labels label{
   display: block;
   padding: 5px 0;
 }
@@ -196,7 +196,7 @@
 }
 /** =============================================== Icon Picker ================================ **/
 
-.agensy-icon-list {
+.agency-lite-icon-list {
     height: 200px;
     display: block;
     overflow-y: scroll;
@@ -205,7 +205,7 @@
     width: 100%;
 }
 
-ul.agensy-icon-list li {
+ul.agency-lite-icon-list li {
     display: block;
     float: left;
     padding: 14px;
@@ -216,13 +216,13 @@ ul.agensy-icon-list li {
     border-radius: 50%;
 
 }
-ul.agensy-icon-list li:hover {
+ul.agency-lite-icon-list li:hover {
     cursor: pointer;
 }
-.agensy-selected-icon span {
+.agency-lite-selected-icon span {
     margin-left: 10px;
 }
-.agensy-selected-icon {
+.agency-lite-selected-icon {
     background: #0e90ad;
     padding: 10px;
     color: #fff;

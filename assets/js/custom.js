@@ -8,14 +8,14 @@ $('.carousel-main-slider').owlCarousel({
    
 });
 
-$('.agensy-service-slider').owlCarousel({
+$('.agency-lite-service-slider').owlCarousel({
     loop:true,
     nav:false,
     items:1
    
 });
 
-$('.agensy-logo-container').owlCarousel({
+$('.agency-lite-logo-container').owlCarousel({
     loop:true,
     nav:false,
     margin:50,
@@ -67,15 +67,15 @@ $('.agensy-logo-container').owlCarousel({
 *counter section
 **/
 
-var clasCheck = $("body").find(".agensy-counter-scroll").length;
+var clasCheck = $("body").find(".agency-lite-counter-scroll").length;
 
 //console.log(clasCheck);
 if( clasCheck >0){
     var a = 0;
     $(window).scroll(function() {
-      var oTop = $('.agensy-counter-scroll').offset().top - window.innerHeight;
+      var oTop = $('.agency-lite-counter-scroll').offset().top - window.innerHeight;
       if (a == 0 && $(window).scrollTop() > oTop) {
-        $('.agensy-counter-scroll-value').each(function() {
+        $('.agency-lite-counter-scroll-value').each(function() {
           var $this = $(this),
             countTo = $this.attr('data-count');
           $({
@@ -103,18 +103,18 @@ if( clasCheck >0){
 
     });
 }
-/*agensy-service-page-wrap height equalizing*/
-// var height = $('.agensy_featured-content').outerHeight();
-// $('.agensy-featured-image').outerHeight(height);
-/*agensy-service-page-wrap height equalizing end*/
+/*agency-lite-service-page-wrap height equalizing*/
+// var height = $('.agency_lite_featured-content').outerHeight();
+// $('.agency-lite-featured-image').outerHeight(height);
+/*agency-lite-service-page-wrap height equalizing end*/
 
 //add class while onclick
-    $('.agensy-team-logo-icon').on('mouseenter', function () {
-     $(this).siblings('.team-desc-social-wrap').addClass("agensy-active");
-     $(this).addClass("agensy-actived");
+    $('.agency-lite-team-logo-icon').on('mouseenter', function () {
+     $(this).siblings('.team-desc-social-wrap').addClass("agency-lite-active");
+     $(this).addClass("agency-lite-actived");
     });
     $('.member-image').on('mouseleave', function () {
-     $(this).find('.agensy-active').removeClass("agensy-active");
-     $(this).find('.agensy-actived').removeClass("agensy-actived");
+     $(this).find('.agency-lite-active').removeClass("agency-lite-active");
+     $(this).find('.agency-lite-actived').removeClass("agency-lite-actived");
     });
 });
