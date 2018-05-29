@@ -2,7 +2,7 @@
 /*
 	Template Name: Front Page
 	SunRain Theme's Front Page to Display the Home Page if Selected
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2018, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since SunRain 1.0
 */
@@ -43,21 +43,21 @@ echo '
 </div> <!-- slide-container -->
 
 <div id="heading1container"><div class="heading1vcenter">
-<h1 id="heading1"><?php echo esc_textarea(sunrain_get_option('heading_text1', 'WordPress is web software you can use to create websites!')); ?></h1>
-<p class="heading-desc1"><?php echo esc_textarea(sunrain_get_option('heading_des1', 'It is Amazing! Over 60 million people have chosen WordPress to power the place on the web.')); ?></p>
+<h1 id="heading1"><?php echo wp_kses_post(sunrain_get_option('heading_text1', 'WordPress is web <em>software you can use to create websites!</em>')); ?></h1>
+<p class="heading-desc1"><?php echo wp_kses_post(sunrain_get_option('heading_des1', 'It is Amazing! Over 60 million people have chosen WordPress to power the place on the web.')); ?></p>
 <?php if ( esc_url(sunrain_get_option( 'heading_btn1_link', '#' )) != '' ): 
 echo '<div class="vcenter"><a target="-blank" href="'.esc_url(sunrain_get_option( 'heading_btn1_link', '#' )).'"><button>'.esc_html(sunrain_get_option( 'heading_btn1_text', 'Learn More' )).'</button></a></div>';
 endif; ?>
 </div></div>
 
-<h1 id="heading2"><?php echo esc_textarea(sunrain_get_option('heading_text2', 'WordPress is web software you can use to create websites! ')); ?></h1>
-<p class="heading-desc2"><?php echo esc_textarea(sunrain_get_option('heading_des2', 'The core software is built by hundreds of community volunteers, and when you are ready for more there are thousands of plugins and themes available to transform your site into almost anything you can imagine. Over 60 million people have chosen WordPress to power the place on the web they call "home" - we would love you to join the family.')); ?></p>
+<h1 id="heading2"><?php echo wp_kses_post(sunrain_get_option('heading_text2', 'WordPress is web <em>software</em> you can use to create websites! ')); ?></h1>
+<p class="heading-desc2"><?php echo wp_kses_post(sunrain_get_option('heading_des2', 'The core software is built by hundreds of community volunteers, and when you are ready for more there are thousands of plugins and themes available to transform your site into almost anything you can imagine. Over 60 million people have chosen WordPress to power the place on the web they call "home" - we would love you to join the family.')); ?></p>
 
 <?php get_template_part( 'featured-box' ); ?> 
 
 <div id="heading3container">
-<h1 id="heading3"><?php echo esc_html(sunrain_get_option('heading_text3', 'WordPress is web software you can use to create websites! ')); ?></h1>
-<p class="heading-desc3"><?php echo esc_html(sunrain_get_option('heading_des3', 'It is Amazing! Over 60 million people have chosen WordPress to power the place on the web.')); ?></p>
+<h1 id="heading3"><?php echo wp_kses_post(sunrain_get_option('heading_text3', 'WordPress is web <b>software</b> you can use to create websites!')); ?></h1>
+<p class="heading-desc3"><?php echo wp_kses_post(sunrain_get_option('heading_des3', 'It is Amazing! Over 60 million people have chosen WordPress to power the place on the web.')); ?></p>
 </div>
 
 <div id="bqpcontainer"><div id="bqpcontainer-sub">
@@ -69,7 +69,7 @@ endif; ?>
 $sunrain_post_slide_query = new WP_Query($sunrain_post_slide_args);
 if (have_posts()) : while ( $sunrain_post_slide_query->have_posts()) :  $sunrain_post_slide_query->the_post(); ?>
 <div class="post-slide-box">
-<?php sunrain_post_date(); ?><div class="post-slide-title"><a href="<?php the_permalink(); ?>" target="_blank" ><h2><?php the_title(); ?></h2></a></div><div class="post-slide-content"><?php $blExcerptLength=30; the_excerpt(); ?></div>
+<div class="datetitle"><?php sunrain_post_date(); ?><div class="post-slide-title"><a href="<?php the_permalink(); ?>" target="_blank" ><h2><?php the_title(); ?></h2></a></div></div><div class="post-slide-content"><?php global $blExcerptLength; $blExcerptLength=30; the_excerpt(); ?></div>
 </div>
 <?php endwhile; endif; wp_reset_query(); ?>
 

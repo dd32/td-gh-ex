@@ -1,6 +1,6 @@
 <?php
 /* 	SunRain Theme's Functions
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2018, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since SunRain 1.0
 */
@@ -34,7 +34,7 @@
 
 	
 // 	WordPress 3.4 Custom Background Support	
-	$sunrain_custom_background = array( 'default-color' => 'ffffff', 'default-image'          => get_template_directory_uri() . '/images/back1.png', );
+	$sunrain_custom_background = array( 'default-color' => 'ffffff', 'default-image'          => '', );
 	add_theme_support( 'custom-background', $sunrain_custom_background );
 	
 // 	WordPress 3.4 Custom Header Support				
@@ -64,6 +64,7 @@
 	}
 	
 	wp_enqueue_script( 'sunrain-menu-style', get_template_directory_uri(). '/js/menu.js', array( 'jquery' ) );
+	if ( sunrain_get_option('header-fixed', '1') != '0' ): wp_enqueue_script( 'sunrain-fixed-header', get_template_directory_uri(). '/js/fixedheader.js', array( 'jquery' )); endif;
 	
 	wp_enqueue_script( 'sunrain-html5', get_template_directory_uri().'/js/html5.js');
     wp_script_add_data( 'sunrain-html5', 'conditional', 'lt IE 9' );
@@ -111,18 +112,18 @@
 	
 	function sunrain_excerpt_more($more) {
     global $post;
-	return '<a href="'. get_permalink($post->ID) . '" class="read-more">'.__('Read More', 'sunrain').'<span> ></span></a>';
+	return '<a href="'. get_permalink($post->ID) . '" class="read-more">'.__('Read More', 'sunrain').'</a>';
 	}
 	add_filter('excerpt_more', 'sunrain_excerpt_more');
 	
 	// Content Type Showing
 	function sunrain_content() {
-	if (( sunrain_get_option('contype', '1') != '2' ) || is_page() || is_single() ) : the_content('<span class="read-more">'.__('Read More', 'sunrain').'<span> ></span></span>');
+	if (( sunrain_get_option('contype', '1') != '2' ) || is_page() || is_single() ) : the_content('<span class="read-more">'.__('Read More', 'sunrain').'</span>');
 	else: the_excerpt();
 	endif;	
 	}
 	
-	function sunrain_creditline() { echo '<span class="credit">| SunRain Theme by: <a href="'. esc_url('http://d5creation.com') .'" target="_blank"><img  src="' . get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></span>'; }
+	function sunrain_creditline() { echo '<span class="credit">| SunRain Theme by: <a href="'. esc_url('https://d5creation.com') .'" target="_blank">D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></span>'; }
 
 //	Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link
 	function sunrain_page_menu_args( $args ) {
