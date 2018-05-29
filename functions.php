@@ -393,3 +393,59 @@ function gump_comment($comment, $args, $depth) {
         </div><?php 
     endif;
 }
+
+// Create a helper function for easy SDK access.
+function gump_fs() {
+    global $gump_fs;
+
+    if ( ! isset( $gump_fs ) ) {
+        // Include Freemius SDK.
+        require_once dirname(__FILE__) . '/freemius/start.php';
+
+        $gump_fs = fs_dynamic_init( array(
+            'id'                  => '2128',
+            'slug'                => 'gump',
+            'type'                => 'theme',
+            'public_key'          => 'pk_d956bb2ad7f0dab14882c0a9eb5f3',
+            'is_premium'          => false,
+            'has_addons'          => false,
+            'has_paid_plans'      => false,
+            'menu'                => array(
+                'slug'           => 'gump',
+                'account'        => false,
+                'support'        => false,
+                'parent'         => array(
+                    'slug' => 'themes.php',
+                ),
+            ),
+        ) );
+    }
+
+    return $gump_fs;
+}
+
+// Init Freemius.
+gump_fs();
+// Signal that SDK was initiated.
+do_action( 'gump_fs_loaded' );
+
+function gump_fs_custom_connect_message_on_update(
+        $message,
+        $user_first_name,
+        $theme_title,
+        $user_login,
+        $site_link,
+        $freemius_link
+    ) {
+        return sprintf(
+            __( 'Hey %1$s' ) . ',<br>' .
+            __( 'Please help us improve %2$s! If you opt-in, some data about your usage of %2$s will be sent to %5$s. If you skip this, that\'s okay! %2$s will still work just fine.', 'gump' ),
+            $user_first_name,
+            '<b>' . $theme_title . '</b>',
+            '<b>' . $user_login . '</b>',
+            $site_link,
+            $freemius_link
+        );
+    }
+
+    gump_fs()->add_filter('connect_message_on_update', 'gump_fs_custom_connect_message_on_update', 10, 6);
