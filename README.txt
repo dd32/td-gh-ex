@@ -47,6 +47,10 @@ Images
 
 
 == Changelog ==
+= 2.3.0 =
+** Fixed Woocommerce outdated template issue
+** Minior Css issue fixed.
+
 = 2.2.9 =
 ** Product slider widget Feature product option not showing - Fixed 
 ** Product slider widget  on sale option not showing - Fixed 

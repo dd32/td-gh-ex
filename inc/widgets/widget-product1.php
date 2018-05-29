@@ -216,16 +216,16 @@ public function widget($args, $instance){
                    */
                   do_action( 'woocommerce_before_shop_loop_item_title' );
                 ?>
-              </a>            
+              </a>
+              <?php
+            woocommerce_template_loop_add_to_cart( $product_loop->post, $product );
+            ?>            
             </div>
             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">  
               <h3><?php the_title(); ?></h3>
               <p class="short_desc"><?php echo(get_the_excerpt()); ?></p>
               <span class="price"><?php echo $product->get_price_html(); ?></span>
-            </a>
-            <?php
-            woocommerce_template_loop_add_to_cart( $product_loop->post, $product );
-            ?>         
+            </a>        
           </li>
         <?php endwhile; 
       }
