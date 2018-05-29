@@ -75,6 +75,10 @@ Source: http://flexslider.woothemes.com
 
 == Changelog ==
 
+Version 1.22 (2018-05-29)
+-------------------------
+- Fixed the current post showing up in the recent posts widget
+
 Version 1.21 (2018-05-24)
 -------------------------
 - Fixed output of cookie checkbox in comments
