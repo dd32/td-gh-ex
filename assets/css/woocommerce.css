@@ -39,12 +39,33 @@ body.disable_box_shadow .woocommerce .coupon-form-checkout  {
     border: solid 1px #ddd;
 }
 
+.checkout-wrapper .woocommerce-error,
+.checkout-wrapper .woocommerce-message, 
+.checkout-wrapper .woocommerce-info {
+	margin-left:15px;
+	margin-right:15px;
+}
+
 .woocommerce .coupon-form-checkout p ,
 .woocommerce .coupon-form-checkout .woocommerce-error, 
 .woocommerce .coupon-form-checkout .woocommerce-message, 
 .woocommerce .coupon-form-checkout .woocommerce-info {
 	margin-top:0 !important;
 	margin-bottom:0 !important;
+}
+
+.woocommerce .coupon-form-checkout .woocommerce-form-coupon-toggle .woocommerce-error, 
+.woocommerce .coupon-form-checkout .woocommerce-form-coupon-toggle .woocommerce-message, 
+.woocommerce .coupon-form-checkout .woocommerce-form-coupon-toggle .woocommerce-info {
+    outline: none;
+    margin-top: 0 !important;
+    padding: 0 0 0 2.5em!important;
+}
+
+.woocommerce .coupon-form-checkout .woocommerce-form-coupon-toggle .woocommerce-error::before, 
+.woocommerce .coupon-form-checkout .woocommerce-form-coupon-toggle .woocommerce-info::before, 
+.woocommerce .coupon-form-checkout .woocommerce-form-coupon-toggle .woocommerce-message::before {
+    left: 0;
 }
 
 .woocommerce .coupon-form-checkout .checkout_coupon p {
