@@ -40,31 +40,6 @@
 		}
 		
 		
-		
-		/*if( $('.theme-wishlist').length ){
-		$( document ).on( 'click', '.theme-wishlist', function() {
-			var $this = $(this);
-			$this.addClass('loader-active');
-			
-			var post_id = $(this).data('value');
-			$.ajax({
-				url : postajax.ajax_url,
-				type : 'post',
-				data : {
-					action : 'bcshop_wishlist_save',
-					post_id : post_id
-				},
-				success : function( response ) {
-					alert(response);
-					$this.removeClass('loader-active');
-				}
-			});
-		});
-		}*/
-		
-		
-		
-		
 	/* ============== Quantity buttons ============== */
 		$( 'div.quantity:not(.buttons_added), td.quantity:not(.buttons_added)' ).addClass( 'buttons_added' ).append( '<button type="button" class="plus"><i class="fa fa-plus" aria-hidden="true"></i></button>' ).prepend( '<button type="button" class="minus"><i class="fa fa-minus" aria-hidden="true"></i></button>' );
 		

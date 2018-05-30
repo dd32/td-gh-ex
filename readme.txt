@@ -2,7 +2,7 @@
 Contributors: athemeart
 Requires at least: 4.0
 Tested up to: 4.9.6
-Stable tag: 1.1
+Stable tag: 1.2
 Template:  BC Business Consulting
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -41,8 +41,15 @@ BC Business Consulting  WordPress Theme is distributed under the terms of the GN
 
 == Image ==
 * https://www.pexels.com/photo/background-bags-carry-casual-346744/ ( CC0 License )
+* https://www.pexels.com/photo/black-organizer-bag-set-842959/ ( CC0 License )
+* https://www.pexels.com/photo/green-wooden-chair-on-white-surface-963486/ ( CC0 License )
+* https://pixabay.com/en/light-illuminated-dark-lamp-3188080/ ( CC0 License )
+* https://www.pexels.com/photo/black-framed-hippie-sunglasses-701877/ ( CC0 License )
 
 == Changelog ==
+
+= 1.2 =
+* Review team Feedback fixed
 
 = 1.0 =
 * Initial release
