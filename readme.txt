@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.2.4 | 30th May 2018 = 
+* Update: Woo templates for 3.4.1 support.
+
 = Version 3.2.3 | 21st May 2018 = 
 * Update: main.js with some changes in prep to remove flex, carousel libraries changed and load the min.
 * Update: css for better support of comment checkbox.
