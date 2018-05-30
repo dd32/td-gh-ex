@@ -39,7 +39,7 @@ $wp_customize->add_setting( 'a_portfolio_banner_page_title', array(
 ) );
 
 $wp_customize->add_control( 'a_portfolio_banner_page_title', array(
-    'label'                 =>  __( 'Select Page for Banner Heading', 'a-portfolio' ),
+    'label'                 =>  __( 'Banner title', 'a-portfolio' ),
     'section'               => 'a_portfolio_banner_section',
     'type'                  => 'text',
     'settings'              => 'a_portfolio_banner_page_title',
@@ -54,7 +54,7 @@ $wp_customize->add_setting( 'a_portfolio_banner_page_subtitle', array(
 ) );
 
 $wp_customize->add_control( 'a_portfolio_banner_page_subtitle', array(
-    'label'                 =>  __( 'Select Page for Banner Sub heading', 'a-portfolio' ),
+    'label'                 =>  __( 'Banner Sub title', 'a-portfolio' ),
     'section'               => 'a_portfolio_banner_section',
     'type'                  => 'text',
     'settings'              => 'a_portfolio_banner_page_subtitle',

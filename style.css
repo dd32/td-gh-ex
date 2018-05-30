@@ -4,7 +4,7 @@ Theme URI: http://easywp-themes.com/downloads/a-portfolio/
 Author: easywp-themes
 Author URI: http://easywp-themes.com/
 Description: A Portfolio is responsive, customizable and powerful professional WordPress theme. It can be customized easily in few clicks using live customizer. A Portfolio comes with a easy option to add logo and favicon, custom widgets and more. It is a search engine optimized theme which performs best in google, bing, yahoo or any other search engines. This theme is suitable for all type of business, corporate, portfolio, digital agency, blog or any creative modern looking websites
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: a-portfolio
@@ -1771,6 +1771,9 @@ a img.aligncenter {
     height: 38px;
     border: 1px solid #e7e7e7;
 }
+.menu-primary-menu-container {
+    width: 100%;
+}
 #submit{
     
 }
@@ -1796,3 +1799,16 @@ a img.aligncenter {
     color:#ff6853;
 }
 .bypostauthor{}
+
+.pagination .posts-navigation{
+    margin-top:20px;
+    text-align: center;
+}
+.pagination .nav-links a{
+    background: #FFF;
+    padding: 10px;
+    color: #825757;
+}
+.entry-footer{
+    background: inherit;
+}

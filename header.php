@@ -29,7 +29,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container"><?php if(has_custom_logo()):?>
-          <?php echo esc_html(the_custom_logo());?>
+          <?php the_custom_logo();?>
           <?php else: ?>    
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="navbar-brand text-center logo-title"><?php esc_html(bloginfo('name'));?></a>
           <?php endif; ?>
@@ -43,7 +43,7 @@
               if(has_nav_menu('primary')): 
               $args = array(
                 'theme_location'  =>  'primary',                  
-                'menu_class'    =>  'nav navbar-nav ml-auto',
+                'menu_class'    =>  'nav navbar-nav pull-right',
                 'walker'      =>  new wp_bootstrap_navwalker()
               ); 
                wp_nav_menu( $args );
@@ -92,13 +92,30 @@
         if ( is_archive() ) {
         the_archive_title( '<h2>', '</h2>' );
         }
+        elseif(is_home()){
+        echo '<h2 style="color:#FFF">';
+        echo esc_html_e( 'Home','a-portfolio' );
+        echo '</h2>';
+        }
         else{
           echo '<h2>';
         echo esc_html( get_the_title() );
         echo '</h2>';
         }?>
-        <?php do_action( 'a_portfolio_breadcrumb' );   
-        ?>
+      <?php if(!is_home()): ?>
+         <ul class="bread-list">
+          <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'a-portfolio' );?><i class="fa fa-angle-right"></i></a></li>
+          <li class="active"><a href="<?php esc_url(the_permalink());?>">
+           <?php
+              if ( is_archive() ) {
+              the_archive_title();
+              }
+              else{
+              echo esc_html( get_the_title() );
+              }?>
+          </a></li>
+        </ul>
+      <?php endif;?>  
       </div>
     </div>
   </div>

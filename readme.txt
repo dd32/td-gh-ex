@@ -4,8 +4,8 @@ Contributors: easywp-themes
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, blog, portfolio
 
 Requires at least: 4.5
-Tested up to: 4.8
-Stable tag: 1.0.0
+Tested up to: 4.9
+Stable tag: 1.0.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -37,6 +37,10 @@ a-portfolio includes support for Infinite Scroll in Jetpack.
 = 1.0.1 - May 19 2018 =
 * layout issues fixed
 * minor issues fixed
+
+= 1.0.2 - May 30 2018 =
+* minor changes fixed
+* solve escaping issue
 
 == Credits ==
 * A Portfolio is based on Underscores https://underscores.me/, (C)2018 easywp-themes, distributed under the terms of the GNU GPL v2 or later.(https://www.gnu.org/licenses/gpl-2.0.html)

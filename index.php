@@ -34,8 +34,6 @@ get_header();
 
 			endwhile;
 
-			the_posts_navigation();
-
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
@@ -52,6 +50,14 @@ get_header();
         <!--/ End Blog Sidebar -->
       </div>
     </div>
+
+    <div class="row">
+		<div class="pagination">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<?php the_posts_navigation();?>
+			</div>
+		</div>
+	</div>
   </div>
 </section>
 
