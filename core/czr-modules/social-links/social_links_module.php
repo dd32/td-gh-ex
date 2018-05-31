@@ -49,7 +49,7 @@ function czr_fn_register_social_links_module( $args ) {
         'module_type' => 'czr_social_module',
 
         'sanitize_callback' => 'czr_fn_sanitize_callback__czr_social_module',
-        //'validate_callback' => 'czr_fn_validate_callback__czr_social_module',
+        'validate_callback' => 'czr_fn_validate_callback__czr_social_module',
 
         'customizer_assets' => array(
             'control_js' => array(
@@ -130,11 +130,10 @@ function czr_fn_register_social_links_module( $args ) {
                     'transport' => 'postMessage'
                 ),
                 'social-target' => array(
-                    'input_type'  => 'nimblecheck',
+                    'input_type'  => 'check',
                     'title'       => __('Link target', 'customizr'),
                     'notice_after'      => __('Check this option to open the link in a another tab of the browser.', 'customizr'),
-                    'title_width' => 'width-80',
-                    'input_width' => 'width-20',
+                    'width-100'   => true
                 )
             )
         )
@@ -158,9 +157,10 @@ function czr_fn_sanitize_callback__czr_social_module( $socials ) {
 
   //sanitize urls and titles for the db
   foreach ( $socials as $index => &$social ) {
-    if ( ! is_array( $social ) || ! array_key_exists( 'title', $social) )
+    if ( ! is_array( $social ) || ! ( array_key_exists( 'social-link', $social) &&  array_key_exists( 'title', $social) ) )
       continue;
 
+    $social['social-link']  = esc_url_raw( $social['social-link'] );
     $social['title']        = esc_attr( $social['title'] );
   }
   return $socials;
