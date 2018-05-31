@@ -145,7 +145,7 @@ function balanced_blog_theme_stylesheets() {
 	wp_enqueue_style( 'balanced-blog-fonts', balanced_blog_fonts_url(), array(), null );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '3.3.7' );
 	// Theme stylesheet.
-	wp_enqueue_style( 'balanced-blog-stylesheet', get_stylesheet_uri(), array('bootstrap'), '1.0.0'  );
+	wp_enqueue_style( 'balanced-blog-stylesheet', get_stylesheet_uri(), array('bootstrap'), '1.0.3'  );
 	// Load Font Awesome css.
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.7.0' );
 }
@@ -157,7 +157,7 @@ add_action( 'wp_enqueue_scripts', 'balanced_blog_theme_stylesheets' );
  */
 function balanced_blog_theme_js() {
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '3.3.7', true );
-	wp_enqueue_script( 'balanced-blog-theme-js', get_template_directory_uri() . '/js/customscript.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'balanced-blog-theme-js', get_template_directory_uri() . '/js/customscript.js', array( 'jquery' ), '1.0.3', true );
 }
 
 add_action( 'wp_enqueue_scripts', 'balanced_blog_theme_js' );
@@ -172,6 +172,21 @@ require_once( trailingslashit( get_template_directory() ) . 'lib/wp_bootstrap_na
  * Widgets
  */
 require_once( trailingslashit( get_template_directory() ) . 'includes/widgets.php' );
+
+/**
+ * Register Theme Info Page
+ */
+require_once( trailingslashit( get_template_directory() ) . 'lib/dashboard.php' );
+
+/**
+ * Register PRO notify
+ */
+require_once( trailingslashit( get_template_directory() ) . 'lib/customizer.php' );
+
+/**
+ * Register preview
+ */
+require_once( trailingslashit( get_template_directory() ) . 'lib/demo-preview.php' );
 
 add_action( 'widgets_init', 'balanced_blog_widgets_init' );
 
@@ -273,7 +288,7 @@ if ( !function_exists( 'balanced_blog_generate_construct_footer' ) ) :
 		<p class="footer-credits-text text-center">
 			<?php printf( __( 'Proudly powered by %s', 'balanced-blog' ), '<a href="' . esc_url( __( 'https://wordpress.org/', 'balanced-blog' ) ) . '">WordPress</a>' ); ?>
 			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s', 'balanced-blog' ), '<a href="' . esc_url( 'https://headthemes.com/' ) . '">Balanced Blog</a>' ); ?>
+			<?php printf( esc_html__( 'Theme: %1$s', 'balanced-blog' ), '<a href="' . esc_url( 'http://headthemes.com/' ) . '">Balanced Blog</a>' ); ?>
 		</p> 
 		<?php
 	}
@@ -293,7 +308,7 @@ if ( ! function_exists( 'balanced_blog_widget_date_comments' ) ) :
 	<span class="comments-meta">
 		<?php
 			if ( !comments_open() ) 
-				{ esc_html_e( 'Off' , 'balanced-blog' ); }
+				{ esc_html_e('Off','balanced-blog'); }
 			else { ?>
 				<a href="<?php echo esc_url( get_comments_link() ); ?>" rel="nofollow" title="<?php esc_html_e( 'Comment on ', 'balanced-blog' ) . the_title_attribute(); ?>">
 					<?php echo absint( get_comments_number() ); ?>
@@ -339,8 +354,13 @@ if ( ! function_exists( 'balanced_blog_thumb_img' ) ) :
 	 * Returns widget thumbnail.
 	 */
 	function balanced_blog_thumb_img( $img = 'full', $col = '', $link = '' ) {
-
-		if ( has_post_thumbnail() && $link != '' ) { ?>
+		if ( balanced_blog_is_preview() && !has_post_thumbnail() ) {
+		$placeholder = balanced_blog_get_preview_img_src();
+		?>
+			<div class="news-thumb <?php echo esc_attr( $col ); ?>">
+				<img src="<?php echo esc_url( $placeholder ); ?>" alt="<?php the_title_attribute(); ?>" />
+			</div><!-- .news-thumb -->
+		<?php } elseif ( has_post_thumbnail() && $link != '' ) { ?>
 			<div class="news-thumb <?php echo esc_attr( $col ); ?>">
 				<a href="<?php the_permalink(); ?>">
 					<img src="<?php the_post_thumbnail_url( $img ); ?>" alt="<?php the_title_attribute(); ?>" />

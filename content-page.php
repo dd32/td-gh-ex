@@ -1,6 +1,10 @@
 <!-- start content container -->
 <div class="row">
-		<article class="col-md-<?php balanced_blog_main_content_width_columns(); ?>">
+	<?php if ( balanced_blog_is_preview() ) { ?>
+		<article class="col-md-9">
+		<?php } else { ?>
+			<article class="col-md-<?php balanced_blog_main_content_width_columns(); ?>">
+			<?php } ?>
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>                          
 					<div <?php post_class(); ?>>
 						<div class="single-wrap col-md-12">

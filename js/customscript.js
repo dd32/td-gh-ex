@@ -24,5 +24,13 @@ jQuery( document ).ready( function ( $ ) {
             $( "#" +menu+ ".open-panel" ).toggleClass( "open" );
         } );
     });
-
+    
+    $( '.top-search-icon' ).click(function() {
+        $( ".top-search-box" ).toggle( 'slow' );
+        $( ".top-search-icon .fa" ).toggleClass( "fa-times fa-search" );
+    });
+    
+    $( ".split-slider.news-item-3" ).hover(function() {
+        $( ".news-item-2" ).toggleClass( "split-slider-left" );
+      });
 } );
