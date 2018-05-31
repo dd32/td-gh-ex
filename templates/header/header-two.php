@@ -5,7 +5,7 @@
 global $woocommerce; ?>
 <header id="masthead" class="site-header site-header-two <?php echo ( get_theme_mod( 'conica-set-sticky-header' ) ) ? sanitize_html_class( 'stick-header' ) : ''; ?> <?php echo ( get_theme_mod( 'conica-set-header-align-right' ) ) ? sanitize_html_class( 'site-header-align-right' ) : ''; ?> <?php echo ( get_theme_mod( 'conica-set-header-remove-topline' ) ) ? sanitize_html_class( 'no-border' ) : ''; ?>">
     
-    <?php if ( ! get_theme_mod( 'conica-set-header-remove-topbar' ) ) : ?>
+    <?php if ( ! get_theme_mod( 'conica-set-header-remove-topbar', customizer_library_get_default( 'conica-set-header-remove-topbar' ) ) ) : ?>
         <div class="header-top-bar <?php echo ( get_theme_mod( 'conica-set-topbar-switch' ) ) ? sanitize_html_class( 'header-top-bar-switch' ) : ''; ?>">
             
             <div class="site-container">
@@ -63,7 +63,7 @@ global $woocommerce; ?>
                             </span>
                         <?php endif; ?>
                         
-                        <?php if ( get_theme_mod( 'conica-set-show-search' ) ) : ?>
+                        <?php if ( get_theme_mod( 'conica-set-show-search', customizer_library_get_default( 'conica-set-show-search' ) ) ) : ?>
                             <div class="search-button">
                                 <i class="fa fa-search"></i>
                             </div>
@@ -111,7 +111,7 @@ global $woocommerce; ?>
                 <div class="clearboth"></div>
             </div>
             
-            <?php if ( get_theme_mod( 'conica-set-show-search' ) ) : ?>
+            <?php if ( get_theme_mod( 'conica-set-show-search', customizer_library_get_default( 'conica-set-show-search' ) ) ) : ?>
                 <div class="search-block">
                     <?php get_search_form(); ?>
                 </div>

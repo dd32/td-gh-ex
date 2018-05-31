@@ -10,7 +10,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return NULL;
 }
 
-class Customizer_Library_Upsell extends WP_Customize_Control {
+class Customizer_Library_Help extends WP_Customize_Control {
 
 	/**
 	 * Render the control's content.
@@ -21,8 +21,9 @@ class Customizer_Library_Upsell extends WP_Customize_Control {
 	 * @return  void
 	 */
 	public function render_content() {
-		?>
-		<div class="kaira-notes">
+		$theme = wp_get_theme();
+		$theme_name = $theme->get( 'TextDomain' ); ?>
+		<div class="kaira-notes <?php echo ( is_child_theme() ) ? 'hide ' . sanitize_html_class( 'conica-note-' . $theme_name ) : ''; ?>">
             <div class="kaira-upsell-desc"><?php echo wp_kses_post( $this->description ); ?></div>
 		</div>
 		<?php

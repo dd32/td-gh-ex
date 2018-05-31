@@ -5,7 +5,7 @@
 global $woocommerce; ?>
 <header id="masthead" class="site-header site-header-three <?php echo ( get_theme_mod( 'conica-set-header-nav-center-align' ) ) ? sanitize_html_class( 'site-header-nav-center' ) : ''; ?> <?php echo ( get_theme_mod( 'conica-set-header-align-right' ) ) ? sanitize_html_class( 'site-header-align-right' ) : ''; ?> <?php echo ( get_theme_mod( 'conica-set-header-remove-topline' ) ) ? sanitize_html_class( 'no-border' ) : ''; ?> <?php echo ( get_theme_mod( 'conica-header-sticky' ) ) ? sanitize_html_class( 'site-sticky-header' ) : ''; ?> <?php echo ( get_theme_mod( 'conica-set-site-layout' ) == 'conica-site-boxed' ) ? sanitize_html_class( 'header-boxed-in' ) : ''; ?>">
     
-    <?php if ( ! get_theme_mod( 'conica-set-header-remove-topbar' ) ) : ?>
+    <?php if ( ! get_theme_mod( 'conica-set-header-remove-topbar', customizer_library_get_default( 'conica-set-header-remove-topbar' ) ) ) : ?>
         <div class="header-top-bar <?php echo ( get_theme_mod( 'conica-set-topbar-switch' ) ) ? sanitize_html_class( 'header-top-bar-switch' ) : ''; ?>">
             
             <div class="site-container">
@@ -33,7 +33,7 @@ global $woocommerce; ?>
                     
                     <?php get_template_part( '/templates/social-links' ); ?>
                     
-                    <?php if ( get_theme_mod( 'conica-set-show-search' ) ) : ?>
+                    <?php if ( get_theme_mod( 'conica-set-show-search', customizer_library_get_default( 'conica-set-show-search' ) ) ) : ?>
                         <div class="search-button">
                             <i class="fa fa-search"></i>
                         </div>
@@ -64,7 +64,7 @@ global $woocommerce; ?>
                 <div class="clearboth"></div>
             </div>
             
-            <?php if ( get_theme_mod( 'conica-set-show-search' ) ) : ?>
+            <?php if ( get_theme_mod( 'conica-set-show-search', customizer_library_get_default( 'conica-set-show-search' ) ) ) : ?>
                 <div class="search-block">
                     <?php get_search_form(); ?>
                 </div>

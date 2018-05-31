@@ -63,6 +63,12 @@
     font-weight: 500;
     color: #006cc9;
 }
+.hide {
+    display: none;
+}
+.conica-note-sunkiss {
+    display: block;
+}
 
 #customize-control-conica-logo-max-width,
 #customize-control-conica-set-site-layout,
@@ -73,6 +79,7 @@
 #customize-control-conica-slider-cats,
 #customize-control-conica-set-blog-layout,
 #customize-control-conica-blog-list-img-cut,
+#customize-control-conica-remove-single-pag,
 #customize-control-conica-footer-hide-social,
 #customize-control-conica-set-text-header-add,
 #customize-control-conica-website-error-msg,

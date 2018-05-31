@@ -5,7 +5,7 @@
  * @package Conica
  */
 
-define( 'CONICA_THEME_VERSION' , '1.3.11' );
+define( 'CONICA_THEME_VERSION' , '1.3.12' );
 
 // Get help / Premium Page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -161,7 +161,7 @@ function conica_scripts() {
 		wp_enqueue_script( 'conica-sticky-header', get_template_directory_uri() . '/js/waypoints/sticky-header.js', array('jquery'), CONICA_THEME_VERSION, true );
 	}
     
-    if ( get_theme_mod( 'conica-set-blog-layout' ) == 'blog-grid-layout' ) {
+    if ( get_theme_mod( 'conica-set-blog-layout', customizer_library_get_default( 'conica-set-blog-layout' ) ) == 'blog-grid-layout' ) {
 	    if ( is_home() || is_archive() || is_search() ) {
 	        wp_enqueue_script( 'jquery-masonry' );
 	        wp_enqueue_script( 'conica-masonry-custom', get_template_directory_uri() . '/js/blog-layout.js', array('jquery'), CONICA_THEME_VERSION, true );
@@ -218,7 +218,7 @@ function conica_add_post_classes ( $classes ) {
 	global $current_class;
 	
 	if ( is_home() || is_archive() || is_search() ) :
-		$conica_blog_layout = 'blog-left-layout';
+		$conica_blog_layout = customizer_library_get_default( 'conica-set-blog-layout' );
 		if ( get_theme_mod( 'conica-set-blog-layout' ) ) {
 		    $conica_blog_layout = sanitize_html_class( get_theme_mod( 'conica-set-blog-layout' ) );
 		}
@@ -297,6 +297,11 @@ function conica_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
+			'name'      => __( 'Contact Form by WPForms', 'conica' ),
+			'slug'      => 'wpforms-lite',
+			'required'  => false,
+		),
+		array(
 			'name'      => __( 'Breadcrumb NavXT', 'conica' ),
 			'slug'      => 'breadcrumb-navxt',
 			'required'  => false,
@@ -317,10 +322,16 @@ function conica_register_required_plugins() {
 add_action( 'tgmpa_register', 'conica_register_required_plugins' );
 
 /**
- * Elementor Check
+ * Elementor Partner ID
  */
-if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
+if ( !defined( 'ELEMENTOR_PARTNER_ID' ) ) {
     define( 'ELEMENTOR_PARTNER_ID', 2118 );
+}
+/**
+ * WPForms Partner ID
+ */
+if ( !defined( 'WPFORMS_SHAREASALE_ID' ) ) {
+    define( 'WPFORMS_SHAREASALE_ID', 1128843 );
 }
 
 /**

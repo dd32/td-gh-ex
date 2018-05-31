@@ -41,7 +41,7 @@ if ( ! class_exists( 'Customizer_Library' ) ) :
 	require plugin_dir_path( __FILE__ ) . 'custom-controls/imageselect.php';
 
 	// Custom upsell controls for the theme customizer.
-	require plugin_dir_path( __FILE__ ) . 'custom-controls/upsell.php';
+	require plugin_dir_path( __FILE__ ) . 'custom-controls/help.php';
 
 	// Textarea control
 	if ( version_compare( $GLOBALS['wp_version'], '4.0', '<' ) ) {

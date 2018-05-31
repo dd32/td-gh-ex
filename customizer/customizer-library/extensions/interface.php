@@ -97,10 +97,10 @@ if ( ! function_exists( 'customizer_library_register' ) ) : /**
 
 	                	break;
 					
-					case 'upsell':
+					case 'help':
 
 	                    $wp_customize->add_control(
-	                        new Customizer_Library_Upsell(
+	                        new Customizer_Library_Help(
 	                            $wp_customize, $option['id'], $option
 	                        )
 	                    );

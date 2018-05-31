@@ -96,10 +96,10 @@ function customizer_library_conica_options() {
         'default' => 0,
     );
 
-    $options['conica-upsell-layout'] = array(
-        'id' => 'conica-upsell-layout',
+    $options['conica-help-layout'] = array(
+        'id' => 'conica-help-layout',
         'section' => $section,
-        'type'    => 'upsell',
+        'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />- Set website container width<br />- Change sidebar width<br />- Change content area padding', 'conica' )
     );
     // ---------------------------------------------------------------------------- Website Layout Settings
@@ -191,10 +191,10 @@ function customizer_library_conica_options() {
         'default' => 'conica-search-icon-angle'
     );
 
-    $options['conica-upsell-header'] = array(
-        'id' => 'conica-upsell-header',
+    $options['conica-help-header'] = array(
+        'id' => 'conica-help-header',
         'section' => $section,
-        'type'    => 'upsell',
+        'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />- Enable WooCommerce drop down basket/cart<br />- Add Site Title & Tagline with an uploaded logo<br />- Adjust logo position<br />- Vertically align Header One & Two Navigation<br />- Remove WooCommerce Cart from header', 'conica' )
     );
     // --------------------------------------------------------------------------------------- Header Settings
@@ -222,10 +222,10 @@ function customizer_library_conica_options() {
         'default' => 'conica-navigation-style-blocks'
     );
 
-    $options['conica-upsell-nav'] = array(
-        'id' => 'conica-upsell-nav',
+    $options['conica-help-nav'] = array(
+        'id' => 'conica-help-nav',
         'section' => $section,
-        'type'    => 'upsell',
+        'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />- Change dropdown animation<br />- Fade / Slide Down / Fold Out', 'conica' )
     );
     // ----------------------------------------------------------------------------------- Navigation Settings
@@ -286,10 +286,10 @@ function customizer_library_conica_options() {
         'choices' => $choices,
         'default' => 'conica-slider-size-medium'
     );
-    $options['conica-upsell-slider'] = array(
-        'id' => 'conica-upsell-slider',
+    $options['conica-help-slider'] = array(
+        'id' => 'conica-help-slider',
         'section' => $section,
-        'type'    => 'upsell',
+        'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />- Set each slide to have custom url link<br />- Change slider scroll effect<br />- Change slider scroll duration<br />- Change slider direction<br />- Link slide to single post<br />- Remove slider title/text<br />- Stop slider scrolling', 'conica' )
     );
     // --------------------------------------------------------------------------------------- Slider Settings
@@ -317,10 +317,10 @@ function customizer_library_conica_options() {
         'default' => 'conica-page-fimage-layout-none'
     );
 
-    $options['conica-upsell-pages'] = array(
-        'id' => 'conica-upsell-pages',
+    $options['conica-help-pages'] = array(
+        'id' => 'conica-help-pages',
         'section' => $section,
-        'type'    => 'upsell',
+        'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />- Adjust sidebar widget title size/align/styling<br />- Select Featured Image to display as a page banner<br />- Change banner size and width', 'conica' )
     );
     // --------------------------------------------------------------------------------- Single Pages Settings
@@ -365,10 +365,10 @@ function customizer_library_conica_options() {
         'description' => __( 'Enter the ID\'s of the post categories you\'d like to EXCLUDE from the Blog, enter only the ID\'s with a minus sign (-) before them, separated by a comma (,)<br />Eg: "-13, -17, -19"<br /><br />If you enter the ID\'s without the minus then it\'ll show ONLY posts in those categories.<br /><br />Get the ID at <b>Posts -> Categories</b>.', 'conica' )
     );
 
-    $options['conica-upsell-blog'] = array(
-        'id' => 'conica-upsell-blog',
+    $options['conica-help-blog'] = array(
+        'id' => 'conica-help-blog',
         'section' => $section,
-        'type'    => 'upsell',
+        'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />- Show blog post summary<br />- Adjust text and amount of words shown<br />- Remove meta/categories/tags info<br />- Set blog to left sidebar or full width<br />- Set archive / search to full width<br />- Remove "Category:" text from Archives/Categories list', 'conica' )
     );
     // ----------------------------------------------------------------------------------- Blog List Settings
@@ -380,6 +380,13 @@ function customizer_library_conica_options() {
         'title' => __( 'Blog Single Page', 'conica' ),
         'priority' => '10',
         'panel' => $panel
+    );
+    $options['conica-remove-single-pag'] = array(
+        'id' => 'conica-remove-single-pag',
+        'label'   => __( 'Remove Next & Premious posts', 'conica' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
     );
     $choices = array(
         'conica-single-page-fimage-layout-none' => __( 'None', 'conica' ),
@@ -394,10 +401,10 @@ function customizer_library_conica_options() {
         'default' => 'conica-single-page-fimage-layout-none'
     );
 
-    $options['conica-upsell-posts'] = array(
-        'id' => 'conica-upsell-posts',
+    $options['conica-help-posts'] = array(
+        'id' => 'conica-help-posts',
         'section' => $section,
-        'type'    => 'upsell',
+        'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />- Remove meta/categories/tags info<br />- Set posts to left sidebar or full width<br />- Select Featured Image to display as a page banner<br />- Change banner size and width<br />- Add Author block to single posts', 'conica' )
     );
     // ---------------------------------------------------------------------------------- Blog Single Settings
@@ -437,10 +444,10 @@ function customizer_library_conica_options() {
             'default' => 0,
         );
 
-        $options['conica-upsell-woocommerce'] = array(
-            'id' => 'conica-upsell-woocommerce',
+        $options['conica-help-woocommerce'] = array(
+            'id' => 'conica-help-woocommerce',
             'section' => $section,
-            'type'    => 'upsell',
+            'type'    => 'help',
             'description' => __( '<b>Premium Extra Features:</b><br />- Change amount of products per row<br />- Remove products hover border<br />- Set Shop/Archive/Single pages left sidebar<br />- Set Shop/Archive/Single pages full width', 'conica' )
         );
 
@@ -477,10 +484,10 @@ function customizer_library_conica_options() {
         'default' => 'conica-footer-layout-standard'
     );
 
-    $options['conica-upsell-footer'] = array(
-        'id' => 'conica-upsell-footer',
+    $options['conica-help-footer'] = array(
+        'id' => 'conica-help-footer',
         'section' => $section,
-        'type'    => 'upsell',
+        'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />- Remove footer bottom bar<br />- Extra advanced footer layout<br />- Set advanced footer column widths<br /><br />- Change attribution text to your own<br />- Extra custom text blocks can be added to the footer', 'conica' )
     );
     // -------------------------------------------------------------------------------------- Footer Settings
@@ -685,10 +692,10 @@ function customizer_library_conica_options() {
         'default' => 'Poppins'
     );
 
-    $options['conica-upsell-fonts'] = array(
-        'id' => 'conica-upsell-fonts',
+    $options['conica-help-fonts'] = array(
+        'id' => 'conica-help-fonts',
         'section' => $section,
-        'type'    => 'upsell',
+        'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />- Change site title font size<br />- Select custom tagline font<br />- Change tagline font size<br />- Change title / tagline spacing', 'conica' )
     );
     // ---------------------------------------------------------------------------------------- Title Fonts
@@ -757,10 +764,10 @@ function customizer_library_conica_options() {
         'type'    => 'text',
     );
 
-    $options['conica-upsell-social'] = array(
-        'id' => 'conica-upsell-social',
+    $options['conica-help-social'] = array(
+        'id' => 'conica-help-social',
         'section' => $section,
-        'type'    => 'upsell',
+        'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />- Over 18 different social profile links available<br />- Custom setting to add any needed link<br />- Let us know which links you need and we\'ll add it!', 'conica' )
     );
     // ------------------------------------------------------- Social Options
@@ -788,10 +795,10 @@ function customizer_library_conica_options() {
         'type'    => 'color',
         'default' => $secondary_color,
     );
-    $options['conica-upsell-colors'] = array(
-        'id' => 'conica-upsell-colors',
+    $options['conica-help-colors'] = array(
+        'id' => 'conica-help-colors',
         'section' => $section,
-        'type'    => 'upsell',
+        'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />Conica Premium ($25) has advanced color settings to change Header, Top Bar and Navigation colors, Default Slider colors, Page Title & Widget heading colors, Footer & Bottom Bar colors + more', 'conica' )
     );
     // --------------------------------------------------------------- Colors

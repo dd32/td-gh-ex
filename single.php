@@ -14,7 +14,9 @@ get_header(); ?>
 
 			<?php get_template_part( 'templates/contents/content', 'single' ); ?>
 
-			<?php the_post_navigation(); ?>
+			<?php if ( ! get_theme_mod( 'conica-remove-single-pag' ) ) : ?>
+				<?php the_post_navigation(); ?>
+			<?php endif; ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template

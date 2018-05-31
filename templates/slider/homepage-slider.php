@@ -91,7 +91,7 @@ if ( get_theme_mod( 'conica-slider-type' ) == 'conica-no-slider' ) : ?>
                 
                 <div class="home-slider">
                     
-                    <div class="home-slider-block" style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/images/demo/slide_demo_02.jpg);">
+                    <div class="home-slider-block" style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/images/demo/slide_demo_01.jpg);">
                         
                         <?php if ( get_theme_mod( 'conica-slider-size' ) == 'conica-slider-size-small' ) : ?>
                             <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_small<?php echo ( get_theme_mod( 'conica-slider-style' ) ) ? '_full' : ''; ?>.gif" />
@@ -107,27 +107,6 @@ if ( get_theme_mod( 'conica-slider-type' ) == 'conica-no-slider' ) : ?>
                                     <?php _e( 'Beautiful . Simple . Powerful', 'conica' ); ?>
                                 </h3>
                                 <p><?php _e( 'Create a beautiful website with a very powerful theme', 'conica' ); ?></p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="home-slider-block" style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/images/demo/slide_demo_01.jpg);">
-                        
-                        <?php if ( get_theme_mod( 'conica-slider-size' ) == 'conica-slider-size-small' ) : ?>
-                            <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_small<?php echo ( get_theme_mod( 'conica-slider-style' ) ) ? '_full' : ''; ?>.gif" />
-                        <?php elseif ( get_theme_mod( 'conica-slider-size' ) == 'conica-slider-size-large' ) : ?>
-                            <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_large<?php echo ( get_theme_mod( 'conica-slider-style' ) ) ? '_full' : ''; ?>.gif" />
-                        <?php else : ?>
-                            <img src="<?php echo get_template_directory_uri() ?>/images/slider_blank_img_medium<?php echo ( get_theme_mod( 'conica-slider-style' ) ) ? '_full' : ''; ?>.gif" />
-                        <?php endif; ?>
-                        
-                        <div class="home-slider-block-inner">
-                            <div class="home-slider-block-bg">
-                                <h3 class="home-slider-block-title">
-                                    <?php _e( 'Customize Everything', 'conica' ); ?>
-                                </h3>
-                                <p><?php _e( 'With Conica you can customize to your hearts content', 'conica' ); ?></p>
                             </div>
                         </div>
                         

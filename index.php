@@ -20,7 +20,7 @@ get_header(); ?>
 			
 				<?php
 				// IF blog is grid layout
-				echo ( get_theme_mod( 'conica-set-blog-layout' ) == 'blog-grid-layout' ) ? '<div class="blog-grid-layout-wrap blog-grid-layout-wrap-remove"><div class="blog-grid-layout-wrap-inner">' : ''; ?>
+				echo ( get_theme_mod( 'conica-set-blog-layout', customizer_library_get_default( 'conica-set-blog-layout' ) ) == 'blog-grid-layout' ) ? '<div class="blog-grid-layout-wrap blog-grid-layout-wrap-remove"><div class="blog-grid-layout-wrap-inner">' : ''; ?>
 
 					<?php /* Start the Loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
@@ -37,7 +37,7 @@ get_header(); ?>
 					
 				<?php
 				// IF blog is grid layout
-				echo ( get_theme_mod( 'conica-set-blog-layout' ) == 'blog-grid-layout' ) ? '<div class="clearboth"></div></div></div>' : ''; ?>
+				echo ( get_theme_mod( 'conica-set-blog-layout', customizer_library_get_default( 'conica-set-blog-layout' ) ) == 'blog-grid-layout' ) ? '<div class="clearboth"></div></div></div>' : ''; ?>
 
 				<?php the_posts_navigation(); ?>
 
