@@ -60,7 +60,7 @@ function jgtazalea_header_background_css() {
 	}
 
 	if ( ! empty( $header_image ) ) {
-		$css .= 'background-image:url(' . esc_url( $header_image ) . ');background-repeat:' . esc_attr( get_theme_mod( 'jgtazalea_header_background_repeat', 'repeat' ) ) . ';background-position:50% 0%;background-size:' . esc_attr( get_theme_mod( 'jgtazalea_header_background_size', 'auto' ) ) . ';';
+		$css .= 'background-image:url(' . esc_url( $header_image ) . ');background-repeat:' . esc_attr( get_theme_mod( 'jgtazalea_header_background_repeat', 'repeat' ) ) . ';background-position:' . esc_attr( get_theme_mod( 'jgtazalea_header_background_position', 'center center' ) ) . ';background-size:' . esc_attr( get_theme_mod( 'jgtazalea_header_background_size', 'auto' ) ) . ';';
 	}
 
 	if ( empty( $css ) ) {

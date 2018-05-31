@@ -97,7 +97,7 @@ function jgtazalea_post_thumbnail() {
 		?>
 	</div><!-- .post-thumbnail -->
 	<?php else : ?>
-	<a class="post-thumbnail" href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'post-thumbnail', array( 'alt' => get_the_title() ) ); ?></a>
+	<a class="post-thumbnail" href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?></a>
 	<?php endif;
 }
 endif;
@@ -112,9 +112,9 @@ function jgtazalea_entry_date() {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 	}
 	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
+		esc_attr( get_the_date( DATE_W3C ) ),
 		get_the_date(),
-		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_attr( get_the_modified_date( DATE_W3C ) ),
 		get_the_modified_date()
 	);
 	printf( '<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
@@ -188,6 +188,9 @@ endif;
  * Wrap "Read more" link
  */
 function jgtazalea_wrap_more_link( $more ) {
+	if ( is_admin() ) {
+		return $more;
+	}
 	return '<span class="read-more">' . $more . '</span>';
 }
 add_filter( 'the_content_more_link','jgtazalea_wrap_more_link' );

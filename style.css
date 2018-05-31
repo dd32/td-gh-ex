@@ -4,7 +4,7 @@ Theme URI: https://justgoodthemes.com/themes/azalea/
 Author: Just Good Themes
 Author URI: https://justgoodthemes.com/
 Description: Azalea is a clean and elegant WordPress blog theme, perfect for lifestyle, food or fashion blogging. 100% responsive, customizable and easy to use.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: azalea
@@ -626,6 +626,11 @@ label {
 	font: 12px/1.5 'PT Sans', sans-serif;
 	letter-spacing: 1px;
 	text-transform: uppercase;
+}
+
+input[type="checkbox"] + label {
+	color: #b6b6b6;
+	margin-left: 5px;
 }
 
 fieldset {
@@ -2330,6 +2335,17 @@ img.aligncenter {
 	font-size: 12px;
 }
 
+.widget_media_image .wp-caption-text {
+	color: #6a6c6f;
+	font: 14px/1.75 'Crimson Text', serif;
+	padding-bottom: 0;
+	padding-top: 18px;
+}
+
+.widget_media_image .wp-caption-text:before {
+	display: none;
+}
+
 /**
  * 9. Plugins
  * --------------------------------------------------
@@ -2377,6 +2393,12 @@ img.aligncenter {
 .wpcf7-form input[type="url"],
 .wpcf7-form textarea {
 	width: 100%;
+}
+
+input[type="checkbox"] + span[class^='wpcf7'],
+input[type="checkbox"] + span[class*=' wpcf7']{
+	color: #b6b6b6;
+	margin-left: 5px;
 }
 
 .wpcf7-submit {

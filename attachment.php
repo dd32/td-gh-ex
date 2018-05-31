@@ -23,11 +23,21 @@ get_header(); ?>
 								edit_post_link( esc_html__( 'Edit', 'azalea' ), '<span class="edit-link">', '</span>' );
 								?>
 							</div><!-- .entry-meta -->
-
 						</header><!-- .entry-header -->
 						<div class="entry-content">
 							<div class="entry-attachment">
-								<?php echo wp_get_attachment_image( get_the_ID(), 'post-thumbnail' );?>
+								<?php
+								$attachment_url = esc_url( wp_get_attachment_url( get_the_ID() ) );
+								if ( wp_attachment_is( 'video' ) ) {
+									echo do_shortcode( "[video src='{$attachment_url}']" );
+								} elseif ( wp_attachment_is( 'audio' ) ) {
+									echo do_shortcode( "[audio src='{$attachment_url}']" );
+								} elseif ( wp_attachment_is( 'image' ) ) {
+									echo wp_get_attachment_image( get_the_ID(), 'post-thumbnail' );
+								} else {
+									echo '<a href="' . $attachment_url . '">' . esc_html( get_the_title( get_the_ID() ) ) . '</a>';
+								}
+								?>
 								<?php if ( has_excerpt() ) : ?>
 								<div class="entry-caption">
 									<?php the_excerpt(); ?>
@@ -47,25 +57,6 @@ get_header(); ?>
 						<?php jgtazalea_entry_footer(); ?>
 					</article><!-- #post-## -->
 					<?php
-					// Show navigation if there is more than one attachment
-					$attachments = array_values( get_children( array(
-						'post_parent'    => $post->post_parent,
-						'post_status'    => 'inherit',
-						'post_type'      => 'attachment',
-						'post_mime_type' => 'image',
-						'order'          => 'ASC',
-						'orderby'        => 'menu_order ID'
-					) ) );
-					if ( count( $attachments ) > 1 ) :
-					?>
-					<nav id="image-navigation" class="navigation image-navigation">
-						<div class="nav-links">
-							<div class="nav-previous"><?php previous_image_link( false, '<span class="meta-nav fa-angle-double-left" aria-hidden="true"></span> ' . esc_html__( 'Previous Image', 'azalea' ) ); ?></div>
-							<div class="nav-next"><?php next_image_link( false, esc_html__( 'Next Image', 'azalea' ) . ' <span class="meta-nav fa-angle-double-right" aria-hidden="true"></span>' ); ?></div>
-						</div><!-- .nav-links -->
-					</nav><!-- #image-navigation -->
-					<?php 
-					endif;
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) :
 						comments_template();

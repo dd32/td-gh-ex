@@ -17,7 +17,12 @@ if ( post_password_required() ) {
 <div id="comments" class="comments-area">
 <?php if ( have_comments() ) : ?>
 	<h2 class="comments-title"><?php
-		printf( esc_html( _nx( '%s comment', '%s comments', get_comments_number(), 'comments title', 'azalea' ) ), number_format_i18n( get_comments_number() ) );
+		$comments_number = get_comments_number();
+		if ( '1' === $comments_number ) {
+			echo esc_html_x( '1 comment', 'comments title', 'azalea' );
+		} else {
+			printf( esc_html( _nx( '%s comment', '%s comments', $comments_number, 'comments title', 'azalea' ) ), number_format_i18n( $comments_number ) );
+		}
 		if ( comments_open() ) {
 			echo ' &#47; <a href="#respond">' . esc_html__( 'Add your comment below', 'azalea' ) . '</a>';
 		}
@@ -47,11 +52,13 @@ if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_
 $req      = get_option( 'require_name_email' );
 $aria_req = ( $req ? ' aria-required="true"' : '' );
 $html_req = ( $req ? ' required="required"' : '' );
+$consent  = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
 comment_form( array(
 	'fields'               => array(
 		'author' => '<p class="comment-form-author"><label for="author" class="screen-reader-text">' . esc_html__( 'Name', 'azalea' ) . ( $req ? '' : esc_html__( ' (optional)', 'azalea' ) ) . '</label> <input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . $html_req . ' placeholder="' . esc_attr__( 'Name', 'azalea' ) . ( $req ? '' : esc_attr__( ' (optional)', 'azalea' ) ) . '" /></p>',
 		'email' => '<p class="comment-form-email"><label for="email" class="screen-reader-text">' . esc_html__( 'Email', 'azalea' ) . ( $req ? '' : esc_html__( ' (optional)', 'azalea' ) ) . '</label> <input id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . $html_req . ' placeholder="' . esc_attr__( 'Email', 'azalea' ) . ( $req ? '' : esc_attr__( ' (optional)', 'azalea' ) ) . '" /></p>',
-		'url'    => '<p class="comment-form-url"><label for="url" class="screen-reader-text">' . esc_html__( 'Website', 'azalea' ) . esc_html__( ' (optional)', 'azalea' ) . '</label> <input id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" placeholder="' . esc_attr__( 'Website', 'azalea' ) . esc_attr__( ' (optional)', 'azalea' ) . '" /></p>'
+		'url'    => '<p class="comment-form-url"><label for="url" class="screen-reader-text">' . esc_html__( 'Website', 'azalea' ) . esc_html__( ' (optional)', 'azalea' ) . '</label> <input id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" placeholder="' . esc_attr__( 'Website', 'azalea' ) . esc_attr__( ' (optional)', 'azalea' ) . '" /></p>',
+		'cookies' => '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' />' . '<label for="wp-comment-cookies-consent">' . esc_attr__( 'Save my name, email, and website in this browser for the next time I comment.', 'azalea' ) . '</label></p>'
 	),
 	'comment_field'        => '<p class="comment-form-comment"><label for="comment" class="screen-reader-text">' . esc_html__( 'Comment', 'azalea' ) . '</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required" placeholder="' . esc_attr__( 'Comment', 'azalea' ) . '"></textarea></p>',
 	'comment_notes_before' => ''

@@ -9,70 +9,119 @@
  * Implement Theme Customizer additions and adjustments.
  */
 function jgtazalea_customize_register( $wp_customize ) {
-	// Double size logo for Retina devices.
-	$wp_customize->add_setting( 'jgtazalea_logo_retina', array(
-		'sanitize_callback' => 'jgtazalea_sanitize_checkbox'
+	// Add postMessage support for site title and description.
+	$transport = ( $wp_customize->selective_refresh) ? 'postMessage' : 'refresh';
+	$wp_customize->get_setting( 'blogname' )->transport = $transport;
+	$wp_customize->get_setting( 'blogdescription' )->transport = $transport;
+
+	// Selective refresh for previewing the site title and tagline.
+	$wp_customize->selective_refresh->add_partial( 'blogname', array(
+		'selector'        => '.site-title a',
+		'render_callback' => 'jgtazalea_customize_partial_blogname',
 	) );
-	$wp_customize->add_control( 'jgtazalea_logo_retina', array(
-		'label'    => esc_html__( 'Check if you use double sized logo.', 'azalea' ),
-		'section'  => 'title_tagline',
-		'settings' => 'jgtazalea_logo_retina',
-		'type'     => 'checkbox',
-		'priority' => 9
+	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+		'selector'        => '.site-description',
+		'render_callback' => 'jgtazalea_customize_partial_blogdescription',
 	) );
 
-	// Header background color.
-	$wp_customize->add_setting( 'jgtazalea_header_background_color', array(
-		'default'           => '#ffffff',
-		'sanitize_callback' => 'sanitize_hex_color'
-	) );
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'jgtazalea_header_background_color', array(
-		'label'   => esc_html__( 'Header Background Color', 'azalea' ),
-		'section' => 'colors'
-	) ) );
+	/**
+	 * Site Identity Section.
+	 */
+		// Double size logo for Retina devices.
+		$wp_customize->add_setting( 'jgtazalea_logo_retina', array(
+			'sanitize_callback' => 'jgtazalea_sanitize_checkbox'
+		) );
+		$wp_customize->add_control( 'jgtazalea_logo_retina', array(
+			'label'    => esc_html__( 'Check if you use double sized logo.', 'azalea' ),
+			'section'  => 'title_tagline',
+			'settings' => 'jgtazalea_logo_retina',
+			'type'     => 'checkbox',
+			'priority' => 9
+		) );
 
-	// Theme accent color.
-	$wp_customize->add_setting( 'jgtazalea_accent_color', array(
-		'default'           => '#ff868f',
-		'sanitize_callback' => 'sanitize_hex_color'
-	) );
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'jgtazalea_accent_color', array(
-		'label'   => esc_html__( 'Accent Color', 'azalea' ),
-		'section' => 'colors'
-	) ) );
+	/**
+	 * Colors Section.
+	 */
+		// Header background color.
+		$wp_customize->add_setting( 'jgtazalea_header_background_color', array(
+			'default'           => '#ffffff',
+			'sanitize_callback' => 'sanitize_hex_color'
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'jgtazalea_header_background_color', array(
+			'label'   => esc_html__( 'Header Background Color', 'azalea' ),
+			'section' => 'colors'
+		) ) );
 
-	// Header background image size.
-	$wp_customize->add_setting( 'jgtazalea_header_background_size' , array(
-		'default'           => 'auto',
-		'sanitize_callback' => 'jgtazalea_sanitize_select'
-	) );
-	$wp_customize->add_control( 'jgtazalea_header_background_size', array(
-		'label'    => esc_html__( 'Background Image Size', 'azalea' ),
-		'section'  => 'header_image',
-		'settings' => 'jgtazalea_header_background_size',
-		'type'     => 'select',
-		'choices'  => array(
-			'auto'    => esc_html__( 'Auto', 'azalea' ),
-			'cover'   => esc_html__( 'Cover', 'azalea' ),
-			'contain' => esc_html__( 'Contain', 'azalea' )
-		)
-	) );
+		// Theme accent color.
+		$wp_customize->add_setting( 'jgtazalea_accent_color', array(
+			'default'           => '#ff868f',
+			'sanitize_callback' => 'sanitize_hex_color'
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'jgtazalea_accent_color', array(
+			'label'   => esc_html__( 'Accent Color', 'azalea' ),
+			'section' => 'colors'
+		) ) );
 
-	// Header background image repeat.
-	$wp_customize->add_setting( 'jgtazalea_header_background_repeat' , array(
-		'default'           => 'repeat',
-		'sanitize_callback' => 'jgtazalea_sanitize_select'
-	) );
-	$wp_customize->add_control( 'jgtazalea_header_background_repeat', array(
-		'label'    => esc_html__( 'Background Image Repeat', 'azalea' ),
-		'section'  => 'header_image',
-		'settings' => 'jgtazalea_header_background_repeat',
-		'type'     => 'select',
-		'choices'  => array(
-			'repeat'    => esc_html__( 'Repeat', 'azalea' ),
-			'no-repeat' => esc_html__( 'No Repeat', 'azalea' )
-		)
-	) );
+	/**
+	 * Header Image Section.
+	 */
+		// Header background image size.
+		$wp_customize->add_setting( 'jgtazalea_header_background_size' , array(
+			'default'           => 'auto',
+			'sanitize_callback' => 'jgtazalea_sanitize_select'
+		) );
+		$wp_customize->add_control( 'jgtazalea_header_background_size', array(
+			'label'    => esc_html__( 'Background Image Size', 'azalea' ),
+			'section'  => 'header_image',
+			'settings' => 'jgtazalea_header_background_size',
+			'type'     => 'select',
+			'choices'  => array(
+				'auto'    => esc_html__( 'Original', 'azalea' ),
+				'cover'   => esc_html__( 'Fill header area', 'azalea' ),
+				'contain' => esc_html__( 'Fit to header area', 'azalea' )
+			)
+		) );
+
+		// Header background image position.
+		$wp_customize->add_setting( 'jgtazalea_header_background_position' , array(
+			'default'           => 'center center',
+			'sanitize_callback' => 'jgtazalea_sanitize_select'
+		) );
+		$wp_customize->add_control( 'jgtazalea_header_background_position', array(
+			'label'    => esc_html__( 'Background Image Position', 'azalea' ),
+			'section'  => 'header_image',
+			'settings' => 'jgtazalea_header_background_position',
+			'type'     => 'select',
+			'choices'  => array(
+				'left top'      => esc_html__( 'Left Top', 'azalea' ),
+				'center top'    => esc_html__( 'Center Top', 'azalea' ),
+				'right top'     => esc_html__( 'Right Top', 'azalea' ),
+				'left center'   => esc_html__( 'Left Center', 'azalea' ),
+				'center center' => esc_html__( 'Center Center', 'azalea' ),
+				'right center'  => esc_html__( 'Right Center', 'azalea' ),
+				'left bottom'   => esc_html__( 'Left Bottom', 'azalea' ),
+				'center bottom' => esc_html__( 'Center Bottom', 'azalea' ),
+				'right bottom'  => esc_html__( 'Right Bottom', 'azalea' )
+			)
+		) );
+
+		// Header background image repeat.
+		$wp_customize->add_setting( 'jgtazalea_header_background_repeat' , array(
+			'default'           => 'repeat',
+			'sanitize_callback' => 'jgtazalea_sanitize_select'
+		) );
+		$wp_customize->add_control( 'jgtazalea_header_background_repeat', array(
+			'label'    => esc_html__( 'Background Image Repeat', 'azalea' ),
+			'section'  => 'header_image',
+			'settings' => 'jgtazalea_header_background_repeat',
+			'type'     => 'select',
+			'choices'  => array(
+				'repeat'    => esc_html__( 'Repeat', 'azalea' ),
+				'repeat-x'  => esc_html__( 'Repeat Horizontally', 'azalea' ),
+				'repeat-y'  => esc_html__( 'Repeat Vertically', 'azalea' ),
+				'no-repeat' => esc_html__( 'No Repeat', 'azalea' )
+			)
+		) );
 
 	/**
 	 * General Settings Section.
@@ -136,11 +185,17 @@ function jgtazalea_customize_register( $wp_customize ) {
 			'settings' => 'jgtazalea_footer_text',
 			'type'     => 'textarea'
 		) );
+		// Selective refresh for previewing the footer text.
+		$wp_customize->selective_refresh->add_partial( 'jgtazalea_footer_text', array(
+			'selector'            => '.site-info',
+			'container_inclusive' => false,
+			'render_callback'     => 'jgtazalea_customize_partial_footertext'
+		) );
 
 	/**
 	 * Post Settings Section.
 	 */
-	$wp_customize->add_section( 'jgtazalea_post_settings', array( 
+	$wp_customize->add_section( 'jgtazalea_post_settings', array(
 		'title'    => esc_html__( 'Post Settings', 'azalea' ),
 		'priority' => 150
 	) );
@@ -169,6 +224,27 @@ function jgtazalea_customize_register( $wp_customize ) {
 }
 
 add_action( 'customize_register', 'jgtazalea_customize_register' );
+
+/**
+ * Render the site title for the selective refresh partial.
+ */
+function jgtazalea_customize_partial_blogname() {
+	bloginfo( 'name' );
+}
+
+/**
+ * Render the site tagline for the selective refresh partial.
+ */
+function jgtazalea_customize_partial_blogdescription() {
+	bloginfo( 'description' );
+}
+
+/**
+ * Render the footer text for the selective refresh partial.
+ */
+function jgtazalea_customize_partial_footertext() {
+	return get_theme_mod( 'jgtazalea_footer_text' );
+}
 
 /**
  * Checkbox sanitization callback.

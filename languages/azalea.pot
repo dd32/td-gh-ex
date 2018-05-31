@@ -1,14 +1,14 @@
-# Copyright (C) 2017 Just Good Themes
+# Copyright (C) 2018 Just Good Themes
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Azalea 1.0.1\n"
+"Project-Id-Version: Azalea 1.0.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/azalea\n"
-"POT-Creation-Date: 2017-03-21 13:25:23+00:00\n"
+"POT-Creation-Date: 2018-05-31 10:58:17+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -20,46 +20,67 @@ msgstr ""
 msgid "Either something went wrong or the page doesn&rsquo;t exist anymore. Visit our <a href=\"%s\">homepage</a> or search the best match below."
 msgstr ""
 
-#: comments.php:20
+#: attachment.php:23 page-templates/authors.php:20
+#: template-parts/content-gallery.php:21 template-parts/content-page.php:12
+#: template-parts/content-video.php:21 template-parts/content.php:21
+msgid "Edit"
+msgstr ""
+
+#: attachment.php:50 template-parts/content-gallery.php:55
+#: template-parts/content-page.php:20 template-parts/content-video.php:45
+#: template-parts/content.php:33
+msgid "Pages:"
+msgstr ""
+
+#: comments.php:22
+msgctxt "comments title"
+msgid "1 comment"
+msgstr ""
+
+#: comments.php:24
 msgctxt "comments title"
 msgid "%s comment"
 msgid_plural "%s comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:22
+#: comments.php:27
 msgid "Add your comment below"
 msgstr ""
 
-#: comments.php:36
+#: comments.php:41
 msgid "Older comments"
 msgstr ""
 
-#: comments.php:37
+#: comments.php:42
 msgid "Newer comments"
 msgstr ""
 
-#: comments.php:44
+#: comments.php:49
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:52
+#: comments.php:58
 msgid "Name"
 msgstr ""
 
-#: comments.php:52 comments.php:53 comments.php:54
+#: comments.php:58 comments.php:59 comments.php:60
 msgid " (optional)"
 msgstr ""
 
-#: comments.php:53
+#: comments.php:59
 msgid "Email"
 msgstr ""
 
-#: comments.php:54
+#: comments.php:60
 msgid "Website"
 msgstr ""
 
-#: comments.php:56
+#: comments.php:61
+msgid "Save my name, email, and website in this browser for the next time I comment."
+msgstr ""
+
+#: comments.php:63
 msgid "Comment"
 msgstr ""
 
@@ -164,26 +185,6 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: image.php:23 page-templates/authors.php:20
-#: template-parts/content-gallery.php:21 template-parts/content-page.php:12
-#: template-parts/content-video.php:21 template-parts/content.php:21
-msgid "Edit"
-msgstr ""
-
-#: image.php:40 template-parts/content-gallery.php:55
-#: template-parts/content-page.php:20 template-parts/content-video.php:45
-#: template-parts/content.php:33
-msgid "Pages:"
-msgstr ""
-
-#: image.php:63
-msgid "Previous Image"
-msgstr ""
-
-#: image.php:64
-msgid "Next Image"
-msgstr ""
-
 #: inc/custom-header.php:24
 msgid "White Wall Hash"
 msgstr ""
@@ -204,91 +205,139 @@ msgstr ""
 msgid "Subtle Grunge"
 msgstr ""
 
-#: inc/customizer.php:17
+#: inc/customizer.php:35
 msgid "Check if you use double sized logo."
 msgstr ""
 
-#: inc/customizer.php:30
+#: inc/customizer.php:51
 msgid "Header Background Color"
 msgstr ""
 
-#: inc/customizer.php:40
+#: inc/customizer.php:61
 msgid "Accent Color"
 msgstr ""
 
-#: inc/customizer.php:50
+#: inc/customizer.php:74
 msgid "Background Image Size"
 msgstr ""
 
-#: inc/customizer.php:55
-msgid "Auto"
+#: inc/customizer.php:79
+msgid "Original"
 msgstr ""
 
-#: inc/customizer.php:56
-msgid "Cover"
-msgstr ""
-
-#: inc/customizer.php:57
-msgid "Contain"
-msgstr ""
-
-#: inc/customizer.php:67
-msgid "Background Image Repeat"
-msgstr ""
-
-#: inc/customizer.php:72
-msgid "Repeat"
-msgstr ""
-
-#: inc/customizer.php:73
-msgid "No Repeat"
+#: inc/customizer.php:80
+msgid "Fill header area"
 msgstr ""
 
 #: inc/customizer.php:81
-msgid "General Settings"
+msgid "Fit to header area"
 msgstr ""
 
 #: inc/customizer.php:91
-msgid "Sidebar Position"
+msgid "Background Image Position"
 msgstr ""
 
 #: inc/customizer.php:96
-msgid "Right Sidebar"
+msgid "Left Top"
 msgstr ""
 
 #: inc/customizer.php:97
+msgid "Center Top"
+msgstr ""
+
+#: inc/customizer.php:98
+msgid "Right Top"
+msgstr ""
+
+#: inc/customizer.php:99
+msgid "Left Center"
+msgstr ""
+
+#: inc/customizer.php:100
+msgid "Center Center"
+msgstr ""
+
+#: inc/customizer.php:101
+msgid "Right Center"
+msgstr ""
+
+#: inc/customizer.php:102
+msgid "Left Bottom"
+msgstr ""
+
+#: inc/customizer.php:103
+msgid "Center Bottom"
+msgstr ""
+
+#: inc/customizer.php:104
+msgid "Right Bottom"
+msgstr ""
+
+#: inc/customizer.php:114
+msgid "Background Image Repeat"
+msgstr ""
+
+#: inc/customizer.php:119
+msgid "Repeat"
+msgstr ""
+
+#: inc/customizer.php:120
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: inc/customizer.php:121
+msgid "Repeat Vertically"
+msgstr ""
+
+#: inc/customizer.php:122
+msgid "No Repeat"
+msgstr ""
+
+#: inc/customizer.php:130
+msgid "General Settings"
+msgstr ""
+
+#: inc/customizer.php:140
+msgid "Sidebar Position"
+msgstr ""
+
+#: inc/customizer.php:145
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/customizer.php:146
 msgid "Left Sidebar"
 msgstr ""
 
-#: inc/customizer.php:106
+#: inc/customizer.php:155
 msgid "Fix top navigation bar on scroll."
 msgstr ""
 
-#: inc/customizer.php:118
+#: inc/customizer.php:167
 msgid "Posts Navigation Type"
 msgstr ""
 
-#: inc/customizer.php:123
+#: inc/customizer.php:172
 msgid "Paginated Links"
 msgstr ""
 
-#: inc/customizer.php:124
+#: inc/customizer.php:173
 msgid "Next/Prev Links"
 msgstr ""
 
-#: inc/customizer.php:134
+#: inc/customizer.php:183
 msgid "Footer Text"
 msgstr ""
 
-#: inc/customizer.php:144
+#: inc/customizer.php:199
 msgid "Post Settings"
 msgstr ""
 
-#: inc/customizer.php:153
+#: inc/customizer.php:208
 msgid "Show automatically generated post excerpts on the main blog and archive pages."
 msgstr ""
 
-#: inc/customizer.php:164
+#: inc/customizer.php:219
 msgid "Display author box in the single post page."
 msgstr ""
 
@@ -351,35 +400,35 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: inc/template-tags.php:201
+#: inc/template-tags.php:204
 msgid "Older posts"
 msgstr ""
 
-#: inc/template-tags.php:202
+#: inc/template-tags.php:205
 msgid "Newer posts"
 msgstr ""
 
-#: inc/template-tags.php:206
+#: inc/template-tags.php:209
 msgid "Previous"
 msgstr ""
 
-#: inc/template-tags.php:207
+#: inc/template-tags.php:210
 msgid "Next"
 msgstr ""
 
-#: inc/template-tags.php:208
+#: inc/template-tags.php:211
 msgid "Page"
 msgstr ""
 
-#: inc/template-tags.php:220
+#: inc/template-tags.php:223
 msgid "&copy; %1$s %2$s"
 msgstr ""
 
-#: inc/template-tags.php:220
+#: inc/template-tags.php:223
 msgid "Y"
 msgstr ""
 
-#: inc/template-tags.php:222
+#: inc/template-tags.php:225
 msgid "Theme by %s."
 msgstr ""
 
