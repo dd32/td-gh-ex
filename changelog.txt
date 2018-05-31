@@ -1,3 +1,9 @@
+
+AyaEstate 1.0.7, 2018-05-31
+------------------------
+- updating screenshot.png
+
+
 AyaEstate 1.0.0, 2018-04-16
 ------------------------
 - Initial release

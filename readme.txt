@@ -102,6 +102,6 @@ AyaEstate WordPress Theme bundles the following third-party resources:
 * fonts/fontawesome-webfont.woff2, FontAwesom, MIT
 * js/viewportchecker.js, MIT
 *
-* screenshot.png (Thumbnail Image), https://pixabay.com/en/white-outdoor-patio-furniture-1547092/, CC0
+* screenshot.png (Thumbnail Image), https://pixabay.com/en/render-graphic-architecture-3d-1477041/, CC0
 *
 * screenshot.png (Facebook Page Logo Image), GPL-2.0, AyaTemplates, https://ayatemplates.com/
