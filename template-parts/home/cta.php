@@ -5,8 +5,7 @@
  * @package Bayn Lite
  */
 
-$front_page_cta_text_default = '<h3>BECOME AN INSTRUCTION?</h3>
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry.';
+$front_page_cta_text_default = wp_kses_post( __( '<h3>BECOME AN INSTRUCTION?</h3>Get ready to start your successful career', 'bayn-lite' ) );
 
 $cta_text = get_theme_mod( 'cta_text', $front_page_cta_text_default );
 $cta_link_url = get_theme_mod( 'cta_link_url' );

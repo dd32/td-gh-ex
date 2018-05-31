@@ -60,6 +60,9 @@ http://gretathemes.com/
 
 == Changelog ==
 
+= 1.0.3 =
+* Fix some required issues
+
 = 1.0.2 =
 * Fix "Can't use function return value in write context"
 

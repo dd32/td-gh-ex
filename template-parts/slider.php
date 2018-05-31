@@ -11,7 +11,7 @@ if ( empty( $featured_posts ) ) {
 }
 $speed = get_theme_mod( 'slider_speed', 500 );
 ?>
-<div id="slider" data-speed="<?php echo esc_html( $speed ); ?>" class="slider">
+<div id="slider" data-speed="<?php echo esc_attr( $speed ); ?>" class="slider">
 	<?php foreach ( $featured_posts as $post ) : ?>
 		<?php setup_postdata( $post ); ?>
 		<div class="slide">
