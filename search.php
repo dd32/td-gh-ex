@@ -4,44 +4,48 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package Best Minimalist
+ * @package Best_Minimalist
  */
 
-get_header(); ?>
+get_header();
+?>
 
 	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main">
 
-		<?php
-		if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title search-term"><?php
+				<h2 class="page-title">
+					<?php
 					/* translators: %s: search query. */
-					printf( esc_html__( 'Search results for term %s', 'best-minimalist' ), '<span>' . get_search_query() . '</span>' );
-				?></h1>
+					printf( esc_html__( 'You Searched For %s', 'best-minimalist' ), '<span>' . get_search_query() . '</span>' );
+					?>
+				</h2>
 			</header><!-- .page-header -->
 
 			<?php
 			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			while ( have_posts() ) :
+				the_post();
 
 				/**
 				 * Run the loop for the search to output the results.
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'search' );
+				get_template_part( 'template-parts/content', get_post_type() );
 
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_pagination( array( 'mid_size' => 2 ) );
 
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif; ?>
+		endif;
+		?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->

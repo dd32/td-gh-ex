@@ -1,8 +1,9 @@
-/* global best_minimalist_ScreenReaderText */
 /**
  * Theme functions file.
  *
  * Contains handlers for navigation and widget area.
+ *
+ * @package Best_Minimalist
  */
 
 (function( $ ) {
@@ -11,12 +12,12 @@
 	function initMainNavigation( container ) {
 
 		// Add dropdown toggle that displays child menu items.
-		var dropdownToggle = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false })
-            .append( $( '<i />', { 'class': 'icon-down dropdownsymbol', text: '' }) )
-			.append( $( '<span />', { 'class': 'screen-reader-text', text: best_minimalist_ScreenReaderText.expand }) );
+		var dropdownToggle = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false } )
+			.append( $( '<i />', { 'class': 'icon-down dropdownsymbol', text: '' } ) )
+			.append( $( '<span />', { 'class': 'screen-reader-text', text: best_minimalist_ScreenReaderText.expand } ) );
 
 		container.find( '.menu > li.menu-item-has-children > a, .menu > li.page_item_has_children > a' ).after( dropdownToggle );
-        container.find( '.menu > li.menu-item-has-children > a, .menu > li.page_item_has_children > a' ).after( '<i class="icon-down desktop-dropdownsymbol"></i>' );
+		container.find( '.menu > li.menu-item-has-children > a, .menu > li.page_item_has_children > a' ).after( '<i class="icon-down desktop-dropdownsymbol"></i>' );
 
 		// Set the active submenu dropdown toggle button initial state.
 		container.find( '.current-menu-ancestor > button' )
@@ -27,21 +28,23 @@
 		// Set the active submenu initial state.
 		container.find( '.current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
 
-		container.find( '.dropdown-toggle' ).click( function( e ) {
-			var _this = $( this ),
-				screenReaderSpan = _this.find( '.screen-reader-text' );
-                dropdownSymbol = _this.find( '.dropdownsymbol' );
+		container.find( '.dropdown-toggle' ).click(
+			function( e ) {
+					var _this        = $( this ),
+					screenReaderSpan = _this.find( '.screen-reader-text' );
+					dropdownSymbol   = _this.find( '.dropdownsymbol' );
 
-			e.preventDefault();
-			_this.toggleClass( 'toggled-on' );
-			_this.next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
+					e.preventDefault();
+					_this.toggleClass( 'toggled-on' );
+					_this.next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
 
-			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+					_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 
-            dropdownSymbol.attr( 'class', dropdownSymbol.attr('class') === 'icon-down dropdownsymbol' ? 'icon-angle-up dropdownsymbol' : 'icon-down dropdownsymbol' );
+					dropdownSymbol.attr( 'class', dropdownSymbol.attr( 'class' ) === 'icon-down dropdownsymbol' ? 'icon-down dropdownsymbol' : 'icon-down dropdownsymbol' );
 
-			screenReaderSpan.text( screenReaderSpan.text() === best_minimalist_ScreenReaderText.expand ? best_minimalist_ScreenReaderText.collapse : best_minimalist_ScreenReaderText.expand );
-		});
+					screenReaderSpan.text( screenReaderSpan.text() === best_minimalist_ScreenReaderText.expand ? best_minimalist_ScreenReaderText.collapse : best_minimalist_ScreenReaderText.expand );
+			}
+		);
 	}
 
 	initMainNavigation( $( '.main-navigation' ) );
@@ -62,11 +65,13 @@
 		// Add an initial value for the attribute.
 		menuToggle.attr( 'aria-expanded', 'false' );
 
-		menuToggle.on( 'click.minimalist', function() {
-			siteNavContain.toggleClass( 'toggled-on' );
+		menuToggle.on(
+			'click.best-minimalist', function() {
+				siteNavContain.toggleClass( 'toggled-on' );
 
-			$( this ).attr( 'aria-expanded', siteNavContain.hasClass( 'toggled-on' ) );
-		});
+				$( this ).attr( 'aria-expanded', siteNavContain.hasClass( 'toggled-on' ) );
+			}
+		);
 	})();
 
 	// Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
@@ -79,35 +84,41 @@
 		function toggleFocusClassTouchScreen() {
 			if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
 
-				$( document.body ).on( 'touchstart.minimalist', function( e ) {
-					if ( ! $( e.target ).closest( '.main-navigation li' ).length ) {
-						$( '.main-navigation li' ).removeClass( 'focus' );
+				$( document.body ).on(
+					'touchstart.best-minimalist', function( e ) {
+						if ( ! $( e.target ).closest( '.main-navigation li' ).length ) {
+							$( '.main-navigation li' ).removeClass( 'focus' );
+						}
 					}
-				});
+				);
 
 				siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' )
-					.on( 'touchstart.minimalist', function( e ) {
-						var el = $( this ).parent( 'li' );
+					.on(
+						'touchstart.best-minimalist', function( e ) {
+							var el = $( this ).parent( 'li' );
 
-						if ( ! el.hasClass( 'focus' ) ) {
-							e.preventDefault();
-							el.toggleClass( 'focus' );
-							el.siblings( '.focus' ).removeClass( 'focus' );
+							if ( ! el.hasClass( 'focus' ) ) {
+								e.preventDefault();
+								el.toggleClass( 'focus' );
+								el.siblings( '.focus' ).removeClass( 'focus' );
+							}
 						}
-					});
+					);
 
 			} else {
-				siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).unbind( 'touchstart.minimalist' );
+				siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).unbind( 'touchstart.best-minimalist' );
 			}
 		}
 
 		if ( 'ontouchstart' in window ) {
-			$( window ).on( 'resize.minimalist', toggleFocusClassTouchScreen );
+			$( window ).on( 'resize.best-minimalist', toggleFocusClassTouchScreen );
 			toggleFocusClassTouchScreen();
 		}
 
-		siteNavigation.find( 'a' ).on( 'focus.minimalist blur.minimalist', function() {
-			$( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
-		});
+		siteNavigation.find( 'a' ).on(
+			'focus.best-minimalist blur.best-minimalist', function() {
+				$( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
+			}
+		);
 	})();
 })( jQuery );
