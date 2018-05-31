@@ -1,9 +1,14 @@
-Agama WordPress Theme, Copyright 2015 - 2017 Theme-Vision.com
+Agama WordPress Theme, Copyright 2015 - 2018 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
-= 1.3.3 - 30 March 2018 =
+= 1.3.4 - 31 May 2018 =
+* Updated Kirki framework to the latest version.
+* Updated theme translation files.
+* Fixed minor PHP notices.
+
+= 1.3.3 - 02 April 2018 =
 * Added header shrinking feature on/off.
 * Added alt attribute to logo image.
 * Minor updates in customizer area.

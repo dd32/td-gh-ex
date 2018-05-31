@@ -139,8 +139,9 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 				'element' => '#masthead .sticky-header-shrink .site-title a'
 			)
 		),
-		'default'		=> array(
-			'font-size'	=> '28px'
+		'default'		    => array(
+            'font-family'   => 'Crete Round',
+			'font-size'	    => '28px'
 		)
 	) );
 #######################################################

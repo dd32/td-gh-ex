@@ -1,4 +1,4 @@
-Agama WordPress theme, copyright (C) 2015 Jaroslav Svetlik
+Agama WordPress theme, copyright (C) 2015 - 2018 ThemeVision
         Licensed under the GNU GPL License below
 
 
