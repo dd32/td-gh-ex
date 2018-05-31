@@ -30,7 +30,8 @@
 				echo '<div class="entry-category">', $categories_list, '</div>'; // WPCS: XSS OK.
 			}
 		}
-		if ( empty( get_the_title() ) ) {
+		$title = get_the_title();
+		if ( empty( $title ) ) {
 			bayn_lite_content_more();
 		}
 		?>
