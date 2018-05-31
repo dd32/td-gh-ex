@@ -17,7 +17,7 @@
 
 
 	$wp_customize->add_setting('agency_lite_email_header_control', array(
-		'sanitize_callback' => 'esc_html',
+		'sanitize_callback' => 'sanitize_email',
 	));
 
 	$wp_customize->add_control( 'agency_lite_email_header_control', array(
@@ -27,7 +27,7 @@
 	));
 
 	$wp_customize->add_setting('agency_lite_phone_header_control',array(
-		'sanitize_callback' => 'esc_html',
+		'sanitize_callback' => 'sanitize_text_field',
 	));
 
 
@@ -93,7 +93,7 @@
 	foreach( $home_sliders as $home_slider ){
 
 		$wp_customize->add_setting('agency_lite_banner_'.$home_slider.'_instruction',array(
-			'sanitize_callback' =>	'esc_url',
+			'sanitize_callback' =>	'esc_url_raw',
 		));
 
 		$wp_customize->add_control( new agency_lite_Section_Typo_Seperator($wp_customize,'agency_lite_banner_'.$home_slider.'_instruction',array(
@@ -115,7 +115,7 @@
 		));
 
 		$wp_customize->add_setting('agency_lite_slider_'.$home_slider.'_btn_control',array(
-			'sanitize_callback' => 'esc_html',
+			'sanitize_callback' => 'sanitize_text_field',
 		));
 
 		$wp_customize->add_control('agency_lite_slider_'.$home_slider.'_btn_control',array(
@@ -154,17 +154,6 @@
 		'panel'			=> 'agency_lite_general_setting',
 		'title'			=> esc_html__('Inner Page Header Image','agency-lite'),
 	));
-
- //    $wp_customize->add_setting( 'header_image', array(
- //        'sanitize_callback' => 'esc_url',
- //    ));
-
-	// $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'header_image',array(
- //       'label'      	=> esc_html__( 'Upload a Image', 'agency-lite' ),
- //       'description'	=> esc_html__('upload a image for BreadCrumb section','agency-lite'),
- //       'section'    	=> 'agency_lite_breadcrumb_section',
- //    )));
-
 
 	//design settings 
 	$wp_customize->add_section('agency_lite_blog_post_display_section',array(
@@ -292,7 +281,7 @@
     ))));
 
 	$wp_customize->add_setting('agency_lite_faq_title', array(
-        'sanitize_callback' => 'esc_html',
+        'sanitize_callback' => 'sanitize_text_field',
     ));
 
     $wp_customize->add_control('agency_lite_faq_title', array(
@@ -303,13 +292,11 @@
     ));
 
     $wp_customize->add_setting( 'agency_lite_faq_description', array(
-	    'sanitize_callback'	=> 'esc_html',
+	    'sanitize_callback'	=> 'sanitize_text_field',
 	));
-
-
 	$wp_customize->add_control('agency_lite_faq_description', array(
         'label'			=> esc_html__('FAQ Section Description','agency-lite'),
-        'type'			=> 'textarea',
+        'type'			=> 'text',
         'section'		=> 'agency_lite_faq_section',
         'priority'		=> 3,
 	));
@@ -333,8 +320,6 @@
 	$wp_customize->add_setting( 'agency_lite_faq_background_image', array(
 	    'sanitize_callback' => 'esc_url_raw',
 	));
-
-
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize,'agency_lite_faq_background_image',array(
        'label'      	=> esc_html__( 'Upload Background Image', 'agency-lite' ),
        'description'	=> esc_html__('upload a image for faq section','agency-lite'),
@@ -352,7 +337,6 @@
         'sanitize_callback' => 'agency_lite_sanitize_textarea',
         'default'           => 'on'
     ));
-
 	$wp_customize->add_control( new agency_lite_Switch_Control( $wp_customize,'agency_lite_enable_features_control',array(
        'label'         	=> esc_html__( 'Enable Features Section', 'agency-lite' ),
        'section'       	=> 'agency_lite_features_section',
@@ -364,10 +348,8 @@
 
 
 	$wp_customize->add_setting('agency_lite_features_title_control',array(
-		'sanitize_callback' => 'esc_html',
+		'sanitize_callback' => 'sanitize_text_field',
 	));
-
-
 	$wp_customize->add_control( 'agency_lite_features_title_control', array(
 		'label'			=> esc_html__('Feature Section Title','agency-lite'),
 		'priority'		=> 2,
@@ -376,14 +358,12 @@
 	));
 
 	$wp_customize->add_setting('agency_lite_features_description_control',array(
-		'sanitize_callback' => 'esc_html',
+		'sanitize_callback' => 'sanitize_text_field',
 	));
-
-
 	$wp_customize->add_control( 'agency_lite_features_description_control', array(
 		'label'		=> esc_html__('Features Section Description','agency-lite'),
 		'priority'	=> 3,
-		'type'		=> 'textarea',
+		'type'		=> 'text',
 		'section'	=> 'agency_lite_features_section'
 	));
 
@@ -396,8 +376,7 @@
 		    'sanitize_callback' => 'absint',
 		    'default'           => 0,
 		));
-
-		 $wp_customize->add_control('agency_lite_'.$features_page.'_features_pages', array(
+		$wp_customize->add_control('agency_lite_'.$features_page.'_features_pages', array(
 		        'label'			=> esc_html__('Page ','agency-lite').$features_page,
 		        'type'			=> 'dropdown-pages',
 		        'section'		=> 'agency_lite_features_section',
@@ -407,7 +386,7 @@
 
 
   	$wp_customize->add_setting('agency_lite_features_notice',array(
-		'sanitize_callback' =>'esc_html',
+		'sanitize_callback' =>'sanitize_text_field',
 	));
 
 	$wp_customize->add_control( new agency_lite_Notice_Instruction($wp_customize,'agency_lite_features_notice',array(
@@ -456,7 +435,7 @@
 	}
 
 	$wp_customize->add_setting('agency_lite_service_notice',array(
-		'sanitize_callback' =>'esc_html',
+		'sanitize_callback' =>'sanitize_text_field',
 	));
 
 	$wp_customize->add_control( new agency_lite_Notice_Instruction($wp_customize,'agency_lite_service_notice',array(
@@ -489,29 +468,29 @@
 
 
  	$wp_customize->add_setting('agency_lite_team_title',array(
-        'sanitize_callback'	=> 'esc_html',
+        'sanitize_callback'	=> 'sanitize_text_field',
     ));
 
  	$wp_customize->add_control('agency_lite_team_title',array(
-        'label'			=> esc_attr__('Team Section Title','agency-lite'),
+        'label'			=> esc_html__('Team Section Title','agency-lite'),
         'type'			=> 'text',
         'priority'		=> 2,
         'section'		=> 'agency_lite_team_page_section'
     ));
 
 	 $wp_customize->add_setting('agency_lite_team_description',array(
-        'sanitize_callback' => 'esc_html'
+        'sanitize_callback' => 'sanitize_text_field'
     ));
 
 	 $wp_customize->add_control( 'agency_lite_team_description',array(
         'label'			=> esc_html__('Team Section Sub Title','agency-lite'),
-        'type'			=> 'textarea',
+        'type'			=> 'text',
         'priority'		=> 3,
         'section'		=> 'agency_lite_team_page_section'
     ));
 
   	$wp_customize->add_setting('agency_lite_notice',array(
-		'sanitize_callback' =>'esc_html',
+		'sanitize_callback' =>'sanitize_text_field',
 	));
 
 	$wp_customize->add_control( new agency_lite_Notice_Instruction($wp_customize,'agency_lite_notice',array(
@@ -548,7 +527,7 @@
 	foreach( $t_counters as $t_counter ){
 
 		$wp_customize->add_setting('agency_lite_banner_'.$t_counter.'_instruction',array(
-			'sanitize_callback' =>'esc_html',
+			'sanitize_callback' =>'sanitize_text_field',
 		));
 
 		$wp_customize->add_control( new agency_lite_Section_Typo_Seperator($wp_customize,'agency_lite_banner_'.$t_counter.'_instruction',array(
@@ -606,9 +585,8 @@
 
 
 	$wp_customize->add_setting('agency_lite_blog_title',array(
-        'sanitize_callback' => 'esc_html'
+        'sanitize_callback' => 'sanitize_text_field'
 	));
-
 	$wp_customize->add_control('agency_lite_blog_title',array(
         'label'			=> esc_attr__('Blog  Title','agency-lite'),
         'type'			=> 'text',
@@ -617,21 +595,19 @@
 	));
 
 	$wp_customize->add_setting('agency_lite_blog_description',array(
-        'sanitize_callback' => 'esc_html'
+        'sanitize_callback' => 'sanitize_text_field'
     ));
-
 	$wp_customize->add_control( 'agency_lite_blog_description',array(
         'label'			=> esc_html__('Blog Description','agency-lite'),
-        'type'			=> 'textarea',
+        'type'			=> 'text',
         'priority'		=> 3,
         'section'		=> 'agency_lite_blog_page_section'
 	));
 
 	$wp_customize->add_setting( 'agency_lite_blog_view', array(
-        'sanitize_callback' => 'esc_html',
+        'sanitize_callback' => 'sanitize_text_field',
         'default'           => esc_html__('View All','agency-lite'),
     ));
-
 	$wp_customize->add_control( 'agency_lite_blog_view', array(
         'section'      => 'agency_lite_blog_page_section',
         'label'        => esc_html__( 'View all button text', 'agency-lite' ),
@@ -726,7 +702,6 @@
     ));
 
 	$wp_customize->add_control( 'agency_lite_footer_copyright', array(
-
         'label'			=> esc_html__('Footer Copyright','agency-lite'),
         'type'			=> 'text',
         'section'		=> 'agency_lite_footer_page_section'
