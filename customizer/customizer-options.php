@@ -531,6 +531,13 @@ function customizer_library_avant_options() {
         'panel' => $panel
     );
 
+    $options['avant-remove-single-pag'] = array(
+        'id' => 'avant-remove-single-pag',
+        'label'   => __( 'Remove Next & Premious posts', 'avant' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
     $choices = array(
         'avant-single-page-fimage-layout-none' => __( 'None', 'avant' ),
         'avant-single-page-fimage-layout-standard' => __( 'Standard', 'avant' ),
@@ -733,6 +740,13 @@ function customizer_library_avant_options() {
     $options['avant-footer-side-fullwidth'] = array(
         'id' => 'avant-footer-side-fullwidth',
         'label'   => __( 'Set Footer to Full Width', 'avant' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
+    $options['avant-footer-privacy-link'] = array(
+        'id' => 'avant-footer-privacy-link',
+        'label'   => __( 'Add "Privacy Policy" page link', 'avant' ),
         'section' => $section,
         'type'    => 'checkbox',
         'default' => 0,

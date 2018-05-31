@@ -41,6 +41,13 @@ Avant - Footer Social Styling
 .site-social-bottom-bar {
     text-align: center;
     padding: 10px 0 12px;
+    font-size: 10px;
+}
+.site-footer-bottom-bar .menu {
+    margin: 0 5px;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .site-footer-bottom-bar-right .site-footer-social-txt {

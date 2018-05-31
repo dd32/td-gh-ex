@@ -68,6 +68,13 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.07
+* Style tweaks/fixes - GDPR
+* Fix styling for WP Gallery widget
+* Added setting to remove blog single page Next & Previous post links
+* Added setting to link to new Privacy Policy page in Footer
+* Updated the language .pot file
+
 #### 1.1.06
 * Style tweaks/fixes
 * Fix set default to work with child themes

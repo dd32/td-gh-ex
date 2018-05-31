@@ -72,7 +72,8 @@
     display: none;
 }
 .avant-note-savant,
-.avant-note-avant-x {
+.avant-note-avant-x,
+.avant-note-avant-portfolio {
     display: block;
 }
 
@@ -106,10 +107,12 @@
 #customize-control-avant-blog-layout,
 #customize-control-avant-blog-list-img-cut,
 #customize-control-avant-blog-widget-title-style,
+#customize-control-avant-remove-single-pag,
 #customize-control-avant-remove-cats-count,
 #customize-control-avant-topbar-font-color,
 #customize-control-avant-navi-font-color,
 #customize-control-avant-footer-font-color,
+#customize-control-avant-footer-privacy-link,
 #customize-control-avant-website-head-no,
 #customize-control-avant-website-error-msg,
 #customize-control-avant-footer-side-fullwidth,

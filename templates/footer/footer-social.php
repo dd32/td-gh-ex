@@ -47,6 +47,9 @@
 		<?php printf( __( '<div class="site-footer-social-copy">Theme: %1$s by %2$s', 'avant' ), 'Avant', '<a href="https://kairaweb.com/">Kaira</a></div><div class="clearboth"></div></div>' ); ?>
 </div></footer><div class="site-social-bottom-bar site-footer-bottom-bar">
 	<div class="site-container">
+		<?php if ( get_theme_mod( 'avant-footer-privacy-link' ) ) : ?>
+    		<?php if ( function_exists( 'the_privacy_policy_link' ) ) { the_privacy_policy_link(); } ?>
+    	<?php endif; ?>
         <?php wp_nav_menu( array( 'theme_location' => 'footer-bar', 'container' => false, 'depth'  => 1 ) ); ?>
     </div><div class="clearboth"></div>
 </div>

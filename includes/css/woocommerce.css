@@ -169,6 +169,7 @@
     left: 4px;
     top: 5px;
     opacity: 0;
+    font-size: 14px !important;
 
     -webkit-transition: all 0.08s linear 0s;
      -moz-transition: all 0.08s linear 0s;
@@ -377,8 +378,9 @@
 }
 .woocommerce #content div.product p.price,
 .woocommerce-page #content div.product p.price,
-.woocommerce-page div.product p.price {
-    font-size: 24px;
+.woocommerce-page div.product p.price,
+.woocommerce ul.products li.product .price {
+    font-size: 18px;
 }
 .woocommerce form.cart,
 .woocommerce-page form.cart {

@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.06' );
+define( 'AVANT_THEME_VERSION' , '1.1.07' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -330,6 +330,11 @@ function avant_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
+			'name'      => __( 'Contact Form by WPForms', 'avant' ),
+			'slug'      => 'wpforms-lite',
+			'required'  => false,
+		),
+		array(
 			'name'      => __( 'Breadcrumb NavXT', 'avant' ),
 			'slug'      => 'breadcrumb-navxt',
 			'required'  => false,
@@ -354,6 +359,12 @@ add_action( 'tgmpa_register', 'avant_register_required_plugins' );
  */
 if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
 	define( 'ELEMENTOR_PARTNER_ID', 2118 );
+}
+/**
+ * WPForms Partner ID
+ */
+if ( !defined( 'WPFORMS_SHAREASALE_ID' ) ) {
+    define( 'WPFORMS_SHAREASALE_ID', 1128843 );
 }
 
 /**
