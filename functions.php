@@ -451,6 +451,47 @@ function fkidd_widgets_init() {
 							'before_title'	 =>  '<h2 class="footer-title">',
 							'after_title'	 =>  '</h2><div class="footer-after-title"></div>',
 						) );
+
+	// Add Homepage Widget areas
+	register_sidebar( array (
+							'name'			 =>  __( 'Homepage Column #1', 'fkidd' ),
+							'id' 			 =>  'homepage-column-1-widget-area',
+							'description'	 =>  __( 'The Homepage Column #1 widget area', 'fkidd' ),
+							'before_widget'  =>  '',
+							'after_widget'	 =>  '',
+							'before_title'	 =>  '<h2 class="sidebar-title">',
+							'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
+						) );
+						
+	register_sidebar( array (
+							'name'			 =>  __( 'Homepage Column #2', 'fkidd' ),
+							'id' 			 =>  'homepage-column-2-widget-area',
+							'description'	 =>  __( 'The Homepage Column #2 widget area', 'fkidd' ),
+							'before_widget'  =>  '',
+							'after_widget'	 =>  '',
+							'before_title'	 =>  '<h2 class="sidebar-title">',
+							'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
+						) );
+
+	register_sidebar( array (
+							'name'			 =>  __( 'Homepage Column #3', 'fkidd' ),
+							'id' 			 =>  'homepage-column-3-widget-area',
+							'description'	 =>  __( 'The Homepage Column #3 widget area', 'fkidd' ),
+							'before_widget'  =>  '',
+							'after_widget'	 =>  '',
+							'before_title'	 =>  '<h2 class="sidebar-title">',
+							'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
+						) );
+
+	register_sidebar( array (
+						'name'			 =>  __( 'Homepage Below Columns', 'fkidd' ),
+						'id'			 =>  'homepage-below-widget-area',
+						'description' 	 =>  __( 'A widget area below homepage columns', 'fkidd' ),
+						'before_widget'	 =>  '<div>',
+						'after_widget'	 =>  '</div>',
+						'before_title'	 =>  '<h2 class="sidebar-title">',
+						'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
+					) );
 	
 	// Register Footer Column #2
 	register_sidebar( array (
@@ -660,7 +701,7 @@ function fkidd_header_style() {
         <?php if ( get_theme_support( 'custom-header', 'default-text-color' ) !== $header_text_color
                     && 'blank' !== $header_text_color ) : ?>
 
-                #header-main, #header-main h1.entry-title {color: #<?php echo esc_attr( $header_text_color ); ?>;}
+                #header-main, #header-main h1.entry-title {color: #<?php echo sanitize_hex_color_no_hash( $header_text_color ); ?>;}
 
         <?php endif; ?>
     </style>

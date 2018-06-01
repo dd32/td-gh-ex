@@ -1,14 +1,5 @@
 <?php get_header(); ?>
 
-<?php if ( is_front_page() && get_theme_mod('fkidd_slider_display', 1) == 1 ) : ?>
-
-		<?php fkidd_display_slider(); ?>
-	
-	<?php endif; ?>
-
-<div class="clear">
-</div>
-
 <div id="main-content-wrapper">
 	<div id="main-content">
 	<?php if ( have_posts() ) : 

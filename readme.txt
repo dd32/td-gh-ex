@@ -8,13 +8,12 @@ Tested up to: 4.6.1
 
 == Description ==
 
-fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Responsive, Customizable,
-Built-in Responsive Slider, Multi-Level Drop-Down Menu, W3C Markup Validated,
-Customizer Options: Social Sites, Header Phone and Email, Slider, Header Logo, Footer,
-Search Engine Optimized, Social Sites: Facebook, Google+, Twitter, LinkedIn, Instagram,
-RSS Feeds, Tumblr, YouTube, Pinterest, VK, Flickr, Vine, Multiple browsers support (IE 9,
-IE 10, IE 11, Chrome, Firefox, Opera, and Safari), Full-Width Page Template,
-Header and Footer Menu, Translation ready and much more.
+fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Responsive, Customizable, Built-in
+Responsive Slider, Multi-Level Drop-Down Menu, Homepage and Footer Widgets, W3C Markup Validated,
+Customizer Options: Social Sites, Header Phone and Email, Slider, Header Logo, Footer, Search Engine
+Optimized, Social Sites: Facebook, Google+, Twitter, LinkedIn, Instagram, RSS Feeds, Tumblr, YouTube,
+Pinterest, VK, Flickr, Vine, Multiple browsers support (IE 9, IE 10, IE 11, Chrome, Firefox, Opera, and
+Safari), Full-Width Page Template, Header and Footer Menu, Translation ready and much more.
 
 == Installation ==
 
@@ -72,7 +71,6 @@ The exceptions to this license are as follows:
 * js/jquery.mobile.customized.min.js MIT license Reference: http://jquery.org/license
 *
 * screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms 
-* screenshot.png (post image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms https://pixabay.com/en/narrative-history-dream-tell-794978/
 
 == Contacts ==
 

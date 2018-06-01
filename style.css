@@ -1,10 +1,10 @@
 /*!
 Theme Name: fKidd
-Description: fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Responsive, Customizable, Built-in Responsive Slider, Multi-Level Drop-Down Menu, W3C Markup Validated, Customizer Options: Social Sites, Header Phone and Email, Slider, Header Logo, Footer, Search Engine Optimized, Social Sites: Facebook, Google+, Twitter, LinkedIn, Instagram, RSS Feeds, Tumblr, YouTube, Pinterest, VK, Flickr, Vine, Multiple browsers support (IE 9, IE 10, IE 11, Chrome, Firefox, Opera, and Safari), Full-Width Page Template, Header and Footer Menu, Translation ready and much more.
+Description: fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Responsive, Customizable, Built-in Responsive Slider, Multi-Level Drop-Down Menu, Homepage and Footer Widgets, W3C Markup Validated, Customizer Options: Social Sites, Header Phone and Email, Slider, Header Logo, Footer, Search Engine Optimized, Social Sites: Facebook, Google+, Twitter, LinkedIn, Instagram, RSS Feeds, Tumblr, YouTube, Pinterest, VK, Flickr, Vine, Multiple browsers support (IE 9, IE 10, IE 11, Chrome, Firefox, Opera, and Safari), Full-Width Page Template, Header and Footer Menu, Translation ready and much more.
 Theme URI: https://tishonator.com/product/fkidd
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 1.8.4
+Version: 1.8.5
 Text Domain: fkidd
 Tags: education, blog, news, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, post-formats, threaded-comments, sticky-post, theme-options, footer-widgets, translation-ready, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
@@ -150,7 +150,6 @@ td, th {
 }
 
 embed,
-iframe,
 object,
 video {
 	margin-bottom: 24px;
@@ -182,9 +181,11 @@ dt.gallery-icon:before {
 	margin-right:10px;
 }
 
-#header-logo > a.custom-logo-link,
-#header-logo #site-identity {
-    float:left;
+
+
+#header-logo {
+    display: flex;
+    align-items: center;
 }
 
 .widget > ul,
@@ -195,6 +196,7 @@ dt.gallery-icon:before {
 
 /* header */
 #header-main {
+	min-height:40px;
 	clear:both;
 	background-color:#FDFFFF;
 	margin:0;
@@ -492,6 +494,7 @@ article,
 }
 
 #footer-menu {
+	clear:both;
 	text-align:center;
 	margin:15px 0;
 }
@@ -1523,6 +1526,25 @@ img.wp-post-image {
     width: 40%;
 }
 
+.fb_iframe_widget span {
+	display: block !important;
+}
+
+#pin-save-button span {
+	margin-top: -19px !important;
+	position: absolute;
+}
+
+#home-cols {
+	clear:both;
+	padding:20px 2%;
+}
+
+#top-widget {
+	clear:both;
+	padding:0 2%;
+}
+
 /* Large Resolution */
 @media screen and (min-width: 800px) {
 
@@ -1574,12 +1596,22 @@ img.wp-post-image {
 		margin-top:10px;
 	}
 
+	#header-content-wrapper {
+		position:relative;
+	}
+
+	#navmain {
+	    bottom: 0;
+	    position: absolute;
+	    right: 0;
+	}
+
 	#navmain div {
 		padding:0 0 0 20px;
 	}
 	
 	#navmain ul {
-		padding:10px 0 0 0;
+		padding:0;
 		margin:0;
 		white-space:nowrap;
 	}
@@ -1790,6 +1822,10 @@ img.wp-post-image {
 		float:left;
 	}
 
+	.comment-form-cookies-consent {
+		clear:both;
+	}
+
 	.form-submit {
 		clear:both;
 	}
@@ -1864,8 +1900,6 @@ img.wp-post-image {
 	}
 	
 	#header-logo {
-		float:none;
-		display:inline-block;
 		margin-left:5px;
 	}
 
@@ -2207,6 +2241,12 @@ img.wp-post-image {
 
 /* Extra-Large Resolution */
 @media screen and (min-width: 1200px) {
+
+	#home-cols-inner {
+        margin:0 auto;
+        width:1150px;
+    }
+
 	#page-header-content,
 	#header-content-wrapper {
 		margin:0 auto;
@@ -2229,12 +2269,16 @@ img.wp-post-image {
 		width:auto;
 	}
 	
+	#top-widget,
+	#home-cols, 
+	.bottom-widget,
+	.top-widget,
 	#header-main,
 	#header-top{
 		padding-left:0;
 		padding-right:0;
 	}
-	
+
 	#sidebar {
 		float:right;
 		margin-right:0;
