@@ -1,11 +1,11 @@
 === Athena ===
 
-Contributors: smartcat,automattic
+Contributors: smartcat
 Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,grid-layout,custom-colors,custom-logo,featured-images,footer-widgets,full-width-template,theme-options,translation-ready,portfolio,e-commerce,entertainment
 
 Requires at least: 4.6
-Tested up to: 4.9.2
-Stable tag: 1.2.0
+Tested up to: 4.9.6
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,6 +80,12 @@ Removed yellow highlighted product count from WooCommerce categories in Shop vie
 
 = 1.2.0 - Feb 8th, 2018
 Revamp of all WooCommerce template overrides in use and related styling
+
+= 1.2.1 - June 1, 2018
+WooCommerce Templates update
+
+= 1.2.2 - June 1, 2018
+Remove deprecated custom header const
 
 == Credits ==
 

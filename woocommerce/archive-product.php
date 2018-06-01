@@ -13,12 +13,10 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.3.0
+ * @version     3.4.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' ); ?>
 
@@ -74,7 +72,7 @@ get_header( 'shop' ); ?>
                         
                         <?php
 
-                        if ( have_posts() ) {
+                        if ( woocommerce_product_loop() ) {
 
                             /**
                              * Hook: woocommerce_before_shop_loop.

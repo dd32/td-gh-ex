@@ -19,7 +19,7 @@ function athena_setup() {
     
     
         if( !defined( 'ATHENA_VERSION' ) ) :
-            define('ATHENA_VERSION', '1.2.0');
+            define('ATHENA_VERSION', '1.2.2');
         endif;
     
         
@@ -103,10 +103,6 @@ function athena_content_width() {
 add_action( 'after_setup_theme', 'athena_content_width', 0 );
 
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
