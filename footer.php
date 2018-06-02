@@ -76,9 +76,8 @@
                         <nav class="text-center copyright">
 
                             <div class="col-sx-12 col-md-4">
-                                <p><?php esc_html_e('Design by ', 'appeal' ); ?>
-                                <a href="http://tradesouthwest.com"
-                                   title="Tradesouthwest"> TSW=|=</a></p>
+                                <p><?php esc_html_e('Theme by ', 'appeal' ); ?>
+                                <span title="tradesouthwest.com"> TSW=|=</span></p>
                             </div>
 
                             <div class="col-sx-12 col-md-4">

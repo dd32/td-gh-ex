@@ -3,7 +3,7 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="profile" href="//gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -34,7 +34,7 @@
 
 		<header>
 			<nav class="navbar navbar-default navbar-static-top semi-fixed"
-			 itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+			 itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
 				<div class="container">
 					<div class="navbar-header">
 					

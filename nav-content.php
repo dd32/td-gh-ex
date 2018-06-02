@@ -1,7 +1,7 @@
 
     <?php if (get_next_posts_link() || get_previous_posts_link()) { ?>
     <div class="postlink">
-        <nav class="block" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+        <nav class="block" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
             <ul class="list-inline">
             
             <?php //only show if there are more posts
@@ -33,7 +33,7 @@
 
 <?php if( is_page() || is_single() ) { 
 ?>
-<div class="pagination" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+<div class="pagination" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
 <?php
 the_post_navigation( array(
 	'prev_text' => '<span class="screen-reader-text">'

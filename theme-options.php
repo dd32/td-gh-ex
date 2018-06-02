@@ -163,7 +163,7 @@ $adurl = admin_url( 'customize.php?autofocus[control]=appeal_custom_teaser_lengt
 <td>
 <strong><?php esc_html_e( 'Other notes', 'appeal' ); ?></strong>
 <p><?php esc_html_e( 'By hiding titles of posts/pages, your titles can be added from your Editor to give better SEO URLs and puts title where you want it in the article. h3 tag is pre styled to match theme. The Editor Title box will be the url name which, is required.', 'appeal' ); ?></p>
-<p><a href="http://themes.tradesouthwest.com/wordpress/" target="_blank" title="=|="><?php esc_html_e( 'Tradesouthwest', 'appeal' ); ?></a></p></td>
+<p><a href="//themes.tradesouthwest.com/wordpress/" target="_blank" title="=|="><?php esc_html_e( 'Tradesouthwest', 'appeal' ); ?></a></p></td>
 </tr></tbody></table>
 
 <table><tbody>

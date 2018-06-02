@@ -15,7 +15,7 @@
 if ( post_password_required() )
     return;
         ?><ol id="appealComm" class="commentlist" itemscope="commentText" 
-                                  itemtype="http://schema.org/UserComments">
+                                  itemtype="https://schema.org/UserComments">
         <?php
             wp_list_comments( array(
                 'style'      => 'ol',

@@ -35,6 +35,9 @@ Other Screenshot images:
 * To set up social media links in the page footer: Appearance > Menus - then <Custom Links> to the left. Footer does not support depths of the child links below it. (No drop downs)
 
 == Change Log ==
+1.2.61
+* schema.org changes to valid SSL
+
 1.2.6
 * blog page styles updated
 

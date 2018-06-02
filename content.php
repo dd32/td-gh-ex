@@ -16,7 +16,7 @@
 $alts = esc_attr( get_the_title( $post->ID  ) );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> 
-         itemscope itemtype="http://schema.org/Article">
+         itemscope itemtype="https://schema.org/Article">
     <div class="article-inner">
         <div class="entry-content">
 
