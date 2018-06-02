@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.0.0
+ * @version   1.1.0
  */
 
 class Avik_Color_Scheme {
@@ -20,18 +20,18 @@ class Avik_Color_Scheme {
     public function customizer_register( WP_Customize_Manager $wp_customize ) {
 
 
-    	$wp_customize->add_setting( 'color_scheme', array(
+    	$wp_customize->add_setting( 'avik_color_scheme', array(
 		    'default' => 'default',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'avik_sanitize_select',
 		) );
 		$color_schemes = $this->get_color_schemes();
 		$choices = array();
-		foreach ( $color_schemes as $color_scheme => $value ) {
-		    $choices[$color_scheme] = $value['label'];
+		foreach ( $color_schemes as $avik_color_scheme => $value ) {
+		    $choices[$avik_color_scheme] = $value['label'];
 		}
 
-		$wp_customize->add_control( 'color_scheme', array(
+		$wp_customize->add_control( 'avik_color_scheme', array(
 		    'label'   => __( 'Skins', 'avik' ),
 		    'section' => 'colors',
 			'type'    => 'select',
@@ -325,7 +325,7 @@ class Avik_Color_Scheme {
     public $is_custom = false;
 	public function get_color_scheme() {
 	    $color_schemes = $this->get_color_schemes();
-	    $color_scheme  = get_theme_mod( 'color_scheme' );
+	    $color_scheme  = get_theme_mod( 'avik_color_scheme' );
 	    $color_scheme  = isset( $color_schemes[$color_scheme] ) ? $color_scheme : 'default';
 
 	    if ( 'default' != $color_scheme ) {

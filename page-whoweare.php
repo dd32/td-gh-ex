@@ -6,7 +6,7 @@ Template Name: Page-whoweare
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.0.0
+ * @version   1.1.0
  */
 
 if(is_page()) { get_header('post'); } else { get_header(); } ?>

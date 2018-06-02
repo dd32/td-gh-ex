@@ -3,7 +3,7 @@
  *
  * author    Denis Franchi
  * package   Avik
- * version   1.0.0
+ * version   1.1.0
  */
 
 (function(api) {
@@ -51,7 +51,7 @@
     }
     api.controlConstructor.select = api.Control.extend({
         ready: function() {
-            if ('color_scheme' === this.id) {
+            if ('avik_color_scheme' === this.id) {
                 this.setting.bind('change', updateColors);
             }
         }
@@ -59,7 +59,7 @@
 
     // Update the CSS whenever a color setting is changed.
     function updateCSS() {
-        var scheme = api('color_scheme')(),
+        var scheme = api('avik_color_scheme')(),
             css,
             colors = _.object(colorSettings, AvikColorScheme[scheme].colors);
 

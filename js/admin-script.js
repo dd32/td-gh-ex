@@ -3,11 +3,11 @@
  *
  * author    Denis Franchi
  * package   Avik
- * version   1.0.0
+ * version   1.1.0
  */
 
 
-function openGuide(evt, guideName) {
+function avikopenGuide(evt, guideName) {
     // Declare all variables
     var i, tabcontent, tablinks;
 

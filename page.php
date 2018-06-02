@@ -4,11 +4,11 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.0.0
+ * @version   1.1.0
  */
 
 if(is_page()) { get_header('post'); } else { get_header(); } 
-   the_breadcrumb(); ?>
+   avik_the_breadcrumb(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 		  <div class="container mt-5">

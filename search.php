@@ -4,11 +4,11 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.0.0
+ * @version   1.1.0
  */
 
 if(is_search()) { get_header('post'); } else { get_header(); } 
- the_breadcrumb_search(); ?>
+ avik_the_breadcrumb_search(); ?>
  <!-- Carousel featured image --> 
  <?php get_template_part( 'inc/carousel' ); ?>
 	<div id="primary" class="content-area">

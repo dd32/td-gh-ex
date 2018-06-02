@@ -4,15 +4,15 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.0.0
+ * @version   1.1.0
  */
 ?>
 
 <div class="container">
    <div id="avik-slider">
 	 <?php
-	   $carousel_cat = get_theme_mod('carousel_setting');
-	   $carousel_count = get_theme_mod('count_setting');
+	   $carousel_cat = esc_attr( get_theme_mod('avik_carousel_setting'));
+	   $carousel_count = esc_attr( get_theme_mod('avik_count_setting'));
 	   $new_query = new WP_Query( array( 'cat' => $carousel_cat  , 'showposts' => $carousel_count ));
 	 while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
 	 <div class="item">

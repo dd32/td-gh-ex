@@ -4,13 +4,13 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.0.0
+ * @version   1.1.0
  */
 
 if(is_archive()) { get_header('post'); } else { get_header(); } 
-the_breadcrumb_archive(); ?>
+avik_the_breadcrumb_archive(); ?>
 <!-- Carousel featured image -->
-<?php if ( false == get_theme_mod( 'enable_carousel', false) ) :?> 
+<?php if ( false == esc_attr( get_theme_mod( 'avik_enable_carousel', false) )) :?> 
 <?php get_template_part( 'inc/carousel' ); ?>
 <?php endif; ?> 
 

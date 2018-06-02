@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.0.0
+ * @version   1.1.0
  */
  
 if ( post_password_required() ) {
@@ -60,6 +60,6 @@ if ( post_password_required() ) {
 	endif; // Check for have_comments().
 	?> 
 	<?php
-	comment_form(array('title_reply'=>'Got Something To Say!')); 
+	comment_form(array('title_reply'=>'Got Something To Say!','avik')); 
 	?>
 </div><!-- #comments -->

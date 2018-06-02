@@ -4,13 +4,9 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.0.0
- */
-
-/**
- * Set up the WordPress core custom header feature.
+ * @version   1.1.0
+ <?php the_header_image_tag(); ?>
  *
- * @uses avik_header_style()
  */
 function avik_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'avik_custom_header_args', array(

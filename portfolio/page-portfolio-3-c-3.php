@@ -6,11 +6,11 @@ Template Name: Page-portfolio-3-c-3
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.0.0
+ * @version   1.1.0
  */
 
 if(is_page()) { get_header('post'); } else { get_header(); } 
-the_breadcrumb(); ?>
+avik_the_breadcrumb(); ?>
  <div id="primary" class="content-area main">
 	 <main id="main" class="site-main">
 	   <div class="container mt-5">
@@ -27,19 +27,19 @@ the_breadcrumb(); ?>
 			  endwhile; // End of the loop.
 			?>
 		  </div> 
-		  <div class="col-sm-3 right-portfolio">
+			<div class="col-sm-3 right-portfolio">
             <div class="details-portfolio">
-		        <h3 class="title-client-portfolio-3-c-3"><?php echo get_theme_mod( 'title_client_portfolio_3_c_3','CLIENT'); ?></h3>
-		        <p class="subtitle-client-portfolio-3-c-3"><i class="fas fa-angle-right"></i><?php echo get_theme_mod( 'subtitle_client_portfolio_3_c_3','Brand Exponent'); ?></p>
-		        <h3 class="title-project-portfolio-3-c-3"><?php echo get_theme_mod( 'title_project_portfolio_3_c_3','PROJECT DATE'); ?></h3>
-		        <p class="subtitle-project-portfolio-3-c-3"><i class="fas fa-angle-right"></i><?php echo get_theme_mod( 'subtitle_project_portfolio_3_c_3','May 2018'); ?></p>
-		        <h3 class="title-category-portfolio-3-c-3"><?php echo get_theme_mod( 'title_category_portfolio_3_c_3','CATEGORY'); ?></h3>
-		        <p class="subtitle-category-portfolio-3-c-3"><i class="fas fa-angle-right"></i><?php echo get_theme_mod( 'subtitle_category_portfolio_3_c_3','Business'); ?></p>
-		        <h3 class="title-name-portfolio-3-c-3"><?php echo get_theme_mod( 'title_name_portfolio_3_c_3','NAME'); ?></h3>
-						<p class="subtitle-name-portfolio-3-c-3"><i class="fas fa-angle-right"></i><?php echo get_theme_mod( 'subtitle_name_portfolio_3_c_3','Marc'); ?></p>
-						<?php if ( false == get_theme_mod( 'enable_button_portfolio_3_c_3', false) ) :?>
-						<a href="<?php echo get_theme_mod( 'link_button_portfolio_3_c_3' ); ?>" class="btn btn-avik button-portfolio-3-c-3" role="button" aria-pressed="true" data-aos="zoom-in" data-aos-duration="2000">
-						<?php echo get_theme_mod( 'title_button_portfolio_3_c_3','View Project'); ?></a> 
+		        <h3 class="title-client-portfolio-3-c-3"><?php echo esc_html( get_theme_mod( 'avik_title_client_portfolio_3_c_3','CLIENT')); ?></h3>
+						<p class="subtitle-client-portfolio-3-c-3"><i class="fas fa-angle-right"></i><?php echo esc_html( get_theme_mod( 'avik_subtitle_client_portfolio_3_c_3','Brand Exponent')); ?></p>
+		        <h3 class="title-project-portfolio-3-c-3"><?php echo esc_html( get_theme_mod( 'avik_title_project_portfolio_3_c_3','PROJECT DATE')); ?></h3>
+		        <p class="subtitle-project-portfolio-3-c-3"><i class="fas fa-angle-right"></i><?php echo esc_html( get_theme_mod( 'avik_subtitle_project_portfolio_3_c_3','May 2018')); ?></p>
+		        <h3 class="title-category-portfolio-3-c-3"><?php echo esc_html( get_theme_mod( 'avik_title_category_portfolio_3_c_3','CATEGORY')); ?></h3>
+		        <p class="subtitle-category-portfolio-3-c-3"><i class="fas fa-angle-right"></i><?php echo esc_html( get_theme_mod( 'avik_subtitle_category_portfolio_3_c_3','Business')); ?></p>
+		        <h3 class="title-name-portfolio-3-c-3"><?php echo esc_html( get_theme_mod( 'avik_title_name_portfolio_3_c_3','NAME')); ?></h3>
+						<p class="subtitle-name-portfolio-3-c-3"><i class="fas fa-angle-right "></i><?php echo esc_html( get_theme_mod( 'avik_subtitle_name_portfolio_3_c_3','Marc')); ?></p>
+						<?php if ( false == get_theme_mod( 'avik_enable_button_portfolio_3_c_3', false) ) :?>
+						<a href="<?php echo esc_url( get_theme_mod( 'avik_link_button_portfolio_3_c_3' )); ?>" class="btn btn-avik button-portfolio-3-c-3" role="button" aria-pressed="true" data-aos="zoom-in" data-aos-duration="2000">
+						<?php echo esc_html( get_theme_mod( 'avik_title_button_portfolio_3_c_3','View Project')); ?></a> 
 						<?php endif; ?>    
 			</div>
 			<!-- Social Share -->

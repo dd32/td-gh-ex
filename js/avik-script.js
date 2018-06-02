@@ -3,7 +3,7 @@
  *
  * author    Denis Franchi
  * package   Avik
- * version   1.0.0
+ * version   1.1.0
  */
 
 /* TABLE OF CONTENT
@@ -202,8 +202,9 @@ $('a[href*="#"]')
 /* ------------------------------------------------------------------------- */
 
 AOS.init({
-  duration: 1000
-});
+    duration: 1000
+  });
+
 
 /* ------------------------------------------------------------------------- *
 ##  7 Slider */
@@ -587,7 +588,7 @@ jQuery(document).ready(function($) {
             $('.avik-title-number'+slno).html(max);
         }
     }
-
+    
 
 })(jQuery);
 

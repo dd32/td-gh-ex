@@ -5,7 +5,7 @@
  *
  * @package Avik
  * 
- *  @version   1.0.0
+ *  @version   1.1.0
  */
 ?>
 
@@ -24,9 +24,9 @@
 
   <div class="avik-tab-support">
 <div class="tab">
-  <button class="tablinks" onclick="openGuide(event, 'WELCOME')"id="defaultOpen"><?php esc_html_e( 'WELCOME', 'avik' ); ?></button>
-  <button class="tablinks" onclick="openGuide(event, 'GUIDES')"><?php esc_html_e( 'GUIDES', 'avik' ); ?></button>
-  <button class="tablinks" onclick="openGuide(event, 'SUPPORT')"><?php esc_html_e( 'SUPPORT', 'avik' ); ?></button>
+  <button class="tablinks" onclick="avikopenGuide(event, 'WELCOME')"id="defaultOpen"><?php esc_html_e( 'WELCOME', 'avik' ); ?></button>
+  <button class="tablinks" onclick="avikopenGuide(event, 'GUIDES')"><?php esc_html_e( 'GUIDES', 'avik' ); ?></button>
+  <button class="tablinks" onclick="avikopenGuide(event, 'SUPPORT')"><?php esc_html_e( 'SUPPORT', 'avik' ); ?></button>
 </div>
 
 <!-- Tab content -->

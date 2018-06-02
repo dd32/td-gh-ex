@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.0.0
+ * @version   1.1.0
  */
 
 ?> 
@@ -15,21 +15,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="<?php bloginfo('description');?>">
-  <?php if ( false == get_theme_mod( 'enable_resource_type', true ) ) : ?>
-  <meta name="resource-type" content="<?php echo get_theme_mod( 'resource_type_head','document'); ?>"/>
-  <?php endif;?>
-  <?php if ( false == get_theme_mod( 'enable_author', true) ) : ?>	
-  <meta name="author" content="<?php echo get_theme_mod( 'author_head','DF Design'); ?>"/>
-  <?php endif; ?>
-  <?php if ( false == get_theme_mod( 'enable_contact', true ) ) : ?>
-  <meta name="contact" content="<?php echo get_theme_mod( 'contact_head','hi@avik.com'); ?>"/>
-  <?php endif; ?>
-  <?php if ( false == get_theme_mod( 'enable_copyright', true ) ) : ?>
-  <meta name="copyright" content="<?php echo get_theme_mod( 'copyright_head','Copyright DF Design. All Rights Reserved.'); ?>"/>
-  <?php endif; ?>
-  <?php if ( false == get_theme_mod( 'enable_keywords', true ) ) : ?>
-  <meta name="keywords" content="<?php echo get_theme_mod( 'keywords_head','avik'); ?>"/>
-  <?php endif; ?>
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -43,7 +28,7 @@
       <nav class="navbar navbar-expand-lg nav-post">
            <div class="avik-logo">
 			       <!-- Logo 2-->
-			       <div class="avik-custom-logo-post  <?php if ( false == get_theme_mod( 'enable_rotate_logo', false ) ) : ?> rotate <?php endif; ?>">
+			       <div class="avik-custom-logo-post  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_rotate_logo', false ) )) : ?> rotate <?php endif; ?>">
 		           <?php the_custom_logo();?>
 					   </div>
 			       <?php if ( is_front_page() && is_home() ) : ?>

@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.0.0
+ * @version   1.1.0
  */
 
 /* TABLE OF CONTENT
@@ -20,7 +20,7 @@
  9 - Breadcrumb Search
 10 - Add Custom Styles Editor
 11 - Carousel featured image
-12 - Automatic update Theme
+12 - 
 13 - Avik Support Page
 14 - Lightbox popup image
 15 - Lenght excerpt
@@ -179,7 +179,7 @@ if(! function_exists('avik_html5_search_form') ) {
 	function avik_html5_search_form( $form ) { 
 		$form = '<section class="search"><form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
 	   <label class="screen-reader-text" for="s">' . __('',  'avik') . '</label>
-		<input type="search" value="' . get_search_query() . '" name="s" id="s" placeholder="Keyword ..." />
+		<input type="search" value="' . get_search_query() . '" name="s" id="s" placeholder= "'. esc_attr__('Keyword ...', 'avik') .'" />
 		<input type="submit" class="search-submit" value="'. esc_attr__('Search', 'avik') .'" />
 		</form></section>';
 		return $form;
@@ -204,7 +204,7 @@ add_filter('comment_form_default_fields','avik_disable_comment_url');
 /* 7 Breadcrumb
 ------------------------------------------------------------*/
 
-function the_breadcrumb() {
+function avik_the_breadcrumb() {
 
     $sep = ' &nbsp;|&nbsp; ';
     if (!is_front_page()) {
@@ -261,7 +261,7 @@ function the_breadcrumb() {
 /* 8 Breadcrumb Archive
 ------------------------------------------------------------*/
 
-function the_breadcrumb_archive() {
+function avik_the_breadcrumb_archive() {
 
     $sep = ' &nbsp;|&nbsp; ';
     if (!is_front_page()) {
@@ -317,7 +317,7 @@ function the_breadcrumb_archive() {
 /* 9 Breadcrumb Search
 ------------------------------------------------------------*/
 
-function the_breadcrumb_search() {
+function avik_the_breadcrumb_search() {
 
     $sep = ' &nbsp;|&nbsp; ';
     if (!is_front_page()) {
@@ -373,11 +373,11 @@ function the_breadcrumb_search() {
 /* 10 Add Custom Styles Editor 
 -------------------------------------------------------- */
 
-function wpb_mce_buttons_2($buttons) {
+function avik_wpb_mce_buttons_2($buttons) {
 	array_unshift($buttons, 'styleselect');
 	return $buttons;
 }
-add_filter('mce_buttons_2', 'wpb_mce_buttons_2');
+add_filter('mce_buttons_2', 'avik_wpb_mce_buttons_2');
 	
 /* Callback function to filter the MCE settings */
  
@@ -440,10 +440,10 @@ $style_formats = array(
 add_filter( 'tiny_mce_before_init', 'avik_mce_before_init_insert_formats' ); 
 
 
-function my_theme_add_editor_styles() {
+function avik_my_theme_add_editor_styles() {
 	add_editor_style( 'custom-editor-style.css' );
 }
-add_action( 'init', 'my_theme_add_editor_styles' );
+add_action( 'init', 'avik_my_theme_add_editor_styles' );
 
 
 /* 11 Carousel featured image 
@@ -459,15 +459,15 @@ add_action( 'wp_enqueue_scripts', 'avik_carousel_scripts' );
 
 add_image_size( 'carousel-pic', 480, 320, true ); 
 
-/* 12 Automatic update Theme
-------------------------------------------------------------*/
 
-require 'plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-'https://denisfranchi.com/avik-theme/theme.json',
-__FILE__,
-'avik'
-);
+
+
+
+
+
+
+
+
 
 /* 13 Avik Support Page
 ------------------------------------------------------------*/
@@ -475,18 +475,18 @@ __FILE__,
 add_action('admin_menu', 'avik_page_create');
 
 function avik_page_create() {
-    add_theme_page('Avik', 'AVIK', 'edit_theme_options', 'avik_page', 'my_avik_page_display','dashicons-universal-access-alt');
+    add_theme_page('Avik', 'AVIK', 'edit_theme_options', 'avik_page', 'avik_page_display','dashicons-universal-access-alt');
     
 }
 
-function my_avik_page_display() {
+function avik_page_display() {
     include 'avik-support.php';
 }
 
   //Include Admin Style
 
-add_action( 'admin_enqueue_scripts', 'load_admin_style' );
-function load_admin_style() {
+add_action( 'admin_enqueue_scripts', 'avik_load_admin_style' );
+function avik_load_admin_style() {
     wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/css/admin-style.css', false, '1.0.0' );	
     wp_enqueue_script( 'admin_script', get_template_directory_uri() . '/js/admin-script.js', false, '1.0.0' );
     wp_enqueue_style( 'wp-bootstrap-avik-font-awesome-admin', get_template_directory_uri() . '/css/fontawesome-all.css' );		
@@ -495,7 +495,7 @@ function load_admin_style() {
 /* 14 Lightbox popup image
 -------------------------------------------------------- */
 
-function register_lightbox() {
+function avik_register_lightbox() {
 	if (!is_admin()) {
 	wp_register_style('lightbox-css', get_template_directory_uri() . '/css/lightbox.min.css');
 	wp_enqueue_style('lightbox-css');
@@ -503,11 +503,11 @@ function register_lightbox() {
 	wp_enqueue_script('lightbox-script');
 }
 }
-add_action( 'init', 'register_lightbox' );
+add_action( 'init', 'avik_register_lightbox' );
 
-add_filter('the_content', 'addtaglightbox', 12);
+add_filter('the_content', 'avik_addtaglightbox', 12);
     
-function addtaglightbox ($content){ 
+function avik_addtaglightbox ($content){ 
     global $post;
     $pattern = "/<a(.*?)href=('|\")([^>]*).(bmp|gif|jpeg|jpg|png)('|\")(.*?)>(.*?)<\/a>/i";
     $replacement = '<a$1href=$2$3.$4$5 data-lightbox="img['.$post->ID.']"$6>$7</a>';
@@ -518,16 +518,16 @@ function addtaglightbox ($content){
 /* 15 Lenght excerpt
 -------------------------------------------------------- */
 
-function wpdocs_custom_excerpt_length( $length ) {
+function avik_wpdocs_custom_excerpt_length( $length ) {
     return 20;
 }
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'avik_wpdocs_custom_excerpt_length', 999 );
 
 //Filter content more excerpt
 
-function custom_excerpt_more( $more ) { return '...';
+function avik_custom_excerpt_more( $more ) { return '...';
     
-} add_filter( 'excerpt_more', 'custom_excerpt_more' ); 
+} add_filter( 'excerpt_more', 'avik_custom_excerpt_more' ); 
 
    
 /* 16 Include javascript files
@@ -543,11 +543,11 @@ function avik_scripts() {
 	wp_enqueue_script( 'avik-navigation-js', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'avik-skip-link-focus-fix-js', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
     // Writing text 
-    wp_enqueue_script( 'text-js', get_template_directory_uri() . '/js/typed.js', array(), '20151215', true );
+    wp_enqueue_script( 'avik-text-js', get_template_directory_uri() . '/js/typed.js', array(), '20151215', true );
     // AOS Animate
-    wp_enqueue_script('aos-js', 'https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js' );
+    wp_enqueue_script('avik-aos-js',get_template_directory_uri() . '/js/aos.js', array(), '2.0.0', false );
     // Carousel Brands
-    wp_enqueue_script('carousel-brands-js', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js' );
+    wp_enqueue_script('avik-carousel-brands-js', get_template_directory_uri() . '/js/carousel.js', array(), '1.6.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ){
 		wp_enqueue_script( 'comment-reply' );
@@ -570,10 +570,10 @@ if(! function_exists('avik_styles') ) {
 	wp_enqueue_style( 'avik-style', get_stylesheet_uri() );
 	// Font Awesome
 	wp_enqueue_style('avik-font-awesome', get_template_directory_uri(). '/css/fontawesome-all.min.css');
-	// Include Font
-	wp_enqueue_style('avik-google-fonts', avik_fonts_url(), array(), null);
 	// AOS Animate
-    wp_enqueue_style('aos-css','https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css');   
+	wp_enqueue_style('avik-aos-css', get_template_directory_uri(). '/css/aos.css'); 
+	// Include Font
+	wp_enqueue_style('avik-google-fonts', avik_fonts_url(), array(), null); 
 
   }
 
@@ -584,35 +584,31 @@ add_action('wp_enqueue_scripts', 'avik_styles');
 /* 18 Include script and styles for class add Panel
 ------------------------------------------------------------*/
 
-function pe_customize_controls_scripts() {
+function avik_pe_customize_controls_scripts() {
 
-    wp_enqueue_script( 'pe-customize-controls', get_theme_file_uri( '/assets/js/pe-customize-controls.js' ), array(), '1.0', true );
+    wp_enqueue_script( 'avik-pe-customize-controls', get_theme_file_uri( '/assets/js/pe-customize-controls.js' ), array(), '1.0', true );
 }
 
-    add_action( 'customize_controls_enqueue_scripts', 'pe_customize_controls_scripts' );
+    add_action( 'customize_controls_enqueue_scripts', 'avik_pe_customize_controls_scripts' );
 
-function pe_customize_controls_styles() {
+function avik_pe_customize_controls_styles() {
 
-    wp_enqueue_style( 'pe-customize-controls', get_theme_file_uri( '/assets/css/pe-customize-controls.css' ), array(), '1.0' );
+    wp_enqueue_style( 'avik-pe-customize-controls', get_theme_file_uri( '/assets/css/pe-customize-controls.css' ), array(), '1.0' );
 }
 
-    add_action( 'customize_controls_print_styles', 'pe_customize_controls_styles' );
+    add_action( 'customize_controls_print_styles', 'avik_pe_customize_controls_styles' );
 
-function pe_customize_register( $wp_customize ) {
+function avik_pe_customize_register( $wp_customize ) {
 
-$wp_customize->register_panel_type( 'PE_WP_Customize_Panel' );
-$wp_customize->register_section_type( 'PE_WP_Customize_Section' );
+$wp_customize->register_panel_type( 'Avik_WP_Customize_Panel' );
+$wp_customize->register_section_type( 'Avik_WP_Customize_Section' );
 
 }
 
-    add_action( 'customize_register', 'pe_customize_register' );
+    add_action( 'customize_register', 'avik_pe_customize_register' );
 
 /* 19 Add additional templates
 -------------------------------------------------------- */
-
-// Implement the Custom Header feature
-
-require get_template_directory() . '/inc/custom-header.php';
 
 // Custom template tags for this theme
 
@@ -621,6 +617,10 @@ require get_template_directory() . '/inc/template-tags.php';
 // Functions which enhance the theme by hooking into WordPress
 
 require get_template_directory() . '/inc/template-functions.php';
+
+// Implement the Custom Header feature
+
+require get_template_directory() . '/inc/custom-header.php';
 
 //Customizer additions
 
@@ -797,10 +797,10 @@ function avik_register_required_plugins() {
 /* 22 Clean attribute script and style
 -------------------------------------------------------- */
 
-add_filter('style_loader_tag', 'myplugin_remove_type_attr', 10, 2);
-add_filter('script_loader_tag', 'myplugin_remove_type_attr', 10, 2);
+add_filter('style_loader_tag', 'avik_myplugin_remove_type_attr', 10, 2);
+add_filter('script_loader_tag', 'avik_myplugin_remove_type_attr', 10, 2);
 
-function myplugin_remove_type_attr($tag, $handle) {
+function avik_myplugin_remove_type_attr($tag, $handle) {
     return preg_replace( "/type=['\"]text\/(javascript|css)['\"]/", '', $tag );
 }
 
@@ -809,7 +809,7 @@ function myplugin_remove_type_attr($tag, $handle) {
 /* 23 Remove script version
 -------------------------------------------------------- */
 
-if ( false == get_theme_mod( 'enable_remove_script', false ) ) : 
+if ( false == esc_attr( get_theme_mod( 'avik_enable_remove_script', false ) )) : 
 
 function avik_remove_script_version( $src ){
 	$parts = explode( '?ver', $src );
