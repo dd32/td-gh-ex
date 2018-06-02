@@ -47,8 +47,9 @@ function ashe_setup() {
 
 	// This theme uses wp_nav_menu() in two locations
 	register_nav_menus( array(
-		'top'	=> __( 'Top Menu', 'ashe' ),
-		'main' 	=> __( 'Main Menu', 'ashe' ),
+		'top'		=> __( 'Top Menu', 'ashe' ),
+		'main' 		=> __( 'Main Menu', 'ashe' ),
+		'footer' 	=> __( 'Footer Menu', 'ashe' ),
 	) );
 
 	// Switch default core markup for search form, comment form, and comments to output valid HTML5
@@ -75,18 +76,33 @@ function ashe_setup() {
 }
 add_action( 'after_setup_theme', 'ashe_setup' );
 
-// Notice after Theme Activation
+
+/*
+** Notice after Theme Activation.
+*/
 function ashe_activation_notice() {
-	echo '<div class="notice notice-success is-dismissible">';
-		echo '<p>'. esc_html__( 'Thank you for choosing Ashe! Now, we higly recommend you to visit our welcome page.', 'ashe' ) .'</p>';
-		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=about-ashe' ) ) .'" class="button button-primary">'. esc_html__( 'Get Started with Ashe', 'ashe' ) .'</a></p>';
+	echo '<div class="notice notice-success is-dismissible ashe-activation-notice">';
+		echo '<h1>'. esc_html__( 'Welcome to Ashe', 'ashe' ) .'</h1>';
+		echo '<p>'. esc_html__( 'Thank you for choosing Ashe! Now, we higly recommend you to visit our ', 'ashe' ) .'<a href="'. esc_url( admin_url( 'themes.php?page=about-ashe' ) ) .'">'. esc_html__( 'welcome page.', 'ashe' ) .'</a></p>';
+		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=about-ashe' ) ) .'" class="button button-primary button-hero">'. esc_html__( 'Get Started with Ashe', 'ashe' ) .'</a></p>';
 	echo '</div>';
 }
 
+function ashe_admin_scripts() {
+	global $pagenow;
+	
+	// Theme Activation Notice
+	if ( 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) {
+		wp_enqueue_style( 'ashe-admin', get_theme_file_uri( '/assets/css/admin.css' ) );
+	}
+
+}
+add_action( 'admin_enqueue_scripts', 'ashe_admin_scripts' );
+
 
 /**
- * Add a pingback url auto-discovery header for singularly identifiable articles.
- */
+** Add a pingback url auto-discovery header for singularly identifiable articles.
+*/
 function ashe_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
@@ -101,7 +117,7 @@ add_action( 'wp_head', 'ashe_pingback_header' );
 function ashe_scripts() {
 
 	// Theme Stylesheet
-	wp_enqueue_style( 'ashe-style', get_stylesheet_uri(), array(), '1.5.4' );
+	wp_enqueue_style( 'ashe-style', get_stylesheet_uri(), array(), '1.6' );
 
 	// FontAwesome Icons
 	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/font-awesome.css' ) );
@@ -121,11 +137,11 @@ function ashe_scripts() {
 	}
 	
 	// Theme Responsive CSS
-	wp_enqueue_style( 'ashe-responsive', get_theme_file_uri( '/assets/css/responsive.css' ), array(), '1.5.4'  );
+	wp_enqueue_style( 'ashe-responsive', get_theme_file_uri( '/assets/css/responsive.css' ), array(), '1.6'  );
 
 	// Enqueue Custom Scripts
-	wp_enqueue_script( 'ashe-plugins', get_theme_file_uri( '/assets/js/custom-plugins.js' ), array( 'jquery' ), '1.5.4', true );
-	wp_enqueue_script( 'ashe-custom-scripts', get_theme_file_uri( '/assets/js/custom-scripts.js' ), array( 'jquery' ), '1.5.4', true );
+	wp_enqueue_script( 'ashe-plugins', get_theme_file_uri( '/assets/js/custom-plugins.js' ), array( 'jquery' ), '1.6', true );
+	wp_enqueue_script( 'ashe-custom-scripts', get_theme_file_uri( '/assets/js/custom-scripts.js' ), array( 'jquery' ), '1.6', true );
 
 	// Comment reply link
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

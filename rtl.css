@@ -270,6 +270,25 @@ table td {
 	margin-right: 0;
 }
 
+.footer-menu-container {
+	float: left;
+}
+
+#footer-menu {
+  	float: right;
+}
+
+#footer-menu > li {
+	margin-right: 0;
+	margin-left: 5px;
+}
+
+.footer-menu-container:after {
+	float: left;
+	margin-right: 0;
+	margin-left: 5px;
+}
+
 .scrolltop {
 	right: auto;
 	left: 80px;

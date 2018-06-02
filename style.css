@@ -4,7 +4,7 @@ Theme URI: https://wp-royal.com/themes/item-ashe-free/
 Author: Royal Flush
 Author URI: http://wp-royal.com/
 Description: Personal and Multi-Author Free WordPress Blog Theme. Perfect for personal, lifestyle, health & fitness, food, cooking, bakery, travel, beauty, fashion, wedding, photography, news, quotes blog, auto blog, small business website and any other kind of amazing blogs. Minimal, elegant & mobile friendly layout with WooCommerce shop (storefront) support will WOW and inspire your visitors. Well documented and very easy to use even for WordPress beginners. Clean and Modern Responsive design will perfectly showcase your content on any device, even on tablet, mobile & retina displays. Very fast, compatibility with many popular plugins & of course translation & RTL (right to left language) ready, coded with best SEO practices. The theme has features like Text & Image logo, Fullscreen Slider, Header image, Instagram widget support and many more. You just need to write and be awesome! TEMPLATE DEMO: http://wp-royal.com/themes/ashe-free/demo/
-Version: 1.5.7
+Version: 1.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: ashe
@@ -573,19 +573,17 @@ blockquote a {
 .post-content ul,
 .woocommerce-product-details__short-description ul,
 .woocommerce-Tabs-panel--description ul {
-  padding-left: 15px;
+  padding-left: 20px;
   margin-bottom: 15px;
   list-style: disc;
-  list-style-position: inside;
 }
 
 .post-content ol,
 .woocommerce-product-details__short-description ol,
 .woocommerce-Tabs-panel--description ol {
-  padding-left: 15px;
+  padding-left: 20px;
   margin-bottom: 15px;
   list-style: decimal;
-  list-style-position: inside;
 }
 
 table {
@@ -2610,6 +2608,28 @@ sup {
 
 .footer-socials a:last-child {
   margin: 0;
+}
+
+.footer-menu-container {
+  float: right;
+  font-size: 13px;
+}
+
+#footer-menu {
+  float: left;
+}
+
+#footer-menu > li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.footer-menu-container:after {
+  content: '|';
+  display: block;
+  float: left;
+  margin-right: 5px;
+  margin-top: -1px;
 }
 
 .scrolltop {

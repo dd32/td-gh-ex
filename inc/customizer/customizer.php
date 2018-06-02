@@ -305,19 +305,14 @@ function ashe_customize_register( $wp_customize ) {
 					<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe/customizer/free/upgrade-ashe-pro.html?ref=ashe-free-customizer-about-section-buypro'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Get Ashe Pro', 'ashe' ); ?></a>
 				</li>
 				<li class="customize-control">
+					<h3><?php esc_html_e( 'Demo Import / Getting Started', 'ashe' ); ?></h3>
+					<p><?php esc_html_e( 'All you need for startup: Demo Import, Video Tutorials and more. To see what Ashe theme can offer, please visit a ', 'ashe' ); ?><a href="<?php echo esc_url('https://wp-royal.com/themes/ashe-free/demo/?ref=ashe-free-customizer-about-section-get-started-btn/'); ?>" target="_blank"><?php esc_html_e( 'Demo Preview Page.', 'ashe' ); ?></a></p>
+					<a href="<?php echo esc_url(admin_url('themes.php?page=about-ashe')); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Get Started', 'ashe' ); ?></a>
+				</li>
+				<li class="customize-control">
 					<h3><?php esc_html_e( 'Documentation', 'ashe' ); ?></h3>
 					<p><?php esc_html_e( 'Read how to customize the theme, set up widgets, and learn all the possible options available to you.', 'ashe' ); ?></p>
 					<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe/docs/?ref=ashe-free-customizer-about-section-docs-btn/'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Documentation', 'ashe' ); ?></a>
-				</li>
-				<li class="customize-control">
-					<h3><?php esc_html_e( 'Support', 'ashe' ); ?></h3>
-					<p><?php esc_html_e( 'For Ashe theme related questions feel free to post on our support forums. But firstly please ', 'ashe' ); ?><a href="<?php echo esc_url('http://wp-royal.com/wp-login.php?action=register'); ?>" target="_blank"><?php esc_html_e( 'Register on Support Forums', 'ashe' ); ?></a></p>
-					<a href="<?php echo esc_url('https://wp-royal.com/support-ashe-free/?ref=ashe-free-customizer-about-section-support-forum-btn/'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Support', 'ashe' ); ?></a>
-				</li>
-				<li class="customize-control">
-					<h3><?php esc_html_e( 'Demo Content', 'ashe' ); ?></h3>
-					<p><?php esc_html_e( 'You can download and import this demo file to get same content as shown on our website. For more details please read theme documentation.', 'ashe' ); ?></p>
-					<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe/democontent/ashe_free_demo_content.html?ref=ashe-free-customizer-about-section-demoxml-btn'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Download Demo Content', 'ashe' ); ?></a>
 				</li>
 				<li class="customize-control">
 					<h3><?php esc_html_e( 'Predefined Styles', 'ashe' ); ?></h3>
@@ -842,6 +837,8 @@ function ashe_customize_register( $wp_customize ) {
 		'vimeo-square' 			=> '&#xf194;',
 		'soundcloud' 			=> '&#xf1be;',
 		'instagram' 			=> '&#xf16d;',
+		'info' 					=> '&#xf129;',
+		'info-circle' 			=> '&#xf05a;',
 		'flickr' 				=> '&#xf16e;',
 		'rss' 					=> '&#xf09e;',
 		'rss-square' 			=> '&#xf143;',
@@ -858,6 +855,7 @@ function ashe_customize_register( $wp_customize ) {
 		'xing-square' 			=> '&#xf169;',
 		'gamepad' 				=> '&#xf11b;',
 		'medium' 				=> '&#xf23a;',
+		'map-marker' 			=> '&#xf041;',
 		'envelope' 				=> '&#xf0e0;',
 		'envelope-o' 			=> '&#xf003;',
 		'envelope-square ' 		=> '&#xf199;',
@@ -865,6 +863,8 @@ function ashe_customize_register( $wp_customize ) {
 		'snapchat' 				=> '&#xf2ab;',
 		'snapchat-ghost' 		=> '&#xf2ac;',
 		'snapchat-square'		=> '&#xf2ad;',
+		'spotify'				=> '&#xf1bc;',
+		'shopping-cart'			=> '&#xf07a;',
 		'meetup' 				=> '&#xf2e0;',
 		'cc-paypal' 			=> '&#xf1f4;',
 		'credit-card' 			=> '&#xf09d;',
@@ -948,7 +948,7 @@ function ashe_customize_register( $wp_customize ) {
 	$copyright_description = 'Enter <strong>$year</strong> to update the year automatically and <strong>$copy</strong> for the copyright symbol.<br><br>Example: $year Ashe Theme $copy.';
 
 	// Copyright
-	ashe_textarea_control( 'page_footer', 'copyright', esc_html__( 'Copyright', 'ashe' ), $copyright_description, 'refresh', 3 );
+	ashe_textarea_control( 'page_footer', 'copyright', esc_html__( 'Your Copyright Text', 'ashe' ), $copyright_description, 'refresh', 3 );
 
 	// Pro Version
 	$wp_customize->add_setting( 'pro_version_page_footer', array(
