@@ -1,12 +1,12 @@
 /* Large Screens */
-@media screen and (max-width: 1170px) {
+@media screen and (max-width: 1210px) {
 
     .inner-wrap {
-        width: 96%;
+        width: 92%;
     }
 
     #wrap {
-        width: 96%;
+        width: 92%;
     }
 
     .column {
@@ -155,6 +155,8 @@
 
 /* All Mobile Sizes (devices and browser) */
 @media screen and (max-width: 640px) {
+
+    .title-header { font-size: 26px; }
 
     .site-widgetized-section .widgets .widget {
         width: 100%;

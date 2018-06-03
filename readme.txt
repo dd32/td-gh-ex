@@ -1,6 +1,6 @@
 = ACADEMICA =
 
-* by WPZOOM, http://wpzoom.com/
+* by WPZOOM, https://www.wpzoom.com/
 
 == ABOUT ACADEMICA ==
 
@@ -10,6 +10,9 @@ Please note:
 The Footer Menu is best suitable for short menues with just a few links, as it only supports one menu level.
 
 == Changelog ==
+
+= 2.0.4 (June 3, 2018) =
+* Minor fixes to comments form
 
 = 2.0.3 (April 11, 2017) =
 * Updated TGM library to latest version - 2.6.1

@@ -1,11 +1,11 @@
 /*
 Theme Name: Academica
-Theme URI: http://www.wpzoom.com/themes/academica/
+Theme URI: https://www.wpzoom.com/themes/academica/
 Description: Academica is an education- and school-oriented CMS theme with a three-column layout and modern design. It is easy to customize and comes with a custom widget, three templates for Posts and Pages.
 Tags: two-columns, three-columns, custom-header, custom-menu, translation-ready
-Version: 2.0.3
+Version: 2.0.4
 Author: WPZOOM
-Author URI: http://www.wpzoom.com/
+Author URI: https://www.wpzoom.com/
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: academica
@@ -72,11 +72,6 @@ a:focus {
 	outline: thin dotted;
 	outline: 5px auto -webkit-focus-ring-color;
 	outline-offset: -2px;
-}
-
-a:active,
-a:hover {
-	outline: 0;
 }
 
 abbr[title] {
@@ -229,12 +224,6 @@ input {
 	*overflow: visible;
 }
 
-button:focus,
-input:focus,
-textarea:focus {
-	outline: none;
-}
-
 button,
 html input[type="button"],
 input[type="reset"],
@@ -262,6 +251,8 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 input[type="text"],
+input[type="email"],
+input[type="url"],
 input[type="password"] {
 	border: solid 1px #DDD;
 	font-size: 16px;
@@ -451,8 +442,7 @@ p {
 
 .nivo-caption,
 .assistive-text,
-#searchform label,
-.comment-form-comment > label {
+#searchform label {
 	position: absolute !important;
 	clip: rect(1px, 1px, 1px, 1px);
 }
@@ -552,6 +542,10 @@ img.aligncenter,
 	border-top: 1px solid rgba(255,255,255,0.13);
 }
 
+#main-nav > .inner-wrap {
+    position: relative;
+}
+
 .main-navbar {
 	display: inline-block;
 	vertical-align: middle;
@@ -584,7 +578,7 @@ img.aligncenter,
 .sf-arrows ul .sf-with-ul:after { content: "\f345"; display: inline-block; -webkit-font-smoothing: antialiased; font: normal 12px/22px 'dashicons'; float: right; vertical-align: top; margin: 2px 0 0 4px; }
 .sf-arrows ul li > .sf-with-ul:focus:after, .sf-arrows ul li:hover > .sf-with-ul:after, .sf-arrows ul .sfHover > .sf-with-ul:after { border-left-color: white }
 
-.navbar-toggle { display: none; position: absolute; left: 15px; top: 13px; padding: 14px 13px;   border-radius: 2px; background: rgba(0, 0, 0, 0.33); }
+.navbar-toggle { display: none; position: absolute; left: 0; top: 5px; padding: 14px 13px;   border-radius: 2px; background: rgba(0, 0, 0, 0.33); }
 .navbar-toggle .icon-bar { display: block; width: 25px; height: 2px; border-radius: 1px; background: #fff; }
 .navbar-toggle .icon-bar + .icon-bar { margin-top: 4px }
 
@@ -694,6 +688,12 @@ img.aligncenter,
 }
 
 
+#search input:focus::-webkit-input-placeholder { color: transparent; }
+#search input:focus:-moz-placeholder { color: transparent; } /* FF 4-18 */
+#search input:focus::-moz-placeholder { color: transparent; } /* FF 19+ */
+#search input:focus:-ms-input-placeholder { color: transparent; } /* IE 10+ */
+
+
 
 /* =Content
 -------------------------------------------------------------- */
@@ -750,10 +750,12 @@ img.aligncenter,
 	font-weight: 600;
 	font-size: 36px;
  	word-wrap: break-word;
- 	margin: 0 0 20px;
+ 	margin: 0 0 15px;
 }
 
-
+.archive .title-header {
+    margin-bottom: 20px;
+}
 
 /* Breadcrumb */
 #crumbs {
@@ -783,8 +785,8 @@ img.aligncenter,
 	font-size: 36px;
 	font-family: "Roboto Condensed", sans-serif;
 	font-weight: normal;
-	line-height: 1.5;
-	margin: 0;
+	line-height: 1.2;
+	margin: 0 0 8px;
 }
 
 .posts .post div.thumb {
@@ -1047,12 +1049,25 @@ p.pages {
 	overflow: hidden;
 }
 
+#comments .comment-body {
+    position: relative;
+}
+
 #commentform label {
 	font-size: 14px;
-	font-weight: normal;
+	font-weight: 600;
 	line-height: 2.5;
-	margin-left: 10px;
 	text-transform: none;
+    display: block;
+}
+
+#commentform .comment-form-cookies-consent label {
+    display: inline;
+    margin-left: 10px;
+    font-weight: normal;
+    text-transform: none;
+    font-family: inherit;
+    font-size: 14px;
 }
 
 #commentform .subscribe-label {
@@ -1063,21 +1078,19 @@ p.pages {
 	margin: 0;
 }
 
-#commentform input[type="text"] {
-	float: left;
-}
-
 #commentform textarea {
-	height: 100px;
 	margin-bottom: 10px;
 	width: 100%;
 }
 
-#commentform input,
+#commentform input[type="text"],
+#commentform input[type="email"],
+#commentform input[type="url"],
 #commentform textarea {
  	border: 1px solid #ccc;
 	color: #333;
-	max-width: 100%;
+	width: 100%;
+    box-sizing: border-box;
 }
 
 #commentform #submit {
