@@ -17,13 +17,13 @@
 			<div class="col-xs-12">
 				<div class="post-wrapper">
 					<header>
-						<h2><?php _e('Oops! That page can\'t be found.', 'akyl'); ?></h2>
+						<h2><?php esc_html_e('Oops! That page can\'t be found.', 'akyl'); ?></h2>
 					</header>
 
 					<div class="post-content">
 						<div class="post-main">
 
-							<p><?php _e('It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'akyl'); ?></p>
+							<p><?php esc_html_e('It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'akyl'); ?></p>
 
 							 <?php get_search_form(); ?>
 

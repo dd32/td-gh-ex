@@ -49,7 +49,7 @@
 				<div class="navbar-collapse collapse in">
 					<ul class="nav navbar-nav nav-social">
 						<?php 
-							$links = load_social_links();
+							$links = akyl_load_social_links();
 							foreach ( $links as $link ) {
 								echo '<li>' . $link . '</li>' ;
 							}
@@ -57,7 +57,7 @@
 					</ul>
 					<?php
 					 wp_nav_menu( array( 
-					 	'menu' => 'Main Menu',
+					 	'theme_location' => 'Main Menu',
 					 	'menu_class' => 'nav navbar-nav nav-menu',
 					 	'container' => ''
 					 ) );

@@ -2,7 +2,7 @@
 Akyl WordPress Theme 
 ------------------------------
 Copyright 2017 Akila Thiwanka : https://www.akilathiwanka.info/
-Version : 1.0
+Version : 1.0.2
 License : GPLv2 or later
 License URI : http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,8 @@ Theme is supoort for following post formats
 
 Credits
 --------------
+Bootstrap HTML, CSS, and JS library : MIT License https://getbootstrap.com/
+
 Masonry cascading grid layout library : MIT License http://desandro.mit-license.org
 
 FontAwesome icon set License : SIL OFL http://scripts.sil.org/OFL
@@ -56,7 +58,10 @@ Respond.js https://github.com/scottjehl/Respond/blob/master/LICENSE-MIT
 
 Changelog
 --------------
-= 1.0 =
+= 1.0.2 =
+* Released: April 3, 2018
+
+= 1.0.0 =
 * Released: December 18, 2014
 
 Initial release

@@ -26,6 +26,11 @@
 
 					<?php the_post_thumbnail( 'akyl-thumbnail' ); ?>
 				</a>
+				<div class="post-meta-1">
+					<?php akyl_post_meta( 'date' ); ?>
+					<?php akyl_post_meta( 'comment' ); ?>
+					<div class="clearfix"></div>
+				</div>
 			</div>
 
 		<?php else: ?>

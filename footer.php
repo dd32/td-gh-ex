@@ -63,12 +63,12 @@
 		<div class="container">
 			<div class="row">
 				<p class="footer-text">
-					&copy; <?php echo date("Y") ?> <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>. <?php _e('Theme by', 'akyl'); ?> <a href="http://akilathiwanka.info">Akila Thiwanka</a>.
+					&copy; <?php echo date_i18n('Y', strtotime(date('Y'))) ?> <a href="<?php echo esc_url(home_url()); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>. <?php _e('Theme by', 'akyl'); ?> <a href="http://akilathiwanka.info">Akila Thiwanka</a>.
 				</p>
 
 				<p class="social-icons">
 					<?php 
-						$links = load_social_links();
+						$links = akyl_load_social_links();
 						foreach ( $links as $link ) {
 							echo $link;
 						}

@@ -64,15 +64,13 @@
 
 								<?php the_post_thumbnail( 'full' ); ?>
 
-								<?php if ( !empty(get_post(get_post_thumbnail_id())->post_excerpt) ) : ?>
+								<?php $image_caption = get_post(get_post_thumbnail_id())->post_excerpt; ?>
 												
-									<div class="media-caption-container">
-									
-										<p class="media-caption"><?php echo get_post(get_post_thumbnail_id())->post_excerpt; ?></p>
-										
-									</div>
-									
-								<?php endif; ?>
+									<div class="media-caption-container">	
+
+										<p class="media-caption"><?php echo $image_caption; ?></p>	
+																		
+									</div>								
 
 							</div>
 

@@ -10,7 +10,7 @@
 /* ------------------------------------
 /* 1. CONSTANTS
 /* ------------------------------------ */
-define( 'THEMEROOT', get_stylesheet_directory_uri() );
+define( 'THEMEROOT', get_template_directory_uri() );
 define( 'IMAGES', THEMEROOT . '/assets/images' );
 define( 'JS', THEMEROOT . '/assets/js' );
 
@@ -99,14 +99,14 @@ if ( ! function_exists('akyl_post_meta') ) {
 	function akyl_post_meta( $type = 'tags', $id = '' ) {
 		/* post date */
  		if ( $type == 'date' ) {
- 			echo '<a href="' . get_the_permalink() . '" rel="bookmark" >';
- 			echo '<span id="time"><i class="fa  fa-clock-o"></i> ' . get_the_date() . '</span>';
+ 			echo '<a href="' . esc_url(get_the_permalink()) . '" rel="bookmark" >';
+ 			echo '<span id="time"><i class="fa  fa-clock-o"></i> ' . date_i18n('F d, Y', strtotime(get_the_date())) . '</span>';
  			echo '</a>';
  		}
 
  		/* number of post comments */
  		elseif ( $type == 'comment' ) {
- 			echo '<a href="' . get_the_permalink() . '#comments"  rel="bookmark" >';
+ 			echo '<a href="' . esc_url(get_the_permalink()) . '#comments"  rel="bookmark" >';
  			echo '<span class="comment-count">' . get_comments_number() . ' <i class="fa fa-comment-o"></i></span>';
  			echo '</a>';
  		}
@@ -154,7 +154,7 @@ if ( ! function_exists('akyl_post_meta') ) {
 if ( ! function_exists('akyl_scripts') ) {
 	function akyl_scripts() {
 		/* Bootstrap CSS */
-		wp_enqueue_style( 'akyl-bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
+		wp_enqueue_style( 'akyl-bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css' );
 		/* Flexslider CSS */
 		wp_enqueue_style( 'akyl-flexslider-style', get_template_directory_uri() . '/assets/css/flexslider.css' );
 		/* Template's Primary CSS */
@@ -162,20 +162,18 @@ if ( ! function_exists('akyl_scripts') ) {
 		/* Google fonts */
 		wp_enqueue_style( 'akyl-googleFonts', 'https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Raleway:300,400,500,700' );
 		/* Font Awesome CSS */
-		wp_enqueue_style( 'akyl-iconfonts', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
+		wp_enqueue_style( 'akyl-iconfonts', get_template_directory_uri() . '/assets/css/font-awesome.css' );
 
 		/* Conditional Resources for IE 9 */
 		wp_enqueue_script( 'akyl-html5', get_template_directory_uri() . '/assets/js/html5shiv.js' , array(), '3.7.0' );
 		wp_script_add_data( 'akyl-html5', 'conditional', 'lt IE 9' );
-		wp_enqueue_script( 'akyl-respondjs', get_template_directory_uri() . '/assets/js/respond.min.js' , array(), '1.4.2' );
+		wp_enqueue_script( 'akyl-respondjs', get_template_directory_uri() . '/assets/js/respond.js' , array(), '1.4.2' );
 		wp_script_add_data( 'akyl-respondjs', 'conditional', 'lt IE 9' );
 
-		/* jquery */
-		wp_enqueue_script( 'jquery' );
 		/* Bootsrap Core JS */
-		wp_enqueue_script( 'akyl-bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js' , array('jquery'), null, true);
+		wp_enqueue_script( 'akyl-bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.js' , array('jquery'), null, true);
 		/* Flexslider JS */
-		wp_enqueue_script( 'akyl-flexslider-js', get_template_directory_uri() . '/assets/js/flexslider.min.js', array('jquery'), '', true );
+		wp_enqueue_script( 'akyl-flexslider-js', get_template_directory_uri() . '/assets/js/flexslider.js', array('jquery'), '', true );
 		/* Masonry JS */
 		wp_enqueue_script( 'masonry' );
 		/* Template Coere JS */
@@ -193,12 +191,12 @@ if ( ! function_exists('akyl_scripts') ) {
 /* ------------------------------------
 /* 6. Social Links
 /*------------------------------------ */
-function load_social_links( $ele = '' ) {
-	$facebook 	= get_option( 'facebook' );
-	$twitter 	= get_option( 'twitter' );
-	$gplus 		= get_option( 'google-plus' );
-	$dribbble 	= get_option( 'dribbble' );
-	$instagram 	= get_option( 'instagram' );
+function akyl_load_social_links( $ele = '' ) {
+	$facebook 	= get_option( 'akyl_facebook' );
+	$twitter 	= get_option( 'akyl_twitter' );
+	$gplus 		= get_option( 'akyl_google-plus' );
+	$dribbble 	= get_option( 'akyl_dribbble' );
+	$instagram 	= get_option( 'akyl_instagram' );
 
 	$links[] = '';
 
@@ -239,12 +237,18 @@ function akyl_get_link_url() {
 
 // Change the length of excerpts
 function akyl_custom_excerpt_length( $length ) {
+	if ( is_admin() ) {
+		return $length;
+	}
 	return 30;
 }
 add_filter( 'excerpt_length', 'akyl_custom_excerpt_length', 999 );
 
 // Add more-link ( [...] to . . . )
 function akyl_excerpt_more( $more ) {
+	if ( is_admin() ) {
+		return $more;
+	}
 	return '<strong>. . .</strong>';
 }
 add_filter( 'excerpt_more', 'akyl_excerpt_more' );
@@ -293,7 +297,7 @@ if ( ! function_exists('akyl_comment') ) {
 
 					<div class="comment-meta">
 
-						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php echo get_comment_date() . ' at ' . get_comment_time() ?></a>
+						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php echo date_i18n('F d, Y', strtotime(get_comment_date())) . ' at ' . get_comment_time() ?></a>
 
 					</div>
 

@@ -20,15 +20,14 @@ if ( post_password_required() ) {
 				<div class="comment-title-wrapper">
 					<h4 class="comments-title alignleft">
 						<?php 	
-							$comment_count = count($wp_query->comments_by_type['comment']);
-							echo $comment_count . ' ';
-							echo _n('Comment', 'Comments', $comment_count, 'akyl' );						
+							printf( _nx( '%s Comment', '%s Comments', get_comments_number(), 'comments title', 'akyl' ), 
+								number_format_i18n( get_comments_number() ) );
 						?>
 					</h4>
 
 					<?php if ( comments_open() ) : ?>
 					
-						<h5 class="add-comment-title alignright"><a href="#respond"><?php _e('Add yours', 'akyl') . ' &rarr;'; ?></a></h5>
+						<h5 class="add-comment-title alignright"><a href="#respond"><?php esc_html_e('Add yours', 'akyl') . ' &rarr;'; ?></a></h5>
 					
 					<?php endif; ?>
 

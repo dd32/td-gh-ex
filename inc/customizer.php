@@ -96,11 +96,11 @@ function akyl_customize_register( $wp_customize ) {
 	 ));
 	 
 	$social_sites = array(
-		'facebook', 
-		'twitter', 
-		'google-plus',
-		'dribbble',
-		'instagram',
+		'akyl_facebook', 
+		'akyl_twitter', 
+		'akyl_google-plus',
+		'akyl_dribbble',
+		'akyl_instagram',
 	);
 
 	$priority = 5;
@@ -114,7 +114,7 @@ function akyl_customize_register( $wp_customize ) {
 		));
 
 		$wp_customize->add_control( $social_site, array(
-			'label' => ucwords( "$social_site URL:" ),
+			'label' => ucwords( str_replace('akyl_', '', $social_site) . "URL:" ),
 			'section' => 'akyl_social_settings',
 			'type' => 'url',
 			'priority' => $priority,

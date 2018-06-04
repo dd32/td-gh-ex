@@ -1,7 +1,7 @@
 /*	
  * Theme Name: Akyl
  * Text Domain: akyl
- * Version: 1.0.1
+ * Version: 1.1
  * Description: Akyl is a clean and responsive masonry style blog theme. It features Responsive, Support Post Formats, Social Menu, Customization Option, Editor Styling and Translation-Ready Code
  * Tags: blog, three-columns, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, threaded-comments, translation-ready, grid-layout
  * Author: Akila Thiwanka
@@ -902,13 +902,13 @@ input[type="text"] {
 }
 
 .media-caption-container {
-	color: #fff;
 	font-weight: 400;
 	font-style: italic;
 	position: absolute;
 	bottom: 0px;
 	right: 0;
 	left: 0;
+	font-size: 10px;
 }
 
 .style-full .post-content {
