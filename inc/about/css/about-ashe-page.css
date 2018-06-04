@@ -129,6 +129,10 @@
   margin-top: 5px;
 }
 
+.button.demo-import {
+	margin-bottom: 10px;
+}
+
 .button.import-video span {
 	line-height: 33px;
 	font-size: 16px;

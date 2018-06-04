@@ -917,6 +917,13 @@ function ashe_customize_register( $wp_customize ) {
 	// Navigation Font Family
 	ashe_select_control( 'typography', 'nav_family', esc_html__( 'Font Family', 'ashe' ), $font_family, 'refresh', 5 );
 
+	// Italic
+	ashe_checkbox_control( 'typography', 'nav_italic', esc_html__( 'Italic', 'ashe' ), 'postMessage', 7 );
+
+	// Uppercase
+	ashe_checkbox_control( 'typography', 'nav_uppercase', esc_html__( 'Uppercase', 'ashe' ), 'postMessage', 8 );
+
+
 	// Pro Version
 	$wp_customize->add_setting( 'pro_version_typography', array(
 		'sanitize_callback' => 'ashe_sanitize_custom_control'

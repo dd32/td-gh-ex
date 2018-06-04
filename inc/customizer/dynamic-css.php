@@ -451,7 +451,28 @@ function ashe_true_false( $option ) {
 		}
 	";
 
+	// Italic
+	if ( ashe_options( 'typography_nav_italic' ) === true ) {
+		$css .= "
+			#top-menu li a,
+			#main-menu li a,
+			#mobile-menu li {
+				font-style: italic;
+			}
+		";
+	}
 
+	// Uppercase
+	if ( ashe_options( 'typography_nav_uppercase' ) === true ) {
+		$css .= "
+			#top-menu li a,
+			#main-menu li a,
+			#mobile-menu li {
+				text-transform: uppercase;
+			}
+		";
+	}
+	
 
 /*
 ** General Layouts =====

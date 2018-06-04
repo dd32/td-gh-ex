@@ -142,6 +142,29 @@
 
 
 /*
+** Typography
+*/
+
+	// Menu Italic
+	asheLivePreview( 'typography_nav_italic', function( val ) {
+		if ( val === true ) {
+			$( '#top-menu li a,	#main-menu li a, #mobile-menu li' ).css( 'font-style', 'italic' );
+		} else {
+			$( '#top-menu li a,	#main-menu li a, #mobile-menu li' ).css( 'font-style', 'normal' );
+		}
+	});
+
+	// Menu Uppercase
+	asheLivePreview( 'typography_nav_uppercase', function( val ) {
+		if ( val === true ) {
+			$( '#top-menu li a,	#main-menu li a, #mobile-menu li' ).css( 'text-transform', 'uppercase' );
+		} else {
+			$( '#top-menu li a,	#main-menu li a, #mobile-menu li' ).css( 'text-transform', 'none' );
+		}
+	});
+
+
+/*
 ** Custom Functions
 */
 	// Previewer

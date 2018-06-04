@@ -65,6 +65,8 @@ function ashe_options( $control ) {
 		'social_media_url_4' => '',
 		'typography_logo_family' => 'Open+Sans',
 		'typography_nav_family' => 'Open+Sans',
+		'typography_nav_italic' => false,
+		'typography_nav_uppercase' => true,
 		'page_footer_copyright' => '',
 		'preloader_label' => false
 	);
