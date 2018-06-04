@@ -81,3 +81,11 @@ if(app_landing_page_newsletter_activated()){
   add_action( 'customize_controls_enqueue_scripts', 'app_landing_page_customizer_js' );
 
 }
+
+/**
+ * Enqueue Scripts for customize controls
+*/
+function app_landing_page_customize_scripts() {
+  wp_enqueue_style( 'app-landing-page-admin-style',get_template_directory_uri().'/inc/css/admin.css', '1.0', 'screen' );    
+}
+add_action( 'customize_controls_enqueue_scripts', 'app_landing_page_customize_scripts' );

@@ -58,6 +58,10 @@ require get_template_directory() . '/inc/metabox.php';
  * Widget
  */
 require get_template_directory() . '/inc/widgets/widgets.php';
+/**
+ * Info 
+ */
+require get_template_directory() . '/inc/customizer/info.php';
 
 /**
 * Load TGM Plugin class

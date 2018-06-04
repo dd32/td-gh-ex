@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, custom-logo, footer-widgets, full-
 
 Requires at least: 4.7
 Tested up to: 4.9.6
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -194,6 +194,11 @@ App Landing Page WordPress Theme is distributed under the terms of the GPLv2 or 
    GNU General Public License for more details.
 
 == Change Log ==
+    1.0.7
+    * Footer widget responsive.
+    * Subscription form width in repsonsive design managed.
+    * Added site information in the wordpress customizer.
+
     1.0.6
     * Privacy Policy link and WP Comment Cookies Consent features were added after 4.9.6 wp installation.
     * Fixed headers already sent issue.
