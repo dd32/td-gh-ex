@@ -12,8 +12,9 @@ function bard_about_page_output() {
 	<div class="wrap">
 		<h1><?php esc_html_e( 'Welcome to Bard!', 'bard' ); ?></h1>
 		<p class="welcome-text">
-			<?php esc_html_e( 'Bard is free personal and multi-author WordPress Blog theme. It\'s perfect for any kind of blog: personal, multi-author, food, lifestyle, etc... Is fully Responsive and Retina Display ready, clean, modern and minimal. Bard is WooCommerce compatible, also has RTL support and for sure it\'s SEO friendly. Coded with latest WordPress\' standards.', 'bard' ); ?>
-		</p>
+			<?php esc_html_e( 'At first, thanks for the interest! Bard theme is one of the most Popular Free WordPress theme of 2017-2018 years. To understand better what Bard theme can offer, please click on the button below.', 'bard' ); ?>
+			<br><br><a href="<?php echo esc_url('http://wp-royal.com/themes/bard-free/demo/?ref=bard-free-backend-about-theme-prev-btn'); ?>" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Demo Preview', 'bard' ); ?></a>
+		</p><br>
 
 		<?php
 
@@ -33,12 +34,15 @@ function bard_about_page_output() {
 				<?php esc_html_e( 'Getting Started', 'bard' ); ?>
 			</a>
 			<a href="?page=about-bard&tab=bard_tab_2" class="nav-tab <?php echo $active_tab == 'bard_tab_2' ? 'nav-tab-active' : ''; ?>">
-				<?php esc_html_e( 'Recommended Plugins', 'bard' ); ?>
+				<span class="dashicons dashicons-video-alt3"></span><?php esc_html_e( 'Video Tutorials', 'bard' ); ?>
 			</a>
 			<a href="?page=about-bard&tab=bard_tab_3" class="nav-tab <?php echo $active_tab == 'bard_tab_3' ? 'nav-tab-active' : ''; ?>">
-				<?php esc_html_e( 'Support', 'bard' ); ?>
+				<?php esc_html_e( 'Recommended Plugins', 'bard' ); ?>
 			</a>
 			<a href="?page=about-bard&tab=bard_tab_4" class="nav-tab <?php echo $active_tab == 'bard_tab_4' ? 'nav-tab-active' : ''; ?>">
+				<?php esc_html_e( 'Support', 'bard' ); ?>
+			</a>
+			<a href="?page=about-bard&tab=bard_tab_5" class="nav-tab <?php echo $active_tab == 'bard_tab_5' ? 'nav-tab-active' : ''; ?>">
 				<?php esc_html_e( 'Free vs Pro', 'bard' ); ?>
 			</a>
 		</div>
@@ -50,7 +54,7 @@ function bard_about_page_output() {
 
 				<br>
 
-				<div class="column-wdith-3">
+				<div class="column-width-3">
 					<h3><?php esc_html_e( 'Theme Documentation', 'bard' ); ?></h3>
 					<p>
 						<?php esc_html_e( 'Highly recommended to begin with this, read the full theme documentation to understand the basics and even more details about how to use Bard. It is worth to spend 10 minutes and know almost everything about the theme.', 'bard' ); ?>
@@ -58,16 +62,23 @@ function bard_about_page_output() {
 					<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/bard/docs/?ref=bard-free-backend-about-docs/'); ?>" class="button button-primary"><?php esc_html_e( 'Read Documentation', 'bard' ); ?></a>
 				</div>
 
-				<div class="column-wdith-3">
+				<div class="column-width-3">
 					<h3><?php esc_html_e( 'Demo Content', 'bard' ); ?></h3>
 					<p>
-						<?php esc_html_e( 'If you are a WordPress beginner it\'s highly recomended to install the Demo Content. This file includes: Menus, Posts, Pages, Widgets, etc. Read More about demo import in the ', 'bard' ); ?>
-						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard/docs/?ref=bard-free-backend-about-docs/#demo'); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation.', 'bard' ); ?></a>
+						<?php esc_html_e( 'If you are a WordPress beginner it\'s highly recomended to install the Demo Content, this could be done in 2 clicks. Just click the button below to install demo import plugin and wait a bit to be redirected to the demo import page.', 'bard' ); ?>
 					</p>
-					<a target="_blank" target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/bard/democontent/bard_free_demo_content.html?ref=bard-free-backend-about-demoxml-btn'); ?>" class="button button-primary"><?php esc_html_e( 'Download Import File', 'bard' ); ?></a>
+
+					<?php if ( is_plugin_active( 'one-click-demo-import/one-click-demo-import.php' ) ) : ?>
+						<a href="<?php echo admin_url( '/themes.php?page=pt-one-click-demo-import' ); ?>" class="button button-primary demo-import"><?php esc_html_e( 'Go to Import page', 'bard' ); ?></a>
+					<?php elseif ( bard_check_installed_plugin( 'one-click-demo-import', 'one-click-demo-import' ) ) : ?>
+						<button class="button button-primary demo-import" id="bard-demo-content-act"><?php esc_html_e( 'Activate Demo Import Plugin', 'bard' ); ?></button>
+					<?php else: ?>
+						<button class="button button-primary demo-import" id="bard-demo-content-inst"><?php esc_html_e( 'Install Demo Import Plugin', 'bard' ); ?></button>
+					<?php endif; ?>
+					<a href="<?php echo esc_url('https://www.youtube.com/watch?v=LoiJzc2deeI') ?>" target="_blank" class="button button-primary import-video"><span class="dashicons dashicons-video-alt3"></span><?php esc_html_e( 'Video Tutorial', 'bard' ); ?></a>
 				</div>
 
-				<div class="column-wdith-3">
+				<div class="column-width-3">
 					<h3><?php esc_html_e( 'Theme Customizer', 'bard' ); ?></h3>
 					<p>
 					<?php esc_html_e( 'All theme options are located here. After reading the Theme Documentation we recommend you to open the Theme Customizer and play with some options. You will enjoy it.', 'bard' ); ?>
@@ -80,14 +91,14 @@ function bard_about_page_output() {
 			<!-- Predefined Styles -->
 			<div class="four-columns-wrap">
 			
-				<h2><?php esc_html_e( 'Predefined Styles', 'bard' ); ?></h2>
+				<h2><?php esc_html_e( 'Bard Pro - Predefined Styles', 'bard' ); ?></h2>
 				<p>
 					<?php esc_html_e( 'Just activate any of these styles and you will get the same design(layouts, fonts, colors, etc..) as shown on our demo website.', 'bard' ); ?>
-					<?php esc_html_e( 'More details in the theme ', 'bard' ); ?>
-					<a target="_blank" href="http://wp-royal.com/themes/bard/docs/?ref=bard-free-backend-about-predefined-styles#predefined"><?php esc_html_e( 'Documentation.', 'bard' ); ?></a>
+					<?php esc_html_e( 'More details in the ', 'bard' ); ?>
+					<a target="_blank" href="http://wp-royal.com/themes/bard/docs/?ref=bard-free-backend-about-predefined-styles#predefined"><?php esc_html_e( 'Theme Documentation.', 'bard' ); ?></a>
 				</p>
 
-				<div class="column-wdith-4">
+				<div class="column-width-4">
 					<div class="active-style"><?php esc_html_e( 'Active', 'bard' ); ?></div>
 					<img src="<?php echo get_template_directory_uri() . '/assets/images/main.jpg'; ?>" alt="">
 					<div>
@@ -95,91 +106,91 @@ function bard_about_page_output() {
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/demo/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
 					</div>
 				</div>
-				<div class="column-wdith-4">
+				<div class="column-width-4">
 					<img src="<?php echo get_template_directory_uri() . '/assets/images/food.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Food', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/food/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
 					</div>
 				</div>
-				<div class="column-wdith-4">
+				<div class="column-width-4">
 					<img src="<?php echo get_template_directory_uri() . '/assets/images/lifestyle.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Lifestyle', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/lifestyle/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
 					</div>
 				</div>
-				<div class="column-wdith-4">
+				<div class="column-width-4">
 					<img src="<?php echo get_template_directory_uri() . '/assets/images/dark.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Dark', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('http://wp-royal.com/themes/bard-pro/color-black/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
 					</div>
 				</div>	
-				<div class="column-wdith-4">
+				<div class="column-width-4">
 					<img src="<?php echo get_template_directory_uri() . '/assets/images/img1.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 1', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/typography-v1/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
 					</div>
 				</div>
-				<div class="column-wdith-4">
+				<div class="column-width-4">
 					<img src="<?php echo get_template_directory_uri() . '/assets/images/img2.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 2', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/sample-v3/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
 					</div>
 				</div>
-				<div class="column-wdith-4">
+				<div class="column-width-4">
 					<img src="<?php echo get_template_directory_uri() . '/assets/images/img3.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 3', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/columns2-sidebar/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
 					</div>
 				</div>
-				<div class="column-wdith-4">
+				<div class="column-width-4">
 					<img src="<?php echo get_template_directory_uri() . '/assets/images/img4.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 4', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/sample-v5/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
 					</div>
 				</div>
-				<div class="column-wdith-4">
+				<div class="column-width-4">
 					<img src="<?php echo get_template_directory_uri() . '/assets/images/img5.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 5', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/color-colorful/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
 					</div>
 				</div>
-				<div class="column-wdith-4">
+				<div class="column-width-4">
 					<img src="<?php echo get_template_directory_uri() . '/assets/images/img6.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 6', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/columns4/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
 					</div>
 				</div>
-				<div class="column-wdith-4">
+				<div class="column-width-4">
 					<img src="<?php echo get_template_directory_uri() . '/assets/images/img7.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 7', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/columns3-sidebar/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
 					</div>
 				</div>
-				<div class="column-wdith-4">
+				<div class="column-width-4">
 					<img src="<?php echo get_template_directory_uri() . '/assets/images/img8.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 8', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/color-black-white/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
 					</div>
 				</div>
-				<div class="column-wdith-4">
+				<div class="column-width-4">
 					<img src="<?php echo get_template_directory_uri() . '/assets/images/img9.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 9', 'bard' ); ?></h2>
 						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/columns3-nsidebar/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Preview', 'bard' ); ?></a>
 					</div>
 				</div>
-				<div class="column-wdith-4">
+				<div class="column-width-4">
 					<img src="<?php echo get_template_directory_uri() . '/assets/images/img10.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Style 10', 'bard' ); ?></h2>
@@ -188,8 +199,72 @@ function bard_about_page_output() {
 				</div>
 
 			</div>
-			
+		
 		<?php elseif ( $active_tab == 'bard_tab_2' ) : ?>
+
+			<div class="four-columns-wrap video-tutorials">
+
+				<div class="column-width-4">
+					<h3><?php esc_html_e( 'Demo Import', 'bard' ); ?></h3>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=LoiJzc2deeI"><?php esc_html_e( 'Watch Video', 'bard' ); ?></a>
+					<a class="button button-secondary" href="<?php echo esc_url(admin_url('themes.php?page=about-bard&tab=bard_tab_1')); ?>"></span><?php esc_html_e( 'Get Started', 'bard' ); ?></a>
+				</div>
+				<div class="column-width-4">
+					<h3><?php esc_html_e( 'Setup Menu', 'bard' ); ?></h3>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=9M38Z2CLKOg"><?php esc_html_e( 'Watch Video', 'bard' ); ?></a>
+					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('nav-menus.php')); ?>"></span><?php esc_html_e( 'Customize', 'bard' ); ?></a>
+				</div>
+				<div class="column-width-4">
+					<h3><?php esc_html_e( 'Setup Logo Image', 'bard' ); ?></h3>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=BxHuvY5JF0o"><?php esc_html_e( 'Watch Video', 'bard' ); ?></a>
+					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=title_tagline')); ?>"></span><?php esc_html_e( 'Customize', 'bard' ); ?></a>
+				</div>
+				<div class="column-width-4">
+					<h3><?php esc_html_e( 'Setup Social Media', 'bard' ); ?></h3>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=sdqxPuVJyrk"><?php esc_html_e( 'Watch Video', 'bard' ); ?></a>
+					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=bard_social_media')); ?>"></span><?php esc_html_e( 'Customize', 'bard' ); ?></a>
+				</div>
+				<div class="column-width-4">
+					<h3><?php esc_html_e( 'Setup Copyright', 'bard' ); ?></h3>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=trgc2BnKuZI"><?php esc_html_e( 'Watch Video', 'bard' ); ?></a>
+					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=bard_page_footer')); ?>"></span><?php esc_html_e( 'Customize', 'bard' ); ?></a>
+				</div>
+				<div class="column-width-4">
+					<h3><?php esc_html_e( 'Setup Colors', 'bard' ); ?></h3>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=IIq2RwzUJA0"><?php esc_html_e( 'Watch Video', 'bard' ); ?></a>
+					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=bard_colors')); ?>"></span><?php esc_html_e( 'Customize', 'bard' ); ?></a>
+				</div>
+				<div class="column-width-4">
+					<h3><?php esc_html_e( 'Setup Header Image', 'bard' ); ?></h3>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=9K27xZgVaVo"><?php esc_html_e( 'Watch Video', 'bard' ); ?></a>
+					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=header_image')); ?>"></span><?php esc_html_e( 'Customize', 'bard' ); ?></a>
+				</div>
+				<div class="column-width-4">
+					<h3><?php esc_html_e( 'Setup Featured Slider', 'bard' ); ?></h3>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=KAQYPbs9yn0"><?php esc_html_e( 'Watch Video', 'bard' ); ?></a>
+					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=bard_featured_slider')); ?>"></span><?php esc_html_e( 'Customize', 'bard' ); ?></a>
+				</div>
+				<div class="column-width-4">
+					<h3><?php esc_html_e( 'Setup Featured Links', 'bard' ); ?></h3>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=WN-6fG7_IXg"><?php esc_html_e( 'Watch Video', 'bard' ); ?></a>
+					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=bard_featured_links')); ?>"></span><?php esc_html_e( 'Customize', 'bard' ); ?></a>
+				</div>
+				<div class="column-width-4">
+					<h3><?php esc_html_e( 'Setup Instagram Widget', 'bard' ); ?></h3>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=hjZxBacICSg"><?php esc_html_e( 'Watch Video', 'bard' ); ?></a>
+				</div>
+				<div class="column-width-4">
+					<h3><?php esc_html_e( 'Create Blog Post', 'bard' ); ?></h3>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=gvW0FhT-cSQ"><?php esc_html_e( 'Watch Video', 'bard' ); ?></a>
+				</div>
+				<div class="column-width-4">
+					<h3><?php esc_html_e( 'Translate The Theme', 'bard' ); ?></h3>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=7LtyVjw46r8"><?php esc_html_e( 'Watch Video', 'bard' ); ?></a>
+				</div>
+
+			</div>
+
+		<?php elseif ( $active_tab == 'bard_tab_3' ) : ?>
 			
 			<div class="three-columns-wrap">
 				
@@ -231,13 +306,13 @@ function bard_about_page_output() {
 
 			</div>
 
-		<?php elseif ( $active_tab == 'bard_tab_3' ) : ?>
+		<?php elseif ( $active_tab == 'bard_tab_4' ) : ?>
 
 			<div class="three-columns-wrap">
 
 				<br>
 
-				<div class="column-wdith-3">
+				<div class="column-width-3">
 					<h3>
 						<span class="dashicons dashicons-sos"></span>
 						<?php esc_html_e( 'Forums', 'bard' ); ?>
@@ -249,7 +324,7 @@ function bard_about_page_output() {
 					</p>
 				</div>
 
-				<div class="column-wdith-3">
+				<div class="column-width-3">
 					<h3>
 						<span class="dashicons dashicons-book"></span>
 						<?php esc_html_e( 'Documentation', 'bard' ); ?>
@@ -261,7 +336,7 @@ function bard_about_page_output() {
 					</p>
 				</div>
 
-				<div class="column-wdith-3">
+				<div class="column-width-3">
 					<h3>
 						<span class="dashicons dashicons-admin-tools"></span>
 						<?php esc_html_e( 'Changelog', 'bard' ); ?>
@@ -275,7 +350,7 @@ function bard_about_page_output() {
 
 			</div>
 
-		<?php elseif ( $active_tab == 'bard_tab_4' ) : ?>
+		<?php elseif ( $active_tab == 'bard_tab_5' ) : ?>
 
 			<br><br>
 
@@ -620,7 +695,115 @@ function bard_enqueue_about_page_scripts($hook) {
 	}
 
 	// enqueue CSS
-	wp_enqueue_style( 'bard-about-css', get_theme_file_uri( '/inc/about/css/about-page.css' ) );
+	wp_enqueue_style( 'bard-about-css', get_theme_file_uri( '/inc/about/css/about-page.css' ), array(), '1.4' );
+
+	// Demo Import
+	wp_enqueue_script( 'plugin-install' );
+	wp_enqueue_script( 'updates' );
+	wp_enqueue_script( 'bard-about-page-css', get_theme_file_uri( '/inc/about/js/about-bard-page.js' ), array(), '1.4' );
 
 }
 add_action( 'admin_enqueue_scripts', 'bard_enqueue_about_page_scripts' );
+
+
+// Install/Activate Demo Import Plugin 
+function bard_plugin_auto_activation() {
+
+	// Get the list of currently active plugins (Most likely an empty array)
+	$active_plugins = (array) get_option( 'active_plugins', array() );
+
+	array_push( $active_plugins, 'one-click-demo-import/one-click-demo-import.php' );
+
+	// Set the new plugin list in WordPress
+	update_option( 'active_plugins', $active_plugins );
+
+}
+add_action( 'wp_ajax_bard_plugin_auto_activation', 'bard_plugin_auto_activation' );
+
+// Import Plugin Data
+function bard_import_demo_files() {
+	return array(
+		array(
+			'import_file_name'             => esc_html__( 'Import Demo Data', 'bard' ),
+			'local_import_file'            => trailingslashit( get_template_directory() ) . 'inc/about/import/bard-demo.xml',
+			'local_import_widget_file'     => trailingslashit( get_template_directory() ) . 'inc/about/import/bard-widgets.wie',
+			'local_import_customizer_file' => trailingslashit( get_template_directory() ) . 'inc/about/import/bard-customizer.dat'
+		)
+	);
+}
+add_filter( 'pt-ocdi/import_files', 'bard_import_demo_files' );
+
+function bard_import_demo_files_filter( $default_text ) {
+
+	// Activate CF7 Plugin After Import
+	if ( is_plugin_active( 'contact-form-7/wp-contact-form-7.php' ) ) {
+		$cf7_plugin_link = '';
+	} elseif ( bard_check_installed_plugin( 'contact-form-7', 'wp-contact-form-7' ) ) {
+		$cf7_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=contact-form-7/wp-contact-form-7.php' ), 'activate-plugin_contact-form-7/wp-contact-form-7.php' ) ) .'" target="_blank">'. esc_html__( 'Activate - Contact Form 7', 'bard' ) .'</a></li>';
+	} else {
+		$cf7_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=contact-form-7' ), 'install-plugin_contact-form-7' ) ) .'" target="_blank">'. esc_html__( 'Install/Activate - Contact Form 7', 'bard' ) .'</a></li>';
+	}
+
+	// Activate RPWWT Plugin After Import
+	if ( is_plugin_active( 'recent-posts-widget-with-thumbnails/recent-posts-widget-with-thumbnails.php' ) ) {
+		$rpwwt_plugin_link = '';
+	} elseif ( bard_check_installed_plugin( 'recent-posts-widget-with-thumbnails', 'recent-posts-widget-with-thumbnails' ) ) {
+		$rpwwt_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=recent-posts-widget-with-thumbnails/recent-posts-widget-with-thumbnails.php' ), 'activate-plugin_recent-posts-widget-with-thumbnails/recent-posts-widget-with-thumbnails.php' ) ) .'" target="_blank">'. esc_html__( 'Activate - Recent Posts Widget with Thumbnails', 'bard' ) .'</a></li>';
+	} else {
+		$rpwwt_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=recent-posts-widget-with-thumbnails' ), 'install-plugin_recent-posts-widget-with-thumbnails' ) ) .'" target="_blank">'. esc_html__( 'Install/Activate - Recent Posts Widget with Thumbnails', 'bard' ) .'</a></li>';
+	}
+
+	// Activate ISW Plugin After Import
+	if ( is_plugin_active( 'instagram-slider-widget/instaram_slider.php' ) ) {
+		$isw_plugin_link = '';
+	} elseif ( bard_check_installed_plugin( 'instagram-slider-widget', 'instaram_slider' ) ) {
+		$isw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=instagram-slider-widget/instaram_slider.php' ), 'activate-plugin_instagram-slider-widget/instaram_slider.php' ) ) .'" target="_blank">'. esc_html__( 'Activate - Instagram Slider Widget', 'bard' ) .'</a></li>';
+	} else {
+		$isw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=instagram-slider-widget' ), 'install-plugin_instagram-slider-widget' ) ) .'" target="_blank">'. esc_html__( 'Install/Activate - Instagram Slider Widget', 'bard' ) .'</a></li>';
+	}
+
+	if ( $rpwwt_plugin_link !== '' || $isw_plugin_link !== '' ) {
+		$activate_plugins_notice  =  esc_html__( 'Recommended (optional): Before you Import Demo Data to get the same demo as shown on our ', 'bard' );
+		$activate_plugins_notice .= '<a href="'. esc_url('http://wp-royal.com/themes/bard-free/demo/?ref=bard-free-backend-about-section-one-click-demo-import') .'" target="_blank">'. esc_html__( 'Theme Preview Page', 'bard' ) .'</a>';
+		$activate_plugins_notice .=  esc_html__( ' you need to: ', 'bard' );
+	} else {
+		$activate_plugins_notice = '';
+	}
+
+	$default_text = substr($default_text, 159);
+
+	$default_text .= '<div class="ocdi__intro-text">';
+
+		if ( $isw_plugin_link !== '' || $cf7_plugin_link !== '' || $rpwwt_plugin_link !== '' ) {
+
+			$default_text .= '<h4>'. $activate_plugins_notice .'</h4>';
+
+			$default_text .= '<ul>';
+				$default_text .= $isw_plugin_link;
+				$default_text .= $cf7_plugin_link;
+				$default_text .= $rpwwt_plugin_link;
+			$default_text .= '</ul>';
+
+		}
+
+	$default_text .= '</div><hr>';
+
+	return $default_text; 
+}
+add_filter( 'pt-ocdi/plugin_intro_text', 'bard_import_demo_files_filter' );
+
+// Install Menus after Import
+function bard_after_import_setup() {
+	$main_menu = get_term_by( 'name', 'Main Menu', 'nav_menu' );
+	$top_menu = get_term_by( 'name', 'Top Menu', 'nav_menu' );
+
+	set_theme_mod( 'nav_menu_locations', array(
+			'main' => $main_menu->term_id,
+			'top'  => $top_menu->term_id,
+		)
+	);
+}
+add_action( 'pt-ocdi/after_import', 'bard_after_import_setup' );
+
+// Disable PT Branding after Import Notice
+add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );

@@ -29,11 +29,9 @@ $slider_data .= '}';
 	
 	<?php
 
-	$post_types = array( 'post' );
-
 	// Query Args
 	$args = array(
-		'post_type'		      	=> $post_types,
+		'post_type'		      	=> array( 'post' ),
 	 	'orderby'		      	=> 'rand',
 		'order'			      	=> 'DESC',
 		'posts_per_page'      	=> bard_options( 'featured_slider_amount' ),

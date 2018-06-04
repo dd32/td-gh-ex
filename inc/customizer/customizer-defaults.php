@@ -75,6 +75,8 @@ function bard_options( $control ) {
 		'social_media_title_4' => '',
 		'typography_logo_family' => 'Arizonia',
 		'typography_nav_family' => 'Open+Sans',
+		'typography_nav_italic' => false,
+		'typography_nav_uppercase' => true,
 		'page_footer_show_socials' => false,
 		'page_footer_logo' => '',
 		'page_footer_copyright' => '',

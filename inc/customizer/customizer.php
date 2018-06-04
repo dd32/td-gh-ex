@@ -331,19 +331,19 @@ function bard_customize_register( $wp_customize ) {
 					<a href="<?php echo esc_url('http://wp-royal.com/themes/bard/customizer/free/upgrade-bard-pro.html?ref=bard-free-customizer-about-section-buypro'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Get Bard Pro', 'bard' ); ?></a>
 				</li>
 				<li class="customize-control">
+					<h3><?php esc_html_e( 'Demo Import / Getting Started', 'bard' ); ?></h3>
+					<p><?php esc_html_e( 'All you need for startup: Demo Import, Video Tutorials and more. To see what Bard theme can offer, please visit a ', 'bard' ); ?><a href="<?php echo esc_url('https://wp-royal.com/themes/bard-free/demo/?ref=bard-free-customizer-about-section-get-started-btn/'); ?>" target="_blank"><?php esc_html_e( 'Demo Preview Page.', 'bard' ); ?></a></p>
+					<a href="<?php echo esc_url(admin_url('themes.php?page=about-bard')); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Get Started', 'bard' ); ?></a>
+				</li>
+				<li class="customize-control">
 					<h3><?php esc_html_e( 'Documentation', 'bard' ); ?></h3>
 					<p><?php esc_html_e( 'Read how to customize the theme, set up widgets, and learn all the possible options available to you.', 'bard' ); ?></p>
 					<a href="<?php echo esc_url('http://wp-royal.com/themes/bard/docs/?ref=bard-free-customizer-about-section-docs-btn/'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Documentation', 'bard' ); ?></a>
 				</li>
 				<li class="customize-control">
-					<h3><?php esc_html_e( 'Support', 'bard' ); ?></h3>
-					<p><?php esc_html_e( 'For Bard theme related questions feel free to post on our support forums. But firstly please ', 'bard' ); ?><a href="<?php echo esc_url('http://wp-royal.com/wp-login.php?action=register'); ?>" target="_blank"><?php esc_html_e( 'Register on Support Forums', 'bard' ); ?></a></p>
-					<a href="<?php echo esc_url('https://wp-royal.com/support-bard-free/?ref=bard-free-customizer-about-section-support-forum-btn/'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Support', 'bard' ); ?></a>
-				</li>
-				<li class="customize-control">
-					<h3><?php esc_html_e( 'Demo Content', 'bard' ); ?></h3>
-					<p><?php esc_html_e( 'You can download and import this demo file to get same content as shown on our website. For more details please read theme documentation.', 'bard' ); ?></p>
-					<a href="<?php echo esc_url('http://wp-royal.com/themes/bard/democontent/bard_free_demo_content.html?ref=bard-free-customizer-about-section-demoxml-btn'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Download Demo Content', 'bard' ); ?></a>
+					<h3><?php esc_html_e( 'Predefined Styles', 'bard' ); ?></h3>
+					<p><?php esc_html_e( 'Bard Pro\'s powerful setup allows you to easily create unique looking sites. Here are a few included examples that can be installed with one click in the Pro Version.', 'bard' ); ?></p>
+					<a href="<?php echo admin_url('themes.php?page=about-bard#bard-predefined-styles'); ?>" class="button button-primary widefat"><?php esc_html_e( 'Predefined Styles', 'bard' ); ?></a>
 				</li>
 				<li class="customize-control">
 					<h3><?php esc_html_e( 'Changelog', 'bard' ); ?></h3>
@@ -884,6 +884,8 @@ function bard_customize_register( $wp_customize ) {
 		'flickr' 				=> 'Flickr',
 		'rss' 					=> 'RSS',
 		'heart' 				=> 'Heart',
+		'info' 					=> 'Info 1',
+		'info-circle' 			=> 'Info 2',
 		'github' 				=> 'Github 1',
 		'github-alt' 			=> 'Github 2',
 		'github-square' 		=> 'Github 3',
@@ -895,11 +897,14 @@ function bard_customize_register( $wp_customize ) {
 		'xing-square' 			=> 'Xing 2',
 		'gamepad' 				=> 'Gamepad',
 		'medium' 				=> 'Medium',
+		'map-marker-alt' 		=> 'Map Marker',
 		'envelope' 				=> 'Envelope',
 		'etsy' 					=> 'Etsy',
 		'snapchat' 				=> 'Snapchat 1',
 		'snapchat-ghost' 		=> 'Snapchat 2',
 		'snapchat-square'		=> 'Snapchat 3',
+		'spotify'				=> 'Spotify',
+		'shopping-cart'			=> 'Cart',
 		'meetup' 				=> 'Meetup',
 		'book' 					=> 'Book',
 		'tablet-alt'			=> 'Tablet',
@@ -971,6 +976,12 @@ function bard_customize_register( $wp_customize ) {
 
 	// Navigation Font Family
 	bard_select_control( 'typography', 'nav_family', esc_html__( 'Font Family', 'bard' ), $font_family, 'refresh', 5 );
+
+	// Italic
+	bard_checkbox_control( 'typography', 'nav_italic', esc_html__( 'Italic', 'bard' ), 'postMessage', 7 );
+
+	// Uppercase
+	bard_checkbox_control( 'typography', 'nav_uppercase', esc_html__( 'Uppercase', 'bard' ), 'postMessage', 9 );
 
 	// Pro Version
 	$wp_customize->add_setting( 'pro_version_typography', array(

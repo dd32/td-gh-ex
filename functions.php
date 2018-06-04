@@ -515,6 +515,7 @@ if ( ! function_exists( 'bard_social_media' ) ) {
 			'snapchat',
 			'snapchat-ghost',
 			'snapchat-square',
+			'spotify',
 			'meetup',
 			'amazon',
 			'paypal',
@@ -539,7 +540,10 @@ if ( ! function_exists( 'bard_social_media' ) ) {
 			'comments',
 			'phone',
 			'user',
-
+			'shopping-cart',
+			'info',
+			'info-circle',
+			'map-marker-alt',
 		);
 
 		if ( in_array( $icon, $social_icons_fab ) ) {

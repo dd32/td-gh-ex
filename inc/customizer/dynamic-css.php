@@ -960,6 +960,28 @@ $css = '';
 			font-family: '". str_replace( '+', ' ', esc_html(bard_options( 'typography_nav_family' )) ) ."';
 		}
 	";
+	
+	// Italic
+	if ( bard_options( 'typography_nav_italic' ) === true ) {
+		$css .= "
+			#top-menu li a,
+			#main-menu li a,
+			#mobile-menu li {
+				font-style: italic;
+			}
+		";
+	}
+
+	// Uppercase
+	if ( bard_options( 'typography_nav_uppercase' ) === true ) {
+		$css .= "
+			#top-menu li a,
+			#main-menu li a,
+			#mobile-menu li {
+				text-transform: uppercase;
+			}
+		";
+	}
 
 
 /*
