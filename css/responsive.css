@@ -113,6 +113,9 @@
 		width: 100%;
 		text-align: center;
 	}
+	.related-posts-wrapper .tg-one-third {
+		margin-bottom: 30px;
+	}
 }
 @media screen and (max-width: 600px) {
 	.search-form-top {
@@ -172,6 +175,17 @@
    .gallery-columns-9 .gallery-item {
    	width:25%;
    }
+
+   .author-box {
+	   margin-bottom: 20px;
+   }
+   
+   .author-img {
+		float: none;
+	}
+	.author-description-wrapper {
+		margin-left: 0;
+	}
 }
 @media only screen and (max-width: 420px) {
    .gallery-columns-4 .gallery-item,
