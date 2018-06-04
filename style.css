@@ -4,7 +4,7 @@ Theme URI: https://themegrill.com/themes/freedom/
 Author: ThemeGrill
 Author URI: https://themegrill.com
 Description: Freedom is a simple, clean and responsive stylish photo blogging theme. The theme supports custom header, custom background, custom menu, widget areas and has built-in options panel to configure primary color, site logo, slider, site layout, sidebar layout, category layout and many more. Get free support at https://themegrill.com/support-forum/ and check the demo at https://demo.themegrill.com/freedom/
-Version: 1.1.4
+Version: 1.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, post-formats, rtl-language-support, blog
@@ -1487,6 +1487,53 @@ a#scroll-up:hover {
 	text-decoration: none;
 }
 
+/* Related Post */
+
+.related-posts-main-title {
+	font-size: 22px;
+}
+
+.related-posts {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+.related-post-wrapper .tg-one-third {
+	width: 33.33%;
+	float: left;
+	padding-left: 15px;
+	padding-right: 15px;
+	box-sizing: border-box;
+}
+
+.related-post-wrapper .entry-title {
+	font-size: 22px;
+	padding-bottom: 10px;
+}
+
+.related-post-wrapper .entry-title a {
+	color: #666666;
+}
+
+.related-post-wrapper .entry-title a:hover {
+	color: #0aad6c;
+}
+
+.related-post-wrapper .entry-meta .posted-on,
+.related-post-wrapper .entry-meta .byline {
+    margin-right: 5px;
+}
+
+.related-post-wrapper .entry-meta .posted-on i,
+.related-post-wrapper .entry-meta .byline i {
+	padding-left: 0;
+}
+
+.related-post-wrapper .entry-meta .byline a,
+.related-post-wrapper .entry-meta .cat-links a{
+	font-size: 14px;
+}
+
 /* =FEATURED BLOG
 ----------------------------------------------- */
 .no-post-thumbnail {
@@ -1563,6 +1610,37 @@ a#scroll-up:hover {
 	color: #46c9be;
 	text-decoration: none;
    text-shadow: 1px 1px 1px #000000;
+}
+
+/* author-boi */
+
+.author-box {
+	padding: 20px;
+	border-radius: 5px;
+	background: #F8F8F8;
+	margin-bottom: 20px;
+}
+
+.author-img .avatar {
+	margin-bottom: 0;
+}
+
+.author-description-wrapper {
+    margin-left: 120px;
+}
+
+.author-box .author-name {
+	font-size: 18px;
+	padding-bottom: 10px;
+}
+
+.author-social-sites li {
+	float: left;
+	margin-right: 15px;
+}
+
+.author-social-sites li a .fa:hover {
+	color: #0099cc;
 }
 
 /* Remove the updated class from entry meta */
@@ -1794,6 +1872,17 @@ iframe#wp-custom-header-video {
 	.tg-two-column-post-right {
 		float: none;
 	}
+	.related-posts {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.related-post-wrapper .tg-one-third {
+		width: 100%;
+		float: none;
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 @media only screen and (max-width: 600px) {
 	article .post-box {
@@ -1809,6 +1898,13 @@ iframe#wp-custom-header-video {
    .gallery-columns-9 .gallery-item {
    	width:25%;
    }
+   .author-box .avatar {
+		float: none;
+		margin-bottom: 10px;
+	}
+	.author-description-wrapper {
+		margin-left: 0;
+	}
 }
 @media only screen and (max-width: 420px) {
    .gallery-columns-4 .gallery-item,
