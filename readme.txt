@@ -3,8 +3,8 @@
 Contributors: specia
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.9.6
-Stable tag: 1.0.32
-Version: 1.0.32
+Stable tag: 1.0.33
+Version: 1.0.33
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-logo, translation-ready, blog
@@ -35,6 +35,9 @@ Source: https://www.pexels.com/
 License: CC0 License
 
 ##Changelog
+version 1.0.33
+* Added [wp_reset_postdata();] for slider.
+
 version 1.0.32
 * Added [wp_reset_postdata();] for slider.
 
