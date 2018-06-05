@@ -13,7 +13,7 @@
  * @return string
  */
 function interface_the_year() {
-   return date( 'Y' );
+   return date( 'Y ' );
 }
 /**
  * To display a link back to the site.
@@ -22,7 +22,7 @@ function interface_the_year() {
  * @return string
  */
 function interface_site_link() {
-   return '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
+   return '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a> ';
 }
 /**
  * To display a link to WordPress.org.
@@ -30,14 +30,24 @@ function interface_site_link() {
  * @return string
  */
 function interface_wp_link() {
-   return '<a href="'.esc_url( 'http://wordpress.org' ).'" target="_blank" title="' . esc_attr__( 'WordPress', 'interface' ) . '"><span>' . __( 'WordPress', 'interface' ) . '</span></a>';
+   return '<a href="'.esc_url( 'http://wordpress.org' ).'" target="_blank" title="' . esc_attr__( 'WordPress', 'interface' ) . '"><span>' . __( 'WordPress', 'interface' ) . '</span></a> ';
 }
 /**
- * To display a link to interface.com.
+ * To display a link to interface.
  *
  * @return string
  */
 function interface_themehorse_link() {
-   return '<a href="'.esc_url( 'http://themehorse.com' ).'" target="_blank" title="'.esc_attr__( 'Theme Horse', 'interface' ).'" ><span>'.__( 'Theme Horse', 'interface') .'</span></a>';
+   return '<a href="'.esc_url( 'http://themehorse.com' ).'" target="_blank" title="'.esc_attr__( 'Theme Horse', 'interface' ).'" ><span>'.__( 'Theme Horse', 'interface') .'</span></a> ';
+}
+/**
+ * To display a link to privacy policy.
+ *
+ * @return string
+ */
+function interface_themehorse_privacy() {
+	if (function_exists('the_privacy_policy_link')) {
+		the_privacy_policy_link('', ' | ');
+	}
 }
 ?>
