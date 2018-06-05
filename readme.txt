@@ -5,6 +5,11 @@ Theme demo: http://demos.templateexpress.com/adamos/
 
 Changelog
 --------------------------------------------
+Version: 3.2
+* Removed duplicate featured-images tag
+* RTL updated
+* Updated custom-header theme support
+
 Version: 3.1
 * Added Theme Welcome Page
 * Footer link colors fixed

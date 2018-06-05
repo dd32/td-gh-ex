@@ -104,10 +104,6 @@ function adamos_register_custom_background() {
 
 	if ( function_exists( 'wp_get_theme' ) ) {
 		add_theme_support( 'custom-background', $args );
-	} else {
-		define( 'BACKGROUND_COLOR', $args['default-color'] );
-		define( 'BACKGROUND_IMAGE', $args['default-image'] );
-		add_theme_support( 'custom-background', $args );
 	}
 }
 add_action( 'after_setup_theme', 'adamos_register_custom_background' );
@@ -328,11 +324,6 @@ if ( ! function_exists( 'adamos_header_style' ) ) :
  */
 function adamos_header_style() {
 
-	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == get_header_textcolor() && '' == get_header_image() )
-		return;
-	// If we get this far, we have custom styles. Let's do this.
 	?>
 	<style type="text/css">
 	<?php
