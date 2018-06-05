@@ -30,20 +30,9 @@ class CZR_quote_model_class extends CZR_Model {
 
 
       public function czr_fn_get_quote_text() {
-            if ( array_key_exists( 'quote_text', $this->quote_item ) ) {
-                  $text = esc_html( $this->quote_item[ 'quote_text' ] );
 
-                  // If in archives and no post title the quote text is also a link to the post
-                  if ( ! is_single() && ! get_the_title() ) {
-                        $text = sprintf( '<a href="%1$s">%2$s</a>',
-                              esc_url( apply_filters( 'the_permalink', get_the_permalink() ) ),
-                              $text
-                        );
-                  }
+            return array_key_exists( 'quote_text', $this->quote_item ) ? esc_html( $this->quote_item[ 'quote_text' ] ) : false;
 
-                  return $text;
-            }
-            return false;
       }
 
 
@@ -162,7 +151,15 @@ class CZR_quote_model_class extends CZR_Model {
                   return false;
 
 
-            return $_content[ 'text' ];
+            $text             = $_content[ 'text' ];
+
+            $text             = !get_the_title() ? sprintf( '<a title="%1$s" href="%2$s">%3$s</a>',
+                                    the_title_attribute( array( 'before' => __('Permalink to', 'customizr'), 'echo' => false ) ),
+                                    esc_url( apply_filters( 'the_permalink', get_the_permalink() ) ),
+                                    $text
+                              ) : $text;
+
+            return $text;
 
       }
 

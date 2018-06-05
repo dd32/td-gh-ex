@@ -1,6 +1,6 @@
-(function($) {
+(function($, czrapp, _ ) {
     //czrapp.localized = CZRParams
-    var initOnCzrAppReady = function() {
+    czrapp.ready.then( function() {
           //PLACEHOLDER NOTICES
           //two types of notices here :
           //=> the ones that remove the notice only : thumbnails, smartload, sidenav, secondMenu, mainMenu
@@ -109,15 +109,5 @@
                         $_wrapper.slideToggle( 'fast' );
                   });
             } );
-      };//initOnCzrAppReady()
-
-      // see wp-content/themes/customizr/assets/front/js/_front_js_fmk/_main_xfire_0.part.js
-      // feb 2020 => implemented for https://github.com/presscustomizr/pro-bundle/issues/162
-      if ( window.czrapp && czrapp.ready && 'resolved' == czrapp.ready.state() ) {
-          initOnCzrAppReady();
-      } else {
-          $('html').on('czrapp-ready', function() {
-              initOnCzrAppReady();
-          });
-      }
-})(jQuery);
+    });
+})(jQuery, czrapp, _ );

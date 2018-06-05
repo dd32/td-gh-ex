@@ -72,11 +72,6 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
             //remove hentry class when the current $post type is a page
             add_filter( 'post_class'                             , array( $this, 'czr_fn_maybe_remove_hentry_class' ), 20 );
 
-            // WP 5.0.0 compat. until the bug is fixed
-            // this hook fires before the customize changeset is inserter / updated in database
-            // Removing the wp_targeted_link_rel callback from the 'content_save_pre' filter prevents corrupting the changeset JSON
-            // more details in this ticket : https://core.trac.wordpress.org/ticket/45292
-            add_action( 'customize_save_validation_before'       , array( $this, 'czr_fn_remove_callback_wp_targeted_link_rel' ) );
 
             //Default images sizes
             $this -> tc_thumb_size      = array( 'width' => 270 , 'height' => 250, 'crop' => true ); //size name : tc-thumb
@@ -316,14 +311,6 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
             $post_formats   = apply_filters( 'tc_post_formats', array( 'aside' , 'gallery' , 'link' , 'image' , 'quote' , 'status' , 'video' , 'audio' , 'chat' ) );
             add_theme_support( 'post-formats' , $post_formats );
 
-            // Add theme support for Custom Logo.
-            add_theme_support( 'custom-logo', array(
-              'width'       => 250,
-              'height'      => 100,
-              'flex-width'  => true,
-              'flex-height' => true,
-            ) );
-
             /* support for page excerpt (added in v3.0.15) */
             add_post_type_support( 'page', 'excerpt' );
 
@@ -337,12 +324,6 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
             //remove theme support => generates notice in admin @todo fix-it!
              /* remove_theme_support( 'custom-background' );
               remove_theme_support( 'custom-header' );*/
-
-            // Add support for Gutenberg responsive embeds
-            add_theme_support( 'responsive-embeds' );
-
-            // Add support for Block editor styles.
-            add_theme_support( 'editor-styles' );
 
             //post thumbnails for featured pages and post lists (archive, search, ...)
             $tc_thumb_size    = apply_filters( 'tc_thumb_size' , CZR___::$instance -> tc_thumb_size );
@@ -385,6 +366,10 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
 
             //add support for svg and svgz format in media upload
             add_filter( 'upload_mimes'                        , array( $this , 'czr_fn_custom_mtypes' ) );
+
+            //add help button to admin bar
+            add_action ( 'wp_before_admin_bar_render'         , array( $this , 'czr_fn_add_help_button' ));
+
 
             // Add theme support for selective refresh for widgets.
             // Only add if the link manager is not enabled
@@ -439,6 +424,32 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
         $mimes['svgz']  = 'image/svg+xml';
         return $mimes;
       }
+
+
+
+
+
+
+      /**
+      * hook : 'wp_before_admin_bar_render'
+      * Add help button
+      */
+      function czr_fn_add_help_button() {
+          if ( czr_fn_is_pro() ) {
+              global $wp_admin_bar;
+              $wp_admin_bar->add_menu( array(
+                  'parent' => 'top-secondary', // Off on the right side
+                  'id' => 'tc-customizr-help' ,
+                  'title' =>  '',
+                  'href' => admin_url( 'themes.php?page=welcome.php&help=true' ),
+                  'meta'   => array(
+                      'title'  => __( 'Need help with Customizr? Click here!', 'customizr' ),
+                  ),
+              ));
+          }
+      }
+
+
 
 
 
@@ -664,21 +675,18 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
 
 
         /**
-        * Remove hentry class from post_class array
+        * Remove hentry class when the current $post type is a page
         * @param array $class
         * @return array $class
         * hook : post_class
         *
         */
         function czr_fn_maybe_remove_hentry_class( $class ) {
-            $remove_bool = true;
-            $class = is_array( $class ) ? $class : array( $class );
-            if ( apply_filters( 'czr_post_class_remove_hentry_class', $remove_bool ) ) {
-                $class   = array_diff( $class, array( 'hentry' ) );
-            }
+            $remove_bool = 'page' == czr_fn_get_post_type();
 
-            // add convenient custom class e.g. for classic style js img centering
-            $class[] = 'czr-hentry';
+            if ( apply_filters( 'czr_post_class_remove_hentry_class', $remove_bool ) ) {
+                $class = array_diff( $class, array( 'hentry' ) );
+            }
 
             return $class;
         }
@@ -700,14 +708,11 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
         */
         function czr_fn_set_early_hooks() {
             //Filter home/blog postsa (priority 9 is to make it act before the grid hook for expanded post)
-            add_action ( 'pre_get_posts'                , array( $this , 'czr_fn_filter_home_blog_posts_by_tax' ), 9);
-            // Make sure the infinite scroll query object is filtered as well
-            // Fix for https://github.com/presscustomizr/customizr-pro/issues/46
-            add_filter ( 'infinite_scroll_query_object' , array( $this , 'czr_fn_filter_home_blog_infinite_posts_by_tax' ) );
+            add_action ( 'pre_get_posts'         , array( $this , 'czr_fn_filter_home_blog_posts_by_tax' ), 9);
             //Include attachments in search results
-            add_action ( 'pre_get_posts'                , array( $this , 'czr_fn_include_attachments_in_search' ));
+            add_action ( 'pre_get_posts'         , array( $this , 'czr_fn_include_attachments_in_search' ));
             //Include all post types in archive pages
-            add_action ( 'pre_get_posts'                , array( $this , 'czr_fn_include_cpt_in_lists' ));
+            add_action ( 'pre_get_posts'         , array( $this , 'czr_fn_include_cpt_in_lists' ));
         }
 
 
@@ -720,36 +725,18 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
         * @since Customizr 3.4.10
         */
         function czr_fn_filter_home_blog_posts_by_tax( $query ) {
-          $this->_czr_fn_filter_home_blog_posts_by_tax( $query );
-        }
-
-
-        /**
-        * hook : infinite_scroll_query_object
-        * Filter home/blog posts by tax: cat
-        * @return modified query object
-        * @package Customizr
-        */
-        function czr_fn_filter_home_blog_infinite_posts_by_tax( $query ) {
-          return $this->_czr_fn_filter_home_blog_posts_by_tax( $query, $reset_cat_category_name = true );
-        }
-
-        // this method was implemented to fix https://github.com/presscustomizr/customizr-pro/issues/46
-        private function _czr_fn_filter_home_blog_posts_by_tax( $query, $reset_cat_category_name = false ) {
             // when we have to filter?
             // in home and blog page
-            if ( is_admin() || ! $query->is_main_query()
+            if ( ! $query->is_main_query()
               || ! ( ( is_home() && 'posts' == get_option('show_on_front') ) || $query->is_posts_page )
-            ) {
-                return $query;
-            }
+            )
+              return;
 
             //temp: do not filter in classic style when classic grid enabled and infinite scroll enabled in home/blog
             if ( ! CZR_IS_MODERN_STYLE &&
               'grid'== esc_attr( czr_fn_opt( 'tc_post_list_grid' ) ) &&
-               class_exists( 'PC_init_infinite' ) && esc_attr( czr_fn_opt( 'tc_infinite_scroll' ) ) && esc_attr( czr_fn_opt( 'tc_infinite_scroll_in_home' ) ) ) {
-                return $query;
-            }
+               class_exists( 'PC_init_infinite' ) && esc_attr( czr_fn_opt( 'tc_infinite_scroll' ) ) && esc_attr( czr_fn_opt( 'tc_infinite_scroll_in_home' ) ) )
+            return;
 
             // categories
             // we have to ignore sticky posts (do not prepend them)
@@ -758,27 +745,11 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
             $cats = array_filter( $cats, 'czr_fn_category_id_exists' );
 
             if ( is_array( $cats ) && ! empty( $cats ) ){
-              // Fix for https://github.com/presscustomizr/customizr-pro/issues/46
-              // Basically when we filter the blog with more than one category
-              // "infinite posts" are filtered by the category with the smaller ID defined in $cats.
-              // The reason is that the infinite scroll query takes as arguments the query vars of the
-              // "first page" query, that are localized and then sent back in the ajax request, and
-              // when we apply the category__in 'filter' to the blog page, for some reason, the main wp_query
-              // vars "cat" and "category_name" are set as the ID and the name of the smaller ID defined in $cats.
-              // With the if block below we avoid this unwanted behavior.
-              if ( $reset_cat_category_name ) {
-                $query->set( 'cat', '' );
-                $query->set( 'category_name', '' );
-              }
-
-              $query->set('category__in', $cats );
-              $query->set('ignore_sticky_posts', 1 );
-              add_filter('tc_grid_expand_featured', '__return_false');
+               $query->set('category__in', $cats );
+               $query->set('ignore_sticky_posts', 1 );
+               add_filter('tc_grid_expand_featured', '__return_false');
             }
-            return $query;
         }
-
-
 
 
         /**
@@ -1054,15 +1025,6 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
         }
 
 
-        /**
-         * hook : customize_save_validation_before'
-         */
-        function czr_fn_remove_callback_wp_targeted_link_rel() {
-            if ( false !== has_filter( 'content_save_pre', 'wp_targeted_link_rel' ) ) {
-                remove_filter( 'content_save_pre', 'wp_targeted_link_rel' );
-            }
-        }
-
   }
 endif;
 
@@ -1113,8 +1075,7 @@ function czr_fn_load_social_links_module() {
                 'default'  => array(),
                 'transport' => czr_fn_is_partial_refreshed_on() ? 'postMessage' : 'refresh',
                 'sanitize_callback' => 'czr_fn_sanitize_callback__czr_social_module',
-                // we only sanitize for now, to avoid : https://github.com/presscustomizr/social-links-modules/issues/1
-                'validate_callback' => ''//czr_fn_validate_callback__czr_social_module'
+                'validate_callback' => 'czr_fn_validate_callback__czr_social_module'
             ),
 
             'section' => array(
@@ -1134,70 +1095,3 @@ function czr_fn_load_social_links_module() {
 }
 
 require_once( get_template_directory() . ( czr_fn_is_ms() ? '/core/init.php' : '/inc/czr-init-ccat.php' ) );
-
-/* ------------------------------------------------------------------------- *
- *  Register a location for Nimble Builder
-/* ------------------------------------------------------------------------- */
-add_action( 'init', 'czr_fn_maybe_register_nimble_location');
-function czr_fn_maybe_register_nimble_location() {
-    if ( function_exists('nimble_register_location') ) {
-        nimble_register_location('__after_header', array( 'priority' => PHP_INT_MAX ) );// fired in templates/parts/header.php
-        nimble_register_location('__before_main_wrapper', array( 'priority' => PHP_INT_MAX ) );// fired in templates/index-no-model.php
-        //nimble_register_location('__after_main_wrapper', array( 'priority' => PHP_INT_MAX ) ); // fired in /wp-content/themes/customizr/templates/parts/footer.php
-        nimble_register_location('__before_footer', array( 'priority' => PHP_INT_MAX ) ); // fired in templates/parts/footer.php
-    }
-}
-// added to fix the problem of locations not rendered when using Nimble templates for content and / or header and footer
-// see https://github.com/presscustomizr/nimble-builder/issues/369
-foreach( array( 'after_nimble_header', 'nimble_template_before_content_sections', 'before_nimble_footer' ) as $nimble_hook ) {
-    add_action( $nimble_hook, 'czr_fn_render_locations_when_using_nimble_templates' );
-}
-function czr_fn_render_locations_when_using_nimble_templates() {
-    if ( !function_exists('Nimble\Nimble_Manager') )
-      return;
-    $location = '';
-    switch( current_filter() ) {
-        case 'after_nimble_header' :
-            $location = '__after_header';
-        break;
-        case 'nimble_template_before_content_sections' :
-            $location = '__before_main_wrapper';
-        break;
-        case 'before_nimble_footer' :
-            $location = '__before_footer';
-        break;
-    }
-    if ( ! empty( $location ) ) {
-        \Nimble\Nimble_Manager()->render_nimble_locations( $location );
-    }
-}
-
-/* ------------------------------------------------------------------------- *
- *  Loads Required Plugin Class and Setup
-/* ------------------------------------------------------------------------- */
-if ( is_admin() && ! czr_fn_is_customizing() && ! czr_fn_is_plugin_active('nimble-builder/nimble-builder.php') ) {
-    load_template( get_template_directory() . '/core/class-plugin-rec.php' );
-}
-
-// @filter czr_model_map => removes 'main_content' model from the map since we don't need it when using the Nimble template.
-// @see core/init.php
-function czr_fn_filter_model_map_when_nimble_template_set( $map ) {
-    if ( function_exists('Nimble\sek_get_locale_template') ) {
-        $tmpl_name = \Nimble\sek_get_locale_template();
-        // when using the full nimble template, we don't need to load any Customizr model
-        // when using the mixed Nimble template ( header and footer from theme, content from Nimble), we don't need the main_content model
-        if ( czr_fn_is_full_nimble_tmpl() ) {
-            $map = array();
-        } else if ( !empty( $tmpl_name ) ) {
-            $new_map = array();
-            foreach ($map as $model) {
-                if ( !empty( $model['id'] ) && 'main_content' === $model['id'] )
-                  continue;
-                $new_map[] = $model;
-            }
-            $map = $new_map;
-        }
-    }
-    return $map;
-}
-add_filter( 'czr_model_map', 'czr_fn_filter_model_map_when_nimble_template_set');

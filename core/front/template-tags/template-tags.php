@@ -118,6 +118,7 @@ function czr_fn_readmore_button( $args = array() ) {
       $defaults = array(
             'class'   => '',
             'link'    => get_permalink(),
+            'title'   => the_title_attribute( array( 'before' => __('Permalink to:&nbsp;', 'customizr'), 'echo' => false ) ),
             'text'    => __('Read more &raquo;', 'customizr' ),
             'esc_url' => true,
             'echo'    => false,
@@ -127,9 +128,10 @@ function czr_fn_readmore_button( $args = array() ) {
 
       $args[ 'class' ]  = $args[ 'class' ] ? $args[ 'class' ] . ' readmore-holder' : 'readmore-holder';
 
-      $readmore_button = sprintf( '<span class="%1$s"><a class="moretag btn btn-more btn-skin-dark" href="%2$s">%3$s</a></span>',
+      $readmore_button = sprintf( '<span class="%1$s"><a class="moretag btn btn-more btn-skin-dark" href="%2$s" title="%3$s">%4$s</a></span>',
             esc_attr( $args[ 'class' ] ),
             $args['esc_url'] ? esc_url( $args[ 'link' ] ) : $args[ 'link' ],
+            esc_attr( $args[ 'title' ] ),
             $args[ 'text' ]
       );
 
@@ -234,21 +236,31 @@ function czr_fn_print_add_menu_button() {
 endif;
 
 if ( ! function_exists( 'czr_fn_link_pages' ) ) :
-//Displays page links for paginated posts (i.e. including the <!--nextpage--> Quicktag one or more times).
+/**
+ * The template for displaying the edit button
+ * Used everywhere from the slider to the posts to the comment
+ *
+ */
 function czr_fn_link_pages( $echo = true ) {
-    wp_link_pages( array(
-          'before'        => '<div class="post-pagination pagination row"><div class="col-md-12"><div class="pag-list">',
-          'after'         => '</div></div></div>',
-          'link_before'   => '<span>',
-          'link_after'    => '</span>',
-          'echo'          => $echo
-    ));
+
+      wp_link_pages( array(
+            'before'        => '<div class="post-pagination pagination row"><div class="col-md-12"><ul class="pag-list">',
+            'after'         => '</ul></div></div>',
+            'link_before'   => '<span>',
+            'link_after'    => '</span>',
+            'echo'          => $echo
+      ));
 }
 
 endif;
 
 /* Draft */
 if ( ! function_exists( 'czr_post_format_part' ) ) :
+/**
+ * The template for displaying the edit button
+ * Used everywhere from the slider to the posts to the comment
+ *
+ */
 function czr_post_format_part( $post_format = null ) {
 
       $post_format = is_null( $post_format ) ? get_post_format() : $post_format;

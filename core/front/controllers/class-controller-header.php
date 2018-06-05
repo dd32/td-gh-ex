@@ -19,14 +19,6 @@ if ( ! class_exists( 'CZR_controller_header' ) ) :
       return  '' != get_bloginfo( 'description' ) && in_array( esc_attr( czr_fn_opt( 'tc_header_desktop_tagline' ) ), array( 'brand_below', 'brand_next' ) );
     }
 
-    function czr_fn_display_view_branding_tagline_below() {
-      return  '' != get_bloginfo( 'description' ) && 'brand_below' == esc_attr( czr_fn_opt( 'tc_header_desktop_tagline' ) );
-    }
-
-    function czr_fn_display_view_branding_tagline_aside() {
-      return  '' != get_bloginfo( 'description' ) && 'brand_next' == esc_attr( czr_fn_opt( 'tc_header_desktop_tagline' ) );
-    }
-
     function czr_fn_display_view_topbar_tagline() {
       return '' != get_bloginfo( 'description' ) && 'topbar' == esc_attr( czr_fn_opt( 'tc_header_desktop_tagline' ) );
     }
@@ -37,13 +29,8 @@ if ( ! class_exists( 'CZR_controller_header' ) ) :
 
 
 
-    function czr_fn_display_view_title_alone() {
-      return !$this -> czr_fn_display_view_logo_wrapper();
-    }
-
-
-    function czr_fn_display_view_title_next_logo() {
-      return $this -> czr_fn_display_view_logo_wrapper() && esc_attr( czr_fn_opt( 'tc_title_next_logo' ) );
+    function czr_fn_display_view_title() {
+      return ! $this -> czr_fn_display_view_logo_wrapper();
     }
 
 
@@ -133,7 +120,7 @@ if ( ! class_exists( 'CZR_controller_header' ) ) :
     /* Header wc cart */
     function czr_fn_display_view_desktop_primary_wc_cart() {
       //in plugins compat we use this hook to enable wc cart options when WooCommerce is enabled
-      if ( ! apply_filters( 'czr_woocommerce_options_enabled_controller', false )  )
+      if ( ! apply_filters( 'tc_woocommerce_options_enabled', false )  )
         return false;
 
       return 'navbar' == czr_fn_opt( 'tc_header_desktop_wc_cart' );
@@ -142,7 +129,7 @@ if ( ! class_exists( 'CZR_controller_header' ) ) :
 
     function czr_fn_display_view_desktop_topbar_wc_cart() {
       //in plugins compat we use this hook to enable wc cart options when WooCommerce is enabled
-      if ( ! apply_filters( 'czr_woocommerce_options_enabled_controller', false )  )
+      if ( ! apply_filters( 'tc_woocommerce_options_enabled', false )  )
         return false;
 
       return 'topbar' == czr_fn_opt( 'tc_header_desktop_wc_cart' );
@@ -150,7 +137,7 @@ if ( ! class_exists( 'CZR_controller_header' ) ) :
 
     function czr_fn_display_view_mobile_wc_cart() {
       //in plugins compat we use this hook to enable wc cart options when WooCommerce is enabled
-      if ( ! apply_filters( 'czr_woocommerce_options_enabled_controller', false )  )
+      if ( ! apply_filters( 'tc_woocommerce_options_enabled', false )  )
         return false;
 
       return czr_fn_opt( 'tc_header_mobile_wc_cart' );

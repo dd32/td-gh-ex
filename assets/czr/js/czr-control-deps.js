@@ -63,9 +63,8 @@
                                   //not sure the cross dependency actually works ... :/
                                   //otherwise this shouldn't be needed ... right?
                                   if ( 'tc_show_post_navigation_home' == servusShortId ) {
-                                    return ( 'nothing' != to  ) && _is_checked( api( api.CZR_Helpers.build_setId( 'tc_show_post_navigation' ) ).get() );
+                                    return ( 'posts' == to  ) && _is_checked( api( api.CZR_Helpers.build_setId( 'tc_show_post_navigation' ) ).get() );
                                   }
-                                  // tc_blog_restrict_by_cat.
                                   if ( 'posts' == to ) {
                                     return true;
                                   }
@@ -235,8 +234,6 @@
                     {
                             dominus : 'tc_infinite_scroll',
                             servi   : [
-                              'tc_load_on_scroll_desktop',
-                              'tc_load_on_scroll_mobile',
                               'tc_infinite_scroll_in_home',
                               'tc_infinite_scroll_in_archive',
                               'tc_infinite_scroll_in_search'
