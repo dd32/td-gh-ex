@@ -10,7 +10,7 @@ if ( ! function_exists( 'auto_store_setup' ) ) :
 
 function auto_store_setup() {
 
-	load_theme_textdomain( 'auto-store', IMAGE_GALLERY_THEME . '/languages' );
+	load_theme_textdomain( 'auto-store', AUTO_STORE_THEME . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -90,21 +90,21 @@ add_action( 'widgets_init', 'auto_store_widgets_init' );
  
 function auto_store_scripts() {
 
-		wp_enqueue_style( 'image-gallery-style', get_stylesheet_uri());
-		wp_enqueue_style( 'animate', IMAGE_GALLERY_THEME_URI . '/framework/css/animate.css');
-		wp_enqueue_style( 'animate-image', IMAGE_GALLERY_THEME_URI . '/css/style.css');
-		wp_enqueue_style( 'font-awesome', IMAGE_GALLERY_THEME_URI . '/css/font-awesome.css', array(), '4.7.0'  );
-		wp_enqueue_style( 'genericons', IMAGE_GALLERY_THEME_URI . '/framework/genericons/genericons.css', array(), '3.4.1' );	
-		wp_enqueue_style( 'image-gallery-woocommerce', IMAGE_GALLERY_THEME_URI . '/inc/woocommerce/woo-css.css' );
-		wp_enqueue_style( 'image-gallery-font', '//fonts.googleapis.com/css?family=Fjalla+One:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i' );
+		wp_enqueue_style( 'auto-store-style', get_stylesheet_uri());
+		wp_enqueue_style( 'animate', AUTO_STORE_THEME_URI . '/framework/css/animate.css');
+		wp_enqueue_style( 'animate-image', AUTO_STORE_THEME_URI . '/css/style.css');
+		wp_enqueue_style( 'font-awesome', AUTO_STORE_THEME_URI . '/css/font-awesome.css', array(), '4.7.0'  );
+		wp_enqueue_style( 'genericons', AUTO_STORE_THEME_URI . '/framework/genericons/genericons.css', array(), '3.4.1' );	
+		wp_enqueue_style( 'auto-store-woocommerce', AUTO_STORE_THEME_URI . '/inc/woocommerce/woo-css.css' );
+		wp_enqueue_style( 'auto-store-font', '//fonts.googleapis.com/css?family=Abril+Fatface:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i' );
 
-		wp_enqueue_script( 'image-gallery-navigation', IMAGE_GALLERY_THEME_URI . '/framework/js/navigation.js', array(), '20120206', true );
-		wp_enqueue_script( 'image-gallery-skip-link-focus-fix', IMAGE_GALLERY_THEME_URI . '/framework/js/skip-link-focus-fix.js', array(), '20130115', true );
-		wp_enqueue_script( 'aniview', IMAGE_GALLERY_THEME_URI . '/framework/js/jquery.aniview.js', array('jquery'), true );
-		wp_enqueue_script( 'image-gallery-back-to-top', IMAGE_GALLERY_THEME_URI . '/framework/js/back-to-top.js', array('jquery'), true );
+		wp_enqueue_script( 'auto-store-navigation', AUTO_STORE_THEME_URI . '/framework/js/navigation.js', array(), '20120206', true );
+		wp_enqueue_script( 'auto-store-skip-link-focus-fix', AUTO_STORE_THEME_URI . '/framework/js/skip-link-focus-fix.js', array(), '20130115', true );
+		wp_enqueue_script( 'aniview', AUTO_STORE_THEME_URI . '/framework/js/jquery.aniview.js', array('jquery'), true );
+		wp_enqueue_script( 'auto-store-back-to-top', AUTO_STORE_THEME_URI . '/framework/js/back-to-top.js', array('jquery'), true );
 
 		if ( is_singular() && wp_attachment_is_image() ) {
-			wp_enqueue_script( 'image-gallery-keyboard-image-navigation', IMAGE_GALLERY_THEME_URI . '/framework/js/keyboard-image-navigation.js', array( 'jquery' ), '20151104' );
+			wp_enqueue_script( 'auto-store-keyboard-image-navigation', AUTO_STORE_THEME_URI . '/framework/js/keyboard-image-navigation.js', array( 'jquery' ), '20151104' );
 		}
 		
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -117,7 +117,7 @@ add_action( 'wp_enqueue_scripts', 'auto_store_scripts' );
 
 function auto_store_admin_scripts() {
 	
-		wp_enqueue_style( 'seos-admin', IMAGE_GALLERY_THEME_URI . '/inc/css/admin.css');
+		wp_enqueue_style( 'seos-admin', AUTO_STORE_THEME_URI . '/inc/css/admin.css');
 }		
 add_action( 'admin_enqueue_scripts', 'auto_store_admin_scripts' );
 
@@ -126,13 +126,13 @@ add_action( 'admin_enqueue_scripts', 'auto_store_admin_scripts' );
 * Includes.
 *******************************/
 
-	require IMAGE_GALLERY_THEME . '/inc/template-tags.php';
-	require IMAGE_GALLERY_THEME . '/inc/extras.php';
-	require IMAGE_GALLERY_THEME . '/inc/customizer.php';
-	require IMAGE_GALLERY_THEME . '/inc/jetpack.php';
-	require IMAGE_GALLERY_THEME . '/inc/custom-header.php';
-	require IMAGE_GALLERY_THEME . '/inc/woocommerce/woo-functions.php';
-	require IMAGE_GALLERY_THEME . '/inc/social.php';
+	require AUTO_STORE_THEME . '/inc/template-tags.php';
+	require AUTO_STORE_THEME . '/inc/extras.php';
+	require AUTO_STORE_THEME . '/inc/customizer.php';
+	require AUTO_STORE_THEME . '/inc/jetpack.php';
+	require AUTO_STORE_THEME . '/inc/custom-header.php';
+	require AUTO_STORE_THEME . '/inc/woocommerce/woo-functions.php';
+	require AUTO_STORE_THEME . '/inc/social.php';
 	
 /*********************************************************************************************************
 * Excerpt Read More

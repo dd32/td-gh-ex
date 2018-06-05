@@ -1,9 +1,5 @@
 <?php
-/**
- * All Purpose Theme Customizer
- *
- * @package All Purpose
- */
+/* Theme Customizer */
 
 /**
  * Add postMessage support for site title and description for the Theme Customizer.

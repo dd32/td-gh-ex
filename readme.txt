@@ -3,7 +3,7 @@ Contributors: Tsvetomir Tsvetanov
 Tags: two-columns, left-sidebar, grid-layout, flexible-header, custom-background, custom-menu, custom-colors, editor-style, featured-image-header, featured-images, threaded-comments, blog, news, portfolio
 Requires at least: 4.7
 Tested up to: 4.7
-Stable tag: 1.1.1
+Stable tag: 1.1.8
 Author URI: https://seosthemes.com/
 Theme URI: https://seosthemes.com/auto-store
 License: GNU General Public License version 3.0

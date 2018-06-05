@@ -4,7 +4,7 @@ Author: Tsvetomir Tsvetanov
 Author URI: https://seosthemes.com/
 Theme URI: https://seosthemes.com/auto-store
 Description: Auto Store is clear, easy to customize WP template. Auto Store is a modern multi-purpose HTML5 theme with a responsive 2 column layout. The theme is excellent for a image gallery, photography, blog, eatery, newspaper, images, photos, publishing, news, blog, business, portfolio or other editorial websites. To learn more about the theme please go to the theme uri and read the documentation. 
-Version: 1.1.7
+Version: 1.1.8
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: auto-store
@@ -296,7 +296,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Castellar', sans-serif;
+	font-family: 'Abril Fatface', sans-serif;
     font-weight: 100;
 	padding: 10px 0 10px 0;
 }
@@ -614,7 +614,7 @@ blockquote:after,
 .sw-about-title {
 	font-size: 5vw;
 	font-weight: 100;
-    font-family: 'Castellar', sans-serif;	
+    font-family: 'Abril Fatface', sans-serif;	
 	padding: 60px 0 60px 0;
 }
 
@@ -724,7 +724,7 @@ header .site-title {
 	margin: 3px 0 0 0;
 	z-index: 1003;
 	display: inline-block;
-	font-family: 'Castellar', sans-serif;
+	font-family: 'Abril Fatface', sans-serif;
     font-size: 3em;
 	word-wrap: break-word;
 	font-weight: 100;
@@ -764,7 +764,7 @@ header .site-home {
 
 
 header .site-home .home-title {
-	font-family: 'Castellar', sans-serif;
+	font-family: 'Abril Fatface', sans-serif;
 	font-size: 50px;
 	margin: 0 auto;
 	word-wrap: break-word;
@@ -788,7 +788,7 @@ header .site-home .home-title a:hover {
 header .site-home .home-description {
 	text-align: center;
 	color: #fff;
- 	font-family: 'Castellar', sans-serif;
+ 	font-family: 'Abril Fatface', sans-serif;
 	font-size: 18px;
 	margin: 0;
 	padding: 10px 0 10px 5px;
@@ -810,7 +810,7 @@ header .site-home .home-description {
 
 .header-img {  
 	width: 100%;
-	height: 800px;
+	height: 250px;
 	position: relative;
 	display: block;
 	z-index: 1;
@@ -1127,7 +1127,7 @@ body .ig-home main {
 a {
 	color: #222;
 	text-decoration: none;
-    font-family: 'Castellar', sans-serif;
+    font-family: 'Abril Fatface', sans-serif;
 	font-weight: 100;	
 }
 
@@ -1148,7 +1148,7 @@ a:active {
 .postpagination {
 	margin-top: 10px;
 	width: 100%;
-	font-family: 'Castellar', serif;
+	font-family: 'Abril Fatface', serif;
 }
 
 .pagination a {
@@ -1263,7 +1263,7 @@ a:active {
 	padding: 12px;
 	color: #DEDEE2;
 	text-decoration: none;
-		
+	font-size: 14px;
 }
 
 .main-navigation ul ul li {
@@ -1610,7 +1610,7 @@ a:active {
 }
 .news-widget a {
 	font-size: 12px;
-	font-family: 'Castellar', sans-serif;
+	font-family: 'Abril Fatface', sans-serif;
 }
 
 .widget_search {
@@ -1706,7 +1706,7 @@ article header h2 {
 	margin: 0;
 	font-weight: 100;
 	color: #333333;
-	font-family: 'Castellar', sans-serif;
+	font-family: 'Abril Fatface', sans-serif;
 }
 
 article header h1  {
@@ -2173,33 +2173,22 @@ aside section, article {
 
 #totop {
 	position: fixed;
-	right: 30px;
+	right: 10px;
 	z-index: 999999999999;
-	bottom: -70px;
+	bottom: -60px;
 	display: none;
 	outline: none;
-	background: #C6631B;
 	width: 135px;
 	height: 135px;
 	text-align: center;
 	color: #FFFFFF;
 	padding: 5px;
-	font-size: 19px;
-	-webkit-transition: all 0.1s linear 0s;
-	-moz-transition: all 0.1s linear 0s;
-	-o-transition: all 0.1s linear 0s;
-	transition: all 0.1s linear 0s;
-	-webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);	
 }
 
 
 	
 #totop:hover {
-	background: #555;	
+	opacity: 0.7;
 	display: block;		
 }
 	
@@ -2247,7 +2236,7 @@ header .site-title, .tags-links a, .tags-links,
 h1, h2, h3, h4, h5, h6,
 nav ul li a,
 header .site-description {
-	font-family: 'Castellar', sans-serif;
+	font-family: 'Abril Fatface', sans-serif;
 	font-weight: 100;
 }
 

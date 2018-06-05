@@ -20,7 +20,7 @@
 		</div><!-- .site-info -->
 		
 	</footer><!-- #colophon -->
-	<a id="totop" href="#"><div><?php esc_html_e('To Top', 'auto-store'); ?></div></a>	
+	<a id="totop" href="#"><div><img src="<?php echo esc_url(AUTO_STORE_THEME_URI.'/framework/images/top.png'); ?>" /></div></a>	
 </div><!-- #page -->
 
 
