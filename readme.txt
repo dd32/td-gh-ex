@@ -5,7 +5,7 @@ Tags: translation-ready, custom-background, theme-options, custom-menu, threaded
 
 Requires at least: 4.7
 Tested up to: 4.9.6
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -88,6 +88,9 @@ Unless otherwise specified, all the theme images are created by us and licensed 
 	Contact Form 7 is recommended to use for contact forms for contact page.
 
 == Changelog ==
+
+= 1.0.4 - June 01, 2018
+* Added Privacy Policy 
 
 = 1.0.3 - May 18 2018 =
 * Comment design Updated

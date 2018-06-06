@@ -390,6 +390,9 @@ if ( ! function_exists( 'architectonic_footer_site_info' ) ) :
                 <div class="wrapper">
                     <span><?php echo architectonic_santize_allow_tag( $copyright_text ); ?></span>
                     <span><?php echo architectonic_santize_allow_tag( $powered_by_text ); ?></span>
+                    <?php if ( function_exists( 'the_privacy_policy_link' ) ) {
+								the_privacy_policy_link( '<span> | </span>', '' );
+							} ?>
                 </div><!-- .wrapper -->    
             </div><!-- .site-info -->
 
