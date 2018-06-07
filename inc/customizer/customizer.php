@@ -11,7 +11,7 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 
-$app_landing_page_sections = array( 'banner' , 'featured', 'features', 'video', 'intro', 'service', 'stats', 'subscribe', 'social' );
+$app_landing_page_sections = array( 'banner' , 'featured', 'features', 'vedio', 'intro', 'service', 'stats', 'subscribe', 'social' );
 
 $app_landing_page_settings = array( 'default', 'home', 'breadcrumb', 'footer' );
 

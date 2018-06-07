@@ -7,6 +7,7 @@
 
     $ed_section = app_landing_page_ed_section();
     global $app_landing_page_sections;
+    
   
     get_header(); 
         if ( 'posts' == get_option( 'show_on_front' ) ) {
