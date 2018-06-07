@@ -37,7 +37,7 @@
                 <?php endif;?>
             <?php endforeach;?>
           </ul>
-          <?php esc_html_e('&copy; All Right Reserved ','a-portfolio');  echo  esc_html(date('Y'));?> <?php esc_html(bloginfo('name')); ?>
+          <?php echo esc_html__('&copy; All Right Reserved ','a-portfolio');  echo  esc_html(date('Y'));?> <?php bloginfo('name'); ?>
         </div>
       </div>
     </div>

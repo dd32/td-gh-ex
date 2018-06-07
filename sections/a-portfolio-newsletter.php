@@ -15,7 +15,7 @@
       <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="newsletter">
           <?php if (get_theme_mod('a_portfolio_newsletter_shortcode')):
-              echo do_shortcode(get_theme_mod('a_portfolio_newsletter_shortcode')); 
+              echo do_shortcode(wp_kses_post(get_theme_mod('a_portfolio_newsletter_shortcode'))); 
           endif; ?>
         </div>
       </div>

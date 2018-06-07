@@ -37,17 +37,17 @@
                 <?php   $blog_img_url = get_the_post_thumbnail_url($post->ID, 'a-portfolio-blog-thumb2');  ?>
                   <img src="<?php echo esc_url($blog_img_url); ?>"/>
                 <?php endif; ?> 
-                <a class="link" href="<?php esc_url(the_permalink()); ?>"><i class="fa fa-paper-plane"></i></a>
+                <a class="link" href="<?php the_permalink(); ?>"><i class="fa fa-paper-plane"></i></a>
               </div>
               <div class="blog-content">
-               <h2><a href="<?php esc_url(the_permalink()); ?>"><?php esc_html(the_title()); ?></a></h2>
+               <h2><a href="<?php the_permalink(); ?>"><?php esc_html(the_title()); ?></a></h2>
                 <div class="meta">
                   <span><i class="fa fa-list"></i><a href="#"><?php a_portfolio_posted_by();?></a></span>
                   <span><i class="fa fa-calendar-o"></i> <?php echo get_the_date( 'F j, Y'); ?></span>
                   <span><i class="fa fa-heart-o"></i><a href="#"><?php echo esc_html(get_comments_number());?></a></span>
                 </div>
                 <?php the_content();?>
-                <a href="<?php esc_url(the_permalink()); ?>" class="btn"><?php echo esc_html_e( 'Read More', 'a-portfolio' );?> <i class="fa fa-angle-double-right"></i></a>
+                <a href="<?php the_permalink(); ?>" class="btn"><?php  echo esc_html__( 'Read More', 'a-portfolio' );?> <i class="fa fa-angle-double-right"></i></a>
               </div>
             </div>  
             <!--/ End Single blog -->

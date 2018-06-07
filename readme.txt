@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 
 Requires at least: 4.5
 Tested up to: 4.9
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -43,6 +43,9 @@ a-portfolio includes support for Infinite Scroll in Jetpack.
 = 1.0.3 - June 1 2018 =
 * console js issue fixed
 
+= 1.0.4 - June 7 2018 =
+* escaping correction
+
 
 == Credits ==
 * A Portfolio is based on Underscores https://underscores.me/, (C)2018 easywp-themes, distributed under the terms of the GNU GPL v2 or later.(https://www.gnu.org/licenses/gpl-2.0.html)
@@ -53,6 +56,7 @@ a-portfolio includes support for Infinite Scroll in Jetpack.
 * Isotope PACKAGED v3.0.5,Copyright 2017 Metafizzy, Licensed GPLv3 for open source use, https://isotope.metafizzy.co
 *  jQuery One Page Nav Plugin version 3.0.0, http://github.com/davist11/jQuery-One-Page-Nav,  Copyright (c) 2010 Trevor Davis (http://trevordavis.net)
 * query-match-height 0.7.2 by @liabru(http://brm.io/jquery-match-height/), licensed under MIT  
+* wp_bootstrap_navwalker.php https://github.com/twittem/wp-bootstrap-navwalker,  Version: 2.0.4,License GPL-2.0+(http://www.gnu.org/licenses/gpl-2.0.txt)
 
 
 == Images Used in Screenshot == 

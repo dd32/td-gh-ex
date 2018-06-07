@@ -28,7 +28,7 @@
                 'post__in'      => $team,
                 'orderby'        =>'post__in'
               );
-            $teamloop = new WP_Query($args); $k=1;
+            $teamloop = new WP_Query($args); $i=1;
           if ($teamloop->have_posts()) :  while ($teamloop->have_posts()) : $teamloop->the_post(); ?>
           <!-- Single Team -->
           <div class="team">
@@ -39,12 +39,12 @@
             </div>
              <div class="team-content">
               <div class="name">
-                <h4><a href="<?php esc_url(the_permalink());?>"><?php the_title(); ?></a><span><?php echo esc_html( $teamposition[$k] ); ?></span></h4>
+                <h4><a href="<?php the_permalink();?>"><?php the_title(); ?></a><span><?php echo esc_html( $teamposition[$i] ); ?></span></h4>
               </div>
             </div>
           </div>
           <!--/ End Single Team -->
-          <?php  $k=$k+1; endwhile;
+          <?php  $i=$i+1; endwhile;
               wp_reset_postdata();  
             endif; ?> 
         </div>

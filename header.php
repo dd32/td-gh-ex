@@ -31,10 +31,10 @@
       <div class="container"><?php if(has_custom_logo()):?>
           <?php the_custom_logo();?>
           <?php else: ?>    
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="navbar-brand text-center logo-title"><?php esc_html(bloginfo('name'));?></a>
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="navbar-brand text-center logo-title"><?php bloginfo('name');?></a>
           <?php endif; ?>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" >
-          <?php esc_html_e( 'Menu', 'a-portfolio' );?>
+          <?php echo esc_html__( 'Menu', 'a-portfolio' );?>
           <i class="fa fa-bars"></i>
         </button>
 
@@ -50,7 +50,7 @@
               else:
                  ?> 
                <ul id="menu-top-menu" class="nav navbar-nav ml-auto">
-                  <a href="<?php echo esc_url(admin_url( 'nav-menus.php' )); ?> "> <?php esc_html_e('Add a menu','a-portfolio'); ?></a>
+                  <a href="<?php echo esc_url(admin_url( 'nav-menus.php' )); ?> "> <?php echo esc_html__('Add a menu','a-portfolio'); ?></a>
                </ul>
             <?php endif;?>
         </div>
@@ -94,7 +94,7 @@
         }
         elseif(is_home()){
         echo '<h2 style="color:#FFF">';
-        echo esc_html_e( 'Home','a-portfolio' );
+        echo esc_html__( 'Home','a-portfolio' );
         echo '</h2>';
         }
         else{
@@ -104,8 +104,8 @@
         }?>
       <?php if(!is_home()): ?>
          <ul class="bread-list">
-          <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'a-portfolio' );?><i class="fa fa-angle-right"></i></a></li>
-          <li class="active"><a href="<?php esc_url(the_permalink());?>">
+          <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo esc_html__( 'Home', 'a-portfolio' );?><i class="fa fa-angle-right"></i></a></li>
+          <li class="active"><a href="<?php the_permalink();?>">
            <?php
               if ( is_archive() ) {
               the_archive_title();

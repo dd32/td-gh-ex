@@ -18,7 +18,7 @@
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
         <ul id="filters" class="nav nav-tabs justify-content-center">  
-          <li class="nav-item" data-filter="*"> <a class="nav-link active"><?php esc_html_e( 'All', 'a-portfolio' ) ;?></a></li>
+          <li class="nav-item" data-filter="*"> <a class="nav-link active"><?php echo esc_html__( 'All', 'a-portfolio' ) ;?></a></li>
             <?php 
             $work_category_id = get_theme_mod( 'a_portfolio_work_category_id' );
             $args = array('child_of' =>$work_category_id);
@@ -52,7 +52,7 @@
                           <?php the_post_thumbnail('a-portfolio-work-thumb');?>
                         </a>
                         <div class="work-caption">
-                          <h4><a href="<?php esc_url(the_permalink());?>"><?php the_title();?></a><?php echo  esc_html($sub_cat->name);?></h4>
+                          <h4><a href="<?php the_permalink();?>"><?php the_title();?></a><?php echo  esc_html($sub_cat->name);?></h4>
                         </div>
                       </div>
                   <!-- Our work single end -->

@@ -21,7 +21,7 @@
       <div class="col-md-5 col-sm-5 col-xs-12">
         <form class="form" method="post" action="#">
             <?php if (get_theme_mod('a_portfolio_contact_form_code')):
-                echo do_shortcode(get_theme_mod('a_portfolio_contact_form_code')); 
+                echo do_shortcode(wp_kses_post(get_theme_mod('a_portfolio_contact_form_code'))) ; 
             endif; ?> 
         </form>
       </div>

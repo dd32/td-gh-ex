@@ -9,17 +9,16 @@
 
 get_header();
 ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'a-portfolio' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'a-portfolio' ); ?></p>
+<section id="blog" class="single section page">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-sm-12 col-xs-12">
+				<div class="blog">
+					<div class="blog-head">
+						<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'a-portfolio' ); ?></h1>
+					</div>
+					<div class="blog-content">
+						<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'a-portfolio' ); ?></p>
 
 					<?php
 					get_search_form();
@@ -50,11 +49,22 @@ get_header();
 					the_widget( 'WP_Widget_Tag_Cloud' );
 					?>
 
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<!-- Blog Sidebar -->
+				<div class="blog-sidebar">
+					<?php get_sidebar();?>
+				</div>
+				<!--/ End Blog Sidebar -->
+			</div>
+		</div>
+	</div>
+</section>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+
+	
 
 <?php
 get_footer();
