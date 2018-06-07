@@ -6,6 +6,9 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 4.1.9 [07-06-2018]
+1. Bug Fix
+
 @Version: 4.1.8 [19-05-2018]
 1. screen-shot image change
 2. Image url change as per theme review guide line

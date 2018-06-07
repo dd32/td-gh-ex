@@ -1549,25 +1549,7 @@ $wp_customize->add_section(
 		'type'=>'url',
 		'section'    => 'footer_section',
 		'settings'   => 'enigma_options[developed_by_link]'
-	) );   
-	
-			$wp_customize->add_section( 'enigma_more' , array(
-				'title'      	=> __( 'Upgrade to Enigma Premium', 'enigma' ),
-				'priority'   	=> 999,
-				'panel'=>'enigma_theme_option',
-			) );
-
-			$wp_customize->add_setting( 'enigma_more', array(
-				'default'    		=> null,
-				'sanitize_callback' => 'sanitize_text_field',
-			) );
-
-			$wp_customize->add_control( new More_Enigma_Control( $wp_customize, 'enigma_more', array(
-				'label'    => __( 'Enigma Premium', 'enigma' ),
-				'section'  => 'enigma_more',
-				'settings' => 'enigma_more',
-				'priority' => 1,
-			) ) ); 
+	) );  
 
 	// excerpt option 
     $wp_customize->add_section('excerpt_option',array(
@@ -1668,65 +1650,7 @@ class enigma_Customize_Misc_Control extends WP_Customize_Control {
 }
 endif;
 		
-if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'More_Enigma_Control' ) ) :
-class More_Enigma_Control extends WP_Customize_Control {
 
-	/**
-	* Render the content on the theme customizer page
-	*/
-	public function render_content() {
-		?>
-		<!-- <div class="row">
-		<div class="col-md-4">
-				<div class="stitched">
-				
-				<?php //echo __("Coupon Code : MEGA20", "enigma" );?>
-				</div>
-		</div>
-		</div> -->
-		<label style="overflow: hidden; zoom: 1;">
-			<div class="col-md-2 col-sm-6 upsell-btn">					
-					<a style="margin-bottom:20px;margin-left:20px;" href="http://weblizar.com/themes/enigma-premium/" target="blank" class="btn btn-success btn"><?php _e('Upgrade to Enigma Premium','enigma'); ?> </a>
-			</div>
-			<div class="col-md-4 col-sm-6">
-				<img class="enigma_img_responsive" src="<?php echo WL_TEMPLATE_DIR_URI .'/images/Enig.jpg'?>">
-			</div>			
-			<div class="col-md-3 col-sm-6">
-				<h3 style="margin-top:10px;margin-left: 20px;text-decoration:underline;color:#333;"><?php echo _e( 'Enigma Premium - Features','enigma'); ?></h3>
-					<ul style="padding-top:20px">
-						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('Responsive Design','enigma'); ?> </li>
-						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('Enigma Parallax Design Included','enigma'); ?> </li>						
-						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('More than 13 Templates','enigma'); ?> </li>
-						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('8 Different Types of Blog Templates','enigma'); ?> </li>
-						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('6 Types of Portfolio Templates','enigma'); ?></li>
-						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('12 types Themes Colors Scheme','enigma'); ?></li>
-						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('Patterns Background','enigma'); ?>   </li>
-						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('WPML Compatible','enigma'); ?>   </li>
-						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('Woo-commerce Compatible','enigma'); ?>
-						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('Image Background','enigma'); ?>  </li>
-						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('Image Background','enigma'); ?>  </li>	
-						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('Ultimate Portfolio layout with Isotope effect','enigma'); ?> </li>
-						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('Rich Short codes','enigma'); ?> </li>
-						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('Translation Ready','enigma'); ?> </li>
-						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('Coming Soon Mode','enigma'); ?>  </li>
-						<li class="upsell-enigma"> <div class="dashicons dashicons-yes"></div> <?php _e('Extreme Gallery Design Layout','enigma'); ?>  </li>
-					
-					</ul>
-			</div>
-			<div class="col-md-2 col-sm-6 upsell-btn">					
-					<a style="margin-bottom:20px;margin-left:20px;" href="http://weblizar.com/themes/enigma-premium/" target="blank" class="btn btn-success btn"><?php _e('Upgrade to Enigma Premium','enigma'); ?> </a>
-			</div>
-			<span class="customize-control-title"><?php _e( 'Enjoying Enigma?', 'enigma' ); ?></span>
-			<p>
-				<?php
-					printf( __( 'If you Like our Products , Please do Rate us on %sWordPress.org%s?  We\'d really appreciate it!', 'enigma' ), '<a target="" href="https://wordpress.org/support/view/theme-reviews/enigma?filter=5">', '</a>' );
-				?>
-			</p>
-		</label>
-		<?php
-	}
-}
-endif;
 
 /* class for font-family */
 if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'enigma_Font_Control' ) ) :
@@ -1966,7 +1890,11 @@ class enigma_changelog_Control extends WP_Customize_Control {
 			<div class="col-md-3 col-sm-6">
 				<h2 style="margin-top:10px;color:#fff;background-color: #3ca3e0;padding: 10px;font-size: 19px;"><?php echo _e( 'Enigma Theme Changelog','enigma'); ?></h2>
 				<ul style="padding-top:20px">
-				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.7 - <span> Current Version </span></div>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.9 - <span> Current Version </span></div>
+		<ol> <li> Bug Fix </li></ol></li>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.8 - </div>
+		<ol> <li> screen-shot image change </li></ol></li>
+				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.7 - </div>
 		<ol> <li> Box Layout option added. </li></ol></li>
 				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.1.6 - </div>
 		<ol> <li> Slider Animation option added. </li><li> Breadcrumb option added. </li></ol></li>
