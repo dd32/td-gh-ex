@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Best Commerce 1.0.5\n"
+"Project-Id-Version: Best Commerce 1.0.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-04 08:37:06+00:00\n"
 "MIME-Version: 1.0\n"

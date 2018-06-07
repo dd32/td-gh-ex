@@ -3,7 +3,7 @@
 Contributors: axlethemes
 Requires at least: 4.7
 Tested up to: 4.9.6
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Copyright: (c) 2017 Axle Themes
@@ -21,6 +21,10 @@ Best Commerce is an aesthetically pure and clean and highly customizable, profes
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.0.6 - Jun 7 2018 =
+* Fix price in carousel
+* Minor bug fixes
 
 = 1.0.5 - May 18 2018 =
 * Fix comment form

@@ -58,7 +58,7 @@ $section_classes .= ' featured-section-widget-' . ( ( is_active_sidebar( 'sideba
 									<div class="main-product-carousel-item">
 										<div class="main-product-carousel-item-inner">
 											<?php if ( isset( $item['price'] ) && ! empty( $item['price'] ) ): ?>
-												<span class="featured-product-price"><?php echo wc_price( $item['price'], array( 'decimals' => 0 ) ); ?></span>
+												<span class="featured-product-price"><?php echo wc_price( $item['price'] ); ?></span>
 											<?php endif; ?>
 											<div class="product-thumb">
 												<a href="<?php echo esc_url( $item['url'] ); ?>" class="product-thumb-wrapper">
