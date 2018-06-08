@@ -543,6 +543,30 @@ function itransform_get_link_url() {
  * @return array The filtered body class list.
  */
 function itransform_body_class( $classes ) {
+	
+	global $post; 
+	
+	$itrans_page_class = $itrans_page_nopad = $itrans_trans_header = $itrans_no_ubar = "";
+	
+	if ( function_exists( 'rwmb_meta' ) ) {
+		$itrans_page_class = rwmb_meta('itrans_page_class');
+		$itrans_page_nopad = rwmb_meta('itrans_page_nopad');
+		$itrans_no_ubar = rwmb_meta('itrans_no_ubar');		
+		$itrans_trans_header = rwmb_meta('itrans_trans_header');		
+	}
+	
+	if( $itrans_page_nopad == 1 )
+		$classes[] = 'tx-nopad';
+		
+	if( $itrans_trans_header == 1 )
+		$classes[] = 'nx-fullscreen';
+
+	if( ! empty($itrans_page_class) )
+		$classes[] = esc_attr($itrans_page_class);		
+		
+	if( $itrans_no_ubar == 1 )
+		$classes[] = 'tx-noubar';					
+	
 	if ( ! is_multi_author() )
 		$classes[] = 'single-author';
 
@@ -551,6 +575,11 @@ function itransform_body_class( $classes ) {
 
 	if ( ! get_option( 'show_avatars' ) )
 		$classes[] = 'no-avatars';
+		
+		
+	if ( is_page_template( 'page_full-width.php' ) ) {
+		$classes[] = 'nx-full-width';
+	}				
 
 	return $classes;
 }
@@ -617,8 +646,6 @@ include get_template_directory() . '/inc/custom_functions.php';
 /*-----------------------------------------------------------------------------------*/ 
 
 include( get_template_directory() . '/inc/tnext-meta.php' );
-require_once( get_template_directory() . '/inc/meta-box/meta-box.php' );
-
 
 /*-----------------------------------------------------------------------------------*/
 /*	changing default Excerpt length 
@@ -682,7 +709,13 @@ function itransform_theme_register_required_plugins() {
             'name' => 'TemplatesNext ToolKit', // The plugin name.
             'slug' => 'templatesnext-toolkit', // The plugin slug (typically the folder name).
             'required' => true, // If false, the plugin is only 'recommended' instead of required.
-        )		
+        ),
+		// This is an example of how to include a plugin from a private repo in your theme.
+        array(
+            'name' => 'Smart Slider 3', // The plugin name.
+            'slug' => 'smart-slider-3', // The plugin slug (typically the folder name).
+            'required' => false, // If false, the plugin is only 'recommended' instead of required.
+        ),				
 
     );
 
@@ -729,25 +762,29 @@ function itransform_theme_register_required_plugins() {
 }
 
 // i-transform admin notice
-add_action('admin_notices', 'itransform_admin_notice_3');
-function itransform_admin_notice_3() {
+add_action('admin_notices', 'itransform_admin_notice_005');
+function itransform_admin_notice_005() {
     global $current_user ;
         $user_id = $current_user->ID;
         /* Check that the user hasn't already clicked to ignore the message */
-    if ( ! get_user_meta($user_id, 'itransform_ignore_notice_3') ) {
+    if ( ! get_user_meta($user_id, 'itransform_ignore_notice_005') ) {
         echo '<div class="updated"><p><div style="line-height: 20px;">'; 
-        printf(__('Important : All the <b>theme options are moved to Customizer</b> as per WordPress.org recommendation. <br> Go to menu <b>&#8220;Appearance&#8221; &raquo; &#8220;Customize&#8221;</b> for all theme settings. <br> <a href="%1$s">Dismiss this notice</a>', 'i-transform'), '?itransform_notice_ignore2=0');
+        echo '<span style="font-weight: 600; font-size: 15px;">' . esc_attr__('i-transform version 3.0.4 receives major updates. New features includeds transparent header, custom page color, custom topbar colors, etc.', 'i-transform') . '</span><br />';
+        echo esc_attr__('1. Meta Box (page options) functions moved to plugin &quot;TemplatesNext Toolkit&quot;.', 'i-transform') . '<br />';
+        echo esc_attr__('2. Several page options and a page template &quot;TX Full Width&quot; added to integrate i-transform with page builder plugins like Elementor, Brizy, Site Origin Page Builder, etc.', 'i-transform') . '<br />';
+        echo esc_attr__('3. Integration with slider plugin Smart Slider 3 .', 'i-transform') . '<br />';					
+		printf(__('<br /><a href="%1$s">Dismiss this notice</a>', 'i-transform'), '?itransform_notice_ignore_005=0');
         echo "</div></p></div>";
     }
 }
 
-add_action('admin_init', 'itransform_notice_ignore_3');
-function itransform_notice_ignore_3() {
+add_action('admin_init', 'itransform_notice_ignore_005');
+function itransform_notice_ignore_005() {
     global $current_user;
 	$user_id = $current_user->ID;
     /* If user clicks to ignore the notice, add that to their user meta */
-	if ( isset($_GET['itransform_notice_ignore_3']) && '0' == $_GET['itransform_notice_ignore_3'] ) {
-    	add_user_meta($user_id, 'itransform_ignore_notice_3', 'true', true);
+	if ( isset($_GET['itransform_notice_ignore_005']) && '0' == $_GET['itransform_notice_ignore_005'] ) {
+    	add_user_meta($user_id, 'itransform_ignore_notice_005', 'true', true);
     }
 }
 

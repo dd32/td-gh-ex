@@ -14,10 +14,13 @@
 get_header(); ?>
 
 	<?php 
-		global $post;
-		
+	global $post;
+	$sub_title = '';
+	$folio_url ='';
+	if ( function_exists( 'rwmb_meta' ) ) { 
 		$sub_title = esc_attr(rwmb_meta('itrans_portfolio_subtitle'));
 		$folio_url = esc_url(rwmb_meta('itrans_portfolio_url'));
+	}
 	?>
     
             

@@ -20,6 +20,11 @@ $turn_front_slider = esc_attr(get_theme_mod('slider_stat', 1));
 $other_front_slider = esc_attr(get_theme_mod('other_front_slider', ''));
 
 global $post; 
+
+$no_page_header = 0;
+if ( function_exists( 'rwmb_meta' ) ) { 
+	$no_page_header = rwmb_meta('itrans_no_page_header');
+}
  
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -54,7 +59,7 @@ global $post;
                 <div class="topphone">
                     <i class="topbarico genericon genericon-phone"></i>
                     <?php if ( $top_phone ) : ?>
-                        <?php _e('Call us : ', 'i-transform'); ?> <?php echo $top_phone; ?>
+                        <?php echo $top_phone; ?>
                     <?php endif; ?>
                 </div>
                 <?php endif; ?>
@@ -63,7 +68,7 @@ global $post;
                 <div class="topphone">
                     <i class="topbarico genericon genericon-mail"></i>
                     <?php if ( $top_email ) : ?>
-                        <?php _e('Mail us : ', 'i-transform'); ?> <?php echo $top_email; ?>
+                        <?php echo $top_email; ?>
                     <?php endif; ?>
                 </div>
                 <?php endif; ?>                
@@ -71,6 +76,7 @@ global $post;
         </div>
         <?php endif; ?>
         
+        <?php if ( $no_page_header == 0 ) : ?>
         <div class="headerwrap">
             <header id="masthead" class="site-header" role="banner">
          		<div class="headerinnerwrap">
@@ -110,19 +116,25 @@ global $post;
                 </div>
             </header><!-- #masthead -->
         </div>
-        <?php
-		
-			global $post; 
-			
-			$hide_title = rwmb_meta('itrans_hidetitle');
-			$show_slider = rwmb_meta('itrans_show_slider');
-			$other_slider = rwmb_meta('itrans_other_slider');
-			$hide_bread = rwmb_meta('itrans_hide_breadcrumb');
+        <?php endif; ?>
 
+        <?php
+			$hide_title = $show_slider = $other_slider = $hide_bread = $smart_slider_3 = '';
 			
+			if ( function_exists( 'rwmb_meta' ) ) { 			
+				$hide_title = rwmb_meta('itrans_hidetitle');
+				$show_slider = rwmb_meta('itrans_show_slider');
+				$other_slider = rwmb_meta('itrans_other_slider');
+				$hide_bread = rwmb_meta('itrans_hide_breadcrumb');
+				$smart_slider_3 = rwmb_meta('itrans_smart_slider');
+			}			
         ?>
         <!-- #Banner -->
         <?php 
+		if( !empty($smart_slider_3) ) {
+			$other_slider = '[smartslider3 slider='.$smart_slider_3.']';
+		}		
+		
 		if( $other_slider )
 		{
 			?>

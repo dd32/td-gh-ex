@@ -18,6 +18,8 @@
 		function ione_custom_styles() {
 			
 			global  $ione_data;
+			global $post;	
+			
 			$custom_css = "";
 			$body_font_size = "13";
 			$body_line_height = "24";
@@ -42,7 +44,18 @@
 			{
 				$primary_color = "#6f40c4";				
 			}
-
+			
+			// Custom page Color
+			$custom_page_color = '';
+			$topbar_bg_color = '';			
+			if ( function_exists( 'rwmb_meta' ) ) {
+				$custom_page_color = rwmb_meta('itrans_page_color', '');
+				$topbar_bg_color = rwmb_meta('itrans_topbar_bg_color', '');
+			}
+			if( !empty($custom_page_color) )
+			{
+				$primary_color = $custom_page_color;
+			}
 
 			echo '<style type="text/css" id="custom-style">'. "\n";
 			
@@ -132,7 +145,14 @@
 			echo '.content-area .tx-service:hover .tx-service-icon span i {	color: #FFFFFF;	}';
 			
 			echo '.post .post-mainpart .entry-summary a.moretag {color: #FFFFFF; background-color: '.$primary_color.';}';
-		
+			
+			if( !empty($topbar_bg_color) ) {
+				echo '.utilitybar { background-color: '.$topbar_bg_color.'; color: #FFFFFF; border-bottom: 1px solid '.$topbar_bg_color.';}';
+				echo '.utilitybar .ubarinnerwrap .topphone { color: #FFFFFF;}';	
+				echo '.utilitybar .ubarinnerwrap .topbarico	{ color: #FFFFFF;}';
+				echo '.utilitybar .ubarinnerwrap .socialicons ul.social li a i.genericon { background-color: rgba(255, 255, 255, 0.2); color: #FFF; }';	
+				echo '.utilitybar .ubarinnerwrap .socialicons ul.social li a:hover i.genericon { background-color: rgba(255, 255, 255, 0.0); color: #FFF; }';								
+			}
 			
 			if ($custom_css) {
 			echo "\n".'/* =============== user styling =============== */'."\n";

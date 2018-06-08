@@ -96,7 +96,22 @@ function itrans_register_meta_boxes( $meta_boxes )
 				// CLONES: Add to make the field cloneable (i.e. have multiple value)
 				//'clone' => true,
 				'class' => 'cust-ttl',
-			),			
+			),
+			
+			array(
+				'name'            => __( 'Smart Slider 3', 'i-transform' ),
+				'id'              => "{$prefix}smart_slider",
+				'type'            => 'select',
+				// Array of 'value' => 'Label' pairs
+				'options'         => nx_smartslider_list (),
+				// Allow to select multiple value?
+				'multiple'        => false,
+				// Placeholder text
+				'placeholder'     => __( 'Select a smart slider', 'i-transform' ),
+				'after'			  => '',
+				// Display "Select All / None" button?
+				'select_all_none' => false,
+			),				
 			
 
 		)
@@ -183,6 +198,80 @@ function itrans_register_meta_boxes( $meta_boxes )
 				'std'  => 0,
 				'class' => 'hide-ttl-text',
 			),
+			array(
+				'name' => __( 'Remove Top and Bottom Padding/Margin', 'i-transform' ),
+				'id'   => "{$prefix}page_nopad",
+				'type' => 'checkbox',
+				// Value can be 0 or 1
+				'std'  => 0,
+				'desc' => __('Remove the spaces/padding from top and bottom of the page/post', 'i-transform'),
+			),
+			
+			// Hide page header
+			array(
+				'name' => __( 'Show Transparent Header', 'i-transform' ),
+				'id'   => "{$prefix}trans_header",
+				'type' => 'checkbox',
+				// Value can be 0 or 1
+				'std'  => 0,
+				'desc' => __('Show transparent header on pages/posts. This will hide the page/post titlebar as well', 'i-transform'),
+			),				
+			
+			// Hide page header
+			array(
+				'name' => __( 'Hide Page Header', 'i-transform' ),
+				'id'   => "{$prefix}no_page_header",
+				'type' => 'checkbox',
+				// Value can be 0 or 1
+				'std'  => 0,
+				'desc' => __('In case you are building the page without the top navigation and logo', 'i-transform'),
+			),										
+
+			// Hide page header
+			array(
+				'name' => __( 'Hide Top Utilitybar', 'i-transform' ),
+				'id'   => "{$prefix}no_ubar",
+				'type' => 'checkbox',
+				// Value can be 0 or 1
+				'std'  => 0,
+				'desc' => __('Hide top bar with email, phone and social links', 'i-transform'),
+			),
+			// Hide page header
+			array(
+				'name' => __( 'Hide Footer Widget Area', 'i-transform' ),
+				'id'   => "{$prefix}no_footer",
+				'type' => 'checkbox',
+				// Value can be 0 or 1
+				'std'  => 0,
+				'desc' => __('Hide bottom footer widget area', 'i-transform'),
+			),	
+			
+			// Custom page primary color			
+			array(
+				'name'  => __( 'Custom Primary Color', 'i-transform' ),
+				'id'    => "{$prefix}page_color",
+				'type'  => 'color',
+				'std'   => '',
+				'desc' => __('Choose a custom primary color for this page', 'i-transform'),
+			),
+			
+			// Custom page primary color			
+			array(
+				'name'  => __( 'Topbar Background Color', 'i-transform' ),
+				'id'    => "{$prefix}topbar_bg_color",
+				'type'  => 'color',
+				'std'   => '',
+				'desc' => __('Top bar with phone, email and social link background color', 'i-transform'),
+			),	
+									
+			// additional page class			
+			array(
+				'name'  => __( 'Additional Page Class', 'i-transform' ),
+				'id'    => "{$prefix}page_class",
+				'type'  => 'text',
+				'std'   => __( '', 'i-transform' ),
+				'desc' => __('Enter an additional page class, will be added to body. "hide-page-header" for no header, "boxed" for boxed page for wide layout.', 'i-transform'),
+			),			
 
 		)
 	);	
@@ -192,17 +281,35 @@ function itrans_register_meta_boxes( $meta_boxes )
 	return $meta_boxes;
 }
 
-	function nx_get_category_list_key_array($category_name) {
+
+function nx_get_category_list_key_array($category_name) {
 			
-		$get_category = get_categories( array( 'taxonomy' => $category_name	));
-		$category_list = array( 'all' => 'Select Category');
+	$get_category = get_categories( array( 'taxonomy' => $category_name	));
+	$category_list = array( 'all' => 'Select Category');
 		
-		foreach( $get_category as $category ){
-			if (isset($category->slug)) {
+	foreach( $get_category as $category ){
+		if (isset($category->slug)) {
 			$category_list[$category->slug] = $category->cat_name;
+		}
+	}
+	return $category_list;
+}	
+
+
+function nx_smartslider_list () {
+	
+	global $wpdb;
+	$smartslider = array();
+	//$smartslider[0] = 'Select a slider';
+	
+	if(class_exists('SmartSlider3')) {
+		$get_sliders = $wpdb->get_results('SELECT * FROM '.$wpdb->prefix.'nextend2_smartslider3_sliders');
+		if($get_sliders) {
+			foreach($get_sliders as $slider) {
+				$smartslider[$slider->id] = $slider->title;
 			}
 		}
-			
-		return $category_list;
-	}	
+	}
+	return $smartslider;
 
+}	

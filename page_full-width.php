@@ -1,24 +1,19 @@
 <?php
 /**
+ * Template Name: TX Full Width
  * The template for displaying all pages
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages and that other
  * 'pages' on your WordPress site will use a different template.
  *
- * @package WordPress
- * @subpackage i-transform
+ * @package i-transform
  * @since i-transform 1.0
  */
 
 get_header(); ?>
-<?php
-	$hide_title_text = '';
-	if ( function_exists( 'rwmb_meta' ) ) {
-		$hide_title_text = rwmb_meta('itrans_hide_title_text');
-	}
-?>
-	<div id="primary" class="content-area">
+
+	<div id="primary" class="content-area nosidebar">
 		<div id="content" class="site-content" role="main">
 
 			<?php /* The loop */ ?>
@@ -31,9 +26,6 @@ get_header(); ?>
 							<?php the_post_thumbnail(); ?>
 						</div>
 						<?php endif; ?>
-						<?php if($hide_title_text != 1) { ?>
-						<h1 class="entry-title"><?php the_title(); ?></h1>
-                        <?php } ?>
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
@@ -50,7 +42,6 @@ get_header(); ?>
 			<?php endwhile; ?>
 
 		</div><!-- #content -->
-        <?php get_sidebar(); ?>
 	</div><!-- #primary -->
 
 
