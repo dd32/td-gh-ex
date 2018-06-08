@@ -50,10 +50,10 @@
                   <a href="<?php the_permalink(); ?>"><h1 class="entry-title"><?php the_title(); ?></h1></a>
                   <div class="entry-meta">
                    <?php if($display_date == '1' ):?>
-                      <span class="entry-date"><a href="<?php echo get_month_link(get_the_time('Y'), get_the_time('m'));?>"><?php echo get_the_date("M d, Y");?></a></span> 
+                      <span class="entry-date updated"><a href="<?php echo get_month_link(get_the_time('Y'), get_the_time('m'));?>"><?php echo get_the_date("M d, Y");?></a></span> 
                       <?php endif; ?>
                       <?php if($display_author == '1' ):?>
-                      | <span class="entry-author"><?php esc_attr_e('By' ,'astore');?> <?php echo get_the_author_link();?></span>
+                      | <span class="entry-author author vcard"><?php esc_attr_e('By' ,'astore');?> <span class="fn"><?php echo get_the_author_link();?></span></span>
                       <?php endif; ?>
                   </div>
               </div>

@@ -44,7 +44,7 @@
               <div class="pull-left"> 
               <?php
 				  if(get_the_tag_list()) {
-					  echo get_the_tag_list(__( 'Tags:', 'astore' ),', ');
+					  echo get_the_tag_list(__( 'Tags: ', 'astore' ),', ');
 				  }
 				  
 				  $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );

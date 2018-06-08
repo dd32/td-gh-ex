@@ -14,6 +14,7 @@
                                     <label class="screen-reader-text"><?php esc_attr__('Search for','astore');?>:</label>
                                     <input type="text" class="search-field" placeholder="<?php esc_attr_e('Search','astore');?> ..." value="<?php echo get_search_query(); ?>" name="s">
                                     <input type="hidden" value="product" name="post_type" id="post_type" />
+                                    <div class="select_products-wrap">
                                     <?php
 								
 								if ( class_exists( 'WooCommerce' ) ) {	
@@ -29,7 +30,8 @@
 								wp_dropdown_categories( $args );
 								}
 								?>
-                                    <input type="submit" class="search-submit" value="Search">
+                                </div>
+                                    <input type="submit" class="search-submit" value="<?php esc_attr_e('Search','astore');?>">
                                 </div>                                    
                             </form>
                         </div>

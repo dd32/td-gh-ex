@@ -1,5 +1,5 @@
 <?php
-	global $allowedposttags;
+
 	$footer_icons = astore_option('footer_icons');
 	$display_footer_icons = astore_option('display_footer_icons');
 	$copyright = astore_option('copyright');
@@ -19,7 +19,7 @@
 						?>
                     </ul>
                     <div class="site-info">
-                       <span class="copyright_selective"><?php echo do_shortcode(wp_kses($copyright, $allowedposttags));?></span> 
-	<?php printf(__('Designed by <a href="%s" target="_blank">VelaThemes</a>. All Rights Reserved.','astore'),esc_url('https://velathemes.com/astore-theme/')); ?>
+                       <span class="copyright_selective"><?php echo do_shortcode(wp_kses_post($copyright));?></span> 
+	<?php printf(__('Designed by <a href="%s" target="_blank">VelaThemes</a>.','astore'),esc_url('https://velathemes.com/astore-theme/')); ?>
                     </div>
                 </div>

@@ -799,7 +799,7 @@ function astore_customizer_library_options() {
 		'label'   => __( 'Sidebar: Pages', 'astore' ),
 		'section' => $section,
 		'type'    => 'radio-image',
-		'default' => 'right',
+		'default' => 'no',
 		//'choices' => array('no' =>__( 'No Sidebar', 'astore' ),'left'=>__( 'Left Sidebar', 'astore' ),'right'=>__( 'Right Sidebar', 'astore' )),
 		'choices' => array(
 				'no'=> array('label'=>__( 'No Sidebar', 'astore' ),'url'=> $imagepath.'customize/sidebar-none.png'),
@@ -813,7 +813,7 @@ function astore_customizer_library_options() {
 		'label'   => __( 'Sidebar: Single Post', 'astore' ),
 		'section' => $section,
 		'type'    => 'radio-image',
-		'default' => 'right',
+		'default' => 'no',
 		//'choices' => array('no' =>__( 'No Sidebar', 'astore' ),'left'=>__( 'Left Sidebar', 'astore' ),'right'=>__( 'Right Sidebar', 'astore' )),
 		'choices' => array(
 				'no'=> array('label'=>__( 'No Sidebar', 'astore' ),'url'=> $imagepath.'customize/sidebar-none.png'),
@@ -827,7 +827,7 @@ function astore_customizer_library_options() {
 		'label'   => __( 'Sidebar: Posts Archive', 'astore' ),
 		'section' => $section,
 		'type'    => 'radio-image',
-		'default' => 'right',
+		'default' => 'no',
 		'choices' => array('no' =>__( 'No Sidebar', 'astore' ),'left'=>__( 'Left Sidebar', 'astore' ),'right'=>__( 'Right Sidebar', 'astore' )),
 		'choices' => array(
 				'no'=> array('label'=>__( 'No Sidebar', 'astore' ),'url'=> $imagepath.'customize/sidebar-none.png'),

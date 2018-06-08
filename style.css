@@ -2,11 +2,11 @@
 Theme Name: AStore
 Author: VelaThemes
 Description: AStore is the best choice for building online store since it's fully compatible with WooCommerce, the most popular ecommerce plugin. Using Elementor page builder plugin, you could simply edit your site using just drag & drop.
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: astore
-Tags: one-column, two-columns, custom-background, custom-header, custom-menu, theme-options, right-sidebar, translation-ready, editor-style, featured-images, threaded-comments, rtl-language-support, custom-logo, featured-image-header, footer-widgets
+Tags: e-commerce, one-column, two-columns, custom-background, custom-header, custom-menu, theme-options, right-sidebar, translation-ready, editor-style, featured-images, threaded-comments, rtl-language-support, custom-logo, featured-image-header, footer-widgets
 Theme URI: https://velathemes.com/astore-theme/
 Author URI: https://velathemes.com
 AStore Wordpress Theme has been created by velathemes.com, Copyright 2018 velathemes.com
@@ -3509,11 +3509,34 @@ ul.products.grid .woocommerce-product-details__short-description{
     box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
 }
 
-.cactus-search-full select.select_products {
+.select_products-wrap {
     float: left;
+    width: 140px;
+    overflow: hidden;
+}
+
+.searchform div.select_products-wrap:before {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top-color: #333;
+    position: absolute;
+    left: 120px;
+    top: 20px;
+}
+
+.cactus-search-full select.select_products {
     margin-right: 5px;
     border: 0;
     border-radius: 0;
+    width: 170px;
+    height: auto;
+    padding-right: 0;
+    max-width: none;
+	position:relative;
+	background-color:transparent;
 }
 
 .cactus-search-full .searchform {
@@ -5848,7 +5871,9 @@ body.cactus-header-side-right {
     left: 0;
     z-index: 999;
 }
-
+.cactus-fixed-header-wrap .cactus-main-header {
+    min-height: 60px;
+}
 .cactus-header .cactus-main-nav > li > a {
     color: #333;
     font-size: 12px;

@@ -33,7 +33,6 @@ function astore_setup() {
 	// Set the default content width.
 	$GLOBALS['content_width'] = 850;
 
-
 	register_nav_menus( array(
 		'top'    => __( 'Top Menu', 'astore' ),
 		'browse-categories'    => __( 'Top Left Menu (Browse Categories)', 'astore' ),
@@ -49,7 +48,6 @@ function astore_setup() {
 		'gallery',
 		'caption',
 	) );
-
 
 	// Add theme support for Custom Logo.
 	add_theme_support( 'custom-logo', array(
@@ -97,7 +95,6 @@ function astore_setup() {
 	 * specifically font, colors, and column width.
  	 */
 	add_editor_style( array( 'assets/css/editor-style.css' ) );
-	
 	
 }
 add_action( 'after_setup_theme', 'astore_setup' );
@@ -315,7 +312,6 @@ function astore_customize_preview_enqueue(){
 	}
 add_action( 'customize_preview_init', 'astore_customize_preview_enqueue' );
 
-
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
@@ -478,7 +474,6 @@ function astore_widgets_init() {
 }
 add_action( 'widgets_init', 'astore_widgets_init' );
 
-
 /**
  *  Custom comments list
  */	
@@ -634,7 +629,6 @@ function astore_option_saved($name){
 		return '';
 	}
 
-
 /**
  * Get sidebar
  */
@@ -653,7 +647,6 @@ function astore_get_sidebar($layout,$type){
       </div>
 <?php
 	}
-	
 
 /**
  * Selective Refresh
@@ -702,14 +695,12 @@ function astore_register_partials( WP_Customize_Manager $wp_customize ) {
 }
 add_action( 'customize_register', 'astore_register_partials' );
 
-
 /* footer */
 function astore_copyright(){
 	
 	$astore_options = get_option(ASTORE_TEXTDOMAIN);
 	if( isset($astore_options['copyright']) )
 		return $astore_options['copyright'];
-		
 	}
 
 //button_text_call_to_action
@@ -721,7 +712,6 @@ function astore_header_site_title(){
 function astore_header_site_descriptione(){
 	return get_bloginfo( 'description' );
 	}
-
 
 /**
  * Get WooCommerce products categories.
@@ -864,7 +854,7 @@ function astore_about_theme_callback() {
 	</div>';
 		
     echo '</div>';
-	
+
 }
 
 /**
@@ -974,7 +964,6 @@ function astore_subcategory_count_html( $string ){
 	return $string;
 	}
 add_filter('woocommerce_subcategory_count_html','astore_subcategory_count_html');
-
 
 /**
  * Fontawsome icons

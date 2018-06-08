@@ -1,11 +1,24 @@
-#sub-accordion-panel-frontpage-sections > li .accordion-section-title.ui-sortable-handle:before{
-	 content: "\f333";
-    font-family: dashicons;
+.astore-upsell {
+    background: #fff;
+    padding: 21px;
+    border-radius: 3px;
+}
+.astore-upsell .upsell-pro-label {
+    font-weight: bold;
+    background: #a7a7a7;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 2px 6px 2px 7px;
+    letter-spacing: .1px;
+    font-size: 12px;
+    border-radius: 3px;
     margin-right: 10px;
-    cursor: move;
-	 }
-#customize-control-astore-section_order{
-	display:none !important;
+}
+.astore-upsell .button{
+	margin-top:20px;
+}
+#accordion-section-view-pro-features {
+    margin-bottom: 20px;
 }
 .customize-control-radio-image img {
     border-width: 2px!important;
