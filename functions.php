@@ -441,6 +441,25 @@ function fcorpo_customize_register( $wp_customize ) {
 			'capability'  => 'edit_theme_options',
 		)
 	);
+
+	// Add display slider option
+	$wp_customize->add_setting(
+			'fcorpo_slider_display',
+			array(
+					'default'           => 1,
+					'sanitize_callback' => 'fcorpo_sanitize_checkbox',
+			)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fcorpo_slider_display',
+							array(
+								'label'          => __( 'Display Slider', 'fcorpo' ),
+								'section'        => 'fcorpo_slider_section',
+								'settings'       => 'fcorpo_slider_display',
+								'type'           => 'checkbox',
+							)
+						)
+	);
 	
 	for ($i = 1; $i <= 3; ++$i) {
 	
@@ -848,7 +867,7 @@ function fcorpo_header_style() {
         <?php if ( get_theme_support( 'custom-header', 'default-text-color' ) !== $header_text_color
                     && 'blank' !== $header_text_color ) : ?>
 
-                #header-main-fixed, #header-main-fixed h1.entry-title {color: #<?php echo esc_attr( $header_text_color ); ?>;}
+                #header-main-fixed, #header-main-fixed h1.entry-title {color: #<?php echo sanitize_hex_color_no_hash( $header_text_color ); ?>;}
 
         <?php endif; ?>
     </style>

@@ -12,17 +12,7 @@
  *
  */
 
- get_header();
-
- if ( is_front_page() ) :
-
- 	fcorpo_display_slider();
-
- 	get_sidebar('home');
-
- endif;
-
- ?>
+ get_header(); ?>
 
 <div id="main-content-wrapper">
 	<div id="main-content">

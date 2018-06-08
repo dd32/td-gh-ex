@@ -14,17 +14,7 @@
  *
  */
 
- get_header();
-
- if ( is_home() ) :
-
- 	fcorpo_display_slider();
-
- 	get_sidebar('home');
-
- endif;
- 
-?>
+ get_header(); ?>
 
 <div class="clear">
 </div><!-- .clear -->
