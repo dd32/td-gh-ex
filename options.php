@@ -272,27 +272,38 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('Homepage Slider', 'ascent'),
-		'desc' => __('Do you want to display slider on homepage ?', 'ascent'),
+		'desc' => __('Do you want to display slider on homepage?', 'ascent'),
 		'id' => 'home_page_slider',
 		'std' => '1',
 		'type' => 'checkbox');
 
-
 	$options[] = array(
 		'name' => __('Enable header static banner', 'ascent'),
-		'desc' => __('Do you want to display the static banner image ?', 'ascent'),
+		'desc' => __('Do you want to display the static banner image?', 'ascent'),
 		'id' => 'static_header_banner_image',
 		'std' => '1',
 		'type' => 'checkbox');
 
 	$options[] = array(
 		'name' => __('Enable Slider Dotted Overlay BG', 'ascent'),
-		'desc' => __('Do you want to enable slider overlay dotted bg ?', 'ascent'),
+		'desc' => __('Do you want to enable slider overlay dotted bg?', 'ascent'),
 		'id' => 'slider_overlay_bg',
 		'std' => '1',
 		'type' => 'checkbox');
 
+	$options[] = array(
+		'name' => __('Enable Slider Dotted Pagination', 'ascent'),
+		'desc' => __('Do you want to enable slider dotted pagination?', 'ascent'),
+		'id' => 'enable_home_slider_pagination',
+		'std' => '0',
+		'type' => 'checkbox');
 
+	$options[] = array(
+		'name' => __('Enable Slider Navigation', 'ascent'),
+		'desc' => __('Do you want to enable slider left/right navigation?', 'ascent'),
+		'id' => 'enable_home_slider_navigation',
+		'std' => '0',
+		'type' => 'checkbox');
 
 	$options[] = array(
 		'name' => __('Video Height', 'ascent'),

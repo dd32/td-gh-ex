@@ -1,7 +1,7 @@
 == Ascent ==
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, post-formats, theme-options, translation-ready
-Tested up to: 4.9.4
+Tested up to: 4.9.6
 Stable tag: 3.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -89,6 +89,13 @@ Yes! You can choose your color scheme under Appearance -> Theme Options -> Styli
 
 
 = Changelog =
+
+### Version 2.0.8
+- Update: OwlCarousel 2.2.1
+- Add: Config for Home page slider pagination and navigation
+- Update: JS/CSS library handler name
+- Add: Minified version CSS and JSS files
+- Fix: Removed add_theme_support('menus')
 
 ### Version 2.0.7
 - Update: Theme version

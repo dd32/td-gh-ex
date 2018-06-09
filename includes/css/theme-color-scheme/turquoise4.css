@@ -81,6 +81,15 @@ select:focus {
 .gallery .gallery-item img {
     border-color: #049CA2!important;
 }
+table thead th {
+  border-color: #8EC4C6;
+}
+table thead th:first-child {
+  border-left: 1px solid #8EC4C6;
+}
+table thead th:last-child {
+  border-right: 1px solid #8EC4C6;
+}
 
 /* Light color style */
 .nav > li > a:hover, .nav > li > a:focus,
@@ -99,6 +108,10 @@ select:focus {
     color: #3A5758;
 }
 
+#home-slider .owl-dots .owl-dot.active span,
+#home-slider .owl-dots .owl-dot:hover span {
+  background: #049CA2;
+}
 /* Responsive style */
 @media (max-width: 991px) and (min-width: 0px){
     .post-meta-info .entry-meta .comments_count,

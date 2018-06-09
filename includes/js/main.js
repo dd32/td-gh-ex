@@ -79,7 +79,8 @@ jQuery(document).ready(function() {
         jQuery("#home-slider .main-owl-carousel").owlCarousel({
           items: 1,
           margin: 0,
-          nav: true,
+          nav: (home_slider_nav) ? true : false,
+          dots: (home_slider_pagination) ? true : false,
           singleItem: true,
           loop: true,
           autoplay: true,

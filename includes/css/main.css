@@ -628,6 +628,9 @@ body.page .page-header h1.entry-title {
     height: 50px;
     top: 45%;
     position: absolute;
+    text-indent: -9999em;
+    outline: none;
+    opacity: 0.8;
 }
 
 #home-slider .main-owl-carousel .owl-next {
@@ -637,6 +640,27 @@ body.page .page-header h1.entry-title {
 #home-slider .main-owl-carousel .owl-prev:hover,
 #home-slider .main-owl-carousel .owl-next:hover {
     opacity: 1;
+    outline: none;
+}
+#home-slider .owl-dots {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+
+#home-slider .owl-dots .owl-dot span {
+  background: #FFF;
+}
+#home-slider .owl-dots .owl-dot.active span,
+#home-slider .owl-dots .owl-dot:hover span {
+  background: #1ABC9C;
+  outline: none;
+}
+#home-slider .owl-dots .owl-dot:active,
+#home-slider .owl-dots .owl-dot:focus {
+  outline: none;
 }
 
 #home-slider .owl-theme .owl-controls {
@@ -869,7 +893,7 @@ a#scroll-top {
     display: none;
     position: fixed;
     right: 20px;
-    bottom: 80px;
+    bottom: 50px;
     height: 42px;
     width: 42px;
     z-index: 9999;
@@ -1025,6 +1049,10 @@ article .footer-meta {
 }
 .comment-form .alert-info {
     background-color: #E7F6F3;
+}
+.comment-list li,
+.comment-list .children li {
+  list-style: none;
 }
 .error-404 {
     margin-bottom: 40px;
@@ -1240,7 +1268,10 @@ label {
     #masthead {
         margin-bottom: 20px;
     }
-
+    #home-slider .owl-nav,
+    #home-slider .owl-dots {
+      display: none;
+    }
     .site-branding {
         text-align: center;
     }

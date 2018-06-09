@@ -116,7 +116,6 @@ function ascent_setup() {
     ) ) );
 
  /* Add Menu Support */
-    add_theme_support('menus');
     register_nav_menus(
         array(
             'main-menu' => __('Main Menu', 'ascent')
@@ -175,19 +174,19 @@ function ascent_scripts() {
     $protocol = is_ssl() ? 'https' : 'http';
     wp_enqueue_style('google-raleway', "$protocol://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800");
     // load bootstrap css
-    wp_enqueue_style( 'ascent-bootstrap', get_template_directory_uri() . '/includes/resources/bootstrap/css/bootstrap.css' );
+    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/includes/resources/bootstrap/css/bootstrap.min.css' );
 
     if(of_get_option('enable_swipebox')) { //check if enable swipebox from theme options
-        wp_enqueue_style( 'ascent-swipebox', get_template_directory_uri() . '/includes/css/swipebox.css' );
+        wp_enqueue_style( 'swipebox', get_template_directory_uri() . '/includes/css/swipebox.min.css' );
     }
-    wp_enqueue_style( 'ascent-owl-carousel', get_template_directory_uri() . '/includes/css/owl.carousel.css' );
-    wp_enqueue_style( 'ascent-owl-theme', get_template_directory_uri() . '/includes/css/owl.theme.css' );
+    wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/includes/css/owl.carousel.min.css' );
+    wp_enqueue_style( 'owl-theme', get_template_directory_uri() . '/includes/css/owl.theme.default.min.css' );
     wp_enqueue_style( 'ascent-animations', get_template_directory_uri() . '/includes/css/animations.css' );
-    wp_enqueue_style( 'ascent-meanmenu', get_template_directory_uri() . '/includes/css/meanmenu.css' );
+    wp_enqueue_style( 'meanmenu', get_template_directory_uri() . '/includes/css/meanmenu.min.css' );
     wp_enqueue_style( 'ascent-main', get_template_directory_uri() . '/includes/css/main.css' );
 
     // load bootstrap js
-    wp_enqueue_script('ascent-bootstrapjs', get_template_directory_uri().'/includes/resources/bootstrap/js/bootstrap.js', array('jquery') );
+    wp_enqueue_script('bootstrap', get_template_directory_uri().'/includes/resources/bootstrap/js/bootstrap.min.js', array('jquery') );
 
     // load bootstrap wp js
     wp_enqueue_script( 'ascent-bootstrapwp', get_template_directory_uri() . '/includes/js/bootstrap-wp.js', array('jquery') );
@@ -202,17 +201,17 @@ function ascent_scripts() {
         wp_enqueue_script( 'ascent-keyboard-image-navigation', get_template_directory_uri() . '/includes/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
     }
 
-    wp_enqueue_script( 'ascent-smoothscroll', get_template_directory_uri() . '/includes/js/smoothscroll.js', array('jquery') );
+    wp_enqueue_script( 'smoothscroll', get_template_directory_uri() . '/includes/js/smoothscroll.js', array('jquery') );
 
     if(of_get_option('enable_swipebox')) { //check if enable swipebox from theme options
-        wp_enqueue_script( 'ascent-swipebox', get_template_directory_uri() . '/includes/js/jquery.swipebox.js', array('jquery') );
+        wp_enqueue_script( 'swipebox', get_template_directory_uri() . '/includes/js/jquery.swipebox.min.js', array('jquery') );
         wp_enqueue_script( 'ascent-swipebox-config', get_template_directory_uri() . '/includes/js/swipebox-config.js', array('jquery') );
     }
 
-    wp_enqueue_script( 'ascent-owl-carousel', get_template_directory_uri() . '/includes/js/owl.carousel.js', array('jquery') );
-    wp_enqueue_script( 'ascent-appear', get_template_directory_uri() . '/includes/js/jquery.appear.js', array('jquery') );
-    wp_enqueue_script( 'ascent-meanmenu', get_template_directory_uri() . '/includes/js/jquery.meanmenu.js', array('jquery') );
-    wp_enqueue_script( 'ascent-velocity', get_template_directory_uri() . '/includes/js/jquery.velocity.js', array('jquery') );
+    wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/includes/js/owl.carousel.min.js', array('jquery') );
+    wp_enqueue_script( 'appear', get_template_directory_uri() . '/includes/js/jquery.appear.js', array('jquery') );
+    wp_enqueue_script( 'meanmenu', get_template_directory_uri() . '/includes/js/jquery.meanmenu.min.js', array('jquery') );
+    wp_enqueue_script( 'velocity', get_template_directory_uri() . '/includes/js/jquery.velocity.js', array('jquery') );
     wp_enqueue_script( 'ascent-appear-config', get_template_directory_uri() . '/includes/js/appear.config.js', array('jquery') );
 
     // Theme main js

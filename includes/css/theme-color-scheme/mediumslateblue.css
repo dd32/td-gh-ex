@@ -81,7 +81,15 @@ select:focus {
 .gallery .gallery-item img {
     border-color: #7a6cea!important;
 }
-
+table thead th {
+  border-color: #b5b1d2;
+}
+table thead th:first-child {
+  border-left: 1px solid #b5b1d2;
+}
+table thead th:last-child {
+  border-right: 1px solid #b5b1d2;
+}
 /* Light color style */
 .nav > li > a:hover, .nav > li > a:focus,
 .post-meta-info .entry-meta,
@@ -98,7 +106,10 @@ select:focus {
     border-color: #b5b1d2;
     color: #251692;
 }
-
+#home-slider .owl-dots .owl-dot.active span,
+#home-slider .owl-dots .owl-dot:hover span {
+  background: #7a6cea;
+}
 /* Responsive style */
 @media (max-width: 991px) and (min-width: 0px){
     .post-meta-info .entry-meta .comments_count,

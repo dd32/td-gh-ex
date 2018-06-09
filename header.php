@@ -14,8 +14,31 @@
     <link rel="shortcut icon" href="<?php echo of_get_option('favicon'); ?>"/>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <!--[if lt IE 9]>
-    <script src="<?php echo get_template_directory_uri(); ?>/includes/js/html5.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/includes/js/html5.min.js"></script>
     <![endif]-->
+
+    <?php if (of_get_option('enable_home_slider_pagination')): ?>
+      <script type="text/javascript">
+        home_slider_pagination = 1;
+      </script>
+    <?php else: ?>
+      <script type="text/javascript">
+        home_slider_pagination = 0;
+      </script>
+    <?php endif; ?>
+
+    <?php if (of_get_option('enable_home_slider_navigation')): ?>
+      <script type="text/javascript">
+        home_slider_nav = 1;
+      </script>
+    <?php else: ?>
+      <script type="text/javascript">
+        home_slider_nav = 0;
+      </script>
+    <?php endif; ?>
+
+
+
     <?php wp_head(); ?>
 </head>
 

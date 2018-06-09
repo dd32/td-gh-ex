@@ -48,24 +48,25 @@ if( !function_exists( 'generate_dynamic_css' ) ){
 
             /* Background color style */
             array(
-                'elements'	=>	'.read-more, .read-more.black:hover, .pager li > a:hover, .pager li > a:focus, #home-slider .slide-content .btn, table thead, a#scroll-top, .post-meta-info .entry-meta .comments_count, body input[type="submit"]:hover, body input[type="submit"]:focus, .mean-container .mean-bar, .mean-container .mean-bar .mean-nav ul li a.meanmenu-reveal, .mean-container .mean-bar .mean-nav ul li a.mean-expand:hover',
+                'elements'	=>	'a#scroll-top, .read-more, .read-more.black:hover, .pager li > a:hover, .pager li > a:focus, #home-slider .slide-content .btn, table thead, a#scroll-top, .post-meta-info .entry-meta .comments_count, body input[type="submit"]:hover, body input[type="submit"]:focus, .mean-container .mean-bar, .mean-container .mean-bar .mean-nav ul li a.meanmenu-reveal, .mean-container .mean-bar .mean-nav ul li a.mean-expand:hover',
                 'property'	=>	'background-color',
                 'value'		=> 	$theme_color
             ),
 
             /* Background style */
             array(
-                'elements'	=>	'nav.main-menu ul > li:hover > a, nav.main-menu ul > .current-menu-item > a, nav.main-menu ul .current_page_item > a, nav.main-menu ul > li:hover > a, nav.main-menu ul > .current-menu-item > a, .mean-container a.meanmenu-reveal, .comment a.btn, .error-404, .mean-container .mean-bar .meanmenu-reveal ',
+                'elements'	=>	'nav.main-menu ul > li:hover > a, nav.main-menu ul > .current-menu-item > a, nav.main-menu ul .current_page_item > a, nav.main-menu ul > li:hover > a, nav.main-menu ul > .current-menu-item > a, .mean-container a.meanmenu-reveal, .comment a.btn, .error-404, .mean-container .mean-bar .meanmenu-reveal, #home-slider .owl-dots .owl-dot.active span, #home-slider .owl-dots .owl-dot:hover span ',
                 'property'	=>	'background',
                 'value'		=> 	$theme_color
             ),
 
             /* Border Color style */
             array(
-                'elements'	=>	'.wp-caption, .header-top, nav.main-menu ul > li ul, .pager li > a:hover, .pager li > a:focus, #colophon, .entry-content blockquote, .post-meta-info .entry-meta, .comment a.btn, body input[type="text"]:focus, body input[type="email"]:focus, body input[type="url"]:focus, body input[type="tel"]:focus, body input[type="number"]:focus, body input[type="date"]:focus, body input[type="range"]:focus, body input[type="password"]:focus, body input[type="text"]:focus, body textarea:focus, body .form-control:focus, select:focus ',
+                'elements'	=>	'.wp-caption, .header-top, nav.main-menu ul > li ul, .pager li > a:hover, .pager li > a:focus, #colophon, .entry-content blockquote, .post-meta-info .entry-meta, .comment a.btn, body input[type="text"]:focus, body input[type="email"]:focus, body input[type="url"]:focus, body input[type="tel"]:focus, body input[type="number"]:focus, body input[type="date"]:focus, body input[type="range"]:focus, body input[type="password"]:focus, body input[type="text"]:focus, body textarea:focus, body .form-control:focus, select:focus, table thead th ',
                 'property'	=>	'border-color',
                 'value'		=> 	$theme_color
             ),
+
 
             /* Light color style */
             array(
@@ -78,13 +79,14 @@ if( !function_exists( 'generate_dynamic_css' ) ){
                 'property'	=>	'background',
                 'value'		=> 	$theme_color_light
             ),
+
             array(
                 'elements'	=>	'.error-404 a',
                 'property'	=>	'color',
                 'value'		=> 	$theme_color_light
             ),
             array(
-                'elements'	=>	'.comment-form .alert-info',
+                'elements'	=>	'.comment-form .alert-info, table thead th',
                 'property'	=>	'border-color',
                 'value'		=> 	$theme_color_light
             ),
