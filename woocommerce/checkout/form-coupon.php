@@ -10,17 +10,14 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see     https://docs.woocommerce.com/document/template-structure/
- * @author  WooThemes
+ * @see https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 3.3.0
+ * @version 3.4.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+defined( 'ABSPATH' ) || exit;
 
-if ( ! wc_coupons_enabled() ) {
+if ( ! wc_coupons_enabled() || ! empty( WC()->cart->applied_coupons ) ) { // @codingStandardsIgnoreLine.
 	return;
 }
 
@@ -28,19 +25,13 @@ if ( ! wc_coupons_enabled() ) {
 
 <div class="coupon-form-checkout">
 
-    <p class="coupon_link">
+	<div class="woocommerce-form-coupon-toggle">
    
-        <?php 
-		
-			if ( empty( WC()->cart->applied_coupons ) ) {
-				echo apply_filters( 'woocommerce_checkout_coupon_message', esc_html__( 'Have a coupon? ', 'bazaar-lite' ) . '<a href="#" class="showcoupon"> ' . esc_html__( 'Click here to enter your code', 'bazaar-lite' ) . '</a>' );
-			}
-		
-		?>
-   
-    </p>
+		<?php wc_print_notice( apply_filters( 'woocommerce_checkout_coupon_message', esc_attr__( 'Have a coupon?', 'bazaar-lite' ) . ' <a href="#" class="showcoupon">' . esc_attr__( 'Click here to enter your code', 'bazaar-lite' ) . '</a>' ), 'notice' ); ?>
+       
+    </div>
 
-    <form class="checkout_coupon" method="post" style="display:none">
+	<form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
     
         <p class="form-row form-row-first">
             <input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'bazaar-lite' ); ?>" id="coupon_code" value="" />

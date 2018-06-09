@@ -103,6 +103,32 @@
 	margin-bottom:0 !important;
 }
 
+.woocommerce .coupon-form-checkout p ,
+.woocommerce .coupon-form-checkout .woocommerce-error, 
+.woocommerce .coupon-form-checkout .woocommerce-message, 
+.woocommerce .coupon-form-checkout .woocommerce-info {
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+}
+
+.woocommerce .coupon-form-checkout .woocommerce-form-coupon-toggle .woocommerce-error, 
+.woocommerce .coupon-form-checkout .woocommerce-form-coupon-toggle .woocommerce-message, 
+.woocommerce .coupon-form-checkout .woocommerce-form-coupon-toggle .woocommerce-info {
+    outline: none;
+    margin-top: 0 !important;
+    padding: 0 0 0 2.5em!important;
+}
+
+.woocommerce .coupon-form-checkout .woocommerce-form-coupon-toggle .woocommerce-error::before, 
+.woocommerce .coupon-form-checkout .woocommerce-form-coupon-toggle .woocommerce-info::before, 
+.woocommerce .coupon-form-checkout .woocommerce-form-coupon-toggle .woocommerce-message::before {
+    left: 0;
+}
+
+.woocommerce .coupon-form-checkout .checkout_coupon p {
+	margin:15px 0;
+}
+
 .woocommerce table.shop_table.customer_details th, 
 .woocommerce table.shop_table.customer_details td,
 .woocommerce table.shop_table.customer_details tfoot td, 
