@@ -74,7 +74,7 @@ if ( ! function_exists( 'advance_blog_category' ) ) :
         // Hide category and tag text for pages.
         if ( 'post' === get_post_type() ) {
             /* translators: used between list items, there is a space after the comma */
-            $categories_list = get_the_category_list(esc_html__(', ', 'advance-blog'));
+            $categories_list = get_the_category_list(esc_html__(' ', 'advance-blog'));
             if ($categories_list && advance_blog_categorized_blog()) {
                 printf('<span class="cat-links">' . esc_html__(' %1$s', 'advance-blog') . '</span>', $categories_list); // WPCS: XSS OK.
             }
@@ -91,13 +91,13 @@ function advance_blog_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'advance-blog' ) );
+		$categories_list = get_the_category_list( esc_html__( ' ', 'advance-blog' ) );
 		if ( $categories_list && advance_blog_categorized_blog() ) {
 			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'advance-blog' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'advance-blog' ) );
+		$tags_list = get_the_tag_list( '', esc_html__( ' ', 'advance-blog' ) );
 		if ( $tags_list ) {
 			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'advance-blog' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}

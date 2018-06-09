@@ -50,7 +50,7 @@ if (!function_exists('advance_blog_get_default_theme_options')):
     function advance_blog_get_default_theme_options() {
         $defaults = array();
 
-        $defaults['enable_banner_slider']        = 1;
+        $defaults['enable_banner_slider']        = 0;
         $defaults['enable_featured_category']        = 0;
         $defaults['category_for_banner_slider'] = 1;
         $defaults['button_text_banner_slider'] = __('Continue Reading','advance-blog');

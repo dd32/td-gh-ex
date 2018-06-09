@@ -4,7 +4,7 @@ Theme URI: https://wpinterface.com/themes/advance-blog/
 Author: WPInterface
 Author URI: http://wpinterface.com
 Description: Advance Blog is a modern, clean, responsive and retina-ready WordPress blog theme also suitable for magazines, newspapers, or review sites. The theme comes with several awesome features, including a featured posts slideshow, a magazine homepage template, and a two columned layout
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-blog
@@ -433,7 +433,8 @@ textarea {
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
     font-size: 1rem;
-    line-height: 1.6;
+    font-weight: 300;
+    line-height: 1.8;
     word-wrap: break-word;
 }
 
@@ -451,6 +452,7 @@ h1, h2, h3, h4, h5, h6 {
 .content-area .entry-header .entry-meta {
     text-transform: uppercase;
     font-size: 12px;
+    font-weight: 400;
     letter-spacing: 3px;
 }
 
@@ -1485,18 +1487,6 @@ input[type="submit"],
     margin-bottom: 8px;
 }
 
-.main-slider .entry-meta.post-category a {
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    padding: 3px 5px;
-    color: #ff424e;
-    font-size: 18px;
-    display: inline-block;
-}
-
 .main-slider .posted-on a {
     color: #ff424e;
 }
@@ -1529,17 +1519,41 @@ input[type="submit"],
     padding: 0 60px;
 }
 
-.slide-content .entry-title a {
+.slide-content .entry-title a,
+.slide-content .entry-meta .posted-on,
+.slide-content .entry-meta .byline {
     background-color: rgba(239, 233, 221, 0.64);
     color: #000;
     display: inline;
-    font-size: 34px;
-    line-height: 1.5;
     -webkit-box-shadow: 10px 0 0 rgba(239, 233, 221, 0.64), -10px 0 0 rgba(239, 233, 221, 0.64);
     -moz-box-shadow: 10px 0 0 rgba(239, 233, 221, 0.64), -10px 0 0 rgba(239, 233, 221, 0.64);
     -ms-box-shadow: 10px 0 0 rgba(239, 233, 221, 0.64), -10px 0 0 rgba(239, 233, 221, 0.64);
     -o-box-shadow: 10px 0 0 rgba(239, 233, 221, 0.64), -10px 0 0 rgba(239, 233, 221, 0.64);
     box-shadow: 10px 0 0 rgba(239, 233, 221, 0.64), -10px 0 0 rgba(239, 233, 221, 0.64);
+}
+
+.entry-meta .cat-links a,
+.entry-footer .cat-links a {
+    background: #ff424e;
+    color: #fff;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    padding: 3px 5px;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.slide-content .entry-meta .posted-on,
+.slide-content .entry-meta .byline {
+    padding: 5px;
+}
+
+.slide-content .entry-title a {
+    font-size: 34px;
+    line-height: 1.5;
 }
 
 .slide-item {
@@ -1805,7 +1819,6 @@ input[type="submit"],
     margin: 0 auto 30px;
 }
 
-.byline,
 .updated:not(.published) {
     display: none;
 }
@@ -1818,7 +1831,7 @@ input[type="submit"],
 .page-content,
 .entry-content,
 .entry-summary {
-    margin: 1.5em 0 0;
+    margin: 0 auto;
 }
 
 /*--------------------------------------------------------------
@@ -1907,6 +1920,10 @@ ul.comment-list li {
     font-style: normal;
 }
 
+.comments-title {
+    font-weight: 400;
+}
+
 .comment-list .comment-meta {
     margin-left: 80px;
 }
@@ -1942,7 +1959,6 @@ ul.comment-list li {
 
 .comment-list .comment-author .fn {
     font-style: normal;
-    text-transform: uppercase;
 }
 
 .comment-list .comment-author .fn a {
@@ -1950,9 +1966,7 @@ ul.comment-list li {
     text-decoration: none;
     font-size: 14px;
     font-style: normal;
-    font-weight: 300;
-    text-transform: uppercase;
-
+    font-weight: 700;
 }
 
 .comment-list .form-submit {
@@ -1962,7 +1976,6 @@ ul.comment-list li {
 .comment-list .comment-meta a {
     text-decoration: none;
     font-size: 11px;
-    text-transform: capitalize;
     color: #949494;
 }
 
@@ -2355,13 +2368,8 @@ object {
 .footer-widget-area,
 .footer-widget-area li,
 .footer-widget-area li a,
-.site-info{
+.site-info {
     border-color: #dcd1bb !important;
-    font-size: 14px;
-}
-
-.widget_categories li a {
-    text-transform: uppercase;
 }
 
 .site-info {
@@ -2436,7 +2444,7 @@ object {
         display: none;
     }
 
-    .style-archive .post-thumbnail .background{
+    .style-archive .post-thumbnail .background {
         height: 340px;
     }
 }

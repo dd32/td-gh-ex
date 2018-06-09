@@ -69,13 +69,20 @@ if (!function_exists('advance_blog_render_theme_settings_metabox')) :
             });
         </script>
         <div class="pagebox">
+            <label for="meta-checkbox">
+                <input type="checkbox" name="advance-blog-meta-checkbox" id="advance-blog-meta-checkbox"
+                       value="yes" <?php if (isset ($advance_blog_post_meta_value['advance-blog-meta-checkbox'])) checked($advance_blog_post_meta_value['advance-blog-meta-checkbox'][0], 'yes'); ?> />
+                <?php _e('Check To dissable Featured Image from single page', 'advance-blog') ?>
+            </label>
+        </div>
+        <div class="pagebox">
             <p><?php esc_attr_e('Choose a color for your Post Backgorund.', 'advance-blog' ); ?></p>
-            <input class="color_field" type="hidden" name="advance_blog_background_color" value="<?php echo esc_html( $bg_color ); ?>"/>
+            <input class="color_field" type="text" name="advance_blog_background_color" value="<?php echo esc_html( $bg_color ); ?>"/>
         </div>
 
         <div class="pagebox">
             <p><?php esc_attr_e('Choose a color for your Post Text.', 'advance-blog' ); ?></p>
-            <input class="color_field" type="hidden" name="advance_blog_text_color" value="<?php echo esc_html( $text_color ); ?>"/>
+            <input class="color_field" type="text" name="advance_blog_text_color" value="<?php echo esc_html( $text_color ); ?>"/>
         </div>
         <?php
     }
@@ -119,6 +126,9 @@ if (!function_exists('advance_blog_save_theme_settings_meta')) :
         } else if (!current_user_can('edit_post', $post_id)) {
             return;
         }
+         $advance_blog_meta_checkbox = isset($_POST['advance-blog-meta-checkbox']) ? esc_attr($_POST['advance-blog-meta-checkbox']) : '';
+        update_post_meta($post_id, 'advance-blog-meta-checkbox', sanitize_text_field($advance_blog_meta_checkbox));
+
 
         $advance_blog_background_color = (isset($_POST['advance_blog_background_color']) && $_POST['advance_blog_background_color']!='') ? $_POST['advance_blog_background_color'] : '';
         update_post_meta($post_id, 'advance_blog_background_color', $advance_blog_background_color);

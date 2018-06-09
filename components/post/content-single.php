@@ -10,13 +10,17 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php if ( '' != get_the_post_thumbnail() ) : ?>
-        <div class="post-thumbnail">
-            <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail( 'full' ); ?>
-            </a>
-        </div>
-    <?php endif; ?>
+    <?php
+    $single_post_featured_image = get_post_meta($post->ID, 'advance-blog-meta-checkbox', true);
+     if ($single_post_featured_image == '') { ?>
+        <?php if ( '' != get_the_post_thumbnail() ) : ?>
+            <div class="post-thumbnail">
+                <a href="<?php the_permalink(); ?>">
+                    <?php the_post_thumbnail( 'full' ); ?>
+                </a>
+            </div>
+        <?php endif; ?>
+    <?php } ?>
 
     <header class="entry-header">
         <?php
