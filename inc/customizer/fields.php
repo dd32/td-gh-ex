@@ -25,7 +25,7 @@ Kirki::add_field( 'best_blog', array(
 	'type'        => 'custom',
 	'settings'    => 'best_blog_view_link_pro',
 	'section'     => 'bestblog_upgradepro_options',
-	'default'     => '<a class="button-error  button-upsell" target="_blank" href="' . esc_url( 'https://www.imonthemes.com/best-blog-wordpress-theme/#panel-3392-13-0-1' ) . '">'.esc_html__( 'Upgrade To Pro', 'best-blog' ).'</a>',
+	'default'     => '<a class="button-error  button-upsell" target="_blank" href="' . esc_url( 'https://www.imonthemes.com/best-blog-wordpress-theme/#panel-3392-13-0-1' ) . '">'.esc_html__( 'Upgrade To Pro - $29', 'best-blog' ).'</a>',
 	'priority'    => 10,
 ) );
 

@@ -33,12 +33,14 @@
 }
 add_filter( 'pt-ocdi/import_files', 'bestblog_import_files' );
 
+add_action( 'pt-ocdi/enable_wp_customize_save_hooks', '__return_true' );
+
 
 add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 
 add_filter( 'pt-ocdi/regenerate_thumbnails_in_content_import', '__return_false' );
 
-if ( ! function_exists( 'bestblog_pro_after_import' ) ) :
+if ( ! function_exists( 'bestblog_after_import' ) ) :
 function bestblog_after_import( ) {
 
         //Set Menu
