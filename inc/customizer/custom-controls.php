@@ -83,7 +83,7 @@ function adonis_custom_controls( $wp_customize ) {
 		public $type = 'description';
 
 		public function render_content() {
-			echo '<h2 class="description">' .  $this->label . '</h2>'; // WPCS: XSS OK.
+			echo '<h2 class="description">' . $this->label . '</h2>'; // WPCS: XSS OK.
 		}
 	}
 }

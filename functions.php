@@ -470,6 +470,11 @@ function adonis_register_required_plugins() {
 			'name' => 'To top',
 			'slug' => 'to-top',
 		),
+		// Catch Gallery.
+		array(
+			'name' => 'Catch Gallery',
+			'slug' => 'catch-gallery',
+		),
 	);
 
 	if ( ! class_exists( 'Catch_Infinite_Scroll_Pro' ) ) {

@@ -111,15 +111,15 @@ endif;
 function adonis_footer_content() {
 	$theme_data = wp_get_theme();
 
-	$footer_content = get_theme_mod( 'adonis_footer_content', sprintf( _x( 'Copyright &copy; %1$s %2$s', '1: Year, 2: Site Title with home URL', 'adonis' ), '[the-year]', '[site-link]' ) . '<span class="sep"> | </span>' . $theme_data->get( 'Name' ) . '&nbsp;' . esc_html__( 'by', 'adonis' ) . '&nbsp;<a target="_blank" href="' . $theme_data->get( 'AuthorURI' ) . '">' . esc_html( $theme_data->get( 'Author' ) ) . '</a>' );
+	$footer_content = get_theme_mod( 'adonis_footer_content', sprintf( _x( 'Copyright &copy; %1$s %2$s %3$s', '1: Year, 2: Site Title with home URL, 3: Privacy Policy Link','adonis' ), '[the-year]', '[site-link]', '[privacy-policy-link]' ) . '<span class="sep"> | </span>' . $theme_data->get( 'Name' ) . '&nbsp;' . esc_html__( 'by', 'adonis' ) . '&nbsp;<a target="_blank" href="' . $theme_data->get( 'AuthorURI' ) . '">' . esc_html( $theme_data->get( 'Author' ) ) . '</a>' );
 
 	if ( ! $footer_content ) {
 		// Bail early if footer content is empty
 		return;
 	}
 
-	$search  = array( '[the-year]', '[site-link]' );
-	$replace = array( esc_attr( date_i18n( __( 'Y', 'adonis' ) ) ), '<a href="'. esc_url( home_url( '/' ) ) .'">'. esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>' );
+	$search  = array( '[the-year]', '[site-link]', '[privacy-policy-link]' );
+	$replace = array( esc_attr( date_i18n( __( 'Y', 'adonis' ) ) ), '<a href="'. esc_url( home_url( '/' ) ) .'">'. esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>', get_the_privacy_policy_link() );
 
 	$footer_content = str_replace( $search, $replace, $footer_content );
 

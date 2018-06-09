@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Adonis\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-04-09 16:19+0545\n"
+"POT-Creation-Date: 2018-06-10 01:28+0545\n"
 "PO-Revision-Date: 2016-12-07 00:45-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -141,20 +141,20 @@ msgstr ""
 msgid "Error 404"
 msgstr ""
 
-#: ../inc/breadcrumb.php:81 ../inc/breadcrumb.php:84 ../inc/breadcrumb.php:89
-#: ../inc/breadcrumb.php:95 ../inc/template-tags.php:122
+#: ../inc/breadcrumb.php:80 ../inc/breadcrumb.php:83 ../inc/breadcrumb.php:88
+#: ../inc/breadcrumb.php:94 ../inc/template-tags.php:122
 msgid "Y"
 msgstr ""
 
-#: ../inc/breadcrumb.php:84 ../inc/breadcrumb.php:91
+#: ../inc/breadcrumb.php:83 ../inc/breadcrumb.php:90
 msgid "F"
 msgstr ""
 
-#: ../inc/breadcrumb.php:86
+#: ../inc/breadcrumb.php:85
 msgid "d"
 msgstr ""
 
-#: ../inc/breadcrumb.php:177
+#: ../inc/breadcrumb.php:176
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -1322,8 +1322,8 @@ msgstr ""
 
 #: ../inc/template-tags.php:114
 #, php-format
-msgctxt "1: Year, 2: Site Title with home URL"
-msgid "Copyright &copy; %1$s %2$s"
+msgctxt "1: Year, 2: Site Title with home URL, 3: Privacy Policy Link"
+msgid "Copyright &copy; %1$s %2$s %3$s"
 msgstr ""
 
 #: ../inc/template-tags.php:114

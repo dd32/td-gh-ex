@@ -53,7 +53,6 @@ if ( ! function_exists( 'adonis_breadcrumb' ) ) :
 					echo '</nav><!-- .entry-breadcrumbs -->
 				</div><!-- .breadcrumb-area -->';
 			}
-
 		} else {
 			echo '<div class="breadcrumb-area custom">
 				<nav class="entry-breadcrumbs">';
