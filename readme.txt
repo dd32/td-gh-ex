@@ -2,7 +2,7 @@
 Contributors: thinkupthemes
 Requires at least: 4.6
 Tested up to: 4.9.4
-Version: 1.0.4
+Version: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
@@ -51,6 +51,9 @@ Alante Business is a child theme or Alante and as such uses the same opensource 
 
 
 == Changelog ==
+
+= 1.0.5
+- Updated: Theme and author url's in style.css updated to use https.
 
 = 1.0.4
 - Updated: Readme file updated to ensure format is consistent with upcoming wordpress.org update to align themes with plugin directory.
