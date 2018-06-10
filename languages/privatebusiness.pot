@@ -2,14 +2,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PrivateBusiness\n"
-"POT-Creation-Date: 2018-06-09 20:27+0200\n"
+"POT-Creation-Date: 2018-06-11 00:10+0200\n"
 "PO-Revision-Date: 2015-11-15 22:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.7\n"
+"X-Generator: Poedit 2.0.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -208,7 +208,7 @@ msgid "PrivateBusiness"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://wordpress.org/themes/privatebusiness"
+msgid "https://www.guido.site/themes"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -226,4 +226,8 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://www.guido.site"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Full Width Template"
 msgstr ""
