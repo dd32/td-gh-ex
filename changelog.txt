@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+PrivateBusiness version 6.8 - june 2018
+- file comments: minor fix
+- updated file style
+- updated theme author info
+
 PrivateBusiness version 6.7 - february 2018
 - several small adjustments
 - updated files style and custom-editor-style
