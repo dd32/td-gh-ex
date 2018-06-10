@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+GridBulletin version 6.2 - june 2018
+- file comments: minor fix
+- updated file style
+- updated theme author info
+
 GridBulletin version 6.1 - february 2018
 - several small adjustments
 - updated files style and custom-editor-style
