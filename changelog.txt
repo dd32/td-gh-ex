@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+DarkOrange version 6.5 - june 2018
+- file comments: minor fix
+- updated file style
+- updated theme author info
+
 DarkOrange version 6.4 - february 2018
 - several small adjustments
 - updated files style and custom-editor-style
