@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+DarkElements version 6.2 - june 2018
+- fixed mistake in POT file
+- readme file: removed donate link
+
 DarkElements version 6.1 - june 2018
 - file comments: minor fix
 - updated file style
