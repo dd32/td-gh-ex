@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+LeftSide version 5.7 - june 2018
+- file comments: minor fix
+- updated file style
+- updated theme author info
+
 LeftSide version 5.6 - february 2018
 - several small adjustments
 - updated files style and custom-editor-style
