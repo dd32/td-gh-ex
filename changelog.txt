@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+DarkElements version 6.1 - june 2018
+- file comments: minor fix
+- updated file style
+- updated theme author info
+
 DarkElements version 6.0 - february 2018
 - several small adjustments
 - updated files style and custom-editor-style

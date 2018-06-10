@@ -1,9 +1,9 @@
 /*
 Theme Name: DarkElements
-Theme URI: https://www.guidovanderleest.nl/darkelements
-Version: 6.0
-Author: Guido van der Leest
-Author URI: https://www.guidovanderleest.nl
+Theme URI: https://www.guido.site/themes
+Version: 6.1
+Author: Guido
+Author URI: https://www.guido.site
 Description: DarkElements is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, sidebar navigation, footer widgets, custom header image, custom background, custom logo to replace site title and tagline. For more info please check readme file. Enjoy.
 Tags: two-columns, left-sidebar, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, microformats, translation-ready
 License: GNU General Public License v3 or later
@@ -58,8 +58,12 @@ table {
 }
 
 
+/* HTML */
+html {-webkit-text-size-adjust:100%;}
+
+
 /* BODY AND CONTAINER */
-body {-webkit-text-size-adjust:100%; background:#333; color:#ddd; font-family:'Open Sans', sans-serif; font-size:15px; line-height:1.5; text-align:left; word-wrap:break-word;}
+body {background:#333; color:#ddd; font-family:'Open Sans', sans-serif; font-size:15px; line-height:1.5; text-align:left; word-wrap:break-word;}
 #container {max-width:1000px; position:relative; margin:20px 0 20px 20px;}
 #container:after {content:''; display:block; height:0; clear:both;}
 
@@ -117,13 +121,13 @@ dd {margin:0 0 0 20px;}
 
 
 /* INPUTS */
-input, select, textarea {-webkit-appearance:none; -moz-appearance:none; border:1px solid #ddd; padding:2px 5px; background:none; color:#ddd; font-size:1em; font-family:'Open Sans', sans-serif; border-radius:5px;}
+input, select, textarea {-webkit-appearance:none; -moz-appearance:none; border:1px solid #ddd; padding:2px 5px; background:none; color:#ddd; font-size:inherit; font-family:inherit; border-radius:5px;}
 input[type="submit"], input[type="reset"], input[type="button"], button {cursor:pointer; border:0; padding:2px 5px; background:#ddd; color:#333;}
 input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover {background:#e77776; color:#ddd;}
 input[type="checkbox"] {-webkit-appearance:checkbox; -moz-appearance:checkbox;}
 input[type="radio"] {-webkit-appearance:radio; -moz-appearance:radio;}
 select {-webkit-appearance:menulist; -moz-appearance:menulist; max-width:100%; background:#fff; color:#333;}
-button {font-size:1em; font-family:'Open Sans', sans-serif;}
+button {font-size:inherit; font-family:inherit;}
 
 
 /* SIDEBAR */

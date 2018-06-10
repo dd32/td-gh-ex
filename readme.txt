@@ -1,7 +1,7 @@
 === DarkElements ===
 Contributors: Guido07111975
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 6.0
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donate%40guido%2esite
+Version: 6.1
 Requires at least: 4.2
 Tested up to: 4.9
 License: GNU General Public License v3 or later
@@ -56,8 +56,8 @@ And you can change the way how posts are displayed via WordPress Dashboard > App
 = Images =
 * Item: boats.jpg
 * Item: back.png
-* Copyright author: Guido van der Leest
-* Author URI: https://www.guidovanderleest.nl
+* Copyright author: Guido
+* Author URI: https://www.guido.site
 * GNU General Public License v3 or later
 * https://www.gnu.org/licenses/gpl-3.0.html
 
