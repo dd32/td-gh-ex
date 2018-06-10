@@ -1,12 +1,12 @@
 <?php
 /**
- * Setup theme functions for Engrave.
+ * Setup theme functions for Renden.
  *
  * @package ThinkUpThemes
  */
 
 // Declare latest theme version
-$GLOBALS['thinkup_theme_version'] = '1.4.3';
+$GLOBALS['thinkup_theme_version'] = '1.4.4';
 
 // Setup content width 
 function thinkup_content_width() {
