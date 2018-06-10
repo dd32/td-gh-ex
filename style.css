@@ -1,9 +1,9 @@
 /*
 Theme Name: MyKnowledgeBase
-Theme URI: https://www.guidovanderleest.nl/myknowledgebase
-Version: 6.0
-Author: Guido van der Leest
-Author URI: https://www.guidovanderleest.nl
+Theme URI: https://www.guido.site/themes
+Version: 6.1
+Author: Guido
+Author URI: https://www.guido.site
 Description: MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Link Portal with a custom page template and using the native categories and posts. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
 Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, microformats, translation-ready
 License: GNU General Public License v3 or later
@@ -58,8 +58,12 @@ table {
 }
 
 
+/* HTML */
+html {-webkit-text-size-adjust:100%;}
+
+
 /* BODY AND CONTAINER */
-body {-webkit-text-size-adjust:100%; background:#fff; color:#333; font-family:'Open Sans', sans-serif; font-size:15px; line-height:1.5; text-align:left; word-wrap:break-word;}
+body {background:#fff; color:#333; font-family:'Open Sans', sans-serif; font-size:15px; line-height:1.5; text-align:left; word-wrap:break-word;}
 #container {max-width:1200px; position:relative; margin:0 auto; padding:0 20px;}
 #container:after {content:''; display:block; height:0; clear:both;}
 
@@ -118,13 +122,13 @@ dd {margin:0 0 0 20px;}
 
 
 /* INPUTS */
-input, select, textarea {-webkit-appearance:none; -moz-appearance:none; border:1px solid #eee; padding:2px 5px; background:none; color:#333; font-size:1em; font-family:'Open Sans', sans-serif;}
+input, select, textarea {-webkit-appearance:none; -moz-appearance:none; border:1px solid #eee; padding:2px 5px; background:none; color:#333; font-size:inherit; font-family:inherit;}
 input[type="submit"], input[type="reset"], input[type="button"], button {cursor:pointer; border:0; padding:2px 5px; background:#08a0ff; color:#fff;}
 input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover {background:#333;}
 input[type="checkbox"] {-webkit-appearance:checkbox; -moz-appearance:checkbox;}
 input[type="radio"] {-webkit-appearance:radio; -moz-appearance:radio;}
 select {-webkit-appearance:menulist; -moz-appearance:menulist; max-width:100%; background:#fff; color:#333;}
-button {font-size:1em; font-family:'Open Sans', sans-serif;}
+button {font-size:inherit; font-family:inherit;}
 
 
 /* INPUTS ON BLUE BACKGROUND */

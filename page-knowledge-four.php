@@ -41,7 +41,9 @@
 			echo '<ul class="cat-list"><li class="cat-name"><a href="' . get_category_link( $cat->cat_ID ) . '" title="' . $cat->name . '" >' . $cat->name . '</a></li>';	
 
 			if ( get_theme_mod( 'myknowledgebase_cat_description' ) == 'yes' ) :
-				echo '<div class="cat-description">'. wp_kses_post( category_description( $cat->cat_ID ) ) .'</div>'; 
+				if ( category_description( $cat->cat_ID ) ) :
+					echo '<div class="cat-description">'. wp_kses_post( category_description( $cat->cat_ID ) ) .'</div>'; 
+				endif;
 			endif;
 
 			if ( get_theme_mod( 'myknowledgebase_posts' ) ) :

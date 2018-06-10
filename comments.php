@@ -12,7 +12,7 @@ if ( post_password_required() )
 <div id="comments">
 	<?php if ( have_comments() ) : ?>
 		<h4 class="comments-title">
-			<?php printf( _n( '1 comment on %2$s', '%1$s comments on %2$s', get_comments_number(), 'myknowledgebase' ), number_format_i18n( get_comments_number() ), get_the_title() ); ?>
+			<?php printf( _n( '%1$s comment on %2$s', '%1$s comments on %2$s', get_comments_number(), 'myknowledgebase' ), number_format_i18n( get_comments_number() ), get_the_title() ); ?>
 		</h4>
 
 		<ol class="comment-list">
