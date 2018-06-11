@@ -1016,198 +1016,202 @@ msgid "Footer Widget Area"
 msgstr ""
 
 #: includes/options-config.php:444
+msgid "Enable Scroll To Top"
+msgstr ""
+
+#: includes/options-config.php:450
 msgid "Footer Copyright Text (Validated that it's HTML Allowed)"
 msgstr ""
 
-#: includes/options-config.php:445
+#: includes/options-config.php:451
 msgid "HTML Allowed. <b>This field is even HTML validated! </b>"
 msgstr ""
 
-#: includes/options-config.php:451
+#: includes/options-config.php:457
 msgid "Blog"
 msgstr ""
 
-#: includes/options-config.php:452
+#: includes/options-config.php:458
 msgid "Blog Related Posts options"
 msgstr ""
 
-#: includes/options-config.php:456
+#: includes/options-config.php:462
 msgid "Enable Featured Image"
 msgstr ""
 
-#: includes/options-config.php:462
+#: includes/options-config.php:468
 msgid "Choose the featured image display type for Blog Page "
 msgstr ""
 
-#: includes/options-config.php:464, includes/options-config.php:486
+#: includes/options-config.php:470, includes/options-config.php:492
 msgid "Large Featured Image"
 msgstr ""
 
-#: includes/options-config.php:465, includes/options-config.php:487
+#: includes/options-config.php:471, includes/options-config.php:493
 msgid "Small Featured Image"
 msgstr ""
 
-#: includes/options-config.php:473
+#: includes/options-config.php:479
 msgid "Single Blog"
 msgstr ""
 
-#: includes/options-config.php:474
+#: includes/options-config.php:480
 msgid "Single Blog page Related Posts options"
 msgstr ""
 
-#: includes/options-config.php:478
+#: includes/options-config.php:484
 msgid "Enable Single Post Featured Image"
 msgstr ""
 
-#: includes/options-config.php:484
+#: includes/options-config.php:490
 msgid "Choose the featured image display type for Single Page "
 msgstr ""
 
-#: includes/options-config.php:494
+#: includes/options-config.php:500
 msgid " Enable Social Sharing Box below single post"
 msgstr ""
 
-#: includes/options-config.php:500
+#: includes/options-config.php:506
 msgid " Enable Facebook Sharing option below single post"
 msgstr ""
 
-#: includes/options-config.php:506
+#: includes/options-config.php:512
 msgid " Enable Twitter Sharing option below single post"
 msgstr ""
 
-#: includes/options-config.php:512
+#: includes/options-config.php:518
 msgid " Enable Linkedin Sharing option below single post"
 msgstr ""
 
-#: includes/options-config.php:518
+#: includes/options-config.php:524
 msgid " Enable Google Plus Sharing option below single post"
 msgstr ""
 
-#: includes/options-config.php:524
+#: includes/options-config.php:530
 msgid " Enable Email Sharing option below single post"
 msgstr ""
 
-#: includes/options-config.php:530
+#: includes/options-config.php:536
 msgid " Enable Author Bio Box below single post"
 msgstr ""
 
-#: includes/options-config.php:536
+#: includes/options-config.php:542
 msgid "Show Related posts"
 msgstr ""
 
-#: includes/options-config.php:542
+#: includes/options-config.php:548
 msgid "Related Posts Must Be Shown As:"
 msgstr ""
 
-#: includes/options-config.php:544
+#: includes/options-config.php:550
 msgid "Related Posts By Tags"
 msgstr ""
 
-#: includes/options-config.php:545
+#: includes/options-config.php:551
 msgid "Related Posts By Categories"
 msgstr ""
 
-#: includes/options-config.php:556
+#: includes/options-config.php:562
 msgid " Home Options"
 msgstr ""
 
-#: includes/options-config.php:557
+#: includes/options-config.php:563
 msgid " Select Front page display as a static front page in order to visible the following sections"
 msgstr ""
 
-#: includes/options-config.php:560
+#: includes/options-config.php:566
 msgid "Section: Slider"
 msgstr ""
 
-#: includes/options-config.php:564
+#: includes/options-config.php:570
 msgid "Enable Home Page Slider Section"
 msgstr ""
 
-#: includes/options-config.php:570, includes/options-config.php:654
+#: includes/options-config.php:576, includes/options-config.php:660
 msgid "Slider Posts Category"
 msgstr ""
 
-#: includes/options-config.php:575
+#: includes/options-config.php:581
 msgid "No. of Sliders"
 msgstr ""
 
-#: includes/options-config.php:582
+#: includes/options-config.php:588
 msgid "Section: Service"
 msgstr ""
 
-#: includes/options-config.php:583
+#: includes/options-config.php:589
 msgid " Select Front page display as a static front page in order to visible this section, Service related options"
 msgstr ""
 
-#: includes/options-config.php:587
+#: includes/options-config.php:593
 msgid "Enable Home Page Service Section"
 msgstr ""
 
-#: includes/options-config.php:593, includes/options-config.php:626
+#: includes/options-config.php:599, includes/options-config.php:632
 msgid "Section Title & Description"
 msgstr ""
 
-#: includes/options-config.php:597
+#: includes/options-config.php:603
 msgid "Service Section #1"
 msgstr ""
 
-#: includes/options-config.php:602
+#: includes/options-config.php:608
 msgid "Service Section #2"
 msgstr ""
 
-#: includes/options-config.php:607
+#: includes/options-config.php:613
 msgid "Service Section #3"
 msgstr ""
 
-#: includes/options-config.php:614
+#: includes/options-config.php:620
 msgid "Recent Blog"
 msgstr ""
 
-#: includes/options-config.php:615
+#: includes/options-config.php:621
 msgid "Recent Posts related option"
 msgstr ""
 
-#: includes/options-config.php:619
+#: includes/options-config.php:625
 msgid "Enable Home Page Recent Post Section"
 msgstr ""
 
-#: includes/options-config.php:620
+#: includes/options-config.php:626
 msgid "Enable recent post section in home page"
 msgstr ""
 
-#: includes/options-config.php:630
+#: includes/options-config.php:636
 msgid "No. of Recent Posts"
 msgstr ""
 
-#: includes/options-config.php:637
+#: includes/options-config.php:643
 msgid "Exclude the Posts from Home Page. Post IDs, separated by commas."
 msgstr ""
 
-#: includes/options-config.php:643
+#: includes/options-config.php:649
 msgid "Flex Carousel"
 msgstr ""
 
-#: includes/options-config.php:644
+#: includes/options-config.php:650
 msgid "Enable this option for Displaying client logos"
 msgstr ""
 
-#: includes/options-config.php:648
+#: includes/options-config.php:654
 msgid "Enable Home Page Carousel Section"
 msgstr ""
 
-#: includes/options-config.php:660
+#: includes/options-config.php:666
 msgid "Page Content"
 msgstr ""
 
-#: includes/options-config.php:661
+#: includes/options-config.php:667
 msgid "Default Page content related option"
 msgstr ""
 
-#: includes/options-config.php:665
+#: includes/options-config.php:671
 msgid "Enable Home Page Default Content"
 msgstr ""
 
-#: includes/options-config.php:666
+#: includes/options-config.php:672
 msgid "Enable home page default content"
 msgstr ""
 

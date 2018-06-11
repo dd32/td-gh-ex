@@ -2927,8 +2927,6 @@ blockquote, q {
     .site-footer .footer-widgets .calendar_wrap tbody tr:nth-child(even) th, .site-footer .footer-widgets .calendar_wrap tbody tr:nth-child(even) td {
       background-color: #18191b;
       color: #fff; }
-    .site-footer .footer-widgets .calendar_wrap thead th {
-      color: #18191b; }
     .site-footer .footer-widgets .widget_calendar table caption {
       background: #fab702; }
     .site-footer .footer-widgets select {
@@ -2958,6 +2956,23 @@ blockquote, q {
       color: #fff; }
     .site-footer .footer-widgets .widget_rss ul li {
       background: none; }
+  .site-footer .scroll-to-top {
+    background: #fab702;
+    color: #fff;
+    bottom: 3%;
+    cursor: pointer;
+    position: fixed;
+    left: 20px;
+    z-index: 999;
+    text-align: center;
+    line-height: 40px;
+    width: 40px;
+    background-clip: padding-box;
+    
+    border-radius: 4px;
+    transition: background-color 0.3s linear; }
+  .site-footer .scroll-to-top:hover {
+    background: rgba(250, 183, 2, 0.8); }
 
 .site-info {
   background: rgba(0, 0, 0, 0.5); }

@@ -4,7 +4,7 @@ Theme URI: https://www.webulousthemes.com/beautify/
 Author: N. Venkat Raj
 Author URI: https://www.webulousthemes.com/
 Description: Beautify is a beautiful and Flexible WordPress Free theme. Can be used for Interior,Photography,corporate business, Cafe and Restarutant.There is no theme options panel, instead uses Customizer, core feature of WordPress and comes with lots of options to customize. Has 3 Footer Widget Areas.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: beautify
@@ -3007,8 +3007,6 @@ blockquote, q {
     .site-footer .footer-widgets .calendar_wrap tbody tr:nth-child(even) th, .site-footer .footer-widgets .calendar_wrap tbody tr:nth-child(even) td {
       background-color: #18191b;
       color: #fff; }
-    .site-footer .footer-widgets .calendar_wrap thead th {
-      color: #18191b; }
     .site-footer .footer-widgets .widget_calendar table caption {
       background: #fab702; }
     .site-footer .footer-widgets select {
@@ -3038,6 +3036,23 @@ blockquote, q {
       color: #fff; }
     .site-footer .footer-widgets .widget_rss ul li {
       background: none; }
+  .site-footer .scroll-to-top {
+    background: #fab702;
+    color: #fff;
+    bottom: 3%;
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    z-index: 999;
+    text-align: center;
+    line-height: 40px;
+    width: 40px;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+    border-radius: 4px;
+    transition: background-color 0.3s linear; }
+  .site-footer .scroll-to-top:hover {
+    background: rgba(250, 183, 2, 0.8); }
 
 .site-info {
   background: rgba(0, 0, 0, 0.5); }

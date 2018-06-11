@@ -439,6 +439,12 @@ function beautify_display_upgrade() {
 								'default' => 1,
 								'sanitize_callback' => 'beautify_boolean',
 							),
+							'scroll_to_top' => array(
+								'type' => 'checkbox',
+								'label' => __('Enable Scroll To Top', 'beautify'),
+								'default' => 0,
+								'sanitize_callback' => 'beautify_boolean',
+							),
 							'copyright' => array(
                                 'type' => 'textarea',
                                 'label' => __('Footer Copyright Text (Validated that it\'s HTML Allowed)', 'beautify'),
