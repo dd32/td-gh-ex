@@ -95,7 +95,7 @@
 	<div class="col-md-6">
 	<div class="appointment-tab-pane-half">
 		<p><strong><?php esc_html_e( 'Well Documented', 'appointment' ); ?></strong></p>
-		<p><?php echo sprintf (__("We provide good knowledgebase articles which will help you to create effective websites. You can visit these articles via our <a href='http://webriti.com/help/category/themes/appointment/' target='_blank'>Help Section</a>.","appointment")); ?></p>
+		<p><?php echo sprintf (__("We provide good knowledgebase articles which will help you to create effective websites. You can visit these articles via our <a href='https://webriti.com/help/category/themes/appointment/' target='_blank'>Help Section</a>.","appointment")); ?></p>
 		<hr>
 	</div>
 	</div>

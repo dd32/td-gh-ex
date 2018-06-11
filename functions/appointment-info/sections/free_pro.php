@@ -133,7 +133,8 @@
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
-						<li style="font-size:16px; line-height:80px; padding:15px;"><a href="http://webriti.com/support/categories/appointment" target="_blank"><?php _e('Webriti Support Forum','appointment'); ?></a></li>
+						<li style="font-size:16px; line-height:80px; padding:15px;"><a href="https://webriti.com/support/categories/appointment" target="_blank">
+						<?php _e('Webriti Support Forum','appointment'); ?></a></li>
 						
 					</ul><!-- /.features -->
 					
@@ -144,7 +145,7 @@
 		<div class="offer-content clearfix">
 			<div class="media pricing-content text-center padding10">
 				<div class="media-body">
-					<a href="<?php echo esc_url( 'http://webriti.com/appointment' ); ?>" target="_blank" class="btn btn-info btn-lg"><?php esc_html_e( 'Get Appointment PRO Now!','appointment' ); ?></a>
+					<a href="<?php echo esc_url( 'https://webriti.com/appointment' ); ?>" target="_blank" class="btn btn-info btn-lg"><?php esc_html_e( 'Get Appointment PRO Now!','appointment' ); ?></a>
 				</div>
 			</div>
 		</div>

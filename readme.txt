@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@Version 2.7.1
+Update links http to https.
 @Version 2.7
 1. fixed string translation issue in breadcrumb file.
 @Version 2.6.9
