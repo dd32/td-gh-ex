@@ -13,10 +13,19 @@ if (!empty($pages)):
                 <?php endif; ?>
                 <div class="front-service-texts">
                     <h3><?php echo esc_html($page->post_title); ?></h3>
-                    <?php $post_content = wp_kses_post($page->post_content); ?>
+                    <?php
+                    $post_content = wp_kses_post($page->post_content);
+                    $page_excerpt = wp_kses_post(get_the_excerpt($page->ID));
+                    if(empty($page_excerpt)):
+                    ?>
                     <p>
                         <?php echo wp_trim_words($post_content,'12','..');?>
                     </p>
+                    <?php else: ?>
+                    <p>
+                        <?php echo $page_excerpt;?>
+                    </p>
+                    <?php endif; ?>
                 </div>
                 <a href="<?php echo esc_url(get_permalink(absint($page->ID))); ?>"><?php echo esc_html__('Learn More','atlast-business'); ?></a>
             </div>

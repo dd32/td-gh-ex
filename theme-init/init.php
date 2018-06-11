@@ -1495,8 +1495,8 @@ if (!function_exists('atlast_customizer_settings')):
                 $wp_customize,
                 'changelog',
                 array(
-                    'title' => esc_html__('Whats New in 1.4.9', 'atlast-business'),
-                    'changelog_text' => esc_html__('Version 1.4.9 - Added Blog Carousel and New FontAwesome Fonts! We are getting for the major update 1.5.0 in the next days..', 'atlast-business'),
+                    'title' => esc_html__('Whats New in 1.5.0', 'atlast-business'),
+                    'changelog_text' => esc_html__('Version 1.5.0 - You can manipulate the service excerpt so you can show whatever you want in the services section. Stay tuned MAJOR update coming 1.6.0', 'atlast-business'),
                     'priority' => 1,
                     'capability' => 'edit_theme_options',
                 )
