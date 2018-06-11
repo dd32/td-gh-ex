@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 
 Requires at least: 4.5
 Tested up to: 4.9
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -27,6 +27,22 @@ A Portfolio is responsive, customizable and powerful professional WordPress them
 
 a-portfolio includes support for Infinite Scroll in Jetpack.
 
+== Copyright ==
+
+A portfolio WordPress Theme, Copyright 2018 easywp-themes.com
+A portfolio is distributed under the terms of the GNU GPL
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+
 == Changelog ==
 
 = 1.0.0 - May 1 2018 =
@@ -46,6 +62,9 @@ a-portfolio includes support for Infinite Scroll in Jetpack.
 = 1.0.4 - June 7 2018 =
 * escaping correction
 
+= 1.0.5 - June 11 2018 =
+* copyright issue fixed
+
 
 == Credits ==
 * A Portfolio is based on Underscores https://underscores.me/, (C)2018 easywp-themes, distributed under the terms of the GNU GPL v2 or later.(https://www.gnu.org/licenses/gpl-2.0.html)
@@ -61,6 +80,6 @@ a-portfolio includes support for Infinite Scroll in Jetpack.
 
 == Images Used in Screenshot == 
 
-All images used in the theme designed by buzthemes under GPL License
+All images used in the theme  under GPL License
 
 https://pxhere.com/en/photo/157335
