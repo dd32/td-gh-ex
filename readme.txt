@@ -4,8 +4,8 @@ Contributors: satoristudio
 Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 
 Requires at least: 4.0
-Tested up to: 4.9
-Stable tag: 1.8
+Tested up to: 4.9.2
+Stable tag: 1.8.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,11 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 1.8.1 / 27 February 2018
+Updated the bundled CMB2 library.
+Updated the bundled FontAwesome set to v5.
+Improved the behaviour of the "Hide thumbnail" post option.
 
 * 1.8 / 29 December 2017
 Improved WooCommerce single product page styling.

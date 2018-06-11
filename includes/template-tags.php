@@ -41,7 +41,7 @@ if ( ! function_exists( 'bento_google_fonts' ) ) {
 			}
 			$query_args = array(
 				'family' => urlencode( implode( '|', $font_families ) ),
-				'subset' => urlencode( 'cyrillic,latin-ext' ),
+				'subset' => urlencode( 'cyrillic,latin,latin-ext,greek-ext' ),
 			);
 			$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 		}
@@ -275,7 +275,7 @@ if ( ! function_exists( 'bento_post_header' ) ) {
 			} else {
 				$cta_primary = '
 					<div class="post-header-cta-primary">
-						'.esc_html( $cta_p_text ).'
+						'.sprintf( esc_html__( '%s', 'bento' ), esc_html( $cta_p_text ) ).'
 					</div>
 				';
 			}
@@ -352,7 +352,7 @@ if ( ! function_exists( 'bento_post_thumbnail' ) ) {
 			post_password_required() || 
 			is_attachment() || 
 			get_post_format( $post->ID ) === 'quote' ||
-			( ! is_page() && get_post_meta( $post->ID, 'bento_hide_thumb', true ) == 'on' ) ||
+			( ! is_page() && ! is_home() && get_post_meta( $post->ID, 'bento_hide_thumb', true ) == 'on' ) ||
 			( is_singular() && get_post_meta( $post->ID, 'bento_activate_header', true ) == 'on' && ( $bento_parent_page_id == $post->ID || is_single() ) ) 
 		) {
 			return;

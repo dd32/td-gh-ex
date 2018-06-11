@@ -105,7 +105,7 @@ function bento_theme_styles_scripts() {
 		
 	// Styles
 	wp_enqueue_style( 'bento-theme-styles', get_template_directory_uri().'/style.css', array( 'dashicons' ), null, 'all' );
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.min.css', array(), null, 'all' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/includes/font-awesome/css/fontawesome-all.min.css', array(), null, 'all' );
 	wp_enqueue_style( 'google-fonts', bento_google_fonts(), array(), null );
 		
 	// Passing php variables to theme scripts
@@ -701,7 +701,7 @@ function bento_comment_form_fields( $fields ) {
 
 
 // Initialize the metabox class
-if ( ! class_exists( 'CMB2_Bootstrap_224' ) ) {
+if ( ! class_exists( 'CMB2_Bootstrap_242' ) ) {
 	if ( file_exists( get_template_directory() . '/includes/metaboxes/init.php' ) ) {
 		require_once ( get_template_directory().'/includes/metaboxes/init.php' );
 	}

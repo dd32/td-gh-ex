@@ -10,9 +10,9 @@
  *
  * @category  WordPress_Plugin
  * @package   CMB2
- * @author    WebDevStudios
+ * @author    CMB2 team
  * @license   GPL-2.0+
- * @link      http://webdevstudios.com
+ * @link      https://cmb2.io
  */
 class CMB2_REST_Controller_Boxes extends CMB2_REST_Controller {
 
@@ -32,6 +32,7 @@ class CMB2_REST_Controller_Boxes extends CMB2_REST_Controller {
 
 	/**
 	 * Constructor
+	 *
 	 * @since 2.2.3
 	 */
 	public function __construct( WP_REST_Server $wp_rest_server ) {
@@ -47,7 +48,7 @@ class CMB2_REST_Controller_Boxes extends CMB2_REST_Controller {
 	public function register_routes() {
 		$args = array(
 			'_embed' => array(
-				'description' => __( 'Includes the registered fields for the box in the response.', 'cmb2' ),
+				'description' => __( 'Includes the registered fields for the box in the response.', 'bento' ),
 			),
 		);
 
@@ -56,7 +57,6 @@ class CMB2_REST_Controller_Boxes extends CMB2_REST_Controller {
 		// $args['context']['required'] = false;
 		// $args['context']['default'] = 'view';
 		// $args['context']['enum'] = array( 'view', 'embed' );
-
 		// Returns all boxes data.
 		register_rest_route( $this->namespace, '/' . $this->rest_base, array(
 			array(
@@ -69,7 +69,7 @@ class CMB2_REST_Controller_Boxes extends CMB2_REST_Controller {
 		) );
 
 		$args['_rendered'] = array(
-			'description' => __( 'Includes the fully rendered attributes, \'form_open\', \'form_close\', as well as the enqueued \'js_dependencies\' script handles, and \'css_dependencies\' stylesheet handles.', 'cmb2' ),
+			'description' => __( 'Includes the fully rendered attributes, \'form_open\', \'form_close\', as well as the enqueued \'js_dependencies\' script handles, and \'css_dependencies\' stylesheet handles.', 'bento' ),
 		);
 
 		// Returns specific box's data.
@@ -119,7 +119,9 @@ class CMB2_REST_Controller_Boxes extends CMB2_REST_Controller {
 
 		$boxes = CMB2_REST::get_all();
 		if ( empty( $boxes ) ) {
-			return new WP_Error( 'cmb2_rest_no_boxes', __( 'No boxes found.', 'cmb2' ), array( 'status' => 403 ) );
+			return new WP_Error( 'cmb2_rest_no_boxes', __( 'No boxes found.', 'bento' ), array(
+				'status' => 403,
+			) );
 		}
 
 		$boxes_data = array();
