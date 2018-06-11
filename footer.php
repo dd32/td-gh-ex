@@ -1,4 +1,4 @@
-		</div><!-- #page-content -->
+		</div><!-- .page-content -->
 
 		<!-- Page Footer -->
 		<footer id="page-footer" class="<?php echo esc_attr(bard_options( 'general_footer_width' )) === 'boxed' ? 'boxed-wrapper ': ''; ?>clear-fix">

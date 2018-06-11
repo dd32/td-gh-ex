@@ -35,6 +35,6 @@
 		</div><!-- .boxed-wrapper -->
 
 		<!-- Page Content -->
-		<div id="page-content">
+		<div class="page-content">
 			
 			<?php get_template_part( 'templates/sidebars/sidebar', 'alt' ); // Sidebar Alt ?>

@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-<div id="page-content">
 	<div class="page-404">
 	
 		<h2><?php esc_html_e( 'Page not found!', 'bard' ); ?></h2>
@@ -11,6 +10,5 @@
 		</p>
 
 	</div>
-</div>
 
 <?php get_footer(); ?>

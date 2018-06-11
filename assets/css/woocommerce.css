@@ -154,19 +154,19 @@ a.added_to_cart.wc-forward {
 3.0 Inputs, Buttons
 --------------------------------------------------------------*/
 
-.woocommerce-page #page-content textarea,
-.woocommerce-page #page-content select,
-.woocommerce-page #page-content input[type="tel"],
-.woocommerce-page #page-content input[type="text"],
-.woocommerce-page #page-content input[type="email"],
-.woocommerce-page #page-content input[type="password"] {
+.woocommerce-page .page-content textarea,
+.woocommerce-page .page-content select,
+.woocommerce-page .page-content input[type="tel"],
+.woocommerce-page .page-content input[type="text"],
+.woocommerce-page .page-content input[type="email"],
+.woocommerce-page .page-content input[type="password"] {
     padding: 10px;
     border-width: 1px;
     border-style: solid;
 }
 
-#page-content .woocommerce input[type="number"],
-.woocommerce #page-content input[type="number"] {
+.page-content .woocommerce input[type="number"],
+.woocommerce .page-content input[type="number"] {
     border-width: 1px;
     border-style: solid;
 }
@@ -249,8 +249,8 @@ a.added_to_cart.wc-forward {
 4.0 Main CSS
 --------------------------------------------------------------*/
 
-.woocommerce #page-content ul.products li.product .button,
-#page-content .woocommerce ul.products li.product .button {
+.woocommerce .page-content ul.products li.product .button,
+.page-content .woocommerce ul.products li.product .button {
     text-transform: uppercase;
     padding: 13px 20px;
     font-weight: bold;
@@ -503,8 +503,8 @@ a.added_to_cart.wc-forward {
     margin-right: auto;
 }
 
-.woocommerce #page-content ul.products li.product .button,
-#page-content .woocommerce ul.products li.product .button {
+.woocommerce .page-content ul.products li.product .button,
+.page-content .woocommerce ul.products li.product .button {
     background-color: transparent!important;
     border-style: solid;
     border-width: 1px;
@@ -512,19 +512,19 @@ a.added_to_cart.wc-forward {
     -webkit-border-radius: 0;
 }
 
-#page-content .woocommerce input.button,
-#page-content .woocommerce a.button,
-#page-content .woocommerce a.button.alt,
-#page-content .woocommerce button.button.alt,
-#page-content .woocommerce input.button.alt,
-#page-content .woocommerce #respond input#submit.alt,
-.woocommerce #page-content .widget_price_filter .button,
-.woocommerce #page-content .woocommerce-message .button,
-.woocommerce #page-content a.button.alt,
-.woocommerce #page-content button.button.alt,
-.woocommerce #page-content #respond input#submit,
-.woocommerce #page-content .woocommerce-message .button,
-.woocommerce-page #page-content .woocommerce-message .button,
+.page-content .woocommerce input.button,
+.page-content .woocommerce a.button,
+.page-content .woocommerce a.button.alt,
+.page-content .woocommerce button.button.alt,
+.page-content .woocommerce input.button.alt,
+.page-content .woocommerce #respond input#submit.alt,
+.woocommerce .page-content .widget_price_filter .button,
+.woocommerce .page-content .woocommerce-message .button,
+.woocommerce .page-content a.button.alt,
+.woocommerce .page-content button.button.alt,
+.woocommerce .page-content #respond input#submit,
+.woocommerce .page-content .woocommerce-message .button,
+.woocommerce-page .page-content .woocommerce-message .button,
 .woocommerce #respond input#submit,
 .woocommerce a.button,
 .woocommerce button.button,

@@ -3,8 +3,8 @@ Theme Name: Bard
 Theme URI: https://wp-royal.com/themes/item-bard-free/
 Author: Royal Flush
 Author URI: http://wp-royal.com/
-Description: Personal and Multi-Author Free WordPress Blog Theme. Perfect for personal, news, journal, lifestyle, fitness, food, cooking, bakery, travel, beauty, fashion, wedding, interior design, photography, photographer, artist, game, quotes blog, auto blog, corporate, small business website and any other kind of amazing blogs. Minimal, elegant, mobile friendly layout with WooCommerce shop support and best SEO practices which has RTL - right to left website direction, logo font options, Instagram slider and many more, will WOW and inspire your visitors. Well documented and very easy to use even for WordPress beginners. Clean and Modern Responsive design will perfectly showcase your content on any device. You just need to write and be awesome! TEMPLATE DEMO: http://wp-royal.com/themes/bard-free/demo/
-Version: 1.4.1
+Description: Personal and Multi-Author Free WordPress Blog Theme. Perfect for personal, lifestyle, health & fitness, food, cooking, bakery, travel, beauty, fashion, wedding, photography, news, quotes blog, auto blog, small business website and any other kind of amazing blogs. Minimal, elegant & mobile friendly layout with WooCommerce shop (storefront) support will WOW and inspire your visitors. Well documented and very easy to use even for WordPress beginners. Clean and Modern Responsive design will perfectly showcase your content on any device, even on tablet, mobile & retina displays. Very fast, compatibility with many popular plugins & of course translation & RTL (right to left language) ready, coded with best SEO practices. The theme has features like Text & Image logo, Fullscreen Slider, Header image, Instagram slider widget support, footer menu support, GDPR compatibility plugins support and many more, works perfectly with all major drag and drop page builders like Elementor, Beaver Builder, Visual Composer, SiteOrigin, Divi. You just need to write and be awesome! TEMPLATE DEMO: http://wp-royal.com/themes/bard-free/demo/
+Version: 1.4.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: bard
@@ -1780,8 +1780,8 @@ sup {
 }
 
 /* Default */
-#page-content .blog-pagination.default .previous-page a,
-#page-content .blog-pagination.default .next-page a {
+.page-content .blog-pagination.default .previous-page a,
+.page-content .blog-pagination.default .next-page a {
   font-size: 12px;
   letter-spacing: 1.5px;
 }
@@ -2971,8 +2971,8 @@ body {
 }
 
 /* Font Size 11px */
-.woocommerce #page-content ul.products li.product .button,
-#page-content .woocommerce ul.products li.product .button,
+.woocommerce .page-content ul.products li.product .button,
+.page-content .woocommerce ul.products li.product .button,
 .woocommerce-Reviews .woocommerce-review__published-date {
   font-size: 11px;
 }
@@ -2982,8 +2982,8 @@ body {
 }
 
 /* letter-spacing 2+ */
-.woocommerce #page-content ul.products li.product .button,
-#page-content .woocommerce ul.products li.product .button {
+.woocommerce .page-content ul.products li.product .button,
+.page-content .woocommerce ul.products li.product .button {
   font-family: 'Montserrat';
   letter-spacing: 1.4px;
 }
@@ -3002,19 +3002,19 @@ body {
   font-size: 13px;
 }
 
-#page-content .woocommerce input.button,
-#page-content .woocommerce a.button,
-#page-content .woocommerce a.button.alt,
-#page-content .woocommerce button.button.alt,
-#page-content .woocommerce input.button.alt,
-#page-content .woocommerce #respond input#submit.alt,
-.woocommerce #page-content .widget_price_filter .button,
-.woocommerce #page-content .woocommerce-message .button,
-.woocommerce #page-content a.button.alt,
-.woocommerce #page-content button.button.alt,
-.woocommerce #page-content #respond input#submit,
-.woocommerce #page-content .woocommerce-message .button,
-.woocommerce-page #page-content .woocommerce-message .button,
+.page-content .woocommerce input.button,
+.page-content .woocommerce a.button,
+.page-content .woocommerce a.button.alt,
+.page-content .woocommerce button.button.alt,
+.page-content .woocommerce input.button.alt,
+.page-content .woocommerce #respond input#submit.alt,
+.woocommerce .page-content .widget_price_filter .button,
+.woocommerce .page-content .woocommerce-message .button,
+.woocommerce .page-content a.button.alt,
+.woocommerce .page-content button.button.alt,
+.woocommerce .page-content #respond input#submit,
+.woocommerce .page-content .woocommerce-message .button,
+.woocommerce-page .page-content .woocommerce-message .button,
 .woocommerce form .form-row .required,
 .woocommerce #respond input#submit,
 .woocommerce a.button,

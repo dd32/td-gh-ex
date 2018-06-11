@@ -170,9 +170,9 @@ $css = '';
 		.main-content,
 		.featured-slider-area,
 		#featured-links,
-		#page-content select,
-		#page-content input,
-		#page-content textarea {
+		.page-content select,
+		.page-content input,
+		.page-content textarea {
 			background-color: '. esc_html(bard_options( 'colors_content_bg' )) .';
 		}
 
@@ -190,32 +190,32 @@ $css = '';
 		}
 
 		/* Text */
-		#page-content,
-		#page-content select,
-		#page-content input,
-		#page-content textarea,
-		#page-content .post-author a,
-		#page-content .bard-widget a,
-		#page-content .comment-author {
+		.page-content,
+		.page-content select,
+		.page-content input,
+		.page-content textarea,
+		.page-content .post-author a,
+		.page-content .bard-widget a,
+		.page-content .comment-author {
 			color: #464646;
 		}
 
 		/* Title */
-		#page-content h1 a,
-		#page-content h1,
-		#page-content h2,
-		#page-content h3,
-		#page-content h4,
-		#page-content h5,
-		#page-content h6,
-		#page-content .post-author a,
-		#page-content .author-description h3 a,
-		#page-content .related-posts h5 a,
-		#page-content .blog-pagination .previous-page a,
-      	#page-content .blog-pagination .next-page a,
+		.page-content h1 a,
+		.page-content h1,
+		.page-content h2,
+		.page-content h3,
+		.page-content h4,
+		.page-content h5,
+		.page-content h6,
+		.page-content .post-author a,
+		.page-content .author-description h3 a,
+		.page-content .related-posts h5 a,
+		.page-content .blog-pagination .previous-page a,
+      	.page-content .blog-pagination .next-page a,
       	blockquote,
-		#page-content .post-share a,
-		#page-content .read-more a {
+		.page-content .post-share a,
+		.page-content .read-more a {
 			color: #030303;
 		}
 
@@ -223,22 +223,22 @@ $css = '';
 			background-color: #030303;
 		}
 
-		#page-content .read-more a:hover,
-		#page-content h1 a:hover {
+		.page-content .read-more a:hover,
+		.page-content h1 a:hover {
 			color: '. esc_html( bard_hex2rgba( '#030303', 0.75 ) ) .';
 		}
 	
 		/* Meta */
-		#page-content .post-author,
-		#page-content .post-comments,
-		#page-content .post-date,
-		#page-content .post-meta,
-		#page-content .post-meta a,
-		#page-content .related-post-date,
-		#page-content .comment-meta a,
-		#page-content .author-share a,
-		#page-content .post-tags a,
-		#page-content .tagcloud a,
+		.page-content .post-author,
+		.page-content .post-comments,
+		.page-content .post-date,
+		.page-content .post-meta,
+		.page-content .post-meta a,
+		.page-content .related-post-date,
+		.page-content .comment-meta a,
+		.page-content .author-share a,
+		.page-content .post-tags a,
+		.page-content .tagcloud a,
 		.widget_categories li,
 		.widget_archive li,
 		.ahse-subscribe-box p,
@@ -253,22 +253,22 @@ $css = '';
 			color: #a1a1a1;
 		}
 
-		#page-content input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		.page-content input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 		  color: #a1a1a1;
 		}
-		#page-content input::-moz-placeholder { /* Firefox 19+ */
+		.page-content input::-moz-placeholder { /* Firefox 19+ */
 		  color: #a1a1a1;
 		}
-		#page-content input:-ms-input-placeholder { /* IE 10+ */
+		.page-content input:-ms-input-placeholder { /* IE 10+ */
 		  color: #a1a1a1;
 		}
-		#page-content input:-moz-placeholder { /* Firefox 18- */
+		.page-content input:-moz-placeholder { /* Firefox 18- */
 		  color: #a1a1a1;
 		}
 		
 	
 		/* Accent */
-		#page-content a,
+		.page-content a,
 		.post-categories,
 		#page-wrap .bard-widget.widget_text a,
 		.scrolltop,
@@ -276,12 +276,17 @@ $css = '';
 			color: '. esc_html(bard_options( 'colors_content_accent' )) .';
 		}
 		
+		.page-content .elementor a,
+		.page-content .elementor a:hover {
+			color: inherit;
+		}
+
 		.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y,
 		.read-more a:after {
 			background: '. esc_html(bard_options( 'colors_content_accent' )) .';
 		}
 
-		#page-content a:hover,
+		.page-content a:hover,
 		.scrolltop:hover {
 			color: '. esc_html(bard_hex2rgba( bard_options( 'colors_content_accent' ), 0.8 )) .';
 		}
@@ -306,20 +311,20 @@ $css = '';
 		}
 
 		/* Border */
-		#page-content .post-footer,
+		.page-content .post-footer,
 		.blog-list-style,
-		#page-content .author-description,
-		#page-content .related-posts,
-		#page-content .entry-comments,
-		#page-content .bard-widget li,
-		#page-content #wp-calendar,
-		#page-content #wp-calendar caption,
-		#page-content #wp-calendar tbody td,
-		#page-content .widget_nav_menu li a,
-		#page-content .tagcloud a,
-		#page-content select,
-		#page-content input,
-		#page-content textarea,
+		.page-content .author-description,
+		.page-content .related-posts,
+		.page-content .entry-comments,
+		.page-content .bard-widget li,
+		.page-content #wp-calendar,
+		.page-content #wp-calendar caption,
+		.page-content #wp-calendar tbody td,
+		.page-content .widget_nav_menu li a,
+		.page-content .tagcloud a,
+		.page-content select,
+		.page-content input,
+		.page-content textarea,
 		.post-tags a,
 		.gallery-caption,
 		.wp-caption-text,
@@ -340,20 +345,20 @@ $css = '';
 		/* Buttons */
 		.widget_search .svg-fa-wrap,
 		.widget_search #searchsubmit,
-		#page-content .submit,
-		#page-content .blog-pagination.numeric a,
-		#page-content .post-password-form input[type="submit"],
-		#page-content .wpcf7 [type="submit"] {
+		.page-content .submit,
+		.page-content .blog-pagination.numeric a,
+		.page-content .post-password-form input[type="submit"],
+		.page-content .wpcf7 [type="submit"] {
 			color: #ffffff;
 			background-color: #333333;
 		}
-		#page-content .submit:hover,
-		#page-content .blog-pagination.numeric a:hover,
-		#page-content .blog-pagination.numeric span,
-		#page-content .bard-subscribe-box input[type="submit"],
-		#page-content .widget_wysija input[type="submit"],
-		#page-content .post-password-form input[type="submit"]:hover,
-		#page-content .wpcf7 [type="submit"]:hover {
+		.page-content .submit:hover,
+		.page-content .blog-pagination.numeric a:hover,
+		.page-content .blog-pagination.numeric span,
+		.page-content .bard-subscribe-box input[type="submit"],
+		.page-content .widget_wysija input[type="submit"],
+		.page-content .post-password-form input[type="submit"]:hover,
+		.page-content .wpcf7 [type="submit"]:hover {
 			color: #ffffff;
 			background-color: '. esc_html(bard_options( 'colors_content_accent' )) .';
 		}
@@ -362,7 +367,7 @@ $css = '';
 		/* Image Overlay */
 		.image-overlay,
 		#infscr-loading,
-		#page-content h4.image-overlay {
+		.page-content h4.image-overlay {
 			color: #ffffff;
 			background-color: '. esc_html(bard_hex2rgba( '#494949', 0.2 )) .';
 		}
@@ -370,7 +375,7 @@ $css = '';
 		.image-overlay a,
 		.post-slider .prev-arrow,
 		.post-slider .next-arrow,
-		#page-content .image-overlay a,
+		.page-content .image-overlay a,
 		#featured-slider .slider-dots {
 			color: #ffffff;
 		}
@@ -1018,7 +1023,7 @@ $css = '';
 		.woocommerce-Reviews .woocommerce-review__author,
 		.woocommerce form .form-row .required,
 		.woocommerce form .form-row.woocommerce-invalid label,
-		.woocommerce #page-content div.product .woocommerce-tabs ul.tabs li a {
+		.woocommerce .page-content div.product .woocommerce-tabs ul.tabs li a {
 		    color: #464646;
 		}
 
@@ -1031,13 +1036,13 @@ $css = '';
 	$css .= '
 		.woocommerce a.remove,
 		.woocommerce .product_meta,
-		#page-content .woocommerce-breadcrumb,
-		#page-content .woocommerce-review-link,
-		#page-content .woocommerce-breadcrumb a,
-		#page-content .woocommerce-MyAccount-navigation-link a,
+		.page-content .woocommerce-breadcrumb,
+		.page-content .woocommerce-review-link,
+		.page-content .woocommerce-breadcrumb a,
+		.page-content .woocommerce-MyAccount-navigation-link a,
 		.woocommerce .woocommerce-info:before,
-		.woocommerce #page-content .woocommerce-result-count,
-		.woocommerce-page #page-content .woocommerce-result-count,
+		.woocommerce .page-content .woocommerce-result-count,
+		.woocommerce-page .page-content .woocommerce-result-count,
 		.woocommerce-Reviews .woocommerce-review__published-date,
 		.woocommerce .product_list_widget .quantity,
 		.woocommerce .widget_products .amount,
@@ -1063,10 +1068,10 @@ $css = '';
 
 		.woocommerce .star-rating::before,
 		.woocommerce .star-rating span::before,
-		.woocommerce #page-content ul.products li.product .button,
-		#page-content .woocommerce ul.products li.product .button,
-		#page-content .woocommerce-MyAccount-navigation-link.is-active a,
-		#page-content .woocommerce-MyAccount-navigation-link a:hover,
+		.woocommerce .page-content ul.products li.product .button,
+		.page-content .woocommerce ul.products li.product .button,
+		.page-content .woocommerce-MyAccount-navigation-link.is-active a,
+		.page-content .woocommerce-MyAccount-navigation-link a:hover,
 		.woocommerce-message::before {
 		   color: '. esc_html(bard_options( 'colors_content_accent' )) .';
 		}
@@ -1120,37 +1125,37 @@ $css = '';
 
 	/* Buttons */
 	$css .= '
-		#page-content .woocommerce input.button,
-		#page-content .woocommerce a.button,
-		#page-content .woocommerce a.button.alt,
-		#page-content .woocommerce button.button.alt,
-		#page-content .woocommerce input.button.alt,
-		#page-content .woocommerce #respond input#submit.alt,
-		.woocommerce #page-content .widget_product_search input[type="submit"],
-		.woocommerce #page-content .woocommerce-message .button,
-		.woocommerce #page-content a.button.alt,
-		.woocommerce #page-content button.button.alt,
-		.woocommerce #page-content #respond input#submit,
-		.woocommerce #page-content .widget_price_filter .button,
-		.woocommerce #page-content .woocommerce-message .button,
-		.woocommerce-page #page-content .woocommerce-message .button {
+		.page-content .woocommerce input.button,
+		.page-content .woocommerce a.button,
+		.page-content .woocommerce a.button.alt,
+		.page-content .woocommerce button.button.alt,
+		.page-content .woocommerce input.button.alt,
+		.page-content .woocommerce #respond input#submit.alt,
+		.woocommerce .page-content .widget_product_search input[type="submit"],
+		.woocommerce .page-content .woocommerce-message .button,
+		.woocommerce .page-content a.button.alt,
+		.woocommerce .page-content button.button.alt,
+		.woocommerce .page-content #respond input#submit,
+		.woocommerce .page-content .widget_price_filter .button,
+		.woocommerce .page-content .woocommerce-message .button,
+		.woocommerce-page .page-content .woocommerce-message .button {
 			color: #ffffff;
 			background-color: #333333;
 		}
 
-		#page-content .woocommerce input.button:hover,
-		#page-content .woocommerce a.button:hover,
-		#page-content .woocommerce a.button.alt:hover,
-		#page-content .woocommerce button.button.alt:hover,
-		#page-content .woocommerce input.button.alt:hover,
-		#page-content .woocommerce #respond input#submit.alt:hover,
-		.woocommerce #page-content .woocommerce-message .button:hover,
-		.woocommerce #page-content a.button.alt:hover,
-		.woocommerce #page-content button.button.alt:hover,
-		.woocommerce #page-content #respond input#submit:hover,
-		.woocommerce #page-content .widget_price_filter .button:hover,
-		.woocommerce #page-content .woocommerce-message .button:hover,
-		.woocommerce-page #page-content .woocommerce-message .button:hover {
+		.page-content .woocommerce input.button:hover,
+		.page-content .woocommerce a.button:hover,
+		.page-content .woocommerce a.button.alt:hover,
+		.page-content .woocommerce button.button.alt:hover,
+		.page-content .woocommerce input.button.alt:hover,
+		.page-content .woocommerce #respond input#submit.alt:hover,
+		.woocommerce .page-content .woocommerce-message .button:hover,
+		.woocommerce .page-content a.button.alt:hover,
+		.woocommerce .page-content button.button.alt:hover,
+		.woocommerce .page-content #respond input#submit:hover,
+		.woocommerce .page-content .widget_price_filter .button:hover,
+		.woocommerce .page-content .woocommerce-message .button:hover,
+		.woocommerce-page .page-content .woocommerce-message .button:hover {
 			color: #ffffff;
 			background-color: '. esc_html(bard_options( 'colors_content_accent' )) .';
 		}
