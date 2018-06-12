@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Wallstreet\n"
-"POT-Creation-Date: 2017-07-28 13:13+0530\n"
-"PO-Revision-Date: 2017-07-28 13:13+0530\n"
+"POT-Creation-Date: 2018-06-11 18:02+0530\n"
+"PO-Revision-Date: 2018-06-11 18:02+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -704,10 +704,10 @@ msgstr ""
 msgid "Footer copyright settings"
 msgstr ""
 
-#: functions/customizer/customizer-copyright.php:15
+#: functions/customizer/customizer-copyright.php:15 theme_setup_data.php:88
 #, php-format
 msgid ""
-"Copyright @ 2014 - WALL STREET Designed by <a href=\"%1$s\" target=\"_blank"
+"Copyright @ 2018 - WALL STREET Designed by <a href=\"%1$s\" target=\"_blank"
 "\">Webriti</a>."
 msgstr ""
 
@@ -1049,6 +1049,10 @@ msgstr ""
 msgid "YouTube URL"
 msgstr ""
 
+#: functions/customizer/customizer-social.php:176
+msgid "Instagram URL"
+msgstr ""
+
 #: functions/customizer/customizer-template.php:5
 msgid ""
 "Want to add an About Us template heading and a Team section? Then upgrade to "
@@ -1386,19 +1390,12 @@ msgstr ""
 msgid "Responsive designs"
 msgstr ""
 
-#: theme_setup_data.php:87
-#, php-format
-msgid ""
-"Copyright @ 2017 - WALL STREET Designed by <a href=\"%1$s\" target=\"_blank"
-"\">Webriti</a>."
-msgstr ""
-
 #. Theme Name of the plugin/theme
 msgid "Wallstreet"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://webriti.com/wallstreet-lite-version-details-page/"
+msgid "https://webriti.com/wallstreet-lite-version-details-page/"
 msgstr ""
 
 #. Author of the plugin/theme
@@ -1406,5 +1403,5 @@ msgid "webriti"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://www.webriti.com"
+msgid "https://www.webriti.com"
 msgstr ""

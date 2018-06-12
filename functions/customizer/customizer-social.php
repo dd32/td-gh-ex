@@ -158,6 +158,27 @@ function wallstreet_social_customizer( $wp_customize ) {
         'type' => 'text',
     )
 	);
+	
+	//Instagram Profile Link:
+	
+	$wp_customize->add_setting(
+	'wallstreet_pro_options[social_media_instagram_link]' ,
+    array(
+        'default' => '#',
+		'sanitize_callback' => 'esc_url_raw',
+		'type' => 'option',
+    )
+	
+	);
+	$wp_customize->add_control(
+    'wallstreet_pro_options[social_media_instagram_link]',
+    array(
+        'label' => __('Instagram URL','wallstreet'),
+        'section' => 'social_icon',
+        'type' => 'text',
+    )
+	);
+	
 	}
 	add_action( 'customize_register', 'wallstreet_social_customizer' );
 	?>

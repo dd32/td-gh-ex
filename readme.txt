@@ -51,6 +51,9 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.7.8.1
+1. Remove 3 subjects tags.
+2. Added Instagram link setting.
 @Version 1.7.8
 1. Update screen reader css.
 @Version 1.7.7.9

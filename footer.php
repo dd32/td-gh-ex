@@ -19,6 +19,8 @@
 					<?php }
 					if($current_options['social_media_youtube_link']!='') { ?>
 					<li><a href="<?php echo esc_url( $current_options['social_media_youtube_link']); ?>"><i class="fa fa-youtube"></i></a></li>					
+					<?php } if($current_options['social_media_instagram_link']!='') { ?>
+					<li><a href="<?php echo esc_url( $current_options['social_media_instagram_link'] ); ?>"><i class="fa fa-instagram"></i></a></li>					
 					<?php } ?>
 				</div></ul>
 				<?php } ?>

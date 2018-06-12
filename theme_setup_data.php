@@ -82,9 +82,10 @@ function theme_data_setup()
 			'social_media_googleplus_link' =>"#",
 			'social_media_linkedin_link' =>"#",		
 			'social_media_youtube_link' =>"#",
+			'social_media_instagram_link' => '#',
 			
 			/** footer customization **/
-			'footer_copyright' =>sprintf (__('Copyright @ 2017 - WALL STREET Designed by <a href="%1$s" target="_blank">Webriti</a>.','wallstreet'),'http://www.webriti.com'),
+			'footer_copyright' =>sprintf (__('Copyright @ 2018 - WALL STREET Designed by <a href="%1$s" target="_blank">Webriti</a>.','wallstreet'),'https://www.webriti.com'),
 		
 		);
 }
