@@ -1,7 +1,7 @@
 === Attitude ===
 
 Contributors: Theme Horse Team
-Version: 4.0
+Version: 4.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, e-commerce, news, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-logo, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
@@ -38,6 +38,7 @@ GNU General Public License for more details.
 
 == Resources ==
 
+* Screenshot Image, Copyright http://unsplash.com, Public Domain Images, https://unsplash.com/photos/Wl3dPgNc8Nw, https://unsplash.com/photos/aSkpQLnmBNc
 * html5.js, Copyright 2014 Alexander Farkas, MIT/GPL2, https://github.com/aFarkas/html5shiv
 * jquery.cycle.all.js, Copyright 2007-2013 M. Alsup, MIT/GPL, http://jquery.malsup.com/license.html
 * Font Awesome, Copyright Dave Gandy, SIL OFL 1.1/MIT, http://fontawesome.io/license/
@@ -58,6 +59,9 @@ GNU General Public License for more details.
 * This is added to help the users to use those ids in the slider option as mentioned above.
 
 == Change Log ==
+
+= 4.0.1 =
+* Feature - Privacy Policy page link added in footer.
 
 = 4.0 =
 * Feature - WooCommerce Compatible added

@@ -13,7 +13,7 @@
  * @return string
  */
 function attitude_the_year() {
-   return date( 'Y' );
+   return date( 'Y ' );
 }
 /**
  * To display a link back to the site.
@@ -33,11 +33,21 @@ function attitude_wp_link() {
    return '<a href="'.esc_url( 'http://wordpress.org' ).'" target="_blank" title="' . esc_attr__( 'WordPress', 'attitude' ) . '"><span>' . __( 'WordPress', 'attitude' ) . '</span></a>';
 }
 /**
- * To display a link to attitude.com.
+ * To display a link to attitude.
  *
  * @return string
  */
 function attitude_themehorse_link() {
    return '<a href="'.esc_url( 'http://themehorse.com' ).'" target="_blank" title="'.esc_attr__( 'Theme Horse', 'attitude' ).'" ><span>'.__( 'Theme Horse', 'attitude') .'</span></a>';
+}
+/**
+ * To display a link to privacy policy.
+ *
+ * @return string
+ */
+function attitude_themehorse_privacy() {
+	if (function_exists('the_privacy_policy_link')) {
+		the_privacy_policy_link('', ' | ');
+	}
 }
 ?>
