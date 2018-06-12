@@ -129,7 +129,7 @@ function backphoto_scripts() {
 
 	wp_enqueue_script( 'backphoto-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'webfontloader', 'https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js', array(), '1.6.28', false);
+	wp_enqueue_script( 'webfontloader', get_template_directory_uri() . '/js/webfontloader.js', array(), '1.6.28', false);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

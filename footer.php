@@ -15,7 +15,7 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<span class="copyright"><?php echo get_theme_mod('backphoto_footer_setting'); ?></span>
+			<span class="copyright"><?php echo esc_html(get_theme_mod('backphoto_footer_setting')); ?></span>
 			<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
