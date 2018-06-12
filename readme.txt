@@ -42,7 +42,7 @@ Auto Store includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.1.3 - May 29 2018 =
+= 1.1.9 - June 12 2018 =
 * Initial release
 
 == Credits ==
@@ -64,6 +64,19 @@ Auto Store includes support for Infinite Scroll in Jetpack.
 
 
  * Peter H - https://pixabay.com/en/rolls-royce-limousine-luxury-wealth-3366960/ CC0 1.0 License
+ * Peter H - https://pixabay.com/en/ford-mustang-v8-67-ford-mustang-2705402/ CC0 1.0 License
+ * Heribert - https://pixabay.com/en/opel-olympia-1935-1937-2920765/ CC0 1.0 License
+ * Brockenhexe - https://pixabay.com/en/oldtimer-bulli-vw-auto-cult-2585110/ CC0 1.0 License
+ * Jill Wellington - https://pixabay.com/en/vintage-car-red-old-automobile-852237/ CC0 1.0 License
+ * Wälz - https://pixabay.com/en/oldtimer-bmw-auto-old-classic-pkw-3387960/ CC0 1.0 License
+ * Wälz - https://pixabay.com/en/oldtimer-buick-buick-eight-auto-3387998/ CC0 1.0 License
+ * Gerhard Gellinger - https://pixabay.com/en/vehicle-traffic-auto-packard-coupe-2477747/ CC0 1.0 License
+ * VABo2040 - https://pixabay.com/en/kids-boys-urchins-bullies-dump-3396749/ CC0 1.0 License
+ * Mystic Art Design - https://pixabay.com/en/auto-sports-car-luxury-racing-car-2209439/ CC0 1.0 License
+ * Pexels - https://pixabay.com/en/vw-bully-vw-bus-camper-antique-1868890/ CC0 1.0 License
+ * Mike - https://pixabay.com/en/mercedes-benz-car-auto-transport-3395531/
+ 
+ 
    
  Unless otherwise specified, all the theme files, scripts and images
  are licensed under GNU General Public License version 2.

@@ -4,7 +4,7 @@ Author: Tsvetomir Tsvetanov
 Author URI: https://seosthemes.com/
 Theme URI: https://seosthemes.com/auto-store
 Description: Auto Store is clear, easy to customize WP template. Auto Store is a modern multi-purpose HTML5 theme with a responsive 2 column layout. The theme is excellent for a image gallery, photography, blog, eatery, newspaper, images, photos, publishing, news, blog, business, portfolio or other editorial websites. To learn more about the theme please go to the theme uri and read the documentation. 
-Version: 1.1.8
+Version: 1.1.9
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: auto-store
@@ -434,7 +434,7 @@ table {
 button,
 input[type="button"],
 input[type="reset"] {
-	border: 1px solid #C6631B;
+	border: 1px solid #562B0C;
     box-shadow: inset 0 0 0 #333333, inset 0 1px 84px #333333, inset 0 0 0 #333333;	
 	outline: 0 ;	
     margin: 0 ;
@@ -442,7 +442,7 @@ input[type="reset"] {
 	padding: 5px;
 	border-radius: 3px;
 	color: #6D705E;
-	background: #C6631B;
+	background: #562B0C;
 }
 
 
@@ -475,7 +475,7 @@ input[type="submit"] {
 	border-radius: 3px;
 	min-width: 100%;
 	color: #fff;	
-	background: #C6631B;	
+	background: #562B0C;	
 }
 
 
@@ -782,7 +782,7 @@ header .site-home .home-title a {
 }
  
 header .site-home .home-title a:hover {
-	color: #C6631B;
+	color: #562B0C;
 } 
 
 header .site-home .home-description {
@@ -1132,7 +1132,7 @@ a {
 }
 
 a:hover {
-	color: #C6631B;
+	color: #562B0C;
 }
 
 a:hover,
@@ -1714,7 +1714,7 @@ article header h1  {
 }
 
 article .fa {
-   color: #C6631B;
+   color: #562B0C;
    padding: 3px;
 }
 
@@ -1814,7 +1814,7 @@ aside ul ul li {
 }
 
 #content aside h2 {
-	background: #C6631B;
+	background: #562B0C;
 	padding: 10px 20px 10px 20px;
 	color: white;
 	font-size: 15px;
@@ -1868,7 +1868,7 @@ aside section, article {
 
 
 #secondary .menu li{
-    background: #C6631B;
+    background: #562B0C;
     box-shadow: inset 0 0 0 #333333, inset 0 1px 84px #333333, inset 0 0 0 #333333;
     cursor: pointer;
 	width: 100%;
@@ -1891,7 +1891,7 @@ aside section, article {
     display: inline-block;
     text-decoration: none;
 	font-size: 14px;
-	border-top: 1px solid #C6631B;
+	border-top: 1px solid #562B0C;
     border-bottom: 1px solid #350000;
     cursor: pointer;
 	width: 100%;
@@ -2198,7 +2198,7 @@ aside section, article {
     display: inline-block;
     color: #fff;
 	font-size: 15px;
-    background-color: #C6631B;
+    background-color: #562B0C;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 1px;		
@@ -2206,7 +2206,7 @@ aside section, article {
 }
 
 .pagination span {
-    background-color: #C6631B;
+    background-color: #562B0C;
     box-shadow: none;		
 }
 
@@ -2692,7 +2692,7 @@ footer.gallery-item:hover {
 	}
 	
 	#secondary .menu li:hover {
-		background: #C6631B;
+		background: #562B0C;
 	}
 	
 	.main-navigation ul li a {
