@@ -18,8 +18,8 @@ do_action( 'virtue_page_title_container' );
 			</div>
 			<?php 
 			/**
-            * @hooked virtue_page_comments - 20
-            */
+			* @hooked virtue_page_comments - 20
+			*/
 			do_action('virtue_page_footer');
 			?>
 		</div><!-- /.main -->

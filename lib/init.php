@@ -3,16 +3,15 @@
  * virtue initial setup and constants
  */
 function virtue_setup() {
-
-	// Register wp_nav_menu() menus (http://codex.wordpress.org/Function_Reference/register_nav_menus)
+	
 	register_nav_menus(array(
-	'primary_navigation'    => __('Primary Navigation', 'virtue'),
-	'secondary_navigation'  => __('Secondary Navigation', 'virtue'),
-	'mobile_navigation'     => __('Mobile Navigation', 'virtue'),
-	'topbar_navigation'     => __('Topbar Navigation', 'virtue'),
-	'footer_navigation'     => __('Footer Navigation', 'virtue'),
+		'primary_navigation'    => __('Primary Navigation', 'virtue'),
+		'secondary_navigation'  => __('Secondary Navigation', 'virtue'),
+		'mobile_navigation'     => __('Mobile Navigation', 'virtue'),
+		'topbar_navigation'     => __('Topbar Navigation', 'virtue'),
+		'footer_navigation'     => __('Footer Navigation', 'virtue'),
 	));
-	define( 'VIRTUE_VERSION', '3.2.4' );
+	define( 'VIRTUE_VERSION', '3.2.5' );
 	add_theme_support( 'title-tag' );
 	add_theme_support('post-thumbnails');
 	add_image_size( 'widget-thumb', 80, 50, true );

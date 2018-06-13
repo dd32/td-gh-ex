@@ -19,6 +19,7 @@ require_once( trailingslashit( get_template_directory() ) . 'lib/init.php');    
 require_once( trailingslashit( get_template_directory() ) . 'lib/sidebar.php');         					// Sidebar class
 require_once( trailingslashit( get_template_directory() ) . 'lib/config.php');          					// Configuration
 require_once( trailingslashit( get_template_directory() ) . 'lib/cleanup.php');        						// Cleanup
+require_once( trailingslashit( get_template_directory() ) . 'lib/elementor/elementor-support.php');         // Utility functions
 require_once( trailingslashit( get_template_directory() ) . 'lib/nav.php');            						// Custom nav modifications
 require_once( trailingslashit( get_template_directory() ) . 'lib/metaboxes.php');     						// Custom metaboxes
 require_once( trailingslashit( get_template_directory() ) . 'lib/comments.php');        					// Custom comments modifications

@@ -5,49 +5,63 @@
  * @link http://scribu.net/wordpress/theme-wrappers.html
  */
 function kadence_template_path() {
-  return Kadence_Wrapping::$main_template;
+	return Kadence_Wrapping::$main_template;
 }
 
 function kadence_sidebar_path() {
-  return Kadence_Wrapping::sidebar();
+	return Kadence_Wrapping::sidebar();
 }
 
 class Kadence_Wrapping {
-  // Stores the full path to the main template file
-  static $main_template;
 
-  // Stores the base name of the template file; e.g. 'page' for 'page.php' etc.
-  static $base;
+	// Stores the full path to the main template file
+	static $main_template;
 
-  static function wrap($template) {
-    self::$main_template = $template;
+	// Stores the base name of the template file; e.g. 'page' for 'page.php' etc.
+	static $base;
 
-    self::$base = substr(basename(self::$main_template), 0, -4);
+	static function wrap( $template ) {
 
-    if (self::$base === 'index') {
-      self::$base = false;
-    }
+		if ( is_embed() ) {
+			return $template;
+		}
+		self::$main_template = $template;
 
-    $templates = array('base.php');
+		self::$base = substr(basename(self::$main_template), 0, -4);
 
-    if (self::$base) {
-      array_unshift($templates, sprintf('base-%s.php', self::$base));
-    }
+		if (self::$base === 'index') {
+			self::$base = false;
+		}
 
-    return locate_template($templates);
-  }
+		$templates = array('base.php');
 
-  static function sidebar() {
-    $templates = array('templates/sidebar.php');
+		if (self::$base) {
+			array_unshift( $templates, sprintf( 'base-%s.php', self::$base ) );
+		}
 
-    if (self::$base) {
-      array_unshift($templates, sprintf('templates/sidebar-%s.php', self::$base));
-    }
+		return locate_template($templates);
+	}
 
-    return locate_template($templates);
-  }
+	static function sidebar() {
+		$templates = array('templates/sidebar.php');
+
+		if (self::$base) {
+			array_unshift( $templates, sprintf('templates/sidebar-%s.php', self::$base ) );
+		}
+
+		return locate_template($templates);
+	}
 }
-add_filter('template_include', array('Kadence_Wrapping', 'wrap'), 101);
+add_filter('template_include', array( 'Kadence_Wrapping', 'wrap'), 101 );
+
+add_action( 'init', 'virtue_toolset_layout_support' );
+function virtue_toolset_layout_support() {
+	// Add tool layout Support
+	if ( class_exists('WPDDL_Templates_Settings') ) {
+		// SET in the default template path.
+		add_filter('template_include', array('Kadence_Wrapping', 'wrap'), 10);
+	}
+}
 
 /**
  * Page titles
@@ -94,39 +108,4 @@ function virtue_filter_archive_title( $title ){
 		$title = sprintf( __( 'Yearly Archives: %s', 'virtue' ), get_the_date( 'Y' ) );
 	} 
 	return $title;
-}
-
-
-/**
- * Return WordPress subdirectory if applicable
- */
-function wp_base_dir() {
-  preg_match('!(https?://[^/|"]+)([^"]+)?!', site_url(), $matches);
-  if (count($matches) === 3) {
-    return end($matches);
-  } else {
-    return '';
-  }
-}
-
-/**
- * Opposite of built in WP functions for trailing slashes
- */
-function leadingslashit($string) {
-  return '/' . unleadingslashit($string);
-}
-
-function unleadingslashit($string) {
-  return ltrim($string, '/');
-}
-
-function add_filters($tags, $function) {
-  foreach($tags as $tag) {
-    add_filter($tag, $function);
-  }
-}
-
-function is_element_empty($element) {
-  $element = trim($element);
-  return empty($element) ? false : true;
 }

@@ -1,7 +1,11 @@
 <?php 
-/*
+/**
  * Topbar Template
+ *
+ * @version 3.2.5
  */
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 global $virtue; 
 ?>

@@ -1,3 +1,12 @@
+<?php 
+/**
+ * Footer Template
+ *
+ * @version 3.2.5
+ */
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+?>
 <footer id="containerfooter" class="footerclass" itemscope itemtype="http://schema.org/WPFooter">
   <div class="container">
   	<div class="row">
@@ -70,6 +79,3 @@
   </div>
 
 </footer>
-</div><!--Wrapper-->
-
-<?php wp_footer(); ?>

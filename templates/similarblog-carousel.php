@@ -52,7 +52,7 @@
 							        <header>
 						               	<h5 class="entry-title" itemprop="name headline"><?php the_title(); ?></h5>
 						                <div class="subhead" itemprop="datePublished">
-						                	<span class="postday"><?php echo get_the_date( get_option( 'date_format' ) ); ?></span>
+						                	<span class="postday published"><?php echo get_the_date( get_option( 'date_format' ) ); ?></span>
 						                </div>
 						            </header>
 		                    		<div class="entry-content" itemprop="articleBody">

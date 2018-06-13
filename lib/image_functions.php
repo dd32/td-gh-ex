@@ -3,51 +3,52 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 function virtue_lazy_load_filter() {
-  	$lazy = false;
-  	if(function_exists( 'get_rocket_option' ) && get_rocket_option( 'lazyload') ) {
-    	$lazy = true;
-  	}
-  	return apply_filters('virtue_lazy_load', $lazy);
+	$lazy = false;
+	if ( function_exists( 'get_rocket_option' ) && get_rocket_option( 'lazyload') ) {
+		$lazy = true;
+	}
+	return apply_filters( 'virtue_lazy_load', $lazy );
 }
 add_filter( 'max_srcset_image_width','virtue_srcset_max');
-function virtue_srcset_max($string) {
-  return 2000;
+function virtue_srcset_max( $string ) {
+	return 2200;
 }
 
 function virtue_img_placeholder() {
-  return get_template_directory_uri() . '/assets/img/placement.png';
+	return get_template_directory_uri() . '/assets/img/placement.png';
 }
+
 function virtue_post_widget_default_placeholder() {
-   return apply_filters('kadence_post_default_widget_placeholder_image', get_template_directory_uri() . '/assets/img/post_standard-80x50.jpg');
+	return apply_filters('kadence_post_default_widget_placeholder_image', get_template_directory_uri() . '/assets/img/post_standard-80x50.jpg');
 }
 function virtue_post_default_placeholder() {
-   return apply_filters('kadence_post_default_placeholder_image', get_template_directory_uri() . '/assets/img/post_standard.jpg');
+	return apply_filters('kadence_post_default_placeholder_image', get_template_directory_uri() . '/assets/img/post_standard.jpg');
 }
 
 function virtue_post_default_placeholder_override() {
-  global $virtue;
-  $custom_image = $virtue['post_summery_default_image']['url'];
-  return $custom_image;
+	global $virtue;
+	$custom_image = $virtue['post_summery_default_image']['url'];
+	return $custom_image;
 }
 function virtue_post_default_placeholder_init() {
-  global $virtue;
-  if (isset($virtue['post_summery_default_image']) && !empty($virtue['post_summery_default_image']['url'])) {
-  add_filter('kadence_post_default_placeholder_image', 'virtue_post_default_placeholder_override');
-  add_filter('kadence_post_default_widget_placeholder_image', 'virtue_post_default_placeholder_override');
-  }
+	global $virtue;
+	if (isset($virtue['post_summery_default_image']) && !empty($virtue['post_summery_default_image']['url'])) {
+		add_filter('kadence_post_default_placeholder_image', 'virtue_post_default_placeholder_override');
+		add_filter('kadence_post_default_widget_placeholder_image', 'virtue_post_default_placeholder_override');
+	}
 }
 add_action('init', 'virtue_post_default_placeholder_init');
 
 function virtue_default_placeholder_image() {
-    return apply_filters('virtue_default_placeholder_image', 'http://placehold.it/');
+	return apply_filters('virtue_default_placeholder_image', 'http://placehold.it/');
 }
 function virtue_get_options_placeholder_image() {
-    global $virtue;
-    if(isset($virtue['post_summery_default_image']) && isset($virtue['post_summery_default_image']['id']) && !empty($virtue['post_summery_default_image']['id'])){
-        return $virtue['post_summery_default_image']['id'];
-    } else {
-        return '';
-    }
+	global $virtue;
+	if(isset($virtue['post_summery_default_image']) && isset($virtue['post_summery_default_image']['id']) && !empty($virtue['post_summery_default_image']['id'])){
+	    return $virtue['post_summery_default_image']['id'];
+	} else {
+	    return '';
+	}
 }
 function virtue_get_image_array($width = null, $height = null, $crop = true, $class = null, $alt = null, $id = null, $placeholder = false) {
     if(empty($id)) {

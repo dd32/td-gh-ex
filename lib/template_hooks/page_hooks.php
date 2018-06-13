@@ -27,3 +27,19 @@ function virtue_pagination() {
  			the_posts_pagination($args);
  	 echo '</div>';
 }
+add_action( 'virtue_header', 'virtue_header_markup', 10 );
+function virtue_header_markup() {
+	get_template_part( 'templates/header' );
+}
+
+add_action( 'virtue_footer', 'virtue_footer_markup', 10 );
+function virtue_footer_markup() {
+	get_template_part('templates/footer');
+}
+
+add_action( 'virtue_sidebar', 'virtue_sidebar_markup', 10 );
+function virtue_sidebar_markup() {
+	if ( virtue_display_sidebar() ) {
+		get_sidebar();
+	}
+}

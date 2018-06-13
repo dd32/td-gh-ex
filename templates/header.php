@@ -1,4 +1,14 @@
-<?php global $virtue; ?>
+<?php 
+/**
+ * Header Template
+ *
+ * @version 3.2.5
+ */
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+global $virtue;
+?>
 <header class="banner headerclass" itemscope itemtype="http://schema.org/WPHeader">
 <?php 
     if (kadence_display_topbar()) :

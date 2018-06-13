@@ -1,10 +1,20 @@
 <?php
-/*
+/**
+ * Footer Template
+ *
+ * @version 3.2.5
+ */
 
-- Force plugins to stop stating incorrect errors -
-<?php wp_footer(); ?>
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+		
 
-*/	
-		get_template_part('templates/footer'); ?>
+		/**
+		* @hooked virtue_footer_markup - 10
+		*/
+		do_action( 'virtue_footer' );
+		?>
+
+		</div><!--Wrapper-->
+		<?php wp_footer(); ?>
 	</body>
 </html>

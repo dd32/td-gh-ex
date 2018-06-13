@@ -1,19 +1,22 @@
-<?php 
+<?php
+/**
+ * Wrapper template for displaying everything
+ *
+ * @version 3.2.5
+ */
 	get_header();
 	?>
 	<div class="wrap contentclass" role="document">
 
 	<?php do_action( 'kt_afterheader' );
 
-		include kadence_template_path();
+			include kadence_template_path();
 
-			if ( virtue_display_sidebar() ) : ?>
-				<aside class="<?php echo esc_attr( virtue_sidebar_class() ); ?> kad-sidebar" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
-					<div class="sidebar">
-						<?php include kadence_sidebar_path(); ?>
-					</div><!-- /.sidebar -->
-				</aside><!-- /aside -->
-			<?php endif; ?>
+				/**
+				* @hooked virtue_sidebar_markup - 10
+				*/
+				do_action( 'virtue_sidebar' );
+				?>
 			</div><!-- /.row-->
 		</div><!-- /.content -->
 	</div><!-- /.wrap -->

@@ -30,6 +30,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.2.5 | 13th June 2018 = 
+* Fix: Hentry errors in google console.
+* Update: Add better support for elementor.
+
 = Version 3.2.4 | 30th May 2018 = 
 * Update: Woo templates for 3.4.1 support.
 

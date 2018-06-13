@@ -1,3 +1,12 @@
+<?php 
+/**
+ * Page Header Template
+ *
+ * @version 3.2.5
+ */
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+?>
 <div id="pageheader" class="titleclass">
 	<div class="container">
 		<div class="page-header">

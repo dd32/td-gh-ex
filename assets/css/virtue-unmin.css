@@ -4768,6 +4768,7 @@ li.sfHover > a > .sf-sub-indicator {
 }
 .nav-trigger {
   position: relative;
+  z-index: 10000;
 }
 .kad-nav-collapse {
   overflow: hidden;

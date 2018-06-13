@@ -1,3 +1,12 @@
+<?php 
+/**
+ * Head Template
+ *
+ * @version 3.2.5
+ */
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+?>
 <!DOCTYPE html>
 <html class="no-js" <?php language_attributes(); ?> <?php kadence_html_tag_schema();?>>
 <head>
