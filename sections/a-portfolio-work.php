@@ -43,16 +43,17 @@
                   if ( $sub_query->have_posts() ) :
                       while( $sub_query->have_posts() ) : $sub_query->the_post();?>
                       <div class="work-item col-md-4 col-sm-6 col-xs-12 col-lg-3 <?php echo  esc_attr($sub_cat->name);?>" data-category="<?php echo  esc_attr($sub_cat->name);?>">
-                        <a class="work-link" data-toggle="modal" href="#workModal<?php echo esc_attr($sub_cat->term_id);?>">
+                        <div class="work-link">
                           <div class="work-hover">
                             <div class="work-hover-content">
-                              <i class="fa fa-plus fa-3x"></i>
+                                <a href="<?php the_permalink();?>"><i class="fa fa-link"></i></a>
                             </div>
                           </div>
                           <?php the_post_thumbnail('a-portfolio-work-thumb');?>
-                        </a>
+                        </div>
                         <div class="work-caption">
-                          <h4><a href="<?php the_permalink();?>"><?php the_title();?></a><?php echo  esc_html($sub_cat->name);?></h4>
+                          <h4><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
+                          <p><?php echo  esc_html($sub_cat->name);?></p>
                         </div>
                       </div>
                   <!-- Our work single end -->
