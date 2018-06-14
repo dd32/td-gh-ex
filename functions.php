@@ -17,6 +17,25 @@ load_theme_textdomain( 'arzine', get_stylesheet_directory() . '/languages' );
 // footer custom script
 function arzine_footer_custom_script()
 {
+wp_reset_query();
+$col =4;
+
+if(is_front_page() && is_active_sidebar('sidebar-primary') )
+{
+	$col =6;
+}
+elseif(is_front_page() )
+{
+	$col =4;
+}
+
+elseif ( is_active_sidebar('sidebar-primary') ) {
+$col =6;
+}
+else
+{
+$col =4;
+}
 ?>
 <script>
 jQuery(document).ready(function ( jQuery ) {
@@ -25,7 +44,7 @@ jQuery(document).ready(function ( jQuery ) {
 			childrenClass: 'item', // default is a div
 			columnClasses: 'padding', //add classes to items
 			breakpoints:{
-				lg: 4, //Change masonry column here like 2, 3, 4 column
+				lg: <?php echo $col; ?>, //Change masonry column here like 2, 3, 4 column
 				md: 6, 
 				sm: 6,
 				xs: 12
