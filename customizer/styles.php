@@ -96,6 +96,8 @@ function customizer_library_avant_build_styles() {
 				.woocommerce ul.products li.product .price,
 				.site-header-top-right .social-icon:hover,
 				.site-footer-bottom-bar .social-icon:hover,
+				.site-footer-bottom-bar ul li a:hover,
+				a.privacy-policy-link:hover,
 				.main-navigation.avant-nav-style-plain ul > li > a:hover,
 				.main-navigation.avant-nav-style-plain ul > li.current-menu-item > a,
 				.main-navigation.avant-nav-style-plain ul > li.current-menu-ancestor > a,

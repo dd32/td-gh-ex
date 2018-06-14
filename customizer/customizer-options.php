@@ -359,6 +359,13 @@ function customizer_library_avant_options() {
         'type'    => 'checkbox',
         'default' => 0,
     );
+    $options['avant-slider-pause-oh'] = array(
+        'id' => 'avant-slider-pause-oh',
+        'label'   => __( 'Pause Slider on mouse hover', 'avant' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
     $options['avant-slider-remove-title'] = array(
         'id' => 'avant-slider-remove-title',
         'label'   => __( 'Remove Slider Title & Text', 'avant' ),
@@ -762,7 +769,7 @@ function customizer_library_avant_options() {
         'id' => 'avant-noteon-footer',
         'section' => $section,
         'type'    => 'note',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Change Site Attribution text<br />- New Custom Footer layout<br />- Edit Custom Columns amount and Custom Widths<br />- Remove Social Icons<br />- Remove Footer bottom bar<br />- Adjust Footer top & bottom padding', 'avant' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Change Site Attribution text<br />- Adjust Social Footer Icon size<br />- New Custom Footer layout<br />- Edit Custom Columns amount and Custom Widths<br />- Remove Social Icons<br />- Remove Footer bottom bar<br />- Adjust Footer top & bottom padding', 'avant' )
     );
 
 
@@ -842,6 +849,99 @@ function customizer_library_avant_options() {
         );
 
     endif;
+
+
+    $section = 'avant-site-seo-section';
+
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'SEO (Search Engine Optimization)', 'avant' ),
+        'priority' => '100',
+        'panel' => $panel
+    );
+
+    $choices = array(
+        '1' => __( 'H1', 'avant' ),
+        '2' => __( 'H2', 'avant' ),
+        '3' => __( 'H3', 'avant' ),
+        '4' => __( 'H4', 'avant' ),
+        '5' => __( 'H5', 'avant' ),
+        '6' => __( 'H6', 'avant' )
+    );
+    $options['avant-seo-site-title-tag'] = array(
+        'id' => 'avant-seo-site-title-tag',
+        'label'   => __( 'Site Title Element', 'avant' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => '1'
+    );
+
+    $choices = array(
+        '1' => __( 'H1', 'avant' ),
+        '2' => __( 'H2', 'avant' ),
+        '3' => __( 'H3', 'avant' ),
+        '4' => __( 'H4', 'avant' ),
+        '5' => __( 'H5', 'avant' ),
+        '6' => __( 'H6', 'avant' )
+    );
+    $options['avant-seo-site-desc-tag'] = array(
+        'id' => 'avant-seo-site-desc-tag',
+        'label'   => __( 'Site Description Element', 'avant' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => '2'
+    );
+
+    $choices = array(
+        '1' => __( 'H1', 'avant' ),
+        '2' => __( 'H2', 'avant' ),
+        '3' => __( 'H3', 'avant' ),
+        '4' => __( 'H4', 'avant' ),
+        '5' => __( 'H5', 'avant' ),
+        '6' => __( 'H6', 'avant' )
+    );
+    $options['avant-seo-page-title-tag'] = array(
+        'id' => 'avant-seo-page-title-tag',
+        'label'   => __( 'Page Titles Element', 'avant' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => '3'
+    );
+    $choices = array(
+        '1' => __( 'H1', 'avant' ),
+        '2' => __( 'H2', 'avant' ),
+        '3' => __( 'H3', 'avant' ),
+        '4' => __( 'H4', 'avant' ),
+        '5' => __( 'H5', 'avant' ),
+        '6' => __( 'H6', 'avant' )
+    );
+    $options['avant-seo-blog-post-title-tag'] = array(
+        'id' => 'avant-seo-blog-post-title-tag',
+        'label'   => __( 'Blog List Titles Element', 'avant' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => '3'
+    );
+    $choices = array(
+        '1' => __( 'H1', 'avant' ),
+        '2' => __( 'H2', 'avant' ),
+        '3' => __( 'H3', 'avant' ),
+        '4' => __( 'H4', 'avant' ),
+        '5' => __( 'H5', 'avant' ),
+        '6' => __( 'H6', 'avant' )
+    );
+    $options['avant-seo-widget-title-tag'] = array(
+        'id' => 'avant-seo-widget-title-tag',
+        'label'   => __( 'Widget Titles Element', 'avant' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => '4'
+    );
 
 
     $panel = 'avant-panel-font-settings';
@@ -1243,7 +1343,7 @@ function customizer_library_avant_options() {
         'label'   => __( 'Phone Number Icon', 'avant' ),
         'section' => $section,
         'type'    => 'text',
-        'description' => __( 'Add your own custom icon by pasting the corrent <a href="http://fontawesome.io/icons/#brand" target="_blank">Font Awesome</a> class here<br />Eg: "fa-phone"<br />Or enter a space to remove the icon', 'avant' ),
+        'description' => __( 'Add your own custom icon by pasting the corrent <a href="https://fontawesome.com/cheatsheet" target="_blank">Font Awesome</a> class here<br />Eg: "fa-phone"<br />Or enter a space to remove the icon', 'avant' ),
         'default' => __( 'fa-phone', 'avant')
     );
     $options['avant-website-head-no'] = array(
@@ -1258,8 +1358,8 @@ function customizer_library_avant_options() {
         'label'   => __( 'Address Icon', 'avant' ),
         'section' => $section,
         'type'    => 'text',
-        'description' => __( 'Add your custom icon from <a href="http://fontawesome.io/icons/#brand" target="_blank">Font Awesome</a>', 'avant' ),
-        'default' => __( 'fa-map-marker', 'avant')
+        'description' => __( 'Add your custom icon from <a href="https://fontawesome.com/cheatsheet" target="_blank">Font Awesome</a>', 'avant' ),
+        'default' => __( 'fa-map-marker-alt', 'avant')
     );
     $options['avant-website-site-add'] = array(
         'id' => 'avant-website-site-add',

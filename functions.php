@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.07' );
+define( 'AVANT_THEME_VERSION' , '1.1.08' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -130,6 +130,18 @@ function avant_widgets_init() {
 }
 add_action( 'widgets_init', 'avant_widgets_init' );
 
+/*
+ * Change Widgets Title Tags for SEO
+ */
+function kaira_change_widget_titles( array $params ) {
+	$widget_title_tag = get_theme_mod( 'avant-seo-widget-title-tag', customizer_library_get_default( 'avant-seo-widget-title-tag' ) );
+    $widget =& $params[0];
+    $widget['before_title'] = '<h'.esc_attr( $widget_title_tag ).' class="widget-title">';
+    $widget['after_title'] = '</h'.esc_attr( $widget_title_tag ).'>';
+    return $params;
+}
+add_filter( 'dynamic_sidebar_params', 'kaira_change_widget_titles', 20 );
+
 /**
  * Enqueue scripts and styles.
  */
@@ -138,7 +150,7 @@ function avant_scripts() {
 	wp_enqueue_style( 'avant-body-font-default', '//fonts.googleapis.com/css?family=Open+Sans', array(), AVANT_THEME_VERSION );
 	wp_enqueue_style( 'avant-heading-font-default', 'https://fonts.googleapis.com/css?family=Poppins', array(), AVANT_THEME_VERSION );
 
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.7.0' );
+	wp_enqueue_style( 'avant-font-awesome', get_template_directory_uri().'/includes/font-awesome/css/fontawesome-all.css', array(), '5.0.13' );
 	wp_enqueue_style( 'avant-style', get_stylesheet_uri(), array(), AVANT_THEME_VERSION );
 
 	if ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-seven' ) :
@@ -179,6 +191,10 @@ function avant_scripts() {
 	if ( get_theme_mod( 'avant-blog-layout', customizer_library_get_default( 'avant-blog-layout' ) ) == 'blog-blocks-layout' ) :
 		wp_enqueue_script( 'jquery-masonry' );
         wp_enqueue_script( 'avant-masonry-custom', get_template_directory_uri() . '/js/layout-blocks.js', array('jquery'), AVANT_THEME_VERSION, true );
+	endif;
+	if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'infinite-scroll' ) ) :
+		wp_enqueue_script( 'jquery-masonry' );
+		wp_enqueue_script( 'avant-jetpack-scroll', get_template_directory_uri() . '/js/jetpack-infinite-scroll.js', array('jquery'), AVANT_THEME_VERSION, true );
 	endif;
 
 	wp_enqueue_script( 'avant-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), AVANT_THEME_VERSION, true );

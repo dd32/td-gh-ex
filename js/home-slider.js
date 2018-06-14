@@ -20,6 +20,7 @@
     function avant_home_slider() {
         var home_slider_auto = $( '.home-slider-wrap' ).data( 'auto' );
         var home_slider_scroll_effect = $( '.home-slider-wrap' ).data( 'scroll' );
+        var home_slider_poh = $( '.home-slider-wrap' ).data( 'poh' );
         
         $( '.home-slider' ).carouFredSel({
             responsive: true,
@@ -38,6 +39,7 @@
             },
             scroll: {
                 fx: home_slider_scroll_effect,
+                pauseOnHover: home_slider_poh,
                 duration: 450
             },
             auto: home_slider_auto,

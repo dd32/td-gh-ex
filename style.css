@@ -3,8 +3,8 @@ Theme Name: Avant
 Theme URI: https://kairaweb.com/theme/avant/
 Author: Kaira
 Author URI: https://kairaweb.com/
-Description: 7 Header layouts, 5 Blog layouts, 3 Footer layouts, Full site color settings and lots more settings all built neatly into the WordPress Customizer so you can edit & make changes in a live environment before making any of the changes live... Avant sure gives you what you're wanting. Avant is a highly customizable, multipurpose WordPress theme. Use Avant to build your WooCommerce eCommerce store, online fashion blog, corporate law or business website, or anything down to a simple personal blog. Avant integrates with top plugins such as Elementor or SiteOrigin's Page Builder to make it easy building your website with a drag and drop Page Builder. WooCommerce to create your e-commerce shop selling your products beautifully online. We're constantly building on to Avant, making it even more flexible to what you need. Give it a go!
-Version: 1.1.07
+Description: 7 Header layouts, 5 Blog layouts, 3 Footer layouts, Full site color settings, SEO (Search Engine Optimization) settings and lots more settings all built neatly into the WordPress Customizer so you can edit & make changes in a live environment before making any of the changes live... Avant sure gives you what you're wanting. Avant is a highly customizable, multipurpose WordPress theme. Use Avant to build your WooCommerce eCommerce store, online fashion blog, corporate law or business website, or anything down to a simple personal blog. Avant integrates with top plugins such as Elementor or SiteOrigin's Page Builder to make it easy building your website with a drag and drop Page Builder. WooCommerce to create your e-commerce shop selling your products beautifully online. We're constantly building on to Avant, making it even more flexible to what you need. Give it a go!
+Version: 1.1.08
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avant
@@ -1064,7 +1064,7 @@ a:active {
     margin: 0 0 25px;
     padding: 0 0 20px;
 }
-.site-main > .entry-header h2,
+.site-main > .entry-header .entry-title,
 header.woocommerce-products-header {
     font-size: 28px;
     margin: 0;
@@ -1449,6 +1449,8 @@ a.privacy-policy-link {
   text-transform: uppercase;
   display: inline-block;
   vertical-align: middle;
+  color: inherit;
+  margin: 0 8px;
 }
 
 .site-bottombar-switch .site-footer-bottom-bar-left {
@@ -2339,7 +2341,7 @@ body.single-product.woocommerce .page-fimage-banner {
         position: absolute;
         top: 10px;
         right: 10px;
-        font-size: 30px;
+        font-size: 22px;
         color: #898989;
         text-align: center;
         padding: 0 8px 0 12px;
@@ -2349,7 +2351,7 @@ body.single-product.woocommerce .page-fimage-banner {
     }
     .main-menu-close .fa-angle-left {
         position: relative;
-        left: -4px;
+        left: -6px;
     }
     .menu-dropdown-btn {
         display: block;
@@ -2398,14 +2400,6 @@ body.single-product.woocommerce .page-fimage-banner {
         float: none !important;
     }
 
-    .blog-blocks-wrap .blog-blocks-layout {
-        width: 100% !important;
-    }
-
-    .blog-style-imgblock .blog-post-blocks-inner-a {
-        opacity: 1 !important;
-    }
-
 }
 
 @media only screen and (max-width: 700px) {
@@ -2434,6 +2428,14 @@ body.single-product.woocommerce .page-fimage-banner {
 }
 
 @media only screen and (max-width: 580px) {
+
+    .blog-blocks-wrap .blog-blocks-layout {
+        width: 100% !important;
+    }
+
+    .blog-style-imgblock .blog-post-blocks-inner-a {
+        opacity: 1 !important;
+    }
 
     .site-footer-bottom-bar-left {
         float: none;
@@ -2546,6 +2548,8 @@ a,
 .woocommerce ul.products li.product .price,
 .site-header-top-right .social-icon:hover,
 .site-footer-bottom-bar .social-icon:hover,
+.site-footer-bottom-bar ul li a:hover,
+a.privacy-policy-link:hover,
 .main-navigation.avant-nav-style-plain ul > li > a:hover,
 .main-navigation.avant-nav-style-plain ul > li.current-menu-item > a,
 .main-navigation.avant-nav-style-plain ul > li.current-menu-ancestor > a,

@@ -18,7 +18,7 @@ get_header(); ?>
     <div id="primary" class="content-area">
     <?php endif; ?>
 		
-		<main id="main" class="site-main" role="main">
+		<main id="<?php echo ( get_theme_mod( 'avant-blog-layout' ) == 'blog-blocks-layout' ) ? sanitize_html_class( 'main' ) : sanitize_html_class( 'main-infinite' ); ?>" class="site-main" role="main">
 			
 			<?php get_template_part( '/templates/titlebar' ); ?>
 

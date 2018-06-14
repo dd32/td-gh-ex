@@ -29,6 +29,9 @@
 #customize-theme-controls #accordion-section-avant-social-section .accordion-section-title:hover:after {
     color: #FFF !important;
 }
+#accordion-section-avant-site-seo-section {
+    margin: 8px 0 0;
+}
 #accordion-section-avant_premium a.button {
     background-color: #006CC9;
     color: #FFF;
@@ -107,6 +110,9 @@
 #customize-control-avant-blog-layout,
 #customize-control-avant-blog-list-img-cut,
 #customize-control-avant-blog-widget-title-style,
+#customize-control-avant-seo-site-desc-tag,
+#customize-control-avant-seo-page-title-tag,
+#customize-control-avant-seo-blog-post-title-tag,
 #customize-control-avant-remove-single-pag,
 #customize-control-avant-remove-cats-count,
 #customize-control-avant-topbar-font-color,

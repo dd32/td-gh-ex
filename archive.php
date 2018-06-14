@@ -9,7 +9,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area <?php echo ( get_theme_mod( 'avant-blog-break-blocks' ) ) ? sanitize_html_class( 'blog-break-blocks' ) : ''; ?> <?php echo ( get_theme_mod( 'avant-blog-blocks-remove-border' ) ) ? sanitize_html_class( 'blog-blocks-no-border' ) : ''; ?>">
-		<main id="main" class="site-main" role="main">
+		<main id="<?php echo ( get_theme_mod( 'avant-blog-layout' ) == 'blog-blocks-layout' ) ? sanitize_html_class( 'main' ) : sanitize_html_class( 'main-infinite' ); ?>" class="site-main" role="main">
 
 			<?php if ( have_posts() ) : ?>
 

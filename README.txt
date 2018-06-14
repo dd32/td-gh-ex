@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-7 Header layouts, 5 Blog layouts, 3 Footer layouts, Full site color settings and lots more settings all built neatly into the WordPress Customizer so you can edit & make changes in a live environment before making any of the changes live... Avant sure gives you what you're wanting. Avant is a highly customizable, multipurpose WordPress theme. Use Avant to build your WooCommerce eCommerce store, online fashion blog, corporate law or business website, or anything down to a simple personal blog. Avant integrates with top plugins such as Elementor or SiteOrigin's Page Builder to make it easy building your website with a drag and drop Page Builder. WooCommerce to create your e-commerce shop selling your products beautifully online. We're constantly building on to Avant, making it even more flexible to what you need. Give it a go!
+7 Header layouts, 5 Blog layouts, 3 Footer layouts, Full site color settings, SEO (Search Engine Optimization) settings and lots more settings all built neatly into the WordPress Customizer so you can edit & make changes in a live environment before making any of the changes live... Avant sure gives you what you're wanting. Avant is a highly customizable, multipurpose WordPress theme. Use Avant to build your WooCommerce eCommerce store, online fashion blog, corporate law or business website, or anything down to a simple personal blog. Avant integrates with top plugins such as Elementor or SiteOrigin's Page Builder to make it easy building your website with a drag and drop Page Builder. WooCommerce to create your e-commerce shop selling your products beautifully online. We're constantly building on to Avant, making it even more flexible to what you need. Give it a go!
 
 == License ==
 
@@ -67,6 +67,15 @@ View the theme settings under "Appearance" -> Customize.
 1. Featured Images work best at a minimum of 1400 wide and 700 high.
 
 == Changelog ==
+
+#### 1.1.08
+* Style tweaks/fixes
+* Added setting to pause default slider on mouse hover
+* Updated Font Awesome - Please check custom icons under Customize -> Social Icons
+* Added setting to customize all titles (Site Title, Desctiprtion, Widget Titles, Posts) for better SEO
+* Fixed the Blog to work with JetPack Infinite Scroll
+* Updated the language .pot file
+Premium: Added setting to adjust Social Footer Icons sizing
 
 #### 1.1.07
 * Style tweaks/fixes - GDPR
