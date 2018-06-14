@@ -1028,7 +1028,7 @@ if (!function_exists('atlast_customizer_settings')):
             'capability' => 'edit_theme_options',
             'theme_supports' => '',
             'title' => __('Mobile section', 'atlast-business'),
-            'description' => esc_html__('Options for the mobile version','atlast-business'),
+            'description' => esc_html__('Options for the mobile version', 'atlast-business'),
             'panel' => $prefix . '_theme_panel'
         ));
 
@@ -1375,6 +1375,18 @@ if (!function_exists('atlast_customizer_settings')):
             'sanitize_callback' => 'esc_url_raw',
         ));
 
+        $wp_customize->add_setting($prefix . '_youtube', array(
+            'default' => '',
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+
+        $wp_customize->add_setting($prefix . '_vimeo', array(
+            'default' => '',
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+
         $wp_customize->add_control($prefix . '_facebook', array(
             'type' => 'url',
             'priority' => 10,
@@ -1413,6 +1425,22 @@ if (!function_exists('atlast_customizer_settings')):
             'section' => $prefix . '_social_section',
             'label' => esc_html__('Instagram URL', 'atlast-business'),
             'description' => esc_html__('Add your Instagram URL with https:// in front.', 'atlast-business'),
+        ));
+
+        $wp_customize->add_control($prefix . '_youtube', array(
+            'type' => 'url',
+            'priority' => 14,
+            'section' => $prefix . '_social_section',
+            'label' => esc_html__('Youtube URL', 'atlast-business'),
+            'description' => esc_html__('Add your Youtube URL with https:// in front.', 'atlast-business'),
+        ));
+
+        $wp_customize->add_control($prefix . '_vimeo', array(
+            'type' => 'url',
+            'priority' => 15,
+            'section' => $prefix . '_social_section',
+            'label' => esc_html__('Vimeo URL', 'atlast-business'),
+            'description' => esc_html__('Add your Vimeo URL with https:// in front.', 'atlast-business'),
         ));
 
         /*== Footer section settings ==*/
@@ -1470,33 +1498,33 @@ if (!function_exists('atlast_customizer_settings')):
             'description' => esc_html__('Add your copyright text here. You can use this text with the available copyright layouts.', 'atlast-business'),
         ));
 
-	    /**== Mobile section settings ==*/
-	    $wp_customize->add_setting($prefix . '_mobile_menu_layout', array(
-		    'default' => 0,
-		    'capability' => 'edit_theme_options',
-		    'sanitize_callback' => 'atlast_business_sanitize_number_absint',
-	    ));
-	    $wp_customize->add_control($prefix . '_mobile_menu_layout', array(
-		    'type' => 'select',
-		    'priority' => 10,
-		    'section' => $prefix . '_mobile_section',
-		    'label' => esc_html__('Select the mobile menu  style', 'atlast-business'),
-		    'description' => '',
-		    'choices' => array(
-			    0 => esc_html__('Default', 'atlast-business'),
-			    1 => esc_html__('Style 1 - Logo in the middle', 'atlast-business'),
+        /**== Mobile section settings ==*/
+        $wp_customize->add_setting($prefix . '_mobile_menu_layout', array(
+            'default' => 0,
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'atlast_business_sanitize_number_absint',
+        ));
+        $wp_customize->add_control($prefix . '_mobile_menu_layout', array(
+            'type' => 'select',
+            'priority' => 10,
+            'section' => $prefix . '_mobile_section',
+            'label' => esc_html__('Select the mobile menu  style', 'atlast-business'),
+            'description' => '',
+            'choices' => array(
+                0 => esc_html__('Default', 'atlast-business'),
+                1 => esc_html__('Style 1 - Logo in the middle', 'atlast-business'),
 
-		    )
-	    ));
+            )
+        ));
 
 
-	    $wp_customize->add_section(
+        $wp_customize->add_section(
             new Atlast_Business_Customize_Section_Changelog(
                 $wp_customize,
                 'changelog',
                 array(
-                    'title' => esc_html__('Whats New in 1.5.0', 'atlast-business'),
-                    'changelog_text' => esc_html__('Version 1.5.0 - You can manipulate the service excerpt so you can show whatever you want in the services section. Stay tuned MAJOR update coming 1.6.0', 'atlast-business'),
+                    'title' => esc_html__('Whats New in 1.5.1', 'atlast-business'),
+                    'changelog_text' => esc_html__('Version 1.5.1 - Transparency fix for header style 2 added. Youtube and Vimeo icons added at the social section. Stay tuned MAJOR update coming 1.6.0', 'atlast-business'),
                     'priority' => 1,
                     'capability' => 'edit_theme_options',
                 )
@@ -1567,7 +1595,9 @@ if (!function_exists('atlast_business_set_transparent_menu')):
 
         if ($trans == '1' && $style == '1' && (is_front_page() || is_home())) {
             return ' transparent-header ';
-        } else {
+        } else if ($trans == '1' && $style == '2' && (is_front_page() || is_home()))
+            return ' transparent-header ' ;
+        else {
             return false;
         }
     }

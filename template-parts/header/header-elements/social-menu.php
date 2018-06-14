@@ -6,6 +6,8 @@
 	$gp     = get_theme_mod( $prefix . '_google-plus', '#' );
 	$ln     = get_theme_mod( $prefix . '_linkedin', '#' );
 	$in     = get_theme_mod( $prefix . '_instagram', '#' );
+	$yt     = get_theme_mod( $prefix . '_youtube', '#' );
+	$vm     = get_theme_mod( $prefix . '_vimeo', '#' );
 	?>
 	<?php if ( ! empty( $fb ) ): ?>
         <li><a href="<?php echo esc_url( $fb ); ?>"
@@ -33,5 +35,15 @@
 	<?php if ( ! empty( $in ) ): ?>
         <li><a href="<?php echo esc_url($in); ?>" title="<?php echo esc_attr__( 'Follow us on Instagram', 'atlast-business' ); ?>"><span
                         class="fab fa-instagram"></span></a></li>
+	<?php endif; ?>
+
+    <?php if ( ! empty( $yt ) ): ?>
+        <li><a href="<?php echo esc_url($yt); ?>" title="<?php echo esc_attr__( 'Visit our Youtube Page', 'atlast-business' ); ?>"><span
+                        class="fab fa-youtube"></span></a></li>
+	<?php endif; ?>
+
+    <?php if ( ! empty( $vm) ): ?>
+        <li><a href="<?php echo esc_url($vm); ?>" title="<?php echo esc_attr__( 'Follow us on Vimeo', 'atlast-business' ); ?>"><span
+                        class="fab fa-vimeo"></span></a></li>
 	<?php endif; ?>
 </ul>
