@@ -66,13 +66,13 @@ class arise_contact_widgets extends WP_Widget {
 		<?php }
 		function update( $new_instance, $old_instance ) {
 			$instance = $old_instance;
-			$instance['title'] = strip_tags($new_instance['title']);
-			$instance['address1'] = strip_tags($new_instance['address1']);
-			$instance['address_link1'] = esc_url($new_instance['address_link1']);
-			$instance['phone_no1'] = esc_attr($new_instance['phone_no1']);
-			$instance['phone_no2'] = esc_attr($new_instance['phone_no2']);
-			$instance['email_1'] = is_email($new_instance['email_1']);
-			$instance['skype_id1'] = esc_attr($new_instance['skype_id1']);
+			$instance['title'] = sanitize_text_field($new_instance['title']);
+			$instance['address1'] = sanitize_text_field($new_instance['address1']);
+			$instance['address_link1'] = esc_url_raw($new_instance['address_link1']);
+			$instance['phone_no1'] = sanitize_text_field($new_instance['phone_no1']);
+			$instance['phone_no2'] = sanitize_text_field($new_instance['phone_no2']);
+			$instance['email_1'] = sanitize_text_field($new_instance['email_1']);
+			$instance['skype_id1'] = sanitize_text_field($new_instance['skype_id1']);
 			return $instance;
 		}
 		function widget( $args, $instance ) {
@@ -86,12 +86,12 @@ class arise_contact_widgets extends WP_Widget {
 		$skype_id1 = empty( $instance['skype_id1'] ) ? '' : $instance['skype_id1'];
 		echo '<!-- Contact Us ============================================= -->' .$before_widget;
 		if(!empty($title)): ?>
-		<h3 class="widget-title"><?php echo strip_tags($title); ?></h3> <!-- end .widget-title -->
+		<h3 class="widget-title"><?php echo esc_html($title); ?></h3> <!-- end .widget-title -->
 		<?php endif;
 		if(!empty($address1) || !empty($phone_no1) || !empty($phone_no2) || !empty($email_1) || !empty($skype_id1)): ?>
 		<ul>
 			<?php if(!empty($address1)): ?>
-			<li class="address"><a href="<?php if(!empty($address_link1)) echo esc_url($address_link1); ?>" title="<?php echo strip_tags($address1); ?>" target="_blank"><?php echo strip_tags($address1); ?></a></li>
+			<li class="address"><a href="<?php if(!empty($address_link1)) echo esc_url($address_link1); ?>" title="<?php echo esc_attr($address1); ?>" target="_blank"><?php echo esc_attr($address1); ?></a></li>
 			<?php endif;
 			if(!empty($phone_no1)): ?>
 			<li class="phone-number"><a href="tel:<?php echo preg_replace("/[^0-9+]/",'',$phone_no1); ?>" title="<?php echo esc_attr($phone_no1); ?>"><?php echo esc_attr($phone_no1); ?></a></li>

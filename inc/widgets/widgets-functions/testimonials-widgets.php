@@ -32,8 +32,8 @@ class arise_widget_testimonial extends WP_Widget {
 	function update($new_instance, $old_instance) {
 		$instance  = $old_instance;
 		$instance[ 'number' ] = absint( $new_instance[ 'number' ] );
-		$instance[ 'post_type' ] = $new_instance[ 'post_type' ];
-		$instance[ 'category' ] = $new_instance[ 'category' ];
+		$instance[ 'post_type' ] = sanitize_text_field($new_instance[ 'post_type' ]);
+		$instance[ 'category' ] = sanitize_text_field($new_instance[ 'category' ]);
 		return $instance;
 	}
 

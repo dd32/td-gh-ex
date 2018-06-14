@@ -34,7 +34,7 @@ wpml-config.xml is used to support multilangual plugins such and wpml, polylang.
 	- The theme is offered free of charge. If someone asked money for it, someone just tricked you.
 
 == Copyright ==
-	Arise WordPress Theme, Copyright 2016 WordPress.org
+	Arise WordPress Theme, Copyright 2016 themefreesia
 	Arise is distributed under the terms of the GNU GPL
 
 	This program is free software: you can redistribute it and/or modify
@@ -110,6 +110,13 @@ All the theme files and other un-specified scripts are licensed under GNU Genera
 =================================================================================
 
 == CHANGE LOG ==
+= 2.1.3.5 =
+	- Fix - minor code fixed
+			- sanitize widgets
+	- Update - copyright text changed in readme.txt
+				- CSS Updated for elementor page builder
+				- added only 3 subject tag
+
 = 2.1.3.4 =
 	- Fix - Unwanted code removed
 			- fixed an issue to support multilangual plugins

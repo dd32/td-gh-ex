@@ -29,13 +29,13 @@
 				<label for="<?php echo $this->get_field_id('title');?>">
 		<?php _e('Title:', 'arise');?>
 				</label>
-				<input id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo $title;?>" />
+				<input id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo esc_attr($title);?>" />
 				</p>
 				<p>
 			<label for="<?php echo $this->get_field_id('description');?>">
 				<?php _e('Description:', 'arise');?>
 			</label>
-			<textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('description');?>" name="<?php echo $this->get_field_name('description');?>"><?php echo stripslashes( wp_filter_post_kses( addslashes ($description)));
+			<textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('description');?>" name="<?php echo $this->get_field_name('description');?>"><?php echo esc_attr($description);
 	?></textarea></p>
 				<p>
 				<label for="<?php echo $this->get_field_id('number'); ?>">
@@ -55,12 +55,12 @@
 	function update($new_instance, $old_instance) {
 
 		$instance  = $old_instance;
-		$instance['description'] = strip_tags($new_instance['description']);
-		$instance['checkbox'] = strip_tags($new_instance['checkbox']);
-		$instance['title'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['title']) ) );
+		$instance['description'] = sanitize_textarea_field($new_instance['description']);
+		$instance['checkbox'] = sanitize_text_field($new_instance['checkbox']);
+		$instance['title'] = sanitize_text_field($new_instance['title']);
 		$instance[ 'number' ] = absint( $new_instance[ 'number' ] );
-		$instance[ 'post_type' ] = $new_instance[ 'post_type' ];
-		$instance[ 'category' ] = $new_instance[ 'category' ];
+		$instance[ 'post_type' ] = sanitize_text_field($new_instance[ 'post_type' ]);
+		$instance[ 'category' ] = sanitize_text_field($new_instance[ 'category' ]);
 		return $instance;
 	}
 	function widget($args, $instance) {

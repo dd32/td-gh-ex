@@ -56,9 +56,9 @@ class arise_parallax_video_widget extends WP_Widget {
 	function update($new_instance, $old_instance) {
 		$instance                       = $old_instance;
 		$var            = 'page_id';
-		$instance['arise_video_content']   = stripslashes( wp_filter_post_kses( addslashes ($new_instance['arise_video_content'])));
-		$instance['arise_video_redirecturl'] = esc_url($new_instance['arise_video_redirecturl']);
-		$instance['arise_video_redirect_text']      = strip_tags($new_instance['arise_video_redirect_text']);
+		$instance['arise_video_content']   = sanitize_textarea_field($new_instance['arise_video_content']);
+		$instance['arise_video_redirecturl'] = esc_url_raw($new_instance['arise_video_redirecturl']);
+		$instance['arise_video_redirect_text']      = sanitize_text_field($new_instance['arise_video_redirect_text']);
 		$instance[$var] = absint($new_instance[$var]);
 		return $instance;
 	}
@@ -101,7 +101,7 @@ class arise_parallax_video_widget extends WP_Widget {
 							<h3 class="widget-title"><?php echo esc_attr($arise_video_title); ?></h3>
 							<?php endif;
 							if(!empty($arise_video_content)): ?>
-							<h3><?php echo stripslashes( wp_filter_post_kses( addslashes ($arise_video_content))); ?></h3>
+							<h3><?php echo esc_attr($arise_video_content); ?></h3>
 							<?php endif;
 							if(!empty($arise_video_redirect_text)): ?>
 							<a class="btn-default light" href="<?php echo esc_url($arise_video_redirecturl); ?>" title="<?php echo esc_attr($arise_video_redirect_text); ?>" target="_blank"><?php echo esc_attr($arise_video_redirect_text); ?></a><!-- end .btn-default -->

@@ -51,8 +51,8 @@ class arise_portfolio_widget extends WP_Widget {
 	function update($new_instance, $old_instance) {
 		$instance                        = $old_instance;
 		$instance['number'] = absint( $new_instance['number'] );
-		$instance['title'] = esc_attr( $new_instance['title'] );
-		$instance['text'] = esc_attr( $new_instance['text'] );
+		$instance['title'] = sanitize_text_field( $new_instance['title'] );
+		$instance['text'] = sanitize_textarea_field( $new_instance['text'] );
 		for ($i = 0; $i < $instance['number']; $i++) {
 			$var            = 'page_id'.$i;
 			$instance[$var] = absint($new_instance[$var]);

@@ -44,8 +44,8 @@ class arise_parallax_widget extends WP_Widget {
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
 		$var  = 'page_id';
-		$instance['arise_widget_redirecturl'] = esc_url($new_instance['arise_widget_redirecturl']);
-		$instance['arise_redirect_text'] = strip_tags($new_instance['arise_redirect_text']);
+		$instance['arise_widget_redirecturl'] = esc_url_raw($new_instance['arise_widget_redirecturl']);
+		$instance['arise_redirect_text'] = sanitize_text_field($new_instance['arise_redirect_text']);
 		$instance['filter'] = isset($new_instance['filter']);
 		$instance[$var] = absint($new_instance[$var]);
 		return $instance;

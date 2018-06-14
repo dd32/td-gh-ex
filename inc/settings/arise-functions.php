@@ -14,7 +14,7 @@
 function arise_resp_and_custom_css() {
 	$arise_settings = arise_get_theme_options();
 	if( $arise_settings['arise_responsive'] == 'on' ) { ?>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width" />
 	<?php } else{ ?>
 	<meta name="viewport" content="width=1070" />
 	<?php  }
