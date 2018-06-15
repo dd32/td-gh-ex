@@ -1,5 +1,9 @@
 Auto Store Changelog
 
+= 1.2.0 - June 15 2018 =
+* ADDED: Premium Feature
+* CHANGE: Autor URL
+
 = 1.1.9 - June 12 2018 =
 * ADDED: New Screenshot
 * CHANGE: Sidebar Colors
