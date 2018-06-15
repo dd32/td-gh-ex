@@ -4,7 +4,7 @@ Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-h
 custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 theme-options, footer-widgets, full-width-template, editor-style
 Requires at least: 4.8.0
-Tested up to: 4.9.5
+Tested up to: 4.9.5a
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -60,6 +60,9 @@ https://wordpress.org/plugins/basic-jquery-slider/
 
 == Changelog ==
 
+= 1.0.1 =
+* updating slider images in screenshot 
+
 = 1.0.0 =
 * Initial Release
 
@@ -89,6 +92,6 @@ AyaBooks WordPress Theme bundles the following third-party resources:
 * js/viewportchecker.js, MIT
 *
 * screenshot.png (Slider Image), https://pixabay.com/en/daisy-bellis-philosophy-2320519/, CC0
-* screenshot.png (Column #1 Image), https://pixabay.com/en/books-icon-book-icon-symbol-set-1673578/, CC0
-* screenshot.png (Column #2 Image), https://pixabay.com/en/book-notebook-icon-set-web-2389229/, CC0
-* screenshot.png (Column #3 Image), https://pixabay.com/en/coffee-cup-icons-beverage-798315/, CC0
+* screenshot.png (Column #1 Image), https://pixabay.com/en/book-old-book-read-used-2363881/, CC0
+* screenshot.png (Column #2 Image), https://pixabay.com/en/book-flowers-read-white-dreams-2436058/, CC0
+* screenshot.png (Column #3 Image), https://pixabay.com/en/book-read-relax-meadow-book-pages-2304389/, CC0
