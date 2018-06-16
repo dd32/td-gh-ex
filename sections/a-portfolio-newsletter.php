@@ -12,7 +12,7 @@
         <p><?php echo esc_html($queried_post->post_content); ?></p>
         <?php wp_reset_postdata(); ?>
       </div>
-      <div class="col-md-6 col-sm-6 col-xs-12">
+      <div class="col-md-6 col-sm-12 col-xs-12">
         <div class="newsletter">
           <?php if (get_theme_mod('a_portfolio_newsletter_shortcode')):
               echo do_shortcode(wp_kses_post(get_theme_mod('a_portfolio_newsletter_shortcode'))); 

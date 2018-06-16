@@ -4,7 +4,7 @@ Theme URI: http://easywp-themes.com/downloads/a-portfolio/
 Author: easywp-themes
 Author URI: http://easywp-themes.com/
 Description: A Portfolio is responsive, customizable and powerful professional WordPress theme. It can be customized easily in few clicks using live customizer. A Portfolio comes with a easy option to add logo and favicon, custom widgets and more. It is a search engine optimized theme which performs best in google, bing, yahoo or any other search engines. This theme is suitable for all type of business, corporate, portfolio, digital agency, blog or any creative modern looking websites
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: a-portfolio
@@ -229,9 +229,9 @@ header .site-heading .subheading {
 
 /*=======================
   Start What we Do CSS
-=========================*/
+  =========================*/
 
-#what-we-do {
+  #what-we-do {
     position: relative;
 }
 
@@ -289,14 +289,14 @@ header .site-heading .subheading {
 
 /*=======================
   End What we Do CSS
-=========================*/
+  =========================*/
 
 
 /*=======================
   Start our work CSS
-=========================*/
+  =========================*/
 
-#our-work {
+  #our-work {
     background: #868e96;
 }
 
@@ -484,9 +484,9 @@ header .site-heading .subheading {
 
 /*=======================
   End Our Work CSS
-=========================*/
+  =========================*/
 
-.slick-dots {
+  .slick-dots {
     left: 0;
 }
 
@@ -508,9 +508,9 @@ header .site-heading .subheading {
 
 /*=======================
   Our Team CSS Start
-=========================*/
+  =========================*/
 
-.owl-carousel .owl-wrapper-outer {
+  .owl-carousel .owl-wrapper-outer {
     padding: 20px 0;
 }
 
@@ -617,14 +617,14 @@ header .site-heading .subheading {
 
 /*=======================
   Our Team CSS End
-=========================*/
+  =========================*/
 
 
 /*=======================
   Testimonial CSS
-=========================*/
+  =========================*/
 
-#testimonial {
+  #testimonial {
     background: #868e96;
 }
 
@@ -657,14 +657,14 @@ header .site-heading .subheading {
     }
     /* .slick-wrap-pd-25{
             padding: 0 25px;
-    } */
-    .testimonial-slider {
-        padding: 10px;
-    }
-    .testimonial-content {
-        width: 90%;
-    }
-    .testimonial .testimonial-content {
+            } */
+            .testimonial-slider {
+                padding: 10px;
+            }
+            .testimonial-content {
+                width: 90%;
+            }
+            .testimonial .testimonial-content {
         /* margin-top: 20px;
         margin-left: 75px; */
         margin: 20px auto;
@@ -684,14 +684,14 @@ header .site-heading .subheading {
 
 /*=======================
   End Testimonial CSS
-=========================*/
+  =========================*/
 
 
 /*=======================
   Blog CSS
-=========================*/
+  =========================*/
 
-#blog {
+  #blog {
     position: relative;
 }
 
@@ -1067,14 +1067,14 @@ header .site-heading .subheading {
 
 /*=======================
   End Blog CSS
-=========================*/
+  =========================*/
 
 
 /*=======================
   Contact CSS
-=========================*/
+  =========================*/
 
-#contact {
+  #contact {
     background: #868e96;
     margin-bottom: 0px;
     padding-bottom: 50px;
@@ -1232,14 +1232,14 @@ header .site-heading .subheading {
 
 /*=======================
   End Contact CSS
-=========================*/
+  =========================*/
 
 
 /*=======================
   Newslatter CSS
-=========================*/
+  =========================*/
 
-#newsletter {
+  #newsletter {
     padding: 70px 0;
     background: #d1dde8;
     background-size: cover;
@@ -1259,8 +1259,7 @@ header .site-heading .subheading {
 }
 
 #newsletter .newsletter {
-    text-align: center;
-    margin-top: 50px;
+    margin-top: 33px;
 }
 
 #newsletter .newsletter form h4 {
@@ -1275,11 +1274,9 @@ header .site-heading .subheading {
 }
 
 #newsletter .newsletter form input {
-    width: 100%;
     height: 52px;
-    padding-left: 35px;
     text-transform: capitalize;
-    border-radius: 50px;
+    border-radius: 5px;
     border: none;
 }
 
@@ -1314,18 +1311,22 @@ header .site-heading .subheading {
 #newsletter p {
     color: #fff;
 }
-
+#newsletter .newsletter form .tnp-submit{
+    margin-left: -100px;
+    height: 53px;
+    width: 100px;
+}
 
 /*=======================
   End Newslatter CSS
-=========================*/
+  =========================*/
 
 
 /*=======================
   Start Footer CSS
-=========================*/
+  =========================*/
 
-footer {
+  footer {
     background: #1E1E1E;
 }
 
@@ -1387,66 +1388,66 @@ footer p {
 }
 /*=======================
   End Footer CSS
-=========================*/
+  =========================*/
 
 /*=======================
     Detail page css
-=========================*/
-.details-page{
-    height: 70px;
-    margin-bottom: 0px;
-}
+    =========================*/
+    .details-page{
+        height: 70px;
+        margin-bottom: 0px;
+    }
 /* ======================= 
     Breadcrumbs
-==========================*/
-.breadcrumbs {
-    padding-top: 50px;
-    background-position: 100%;
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: center;
-}
+    ==========================*/
+    .breadcrumbs {
+        padding-top: 50px;
+        background-position: 100%;
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+    }
 
-.breadcrumbs .bread-list {
-    border-radius: 3px;
-    background: rgba(255, 255, 255, 0.20);
-    display: inline-block;
-    padding: 15px 200px;
-    color: #FFF;
-}
-.breadcrumbs ul li {
-    display: inline-block;
-    position: relative;
-}
+    .breadcrumbs .bread-list {
+        border-radius: 3px;
+        background: rgba(255, 255, 255, 0.20);
+        display: inline-block;
+        padding: 15px 200px;
+        color: #FFF;
+    }
+    .breadcrumbs ul li {
+        display: inline-block;
+        position: relative;
+    }
 
-.breadcrumbs ul li a {
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    text-transform: capitalize;
-}
-.breadcrumbs ul li.active a{
-    font-weight:400;
-}
-.breadcrumbs ul li i{
-    margin-left:5px;
-}
+    .breadcrumbs ul li a {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+    .breadcrumbs ul li.active a{
+        font-weight:400;
+    }
+    .breadcrumbs ul li i{
+        margin-left:5px;
+    }
 
 
-#what-we-do,
-#our-work,
-#team,
-#testimonial,
-#blog {
-    margin-bottom: 80px;
-}
+    #what-we-do,
+    #our-work,
+    #team,
+    #testimonial,
+    #blog {
+        margin-bottom: 80px;
+    }
 
-.section-heading {
-    font-size: 36px;
-    font-weight: 700;
-    margin-top: 60px;
-}
+    .section-heading {
+        font-size: 36px;
+        font-weight: 700;
+        margin-top: 60px;
+    }
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
@@ -1628,48 +1629,48 @@ a img.aligncenter {
     /* Above WP toolbar. */
 }
 .comments-area {
-        margin-top: 30px;
-    }
-    .comments-area h2 {
-        margin-bottom: 15px;
-    }
-    .comments-area ol {
-        margin: 0;
-        list-style: none;
-    }
-    .comments-area ol.comment-list {
-        padding: 0;
-    }
-    .comments-area ol.comment-list article {
-        margin-bottom: 15px;
-        background: #fff;
-        padding: 15px;
-        border-radius: 5px;
-    }
-    .comments-area footer {
-        background: none;
-        padding: 0;
-        text-align: left;
-    }
-    .comments-area .comment-form label,
-    .comments-area .comment-form input {
-        display: block;
-        font-weight: 300;
-    }
-    .comments-area .comment-form input,
-    .comments-area .comment-form textarea {
-        border: 1px solid #ddd;
-        border-radius: 0;
-        box-shadow: none;
-        padding: 10px;
-        width: 100%;
-    }
-    .comments-area .comment-form .form-submit input {
-        color: #fff;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        border: none;
-    }
+    margin-top: 30px;
+}
+.comments-area h2 {
+    margin-bottom: 15px;
+}
+.comments-area ol {
+    margin: 0;
+    list-style: none;
+}
+.comments-area ol.comment-list {
+    padding: 0;
+}
+.comments-area ol.comment-list article {
+    margin-bottom: 15px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+.comments-area footer {
+    background: none;
+    padding: 0;
+    text-align: left;
+}
+.comments-area .comment-form label,
+.comments-area .comment-form input {
+    display: block;
+    font-weight: 300;
+}
+.comments-area .comment-form input,
+.comments-area .comment-form textarea {
+    border: 1px solid #ddd;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 10px;
+    width: 100%;
+}
+.comments-area .comment-form .form-submit input {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border: none;
+}
 /* Blog Comments */
 #blog .blog-comments {
     margin-top: 30px;
@@ -1775,7 +1776,7 @@ a img.aligncenter {
     width: 100%;
 }
 #submit{
-    
+
 }
 .comment-notes { } 
 .required { }
@@ -1814,5 +1815,6 @@ a img.aligncenter {
 }
 
 .menu-menu-1-container{
-        margin: 0 auto;
+    margin: 0 auto;
 }
+

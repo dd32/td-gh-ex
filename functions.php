@@ -133,6 +133,8 @@ add_action( 'widgets_init', 'a_portfolio_widgets_init' );
  */
 function a_portfolio_scripts() {
 
+	wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css?family='.get_theme_mod('google_fontfamily_setting').':400,400i,600,700,800', array(), '' );
+	
 	// Bootstrap css
 	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() .'/assets/css/bootstrap.css', array(), '4.0.0' );
 
@@ -205,22 +207,25 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 
 /**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-css.php';
+
+/**
  * Load Jetpack compatibility file.
  */
-
-
 function a_portfolio_get_cat_postcount($id) {
-    $cat = get_category($id);
-    $count = (int) $cat->count;
-    $taxonomy = 'category';
-    $args = array(
-      'child_of' => $id,
-    );
-    $tax_terms = get_terms($taxonomy,$args);
-    foreach ($tax_terms as $tax_term) {
-        $count +=$tax_term->count;
-    }
-    return $count;
+	$cat = get_category($id);
+	$count = (int) $cat->count;
+	$taxonomy = 'category';
+	$args = array(
+		'child_of' => $id,
+	);
+	$tax_terms = get_terms($taxonomy,$args);
+	foreach ($tax_terms as $tax_term) {
+		$count +=$tax_term->count;
+	}
+	return $count;
 }
 
 if ( defined( 'JETPACK__VERSION' ) ) {

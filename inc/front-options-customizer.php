@@ -547,7 +547,7 @@ $wp_customize->add_control('a_portfolio_newsletter_shortcode',array(
     'section'       =>      'a_portfolio_newsletter_section',
      'label'                 =>  __( 'News Letter Section Use Shortcode', 'a-portfolio' ),
       /* translators: %s: Description */ 
-    'description'           => sprintf( __( 'Use Newsletter Plugins shortcode: Eg: %1$s. %2$s See more here %3$s', 'a-portfolio' ), '[newsletter_form]','<a href="'.esc_url('https://wordpress.org/plugins/newsletter/').'" target="_blank">','</a>' ),
+    'description'           => sprintf( __( 'Use Newsletter Plugins shortcode: Eg: %1$s. %2$s See more here %3$s', 'a-portfolio' ), '[newsletter_form type="minimal"]','<a href="'.esc_url('https://wordpress.org/plugins/newsletter/').'" target="_blank">','</a>' ),
     'type'          =>      'text',
     'settings'      =>      'a_portfolio_newsletter_shortcode'
     ));
