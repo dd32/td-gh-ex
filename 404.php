@@ -18,7 +18,7 @@ echo '<main id="admela_maincontent" class="admela_sitemaincontent" role="main">'
       <?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'admela' ); ?>
     </h1>
   </header>
-  <!-- .page-header -->
+  <!-- .admela_404header -->
   
   <div class="admela_404content">
     <p>
@@ -26,9 +26,11 @@ echo '<main id="admela_maincontent" class="admela_sitemaincontent" role="main">'
     </p>
     <?php get_search_form(); ?>
   </div>
-  <!-- .page-content --> 
+  <!-- .admela_404content --> 
   
-</div>
-<?php
-echo '</main>';  //site-main 
-get_footer(); ?>
+</div> <!-- .admela_404contentarea --> 
+<?php 
+echo '</main>';  //#admela_maincontent
+get_footer(); 
+
+?>

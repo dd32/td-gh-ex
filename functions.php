@@ -16,10 +16,7 @@
  *
  */
  
-  require trailingslashit(get_template_directory()). '/lib/includes/admela-customtemp-tags.php';
-  require trailingslashit(get_template_directory()). '/lib/includes/admin/admela-themeoptions/admela-theme-settings.php'; 
-  require trailingslashit(get_template_directory()). '/lib/includes/admin/admela-themeoptions/admela-theme-page.php'; 
-  
+ 
   
   /**
  * Set the content width based on the theme's design and stylesheet.
@@ -55,7 +52,17 @@ function admela_setup() {
 
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page.
 	add_theme_support( 'post-thumbnails' );
+	
+	add_image_size( 'admela-slider-featured-image', 380, 480, true );
 
+	add_image_size( 'admela-post-featured-image', 264, 176, true );
+	
+	add_image_size( 'admela-single-post-featured-image', 864, 550, true );
+	
+	add_image_size( 'admela-related-post-featured-image', 410, 245, true );
+	
+	add_image_size( 'admela-single-post-topbar-image', 50, 50, true );
+	
     // Supporting title tag via add_theme_support (since WordPress 4.1)
     add_theme_support( 'title-tag' );
 	
@@ -67,7 +74,7 @@ function admela_setup() {
 	/*
 	* Enable support for add_editor_style
 	*/
-	add_editor_style( 'lib/includes/admin/css/editor-style.css' );
+	add_editor_style( 'lib/css/editor-style.css' );
 
 
 	// Registering navigation menus.
@@ -77,11 +84,10 @@ function admela_setup() {
         
 	) );
 	
-	
 		
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'admela_custom_background_args', array(
-		'default-color' => 'eaeaea'
+		'default-color' => 'ffffff'
 	) ) );
 	
 
@@ -92,6 +98,19 @@ function admela_setup() {
    add_theme_support('html5', array(
        'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
    ));
+   	
+	// Add theme support for Custom Logo.
+	add_theme_support(
+		'custom-logo', array(
+			'width'      => 150,
+			'height'     => 55,
+			'flex-width' => true,			
+		)
+	);
+
+	
+    // Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
    
     /*
 	 * Enable support for Post Formats.
@@ -99,12 +118,11 @@ function admela_setup() {
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat'
-	) );
+	));
    
    add_action('widgets_init', 'admela_widgets_init' ); // Register  admela widget areas.   
    add_action('wp_enqueue_scripts', 'admela_enqueue_scripts');  
   
- 
 	
 }
 
@@ -145,10 +163,9 @@ function admela_fonts_url() {
 	
 	
 	$admela_googlefont = 'Oswald';
+	
 	$admela_bdygooglefont = 'Noto Sans';
-	
-		
-	
+				
     $admela_fonturl = '';
     
     /*
@@ -156,7 +173,7 @@ function admela_fonts_url() {
     by chosen font(s), translate this to 'off'. Do not translate into your own language.
      */
     if ( 'off' !== _x( 'on', 'Google font: on or off', 'admela' ) ) {
-        $admela_fonturl = add_query_arg( 'family', urlencode( ''.$admela_googlefont.'|'.$admela_bdygooglefont.':100,300,400,700&subset=latin,latin-ext,greek,cyrillic' ), "//fonts.googleapis.com/css" );
+        $admela_fonturl = add_query_arg( 'family', urlencode( ''.$admela_googlefont.':100,300,400,700 |'.$admela_bdygooglefont.':100,300,400,700&subset=latin,latin-ext,greek,cyrillic' ), "//fonts.googleapis.com/css" );
     }
     return esc_url_raw($admela_fonturl);
 }
@@ -186,70 +203,33 @@ function admela_enqueue_scripts() {
 				    	
 		// Enqueue Theme Inline-Style
 		
-		
-		if(admela_get_option('admela_custom_logo') == true) {
+		if(get_theme_mod('admela_custom_logo') == true) {
 			$admela_customcss .= ".admela_sitetitle {padding: 0 0 0px;} \r\n";
         }
 		
-		if(admela_get_option('admela_postpgtpad_code') != '') {
+		if(get_theme_mod('admela_single_post_top_ad_setting') != '') {
 
-		if((admela_get_option('admela_postpgtpadalign') == '')):
+		if((get_theme_mod('admela_single_post_top_ad_alignment_setting') == 'none')):
 
 		$admela_admargin = '12px 0px 20px';
 
-		elseif((admela_get_option('admela_postpgtpadalign') == 'left')):
+		elseif((get_theme_mod('admela_single_post_top_ad_alignment_setting') == 'left')):
 
 		$admela_admargin = '10px 25px 0px 0';
 
-		elseif((admela_get_option('admela_postpgtpadalign') == 'right')):
+		elseif((get_theme_mod('admela_single_post_top_ad_alignment_setting') == 'right')):
 
 		$admela_admargin = '10px 0px 0px 25px';
 
 		endif;
 		
-		$admela_customcss .= ".admela_ectpad {float:". esc_html((admela_get_option('admela_postpgtpadalign')) ? admela_get_option('admela_postpgtpadalign') :'none').";margin:".esc_html($admela_admargin).";}\r\n";
+		$admela_customcss .= ".admela_ectpad {float:". esc_html((get_theme_mod('admela_single_post_top_ad_alignment_setting')) ? get_theme_mod('admela_single_post_top_ad_alignment_setting') :'none').";margin:".esc_html($admela_admargin).";}\r\n";
 		
 		}
-							
-		if(admela_get_option('wholelayoutwidth') != '') {
-			$admela_customcss .= ".admela_siteinner,.admela_sitefooterinner,.admela_headerinner {width:".esc_html((admela_get_option('wholelayoutwidth')) ? admela_get_option('wholelayoutwidth') :'1200')."px;} \r\n";
-		}
 		
-		$admela_customcss .= " 
-		@media screen and (max-width:".((admela_get_option('wholelayoutwidth')) ? admela_get_option('wholelayoutwidth') : '1200')."px) {
-	      .admela_siteinner,
-          .admela_headerinner,
-          .admela_sitefooterinner {			
-			padding: 0 1em;
-		  }
-		  .owl-item .admela_slideritem img {			
-			width: 100%;
-			}
-			.admela_header1 .admela_headerfirst li a, 
-			.admela_header1 .admela_hdlsticon i {
-				margin-right: 6px;
-			}
-		  .admela_headerinner, 
-		  .admela_maincontent, 
-		  .admela_adinner, 
-		  .admela_siteinner, 
-		  .admela_sitefooterinner {
-			width: 100%;		
-		  }
-		  .admela_adleft {  
-			 margin: 3% 2.5% 0% 0;   
-		  }
-		  .admela_slider3item img {
-			width: 63%;
-		  }
-		  .admela_slider3item .admela_sliderheader {
-			padding: 3em 2em 2em;    
-		  }
-		}\r\n";
-
+		
 		wp_add_inline_style('admela-style', $admela_customcss);
 		
-		if (!is_admin()) {
 	
 		// Enqueue Theme Javascript  		   
 		 	
@@ -260,9 +240,15 @@ function admela_enqueue_scripts() {
             wp_enqueue_script('comment-reply');
 		}
   
-		}
+		
     }
 endif;
 
 
-
+  /* Customizer additions. */ 
+  require get_parent_theme_file_path('/lib/includes/customizer.php');
+  
+  /* Custom template tags for this theme. */ 
+  require get_parent_theme_file_path('/lib/includes/admela-customtemp-tags.php');
+  
+  

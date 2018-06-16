@@ -31,7 +31,7 @@ echo '<main id="admela_maincontent" class="admela_maincontent">';
 				
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) {
-				 if(admela_get_option('admela_commentspost') != true) {
+				 if(get_theme_mod('admela_commentspost') != true) {
 					comments_template();
 				  }
 				}
@@ -50,24 +50,21 @@ echo '<main id="admela_maincontent" class="admela_maincontent">';
 		endif;
 		
 		?>
-	<div class="admela_contentareafooter">
-		<div class="screen-reader-text"><?php esc_html_e('This div height required for the sticky sidebar','admela'); ?></div>
-	</div>
 	
-    </div>
-<!-- .content-area-inner -->
-<!-- .content-area -->
+    </div> <!-- .admela_contentlist -->
+
 <div class="admela_primarycontentarea">
         <?php
 		
 			get_sidebar('right'); // Theme Right Sidebar
 		
 		?>
-</div>
-</div>
+</div> <!-- .admela_primarycontentarea -->
+
+</div> <!-- .admela_contentarea -->
 <?php  
 
-echo '</main>';  //site-main 
+echo '</main>';  //#admela_maincontent
 
 get_footer(); 
 

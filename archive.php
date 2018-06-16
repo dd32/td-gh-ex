@@ -18,13 +18,14 @@ echo '<main id="admela_maincontent" class="admela_maincontent">';
 <div class="admela_contentlist">
   
   <div class="admela_contentlistmain">
+			
 			<header class="admela_archiveheader">
 			<?php   
 				the_archive_title( '<h1 class="admela_archivetitle">', '</h1>' );
 				the_archive_description( '<div class="admela_taxonomydescription">', '</div>' );
 			?>
-			</header>
-		<!-- .archive-header -->
+			</header> <!-- .admela_archiveheader -->
+		
     
         <?php
 		if(is_author()):	
@@ -43,10 +44,7 @@ echo '<main id="admela_maincontent" class="admela_maincontent">';
 						
         if ( have_posts() ) : 
 		
-		    $admela_bylineck = admela_get_option('admela_ebylfp');
-		
-		   
-		
+		 	
 			//Start the loop.
 			while ( have_posts() ) : the_post();
 			
@@ -55,7 +53,7 @@ echo '<main id="admela_maincontent" class="admela_maincontent">';
 				 * Include the Post-Format-specific template for the content.			
 				 */
 				 
-				get_template_part( 'content' );
+				get_template_part('layout-parts/content');
 				               
 			    // End the loop.
 			    endwhile;			
@@ -72,14 +70,11 @@ echo '<main id="admela_maincontent" class="admela_maincontent">';
 			    admela_paging_nav(); // admela-pagination
 				
 			?>
-  </div>
-  </div>
-  <!-- .content-area-inner -->
-
-
-</div>
+  </div> <!-- .admela_contentlistinner -->
   
-<!-- .content-area -->
+  </div> <!-- .admela_contentlistmain -->
+  
+</div> <!-- .admela_contentlist -->  
 
 <div class="admela_primarycontentarea">
 
@@ -90,13 +85,13 @@ echo '<main id="admela_maincontent" class="admela_maincontent">';
 		get_sidebar('right'); // Theme Right Sidebar
 
 		?>
-</div>
+</div> <!-- .admela_primarycontentarea -->  
 
-</div>
+</div> <!-- .admela_contentarea -->  
 
 <?php 
 
-echo '</main>';  //site-main 
+echo '</main>';  //#admela_maincontent
 
 get_footer(); 
 

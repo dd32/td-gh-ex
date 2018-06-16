@@ -9,9 +9,7 @@
 
 get_header(); 
 
-
 echo '<main id="admela_maincontent" class="admela_maincontent">';
-
 
 ?>
 
@@ -20,14 +18,15 @@ echo '<main id="admela_maincontent" class="admela_maincontent">';
 <div class="admela_contentlist">
   
 		<div class="admela_contentlistmain">
+		
 			<header class="admela_searchheader">
 				<h1 class="admela_searchtitle">			
 					<?php 			  
 					printf( esc_html__( 'Search Results Found For : %s', 'admela' ), '<span>"' . esc_html( get_search_query() ) . '"</span>'); 
 			  		?>		
 				</h1>
-			</header>
-		<!-- .search-header -->
+			</header> <!-- .admela_searchheader -->
+		
     
 		<div class="admela_contentlistinner">
 	      
@@ -35,8 +34,7 @@ echo '<main id="admela_maincontent" class="admela_maincontent">';
 						
         if ( have_posts() ) : 
 		
-		    $admela_bylineck = admela_get_option('admela_ebylfp');
-		
+		    
 			//Start the loop.
 			while ( have_posts() ) : the_post();
 			
@@ -44,7 +42,7 @@ echo '<main id="admela_maincontent" class="admela_maincontent">';
 				 * Include the Post-Format-specific template for the content.			
 				 */
 				 
-				get_template_part( 'content' );
+				get_template_part('layout-parts/content');
 				       
 			    // End the loop.
 			    endwhile;			
@@ -61,12 +59,12 @@ echo '<main id="admela_maincontent" class="admela_maincontent">';
 			    admela_paging_nav(); // admela-pagination
 				
 			?>
-  </div>
-  </div>
-  <!-- .content-area-inner -->
+  </div> <!-- .admela_contentlistinner -->
+  
+  </div> <!-- .admela_contentlistmain -->  
 
-  </div>
-<!-- .content-area -->
+  </div> <!-- .admela_contentlist -->
+
 
 <div class="admela_primarycontentarea">
 
@@ -76,11 +74,11 @@ echo '<main id="admela_maincontent" class="admela_maincontent">';
 
 	?>
 	
-</div>
+</div> <!-- .admela_primarycontentarea -->
 
-</div>
+</div> <!-- .admela_contentarea -->
 <?php 
 
-echo '</main>';  //site-main 
+echo '</main>';  //#admela_maincontent 
 
 get_footer();

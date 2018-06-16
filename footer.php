@@ -12,21 +12,20 @@
 
 </div>
 
-<!-- .site-inner -->
+<!-- .admela_siteinner -->
 
 <footer class="admela_sitefooter">
 
 <?php 
 
-	get_sidebar('footer-content'); 
+	get_sidebar('footer-content'); // gets the footer content section.
 
 ?>
 
-</footer>
-<!-- .site-footer -->
+</footer> <!-- .admela_sitefooter -->
 
-</div>
-<!-- .site container -->
+
+</div> <!-- .admela_sitecontainer -->
 
 <?php 
  

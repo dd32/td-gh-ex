@@ -32,7 +32,7 @@ echo '<main id="admela_maincontent" class="admela_maincontent">';
 				
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) {
-				 if(admela_get_option('admela_commentspost') != true) {
+				 if(get_theme_mod('admela_commentspost') != true) {
 					comments_template();
 				  }
 				}
@@ -51,11 +51,9 @@ echo '<main id="admela_maincontent" class="admela_maincontent">';
 		endif;
 		
 		?>
-    </div>
+    </div> <!-- .admela_contentlist -->
 	
-<!-- .content-area-inner -->
 
-<!-- .content-area -->
 
 <div class="admela_primarycontentarea">
 	<?php
@@ -63,13 +61,13 @@ echo '<main id="admela_maincontent" class="admela_maincontent">';
 		get_sidebar('right'); // Theme Right Sidebar
 		
 	?>
-</div>
+</div> <!-- .admela_primarycontentarea -->
 
-</div>
+</div> <!-- .admela_contentarea -->
 
 <?php 
  
-echo '</main>';  //site-main 
+echo '</main>';  //#admela_maincontent 
 
 get_footer(); 
 

@@ -11,5 +11,5 @@
 <aside id="admela_primarysidebar" class="admela_primarysidebar widget-area">
   <?php dynamic_sidebar( 'admela-primary-sidebar' ); ?>
 </aside>
-<!-- .sidebar .widget-area -->
+<!-- .admela_primarysidebar .widget-area -->
 <?php endif; ?>

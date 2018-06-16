@@ -1,6 +1,6 @@
 <?php 
 
-/* admela : Comment Tempplate page
+/* Admela : Comment Tempplate page
 *
 * @package WordPress
 * @subpackage admela

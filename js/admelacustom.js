@@ -3,26 +3,9 @@ jQuery(document).on('ready',function() {
 	
 "use strict"; 
 	
-jQuery("#admela_top").hide();
+jQuery("#admela_top").hide(); // Hide the bottom to top button at initially. 
 
-jQuery('.admela_headershareicon').on('click',function() {
-   jQuery('.admela_headerfirstsub').slideToggle('slow');
-});
- 
-jQuery(".admela_hdlsrchicon,.admela_searchcls").on("click",function(e){
-	 e.preventDefault();
-	 jQuery('body').toggleClass('admela_active_searchin'); 
-	 	 
-});
-
-jQuery(".admela_hdmenuicon,.admela_pushclose").on("click",function(e){
-	
-     e.preventDefault();
-	 jQuery('body').toggleClass('admela_active_pushmenu'); 
-	 	 
-});
-
-jQuery(function() {
+jQuery(function() { // jquery function for bottom to top button.
         jQuery(window).scroll(function() {
             if (jQuery(this).scrollTop() > 600) {
                 jQuery('#admela_top').fadeIn();
@@ -37,6 +20,40 @@ jQuery(function() {
             return false;
         });
     });
+
+/*--------------------------------------------------------------------------*/
+		
+// Header Mobile view social follow icons show/hide click event function.
+	
+jQuery('.admela_headershareicon').on('click',function() {
+   jQuery('.admela_headerfirstsub').slideToggle('slow');
+});
+
+
+/*--------------------------------------------------------------------------*/
+ 
+// Header Search Section show/hide click event function.
+	 
+jQuery(".admela_hdlsrchicon,.admela_searchcls").on("click",function(e){
+	 e.preventDefault();
+	 jQuery('body').toggleClass('admela_active_searchin'); 
+	 	 
+});
+
+/*--------------------------------------------------------------------------*/
+
+// Theme push menu show/hide click event function.
+	
+jQuery(".admela_hdmenuicon,.admela_pushclose").on("click",function(e){
+	
+     e.preventDefault();
+	 jQuery('body').toggleClass('admela_active_pushmenu'); 
+	 	 
+});
+
+/*--------------------------------------------------------------------------*/
+
+// Theme owl-carousel slider (owlCarousel)function.
 	
 jQuery("#admela_owldemo1").owlCarousel({
         items: 3,
@@ -58,12 +75,20 @@ jQuery("#admela_owldemo1").owlCarousel({
                 items: 3
             }
         },
-        navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+        navText: ["<i class='fas fa-angle-left'></i>", "<i class='fas fa-angle-right'></i>"],
     });
+	
+/*--------------------------------------------------------------------------*/
 
+// Header social follow section show/hide click event function.
+	
 jQuery('.admela_fashare').on('click',function(){
 	jQuery('.admela_hdscliconinner').toggleClass('admela_hdscliconshow');
 });
+
+/*--------------------------------------------------------------------------*/
+
+// Theme slider mouseover/mouseout event function.
 
 jQuery('.owl-next').on('mouseover', function(){
   jQuery(this).parent().addClass('admela_nxtishover');
@@ -72,6 +97,10 @@ jQuery('.owl-next').on('mouseover', function(){
 });
 
 });
+
+/*--------------------------------------------------------------------------*/
+
+// Add button type before the nav tag for using click event function.
 
 ! function(e, t) {
 	"use strict";
@@ -82,6 +111,11 @@ jQuery('.owl-next').on('mouseover', function(){
         }), e.toggleClass("admela_mnuactivated"), e.next("nav, .sub-menu, .children").slideToggle("fast")
     })
 }(this, jQuery);
+
+/*--------------------------------------------------------------------------*/
+
+// Slider owlCarousel Main Function 
+
 (function($, window, document, undefined) {
 	"use strict";
     function Owl(element, options) {
@@ -2002,6 +2036,11 @@ jQuery('.owl-next').on('mouseover', function(){
         $.support.transform3d = tests.csstransforms3d();
     }
 })(window.Zepto || window.jQuery, window, document);
+
+/*--------------------------------------------------------------------------*/
+
+// Single post reading status jquery function.
+
 jQuery(function() {
 	
 jQuery(window).scroll(function(){
@@ -2030,3 +2069,5 @@ jQuery(window).scroll(function(){
 	});
 
 });
+
+

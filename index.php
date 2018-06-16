@@ -10,7 +10,7 @@
 
 
 
-get_template_part('amblayouts/amblyt1'); // Calls the bloglayouts 
+get_template_part('layout-parts/amblyt'); // gets the bloglayout content
  
 
  

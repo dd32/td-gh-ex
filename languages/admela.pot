@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PlaceHolder\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-28 04:46+0000\n"
-"PO-Revision-Date: 2018-05-17 11:59+0000\n"
+"PO-Revision-Date: 2018-06-14 06:56+0000\n"
 "Last-Translator: admin <v.vimal0992@gmail.com>\n"
 "Language-Team: English (United States)\n"
 "MIME-Version: 1.0\n"
@@ -30,18 +30,17 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: archive.php:144 search.php:121 amblayouts/amblyt1.php:374 
-#: amblayouts/amblyt2.php:142 amblayouts/amblyt3.php:150
+#: archive.php:144 search.php:121 layout-parts/amblyt.php:374 
 msgid "Sorry No Posts Were Found"
 msgstr ""
 
 #: author-bio.php:28 content.php:32 content.php:254 content.php:349 
 #: content.php:428 content.php:512 content.php:693 content.php:757 
-#: amblayouts/amblyt1.php:65 amblayouts/amblyt1.php:311 
+#: layout-parts/amblyt.php:65 layout-parts/amblyt.php:311 
 #: lib/includes/admela-customtemp-tags.php:1812 
 #: lib/includes/admela-customtemp-tags.php:2633 
 #: lib/includes/admela-customtemp-tags.php:2698 
-#: lib/includes/admela-customtemp-tags.php:2934 
+#: lib/includes/admela-customtemp-tags.php:2934
 msgid "By"
 msgstr ""
 
@@ -118,8 +117,8 @@ msgid "Leave a Comment"
 msgstr ""
 
 #: content-page.php:95 content-page.php:119 content-page.php:131 
-#: content.php:206 content.php:224 amblayouts/amblyt1.php:253 
-#: amblayouts/amblyt1.php:271 amblayouts/amblyt1.php:279 
+#: content.php:206 content.php:224 layout-parts/amblyt.php:253 
+#: layout-parts/amblyt.php:271 layout-parts/amblyt.php:279 
 #: lib/includes/admela-customtemp-tags.php:819 
 #: lib/includes/admela-customtemp-tags.php:830 
 #: lib/includes/admela-customtemp-tags.php:987 
@@ -141,39 +140,33 @@ msgstr ""
 #: lib/includes/admela-customtemp-tags.php:1778 
 #: lib/includes/admela-customtemp-tags.php:1904 
 #: lib/includes/admela-customtemp-tags.php:1929 
-#: lib/includes/admela-customtemp-tags.php:1940 
+#: lib/includes/admela-customtemp-tags.php:1940
 msgid "img"
 msgstr ""
 
 #: content-page.php:158 content-single.php:68 content.php:73 content.php:276 
 #: content.php:374 content.php:458 content.php:537 content.php:605 
-#: page-full-width.php:50 amblayouts/amblyt1.php:106 
-#: amblayouts/amblyt1.php:333 amblayouts/amblyt2.php:109 
-#: amblayouts/amblyt3.php:127 amblayouts/amblyt4.php:123 
-#: amblayouts/amblyt5.php:102
+#: layout-parts/amblyt.php:106 
+#: layout-parts/amblyt.php:333 
 msgid "Pages:"
 msgstr ""
 
 #: content-page.php:162 content-single.php:72 content.php:77 content.php:280 
 #: content.php:378 content.php:462 content.php:541 content.php:609 
-#: page-full-width.php:54 amblayouts/amblyt1.php:110 
-#: amblayouts/amblyt1.php:337 amblayouts/amblyt2.php:113 
-#: amblayouts/amblyt3.php:131 amblayouts/amblyt4.php:127 
-#: amblayouts/amblyt5.php:106
+#: layout-parts/amblyt.php:110 
+#: layout-parts/amblyt.php:337 
 msgid "Page"
 msgstr ""
 
-#: content-single.php:121 lib/includes/woocm.php:58 
-#: lib/includes/widgets/admela-socialfollow-widget.php:159
+#: content-single.php:121
 msgid "Facebook"
 msgstr ""
 
-#: content-single.php:146 lib/includes/woocm.php:63 
-#: lib/includes/widgets/admela-socialfollow-widget.php:176
+#: content-single.php:146
 msgid "Twitter"
 msgstr ""
 
-#: content-single.php:150 content.php:93 amblayouts/amblyt1.php:127
+#: content-single.php:150 content.php:93 layout-parts/amblyt.php:127
 msgid "Click to share"
 msgstr ""
 
@@ -185,8 +178,7 @@ msgstr ""
 msgid "Linkedin"
 msgstr ""
 
-#: content-single.php:165 lib/includes/woocm.php:73 
-#: lib/includes/widgets/admela-socialfollow-widget.php:191
+#: content-single.php:165 
 msgid "Pinterest"
 msgstr ""
 
@@ -211,24 +203,23 @@ msgid "Whatsapp"
 msgstr ""
 
 #: content.php:38 content.php:247 content.php:342 content.php:421 
-#: content.php:505 amblayouts/amblyt1.php:71 amblayouts/amblyt1.php:304 
-#: amblayouts/amblyt2.php:78 amblayouts/amblyt3.php:90 
-#: amblayouts/amblyt4.php:91 lib/includes/admela-customtemp-tags.php:1804
+#: content.php:505 layout-parts/amblyt.php:71 layout-parts/amblyt.php:304 
+#: lib/includes/admela-customtemp-tags.php:1804
 msgid "Featured"
 msgstr ""
 
 #: content.php:47 content.php:333 content.php:412 content.php:496 
-#: content.php:677 content.php:741 amblayouts/amblyt1.php:79 
+#: content.php:677 content.php:741 layout-parts/amblyt.php:79 
 #: lib/includes/admela-customtemp-tags.php:853 
 #: lib/includes/admela-customtemp-tags.php:1021 
 #: lib/includes/admela-customtemp-tags.php:1795 
-#: lib/includes/admela-customtemp-tags.php:2664 
+#: lib/includes/admela-customtemp-tags.php:2664
 msgid "In"
 msgstr ""
 
 #: content.php:57 content.php:260 content.php:355 content.php:434 
-#: content.php:518 content.php:698 content.php:762 amblayouts/amblyt1.php:89 
-#: amblayouts/amblyt1.php:317 amblayouts/amblyt2.php:91 
+#: content.php:518 content.php:698 content.php:762 layout-parts/amblyt.php:89 
+#: layout-parts/amblyt.php:317 
 #: lib/includes/admela-customtemp-tags.php:847 
 #: lib/includes/admela-customtemp-tags.php:1014 
 #: lib/includes/admela-customtemp-tags.php:1818 
@@ -238,11 +229,9 @@ msgstr ""
 msgid "On"
 msgstr "posted on"
 
-
 #: functions.php:101
 msgid "Primary Menu"
 msgstr ""
-
 
 #: functions.php:151
 msgid "Primary Sidebar"
@@ -252,16 +241,12 @@ msgstr ""
 msgid "primary sidebar that appears on the Right."
 msgstr ""
 
-
 #: functions.php:274
 msgctxt "Google font: on or off"
 msgid "on"
 msgstr ""
 
-
-
-#: page-full-width.php:86 page.php:43 page.php:89 single.php:76 
-#: amblayouts/amblyt4.php:146 
+#: single.php:76 
 msgid "Sorry No Posts were Found..!"
 msgstr ""
 
@@ -269,7 +254,6 @@ msgstr ""
 #, php-format
 msgid "Search Results Found For : %s"
 msgstr ""
-
 
 #: lib/includes/admela-customtemp-tags.php:48
 msgid "Prev Post"
@@ -292,29 +276,12 @@ msgstr ""
 msgid "Next &rarr;"
 msgstr ""
 
-#: lib/includes/admela-customtemp-tags.php:1971
-msgid "Home"
-msgstr ""
-
 #: lib/includes/admela-customtemp-tags.php:2653
 msgid "At"
 msgstr ""
 
-#: lib/includes/admela-customtemp-tags.php:2682 
-#: lib/includes/admela-customtemp-tags.php:2714
-msgid "Views"
-msgstr ""
-
 #: lib/includes/admela-customtemp-tags.php:2955
 msgid "sorry no posts matched your criteria"
-msgstr ""
-
-#: lib/includes/admela-customtemp-tags.php:3001
-msgid "Select Mega Menu To Show"
-msgstr ""
-
-#: lib/includes/admin/admela-themeoptions/admela-import-export.php:24
-msgid "Admela Theme Options"
 msgstr ""
 
 #. Description of the theme
