@@ -50,11 +50,14 @@
     
     <div class="site-header-left">
         
-        <?php if( get_header_image() ) : ?>
+        <?php
+        $site_title_tag = get_theme_mod( 'topshop-seo-site-title-tag', customizer_library_get_default( 'topshop-seo-site-title-tag' ) );
+        $site_desc_tag = get_theme_mod( 'topshop-seo-site-desc-tag', customizer_library_get_default( 'topshop-seo-site-desc-tag' ) );
+        if ( get_header_image() ) : ?>
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo-img" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><img src="<?php esc_url( header_image() ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ) ?>" /></a>
         <?php else : ?>
-            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-            <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+            <h<?php echo esc_attr( $site_title_tag ); ?> class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h<?php echo esc_attr( $site_title_tag ); ?>>
+            <h<?php echo esc_attr( $site_desc_tag ); ?> class="site-description"><?php bloginfo( 'description' ); ?></h<?php echo esc_attr( $site_desc_tag ); ?>>
         <?php endif; ?>
         
     </div><!-- .site-branding -->

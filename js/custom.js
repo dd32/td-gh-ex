@@ -29,7 +29,7 @@
         });
         
         // Scroll To Top Button Functionality
-        $('.scroll-to-top').bind('click', function() {
+        $(".scroll-to-top").bind("click", function() {
             $('html, body').animate( { scrollTop: 0 }, 800 );
         });
         $(window).scroll(function(){

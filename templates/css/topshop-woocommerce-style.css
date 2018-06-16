@@ -189,11 +189,11 @@ display: inline-block;font-size: 13px;}
 .woocommerce-page ul.products li.product .onsale {
     border-radius: 0;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08) inset;
-    width: 70px;
+    min-width: 70px;
     height: 28px;
     min-height: 20px;
     margin: 0;
-    padding: 4px 0 0;
+    padding: 4px 10px 0;
     line-height: 20px;
     font-size: 14px;
     text-shadow: none;

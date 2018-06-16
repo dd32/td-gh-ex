@@ -1,7 +1,7 @@
 === TopShop ===
 Contributors: Kaira
 Donate link: 
-Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, education, entertainment, holiday, news, photography
+Tags: two-columns, three-columns, four-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, entertainment
 Requires at least: 4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -69,6 +69,13 @@ View the theme settings under "Appearance" -> Customize.
 1. Featured Images work best at a minimum of 1100 wide and 420 high.
 
 == Changelog ==
+
+#### 1.3.17
+* Updated Theme Tags
+* Added setting to remove blog single page Next & Previous post links
+* Added setting to customize all titles (Site Title, Desctiprtion, Widget Titles, Posts) for better SEO
+* Added a setting to enable a Back To Top button - Customize -> Layout Settings -> Footer
+* Updated language .pot file
 
 #### 1.3.16
 * Edit/Fix settings to work with child theme defaults

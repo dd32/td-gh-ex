@@ -175,6 +175,13 @@ function customizer_library_topshop_options() {
         'panel' => $panel
     );
     
+    $options['topshop-single-remove-pag'] = array(
+        'id' => 'topshop-single-remove-pag',
+        'label'   => __( 'Remove links to Next & Previous posts on Blog single pages', 'topshop' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
     $options['topshop-blog-cats'] = array(
         'id' => 'topshop-blog-cats',
         'label'   => __( 'Exclude Blog Categories', 'topshop' ),
@@ -237,6 +244,14 @@ function customizer_library_topshop_options() {
         'priority' => '40',
         'panel' => $panel
     );
+
+    $options['topshop-btt-button'] = array(
+        'id' => 'topshop-btt-button',
+        'label'   => __( 'Enable a Back To Top button', 'topshop' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
     
     $options['topshop-help-footer'] = array(
         'id' => 'topshop-help-footer',
@@ -287,6 +302,99 @@ function customizer_library_topshop_options() {
         );
         
     endif;
+
+
+    $section = 'topshop-site-seo-section';
+
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'SEO (Search Engine Optimization)', 'topshop' ),
+        'priority' => '80',
+        'panel' => $panel
+    );
+
+    $choices = array(
+        '1' => __( 'H1', 'topshop' ),
+        '2' => __( 'H2', 'topshop' ),
+        '3' => __( 'H3', 'topshop' ),
+        '4' => __( 'H4', 'topshop' ),
+        '5' => __( 'H5', 'topshop' ),
+        '6' => __( 'H6', 'topshop' )
+    );
+    $options['topshop-seo-site-title-tag'] = array(
+        'id' => 'topshop-seo-site-title-tag',
+        'label'   => __( 'Site Title Element', 'topshop' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => '1'
+    );
+
+    $choices = array(
+        '1' => __( 'H1', 'topshop' ),
+        '2' => __( 'H2', 'topshop' ),
+        '3' => __( 'H3', 'topshop' ),
+        '4' => __( 'H4', 'topshop' ),
+        '5' => __( 'H5', 'topshop' ),
+        '6' => __( 'H6', 'topshop' )
+    );
+    $options['topshop-seo-site-desc-tag'] = array(
+        'id' => 'topshop-seo-site-desc-tag',
+        'label'   => __( 'Site Description Element', 'topshop' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => '2'
+    );
+
+    $choices = array(
+        '1' => __( 'H1', 'topshop' ),
+        '2' => __( 'H2', 'topshop' ),
+        '3' => __( 'H3', 'topshop' ),
+        '4' => __( 'H4', 'topshop' ),
+        '5' => __( 'H5', 'topshop' ),
+        '6' => __( 'H6', 'topshop' )
+    );
+    $options['topshop-seo-page-title-tag'] = array(
+        'id' => 'topshop-seo-page-title-tag',
+        'label'   => __( 'Page Titles Element', 'topshop' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => '3'
+    );
+    $choices = array(
+        '1' => __( 'H1', 'topshop' ),
+        '2' => __( 'H2', 'topshop' ),
+        '3' => __( 'H3', 'topshop' ),
+        '4' => __( 'H4', 'topshop' ),
+        '5' => __( 'H5', 'topshop' ),
+        '6' => __( 'H6', 'topshop' )
+    );
+    $options['topshop-seo-blog-post-title-tag'] = array(
+        'id' => 'topshop-seo-blog-post-title-tag',
+        'label'   => __( 'Blog List Titles Element', 'topshop' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => '3'
+    );
+    $choices = array(
+        '1' => __( 'H1', 'topshop' ),
+        '2' => __( 'H2', 'topshop' ),
+        '3' => __( 'H3', 'topshop' ),
+        '4' => __( 'H4', 'topshop' ),
+        '5' => __( 'H5', 'topshop' ),
+        '6' => __( 'H6', 'topshop' )
+    );
+    $options['topshop-seo-widget-title-tag'] = array(
+        'id' => 'topshop-seo-widget-title-tag',
+        'label'   => __( 'Widget Titles Element', 'topshop' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => '4'
+    );
     
 
 	// Colors

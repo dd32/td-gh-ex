@@ -6,7 +6,10 @@
     background-color: #006CC9;
     color: #FFF;
 }
-
+#accordion-section-topshop-site-seo-section,
+#accordion-section-topshop-panel-layout-section-woocommerce {
+    margin: 8px 0 0;
+}
 #accordion-section-topshop_premium a.button {
     background-color: #006CC9;
     color: #FFF;
@@ -49,7 +52,11 @@
 #customize-control-topshop-header-layout,
 #customize-control-topshop-show-header-top-bar,
 #customize-control-topshop-blog-cats,
+#customize-control-topshop-single-remove-pag,
 #customize-control-topshop-remove-cats-count,
+#customize-control-topshop-seo-site-desc-tag,
+#customize-control-topshop-seo-page-title-tag,
+#customize-control-topshop-seo-blog-post-title-tag,
 #customize-control-topshop-body-font-color,
 #customize-control-topshop-heading-font-color,
 #customize-control-background_color,

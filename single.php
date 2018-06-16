@@ -14,7 +14,9 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php topshop_post_nav(); ?>
+			<?php if ( !get_theme_mod( 'topshop-single-remove-pag' ) ) : ?>
+				<?php topshop_post_nav(); ?>
+			<?php endif; ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template

@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.16' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.17' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -124,6 +124,18 @@ function topshop_widgets_init() {
 	));
 }
 add_action( 'widgets_init', 'topshop_widgets_init' );
+
+/*
+ * Change Widgets Title Tags for SEO
+ */
+function topshop_change_widget_titles( array $params ) {
+	$widget_title_tag = get_theme_mod( 'topshop-seo-widget-title-tag', customizer_library_get_default( 'topshop-seo-widget-title-tag' ) );
+    $widget =& $params[0];
+    $widget['before_title'] = '<h'.esc_attr( $widget_title_tag ).' class="widget-title">';
+    $widget['after_title'] = '</h'.esc_attr( $widget_title_tag ).'>';
+    return $params;
+}
+add_filter( 'dynamic_sidebar_params', 'topshop_change_widget_titles', 20 );
 
 /**
  * Enqueue scripts and styles.
@@ -258,6 +270,11 @@ function topshop_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
+			'name'      => __( 'Contact Form by WPForms', 'topshop' ),
+			'slug'      => 'wpforms-lite',
+			'required'  => false,
+		),
+		array(
 			'name'      => __( 'Breadcrumb NavXT', 'topshop' ),
 			'slug'      => 'breadcrumb-navxt',
 			'required'  => false,
@@ -282,6 +299,12 @@ add_action( 'tgmpa_register', 'topshop_register_required_plugins' );
  */
 if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
     define( 'ELEMENTOR_PARTNER_ID', 2118 );
+}
+/**
+ * WPForms Partner ID
+ */
+if ( !defined( 'WPFORMS_SHAREASALE_ID' ) ) {
+    define( 'WPFORMS_SHAREASALE_ID', 1128843 );
 }
 
 /**

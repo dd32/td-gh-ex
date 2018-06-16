@@ -30,6 +30,9 @@
 	
 </footer> <!-- .site-footer -->
 </div>  <!-- #page -->
+<?php if ( get_theme_mod( 'topshop-btt-button' ) ) : ?>
+    <div class="scroll-to-top"><i class="fa fa-angle-up"></i></div> <!-- Scroll To Top Button -->
+<?php endif; ?>
 <?php wp_footer(); ?>
 </body>
 </html>
