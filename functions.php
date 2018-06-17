@@ -290,28 +290,6 @@ add_action( 'comment_form', 'athenea_comment_form' );
 // Implement the Custom Header feature.
 require get_template_directory() . '/inc/custom-header.php';
 
-function athenea_print_imghead_style() { ?>
-<style type="text/css">
-<?php if ( get_header_image() ) : ?>
-#imgHead {
-background: url(<?php header_image(); ?>) no-repeat center bottom fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-height: 200px;
-width: 100%;
-z-index:-999;
-top:0px;
-bottom:0px;
-left:0px;
-padding: 20px 0px 10px 0px;
-}
-<?php endif; ?>
-</style>
-<?php }
-add_action( 'wp_head', 'athenea_print_imghead_style' );
-
 // Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';
 // Custom functions that act independently of the theme templates.
@@ -359,17 +337,17 @@ function athenea_options_display_sidebar() { ?>
       
       <div align="center" style="padding:5px; background-color:#fafafa;border: 1px solid #CCC;margin-bottom: 10px;">
       <strong><?php esc_attr_e( 'Collaborate', 'athenea' ); ?></strong>
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
       <input type="hidden" name="cmd" value="_s-xclick">
-      <input type="hidden" name="hosted_button_id" value="HL8GKV7SVC42G">
+      <input type="hidden" name="hosted_button_id" value="XSA4N8KJY9AEU">
       
       <input type="hidden" name="on0" value="Collaboration"><br>
       <select name="os0">
-          <option value="for Coffee"><?php esc_attr_e( 'for Coffee &#8364;0,80 EUR', 'athenea' ); ?></option>
+          <option value="for Coffee"><?php esc_attr_e( 'for Coffee &#8364;1,00 EUR', 'athenea' ); ?></option>
           <option value="for Coca-Cola"><?php esc_attr_e( 'for Coca-Cola &#8364;1,20 EUR', 'athenea' ); ?></option>
           <option value="for Beer"><?php esc_attr_e( 'for Beer &#8364;1,45 EUR', 'athenea' ); ?></option>
           <option value="for a Burger"><?php esc_attr_e( 'for a Burger &#8364;2,00 EUR', 'athenea' ); ?></option>
-          <option value="All"><?php esc_attr_e( 'All &#8364;5,45 EUR', 'athenea' ); ?></option>
+          <option value="All"><?php esc_attr_e( 'All &#8364;5,65 EUR', 'athenea' ); ?></option>
       </select><br>
       <input type="hidden" name="on1" value="Opinion"><?php esc_attr_e( 'Opinion', 'athenea' ); ?><br>
       <select name="os1">
@@ -386,15 +364,15 @@ function athenea_options_display_sidebar() { ?>
       
       <div align="center" style="padding:5px; background-color:#fafafa;border: 1px solid #CCC;margin-bottom: 10px;">
       <strong><?php esc_attr_e( 'Voluntary donation', 'athenea' ); ?></strong>
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
       
       <input type="hidden" name="cmd" value="_s-xclick">
-      <input type="hidden" name="hosted_button_id" value="T7UW8BYKFML6Q">
+      <input type="hidden" name="hosted_button_id" value="PFUAPX56VASHY">
       <input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal. La forma rapida y segura de pagar en Internet.">
       <img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">
       </form>
       </div>
-      <p><strong><a href="<?php echo esc_url( __( 'http://www.ibermega.com/themes/athenea/', 'athenea' ) ); ?>"><?php _e('Athenea Documentation','athenea'); ?></a></strong></p>
+      <p><strong><a href="<?php echo esc_url( __( 'https://ibermega.com/themes/athenea/', 'athenea' ) ); ?>"><?php _e('Athenea Documentation','athenea'); ?></a></strong></p>
       </div>
     </div>
   </div>

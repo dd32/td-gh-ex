@@ -2,11 +2,11 @@
 
 Theme Name: Athenea
 Theme URI: https://ibermega.com/themes/athenea
-Version: 1.2.8
+Version: 1.2.9
 Requires at least: 3.0.1
-Tested up to: 4.7.3
+Tested up to: 4.9.6
 Author: IBERMEGA themes
-Author URI: https://ibermega.com
+Author URI: https://ibermega.com/themes/
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 -------------------------------------------------------
@@ -61,6 +61,12 @@ To view the tutorials for use http://www.ibermega.com/tutoriales/plantilla-athen
 
 
 == Changelog ==
+
+= 1.2.9 - 17.06.2018 =
+* Various elements are updated in style sheets and functions.php
+* Changing Theme Options icon
+* Information is updated in readme.txt
+* Error in custom-header.php is eliminated
 
 = 1.2.8 - 28.03.2017 =
 * Some style.css elements are modified.

@@ -1,13 +1,14 @@
 /* Options Framework Admin Styles */
 
 #optionsframework {
-    max-width:780px;
+    max-width:100%;
     background:#fff;
 }
 #optionsframework h3 {
 	cursor: default;
 	background-color: #f1f1f1;
 	border-bottom: 1px solid #ddd;
+	padding:20px;
 }
 #optionsframework p {
 	margin-bottom:0;
@@ -230,17 +231,18 @@
 	background-repeat: no-repeat;
 	background-position: right top;
 }
+
 /* Sidebar Section */
 #optionsframework-metabox {
 	margin-right:300px;
 }
 #optionsframework {
 	float:left;
-	width:100%;
+	width:90%;
 }
 #optionsframework-sidebar {
 	float: left;
-	width: 320px;
+	width: 30%;
 	margin-left: 20px;
 }
 #optionsframework-sidebar .metabox-holder {

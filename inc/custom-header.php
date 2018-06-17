@@ -47,12 +47,6 @@ if ( ! function_exists( 'athenea_header_style' ) ) :
 function athenea_header_style() {
 	$header_text_color = get_header_textcolor();
 
-	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == $header_text_color ) {
-		return;
-	}
-
 	// If we get this far, we have custom styles. Let's do this.
 	?>
 	<style type="text/css">
@@ -126,3 +120,27 @@ function athenea_admin_header_image() {
 <?php
 }
 endif; // athenea_admin_header_image
+
+function athenea_print_imghead_style() { ?>
+	<style type="text/css">
+	
+	<?php if ( get_header_image() ) : ?>
+	#imgHead {
+	background: url(<?php header_image(); ?>) no-repeat center bottom fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 200px;
+	width: 100%;
+	z-index:-999;
+	top:0px;
+	bottom:0px;
+	left:0px;
+	padding: 20px 0px 10px 0px;
+	}
+	<?php endif; ?>
+	
+	</style>
+	<?php }
+	add_action( 'wp_head', 'athenea_print_imghead_style' );
