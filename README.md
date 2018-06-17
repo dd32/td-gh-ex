@@ -90,6 +90,9 @@ Yes! You can choose your color scheme under Appearance -> Theme Options -> Styli
 
 = Changelog =
 
+### Version 3.0.
+- Update: Theme version
+
 ### Version 2.0.9
 - Add: Google Font can add through the theme option panel
 - Update: Changed base font size and line height

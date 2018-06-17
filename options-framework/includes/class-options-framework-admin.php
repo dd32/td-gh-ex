@@ -195,7 +195,7 @@ class Options_Framework_Admin {
 	    <?php settings_errors( 'options-framework' ); ?>
       <?php
       $admin_email = get_option('admin_email');
-      $admin_email = ascent_string_encode($admin_email, true);
+      $admin_email = ascent_string_encode($admin_email);
       $premium_support_url = 'https://ascenttheme.com/premium-support/BVRbpyPMy4Og4KwN/'.urlencode($admin_email);
       echo __('To modify the theme and add functionalities click the button below:', 'ascent');
       echo '<a style="margin: 10px 3px;" href="'.$premium_support_url.'" class="button-primary">'; echo __('Ascent Premium Support!', 'ascent'). '</a>';

@@ -431,7 +431,7 @@ if( !function_exists( 'ascent_string_encode' ) ) {
 if( !function_exists( 'ascent_admin_notice_theme_support' ) ) {
   function ascent_admin_notice_theme_support() {
     $admin_email = get_option('admin_email');
-    $admin_email = ascent_string_encode($admin_email, true);
+    $admin_email = ascent_string_encode($admin_email);
     $premium_support_url = 'https://ascenttheme.com/premium-support/BVRbpyPMy4Og4KwN/'.urlencode($admin_email);
   ?>
     <div class="notice notice-success is-dismissible">
