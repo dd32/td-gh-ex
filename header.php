@@ -37,9 +37,16 @@
       </script>
     <?php endif; ?>
 
-
-
     <?php wp_head(); ?>
+
+    <?php if(of_get_option('body_font_family')): ?>
+      <?php $fonts_array = explode('|||', of_get_option('body_font_family')); ?>
+      <style>
+        body, h1, h2, h3, h4, h5, h6, p, * {
+            font-family: '<?php echo $fonts_array[0]; ?>', sans-serif, arial;
+        }
+      </style>
+      <?php endif; ?>
 </head>
 
 <body <?php body_class(); ?>>

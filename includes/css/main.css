@@ -230,7 +230,7 @@ img[class*="wp-image-"] {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     color: #fff;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.5;
     margin: 0;
     max-height: 50%;
@@ -336,7 +336,8 @@ embed, iframe, object {
 
 body {
     font-family: 'Open Sans', sans-serif, arial;
-    font-size: 13px;
+    font-size: 14px;
+    line-height: 1.62857143;
 }
 h1, h2, h3, h4, h5, h6, p {
     font-family: 'Open Sans', sans-serif, arial;
@@ -375,7 +376,7 @@ a, a:link {}
     min-height: 35px;
     border-top: 4px solid #1ABC9C;
     color: #FFF;
-    font-size: 12px;
+    font-size: 13px;
     padding: 8px 0;
 }
 .header-top a {
@@ -524,7 +525,7 @@ nav.main-menu ul > li a {
     padding: 8px 15px;
     text-decoration: none;
     color: #333;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     text-align: left;
     -webkit-border-radius: 0;
@@ -570,9 +571,13 @@ nav.main-menu ul > li:hover > a, nav.main-menu ul > .current-menu-item > a {
     background-color: #1ABC9C;
     color: #FFF;
 }
+.mean-container .mean-bar {
+  padding: 0;
+}
 .mean-container a.meanmenu-reveal {
     background: #1ABC9C;
     left: auto!important;
+    height: auto;
     right: 0!important;
     text-align: right!important;
 }
@@ -736,7 +741,7 @@ body.page .page-header h1.entry-title {
 table {
     border: 1px solid #e0e0e0;
     border-top: 0;
-    font-size: 13px;
+    font-size: 14px;
     background-color: #FFF;
     color: #3a3c41;
 }
@@ -760,7 +765,7 @@ table thead th {
     border: 0;
     border-right: 1px solid #62C7B3;
     color: #FFF;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     padding: 7px 15px;
 }
@@ -774,12 +779,12 @@ table tbody tr {
     border-top: 1px solid #e0e0e0;
 }
 table tbody th {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     color: #3a3c41;
 }
 table tbody td {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     color: #3a3c41;
     border: 1px solid #e0e0e0;
@@ -802,7 +807,7 @@ article.attachment .entry-header .entry-title {
     margin-top: 0;
 }
 article.attachment .entry-meta {
-    font-size: 12px;
+    font-size: 13px;
 }
 article.attachment .entry-header #image-navigation {
     overflow: hidden;
@@ -816,6 +821,10 @@ article.attachment .entry-header #image-navigation .nav-next {
 }
 .entry-attachment .attachment {
     padding: 15px 0;
+}
+ul.wp-block-gallery {
+  list-style: none;
+  padding-left: 0;
 }
 
 /* =Footer
@@ -848,7 +857,7 @@ article.attachment .entry-header #image-navigation .nav-next {
 #footer-info {
     background: #292A2F;
     padding: 10px 0;
-    font-size: 12px;
+    font-size: 13px;
 }
 #colophon .widget_calendar table {
     width: 100%;
@@ -930,7 +939,7 @@ article.post .entry-content {
 .entry-author {
     display: inline-block;
     margin-bottom: 2px;
-    font-size: 12px;
+    font-size: 13px;
 }
 .loop-more-link {
     margin-bottom: 10px;
@@ -997,7 +1006,7 @@ article.post .entry-content {
     filter: alpha(opacity=60);
 }
 .post-meta-info .entry-meta .comments_count span {
-    font-size: 12px;
+    font-size: 13px;
     padding-left: 10px;
     padding-right: 10px;
     color: #FFF;
@@ -1010,7 +1019,7 @@ article .footer-meta {
 }
 .footer-meta .tags-meta, .footer-meta .cats-meta {
     display: block;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 /* = Comment Body
@@ -1037,7 +1046,7 @@ article .footer-meta {
     right: 20px;
 }
 .comment-meta {
-    font-size: 12px;
+    font-size: 13px;
 }
 .comment a.btn {
     background: #1ABC9C;
@@ -1151,7 +1160,7 @@ body input[type="file"] {
 body input[type="submit"] {
     padding: 12px 25px;
     background-color: #3a3c41;
-    font-size: 13px;
+    font-size: 14px;
     color: #FFF;
     font-weight: 700;
     border: none;
@@ -1182,7 +1191,7 @@ body input.error, body textarea.error {
     border: 2px solid #ff0000;
 }
 body fieldset label {
-    font-size: 13px;
+    font-size: 14px;
     color: #999ca5;
     font-weight: 500;
     border-bottom: 2px solid #dcdee4;
@@ -1207,7 +1216,7 @@ label {
         margin: 0;
         background: none;
         border: none;
-        font-size: 13px;
+        font-size: 14px;
     }
     .post-meta-info .entry-meta time {
         display: inline-block;
@@ -1272,6 +1281,19 @@ label {
     #home-slider .owl-dots {
       display: none;
     }
+    #scroll-top {
+      display: none!important;
+    }
+    body .comment-body .comment-reply {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    body .comment-body .comment-reply .btn {
+        padding: 4px 10px;
+        font-size: 11px;
+        margin: 0;
+    }
     .site-branding {
         text-align: center;
     }
@@ -1304,7 +1326,7 @@ label {
         border-color: rgba(255, 255, 255, 0.1);
     }
     .mean-container .mean-bar .mean-nav ul li a.mean-expand {
-        height: 20px;
+        height: 25px;
     }
     .mean-container .mean-bar .mean-nav ul li a.mean-expand:hover {
         background-color: #17A88B;
@@ -1319,9 +1341,6 @@ label {
     }
     #responsive-menu-container .navbar {
         min-height: inherit;
-    }
-    a#scroll-top {
-        display: none;
     }
     #colophon .site-footer-inner {
         overflow: hidden;

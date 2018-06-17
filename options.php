@@ -45,6 +45,20 @@ function optionsframework_options() {
 	// If using image radio buttons, define a directory path
 	$imagepath =  get_template_directory_uri() . '/includes/images/theme-options/';
 
+	$protocol = is_ssl() ? 'https' : 'http';
+	$google_raleway = 'Raleway|||'. $protocol. "://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i";
+	$google_opensans = 'Open Sans|||'. $protocol. "://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800";
+	$google_roboto = 'Roboto|||'. $protocol. "://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i";
+	$google_ptsans = 'PT Sans|||'. $protocol. "://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i";
+
+	$ascent_google_fonts = array(
+		'' => __( 'Select Google Font', 'ascent' ),
+		$google_opensans => __( 'Open Sans', 'ascent' ),
+		$google_raleway => __( 'Raleway', 'ascent' ),
+		$google_roboto => __( 'Roboto', 'ascent' ),
+		$google_ptsans => __( 'PT Sans', 'ascent' ),
+	);
+
 	$options = array();
 
 	/*  Tab 1: Header Settings
@@ -94,22 +108,32 @@ function optionsframework_options() {
 		'type' => 'heading');
 
 	$options[] = array(
+		'name' => __( 'Select Font Style', 'ascent' ),
+		'desc' => __( 'Configure Font Style.', 'ascent' ),
+		'id' => 'body_font_family',
+		'std' => '',
+		'type' => 'select',
+		'class' => 'small', //mini, tiny, small
+		'options' => $ascent_google_fonts
+	);
+
+	$options[] = array(
 		'name' => __('Body Text Color', 'ascent'),
-		'desc' => __('Configure body text color. ', 'ascent'),
+		'desc' => __('Configure body text color.', 'ascent'),
 		'id' => 'body_text_color',
 		'std' => '',
 		'type' => 'color' );
 
 	$options[] = array(
 		'name' => __('Body Link Color', 'ascent'),
-		'desc' => __('Configure body link color. ', 'ascent'),
+		'desc' => __('Configure body link color.', 'ascent'),
 		'id' => 'body_link_color',
 		'std' => '',
 		'type' => 'color' );
 
 	$options[] = array(
 		'name' => __('Footer Top Border Color', 'ascent'),
-		'desc' => __('Configure footer top border color. ', 'ascent'),
+		'desc' => __('Configure footer top border color.', 'ascent'),
 		'id' => 'footer_top_border_color',
 		'std' => '',
 		'type' => 'color' );

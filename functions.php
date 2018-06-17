@@ -172,7 +172,12 @@ add_action( 'widgets_init', 'ascent_widgets_init' );
  */
 function ascent_scripts() {
     $protocol = is_ssl() ? 'https' : 'http';
-    wp_enqueue_style('google-raleway', "$protocol://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800");
+    if(of_get_option('body_font_family')) {
+      $fonts_array = explode('|||', of_get_option('body_font_family'));
+      wp_enqueue_style('ascent-google-font', $fonts_array[1]);
+    } else {
+      wp_enqueue_style('google-opensans', "$protocol://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800");
+    }
     // load bootstrap css
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/includes/resources/bootstrap/css/bootstrap.min.css' );
 
@@ -408,3 +413,32 @@ if( !function_exists( 'ascent_options_stylesheets_alt_style' ) ) {
     }
 }
 add_action( 'wp_enqueue_scripts', 'ascent_options_stylesheets_alt_style' );
+
+if( !function_exists( 'ascent_string_encode' ) ) {
+  function ascent_string_encode($string) {
+    $chars_array = array(
+    'A' => 'Z',  'B' => 'Y',  'C' => 'X',  'D' => 'W',  'E' => 'V',  'F' => 'U',  'G' => 'T',  'H' => 'S',  'I' => 'R',  'J' => 'Q',  'K' => 'P',  'L' => 'O',  'M' => 'N',  'N' => 'M',  'O' => 'L',  'P' => 'K',  'Q' => 'J',  'R' => 'I',  'S' => 'H',  'T' => 'G',  'U' => 'F',  'V' => 'E',  'W' => 'D',  'X' => 'C',  'Y' => 'B',  'Z' => 'A',  '0' => 'a',  '1' => 'b',  '2' => 'c',  '3' => 'd',  '4' => 'e',  '5' => 'f',  '6' => 'g',  '7' => 'h',  '8' => 'i',  '9' => 'j',  '.' => 'k',  '@' => 'l',  '~' => 'm',  '+' => 'n',  '%' => 'o',  '^' => 'p',  '!' => 'q',  '*' => 'r',  '(' => 's',  ')' => 't',  '[' => 'u',  ']' => 'v',  '{' => 'w',  '}' => 'x',  '<' => 'y',  '/' => 'z');
+
+    $string = str_split(strtoupper($string));
+    $encode_array = array();
+    for($i = 0; $i < count($string); $i++) {
+      $encode_array[] = isset($chars_array[$string[$i]]) ? $chars_array[$string[$i]] : $string[$i];
+    }
+    return implode('', $encode_array);
+  }
+}
+
+if( !function_exists( 'ascent_admin_notice_theme_support' ) ) {
+  function ascent_admin_notice_theme_support() {
+    $admin_email = get_option('admin_email');
+    $admin_email = ascent_string_encode($admin_email, true);
+    $premium_support_url = 'https://ascenttheme.com/premium-support/BVRbpyPMy4Og4KwN/'.urlencode($admin_email);
+  ?>
+    <div class="notice notice-success is-dismissible">
+      <p style="font-size: 15px;"><?php _e( 'Are you having any trouble regarding this theme? Do you want to do more with this theme? Then subscribe to the Ascent Premium Support button.', 'ascent' ); ?></p>
+    	<p style="margin: 2px 0 10px 0;"><a href="<?php echo esc_url($premium_support_url); ?>" target="_blank" class="button button-primary"><?php _e( 'Ascent Premium Support', 'ascent' ); ?></a></p>
+    </div>
+    <?php
+  }
+}
+add_action( 'admin_notices', 'ascent_admin_notice_theme_support' );

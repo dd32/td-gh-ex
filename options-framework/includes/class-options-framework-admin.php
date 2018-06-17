@@ -193,7 +193,13 @@ class Options_Framework_Admin {
 	    </h2>
 
 	    <?php settings_errors( 'options-framework' ); ?>
-      <?php echo __('For <a style="margin: 10px 3px;" href="https://support.nettantra.com/cart.php?gid=1" class="button-primary">Premium Support!</a>', 'ascent'); ?>
+      <?php
+      $admin_email = get_option('admin_email');
+      $admin_email = ascent_string_encode($admin_email, true);
+      $premium_support_url = 'https://ascenttheme.com/premium-support/BVRbpyPMy4Og4KwN/'.urlencode($admin_email);
+      echo __('To modify the theme and add functionalities click the button below:', 'ascent');
+      echo '<a style="margin: 10px 3px;" href="'.$premium_support_url.'" class="button-primary">'; echo __('Ascent Premium Support!', 'ascent'). '</a>';
+      ?>
 	    <div id="optionsframework-metabox" class="metabox-holder">
 		    <div id="optionsframework" class="postbox">
 				<form action="options.php" method="post">
