@@ -83,6 +83,7 @@ $pinterest 		= beatrix_lite_get_theme_mod( 'pinterest' );
 
 <nav class="mobile-navigation" role="navigation">
 <div class="mobile-menu">
+<div class="mobile_close_icons"><i class="fa fa-close"></i></div>
 	<?php 
 	 get_search_form();
 	wp_nav_menu( array(

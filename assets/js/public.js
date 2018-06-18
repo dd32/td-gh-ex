@@ -29,7 +29,20 @@ jQuery(function($) {
 			}
 			$body.addClass(mobileClass);
 		});
-
+		
+		// When mobile menu is open, click on page content will close it.
+		$('.site, .mobile_close_icons')
+			.on(clickEvent, function(event) {
+				if (!$body.hasClass(mobileClass)) {
+					return;
+				}
+				event.preventDefault();
+				$body.removeClass(mobileClass).addClass('animating');
+			})
+			.on(transitionEnd, function() {
+				$body.removeClass('animating');
+			});
+		
 		// When mobile menu is open, click on page content will close it.
 		$('.site')
 			.on(clickEvent, function(event) {

@@ -5,8 +5,9 @@
 	text-transform: uppercase;
 	font-weight: bold;
 	text-decoration: none;
+	background-size: 80%;
 }
-
+.feature-section-pro li{margin-bottom:15px; padding-bottom:15px; border-bottom:1px solid #e2e1e1;}
 a {
 	text-decoration: none;
 }

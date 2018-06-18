@@ -54,42 +54,24 @@ class Beatrix_Script {
 	 * @package Beatrix Lite
 	 * @since 1.0
 	 */
-	function beatrix_lite_front_scripts() {
+	function beatrix_lite_front_scripts() {			
 		
-		global $post;
-		$post_id = isset($post->ID) ? $post->ID : '';
-                
-                $post_view_count	= 0;
-                
-                $supported_posts = array('post','page'); // suppoterd post type
-                
-		if( !empty($post_id) && !empty($supported_posts) && is_singular($supported_posts) && !is_preview() && !is_front_page() && !is_home() && !is_feed() && !is_robots() ) {
-			$post_view_count = $post_id;
-		}
-                
+		// Skip Link Focus Fix Js
+		wp_register_script( 'beatrix-lite-skip-link-js', BEATRIX_LITE_URL . '/assets/js/skip-link-focus-fix.js', array('jquery'), BEATRIX_LITE_VERSION, true);
+		wp_enqueue_script( 'beatrix-lite-skip-link-js' );
+		
+
+		// Public Js
+		wp_register_script( 'beatrix-lite-public-js', BEATRIX_LITE_URL . '/assets/js/public.js', array('jquery'), BEATRIX_LITE_VERSION, true);             
+		wp_enqueue_script( 'beatrix-lite-public-js' );	
+		
 		/*
 		 * Adds JavaScript to pages with the comment form to support
 		 * sites with threaded comments (when in use).
 		 */
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ){
 			wp_enqueue_script( 'comment-reply' );
-		}
-		
-		
-
-		
-		
-		// Skip Link Focus Fix Js
-		wp_register_script( 'beatrix-lite-skip-link-js', BEATRIX_LITE_URL . '/assets/js/skip-link-focus-fix.js', array('jquery'), BEATRIX_LITE_VERSION, true);
-		wp_enqueue_script( 'beatrix-lite-skip-link-js' );
-
-		
-
-		// Public Js
-		wp_register_script( 'beatrix-lite-public-js', BEATRIX_LITE_URL . '/assets/js/public.js', array('jquery'), BEATRIX_LITE_VERSION, true);
-             
-		wp_enqueue_script( 'beatrix-lite-public-js' );	
-                
+		}                
                
         }
 }

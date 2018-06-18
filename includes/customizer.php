@@ -18,6 +18,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 function beatrix_lite_register_customizer_settings( $wp_customize ) {	
 
 	$default_settings = beatrix_lite_default_settings();	
+	 require get_template_directory() . '/includes/class-beatrix-control-upg.php';	
 
 	/***** Website Color Seeings *****/
 
@@ -491,6 +492,40 @@ function beatrix_lite_register_customizer_settings( $wp_customize ) {
 										'label'    => __( 'Footer Copyright', 'beatrix-lite' ),
 										'section'  => 'wpostheme_general_footer_section',
 									));	
+									
+	/*
+     * View Pro Version Section Control
+     */	 
+	 
+	$wp_customize->add_section(
+		'beatrix_pro_section', array(
+			'title'    => __( 'View PRO Version', 'beatrix-lite' ),
+			'priority' => 1,
+		)
+	);
+
+	$wp_customize->add_setting(
+		'beatrix_pro_control', array(
+			'sanitize_callback' => 'esc_html',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Beatrix_Control_Upg(
+			$wp_customize, 'beatrix_pro_control', array(
+				'section'     => 'beatrix_pro_section',
+				'priority'    => 100,
+				'options'     => array(
+					esc_html__( '- Colorfull posts layouts', 'beatrix-lite' ),					
+					esc_html__( '- 5 Post Formats', 'beatrix-lite' ),
+					esc_html__( '- 6 Widgets', 'beatrix-lite' ),					
+					esc_html__( '- 100+ Google Fonts', 'beatrix-lite' ),					
+				),
+				'button_url'  => esc_url( 'https://www.wponlinesupport.com/wordpress-themes/beatrix-wordpress-blog-theme/' ),
+				'button_text' => esc_html__( 'View PRO Version', 'beatrix-lite' ),
+			)
+		)
+	);									
 	
 	
 }

@@ -1,5 +1,5 @@
 === Beatrix Lite === 
-Contributors: pluginandplay
+Contributors: wponlinesupport, anoopranawat
 Requires at least: WordPress 4.5
 Tested up to: WordPress 4.9.4
 Version: 1.0
@@ -45,11 +45,6 @@ Source : http://fontawesome.io
 Theia sticky sidebar
 License: - https://github.com/WeCodePixels/theia-sticky-sidebar/blob/master/LICENSE.txt
 Source : https://github.com/WeCodePixels/theia-sticky-sidebar
-
-TGM Plugin Activation 2.6.1
-Copyright (c) 2011, Thomas Griffin
-License: GPL-2.0+
-https://opensource.org/licenses/GPL-2.0
 
 Images for screenshot
 - https://www.pexels.com/

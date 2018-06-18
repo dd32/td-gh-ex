@@ -48,13 +48,8 @@ function beatrix_lite_default_settings() {
                                     'cat_show_cat'                      => 1,
                                     'cat_show_tags'                     => 1,
 									'cat_show_comment'                  => 1, 
-                                    'single_post_fet_img'               => 1,                                                                 
-                                    'fc_post_layout'                    => '[fpc_post_block]',
-                                    'show_fc_post_home'                 => 0,
-                                    'show_fc_post_front'                => 0,
-                                    'show_fc_post_search'               => 0,
-                                    'show_fc_post_single'               => 0,
-                                    'show_fc_post_cat'                  => 0, 										
+                                    'single_post_fet_img'               => 1,                              
+                                   										
                                     'header_social'                     => 0,
                                     'footer_social'                     => 0,
                                     'facebook'                          => '',
@@ -65,7 +60,7 @@ function beatrix_lite_default_settings() {
                                     'instagram'                         => '',
                                     'youtube'                           => '',
                                     'pinterest'                         => '',
-                                    'copyright'                         => __('&copy {year} Beatrix Lite WordPress Blog Theme', 'beatrix-lite'),                                   
+                                    'copyright'                         => __('&copy {year} Blog Theme', 'beatrix-lite'),                                   
                             );
 
 	return apply_filters('beatrix_lite_options_default_values', $default_settings );
@@ -91,8 +86,10 @@ function beatrix_lite_esc_attr($data) {
  * @since 1.0
  */
 function iclean_excerpt_length( $length ) {
-	$blog_excerpt_length 	= beatrix_lite_get_theme_mod( 'blog_excerpt_length' );
-	return $blog_excerpt_length;
+	if(!is_admin()) {
+		$blog_excerpt_length 	= beatrix_lite_get_theme_mod( 'blog_excerpt_length' );
+		return $blog_excerpt_length;
+	}
 }
 add_filter( 'excerpt_length', 'iclean_excerpt_length', 999 );
 
@@ -103,7 +100,9 @@ add_filter( 'excerpt_length', 'iclean_excerpt_length', 999 );
  * @since 1.0
  */
 function iclean_excerpt_more( $more ) {
-    return '...';
+    if(!is_admin()) {
+		return '...';
+	}
 }
 add_filter('excerpt_more', 'iclean_excerpt_more');
 
@@ -141,41 +140,6 @@ function beatrix_lite_footer_widgets_cls( $sidebar_id ) {
 		return $widget_classes;
 	}
 }
-
-/**
- * Determine where to display featured content section
- * 
- * @package Beatrix Lite
- * @since 1.0
- */
-function beatrix_lite_fcs_display() {
-
-	global $wp_query;
-
-	$display 	= false;
-	$fp_is_home 	= beatrix_lite_get_theme_mod( 'show_fc_post_home' );
-	$fp_is_frontp 	= beatrix_lite_get_theme_mod( 'show_fc_post_front' );	
-	$fp_is_search 	= beatrix_lite_get_theme_mod( 'show_fc_post_search' );	
-	$fp_is_single 	= beatrix_lite_get_theme_mod( 'show_fc_post_single' );
-	$fp_is_cat 		= beatrix_lite_get_theme_mod( 'show_fc_post_cat' );
-
-	if( is_search() && !empty($fp_is_search) ) {
-		$display = true;
-	} elseif( $wp_query->is_posts_page && !empty($fp_is_home) ) {
-		$display = true;
-	} elseif( is_front_page() && !empty($fp_is_frontp)){
-		$display = true;	
-	} elseif( !is_front_page() && is_home() && !$wp_query->is_posts_page && !empty($fp_is_home) ) { // If Front page is not set and latest post is being displayed
-		$display = true;
-	} elseif( get_query_var('cat') && !empty($fp_is_cat) ) { // If WordPress category page
-		$display = true;
-	} elseif( is_single() && !empty($fp_is_single) ) { // If WordPress single page
-		$display = true;
-	}
-
-	return $display;
-}
-
 
 /**
  * Handles column if has thumb or post formate media

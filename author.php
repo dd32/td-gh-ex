@@ -7,11 +7,6 @@
  * @package Beatrix Lite
  */
 
-
-
-$blog_layout            = 'list';
-$main_class             = "beatrix-lite-list-main";
-
 get_header(); ?>
 <div class="content-row">
 	<div id="primary" class="content-area">
@@ -26,9 +21,8 @@ get_header(); ?>
 				?>
 			</header><!-- .page-header -->
                         </div>
-			<div class="post-loop-wrap clearfix   <?php echo esc_attr($main_class); ?>" id="post-loop-wrap">
-				<?php
-				$i = 1;
+			<div class="post-loop-wrap clearfix" id="post-loop-wrap">
+				<?php				
 				/* Start the Loop */
 				while ( have_posts() ) : the_post();
 
@@ -37,8 +31,7 @@ get_header(); ?>
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'template-parts/content', get_post_format() );
-				
+					get_template_part( 'template-parts/content', get_post_format() );			
 				
 				endwhile; ?>
 			</div>
@@ -56,10 +49,6 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-?>
 </div> <!-- Content-row -->
 <?php
 get_footer();

@@ -8,11 +8,6 @@
  * @since 1.0
  */
 
-
-$blog_layout            = 'list';
-$main_class             = "beatrix-lite-list-main";
-
-
 get_header(); ?>
 
 <div class="content-row">
@@ -31,7 +26,7 @@ get_header(); ?>
 				</h1>
 			</header><!-- .page-header -->
                     </div>   
-                        <div class="post-loop-wrap clearfix   <?php echo esc_attr($main_class); ?>" id="post-loop-wrap">
+                        <div class="post-loop-wrap clearfix" id="post-loop-wrap">
 			<?php
 			/* Start the Loop */
                         $i = 1;
