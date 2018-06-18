@@ -24,12 +24,7 @@ $pinterest 		= beatrix_lite_get_theme_mod( 'pinterest' );
 
 	</div><!-- #content -->
 	
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<?php if (is_active_sidebar( 'beatrix-lite-intsgram-feed' ) ) { ?>
-			<div class="beatrix-lite-intsgram-area">
-				<?php dynamic_sidebar( 'beatrix-lite-intsgram-feed' ); ?>
-			</div>
-		<?php } ?>		
+	<footer id="colophon" class="site-footer" role="contentinfo">			
 		<?php if (is_active_sidebar( 'footer' ) ) { ?>
 		<div class="footer-middle-widget-area clearfix">
 			<div class="container">					
@@ -73,7 +68,7 @@ $pinterest 		= beatrix_lite_get_theme_mod( 'pinterest' );
 			<div class="site-copyright clearfix"> 
 				<div class="beatrix-lite-col-<?php echo (has_nav_menu('footer'))?'6':'12'; ?> beatrix-lite-columns copyright"><?php	echo beatrix_lite_footer_copyright(); ?></div>	
 				<?php if(has_nav_menu('footer')){ ?>
-				<div class="beatrix-lite-col-6 beatrix-lite-columns"><?php  if(has_nav_menu('footer')){ wp_nav_menu( array( 'theme_location' => 'footer','menu_id' => 'footer-menu', 'depth' => 1 ) ); } ?></div>
+				<div class="beatrix-lite-col-6 beatrix-lite-columns beatrix-lite-footer-menu-right"><?php  if(has_nav_menu('footer')){ wp_nav_menu( array( 'theme_location' => 'footer','menu_id' => 'footer-menu', 'depth' => 1 ) ); } ?></div>
 				<?php } ?>	
 			</div>				
 		</div><!-- .site-info -->

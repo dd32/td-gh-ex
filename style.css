@@ -4,7 +4,7 @@ Theme URI: https://www.wponlinesupport.com/free-themes/beatrix-lite-blog-theme/
 Author: WP Online Support
 Author URI: https://www.wponlinesupport.com/
 Description: Beatrix Lite is a beautiful WordPress blog theme for personal blogs. Beatrix Lite has a modern, clean and elegant look and lots of customization for bloggers. Built on the latest technology of WordPress, Beatrix Lite is lightweight, fast and optimized for all mobile phones..
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: beatrix-lite
@@ -525,7 +525,7 @@ article{clear:both;}
 	-webkit-box-sizing: border-box; -moz-box-sizing: border-box;box-sizing: border-box;
 	float: left; position: relative; width:100%;
 }
-
+.beatrix-lite-col-6.beatrix-lite-footer-menu-right .menu{width:100%; text-align:right;}
 .no-pad-right{padding-right:0;}
 .no-pad-left{padding-left:0;}
 .no-pad{padding:0;}
@@ -1166,7 +1166,7 @@ a:visited, a:hover, a:active, a:focus {
 .custom-logo {
 	display: inline-block;
 	margin: 0 auto;
-	max-width:185px;
+	max-width:150px;
 	padding:10px 0;
 }
 
@@ -1198,11 +1198,7 @@ a:visited, a:hover, a:active, a:focus {
 	left: 0;
 	right: 0;
 }
-.single .site-header ,
-.page .site-header, 
-.error404 .site-header, 
-.search-results .site-header,
-.search-no-results .site-header {padding: 0px;	width: 100%;}
+.single .site-header , .page .site-header {padding: 0px;	width: 100%;}
 .site-description{font-size:14px; margin:0px; display:inline-block; }
 @media (max-width: 1199px) {
 	.header-content__container {
@@ -1365,10 +1361,10 @@ footer .site-copyright .beatrix-lite-col-6.copyright {text-align: left; line-hei
 	max-width: 100%;	
 	margin: 0 auto;
 }
-.single .site-content, .page .site-content, .search-no-results .site-content, .search-results .site-content, .error404 .site-content {
+.single .site-content, .page .site-content, .search-no-results .site-content, .error404 .site-content {
     padding-top: 120px;
 }
-.single .container, .page .container, .search-no-results .container, .search-results .container, .error404 .container, .site-footer .container {
+.single .container, .page .container, .search-no-results .container, .error404 .container, .site-footer .container {
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -1413,7 +1409,7 @@ footer .site-copyright .beatrix-lite-col-6.copyright {text-align: left; line-hei
 	width: 70%;
 	float: left;	
 }
-.page .header-content, .single .header-content, .error404 .header-content, .search-no-results .header-content, .search-results .header-content {
+.page .header-content, .single .header-content, .error404 .header-content, .search-no-results .header-content {
 	border-bottom: 1px solid #f1f1f1;
 }
 .blog .content-area, .archive  .content-area, .category .content-area, .search .content-area{
@@ -1715,7 +1711,10 @@ article:nth-child(5n+5) .link-more .more-link{ background:#fcc5df}
 	padding:100px 50px 0px 50px;
 	position:absolute;
 }
-
+@media (max-width: 640px) {
+	.page-header{position:static; padding:0px; margin-bottom:15px;}
+	.page-header h2.page-title{margin-bottom:5px !important;}
+}
 .page-header .page-title {
 	font-weight: bold;
 	line-height: 1;
@@ -2669,7 +2668,7 @@ object {
   }
 @media only screen and (max-width: 40.0625em) {
 	 h1 {font-size: 26px;}
-	 .custom-logo{max-width: 200px; padding-left: 20px;}	
+	 .custom-logo{max-width: 150px; padding-left: 20px;}	
 	 .mobile-menu{width:100%;}
 	 .site-header {padding: 0 15px 0 0px; width:100%}
 	 .beatrix-lite-post-grid-content .entry-header {padding: 0px 0px 10px 0px;}

@@ -36,8 +36,8 @@ class Beatrix_Script {
 			
 
 		// Font Awesome CSS
-		wp_register_style( 'font-awesome', BEATRIX_LITE_URL . '/assets/css/font-awesome.min.css', array(), BEATRIX_LITE_VERSION);
-		wp_enqueue_style( 'font-awesome' );
+		wp_register_style( 'fontawesome', BEATRIX_LITE_URL . '/assets/css/font-awesome.min.css', array(), BEATRIX_LITE_VERSION);
+		wp_enqueue_style( 'fontawesome' );
 
 		// Font Awesome CSS
 		wp_register_style( 'montserrat-font', 'https://fonts.googleapis.com/css?family=Montserrat', array(), BEATRIX_LITE_VERSION);

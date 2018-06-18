@@ -42,21 +42,17 @@ Font Icons
 License: - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 Source : http://fontawesome.io
 
-Theia sticky sidebar
-License: - https://github.com/WeCodePixels/theia-sticky-sidebar/blob/master/LICENSE.txt
-Source : https://github.com/WeCodePixels/theia-sticky-sidebar
-
 Images for screenshot
 - https://www.pexels.com/
-- https://www.pexels.com/photo/gold-temple-near-white-mountain-879444/
-- https://www.pexels.com/photo/woman-in-white-crew-neck-shirt-near-sea-shore-881064/
-- https://www.pexels.com/photo/woman-in-black-and-white-striped-dress-shirt-886607/
 - https://www.pexels.com/photo/green-scale-model-car-on-brown-pavement-35967/
 - https://www.pexels.com/photo/focus-photography-of-american-flag-accent-wayfarer-styled-sunglasses-with-sea-background-860917/?download-size=1280x853
 
 Images license : https://www.pexels.com/photo-license/
 
 == Changelog ==
+
+= 1.0.2 =
+* Fixed some mobile related design issues.
 
 = 1.0 =
 * Initial release
