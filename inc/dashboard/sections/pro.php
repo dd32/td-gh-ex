@@ -172,7 +172,7 @@
 			<tr>
 				<td></td>
 				<td colspan="2">
-					<a href="<?php echo esc_url( "https://www.pankogut.com/pro/wordpress-themes/gump-pro/?utm_source=theme_dashboard&utm_medium=buy_link&utm_campaign={$this->theme->template}_dashboard" ); ?>" target="_blank" class="button button-primary button-hero"><?php esc_html_e( 'Get Gump PRO now', 'gump' ); ?></a>
+					<a href="<?php echo esc_url( "https://www.pankogut.com/wordpress-themes/gump-pro/?utm_source=theme_dashboard&utm_medium=buy_link&utm_campaign={$this->theme->template}_dashboard" ); ?>" target="_blank" class="button button-primary button-hero"><?php esc_html_e( 'Get Gump PRO now', 'gump' ); ?></a>
 				</td>
 			</tr>
 		</tbody>

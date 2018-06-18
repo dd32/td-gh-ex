@@ -57,7 +57,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		public function render_content() {
         $read_more = array(
 			'upgrade' => array(
-			'link' => esc_url('https://www.pankogut.com/pro/wordpress-themes/gump-pro/?utm_source=customizer_read_more&utm_medium=wordpress_dashboard&utm_campaign=gump_pro'),
+			'link' => esc_url('https://www.pankogut.com/wordpress-themes/gump-pro/?utm_source=customizer_read_more&utm_medium=wordpress_dashboard&utm_campaign=gump_pro'),
 			'text' => __('Try Gump Pro', 'gump'),
 			),
 			'theme' => array(
