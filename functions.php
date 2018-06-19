@@ -12,20 +12,27 @@
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php');
 	
   	require_once( QUALITY_THEME_FUNCTIONS_PATH . '/scripts/scripts.php');     //Theme Scripts And Styles	
-  	require( QUALITY_THEME_FUNCTIONS_PATH . '/resize_image/resize_image.php'); //Image Resizing 	
-  	require( QUALITY_THEME_FUNCTIONS_PATH . '/commentbox/comment-function.php'); //Comment Handling
+  		
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/commentbox/comment-function.php'); //Comment Handling
   	require( QUALITY_THEME_FUNCTIONS_PATH . '/widget/custom-sidebar.php'); //Sidebar Registration
 	
-	
-	//Customizer 
+	//Customizer
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-general.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-slider.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-copyright.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-home.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-blog.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-archive.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer_recommended_plugin.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer_import_data.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/font/font.php');
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/breadcrumbs/breadcrumbs.php');
+	
+	//Alpha Color Control
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-alpha-color-picker/class-quality-customize-alpha-color-control.php');
+	
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/template-tags.php');
 	
 	//Quality Demo Image
 	require_once( get_template_directory() . '/quality-demo-image/quality-prevdem.php' );
@@ -35,9 +42,6 @@
 	require_once( $repeater_path );
 	}
 
-
-
-	
 	//wp title tag starts here
   	function quality_head( $title, $sep )
   	{	global $paged, $page;		
@@ -74,6 +78,9 @@
 		
 		//Title tag
 		add_theme_support( "title-tag" );
+		
+		// woocommerce support
+		add_theme_support( 'woocommerce' );
   		
   		require_once('theme_setup_data.php');
   		// setup admin pannel defual data for index page		
@@ -89,9 +96,10 @@
   	// Read more tag to formatting in blog page 
   	function quality_new_content_more($more)
 	{  global $post;
-		return '<div class="blog-btn-col"><a href="' . get_permalink() . "#more-{$post->ID}\" class=\"qua_blog_btn\">Read More<i class='fa fa-long-arrow-right'></i></a></div>";
-	}   
+		return '<p><a href="' . get_permalink() . "#more-{$post->ID}\" class=\"more-link\">" .__('Read More','quality')."</a></p>";
+	}
 	add_filter( 'the_content_more_link', 'quality_new_content_more' );
+	
 	
 	
 	
@@ -124,4 +132,5 @@ if( is_plugin_active( 'webriti-companion/webriti-companion.php' ) ) {}	else{
 
 	}
 	}
-	?>
+the_tags();	
+?>

@@ -1,13 +1,13 @@
 <?php 
-function quality_page_menu_args( $args ) {
+function webriti_page_menu_args( $args ) {
 	if ( ! isset( $args['show_home'] ) )
 		$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'quality_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'webriti_page_menu_args' );
 
  
-function quality_fallback_page_menu( $args = array() ) {
+function webriti_fallback_page_menu( $args = array() ) {
 
 	$defaults = array('sort_column' => 'menu_order, post_title', 'menu_class' => 'menu', 'echo' => true, 'link_before' => '', 'link_after' => '');
 	$args = wp_parse_args( $args, $defaults );
@@ -20,7 +20,7 @@ function quality_fallback_page_menu( $args = array() ) {
 	// Show Home in the menu
 	if ( ! empty($args['show_home']) ) {
 		if ( true === $args['show_home'] || '1' === $args['show_home'] || 1 === $args['show_home'] )
-			$text = __('Home','quality');
+			$text = 'Home';
 		else
 			$text = $args['show_home'];
 		$class = '';
@@ -40,7 +40,7 @@ function quality_fallback_page_menu( $args = array() ) {
 
 	$list_args['echo'] = false;
 	$list_args['title_li'] = '';
-	$list_args['walker'] = new busiprof_walker_page_menu;
+	$list_args['walker'] = new webriti_walker_page_menu;
 	$menu .= str_replace( array( "\r", "\n", "\t" ), '', wp_list_pages($list_args) );
 
 	if ( $menu )
@@ -53,7 +53,7 @@ function quality_fallback_page_menu( $args = array() ) {
 	else
 		return $menu;
 }
-class busiprof_walker_page_menu extends Walker_Page{
+class webriti_walker_page_menu extends Walker_Page{
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
 		$output .= "\n$indent<ul class='dropdown-menu'>\n";

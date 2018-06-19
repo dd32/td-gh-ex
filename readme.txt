@@ -115,7 +115,7 @@ JavaScripts
                    Code and documentation copyright 2011-2014 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.
 		
 	Images
-		1. Screenshot Image => https://pixabay.com/en/office-meeting-business-partners-336368/
+		1. Screenshot Image => https://www.pexels.com/photo/man-and-woman-in-front-of-laptop-computer-1065704/
 		2. Static Home Feature Image => https://pixabay.com/en/vw-camper-volkswagen-vw-car-336606/
 		3. Product Image
 		   https://pixabay.com/en/sofa-couch-surreal-eyes-dog-art-749629/
@@ -153,6 +153,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 ChangLog:
+@Version 2.0
+1. Added  Testimonial Section.
+2. Update Whole Theme Design. 
 @Version 1.9.7
 1. Update Get started Style. 
 @Version 1.9.6

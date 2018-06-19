@@ -123,31 +123,31 @@ function quality_slider_customizer( $wp_customize ) {
 function quality_register_home_section_partials( $wp_customize ){
 
 $wp_customize->selective_refresh->add_partial( 'quality_pro_options[home_feature]', array(
-		'selector'            => '.carousel img',
+		'selector'            => '#slider-carousel .item',
 		'settings'            => 'quality_pro_options[home_feature]',
 	
 	) );
 
 $wp_customize->selective_refresh->add_partial( 'quality_pro_options[home_image_title]', array(
-		'selector'            => '.flex-slider-center h2',
+		'selector'            => '.slider-caption h5',
 		'settings'            => 'quality_pro_options[home_image_title]',
 	
 	) );
 	
 $wp_customize->selective_refresh->add_partial( 'quality_pro_options[home_image_sub_title]', array(
-		'selector'            => '.flex-slider-center div span',
+		'selector'            => '.slider-caption h1',
 		'settings'            => 'quality_pro_options[home_image_sub_title]',
 	
 	) );
 
 $wp_customize->selective_refresh->add_partial( 'quality_pro_options[home_image_description]', array(
-		'selector'            => '.flex-slider-center p',
+		'selector'            => '.slider-caption p',
 		'settings'            => 'quality_pro_options[home_image_description]',
 	
 	) );
 	
 $wp_customize->selective_refresh->add_partial( 'quality_pro_options[home_image_button_text]', array(
-		'selector'            => '.flex_btn_div_center a',
+		'selector'            => '.slide-btn-area-sm a',
 		'settings'            => 'quality_pro_options[home_image_button_text]',
 	
 	) );

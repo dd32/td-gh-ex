@@ -6,7 +6,7 @@
         'copyright_section_one',
         array(
             'title' => __('Footer copyright settings','quality'),
-            'priority' => 720,
+            'priority' => 1100,
         )
     );
 	

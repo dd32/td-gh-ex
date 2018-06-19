@@ -1,9 +1,6 @@
 <?php
 /** nav-menu-walker.php */
-class quality_nav_walker extends Walker_Nav_Menu 
-
-{
-	
+class webriti_nav_walker extends Walker_Nav_Menu {	
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
 		$output .= "\n$indent<ul class=\"dropdown-menu\">\n";
@@ -16,7 +13,7 @@ class quality_nav_walker extends Walker_Nav_Menu
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 		$classes[] = 'menu-item-' . $item->ID;
 		if ($args->has_children && $depth > 0) {
-			$classes[] = 'dropdown-submenu';
+			$classes[] = 'dropdown';
 		} else if($args->has_children && $depth === 0) {
 			$classes[] = 'dropdown';
 		}
@@ -32,12 +29,12 @@ class quality_nav_walker extends Walker_Nav_Menu
 		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
 		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
 		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-		//$attributes .= ($args->has_children) 	    ? ' data-toggle="dropdown" data-target="#" class="dropdown-toggle"' : '';
+		$attributes .= ($args->has_children) 	    ? ' data-target="#" class="dropdown-toggle" data-toggle="dropdown"' : '';
 			
 		$item_output = $args->before;
 		$item_output .= '<a'. $attributes .'>';
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-		$item_output .= ($args->has_children && $depth == 0) ? '<span class="caret"></span></a>' : '</a>';
+		$item_output .= ($args->has_children && $depth == 0) ? '</b></a>' : '</a>';
 		$item_output .= $args->after;
 
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
@@ -86,11 +83,11 @@ class quality_nav_walker extends Walker_Nav_Menu
 		call_user_func_array(array($this, 'end_el'), $cb_args);
 	}
 }
-function quality_nav_menu_css_class( $classes ) {
+function webriti_nav_menu_css_class( $classes ) {
 	if ( in_array('current-menu-item', $classes ) OR in_array( 'current-menu-ancestor', $classes ) )
 		$classes[]	=	'active';
 
 	return $classes;
 }
-add_filter( 'nav_menu_css_class', 'quality_nav_menu_css_class' );
+add_filter( 'nav_menu_css_class', 'webriti_nav_menu_css_class' );
 ?>

@@ -1,43 +1,117 @@
 <?php 
-  get_header(); ?>
-<div class="page-seperator"></div>
-<div class="container">
-  <div class="row">
-    <div class="qua_page_heading">
-      <h1><?php the_title(); ?></h1>
-      <div class="qua-separator"></div>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="row qua_blog_wrapper">
-    <div class="<?php if( is_active_sidebar('sidebar-primary')) { echo "col-md-8"; } else { echo "col-md-12"; } ?>">
-      <?php the_post(); ?>
-	  <div class="qua_blog_section" >
-	   <?php if(has_post_thumbnail()): ?>
-        <div class="qua_blog_post_img">
-          <?php $defalt_arg =array('class' => "img-responsive"); ?>
-         <a  href="<?php the_permalink(); ?>">
-          <?php the_post_thumbnail('quality_blog_img', $defalt_arg); ?>
-          </a>
-        </div>
-		 <?php endif; 	
-		if (!is_page()) { ?>
-        <div class="qua_post_date">
-          <span class="date"><?php echo get_the_date('j'); ?></span>
-          <h6><?php echo the_time('M'); ?></h6>
-        </div>
-		<?php } ?>
-        <div class="clear"></div>
-		<?php if ( get_the_content()!="" ) {?>
-        <div class="qua_blog_post_content">
-          <?php the_content(); ?>
+/**
+ * The main template file
+ */
+get_header();
+quality_breadcrumbs();
+?>
+<!-- Blog & Sidebar Section -->
+<section id="section-block" class="site-content">
+	<div class="container">
+		<div class="row">	
+			<!--Blog Section-->
+			<?php if ( class_exists( 'WooCommerce' ) ) {
+					
+					if( is_account_page() || is_cart() || is_checkout() ) {
+							echo '<div class="col-md-'.( !is_active_sidebar( "woocommerce" ) ?"12" :"8" ).' col-xs-12">'; 
+					}
+					else{ 
+				
+					echo '<div class="col-md-'.( !is_active_sidebar( "sidebar-primary" ) ?"12" :"8" ).' col-xs-12">'; 
+					
+					}
+					
+				}
+				else{ 
+				
+					echo '<div class="col-md-'.( !is_active_sidebar( "sidebar-primary" ) ?"12" :"8" ).' col-xs-12">';
+					
+					}
+					?>
+				<?php
+				if ( class_exists( 'WooCommerce' ) ) {
+					
+					if( is_account_page() || is_cart() || is_checkout() ) {
+						
+					
+					// Include the page
+					?>
+					<div class="news">
+						<article class="post">								
+							<div class="post-content">	
+								<?php 
+								the_post(); 
+								the_content(); ?>
+							</div>				
+						</article>
+					</div>
+					
+				<?php
+				} 
+				else
+				{
+					
+					// Include the page
+					?>
+					<div class="news">
+						<article class="post">								
+							<div class="post-content">	
+								<?php 
+								the_post(); 
+								the_content(); ?>
+							</div>				
+						</article>
+					</div>
+					
+					
+				<?php
+					
+				}
+				
+				}
+				else 
+				{
+					// Include the page
+					?>
+					<div class="news">
+						<article class="post">								
+							<div class="post-content">	
+								<?php 
+								the_post(); 
+								the_content(); ?>
+							</div>				
+						</article>
+					</div>
+					
+				<?php	comments_template( '', true ); // show comments
+				}
+				
+				// Start the Loop.
+				?>
+			</div>	
+			<!--/Blog Section-->
+			<?php if ( class_exists( 'WooCommerce' ) ) {
+					
+					if( is_account_page() || is_cart() || is_checkout() ) {
+							get_sidebar('woocommerce'); 
+					}
+					else{ 
+				
+					get_sidebar(); 
+					
+					}
+					
+				}
+					else{ 
+				
+					get_sidebar(); 
+					
+					}?>
 		</div>
-		<?php }?>
-      </div>
-	  <?php comments_template('',true); ?>
-    </div>
-    <?php get_sidebar(); ?>		
-  </div>
-</div>
-<?php get_footer(); ?>
+	</div>
+</section>
+<!-- /Blog & Sidebar Section -->
+
+<?php
+get_footer();
+?>

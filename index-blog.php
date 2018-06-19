@@ -1,47 +1,69 @@
-<?php $quality_pro_options=theme_data_setup(); 
-$current_options = wp_parse_args(  get_option( 'quality_pro_options', array() ), $quality_pro_options ); ?>
-<div class="home-blog">
-	<div class="container">
-		<div class="row">
+<section id="section-block" class="news">
+  <div class="container">
+	<?php 
+	$quality_pro_options=theme_data_setup(); 
+	$current_options = wp_parse_args(  get_option( 'quality_pro_options', array() ), $quality_pro_options );
+	if(($current_options['blog_heading']) || ($current_options['home_blog_description']!='' )) { ?>
+	<div class="row">
+		<div class="section-header">			
 			<?php if($current_options['blog_heading']) { ?>
-			<div class="qua_heading_title" id="blog_section_title">
-				<h1><?php echo $current_options['blog_heading']; ?></h1>
-				<div class="qua-separator" id=""></div>
-			</div>
+			<p><?php echo $current_options['blog_heading']; ?></p>
+			<?php } if($current_options['home_blog_description']) { ?>
+			<h1 class="widget-title"><?php echo $current_options['home_blog_description']; ?></h1>
 			<?php } ?>
-		</div>
-		<div class="row">
-		<?php	$args = array( 'post_type' => 'post','posts_per_page' => 3,'ignore_sticky_posts' => 1); 	
-				query_posts( $args );
-				while(have_posts()):the_post();			
-				{	?>
-				<div class="col-md-4 col-sm-6">
-					<div class="qua-blog-area">
-					<?php $defalt_arg =array('class' => "img-responsive"); ?>
-					<?php if(has_post_thumbnail()): ?>
-						<?php the_post_thumbnail('quality_blog_img', $defalt_arg); ?>
-					<?php endif; ?>	
-					<div class="qua-blog-info">
-							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-							<div class="qua-blog-post-detail">
-								<span><?php _e('Posted By','quality');?>
-								<?php if(get_the_tag_list() != '') { ?>
-								</span><i class="post-seperator"></i>
-								<div class="qua-tags">
-									<?php the_tags('',' , ', '<br />'); ?>
-								</div>
-								<?php } ?>
-							</div>
-							<?php the_excerpt(); ?>
-							
-							<div class="qua-blog-date-cm">
-								<span class="left"><?php echo get_the_date('M j,Y'); ?></span><span class="right"><a href="#"><?php comments_number( 'No Comments', 'One comment', '% comments' ); ?></a></span>
-							</div>
-					</div>
-					</div>
-				</div>
-				<?php  } 
-				endwhile; ?>
+			<hr class="divider">
 		</div>
 	</div>
+	<?php } ?>
+	<div class="row">
+		<?php $args = array( 'post_type' => 'post','posts_per_page' =>2,'post__not_in'=>get_option("sticky_posts")); 	
+		query_posts( $args );
+		if(query_posts( $args ))
+		{	while(have_posts()):the_post();
+			{ 	
+			$recent_expet = get_the_excerpt(); ?>
+			<div class="col-md-6 col-sm-6 col-xs-12">
+					<article class="post">								
+						<?php $defalt_arg =array('class' => "img-responsive");
+						if(has_post_thumbnail()):?>
+						<figure class="post-thumbnail">
+							<?php the_post_thumbnail('', $defalt_arg); ?>
+						</figure>
+						<?php endif; ?>	
+						
+						<div class="post-content">	
+							<?php if($current_options['home_meta_section_settings'] == '' ) {?>
+							<div class="item-meta">
+								<a class="author-image item-image" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php echo get_avatar( get_the_author_meta('user_email'), $size = '40'); ?></a>
+								<?php echo ' ';?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php echo get_the_author();?></a>
+								<br>
+								<a class="entry-date" href="<?php echo get_month_link(get_post_time('Y'),get_post_time('m')); ?>">
+								<?php echo get_the_date('M j, Y'); ?></a>
+							</div>
+							<?php } ?>
+							<header class="entry-header">
+								<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+							</header>	
+							<div class="entry-content">
+								<?php the_content(__('Read More','quality')); ?>
+							</div>
+							<?php if($current_options['home_meta_section_settings'] == '' ) {?>
+							<hr />
+							<div class="entry-meta">
+								<span class="comment-links"><a href="<?php the_permalink(); ?>"><?php comments_number(__( 'No Comments', 'quality'), __('One comment', 'quality'), __('% comments', 'quality')); ?></a></span>
+								<?php $cat_list = get_the_category_list();
+								if(!empty($cat_list)) { ?>
+								<span class="cat-links"><?php _e('In','quality');?><a href="<?php the_permalink(); ?>"><?php the_category(' '); ?></a></span>
+								<?php } ?>
+								
+							</div>
+							<?php } ?>
+						</div>				
+					</article>
+				</div>
+			<?php } endwhile; 
+			} ?>
+	</div>
 </div>
+<!-- /Quality Blog Section ---->
+</section>

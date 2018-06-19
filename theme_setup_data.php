@@ -8,7 +8,8 @@ function theme_data_setup()
 			'height'=>'80',
 			'width'=>'200',
 			'text_title'=>false,
-			'upload_image_favicon'=>'',	
+			'upload_image_favicon'=>'',
+			'style_sheet' => 'default.css',
 			
 			/* Home Image */
 			'home_image_title' => __('Elegant design','quality'),
@@ -55,6 +56,8 @@ function theme_data_setup()
 			//BLOG
 			'home_blog_enabled' => true,
 			'blog_heading' => __('Our latest blog posts','quality'),
+			'home_blog_description' => __('News <b>And</b> Updates','quality'),
+			'home_meta_section_settings' => false,
 			
 			//Custom css
 			'webrit_custom_css'=>'',						

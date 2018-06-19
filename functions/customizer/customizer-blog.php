@@ -5,7 +5,7 @@ function quality_blog_customizer( $wp_customize ) {
         'blog_setting',
         array(
             'title' => __('Recent Blog setting','quality'),
-			'priority'   => 700,
+			'priority'   => 1000,
 			
 			)
     );
@@ -30,6 +30,26 @@ function quality_blog_customizer( $wp_customize ) {
     )
 	);
 	
+	// hide meta content
+	$wp_customize->add_setting(
+    'quality_pro_options[home_meta_section_settings]',
+    array(
+        'default' => '',
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    )	
+	);
+	$wp_customize->add_control(
+    'quality_pro_options[home_meta_section_settings]',
+    array(
+        'label' => __('Hide post meta from Blog section','quality'),
+        'section' => 'blog_setting',
+        'type' => 'checkbox',
+    )
+	);
+	
+	
 	
 	// Blog Heading
 	$wp_customize->add_setting(
@@ -46,8 +66,25 @@ function quality_blog_customizer( $wp_customize ) {
 			'type' => 'text',
 			'label' => __('Title','quality'),
 			'section' => 'blog_setting',
+			'sanitize_callback' => 'quality_blog_sanitize_text',
 		)
 	);
+	
+	// add section to manage news description
+	$wp_customize->add_setting(
+    'quality_pro_options[home_blog_description]',
+    array(
+        'default' => __('News <b>And</b> Updates','quality'),
+		'capability'     => 'edit_theme_options',
+		'type' => 'option',
+		'sanitize_callback' => 'quality_blog_sanitize_text',
+		)
+	);	
+	$wp_customize->add_control( 'quality_pro_options[home_blog_description]',array(
+    'label'   => __('Description','quality'),
+    'section' => 'blog_setting',
+	'type' => 'text',)  );
+	
 	function quality_blog_sanitize_text( $input ) {
 	return wp_kses_post( force_balance_tags( $input ) );
 	}
@@ -60,10 +97,16 @@ function quality_blog_customizer( $wp_customize ) {
 function quality_register_home_blog_section_partials( $wp_customize ){
 
 $wp_customize->selective_refresh->add_partial( 'quality_pro_options[blog_heading]', array(
-		'selector'            => '#blog_section_title h1',
+		'selector'            => '.news .section-header p',
 		'settings'            => 'quality_pro_options[blog_heading]',
 	
 	) );
+	
+$wp_customize->selective_refresh->add_partial( 'quality_pro_options[home_blog_description]', array(
+		'selector'            => '.news .section-header h1',
+		'settings'            => 'quality_pro_options[home_blog_description]',
+	
+	) );	
 
 	
 }

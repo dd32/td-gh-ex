@@ -70,8 +70,8 @@ background-color: #1d4467;
 }
 .multiple
 {
-background-color: #f8504b;
-  border-color: #f8504b;
+background-color: #00a7d1;
+  border-color: #00a7d1;
  color: #fff !important;
     cursor: pointer;
     display: inline-block;
@@ -93,7 +93,7 @@ background-color: #f8504b;
 {text-align:center; margin-top:15px;}
 
 .service {
-  background-color: #f8504b;
+  background-color: #00a7d1;
   border-color: #ef9c28;
   color: #fff !important;
   cursor: pointer;
@@ -111,8 +111,8 @@ background-color: #f8504b;
   
 #accordion-section-front_page_parallex_options .accordion-section-title:after, #accordion-section-quality_pro_section .accordion-section-title:after {color:#fff;}
 	
-#accordion-section-quality_pro_section .accordion-section-title, #accordion-section-quality_pro_section .accordion-section-title:hover {background-color:#f8504b; color:#fff;}
-#accordion-section-quality_pro_section .control-section .accordion-section-title:hover {background-color:#f8504b; color:#fff;}
+#accordion-section-quality_pro_section .accordion-section-title, #accordion-section-quality_pro_section .accordion-section-title:hover {background-color:#00a7d1; color:#fff;}
+#accordion-section-quality_pro_section .control-section .accordion-section-title:hover {background-color:#00a7d1; color:#fff;}
 
 .button.button-blue-secondary {
     background: #0085ba;
@@ -130,4 +130,19 @@ background-color: #f8504b;
 	vertical-align: top;
 	color:#fff;
 	 text-shadow: 0 -1px 1px #006799, 1px 0 1px #006799, 0 1px 1px #006799, -1px 0 1px #006799;
+}
+
+#customize-control-quality_pro_options-webriti_stylesheet input[type="radio"] {display:none !important;}
+
+#customize-control-quality_pro_options-webriti_stylesheet img {
+    width: 100px;
+    height: 50px;
+}
+
+#customize-control-quality_pro_options-style_sheet input{
+display:none !important;
+}
+#customize-control-quality_pro_options-style_sheet img {
+	width: 100px;
+    height: 50px;
 }

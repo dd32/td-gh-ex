@@ -119,7 +119,7 @@ function appointment_header_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 	'quality_pro_options[text_title]'
     ,array(
-	'default' => true,
+	'default' => false,
 	'sanitize_callback' => 'sanitize_text_field',
 	'type' =>'option',
 	
