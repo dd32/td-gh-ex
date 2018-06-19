@@ -2,7 +2,7 @@
 Contributors: ArchimidisM
 Requires at least: WordPress 4.5.1
 Tested up to: WordPress 4.9.6
-Version: 1.5.1
+Version: 1.5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: theme-options,full-width-template,two-columns, custom-header, custom-background,custom-logo, custom-menu,flexible-header,translation-ready, featured-images
@@ -230,3 +230,7 @@ Removed unnecessary files
 = Version 1.5.1 =
 - Transparent header fixed for header style 2.
 - Added Youtube / Vimeo Icons in social media section.
+
+= Version 1.5.2 =
+- Fixed the copyright footer with the social menu items.
+- Made the footer style 4 completely responsive when viewed in mobile screen. 

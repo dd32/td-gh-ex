@@ -1,13 +1,13 @@
 <ul class="social-menu text-right">
 	<?php
 	$prefix = atlast_business_get_prefix();
-	$fb     = get_theme_mod( $prefix . '_facebook', '#' );
-	$tw     = get_theme_mod( $prefix . '_twitter', '#' );
-	$gp     = get_theme_mod( $prefix . '_google-plus', '#' );
-	$ln     = get_theme_mod( $prefix . '_linkedin', '#' );
-	$in     = get_theme_mod( $prefix . '_instagram', '#' );
-	$yt     = get_theme_mod( $prefix . '_youtube', '#' );
-	$vm     = get_theme_mod( $prefix . '_vimeo', '#' );
+	$fb     = get_theme_mod( $prefix . '_facebook', '' );
+	$tw     = get_theme_mod( $prefix . '_twitter', '' );
+	$gp     = get_theme_mod( $prefix . '_google-plus', '' );
+	$ln     = get_theme_mod( $prefix . '_linkedin', '' );
+	$in     = get_theme_mod( $prefix . '_instagram', '' );
+	$yt     = get_theme_mod( $prefix . '_youtube', '' );
+	$vm     = get_theme_mod( $prefix . '_vimeo', '' );
 	?>
 	<?php if ( ! empty( $fb ) ): ?>
         <li><a href="<?php echo esc_url( $fb ); ?>"

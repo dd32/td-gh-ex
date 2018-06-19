@@ -1523,8 +1523,8 @@ if (!function_exists('atlast_customizer_settings')):
                 $wp_customize,
                 'changelog',
                 array(
-                    'title' => esc_html__('Whats New in 1.5.1', 'atlast-business'),
-                    'changelog_text' => esc_html__('Version 1.5.1 - Transparency fix for header style 2 added. Youtube and Vimeo icons added at the social section. Stay tuned MAJOR update coming 1.6.0', 'atlast-business'),
+                    'title' => esc_html__('Whats New in 1.5.2', 'atlast-business'),
+                    'changelog_text' => esc_html__('Version 1.5.2 - Fixed the missing social icons at the footer using the copyright style 4.Also made copyright style 4 complete mobile friendly. MAJOR update coming in version 1.6.0', 'atlast-business'),
                     'priority' => 1,
                     'capability' => 'edit_theme_options',
                 )
