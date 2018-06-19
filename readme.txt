@@ -6,6 +6,10 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 4.2 [19-06-2018]
+1. FontAwesome library updated version 4.7.0
+2. Go Enigma Premium option added on admin panel.
+
 @Version: 4.1.9 [07-06-2018]
 1. Bug Fix
 
@@ -355,10 +359,14 @@ Enigma_Theme_Script | V 1.0 | weblizar
 Theme-Footer-Script | V 1.0 | weblizar 
 (c) 2014  | Licensed under the MIT license and GPL license.
 /*****BUNDELED CSS***/
-Font Awesome CSS |  v4.3.0 | 
+Font Awesome CSS |  v4.7.0 | 
 Copyright 2015  Dave Gandy.,
 Licensed under MIT license :http://opensource.org/licenses/MIT
 Source:http://fortawesome.github.io/Font-Awesome/assets/font-awesome-4.3.0.zip
+
+Font Awesome CSS |  v 5.0.13 | 
+Copyright 2015  Dave Gandy.,
+Licensed under MIT license :http://opensource.org/licenses/MIT
 
 Bootstrap CSS |  v3.1.1 | 
 Copyright 2011-2014 Twitter, Inc

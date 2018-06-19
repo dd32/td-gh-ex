@@ -470,10 +470,7 @@ endif;
 	</div>	
 <?php
 	}
-if (is_admin()) {
-	require_once('core/admin/admin-themes.php');
-	
-}
+
 
 
 //Plugin Recommend
@@ -502,34 +499,303 @@ function enigma_plugin_recommend(){
 function enigma_custom_admin_notice() {
 	wp_register_style( 'custom_admin_css', get_template_directory_uri() . '/core/admin/admin-rating.css');
     wp_enqueue_style( 'custom_admin_css' );
+	wp_enqueue_style('custom-bootstrap',  get_template_directory_uri() .'/core/admin/bootstrap/css/bootstrap.min.css');
+	wp_enqueue_script('custom-bootstrap-js',get_template_directory_uri() .'/core/admin/bootstrap/js/bootstrap.min.js');
+	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome-4.7.0/css/font-awesome.css');
 	$wl_th_info = wp_get_theme(); 
 	$currentversion = str_replace('.','',(esc_html( $wl_th_info->get('Version') )));
 	$isitdismissed = 'enigma_notice_dismissed'.$currentversion;
 	if ( !get_user_meta( get_current_user_id() , $isitdismissed ) ) { ?>
-	<div class="notice-box notice-success is-dismissible flat_responsive_notice" data-dismissible="disable-done-notice-forever">
-		<div>
-			<p>	
-			<?php _e('Thank you for using the free version of ','enigma'); ?>
-			<?php echo esc_html( $wl_th_info->get('Name') );?> - 
-			<?php echo esc_html( $wl_th_info->get('Version') );
-			 ?>
-			<?php _e('Please give your reviews and ratings on ','enigma'); echo $wl_th_info->get('Name'); _e(' theme. Your ratings will help us to improve our themes.', 'enigma'); ?>
-			<script type="text/javascript">alert(<?php echo $isitdismissed?>);</script>
-			<?php if($wl_th_info->get('Name')=="Enigma") { ?>
-			<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/enigma/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel"> <?php } elseif($wl_th_info->get('Name')=="Greenigma") { ?>
-			<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/greenigma/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel"> <?php } elseif($wl_th_info->get('Name')=="Inferno") { ?>
-			<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/inferno/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel">		
-			<?php } else { ?>
-			<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/cista/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel">	
-			<?php } ?>
-				<strong><?php _e('Rate Us here','enigma');?></strong>
-			</a>
-			<a class="dismiss" href="?-notice-dismissed<?php echo $currentversion;?>"><strong><?php _e('Dismiss','enigma');?></strong></a>
-			</p>
-		</div>
-		
-	</div>
+		<!---our-product-features--->
+		 
 	
+	<div class="our-product-features">	
+	
+		<!--<div class="col-md-2">
+			<ul class="nav nav-tabs features-tabs">
+				<li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+				<li><a data-toggle="tab" href="#wb_theme">Theme </a></li>
+				<li><a data-toggle="tab" href="#wb_plugin">Plugin </a></li>
+				<li><a data-toggle="tab" href="#menu3">Rating Us</a></li>
+				<li><a data-toggle="tab" href="#offer">Offers</a></li>
+			</ul>
+		</div>-->
+		
+		<div class="col-md-12">
+		<a class="dismiss" href="?-notice-dismissed<?php echo $currentversion;?>"><?php _e('Click here to dismiss This Ad.','enigma');?></strong></a>
+		  <div class="tab-content features-content">
+			<div id="home" class="tab-pane fade in active">
+				<div class="oure-details">
+				  <h3>  <span> Enigma Premium / Advanced Premium / Parallax Premium  </span></h3>
+				  <div class="col-md-12 main-div"> 
+					<div class="col-md-4 theme-img">
+						<div class="wb_products"> 
+							<div class="wb_products-inner"> 
+								<a href="https://weblizar.com/themes/enigma-premium/" target="_blank"> 
+								<img src="<?php echo get_template_directory_uri(); ?>/images/Enigma.jpg" class="img-responsive">  
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8">
+					<div class="col-md-6">
+						<ul class="enigma-feature">
+							<li><i class="fa fa-check"></i> 03 Home Page</li>
+							<li><i class="fa fa-check"></i> Parallax Design</li>
+							<li><i class="fa fa-check"></i> Theme Option Panel</li>
+							<li><i class="fa fa-check"></i> 2 Service Page Template</li>
+							<li><i class="fa fa-check"></i> Custom Shortcodes</li>
+							<li><i class="fa fa-check"></i> 6 Portfolio Layout</li>
+						</ul>
+						<h4 class="getpro"> <a href="https://weblizar.com/themes/enigma-premium/" target="_blank"> Get Enigma Premium </a>							
+						</h4> 
+					</div>
+					<div class="col-md-6">
+						<ul class="enigma-feature">
+							<li><i class="fa fa-check"></i> Unlimited Color Skins</li>
+							<li><i class="fa fa-check"></i> Mega Menu Support</li>
+							
+							<li><i class="fa fa-check"></i> 10 Page Layout</li>
+							<li><i class="fa fa-check"></i> 6 Blog Layout</li>
+							<li><i class="fa fa-check"></i> Multilingual</li><li>
+							<i class="fa fa-check"></i> Complete Documentation
+						</li>
+						</ul>
+						
+					</div>				
+						
+					</div>
+						
+					</div>
+				</div>
+			</div>
+			<!-- <div id="wb_theme" class="tab-pane fade">
+				<div class="row">
+					<div class="col-md-12 theme-div"> 
+					<div class="col-md-6 theme-img">
+						<div class="wb_products"> 
+							<div class="wb_products-inner"> 
+								<a href="https://weblizar.com/themes/enigma-premium/" target="_blank"> 
+								<img src="<?php //echo get_template_directory_uri(); ?>/images/Enigma.jpg" class="img-responsive"> 
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+					<div class="thumbhead">Enigma Premium</div>
+						<ul class="feature">
+							<li><i class="fa fa-check"></i> RESPONSIVE DESIGN</li>
+							<li><i class="fa fa-check"></i> HTML 5 & CSS3</li>
+							<li><i class="fa fa-check"></i> WPML Compatible</li>
+						</ul>
+						<h4 class="detail theme-dt"> <a href="https://weblizar.com/themes/enigma-premium/" target="_blank"> Get Pro </a></h4>
+					</div>
+					</div>
+					<div class="col-md-12 theme-div">
+					<div class="col-md-6 theme-img">
+						<div class="wb_products"> 
+							<div class="wb_products-inner"> 
+								<a href="https://weblizar.com/themes/beautyspa-premium/" target="_blank"> 
+								<img src="<?php //echo get_template_directory_uri(); ?>/images/BeautySpa.jpg" class="img-responsive">
+								
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+					<div class="thumbhead">BeautySpa Premium</div>
+						<ul class="feature">
+							<li><i class="fa fa-check"></i> RESPONSIVE DESIGN</li>
+							<li><i class="fa fa-check"></i> Woo-commerce</li>
+							<li><i class="fa fa-check"></i> WPML Compatible</li>
+						</ul>
+						<h4 class="detail theme-dt"> <a href="https://weblizar.com/themes/beautyspa-premium/" target="_blank"> Get Pro </a></h4>
+					</div>
+					</div>
+					<div class="col-md-12 theme-div">
+					<div class="col-md-6 theme-img"> 
+						<div class="wb_products"> 
+							<div class="wb_products-inner"> 
+								<a href="https://weblizar.com/themes/healthcare/" target="_blank"> 
+								<img src="<?php //echo get_template_directory_uri(); ?>/images/Healthcare-premium.jpg" class="img-responsive">
+									
+								
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6"> 
+					<div class="thumbhead">Healthcare-premium</div>
+						<ul class="feature">
+							<li><i class="fa fa-check"></i> RESPONSIVE DESIGN</li>
+							<li><i class="fa fa-check"></i> Custom Shortcodes</li>
+							<li><i class="fa fa-check"></i> WPML Compatible</li>
+						</ul>
+						<h4 class="detail theme-dt"> <a href="https://weblizar.com/themes/healthcare/" target="_blank"> Get Pro </a></h4>
+					</div>
+					</div>
+					</div>
+				</div> -->
+			<!--<div id="offer" class="tab-pane fade">
+							<div class="oure-details">
+                                <h3><span>Weblizar Offers</span></h1>
+                            </div>
+						<div class="row p_plugin blog_gallery">			
+						 <div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
+							<div class="img-thumbnail">
+								<img src="<?php //echo get_template_directory_uri(); ?>/images/offer.jpg" class="img-responsive" alt="img"/>
+							</div>						
+						</div>
+						 <div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
+                                <div class="row p-box">
+                                    <h2>Get the Exciting Deals here , Daily
+                                    <a class="btn btn-primary title_offers" href="https://weblizar.com/offers/">Visit Here</a> 
+                                    </h2>
+                                </div>
+                            </div>
+							</div>
+					</div>-->
+			<!--<div id="wb_plugin" class="tab-pane fade">
+				<div class="row">
+				<div class="col-md-12 theme-div">
+					<div class="col-md-6 theme-img"> 
+						<div class="wb_products"> 
+							<div class="wb_products-inner"> 
+								<a href="https://weblizar.com/plugins/appointment-scheduler-pro/" target="_blank"> 
+								<img src="<?php //echo get_template_directory_uri(); ?>/images/appointment-scheduler.png" class="img-responsive">
+									 
+								 
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6"> 
+					<div class="thumbhead">Appointment Scheduler Pro</div> 
+						<ul class="feature">
+							<li><i class="fa fa-check"></i>Experience Responsive Scheduling</li>
+							<li><i class="fa fa-check"></i> Unlimited Bookings</li>
+							<li><i class="fa fa-check"></i> Unlimited Services</li>
+							<li><i class="fa fa-check"></i>Unlimited Staff</li>
+							<li><i class="fa fa-check"></i> Free Bookings & Premium Booking</li>
+							
+						</ul>
+					<h4 class="detail theme-dt"> <a href="https://weblizar.com/plugins/appointment-scheduler-pro/" target="_blank"> Get Pro </a></h4>
+
+					</div>
+				</div>
+				<div class="col-md-12 theme-div">
+					<div class="col-md-6 theme-img"> 
+						<div class="wb_products"> 
+							<div class="wb_products-inner"> 
+								<a href="https://weblizar.com/plugins/ultimate-responsive-image-slider-pro/" target="_blank"> 
+								<img src="<?php //echo get_template_directory_uri(); ?>/images/urisp.jpg" class="img-responsive">
+									  
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6"> 
+					<div class="thumbhead">Ultimate Responsive Image Slider Pro</div>
+						<ul class="feature">
+							<li><i class="fa fa-check"></i> Responsive Design</li>
+							<li><i class="fa fa-check"></i> 5 Slider Layout</li>
+							<li><i class="fa fa-check"></i> Unlimited Color Scheme</li>
+							<li><i class="fa fa-check"></i> Full Screen slideshow</li>
+							<li><i class="fa fa-check"></i> Lightbox Integrated</li>
+							
+						</ul>
+						<h4 class="detail theme-dt"> <a href="https://weblizar.com/plugins/ultimate-responsive-image-slider-pro/" target="_blank"> Get Pro </a></h4>
+					</div>
+				</div>	
+				<div class="col-md-12 theme-div">
+					<div class="col-md-6 theme-img">
+						<div class="wb_products"> 
+							<div class="wb_products-inner"> 
+								<a href="https://weblizar.com/plugins/facebook-feed-pro/" target="_blank"> 
+								<img src="<?php //echo get_template_directory_uri(); ?>/images/facebook-feed.jpg" class="img-responsive">
+									
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6"> 
+					<div class="thumbhead">Facebook Feed Pro</div>
+						<ul class="feature">
+							<li><i class="fa fa-check"></i> Profile, Page & Group Feeds</li>
+							<li><i class="fa fa-check"></i> Unlimited Feeds Per Page/Post</li>
+							<li><i class="fa fa-check"></i> Tons of Feed Shortcodes</li>
+							<li><i class="fa fa-check"></i> Feed Widgets</li>
+							<li><i class="fa fa-check"></i> Light-Box Layouts</li>
+							
+						</ul>
+						<h4 class="detail theme-dt"> <a href="https://weblizar.com/plugins/facebook-feed-pro/" target="_blank"> Get Pro </a></h4>
+					</div>
+				</div>
+				<div class="col-md-12 theme-div">
+					<div class="col-md-6 theme-img">
+					<div class="wb_products"> 
+						<div class="wb_products-inner"> 
+							<a href="https://weblizar.com/plugins/pinterest-feed-pro/" target="_blank"> 
+							<img src="<?php //echo get_template_directory_uri(); ?>/images/pint.jpg" class="img-responsive">
+								
+							</a>
+						</div>
+					</div>
+					</div>
+					<div class="col-md-6"> 
+					<div class="thumbhead">Pinterest Feed Pro</div>
+						<ul class="feature">
+							<li><i class="fa fa-check"></i> Responsive Pinterest Plugin</li>
+							<li><i class="fa fa-check"></i> Pinterest Feed Shortcode</li>
+							<li><i class="fa fa-check"></i> Pinterest Feed Widget</li>
+							<li><i class="fa fa-check"></i> Pinterest Profile</li>
+							<li><i class="fa fa-check"></i> Pinterest Pin Slider</li>
+						</ul>
+						<h4 class="detail theme-dt"> <a href="https://weblizar.com/plugins/pinterest-feed-pro/" target="_blank"> Get Pro </a></h4>
+					</div>
+				</div>
+			</div>
+			</div> -->
+			<!--<div id="menu3" class="tab-pane fade">
+				<div class="oure-details">
+				<h3>  <span> Review and Rating  </span></h3>
+				
+				  <!-- rating 
+				  <div class="notice-box notice-success is-dismissible flat_responsive_notice" data-dismissible="disable-done-notice-forever">
+						<div>
+						<p>	
+							<?php /* _e('Thank you for using the free version of ','enigma'); ?>
+							<?php echo esc_html( $wl_th_info->get('Name') );?> - 
+							<?php echo esc_html( $wl_th_info->get('Version') );
+							 ?>
+							<?php _e('Please give your reviews and ratings on ','enigma'); echo $wl_th_info->get('Name'); _e(' theme. Your ratings will help us to improve our themes.', 'enigma'); ?>
+							<script type="text/javascript">alert(<?php echo $isitdismissed?>);</script>
+							<?php if($wl_th_info->get('Name')=="Enigma") { ?>
+							<div class="">
+							<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/enigma/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel"> <?php } elseif($wl_th_info->get('Name')=="Greenigma") { ?>
+							<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/greenigma/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel"> <?php } elseif($wl_th_info->get('Name')=="Inferno") { ?>
+							<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/inferno/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel">		
+							<?php } else { ?>
+							<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/cista/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel">	
+							<?php } */?>
+								<span class="dashicons dashicons-star-filled"></span>
+								<span class="dashicons dashicons-star-filled"></span>
+								<span class="dashicons dashicons-star-filled"></span>
+								<span class="dashicons dashicons-star-filled"></span>
+								<span class="dashicons dashicons-star-filled"></span>
+							</a>
+							</div>
+						</p>
+						</div>
+				</div>
+				  <!-- rating 
+				</div>
+				</div>-->
+		  </div>
+		</div>
+	</div>
+			
+		
 <?php
 	}
  }
