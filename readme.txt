@@ -2,7 +2,7 @@
 
 Theme Name: Athenea
 Theme URI: https://ibermega.com/themes/athenea
-Version: 1.2.9
+Version: 1.3.0
 Requires at least: 3.0.1
 Tested up to: 4.9.6
 Author: IBERMEGA themes
@@ -61,6 +61,9 @@ To view the tutorials for use http://www.ibermega.com/tutoriales/plantilla-athen
 
 
 == Changelog ==
+
+= 1.3.0 - 19.06.2018 =
+* The correct size of screenshot.png is set
 
 = 1.2.9 - 17.06.2018 =
 * Various elements are updated in style sheets and functions.php
