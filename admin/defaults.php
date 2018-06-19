@@ -176,7 +176,7 @@ $mantra_defaults = array(
 	"mantra_excerptarchive" => "Excerpt",
 	"mantra_excerptwords" => "50",
 	"mantra_magazinelayout" => "Disable",
-	"mantra_excerptdots" => "&hellip;",
+	"mantra_excerptdots" => "...",
 	"mantra_excerptcont" => " Continue reading",
 	"mantra_excerpttags" => "Disable",
 
@@ -206,7 +206,8 @@ $mantra_defaults = array(
 
 	"mantra_copyright" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla massa diam, tempus a finibus et, euismod nec arcu. Praesent ultrices massa at molestie facilisis.",
 	"mantra_customcss" => "/* Mantra Custom CSS */  ",
-	"mantra_customjs" => ""
+	"mantra_customjs" => "",
+	"mantra_editorstyle" => 1,
 	
 );
 

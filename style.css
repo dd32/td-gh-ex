@@ -4,10 +4,10 @@ Theme URI: https://www.cryoutcreations.eu/wordpress-themes/mantra
 Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
 Author: Cryout Creations
 Author URI: https://www.cryoutcreations.eu
-Version: 3.0.4
+Version: 3.0.5
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, grid-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, entertainment, news
+Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, grid-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, news
 Text domain: mantra
 
 Copyright (c) 2011-2018 Cryout Creations
@@ -1852,6 +1852,10 @@ h3#reply-title {
 #respond label {
 	font-size: .9em;
 }
+#respond input + label {
+	margin-right: 0.5em;
+	margin-left: 0.5em;
+}
 
 #respond input {
 	margin: 0 0 9px;
@@ -2499,7 +2503,7 @@ article.sticky {
 
 /* BREADCRUMBS */
 .breadcrumbs {
-	padding-top: .5em;
+	padding-bottom: .5em;
 	font-size: 1em;
 }
 
@@ -2736,6 +2740,7 @@ article.sticky {
 	background: rgba(0,0,0,.5);
 	color: #fff;
 	line-height: 1.5;
+	pointer-events: none;
 }
 
 .nivo-caption > h3 {

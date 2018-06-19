@@ -182,7 +182,7 @@ function cryout_setting_frontslider_fn() {
 	echo "<input id='mantra_fpsliderheight' name='ma_options[mantra_fpsliderheight]' size='4' type='text' value='".esc_attr( $mantra_options['mantra_fpsliderheight'] )."'  />  px (".__("height","mantra").")";
 	echo "<small>".__("The dimensions of your slider. Make sure your images are of the same size.","mantra")."</small></div>";
 
-	echo "<div class='slmini'><b>".__("Animation:","mantra")."</b> ";
+	echo "<div id='sliderParameters'><div class='slmini'><b>".__("Animation:","mantra")."</b> ";
 	$options = array ("random" , "fold", "fade", "slideInRight", "slideInLeft", "sliceDown", "sliceDownLeft", "sliceUp", "sliceUpLeft", "sliceUpDown" , "sliceUpDownLeft", "boxRandom", "boxRain", "boxRainReverse", "boxRainGrow" , "boxRainGrowReverse");
 	$labels = array( __("Random","mantra"), __("Fold","mantra"), __("Fade","mantra"), __("SlideInRight","mantra"), __("SlideInLeft","mantra"), __("SliceDown","mantra"), __("SliceDownLeft","mantra"), __("SliceUp","mantra"), __("SliceUpLeft","mantra"), __("SliceUpDown","mantra"), __("SliceUpDownLeft","mantra"), __("BoxRandom","mantra"), __("BoxRain","mantra"), __("BoxRainReverse","mantra"), __("BoxRainGrow","mantra"), __("BoxRainGrowReverse","mantra"));
 	echo "<select id='mantra_fpslideranim' name='ma_options[mantra_fpslideranim]'>";
@@ -231,7 +231,7 @@ function cryout_setting_frontslider_fn() {
 		echo ">$labels[$id]</option>";
 	}
 	echo "</select>";
-	echo "<small>".__("The Left and Right arrows on your slider","mantra")."</small></div>";
+	echo "<small>".__("The Left and Right arrows on your slider","mantra")."</small></div><div><!--#sliderParameters-->";
 ?>
 
 <script>
@@ -1662,6 +1662,20 @@ function cryout_setting_customjs_fn() {
 	global $mantra_options;
 	echo "<textarea id='mantra_customjs' name='ma_options[mantra_customjs]' rows='8' cols='70' type='textarea' >".esc_textarea(htmlspecialchars_decode($mantra_options['mantra_customjs'], ENT_QUOTES))." </textarea>";
 	echo "<div><small>".__("Insert your custom Javascript code here. (Google Analytics and any other forms of Analytic software).<br> The &ltscript&gt tags are not needed.","mantra")."</small></div>";
+}
+
+function cryout_setting_editorstyle_fn() {
+	global $mantra_options;
+	$items = array (1, 0);
+	$itemsare = array( __("Enable","mantra"), __("Disable","mantra"));
+	echo "<select id='mantra_editorstyle' name='ma_options[mantra_editorstyle]'>";
+	foreach($items as $id=>$item) {
+		echo "<option value='$item'";
+		selected($mantra_options['mantra_editorstyle'],$item);
+		echo ">$itemsare[$id]</option>";
+	}
+	echo "</select>";
+	echo "<div><small>".__("Disable to turn off the theme's styling in the Visual Editor.","mantra")."</small></div>";
 }
 
 // FIN

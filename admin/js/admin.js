@@ -68,34 +68,42 @@ jQuery(document).ready(function() {
 
 			case "Slider Shortcode" :
 			jQuery('#sliderShortcode').show("normal");
+			jQuery('#sliderParameters').hide("normal");
 			break;
 
 			case "Custom Slides" :
 			jQuery('#sliderCustomSlides').show("normal");
+			jQuery('#sliderParameters').show("normal");
 			break;
 
 			case "Latest Posts" :
 			jQuery('#sliderLatestPosts').show("normal");
+			jQuery('#sliderParameters').show("normal");
 			break;
 
 			case "Random Posts" :
 			jQuery('#sliderRandomPosts').show("normal");
+			jQuery('#sliderParameters').show("normal");
 			break;
 
 			case "Sticky Posts" :
 			jQuery('#sliderStickyPosts').show("normal");
+			jQuery('#sliderParameters').show("normal");
 			break;
 
 			case "Latest Posts from Category" :
 			jQuery('#sliderLatestCateg').show("normal");
+			jQuery('#sliderParameters').show("normal");
 			break;
 
 			case "Random Posts from Category" :
 			jQuery('#sliderRandomCateg').show("normal");
+			jQuery('#sliderParameters').show("normal");
 			break;
 
 			case "Specific Posts" :
 			jQuery('#sliderSpecificPosts').show("normal");
+			jQuery('#sliderParameters').show("normal");
 			break;
 
 		}//switch

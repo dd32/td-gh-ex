@@ -53,7 +53,7 @@ function mantra_setup() {
 	extract( $mantra_options );
 	
 	// This theme styles the visual editor with editor-style.css to match the theme style.
-	add_editor_style();
+	if ($mantra_editorstyle) add_editor_style( "resources/css/editor-style.css" );
 
 	// Support title tag since WP 4.1
 	add_theme_support( 'title-tag' );
@@ -95,7 +95,6 @@ function mantra_setup() {
 	// Register custom image size for use with post thumbnails
 	add_image_size( 'custom', apply_filters( 'mantra_featured_image_width', $mantra_fwidth ), apply_filters( 'mantra_featured_image_height', $mantra_fheight ), !empty($mantra_fcrop) );
 
-	define( 'NO_HEADER_TEXT', true );
 	$header_args = array(
 		'height' => $mantra_hheight,
 		'width' => $mantra_totalSize,

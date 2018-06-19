@@ -215,6 +215,7 @@ function mantra_init_fn(){
 	add_settings_field('mantra_copyright', __('Custom Footer Text','mantra') , 'cryout_setting_copyright_fn', 'mantra-page', 'misc_section');
 	add_settings_field('mantra_customcss', __('Custom CSS','mantra') , 'cryout_setting_customcss_fn', 'mantra-page', 'misc_section');
 	add_settings_field('mantra_customjs', __('Custom JavaScript','mantra') , 'cryout_setting_customjs_fn', 'mantra-page', 'misc_section');
+	add_settings_field('mantra_editorstyle', __('Editor Styling','mantra') , 'cryout_setting_editorstyle_fn', 'mantra-page', 'misc_section');
 }
 
 // Display the admin options page

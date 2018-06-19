@@ -4,8 +4,8 @@ Copyright 2011-18 Cryout Creations
 
 Author: Cryout Creations
 Requires at least: 4.2
-Tested up to: 4.9.2
-Stable tag: 3.0.4
+Tested up to: 4.9.6
+Stable tag: 3.0.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Donate link: https://www.cryoutcreations.eu/donate/
@@ -94,6 +94,14 @@ Turkish - Emre Dalkili�
 
 
 == Changelog ==
+
+= 3.0.5 =
+* Added option to control editor styling activation after reintroducing basic editor styling
+* Improved slider captions by making slide links clickable through the captions
+* Improved slider administration interface by hiding unused fields when slider shortcode is used
+* Changed default excerpt ellipis value to avoid settings page issues on some servers
+* Fixed magazine layout two columns responsiveness
+* Fixed usage of obsolete constant in generated styling
 
 = 3.0.4 = 
 * Fixed menu alignment option not working 

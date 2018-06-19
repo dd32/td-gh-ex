@@ -222,7 +222,7 @@ function mantra_custom_styles() {
 	if ($mantra_postmetas == "Hide") { ?> #content .entry-meta, #content .entry-header div.entry-meta2 > * { display:none; } <?php }
 	if (($mantra_mobile == "Enable") &&  $mantra_hcontain) { ?> #branding { -webkit-background-size: contain !important; -moz-background-size: contain !important; background-size: contain !important; } <?php } ?>
 
-	#branding { height:<?php echo HEADER_IMAGE_HEIGHT; ?>px ;} <?php
+	#branding { height:<?php echo $mantra_hheight; ?>px ;} <?php
 	if ($mantra_hratio) { ?> @media (max-width: 800px) {#branding, #bg_image { min-height:inherit !important; } }<?php }
 
 	return ob_get_clean();
