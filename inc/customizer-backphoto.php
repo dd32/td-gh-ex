@@ -30,7 +30,7 @@ function backphoto_theme_customizer($wp_customize) {
 		'priority' 		=> 10,
 		'section' 		=> 'backphoto_layout_section',
 		'label' 		=> __( 'Layout Width', 'backphoto'),
-		'description'	=> 'Add px or % symbol after number, 100% for full width'
+		'description'	=> __( 'Add px or % symbol after number, 100% for full width', 'backphoto' )
 	) );
 
 	$wp_customize->add_setting( 'backphoto_layout_padding' , array(
@@ -44,7 +44,7 @@ function backphoto_theme_customizer($wp_customize) {
 		'priority' 		=> 10,
 		'section' 		=> 'backphoto_layout_section',
 		'label' 		=> __( 'Left - right padding', 'backphoto'),
-		'description'	=> 'If layout width is not full width, this setting impact on mobile device, add px or % symbol after number'
+		'description'	=> __( 'If layout width is not full width, this setting impact on mobile device, add px or % symbol after number', 'backphoto')
 	) );
 
 	/* Header */
@@ -67,8 +67,8 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_header_section',
 		'label' 		=> __( 'Header Layout', 'backphoto' ),
 		'choices' 		=> array(
-			'center' 	=> 'Center',
-			'horizontal' 	=> 'Horizontal'
+			'center' 	=> __('Center', 'backphoto'),
+			'horizontal' 	=> __('Horizontal', 'backphoto')
 			)
 		) );
 
@@ -84,8 +84,8 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_header_section',
 		'label' 		=> __( 'Header Scroll', 'backphoto' ),
 		'choices' 		=> array(
-			'scroll' 	=> 'Scroll',
-			'fixed' 	=> 'Fixed'
+			'scroll' 	=> __('Scroll', 'backphoto'),
+			'fixed' 	=> __('Fixed', 'backphoto')
 			)
 		) );
 
@@ -188,7 +188,7 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_typo_section', 
 		'label' 		=> __( 'Title Font Setting', 'backphoto' ),
 		'choices' 		=> array(
-			''			=> 'Font Family',
+			''			=> __('Font Family', 'backphoto'),
 			'Arvo'		=> 'Arvo',
 			'Montserrat' 	=> 'Montserrat',
 			'Merriweather' 	=> 'Merriweather',
@@ -212,11 +212,11 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_typo_section', 
 		// 'label' 		=> __( 'Title Font Setting', 'backphoto' ),
 		'choices' 		=> array(
-			''			=> 'Font Weight',
-			'300' 		=> 'Lite',
-			'400' 		=> 'Normal',
-			'600'		=> 'Semi Bold',
-			'700' 		=> 'Bold',
+			''			=> __('Font Weight', 'backphoto'),
+			'300' 		=> __('Lite', 'backphoto'),
+			'400' 		=> __('Normal', 'backphoto'),
+			'600'		=> __('Semi Bold', 'backphoto'),
+			'700' 		=> __('Bold', 'backphoto'),
 			)
 		) );
 
@@ -232,21 +232,21 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_typo_section', 
 		// 'label' 		=> __( 'Title Font Setting', 'backphoto' ),
 		'choices' 		=> array(
-			''			=> 'Font Size',
-			'18px' 		=> '18 px',
-			'20px' 		=> '20 px',
-			'22px'		=> '22 px',
-			'24px' 		=> '24 px',
-			'26px' 		=> '26 px',
-			'28px'		=> '28 px',
-			'30px' 		=> '30 px',
-			'32px' 		=> '32 px',
-			'34px'		=> '34 px',
-			'36px' 		=> '36 px',
-			'38px' 		=> '38 px',
-			'40px'		=> '40 px',
-			'42px'		=> '42 px',
-			'44px'		=> '44 px',
+			''			=> __('Font Size', 'backphoto'),
+			'18px' 		=> __('18 px', 'backphoto'),
+			'20px' 		=> __('20 px', 'backphoto'),
+			'22px'		=> __('22 px', 'backphoto'),
+			'24px' 		=> __('24 px', 'backphoto'),
+			'26px' 		=> __('26 px', 'backphoto'),
+			'28px'		=> __('28 px', 'backphoto'),
+			'30px' 		=> __('30 px', 'backphoto'),
+			'32px' 		=> __('32 px', 'backphoto'),
+			'34px'		=> __('34 px', 'backphoto'),
+			'36px' 		=> __('36 px', 'backphoto'),
+			'38px' 		=> __('38 px', 'backphoto'),
+			'40px'		=> __('40 px', 'backphoto'),
+			'42px'		=> __('42 px', 'backphoto'),
+			'44px'		=> __('44 px', 'backphoto'),
 			)
 		) );
 
@@ -263,7 +263,7 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_typo_section', 
 		'label' 		=> __( 'Heading 2 Font Setting', 'backphoto' ),
 		'choices' 		=> array(
-			''			=> 'Font Family',
+			''			=> __('Font Family','backphoto'),
 			'Arvo'		=> 'Arvo',
 			'Montserrat' 	=> 'Montserrat',
 			'Merriweather' 	=> 'Merriweather',
@@ -287,11 +287,11 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_typo_section', 
 		// 'label' 		=> __( 'Title Font Setting', 'backphoto' ),
 		'choices' 		=> array(
-			''			=> 'Font Style',
-			'300' 		=> 'Lite',
-			'400' 		=> 'Normal',
-			'600'		=> 'Semi Bold',
-			'700' 		=> 'Bold',
+			''			=> __('Font Style', 'backphoto'),
+			'300' 		=> __('Lite', 'backphoto'),
+			'400' 		=> __('Normal', 'backphoto'),
+			'600'		=> __('Semi Bold', 'backphoto'),
+			'700' 		=> __('Bold', 'backphoto'),
 			)
 		) );
 
@@ -307,19 +307,19 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_typo_section', 
 		// 'label' 		=> __( 'Title Font Setting', 'backphoto' ),
 		'choices' 		=> array(
-			''			=> 'Font Size',
-			'18px' 		=> '18 px',
-			'20px' 		=> '20 px',
-			'22px'		=> '22 px',
-			'24px' 		=> '24 px',
-			'26px' 		=> '26 px',
-			'28px'		=> '28 px',
-			'30px' 		=> '30 px',
-			'32px' 		=> '32 px',
-			'34px'		=> '34 px',
-			'36px' 		=> '36 px',
-			'38px' 		=> '38 px',
-			'40px'		=> '40 px',
+			''			=> __('Font Size', 'backphoto'),
+			'18px' 		=> __('18 px', 'backphoto'),
+			'20px' 		=> __('20 px', 'backphoto'),
+			'22px'		=> __('22 px', 'backphoto'),
+			'24px' 		=> __('24 px', 'backphoto'),
+			'26px' 		=> __('26 px', 'backphoto'),
+			'28px'		=> __('28 px', 'backphoto'),
+			'30px' 		=> __('30 px', 'backphoto'),
+			'32px' 		=> __('32 px', 'backphoto'),
+			'34px'		=> __('34 px', 'backphoto'),
+			'36px' 		=> __('36 px', 'backphoto'),
+			'38px' 		=> __('38 px', 'backphoto'),
+			'40px'		=> __('40 px', 'backphoto'),
 			)
 		) );
 
@@ -336,7 +336,7 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_typo_section', 
 		'label' 		=> __( 'Heading 3 Font Setting', 'backphoto' ),
 		'choices' 		=> array(
-			''			=> 'Font Family',
+			''			=> __('Font Family', 'backphoto'),
 			'Arvo'		=> 'Arvo',
 			'Montserrat' 	=> 'Montserrat',
 			'Merriweather' 	=> 'Merriweather',
@@ -360,11 +360,11 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_typo_section', 
 		// 'label' 		=> __( 'Title Font Setting', 'backphoto' ),
 		'choices' 		=> array(
-			''			=> 'Font Style',
-			'300' 		=> 'Lite',
-			'400' 		=> 'Normal',
-			'600'		=> 'Semi Bold',
-			'700' 		=> 'Bold',
+			''			=> __('Font Style', 'backphoto'),
+			'300' 		=> __('Lite', 'backphoto'),
+			'400' 		=> __('Normal', 'backphoto'),
+			'600'		=> __('Semi Bold', 'backphoto'),
+			'700' 		=> __('Bold', 'backphoto'),
 			)
 		) );
 
@@ -380,19 +380,19 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_typo_section', 
 		// 'label' 		=> __( 'Title Font Setting', 'backphoto' ),
 		'choices' 		=> array(
-			''			=> 'Font Size',
-			'18px' 		=> '18 px',
-			'20px' 		=> '20 px',
-			'22px'		=> '22 px',
-			'24px' 		=> '24 px',
-			'26px' 		=> '26 px',
-			'28px'		=> '28 px',
-			'30px' 		=> '30 px',
-			'32px' 		=> '32 px',
-			'34px'		=> '34 px',
-			'36px' 		=> '36 px',
-			'38px' 		=> '38 px',
-			'40px'		=> '40 px',
+			''			=> __('Font Size', 'backphoto'),
+			'18px' 		=> __('18 px', 'backphoto'),
+			'20px' 		=> __('20 px', 'backphoto'),
+			'22px'		=> __('22 px', 'backphoto'),
+			'24px' 		=> __('24 px', 'backphoto'),
+			'26px' 		=> __('26 px', 'backphoto'),
+			'28px'		=> __('28 px', 'backphoto'),
+			'30px' 		=> __('30 px', 'backphoto'),
+			'32px' 		=> __('32 px', 'backphoto'),
+			'34px'		=> __('34 px', 'backphoto'),
+			'36px' 		=> __('36 px', 'backphoto'),
+			'38px' 		=> __('38 px', 'backphoto'),
+			'40px'		=> __('40 px', 'backphoto'),
 			)
 		) );
 
@@ -409,7 +409,7 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_typo_section', 
 		'label' 		=> __( 'Paragraph Font Setting', 'backphoto' ),
 		'choices' 		=> array(
-			''			=> 'Font Family',
+			''			=> __('Font Family', 'backphoto'),
 			// 'Helvetica' 	=> 'Helvetica',
 			'Droid Sans' 	=> 'Droid Sans',
 			'Open Sans' 	=> 'Open Sans',
@@ -435,11 +435,11 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_typo_section', 
 		// 'label' 		=> __( 'Title Font Setting', 'backphoto' ),
 		'choices' 		=> array(
-			''			=> 'Font Style',
-			'300' 		=> 'Lite',
-			'400' 	=> 'Normal',
-			'600'	=> 'Semi Bold',
-			'700' 		=> 'Bold',
+			''			=> __('Font Style', 'backphoto'),
+			'300' 		=> __('Lite', 'backphoto'),
+			'400' 	=> __('Normal', 'backphoto'),
+			'600'	=> __('Semi Bold', 'backphoto'),
+			'700' 		=> __('Bold', 'backphoto'),
 			)
 		) );
 
@@ -455,15 +455,15 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_typo_section', 
 		// 'label' 		=> __( 'Title Font Setting', 'backphoto' ),
 		'choices' 		=> array(
-			''			=> 'Font Size',
-			'12px' 		=> '12 px',
-			'14px'		=> '14 px',
-			'16px' 		=> '16 px',
-			'18px' 		=> '18 px',
-			'20px' 		=> '20 px',
-			'22px'		=> '22 px',
-			'24px' 		=> '24 px',
-			'26px' 		=> '26 px',
+			''			=> __('Font Size', 'backphoto'),
+			'12px' 		=> __('12 px', 'backphoto'),
+			'14px'		=> __('14 px', 'backphoto'),
+			'16px' 		=> __('16 px', 'backphoto'),
+			'18px' 		=> __('18 px', 'backphoto'),
+			'20px' 		=> __('20 px', 'backphoto'),
+			'22px'		=> __('22 px', 'backphoto'),
+			'24px' 		=> __('24 px', 'backphoto'),
+			'26px' 		=> __('26 px', 'backphoto'),
 			)
 		) );
 
@@ -480,7 +480,7 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_typo_section', 
 		'label' 		=> __( 'Menu Font Setting', 'backphoto' ),
 		'choices' 		=> array(
-			''			=> 'Font Family',
+			''			=> __('Font Family', 'backphoto'),
 			'Droid Sans' 	=> 'Droid Sans',
 			'Open Sans' 	=> 'Open Sans',
 			'Lato'			=> 'Lato',
@@ -505,11 +505,11 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_typo_section', 
 		// 'label' 		=> __( 'Title Font Setting', 'backphoto' ),
 		'choices' 		=> array(
-			''			=> 'Font Style',
-			'300' 		=> 'Lite',
-			'400' 	=> 'Normal',
-			'600'	=> 'Semi Bold',
-			'700' 		=> 'Bold',
+			''			=> __('Font Style', 'backphoto'),
+			'300' 		=> __('Lite', 'backphoto'),
+			'400' 	=> __('Normal', 'backphoto'),
+			'600'	=> __('Semi Bold', 'backphoto'),
+			'700' 		=> __('Bold', 'backphoto'),
 			)
 		) );
 
@@ -525,15 +525,15 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_typo_section', 
 		// 'label' 		=> __( 'Title Font Setting', 'backphoto' ),
 		'choices' 		=> array(
-			''			=> 'Font Size',
-			'12px' 		=> '12 px',
-			'14px'		=> '14 px',
-			'16px' 		=> '16 px',
-			'18px' 		=> '18 px',
-			'20px' 		=> '20 px',
-			'22px'		=> '22 px',
-			'24px' 		=> '24 px',
-			'26px' 		=> '26 px',
+			''			=> __('Font Size', 'backphoto'),
+			'12px' 		=> __('12 px', 'backphoto'),
+			'14px'		=> __('14 px', 'backphoto'),
+			'16px' 		=> __('16 px', 'backphoto'),
+			'18px' 		=> __('18 px', 'backphoto'),
+			'20px' 		=> __('20 px', 'backphoto'),
+			'22px'		=> __('22 px', 'backphoto'),
+			'24px' 		=> __('24 px', 'backphoto'),
+			'26px' 		=> __('26 px', 'backphoto'),
 			)
 		) );
 
@@ -551,7 +551,7 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_typo_section', 
 		'label' 		=> __( 'Sidebar Font Setting', 'backphoto' ),
 		'choices' 		=> array(
-			''			=> 'Font Family',
+			''			=> __('Font Family', 'backphoto'),
 			'Droid Sans' 	=> 'Droid Sans',
 			'Open Sans' 	=> 'Open Sans',
 			'Lato'		=> 'Lato',
@@ -577,10 +577,10 @@ function backphoto_theme_customizer($wp_customize) {
 		// 'label' 		=> __( 'Title Font Setting', 'backphoto' ),
 		'choices' 		=> array(
 			''			=> 'Title Font Weight',
-			'300' 		=> 'Lite',
-			'400' 		=> 'Normal',
-			'600'		=> 'Semi Bold',
-			'700' 		=> 'Bold',
+			'300' 		=> __('Lite', 'backphoto'),
+			'400' 		=> __('Normal', 'backphoto'),
+			'600'		=> __('Semi Bold', 'backphoto'),
+			'700' 		=> __('Bold', 'backphoto'),
 			)
 		) );
 
@@ -597,14 +597,14 @@ function backphoto_theme_customizer($wp_customize) {
 		// 'label' 		=> __( 'Title Font Setting', 'backphoto' ),
 		'choices' 		=> array(
 			''			=> 'Title Font Size',
-			'12px' 		=> '12 px',
-			'14px'		=> '14 px',
-			'16px' 		=> '16 px',
-			'18px' 		=> '18 px',
-			'20px' 		=> '20 px',
-			'22px'		=> '22 px',
-			'24px' 		=> '24 px',
-			'26px' 		=> '26 px',
+			'12px' 		=> __('12 px', 'backphoto'),
+			'14px'		=> __('14 px', 'backphoto'),
+			'16px' 		=> __('16 px', 'backphoto'),
+			'18px' 		=> __('18 px', 'backphoto'),
+			'20px' 		=> __('20 px', 'backphoto'),
+			'22px'		=> __('22 px', 'backphoto'),
+			'24px' 		=> __('24 px', 'backphoto'),
+			'26px' 		=> __('26 px', 'backphoto'),
 			)
 		) );
 
@@ -621,14 +621,14 @@ function backphoto_theme_customizer($wp_customize) {
 		// 'label' 		=> __( 'Title Font Setting', 'backphoto' ),
 		'choices' 		=> array(
 			''			=> 'Content Font Size',
-			'12px' 		=> '12 px',
-			'14px'		=> '14 px',
-			'16px' 		=> '16 px',
-			'18px' 		=> '18 px',
-			'20px' 		=> '20 px',
-			'22px'		=> '22 px',
-			'24px' 		=> '24 px',
-			'26px' 		=> '26 px',
+			'12px' 		=> __('12 px', 'backphoto'),
+			'14px'		=> __('14 px', 'backphoto'),
+			'16px' 		=> __('16 px', 'backphoto'),
+			'18px' 		=> __('18 px', 'backphoto'),
+			'20px' 		=> __('20 px', 'backphoto'),
+			'22px'		=> __('22 px', 'backphoto'),
+			'24px' 		=> __('24 px', 'backphoto'),
+			'26px' 		=> __('26 px', 'backphoto'),
 			)
 		) );
 
