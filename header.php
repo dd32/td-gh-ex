@@ -63,7 +63,9 @@
     </header>
     <div id="content" class="site-content">
         <div class="wrapper">
-<?php if (is_front_page()) {
-    get_template_part('components/banner/banner', 'slider');
-    get_template_part('components/banner/featured', 'category');
-} ?>
+            <?php if (! is_page_template( 'home-page-template.php' )) {
+                if (is_front_page() && !is_home ()) {
+                    get_template_part('components/banner/banner', 'slider');
+                    get_template_part('components/banner/featured', 'category');
+                }
+            } ?>
