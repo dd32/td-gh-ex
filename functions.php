@@ -139,6 +139,16 @@ add_action( 'widgets_init', 'atlast_business_widgets_init' );
 function atlast_business_widgets_init() {
 
 	register_sidebar( array(
+		'name'          => __( 'Header sidebar', 'atlast-business' ),
+		'description'   => __( ' In this sidebar you can use widgets eg the smart widget slider etc and it will be shown in the header container. This widget\'s area visibility is controlled via the header visibility options in Customize > Atlast Business Options > Header Options > Do you want the header image to appear to all pages / posts etc?' , 'atlast-business' ),
+		'id'            => 'header-sidebar',
+		'before_widget' => '<section id="%1$s" class="widget widget-container %2$s">',
+		'after_widget'  => "</section>",
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
 		'name'          => __( 'Main sidebar', 'atlast-business' ),
 		'description'   => __( ' The main sidebar.', 'atlast-business' ),
 		'id'            => 'primary-sidebar',
@@ -147,6 +157,7 @@ function atlast_business_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+
 
 	register_sidebar( array(
 		'name'          => __( 'Top Bar Sidebar', 'atlast-business' ),
@@ -265,6 +276,11 @@ function atlast_business_register_required_plugins() {
 		array(
 			'name'     => 'One Click Demo Import',
 			'slug'     => 'one-click-demo-import',
+			'required' => false,
+		),
+        array(
+			'name'     => 'Smart Slider 3',
+			'slug'     => 'smart-slider-3',
 			'required' => false,
 		),
 		array(

@@ -58,3 +58,20 @@ $header_style    = esc_attr( get_theme_mod( $prefix . '_header_layout', '1' ) );
  */
 
 do_action( 'atlast_business_after_header' ); ?>
+<?php
+$prefix = atlast_business_get_prefix();
+$where_to_show = get_theme_mod($prefix . '_everywhere_header', '0');
+
+if ($where_to_show == 0) {
+	if (is_front_page() || is_home()) {
+		if ( is_active_sidebar( 'header-sidebar' ) ) :
+			dynamic_sidebar( 'header-sidebar' );
+		endif;
+	}
+} else {
+	if ( is_active_sidebar( 'header-sidebar' ) ) :
+		dynamic_sidebar( 'header-sidebar' );
+	endif;
+}
+
+

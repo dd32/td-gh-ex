@@ -120,6 +120,8 @@ if (!function_exists('atlast_business_slider_element')):
     }
 endif;
 add_action('atlast_business_after_header', 'atlast_business_slider_element', 6);
+
+
 /*
  * Register the WordPress customizer
  *
@@ -1105,7 +1107,7 @@ if (!function_exists('atlast_customizer_settings')):
             'priority' => 9,
             'section' => $prefix . '_slider_section',
             'label' => esc_html__('Enable the slider or not.', 'atlast-business'),
-            'description' => esc_html__('If you enable the slider please be sure that you will have content.', 'atlast-business'),
+            'description' => esc_html__('If you want to use the Smart Slide do the following: Go to widgets > Header Widget and use the Smart Slider\'s widget. You have to install the recommended Smart Slider Plugin.', 'atlast-business'),
         ));
 
         $wp_customize->add_control($prefix . '_everywhere_slider', array(
@@ -1523,8 +1525,8 @@ if (!function_exists('atlast_customizer_settings')):
                 $wp_customize,
                 'changelog',
                 array(
-                    'title' => esc_html__('Whats New in 1.5.2', 'atlast-business'),
-                    'changelog_text' => esc_html__('Version 1.5.2 - Fixed the missing social icons at the footer using the copyright style 4.Also made copyright style 4 complete mobile friendly. MAJOR update coming in version 1.6.0', 'atlast-business'),
+                    'title' => esc_html__('Whats New in 1.5.52', 'atlast-business'),
+                    'changelog_text' => esc_html__('Version 1.5.5 - Atlast Business theme fully supports the great Smart Slider plugin. Download it from the recommended plugins, create your slider (fullscreen) and then navigate to Widgets - Header Sidebar and add the Smart slider plugin.', 'atlast-business'),
                     'priority' => 1,
                     'capability' => 'edit_theme_options',
                 )
