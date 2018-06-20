@@ -1,11 +1,11 @@
 ----------------------------------
 Design Theme
 ----------------------------------
-Version: 	2.0
+Version: 	2.1
 Developer: 	D5 Creation
-Author URI: 	http://d5creation.com
+Author URI: 	https://d5creation.com
 
-Donation Link: 	http://d5creation.com/donate/
+Donation Link: 	https://d5creation.com/donate/
 
 Copyright: 	D5 Creation
 License: 		GNU General Public License v2 or later
@@ -23,9 +23,13 @@ This Product is provided "as is" with no warranty or liabilities of D5 Creation.
 	License: Public Domain CC0, Author: OpenClips, Source: http://pixabay.com/en/pencils-colored-pencil-box-157972/
 	License: Public Domain CC0, Author:blickpixel, Source: http://pixabay.com/en/pencils-colored-pencils-447475/
 
-All other Image Files Copyright 2012-2016: D5 Creation (www.d5creation.com) and distributed under the terms of the GNU GPL
+All other Image Files Copyright 2012-2017: D5 Creation (www.d5creation.com) and distributed under the terms of the GNU GPL
 
 The width and height of Main menu is fixed. So please design your menu items in such way that will fit with the container. 
+
+Changelog Version 2.1
+====================================
+- Code Cleanup
 
 Changelog Version 2.0
 ====================================

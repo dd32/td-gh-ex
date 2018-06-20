@@ -2,13 +2,11 @@
 /*
 	Template Name: Full Width
  	design Theme's Full Width Page to show the Pages Selected Full Width
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Design 1.0
 */
-?>
-
-<?php get_header(); ?>
+get_header(); ?>
 <div class="pagenev"><div class="conwidth"><?php design_breadcrumbs(); ?></div></div>
 
 <div id="container">

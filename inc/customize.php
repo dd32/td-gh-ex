@@ -10,7 +10,7 @@ function design_customize_register($wp_customize){
         'description'   => '<div class="infohead"><span class="donation"> Design is CSS3 Powered and WordPress Latest Version Ready Responsive Theme
 <br />
 <br />
-You can Learn More about the Features from the <a href="'. esc_url('http://d5creation.com/theme/design/').'" target="_blank"><strong>Design Theme Page</strong></a>
+You can Learn More about the Features from the <a href="'. esc_url('https://d5creation.com/theme/design/').'" target="_blank"><strong>Design Theme Page</strong></a>
 <br />
 <br />
 You can visit the Live Demo <a href="'. esc_url('http://demo.d5creation.com/themes/?theme=Design').'" target="_blank"><strong>From Here</strong></a></span></div>'
