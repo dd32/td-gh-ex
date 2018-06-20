@@ -1,11 +1,11 @@
 ----------------------------------
 Theme:		D5 COLORFUL
 ----------------------------------
-Version: 	1.9
+Version: 	2.1
 Developer: 	D5 Creation
-Author URI: 	http://d5creation.com
+Author URI: 	https://d5creation.com
 
-Donation Link: 	http://d5creation.com/donate/
+Donation Link: 	https://d5creation.com/donate/
 
 Copyright: 	D5 Creation
 License: 	GNU General Public License v2 or later
@@ -43,6 +43,10 @@ All other images are Lincenced Under GNU GPL and Copyrighted to D5 Creation
 
 
 Limitation: You can add only two widgets in the footer sidebar. The footer sidebar's hight is fixed. So, please consider the limitation of height during using the Widgets.
+
+Changelog: 2.1
+==================
+- Code Cleanup
 
 Changelog: 1.8
 ==================

@@ -1,0 +1,225 @@
+/*
+Theme Name: D5 COLORFUL
+Theme URI: https://d5creation.com/theme/colorful
+
+Author: D5 Creation
+Author URI: https://d5creation.com/
+
+Description: COLORFUL is a simple blog theme with colorful background and designed with colorful ancient matters. You can use this theme for your blog.  Left and Footer Sidebar will show your WidGets.
+
+Version: 2.1
+
+Tags: two-columns, left-sidebar, custom-menu, threaded-comments, sticky-post, blog, portfolio, photography 
+
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+D5 COLORFUL WordPress Theme, Copyright 2012-2017: D5 Creation (www.d5creation.com)
+D5 COLORFUL is distributed under the terms of the GNU GPL
+
+Text Domain: d5-colorful
+
+*/
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+
+.alignnone,#content .alignnone,#content-full .alignnone,div .alignnone {
+	margin:5px 0 20px 20px;
+}
+
+.alignleft,#content .alignleft,#content-full .alignleft,div .alignleft {
+	float:left;
+	margin:5px 20px 20px 0;
+}
+
+.alignright,#content .alignright,#content-full .alignright,div .alignright {
+	float:right;
+	margin:5px 0 20px 20px;
+}
+
+a img.alignleft {
+	float:left;
+	margin:5px 20px 20px 0;
+}
+
+a img.alignnone {
+	margin:5px 0 20px 20px;
+}
+
+a img.alignright {
+	float:right;
+	margin:5px 0 20px 20px;
+}
+
+a img.aligncenter {
+	margin-right:auto;
+	margin-left:auto;
+}
+
+.wp-caption.alignnone {
+	margin:5px 0 20px 20px;
+}
+
+.wp-caption.alignright {
+	margin:5px 0 20px 20px;
+}
+
+.wp-caption.alignleft {
+	margin:5px 20px 20px 0;
+}
+
+h1.site-title {
+	float:right;
+	margin:220px 80px 0 0;
+}
+
+.feedlink {
+	margin:100px 900px 0 0;
+}
+
+#content {
+	float:left;
+	margin:-230px 0 0 90px;
+}
+
+#right-sidebar {
+	float:right;
+	margin:-90px 65px 0 0;
+}
+
+#footer-sidebar {
+	padding:120px 330px 10px 50px;
+}
+
+ol,ul {
+	padding:0 20px 10px 0;
+}
+
+address {
+	text-align:left;
+}
+
+#colorful-main-menu {
+	float:left;
+}
+
+.menu {
+	float:right;
+}
+
+#colorful-main-menu li {
+	float:right;
+}
+
+#colorful-main-menu li ul {
+	float:right;
+}
+
+#colorful-main-menu ul ul,.sub-menu,.sub-menu ul ul {
+	float:right;
+	right:0;
+	left: auto;
+}
+
+#colorful-main-menu ul ul ul {
+	right:100%;
+	left: auto;
+}
+
+#colorful-main-menu ul ul a {
+	text-align:right;
+}
+
+#right-sidebar .widget {
+	float:left;
+}
+
+#right-sidebar .widget li {
+	padding:5px 17px 5px 0;
+}
+
+#footer-sidebar .widget {
+	float:right;
+	padding:10px 35px 30px 10px;
+}
+
+#footer-sidebar .widget h3 {
+	padding:0 0 5px 45px;
+}
+
+#footer-sidebar .widget li {
+	padding:3px 17px 3px 0;
+}
+
+#header input#s {
+	margin-right:125px;
+	margin-left: auto;
+}
+
+blockquote:before {
+	margin-left:.2em;
+	margin-right: auto;
+}
+
+blockquote:after {
+	margin-right:.2em;
+	margin-left: auto;
+}
+
+#content .attachment-thumbnail {
+	float:right;
+	margin:8px 0 10px 15px;
+}
+
+h1.page-title,h1.arc-post-title {
+	text-align:right;
+}
+
+h2.post-title,h2.comments,h3#reply-title,h2.post-title-color {
+	text-align:right;
+}
+
+.floatright {
+	float:right;
+	text-align:right;
+}
+
+.floatleft {
+	float:left;
+	text-align:left;
+}
+
+#page-nav .alignleft {
+	text-align:left;
+}
+
+#page-nav .alignright {
+	text-align:right;
+}
+
+#commentsbox img.avatar {
+	right:0;
+	left: auto;
+}
+
+#commentsbox .commentlist li.comment {
+	padding:5px 50px 0 0;
+}
+
+.post.sticky,.sticky {
+	background:url(images/sticky.png) no-repeat scroll left top transparent;
+}
+
+blockquote {
+	border-right:7px solid #8F008C;
+	border-left:7px solid #8F008C;
+}
+
+.read-more {
+	float:left;
+}
+
+#commentsbox .commentlist li.comment {
+	margin-right:-24px;
+	margin-left: auto;
+}
