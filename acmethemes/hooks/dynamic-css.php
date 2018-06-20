@@ -100,7 +100,8 @@ if ( ! function_exists( 'beauty_studio_dynamic_css' ) ) :
 			.main-navigation .acme-normal-page .current_page_item a,
             .main-navigation .acme-normal-page .current-menu-item a,
             .main-navigation .active a,
-            .main-navigation .navbar-nav >li a:hover{
+            .main-navigation .navbar-nav >li a:hover,
+            .main-navigation li li a:hover{
                 color: {$beauty_studio_primary_color};
             }";
 

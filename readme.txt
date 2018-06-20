@@ -3,7 +3,7 @@ Contributors: acmethemes
 Tags: one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, e-commerce
 Requires at least: 4.5
 Tested up to: 4.9.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,10 @@ Beauty Studio is a WordPress theme made for Beauty, Spa, Saloon particularly bea
 2. Add/Edit Widgets, Page and Post
 
 == Changelog ==
+
+= 1.0.1 =
+* Submenu issue fixed on mobile
+* rtl-language-support added
 
 = 1.0.0 =
 * Submitted on WordPress dot org

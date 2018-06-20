@@ -113,9 +113,11 @@ function beauty_studio_scripts() {
 
 	/*Bootstrap*/
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/library/bootstrap/css/bootstrap.min.css', array(), '3.3.6' );
+	wp_style_add_data( 'bootstrap', 'rtl', 'replace' );
 
     /*Font-Awesome-master*/
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/library/Font-Awesome/css/font-awesome.min.css', array(), '4.5.0' );
+	wp_style_add_data( 'font-awesome', 'rtl', 'replace' );
 
     /*slick slider*/
 	wp_enqueue_style( 'slick', get_template_directory_uri() . '/assets/library/slick/slick.css', array(), '1.3.3' );
@@ -123,6 +125,7 @@ function beauty_studio_scripts() {
 
 	/*magnific-popup*/
     wp_enqueue_style( 'magnific-popup', get_template_directory_uri() . '/assets/library/magnific-popup/magnific-popup.css', array(), '1.1.0' );
+	wp_style_add_data( 'magnific-popup', 'rtl', 'replace' );
 
     /*Select2*/
     if( beauty_studio_is_woocommerce_active() ){
@@ -131,8 +134,9 @@ function beauty_studio_scripts() {
     }
 
     wp_enqueue_style( 'beauty-studio-style', get_stylesheet_uri() );
+	wp_style_add_data( 'beauty-studio-style', 'rtl', 'replace' );
 
-    wp_enqueue_script( 'beauty-studio-skip-link-focus-fix', get_template_directory_uri() . '/acmethemes/core/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'beauty-studio-skip-link-focus-fix', get_template_directory_uri() . '/acmethemes/core/js/skip-link-focus-fix.js', array(), '20130115', true );
 
     /*html5*/
     wp_enqueue_script('html5', get_template_directory_uri() . '/assets/library/html5shiv/html5shiv.min.js', array('jquery'), '3.7.3', false);
