@@ -5,13 +5,13 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
  * Define the sections and settings for the spacing panel
  */
 
-function weaverx_customizer_define_spacing_sections( $sections ) {
+function weaverx_customizer_define_spacing_sections( ) {
 	$panel = 'weaverx_spacing';
 	$spacing_sections = array();
 
 	// global settings
 
-if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if advanced, int
+if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
 
 	$spacing_sections['spacing-global'] = array(
 		'panel'   => $panel,
@@ -19,8 +19,8 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 		'description' => 'Set global settings that affect spacing, width, and alignment.',
 		'options' => array(
 
-			'space-site-width' => weaverx_cz_group_title( __( 'Site Width', 'weaver-xtreme' ),
-				__('The global <strong>Site Width</strong> setting is found on the <em>Layout -> Site Width</em> menu.', 'weaver-xtreme')),
+			'space-site-width' => weaverx_cz_group_title( __( 'Site Width and Full Width Options', 'weaver-xtreme' ),
+				__('Set the global <strong>Site Width</strong> and <strong>Full Width</strong> options from the <em>Layout -> Site Width</em> menu.', 'weaver-xtreme')),
 
 			'smart_margin_int'     => array(
 				'setting' => array(
@@ -42,12 +42,18 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 			),
 		),
 	);
+}
 
 	/**
 	 * General
 	 */
-	$container_width_transport = weaverx_getopt_checked('container_extend_width') ? 'refresh' : 'postMessage';
-	$container_refresh = weaverx_getopt_checked('container_extend_width') ? WEAVERX_REFRESH_ICON : '';
+
+
+
+	$container_width_transport = 'refresh';  	// weaverx_getopt_checked('container_extend_width') ? 'refresh' : 'postMessage';
+	$container_refresh = WEAVERX_REFRESH_ICON; 	//weaverx_getopt_checked('container_extend_width') ? WEAVERX_REFRESH_ICON : '';
+
+	if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
 	$spacing_sections['spacing-wrapping'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Wrapping Areas', 'weaver-xtreme' ),
@@ -286,6 +292,7 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 
 		),
 	);
+	}
 
 
 	/**
@@ -295,6 +302,8 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 
 	$hdr_width_transport = weaverx_getopt_checked('header_extend_width') ? 'refresh' : 'postMessage';
 	$hdr_refresh = weaverx_getopt_checked('header_extend_width') ? WEAVERX_REFRESH_ICON : '';
+
+	if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
 	$spacing_sections['spacing-header'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Header Area', 'weaver-xtreme' ),
@@ -460,7 +469,7 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 				),
 			),
 			'site_title_position_xy_Y'     => array(
-				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage',	'default' => 0.25
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage',	'default' => 0	// changed to 0 4.0
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -811,13 +820,48 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 
 		),
 	);
+	} else {
+		// Title/tagline
+		$spacing_sections['spacing-header'] = array(
+		'panel'   => $panel,
+		'title'   => __( 'Header Area', 'weaver-xtreme' ),
+		'description'   => __( 'Set spacing for Header Area. Full and Standard have many more options for padding, margins, etc.', 'weaver-xtreme' ),
+		'options' => array(
+
+			'spacing-heading-header' => weaverx_cz_group_title( __( 'Site Header Area', 'weaver-xtreme' ),
+			__( 'Spacing of the whole Header Area', 'weaver-xtreme' )),
+
+			'header_align' => weaverx_cz_select(
+				__( 'Align Header Area', 'weaver-xtreme' ),
+				'',
+				'weaverx_cz_choices_align',	'float-left', 'postMessage'
+			),
+
+			'spacing-title-header' => weaverx_cz_group_title( __( 'Site Title and Tagline', 'weaver-xtreme' ),
+				__( 'Spacing for the Site Title and Tagline', 'weaver-xtreme' )),
+
+			'title_over_image'=> array(
+				'setting' => array(
+
+				),
+				'control' => array(
+					'label' => __( 'Move Title/Tagline over Image', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description' => __('Move the Title, Tagline, Search, Logo/HTML and Mini Menu over the Header Image. NOTE: Best to not use with Header Image as BG Image.',
+										'weaver-xtreme'),
+					'type'  => 'checkbox',
+				),
+			),
+		)
+		);
+	}
 
 
 	/**
 	 * Main Menu
 	 */
 
-	$spacing_sections['spacing-menus'] = array(
+	if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
+		$spacing_sections['spacing-menus'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Menus', 'weaver-xtreme' ),
 		'description' => __( 'Set spacing for Primary, Secondary, and Extra Menus.', 'weaver-xtreme' ),
@@ -832,6 +876,21 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 				'weaverx_cz_choices_align_menu', 'float-left'
 			),
 
+			'm_primary_menu_bar_pad_dec'     => array(
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'refresh',	'default' => 0
+				),
+				'control' => array(
+					'control_type' => 'WeaverX_Range_Control',
+					'label'   => __( 'Desktop Menu Bar Padding', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description'   => __( 'Add padding to menu bar top and bottom for Desktop devices.', 'weaver-xtreme' ),
+					'type'  => 'range',
+					'input_attrs' => array(
+						'min'  => 0,
+						'max'  => 10,
+						'step' => .1,
+					),
+				),
+			),
 
 			'm_primary_top_margin_dec'     => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
@@ -895,22 +954,6 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 				),
 			),
 
-			'm_primary_menu_bar_pad_dec'     => array(
-				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'refresh',	'default' => 0
-				),
-				'control' => array(
-					'control_type' => 'WeaverX_Range_Control',
-					'label'   => __( 'Desktop Menu Bar Padding', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description'   => __( 'Add padding to menu bar top and bottom for Desktop devices.', 'weaver-xtreme' ),
-					'type'  => 'range',
-					'input_attrs' => array(
-						'min'  => 0,
-						'max'  => 10,
-						'step' => .1,
-					),
-				),
-			),
-
 
 			'm_p_deprecated'=> weaverx_cz_heading(
 				__( 'Desktop Menu Item Vertical Padding ', 'weaver-xtreme' ),
@@ -930,7 +973,21 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 				'weaverx_cz_choices_align_menu',	'float-left'
 			),
 
-
+			'm_secondary_menu_bar_pad_dec'     => array(
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'refresh',	'default' => 0
+				),
+				'control' => array(
+					'control_type' => 'WeaverX_Range_Control',
+					'label'   => __( 'Desktop Menu Bar Padding', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description'   => __( 'Add padding to menu bar top and bottom for Desktop devices.', 'weaver-xtreme' ),
+					'type'  => 'range',
+					'input_attrs' => array(
+						'min'  => 0,
+						'max'  => 10,
+						'step' => .1,
+					),
+				),
+			),
 
 			'm_secondary_top_margin_dec'     => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
@@ -992,21 +1049,7 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 					),
 				),
 			),
-			'm_secondary_menu_bar_pad_dec'     => array(
-				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'refresh',	'default' => 0
-				),
-				'control' => array(
-					'control_type' => 'WeaverX_Range_Control',
-					'label'   => __( 'Desktop Menu Bar Padding', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description'   => __( 'Add padding to menu bar top and bottom for Desktop devices.', 'weaver-xtreme' ),
-					'type'  => 'range',
-					'input_attrs' => array(
-						'min'  => 0,
-						'max'  => 10,
-						'step' => .1,
-					),
-				),
-			),
+
 			'm_sec_deprecated'=> weaverx_cz_heading(
 				__( 'Desktop Menu Item Vertical Padding ', 'weaver-xtreme' ),
 				__( 'Option deprecated. Use previous option instead. It is still available in the Legacy Option interface.' , 'weaver-xtreme')
@@ -1036,7 +1079,7 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 		),
 	);
 
-	if (weaverx_cz_is_plus()) {
+		if (weaverx_cz_is_plus()) {
 		$new_opts = array(
 
 			'spacing-xm-line1' => weaverx_cz_line(),
@@ -1121,9 +1164,48 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 	// add stub or extra menu options
 	$spacing_sections['spacing-menus']['options'] = array_merge( $spacing_sections['spacing-menus']['options'],  $new_opts);
 
+
+	} else {
+		$spacing_sections['spacing-menus'] = array(
+		'panel'   => $panel,
+		'title'   => __( 'Menus', 'weaver-xtreme' ),
+		'description' => __( 'Set spacing for Primary, Secondary, and Extra Menus.', 'weaver-xtreme' ),
+		'options' => array(
+			'primary-mm-title' => weaverx_cz_group_title(
+				__('Primary Menu', 'weaver-xtreme' )
+			),
+
+			'm_primary_align' => weaverx_cz_select(
+				__( 'Align Primary Menu Bar', 'weaver-xtreme' ),
+				__( 'Align this menu on desktop view. Mobile, accordion, and vertical menus always left aligned.', 'weaver-xtreme' ),
+				'weaverx_cz_choices_align_menu', 'float-left'
+			),
+
+			'm_primary_menu_bar_pad_dec'     => array(
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'refresh',	'default' => 0
+				),
+				'control' => array(
+					'control_type' => 'WeaverX_Range_Control',
+					'label'   => __( 'Desktop Menu Bar Padding', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description'   => __( 'Add padding to menu bar top and bottom for Desktop devices.', 'weaver-xtreme' ),
+					'type'  => 'range',
+					'input_attrs' => array(
+						'min'  => 0,
+						'max'  => 10,
+						'step' => .1,
+					),
+				),
+			),
+		)
+		);
+	}
+
+
+
 	/**
 	 * Info Bar
 	 */
+	if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
 	$spacing_sections['spacing-info-bar'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Info Bar', 'weaver-xtreme' ),
@@ -1383,11 +1465,13 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 
 		),
 	);
+	}
 
 	/**
 	 * Post Specific
 	 */
-	$spacing_sections['spacing-post-specific'] = array(
+	if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
+		$spacing_sections['spacing-post-specific'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Post Specific', 'weaver-xtreme' ),
 		'description' => __('Post Specific spacing - override Content spacing.', 'weaver-xtreme'),
@@ -1506,16 +1590,15 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 					),
 				),
 			),
-
-
-
 		),
 	);
+	}
 
 
 	/**
 	 * Sidebars
 	 */
+
 	$spacing_sections['spacing-sidebars'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Sidebars / Widget Areas', 'weaver-xtreme' ),
@@ -1581,8 +1664,11 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 					),
 				),
 			),
+		),
+	);
 
-
+	if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
+		$level = array(
 			'spacing-primary-widget-heading' => weaverx_cz_group_title( __( 'Primary Widget Area', 'weaver-xtreme' )),
 
 			'primary_padding_T'     => array(
@@ -1810,7 +1896,7 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 			),
 
 			'top_align' => weaverx_cz_select(
-				__( 'Align Container Area', 'weaver-xtreme' ),
+				__( 'Align Widget Area', 'weaver-xtreme' ),
 				'',
 				'weaverx_cz_choices_align',	'float-left', 'postMessage'
 			),
@@ -1923,7 +2009,7 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 			),
 
 			'bottom_align' => weaverx_cz_select(
-				__( 'Align Container Area', 'weaver-xtreme' ),
+				__( 'Align Bottom Widget Area', 'weaver-xtreme' ),
 				'',
 				'weaverx_cz_choices_align',	'float-left', 'postMessage'
 			),
@@ -2009,18 +2095,17 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 				),
 			),
 
-
-
 			'spacing-bottom-widgets' => weaverx_cz_heading( __( 'Widget Area Columns', 'weaver-xtreme' ),
 				__('<strong>NOTE:</strong> You can set number of columns per widget area on the <em>Layout</em> panel.', 'weaver-xtreme')),
-
-
-	));
+			);
+		$spacing_sections['spacing-sidebars']['options'] = array_merge($spacing_sections['spacing-sidebars']['options'],$level);
+	}
 
 	/**
 	 * Widgets
 	 */
-	$spacing_sections['spacing-widgets'] = array(
+	if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
+		$spacing_sections['spacing-widgets'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Individual Widgets', 'weaver-xtreme' ),
 		'description'   => __( 'Padding and Margins for Individual Widgets. Widget width responsively determined by enclosing area.', 'weaver-xtreme' ),
@@ -2115,11 +2200,13 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 
 		),
 	);
+	}
 
 
 	/**
 	 * Footer
 	 */
+	if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
 	$foot_width_transport = weaverx_getopt_checked('footer_extend_width') ? 'refresh' : 'postMessage';
 	$foot_refresh = weaverx_getopt_checked('footer_extend_width') ? WEAVERX_REFRESH_ICON : '';
 	$spacing_sections['spacing-footer'] = array(
@@ -2489,34 +2576,26 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 			),
 		),
 	);
-
-
-} else {
-	$spacing_sections['spacing_beginner'] = array(
+	} else {				// Basic
+		$foot_width_transport = weaverx_getopt_checked('footer_extend_width') ? 'refresh' : 'postMessage';
+		$spacing_sections['spacing-footer'] = array(
 		'panel'   => $panel,
-		'title'   => __( 'Beginner Level Spacing', 'weaver-xtreme' ),
+		'title'   => __( 'Footer Area', 'weaver-xtreme' ),
+		'description'   => __( 'Set spacing for Footer Area. Option groups include <span style="color:blue;">Site Footer Area, Site Title and Tagline, Footer Widget Area</span>, and <span style="color:blue;">Footer HTML Area</span>.', 'weaver-xtreme' ),
 		'options' => array(
-			'space-beginner-names2' => weaverx_cz_group_title( __( 'Spacing Options', 'weaver-xtreme' ),
-				__( 'The Advanced and Intermediate Level Spacing options include options for controlling spacing, widths, and algnments for Global items (including the theme width), Wrapping Areas, Header Area, Menus, Info Bar, Content, Post Specific, Sidebars and Widget Areas, Individual Widgets, Footer Area, and creating full width sites.', 'weaver-xtreme' )),
-			)
+			'spacing-heading-footer' => weaverx_cz_group_title( __( 'Site Footer Area', 'weaver-xtreme' ),
+				__( 'Spacing of the whole Footer Area', 'weaver-xtreme' )),
+
+			'footer_align' => weaverx_cz_select(
+				__( 'Align Footer Area', 'weaver-xtreme' ),
+				'',
+				'weaverx_cz_choices_align',	'float-left', $foot_width_transport
+			),
+			),
 		);
+	}
 
-}
-
-	/**
-	 * Filter the definitions for the controls in the Color Scheme panel of the Customizer.
-	 *
-	 * @since 1.3.0.
-	 *
-	 * @param array    $spacing_sections    The array of definitions.
-	 */
-	$spacing_sections = apply_filters( 'weaverx_customizer_spacing_sections', $spacing_sections );
-
-	// Merge with master array
-	return array_merge( $sections, $spacing_sections );
-
-
+	return $spacing_sections;
 }
 endif;
-
-add_filter( 'weaverx_customizer_sections', 'weaverx_customizer_define_spacing_sections' );
+?>

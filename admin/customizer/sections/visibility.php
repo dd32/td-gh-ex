@@ -5,14 +5,14 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
  * Define the sections and settings for the Visibility panel
  */
 
-function weaverx_customizer_define_visibility_sections( $sections ) {
+function weaverx_customizer_define_visibility_sections( ) {
 	$panel = 'weaverx_visibility';
 	$visibility_sections = array();
 
 	/**
 	 * General
 	 */
-if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if advanced, int
+if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
 	$visibility_sections['visibility-global-vis'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Global Visibility', 'weaver-xtreme' ),
@@ -133,6 +133,12 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 				'',
 				'weaverx_cz_choices_hide',	'hide-none', 'refresh'
 			),
+
+			'm_primary_search' => weaverx_cz_checkbox_refresh(
+				__( 'Add Search to Right', 'weaver-xtreme' ),
+				__( 'Add slide open search icon to right end of primary menu.', 'weaver-xtreme' ),
+				'plus'),
+
 
 			'menu_nohome' => weaverx_cz_checkbox_refresh(
 				__( 'No Home Menu Item', 'weaver-xtreme' ),
@@ -257,8 +263,8 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 					'sanitize_callback' => 'weaverx_cz_sanitize_int',
 				),
 				'control' => array(
-					'label' => __( 'Show Search Box', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __( 'Include a Search box on the right.', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'label' => __( 'Show Search Icon', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description' => __( 'Include slide open Search icon on the right.', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 					'type'  => 'checkbox',
 				),
 			),
@@ -574,27 +580,60 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 		'title'   => __( 'Visibility Options', 'weaver-xtreme' ),
 		'options' => array(
 
-			'vis-beginner-heading' => weaverx_cz_heading( __( 'Advanced and Intermediate Visibility', 'weaver-xtreme' ),
-				__( 'With the Advanced and Intermediate Level Interface Levels, you can define control visibility for many items, including visibility by device.', 'weaver-xtreme' )),
-			)
-		);
+			'vis-beginner-heading' => weaverx_cz_heading( __( 'Full and Standard Visibility', 'weaver-xtreme' ),
+				__( 'With the Full and Standard Level Interface Levels, you can define control visibility for many other items.', 'weaver-xtreme' )),
+
+			'm_primary_hide' => weaverx_cz_select(
+				__( 'Hide Primary Menu', 'weaver-xtreme' ),
+				'',
+				'weaverx_cz_choices_hide',	'hide-none', 'refresh'
+			),
+			'm_header_mini_hide' => weaverx_cz_select(
+				__( 'Hide Header Mini Menu', 'weaver-xtreme' ),
+				'',
+				'weaverx_cz_choices_hide',	'hide-none', 'refresh'
+			),
+			'infobar_hide' => weaverx_cz_select(
+				__( 'Hide Info Bar', 'weaver-xtreme' ),
+				'',
+				'weaverx_cz_choices_hide',	'hide-none', 'refresh'
+			),
+			'primary_hide' => weaverx_cz_select(
+				__( 'Hide Primary Widget Area', 'weaver-xtreme' ),
+				'',
+				'weaverx_cz_choices_hide',	'hide-none', 'refresh'
+			),
+			'secondary_hide' => weaverx_cz_select(
+				__( 'Hide Secondary Widget Area', 'weaver-xtreme' ),
+				'',
+				'weaverx_cz_choices_hide',	'hide-none', 'refresh'
+			),
+			'top_hide' => weaverx_cz_select(
+				__( 'Hide Top Widget Areas', 'weaver-xtreme' ),
+				'',
+				'weaverx_cz_choices_hide',	'hide-none', 'refresh'
+			),
+			'bottom_hide' => weaverx_cz_select(
+				__( 'Hide Bottom Widget Areas', 'weaver-xtreme' ),
+				'',
+				'weaverx_cz_choices_hide',	'hide-none', 'refresh'
+			),
+			'header_hide' => weaverx_cz_select(
+				__( 'Hide Header Area', 'weaver-xtreme' ),
+				'',
+				'weaverx_cz_choices_hide',	'hide-none', 'refresh'
+			),
+			'footer_hide' => weaverx_cz_select(
+				__( 'Hide Footer Area', 'weaver-xtreme' ),
+				'',
+				'weaverx_cz_choices_hide',	'hide-none', 'refresh'
+			),
+		),
+	);
 
 }
 
-	/**
-	 * Filter the definitions for the controls in the Color Scheme panel of the Customizer.
-	 *
-	 * @since 1.3.0.
-	 *
-	 * @param array    $visibility_sections    The array of definitions.
-	 */
-	$visibility_sections = apply_filters( 'weaverx_customizer_visibility_sections', $visibility_sections );
-
-	// Merge with master array
-	return array_merge( $sections, $visibility_sections );
-
-
+	return $visibility_sections;
 }
 endif;
-
-add_filter( 'weaverx_customizer_sections', 'weaverx_customizer_define_visibility_sections' );
+?>

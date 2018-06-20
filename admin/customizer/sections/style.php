@@ -5,14 +5,14 @@ if ( ! function_exists( 'weaverx_customizer_define_style_sections' ) ) :
  * Define the sections and settings for the style panel
  *
  */
-function weaverx_customizer_define_style_sections( $sections ) {
+function weaverx_customizer_define_style_sections( ) {
 	$panel = 'weaverx_style';
 	$style_sections = array();
 
-define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
+define('WEAVERX_ROUNDED_TRANSPORT', 'refresh');
 
 	// global settings
-if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if advanced, int
+if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
 	$style_sections['style-global'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Global Style Options', 'weaver-xtreme' ),
@@ -138,16 +138,8 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 			'container-style-heading' => weaverx_cz_group_title( __( 'Container Area', 'weaver-xtreme' ),
 				__('The Container is the &lt;div&gt; that wraps site content areas, including sidebars. Does not include Header and Footer.', 'weaver-xtreme')),
 
-			'container_border' => array(
-				'setting' => array(
-					'sanitize_callback' => 'weaverx_cz_sanitize_int',
-					'transport' => 'postMessage'
-				),
-				'control' => array(
-					'label' => __( 'Add border', 'weaver-xtreme' ),
-					'type'  => 'checkbox',
-				),
-			),
+			'container-style-border' => weaverx_cz_group_title('',
+				__('See Layout &rarr; Core Site Layout and Styling to set border around Container.', 'weaver-xtreme')),
 
 			'container_shadow' => weaverx_cz_select(
 				__( 'Add shadow', 'weaver-xtreme' ),
@@ -271,7 +263,7 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 				__( 'Primary Menu', 'weaver-xtreme' )
 			),
 
-			'm_primary_sub_border' => weaverx_cz_checkbox(
+			'm_primary_border' => weaverx_cz_checkbox(
 				__( 'Add border to Primary Menu bar', 'weaver-xtreme' ) ),
 
 			'm_primary_sub_border' => weaverx_cz_checkbox(
@@ -308,7 +300,7 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 				__( 'Secondary Menu', 'weaver-xtreme' )
 			),
 
-			'm_secondary_sub_border' => weaverx_cz_checkbox(
+			'm_secondary_border' => weaverx_cz_checkbox(
 				__( 'Add border to Secondary Menu bar', 'weaver-xtreme' ) ),
 
 			'm_secondary_sub_border' => weaverx_cz_checkbox(
@@ -365,7 +357,7 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 				__( 'Extra Menu', 'weaver-xtreme' )
 			),
 
-			'm_extra_sub_border' => weaverx_cz_checkbox(
+			'm_extra_border' => weaverx_cz_checkbox(
 				__( 'Add border to Extra Menu bar', 'weaver-xtreme' ) ),
 
 			'm_extra_sub_border' => weaverx_cz_checkbox(
@@ -875,29 +867,15 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 } else {
 	$style_sections['style_beginner'] = array(
 		'panel'   => $panel,
-		'title'   => __( 'Beginner Level Style', 'weaver-xtreme' ),
+		'title'   => __( 'Basic Level Style', 'weaver-xtreme' ),
 		'options' => array(
 			'style-beginner-names2' => weaverx_cz_group_title( __( 'Style Options', 'weaver-xtreme' ),
-				__( 'The Advanced and Intermediate Level Style options include options for adding borders, shadows, and rounded corners to Global items, Wrapping Areas, Header Area, Menus, Info Bar, Content, Post Specific, Sidebars and Widget Areas, Individual Widgets, and the Footer Area.', 'weaver-xtreme' )),
+				__( 'The Full and Standard Level Style options include options for adding borders, shadows, and rounded corners to Global items, Wrapping Areas, Header Area, Menus, Info Bar, Content, Post Specific, Sidebars and Widget Areas, Individual Widgets, and the Footer Area.', 'weaver-xtreme' )),
 			)
 		);
 
 }
-
-	/**
-	 * Filter the definitions for the controls in the Color Scheme panel of the Customizer.
-	 *
-	 * @since 1.3.0.
-	 *
-	 * @param array    $style_sections    The array of definitions.
-	 */
-	$style_sections = apply_filters( 'weaverx_customizer_style_sections', $style_sections );
-
-	// Merge with master array
-	return array_merge( $sections, $style_sections );
-
-
+	return $style_sections;
 }
 endif;
-
-add_filter( 'weaverx_customizer_sections', 'weaverx_customizer_define_style_sections' );
+?>

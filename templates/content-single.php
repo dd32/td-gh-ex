@@ -29,6 +29,6 @@ weaverx_fi( 'post', 'post-pre' );
 
 	</footer><!-- .entry-utility -->
 <?php   weaverx_inject_area('postpostcontent');	// inject post comment body ?>
-<?php echo weaverx_schema( 'mainEntityOfPage'); ?>
+<?php echo weaverx_schema( 'mainEntityOfPage' ); ?>
 </article><!-- #post-<?php the_ID(); ?> -->
 <?php weaverx_inject_area('pagecontentbottom'); ?>

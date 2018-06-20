@@ -73,10 +73,10 @@ function weaverx_setup() {
 	add_theme_support( 'customize-selective-refresh-widgets' );	// Add theme support for selective refresh for widgets.
 
 
-	add_theme_support( 'html5', array(  'search-form' ) );		// html5 for search
+	add_theme_support( 'html5',  array( 'search-form' ) );		// html5 for search
 
 
-	add_theme_support( 'post-formats', array( 'aside', 'audio', 'gallery',
+	add_theme_support( 'post-formats',  array( 'aside', 'audio', 'gallery',
 					   'image', 'link', 'quote', 'status','video') );	// Add support for a variety of post formats
 						// not supported: chat
 
@@ -94,14 +94,15 @@ function weaverx_setup() {
 
 		// Enable support for custom logo.
 
-	add_theme_support( 'custom-logo', array(
-		'height'      => $height,
+	add_theme_support( 'custom-logo',
+		 array('height'      => $height,
 		'width'       => $width,
-		'flex-height' => true,
-	) );
+		'flex-height' => true, )
+	);
+	add_theme_support( 'align-wide' );		// gutenberg wide
 
 	$weaverx_header = array(
-		'default-image' => '%s/assets/images/headers/beckwith-mtn.jpg',
+		'default-image' => '%s/assets/images/headers/winter-fog.jpg',
 		'random-default' => true,
 		'width' => $width,
 		'height' => $height,
@@ -141,9 +142,10 @@ function weaverx_setup() {
 
 	// Weaver Xtreme supports two main nav menus
 	register_nav_menus( array(
-		'primary' => __('Primary Navigation: if specified, used instead of Default menu', 'weaver-xtreme' /*adm*/),
+		'header-mini' => __('Header Mini Menu: if specified, adds horizontal mini-menu to header', 'weaver-xtreme' /*adm*/),
 		'secondary' => __('Secondary Navigation: if specified, adds 2nd menu bar', 'weaver-xtreme' /*adm*/),
-		'header-mini' => __('Header Mini Menu: if specified, adds horizontal mini-menu to header', 'weaver-xtreme' /*adm*/)
+		'primary' => __('Primary Navigation: if specified, used instead of Default menu', 'weaver-xtreme' /*adm*/),
+
 	) );
 
 }
@@ -176,7 +178,8 @@ function weaverx_init_opts($who='') {
 }
 //--
 
-
+/**
+ */
 if (! function_exists( 'weaverx_register_header_images')) {
 function weaverx_register_header_images() {
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
@@ -193,6 +196,12 @@ function weaverx_register_header_images() {
 		'thumbnail_url' => '%s/assets/images/headers/beckwith-mtn-thumbnail.jpg',
 		/* translators: header image description */
 		'description' => __( 'Colorado Autumn', 'weaver-xtreme' /*adm*/)
+		),
+	'winter-fog' => array(
+		'url' => '%s/assets/images/headers/winter-fog.jpg',
+		'thumbnail_url' => '%s/assets/images/headers/winter-fog-thumbnail.jpg',
+		/* translators: header image description */
+		'description' => __( 'Wintery Fog', 'weaver-xtreme' /*adm*/)
 		)
 
 	) );
@@ -222,12 +231,14 @@ function weaverx_admin_header_style() {
 
 
 add_action( 'widgets_init', 'weaverx_widgets_init' );
-function weaverx_widgets_init() {
+
 /**
  * Register our sidebars and widgetized areas.
  *
  * @since Weaver Xtreme 1.0
  */
+function weaverx_widgets_init() {
+
 
 	// Top located at the top of the sidebar.
 	weaverx_register_sidebar( __( 'Primary Sidebar', 'weaver-xtreme' /*adm*/),
@@ -303,6 +314,8 @@ function weaverx_widgets_init() {
 if ( ! function_exists('weaverx_register_sidebar')) {
 /**
  * Register widgetized areas
+ *
+ * @since Weaver Xtreme 1.0
  */
 function weaverx_register_sidebar($name, $id, $desc, $altclass='') {
 	if ($altclass != '') $altclass .= ' ';
@@ -323,7 +336,12 @@ function weaverx_register_sidebar($name, $id, $desc, $altclass='') {
 // ================================ Weaver Xtreme admin ================================
 
 add_action('wp_head', 'weaverx_wp_head');
-
+/**
+ * Theme wphead generation
+ *
+ * @since Weaver Xtreme 1.0
+ *
+ */
 function weaverx_wp_head() {	// action definition
 	require_once('includes/wphead.php');
 	weaverx_generate_wphead();
@@ -332,6 +350,12 @@ function weaverx_wp_head() {	// action definition
 
 
 if (!function_exists('weaverx_enqueue_styles')) {
+/**
+ * Enqueue theme stylesheets
+ *
+ * @since Weaver Xtreme 1.0
+ *
+ */
 function weaverx_enqueue_styles() {
 	// Add stylesheets
 	$sheet = get_template_directory_uri() . '/assets/css/fonts'.WEAVERX_MINIFY.'.css';
@@ -362,7 +386,12 @@ function weaverx_enqueue_styles() {
 
 
 add_action('wp_enqueue_scripts', 'weaverx_enqueue_scripts', 8 );	// early priority so load before most other scripts (added: 3.1.7)
-
+/**
+ * Enqueue theme scripts
+ *
+ * @since Weaver Xtreme 1.0
+ *
+ */
 function weaverx_enqueue_scripts() {	// action definition
 
 	weaverx_enqueue_styles();	// add the styles
@@ -385,9 +414,13 @@ function weaverx_enqueue_scripts() {	// action definition
 
 	// put this one in <head> to enhance performance slightly for menu fix-up
 
-	wp_enqueue_script('weaverxJSLib', get_template_directory_uri().'/assets/js/weaverxjslib'.WEAVERX_MINIFY.'.js',array('jquery'), WEAVERX_VERSION);
+	wp_enqueue_script('weaverxJSLib', get_template_directory_uri() . '/assets/js/weaverxjslib'.WEAVERX_MINIFY.'.js', array('jquery'), WEAVERX_VERSION);
 
-	$useSM = weaverx_getopt('use_smartmenus') && function_exists('weaverxplus_plugin_installed') ? '1' : '0';
+	$useSM = weaverx_getopt('use_smartmenus') ? '1' : '0';
+
+	if ( $useSM )
+		wp_enqueue_script('weaverxSMLib', get_template_directory_uri() . '/assets/js/smartmenus/jquery.smartmenus'.WEAVERX_MINIFY.'.js', array('jquery'),WEAVERX_VERSION);
+
 
 	$altsw = weaverx_getopt('mobile_alt_switch');
 	if ($useSM == '0' || $altsw < 10 )
@@ -420,12 +453,14 @@ function weaverx_enqueue_scripts() {	// action definition
 
 require_once(get_template_directory() . '/settings.php');	                // settings stay in theme root directory
 require_once(get_template_directory() . '/includes/lib-content.php');	    // page/post display support
-require_once(get_template_directory() . '/includes/lib-layout.php'); 	    // content layout support
 require_once(get_template_directory() . '/includes/lib-runtime.php');	    // standard runtime library
+require_once(get_template_directory() . '/includes/lib-layout.php'); 	    // content layout support
+
 require_once(get_template_directory() . '/includes/filters.php');	        // other filter and action definitions
 
 if (is_user_logged_in() ) {
 	require_once(get_template_directory() . WEAVERX_ADMIN_DIR . '/load-admin-core.php');	// load admin files
+	require_once(get_template_directory() . WEAVERX_ADMIN_DIR . '/wvrx-editor-style.php');	// the editor file generator
 	require_once( trailingslashit( get_template_directory() ) . 'admin/customizer/trt-customize-pro/trt-customize-pro-top.php' );
 
 }
@@ -436,24 +471,29 @@ do_action('weaver_xtreme_load_customizer');	// load the customizer based option 
 
 // ============================== MORE WEAVER THEME ACTIONS ===================
 
-// Allow HTML descriptions in WordPress Menu
+
 remove_filter( 'nav_menu_description', 'strip_tags' );
 add_filter( 'wp_setup_nav_menu_item', 'weaverx_wp_setup_nav_menu_item' );
+/**
+ * Filter: Allow HTML descriptions in WordPress Menu
+ *
+ * @since Weaver Xtreme pre-3.0
+ *
+ */
 function weaverx_wp_setup_nav_menu_item( $menu_item ) {
      $menu_item->description = apply_filters( 'nav_menu_description', $menu_item->post_content );
      return $menu_item;
 }
 
-add_action( 'after_setup_theme', 'weaverx_infinite_scroll_init' );
 
-function weaverx_infinite_scroll_init() {
 /**
  * Add theme support for infinite scroll
  *
  * @uses add_theme_support
  * @action after_setup_theme
- * @return null
  */
+function weaverx_infinite_scroll_init() {
+
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'content',
 		'type' => 'click',
@@ -461,13 +501,8 @@ function weaverx_infinite_scroll_init() {
 
 	) );
 }
+add_action( 'after_setup_theme', 'weaverx_infinite_scroll_init' );
 
-add_filter( 'infinite_scroll_js_settings', 'weaverx_infinite_scroll_settings');
-
-function weaverx_infinite_scroll_settings($js_settings) {
-	$js_settings['text'] = __('Load more posts&hellip;', 'weaver-xtreme');
-	return $js_settings;
-}
 
 function weaverx_render_infinite_scroll() {
 	$GLOBALS['weaverx_page_who'] = 'blog';
@@ -481,7 +516,7 @@ function weaverx_render_infinite_scroll() {
 	/* Start the Loop */
 
 	weaverx_post_count_clear();
-	echo '<div class="wvrx-posts" style="clear:both;">';
+	echo '<div class="wvrx-posts clear-both">';
 
 	while ( have_posts() ) {
 		the_post();
@@ -525,25 +560,33 @@ function weaverx_render_infinite_scroll() {
 		weaverx_masonry('end-post');
 	}	// end while have posts
 	weaverx_masonry('end-posts');
-	echo "</div><div style='clear:both;'>\n";	// fix 3.1.3
+	echo "</div><div class='clear-both'>\n";	// fix 3.1.3
 
 }
 
+function weaverx_infinite_scroll_settings($js_settings) {
+	$js_settings['text'] = __('Load more posts&hellip;', 'weaver-xtreme');
+	return $js_settings;
+}
+add_filter( 'infinite_scroll_js_settings', 'weaverx_infinite_scroll_settings');
 
+
+if (!function_exists('weaverx_increase_max_srcset_image_width')) {
 /**
  * Increase the maximum image width to be included in a 'srcset' attribute.
  *
  * @param int $max_width The maximum image width to be included in the 'srcset'. Default '1600'.
  * @return int Filtered maximum image width.
  */
-if (!function_exists('weaverx_increase_max_srcset_image_width')) {
 function weaverx_increase_max_srcset_image_width( $max_width ) {
 	return ($max_width <= 1920) ? 1920 : $max_width;
 }
 add_filter( 'max_srcset_image_width', 'weaverx_increase_max_srcset_image_width' );
 }
 
- /*	Support for Woo Commerece
+/**
+ *	Action: Support for Woo Commerece
+ *
  */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);

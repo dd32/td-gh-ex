@@ -503,7 +503,7 @@ function weaverxResizeEnd() {
     var Wa2Eq = jQuery(".widget-eq"); // getting all the containers with the widget-eq class
 
     jQuery(function($) {
-        for (i = 0; i < Wa2Eq.length; i++) {
+        for (var i = 0; i < Wa2Eq.length; i++) {
             weaverxWidgetEq('widget', Wa2Eq[i].id); // Execute weaverxWidgetEq on all widget areas with the widget-eq class
         }
     });
@@ -589,7 +589,7 @@ function weaverxMonitorContent(class2Mon) {
     // (flow color and widgetEq) when they change size
     var XtraMenuAc = jQuery(class2Mon); // getting all the containers with the given class
     jQuery(function($) {
-        for (i = 0; i < XtraMenuAc.length; i++) {
+        for (var i = 0; i < XtraMenuAc.length; i++) {
             $('#' + XtraMenuAc[i].id).resizeX(weaverxResizeEnd); //launching monitoring using the ID of the container
         }
     });
@@ -617,6 +617,7 @@ jQuery(function($) {		// wrapper for jQuery utils
 //---------------------------------------------------
 //Fix On Scroll Script
 //---------------------------------------------------
+//V4.6 Fixed wvrx-fixedon scroll rules to remove any top margin when fixed
 //V4.5 removed global vars, wrapped with $ self-invoking function, changed $ to $
 //v4.4 added compatibility with any other fixed top areas
 //V4.3 Fixed a few bugs on mixing mix of fixed and fixed on scroll
@@ -648,7 +649,7 @@ if ((wvrxOpts.primaryScroll == 'scroll-fix') && (wvrxOpts.secondaryScroll != 'sc
         }
         // Check if there are other fixed areas, if so add offset
         $('.wvrx-fixedtop').each(function () {
-			wvrxFixedOffset = wvrxFixedOffset + $(this).outerHeight();
+			wvrxFixedOffset = wvrxFixedOffset + $(this).outerHeight() - 1;
 			});
 		wvrxAdminOffset = wvrxAdminOffset + wvrxFixedOffset;
         var windowScroll = $(window).scrollTop(); //Collects the amount of scroll
@@ -656,6 +657,7 @@ if ((wvrxOpts.primaryScroll == 'scroll-fix') && (wvrxOpts.secondaryScroll != 'sc
 
         if (primaryPos < (windowScroll + wvrxAdminOffset)) {
             $(primarySelector).addClass('wvrx-fixonscroll'); //Fix primary
+			//$(primarySelector).css('margin-top',0); // Need to remove top margn, but fix is really in .wvrx-fixonscroll CSS rule
             $('body').css('margin-top', primaryHeight + wvrxFixedOffset); //Add body ossfet to compensate for primary fix
             $(primarySelector).css('top', wvrxAdminOffset + 'px'); //change primary top
         } else {

@@ -73,7 +73,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 <?php
 		weaverx_sidebar_after( $sb_layout, 'blog' );
 ?>
-		<div class="clear-container-end" style="clear:both"></div></div><!-- /#container -->
+		<div class="clear-container-end" style="clear:both"></div><</div></div><!-- /#container-end, #container -->
 <?php
 	weaverx_get_footer('blog');
 
@@ -107,6 +107,29 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		$args = weaverx_setup_post_args($args);	// setup custom fields for this page
 		$wp_query = new WP_Query(apply_filters('weaverx_pwp_wp_query',$args));		// reuse $wp_query to make paging work
 	}
+
+	/**
+	 * need to fix sticky post handling - perhaps start with this code:
+	 * https://stackoverflow.com/questions/19814320/wordpress-query-to-show-only-sticky-posts
+
+// get sticky posts from DB
+$sticky = get_option('sticky_posts');
+// check if there are any
+if (!empty($sticky)) {
+    // optional: sort the newest IDs first
+    rsort($sticky);
+    // override the query
+    $args = array(
+        'post__in' => $sticky
+    );
+    query_posts($args);
+    // the loop
+    while (have_posts()) {
+         the_post();
+         // your code
+    }
+}
+*/
 
 	// now have to put the sidebar
 	get_template_part('templates/infobar');	// put the info bar now that the posts info is available
@@ -249,7 +272,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 		weaverx_sidebar_after( $sb_layout, 'blog' );
 ?>
-		<div class="clear-container-end" style="clear:both"></div></div><!-- /#container -->
+		<div class="clear-container-end" style="clear:both"></div></div></div><!-- /#container-end, #container -->
 <?php
 	weaverx_get_footer('blog');
 	} // end of show posts section

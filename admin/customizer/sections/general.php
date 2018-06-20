@@ -4,10 +4,12 @@ if ( ! function_exists( 'weaverx_customizer_define_general_sections' ) ) :
 /**
  * Define the sections and settings for the General panel
  */
-function weaverx_customizer_define_general_sections( $sections ) {
+function weaverx_customizer_define_general_sections( ) {
 	$panel = 'weaverx_general';
 	$general_sections = array();
 	global $wp_customize;
+
+
 
 	/**
 	 * Site Title & Tagline (Site Identity now)
@@ -29,6 +31,7 @@ function weaverx_customizer_define_general_sections( $sections ) {
 
 	// Reset priorities on Tagline control
 	//$wp_customize->get_control( 'blogdescription' )->priority = 14;
+
 
 	/**
 	 * Static Front Page
@@ -155,8 +158,8 @@ If you have a theme using transparent backgrounds, this option will likely impro
 				),
 			),
 
-			'general_admin-roles' => weaverx_cz_group_title( __( 'Per Page and Per Post Option Panels by Roles', 'weaver-xtreme' ),
-				__( 'Single site Administrator and Multi-Site Super Administrator will always have the Per Page and Per Post options panel displayed.
+			'general_admin-roles' => weaverx_cz_group_title( __( 'Per Page and Per Post Option Panels', 'weaver-xtreme' ),
+				__( 'Control when Per Page and Per Post options are displayed. Single site Administrator and Multi-Site Super Administrator will always have the Per Page and Per Post options panel displayed.
 You may selectively disable these options for other User Roles using the check boxes below.', 'weaver-xtreme' )),
 
 			'_hide_mu_admin_per' => weaverx_cz_checkbox(
@@ -172,6 +175,9 @@ You may selectively disable these options for other User Roles using the check b
 				__( 'Hide Per Page/Post Options for Authors and Contributors &diams;', 'weaver-xtreme' )
 			),
 
+			'_show_per_post_all' => weaverx_cz_checkbox(
+				__( 'Show Per Post Options for Custom Post Types &diams', 'weaver-xtreme' )
+			),
 
 			'general_admin-names' => weaverx_cz_group_title( __( 'Theme Name and Description', 'weaver-xtreme' ),
 				__( 'You can change the name and description of your current settings if you would like to create a new theme
@@ -229,14 +235,14 @@ theme file for sharing with others, or for you own identification.', 'weaver-xtr
 		'panel'   => $panel,
 		'title'   => __( 'Admin', 'weaver-xtreme' ),
 		'options' => array(
-			'general_admin-names2' => weaverx_cz_group_title( __( 'Admin Options (Advanced Level)', 'weaver-xtreme' ),
-				__( 'The Advanced Level Admin options include options for: Inline CSS, Print Page, SiteMap, Donations, Editor styling, Multisite, and Theme Name.', 'weaver-xtreme' )),
+			'general_admin-names2' => weaverx_cz_group_title( __( 'Admin Options (Full Level)', 'weaver-xtreme' ),
+				__( 'The Full Level Admin options include options for: Inline CSS, Print Page, SiteMap, Donations, Editor styling, Multisite, and Theme Name.', 'weaver-xtreme' )),
 			)
 		);
 }
 
 
-if ( weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if advanced, int
+if ( weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
 	$general_sections['general_save_settings'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Save Settings', 'weaver-xtreme' ),
@@ -259,17 +265,17 @@ asking if you want to leave this page or stay. If you leave, you will not save t
 		)
 	);
 } else {	// beg level
-	$general_sections['general_admin'] = array(
+	$general_sections['general_save_settings'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Save Settings', 'weaver-xtreme' ),
 		'options' => array(
-			'general_admin-names3' => weaverx_cz_group_title( __( 'Save Settings (Advanced, Intermediate Levels)', 'weaver-xtreme' ),
-				__( 'The Advanced and Intermediate Level Save Settings options allow you to save your settings to your computer.', 'weaver-xtreme' )),
+			'general_admin-names3' => weaverx_cz_group_title( __( 'Save Settings (Full, Standard Levels)', 'weaver-xtreme' ),
+				__( 'The Full and Standard Level Save Settings options allow you to save your settings to your computer.', 'weaver-xtreme' )),
 			)
 		);
 }
 
-if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if advanced, int
+if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
 	$general_sections['general_restore_settings'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Restore Settings', 'weaver-xtreme' ),
@@ -295,12 +301,12 @@ Select a theme <em>.wxt</em>, backup <em>.wxb</em>, or full settings <em>.wxall<
 		)
 	);
 	} else {	// beg level
-	$general_sections['general_admin'] = array(
+	$general_sections['general_restore_settings'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Restore Settings', 'weaver-xtreme' ),
 		'options' => array(
-			'general_admin-names4' => weaverx_cz_group_title( __( 'Restore Settings (Advanced, Intermediate Levels)', 'weaver-xtreme' ),
-				__( 'The Advanced and Intermediate Level Save Settings options allow you to restore your settings from your computer.', 'weaver-xtreme' )),
+			'general_admin-names4' => weaverx_cz_group_title( __( 'Restore Settings (Full, Standard Levels)', 'weaver-xtreme' ),
+				__( 'The Full and Standard Level Save Settings options allow you to restore your settings from your computer.', 'weaver-xtreme' )),
 			)
 		);
 }
@@ -310,12 +316,8 @@ Select a theme <em>.wxt</em>, backup <em>.wxb</em>, or full settings <em>.wxall<
 		'panel'   => $panel,
 		'title'   => __( 'Legacy Weaver Xtreme Admin', 'weaver-xtreme' ),
 		'options' => array(
-			'legacy-save-restore' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Legacy Theme Options Interface', 'weaver-xtreme' ),
-					'description' => sprintf(__(
-						'<p>The <em>Appearance &rarr; Weaver Xtreme Admin</em> panel provides access to the complete
+			'legacy-save-restore' => weaverx_cz_html ( __( 'Legacy Theme Options Interface', 'weaver-xtreme' ),
+			sprintf(__('<p>The <em>Appearance &rarr; Weaver Xtreme Admin</em> panel provides access to the complete
 legacy Weaver Xtreme theme options interface. This interface supplies the traditional check-box interface.
 It may be preferable for long-time Weaver Xtreme users, or for use on slow computers or slow connections.
 </p><p>
@@ -336,20 +338,12 @@ Weaver Xtreme Admin interface at the same time - the two interfaces do not autom
 <h3>Add-ons</h3>
 <p>Summary and help info for Weaver Xtreme Theme Support and Weaver Xtreme Plus.</p>',
 						'weaver-xtreme'),
-						weaverx_cz_get_admin_page(__('Weaver Xtreme Admin Panel', 'weaver-xtreme'))),
-					'type'  => 'HTML',
-				),
-			),
-
-
+						weaverx_cz_get_admin_page(__('Weaver Xtreme Admin Panel', 'weaver-xtreme'))) ),
 		)
 	);
 
-
-
 	// Merge with master array
-	return array_merge( $sections, $general_sections );
+	return $general_sections;
 }
 endif;
-
-add_filter( 'weaverx_customizer_sections', 'weaverx_customizer_define_general_sections' );
+?>

@@ -1,34 +1,68 @@
 <?php
-/* Display per page and per post options.
+/**
+ * Display per page and per post options.
  *
- *  __ added - 12/10/14
+ *  @since 12/10/14
  */
 
 if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 // Admin panel that gets added to the page edit page for per page options
 
-if ( !function_exists( 'wvrx_ts_installed' ) &&
-	 !function_exists( 'weaverxplus_plugin_installed' )  ) {
 
-	add_action('admin_menu', 'weaverx_add_page_fields');
+add_action('admin_menu', 'weaverx_pp_add_page_fields',11);	// allow X-Plus to override us
+/**
+ * Add per page and per post meta_boxes
+ *
+ */
+function weaverx_pp_add_page_fields() {
 
-	function weaverx_add_page_fields() {
-		add_meta_box('page-box', __('Weaver Xtreme Options For This Page (Per Page Options)', 'weaver-xtreme' /*adm*/),
-					 'weaverx_page_extras', 'page', 'normal', 'high');
-		add_meta_box('post-box', __('Weaver Xtreme Options For This Post (Per Post Options)', 'weaver-xtreme' /*adm*/),
-					 'weaverx_page_extras', 'post', 'normal', 'high');
+	$per_post_label = defined('WEAVER_XPLUS_VERSION') ? __(' (with Weaver Xtreme Plus Options)','weaver-xtreme') : '';
+	add_meta_box('page-box', __('Weaver Xtreme 4 Options For This Page','weaver-xtreme') . $per_post_label ,
+				 'weaverx_pp_page_extras_load', 'page', 'normal', 'high');
+
+	add_meta_box('post-box', __('Weaver Xtreme 4 Options For This Post', 'weaver-xtreme')  . $per_post_label, 'weaverx_pp_post_extras_load', 'post', 'normal', 'high');
+	global $post;
+
+
+	$i = 1;
+	$args = array( 'public'   => true, '_builtin' => false );
+	$post_types = get_post_types($args,'names','and');
+	foreach ($post_types  as $post_type ) {
+		add_meta_box('post-box' . $i, __('Weaver Xtreme Options For This Post Type','weaver-xtreme') . $per_post_label,
+					 'weaverx_pp_post_extras_pt', $post_type, 'normal', 'high');
+		$i++;
 	}
 
-	function weaverx_page_extras() {
-		echo '<p>';
-_e('<em>Weaver Xtreme</em> supports a complete set of Per Page and Per Post options if you install either
-the <a href="https://wordpress.org/plugins/weaverx-theme-support/" target="_blank" alt="Weaver X Theme Support">
-Weaver X Theme Support</a> free plugin, or the <a href="//plus.weavertheme.com/" target="_blank" alt="Weaver Xtreme">
-Weaver Xtreme Plus</a> premium plugin.', 'weaver-xtreme' /*adm*/);
-		echo '</p><p>';
-_e('These options include, among others, the ability to hide header images, titles, footers, as well as per page
-   and per post widget area options. These options allow you to give special pages or posts highly customized layouts.', 'weaver-xtreme' /*adm*/);
-		echo '</p>';
+	require_once(dirname( __FILE__ ) . '/admin-page-posts-meta-boxes.php');	// per page-posts admin - needs to be here
+}
+
+function weaverx_pp_page_extras_load() {
+	weaverx_pp_page_extras();
+}
+
+function weaverx_pp_post_extras_load() {
+	weaverx_pp_post_extras();
+}
+
+function weaverx_pp_post_extras_pt() {
+	// special handling for non-Weaver Custom Post Types
+	$func_opt = WEAVER_GET_OPTION;
+	$opts = $func_opt( apply_filters('weaverx_options',WEAVER_SETTINGS_NAME) , array());
+	if ((isset($opts['_show_per_post_all']) && $opts['_show_per_post_all']) || function_exists('atw_slider_plugins_loaded') ) {
+		weaverx_pp_post_extras();
+	} else {
+		echo '<p>' .
+__('You can enable Weaver Xtreme Per Post Options for Custom Post Types on the Weaver Xtreme:Advanced Options:Admin Options tab.','weaver-xtreme' /*adm*/) .
+		'</p>';
 	}
 }
+
+add_action('admin_enqueue_scripts', 'weaverx_pp_enqueue_admin_scripts');
+
+function weaverx_pp_enqueue_admin_scripts() {
+	wp_enqueue_script('weaverxYetii', get_template_directory_uri().'/admin/admin-core/assets/js/yetii/yetii.js', false, WEAVERX_VERSION);
+	wp_enqueue_style('weaverxYetiiCSS', get_template_directory_uri().'/admin/admin-core/assets/js/yetii/yetii-weaver'.WEAVERX_MINIFY. '.css', false, WEAVERX_VERSION);
+}
+
+
 ?>

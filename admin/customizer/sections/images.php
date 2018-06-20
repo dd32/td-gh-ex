@@ -4,7 +4,7 @@ if ( ! function_exists( 'weaverx_customizer_define_image_sections' ) ) :
 /**
  * Define the sections and settings for the Images panel
  */
-function weaverx_customizer_define_image_sections( $sections ) {
+function weaverx_customizer_define_image_sections( ) {
 	global $wp_customize;
 
 	$panel = 'weaverx_images';
@@ -12,7 +12,7 @@ function weaverx_customizer_define_image_sections( $sections ) {
 
 
 	$wp_customize->get_section('header_image')->priority   		= 10515;
-	$wp_customize->get_section('header_image')->title    		= __('Header Media (Content)', 'weaver-xtreme');
+	$wp_customize->get_section('header_image')->title    		= __('Header Media (image, video)', 'weaver-xtreme');
 	$wp_customize->get_section('header_image')->panel   		= $panel;
 
 	$wp_customize->get_section('background_image')->priority   	= 10590;
@@ -25,7 +25,8 @@ function weaverx_customizer_define_image_sections( $sections ) {
 	/**
 	 * General
 	 */
-if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if advanced, int
+
+	if (  weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full
 	$image_sections['images-global'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Global Image Settings', 'weaver-xtreme' ),
@@ -95,6 +96,17 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 			'caption_color_css'  =>   weaverx_cz_css(__( 'Custom CSS for Captions.', 'weaver-xtreme' )),
 		),
 	);
+	} else {		// basic
+		$image_sections['images-global'] = array(
+			'panel'   => $panel,
+			'title'   => __( 'Global Image Settings', 'weaver-xtreme' ),
+			'description' => 'Set Image options for Site Wrapper &amp; Container. Use Colors to set colors.',
+			'options' => array(
+				'images-heading-global' => weaverx_cz_group_title( __( 'Global Image Settings', 'weaver-xtreme' ),
+					__( 'Standard and Full interface levels provide options for image borders.', 'weaver-xtreme' )),
+			),
+		);
+	}
 
 
 	/**
@@ -108,10 +120,56 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 		'title'   => __( 'Header Media (Layout)', 'weaver-xtreme' ),
 		'options' => array(
 		'images-heading-header' => weaverx_cz_group_title( __( 'Site Header Media', 'weaver-xtreme' ),
-				__('You can set the header image or video on the <em>Images : Header Media (Content)</em> menu, one level up from here. The Site Logo is set on the <em>General Options & Admin : Site Identity</em> menu.', 'weaver-xtreme') ),
+				__('You can set the header image or video on the <em>Images : Header Media (image, video)</em> menu, one level up from here. The Site Logo is set on the <em>General Options & Admin : Site Identity</em> menu.', 'weaver-xtreme') ),
+
+		'images-heading-altimg' => weaverx_cz_heading(
+				__( 'Alternate Header Images', 'weaver-xtreme' ),
+				__( 'You can specify alternate header images using the Content and Post Specific <em>Featured Image Location</em> option on the <em>Images</em> panel, as well as Per Page and Per Post options.', 'weaver-xtreme' )
+			),
 
 		'images-header-image-title' => weaverx_cz_group_title( __( 'Header Image', 'weaver-xtreme' ),
 				__('Settings for Site Header Image. <em style="color:red;">These Image settings DO NOT apply to the Header Video.</em>', 'weaver-xtreme')),
+
+		'link_site_image' => weaverx_cz_checkbox_refresh( __( 'Header Image Links to Site', 'weaver-xtreme' ),
+			__( 'Check to add a link to site home page for Header Image. Note: If used with <em>Move Title/Tagline over Image</em>, parts of the header image will not be clickable.', 'weaver-xtreme')),
+
+		'header_image_align' => weaverx_cz_select(
+				__( 'Align Header Image', 'weaver-xtreme' ),
+				__( 'How to align header image - for left, center, or right, this option useful only when Max Width or Actual Size set.', 'weaver-xtreme' ),
+				'weaverx_cz_choices_align',	'float-left', 'refresh'
+			),
+
+		'header_image_render' => weaverx_cz_is_old_plus()
+			? weaverx_cz_heading(__( 'Header Image Rendering', 'weaver-xtreme' ) . ' ( WX+ V3 )',
+					__('"Render Header Image as BG Image" requires Weaver Xtreme Plus V2.90 or later.', 'weaver-xtreme'))
+			: weaverx_cz_select_plus(
+				__( 'Header Image Rendering', 'weaver-xtreme' ),
+				__('How to render header image: as img in header or as header area bg image. When rendered as a BG image, other options such as moving Title/Tagline or having image link to home page are not meaningful. Optionally, use <em>Suggested Header Image Height</em> above to control BG image height.', 'weaver-xtreme' /*adm*/),
+				'weaverx_cz_choices_render_header',	'header-as-img', 'refresh'
+			),
+
+			'header_min_height'     => array(
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh', 'default' => 0	),
+				'control' => array(
+					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
+					'label'   => __( 'Minimum Header Height (px)', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
+					'description' => __( 'Set Minimum Height for Header Area. Most useful used with Parallax Header BG Image. Adding Top Margin to Primary Menu bar can also add height.', 'weaver-xtreme' ),
+					'type'  => 'range',
+					'input_attrs' => array(
+						'min'  => 0,
+						'max'  => 1000,
+						'step' => 10,
+					),
+				),
+			),
+
+		),
+
+	);
+
+
+	if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
+		$level = array( 	// for standard + full level
 
 		'header_image_max_width_dec'     => array(
 				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 100.0	),
@@ -131,17 +189,29 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 		'header_actual_size' => weaverx_cz_checkbox( __( 'Use Actual Image Size', 'weaver-xtreme' ),
 			__( 'Check to use actual header image size. (Default: theme width)', 'weaver-xtreme' ), 'plus'),
 
-		'header_image_align' => weaverx_cz_select_plus(
-				__( 'Align Header Image', 'weaver-xtreme' ),
-				__( 'How to align header image - meaningful only when Max Width or Actual Size set.', 'weaver-xtreme' ),
-				'weaverx_cz_choices_align',	'float-left', 'refresh'
-			),
 
+		'header-image-html-rep-head' =>  weaverx_cz_group_title(__('Replace Header Image with HTML', 'weaver-xtreme' ), ''),
 
-		'link_site_image' => weaverx_cz_checkbox_refresh( __( 'Header Image Links to Site', 'weaver-xtreme' ),
-			__( 'Check to add a link to site home page for Header Image. Note: If used with <em>Move Title/Tagline over Image</em>, parts of the header image will not be clickable.', 'weaver-xtreme')),
+		'header_image_html_text' => weaverx_cz_html_textarea(__( 'Image HTML Replacement', 'weaver-xtreme' ),
+				__( 'Replace Header image with arbitrary HTML. Useful for slider shortcodes in place of image. FI as Header Image has priority over HTML replacement. Extreme Plus also supports this option on a Per Page/Post basis.', 'weaver-xtreme' ),
+				'1', 'refresh'),
 
-		'header_image_height_int'     => array(
+		'header_image_html_home_only' => weaverx_cz_checkbox_refresh( __( 'Show Replacement only on Front Page', 'weaver-xtreme' ),
+				__( 'Check to use the Image HTML Replacement only on your Front/Home page. Extreme Plus support Per Page/Post control.', 'weaver-xtreme')),
+		);
+		$image_sections['images-header']['options'] = array_merge($image_sections['images-header']['options'],$level);
+	}
+
+	if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
+
+		$level = array( 	// for standard + full level
+			'header_image_html_plus_bg' => weaverx_cz_is_old_plus()
+			? weaverx_cz_heading(__( 'Also show BG Header Image', 'weaver-xtreme' ) . ' ( WX+ V3 )',
+					__('"Also show BG Header Image" requires Weaver Xtreme Plus V2.90 or later.', 'weaver-xtreme'))
+			: weaverx_cz_checkbox( __( 'Also show BG Header Image', 'weaver-xtreme' ),
+			__( 'If you have Image HTML Replacement defined - including Per Page/Post - and also have have set the standard Header Image to display as a BG image, then show <em>both</em> the BG image and the replacement HTML.', 'weaver-xtreme' ), 'plus','refresh'),
+
+			'header_image_height_int'     => array(
 				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh', 'default' => 188	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -155,30 +225,11 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 					),
 				),
 			),
-
-		'header_image_render' => weaverx_cz_is_old_plus()
-			? weaverx_cz_heading(__( 'Header Image Rendering', 'weaver-xtreme' ) . ' ( WX+ V3 )',
-					__('"Render Header Image as BG Image" requires Weaver Xtreme Plus V2.90 or later.', 'weaver-xtreme'))
-			: weaverx_cz_select_plus(
-				__( 'Header Image Rendering', 'weaver-xtreme' ),
-				__('How to render header image: as img in header or as header area bg image. When rendered as a BG image, other options such as moving Title/Tagline or having image link to home page are not meaningful. Optionally, use <em>Suggested Header Image Height</em> above to control BG image height.', 'weaver-xtreme' /*adm*/),
-				'weaverx_cz_choices_render_header',	'header-as-img', 'refresh'
-			),
+		);
+		$image_sections['images-header']['options'] = array_merge($image_sections['images-header']['options'],$level);
 
 
-		'header_image_html_text' => weaverx_cz_html_textarea(__( 'Image HTML Replacement', 'weaver-xtreme' ),
-				__( 'Replace Header image with arbitrary HTML. Useful for slider shortcodes in place of image. FI as Header Image has priority over HTML replacement. Extreme Plus also supports this option on a Per Page/Post basis.', 'weaver-xtreme' ),
-				'1', 'refresh'),
-
-		'header_image_html_home_only' => weaverx_cz_checkbox_refresh( __( 'Show Replacement only on Front Page', 'weaver-xtreme' ),
-				__( 'Check to use the Image HTML Replacement only on your Front/Home page. Extreme Plus support Per Page/Post control.', 'weaver-xtreme')),
-
-		'header_image_html_plus_bg' => weaverx_cz_is_old_plus()
-			? weaverx_cz_heading(__( 'Also show BG Header Image', 'weaver-xtreme' ) . ' ( WX+ V3 )',
-					__('"Also show BG Header Image" requires Weaver Xtreme Plus V2.90 or later.', 'weaver-xtreme'))
-			: weaverx_cz_checkbox( __( 'Also show BG Header Image', 'weaver-xtreme' ),
-			__( 'If you have Image HTML Replacement defined - including Per Page/Post - and also have have set the standard Header Image to display as a BG image, then show <em>both</em> the BG image and the replacement HTML.', 'weaver-xtreme' ), 'plus','refresh'),
-
+		$level = array(
 
 		'images-heading-header-video' => weaverx_cz_group_title( __( 'Header Video', 'weaver-xtreme' ),
 				__('You can set the Header Video on the <em>Customize : Images : Header Media</em> menu.', 'weaver-xtreme')),
@@ -232,25 +283,20 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 				__( 'Search Box Icon', 'weaver-xtreme' ),
 				__( 'The icon used in search boxes can be changed in the <em>Colors &rarr; Content</em> section.', 'weaver-xtreme' )
 			),
-
-		'images-heading-altimg' => weaverx_cz_heading(
-				__( 'Alternate Header Images', 'weaver-xtreme' ),
-				__( 'You can specify alternate header images using the Content and Post Specific <em>Featured Image Location</em> option on the <em>Images</em> panel, as well as Per Page and Per Post options.', 'weaver-xtreme' )
-			),
-
-			'images-heading-logo-html' => weaverx_cz_heading( __( 'Site Logo/HTML', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-				__( 'The site Logo/HTML is being deprecated. It is still accessible from the traditional Appearance settings interface.', 'weaver-xtreme' )),
-		),
-	);
+		);
+		 $image_sections['images-header']['options'] = array_merge($image_sections['images-header']['options'],$level);
+	}
 
 
 	/**
 	 * Content
 	 */
+
+	if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
 	$image_sections['images-content'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Content', 'weaver-xtreme' ),
-		'description' => __('Images on page and post content.', 'weaver-xtreme'),
+		'description' => __('Featured Image display on page content.', 'weaver-xtreme'),
 		'options' => array(
 
 			'images-content-heading' => weaverx_cz_heading( __( 'General Image Settings', 'weaver-xtreme' ),
@@ -266,6 +312,21 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 				__( 'Featured Image Location', 'weaver-xtreme' ),
 				__( 'Where to display Featured Image for Pages', 'weaver-xtreme' ),
 				'weaverx_cz_choices_fi_location',	'content-top', 'refresh'
+			),
+
+			'page_min_height'     => array(
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh', 'default' => 0	),
+				'control' => array(
+					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
+					'label'   => __( 'Page Content Height (px)', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+					'description' => __( 'Minimum Height Page Content with Parallax BG.', 'weaver-xtreme' ),
+					'type'  => 'range',
+					'input_attrs' => array(
+						'min'  => 10,
+						'max'  =>  2000,
+						'step' => 10,
+					),
+				),
 			),
 
 			'page_fi_align' => weaverx_cz_select(
@@ -304,19 +365,38 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 
 			'page_fi_nolink' => weaverx_cz_checkbox_refresh( __( "Don't add link to FI", 'weaver-xtreme' ),
 			__( 'Do not add link to Featured Image.', 'weaver-xtreme' ), 'plus')
+
+
 		),
 	);
+	} else {	// basic
+
+		$image_sections['images-content'] = array(
+		'panel'   => $panel,
+		'title'   => __( 'Content', 'weaver-xtreme' ),
+		'description' => __('Featured Image display on page content.', 'weaver-xtreme'),
+		'options' => array(
+
+			'images-pgspecific-heading' => weaverx_cz_group_title( __( 'General Image Settings', 'weaver-xtreme' ),
+				__( 'General image settings found on the <em>Site Wrapper &amp; Container</em> panel.', 'weaver-xtreme' )),
+			'images-content-FI-notes' => weaverx_cz_group_title( __( 'Featured Image - Pages', 'weaver-xtreme' ),
+					__( 'Display of Page Featured Images. Full and Standard interface level have options to set Featured Image location, alignment, and size. Default is top of content, left aligned.', 'weaver-xtreme' )),
+			)
+		);
+	}
+
 
 	/**
 	 * Post Specific
 	 */
+	if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
 	$image_sections['images-post-specific'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Post Specific', 'weaver-xtreme' ),
-		'description' => __('Post Specific Images - override Content Images.', 'weaver-xtreme'),
+		'description' => __('Featured Image display with posts.', 'weaver-xtreme'),
 		'options' => array(
 			'images-postspecific-heading' => weaverx_cz_group_title( __( 'General Image Settings', 'weaver-xtreme' ),
-				__( 'General image settings found on the <em>Site Wrapper &amp; Container</em> panel.', 'weaver-xtreme' )),
+				__( 'General image settings found on the <em>Global Image Settings</em> panel.', 'weaver-xtreme' )),
 
 
 			'post_avatar_int'     => array(
@@ -351,6 +431,22 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 				__( 'Featured Image Location - Full Post', 'weaver-xtreme' ),
 				__( 'Where to display Featured Image.', 'weaver-xtreme' ),
 				'weaverx_cz_choices_fi_location',	'content-top', 'refresh'
+
+			),
+
+			'post_blog_min_height'     => array(
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh', 'default' => 0	),
+				'control' => array(
+					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
+					'label'   => __( 'Post Height - Blog View (px)', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+					'description' => __( 'Minimum Height of Post, full or excerpt, with Parallax BG in blog views.', 'weaver-xtreme' ),
+					'type'  => 'range',
+					'input_attrs' => array(
+						'min'  => 10,
+						'max'  =>  2000,
+						'step' => 10,
+					),
+				),
 			),
 
 			'post_full_fi_align' => weaverx_cz_select(
@@ -398,7 +494,6 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 				'weaverx_cz_choices_fi_location',	'content-top', 'refresh'
 			),
 
-
 			'post_excerpt_fi_align' => weaverx_cz_select(
 				__( 'Align Featured Image - Excerpt', 'weaver-xtreme' ),
 				'',
@@ -443,6 +538,21 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 				'weaverx_cz_choices_fi_location',	'content-top', 'refresh'
 			),
 
+			'post_min_height'     => array(
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh', 'default' => 0	),
+				'control' => array(
+					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
+					'label'   => __( 'Post Height - Single Page (px)', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+					'description' => __( 'Minimum Height of Post with Parallax BG in Single Page view.', 'weaver-xtreme' ),
+					'type'  => 'range',
+					'input_attrs' => array(
+						'min'  => 10,
+						'max'  =>  2000,
+						'step' => 10,
+					),
+				),
+			),
+
 			'post_fi_align' => weaverx_cz_select(
 				__( 'Align Featured Image - Single Page', 'weaver-xtreme' ),
 				'',
@@ -478,24 +588,28 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 
 		),
 	);
+	} else {	// basic
 
-
-	/**
-	 * Footer
-	 */
-	$image_sections['images-footer'] = array(
+		$image_sections['images-post-specific'] = array(
 		'panel'   => $panel,
-		'title'   => __( 'Footer Area', 'weaver-xtreme' ),
+		'title'   => __( 'Post Specific', 'weaver-xtreme' ),
+		'description' => __('Featured Image display with posts.', 'weaver-xtreme'),
 		'options' => array(
+			'images-postspecific-heading' => weaverx_cz_group_title( __( 'General Image Settings', 'weaver-xtreme' ),
+				__( 'General image settings found on the <em>Global Image Settings</em> panel.', 'weaver-xtreme' )),
 
-		),
-	);
+			'images-post-FI-note1' => weaverx_cz_group_title( __( 'Featured Image - Posts', 'weaver-xtreme' ),
+					__( 'Display of Post Featured Images on blogs, archives, excerpted, and full content. Full and Standard interface level have options to set Featured Image location, alignment, and size. Default is top of content, left aligned.', 'weaver-xtreme' )),
+			)
+		);
+	}
 
 	/**
 	 * Background Images
 	 */
 
-	$image_sections['images-background'] = array(
+	if (  weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
+		$image_sections['images-background'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Background', 'weaver-xtreme' ),
 		'options' => array(
@@ -576,36 +690,23 @@ Valid options include: background-position, background-size, background-origin, 
 		__('Background image for Footer area (#colophon)', 'weaver-xtreme'));
 	$image_sections['images-background']['options'] = array_merge( $image_sections['images-background']['options'],  $new_opts);
 
-} else {
-	$image_sections['images-global'] = array(
+	} else {			// basic and standard
+
+		$image_sections['images-background'] = array(
 		'panel'   => $panel,
-		'title'   => __( 'Image Settings', 'weaver-xtreme'),
+		'title'   => __( 'Background', 'weaver-xtreme' ),
 		'options' => array(
-			'images-heading-global' => weaverx_cz_group_title( __( 'Advanced / Intermediate Image Settings', 'weaver-xtreme' ),
-				__( 'The Intermediate and Advanced Levels include options for setting Image attributes, including placement of Featured Images, Header image attributes, background images, image borders and sizes, and more.', 'weaver-xtreme' )),
-			)
-		);
+
+			'images-bg-use-full' => weaverx_cz_group_title( __( 'Background Images for various areas', 'weaver-xtreme' ),
+				__( 'The Full interface level, when used with Weaver Xtreme Plus, provides the ability to add background images to various areas: Full Screen, body, wrapper, header, container, content, page content, post content, sidebars, and the footer.', 'weaver-xtreme' )),
+
+		),
+	);
+
+	}
 
 
-
-}
-
-
-	/**
-	 * Filter the definitions for the controls in the Color Scheme panel of the Customizer.
-	 *
-	 * @since 1.3.0.
-	 *
-	 * @param array    $image_sections    The array of definitions.
-	 */
-	$image_sections = apply_filters( 'weaverx_customizer_image_sections', $image_sections );
-
-	// Merge with master array
-	return array_merge( $sections, $image_sections );
-
-
+	return $image_sections;
 }
 endif;
-
-add_filter( 'weaverx_customizer_sections', 'weaverx_customizer_define_image_sections' );
 ?>

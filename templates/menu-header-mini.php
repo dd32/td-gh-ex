@@ -12,7 +12,7 @@ if ( has_nav_menu('header-mini') || $alt_menu != '') {     // weaverx_getopt( 'm
 
 	$class = weaverx_menu_class( 'm_header_mini' );
 
-	echo "\n\n<div id=\"nav-header-mini\" class=\"menu-horizontal {$class}\"" . weaverx_schema( 'menu') . ">\n";
+	echo "\n\n<div id=\"nav-header-mini\" class=\"menu-horizontal {$class}\"" . weaverx_schema( 'menu' ) . ">\n";
 	$args = array(
 		'fallback_cb'     => '',
 		'theme_location'  => 'header-mini',

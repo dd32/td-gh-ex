@@ -55,15 +55,7 @@ if (weaverx_getopt('infobar_hide') != 'hide' && !weaverx_is_checked_page_opt('_p
 	}
 
 	if (weaverx_getopt('info_search')) {
-		if (function_exists('weaverxplus_search_form')) {
-			echo '<span id="infobar_search" class="wvrx-infobar-search" >';
-			echo weaverxplus_search_form('',120);
-			echo '</span>';
-		} else {
-			echo '<span id="infobar_search">';
-			get_search_form();
-			echo '</span>';
-		}
+		echo '<span id="infobar_search" class="menu-search">&nbsp;' . get_search_form( false ) . '&nbsp;</span>';
 	}
 
 	if (weaverx_getopt_checked('info_addlogin')) {

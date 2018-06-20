@@ -12,71 +12,98 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	if ( weaverx_getopt( 'footer_hide' ) != 'hide' && !weaverx_is_checked_page_opt('_pp_hide_footer') ) {
 		$f_class = weaverx_area_class('footer', 'pad', '-trbl', 'margin-none');
 ?>
-<footer id="colophon" <?php echo 'class="colophon ' . $f_class . '"'; echo weaverx_schema( 'footer' );?>>
+<footer id="colophon" <?php echo 'class="colophon ' . $f_class . '"'; echo weaverx_schema( 'footer' );?>><div id="colophon-inside" class="block-inside">
 <?php		// +since: 3.1.10: removed role='contentinfo' on footer
 
-		if ( weaverx_has_widgetarea( 'footer-widget-area' ) ) {
-		   $p_class = weaverx_area_class('footer_sb', 'pad', '', 'margin-bottom');
-		   weaverx_put_widgetarea('footer-widget-area', $p_class);
-		   weaverx_clear_both('footer-widget-area');
-		}
+		if ( apply_filters('weaverx_replace_pb_area', 'footer') == 'footer' ) {
+			if ( weaverx_has_widgetarea( 'footer-widget-area' ) ) {
+			   $p_class = weaverx_area_class('footer_sb', 'pad', '', 'margin-bottom');
+			   weaverx_put_widgetarea('footer-widget-area', $p_class);
+			   weaverx_clear_both('footer-widget-area');
+			}
 
-		/* ======== EXTRA HTML ======== */
+			/* ======== EXTRA HTML ======== */
 
-		$extra = weaverx_getopt('footer_html_text');
+			$extra = weaverx_get_per_page_value('_pp_footer_html');
+			if ( $extra == '' )
+				$extra = weaverx_getopt('footer_html_text');
 
-		$hide = weaverx_getopt_default('footer_html_hide', 'hide-none');
+			$hide = weaverx_getopt_default('footer_html_hide', 'hide-none');
 
-		if ( $extra == '' && is_customize_preview() ) {
-			echo '<div id="footer-html" style="display:inline;"></div>';		// need the area there for customizer live preview
-		} else if ($extra != '' && $hide != 'hide' ) {
-			$c_class = weaverx_area_class('footer_html', 'not-pad', '-none', 'margin-none' );
-?>
-			<div id="footer-html" class="<?php echo $c_class;?>">
-				<?php echo do_shortcode($extra); ?>
-			</div> <!-- #footer-html -->
-<?php 	}
+			if ( $extra == '' && is_customize_preview() ) {
+				echo '<div id="footer-html" style="display:inline;"></div>';		// need the area there for customizer live preview
+			} else if ($extra != '' && $hide != 'hide' && !weaverx_is_checked_page_opt('_pp_hide_footer_html')) {
 
-		/* ======== COPYRIGHT AREA ======== */
+				$c_class = weaverx_area_class('footer_html', 'not-pad', '-none', 'margin-none' );
 
-		$date = getdate();
-		$year = $date['year'];
-		if (weaverx_getopt_expand('expand_site-ig-wrap'))
-			echo '<div id="site-ig-wrap" class="wvrx-expand-full">';
-		else
-			echo '<div id="site-ig-wrap">';
-		echo '<span id="site-info">' . "\n";
+				if (weaverx_getopt_expand('expand_header-html')) $c_class .= ' wvrx-expand-full';
 
-		$cp = weaverx_getopt('copyright');
-		$copy = '';
-		if (strlen($cp) > 0) {
-			if ($cp != '&nbsp;')	// really leave nothing if specify blank
-				$copy = do_shortcode($cp) ;
-		} else {
-			$copy = '&copy;' . $year . ' - <a href="' . esc_url(home_url( '/' )) . '" title="' .  esc_attr( get_bloginfo( 'name', 'display' ) ) .
-				 '" rel="home">' . get_bloginfo( 'name' ) . '</a>';
-		}
-		echo apply_filters('weaverx_copyright', $copy);
-		?>
-		</span> <!-- #site-info -->
+			// see if the content is just an int, assume it to be a post id if so.
+			// it seems that if a string has an int in it, the (int) cast will just cast that part, and throw away the rest.
+			// we want an int and only an int, so we double cast to test, and that seems to work
+
+				$post_id = (int) trim($extra);
+
+				if ( (string) $post_id == $extra && $post_id != 0 )	{		// assume a number only is a post id to provide as replacement
+					echo apply_filters('weaverx_page_builder_content', $post_id, 'footer-html', $c_class);
+				} else {
+	?>
+				<div id="footer-html" class="<?php echo $c_class;?>">
+					<?php echo do_shortcode($extra); ?>
+				</div> <!-- #footer-html -->
+	<?php 		}
+			}
+
+			/* ======== COPYRIGHT AREA ======== */
+
+			$date = getdate();
+			$year = $date['year'];
+			if (weaverx_getopt_expand('expand_site-ig-wrap'))
+				echo '<div id="site-ig-wrap" class="wvrx-expand-full">';
+			else
+				echo '<div id="site-ig-wrap">';
+			echo '<span id="site-info">' . "\n";
+
+			$cp = weaverx_getopt('copyright');
+			$copy = '';
+			if (strlen($cp) > 0) {
+				if ($cp != '&nbsp;')	// really leave nothing if specify blank
+					$copy = do_shortcode($cp) ;
+			} else {
+				$copy = '&copy;' . $year . ' - <a href="' . esc_url(home_url( '/' )) . '" title="' .  esc_attr( get_bloginfo( 'name', 'display' ) ) .
+					 '" rel="home">' . get_bloginfo( 'name' ) . '</a>';
+			}
+			echo apply_filters('weaverx_copyright', $copy);
+			?>
+			</span> <!-- #site-info -->
+	<?php
+			/* <a href="<?php echo esc_url( __( '//wordpress.org/','weaver-xtreme') ); ?>" title="wordpress.org" target="_blank" rel="nofollow"><?php printf( __( 'Proudly powered by %s','weaver-xtreme'), 'WordPress' ); ?></a> */
+
+			$privacy_link = get_the_privacy_policy_link('', '' );
+
+			if (! weaverx_getopt('_hide_poweredby')) {
+				$powered_by = '<span id="site-generator">'
+				. '<a href="' . esc_url( __( '//wordpress.org/','weaver-xtreme') ) . '" title="'
+				. __('Proudly powered by WordPress','weaver-xtreme')
+				. '" target="_blank" rel="nofollow"><span style="font-size:120%;padding-top:2px;" class="genericon genericon-wordpress"></span></a> - '
+				. weaverx_site('', '', '', false) . __('Weaver Xtreme Theme', 'weaver-xtreme') . '</a>'
+				. $privacy_link .  '</span> <!-- #site-generator -->';
+				echo apply_filters('weaverx_poweredby', $powered_by );
+			} else {
+				echo '<span id="site-generator">' . $privacy_link . '</span>';
+			}
+			weaverx_clear_both('site-generator'); ?>
+			</div><!-- #site-ig-wrap -->
+			<?php weaverx_clear_both('site-ig-wrap'); ?>
+		</div></footer><!-- #colophon-inside, #colophon -->
 <?php
-		/* <a href="<?php echo esc_url( __( '//wordpress.org/','weaver-xtreme') ); ?>" title="wordpress.org" target="_blank" rel="nofollow"><?php printf( __( 'Proudly powered by %s','weaver-xtreme'), 'WordPress' ); ?></a> */
-		if (! weaverx_getopt('_hide_poweredby')) {
-			$powered_by = '<span id="site-generator">'
-			. '<a href="' . esc_url( __( '//wordpress.org/','weaver-xtreme') ) . '" title="'
-			. __('Proudly powered by WordPress','weaver-xtreme')
-			. '" target="_blank" rel="nofollow"><span style="font-size:120%;padding-top:2px;" class="genericon genericon-wordpress"></span></a> - '
-			. weaverx_site('', '', '', false) . __('Weaver Xtreme Theme', 'weaver-xtreme') . '</a>'
-			. '</span> <!-- #site-generator -->';
-			echo apply_filters('weaverx_poweredby', $powered_by );
+			weaverx_clear_both('colophon');
+		} else {	// end if not footer pagebuilder replacement
+			echo "</div></footer><!-- #colophon-inside, #colophon -->\n";
+			weaverx_clear_both('colophon');
 		}
-		weaverx_clear_both('site-generator'); ?>
-		</div><!-- #site-ig-wrap -->
-		<?php weaverx_clear_both('site-ig-wrap'); ?>
-</footer><!-- #colophon -->
-<?php
-	weaverx_clear_both('colophon');
 	} // end if !hide_footer
+
 
 	do_action('weaverxplus_action','footer');
 

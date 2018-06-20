@@ -14,7 +14,7 @@ function weaverx_install_tgm_plugins() {
 
 		// This is an example of how to include a plugin pre-packaged with a theme
 		array(
-			'name'     => __("Weaver Xtreme Theme Support (ESSENTIAL for full theme functionality)", 'weaver-xtreme' /*adm*/), // The plugin name
+			'name'     => __("Weaver Xtreme Theme Support (IMPORTANT for full theme functionality)", 'weaver-xtreme' /*adm*/), // The plugin name
 			'slug'     => 'weaverx-theme-support', // The plugin slug (typically the folder name)
 			'required' => false
 		),
@@ -26,8 +26,8 @@ function weaverx_install_tgm_plugins() {
 		),
 
 		array(
-			'name'     => __('WP Edit (enhanced content editor)', 'weaver-xtreme' /*adm*/), // The plugin name
-			'slug'     => 'wp-edit', // The plugin slug (typically the folder name)
+			'name'     => __('Gutenberg', 'weaver-xtreme' /*adm*/), // The plugin name
+			'slug'     => 'gutenberg', // The plugin slug (typically the folder name)
 			'required' => false
 		),
 
@@ -56,10 +56,8 @@ function weaverx_install_tgm_plugins() {
 		'has_notices'      => true, // Show admin notices or not
 		'is_automatic'     => true, // Automatically activate plugins after installation or not
 		'message'          =>
-		__('<p>The following plugins are recommended for an optimal Weaver Xtreme theme experience. Only the <em>Weaver Xtreme Theme Support</em> plugin is essential, the rest are optional, but may make it easier to create content with Weaver Xtreme.</p>
-<p>The <em><strong>Weaver Xtreme Theme Support</strong></em> plugin provides Per Page and Per Post options (this functionality is
-<strong><em>essential</em></strong> for full theme capability, but is required by WordPress.org to be supported as a plugin.
-This plugin also includes several shortcodes that help you customize your content for desktop or mobile device appearance.</p>
+		__('<p>The following plugins are recommended for an optimal Weaver Xtreme theme experience. Only the <em>Weaver Xtreme Theme Support</em> plugin is important, the rest are optional, but may make it easier to create content with Weaver Xtreme.</p>
+<p>The <em><strong>Weaver Xtreme Theme Support</strong></em> plugin includes several shortcodes that help you customize your content for desktop or mobile device appearance, as well as the Legacy check-box options interface which has been largely replaced with the Customizer interface.</p>
 <p>The <em><strong>Weaver Show Posts</strong></em> plugin provides [show_posts] shortcode which allows you to display
 any number of posts on pages, selected by filtering conditions, in the header, the footer, or in sidebars.</p>
 <p><em><strong>WP Edit</strong></em> provides enhanced page and post editing, including Manual Excerpts. </p>

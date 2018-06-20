@@ -135,8 +135,10 @@ function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '
 
 	// align
 	$align = weaverx_getopt_default( $area . '_align', 'float-left' );
-	if ( $align != 'float-left' )
+	if ( $align != 'float-left' ) {
+		if ( $align == 'center' ) $align = 'align-center';
 		$class .= ' ' . $align;
+	}
 
 	// eq height
 
@@ -153,8 +155,12 @@ function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '
 	// expand area
 
 	if ( weaverx_getopt_expand( 'expand_' . $area ) ) {
+		$class .= ' wvrx-expand-full expand-test-it';
+	} else if ( ($area == 'header' || $area == 'footer' ) && weaverx_is_checked_page_opt("_pp_{$area}_full") ) {		// look for per page settings for header and footer
 		$class .= ' wvrx-expand-full';
 	}
+
+
 
 	// add classes
 	$val = weaverx_getopt( $area . '_add_class' );
@@ -174,6 +180,7 @@ function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '
 		str_replace(',', ' ', $val );   // and allow , separators instead of blanks
 		$class .= ' ' . trim($val);
 	}
+
 	return trim($class);
 }
 //--
@@ -200,40 +207,59 @@ function weaverx_get_bold_italic($area, $which) {
 }
 
 
-// >>>>> weaverx_container_class <<<<<
+// >>>>> weaverx_area_div <<<<<
 function weaverx_area_div( $who , $x_class = '' ) {
 
 	$c_class = $who . ' ' . weaverx_area_class( $who, 'not-pad', '', '' );
 	if ( $x_class )
 		$c_class .= ' ' . $x_class;
 	echo "\n" . '<div id="' . $who . '" class="' . trim($c_class) .'">';
+	echo "\n";
 }
 //--
 
-
-// >>>>> weaverx_container_class <<<<<
-function weaverx_container_class( $who, $extra = '' ) {
-
-	$class = $extra;
-
-	if ($class != '') $class .= ' relative';
-	else $class = 'relative';
-
-	$class .= ' '. weaverx_area_class('container', 'not-pad', '', '' );
-
-	$class = ' class="' . $class . '"';
-	echo ($class);
-	return $class;
-}
-//--
 
 
 // >>>>> weaverx_container_div <<<<<
 function weaverx_container_div( $who ) {
 
-	$class = 'class="container container-' . $who . ' relative '
+	$full = '';							// handle parallax options
+	if ( $who == 'page') {
+
+		$fi_loc = weaverx_get_per_page_value( '_pp_fi_location');
+
+		if ( !$fi_loc )
+			$fi_loc = weaverx_getopt( 'page_fi_location');
+
+		if ( strpos($fi_loc, 'parallax') !== false )		// parallax
+			$full = 'wvrx-parallax ';
+
+		if ( strpos($fi_loc, '-full') !== false )		// full parallax
+			$full .= 'wvrx-fullwidth ';
+
+	} else if ($who == 'single') {
+
+		$fi_loc = weaverx_get_per_post_value( '_pp_post_fi_location');
+
+		if ( !$fi_loc )
+			$fi_loc = weaverx_getopt( 'post_fi_location');
+
+		if ( strpos($fi_loc, 'parallax-full') !== false )		// full parallax
+			$full = 'wvrx-parallax wvrx-fullwidth ';
+
+		else if ( strpos($fi_loc, 'parallax') !== false )		// full parallax
+			$full = 'wvrx-parallax ';
+
+	} else if ( $who == 'page-builder' || weaverx_get_per_page_value( '_pp_container_full' ) != '' ) {	// make the area full width, no padding/margins
+
+		$full = 'wvrx-expand-full container-expand ';
+
+	}
+
+	$class = 'class="container container-' . $who . " relative {$full}"
 			 . weaverx_area_class('container', 'not-pad', '', '' ) . '"';
-	echo "\n" . '<div id="container" ' . $class . ">\n";
+
+	echo "\n" . '<div id="container" ' . $class . '><div id="container-inside" class="block-inside">' . "\n";
 	weaverx_inject_area('container_top');
 }
 //--
@@ -335,6 +361,14 @@ function weaverx_menu_class( $who, $no_hide = false ) {
 
 	// expand
 
+	// fullwidth
+
+	$wide = weaverx_getopt($who . '_align');		// added V 4.0
+	if (strpos($wide,'alignwide') !== false)
+		$class .= ' alignwide';
+	else if (strpos($wide,'alignfull') !== false)
+		$class .= ' alignfull';
+
 	if (weaverx_getopt_expand('expand_' . $who))
 		$class .= ' wvrx-expand-full';
 
@@ -375,7 +409,8 @@ function weaverx_page_lead( $who , $archive = false ) {
 
 	weaverx_container_div( $who );       // #container
 
-	get_template_part('templates/infobar');
+	if ( $who != 'page-builder')
+		get_template_part('templates/infobar');
 
 	weaverx_sidebar_before( $sb_layout, $who );          // sidebars if top-stacking
 
@@ -396,7 +431,7 @@ function weaverx_page_tail( $who, $sb_layout ) {
 
 	weaverx_sidebar_after( $sb_layout, $who );          // sidebars after content
 
-	echo "\n<div class='clear-container-end' style='clear:both;'></div></div><!-- /#container -->\n";
+	echo "\n<div class='clear-container-end clear-both'></div></div></div><!-- /#container-inside, #container -->\n";
 	weaverx_get_footer( $who );
 
 }
@@ -478,12 +513,17 @@ function weaverx_sb_layout( $who, $is_index = false ) {
 	//if ($who == 'blog') weaverx_alert('sb-layout blog: ' . $per_page);
 
 	if ( $who == '404' ) $who = 'search';   // sigh - they are the same layout
+	if ( $who == 'page-builder' ) {
+		$who = 'page';	// page builder same as page
+		if ( $per_page == '' || $per_page == 'default' )
+			$per_page = 'one-column';	// default to one-column for page-builder
+	}
 
 	$layout = ( $per_page ) ? $per_page : weaverx_getopt_default( 'layout_' . $who , 'default');
 
 	// weaverx_debug_comment("weaverx_sb_layout  - who: {$who} layout: {$layout} per_page: {$per_page}");
 
-	if ( $who == 'woocommerce' ) {
+	if ( $who == 'woocommerce') {
 		$layout = weaverx_getopt( 'layout_page' , 'default');
 	}
 
@@ -593,9 +633,9 @@ function weaverx_sb_precontent( $who ) {
 				break;
 
 			case 'page':
+			case 'page-builder':
 				weaverx_put_widgetarea('page-top-widget-area', $class, 'top');
 				break;
-
 
 			case 'archive':
 			case 'author':
@@ -606,6 +646,7 @@ function weaverx_sb_precontent( $who ) {
 				break;
 
 			case '404':
+			case 'attachment':
 			case 'image':
 			default:
 				break;
@@ -633,6 +674,7 @@ function weaverx_sb_postcontent($who, $hide_sitewide = false) {
 				break;
 
 			case 'page':
+			case 'page-builder':
 				weaverx_put_widgetarea('page-bottom-widget-area', $class, 'bottom');
 				break;
 
@@ -643,6 +685,7 @@ function weaverx_sb_postcontent($who, $hide_sitewide = false) {
 			case 'search':
 				break;
 
+			case 'attachment':
 			case 'image':
 			case '404':
 			default:

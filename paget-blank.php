@@ -24,7 +24,6 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		comments_template( '', true );
 	}
 
-
 	weaverx_sb_postcontent('page-blank');
 
 	weaverx_page_tail( 'page-blank', $sb_layout );    // end of page wrap

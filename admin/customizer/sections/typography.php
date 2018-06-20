@@ -3,24 +3,39 @@
  * Define topography settings - Weaver Xtreme Customizer
  */
 
+ define ('TYPOGRAPHY_UPDATE','refresh');
+
 if ( ! function_exists( 'weaverx_customizer_define_typography_sections' ) ) :
 /**
  * Define the sections and settings for the General panel
  */
-function weaverx_customizer_define_typography_sections( $sections ) {
+function weaverx_customizer_define_typography_sections( ) {
 	$panel = 'weaverx_typography';
 	$typography_sections = array();
 
 	/**
 	 * Global
 	 */
-if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if advanced, int
+if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
 	$typography_sections['typo-global'] = array(
 		'panel'   => $panel,
 		'title'   => __('Global Typography Options', 'weaver-xtreme'),
-		'description' => __('Set base font values: Base font size, base line height, and more. The Font Size options for other areas are all derived from these base sizes.', 'weaver-xtreme'),
+		'description' => __('This section covers global typography attributes, including available font families and base font size and spacing. <strong>Default Site Font options:</strong> See the <em>Typography &rarr; Wrapping Areas</em> menu.', 'weaver-xtreme'),
 		'options' => array(
 
+		'typo-intro' => weaverx_cz_group_title(__('Using Font Families', 'weaver-xtreme'),
+				__('<em>Weaver Xtreme</em> includes support for over 30 font family choices: 16 <strong>Web Safe</strong> fonts, and the remaining from a carefully selected set of <strong>Google Fonts</strong>.
+The <strong>Google Fonts</strong> will be displayed the same on every browser, <em>including</em> Android and iOS devices.
+The <strong>Web Safe</strong> will be displayed as specified for most modern browsers, but will likely revert to
+one of the three basic fonts supported by Android devices, or a limited set for iOS devices. <em>We highly recommend selecting <strong>Google Fonts</strong> for your site.</em><br/>
+You can also add more Google Fonts, other free fonts, and even premium fonts using <em>Weaver Xtreme Plus</em>.<br />
+You can see a demonstration of <em>Weaver Xtreme\'s</em> fonts here: ', 'weaver-xtreme') .
+weaverx_help_link('font-demo.html', __('Examples of supported fonts', 'weaver-xtreme'), __('Font Examples', 'weaver-xtreme'), false)
+			),
+
+		'sizing-intro' => weaverx_cz_group_title(__('Base Font Size and Spacing', 'weaver-xtreme'),
+				''
+			),
 
 			'site_fontsize_int'     => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 16
@@ -38,6 +53,16 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 				),
 			),
 
+		'moreinfo1' 	=> weaverx_cz_html('',
+				'<small>' . __('The <em>Full</em> level includes additional font spacing options, and Google Font options. (needs Xtreme Plus)', 'weaver-xtreme') . '</small>')
+
+		)
+	);
+
+
+
+	if (  weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full
+		$level = array(
 			'site_line_height_dec'     => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage',	'default' => 1.5
 				),
@@ -150,7 +175,7 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if adva
 			),
 
 			'typo-google-font-opts' => weaverx_cz_group_title(__('Integrated Google Fonts', 'weaver-xtreme'),
-				__('Weaver Xtreme integrates a selected set of Google Font families. You can disable them, or add differenet language support in this section.', 'weaver-xtreme')),
+				__('Weaver Xtreme integrates a selected set of Google Font families. You can disable them, or add different language support in this section.', 'weaver-xtreme')),
 
 			'disable_google_fonts' => weaverx_cz_checkbox_refresh(
 				__('Disable Google Font Integration', 'weaver-xtreme'),
@@ -183,15 +208,7 @@ using the default browser serif and sans fonts.', 'weaver-xtreme') ),
 			),
 
 
-			'typo-intro' => weaverx_cz_group_title(__('Using Font Families', 'weaver-xtreme'),
-				__('<em>Weaver Xtreme</em> includes support for over 30 font family choices: 16 <strong>Web Safe</strong> fonts, and the remaining from a carefully selected set of <strong>Google Fonts</strong>.
-The <strong>Google Fonts</strong> will be displayed the same on every browser, <em>including</em> Android and iOS devices.
-The <strong>Web Safe</strong> will be displayed as specified for most modern browsers, but will likely revert to
-one of the three basic fonts supported by Android devices, or a limited set for iOS devices. <em>We highly recommend selecting <strong>Google Fonts</strong> for your site.</em><br/>
-You can also add more Google Fonts, other free fonts, and even premium fonts using <em>Weaver Xtreme Plus</em>.<br />
-You can see a demonstration of <em>Weaver Xtreme\'s</em> fonts here: ', 'weaver-xtreme') .
-weaverx_help_link('font-demo.html', __('Examples of supported fonts', 'weaver-xtreme'), __('Font Examples', 'weaver-xtreme'), false)
-			),
+
 
 
 
@@ -215,10 +232,9 @@ weaverx_help_link('font-demo.html', __('Examples of supported fonts', 'weaver-xt
 				),
 			),
 
-
-
-		),
-	);
+		);
+		$typography_sections['typo-global']['options'] = array_merge($typography_sections['typo-global']['options'],$level);
+	}
 
 	/**
 	 * General
@@ -228,18 +244,13 @@ weaverx_help_link('font-demo.html', __('Examples of supported fonts', 'weaver-xt
 		'title'   => __( 'Wrapping Areas', 'weaver-xtreme' ),
 		'description' => __('Set font and other typography attributes. Add new fonts from the <em>Appearance &rarr; Weaver Xtreme Admin &rarr; Main Options &rarr; Fonts &amp; Custom</em> panel. Use Site Colors to set colors.', 'weaver-xtreme'),
 		'options' => array(
-			'typo-heading-global' => array(
 
-			),
+				'wrapper_fonts_moved' => weaverx_cz_group_title(__('Site Wrapper Fonts','weaver-xtreme'),
+										__('<strong>Site Wrapper Font Selection</strong>. This option is found on the "Layout &rarr; Core Site Layout and Styling" menu.', 'weaver-xtreme')),
 		),
 
 	);
 
-
-
-	$new_opts = weaverx_cz_add_fonts('wrapper', __('Site Wrapper', 'weaver-xtreme'),
-		__('<span style="font-size:150%;font-weight:bold;color:red;">Default typography for site.</span> Set font attributes for the Wrapper that will apply to the entire site. To override other areas, set typography for individual areas and items on other Typography menu panels. (The inherited default Font Family is Open Sans.)', 'weaver-xtreme'), 'postMessage');
-	$typography_sections['typo-wrapping']['options'] = array_merge( $typography_sections['typo-wrapping']['options'],  $new_opts);
 
 	$new_opts = weaverx_cz_add_fonts('container', __('Container Fonts', 'weaver-xtreme'),
 						 __('Container typography for site. Wraps content and sidebars.', 'weaver-xtreme'), 'postMessage');
@@ -413,7 +424,7 @@ weaverx_help_link('font-demo.html', __('Examples of supported fonts', 'weaver-xt
 	$new_opts = weaverx_cz_add_fonts('page_title', __('Page Title', 'weaver-xtreme'), '', 'postMessage');
 	$typography_sections['typo-content']['options'] = array_merge( $typography_sections['typo-content']['options'],  $new_opts);
 
-	// archive pages title needs refresh due to interaction witih page title attributes (fixed: V 2.0.10)
+	// archive pages title needs refresh due to interaction with page title attributes (fixed: V 2.0.10)
 	$new_opts = weaverx_cz_add_fonts('archive_title', __('Archive Pages Title', 'weaver-xtreme'), '', 'refresh');
 	$typography_sections['typo-content']['options'] = array_merge( $typography_sections['typo-content']['options'],  $new_opts);
 
@@ -514,10 +525,10 @@ weaverx_help_link('font-demo.html', __('Examples of supported fonts', 'weaver-xt
 	$typography_sections['typo-global'] = array(
 		'panel'   => $panel,
 		'title'   => __('Global Typography Options', 'weaver-xtreme'),
-		'description' => __('Advanced Options: Set base font values: Base font size, base line height, and more. The Font Size options for other areas are all derived from these base sizes.', 'weaver-xtreme'),
+		'description' => __('Standard and Full Interface Options: Set base font values: Base font size, base line height, and more. The Font Size options for other areas are all derived from these base sizes.', 'weaver-xtreme'),
 		'options' => array(
-			'typo-int-title' => weaverx_cz_group_title(__('Intermediate / Beginner Fonts', 'weaver-xtreme'),
-				__('Weaver Xtreme integrates a selected set of Google Font families. For the Intermediate and Beginner Level, you can use the Wrapping Areas menu to set the main font used for your site. The Advanced Level allows you to set fonts for many individual elements.', 'weaver-xtreme')),
+			'typo-int-title' => weaverx_cz_group_title(__('Basic Fonts', 'weaver-xtreme'),
+				__('Weaver Xtreme integrates a selected set of Google Font families. <p>For the Basic interface levels, you can use the <strong>Layout &rarr; Core Site Layout and Styling</strong> menu to set the global main font used for your site. The Advanced and Standard Levels allow you to set fonts for many individual elements. ', 'weaver-xtreme')),
 
 
 			)
@@ -526,7 +537,7 @@ weaverx_help_link('font-demo.html', __('Examples of supported fonts', 'weaver-xt
 	$typography_sections['typo-wrapping'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Wrapping Areas', 'weaver-xtreme' ),
-		'description' => __('Set font and other typography attributes. Add new fonts from the <em>Appearance &rarr; Weaver Xtreme Admin &rarr; Main Options &rarr; Fonts &amp; Custom</em> panel. Use Site Colors to set colors.', 'weaver-xtreme'),
+		'description' => __('Set font and other typography attributes. Add new fonts from the legacy <em>Appearance &rarr; Weaver Xtreme Admin &rarr; Main Options &rarr; Fonts &amp; Custom</em> panel. Use Site Colors to set colors.', 'weaver-xtreme'),
 		'options' => array(
 			'typo-heading-global' => array(
 
@@ -534,33 +545,18 @@ weaverx_help_link('font-demo.html', __('Examples of supported fonts', 'weaver-xt
 		),
 	);
 
-	$new_opts = weaverx_cz_add_fonts('wrapper', __('Site Wrapper &amp; Container Fonts', 'weaver-xtreme'),
-		__('Default (wrapper) typography for site. Set font attributes here that will apply to the entire site. To override other items, set typography for individual items on other panels. (The inherited default Font Family is Open Sans.)', 'weaver-xtreme'), 'postMessage');
+	$new_opts = weaverx_cz_text(
+		__('To set the default typography for the entire site, use the <strong>Layout &rarr; Core Site Layout and Styling</strong> menu.', 'weaver-xtreme'), 'postMessage');
 	$typography_sections['typo-wrapping']['options'] = array_merge( $typography_sections['typo-wrapping']['options'],  $new_opts);
 
-	$new_opts = weaverx_cz_add_fonts('container', __('Container Fonts', 'weaver-xtreme'),
-						 __('Container typography for site. Wraps content and sidebars.', 'weaver-xtreme'), 'postMessage');
-	$typography_sections['typo-wrapping']['options'] = array_merge( $typography_sections['typo-wrapping']['options'],  $new_opts);
+	/* $new_opts = weaverx_cz_add_fonts('container', __('Container Fonts', 'weaver-xtreme'),
+						 __('Container typography for site. The container includes main page/post content and sidebars.', 'weaver-xtreme'), 'postMessage');
+	$typography_sections['typo-wrapping']['options'] = array_merge( $typography_sections['typo-wrapping']['options'],  $new_opts); */
 
 
 }
 
-	/**
-	 * Filter the definitions for the controls in the Color Scheme panel of the Customizer.
-	 *
-	 * @since 1.3.0.
-	 *
-	 * @param array    $typography_sections    The array of definitions.
-	 */
-	$typography_sections = apply_filters( 'weaverx_customizer_typography_sections', $typography_sections );
-
-	// Merge with master array
-	return array_merge( $sections, $typography_sections );
-
-
+	return $typography_sections;
 }
 endif;
-
-add_filter( 'weaverx_customizer_sections', 'weaverx_customizer_define_typography_sections' );
-
 ?>

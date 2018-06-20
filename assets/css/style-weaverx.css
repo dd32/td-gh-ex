@@ -4,6 +4,8 @@
 
 This style sheet provides the basic settings (colors, margins, fonts, etc.) used by the Weaver Xtreme Theme.
 
+Weaver Xtreme Version 4.0
+
 Table of Contents
 -----------------
 =Normalize
@@ -80,7 +82,6 @@ sub{bottom:-0.25em}
 img{border:0}
 svg:not(:root){overflow:hidden}
 figure{margin:1em 40px}
-hr{box-sizing:content-box;height:2px;background-color:#ccc;}
 pre{overflow:auto}
 code,kbd,pre,samp{font-family:'Inconsolata', monospace;font-size:1em}
 /* button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0} */
@@ -115,7 +116,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 /* -- /Normalize */
 
-
 /* =User Utility Classes =============================================================================== */
 
 /* Alignment */
@@ -141,6 +141,64 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 .alignnone {
 
 }
+
+
+
+.alignfull,
+.alignwide,
+.aligncenter {
+	clear: 				both;
+}
+
+.privacy-policy-link {
+	padding-left:		1.5em;
+	padding-right:		1.5em;
+	font-style:			normal;
+}
+
+@media (min-width: 768px) {
+
+	.weaverx-sb-one-column #container, .weaverx-sb-one-column #content, .weaverx-sb-one-column .content-page, .weaverx-sb-one-column .content-single {
+		overflow:		visible;
+	}	/* need to override Weaver Xtreme's default hidden for fullwidth to show */
+
+	.weaverx-has-sb #container, .weaverx-has-sb #content, .weaverx-has-sb .content-page, .weaverx-has-sb .content-single {
+		overflow:		hidden;
+	}	/* need to override Weaver Xtreme's default hidden for fullwidth to show */
+
+	.weaverx-sb-one-column .alignwide,
+	#header .alignwide,
+	#header.alignwide,
+	#colophon.alignwide,
+	#colophon .alignwide,
+	#container .alignwide,
+	#container.alignwide {
+		margin-left: 	calc(50% - 40vw);
+		margin-right: 	calc(50% - 40vw);
+		max-width: 		1000%;
+		width: 			80vw;
+	}
+
+	.weaverx-sb-one-column .alignfull,		/* most elements only on one column pages */
+	#header .alignfull,						/* but some are okay on pages with sidebars */
+	#header.alignfull,
+	#container .alignfull,
+	#container.alignfull,
+	#colophon .alignfull,
+	#colophon.alignfull,
+	#nav-primary .alignfull,
+	#nav-secondary .alignfull {
+		left: 0;
+		margin-left: 	calc(50% - 50vw);
+		margin-right: 	calc(50% - 50vw);
+		max-width: 		1000%;
+		width: 			100vw;
+	}
+
+}
+
+
+
 
 .no-margins {
 	margin: 	0 !important;
@@ -343,12 +401,13 @@ body {                      /* body has global settings for others to inherit */
 #container,
 #colophon,
 .entry-content,
-.entry-summary {
+.entry-summary,
+.wvrx-posts {
 	clear:			both;
 }
 
 #wrapper {
-	max-width:		1100px;  /* default width */
+	/* max-width:		1100px; --- removed in Verison 4.0 to support block-inside full width layout default width */
 	margin-left:	auto;
 	margin-right:	auto;   /* this makes the site centered in the browser */
 }
@@ -587,14 +646,17 @@ ul {
 	list-style:			disc outside none;
 }
 
-caption,
-th,
-td {
+caption {
 	font-weight:		normal;
 	text-align:			left;
 }
 
-article, aside, details, figcaption, figure,
+
+figure,
+figcaption {
+
+}
+article, aside, details,
 footer, header, menu, nav, section {
 	display:			block;
 }
@@ -615,6 +677,17 @@ address {
 big {
 	font-size:			1.30em;
 }
+
+hr {
+	background-color:	#ccc;
+	border:			none;
+	box-sizing:		content-box;
+	height:			4px;
+	margin:			1.0em auto;
+	max-width:		90%;
+	width: 			90%;
+}
+
 /* =Blockquote
 -------------------------------------------------------------- */
 blockquote {
@@ -623,7 +696,8 @@ blockquote {
 	border-left:	4px solid rgba(128, 128, 128, 0.4);
 	margin:			1.5em;
 	overflow:		auto;
-	padding:		0.8em 1.5em 0 1.2em;
+	padding:		1em 1.5em 1em 1.2em;
+	width:			90%;
 }
 
 blockquote cite {
@@ -634,6 +708,7 @@ blockquote cite {
 blockquote p {
 	font-style:		italic;
 	font-size:		1em;
+	margin:			0;
 }
 
 cite, em, i {
@@ -641,11 +716,18 @@ cite, em, i {
 
 }
 
+blockquote cite,
 cite {                  /* cite is supposed to be used only in a quote or blockquote */
 	border-width:	0;
 	display:		block;
+	font-style:		normal;
 	margin-left:	3em;
 	margin-top:		.5em;
+}
+
+em, i {
+	font-style:		italic;
+
 }
 
 code,
@@ -715,16 +797,43 @@ var {
 }
 
 /* tables */
+table,
+th,
+td {
+	border: 1px solid #d1d1d1;
+}
+
+table {
+	border-collapse: 	separate;
+	border-spacing: 	0;
+	border-width: 		1px 0 0 1px;
+	margin: 			0 0 1.75em;
+	table-layout: 		fixed;
+	/* Prevents HTML tables from becoming too wide */
+	width: 100%;
+}
+
+
+th,
+td {
+	font-weight: 		normal;
+	padding: 			0.4375em;
+	text-align: 		left;
+}
 
 th {
-	text-align:			left;
+	border-width: 		0 1px 1px 0;
+	font-weight: 		bold;
 	padding:			4px 4px;
+	text-align:			left;
 }
 
 td {
+	border-width: 		0 1px 1px 0;
 	margin:				0;
 	padding:			4px 4px;
 }
+
 /* -- /HTML Elements*/
 
 /* =WP Core ======================================================================================= */
@@ -1129,6 +1238,21 @@ img.fi-aligncenter-pb {
 	background-size:			cover;
 }
 
+/* page / post parallax */
+
+.wvrx-parallax {			/* the bg url will be specified at runtime */
+	background-position:	50% 50%;
+	background-attachment:	fixed;
+	background-repeat:		no-repeat;
+	background-size:		cover;
+	background-color:		transparent;
+	box-sizing:				border-box;
+}
+
+.is-ios .wvrx-parallax {
+	background-attachment:	scroll;
+}
+
 
 
 /* =Widget Image ===================================================================  */
@@ -1207,13 +1331,6 @@ img.fi-aligncenter-pb {
 	position:			relative;
 }
 
-
-#header-search .search-field,
-.header-search .search-field,
-.menu-search .search-field {
-	z-index:			1900;
-	position:		relative;
-}
 
 #inject_fixedbottom,
 .wvrx-fixedtop,
@@ -1397,6 +1514,10 @@ a {
 	display:		block;
 }
 
+.wvrx-menu-container ul.children li a,
+.wvrx-menu-container ul.sub-menu li a {		/* added V4.0 to fix lack of right padding on menu items of childern */
+    padding-right: 0.75em;
+}
 
 .wvrx-menu li {
 	position:		relative;
@@ -1466,7 +1587,7 @@ ul.wvrx-menu {
 
 .wvrx-menu-right {
 	float:			right;
-	margin-right:	1em;
+	margin-right:	1.5em;
 	margin-left:	.5em;
 	position:		relative;
 	/* z-index:		30; */
@@ -1490,7 +1611,10 @@ ul.wvrx-menu {
 	padding:		0;
 }
 
-
+.menu-primary .site-title-on-menu {
+	font-size:		133%;
+	margin-top:		0.3em;
+}
 
 
 @media screen and (min-width: 768px) {		/* desktop */
@@ -2337,7 +2461,7 @@ li.mega-normal ul.mega-menu li a:hover {
 
 #site-title,
 .site-title {
-	margin:				0.25% 0 .25em 7%;
+	margin:				0 0 .25em 7%;		/* fixed to 0 top: 4.0 */
 }
 
 #site-title a,
@@ -2828,7 +2952,6 @@ ol.trackbacklist {
 	text-decoration:		none;
 	padding:				0 5px;
 	margin-left:			8px;
-	/* z-index:				11000; */
 }
 
 .edit-link a:before {
@@ -2836,6 +2959,7 @@ ol.trackbacklist {
 	font-family:			"Genericons";
 	vertical-align:			top;
 }
+
 
 
 .entry-utility .edit-link a:hover,
@@ -2865,88 +2989,165 @@ ol.trackbacklist {
 
 /* =Search
 ----------------------------------------------- */
-#header-search,
-.header-search,
-.menu-search {
+
+/* HEADER SEARCH */
+#header-search {
 	display:			inline-block;
 	float:				right;
 }
 
-
-.search-field {
-	background-color:   #f0f0f0;
-	background-image:   url(icons/search-gray-bg.png);
-	background-position:  right 3px center;
-	background-repeat:  no-repeat;
-	background-size:    22px 22px;
-	height:				22px;
-	margin-top:			4px;
-	transition:			width 400ms ease, background 400ms ease;
-}
-
-.ie8 .search-field {
-	background-image:   url(icons/search-gray-bg-ie8.png) !important;
-}
-
-#header-search .search-field,
-.header-search .search-field,
-.menu-search .search-field {
-	background-color:   transparent;
-	background-position:  2px center;
-	background-size:    24px 24px;
-	border:				none;
-	cursor:				pointer;
-	height:				24px;
-	margin:				3px 0px;
-	padding:			0 0 0 32px;
+.menu-search {
+	display:			inline-block;
+	float:				right;
+	margin-left:		.5em;
 	position:			relative;
-	width:				0;
-	/* z-index:			1900; */
 }
 
-#header-search .search-form,
-.header-search .search-form,
-.menu-search .search-form{
+#header-search .search-form::before,
+.menu-search  .search-form::before {
+	position: 			absolute;
+	top: 				5px;
+	left: 				2px;
+	font: 				normal 36px/1 Genericons !important;
+	content: 			"\f400";
+	speak: 				none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	z-index: 			2000;
+}
+
+.menu-search .search-form::before {
+	top: 				6px;
+	left: 				9px;
+	font: 				normal 20px/1 Genericons !important;
+	content: 			"\f400";
+
+}
+
+#header-search .search-form .search-field,
+.menu-search .search-form .search-field {
+	background-color:  	transparent;
+	border:				none;
+	box-sizing:			border-box;
+	cursor:				pointer;
+	margin:				3px 0px;
+	padding:			0 0 0 36px;
+	position:			relative;
+	width:				0;				/* this value combined with :focus width makes the search expand/contract to show just the magnifier */
+}
+
+
+
+#header-search .search-form .search-field {
+	height:				39px;
+	font-size:			120%;
+	z-index:			2000;
+}
+
+.menu-search .search-form .search-field {
+	height:				26px;
+	font-size:			100%;
+	z-index:			2000;
+}
+
+#header-search .search-form .search-field:focus,
+.menu-search .search-form .search-field:focus {
+	border:				1px solid #c3c0ab;
+	cursor:				text;
+	outline:			0;
+	width:				300px;
+	z-index:			1999;
+}
+
+#header-search .search-form {
 	position:			absolute;
 	right:				10px;
 	top:				5px;
 }
 
-#header-search .search-field:focus,
-.header-search .search-field:focus,
-.menu-search  .search-field:focus {
-	background-color:   #f0f0f0;
-	border:				2px solid #c3c0ab;
-	cursor:				text;
-	outline:			0;
-	width:				230px;
+.menu-search .search-form {
+	position:			absolute;
+	right:				4px;
+	top:				2px;
 }
 
-
-/* Search Widget */
-
-#infobar_search {
-	margin-top:			1px;
-	padding-right:      10px        !important;
-	display:			inline-block;
+#infobar_search .search-form {
+	top:				1px;
 }
 
-
-.widget_search .search-field {
-	max-width:			90%;
-	width:				100%;
-	margin-left:		1%;
-	font-size:			0.90em;
-	margin-bottom:      10px;
-}
-
-/* Search widget */
-.search-form .search-submit {
+#header-search .search-form .search-submit,
+.menu-search .search-form .search-submit {
 	display:			none;
 }
 
-.search-form .search-submit-plus {
-	display:			inline-block;
+/* ===== WIDGET AREA SEARCH ====== */
+.search-field {
+	background-color:		#e8e8e8;
+}
+
+.search-form {
+	box-sizing:			border-box;
+	display: 			block;
+	position: 			relative;
+	overflow: 			hidden;
+	height: 			auto;
+}
+
+/* ## SIDEBAR SEARCH */
+.search-form input[type="search"] {
+	display: 			block;
+	float: 				left;
+	position: 			relative;
+	z-index: 			7;
+	height: 			2.0em;
+	width: 				100%;
+	margin-left: 		auto;
+	margin-right:		auto;
+	padding: 			0 1% 0 28px;
+	font-size: 			0.9em;
+	transition: 		.3s all ease-out;
+}
+
+.search-form:hover input[type="search"],
+.search-form input[type="search"]:focus {
+	outline: 			none;
+}
+
+.search-form .search-field {
+	box-sizing:			border-box;
+}
+
+.search-form .search-submit {
+	display: 			block;
+	position: 			absolute;
+	left: 				0;
+	top: 				0.33em;
+	z-index: 			8;
+	border: 			0;
+	font-size: 			1em;
+	background: 		transparent;
+	vertical-align: 	middle;
+	cursor: 			pointer;
+	transition: 		.3s all ease-in-out;
+}
+
+/* Search icon colors */
+
+#header-search .search-form::before {		/* Header Area Text Color will override */
+	color: 				#222;
+}
+
+.search-form .search-submit {				/* Individual WidgetsText Color will override if set, otherwise #wrapper text color */
+	color:				#000;
+}
+
+#header-search .search-field:focus, .menu-search .search-field:focus {
+	background-color:			#d0d0d0;
+}
+
+.search-field,
+#header-search .search-field:focus {
+	color:#222;
 }
 
 /* =InfoBar
@@ -3216,6 +3417,7 @@ ins {
 .wvrx-fixonscroll {
 	display:		block;
 	left:			auto;
+	margin-top:		0px !important;
 	max-width:		1100px;
 	position:		fixed !important;
 	width:			100%;
@@ -3774,9 +3976,9 @@ a.more-link {
 
 .ie8 .end-of-row {margin:0;}
 
-.widget-area.center,
-#infobar.center,
-.center {
+.widget-area.align-center,
+#infobar.align-center,
+.align-center {
 	margin-left:    auto;
 	margin-right:   auto;
 }
@@ -4157,6 +4359,14 @@ a.more-link {
 	margin-bottom:  0px;
 }
 
+#container.container-expand {
+	padding:		0;
+}
+
+#container.container-page-builder #content {	/* page builder no padding */
+	padding:		0;
+}
+
 
 #primary-widget-area,
 #secondary-widget-area,
@@ -4320,8 +4530,16 @@ a.more-link {
 	font-family: 'Alegreya Sans', sans-serif;
 }
 
+.font-alegreya-sans-sc {
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
 .font-alegreya {
 	font-family: 'Alegreya', serif;
+}
+
+.font-alegreya-sc {
+	font-family: 'Alegreya SC', serif;
 }
 
 .font-roboto {

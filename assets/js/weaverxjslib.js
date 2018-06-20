@@ -514,20 +514,20 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
     $.fn.wvrx_fixWvrxFixedTop = function() {
 
         var addHeight = 0;
+		var adjust = 1;
         if ($('body').hasClass('admin-bar')) { // fix on wide screens only, will be overlap on mobile
             addHeight = $('#wpadminbar').outerHeight();
         }
 
         // built-in fixed-top items, by priority: #inject_fixedtop, #nav-secondary, #nav-primary, #header-widget-area
-
         var multiTop = 0;
-        var curHeight = $('#inject_fixedtop.wvrx-fixedtop').outerHeight(); // put #inject_fixedtop first
+        var curHeight = $('#inject_fixedtop.wvrx-fixedtop').outerHeight() - 1; // put #inject_fixedtop first
         if (addHeight > 0) {
             $('#inject_fixedtop.wvrx-fixedtop').css('top', addHeight);
         }
         multiTop = curHeight;
 
-		curHeight = $('#nav-secondary .wvrx-fixedtop').outerHeight();
+		curHeight = $('#nav-secondary .wvrx-fixedtop').outerHeight() - adjust;
         if (curHeight > 0) {
             $('#nav-secondary .wvrx-fixedtop').css('top', addHeight + multiTop);
         }
@@ -536,22 +536,22 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 		// calc widget area before primary since this is the most common case.
 		// Widget area always after fixed top secondary menu and before fixed top primary menu
 
-		curHeight = $('#header-widget-area.wvrx-fixedtop').outerHeight();
+		curHeight = $('#header-widget-area.wvrx-fixedtop').outerHeight() - adjust;
         if (curHeight > 0) {
             $('#header-widget-area.wvrx-fixedtop').css('top', addHeight + multiTop);
         }
         multiTop = multiTop + curHeight;
 
 
-        curHeight = $('#nav-primary .wvrx-fixedtop').outerHeight();
+        curHeight = $('#nav-primary .wvrx-fixedtop').outerHeight() - adjust;
         if (curHeight > 0) {
-            $('#nav-primary .wvrx-fixedtop').css('top', addHeight + multiTop);
+            $('#nav-primary .wvrx-fixedtop').css('top', addHeight + multiTop );
         }
         multiTop = multiTop + curHeight;
 
 
         if (multiTop > 0) {
-            $('body').css('margin-top', multiTop); // now maker room for the top fixed areas
+            $('body').css('margin-top', multiTop - adjust); // now maker room for the top fixed areas
         } else { // none of the built-in fixed top items used, so see if user added own wvrx-fixed top class to anyting
 
             var fixedHeight = $('.wvrx-fixedtop').outerHeight();
@@ -632,7 +632,10 @@ function weaverxOnResize() {
 	if (agent.match(/Safari/i) && !agent.match(/Chrome/i)) {
 		//alert('Safari');
 		theBody.removeClass('wvrx-not-safari');	// Changed 3.1.11 to fix safari extended width issue
+		theBody.addClass('wvrx-is-safari')		// Added V 4.0 for controlling Safari fullwidth
 	}
+
+	// Note that these classes must be added at runtime on the client to avoid page caching issues.
 
     if (agent.match(/iPad/i) || agent.match(/iPhone/i) || agent.match(/iPod/i)) {
         device = device + ' is-ios';

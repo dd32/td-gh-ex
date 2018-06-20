@@ -1,0 +1,94 @@
+@media screen and (min-width: 37.5em) {
+	*[class^="wp-block-"].alignleft,
+	*[class^="wp-block-"].alignright {
+		max-width: 75%;
+	}
+}
+
+.alignfull,
+.alignwide,
+.aligncenter {
+	clear: both;
+}
+
+.alignfull {
+	margin-left: -4%;
+	margin-right: -4%;
+	max-width: 110%;
+}
+
+/* Text-based blocks with alignfull */
+.wp-block-text-columns.alignfull,
+.wp-block-preformatted.alignfull,
+.wp-block-button.alignfull,
+.wp-block-pullquote.alignfull,
+.wp-block-latest-posts.alignfull,
+.wp-block-categories.alignfull,
+.wp-block-verse.alignfull,
+p.alignfull {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (min-width: 750px) {
+	.alignfull {
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
+		width: auto;
+		max-width: 1000%;
+	}
+
+	.alignwide {
+		margin-left: calc(25% - 25vw);
+		margin-right: calc(25% - 25vw);
+		width: auto;
+		max-width: 1000%;
+	}
+
+	/* Let's reduce this a bit for blocks with text */
+	.wp-block-text-columns.alignfull,
+	.wp-block-table.alignfull,
+	.wp-block-preformatted.alignfull,
+	.wp-block-button.alignfull,
+	x.wp-block-pullquote.alignfull,
+	.wp-block-latest-posts.alignfull,
+	.wp-block-categories.alignfull,
+	.wp-block-verse.alignfull,
+	p.alignfull {
+		xmargin-left: calc(50% - 48vw);
+		xmargin-right: calc(50% - 48vw);
+	}
+
+	.wp-block-text-columns.alignwide,
+	.wp-block-table.alignwide,
+	.wp-block-preformatted.alignwide,
+	.wp-block-button.alignwide,
+	.wp-block-pullquote.alignwide,
+	.wp-block-latest-posts.alignwide,
+	.wp-block-categories.alignwide,
+	p.alignwide {
+		margin-left: calc(25% - 23vw);
+		margin-right: calc(25% - 23vw);
+	}
+}
+
+.alignfull > *,
+.alignwide > * {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignfull img,
+.alignwide img,
+.alignfull iframe,
+.alignwide iframe,
+.alignfull video,
+.alignwide video {
+	display: block;
+}
+
+.alignfull .jetpack-video-wrapper iframe,
+.alignwide .jetpack-video-wrapper iframe {
+	margin-left: auto !important; /* to override inline styles */
+	margin-right: auto !important;
+}

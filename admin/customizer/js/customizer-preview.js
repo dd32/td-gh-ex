@@ -125,6 +125,7 @@ var wvrxCustFontMsg = 0;
 
 	api('weaverx_settings[header_sb_color]', function(value) {
 		value.bind(function(to) { $('#header-widget-area,.widget-area-header').css('color', weaverxFixTo(to)); });
+		value.bind(function(to) { $('.widget-area-header .search-form .search-submit').css('color', weaverxFixTo(to)); });
 	});
 	api('weaverx_settings[header_sb_bgcolor]', function(value) {
 		value.bind(function(to) { $('#header-widget-area,.widget-area-header').css('background-color', weaverxFixTo(to)); });
@@ -217,13 +218,14 @@ var wvrxCustFontMsg = 0;
 	 * m_primary_extend_bgcolor : Full-width BG
 	 */
 
-	api('weaverx_settings[m_primary_bgcolor]', function(value) { // menu bar bg color
+	/* api('weaverx_settings[m_primary_bgcolor]', function(value) { // menu bar bg color
 		value.bind(function(to) { $('.menu-primary .wvrx-menu-container').css('background-color', weaverxFixTo(to)); });
 	});
 
 	api('weaverx_settings[m_primary_color]', function(value) { // menu bar text color
 		value.bind(function(to) {
 			$('.menu-primary .wvrx-menu-container,.menu-primary .wvrx-menu > li > a,.menu-primary .menu-toggle-button,').css('color', weaverxFixTo(to));
+			value.bind(function(to) { $('.menu-primary .wvrx-menu-container').css('color', weaverxFixTo(to)); });
 		});
 	});
 	// also needs: .menu-primary .menu-arrows .toggle-submenu:after,
@@ -255,7 +257,7 @@ var wvrxCustFontMsg = 0;
 
 	api('weaverx_settings[m_primary_html_color]', function(value) {
 		value.bind(function(to) { $('.menu-primary .wvrx-menu-html').css('color', weaverxFixTo(to)); });
-	});
+	}); */
 
 	api('weaverx_settings[m_primary_top_margin_dec]', function(value) {
 		value.bind(function(to) { $('.menu-primary .wvrx-menu-container').css('margin-top', to + 'px'); });
@@ -280,7 +282,7 @@ var wvrxCustFontMsg = 0;
 
 	// menu secondary
 
-	api('weaverx_settings[m_secondary_bgcolor]', function(value) { // menu bar bg color
+	/* api('weaverx_settings[m_secondary_bgcolor]', function(value) { // menu bar bg color
 		value.bind(function(to) { $('.menu-secondary .wvrx-menu-container').css('background-color', weaverxFixTo(to)); });
 	});
 
@@ -341,9 +343,11 @@ var wvrxCustFontMsg = 0;
 			each(function() { this.style.setProperty('background-color', weaverxFixTo(to), 'important'); });
 		});
 	});
+	*/
 
 	api('weaverx_settings[infobar_color]', function(value) {
 		value.bind(function(to) { $('#infobar').css('color', weaverxFixTo(to)); });
+		value.bind(function(to) { $('#infobar .search-form .search-submit').css('color', weaverxFixTo(to)); });
 	});
 	api('weaverx_settings[infobar_bgcolor]', function(value) {
 		value.bind(function(to) { $('#infobar').css('background-color', weaverxFixTo(to)); });
@@ -386,6 +390,7 @@ var wvrxCustFontMsg = 0;
 	api('weaverx_settings[search_color]', function(value) {
 		value.bind(function(to) { $('.search-field,#header-search .search-field:focus').css('color', weaverxFixTo(to)); });
 	});
+
 	api('weaverx_settings[search_bgcolor]', function(value) {
 		value.bind(function(to) { $('.search-field,#header-search .search-field:focus').css('background-color', weaverxFixTo(to)); });
 	});
@@ -439,7 +444,8 @@ var wvrxCustFontMsg = 0;
 	});
 
 	api('weaverx_settings[primary_color]', function(value) {
-		value.bind(function(to) { $('#primary-widget-area,.widget-area-primary').css('color', weaverxFixTo(to)); });
+		value.bind(function(to) { $('#primary-widget-area,.widget-area-primary').css('color', weaverxFixTo(to)); })
+		value.bind(function(to) { $('#primary-widget-area .search-form .search-submit').css('color', weaverxFixTo(to)); });
 	});
 	api('weaverx_settings[primary_bgcolor]', function(value) {
 		value.bind(function(to) { $('#primary-widget-area,.widget-area-primary').css('background-color', weaverxFixTo(to)); });
@@ -447,6 +453,7 @@ var wvrxCustFontMsg = 0;
 
 	api('weaverx_settings[secondary_color]', function(value) {
 		value.bind(function(to) { $('#secondary-widget-area,.widget-area-secondary').css('color', weaverxFixTo(to)); });
+		value.bind(function(to) { $('#secondary-widget-area .search-form .search-submit').css('color', weaverxFixTo(to)); });
 	});
 	api('weaverx_settings[secondary_bgcolor]', function(value) {
 		value.bind(function(to) { $('#secondary-widget-area,.widget-area-secondary').css('background-color', weaverxFixTo(to)); });
@@ -454,6 +461,7 @@ var wvrxCustFontMsg = 0;
 
 	api('weaverx_settings[top_color]', function(value) {
 		value.bind(function(to) { $('.widget-area-top').css('color', weaverxFixTo(to)); });
+		value.bind(function(to) { $('.widget-area-top .search-form .search-submit').css('color', weaverxFixTo(to)); });
 	});
 	api('weaverx_settings[top_bgcolor]', function(value) {
 		value.bind(function(to) { $('.widget-area-top').css('background-color', weaverxFixTo(to)); });
@@ -461,6 +469,7 @@ var wvrxCustFontMsg = 0;
 
 	api('weaverx_settings[bottom_color]', function(value) {
 		value.bind(function(to) { $('.widget-area-bottom').css('color', weaverxFixTo(to)); });
+		value.bind(function(to) { $('.widget-area-bottom .search-form .search-submit').css('color', weaverxFixTo(to)); });
 	});
 	api('weaverx_settings[bottom_bgcolor]', function(value) {
 		value.bind(function(to) { $('.widget-area-bottom').css('background-color', weaverxFixTo(to)); });
@@ -468,6 +477,7 @@ var wvrxCustFontMsg = 0;
 
 	api('weaverx_settings[widget_color]', function(value) {
 		value.bind(function(to) { $('.widget').css('color', weaverxFixTo(to)); });
+		value.bind(function(to) { $('.widget .search-form .search-submit').css('color', weaverxFixTo(to)); });
 	});
 	api('weaverx_settings[widget_bgcolor]', function(value) {
 		value.bind(function(to) { $('.widget').css('background-color', weaverxFixTo(to)); });
@@ -482,6 +492,7 @@ var wvrxCustFontMsg = 0;
 
 	api('weaverx_settings[footer_color]', function(value) {
 		value.bind(function(to) { $('#colophon').css('color', weaverxFixTo(to)); });
+		value.bind(function(to) { $('#colophon .search-form .search-submit').css('color', weaverxFixTo(to)); });
 	});
 	api('weaverx_settings[footer_bgcolor]', function(value) {
 		value.bind(function(to) { $('#colophon').css('background-color', weaverxFixTo(to)); });
@@ -489,6 +500,7 @@ var wvrxCustFontMsg = 0;
 
 	api('weaverx_settings[footer_sb_color]', function(value) {
 		value.bind(function(to) { $('#footer-widget-area,.widget-area-footer').css('color', weaverxFixTo(to)); });
+		value.bind(function(to) { $('.widget-area-footer .search-form .search-submit').css('color', weaverxFixTo(to)); });
 	});
 	api('weaverx_settings[footer_sb_bgcolor]', function(value) {
 		value.bind(function(to) { $('#footer-widget-area,.widget-area-footer').css('background-color', weaverxFixTo(to)); });
@@ -685,8 +697,14 @@ var wvrxCustFontMsg = 0;
 			case 'alegreya-sans':
 				cssVal = "'Alegreya Sans', sans-serif";
 				break;
+			case 'alegreya-sans-sc':
+				cssVal = "'Alegreya Sans SC', sans-serif";
+				break;
 			case 'alegreya':
 				cssVal = "'Alegreya', serif";
+				break;
+			case 'alegreya-sc':
+				cssVal = "'Alegreya SC', serif";
 				break;
 			case 'roboto':
 				cssVal = "'Roboto', sans-serif";
@@ -2540,7 +2558,7 @@ var wvrxCustFontMsg = 0;
 			weaverx_refresh_js(); });
 	});
 	api('weaverx_settings[content_p_list_dec]', function(value) {
-		value.bind(function(to) { $('#content p,#content ul,#content ol').css('margin-bottom', to + 'em');
+		value.bind(function(to) { $('#content ul,#content ol').css('margin-bottom', to + 'em');
 			weaverx_refresh_js(); });
 	});
 
@@ -2584,7 +2602,7 @@ var wvrxCustFontMsg = 0;
 	function weaverxSetAlign(to, tag) {
 		var item = $(tag);
 		item.removeClass('float-left'); // remove any existing shadow
-		item.removeClass('center');
+		item.removeClass('align-enter');
 		item.removeClass('float-right');
 		item.addClass(to); // add the new one
 		weaverx_refresh_js();
@@ -2630,16 +2648,6 @@ var wvrxCustFontMsg = 0;
 				$('#header-html').css('text-align', 'left');
 		});
 	});
-
-	/*api('xxxxxxxweaverx_settings[footer_html_align]', function( value ) {
-		value.bind( function( to ) {
-			weaverxSetAlign(to, '#footer-html');
-			if (to == 'center')
-				$('#site-title').each(function(){this.style.setProperty('display', 'block','important');});
-			else
-				$('#site-title').css('display', 'block');
-
-	} );} ); */
 
 	api('weaverx_settings[footer_html_center_content]', function(value) {
 		value.bind(function(to) {

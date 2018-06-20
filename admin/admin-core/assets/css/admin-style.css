@@ -1,5 +1,6 @@
 /* Weaver Xtreme admin style */
 .hide_me {display:none;}
+.clear-both {clear:both;}
 
 .wvr-green {font-weight:bold;color:green;}
 .wvr-yellow {font-weight:bold;color:orange;}
@@ -355,4 +356,3 @@ ul.yetiisub a.active {
 .font-comicSans {
 	font-family:	"Comic Sans MS", cursive,serif;
 }
-

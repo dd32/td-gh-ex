@@ -54,13 +54,13 @@ define('WEAVERX_PLUS_MISC_CONTROL', 'WeaverX_XPlus_Control');
 
 function weaverx_cz_choices_hide() {
 	return array(
-		'hide-none' => __('Do Not Hide', 'weaver-xtreme') ,
-		's-hide' => __('Hide: Phones', 'weaver-xtreme'),
-		'm-hide' => __('Hide: Small Tablets', 'weaver-xtreme'),
-		'm-hide s-hide' => __('Hide: Phones+Tablets', 'weaver-xtreme'),
-		'l-hide' => __('Hide: Desktop', 'weaver-xtreme'),
-		'l-hide m-hide' => __('Hide: Desktop+Tablets', 'weaver-xtreme'),
-		'hide' => __('Hide on All Devices', 'weaver-xtreme')
+		'hide-none'		=> 	__('Do Not Hide', 'weaver-xtreme') ,
+		's-hide' 		=> 	__('Hide: Phones', 'weaver-xtreme'),
+		'm-hide' 		=> 	__('Hide: Small Tablets', 'weaver-xtreme'),
+		'm-hide s-hide' => 	__('Hide: Phones+Tablets', 'weaver-xtreme'),
+		'l-hide' 		=> 	__('Hide: Desktop', 'weaver-xtreme'),
+		'l-hide m-hide' => 	__('Hide: Desktop+Tablets', 'weaver-xtreme'),
+		'hide' 			=> 	__('Hide on All Devices', 'weaver-xtreme')
 	);
 }
 function weaverx_cz_choices_hide_sanitize($val) {
@@ -71,10 +71,10 @@ function weaverx_cz_choices_hide_sanitize($val) {
 
 function weaverx_cz_choices_render_header() {		// coordinate these options with generatecss.php!
 	return array(
-		'header-as-img' => __('As img in header', 'weaver-xtreme') ,
-		'header-as-bg' => __('As static BG image', 'weaver-xtreme'),
-		'header-as-bg-responsive'=> __('As responsive BG image', 'weaver-xtreme' /*adm*/),
-		'header-as-bg-parallax' => __('As parallax BG image', 'weaver-xtreme')
+		'header-as-img' 			=> __('As img in header', 'weaver-xtreme') ,
+		'header-as-bg' 				=> __('As static BG image', 'weaver-xtreme'),
+		'header-as-bg-responsive'	=> __('As responsive BG image', 'weaver-xtreme' /*adm*/),
+		'header-as-bg-parallax' 	=> __('As parallax BG image', 'weaver-xtreme')
 	);
 }
 function weaverx_cz_choices_render_header_sanitize($val) {
@@ -84,11 +84,12 @@ function weaverx_cz_choices_render_header_sanitize($val) {
 
 function weaverx_cz_choices_render_header_video() {		// coordinate these options with generatecss.php!
 	return array(
-		'has-header-video' => __('As video in header only', 'weaver-xtreme') ,
-		'has-header-video-cover' => __('As full cover Parallax BG Video', 'weaver-xtreme'),
-		'has-header-video-none' => __('Disable Header Video', 'weaver-xtreme' /*adm*/)
+		'has-header-video' 			=> __('As video in header only', 'weaver-xtreme') ,
+		'has-header-video-cover' 	=> __('As full cover Parallax BG Video', 'weaver-xtreme'),
+		'has-header-video-none' 	=> __('Disable Header Video', 'weaver-xtreme' /*adm*/)
 	);
 }
+
 function weaverx_cz_choices_render_header_video_sanitize($val) {
 	$choices = weaverx_cz_choices_render_header_video();
 	return (isset($choices[$val])) ? $val : '';
@@ -96,15 +97,15 @@ function weaverx_cz_choices_render_header_video_sanitize($val) {
 
 function weaverx_cz_choices_header_video_aspect() {		// coordinate these options with generatecss.php!
 	return array(
-		'16:9' => __('16:9 HDTV', 'weaver-xtreme') ,
-		'4:3' => __('4:3 Std TV', 'weaver-xtreme'),
-		'3:2' => __('3:2 35mm Photo', 'weaver-xtreme'),
-		'5:3' => __('5:3 Alternate Photo', 'weaver-xtreme'),
-		'64:27' => __('2.37:1 Cinemascope', 'weaver-xtreme'),
-		'37:20' => __('1.85:1 VistaVision', 'weaver-xtreme'),
-		'3:1' => __('3:1 Banner', 'weaver-xtreme'),
-		'4:1' => __('4:1 Banner', 'weaver-xtreme'),
-		'9:16' => __('9:16 Vertical HD (Please avoid!)', 'weaver-xtreme')
+		'16:9' 		=> __('16:9 HDTV', 'weaver-xtreme') ,
+		'4:3' 		=> __('4:3 Std TV', 'weaver-xtreme'),
+		'3:2' 		=> __('3:2 35mm Photo', 'weaver-xtreme'),
+		'5:3' 		=> __('5:3 Alternate Photo', 'weaver-xtreme'),
+		'64:27' 	=> __('2.37:1 Cinemascope', 'weaver-xtreme'),
+		'37:20' 	=> __('1.85:1 VistaVision', 'weaver-xtreme'),
+		'3:1' 		=> __('3:1 Banner', 'weaver-xtreme'),
+		'4:1' 		=> __('4:1 Banner', 'weaver-xtreme'),
+		'9:16' 		=> __('9:16 Vertical HD (Please avoid!)', 'weaver-xtreme')
 	);
 }
 function weaverx_cz_choices_header_video_aspect_sanitize($val) {
@@ -114,21 +115,48 @@ function weaverx_cz_choices_header_video_aspect_sanitize($val) {
 
 function weaverx_cz_choices_align() {
 	return array(
-		'float-left' => __('Align Left', 'weaver-xtreme') ,
-		'center' => __('Center', 'weaver-xtreme'),
-		'float-right' => __('Align Right', 'weaver-xtreme'),
+		'float-left' 	=> __('Align Left', 'weaver-xtreme') ,
+		'align-center' 	=> __('Center', 'weaver-xtreme'),
+		'float-right' 	=> __('Align Right', 'weaver-xtreme'),
+		'alignnone' 	=> __('No Alignment', 'weaver-xtreme'),
+		'alignwide' 	=> __('Align Wide', 'weaver-xtreme'),
+		'alignfull' 	=> __('Align Full', 'weaver-xtreme')
 	);
 }
+
 function weaverx_cz_choices_align_sanitize($val) {
 	$choices = weaverx_cz_choices_align();
 	return (isset($choices[$val])) ? $val : '';
 }
 
+
+function weaverx_cz_choices_align_menu() {
+	return array(
+		'left' 				=> __('Align Left', 'weaver-xtreme') ,
+		'center' 			=> __('Center', 'weaver-xtreme'),
+		'right' 			=> __('Align Right', 'weaver-xtreme'),
+		'alignwide' 		=> __('Align Wide', 'weaver-xtreme'),
+		'alignwide left' 	=> __('Align Wide, Items Left', 'weaver-xtreme'),
+		'alignwide center' 	=> __('Align Wide, Items Center', 'weaver-xtreme'),
+		'alignwide right' 	=> __('Align Wide, Items Right', 'weaver-xtreme'),
+		'alignfull' 		=> __('Align Full', 'weaver-xtreme'),
+		'alignfull left' 	=> __('Align Full, Items Left', 'weaver-xtreme'),
+		'alignfull center' 	=> __('Align Full, Items Center', 'weaver-xtreme'),
+		'alignfull right' 	=> __('Align Full, Items Right', 'weaver-xtreme')
+	);
+}
+
+function weaverx_cz_choices_align_menu_sanitize($val) {
+	$choices = weaverx_cz_choices_align_menu();
+	return (isset($choices[$val])) ? $val : '';
+}
+
+
 function weaverx_cz_choices_repeat() {
 	return array(
-		'repeat' => __('Tile', 'weaver-xtreme') ,
-		'repeat-x' => __('Tile Horizontally', 'weaver-xtreme') ,
-		'repeat-y' => __('Tile Vertically', 'weaver-xtreme') ,
+		'repeat' 	=> __('Tile', 'weaver-xtreme') ,
+		'repeat-x' 	=> __('Tile Horizontally', 'weaver-xtreme') ,
+		'repeat-y' 	=> __('Tile Vertically', 'weaver-xtreme') ,
 		'no-repeat' => __('No Tiling', 'weaver-xtreme') ,
 	);
 }
@@ -139,14 +167,14 @@ function weaverx_cz_choices_repeat_sanitize($val) {
 
 function weaverx_cz_choices_border_style() {
 	return array(
-		'solid' => __('Solid', 'weaver-xtreme'),
-		'dotted' => __('Dotted', 'weaver-xtreme'),
-		'dashed' => __('Dashed', 'weaver-xtreme'),
-		'double' => __('Double', 'weaver-xtreme'),
-		'groove' => __('Groove', 'weaver-xtreme'),
-		'ridge' => __('Ridge', 'weaver-xtreme'),
-		'inset' => __('Inset', 'weaver-xtreme'),
-		'outset' => __('Outset', 'weaver-xtreme'),
+		'solid' 	=> __('Solid', 'weaver-xtreme'),
+		'dotted' 	=> __('Dotted', 'weaver-xtreme'),
+		'dashed' 	=> __('Dashed', 'weaver-xtreme'),
+		'double' 	=> __('Double', 'weaver-xtreme'),
+		'groove' 	=> __('Groove', 'weaver-xtreme'),
+		'ridge' 	=> __('Ridge', 'weaver-xtreme'),
+		'inset' 	=> __('Inset', 'weaver-xtreme'),
+		'outset' 	=> __('Outset', 'weaver-xtreme'),
 	);
 }
 function weaverx_cz_choices_border_style_sanitize($val) {
@@ -156,10 +184,10 @@ function weaverx_cz_choices_border_style_sanitize($val) {
 
 function weaverx_cz_choices_nav_style() {
 	return array(
-		'old_new' => __('Older/Newer', 'weaver-xtreme'),
-		'prev_next' => __('Previous/Next', 'weaver-xtreme'),
-		'paged_left' => __('Paged - Left', 'weaver-xtreme'),
-		'paged_right' => __('Paged - Right', 'weaver-xtreme'),
+		'old_new' 		=> __('Older/Newer', 'weaver-xtreme'),
+		'prev_next' 	=> __('Previous/Next', 'weaver-xtreme'),
+		'paged_left' 	=> __('Paged - Left', 'weaver-xtreme'),
+		'paged_right' 	=> __('Paged - Right', 'weaver-xtreme'),
 	);
 }
 function weaverx_cz_choices_nav_style_sanitize($val) {
@@ -169,9 +197,9 @@ function weaverx_cz_choices_nav_style_sanitize($val) {
 
 function weaverx_cz_choices_single_nav_style() {
 	return array(
-		'title' => __('Post Titles', 'weaver-xtreme'),
+		'title' 	=> __('Post Titles', 'weaver-xtreme'),
 		'prev_next' => __('Previous/Next', 'weaver-xtreme'),
-		'hide' => __('None - no display', 'weaver-xtreme'),
+		'hide' 		=> __('None - no display', 'weaver-xtreme'),
 	);
 }
 function weaverx_cz_choices_single_nav_style_sanitize($val) {
@@ -220,12 +248,12 @@ function weaverx_cz_choices_masonry_columns_sanitize($val) {
 
 function weaverx_cz_choices_pointer() {
 	return array(
-		'pointer' => __('Pointer (indicates link)', 'weaver-xtreme'),
-		'context-menu' => __('Context Menu available', 'weaver-xtreme') ,
-		'text' => __('Text', 'weaver-xtreme') ,
-		'none' => __('No pointer', 'weaver-xtreme') ,
-		'not-allowed' => __('Action not allowed', 'weaver-xtreme') ,
-		'default' => __('The default cursor', 'weaver-xtreme')
+		'pointer' 		=> __('Pointer (indicates link)', 'weaver-xtreme'),
+		'context-menu' 	=> __('Context Menu available', 'weaver-xtreme') ,
+		'text' 			=> __('Text', 'weaver-xtreme') ,
+		'none' 			=> __('No pointer', 'weaver-xtreme') ,
+		'not-allowed' 	=> __('Action not allowed', 'weaver-xtreme') ,
+		'default' 		=> __('The default cursor', 'weaver-xtreme')
 	);
 }
 function weaverx_cz_choices_pointer_sanitize($val) {
@@ -233,29 +261,19 @@ function weaverx_cz_choices_pointer_sanitize($val) {
 	return (isset($choices[$val])) ? $val : '';
 }
 
-function weaverx_cz_choices_align_menu() {
-	return array(
-		'left' => __('Align Left', 'weaver-xtreme') ,
-		'center' => __('Center', 'weaver-xtreme'),
-		'right' => __('Align Right', 'weaver-xtreme'),
-	);
-}
-function weaverx_cz_choices_align_menu_sanitize($val) {
-	$choices = weaverx_cz_choices_align_menu();
-	return (isset($choices[$val])) ? $val : '';
-}
 
 function weaverx_cz_choices_fi_location() {
 	return array(
-		'content-top' => __('With Content - top', 'weaver-xtreme'),
-		'content-bottom' => __('With Content - bottom', 'weaver-xtreme'),
-		'title-before' => __('With Title', 'weaver-xtreme'),
-		'title-banner' => __('Banner above Title', 'weaver-xtreme'),
-		'header-image' => __('Header Image Replacement', 'weaver-xtreme'),
-		'post-before' => __('Before Page/Post, no wrap', 'weaver-xtreme'),
-		'post-bg' => __('As BG Image, Tile', 'weaver-xtreme'),
-		'post-bg-cover' => __('As BG Image, Cover', 'weaver-xtreme'),
-		'post-bg-parallax' => __('As BG Image, Parallax', 'weaver-xtreme' ),
+		'content-top' 			=> __('With Content - top', 'weaver-xtreme'),
+		'content-bottom' 		=> __('With Content - bottom', 'weaver-xtreme'),
+		'title-before' 			=> __('With Title', 'weaver-xtreme'),
+		'title-banner' 			=> __('Banner above Title', 'weaver-xtreme'),
+		'header-image' 			=> __('Header Image Replacement', 'weaver-xtreme'),
+		'post-before' 			=> __('Before Page/Post, no wrap', 'weaver-xtreme'),
+		'post-bg' 				=> __('As BG Image, Tile', 'weaver-xtreme'),
+		'post-bg-cover' 		=> __('As BG Image, Cover', 'weaver-xtreme'),
+		'post-bg-parallax' 		=> __('As BG Image, Parallax', 'weaver-xtreme' ),
+		'post-bg-parallax-full'	=> __('As BG Image, Parallax Full', 'weaver-xtreme' ),
 	);
 }
 function weaverx_cz_choices_fi_location_sanitize($val) {
@@ -267,9 +285,9 @@ function weaverx_cz_choices_fi_location_sanitize($val) {
 function weaverx_cz_choices_fi_size() {
 	return array(
 		'thumbnail' => __('Thumbnail', 'weaver-xtreme'),
-		'medium' => __('Medium', 'weaver-xtreme'),
-		'large' => __('Large', 'weaver-xtreme'),
-		'full' => __('Full', 'weaver-xtreme'),
+		'medium' 	=> __('Medium', 'weaver-xtreme'),
+		'large' 	=> __('Large', 'weaver-xtreme'),
+		'full' 		=> __('Full', 'weaver-xtreme'),
 	);
 }
 function weaverx_cz_choices_fi_size_sanitize($val) {
@@ -279,10 +297,10 @@ function weaverx_cz_choices_fi_size_sanitize($val) {
 
 function weaverx_cz_choices_fi_align() {
 	return array(
-		'fi-alignleft' => __('Align Left', 'weaver-xtreme') ,
-		'fi-aligncenter' => __('Center', 'weaver-xtreme'),
-		'fi-alignright' => __('Align Right', 'weaver-xtreme'),
-		'fi-alignnone' => __('No Align', 'weaver-xtreme'),
+		'fi-alignleft' 		=> __('Align Left', 'weaver-xtreme') ,
+		'fi-aligncenter'	=> __('Center', 'weaver-xtreme'),
+		'fi-alignright' 	=> __('Align Right', 'weaver-xtreme'),
+		'fi-alignnone' 		=> __('No Align', 'weaver-xtreme'),
 	);
 }
 function weaverx_cz_choices_fi_align_sanitize($val) {
@@ -292,9 +310,9 @@ function weaverx_cz_choices_fi_align_sanitize($val) {
 
 function weaverx_cz_choices_show_avatar() {
 	return array(
-		'hide' => __('Do Not Show', 'weaver-xtreme') ,
-		'start' => __('Start of Info Line', 'weaver-xtreme') ,
-		'end' => __('End of Info Line', 'weaver-xtreme') ,
+		'hide' 	=> __('Do Not Show', 'weaver-xtreme') ,
+		'start'	=> __('Start of Info Line', 'weaver-xtreme') ,
+		'end' 	=> __('End of Info Line', 'weaver-xtreme') ,
 	);
 }
 function weaverx_cz_choices_show_avatar_sanitize($val) {
@@ -304,9 +322,9 @@ function weaverx_cz_choices_show_avatar_sanitize($val) {
 
 function weaverx_cz_choices_post_icons() {
 	return array(
-		'text' => __('Text Descriptions', 'weaver-xtreme') ,
+		'text' 		=> __('Text Descriptions', 'weaver-xtreme') ,
 		'fonticons' => __('Font Icons', 'weaver-xtreme') ,
-		'graphics' => __('Graphic Icons', 'weaver-xtreme') ,
+		'graphics' 	=> __('Graphic Icons', 'weaver-xtreme') ,
 	);
 }
 function weaverx_cz_choices_post_icons_sanitize($val) {
@@ -316,14 +334,14 @@ function weaverx_cz_choices_post_icons_sanitize($val) {
 
 function weaverx_cz_choices_font_size() {
 	return array(
-		'default' => __('Inherit', 'weaver-xtreme'),
-		'm-font-size' => __('Medium Font', 'weaver-xtreme'),
-		'xxs-font-size' => __('XX-Small Font', 'weaver-xtreme'),
-		'xs-font-size' => __('X-Small Font', 'weaver-xtreme'),
-		's-font-size' => __('Small Font', 'weaver-xtreme'),
-		'l-font-size' => __('Large Font', 'weaver-xtreme'),
-		'xl-font-size' => __('X-Large Font', 'weaver-xtreme'),
-		'xxl-font-size' => __('XX-Large Font', 'weaver-xtreme'),
+		'default' 			=> __('Inherit', 'weaver-xtreme'),
+		'm-font-size' 		=> __('Medium Font', 'weaver-xtreme'),
+		'xxs-font-size' 	=> __('XX-Small Font', 'weaver-xtreme'),
+		'xs-font-size' 		=> __('X-Small Font', 'weaver-xtreme'),
+		's-font-size' 		=> __('Small Font', 'weaver-xtreme'),
+		'l-font-size' 		=> __('Large Font', 'weaver-xtreme'),
+		'xl-font-size' 		=> __('X-Large Font', 'weaver-xtreme'),
+		'xxl-font-size' 	=> __('XX-Large Font', 'weaver-xtreme'),
 		'customA-font-size' => __('Custom Size A', 'weaver-xtreme'),
 		'customB-font-size' => __('Custom Size B', 'weaver-xtreme')
 	);
@@ -335,10 +353,10 @@ function weaverx_cz_choices_font_size_sanitize($val) {
 
 function weaverx_cz_choices_list_bullets() {
 	return array(
-		'disc' => __('Filled Disc', 'weaver-xtreme'),
-		'circle' => __('Circle', 'weaver-xtreme'),
-		'square' => __('Square', 'weaver-xtreme'),
-		'none' => __('None', 'weaver-xtreme'),
+		'disc' 		=> __('Filled Disc', 'weaver-xtreme'),
+		'circle' 	=> __('Circle', 'weaver-xtreme'),
+		'square' 	=> __('Square', 'weaver-xtreme'),
+		'none' 		=> __('None', 'weaver-xtreme'),
 		);
 }
 function weaverx_cz_choices_list_bullets_sanitize($val) {
@@ -346,11 +364,26 @@ function weaverx_cz_choices_list_bullets_sanitize($val) {
 	return (isset($choices[$val])) ? $val : '';
 }
 
+function weaverx_cz_choices_site_layout() {
+	return array(
+		'' => '',
+		'fullwidth' 	=>	__('Wide - Extend BG to full width', 'weaver-xtreme'),
+		'stretched' 	=> 	__('Stretched - Expand to full width', 'weaver-xtreme'),
+		'boxed' 		=> 	__('Boxed - Traditional constrained layout', 'weaver-xtreme'),
+		'custom' 		=> 	__('Custom - Use Custom Full Width Options', 'weaver-xtreme')
+		);
+}
+function weaverx_cz_choices_site_layout_sanitize($val) {
+	$choices = weaverx_cz_choices_site_layout();
+	return (isset($choices[$val])) ? $val : '';
+}
+
+
 function weaverx_cz_choices_fixed_menu() {
 	return array(
-		'none' => __('Standard Position : Not Fixed', 'weaver-xtreme'),
-		'fixed-top' => __('Fixed to Top', 'weaver-xtreme'),
-		'scroll-fix' => __('Fix to Top on Scroll', 'weaver-xtreme')
+		'none' 			=> __('Standard Position : Not Fixed', 'weaver-xtreme'),
+		'fixed-top' 	=> __('Fixed to Top', 'weaver-xtreme'),
+		'scroll-fix' 	=> __('Fix to Top on Scroll', 'weaver-xtreme')
 		);
 }
 function weaverx_cz_choices_fixed_menu_sanitize($val) {
@@ -358,82 +391,85 @@ function weaverx_cz_choices_fixed_menu_sanitize($val) {
 	return (isset($choices[$val])) ? $val : '';
 }
 
+
 function weaverx_cz_choices_font_family() {
 
 	$base = array(
 		'inherit' => __('Inherit', 'weaver-xtreme'),
 		);
 	$google = array(
-		'google' => __('---* Google Fonts (For All Browsers) *', 'weaver-xtreme'),
-		'sans-g' => __('--- -- Sans-Serif Google Fonts --', 'weaver-xtreme'),
-		'open-sans' => __('Open Sans', 'weaver-xtreme'),
+		'google' => 			__('---* Google Fonts (For All Browsers) *', 'weaver-xtreme'),
+		'sans-g' => 			__('--- -- Sans-Serif Google Fonts --', 'weaver-xtreme'),
+		'open-sans' => 			__('Open Sans', 'weaver-xtreme'),
 		'open-sans-condensed' => __('Open Sans Condensed', 'weaver-xtreme'),
-		'alegreya-sans' => __('Alegreya Sans', 'weaver-xtreme'),
-		'archivo-black' => __('Archivo Black', 'weaver-xtreme'),
-		'arimo' => __('Arimo', 'weaver-xtreme'),
-		'droid-sans' => __('Droid Sans', 'weaver-xtreme'),
-		'exo-2' => __('Exo 2', 'weaver-xtreme'),
-		'lato' => __('Lato', 'weaver-xtreme'),
-		'roboto' => __('Roboto', 'weaver-xtreme'),
-		'roboto-condensed' => __('Roboto Condensed', 'weaver-xtreme'),
-		'source-sans-pro' => __('Source Sans Pro', 'weaver-xtreme'),
+		'alegreya-sans' =>		__('Alegreya Sans', 'weaver-xtreme'),
+		'alegreya-sans-sc' =>	__('Alegreya Sans SC', 'weaver-xtreme'),
+		'archivo-black' => 		__('Archivo Black', 'weaver-xtreme'),
+		'arimo' => 				__('Arimo', 'weaver-xtreme'),
+		'droid-sans' => 		__('Droid Sans', 'weaver-xtreme'),
+		'exo-2' => 				__('Exo 2', 'weaver-xtreme'),
+		'lato' => 				__('Lato', 'weaver-xtreme'),
+		'roboto' => 			__('Roboto', 'weaver-xtreme'),
+		'roboto-condensed' => 	__('Roboto Condensed', 'weaver-xtreme'),
+		'source-sans-pro' => 	__('Source Sans Pro', 'weaver-xtreme'),
 
-		'serif-g' => __('--- -- Serif Google Fonts --', 'weaver-xtreme'),
-		'alegreya' => __('Alegreya', 'weaver-xtreme'),
-		'arvo' => __('Arvo Slab', 'weaver-xtreme'),
-		'droid-serif' => __('Droid Serif', 'weaver-xtreme'),
-		'lora' => __('Lora', 'weaver-xtreme'),
-		'roboto-slab' => __('Roboto Slab', 'weaver-xtreme'),
-		'source-serif-pro' => __('Source Serif Pro', 'weaver-xtreme'),
-		'tinos' => __('Tinos', 'weaver-xtreme'),
-		'vollkorn' => __('Vollkorn', 'weaver-xtreme'),
-		'ultra' => __('Ultra Black', 'weaver-xtreme'),
+		'serif-g' => 			__('--- -- Serif Google Fonts --', 'weaver-xtreme'),
+		'alegreya' => 			__('Alegreya', 'weaver-xtreme'),
+		'alegreya-sc' => 		__('Alegreya SC', 'weaver-xtreme'),
+		'arvo' => 				__('Arvo Slab', 'weaver-xtreme'),
+		'droid-serif' => 		__('Droid Serif', 'weaver-xtreme'),
+		'lora' => 				__('Lora', 'weaver-xtreme'),
+		'roboto-slab' => 		__('Roboto Slab', 'weaver-xtreme'),
+		'source-serif-pro' => 	__('Source Serif Pro', 'weaver-xtreme'),
+		'tinos' => 				__('Tinos', 'weaver-xtreme'),
+		'vollkorn' => 			__('Vollkorn', 'weaver-xtreme'),
+		'ultra' => 				__('Ultra Black', 'weaver-xtreme'),
 
-		'mono-g' => __('--- -- Monospace Google Fonts --', 'weaver-xtreme'),
+		'mono-g' => 			__('--- -- Monospace Google Fonts --', 'weaver-xtreme'),
 
-		'inconsolata' => __('Inconsolata', 'weaver-xtreme'),
-		'roboto-mono' => __('Roboto Mono', 'weaver-xtreme'),
+		'inconsolata' => 		__('Inconsolata', 'weaver-xtreme'),
+		'roboto-mono' => 		__('Roboto Mono', 'weaver-xtreme'),
 
-		'cursive-g' => __('--- -- "Cursive" Google Fonts --', 'weaver-xtreme'),
+		'cursive-g' => 			__('--- -- "Cursive" Google Fonts --', 'weaver-xtreme'),
 
-		'handlee' => __('Handlee', 'weaver-xtreme'),
+		'handlee' => 			__('Handlee', 'weaver-xtreme'),
 
-		'blank-w' => __('--- ', 'weaver-xtreme'),
+		'blank-w' => 			__('--- ', 'weaver-xtreme'),
 
 		);
 
 	$web = array(
 
-		'web' => __('---* Web Fonts *', 'weaver-xtreme'),
-		'web-hote' => __('--- - May not match on Android/iOS -', 'weaver-xtreme'),
-		'sans-w' => __('--- -- Sans-Serif Web Fonts --', 'weaver-xtreme'),
+		'web' => 				__('---* Web Fonts *', 'weaver-xtreme'),
+		'web-hote' => 			__('--- - May not match on Android/iOS -', 'weaver-xtreme'),
+		'sans-w' => 			__('--- -- Sans-Serif Web Fonts --', 'weaver-xtreme'),
 
 
-		'sans-serif' => __('Arial', 'weaver-xtreme'),
-		'arialBlack' => __('Arial Black', 'weaver-xtreme'),
-		'arialNarrow' => __('Arial Narrow', 'weaver-xtreme'),
-		'lucidaSans' => __('Lucida Sans', 'weaver-xtreme'),
-		'trebuchetMS' => __('Trebuchet MS', 'weaver-xtreme'),
-		'verdana' => __('Verdana', 'weaver-xtreme'),
+		'sans-serif' => 		__('Arial', 'weaver-xtreme'),
+		'arialBlack' => 		__('Arial Black', 'weaver-xtreme'),
+		'arialNarrow' => 		__('Arial Narrow', 'weaver-xtreme'),
+		'lucidaSans' => 		__('Lucida Sans', 'weaver-xtreme'),
+		'trebuchetMS' => 		__('Trebuchet MS', 'weaver-xtreme'),
+		'verdana' => 			__('Verdana', 'weaver-xtreme'),
 
-		'serif-w' => __('--- -- Serif Web Fonts --', 'weaver-xtreme'),
+		'serif-w' => 			__('--- -- Serif Web Fonts --', 'weaver-xtreme'),
 
-		'serif' => __('Times', 'weaver-xtreme'),
-		'cambria' => __('Cambria', 'weaver-xtreme'),
-		'garamond' => __('Garamond', 'weaver-xtreme'),
-		'georgia' => __('Georgia', 'weaver-xtreme'),
-		'lucidaBright' => __('Lucida Bright', 'weaver-xtreme'),
-		'palatino' => __('Palatino', 'weaver-xtreme'),
+		'serif' => 				__('Times', 'weaver-xtreme'),
+		'cambria' => 			__('Cambria', 'weaver-xtreme'),
+		'garamond' => 			__('Garamond', 'weaver-xtreme'),
+		'georgia' => 			__('Georgia', 'weaver-xtreme'),
+		'lucidaBright' => 		__('Lucida Bright', 'weaver-xtreme'),
+		'palatino' => 			__('Palatino', 'weaver-xtreme'),
 
-		'mono-w' => __('--- -- Monospace Web Fonts --', 'weaver-xtreme'),
+		'mono-w' => 			__('--- -- Monospace Web Fonts --', 'weaver-xtreme'),
 
-		'monospace' => __('Courier', 'weaver-xtreme'),
-		'consolas' => __('Consolas', 'weaver-xtreme'),
+		'monospace' => 			__('Courier', 'weaver-xtreme'),
+		'consolas' => 			__('Consolas', 'weaver-xtreme'),
 
-		'cursive-w' => __('--- -- "Cursive" Web Fonts --', 'weaver-xtreme'),
+		'cursive-w' => 			__('--- -- "Cursive" Web Fonts --', 'weaver-xtreme'),
 
-		'papyrus' =>__('Papyrus', 'weaver-xtreme'),
-		'comicSans' => __('Comic Sans MS', 'weaver-xtreme'),
+		'papyrus' =>			__('Papyrus', 'weaver-xtreme'),
+		'comicSans' => 			__('Comic Sans MS', 'weaver-xtreme'),
 
 	);
 
@@ -460,9 +496,9 @@ function weaverx_cz_choices_font_family_sanitize($val) {
 
 function weaverx_cz_choices_bold_italic() {
 	return array(
-		'' 		=> __('Inherit', 'weaver-xtreme'),
-		'on' 	=> __('On', 'weaver-xtreme'),
-		'off' 	=> __('Off', 'weaver-xtreme')
+		'' 		=> 		__('Inherit', 'weaver-xtreme'),
+		'on' 	=> 		__('On', 'weaver-xtreme'),
+		'off' 	=> 		__('Off', 'weaver-xtreme')
 	);
 }
 function weaverx_cz_choices_bold_italic_sanitize($val) {
@@ -472,13 +508,13 @@ function weaverx_cz_choices_bold_italic_sanitize($val) {
 
 function weaverx_cz_choices_sb_layout() {
 	return array(
-		'right' 	=> __('Sidebars on Right', 'weaver-xtreme'),
-		'right-top' => __('Sidebars on Right (stack top)', 'weaver-xtreme'),
-		'left' 		=> __('Sidebars on Left', 'weaver-xtreme'),
-		'left-top' 	=> __('Sidebars on Left (stack top)', 'weaver-xtreme'),
-		'split' 	=> __('Split - Sidebars on Right and Left', 'weaver-xtreme'),
-		'split-top' => __('Split (stack top)', 'weaver-xtreme'),
-		'one-column' => __('No sidebars, content only', 'weaver-xtreme')
+		'right' 	=> 		__('Sidebars on Right', 'weaver-xtreme'),
+		'right-top' => 		__('Sidebars on Right (stack top)', 'weaver-xtreme'),
+		'left' 		=> 		__('Sidebars on Left', 'weaver-xtreme'),
+		'left-top' 	=> 		__('Sidebars on Left (stack top)', 'weaver-xtreme'),
+		'split' 	=> 		__('Split - Sidebars on Right and Left', 'weaver-xtreme'),
+		'split-top' => 		__('Split (stack top)', 'weaver-xtreme'),
+		'one-column' => 	__('No sidebars, content only', 'weaver-xtreme')
 	);
 }
 function weaverx_cz_choices_sb_layout_sanitize($val) {
@@ -486,16 +522,60 @@ function weaverx_cz_choices_sb_layout_sanitize($val) {
 	return (isset($choices[$val])) ? $val : '';
 }
 
+function weaverx_cz_choices_elementor_pages() {
+	$pargs = array (
+			'post_type' => 'page'
+		);
+	$posts = get_pages($pargs);
+	$post_list = array();
+	$post_list[''] = __('None','weaver-xtreme');
+	foreach ( $posts as $post ) {
+		if ( ! ! get_post_meta( $post->ID, '_elementor_edit_mode', true ) ) {
+			$post_list[$post->ID] = substr( $post->post_title, 0, 60);
+		}
+	}
+	$posts = '';
+
+	return $post_list;
+}
+
+function weaverx_cz_choices_elementor_pages_sanitize($val) {
+	return $val;
+}
+
+function weaverx_cz_choices_siteorigin_pages() {
+	$pargs = array(
+			'post_type' => 'page'
+		);
+	$posts = get_pages($pargs);
+	$post_list = array();
+	$post_list[''] = __('None','weaver-xtreme');
+
+	foreach ( $posts as $post ) {
+		if ( ! ! get_post_meta( $post->ID, 'panels_data', true ) ) {
+			$post_list[$post->ID] = substr( $post->post_title, 0, 60);
+		}
+	}
+	$posts = '';
+
+	return $post_list;
+}
+
+function weaverx_cz_choices_siteorigin_pages_sanitize($val) {
+		return $val;
+}
+
+
 function weaverx_cz_choices_sb_layout_default() {
 	return array(
-		'default' 	=> __('Sidebars on Use Default', 'weaver-xtreme'),
-		'right' 	=> __('Sidebars on Right', 'weaver-xtreme'),
-		'right-top' => __('Sidebars on Right (stack top)', 'weaver-xtreme'),
-		'left' 		=> __('Sidebars on Left', 'weaver-xtreme'),
-		'left-top' 	=> __('Sidebars on Left (stack top)', 'weaver-xtreme'),
-		'split' 	=> __('Split - Sidebars on Right and Left', 'weaver-xtreme'),
-		'split-top' => __('Split (stack top)', 'weaver-xtreme'),
-		'one-column' => __('No sidebars, content only', 'weaver-xtreme')
+		'default' 	=> 		__('Sidebars on Use Default', 'weaver-xtreme'),
+		'right' 	=> 		__('Sidebars on Right', 'weaver-xtreme'),
+		'right-top' => 		__('Sidebars on Right (stack top)', 'weaver-xtreme'),
+		'left' 		=> 		__('Sidebars on Left', 'weaver-xtreme'),
+		'left-top' 	=> 		__('Sidebars on Left (stack top)', 'weaver-xtreme'),
+		'split' 	=> 		__('Split - Sidebars on Right and Left', 'weaver-xtreme'),
+		'split-top' => 		__('Split (stack top)', 'weaver-xtreme'),
+		'one-column' => 	__('No sidebars, content only', 'weaver-xtreme')
 	);
 }
 function weaverx_cz_choices_layout_default_sanitize($val) {
@@ -505,16 +585,16 @@ function weaverx_cz_choices_layout_default_sanitize($val) {
 
 function weaverx_cz_choices_shadow() {
 	return array(
-		"-0"	=>	__('No Shadow', 'weaver-xtreme'),
-		"-1"	=>	__('All Sides, 1px', 'weaver-xtreme'),
-		"-2"	=>	__('All Sides, 2px', 'weaver-xtreme'),
-		"-3"	=>	__('All Sides, 3px', 'weaver-xtreme'),
-		"-4"	=>	__('All Sides, 4px', 'weaver-xtreme'),
-		"-rb"	=>	__('Right + Bottom', 'weaver-xtreme'),
-		"-lb"	=>	__('Left + Bottom', 'weaver-xtreme'),
-		"-tr"	=>	__('Top + Right', 'weaver-xtreme'),
-		"-tl"	=>	__('Top + Left', 'weaver-xtreme'),
-		"-custom"	=>	__('Custom Shadow', 'weaver-xtreme'),
+		"-0"	=>		__('No Shadow', 'weaver-xtreme'),
+		"-1"	=>		__('All Sides, 1px', 'weaver-xtreme'),
+		"-2"	=>		__('All Sides, 2px', 'weaver-xtreme'),
+		"-3"	=>		__('All Sides, 3px', 'weaver-xtreme'),
+		"-4"	=>		__('All Sides, 4px', 'weaver-xtreme'),
+		"-rb"	=>		__('Right + Bottom', 'weaver-xtreme'),
+		"-lb"	=>		__('Left + Bottom', 'weaver-xtreme'),
+		"-tr"	=>		__('Top + Right', 'weaver-xtreme'),
+		"-tl"	=>		__('Top + Left', 'weaver-xtreme'),
+		"-custom" =>	__('Custom Shadow', 'weaver-xtreme'),
 	);
 }
 function weaverx_cz_choices_shadow_sanitize($val) {
@@ -524,12 +604,12 @@ function weaverx_cz_choices_shadow_sanitize($val) {
 
 function weaverx_cz_choices_rounded() {
 	return array(
-		"none"	=>	__('None', 'weaver-xtreme'),
-		"-all"	=>	__('All Corners', 'weaver-xtreme'),
-		"-left"	=>	__('Left Corners', 'weaver-xtreme'),
-		"-right"	=>	__('Right Corners', 'weaver-xtreme'),
-		"-top"	=>	__('Top Corners', 'weaver-xtreme'),
-		"-bottom"	=>	__('Bottom Corners', 'weaver-xtreme'),
+		"none"	=>		__('None', 'weaver-xtreme'),
+		"-all"	=>		__('All Corners', 'weaver-xtreme'),
+		"-left"	=>		__('Left Corners', 'weaver-xtreme'),
+		"-right" =>		__('Right Corners', 'weaver-xtreme'),
+		"-top"	=>		__('Top Corners', 'weaver-xtreme'),
+		"-bottom" =>	__('Bottom Corners', 'weaver-xtreme'),
 	);
 }
 function weaverx_cz_choices_rounded_sanitize($val) {
@@ -539,38 +619,16 @@ function weaverx_cz_choices_rounded_sanitize($val) {
 
 function weaverx_cz_choices_tables() {
 	return array(
-		'default'	=>	__('Theme Default', 'weaver-xtreme'),
-		'bold'	=>	__('Bold Headings', 'weaver-xtreme'),
+		'default' 	=>	__('Theme Default', 'weaver-xtreme'),
+		'bold' 		=>	__('Bold Headings', 'weaver-xtreme'),
 		'noborders'	=>	__('No Border', 'weaver-xtreme'),
 		'fullwidth'	=>	__('Wide', 'weaver-xtreme'),
-		'wide'	=>	__('Wide 2', 'weaver-xtreme'),
-		'plain'	=>	__('Minimal', 'weaver-xtreme')
+		'wide'		=>	__('Wide 2', 'weaver-xtreme'),
+		'plain'		=>	__('Minimal', 'weaver-xtreme')
 	);
 }
 function weaverx_cz_choices_tables_sanitize($val) {
 	$choices = weaverx_cz_choices_tables();
-	return (isset($choices[$val])) ? $val : '';
-}
-
-function weaverx_cz_choices_search() {
-	return array(
-		"black" => '<img style="background-color:#ccc;height:24px;width:24px;" src="/wp-content/themes/weaver-xtreme/assets/css/icons/search-black.png" />',
-		"gray" => '<img style="background-color:#ccc;height:24px;width:24px;" src="/wp-content/themes/weaver-xtreme/assets/css/icons/search-gray.png" />',
-		"light" => '<img style="background-color:#ccc;height:24px;width:24px;" src="/wp-content/themes/weaver-xtreme/assets/css/icons/search-light.png" />',
-		"white" => '<img style="background-color:#ccc;height:24px;width:24px;" src="/wp-content/themes/weaver-xtreme/assets/css/icons/search-white.png" />',
-		"black-bg" => '<img style="background-color:#ccc;height:24px;width:24px;" src="/wp-content/themes/weaver-xtreme/assets/css/icons/search-black-bg.png" />',
-		"gray-bg" => '<img style="background-color:#ccc;height:24px;width:24px;" src="/wp-content/themes/weaver-xtreme/assets/css/icons/search-gray-bg.png" />',
-		"white-bg" => '<img style="background-color:#ccc;height:24px;width:24px;" src="/wp-content/themes/weaver-xtreme/assets/css/icons/search-white-bg.png" />',
-		"blue-bg" => '<img style="background-color:#ccc;height:24px;width:24px;" src="/wp-content/themes/weaver-xtreme/assets/css/icons/search-blue-bg.png" />',
-		"green-bg" => '<img style="background-color:#ccc;height:24px;width:24px;" src="/wp-content/themes/weaver-xtreme/assets/css/icons/search-green-bg.png" />',
-		"orange-bg" => '<img style="background-color:#ccc;height:24px;width:24px;" src="/wp-content/themes/weaver-xtreme/assets/css/icons/search-orange-bg.png" />',
-		"red-bg" => '<img style="background-color:#ccc;height:24px;width:24px;" src="/wp-content/themes/weaver-xtreme/assets/css/icons/search-red-bg.png" />',
-		"yellow-bg" => '<img style="background-color:#ccc;height:24px;width:24px;" src="/wp-content/themes/weaver-xtreme/assets/css/icons/search-yellow-bg.png" />',
-
-	);
-}
-function weaverx_cz_choices_search_sanitize($val) {
-	$choices = weaverx_cz_choices_search();
 	return (isset($choices[$val])) ? $val : '';
 }
 
@@ -579,20 +637,20 @@ function weaverx_cz_choices_search_sanitize($val) {
 function weaverx_cz_add_plus_message($root, $label = '', $description = '') {
 	$opt = array();
 	$opt[$root . '-heading'] = array(
-		'control' => array( 'control_type' => 'WeaverX_Misc_Control',
-		'label'   => $label . ' (Plus Feature)',
-		'type'  => 'group-title'));
+		'control' 	=> array( 'control_type' => 'WeaverX_Misc_Control',
+		'label'   	=> $label . ' (Plus Feature)',
+		'type'  	=> 'group-title'));
 
 	if ($description) {
 		$opt[$root . '-desc'] = array(
-		'control' => array( 'control_type' => 'WeaverX_Misc_Control',
+		'control' 		=> array( 'control_type' => 'WeaverX_Misc_Control',
 		'description'   => $description,
-		'type'  => 'text'));
+		'type'  		=> 'text'));
 	}
 	$xplus = site_url('/wp-admin/themes.php?page=WeaverX', 'relative');
 	$weaversite = '//shop.weavertheme.com';
 	$opt[$root . 'extra-plus'] = array(
-		'control' => array( 'control_type' => 'WeaverX_Misc_Control',
+		'control' 	=> array( 'control_type' => 'WeaverX_Misc_Control',
 		'description'   => sprintf(__('See the <a href="%s" ><em>Appearance &rarr; Weaver Xtreme Admin</em></a> panel for related settings. Get <strong><a href="%s" target="_blank">Weaver Xtreme Plus</strong></a> to add this feature.', 'weaver-xtreme'), $xplus, $weaversite),
 		'type'  => 'text'));
 
@@ -620,12 +678,12 @@ function weaverx_cz_line() {
  *
  */
 function weaverx_cz_sanitize_float( $value ) {
-	if (!$value) return '0';	// need to be able detect '0' vs 0 or false
+	if ( !$value ) return '0';	// need to be able detect '0' vs 0 or false
 	else return floatval( $value );
 }
 
 function weaverx_cz_sanitize_int( $value ) {
-	if (!$value) return '0';
+	if ( !$value ) return '0';
 	else return absint($value);
 }
 
@@ -709,22 +767,6 @@ endif;
 function weaverx_cz_sanitize_color( $color ) {
 	// sanitize color - allow rgb, rgba, color names, otherwise force to hashed hex
 
-	/* $color_names = array(
-		'AliceBlue', 'AntiqueWhite', 'Aqua', 'Aquamarine', 'Azure', 'Beige', 'Bisque', 'Black', 'BlanchedAlmond', 'Blue',
-		'BlueViolet', 'Brown', 'BurlyWood', 'CadetBlue', 'Chartreuse', 'Chocolate', 'Coral', 'CornflowerBlue', 'Cornsilk', 'Crimson',
-		'Cyan', 'DarkBlue', 'DarkCyan', 'DarkGoldenRod', 'DarkGray','DarkGreen', 'DarkKhaki', 'DarkMagenta', 'DarkOliveGreen', 'DarkOrange',
-		'DarkOrchid', 'DarkRed', 'DarkSalmon', 'DarkSeaGreen', 'DarkSlateBlue', 'DarkSlateGray', 'DarkTurquoise', 'DarkViolet', 'DeepPink', 'DeepSkyBlue',
-		'DimGray', 'DodgerBlue', 'FireBrick', 'FloralWhite', 'ForestGreen', 'Fuchsia', 'Gainsboro', 'GhostWhite', 'Gold', 'Goldenrod',
-		'Gray', 'Green', 'GreenYellow', 'Honeydew', 'HotPink', 'IndianRed', 'Indigo', 'Ivory', 'Khaki', 'Lavender',
-		'LavenderBlush', 'LawnGreen', 'LemonChiffon', 'LightBlue', 'LightCoral', 'LightCyan', 'LightGoldenrodYellow', 'LightGreen', 'LightGrey', 'LightPink',
-		'LightSalmon', 'LightSeaGreen', 'LightSkyBlue', 'LightSlateGray', 'LightSteelBlue', 'LightYellow', 'Lime', 'LimeGreen', 'Linen', 'Magenta',
-		'Maroon', 'MediumAquamarine', 'MediumBlue', 'MediumOrchid', 'MediumPurple', 'MediumSeaGreen', 'MediumSlateBlue', 'MediumSpringGreen', 'MediumTurquoise', 'MediumVioletRed',
-		'MidnightBlue', 'MintCream', 'MistyRose', 'Moccasin', 'NavajoWhite', 'Navy', 'OldLace', 'Olive', 'OliveDrab', 'Orange',
-		'OrangeRed', 'Orchid', 'PaleGoldenrod', 'PaleGreen', 'PaleTurquoise', 'PaleVioletRed', 'PapayaWhip', 'PeachPuff', 'Peru', 'Pink',
-		'Plum', 'PowderBlue', 'Purple', 'Red', 'RosyBrown', 'RoyalBlue', 'SaddleBrown', 'Salmon', 'SandyBrown', 'SeaGreen',
-		'Seashell', 'Sienna', 'Silver', 'SkyBlue', 'SlateBlue', 'SlateGray', 'Snow', 'SpringGreen', 'SteelBlue', 'Tan',
-		'Teal', 'Thistle', 'Tomato', 'Turquoise', 'Violet', 'Wheat', 'White', 'WhiteSmoke', 'Yellow', 'YellowGreen'
-	); */
 	$color_names = array(
 		'aliceblue', 'antiquewhite', 'aqua', 'aquamarine', 'azure', 'beige', 'bisque', 'black', 'blanchedalmond', 'blue',
 		'blueviolet', 'brown', 'burlywood', 'cadetblue', 'chartreuse', 'chocolate', 'coral', 'cornflowerblue', 'cornsilk', 'crimson',
@@ -882,7 +924,6 @@ class WeaverX_Misc_Control extends WP_Customize_Control {
 				echo '</select>';
 				break;
 
-
 			default:
 			case 'text' :
 				echo '<p class="description customize-control-description">' . weaverx_cz_sanitize_html($this->description) . '</p>';
@@ -946,7 +987,8 @@ class WeaverX_Select_Control extends WP_Customize_Control {
 	protected function render_content() {
 		if ( empty( $this->choices ) )
 					return;
-
+		if ( isset( $this->input_attrs['before'] ) )
+			echo $this->input_attrs['before'];
 ?>
 		<label>
 			<?php if ( ! empty( $this->label ) ) : ?>
@@ -970,6 +1012,8 @@ class WeaverX_Select_Control extends WP_Customize_Control {
 			</select>
 		</label>
 <?php
+	if ( isset( $this->input_attrs['after'] ) )
+			echo $this->input_attrs['after'];
 	}
 }
 endif;
@@ -1179,7 +1223,7 @@ class WeaverX_Customize_Setting extends WP_Customize_Setting {
 
 // ++++++++++++++++++++++++++++++++  setting helpers
 
-function weaverx_cz_select( $label, $description, $choices, $default = '', $transport = 'refresh') {
+function weaverx_cz_select( $label, $description, $choices, $default = '', $transport = 'refresh', $input_attrs = array()) {
 	/*
 	'select' => weaverx_cz_select(
 				label,
@@ -1205,13 +1249,15 @@ function weaverx_cz_select( $label, $description, $choices, $default = '', $tran
 			'label' => $label,
 			'description' => $description,
 			'type'	=> 'select',
-			'choices' => $choices()
+			'choices' => $choices(),
+			'input_attrs' => $input_attrs
+
 		),
 	);
 }
 
 
-function weaverx_cz_select_plus( $label, $description, $choices, $default = '', $transport = 'refresh') {
+function weaverx_cz_select_plus( $label, $description, $choices, $default = '', $transport = 'refresh', $input_attrs = array()) {
 	/*
 	'select_plus' => weaverx_cz_select_plus(
 				label,
@@ -1239,7 +1285,8 @@ function weaverx_cz_select_plus( $label, $description, $choices, $default = '', 
 			'label' => $label,
 			'description' => $description,
 			'type'	=> 'select',
-			'choices' => $choices()
+			'choices' => $choices(),
+			'input_attrs' => $input_attrs
 		),
 	);
 }
@@ -1316,6 +1363,24 @@ function weaverx_cz_group_title($label, $description = '') {
 	);
 }
 
+function weaverx_cz_text($description = '') {
+	/*
+	'group_title' => weaverx_cz_group_title(
+				label,
+				description
+			),
+	*/
+	return array(
+		'control' => array(
+			'control_type' => 'WeaverX_Misc_Control',
+			'label'   => '',
+			'description' => $description,
+			'type'  => 'text',
+		),
+	);
+}
+
+
 function weaverx_cz_heading($label, $description = '') {
 	/*
 	'heading' => weaverx_cz_heading(
@@ -1329,6 +1394,23 @@ function weaverx_cz_heading($label, $description = '') {
 			'label'   => $label,
 			'description' => $description,
 			'type'  => 'heading',
+		),
+	);
+}
+
+function weaverx_cz_html($label, $description = '') {
+	/*
+	'html' => weaverx_cz_heading(
+				label,
+				description
+			),
+	*/
+	return array(
+		'control' => array(
+			'control_type' => 'WeaverX_Misc_Control',
+			'label'   => $label,
+			'description' => $description,
+			'type'  => 'HTML',
 		),
 	);
 }
@@ -1392,6 +1474,20 @@ function weaverx_cz_checkbox_refresh( $label, $description = '', $plus = '' ) {
 	);
 
 }
+
+function weaverx_cz_text_int($label, $description = '') {
+	return array(
+		'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh',	'default' => ''),
+		'control' => array(
+			'control_type' => 'WeaverX_Textarea_Control',
+			'label'   => $label . WEAVERX_REFRESH_ICON,
+			'description' => $description,
+			'type'  => 'text',
+			)
+		);
+
+}
+
 
 function weaverx_cz_css($label, $description = '') {
 	return array(
@@ -1543,12 +1639,12 @@ function weaverx_cz_add_image($root, $label = '', $description = '' , $transport
 
 }
 
-function weaverx_cz_add_fonts($root, $label = '', $description = '' , $transport = 'refresh', $bold = 'bold' ) {
+function weaverx_cz_add_fonts($root, $label = '', $description = '' , $transport = 'refresh', $bold = 'bold') {
 
 	$opt = array();
 
 
-	if ($root != 'm_primary')	// add a line except top
+	if ($root != 'm_primary' && $root != 'wrapper')	// add a line except top
 		$opt[$root . '-headingline'] = weaverx_cz_line();
 
 	$glabel = $label;
@@ -1556,6 +1652,7 @@ function weaverx_cz_add_fonts($root, $label = '', $description = '' , $transport
 		$glabel .= WEAVERX_REFRESH_ICON;
 
 	$opt[$root . '-font-hdrm'] = weaverx_cz_group_title($glabel, $description);
+
 
 	// Font Size
 	$opt[$root . '_font_size'] = weaverx_cz_select(
@@ -1617,7 +1714,6 @@ function weaverx_cz_add_fonts($root, $label = '', $description = '' , $transport
 		'weaverx_cz_choices_bold_italic',	'', $transport
 	);
 
-
 	return $opt;
 
 }
@@ -1632,18 +1728,6 @@ function weaverx_cz_add_link_fonts($root, $label = '', $description = '' , $tran
 
 	$opt[$root . '-fontlink-hdm'] = weaverx_cz_group_title($label, $description);
 
-	/* $opt[$root . '-heading'] = array(
-		'control' => array( 'control_type' => 'WeaverX_Misc_Control',
-		'label'   => $label,
-		'type'  => 'group-title'));
-
-	if ($description) {
-		$opt[$root . '-desc'] = array(
-		'control' => array( 'control_type' => 'WeaverX_Misc_Control',
-		'description'   => $description,
-		'type'  => 'text'));
-	} */
-
 
 	// Bold
 	$opt[$root . '_strong'] =  weaverx_cz_select(
@@ -1653,7 +1737,7 @@ function weaverx_cz_add_link_fonts($root, $label = '', $description = '' , $tran
 	);
 
 
-		// Italic
+	// Italic
 	$opt[$root . '_em'] = weaverx_cz_select(
 		'',
 		'<strong>' . __('Use <em>Italic</em> for ', 'weaver-xtreme') . $label . '</strong>' . $tlabel,
@@ -1674,7 +1758,7 @@ function weaverx_cz_add_link_fonts($root, $label = '', $description = '' , $tran
 		),
 	);
 
-	// UNderline
+	// Underline
 
 	$opt[$root . '_u_h'] = array(
 		'setting' => array(

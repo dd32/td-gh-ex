@@ -63,7 +63,7 @@ function weaverx_admin_help() {
 </h2>
 <p>
 <?php _e('Example of Font Families supported by Weaver Xtreme and Weaver Xtreme Plus.', 'weaver-xtreme' /*adm*/);
-// Following Release Notes are not wrapped in translation as they are highly veriable, and will
+// Following Release Notes are not wrapped in translation as they are highly variable, and will
 // change with each update of the theme - even minor updates. Just doesn't make sense to translate them.
 ?>
 </p>
@@ -72,7 +72,7 @@ function weaverx_admin_help() {
 	<?php _e('Release Notes', 'weaver-xtreme' /*adm*/); ?>
 </h3>
 <p>
-	<em>Please scroll to the end of the releasenotes to view latest changes.</em>
+	<em>Please scroll to the end of the release notes to view latest changes.</em>
 </p>
 <?php
 $notes = weaverx_relative_url('') . 'readme.txt';
@@ -91,7 +91,7 @@ $notes = weaverx_relative_url('') . 'readme.txt';
 </strong></p>
 <ul>
 <li style="font-size:120%;"><a href="//wordpress.org/plugins/weaverx-theme-support/" target="_blank"><?php _e('Weaver Xtreme Theme Support', 'weaver-xtreme' /*adm*/); ?></a>
-<?php _e('- provides <strong>essential</strong> Weaver Xtreme theme options and useful shortcodes.', 'weaver-xtreme' /*adm*/); ?>
+<?php _e('- provides <strong>important</strong> Weaver Xtreme theme options and useful shortcodes. Per Page/Post options are now integrated with the theme, so if you do not need the legacy check-box options interface or the shortcodes, you can probably get by without the Theme Support Plugin.', 'weaver-xtreme' /*adm*/); ?>
 </li>
 </ul>
 <p><strong>
@@ -106,17 +106,15 @@ This formerly was integrated with Weaver, and was considered an important part o
 <li><a href="//wordpress.org/plugins/show-sliders/" target="_blank"><?php _e('Weaver Show Sliders', 'weaver-xtreme' /*adm*/); ?></a>
 <?php _e('- good for any kind of slideshows - images, posts, [gallery] replacement', 'weaver-xtreme' /*adm*/);?>
 </li>
-<li><a href="https://wordpress.org/plugins/wp-edit/" target="_blank">WP Edit</a> -
-<?php _e('WP Edit adds additional editing functionality to the default WordPress editor.
-Allows content formatting without the need for extra HTML or CSS.
-Also includes advanced features to manage your content such as post and page revision control.', 'weaver-xtreme' /*adm*/); ?>
+<li><a href="https://wordpress.org/plugins/gutenberg/" target="_blank">Gutenberg</a> -
+<?php _e('The new WordPress Gutenberg editor will soon become the default WordPress editor. The Gutenberg project has been underway for over a year, and the current version is getting very close. It has become a great tool for building good looking pages. This is especially true with Weaver Xtreme, which as added complete integrated support for Gutenberg. You will get a nearly total WYSIWYG experience when using the Gutenberg editor. Prepare for the future. Get Gutenberg now!', 'weaver-xtreme' /*adm*/); ?>
 </li>
 <li><a href="https://wordpress.org/plugins/widget-shortcode/" target="_blank">Widget Shortcode</a> -
 <?php _e('Adds [widget] shortcode which enables you to display any widget in any content area. This is a great enhancement to Weaver Xtreme, especially when using the Weaver Xtreme Plus Flexible Layout Widget.', 'weaver-xtreme' /*adm*/); ?>
 </li>
 </ul>
 
-</div><div style="clear:both;"></div>
+</div><div class="clear-both;"></div>
 <hr />
 <?php
 $local_mem_lim = ini_get('memory_limit');

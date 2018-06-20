@@ -8,13 +8,11 @@ $menu = apply_filters('weaverx_menu_name','primary');
 if (weaverx_getopt( 'm_primary_hide') != 'hide'
 	&& !weaverx_is_checked_page_opt('_pp_hide_menus') ) {
 
-	$use_smart = weaverx_getopt('use_smartmenus') && function_exists('weaverxplus_plugin_installed');
 
 	weaverx_clear_both('menu-primary');
 
 	$class = weaverx_menu_class( 'm_primary' );
 
-	$align = weaverx_getopt( 'm_primary_align' );
 
 	$logo = '';
 
@@ -22,10 +20,31 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 		$custom_logo_url = weaverx_get_wp_custom_logo_url();
 		// We have a logo. Logo is go.
 		if ( $custom_logo_url ) {
-				//weaverx_alert('custom logo:' . $custom_logo_url);
+			if ( weaverx_getopt('m_primary_logo_home_link') ) {
+				$logo = apply_filters('weaverx_menu_logo', '<span class="custom-logo-on-menu"><a href="' . get_home_url() . '" alt="Site Home"><img src="' . $custom_logo_url . '" alt="logo"/></a></span>', $custom_logo_url);	// +since: 3.1.10: add alt=
+			}
+			else
 				$logo = apply_filters('weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" alt="logo"/></span>', $custom_logo_url);	// +since: 3.1.10: add alt=
 
 		}
+	}
+
+	$site_title = '';
+
+	if ( weaverx_getopt('m_primary_site_title_left') ) {
+
+		$classt = 'site-title-on-menu wvrx-menu-html wvrx-menu-left';
+
+		// font-family
+		$val = weaverx_getopt( 'site_title_font_family' );
+		if ( $val && $val != 'default' ) {
+			$classt .= ' font-' . $val;
+		}
+
+		$classt .= weaverx_get_bold_italic('site_title','bold');
+		$classt .= weaverx_get_bold_italic('site_title','italic');
+
+		$site_title = '<span class="' . $classt . '"><a href="' . get_home_url() . '" alt="Site Home">' . get_bloginfo('name') . '</a></span>';
 	}
 
 	$left = weaverx_getopt('m_primary_html_left');
@@ -51,11 +70,17 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 		$right = '<span class="wvrx-menu-html wvrx-menu-right ' . $hide . '"></span>';
 	}
 
-	$left = $logo . $left;
-	//$right = $right . $logo;
+	if ( weaverx_getopt_checked( 'm_primary_search' ) ) {
+		$right  = '<span class="menu-search">&nbsp;' . get_search_form( false ) . '&nbsp;</span>'  . $right;
+	}
 
-	if ( $use_smart ) {							// ==================  SMART MENUS (make any changes in default menu version, too)
+	$left = $logo . $site_title . $left;
+
+	if ( weaverx_getopt('use_smartmenus') )
+	{							// ==================  SMART MENUS (make any changes in default menu version, too in filters.php)
 		$hamburger = apply_filters('weaverx_mobile_menu_name',weaverx_getopt('m_primary_hamburger'));
+
+
 		if ( $hamburger == '' ) {
 			$alt = weaverx_getopt('mobile_alt_label');
 			if ( $alt == '')
@@ -68,14 +93,22 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 
 	$menu_class = apply_filters('weaverx_menu_class', 'weaverx-theme-menu wvrx-menu menu-hover', 'primary');
 
-	switch ($align) {		// add classes for alignment and fixed top
+	$align = weaverx_getopt( 'm_primary_align' );
+
+	switch ( $align ) {		// add classes for alignment and fixed top
 		case 'left':
+		case 'alignwide left':
+		case 'alignfull left':
 			$menu_class .= ' menu-alignleft';
 			break;
 		case 'center':
+		case 'alignwide center':
+		case 'alignfull center':
 			$menu_class .= ' wvrx-center-menu';
 			break;
 		case 'right':
+		case 'alignwide right':
+		case 'alignfull right':
 			$menu_class .= ' menu-alignright';
 			break;
 		default:
@@ -123,7 +156,12 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 
 	echo "</div><div class='clear-menu-primary-end' style='clear:both;'></div><!-- /.menu-primary -->\n\n";
 
-	if ($use_smart)
-		do_action('weaverx_plus_smartmenu', 'nav-primary', 'm_primary');	// emit required JS to invoke smartmenu
+	if ( weaverx_getopt('use_smartmenus') ) {
+		if ( function_exists('weaverxplus_plugin_installed') )
+			do_action('weaverx_plus_smartmenu', 'nav-primary', 'm_primary');	// emit required JS to invoke smartmenu
+		else {		// use theme "action"
+			weaverx_smartmenu( 'nav-primary', 'm_primary' );
+		}
+	}
 }
 ?>

@@ -85,7 +85,7 @@ if (weaverx_is_checked_page_opt('_pp_pwp_compact_posts')
 }
 ?>
 <div class="clear-post-end" style="clear:both;"></div>
-<?php echo weaverx_schema( 'mainEntityOfPage'); ?>
+<?php echo weaverx_schema( 'mainEntityOfPage' ); ?>
 </article><!-- /#post-<?php the_ID(); ?> -->
 
 <?php

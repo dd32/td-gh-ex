@@ -92,14 +92,14 @@ final class WeaverX_Customize_Plus {
 		} else {
 			switch ($level) {
 				case WEAVERX_LEVEL_ADVANCED:
-					$msgpost = '<em style="background-color:black;color:white;padding:3px;">' . __('Advanced','weaver-xtreme') . '</em>';
+					$msgpost = '<em style="background-color:black;color:white;padding:3px;">' . __('Full','weaver-xtreme') . '</em>';
 					break;
 				case WEAVERX_LEVEL_INTERMEDIATE:
-					$msgpost = '<em style="background-color:blue;color:white;padding:3px;">' . __('Intermediate', 'weaver-xtreme') . '</em>';
+					$msgpost = '<em style="background-color:blue;color:white;padding:3px;">' . __('Standard', 'weaver-xtreme') . '</em>';
 					break;
 				case WEAVERX_LEVEL_BEGINNER:
 				default:
-					$msgpost = '<em style="background-color:green;color:white;padding:3px;">' . __('Beginner', 'weaver-xtreme') . '</em>';
+					$msgpost = '<em style="background-color:green;color:white;padding:3px;">' . __('Basic', 'weaver-xtreme') . '</em>';
 					break;
 			}
 			// add guide link?

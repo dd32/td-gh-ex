@@ -27,7 +27,7 @@ if (weaverx_compact_post()) {
 <?php
 	if ($use_link) {
 ?>
-	<a href="<?php esc_url(the_permalink()); ?>" title="<?php the_title_attribute( 'echo=1' ); ?>" rel="bookmark"><?php echo $the_image; echo weaverx_schema( 'post' ); ?></a>
+	<a href="<?php esc_url(the_permalink()); ?>" title="<?php the_title_attribute( 'echo=1' ); ?>" rel="bookmark"><?php echo $the_image; ?></a>
 <?php
 	} else {
 		echo $the_image;
@@ -107,5 +107,5 @@ if (weaverx_compact_post()) {
 weaverx_inject_area('postpostcontent');	// inject post comment body
 ?>
 	<div style="clear:both;"></div>
-		<?php echo weaverx_schema( 'mainEntityOfPage'); ?>
+		<?php echo weaverx_schema( 'mainEntityOfPage' ); ?>
 		</article><!-- /#post-<?php the_ID(); ?> -->

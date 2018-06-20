@@ -36,7 +36,8 @@ function weaverx_filter_strip_default( $var ) {
 		wp_die(__('Headers Sent: The headers have been sent by another plugin - there may be a plugin conflict.', 'weaver-xtreme' /*adm*/));
 	}
 
-	$weaverx_opts = get_option( apply_filters('weaverx_options','weaverx_settings') ,array());
+	$opt_func = WEAVER_GET_OPTION;
+	$weaverx_opts = $opt_func( apply_filters('weaverx_options',WEAVER_SETTINGS_NAME) ,array());
 	$weaverx_header = '';
 
 	$weaverx_save = array();

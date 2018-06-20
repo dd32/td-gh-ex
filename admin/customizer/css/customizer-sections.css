@@ -210,6 +210,10 @@ li.customize-control.customize-control-range .ui-slider-handle:hover {
 #accordion-panel-weaverx_site-colors .customize-section-title h3 .customize-action:before {
 	color:#298cba;vertical-align:bottom;margin-right:0.25em; font-size: 140%;font-family:"dashicons"; content: "\f100"; }
 
+#accordion-panel-weaverx_page-builder .accordion-section-title:before,
+#accordion-panel-weaverx_page-builder .customize-section-title h3 .customize-action:before {
+	color:#298cba;vertical-align:bottom;margin-right:0.25em; font-size: 140%;font-family:"dashicons"; content: "\f535"; }
+
 #accordion-panel-weaverx_typography .accordion-section-title:before,
 #accordion-panel-weaverx_typography .customize-section-title h3 .customize-action:before {
 	color:#298cba;vertical-align:bottom;margin-right:0.25em; font-size: 140%;font-family:"dashicons"; content: "\f215"; }
@@ -253,6 +257,10 @@ li.customize-control.customize-control-range .ui-slider-handle:hover {
 #accordion-panel-nav_menus .accordion-section-title:before,
 #accordion-panel-nav_menus .customize-section-title h3 .customize-action:before {
 	color:#298cba;vertical-align:bottom;margin-right:0.25em; font-size: 140%;font-family:"dashicons"; content: "\f333"; }
+
+#accordion-panel-title_tagline .accordion-section-title:before,
+#accordion-panel-title_tagline .customize-section-title h3 .customize-action:before {
+	color:#298cba;vertical-align:bottom;margin-right:0.25em; font-size: 140%;font-family:"dashicons"; content: "\f484"; }
 
 
 
@@ -530,4 +538,3 @@ body.rtl #accordion-panel-widgets .customize-section-title h3 .customize-action:
 body.rtl #accordion-panel-nav_menus .accordion-section-title:before,
 body.rtl #accordion-panel-nav_menus .customize-section-title h3 .customize-action:before {
 	float:right;margin-left:0.3em;margin-right:0; }
-

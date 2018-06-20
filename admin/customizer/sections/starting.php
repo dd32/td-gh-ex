@@ -9,7 +9,7 @@ if ( ! function_exists( 'weaverx_customizer_define_starting_sections' ) ) :
  * causes execution time out at: wp-includes/class-wp-customize-setting.php near line 522
  *
  */
-function weaverx_customizer_define_starting_sections( $sections ) {
+function weaverx_customizer_define_starting_sections( ) {
 	$panel = 'weaverx_starting';
 	$starting_sections = array();
 
@@ -135,26 +135,7 @@ offers many additional subthemes to choose from.', 'weaver-xtreme'),
 	);
 
 
-/*
-	<?php weaverx_help_link('font-demo.html', __('Examples of supported fonts', 'weaver-xtreme'), __('Font Examples', 'weaver-xtreme')) ?>
-</h2>
-<p>
-<?php _e('Example of Font Families supported by Weaver Xtreme and Weaver Xtreme Plus.', 'weaver-xtreme'); ?>
-</p>
-*/
-
-
-
-	/**
-	 * Filter the definitions for the controls in the panel of the Customizer
-	 */
-	//$starting_sections = apply_filters( 'weaverx_customizer_starting_sections', $starting_sections );
-
-	// Merge with master array
-	return array_merge( $sections, $starting_sections );
-
-
+	return $starting_sections;
 }
 endif;
-
-add_filter( 'weaverx_customizer_sections', 'weaverx_customizer_define_starting_sections' );
+?>

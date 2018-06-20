@@ -4,7 +4,7 @@ if ( ! function_exists( 'weaverx_customizer_define_content_sections' ) ) :
 /**
  * Define the sections and settings for the Content panel
  */
-function weaverx_customizer_define_content_sections( $sections ) {
+function weaverx_customizer_define_content_sections( ) {
 	global $wp_customize;
 	$panel = 'weaverx_content';
 	$content_sections = array();
@@ -404,25 +404,16 @@ are open for the page, this area will include the class <em>.postcomments-commen
 
 		'options' => array(
 
-			'content-headsec-heading' => weaverx_cz_heading( __( 'Advanced Level Add Content', 'weaver-xtreme' ),
-				__( 'With the Advanced Level Interface, you can define HTML content for various areas, including the &lt;HEAD&gt;, Header, Menus, Posts, Sidebars, Footer, and other general HTML areas.', 'weaver-xtreme' )),
+			'content-headsec-heading' => weaverx_cz_heading( __( 'Full Level Add Content', 'weaver-xtreme' ),
+				__( 'With the Full Level Interface, you can define HTML content for various areas, including the &lt;HEAD&gt;, Header, Menus, Posts, Sidebars, Footer, and other general HTML areas.', 'weaver-xtreme' )),
 			)
 		);
 
 }
 
-
-
-	$content_sections = apply_filters( 'weaverx_customizer_content_sections', $content_sections );
-
-	// Merge with master array
-	return array_merge( $sections, $content_sections );
-
-
+	return $content_sections;
 }
 endif;
-
-add_filter( 'weaverx_customizer_sections', 'weaverx_customizer_define_content_sections' );
 
 function weaverx_cz_add_injection($root, $label = '', $description = '' , $version = 'XPlus' ) {
 	$opt = array();

@@ -100,8 +100,9 @@ function weaverx_opt_cache() {
 	global $weaverx_opts_cache;
 
 	if (!$weaverx_opts_cache) {
+		$opt_func = WEAVER_GET_OPTION;
 		$weaverx_opts_cache = apply_filters('weaverx_switch_theme',
-			get_option(apply_filters('weaverx_options','weaverx_settings') ,array()));	// start with the default
+			$opt_func(apply_filters('weaverx_options',WEAVER_SETTINGS_NAME) ,array()));	// start with the default
 		//weaverx_alert('Options Loaded');
 	}
 }
@@ -118,7 +119,7 @@ function weaverx_setopt($opt, $val, $save = true) {
 
 	$weaverx_opts_cache[$opt] = $val;
 	if ($save)
-		weaverx_wpupdate_option('weaverx_settings',$weaverx_opts_cache);
+		weaverx_wpupdate_option(WEAVER_SETTINGS_NAME,$weaverx_opts_cache);
 }
 
 function weaverx_setopt_array($opt, $val, $save = true) {
@@ -128,15 +129,18 @@ function weaverx_setopt_array($opt, $val, $save = true) {
 function weaverx_delete_all_options( $no_save = false ) {
 	weaverx_clear_opt_cache('weaverx_delete_all_options');
 
-	if (!$no_save && current_user_can( 'manage_options' ))
-		delete_option( apply_filters('weaverx_options','weaverx_settings') );
+	if (!$no_save && current_user_can( 'manage_options' )) {
+		$opt_func = WEAVER_DELETE_OPTION;
+		$opt_func( apply_filters('weaverx_options',WEAVER_SETTINGS_NAME) );
+	}
 }
 
 function weaverx_wpupdate_option( $name, $opts ) {
 	if (current_user_can( 'manage_options' )) {
 		$compressed = array_filter( $opts, 'weaverx_optlen'); // filter out all null options (strlen == 0)
 		$option = apply_filters('weaverx_options',$name);
-		update_option($option, $compressed);
+		$opt_func = WEAVER_UPDATE_OPTION;
+		$opt_func($option, $compressed);
 	}
 }
 
@@ -149,9 +153,11 @@ function weaverx_optlen( $opt ) {
 
 function weaverx_update_options($id) {
 	global $weaverx_opts_cache;
-	if (!$weaverx_opts_cache)
-		$weaverx_opts_cache = get_option( apply_filters('weaverx_options','weaverx_settings') ,array());
-	weaverx_wpupdate_option('weaverx_settings',$weaverx_opts_cache);
+	if (!$weaverx_opts_cache) {
+		$opt_func = WEAVER_GET_OPTION;
+		$weaverx_opts_cache = $opt_func( apply_filters('weaverx_options',WEAVER_SETTINGS_NAME) ,array());
+	}
+	weaverx_wpupdate_option(WEAVER_SETTINGS_NAME,$weaverx_opts_cache);
 }
 
 
@@ -190,6 +196,7 @@ function weaverx_save_opts($who='', $bump = true) {
 		weaverx_fwrite_current_css();
 	}
 	do_action('weaverx_save_mcecss');		// theme support plugin saved editor css in file
+	do_action('weaverx_save_gutenberg_css');
 
 }
 
@@ -477,8 +484,8 @@ function weaverx_schema(  $who, $aux = '' ) {		// added 3.1.13
 	// NOTE: This filter MUST be defined or else the $who arg will be echoed.
 	//return '';
 
-	if ( weaverx_getopt_checked ('_no_schemea') )
-		return $aux;
+	if ( weaverx_getopt_checked ('_no_schemea') )	// Oops! This is misspelled. Too late now, must stay that way...
+		return $aux;								// return $aux if not emitting - i.e., 'image', 'person'
 
 	switch ( $who ) {
 		case 'archive':
@@ -487,63 +494,53 @@ function weaverx_schema(  $who, $aux = '' ) {		// added 3.1.13
 		case 'category':
 		case 'single':
 		case 'tag':
-			$schema = ' itemtype="http://schema.org/Blog" itemscope';
-			break;
+			return ' itemtype="http://schema.org/Blog" itemscope';
 
 		case 'body':
 			if ( is_search() ) {
-				$schema = ' itemtype="http://schema.org/SearchResultsPage" itemscope';
+				return ' itemtype="http://schema.org/SearchResultsPage" itemscope';
 			} else
-				$schema = ' itemtype="http://schema.org/WebPage" itemscope';
-			break;
+				return ' itemtype="http://schema.org/WebPage" itemscope';
 
 		case 'branding':
-			$schema = ' itemtype="http://schema.org/WPHeader" itemscope';
-			break;
+			return ' itemtype="http://schema.org/WPHeader" itemscope';
 
 		case 'entry-content':
-			$schema = '';	// doesnt work?? ' itemprop="mainEntityOfPage"';
-			break;
+			return '';	// doesnt work?? ' itemprop="mainEntityOfPage"';
 
 		case 'footer':
-			$schema = ' itemtype="http://schema.org/WPFooter" itemscope';
-			break;
+			return ' itemtype="http://schema.org/WPFooter" itemscope';
 
 		case 'headline':
-			$schema = ' itemprop="headline name"';
-			break;
+			return ' itemprop="headline name"';
 
 		case 'image':
 			$fix = str_replace( 'src=', 'itemprop="url" src=', $aux);	// add in url prop
-			$schema = '<span itemtype="http://schema.org/ImageObject" itemprop="image" itemscope>' . $fix . '</span>';
-			break;
+			return '<span itemtype="http://schema.org/ImageObject" itemprop="image" itemscope>' . $fix . '</span>';
+
+		case 'attachment':
+			return ' itemtype="http://schema.org/ImageObject" itemprop="image" itemscope' ;
 
 		case 'mainEntityOfPage':
-			$schema = '<link itemprop="mainEntityOfPage" href="' . get_permalink() . '" />';
-			break;
+			return '<link itemprop="mainEntityOfPage" href="' . get_permalink() . '" />';
 
 		case 'menu':
-			$schema = ' itemtype="http://schema.org/SiteNavigationElement" itemscope';
-			break;
+			return ' itemtype="http://schema.org/SiteNavigationElement" itemscope';
 
 		case 'person':
-			//return '';
-			$schema = '<span itemtype="http://schema.org/Person" itemscope itemprop="author"><span itemprop="name">'
+			return '<span itemtype="http://schema.org/Person" itemscope itemprop="author"><span itemprop="name">'
 					  . $aux . '</span></span>';
-			break;
 
 		case 'post':
-			if ( is_search() || (isset($GLOBALS['weaver_show_posts_plugin']) && $GLOBALS['weaver_show_posts_plugin']) ) {
-				$schema =  ' itemtype="http://schema.org/Article" itemscope';		// searches don't want to be Blogs, just articles
+			if ( is_search() ) {
+				return  ' itemtype="http://schema.org/Article" itemscope';		// searches don't want to be Blogs, just articles
 			} else {
-				$schema =  ' itemtype="http://schema.org/BlogPosting" itemscope itemprop="blogPost"';
+				return  ' itemtype="http://schema.org/BlogPosting" itemscope itemprop="blogPost"';
 			}
-			break;
 
 		case 'image':
 		case 'page':
-			$schema = ' itemtype="http://schema.org/WebPageElement" itemscope itemprop="mainContentOfPage"';
-			break;
+			return ' itemtype="http://schema.org/WebPageElement" itemscope itemprop="mainContentOfPage"';
 
 		case 'published':// <meta itemprop="datePublished" content="2009-05-08">
 			$schema = '<meta itemprop="datePublished" content="' .  esc_attr( get_the_date( 'c' ))  . '"/>' . "\n"
@@ -561,19 +558,16 @@ function weaverx_schema(  $who, $aux = '' ) {		// added 3.1.13
 			break;
 
 		case 'show_posts_begin':
-			$schema = '<div class="atw-show-posts-schema" itemtype="http://schema.org/Blog" itemscope > <!-- begin Blog -->' . "\n";
-			break;
+			return '<div class="atw-show-posts-schema" itemtype="http://schema.org/Blog" itemscope > <!-- begin Blog -->' . "\n";
 
 		case 'show_posts_end':
-			$schema = '</div> <!-- end Blog -->';
-			break;
+			return '</div> <!-- end Blog -->';
 
 		case 'sidebar':
-			$schema = ' itemtype="http://schema.org/WPSideBar" itemscope';
-			break;
+			return ' itemtype="http://schema.org/WPSideBar" itemscope';
 
 		default:
-			$schema = '';
+			return '';
 	}
 	return $schema;
 }
@@ -583,7 +577,6 @@ function weaverx_schema(  $who, $aux = '' ) {		// added 3.1.13
 function weaverx_get_the_author() {
 	// to allow person schema
 	return weaverx_schema( 'person', esc_html(get_the_author()) );
-	//weaverx_schema( 'name'), esc_html(get_the_author()) ) . '</span>' . weaverx_schema( 'published' );
 }
 
 function weaverx_header_widget_area( $where_now ) {	// header.php support
@@ -728,7 +721,12 @@ function weaverx_post_class($hidecount = false) {
 	if (has_post_thumbnail()) {
 		$fi = weaverx_get_per_post_value( '_pp_post_fi_location');
 		if ( !$fi )
-			$fi = weaverx_getopt( 'post_fi_location' );
+			$fi = weaverx_getopt_default( 'post_fi_location','content-top' );
+		if (strpos($fi, 'parallax-full') !== false ) {
+			$postclass .= 'wvrx-fullwidth wvrx-parallax ';
+		} elseif (strpos($fi, 'parallax') !== false ) {
+			$postclass .= 'wvrx-parallax ';
+		}
 
 		$postclass.= "post-fi-{$fi} ";
 	}
@@ -799,8 +797,10 @@ function weaverx_help_link($link, $info, $alt_label = '', $echo = true) {
 
 
 
-function weaverx_html_br() {
-	echo ' <br /> ';
+function weaverx_html_br($count = 1) {
+	for ($i = 0; $i < $count ; $i++) {
+		echo ' <br /> ';
+	}
 }
 
 
@@ -1217,6 +1217,70 @@ class weaverx_Walker_Nav_Menu extends Walker {
 } // Walker_Nav_Menu
 
 
+
+// # FILE BLOCK I/O UTILS ==============================================================
+
+/**
+ * Save a big string to a file in the uploads/weaverx-subthemes directory
+ *
+ * @param string $filename, string $output
+ *
+ * @since Version 4
+ *
+ */
+
+function weaverx_write_to_upload( $filename, $output ) {
+	global $wp_filesystem;
+
+	if ( empty( $wp_filesystem ) ) {								/* load if not already present */
+		require_once( ABSPATH . '/wp-admin/includes/file.php' );
+		WP_Filesystem();
+	}
+
+	$upload_dir = wp_upload_dir(); // Grab uploads folder array
+	$dir = trailingslashit( $upload_dir['basedir'] ) . 'weaverx-subthemes'. DIRECTORY_SEPARATOR; // Set storage directory path
+
+	if (!@is_writable($dir)) {		// direct php access
+		weaverx_f_file_access_fail(__('Directory not writable to save editor style file. Probably a file system permission problem. Directory: ', 'weaver-xtreme' /*adm*/) . $dir);
+		return;
+	}
+
+	WP_Filesystem(); // Initial WP file system
+	$wp_filesystem->mkdir( $dir ); // Make a new folder 'weavrx-subthemes' for storing our file if not created already.
+	$wp_filesystem->put_contents( $dir . $filename, $output, 0644 ); // Store in the file.
+}
+
+/**
+ * Return a big string from a file in the uploads/weaverx-subthemes directory
+ *
+ * @param string $filename
+ *
+ *	@since Version 4
+ *
+ */
+
+function weaverx_read_from_upload( $filename ) {
+	global $wp_filesystem;
+
+	if ( empty( $wp_filesystem ) ) {								/* load if not already present */
+		require_once( ABSPATH . '/wp-admin/includes/file.php' );
+		WP_Filesystem();
+	}
+
+	$upload_dir = wp_upload_dir(); // Grab uploads folder array
+	$dir = trailingslashit( $upload_dir['basedir'] ) . 'weaverx-subthemes'. DIRECTORY_SEPARATOR; // Set storage directory path
+
+	if (! file_exists ($dir . $filename) )
+		return '';
+
+	WP_Filesystem(); // Initial WP file system
+
+	$contents = $wp_filesystem->get_contents( $dir . $filename ); // Store in the file.
+	if ( is_string($contents) )
+		return $contents;
+	return '';
+}
+
 // # OTHER UTILS ==============================================================
 
 if ( ! function_exists( '_wp_render_title_tag' ) ) {
@@ -1263,9 +1327,9 @@ function weaverx_generate_id() {
 
 function weaverx_clear_both( $class = '' ) {
 	if ( $class )
-		echo '<div class="clear-' . $class . '" style="clear:both;"></div>';
+		echo '<div class="clear-' . $class . ' clear-both"></div>';
 	else
-		echo '<div style="clear:both;"></div>';
+		echo '<div class="clear-both"></div>';
 }
 
 function weaverx_relative_url($subpath){

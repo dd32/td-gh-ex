@@ -145,7 +145,7 @@ function weaverx_content_nav( $nav_id , $from_search=false) {
 		<div class="nav-previous"><?php next_posts_link( $prev ); ?></div>
 		<div class="nav-next"><?php previous_posts_link( $next ); ?></div>
 <?php	} ?>
-	</nav><div class="clear-nav-id" style="clear:both"></div><!-- #<?php echo $nav_id;?> -->
+	</nav><div class="clear-nav-id clear-both"></div><!-- #<?php echo $nav_id;?> -->
 <?php
 	}
 }
@@ -185,7 +185,7 @@ if ( !function_exists( 'weaverx_edit_link')) {
 function weaverx_edit_link($echo = 'echo') {
 	$before = '<span class="edit-link">';
 	$after = '</span>';
-	$link = __( 'Edit','weaver-xtreme');
+	$link_label = __( 'Edit','weaver-xtreme');
 	$id = 0;
 
 	if ( !$post = get_post( $id ) )
@@ -195,11 +195,37 @@ function weaverx_edit_link($echo = 'echo') {
 		return;
 
 	$post_type_obj = get_post_type_object( $post->post_type );
-	$link = '<a class="post-edit-link" href="' . $url . '" title="' . esc_attr( $post_type_obj->labels->edit_item ) . '">' . $link . '</a>';
+	$link = '<a class="post-edit-link" href="' . $url . '" title="' . esc_attr( $post_type_obj->labels->edit_item ) . '">' . $link_label . '</a>';
 	$flink = apply_filters( 'edit_post_link', $link, $post->ID );
 	if (!$flink)
 		$flink = $link;					// some https vs http bug in WP
-	$edit = $before . $link . $after;
+	$edit = $before . $flink . $after;
+
+	if ( function_exists('the_gutenberg_project') && strpos( $post->post_content, '<!-- wp:' ) === false) {	// only if NOT already Gutenberg
+
+		$link_label = __('Classic Editor', 'weaver-xtreme');
+		$link = '<a class="post-edit-link post-edit-link-classic" href="' . $url . '&amp;classic-editor" title="' . esc_attr( $post_type_obj->labels->edit_item ) . '">' . $link_label . '</a>';
+		$flink = apply_filters( 'edit_post_link', $link, $post->ID );
+		if (!$flink)
+			$flink = $link;					// some https vs http bug in WP
+		$edit .= $before . $flink. $after;
+	}
+
+	$is_elementor = ! ! get_post_meta( $post->ID, '_elementor_edit_mode', true );
+	
+	if ( $is_elementor ) {
+		$link_label = __('Edit with Elementor', 'weaver-xtreme');
+
+		$eurl = str_replace('action=edit', 'action=elementor', $url);
+		$after = $after . "\n<!-- url: {$url} eurl: {$eurl} -->";
+		$link = '<a class="post-edit-link post-edit-link-classic" href="' . $eurl . '" title="' . esc_attr( $post_type_obj->labels->edit_item ) . '">' . $link_label . '</a>';
+		$flink = apply_filters( 'edit_post_link', $link, $post->ID );
+		if (!$flink)
+			$flink = $link;					// some https vs http bug in WP
+		$edit .= $before . $flink. $after;
+	}
+
+
 	if ('echo' == $echo)
 		echo $edit;
 	else
@@ -250,7 +276,7 @@ function weaverx_entry_header( $format_title='', $do_excerpt = false ) {
 
 	weaverx_fi( $arg, 'title-before');
 
-	$lead = '<h2 ' .  weaverx_title_class( 'post_title', false, 'post-title entry-title' ) . weaverx_schema( 'headline') . '>' ;
+	$lead = '<h2 ' .  weaverx_title_class( 'post_title', false, 'post-title entry-title' ) . weaverx_schema( 'headline' ) . '>' ;
 	if ( $format_title != ''  && ! weaverx_getopt( 'hide_post_format_icon' ) && ! weaverx_is_checked_post_opt('_pp_hide_post_format_label' ) ) {
 		$icon = "<span class=\"post-format-icon genericon genericon-{$format_title}\"></span>";
 		$lead .=  $icon;
@@ -601,7 +627,7 @@ function weaverx_post_top_meta( $type='' ) {
  */
 	// $type for single
 	echo "<div class=\"entry-meta \">\n";
-	echo weaverx_schema('published');
+	echo weaverx_schema( 'published' );
 	weaverx_posted_on($type);
 	weaverx_comments_popup_link();
 	echo "</div><!-- /entry-meta -->\n";
@@ -643,7 +669,7 @@ function weaverx_page_title( $title = '') {
 ?>
 	<header class="page-header">
 	<?php weaverx_fi( 'page', 'title-before'); ?>
-	<h1<?php echo weaverx_title_class( 'page_title', false, 'page-title entry-title') .  weaverx_schema( 'headline') . '>' . $title;?></h1>
+	<h1<?php echo weaverx_title_class( 'page_title', false, 'page-title entry-title') .  weaverx_schema( 'headline' ) . '>' . $title;?></h1>
 	</header><!-- .page-header -->
 <?php
 	}
@@ -662,7 +688,7 @@ function weaverx_single_title( $title = '' ) {
 ?>
 	<header class="page-header">
 	<?php weaverx_fi( 'post', 'title-before'); ?>
-	<h1 class="page-title entry-title title-single <?php echo weaverx_title_class( 'post_title', true ) . '"' .  weaverx_schema( 'headline' ) . '>' . $title; ?></h1>
+	<h1 class="page-title entry-title title-single <?php echo weaverx_title_class( 'post_title', true ) . '"' . weaverx_schema( 'headline' ) . '>' . $title; ?></h1>
 		<?php weaverx_post_top_meta('single'); ?>
 	</header><!-- .page-header -->
 <?php
@@ -709,7 +735,7 @@ function weaverx_fi( $who, $where ) {
 
 
 	if ( !$show )
-		$show = weaverx_getopt( $who . '_fi_location' );    // 'page' or 'post'
+		$show = weaverx_getopt_default( $who . '_fi_location', 'content-top' );    // 'page' or 'post'
 	else if ( $show == 'hide' )
 		return false;
 
@@ -735,25 +761,30 @@ function weaverx_fi( $who, $where ) {
 		else
 			$selector = '#post-' . get_the_ID();
 
-
+		$style = '';
 		switch ($show) {
 			case 'post-bg-parallax':
-				$style = "background:url({$hdr}) no-repeat center center fixed;background-position:50% 50%; -webkit-background-size:cover;
-background-attachment:fixed;-moz-background-size:cover;-o-background-size:cover;background-size:cover;background-color:transparent;box-sizing:border-box;";  // parallax
+
+			case 'post-bg-parallax-full':				// previous: background-repeat: no-repeat; background-position: center center; background-attachment: fixed;
+				$style = "background-image:url({$hdr});";  // parallax full - use in conjunction with .wvrx-parallax
 				break;
+
 			case 'post-bg':
 				$style = "background:url({$hdr}) repeat;background-color:transparent;"; // tile vertically
 				break;
+
 			case 'post-bg-cover':		// cover - responsive
-				$style = "background:url({$hdr}); -webkit-background-size:cover;background-repeat:no-repeat;background-position:center center;
--moz-background-size:cover;-o-background-size:cover;background-size:cover;background-color:transparent;box-sizing:border-box;"; // cover
+				$style = "background:url({$hdr});background-repeat:no-repeat;background-position:center center;
+background-size:cover;background-color:transparent;box-sizing:border-box;"; // cover
 				break;
+
 			default:		// no others
 				break;
 		}
 
 		// echo "{$before}{$selector}{ {$style} }{$after}\n";
-		weaverx_inline_style( "{$before}{$selector}{ {$style} }{$after}\n", 'weaverx-fi:lib-content.php' );
+		if ($style)
+			weaverx_inline_style( "{$before}{$selector}{ {$style} }{$after}\n", 'weaverx-fi:lib-content.php' );
 
 
 		return true;
@@ -769,7 +800,7 @@ background-attachment:fixed;-moz-background-size:cover;-o-background-size:cover;
 	$before = '';
 	if ( $where == 'post-pre' ) {
 		$align .= '-pb';    // need to be able to fixup alignment for small devices
-		$before = '<div class="clear-post-before" style="clear:both;"></div>';
+		$before = '<div class="clear-post-before clear-both"></div>';
 	}
 
 	$fi_class = 'featured-image fi-' . $who . '-' . $where . ' fi-' . $show . ' ' . $hide . ' ' . $align; // construct fi class
@@ -817,10 +848,22 @@ background-attachment:fixed;-moz-background-size:cover;-o-background-size:cover;
 			else
 				$the_fi = "\n{$before}<a class=\"wvrx-fi-link\" href=\"{$href}\">{$fi_img}</a>{$fi_after}\n";
 
+			/* else if ($who == 'page' ){
+				$link = weaverx_getopt('page_fi_altlink');
+				if ( $link != '' )
+					$href = $link;
+				$the_fi = "\n{$before}<a class=\"wvrx-fi-link\" href=\"{$href}\">{$fi_img}</a>{$fi_after}\n";
+			} else {		// not a page
+				$link = weaverx_getopt('post_fi_altlink');
+				if ( $link != '' )
+					$href = $link;
+					$the_fi = "\n{$before}<a class=\"wvrx-fi-link\" href=\"{$href}\">{$fi_img}</a>{$fi_after}\n";
+			} */
+
 			echo apply_filters('weaverx_fi_link', $the_fi, $before, $href, $fi_img, $who, $fi_after);  // Added 3.1.5; Changed 3.1.11 to add the $fi_after
 
 			if ( $show == 'title-banner' )
-				echo '<div style="clear:both;"></div>';
+				echo '<div class="clear-both;"></div>';
 			return false;
 		}
 	}
@@ -858,7 +901,7 @@ function weaverx_post_div($type = 'content') {
 	$cols = weaverx_getopt('post_cols');
 	if ($cols != '' && $cols != '1')
 		$class = ' cols-' . $cols;
-	echo '    <div class="entry-' . $type . ' clearfix' . $class . '"' . weaverx_schema('entry-' . $type) . '>' . "\n";
+	echo '    <div class="entry-' . $type . ' clearfix' . $class . '"' . weaverx_schema( 'entry-' . $type ) . '>' . "\n";
 }
 
 function weaverx_the_post_full() {
@@ -921,7 +964,7 @@ function weaverx_show_only_title() {
 				|| weaverx_t_get('show') == 'title'
 			  )
 	   ) {
-		echo weaverx_schema( 'mainEntityOfPage');
+		echo weaverx_schema( 'mainEntityOfPage' );
 		echo "\t</article><!-- /#post -->\n";
 		return true;
 	} else if ( ! weaverx_t_get( 'showposts' )
@@ -931,16 +974,16 @@ function weaverx_show_only_title() {
 		) {
 		weaverx_fi( 'post_excerpt', 'title_featured');            // show FI
 		//echo "\t</article><!-- /#post; --><div style='clear:both'></div>\n";
-		echo weaverx_schema( 'mainEntityOfPage');
+		echo weaverx_schema( 'mainEntityOfPage' );
 		echo "\t</article><!-- /#post; -->\n";
 		return true;
 	} elseif ( weaverx_t_get('showposts') && weaverx_t_get('show') == 'title_featured') {
 		weaverx_fi( 'post_excerpt', 'title_featured');            // show FI
-		echo weaverx_schema( 'mainEntityOfPage');
-		echo "\t</article><!-- /#post. --><div style='clear:both'></div>\n";
+		echo weaverx_schema( 'mainEntityOfPage' );
+		echo "\t</article><!-- /#post. --><div class='clear-both'></div>\n";
 		return true;
 	} elseif ( weaverx_t_get('showposts') && (weaverx_t_get('show') == 'title' || weaverx_t_get('show') == 'titlelist')) {
-		echo weaverx_schema( 'mainEntityOfPage');
+		echo weaverx_schema( 'mainEntityOfPage' );
 		echo "\t</article><!-- /#post -->\n";
 		return true;
 	}
@@ -1012,7 +1055,7 @@ function weaverx_end_body() {
 
 function weaverx_author_info() {
 	if ( get_the_author_meta( 'description' ) && !weaverx_getopt('hide_author_bio')) { // If a user has filled out their description, show a bio on their entries ?>
-		<div style="clear:both;"></div>
+		<div class='clear-both'></div>
 		<div id="author-info">
 			<div id="author-description">
 				<div id="author-avatar">

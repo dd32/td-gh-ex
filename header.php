@@ -90,80 +90,109 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 	weaverx_area_div( 'header',  $hdr_class );      // <div id='header'>
 
-	weaverx_inject_area('header');	// inject header HTML
+	/*if ( false && weaverx_getopt('site_layout') == 'fullwidth') {	// put menus outside of inside block for fullwidth layout
+		do_action('weaverx_nav', 'top');                // menus at top
+	}*/
+	echo '<div id="header-inside" class="block-inside">';
 
-	do_action('weaverx_nav', 'top');                // menus at top
+	if ( apply_filters('weaverx_replace_pb_area', 'header') == 'header' ) {
 
-	/* ======== HEADER WIDGET AREA ======== */
-	weaverx_header_widget_area( 'top' );           // show header widget area if set to this position
+		weaverx_inject_area('header');	// inject header HTML
 
+		// if ( true || weaverx_getopt('site_layout') != 'fullwidth' ) {	// put menus outside of inside block for fullwidth layout
+			do_action('weaverx_nav', 'top');                // menus at top
+		// }
 
-	echo '<header id="branding"' . weaverx_schema( 'branding') . ">\n";	// version 3.1.10: removed  role="banner"
-
-	/* ======== SITE LOGO and TITLE ======== */
-
-	$title_over_image = weaverx_logo_and_title();		// see if move title over image
-
-	weaverx_header_widget_area( 'before_header' );           // show header widget area if set to this position
+		/* ======== HEADER WIDGET AREA ======== */
+		weaverx_header_widget_area( 'top' );           // show header widget area if set to this position
 
 
-	/* ======== HEADER IMAGE ======== */
+		echo '<header id="branding"' . weaverx_schema( 'branding' ) . ">\n";	// version 3.1.10: removed  role="banner"
 
-	weaverx_header_image();				// header image or video
+		/* ======== SITE LOGO and TITLE ======== */
 
-	if ($title_over_image)
-		echo '</div><!--/#title-over-image -->' . "\n";
+		$title_over_image = weaverx_logo_and_title();		// see if move title over image
 
-	weaverx_header_widget_area( 'after_header' );           // show header widget area if set to this position
+		weaverx_header_widget_area( 'before_header' );           // show header widget area if set to this position
 
-	/* ======== EXTRA HTML ======== */
 
-	weaverx_header_extra_html();
+		/* ======== HEADER IMAGE ======== */
 
-	weaverx_header_widget_area( 'after_html' );           // show header widget area if set to this position
+		weaverx_header_image();				// header image or video
 
-	do_action('weaverxplus_action','header_area_bottom');
+		if ($title_over_image)
+			echo '</div><!--/#title-over-image -->' . "\n";
 
-	weaverx_clear_both('branding');
+		weaverx_header_widget_area( 'after_header' );           // show header widget area if set to this position
 
-?>
-</header><!-- #branding -->
-<?php
+		/* ======== EXTRA HTML ======== */
 
-	/* ======== BOTTOM MENU ======== */
-	do_action('weaverx_nav', 'bottom');
+		weaverx_header_extra_html();
 
-	weaverx_header_widget_area( 'after_menu' );           // show header widget area if set to this position
+		weaverx_header_widget_area( 'after_html' );           // show header widget area if set to this position
 
-	echo "\n</div><div class='clear-header-end' style='clear:both;'></div><!-- #header -->\n";
+		do_action('weaverxplus_action','header_area_bottom');
+
+		weaverx_clear_both('branding');
+
+	?>
+	</header><!-- #branding -->
+	<?php
+
+		/* ======== BOTTOM MENU ======== */
+		//if ( true || weaverx_getopt('site_layout') != 'fullwidth' ) {	// put menus outside of inside block for fullwidth layout
+			do_action('weaverx_nav', 'bottom');                // menus at bottom
+			weaverx_header_widget_area( 'after_menu' );           // show header widget area if set to this position
+		//}
+
+
+	} // no header area replacement
+
+	/*if ( false && weaverx_getopt('site_layout') == 'fullwidth') {	// put menus outside of inside block for fullwidth layout
+		echo '</div> <!-- #header-inside" -->';
+		do_action('weaverx_nav', 'bottom');                // menus at bottomk outside of header-inside
+		weaverx_header_widget_area( 'after_menu' );
+		echo "\n</div><div class='clear-header-end clear-both'></div><!-- #header -->\n";
+	} else { */
+		echo "\n</div></div><div class='clear-header-end clear-both'></div><!-- #header-inside,#header -->\n";
+	//}
 
 	weaverx_header_widget_area( 'post_header' );
 	do_action('weaverx_post_header');
-
-
-
 
 // ************* DEFINE HEADER RELATED PLUGGABLE FUNCTION *****************
 function weaverx_header_extra_html() {
 
 	// add extra html to header
 
-	$extra = weaverx_getopt('header_html_text');
+	$extra = weaverx_get_per_page_value('_pp_header_html');
+	if ( $extra == '' )
+		$extra = weaverx_getopt('header_html_text');
 
 	$hide = weaverx_getopt_default('header_html_hide', 'hide-none');
 
 	if ( $extra == '' && is_customize_preview() ) {
 		echo '<div id="header-html" style="display:inline;"></div>';		// need the area there for customizer live preview
-	} else if ( $extra != '' && $hide != 'hide' ) {
+	} else if ( $extra != '' && $hide != 'hide' && !weaverx_is_checked_page_opt('_pp_hide_header_html')) {
 		$c_class = weaverx_area_class('header_html', 'not-pad', '-none', 'margin-none' );
 
 		if (weaverx_getopt_expand('expand_header-html')) $c_class .= ' wvrx-expand-full';
 
+		// see if the content is just an int, assume it to be a post id if so.
+		// it seems that if a string has an int in it, the (int) cast will just cast that part, and throw away the rest.
+		// we want an int and only an int, so we double cast to test, and that seems to work
+
+		$post_id = (int) trim($extra);
+
+		if ( (string) $post_id == $extra && $post_id != 0 )	{		// assume a number only is a post id to provide as replacement
+			echo apply_filters('weaverx_page_builder_content', $post_id, 'header-html', $c_class);
+		} else {
 		?>
-		<div id="header-html" class="<?php echo $c_class;?>">
-			<?php echo  do_shortcode($extra) ; ?>
-		</div> <!-- #header-html -->
-	<?php }
+			<div id="header-html" class="<?php echo $c_class;?>">
+				<?php echo  do_shortcode($extra) ; ?>
+			</div> <!-- #header-html -->
+		<?php }
+	}
 }
 //--
 
@@ -194,6 +223,10 @@ function weaverx_header_image() {
 	if (weaverx_getopt('header_image_add_class') != '') {
 		$img_class .= weaverx_getopt('header_image_add_class') . ' ';
 	}
+
+	$full_wide = weaverx_getopt('header_image_align');
+	if ( $full_wide == 'alignfull' || $full_wide == 'alignwide' ) 	// this will override other stuff
+		$img_class .= $full_wide . ' ';
 
 	$page_type = ( is_single() ) ? 'post' : 'page';
 
@@ -374,6 +407,8 @@ function weaverx_logo_and_title() {
 	$wp_logo = weaverx_get_wp_custom_logo();
 	if ( $wp_logo ) {
 		$hide_wp_logo = weaverx_getopt('hide_wp_site_logo');
+		if ( weaverx_is_checked_page_opt( '_pp_hide_customlogo' ))
+			$hide_wp_logo = 'hide';
 		$wp_logo = str_replace('custom-logo-link', 'custom-logo-link ' . $hide_wp_logo, $wp_logo);		// fixup hide
 	}
 
@@ -397,7 +432,7 @@ function weaverx_logo_and_title() {
 		<?php
 		/* ======== SEARCH BOX ======== */
 		$hide_search = weaverx_getopt( 'header_search_hide');
-		if ( $hide_search != 'hide' ) { ?>
+		if ( $hide_search != 'hide' && !weaverx_is_checked_page_opt( '_pp_hide_headersearch') ) { ?>
 			<div id="header-search" class="<?php echo $hide_search; ?>"><?php get_search_form(); ?></div><?php
 		}
 		$hide_tag = weaverx_getopt( 'hide_site_tagline' );
@@ -409,7 +444,9 @@ function weaverx_logo_and_title() {
 		<?php if ( $logo ) { ?>
 		<div id="site-logo" class="site-logo <?php echo $hide_logo; ?>"><?php echo $logo; ?></div>
 		<?php }
-		get_template_part( 'templates/menu', 'header-mini' );
+
+		if ( !weaverx_is_checked_page_opt( '_pp_hide_mini_menu') )	// just don'e emit at all if per page
+			get_template_part( 'templates/menu', 'header-mini' );
 
 	echo "    </div><!-- /.title-tagline -->\n";
 

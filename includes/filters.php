@@ -30,6 +30,9 @@ if (! has_action('weaverx_load_fonts') ) :
 
 function weaverx_load_fonts_action() {
 
+	if ( weaverx_getopt('disable_google_fonts') )
+		return;
+
 	echo "<!-- Weaver Xtreme Standard Google Fonts for page-type: {$GLOBALS['weaverx_page_who']} -->\n";
 	$gf = WEAVERX_GOOGLE_FONTS;
 	if (weaverx_getopt('font_set_cryllic')) {
@@ -45,8 +48,8 @@ function weaverx_load_fonts_action() {
 		$gf = str_replace('&subset=','&subset=vietnamese,', $gf);
 	}
 
-	if ( ! weaverx_getopt('disable_google_fonts'))
-		echo $gf . "\n";
+
+	echo $gf . "\n";
 }
 endif;
 //--
@@ -82,6 +85,73 @@ function weaverx_nav_action($where) {
 }
 endif;
 //--
+
+// =============================== >>> ACTION: weaverx_after_theme_activate <<< ================================
+// remember some things when switching themes
+
+add_action('after_switch_theme','weaverx_after_theme_activate_action');
+
+function weaverx_after_theme_activate_action() {
+	// fires when theme activated
+
+	// restore our last set of saved settings
+	$fix = get_theme_mod('saved_nav_menu_locations' );
+
+	set_theme_mod('nav_menu_locations', $fix);
+}
+
+add_action('switch_theme','weaverx_theme_deactivate_action');
+
+function weaverx_theme_deactivate_action() {
+	// fires when new theme has switched in. Theme settings will be for NEW theme
+	$old_theme = get_option('theme_switched');
+
+	$old = weaverx_get_theme_mod('nav_menu_locations', $old_theme);
+	weaverx_set_theme_mod('saved_nav_menu_locations', $old, $old_theme);
+
+	$old = weaverx_get_theme_mod('sidebars_widgets', $old_theme);
+	weaverx_set_theme_mod('saved_sidebars_widgets', $old, $old_theme);
+
+}
+
+
+function weaverx_get_theme_mods( $theme_slug ) {
+	$mods = get_option( "theme_mods_$theme_slug" );
+	return $mods;
+}
+
+/**
+ * Retrieve theme modification value for the OLD theme.
+ */
+function weaverx_get_theme_mod( $name, $theme) {
+	$mods = weaverx_get_theme_mods($theme);
+
+	if ( isset( $mods[$name] ) ) {
+		/**
+		 * Filters the theme modification, or 'theme_mod', value.
+		 */
+		return apply_filters( "theme_mod_{$name}", $mods[$name] );
+	}
+	return false;
+}
+
+/**
+ * Update theme modification value for the Specified theme.
+ *
+ */
+function weaverx_set_theme_mod( $name, $value, $theme ) {
+	$mods = weaverx_get_theme_mods($theme);
+	$old_value = isset( $mods[ $name ] ) ? $mods[ $name ] : false;
+
+	/**
+	 * Filters the theme mod value on save.
+	 *
+	 */
+	$mods[ $name ] = apply_filters( "pre_set_theme_mod_{$name}", $value, $old_value );
+
+	//**** $theme = get_option( 'stylesheet' );
+	update_option( "theme_mods_$theme", $mods );
+}
 
 
 /*	--------------------------------- CALLBACKS -------------------------------
@@ -148,6 +218,25 @@ function weaverx_page_menu( $args = array() ) {
 
 	$menu .= str_replace( array( "\r", "\n", "\t" ), '', wp_list_pages( $list_args) );
 
+	$site_title = '';
+
+	if ( weaverx_getopt('m_primary_site_title_left') ) {
+
+		$classt = 'site-title-on-menu wvrx-menu-html wvrx-menu-left';
+
+		// font-family
+		$val = weaverx_getopt( 'site_title_font_family' );
+		if ( $val && $val != 'default' ) {
+			$classt .= ' font-' . $val;
+		}
+
+		$classt .= weaverx_get_bold_italic('site_title','bold');
+		$classt .= weaverx_get_bold_italic('site_title','italic');
+
+		$site_title = '<span class="' . $classt . '"><a href="' . get_home_url() . '" alt="Site Home">' . get_bloginfo('name') . '</a></span>';
+	}
+
+
 
 	$left = weaverx_getopt('m_primary_html_left');
 	$right = weaverx_getopt('m_primary_html_right');
@@ -167,7 +256,7 @@ function weaverx_page_menu( $args = array() ) {
 		$left = '<span class="wvrx-menu-html wvrx-menu-left' . $hide .'">' . do_shortcode( $left ) . '</span>';
 	}
 
-	if ( weaverx_getopt('use_smartmenus')  && function_exists('weaverxplus_plugin_installed')) {
+	if ( weaverx_getopt('use_smartmenus') ) {		// Plus option
 		$hamburger = apply_filters('weaverx_mobile_menu_name',weaverx_getopt('m_primary_hamburger'));
 		if ( $hamburger == '' ) {
 			$alt = weaverx_getopt('mobile_alt_label');
@@ -193,9 +282,13 @@ function weaverx_page_menu( $args = array() ) {
 		$right = '<span class="wvrx-menu-html wvrx-menu-right ' . $hide . '"></span>';
 	}
 
+	if ( weaverx_getopt( 'm_primary_search' ) ) {
+		$right  = '<span class="menu-search">&nbsp;' . get_search_form( false ) . '&nbsp;</span>'  . $right;
+	}
+
 	if ( $menu )
-		$menu = $left . $right . '<div class="wvrx-menu-clear"></div><ul class="' . esc_attr( $args['menu_class'] ) . '">'
-		. $menu . '</ul><div class="clear-menu-end" style="clear:both;"></div>';
+		$menu = $left . $site_title . $right . '<div class="wvrx-menu-clear"></div><ul class="' . esc_attr( $args['menu_class'] ) . '">'
+		. $menu . '</ul><div class="clear-menu-end clear-both" ></div>';
 
 	// add the styling classes here
 
@@ -209,9 +302,40 @@ function weaverx_page_menu( $args = array() ) {
 //--
 
 
+// ------ smart menus ------
+
+function weaverx_smartmenu( $menu_id, $menu_opt ) {
+
+
+	$def = "{subIndicatorsText:'',subMenusMinWidth:'1em',subMenusMaxWidth:'25em'}";
+
+	// build jQuery script to invoke menu
+?>
+<script type='text/javascript'>
+jQuery('#<?php echo $menu_id; ?> .weaverx-theme-menu').smartmenus(<?php echo $def; ?>);
+jQuery('#<?php echo $menu_id;?> span.wvrx-menu-button').click(function() {
+var $this=jQuery(this),$menu=jQuery('#<?php echo $menu_id;?> ul');
+if (!$this.hasClass('collapsed')) {$menu.addClass('collapsed');$this.addClass('collapsed mobile-menu-closed');$this.removeClass('mobile-menu-open');}
+else {$menu.removeClass('collapsed');$this.removeClass('collapsed mobile-menu-closed');$this.addClass('mobile-menu-open');}
+return false;}).click();</script><?php
+}
+
 /*	--------------------------------- FILTERS -------------------------------
  *
  */
+
+add_filter('weaverx_menu_class','weaverx_menu_class_filter_theme',10,3);
+
+function weaverx_menu_class_filter_theme($class, $menu) {
+	$use_smart = weaverx_getopt('use_smartmenus') && !function_exists('weaverxplus_plugin_installed'); // plus filter not available, use ours
+	if ($use_smart) {
+		$menu_class = 'weaverx-theme-menu sm wvrx-menu collapsed';
+		if (is_rtl())
+			$menu_class .= ' sm-rtl';
+		return $menu_class;
+	}
+	return $class;
+}
 
 // =============================== >>> FILTER: weaverx_get_custom_logo <<< ================================
 
@@ -227,10 +351,12 @@ function weaverx_get_custom_logo( $html, $notused ) {
 
 add_filter( 'body_class', 'weaverx_body_classes' );
 
-function weaverx_body_classes( $classes ) {
-/**
- * Add classes to body depending of page type to make sidebar templates work.
+/*
+ * Add classes to body depending of page type to make sidebar templates work and full widths work.
+ *
  */
+function weaverx_body_classes( $classes ) {
+
 	$pwp = in_array('page-template-paget-posts-php',$classes);
 	$has_posts = false;
 
@@ -249,7 +375,7 @@ function weaverx_body_classes( $classes ) {
 	if (!is_user_logged_in())
 		$classes[] = 'not-logged-in';
 
-		// Add a class if there is a custom header.
+	// these classes get removed by JS at runtime
 
 	$classes[] = 'weaverx-theme-body wvrx-not-safari is-menu-desktop is-menu-default';		// Changed 3.1.11 to handle Safari extended width bug
 
@@ -257,6 +383,10 @@ function weaverx_body_classes( $classes ) {
 		$classes[] = weaverx_get_per_post_value('_pp_bodyclass');
 	elseif ( weaverx_get_per_page_value('_pp_bodyclass') != '' )	// add body class per page
 		$classes[] = weaverx_get_per_page_value('_pp_bodyclass');
+
+	$wide = weaverx_getopt( 'site_layout' );
+	if ( $wide )
+		$classes[] = "wvrx-wide-{$wide}";
 
 	if ( isset( $GLOBALS['weaverx_page_who'] ) && isset( $GLOBALS['weaverx_page_is_archive'] ) ) { // Changed: 3.1.10 - check if archive is set
 		if ( $GLOBALS['weaverx_page_is_archive'] ) {
@@ -270,6 +400,9 @@ function weaverx_body_classes( $classes ) {
 		$classes[] = 'weaverx-page-' . $GLOBALS['weaverx_page_who'];
 		$GLOBALS['weaverx_sb_layout'] = $sb_layout;
 		$classes[] = 'weaverx-sb-' . $sb_layout;
+		if ( $sb_layout != 'one-column' ) {
+			$classes[] = 'weaverx-has-sb';
+		}
 		if ( $has_posts || $GLOBALS['weaverx_page_who'] == 'single' || $GLOBALS['weaverx_page_who'] == 'blog')
 			$classes[] = 'has-posts';
 	}
@@ -399,248 +532,88 @@ function weaverx_has_header_video() {
 
 
 // =============================== >>> FILTER: weaverx_mce_css <<< ================================
-add_filter('mce_css','weaverx_mce_css');
+add_filter('mce_css','weaverx_mce_css_filter');
 
 /* route tinyMCE to our stylesheet */
-function weaverx_mce_css($default_style) {
+function weaverx_mce_css_filter( $default_style ) {
+
 	/* replace the default editor-style.css with custom CSS generated on the fly by the php version */
 	if (weaverx_getopt('_hide_editor_style'))
 		return $default_style;
-	$style_file = apply_filters( 'weaverx_mce_css', $default_style); // theme support plugin builds a css file
+	$style_file = apply_filters( 'weaverx_mce_css', $default_style ); // theme support plugin builds a css file
 	if ( $style_file != $default_style )
 		return $style_file;
 
-	$mce_css_file = trailingslashit(get_template_directory()) . 'editor-style-css.php';
-	$mce_css_dir = trailingslashit(get_template_directory_uri()) . 'editor-style-css.php';
-	if (!@file_exists($mce_css_file)) {	// see if it is there
-		return $default_style;
-	}
+	//$mce_css_file = trailingslashit(get_template_directory()) . 'editor-style-css.php';
+	//$mce_css_dir = trailingslashit(get_template_directory_uri()) . 'editor-style-css.php';
+	//if (!@file_exists($mce_css_file)) {	// see if it is there
+	//	return $default_style;
+	//}
+
+	return $default_style;
 
 	/* do we need to do anything about rtl? */
-
-	/* if we have a custom style file, return that instead of the default */
-	// Build the overrides
-	$put = '?mce=1';	// cheap way to start with ?
-
-	if ( ( $twidth = weaverx_getopt_default( 'theme_width_int', WEAVERX_THEME_WIDTH ) ) ) {
-	/*  figure out a good width - we will please most of the users, most of the time
-		We're going to assume that mostly people will use the default layout -
-		we can't actually tell if the editor will be for a page or a post at this point.
-		And let's just assume the default sidebar widths.
-	*/
-		$sb_layout = weaverx_getopt_default('layout_default', 'right');
-		switch ( $sb_layout ) {
-			case 'left':
-			case 'left-top':
-				$sb_width = weaverx_getopt_default( 'left_sb_width_int', 25 );
-				break;
-			case 'split':
-			case 'split-top':
-				$sb_width = weaverx_getopt_default( 'left_split_sb_width_int', 25 )
-							+ weaverx_getopt_default( 'right_split_sb_width_int', 25 );
-				break;
-			case 'one-column':
-				$sb_width = 0;
-				break;
-			default:            // right
-				$sb_width = weaverx_getopt_default( 'right_sb_width_int', 25 );
-				break;
-		}
-
-		$content_w = $twidth - ( $twidth * (float)( $sb_width / 95.0 ) );   // .95 by trial and error
-
-		//  calculate theme width based on default layout and width of sidebars.
-
-		$put .= '&twidth=' . urlencode( $content_w );
-
-	}
-
-	//if (($val = weaverx_getopt('site_fontsize_int')))	// base font size
-	//	$put .= '&fontsize=' . urlencode($val);
-	if (($base_font_px = weaverx_getopt('site_fontsize_int')) == '' )
-		$base_font_px = 16;
-	$base_font_px = (float)$base_font_px;
-	$font_size = 'default';
-
-	if (!is_page() && ($area_font = weaverx_getopt_default('post_font_size','default')) != 'default' )
-		$font_size = $area_font;
-	else if (($area_font = weaverx_getopt_default('content_font_size','default')) != 'default' )
-		$font_size = $area_font;
-	else if (($area_font = weaverx_getopt_default('container_font_size','default')) != 'default' )
-		$font_size = $area_font;
-	else if (($area_font = weaverx_getopt_default('wrapper_font_size','default')) != 'default' )
-		$font_size = $area_font;
-
-	switch ( $font_size ) {		// find conversion factor
-		case 'xxs-font-size':
-			$h_fontmult = 0.625;
-			break;
-		case 'xs-font-size':
-			$h_fontmult = 0.75;
-			break;
-		case 's-font-size':
-			$h_fontmult = 0.875;
-			break;
-		case 'l-font-size':
-			$h_fontmult = 1.125;
-			break;
-		case 'xl-font-size':
-			$h_fontmult = 1.25;
-			break;
-		case 'xxl-font-size':
-			$h_fontmult = 1.5;
-			break;
-		default:
-			$h_fontmult = 1;
-			break;
-	}
-
-	$em_font_size = ( $base_font_px / 16.0) * $h_fontmult ;
-	$put .= '&fontsize=' . ($em_font_size);
-
-
-
-	$val = weaverx_getopt_default('content_font_family', 'inherit');
-	if ( $val == 'inherit' )
-		$val = weaverx_getopt_default('container_font_family', 'inherit' );
-	if ( $val == 'inherit' )
-		$val = weaverx_getopt('wrapper_font_family');
-	if ( $val != 'inherit' ) {    	// found a font {
-		// these are not translatable - the values are used to define the actual font definition
-
-		$fonts = array(
-			'sans-serif' => 'Arial,sans-serif',
-			'arialBlack' => '"Arial Black",sans-serif',
-			'arialNarrow' => '"Arial Narrow",sans-serif',
-			'lucidaSans' => '"Lucida Sans",sans-serif',
-			'trebuchetMS' => '"Trebuchet MS", "Lucida Grande",sans-serif',
-			'verdana' => 'Verdana, Geneva,sans-serif',
-			'alegreya-sans' => "'Alegreya Sans', sans-serif",
-			'roboto' => "'Roboto', sans-serif",
-			'roboto-condensed' => "'Roboto Condensed', sans-serif",
-			'source-sans-pro' => "'Source Sans Pro', sans-serif",
-
-
-			'serif' => 'TimesNewRoman, "Times New Roman",serif',
-			'cambria' => 'Cambria,serif',
-			'garamond' => 'Garamond,serif',
-			'georgia' => 'Georgia,serif',
-			'lucidaBright' => '"Lucida Bright",serif',
-			'palatino' => '"Palatino Linotype",Palatino,serif',
-			'alegreya' => "'Alegreya', serif",
-			'roboto-slab' => "'Roboto Slab', serif",
-			'source-serif-pro' => "'Source Serif Pro', serif",
-
-			'monospace' => '"Courier New",Courier,monospace',
-			'consolas' => 'Consolas,monospace',
-			'inconsolata' => "'Inconsolata', monospace",
-			'roboto-mono' => "'Roboto Mono', sans-serif",
-
-			'papyrus' => 'Papyrus,cursive,serif',
-			'comicSans' => '"Comic Sans MS",cursive,serif',
-			'handlee' => "'Handlee', cursive",
-
-			'open-sans' => "'Open Sans', sans-serif",
-			'open-sans-condensed' => "'Open Sans Condensed', sans-serif",
-			'droid-sans' => "'Droid Sans', sans-serif",
-			'droid-serif' => "'Droid Serif', serif",
-			'exo-2' => "'Exo 2', sans-serif",
-			'lato' => "'Lato', sans-serif",
-			'lora' => "'Lora', serif",
-			'arvo' => "'Arvo', serif",
-			'archivo-black' => "'Archivo Black', sans-serif",
-			'vollkorn' => "'Vollkorn', serif",
-			'ultra' => "'Ultra', serif",
-			'arimo' => "'Arimo', serif",
-			'tinos' => "'Tinos', serif"
-			);
-
-		if ( isset($fonts[$val]) ) {
-			$font = $fonts[$val];
-		} else {
-			$font = "Arial,'Helvetica Neue',Helvetica,sans-serif";   // fallback
-			// scan Google Fonts
-			$gfonts = weaverx_getopt_array('fonts_added');
-			if ( !empty($gfonts) ) {
-				foreach ($gfonts as $gfont) {
-					$slug = sanitize_title($gfont['name']);
-					if ( $slug == $val ) {
-						$font = str_replace('font-family:','',$gfont['family']);//'Papyrus';
-						break;
-					}
-				}
-			}
-		}
-		$put .= '&fontfamily=' . urlencode($font);
-	}
-
-	/* need to handle bg color of content area - need to do the cascade yourself */
-
-	if ( ($val = weaverx_getopt_default('editor_bgcolor','transparent')) && strcasecmp($val,'transparent') != 0) {	        /* alt bg color */
-		$put .= '&bg=' . urlencode($val);
-	} else if ( ($val = weaverx_getopt_default('content_bgcolor','transparent')) && strcasecmp($val,'transparent') != 0) {	/* #content */
-		$put .= '&bg=' . urlencode($val);
-	} else if ( ($val = weaverx_getopt_default('container_bgcolor','transparent') ) && strcasecmp($val,'transparent') != 0) { /* #container */
-		$put .= '&bg=' . urlencode($val);
-	} else if (($val = weaverx_getopt_default('wrapper_bgcolor','transparent')) && strcasecmp($val,'transparent') != 0) {    /* #wrapper */
-		$put .= '&bg=' . urlencode($val);
-	} else if (($val = weaverx_getopt_default('body_bgcolor','transparent')) && strcasecmp($val,'transparent') != 0) {    /* Outside BG */
-		$put .= '&bg=' . urlencode($val);
-	} else if (($name = weaverx_getopt('themename')) && strpos($name,'Transparent Dark') !== false) {	// fix in V3.0.5
-		$put .= '&bg=' . urlencode('#222');
-	} else if (($name = weaverx_getopt('themename')) && strpos($name,'Transparent Light') !== false) {
-		$put .= '&bg=' . urlencode('#ccc');
-	}
-
-
-	if (($val = weaverx_getopt('content_color')) ) {	        // text color
-		$put .= '&textcolor=' . urlencode($val);
-	} elseif (($val = weaverx_getopt('container_color')) ) {	// text color
-		$put .= '&textcolor=' . urlencode($val);
-	} elseif (($val = weaverx_getopt('wrapper_color')) ) {	    // text color
-		$put .= '&textcolor=' . urlencode($val);
-	}
-
-	if (($val = weaverx_getopt('input_bgcolor')) ) {	// input area
-		$put .= '&inbg=' . urlencode($val);
-	}
-	if (($val = weaverx_getopt('input_color')) ) {
-		$put .= '&incolor=' . urlencode($val);
-	}
-
-	if (($val = weaverx_getopt('contentlink_color')) ) {	// link
-		$put .= '&a=' . urlencode($val);
-	}
-	if (($val = weaverx_getopt('contentlink_hover_color')) ) {
-		$put .= '&ahover=' . urlencode($val);
-	}
-
-	if (($val = weaverx_getopt('weaverx_tables')) ) {	// table type
-		$put .= '&table=' . urlencode($val);
-	}
-
-	if (($val = weaverx_getopt('contentlist_bullet')) ) {	// list bullet
-		$put .= '&list=' . urlencode($val);
-	}
-
-	// images
-	if (($val = weaverx_getopt('caption_color')) ) {	// image caption, border color, width
-		$put .= '&imgcapt=' . urlencode($val);
-	}
-	if (($val = weaverx_getopt('media_lib_border_color')) ) {
-		$put .= '&imgbcolor=' . urlencode($val);
-	}
-	if (($val = weaverx_getopt('media_lib_border_int')) ) {
-		$put .= '&imgbwide=' . urlencode($val);
-	}
-
-	return $default_style . ',' . $mce_css_dir . $put;
+	/* on-the-fly CSS removed Version 4.0 */
 }
 //--
+
+// =============================== >>> ACTION: weaverx_enqueue_gutenberg_style <<< ================================
+
+/**
+ * Action:	Enqueue style sheets and fonts for Gutenberg Editor only.
+ *
+ * @since 4.0
+ *
+ */
+function weaverx_enqueue_gutenberg_block_editor_assets() {
+	// add our element styles to gutenberg. enqueues for editor only
+
+	/* replace the default editor-style.css with custom CSS generated on the fly by the php version */
+	if (weaverx_getopt('_hide_editor_style'))
+		return;
+
+	$style_file = get_template_directory_uri() . '/assets/css/gutenberg-blocks'.WEAVERX_MINIFY.'.css';
+	wp_enqueue_style( 'weaverx_gutenberg_block', $style_file, array(),WEAVERX_VERSION );
+
+	$editor_file = get_template_directory_uri() . '/assets/css/gutenberg-base-editor-style'.WEAVERX_MINIFY.'.css';
+
+	// enqueue style file
+	wp_enqueue_style( 'weaverx_gutenberg_fonts', WEAVERX_GOOGLE_FONTS_URL);	// load the Google Fonts the theme uses so they are avilable to the editor
+	wp_enqueue_style( 'weaverx_gutenberg_base_style', $editor_file, array(), WEAVERX_VERSION);
+
+	$updir = wp_upload_dir();
+
+	$css_file = trailingslashit($updir['basedir']) . 'weaverx-subthemes/gutenberg-editor-style-wvrx.css';	// generated CSS files won't be minified
+
+	$css_path = trailingslashit($updir['baseurl']) . 'weaverx-subthemes/gutenberg-editor-style-wvrx.css';
+
+	if ( weaverx_f_exists( $css_file ) ) {	// add dynamically generated editor CSS if the file exists
+		$path = str_replace(array('http:','https:'),  '', $css_path);		// strip the http: if there, just use the //
+		wp_enqueue_style( 'weaverx_gutenberg_wvrx_style', $css_path, array(), WEAVERX_VERSION);	// fixup CSS for current theme settings
+	}
+}
+
+add_action( 'enqueue_block_editor_assets', 'weaverx_enqueue_gutenberg_block_editor_assets' );	// Gutenberg invokes this action
+
+/**
+ * Action:	Enqueue style sheets for Gutenberg Editor and Front end.
+ *
+ * @since 4.0
+ *
+ */
+function weaverx_enqueue_gutenberg_block_assets() {
+	// enqueue for BOTH editor and front-end
+	$style_file = get_template_directory_uri() . '/assets/css/gutenberg-blocks'.WEAVERX_MINIFY.'.css';
+	wp_enqueue_style( 'weaverx_gutenberg_block', $style_file, array(),WEAVERX_VERSION );
+}
+
+add_action( 'enqueue_block_assets', 'weaverx_enqueue_gutenberg_block_assets' );				// Gutenberg invokes this action
 
 
 // =============================== >>> FILTER: weaverx_replace_widget_area <<< ================================
 add_filter('weaverx_replace_widget_area', 'weaverx_replace_widget_area_filter');
+
+
 
 function weaverx_replace_widget_area_filter( $area_name ) {
 	// If a replacement widget area has been specified, then use it instead.
@@ -690,4 +663,138 @@ function weaverx_xtra_type_filter( $type ) {
 }
 //--
 
+// =======================================>>> PAGE BUILDERS <<<==============================================
+
+// Page Builder Filters - used to filter stuff for the header
+
+// apply_filters('weaverx_replace_footer_area', 'keep_footer') == 'keep_footer' )
+//			echo apply_filters('weaverx_page_builder_content', $post_id, 'footer-html', $c_class);
+
+
+function weaverx_page_builder_content_filter( $post_id, $where = 'pb-content', $class = '' ) {
+	//	return sprintf(__('<h3>Oops! Post ID does not exist...: %s</h3>', 'weaver-xtreme'), $post_id);
+
+	$post_id = (int) $post_id;
+
+	if (! is_string( get_post_status( $post_id ) ) ) {
+		return sprintf(__('<h3>Oops! Post ID does not exist: %s</h3>', 'weaver-xtreme'), $post_id);
+	}
+	$out = '';
+
+	// this code is independent of page builder - will display correctly becaus using the_content
+
+	$id = ($where) ? " id='{$where}'" : '';
+
+	$out .= "<div {$id} class=pb-content-{$where} {$class} {$where}'>\n";
+
+	// okay, gotta fetch the_post for this post so that it will be properly intercepted by the page builder
+	$args = array(
+		'p'         => $post_id, // ID of a page, post, or custom type
+		'post_type' => 'any'
+	);
+
+	$use_posts = new WP_Query($args);
+	while ( $use_posts->have_posts() ) {
+		$use_posts->the_post();
+
+		$out .= '<div id="post-' . $post_id . '" class="' . join( ' ', get_post_class('content-page-builder')) . '">';
+		$out .= apply_filters('the_content', get_the_content());
+		$out .= "</div>\n";
+	}
+	wp_reset_query();		// undo our WP_Query
+	wp_reset_postdata();
+	$out .= "</div> <!-- #{$where}: {$post_id} -->\n";
+
+
+	return $out;
+
+	/* if ( $postid ) {
+		$extra =  '<div style="margin:0; padding:0">' . get_post_field('post_content', $postid) . '</span>';
+		$c_class .= ' wvrx-header-html-has-post';
+	} */
+
+}
+add_filter('weaverx_page_builder_content', 'weaverx_page_builder_content_filter', 10, 3);
+
+function weaverx_replace_pb_area_filter( $area ) {
+	//if have echoed content successfully, otherwise, return $area
+	//return $area;		// default - no replacement
+
+	$use_id = weaverx_area_replacement_id( $area );
+	if ( $use_id == 'none' )				// no replacement area defined
+		return $area;
+
+	$before = '';
+	$after = '';
+	if ( $area == 'header' ) {
+		$before = '<header id="branding" ' .  weaverx_schema( 'branding' ) . ' class=" ' . $area . '">';
+		$after = "</header> <!-- /#branding -->\n";
+	}
+
+	switch ( $area ) {
+		case 'header':
+
+			$title =  apply_filters('weaverx_site_title', esc_html(get_bloginfo( 'name', 'display' ) ) );
+
+			$before .= "<h1 id='site-title' class='hide'>{$title}</h1>";
+
+			$hide_menus = false;
+			if (weaverx_get_per_page_value('_pp_pb_header_hide_menus') == 'show')
+				$hide_menus = false;
+			else if ( weaverx_get_per_page_value('_pp_pb_header_hide_menus') == 'hide' || weaverx_getopt( 'pb_header_hide_menus' ) )
+				$hide_menus = true;
+
+			if ( ! $hide_menus )
+				do_action('weaverx_nav', 'top');		// ======== TOP MENU
+			echo $before;
+			echo weaverx_page_builder_content_filter($use_id, $area );
+			echo $after;
+
+			if ( ! $hide_menus )
+				do_action('weaverx_nav', 'bottom');		// ======== BOTTOM MENU
+
+			break;
+
+		case 'footer':
+			echo $before;
+			echo weaverx_page_builder_content_filter($use_id, $area );
+			echo $after;
+
+			break;
+
+		default:
+			return $area;		// return name in if not legal
+	}
+
+	return 'displayed';			// different than $area in
+
+}
+
+add_filter('weaverx_replace_pb_area', 'weaverx_replace_pb_area_filter');
+
+function weaverx_area_replacement_id ( $area ) {
+	// build a value for a pabe builder header/footer replacement page/post
+	// per page first...
+	// 'pb_header_replace_page_id' and 'pb_footer_replace_page_id' have 1st priority
+	// 'elementor_header_replacement' and 'elementor_footer_replacement' are 2nd
+	// 'siteorigin_header_replacement' and 'siteorigin_footer_replacement' are 3rd
+	// return 'none' if none are set
+
+	$use_id = weaverx_get_per_page_value( "_pp_pb_{$area}_replace_page_id" );
+	if ( !$use_id || $use_id == 'none')
+		$use_id = weaverx_get_per_page_value( "_pp_elementor_{$area}_replacement" );
+	if ( !$use_id || $use_id == 'none')
+		$use_id = weaverx_get_per_page_value( "_pp_siteorigin_{$area}_replacement" );
+
+	if ( !$use_id || $use_id == 'none')
+		$use_id = weaverx_getopt( "pb_{$area}_replace_page_id" );
+	if ( !$use_id || $use_id == 'none')
+		$use_id = weaverx_getopt( "elementor_{$area}_replacement" );
+	if ( !$use_id || $use_id == 'none')
+		$use_id = weaverx_getopt( "siteorigin_{$area}_replacement" );
+
+	if ( !$use_id || $use_id == 'none')
+		return 'none';
+	return $use_id;
+}
 ?>

@@ -29,7 +29,7 @@ function weaverx_customizer_loaded_action() {
 
 function weaverx_add_customizer_content( $wp_customize ) {
 
-	// Failsafe is safe
+	// Fail safe is safe
 	if ( ! isset( $wp_customize ) ) {
 		return;
 	}
@@ -38,9 +38,9 @@ function weaverx_add_customizer_content( $wp_customize ) {
 
 	$path = trailingslashit( get_template_directory() ) . 'admin/customizer/';
 
-	// Inlcude the Alpha Color Picker control file.
+	// Include the Alpha Color Picker control file.
 	require_once( $path . 'alpha-color-picker/alpha-color-picker.php' );
-	require_once( $path . 'save-restore/save-restore.php' );
+	require_once( $path . 'save-restore/customizer-save-restore.php' );
 	require_once( $path . 'lib-controls.php' );
 
 
@@ -56,6 +56,13 @@ function weaverx_add_customizer_content( $wp_customize ) {
 add_action( 'customize_register', 'weaverx_cz_customize_order', 20 );
 
 function weaverx_cz_customize_order($wp_customize) {
+
+	// Re-prioritize and rename the site identity panel
+	//$section_id = 'title_tagline';
+	//$section = $wp_customize->get_section( $section_id );
+
+	// Set Site Title & Tagline section priority
+	//$section->priority = 10250;
 
 	// Re-prioritize and rename the Widgets panel
 	if ( ! isset( $wp_customize->get_panel( 'widgets' )->priority ) )
@@ -73,8 +80,9 @@ function weaverx_cz_customize_order($wp_customize) {
 
 	// Move and rename Background Color control to Global section of Color panel
 	$wp_customize->get_control( 'background_color' )->section =  'weaverx_color-wrapping';
+	$wp_customize->get_control( 'background_color' )->priority =  10799;
 	$wp_customize->get_control( 'background_color' )->label = __( 'Site Background Color - WP Value', 'weaver-xtreme' );
-	$wp_customize->get_control( 'background_color' )->description = __('WordPress default Site BG color. Weaver Xtreme Theme version option below is the preferred value to use.', 'weaver-xtreme');
+	$wp_customize->get_control( 'background_color' )->description = __('WordPress default Site BG color. This is a legacy option value, and is NOT RECOMMENDED. Please use the Weaver Xtreme Theme Site Background Color on the Layout &rarr; Core Site Layout and Styling menu.', 'weaver-xtreme');
 
 }
 
@@ -90,7 +98,7 @@ function weaverx_customize_preview_js() {
 	weaverx_check_support_plugin_version();
 
 	if ( weaverx_options_level() < 1) {		// show if not set
-		weaverx_alert(__('Thank you for using Weaver Xtreme Version 3!\r\n\r\n        IMPORTANT NOTE  -- New Theme Feature\r\n\r\nThis theme now has 3 Customizer Option Interface Levels: Beginner, Intermediate, and Advanced.   If you are just getting started, using the Beginner Level can simplify the learning curve.\r\n\r\nAfter the Customizer loads, please open the **General Options / Admin** panel, and then the **Set Options Interface Level** panel, and select an Interface Level.\r\n\r\nThis message will continue to be displayed until you select a level.', 'weaver-xtreme'));
+		weaverx_alert(__('Thank you for using Weaver Xtreme 4!\r\n\r\n        IMPORTANT NOTE  -- New Theme Feature\r\n\r\nThis theme has 3 Customizer Option Interface Levels: Basic, Standard, and Full.        If you are just getting started, using the Basic Level can simplify the learning curve.\r\n\r\nAfter the Customizer loads, please open the **General Options / Admin** panel, and then the **Set Options Interface Level** panel, and select an Interface Level.\r\n\r\nThis message will continue to be displayed until you select a level.', 'weaver-xtreme'));
 	}
 
 }
@@ -298,7 +306,7 @@ function weaverx_customizer_get_panels() {
 				'description'    => __( "Specify visibility - hide various elements on various devices (desktop, tablets, phones)." , 'weaver-xtreme' )  ),
 
 		'site-colors'      	=> array( 'title' => __( 'Colors', 'weaver-xtreme' ), 'priority' => 10700,
-				'description'    => __( "Specify all colors used on site - both text and backgroud colors. <strong>TIP:</strong> Clicking <em>Default</em> on the color picker will restore the original color set when you loaded the Customizer." , 'weaver-xtreme' )),
+				'description'    => __( "Specify all colors used on site - both text and background colors. <strong>TIP:</strong> Clicking <em>Default</em> on the color picker will restore the original color set when you loaded the Customizer." , 'weaver-xtreme' )),
 
 		'spacing'       	 	=> array( 'title' => __( 'Spacing, Widths, Alignment', 'weaver-xtreme' ), 'priority' => 10800,
 				'description'    => __( "Set margins, padding, spacing, heights, and widths." , 'weaver-xtreme' ) ),
@@ -314,7 +322,10 @@ function weaverx_customizer_get_panels() {
 		'custom'			=> array( 'title' => __( 'Custom CSS', 'weaver-xtreme' ), 'priority' => 11100,
 				'description'    => __( 'Define Custom CSS rules for whole site or specific areas. Add HTML to several "injection areas" - useful for ads or custom third party scripts. <em>Weaver Xtreme Plus</em> also allows you to define PHP code for WP filters or actions.' , 'weaver-xtreme' )  ),
 
-		// ultimate want to add per page/post options here, but can't do it beause can't get current page or post ID to make controls selectively
+		'page-builder'		=> array( 'title' => __( 'Page Builders', 'weaver-xtreme' ), 'priority' => 11200,
+				'description'    => __( 'Options for integration with Page Builders.' , 'weaver-xtreme' )  ),
+
+		// ultimate want to add per page/post options here, but can't do it because can't get current page or post ID to make controls selectively
 		// display, or in fact access the custom options on a per page/post basis.
 
 		//'per_page' => apply_filters('weaverx_add_per_page_customizer',array()),
@@ -365,18 +376,22 @@ if ( ! function_exists( 'weaverx_customizer_get_sections' ) ) :
  * @return array    The master array of Customizer sections
  */
 function weaverx_customizer_get_sections() {
-	/**
-	 * Filter the array of section definitions for the Customizer.
-	 *
-	 * This filter is used to compile a master array of section definitions for each
-	 * panel in the Customizer.
-	 *
-	 * @since 1.3.0.
-	 *
-	 * @param array    $sections    The array of section definitions.
-	 */
-	$sections = apply_filters( 'weaverx_customizer_sections', array() );
-	return $sections;
+	// Add all the section definitions
+	$pb = weaverx_customizer_define_pagebuilder_sections();
+	$content = weaverx_customizer_define_content_sections();	// get array for each section
+	$custom = weaverx_customizer_define_custom_sections();
+	$general = weaverx_customizer_define_general_sections();
+	$image = weaverx_customizer_define_image_sections();
+	$layout = weaverx_customizer_define_layout_sections();
+	$colorscheme = weaverx_customizer_define_colorscheme_sections();
+	$spacing = weaverx_customizer_define_spacing_sections();
+	$starting = weaverx_customizer_define_starting_sections();
+	$style = weaverx_customizer_define_style_sections();
+	$typography = weaverx_customizer_define_typography_sections();
+	$visibility = weaverx_customizer_define_visibility_sections();
+
+
+	return array_merge($pb, $content, $custom, $general, $image, $layout, $colorscheme, $spacing, $starting, $style, $typography, $visibility ); // merge the arrays
 }
 endif;
 
@@ -447,7 +462,7 @@ endif;
 
 function weaverx_cz_settings_name($id) {
 
-	$theme_opts = 'weaverx_settings'; //apply_filters('weaverx_options','weaverx_settingszzz');
+	$theme_opts = WEAVER_SETTINGS_NAME; //apply_filters('weaverx_options','weaverx_settingszzz');
 	return $theme_opts . '['. $id . ']';
 
 	//return $id;
@@ -466,7 +481,7 @@ function weaverx_customizer_add_section_options( $section, $args, $initial_prior
 	foreach ( $args as $setting_id => $option ) {
 		if ( isset( $option['setting'] ) ) {
 			$defaults = array(
-				'type'                 => 'option', // 'option', // 'theme_mod',  //
+				'type'                 => WEAVER_CUSTOMIZER_TYPE,		//'option' or 'theme_mod'
 				'capability'           => 'edit_theme_options',
 				'theme_supports'       => '',
 				'default'              => false,
@@ -608,7 +623,8 @@ function weaverx_cz_cache_opts() {
 	if (!isset($GLOBALS['weaverx_cz_cache']))
 		$GLOBALS['weaverx_cz_cache'] = array();
 
-	$opts = get_option('weaverx_settings' ,array());
+	$opt_func = WEAVER_GET_OPTION;
+	$opts = $opt_func(WEAVER_SETTINGS_NAME ,array());
 
 	if (!isset($opts['themename'])) {
 		$opts = weaverx_cz_getdefaults();

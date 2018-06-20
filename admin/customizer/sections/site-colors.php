@@ -8,7 +8,7 @@ if ( ! function_exists( 'weaverx_customizer_define_colorscheme_sections' ) ) :
  */
 
 
-function weaverx_customizer_define_colorscheme_sections( $sections ) {
+function weaverx_customizer_define_colorscheme_sections( ) {
 	$panel = 'weaverx_site-colors';
 	$colorscheme_sections = array();
 
@@ -21,10 +21,7 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 		'description' => 'Set colors. Use Typography to set fonts.',
 		'options' => array(
 
-			'body_bgcolor'   => weaverx_cz_coloropt('body_bgcolor',
-				__( 'Site Background Color - Theme Value', 'weaver-xtreme' ),
-				__('Background color that wraps entire page.', 'weaver-xtreme')),
-
+			'body_bgcolor_moved' => weaverx_cz_text( __('<strong>Site Background Color - Theme Value</strong>. This option is now found on the "Layout &rarr; Core Site Layout and Styling" menu.', 'weaver-xtreme')),
 
 			'fadebody_bg'=> array(
 				'setting' => array(
@@ -36,9 +33,7 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 				),
 			),
 
-			'wrapper_color' => weaverx_cz_coloropt('wrapper_color',
-				__( 'Wrapper Text Color', 'weaver-xtreme' ),
-				__('<strong>Global Text Color</strong> - To override, set colors for individual areas and items.', 'weaver-xtreme') ),
+			'body_bgcolor_moved' => weaverx_cz_text( __('<strong>Wrapper Text Color</strong>. This option is now found on the "Layout &rarr; Core Site Layout and Styling" menu.', 'weaver-xtreme')),
 
 
 			'wrapper_bgcolor' => weaverx_cz_coloropt('wrapper_bgcolor',
@@ -79,14 +74,20 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 
 			'link_color' => weaverx_cz_coloropt('link_color',
 				__( 'Standard Links', 'weaver-xtreme' ),
-				__('Default color for links. To override for links in specific areas, set colors for individual links below.', 'weaver-xtreme'), 'refresh' ),
+				__('Sitewide default color for links. To override for links in specific areas, set colors for individual links below.', 'weaver-xtreme'), 'refresh' ),
 
 
 			'link_hover_color' => weaverx_cz_coloropt('link_hover_color',
 				__('Standard Link Hover Color', 'weaver-xtreme'),
 				'', 'refresh' ),
+			'link-color-full-msg' => weaverx_cz_html('',
+				__('Full interface level supports setting link colors for different areas and items.', 'weaver-xtreme')),
+		),
+	);
 
+	if (  weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
 
+		$level = array(
 			// info bar
 			'color-info-line-1' => array(
 				'control' => array(
@@ -163,9 +164,9 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 			'footerlink_hover_color' => weaverx_cz_coloropt('footerlink_hover_color',
 				__('Footer Links Hover Color', 'weaver-xtreme'),
 				'', 'refresh' ),
-
-		),
-	);
+		);
+		$colorscheme_sections['color-links']['options'] = array_merge($colorscheme_sections['color-links']['options'],$level);
+	}
 
 
 
@@ -177,15 +178,13 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 		'title'   => __( 'Header Area', 'weaver-xtreme' ),
 		'options' => array(
 
+
 			'header_color' => weaverx_cz_coloropt('header_color',
 				__('Header Text Color', 'weaver-xtreme'),
 				'' ),
 
-			'header_bgcolor' => weaverx_cz_coloropt('header_bgcolor',
-				__('Header BG Color', 'weaver-xtreme'),
-				'' ),
+			'header_bgcolor_moved' => weaverx_cz_text( __('<strong>Header BG Color</strong>. This option is now found on the "Layout &rarr; Core Site Layout and Styling" menu.', 'weaver-xtreme')),
 
-			'hdrarea-cline1' => weaverx_cz_line(),
 
 			'site_title_color' => weaverx_cz_coloropt('site_title_color',
 				__('Site Title Text Color', 'weaver-xtreme'),
@@ -203,6 +202,11 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 				__('Site Tagline BG Color', 'weaver-xtreme'),
 				'' ),
 
+			),
+		);
+
+		if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
+			$level = array(
 			'title_tagline_bgcolor' => weaverx_cz_coloropt('title_tagline_bgcolor',
 				__('Title/Tagline Area BG', 'weaver-xtreme'),
 				__('BG Color for the Title, Tagline, Search, and Mini Menu area.', 'weaver-xtreme') ),
@@ -225,13 +229,18 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 			'header_html_bgcolor' => weaverx_cz_coloropt('header_html_bgcolor',
 				__('Header HTML Area BG Color', 'weaver-xtreme') ),
 
-		),
-	);
+		);
+		$colorscheme_sections['color-header']['options'] = array_merge($colorscheme_sections['color-header']['options'],$level);
+		}
+
 
 
 	/**
 	 * Main Menu
 	 */
+
+	define('WEAVERX_MENU_UPDATE', 'refresh');
+
 	$colorscheme_sections['color-menus'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Menus', 'weaver-xtreme' ),
@@ -241,23 +250,16 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 
 			'm_primary_color' => weaverx_cz_coloropt('m_primary_color',
 				__('Primary Menu Bar Text Color', 'weaver-xtreme'),
-				__('Text Color for Entire menu bar.', 'weaver-xtreme') ),
+				__('Text Color for Entire menu bar.', 'weaver-xtreme'), WEAVERX_MENU_UPDATE ),
 
 			'm_primary_bgcolor' => weaverx_cz_coloropt('m_primary_bgcolor',
 				__('Primary Menu Bar BG Color', 'weaver-xtreme'),
-				__('Background Color for Entire menu bar.', 'weaver-xtreme') ),
+				__('Background Color for Entire menu bar.', 'weaver-xtreme'), WEAVERX_MENU_UPDATE ),
 
 			'm_primary_link_bgcolor' => weaverx_cz_coloropt('m_primary_link_bgcolor',
 				__('Item BG Color', 'weaver-xtreme'),
-				__('Background Color for menu bar items.', 'weaver-xtreme') ),
+				__('Background Color for menu bar items.', 'weaver-xtreme'), WEAVERX_MENU_UPDATE ),
 
-
-			'm_primary_dividers_color'   => weaverx_cz_coloropt_plus(
-				'm_primary_dividers_color',
-				__('Dividers between menu items', 'weaver-xtreme'),
-				__('Add colored dividers between menu items. Leave blank for none.', 'weaver-xtreme'),
-				'refresh'
-			),
 
 			'm_primary_hover_color' => weaverx_cz_coloropt('m_primary_hover_color',
 				__('Primary Menu Bar Hover Text Color', 'weaver-xtreme'),
@@ -267,24 +269,19 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 				__('Primary Menu Bar Hover BG Color', 'weaver-xtreme'),
 				'', 'refresh' ),
 
-			'm_primary_clickable_bgcolor' => weaverx_cz_coloropt('m_primary_clickable_bgcolor',
-				__('Open Submenu Arrow BG', 'weaver-xtreme'),
-				__('Clickable mobile open submenu arrow BG. Contrasting BG color required for proper user interface. <em>Not used by SmartMenus</em>. (Default: rgba(255,255,255,0.2)', 'weaver-xtreme'), 'refresh' ),
-
-
 			'm_primary_html_color'   => weaverx_cz_coloropt(
 				'm_primary_html_color',
 				__('HTML: Text Color', 'weaver-xtreme'),
-				__('Text Color for Left/Right Menu Bar HTML.', 'weaver-xtreme')
+				__('Text Color for Left/Right Menu Bar HTML.', 'weaver-xtreme'), WEAVERX_MENU_UPDATE
 			),
 
 			'm_primary_sub_color' => weaverx_cz_coloropt('m_primary_sub_color',
 				__('Primary Sub-Menu Text Color', 'weaver-xtreme'),
-				'' ),
+				'', WEAVERX_MENU_UPDATE ),
 
 			'm_primary_sub_bgcolor' => weaverx_cz_coloropt('m_primary_sub_bgcolor',
 				__('Primary Sub-Menu BG Color', 'weaver-xtreme'),
-				'' ),
+				'' , WEAVERX_MENU_UPDATE),
 
 			'm_primary_sub_hover_color' => weaverx_cz_coloropt('m_primary_sub_hover_color',
 				__('Primary Sub-Menu Hover Text Color', 'weaver-xtreme'),
@@ -295,21 +292,39 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 				'', 'refresh' ),
 
 
+		),
+	);
+
+	if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full, standard
+
+		$level = array(
+			'm_primary_clickable_bgcolor' => weaverx_cz_coloropt('m_primary_clickable_bgcolor',
+				__('Open Submenu Arrow BG', 'weaver-xtreme'),
+				__('Clickable mobile open submenu arrow BG. Contrasting BG color required for proper user interface. <em>Not used by SmartMenus</em>. (Default: rgba(255,255,255,0.2)', 'weaver-xtreme'), 'refresh' ),
+
+
+			'm_primary_dividers_color'   => weaverx_cz_coloropt_plus(
+				'm_primary_dividers_color',
+				__('Dividers between menu items', 'weaver-xtreme'),
+				__('Add colored dividers between menu items. Leave blank for none.', 'weaver-xtreme'),
+				'refresh'
+			),
+
 
 			'color-sm-heading' => weaverx_cz_group_title( __( 'Secondary Menu Colors', 'weaver-xtreme' ),
 				__('You must define a Secondary Menu from the Custom Menus Content menu.', 'weaver-xtreme')),
 
 			'm_secondary_color' => weaverx_cz_coloropt('m_secondary_color',
 				__('Secondary Menu Bar Text Color', 'weaver-xtreme'),
-				__('Text Color for Entire menu bar.', 'weaver-xtreme') ),
+				__('Text Color for Entire menu bar.', 'weaver-xtreme'), WEAVERX_MENU_UPDATE ),
 
 			'm_secondary_bgcolor' => weaverx_cz_coloropt('m_secondary_bgcolor',
 				__('Secondary Menu Bar BG Color', 'weaver-xtreme'),
-				__('Background Color for Entire menu bar.', 'weaver-xtreme') ),
+				__('Background Color for Entire menu bar.', 'weaver-xtreme'), WEAVERX_MENU_UPDATE ),
 
 			'm_secondary_link_bgcolor' => weaverx_cz_coloropt('m_secondary_link_bgcolor',
 				__('Item BG Color', 'weaver-xtreme'),
-				__('Background Color for menu bar items.', 'weaver-xtreme') ),
+				__('Background Color for menu bar items.', 'weaver-xtreme'), WEAVERX_MENU_UPDATE ),
 
 			'm_secondary_dividers_color'   => weaverx_cz_coloropt_plus(
 				'm_secondary_dividers_color',
@@ -334,16 +349,16 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 			'm_secondary_html_color'    => weaverx_cz_coloropt_plus(
 				'm_secondary_html_color',
 				__('HTML: Text Color', 'weaver-xtreme'),
-				__('Text Color for Left/Right Menu Bar HTML.', 'weaver-xtreme')
+				__('Text Color for Left/Right Menu Bar HTML.', 'weaver-xtreme'), WEAVERX_MENU_UPDATE
 			),
 
 			'm_secondary_sub_color' => weaverx_cz_coloropt('m_secondary_sub_color',
 				__('Secondary Sub-Menu Text Color', 'weaver-xtreme'),
-				'' ),
+				'', WEAVERX_MENU_UPDATE ),
 
 			'm_secondary_sub_bgcolor' => weaverx_cz_coloropt('m_secondary_sub_bgcolor',
 				__('Secondary Sub-Menu BG Color', 'weaver-xtreme'),
-				'' ),
+				'', WEAVERX_MENU_UPDATE ),
 
 			'm_secondary_sub_hover_color' => weaverx_cz_coloropt('m_secondary_sub_hover_color',
 				__('Secondary Sub-Menu Hover Text Color', 'weaver-xtreme'),
@@ -352,18 +367,20 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 			'm_secondary_sub_hover_bgcolor' => weaverx_cz_coloropt('m_secondary_sub_hover_bgcolor',
 				__('Secondary Sub-Menu Hover BG Color', 'weaver-xtreme'),
 				'', 'refresh' ),
+			);
+		$colorscheme_sections['color-menus']['options'] = array_merge($colorscheme_sections['color-menus']['options'],$level);
+	}
 
 
-
-
+		$levelmini = array (
 			'color-minim-heading' => weaverx_cz_group_title( __( 'Header Mini Menu Colors', 'weaver-xtreme' ),
 				__('You must define a Header Menu from the Custom Menus Content menu.', 'weaver-xtreme')),
 
 			'm_header_mini_color' => weaverx_cz_coloropt('m_header_mini_color',
-				__('Header Mini Menu Text Color', 'weaver-xtreme') ),
+				__('Header Mini Menu Text Color', 'weaver-xtreme'), '', WEAVERX_MENU_UPDATE ),
 
 			'm_header_mini_bgcolor' => weaverx_cz_coloropt('m_header_mini_bgcolor',
-				__('Header Mini Menu BG Color', 'weaver-xtreme') ),
+				__('Header Mini Menu BG Color', 'weaver-xtreme'), '', WEAVERX_MENU_UPDATE ),
 
 			'm_header_mini_hover_color' => weaverx_cz_coloropt('m_header_mini_hover_color',
 				__('Header Mini Menu Hover Text Color', 'weaver-xtreme'),
@@ -374,10 +391,10 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 				__('These options specify current page attributes for all menus.', 'weaver-xtreme')),
 
 			'menubar_curpage_color' => weaverx_cz_coloropt('menubar_curpage_color',
-				 __('Menus Current Page Text Color', 'weaver-xtreme') ),
+				 __('Menus Current Page Text Color', 'weaver-xtreme'), '', WEAVERX_MENU_UPDATE ),
 
 			'menubar_curpage_bgcolor' => weaverx_cz_coloropt('menubar_curpage_bgcolor',
-				__('Menus Current Page BG Color', 'weaver-xtreme') ),
+				__('Menus Current Page BG Color', 'weaver-xtreme'), '', WEAVERX_MENU_UPDATE ),
 
 
 			'm_retain_hover'=> array(
@@ -389,25 +406,28 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 					'type'  => 'checkbox',
 				),
 			),
+		);
 
-		),
-	);
+		$colorscheme_sections['color-menus']['options'] = array_merge($colorscheme_sections['color-menus']['options'],$levelmini);
 
-	if (weaverx_cz_is_plus()) {
+
+
+	if (weaverx_options_level() > WEAVERX_LEVEL_INTERMEDIATE) {
+		if (weaverx_cz_is_plus() ) {
 		$new_opts = array (
 			'color-xm-heading' => weaverx_cz_group_title( __( 'Extra Menu Colors', 'weaver-xtreme' )  . WEAVERX_PLUS_ICON),
 
 			'm_extra_color' => weaverx_cz_coloropt('m_extra_color',
 				__('Extra Menu Bar Text Color', 'weaver-xtreme'),
-				__('Text Color for Entire menu bar.', 'weaver-xtreme') ),
+				__('Text Color for Entire menu bar.', 'weaver-xtreme'), WEAVERX_MENU_UPDATE ),
 
 			'm_extra_bgcolor' => weaverx_cz_coloropt('m_extra_bgcolor',
 				__('Extra Menu Bar BG Color', 'weaver-xtreme'),
-				__('Background Color for Entire menu bar.', 'weaver-xtreme') ),
+				__('Background Color for Entire menu bar.', 'weaver-xtreme'), WEAVERX_MENU_UPDATE ),
 
 			'm_extra_link_bgcolor' => weaverx_cz_coloropt('m_extra_link_bgcolor',
 				__('Item BG Color', 'weaver-xtreme'),
-				__('Background Color for menu bar items.', 'weaver-xtreme') ),
+				__('Background Color for menu bar items.', 'weaver-xtreme'), WEAVERX_MENU_UPDATE ),
 
 
 			'm_extra_dividers_color'   => weaverx_cz_coloropt_plus(
@@ -427,22 +447,23 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 
 			'm_extra_clickable_bgcolor' => weaverx_cz_coloropt('m_extra_clickable_bgcolor',
 				__('Open Submenu Arrow BG', 'weaver-xtreme'),
-				__('Clickable mobile open submenu arrow BG. Contrasting BG color required for proper user interface. <em>Not used by SmartMenus</em>. (Default: rgba(255,255,255,0.2)', 'weaver-xtreme'), 'refresh' ),
+				__('Clickable mobile open submenu arrow BG. Contrasting BG color required for proper user interface. <em>Not used by SmartMenus</em>. (Default: rgba(255,255,255,0.2)', 'weaver-xtreme'),
+				'refresh' ),
 
 
 			'm_extra_html_color'   => weaverx_cz_coloropt_plus(
 				'm_extra_html_color',
 				__('HTML: Text Color', 'weaver-xtreme'),
-				__('Text Color for Left/Right Menu Bar HTML.', 'weaver-xtreme')
+				__('Text Color for Left/Right Menu Bar HTML.', 'weaver-xtreme'), WEAVERX_MENU_UPDATE
 			),
 
 			'm_extra_sub_color' => weaverx_cz_coloropt('m_extra_sub_color',
 				__('Extra Sub-Menu Text Color', 'weaver-xtreme'),
-				'' ),
+				'', WEAVERX_MENU_UPDATE ),
 
 			'm_extra_sub_bgcolor' => weaverx_cz_coloropt('m_extra_sub_bgcolor',
 				__('Extra Sub-Menu BG Color', 'weaver-xtreme'),
-				'' ),
+				'', WEAVERX_MENU_UPDATE ),
 
 			'm_extra_sub_hover_color' => weaverx_cz_coloropt('m_extra_sub_hover_color',
 				__('Extra Sub-Menu Hover Text Color', 'weaver-xtreme'),
@@ -452,17 +473,19 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 				__('Extra Sub-Menu Hover BG Color', 'weaver-xtreme'),
 				'', 'refresh' ),
 		);
-	} else {
+	} else  {
 		$new_opts = weaverx_cz_add_plus_message('color_menus', __('Extra Menu', 'weaver-xtreme'),
 			__('Add extra menus with <strong>Weaver Xtreme Plus</strong>.', 'weaver-xtreme'));
 	}
 	// add stub or extra menu options
 	$colorscheme_sections['color-menus']['options'] = array_merge( $colorscheme_sections['color-menus']['options'],  $new_opts);
+}
 
 	/**
 	 * Info Bar
 	 */
-	$colorscheme_sections['color-info-bar'] = array(
+	if (weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE) {
+		$colorscheme_sections['color-info-bar'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Info Bar', 'weaver-xtreme' ),
 		'description' => __('Info Bar has breadcrumbs and paged navigation displayed under Primary Menu.', 'weaver-xtreme'),
@@ -481,7 +504,8 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 
 
 		),
-	);
+		);
+	}
 
 	/**
 	 * Content
@@ -512,7 +536,12 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 				'page_title_bgcolor',
 				__('Page Title BG Color', 'weaver-xtreme')
 			),
+		),
+	);
 
+	if (weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE) {
+
+		$level = array(
 			'archive_title_color' => weaverx_cz_coloropt(
 				'archive_title_color',
 				__('Archive Pages Title Text Color', 'weaver-xtreme'),
@@ -560,16 +589,10 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 			),
 
 
-			'search_icon' => array(
-				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_html', 'transport' => 'refresh', 'default' => 'black'	),
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Search Icon', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description'   => __( 'Search Icon used for Search boxes', 'weaver-xtreme' ),
-					'type'  => 'radio-icons',
-					'choices' => weaverx_cz_choices_search()
-				),
-			),
+			'search_icon_msg' => weaverx_cz_heading( __( 'Search Icon Color', 'weaver-xtreme' ),
+				__('The Search Icon colored graphics used by previous versions of Weaver Xtreme have been discontinued. A text icon is now used. The color of the search icon is inherited from wrapping areas text color, including the header area and menu bar.', 'weaver-xtreme')),
+
+
 			'content-line1a' => array(
 				'control' => array(
 					'control_type' => 'WeaverX_Misc_Control',	'type'  => 'line',
@@ -616,10 +639,9 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 				__("Alternative Background Color to use for Page/Post editor if you're using transparent or image backgrounds.", 'weaver-xtreme'),
 				'refresh'
 			),
-
-
-		),
 	);
+		$colorscheme_sections['color-content']['options'] = array_merge($colorscheme_sections['color-content']['options'],$level);
+	}
 
 	/**
 	 * Post Specific
@@ -662,8 +684,12 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 				__('Color if you want the Post Title to show alternate color for hover.', 'weaver-xtreme'),
 				'refresh'
 			),
+		)
+	);
 
 
+	if (weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE) {
+		$level = array(
 			'post_info_top_color' => weaverx_cz_coloropt(
 				'post_info_top_color',
 				__('Top Post Meta Info Text Color', 'weaver-xtreme')
@@ -696,10 +722,9 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 				__('Author Info BG Color', 'weaver-xtreme'),
 				__('Background color used for Author Bio.', 'weaver-xtreme')
 			),
-
-
-		),
-	);
+		);
+		$colorscheme_sections['color-post-specific']['options'] = array_merge($colorscheme_sections['color-post-specific']['options'],$level);
+}
 
 
 	/**
@@ -909,20 +934,15 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 					'description'  => ''
 				),
 			),
-			'footer_bgcolor'   => array(
-				'setting' => array(
-					'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,
-					'transport' => WEAVERX_COLOR_TRANSPORT, 'default' => weaverx_cz_getopt('footer_bgcolor'),
-				),
-				'control' => array(
-					'control_type' => WEAVERX_COLOR_CONTROL,
-					'label'        => __('Footer Area BG Color', 'weaver-xtreme'),
-					'description'  => ''
-				),
-			),
 
+			'footer_bgcolor_moved' => weaverx_cz_text( __('<strong>Footer Area BG Color</strong>. This option is now found on the "Layout &rarr; Core Site Layout and Styling" menu.', 'weaver-xtreme')),
 
+		)
+	);
 
+	if (weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE) {
+
+	$level = array(
 			'footer_sb_color'   => array(
 				'setting' => array(
 					'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,
@@ -967,27 +987,14 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 					'label'        => __('Footer HTML Area BG Color', 'weaver-xtreme'),
 					'description'  => ''
 				),
-			),
-
-		),
-	);
-
-	/**
-	 * Filter the definitions for the controls in the Color Scheme panel of the Customizer.
-	 *
-	 * @since 1.3.0.
-	 *
-	 * @param array    $colorscheme_sections    The array of definitions.
-	 */
-	$colorscheme_sections = apply_filters( 'weaverx_customizer_colorscheme_sections', $colorscheme_sections );
-
-	// Merge with master array
-	return array_merge( $sections, $colorscheme_sections );
+			)
+		);
+		$colorscheme_sections['color-footer']['options'] = array_merge($colorscheme_sections['color-footer']['options'],$level);
+	}
 
 
+	return $colorscheme_sections;
 }
 endif;
-
-add_filter( 'weaverx_customizer_sections', 'weaverx_customizer_define_colorscheme_sections' );
 
 ?>

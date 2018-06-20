@@ -13,8 +13,7 @@ html .mceContentBody {
 	max-width: 96%;
 }
 
-.mceContentBody,
-bodyx {
+.mceContentBody {
 	background: white;	/* #wrapper bg */
 	color: black;
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -493,8 +492,16 @@ img.aligncenter {
 	font-family: 'Alegreya Sans', sans-serif;
 }
 
+.font-alegreya-sans-sc {
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
 .font-alegreya {
 	font-family: 'Alegreya', serif;
+}
+
+.font-alegreya-sc {
+	font-family: 'Alegreya SC', serif;
 }
 
 .font-roboto {

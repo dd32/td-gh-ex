@@ -95,8 +95,9 @@ The previous Save buttons do <em>not</em> include advanced <em>Weaver Xtreme Plu
 
 			$fn = 'weaverx-settings-' . $time . '.wxall';
 
-			$weaverx_opts = get_option( apply_filters('weaverx_options','weaverx_settings') ,array());
-			$weaverxplus_opts = get_option('weaverxplus_settings' ,array());
+			$opt_func = WEAVER_GET_OPTION;
+			$weaverx_opts = $opt_func( apply_filters('weaverx_options',WEAVER_SETTINGS_NAME) ,array());
+			$weaverxplus_opts = $opt_func('weaverxplus_settings' ,array());
 
 			$weaverx_opts = array_filter( $weaverx_opts,  'self::_weaverx_filter_strip_default' );
 			$weaverxplus_opts = array_filter( $weaverxplus_opts,  'self::_weaverx_filter_strip_default' );
@@ -115,8 +116,8 @@ The previous Save buttons do <em>not</em> include advanced <em>Weaver Xtreme Plu
 			$a_pro = (function_exists('weaverxplus_plugin_installed')) ? '-plus' : '';
 
 			$fn = $base . $a_pro . '.' . $ext;
-
-			$weaverx_opts = get_option( apply_filters('weaverx_options','weaverx_settings') ,array());
+			$opt_func = WEAVER_GET_OPTION;
+			$weaverx_opts = $opt_func( apply_filters('weaverx_options',WEAVER_SETTINGS_NAME) ,array());
 			$weaverx_header = '';
 
 			$weaverx_save = array();
@@ -391,9 +392,11 @@ You may need to check your folder permissions or other server settings.', 'weave
 
 			$new_cache['style_date'] = date('Y-m-d-H:i:s');
 
-			delete_option('weaverx_settings');
+			$opt_func = WEAVER_DELETE_OPTION;
+			$opt_func(WEAVER_SETTINGS_NAME);
 
-			update_option('weaverx_settings',$new_cache);
+			$opt_func = WEAVER_UPDATE_OPTION;
+			$opt_func(WEAVER_SETTINGS_NAME,$new_cache);
 
 			$save_dir = weaverx_f_uploads_base_dir() . WEAVERX_SUBTHEMES_DIR;
 			$usename = WEAVERX_STYLE_FILE;
@@ -407,6 +410,8 @@ You may need to check your folder permissions or other server settings.', 'weave
 				weaverx_fwrite_current_css();
 			}
 			do_action('weaverx_save_mcecss');		// theme support plugin saved editor css in file
+			do_action('weaverx_save_gutenberg_css');
+
 		}
 
 		return true;
@@ -467,12 +472,11 @@ class WeaverX_Load_WX_Subtheme extends WP_Customize_Control {
 		}
 		$theme_dir = trailingslashit(WP_CONTENT_DIR) . 'themes/' . get_template() . '/subthemes/';
 		$theme_list = array(
-			'ajax', 		'antique-ivory', 	'appalachian-spring', 	'black-and-white',
-			'blank', 		'blue', 			'full-width-dark', 		'full-width-light',
-			'go-basic',		'go-blue',			'go-green',				'go-midnight',
-			'ivory-drive', 	'kitchen-sink', 	'magazine', 			'pioneer',
-			'plain', 		'plain-full-width',	'suburban',				'tan-and-gray',
-			'the-grays',	'transparent-dark',	'transparent-light',	'xenic'
+			'ajax', 				'arctic-white', 	'black-and-white',
+			'blank',				'cosmic-latte',		'full-width-dark',
+			'go-basic-boxed',		'go-basic-full',	'go-basic-stretched',	'go-blue',			'go-green',
+			'kitchen-sink', 		'magazine', 		'pioneer',
+			'plain-full-width',		'transparent-dark',	'transparent-light'
 		);
 
 ?>
@@ -620,9 +624,11 @@ You can change colors, sidebar layouts, font family and sizes, borders, spacing 
 
 		$new_cache['style_date'] = date('Y-m-d-H:i:s');
 
-		delete_option('weaverx_settings');
+		$opt_func = WEAVER_DELETE_OPTION;
+		$opt_func(WEAVER_SETTINGS_NAME);
 
-		update_option('weaverx_settings',$new_cache);
+		$opt_func = WEAVER_UPDATE_OPTION;
+		$opt_func(WEAVER_SETTINGS_NAME,$new_cache);
 
 		$save_dir = weaverx_f_uploads_base_dir() . WEAVERX_SUBTHEMES_DIR;
 		$usename = WEAVERX_STYLE_FILE;
@@ -636,6 +642,8 @@ You can change colors, sidebar layouts, font family and sizes, borders, spacing 
 			weaverx_fwrite_current_css();
 		}
 		do_action('weaverx_save_mcecss');		// theme support plugin saved editor css in file
+		do_action('weaverx_save_gutenberg_css');
+
 
 		return true;
 	}
@@ -707,18 +715,18 @@ class WeaverX_Set_Customizer_Level extends WP_Customize_Control {
 
 			case WEAVERX_LEVEL_INTERMEDIATE:
 				echo '<span style="background-color:blue;color:white;padding:3px;">';
-				_e('Intermediate', 'weaver-xtreme');
+				_e('Standard', 'weaver-xtreme');
 				break;
 
 			case WEAVERX_LEVEL_ADVANCED:
 				echo '<span style="background-color:black;color:white;padding:3px;">';
-				_e('Advanced','weaver-xtreme');
+				_e('Full','weaver-xtreme');
 				break;
 
 			case WEAVERX_LEVEL_BEGINNER:
 			default:
 				echo '<span style="background-color:green;color:white;padding:3px;">';
-			    _e('Beginner', 'weaver-xtreme');
+			    _e('Basic', 'weaver-xtreme');
 				break;
 		}
 		echo '</span>';
@@ -728,13 +736,13 @@ class WeaverX_Set_Customizer_Level extends WP_Customize_Control {
 		<?php echo '<h3>' . __('Select Customizer Interface Level', 'weaver-xtreme') . '</h3><p>'; // customizer only?>
 		Please click one of the button to set the Options Interface Level.</p><p>
 
-		<input style="background-color:green;color:white;" type="button" class="button" name="wvrx_cust_level_beginner" value="<?php esc_attr_e( 'Beginner', 'weaver-xtreme' ); ?>" />
-		&nbsp; Easiest level. Only basic Admin, Color, Typography, and Layout options. These options will be enough for many users.
+		<input style="background-color:green;color:white;" type="button" class="button" name="wvrx_cust_level_beginner" value="<?php esc_attr_e( 'Basic', 'weaver-xtreme' ); ?>" />
+		&nbsp; Only basic options. These options will be enough for many users.
 		<br/><br />
-		<input style="background-color:blue;color:white;" type="button" class="button" name="wvrx_cust_level_intermediate" value="<?php esc_attr_e( 'Intermediate', 'weaver-xtreme' ); ?>" />
-		&nbsp; More options than Beginner. Adds Spacing, Style, all Typography, Visibility, all Layout, Images, Global Custom CSS to the Beginner Level.
+		<input style="background-color:blue;color:white;" type="button" class="button" name="wvrx_cust_level_intermediate" value="<?php esc_attr_e( 'Standard', 'weaver-xtreme' ); ?>" />
+		&nbsp; More options than Basic. Adds Spacing, Style, all Typography, Visibility, all Layout, Images, Global Custom CSS to the Basic Level.
 		<br/><br />
-		<input style="background-color:black;color:white;" type="button" class="button" name="wvrx_cust_level_advanced" value="<?php esc_attr_e( 'Advanced', 'weaver-xtreme' ); ?>" />
+		<input style="background-color:black;color:white;" type="button" class="button" name="wvrx_cust_level_advanced" value="<?php esc_attr_e( 'Full', 'weaver-xtreme' ); ?>" />
 		&nbsp; This level was the default in previous theme versions. It provides all options, including Added Content, full Custom CSS, and Admin.
 		</p>
 <?php

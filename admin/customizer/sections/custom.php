@@ -6,7 +6,7 @@ if ( ! function_exists( 'weaverx_customizer_define_custom_sections' ) ) :
  * Define the sections and settings for the Custom CSS panel
  */
 
-function weaverx_customizer_define_custom_sections( $sections ) {
+function weaverx_customizer_define_custom_sections( ) {
 	$panel = 'weaverx_custom';
 	$custom_sections = array();
 	global $wp_customize;
@@ -28,7 +28,7 @@ function weaverx_customizer_define_custom_sections( $sections ) {
 		$section->description = __('This is the new WordPress Additional CSS option. We recommend the Weaver Xtreme Global Custom CSS or per area CSS unless you have specific Custom CSS that applies to your site for any theme. ', 'weaver-xtreme') . '<br />' . $cur_des;
 	}
 
-if ( weaverx_options_level() == WEAVERX_LEVEL_ADVANCED ) {		// show if advanced
+if ( false || weaverx_options_level() == WEAVERX_LEVEL_ADVANCED ) {		// show if advanced
 
 	$custom_sections['custom-help'] = array(
 		'panel'   => $panel,
@@ -74,7 +74,7 @@ if ( weaverx_options_level() == WEAVERX_LEVEL_ADVANCED ) {		// show if advanced
 	/**
 	 * Wrapping
 	 */
-if ( weaverx_options_level() == WEAVERX_LEVEL_ADVANCED ) {		// show if advancedif ( weaverx_options_level() == WEAVERX_LEVEL_ADVANCED ) {		// show if advanced
+if ( weaverx_options_level() == WEAVERX_LEVEL_ADVANCED ) {		// show if advanced if ( weaverx_options_level() == WEAVERX_LEVEL_ADVANCED ) {		// show if advanced
 	$custom_sections['custom-wrapping'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Wrapping Areas', 'weaver-xtreme' ),
@@ -296,7 +296,7 @@ if ( weaverx_options_level() == WEAVERX_LEVEL_ADVANCED ) {		// show if advancedi
 
 		'content_h_bgcolor_css'     => weaverx_cz_css(__( 'Content H headings Custom CSS', 'weaver-xtreme' )),
 
-		'editor_bgcolor_css'     	=> weaverx_cz_css(__( 'Tiny MCE Editor Background color', 'weaver-xtreme' )),	// really a no-op...
+		'editor_bgcolor_css'     	=> weaverx_cz_css(__( 'Editor Background color', 'weaver-xtreme' )),	// really a no-op...
 
 		'search_bgcolor_css'     	=> weaverx_cz_css(__( 'Search Box Custom CSS', 'weaver-xtreme' )),
 
@@ -430,21 +430,7 @@ if ( weaverx_options_level() == WEAVERX_LEVEL_ADVANCED ) {		// show if advancedi
 	);
 
 }
-	/**
-	 * Filter the definitions for the controls in the Color Scheme panel of the Customizer.
-	 *
-	 * @since 1.3.0.
-	 *
-	 * @param array    $custom_sections    The array of definitions.
-	 */
-	$custom_sections = apply_filters( 'weaverx_customizer_custom_sections', $custom_sections );
-
-	// Merge with master array
-	return array_merge( $sections, $custom_sections );
-
+	return $custom_sections;
 
 }
 endif;
-
-
-add_filter( 'weaverx_customizer_sections', 'weaverx_customizer_define_custom_sections' );

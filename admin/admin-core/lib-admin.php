@@ -43,7 +43,7 @@ function weaverx_sapi_options_init() {
 	*/
 
 	register_setting('weaverx_settings_group',	/* the group name of our settings */
-	apply_filters('weaverx_options','weaverx_settings'),	/* the get_option name */
+	apply_filters('weaverx_options',WEAVER_SETTINGS_NAME),	/* the get_option name */
 	'weaverx_validate_cb');			/* a validation call back */
 }
 
@@ -72,7 +72,7 @@ function weaverx_submitted($submit_name) {
 }
 
 function weaverx_nonce_field($submit_name,$echo = true) {
-	// pairs 1:1 with sumbitted
+	// pairs 1:1 with submitted
 	// will be one for each form submit button
 
 	return wp_nonce_field($submit_name.'_act',$submit_name.'_nonce',$echo);
@@ -130,8 +130,8 @@ function weaverx_form_submit($value) {
 }
 
 function weaverx_sapi_main_name($id, $echo=true) {
-	/* generate the SAPI name for 'weaverx_settings' */
-	$name = apply_filters('weaverx_options','weaverx_settings');
+	/* generate the SAPI name for WEAVER_SETTINGS_NAME */
+	$name = apply_filters('weaverx_options',WEAVER_SETTINGS_NAME);
 	if ($echo) echo $name. '[' . $id . ']';
 	return $name . '[' . $id . ']';
 }
@@ -371,9 +371,9 @@ PLEASE USE THE BROWSER BACK BUTTON TO RETURN TO WP ADMIN.</p><p><small>Code: V-%
 
 
 	if (!empty($err_msg)) {
-		add_settings_error('weaverx_settings', 'settings_error', $err_msg, 'error');
+		add_settings_error(WEAVER_SETTINGS_NAME, 'settings_error', $err_msg, 'error');
 	} else {
-		add_settings_error('weaverx_settings', 'settings_updated', __('Weaver Xtreme Settings Saved.', 'weaver-xtreme' /*adm*/), 'updated');
+		add_settings_error(WEAVER_SETTINGS_NAME, 'settings_updated', __('Weaver Xtreme Settings Saved.', 'weaver-xtreme' /*adm*/), 'updated');
 	}
 
 	return $in;
@@ -497,8 +497,8 @@ function weaverx_error_msg($msg) {
 
 function weaverx_check_support_plugin_version() {
 	if ( function_exists('wvrx_ts_installed') ) {
-		if ( defined('WVRX_TS_VERSION') && version_compare( WVRX_TS_VERSION, '2.95', '<' ) ) {
-			weaverx_alert( sprintf(__('           ***** CRITICAL WARNING ******\r\n\r\nYou have an old version of the Weaver Xtreme Theme Support plugin Installed (%s).\r\n\r\nIt is VERY IMPORTANT that you update to the latest version from the WordPress Plugins Update notice! Your site may not display properly with the old version.\r\n\r\nThis notice will continue to appear until you update the Weaver Xtreme Support plugin.', 'weaver-xtreme'), WVRX_TS_VERSION));
+		if ( defined('WEAVERX_TSL_VERSION') && version_compare( WEAVERX_TSL_VERSION, '3.9', '<' ) ) {
+			weaverx_alert( sprintf(__('           ***** CRITICAL WARNING ******\r\n\r\nYou have an old version of the Weaver Xtreme Theme Support plugin Installed (%s).\r\n\r\nIt is VERY IMPORTANT that you update to the latest version from the WordPress Plugins Update notice! Your site may not display properly with the old version.\r\n\r\nThis notice will continue to appear until you update the Weaver Xtreme Support plugin.', 'weaver-xtreme'), WEAVERX_TSL_VERSION));
 		}
 	}
 }
@@ -585,6 +585,7 @@ function weaverx_elink( $href, $title, $label, $before='', $after='') {
 		array('val' => 'open-sans', 'desc' => __('Open Sans', 'weaver-xtreme') ),
 		array('val' => 'open-sans-condensed', 'desc' => __('Open Sans Condensed', 'weaver-xtreme') ),
 		array('val' => 'alegreya-sans', 'desc' => __('Alegreya Sans', 'weaver-xtreme') ),
+		array('val' => 'alegreya-sans-sc', 'desc' => __('Alegreya Sans SC', 'weaver-xtreme') ),
 		array('val' => 'archivo-black', 'desc' => __('Archivo Black', 'weaver-xtreme') ),
 		array('val' => 'arimo', 'desc' => __('Arimo', 'weaver-xtreme') ),
 		array('val' => 'droid-sans', 'desc' => __('Droid Sans', 'weaver-xtreme') ),
@@ -596,6 +597,7 @@ function weaverx_elink( $href, $title, $label, $before='', $after='') {
 
 		//'serif-g' => __('--- -- Serif Google Fonts --', 'weaver-xtreme'),
 		array('val' => 'alegreya', 'desc' => __('Alegreya (Serif)', 'weaver-xtreme') ),
+		array('val' => 'alegreya-sc', 'desc' => __('Alegreya SC', 'weaver-xtreme') ),
 		array('val' => 'arvo', 'desc' => __('Arvo Slab', 'weaver-xtreme') ),
 		array('val' => 'droid-serif', 'desc' => __('Droid Serif', 'weaver-xtreme') ),
 		array('val' => 'lora', 'desc' => __('Lora', 'weaver-xtreme') ),

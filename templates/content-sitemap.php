@@ -61,5 +61,5 @@ weaverx_fi( 'page', 'post-pre' );
 	weaverx_edit_link();
 ?>
 	</footer><!-- .entry-utility-page -->
-	<?php echo weaverx_schema( 'mainEntityOfPage'); ?>
+	<?php echo weaverx_schema( 'mainEntityOfPage' ); ?>
 </article><!-- #post-<?php the_ID(); ?> -->

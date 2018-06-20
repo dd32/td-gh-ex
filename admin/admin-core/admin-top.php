@@ -148,7 +148,7 @@ function weaverx_admin_page_process_options() {
 
 	// Most options are handled by the SAPI filter.
 
-	settings_errors('weaverx_settings');			// display results from SAPI save settings
+	settings_errors(WEAVER_SETTINGS_NAME);			// display results from SAPI save settings
 
 	$processed = false;
 
@@ -167,7 +167,7 @@ function weaverx_admin_page_process_options() {
 	/* ====================================================== */
 
 	if (  !$processed && isset($_GET['settings-updated']) && $_GET['settings-updated'] == 'true' ) {
-		add_settings_error('weaverx_settings', 'settings_updated', __('Saved', 'weaver-xtreme' /*adm*/), 'updated');
+		add_settings_error(WEAVER_SETTINGS_NAME, 'settings_updated', __('Saved', 'weaver-xtreme' /*adm*/), 'updated');
 		$vers = weaverx_getopt('style_version') + 1;
 		weaverx_setopt('style_version', $vers );
 		if ( ! WEAVERX_DEV_MODE ) {

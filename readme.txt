@@ -7,9 +7,9 @@ Tags: custom-header, custom-colors, custom-background, custom-menu, theme-option
 fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red, tan, dark, white, light,
 translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
-Requires at least: 4.5
+Requires at least: 4.8
 Tested up to: 4.9
-Stable tag: 3.2
+Stable tag: 4.0
 
 == Description ==
 
@@ -460,14 +460,50 @@ with testing and feature suggestions.
 
 = Version 3.2 =
 * New: Scheme.org structured data tags (microformats)
-* New: New Per Page and Per Post tabbed sections (requires Weaver Xtreme Theme Support 3.2 plugin)
+* New:  Completely redesigned Per Page and Per Post option pages - tabbed interface (requires Weaver Xtreme Theme Support 3.2 plugin)
 * Tweak: updated WordPress theme tags included in style.css
+* IMPORTANT NOTICE: some theme files have significant changes to add the scheme.org that may require updating of child theme files.
 
-= Version 3.2.1 =
-* Fix: Now correctly supports the Disable Scheme.org option in Theme Support Plugin, add that option to the Customizer.
+= Version 4.0 =
 
-= Version 3.2.2 =
-* Fix: Issue with schema.org and Post Single View Page Title.
+* New: Complete style integration with the Gutenberg Editor plugin. Gutenberg will be the new editor to be included with WordPress 5.0.
+* New: Added new WP alignfull and alignwide support. Many areas and items now have wide and full choices.
+* New: Added FI location: bg parallax full width
+* New: Header Logo Links to home
+* New: Add Site Title to Left Side of Primary Menu
+* New: Add Search Icon to Right Side of Primary Menu
+* New: Improved Search Box - Former Icon Selections removed, just used font colors now
+* New: New Global Site Layout Options for Header/Container/Footer: fullwidth, stretched, boxed, custom
+* New: Changed Expand full width description to Stretch
+* New: New Minimum Height for improved Parallax Control: Minimum Header Height, Minimum Post Height, Minimum Single Page Height
+* New: Extensive new integration with Elementor and SiteOrigin page builders:
+  * "Your Page Builder Plugin" page template
+  * New Per Page support for page builder as header/footer replacement
+  * Global Elementor color scheme replacement
+* New: Auto-save of Menu definitions and Widgets used when switching themes
+* New: Brand new set of subthemes, and a new default subtheme
+* New: Alternate "Edit" buttons for Classic and Elementor editors
+* New: Arctic White - new default subtheme
+* New: Cosmic Latte subtheme
 
-= Version 3.2.2 =
-* Fix: Issue with schema.org: featured images and author info. Obviously, the schema.org needed better testing for the disable option. Sorry.
+* Enhancement: Added SmallCaps variant of Alegreya sans and sans-serif font
+
+* Change: Basic SmartMenu in Free Version. Weaver Xtreme Plus has advanced SmartMenu Options
+* Change: Significant Improvement of Customzer Inteface Levels
+  * Names changed to: Basic, Standard, Full
+  * Customizer menus reorganized for new levels
+  * Basic Level contains better set of options. Many users will never need to use higher levels
+* Change: several subthemes modified to use new Wide/Full display modes
+* Change: several subthemes removed from choices
+
+* Tweaks: Minor styling changes for better Gutenberg integration: hr, blockquote
+* Fix: Align wide for GB basic image block
+
+* Fix: Issue when primary/secondary have top margin set and fix to top on scroll selected
+* Fix: Right padding on sub-menus
+* Fix: Incorrect sheme.org code added to compact posts with image
+* Fix: missing close div on page with post template
+* Fix: Weaver .center changed to .align-center to avoid conflict with Gutenberg
+* Fix: Right padding issue with main menu bar when using separator bars
+
+* IMPORTANT NOTICE: some theme files have significant changes to add the page builder support - header.php and footer.php have important changes. These may require fixes in child themes.

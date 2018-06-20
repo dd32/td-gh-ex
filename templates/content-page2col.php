@@ -62,6 +62,6 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	<footer class="entry-utility-page">
 	<?php weaverx_edit_link(); ?>
 	</footer><!-- .entry-utility-page -->
-	<?php echo weaverx_schema( 'mainEntityOfPage'); ?>
+	<?php echo weaverx_schema( 'mainEntityOfPage' ); ?>
 </article><!-- #post-<?php the_ID(); ?> -->
 <?php weaverx_inject_area('pagecontentbottom'); ?>

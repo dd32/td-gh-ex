@@ -44,5 +44,5 @@ weaverx_per_post_style();
 
 <?php   weaverx_inject_area('postpostcontent');	// inject post comment body ?>
 	<div style="clear:both;"></div>
-	<?php echo weaverx_schema( 'mainEntityOfPage'); ?>
+	<?php echo weaverx_schema( 'mainEntityOfPage' ); ?>
 	</article><!-- /#post-<?php the_ID(); ?> -->

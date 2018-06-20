@@ -1,6 +1,7 @@
 <?php
 if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
+// This code similar to primary menu
 
 $menu = apply_filters('weaverx_menu_name','secondary');
 
@@ -31,9 +32,7 @@ if (weaverx_getopt( 'm_secondary_hide') != 'hide' && (has_nav_menu( $menu ) || $
 		$right = '<span class="wvrx-menu-html wvrx-menu-right ' . $hide . '"></span>';
 	}
 
-	$use_smart = weaverx_getopt('use_smartmenus') && function_exists('weaverxplus_plugin_installed');
-
-	if ( $use_smart ) {							// ==================  SMART MENUS
+		if ( weaverx_getopt('use_smartmenus') ) {							// ==================  SMART MENUS
 		$hamburger = apply_filters('weaverx_mobile_menu_name',weaverx_getopt('m_secondary_hamburger'));
 		if ( $hamburger == '' ) {
 			$alt = weaverx_getopt('mobile_alt_label');
@@ -48,20 +47,26 @@ if (weaverx_getopt( 'm_secondary_hide') != 'hide' && (has_nav_menu( $menu ) || $
 
 	$align = weaverx_getopt( 'm_secondary_align' );
 
-	switch ($align) {		// add classes for alignment and fixed top
+	switch ( $align ) {		// add classes for alignment and fixed top
 		case 'left':
+		case 'alignwide left':
+		case 'alignfull left':
 			$menu_class .= ' menu-alignleft';
 			break;
 		case 'center':
+		case 'alignwide center':
+		case 'alignfull center':
 			$menu_class .= ' wvrx-center-menu';
 			break;
 		case 'right':
+		case 'alignwide right':
+		case 'alignfull right':
 			$menu_class .= ' menu-alignright';
 			break;
-
 		default:
 			$menu_class .= ' menu-alignleft';
 	}
+
 
 	if ( weaverx_getopt ('m_secondary_move') )
 		$nav_class = 'menu-secondary menu-secondary-moved menu-type-standard';
@@ -96,7 +101,12 @@ if (weaverx_getopt( 'm_secondary_hide') != 'hide' && (has_nav_menu( $menu ) || $
 
 	echo "\n</div><div class='clear-menu-secondary-end' style='clear:both;'></div><!-- /.menu-secondary -->\n\n";
 
-	if ($use_smart)
-		do_action('weaverx_plus_smartmenu', 'nav-secondary', 'm_secondary');	// emit required JS to invoke smartmenu
+	if ( weaverx_getopt('use_smartmenus') ) {
+		if ( function_exists('weaverxplus_plugin_installed') )
+			do_action('weaverx_plus_smartmenu', 'nav-secondary', 'm_secondary');	// emit required JS to invoke smartmenu
+		else {		// use theme "action"
+			weaverx_smartmenu( 'nav-secondary', 'm_secondary' );
+		}
+	}
 }
 ?>

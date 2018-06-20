@@ -63,8 +63,20 @@ function weaverx_fwrite_current_css() {
 	return $save_url . '/' . $usename;
 }
 
-
 // ----------------------------------------------------------------------------------------------------------
+
+
+/**
+ * Generate override CSS rules based on options
+ *
+ * This outputs the CSS overrides. It will output to a file pointer, so it can write to a .css file saved
+ * in the user's upload directory - just like the saved style .wvx files. It is included via a standard
+ * css include. It needs to be loaded only for the admin page.
+ *
+ *
+ *	@param mixed: PHP file handel, or string for direct output
+ */
+
 function weaverx_output_style( $sout ) {
 	/* This outputs the CSS overrides. It will output to a file pointer, so it can write to a .css file saved
 	   in the user's upload directory - just like the saved style .wvr files. It is included via a standard
@@ -73,7 +85,108 @@ function weaverx_output_style( $sout ) {
 	global $wvrx_css_plus;
 	$wvrx_css_plus = '';
 
-	weaverx_f_write($sout,sprintf("/* Weaver Xtreme styles - Version %s */\n", weaverx_getopt('style_version')));
+
+	weaverx_f_write($sout,sprintf("/* Weaver Xtreme styles - Version %s */\n", weaverx_getopt('style_version')));	// opening line
+
+
+
+	$themew = weaverx_getopt_default('theme_width_int', WEAVERX_THEME_WIDTH);		// this is set only here
+	if (weaverx_getopt('wrapper_fullwidth'))
+		$themew = 10000;						// override for full width
+
+	// Behavior changed in V 4.0 - Need tp generate different style depending on fullwidth
+
+	if ( weaverx_getopt('legacy_fullwidth') ) {
+
+		weaverx_f_write($sout,sprintf("#wrapper{max-width:%dpx;}\n",$themew));
+
+	} else if ( weaverx_getopt( 'site_layout') == 'fullwidth' ) {
+		// Weaver Xtreme 4 creates fullwidth with
+
+		weaverx_f_write($sout,sprintf(".block-inside{max-width:%dpx;margin-left:auto;margin-right:auto;}\n",$themew));
+		weaverx_f_write($sout,".page #content{overflow:visible !important;}.single #content{overflow:visible !important;}.blog #content {overflow:hidden !important;}\n");
+
+	} else {
+
+		weaverx_f_write($sout,sprintf("#wrapper{max-width:%dpx;}\n",$themew));
+
+	}
+
+
+
+// =========================== FIXUPS: FULL WIDTH THEME ===============================
+// the full width options will clear and set appropriate stretch and expand options
+
+
+	$full = weaverx_getopt('site_layout');
+	if ($full && $full != 'custom') {			// okay, we have a value to manipulate
+		$clear = array (						// all the extend/expand options need to be cleared to start;
+			'wrapper_fullwidth','expand_header','expand_header-image','expand_site_title','expand_header-widget-area','expand_header-html',
+			'expand_m_primary','expand_m_secondary','expand_container','expand_post','expand_footer','expand_footer_sb',
+			'expand_footer_html','expand_site-ig-wrap','container_extend_width','header_extend_width','header_sb_extend_width',
+			'header_html_extend_width','m_primary_extend_width','m_secondary_extend_width','infobar_extend_width','post_extend_width',
+			'footer_extend_width','footer_sb_extend_width','footer_html_extend_width',
+			'header_extend_bgcolor','m_primary_extend_bgcolor','m_secondary_extend_bgcolor','m_extra_extend_bgcolor','container_extend_bgcolor',
+			'content_extend_bgcolor','footer_extend_bgcolor', 'wrapper_border'
+		);
+		// allow 'expand_infobar' as an option to leave set
+		foreach ($clear as $opt)			// clear relevant options
+			weaverx_setopt($opt,false);
+
+		weaverx_setopt('wrapper_border', false);			// no border
+
+		switch ( $full ) {
+			case 'fullwidth':
+				if ( weaverx_getopt('legacy_fullwidth') ) {
+					foreach (array('header_extend_width', 'container_extend_width', 'm_primary_extend_width', 'm_secondary_extend_width', 'footer_extend_width') as $opt)
+						weaverx_setopt($opt, true);
+				} else {
+					foreach ( array('m_primary_extend_width', 'm_secondary_extend_width') as $opt )		// should try to change these to CSS insterad of JS
+						weaverx_setopt($opt, true );
+					foreach ( array('m_primary_align', 'm_secondary_align') as $opt ) {			// disable wide/full aligned menus
+						$align = weaverx_getopt_default( $opt, 'left' );
+						weaverx_setopt( $opt, str_replace('alignwide', 'alignfull', $align ));
+					}
+				}
+				break;
+
+			case 'stretched':
+				weaverx_setopt('expand_header', true);
+				weaverx_setopt('expand_footer', true);
+				weaverx_setopt('m_primary_align','center');				// center the menus
+				weaverx_setopt('m_secondary_align','center');				// center the menus
+				break;
+
+			case 'boxed':
+				weaverx_f_write($sout,"#container,#content,#header,#colophon {overflow:hidden !important;}\n");
+				break;
+
+			default:
+				break;
+		}
+
+	}
+
+
+// =========================== FIXUPs: FIXEDTOP with FULL ALIGNMENTS ===============================
+// alignwide + fix to top are incompatible for header_sb_align, header_html_align, m_primary_align, and m_secondary_align
+// change them to full.
+
+
+	if ( weaverx_getopt('header_sb_fixedtop') ) {
+		$align = weaverx_getopt('header_sb_align');
+		if ( strpos('alignwide',$align) !== false )						// switch alignwide to alignfull
+			weaverx_setopt('header_sb_fixedtop', str_replace('alignwide','alignfull',$align));
+	}
+
+	foreach ( array( 'm_primary', 'm_secondary' ) as $area ) {
+		$fixed = weaverx_getopt($area . '_fixedtop');
+		if ( strpos($fixed,'fix') != false ) {
+			$align = weaverx_getopt($area. '_align');
+			if ( strpos('alignwide', $align) !== false )						// switch alignwide to alignfull
+				weaverx_setopt($area. '_align', str_replace('alignwide','alignfull',$align));
+		}
+	}
 
 // =========================== LINKS ===============================
 //	Important. Links must come before any other rules that might define a tag - such as the menu bars, so just
@@ -163,13 +276,6 @@ function weaverx_output_style( $sout ) {
 	}
 
 
-// ========================= LAYOUT / SIDEBAR AREAS ===============================
-	$themew = weaverx_getopt_default('theme_width_int', WEAVERX_THEME_WIDTH);		// this is set only here
-	if (weaverx_getopt('wrapper_fullwidth'))
-		$themew = 10000;						// override for full width
-
-	if ( $themew != WEAVERX_THEME_WIDTH )
-		weaverx_f_write($sout,sprintf("#wrapper{max-width:%dpx;}\n",$themew));
 
 
 // =========================== HEADER OPTIONS ===============================
@@ -253,6 +359,10 @@ function weaverx_output_style( $sout ) {
 			break;
 	}
 
+	if ( ($val = weaverx_getopt('header_min_height') ) ) {
+		weaverx_f_write($sout,
+			"#header{min-height: {$val}px;}");
+	}
 
 	if ( weaverx_getopt('header_actual_size')) {
 		weaverx_f_write($sout,
@@ -334,7 +444,7 @@ text_color = 0.213 * this.rgb[0] +
 
 	if ( weaverx_getopt_checked('show_img_shadows') ) {
 		weaverx_f_write($sout, $img_tag .
-			'{box-shadow: 0 0 4px 2px rgba(0,0,0,0.25);}'."\n");
+			'{box-shadow: 0 0 2px 1px rgba(0,0,0,0.25);}'."\n");
 	}
 
 	weaverx_put_bgcolor($sout,'media_lib_border_color', $img_tag);
@@ -347,13 +457,23 @@ text_color = 0.213 * this.rgb[0] +
 	weaverx_css_style_val($sout, '.entry-summary,.entry-content', '{padding-top:%.5fem;}',
 			   'space_after_title_dec');
 
-	weaverx_css_style_val($sout, '#content p,#content ul,#content ol', '{margin-bottom:%.5fem;}',
+	weaverx_css_style_val($sout, '#content ul,#content ol', '{margin-bottom:%.5fem;}',
 			   'content_p_list_dec');
 
 	if ( weaverx_getopt('hyphenate') ) {
 		weaverx_f_write( $sout, '#content{hyphens:auto;}');
 	}
 
+	$fi_min_height = array( 'page_min_height' => '.container-page.parallax',
+						   'post_blog_min_height' => '.post-area.post-fi-post-bg-parallax-full,.post-area.post-fi-post-bg-parallax',
+						   'post_min_height' => '.container-single.post-bg-parallax-full,.container-single.post-bg-parallax');
+
+	foreach ($fi_min_height as $name => $selector ) {
+		if ( weaverx_getopt($name) ) {
+			$val = weaverx_getopt($name);
+			weaverx_f_write( $sout, "$selector{min-height:{$val}px;}\n");
+		}
+	}
 
 
 /* Comments */
@@ -507,7 +627,7 @@ weaverx_put_bgcolor($sout,'title_tagline_bgcolor','#title-tagline');
 
 
 $menu_bars = array (
-	'm_primary' => '.menu-primary .wvrx-menu-container',
+	'm_primary' => '.menu-primary .wvrx-menu-container,.menu-primary .site-title-on-menu,.menu-primary .site-title-on-menu a',
 	'm_secondary' => '.menu-secondary .wvrx-menu-container',
 	'm_extra' => '.menu-extra .wvrx-menu-container',
 	'm_primary_sub' => '.menu-primary .wvrx-menu ul li a,.menu-primary .wvrx-menu ul.mega-menu li',
@@ -643,10 +763,11 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 			weaverx_f_write( $sout, "{$tag} .wvrx-menu ul a {border-top:none;border-left:none;border-right:none;border-bottom:1px solid {$dcolor};}\n" );
 		}
 
-		// menu padding
+		// menu padding - ADD space to end of menu item
 
 		if ( $rpad != '') {
 			$rpad_arrow = $rpad + 1.5;
+			$rpad = $rpad + 0.75;
 			weaverx_f_write( $sout, "{$tag} .wvrx-menu-container li a{padding-right:{$rpad}em;}\n" );
 			weaverx_f_write( $sout, "{$tag} .menu-hover.menu-arrows .has-submenu > a{padding-right:{$rpad_arrow}em;}\n" );
 			weaverx_f_write( $sout, "{$tag} .menu-arrows.menu-hover .toggle-submenu{margin-right:{$rpad}em;}\n" );
@@ -682,6 +803,8 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 
 		// special case - generate a .wvrx-menu text align for main menus to get rid of initial menu jumping
 		$align = weaverx_getopt_default( "{$id}_align" , 'left');
+		$align = str_replace( 'alignwide ', '', $align);
+		$align = str_replace( 'alignfull ', '', $align);
 		$lh = '';
 		if ( $align == 'center')		// compensate for centered display:inline-block
 			$lh = 'line-height:0;';
@@ -710,18 +833,7 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 		weaverx_put_bgcolor($sout, $id . '_clickable_bgcolor', "{$tag} .is-mobile-menu.menu-arrows .toggle-submenu");
 	}
 
-// End of Menus
 
-// =Search ------------------------------------------------------------
-	if ( ($val = weaverx_getopt_default( 'search_icon' ,'gray-bg' )) != 'gray-bg') {
-		$icon = weaverx_relative_url('assets/css/icons/search-' . $val . '.png');
-		weaverx_f_write($sout, '.search-field {background-image: url(' . $icon . ");}\n");
-	}
-	$search_bg = weaverx_getopt( 'search_bgcolor' );
-	if ( $search_bg ) {
-		weaverx_put_bgcolor( $sout, 'search_bgcolor', '.search-field' ); // general search bg
-		weaverx_f_write ( $sout , '#header-search .search-field:focus{background-color:' . $search_bg . ";}\n");
-	}
 
 // End of Menus
 
@@ -1201,7 +1313,7 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 		$media_css = "{$vis_container}{$vis_content}\n@media (min-width:580px) and (max-width:{$themew_less_one}px) {\n{$media_css} }\n";
 	}
 
-	weaverx_f_write($sout, "\n/* ** E-E ** */\n" . $pre_css );
+	weaverx_f_write($sout, "\n/* ** Expand/extend ** */\n" . $pre_css );
 	weaverx_f_write($sout, $xcss );
 	weaverx_f_write($sout, $media_css . " /* /EE */\n");
 
@@ -1273,8 +1385,34 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 	weaverx_put_bgcolor($sout,'input_bgcolor','input,textarea');
 	weaverx_put_color($sout,'input_color','input,textarea');
 
-	weaverx_put_bgcolor($sout,'search_bgcolor','.search-field,#header-search .search-field:focus');
-	weaverx_put_color($sout,'search_color','.search-field,#header-search .search-field:focus');
+	// ==================== SEARCH =====================
+
+	weaverx_put_bgcolor($sout,'search_bgcolor','.search-field,#header-search .search-field:focus,.menu-search .search-field:focus');
+	weaverx_put_color($sout,'search_color','.search-field, #header-search .search-field:focus');
+
+	$search_areas = array (						/* search box icon color */
+
+		'primary' => '#primary-widget-area',
+		'secondary' => '#secondary-widget-area',
+		'm_primary' => '.menu-primary .wvrx-menu-container',
+		'top' => '.widget-area-top',
+		'bottom' => '.widget-area-bottom',
+		'header_sb' => '.widget-area-header',
+		'footer' => '#colophon',
+		'footer_sb' => '.widget-area-footer',
+		'content' => '#content',
+		'container' => '#container',
+		'infobar' => '#infobar',
+		'wrapper' => '#wrapper',
+		'widget'=>'.widget'
+	);
+
+	foreach ($search_areas as $area => $tag) {
+		weaverx_put_color( $sout, $area . '_color', $tag  . ' .search-form .search-submit');
+	}
+	weaverx_put_color( $sout, 'header_color', '#header-search .search-form::before');
+
+	weaverx_put_elementor_colors( $sout );
 
 
 	// =============================== TITLES ==================================
@@ -1717,6 +1855,72 @@ function weaverx_put_rule_if_not_checked($sout, $id, $rule) {
 	if (!weaverx_getopt_checked($id)) {
 		weaverx_f_write($sout, $rule . "\n");
 	}
+}
+
+function weaverx_put_elementor_colors( $sout ) {
+	/* generate CSS to override Elementor styling */
+
+	$color_1 = weaverx_getopt('elementor_primary_color');
+	$color_2 = weaverx_getopt('elementor_secondary_color');
+
+	$color_3 = weaverx_getopt('elementor_text_color');
+	$color_4 = weaverx_getopt('elementor_accent_color');
+
+
+	/* PRIMARY COLOR */
+	if ($color_1) {
+		weaverx_f_write($sout,
+		"/*PRIMARY*/.elementor-widget-heading .elementor-heading-title{color:{$color_1};}
+.elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap{background-color:{$color_1};}
+.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap, .elementor-widget-text-editor.elementor-drop-cap-view-default .elementor-drop-cap{color:{$color_1};border-color:{$color_1};}
+.elementor-widget-image-box .elementor-image-box-content .elementor-image-box-title{color:{$color_1};}
+.elementor-widget-icon.elementor-view-stacked .elementor-icon{background-color:{$color_1};}
+.elementor-widget-icon.elementor-view-framed .elementor-icon, .elementor-widget-icon.elementor-view-default .elementor-icon{color:{$color_1};border-color:{$color_1};}
+.elementor-widget-icon-box.elementor-view-stacked .elementor-icon{background-color:{$color_1};}
+.elementor-widget-icon-box.elementor-view-framed .elementor-icon, .elementor-widget-icon-box.elementor-view-default .elementor-icon{color:{$color_1};border-color:{$color_1};}
+.elementor-widget-icon-box .elementor-icon-box-content .elementor-icon-box-title{color:{$color_1};}
+.elementor-widget-icon-list .elementor-icon-list-icon i{color:{$color_1};}
+.elementor-widget-counter .elementor-counter-number-wrapper{color:{$color_1};}
+.elementor-widget-progress .elementor-progress-wrapper .elementor-progress-bar{background-color:{$color_1};}
+.elementor-widget-progress .elementor-title{color:{$color_1};}
+.elementor-widget-testimonial .elementor-testimonial-name{color:{$color_1};}
+.elementor-widget-tabs .elementor-tab-title{color:{$color_1};}
+.elementor-widget-accordion .elementor-accordion .elementor-tab-title{color:{$color_1};}
+.elementor-widget-toggle .elementor-toggle .elementor-tab-title{color:{$color_1};}
+" );
+	}
+
+
+	/* SECONDARY COLOR */
+	if ($color_2) weaverx_f_write($sout,
+		"/*SECONDARY*/.elementor-widget-icon-list .elementor-icon-list-text{color:{$color_2};}
+.elementor-widget-counter .elementor-counter-title{color:{$color_2};}
+.elementor-widget-testimonial .elementor-testimonial-job{color:{$color_2};}
+");
+
+
+	/* TEXT COLOR */
+	if ($color_3) weaverx_f_write($sout,
+		"/*TEXT*/.elementor-widget-image .widget-image-caption{color:{$color_3};}
+.elementor-widget-text-editor{color:{$color_3};}
+.elementor-widget-divider .elementor-divider-separator{border-top-color:{$color_3};}
+.elementor-widget-image-box .elementor-image-box-content .elementor-image-box-description{color:{$color_3};}
+.elementor-widget-icon-box .elementor-icon-box-content .elementor-icon-box-description{color:{$color_3};}
+.elementor-widget-icon-list .elementor-icon-list-item:not(:last-child):after{border-top-color:{$color_3};}
+.elementor-widget-testimonial .elementor-testimonial-content{color:{$color_3};}
+.elementor-widget-tabs .elementor-tab-content{color:{$color_3};}
+.elementor-widget-accordion .elementor-accordion .elementor-tab-content{color:{$color_3};}
+.elementor-widget-toggle .elementor-toggle .elementor-tab-content{color:{$color_3};}
+" );
+
+	/* ACCENT COLOR */
+	$accent_color = '';
+	if ($color_4) weaverx_f_write($sout,
+		"/*ACCENT*/.elementor-widget-button a.elementor-button, .elementor-widget-button .elementor-button{background-color:{$color_4};}
+.elementor-widget-tabs .elementor-tab-title.elementor-active{color:{$color_4};}
+.elementor-widget-accordion .elementor-accordion .elementor-tab-title.elementor-active{color:{$color_4};}
+.elementor-widget-toggle .elementor-toggle .elementor-tab-title.elementor-active{color:{$color_4};}
+");
 }
 
 ?>
