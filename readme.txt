@@ -1,8 +1,8 @@
 === Beatrix Lite === 
 Contributors: wponlinesupport, anoopranawat
 Requires at least: WordPress 4.5
-Tested up to: WordPress 4.9.4
-Version: 1.0
+Tested up to: WordPress 4.9.5
+Version: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: footer-widgets, custom-menu, featured-images, post-formats, sticky-post, threaded-comments, translation-ready, blog,  right-sidebar, two-columns
@@ -47,9 +47,12 @@ Images for screenshot
 - https://www.pexels.com/photo/green-scale-model-car-on-brown-pavement-35967/
 - https://www.pexels.com/photo/focus-photography-of-american-flag-accent-wayfarer-styled-sunglasses-with-sea-background-860917/?download-size=1280x853
 
-Images license : https://www.pexels.com/photo-license/
+Images license : Creative Commons Zero (CC0) license (https://www.pexels.com/photo-license/)
 
 == Changelog ==
+
+= 1.0.3 =
+* Fixed 404 and serach page design issue.
 
 = 1.0.2 =
 * Fixed some mobile related design issues.
