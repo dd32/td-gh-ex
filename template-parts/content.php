@@ -23,8 +23,7 @@
                 <span><i class="fa fa-calender"></i><?php echo get_the_date( 'd'); ?> <?php echo get_the_date( 'F'); ?> </span>
                 <span><i class="fa fa-comments"></i><?php echo absint(get_comments_number());?></span>
             </div>
-              <?php the_excerpt();?>
-                <a href="<?php the_permalink(); ?>" class="btn"><?php echo esc_html__('Read More','a-portfolio'); ?><i class="fa fa-angle-double-right"></i></a>
+              <?php the_content();?>
         </div>
     </div>
     <!--/ End Single blog -->

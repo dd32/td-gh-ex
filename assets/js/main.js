@@ -170,6 +170,8 @@
             });
         });
     });
+
+    $(".full-content").hide();
 })(jQuery); // End of use strict
 
  // Google Map

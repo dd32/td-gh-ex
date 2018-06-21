@@ -6,8 +6,11 @@
  *
  * @package a-portfolio
  */
-
+echo "search page";
+die();
 get_header();
+
+
 ?>
 
 	<section id="primary" class="content-area">
