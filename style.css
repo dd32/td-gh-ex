@@ -1,11 +1,11 @@
 /*
 Theme Name: MyWiki
 Theme URI: http://fasterthemes.com/wordpress-themes/mywiki
-Description: MyWiki is simple, lightweight and faster WordPress Theme for individuals and companies to manage their Knowledgebase or Wiki or FAQs. It is a mobile responsive theme based on Twitter bootstrap framework. It's a translation ready theme and is available in English as well as Spanish languages.
+Description: MyWiki is simple, lightweight and fast loading WordPress Theme for individuals and companies to manage their Knowledge-base or Support or Wiki or Frequently Asked Questions (FAQs) through a WordPress website. It is powered by Ajax search. It is a mobile responsive theme based on Twitter bootstrap framework. It is a translation ready theme and hence can be translated to any LTR language. Step by step documentation and tutorial is available for free here: https://fasterthemes.com/documentation/mywiki/
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Tags: custom-background, custom-menu, full-width-template, theme-options, right-sidebar, featured-images, post-formats, sticky-post, editor-style , translation-ready
-version: 2.5
+version: 3.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 This theme, like WordPress, is licensed under the FasterThemes.
@@ -13,18 +13,43 @@ Use it to make something cool, have fun, and share what you've learned with othe
 Text Domain: mywiki
 */
 
-@import url(//fonts.googleapis.com/css?family=Electrolize);
- @import url(//fonts.googleapis.com/css?family=Open+Sans);
- @import url(//fonts.googleapis.com/css?family=Lato);
 /****** Main CSS ******/
-
+body {
+	font-family: 'Cabin', sans-serif;
+}
 p {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 }
-h1, h2 {
-	font-family: 'Open Sans', sans-serif;
-	color: rgb(66, 139, 202);
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Cabin', sans-serif;
+	color: #048eb0;
 }
+a{
+	color:#048eb0;
+}
+table {
+    border: 1px solid #ccc;
+}
+table thead tr {
+    border-bottom: 1px solid #ccc;
+}
+table thead tr th {
+    padding: 5px;
+    border-right: 1px solid #ccc;
+}
+table thead tr th:last-child {
+    border-right: 0;
+}
+table tbody tr {
+    border-bottom: 1px solid #ccc;
+}
+table tbody tr th, table tbody tr td {
+    border-right: 1px solid #ccc;
+    padding: 5px;
+	font-weight: normal;
+}
+
+
 .btn-default, .btn-primary, .btn-success, .btn-info, .btn-warning, .btn-danger {
 	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 1px rgba(0, 0, 0, 0.075);
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
@@ -155,12 +180,22 @@ h1, h2 {
     display: block;
     margin: 1em auto;
 }
+
+.sidebar-heading {  
+  	color: #ffffff;
+    position: relative;
+    margin: 0;
+    padding: 10px 10px;
+    background: #048eb0;
+	border-radius: 3px;
+}
+
 #footer {
 	background: #048eb0 !important;
 }
 #footer p {
 	color: #FFF;
-	font-weight: bold;
+	font-weight: normal;
 }
 #widget-footer img {
     height: auto;
@@ -182,10 +217,13 @@ h1, h2 {
 }
 .navbar-brand, .navbar-nav > li > a {
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	font-size: 14px;
 	color: #1F1F1F;
 }
+.footer-menu-nav .footer-nav > li a {font-size: 18px;}
+
+
 .navbar-inverse {
 	background-image: linear-gradient(to bottom, #3C3C3C 0%, #222222 100%);
 	background-repeat: repeat-x;
@@ -325,9 +363,13 @@ body.admin-bar .navbar-fixed-top {
 	max-width: 100%;
         margin-bottom: 15px;
 }
+.blog article, .archive article{
+    border-bottom: 1px solid #ccc;
+	margin-bottom: 15px;
+}
 .post_content {
 	width: 100% !important;
-	padding: 21px 0px !important;
+	padding: 15px 0px 0 !important;
 }
 .navbar-fixed-top {
 }
@@ -348,14 +390,13 @@ ul#comment-form-elements {
 	margin: 0 auto;
 }
 span.holdimg {
-	background: url("./img/ph.jpg") repeat;
+	
 	display: block;
 	height: 100%;
 	min-height: 20em;
 	width: 100%;
 }
-#copyright_foot.authl {
-	background: url("./img/eofeb.png") top right no-repeat;
+#copyright_foot.authl {	
 	margin-bottom: 0;
 	padding-bottom: 1em;
 	padding-right: 62px;
@@ -366,9 +407,8 @@ span.holdimg {
 }
 .wp-caption-text {
 }
-.sticky {
-	border: 1px dotted #eee;
-	padding: 0.6em;
+.sticky {	
+	
 }
 .gallery-caption {
 	font-weight: 900;
@@ -417,29 +457,47 @@ a.cboxElement:hover img {
 	height: auto;
 }
 #home-main .page-catheader {
-	background: url(./img/sprite.png) no-repeat top left;
-	background-position: 0 -200px;
-	border-bottom: 1px solid #EEEEEE;
-	margin: 15px 0 15px;
-	padding-bottom: 9px;
-	font-size: 22px;
+    margin: 15px 0 15px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-size: 22px;
+    /*background: #048eb0;*/
+	border-radius:3px;
 }
+.category .page-catheader, .archive .page-catheader {
+    background: #048eb0;
+}
+.single-post #home-main .page-catheader {	
+    margin: 0;
+    padding-bottom: 5px;
+    padding-top: 5px;
+	padding-left: 0px;
+    font-size: 22px;
+	background: transparent;
+}
+.single-post .cat-title {
+    color: #048eb0;
+    font-family: 'Cabin', sans-serif;
+    font-size: 17px;
+}
+
 .cat-main-section {
-	float: left;
-	width: 50%;
-	min-width: 285px;
-	margin-top: 3%;
+	float: left;	
+	padding-top: 1%;
+	min-height: 150px;
+	transition: all .3s ease-in-out;
 }
 .cat-main-section header {
 	padding-left: 55px;
 	overflow: visible;
 	margin-top: -1%;
 	padding: 1px 0 1px 55px;
-	background: url("./img/sprite.png") no-repeat scroll 0 -279px rgba(0, 0, 0, 0);
+
 }
 .cat-main-section header h4 {
 	color: #292929;
-	font-family: 'Electrolize', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	font-size: 17px;
 	margin-top: 8px;
 }
@@ -447,37 +505,30 @@ a.cboxElement:hover img {
 	color: #292929;
 	font-size: 16px;
 }
+.cat-main-section:hover {
+    box-shadow: 0px 1px 6px 0px #ccc;
+}
+
 a:hover, a.wid-cat-title p:hover, a:focus {
 	color: #048eb0 !important;
 }
 a {
 	text-decoration: none !important;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 }
 .cat-main-section header h4:hover {
 	color: #007895;
 }
 .content-according {
-	margin-left: 15%;
-	margin-top: 1.5%;
+	margin-top: 4%;
 	margin-bottom: 8%;
+	overflow: hidden;
 }
-.content-according p {
-	padding-left: 10%;
-	background: url(./img/cal-post-icn.png);
-	background-position: left;
-	background-repeat: no-repeat;
-	color: #048eb0;
-	font-size: 16px;
-	margin-top: 3%;
-	font-family: 'Open Sans', sans-serif;
-	letter-spacing: 0.5px;
+.content-according ul{
+	padding:0;
+	margin:0;
 }
 .mywiki_category_widget_function, .widget_popular, .widget_recentpost {
-	background: url(./img/cat-icn.png);
-	background-position: top left;
-	background-repeat: no-repeat;
-	background-size: 20px;
 	margin-top: 44px;
 }
 .wid-category {
@@ -489,7 +540,7 @@ div {
 	cursor: default;
 }
 .wid-category span {
-	font-family: 'Electrolize', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	margin-left: 30px;
 }
 .wid-cat-container {
@@ -498,24 +549,20 @@ div {
 a.wid-cat-title {
 	text-decoration: none;
 }
-a.wid-cat-title p {
-	font-family: 'AftaSans';
-	padding-left: 30px;
-	background: url(./img/arrow.png);
-	background-position: left;
-	background-repeat: no-repeat;
+a.wid-cat-title p {	
+	padding-left: 30px;	
 	color: #010101;
 	font-size: 13px;
 	margin-top: 15px;
 }
 .attribution {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	font-size: 14px;
 	width: auto;
 	float: left;
 }
 .attribution a {
-	font-weight: bold;
+	font-weight: normal;
 }
 .padding-top-bottom .attribution {
 	margin-top: 1.5%;
@@ -541,7 +588,7 @@ a.wid-cat-title p {
 .tagline {
 	float: left;
 	clear: left;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 }
 /* * * * 
 
@@ -561,14 +608,12 @@ div.input-group-btn button.btn-info {
 }
 .glyphicon-search:before {
 	content: "SEARCH" !important;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	font-weight: 600;
 	font-stretch: semi-expanded;
-	background: url(./img/sprite.png) no-repeat top left;
-	background-position: 0 -360px;
 	padding-left: 30px;
 }
-.col-md-3 {
+.searchwrap {
 	background: none repeat scroll 0 0 #048eb0;
 	width: 100%;
 }
@@ -585,16 +630,26 @@ div.input-group-btn button.btn-info {
 }
 .navbar-form {
 	padding: 0px;
-	margin: 0px auto;
+	margin: 0px auto;	
+}
+.navbar-form .form-control{
+	height: 57px;
 }
 .search-main {
-	padding: 25px 10px;
+	padding: 25px 15px;
 }
 .navbar {
-	margin-bottom: 0px;
+	margin-bottom: 0px;	
 }
 .navbar-brand {
 	font-size: 45px;
+	height: auto;
+	margin: 20px 0 10px;
+    padding: 0px 0 0 15px;
+}
+.navbar-brand > img {
+    display: block;
+    width: 70%;
 }
 .navbar-default .navbar-nav > li > a {
 	color: #494949;
@@ -611,8 +666,10 @@ div.input-group-btn button.btn-info {
 hr {
 	margin: 0px;
 }
-header .navbar .container {
-	padding: 0px 0px;
+/* Widget */
+#sidebar1 .widget {
+    margin-top: 20px;	
+    margin-bottom: 30px;
 }
 
 /************************Single.php css start**************************/
@@ -620,20 +677,12 @@ header .navbar .container {
 .single-title {
 	color: #017c9a;
 	font-size: 18px;
-	font-family: 'Open Sans', sans-serif;
-	background: url(./img/sprite.png) no-repeat top left;
-	background-position: 0 -119px;
+	font-family: 'Cabin', sans-serif;	
 	padding: 12px 0px 1px 36px;
 	margin: 0px;
 }
 .single-page {
-	font-family: 'Open Sans', sans-serif;
-}
-.single-page .meta {
-	background: #fbfbfb;
-	border-bottom: #d9d9d9 solid 1px;
-	padding: 15px 0px 15px 17px !important;
-	font-size: 12px;
+	font-family: 'Cabin', sans-serif;
 }
 /************************Single.php css end**************************/
 
@@ -642,27 +691,28 @@ header .navbar .container {
 #result {
 	height: 20px;
 	font-size: 16px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	color: #333;
 	padding: 5px;
 	margin-bottom: 10px;
 	background-color: #FFFF99;
 }
 #s {
-	padding: 7px 5px 5px 38px;
+	padding: 25px 5px 25px 30px;
 	border: 1px #CCC solid;
 	font-size: 16px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
-	border-radius: 6px;
+	border-radius: 3px;
 }
 .suggestionsbox {
 	position: absolute;
 	left: 0px;
 	top: 40px;
 	margin: 35px 0px 0px 0px;
-	width: 50%;
+	width: 100%;
+    max-width: 50%;
 	padding: 0px;
 	background-color: #fff;
 	border: 1px solid #D1D1D1;
@@ -680,7 +730,7 @@ header .navbar .container {
 	padding: 7px;
 	cursor: pointer;
 	margin: 0px 10px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	font-size: 14px;
 }
 .suggestionlist ul li:hover {
@@ -698,19 +748,26 @@ header .navbar .container {
 .suggestionlist ul li a:hover {
 	color: #048eb0;
 }
+.suggestionlist ul li a i {
+    padding: 0 10px 0 0px;
+    font-weight: bold;
+    font-size: 16px;
+}
 #suggestionslist > ul {
 	margin-left: 0px;
-}
-.suggestionlist li.que-icn {
-	background: url("./img/que-icn.png") no-repeat scroll 0 7px rgba(0, 0, 0, 0);
-	padding-left: 31px;
-}
-ul {
 	padding: 0;
+}
+
+ul {
 	margin: 0;
+}
+.category-edgecase .post_content ul{
+	padding:0;
+	margin-bottom: 10px;
 }
 .sidebar ul {
 	font-size: 13px !important;
+	padding-left: 10px;
 }
 .sidebar li {
 	padding-top: 7px;
@@ -750,8 +807,9 @@ ul li {
 	padding-left: 40px !important;
 }
 }
-#suggest {
+.navbar-form #suggest.input-group {
 	position: relative;
+	width: 100%;
 }
 .upArrow {
 	position: relative;
@@ -760,12 +818,9 @@ ul li {
 }
 /************************end wikki search**************************/
 
-.top-menu {
-	margin: 42px 0px 0px 0px !important;
-	padding: 0px !important
-}
-.logo {
-	padding: 50px 15px 0px 16px !important;
+.navbar.navbar-default .navbar-collapse.top-menu {
+	margin: 16px 0px 14px 0px;
+	padding: 0px;
 }
 #logo h1 {
 	color: #000000;
@@ -806,26 +861,22 @@ ul li {
 }
 .content-according li {
 	list-style-type: none;
-	background: url(./img/sprite.png) no-repeat top left;
-	background-position: 0 -129px;
 	color: #048eb0;
 	font-size: 14px;
-	padding-left: 30px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	padding-bottom: 10px;
 }
 .content-according li a {
 	padding-top: -3px;
+	padding-left: 5px;
 }
 .wid-cat-container li {
 	list-style-type: none;
-	background: url(./img/sprite.png) no-repeat top left;
-	background-position: 0 5px;
 	color: #010101;
 	font-size: 14px;
 	padding-left: 20px;
 	margin: 20px 0 20px 38px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 }
 .wid-cat-container li:first-child {
 	margin: 15px 0 20px 38px;
@@ -849,8 +900,7 @@ ul li {
 /*===== socia icon css ========*/
 
 .footer-menu-nav ul li a {
-	padding-top: 5px;
-	padding-bottom: 22px;
+	padding: 5px 5px 15px 5px;
 }
 .footer-menu-nav .socia_icon a {
 	height: 25px;
@@ -858,38 +908,7 @@ ul li {
 	display: inline-block;
 	text-indent: -9999px;
 }
-.footer-menu-nav .facebook_icon a {
-	background-image: url("./img/socialicon.png");
-	background-position: 0px center;
-}
-.footer-menu-nav .twitter_icon a {
-	background-image: url("./img/socialicon.png");
-	background-position: -43px center;
-}
-.footer-menu-nav .google_icon a {
-	background-image: url("./img/socialicon.png");
-	background-position: -86px center;
-}
-.footer-menu-nav .linkedin_icon a {
-	background-image: url("./img/socialicon.png");
-	background-position: -129px center;
-}
-.footer-menu-nav .facebook_icon a:hover {
-	background-image: url("./img/socialicon.png");
-	background-position: -177px center;
-}
-.footer-menu-nav .twitter_icon a:hover {
-	background-image: url("./img/socialicon.png");
-	background-position: -220px center;
-}
-.footer-menu-nav .google_icon a:hover {
-	background-image: url("./img/socialicon.png");
-	background-position: -263px center;
-}
-.footer-menu-nav .linkedin_icon a:hover {
-	background-image: url("./img/socialicon.png");
-	background-position: -306px center;
-}
+
 /*==================== M E N U -- C S S =============*/
 
 .mywiki-header-menu, .mywiki-header-menu ul {
@@ -934,7 +953,7 @@ ul li {
 	position: absolute;
 	top: 38px;
 	left: 0;
-	z-index: 1;
+	z-index: 10;
 	-webkit-transition: all .2s ease-in-out;
 	-moz-transition: all .2s ease-in-out;
 	-ms-transition: all .2s ease-in-out;
@@ -1040,329 +1059,334 @@ ul li {
 	text-align: center;
 }
 .logo {
-	min-width: 96% !important
+	min-width: 80%;
 }
 }
  @media (min-width: 241px) and (max-width: 379px) {
-#s {
-	font-size: 12px;
-	padding: 20px 20px 20px 20px;
-}
- #s::-moz-placeholder {
- color:#fff;
-}
- #s::-webkit-placeholder {
- color:#fff;
-}
-.navbar-toggle {
-	top: 80px;
-}
-.top-nav {
-	text-align: center;
-}
-.navbar-nav {
-	margin: 0px !important;
-}
-.suggestionsbox {
-	width: 70%;
-}
-.margin-top {
-	margin-top: 10px !important;
-}
-.padding-top-bottom .attribution {
-	margin-top: 92.5px;
-}
-/* To fix postion of loader image in Mozilla */
+	.cat-main-section{
+	 min-height: auto;
+	}	
+	#s {
+		font-size: 12px;
+		padding: 20px 20px 20px 20px;
+	}
+	 #s::-moz-placeholder {
+	 color:#fff;
+	}
+	 #s::-webkit-placeholder {
+	 color:#fff;
+	}
+	.navbar-toggle {
+		top: 40px;
+		position: absolute;
+		right: 0;
+		margin-top: 0;
+	}
+	.top-nav {
+		text-align: center;
+	}
+	.navbar-nav {
+		margin: 0px !important;
+	}
+	.suggestionsbox {
+		width: 100%;
+	}
+	.margin-top {
+		margin-top: 10px !important;
+	}
+	.padding-top-bottom .attribution {
+		margin-top: 0;
+	}
+	/* To fix postion of loader image in Mozilla */
 
-.load {
-	background-position: right 80px center !important;
-}
+	.load {
+		background-position: right 80px center !important;
+	}
 }
  @media (min-width: 380px) and (max-width: 479px) {
-#s {
-	font-size: 12px;
-	padding: 20px 20px 20px 20px;
-}
- #s::-moz-placeholder {
- /*color:#fff;*/
-}
-.navbar-toggle {
-	top: 40px;
-}
-.top-nav {
-	text-align: center;
-}
-.navbar-nav {
-	margin: 0px !important;
-}
-.suggestionsbox {
-	width: 70%;
-}
-.margin-top {
-	margin-top: 10px !important;
-}
-/* To fix postion of loader image in Mozilla */
+	#s {
+		font-size: 12px;
+		padding: 20px 20px 20px 20px;
+	}
+	 #s::-moz-placeholder {
+	 /*color:#fff;*/
+	}
+	.navbar-toggle {
+		top: 40px;
+		position: absolute;
+		right: 0;
+		margin-top: 0;
+	}
+	.top-nav {
+		text-align: center;
+	}
+	.navbar-nav {
+		margin: 0px !important;
+	}
+	.suggestionsbox {
+		width: 70%;
+	}
+	.margin-top {
+		margin-top: 10px !important;
+	}
+	/* To fix postion of loader image in Mozilla */
 
-.load {
-	background-position: right 80px center !important;
-}
+	.load {
+		background-position: right 80px center !important;
+	}
 }
  @media (min-width: 480px) and (max-width: 568px) {
-#s {
-	font-size: 12px;
-	padding: 20px 20px 20px 20px;
-}
-.navbar-toggle {
-	top: 40px;
-}
-.top-nav {
-	text-align: center;
-}
-.navbar-nav {
-	margin: 0px !important;
-}
-.margin-top {
-	margin-top: 10px !important;
-}
-/* To fix postion of loader image in Mozilla */
+	#s {
+		font-size: 12px;
+		padding: 20px 20px 20px 20px;
+	}
+	.navbar-toggle {
+		top: 40px;
+		position: absolute;
+		right: 0;
+		margin-top: 0;
+	}
+	.top-nav {
+		text-align: center;
+	}
+	.navbar-nav {
+		margin: 0px !important;
+	}
+	.margin-top {
+		margin-top: 10px !important;
+	}
+	/* To fix postion of loader image in Mozilla */
 
-.load {
-	background-position: right 100px center !important;
-}
+	.load {
+		background-position: right 100px center !important;
+	}
 }
  @media (min-width: 569px) and (max-width: 767px) {
-#s {
-	font-size: 12px;
-	padding: 20px 20px 20px 20px;
-}
-.navbar-toggle {
-	top: 40px;
-}
-.top-nav {
-	text-align: center;
-}
-.navbar-nav {
-	margin: 0px !important;
-}
-.margin-top {
-	margin-top: 10px !important;
-}
-/* To fix postion of loader image in Mozilla */
+	#s {
+		font-size: 12px;
+		padding: 20px 20px 20px 20px;
+	}
+	.navbar-toggle {
+		top: 40px;
+		position: absolute;
+		right: 0;
+		margin-top: 0;
+	}
+	.top-nav {
+		text-align: center;
+	}
+	.navbar-nav {
+		margin: 0px !important;
+	}
+	.margin-top {
+		margin-top: 10px !important;
+	}
+	/* To fix postion of loader image in Mozilla */
 
-.load {
-	background-position: right 100px center !important;
-}
+	.load {
+		background-position: right 100px center !important;
+	}
 }
  @media (max-width: 767px) {
-/* nav-wrap */
+	/* nav-wrap */
+	.menu-wrap {
+		position: relative;
+	}
+	.menu-wrap * {
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	/* menu icon */
 
-.menu-wrap {
-	position: relative;
-}
-.menu-wrap * {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
-/* menu icon */
-
-#menu-trigger {
-	cursor: pointer;
-	display: block;
-	height: 40px;
-}
-.mywiki-header-menu {
-	background-color: #FFF !important;
-	display: block !important;
-	padding: 0px !important;
-	position: relative !important;
-	top: 0px !important;
-}
-.mywiki-header-menu ul li a {
-	background: none repeat scroll 0 0 #f8f8f8 !important;
-	font-size: 14px;
-	text-align: left;
-}
-.mywiki-header-menu:after {
-	content: '';
-	position: absolute;
-	left: 25px;
-	top: -8px;
-	border: none;
-}
-.mywiki-header-menu a:hover, .mywiki-header-menu a:focus {
-	color: #048EB0 !important;
-}
-.mywiki-header-menu li:hover > a {
-	color: #380101;
-	text-decoration: none;
-}
-.mywiki-header-menu ul {
-	position: static;
-	visibility: visible;
-	opacity: 1;
-	margin: 0;
-	background: none;
-	border: none;
-	padding: 4px 3px 2px 4px;
-}
-.mywiki-header-menu ul ul {
-	margin: 0 0 0 20px !important;
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	left: 0px !important;
-}
-.mywiki-header-menu li {
-	position: relative;
-	display: block;
-	float: left !important;
-	border: 0;
-	margin: 5px;
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	width: 90%;
-	text-align: left;
-}
-.mywiki-header-menu ul li {
-	background: none;
-	margin-left: 20px;
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-}
-.mywiki-header-menu a {
-	display: block;
-	float: none;
-	padding: 0;
-	color: #000;
-}
-.mywiki-header-menu a:hover, .mywiki-header-menu a:focus {
-	color: #fafafa;
-}
-.mywiki-header-menu ul a {
-	padding: 0;
-	width: auto;
-}
-.mywiki-header-menu ul a:hover {
-	background: none;
-}
-.mywiki-header-menu ul li:first-child a:after, .mywiki-header-menu ul ul li:first-child a:after {
-	border: 0;
-}
-.mywiki-header-menu li> a {
-	color: #048EB0;
-}
-.mywiki-header-menu li> a:hover {
-	color: #048EB0;
-}
-.top-menu {
-	margin: 0px 0px 0px 0px !important;
-}
-.footer-menu-nav .nav > li {
-	width: 100% !important;
-	padding: 5px 0px;
-}
-.footer-menu-nav .nav > li:last-child {
-	margin-bottom: 10px;
-}
- #s::-moz-placeholder {
- /*color:#fff;*/
-}
- #s::-webkit-input-placeholder {
- color:#fff;
-}
-.input-group-btn > .btn {
-	width: 52px;
-	overflow: hidden;
-	padding-left: 0px;
-}
-.glyphicon-search:before {
-	margin-left: 16px !important;
-	padding-left: 40px !important;
-}
-.border-bottom {
-	border: none;
-}
-.logo {
-	width: 96% !important
-}
-.border-left {
-	border: none;
-}
-.date-icon, .author-icon, .cat-icon-small, .comments-icon-small, .single-page .meta {
-	float: left;
-	width: 100%;
-}
-#commentform p {
-	width: 95% !important;
-}
-#commentform p:nth-child(4) {
-	width: 100% !important;
-}
+	#menu-trigger {
+		cursor: pointer;
+		display: block;
+		height: 40px;
+	}
+	.mywiki-header-menu {
+		background-color: #FFF !important;
+		display: block !important;
+		padding: 0px !important;
+		position: relative !important;
+		top: 0px !important;
+	}
+	.mywiki-header-menu ul li a {
+		background: none repeat scroll 0 0 #f8f8f8 !important;
+		font-size: 14px;
+		text-align: left;
+	}
+	.mywiki-header-menu:after {
+		content: '';
+		position: absolute;
+		left: 25px;
+		top: -8px;
+		border: none;
+	}
+	.mywiki-header-menu a:hover, .mywiki-header-menu a:focus {
+		color: #048EB0 !important;
+	}
+	.mywiki-header-menu li:hover > a {
+		color: #380101;
+		text-decoration: none;
+	}
+	.mywiki-header-menu ul {
+		position: static;
+		visibility: visible;
+		opacity: 1;
+		margin: 0;
+		background: none;
+		border: none;
+		padding: 4px 3px 2px 4px;
+	}
+	.mywiki-header-menu ul ul {
+		margin: 0 0 0 20px !important;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		left: 0px !important;
+	}
+	.mywiki-header-menu li {
+		position: relative;
+		display: block;
+		float: left !important;
+		border: 0;
+		margin: 5px;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		width: 90%;
+		text-align: left;
+	}
+	.mywiki-header-menu ul li {
+		background: none;
+		margin-left: 20px;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+	.mywiki-header-menu a {
+		display: block;
+		float: none;
+		padding: 0;
+		color: #000;
+	}
+	.mywiki-header-menu a:hover, .mywiki-header-menu a:focus {
+		color: #fafafa;
+	}
+	.mywiki-header-menu ul a {
+		padding: 0;
+		width: auto;
+	}
+	.mywiki-header-menu ul a:hover {
+		background: none;
+	}
+	.mywiki-header-menu ul li:first-child a:after, .mywiki-header-menu ul ul li:first-child a:after {
+		border: 0;
+	}
+	.mywiki-header-menu li> a {
+		color: #048EB0;
+	}
+	.mywiki-header-menu li> a:hover {
+		color: #048EB0;
+	}
+	.top-menu {
+		margin: 0px 0px 0px 0px !important;
+	}
+	.footer-menu-nav .nav > li {
+		width: auto;
+		padding: 5px 0px;
+	}
+	.footer-menu-nav .nav > li:last-child {
+		margin-bottom: 10px;
+	}
+	 #s::-moz-placeholder {
+	 /*color:#fff;*/
+	}
+	 #s::-webkit-input-placeholder {
+	 color:#fff;
+	}
+	.input-group-btn > .btn {
+		width: 52px;
+		overflow: hidden;
+		padding-left: 0px;
+	}
+	.glyphicon-search:before {
+		margin-left: 16px !important;
+		padding-left: 40px !important;
+	}
+	.border-bottom {
+		border: none;
+	}
+	.logo {
+		width: 75%;
+		height: auto;
+	}
+	.border-left {
+		border: none;
+	}
+	.date-icon, .author-icon, .cat-icon-small, .comments-icon-small, .single-page .meta {
+		float: left;
+		width: 100%;
+	}
+	#commentform p {
+		width: 95% !important;
+	}
+	#commentform p:nth-child(4) {
+		width: 100% !important;
+	}
 }
  @media (min-width: 768px) and (max-width: 900px) {
-.search-main {
-	width: 735px !important;
-}
-/* To fix postion of loader image in Mozilla */
+	.search-main {
+		width: 735px !important;
+	}
+	/* To fix postion of loader image in Mozilla */
 
-.load {
-	background-position: right 180px center !important;
-}
+	.load {
+		background-position: right 180px center !important;
+	}
 }
  @media (min-width: 900px) {
-/* To fix postion of loader image in Mozilla */
-
-.load {
-	background-position: right 200px center !important;
-}
+	/* To fix postion of loader image in Mozilla */
+	.load {
+		background-position: right 200px center !important;
+	}
 }
 .avatar.avatar-32.photo {
 	display: -moz-groupbox !important;
 	margin: 0 12px -19px 0 !important;
 }
  @media screen and (-webkit-min-device-pixel-ratio:0) {
-.comment-author b {
-	margin: -20px 0px 0px 50px !important;
-}
-/* Safari only override 
-
-    ::i-block-chrome, .comment-author b {
-
-    	margin:-20px 0px 0px 50px !important;
-
-	}*/
-
-.avatar.avatar-32.photo {
-	display: -moz-groupbox !important;
-	margin: 0px 12px -35px 0 !important;
-}
+	.comment-author b {
+		margin: -20px 0px 0px 50px !important;
+	}
+	.avatar.avatar-32.photo {
+		display: -moz-groupbox !important;
+		margin: 0px 12px -35px 0 !important;
+	}
 }
 .cat-hadding {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 18px;
-	color: #191919;
-	background-color: #fbfbfb;
-	border-bottom: #d9d9d9 solid 1px;
-	padding: 10px 5px 10px 14px;
-	text-align: left;
-	margin-bottom: 10px;
+	font-family: 'Cabin', sans-serif;
+    font-size: 18px;
+    color: #191919;
+    text-align: left;
 }
 .cat-hadding a {
-	color: #191919;
-	background: url(./img/sprite.png) no-repeat top left;
-	background-position: 0 -126px;
-	padding-left: 35px;
+	color: #048eb0;
+    background-position: 0 -126px;
+    padding: 10px 0px;
+    width: 100%;
+    display: inline-block;
+}
+.cat-hadding a:hover{
+	color: #868686 !important;
 }
 .box-border {
 	border: #d9d9d9 solid 1px;
 }
 /************************* CATEGORY **********************************/
-
 .cat-content {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	font-size: 15px;
 	color: #181818;
 	line-height: 29px;
@@ -1383,14 +1407,12 @@ ul li {
 	background-position: 0 -279px !important;
 }
 .cat-title {
-	color: #048EB0;
-	font-family: 'Electrolize', sans-serif;
+	color: #ffffff;
+	font-family: 'Cabin', sans-serif;
 	font-size: 17px;
-	margin-left: 6%;
-	padding-top: 1.5%;
 }
 .cat-title span {
-	color: #010101;
+	color: #ffffff;
 }
 /************************** Singal page *******************************************/
 
@@ -1400,7 +1422,7 @@ ul li {
 .tags a {
 	color: #fff;
 	font-size: 14px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	background-color: #09aad8;
 	padding: 1px 10px;
 }
@@ -1408,13 +1430,13 @@ ul li {
 }
 .tags .tags-title {
 	color: #181818;
-	font-family: 'Electrolize', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	font-size: 18px;
 }
 /********************* Comment ****************************/
 
 .comment_form {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 }
 .comment_form > .form-comment-field {
 	width: 31%;
@@ -1449,51 +1471,54 @@ ul li {
 	width: 100%;
 }
 #respond > h3 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	font-size: 19px;
 }
 #commentform small {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	font-weight: normal;
 }
 #commentform p {
 	float: left;
-	width: 60%;
+	width: 100%;
 }
 #commentform p:nth-child(4) {
 	width: 90%;
 }
 #commentform input[type='text'] {
-	border-radius: 5px;
-	border: #cfcfcf solid 1px;
+	border-radius: 3px;
+	border: 1px solid #cfcfcf;
 	height: 32px;
 	width: 100%;
 	padding: 2px 5px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
+	outline:0;
 }
 #commentform input[type='submit'] {
-	background: #0083c1;
+	background: #048eb0;
 	color: #FFF;
 	border: 0px;
 	padding: 5px 5px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
+	outline:0;
 }
 #commentform textarea {
-	border-radius: 5px;
+	border-radius: 3px;
 	border: #cfcfcf solid 1px;
 	height: 143px;
 	width: 100%;
 	padding: 5px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
+	outline:0;
 }
 #main > h3 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	font-size: 22px;
 	font-weight: normal;
 }
 ol.commentlist {
 	float: left;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	font-weight: normal;
 	list-style: none outside none;
 	width: 100%;
@@ -1597,26 +1622,7 @@ ol.commentlist {
 	margin: 0 0 0 22px !important;
 	padding-bottom: 0 !important;
 }
-.sprite {
-	background: url(./img/sprite.png) no-repeat;
-	padding: 0 0 0 22px;
-}
-.date-icon {
-	background-position: left top -422px;
-	margin-left: 11px;
-}
-.author-icon {
-	background-position: left top -476px;
-	margin-left: 11px;
-}
-.cat-icon-small {
-	background-position: left top -531px;
-	margin-left: 11px;
-}
-.comments-icon-small {
-	background-position: left top -591px;
-	margin-left: 11px;
-}
+
 #suggestionslist {
 	max-height: 220px;
 	width: 100%;
@@ -1625,19 +1631,19 @@ ol.commentlist {
 	margin-right: auto;
 }
 input {
-	border-radius: 5px;
+	border-radius: 3px;
 	border: #cfcfcf solid 1px;
 	height: 32px;
 	width: 60%;
 	padding: 2px 5px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 }
 textarea {
-	border-radius: 5px;
+	border-radius: 3px;
 	border: #cfcfcf solid 1px;
 	width: 60%;
 	padding: 2px 5px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 }
 input[type="submit"] {
 	cursor: pointer;
@@ -1646,12 +1652,21 @@ input[type="submit"] {
 	color: #FFF;
 	border: 0px;
 	padding: 5px 5px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 	width: 30%
+}
+.search-submit{
+    background: #048eb0;
+    color: #FFF;
+    border: 0px;
+    padding: 9px 14px;
+    border-radius: 3px;
+    outline: 0;
+    margin-left: 4px;
 }
 .mywiki_breadcrumbs {
 	margin-bottom: 20px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 }
 .mywiki-nav-next {
 	float: right;
@@ -1664,6 +1679,7 @@ input[type="submit"] {
 #comments {
 	border-top: 1px solid rgb(217, 217, 217);
 	padding-top: 20px;
+	margin-top: 10px;
 }
 .main-page-title {
 	border-bottom: 1px solid rgb(238, 238, 238);
@@ -1671,10 +1687,10 @@ input[type="submit"] {
 	padding-bottom: 9px;
 }
 .comments-title {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 }
 .mywiki_breadcrumbs .current {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cabin', sans-serif;
 }
 .post-meta-entry {
 	font-size: 13px;
@@ -1684,27 +1700,28 @@ input[type="submit"] {
 	display: none;
 }
 .fluid-sidebar .widget_search .search-field {
-	width: 175px;
+	width: 86%;
+	outline:0;
 }
 .current_page_item a {
-	color: rgb(66, 139, 202) !important;
+	color: rgb(4, 142, 176) !important;
 }
 .navbar-header p {
 	margin: 30px 0px 35px;
 }
 .header-theme-text {
 	color: rgb(41, 41, 41);
-	font-family: 'Electrolize', sans-serif;
+	font-family: 'Cabin', sans-serif;
 }
 .header-text {
 	color: #048EB0;
-	font-family: 'Electrolize', sans-serif;
+	font-family: 'Cabin', sans-serif;
 }
 .sidebar select {
 	max-width: 100%;
 }
 .sidebar h1, .sidebar h2, .sidebar h3, .sidebar h4, .sidebar h5, .sidebar h6, .sidebar .h1, .sidebar .h2, .sidebar .h3, .sidebar .h4, .sidebar .h5, .sidebar .h6 {
-	font-family: 'Electrolize', sans-serif;
+	font-family: 'Cabin', sans-serif;
 }
 
 /* Responsive Style */
@@ -1714,96 +1731,103 @@ input[type="submit"] {
     margin-bottom: 5px;
     text-align: center;
     width: 100%;
-}
-.mywiki-nav-next {
-    float: right;
-    text-align: center;
-    width: 100%;
-}
+	}
+	.mywiki-nav-next {
+	    float: right;
+	    text-align: center;
+	    width: 100%;
+	}
 }
 @media (max-width: 359px) {
-#home-main .page-catheader .page-title {
-	margin-left: 13%;
-	font-size: 24px;
-	font-family: 'Electrolize', sans-serif;
-	color: #048eb0;
-	padding-top: .5%;
-}
-.input-group .form-control {
-	display: inline-block;
-	height: 57px;
-	font-size: 12px;
-}
-.attribution {
-	text-align: center;
-	float: none;
-}
-.footer-menu-nav {
-	width: 100%;
-	text-align: center;
-}
-.footer-menu-nav .nav > li {
-	float: left;
-}
+	#home-main .page-catheader .page-title {
+		
+		font-size: 24px;
+		font-family: 'Cabin', sans-serif;
+		color: #048eb0;
+		padding-top: .5%;
+	}
+	.input-group .form-control {
+		display: inline-block;
+		height: 57px;
+		font-size: 12px;
+	}
+	.attribution {
+		text-align: center;
+		float: none;
+	}
+	.footer-menu-nav {
+		width: 100%;
+		text-align: center;
+	}
+	.footer-menu-nav .nav > li {
+		float: none;
+	    text-align: center;
+	    display: inline-block;
+	}
 }
  @media (min-width: 360px) and (max-width: 767px) {
-#home-main .page-catheader .page-title {
-	margin-left: 10%;
-	font-size: 24px;
-	font-family: 'Electrolize', sans-serif;
-	color: #048eb0;
-	padding-top: .5%;
-}
-.input-group .form-control {
-	display: inline-block;
-	height: 57px;
-	font-size: 12px;
-}
-.attribution {
-	text-align: center;
-	float: none;
-}
-.footer-menu-nav .footer-nav li {
-	float: left;
-}
-.footer-menu-nav {
-	width: 100%;
-	text-align: center;
-}
+	.cat-main-section{
+		min-height: auto;
+	}
+	#home-main .page-catheader .page-title {
+		
+		font-size: 24px;
+		font-family: 'Cabin', sans-serif;
+		color: #048eb0;
+		padding-top: .5%;
+	}
+	.input-group .form-control {
+		display: inline-block;
+		height: 57px;
+		font-size: 12px;
+	}
+	.attribution {
+		text-align: center;
+		float: none;
+	}
+	.footer-menu-nav .footer-nav li {
+		float: none;
+	    text-align: center;
+	    display: inline-block;
+	}
+	.footer-menu-nav {
+		width: 100%;
+		text-align: center;
+	}
 }
  @media (max-width: 767px) {
     #mc_embed_signup form{padding: 0;}
  }
  @media (min-width: 768px) and (max-width: 979px) {
-#home-main .page-catheader .page-title {
-	margin-left: 10%;
-	font-size: 24px;
-	font-family: 'Electrolize', sans-serif;
-	color: #048eb0;
-	padding-top: .5%;
-}
-.attribution {
-	text-align: center;
-	float: none;
-}
+	#home-main .page-catheader .page-title {
+		
+		font-size: 24px;
+		font-family: 'Cabin', sans-serif;
+		color: #048eb0;
+		padding-top: .5%;
+	}
+	.attribution {
+		text-align: center;
+		
+	}
 }
  @media (min-width: 980px) and (max-width: 1279px) {
-#home-main .page-catheader .page-title {
-	margin-left: 10%;
-	font-size: 24px;
-	font-family: 'Electrolize', sans-serif;
-	color: #048eb0;
-	padding-top: .5%;
-}
+	#home-main .page-catheader .page-title {
+		
+		font-size: 24px;
+		font-family: 'Cabin', sans-serif;
+		color: #048eb0;
+		padding-top: .5%;
+	}
 }
  @media (min-width: 1280px) {
-#home-main .page-catheader .page-title {
-	margin-left: 5%;
-	font-size: 24px;
-	font-family: 'Electrolize', sans-serif;
-	color: #048eb0;
-	padding-top: .5%;
-}
+	#home-main .page-catheader .page-title {		
+		font-size: 24px;
+		font-family: 'Cabin', sans-serif;
+		color: #048eb0;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
 }
 /**
  mywiki gallery

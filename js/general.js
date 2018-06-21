@@ -24,7 +24,7 @@ function suggest(inputString){
 				}
 				else
 				{
-					data1='<div style="color:#000; padding:8px 7px 0px 28px; font-family: Open Sans, sans-serif;text-align:center;">No Result Found</div>';
+					data1='<div style="color:#000; padding:8px 7px 0px 28px; font-family: Cabin, sans-serif;text-align:center;">No Result Found</div>';
 					$('#suggestionslist').html(data1);
 				}
 				$('#s').removeClass('load');

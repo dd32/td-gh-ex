@@ -5,20 +5,19 @@
       <header>
         <div class="page-catheader cat-catheader">
             <h4 class="cat-title">
-				<span><?php _e('Search','mywiki'); echo " : "?></span>
+				<span><?php esc_html_e('Search','mywiki'); echo " : "?></span>
 				<?php echo get_search_query(); ?>
             </h4>
          </div>
       </header>
-      <?php if (function_exists('mywiki_custom_breadcrumbs')) mywiki_custom_breadcrumbs();
-        if (have_posts()) : while (have_posts()) : the_post(); ?>
+      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
         <header>
             <div class="cat-hadding">
                  <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
             </div>
             <p class="meta post-meta-entry"><?php mywiki_entry_meta(); ?></p>
-            <p class="meta post-meta-entry"><?php the_tags(); ?></p>
+            
         </header>
         <!-- end article header -->
         <section class="post_content">

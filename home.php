@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div id="content" class="clearfix">
+<div id="content" class="row clearfix">
   <div id="main" class="col-sm-8 clearfix" role="main">
     <div id="home-main" class="home-main home">
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -9,7 +9,6 @@
                  <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title();?></a>
             </div>
             <p class="meta post-meta-entry"><?php mywiki_entry_meta(); ?></p>
-            <p class="meta post-meta-entry"><?php the_tags(); ?></p>
         </header>
         <!-- end article header -->
         <section class="post_content">

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div id="content" class="clearfix">
+<div id="content" class="row">
   <div id="main" class="col-sm-8 clearfix" role="main">
     <div id="home-main" class="home-main home mywiki-post">
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -11,21 +11,16 @@
                   <?php the_title(); ?>
                 </h4>
               </div>
-            </header>
-            <?php if (function_exists('mywiki_custom_breadcrumbs')) mywiki_custom_breadcrumbs(); ?>
+            </header>            
             <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
               <header>
               <div class="single-page">
                 <div class="meta nopadding">
                   <time class="sprite date-icon" datetime="<?php echo the_time('M-j-Y'); ?>" pubdate>
-                    <?php the_date(); ?>
-                  </time>
-                  <span class="sprite author-icon">
-                  <?php the_author_posts_link(); ?>
-                  </span> <span class="sprite amp cat-icon-small">
-                  <?php the_category(', '); ?>
-                  </span> <span class="sprite comments-icon-small">
-                  <?php comments_number(); ?>
+                    <i class="fa fa-calendar-check-o"></i> &nbsp;<?php the_date(); ?>
+                  </time>                  
+                   &nbsp;<span class="sprite amp cat-icon-small"><i class="fa fa-folder-open"></i>
+                  <?php the_category(', '); ?>                  
                   </span> 
                 </div>
                </div> 
@@ -33,8 +28,8 @@
               <!-- end article header -->
               <section class="post_content">
                 <?php the_content();
-                if(wp_get_attachment_url( get_post_thumbnail_id($post->ID) )!= ''){ ?>
-                <figure class="single_cat_image"> <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>" /> </figure>
+                if(has_post_thumbnail()){ ?>
+                <figure class="single_cat_image"> <img src="<?php echo esc_url(wp_get_attachment_url(get_post_thumbnail_id($post->ID) )); ?>" /> </figure>
                 <?php }
                 wp_link_pages(); ?>
               </section>

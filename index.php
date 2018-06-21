@@ -1,7 +1,7 @@
 <?php
 // MyWiki theme
 get_header(); ?>
-<div id="content" class="clearfix">
+<div id="content" class="row clearfix">
   <div id="main" class="col-sm-8 clearfix" role="main">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
@@ -12,10 +12,7 @@ get_header(); ?>
           </h1>
         </div>
       </header>
-      <!-- end article header -->
-      <footer>
-        <?php the_tags('<p class="tags"><span class="tags-title">' . __("Tags", "mywiki") . ':</span> ', ', ', '</p>'); ?>
-      </footer>
+      <!-- end article header -->      
       <!-- end article footer -->
       <section class="post_content clearfix" itemprop="articleBody">
         <?php the_content(); ?>
@@ -28,12 +25,12 @@ get_header(); ?>
     <article id="post-not-found">
       <header>
         <h1>
-          <?php _e("Not Found", "mywiki"); ?>
+          <?php esc_html_e("Not Found", "mywiki"); ?>
         </h1>
       </header>
       <section class="post_content">
         <p>
-          <?php _e("Sorry, but the requested resource was not found on this site.", "mywiki"); ?>
+          <?php esc_html_e("Sorry, but the requested resource was not found on this site.", "mywiki"); ?>
         </p>
       </section>
       <footer> </footer>

@@ -10,8 +10,7 @@ get_header()?>
       <header>
           <h1 class="page-title main-page-title" itemprop="headline">
             <?php the_title(); ?>
-          </h1>
-          <?php if (function_exists('mywiki_custom_breadcrumbs')) mywiki_custom_breadcrumbs(); ?>
+          </h1>          
       </header>
       <!-- end article header -->
       <section class="post_content clearfix" itemprop="articleBody">
