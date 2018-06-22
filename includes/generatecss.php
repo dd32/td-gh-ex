@@ -329,7 +329,7 @@ function weaverx_output_style( $sout ) {
 
 	$align = weaverx_getopt_default( 'header_image_align', 'float-left');   // alignment
 
-	if ( weaverx_getopt('link_site_image') && $align != 'center') {
+	if ( weaverx_getopt('link_site_image') && $align != 'align-center') {
 		// normally, we use display:block on the image to make it align, etc, but that makes the link
 		// extend over the whole column... So, we will use alternate layout for linked left/right align, and let center just be wrong.
 		if ( $align == 'float-left')
@@ -339,11 +339,11 @@ function weaverx_output_style( $sout ) {
 
 	} else {
 
-		if ( ($align = weaverx_getopt_default( 'header_image_align', 'float-left') ) != 'float-left' ) {
-			 if ( $align == 'center' )
+		if ( $align != 'float-left' ) {
+			 if ( $align == 'align-center' )
 				weaverx_f_write( $sout, '#branding #header-image img{margin-left:auto;margin-right:auto;}');
 			else
-				weaverx_f_write( $sout, '#branding #header-image img{margin-left:auto;margin-right:0;}');
+				weaverx_f_write( $sout, '#branding #header-image img{margin-left:auto;margin-right:0;} /* ' . $align . '*/');
 		}
 	}
 
@@ -767,8 +767,8 @@ $menu_detail = array (              /* can't use multiple selectors here! */
 
 		if ( $rpad != '') {
 			$rpad_arrow = $rpad + 1.5;
-			$rpad = $rpad + 0.75;
-			weaverx_f_write( $sout, "{$tag} .wvrx-menu-container li a{padding-right:{$rpad}em;}\n" );
+			$rpad_a = $rpad + 0.75;
+			weaverx_f_write( $sout, "{$tag} .wvrx-menu-container li a{padding-right:{$rpad_a}em;}\n" );
 			weaverx_f_write( $sout, "{$tag} .menu-hover.menu-arrows .has-submenu > a{padding-right:{$rpad_arrow}em;}\n" );
 			weaverx_f_write( $sout, "{$tag} .menu-arrows.menu-hover .toggle-submenu{margin-right:{$rpad}em;}\n" );
 		}

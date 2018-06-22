@@ -254,7 +254,7 @@ with testing and feature suggestions.
 * Tweak: Title + FI display now uses FI alignment as set for excerpts
 * Tweak: First breadcrumb title didn't make sense if "No Home Menu Item" option checked. With
          that option, first breadcrumb will be site's title, or value of Info Bar Home Breadcrumb.
-* Tweak: Added new section to Help file about CUstomizer Interface
+* Tweak: Added new section to Help file about Customizer Interface
 * Tweak: Fixed Page with Posts to honor Password Protection and not show posts
 * Change: Changed behavior of Use Post Featured Image as Header on Single Page View. Now
           behaves exactly like standard header image - size, centering, etc. The class
@@ -489,7 +489,7 @@ with testing and feature suggestions.
 * Enhancement: Added SmallCaps variant of Alegreya sans and sans-serif font
 
 * Change: Basic SmartMenu in Free Version. Weaver Xtreme Plus has advanced SmartMenu Options
-* Change: Significant Improvement of Customzer Inteface Levels
+* Change: Significant Improvement of Customizer Interface Levels
   * Names changed to: Basic, Standard, Full
   * Customizer menus reorganized for new levels
   * Basic Level contains better set of options. Many users will never need to use higher levels
@@ -507,3 +507,9 @@ with testing and feature suggestions.
 * Fix: Right padding issue with main menu bar when using separator bars
 
 * IMPORTANT NOTICE: some theme files have significant changes to add the page builder support - header.php and footer.php have important changes. These may require fixes in child themes.
+
+= Version 4.0.1 =
+* Fix: center header image fixed
+* Fix: arrow spacing on non-smart-menu menu items
+* Fix: revert to V3 table-layout
+* Fix: some missing icons

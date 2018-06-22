@@ -114,7 +114,7 @@ This formerly was integrated with Weaver, and was considered an important part o
 </li>
 </ul>
 
-</div><div class="clear-both;"></div>
+</div><div class="clear-both"></div>
 <hr />
 <?php
 $local_mem_lim = ini_get('memory_limit');

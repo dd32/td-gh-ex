@@ -212,7 +212,7 @@ function weaverx_edit_link($echo = 'echo') {
 	}
 
 	$is_elementor = ! ! get_post_meta( $post->ID, '_elementor_edit_mode', true );
-	
+
 	if ( $is_elementor ) {
 		$link_label = __('Edit with Elementor', 'weaver-xtreme');
 
@@ -863,7 +863,7 @@ background-size:cover;background-color:transparent;box-sizing:border-box;"; // c
 			echo apply_filters('weaverx_fi_link', $the_fi, $before, $href, $fi_img, $who, $fi_after);  // Added 3.1.5; Changed 3.1.11 to add the $fi_after
 
 			if ( $show == 'title-banner' )
-				echo '<div class="clear-both;"></div>';
+				echo '<div class="clear-both"></div>';
 			return false;
 		}
 	}
