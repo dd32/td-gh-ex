@@ -2114,11 +2114,11 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: inc/widgets.php:453
+#: inc/widgets.php:452
 msgid "Post "
 msgstr ""
 
-#: loops/loop-carousel.php:26
+#: loops/loop-carousel.php:25
 msgid "Post"
 msgstr ""
 
