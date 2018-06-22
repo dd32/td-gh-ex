@@ -45,13 +45,18 @@ function avira_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'avira_scripts_styles' );
 
+/**
+ * Remove Customize Panel from parent theme
+ */
 function avira_remove_parent_setting( $wp_customize ) {
 	$wp_customize->remove_panel('features_panel');
 	$wp_customize->remove_control('slider-page3');
 }
 add_action( 'customize_register', 'avira_remove_parent_setting',99 );
 
-
+/**
+ * Remove Parent theme widgets
+ */
 function avira_remove_widgets(){
 
 	unregister_sidebar( 'specia_feature_widget' );
