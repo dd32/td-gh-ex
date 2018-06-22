@@ -1,4 +1,4 @@
-# Hueman v3.3.27
+# Hueman v3.3.28
 ![Hueman - Free Wordpress Theme](/screenshot.png)
 
 > The Hueman theme helps you increase your traffic and engage your visitors. It loads fast and is 100% mobile-friendly according to Google. Best rated theme for blogs and magazines on WordPress.org. Powering 70K+ websites around the world.
@@ -73,6 +73,9 @@ Right sidebar, top to bottom:
 See headers of files for further details.
 
 # Changelog
+= 3.3.28 June 22nd 2018 =
+* Improvements : various fixes and improvement to stay compliant with the WordPress.org themes requirements : removed previewer dummy content and image, removed welcome note, removed help icon link in the admin bar
+
 = 3.3.27 February 11th 2018 =
 * Fix : update notice not always dismissable in admin
 
