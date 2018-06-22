@@ -10,7 +10,7 @@ if ( post_password_required() ) {
 if ( have_comments() ) : ?>
 
 	<h2  class="comment-title">
-		<?php comments_number( esc_html__( 'No Comments', 'ashe' ), esc_html__( 'One Comment', 'ashe' ), esc_html__( '% Comments', 'ashe' ) ); ?>
+		<?php comments_number( esc_html__( '0 Comments', 'ashe' ), esc_html__( 'One Comment', 'ashe' ), esc_html__( '% Comments', 'ashe' ) ); ?>
 	</h2>
 	
 	<ul class="commentslist" >

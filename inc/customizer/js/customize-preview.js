@@ -30,25 +30,27 @@
 	// Accent Color
 	asheLivePreview( 'colors_content_accent', function( val ) {
 		var selectors = '\
-			#page-content h1 a,\
-			#page-content .post-comments,\
-			#page-content .post-author a,\
-			#page-content .post-share a,\
-		 	#page-content .ashe-widget a,\
-			#page-content .related-posts h4 a,\
-			#page-content .author-description h4 a,\
-			#page-content .blog-pagination a,\
-			#page-content .post-date,\
-			#page-content .post-author,\
-			#page-content .related-post-date,\
-			#page-content .comment-meta a,\
-			#page-content .author-share a,\
-			#page-content .slider-title a,\
-			#page-content .slider-categories a,\
-			#page-content .slider-read-more a\
+			.page-content h1 a,\
+			.page-content .post-comments,\
+			.page-content .post-author a,\
+			.page-content .post-share a,\
+		 	.page-content .ashe-widget a,\
+			.page-content .related-posts h4 a,\
+			.page-content .author-description h4 a,\
+			.page-content .blog-pagination a,\
+			.page-content .post-date,\
+			.page-content .post-author,\
+			.page-content .related-post-date,\
+			.page-content .comment-meta a,\
+			.page-content .author-share a,\
+			.page-content .slider-title a,\
+			.page-content .slider-categories a,\
+			.page-content .slider-read-more a\
 		';
 
-		$( '#page-content a' ).not( selectors ).css( 'color', val );
+		$( '.page-content a' ).not( selectors ).css( 'color', val );
+
+		$( '.page-content .elementor a' ).css( 'color', 'inherit' );
 
 		var css = '\
 		.post-categories,\
@@ -63,16 +65,16 @@
 		#main-nav li.current-menu-ancestor > a,\
 		#main-nav .sub-menu li.current-menu-item > a,\
 		#main-nav .sub-menu li.current-menu-ancestor> a,\
-		#page-content .ashe-widget.widget_text a,\
+		.page-content .ashe-widget.widget_text a,\
 		#page-footer a:hover,\
 		.woocommerce .star-rating::before,\
 		.woocommerce .star-rating span::before,\
-		.woocommerce #page-content ul.products li.product .button,\
-		#page-content .woocommerce ul.products li.product .button,\
-		#page-content .woocommerce-MyAccount-navigation-link.is-active a,\
-		#page-content .woocommerce-MyAccount-navigation-link a:hover,\
-		.woocommerce #page-content nav.woocommerce-pagination ul li a.prev:hover,\
-		.woocommerce #page-content nav.woocommerce-pagination ul li a.next:hover {\
+		.woocommerce .page-content ul.products li.product .button,\
+		.page-content .woocommerce ul.products li.product .button,\
+		.page-content .woocommerce-MyAccount-navigation-link.is-active a,\
+		.page-content .woocommerce-MyAccount-navigation-link a:hover,\
+		.woocommerce .page-content nav.woocommerce-pagination ul li a.prev:hover,\
+		.woocommerce .page-content nav.woocommerce-pagination ul li a.next:hover {\
 		color: '+ val +' ;\
 		}';
 
@@ -81,32 +83,32 @@
 		.main-nav-sidebar:hover span,\
 		.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y,\
 		.single-navigation i:hover,\
-		#page-content .submit:hover,\
-		#page-content .blog-pagination.numeric a:hover,\
-		#page-content .blog-pagination.numeric span,\
-		#page-content .blog-pagination.load-more a:hover,\
-		#page-content .ashe-subscribe-box input[type="submit"]:hover,\
-		#page-content .widget_wysija input[type="submit"]:hover,\
-		#page-content .post-password-form input[type="submit"]:hover,\
-		#page-content .wpcf7 [type="submit"]:hover,\
+		.page-content .submit:hover,\
+		.page-content .blog-pagination.numeric a:hover,\
+		.page-content .blog-pagination.numeric span,\
+		.page-content .blog-pagination.load-more a:hover,\
+		.page-content .ashe-subscribe-box input[type="submit"]:hover,\
+		.page-content .widget_wysija input[type="submit"]:hover,\
+		.page-content .post-password-form input[type="submit"]:hover,\
+		.page-content .wpcf7 [type="submit"]:hover,\
 		p.demo_store,\
 		.woocommerce-store-notice,\
 		.woocommerce span.onsale,\
-		#page-content .woocommerce input.button:hover,\
-		#page-content .woocommerce a.button:hover,\
-		#page-content .woocommerce a.button.alt:hover,\
-		#page-content .woocommerce button.button.alt:hover,\
-		#page-content .woocommerce input.button.alt:hover,\
-		#page-content .woocommerce #respond input#submit.alt:hover,\
-		.woocommerce #page-content .woocommerce-message .button:hover,\
-		.woocommerce #page-content a.button.alt:hover,\
-		.woocommerce #page-content button.button.alt:hover,\
-		.woocommerce #page-content #respond input#submit:hover,\
-		.woocommerce #page-content .widget_price_filter .button:hover,\
-		.woocommerce #page-content .woocommerce-message .button:hover,\
-		.woocommerce-page #page-content .woocommerce-message .button:hover,\
-		.woocommerce #page-content nav.woocommerce-pagination ul li a:hover,\
-		.woocommerce #page-content nav.woocommerce-pagination ul li span.current {\
+		.page-content .woocommerce input.button:hover,\
+		.page-content .woocommerce a.button:hover,\
+		.page-content .woocommerce a.button.alt:hover,\
+		.page-content .woocommerce button.button.alt:hover,\
+		.page-content .woocommerce input.button.alt:hover,\
+		.page-content .woocommerce #respond input#submit.alt:hover,\
+		.woocommerce .page-content .woocommerce-message .button:hover,\
+		.woocommerce .page-content a.button.alt:hover,\
+		.woocommerce .page-content button.button.alt:hover,\
+		.woocommerce .page-content #respond input#submit:hover,\
+		.woocommerce .page-content .widget_price_filter .button:hover,\
+		.woocommerce .page-content .woocommerce-message .button:hover,\
+		.woocommerce-page .page-content .woocommerce-message .button:hover,\
+		.woocommerce .page-content nav.woocommerce-pagination ul li a:hover,\
+		.woocommerce .page-content nav.woocommerce-pagination ul li span.current {\
 			background-color: '+ val +';\
 		}';
 
@@ -124,7 +126,7 @@
 		}';
 
 		css += '\
-		#page-content a:hover {\
+		.page-content a:hover {\
 			color: '+ asheHex2Rgba( val, 0.8 ) +';\
 		}';	
 

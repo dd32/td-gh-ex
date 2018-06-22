@@ -311,18 +311,28 @@ function ashe_customize_register( $wp_customize ) {
 				</li>
 				<li class="customize-control">
 					<h3><?php esc_html_e( 'Documentation', 'ashe' ); ?></h3>
-					<p><?php esc_html_e( 'Read how to customize the theme, set up widgets, and learn all the possible options available to you.', 'ashe' ); ?></p>
+					<p>
+					<?php 
+						$theme_data	 = wp_get_theme();
+						/* translators: %s theme name */
+						printf( esc_html__( 'Need more details? Please check our full documentation for detailed information on how to use %s.', 'ashe' ), esc_html( $theme_data->Name ) );
+					?>
+					</p>
 					<a href="<?php echo esc_url('http://wp-royal.com/themes/ashe/docs/?ref=ashe-free-customizer-about-section-docs-btn/'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Documentation', 'ashe' ); ?></a>
 				</li>
 				<li class="customize-control">
 					<h3><?php esc_html_e( 'Predefined Styles', 'ashe' ); ?></h3>
-					<p><?php esc_html_e( 'Ashe Pro\'s powerful setup allows you to easily create unique looking sites. Here are a few included examples that can be installed with one click in the Pro Version.', 'ashe' ); ?></p>
+					<p>
+					<?php /* translators: %s link */
+						printf( __( 'Ashe Pro\'s powerful setup allows you to easily create unique looking sites. Here are a few included examples that can be installed with one click in the Pro Version. More details in the <a href="%s" target="_blank" >Theme Documentation</a>', 'ashe' ), esc_url('http://wp-royal.com/themes/ashe/docs/?ref=ashe-free-backend-about-predefined-styles#predefined') );
+					?>
+					</p>
 					<a href="<?php echo admin_url('themes.php?page=about-ashe#ashe-predefined-styles'); ?>" class="button button-primary widefat"><?php esc_html_e( 'Predefined Styles', 'ashe' ); ?></a>
 				</li>
 				<li class="customize-control">
 					<h3><?php esc_html_e( 'Changelog', 'ashe' ); ?></h3>
-					<p><?php esc_html_e( 'Stay always up to date, check for fixes, updates and some new feauters you should not miss.', 'ashe' ); ?></p>
-					<a href="<?php echo esc_url('https://wp-royal.com/ashe-free-changelog/?ref=ashe-free-customizer-about-section-changelog'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'View Changelog', 'ashe' ); ?></a>
+					<p><?php esc_html_e( 'Want to get the gist on the latest theme changes? Just consult our changelog below to get a taste of the recent fixes and features implemented.', 'ashe' ); ?></p>
+					<a href="<?php echo esc_url('https://wp-royal.com/ashe-free-changelog/?ref=ashe-free-customizer-about-section-changelog'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Changelog', 'ashe' ); ?></a>
 				</li>
 			</ul>
 			<?php
@@ -376,12 +386,12 @@ function ashe_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport  = 'postMessage';
 
 	// Header Background
-	ashe_color_control( 'colors', 'header_bg', esc_html__( 'Header Background Color', 'ashe' ), 'postMessage', 9 );
+	ashe_color_control( 'colors', 'header_bg', esc_html__( 'Header Background', 'ashe' ), 'postMessage', 9 );
 	
 	// Body Background
 	$wp_customize->get_control( 'background_color' )->section = 'ashe_colors';
 	$wp_customize->get_control( 'background_color' )->priority = 12;
-	$wp_customize->get_control( 'background_color' )->label = 'Body Background Color';
+	$wp_customize->get_control( 'background_color' )->label = 'Body Background';
 
 	$wp_customize->get_control( 'background_image' )->section = 'ashe_colors';
 	$wp_customize->get_control( 'background_image' )->priority = 15;
@@ -624,9 +634,7 @@ function ashe_customize_register( $wp_customize ) {
 	ashe_select_control( 'featured_slider', 'category', esc_html__( 'Select Category', 'ashe' ), $slider_cats, 'refresh', 3 );
 
 	// Amount
-	ashe_number_absint_control( 'featured_slider', 'amount', esc_html__( 'Number of Slides', 'ashe' ), array( 'step' => '1', 'max' => '5' ), 'refresh', 10 );
-
-	$slider_culumns = array( 'step' => '1', 'min' => '1', 'max' => '4' );
+	ashe_number_absint_control( 'featured_slider', 'amount', esc_html__( 'Number of Slides', 'ashe' ), array( 'step' => '1', 'min' => '1', 'max' => '5' ), 'refresh', 10 );
 
 	// Navigation
 	ashe_checkbox_control( 'featured_slider', 'navigation', esc_html__( 'Show Navigation Arrows', 'ashe' ), 'refresh', 25 );
@@ -741,7 +749,7 @@ function ashe_customize_register( $wp_customize ) {
 	);
 
 	// Related Posts Orderby
-	ashe_select_control( 'blog_page', 'related_orderby', esc_html__( 'Related Posts Display', 'ashe' ), $related_posts, 'refresh', 33 );
+	ashe_select_control( 'blog_page', 'related_orderby', esc_html__( 'Related Posts - Display', 'ashe' ), $related_posts, 'refresh', 33 );
 
 	// Pro Version
 	$wp_customize->add_setting( 'pro_version_blog_page', array(

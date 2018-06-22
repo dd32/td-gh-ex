@@ -8,11 +8,21 @@ add_action( 'admin_menu', 'ashe_about_page' );
 
 // Render About Ashe HTML
 function ashe_about_page_output() {
+
+	$theme_data	 = wp_get_theme();
+
 ?>
 	<div class="wrap">
-		<h1><?php esc_html_e( 'Welcome to Ashe!', 'ashe' ); ?></h1>
+		<h1>
+		<?php /* translators: %s theme name */
+			printf( esc_html__( 'Welcome to %s', 'ashe' ), esc_html( $theme_data->Name ) );
+		?>
+		</h1>
+
 		<p class="welcome-text">
-			<?php esc_html_e( 'At first, thanks for the interest! Ashe theme is one of the most Popular Free WordPress theme of 2017-2018 years. To understand better what Ashe theme can offer, please click on the button below.', 'ashe' ); ?>
+			<?php /* translators: %s theme name */
+				printf( esc_html__( '%s theme is one of the most Popular Free WordPress theme of 2017-2018 years. To understand better what the theme can offer, please click the button below.', 'ashe' ), esc_html( $theme_data->Name ) );
+			?>
 			<br><br><a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-free/demo/?ref=ashe-free-backend-about-theme-prev-btn'); ?>" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Demo Preview', 'ashe' ); ?></a>
 		</p><br>
 
@@ -27,7 +37,7 @@ function ashe_about_page_output() {
 				<span class="dashicons dashicons-video-alt3"></span> <?php esc_html_e( 'Video Tutorials', 'ashe' ); ?>
 			</a>
 			<a href="?page=about-ashe&tab=ashe_tab_3" class="nav-tab <?php echo $active_tab == 'ashe_tab_3' ? 'nav-tab-active' : ''; ?>">
-				<?php esc_html_e( 'Recommended Plugins', 'ashe' ); ?>
+				<?php esc_html_e( 'Useful Plugins', 'ashe' ); ?>
 			</a>
 			<a href="?page=about-ashe&tab=ashe_tab_4" class="nav-tab <?php echo $active_tab == 'ashe_tab_4' ? 'nav-tab-active' : ''; ?>">
 				<?php esc_html_e( 'Support', 'ashe' ); ?>
@@ -45,17 +55,19 @@ function ashe_about_page_output() {
 				<br>
 
 				<div class="column-width-3">
-					<h3><?php esc_html_e( 'Theme Documentation', 'ashe' ); ?></h3>
+					<h3><?php esc_html_e( 'Documentation', 'ashe' ); ?></h3>
 					<p>
-						<?php esc_html_e( 'Highly recommended to begin with this, read the full theme documentation to understand the basics and even more details about how to use Ashe. It is worth to spend 10 minutes and know almost everything about the theme.', 'ashe' ); ?>
+					<?php /* translators: %s theme name */
+						printf( esc_html__( 'Need more details? Please check our full documentation for detailed information on how to use %s.', 'ashe' ), esc_html( $theme_data->Name ) );
+					?>
 					</p>
-					<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/ashe/docs/?ref=ashe-free-backend-about-docs/'); ?>" class="button button-primary"><?php esc_html_e( 'Read Documentation', 'ashe' ); ?></a>
+					<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/ashe/docs/?ref=ashe-free-backend-about-docs/'); ?>" class="button button-primary"><?php esc_html_e( 'Read Full Documentation', 'ashe' ); ?></a>
 				</div>
 
 				<div class="column-width-3">
 					<h3><?php esc_html_e( 'Demo Content', 'ashe' ); ?></h3>
 					<p>
-						<?php esc_html_e( 'If you are a WordPress beginner it\'s highly recomended to install the Demo Content, this could be done in 2 clicks. Just click the button below to install demo import plugin and wait a bit to be redirected to the demo import page.', 'ashe' ); ?>
+						<?php esc_html_e( 'Install the Demo Content in 2 clicks. Just click the button below to install demo import plugin and wait a bit to be redirected to the demo import page.', 'ashe' ); ?>
 					</p>
 
 					<?php if ( is_plugin_active( 'one-click-demo-import/one-click-demo-import.php' ) ) : ?>
@@ -71,9 +83,11 @@ function ashe_about_page_output() {
 				<div class="column-width-3">
 					<h3><?php esc_html_e( 'Theme Customizer', 'ashe' ); ?></h3>
 					<p>
-					<?php esc_html_e( 'All theme options are located here. After reading the Theme Documentation we recommend you to open the Theme Customizer and play with some options. You will enjoy it.', 'ashe' ); ?>
+					<?php /* translators: %s theme name */
+						printf( esc_html__( '%s supports the Theme Customizer for all theme settings. Click "Customize" to personalize your site.', 'ashe' ), esc_html( $theme_data->Name ) );
+					?>
 					</p>
-					<a target="_blank" href="<?php echo esc_url( wp_customize_url() );?>" class="button button-primary"><?php esc_html_e( 'Customize Your Site', 'ashe' ); ?></a>
+					<a target="_blank" href="<?php echo esc_url( wp_customize_url() );?>" class="button button-primary"><?php esc_html_e( 'Start Customizing', 'ashe' ); ?></a>
 				</div>
 
 			</div>
@@ -82,8 +96,9 @@ function ashe_about_page_output() {
 			
 				<h2 id="ashe-predefined-styles"><?php esc_html_e( 'Ashe Pro - Predefined Styles', 'ashe' ); ?></h2>
 				<p>
-					<?php esc_html_e( 'Ashe Pro\'s powerful setup allows you to easily create unique looking sites. Here are a few included examples that can be installed with one click in the Pro Version. More details in the ', 'ashe' ); ?>
-					<a target="_blank" href="http://wp-royal.com/themes/ashe/docs/?ref=ashe-free-backend-about-predefined-styles#predefined"><?php esc_html_e( 'Theme Documentation.', 'ashe' ); ?></a>
+				<?php /* translators: %s link */
+					printf( __( 'Ashe Pro\'s powerful setup allows you to easily create unique looking sites. Here are a few included examples that can be installed with one click in the Pro Version. More details in the <a href="%s" target="_blank" >Theme Documentation</a>', 'ashe' ), esc_url('http://wp-royal.com/themes/ashe/docs/?ref=ashe-free-backend-about-predefined-styles#predefined') );
+				?>
 				</p>
 
 				<div class="column-width-4">
@@ -193,7 +208,7 @@ function ashe_about_page_output() {
 			<div class="four-columns-wrap video-tutorials">
 
 				<div class="column-width-4">
-					<h3><?php esc_html_e( 'Demo Import', 'ashe' ); ?></h3>
+					<h3><?php esc_html_e( 'Demo Content', 'ashe' ); ?></h3>
 					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=ZCrRuCuM6oA"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 					<a class="button button-secondary" href="<?php echo esc_url(admin_url('themes.php?page=about-ashe&tab=ashe_tab_1')); ?>"></span><?php esc_html_e( 'Get Started', 'ashe' ); ?></a>
 				</div>
@@ -256,32 +271,30 @@ function ashe_about_page_output() {
 			
 			<div class="three-columns-wrap">
 				
-				<br>
-				<p><?php esc_html_e( 'Recommended Plugins are fully supported by Ashe theme, they are styled to fit the theme design and performing well. Not mandatory, but may be usefl.', 'ashe' ); ?></p>
-				<br>
+				<br><br>
 
 				<?php
 
 				// WooCommerce
-				ashe_recommended_plugin( 'woocommerce', 'woocommerce', esc_html__( 'WooCommerce', 'ashe' ), esc_html__( 'WooCommerce is a powerful, extendable eCommerce plugin that helps you sell anything. Beautifully.', 'ashe' ) );
+				ashe_recommended_plugin( 'woocommerce', 'woocommerce' );
 
 				// MailPoet 2
-				ashe_recommended_plugin( 'wysija-newsletters', 'index', esc_html__( 'MailPoet 2', 'ashe' ), esc_html__( 'Create and send newsletters or automated emails. Capture subscribers with a widget. Import and manage your lists. MailPoet is made with love.', 'ashe' ) );
+				ashe_recommended_plugin( 'wysija-newsletters', 'index' );
 
 				// Contact Form 7
-				ashe_recommended_plugin( 'contact-form-7', 'wp-contact-form-7', esc_html__( 'Contact Form 7', 'ashe' ), esc_html__( 'Just another contact form plugin. Simple but flexible.', 'ashe' ) );
+				ashe_recommended_plugin( 'contact-form-7', 'wp-contact-form-7' );
 
 				// Recent Posts Widget
-				ashe_recommended_plugin( 'recent-posts-widget-with-thumbnails', 'recent-posts-widget-with-thumbnails', esc_html__( 'Recent Posts Widget With Thumbnails', 'ashe' ), esc_html__( 'Small and fast plugin to display in the sidebar a list of linked titles and thumbnails of the most recent postings.', 'ashe' ) );
+				ashe_recommended_plugin( 'recent-posts-widget-with-thumbnails', 'recent-posts-widget-with-thumbnails' );
 
 				// Instagram Widget
-				ashe_recommended_plugin( 'wp-instagram-widget', 'wp-instagram-widget', esc_html__( 'WP Instagram Widget', 'ashe' ), esc_html__( 'A WordPress widget for showing your latest Instagram photos.', 'ashe' ) );
+				ashe_recommended_plugin( 'wp-instagram-widget', 'wp-instagram-widget' );
 
 				// Ajax Thumbnail Rebuild
-				ashe_recommended_plugin( 'ajax-thumbnail-rebuild', 'ajax-thumbnail-rebuild', 'Ajax Thumbnail Rebuild', 'AJAX Thumbnail Rebuild allows you to rebuild all thumbnails at once without script timeouts on your server.' );
+				ashe_recommended_plugin( 'ajax-thumbnail-rebuild', 'ajax-thumbnail-rebuild' );
 
 				// Facebook Widget
-				ashe_recommended_plugin( 'facebook-pagelike-widget', 'facebook_widget', esc_html__( 'Facebook Widget', 'ashe' ), esc_html__( 'This widget adds a Simple Facebook Page Like Widget into your WordPress website sidebar within few minutes.', 'ashe' ) );
+				ashe_recommended_plugin( 'facebook-pagelike-widget', 'facebook_widget' );
 
 				?>
 
@@ -308,37 +321,13 @@ function ashe_about_page_output() {
 
 				<div class="column-width-3">
 					<h3>
-						<span class="dashicons dashicons-book"></span>
-						<?php esc_html_e( 'Documentation', 'ashe' ); ?>
-					</h3>
-					<p>
-						<?php esc_html_e( 'Need more details? Please check out Ashe Theme Documentation for detailed information.', 'ashe' ); ?>
-						<hr>
-						<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/ashe/docs/?ref=ashe-free-backend-about-docs/'); ?>"><?php esc_html_e( 'Read Full Documentation', 'ashe' ); ?></a>
-					</p>
-				</div>
-
-				<div class="column-width-3">
-					<h3>
 						<span class="dashicons dashicons-admin-tools"></span>
 						<?php esc_html_e( 'Changelog', 'ashe' ); ?>
 					</h3>
 					<p>
-						<?php esc_html_e( 'Stay always up to date, check for fixes, updates and some new feauters you should not miss.', 'ashe' ); ?>
+						<?php esc_html_e( 'Want to get the gist on the latest theme changes? Just consult our changelog below to get a taste of the recent fixes and features implemented.', 'ashe' ); ?>
 						<hr>
-						<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/ashe-free-changelog/?ref=ashe-free-backend-about-changelog/'); ?>"><?php esc_html_e( 'See Changelog', 'ashe' ); ?></a>
-					</p>
-				</div>
-
-				<div class="column-width-3">
-					<h3>
-						<span class="dashicons dashicons-smiley"></span>
-						<?php esc_html_e( 'Donation', 'ashe' ); ?>
-					</h3>
-					<p>
-						<?php esc_html_e( 'Even a small sum can help us a lot with theme development. If the Ashe theme is useful and our support is helpful, please don\'t hesitate to donate a little bit, at least buy us a Coffee or a Beer :)', 'ashe' ); ?>
-						<hr>
-						<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/ashe/ashe-donate.html'); ?>"><?php esc_html_e( 'Donate with PayPal', 'ashe' ); ?></a>
+						<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/ashe-free-changelog/?ref=ashe-free-backend-about-changelog/'); ?>"><?php esc_html_e( 'Changelog', 'ashe' ); ?></a>
 					</p>
 				</div>
 
@@ -664,13 +653,14 @@ function ashe_about_page_output() {
 <?php
 } // end ashe_about_page_output
 
+
 // Check if plugin is installed
 function ashe_check_installed_plugin( $slug, $filename ) {
 	return file_exists( ABSPATH . 'wp-content/plugins/' . $slug . '/' . $filename . '.php' ) ? true : false;
 }
 
 // Generate Recommended Plugin HTML
-function ashe_recommended_plugin( $slug, $filename, $name, $description) {
+function ashe_recommended_plugin( $slug, $filename ) {
 
 	if ( $slug === 'facebook-pagelike-widget' ) {
 		$size = '128x128';
@@ -678,18 +668,17 @@ function ashe_recommended_plugin( $slug, $filename, $name, $description) {
 		$size = '256x256';
 	}
 
+
+	$plugin_info = ashe_call_plugin_api( $slug );
+	$plugin_desc = $plugin_info->short_description;
+	$plugin_img  = ( ! isset($plugin_info->icons['1x']) ) ? $plugin_info->icons['default'] : $plugin_info->icons['1x'];
 ?>
 
 	<div class="plugin-card">
 		<div class="name column-name">
 			<h3>
-				<?php echo esc_html( $name ); ?>
-
-				<?php if ( $slug === 'ajax-thumbnail-rebuild' ) : ?>
-					<img src="<?php echo get_template_directory_uri() . '/assets/images/ajax-thumbnail-rebuild.jpeg'; ?>" class="plugin-icon" alt="">
-				<?php else: ?>
-					<img src="<?php echo esc_url('https://ps.w.org/'. $slug .'/assets/icon-'. $size .'.png') ?>" class="plugin-icon" alt="">
-				<?php endif; ?>
+				<?php echo esc_html( $plugin_info->name ); ?>
+				<img src="<?php echo $plugin_img; ?>" class="plugin-icon" alt="">
 			</h3>
 		</div>
 		<div class="action-links">
@@ -702,11 +691,57 @@ function ashe_recommended_plugin( $slug, $filename, $name, $description) {
 			<?php endif; ?>
 		</div>
 		<div class="desc column-description">
-			<p><?php echo esc_html( $description ); ?></p>
+			<p><?php echo $plugin_desc . esc_html__( '...', 'ashe' ); ?></p>
 		</div>
 	</div>
 
 <?php
+}
+
+// Get Plugin Info
+function ashe_call_plugin_api( $slug ) {
+
+	$call_api = get_transient( 'ashe_about_plugin_info_' . $slug );
+
+	if ( false === $call_api ) {
+
+	    if ( ! function_exists( 'plugins_api' ) && file_exists( trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin-install.php' ) ) {
+	        require_once( trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin-install.php' );
+	    }
+
+	    if ( function_exists( 'plugins_api' ) ) {
+
+			$call_api = plugins_api(
+				'plugin_information', array(
+					'slug'   => $slug,
+					'fields' => array(
+						'downloaded'        => false,
+						'rating'            => false,
+						'description'       => false,
+						'short_description' => true,
+						'donate_link'       => false,
+						'tags'              => false,
+						'sections'          => true,
+						'homepage'          => true,
+						'added'             => false,
+						'last_updated'      => false,
+						'compatibility'     => false,
+						'tested'            => false,
+						'requires'          => false,
+						'downloadlink'      => false,
+						'icons'             => true,
+					),
+				)
+			);
+
+			if ( ! is_wp_error( $call_api ) ) {
+				set_transient( 'ashe_about_plugin_info_' . $slug, $call_api, 30 * MINUTE_IN_SECONDS );
+			}
+
+		}
+	}
+
+	return $call_api;
 }
 
 
@@ -766,12 +801,10 @@ function ashe_import_demo_files_filter( $default_text ) {
 		$wpiw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=wp-instagram-widget' ), 'install-plugin_wp-instagram-widget' ) ) .'" target="_blank">'. esc_html__( 'Install/Activate - WP Instagram Widget', 'ashe' ) .'</a></li>';
 	}
 
+	$activate_plugins_notice = '';
 	if ( $rpwwt_plugin_link !== '' || $wpiw_plugin_link !== '' ) {
-		$activate_plugins_notice  =  esc_html__( 'Recommended (optional): Before you Import Demo Data to get the same demo as shown on our ', 'ashe' );
-		$activate_plugins_notice .= '<a href="'. esc_url('http://wp-royal.com/themes/ashe-free/demo/?ref=ashe-free-backend-about-section-one-click-demo-import') .'" target="_blank">'. esc_html__( 'Theme Preview Page', 'ashe' ) .'</a>';
-		$activate_plugins_notice .=  esc_html__( ' you need to: ', 'ashe' );
-	} else {
-		$activate_plugins_notice = '';
+		/* translators: %s link */
+		$activate_plugins_notice = sprintf( __( 'Recommended (optional): Before you Import Demo Data to get the same demo as shown on our <a href="%s" target="_blank" >Theme Preview Page</a> you need to: ', 'ashe' ), esc_url('http://wp-royal.com/themes/ashe-free/demo/?ref=ashe-free-backend-about-section-one-click-demo-import') );
 	}
 
 	$default_text = substr($default_text, 159);
@@ -821,12 +854,12 @@ function ashe_enqueue_about_page_scripts($hook) {
 	}
 
 	// enqueue CSS
-	wp_enqueue_style( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/css/about-ashe-page.css' ), array(), '1.6.1' );
+	wp_enqueue_style( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/css/about-ashe-page.css' ), array(), '1.6.2' );
 
 	// Demo Import
 	wp_enqueue_script( 'plugin-install' );
 	wp_enqueue_script( 'updates' );
-	wp_enqueue_script( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/js/about-ashe-page.js' ), array(), '1.6.1' );
+	wp_enqueue_script( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/js/about-ashe-page.js' ), array(), '1.6.2' );
 
 }
 add_action( 'admin_enqueue_scripts', 'ashe_enqueue_about_page_scripts' );

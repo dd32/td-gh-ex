@@ -57,7 +57,7 @@
 
 							<?php if (  ashe_options( 'blog_page_show_comments' ) === true && comments_open() ) : ?>
 							<span class="meta-sep">/</span>
-								<?php comments_popup_link( esc_html__( 'No Comments', 'ashe' ), esc_html__( '1 Comment', 'ashe' ), '% '. esc_html__( 'Comments', 'ashe' ), 'post-comments'); ?>
+								<?php comments_popup_link( esc_html__( '0 Comments', 'ashe' ), esc_html__( '1 Comment', 'ashe' ), '% '. esc_html__( 'Comments', 'ashe' ), 'post-comments'); ?>
 							<?php endif; ?>
 							
 						</div>

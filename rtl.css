@@ -328,21 +328,21 @@ table td {
 }
 
 
-.woocommerce #page-content nav.woocommerce-pagination ul li a.prev {
+.woocommerce .page-content nav.woocommerce-pagination ul li a.prev {
     left: auto;
     right: 0;
 }
 
-.woocommerce #page-content nav.woocommerce-pagination ul li a.next {
+.woocommerce .page-content nav.woocommerce-pagination ul li a.next {
     left: 0;
     right: auto;
 }
 
-.woocommerce #page-content nav.woocommerce-pagination ul li a.prev:after {
+.woocommerce .page-content nav.woocommerce-pagination ul li a.prev:after {
     content: "\f178";
 }
 
-.woocommerce #page-content nav.woocommerce-pagination ul li a.next:after {
+.woocommerce .page-content nav.woocommerce-pagination ul li a.next:after {
     content: "\f177";
 }
 

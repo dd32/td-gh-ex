@@ -81,10 +81,26 @@ add_action( 'after_setup_theme', 'ashe_setup' );
 ** Notice after Theme Activation.
 */
 function ashe_activation_notice() {
+
+	$theme_data	 = wp_get_theme();
+
 	echo '<div class="notice notice-success is-dismissible ashe-activation-notice">';
-		echo '<h1>'. esc_html__( 'Welcome to Ashe', 'ashe' ) .'</h1>';
-		echo '<p>'. esc_html__( 'Thank you for choosing Ashe! Now, we higly recommend you to visit our ', 'ashe' ) .'<a href="'. esc_url( admin_url( 'themes.php?page=about-ashe' ) ) .'">'. esc_html__( 'welcome page.', 'ashe' ) .'</a></p>';
-		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=about-ashe' ) ) .'" class="button button-primary button-hero">'. esc_html__( 'Get Started with Ashe', 'ashe' ) .'</a></p>';
+	
+		echo '<h1>';
+			/* translators: %s theme name */
+			printf( esc_html__( 'Welcome to %s', 'ashe' ), esc_html( $theme_data->Name ) );
+		echo '</h1>';
+
+		echo '<p>';
+			/* translators: %1$s: theme name, %2$s link */
+			printf( __( 'Thank you for choosing %1$s! To fully take advantage of the best our theme can offer please make sure you visit our <a href="%2$s">Welcome page</a>', 'ashe' ), esc_html( $theme_data->Name ), esc_url( admin_url( 'themes.php?page=about-ashe' ) ) );
+		echo '</p>';
+
+		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=about-ashe' ) ) .'" class="button button-primary button-hero">';
+			/* translators: %s theme name */
+			printf( esc_html__( 'Get started with %s', 'ashe' ), esc_html( $theme_data->Name ) );
+		echo '</a></p>';
+
 	echo '</div>';
 }
 
@@ -117,7 +133,7 @@ add_action( 'wp_head', 'ashe_pingback_header' );
 function ashe_scripts() {
 
 	// Theme Stylesheet
-	wp_enqueue_style( 'ashe-style', get_stylesheet_uri(), array(), '1.6.1' );
+	wp_enqueue_style( 'ashe-style', get_stylesheet_uri(), array(), '1.6.2' );
 
 	// FontAwesome Icons
 	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/font-awesome.css' ) );
@@ -137,11 +153,11 @@ function ashe_scripts() {
 	}
 	
 	// Theme Responsive CSS
-	wp_enqueue_style( 'ashe-responsive', get_theme_file_uri( '/assets/css/responsive.css' ), array(), '1.6.1'  );
+	wp_enqueue_style( 'ashe-responsive', get_theme_file_uri( '/assets/css/responsive.css' ), array(), '1.6.2'  );
 
 	// Enqueue Custom Scripts
-	wp_enqueue_script( 'ashe-plugins', get_theme_file_uri( '/assets/js/custom-plugins.js' ), array( 'jquery' ), '1.6.1', true );
-	wp_enqueue_script( 'ashe-custom-scripts', get_theme_file_uri( '/assets/js/custom-scripts.js' ), array( 'jquery' ), '1.6.1', true );
+	wp_enqueue_script( 'ashe-plugins', get_theme_file_uri( '/assets/js/custom-plugins.js' ), array( 'jquery' ), '1.6.2', true );
+	wp_enqueue_script( 'ashe-custom-scripts', get_theme_file_uri( '/assets/js/custom-scripts.js' ), array( 'jquery' ), '1.6.2', true );
 
 	// Comment reply link
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -212,7 +228,7 @@ add_action( 'wp_enqueue_scripts', 'ashe_gfonts_scripts' );
 function ashe_widgets_init() {
 	
 	register_sidebar( array(
-		'name'          => __( 'Sidebar Right', 'ashe' ),
+		'name'          => __( 'Right Sidebar', 'ashe' ),
 		'id'            => 'sidebar-right',
 		'description'   => __( 'Add widgets here to appear in your sidebar.', 'ashe' ),
 		'before_widget' => '<div id="%1$s" class="ashe-widget %2$s">',
@@ -222,7 +238,7 @@ function ashe_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Sidebar Left', 'ashe' ),
+		'name'          => __( 'Left Sidebar', 'ashe' ),
 		'id'            => 'sidebar-left',
 		'description'   => __( 'Add widgets here to appear in your sidebar.', 'ashe' ),
 		'before_widget' => '<div id="%1$s" class="ashe-widget %2$s">',
@@ -485,7 +501,7 @@ if ( ! function_exists( 'ashe_related_posts' ) ) {
 function ashe_custom_search_form( $html ) {
 
 	$html  = '<form role="search" method="get" id="searchform" class="clear-fix" action="'. esc_url( home_url( '/' ) ) .'">';
-	$html .= '<input type="search" name="s" id="s" placeholder="'. esc_attr__( 'Search...', 'ashe' ) .'" data-placeholder="'. esc_attr__( 'Type & hit Enter...', 'ashe' ) .'" value="'. get_search_query() .'" />';
+	$html .= '<input type="search" name="s" id="s" placeholder="'. esc_attr__( 'Search...', 'ashe' ) .'" data-placeholder="'. esc_attr__( 'Type then hit Enter...', 'ashe' ) .'" value="'. get_search_query() .'" />';
 	$html .= '<i class="fa fa-search"></i>';
 	$html .= '<input type="submit" id="searchsubmit" value="st" />';
 	$html .= '</form>';
