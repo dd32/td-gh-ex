@@ -82,7 +82,7 @@
 
         <div class="entry-content">
 
-            <?php the_excerpt('Read Full Post...'); ?>
+            <?php the_excerpt(); ?>
 
         </div><!-- .entry-content -->
 

@@ -104,7 +104,14 @@
 						<?php endif; ?>
                         </a>
                     <?php if(is_home()) echo '</h1>'; else echo '</h2>'; ?>
-             </div>
+					<?php 
+					if( get_bloginfo( 'description', 'display' ) ):
+					?>
+					<p class="site-description"><?php echo  esc_html( get_bloginfo( 'description', 'display' ) ); ?></p> 
+					<?php 
+					endif;
+					?>
+        </div>
 		
 		
 	</div>

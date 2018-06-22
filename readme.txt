@@ -19,7 +19,6 @@ b) Bootstrap v3.2.0 (http://getbootstrap.com)
 
 c) Fonts
  * Google Fonts. Resource URI: http://www.google.com/fonts/
- * ST MARIE - Generated at: http://www.fontsquirrel.com/license/st-marie
 
 d) HTML5
  * HTML5 Shiv by Sjoerd Visscher licensed under the MIT License - https://github.com/aFarkas/html5shiv/
@@ -33,4 +32,15 @@ f) Genericons
 
 g) Images
  * Images used in the demo are for free to use under GPL License. 
- * Credits - http://pixabay.com/
+ * Credits - https://unsplash.com/
+ 1. https://unsplash.com/photos/vACInYhNjY0
+ 2. https://unsplash.com/photos/i4hoJLkPWO8
+ 3. https://unsplash.com/photos/YbFrjg5m5ZY
+ 4. https://unsplash.com/photos/uiPaZkzjv64
+ 5. https://unsplash.com/photos/gRzsb3H_WV0
+ 6. https://unsplash.com/photos/fQabXFgYO7A
+ 7. https://unsplash.com/photos/eVQBXxeCre4
+ 8. https://unsplash.com/photos/VHpDp_GkGgc
+ 9. https://unsplash.com/photos/Zh6C3GydNBA
+ 10. https://unsplash.com/photos/eXdKs9d37Sc
+ 11. https://unsplash.com/photos/bHoBMkArD5k

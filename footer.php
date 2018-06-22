@@ -29,15 +29,14 @@
 				
 				<?php 
 				$url   = 'https://jonnyjordan.com';
-				$wpurl = 'https://wordpress.org/themes/belfast/';
 				
 				if( is_home() && !is_paged() ){
-					$text = sprintf( '<a href="%s" >'.esc_html__( 'Web Design Belfast', 'belfast' ).'</a> '.esc_html__( 'Theme ', 'belfast' ).'.', esc_url( $url ) );
+					$text = sprintf( '<a href="%s" >'.esc_html__( 'Jonny Jordan Web Design', 'belfast' ).'</a> '.esc_html__( 'Theme ', 'belfast' ).'.', esc_url( $url ) );
 				}else{
 					$text = __( 'belfast Theme. ', 'belfast' );
 				}
 				
-				echo sprintf( $text.esc_html__( 'Powered by ', 'belfast' ).'<a href="%s">'.esc_html__( 'WordPress', 'belfast' ).'</a>', $wpurl  );
+				echo sprintf( $text.esc_html__( 'Developed by ', 'belfast' ).'<a href="%s">'.esc_html__( 'JonnyJordan', 'belfast' ).'</a>', $url  );
 				?>
 				
 			</p> 
