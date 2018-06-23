@@ -352,179 +352,35 @@ function ashe_about_page_output() {
 				<tbody>
 					<tr>
 						<td>
-							<h3><?php esc_html_e( '100% Responsive and Retina Ready', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Theme adapts to any kind of device screen, from mobile phones to high resolution Retina displays.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Translation Ready', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Each hard-coded string is ready for translation, means you can translate everything. Language "ashe.pot" file included.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'RTL Support', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'RTL stylesheet for languages that are read from right to left like Arabic, Hebrew, etc... Your content will adapt to RTL direction.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'WooCommerce Integration', 'ashe' ); ?></h3>
-							<p>
-								<?php esc_html_e( 'The best eCommerce solution for WordPress websites. Add your own Shop and sell anything from digital Goods to Coconuts.', 'ashe' ); ?>
-								<br>
-								<strong class="only-pro"><?php esc_html_e( 'Pro Version:', 'ashe' ); ?></strong> <?php esc_html_e( 'Left &amp; Right WooCommerce widgetised areas. Perfectly styled to fit the theme design.', 'ashe' ); ?>
-							</p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Contact Form 7 Support', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'The most popular contact form plugin. You can build almost any kind of contact form. Very simple but super flexible.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Image &amp; Text Logos', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Upload your logo image(set the size) or simply type your text logo.', 'ashe' ); ?><br><strong class="only-pro"><?php esc_html_e( 'Pro Version:', 'ashe' ); ?></strong> <?php esc_html_e( 'Adjust Logo position to fit your custom header design.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Featured Posts Slider', 'ashe' ); ?></h3>
-							<p>
-								<?php esc_html_e( 'Showcase up to 5 most recent Blog Posts in header area.', 'ashe' ); ?>
-								<br>
-								<strong class="only-pro"><?php esc_html_e( 'Pro Version:', 'ashe' ); ?></strong> <?php esc_html_e( 'Unlimited number of Slides. Feature specific(custom) posts and order them by date, comments or even random. Change Slider columns from 1 up to 4, set Autoplay and enable/disable any element.', 'ashe' ); ?>  
-							</p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Featured Links (Promo Boxes)', 'ashe' ); ?></h3>
-							<p>
-								<?php esc_html_e( 'Display up to 3 eye-catching linked images under header area, which could be a Custom Page Links or Banners(ads).', 'ashe' ); ?> 
-								<br>
-								<strong class="only-pro"><?php esc_html_e( 'Pro Version:', 'ashe' ); ?></strong> <?php esc_html_e( 'You can have 5 Featured Links.', 'ashe' ); ?>
-							</p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'List Layout', 'ashe' ); ?></h3>
-							<p>
-								<?php esc_html_e( 'Nice list style layout, perfect for the Food based websites.', 'ashe' ); ?> 
-								<br>
-								<strong class="only-pro"><?php esc_html_e( 'Pro Version:', 'ashe' ); ?></strong> <?php esc_html_e( 'Adjust Featured Image crop width and height sizes.', 'ashe' ); ?>
-							</p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Background Image/Color', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Set the custom body Background image or Color.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Header Background Image/Color', 'ashe' ); ?></h3>
-							<p>
-								<?php esc_html_e( 'Set the custom header Background image or Color.', 'ashe' ); ?>
-								<br>
-								<strong class="only-pro"><?php esc_html_e( 'Pro Version:', 'ashe' ); ?></strong> <?php esc_html_e( 'Adjust Header size &amp; enable ', 'ashe' ); ?><strong><?php esc_html_e( 'Parallax Scrolling', 'ashe' ); ?></strong> <?php esc_html_e( 'to fit your custom website design.', 'ashe' ); ?>
-							</p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Classic Layout', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Standard one column Blog Feed layout.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Multi-level Sub Menu Support', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Unlimited level of sub menus. Add as much as you need.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Left &amp; Right Sidebars', 'ashe' ); ?></h3>
-							<p>
-								<?php esc_html_e( 'Left and Right Widgetised areas. Could be globally Enabled/Disabled.', 'ashe' ); ?>
-								<br>
-								<strong class="only-pro"><?php esc_html_e( 'Pro Version:', 'ashe' ); ?></strong> <?php esc_html_e( 'Full controll - Enable/Disable on specific Posts &amp; Pages.', 'ashe' ); ?>
-							</p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Alternative Sidebar', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Stylish and modern Alternative Widgetised area, which is hidden by default and pops up on click.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					
-					<!-- Only Pro -->
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'One Click Demo Import', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Just a Single Click and you will get the same content as shown on our Demo website. Menus, Posts, Pages, Widgets, etc... will be imported.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Unlimited Colors', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Tons of color options. You can customize your Header, Content and Footer separately as much as possible.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
 							<h3><?php esc_html_e( '800+ Google Fonts', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Rich Typography options. Choose from more than 800 Google Fonts, adjust Size, Line Height, Font Weight, etc...', 'ashe' ); ?></p>
 						</td>
 						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
 						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td>
-							<h3><?php esc_html_e( 'Advanced Header Background', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Upload custom header background Video or display images as a Slider.', 'ashe' ); ?></p>
+							<h3><?php esc_html_e( 'Header Background Image/Color/Video', 'ashe' ); ?></h3>
+						</td>
+						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
+						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td>
+							<h3><?php esc_html_e( 'Unlimited Colors Options', 'ashe' ); ?></h3>
+						</td>
+						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
+						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td>
+							<h3><?php esc_html_e( 'Classic, List, Grid Layouts', 'ashe' ); ?></h3>
+						</td>
+						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
+						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td>
+							<h3><?php esc_html_e( 'Advanced Slider Options', 'ashe' ); ?></h3>
 						</td>
 						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
 						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
@@ -532,55 +388,6 @@ function ashe_about_page_output() {
 					<tr>
 						<td>
 							<h3><?php esc_html_e( 'Advanced WooCommerce Support', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Set 2, 3 or 4 Columns on WooCommerce Product Grid. Enable/Disable Left & Right WooCommerce widgetized areas.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Grid Layout', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Choose from 1 up to 4 columns grid layout for your Blog Feed.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Post Formats Support', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Create Audio, Video, Gallery, Link &amp; Quote Blog Posts with unique, modern and minimal styling. Full control over your Blog Posts.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Post Sharing Icons', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Ability to share your Blog Posts on the most popular social media: Facebook, Twitter, Pinterest, Google Plus, Linkedin, Reddit, Tumblr.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Advanced Post Options', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Custom Post Header image upload, Full-width Post option, ability to display current post in the Featured Slider.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Advanced Page Options', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Custom Page Header image, Full-width page option, enable/disable Featured Slider & Featured Links on current page, Show/hide page Title & Featured Image.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Different Blog Feed Pagination', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Choose from 4 Diffenet pagination styles: Default, Numeric, Load More Button and Infinite Page Scrolling.', 'ashe' ); ?></p>
 						</td>
 						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
 						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
@@ -588,47 +395,13 @@ function ashe_about_page_output() {
 					<tr>
 						<td>
 							<h3><?php esc_html_e( 'Sticky Navigation', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Fix the main navigation to the page, it will be always visible at the top.', 'ashe' ); ?></p>
 						</td>
 						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
 						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
 					</tr>
 					<tr>
 						<td>
-							<h3><?php esc_html_e( 'Instagram Widget Area', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Showcase your Instagram photos in your website Footer or Header.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Integration with MailChimp', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'This plugin helps you add more subscribers to your MailChimp lists using various methods.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Integration with JetPack', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Jetpack is the ultimate toolkit for WordPress. It gives you everything you need to design, secure, and grow your site in one bundle.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Ashe Pro Widgets', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Ashe Author, Ads &amp; Social Icons widgets included.', 'ashe' ); ?></p>
-						</td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
-						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
-					</tr>
-					<tr>
-						<td>
-							<h3><?php esc_html_e( 'Advanced Footer Options', 'ashe' ); ?></h3>
-							<p><?php esc_html_e( 'Theme and Author credit links in the footer are automatically removed. You can add social icons to the footer.', 'ashe' ); ?></p>
+							<h3><?php esc_html_e( 'Premium Support 24/7', 'ashe' ); ?></h3>
 						</td>
 						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
 						<td class="compare-icon"><span class="dashicons-before dashicons-yes"></span></td>
@@ -636,12 +409,10 @@ function ashe_about_page_output() {
 
 
 					<tr>
-						<td></td>
-						<td colspan="2">
-							<a href="<?php echo esc_url('https://wp-royal.com/themes/item-ashe-pro/?ref=ashe-free-backend-about-section-getpro-btn'); ?>" target="_blank" class="button button-primary button-hero">
-								<?php esc_html_e( 'Get Ashe Pro', 'ashe' ); ?>
+						<td colspan="3">
+							<a href="<?php echo esc_url('https://wp-royal.com/themes/item-ashe-pro/?ref=ashe-free-backend-about-section-feature-list-btn#features'); ?>" target="_blank" class="button button-primary button-hero">
+								<strong><?php esc_html_e( 'View Full Feature List', 'ashe' ); ?></strong>
 							</a>
-							<br><br>
 						</td>
 					</tr>
 				</tbody>
@@ -854,12 +625,12 @@ function ashe_enqueue_about_page_scripts($hook) {
 	}
 
 	// enqueue CSS
-	wp_enqueue_style( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/css/about-ashe-page.css' ), array(), '1.6.2' );
+	wp_enqueue_style( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/css/about-ashe-page.css' ), array(), '1.6.3' );
 
 	// Demo Import
 	wp_enqueue_script( 'plugin-install' );
 	wp_enqueue_script( 'updates' );
-	wp_enqueue_script( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/js/about-ashe-page.js' ), array(), '1.6.2' );
+	wp_enqueue_script( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/js/about-ashe-page.js' ), array(), '1.6.3' );
 
 }
 add_action( 'admin_enqueue_scripts', 'ashe_enqueue_about_page_scripts' );

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ashe\n"
-"POT-Creation-Date: 2018-06-22 13:25+0400\n"
-"PO-Revision-Date: 2018-06-22 13:25+0400\n"
+"POT-Creation-Date: 2018-06-23 17:29+0400\n"
+"PO-Revision-Date: 2018-06-23 17:29+0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -24,37 +24,28 @@ msgstr ""
 
 #: 404.php:8
 msgid ""
-"It seems we can't find what you're looking for. Perhaps searching can help "
-"or go back to "
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr ""
 
-#: 404.php:9
-msgid "Homepage"
-msgstr ""
-
-#: comments.php:5
-msgid ""
-"This post is password protected. Enter the password to view the comments."
-msgstr ""
-
-#: comments.php:13 templates/grid/blog-grid.php:86
+#: comments.php:12 templates/grid/blog-grid.php:86
 #: templates/grid/blog-list.php:60 templates/single/post-content.php:79
 msgid "0 Comments"
 msgstr ""
 
-#: comments.php:13
+#: comments.php:12
 msgid "One Comment"
 msgstr ""
 
-#: comments.php:13
+#: comments.php:12
 msgid "% Comments"
 msgstr ""
 
-#: comments.php:27
+#: comments.php:26
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:31
+#: comments.php:30
 msgid "Newer Comments"
 msgstr ""
 
@@ -129,8 +120,8 @@ msgstr ""
 msgid "Add widgets here to appear in your footer."
 msgstr ""
 
-#: functions.php:290 functions.php:309
-msgid "Set up Menu"
+#: functions.php:290 functions.php:309 inc/about/about-ashe.php:216
+msgid "Setup Menu"
 msgstr ""
 
 #. translators: %s: Name of current post
@@ -355,10 +346,6 @@ msgstr ""
 msgid "Get Started"
 msgstr ""
 
-#: inc/about/about-ashe.php:216
-msgid "Setup Menu"
-msgstr ""
-
 #: inc/about/about-ashe.php:218 inc/about/about-ashe.php:223
 #: inc/about/about-ashe.php:228 inc/about/about-ashe.php:233
 #: inc/about/about-ashe.php:238 inc/about/about-ashe.php:243
@@ -431,8 +418,7 @@ msgid ""
 "below to get a taste of the recent fixes and features implemented."
 msgstr ""
 
-#: inc/about/about-ashe.php:345 inc/about/about-ashe.php:642
-#: inc/customizer/customizer.php:305
+#: inc/about/about-ashe.php:345 inc/customizer/customizer.php:305
 msgid "Get Ashe Pro"
 msgstr ""
 
@@ -445,391 +431,83 @@ msgid "Ashe Pro"
 msgstr ""
 
 #: inc/about/about-ashe.php:355
-msgid "100% Responsive and Retina Ready"
-msgstr ""
-
-#: inc/about/about-ashe.php:356
-msgid ""
-"Theme adapts to any kind of device screen, from mobile phones to high "
-"resolution Retina displays."
-msgstr ""
-
-#: inc/about/about-ashe.php:363
-msgid "Translation Ready"
-msgstr ""
-
-#: inc/about/about-ashe.php:364
-msgid ""
-"Each hard-coded string is ready for translation, means you can translate "
-"everything. Language \"ashe.pot\" file included."
-msgstr ""
-
-#: inc/about/about-ashe.php:371
-msgid "RTL Support"
-msgstr ""
-
-#: inc/about/about-ashe.php:372
-msgid ""
-"RTL stylesheet for languages that are read from right to left like Arabic, "
-"Hebrew, etc... Your content will adapt to RTL direction."
-msgstr ""
-
-#: inc/about/about-ashe.php:379
-msgid "WooCommerce Integration"
-msgstr ""
-
-#: inc/about/about-ashe.php:381
-msgid ""
-"The best eCommerce solution for WordPress websites. Add your own Shop and "
-"sell anything from digital Goods to Coconuts."
-msgstr ""
-
-#: inc/about/about-ashe.php:383 inc/about/about-ashe.php:400
-#: inc/about/about-ashe.php:411 inc/about/about-ashe.php:423
-#: inc/about/about-ashe.php:435 inc/about/about-ashe.php:456
-#: inc/about/about-ashe.php:484
-msgid "Pro Version:"
-msgstr ""
-
-#: inc/about/about-ashe.php:383
-msgid ""
-"Left &amp; Right WooCommerce widgetised areas. Perfectly styled to fit the "
-"theme design."
-msgstr ""
-
-#: inc/about/about-ashe.php:391
-msgid "Contact Form 7 Support"
-msgstr ""
-
-#: inc/about/about-ashe.php:392
-msgid ""
-"The most popular contact form plugin. You can build almost any kind of "
-"contact form. Very simple but super flexible."
-msgstr ""
-
-#: inc/about/about-ashe.php:399
-msgid "Image &amp; Text Logos"
-msgstr ""
-
-#: inc/about/about-ashe.php:400
-msgid "Upload your logo image(set the size) or simply type your text logo."
-msgstr ""
-
-#: inc/about/about-ashe.php:400
-msgid "Adjust Logo position to fit your custom header design."
-msgstr ""
-
-#: inc/about/about-ashe.php:407
-msgid "Featured Posts Slider"
-msgstr ""
-
-#: inc/about/about-ashe.php:409
-msgid "Showcase up to 5 most recent Blog Posts in header area."
-msgstr ""
-
-#: inc/about/about-ashe.php:411
-msgid ""
-"Unlimited number of Slides. Feature specific(custom) posts and order them by "
-"date, comments or even random. Change Slider columns from 1 up to 4, set "
-"Autoplay and enable/disable any element."
-msgstr ""
-
-#: inc/about/about-ashe.php:419
-msgid "Featured Links (Promo Boxes)"
-msgstr ""
-
-#: inc/about/about-ashe.php:421
-msgid ""
-"Display up to 3 eye-catching linked images under header area, which could be "
-"a Custom Page Links or Banners(ads)."
-msgstr ""
-
-#: inc/about/about-ashe.php:423
-msgid "You can have 5 Featured Links."
-msgstr ""
-
-#: inc/about/about-ashe.php:431
-msgid "List Layout"
-msgstr ""
-
-#: inc/about/about-ashe.php:433
-msgid "Nice list style layout, perfect for the Food based websites."
-msgstr ""
-
-#: inc/about/about-ashe.php:435
-msgid "Adjust Featured Image crop width and height sizes."
-msgstr ""
-
-#: inc/about/about-ashe.php:443
-msgid "Background Image/Color"
-msgstr ""
-
-#: inc/about/about-ashe.php:444
-msgid "Set the custom body Background image or Color."
-msgstr ""
-
-#: inc/about/about-ashe.php:452
-msgid "Header Background Image/Color"
-msgstr ""
-
-#: inc/about/about-ashe.php:454
-msgid "Set the custom header Background image or Color."
-msgstr ""
-
-#: inc/about/about-ashe.php:456
-msgid "Adjust Header size &amp; enable "
-msgstr ""
-
-#: inc/about/about-ashe.php:456
-msgid "Parallax Scrolling"
-msgstr ""
-
-#: inc/about/about-ashe.php:456
-msgid "to fit your custom website design."
-msgstr ""
-
-#: inc/about/about-ashe.php:464
-msgid "Classic Layout"
-msgstr ""
-
-#: inc/about/about-ashe.php:465
-msgid "Standard one column Blog Feed layout."
-msgstr ""
-
-#: inc/about/about-ashe.php:472
-msgid "Multi-level Sub Menu Support"
-msgstr ""
-
-#: inc/about/about-ashe.php:473
-msgid "Unlimited level of sub menus. Add as much as you need."
-msgstr ""
-
-#: inc/about/about-ashe.php:480
-msgid "Left &amp; Right Sidebars"
-msgstr ""
-
-#: inc/about/about-ashe.php:482
-msgid "Left and Right Widgetised areas. Could be globally Enabled/Disabled."
-msgstr ""
-
-#: inc/about/about-ashe.php:484
-msgid "Full controll - Enable/Disable on specific Posts &amp; Pages."
-msgstr ""
-
-#: inc/about/about-ashe.php:492
-msgid "Alternative Sidebar"
-msgstr ""
-
-#: inc/about/about-ashe.php:493
-msgid ""
-"Stylish and modern Alternative Widgetised area, which is hidden by default "
-"and pops up on click."
-msgstr ""
-
-#: inc/about/about-ashe.php:502
-msgid "One Click Demo Import"
-msgstr ""
-
-#: inc/about/about-ashe.php:503
-msgid ""
-"Just a Single Click and you will get the same content as shown on our Demo "
-"website. Menus, Posts, Pages, Widgets, etc... will be imported."
-msgstr ""
-
-#: inc/about/about-ashe.php:510
-msgid "Unlimited Colors"
-msgstr ""
-
-#: inc/about/about-ashe.php:511
-msgid ""
-"Tons of color options. You can customize your Header, Content and Footer "
-"separately as much as possible."
-msgstr ""
-
-#: inc/about/about-ashe.php:518
 msgid "800+ Google Fonts"
 msgstr ""
 
-#: inc/about/about-ashe.php:519
-msgid ""
-"Rich Typography options. Choose from more than 800 Google Fonts, adjust "
-"Size, Line Height, Font Weight, etc..."
+#: inc/about/about-ashe.php:362
+msgid "Header Background Image/Color/Video"
 msgstr ""
 
-#: inc/about/about-ashe.php:526
-msgid "Advanced Header Background"
+#: inc/about/about-ashe.php:369
+msgid "Unlimited Colors Options"
 msgstr ""
 
-#: inc/about/about-ashe.php:527
-msgid "Upload custom header background Video or display images as a Slider."
+#: inc/about/about-ashe.php:376
+msgid "Classic, List, Grid Layouts"
 msgstr ""
 
-#: inc/about/about-ashe.php:534
+#: inc/about/about-ashe.php:383
+msgid "Advanced Slider Options"
+msgstr ""
+
+#: inc/about/about-ashe.php:390
 msgid "Advanced WooCommerce Support"
 msgstr ""
 
-#: inc/about/about-ashe.php:535
-msgid ""
-"Set 2, 3 or 4 Columns on WooCommerce Product Grid. Enable/Disable Left & "
-"Right WooCommerce widgetized areas."
-msgstr ""
-
-#: inc/about/about-ashe.php:542
-msgid "Grid Layout"
-msgstr ""
-
-#: inc/about/about-ashe.php:543
-msgid "Choose from 1 up to 4 columns grid layout for your Blog Feed."
-msgstr ""
-
-#: inc/about/about-ashe.php:550
-msgid "Post Formats Support"
-msgstr ""
-
-#: inc/about/about-ashe.php:551
-msgid ""
-"Create Audio, Video, Gallery, Link &amp; Quote Blog Posts with unique, "
-"modern and minimal styling. Full control over your Blog Posts."
-msgstr ""
-
-#: inc/about/about-ashe.php:558
-msgid "Post Sharing Icons"
-msgstr ""
-
-#: inc/about/about-ashe.php:559
-msgid ""
-"Ability to share your Blog Posts on the most popular social media: Facebook, "
-"Twitter, Pinterest, Google Plus, Linkedin, Reddit, Tumblr."
-msgstr ""
-
-#: inc/about/about-ashe.php:566
-msgid "Advanced Post Options"
-msgstr ""
-
-#: inc/about/about-ashe.php:567
-msgid ""
-"Custom Post Header image upload, Full-width Post option, ability to display "
-"current post in the Featured Slider."
-msgstr ""
-
-#: inc/about/about-ashe.php:574
-msgid "Advanced Page Options"
-msgstr ""
-
-#: inc/about/about-ashe.php:575
-msgid ""
-"Custom Page Header image, Full-width page option, enable/disable Featured "
-"Slider & Featured Links on current page, Show/hide page Title & Featured "
-"Image."
-msgstr ""
-
-#: inc/about/about-ashe.php:582
-msgid "Different Blog Feed Pagination"
-msgstr ""
-
-#: inc/about/about-ashe.php:583
-msgid ""
-"Choose from 4 Diffenet pagination styles: Default, Numeric, Load More Button "
-"and Infinite Page Scrolling."
-msgstr ""
-
-#: inc/about/about-ashe.php:590
+#: inc/about/about-ashe.php:397
 msgid "Sticky Navigation"
 msgstr ""
 
-#: inc/about/about-ashe.php:591
-msgid ""
-"Fix the main navigation to the page, it will be always visible at the top."
+#: inc/about/about-ashe.php:404
+msgid "Premium Support 24/7"
 msgstr ""
 
-#: inc/about/about-ashe.php:598
-msgid "Instagram Widget Area"
+#: inc/about/about-ashe.php:414
+msgid "View Full Feature List"
 msgstr ""
 
-#: inc/about/about-ashe.php:599
-msgid "Showcase your Instagram photos in your website Footer or Header."
-msgstr ""
-
-#: inc/about/about-ashe.php:606
-msgid "Integration with MailChimp"
-msgstr ""
-
-#: inc/about/about-ashe.php:607
-msgid ""
-"This plugin helps you add more subscribers to your MailChimp lists using "
-"various methods."
-msgstr ""
-
-#: inc/about/about-ashe.php:614
-msgid "Integration with JetPack"
-msgstr ""
-
-#: inc/about/about-ashe.php:615
-msgid ""
-"Jetpack is the ultimate toolkit for WordPress. It gives you everything you "
-"need to design, secure, and grow your site in one bundle."
-msgstr ""
-
-#: inc/about/about-ashe.php:622
-msgid "Ashe Pro Widgets"
-msgstr ""
-
-#: inc/about/about-ashe.php:623
-msgid "Ashe Author, Ads &amp; Social Icons widgets included."
-msgstr ""
-
-#: inc/about/about-ashe.php:630
-msgid "Advanced Footer Options"
-msgstr ""
-
-#: inc/about/about-ashe.php:631
-msgid ""
-"Theme and Author credit links in the footer are automatically removed. You "
-"can add social icons to the footer."
-msgstr ""
-
-#: inc/about/about-ashe.php:686
+#: inc/about/about-ashe.php:457
 msgid "Installed"
 msgstr ""
 
-#: inc/about/about-ashe.php:689
+#: inc/about/about-ashe.php:460
 msgid "Install Now"
 msgstr ""
 
-#: inc/about/about-ashe.php:694
+#: inc/about/about-ashe.php:465
 msgid "..."
 msgstr ""
 
-#: inc/about/about-ashe.php:766
+#: inc/about/about-ashe.php:537
 msgid "Import Demo Data"
 msgstr ""
 
-#: inc/about/about-ashe.php:781
+#: inc/about/about-ashe.php:552
 msgid "Activate - Contact Form 7"
 msgstr ""
 
-#: inc/about/about-ashe.php:783
+#: inc/about/about-ashe.php:554
 msgid "Install/Activate - Contact Form 7"
 msgstr ""
 
-#: inc/about/about-ashe.php:790
+#: inc/about/about-ashe.php:561
 msgid "Activate - Recent Posts Widget with Thumbnails"
 msgstr ""
 
-#: inc/about/about-ashe.php:792
+#: inc/about/about-ashe.php:563
 msgid "Install/Activate - Recent Posts Widget with Thumbnails"
 msgstr ""
 
-#: inc/about/about-ashe.php:799
+#: inc/about/about-ashe.php:570
 msgid "Activate - WP Instagram Widget"
 msgstr ""
 
-#: inc/about/about-ashe.php:801
+#: inc/about/about-ashe.php:572
 msgid "Install/Activate - WP Instagram Widget"
 msgstr ""
 
 #. translators: %s link
-#: inc/about/about-ashe.php:807
+#: inc/about/about-ashe.php:578
 #, php-format
 msgid ""
 "Recommended (optional): Before you Import Demo Data to get the same demo as "

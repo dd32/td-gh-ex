@@ -2,7 +2,6 @@
 
 // if password is required
 if ( post_password_required() ) {
-	echo '<p>'. esc_html__( 'This post is password protected. Enter the password to view the comments.' ,'ashe') .'</p>';
 	return;
 }
 
