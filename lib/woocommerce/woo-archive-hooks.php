@@ -203,6 +203,7 @@ function ascend_woo_archive_hooks_output() {
                 $image_id = get_post_thumbnail_id( $post->ID );
                 $img = ascend_get_image_array($productimgwidth, $productimgheight, $image_crop, 'attachment-shop_catalog wp-post-image', null, $image_id, $placeholder = false);              
             } else {
+            	$image_id = null;
                 $img = array(
                 	'src' => wc_placeholder_img_src(),
                 	'alt'	=> get_the_title(),

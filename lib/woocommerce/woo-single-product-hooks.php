@@ -18,6 +18,18 @@ function ascend_single_woocommerce_support() {
 			return $classes;
 	}
 	add_filter( 'body_class', 'product_layout_post_class' );
+
+	function single_product_post_class( $classes ) {
+		if( is_singular('product') ) {
+			global $product;
+			$attachment_ids = $product->get_gallery_image_ids();
+			if ( ! $attachment_ids ) {
+				$classes[] = 'kt-product-no-thumbnail-images';
+			}
+		}
+		return $classes;
+	}
+	add_filter( 'post_class', 'single_product_post_class' );
 	// Add Product Nav above title
     function ascend_woo_product_navigation() {
     	$ascend = ascend_get_options();

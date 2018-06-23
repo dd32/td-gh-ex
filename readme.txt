@@ -28,6 +28,10 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.2.7 | 1st June 2018 =
+* Add: Better elementor support
+* Add: header footer elementor support.
+
 = Version 1.2.6 | 21st May 2018 =
 * Fix: logo shrink isssue on some browsers.
 * Fix: Mobile transparent logo issue.

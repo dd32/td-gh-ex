@@ -245,7 +245,8 @@ hr {
 .clearfix:after {
   clear: both;
 }
-.entry-content p {
+.entry-content p,
+.elementor-element p {
   margin: 0 0 24px;
 }
 p {
@@ -2991,7 +2992,8 @@ body {
 .kt_item_fade_in {
   opacity: 0;
 }
-.slick-slider .kt_item_fade_in {
+.slick-slider .kt_item_fade_in,
+.elementor-edit-mode .kt_item_fade_in {
   opacity: 1;
 }
 html.no-js .kt_item_fade_in {

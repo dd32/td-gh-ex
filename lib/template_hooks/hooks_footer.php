@@ -2,7 +2,10 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-
+add_action( 'ascend_footer', 'ascend_footer_markup', 10 );
+function ascend_footer_markup() {
+	get_template_part('templates/footer');
+}
 add_action('wp_footer', 'ascend_header_extras_login_modal', 20);
 function ascend_header_extras_login_modal() {
 	$ascend = ascend_get_options();

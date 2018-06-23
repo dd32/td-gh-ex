@@ -21,6 +21,7 @@ require_once( trailingslashit( get_template_directory() ) . 'lib/classes/class-a
 require_once( trailingslashit( get_template_directory() ) . 'lib/classes/class-ascend-get-image.php');     				// Image Processing
 require_once( trailingslashit( get_template_directory() ) . 'lib/classes/class-ascend_walker_nav_menu_custom.php');     // Custom Walker
 require_once( trailingslashit( get_template_directory() ) . 'lib/classes/class-ascend_custom_menu.php');     			// Custom Menu settings
+require_once( trailingslashit( get_template_directory() ) . 'lib/elementor/elementor-support.php');     				// Elementor Header and Footer Compat
 require_once( trailingslashit( get_template_directory() ) . 'lib/ascend_plugins_activate.php');   						// Plugin Activation
 require_once( trailingslashit( get_template_directory() ) . 'lib/metaboxes/ascend_cmb_extensions.php');     			// Custom Metaboxe Settings
 require_once( trailingslashit( get_template_directory() ) . 'lib/config.php');          								// Configuration

@@ -2843,11 +2843,11 @@ Redux::setSection( $opt_name, array(
             'width' => 'width:60%',
         ),
         array(
-            'id'		=>'default_showpagetitle',
-            'type' 		=> 'switch', 
-            'title' 	=> __('Display page title by default', 'ascend'),
-            "default"	=> 1,
-            ),
+		'id'		=>'default_showpagetitle',
+		'type' 		=> 'switch', 
+		'title' 	=> __('Display page title by default', 'ascend'),
+		"default"	=> 1,
+		),
     ),
 ) );
 Redux::setSection( $opt_name, array(
