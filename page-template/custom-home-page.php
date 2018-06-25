@@ -81,33 +81,34 @@ get_header(); ?>
     <?php if( get_theme_mod('automobile_car_dealer_sec_title') != ''){ ?>     
       <h3><i class="fas fa-car"></i><?php echo esc_html(get_theme_mod('automobile_car_dealer_sec_title',__('About Us','automobile-car-dealer'))); ?></h3>
     <?php }?>
-    <div class="col-md-7 col-sm-7">      
-      <?php
-      $args = array( 'name' => esc_html(get_theme_mod('automobile_car_dealer_project_single_post','')));
-      $query = new WP_Query( $args );
-      if ( $query->have_posts() ) :
-        while ( $query->have_posts() ) : $query->the_post(); ?>
-          <div class="mainbox">
-            <p><?php the_excerpt();?></p>
-            <a href="<?php the_permalink(); ?>"><img src="<?php the_post_thumbnail_url(); ?>"></a>
-          </div>
-        <?php endwhile; 
-        wp_reset_postdata();?>
-        <?php else : ?>
-           <div class="no-postfound"></div>
-         <?php
-        endif; ?>
-        <div class="clearfix"></div>
+    <div class="row">
+      <div class="col-md-7 col-sm-7">
+        <?php
+        $args = array( 'name' => esc_html(get_theme_mod('automobile_car_dealer_project_single_post','')));
+        $query = new WP_Query( $args );
+        if ( $query->have_posts() ) :
+          while ( $query->have_posts() ) : $query->the_post(); ?>
+            <div class="mainbox">
+              <p><?php the_excerpt();?></p>
+              <a href="<?php the_permalink(); ?>"><img src="<?php the_post_thumbnail_url(); ?>"></a>
+            </div>
+          <?php endwhile; 
+          wp_reset_postdata();?>
+          <?php else : ?>
+             <div class="no-postfound"></div>
+           <?php
+          endif; ?>
+          <div class="clearfix"></div>
       </div>
       <div class="col-md-5 col-sm-5">
         <?php 
           $page_query = new WP_Query(array( 'category_name' => esc_html(get_theme_mod('automobile_car_dealer_project_category'),'theblog')));?>
           <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
-            <div class="categorybox">
+            <div class="categorybox row">
               <div class="col-md-4 col-sm-4">
                 <?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?>
               </div>
-              <div class="col-md-8 col-sm-8">              
+              <div class="col-md-8 col-sm-8">
                 <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
                 <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt,10 ) ); ?></p>
               </div>
@@ -116,6 +117,7 @@ get_header(); ?>
           wp_reset_postdata();
         ?>
       </div>
+    </div>
   </div> 
 </section>
 

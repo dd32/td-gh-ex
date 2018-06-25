@@ -2,8 +2,8 @@
 
 Theme Name      :   Automobile Car Dealer
 Theme URI       :   https://www.buywptemplates.com/themes/free-car-dealer-wordpress-theme
-Version         :   0.3
-Tested up to    :   WP 4.9.5
+Version         :   0.3.1
+Tested up to    :   WP 4.9.6
 Author          :   Buywptemplates
 Author URI      :   https://www.buywptemplates.com/
 license         :   GNU General Public License v3.0
@@ -86,14 +86,25 @@ Theme is Built using the following resource bundles.
 	License: Distributed under the terms of the Apache License, version 2.0 http://www.apache.org/licenses/LICENSE-2.0.html
 
 2	CSS bootstrap.css
-	-- Code and documentation copyright 2011-2016 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.
-	-- https://github.com/twbs/bootstrap/blob/master/LICENSE
+    -- Copyright 2011-2018 The Bootstrap Authors
+    -- https://github.com/twbs/bootstrap/blob/master/LICENSE
+    
+    JS bootstrap.js
+    -- Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+    -- https://github.com/twbs/bootstrap/blob/master/LICENSE
+
 	CSS nivo-slider.css
 	-- Copyright 2012, Dev7studios Free to use and abuse under the MIT license.
     -- http://www.opensource.org/licenses/mit-license.php
+
+    JS nivo-slider.js
+    -- Copyright 2012, Dev7studios
+	-- Free to use and abuse under the MIT license.
+	-- http://www.opensource.org/licenses/mit-license.php
+
     Font-awesome.css
-    --Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
- 	License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+    -- Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
+ 	-- License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 
 3   Customizer Licence
 		All code, unless otherwise noted, is licensed under the GNU GPL, version 2 or later.
@@ -146,3 +157,8 @@ Version 0.3
 	i.   Added bootstrap license url in readme.txt file.
 	ii.  Changed the class name to capital letter.
 	iii. Added footer link followed by twentyseventeen.
+
+Version 0.3.1
+	i.   Added post formats.
+	ii.  Updated the pot file.
+	iii. updated bootstrap.

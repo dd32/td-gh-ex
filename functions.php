@@ -12,6 +12,7 @@ function automobile_car_dealer_setup() {
 
 	$GLOBALS['content_width'] = apply_filters( 'automobile_car_dealer_content_width', 640 );
 	
+	load_theme_textdomain( 'automobile_car_dealer', get_template_directory() . '/languages' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'title-tag' );
@@ -29,11 +30,23 @@ function automobile_car_dealer_setup() {
 	) );
 
 	/*
+	 * Enable support for Post Formats.
+	 *
+	 * See: https://codex.wordpress.org/Post_Formats
+	 */
+	add_theme_support(
+		'post-formats', array(
+			'image',
+			'video',
+			'gallery',
+			'audio',
+		)	
+	);
+	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
 	add_editor_style( array( 'css/editor-style.css', automobile_car_dealer_font_url() ) );
-
 }
 endif; // automobile_car_dealer_setup
 add_action( 'after_setup_theme', 'automobile_car_dealer_setup' );
@@ -83,7 +96,7 @@ function automobile_car_dealer_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Footer 1', 'automobile-car-dealer' ),
-		'description'   => __( 'Appears on posts and pages', 'automobile-car-dealer' ),
+		'description'   => __( 'Appears on footer', 'automobile-car-dealer' ),
 		'id'            => 'footer-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -93,7 +106,7 @@ function automobile_car_dealer_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Footer 2', 'automobile-car-dealer' ),
-		'description'   => __( 'Appears on posts and pages', 'automobile-car-dealer' ),
+		'description'   => __( 'Appears on footer', 'automobile-car-dealer' ),
 		'id'            => 'footer-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -103,7 +116,7 @@ function automobile_car_dealer_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Footer 3', 'automobile-car-dealer' ),
-		'description'   => __( 'Appears on posts and pages', 'automobile-car-dealer' ),
+		'description'   => __( 'AAppears on footer', 'automobile-car-dealer' ),
 		'id'            => 'footer-3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -113,7 +126,7 @@ function automobile_car_dealer_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Footer 4', 'automobile-car-dealer' ),
-		'description'   => __( 'Appears on posts and pages', 'automobile-car-dealer' ),
+		'description'   => __( 'Appears on footer', 'automobile-car-dealer' ),
 		'id'            => 'footer-4',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -146,15 +159,14 @@ function automobile_car_dealer_font_url(){
 /* Theme enqueue scripts */
 function automobile_car_dealer_scripts() {
 	wp_enqueue_style( 'automobile-car-dealer-font', automobile_car_dealer_font_url(), array() );
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
+	wp_enqueue_style( 'css-bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
 	wp_enqueue_style( 'automobile-car-dealer-style', get_stylesheet_uri() );
 	wp_style_add_data( 'automobile-car-dealer-style', 'rtl', 'replace' );	
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/fontawesome-all.css' );
-	wp_enqueue_style( 'automobile-car-dealer-customcss', get_template_directory_uri() . '/css/custom.css' );
-	wp_enqueue_style( 'nivo-style', get_template_directory_uri().'/css/nivo-slider.css' );
-	wp_enqueue_script( 'nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
+	wp_enqueue_style( 'css-nivo-style', get_template_directory_uri().'/css/nivo-slider.css' );
+	wp_enqueue_script( 'nivo-slider-jquery', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
 	wp_enqueue_script( 'tether', get_template_directory_uri() . '/js/tether.js', array('jquery') ,'',true);
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') ,'',true);	
+	wp_enqueue_script( 'bootstrap-jquery', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') ,'',true);	
 	wp_enqueue_script( 'automobile-car-dealer-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -167,7 +179,21 @@ function automobile_car_dealer_ie_stylesheet(){
 	wp_enqueue_style('automobile-car-dealer-ie', get_template_directory_uri().'/css/ie.css', array('automobile-car-dealer-style'));
 	wp_style_add_data( 'automobile-car-dealer-ie', 'conditional', 'IE' );
 }
+
 add_action('wp_enqueue_scripts','automobile_car_dealer_ie_stylesheet');
+define('AUTOMOBILE_CAR_DEALER_LIVE_DEMO','https://buywptemplates.com/automobile-car-dealer-pro/','automobile-car-dealer');
+define('AUTOMOBILE_CAR_DEALER_BUY_PRO','https://www.buywptemplates.com/themes/premium-automotive-wordpress-theme/','automobile-car-dealer');
+define('AUTOMOBILE_CAR_DEALER_PRO_DOC','https://www.buywptemplates.com/docs/automobile-car-dealer-pro/','automobile-car-dealer');
+define('AUTOMOBILE_CAR_DEALER_FREE_DOC','https://buywptemplates.com/docs/free-automobile-car-dealer/','automobile-car-dealer');
+define('AUTOMOBILE_CAR_DEALER_PRO_SUPPORT','https://www.buywptemplates.com/forum/automobile-car-dealer-theme/','automobile-car-dealer');
+define('AUTOMOBILE_CAR_DEALER_FREE_SUPPORT','https://wordpress.org/support/theme/automobile-car-dealer/','automobile-car-dealer');
+define('AUTOMOBILE_CAR_DEALER_CREDIT','https://www.buywptemplates.com/','automobile-car-dealer');
+
+if ( ! function_exists( 'AUTOMOBILE_CAR_DEALER_CREDIT' ) ) {
+	function automobile_car_dealer_credit(){
+		echo "<a href=".esc_url(AUTOMOBILE_CAR_DEALER_CREDIT)." target='_blank'>".esc_html__('BuywpTemplate.com','automobile-car-dealer')."</a>";
+	}
+}
 
 /* Excerpt Limit Begin */
 function automobile_car_dealer_string_limit_words($string, $word_limit) {
@@ -185,3 +211,5 @@ require get_template_directory() . '/inc/template-tags.php';
 
 /* Load Jetpack compatibility file. */
 require get_template_directory() . '/inc/customizer.php';
+/** Load welcome message.*/
+require get_template_directory() . '/inc/dashboard/get_started_info.php';

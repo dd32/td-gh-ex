@@ -6,7 +6,7 @@
 get_header(); ?>
 
 <div class="container">
-    <div class="main-wrapper">       
+    <div class="main-wrapper row">       
 		<div class="col-md-8 col-sm-8" id="content_box" >
             <?php while ( have_posts() ) : the_post(); ?>
                 <img src="<?php the_post_thumbnail_url(); ?>" width="100%">

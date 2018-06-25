@@ -6,7 +6,7 @@
 get_header(); ?>
 
 <div class="container">
-    <div class="main-wrapper">       
+    <div class="main-wrapper row">       
 		<div id="sidebar" class="col-md-4 col-sm-4">
 			<?php dynamic_sidebar('sidebar-2'); ?>
 		</div>		 

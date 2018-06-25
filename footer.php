@@ -6,23 +6,25 @@
 ?>
     <div class="footer-wp">
         <div class="container">
-            <div class="col-md-3 col-sm-3">
-                <?php dynamic_sidebar('footer-1');?>
-            </div>
-            <div class="col-md-3 col-sm-3">
-                <?php dynamic_sidebar('footer-2');?>
-            </div>
-            <div class="col-md-3 col-sm-3">
-                <?php dynamic_sidebar('footer-3');?>
-            </div>
-            <div class="col-md-3 col-sm-3">
-                <?php dynamic_sidebar('footer-4');?>
+            <div class="row">
+                <div class="col-md-3 col-sm-3">
+                    <?php dynamic_sidebar('footer-1');?>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <?php dynamic_sidebar('footer-2');?>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <?php dynamic_sidebar('footer-3');?>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <?php dynamic_sidebar('footer-4');?>
+                </div>
             </div>
         </div>
     </div>      
 	<div class="inner">
         <div class="copyright-wrapper">
-            <p><?php echo esc_html(get_theme_mod('automobile_car_dealer_footer_copy',__('Automobile Theme Design & Developed By','automobile-car-dealer'))); ?> <a href="https://www.buywptemplates.com/"><?php echo esc_html_e('BuywpTemplate','automobile-car-dealer') ?></p>
+            <p><?php echo esc_html(get_theme_mod('automobile_car_dealer_footer_copy',__('Automobile Theme Design & Developed By','automobile-car-dealer'))); ?> <?php automobile_car_dealer_credit(); ?></p>
         </div>
         <div class="clear"></div>
     </div>
