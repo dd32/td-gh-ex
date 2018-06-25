@@ -474,7 +474,7 @@ class WeaverX_Load_WX_Subtheme extends WP_Customize_Control {
 		$theme_list = array(
 			'ajax', 				'arctic-white', 	'black-and-white',
 			'blank',				'cosmic-latte',		'full-width-dark',
-			'go-basic-boxed',		'go-basic-full',	'go-basic-stretched',	'go-blue',			'go-green',
+			'go-basic-traditional',	'go-basic-full',	'go-basic-stretched',	'go-blue',			'go-green',
 			'kitchen-sink', 		'magazine', 		'pioneer',
 			'plain-full-width',		'transparent-dark',	'transparent-light'
 		);

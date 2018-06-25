@@ -346,7 +346,7 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full
 			'header_align' => weaverx_cz_select(
 				__( 'Align Header Area', 'weaver-xtreme' ),
 				'',
-				'weaverx_cz_choices_align',	'float-left', 'postMessage'
+				'weaverx_cz_choices_align',	'float-left', 'refresh'
 			),
 
 			'header_padding_T'     => array(
@@ -834,7 +834,7 @@ if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if full
 			'header_align' => weaverx_cz_select(
 				__( 'Align Header Area', 'weaver-xtreme' ),
 				'',
-				'weaverx_cz_choices_align',	'float-left', 'postMessage'
+				'weaverx_cz_choices_align',	'float-left', 'refresh'
 			),
 
 			'spacing-title-header' => weaverx_cz_group_title( __( 'Site Title and Tagline', 'weaver-xtreme' ),

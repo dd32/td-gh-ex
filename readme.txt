@@ -508,8 +508,18 @@ with testing and feature suggestions.
 
 * IMPORTANT NOTICE: some theme files have significant changes to add the page builder support - header.php and footer.php have important changes. These may require fixes in child themes.
 
+= Version 4.0.2 =
+* Fix: be sure no borders on No Border table option
+* Fix: Boxed layout option removed (for now)
+* Fix: Fixed styling for no border tables
+* Fix: Issue with Extended/Stretched width for infobar
+
 = Version 4.0.1 =
 * Fix: center header image fixed
 * Fix: arrow spacing on non-smart-menu menu items
 * Fix: revert to V3 table-layout
 * Fix: some missing icons
+
+= Version 4.0.2 =
+* Fix: Change update to refresh for Align Header Area in Customizer
+* Fix: Left & Right align header image when used with Link to Site

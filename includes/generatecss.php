@@ -158,7 +158,10 @@ function weaverx_output_style( $sout ) {
 				break;
 
 			case 'boxed':
-				weaverx_f_write($sout,"#container,#content,#header,#colophon {overflow:hidden !important;}\n");
+				break;
+				//$themew_box = weaverx_getopt_default('theme_width_int', WEAVERX_THEME_WIDTH);
+				//weaverx_f_write($sout,sprintf("#wrapper{max-width:%dpx;}\n",$themew_box));
+				//weaverx_f_write($sout,"#wrapper,#header,#container,#content,#colophon {max-width:100% !important;}\n");
 				break;
 
 			default:
@@ -333,9 +336,9 @@ function weaverx_output_style( $sout ) {
 		// normally, we use display:block on the image to make it align, etc, but that makes the link
 		// extend over the whole column... So, we will use alternate layout for linked left/right align, and let center just be wrong.
 		if ( $align == 'float-left')
-			weaverx_f_write( $sout, '#branding #header-image img{display:inline-block;float:left;}');
+			weaverx_f_write( $sout, '#branding #header-image img{display:block;margin-left:0;margin-right:auto;}');
 		else
-			weaverx_f_write( $sout, '#branding #header-image img{display:inline-block;float:right;}');
+			weaverx_f_write( $sout, '#branding #header-image img{display:block;margin-left:auto;margin-right:0;}');
 
 	} else {
 
@@ -511,7 +514,7 @@ text_color = 0.213 * this.rgb[0] +
 	} elseif ($table == 'noborders') {
 		weaverx_f_write($sout, sprintf("#content table {border-style:none;}
 #content tr th, #content thead th {font-weight: bold;border-bottom: 1px solid #888;background-color:transparent;}
-#content tr td {border-style:none;}\n"));
+#content tr td {border-style:none;}table,td,th{border:none}\n"));
 	} elseif ($table == 'fullwidth') {
 		weaverx_f_write($sout, sprintf("#content table {width:100%%;}
 #content tr th, #content thead th {font-weight:bold;}\n"));
@@ -1106,9 +1109,9 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 			//--- COMPUTING VARIABLES ---
 			// VISIBILITY when $opt in inside container
 			if (in_array($opt, $inside_container))
-				$vis_container = '#container{overflow:visible;}';
+				$vis_container = '#container{overflow:visible !important;}';
 			if ($opt == 'post')
-				$vis_content = '#content,.content-page{overflow:visible;}';
+				$vis_content = '#content,.content-page{overflow:visible !important;}';
 
 			// PADDING Calculations
 			$pad_left  = '0';
@@ -1304,6 +1307,7 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 		} // end if extended/expanded
 
 	} // end of foreach
+
 
 	//--- WRAP and WRITE CSS ---
 	if ($xcss) { // put generated content inside @media (themewidth)

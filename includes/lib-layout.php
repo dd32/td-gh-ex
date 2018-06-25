@@ -155,7 +155,7 @@ function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '
 	// expand area
 
 	if ( weaverx_getopt_expand( 'expand_' . $area ) ) {
-		$class .= ' wvrx-expand-full expand-test-it';
+		$class .= ' wvrx-expand-full';
 	} else if ( ($area == 'header' || $area == 'footer' ) && weaverx_is_checked_page_opt("_pp_{$area}_full") ) {		// look for per page settings for header and footer
 		$class .= ' wvrx-expand-full';
 	}

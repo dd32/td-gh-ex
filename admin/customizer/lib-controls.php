@@ -369,8 +369,9 @@ function weaverx_cz_choices_site_layout() {
 		'' => '',
 		'fullwidth' 	=>	__('Wide - Extend BG to full width', 'weaver-xtreme'),
 		'stretched' 	=> 	__('Stretched - Expand to full width', 'weaver-xtreme'),
-		'boxed' 		=> 	__('Boxed - Traditional constrained layout', 'weaver-xtreme'),
-		'custom' 		=> 	__('Custom - Use Custom Full Width Options', 'weaver-xtreme')
+		//'boxed' 		=> 	__('Boxed - Traditional constrained layout', 'weaver-xtreme'),
+		//'custom' 		=> 	__('Custom - Use Custom Full Width Options', 'weaver-xtreme')
+		'custom' 		=> 	__('Traditional - Use Traditional Width Options', 'weaver-xtreme')
 		);
 }
 function weaverx_cz_choices_site_layout_sanitize($val) {

@@ -807,7 +807,7 @@ table {
 	border-collapse: 	separate;
 	border-spacing: 	0;
 	border-width: 		1px 0 0 1px;
-	margin: 			0 0 1.75em;
+	margin: 			0 0 1.25em;
 	table-layout: 		auto;
 	/* Prevents HTML tables from becoming too wide */
 	width: 100%;
