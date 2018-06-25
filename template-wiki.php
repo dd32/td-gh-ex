@@ -14,6 +14,7 @@ get_header(); ?>
         </div>
       </header>
       <?php $mywiki_category_selected = get_theme_mod('mywiki_category_list',array());
+      if(empty($mywiki_category_selected)||$mywiki_category_selected[0]==0):$mywiki_category_selected=array();endif;
       $mywiki_category_perpage = get_theme_mod('mywiki_category_count',3);     
 		$cat = array('child_of'=> 0,'hide_empty'=> 0,'hierarchical'=> 1,'taxonomy'=> 'category','pad_counts'=> false);	 
 		$cat = get_categories( $cat ); 
