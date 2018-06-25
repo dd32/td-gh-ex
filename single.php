@@ -8,19 +8,26 @@
  * @subpackage Better Health
  */
 $better_health_breadcrump_option = better_health_get_option('better_health_breadcrumb_setting_option');
-$better_health_designlayout = get_post_meta(get_the_ID(), 'better_health_sidebar_layout', true  );
+$better_health_designlayout      = get_post_meta(get_the_ID(), 'better_health_sidebar_layout', true  );
+$hide_top_title                  =   better_health_get_option( 'better_health_hide_top_title_single_option');
 get_header();
 ?>
 <section id="inner-title" class="inner-title"  <?php echo $header_style; ?>>
     <div class="container">
         <div class="row">
-            <div class="col-md-7">
-                <h2><?php the_title(); ?></h2>
-            </div>
+          <?php
+              if( $hide_top_title == "hide-button-title")
+              { ?>
+                <div class="col-md-7">
+                    <h2><?php the_title(); ?></h2>
+                </div>
+              
             <?php
+             }
             if ($better_health_breadcrump_option == "enable") {
                 ?>
-                <div class="col-md-5">
+                <div class="col-md-<?php if( $hide_top_title == "hide-top-tile")
+              { echo "7"; } else { echo "5";} ?>">
                     <div class="breadcrumbs">
                         <?php breadcrumb_trail(); ?>
                     </div>

@@ -7,20 +7,22 @@
  * @package Canyon Themes
  * @subpackage Better Health
  */
-$hide_show_feature_image=better_health_get_option( 'better_health_show_feature_image_single_option');
+$hide_show_feature_image = better_health_get_option( 'better_health_show_feature_image_single_option');
+$hide_top_title          = better_health_get_option( 'better_health_hide_top_title_single_option');
 ?>
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="section-14-box wow fadeInUp <?php if(!has_post_thumbnail() || $hide_show_feature_image=='hide') { echo'no-image'; }?>">
-      <div class="section-14-img"> 
-         <?php
+       <?php
             
-             if(has_post_thumbnail())
-              {
-                the_post_thumbnail('full', array('class' => 'img-responsive'));
-              }
-                 
-          ?>
-      </div>
+         if(has_post_thumbnail())
+          { ?> 
+       
+        <div class="section-14-img"> 
+             
+              <?php  the_post_thumbnail('full', array('class' => 'img-responsive')); ?>
+           
+        </div>
+       <?php } ?> 
       <div class="row">
         <div class="col-md-12">
           <div class="comments comment-archive">
@@ -32,8 +34,13 @@ $hide_show_feature_image=better_health_get_option( 'better_health_show_feature_i
               </div>
           </div>
           <div class="blog-inner-title-meta">
-            <h3 class="text-left"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-            <div class="section-14-meta">
+            <?php
+              if( $hide_top_title == "hide-top-tile" )
+              {
+            ?>
+             <h3 class="text-left"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+           <?php } ?> 
+            <div class="section-14-meta <?php  if( $hide_top_title == 'hide-button-title'){ echo'hide-button-title'; } ?>">
                 <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ) ); ?>"><i class="fa fa-calendar-check-o"></i><span><?php echo esc_html( get_the_date('M')) ?></span> , <?php echo esc_html(get_the_date('d')) ?> , <span><?php echo esc_html( get_the_date('Y')) ?></span></a>
                 <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ) ); ?>"><i class="fa fa-user-o"></i><?php the_author(); ?></a>
             </div>

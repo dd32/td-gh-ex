@@ -90,6 +90,7 @@ if ( !function_exists('better_health_get_default_theme_options' ) ) :
 
         // Details page.
         $default['better_health_show_feature_image_single_option'] = 'show';
+         $default['better_health_hide_top_title_single_option'] = 'hide-button-title';
 
         // Color Option.
         $default['better_health_primary_color'] = '#00AEF0';

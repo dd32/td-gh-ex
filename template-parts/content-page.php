@@ -7,19 +7,25 @@
  * @package Canyon Themes
  * @subpackage Better Health
  */
-
+$hide_top_title=better_health_get_option( 'better_health_hide_top_title_single_option');
 ?>
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			 <div class="feature-image">
-			 	<?php
+			<?php
 			      if(has_post_thumbnail()) {
-			          ?>
-			             <?php the_post_thumbnail( 'full' ); ?>
-			    	  <?php } ?>
+			?> 
+			 <div class="feature-image">
+			    <?php the_post_thumbnail( 'full' ); ?>
 			 </div>
+
+			 <?php } ?> 
+
 			<div class="textcont">
-				<h3><?php the_title(); ?></h3>
+			<?php
+              if( $hide_top_title == "hide-top-tile")
+              {
+            ?>	<h3><?php the_title(); ?></h3>
 			  <?php 
+			  }
 			  	the_content();
 			 	wp_link_pages( array(
 					'before' => '<div class="page-links">' . esc_html__( 'Pages:','better-health'),

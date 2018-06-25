@@ -169,6 +169,48 @@ $wp_customize->add_control('better_health_read_more_text_blog_archive_option',
     )
 );
 
+
+/*-------------------------------------------------------------------------------------------*/
+/**
+ * Innerpage  Option
+ *
+ */
+
+$wp_customize->add_section(
+    'better_health_inner_page_option',
+    array(
+        'title' => esc_html__('Inner page Option', 'better-health'),
+        'panel' => 'better_health_design_layout_options',
+        'priority' => 6,
+    )
+);
+
+/**
+ * Hide Top Title Option Single page
+ */
+$wp_customize->add_setting(
+    'better_health_hide_top_title_single_option',
+    array(
+        'default' => $default['better_health_hide_top_title_single_option'],
+        'sanitize_callback' => 'better_health_sanitize_select',
+    )
+);
+
+$better_health_hide_inner_title_option = better_health_hide_inner_title_option();
+$wp_customize->add_control(
+    'better_health_hide_top_title_single_option',
+    array(
+        'type' => 'radio',
+        'label' => esc_html__('Hide Top/Bottom Title On Single Page', 'better-health'),
+        'section' => 'better_health_inner_page_option',
+        'choices' => $better_health_hide_inner_title_option,
+        'priority' => 5
+    )
+);
+
+
+
+
 /*-------------------------------------------------------------------------------------------*/
 /**
  * Feature Image Option

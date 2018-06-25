@@ -107,6 +107,30 @@ endif;
 
 
 
+
+/**
+ * Hide Inner title options
+ *
+ * @since Better Health  1.0.0
+ *
+ * @param null
+ * @return array $better_health_hide_inner_title_option
+ *
+ */
+if (!function_exists('better_health_hide_inner_title_option')) :
+    function better_health_hide_inner_title_option()
+    {
+        $better_health_hide_inner_title_option = array(
+            'hide-top-tile'     => esc_html__('Hide Top Title', 'better-health'),
+            'hide-button-title' => esc_html__('Hide Bottom Title', 'better-health')
+        );
+        return apply_filters('better_health_hide_inner_title_option', $better_health_hide_inner_title_option);
+    }
+endif;
+
+
+
+
 /**
  * Show/Hide Feature Image  options
  *

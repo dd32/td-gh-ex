@@ -4,7 +4,7 @@ Contributors: canyonthemes
 Tags: custom-logo, one-column, two-columns, right-sidebar, left-sidebar, full-width-template, custom-background, custom-colors, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, blog, portfolio, e-commerce, footer-widgets
 Requires at least: 4.4
 Tested up to: 4.8.3
-Stable tag: 0.0.5
+Stable tag: 0.0.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -23,6 +23,12 @@ Demo: http://demo.canyonthemes.com/better-health
 3. Click Activate to use your new theme right away.
 
 #### Changelog ####
+
+## 0.0.6 - June 25 2018 ##
+
+* Fixed Slider issue on mobile.
+* Fixed minor issues of design.
+
 
 ## 0.0.5 - November 22 2017 ##
 

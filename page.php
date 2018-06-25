@@ -15,6 +15,7 @@
 $better_health_breadcrump_option = better_health_get_option('better_health_breadcrumb_setting_option');
 $better_health_designlayout = get_post_meta(get_the_ID(), 'better_health_sidebar_layout', true  );
 $better_health_hide_breadcrump_option = better_health_get_option('better_health_hide_breadcrumb_front_page_option');
+$hide_top_title                  =   better_health_get_option( 'better_health_hide_top_title_single_option');
 get_header(); 
 if( ($better_health_hide_breadcrump_option== 1 && is_front_page()) || !is_front_page())
 {
@@ -22,11 +23,18 @@ if( ($better_health_hide_breadcrump_option== 1 && is_front_page()) || !is_front_
     <section id="inner-title" class="inner-title" <?php echo $header_style; ?>>
         <div class="container">
             <div class="row">
-                <div class="col-md-8"><h2><?php the_title(); ?></h2></div>
                 <?php
+                  if( $hide_top_title == "hide-button-title")
+                  { ?>
+                
+                  <div class="col-md-7"><h2><?php the_title(); ?></h2></div>
+              
+                <?php
+                 }
                 if ($better_health_breadcrump_option == "enable") {
                     ?>
-                    <div class="col-md-4">
+                    <div class="col-md-<?php if( $hide_top_title == "hide-top-tile")
+              { echo "7"; } else { echo "5";} ?>">
                         <div class="breadcrumbs">
                             <?php breadcrumb_trail(); ?>
                         </div>
