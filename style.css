@@ -1,0 +1,352 @@
+/*
+Theme Name: AT Business
+Author: Axle Themes
+Author URI: https://axlethemes.com
+Description: AT Business is a child theme of Business Key theme. You can try theme demo here - https://demo.axlethemes.com/at-business/
+Version: 1.0.0
+Template: business-key
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags: blog, one-column, two-columns, three-columns, left-sidebar, right-sidebar, sticky-post, custom-background, custom-header, custom-colors, custom-menu, featured-images, full-width-template, translation-ready, theme-options, threaded-comments, custom-logo
+Text Domain: at-business
+*/
+
+/*--------------------------------------------------------------
+Menu
+--------------------------------------------------------------*/
+
+.main-navigation li.current-menu-item > a {
+	color: #222;
+}
+
+/*--------------------------------------------------------------
+Custom Button
+--------------------------------------------------------------*/
+
+a.custom-button,
+a.custom-button:visited,
+a.custom-button.custom-primary-button,
+a.custom-button.custom-primary-button:visited {
+	background-color: #009dfa;
+	color: #fff;
+}
+
+a.custom-button:hover,
+a.custom-button:focus,
+a.custom-button:active,
+a.custom-button.custom-primary-button:hover,
+a.custom-button.custom-primary-button:active,
+a.custom-button.custom-primary-button:focus {
+	background-color: #ebe9eb;
+	color: #272727;
+}
+
+a.custom-button.custom-secondary-button,
+a.custom-button.custom-secondary-button:visited,
+.more-link,
+.more-link:visited {
+	background-color: #ebe9eb;
+	color: #272727;
+}
+
+a.custom-button.custom-secondary-button:hover,
+a.custom-button.custom-secondary-button:active,
+a.custom-button.custom-secondary-button:focus,
+.more-link:active,
+.more-link:focus,
+.more-link:hover {
+	background-color: #009dfa;
+	color: #fff;
+}
+
+/*--------------------------------------------------------------
+Form Button
+--------------------------------------------------------------*/
+
+button,
+button:visited,
+a.button,
+a.button:visited,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="button"]:visited,
+input[type="reset"]:visited,
+input[type="submit"]:visited {
+	background-color: #009dfa;
+	color: #fff;
+}
+
+button:focus,
+button:active,
+button:hover,
+a.button:hover,
+a.button:focus,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+	background-color: #ebe9eb;
+	color: #272727;
+}
+
+/*--------------------------------------------------------------
+Slider  Button
+--------------------------------------------------------------*/
+
+.widget_business-key-slider .slider-buttons a.slider-priamry-button,
+.widget_business-key-slider .slider-buttons a.slider-priamry-button:visited,
+.widget_business-key-slider .cycle-prev:hover,
+.widget_business-key-slider .cycle-next:hover,
+.widget_business-key-slider .cycle-pager .cycle-pager-active,
+.widget_business-key-slider .cycle-pager span:hover,
+.so-widget-sow-hero .sow-slider-base .sow-slider-pagination li.sow-active a, .so-widget-sow-hero .sow-slider-base .sow-slider-pagination li a:hover {
+	background-color: #009dfa !important;
+	color: #fff;
+}
+
+.widget_business-key-slider .slider-buttons a.slider-priamry-button:hover,
+.widget_business-key-slider .slider-buttons a.slider-priamry-button:focus,
+.widget_business-key-slider .slider-buttons a.slider-priamry-button:active {
+	background-color: #ebe9eb;
+	color: #272727;
+}
+
+/*Secondary Button*/
+
+.widget_business-key-slider .slider-buttons a.slider-secondary-button,
+.widget_business-key-slider .slider-buttons a.slider-secondary-button:visited {
+	background-color: #ebe9eb;
+	color: #272727;
+}
+
+.widget_business-key-slider .slider-buttons a.slider-secondary-button:hover,
+.widget_business-key-slider .slider-buttons a.slider-secondary-button:focus,
+.widget_business-key-slider .slider-buttons a.slider-secondary-button:active {
+	background-color: #009dfa;
+	color: #fff;
+}
+
+/*--------------------------------------------------------------
+Woocommerce  Button
+--------------------------------------------------------------*/
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+	background-color: #009dfa;
+	color: #fff;
+}
+
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover,
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover.woocommerce #respond input#submit.alt.disabled,
+.woocommerce #respond input#submit.alt.disabled:hover,
+.woocommerce #respond input#submit.alt:disabled,
+.woocommerce #respond input#submit.alt:disabled:hover,
+.woocommerce #respond input#submit.alt[disabled]:disabled,
+.woocommerce #respond input#submit.alt[disabled]:disabled:hover,
+.woocommerce a.button.alt.disabled,
+.woocommerce a.button.alt.disabled:hover,
+.woocommerce a.button.alt:disabled,
+.woocommerce a.button.alt:disabled:hover,
+.woocommerce a.button.alt[disabled]:disabled,
+.woocommerce a.button.alt[disabled]:disabled:hover,
+.woocommerce button.button.alt.disabled,
+.woocommerce button.button.alt.disabled:hover,
+.woocommerce button.button.alt:disabled,
+.woocommerce button.button.alt:disabled:hover,
+.woocommerce button.button.alt[disabled]:disabled,
+.woocommerce button.button.alt[disabled]:disabled:hover,
+.woocommerce input.button.alt.disabled,
+.woocommerce input.button.alt.disabled:hover,
+.woocommerce input.button.alt:disabled,
+.woocommerce input.button.alt:disabled:hover,
+.woocommerce input.button.alt[disabled]:disabled,
+.woocommerce input.button.alt[disabled]:disabled:hover,
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover {
+	background-color: #ebe9eb;
+	color: #222;
+}
+
+/*--------------------------------------------------------------
+Links
+--------------------------------------------------------------*/
+
+/*Link Color*/
+
+a,
+a:visited,
+.main-navigation li > a:hover,
+.main-navigation li.current-menu-item > a,
+.main-navigation li.current-page-item > a,
+.main-navigation li:hover > a,
+.portfolio-alternate-content h3:before,
+.segment-testimonials .testimonial-text-wrap:before,
+#cart-section strong,
+.header-layout-1 .quick-contact li a,
+.site-title a,
+.site-title a:visited {
+	color: #009dfa;
+}
+
+/*Link Hover Color*/
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover,
+h1 a:focus,
+h2 a:focus,
+h3 a:focus,
+h4 a:focus,
+h5 a:focus,
+h6 a:focus,
+h1 a:active,
+h2 a:active,
+h3 a:active,
+h4 a:active,
+h5 a:active,
+h6 a:active,
+.entry-meta a:hover,
+.entry-meta a:focus,
+.entry-meta a:active,
+.sidebar ul li a:hover,
+.sidebar ul li a:focus,
+.sidebar ul li a:active,
+.portfolio-info a:hover,
+.segment-latest-news .latest-news-item .latest-news-title a:hover,
+nav.navigation.post-navigation a:hover,
+.widget .tagcloud a:hover,
+.woocommerce-message:before,
+.segment-latest-news .latest-news-item .latest-news-title a:hover,
+.latest-news-grid-2 .latest-news-meta span a:hover,
+.header-layout-1 .quick-email .email-icon,
+.header-layout-1 .quick-contact li a:hover,
+.latest-news-grid-2 .latest-news-text-content a.more-link:hover {
+	color: #009dfa;
+}
+
+.header-layout-3 .quick-contact li a:hover,
+.latest-news-grid-2 .latest-news-text-content a.more-link {
+	color: #fff;
+}
+
+/*Border Color*/
+
+.main-navigation ul li.menu-item-has-children.current-menu-item > a:after,
+.main-navigation ul li.page-item-has-children.current-menu-item > a:after,
+#main-navigation .main-navigation ul li > a:hover:after,
+#main-navigation .main-navigation ul li > a:hover:after,
+.woocommerce-message {
+	border-top-color: #009dfa;
+}
+
+.widget .tagcloud a:hover,
+.woocommerce nav.woocommerce-pagination ul li a:focus,
+.woocommerce nav.woocommerce-pagination ul li a:hover,
+.woocommerce nav.woocommerce-pagination ul li span.current,
+.segment-services .service-layout-3 .service-block-inner:after,
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
+.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content,
+.widget_siteorigin-panels-builder .widget_text h3.widget-title,
+.widget_siteorigin-panels-builder .so-widget-sow-contact-form .widget-title {
+	border-color: #009dfa;
+}
+
+a:active,
+a:hover,
+a:focus,
+.portfolio-info a,
+.segment-carousel .slick-arrow i,
+.header-layout-1 .quick-contact li a,
+.site-title a:hover,
+.site-title a:focus,
+.site-title a:active {
+	color: #272727;
+}
+
+.segment-carousel .slick-dots button,
+a.scrollup:hover,
+a.scrollup:focus,
+a.scrollup:active {
+	background: #272727;
+}
+
+.segment-carousel .slick-dots li.slick-active button,
+.segment-pricing .featured-pricing .featured-pricing-symbol,
+.segment-carousel .slick-arrow i:hover,
+a.scrollup,
+a.scrollup:visited,
+.custom-entry-date,
+.sidebar .widget-title:after,
+#footer-widgets .widget-title:after,
+.heading-divider,
+.segment-portfolios-grid .portfolio-item:hover .portfolio-content h3 a,
+.segment-portfolios-grid .portfolio-item:active .portfolio-content h3 a,
+.segment-portfolios-grid .portfolio-item:focus .portfolio-content h3 a,
+.overlay:before,
+.quick-contact li,
+.pagination .nav-links .current,
+.pagination .nav-links a:active,
+.pagination .nav-links .next.page-numbers,
+.pagination .nav-links .prev.page-numbers,
+.woocommerce nav.woocommerce-pagination ul li a:focus,
+.woocommerce nav.woocommerce-pagination ul li a:hover,
+.woocommerce nav.woocommerce-pagination ul li span.current,
+.segment-services .service-layout-3 .service-block-inner:after,
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
+.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content,
+.widget_siteorigin-panels-builder .widget_text h3.widget-title,
+.widget_siteorigin-panels-builder .so-widget-sow-contact-form .widget-title {
+	background: #009dfa;
+}
+
+.segment-pricing .pricing-title,
+.pagination .nav-links .page-numbers {
+	background: #ebe9eb;
+}
+
+.entry-footer > span:before,
+.entry-meta > span:before,
+.sidebar ul li:before {
+	color: #e0dee0;
+}
+
+nav.navigation.post-navigation a,
+#respond,
+.widget_calendar caption {
+	background: #fbfbfb;
+}
+
+#content:before {
+	background: #2a353c;
+}
+
+#content:after {
+	background: #009dfa;
+}
+
+.so-widget-sow-hero .sow-slider-base .sow-slider-pagination {
+	bottom: 35px;
+}
