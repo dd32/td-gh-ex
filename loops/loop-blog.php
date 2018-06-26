@@ -17,7 +17,7 @@
 
 	<?php endwhile; ?>
 
-	<?php puro_pagination(); ?>
+	<?php the_posts_pagination(); ?>
 
 <?php else : ?>
 

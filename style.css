@@ -4,7 +4,7 @@ Author: Puro
 Author URI: https://purothemes.com/
 Theme URI: https://purothemes.com/themes/puro/
 Description: A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and Meta Slider for smooth, easy to build sliders. Puro is responsive, Retina-ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .rtl CSS file for right to left languages. For assistance, check out our <a href="https://purothemes.com/documentation/puro-theme/">theme documentation</a> (http://purothemes.com/documentation/) or ask a question on our <a href="https://purothemes.com/support/forum/puro/">support forum</a> (https://purothemes.com/support/forum/puro/).
-Version: 1.1.4
+Version: 1.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: puro
@@ -856,39 +856,39 @@ a {
   content: "\f061";
   padding-left: 0.5179em; }
 
-.paging-navigation {
+.pagination {
   margin-top: 3.375em;
   margin-right: auto;
   margin-left: auto;
   overflow: hidden;
   text-align: center; }
-  .paging-navigation .page-numbers {
+  .pagination .page-numbers {
     border: 1px solid #e5e5e5;
     border-radius: 4px;
     color: #999;
     display: inline-block;
     margin-right: 0.3125em;
     padding: 0.4375em 1.0625em 0.375em; }
-    .paging-navigation .page-numbers:hover {
+    .pagination .page-numbers:hover {
       color: #2ac176;
       border-color: #2ac176; }
-  .paging-navigation .dots {
+  .pagination .dots {
     border: none;
     padding-right: 0;
     padding-left: 0; }
-    .paging-navigation .dots:hover {
+    .pagination .dots:hover {
       color: #666; }
-  .paging-navigation .current {
+  .pagination .current {
     border-color: #2ac176;
     color: #2ac176; }
-  .paging-navigation .prev,
-  .paging-navigation .next {
+  .pagination .prev,
+  .pagination .next {
     display: block;
     float: left;
     margin-right: 0;
     padding-right: 1.625em;
     padding-left: 1.625em; }
-  .paging-navigation .next {
+  .pagination .next {
     float: right; }
 
 .meta-nav {
@@ -1008,6 +1008,8 @@ a {
       content: "\f19a"; }
     .social-links-menu ul li a[href*="xing.com"]:before {
       content: "\f168"; }
+    .social-links-menu ul li a[href*="yelp.com"]:before {
+      content: "\f1e9"; }
     .social-links-menu ul li a[href*="youtube.com"]:before {
       content: "\f16a"; }
 

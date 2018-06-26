@@ -4,8 +4,8 @@ Contributors: Misplon
 
 Tags: one-column, two-columns, right-sidebar, custom-menu, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
-Requires at least: 4.1
-Tested up to: 4.6.1
+Requires at least: 4.7
+Tested up to: 4.9.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,7 +35,7 @@ A content focussed minimalist theme, perfect for your blog, portfolio or small b
 
 1. Puro makes use of a social icon menu system managed from Appearance > Menus. Icons are rendered by the [Font Awesome library](http://fontawesome.io/icons/). Navigate to Appearance > Menus and click the "create a new menu" link. Choose a name for your menu and click the blue "Save Menu" button. Next look at the left column and locate the “Custom Links” tab, open it and add your first network. For example if we were adding a Twitter icon for Puro Themes we'd add the following to the URL field: https://twitter.com/purothemes
 
-2. The URL should be a link to your profile page on one of the supported networks below. The Link Text can be anything you'd like, it won't be displayed on the front end of your site.
+2. The URL should be a link to your profile page on one of the supported networks below. The Link Text can be anything you'd like, it won't be displayed on the front end of your site. RSS links should contain the word feed with a forward slash before and after the word feed. For example: https://purothemes.com/feed/
 
 3. Once you've added your networks, scroll down to the bottom of the page and locate the Theme Locations sub-heading under the Menu Settings heading. Locate the social icon menu location (Social Network Icon Menu) and select it. Lastly, click the "Save Menu" button again.
 
@@ -51,6 +51,7 @@ Available icons:
 * Digg
 * Dribbble
 * Facebook
+* Feed (RSS)
 * Flickr
 * Foursquare
 * GitHub
@@ -75,6 +76,7 @@ Available icons:
 * Weibo
 * WordPress.com
 * Xing
+* Yelp
 * YouTube
 
 Un-supported networks will be represented by a generic share icon.

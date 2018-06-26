@@ -32,43 +32,6 @@ function puro_author_box() { ?>
 <?php }
 endif;
 
-if ( ! function_exists( 'puro_pagination' ) ) :
-/**
- * Display post pagination where applicable.
- */
-function puro_pagination() {
-	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
-	}
-	?>
-		<nav class="navigation paging-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'puro' ); ?></h1>
-			<?php if ( function_exists( 'wp_pagenavi' ) ) : ?>
-				<?php wp_pagenavi(); ?>
-			<?php else : ?>			
-			<div class="nav-links">
-			<?php
-			global $wp_query;
-
-			$total = $wp_query->max_num_pages;
-
-			echo paginate_links( array(
-				'base' => str_replace( $total, '%#%', esc_url( get_pagenum_link( $total ) ) ),
-				'format' => '?paged=%#%',
-				'current' => max( 1, get_query_var( 'paged' ) ),
-				'total' => $total,
-				'prev_text' => esc_html__( 'Previous', 'puro' ),
-				'next_text' => esc_html__( 'Next', 'puro' ),
-			) );
-			?>
-			</div><!-- .nav-links -->
-			<?php endif; ?>
-		</nav><!-- .navigation -->
-	<?php
-}
-endif;
-
 if ( ! function_exists( 'the_post_navigation' ) ) :
 /**
  * Display navigation to next/previous post when applicable.

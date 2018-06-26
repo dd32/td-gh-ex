@@ -7,14 +7,13 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.1.4' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.1.5' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' );
 
-if( file_exists( get_template_directory() . '/premium/functions.php' ) ){
+if ( file_exists( get_template_directory() . '/premium/functions.php' ) ){
 	include get_template_directory() . '/premium/functions.php';
-}
-else {
+} else {
 	include get_template_directory() . '/upgrade/upgrade.php';
 }
 
@@ -32,6 +31,7 @@ include get_template_directory() . '/inc/plugin-activation/plugin-activation.php
 include get_template_directory() . '/inc/settings.php';
 include get_template_directory() . '/inc/template-tags.php';
 include get_template_directory() . '/inc/formats.php';
+require get_template_directory() . '/inc/deprecated.php';
 
 // Include WooCommerce.
 if ( class_exists( 'woocommerce' ) ) {

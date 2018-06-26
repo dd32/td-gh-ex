@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.1.5 - 30 May 2018 =
+* Deprecated `puro_pagination`. Replaced with `the_posts_pagination`.
+
 = 1.1.4 - 01 February 2017 =
 * Add Jetpack Responsive Videos Support. 
 * Don't load FitVids if Jetpack is in use.

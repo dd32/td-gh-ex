@@ -58,7 +58,7 @@
 
 	</div><!-- .puro-left-medium-loop -->
 
-	<?php puro_pagination(); ?>
+	<?php the_posts_pagination(); ?>
 
 <?php else : ?>
 

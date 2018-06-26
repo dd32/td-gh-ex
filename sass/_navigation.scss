@@ -439,7 +439,7 @@ a {
 	}
 }
 
-.paging-navigation {
+.pagination {
 	margin-top: 3.375em;	  
 	margin-right: auto;
 	margin-left: auto;
@@ -692,6 +692,10 @@ a {
 			a[href*="xing.com"]:before {
 				content: "\f168";
 			}
+
+			a[href*="yelp.com"]:before {
+				content: "\f1e9";
+			}			
 
 			a[href*="youtube.com"]:before {
 				content: "\f16a";
