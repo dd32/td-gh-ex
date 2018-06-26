@@ -525,6 +525,8 @@ function enigma_custom_admin_notice() {
 		<a class="dismiss" href="?-notice-dismissed<?php echo $currentversion;?>"><?php _e('Click here to dismiss This Ad.','enigma');?></strong></a>
 		  <div class="tab-content features-content">
 			<div id="home" class="tab-pane fade in active">
+				
+				
 				<div class="oure-details">
 				  <h3>  <span> Enigma Premium / Advanced Premium / Parallax Premium  </span></h3>
 				  <div class="col-md-12 main-div"> 
@@ -532,7 +534,7 @@ function enigma_custom_admin_notice() {
 						<div class="wb_products"> 
 							<div class="wb_products-inner"> 
 								<a href="https://weblizar.com/themes/enigma-premium/" target="_blank"> 
-								<img src="<?php echo get_template_directory_uri(); ?>/images/Enigma.jpg" class="img-responsive">  
+								<img src="<?php echo get_template_directory_uri(); ?>/images/Enigma1.jpg" class="img-responsive">  
 								</a>
 							</div>
 						</div>
@@ -567,6 +569,42 @@ function enigma_custom_admin_notice() {
 					</div>
 						
 					</div>
+					
+				</div>
+				<div class="oure-details">
+				<!--<h3>  <span> Review and Rating  </span></h3>-->
+				
+				  <!-- rating -->
+				  <div class="col-md-12 main-div">
+				  <div class="notice-box notice-success is-dismissible flat_responsive_notice" data-dismissible="disable-done-notice-forever">
+						<div>
+						<p>	
+							<?php  _e('Thank you for using the free version of ','enigma'); ?>
+							<?php echo esc_html( $wl_th_info->get('Name') );?> - 
+							<?php echo esc_html( $wl_th_info->get('Version') );
+							 ?>
+							<?php _e('Please give your reviews and ratings on ','enigma'); echo $wl_th_info->get('Name'); _e(' theme. Your ratings will help us to improve our themes.', 'enigma'); ?>
+							<script type="text/javascript">alert(<?php echo $isitdismissed?>);</script>
+							<?php if($wl_th_info->get('Name')=="Enigma") { ?>
+							<div class="">
+							<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/enigma/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel"> <?php } elseif($wl_th_info->get('Name')=="Greenigma") { ?>
+							<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/greenigma/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel"> <?php } elseif($wl_th_info->get('Name')=="Inferno") { ?>
+							<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/inferno/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel">		
+							<?php } else { ?>
+							<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/cista/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel">	
+							<?php } ?>
+								<span class="dashicons dashicons-star-filled"></span>
+								<span class="dashicons dashicons-star-filled"></span>
+								<span class="dashicons dashicons-star-filled"></span>
+								<span class="dashicons dashicons-star-filled"></span>
+								<span class="dashicons dashicons-star-filled"></span>
+							</a>
+							</div>
+						</p>
+						</div>
+				</div>
+				</div>
+				  <!-- rating -->
 				</div>
 			</div>
 			<!-- <div id="wb_theme" class="tab-pane fade">

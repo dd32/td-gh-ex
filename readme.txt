@@ -6,6 +6,10 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 4.3 [26-06-2018]
+1. Go Enigma pro option added in customizer.
+2. Rating option added on admin panel.
+
 @Version: 4.2 [19-06-2018]
 1. FontAwesome library updated version 4.7.0
 2. Go Enigma Premium option added on admin panel.

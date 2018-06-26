@@ -1,5 +1,5 @@
 .notice-box {
-    background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%) !important;
+    background: linear-gradient(141deg, #0fb8ad8c 0%, #1fc8dbd1 51%, #2cb5e8d1 75%) !important;
     color: #fff;
 }
 .notice-box1 {
@@ -144,7 +144,7 @@ a.dismiss:hover {color: #fff;}
     /* max-height: 280px; */
     border-radius: 0%;
     position: relative;
-box-shadow: 1px 1px 30px #aeaeae;
+/*box-shadow: 1px 1px 30px #aeaeae;*/
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     transition: all 0.4s ease;
@@ -173,7 +173,7 @@ box-shadow: 1px 1px 30px #aeaeae;
 
 .oure-details{
 	text-align:center;
-	padding-bottom:45px;
+	/*padding-bottom:45px;*/
 }
 .oure-details h3 span {
     font-weight: bold;
@@ -195,8 +195,8 @@ box-shadow: 1px 1px 30px #aeaeae;
     margin: 24px 0px;
     padding: 15px 0px;
     border: 1px solid #e3e3e3;
-    max-height: 295px;
-    overflow: scroll;
+    height: 457px;
+    /*overflow: scroll;*/
 }
 
 /* 15-06-2018 */
@@ -262,4 +262,7 @@ h4.theme-dt {
     width: 70%;
     border-radius: 4px;
     background: #31a4dd;
+}
+.col-md-12.main-div {
+    padding: 0;
 }
