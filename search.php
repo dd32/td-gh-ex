@@ -16,7 +16,7 @@ get_header(); ?>
         if($layout == 'One Column'){?>        
             <div id="firstbox" class="mainbox">
                 <?php if ( have_posts() ) : ?>
-                    <h1 class="entry-title"><?php printf( esc_html( 'Search Results for: %s', 'academic-education' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                    <h1 class="entry-title"><?php printf( esc_html( 'Search Results for: %s', 'academic-education' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
                 <?php else : ?>
                     <h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'academic-education' ); ?></h1>
                 <?php endif; ?>
@@ -54,7 +54,7 @@ get_header(); ?>
                 <div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
                 <div id="firstbox" class="col-md-6 col-sm-6 mainbox">
                     <?php if ( have_posts() ) : ?>
-                        <h1 class="entry-title"><?php printf( esc_html( 'Search Results for: %s', 'academic-education' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                        <h1 class="entry-title"><?php printf( esc_html( 'Search Results for: %s', 'academic-education' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
                     <?php else : ?>
                         <h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'academic-education' ); ?></h1>
                     <?php endif; ?>
@@ -93,7 +93,7 @@ get_header(); ?>
                 <div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
                 <div id="firstbox" class="col-md-3 col-sm-3 mainbox">
                     <?php if ( have_posts() ) : ?>
-                        <h1 class="entry-title"><?php printf( esc_html( 'Search Results for: %s', 'academic-education' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                        <h1 class="entry-title"><?php printf( esc_html( 'Search Results for: %s', 'academic-education' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
                     <?php else : ?>
                         <h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'academic-education' ); ?></h1>
                     <?php endif; ?>
@@ -132,7 +132,7 @@ get_header(); ?>
             <div class="row">
                 <div id="firstbox" class="col-md-8 col-sm-8 mainbox">
                     <?php if ( have_posts() ) : ?>
-                        <h1 class="entry-title"><?php printf( esc_html( 'Search Results for: %s', 'academic-education' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                        <h1 class="entry-title"><?php printf( esc_html( 'Search Results for: %s', 'academic-education' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
                     <?php else : ?>
                         <h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'academic-education' ); ?></h1>
                     <?php endif; ?>
@@ -171,7 +171,7 @@ get_header(); ?>
                 <div class="col-md-4 col-sm-4"><?php get_sidebar(); ?></div>
                 <div id="firstbox" class="col-md-8 col-sm-8 mainbox">
                     <?php if ( have_posts() ) : ?>
-                        <h1 class="entry-title"><?php printf( esc_html( 'Search Results for: %s', 'academic-education' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                        <h1 class="entry-title"><?php printf( esc_html( 'Search Results for: %s', 'academic-education' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
                     <?php else : ?>
                         <h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'academic-education' ); ?></h1>
                     <?php endif; ?>
@@ -207,27 +207,29 @@ get_header(); ?>
         <?php }else if($layout == 'Grid Layout'){?>
             <div id="firstbox" class="mainbox">
                 <?php if ( have_posts() ) : ?>
-                    <h1 class="entry-title"><?php printf( esc_html( 'Search Results for: %s', 'academic-education' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                    <h1 class="entry-title"><?php printf( esc_html( 'Search Results for: %s', 'academic-education' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
                 <?php else : ?>
                     <h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'academic-education' ); ?></h1>
                 <?php endif; ?>
-                <?php if ( have_posts() ) :
-                  /* Start the Loop */
-                    
-                    while ( have_posts() ) : the_post();
+                <div class="row">
+                    <?php if ( have_posts() ) :
+                      /* Start the Loop */
+                        
+                        while ( have_posts() ) : the_post();
 
-                      get_template_part( 'template-parts/post/grid-layout' ); 
-                    
-                    endwhile;
+                          get_template_part( 'template-parts/post/grid-layout' ); 
+                        
+                        endwhile;
 
-                    else : ?>
+                        else : ?>
 
-                        <p class="sorry-text"><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'academic-education' ); ?></p>
-                        <?php
-                        get_search_form();
+                            <p class="sorry-text"><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'academic-education' ); ?></p>
+                            <?php
+                            get_search_form();
 
-                    endif; 
-                ?>
+                        endif; 
+                    ?>
+                </div>
                 <div class="navigation">
                     <?php
                         // Previous/next page navigation.

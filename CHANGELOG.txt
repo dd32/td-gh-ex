@@ -17,3 +17,7 @@ Version 0.2.2
 	ii.  Done the text capital of class.
 	iii. include post format tag.
 	iv.  Added updated bootstrap file. 
+
+Version 0.2.3
+	i.   Added Typography.
+	ii.  Added Potfile.

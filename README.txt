@@ -2,8 +2,8 @@
 
 Theme Name : Academic Education
 Theme URI : https://www.logicalthemes.com/themes/free-academic-education-wordpress-theme/
-Version : 0.2.2
-Tested up to : 4.9.5
+Version : 0.2.3
+Tested up to : 4.9.6
 Author : LogicalThemes
 Author URI : https://www.logicalthemes.com/
 license : GNU General Public License v3.0

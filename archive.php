@@ -193,21 +193,23 @@ get_header(); ?>
                     the_archive_title( '<h1 class="page-title">', '</h1>' );
                     the_archive_description( '<div class="taxonomy-description">', '</div>' );
                 ?>
-                <?php if ( have_posts() ) :
-                  /* Start the Loop */
-                    
-                    while ( have_posts() ) : the_post();
+                <div class="row">
+                    <?php if ( have_posts() ) :
+                      /* Start the Loop */
+                        
+                        while ( have_posts() ) : the_post();
 
-                      get_template_part( 'template-parts/post/grid-layout' ); 
-                    
-                    endwhile;
+                          get_template_part( 'template-parts/post/grid-layout' ); 
+                        
+                        endwhile;
 
-                    else :
+                        else :
 
-                      get_template_part( 'no-results' ); 
+                          get_template_part( 'no-results' ); 
 
-                    endif; 
-                ?>
+                        endif; 
+                    ?>
+                </div>
                 <div class="navigation">
                     <?php
                         // Previous/next page navigation.

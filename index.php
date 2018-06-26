@@ -178,21 +178,23 @@ get_header(); ?>
     <?php }else if($layout == 'Grid Layout'){?>
       <div class="row">
         <div id="firstbox" class=" mainbox">
-          <?php if ( have_posts() ) :
-            /* Start the Loop */
-              
-              while ( have_posts() ) : the_post();
+          <div class="row">
+            <?php if ( have_posts() ) :
+              /* Start the Loop */
+                
+                while ( have_posts() ) : the_post();
 
-                get_template_part( 'template-parts/post/grid-layout' ); 
-              
-              endwhile;
+                  get_template_part( 'template-parts/post/grid-layout' ); 
+                
+                endwhile;
 
-              else :
+                else :
 
-                get_template_part( 'no-results' ); 
+                  get_template_part( 'no-results' ); 
 
-              endif; 
-          ?>
+                endif; 
+            ?>
+          </div>
           <div class="navigation">
             <?php
                 // Previous/next page navigation.
