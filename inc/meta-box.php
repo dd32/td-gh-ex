@@ -130,11 +130,11 @@ if (!function_exists('advance_blog_save_theme_settings_meta')) :
         update_post_meta($post_id, 'advance-blog-meta-checkbox', sanitize_text_field($advance_blog_meta_checkbox));
 
 
-        $advance_blog_background_color = (isset($_POST['advance_blog_background_color']) && $_POST['advance_blog_background_color']!='') ? $_POST['advance_blog_background_color'] : '';
-        update_post_meta($post_id, 'advance_blog_background_color', $advance_blog_background_color);
+        $advance_blog_background_color = (isset($_POST['advance_blog_background_color']) && $_POST['advance_blog_background_color']!='') ? esc_attr($_POST['advance_blog_background_color']) : '';
+        update_post_meta($post_id, 'advance_blog_background_color', sanitize_hex_color($advance_blog_background_color));
 
-        $advance_blog_text_color = (isset($_POST['advance_blog_text_color']) && $_POST['advance_blog_text_color']!='') ? $_POST['advance_blog_text_color'] : '';
-        update_post_meta($post_id, 'advance_blog_text_color', $advance_blog_text_color);
+        $advance_blog_text_color = (isset($_POST['advance_blog_text_color']) && $_POST['advance_blog_text_color']!='') ? esc_attr($_POST['advance_blog_text_color']) : '';
+        update_post_meta($post_id, 'advance_blog_text_color', sanitize_hex_color($advance_blog_text_color));
 
     }
 
