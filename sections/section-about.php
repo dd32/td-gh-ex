@@ -31,7 +31,7 @@ $about_us_page  = get_theme_mod('bakes_and_cakes_about_us_page');
 		</div>
         <?php if( has_post_thumbnail()){ ?>
 		<div class="columns-2 image-holder">		   
-			<?php the_post_thumbnail('bakes-and-cakes-about-thumb'); ?>			
+			<?php the_post_thumbnail('bakes-and-cakes-about-thumb', array( 'itemprop' => 'image' ) ); ?>			
 		</div>
 	    <?php } } }
 	    wp_reset_postdata();?>	

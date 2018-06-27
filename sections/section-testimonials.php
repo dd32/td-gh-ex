@@ -44,7 +44,7 @@
 				</div>
 			<?php } ?>
 			</div>
-			<ul class="tabset">
+			<ul class="tabset owl-carousel">
 			<?php $j=0;
 			    while($testimonial_qry->have_posts()){
 			      $testimonial_qry->the_post(); $j++; ?>

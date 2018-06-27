@@ -46,7 +46,7 @@ if( $events_first_post || $events_second_post ){
 				<div class="special-post">
 				    <?php if(has_post_thumbnail()){ ?>
 					<div class="img-holder">
-					    <?php the_post_thumbnail('bakes-and-cakes-events-thumb'); ?>
+					    <?php the_post_thumbnail('bakes-and-cakes-events-thumb', array( 'itemprop' => 'image' ) ); ?>
 					</div>
 			        <?php } ?>
 					<div class="text-holder">

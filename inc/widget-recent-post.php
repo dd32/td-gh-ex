@@ -62,7 +62,7 @@ class bakes_and_cakes_Recent_Post extends WP_Widget {
                         <?php if( has_post_thumbnail() && $show_thumbnail ){ ?>
                             <div class="post-thumbnail">
                                 <a href="<?php the_permalink();?>" class="post-thumbnail">
-                                    <?php the_post_thumbnail( 'bakes-and-cakes-post-thumb' );?>
+                                    <?php the_post_thumbnail( 'bakes-and-cakes-post-thumb', array( 'itemprop' => 'image' ) );?>
                                 </a>
                             </div>
                         <?php }?>

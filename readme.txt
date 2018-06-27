@@ -6,7 +6,7 @@ Tags: blog, one-column, two-columns, right-sidebar, footer-widgets, custom-backg
 
 Requires at least: 4.7 
 Tested up to: 4.9.6
-Stable tag: 1.1.5
+Stable tag: 1.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -227,6 +227,10 @@ Bakes and Cakes WordPress Theme is distributed under the terms of the GPLv2 or l
 
 == Changelog ==
     
+    1.1.6 
+    * Added minified files for all js and css
+    * Added schema for SEO
+
     1.1.5 
     * Some css tweaks.
     * Updated to WP 4.9.6 changes.

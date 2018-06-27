@@ -36,7 +36,7 @@
 						echo '<div class="holder">';
 						if(has_post_thumbnail()){
 							echo '<div class="img-holder">';
-							the_post_thumbnail('bakes-and-cakes-staff-thumb');
+							the_post_thumbnail('bakes-and-cakes-staff-thumb', array( 'itemprop' => 'image' ));
 							echo '</div>';
 						}
 							echo '<div class="text-holder">';
@@ -62,7 +62,7 @@
 					while( $qry->have_posts() ){ $i++; 
 						$qry->the_post(); ?>
 						<div class="item img-btn <?php if( $i == 1 ){echo "current";} ?>" id= "<?php the_title(); ?>" >
-							<?php the_post_thumbnail( 'thumbnail' ); ?>
+							<?php the_post_thumbnail( 'thumbnail', array( 'itemprop' => 'image' ) ); ?>
 						</div>
 			<?php 
 					}

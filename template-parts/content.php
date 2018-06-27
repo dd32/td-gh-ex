@@ -14,7 +14,7 @@ $ed_full_content = get_theme_mod( 'bakes_and_cakes_ed_full_content' );
      <?php 
         if( has_post_thumbnail() ){
             echo ( is_single() ) ? '<div class="post-thumbnail">' : '<a href="' . esc_url( get_the_permalink() ) . '" class="post-thumbnail">';
-            ( is_active_sidebar( 'right-sidebar' ) ) ? the_post_thumbnail( 'bakes-and-cakes-image' ) : the_post_thumbnail( 'bakes-and-cakes-image-full' );
+            ( is_active_sidebar( 'right-sidebar' ) ) ? the_post_thumbnail( 'bakes-and-cakes-image', array( 'itemprop' => 'image' ) ) : the_post_thumbnail( 'bakes-and-cakes-image-full', array( 'itemprop' => 'image' ) );
             echo ( is_single() ) ? '</div>' : '</a>' ; 
         }
     ?>
@@ -22,9 +22,9 @@ $ed_full_content = get_theme_mod( 'bakes_and_cakes_ed_full_content' );
 		<header class="entry-header">
 			<?php
 				if ( is_single() ) {
-					the_title( '<h1 class="entry-title">', '</h1>' );
+					the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' );
 				} else {
-					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+					the_title( '<h2 class="entry-title" itemprop="headline"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 				}
 
 			if ( 'post' === get_post_type() ) : ?>
@@ -35,7 +35,7 @@ $ed_full_content = get_theme_mod( 'bakes_and_cakes_ed_full_content' );
 			endif; ?>
 		</header><!-- .entry-header -->
 
-		<div class="entry-content">
+		<div class="entry-content" itemprop="text">
 		<?php 
 			if( is_single() ){
                 the_content( sprintf(

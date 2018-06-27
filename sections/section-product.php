@@ -56,13 +56,13 @@ if( bakes_and_cakes_is_woocommerce_activated() ){
     ) );
 
         if($product_qry->have_posts()){ ?>
-			<ul class="featured-slider">
+			<ul class="featured-slider owl-carousel">
 			<?php while($product_qry->have_posts()){ $product_qry->the_post();
 			      $price = get_post_meta( get_the_ID(), '_regular_price', true);?>
 				<li>
 					<div class="img-holder">
 						<a href="<?php the_permalink(); ?>">
-						     <?php the_post_thumbnail('bakes-and-cakes-product-thumb'); ?>
+						     <?php the_post_thumbnail('bakes-and-cakes-product-thumb', array( 'itemprop' => 'image' )); ?>
 						</a>
 					 </div>
 					<div class="text-holder">

@@ -38,7 +38,7 @@ $blog_page   = get_theme_mod('bakes_and_cakes_blog_page');
 			        <article class="post">
 						<?php if(has_post_thumbnail()){ ?>
 							<a href="<?php the_permalink(); ?>" class="post-thumbnail">
-								<?php the_post_thumbnail('bakes-and-cakes-blog-thumb');?>
+								<?php the_post_thumbnail('bakes-and-cakes-blog-thumb', array( 'itemprop' => 'image' ) );?>
 							</a>
 						<?php } ?>
 						<div class="text-holder">

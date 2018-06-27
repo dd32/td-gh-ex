@@ -1264,6 +1264,9 @@ add_action( 'customize_register', 'bakes_and_cakes_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function bakes_and_cakes_customize_preview_js() {
-	wp_enqueue_script( 'bakes_and_cakes_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+    // Use minified libraries if SCRIPT_DEBUG is false
+    $build  = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '/build' : '';
+    $suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+	wp_enqueue_script( 'bakes_and_cakes_customizer', get_template_directory_uri() . '/js' . $build . '/customizer' . $suffix . '.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'bakes_and_cakes_customize_preview_js' );

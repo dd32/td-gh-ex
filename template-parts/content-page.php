@@ -13,16 +13,16 @@ $sidebar_layout = bakes_and_cakes_sidebar_layout(); ?>
     <div class="text-holder">
 		
 		<header class="entry-header">
-            <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+            <?php the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' ); ?>
 		</header><!-- .entry-header -->
 
 		<?php if( has_post_thumbnail() ){ ?>
 		    <div class="post-thumbnail">
-		        <?php ( is_active_sidebar( 'right-sidebar' ) && ( $sidebar_layout == 'right-sidebar' ) ) ? the_post_thumbnail( 'bakes-and-cakes-image' ) : the_post_thumbnail( 'bakes-and-cakes-image-full' ) ; ?>
+		        <?php ( is_active_sidebar( 'right-sidebar' ) && ( $sidebar_layout == 'right-sidebar' ) ) ? the_post_thumbnail( 'bakes-and-cakes-image', array( 'itemprop' => 'image' ) ) : the_post_thumbnail( 'bakes-and-cakes-image-full', array( 'itemprop' => 'image' ) ) ; ?>
 		    </div>
 		<?php }?>
 		
-		<div class="entry-content">
+		<div class="entry-content" itemprop="text">
 			<?php the_content();
 
 				wp_link_pages( array(

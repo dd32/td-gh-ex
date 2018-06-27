@@ -4,7 +4,7 @@ Theme URI: http://raratheme.com/wordpress-themes/bakes-and-cakes/
 Author: Rara Theme
 Author URI: http://raratheme.com/
 Description: Bakes and Cakes is a beautifully designed WordPress theme for Bakery website. The theme is SEO friendly with optimized codes, which make it easy for your site to rank on Google and other search engines. Bakes and Cakes comes with several features to make user-friendly, interactive and visually stunning website. It has various useful section such as testimonial section, Product section, about section, team section, banner, and Call to action section etc.  The theme is Woocommerce compatible. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Bakes and Cakes helps you to easily and intuitively create professional and appealing websites for your bakery, restaurant and cafe. Check the demo at https://raratheme.com/preview/bakes-and-cakes/ , video documentation at https://raratheme.com/documentation/bakes-cakes/ and get support at http://raratheme.com/support-ticket/
-Version: 1.1.5
+Version: 1.1.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bakes-and-cakes
@@ -43,7 +43,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
 	## Captions
 	## Galleries
---------------------------------------------------------------*/
+	--------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Normalize
@@ -93,14 +93,14 @@ template {
 
 a {
 	text-decoration:none;
-    color:#bbbcc1;
-    outline:none;
+	color:#bbbcc1;
+	outline:none;
 }
 
 a:active,
 a:hover {
 	text-decoration:underline;
-    color: #bbbcc1;
+	color: #bbbcc1;
 }
 
 a:focus{outline: none;}
@@ -370,11 +370,11 @@ html {
 
 body {
 	color:#666;
-    font:16px/28px 'Open Sans', sans-serif;
-    background:#f7f6f4;
-     overflow-y: scroll;
-    -webkit-text-size-adjust:100%;
-    -ms-text-size-adjust:none;
+	font:16px/28px 'Open Sans', sans-serif;
+	background:#f7f6f4;
+	overflow-y: scroll;
+	-webkit-text-size-adjust:100%;
+	-ms-text-size-adjust:none;
 }
 
 blockquote:before,
@@ -1027,7 +1027,7 @@ object {
 .banner .banner-text{
 	position: absolute;
 	top: 10vw;
-	width: inherit;
+	width: 100%;
 }
 
 .banner .banner-text .text{
@@ -1070,22 +1070,33 @@ object {
 	text-decoration: none;
 }
 
-.banner .lSSlideOuter .lSPager.lSpg{
+ul.owl-carousel {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.banner .owl-carousel .owl-dots{
 	position: absolute;
 	bottom: 27px;
 	width: 100%;
+	text-align: center;
 }
 
-.banner .lSSlideOuter .lSPager.lSpg > li a{
+.banner .owl-carousel .owl-dots .owl-dot{
 	width: 12px;
 	height: 12px;
 	border: 1px solid #fff;
 	background: none;
 	border-radius: 50%;
 	-webkit-border-radius: 100px;
+	display: inline-block;
+	margin: 5px;
 }
 
-.banner .lSSlideOuter .lSPager.lSpg > .active a{background: #fff;}
+.banner .owl-carousel .owl-dots .owl-dot.active{
+	background: #fff;
+}
 
 /*intro section style*/
 .intro{padding: 89px 0 132px;}
@@ -1229,6 +1240,8 @@ object {
 	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.10);
 	-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.10);
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.10);
+	width: auto;
+    margin: 0 auto;
 }
 
 .featured .featured-slider .text-holder .name{
@@ -1243,28 +1256,67 @@ object {
 	line-height: 28px;
 }
 
-.featured .lSPrev:before{
-	content: '\f104';
-	font-family: 'FontAwesome';
-	color: #fff;
-	font-size: 48px;
-	margin-left: -36px;
+.owl-carousel .owl-nav [class*="owl-"]{
+	width: 32px;
+	display: block;
+	top: 50%;
+	height: 32px;
+	cursor: pointer;
+	position: absolute;
+	z-index: 99;
+	margin-top: -16px;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	text-indent: 40px;
+	overflow: hidden;
+	-webkit-transition: opacity 0.35s linear 0s;
+	transition: opacity 0.35s linear 0s;
 }
 
-.featured .lSNext:before{
+.featured .owl-carousel .owl-nav [class*="owl-"]{
+	margin-top: -48px;
+	opacity: 1;
+}
+
+.owl-carousel .owl-nav [class*="owl-"].disabled {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	cursor: not-allowed;
+}
+
+.featured .owl-carousel .owl-nav .owl-prev {
+	left: -36px;
+}
+
+.featured .owl-carousel .owl-nav .owl-prev:before{
+	content: '\f104';
+    font-family: 'FontAwesome';
+    color: #fff;
+    font-size: 48px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-indent: 0;
+}
+
+.featured .owl-carousel .owl-nav .owl-next {
+	right: -36px;
+}
+
+.featured .owl-carousel .owl-nav .owl-next:before{
 	content: '\f105';
 	font-family: 'FontAwesome';
 	color: #fff;
 	font-size: 48px;
-	margin-right: -36px;
+	text-indent: 0;
+	position: absolute;
+	top: 0;
+	right: 0px;
 }
 
-.featured .lSAction > a{
-	margin-top: -58px;
-	opacity: 1;
+.featured .owl-carousel .owl-nav [class*="owl-"]:hover{
+	text-decoration: none;
 }
-
-.featured .lSAction > a:hover{text-decoration: none;}
 
 /*special section style*/
 .special{
@@ -1582,42 +1634,42 @@ object {
 }
 
 .our-staff #carousel .flex-direction-nav .flex-next:hover{
-  	opacity: 1;
+	opacity: 1;
 }
 
 .our-staff #carousel {
-    position: relative;
-    top: -134px;
-    width: 693px;
-    float: right;
-    text-align: center;
-    background: #f7f6f4;
-    padding: 21px 85px;
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset;
-    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset;
+	position: relative;
+	top: -134px;
+	width: 693px;
+	float: right;
+	text-align: center;
+	background: #f7f6f4;
+	padding: 21px 85px;
+	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset;
+	-moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset;
 }
 
 .our-staff #carousel img {
-    width: 100%;
-    border-radius: 50%;
-    border: 4px solid #fff;
-    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
-    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
-    cursor: pointer;
+	width: 100%;
+	border-radius: 50%;
+	border: 4px solid #fff;
+	-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
+	cursor: pointer;
 }
 
 #staff-slider #loader {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    font-size: 45px;
-    color: #000;
-    background: rgba(255, 255, 255, 0.6);
-    display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	font-size: 45px;
+	color: #000;
+	background: rgba(255, 255, 255, 0.6);
+	display: none;
 }
 
 .our-staff #carousel .current img{
@@ -1625,13 +1677,13 @@ object {
 }
 
 #staff-slider #loader .fa {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 /*.testimonial style*/
@@ -1663,10 +1715,13 @@ object {
 }
 
 .testimonial .tabset{
-	padding: 49px 0 0;
+	padding: 0;
 	list-style: none;
-	border-top: 1px solid #dedddb;
 	height: inherit !important;
+}
+.testimonial .owl-carousel .owl-stage {
+    border-top: 1px solid #dedddb;
+    padding-top: 49px;
 }
 .tabset.lightSlider{overflow: visible;}
 
@@ -1761,10 +1816,10 @@ object {
 
 .blog-section .header .sub-title{
 	color: #555;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 28px;
-    text-transform: uppercase;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 28px;
+	text-transform: uppercase;
 }
 
 .blog-section .post{
@@ -1892,17 +1947,17 @@ object {
 
 .promotional-block .btn-join{
 	border: 2px solid #fff;
-    color: #fff;
-    display: inline-block;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    line-height: 20px;
-    padding: 11px 37px;
-    text-transform: uppercase;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    transition: all 0.2s;
+	color: #fff;
+	display: inline-block;
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: 3px;
+	line-height: 20px;
+	padding: 11px 37px;
+	text-transform: uppercase;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
 }
 
 .promotional-block .btn-join:hover{
@@ -2170,49 +2225,49 @@ object {
 #primary .post .entry-content h1,
 #primary .page .entry-content h1{
 	font-size: 48px;
-    font-weight: 700;
-    line-height: 57px;
-    margin: 0 0 10px;
+	font-weight: 700;
+	line-height: 57px;
+	margin: 0 0 10px;
 }
 
 #primary .post .entry-content h2,
 #primary .page .entry-content h2{
 	font-size: 44px;
 	font-weight: 700;
-    line-height: 52px;
-    margin: 0 0 13px;
+	line-height: 52px;
+	margin: 0 0 13px;
 }
 
 #primary .post .entry-content h3,
 #primary .page .entry-content h3{
 	font-size: 36px;
-    font-weight: 700;
-    line-height: 43px;
-    margin: 0 0 17px;
+	font-weight: 700;
+	line-height: 43px;
+	margin: 0 0 17px;
 }
 
 #primary .post .entry-content h4,
 #primary .page .entry-content h4{
 	font-size: 28px;
-    font-weight: 700;
-    line-height: 33px;
-    margin: 0 0 20px;
+	font-weight: 700;
+	line-height: 33px;
+	margin: 0 0 20px;
 }
 
 #primary .post .entry-content h5,
 #primary .page .entry-content h5{
 	font-size: 24px;
-    font-weight: 700;
-    line-height: 28px;
-    margin: 0 0 18px;
+	font-weight: 700;
+	line-height: 28px;
+	margin: 0 0 18px;
 }
 
 #primary .post .entry-content h6,
 #primary .page .entry-content h6{
 	font-size: 20px;
-    font-weight: 700;
-    line-height: 24px;
-    margin: 0 0 18px;
+	font-weight: 700;
+	line-height: 24px;
+	margin: 0 0 18px;
 }
 
 #primary .post .entry-content .pull-right,
@@ -2363,33 +2418,33 @@ object {
 .comment-form input[type="text"],
 .comment-form input[type="email"],
 .comment-form input[type="url"]{
-    border: 1px solid #dddcda;
-    border-radius: 0;
-    padding: 10px 20px;
-    width: 100%;
+	border: 1px solid #dddcda;
+	border-radius: 0;
+	padding: 10px 20px;
+	width: 100%;
 }
 
 .comment-form textarea{
-    border: 1px solid #dddcda;
-    border-radius: 0;
-    height: 106px;
-    padding: 10px 20px;
-    resize: none;
-    width: 100%;
+	border: 1px solid #dddcda;
+	border-radius: 0;
+	height: 106px;
+	padding: 10px 20px;
+	resize: none;
+	width: 100%;
 }
 
 .comment-form input[type="submit"]{
 	background: #81c9c7;
-    border: 0 none;
-    border-radius: 0;
-    box-shadow: none;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 700;
-    height: 46px;
-    line-height: 46px;
-    padding: 0 25px;
-    text-shadow: none;
+	border: 0 none;
+	border-radius: 0;
+	box-shadow: none;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 700;
+	height: 46px;
+	line-height: 46px;
+	padding: 0 25px;
+	text-shadow: none;
 }
 
 .comment-form input[type="submit"]:hover{
@@ -2397,17 +2452,17 @@ object {
 }
 
 .comments-area .comment-form .comment-form-cookies-consent{
-    margin-top : 0;
+	margin-top : 0;
 }
 
 .comments-area .comment-form .comment-form-cookies-consent input[type="checkbox"]{
-    display: inline-block;
-    vertical-align: middle;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .comments-area .comment-form label[for="wp-comment-cookies-consent"]{
-   display: inline-block;
-   margin-left: 5px;
+	display: inline-block;
+	margin-left: 5px;
 }
 
 
@@ -2811,11 +2866,11 @@ object {
 }
 
 .widget.widget_product_search .woocommerce-product-search {
-    background: #edecea;
-    border: 1px solid #e4e3e1;
-    overflow: hidden;
-    padding: 10px;
-    width: 100%;
+	background: #edecea;
+	border: 1px solid #e4e3e1;
+	overflow: hidden;
+	padding: 10px;
+	width: 100%;
 }
 
 .widget.widget_product_search .woocommerce-product-search input[type="search"]{
@@ -2828,14 +2883,14 @@ object {
 
 .widget.widget_product_search .woocommerce-product-search input[type="submit"]{
 	background: url("images/bg-search.png") no-repeat;
-    border: 0 none;
-    box-shadow: none;
-    float: right;
-    height: 18px;
-    margin: 7px 0 0;
-    padding: 0;
-    text-indent: -9999px;
-    width: 17px;
+	border: 0 none;
+	box-shadow: none;
+	float: right;
+	height: 18px;
+	margin: 7px 0 0;
+	padding: 0;
+	text-indent: -9999px;
+	width: 17px;
 }
 
 /*--------------------------------------------------------------
@@ -2931,12 +2986,12 @@ object {
 
 .site-footer .widget.widget_contact_form .form-holder .sub-title {
 	color: #555;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 28px;
-    text-transform: uppercase;
-    text-align: center;
-    margin: 0 0 30px;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 28px;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0 0 30px;
 }
 
 .site-footer .widget.widget_contact_form .form-holder .contact-form input[type="text"],
@@ -2976,21 +3031,21 @@ object {
 .site-footer .widget.widget_contact_form .form-holder .contact-form input[type="submit"],
 .site-footer .widget .wpcf7-form input[type="submit"]{
 	border: 2px solid #555;
-    color: #555;
-    display: inline-block;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    line-height: 20px;
-    padding: 11px 37px;
-    text-transform: uppercase;
-    -webkit-transition: all 0.2s ease 0s;
-    -moz-transition: all 0.2s ease 0s;
-    transition: all 0.2s ease 0s;
-    background: none;
-    box-shadow: none;
-    text-shadow: none;
-    border-radius: 0;
+	color: #555;
+	display: inline-block;
+	font-size: 15px;
+	font-weight: 700;
+	letter-spacing: 3px;
+	line-height: 20px;
+	padding: 11px 37px;
+	text-transform: uppercase;
+	-webkit-transition: all 0.2s ease 0s;
+	-moz-transition: all 0.2s ease 0s;
+	transition: all 0.2s ease 0s;
+	background: none;
+	box-shadow: none;
+	text-shadow: none;
+	border-radius: 0;
 }
 
 .site-footer .widget.widget_contact_form .form-holder .contact-form input[type="submit"]:hover,
@@ -3049,7 +3104,7 @@ object {
 }
 
 #mobile-header {
-    display: none;
+	display: none;
 }
 
 .map .widget-title{
@@ -3105,32 +3160,32 @@ object {
 	.container{width: 750px;}
 	.header-t{padding: 20px 0 0;}
 	#mobile-header {
-        display: block;
-        float: right;
-    }
-    #mobile-header > a {
-	    display: block;
-	    height: 50px;
-	    padding: 17px 14px;
-	    text-align: center;
-	    width: 50px;
+		display: block;
+		float: right;
 	}
-    #mobile-header .icon-bar{
-    	width: 22px;
-    	height: 3px;
-    	background: #555;
-    	border-radius: 2px;
-    	display: block;
-    	margin: 0 0 3px;
-    }
-    #site-navigation{display: none;}
-    .site-branding{float: left;}
-    .banner .banner-text .text .title{
-    	font-size: 40px;
-    	line-height: 44px;
-    }
-    .banner .banner-text .text{font-size: 18px;}
-    .banner .banner-text .text p{margin: 0 0 15px;}
+	#mobile-header > a {
+		display: block;
+		height: 50px;
+		padding: 17px 14px;
+		text-align: center;
+		width: 50px;
+	}
+	#mobile-header .icon-bar{
+		width: 22px;
+		height: 3px;
+		background: #555;
+		border-radius: 2px;
+		display: block;
+		margin: 0 0 3px;
+	}
+	#site-navigation{display: none;}
+	.site-branding{float: left;}
+	.banner .banner-text .text .title{
+		font-size: 40px;
+		line-height: 44px;
+	}
+	.banner .banner-text .text{font-size: 18px;}
+	.banner .banner-text .text p{margin: 0 0 15px;}
 	.banner .banner-text .text .btn{padding: 5px 38px;}
 	.intro .opening-time{
 		width: 100%;
@@ -3163,7 +3218,7 @@ object {
 	}
 	.our-staff #carousel{
 		padding: 32px 20px;
-    	width: 397px;
+		width: 397px;
 	}
 	.our-staff #carousel .flex-direction-nav .flex-prev{left: 0;}
 	.our-staff #carousel .flex-direction-nav .flex-next{right: 0;}
@@ -3281,8 +3336,8 @@ object {
 	.site-footer .site-info{padding-bottom: 36px;}
 	.testimonial .tabset li .active .text-holder{
 		display: block;
-	    float: none;
-	    width: 100%;
+		float: none;
+		width: 100%;
 	}
 	.testimonial .tabset li .active:before{left: 17px;}
 	.testimonial .tabset li .active{text-align: left;}

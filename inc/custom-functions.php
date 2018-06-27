@@ -241,7 +241,7 @@ function bakes_and_cakes_slider_cb(){
         
         if( $bakes_and_cakes_qry->have_posts() ){?>
            <div class="banner">
-                 <ul id="slider">
+                 <ul id="slider" class="owl-carousel">
                     <?php
                     while( $bakes_and_cakes_qry->have_posts() ){
                         $bakes_and_cakes_qry->the_post();
@@ -538,3 +538,101 @@ if( ! function_exists( 'bakes_and_cakes_change_comment_form_defaults' ) ) :
     }
 endif;
 add_filter( 'comment_form_defaults', 'bakes_and_cakes_change_comment_form_defaults' );
+
+if( ! function_exists( 'bakes_and_cakes_single_post_schema' ) ) :
+/**
+ * Single Post Schema
+ *
+ * @return string
+ */
+function bakes_and_cakes_single_post_schema() {
+    if ( is_singular( 'post' ) ) {
+        global $post;
+        $custom_logo_id = get_theme_mod( 'custom_logo' );
+
+        $site_logo   = wp_get_attachment_image_src( $custom_logo_id , 'bakes-and-cakes-schema' );
+        $images      = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+        $excerpt     = bakes_and_cakes_escape_text_tags( $post->post_excerpt );
+        $content     = $excerpt === "" ? mb_substr( bakes_and_cakes_escape_text_tags( $post->post_content ), 0, 110 ) : $excerpt;
+        $schema_type = ! empty( $custom_logo_id ) && has_post_thumbnail( $post->ID ) ? "BlogPosting" : "Blog";
+
+        $args = array(
+            "@context"  => "http://schema.org",
+            "@type"     => $schema_type,
+            "mainEntityOfPage" => array(
+                "@type" => "WebPage",
+                "@id"   => get_permalink( $post->ID )
+            ),
+            "headline"  => get_the_title( $post->ID ),
+            "image"     => array(
+                "@type"  => "ImageObject",
+                "url"    => $images[0],
+                "width"  => $images[1],
+                "height" => $images[2]
+            ),
+            "datePublished" => get_the_time( DATE_ISO8601, $post->ID ),
+            "dateModified"  => get_post_modified_time(  DATE_ISO8601, __return_false(), $post->ID ),
+            "author"        => array(
+                "@type"     => "Person",
+                "name"      => bakes_and_cakes_escape_text_tags( get_the_author_meta( 'display_name', $post->post_author ) )
+            ),
+            "publisher" => array(
+                "@type"       => "Organization",
+                "name"        => get_bloginfo( 'name' ),
+                "description" => get_bloginfo( 'description' ),
+                "logo"        => array(
+                    "@type"   => "ImageObject",
+                    "url"     => $site_logo[0],
+                    "width"   => $site_logo[1],
+                    "height"  => $site_logo[2]
+                )
+            ),
+            "description" => ( class_exists('WPSEO_Meta') ? WPSEO_Meta::get_value( 'metadesc' ) : $content )
+        );
+
+        if ( has_post_thumbnail( $post->ID ) ) :
+            $args['image'] = array(
+                "@type"  => "ImageObject",
+                "url"    => $images[0],
+                "width"  => $images[1],
+                "height" => $images[2]
+            );
+        endif;
+
+        if ( ! empty( $custom_logo_id ) ) :
+            $args['publisher'] = array(
+                "@type"       => "Organization",
+                "name"        => get_bloginfo( 'name' ),
+                "description" => get_bloginfo( 'description' ),
+                "logo"        => array(
+                    "@type"   => "ImageObject",
+                    "url"     => $site_logo[0],
+                    "width"   => $site_logo[1],
+                    "height"  => $site_logo[2]
+                )
+            );
+        endif;
+
+        echo '<script type="application/ld+json">' , PHP_EOL;
+        if ( version_compare( PHP_VERSION, '5.4.0' , '>=' ) ) {
+            echo wp_json_encode( $args, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT ) , PHP_EOL;
+        } else {
+            echo wp_json_encode( $args ) , PHP_EOL;
+        }
+        echo '</script>' , PHP_EOL;
+    }
+}
+endif;
+add_action( 'wp_head', 'bakes_and_cakes_single_post_schema' );
+
+if( ! function_exists( 'bakes_and_cakes_escape_text_tags' ) ) :
+/**
+ * Remove new line tags from string
+ *
+ * @param $text
+ * @return string
+ */
+function bakes_and_cakes_escape_text_tags( $text ) {
+    return (string) str_replace( array( "\r", "\n" ), '', strip_tags( $text ) );
+}
+endif;
