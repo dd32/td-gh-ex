@@ -1,54 +1,24 @@
 /*
 Theme Name: Deserve
-Theme URI: https://fasterthemes.com/wordpress-themes/deserve/
-Author: Fasterthemes
-Author URI: https://fasterthemes.com/
-Description: Deserve is a lightweight, faster, clean, super flexible and bootstrap based responsive theme for business or personal websites. Deserve Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your need.
-Version: 1.2
+Theme URI: https://fruitthemes.com/wordpress-themes/deserve/
+Author: FruitThemes
+Author URI: https://fruitthemes.com
+Description: Deserve is a lightweight, faster, clean, super flexible and bootstrap based responsive theme for business or personal websites. Deserve Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your need.Step by step documentation and dummy data is available at: https://fruitthemes.com/documentation/deserve/
+Version: 2.0.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Deserve Theme, Copyright 2014 fasterthemes.com
+Deserve Theme, Copyright 2018 fruitthemes.com
 Deserve is distributed under the terms of the GNU GPL
 Tags: left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Text Domain: deserve
 */
 
-@font-face {
-    font-family: 'IstokWeb-Regular';
-    src: url('fonts/istokweb-regular-webfont.eot');
-    src: url('fonts/istokweb-regular-webfont.eot?#iefix') format('embedded-opentype'),
-        url('fonts/istokweb-regular-webfont.woff') format('woff'),
-        url('fonts/istokweb-regular-webfont.ttf') format('truetype'),
-        url('fonts/istokweb-regular-webfont.svg#IstokWeb-Regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'IstokWeb-Bold';  
-    src: url('fonts/istokweb-bold-webfont.eot');
-    src: url('fonts/istokweb-bold-webfont.eot?#iefix') format('embedded-opentype'),
-        url('fonts/istokweb-bold-webfont.woff') format('woff'),
-        url('fonts/istokweb-bold-webfont.ttf') format('truetype'),
-        url('fonts/istokweb-bold-webfont.svg#IstokWeb-Bold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: opensans-regular;   
-    src: url('fonts/opensans-regular-webfont.eot');
-    src: url('fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
-        url('fonts/opensans-regular-webfont.woff') format('woff'),
-        url('fonts/opensans-regular-webfont.ttf') format('truetype'),
-        url('fonts/opensans-regular-webfont.svg#opensans-regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 body{
     width:100%;
     margin:0;
     padding:0;
-    font-family: 'IstokWeb-Regular';
-    background-color:#f8f8f8;
+    font-family: 'Quicksand';
+    background-color:#ffffff;
     color:#212121;
 }
 .deserve-container{
@@ -89,22 +59,24 @@ a:focus{
 img{
     max-width: 100%;
     vertical-align: middle;	
+    height: auto;
 }
 .dropdown:hover .dropdown-menu {
     display: block;
 }
 /**************************header *********************/
+.menubar.top-bar{
+    background: #084d54;
+}
 .menubar{	
-    width:100%;
-    border-bottom:1px solid #e6e6e6;	
+    width:100%;	
 }
 .contact-info{
     float: left;
 } 	
 .contact-info > ul > li{
-    color:#727272;
+    color:#ffffff;
     font-size:13px;	
-    font-family: opensans-regular;
     margin-right:10px;
     padding-top: 10px;	
     padding-bottom: 10px;
@@ -114,7 +86,7 @@ img{
 }
 .contact-info > ul > li > a{
     font-size:13px;	
-    font-family: opensans-regular;
+    color: #fff;
 }
 .social-link > ul,
 .social-link > ul > li{
@@ -122,7 +94,7 @@ img{
     padding:0px;
 }
 .social-link > ul > li > a{
-    color:#b1b1b1;
+    color:#ffffff;
     font-size:15px;	
 }
 .social-link > ul > li > a:hover,
@@ -130,15 +102,13 @@ img{
     color:#ee4b3a;	
 }
 .social-link > ul > li > a > i{
-    border-left: 1px solid #e6e6e6;
+
     padding: 14px 14px 10px;
 }
 .social-link{
     float: right;
 }
-.social-link > ul {
-    border-right: 1px solid #e6e6e6;
-}
+
 .toggle-menu {
     border: medium none;
 }
@@ -160,20 +130,19 @@ img{
 }
 .header-menu ul li a{
     color:#084d54;
-    font-family: opensans-regular;    
+    font-family: 'Quicksand';    
     text-transform:uppercase;
     padding-bottom: 27px;
     padding-top: 27px;	
     text-align:center;
-    border-bottom:2px solid #f8f8f8;
+    border-bottom: 2px solid transparent;
     display: block;
     line-height: 20px;
 }
 .header-menu ul > li a:focus,
 .header-menu ul > li a:hover,
 .header-menu ul > li .active{
-    background-color:#084d54;
-    color:#f8f8f8;
+    background: transparent;
     border-bottom:2px solid #ee4b3a;	
 }
 
@@ -245,9 +214,7 @@ img{
 
 /*****************HOME PAGE START******************/
 /** Slider Part Start ***/
-.banner{
-    border-bottom: 1px solid #084d54;	
-}
+
 .slider img{
     width:100%;
     max-width:100%;
@@ -256,13 +223,14 @@ img{
 .slider_button {
     bottom: auto;   
     top: 43%;
-    background-color: #656565;
+    background-color: transparent;
     height:30px;
     width:30px;
     border-radius:50%;
     margin-left:10px;
     padding-top:1px;
     margin-right:10px;
+    background-image: none !important;
 }
 .slider_button:hover {
     opacity: 0.5;
@@ -270,16 +238,29 @@ img{
 .slider_button i{
     font-size:27px;	
 }
-.caption-text h2{
+.caption-text {
+    background: linear-gradient(to bottom, transparent -100%, #000000 200%);
     position: absolute;
-    right: 6%;
+    bottom: 0px;
+    top: 0;
+    width: 100%;
     text-align: center;
-    top: 30%;
+}
+.caption-text h2 ,.caption-text p{
+    position: absolute;
+    left: 7%;
+    text-align: left;
+    top: 38%;
     text-transform:capitalize;
-    color: #084d54;
-    border-bottom: 1px solid #aec4c6;
+    color: #ffffff;
     font-size:34px;
     padding-bottom:5px;
+    max-width: 700px;
+}
+.caption-text p{
+    top: 48%;
+    font-size: 18px;
+    font-weight: normal;
 }
 /** Slider Part End ***/
 /** Our Development Process Start ***/
@@ -288,7 +269,7 @@ img{
     margin-bottom: 0;	
 }
 .color-text{
-    color: #ee4b3a;	
+    color: #EE4B3A;	
 }
 .title{
     margin: 50px auto;		
@@ -307,11 +288,14 @@ img{
 }
 .title h2 > span,
 .sidebar-widget h2 > span {
-    background: none repeat scroll 0 0 #f8f8f8;  
+    background:#ffffff;  
     position: relative;
     z-index: 2;
     padding-right:10px;
     padding-left:10px;
+}
+.latest-blog .title h2 > span{
+    background: #f5f5f5;
 }
 .title h2,
 .sidebar-widget h2{
@@ -348,31 +332,23 @@ img{
 }
 .devlopment-wrap {
     margin-top: 40px;
+    padding: 0 0 30px;
 }
 .process-detail{
-    background-color: #FFF;		
+    box-shadow: 0px 0px 10px 0px #ccc;		
     margin-left: 45px;		
     padding-top: 30px;
     padding-bottom: 30px;
     margin-bottom: 30px;
     cursor: default;
     display:inline-block;
-    transition: all 0.8s ease-in-out 0s;
-    -webkit-transition: all 0.8s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
     width:88%;
-}
-.process-detail:hover {
-    transform: translateY(-10px);
-    -webkit-transform: translateY(-10px);
-}
-.process-detail:hover h2,
-.process-detail:hover p{
-    color: #fff;	
 }
 .process-detail:focus,
 .process-detail:hover{
-    background-color: #275259;	
-    box-shadow:none;	
+    box-shadow: 0 6px 29px rgba(0,0,0,0.3);	
 }
 .process-detail:hover img, .process-detail:hover .round-image{
     box-shadow:none;
@@ -389,6 +365,9 @@ img{
     color: #084d54;
     font-size: 18px;		
     margin-bottom: 10px;
+}
+.process-detail .process a:hover h2, .process-detail .process a:focus h2 {
+    color: #ee4b3a;
 }
 .process p,
 .information p
@@ -412,9 +391,29 @@ img{
     margin-top: 12px;	
     margin-bottom: 3px;
     color: #212121;
-    font-size: 20px;
+    font-size: 18px;
     text-transform: capitalize;
     display: inline-block;
+}
+.blog-data .item p {
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+.blog-data .item span.date-blog {
+    margin: 0;
+    font-size: 14px;
+    color: #333333;
+    letter-spacing: 1px;
+    transition: linear 0.1s;
+}
+.blog-data .item a {
+    float: right;
+    margin: 0;
+    font-size: 16px;
+    color: #333333;
+    letter-spacing: 1px;
+    transition: linear 0.1s;
 }
 .blog-data ul li{
     margin-top: 5px;
@@ -462,6 +461,7 @@ img{
 .breadcumb-bg{
     background-color: #FFF;	
     width:100%;
+    border-top: 1px solid #e6e6e6;
     border-bottom:1px solid #e6e6e6;
 }
 .site-breadcumb {
@@ -543,7 +543,7 @@ img{
     color:#084d54; 
 
     display: table;
-    font-family: 'IstokWeb-Bold';
+    font-family: 'Quicksand';
     text-transform: capitalize;
 }
 .post-meta {
@@ -705,7 +705,7 @@ img{
 }
 .sidebar-widget  h2{
     font-size: 16px;
-    font-family: 'IstokWeb-Bold';	
+    font-family: 'Quicksand';	
     color: #000;
     margin: 0 0 20px;
 }
@@ -744,12 +744,11 @@ img{
     padding-top: 7px;
     padding-bottom: 7px;
 }
-.sidebar-widget .recent-comment ul li i,
-.contact-info > ul > li > a > i{
+.sidebar-widget .recent-comment ul li i{
     color: #b5b5b5;	
 }
 .contact-info > ul > li > i{
-    color: #b5b5b5;	
+    color: #ffffff;	
     padding-right:5px;
 }
 
@@ -796,8 +795,8 @@ input{
 /**************************footer *********************/
 
 
-.bottom-footer{
-    border-top: 1px solid #3f848f;
+.footer-area-section {
+    border-bottom: 1px solid #58858a;
 }
 .main_footer {
     float: left;
@@ -807,10 +806,9 @@ input{
     padding: 0;
     width: 100%;
     border-top: 2px solid #ee4b3a;
-    margin-top: 35px;
 }
 .top_footer {
-    background-image: url(images/footer-bg1.png);	
+    background: #084d54;	
     float: left;
     height: auto;
     margin: 0;
@@ -832,9 +830,9 @@ input{
     color: #f4f4f4;
     font-size: 18px;   
     text-transform: capitalize;
-    border-bottom: 1px solid #3f848f;
+    border-bottom: 1px solid #58858a;
     padding-bottom: 15px;	
-    font-family: 'IstokWeb-Bold';
+    font-family: 'Quicksand';
     margin-bottom: 18px;
 }
 .footer-widget p{
@@ -875,6 +873,9 @@ input{
     padding: 8px 10px;
     border: none;
     margin-bottom: 15px;
+}
+.footer-widget .search-submit {
+    display: none;
 }
 .search-form > label {
     width: 100%;
@@ -1015,7 +1016,7 @@ input[type="submit"]
     color: #275259;
     font-size: 26px;
     position: relative;
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
 }
 /*.comment-form {
@@ -1154,7 +1155,7 @@ input[type="submit"]
 .main-sidebar .tagcloud a {
     border: 1px solid #000;
     color: #000;
- /*   font-size: 100% !important; */
+    font-size: 100% !important; 
 }
 #recentcomments li a:before{
     content:"";
@@ -1267,7 +1268,6 @@ input[type="submit"]
     text-align: left;
 }
 .tagcloud a {
-    border-radius: 8px;
     display: inline-block;
     margin-bottom: 10px;
     margin-right: 6px;
@@ -1320,7 +1320,7 @@ input[type="submit"]
 .footer-menu .tagcloud a {
     border: 1px solid #f4f4f4;
     color: #f4f4f4;
- /*   font-size: 100% !important; */
+    font-size: 100% !important; 
 }
 .footer-menu .tagcloud a:hover {
     border: 1px solid #ee4b3a;
@@ -1356,7 +1356,7 @@ input[type="submit"]
 {
   color: #084d54;
     display: table;
-    font-family: 'IstokWeb-Bold';
+    font-family: 'Quicksand';
     font-size: 24px;
     text-transform: capitalize;
 }
@@ -1416,6 +1416,10 @@ input[type="submit"]
 .latest-blog .title {
     margin-bottom: 0;
 }
+.latest-full-bg {
+    background: #f5f5f5;
+    padding: 0px 0 30px;
+}
 
 
 
@@ -1431,7 +1435,7 @@ input[type="submit"]
 {
     border-bottom: 1px solid #3f848f;
     color: #f4f4f4;
-    font-family: 'IstokWeb-Bold';
+    font-family: 'Quicksand';
     font-size: 18px;
     margin-bottom: 18px;
     padding-bottom: 28px;
@@ -1538,8 +1542,6 @@ embed, iframe, object, video {
 }
 .nav > .current_page_item > a
 {
-    background-color:#084d54;
-    color:#f8f8f8;
     border-bottom:2px solid #ee4b3a ;	
 }
 
@@ -1579,6 +1581,11 @@ embed, iframe, object, video {
     padding: 0;
     border: medium none;
 }
+/*sidebar*/
+#TabsPostsTabber ul.TabsPostsTabs li a:hover{
+	transition:none;
+}
+
 /* media css */
 
 @media (max-width:1200px) {
@@ -1595,7 +1602,7 @@ embed, iframe, object, video {
     }
     .site-logo{
         float: none;
-        margin: 20px auto 13px;
+        margin: 18px auto 5px;
     }
     .header-menu ul{
         float: left;
@@ -1714,16 +1721,12 @@ embed, iframe, object, video {
     }
     .social-link > ul{	
         display: inline-block;
-        margin: 0;
-        border-top: 1px solid rgb(230, 230, 230);	
+        margin: 0;	
         float:none;
         vertical-align: middle;
     }
     .social-link > ul > li{
         padding-left: 0;	
-    }
-    .caption-text h2{
-        display: none;
     }
     .bottom-footer{
         text-align: center;

@@ -4,6 +4,7 @@
 */
 function deserve_enqueue()
 {
+	wp_enqueue_style( 'deserve-google-fonts-QuickSand', '//fonts.googleapis.com/css?family=Quicksand', array(), '1.0.0' );
 	wp_enqueue_style('deserve-bootstrap',get_template_directory_uri().'/css/bootstrap.css',array());
 	wp_enqueue_style('style',get_stylesheet_uri(),array());
 	wp_enqueue_style('deserve-font-awesome',get_template_directory_uri().'/css/font-awesome.css',array());

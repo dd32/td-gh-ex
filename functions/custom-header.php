@@ -91,7 +91,7 @@ function deserve_admin_header_style() {
 		min-height: 48px;
 	}
 	#headimg h1 {
-		font-family: IstokWeb-Regular, sans-serif;
+		font-family: QuickSand, sans-serif;
 		font-size: 18px;
 		line-height: 48px;
 		margin: 0 0 0 30px;
@@ -120,7 +120,7 @@ function deserve_admin_header_image() {
 		<?php if ( get_header_image() ) : ?>
 		<img src="<?php header_image(); ?>" alt="">
 		<?php endif; ?>
-		<h1 class="displaying-header-text"><a id="name"<?php echo sprintf( ' style="color:#%s;"', get_header_textcolor() ); ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+		<h1 class="displaying-header-text"><a id="name"<?php echo sprintf( ' style="color:#%s;"', esc_attr(get_header_textcolor()) ); ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 	</div>
 <?php
 }

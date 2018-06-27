@@ -24,17 +24,16 @@ get_header(); ?>
         <div class="col-md-9 col-sm-8  dblog"> 
         <?php while ( have_posts() ) : the_post(); ?>
             <div class="blog-box">
-				<?php $deserve_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()),'large');
-            	 if($deserve_image[0] != "") { ?>
-					<a href="<?php echo get_permalink(); ?>">
-					<img src="<?php echo esc_url($deserve_image[0]); ?>" width="<?php echo $deserve_image[1]; ?>" height="<?php echo $deserve_image[2]; ?>"  alt="<?php the_title(); ?>" class="img-responsive" />
+				<?php  if(has_post_thumbnail()) { ?>
+					<a href="<?php the_permalink(); ?>">
+						<?php the_post_thumbnail('large'); ?>
 					</a>
                 <?php } ?>
                     <div class="post-data">
-					<a href="<?php echo get_permalink(); ?>" class="blog-title"><?php the_title(); ?></a>   
+					<a href="<?php the_permalink(); ?>" class="blog-title"><?php the_title(); ?></a>   
 					 <div class="post-meta">
 						<ul>
-							<?php deserve_entry_meta(); ?>												
+							<?php if (function_exists('deserve_entry_meta')) deserve_entry_meta(); ?>												
 						</ul>                    
                     </div>
                      <?php the_content(); ?>

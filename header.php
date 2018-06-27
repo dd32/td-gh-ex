@@ -17,27 +17,24 @@ $deserve_options = get_option( 'deserve_theme_options' ); ?>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">	
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
-	<![endif]-->
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">	
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <header>    
-    <div class="menubar">
+    <div class="menubar top-bar">
     	<div class="deserve-container clearfix">
             <div class="col-md-6">
                 <div class="contact-info">
                     <ul>
-						<?php if(!empty($deserve_options['phone'])) { ?> 
+                        <?php if(get_theme_mod('theme_phone_number',$deserve_options['phone'])) { ?>		
                         <li>
-							<i class="fa fa-phone"></i> <?php echo esc_attr($deserve_options['phone']);?>							
+							<i class="fa fa-phone"></i> <?php echo esc_attr(get_theme_mod('theme_phone_number',$deserve_options['phone'])); ?>							
 						</li>
 						<?php }
-						if(!empty($deserve_options['email'])) { ?> 
+						if(get_theme_mod('theme_email_id',$deserve_options['email'])) { ?> 
 						<li>
-							<i class="fa fa-envelope"></i> <?php echo esc_attr($deserve_options['email']);?>
+							<a href="mailto:<?php echo esc_attr(get_theme_mod('theme_email_id',$deserve_options['email'])); ?>"><i class="fa fa-envelope"></i> <?php echo esc_attr(get_theme_mod('theme_email_id',$deserve_options['email'])); ?></a>
 						</li>
 						<?php } ?>
                     </ul>
@@ -46,26 +43,13 @@ $deserve_options = get_option( 'deserve_theme_options' ); ?>
             <div class="col-md-6">
             	 <div class="social-link">
                     <ul>
-						<?php if(!empty($deserve_options['fburl'])){ ?>
-                        <li>
-							<a href="<?php echo esc_url($deserve_options['fburl']);?>"><i class="fa fa-facebook"></i></a>
-						</li>
-						<?php } 
-						 if(!empty($deserve_options['twitter'])) { ?> 
-						<li>					
-							<a href="<?php echo esc_url($deserve_options['twitter']);?>"><i class="fa fa-twitter"></i></a>
-						</li>
-						<?php }
-						if(!empty($deserve_options['gplus'])){ ?>
-						  <li>						
-							<a href="<?php echo esc_url($deserve_options['gplus']);?>"><i class="fa fa-google-plus"></i></a>						
-						</li>
-						<?php } 
-						if(!empty($deserve_options['skype'])){ ?>
-                       	  <li>					
-							<a href="<?php echo esc_url($deserve_options['skype']);?>"><i class="fa fa-skype"></i></a>						
-						</li>
-                       <?php } ?>
+                        <?php for($i=1; $i<=4; $i++) : ?>
+                            <?php if(get_theme_mod('TopHeaderSocialIconLink'.$i)!='' && get_theme_mod('TopHeaderSocialIcon'.$i)!=''): ?>
+                               <li><a href="<?php echo esc_url(get_theme_mod('TopHeaderSocialIconLink'.$i)); ?>" class="icon" title="" target="_blank">
+                                    <i class="fa <?php echo esc_attr(get_theme_mod('TopHeaderSocialIcon'.$i)); ?>"></i>
+                                </a></li>
+                            <?php endif; ?>
+                        <?php endfor; ?>						
                     </ul>
                 </div>
             </div>
@@ -75,10 +59,14 @@ $deserve_options = get_option( 'deserve_theme_options' ); ?>
     	<div class="deserve-container clearfix">
             <div class="col-md-2">
             	<div  class="site-logo">
-				<?php if(empty($deserve_options['logo'])) { ?>
-        		<h4 class="deserve-site-name"><a href="<?php echo esc_url(home_url('/')); ?>"><?php echo get_bloginfo('name'); ?></a></h4>
-				<?php } else { ?>
-        		<a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url($deserve_options['logo']); ?>" alt="<?php _e('logo','deserve') ?>" class="img-responsive" /></a>
+				<?php if(has_custom_logo()){
+                            the_custom_logo();
+                      }
+                  if(display_header_text()==true) { ?>
+        		<h4 class="deserve-site-name"><a href="<?php echo esc_url(home_url('/')); ?>">
+                    <?php echo esc_html(get_bloginfo('name')); ?></a></h4>
+                <h6 class="deserve-site-description"><a href="<?php echo esc_url(home_url('/')); ?>">
+                    <?php echo esc_html(get_bloginfo('description')); ?></a></h6>
 				<?php } ?>
                     <div class="navbar-header res-nav-header toggle-respon">
                         <button type="button" class="navbar-toggle toggle-menu" data-toggle="collapse" data-target=".navbar-collapse">
@@ -93,31 +81,24 @@ $deserve_options = get_option( 'deserve_theme_options' ); ?>
             <div class="col-md-10">
                 <div class="header-menu">             
                     <?php
-			$deserve_defaults = array(
+						$deserve_defaults = array(
 							'theme_location'  => 'primary',
-							'container'       => 'div',
-							'container_class' => '',
-							'container_id'    => '',
+							'container'       => 'div',							
 							'menu_class'      => 'navbar-collapse nav_coll no-padding collapse',
 							'menu_id'         => 'example-navbar-collapse',
 							'echo'            => true,
-							'fallback_cb'     => 'wp_page_menu',
-							'before'          => '',
-							'after'           => '',
-							'link_before'     => '',
-							'link_after'      => '',
+							'fallback_cb'     => 'wp_page_menu',							
 							'items_wrap'      => '<ul id="%1$s" class="%2$s nav">%3$s</ul>',
-							'depth'           => 0,
-							'walker'          => ''
+							'depth'           => 0,							
 						);
-			wp_nav_menu($deserve_defaults); ?>
+						wp_nav_menu($deserve_defaults); ?>
                 </div>
             </div>
         </div>
          <?php if(get_header_image()){ ?>
         <div class="custom-header-img">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" >
-        	<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php _e('customheader','deserve') ?>">
+        	<img src="<?php esc_url(header_image()); ?>" width="<?php echo esc_attr(get_custom_header()->width); ?>" height="<?php echo esc_attr(get_custom_header()->height); ?>" alt="<?php esc_attr_e('customheader','deserve') ?>">
         </a>
         </div>
     <?php } ?>
