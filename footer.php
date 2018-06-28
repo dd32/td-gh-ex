@@ -98,7 +98,7 @@
     <section class="container" id="footer-bottom">
       <div class="container-inner">
 
-        <a id="back-to-top" href="#"><i class="fa fa-angle-up"></i></a>
+        <a id="back-to-top" href="#"><i class="fas fa-angle-up"></i></a>
 
         <div class="pad group">
 
@@ -117,18 +117,27 @@
             </div><!--/#copyright-->
 
             <?php if ( hu_is_checked( 'credit' ) || hu_is_customizing() ) : ?>
-              <div id="credit" style="<?php echo ! hu_is_checked( 'credit' ) ? 'display:none' : ''; ?>">
-                <p><?php _e('Powered by','hueman'); ?> <a href="http://wordpress.org" target="_blank">WordPress</a>. <?php _e('Theme by','hueman'); ?> <a href="http://presscustomizr.com">Press Customizr</a>.</p>
-              </div><!--/#credit-->
+              <?php
+                $hu_theme = wp_get_theme();
+              ?>
+              <?php ob_start(); ?>
+                  <div id="credit" style="<?php echo ! hu_is_checked( 'credit' ) ? 'display:none' : ''; ?>">
+                    <p><?php _e('Powered by','hueman'); ?>&nbsp;<a class="fab fa-wordpress" title="<?php _e( 'Powered by WordPress', 'hueman' ) ?>" href="<?php echo esc_url( __( 'https://wordpress.org/', 'hueman' ) ); ?>" target="_blank"></a> - <?php _e('Designed with the','hueman'); ?>&nbsp;<a href="<?php echo $hu_theme -> get('ThemeURI'); ?>" title="<?php _e('Hueman theme','hueman'); ?>"><?php _e('Hueman theme','hueman'); ?></a></p>
+                  </div><!--/#credit-->
+              <?php
+                $credits_html = ob_get_contents();
+                if ($credits_html) ob_end_clean();
+                echo apply_filters( 'hu_credits_html', $credits_html );
+              ?>
             <?php endif; ?>
 
           </div>
 
           <div class="grid one-half last">
-            <?php if ( hu_has_social_links() ) : ?>
+            <?php if ( hu_has_social_links() || hu_is_customizing() ) : ?>
               <?php hu_print_social_links(); ?>
             <?php else : //if not customizing, display an empty p for design purposes ?>
-                <?php if ( ! hu_is_customizing() && is_user_logged_in() && current_user_can( 'edit_theme_options' ) && is_super_admin() ) : ?>
+                <?php if ( hu_user_can_see_customize_notices_on_front() ) : ?>
                     <?php
                       printf( '<p style="text-transform:none;text-align: right;">%1$s. <br/><a style="color: white;text-decoration:underline;" href="%2$s" title="%3$s">%3$s &raquo;</a></p>',
                           __('You can set your social links here from the live customizer', 'hueman'),

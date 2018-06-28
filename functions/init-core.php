@@ -26,8 +26,6 @@ if( ! defined( 'HU_BASE_URL' ) )        define( 'HU_BASE_URL' , get_template_dir
 if( ! defined( 'HU_BASE_URL_CHILD' ) )  define( 'HU_BASE_URL_CHILD' , get_stylesheet_directory_uri() . '/' );
 //THEMENAME contains the Name of the currently loaded theme. Will always be the parent theme name is a child theme is activated.
 if( ! defined( 'THEMENAME' ) )       define( 'THEMENAME' , $hu_base_data['title'] );
-//TEXT DOMAIN FOR TRANSLATIONS
-if( ! defined( 'THEME_TEXT_DOM' ) )       define( 'THEME_TEXT_DOM' , 'hueman' );
 //HU_OPTION_GROUP contains the Name of the hueman theme options in wp_options
 //=> was previously option tree default name
 if( ! defined( 'HU_THEME_OPTIONS' ) ) define( 'HU_THEME_OPTIONS' , apply_filters( 'hu_theme_options', 'hu_theme_options' ) );
@@ -36,10 +34,17 @@ if( ! defined( 'HU_OPT_AJAX_ACTION' ) ) define( 'HU_OPT_AJAX_ACTION' , 'hu_get_o
 
 //HU_IS_PRO
 if( ! defined( 'HU_IS_PRO' ) ) define( 'HU_IS_PRO' , file_exists( HU_BASE . 'addons/init-hueman-pro.php' ) && "hueman-pro" == sanitize_file_name( strtolower($hu_theme -> name) ) );
+//HU_IS_PRO_ADDONS
+if( ! defined( 'HU_IS_PRO_ADDONS' ) ) define( 'HU_IS_PRO_ADDONS' , false );
+
+//TEXT DOMAIN FOR TRANSLATIONS
+if( ! defined( 'HU_THEME_TEXT_DOM' ) )       define( 'HU_THEME_TEXT_DOM' , HU_IS_PRO ? 'hueman-pro' : 'hueman' );
 
 //HU_WEBSITE is the home website of Hueman
 if( ! defined( 'HU_WEBSITE' ) )         define( 'HU_WEBSITE' , $hu_base_data['authoruri'] );
 
+//define useful constants
+if( ! defined( 'HU_DYN_WIDGETS_SECTION' ) )      define( 'HU_DYN_WIDGETS_SECTION' , 'dyn_widgets_section' );
 
 
 /* ------------------------------------------------------------------------- *
@@ -47,13 +52,6 @@ if( ! defined( 'HU_WEBSITE' ) )         define( 'HU_WEBSITE' , $hu_base_data['au
 /* ------------------------------------------------------------------------- */
 load_template( HU_BASE . 'functions/init-functions.php' );
 
-
-/* ------------------------------------------------------------------------- *
- *  PrevDem
-/* ------------------------------------------------------------------------- */
-if ( hu_isprevdem() ) {
-  load_template( get_template_directory() . '/functions/init-prevdem.php' );
-}
 
 /* ------------------------------------------------------------------------- *
  *  OptionTree framework integration: Use in theme mode
