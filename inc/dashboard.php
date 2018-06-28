@@ -49,6 +49,7 @@ if ( ! function_exists( 'asagi_settings_page' ) ) {
 								<a style="font-weight: bold;" href="<?php echo esc_attr(ASAGI_THEME_URL); // WPCS: XSS ok, sanitization ok. ?>" target="_blank"><?php esc_html_e( 'Premium', 'asagi' );?></a>
 							<?php endif; ?>
 							<a href="<?php echo esc_attr(ASAGI_WPKOI_AUTHOR_URL); ?>" target="_blank"><?php esc_html_e( 'WPKoi', 'asagi' ); ?></a>
+                            <a href="<?php echo esc_attr(ASAGI_DOCUMENTATION); ?>" target="_blank"><?php esc_html_e( 'Documentation', 'asagi' ); ?></a>
 						</div>
 					</div>
 				</div>
