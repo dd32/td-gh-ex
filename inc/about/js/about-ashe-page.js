@@ -44,4 +44,10 @@ jQuery( document ).ready( function ($) {
         }
     );
 
+
+    // Theme Review
+    $('.theme-review h3').on( 'click', function() {
+        $('.theme-review > div').slideToggle();
+    });
+
 });

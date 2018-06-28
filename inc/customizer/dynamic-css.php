@@ -429,6 +429,43 @@ function ashe_true_false( $option ) {
 
 
 /*
+** Responsive =====
+*/
+	// Featured Slider
+	if ( ashe_options( 'responsive_featured_slider' ) !== true ) {
+		$css .= '
+		@media screen and ( max-width: 768px ) {
+			.featured-slider-area {
+				display: none;
+			}
+		}
+		';
+	}
+
+	// Featured Links
+	if ( ashe_options( 'responsive_featured_links' ) !== true ) {
+		$css .= '
+		@media screen and ( max-width: 768px ) {
+			#featured-links {
+				display: none;
+			}
+		}
+		';
+	}
+
+	// Related Posts
+	if ( ashe_options( 'responsive_related_posts' ) !== true ) {
+		$css .= '
+		@media screen and ( max-width: 640px ) {
+			.related-posts {
+				display: none;
+			}
+		}
+		';
+	}
+
+
+/*
 ** Typography =====
 */
 	// Logo & Tagline

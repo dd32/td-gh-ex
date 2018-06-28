@@ -114,8 +114,13 @@
     margin-right: 7px;
   }
 
-  #featured-links {
-    display: none;
+  #featured-links .featured-link {
+    width: 100% !important;
+    margin-right: 0 !important;
+    margin-bottom: 20px;
+  }
+  #featured-links .featured-link:last-of-type {
+    margin-bottom: 0;
   }
 
   .comments-area {
@@ -147,8 +152,13 @@
     height: 330px;
   }
 
+  .related-posts section {
+    width: 100%;
+    margin: 0 0 25px;
+  }
+
   .related-posts {
-    display: none !important;
+    padding-bottom: 0;
   }
 
   .sidebar-left-wrap,
@@ -245,6 +255,7 @@
 
   #top-bar > div,
   #main-nav > div,
+  #featured-links,
   .main-content,
   .page-footer-inner {
     padding-left: 20px !important;
@@ -266,12 +277,6 @@
     font-size: 28px;
     line-height: 30px;
     margin-bottom: 18px;
-  }
-
-  #featured-links h6 {
-    padding: 5px 10px;
-    font-size: 9px !important;
-    letter-spacing: 0 !important;
   }
 
   .post-title,
@@ -481,31 +486,5 @@
      .entry-header {
          height: auto !important;
          padding: 50px 0 !important;
-    }
-}
-
-
-/* Featured Links */
-@media screen and (max-width: 768px) {
-     #featured-links {
-         padding: 7px 16px !important;
-    }
-}
- @media screen and (max-width: 768px) {
-     #featured-links h6 {
-         padding: 7px 16px !important;
-         font-size: 13px !important;
-    }
-}
- @media screen and (max-width: 640px) {
-     #featured-links h6 {
-         padding: 5px 13px !important;
-         font-size: 12px !important;
-    }
-}
-@media screen and (max-width: 640px) {
-     #featured-links h6 {
-         padding: 4px 10px !important;
-         font-size: 10px !important;
     }
 }

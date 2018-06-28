@@ -1,8 +1,90 @@
 /* General */
 .welcome-text {
+	float: left;
 	max-width: 600px;
 	margin-bottom: 50px;
+}
+
+.welcome-text p {
 	font-size: 16px;
+}
+
+/* Theme Review */
+.theme-review {
+	display: inline-block;
+	position: relative;
+	float: right;
+	width: 365px;
+	background-color: #fff;
+	margin: 16px auto 15px;
+	border: 1px solid #e5e5e5;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	overflow: hidden;
+	text-align: center;
+}
+
+.theme-review h3 {
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 12px 10px;
+	background-color: #0085ba;
+	color: #fff;
+	letter-spacing: .6px;
+	margin: 0;
+	text-align: center;
+	cursor: pointer;
+}
+
+.theme-review h3 .dashicons {
+	margin-top: -1px;
+}
+
+.theme-review > div {
+	display: none;
+	padding: 25px 30px;
+}
+
+.theme-review p {
+	font-size: 14px;
+	color: #5a5a5a;
+	margin-top: 0;
+}
+
+.theme-review a {
+	display: inline-block;
+	background-color: #0085ba;
+	color: #fff;
+	height: auto;
+	font-size: 13px;
+	line-height: 1;
+	font-weight: 600;
+	padding: 14px 20px;
+	border: 0;
+	cursor: pointer;
+	text-align: center;
+	letter-spacing: .1em;
+	border-radius: 3px;
+	text-decoration: none;
+	transition: all .3s ease;
+}
+
+.theme-review a:hover {
+	opacity: 0.85;
+}
+
+.theme-review a .dashicons {
+  width: auto;
+  height: auto;
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+
+/* Tabs */
+.nav-tab-wrapper {
+	clear: both;
 }
 
 .nav-tab-wrapper a:nth-child(2) span {
@@ -235,6 +317,12 @@
 @media screen and ( max-width: 1360px ) {
 	.free-vs-pro {
 		width: 80% !important;
+	}
+}
+
+@media screen and ( max-width: 1200px ) {
+	.theme-review {
+		float: none !important;
 	}
 }
 

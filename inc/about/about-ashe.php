@@ -13,18 +13,35 @@ function ashe_about_page_output() {
 
 ?>
 	<div class="wrap">
-		<h1>
-		<?php /* translators: %s theme name */
-			printf( esc_html__( 'Welcome to %s', 'ashe' ), esc_html( $theme_data->Name ) );
-		?>
-		</h1>
 
-		<p class="welcome-text">
+		<div class="welcome-text">
+			<h1>
 			<?php /* translators: %s theme name */
-				printf( esc_html__( '%s theme is one of the most Popular Free WordPress theme of 2017-2018 years. To understand better what the theme can offer, please click the button below.', 'ashe' ), esc_html( $theme_data->Name ) );
+				printf( esc_html__( 'Welcome to %s', 'ashe' ), esc_html( $theme_data->Name ) );
 			?>
-			<br><br><a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-free/demo/?ref=ashe-free-backend-about-theme-prev-btn'); ?>" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Demo Preview', 'ashe' ); ?></a>
-		</p><br>
+			</h1>
+
+			<p>
+				<?php /* translators: %s theme name */
+					printf( esc_html__( '%s theme is one of the most Popular Free WordPress theme of 2017-2018 years. To understand better what the theme can offer, please click the button below.', 'ashe' ), esc_html( $theme_data->Name ) );
+				?>
+				<br><br><a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-free/demo/?ref=ashe-free-backend-about-theme-prev-btn'); ?>" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Demo Preview', 'ashe' ); ?></a>
+			</p>
+		</div>
+
+		<div class="theme-review">
+			<h3>
+				<?php esc_html_e( 'Are You a Helpful Person?', 'ashe' ); ?>
+				<span class="dashicons dashicons-arrow-down"></span>
+			</h3>
+			<div>
+				<p><?php esc_html_e( 'We are grateful that you\'ve decided to join the Ashe family. If we could take 2 mins of your time, we\'d really appreciate if you could leave a review. By spreading the love, we can create even greater free stuff in the future!', 'ashe' ); ?></p>
+				<a href="<?php echo esc_url('https://wordpress.org/support/theme/ashe/reviews/?filter=5#new-post') ?>" target="_blank">
+					<?php esc_html_e( 'Leave a Review', 'ashe' ); ?>
+					<span class="dashicons dashicons-star-filled"></span>
+				</a>
+			</div>
+		</div>
 
 		<!-- Tabs -->
 		<?php $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'ashe_tab_1'; ?>  
@@ -625,12 +642,12 @@ function ashe_enqueue_about_page_scripts($hook) {
 	}
 
 	// enqueue CSS
-	wp_enqueue_style( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/css/about-ashe-page.css' ), array(), '1.6.3' );
+	wp_enqueue_style( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/css/about-ashe-page.css' ), array(), '1.6.4' );
 
 	// Demo Import
 	wp_enqueue_script( 'plugin-install' );
 	wp_enqueue_script( 'updates' );
-	wp_enqueue_script( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/js/about-ashe-page.js' ), array(), '1.6.3' );
+	wp_enqueue_script( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/js/about-ashe-page.js' ), array(), '1.6.4' );
 
 }
 add_action( 'admin_enqueue_scripts', 'ashe_enqueue_about_page_scripts' );

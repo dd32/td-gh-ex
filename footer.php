@@ -4,9 +4,11 @@
 		<footer id="page-footer" class="<?php echo esc_attr(ashe_options( 'general_footer_width' )) === 'boxed' ? 'boxed-wrapper ': ''; ?>clear-fix">
 			
 			<!-- Scroll Top Button -->
+			<?php if ( ashe_options( 'page_footer_show_scrolltop' ) === true ) : ?>
 			<span class="scrolltop">
 				<i class="fa fa fa-angle-up"></i>
 			</span>
+			<?php endif; ?>
 
 			<div class="page-footer-inner <?php echo ashe_options( 'general_footer_width' ) === 'contained' ? 'boxed-wrapper': ''; ?>">
 

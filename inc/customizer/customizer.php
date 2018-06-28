@@ -81,6 +81,10 @@ function ashe_customize_register( $wp_customize ) {
 			$section_id = $section;
 		}
 
+		if ( $id === 'merge_menu' ) {
+			$section_id = 'ashe_responsive';
+		} 
+
 		$wp_customize->add_setting( 'ashe_options['. $section .'_'. $id .']', array(
 			'default'	 => ashe_options( $section .'_'. $id),
 			'type'		 => 'option',
@@ -597,9 +601,6 @@ function ashe_customize_register( $wp_customize ) {
 
 	// Show Sidebar Icon
 	ashe_checkbox_control( 'main_nav', 'show_sidebar', esc_html__( 'Show Sidebar Icon', 'ashe' ), 'refresh', 15 );
-	
-	// Merge to Responsive Menu
-	ashe_checkbox_control( 'main_nav', 'merge_menu', esc_html__( 'Merge Top Menu - Responsive', 'ashe' ), 'refresh', 17 );
 
 
 /*
@@ -965,6 +966,9 @@ function ashe_customize_register( $wp_customize ) {
 	// Copyright
 	ashe_textarea_control( 'page_footer', 'copyright', esc_html__( 'Your Copyright Text', 'ashe' ), $copyright_description, 'refresh', 3 );
 
+	// Show Scroll-Top Button
+	ashe_checkbox_control( 'page_footer', 'show_scrolltop', esc_html__( 'Show Scroll-Top Button', 'ashe' ), 'refresh', 5 );
+
 	// Pro Version
 	$wp_customize->add_setting( 'pro_version_page_footer', array(
 		'sanitize_callback' => 'ashe_sanitize_custom_control'
@@ -994,6 +998,32 @@ function ashe_customize_register( $wp_customize ) {
 
 	// Preloading Animation
 	ashe_checkbox_control( 'preloader', 'label', esc_html__( 'Preloading Animation', 'ashe' ), 'refresh', 1 );
+
+
+/*
+** Responsive =====
+*/
+
+	// add Responsive section
+	$wp_customize->add_section( 'ashe_responsive' , array(
+		'title'		  => esc_html__( 'Responsive', 'ashe' ),
+		'description' => esc_html__( 'These options will only apply to Mobile devices.', 'ashe' ),
+		'priority'	  => 50,
+		'capability'  => 'edit_theme_options'
+	) );
+
+
+	// Merge to Responsive Menu
+	ashe_checkbox_control( 'main_nav', 'merge_menu', esc_html__( 'Merge Top and Main Menus', 'ashe' ), 'refresh', 1 );
+	
+	// Featured Slider
+	ashe_checkbox_control( 'responsive', 'featured_slider', esc_html__( 'Show Featured Slider', 'ashe' ), 'refresh', 3 );
+
+	// Featured Links
+	ashe_checkbox_control( 'responsive', 'featured_links', esc_html__( 'Show Featured Links', 'ashe' ), 'refresh', 5 );
+
+	// Related Posts
+	ashe_checkbox_control( 'responsive', 'related_posts', esc_html__( 'Show Related Posts', 'ashe' ), 'refresh', 7 );
 	
 
 }
