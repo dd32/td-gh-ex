@@ -84,8 +84,8 @@ function backphoto_theme_customizer($wp_customize) {
 		'section' 		=> 'backphoto_header_section',
 		'label' 		=> __( 'Header Scroll', 'backphoto' ),
 		'choices' 		=> array(
-			'scroll' 	=> __('Scroll', 'backphoto'),
-			'fixed' 	=> __('Fixed', 'backphoto')
+			'scroll' 	=> __('Scroll'),
+			'fixed' 	=> __('Fixed')
 			)
 		) );
 

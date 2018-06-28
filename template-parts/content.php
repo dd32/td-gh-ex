@@ -36,7 +36,7 @@
 		the_content( sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'backphoto' ),
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span> <span class="dashicons dashicons-arrow-right-alt2"></span>', 'backphoto' ),
 				array(
 					'span' => array(
 						'class' => array(),

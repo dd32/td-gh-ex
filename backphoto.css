@@ -229,7 +229,10 @@ button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type=
     width: 20%;
 }
 .entry-meta span {
-    padding-right: 20px;
+    padding-right: 0px;
+}
+.posted-on a {
+    display: block;
 }
 .entry-footer {
     font-size: 14px;
@@ -288,7 +291,7 @@ article.post {
 .site-main .post-navigation {
     border-top: 1px solid #f3f3f3;
     border-bottom: 1px solid #f3f3f3;
-    padding: 20px 0;
+    padding: 0;
 }
 
 /* Form Styling */
@@ -478,6 +481,53 @@ li.comment {
 .main-navigation ul, .main-navigation.toggled ul {
     -webkit-transition: height .3s linear, padding-top .3s linear, padding-bottom .3s linear, border-top-width .3s linear, border-top-width .3s linear;
     transition: height .3s linear, padding-top .3s linear, padding-bottom .3s linear, border-top-width .3s linear, border-top-width .3s linear;
+}
+
+/* Version 1.0.3 added */
+.home .entry-content .dashicons-arrow-right-alt2,
+.archive .entry-content .dashicons-arrow-right-alt2,
+.category .entry-content .dashicons-arrow-right-alt2 {
+    font-size: 14px;
+    vertical-align: bottom;
+    line-height: 20px;
+    width: 12px;
+}
+.post-navigation .nav-previous {
+    padding: 20px 20px 20px 40px;
+    position: relative;
+}
+.post-navigation .nav-previous:before {
+    font-family: dashicons;
+    content: "\f341";
+    position: absolute;
+    font-size: 50px;
+    top: 50%;
+    left: 0;
+    line-height: 0%;
+    color: #d9d9d9;
+    transform: translateY(-50%);
+}
+.post-navigation .nav-next {
+    padding: 20px 40px 20px 20px;
+    position: relative;
+}
+.post-navigation .nav-next:after {
+    font-family:dashicons;
+    content: "\f345";
+    position: absolute;
+    font-size: 50px;
+    top: 50%;
+    right: 0;
+    line-height: 0%;
+    color: #d9d9d9;
+    transform: translateY(-50%);
+}
+.tags-links a {
+    display: inline-block;
+    background: #efefef;
+    border-radius: 20px;
+    padding: 0 10px;
+    line-height: 20px;
 }
 
 /* Mobile Compability */

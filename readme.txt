@@ -4,7 +4,7 @@ Contributors: pupungbp
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, custom-header, flexible-header, full-width-template
 
 Requires at least: 4.5
-Tested up to: 4.9.6
+Tested up to: 4.9.5
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -46,6 +46,10 @@ Backphoto includes support for Infinite Scroll in Jetpack.
 = 1.0.2 - June 19 2018 =
 * Minor Fixes
 * Unminify scripts
+
+= 1.0.3 - June 28 2018 =
+* Added Dashicon to some elements (Continue Reading, Next Prev Navigation)
+* Added post tag styling
 
 == Credits ==
 
