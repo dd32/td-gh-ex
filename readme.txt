@@ -3,7 +3,7 @@
 Contributors: spicethemes
 Requires at least: 4.7
 Tested up to: 4.9.5
-Stable tag: 2.8.3
+Stable tag: 2.8.4
 
 Multi-purpose WordPress theme
 
@@ -18,6 +18,10 @@ Rockers is a responsive, multi-purpose WordPress theme. It's flexible and perfec
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 2.8.4 ==
+
+1. Fixed mobile responsive issue.
+
 = 2.8.3 ==
 
 1. Update Strings.
