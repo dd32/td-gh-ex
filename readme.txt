@@ -4,8 +4,8 @@ Contributors: satoristudio
 Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 
 Requires at least: 4.0
-Tested up to: 4.9.2
-Stable tag: 1.8.1
+Tested up to: 4.9.6
+Stable tag: 2.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,18 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 2.0 / 29 June 2018
+Replaced all Isotope layouts in the theme with modern CSS grids, removed Isotope dependency.
+Added a category filter for grid pages.
+Added item ordering options for grid pages.
+Added site-wide options for page/post sidebars layouts.
+Blog posts page can now have an image header.
+Completely rewrote the Customizer scripts using  Customizer JS API.
+Replaced Font Awesome internal dependency with a CDN.
+Improved primary menu CSS for higher robustness and customizability.
+Fixed side-menu layout styling issues.
+Replaced submenu menu chevrons with analogous Dashicons.
 
 * 1.8.1 / 27 February 2018
 Updated the bundled CMB2 library.

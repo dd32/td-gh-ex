@@ -9,6 +9,10 @@ var $str = jQuery.noConflict();
 // Variables
 var $bento_isocontainer = $str('.items-container');
 var bento_lastwindowPos = $str(window).scrollTop();
+var bento_adminbarHeight = 0;
+if ( $str('#wpadminbar').outerHeight(true) > 0 ) {
+	bento_adminbarHeight = $str('#wpadminbar').outerHeight(true);
+}
 
 // Check if an iOS device
 function bentoCheckDevice() {
@@ -199,23 +203,11 @@ $str(document).ready(function() {
 	});
 	
 	
-	// Grid layouts with Isotope
-	var $grid = $bento_isocontainer.imagesLoaded( function() {
-		$grid.isotope({
-			itemSelector: '.grid-item',
-			percentPosition: true,
-			packery: {
-				columnWidth: $grid.find('.grid-sizer')[0],
-			}
-		});
-		$grid.isotope({ 
-			layoutMode: bentoThemeVars.grid_mode,
-		});
-	});
-	
-	
 	// Ajax pagination
 	var bento_page = 1;
+	if ( bentoThemeVars.paged && bentoThemeVars.paged > 1 ) {
+		bento_page = bentoThemeVars.paged;
+	}
 	if ( bento_page < bentoThemeVars.max_pages ) {
 		$str('.ajax-load-more').fadeIn(100).css('display','block');
 	}
@@ -231,11 +223,8 @@ $str(document).ready(function() {
 			},
 			success: function (html) {
 				var $posts = $str(html).fadeIn(400);
-				if ( $bento_isocontainer.length ) {
-					$grid.append($posts).isotope('appended', $posts);
-					$grid.imagesLoaded().progress( function() {
-						$grid.isotope('layout');
-					});
+				if ( bentoThemeVars.grid_mode != 'nogrid' ) {
+					$str('.grid-container').append($posts);
 				} else {
 					$str('.site-main').append($posts);	
 				}
@@ -276,31 +265,6 @@ $str(document).ready(function() {
 
 
 $str(window).load(function () {
-
-
-	// Display grid items when everything is loaded
-	$str('.spinner-grid').fadeOut(100);
-	$bento_isocontainer.fadeIn(300, function() {
-		if ( bentoThemeVars.full_width_grid == 'on' && bentoThemeVars.menu_config != 3 ) {
-			var bento_ww = $str(window).width();
-			var bento_im = $str('.grid-item-inner').css('padding-left').replace("px", "");
-			var bento_nw = bento_ww - ( 2 * bento_im );
-			var bento_cw = $str('.site-content .bnt-container').width();
-			var bento_ml = ( ( bento_ww - bento_cw ) / -2 ) + ( bento_im * 2 );
-			$str('.site-content .grid-container').css({'width':bento_nw+'px','left':bento_ml+'px'});
-		}
-		$bento_isocontainer.isotope().isotope('layout');
-	});
-	$bento_isocontainer.isotope().isotope('layout');
-	
-	
-	// Submenu margins 
-	if ( bentoThemeVars.menu_config == 0 ) {
-		var bento_headerheight = $str('.site-header').height();
-		var bento_menuheight = $str('.primary-menu').height();
-		var bento_submenumargin = ( bento_headerheight - bento_menuheight ) / 2;
-		$str('.primary-menu > li > .sub-menu').css('border-top-width',bento_submenumargin+'px');
-	}
 	
 	
 	// Scroll to the correct position for hash URLs
@@ -341,18 +305,7 @@ $str(window).load(function () {
 
 
 $str(window).resize(function () {
-
-
-	// Relayout Isotope on browser resize
-	if ( bentoThemeVars.full_width_grid == 'on' && bentoThemeVars.menu_config != 3 ) {
-		var bento_ww = $str(window).width();
-		var bento_im = $str('.grid-item-inner').css('padding-left').replace("px", "");
-		var bento_nw = bento_ww - ( 2 * bento_im );
-		var bento_cw = $str('.site-content .bnt-container').width();
-		var bento_ml = ( ( bento_ww - bento_cw ) / -2 ) + ( bento_im * 2 );
-		$str('.site-content .grid-container').css({'width':bento_nw+'px','left':bento_ml+'px'});
-	}
-	$bento_isocontainer.isotope().isotope('layout');
+	
 	
 	
 	// Set overlay menu margin
@@ -385,10 +338,6 @@ $str(window).scroll(function () {
 		var bento_windowHeight = $str(window).height();
 		var bento_headerHeight = $bento_header.outerHeight(true); 
 		var bento_bodyHeight = $str(document).height();
-		var bento_adminbarHeight = 0;
-		if ( $str('#wpadminbar').outerHeight(true) > 0 ) {
-			bento_adminbarHeight = $str('#wpadminbar').outerHeight(true);
-		}
 		var bento_coef = 1;
 		if ( bento_headerHeight > bento_windowHeight ) {
 			var bento_headerDiff = bento_headerHeight - bento_windowHeight;
@@ -403,7 +352,7 @@ $str(window).scroll(function () {
 					bento_headertop = -bento_headerDiff;
 				}
 			} else {
-				if ( bento_windowPos == 0 || bento_headertop >= adminbarHeight ) {
+				if ( bento_windowPos == 0 || bento_headertop >= bento_adminbarHeight ) {
 					bento_headertop = bento_adminbarHeight;
 				} else {
 					bento_headertop = bento_headertop + ( ( bento_lastwindowPos - bento_windowPos ) / bento_coef );

@@ -38,58 +38,53 @@ $bento_grid_columns = esc_html( get_post_meta( $bento_parent_page_id, 'bento_pag
 				bento_ep_portfolio_filter();
 			}
 			?>
-            
-			<?php 
-            // Build the query
-            $bento_query = new WP_Query( bento_grid_query() );
-            
-            // Start the Loop
-            if ( $bento_query->have_posts() ) { 
-            ?>
-            	
-                <div class="spinner-grid">
-                	<div class="spinner-grid-inner">
-                    	<div class="spinner-circle">
-                    	</div>
-                    </div>
-                </div>
-                
-                <div class="items-container grid-container grid-<?php echo $bento_grid_mode; ?> grid-columns-<?php echo $bento_grid_columns; ?>">
+			
+			<?php
+			// Build the query
+			$bento_query = new WP_Query( bento_grid_query() );
+			
+			// Start the Loop
+			if ( $bento_query->have_posts() ) { 
+			?>
+				
+				<div class="spinner-grid">
+					<div class="spinner-grid-inner">
+						<div class="spinner-circle">
+						</div>
+					</div>
+				</div>
+				
+				<div class="items-container grid-container grid-<?php echo $bento_grid_mode; ?> grid-columns-<?php echo $bento_grid_columns; ?>">
 					
-					<?php if ( get_post_meta( $bento_parent_page_id, 'bento_page_grid_mode', true ) != 'rows' ) { ?>
-                	<div class="grid-sizer">
-                    </div>
-					<?php } ?>
-                    
-                    <?php
-                    while ( $bento_query->have_posts() ) { 
-                        $bento_query->the_post(); 
+					<?php
+					while ( $bento_query->have_posts() ) { 
+						$bento_query->the_post(); 
 						
-                        // Render the items
-                    	get_template_part( 'content', 'grid' );  
-                        
-                    // End the Loop
-                    }
-                    ?>
-                    
-                </div>
-            
-            	<?php 
+						// Render the items
+						get_template_part( 'content', 'grid' );  
+						
+					// End the Loop
+					}
+					?>
+					
+				</div>
+			
+				<?php 
 				if ( get_post_meta( $bento_parent_page_id, 'bento_page_ajax_load', true ) == 'on' ) {
 					bento_ajax_load_more(); 
 				} else {
 					bento_grid_pagination();
 				}
 				
-            }
+			}
 			wp_reset_postdata();
-            ?>
-                   
-        </main>
-    </div>
-    
-    <?php get_sidebar(); ?>
-    
+			?>
+			
+		</main>
+	</div>
+	
+	<?php get_sidebar(); ?>
+	
 </div>
 
 <?php get_footer(); ?>

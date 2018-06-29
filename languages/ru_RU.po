@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bento\n"
-"POT-Creation-Date: 2017-04-26 18:22+0300\n"
-"PO-Revision-Date: 2017-04-28 10:53+0300\n"
+"POT-Creation-Date: 2018-06-22 08:27+0300\n"
+"PO-Revision-Date: 2018-06-22 08:27+0300\n"
 "Last-Translator: Komp <sv-pc@ya.ru>\n"
 "Language-Team: -=x0rw=- ))\n"
 "Language: ru\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -74,7 +74,7 @@ msgstr "Главное меню"
 msgid "Footer Menu"
 msgstr "Меню в подвале"
 
-#: functions.php:169
+#: functions.php:166
 #, php-format
 msgid ""
 "Thank you for choosing Bento! Visit the %swelcome page%s to get the most out "
@@ -83,97 +83,96 @@ msgstr ""
 "Спасибо что выбрали Bento! Посетите %sприветственную страницу%s для "
 "первичной настройки шаблона:"
 
-#: functions.php:170
+#: functions.php:167
 msgid "Get started with Bento"
 msgstr "Начало работы в Бенто"
 
-#: functions.php:177
+#: functions.php:174
 msgid "Welcome to Bento!"
 msgstr "Добро пожаловать в Bento!"
 
-#: functions.php:177
-#| msgid "About to leave"
+#: functions.php:174
 msgid "About Bento"
 msgstr "О Bento"
 
-#: functions.php:187
+#: functions.php:184
 msgid "See full demonstration"
 msgstr "Просмотреть демо"
 
-#: functions.php:193
+#: functions.php:190
 msgid "Detailed instructions"
 msgstr "Подробные инструкции"
 
-#: functions.php:199
+#: functions.php:196
 msgid "Visit official forum"
 msgstr "Посетите форум поддержки"
 
-#: functions.php:228
+#: functions.php:225
 msgid "Footer copyright"
 msgstr "Копирайт в подвале"
 
-#: functions.php:229
+#: functions.php:226
 msgid "customize or remove the copyright statement in the footer"
 msgstr "Настройка сообщения об авторских правах в подвале сайта"
 
-#: functions.php:233
+#: functions.php:230
 msgid "Portfolio"
 msgstr "Портфолио"
 
-#: functions.php:234
+#: functions.php:231
 msgid ""
 "add stunning corporate portfolios, online storefronts, or personal showcases."
 msgstr ""
 "добавь потрясающие корпоративные портфолио, онлайн-магазинов, личного или "
 "витрин."
 
-#: functions.php:238
+#: functions.php:235
 msgid "Pre-built layouts"
 msgstr "Готовые макеты"
 
-#: functions.php:239
+#: functions.php:236
 msgid "simplify the process of creating new pages using ready-made layouts."
 msgstr "упростите процесс создания новых страниц, используя готовые макеты."
 
-#: functions.php:243
+#: functions.php:240
 msgid "Video and maps headers"
 msgstr "Карты и видео в заголовках"
 
-#: functions.php:244
+#: functions.php:241
 msgid "make your pages stand out with custom header content."
 msgstr "сделайте страницы со своим содержимым заголовка."
 
-#: functions.php:248
+#: functions.php:245
 msgid "Preloaders"
 msgstr "Предзагрузка"
 
-#: functions.php:249
+#: functions.php:246
 msgid ""
 "show your visitors a stylish progress animation until the page is fully "
 "loaded."
 msgstr "покажите своим посетителям стильную анимацию загрузки."
 
-#: functions.php:253
+#: functions.php:250
 msgid "And"
 msgstr "и"
 
-#: functions.php:254
+#: functions.php:251
 msgid "tons of other cool features."
 msgstr "множество других интересных функций."
 
-#: functions.php:261
+#: functions.php:258
 msgid "Preview"
 msgstr "Просмотр"
 
-#: functions.php:268
+#: functions.php:265
 msgid "Thank you for choosing Bento!"
 msgstr "Благодарим Вас за выбор Bento!"
 
-#: functions.php:274
+#: functions.php:271
 msgid "Rate the theme"
 msgstr "Оценить тему"
 
-#: functions.php:279
+#: functions.php:276
 msgid ""
 "Bento is a powerful yet user-friendly WordPress theme intended for use in "
 "the broadest range of web projects. It boasts premium-grade design and is "
@@ -191,602 +190,61 @@ msgstr ""
 "образом. Эта тема постоянно поддерживается его автором и предлагает "
 "регулярные бесплатные обновления с исправлениями и дополнительными функциями."
 
-#: functions.php:286
+#: functions.php:283
 msgid "Supercharge your Bento"
 msgstr "Супер зарядка вашей Bento"
 
-#: functions.php:288 includes/customizer/customizer.php:52
+#: functions.php:285 includes/customizer/customizer.php:52
 msgid "Get the Expansion Pack"
 msgstr "Пакет Расширений"
 
-#: functions.php:605
+#: functions.php:591
 msgid "Sidebar"
 msgstr "Сайдбар"
 
-#: functions.php:614
+#: functions.php:600
 msgid "Footer"
 msgstr "Подвал"
 
-#: functions.php:624
+#: functions.php:610
 msgid "WooCommerce"
 msgstr "WooCommerce"
 
-#: functions.php:638
+#: functions.php:624
 msgid "Submit Comment"
 msgstr "Отправить комментарий"
 
-#: functions.php:645
+#: functions.php:631
 msgid "Comment"
 msgstr "Комментарий"
 
-#: functions.php:671 functions.php:676
+#: functions.php:657 functions.php:662
 msgid "Name"
 msgstr "Имя"
 
-#: functions.php:684 functions.php:689
+#: functions.php:670 functions.php:675
 msgid "Email"
 msgstr "Эл. почта"
 
-#: functions.php:715
+#: functions.php:707
 msgid "Page Builder"
 msgstr "Конструктор страниц"
 
-#: functions.php:720
+#: functions.php:712
 msgid "Page Builder: Extra Elements"
 msgstr "Конструктор: Доп. Элементы"
 
-#: functions.php:744 includes/template-tags.php:489
-#: includes/template-tags.php:494 includes/template-tags.php:497
+#: functions.php:736 includes/template-tags.php:491
+#: includes/template-tags.php:499
 msgid "Continue reading"
 msgstr "Продолжить"
 
-#: functions.php:1064
-msgid "General Settings"
-msgstr "Общие настройки"
-
-#: functions.php:1073
-msgid "Sidebar layout"
-msgstr "Расположение боковой панели"
-
-#: functions.php:1074
-msgid "Choose whether to display a sidebar and on which side of the content"
-msgstr "Выберите, следует ли отображать боковую панель, и на какой стороне"
-
-#: functions.php:1078
-msgid "Right Sidebar (default)"
-msgstr "Боковая панель справа (по умолчанию)"
-
-#: functions.php:1079
-msgid "Left Sidebar"
-msgstr "Боковая панель слева"
-
-#: functions.php:1080
-msgid "Full Width"
-msgstr "Полная ширина"
-
-#: functions.php:1087
-msgid "Page background color"
-msgstr "Цвет фона страницы"
-
-#: functions.php:1088
-msgid ""
-"Choose the background color for current page/post. This will override any "
-"settings in the Theme Options"
-msgstr ""
-"Выберите цвет фона для текущей страницы/записи. Данная настройка "
-"переопределяет любые настройки в настройках шаблона"
-
-#: functions.php:1095
-msgid "Hide featured image"
-msgstr "Скрыть миниатюру"
-
-#: functions.php:1096
-msgid ""
-"Check this option if you DO NOT want to display the featured image "
-"(thumbnail) on the page; it will still be used for the corresponding tile on "
-"the \"columns\" or \"rows\" grid pages."
-msgstr ""
-"Отметьте, если не хотите отображать миниатюру на странице; она по-прежнему "
-"будет использоваться на соответствующей верстке, плитке \"колонок\" и \"строк"
-"\"."
-
-#: functions.php:1104
-msgid "Hide title"
-msgstr "Скрыть заголовок"
-
-#: functions.php:1105
-msgid "Check this option if you DO NOT want to display the title on the page"
-msgstr ""
-"Установите этот флажок, если НЕ ХОТИТЕ отображать заголовок на странице"
-
-#: functions.php:1112
-msgid "Uppercase title"
-msgstr "Заголовок прописными буквами"
-
-#: functions.php:1113
-msgid ""
-"Check this option if you want the page title to be entirely in uppercase "
-"(useful for landing pages)."
-msgstr ""
-"Установите этот флажок, если хотите, чтобы заголовок страницы был полностью "
-"в верхнем регистре (полезно для целевых страниц)."
-
-#: functions.php:1120
-msgid "Title position"
-msgstr "Позиция заголовка"
-
-#: functions.php:1121
-msgid "Choose the position of the title; default is left-aligned."
-msgstr "Выберите положение заголовка; значение по умолчанию — по левому краю."
-
-#: functions.php:1125
-msgid "Left-aligned (default)"
-msgstr "Слева (по умолчанию)"
-
-#: functions.php:1126
-msgid "Centered"
-msgstr "По центру"
-
-#: functions.php:1133
-msgid "Title color"
-msgstr "Цвет заголовка"
-
-#: functions.php:1134
-msgid ""
-"Choose the text color for the title of this post. This will override any "
-"settings in the Theme Options"
-msgstr ""
-"Выберите цвет заголовка для этой записи. Это значение переделает любые "
-"настройки темы"
-
-#: functions.php:1141
-msgid "Subtitle (excerpt) color"
-msgstr "Цвет отрывка/подзаголовка"
-
-#: functions.php:1142
-msgid ""
-"Choose the text color for the subtitle of this page, sourced from the "
-"Excerpt field; default is #999999 (light grey)."
-msgstr ""
-"Выберите цвет текста для подзаголовка этой страницы; значение по умолчанию — "
-"#999999 (светло-серый)."
-
-#: functions.php:1153
-msgid "Page Header Settings"
-msgstr "Настройки шапки страницы"
-
-#: functions.php:1162
-msgid "Activate extended header"
-msgstr "Активировать расширенную шапку"
-
-#: functions.php:1163
-msgid ""
-"Check this box to enable extended header options such as header image and "
-"call-to-action-buttons."
-msgstr ""
-"Установите этот флажок, чтобы включить расширенные параметры шапки, такие "
-"как фоновое изображение и целевые кнопки."
-
-#: functions.php:1170
-msgid "Header height"
-msgstr "Высота шапки"
-
-#: functions.php:1171
-msgid ""
-"Choose the title top and bottom padding, which will affect the header "
-"height; default is 10%"
-msgstr ""
-"Выберите верхний и нижний отступы для заголовка; это повлияет на высоту "
-"шапки; значения по умолчанию - 10%"
-
-#: functions.php:1175 functions.php:1233 functions.php:1425
-msgid "Choose value"
-msgstr "Выберите значение"
-
-#: functions.php:1177
-msgid "10% (default)"
-msgstr "10% (по умолчанию)"
-
-#: functions.php:1188
-msgid "Header image"
-msgstr "Изображение фона шапки"
-
-#: functions.php:1189
-msgid ""
-"Upload the image to serve as the header; recommended size is 1400x300 pixels "
-"and above, yet mind the file size - excessively large images may worsen user "
-"experience"
-msgstr ""
-"Закачайте изображение для использования в шапке страницы; рекомендуемый "
-"размер - 1400х300 пикселей и больше, однако обращайте внимание на размер "
-"файла - крупные изображения могут ухудшить скорость загрузки страницы"
-
-#: functions.php:1198
-msgid "Header video"
-msgstr "Видео-фон шапки"
-
-#: functions.php:1199
-msgid ""
-"Upload the video file to be used as header background; if this is active, "
-"the header image will serve as a placeholder for mobile devices; .mp4 files "
-"are recommended, but you can also use .ogv and .webm formats. Please mind "
-"the file size - excessively large images may worsen user experience"
-msgstr ""
-"Закачайте видеофайл для использования в шапке страницы; в этом случае "
-"изображение шапки (см. опцию выше) будет использовано вместо видео на "
-"мобильных устройствах; рекомендованный формат - mp4, однако Вы также можете "
-"использовать .ogv и .webm форматы. Обращайте внимание на размер файла - "
-"крупные видео могут ухудшить скорость загрузки страницы"
-
-#: functions.php:1207
-msgid "Header image overlay color"
-msgstr "Цвет полупрозрачного фона поверх изображения шапки"
-
-#: functions.php:1208
-msgid ""
-"Choose the color for the image overlay, designed to make the title text "
-"stand out more clearly"
-msgstr ""
-"Выберите цвет фона поверх изображения, используемого для лучшей "
-"читабельности текста заголовка"
-
-#: functions.php:1215
-msgid "Header image overlay opacity"
-msgstr "Степень прозрачности полупрозрачного фона поверх изображения шапки"
-
-#: functions.php:1216
-msgid ""
-"Choose the opacity level for the image overlay; 0.0 is fully transparent, "
-"1.0 is fully opaque, default is 0.3"
-msgstr ""
-"Выберите степень прозрачности фона шапки; 0.0 соответствует полностью "
-"прозрачному, 1.0 - полностью непрозрачному, значение по умолчанию - 0.3"
-
-#: functions.php:1223
-msgid "0.3 (default)"
-msgstr "0.3 (по умолчанию)"
-
-#: functions.php:1238
-msgid "Transparent website header"
-msgstr "Сделать шапку сайта (логотип и меню) прозрачной на этой странице"
-
-#: functions.php:1239
-msgid ""
-"Check this option to make the website header (the top area with the menu and "
-"the logo) look like a transparent overlay on top of the header image on this "
-"page."
-msgstr ""
-"Отметьте эту опцию, чтобы сделать шапку сайта (верхняя область с меню и "
-"логотипом) прозрачной"
-
-#: functions.php:1246
-msgid "Website menu color on this page"
-msgstr "Цвет текстов в меню на этой странице"
-
-#: functions.php:1247
-msgid ""
-"Choose the color for the website menu on this page (useful for the "
-"transparent header)."
-msgstr ""
-"Выберите цвет текстов в меню сайта на этой странице (полезно для прозрачной "
-"шапки)."
-
-#: functions.php:1254
-msgid "Website menu mouse-hover color on this page"
-msgstr "Цвет текстов в меню на этой странице при наведении мыши"
-
-#: functions.php:1255
-msgid ""
-"Choose the mouse-over color for the website menu on this page (useful for "
-"the transparent header)."
-msgstr ""
-"Выберите цвет текстов в меню сайта на этой странице при наведении мыши "
-"(полезно для прозрачной шапки)."
-
-#: functions.php:1266
-msgid "Map Header"
-msgstr "Карта в шапке страницы"
-
-#: functions.php:1275
-msgid "Activate Google Maps header"
-msgstr "Активировать карту Google Maps в шапке страницы"
-
-#: functions.php:1276
-msgid ""
-"Check this box to enable Google Maps header; note that this will deactivate "
-"the extended header image/video."
-msgstr ""
-"Установите этот флажок для включения фона шапки страницы в виде Google Maps; "
-"обратите внимание, что эта опция отключает расширенную шапки в виде "
-"изображения/видео."
-
-#: functions.php:1282
-#, php-format
-msgid ""
-"Input the API key for this instance of Maps - you can find detailed "
-"instructions on generating your API key <a href=\"%s\" target=\"_blank"
-"\">here</a>."
-msgstr ""
-"Введите Ваш личный API-ключ для Google-карт - детальные инструкции по "
-"получению бесплатного API-ключа можно получить <a href=\"%s\" target=\"_blank"
-"\">здесь</a>."
-
-#: functions.php:1285
-msgid "Google Maps API key"
-msgstr "API-ключ для Google-карт"
-
-#: functions.php:1293
-msgid "Map center location"
-msgstr "Точка центровки карты"
-
-#: functions.php:1294
-msgid ""
-"Input the address (country, city, or exact address) of the location on which "
-"to center the map."
-msgstr ""
-"Введите адрес (страну, город или точный адрес) места, которое будет "
-"находиться по центру карты."
-
-#: functions.php:1301
-msgid "Map height"
-msgstr "Высота карты"
-
-#: functions.php:1302
-msgid "Select the height of the map, in pixels."
-msgstr "Выберите высоту карты в пикселях."
-
-#: functions.php:1309
-msgid "400 (default)"
-msgstr "400 (по умолчанию)"
-
-#: functions.php:1319
-msgid "Map zoom level"
-msgstr "Масштаб карты"
-
-#: functions.php:1320
-msgid ""
-"Choose the zoom level for the map, 1 being entire world and 20 being "
-"individual buildings."
-msgstr ""
-"Выберите уровень масштабирования для карты, от 0 (весь мир) до 20 (отдельные "
-"здания)."
-
-#: functions.php:1338
-msgid "15 (default)"
-msgstr "15 (по умолчанию)"
-
-#: functions.php:1349
-#, php-format
-msgid ""
-"You can insert the code for custom map styling here; check <a href=\"%s\" "
-"target=\"_blank\">Snazzymaps.com</a> for ready-made snippets: when on the "
-"page of the particular style, click on the \"Copy\" button or simply select "
-"and copy the code under the \"Javascript Style Array\" heading."
-msgstr ""
-"Здесь можно вставить код для персонализации внешнего вида карты, посетите <a "
-"href=\"%s\" target=\"_blank\">Snazzymaps.com</a> для готовых фрагментов кода "
-"стилей: на странице конкретного стиля нажмите на кнопку «Копировать» или "
-"просто выделите и скопируйте код под заголовком «Javascript Style Array»."
-
-#: functions.php:1352
-msgid "Map custom style"
-msgstr "Пользовательский стиль карты"
-
-#: functions.php:1364
-msgid ""
-"Masonry Tile Settings / Only for displaying on \"Grid\" page template with "
-"\"Masonry\" grid type"
-msgstr ""
-"Настройки плитки данной записи для сеток / Только для страниц с шаблоном "
-"\"Сетка\" с типом сетки \"Кладка\""
-
-#: functions.php:1373
-msgid "Tile size"
-msgstr "Размер плитки"
-
-#: functions.php:1374
-msgid ""
-"Choose the size of the tile relative to the default 1x1 tile (defined by the "
-"number of columns in the grid)"
-msgstr ""
-"Выбрать размер плитки по отношению к 1 x 1 (ширина определяется "
-"автоматически количеством столбцов в сетке)"
-
-#: functions.php:1378
-msgid "1x1 (default)"
-msgstr "1 x 1 (по умолчанию)"
-
-#: functions.php:1388
-msgid "Tile overlay color"
-msgstr "Цвет наложенного фона плитки"
-
-#: functions.php:1389
-msgid ""
-"Choose the color for an overlay for the tile background image; default is "
-"#666666 (grey)"
-msgstr ""
-"Выберите цвет наложения для плитки, поверх фонового изображения; значение по "
-"умолчанию — #666666 (серый)"
-
-#: functions.php:1398
-msgid "Tile image"
-msgstr "Изображение плитки"
-
-#: functions.php:1399
-msgid ""
-"Upload the image to be used in the tile; if this field is empty, the "
-"featured image (thumbnail) will be used."
-msgstr ""
-"Загрузите изображение для использования в качестве фона плитки; если это "
-"поле оставлено пустым, будет использоваться миниатюра записи."
-
-#: functions.php:1407
-msgid "Tile overlay opacity"
-msgstr "Степень прозрачности наложенного фона плитки"
-
-#: functions.php:1408
-msgid ""
-"Select the opacity level for an overlay for the tile background image, 0 is "
-"fully transparent (default is 0.6)"
-msgstr ""
-"Выберите уровень прозрачности для наложенного фона плитки, где 0 полностью "
-"прозрачный, а 1 - полностью непрозрачный (значение по умолчанию — 0.6)"
-
-#: functions.php:1418
-msgid "0.6 (default)"
-msgstr "0.6 (по умолчанию)"
-
-#: functions.php:1430
-msgid "Tile text color"
-msgstr "Цвет текста плитки"
-
-#: functions.php:1431
-msgid ""
-"Choose the color for the text inside the tile; default is #ffffff (white)"
-msgstr ""
-"Выбрать цвет для текста внутри плитки; значение по умолчанию — #ffffff "
-"(белый)"
-
-#: functions.php:1439
-msgid "Tile text size"
-msgstr "Размер текста плитки"
-
-#: functions.php:1440
-msgid "Choose the text size for the tile; default is 16px"
-msgstr "Выбрать размер текста для плитки; значение по умолчанию — 16px"
-
-#: functions.php:1447
-msgid "16 (default)"
-msgstr "16 (по умолчанию)"
-
-#: functions.php:1461
-msgid "Grid Settings"
-msgstr "Настройки сетки"
-
-#: functions.php:1470
-msgid "Grid mode"
-msgstr "Тип сетки"
-
-#: functions.php:1471
-msgid "Choose which grid type to use on this page"
-msgstr "Выберите, какой тип сетки будет использоваться на этой странице"
-
-#: functions.php:1484
-msgid "Number of columns"
-msgstr "Количество столбцов"
-
-#: functions.php:1485
-msgid ""
-"Select the number of columns in the grid or number of base tiles per line in "
-"masonry"
-msgstr "Выберите количество базовых столбцов в сетке"
-
-#: functions.php:1491
-msgid "3 (default)"
-msgstr "3 (по умолчанию)"
-
-#: functions.php:1502 functions.php:1511
-msgid "Content types"
-msgstr "Типы содержимого"
-
-#: functions.php:1512
-#, php-format
-msgid "Install the %s to use the \"project\" (portfolio) content type"
-msgstr "Установите %s чтобы использовать тип содержимого «проект» (портфолио)"
-
-#: functions.php:1521
-msgid "Items per page"
-msgstr "Количество элементов сетки на одной странице"
-
-#: functions.php:1522
-msgid ""
-"Input the number of items to display per page; default is the number set in "
-"\"Settings - Reading\" admin section"
-msgstr ""
-"Введите количество элементов, отображаемых на странице; по умолчанию "
-"используется номер в разделе «Параметры – Чтение» в меню администратора"
-
-#: functions.php:1530
-msgid "Item margins"
-msgstr "Отступы элементов сетки"
-
-#: functions.php:1531
-msgid "Input the margin width in pixels (default is 10)"
-msgstr "Введите ширину отступов в пикселях (по умолчанию — 10)"
-
-#: functions.php:1539
-msgid "Hide tile overlays"
-msgstr "Скрыть заголовки и наложенный фон на плитках"
-
-#: functions.php:1540
-msgid "Only display tile overlays in masonry on mouse hover"
-msgstr ""
-"Отображать внутренние элементы плиток в типе сетки \"кладка\" только при "
-"наведении мыши"
-
-#: functions.php:1547
-msgid "Force full width"
-msgstr "Растянуть сетку на всю ширину страницы"
-
-#: functions.php:1548
-msgid ""
-"Check this option if you want the grid to stretch the entire width of the "
-"screen"
-msgstr ""
-"Установите этот флажок, если хотите чтобы сетка всегда занимала полную "
-"ширину страницы"
-
-#: functions.php:1555
-msgid "Load items on same page"
-msgstr "Загружать новые записи на той же странице"
-
-#: functions.php:1556
-msgid ""
-"Replace the standard pagination with a button which loads next items without "
-"refreshing the page"
-msgstr ""
-"Заменить стандартное разбиение на страницы кнопкой, которая загружает "
-"следующие записи без обновления страницы"
-
-#: functions.php:1567
-msgid "SEO Settings"
-msgstr "Настройки SEO"
-
-#: functions.php:1576
-msgid "Meta title"
-msgstr "Мета-заголовок"
-
-#: functions.php:1577
-msgid ""
-"Input the meta title - the text to be used by search engines as well as "
-"browser tabs (recommended max length - 60 symbols); the post title will be "
-"used by default if this field is empty."
-msgstr ""
-"Введите мета-заголовок - текст, используемый поисковыми системами и "
-"отображаемый во вкладках браузеров (рекомендованная длина - 60 символов); "
-"если это поле оставить пустым, по умолчанию будет использован заголовок "
-"записи."
-
-#: functions.php:1584
-msgid "Meta description"
-msgstr "Мета-описание"
-
-#: functions.php:1585
-msgid ""
-"Input the meta description - the text to be used by search engines on search "
-"result pages (recommended max length - 160 symbols); the first part of the "
-"post body will be used by default is this field is left blank."
-msgstr ""
-"Введите мета-описание - текст, используемый поисковыми системами на "
-"страницах выдач (рекоммендованная макс. длина - 160 символов); если это поле "
-"оставить пустым, начало текста записи будет использовано по умолчанию."
-
-#: functions.php:1698
+#: functions.php:1102
 msgctxt "placeholder"
 msgid "Search Products&hellip;"
 msgstr "Поиск продуктов"
 
-#: functions.php:1698
+#: functions.php:1102
 msgctxt "label"
 msgid "Search for:"
 msgstr "Искать:"
@@ -820,31 +278,31 @@ msgstr ""
 "Данная настройка имеет эффект только при режиме разметки сайта \"в контейнере"
 "\" в разделе \"Макет сайта\"."
 
-#: includes/customizer/customizer.php:135
+#: includes/customizer/customizer.php:136
 msgid "Get Expansion Pack"
 msgstr "Пакет Расширений"
 
-#: includes/customizer/customizer.php:140
+#: includes/customizer/customizer.php:141
 msgid "Rate Bento (thanks!)"
 msgstr "Оцените тему (спасибо!)"
 
-#: includes/customizer/customizer.php:145
+#: includes/customizer/customizer.php:146
 msgid "View theme manual"
 msgstr "Посмотрите документацию"
 
-#: includes/customizer/customizer.php:150
+#: includes/customizer/customizer.php:151
 msgid "Visit support forum"
 msgstr "Посетите форум поддержки"
 
-#: includes/customizer/customizer.php:163
+#: includes/customizer/customizer.php:164
 msgid "Help & Expansion Pack"
 msgstr "Помощь и Доп Пакет"
 
-#: includes/customizer/customizer.php:206
+#: includes/customizer/customizer.php:207
 msgid "Logo for mobile devices (optional)"
 msgstr "Логотип для мобильных (необязательно)"
 
-#: includes/customizer/customizer.php:207
+#: includes/customizer/customizer.php:208
 msgid ""
 "Upload the image to be used as the logo on smartphones and tablets (i.e. all "
 "devices with screens smaller than 1280px). Leave this blank to use the "
@@ -855,11 +313,25 @@ msgstr ""
 "пикселей). Оставьте это поле пустым чтобы использовать то же изображение, "
 "что и выше."
 
-#: includes/customizer/customizer.php:227
+#: includes/customizer/customizer.php:231
+msgid "30 (default)"
+msgstr ""
+
+#: includes/customizer/customizer.php:236
+msgid "Logo padding"
+msgstr ""
+
+#: includes/customizer/customizer.php:237
+msgid ""
+"Set the top and bottom padding (extra space) for the logo, in pixels; "
+"default is 30."
+msgstr ""
+
+#: includes/customizer/customizer.php:256
 msgid "Copyright message in the footer"
 msgstr "Настройка авторских прав в подвале"
 
-#: includes/customizer/customizer.php:228
+#: includes/customizer/customizer.php:257
 msgid ""
 "Use this field to add your own message instead of the theme link in the "
 "footer."
@@ -867,15 +339,15 @@ msgstr ""
 "Используйте это поле, чтобы добавить ваше собственное сообщение в подвал "
 "сайта."
 
-#: includes/customizer/customizer.php:238
+#: includes/customizer/customizer.php:267
 msgid "Site Elements"
 msgstr "Элементы сайта"
 
-#: includes/customizer/customizer.php:256
+#: includes/customizer/customizer.php:285
 msgid "Hide author block below posts"
 msgstr "Скрыть информацию об авторе в записях"
 
-#: includes/customizer/customizer.php:257
+#: includes/customizer/customizer.php:286
 msgid ""
 "Check this option to stop displaying the author information in blog posts, "
 "below the content."
@@ -883,11 +355,11 @@ msgstr ""
 "Установите этот флажок, чтобы не отображать сведения об авторе записи, под "
 "содержимым."
 
-#: includes/customizer/customizer.php:274
+#: includes/customizer/customizer.php:303
 msgid "Load posts on the same page in blog"
 msgstr "Загружать новые записи на той же странице в блоге"
 
-#: includes/customizer/customizer.php:275
+#: includes/customizer/customizer.php:304
 msgid ""
 "Enable this to replace the standard blog pagination with a \"Load more\" "
 "button that does not reload the page."
@@ -896,11 +368,11 @@ msgstr ""
 "страницам в блоге на кнопку «Загрузить больше», которая будет показывать "
 "более ранние записи, не перезагружая страницу."
 
-#: includes/customizer/customizer.php:292
+#: includes/customizer/customizer.php:321
 msgid "Fix header on top of page on scroll"
 msgstr "\"Липкая\" шапка при прокрутке"
 
-#: includes/customizer/customizer.php:293
+#: includes/customizer/customizer.php:322
 msgid ""
 "Check this option if you wish to fix the header to the top of the screen "
 "while the website is being scrolled."
@@ -908,21 +380,21 @@ msgstr ""
 "Установите этот флажок, если хотите чтобы шапка страницы оставалась видна в "
 "верхней части экрана при прокрутке веб-сайта."
 
-#: includes/customizer/customizer.php:310
+#: includes/customizer/customizer.php:339
 msgid "Hide submenu items in mobile menu"
 msgstr "Не показывать пункты подменю в меню сайта на мобильных устройствах"
 
-#: includes/customizer/customizer.php:311
+#: includes/customizer/customizer.php:340
 msgid "Check this option to only display top-level items in the mobile menu."
 msgstr ""
 "Установите этот флажок для отображения только элементов верхнего уровня в "
 "мобильных меню."
 
-#: includes/customizer/customizer.php:334
+#: includes/customizer/customizer.php:363
 msgid "Number of products per shop page (WooCommerce only)"
 msgstr "Количество товаров на странице магазина (для WooCommerce)"
 
-#: includes/customizer/customizer.php:335
+#: includes/customizer/customizer.php:364
 msgid ""
 "Indicate the number of products to be displayed per page in the WooCommerce "
 "shop page; default is 12. Note that the WooCommerce plugin is not part of "
@@ -933,11 +405,11 @@ msgstr ""
 "бесплатный плагин WooCommerce не является частью шаблона, и его необходимо "
 "установить отдельно."
 
-#: includes/customizer/customizer.php:358
+#: includes/customizer/customizer.php:387
 msgid "Number of columns on the shop page (WooCommerce only)"
 msgstr "Количество столбцов на странице магазина (для WooCommerce)"
 
-#: includes/customizer/customizer.php:359
+#: includes/customizer/customizer.php:388
 msgid ""
 "Input the number of columns for the WooCommerce shop page; default is 4; "
 "Note that the WooCommerce plugin is not part of the theme needs to be "
@@ -947,36 +419,36 @@ msgstr ""
 "умолчанию — 4. Обратите внимание, что бесплатный плагин WooCommerce не "
 "является частью шаблона, и его необходимо установить отдельно."
 
-#: includes/customizer/customizer.php:368
+#: includes/customizer/customizer.php:397
 msgid "Site Layout"
 msgstr "Макет сайта"
 
-#: includes/customizer/customizer.php:390
+#: includes/customizer/customizer.php:419
 msgid "1080 (default)"
 msgstr "1080 (по умолчанию)"
 
-#: includes/customizer/customizer.php:396
+#: includes/customizer/customizer.php:425
 msgid "Content width"
 msgstr "Ширина содержимого сайта"
 
-#: includes/customizer/customizer.php:397
+#: includes/customizer/customizer.php:426
 msgid "Set the width of the content container, in pixels; default is 1080."
 msgstr ""
 "Управляет шириной содержимого, в пикселях; значение по умолчанию - 1080."
 
-#: includes/customizer/customizer.php:415
+#: includes/customizer/customizer.php:444
 msgid "Wide (default)"
 msgstr "Широкий (по умолчанию)"
 
-#: includes/customizer/customizer.php:416
+#: includes/customizer/customizer.php:445
 msgid "Boxed"
 msgstr "В контейнере"
 
-#: includes/customizer/customizer.php:418
+#: includes/customizer/customizer.php:447
 msgid "Website layout"
 msgstr "Разметка сайта"
 
-#: includes/customizer/customizer.php:419
+#: includes/customizer/customizer.php:448
 msgid ""
 "Choose the layout of the website: - \"wide\" means that the full-width "
 "elements such as the header will stretch the entire width of the browser "
@@ -990,27 +462,27 @@ msgstr ""
 "ограничен до максимальной ширины, оставляя пространство по краям между "
 "содержимым и краями окна браузера."
 
-#: includes/customizer/customizer.php:437
+#: includes/customizer/customizer.php:466
 msgid "Top, right-aligned (default)"
 msgstr "Сверху, справа (по умолчанию)"
 
-#: includes/customizer/customizer.php:438
+#: includes/customizer/customizer.php:467
 msgid "Top, centered"
 msgstr "Сверху, по центру"
 
-#: includes/customizer/customizer.php:439
+#: includes/customizer/customizer.php:468
 msgid "Top, hamburger button + overlay"
 msgstr "Сверху, с кнопкой-гамбургером"
 
-#: includes/customizer/customizer.php:440
+#: includes/customizer/customizer.php:469
 msgid "Left side"
 msgstr "В панели слева"
 
-#: includes/customizer/customizer.php:442
+#: includes/customizer/customizer.php:471
 msgid "Menu layout"
 msgstr "Расположение меню сайта"
 
-#: includes/customizer/customizer.php:443
+#: includes/customizer/customizer.php:472
 msgid ""
 "Choose the way the primary menu is displayed: - \"top, right-aligned\" is "
 "the classic header with menu on the right (this is default); \"top, centered"
@@ -1030,15 +502,15 @@ msgstr ""
 "навигации; \"в панели слева\" показывает меню и логотип в отдельной панели "
 "слева от содержимого сайта."
 
-#: includes/customizer/customizer.php:452
+#: includes/customizer/customizer.php:481
 msgid "Fonts and Typography"
 msgstr "Шрифты"
 
-#: includes/customizer/customizer.php:473
+#: includes/customizer/customizer.php:502
 msgid "Body font (Google Fonts)"
 msgstr "Шрифт содержимого (Google шрифты)"
 
-#: includes/customizer/customizer.php:474
+#: includes/customizer/customizer.php:503
 #, php-format
 msgid ""
 "Input Google Font name for the body font, e.g. Open Sans, exactly as spelled "
@@ -1050,25 +522,25 @@ msgstr ""
 "шрифтов. Вы можете ознакомиться с полным выбором Google-шрифтов здесь: %s. "
 "Значение по умолчанию — Open Sans."
 
-#: includes/customizer/customizer.php:495
-#: includes/customizer/customizer.php:561
+#: includes/customizer/customizer.php:524
+#: includes/customizer/customizer.php:590
 msgid "14 (default)"
 msgstr "14 (по умолчанию)"
 
-#: includes/customizer/customizer.php:501
+#: includes/customizer/customizer.php:530
 msgid "Body text size"
 msgstr "Размер текста содержимого"
 
-#: includes/customizer/customizer.php:502
+#: includes/customizer/customizer.php:531
 msgid "Choose the font size for the body text; default is 14px."
 msgstr ""
 "Выбрать размер шрифта для содержимого сайта; значение по умолчанию — 14px."
 
-#: includes/customizer/customizer.php:520
+#: includes/customizer/customizer.php:549
 msgid "Headings font (Google Fonts)"
 msgstr "Шрифт заголовков (Google шрифты)"
 
-#: includes/customizer/customizer.php:521
+#: includes/customizer/customizer.php:550
 #, php-format
 msgid ""
 "Input Google Font name for the headings font, e.g. Open Sans, exactly as "
@@ -1080,11 +552,11 @@ msgstr ""
 "шрифтов. Вы можете ознакомиться с полным выбором Google-шрифтов здесь: %s. "
 "Значение по умолчанию — Open Sans."
 
-#: includes/customizer/customizer.php:539
+#: includes/customizer/customizer.php:568
 msgid "Menu font (Google Fonts)"
 msgstr "Шрифт меню (Google шрифты)"
 
-#: includes/customizer/customizer.php:540
+#: includes/customizer/customizer.php:569
 #, php-format
 msgid ""
 "Input Google Font name for the menu font, e.g. Montserrat, exactly as "
@@ -1096,34 +568,34 @@ msgstr ""
 "Google шрифтов. Вы можете ознакомиться с полным выбором Google-шрифтов "
 "здесь: %s. Значение по умолчанию — Montserrat."
 
-#: includes/customizer/customizer.php:567
+#: includes/customizer/customizer.php:596
 msgid "Menu text size"
 msgstr "Размер текста меню сайта"
 
-#: includes/customizer/customizer.php:568
+#: includes/customizer/customizer.php:597
 msgid "Choose the font size for the menu text; default is 14px."
 msgstr "Выбрать размер шрифта для меню сайта; значение по умолчанию — 14px."
 
-#: includes/customizer/customizer.php:586
+#: includes/customizer/customizer.php:615
 msgid "Remove uppercase from menu text"
 msgstr "Отображать пункты меню в обычном регистре"
 
-#: includes/customizer/customizer.php:587
+#: includes/customizer/customizer.php:616
 msgid ""
 "Check this option to render the menu items in sentence case (normal caps)."
 msgstr ""
 "Установите этот флажок, чтобы не переводить пункты меню в верхний регистр "
 "(все заглавные буквы)."
 
-#: includes/customizer/customizer.php:596
+#: includes/customizer/customizer.php:625
 msgid "Header Colors"
 msgstr "Цвета шапки сайта"
 
-#: includes/customizer/customizer.php:615
+#: includes/customizer/customizer.php:644
 msgid "Header background color"
 msgstr "Цвет фона шапки"
 
-#: includes/customizer/customizer.php:616
+#: includes/customizer/customizer.php:645
 msgid ""
 "Choose the background color for the top section of the website; default is "
 "#ffffff (white)."
@@ -1131,11 +603,11 @@ msgstr ""
 "Выберите цвет фона для шапки (верхней части) веб-сайта; значение по "
 "умолчанию — #ffffff (белый)."
 
-#: includes/customizer/customizer.php:635
+#: includes/customizer/customizer.php:664
 msgid "Primary menu: background color"
 msgstr "Главное меню: цвет фона"
 
-#: includes/customizer/customizer.php:636
+#: includes/customizer/customizer.php:665
 msgid ""
 "Choose the background color of the overlay menu; default is #eeeeee (light-"
 "grey)."
@@ -1143,11 +615,11 @@ msgstr ""
 "Выберите цвет фона для текстов в главном меню сайта; значение по умолчанию - "
 "#eeeeee (светло-серый)."
 
-#: includes/customizer/customizer.php:655
+#: includes/customizer/customizer.php:684
 msgid "Primary menu: text color"
 msgstr "Главное меню: цвет текста"
 
-#: includes/customizer/customizer.php:656
+#: includes/customizer/customizer.php:685
 msgid ""
 "Choose the text color for the main navigation menu; this will also apply to "
 "mobile menu text color by default, if nothing is chosen in the respective "
@@ -1157,11 +629,11 @@ msgstr ""
 "применяться к цвету текста мобильного меню если ничего не выбрано в "
 "соответствующей опции ниже; значение по умолчанию — #333333 (темно-серый)."
 
-#: includes/customizer/customizer.php:675
+#: includes/customizer/customizer.php:704
 msgid "Primary menu: text color on hover"
 msgstr "Главное меню: цвет текста при наведении мыши"
 
-#: includes/customizer/customizer.php:676
+#: includes/customizer/customizer.php:705
 msgid ""
 "Choose which color menu items become on mouse hover; default is #00b285 "
 "(blue-green)."
@@ -1169,11 +641,11 @@ msgstr ""
 "Выберите цвет текста для главного меню при наведении мыши; значение по "
 "умолчанию — #00b285 (сине-зеленый)."
 
-#: includes/customizer/customizer.php:695
+#: includes/customizer/customizer.php:724
 msgid "Primary menu: item separators"
 msgstr "Главное меню: цвет разделительных линий"
 
-#: includes/customizer/customizer.php:696
+#: includes/customizer/customizer.php:725
 msgid ""
 "Choose the color for the separator lines in the primary menu; default is "
 "#eeeeee (light-grey)."
@@ -1181,11 +653,11 @@ msgstr ""
 "Выберите цвет разделительных линий для главного меню; значение по умолчанию "
 "— #eeeeee (светло-серый)."
 
-#: includes/customizer/customizer.php:715
+#: includes/customizer/customizer.php:744
 msgid "Primary menu: submenu background color"
 msgstr "Главное меню: цвет фона подменю"
 
-#: includes/customizer/customizer.php:716
+#: includes/customizer/customizer.php:745
 msgid ""
 "Choose the background color for the submenus; this will also apply to mobile "
 "menu background color by default, if nothing is chosen in the respective "
@@ -1195,11 +667,11 @@ msgstr ""
 "применяться к цвету фона мобильного меню если ничего не выбрано в "
 "соответствующей опции ниже; значение по умолчанию — #dddddd (серый)."
 
-#: includes/customizer/customizer.php:735
+#: includes/customizer/customizer.php:764
 msgid "Primary menu: submenu background color on hover"
 msgstr "Главное меню: цвет фона подменю при наведении мыши"
 
-#: includes/customizer/customizer.php:736
+#: includes/customizer/customizer.php:765
 msgid ""
 "Choose the color used as a background for submenu items on mouse hover; this "
 "will also apply to mobile menu hover background color by default, if nothing "
@@ -1210,11 +682,11 @@ msgstr ""
 "мыши если ничего не выбрано в соответствующей опции ниже; значение по "
 "умолчанию — #cccccc (серый)."
 
-#: includes/customizer/customizer.php:755
+#: includes/customizer/customizer.php:784
 msgid "Primary menu: submenu border color"
 msgstr "Главное меню: цвет разделителей подменю"
 
-#: includes/customizer/customizer.php:756
+#: includes/customizer/customizer.php:785
 msgid ""
 "Choose the color of submenu item borders; this will also apply to mobile "
 "menu border color by default, if nothing is chosen in the respective option "
@@ -1225,21 +697,21 @@ msgstr ""
 "ничего не выбрано в соответствующей опции ниже; значение по умолчанию — "
 "#cccccc (серый)."
 
-#: includes/customizer/customizer.php:775
+#: includes/customizer/customizer.php:804
 msgid "Primary menu: submenu text color"
 msgstr "Главное меню: цвет текста подменю"
 
-#: includes/customizer/customizer.php:776
+#: includes/customizer/customizer.php:805
 msgid "Choose the text color for the submenus; default is #333333 (dark-grey)."
 msgstr ""
 "Выберите цвет текста для подменю в главном меню; значение по умолчанию — "
 "#333333 (темно-серый)."
 
-#: includes/customizer/customizer.php:795
+#: includes/customizer/customizer.php:824
 msgid "Primary menu: submenu text color on hover"
 msgstr "Главное меню: цвет текста подменю при наведении мыши"
 
-#: includes/customizer/customizer.php:796
+#: includes/customizer/customizer.php:825
 msgid ""
 "Choose the mouse-hover text color for the submenus; default is #333333 (dark-"
 "grey)."
@@ -1247,11 +719,11 @@ msgstr ""
 "Выберите цвет текста при наведении мыши для подменю в главном меню; значение "
 "по умолчанию — #333333 (темно-серый)."
 
-#: includes/customizer/customizer.php:815
+#: includes/customizer/customizer.php:844
 msgid "Mobile menu: background color"
 msgstr "Мобильное меню: цвет фона"
 
-#: includes/customizer/customizer.php:816
+#: includes/customizer/customizer.php:845
 msgid ""
 "Choose the background color for the mobile menu; default is #dddddd (light-"
 "grey)."
@@ -1259,43 +731,43 @@ msgstr ""
 "Выберите цвет фона главного меню на мобильных устройствах ; значение по "
 "умолчанию - #dddddd (светло-серый)."
 
-#: includes/customizer/customizer.php:835
+#: includes/customizer/customizer.php:864
 msgid "Mobile menu: background color on hover"
 msgstr "Мобильное меню: цвет фона при наведении мыши"
 
-#: includes/customizer/customizer.php:836
+#: includes/customizer/customizer.php:865
 msgid "Choose the background color on hover; default is #cccccc (light-grey)."
 msgstr ""
 "Выберите цвет фона главного меню на мобильных устройствах при наведении "
 "мыши ; значение по умолчанию - #cccccc (светло-серый)."
 
-#: includes/customizer/customizer.php:855
+#: includes/customizer/customizer.php:884
 msgid "Mobile menu: border color"
 msgstr "Мобильное меню: цвет разделительных линий"
 
-#: includes/customizer/customizer.php:856
+#: includes/customizer/customizer.php:885
 msgid ""
 "Choose the border color for the mobile menu; default is #cccccc (light-grey)."
 msgstr ""
 "Выберите цвет разделительных линий в главном меню на мобильных устройствах ; "
 "значение по умолчанию - #сссссс (светло-серый)."
 
-#: includes/customizer/customizer.php:875
+#: includes/customizer/customizer.php:904
 msgid "Mobile menu: text color"
 msgstr "Мобильное меню: цвет текста"
 
-#: includes/customizer/customizer.php:876
+#: includes/customizer/customizer.php:905
 msgid ""
 "Choose the text color for the mobile menu; default is #333333 (dark-grey)."
 msgstr ""
 "Выберите цвет текста в главном меню на мобильных устройствах ; значение по "
 "умолчанию - #333333 (темно-серый)."
 
-#: includes/customizer/customizer.php:895
+#: includes/customizer/customizer.php:924
 msgid "Mobile menu: text color on hover"
 msgstr "Мобильное меню: цвет текста при наведении мыши"
 
-#: includes/customizer/customizer.php:896
+#: includes/customizer/customizer.php:925
 msgid ""
 "Choose the text color on mouse hover for the mobile menu; default is #333333 "
 "(dark-grey)."
@@ -1303,15 +775,15 @@ msgstr ""
 "Выберите цвет текста в главном меню при наведении мыши на мобильных "
 "устройствах ; значение по умолчанию - #333333 (темно-серый)."
 
-#: includes/customizer/customizer.php:906
+#: includes/customizer/customizer.php:935
 msgid "Content Colors"
 msgstr "Цвета элементов содержимого"
 
-#: includes/customizer/customizer.php:925
+#: includes/customizer/customizer.php:954
 msgid "Content area background color"
 msgstr "Цвет фона содержимого"
 
-#: includes/customizer/customizer.php:926
+#: includes/customizer/customizer.php:955
 msgid ""
 "Choose the background color for the main content area of the website; "
 "default is #f4f4f4 (light-grey)."
@@ -1319,11 +791,11 @@ msgstr ""
 "Выберите цвет фона для области основного содержимого веб-сайта; значение по "
 "умолчанию — #f4f4f4 (светло-серый)."
 
-#: includes/customizer/customizer.php:945
+#: includes/customizer/customizer.php:974
 msgid "Heading color"
 msgstr "Цвет заголовков"
 
-#: includes/customizer/customizer.php:946
+#: includes/customizer/customizer.php:975
 msgid ""
 "Choose the color of headings throughout the website; default is #333333 "
 "(dark-grey)."
@@ -1331,11 +803,11 @@ msgstr ""
 "Выберите цвет заголовков на веб-сайте; значение по умолчанию — #333333 "
 "(темно-серый)."
 
-#: includes/customizer/customizer.php:965
+#: includes/customizer/customizer.php:994
 msgid "Body text color"
 msgstr "Цвет текста содержимого"
 
-#: includes/customizer/customizer.php:966
+#: includes/customizer/customizer.php:995
 msgid ""
 "Choose the primary text color for the body of the website; default is "
 "#333333 (dark-grey)."
@@ -1343,11 +815,11 @@ msgstr ""
 "Выберите основной цвет текста для содержимого веб-сайта; значение по "
 "умолчанию — #333333 (темно-серый)."
 
-#: includes/customizer/customizer.php:985
+#: includes/customizer/customizer.php:1014
 msgid "Link text color"
 msgstr "Цвет ссылок"
 
-#: includes/customizer/customizer.php:986
+#: includes/customizer/customizer.php:1015
 msgid ""
 "Choose the color for the link text throughout the website; default is "
 "#00b285 (blue-green)."
@@ -1355,11 +827,11 @@ msgstr ""
 "Выберите цвет текста для ссылок в содержимом веб-сайта; значение по "
 "умолчанию — #00b285 (сине-зеленый)."
 
-#: includes/customizer/customizer.php:1005
+#: includes/customizer/customizer.php:1034
 msgid "Meta text color"
 msgstr "Цвет вспомогательных текстов"
 
-#: includes/customizer/customizer.php:1006
+#: includes/customizer/customizer.php:1035
 msgid ""
 "Pick the color for meta content such as post dates, comment counts, and post "
 "counts; default is #999999 (grey)."
@@ -1367,11 +839,11 @@ msgstr ""
 "Выберите цвет текста для вспомогательных элементов, таких как даты записей, "
 "количества комментариев и т.д.; значение по умолчанию — #999999 (серый)."
 
-#: includes/customizer/customizer.php:1025
+#: includes/customizer/customizer.php:1054
 msgid "Delimiter line color"
 msgstr "Цвет разделительных линий на сайте"
 
-#: includes/customizer/customizer.php:1026
+#: includes/customizer/customizer.php:1055
 msgid ""
 "Choose the color for delimiter lines, e.g. before comments, in sidebar "
 "widgets and in the shopping cart; also applies to in-text tables; default is "
@@ -1381,11 +853,11 @@ msgstr ""
 "боковой панели и в покупательской корзине; также применяется к таблицам в "
 "текстах содержимого; значение по умолчанию — #dddddd (светло-серый)."
 
-#: includes/customizer/customizer.php:1045
+#: includes/customizer/customizer.php:1074
 msgid "Input fields: background color"
 msgstr "Поля ввода: цвет фона"
 
-#: includes/customizer/customizer.php:1046
+#: includes/customizer/customizer.php:1075
 msgid ""
 "Choose the background color for input fields, such as comments and search; "
 "default is #e4e4e4 (light-grey)."
@@ -1393,11 +865,11 @@ msgstr ""
 "Выберите цвет фона для полей ввода, например полей в комментариях и поиске; "
 "значение по умолчанию — #e4e4e4 (светло-серый)."
 
-#: includes/customizer/customizer.php:1065
+#: includes/customizer/customizer.php:1094
 msgid "Input fields: text color"
 msgstr "Поля ввода: цвет текста"
 
-#: includes/customizer/customizer.php:1066
+#: includes/customizer/customizer.php:1095
 msgid ""
 "Choose the color for the text typed into input fields, such as comment "
 "forms; default is #333333 (dark-grey)."
@@ -1405,11 +877,11 @@ msgstr ""
 "Выберите цвет текста для полей ввода, например полей в комментариях и "
 "поиске; значение по умолчанию — #333333 (темно-серый)."
 
-#: includes/customizer/customizer.php:1085
+#: includes/customizer/customizer.php:1114
 msgid "Input fields: placeholder text color"
 msgstr "Поля ввода: цвет подсказки в пустом поле"
 
-#: includes/customizer/customizer.php:1086
+#: includes/customizer/customizer.php:1115
 msgid ""
 "Choose the placeholder text color for input fields, i.e. the text that "
 "appears in empty fields; default is #aaaaaa (grey)."
@@ -1417,11 +889,11 @@ msgstr ""
 "Выберите цвет текста для подсказок в полях ввода, например в комментариях и "
 "поиске; значение по умолчанию — #aaaaaa (серый)."
 
-#: includes/customizer/customizer.php:1105
+#: includes/customizer/customizer.php:1134
 msgid "Buttons color"
 msgstr "Цвет кнопок"
 
-#: includes/customizer/customizer.php:1106
+#: includes/customizer/customizer.php:1135
 msgid ""
 "Choose the color for buttons throughout the website; default is #00b285 "
 "(blue-green)."
@@ -1429,11 +901,11 @@ msgstr ""
 "Выберите цвет кнопок на сайте; значение по умолчанию — #00b285 (сине-"
 "зеленый)."
 
-#: includes/customizer/customizer.php:1125
+#: includes/customizer/customizer.php:1154
 msgid "Button color on hover"
 msgstr "Цвет кнопок при наведении мыши"
 
-#: includes/customizer/customizer.php:1126
+#: includes/customizer/customizer.php:1155
 msgid ""
 "Choose the color for buttons on mouse hover; default is #00906c (dark blue-"
 "green)."
@@ -1441,31 +913,31 @@ msgstr ""
 "Выберите цвет кнопок при наведении мыши; по умолчанию #00906c (темно-"
 "зеленый)."
 
-#: includes/customizer/customizer.php:1145
+#: includes/customizer/customizer.php:1174
 msgid "Button text color"
 msgstr "Цвет текста кнопок"
 
-#: includes/customizer/customizer.php:1146
+#: includes/customizer/customizer.php:1175
 msgid "Choose the color for button text; default is #ffffff (white)."
 msgstr ""
 "Выберите цвет для текста кнопок; значение по умолчанию — #ffffff (белый)"
 
-#: includes/customizer/customizer.php:1165
+#: includes/customizer/customizer.php:1194
 msgid "Button text color on hover"
 msgstr "Цвет текста кнопок при наведении мыши"
 
-#: includes/customizer/customizer.php:1166
+#: includes/customizer/customizer.php:1195
 msgid ""
 "Choose the color for button text on mouse hover; default is #ffffff (white)."
 msgstr ""
 "Выберите цвет для текста кнопок при наведении мыши; значение по умолчанию — "
 "#ffffff (белый)"
 
-#: includes/customizer/customizer.php:1185
+#: includes/customizer/customizer.php:1214
 msgid "Secondary button color"
 msgstr "Цвет дополнительных кнопок"
 
-#: includes/customizer/customizer.php:1186
+#: includes/customizer/customizer.php:1215
 msgid ""
 "Choose the color for secondary buttons, mainly for WooCommerce plugin, e.g. "
 "\"update basket\" and \"apply coupon\"; default is #999999 (grey)."
@@ -1474,11 +946,11 @@ msgstr ""
 "плагине WooCommerce (\"обновить корзину\", \"использовать купон\" и тд); "
 "значение по умолчанию — #999999 (серый)."
 
-#: includes/customizer/customizer.php:1205
+#: includes/customizer/customizer.php:1234
 msgid "Secondary button color on hover"
 msgstr "Цвет дополнительных кнопок при наведении мыши"
 
-#: includes/customizer/customizer.php:1206
+#: includes/customizer/customizer.php:1235
 msgid ""
 "Choose the color for secondary buttons on mouse hover; default is #777777 "
 "(grey)."
@@ -1486,11 +958,11 @@ msgstr ""
 "Выберите цвет дополнительных кнопок при наведении мыши; значение по "
 "умолчанию — #777777 (серый)."
 
-#: includes/customizer/customizer.php:1225
+#: includes/customizer/customizer.php:1254
 msgid "Secondary button text color"
 msgstr "Цвет текста дополнительных кнопок"
 
-#: includes/customizer/customizer.php:1226
+#: includes/customizer/customizer.php:1255
 msgid ""
 "Choose the text color for secondary buttons, mainly for WooCommerce plugin, "
 "e.g. \"update basket\" and \"apply coupon\"; default is #ffffff (white)."
@@ -1499,11 +971,11 @@ msgstr ""
 "применяющихся в плагине WooCommerce (\"обновить корзину\", \"использовать "
 "купон\" и тд); значение по умолчанию — #ffffff (белый)."
 
-#: includes/customizer/customizer.php:1245
+#: includes/customizer/customizer.php:1274
 msgid "Secondary button text color on hover"
 msgstr "Цвет текста дополнительных кнопок при наведении мыши"
 
-#: includes/customizer/customizer.php:1246
+#: includes/customizer/customizer.php:1275
 msgid ""
 "Choose the text color for secondary buttons on mouse hover; default is "
 "#ffffff (white)."
@@ -1511,15 +983,15 @@ msgstr ""
 "Выберите цвет для текста дополнительных кнопок при наведении мыши; значение "
 "по умолчанию — #ffffff (белый)"
 
-#: includes/customizer/customizer.php:1256
+#: includes/customizer/customizer.php:1285
 msgid "Footer Colors"
 msgstr "Цвета элементов подвала"
 
-#: includes/customizer/customizer.php:1275
+#: includes/customizer/customizer.php:1304
 msgid "Footer widget area background color"
 msgstr "Цвет фона области с виджетами в подвале сайта"
 
-#: includes/customizer/customizer.php:1276
+#: includes/customizer/customizer.php:1305
 msgid ""
 "Choose the background color for the footer widget area; default is #888888 "
 "(grey)."
@@ -1527,31 +999,31 @@ msgstr ""
 "Выберите цвет фона для области виджетами в нижней части сайта; значение по "
 "умолчанию — #888888 (серый)."
 
-#: includes/customizer/customizer.php:1295
+#: includes/customizer/customizer.php:1324
 msgid "Footer text color"
 msgstr "Цвет текста в подвале сайта"
 
-#: includes/customizer/customizer.php:1296
+#: includes/customizer/customizer.php:1325
 msgid "Choose the text color for the footer; default is #cccccc (light-grey)."
 msgstr ""
 "Выберите цвет текста области с виджетами в нижней части сайта ; значение по "
 "умолчанию - #сссссс (светло-серый)."
 
-#: includes/customizer/customizer.php:1315
+#: includes/customizer/customizer.php:1344
 msgid "Footer link color"
 msgstr "Цвет ссылок в подвале сайта"
 
-#: includes/customizer/customizer.php:1316
+#: includes/customizer/customizer.php:1345
 msgid "Choose the color for links in the footer; default is #ffffff (white)."
 msgstr ""
 "Выберите цвет ссылок в области с виджетами в нижней части сайта ; значение "
 "по умолчанию — #ffffff (белый)"
 
-#: includes/customizer/customizer.php:1335
+#: includes/customizer/customizer.php:1364
 msgid "Footer meta text color"
 msgstr "Цвет вспомогательных текстов в подвале сайта"
 
-#: includes/customizer/customizer.php:1336
+#: includes/customizer/customizer.php:1365
 msgid ""
 "Choose the color meta text, such as dates and post counts, in the footer; "
 "default is #aaaaaa (light-grey)."
@@ -1560,11 +1032,11 @@ msgstr ""
 "области с виджетами в нижней части сайта ; значение по умолчанию — #aaaaaa "
 "(светло-серый)."
 
-#: includes/customizer/customizer.php:1355
+#: includes/customizer/customizer.php:1384
 msgid "Footer delimiter text color"
 msgstr "Цвет разделительных линий в подвале сайта"
 
-#: includes/customizer/customizer.php:1356
+#: includes/customizer/customizer.php:1385
 msgid ""
 "Choose the color for delimiter lines in the footer widgets; default is "
 "#999999 (light-grey)."
@@ -1572,11 +1044,11 @@ msgstr ""
 "Выберите цвет для разделительных линий в виджетах в нижней части сайта; "
 "значение по умолчанию — #999999 (светло-серый)."
 
-#: includes/customizer/customizer.php:1375
+#: includes/customizer/customizer.php:1404
 msgid "Bottom footer background color"
 msgstr "Цвет фона нижней части подвала сайта"
 
-#: includes/customizer/customizer.php:1376
+#: includes/customizer/customizer.php:1405
 msgid ""
 "Choose the background color for the bottom part of the footer containing the "
 "optional footer menu and the copyright information; default is #666666 "
@@ -1586,22 +1058,22 @@ msgstr ""
 "(необязательно) и информацию об авторских правах; значение по умолчанию — "
 "#666666 (серый)."
 
-#: includes/customizer/customizer.php:1395
+#: includes/customizer/customizer.php:1424
 msgid "Bottom footer: text color"
 msgstr "Цвет текста в нижней части подвала сайта"
 
-#: includes/customizer/customizer.php:1396
+#: includes/customizer/customizer.php:1425
 msgid ""
 "Choose the color for the bottom footer text; default is #cccccc (light-grey)."
 msgstr ""
 "Выберите цвет текста для самой нижней части сайта ; значение по умолчанию - "
 "#сссссс (светло-серый)."
 
-#: includes/customizer/customizer.php:1415
+#: includes/customizer/customizer.php:1444
 msgid "Bottom footer: link color"
 msgstr "Цвет ссылок в нижней части подвала сайта"
 
-#: includes/customizer/customizer.php:1416
+#: includes/customizer/customizer.php:1445
 msgid ""
 "Choose the color for links in the bottom footer area; default is #ffffff "
 "(white)."
@@ -1609,30 +1081,30 @@ msgstr ""
 "Выберите цвет ссылок для самой нижней части сайта ; значение по умолчанию - "
 "#ffffff (белый)."
 
-#: includes/customizer/customizer.php:1439
+#: includes/customizer/customizer.php:1468
 msgid "Front page: header image"
 msgstr "Изображение фона шапки"
 
-#: includes/customizer/customizer.php:1440
+#: includes/customizer/customizer.php:1469
 msgid ""
 "Upload the image to be used as the full-width header for the front page."
 msgstr "Загрузите изображение для шапки во всю ширину заголовка."
 
-#: includes/customizer/customizer.php:1459
+#: includes/customizer/customizer.php:1488
 msgid "Primary call-to-action button text"
 msgstr "Текст главной кнопки призыва к действию"
 
-#: includes/customizer/customizer.php:1460
+#: includes/customizer/customizer.php:1489
 msgid ""
 "Input the text for an optional call-to-action button on the static front "
 "page."
 msgstr "Введите текст для главной кнопки призыва к действию."
 
-#: includes/customizer/customizer.php:1478
+#: includes/customizer/customizer.php:1507
 msgid "Primary call-to-action button link"
 msgstr "Ссылка для главной кнопки призыва к действию"
 
-#: includes/customizer/customizer.php:1479
+#: includes/customizer/customizer.php:1508
 msgid ""
 "Paste the URL link to point the call-to-action button to; leave this blank "
 "to scroll the page below the header on button click."
@@ -1640,11 +1112,11 @@ msgstr ""
 "Вставить ссылку для кнопки призыва к действию; оставьте это поле пустым, "
 "чтобы прокрутить страницу ниже заголовка при нажатии на кнопку."
 
-#: includes/customizer/customizer.php:1498
+#: includes/customizer/customizer.php:1527
 msgid "Primary call-to-action button background color"
 msgstr "Цвет фона главной кнопки призыва к действию"
 
-#: includes/customizer/customizer.php:1499
+#: includes/customizer/customizer.php:1528
 msgid ""
 "Choose the background color for the primary call-to-action button; default "
 "is #ffffff (white)."
@@ -1652,11 +1124,11 @@ msgstr ""
 "Выберите цвет текста для главной кнопки призыва к действию; по умолчанию "
 "#ffffff (белый)."
 
-#: includes/customizer/customizer.php:1519
+#: includes/customizer/customizer.php:1548
 msgid "Primary call-to-action button mouse-over background color"
 msgstr "Цвет фона главной кнопки призыва к действию при наведении"
 
-#: includes/customizer/customizer.php:1520
+#: includes/customizer/customizer.php:1549
 msgid ""
 "Choose the background color for the primary call-to-action button on mouse "
 "hover; default is #cccccc (light-grey)."
@@ -1664,11 +1136,11 @@ msgstr ""
 "Цвет фона главной кнопки призыва к действию при наведении; по умолчанию — "
 "#cccccc (светло серый)."
 
-#: includes/customizer/customizer.php:1540
+#: includes/customizer/customizer.php:1569
 msgid "Primary call-to-action button text color"
 msgstr "Цвет текста главной кнопки призыва к действию"
 
-#: includes/customizer/customizer.php:1541
+#: includes/customizer/customizer.php:1570
 msgid ""
 "Choose the text color for the primary call-to-action button; default is "
 "#333333 (dark-grey)."
@@ -1676,21 +1148,21 @@ msgstr ""
 "Цвет текста главной кнопки призыва к действию; по умолчанию — #333333 (темно "
 "серый)."
 
-#: includes/customizer/customizer.php:1560
+#: includes/customizer/customizer.php:1589
 msgid "Secondary call-to-action button text"
 msgstr "Текст вторичной кнопки призыва к действию"
 
-#: includes/customizer/customizer.php:1561
+#: includes/customizer/customizer.php:1590
 msgid ""
 "Input the text for an optional secondary call-to-action button on the static "
 "front page."
 msgstr "Введите текст для вторичной кнопки призыва к действию."
 
-#: includes/customizer/customizer.php:1579
+#: includes/customizer/customizer.php:1608
 msgid "Secondary call-to-action button link"
 msgstr "Ссылка для вторичной кнопки призыва к действию"
 
-#: includes/customizer/customizer.php:1580
+#: includes/customizer/customizer.php:1609
 msgid ""
 "Paste the URL link to point the secondary call-to-action button to; leave "
 "this blank to scroll the page below the header on button click."
@@ -1699,11 +1171,11 @@ msgstr ""
 "от основной); оставьте это поле пустым, чтобы прокрутить страницу ниже "
 "заголовка при нажатии на кнопку."
 
-#: includes/customizer/customizer.php:1599
+#: includes/customizer/customizer.php:1628
 msgid "Secondary call-to-action button color"
 msgstr "Цвет текста вторичной кнопки призыва к действию"
 
-#: includes/customizer/customizer.php:1600
+#: includes/customizer/customizer.php:1629
 msgid ""
 "Choose the text and border color for the secondary call-to-action button; "
 "default is #ffffff (white)."
@@ -1711,11 +1183,11 @@ msgstr ""
 "Выбор цвета текста и рамки для вторичной кнопки призыва к действию; по "
 "умолчанию #ffffff (белый)."
 
-#: includes/customizer/customizer.php:1620
+#: includes/customizer/customizer.php:1649
 msgid "Secondary call-to-action button mouse-over color"
 msgstr "Цвет вторичной кнопки призыва к действию при наведении мыши"
 
-#: includes/customizer/customizer.php:1621
+#: includes/customizer/customizer.php:1650
 msgid ""
 "Choose the text and border color for the secondary call-to-action button on "
 "mouse hover; default is #cccccc (light-grey)."
@@ -1723,18 +1195,18 @@ msgstr ""
 "Выбор цвета текста и рамки вторичной кнопки призыва к действию при "
 "наведении; по умолчанию #cccccc (светло-серый)."
 
-#: includes/customizer/customizer.php:2099
+#: includes/customizer/customizer.php:2143
 #, php-format
 msgid "Migration successful! Check out the <a href=\"%s\">Customizer</a>"
 msgstr ""
 "Миграция прошла успешно! Посетите <a href=\"%s\">новые настройки шаблона</a>"
 
-#: includes/customizer/customizer.php:2104
+#: includes/customizer/customizer.php:2148
 msgid "Action required - migrate Bento theme options into the Customizer"
 msgstr ""
 "Требуется действие - перенесите существующие опции темы в новый Настройщик"
 
-#: includes/customizer/customizer.php:2107
+#: includes/customizer/customizer.php:2151
 msgid ""
 "Due to a change in WordPress rules, all theme options are now handled by the "
 "native Customizer (\"Appearance -> Customize\" admin section). Please click "
@@ -1746,130 +1218,137 @@ msgstr ""
 "\" в меню администратора). Пожалуйста нажмите на кнопку ниже чтобы перенести "
 "все существующие настройки в новый Настройщик."
 
-#: includes/customizer/customizer.php:2110
+#: includes/customizer/customizer.php:2154
 msgid "Transfer theme options"
 msgstr "Перенос настроек темы"
 
-#: includes/metaboxes/includes/CMB2.php:127
+#: includes/metaboxes/includes/CMB2.php:179
 msgid "Metabox configuration is required to have an ID parameter."
 msgstr "Конфигурация Metabox требует наличия параметра ID."
 
-#: includes/metaboxes/includes/CMB2.php:470
+#: includes/metaboxes/includes/CMB2.php:582
 msgid "Click to toggle"
 msgstr "Кликни для переключения"
 
-#: includes/metaboxes/includes/CMB2_Ajax.php:71
+#: includes/metaboxes/includes/CMB2_Ajax.php:75
 msgid "Please Try Again"
 msgstr "Попробуйте еще раз"
 
-#: includes/metaboxes/includes/CMB2_Ajax.php:173
+#: includes/metaboxes/includes/CMB2_Ajax.php:181
 msgid "Remove Embed"
 msgstr "Удалить размещение"
 
-#: includes/metaboxes/includes/CMB2_Ajax.php:181
-#: includes/metaboxes/includes/helper-functions.php:99
+#: includes/metaboxes/includes/CMB2_Ajax.php:189
+#: includes/metaboxes/includes/helper-functions.php:105
 #, php-format
 msgid "No oEmbed Results Found for %1$s. View more info at %2$s."
 msgstr "Результатов oEmbed для %1$s не найдено. Смотрите тут %2$s."
 
-#: includes/metaboxes/includes/CMB2_Base.php:389
+#: includes/metaboxes/includes/CMB2_Base.php:422
 #, php-format
 msgid ""
-"The \"%s\" field parameter has been deprecated in favor of the \"%s\" "
+"The \"%1$s\" field parameter has been deprecated in favor of the \"%2$s\" "
 "parameter."
 msgstr ""
 
-#: includes/metaboxes/includes/CMB2_Base.php:393
+#: includes/metaboxes/includes/CMB2_Base.php:426
 #, php-format
 msgid ""
-"Using the \"%s\" field parameter as a callback has been deprecated in favor "
-"of the \"%s\" parameter."
+"Using the \"%1$s\" field parameter as a callback has been deprecated in "
+"favor of the \"%2$s\" parameter."
 msgstr ""
 
-#: includes/metaboxes/includes/CMB2_Base.php:423
+#: includes/metaboxes/includes/CMB2_Base.php:456
 #, php-format
 msgid ""
 "%1$s was called with a parameter that is <strong>deprecated</strong> since "
 "version %2$s! %3$s"
 msgstr ""
 
-#: includes/metaboxes/includes/CMB2_Base.php:426
+#: includes/metaboxes/includes/CMB2_Base.php:458
 #, php-format
 msgid ""
 "%1$s was called with a parameter that is <strong>deprecated</strong> since "
 "version %2$s with no alternative available."
 msgstr ""
 
-#: includes/metaboxes/includes/CMB2_Base.php:459
-#: includes/metaboxes/includes/types/CMB2_Type_Base.php:138
+#: includes/metaboxes/includes/CMB2_Base.php:491
+#: includes/metaboxes/includes/CMB2_Hookup_Base.php:100
+#: includes/metaboxes/includes/CMB2_Options_Hookup.php:320
+#: includes/metaboxes/includes/types/CMB2_Type_Base.php:172
 #, php-format
 msgid "Invalid %1$s property: %2$s"
 msgstr ""
 
-#: includes/metaboxes/includes/CMB2_Base.php:473
-#: includes/metaboxes/includes/types/CMB2_Type_Base.php:123
+#: includes/metaboxes/includes/CMB2_Base.php:506
+#: includes/metaboxes/includes/types/CMB2_Type_Base.php:156
 #, php-format
 msgid "Invalid %1$s method: %2$s"
 msgstr ""
 
-#: includes/metaboxes/includes/CMB2_Field.php:1118
+#: includes/metaboxes/includes/CMB2_Field.php:1296
 msgid "Add Group"
 msgstr "Добавить группу"
 
-#: includes/metaboxes/includes/CMB2_Field.php:1119
+#: includes/metaboxes/includes/CMB2_Field.php:1297
 msgid "Remove Group"
 msgstr "Удалить группу"
 
-#: includes/metaboxes/includes/CMB2_Field.php:1141
-#: includes/metaboxes/includes/CMB2_Field.php:1145
+#: includes/metaboxes/includes/CMB2_Field.php:1328
+#: includes/metaboxes/includes/CMB2_Field.php:1332
 msgid "None"
 msgstr "Никакие"
 
-#: includes/metaboxes/includes/CMB2_Field.php:1206
+#: includes/metaboxes/includes/CMB2_Field.php:1443
 msgid "Sorry, this field does not have a cmb_id specified."
 msgstr ""
 
-#: includes/metaboxes/includes/CMB2_Field_Display.php:409
-#: includes/metaboxes/includes/CMB2_JS.php:158
-#: includes/metaboxes/includes/types/CMB2_Type_File_Base.php:75
+#: includes/metaboxes/includes/CMB2_Field_Display.php:432
+#: includes/metaboxes/includes/CMB2_JS.php:228
+#: includes/metaboxes/includes/types/CMB2_Type_File_Base.php:79
 msgid "File:"
 msgstr "Файл:"
 
-#: includes/metaboxes/includes/CMB2_JS.php:99
-#: includes/metaboxes/includes/CMB2_JS.php:138
+#: includes/metaboxes/includes/CMB2_Hookup_Base.php:42
+#, php-format
+msgid "%1$s should be implemented by the extended class."
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_JS.php:165
+#: includes/metaboxes/includes/CMB2_JS.php:208
 msgid "Clear"
 msgstr "Очистить"
 
-#: includes/metaboxes/includes/CMB2_JS.php:100
+#: includes/metaboxes/includes/CMB2_JS.php:166
 msgid "Default"
 msgstr "По умолчанию"
 
-#: includes/metaboxes/includes/CMB2_JS.php:101
+#: includes/metaboxes/includes/CMB2_JS.php:167
 msgid "Select Color"
 msgstr "Выбрать цвет"
 
-#: includes/metaboxes/includes/CMB2_JS.php:102
+#: includes/metaboxes/includes/CMB2_JS.php:168
 msgid "Current Color"
 msgstr "Текущий цвет"
 
-#: includes/metaboxes/includes/CMB2_JS.php:128
+#: includes/metaboxes/includes/CMB2_JS.php:198
 msgctxt "Valid formatDate string for jquery-ui datepicker"
 msgid "mm/dd/yy"
 msgstr "мм/дд/гг"
 
-#: includes/metaboxes/includes/CMB2_JS.php:129
+#: includes/metaboxes/includes/CMB2_JS.php:199
 msgid "Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday"
 msgstr "Воскресенье, Понедельник, Вторник, Среда, Четверг, Пятница, Суббота"
 
-#: includes/metaboxes/includes/CMB2_JS.php:130
+#: includes/metaboxes/includes/CMB2_JS.php:200
 msgid "Su, Mo, Tu, We, Th, Fr, Sa"
 msgstr "Вс, Пн, Вт, Ср, Чт, Пт, Сб"
 
-#: includes/metaboxes/includes/CMB2_JS.php:131
+#: includes/metaboxes/includes/CMB2_JS.php:201
 msgid "Sun, Mon, Tue, Wed, Thu, Fri, Sat"
 msgstr "Вск, Пнд, Втр, Срд, Чтв, Птн, Сбт"
 
-#: includes/metaboxes/includes/CMB2_JS.php:132
+#: includes/metaboxes/includes/CMB2_JS.php:202
 msgid ""
 "January, February, March, April, May, June, July, August, September, "
 "October, November, December"
@@ -1877,140 +1356,152 @@ msgstr ""
 "Январь, Февраль, Март, Апрель, Май, Июнь, Июль, Август, Сентябрь, Октябрь, "
 "Ноябрь, Декабрь"
 
-#: includes/metaboxes/includes/CMB2_JS.php:133
+#: includes/metaboxes/includes/CMB2_JS.php:203
 msgid "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
 msgstr "Янв, Фев, Мар, Апр, Май, Июн, Июл, Авг, Сен, Окт, Ноя, Дек"
 
-#: includes/metaboxes/includes/CMB2_JS.php:134
+#: includes/metaboxes/includes/CMB2_JS.php:204
 msgid "Next"
 msgstr "Следующий"
 
-#: includes/metaboxes/includes/CMB2_JS.php:135
+#: includes/metaboxes/includes/CMB2_JS.php:205
 msgid "Prev"
 msgstr "Предыдущий"
 
-#: includes/metaboxes/includes/CMB2_JS.php:136
+#: includes/metaboxes/includes/CMB2_JS.php:206
 msgid "Today"
 msgstr "Сегодня"
 
-#: includes/metaboxes/includes/CMB2_JS.php:137
-#: includes/metaboxes/includes/CMB2_JS.php:147
+#: includes/metaboxes/includes/CMB2_JS.php:207
+#: includes/metaboxes/includes/CMB2_JS.php:217
 msgid "Done"
 msgstr "Готово"
 
-#: includes/metaboxes/includes/CMB2_JS.php:141
+#: includes/metaboxes/includes/CMB2_JS.php:211
 msgid "Choose Time"
 msgstr "Выбрать время"
 
-#: includes/metaboxes/includes/CMB2_JS.php:142
+#: includes/metaboxes/includes/CMB2_JS.php:212
 msgid "Time"
 msgstr "Время"
 
-#: includes/metaboxes/includes/CMB2_JS.php:143
+#: includes/metaboxes/includes/CMB2_JS.php:213
 msgid "Hour"
 msgstr "Час"
 
-#: includes/metaboxes/includes/CMB2_JS.php:144
+#: includes/metaboxes/includes/CMB2_JS.php:214
 msgid "Minute"
 msgstr "Минута"
 
-#: includes/metaboxes/includes/CMB2_JS.php:145
+#: includes/metaboxes/includes/CMB2_JS.php:215
 msgid "Second"
 msgstr "Секунда"
 
-#: includes/metaboxes/includes/CMB2_JS.php:146
+#: includes/metaboxes/includes/CMB2_JS.php:216
 msgid "Now"
 msgstr "Сейчас"
 
-#: includes/metaboxes/includes/CMB2_JS.php:148
+#: includes/metaboxes/includes/CMB2_JS.php:218
 msgctxt ""
 "Valid formatting string, as per http://trentrichardson.com/examples/"
 "timepicker/"
 msgid "hh:mm TT"
 msgstr "чч:мм"
 
-#: includes/metaboxes/includes/CMB2_JS.php:154
+#: includes/metaboxes/includes/CMB2_JS.php:224
 msgid "Use this file"
 msgstr "Использовать этот файл"
 
-#: includes/metaboxes/includes/CMB2_JS.php:155
+#: includes/metaboxes/includes/CMB2_JS.php:225
 msgid "Use these files"
 msgstr "Использовать эти файлы"
 
-#: includes/metaboxes/includes/CMB2_JS.php:156
-#: includes/metaboxes/includes/types/CMB2_Type_File_Base.php:61
+#: includes/metaboxes/includes/CMB2_JS.php:226
+#: includes/metaboxes/includes/types/CMB2_Type_File_Base.php:64
 msgid "Remove Image"
 msgstr "Удалить изображение"
 
-#: includes/metaboxes/includes/CMB2_JS.php:157
-#: includes/metaboxes/includes/CMB2_Types.php:392
-#: includes/metaboxes/includes/types/CMB2_Type_File_Base.php:80
+#: includes/metaboxes/includes/CMB2_JS.php:227
+#: includes/metaboxes/includes/CMB2_Types.php:412
+#: includes/metaboxes/includes/types/CMB2_Type_File_Base.php:84
 msgid "Remove"
 msgstr "Удалить"
 
-#: includes/metaboxes/includes/CMB2_JS.php:159
-#: includes/metaboxes/includes/types/CMB2_Type_File_Base.php:78
+#: includes/metaboxes/includes/CMB2_JS.php:229
+#: includes/metaboxes/includes/types/CMB2_Type_File_Base.php:82
 msgid "Download"
 msgstr "Скачать"
 
-#: includes/metaboxes/includes/CMB2_JS.php:160
+#: includes/metaboxes/includes/CMB2_JS.php:230
 msgid "Select / Deselect All"
 msgstr "Выбрать все / Снять выбор со всего"
 
-#: includes/metaboxes/includes/CMB2_Types.php:220
+#: includes/metaboxes/includes/CMB2_Options_Hookup.php:110
+msgid "Nothing to update."
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_Options_Hookup.php:114
+msgid "Settings updated."
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_Types.php:231
 msgid "Custom CMB2 field type classes must extend CMB2_Type_Base."
 msgstr ""
 
-#: includes/metaboxes/includes/CMB2_Types.php:329
+#: includes/metaboxes/includes/CMB2_Types.php:349
 msgid "Add Row"
 msgstr "Добавить строку"
 
-#: includes/metaboxes/includes/CMB2_hookup.php:148
+#: includes/metaboxes/includes/CMB2_Types.php:412
+msgid "Remove Row"
+msgstr ""
+
+#: includes/metaboxes/includes/CMB2_hookup.php:181
 msgid ""
 "Term Metadata is a WordPress 4.4+ feature. Please upgrade your WordPress "
 "install."
 msgstr ""
 
-#: includes/metaboxes/includes/CMB2_hookup.php:152
+#: includes/metaboxes/includes/CMB2_hookup.php:185
 msgid "Term metaboxes configuration requires a \"taxonomies\" parameter."
 msgstr "Конфигурация Metabox требует наличия параметра \"taxonomies\"."
 
-#: includes/metaboxes/includes/CMB2_hookup.php:389
+#: includes/metaboxes/includes/CMB2_hookup.php:458
 #, php-format
 msgid "Toggle panel: %s"
 msgstr ""
 
-#: includes/metaboxes/includes/helper-functions.php:287
+#: includes/metaboxes/includes/helper-functions.php:303
 msgid "Save"
 msgstr "Сохранить"
 
-#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller.php:250
+#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller.php:257
 msgid "This box does not have read permissions."
 msgstr ""
 
-#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller.php:268
+#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller.php:277
 msgid "This box does not have write permissions."
 msgstr ""
 
-#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller.php:289
+#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller.php:300
 msgid ""
 "No box found by that id. A box needs to be registered with the \"show_in_rest"
 "\" parameter configured."
 msgstr ""
 
-#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller.php:365
+#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller.php:378
 msgid "A human-readable description of the object."
 msgstr ""
 
-#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller.php:370
+#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller.php:385
 msgid "The id for the object."
 msgstr ""
 
-#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller.php:375
+#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller.php:392
 msgid "The title for the object."
 msgstr "Название для объекта."
 
-#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller_Boxes.php:50
+#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller_Boxes.php:51
 msgid "Includes the registered fields for the box in the response."
 msgstr ""
 
@@ -2050,69 +1541,69 @@ msgid ""
 msgstr ""
 "Значение поля CMB2 не может быть обновлено без указанного значения параметра."
 
-#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller_Fields.php:295
+#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller_Fields.php:297
 msgid ""
 "CMB2 Field value cannot be modified without the object_id and object_type "
 "parameters specified."
 msgstr ""
 
-#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller_Fields.php:308
-#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller_Fields.php:335
+#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller_Fields.php:312
+#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller_Fields.php:341
 msgid "No field found by that id."
 msgstr ""
 
-#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller_Fields.php:407
+#: includes/metaboxes/includes/rest-api/CMB2_REST_Controller_Fields.php:415
 #, php-format
 msgid "Value Error for %s"
 msgstr ""
 
-#: includes/metaboxes/includes/shim/WP_REST_Controller.php:24
-msgid "The register_routes() method must be overriden"
-msgstr ""
-
-#: includes/metaboxes/includes/shim/WP_REST_Controller.php:34
-#: includes/metaboxes/includes/shim/WP_REST_Controller.php:44
-#: includes/metaboxes/includes/shim/WP_REST_Controller.php:54
-#: includes/metaboxes/includes/shim/WP_REST_Controller.php:64
-#: includes/metaboxes/includes/shim/WP_REST_Controller.php:74
-#: includes/metaboxes/includes/shim/WP_REST_Controller.php:84
-#: includes/metaboxes/includes/shim/WP_REST_Controller.php:94
-#: includes/metaboxes/includes/shim/WP_REST_Controller.php:104
-#: includes/metaboxes/includes/shim/WP_REST_Controller.php:114
-#: includes/metaboxes/includes/shim/WP_REST_Controller.php:124
-#: includes/metaboxes/includes/shim/WP_REST_Controller.php:134
-#: includes/metaboxes/includes/shim/WP_REST_Controller.php:145
+#: includes/metaboxes/includes/shim/WP_REST_Controller.php:25
 #, php-format
-msgid "Method '%s' not implemented. Must be over-ridden in subclass."
+msgid "Method '%s' must be overridden."
 msgstr ""
 
-#: includes/metaboxes/includes/shim/WP_REST_Controller.php:248
+#: includes/metaboxes/includes/shim/WP_REST_Controller.php:35
+#: includes/metaboxes/includes/shim/WP_REST_Controller.php:47
+#: includes/metaboxes/includes/shim/WP_REST_Controller.php:59
+#: includes/metaboxes/includes/shim/WP_REST_Controller.php:71
+#: includes/metaboxes/includes/shim/WP_REST_Controller.php:83
+#: includes/metaboxes/includes/shim/WP_REST_Controller.php:95
+#: includes/metaboxes/includes/shim/WP_REST_Controller.php:107
+#: includes/metaboxes/includes/shim/WP_REST_Controller.php:119
+#: includes/metaboxes/includes/shim/WP_REST_Controller.php:131
+#: includes/metaboxes/includes/shim/WP_REST_Controller.php:143
+#: includes/metaboxes/includes/shim/WP_REST_Controller.php:155
+#: includes/metaboxes/includes/shim/WP_REST_Controller.php:168
+#, php-format
+msgid "Method '%s' not implemented. Must be overridden in subclass."
+msgstr ""
+
+#: includes/metaboxes/includes/shim/WP_REST_Controller.php:273
 msgid "Current page of the collection."
 msgstr ""
 
-#: includes/metaboxes/includes/shim/WP_REST_Controller.php:256
+#: includes/metaboxes/includes/shim/WP_REST_Controller.php:281
 msgid "Maximum number of items to be returned in result set."
 msgstr ""
 
-#: includes/metaboxes/includes/shim/WP_REST_Controller.php:265
+#: includes/metaboxes/includes/shim/WP_REST_Controller.php:290
 msgid "Limit results to those matching a string."
 msgstr ""
 
-#: includes/metaboxes/includes/shim/WP_REST_Controller.php:283
+#: includes/metaboxes/includes/shim/WP_REST_Controller.php:308
 msgid ""
 "Scope under which the request is made; determines fields present in response."
 msgstr ""
 
-#: includes/metaboxes/includes/types/CMB2_Type_File.php:40
+#: includes/metaboxes/includes/types/CMB2_Type_File.php:76
 msgid "Add or Upload File"
 msgstr "Добавить или загрузить файл"
 
-#: includes/metaboxes/includes/types/CMB2_Type_File_List.php:39
+#: includes/metaboxes/includes/types/CMB2_Type_File_List.php:41
 msgid "Add or Upload Files"
 msgstr "Добавить или загрузить файлы"
 
-#: includes/metaboxes/includes/types/CMB2_Type_Taxonomy_Multicheck.php:27
-#: includes/metaboxes/includes/types/CMB2_Type_Taxonomy_Radio.php:25
+#: includes/metaboxes/includes/types/CMB2_Type_Taxonomy_Base.php:115
 msgid "No terms"
 msgstr "Объектов не найдено"
 
@@ -2315,8 +1806,6 @@ msgstr "и"
 
 #: includes/plugin-activation/class-tgm-plugin-activation.php:1982
 #, php-format
-#| msgctxt "%s = version number"
-#| msgid "TGMPA v%s"
 msgid "TGMPA v%s"
 msgstr "TGMPA v%s"
 
@@ -2366,8 +1855,6 @@ msgstr "Рекомендуется обновление"
 
 #: includes/plugin-activation/class-tgm-plugin-activation.php:2342
 #, php-format
-#| msgctxt "%1$s = install status, %2$s = update status"
-#| msgid "%1$s, %2$s"
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr "%1$s, %2$s"
@@ -2573,6 +2060,548 @@ msgstr "Все установки были завершены."
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Установка плагина %1$s (%2$d/%3$d)"
 
+#: includes/post-settings.php:68
+msgid "General Settings"
+msgstr "Общие настройки"
+
+#: includes/post-settings.php:77
+msgid "Sidebar layout"
+msgstr "Расположение боковой панели"
+
+#: includes/post-settings.php:78
+msgid "Choose whether to display a sidebar and on which side of the content"
+msgstr "Выберите, следует ли отображать боковую панель, и на какой стороне"
+
+#: includes/post-settings.php:82
+msgid "Right Sidebar (default)"
+msgstr "Боковая панель справа (по умолчанию)"
+
+#: includes/post-settings.php:83
+msgid "Left Sidebar"
+msgstr "Боковая панель слева"
+
+#: includes/post-settings.php:84
+msgid "Full Width"
+msgstr "Полная ширина"
+
+#: includes/post-settings.php:91
+msgid "Page background color"
+msgstr "Цвет фона страницы"
+
+#: includes/post-settings.php:92
+msgid ""
+"Choose the background color for current page/post. This will override any "
+"settings in the Theme Options"
+msgstr ""
+"Выберите цвет фона для текущей страницы/записи. Данная настройка "
+"переопределяет любые настройки в настройках шаблона"
+
+#: includes/post-settings.php:99
+msgid "Hide featured image"
+msgstr "Скрыть миниатюру"
+
+#: includes/post-settings.php:100
+msgid ""
+"Check this option if you DO NOT want to display the featured image "
+"(thumbnail) on the page; it will still be used for the corresponding tile on "
+"the \"columns\" or \"rows\" grid pages."
+msgstr ""
+"Отметьте, если не хотите отображать миниатюру на странице; она по-прежнему "
+"будет использоваться на соответствующей верстке, плитке \"колонок\" и \"строк"
+"\"."
+
+#: includes/post-settings.php:108
+msgid "Hide title"
+msgstr "Скрыть заголовок"
+
+#: includes/post-settings.php:109
+msgid "Check this option if you DO NOT want to display the title on the page"
+msgstr ""
+"Установите этот флажок, если НЕ ХОТИТЕ отображать заголовок на странице"
+
+#: includes/post-settings.php:116
+msgid "Uppercase title"
+msgstr "Заголовок прописными буквами"
+
+#: includes/post-settings.php:117
+msgid ""
+"Check this option if you want the page title to be entirely in uppercase "
+"(useful for landing pages)."
+msgstr ""
+"Установите этот флажок, если хотите, чтобы заголовок страницы был полностью "
+"в верхнем регистре (полезно для целевых страниц)."
+
+#: includes/post-settings.php:124
+msgid "Title position"
+msgstr "Позиция заголовка"
+
+#: includes/post-settings.php:125
+msgid "Choose the position of the title; default is left-aligned."
+msgstr "Выберите положение заголовка; значение по умолчанию — по левому краю."
+
+#: includes/post-settings.php:129
+msgid "Left-aligned (default)"
+msgstr "Слева (по умолчанию)"
+
+#: includes/post-settings.php:130
+msgid "Centered"
+msgstr "По центру"
+
+#: includes/post-settings.php:137
+msgid "Title color"
+msgstr "Цвет заголовка"
+
+#: includes/post-settings.php:138
+msgid ""
+"Choose the text color for the title of this post. This will override any "
+"settings in the Theme Options"
+msgstr ""
+"Выберите цвет заголовка для этой записи. Это значение переделает любые "
+"настройки темы"
+
+#: includes/post-settings.php:145
+msgid "Subtitle (excerpt) color"
+msgstr "Цвет отрывка/подзаголовка"
+
+#: includes/post-settings.php:146
+msgid ""
+"Choose the text color for the subtitle of this page, sourced from the "
+"Excerpt field; default is #999999 (light grey)."
+msgstr ""
+"Выберите цвет текста для подзаголовка этой страницы; значение по умолчанию — "
+"#999999 (светло-серый)."
+
+#: includes/post-settings.php:157
+msgid "Page Header Settings"
+msgstr "Настройки шапки страницы"
+
+#: includes/post-settings.php:166
+msgid "Activate extended header"
+msgstr "Активировать расширенную шапку"
+
+#: includes/post-settings.php:167
+msgid ""
+"Check this box to enable extended header options such as header image and "
+"call-to-action-buttons."
+msgstr ""
+"Установите этот флажок, чтобы включить расширенные параметры шапки, такие "
+"как фоновое изображение и целевые кнопки."
+
+#: includes/post-settings.php:174
+msgid "Header height"
+msgstr "Высота шапки"
+
+#: includes/post-settings.php:175
+msgid ""
+"Choose the title top and bottom padding, which will affect the header "
+"height; default is 10%"
+msgstr ""
+"Выберите верхний и нижний отступы для заголовка; это повлияет на высоту "
+"шапки; значения по умолчанию - 10%"
+
+#: includes/post-settings.php:179 includes/post-settings.php:237
+#: includes/post-settings.php:429
+msgid "Choose value"
+msgstr "Выберите значение"
+
+#: includes/post-settings.php:181
+msgid "10% (default)"
+msgstr "10% (по умолчанию)"
+
+#: includes/post-settings.php:192
+msgid "Header image"
+msgstr "Изображение фона шапки"
+
+#: includes/post-settings.php:193
+msgid ""
+"Upload the image to serve as the header; recommended size is 1400x300 pixels "
+"and above, yet mind the file size - excessively large images may worsen user "
+"experience"
+msgstr ""
+"Закачайте изображение для использования в шапке страницы; рекомендуемый "
+"размер - 1400х300 пикселей и больше, однако обращайте внимание на размер "
+"файла - крупные изображения могут ухудшить скорость загрузки страницы"
+
+#: includes/post-settings.php:202
+msgid "Header video"
+msgstr "Видео-фон шапки"
+
+#: includes/post-settings.php:203
+msgid ""
+"Upload the video file to be used as header background; if this is active, "
+"the header image will serve as a placeholder for mobile devices; .mp4 files "
+"are recommended, but you can also use .ogv and .webm formats. Please mind "
+"the file size - excessively large images may worsen user experience"
+msgstr ""
+"Закачайте видеофайл для использования в шапке страницы; в этом случае "
+"изображение шапки (см. опцию выше) будет использовано вместо видео на "
+"мобильных устройствах; рекомендованный формат - mp4, однако Вы также можете "
+"использовать .ogv и .webm форматы. Обращайте внимание на размер файла - "
+"крупные видео могут ухудшить скорость загрузки страницы"
+
+#: includes/post-settings.php:211
+msgid "Header image overlay color"
+msgstr "Цвет полупрозрачного фона поверх изображения шапки"
+
+#: includes/post-settings.php:212
+msgid ""
+"Choose the color for the image overlay, designed to make the title text "
+"stand out more clearly"
+msgstr ""
+"Выберите цвет фона поверх изображения, используемого для лучшей "
+"читабельности текста заголовка"
+
+#: includes/post-settings.php:219
+msgid "Header image overlay opacity"
+msgstr "Степень прозрачности полупрозрачного фона поверх изображения шапки"
+
+#: includes/post-settings.php:220
+msgid ""
+"Choose the opacity level for the image overlay; 0.0 is fully transparent, "
+"1.0 is fully opaque, default is 0.3"
+msgstr ""
+"Выберите степень прозрачности фона шапки; 0.0 соответствует полностью "
+"прозрачному, 1.0 - полностью непрозрачному, значение по умолчанию - 0.3"
+
+#: includes/post-settings.php:227
+msgid "0.3 (default)"
+msgstr "0.3 (по умолчанию)"
+
+#: includes/post-settings.php:242
+msgid "Transparent website header"
+msgstr "Сделать шапку сайта (логотип и меню) прозрачной на этой странице"
+
+#: includes/post-settings.php:243
+msgid ""
+"Check this option to make the website header (the top area with the menu and "
+"the logo) look like a transparent overlay on top of the header image on this "
+"page."
+msgstr ""
+"Отметьте эту опцию, чтобы сделать шапку сайта (верхняя область с меню и "
+"логотипом) прозрачной"
+
+#: includes/post-settings.php:250
+msgid "Website menu color on this page"
+msgstr "Цвет текстов в меню на этой странице"
+
+#: includes/post-settings.php:251
+msgid ""
+"Choose the color for the website menu on this page (useful for the "
+"transparent header)."
+msgstr ""
+"Выберите цвет текстов в меню сайта на этой странице (полезно для прозрачной "
+"шапки)."
+
+#: includes/post-settings.php:258
+msgid "Website menu mouse-hover color on this page"
+msgstr "Цвет текстов в меню на этой странице при наведении мыши"
+
+#: includes/post-settings.php:259
+msgid ""
+"Choose the mouse-over color for the website menu on this page (useful for "
+"the transparent header)."
+msgstr ""
+"Выберите цвет текстов в меню сайта на этой странице при наведении мыши "
+"(полезно для прозрачной шапки)."
+
+#: includes/post-settings.php:270
+msgid "Map Header"
+msgstr "Карта в шапке страницы"
+
+#: includes/post-settings.php:279
+msgid "Activate Google Maps header"
+msgstr "Активировать карту Google Maps в шапке страницы"
+
+#: includes/post-settings.php:280
+msgid ""
+"Check this box to enable Google Maps header; note that this will deactivate "
+"the extended header image/video."
+msgstr ""
+"Установите этот флажок для включения фона шапки страницы в виде Google Maps; "
+"обратите внимание, что эта опция отключает расширенную шапки в виде "
+"изображения/видео."
+
+#: includes/post-settings.php:286
+#, php-format
+msgid ""
+"Input the API key for this instance of Maps - you can find detailed "
+"instructions on generating your API key <a href=\"%s\" target=\"_blank"
+"\">here</a>."
+msgstr ""
+"Введите Ваш личный API-ключ для Google-карт - детальные инструкции по "
+"получению бесплатного API-ключа можно получить <a href=\"%s\" target=\"_blank"
+"\">здесь</a>."
+
+#: includes/post-settings.php:289
+msgid "Google Maps API key"
+msgstr "API-ключ для Google-карт"
+
+#: includes/post-settings.php:297
+msgid "Map center location"
+msgstr "Точка центровки карты"
+
+#: includes/post-settings.php:298
+msgid ""
+"Input the address (country, city, or exact address) of the location on which "
+"to center the map."
+msgstr ""
+"Введите адрес (страну, город или точный адрес) места, которое будет "
+"находиться по центру карты."
+
+#: includes/post-settings.php:305
+msgid "Map height"
+msgstr "Высота карты"
+
+#: includes/post-settings.php:306
+msgid "Select the height of the map, in pixels."
+msgstr "Выберите высоту карты в пикселях."
+
+#: includes/post-settings.php:313
+msgid "400 (default)"
+msgstr "400 (по умолчанию)"
+
+#: includes/post-settings.php:323
+msgid "Map zoom level"
+msgstr "Масштаб карты"
+
+#: includes/post-settings.php:324
+msgid ""
+"Choose the zoom level for the map, 1 being entire world and 20 being "
+"individual buildings."
+msgstr ""
+"Выберите уровень масштабирования для карты, от 0 (весь мир) до 20 (отдельные "
+"здания)."
+
+#: includes/post-settings.php:342
+msgid "15 (default)"
+msgstr "15 (по умолчанию)"
+
+#: includes/post-settings.php:353
+#, php-format
+msgid ""
+"You can insert the code for custom map styling here; check <a href=\"%s\" "
+"target=\"_blank\">Snazzymaps.com</a> for ready-made snippets: when on the "
+"page of the particular style, click on the \"Copy\" button or simply select "
+"and copy the code under the \"Javascript Style Array\" heading."
+msgstr ""
+"Здесь можно вставить код для персонализации внешнего вида карты, посетите <a "
+"href=\"%s\" target=\"_blank\">Snazzymaps.com</a> для готовых фрагментов кода "
+"стилей: на странице конкретного стиля нажмите на кнопку «Копировать» или "
+"просто выделите и скопируйте код под заголовком «Javascript Style Array»."
+
+#: includes/post-settings.php:356
+msgid "Map custom style"
+msgstr "Пользовательский стиль карты"
+
+#: includes/post-settings.php:368
+msgid ""
+"Masonry Tile Settings / Only for displaying on \"Grid\" page template with "
+"\"Masonry\" grid type"
+msgstr ""
+"Настройки плитки данной записи для сеток / Только для страниц с шаблоном "
+"\"Сетка\" с типом сетки \"Кладка\""
+
+#: includes/post-settings.php:377
+msgid "Tile size"
+msgstr "Размер плитки"
+
+#: includes/post-settings.php:378
+msgid ""
+"Choose the size of the tile relative to the default 1x1 tile (defined by the "
+"number of columns in the grid)"
+msgstr ""
+"Выбрать размер плитки по отношению к 1 x 1 (ширина определяется "
+"автоматически количеством столбцов в сетке)"
+
+#: includes/post-settings.php:382
+msgid "1x1 (default)"
+msgstr "1 x 1 (по умолчанию)"
+
+#: includes/post-settings.php:392
+msgid "Tile overlay color"
+msgstr "Цвет наложенного фона плитки"
+
+#: includes/post-settings.php:393
+msgid ""
+"Choose the color for an overlay for the tile background image; default is "
+"#666666 (grey)"
+msgstr ""
+"Выберите цвет наложения для плитки, поверх фонового изображения; значение по "
+"умолчанию — #666666 (серый)"
+
+#: includes/post-settings.php:402
+msgid "Tile image"
+msgstr "Изображение плитки"
+
+#: includes/post-settings.php:403
+msgid ""
+"Upload the image to be used in the tile; if this field is empty, the "
+"featured image (thumbnail) will be used."
+msgstr ""
+"Загрузите изображение для использования в качестве фона плитки; если это "
+"поле оставлено пустым, будет использоваться миниатюра записи."
+
+#: includes/post-settings.php:411
+msgid "Tile overlay opacity"
+msgstr "Степень прозрачности наложенного фона плитки"
+
+#: includes/post-settings.php:412
+msgid ""
+"Select the opacity level for an overlay for the tile background image, 0 is "
+"fully transparent (default is 0.6)"
+msgstr ""
+"Выберите уровень прозрачности для наложенного фона плитки, где 0 полностью "
+"прозрачный, а 1 - полностью непрозрачный (значение по умолчанию — 0.6)"
+
+#: includes/post-settings.php:422
+msgid "0.6 (default)"
+msgstr "0.6 (по умолчанию)"
+
+#: includes/post-settings.php:434
+msgid "Tile text color"
+msgstr "Цвет текста плитки"
+
+#: includes/post-settings.php:435
+msgid ""
+"Choose the color for the text inside the tile; default is #ffffff (white)"
+msgstr ""
+"Выбрать цвет для текста внутри плитки; значение по умолчанию — #ffffff "
+"(белый)"
+
+#: includes/post-settings.php:443
+msgid "Tile text size"
+msgstr "Размер текста плитки"
+
+#: includes/post-settings.php:444
+msgid "Choose the text size for the tile; default is 16px"
+msgstr "Выбрать размер текста для плитки; значение по умолчанию — 16px"
+
+#: includes/post-settings.php:451
+msgid "16 (default)"
+msgstr "16 (по умолчанию)"
+
+#: includes/post-settings.php:465
+msgid "Grid Settings"
+msgstr "Настройки сетки"
+
+#: includes/post-settings.php:474
+msgid "Grid mode"
+msgstr "Тип сетки"
+
+#: includes/post-settings.php:475
+msgid "Choose which grid type to use on this page"
+msgstr "Выберите, какой тип сетки будет использоваться на этой странице"
+
+#: includes/post-settings.php:488
+msgid "Number of columns"
+msgstr "Количество столбцов"
+
+#: includes/post-settings.php:489
+msgid ""
+"Select the number of columns in the grid or number of base tiles per line in "
+"masonry"
+msgstr "Выберите количество базовых столбцов в сетке"
+
+#: includes/post-settings.php:495
+msgid "3 (default)"
+msgstr "3 (по умолчанию)"
+
+#: includes/post-settings.php:506 includes/post-settings.php:515
+msgid "Content types"
+msgstr "Типы содержимого"
+
+#: includes/post-settings.php:516
+#, php-format
+msgid "Install the %s to use the \"project\" (portfolio) content type"
+msgstr "Установите %s чтобы использовать тип содержимого «проект» (портфолио)"
+
+#: includes/post-settings.php:525
+msgid "Items per page"
+msgstr "Количество элементов сетки на одной странице"
+
+#: includes/post-settings.php:526
+msgid ""
+"Input the number of items to display per page; default is the number set in "
+"\"Settings - Reading\" admin section"
+msgstr ""
+"Введите количество элементов, отображаемых на странице; по умолчанию "
+"используется номер в разделе «Параметры – Чтение» в меню администратора"
+
+#: includes/post-settings.php:534
+msgid "Item margins"
+msgstr "Отступы элементов сетки"
+
+#: includes/post-settings.php:535
+msgid "Input the margin width in pixels (default is 10)"
+msgstr "Введите ширину отступов в пикселях (по умолчанию — 10)"
+
+#: includes/post-settings.php:543
+msgid "Hide tile overlays"
+msgstr "Скрыть заголовки и наложенный фон на плитках"
+
+#: includes/post-settings.php:544
+msgid "Only display tile overlays in masonry on mouse hover"
+msgstr ""
+"Отображать внутренние элементы плиток в типе сетки \"кладка\" только при "
+"наведении мыши"
+
+#: includes/post-settings.php:551
+msgid "Force full width"
+msgstr "Растянуть сетку на всю ширину страницы"
+
+#: includes/post-settings.php:552
+msgid ""
+"Check this option if you want the grid to stretch the entire width of the "
+"screen"
+msgstr ""
+"Установите этот флажок, если хотите чтобы сетка всегда занимала полную "
+"ширину страницы"
+
+#: includes/post-settings.php:559
+msgid "Load items on same page"
+msgstr "Загружать новые записи на той же странице"
+
+#: includes/post-settings.php:560
+msgid ""
+"Replace the standard pagination with a button which loads next items without "
+"refreshing the page"
+msgstr ""
+"Заменить стандартное разбиение на страницы кнопкой, которая загружает "
+"следующие записи без обновления страницы"
+
+#: includes/post-settings.php:571
+msgid "SEO Settings"
+msgstr "Настройки SEO"
+
+#: includes/post-settings.php:580
+msgid "Meta title"
+msgstr "Мета-заголовок"
+
+#: includes/post-settings.php:581
+msgid ""
+"Input the meta title - the text to be used by search engines as well as "
+"browser tabs (recommended max length - 60 symbols); the post title will be "
+"used by default if this field is empty."
+msgstr ""
+"Введите мета-заголовок - текст, используемый поисковыми системами и "
+"отображаемый во вкладках браузеров (рекомендованная длина - 60 символов); "
+"если это поле оставить пустым, по умолчанию будет использован заголовок "
+"записи."
+
+#: includes/post-settings.php:588
+msgid "Meta description"
+msgstr "Мета-описание"
+
+#: includes/post-settings.php:589
+msgid ""
+"Input the meta description - the text to be used by search engines on search "
+"result pages (recommended max length - 160 symbols); the first part of the "
+"post body will be used by default is this field is left blank."
+msgstr ""
+"Введите мета-описание - текст, используемый поисковыми системами на "
+"страницах выдач (рекоммендованная макс. длина - 160 символов); если это поле "
+"оставить пустым, начало текста записи будет использовано по умолчанию."
+
 #: includes/template-tags.php:26
 msgctxt "Google Font for body text: on or off"
 msgid "on"
@@ -2588,76 +2617,81 @@ msgctxt "Google Font for menu text: on or off"
 msgid "on"
 msgstr "вкл"
 
-#: includes/template-tags.php:546 includes/template-tags.php:596
+#: includes/template-tags.php:278
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: includes/template-tags.php:549 includes/template-tags.php:599
 msgid "Posted by"
 msgstr "Опубликовано"
 
-#: includes/template-tags.php:556
+#: includes/template-tags.php:559
 msgid "in"
 msgstr "в"
 
-#: includes/template-tags.php:562
+#: includes/template-tags.php:565
 msgid "0 comments"
 msgstr "0 комментариев"
 
-#: includes/template-tags.php:564
+#: includes/template-tags.php:567
 msgid "comments"
 msgstr "комментариев"
 
-#: includes/template-tags.php:566
+#: includes/template-tags.php:569
 msgid "1 comment"
 msgstr "1 комментарий"
 
-#: includes/template-tags.php:575
+#: includes/template-tags.php:578
 msgid "Edit this"
 msgstr "Редактировать"
 
-#: includes/template-tags.php:604
+#: includes/template-tags.php:607
 #, php-format
 msgid "View all posts by %s"
 msgstr "Все записи автора %s"
 
-#: includes/template-tags.php:624
+#: includes/template-tags.php:627
 msgid "Newer Comments"
 msgstr "Более поздние комментарии"
 
-#: includes/template-tags.php:627
+#: includes/template-tags.php:630
 msgid "Older Comments"
 msgstr "Более ранние комментарии"
 
-#: includes/template-tags.php:664
+#: includes/template-tags.php:667
 msgid "Edit"
 msgstr "Редактировать"
 
-#: includes/template-tags.php:680
+#: includes/template-tags.php:683
 msgid "Your comment is awaiting moderation."
 msgstr "Ваш комментарий ожидает модерации."
 
-#: includes/template-tags.php:694
+#: includes/template-tags.php:697
 msgid "Previous page"
 msgstr "Предыдущая страница"
 
-#: includes/template-tags.php:695
+#: includes/template-tags.php:698
 msgid "Next page"
 msgstr "Следующая страница"
 
-#: includes/template-tags.php:711
+#: includes/template-tags.php:714
 msgid "Posts navigation"
 msgstr "Навигация по записям"
 
-#: includes/template-tags.php:775
+#: includes/template-tags.php:779
 msgid "Bento theme by Satori"
 msgstr "Тема Bento от Satori"
 
-#: includes/template-tags.php:777
-msgid "Bento theme by"
-msgstr "Тема Bento от"
+#: includes/template-tags.php:781
+msgid "theme by"
+msgstr ""
 
-#: includes/template-tags.php:783
+#: includes/template-tags.php:787
 msgid "Y"
 msgstr "Ось Y"
 
-#: includes/template-tags.php:817
+#: includes/template-tags.php:821
 msgid "Load more"
 msgstr "Загрузить еще"
 
@@ -2674,7 +2708,6 @@ msgid "Bento"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-#| msgid "http://satoristudio.net/bento-free-wordpress-theme"
 msgid "http://satoristudio.net/bento-free-wordpress-theme/"
 msgstr ""
 
@@ -2685,6 +2718,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://satoristudio.net/"
 msgstr ""
+
+#~ msgid "Bento theme by"
+#~ msgstr "Тема Bento от"
 
 #~ msgid "Install the %s to set the meta title for individual posts and pages"
 #~ msgstr ""

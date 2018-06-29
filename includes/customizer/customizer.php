@@ -34,7 +34,7 @@ function bento_customizer_extra_css() {
 function bento_customizer_scripts() {
 	
 	// Enqueue the script file
-	wp_enqueue_script( 'bento-customizer-scripts', get_template_directory_uri().'/includes/customizer/customizer-scripts.js', array('jquery'), false, true );
+	wp_enqueue_script( 'bento-customizer-scripts', get_template_directory_uri().'/includes/customizer/customizer-scripts.js', array( 'customize-controls','jquery' ), null, true );
 	
 	// Passing php variables to admin scripts
 	bento_localize_customizer_scripts();
@@ -471,6 +471,29 @@ function bento_customize_register( $wp_customize ) {
 			'label' => esc_html__( 'Menu layout', 'bento' ),
 			'description' => esc_html__( 'Choose the way the primary menu is displayed: - "top, right-aligned" is the classic header with menu on the right (this is default); "top, centered" makes the menu and the logo align to the center of the header, "top, hamburger button" hides the menu behind a mobile-style three-line icon which displays a full-page overlay menu when clicked - suitable for websites with simple and non-hierarchical navigation structure; "left side" displays the menu and the logo to the left of the content area, as a separate section.', 'bento' ),
 		) 
+	);
+	
+	$wp_customize->add_setting( 
+		'bento_default_sidebar', 
+		array(
+			'type' => 'theme_mod',
+			'default' => 0,
+			'sanitize_callback' => 'bento_sanitize_choices',
+		)
+	);
+	$wp_customize->add_control( 
+		'bento_default_sidebar', 
+		array(
+			'section' => 'bento_layout_background',
+			'type' => 'select',
+			'choices' => array( 
+				esc_html__( 'Right sidebar', 'bento' ),
+				esc_html__( 'Left sidebar', 'bento' ),
+				esc_html__( 'Full width', 'bento' ),
+			),
+			'label' => esc_html__( 'Default sidebar layout', 'bento' ),
+			'description' => esc_html__( 'Choose which sidebar configuration is set as default for all pages and posts; note that this does not affect existing posts and pages. You will also be able to change the layout for any single page or post individually using the Sidebar Layout option in the General Settings tab, while in the page edit mode.', 'bento' ),
+		)
 	);
 	
 	// Fonts and Typography
@@ -1450,6 +1473,47 @@ function bento_customize_register( $wp_customize ) {
 	// Static Front Page
 	
 	$wp_customize->add_setting( 
+		'bento_blog_header_image', 
+		array(
+			'type' => 'theme_mod',
+			'default' => '',
+			'sanitize_callback' => 'absint',
+		)
+	);
+	$wp_customize->add_control( 
+		new WP_Customize_Media_Control( 
+			$wp_customize, 
+			'bento_blog_header_image', 
+			array(
+				'section' => 'static_front_page',
+				'priority' => 21,
+				'mime_type' => 'image',
+				'label' => esc_html__( 'Blog posts page: header image', 'bento' ),
+				'description' => esc_html__( 'Upload the image to be used as the full-width header for the blog posts page.', 'bento' ),
+			) 
+		) 
+	);
+	
+	$wp_customize->add_setting( 
+		'bento_blog_header_title', 
+		array(
+			'type' => 'theme_mod',
+			'default' => '',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control( 
+		'bento_blog_header_title', 
+		array(
+			'section' => 'static_front_page',
+			'priority' => 21,
+			'type' => 'text',
+			'label' => esc_html__( 'Blog posts page: header title', 'bento' ),
+			'description' => esc_html__( 'Input the text to be displayed in the blog header.', 'bento' ),
+		)
+	);
+	
+	$wp_customize->add_setting( 
 		'bento_front_header_image', 
 		array(
 			'type' => 'theme_mod',
@@ -1465,8 +1529,8 @@ function bento_customize_register( $wp_customize ) {
 				'section' => 'static_front_page',
 				'priority' => 21,
 				'mime_type' => 'image',
-				'label' => esc_html__( 'Front page: header image', 'bento' ),
-				'description' => esc_html__( 'Upload the image to be used as the full-width header for the front page.', 'bento' ),
+				'label' => esc_html__( 'Static front page: header image', 'bento' ),
+				'description' => esc_html__( 'Upload the image to be used as the full-width header for the static front page.', 'bento' ),
 			) 
 		) 
 	);
@@ -1795,11 +1859,6 @@ function bento_customizer_css() {
 	}
 	$bento_body_text_size_em = $bento_body_text_size / 10;
 	$bento_menu_text_size_rem = $bento_menu_text_size / 10;
-	if ( get_theme_mod( 'bento_menu_config', 0 ) == 3 ) {
-		$bento_menu_parent_after = ( $bento_menu_text_size_rem * 2 + 2 ) / 1.2;
-	} else {
-		$bento_menu_parent_after = $bento_menu_text_size_rem * 6 / 1.2;
-	}
 	$customizer_css .= 
 		$bento_font_face_body.
 		$bento_font_face_headings.
@@ -1824,9 +1883,6 @@ function bento_customizer_css() {
 		.primary-menu > li > a {
 			font-size: '.$bento_menu_text_size.'px;
 			font-size: '.$bento_menu_text_size_rem.'rem;
-		}
-		.primary-menu > .menu-item-has-children > a:after {
-			line-height: '.$bento_menu_parent_after.';
 		}
 	';
 	if ( get_theme_mod( 'bento_sentence_case_menu', 0 ) == 1 ) {

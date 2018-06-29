@@ -222,15 +222,21 @@ if ( ! function_exists( 'bento_post_header' ) ) {
 		// Set variables
 		$postid = $title = $subtitle = $cta = $video_header = '';
 		$postid = get_queried_object_id();
-		
-		// Only display on single posts/pages
-		if ( ! is_singular() ) {
+				
+		// Only display on single posts/pages or blog
+		if ( ! is_singular() && ! is_home() ) {
 			return;
 		}
 		
 		// Set titles
-		if ( get_post_meta( $postid, 'bento_hide_title', true) != 'on' ) {
+		if ( is_singular() && get_post_meta( $postid, 'bento_hide_title', true) != 'on' ) {
 			$title = '<h1>'.wp_kses( get_the_title(), array( 'br' => array() ) ).'</h1>';
+		}
+		if ( is_home() ) {
+			$title = '';
+			if ( get_theme_mod( 'bento_blog_header_title' ) != '' ) {
+				$title = '<h1>'.get_theme_mod( 'bento_blog_header_title' ).'</h1>';
+			}	
 		}
 		if ( has_excerpt( $postid ) ) {
 			$subtitle = '
@@ -316,7 +322,11 @@ if ( ! function_exists( 'bento_post_header' ) ) {
 		}
 		
 		// Render the markup
-		if ( ( get_post_meta( $postid, 'bento_activate_header', true ) == 'on' && get_post_meta( $postid, 'bento_activate_headermap', true ) != 'on' ) || ( is_front_page() && 'page' == get_option('show_on_front') && get_theme_mod( 'bento_front_header_image' ) != '' ) ) {
+		if ( 
+			( get_post_meta( $postid, 'bento_activate_header', true ) == 'on' && get_post_meta( $postid, 'bento_activate_headermap', true ) != 'on' ) || 
+			( is_front_page() && 'page' == get_option('show_on_front') && get_theme_mod( 'bento_front_header_image' ) != '' ) ||
+			( is_home() && get_theme_mod( 'bento_blog_header_image' ) != '' )
+		) {
 			echo '
 				<div class="post-header">
 					'.$video_header.'
@@ -352,7 +362,7 @@ if ( ! function_exists( 'bento_post_thumbnail' ) ) {
 			post_password_required() || 
 			is_attachment() || 
 			get_post_format( $post->ID ) === 'quote' ||
-			( ! is_page() && ! is_home() && get_post_meta( $post->ID, 'bento_hide_thumb', true ) == 'on' ) ||
+			( ! is_page() && get_post_meta( $post->ID, 'bento_hide_thumb', true ) == 'on' ) ||
 			( is_singular() && get_post_meta( $post->ID, 'bento_activate_header', true ) == 'on' && ( $bento_parent_page_id == $post->ID || is_single() ) ) 
 		) {
 			return;
@@ -882,6 +892,7 @@ if ( ! function_exists( 'bento_masonry_item_content' ) ) {
 			$tile_image = esc_url( $post_thumb[0] );
 		}
 		$tile_background .= 'style=background-image:url("'.$tile_image.'")';
+		$tile_opacity_raw = '0.6';
 		if ( get_post_meta( $post->ID, 'bento_tile_overlay_opacity', true) != '' ) {
 			if ( get_post_meta( $bento_parent_page_id, 'bento_hide_tile_overlays', true) != 'on' ) {
 				$tile_opacity_raw = esc_html( get_post_meta( $post->ID, 'bento_tile_overlay_opacity', true) );
