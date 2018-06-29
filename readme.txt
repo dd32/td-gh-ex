@@ -51,6 +51,9 @@ Backphoto includes support for Infinite Scroll in Jetpack.
 * Added Dashicon to some elements (Continue Reading, Next Prev Navigation)
 * Added post tag styling
 
+= 1.0.4 - June 29 2018 =
+* Fixed Dashicon issue
+* Fixed comment form label not showing
 == Credits ==
 
 Google Fonts
