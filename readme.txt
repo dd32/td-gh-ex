@@ -43,6 +43,8 @@ V1.2.3 - 2016-12-15 bugfix of function minimum_minimal_powered_by
 V2.0.0 - 2017-11-21 Complete Rebuild based on the Foundation 6 Front-End Framework
 V2.0.1 - 2017-11-23 Fix in inc/richwp-options
 V2.0.2 - 2017-11-29 WooCommerce cart.php update, removel of one WooCommerce widget area, theme description edit
+V2.0.3 - 2018-06-29 Footer bug fix
+V2.0.3 - 2018-06-29 Translation fix
 
 
 ########################################################

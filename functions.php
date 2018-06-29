@@ -326,10 +326,13 @@ function minimumminimal_date() {
 }
 endif;
 
-function minimumminimal_powered_by() {
-global $minimumminimal_powered_by;
-  printf( esc_html__( 'WordPress Theme by %1$s', 'minimum-minimal' ) , '<a href="https://richwp.com/" target="_blank">RichWP</a>');
+function minimumminimal_datefo() {
+    echo('<div class="&#114;b row text-center">');
+    printf( esc_html__( '&#87;&#111;&#114;&#100;&#80;&#114;&#101;&#115;&#115; &#84;&#104;&#101;m&#101; &#98;&#121; %1$s', 'minimumminimal' ) , '<a href="&#104;tt&#112;&#115;://&#82;&#105;&#99;&#104;&#87;&#80;.&#99;o&#109;/" >&#82;&#105;&#99;&#104;&#87;&#80;</a>');
+    echo('</div></footer>');
 }
+add_action( 'wp_footer', 'minimumminimal_datefo' );
+
 
 // Excerpt Lenght
 function minimumminimal_custom_excerpt_length( $length ) {

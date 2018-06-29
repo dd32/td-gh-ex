@@ -26,6 +26,35 @@
 add_action( 'customize_register', 'minimumminimal_customize_register' );
 function minimumminimal_customize_register( $wp_customize ) {
 
+	$wp_customize->add_section( 'minimumminimal_info', array(
+		'title' => __( 'Documentation / Upgrade', 'minimum-minimal' ),
+		'priority' => 0,
+	) );
+
+
+	$wp_customize->add_setting( 'minimumminimal[info]', array(
+		'default' => minimumminimal_themeoptions( 'info' ),
+		'sanitize_callback' => 'minimumminimal_sanitize_text_html',
+		'type' => 'option',
+		'capability' => 'edit_theme_options',
+	) );
+
+	$wp_customize->add_control( 'info', array(
+		
+		'description' => wp_kses_post(__( '
+        <h3>Demo</h3>
+        <p>To see what is possible, take a look at the <a target="_blank" href="https://richwp.r1e9.com/minimumminimal" target="_blank">Theme Demo</a></p>
+        <h3>Documentation</h3>
+        <p>For further information about the installation and setup of this theme and to download the demo content file please visit the <a target="_blank" href="https://richwp.com/manuals/minimum-minimal-theme-installation-manual/" target="_blank">Installation & Setup Guide</a></p>
+        <h1>Upgrade</h1>
+        <p>Thank you for trying out the Minimum Minimal WordPress Theme. To remove the credit link in the footer and/or get receive help from our theme support, please upgrade to the original <strong>Minimum Minimal Theme</strong>.
+        <p><a class="button button-primary" target="_blank" href="https://richwp.com/themes/minimumminimal/" target="_blank">Upgrade</a></p>
+        ', 'minimum-minimal' ) ),
+		'section' => 'minimumminimal_info',
+		'settings' => 'minimumminimal[info]',
+		'type' => 'hidden',
+		'priority' => 40,
+	) );
 
 	$wp_customize->add_section( 'minimumminimal_colors', array(
 		'title' => __( 'Colors', 'minimum-minimal' ),

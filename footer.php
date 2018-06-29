@@ -32,12 +32,6 @@
 	      </div><!-- .bottom-widget-area -->
 	    <?php endif; ?> 
 
-	    <div class="poweredby row text-center">
-	    	<?php minimumminimal_powered_by();?>
-	    </div>
-	    	
-	</footer>
-
 	<?php wp_footer(); ?>
 
   </body>
