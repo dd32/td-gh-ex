@@ -26,6 +26,41 @@ function agency_lite_customize_register( $wp_customize ) {
 			'render_callback' => 'agency_lite_customize_partial_blogdescription',
 		) );
 	}
+
+	/**
+	 * Upgrade to Agensy-pro
+	*/
+	// Register custom section types.
+	$wp_customize->register_section_type( 'Agency_Lite_Customize_Section_Pro' );
+
+	// Register sections.
+	$wp_customize->add_section(
+	    new Agency_Lite_Customize_Section_Pro(
+	        $wp_customize,
+	        'agency-pro',
+	        array(
+	            'title'    => esc_html__( 'Upgrade To Premium', 'agency-lite' ),
+	            'pro_text' => esc_html__( 'Buy Now','agency-lite' ),
+	            'pro_text1' => esc_html__( 'Compare','agency-lite' ),
+	            'pro_url'  => 'https://accesspressthemes.com/wordpress-themes/agency-pro/',
+	            'priority' => 0,
+	        )
+	    )
+	);
+	$wp_customize->add_setting(
+		'agensy_pro_upbuton',
+		array(
+			'section' => 'agency-pro',
+			'sanitize_callback' => 'esc_attr',
+		)
+	);
+
+	$wp_customize->add_control(
+		'agensy_pro_upbuton',
+		array(
+			'section' => 'agency-pro'
+		)
+	);
 /**
  * Theme Customizer.
  */
