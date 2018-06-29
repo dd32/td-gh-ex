@@ -1,6 +1,6 @@
 <?php
 
-define('ASTORE_VERSION','1.0.0');
+define('ASTORE_VERSION','1.0.8');
 define('ASTORE_TEXTDOMAIN','astore');
 
 if( !function_exists('is_plugin_active') ) {
@@ -758,9 +758,9 @@ $config_customizer = array(
 			'recommended' => true,
 			'description' => sprintf( esc_html__( 'Install and activate %s plugin to build your front page.', 'astore' ), 'Elementor Page Builder' ),
 		),
-		'astore-companion' => array(
+		'vela-companion' => array(
 			'recommended' => true,
-			'description' => sprintf( esc_html__( 'Install and activate %s plugin to take full advantage of AStore theme. More options could be found at Customize and page meta options.', 'astore' ), sprintf( '<strong>%s</strong>', 'AStore Companion' ) ),
+			'description' => sprintf( esc_html__( 'Install and activate %s plugin to take full advantage of AStore theme. More options could be found at Customize and page meta options.', 'astore' ), sprintf( '<strong>%s</strong>', 'Vela Companion' ) ),
 		),
 		
 	),
@@ -771,7 +771,7 @@ $config_customizer = array(
 	'activate_button_label'     => esc_html__( 'Activate', 'astore' ),
 	'deactivate_button_label'   => esc_html__( 'Deactivate', 'astore' ),
 );
-AStore_Customizer_Notify::init( apply_filters( 'astore_customizer_notify_array', $config_customizer ) );
+//AStore_Customizer_Notify::init( apply_filters( 'astore_customizer_notify_array', $config_customizer ) );
 
 /**
  * Welcome notice.
@@ -779,7 +779,7 @@ AStore_Customizer_Notify::init( apply_filters( 'astore_customizer_notify_array',
  */
 function astore_welcome_notice() {
 	global $pagenow;
-	if(function_exists('is_plugin_active') && is_plugin_active('astore-companion/astore-companion.php')){
+	if(function_exists('is_plugin_active') && is_plugin_active('vela-companion/vela-companion.php')){
 		return '';
 		}
 	$theme = wp_get_theme();
@@ -801,7 +801,7 @@ function astore_welcome_notice() {
     <div class="updated notice is-dismissible astore-welcome-notice">   
     <p> 
    <?php
-	printf(__('Welcome! Thanks for choosing AStore! To gain full demo contents of the theme you need to go to Customize to install & activate %1$s plugin.', 'astore' ),'<a href="https://wordpress.org/plugins/astore-companion/" target="_blank">AStore Companion</a>');
+	printf(__('Welcome! Thanks for choosing AStore! To gain full demo contents of the theme you need to go to Customize to install & activate %1$s plugin.', 'astore' ),'<a href="https://velathemes.com/downloads/vela-companion.zip" target="_blank">Vela Companion</a>');
 	?></p>
     <p> 
     <?php
@@ -812,7 +812,7 @@ function astore_welcome_notice() {
     </div>
     <?php
 }
-add_action( 'admin_notices', 'astore_welcome_notice' );
+//add_action( 'admin_notices', 'astore_welcome_notice' );
 
 /**
  * Dismiss welcome notice.
@@ -965,6 +965,66 @@ function astore_subcategory_count_html( $string ){
 	}
 add_filter('woocommerce_subcategory_count_html','astore_subcategory_count_html');
 
+
+/**
+ * Include the TGM_Plugin_Activation class.
+ */
+if ( !class_exists( 'TGM_Plugin_Activation' ) ) 
+	load_template( trailingslashit( get_template_directory() ) . 'inc/class-tgm-plugin-activation.php' );
+
+add_action( 'tgmpa_register', 'astore_theme_register_required_plugins' );
+
+/**
+ * Register the required plugins for this theme.
+ *
+ */
+function astore_theme_register_required_plugins() {
+	
+	$options     = get_option('astore_companion_options',true);
+	$license_key = isset($options['license_key'])?$options['license_key']:'';
+
+    $plugins = array(
+		
+		array(
+			'name'     				=> __('Vela Companion','astore'), // The plugin name
+			'slug'     				=> 'vela-companion', // The plugin slug (typically the folder name)
+			'source'   				=> esc_url('https://velathemes.com/downloads/vela-companion.zip'), // The plugin source
+			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
+			'version' 				=> '1.0.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
+		),
+		
+		array(
+			'name'     				=> __('Elementor','astore'), // The plugin name
+			'slug'     				=> 'elementor', // The plugin slug (typically the folder name)
+			'source'   				=> '', // The plugin source
+			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
+			'version' 				=> '1.0.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+			'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
+		),
+	);
+
+    /**
+     * Array of configuration settings. Amend each line as needed.
+     */
+    $config = array(
+        'id'           => 'vela-companion',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+        'default_path' => '',                      // Default absolute path to pre-packaged plugins.
+        'menu'         => 'tgmpa-install-plugins', // Menu slug.
+        'has_notices'  => true,                    // Show admin notices or not.
+        'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+        'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+        'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+        'message'      => '',                      // Message to output right before the plugins table.
+    );
+
+    tgmpa( $plugins, $config );
+
+}
 /**
  * Fontawsome icons
  */
