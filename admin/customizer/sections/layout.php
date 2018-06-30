@@ -12,14 +12,8 @@ function weaverx_customizer_define_layout_sections( ) {
 	$layout_sections['layout-core'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Core Site Layout and Styling', 'weaver-xtreme' ),
-		/*'description' => sprintf(__( 'This section allows you setup the core layout and styling of your site. You can set the main site width, set the global text and background colors, and pick the default typography.</p><ul><li>Set the overall site width %s</li><li>Expand an entire area to full browser width %s</li><li>Extend only BG attributes to full browser width %s</li><li>Extending only a specified BG color to full browser width (Plus only) %s</li></ul>Content is responsively displayed. Full-width layout shows only on desktop browsers.', 'weaver-xtreme' ),
-		'<img src="'. esc_url($thumbs . 'Standard-Width-thumb.jpg') . '" alt="standard width" />',
-		'<img src="'. esc_url($thumbs . 'Expand-area-thumb.jpg') . '" alt="expand area" />',
-		'<img src="'. esc_url($thumbs . 'Extend-BG-Attributes-thumb.jpg') . '" alt="extend bg attributes" />',
-		'<img src="'. esc_url($thumbs . 'Extend-BG-Color-thumb.jpg') . '" alt="extend bg color" />'
-		), */
 
-		'description' => __( 'This section allows you setup the core layout and styling of your site. You can set the main site width, set the global text and background colors, and pick the default typography.</p> Content is responsively displayed. Full-width layout shows only on desktop browsers.', 'weaver-xtreme' ),
+		'description' => __( 'This section allows you setup the core layout and styling of your site. You can set the main site width, set the global text and background colors, and pick the default typography.</p> Content is responsively displayed.', 'weaver-xtreme' ),
 
 
 		'options' => array (
@@ -46,13 +40,6 @@ function weaverx_customizer_define_layout_sections( ) {
 					),
 				),
 
-				'layout-core-width' => weaverx_cz_group_title( __( 'Overall Site Layout', 'weaver-xtreme' )),
-
-				'site_layout' => weaverx_cz_select(	// must be refresh because column class applied to specific page id
-				__( 'One-Step Site Layout', 'weaver-xtreme' ) ,
-				__( 'Easiest way to set overall site width layout. Settings other than Custom or blank <strong>automatically</strong> set and clear other Extend BG and Stretch Width Options. Use Custom to enable manual Custom Full Width Options. You can also use <em>Full</em> and <em>Wide Align</em> options for individual areas to enhance these one-step settings.', 'weaver-xtreme' ),
-				'weaverx_cz_choices_site_layout','none', 'refresh'
-				),
 
 				'layout-core-colors' => weaverx_cz_group_title( __( 'Overall Site Layout Colors', 'weaver-xtreme' )),
 
@@ -106,19 +93,28 @@ function weaverx_customizer_define_layout_sections( ) {
 
 	$layout_sections['layout-fullwidth'] = array(
 		'panel'   => $panel,
-		'title'   => __( 'Custom Full Width Options', 'weaver-xtreme' ),
-		'description' => sprintf(__( '<p> <span style="color:red;">WARNING: Using <em>Overall Site Layout</em> option on the <strong>Core Site Layout and Styling</strong> menu will cause some of the following settings to be automatically changed.</span></p><p>Try adjusting the width of the Header, Container, Content, and Footer areas on the <em>Spacing, Width, Alignment</em> menu, combined with <em>Extend BG Attributes</em>, to create interesting full width sites. <p> <span style="color:red;">NOTE: Expand, Extend BG, and Full-width BG Color options <em>DO NOT MIX</em> for various areas.</span></p>', 'weaver-xtreme' ),
+		'title'   => __( 'Full Width Options', 'weaver-xtreme' ),
+		'description' => sprintf(__( '<p>The <em>One-Step Site Layout</em> option allows you easily select full width sites. You can also try adjusting the width of the Header, Container, Content, and Footer areas on the <em>Spacing, Width, Alignment</em> menu, combined with <em>Extend BG Attributes</em>, to create interesting full width sites. <p> <span style="color:red;">NOTE: Stretch, Extend BG, and Full-width BG Color options <em>DO NOT MIX</em> for various areas.</span></p>', 'weaver-xtreme' ),
 		'<img src="'. esc_url($thumbs . 'Standard-Width-thumb.jpg') . '" alt="standard width" />'
 		),
 
 		'options' =>  array(
+							'layout-core-width' => weaverx_cz_group_title( __( 'Overall Site Width Layout', 'weaver-xtreme' )),
+
+				'site_layout' => weaverx_cz_select(	// must be refresh because column class applied to specific page id
+				__( 'One-Step Site Layout', 'weaver-xtreme' ) ,
+				__( 'Easiest way to set overall site width layout. Settings other than Traditional or blank <strong>automatically</strong> set and clear other Extend BG and Stretch Width Options. Use Custom to enable manual Custom Full Width Options. You can also use <em>Full</em> and <em>Wide Align</em> options for individual areas to enhance these one-step settings.', 'weaver-xtreme' ),
+				'weaverx_cz_choices_site_layout','none', 'refresh'
+				),
+
+				'layout-core-trad=width' => weaverx_cz_group_title( __( 'Other Site Width Layouts', 'weaver-xtreme' )),
 
 			'wrapper_fullwidth'=> array(
 				'setting' => array(
 				),
 				'control' => array(
-					'label' => __( 'Display Entire Site Full Width', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __('Checking this option will display the <strong>ENTIRE SITE</strong> in the full width of the browser. This option overrides the <em>Site Width</em> option.', 'weaver-xtreme'),
+					'label' => __( 'Stretch Entire Site Full Width', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description' => __('Display site stretched to full width. This option is similar to the Stretched One-Step Site Layout option but makes content as well as the footer and header stretched. This option overrides the <em>Site Width</em> option.', 'weaver-xtreme'),
 					'type'  => 'checkbox',
 				),
 			),
@@ -126,17 +122,10 @@ function weaverx_customizer_define_layout_sections( ) {
 /* ------------------------ FULL WIDTH HEADER ----------------------- */
 
 			'fullwidth-expand-header' => weaverx_cz_group_title( __( 'Full Width Site Header Area', 'weaver-xtreme' ),
-				__('The Header Area contains the Menus, the Header Widget Area, the Site Image, and the Header HTML Area.',	'weaver-xtreme')),
+				__('The Header Area contains the Menus, the Header Widget Area, the Site Image, and the Header HTML Area.',	'weaver-xtreme'),
+				__('Extend BG options extend just the BG color to full width. You need a contrasting BG color to see this effect work!', 'weaver-xtreme')),
 
-			'expand_header'=> array(
-				'setting' => array(
-				),
-				'control' => array(
-					'label' => __( 'Header Expand Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __('Checking this option will automatically include the other Header Area Expand options as well.', 'weaver-xtreme'),
-					'type'  => 'checkbox',
-				),
-			),
+
 			'header_extend_width'=> array(
 				'setting' => array(
 				),
@@ -146,15 +135,16 @@ function weaverx_customizer_define_layout_sections( ) {
 				),
 			),
 
-			'expand_header-image'=> array(
+			'expand_header'=> array(
 				'setting' => array(
 				),
 				'control' => array(
-					'label' => __( 'Header Image Expand Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __('Also consider using the <em>Spacing, Widths, Alignment -> Header Area -> Move Title/Tagline over Image</em> option to create an attractive header.', 'weaver-xtreme'),
+					'label' => __( 'Header Stretch Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description' => __('Checking this option will automatically include the other Header Area Expand options as well.', 'weaver-xtreme'),
 					'type'  => 'checkbox',
 				),
 			),
+
 		)				// end layout-fullwidth ['options']
 	);					// end ['layout-fullwidth']
 
@@ -176,24 +166,6 @@ function weaverx_customizer_define_layout_sections( ) {
 			),
 
 
-			'expand_site_title'=> array(
-				'setting' => array(
-				),
-				'control' => array(
-					'label' => __( 'Site Title/Tagline Expand', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __('This option includes the Site Title, Tagline, Search Button, and MiniMenu.','weaver-xtreme'),
-					'type'  => 'checkbox',
-				),
-			),
-
-			'expand_header-widget-area'=> array(
-				'setting' => array(
-				),
-				'control' => array(
-					'label' => __( 'Header Widget Area Expand', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'type'  => 'checkbox',
-				),
-			),
 			'header_sb_extend_width'=> array(
 				'setting' => array(
 				),
@@ -203,22 +175,17 @@ function weaverx_customizer_define_layout_sections( ) {
 				),
 			),
 
-			'expand_header-html'=> array(
-				'setting' => array(
-				),
-				'control' => array(
-					'label' => __( 'Header HTML Area Expand', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'type'  => 'checkbox',
-				),
-			),
 			'header_html_extend_width'=> array(
 				'setting' => array(
 				),
 				'control' => array(
-					'label' => __( 'Header HTML Area Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'label' => __( 'Header HTML Area Expand BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 					'type'  => 'checkbox',
 				),
 			),
+
+
+
 		);
 		$layout_sections['layout-fullwidth']['options'] = array_merge($layout_sections['layout-fullwidth']['options'], $level);
 
@@ -228,22 +195,33 @@ function weaverx_customizer_define_layout_sections( ) {
 /* ------------------------ FULL WIDTH MENUS ----------------------- */
 		$levelall = array(
 
-		'fullwidth-expand-menusm' => weaverx_cz_group_title( __( 'Full Width Menus', 'weaver-xtreme' ),
-				__('Expand the primary and secondary menus to full width.',	'weaver-xtreme')),
-
-			'expand_m_primary'=> array(
+			'expand_header-image'=> array(
 				'setting' => array(
 				),
 				'control' => array(
-					'label' => __( 'Primary Menu Expand', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'label' => __( 'Header Image Stretch Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description' => __('Also consider using the <em>Spacing, Widths, Alignment -> Header Area -> Move Title/Tagline over Image</em> option to create an attractive header.', 'weaver-xtreme'),
 					'type'  => 'checkbox',
 				),
 			),
+
+		'fullwidth-expand-menusm' => weaverx_cz_group_title( __( 'Full Width Menus', 'weaver-xtreme' ),
+				__('Expand the primary and secondary menus to full width.',	'weaver-xtreme')),
+
+
 			'm_primary_extend_width'=> array(
 				'setting' => array(
 				),
 				'control' => array(
 					'label' => __( 'Primary Menu Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'type'  => 'checkbox',
+				),
+			),
+			'expand_m_primary'=> array(
+				'setting' => array(
+				),
+				'control' => array(
+					'label' => __( 'Primary Menu Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 					'type'  => 'checkbox',
 				),
 			),
@@ -266,19 +244,20 @@ function weaverx_customizer_define_layout_sections( ) {
 				),
 			),
 
-			'expand_m_secondary'=> array(
-				'setting' => array(
-				),
-				'control' => array(
-					'label' => __( 'Secondary Menu Expand', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'type'  => 'checkbox',
-				),
-			),
+
 			'm_secondary_extend_width'=> array(
 				'setting' => array(
 				),
 				'control' => array(
 					'label' => __( 'Secondary Menu Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'type'  => 'checkbox',
+				),
+			),
+			'expand_m_secondary'=> array(
+				'setting' => array(
+				),
+				'control' => array(
+					'label' => __( 'Secondary Menu Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 					'type'  => 'checkbox',
 				),
 			),
@@ -305,21 +284,21 @@ function weaverx_customizer_define_layout_sections( ) {
 				__('The Content Area contains page content, as well as posts.',	'weaver-xtreme')),
 
 
-			'expand_container'=> array(
-				'setting' => array(
-				),
-				'control' => array(
-					'label' => __( 'Container Expand Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __('The container wraps the Info Bar, the content, and widget areas.','weaver-xtreme'),
-					'type'  => 'checkbox',
-				),
-			),
 			'container_extend_width'=> array(
 				'setting' => array(
 				),
 				'control' => array(
 					'label' => __( 'Container Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 				'type'  => 'checkbox',
+				),
+			),
+			'expand_container'=> array(
+				'setting' => array(
+				),
+				'control' => array(
+					'label' => __( 'Container Stretch Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description' => __('The container wraps the Info Bar, the content, and widget areas.','weaver-xtreme'),
+					'type'  => 'checkbox',
 				),
 			),
 			);
@@ -339,41 +318,42 @@ function weaverx_customizer_define_layout_sections( ) {
 				),
 			),
 
-			'expand_infobar'=> array(
-				'setting' => array(
-				),
-				'control' => array(
-					'label' => __( 'Info Bar Expand to Full Width', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __('The Info Bar contains the breadcrumbs and page links.', 'weaver-xtreme'),
-					'type'  => 'checkbox',
-				),
-			),
+
 
 			'infobar_extend_width'=> array(
 				'setting' => array(
 				),
 				'control' => array(
 					'label' => __( 'Info Bar Extend BG', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description' => __('The Info Bar contains the breadcrumbs and page links.', 'weaver-xtreme'),
 					'type'  => 'checkbox',
 				),
 			),
 
-
-			'post_expand'=> array(
+			'expand_infobar'=> array(
 				'setting' => array(
 				),
 				'control' => array(
-					'label' => __( 'Posts Expand to Full Width', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'label' => __( 'Info Bar Stretch to Full Width', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 					'type'  => 'checkbox',
 				),
 			),
+
 
 			'post_extend_width'=> array(
 				'setting' => array(
 				),
 				'control' => array(
 					'label' => __( 'Posts Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __('Most useful with FI as BG images', 'weaver-xtreme'),
+					'description' => __('This option most useful with FI as BG images', 'weaver-xtreme'),
+					'type'  => 'checkbox',
+				),
+			),
+			'post_expand'=> array(
+				'setting' => array(
+				),
+				'control' => array(
+					'label' => __( 'Posts Stretch to Full Width', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 					'type'  => 'checkbox',
 				),
 			),
@@ -388,21 +368,20 @@ function weaverx_customizer_define_layout_sections( ) {
 			'fullwidth-expand-footer' => weaverx_cz_group_title( __( 'Full Width Footer Area', 'weaver-xtreme' ),
 				__('The Footer Area contains the Footer Widget Area, the Footer HTML Area, the copyright line.', 'weaver-xtreme')),
 
-
-			'expand_footer'=> array(
-				'setting' => array(
-				),
-				'control' => array(
-					'label' => __( 'Footer Expand Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __('Checking this option will automatically include the other Footer Area Expand options as well.', 'weaver-xtreme'),
-					'type'  => 'checkbox',
-				),
-			),
 			'footer_extend_width'=> array(
 				'setting' => array(
 				),
 				'control' => array(
 					'label' => __( 'Extend Footer BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'type'  => 'checkbox',
+				),
+			),
+			'expand_footer'=> array(
+				'setting' => array(
+				),
+				'control' => array(
+					'label' => __( 'Footer Stretch Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description' => __('Checking this option will automatically include the other Footer Area Stretch options as well.', 'weaver-xtreme'),
 					'type'  => 'checkbox',
 				),
 			),
@@ -424,15 +403,7 @@ function weaverx_customizer_define_layout_sections( ) {
 				),
 			),
 
-			'expand_footer_sb'=> array(
-				'setting' => array(
-				),
-				'control' => array(
-					'label' => __( 'Footer Widget Area Expand', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 
-					'type'  => 'checkbox',
-				),
-			),
 			'footer_sb_extend_width'=> array(
 				'setting' => array(
 				),
@@ -441,15 +412,17 @@ function weaverx_customizer_define_layout_sections( ) {
 					'type'  => 'checkbox',
 				),
 			),
-
-			'expand_footer_html'=> array(
+			'expand_footer_sb'=> array(
 				'setting' => array(
 				),
 				'control' => array(
-					'label' => __( 'Footer HTML Area Expand', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'label' => __( 'Footer Widget Area Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+
 					'type'  => 'checkbox',
 				),
 			),
+
+
 			'footer_html_extend_width'=> array(
 				'setting' => array(
 				),
@@ -458,12 +431,20 @@ function weaverx_customizer_define_layout_sections( ) {
 					'type'  => 'checkbox',
 				),
 			),
+			'expand_footer_html'=> array(
+				'setting' => array(
+				),
+				'control' => array(
+					'label' => __( 'Footer HTML Area Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'type'  => 'checkbox',
+				),
+			),
 
 			'expand_site-ig-wrap'=> array(
 				'setting' => array(
 				),
 				'control' => array(
-					'label' => __( 'Footer Copyright Area Expand', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'label' => __( 'Footer Copyright Area Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 					'type'  => 'checkbox',
 				),
 			),

@@ -24,11 +24,6 @@ function weaverx_save_editor_css( $usename, $editor ) {
 
 	$save_dir = weaverx_f_uploads_base_dir() . 'weaverx-subthemes';
 
-   if (!@is_writable($save_dir)) {		// direct php access
-		weaverx_f_file_access_fail(__('Directory not writable to save editor style file. Probably a file system permission problem. Directory: ', 'weaver-xtreme' /*adm*/) . $save_dir);
-		return;
-	}
-
 	weaverx_write_to_upload( $usename, weaverx_output_edit_style( $editor ));		// this is where the real work happens
 
 	return;

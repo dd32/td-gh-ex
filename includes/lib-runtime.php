@@ -1230,6 +1230,7 @@ class weaverx_Walker_Nav_Menu extends Walker {
  */
 
 function weaverx_write_to_upload( $filename, $output ) {
+
 	global $wp_filesystem;
 
 	if ( empty( $wp_filesystem ) ) {								/* load if not already present */
@@ -1240,14 +1241,19 @@ function weaverx_write_to_upload( $filename, $output ) {
 	$upload_dir = wp_upload_dir(); // Grab uploads folder array
 	$dir = trailingslashit( $upload_dir['basedir'] ) . 'weaverx-subthemes'. DIRECTORY_SEPARATOR; // Set storage directory path
 
+	WP_Filesystem(); // Initial WP file system
+	$wp_filesystem->mkdir( $dir ); // Make a new folder 'weavrx-subthemes' for storing our file if not created already.
+
 	if (!@is_writable($dir)) {		// direct php access
-		weaverx_f_file_access_fail(__('Directory not writable to save editor style file. Probably a file system permission problem. Directory: ', 'weaver-xtreme' /*adm*/) . $dir);
+		if ( function_exists('weaverx_ts_write_to_upload') ) {
+			weaverx_ts_write_to_upload( $filename, $output );
+		}
+		else
+			weaverx_f_file_access_fail(__('Directory not writable to save editor style file. Please install and activate the Weaver Xtreme Theme Support plugin. Directory: ', 'weaver-xtreme' /*adm*/) . $dir);
 		return;
 	}
 
-	WP_Filesystem(); // Initial WP file system
-	$wp_filesystem->mkdir( $dir ); // Make a new folder 'weavrx-subthemes' for storing our file if not created already.
-	$wp_filesystem->put_contents( $dir . $filename, $output, 0644 ); // Store in the file.
+	$wp_filesystem->put_contents( $dir . $filename, $output, 0744 ); // Store in the file.
 }
 
 /**

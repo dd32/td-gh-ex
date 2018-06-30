@@ -74,7 +74,7 @@ function weaverx_fwrite_current_css() {
  * css include. It needs to be loaded only for the admin page.
  *
  *
- *	@param mixed: PHP file handel, or string for direct output
+ *	@param mixed: PHP file handle, or string for direct output
  */
 
 function weaverx_output_style( $sout ) {
@@ -94,22 +94,16 @@ function weaverx_output_style( $sout ) {
 	if (weaverx_getopt('wrapper_fullwidth'))
 		$themew = 10000;						// override for full width
 
-	// Behavior changed in V 4.0 - Need tp generate different style depending on fullwidth
+	// Behavior changed in V 4.0 - Need to generate different style depending on fullwidth
 
-	if ( weaverx_getopt('legacy_fullwidth') ) {
-
-		weaverx_f_write($sout,sprintf("#wrapper{max-width:%dpx;}\n",$themew));
-
-	} else if ( weaverx_getopt( 'site_layout') == 'fullwidth' ) {
+	if ( weaverx_getopt( 'site_layout') == 'fullwidth' ) {
 		// Weaver Xtreme 4 creates fullwidth with
 
 		weaverx_f_write($sout,sprintf(".block-inside{max-width:%dpx;margin-left:auto;margin-right:auto;}\n",$themew));
 		weaverx_f_write($sout,".page #content{overflow:visible !important;}.single #content{overflow:visible !important;}.blog #content {overflow:hidden !important;}\n");
 
 	} else {
-
 		weaverx_f_write($sout,sprintf("#wrapper{max-width:%dpx;}\n",$themew));
-
 	}
 
 
@@ -119,7 +113,7 @@ function weaverx_output_style( $sout ) {
 
 
 	$full = weaverx_getopt('site_layout');
-	if ($full && $full != 'custom') {			// okay, we have a value to manipulate
+	if ( $full == 'fullwidth' || $full == 'stretched' ) {			// okay, we have a value to manipulate
 		$clear = array (						// all the extend/expand options need to be cleared to start;
 			'wrapper_fullwidth','expand_header','expand_header-image','expand_site_title','expand_header-widget-area','expand_header-html',
 			'expand_m_primary','expand_m_secondary','expand_container','expand_post','expand_footer','expand_footer_sb',
@@ -137,17 +131,13 @@ function weaverx_output_style( $sout ) {
 
 		switch ( $full ) {
 			case 'fullwidth':
-				if ( weaverx_getopt('legacy_fullwidth') ) {
-					foreach (array('header_extend_width', 'container_extend_width', 'm_primary_extend_width', 'm_secondary_extend_width', 'footer_extend_width') as $opt)
-						weaverx_setopt($opt, true);
-				} else {
-					foreach ( array('m_primary_extend_width', 'm_secondary_extend_width') as $opt )		// should try to change these to CSS insterad of JS
-						weaverx_setopt($opt, true );
-					foreach ( array('m_primary_align', 'm_secondary_align') as $opt ) {			// disable wide/full aligned menus
-						$align = weaverx_getopt_default( $opt, 'left' );
-						weaverx_setopt( $opt, str_replace('alignwide', 'alignfull', $align ));
-					}
+				foreach ( array('m_primary_extend_width', 'm_secondary_extend_width') as $opt )		// should try to change these to CSS insterad of JS
+					weaverx_setopt($opt, true );
+				foreach ( array('m_primary_align', 'm_secondary_align') as $opt ) {			// disable wide/full aligned menus
+					$align = weaverx_getopt_default( $opt, 'left' );
+					weaverx_setopt( $opt, str_replace('alignwide', 'alignfull', $align ));
 				}
+
 				break;
 
 			case 'stretched':
