@@ -1,5 +1,8 @@
 Auto Store Changelog
 
+= 1.2.1 - June 30 2018 =
+* FIXED: Home Page CSS Isuue
+
 = 1.2.0 - June 15 2018 =
 * ADDED: Premium Feature
 * CHANGE: Autor URL
