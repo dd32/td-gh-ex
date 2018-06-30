@@ -1,6 +1,6 @@
 === Impressive ===
 
-Impressive Theme by FasterThemes https://fasterthemes.com/
+Impressive Theme by FruitThemes https://fruitthemes.com/
 
 === About Impressive ===
 
@@ -16,7 +16,7 @@ License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 == Copyright ==
-Impressive Theme, Copyright 2017 fasterthemes.com
+Impressive Theme, Copyright 2017 fruitthemes.com
 Impressive is distributed under the terms of the GNU GPL
 
 == Features ==

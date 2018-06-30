@@ -19,7 +19,7 @@ get_header();
 				<div class="blog-box">
 			<?php $impressive_image = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'large' );  
 			 if($impressive_image[0] != "") { ?>
-				<img src="<?php echo $impressive_image[0]; ?>" width="<?php echo $impressive_image[1]; ?>" height="<?php echo $impressive_image[2]; ?>" class="img-responsive blog-image" alt="<?php the_title(); ?>" />
+				<img src="<?php echo esc_url($impressive_image[0]); ?>" width="<?php echo esc_attr($impressive_image[1]); ?>" height="<?php echo esc_attr($impressive_image[2]); ?>" class="img-responsive blog-image" alt="<?php the_title(); ?>" />
 			<?php } ?> 
 					<span class="work-title"><?php the_title(); ?></span>
 					<div class="our-blog-details">

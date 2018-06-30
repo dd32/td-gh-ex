@@ -1,22 +1,23 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Impressive V1.0.4\n"
-"POT-Creation-Date: 2017-03-27 16:31+0530\n"
-"PO-Revision-Date: 2015-02-28 10:19+0530\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Impressive\n"
+"POT-Creation-Date: 2018-06-30 17:07+0530\n"
+"PO-Revision-Date: 2018-06-30 17:07+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.5\n"
 "X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -28,11 +29,13 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
+#. translators: %s is date.
 #: archive.php:10
 #, php-format
 msgid "Daily Archives: %s"
 msgstr ""
 
+#. translators: %s is month.
 #: archive.php:12
 #, php-format
 msgid "Monthly Archives: %s"
@@ -43,6 +46,7 @@ msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
+#. translators: %s is year.
 #: archive.php:14
 #, php-format
 msgid "Yearly Archives: %s"
@@ -57,66 +61,365 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
+#. translators: %s is author.
 #: author.php:9
 #, php-format
 msgid "All posts by %s"
 msgstr ""
 
+#. translators: %s is category single title.
 #: category.php:10
 #, php-format
 msgid "Category : %s"
 msgstr ""
 
-#: comments.php:14 functions/theme-default-setup.php:82
+#. translators: 1: comment count number, 2: title.
+#: comments.php:17
 #, php-format
-msgid "1 Comment"
-msgid_plural "%1$s Comments"
+msgctxt "comments title"
+msgid "%1$s comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: footer.php:8 header.php:31 theme-options/theme-options.php:131
-msgid "logo"
-msgstr ""
-
-#: footer.php:36
+#. translators: %1$s is theme url
+#: footer.php:29
 #, php-format
-msgid "Powered by %1$s."
+msgid "Powered by %1$s"
 msgstr ""
 
 #: functions.php:10
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:62
+#: functions.php:63
 msgid "READ MORE"
 msgstr ""
 
-#: functions/breadcrumbs.php:9
+#: functions.php:69
+msgid "Pro Feature"
+msgstr ""
+
+#: functions.php:69
+msgid "Impressive Pro"
+msgstr ""
+
+#: functions/breadcrumbs.php:21
 msgid "Home"
 msgstr ""
 
-#: functions/breadcrumbs.php:28
-msgid "category"
+#: functions/breadcrumbs.php:166 functions/breadcrumbs.php:169
+#: functions/breadcrumbs.php:173 functions/breadcrumbs.php:180
+#: functions/breadcrumbs.php:184 functions/breadcrumbs.php:189
+msgid " Archives"
 msgstr ""
 
-#: functions/breadcrumbs.php:31
-msgid "Search Results For"
+#: functions/breadcrumbs.php:200
+msgid "Author: "
 msgstr ""
 
-#: functions/breadcrumbs.php:89
-msgid "Posts tagged"
+#: functions/breadcrumbs.php:205
+msgid "Page "
 msgstr ""
 
-#: functions/breadcrumbs.php:94
-msgid "Articles posted by "
+#: functions/breadcrumbs.php:205
+msgid "Page"
 msgstr ""
 
-#: functions/breadcrumbs.php:97
+#: functions/breadcrumbs.php:210
+msgid "Search results for: "
+msgstr ""
+
+#: functions/breadcrumbs.php:215
 msgid "Error 404"
 msgstr ""
 
-#: functions/breadcrumbs.php:102
-msgid "Page"
+#: functions/customizer.php:43
+msgid "General"
+msgstr ""
+
+#: functions/customizer.php:44
+msgid "styling options"
+msgstr ""
+
+#: functions/customizer.php:53
+msgid "Site Social Accounts"
+msgstr ""
+
+#: functions/customizer.php:55
+msgid ""
+"In first input box, you need to add FONT AWESOME shortcode which you can "
+"find "
+msgstr ""
+
+#: functions/customizer.php:55
+msgid "here"
+msgstr ""
+
+#: functions/customizer.php:55
+msgid ""
+" and in second input box, you need to add your social media profile URL."
+msgstr ""
+
+#: functions/customizer.php:55
+msgid ""
+" Enter the URL of your social accounts. Leave it empty to hide the icon."
+msgstr ""
+
+#: functions/customizer.php:71
+msgid "Social Account "
+msgstr ""
+
+#: functions/customizer.php:89
+msgid "Enter Icon"
+msgstr ""
+
+#: functions/customizer.php:99
+msgid "Social Link "
+msgstr ""
+
+#: functions/customizer.php:118
+msgid "Enter URL"
+msgstr ""
+
+#: functions/customizer.php:126 functions/customizer.php:131
+msgid "Header & Logo"
+msgstr ""
+
+#: functions/customizer.php:140
+msgid "Front Page Options"
+msgstr ""
+
+#: functions/customizer.php:141
+msgid "Front Page options"
+msgstr ""
+
+#: functions/customizer.php:150
+msgid "Front Page : About Us Section"
+msgstr ""
+
+#: functions/customizer.php:168
+msgid "Enter Title "
+msgstr ""
+
+#: functions/customizer.php:169
+msgid ""
+"Enter home page title for your site , you would like to display in the Home "
+"Page."
+msgstr ""
+
+#: functions/customizer.php:171 functions/customizer.php:381
+msgid "Enter Title"
+msgstr ""
+
+#: functions/customizer.php:187
+msgid "Enter Sub Title "
+msgstr ""
+
+#: functions/customizer.php:188
+msgid ""
+"Enter home page Sub title for your site , you would like to display in the "
+"Home Page."
+msgstr ""
+
+#: functions/customizer.php:190
+msgid "Enter Sub Title"
+msgstr ""
+
+#: functions/customizer.php:205
+msgid "Enter Short Description "
+msgstr ""
+
+#: functions/customizer.php:206
+msgid ""
+"Enter content for your site , you would like to display in the Home Page."
+msgstr ""
+
+#: functions/customizer.php:208 functions/customizer.php:277
+#: functions/customizer.php:364 functions/customizer.php:398
+msgid "Enter Description"
+msgstr ""
+
+#: functions/customizer.php:215
+msgid "Front Page : Our Service Section"
+msgstr ""
+
+#: functions/customizer.php:235
+msgid "Service Section"
+msgstr ""
+
+#: functions/customizer.php:236
+msgid "Service Section hide or show ."
+msgstr ""
+
+#: functions/customizer.php:239 functions/customizer.php:326
+#: functions/customizer.php:431 functions/customizer.php:662
+#: functions/customizer.php:682
+msgid "Show"
+msgstr ""
+
+#: functions/customizer.php:240 functions/customizer.php:327
+#: functions/customizer.php:432 functions/customizer.php:663
+#: functions/customizer.php:683
+msgid "Hide"
+msgstr ""
+
+#: functions/customizer.php:258
+msgid "Enter Service Title "
+msgstr ""
+
+#: functions/customizer.php:260
+msgid "Enter title"
+msgstr ""
+
+#: functions/customizer.php:275
+msgid "Enter Service Description "
+msgstr ""
+
+#: functions/customizer.php:292
+msgid "Enter Service icon "
+msgstr ""
+
+#: functions/customizer.php:294
+msgid "Enter Service icon"
+msgstr ""
+
+#: functions/customizer.php:302
+msgid "Front Page : Get In Touch Section"
+msgstr ""
+
+#: functions/customizer.php:322
+msgid "Second Section"
+msgstr ""
+
+#: functions/customizer.php:323
+msgid "Second Section hide or show ."
+msgstr ""
+
+#: functions/customizer.php:342
+msgid "Upload backgroung Image "
+msgstr ""
+
+#: functions/customizer.php:343
+msgid ""
+"Home page get in touch backgroung image (Recommended Size : 1350px * 400px) "
+msgstr ""
+
+#: functions/customizer.php:362
+msgid "Enter Short Description"
+msgstr ""
+
+#: functions/customizer.php:379
+msgid "Enter Button Title "
+msgstr ""
+
+#: functions/customizer.php:396
+msgid "Enter Button Url"
+msgstr ""
+
+#: functions/customizer.php:407
+msgid "Front Page : Latest Blog Section"
+msgstr ""
+
+#: functions/customizer.php:427
+msgid "Third Section"
+msgstr ""
+
+#: functions/customizer.php:428
+msgid "Third Section hide or show ."
+msgstr ""
+
+#: functions/customizer.php:449 functions/customizer.php:467
+msgid "Entet Latest Blog title"
+msgstr ""
+
+#: functions/customizer.php:450 functions/customizer.php:468
+msgid "Entet Latest Blog Title , you would like to display in the Home Page."
+msgstr ""
+
+#: functions/customizer.php:485
+msgid "Entet Latest Blog Per Page"
+msgstr ""
+
+#: functions/customizer.php:486
+msgid ""
+"Entet Latest Blog Per Page , you would like to display in the Home Page."
+msgstr ""
+
+#: functions/customizer.php:495
+msgid "Contact Us Setting"
+msgstr ""
+
+#: functions/customizer.php:513
+msgid "Contact info Title "
+msgstr ""
+
+#: functions/customizer.php:515
+msgid "Enter Info Title"
+msgstr ""
+
+#: functions/customizer.php:531
+msgid "Contact Info "
+msgstr ""
+
+#: functions/customizer.php:533
+msgid "Enter Info"
+msgstr ""
+
+#: functions/customizer.php:548
+msgid "Contact Telephone "
+msgstr ""
+
+#: functions/customizer.php:550
+msgid "Enter Telephone"
+msgstr ""
+
+#: functions/customizer.php:565
+msgid "Contact Fax "
+msgstr ""
+
+#: functions/customizer.php:567
+msgid "Enter Fax"
+msgstr ""
+
+#: functions/customizer.php:582
+msgid "Contact Email "
+msgstr ""
+
+#: functions/customizer.php:584
+msgid "Enter Email"
+msgstr ""
+
+#: functions/customizer.php:600
+msgid "Contact Website "
+msgstr ""
+
+#: functions/customizer.php:602
+msgid "Enter Website url"
+msgstr ""
+
+#: functions/customizer.php:617
+msgid "Contact Address "
+msgstr ""
+
+#: functions/customizer.php:619
+msgid "Enter Address"
+msgstr ""
+
+#: functions/customizer.php:625
+msgid "Footer"
+msgstr ""
+
+#: functions/customizer.php:643
+msgid "Enter Copyright Text"
+msgstr ""
+
+#: functions/customizer.php:659
+msgid "Footer Social icon show or hide"
+msgstr ""
+
+#: functions/customizer.php:679
+msgid "Footer logo show or hide"
 msgstr ""
 
 #: functions/theme-default-setup.php:14
@@ -136,6 +439,7 @@ msgstr ""
 msgid "Tags : "
 msgstr ""
 
+#. translators: %s is Author details
 #: functions/theme-default-setup.php:54
 #, php-format
 msgid "View all posts by %s"
@@ -166,6 +470,10 @@ msgstr ""
 msgid " Comments"
 msgstr ""
 
+#: functions/theme-default-setup.php:82
+msgid "1 Comment"
+msgstr ""
+
 #: functions/theme-default-setup.php:103
 msgctxt "comment form placeholder"
 msgid "Name *"
@@ -194,15 +502,11 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: header.php:59
+#: header.php:48
 msgid "Search"
 msgstr ""
 
-#: header.php:180
-msgid "custom-header"
-msgstr ""
-
-#: index.php:15 page-templates/frontpage.php:77
+#: index.php:15
 msgid "Our Blog"
 msgstr ""
 
@@ -210,23 +514,23 @@ msgstr ""
 msgid "Contact Information"
 msgstr ""
 
-#: page-templates/contact.php:40
+#: page-templates/contact.php:44
 msgid "Telephone  "
 msgstr ""
 
-#: page-templates/contact.php:43
+#: page-templates/contact.php:47
 msgid "Fax  "
 msgstr ""
 
-#: page-templates/contact.php:46
+#: page-templates/contact.php:50
 msgid "E-Mail  "
 msgstr ""
 
-#: page-templates/contact.php:49
+#: page-templates/contact.php:53
 msgid "Website  "
 msgstr ""
 
-#: page-templates/contact.php:51
+#: page-templates/contact.php:55
 msgid "Address  "
 msgstr ""
 
@@ -235,6 +539,7 @@ msgstr ""
 msgid "Pages"
 msgstr ""
 
+#. translators: %s is search query
 #: search.php:10
 #, php-format
 msgid "Search Results for: %s"
@@ -244,260 +549,57 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: search.php:38
+#: search.php:39
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
+#. translators: %s is singletitle.
 #: tag.php:10
 #, php-format
-msgid "Tag Archives : %s"
+msgid "Tag Archives  %s"
 msgstr ""
 
-#: theme-options/theme-options.php:63 theme-options/theme-options.php:64
-#: theme-options/theme-options.php:100
-msgid "Theme Options"
+#. Theme Name of the plugin/theme
+msgid "Impressive"
 msgstr ""
 
-#: theme-options/theme-options.php:87
-msgid "FasterThemes"
+#. Theme URI of the plugin/theme
+msgid "https://fruitthemes.com/wordpress-themes/impressive/"
 msgstr ""
 
-#: theme-options/theme-options.php:91 theme-options/theme-options.php:438
-msgid "Save Options"
-msgstr ""
-
-#: theme-options/theme-options.php:103
-msgid "Basic Settings"
-msgstr ""
-
-#: theme-options/theme-options.php:104
-msgid "Header Settings"
-msgstr ""
-
-#: theme-options/theme-options.php:105
-msgid "Footer Settings"
-msgstr ""
-
-#: theme-options/theme-options.php:106
-msgid "Home Page Settings"
-msgstr ""
-
-#: theme-options/theme-options.php:107
-msgid "Social Settings"
-msgstr ""
-
-#: theme-options/theme-options.php:108
-msgid "Contact Us Settings"
-msgstr ""
-
-#: theme-options/theme-options.php:109
-msgid "PRO Theme Features"
-msgstr ""
-
-#: theme-options/theme-options.php:122
-msgid "Site Logo (Recommended Size : 600px * 100px)"
-msgstr ""
-
-#: theme-options/theme-options.php:124
-msgid "Size of Logo should be exactly 600x100px for best results."
-msgstr ""
-
-#: theme-options/theme-options.php:127 theme-options/theme-options.php:145
-#: theme-options/theme-options.php:179 theme-options/theme-options.php:267
-msgid "No file chosen"
-msgstr ""
-
-#: theme-options/theme-options.php:128 theme-options/theme-options.php:146
-#: theme-options/theme-options.php:180 theme-options/theme-options.php:268
-msgid "Upload"
-msgstr ""
-
-#: theme-options/theme-options.php:140
-msgid "Favicon (Recommended Size : 32px * 32px)"
-msgstr ""
-
-#: theme-options/theme-options.php:142
-msgid "Size of favicon should be exactly 32x32px for best results."
-msgstr ""
-
-#: theme-options/theme-options.php:149
-msgid "favicon"
-msgstr ""
-
-#: theme-options/theme-options.php:156 theme-options/theme-options.php:312
-msgid "Blog Title"
-msgstr ""
-
-#: theme-options/theme-options.php:170
-msgid "Check this if you want to hide the header social menu icon."
-msgstr ""
-
-#: theme-options/theme-options.php:175
-msgid "Header Backgroung Image (Recommended Size : 1350px * 667px)"
-msgstr ""
-
-#: theme-options/theme-options.php:194
-msgid "Check this if you want to hide the footer logo."
-msgstr ""
-
-#: theme-options/theme-options.php:202
-msgid "Check this if you want to hide the footer social icon."
-msgstr ""
-
-#: theme-options/theme-options.php:207
-msgid "Copyright Text"
-msgstr ""
-
-#: theme-options/theme-options.php:210
+#. Description of the plugin/theme
 msgid ""
-"Some text regarding copyright of your site, you would like to display in the "
-"footer."
+"Impressive is a lightweight, clean, super flexible and bootstrap based "
+"responsive theme for business or personal websites. Impressive Theme is "
+"built on top of Twitter Bootstrap which means that your site can be "
+"displayed on every device (pc, laptop, mobile devices, tablets etc) without "
+"horizontal scrolling. It has got custom widgets, theme-options etc in order "
+"to get it customized as per your need.Step by step documentation and dummy "
+"data is available at: https://fruitthemes.com/documentation/impressive/"
 msgstr ""
 
-#: theme-options/theme-options.php:218 theme-options/theme-options.php:220
-msgid "Title Bar"
+#. Author of the plugin/theme
+msgid "FruitThemes"
 msgstr ""
 
-#: theme-options/theme-options.php:223
-msgid "Home Title "
+#. Author URI of the plugin/theme
+msgid "https://fruitthemes.com/"
 msgstr ""
 
-#: theme-options/theme-options.php:226
-msgid "Home Sub Title"
+#. Template Name of the plugin/theme
+msgid "Contact Us"
 msgstr ""
 
-#: theme-options/theme-options.php:243
-msgid "Our Services"
+#. Template Name of the plugin/theme
+msgid "Home Page"
 msgstr ""
 
-#: theme-options/theme-options.php:246
-msgid "Tab"
+#. Template Name of the plugin/theme
+msgid "Full Width"
 msgstr ""
 
-#: theme-options/theme-options.php:249
-msgid "Section Icon"
-msgstr ""
-
-#: theme-options/theme-options.php:250
-msgid "Font Awesome icon names"
-msgstr ""
-
-#: theme-options/theme-options.php:250
-msgid "[View all]"
-msgstr ""
-
-#: theme-options/theme-options.php:253
-msgid "Section Title"
-msgstr ""
-
-#: theme-options/theme-options.php:256
-msgid "Section Description"
-msgstr ""
-
-#: theme-options/theme-options.php:261
-msgid "Get In Touch"
-msgstr ""
-
-#: theme-options/theme-options.php:263
-msgid ""
-"Home page get in touch backgroung image (Recommended Size : 1350px * 400px)"
-msgstr ""
-
-#: theme-options/theme-options.php:270
-msgid "get in touch bg"
-msgstr ""
-
-#: theme-options/theme-options.php:276
-msgid "Button title"
-msgstr ""
-
-#: theme-options/theme-options.php:279
-msgid "Button Title"
-msgstr ""
-
-#: theme-options/theme-options.php:284 theme-options/theme-options.php:287
-msgid "Button Link"
-msgstr ""
-
-#: theme-options/theme-options.php:291
-msgid "Get In Touch Text"
-msgstr ""
-
-#: theme-options/theme-options.php:307 theme-options/theme-options.php:309
-msgid "Blog Section"
-msgstr ""
-
-#: theme-options/theme-options.php:315
-msgid "Blog Sub Title"
-msgstr ""
-
-#: theme-options/theme-options.php:319
-msgid ""
-"Enter number of blog items , you would like to display in the home page."
-msgstr ""
-
-#: theme-options/theme-options.php:328
-msgid "Facebook"
-msgstr ""
-
-#: theme-options/theme-options.php:331
-msgid "Facebook profile or page URL "
-msgstr ""
-
-#: theme-options/theme-options.php:336
-msgid "Twitter"
-msgstr ""
-
-#: theme-options/theme-options.php:339
-msgid "Twitter profile or page URL "
-msgstr ""
-
-#: theme-options/theme-options.php:345
-msgid "Youtube"
-msgstr ""
-
-#: theme-options/theme-options.php:348
-msgid "youtube profile or page URL "
-msgstr ""
-
-#: theme-options/theme-options.php:354
-msgid "RSS"
-msgstr ""
-
-#: theme-options/theme-options.php:357
-msgid "RSS profile or page URL "
-msgstr ""
-
-#: theme-options/theme-options.php:366
-msgid "Contact Info Title"
-msgstr ""
-
-#: theme-options/theme-options.php:374
-msgid "Contact Info"
-msgstr ""
-
-#: theme-options/theme-options.php:377
-msgid "Description"
-msgstr ""
-
-#: theme-options/theme-options.php:382
-msgid "Contact Telephone"
-msgstr ""
-
-#: theme-options/theme-options.php:390
-msgid "Contact Fax"
-msgstr ""
-
-#: theme-options/theme-options.php:398
-msgid "Contact Email"
-msgstr ""
-
-#: theme-options/theme-options.php:406
-msgid "Contact web"
-msgstr ""
-
-#: theme-options/theme-options.php:414 theme-options/theme-options.php:417
-msgid "Contact Address"
+#. Template Name of the plugin/theme
+msgid "Left Sidebar"
 msgstr ""

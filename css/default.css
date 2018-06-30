@@ -258,6 +258,10 @@ section {
 .logo{
     margin: 0 0 50px;
 }
+.logo a {
+    color: #fff;
+    display: block;
+}
 .impressive-header .social-icon ul{
     margin: 0 0 40px;
 }
@@ -274,6 +278,7 @@ section {
     border-bottom: 1px solid #d3d3d3;
     display: inline-block;
     position: relative;
+	color:#fff;
 }
 .searchform .icon-search:before {
     content: "\f002";

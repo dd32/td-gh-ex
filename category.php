@@ -7,7 +7,7 @@ get_header();
 <section>
   <div class="impressive-container container">
       <div class="site-breadcumb">       
-        <h1><?php printf( __( 'Category : %s', 'impressive' ), single_cat_title( '', false ) ); ?></h1>
+        <h1><?php printf( /* translators: %s is category single title.*/ esc_html__( 'Category : %s', 'impressive' ), single_cat_title( '', false ) ); ?></h1>
         <ol class="breadcrumb breadcrumb-menubar">
            <?php if (function_exists('impressive_custom_breadcrumbs')) impressive_custom_breadcrumbs(); ?>
         </ol>        

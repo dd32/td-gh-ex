@@ -12,7 +12,7 @@ get_header(); ?>
 				<?php if(!empty($impressive_options['blogtitle'])) { 
 					echo esc_attr($impressive_options['blogtitle']);
 				 } else { 	
-					echo _e('Our Blog','impressive');
+					echo esc_html_e('Our Blog','impressive');
 				} ?>
 			</h1>
 		</div>

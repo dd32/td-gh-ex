@@ -51,7 +51,7 @@ function impressive_entry_meta() {
 
 	$impressive_author = sprintf( '<a href="%1$s" title="%2$s" >%3$s</a>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'impressive' ), get_the_author() ) ),
+		esc_attr( sprintf(/* translators: %s is Author details*/ __( 'View all posts by %s', 'impressive' ), get_the_author() ) ),
 		get_the_author()
 	);
 

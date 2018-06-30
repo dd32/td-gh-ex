@@ -37,14 +37,15 @@ function impressive_setup() {
 	   'featured_content_filter' => 'impressive_get_featured_posts',
 	   'max_posts' => 6,
 	));
-	
+	add_theme_support( 'custom-logo');
 	add_theme_support( 'custom-header', apply_filters( 'impressive_custom_header_args', array(
+	'default-image'          => get_template_directory_uri().'/images/footer-bg.jpg',
 	'uploads'       => true,
 	'flex-height'   => true,
 	'default-text-color' => '#fff',
 	'header-text' => true,
-	'height' => '120',
-	'width'  => '1260'
+	'height' => '667',
+	'width'  => '1350'
  	) ) );
 	add_theme_support( 'custom-background', apply_filters( 'impressive_custom_background_args', array(
 	'default-color' => 'f5f5f5',
@@ -63,27 +64,29 @@ function impressive_change_excerpt_more( $more ) {
 }
 add_filter('excerpt_more', 'impressive_change_excerpt_more');
 
+add_action( 'admin_menu', 'impressive_admin_menu');
+function impressive_admin_menu( ) {
+    add_theme_page( __('Pro Feature','impressive'), __('Impressive Pro','impressive'), 'manage_options', 'impressive-pro-buynow', 'impressive_buy_now', 300 );   
+}
+function impressive_buy_now(){ ?>
+<div class="impressive_pro_version">
+  <a href="<?php echo esc_url('https://fruitthemes.com/wordpress-themes/impressivepro/'); ?>" target="_blank">
+    
+    <img src ="<?php echo esc_url(get_template_directory_uri()); ?>/images/impressive_pro_features.png" width="75%" height="auto" />
 
-add_action('wp_head','impressive_header_bg_img_css');
-function impressive_header_bg_img_css()
-{
-	$impressive_options = get_option('impressive_theme_options');
-	$impressive_header_bg_img = esc_url($impressive_options['headertop-bg']);
-	$impressive_touch_bg_img = esc_url($impressive_options['get-in-touch-background']);
-	$impressive_header_output="<style> .header_bg { background :url('".$impressive_header_bg_img."'); } </style>";
-	$impressive_touch_output="<style> .get-in-touch { background :url('".$impressive_touch_bg_img."'); } </style>";
-	echo $impressive_header_output;
-	echo $impressive_touch_output;
+  </a>
+</div>
+<?php
 }
 
 /*** Enqueue css and js files ***/
 require get_template_directory() . '/functions/enqueue-files.php';
+
+/*** customizer ***/
+require get_template_directory() . '/functions/customizer.php';
 
 /*** Theme Default Setup ***/
 require get_template_directory() . '/functions/theme-default-setup.php';
 
 /*** Breadcrumbs ***/
 require get_template_directory() . '/functions/breadcrumbs.php';
-
-/*** Theme Option ***/
-require get_template_directory() . '/theme-options/theme-options.php';
