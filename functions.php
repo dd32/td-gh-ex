@@ -70,7 +70,9 @@ if (1 != elegant_magazine_get_option('show_main_news_section')) {
                                     <figure class="slick-item">
                                         <div class="data-bg data-bg-hover data-bg-hover data-bg-slide"
                                              data-background="<?php echo esc_url($url); ?>">
+                                            <a class="em-figure-link" href="<?php the_permalink(); ?>"></a>
                                             <figcaption class="slider-figcaption slider-figcaption-1">
+
                                                 <div class="figure-categories figure-categories-bg">
                                                     <?php echo elegant_magazine_post_format($post->ID); ?>
                                                     <?php elegant_magazine_post_categories('&nbsp', 'extended'); ?>
@@ -126,7 +128,7 @@ if (1 != elegant_magazine_get_option('show_main_news_section')) {
                                     <div class="featured-article-wrapper">
                                         <div class="data-bg data-bg-hover data-bg-hover data-bg-featured"
                                              data-background="<?php echo esc_url($url); ?>">
-
+                                            <a class="em-figure-link" href="<?php the_permalink(); ?>"></a>
                                             <div class="figure-categories figure-categories-1 figure-categories-bg">
                                                 <?php echo elegant_magazine_post_format($post->ID); ?>
                                                 <?php elegant_magazine_post_categories(); ?>

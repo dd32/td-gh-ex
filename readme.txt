@@ -3,7 +3,7 @@
 Contributors: shivashankerbhatta
 Requires at least: 4.0
 Tested up to: 4.9
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: news, blog, entertainment, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, custom-header, translation-ready, theme-options, threaded-comments
@@ -18,16 +18,25 @@ Use it to make something cool, have fun, and share what you've learned with othe
 A Magazine is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
+
 A Magazine is a child theme of "Elegant Magazine". Elegant Magazine WordPress Theme, Copyright 2018 AF themes. Elegant Magazine is distributed under the terms of the GNU GPL v2 or later.
 A Magazine is licensed under the GPL v2.
 
 == Description ==
-A Magazine is a child theme of Elegant Magazine. The theme has modified full main banner section and featured news section. Furthermore, it is coming with different font, various color and background color changes.  It is typically designed for a blog, fashion news portal and magazine with an immense research on contemporary online newspapers. With the help of parent customizer options along with widgets, you can implement layouts as a trending news journals, modern fashion magazine, travel blogging & magazine, clean and minimal news sites, blogging site and even more. The theme is SEO friendly with optimized codes and awesome supports.
+A Magazine is a child theme of Elegant Magazine. The theme has modified full-width main banner and lower featured news section. Furthermore, it is coming with different font, various color and background color changes.  It is typically designed for a blog, fashion news portal and magazine with an immense research on contemporary online newspapers. With the help of parent customizer options along with widgets, you can implement layouts as a trending news journals, modern fashion magazine, travel blogging & magazine, clean and minimal news sites, blogging site and even more. The theme is SEO friendly with optimized codes and awesome support.
 == Installation ==
 
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
+
+== Changelog ==
+= 1.0.2 - June 29 2018 =
+* Post link has been facilitated to post thumbnails.
+
+= 1.0.1 - June 15 2018 =
+* Initial release.
+
 
 == Frequently Asked Questions ==
 
@@ -37,9 +46,7 @@ A Magazine includes support for Infinite Scroll in Jetpack.
 
 Image License
 ------------------------------------------------------------------------------
-https://www.pexels.com/photo/abstract-architectural-art-artistic-532563/
-https://www.pexels.com/photo/brown-haired-girl-in-white-sleeveless-dress-standing-beside-black-painted-wall-756453/
-https://www.pexels.com/photo/women-s-pink-sweatshirt-and-brown-plaid-skirt-794064/
-https://www.pexels.com/photo/woman-in-gray-surplice-top-standing-903578/
-https://www.pexels.com/photo/woman-wearing-blue-jacket-875862/
-
+https://www.pexels.com/photo/adults-audience-band-concert-167517/
+https://www.pexels.com/photo/audience-back-view-band-blur-442540/
+https://www.pexels.com/photo/photo-of-women-wearing-masks-787961/
+https://www.pexels.com/photo/concert-effect-entertainment-event-1150837/
