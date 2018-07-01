@@ -4,7 +4,7 @@ Theme URI: http://easywp-themes.com/downloads/a-portfolio/
 Author: easywp-themes
 Author URI: http://easywp-themes.com/
 Description: A Portfolio is responsive, customizable and powerful professional WordPress theme. It can be customized easily in few clicks using live customizer. A Portfolio comes with a easy option to add logo and favicon, custom widgets and more. It is a search engine optimized theme which performs best in google, bing, yahoo or any other search engines. This theme is suitable for all type of business, corporate, portfolio, digital agency, blog or any creative modern looking websites
-Version: 1.0.8
+Version: 1.0.9
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: a-portfolio
@@ -45,15 +45,23 @@ header {
 
 @media (max-width: 450px) {
     body {
-        font-size: 10px;
+        font-size: 12px;
     }
 }
 
-@media (max-width: 560px) {
+@media (min-width: 560px) {
     body {
         font-size: 14px;
     }
 }
+
+/*added*/
+p{
+    text-align: justify;
+    line-height: 25px;
+    text-transform: none;
+}
+/*added*/
 
 .section-title {
     text-transform: uppercase;
@@ -61,9 +69,13 @@ header {
 
 .section-title p {
     color: #868e96;
-    font-size: 14px;
+    /* font-size: 14px; */
 }
-
+/*added*/
+.section-title p{
+    padding: 0;
+}
+/*added*/
 #mainNav {
     position: absolute;
     border-bottom: 1px solid #e9ecef;
@@ -82,12 +94,21 @@ header {
     text-transform: uppercase;
     color: #343a40;
 }
-
+/* .navbar-nav{
+    display: inline-block;
+} */
+.navbar-nav li{
+    float: left;
+}
+.navbar-nav li:after{
+    clear: both;
+}
 #mainNav .navbar-nav>li.nav-item>a {
     font-size: 12px;
     font-weight: 800;
     letter-spacing: 1px;
     text-transform: uppercase;
+    display: inline-block;
 }
 
 @media only screen and (min-width: 992px) {
@@ -244,6 +265,11 @@ header .site-heading .subheading {
     transition: all 0.4s ease;
     border-radius: 5px;
 }
+/*added*/
+#what-we-do .single-what-we-do a:hover{
+    color: #1E1E1E;
+}
+/*added*/
 
 #what-we-do .single-what-we-do i {
     font-size: 45px;
@@ -297,6 +323,7 @@ header .site-heading .subheading {
   =========================*/
 
   #our-work {
+    padding-bottom: 50px;
     background: #868e96;
 }
 
@@ -342,6 +369,7 @@ header .site-heading .subheading {
 #our-work .work-item {
     right: 0;
     margin: 0 0 15px;
+    padding: 10px;
 }
 
 #our-work .work-item .work-link {
@@ -351,7 +379,11 @@ header .site-heading .subheading {
     margin: 0 auto;
     cursor: pointer;
 }
-
+/*added*/
+#our-work .work-item .work-link img{
+    height: auto;
+}
+/*added*/
 #our-work .work-item .work-link .work-hover {
     position: absolute;
     width: 100%;
@@ -394,6 +426,11 @@ header .site-heading .subheading {
     text-align: center;
     background-color: #fff;
 }
+/*added*/
+#our-work .work-item .work-caption a:hover{
+    color: #1E1E1E;
+}
+/*added*/
 
 #our-work .work-item .work-caption h4 {
     font-size: 16px;
@@ -626,6 +663,7 @@ header .site-heading .subheading {
 
   #testimonial {
     background: #868e96;
+    padding-bottom: 50px;
 }
 
 #testimonial .section-title {
@@ -673,7 +711,10 @@ header .site-heading .subheading {
         display: inline-block;
     }
     .float-left {
-        float: none !important;
+        float:left;
+    }
+    .float-left:after{
+        clear:both;
     }
     .testimonial .pic {
         /* margin-left: 90px; */
@@ -741,6 +782,7 @@ header .site-heading .subheading {
     -moz-transition: all 0.4s ease;
     transition: all 0.4s ease;
     z-index: 3;
+    height: auto;
 }
 
 #blog .blog:hover .blog-head img {
@@ -846,7 +888,7 @@ header .site-heading .subheading {
     transform:scale(1.0)
 }
 #blog.single .blog-content h2{
-    font-size:30px;
+    font-size:25px;
 }
 #blog.single .blog p{
     margin-bottom:20px;
@@ -1386,6 +1428,9 @@ footer p {
 .copyright span>a:hover {
     text-decoration: underline;
 }
+.copyright-text{
+    color: white;
+}
 /*=======================
   End Footer CSS
   =========================*/
@@ -1413,8 +1458,13 @@ footer p {
         border-radius: 3px;
         background: rgba(255, 255, 255, 0.20);
         display: inline-block;
-        padding: 15px 200px;
+        padding: 20px 50px;
         color: #FFF;
+    }
+    @media (min-width: 768px) {
+        .breadcrumbs .bread-list {
+            padding: 15px 200px;
+        }
     }
     .breadcrumbs ul li {
         display: inline-block;
@@ -1435,13 +1485,13 @@ footer p {
     }
 
 
+    
     #what-we-do,
-    #our-work,
     #team,
-    #testimonial,
-    #blog {
-        margin-bottom: 80px;
-    }
+    #testimonial {
+        padding-bottom: 80px;
+        margin-bottom: 20px;
+    } 
 
     .section-heading {
         font-size: 36px;
@@ -1633,13 +1683,14 @@ a img.aligncenter {
 }
 .comments-area h2 {
     margin-bottom: 15px;
+    font-size: 20px;
 }
 .comments-area ol {
     margin: 0;
     list-style: none;
 }
 .comments-area ol.comment-list {
-    padding: 0;
+    padding: 0 0 20px 50px;
 }
 .comments-area ol.comment-list article {
     margin-bottom: 15px;
@@ -1665,11 +1716,22 @@ a img.aligncenter {
     padding: 10px;
     width: 100%;
 }
+.comments-area .comment-form input[type=checkbox],input[type=checkbox] {
+        float: left;
+        width: auto;
+        height: 24px;
+        text-align: center;
+        vertical-align: text-bottom;
+        position: relative;
+        margin-right: 20px;
+}
 .comments-area .comment-form .form-submit input {
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 3px;
     border: none;
+    width: auto;
+    margin: 0 auto;
 }
 /* Blog Comments */
 #blog .blog-comments {
@@ -1741,9 +1803,9 @@ a img.aligncenter {
 #blog .single-comments a i{
     margin-right:5px;
 }
-#blog .comment-list {
+/* #blog .comment-list {
     padding-left:50px;
-}
+} */
 #blog .single-comments.login{
     text-align:center;
 }
@@ -1814,7 +1876,8 @@ a img.aligncenter {
     background: inherit;
 }
 
-.menu-menu-1-container{
+.menu-menu-1-container,
+.menu-primary-container {
     margin: 0 auto;
 }
 

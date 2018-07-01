@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 
 Requires at least: 4.5
 Tested up to: 4.9
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -74,6 +74,10 @@ GNU General Public License for more details.
 
 = 1.0.8 - June 21 2018 =
 * remove read more form post and page
+
+= 1.0.9 - July 1 2018 =
+* styles css
+* reponsive work
 
 
 == Credits ==
