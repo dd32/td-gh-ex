@@ -23,6 +23,15 @@
     });
 
     $(document).ready(function () {
+        $('.search-icon').on('click', function (event) {
+            $('body').toggleClass('search-toogle');
+        });
+        $('.esc-search').on('click', function (event) {
+            $('body').removeClass('search-toogle');
+        });
+    });
+
+    $(document).ready(function () {
         $(".main-slider").slick({
             slidesToShow: 1,
             slidesToScroll: 1,

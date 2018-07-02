@@ -3,8 +3,8 @@ Theme Name: Advance Blog
 Theme URI: https://wpinterface.com/themes/advance-blog/
 Author: WPInterface
 Author URI: http://wpinterface.com
-Description: Advance Blog is a modern, clean, responsive and retina-ready WordPress blog theme also suitable for magazines, newspapers, or review sites. The theme comes with several awesome features, including a featured posts slideshow, a magazine homepage template, and a two columned layout
-Version: 1.0.6
+Description: Advance Blog is a perfect, modern, clean, responsive and retina-ready WordPress blog theme also suitable for magazines, newspapers, or review sites. The theme comes with several awesome features, including a featured posts slideshow, a color options, a magazine homepage template, and a two columned layout that makes your site in flash. A clean and elegant design helps you to deliever or present your content in a stilish way. Easy customization options with use of customizer API can give you an advance features to obtain a perfect looking site.
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-blog
@@ -838,6 +838,57 @@ body .jetpack-social-navigation-genericons a:before {
     background: #333;
 }
 
+.search-icon {
+    cursor: pointer;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.popup-search-wrapper {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.popup-search-align {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.popup-search .search-form {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.popup-search .search-form label {
+    width: 85%;
+    width: calc(100% - 200px);
+    display: inline-block;
+    max-width: 100%;
+}
+
+.popup-search .search-form .search-submit {
+    float: right;
+    font-size: 24px;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.popup-search .search-form label .search-field {
+    border-width: 1px 0 1px 1px;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 15px;
+    width: 100%;
+}
+
 .main-navigation .menu ul {
     display: inline-block;
     margin: 0 auto;
@@ -867,8 +918,14 @@ body .jetpack-social-navigation-genericons a:before {
 }
 
 @media only screen and (min-width: 992px) {
-    .main-navigation .menu {
+    .main-navigation {
         text-align: center;
+    }
+
+    .main-navigation .menu,
+    .main-navigation .nav-icon {
+        display: inline-block;
+        vertical-align: middle;
     }
 
     .main-navigation .menu ul > li > a {
@@ -1020,6 +1077,83 @@ body .jetpack-social-navigation-genericons a:before {
 .main-navigation .menu .menu-mobile li .sub-menu > li:first-child,
 .main-navigation .menu .menu-mobile li .children > li:first-child {
     border-top: 0;
+}
+
+.popup-search {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: rgba(255, 255, 255, .94);
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    -moz-transform: translate3d(0, -100%, 0);
+    -ms-transform: translate3d(0, -100%, 0);
+    -o-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    -webkit-transition: -webkit-transform 0.25s ease;
+    -moz-transition: -moz-transform 0.25s ease;
+    -ms-transition: -ms-transform 0.25s ease;
+    -o-transition: -o-transform 0.25s ease;
+    transition: transform 0.25s ease;
+}
+
+.search-toogle .popup-search {
+    opacity: 1 !important;
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    -moz-transform: translate3d(0, 0, 0) !important;
+    -ms-transform: translate3d(0, 0, 0) !important;
+    -o-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+}
+
+.esc-search span {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 60px;
+    top: 27px;
+    background: #444;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -ms-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+    height: 3px;
+}
+
+.esc-search {
+    cursor: pointer;
+    position: absolute;
+    height: 60px;
+    top: 60px;
+    right: 80px;
+    width: 60px;
+}
+
+.esc-search span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.esc-search span:nth-child(2) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 .site-main .comment-navigation,
@@ -1546,9 +1680,19 @@ input[type="submit"],
     display: inline-block;
 }
 
+.entry-meta .cat-links a:hover,
+.entry-meta .cat-links a:focus,
+.entry-footer .cat-links a:hover,
+.entry-footer .cat-links a:focus{
+    filter: alpha(opacity=84);
+    opacity: .84;
+}
+
 .slide-content .entry-meta .posted-on,
 .slide-content .entry-meta .byline {
     padding: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .slide-content .entry-title a {
@@ -2336,6 +2480,12 @@ object {
 }
 
 @media only screen and (max-width: 991px) {
+    .nav-icon {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
     body .gallery .gallery-item {
         width: 50%;
         clear: none !important;

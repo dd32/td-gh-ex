@@ -4,14 +4,13 @@ Contributors: WPinterface
 
 Requires at least:4.0
 Tested up to:4.9
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Description Advance Blog is a modern, clean, responsive and retina-ready WordPress blog theme also suitable for magazines, newspapers, or review sites. The theme comes with several awesome features, including a featured posts slideshow, a magazine homepage template, and a two columned layout
-
+Description: Advance Blog is a perfect, modern, clean, responsive and retina-ready WordPress blog theme also suitable for magazines, newspapers, or review sites. The theme comes with several awesome features, including a featured posts slideshow, a color options, a magazine homepage template, and a two columned layout that makes your site in flash. A clean and elegant design helps you to deliever or present your content in a stilish way. Easy customization options with use of customizer API can give you an advance features to obtain a perfect looking site.
 
 == License ==
 

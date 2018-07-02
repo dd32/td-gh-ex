@@ -55,7 +55,7 @@ if (!function_exists('advance_blog_get_default_theme_options')):
         $defaults['category_for_banner_slider'] = 1;
         $defaults['button_text_banner_slider'] = __('Continue Reading','advance-blog');
         $defaults['select_global_sidebar_layout'] = 'no-sidebar';
-        $defaults['footer_credit_text']            = __('copyright all rights reserved','advance-blog');
+        $defaults['footer_credit_text']            = __('Copyright All rights reserved','advance-blog');
 
         $defaults = apply_filters('advance_blog_filter_default_theme_options', $defaults);
         return $defaults;
