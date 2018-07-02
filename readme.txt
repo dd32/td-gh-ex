@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.2.6 | 2nd July 2018 = 
+* Fix: issue with urls getting double slash.
+
 = Version 3.2.5 | 13th June 2018 = 
 * Fix: Hentry errors in google console.
 * Update: Add better support for elementor.

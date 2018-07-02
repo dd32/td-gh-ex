@@ -11,7 +11,7 @@ function virtue_setup() {
 		'topbar_navigation'     => __('Topbar Navigation', 'virtue'),
 		'footer_navigation'     => __('Footer Navigation', 'virtue'),
 	));
-	define( 'VIRTUE_VERSION', '3.2.5' );
+	define( 'VIRTUE_VERSION', '3.2.6' );
 	add_theme_support( 'title-tag' );
 	add_theme_support('post-thumbnails');
 	add_image_size( 'widget-thumb', 80, 50, true );
