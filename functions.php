@@ -801,7 +801,7 @@ function astore_welcome_notice() {
     <div class="updated notice is-dismissible astore-welcome-notice">   
     <p> 
    <?php
-	printf(__('Welcome! Thanks for choosing AStore! To gain full demo contents of the theme you need to go to Customize to install & activate %1$s plugin.', 'astore' ),'<a href="https://velathemes.com/downloads/vela-companion.zip" target="_blank">Vela Companion</a>');
+	printf(__('Welcome! Thanks for choosing AStore! To gain full demo contents of the theme you need to go to Customize to install & activate %1$s plugin.', 'astore' ),'<a href="https://wordpress.org/plugins/vela-companion/" target="_blank">Vela Companion</a>');
 	?></p>
     <p> 
     <?php
@@ -988,7 +988,7 @@ function astore_theme_register_required_plugins() {
 		array(
 			'name'     				=> __('Vela Companion','astore'), // The plugin name
 			'slug'     				=> 'vela-companion', // The plugin slug (typically the folder name)
-			'source'   				=> esc_url('https://velathemes.com/downloads/vela-companion.zip'), // The plugin source
+			'source'   				=> '', // The plugin source
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 			'version' 				=> '1.0.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
 			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch

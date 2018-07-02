@@ -2,7 +2,7 @@
 Contributors: VelaThemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.0-trunk
-Version: 1.0.8
+Version: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: e-commerce, one-column, two-columns, custom-background, custom-header, custom-menu, theme-options, right-sidebar, translation-ready, editor-style, featured-images, threaded-comments, rtl-language-support, custom-logo, featured-image-header, footer-widgets
@@ -61,6 +61,9 @@ https://www.pexels.com/photo/analog-analogue-classic-emporio-armani-277459/
 
 
 == Changelog ==
+
+= 1.0.9 =
+* Optimized theme
 
 = 1.0.8 =
 * Replace the plugin Astore Companion with Vela Companion
