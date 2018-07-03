@@ -10,7 +10,7 @@
     do_action('ascend_front_page_title_container');                
 
 ?>
-    <div id="content" class="container homepagecontent">
+    <div id="content" class="container homepagecontent <?php echo esc_attr( ascend_container_class() ); ?>">
    		<div class="row">
         	<div class="main <?php echo esc_attr(ascend_main_class()); ?>" role="main">
           		<div class="entry-content" itemprop="mainContentOfPage">

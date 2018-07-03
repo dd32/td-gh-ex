@@ -52,7 +52,7 @@ global $post, $ascend_grid_carousel;
      do_action( 'ascend_page_title_container' );
     ?>
 	
-	<div id="content" class="container">
+	<div id="content" class="container <?php echo esc_attr( ascend_container_class() ); ?>">
 		<div class="row">
   			<div class="main <?php echo esc_attr( ascend_main_class() );?> <?php echo esc_attr( $lay['pclass'] ); ?>" id="ktmain" role="main">
 	  			<?php 

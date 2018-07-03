@@ -83,7 +83,23 @@ function ascend_body_classes($classes) {
 }
 add_filter('body_class','ascend_body_classes');
 
-
+function ascend_container_class() {
+	global $post;
+	$page_content_width = get_post_meta( $post->ID, '_kad_page_content_width', true );
+	if ( isset( $page_content_width ) && $page_content_width == 'full') {
+		$content_class = 'container-fullwidth';
+	} else if ( isset( $page_content_width ) && $page_content_width == 'contained') {
+		$content_class = 'container-contained';
+	} else {
+		$ascend = ascend_get_options();
+		if( isset( $ascend['default_page_content_width'] ) && $ascend['default_page_content_width'] == 'full' ) {
+			$content_class = 'container-fullwidth';
+		} else {
+			$content_class = 'container-contained';
+		}
+	}
+	return apply_filters( 'ascend_page_content_class', $content_class );
+}
 
 
 function ascend_carousel_columns($columns, $sidebar = false) {

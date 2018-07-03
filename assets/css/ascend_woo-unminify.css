@@ -730,6 +730,25 @@ p.no-comments a.button {
 .woocommerce-error {
   background: #e2401c;
 }
+p.demo_store {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  width: 100%;
+  line-height: 25px;
+  font-size: 16px;
+  padding: 10px 0;
+  text-align: center;
+  background: #16A085;
+  color: #fff;
+  z-index: 99998;
+}
+p.demo_store a {
+  color: #fff;
+  text-decoration: underline;
+}
 p.stars {
   display: inline-block;
   margin: 0;

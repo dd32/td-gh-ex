@@ -2417,6 +2417,21 @@ body.trans-header.admin-bar:not(.body-style-boxed) #kad-mobile-banner {
 body {
   background: #f2f2f2;
 }
+#content.container-fullwidth {
+  width: 100%;
+  max-width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.container-fullwidth .main.kt-nosidebar {
+  padding: 0;
+  overflow: hidden;
+}
+.container-fullwidth .main.kt-sidebar,
+.container-fullwidth #ktsidebar {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 /*
 .sf-vertical.sf-menu > li > a:before {
     width:50%;

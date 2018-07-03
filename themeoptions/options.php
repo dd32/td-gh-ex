@@ -2829,7 +2829,7 @@ Redux::setSection( $opt_name, array(
     	array(
             'id'=>'page_layout',
             'type' => 'select',
-            'title' => __('Single Page Layout Default', 'ascend'), 
+            'title' => __('Single Page Sidebar Default', 'ascend'), 
             'options' => array('full' => __('No sidebar layout', 'ascend'), 'sidebar' => __('Sidebar Layout', 'ascend')),
             'width' => 'width:60%',
             'default' => 'full',
@@ -2843,11 +2843,19 @@ Redux::setSection( $opt_name, array(
             'width' => 'width:60%',
         ),
         array(
-		'id'		=>'default_showpagetitle',
-		'type' 		=> 'switch', 
-		'title' 	=> __('Display page title by default', 'ascend'),
-		"default"	=> 1,
+			'id'		=>'default_showpagetitle',
+			'type' 		=> 'switch', 
+			'title' 	=> __('Display page title by default', 'ascend'),
+			"default"	=> 1,
 		),
+		array(
+            'id'=>'default_page_content_width',
+            'type' => 'select',
+            'title' => __('Single Page Content Width Default', 'ascend'), 
+            'options' => array('contained' => __('Contained', 'ascend'), 'full' => __('Fullwidth', 'ascend')),
+            'width' => 'width:60%',
+            'default' => 'contained',
+        ),
     ),
 ) );
 Redux::setSection( $opt_name, array(

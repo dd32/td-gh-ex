@@ -40,7 +40,7 @@ require_once( trailingslashit( get_template_directory() ) . 'lib/metaboxes/post-
 require_once( trailingslashit( get_template_directory() ) . 'lib/metaboxes/sidebar-metaboxes.php');     			// Custom metaboxes
 require_once( trailingslashit( get_template_directory() ) . 'lib/metaboxes/page-template-blog-metaboxes.php');    	// Custom metaboxes
 require_once( trailingslashit( get_template_directory() ) . 'lib/metaboxes/portfolio-metaboxes.php');     			// Custom metaboxes
-require_once( trailingslashit( get_template_directory() ) . 'lib/metaboxes/pageheader-metaboxes.php');     			// Custom metaboxes
+require_once( trailingslashit( get_template_directory() ) . 'lib/metaboxes/pagesetting-metaboxes.php');     			// Custom metaboxes
 require_once( trailingslashit( get_template_directory() ) . 'lib/metaboxes/postheader-metaboxes.php');     			// Custom metaboxes
 
 /*

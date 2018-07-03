@@ -28,6 +28,11 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.2.8 | 3rd July 2018 =
+* Fix: Conflict with woo code and other store plugin.
+* Add: Page content width settings.
+* Update: Slick JS
+
 = Version 1.2.7 | 1st June 2018 =
 * Add: Better elementor support
 * Add: header footer elementor support.
