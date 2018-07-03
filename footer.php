@@ -11,20 +11,11 @@
  */
 
 		/**
-		 * Fires at the bottom of site content area.
-		 *
-		 * @since 1.0.0
-		 */
-		do_action( 'aamla_bottom_of_site_content', 'bottom_of_site_content' );
-		?>
-
-		</div><!-- #content -->
-
-		<?php
-		/**
 		 * Fires immediately after site content area.
 		 *
 		 * @since 1.0.0
+		 *
+		 * @param str $calledby Hook by which the function has been called.
 		 */
 		do_action( 'aamla_after_site_content', 'after_site_content' );
 		?>
@@ -36,6 +27,8 @@
 				 * Fires immediately after opening site footer tag.
 				 *
 				 * @since 1.0.0
+				 *
+				 * @param str $calledby Hook by which the function has been called.
 				 */
 				do_action( 'aamla_inside_footer', 'inside_footer' );
 				?>

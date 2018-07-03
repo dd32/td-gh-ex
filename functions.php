@@ -13,10 +13,18 @@
  */
 
 /**
+ * Aamla only works with PHP 5.4 or later.
+ */
+if ( version_compare( PHP_VERSION, '5.4', '<' ) ) {
+	require get_parent_theme_file_path( '/lib/php-backcompat.php' );
+	return;
+}
+
+/**
  * Aamla only works with WordPress 4.7 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
-	require get_parent_theme_file_path( '/blackbox/wp-backcompat.php' );
+	require get_parent_theme_file_path( '/lib/wp-backcompat.php' );
 	return;
 }
 
@@ -37,33 +45,39 @@ function aamla_setup() {
 	// Let WordPress manage the document title.
 	add_theme_support( 'title-tag' );
 
+	// Add support for page excerpts.
+	add_post_type_support( 'page', 'excerpt' );
+
 	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 640, 480, false );
-	add_image_size( 'aamla-image', 1100, 9999, false );
+	add_image_size( 'aamla-small', 320, 240, true );
+	add_image_size( 'aamla-medium', 640, 9999, false );
+	add_image_size( 'aamla-large', 1100, 9999, false );
+	add_image_size( 'aamla-page-featured-image', 2000, 9999, false );
 
 	// Set the default content width.
 	$GLOBALS['content_width'] = 1100;
 
 	// Allows the use of valid HTML5 markup.
-	add_theme_support( 'html5', array(
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
+	add_theme_support( 'html5',
+		[
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		]
+	);
 
 	// Enable support for Post Formats.
-	add_theme_support( 'post-formats', array(
-		'image',
-		'video',
-		'quote',
-		'gallery',
-		'audio',
-	) );
-
-	// Add custom styles for visual editor to resemble the theme style.
-	add_editor_style( array( 'assets/admin/css/editor-style.css', aamla_font_url() ) );
+	add_theme_support( 'post-formats',
+		[
+			'image',
+			'video',
+			'quote',
+			'gallery',
+			'audio',
+		]
+	);
 
 	/**
 	 * Filter navigation menu locations.
@@ -72,9 +86,12 @@ function aamla_setup() {
 	 *
 	 * @param arrray $locations Associative array of menu location identifiers (like a slug) and descriptive text.
 	 */
-	$locations = apply_filters( 'aamla_nav_menus', array(
-		'primary' => esc_html__( 'Primary', 'aamla' ),
-	) );
+	$locations = apply_filters( 'aamla_nav_menus',
+		[
+			'primary' => esc_html__( 'Primary Menu', 'aamla' ),
+			'social'  => esc_html__( 'Social Links', 'aamla' ),
+		]
+	);
 
 	// Register nav menu locations.
 	register_nav_menus( $locations );
@@ -87,7 +104,8 @@ function aamla_setup() {
 	 * @param arrray $bg_args Array of extra arguments for custom background.
 	 */
 	$bg_args = apply_filters(
-		'aamla_custom_bg_args', array(
+		'aamla_custom_bg_args',
+		[
 			'default-image'          => '',
 			'default-preset'         => 'default',
 			'default-position-x'     => 'left',
@@ -99,14 +117,15 @@ function aamla_setup() {
 			'wp-head-callback'       => '_custom_background_cb',
 			'admin-head-callback'    => '',
 			'admin-preview-callback' => '',
-		)
+		]
 	);
 
 	/*
-	This theme designed to work with plain white background. Therefore, custom backgrounds are not supported.
-	Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', $bg_args );
-	*/
+	 * This theme designed to work with plain white background. Therefore, custom backgrounds
+	 * are  not supported. However, You can use following line of code to set up the WordPress
+	 * core custom background feature.
+	 * add_theme_support( 'custom-background', $bg_args );
+	 */
 
 	/**
 	 * Filter custom logo args.
@@ -116,13 +135,14 @@ function aamla_setup() {
 	 * @param arrray $logo_args Array of extra arguments for custom logo.
 	 */
 	$logo_args = apply_filters(
-		'aamla_custom_logo_args', array(
+		'aamla_custom_logo_args',
+		[
 			'width'       => 120,
 			'height'      => 120,
 			'flex-width'  => true,
 			'flex-height' => false,
 			'header_text' => '',
-		)
+		]
 	);
 	// Set up the WordPress core custom logo feature.
 	add_theme_support( 'custom-logo', $logo_args );
@@ -135,7 +155,8 @@ function aamla_setup() {
 	 * @param arrray $header_args Array of extra arguments for custom header.
 	 */
 	$header_args = apply_filters(
-		'aamla_custom_header_args', array(
+		'aamla_custom_header_args',
+		[
 			'default-image'          => '',
 			'random-default'         => false,
 			'width'                  => 1680,
@@ -150,10 +171,25 @@ function aamla_setup() {
 			'admin-preview-callback' => '',
 			'video'                  => false,
 			'video-active-callback'  => 'is_front_page',
-		)
+		]
 	);
-	// Set up the WordPress core custom header feature.
-	add_theme_support( 'custom-header', $header_args );
+
+	/*
+	 * This theme is designed to work without header image. Therefore, custom headers are not
+	 * supported. However, You can use following line of code to set up the WordPress
+	 * core custom header feature.
+	 * add_theme_support( 'custom-header', $header_args );
+	 */
+
+	// Load core files. These files provide basic functionality to this theme.
+	require_once get_parent_theme_file_path( 'lib/multiuse-functions.php' );
+	require_once get_parent_theme_file_path( 'lib/default-filters.php' );
+	require_once get_parent_theme_file_path( 'lib/customizer/customize-frontend.php' );
+
+	// Load files to build and customize website's front-end.
+	require_once get_parent_theme_file_path( 'inc/controller.php' );
+	require_once get_parent_theme_file_path( 'inc/modifier.php' );
+	require_once get_parent_theme_file_path( 'inc/constructor.php' );
 
 	/**
 	 * Filter list of activated custom addon features for this theme.
@@ -162,28 +198,37 @@ function aamla_setup() {
 	 *
 	 * @param arrray $addons Array of addon features for this theme.
 	 */
-	$addons = apply_filters( 'aamla_theme_support', array() );
-
-	// Load core files. These files provide basic functionality to this theme.
-	require_once get_parent_theme_file_path( 'blackbox/multiuse-functions.php' );
-	require_once get_parent_theme_file_path( 'blackbox/default-filters.php' );
-	require_once get_parent_theme_file_path( 'blackbox/customizer/customize-frontend.php' );
-
-	// Load files to build and customize website's front-end.
-	require_once get_parent_theme_file_path( 'builder/customizer-data.php' );
-	require_once get_parent_theme_file_path( 'builder/template-functions.php' );
-	require_once get_parent_theme_file_path( 'builder/template-tags.php' );
-
-	// Load optional files for add-on functionality.
+	$addons = apply_filters( 'aamla_theme_support',
+		[
+			'widgetlayer',
+			'jetpack',
+			'typography',
+			'display-posts',
+			'media-manager',
+			'woocommerce',
+			'gutenberg',
+		]
+	);
 	foreach ( $addons as $addon ) {
-		if ( file_exists( "{$root}addon/{$addon}/{$addon}.php" ) ) {
-			add_theme_support( "aamla_{$addon}" );
-			require_once get_parent_theme_file_path( "add-on/{$addon}/{$addon}.php" );
-		}
+		$file_path = "add-on/{$addon}/class-{$addon}.php";
+
+		/**
+		 * Filter add-on file path.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param string $file_path File path for the addon.
+		 * @param string $addon     The Addon.
+		 */
+		$file_path = apply_filters( 'aamla_theme_support_file_path', $file_path, $addon );
+		include_once get_parent_theme_file_path( $file_path );
 	}
 
+	// Add custom styles for visual editor to resemble the theme style.
+	add_editor_style( [ 'assets/admin/css/editor-style.css', esc_url( aamla_font_url() ) ] );
+
 	// Load theme customizer initiation file at last.
-	require_once get_parent_theme_file_path( 'blackbox/customizer/customize-register.php' );
+	require_once get_parent_theme_file_path( 'lib/customizer/customize-register.php' );
 }
 add_action( 'after_setup_theme', 'aamla_setup', 5 );
 
@@ -219,37 +264,42 @@ add_action( 'template_redirect', 'aamla_content_width', 0 );
 function aamla_widgets_init() {
 
 	/**
-	 * Filter register widgets args.
+	 * Filter register widget area args.
 	 *
 	 * @since 1.0.0
 	 *
 	 * @param array $widgets {
 	 *     Array of arguments for the sidebar being registered.
 	 *
-	 *     @type string $name          The name or title of the sidebar displayed in the Widgets
-	 *                                 interface. Default 'Sidebar $instance'.
+	 *     @type string $name          The name or title of the sidebar.
 	 *     @type string $id            The unique identifier by which the sidebar will be called.
-	 *                                 Default 'sidebar-$instance'.
-	 *     @type string $description   Description of the sidebar, displayed in the Widgets interface.
-	 *                                 Default empty string.
-	 *     @type string $class         Extra CSS class to assign to the sidebar in the Widgets interface.
-	 *                                 Default empty.
+	 *     @type string $description   Description of the sidebar.
+	 * }
 	 */
-	$widgets = apply_filters( 'aamla_widgets', array(
-		array(
-			'name'        => esc_html__( 'Site Sidebar', 'aamla' ),
-			'id'          => 'sidebar',
-			'description' => esc_html__( 'Add widgets here to appear in site sidebar. You can make this sidebar to appear left or right to main content using Appearance > Customize > Theme options. Remove all widgets to hide this sidebar.', 'aamla' ),
-		),
-	) );
+	$widgets = apply_filters( 'aamla_register_sidebar',
+		[
+			[
+				'name' => esc_html__( 'Sidebar Widgets', 'aamla' ),
+				'id'   => 'sidebar',
+			],
+			[
+				'name' => esc_html__( 'Action Widgets', 'aamla' ),
+				'id'   => 'header',
+			],
+			[
+				'name' => esc_html__( 'Footer Widgets', 'aamla' ),
+				'id'   => 'footer',
+			],
+		]
+	);
 
-	$defaults = array(
+	$defaults = [
 		'description'   => esc_html__( 'Add widgets here.', 'aamla' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title"><span>',
 		'after_title'   => '</span></h3>',
-	);
+	];
 
 	foreach ( $widgets as $widget ) {
 		register_sidebar( wp_parse_args( $widget, $defaults ) );
@@ -270,17 +320,9 @@ add_action( 'widgets_init', 'aamla_widgets_init' );
  */
 function aamla_font_url() {
 
-	$fonts     = array();
+	$fonts     = [];
 	$fonts_url = '';
 	$subsets   = 'latin,latin-ext';
-
-	/*
-	 * Translators: If there are characters in your language that are not supported
-	 * by Roboto, translate this to 'off'. Do not translate into your own language.
-	 */
-	if ( 'off' !== _x( 'on', 'Roboto font: on or off', 'aamla' ) ) {
-		$fonts[] = 'Muli:300,400,500,700,300italic,400italic,500italic,700italic';
-	}
 
 	/**
 	 * Filter google fonts to be used for the theme.
@@ -292,10 +334,13 @@ function aamla_font_url() {
 	$fonts = apply_filters( 'aamla_fonts', $fonts );
 
 	if ( $fonts ) {
-		$fonts_url = add_query_arg( array(
-			'family' => urlencode( implode( '|', $fonts ) ),
-			'subset' => urlencode( $subsets ),
-		), 'https://fonts.googleapis.com/css' );
+		$fonts_url = add_query_arg(
+			[
+				'family' => rawurlencode( implode( '|', $fonts ) ),
+				'subset' => rawurlencode( $subsets ),
+			],
+			'https://fonts.googleapis.com/css'
+		);
 	}
 
 	/**
@@ -332,26 +377,30 @@ add_action( 'wp_head', 'aamla_javascript_detection', 0 );
 function aamla_scripts() {
 	// Theme stylesheet.
 	wp_enqueue_style( 'aamla-style', get_stylesheet_uri() );
-	wp_add_inline_style( 'aamla-style', 'aamla_get_inline_css' );
+	wp_style_add_data( 'aamla-style', 'rtl', 'replace' );
+	wp_add_inline_style( 'aamla-style', aamla_get_inline_css() );
 
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style(
 		'aamla-fonts',
 		esc_url( aamla_font_url() ),
-		array(),
+		[],
 		null
 	);
 
 	// Theme localize scripts data.
-	$l10n = apply_filters( 'aamla_localize_script_data', array(
-		'menu' => 'primary-menu', // ID of nav-menu first UL element.
-	) );
+	$l10n = apply_filters( 'aamla_localize_script_data',
+		[
+			'menu'  => 'primary-menu', // ID of nav-menu first UL element.
+			'close' => aamla_get_icon( [ 'icon' => 'close' ] ),
+		]
+	);
 
 	// Theme scripts.
 	wp_enqueue_script(
 		'aamla-scripts',
 		get_theme_file_uri( '/scripts.js' ),
-		array(),
+		[],
 		'1.0.0',
 		true
 	);
@@ -378,66 +427,15 @@ add_action( 'wp_enqueue_scripts', 'aamla_scripts' );
  */
 function aamla_resource_hints( $urls, $relation_type ) {
 	if ( wp_style_is( 'aamla-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
-		$urls[] = array(
+		$urls[] = [
 			'href' => 'https://fonts.gstatic.com',
 			'crossorigin',
-		);
+		];
 	}
 
 	return $urls;
 }
 add_filter( 'wp_resource_hints', 'aamla_resource_hints', 10, 2 );
-
-/**
- * Add custom image sizes attribute to enhance responsive image functionality
- * for content images.
- *
- * This function incorporates code from Twenty Seventeen WordPress Theme,
- * Copyright 2016-2017 WordPress.org. Twenty Seventeen is distributed
- * under the terms of the GNU GPL.
- *
- * @since 1.0.0
- *
- * @param string $sizes A source size value for use in a 'sizes' attribute.
- * @param array  $size  Image size. Accepts an array of width and height
- *                      values in pixels (in that order).
- * @return string A source size value for use in a content image 'sizes' attribute.
- */
-function aamla_content_image_sizes_attr( $sizes, $size ) {
-	$width = $size[0];
-	if ( 1100 <= $width ) {
-		$sizes = '(max-width: 1024px) 100vw, (max-width: 1600px) 70vw, 1100px';
-	}
-
-	return $sizes;
-}
-add_filter( 'wp_calculate_image_sizes', 'aamla_content_image_sizes_attr', 10, 2 );
-
-/**
- * Add custom image sizes attribute to enhance responsive image functionality
- * for post thumbnails.
- *
- * This function incorporates code from Twenty Seventeen WordPress Theme,
- * Copyright 2016-2017 WordPress.org. Twenty Seventeen is distributed
- * under the terms of the GNU GPL.
- *
- * @since 1.0.0
- *
- * @param array $attr       Attributes for the image markup.
- * @param int   $attachment Image attachment ID.
- * @param array $size       Registered image size or flat array of height and width dimensions.
- * @return array The filtered attributes for the image markup.
- */
-function aamla_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
-	if ( is_archive() || is_search() || is_home() ) {
-		$attr['sizes'] = '(max-width: 640px) 100vw, (max-width: 1024px) 30vw, (max-width: 1600px) 21vw, 640px';
-	} else {
-		$attr['sizes'] = '(max-width: 1024px) 100vw, (max-width: 1600px) 70vw, 1100px';
-	}
-
-	return $attr;
-}
-add_filter( 'wp_get_attachment_image_attributes', 'aamla_post_thumbnail_sizes_attr', 10, 3 );
 
 /*
  * Note: Do not add any custom code here. Please use a custom plugin or child theme, so that your

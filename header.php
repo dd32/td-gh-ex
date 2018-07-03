@@ -31,13 +31,18 @@
 <body<?php aamla_attr( 'body', false ); ?> <?php body_class(); ?>>
 
 	<header id="masthead"<?php aamla_attr( 'site-header' ); ?>>
-		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'aamla' ); ?></a>
 
 		<?php
+		printf( '<a class="skip-link screen-reader-text" href="#content">%s</a>',
+			esc_html__( 'Skip to content', 'aamla' )
+		);
+
 		/**
 		 * Fires inside site header after skip-link.
 		 *
 		 * @since 1.0.0
+		 *
+		 * @param str $calledby Hook by which the function has been called.
 		 */
 		do_action( 'aamla_inside_header', 'inside_header' );
 		?>
@@ -49,16 +54,8 @@
 	 * Fires immediately after closing of header tag.
 	 *
 	 * @since 1.0.0
+	 *
+	 * @param str $calledby Hook by which the function has been called.
 	 */
 	do_action( 'aamla_after_header', 'after_header' );
 	?>
-
-	<div id="content"<?php aamla_attr( 'site-content' ); ?>>
-
-		<?php
-		/**
-		 * Fires immediately after opening of main site content tag.
-		 *
-		 * @since 1.0.0
-		 */
-		do_action( 'aamla_on_top_of_site_content', 'on_top_of_site_content' );?>

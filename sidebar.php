@@ -12,5 +12,7 @@
  * Fires immediately after loading of sidebar template (i.e., this file).
  *
  * @since 1.0.0
+ *
+ * @param str $calledby Hook by which the function has been called.
  */
 do_action( 'aamla_inside_sidebar', 'inside_sidebar' );

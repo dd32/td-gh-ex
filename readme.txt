@@ -2,16 +2,17 @@
 
 Created by: Vedathemes
 Requires at least: WordPress 4.7
-Tested up to: WordPress 4.9.4
-Version: 1.0.0
+Tested up to: WordPress 4.9.6
+Version: 1.0.1
 PHP required : PHP 5.4+
 IE Browser Support: IE11+
-License: GPLv2 or later
+License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: two-columns, left-sidebar, right-sidebar, grid-layout, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-Commerce
 
 == Description ==
-Aamla is a minimal, lightweight and mobile first WordPress theme that is flexible and easy to use. It is built with search-engine optimization (SEO), security, pagespeed and simplicity in mind. Aamla is written with clean code, the most current HTML5 conventions. Aamla can serve as a solid base to build incredible websites.
+
+Aamla is a minimal, lightweight and mobile first WordPress theme that is flexible and easy to use. It is built with special focus on blog, business and e-commerce websites. Aamla is written with clean code, the most current HTML5 conventions. Aamla can serve as a solid base to build incredible websites.
 
 == Installation ==
 
@@ -35,10 +36,9 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License
-along with this program. If not, see < http://www.gnu.org/licenses/ >.
+== Credits ==
 
-Aamla WordPress Theme is based on Underscores, (C) 2012-2015 Automattic, Inc.
+Aamla WordPress Theme is based on Underscores, (C) 2012-2017 Automattic, Inc.
 Licenses: [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 Source: http://underscores.me/
 
@@ -46,39 +46,53 @@ Aamla WordPress Theme incorporates code from Twenty Fifteen WordPress Theme, Cop
 Twenty Fifteen is distributed under the terms of the GNU GPL.
 
 Aamla WordPress Theme incorporates code from Twenty Seventeen WordPress Theme, Copyright 2016-2017 WordPress.org & Automattic.com
-Twenty Fifteen is distributed under the terms of the GNU GPL.
+Twenty Seventeen is distributed under the terms of the GNU GPL.
 
-== Credits ==
+Aamla WordPress Theme incorporates code from Stargazer WordPress Theme, Copyright 2013-2018 Justin Tadlock
+Stargazer is distributed under the terms of the GNU GPL.
+
 Aamla WordPress Theme bundles the following third-party resources:
 
-normalize.css, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal
-Licenses: [MIT](http://opensource.org/licenses/MIT)
-Source:  http://github.com/necolas/normalize.css
+1.	normalize.css, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal
+	Licenses: [MIT](http://opensource.org/licenses/MIT)
+	Source:  http://github.com/necolas/normalize.css
 
-Font Awesome SVG icons, Copyright Dave Gandy
-License: SIL Open Font License, version 1.1.
-Source: http://fontawesome.io/
+2.	SVG Icons collection has been created from following,
 
-Images used for theme screenshot
+	Font Awesome SVG icons, Copyright Dave Gandy
+	License: CC BY 4.0 License. (https://fontawesome.com/license)
+	Source: http://fontawesome.io/
 
-https://pixabay.com/en/leaf-mint-herb-healthy-food-oil-3070153/
-by silviarita (https://pixabay.com/en/users/silviarita-3142410/)
-License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+	Icomoon SVG icons ( Free Version ), Copyright Roonas
+	License: GPL / CC BY 4.0. (https://icomoon.io/icons-icomoon.html)
+	Source: https://icomoon.io
 
-https://pixabay.com/en/apple-red-red-apple-hand-2788662/
-by pixel2013 (https://pixabay.com/en/users/pixel2013-2364555/)
-License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+3.	Images used for theme screenshot
 
-https://pixabay.com/en/composing-model-style-nature-sky-3142301/
-by Snap_it (https://pixabay.com/en/users/Snap_it-1125834/)
-License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+	https://www.pexels.com/photo/macbook-pro-iphone-cup-desk-7974/
+	by Life Of Pix (https://www.pexels.com/@life-of-pix)
+	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
-Image used on 404-error page
-https://pixabay.com/en/detective-searching-man-search-1424831/
-by GraphicMama-team (https://pixabay.com/en/users/GraphicMama-team-2641041/)
-License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+	https://pixabay.com/en/paper-business-finance-document-3213924/
+	by mohamed_hassan (https://pixabay.com/en/users/mohamed_hassan-5229782/)
+	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+
+4.	Image used on 404-error page
+	https://pixabay.com/en/not-found-404-error-file-not-found-2384304/
+	by draguth (https://pixabay.com/en/users/draguth-1837346/)
+	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 == Changelog ==
+
+= 1.0.1 - Jul 02 2018 =
+* Add - Archive page grid layout option.
+* Add - Display Posts, Media Manager, Typography and WidgetLayer addons.
+* Add - JetPack, Gutenberg and WooCommerce Support.
+* Add - Page hero image and call to action feature.
+* Add - Social Icons Menu feature.
+* Add - RTL support.
+* Modify - Improved editor stylesheet.
+* Modify - PHP, css and JS code improvements.
 
 = 1.0.0 - Mar 31 2018 =
 * Initial release

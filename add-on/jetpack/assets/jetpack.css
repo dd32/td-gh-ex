@@ -1,0 +1,33 @@
+.infinite-scroll .pagination,
+.infinite-scroll.neverending .site-footer {
+	display: none;
+}
+
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+#infinite-footer .container {
+	width: 100%;
+	padding: 1px 40px;
+}
+
+#infinite-handle {
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+#infinite-handle span {
+	display: inline-block;
+}
+
+@media only screen and (min-width: 1366px) {
+
+	#infinite-footer .container {
+		padding: 1px 60px;
+	}
+
+	#infinite-handle {
+		margin-bottom: 60px;
+	}
+}

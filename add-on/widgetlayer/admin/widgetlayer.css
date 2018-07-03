@@ -1,0 +1,26 @@
+.widget-options-section {
+	display: none;
+	padding: 15px;
+	margin-bottom: 15px;
+	border: 1px solid #e5e5e5;
+}
+
+h4.widget-options-title {
+	font-size: 1.125em;
+	margin: 0 0 20px;
+}
+
+[id^=widgetlayer-page-] .widget-options-section,
+[id^=sub-accordion-section-sidebar-widgets-widgetlayer-page-] .widget-options-section {
+	display: block;
+}
+
+.widget-setting label {
+	font-weight: 600;
+}
+
+span.wid-setting-desc {
+	display: block;
+	margin: 4px 0;
+	font-style: italic;
+}

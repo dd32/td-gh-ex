@@ -14,7 +14,12 @@ global $post;
 <div<?php aamla_attr( 'entry-author' ); ?>>
 	<div<?php aamla_attr( 'entry-author-avatar' ); ?>><?php echo get_avatar( get_the_author_meta( 'user_email', $post->post_author ), 120 ); ?></div>
 	<div<?php aamla_attr( 'entry-author-description' ); ?>>
-		<h2<?php aamla_attr( 'entry-author-title' ); ?>><?php echo esc_html( get_the_author_meta( 'display_name', $post->post_author ) ); ?></h2>
+		<h2<?php aamla_attr( 'entry-author-title' ); ?>>
+			<?php
+			esc_html_e( 'About ', 'aamla' );
+			echo esc_html( get_the_author_meta( 'display_name', $post->post_author ) );
+			?>
+		</h2>
 
 		<div<?php aamla_attr( 'entry-author-bio' ); ?>>
 			<?php echo esc_html( get_the_author_meta( 'description', $post->post_author ) ); ?>

@@ -30,15 +30,15 @@ if ( post_password_required() ) {
 			if ( 1 === $aamla_comments_number ) {
 				printf(
 					/* translators: %s: post title */
-					esc_html_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'aamla' ),
+					esc_html_x( 'One comment on &ldquo;%s&rdquo;', 'comments title', 'aamla' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: number of comments, 2: post title */
 					esc_html( _nx(
-						'%1$s thought on &ldquo;%2$s&rdquo;',
-						'%1$s thoughts on &ldquo;%2$s&rdquo;',
+						'%1$s comment on &ldquo;%2$s&rdquo;',
+						'%1$s comments on &ldquo;%2$s&rdquo;',
 						$aamla_comments_number,
 						'comments title',
 						'aamla'
@@ -55,12 +55,14 @@ if ( post_password_required() ) {
 		<ol<?php aamla_attr( 'comments-list' ); ?>>
 
 			<?php
-			wp_list_comments( array(
-				'avatar_size' => 56,
-				'style'       => 'ol',
-				'short_ping'  => true,
-				'reply_text'  => aamla_get_icon( array( 'icon' => 'mail-reply' ) ) . esc_html__( ' Reply', 'aamla' ),
-			) );
+			wp_list_comments(
+				[
+					'avatar_size' => 46,
+					'style'       => 'ol',
+					'short_ping'  => true,
+					'reply_text'  => aamla_get_icon( [ 'icon' => 'mail-reply' ] ) . esc_html__( ' Reply', 'aamla' ),
+				]
+			);
 			?>
 
 		</ol><!-- .comment-list -->
@@ -76,10 +78,12 @@ if ( post_password_required() ) {
 
 	endif; // Check for have_comments().
 
-	comment_form( array(
-		'title_reply_before' => '<h2 id="reply-title"' . aamla_get_attr( 'comment-reply-title' ) . '>',
-		'title_reply_after'  => '</h2>',
-	) );
+	comment_form(
+		[
+			'title_reply_before' => '<h2 id="reply-title"' . aamla_get_attr( 'comment-reply-title' ) . '>',
+			'title_reply_after'  => '</h2>',
+		]
+	);
 	?>
 
 </div><!-- #comments -->

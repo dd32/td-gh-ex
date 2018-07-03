@@ -1,6 +1,79 @@
 /* global aamlaScreenReaderText */
 ( function() {
 
+var aamla = {},
+	isIos = /iPad|iPhone|iPod/.test( navigator.userAgent ) && ! window.MSStream;
+if ( isIos ) {
+	document.documentElement.classList.add( 'ios-device' );
+}
+
+aamla = {
+	aniScrollLeft: function( element, to, duration ) {
+		var start = element.scrollLeft,
+			change = to - start,
+			currentTime = 0,
+			increment = 20,
+			val;
+
+		var animateScroll = function() {
+			currentTime += increment;
+			val = aamla.easeInOutQuad( currentTime, start, change, duration );
+			element.scrollLeft = val;
+			if ( currentTime < duration ) {
+				setTimeout( animateScroll, increment );
+			}
+		};
+		animateScroll();
+	},
+
+	//T = current time
+	//b = start value
+	//c = change in value
+	//d = duration
+	easeInOutQuad: function( t, b, c, d ) {
+		t /= d / 2;
+		if ( t < 1 ) {
+			return c / 2 * t * t + b;
+		}
+		t--;
+		return -c / 2 * ( t * ( t - 2 ) - 1 ) + b;
+	}
+};
+
+if ( ! Element.prototype.matches ) {
+	Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
+}
+
+if ( ! Element.prototype.closest ) {
+	Element.prototype.closest = function( s ) {
+		var el = this;
+		if ( ! document.documentElement.contains( el ) ) {
+			return null;
+		}
+		do {
+			if ( el.matches( s ) ) {
+				return el;
+			}
+			el = el.parentElement || el.parentNode;
+		} while ( null !== el && 1 === el.nodeType );
+		return null;
+	};
+}
+
+// ObjectFit fallback.
+( function() {
+	var container, imageSource, i;
+	if ( false === 'objectFit' in document.documentElement.style ) {
+		container = document.querySelectorAll( '.entry-thumbnail, .gallery-icon a' );
+		for ( i = 0; i < container.length; i++ ) {
+			imageSource = container[i].querySelector( 'img' ).src;
+			container[i].querySelector( 'img' ).style.visibility = 'hidden';
+			container[i].style.backgroundSize = 'cover';
+			container[i].style.backgroundImage = 'url(' + imageSource + ')';
+			container[i].style.backgroundPosition = 'center center';
+		}
+	}
+}() );
 
 /**
  * File skip-link-focus-fix.js.
@@ -37,97 +110,182 @@ skipLinkFocusFix();
 /**
  * Mobile navigation menu
  *
- * Handle toggling of menu and submenus on mobile and tablets.
+ * This script serve two purposes, first, display sub-menus on clicking on their respective
+ * parent menu-item and second, support nav-menu scrolling on smaller screens. This way we
+ * never have to completely hide our primary navigation behind a hamburger button.
  */
 
-function navMenu() {
-	var menu = document.getElementById( aamlaScreenReaderText.menu ),
+( function() {
+	var left, right, length, i,
+		menu = document.getElementById( aamlaScreenReaderText.menu ),
+		bin = menu ? menu.parentNode : null,
+		nav = bin ? bin.parentNode : null,
+		buttonLeft = nav ? nav.getElementsByClassName( 'scroll-btn-Left' )[0] : null,
+		buttonRight = nav ? nav.getElementsByClassName( 'scroll-btn-Right' )[0] : null,
+		selectors = [
+			'.menu-item-has-children > a',
+			'.page_item_has_children > a'
+		],
+		links = menu ? menu.querySelectorAll( selectors.join( ',' ) ) : [],
 		isMenuOpen = false,
-		menuContainer,
-		parentLink,
-		i;
+		timer = null;
 
 	if ( null === menu ) {
 		return;
 	}
 
-	menuContainer = menu.parentNode;
-	parentLink = menu.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
-
-	for ( i = 0; i < parentLink.length; ++i ) {
-		parentLink[i].addEventListener( 'touchend', toggleMenu, false );
-		parentLink[i].addEventListener( 'click', toggleMenu, false );
-		parentLink[i].addEventListener( 'keypress', toggleMenu, false );
+	for ( i = 0, length = links.length; i < length; ++i ) {
+		links[i].addEventListener( 'click', toggleMenu, false );
+		links[i].addEventListener( 'keypress', toggleMenu, false );
 	}
+
 	document.documentElement.addEventListener( 'click', collapseMenu, false );
-	menuContainer.addEventListener( 'scroll', menuScroll, false );
-	window.addEventListener( 'resize', menuScroll, false );
+
+	bin.addEventListener( 'scroll', menuScroll, false );
+
+	window.addEventListener( 'resize', function() {
+		clearTimeout( timer );
+		timer = setTimeout( isMenuScrollable, 100 );
+	}, false );
+
+	buttonLeft.addEventListener( 'click', function() {
+		aamla.aniScrollLeft( bin, bin.scrollLeft - 150, 300 );
+	}, false );
+	buttonRight.addEventListener( 'click', function() {
+		aamla.aniScrollLeft( bin, bin.scrollLeft + 150, 300 );
+	}, false );
 
 	function toggleMenu( e ) {
-		var menuItem = this.parentNode,
-			childMenu = menuItem.getElementsByTagName( 'ul' )[0];
+		var item = this.parentNode,
+			siblings = item.parentNode.children,
+			child = item.getElementsByTagName( 'ul' )[0],
+			childitems = child.children;
 
-		if ( 'click' === e.type || 'touchend' === e.type || ( 'keypress' === e.type && '13' === e.which ) ) {
+		if ( 'click' === e.type || ( 'keypress' === e.type && '13' === e.which ) ) {
 			e.preventDefault();
-			e.stopPropagation();
-			for ( i = 0; i < menuItem.parentNode.children.length; ++i ) {
-				if ( menuItem === menuItem.parentNode.children[i] ) {
+			for ( i = 0, length = siblings.length; i < length; ++i ) {
+				if ( item === siblings[i] ) {
 					continue;
 				}
-				menuItem.parentNode.children[i].classList.remove( 'toggled-on' );
+				siblings[i].classList.remove( 'toggled-on' );
 			}
-			for ( i = 0; i < childMenu.children.length; ++i ) {
-				childMenu.children[i].classList.remove( 'toggled-on' );
+			for ( i = 0, length = childitems.length; i < length; ++i ) {
+				childitems[i].classList.remove( 'toggled-on' );
 			}
-			menuItem.classList.toggle( 'toggled-on' );
-			isMenuOpen = menuItem.classList.contains( 'toggled-on' ) || menuItem.parentNode.parentNode.classList.contains( 'toggled-on' );
+			item.classList.toggle( 'toggled-on' );
+			isMenuOpen = item.classList.contains( 'toggled-on' );
 		}
 	}
 
 	function collapseMenu( e ) {
-		if ( isMenuOpen ) {
-			for ( i = 0; i < parentLink.length; ++i ) {
-				parentLink[i].parentNode.classList.remove( 'toggled-on' );
+		var toggledItems;
+		if ( isMenuOpen && ! e.target.closest( '#primary-menu' ) ) {
+			toggledItems = menu.getElementsByClassName( 'toggled-on' );
+			while ( toggledItems.length > 0 ) {
+				toggledItems[0].classList.remove( 'toggled-on' );
 			}
 			isMenuOpen = false;
 		}
 	}
 
+	function isMenuScrollable() {
+		var metrics = bin.getBoundingClientRect();
+		left  = Math.floor( metrics.left );
+		right = Math.floor( metrics.right );
+		menuScroll();
+	}
+	isMenuScrollable();
+
 	function menuScroll() {
-		var ticking = false,
-			lastKnownScrollPosition = window.scrollY;
-		if ( ! ticking ) {
-			window.requestAnimationFrame(function() {
-				OverflowAttr( lastKnownScrollPosition );
-				ticking = false;
-			});
-		}
-		ticking = true;
+		window.requestAnimationFrame(function() {
+			bin.setAttribute( 'data-overflowing', (function() {
+				var cmetrics = menu.getBoundingClientRect(),
+					cleft = Math.floor( cmetrics.left ),
+					cright = Math.floor( cmetrics.right );
+				if ( left > cleft && right < cright ) {
+					return 'both';
+				} else if ( cleft < left ) {
+					return 'left';
+				} else if ( cright > right ) {
+					return 'right';
+				} else {
+					return 'none';
+				}
+			}() ) );
+		});
 	}
-	menuScroll();
+}() );
 
-	function OverflowAttr( scrollPos ) {
-		menuContainer.setAttribute( 'data-overflowing', determineOverflow( menu, menuContainer ) );
-	}
+// Funtion name needs to be changed.
+function mediaToggle() {
+	var open, close,
+		elems = document.getElementsByClassName( 'entry-featured-media' ),
+		length = elems.length,
+		i = 0;
 
-	function determineOverflow( content, container ) {
-		var containerMetrics = container.getBoundingClientRect();
-		var containerMetricsRight = Math.floor( containerMetrics.right );
-		var containerMetricsLeft = Math.floor( containerMetrics.left );
-		var contentMetrics = content.getBoundingClientRect();
-		var contentMetricsRight = Math.floor( contentMetrics.right );
-		var contentMetricsLeft = Math.floor( contentMetrics.left );
-		if ( containerMetricsLeft > contentMetricsLeft && containerMetricsRight < contentMetricsRight ) {
-			return 'both';
-		} else if ( contentMetricsLeft < containerMetricsLeft ) {
-			return 'left';
-		} else if ( contentMetricsRight > containerMetricsRight ) {
-			return 'right';
-		} else {
-			return 'none';
+	for ( ; i < length; ++i ) {
+		open = elems[i].parentElement.getElementsByClassName( 'post-permalink' )[0];
+		if ( undefined === open ) {
+			continue;
 		}
+
+		close = elems[i].getElementsByClassName( 'close-media' )[0];
+
+		open.addEventListener( 'click', function( e ) {
+			e.preventDefault();
+			e.stopPropagation();
+			this.classList.add( 'makeitvisible' );
+		}.bind( elems[i] ), false );
+		close.addEventListener( 'click', function() {
+			this.classList.remove( 'makeitvisible' );
+		}.bind( elems[i] ), false );
 	}
 }
-navMenu();
+mediaToggle();
+
+/**
+ * Make embedded videos responsive.
+ *
+ * Identify video iframes in main content and wrap them in a div containing 'video-container'
+ * class. Now make it responsive using css.
+ */
+
+(function() {
+	var wrapper, elem,
+		main = document.getElementById( 'main' ),
+		bin = main ? main.getElementsByClassName( 'entry-content' )[0] : null,
+		selectors = [
+			'iframe[src*="youtube.com"]',
+			'iframe[src*="vimeo.com"]',
+			'iframe[src*="videopress.com"]'
+		],
+		frames = bin ? bin.querySelectorAll( selectors.join( ',' ) ) : [],
+		length = frames.length,
+		i = 0;
+
+	for ( ; i < length; i++ ) {
+		elem = frames[i];
+		wrapper = document.createElement( 'div' );
+		wrapper.className = 'video-container';
+		elem.parentNode.insertBefore( wrapper, elem );
+		wrapper.appendChild( elem );
+	}
+}() );
+
+function headerWidgetToggle() {
+	var elem = document.getElementById( 'header-widget-area' ),
+		toggle = elem ? elem.parentElement.getElementsByClassName( 'action-toggle' )[0] : null;
+	if ( toggle ) {
+		toggle.addEventListener( 'click', function( e ) {
+			elem.classList.toggle( 'makeitvisible' );
+		}, false );
+		document.documentElement.addEventListener( 'click', function( e ) {
+			if ( ! e.target.closest( '#header-widget-area' ) && ! e.target.closest( '.action-toggle' ) ) {
+				elem.classList.remove( 'makeitvisible' );
+			}
+		}, false );
+	}
+}
+headerWidgetToggle();
 
 } )();

@@ -1,0 +1,48 @@
+/* Gutenberg Editor Styles */
+.edit-post-visual-editor,
+.edit-post-visual-editor p {
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.75;
+	word-wrap: break-word;
+	color: #363636;
+}
+
+.edit-post-visual-editor .editor-post-title textarea.editor-post-title__input {
+	font-size: 2em;
+	font-weight: 700;
+	margin-bottom: 0.4375rem;
+}
+
+.edit-post-visual-editor .editor-block-list__block {
+	max-width: 750px;
+}
+
+.edit-post-visual-editor .editor-block-list__block[data-align="wide"] {
+	max-width: 900px;
+}
+
+@media only screen and (min-width: 600px) {
+	.edit-post-visual-editor .editor-post-title {
+		max-width: 822px;
+		margin-right: auto;
+		margin-left: auto;
+		padding: 0 36px;
+	}
+	.edit-post-visual-editor .editor-post-title > div {
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.edit-post-visual-editor .editor-post-title textarea.editor-post-title__input {
+		font-size: 2.5em;
+	}
+}
+
+@media only screen and (min-width: 1366px) {
+	.edit-post-visual-editor .editor-post-title textarea.editor-post-title__input {
+		font-size: 2.65em;
+	}
+}

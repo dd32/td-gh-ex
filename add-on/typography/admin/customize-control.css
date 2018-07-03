@@ -1,0 +1,38 @@
+select.aamla-select {
+	width: calc( 100% - 40px );
+}
+
+.google-font-additional-settings {
+	display: none;
+	padding: 10px 10px 14px;
+	border: 1px solid #e6e6e6;
+	background-color: rgba( 255,255,255, 0.1 );
+}
+
+.google-font-weight {
+	padding: 10px 0;
+	border-top: 1px solid #ddd;
+}
+
+.google-font-selectors {
+	padding: 10px 0;
+	border-bottom: 1px solid #eee;
+}
+
+.advanced-button {
+	float: right;
+	margin: 0;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border-width: 0;
+	background: transparent;
+	cursor: pointer;
+}
+  
+.advanced-button:before {
+	content: "\f111";
+	display: block;
+	color: #0284ba;
+	background: transparent;
+	font: 400 16px/20px dashicons;
+}

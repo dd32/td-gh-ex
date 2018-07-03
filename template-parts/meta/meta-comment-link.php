@@ -9,15 +9,7 @@
 if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
 ?>
 	<span<?php aamla_attr( 'meta-comments-link' ); ?>>
-		<?php
-		comments_popup_link(
-			sprintf(
-				/* translators: %s: Name of current post */
-				wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'aamla' ), array( 'span' => array( 'class' => array() ) ) ),
-				get_the_title()
-			)
-		);
-		?>
+		<?php comments_popup_link(); ?>
 	</span><!-- .meta-comments-link -->
 <?php
 endif;

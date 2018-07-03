@@ -1,0 +1,22 @@
+.terms-panel {
+	margin-top: 10px;
+}
+
+.posts-styles {
+	margin-bottom: 10px;
+}
+
+.terms-checklist,
+.pages-checklist {
+	overflow: auto;
+	height: 80px;
+	max-height: 80px;
+	margin: 4px 0 10px;
+	padding: 10px;
+	border: 1px solid #e6e6e6;
+}
+
+.terms-checklist ul,
+.pages-checklist ul {
+	margin-top: 0;
+}

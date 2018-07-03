@@ -1,23 +1,16 @@
 <?php
 /**
- * The template part for displaying current post thumbnail
+ * The template part for displaying current post thumbnail on index pages.
  *
  * @package Aamla
  * @since 1.0.0
  */
 
+if ( has_post_thumbnail() ) :
+	$size = is_singular() ? is_singular( 'page' ) ? 'aamla-page-featured-image' : 'aamla-large' : 'aamla-medium';
 ?>
-
-<div<?php aamla_attr( 'entry-featured-media' ); ?>>
-
-	<?php
-	if ( is_singular() ) :
-		the_post_thumbnail( 'aamla-image' );
-	else :
-	?>
-	<a href="<?php the_permalink(); ?>"<?php aamla_attr( 'post-thumbnail' ); ?> aria-hidden="true">
-		<?php the_post_thumbnail( 'post-thumbnail' ); ?>
-	</a>
-	<?php endif; ?>
-
-</div><!-- .entry-featured-media -->
+	<div<?php aamla_attr( 'entry-thumbnail' ); ?>>
+		<?php the_post_thumbnail( $size ); ?>
+	</div><!-- .entry-thumbnail -->
+<?php
+endif;

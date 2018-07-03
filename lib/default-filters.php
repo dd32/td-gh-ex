@@ -1,0 +1,156 @@
+<?php
+/**
+ * Hook into WordPress to enhance default contents
+ *
+ * @package Aamla
+ * @since 1.0.0
+ */
+
+/**
+ * Add dropdown icon if primary menu item has children.
+ *
+ * @param  string $title The menu item's title.
+ * @param  object $item  The current menu item.
+ * @param  array  $args  An array of wp_nav_menu() arguments.
+ * @param  int    $depth Depth of menu item. Used for padding.
+ * @return string $title The menu item's title with dropdown icon.
+ */
+function aamla_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
+	if ( 'primary' === $args->theme_location ) {
+		foreach ( $item->classes as $value ) {
+			if ( 'menu-item-has-children' === $value || 'page_item_has_children' === $value ) {
+				$title = $title . aamla_get_icon( array( 'icon' => 'angle-down' ) );
+			}
+		}
+	}
+
+	return $title;
+}
+add_filter( 'nav_menu_item_title', 'aamla_dropdown_icon_to_menu_link', 10, 4 );
+
+/**
+ * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link and add
+ * some custom markup to match style with wp_nav_menu().
+ *
+ * @param array $args Configuration arguments.
+ * @return array
+ */
+function aamla_page_menu_args( $args ) {
+	$args['show_home'] = true;
+	if ( isset( $args['fallback_cb'] ) && 'wp_page_menu' === $args['fallback_cb'] ) {
+		$args['theme_location'] = 'primary';
+		$args['menu_id']        = 'menu-container';
+		$args['menu_class']     = 'menu-container wrapper';
+		$args['before']         = '<ul id="primary-menu" class="nav-menu nav-menu--primary">';
+		unset( $args['fallback_cb'] );
+	}
+	return $args;
+}
+add_filter( 'wp_page_menu_args', 'aamla_page_menu_args' );
+
+/**
+ * Display SVG icons in social links menu.
+ *
+ * @param  string  $item_output The menu item output.
+ * @param  WP_Post $item        Menu item object.
+ * @param  int     $depth       Depth of the menu.
+ * @param  array   $args        wp_nav_menu() arguments.
+ * @return string  $item_output The menu item output with social icon.
+ */
+function aamla_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
+
+	/**
+	 * Filter social links icons.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $social_links_icons Array of social links icons.
+	 */
+	$social_icons = apply_filters( 'aamla_social_links_icons',
+		[
+			'behance.net'     => 'behance',
+			'codepen.io'      => 'codepen',
+			'deviantart.com'  => 'deviantart',
+			'digg.com'        => 'digg',
+			'docker.com'      => 'dockerhub',
+			'dribbble.com'    => 'dribbble',
+			'dropbox.com'     => 'dropbox',
+			'facebook.com'    => 'facebook',
+			'flickr.com'      => 'flickr',
+			'foursquare.com'  => 'foursquare',
+			'plus.google.com' => 'google-plus',
+			'github.com'      => 'github',
+			'instagram.com'   => 'instagram',
+			'linkedin.com'    => 'linkedin',
+			'mailto:'         => 'envelope-o',
+			'medium.com'      => 'medium',
+			'pinterest.com'   => 'pinterest-p',
+			'pscp.tv'         => 'periscope',
+			'getpocket.com'   => 'get-pocket',
+			'reddit.com'      => 'reddit-alien',
+			'skype.com'       => 'skype',
+			'skype:'          => 'skype',
+			'slideshare.net'  => 'slideshare',
+			'snapchat.com'    => 'snapchat-ghost',
+			'soundcloud.com'  => 'soundcloud',
+			'spotify.com'     => 'spotify',
+			'stumbleupon.com' => 'stumbleupon',
+			'tumblr.com'      => 'tumblr',
+			'twitch.tv'       => 'twitch',
+			'twitter.com'     => 'twitter',
+			'vimeo.com'       => 'vimeo',
+			'vine.co'         => 'vine',
+			'vk.com'          => 'vk',
+			'wordpress.org'   => 'wordpress',
+			'wordpress.com'   => 'wordpress',
+			'yelp.com'        => 'yelp',
+			'youtube.com'     => 'youtube',
+		]
+	);
+
+	// Change SVG icon inside social links menu if there is supported URL.
+	if ( 'social' === $args->theme_location ) {
+		foreach ( $social_icons as $attr => $value ) {
+			if ( false !== strpos( $item_output, $attr ) ) {
+				$item_output = str_replace( $args->link_after, '</span>' . aamla_get_icon( [ 'icon' => esc_attr( $value ) ] ), $item_output );
+			}
+		}
+	}
+
+	return $item_output;
+}
+add_filter( 'walker_nav_menu_start_el', 'aamla_nav_menu_social_icons', 10, 4 );
+
+/**
+ * Add dynamic styles to TinyMCE classic editor.
+ *
+ * @since 1.0.0
+ *
+ * @param array $mceinit An array with TinyMCE config.
+ * @return array
+ */
+function aamla_dynamic_editor_styles( $mceinit ) {
+	/*
+	 * Although, Filter 'tiny_mce_before_init' is available in Gutenberg editor screen as well
+	 * ( in lib/client-assets.php ). However, it should not be relied for adding inline styles
+	 * to Gutenberg edit screen. It creates unnessary confusion for using css selectors.
+	 */
+	if ( function_exists( 'is_gutenberg_page' ) && is_gutenberg_page() ) {
+		return $mceinit;
+	}
+
+	$styles = apply_filters( 'aamla_dynamic_classic_editor_styles', '' );
+	if ( ! $styles ) {
+		return $mceinit;
+	}
+
+	$styles = aamla_prepare_css( $styles );
+
+	if ( isset( $mceinit['content_style'] ) ) {
+		$mceinit['content_style'] .= ' ' . $styles . ' ';
+	} else {
+		$mceinit['content_style'] = $styles . ' ';
+	}
+	return $mceinit;
+}
+add_filter( 'tiny_mce_before_init', 'aamla_dynamic_editor_styles' );

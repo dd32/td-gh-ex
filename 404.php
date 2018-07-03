@@ -10,6 +10,7 @@
 
 get_header();
 ?>
+<div id="content"<?php aamla_attr( 'site-content' ); ?>>
 <div id="primary"<?php aamla_attr( 'content-area' ); ?>>
 	<main id="main"<?php aamla_attr( 'site-main' ); ?>>
 
@@ -25,13 +26,17 @@ get_header();
 					<li><?php esc_html_e( 'You may have typed the web address incorrectly. Please check the address and spelling.', 'aamla' ); ?></li>
 					<li><?php esc_html_e( 'There might be some problem with the website.', 'aamla' ); ?></li>
 				</ol>
-				<p><?php esc_html_e( 'Please try our site navigation or search to reach your desired destination.', 'aamla' ); ?></p>
-				<?php get_search_form(); ?>
+				<h2><?php esc_html_e( 'What you should do now?', 'aamla' ); ?></h2>
+				<ol class="not-found-details">
+					<li><?php esc_html_e( 'You can use site search box to find the content you are looking for.', 'aamla' ); ?></li>
+					<li><?php esc_html_e( 'Please explore our site using top navigation menu or visit our ', 'aamla' ); ?><a href= "<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_html_e( 'home page.', 'aamla' ); ?></a></li>
+				</ol>
 			</div><!-- .page-content -->
-			<img class="404-image" src="<?php echo esc_url( get_theme_file_uri( '/assets/images/404.png' ) ); ?>">
+			<img class="image-404" src="<?php echo esc_url( get_theme_file_uri( '/assets/images/404.jpg' ) ); ?>">
 		</section><!-- .error-404 -->
 
 	</main><!-- #main -->
 </div><!-- #primary -->
+</div><!-- #content -->
 <?php
 get_footer();
