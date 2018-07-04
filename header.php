@@ -50,6 +50,7 @@
 			$vineURL = get_theme_mod('blogghiamo_theme_options_vineurl', '');
 			$xingURL = get_theme_mod('blogghiamo_theme_options_xingurl', '');
 			$telegramURL = get_theme_mod('blogghiamo_theme_options_telegramurl', '');
+			$imdbURL = get_theme_mod('blogghiamo_theme_options_imdburl', '');
 			$emailURL = get_theme_mod('blogghiamo_theme_options_emailurl', '#');
 		?>
 
@@ -104,6 +105,10 @@
 				
 				<?php if (!empty($telegramURL)) : ?>
 					<a href="<?php echo esc_url($telegramURL); ?>" title="<?php esc_attr_e( 'Telegram', 'blogghiamo' ); ?>"><i class="fa fa-telegram spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Telegram', 'blogghiamo' ); ?></span></i></a>
+				<?php endif; ?>
+				
+				<?php if (!empty($imdbURL)) : ?>
+					<a href="<?php echo esc_url($imdbURL); ?>" title="<?php esc_attr_e( 'Imdb', 'blogghiamo' ); ?>"><i class="fa fa-imdb spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Imdb', 'blogghiamo' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if (!empty($emailURL)) : ?>
