@@ -572,7 +572,7 @@ function weaverx_js_update() {
 
     // Target your #container, #wrapper etc
     // if ( ! weaver_disable_fitvids )  // one possible solution to disabling FitVids via localize_script in functions.php
-    jQuery("#wrapper").fitVids();
+    //jQuery("#wrapper").fitVids();
 	jQuery("#branding").fitVids();
 
 }

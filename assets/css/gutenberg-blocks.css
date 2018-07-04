@@ -396,7 +396,6 @@ figure.wp-block-image {
 	box-sizing:			content-box;
 	height:				4px;
 	margin:				1.0em auto;
-	max-width:			90%;
 	width: 				90%;
 }
 
@@ -462,10 +461,9 @@ figure.wp-block-image {
 
 
 /* =================== Video =================== */
-.wp-block-video {}
 
-.wp-block-video video,
-.wp-block-video iframe {
+.wp-block-embed.is-type-video,
+.wp-block-embed.is-type-video iframe {
 	max-width: 			100%;
 }
 
@@ -533,15 +531,6 @@ figure.wp-block-image {
 
 
 	/* alignfull images look best all the way to the edge */
-
-	.weaverx-sb-one-column .wp-block-cover-image.alignfull,
-	.weaverx-sb-one-column .wp-block-gallery.alignfull,
-	.weaverx-sb-one-column .wp-block-image.alignfull img {
-		margin-left: 	calc(50% - 50vw);
-		margin-right: 	calc(50% - 50vw);
-		max-width: 		1000%;
-		width: 			100vw;
-	}
 
 	.wp-block-cover-image.alignfull,
 	.wp-block-gallery.alignfull,

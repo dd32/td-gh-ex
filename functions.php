@@ -99,6 +99,7 @@ function weaverx_setup() {
 		'width'       => $width,
 		'flex-height' => true, )
 	);
+
 	add_theme_support( 'align-wide' );		// gutenberg wide
 
 	$weaverx_header = array(

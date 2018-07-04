@@ -527,3 +527,7 @@ with testing and feature suggestions.
 * Fix: Issue with saving editor style file sometimes
 * Tweak: Moved all Full width option to same customizer menu, changed name from Expand to Stretch, reorder some options
 * Tweak: Made blockquote border-box.
+
+= Version 4.0.4 =
+* Fix: Problem with search form translation
+* Tweak: some Gutenberg styling

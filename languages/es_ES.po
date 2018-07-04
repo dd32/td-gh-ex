@@ -5,11 +5,11 @@ msgstr ""
 "Project-Id-Version: Weaver X\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Bruce <weavertheme@gmail.com>\n"
+"Last-Translator: Bruce <weaver@weavertheme.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Language: es_ES\n"
-"X-Generator: Poedit 1.6.7\n"
+"X-Generator: Poedit 1.8.12\n"
 
 #. Text in function
 #: weaver-ii-pro/functions.php:2080
