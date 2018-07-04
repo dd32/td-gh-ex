@@ -1,5 +1,8 @@
 == Change log ==
 
+= 1.0.2 =
+* content_number name fixed from esc_url to esc_attr
+
 = 1.0.1 =
 * Submenu issue fixed on mobile
 * rtl-language-support added

@@ -178,7 +178,7 @@ if ( ! class_exists( 'Beauty_Studio_Service' ) ) {
                 <small>
 					<?php esc_html_e('Please enter -1 to show full content or 0 to show none','beauty-studio'); ?>
                 </small>
-                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'content_number' ) ); ?>" name="<?php echo esc_url( $this->get_field_name( 'content_number' ) ); ?>" type="number" value="<?php echo $content_number; ?>" />
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'content_number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'content_number' ) ); ?>" type="number" value="<?php echo $content_number; ?>" />
             </p>
             <p>
                 <label for="<?php echo esc_attr( $this->get_field_id( 'column_number' ) ); ?>"><?php esc_html_e( 'Column Number', 'beauty-studio' ); ?></label>
