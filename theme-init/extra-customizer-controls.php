@@ -18,6 +18,8 @@ class Atlast_Business_Customize_Section_Changelog extends WP_Customize_Section {
 
 		$json = parent::json();
 		$json['changelog_text'] = $this->changelog_text;
+		$json['changelog_url'] = $this->changelog_url;
+		$json['changelog_btntext'] = $this->changelog_btntext;
 
 		return $json;
 	}
@@ -26,9 +28,9 @@ class Atlast_Business_Customize_Section_Changelog extends WP_Customize_Section {
 		<li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand">
 			<h3 class="accordion-section-title">
                 <div class="customizer-changelog-section">
-                    <p>
-                        {{data.changelog_text}}
-                    </p>
+                    <a href="{{data.changelog_url}}" class="button doc-btn">
+                        {{data.changelog_btntext}}
+                    </a>
                 </div>
 			</h3>
 		</li>

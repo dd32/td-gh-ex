@@ -1,6 +1,11 @@
 <?php
 require_once( get_template_directory() . '/includes/class-tgm-plugin-activation.php' );
 require_once( get_template_directory() . '/theme-init/init.php' );
+if ( is_admin() ):
+	$current_id = get_current_user_id();
+	set_transient( 'atlast-business-notice-trans' . '-' . $current_id, true, 5);
+	require_once( get_template_directory() . '/admin/admin-pages.php' );
+endif;
 add_action( 'after_setup_theme', 'atlast_business_setup' );
 function atlast_business_setup() {
 	load_theme_textdomain( 'atlast-business', get_template_directory() . '/languages' );
@@ -108,7 +113,7 @@ function atlast_business_load_scripts() {
 	wp_register_style( 'slick-theme', get_template_directory_uri() . '/assets/css/slick/slick-theme-dist.css', '', '', 'all' );
 
 	wp_register_style( 'atlast-business-fonts', get_template_directory_uri() . '/assets/css/fonts/font-styles-dist.css', '', '1.0.0', 'all' );
-	wp_register_style( 'fontawesome', get_template_directory_uri() . '/assets/css/fonts/fontawesome-all.min.css', '', '1.0.0', 'all' );
+	wp_register_style( 'fontawesome', get_template_directory_uri() . '/assets/css/fonts/fontawesome-all.min.css', '', '1.5.6', 'all' );
 	wp_register_style( 'atlast-business-main-styles', get_template_directory_uri() . '/assets/css/main-styles.css', '', '1.5.2', 'all' );
 	wp_register_style( 'atlast-style', get_stylesheet_uri(), '', 'all' );
 
@@ -135,12 +140,26 @@ function atlast_business_load_scripts() {
 	}
 }
 
+function atlast_business_admin_scripts( $hook_suffix ) {
+
+    global $pagenow;
+
+    if ( 'themes.php' === $pagenow || 'appearance_page_atlast-business-hello' == $hook_suffix ) {
+        wp_enqueue_style( 'atlast-business-about-page-css', get_template_directory_uri() . '/admin/assets/css/admin-page.css' );
+    }
+
+    // enqueue js files
+    if ( 'appearance_page_atlast-business-hello' == $hook_suffix ) {
+        wp_enqueue_script( 'atlast-business-about-page-js', ( get_template_directory_uri() . '/admin/assets/js/admin-page.js' ), array( 'jquery' ), '', 'true' );
+    }
+}
+add_action('admin_enqueue_scripts','atlast_business_admin_scripts');
 add_action( 'widgets_init', 'atlast_business_widgets_init' );
 function atlast_business_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Header sidebar', 'atlast-business' ),
-		'description'   => __( ' In this sidebar you can use widgets eg the smart widget slider etc and it will be shown in the header container. This widget\'s area visibility is controlled via the header visibility options in Customize > Atlast Business Options > Header Options > Do you want the header image to appear to all pages / posts etc?' , 'atlast-business' ),
+		'description'   => __( ' In this sidebar you can use widgets eg the smart widget slider etc and it will be shown in the header container. This widget\'s area visibility is controlled via the header visibility options in Customize > Atlast Business Options > Header Options > Do you want the header image to appear to all pages / posts etc?', 'atlast-business' ),
 		'id'            => 'header-sidebar',
 		'before_widget' => '<section id="%1$s" class="widget widget-container %2$s">',
 		'after_widget'  => "</section>",
@@ -278,7 +297,7 @@ function atlast_business_register_required_plugins() {
 			'slug'     => 'one-click-demo-import',
 			'required' => false,
 		),
-        array(
+		array(
 			'name'     => 'Smart Slider 3',
 			'slug'     => 'smart-slider-3',
 			'required' => false,

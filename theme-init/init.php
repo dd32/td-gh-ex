@@ -1525,8 +1525,9 @@ if (!function_exists('atlast_customizer_settings')):
                 $wp_customize,
                 'changelog',
                 array(
-                    'title' => esc_html__('Whats New in 1.5.52', 'atlast-business'),
-                    'changelog_text' => esc_html__('Version 1.5.5 - Atlast Business theme fully supports the great Smart Slider plugin. Download it from the recommended plugins, create your slider (fullscreen) and then navigate to Widgets - Header Sidebar and add the Smart slider plugin.', 'atlast-business'),
+                    'title' => esc_html__('Whats New in 1.5.5', 'atlast-business'),
+                    'changelog_btntext' => esc_html__('Getting Started / Docs ', 'atlast-business'),
+                    'changelog_url'=>esc_url( admin_url( 'themes.php?page=atlast-business-hello' ) ),
                     'priority' => 1,
                     'capability' => 'edit_theme_options',
                 )

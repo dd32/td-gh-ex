@@ -1,6 +1,4 @@
-.customizer-changelog-section p{
-    padding: 4px;
-    font-size: 14px;
-    border: 3px solid #ffc80a;
-    background: yellow;
+.doc-btn{
+    background: #f37139 !important;
+    color: #ffffff !important;
 }
