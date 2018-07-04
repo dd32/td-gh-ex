@@ -32,7 +32,6 @@ function ashe_about_page_output() {
 		<div class="theme-review">
 			<h3>
 				<?php esc_html_e( 'Are You a Helpful Person?', 'ashe' ); ?>
-				<span class="dashicons dashicons-arrow-down"></span>
 			</h3>
 			<div>
 				<p><?php esc_html_e( 'We are grateful that you\'ve decided to join the Ashe family. If we could take 2 mins of your time, we\'d really appreciate if you could leave a review. By spreading the love, we can create even greater free stuff in the future!', 'ashe' ); ?></p>
@@ -260,6 +259,11 @@ function ashe_about_page_output() {
 					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=header_image')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
 				</div>
 				<div class="column-width-4">
+					<h3><?php esc_html_e( 'Setup Random Header Images', 'ashe' ); ?></h3>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=sayr8QwpbrM"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=header_image')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
+				</div>
+				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Setup Featured Slider', 'ashe' ); ?></h3>
 					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=H9i-cKOey98"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=ashe_featured_slider')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
@@ -268,6 +272,16 @@ function ashe_about_page_output() {
 					<h3><?php esc_html_e( 'Setup Featured Links', 'ashe' ); ?></h3>
 					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=pCtjGwieCoo"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=ashe_featured_links')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
+				</div>
+				<div class="column-width-4">
+					<h3><?php esc_html_e( 'Customize General Layouts', 'ashe' ); ?></h3>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=WhEWOo8PoB0"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=ashe_general')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
+				</div>
+				<div class="column-width-4">
+					<h3><?php esc_html_e( 'Customize Blog Page', 'ashe' ); ?></h3>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=DgtVfFQo7H8"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=ashe_blog_page')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
 				</div>
 				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Setup Instagram Widget', 'ashe' ); ?></h3>
@@ -642,12 +656,12 @@ function ashe_enqueue_about_page_scripts($hook) {
 	}
 
 	// enqueue CSS
-	wp_enqueue_style( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/css/about-ashe-page.css' ), array(), '1.6.4' );
+	wp_enqueue_style( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/css/about-ashe-page.css' ), array(), '1.6.5' );
 
 	// Demo Import
 	wp_enqueue_script( 'plugin-install' );
 	wp_enqueue_script( 'updates' );
-	wp_enqueue_script( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/js/about-ashe-page.js' ), array(), '1.6.4' );
+	wp_enqueue_script( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/js/about-ashe-page.js' ), array(), '1.6.5' );
 
 }
 add_action( 'admin_enqueue_scripts', 'ashe_enqueue_about_page_scripts' );

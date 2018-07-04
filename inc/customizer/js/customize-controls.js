@@ -85,7 +85,7 @@
 		ashe_customizer_label( 'background_image', 'Body Background', '' );
 
 		// General Layouts
-		ashe_customizer_label( 'general_sidebar_width', 'General', '' );
+		ashe_customizer_label( 'general_sidebar_width', 'General', 'https://www.youtube.com/watch?v=WhEWOo8PoB0' );
 		ashe_customizer_label( 'general_home_layout', 'Page Layouts', '' );
 		ashe_customizer_label( 'general_header_width', 'Boxed Controls', '' );
 
@@ -112,7 +112,7 @@
 		ashe_customizer_label( 'featured_links_title_3', 'Featured Link #3', '' );
 
 		// Blog Page
-		ashe_customizer_label( 'blog_page_post_description', 'General', '' );
+		ashe_customizer_label( 'blog_page_post_description', 'General', 'https://www.youtube.com/watch?v=DgtVfFQo7H8' );
 		ashe_customizer_label( 'blog_page_show_categories', 'Post Elements', '' );
 
 		// Single Page
