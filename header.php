@@ -46,32 +46,48 @@ endif;
 				</div> 
 				<div class="eight columns">
 					<ul class="social top-right">
-					<?php if( get_theme_mod( 'social-twitter' ) ) : ?>
+					<?php if( ( get_theme_mod( 'social-twitter' ) ) &&  ( get_theme_mod( 'new-tab' ) ) ) : ?>
+						<li><a href="<?php echo esc_attr( get_theme_mod( 'social-twitter' ) ); ?>" class="fa fa-twitter" target="_blank"></a></li>
+					<?php else : ?>
 						<li><a href="<?php echo esc_attr( get_theme_mod( 'social-twitter' ) ); ?>" class="fa fa-twitter"></a></li>
-					<?php endif; ?>		
-					<?php if( get_theme_mod( 'social-facebook' ) ) : ?>
+					<?php endif; ?>	
+					<?php if( ( get_theme_mod( 'social-facebook' ) ) &&  ( get_theme_mod( 'new-tab' ) ) ) : ?>
+						<li><a href="<?php echo esc_attr( get_theme_mod('social-facebook' ) ); ?>" class="fa fa-facebook" target="_blank"></a></li>
+					<?php else : ?>
 						<li><a href="<?php echo esc_attr( get_theme_mod('social-facebook' ) ); ?>" class="fa fa-facebook"></a></li>
 					<?php endif; ?>
-					<?php if( get_theme_mod( 'social-instagram' ) ) : ?>
+					<?php if( ( get_theme_mod( 'social-instagram' ) ) &&  ( get_theme_mod( 'new-tab' ) ) ) : ?>
+						<li><a href="<?php echo esc_attr( get_theme_mod('social-instagram' ) ); ?>" class="fa fa-instagram" target="_blank"></a></li>
+					<?php else : ?>
 						<li><a href="<?php echo esc_attr( get_theme_mod('social-instagram' ) ); ?>" class="fa fa-instagram"></a></li>
 					<?php endif; ?>
-					<?php if( get_theme_mod( 'social-youtube' ) ) : ?>
+					<?php if( ( get_theme_mod( 'social-youtube' ) ) &&  ( get_theme_mod( 'new-tab' ) ) ) : ?>
+						<li><a href="<?php echo esc_attr( get_theme_mod('social-youtube' ) ); ?>" class="fa fa-youtube" target="_blank"></a></li>
+					<?php else : ?>
 						<li><a href="<?php echo esc_attr( get_theme_mod('social-youtube' ) ); ?>" class="fa fa-youtube"></a></li>
 					<?php endif; ?>
 					
-					<?php if( get_theme_mod( 'social-google' ) ) : ?>     
+					<?php if( ( get_theme_mod( 'social-google' ) ) &&  ( get_theme_mod( 'new-tab' ) ) ) : ?>     
+						<li><a href="<?php echo esc_attr( get_theme_mod( 'social-google' ) ); ?>" class="fa fa-google-plus" target="_blank"></a></li>
+					<?php else : ?>
 						<li><a href="<?php echo esc_attr( get_theme_mod( 'social-google' ) ); ?>" class="fa fa-google-plus"></a></li>
 					<?php endif; ?>
 					
-					<?php if( get_theme_mod('social-linkedin' ) ) : ?>
+					<?php if( ( get_theme_mod('social-linkedin' ) ) &&  ( get_theme_mod( 'new-tab' ) ) ) : ?>
+						<li><a href="<?php echo esc_attr( get_theme_mod( 'social-linkedin' ) ); ?>" class="fa fa-linkedin" target="_blank"></a></li>
+					<?php else : ?>
 						<li><a href="<?php echo esc_attr( get_theme_mod( 'social-linkedin' ) ); ?>" class="fa fa-linkedin"></a></li>
 					<?php endif; ?>
 					
-					<?php if( get_theme_mod( 'social-dribbble' ) ) : ?>
+					<?php if( ( get_theme_mod( 'social-dribbble' ) ) &&  ( get_theme_mod( 'new-tab' ) ) ) : ?>
+						<li><a href="<?php echo esc_attr( get_theme_mod( 'social-dribbble') ); ?>" class="fa fa-dribbble" target="_blank"></a></li>
+					<?php else : ?>
 						<li><a href="<?php echo esc_attr( get_theme_mod( 'social-dribbble') ); ?>" class="fa fa-dribbble"></a></li>
 					<?php endif; ?>
 					
-					<?php if( get_theme_mod( 'social-rss' ) ) : ?>
+					<?php if( ( get_theme_mod( 'social-rss' ) ) &&  ( get_theme_mod( 'new-tab' ) ) ) : ?>
+						<li><a href="<?php echo esc_attr( get_theme_mod( 'social-rss') ); ?>" class="fa fa-rss" target="_blank"></a></li>
+					<?php else : ?>
 						<li><a href="<?php echo esc_attr( get_theme_mod( 'social-rss') ); ?>" class="fa fa-rss"></a></li>
 					<?php endif; ?>
 					</ul>
