@@ -40,7 +40,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="scroll-to-top"><i class="fa fa-angle-up"></i></div><!-- .scroll-to-top -->
+		<?php if( get_theme_mod('scroll_to_top_button',true) ) : ?>
+			<div class="scroll-to-top"><i class="fa fa-angle-up"></i></div><!-- .scroll-to-top -->
+		<?php endif;  ?>
 	</footer><!-- #colophon -->
 
 	<?php do_action('boxy_after_footer'); ?>

@@ -1426,6 +1426,24 @@ Boxy_Kirki::add_field( 'boxy', array(
 	),
 	'default'  => 'top',
 ) );
+
+Boxy_Kirki::add_section( 'scroll_to_top', array(
+	'title'          => __( 'Scroll to Top','boxy' ),
+	'description'    => __( 'Scroll to Top Button', 'boxy'),
+	'panel'          => 'header_panel', // Not typically needed.
+) );
+Boxy_Kirki::add_field( 'boxy', array(    
+	'settings' => 'scroll_to_top_button',
+	'label'    => __( 'Enable Scroll to Top', 'boxy' ),
+	'section'  => 'scroll_to_top',
+	'type'     => 'switch',
+	'choices' => array(
+		'on'  => esc_attr__( 'Enable', 'boxy' ),
+		'off' => esc_attr__( 'Disable', 'boxy' )
+	),
+	'default'  => 'on',
+) );
+
 /*
 Boxy_Kirki::add_field( 'boxy', array(
 	'settings' => 'header_top_margin',

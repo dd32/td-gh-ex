@@ -44,8 +44,6 @@ if ( ! function_exists( 'boxy_header_style' ) ) :
 	 * @see boxy_custom_header_setup().
 	 */
 	function boxy_header_style() {
-		$header_text_color = get_header_textcolor();
-		// If we get this far, we have custom styles. Let's do this.
 
 		if ( get_header_image() ) { ?>
 			<style type="text/css">    
@@ -85,13 +83,7 @@ if ( ! function_exists( 'boxy_header_style' ) ) :
 		    </style><?php
 		}
     }
-
-		// If no custom options for text are set, let's bail
-		// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-		if ( HEADER_TEXTCOLOR == $header_text_color ) {
-			return;
-		}
-	}
+}
 endif; // boxy_header_style
 
 if ( ! function_exists( 'boxy_admin_header_style' ) ) :
