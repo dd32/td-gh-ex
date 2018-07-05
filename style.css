@@ -4,7 +4,7 @@ Theme URI: http://wpkoi.com/asagi-wpkoi-wordpress-theme/
 Author: WPKoi
 Author URI: http://wpkoi.com
 Description: Asagi WPKoi WordPress Theme is a clean blogger theme with full of features. Asagi has different layouts and post formats and also compatible with WooCommerce and Elementor page builder plugins. If You want to create a clean site with unique design, Asagi will gives the spirit to it. Check out the theme page for more functions!
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: asagi
@@ -505,7 +505,7 @@ input[type=file] {
 
 .menu-toggle:before {
     content: "\f0c9";
-    font-family: asagi;
+    font-family: wpkoi;
     width: 1.28571429em;
     text-align: center;
     display: inline-block
@@ -540,7 +540,7 @@ span.search-item.close-search a:before {
 li.search-item a:before,
 span.search-item a:before {
     content: "\f002";
-    font-family: asagi;
+    font-family: wpkoi;
     width: 1.28571429em;
     text-align: center;
     display: inline-block
@@ -791,7 +791,7 @@ nav ul ul .menu-item-has-children .dropdown-menu-toggle {
 
 .dropdown-menu-toggle:before {
     content: "\f107";
-    font-family: asagi
+    font-family: wpkoi
 }
 
 .dropdown-click .menu-item-has-children.sfHover>a .dropdown-menu-toggle:before {
@@ -1484,7 +1484,7 @@ footer.entry-meta {
 .tags-links:before,
 footer.entry-meta .author:before,
 footer.entry-meta .posted-on:before {
-    font-family: asagi;
+    font-family: wpkoi;
     text-decoration: inherit;
     position: relative;
     margin-right: .6em;
@@ -1744,7 +1744,7 @@ footer.entry-meta .posted-on {
 
 .asagi-back-to-top:before {
     content: "\f106";
-    font-family: asagi
+    font-family: wpkoi
 }
 
 .asagi-back-to-top,
@@ -1960,9 +1960,9 @@ h3 {
 }
 
 @font-face {
-    font-family: 'asagi';
-    src: url(fonts/asagi.eot);
-    src: url(fonts/asagi.eot#iefix) format('embedded-opentype'), url(fonts/asagi.woff2) format('woff2'), url(fonts/asagi.woff) format('woff'), url(fonts/asagi.ttf) format('truetype'), url(fonts/asagi.svg#asagi) format('svg');
+    font-family: 'wpkoi';
+    src: url(fonts/wpkoi.eot);
+    src: url(fonts/wpkoi.eot#iefix) format('embedded-opentype'), url(fonts/wpkoi.woff2) format('woff2'), url(fonts/wpkoi.woff) format('woff'), url(fonts/wpkoi.ttf) format('truetype'), url(fonts/wpkoi.svg#asagi) format('svg');
     font-weight: 400;
     font-style: normal
 }
@@ -1990,7 +1990,7 @@ span.search-item a:before {
 
 .main-navigation .slideout-toggle a:before,
 .slide-opened .slideout-overlay .slideout-exit:before {
-    font-family: asagi
+    font-family: wpkoi
 }
 
 .main-navigation a {

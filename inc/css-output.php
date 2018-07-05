@@ -266,10 +266,6 @@ if ( ! function_exists( 'asagi_advanced_css' ) ) {
 		$css->set_selector( '.site-info a:hover' );
 		$css->add_property( 'color', esc_attr( $asagi_settings[ 'footer_link_hover_color' ] ) );
 
-		// Footer bar widget menu
-		$css->set_selector( '.footer-bar .widget_nav_menu .current-menu-item a' );
-		$css->add_property( 'color', esc_attr( $asagi_settings[ 'footer_link_hover_color' ] ) );
-
 		// Form input
 		$css->set_selector( 'input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],input[type="number"],textarea,select' );
 		$css->add_property( 'color', esc_attr( $asagi_settings[ 'form_text_color' ] ) );

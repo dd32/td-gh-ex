@@ -69,12 +69,16 @@ if ( ! function_exists( 'asagi_add_footer_info' ) ) {
 	 *
 	 */
 	function asagi_add_footer_info() {
-		$copyright = sprintf( '<span class="copyright">&copy; %1$s</span> &bull; %2$s',
-			date( 'Y' ),
-			get_bloginfo()
+		// Get Customizer options
+		$asagi_settings = wp_parse_args(
+			get_option( 'asagi_settings', array() ),
+			asagi_get_defaults()
 		);
 
-		echo apply_filters( 'asagi_copyright', $copyright ); // WPCS: XSS ok.
+		// Get the copyright text
+		$copyright = $asagi_settings['footer_copyright'];
+
+		echo wp_kses_post( $copyright ); // WPCS: XSS ok.
 	}
 }
 

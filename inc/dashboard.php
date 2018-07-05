@@ -108,10 +108,10 @@ if ( ! function_exists( 'asagi_settings_page' ) ) {
 									'Colors' => array(
 											'url' => ASAGI_THEME_URL,
 									),
-									'Copyright' => array(
+									'Disable Elements' => array(
 											'url' => ASAGI_THEME_URL,
 									),
-									'Disable Elements' => array(
+									'Demo Import' => array(
 											'url' => ASAGI_THEME_URL,
 									),
 									'Hooks' => array(
@@ -136,6 +136,9 @@ if ( ! function_exists( 'asagi_settings_page' ) ) {
 											'url' => ASAGI_THEME_URL,
 									),
 									'Typography' => array(
+											'url' => ASAGI_THEME_URL,
+									),
+									'Elementor Addon' => array(
 											'url' => ASAGI_THEME_URL,
 									)
 								);

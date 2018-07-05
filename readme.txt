@@ -62,8 +62,16 @@ WPKoi Asagi: https://pixabay.com/en/fish-koi-fish-asian-japan-2486632/
 Copyright DearlyReloved
 License: https://creativecommons.org/publicdomain/zero/1.0/
 
+Asagi Icon: https://pixabay.com/en/koi-koi-fish-fish-pond-3355188/
+Copyright Artissa
+License: https://creativecommons.org/publicdomain/zero/1.0/
+
 
 == Change Log ==
+
+= 1.0.2 =
+Some little fixes
+Some extra options
 
 = 1.0.1 =
 Some little fixes

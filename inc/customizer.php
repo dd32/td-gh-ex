@@ -872,7 +872,8 @@ if ( ! function_exists( 'asagi_customize_register' ) ) {
 			array(
 				'default' => $defaults['footer_widget_setting'],
 				'type' => 'option',
-				'sanitize_callback' => 'asagi_sanitize_choices'
+				'sanitize_callback' => 'asagi_sanitize_choices',
+				'transport' => 'postMessage'
 			)
 		);
 
@@ -893,6 +894,28 @@ if ( ! function_exists( 'asagi_customize_register' ) ) {
 				),
 				'settings' => 'asagi_settings[footer_widget_setting]',
 				'priority' => 45
+			)
+		);
+
+		// Copyright
+		$wp_customize->add_setting(
+			'asagi_settings[footer_copyright]',
+			array(
+				'default' => $defaults['footer_copyright'],
+				'type' => 'option',
+				'sanitize_callback' => 'wp_kses_post',
+				'transport' => 'postMessage',
+			)
+		);
+
+		$wp_customize->add_control(
+			'asagi_settings[footer_copyright]',
+			array(
+				'type' 		 => 'textarea',
+				'label'      => __( 'Copyright', 'asagi' ),
+				'section'    => 'asagi_layout_footer',
+				'settings'   => 'asagi_settings[footer_copyright]',
+				'priority' => 50,
 			)
 		);
 
