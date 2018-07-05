@@ -26,7 +26,7 @@ if (!function_exists('adventure_blog_banner_slider_args')):
                 }
                 /*page query*/
                 $qargs = array(
-                    'posts_per_page' => esc_attr($adventure_blog_banner_slider_number),
+                    'posts_per_page' => absint($adventure_blog_banner_slider_number),
                     'orderby' => 'post__in',
                     'post_type' => 'page',
                     'post__in' => $adventure_blog_banner_slider_page_list_array,
@@ -35,9 +35,9 @@ if (!function_exists('adventure_blog_banner_slider_args')):
                 break;
 
             case 'from-category':
-                $adventure_blog_banner_slider_category = esc_attr(adventure_blog_get_option('select_category_for_slider'));
+                $adventure_blog_banner_slider_category = absint(adventure_blog_get_option('select_category_for_slider'));
                 $qargs = array(
-                    'posts_per_page' => esc_attr($adventure_blog_banner_slider_number),
+                    'posts_per_page' => absint($adventure_blog_banner_slider_number),
                     'post_type' => 'post',
                     'cat' => $adventure_blog_banner_slider_category,
                 );

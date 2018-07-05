@@ -42,6 +42,8 @@ function adventure_blog_setup() {
 	 */
 	add_theme_support('post-thumbnails');
     add_image_size('adventure-blog-720-480', 720, 720, true);
+    add_image_size('adventure-blog-full-1200-900', 1200, 900, true);
+    add_image_size('adventure-blog-full-800-600', 800, 600, true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(array(
@@ -86,7 +88,7 @@ function adventure_blog_setup() {
 				'height'        => 1080,
 				'flex-height'   => true,
 				'header-text'   => false,
-				'default-image' => get_template_directory_uri().'/images/default-banner.jpg',
+				'default-image' => get_template_directory_uri().'/images/default-banner.jpeg',
 			)));
 }
 endif;
@@ -171,9 +173,9 @@ function adventure_blog_fonts_url() {
 		$fonts[] = 'Source+Sans+Pro:300,300i,400,400i,700,700i';
 	}
 
-	/* translators: If there are characters in your language that are not supported by Source Sans Pro, translate this to 'off'. Do not translate into your own language. */
-	if ('off' !== _x('on', 'Source Sans Pro font: on or off', 'adventure-blog')) {
-		$fonts[] = 'Norican';
+	/* translators: If there are characters in your language that are not supported by Shadows Into Light, translate this to 'off'. Do not translate into your own language. */
+	if ('off' !== _x('on', 'Shadows Into Light font: on or off', 'adventure-blog')) {
+		$fonts[] = 'Shadows+Into+Light';
 	}
 
 	if ($fonts) {

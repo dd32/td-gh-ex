@@ -4,7 +4,7 @@ Theme URI: https://unitedtheme.com/themes/adventure-blog/
 Author: UnitedTheme
 Author URI: http://unitedtheme.com/
 Description: A clean beautiful and minimal blog theme designed specifically for bloggers to make blogs for photography, food, fashion, lifestyle, magazines, travel, sports, technology, as well as modern newspaper websites. photography WordPress theme that comes with high-quality features and minimal design. Adventure Blog is adventure, clean, elegant and straightforward. It is ideal for creating photography websites for photographers, graphic designers, freelancers, artists, or bloggers. It comes with customizer API based features that are extremely lite and easy to handle,as it just has all to take your photoblogs to the next level.
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: adventure-blog
@@ -503,7 +503,7 @@ input, textarea, select {
 
 .btn-link:link:hover,
 .btn-link:visited:hover {
-    color: #F44336;
+    color: #262626;
 }
 
 .btn-link:link:hover:after,
@@ -514,7 +514,7 @@ input, textarea, select {
 /* Gibson Buttons */
 
 .btn-link {
-    border: 2px solid #F44336;
+    border: 2px solid #262626;
     color: #FFF;
 }
 
@@ -563,7 +563,7 @@ a:hover, a:focus, a:active {
     transition: all .3s ease;
     -moz-transition: all .3s ease;
     -webkit-transition: all .3s ease;
-    color: #F44336;
+    color: #262626;
     outline: none;
 }
 
@@ -721,7 +721,7 @@ a:hover, a:focus, a:active {
 
     .main-navigation ul ul li a:hover,
     .main-navigation ul ul li a:focus {
-        background: #F44336;
+        background: #262626;
     }
 
     .main-navigation .menu ul ul {
@@ -863,97 +863,97 @@ a:hover, a:focus, a:active {
 
 /* ## Single Post Navigation */
 
+/*------------------------------------------------------------
+ * ## Post-navigation
+ *------------------------------------------------------------
+ */
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
-    margin: 0 0 1.5em;
-    overflow: hidden;
+    margin-bottom: 30px;
+    position: relative;
 }
 
-.post-navigation {
-    font-weight: 600;
-    text-align: left;
-    overflow: hidden;
-}
-
-.post-navigation a {
-    color: #000;
-    display: block;
+.nav-links {
     width: 100%;
-    text-decoration: none;
-    padding: 1.2em;
-    border: 1px solid #ebebeb;
-    transition: all .3s;
-    background-color: #fbfbfb;
-}
-
-@media screen and (min-width: 62em) {
-    .post-navigation a {
-        padding: 1.5em;
-    }
-}
-
-@media screen and (min-width: 80em) {
-    .post-navigation a {
-        padding: 1.8em;
-    }
-}
-
-.post-navigation .post-title {
-    font-size: 1em;
-    font-weight: 700;
+    display: table;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .nav-previous {
-    padding-bottom: 1em;
-    width: 100%
+    border-width: 2px 1px 2px 2px;
+    text-align: left;
 }
 
 .nav-next {
-    width: 100%;
+    border-width: 2px 2px 2px 1px;
+    text-align: right;
 }
 
-@media screen and (min-width: 30em) {
-    .nav-links {
-        display: flex;
-        justify-content: space-between;
-        align-items: stretch;
-        padding: 0;
+.nav-previous,
+.nav-next {
+    display: table-cell;
+    position: relative;
+    padding: 15px;
+    width: 50%;
+    border-style: solid;
+    border-color: #eaeaea;
+}
+
+.nav-previous a,
+.nav-next a {
+    padding: 0 15px;
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #83af99;
+}
+
+@media only screen and (max-width: 767px) {
+    .site-main .comment-navigation,
+    .site-main .posts-navigation,
+    .site-main .post-navigation {
+        border: 0;
     }
 
-    .post-navigation .nav-previous,
-    .comment-navigation .nav-previous {
-        display: flex;
-        align-items: stretch;
-        float: left;
-        width: 48%;
+    .nav-previous:before {
+        left: inherit;
     }
 
-    .nav-previous {
-        padding-bottom: 0;
+    .nav-next:after {
+        right: inherit;
     }
 
-    .post-navigation .nav-next,
-    .comment-navigation .nav-next {
-        display: flex;
-        align-items: stretch;
-        float: right;
-        text-align: right;
-        width: 48%;
+    .site-main .comment-navigation:after, .site-main .posts-navigation:after, .site-main .post-navigation:after {
+        display: none;
     }
 }
 
-.post-navigation .meta-nav {
-    display: block;
-    font-weight: 400;
-    font-size: .9em;
-    margin-bottom: .6em;
+
+.nav-links .page-numbers {
+    background: transparent;
+    display: inline-block !important;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin-right: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-width: 50px;
+    width: auto !important;
 }
 
-@media screen and (min-width: 62em) {
-    .post-navigation .meta-nav {
-        padding-bottom: 0;
-    }
+.nav-links .page-numbers.current,
+.nav-links .page-numbers:hover,
+.nav-links .page-numbers:focus {
+    background: #000;
+    color: #fff;
+    border-color: #000;
 }
 
 /* ## Single Post Comments */
@@ -1413,16 +1413,31 @@ a:hover, a:focus, a:active {
     margin: 0 0 1.5em;
 }
 
+#secondary .widget {
+    margin-bottom: 55px;
+}
+
 .widget-title {
     display: block;
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: 700;
     line-height: 1em;
-    letter-spacing: 0.1em;
-    margin: 0 0 20px 0;
-    padding: 15px;
-    text-align: center;
+    letter-spacing: 2px;
+    margin: 20px 0;
     text-transform: uppercase;
+    color: #000;
+}
+
+.widget-title:before {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    vertical-align: middle;
+    width: 30px;
+    right: 10px;
+    margin-left: 10px;
 }
 
 .widget select {
@@ -1670,12 +1685,23 @@ a:hover, a:focus, a:active {
     }
 }
 
+@media (min-width: 1650px) {
+    .wrapper,
+    .site-content {
+        width: 1400px;
+    }
+
+    .no-sidebar .site-content {
+        width: 1400px;
+    }
+}
+
 #primary,
 #secondary {
     float: left;
     width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 #primary {
@@ -1697,13 +1723,18 @@ a:hover, a:focus, a:active {
 
 .left-sidebar #primary {
     float: right;
-    padding-left: 15px;
+    padding-left: 25px;
     padding-right: 0;
 }
 
 .left-sidebar #secondary {
     padding-left: 0;
-    padding-right: 15px;
+    padding-right: 25px;
+    border-right: 2px dashed;
+}
+
+.right-sidebar #secondary {
+    border-left: 2px dashed;
 }
 
 @media only screen and (max-width: 991px) {
@@ -1714,6 +1745,7 @@ a:hover, a:focus, a:active {
     }
 
     #secondary {
+        border: 0 !important;
         width: 100%;
         padding-left: 15px;
         padding-right: 15px;
@@ -1752,7 +1784,7 @@ a:hover, a:focus, a:active {
 }
 
 .site-title {
-    font: 400 6.5em/125% 'Norican', Helvetica, Sans-serif;
+    font: 400 6.5em/125% 'Shadows Into Light', cursive;
     letter-spacing: 4px;
 }
 
@@ -1767,8 +1799,6 @@ a:hover, a:focus, a:active {
     margin: 0 auto;
 }
 
-.site-title,
-.site-title a,
 .site-description {
     color: #000;
 }
@@ -1784,7 +1814,7 @@ a:hover, a:focus, a:active {
     position: absolute;
     left: 6px;
     right: 0;
-    top: 6px;
+    top: 15px;
     background-image: -webkit-linear-gradient(left top, transparent 0%, transparent 25%, #555 25%, #555 50%, transparent 50%, transparent 75%, #555 75%);
     background-size: 4px 4px;
     -webkit-background-clip: text;
@@ -1964,8 +1994,13 @@ a:hover, a:focus, a:active {
 #mainslider .slick-slide {
     background-color: #000;
     height: 490px;
-    height: 70vh;
     overflow: hidden;
+}
+
+@media only screen and (min-width: 1600px) {
+    #mainslider .slick-slide {
+        height: 590px;
+    }
 }
 
 .banner-media img,
@@ -2000,7 +2035,8 @@ a:hover, a:focus, a:active {
     letter-spacing: 0.04em;
     text-transform: uppercase;
 }
-.slides-title a{
+
+.slides-title a {
     background: rgba(0, 0, 0, .78);
     display: inline;
     -webkit-box-shadow: 10px 0 0 rgba(0, 0, 0, .78), -10px 0 0 rgba(0, 0, 0, .78);
@@ -2028,7 +2064,7 @@ a:hover, a:focus, a:active {
 
 #primary .hentry {
     padding-bottom: 2em;
-    border-bottom: 1px solid #d2d2d2;
+    border-bottom: 2px dashed;
 }
 
 .single #primary .hentry,
@@ -2057,18 +2093,13 @@ a:hover, a:focus, a:active {
     padding-left: 0;
 }
 
-.hentry .entry-header,
-.hentry .entry-content,
-.hentry .entry-footer {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
+.photo-gallery-section {
+    padding-top: 60px;
 }
 
-.hentry .post-thumbnail {
-    display: block;
-    text-align: center;
+.photo-gallery-section .entry-header {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .single .hentry .entry-header,
@@ -2089,19 +2120,24 @@ a:hover, a:focus, a:active {
 }
 
 .entry-meta > span {
+    font-weight: 700;
     padding-left: 10px;
     padding-right: 10px;
 }
 
-.entry-meta a,
-.entry-footer a {
-    color: #9384c9;
+.entry-meta > span:first-child {
+    padding-left: 0;
 }
 
 .entry-footer .cat-links,
 .entry-footer .tags-links {
+    font-weight: 700;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.entry-footer .cat-links {
+    padding-left: 0;
 }
 
 .single .entry-footer .cat-links,
@@ -2141,24 +2177,23 @@ a:hover, a:focus, a:active {
 .intro-section {
     background: #faf8f7;
     padding-top: 100px;
-    padding-bottom: 110px;
-}
-
-.content-block .photo-gallery-section {
-    margin-top: -50px;
+    padding-bottom: 50px;
 }
 
 .excerpt,
 .entry-content {
     font-size: 18px;
-    line-height: 32px;
-    margin-bottom: 30px;
+    line-height: 28px;
+    margin: 0 auto;
+}
+
+.excerpt .continue-link,
+.entry-content .continue-link {
+    margin-left: 0;
 }
 
 .slides-excerpt {
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 18px;
 }
 
 .intro-section .wrapper {
@@ -2167,8 +2202,8 @@ a:hover, a:focus, a:active {
 
 .entry-title,
 .title-header {
-    font-size: 58px;
-    line-height: 1.4em;
+    font-size: 42px;
+    line-height: 1.4;
     letter-spacing: 0.04em;
 }
 
@@ -2185,31 +2220,6 @@ a:hover, a:focus, a:active {
     display: block;
 }
 
-/*--------------------------------------------------------------
-# Pagination
---------------------------------------------------------------*/
-
-.navigation.pagination {
-    display: table;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-}
-
-.navigation.pagination .page-numbers {
-    height: 45px;
-    line-height: 45px;
-    vertical-align: middle;
-    display: inline-block !important;
-    color: #333;
-    border: 1px solid #F44336;
-    margin: 0 2px;
-    padding-left: 22px;
-    padding-right: 22px;
-    text-align: center;
-    width: inherit;
-}
 
 /*--------------------------------------------------------------
 # Media
@@ -2377,8 +2387,8 @@ object {
 ## Footer
 --------------------------------------------------------------*/
 .site-footer {
-    background-color: #f2f2f2;
-    color: #232323;
+    background-color: #f7f7f7;
+    border-top: 1px solid;
 }
 
 .site-widget-area {
@@ -2455,8 +2465,8 @@ object {
     position: relative;
 }
 
-.prev,
-.next {
+.slick-slider .prev,
+.slick-slider .next {
     color: #fff;
     width: 47px;
     height: 47px;
@@ -2469,7 +2479,8 @@ object {
 
 .slide-caption {
     position: absolute;
-    top: 35%;
+    top: initial;
+    bottom: 100px;
     left: 0;
     right: 0;
     text-align: center;
@@ -2501,17 +2512,19 @@ object {
 }
 
 .overlay-enable:before {
+    background: #000;
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    filter: alpha(opacity=75);
-    opacity: .75;
+    filter: alpha(opacity=35);
+    opacity: .35;
 }
 
 .main-navigation .menu .menu-mobile li,
+.site #secondary,
 .comments-title,
 .comments-area .comment-respond .comment-reply-title,
 .widget_recent_comments li,
@@ -2521,12 +2534,13 @@ object {
 .widget_categories li,
 .widget_nav_menu li a,
 .widget_recent_entries li a,
-#wp-calendar tbody td {
-    border-color: #e9e9e9;
+#wp-calendar tbody td,
+.site .site-footer,
+#primary .hentry{
+    border-color: #eaeaea;
 }
 
 .social-navigation a,
-.widget-title,
 button,
 input[type="button"],
 input[type="reset"],
@@ -2534,11 +2548,10 @@ input[type="submit"],
 .navigation.pagination .page-numbers.current,
 .tagcloud > a:hover,
 .tagcloud > a:focus {
-    background-color: #F44336;
+    background-color: #262626;
     color: #fff;
 }
 
-.overlay:before,
 .social-navigation a:hover,
 .social-navigation a:focus,
 button:hover,
@@ -2560,12 +2573,19 @@ input[type="submit"]:focus {
 .comment-form .submit:focus,
 .post-navigation a:hover,
 .post-navigation a:focus {
-    background: #9384c9;
+    background: #83af99;
 }
 
 .post-navigation a:hover,
 .post-navigation a:focus {
-    border-color: #9384c9;
+    border-color: #83af99;
+}
+
+.site-title,
+.site-title a,
+.entry-meta a,
+.entry-footer a {
+    color: #83af99;
 }
 
 @media only screen and (max-width: 767px) {
@@ -2589,8 +2609,10 @@ input[type="submit"]:focus {
 
 .search-results .page-header,
 .archive .page-header .page-title {
-    text-align: center;
-    font-size: 30px;
+    text-transform: uppercase;
+    font-size: 32px;
+    letter-spacing: 2px;
+    font-weight: 700;
 }
 
 .search-results .page-header span,

@@ -49,27 +49,6 @@ $wp_customize->add_control('enable_overlay_option',
 	)
 );
 
-/*Home Page Layout*/
-$wp_customize->add_setting('homepage_layout_option',
-	array(
-		'default'           => $default['homepage_layout_option'],
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'adventure_blog_sanitize_select',
-	)
-);
-$wp_customize->add_control('homepage_layout_option',
-	array(
-		'label'       => esc_html__('Theme Layout', 'adventure-blog'),
-		'section'     => 'theme_option_section_settings',
-		'choices'     => array(
-			'full-width' => esc_html__('Full Width', 'adventure-blog'),
-			'boxed'      => esc_html__('Boxed', 'adventure-blog'),
-		),
-		'type'     => 'select',
-		'priority' => 160,
-	)
-);
-
 /*Global Layout*/
 $wp_customize->add_setting('global_layout',
 	array(
@@ -153,8 +132,8 @@ $wp_customize->add_control('pagination_type',
 		'section'  => 'pagination_section',
 		'type'     => 'select',
 		'choices'  => array(
-			'default' => esc_html__('Numeric', 'adventure-blog'),
-			'Older / Newer Post' => esc_html__('Default (Older / Newer Post)', 'adventure-blog'),
+			'numeric' => esc_html__('Numeric', 'adventure-blog'),
+			'default' => esc_html__('Default (Older / Newer Post)', 'adventure-blog'),
 		),
 		'priority' => 100,
 	)

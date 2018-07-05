@@ -37,9 +37,8 @@ function adventure_blog_get_default_theme_options() {
 
     /*layout*/
 	$defaults['enable_overlay_option']    = 0;
-	$defaults['homepage_layout_option']   = 'full-width';
 	$defaults['read_more_button_text']    = esc_html__('Continue Reading', 'adventure-blog');
-	$defaults['global_layout']            = 'no-sidebar';
+	$defaults['global_layout']            = 'right-sidebar';
 	$defaults['excerpt_length_global']    = 50;
 	$defaults['pagination_type']          = 'default';
 	$defaults['copyright_text']           = esc_html__('Copyright All right reserved', 'adventure-blog');
