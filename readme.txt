@@ -3,7 +3,7 @@
 Contributors: AF themes
 Requires at least: 4.0
 Tested up to: 4.9
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: news, blog, entertainment, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, custom-header, translation-ready, theme-options, threaded-comments
@@ -37,6 +37,9 @@ Beautiful Blog is distributed under the terms of the GNU GPL v2 or later.
 Beautiful Blog includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+= 1.0.1 - July 5 2018 =
+* Fixed CSS glitch
+
 = 1.0.0 - July 5 2018 =
 * Initial release
 

@@ -5,7 +5,7 @@ Author: AF themes
 Author URI: https://afthemes.com
 Description:  Beautiful Blog is a child theme of Magazine 7. The theme has different fonts and color setup. Furthermore, the theme altered some of the default value to other available settings, like frontpage section and archive layout. With the help of available customizer options along with widgets, you can implement layouts as a clean and minimal blogging site, modern fashion blog, photography blog, wedding blog & magazine and even more. The theme is SEO friendly with optimized codes and awesome supports.
 Template: magazine-7
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: beautiful-blog
@@ -37,9 +37,19 @@ body h1,
         font-family: 'Cabin';
         }
 
- body .figure-categories .cat-links a.magazine-7-categories {    
+body .figure-categories .cat-links a.magazine-7-categories {    
     background-color: #f55aaa;    
-}  
+} 
+
+body .figure-categories .cat-links a.category-color-2 {
+    background-color: #f99500;
+}
+
+body .figure-categories .cat-links a.category-color-3 {
+    background-color: #d60000;
+}
+
+
 body .top-masthead {
     background: #393939;
 }
@@ -62,4 +72,3 @@ body .top-masthead {
         {
         color: #f55aaa;
         }
-
