@@ -50,12 +50,6 @@ if( $singlepagetitle == 1 ) : ?>
                                     ) );?>
                             </div>                            
                            <?php // Previous/next page navigation.
-                           the_post_navigation( array(
-                                'prev_text'          => esc_html__( 'Previous page', 'best-startup' ),
-                                'next_text'          => esc_html__( 'Next page', 'best-startup' ),
-                                'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'best-startup' ) . ' </span>',
-                            ) );
-                           
                            if ( comments_open() || get_comments_number() ) :
                                     comments_template();
                                 endif; ?>

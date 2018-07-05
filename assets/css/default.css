@@ -3328,3 +3328,13 @@ text-align: center;
 .so-widget-sow-contact-form-default-dc649a8cd3e3 .sow-contact-form .sow-submit-styled .sow-submit{
     background-color:#4f96ce;
 }
+.page-links {
+    text-align: center;
+    padding: 20px 0;
+}
+.page-links a {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    display: inline-block;
+}
