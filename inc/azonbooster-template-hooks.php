@@ -70,3 +70,12 @@ add_action( 'azonbooster_page',       'azonbooster_page_header',          10 );
 add_action( 'azonbooster_page',       'azonbooster_page_content',         20 );
 add_action( 'azonbooster_page',       'azonbooster_init_structured_data', 30 );
 add_action( 'azonbooster_page_after', 'azonbooster_display_comments', 10);
+
+/**
+ * Homepage Hook
+ */
+add_action( 'azonbooster_homepage', 'azonbooster_homepage_content', 10 );
+
+add_action( 'azonbooster_homepage_content', 'azauthority_homepage_content_thumbnail', 10);
+add_action( 'azonbooster_homepage_content', 'azauthority_homepage_content_header', 20);
+add_action( 'azonbooster_homepage_content', 'azauthority_homepage_page_content', 30);

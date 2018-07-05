@@ -1,0 +1,60 @@
+/**
+ * Homepage style control
+ */
+@include susy-media($desktop) {
+	.azb-hmp-container {
+		.azb-hmp-row{
+			@include clearfix;
+			padding-top: ms(7);
+		}
+	}
+	.azb-box {
+		ul {
+			margin: 1em 0 1em 1em;
+
+			li {
+				a {
+					color: #0000EE;
+				 &:hover {
+				 	color: #f90;
+				 }
+				}
+			}
+		}
+	}
+	.cat-summary {
+		.cat-desc {
+			font-style: italic;
+		}
+	}
+	.azb-hmp-box-2 {
+		.azb-box {
+
+			@include span(6 of 12);
+
+			&.azb-box-2 {
+				@include last;
+			}
+		}
+	}
+	.azb-hmp-box-3 {
+		.azb-box {
+
+			@include span(4 of 12);
+
+			&.azb-box-3 {
+				@include last;
+			}
+		}
+	}
+	.azb-hmp-box-4 {
+		.azb-box {
+
+			@include span(3 of 12);
+
+			&.azb-box-4 {
+				@include last;
+			}
+		}
+	}
+}

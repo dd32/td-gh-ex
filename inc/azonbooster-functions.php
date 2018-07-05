@@ -42,3 +42,26 @@ function azonbooster_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'azonbooster_pingback_header' );
+
+/**
+ * Retrieve list of category array.
+ *
+ * @since 1.2.0
+ * @return array
+ */
+function azonbooster_category_list( $args = array(), $is_all = true ) {
+
+	$categories = get_categories( $args );
+	$output_categories = array();
+
+	if ( $is_all ) {
+		$output_categories[0] = __('All Categories', 'azonbooster');
+	}
+
+	foreach($categories as $category) { 
+
+	 	$output_categories[$category->cat_ID] = $category->cat_name;
+	}
+ 	
+ 	return $output_categories;
+}

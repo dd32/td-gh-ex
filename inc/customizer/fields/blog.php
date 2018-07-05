@@ -1,25 +1,23 @@
 <?php
+/**
+ * Blog Fields
+ *
+ * @since 1.0.0
+ * @return array
+ */
 add_filter( 'azonbooster_customize_fields', 'azonbooster_blog_fields', 10);
 
 function azonbooster_blog_fields( $fields ) {
 
 	$custom_fields = array(
-			/*array(
-				'settings' 			=> 'blog_layout_title',
-				'label'    			=> '',
-				'section'  			=> 'azonbooster_blog_layout_section',
-				'type'     			=> 'custom',
-				'default'			=> sprintf('<h2 class="azonbooster-customizer-title">%s</h2>', __( 'Blog Sidebar', 'azonbooster' ) ),
-				'priority' 			=> 5,
-
-			),*/
+			
 			array(
 				'settings'          => 'blog_layout',
 				'label'             => __('Blog Layout', 'azonbooster'),
 				'section'           => 'azonbooster_blog_layout_section',
 				'type'              => 'radio-image',
 				'default'           => 'right',
-				'priority'          => 6,
+				'priority'          => 1,
 				'choices'     => array(
 					'none'   => get_template_directory_uri() . '/assets/img/category-no-sidebar.svg',
 					'left' => get_template_directory_uri() . '/assets/img/category-left-sidebar.svg',
@@ -33,7 +31,7 @@ function azonbooster_blog_fields( $fields ) {
 				'section'           => 'azonbooster_blog_layout_section',
 				'type'              => 'radio-buttonset',
 				'default'           => 'left',
-				'priority'          => 8,
+				'priority'          => 2,
 				'choices'     => array(
 					'left'				=> __('Left', 'azonbooster'),
 					'top'				=> __('Top', 'azonbooster'),
@@ -49,7 +47,7 @@ function azonbooster_blog_fields( $fields ) {
 				'section'           => 'azonbooster_blog_post_section',
 				'type'              => 'switch',
 				'default'           => 1,
-				'priority'          => 9,
+				'priority'          => 3,
 				'choices'     		=> array(
 					'on'				=> esc_attr__( 'On', 'azonbooster' ),
 					'off'				=> esc_attr__( 'Off', 'azonbooster' ),
@@ -63,7 +61,7 @@ function azonbooster_blog_fields( $fields ) {
 				'section'           => 'azonbooster_blog_post_section',
 				'type'              => 'slider',
 				'default'           => 20,
-				'priority'          => 10,
+				'priority'          => 4,
 				'choices'     => array(
 					'min'  => '10',
 					'max'  => '80',
@@ -73,28 +71,31 @@ function azonbooster_blog_fields( $fields ) {
 					array(
 						'setting'  => 'blog_post_show_excerpt',
 						'operator' => '==',
-						'value'    => 'on',
+						'value'    => true,
 					)
 				)
 				
 			),
+
 			array(
 				'settings'          => 'blog_post_show_excerpt_more',
 				'label'             => __('Excerpt More String', 'azonbooster'),
 				'section'           => 'azonbooster_blog_post_section',
 				'type'              => 'text',
 				'default'           => '[...]',
-				'priority'          => 11,
+				'priority'          => 5,
 				
 				'active_callback' => array(
 					array(
 						'setting'  => 'blog_post_show_excerpt',
 						'operator' => '==',
-						'value'    => 'on',
+						'value'    => true,
 					)
 				)
 				
 			),
+
+			
 
 			array(
 				'settings'          => 'blog_post_show_readmore',
@@ -102,7 +103,7 @@ function azonbooster_blog_fields( $fields ) {
 				'section'           => 'azonbooster_blog_post_section',
 				'type'              => 'switch',
 				'default'           => 1,
-				'priority'          => 12,
+				'priority'          => 8,
 				'choices'     		=> array(
 					'on'				=> esc_attr__( 'On', 'azonbooster' ),
 					'off'				=> esc_attr__( 'Off', 'azonbooster' ),
@@ -125,7 +126,7 @@ function azonbooster_blog_fields( $fields ) {
 				'section'           => 'azonbooster_blog_post_section',
 				'type'              => 'text',
 				'default'           => __('View Detail', 'azonbooster'),
-				'priority'          => 13,
+				'priority'          => 9,
 				
 				'active_callback' => array(
 					array(
@@ -144,7 +145,7 @@ function azonbooster_blog_fields( $fields ) {
 				'section'           => 'azonbooster_blog_post_section',
 				'type'              => 'switch',
 				'default'           => 1,
-				'priority'          => 14,
+				'priority'          => 10,
 				'choices'     		=> array(
 					'on'				=> esc_attr__( 'On', 'azonbooster' ),
 					'off'				=> esc_attr__( 'Off', 'azonbooster' ),
@@ -152,14 +153,32 @@ function azonbooster_blog_fields( $fields ) {
 				
 			),
 
-			
-			// azonbooster_blog_single_post_section
+			// Post meta data
+
 			array(
-				'settings'          => 'blog_single_post_show_thumbnail',
-				'label'             => __('Show Post Thumbnail', 'azonbooster'),
-				'section'           => 'azonbooster_blog_single_post_section',
+				'settings'          => 'blog_posts_metadata',
+				'label'             => sprintf('<h3 class="azb-customize-title">%s</h3>', __('Shop/Hide Post Meta Data', 'azonbooster') ),
+				'description'		=> __( 'Check them to show post meta data.', 'azonbooster'),
+				'section'           => 'azonbooster_blog_post_section',
+				'type'              => 'multicheck',
+				'default'           => array('date', 'category', 'tag', 'author'),
+				'priority'          => 11,
+				'choices'     		=> array(
+					'date'					=> esc_attr__( 'Date', 'azonbooster' ),
+					'category'				=> esc_attr__( 'Category', 'azonbooster' ),
+					'tag'					=> esc_attr__( 'Tag', 'azonbooster' ),
+					'author'				=> esc_attr__( 'Author', 'azonbooster' ),
+					'comment'				=> esc_attr__( 'Comment', 'azonbooster' ),
+				),
+				
+			),
+
+			array(
+				'settings'          => 'blog_posts_modified_date',
+				'label'             => __('Show Modified Date', 'azonbooster'),
+				'section'           => 'azonbooster_blog_post_section',
 				'type'              => 'switch',
-				'default'           => 1,
+				'default'           => 'off',
 				'priority'          => 12,
 				'choices'     		=> array(
 					'on'				=> esc_attr__( 'On', 'azonbooster' ),
@@ -169,12 +188,73 @@ function azonbooster_blog_fields( $fields ) {
 			),
 
 			array(
+				'type'     => 'text',
+				'settings' => 'blog_posts_date_prefix',
+				'label'    => __( 'Date Prefix', 'azonbooster' ),
+				'section'  => 'azonbooster_blog_post_section',
+				'description'  => esc_attr__( 'Prefix before date archive. It will show for all archive and single post.', 'azonbooster' ),
+				'priority' => 13,
+			),
+
+			
+			/**
+			 * azonbooster_blog_single_post_section
+			 */
+			// Post thumbnail
+			array(
+				'settings'          => 'blog_single_post_show_thumbnail',
+				'label'             => __('Show Post Thumbnail', 'azonbooster'),
+				'section'           => 'azonbooster_blog_single_post_section',
+				'type'              => 'switch',
+				'default'           => 1,
+				'priority'          => 1,
+				'choices'     		=> array(
+					'on'				=> esc_attr__( 'On', 'azonbooster' ),
+					'off'				=> esc_attr__( 'Off', 'azonbooster' ),
+				),
+				
+			),
+			// Post navigation
+			array(
 				'settings'          => 'blog_single_post_show_nav',
 				'label'             => __('Show Post Navigation', 'azonbooster'),
 				'section'           => 'azonbooster_blog_single_post_section',
 				'type'              => 'switch',
 				'default'           => 1,
-				'priority'          => 13,
+				'priority'          => 2,
+				'choices'     		=> array(
+					'on'				=> esc_attr__( 'On', 'azonbooster' ),
+					'off'				=> esc_attr__( 'Off', 'azonbooster' ),
+				),
+				
+			),
+
+			// Post meta data
+
+			array(
+				'settings'          => 'blog_single_post_metadata',
+				'label'             => sprintf('<h3 class="azb-customize-title">%s</h3>', __('Shop/Hide Post Meta Data', 'azonbooster') ),
+				'description'		=> __( 'Check them to show post meta data.', 'azonbooster'),
+				'section'           => 'azonbooster_blog_single_post_section',
+				'type'              => 'multicheck',
+				'default'           => array('date', 'category', 'tag', 'author'),
+				'priority'          => 3,
+				'choices'     		=> array(
+					'date'					=> esc_attr__( 'Date', 'azonbooster' ),
+					'category'				=> esc_attr__( 'Category', 'azonbooster' ),
+					'tag'					=> esc_attr__( 'Tag', 'azonbooster' ),
+					'author'				=> esc_attr__( 'Author', 'azonbooster' ),
+				),
+				
+			),
+
+			array(
+				'settings'          => 'blog_single_post_modified_date',
+				'label'             => __('Show Modified Date', 'azonbooster'),
+				'section'           => 'azonbooster_blog_single_post_section',
+				'type'              => 'switch',
+				'default'           => 'off',
+				'priority'          => 4,
 				'choices'     		=> array(
 					'on'				=> esc_attr__( 'On', 'azonbooster' ),
 					'off'				=> esc_attr__( 'Off', 'azonbooster' ),
@@ -217,4 +297,158 @@ function azonbooster_blog_fields( $fields ) {
 	);
 
 	return wp_parse_args( $custom_fields, $fields );
+}
+
+add_filter( 'azonbooster_customize_fields', 'azonbooster_homepage_fields', 10);
+
+/**
+ * Homepage Fileds
+ *
+ * @since 1.2.0
+ * @param  array $fields
+ * @return array
+ */
+function azonbooster_homepage_fields( $fields ) {
+
+	$custom_fields = array(
+
+		array(
+				'settings'          => 'homepage_show_page_content_setting',
+				'label'             => __('Show Page Content', 'azonbooster'),
+				'section'           => 'azonbooster_homepage_general_section',
+				'type'              => 'switch',
+				'description'		=> __( 'Switch ON/OFF to show default page content on homepage.', 'azonbooster' ),
+				'default'           => '1',
+				'priority'          => 5,
+				'choices'     => array(
+					'on'				=> esc_attr__('ON', 'azonbooster'),
+					'off'				=> esc_attr__('OFF', 'azonbooster'),
+				),
+				
+			),
+		array(
+			'type'			=> 'select',
+			'settings'     => 'homepage_content_col_setting',
+			'default'		=> 2,
+			'priority'    => 5,
+			'label'			=> esc_attr__( 'Number of Columns', 'azonbooster' ),
+			'choices'		=> array( 1 => 1, 2 => 2, 3 => 3, 4 => 4),
+			'section'     => 'azonbooster_homepage_content_section',
+			),
+		array(
+			'type'        => 'repeater',
+			'label'       => esc_attr__( 'Homepage Content', 'azonbooster' ),
+			'section'     => 'azonbooster_homepage_content_section',
+			'priority'    => 10,
+			'row_label' => array(
+				'type'  => 'field',
+				'value' => esc_attr__('Custom Content', 'azonbooster' ),
+				'field' => 'cat',
+			),
+			'button_label' => esc_attr__('Add New', 'azonbooster' ),
+			'settings'     => 'homepage_content_setting',
+			'fields' => azonbooster_homepage_content_fields()
+		)
+	);
+
+	return wp_parse_args( $custom_fields, $fields );
+}
+
+function azonbooster_homepage_content_fields() {
+
+	return array(
+			'cat' 	=> array(
+					'type'        	=> 'select',
+					'label'       	=> esc_attr__( 'Category', 'azonbooster' ),
+					'description' 	=> esc_attr__( 'Choose any category', 'azonbooster' ),
+					'choices'		=> azonbooster_category_list()
+			),
+			'cat_img' => array(
+					'type'        => 'image',
+					'label'       => esc_attr__( 'Image Category', 'azonbooster' ),
+					'description' => esc_attr__( 'Category Image Thumbnail', 'azonbooster' ),
+					'default'     => '',
+			),
+			'post_per_page'	=> array(
+				'type'			=> 'number',
+				'label'			=> esc_attr__( 'Number of Posts', 'azonbooster' ),
+				'default'		=> 5
+			),
+			'render_style'	=> array(
+				'type'			=> 'select',
+				'label'			=> esc_attr__( 'Render Style', 'azonbooster' ),
+				'default'		=> 'grid',
+				'choices'		=> array( 'list' => esc_attr__( 'List', 'azonbooster' ), 'grid' => esc_attr__( 'Grid', 'azonbooster' ))
+			),
+			'num_cols'	=> array(
+				'type'			=> 'select',
+				'description'	=> esc_attr__( 'Choose column for Grid style.', 'azonbooster' ),
+				'default'		=> 'col-2',
+				'label'			=> esc_attr__( 'Number of Columns', 'azonbooster' ),
+				'choices'		=> array( 'col-1' => 1, 'col-2' => 2, 'col-3' => 3, 'col-4' => 4)
+			),
+			'image_section' => array(
+				'type'			=> 'custom',
+				'label'			=> '<h2>' . esc_attr__( 'Post Thumbnail', 'azonbooster') . '</h2>',
+			),
+			'image_show' => array(
+				'type'			=> 'checkbox',
+				'label'			=> esc_attr__( 'Show Thumbnail', 'azonbooster' ),
+				'default'		=> true
+			),
+			'image_alignment'	=> array(
+				'type'			=> 'select',
+				'label'			=> esc_attr__( 'Image Alignment', 'azonbooster' ),
+				'default'		=> 'center',
+				'choices'		=> array(
+						'left'		=> esc_attr__('Left', 'azonbooster'),
+						'center'	=> esc_attr__('Center', 'azonbooster'),
+						'right'		=> esc_attr__('Right', 'azonbooster'),
+				)
+			),
+			'image_pos'	=> array(
+				'type'			=> 'select',
+				'label'			=> esc_attr__( 'Image Postion', 'azonbooster' ),
+				'default'		=> 'after_title',
+				'choices'		=> array(
+						'befor_title'		=> esc_attr__('Before Title', 'azonbooster'),
+						'after_title'	=> esc_attr__('After Title', 'azonbooster'),
+
+				)
+			),
+			'post_content_section' => array(
+				'type'			=> 'custom',
+				'label'			=> '<h2>' . esc_attr__( 'Post Content', 'azonbooster') . '</h2>',
+			),
+			'post_content_type'	=> array(
+				'type'			=> 'select',
+				'label'			=> esc_attr__( 'Content Type', 'azonbooster' ),
+				'default'		=> 'excerpt',
+				'priority'		=> 20,
+				'choices'		=> array(
+						'excerpt'		=> esc_attr__('Excerpt', 'azonbooster'),
+						'none'		=> esc_attr__('None', 'azonbooster'),
+				)
+			),
+			'post_excerpt_length'	=> array(
+				'type'			=> 'number',
+				'priority'		=> 2,
+				'label'			=> esc_attr__( 'Excerpt Length (words)', 'azonbooster' ),
+				'default'		=> 30
+			),
+			'post_content_title_el'	=> array(
+				'type'			=> 'select',
+				'label'			=> esc_attr__( 'Title Element', 'azonbooster' ),
+				'default'		=> 'h2',
+				'choices'		=> array(
+						'p'		=> 'p',
+						'span'	=> 'span',
+						'h1'	=> 'h1',
+						'h2'	=> 'h2',
+						'h3'	=> 'h3',
+						'h4'	=> 'h4',
+						'h5'	=> 'h5',
+				)
+			),
+		);
 }

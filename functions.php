@@ -36,3 +36,4 @@ require 'inc/azonbooster-functions.php';
 require 'inc/azonbooster-template-hooks.php';
 require 'inc/azonbooster-template-functions.php';
 require 'inc/customizer/class-azb-customizer-output.php';
+require 'inc/customizer/class-azb-homepage-ouput.php';

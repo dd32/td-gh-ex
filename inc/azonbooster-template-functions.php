@@ -487,6 +487,7 @@ if ( ! function_exists( 'azonbooster_post_meta' ) ) {
 	$prefix = apply_filters('azonbooster_prefix_post_metadata', array(
 
 		'date'		=> '',
+		'modified'	=> __('Last updated', 'azonbooster'),
 		'author'	=> __('By ', 'azonbooster'),
 		'category'	=> '',
 		'comment'	=> '',
@@ -515,7 +516,7 @@ if ( ! function_exists( 'azonbooster_post_meta' ) ) {
 		switch ( $md ) {
 			case 'date':
 
-				$postmeta .= azonbooster_meta_date( $prefix[$md] );
+				$postmeta .= azonbooster_meta_date( $prefix );
 
 				break;
 			case 'author':
@@ -567,11 +568,14 @@ if ( ! function_exists( 'azonbooster_meta_date' ) ) :
 	/**
 	 * Displays the post date
 	 */
-	function azonbooster_meta_date( $prefix = '' ) {
+	function azonbooster_meta_date( $prefix = array() ) {
+
 
 		$modified = apply_filters('azonbooster_enable_modified', false);
 
-		$prefix = $prefix != '' ? '<span class="meta-prefix prefix-date">'. $prefix . '</span>' : '';
+		$pre  = $modified ? $prefix['modified'] : $prefix['date'];
+
+		$pre = $pre != '' ? '<span class="meta-prefix prefix-date">'. $pre . '</span> ' : '';
 
 		if ( $modified ) {
 
@@ -590,7 +594,7 @@ if ( ! function_exists( 'azonbooster_meta_date' ) ) :
 			);
 		}
 
-		return '<span class="meta-date posted-on">' . $prefix . $time_string  .  '</span>';
+		return '<span class="meta-date posted-on">' . $pre . $time_string  .  '</span>';
 	}
 endif;
 
@@ -683,6 +687,81 @@ if ( ! function_exists( 'azonbooster_meta_edit_link' ) ) :
 
 	}
 endif;
+
+if ( ! function_exists( 'azonbooster_homepage_content' ) ) {
+	/**
+	 * Display homepage content
+	 * Hooked into the `homepage` action in the homepage template
+	 *
+	 * @since  1.0.0
+	 * @return  void
+	 */
+	function azonbooster_homepage_content() {
+
+		$content_page_show = apply_filters( 'azonbooster_homepage_content_show', true );
+
+		if ( ! $content_page_show ) 
+			return;
+
+		while ( have_posts() ) {
+			the_post();
+
+			get_template_part( 'template-parts/content', 'homepage' );
+
+		} // end of the loop.
+	}
+}
+
+if ( ! function_exists ( 'azauthority_homepage_content_thumbnail' ) ) {
+
+	/**
+	 * @since 1.2.0
+	 * @return void
+	 */
+	function azauthority_homepage_content_thumbnail() {
+		if ( has_post_thumbnail() ) {
+			the_post_thumbnail( 'large' );
+		}
+	}
+}
+
+if ( ! function_exists ( 'azauthority_homepage_content_header') ) {
+	/**
+	 * @since 1.2.0
+	 * @return void
+	 */
+	function azauthority_homepage_content_header() {
+		?>
+		<header class="entry-header">
+			<?php
+			the_title( '<h1 class="entry-title">', '</h1>' );
+			?>
+		</header><!-- .entry-header -->
+		<?php
+		edit_post_link( __( 'Edit this section', 'azonbooster' ), '', '', '', 'button azauthority-hero__button-edit' );
+	}
+}
+
+if ( ! function_exists ( 'azauthority_homepage_page_content' ) ) {
+
+	/**
+	 * @since 1.2.0
+	 * @return void
+	 */
+	function azauthority_homepage_page_content() {
+		?>
+		<div class="entry-content">
+			<?php the_content(); ?>
+			<?php
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . __( 'Pages:', 'azonbooster' ),
+					'after'  => '</div>',
+				) );
+			?>
+		</div><!-- .entry-content -->
+		<?php
+	}
+}
 
 if ( ! function_exists( 'azonbooster_init_structured_data' ) ) {
 	/**

@@ -4,7 +4,7 @@ Theme URI: https://boosterwp.com/themes/azonbooster
 Author: BoosterWP Team
 Author URI: https://boosterwp.com
 Description: The best free Amazon Affiliate theme double up your sales and conversion rate. AzonBooster is a fast, lightweight, mobile responsive theme built with speed, SEO friendly, and usability in mind. AzonBooster can serve as a solid base for any website and works great with any of your favorite page builders. With an emphasis on WordPress coding standards, we ensure AzonBooster is compatible with all well-coded plugins, including major ones like Amazon Associates Link Builder, EazyAzon, WPML, BuddyPress and bbPress.
-Version: 1.1.3
+Version: 1.2.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: azonbooster
@@ -2132,3 +2132,44 @@ body.search-open .site-search {
     margin-left: 1.41575em;
     margin-right: 1.41575em;
     padding: 0; } }
+
+/**
+ * Homepage style control
+ */
+@media (min-width: 768px) {
+  .azb-hmp-container .azb-hmp-row {
+    padding-top: 4.235801032em; }
+    .azb-hmp-container .azb-hmp-row:before, .azb-hmp-container .azb-hmp-row:after {
+      content: "";
+      display: table; }
+    .azb-hmp-container .azb-hmp-row:after {
+      clear: both; }
+  .azb-box ul {
+    margin: 1em 0 1em 1em; }
+    .azb-box ul li a {
+      color: #0000EE; }
+      .azb-box ul li a:hover {
+        color: #f90; }
+  .cat-summary .cat-desc {
+    font-style: italic; }
+  .azb-hmp-box-2 .azb-box {
+    width: 47.8260869565%;
+    float: left;
+    margin-right: 4.347826087%; }
+    .azb-hmp-box-2 .azb-box.azb-box-2 {
+      float: right;
+      margin-right: 0; }
+  .azb-hmp-box-3 .azb-box {
+    width: 30.4347826087%;
+    float: left;
+    margin-right: 4.347826087%; }
+    .azb-hmp-box-3 .azb-box.azb-box-3 {
+      float: right;
+      margin-right: 0; }
+  .azb-hmp-box-4 .azb-box {
+    width: 21.7391304348%;
+    float: left;
+    margin-right: 4.347826087%; }
+    .azb-hmp-box-4 .azb-box.azb-box-4 {
+      float: right;
+      margin-right: 0; } }

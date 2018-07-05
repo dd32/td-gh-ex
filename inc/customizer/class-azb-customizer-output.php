@@ -24,7 +24,72 @@ class AzonBooster_Customizer_Output {
 		add_filter( 'azonbooster_footer_widget_columns', array( $this, 'footer_widget_columns' ) );
 		add_filter( 'azonbooster_footer_widget_rows', array( $this, 'footer_widget_rows' ) );
 
+		// Post meta data
+		add_filter( 'azonbooster_enable_post_metadata', array( $this, 'single_post_meta_data' ) );
+
+		add_filter( 'azonbooster_enable_modified', array( $this, 'enable_modified_date' ) );
+
+
+		// Date prefix
+		add_filter( 'azonbooster_prefix_post_metadata', array( $this, 'date_prefix' ) );
+
 		
+	}
+
+	/**
+	 * Hooked to filter post metat data
+	 *
+	 * @since 1.2.0
+	 * @param  array $metadata
+	 * @return array
+	 */
+	public function single_post_meta_data( $metadata ) {
+
+		if ( is_single() ) {
+
+			$metadata = azonbooster_get_option( 'blog_single_post_metadata', array() );
+
+		} elseif ( is_archive() || is_home() ) {
+
+			$metadata = azonbooster_get_option( 'blog_posts_metadata', array() );
+		}
+
+		return $metadata;
+	}
+
+	/**
+	 * Enable modified date?
+	 *
+	 * @since 1.2.0
+	 * @return boolean
+	 */
+	public function enable_modified_date() {
+		if ( is_single() ) {
+
+			return azonbooster_get_option( 'blog_single_post_modified_date', false );
+
+		} elseif ( is_archive() || is_home() ) {
+
+			return azonbooster_get_option( 'blog_posts_modified_date', false );
+
+		}
+	}
+
+	/**
+	 * Hooked to filter date archive prefix
+	 *
+	 * @since 1.2.0
+	 * @return [type] [description]
+	 */
+	public function date_prefix( $archive_prefix ) {
+
+		$date_prefix = azonbooster_get_option( 'blog_posts_date_prefix', '');
+
+		if ( $date_prefix != '' ) {
+			$archive_prefix['date'] = $archive_prefix['modified'] = $date_prefix;
+		}
+
+		return $archive_prefix;
 	}
 
 	public function body_classes( $classes ) {

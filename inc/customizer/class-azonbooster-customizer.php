@@ -45,6 +45,12 @@ class AzonBooster_Customizer {
 		    'description' => __( 'The basic theme options for free version.', 'azonbooster' ),
 		) );
 
+		AzonBooster_Kirki::add_panel( 'azonbooster_home_panel' , array(
+		    'priority'    => 101,
+		    'title'       => __( 'AzonBooster Homepage', 'azonbooster' ),
+		    'description' => __( 'Homepage control panel.', 'azonbooster' ),
+		) );
+
 		// Add customize sections and fields
 		$this->add_sections_fields();
 	}
@@ -93,6 +99,18 @@ class AzonBooster_Customizer {
 			    'panel'          => 'azonbooster_blog_panel',
 			    'priority'       => 40,
 			),
+			'azonbooster_homepage_general_section' => array (
+
+				'title'          => __( 'General', 'azonbooster' ),
+			    'panel'          => 'azonbooster_home_panel',
+			    'priority'       => 10,
+			),
+			'azonbooster_homepage_content_section' => array (
+
+				'title'          => __( 'Content', 'azonbooster' ),
+			    'panel'          => 'azonbooster_home_panel',
+			    'priority'       => 20,
+			)
 		);
 	}
 
