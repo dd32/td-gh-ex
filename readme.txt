@@ -58,6 +58,12 @@ Balanced Blog is distributed under the terms of the GNU GPL (http://www.gnu.org/
 
 == Changelog ==
 
+= Version 1.0.4 =
+* Single post author is now visible only when you define author description
+* Improved footer widgets display
+* Fixed category position on blog feed
+* Fixed feed layout for post without thumbnail 
+
 = Version 1.0.3 =
 * Changes based on WP recommendations
 

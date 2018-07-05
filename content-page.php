@@ -20,10 +20,8 @@
 								<?php wp_link_pages(); ?>
 							</div>
 						</div>
-						<div class="single-footer row">
-							<div class="col-md-12">                                                                                    
-								<?php comments_template(); ?>
-							</div>
+						<div class="single-footer">
+							<?php comments_template(); ?>
 						</div>	
 					</div>        
 				<?php endwhile; ?>        

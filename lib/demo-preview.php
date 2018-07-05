@@ -2,18 +2,12 @@
 
 // Preview Check
 function balanced_blog_is_preview() {
-	$theme			 = wp_get_theme();
-	$theme_name		 = $theme->get( 'TextDomain' );
-	$active_theme	 = balanced_blog_get_raw_option( 'stylesheet' );
-	// return apply_filters( 'balanced_blog_is_preview', ( $active_theme != strtolower( $theme_name ) && ! is_child_theme() ) ); 
-	return apply_filters( 'balanced_blog_is_preview', ( $active_theme != strtolower( $theme_name ) ) );
-}
-
-// Get Raw Options
-function balanced_blog_get_raw_option( $opt_name ) {
-	$alloptions	 = wp_cache_get( 'alloptions', 'options' );
-	$alloptions	 = maybe_unserialize( $alloptions );
-	return isset( $alloptions[ $opt_name ] ) ? maybe_unserialize( $alloptions[ $opt_name ] ) : false;
+	$current_url = home_url( '/' );
+	if ( $current_url == esc_url( 'https://wp-themes.com/' ) ) { 
+		return true; 
+	} else { 
+		return false;
+	};
 }
 
 // Random Images
