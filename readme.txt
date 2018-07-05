@@ -4,8 +4,8 @@ Silver Quantum - readme.txt
 Contributor: benlumia007
 Tags: left-sidebar, right-sidebar
 Requires at lease: 4.9
-Tested up to: 4.9.5
-Stable tag: 0.0.1
+Tested up to: 4.9.7
+Stable tag: 0.4.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,6 +60,9 @@ Not Available at this time
 ===========================================================================================================
 Changelog
 ===========================================================================================================
+Version: 0.4.6 
+- Change Theme and Author URI
+
 Version: 0.4.5
 - Add load_theme_textdomain('silver-quantum');
 
