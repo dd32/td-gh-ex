@@ -456,3 +456,5 @@ if( ! class_exists( 'Agama' ) ) {
 	}
 	new Agama;
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

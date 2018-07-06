@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Agama\n"
-"POT-Creation-Date: 2018-05-31 20:24+0200\n"
-"PO-Revision-Date: 2018-05-31 20:24+0200\n"
+"POT-Creation-Date: 2018-07-06 20:17+0200\n"
+"PO-Revision-Date: 2018-07-06 20:17+0200\n"
 "Last-Translator: Theme Vision <support@theme-vision.com>\n"
 "Language-Team: Theme-Vision <support@theme-vision.com>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.7\n"
+"X-Generator: Poedit 2.0.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -109,37 +109,37 @@ msgstr "Komentari nisu doyvoljeni."
 msgid "Edit"
 msgstr "Uredi"
 
-#: framework/admin/about.php:33 framework/admin/about.php:34
+#: framework/admin/about.php:42 framework/admin/about.php:43
 msgid "About Agama"
 msgstr "Agama Detalji"
 
-#: framework/admin/about.php:48
+#: framework/admin/about.php:58
 #, php-format
 msgid "Welcome to Agama v%s"
 msgstr "Dobro došli u Agama v%s"
 
-#: framework/admin/about.php:51
+#: framework/admin/about.php:61
 msgid "Thank you for using Agama theme!"
 msgstr "Hvala što koristite Agama temu!"
 
-#: framework/admin/about.php:52
+#: framework/admin/about.php:62
 msgid "Consider supporting us with any desired amount donation."
 msgstr "Razmislite da nas podržite donacijom sa vašim željenim iznosom."
 
-#: framework/admin/about.php:53
+#: framework/admin/about.php:63
 msgid "Even the smallest donation amount means a lot for us."
 msgstr "Čak i ona najmanja suma nam znači mnogo."
 
-#: framework/admin/about.php:54
+#: framework/admin/about.php:64
 msgid ""
 "With donations you are helping us for faster theme development & updates."
 msgstr "Sa donacijama nam pomažete u bržem razvijanju i ažuriranju teme."
 
-#: framework/admin/about.php:69
+#: framework/admin/about.php:79
 msgid "or"
 msgstr "ili"
 
-#: framework/admin/about.php:71
+#: framework/admin/about.php:81
 #, php-format
 msgid ""
 "You can support us by Buying an %s theme with allot new features & "
@@ -148,9 +148,25 @@ msgstr ""
 "Možete nas podržati tako što ćete kupiti %s temu sa mnogo novih opcija i "
 "ekstenzija!"
 
-#: framework/admin/about.php:75
+#: framework/admin/about.php:85
 msgid "What's New"
 msgstr "Šta je Novo"
+
+#: framework/admin/about.php:96
+msgid "Our Themes"
+msgstr ""
+
+#: framework/admin/about.php:104 framework/admin/about.php:109
+msgid "Fury Theme"
+msgstr ""
+
+#: framework/admin/about.php:106
+msgid "Demo"
+msgstr ""
+
+#: framework/admin/about.php:110
+msgid "Download"
+msgstr ""
 
 #: framework/admin/animate.php:13
 msgid "Bounce"
@@ -2507,7 +2523,7 @@ msgstr "komentari"
 msgid "No more posts to load."
 msgstr ""
 
-#: framework/agama-functions.php:524
+#: framework/agama-functions.php:552
 #, php-format
 msgid "2015 &copy; Powered by %s."
 msgstr ""
@@ -2570,6 +2586,474 @@ msgstr "Top Meni"
 #: framework/class-agama-helper.php:140
 msgid "Load More"
 msgstr ""
+
+#: framework/class-agama-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr "Instaliraj Potrebne Dodatke"
+
+#: framework/class-agama-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr "Instaliraj Dodatke"
+
+#: framework/class-agama-plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "Instaliranje Dodatka: %s"
+
+#: framework/class-agama-plugin-activation.php:332
+#, fuzzy, php-format
+#| msgid "Installing Plugin: %s"
+msgid "Updating Plugin: %s"
+msgstr "Instaliranje Dodatka: %s"
+
+#: framework/class-agama-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr "Nešto nije bilo u redu sa API-jem dodatka"
+
+#: framework/class-agama-plugin-activation.php:336
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] "Ova tema zahteva sledeći dodatak: %1$s."
+msgstr[1] "Ova tema zahteva sledeći dodatak: %1$s."
+msgstr[2] "Ova tema zahteva sledeće dodatke: %1$s."
+
+#: framework/class-agama-plugin-activation.php:342
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] "Ova tema preporučuje sledeći dodatak: %1$s."
+msgstr[1] "Ova tema preporučuje sledeći dodataka: %1$s."
+msgstr[2] "Ova tema preporučuje sledeće dodatke: %1$s."
+
+#: framework/class-agama-plugin-activation.php:348
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: framework/class-agama-plugin-activation.php:354
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: framework/class-agama-plugin-activation.php:360
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: framework/class-agama-plugin-activation.php:366
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: framework/class-agama-plugin-activation.php:371
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Počni sa instaliranjem dodatka"
+msgstr[1] "Počni sa instaliranjem dodataka"
+msgstr[2] "Počni sa instaliranjem dodatka"
+
+#: framework/class-agama-plugin-activation.php:376
+#, fuzzy
+#| msgid "Begin activating plugin"
+#| msgid_plural "Begin activating plugins"
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] "Počni sa aktivacijom dodatka"
+msgstr[1] "Počni sa aktivacijom dodataka"
+msgstr[2] "Počni sa aktivacijom dodatka"
+
+#: framework/class-agama-plugin-activation.php:381
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "Počni sa aktivacijom dodatka"
+msgstr[1] "Počni sa aktivacijom dodataka"
+msgstr[2] "Počni sa aktivacijom dodatka"
+
+#: framework/class-agama-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr "Vrati se na instaler potrebnih dodataka"
+
+#: framework/class-agama-plugin-activation.php:386
+#: framework/class-agama-plugin-activation.php:827
+#: framework/class-agama-plugin-activation.php:2533
+#: framework/class-agama-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr "Povratak na komandnu tablu"
+
+#: framework/class-agama-plugin-activation.php:387
+#: framework/class-agama-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr "Dodatak je uspešno aktiviran."
+
+#: framework/class-agama-plugin-activation.php:388
+#: framework/class-agama-plugin-activation.php:2952
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] "Sledeći dodatak je uspešno aktiviran:"
+msgstr[1] "Sledeći dodaci su uspešno aktivirani:"
+msgstr[2] "Sledeći dodatak je uspešno aktiviran:"
+
+#: framework/class-agama-plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Svi dodaci su instalirani i uspešno aktivirani. %1$s"
+
+#: framework/class-agama-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr "Odbaci ovo obaveštenje"
+
+#: framework/class-agama-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:523
+#, fuzzy
+#| msgid "Required"
+msgid "Update Required"
+msgstr "Potrebno"
+
+#: framework/class-agama-plugin-activation.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:934
+#: framework/class-agama-plugin-activation.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:1121
+#: framework/class-agama-plugin-activation.php:2948
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:2273
+msgid "Required"
+msgstr "Potrebno"
+
+#: framework/class-agama-plugin-activation.php:2276
+msgid "Recommended"
+msgstr "Preporučeno"
+
+#: framework/class-agama-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr "Wordpress spremišta"
+
+#: framework/class-agama-plugin-activation.php:2295
+msgid "External Source"
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr "Pre-pakovano"
+
+#: framework/class-agama-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr "Nije instalirano"
+
+#: framework/class-agama-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr "Instalirano, ali nije aktivirano"
+
+#: framework/class-agama-plugin-activation.php:2321
+#, fuzzy
+#| msgid "Activate"
+msgid "Active"
+msgstr "Aktivirajte"
+
+#: framework/class-agama-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:2330
+#, fuzzy
+#| msgid "Required"
+msgid "Requires Update"
+msgstr "Potrebno"
+
+#: framework/class-agama-plugin-activation.php:2333
+#, fuzzy
+#| msgid "Recommended"
+msgid "Update recommended"
+msgstr "Preporučeno"
+
+#: framework/class-agama-plugin-activation.php:2342
+#, fuzzy, php-format
+#| msgid "%1$s at %2$s"
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr "%1$s at %2$s"
+
+#: framework/class-agama-plugin-activation.php:2388
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: framework/class-agama-plugin-activation.php:2392
+#, fuzzy, php-format
+#| msgid ""
+#| "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+"Skidanje instaliranog paketa iz <span class=\"code\">%s</span>&#8230;"
+msgstr[1] ""
+"Skidanje instaliranog paketa iz <span class=\"code\">%s</span>&#8230;"
+msgstr[2] ""
+"Skidanje instaliranog paketa iz <span class=\"code\">%s</span>&#8230;"
+
+#: framework/class-agama-plugin-activation.php:2396
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: framework/class-agama-plugin-activation.php:2400
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: framework/class-agama-plugin-activation.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:2490
+#, fuzzy
+#| msgid "Install Plugins"
+msgid "Installed version:"
+msgstr "Instaliraj Dodatke"
+
+#: framework/class-agama-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:2547
+msgid "Plugin"
+msgstr "Dodatak"
+
+#: framework/class-agama-plugin-activation.php:2548
+msgid "Source"
+msgstr "Izvor"
+
+#: framework/class-agama-plugin-activation.php:2549
+msgid "Type"
+msgstr "Tip"
+
+#: framework/class-agama-plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:2554
+msgid "Status"
+msgstr "Status"
+
+#: framework/class-agama-plugin-activation.php:2603
+#, fuzzy, php-format
+#| msgid "Install"
+msgid "Install %2$s"
+msgstr "Instalirajte"
+
+#: framework/class-agama-plugin-activation.php:2608
+#, fuzzy, php-format
+#| msgid "Update Skill"
+msgid "Update %2$s"
+msgstr "Ažuriraj Veštinu"
+
+#: framework/class-agama-plugin-activation.php:2614
+#, fuzzy, php-format
+#| msgid "Activate"
+msgid "Activate %2$s"
+msgstr "Aktivirajte"
+
+#: framework/class-agama-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:2717
+msgid "Install"
+msgstr "Instalirajte"
+
+#: framework/class-agama-plugin-activation.php:2723
+#, fuzzy
+#| msgid "Update Skill"
+msgid "Update"
+msgstr "Ažuriraj Veštinu"
+
+#: framework/class-agama-plugin-activation.php:2726
+#, fuzzy
+#| msgid "Activate"
+msgid "Activate"
+msgstr "Aktivirajte"
+
+#: framework/class-agama-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: framework/class-agama-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr "Aktivacija dodatka je neuspešna."
+
+#: framework/class-agama-plugin-activation.php:3498
+#, fuzzy, php-format
+#| msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr "Instaliranje dodatka %1$s (%2$d/%3$d)"
+
+#: framework/class-agama-plugin-activation.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr "Došlo je do greške prilikom instalacije %1$s: <strong>%2$s</strong>."
+
+#: framework/class-agama-plugin-activation.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr "Instalacija nije %1$s uspela."
+
+#: framework/class-agama-plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"Instalacioni i aktivacioni proces su počeli. Ovaj proces može da potraje na "
+"nekim provajderima, pa vas molimo da budete strpljivi."
+
+#: framework/class-agama-plugin-activation.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s Instalirano i aktivirano uspešno."
+
+#: framework/class-agama-plugin-activation.php:3509
+#: framework/class-agama-plugin-activation.php:3517
+msgid "Show Details"
+msgstr "Pokaži detalje"
+
+#: framework/class-agama-plugin-activation.php:3509
+#: framework/class-agama-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr "Sakrij detalje"
+
+#: framework/class-agama-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr "Sve instalacije i aktivacije su završene."
+
+#: framework/class-agama-plugin-activation.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Instaliranje i aktiviranje plugina %1$s (%2$d/%3$d)"
+
+#: framework/class-agama-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"Proces instaliranja počinje.  Ovaj proces može da potraje na nekim "
+"provajderima, pa vas molimo da budete strpljivi."
+
+#: framework/class-agama-plugin-activation.php:3517
+#, php-format
+msgid "%1$s installed successfully."
+msgstr "%1$s Instalacija je uspela."
+
+#: framework/class-agama-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr "Sve instalacije su završene."
+
+#: framework/class-agama-plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Instaliranje dodatka %1$s (%2$d/%3$d)"
 
 #: framework/class-agama.php:404
 msgctxt "Previous post link"
@@ -2723,11 +3207,6 @@ msgstr "Tag Arhive: %s"
 #~| msgid "Social Icons"
 #~ msgid "Showing all dashicons"
 #~ msgstr "Društvene Mreže"
-
-#, fuzzy
-#~| msgid "Activate"
-#~ msgid "Active"
-#~ msgstr "Aktivirajte"
 
 #, fuzzy
 #~| msgid "Slider Options"
@@ -3007,98 +3486,20 @@ msgstr "Tag Arhive: %s"
 #~ msgid "Edit Skill"
 #~ msgstr "Uredi Veštinu"
 
-#~ msgid "Update Skill"
-#~ msgstr "Ažuriraj Veštinu"
-
 #~ msgid "Add New Skill"
 #~ msgstr "Nova Veština"
 
 #~ msgid "New Skill Name"
 #~ msgstr "Novo Ime Veštine"
 
-#~ msgid "Install Required Plugins"
-#~ msgstr "Instaliraj Potrebne Dodatke"
-
-#~ msgid "Install Plugins"
-#~ msgstr "Instaliraj Dodatke"
-
-#~ msgid "Installing Plugin: %s"
-#~ msgstr "Instaliranje Dodatka: %s"
-
 #~ msgid "Something went wrong."
 #~ msgstr "Nešto nije bilo u redu."
-
-#~ msgid "This theme requires the following plugin: %1$s."
-#~ msgid_plural "This theme requires the following plugins: %1$s."
-#~ msgstr[0] "Ova tema zahteva sledeći dodatak: %1$s."
-#~ msgstr[1] "Ova tema zahteva sledeći dodatak: %1$s."
-#~ msgstr[2] "Ova tema zahteva sledeće dodatke: %1$s."
-
-#~ msgid "This theme recommends the following plugin: %1$s."
-#~ msgid_plural "This theme recommends the following plugins: %1$s."
-#~ msgstr[0] "Ova tema preporučuje sledeći dodatak: %1$s."
-#~ msgstr[1] "Ova tema preporučuje sledeći dodataka: %1$s."
-#~ msgstr[2] "Ova tema preporučuje sledeće dodatke: %1$s."
-
-#~ msgid "Begin installing plugin"
-#~ msgid_plural "Begin installing plugins"
-#~ msgstr[0] "Počni sa instaliranjem dodatka"
-#~ msgstr[1] "Počni sa instaliranjem dodataka"
-#~ msgstr[2] "Počni sa instaliranjem dodatka"
-
-#~ msgid "Begin activating plugin"
-#~ msgid_plural "Begin activating plugins"
-#~ msgstr[0] "Počni sa aktivacijom dodatka"
-#~ msgstr[1] "Počni sa aktivacijom dodataka"
-#~ msgstr[2] "Počni sa aktivacijom dodatka"
-
-#~ msgid "Return to Required Plugins Installer"
-#~ msgstr "Vrati se na instaler potrebnih dodataka"
 
 #~ msgid "Return to the dashboard"
 #~ msgstr "Povratak na komandnu tablu"
 
-#~ msgid "Plugin activated successfully."
-#~ msgstr "Dodatak je uspešno aktiviran."
-
-#~ msgid "The following plugin was activated successfully:"
-#~ msgid_plural "The following plugins were activated successfully:"
-#~ msgstr[0] "Sledeći dodatak je uspešno aktiviran:"
-#~ msgstr[1] "Sledeći dodaci su uspešno aktivirani:"
-#~ msgstr[2] "Sledeći dodatak je uspešno aktiviran:"
-
-#~ msgid "All plugins installed and activated successfully. %1$s"
-#~ msgstr "Svi dodaci su instalirani i uspešno aktivirani. %1$s"
-
-#~ msgid "Dismiss this notice"
-#~ msgstr "Odbaci ovo obaveštenje"
-
-#~ msgid "Return to the Dashboard"
-#~ msgstr "Povratak na komandnu tablu"
-
 #~ msgid "Private Repository"
 #~ msgstr "Privatna spremišta"
-
-#~ msgid "Pre-Packaged"
-#~ msgstr "Pre-pakovano"
-
-#~ msgid "WordPress Repository"
-#~ msgstr "Wordpress spremišta"
-
-#~ msgid "Required"
-#~ msgstr "Potrebno"
-
-#~ msgid "Recommended"
-#~ msgstr "Preporučeno"
-
-#~ msgid "Not Installed"
-#~ msgstr "Nije instalirano"
-
-#~ msgid "Installed But Not Activated"
-#~ msgstr "Instalirano, ali nije aktivirano"
-
-#~ msgid "Install"
-#~ msgstr "Instalirajte"
 
 #~ msgid ""
 #~ "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
@@ -3107,25 +3508,8 @@ msgstr "Tag Arhive: %s"
 #~ "Nema dodataka za instalaciju ili aktiviranje. <a href=\"%1$s\" title="
 #~ "\"Povratak na Kontrolnu tablu\">Povratak na Kontrolnu tablu</a>"
 
-#~ msgid "Plugin"
-#~ msgstr "Dodatak"
-
-#~ msgid "Source"
-#~ msgstr "Izvor"
-
-#~ msgid "Type"
-#~ msgstr "Tip"
-
-#~ msgid "Status"
-#~ msgstr "Status"
-
 #~ msgid "Install package not available."
 #~ msgstr "Paket za instaliranje nije dostupan."
-
-#~ msgid ""
-#~ "Downloading install package from <span class=\"code\">%s</span>&#8230;"
-#~ msgstr ""
-#~ "Skidanje instaliranog paketa iz <span class=\"code\">%s</span>&#8230;"
 
 #~ msgid "Unpacking the package&#8230;"
 #~ msgstr "Raspakovanje paketa&#8230;"
@@ -3138,57 +3522,6 @@ msgstr "Tag Arhive: %s"
 
 #~ msgid "Plugin installed successfully."
 #~ msgstr "Dodatak je instaliran uspešno."
-
-#~ msgid "Plugin activation failed."
-#~ msgstr "Aktivacija dodatka je neuspešna."
-
-#~ msgid ""
-#~ "The installation and activation process is starting. This process may "
-#~ "take a while on some hosts, so please be patient."
-#~ msgstr ""
-#~ "Instalacioni i aktivacioni proces su počeli. Ovaj proces može da potraje "
-#~ "na nekim provajderima, pa vas molimo da budete strpljivi."
-
-#~ msgid "%1$s installed and activated successfully."
-#~ msgstr "%1$s Instalirano i aktivirano uspešno."
-
-#~ msgid "Show Details"
-#~ msgstr "Pokaži detalje"
-
-#~ msgid "Hide Details"
-#~ msgstr "Sakrij detalje"
-
-#~ msgid "All installations and activations have been completed."
-#~ msgstr "Sve instalacije i aktivacije su završene."
-
-#~ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-#~ msgstr "Instaliranje i aktiviranje plugina %1$s (%2$d/%3$d)"
-
-#~ msgid ""
-#~ "The installation process is starting. This process may take a while on "
-#~ "some hosts, so please be patient."
-#~ msgstr ""
-#~ "Proces instaliranja počinje.  Ovaj proces može da potraje na nekim "
-#~ "provajderima, pa vas molimo da budete strpljivi."
-
-#~ msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-#~ msgstr ""
-#~ "Došlo je do greške prilikom instalacije %1$s: <strong>%2$s</strong>."
-
-#~ msgid "The installation of %1$s failed."
-#~ msgstr "Instalacija nije %1$s uspela."
-
-#~ msgid "%1$s installed successfully."
-#~ msgstr "%1$s Instalacija je uspela."
-
-#~ msgid "All installations have been completed."
-#~ msgstr "Sve instalacije su završene."
-
-#~ msgid "Installing Plugin %1$s (%2$d/%3$d)"
-#~ msgstr "Instaliranje dodatka %1$s (%2$d/%3$d)"
-
-#~ msgid "Something went wrong with the plugin API."
-#~ msgstr "Nešto nije bilo u redu sa API-jem dodatka"
 
 #~ msgid "All plugins installed and activated successfully. %s"
 #~ msgstr "Svi dodaci su instalirani i uspešno aktivirani. %s"

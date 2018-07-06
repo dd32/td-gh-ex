@@ -151,7 +151,7 @@ function agama_content_nav( $html_id ) {
 
 	if ( $wp_query->max_num_pages > 1 ) : ?>
 		<nav id="<?php echo esc_attr( $html_id ); ?>" class="navigation clearfix" role="navigation">
-			<h3 class="assistive-text"><?php _e( 'Post navigation', 'agama' ); ?></h3>
+			<h2 class="assistive-text"><?php esc_html_e( 'Post navigation', 'agama' ); ?></h2>
 			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'agama' ) ); ?></div>
 			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'agama' ) ); ?></div>
 		</nav>
@@ -515,6 +515,34 @@ jQuery(function($){
 <?php }
 
 /**
+ * Set the WPForms ShareASale ID.
+ *
+ * @param string $shareasale_id The the default Shareasale ID.
+ *
+ * @since 1.3.5
+ * @return string $shareasale_id
+ */
+function agama_wpforms_shareasale_id( $shareasale_id ) {
+	
+	// If this WordPress installation already has an WPForms Shareasale ID
+	// specified, use that.
+	if ( ! empty( $shareasale_id ) ) {
+		return $shareasale_id;
+	}
+	
+	// Define the Shareasale ID to use.
+	$shareasale_id = '1355534';
+	
+	// This WordPress installation doesn't have an Shareasale ID specified, so 
+	// set the default ID in the WordPress options and use that.
+	update_option( 'wpforms_shareasale_id', $shareasale_id );
+	
+	// Return the Shareasale ID.
+	return $shareasale_id;
+}
+add_filter( 'wpforms_shareasale_id', 'agama_wpforms_shareasale_id' );
+
+/**
  * Agama Credits
  *
  * @since Agama v1.0.1
@@ -525,3 +553,5 @@ if( ! function_exists( 'agama_render_credits' ) ) {
 	}
 }
 add_action( 'agama_credits', 'agama_render_credits' );
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

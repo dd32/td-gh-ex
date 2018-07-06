@@ -3,6 +3,11 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.3.5 - 06 July 2018 =
+* Added plugin (TGM) installation recommendations feature.
+* Fixed some of accessibility issues.
+* Updated theme translation files.
+
 = 1.3.4 - 31 May 2018 =
 * Updated Kirki framework to the latest version.
 * Updated theme translation files.

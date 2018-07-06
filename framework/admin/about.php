@@ -19,9 +19,18 @@ if( ! class_exists( 'Agama_About' ) ) {
 		 * @since Agama v1.0.1
 		 */
 		public function __construct() {
-			// Register page
+            
 			add_action('admin_menu', array( $this, 'register_page' ) );
+            add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+            
 		}
+        
+        function admin_enqueue_scripts() {
+            $screen = get_current_screen();
+            if( $screen->base == 'appearance_page_about-agama' ) {
+                wp_enqueue_style( 'agama-about', AGAMA_CSS . 'backend-about.css', array(), Agama_Core::version() );
+            }
+        }
 		
 		/**
 		 * Register 'About Agama' Page
@@ -44,6 +53,7 @@ if( ! class_exists( 'Agama_About' ) ) {
 		 * @since Agama v1.0.1
 		 */
 		public function render_page() {
+            $FuryScreenURI = AGAMA_IMG . 'promo/themevision-logo.jpg';
 			echo '<div class="wrap about-wrap">';
 				echo '<h1>'.sprintf( __( 'Welcome to Agama v%s', 'agama' ), Agama_Core::version() ).'</h1>';
 				
@@ -77,10 +87,31 @@ if( ! class_exists( 'Agama_About' ) ) {
 				
 				echo '<div class="changelog point-releases">';
 					echo sprintf( '<h3>Changelog Agama v%s</h3>', Agama_Core::version() );
-                    echo '<p>* Updated Kirki framework to the latest version.</p>';
+                    echo '<p>* Added plugin (TGM) recommendations feature.</p>';
+                    echo '<p>* Fixed some of accessibility issues.</p>';
                     echo '<p>* Updated theme translation files.</p>';
-                    echo '<p>* Fixed minor PHP notices.</p>';
 				echo '</div>';
+            
+                echo '<h2 class="nav-tab-wrapper vision-themes">';
+					echo '<a class="nav-tab nav-tab-active">'.__( 'Our Themes', 'agama' ).'</a>';
+				echo '</h2>';
+            
+                echo '<div id="vision-install-plugins" class="vision-important-notice vision-other-products">';
+                    echo '<div class="under-the-hood three-col">';
+                        echo '<div class="plugin  col">';
+                            echo '<div class="plugin-wrapper">';
+                                echo '<div class="plugin-screenshot">';
+                                    echo '<img src="'. esc_url( $FuryScreenURI ) .'" alt="'. esc_attr__( 'Fury Theme', 'agama' ) .'">';
+                                    echo '<div class="plugin-info">';
+                                        echo '<a href="http://furytheme.com/" target="_blank">'. esc_html__( 'Demo', 'agama' ) .'</a>';
+                                    echo '</div>';
+                                echo '</div>';
+                                echo '<h3 class="plugin-name">'. esc_html__( 'Fury Theme', 'agama' ) .'</h3>';
+                                echo '<div class="plugin-actions"><a href="https://wordpress.org/themes/fury/" target="_blank" class="button button-primary">'. esc_html__( 'Download', 'agama' ) .'</a></div>';
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                echo '</div>';
 				
 			echo '</div>';
 		}
