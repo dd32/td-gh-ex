@@ -5,7 +5,7 @@ Contributor: benlumia007
 Tags: left-sidebar, right-sidebar
 Requires at lease: 4.9
 Tested up to: 4.9.7
-Stable tag: 0.4.8
+Stable tag: 0.4.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,6 +60,9 @@ Not Available at this time
 ===========================================================================================================
 Changelog
 ===========================================================================================================
+Version: 0.4.9
+- Add Gallery to support 2 Columns, 3 Columns and 4 Columns
+
 Version: 0.4.8 
 - Add Page Template for Custom sidebar
 - Remove Custom Sidebar from Left and Right Sidebar and use default sidebar instead.
