@@ -21,6 +21,6 @@ perform their jobs.
 <?php get_header(); ?>
     <div id="global-layout" class="<?php echo esc_attr(get_theme_mod('global_layout', 'left-sidebar')); ?>">
         <?php silver_quantum_content_page_setup(); ?>
-        <?php get_sidebar('custom'); ?>
+        <?php get_sidebar(); ?>
     </div>
 <?php get_footer(); ?>

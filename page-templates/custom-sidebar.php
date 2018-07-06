@@ -2,7 +2,7 @@
 /*
 ================================================================================================
 Silver Quantum - single-page.php
-Template Name: Right Sidebar
+Template Name: Custom Sidebar
 ================================================================================================
 This is the most generic template file in a WordPress theme and is one of the two required files 
 for a theme (the other being style.css). The index.php template file is flexible. It can be used to 
@@ -19,8 +19,19 @@ perform their jobs.
 */
 ?>
 <?php get_header(); ?>
-    <div id="global-layout" class="<?php echo esc_attr(get_theme_mod('global_layout', 'right-sidebar')); ?>">
-        <?php silver_quantum_content_page_setup(); ?>
-        <?php get_sidebar(); ?>
-    </div>
+    <?php if ('left-sidebar' == get_theme_mod('global_layout', 'left-sidebar')) { ?>
+        <div id="global-layout" class="<?php echo esc_attr(get_theme_mod('global_layout', 'left-sidebar')); ?>">
+            <?php silver_quantum_content_page_setup(); ?>
+            <?php get_sidebar('custom'); ?>
+        </div>
+    <?php } else if ('right-sidebar' == get_theme_mod('global_layout', 'right-sidebar')) { ?>
+        <div id="global-layout" class="<?php echo esc_attr(get_theme_mod('global_layout', 'right-sidebar')); ?>">
+            <?php silver_quantum_content_page_setup(); ?>
+            <?php get_sidebar('custom'); ?>
+        </div>
+    <?php } else { ?>
+        <div id="global-layout" class="<?php echo esc_attr(get_theme_mod('global_layout', 'no-sidebar')); ?>">
+            <?php silver_quantum_content_page_setup(); ?>
+        </div>
+    <?php } ?>
 <?php get_footer(); ?>
