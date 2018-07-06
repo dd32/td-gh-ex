@@ -92,7 +92,31 @@
         <?php if ( is_single() ) : // Only display Excerpts for Search ?>
         
         <div class="more-link">
-            <?php belfast_post_nav(); ?>
+			<nav class="navigation post-navigation" role="navigation">
+
+				<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'belfast' ); ?></h3>
+
+				<div class="nav-links">
+					<?php 
+					if( get_previous_post_link() ):
+					?>
+					<p class="prev">
+						<?php previous_post_link( '%link', _x( '<span class="meta-nav prev"> PREVIOUS POST: <br/></span> %title', 'Previous post link', 'belfast' ) ); ?>
+					</p>
+					<?php 
+					endif;
+					//
+					if( get_next_post_link() ):
+					?>
+					<p class="next">
+						<?php next_post_link( '%link', _x( '<span class="meta-nav next"> NEXT POST: <br/></span> %title', 'Next post link', 'belfast' ) ); ?>
+					</p>
+					<?php 
+					endif;
+					?>
+				</div><!-- .nav-links -->
+
+			</nav><!-- .navigation -->
          </div>  
         <?php endif; ?>
 

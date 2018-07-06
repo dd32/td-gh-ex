@@ -11,19 +11,19 @@ function belfast_customize_register ( $wp_customize ) {
         'priority' => '900',
 	) );
 	
-	$wp_customize->add_setting( 'belfast_facebooklink', array('default' => '#','sanitize_callback' => 'esc_url_raw') );
+	$wp_customize->add_setting( 'belfast_facebooklink', array('default' => '','sanitize_callback' => 'esc_url_raw') );
     $wp_customize->add_control( 'belfast_facebooklink', array('label' => __('Facebook URL','belfast'), 'section' => 'sociallinks', ) );
-	$wp_customize->add_setting( 'belfast_twitterlink', array('default' => '#','sanitize_callback' => 'esc_url_raw') );
+	$wp_customize->add_setting( 'belfast_twitterlink', array('default' => '','sanitize_callback' => 'esc_url_raw') );
     $wp_customize->add_control( 'belfast_twitterlink', array('label' => __('Twitter Handle','belfast'), 'section' => 'sociallinks', ) );
-    $wp_customize->add_setting( 'belfast_googlelink', array('default' => '#', 'sanitize_callback' => 'esc_url_raw') );
+    $wp_customize->add_setting( 'belfast_googlelink', array('default' => '', 'sanitize_callback' => 'esc_url_raw') );
     $wp_customize->add_control( 'belfast_googlelink', array('label' => __('Google Plus URL','belfast'),'section' => 'sociallinks',) );
-	$wp_customize->add_setting( 'belfast_pinterestlink', array('default' => '#', 'sanitize_callback' => 'esc_url_raw') );
+	$wp_customize->add_setting( 'belfast_pinterestlink', array('default' => '', 'sanitize_callback' => 'esc_url_raw') );
     $wp_customize->add_control( 'belfast_pinterestlink', array('label' => __('Pinterest URL','belfast'),'section' => 'sociallinks',) );
-	$wp_customize->add_setting( 'belfast_youtubelink', array('default' => '#', 'sanitize_callback' => 'esc_url_raw') );
+	$wp_customize->add_setting( 'belfast_youtubelink', array('default' => '', 'sanitize_callback' => 'esc_url_raw') );
     $wp_customize->add_control( 'belfast_youtubelink', array('label' => __('Youtube URL','belfast'),'section' => 'sociallinks',) );
-	$wp_customize->add_setting( 'belfast_stumblelink', array('default' => '#', 'sanitize_callback' => 'esc_url_raw') );
+	$wp_customize->add_setting( 'belfast_stumblelink', array('default' => '', 'sanitize_callback' => 'esc_url_raw') );
     $wp_customize->add_control( 'belfast_stumblelink', array('label' => __('Stumbleupon Link','belfast'),'section' => 'sociallinks', ) );
-	$wp_customize->add_setting( 'belfast_rsslink', array('default' => '#', 'sanitize_callback' => 'esc_url_raw') );
+	$wp_customize->add_setting( 'belfast_rsslink', array('default' => '', 'sanitize_callback' => 'esc_url_raw') );
     $wp_customize->add_control( 'belfast_rsslink', array('label' => __('RSS Feeds URL','belfast'),'section' => 'sociallinks',) );
 
 	// Social Links Ends
@@ -41,7 +41,7 @@ function belfast_customize_register ( $wp_customize ) {
 	$wp_customize->add_control( 'belfast_footer_cr_left', array('label' => __('Copyright Note Left','belfast'),'section' => 'fcopyright',) );
 
 	function belfast_sanitize_footer_text( $input ) {
-    return wp_kses_post(  $input  );}
+    return sanitize_text_field(  $input  );}
 }
     
 	// Footer Copyright Section Ends

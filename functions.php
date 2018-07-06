@@ -40,12 +40,11 @@ function belfast_setup() {
 		'header-text' => array( 'site-title', 'site-description' ),
 	) );
 	
+	// register nav menu
+	register_nav_menus( array(
+		'primary-menu'   => esc_html__( 'Primary Menu', 'belfast' ),
+	) );
 	
-
-	// This theme uses wp_nav_menu() in one location.
-
-	register_nav_menu( 'primary', __( 'Navigation Menu', 'belfast' ) );
-
 	add_theme_support( 'post-thumbnails' );
 
 	set_post_thumbnail_size( 604, 280, true );
@@ -165,19 +164,6 @@ function belfast_scripts_styles() {
 
 add_action( 'wp_enqueue_scripts', 'belfast_scripts_styles' );
 
-#Changing excerpt more
-   function belfast_excerpt_more($more) {
-   global $post;
-   return '... <a class="read-article" href="'. esc_url(get_permalink($post->ID)) . '">' .  __('Read Article', 'belfast').' &#8594;' . '</a>';
-   }
-   add_filter('excerpt_more', 'belfast_excerpt_more');
-
-#Excerpt Length
-function belfast_excerpt_length( $length ) {
-	return 70;
-}
-add_filter( 'excerpt_length', 'belfast_excerpt_length', 999 );
-
 /* Filter the page title. */
 
 function belfast_wp_title( $title, $sep ) {
@@ -293,49 +279,6 @@ function belfast_paging_nav() {
 }
 
 endif;
-
-if ( ! function_exists( 'belfast_post_nav' ) ) :
-
-/**
-
- * Display navigation to next/previous post when applicable. */
-
-function belfast_post_nav() {
-
-	global $post;
-
-	// Don't print empty markup if there's nowhere to navigate.
-
-	$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
-
-	$next     = get_adjacent_post( false, '', false );
-
-	if ( ! $next && ! $previous )
-
-		return;
-
-	?>
-
-	<nav class="navigation post-navigation" role="navigation">
-
-		<h3 class="screen-reader-text"><?php _e( 'Post navigation', 'belfast' ); ?></h3>
-
-		<div class="nav-links">
-			<p class="prev">
-            	<?php previous_post_link( '%link', _x( '<span class="meta-nav prev"> PREVIOUS POST: <br/></span> %title', 'Previous post link', 'belfast' ) ); ?>
-            </p>
-            <p class="next">
-				<?php next_post_link( '%link', _x( '<span class="meta-nav next"> NEXT POST: <br/></span> %title', 'Next post link', 'belfast' ) ); ?>
-            </p>
-		</div><!-- .nav-links -->
-
-	</nav><!-- .navigation -->
-
-	<?php
-
-}
-endif;
-
 
 
 // WP post link pages

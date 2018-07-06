@@ -19,7 +19,9 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	 <?php endif; ?>
 	
 <?php wp_head(); ?>
 </head>
@@ -70,13 +72,11 @@
 		endif;
 		?>  
 		<div class="col-md-12 clearfix primary-nav">       
-            
             <nav class="primary-navigation site-navigation " role="navigation" id="menu-primary">
              <div class="menu">
-                 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'menu-primary-items' ) ); ?>
+                 <?php wp_nav_menu( array( 'theme_location' => 'primary-menu', 'menu_class' => 'nav-menu', 'menu_id' => 'menu-primary-items' ) ); ?>
              </div>
            </nav>
-           
         </div>
 
       </div>

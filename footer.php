@@ -24,19 +24,15 @@
 				
                 <?php if(get_theme_mod('belfast_footer_top')){
                     echo esc_html(get_theme_mod( 'belfast_footer_top' )); 
-                }?> <br/>
-
-				
+                }
+				?> 
+				<br/>
 				<?php 
 				$url   = 'https://jonnyjordan.com';
 				
-				if( is_home() && !is_paged() ){
-					$text = sprintf( '<a href="%s" >'.esc_html__( 'Jonny Jordan Web Design', 'belfast' ).'</a> '.esc_html__( 'Theme ', 'belfast' ).'.', esc_url( $url ) );
-				}else{
-					$text = __( 'belfast Theme. ', 'belfast' );
-				}
+				$brand = '<a href="'.esc_url( $url ).'">Jonny Jordan</a>';
 				
-				echo sprintf( $text.esc_html__( 'Developed by ', 'belfast' ).'<a href="%s">'.esc_html__( 'JonnyJordan', 'belfast' ).'</a>', $url  );
+				echo sprintf( __( 'Belfast WordPress Theme, Copyright 2018 %s', 'belfast' ), $brand );
 				?>
 				
 			</p> 
