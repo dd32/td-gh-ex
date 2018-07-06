@@ -87,7 +87,7 @@ function bar_restaurant_customize_register( $wp_customize ) {
   for($i=1;$i <= 10;$i++):
   $bar_restaurant_social_icon[] =  array( 'slug'=>sprintf('bar_restaurant_social_icon%d',$i),
    'default' => '',
-   'label' => sprintf(esc_html__( 'Social Account %s', 'bar-restaurant' ),$i),
+   'label' => sprintf(/* translators: %s is count */esc_html__( 'Social Account %s', 'bar-restaurant' ),$i),
    'priority' => sprintf('%d',$i) );
   endfor;
   foreach($bar_restaurant_social_icon as $bar_restaurant_social_icons){
@@ -113,7 +113,7 @@ $bar_restaurant_social_iconLink = array();
 for($i=1;$i <= 10;$i++):
   $bar_restaurant_social_iconLink[] =  array( 'slug'=>sprintf('bar_restaurant_social_iconLink%d',$i),
    'default' => '',
-   'label' => sprintf(esc_html__( 'Social Link %s', 'bar-restaurant' ),$i),
+   'label' => sprintf(/* translators: %s is count */esc_html__( 'Social Link %s', 'bar-restaurant' ),$i),
    'priority' => sprintf('%d',$i) );
   endfor;
   foreach($bar_restaurant_social_iconLink as $bar_restaurant_social_icons){

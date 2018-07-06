@@ -2447,3 +2447,14 @@ table th, table td{
         margin: 0 0px 90px;
     }
 }
+.page-links {
+    text-align: center;
+    padding: 0px 0 40px;
+}
+.page-links a {
+    background-color: #8C001A;
+    color: #fff;
+    padding: 10px;
+    display: inline-block;
+}
+.page-links a:hover{color: #000;}

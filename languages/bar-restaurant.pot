@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Bar Restaurant\n"
-"POT-Creation-Date: 2018-05-11 17:50+0530\n"
+"POT-Creation-Date: 2018-07-06 14:39+0530\n"
 "PO-Revision-Date: 2018-03-19 17:43+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -65,121 +65,20 @@ msgstr ""
 msgid "Install Plugins"
 msgstr ""
 
+#. translators: %s is plugin title
 #. translators: %s: plugin name.
 #: functions.php:117 inc/class-tgm-plugin-activation.php:330
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: functions.php:118 inc/class-tgm-plugin-activation.php:333
-msgid "Something went wrong with the plugin API."
-msgstr ""
-
-#. translators: 1: plugin name(s).
-#: functions.php:119 inc/class-tgm-plugin-activation.php:336
-#, php-format
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: 1: plugin name(s).
-#: functions.php:120 inc/class-tgm-plugin-activation.php:342
-#, php-format
-msgid "This theme recommends the following plugin: %1$s."
-msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:121
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %s plugin. "
-"Contact the administrator of this site for help on getting the plugin "
-"installed."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to install the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins installed."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: 1: plugin name(s).
-#: functions.php:122 inc/class-tgm-plugin-activation.php:360
-#, php-format
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: 1: plugin name(s).
-#: functions.php:123 inc/class-tgm-plugin-activation.php:366
-#, php-format
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:124
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugin. Contact the administrator of this site for help on getting the "
-"plugin activated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins activated."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: 1: plugin name(s).
-#: functions.php:125 inc/class-tgm-plugin-activation.php:348
-#, php-format
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:126
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to update the %s plugin. "
-"Contact the administrator of this site for help on getting the plugin "
-"updated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to update the %s plugins. "
-"Contact the administrator of this site for help on getting the plugins "
-"updated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:127 inc/class-tgm-plugin-activation.php:371
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:128 inc/class-tgm-plugin-activation.php:381
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:129 inc/class-tgm-plugin-activation.php:385
-msgid "Return to Required Plugins Installer"
-msgstr ""
-
-#: functions.php:130 inc/class-tgm-plugin-activation.php:387
+#: functions.php:118 inc/class-tgm-plugin-activation.php:387
 #: inc/class-tgm-plugin-activation.php:3159
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: functions.php:131
+#. translators: %s is install plugins count.
+#: functions.php:119
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
@@ -209,8 +108,7 @@ msgstr ""
 msgid "Page "
 msgstr ""
 
-#: inc/breadcumbs.php:206 page.php:36 template-parts/content-single.php:33
-#: template-parts/full-width.php:26
+#: inc/breadcumbs.php:206 page.php:36 template-parts/full-width.php:26
 msgid "Page"
 msgstr ""
 
@@ -228,6 +126,38 @@ msgstr ""
 msgid "Updating Plugin: %s"
 msgstr ""
 
+#: inc/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. translators: 1: plugin name(s).
+#: inc/class-tgm-plugin-activation.php:336
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: inc/class-tgm-plugin-activation.php:342
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: inc/class-tgm-plugin-activation.php:348
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
 #. translators: 1: plugin name(s).
 #: inc/class-tgm-plugin-activation.php:354
 #, php-format
@@ -236,11 +166,43 @@ msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
+#. translators: 1: plugin name(s).
+#: inc/class-tgm-plugin-activation.php:360
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name(s).
+#: inc/class-tgm-plugin-activation.php:366
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:371
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
 #: inc/class-tgm-plugin-activation.php:376
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:381
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:386
 #: inc/class-tgm-plugin-activation.php:827
@@ -624,11 +586,13 @@ msgstr ""
 msgid "Social Accounts"
 msgstr ""
 
+#. translators: %s is count
 #: inc/customizer.php:90
 #, php-format
 msgid "Social Account %s"
 msgstr ""
 
+#. translators: %s is count
 #: inc/customizer.php:116
 #, php-format
 msgid "Social Link %s"
@@ -770,13 +734,13 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
+#. translators: %s is search query .
 #: search.php:12
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
 #: searchform.php:8
-msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
@@ -786,22 +750,14 @@ msgid "Search..."
 msgstr ""
 
 #: searchform.php:11
-msgctxt "submit button"
 msgid "Search"
-msgstr ""
-
-#: single.php:24
-msgid "Next >"
-msgstr ""
-
-#: single.php:25
-msgid "< Previous"
 msgstr ""
 
 #: template-parts/content-none.php:11 template-parts/content-none.php:24
 msgid "Nothing Found"
 msgstr ""
 
+#. translators: 1 is link ,
 #: template-parts/content-none.php:22
 #, php-format
 msgid ""

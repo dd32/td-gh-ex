@@ -9,7 +9,7 @@
         <div class="title-data">
             <h2><?php the_title(); ?></h2>
             <ul>
-                <li><a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) )); ?>"><?php echo esc_html__('By ', 'bar-restaurant').ucfirst(get_the_author()); ?></a></li>
+                <li><a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) )); ?>"><?php echo esc_html__('By ', 'bar-restaurant').esc_html(ucfirst(get_the_author())); ?></a></li>
                 <li><?php echo esc_html__('Posted on ','bar-restaurant').get_the_date(get_option('date_format')); ?></li>
             </ul>
         </div>
@@ -27,9 +27,5 @@
  </div>   
 <?php wp_link_pages( array(
         'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'bar-restaurant' ) . '</span>',
-        'after'       => '</div>',
-        'link_before' => '<span>',
-        'link_after'  => '</span>',
-        'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'bar-restaurant' ) . ' </span>%',
-        'separator'   => '<span class="screen-reader-text">, </span>',
+        'after'       => '</div>',        
     ) );

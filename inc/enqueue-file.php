@@ -17,7 +17,3 @@ function bar_restaurant_scripts() {
 	bar_restaurant_dynamic_styles();
 }
 add_action( 'wp_enqueue_scripts', 'bar_restaurant_scripts' );
-
-require_once get_template_directory() . '/inc/widgets.php';
-require_once get_template_directory() . '/inc/customizer.php';
-require_once get_template_directory() . '/inc/breadcumbs.php';
