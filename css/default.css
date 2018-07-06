@@ -97,6 +97,10 @@ a.blog-btn { border: 1px solid transparent; }
 
 .post-media-sidebar, .sidebar-widget > ul > li, .post-content li, .blog-post-detail { border-bottom: 1px dotted #7b7f8c; }
 
+.page_scrollup {
+    background-color: #00c2a9;
+}
+
 a.readmore{ color: #fa7073; }
 
 /*Sidebar*/
@@ -236,7 +240,6 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 	background-color: transparent;
 	color: #00c2a9 !important;
 }
-
 
 }
 

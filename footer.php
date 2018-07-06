@@ -43,6 +43,9 @@
 	</div>
 </div>
 </div> <!-- end of wrapper -->
+<!-- Page scroll top -->
+<a href="#" class="page_scrollup"><i class="fa fa-chevron-up"></i></a>
+<!-- Page scroll top -->
 <?php wp_footer(); ?>
 </body>
 </html>
