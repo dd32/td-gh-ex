@@ -13,11 +13,24 @@
 			margin: 1em 0 1em 1em;
 
 			li {
+				list-style: none;
 				a {
-					color: #0000EE;
+				 color: #0000EE;
 				 &:hover {
 				 	color: #f90;
 				 }
+
+				}
+
+				&::before {
+					font-family: "FontAwesome";
+				    margin-right: 0;
+				    display: block;
+				    float: left;
+				    opacity: 0.35;
+				    margin-left: -1em;
+				    width: 1em;
+				    content: "\f105";
 				}
 			}
 		}

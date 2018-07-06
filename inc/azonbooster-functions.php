@@ -65,3 +65,20 @@ function azonbooster_category_list( $args = array(), $is_all = true ) {
  	
  	return $output_categories;
 }
+
+function azonbooster_credit_link() {
+
+	$attrs = array( "href" => "https://theconsumer.guide", "title" => "AzonBooster Theme - The Best Free Amazon Affiliate WordPress Themes", "rel" => "author", 'label' => "AzonBooster" );
+	
+	$link = 'a';
+
+	foreach ( $attrs as $key => $val ) {
+
+		if ( $key != 'label' ) {
+
+			$link .= sprintf(' %s="%s" ', $key, $val );
+		}
+	}
+
+	return sprintf('<%s>%s</%s>', $link, $attrs['label'], 'a' );
+}

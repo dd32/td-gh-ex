@@ -50,7 +50,7 @@ if ( ! function_exists( 'azonbooster_handburger_btn' ) ) {
 				<div class="menu-close-btn">
 					<i class="fa fa-close"></i>
 				</div>
-				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 			</nav><!-- #site-navigation -->
 			<?php if ( ( ( is_home() && is_front_page() ) ) && has_custom_header() ) : ?>
 				<a href="#content" class="menu-scroll-down"><span class="screen-reader-text"><?php _e( 'Scroll down to content', 'azonbooster' ); ?></span></a>
@@ -437,6 +437,60 @@ if ( ! function_exists( 'azonbooster_footer_widgets' ) ) {
 	}
 }
 
+if ( ! function_exists( 'azonbooster_site_info_wrapper' ) ) {
+	/**
+	 * Open site info wrapper
+	 *
+	 * @since 1.2.1
+	 * @return void
+	 */
+	function azonbooster_site_info_wrapper() {
+		?>
+		<div class="site-info">
+		<?php
+	}
+}
+
+if ( ! function_exists( 'azonbooster_site_info_wrapper_close' ) ) {
+	/**
+	 * Close site info wrapper
+	 *
+	 * @since 1.2.1
+	 * @return void
+	 */
+	function azonbooster_site_info_wrapper_close() {
+		?>
+		</div>
+		<?php
+	}
+}
+
+if ( ! function_exists( 'azonbooster_header_menu' ) ) {
+	/**
+	 * Header menu
+	 *
+	 * @since 1.2.1
+	 * @return void
+	 */
+	function azonbooster_header_menu() {
+		if ( has_nav_menu( 'secondary' ) ) {
+			wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'header-menu', 'menu_class' => 'header-menu', 'container_class' => 'header-menu-container' ) );
+		}
+	}
+}
+
+if ( ! function_exists( 'azonbooster_footer_menu' ) ) {
+	/**
+	 * Footer menu
+	 *
+	 * @since 1.2.1
+	 * @return void
+	 */
+	function azonbooster_footer_menu() {
+		wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu', 'menu_class' => 'footer-menu', 'container_class' => 'footer-menu-container' ) );
+	}
+}
+
 if ( ! function_exists( 'azonbooster_credit' ) ) {
 	/**
 	 * Display the theme credit
@@ -445,14 +499,18 @@ if ( ! function_exists( 'azonbooster_credit' ) ) {
 	 * @return void
 	 */
 	function azonbooster_credit() {
+
+		$credit_url = apply_filters('azonbooster_credit_link', azonbooster_credit_link() );
+			
 		?>
-		<div class="site-info">
+
+		<div class="theme-credit">
 
 			<?php echo esc_html( apply_filters( 'azonbooster_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date( 'Y' ) ) ); ?>
 
-			<?php if ( apply_filters( 'azonbooster_credit_link', true ) ) : ?>
+			<?php if ( apply_filters( 'azonbooster_enable_credit_link', true ) ) : ?>
 
-			<br /> <?php printf( esc_attr__( '%1$s designed by %2$s.', 'azonbooster' ), 'AzonBooster', '<a href="https://boosterwp.com" title="AzonBooster Theme - The Best Free Amazon Affiliate WordPress Themes" rel="author">AzonBooster</a>' ); ?>
+			<?php printf( esc_attr__( '&bull; Powered by %1$s.', 'azonbooster' ), $credit_url ); ?>
 
 			<?php endif; ?>
 

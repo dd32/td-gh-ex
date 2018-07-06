@@ -4,7 +4,7 @@ Theme URI: https://boosterwp.com/themes/azonbooster
 Author: BoosterWP Team
 Author URI: https://boosterwp.com
 Description: The best free Amazon Affiliate theme double up your sales and conversion rate. AzonBooster is a fast, lightweight, mobile responsive theme built with speed, SEO friendly, and usability in mind. AzonBooster can serve as a solid base for any website and works great with any of your favorite page builders. With an emphasis on WordPress coding standards, we ensure AzonBooster is compatible with all well-coded plugins, including major ones like Amazon Associates Link Builder, EazyAzon, WPML, BuddyPress and bbPress.
-Version: 1.2.0
+Version: 1.2.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: azonbooster
@@ -637,6 +637,15 @@ body {
     float: left; }
   .site-header .widget {
     margin-bottom: 0; }
+  .site-header .header-menu {
+    list-style: none;
+    margin: 0;
+    padding: 5px 0;
+    float: right; }
+    .site-header .header-menu li {
+      display: inline-block;
+      margin-left: 5px;
+      padding-left: 5px; }
 
 .home.blog .site-header,
 .single-post .site-header,
@@ -780,9 +789,17 @@ body {
       display: table; }
     .site-footer .site-info:after {
       clear: both; }
+  .site-footer .footer-menu {
+    list-style: none;
+    margin: 0;
+    float: right; }
+    .site-footer .footer-menu li {
+      display: inline-block;
+      margin-left: 5px;
+      padding-left: 5px; }
 
 .site-info {
-  padding: 2.617924em 0; }
+  padding: 1.41575em 0; }
 
 /**
  * Alignment
@@ -1829,7 +1846,7 @@ body.search-open .site-search {
  */
 @media (min-width: 768px) {
   .site-header {
-    padding: 0.6180469716em 0; }
+    padding: 0 0 0.6180469716em 0; }
     .site-header .header-left {
       width: 65.2173913043%;
       float: left;
@@ -1850,6 +1867,19 @@ body.search-open .site-search {
       margin-right: 0;
       position: relative;
       min-height: 40px; }
+    .site-header .header-menu-container {
+      clear: both;
+      margin-left: -99em;
+      margin-right: -99em;
+      padding-left: 99em;
+      padding-right: 99em;
+      margin-bottom: 0.6180469716em;
+      background: rgba(0, 0, 0, 0.03); }
+      .site-header .header-menu-container:before, .site-header .header-menu-container:after {
+        content: "";
+        display: table; }
+      .site-header .header-menu-container:after {
+        clear: both; }
   .site-branding .site-description {
     margin-bottom: 0;
     display: block; }
@@ -2001,6 +2031,17 @@ body.search-open .site-search {
         float: right;
         margin-right: 0; }
   /**
+	 * Site info
+	 */
+  .site-info .theme-credit {
+    width: 47.8260869565%;
+    float: left;
+    margin-right: 4.347826087%; }
+  .site-info .footer-menu-container {
+    width: 47.8260869565%;
+    float: right;
+    margin-right: 0; }
+  /**
 	 * Comments
 	 */
   .comment-list:before, .comment-list:after {
@@ -2146,10 +2187,21 @@ body.search-open .site-search {
       clear: both; }
   .azb-box ul {
     margin: 1em 0 1em 1em; }
-    .azb-box ul li a {
-      color: #0000EE; }
-      .azb-box ul li a:hover {
-        color: #f90; }
+    .azb-box ul li {
+      list-style: none; }
+      .azb-box ul li a {
+        color: #0000EE; }
+        .azb-box ul li a:hover {
+          color: #f90; }
+      .azb-box ul li::before {
+        font-family: "FontAwesome";
+        margin-right: 0;
+        display: block;
+        float: left;
+        opacity: 0.35;
+        margin-left: -1em;
+        width: 1em;
+        content: "\f105"; }
   .cat-summary .cat-desc {
     font-style: italic; }
   .azb-hmp-box-2 .azb-box {

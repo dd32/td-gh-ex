@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: AzonBooster 1.2.0\n"
+"Project-Id-Version: AzonBooster 1.2.1\n"
 "Report-Msgid-Bugs-To: https://gitlab.com/boosterwp/azonbooster.gitissues\n"
-"POT-Creation-Date: 2018-07-05 10:53:11+00:00\n"
+"POT-Creation-Date: 2018-07-06 10:18:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -79,7 +79,7 @@ msgstr ""
 
 #: inc/azonbooster-template-functions.php:199
 #: inc/azonbooster-template-functions.php:337
-#: inc/azonbooster-template-functions.php:757
+#: inc/azonbooster-template-functions.php:815
 msgid "Pages:"
 msgstr ""
 
@@ -92,43 +92,43 @@ msgstr ""
 msgid "View Detail"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:455
-msgid "%1$s designed by %2$s."
+#: inc/azonbooster-template-functions.php:513
+msgid "&bull; Powered by %1$s."
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:490
+#: inc/azonbooster-template-functions.php:548
 msgid "Last updated"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:491
+#: inc/azonbooster-template-functions.php:549
 msgid "By "
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:555
+#: inc/azonbooster-template-functions.php:613
 msgid "Edit"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:613
+#: inc/azonbooster-template-functions.php:671
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:648
+#: inc/azonbooster-template-functions.php:706
 msgid ", "
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:671
+#: inc/azonbooster-template-functions.php:729
 msgid "Leave a Comment"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:671
+#: inc/azonbooster-template-functions.php:729
 msgid "One Comment"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:671
+#: inc/azonbooster-template-functions.php:729
 msgid "% Comments"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:741
+#: inc/azonbooster-template-functions.php:799
 msgid "Edit this section"
 msgstr ""
 

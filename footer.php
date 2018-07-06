@@ -18,7 +18,7 @@
 	<footer id="colophon" class="site-footer">
 
 		<div class="col-full">
-
+			
 			<?php
 			/**
 			 * Functions hooked in to azonbooster_footer action

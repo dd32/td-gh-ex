@@ -5,7 +5,7 @@
 @include susy-media($desktop) {
 	
 	.site-header {
-		padding: ms(-2) 0;
+		padding: 0 0 ms(-2) 0;
 
 		.header-left {
 			@include span(8 of 12);
@@ -34,9 +34,18 @@
 			}
 		}
 
-	}
+		.header-menu-container {
+			clear: both;
+			@include clearfix;
+			margin-left: -99em;
+			margin-right: -99em;
+			padding-left: 99em;
+			padding-right: 99em;
+			margin-bottom: ms(-2);
+			background: rgba(0,0,0,.03);
+		}
 
-	
+	}
 
 	.site-branding {
 		.site-description {
@@ -225,7 +234,19 @@
 			}
 		}
 	}
+	/**
+	 * Site info
+	 */
+	.site-info {
 
+		.theme-credit {
+
+			@include span(6 of 12);
+		}
+		.footer-menu-container {
+			@include span( last 6 of 12);
+		}
+	}
 	/**
 	 * Comments
 	 */
