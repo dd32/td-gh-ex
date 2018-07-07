@@ -188,6 +188,11 @@ $attire_sections = array(
 		'panel'       => 'attire_typography',
 		'priority'    => 120,
 	),
+    'attire_write_review'=>array(
+        'title'       => __( 'Support/Review', 'attire' ),
+        'description' => '',
+        'priority'    => 200,
+    )
 
 );
 
@@ -202,6 +207,12 @@ $attire_options = array(
 			'full-post' => __( 'Show entire post', 'attire' ),
 			'excerpt'   => __( 'Show excerpt', 'attire' )
 		)
+	),
+	'attire_write_review'      => array(
+		'label'     => __( 'Write a review', 'attire' ),
+		'transport' => 'postMessage',
+		'type'      => 'attire_review',
+		'section'   => 'attire_write_review'
 	),
 	'attire_read_more_text'              => array(
 		'label'     => __( 'Read More Text', 'attire' ),
@@ -437,6 +448,11 @@ $attire_options = array(
 				'value' => 'header-3',
 				'title' => __( 'Nav Style 3', 'attire' ),
 				'src'   => get_template_directory_uri() . '/images/headers/header3.jpg',
+			),
+			3 => array(
+				'value' => 'header-4',
+				'title' => __( 'Nav Style 4', 'attire' ),
+				'src'   => get_template_directory_uri() . '/images/headers/header4.jpg',
 			)
 		),
 	),

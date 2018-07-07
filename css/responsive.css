@@ -145,6 +145,10 @@
     .attire-post-and-comments {
         padding-top: 10%;
     }
+
+    .header-div {
+        margin-bottom: 10%;
+    }
 }
 
 @media (min-width: 1000px) {

@@ -41,6 +41,7 @@
     display: block;
     text-decoration: none;
     cursor: pointer;
+    max-height: 100%;
 }
 
 .attire-mbl-menu-main .dropdown-toggler {

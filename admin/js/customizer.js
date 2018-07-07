@@ -76,7 +76,6 @@
 
         wp.customize('attire_options[' + themeModName + ']', function (value) {
             value.bind(function (newVal) {
-                console.log(newVal)
                 $(selector).each(function () {
                     if (newVal === 'show' || newVal === true)
                         $(this).show();
@@ -90,7 +89,6 @@
     function setContainerType(themeModName, selector) {
         wp.customize('attire_options[' + themeModName + ']', function (value) {
             value.bind(function (newVal) {
-                console.log(newVal);
                 if (newVal === 'container') {
                     $(selector).removeClass('container-fluid');
                     $(selector).addClass('container');
