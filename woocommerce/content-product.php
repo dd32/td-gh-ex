@@ -11,41 +11,25 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.0.0
+ * @version 3.4.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
-global $product, $woocommerce_loop ;
+global $product;
 
-// Store loop count we're currently on
-if ( empty( $woocommerce_loop['loop'] ) ) {
-	$woocommerce_loop['loop'] = 0;
-}
-
-// Store column count for displaying the grid
-if ( empty( $woocommerce_loop['columns'] ) ) {
-	$woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 4 );
-}
-
-// Ensure visibility
-if ( ! $product || ! $product->is_visible() ) {
+// Ensure visibility.
+if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
-
-// Increase loop count
-$woocommerce_loop['loop']++;
 
 ?>
 
 <article class="product-container masonry-element col-md-4">
 
 	<div class="product-thumbnail">
-
+        
         <?php echo woocommerce_get_product_thumbnail(); ?>
         
 	</div>
