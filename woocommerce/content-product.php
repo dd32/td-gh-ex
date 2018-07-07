@@ -26,7 +26,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 ?>
 
-<article <?php wc_product_class('product-container masonry-item ' . esc_attr(suevafree_setting('suevafree_woocommerce_layout', 'col-md-4'))); ?>>
+<article <?php wc_product_class('product-container masonry-item col-md-4'); ?>>
 
 	<div class="product-thumbnail">
         

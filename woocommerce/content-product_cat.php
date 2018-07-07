@@ -35,7 +35,7 @@ if ( empty( $woocommerce_loop['columns'] ) ) {
 $woocommerce_loop['loop']++;
 ?>
 
-<article <?php wc_product_cat_class( 'masonry-item product-container ' . esc_attr(suevafree_setting('suevafree_woocommerce_layout', 'col-md-4')) , $category ); ?> >
+<article <?php wc_product_cat_class( 'masonry-item product-container col-md-4' , $category ); ?> >
 
 	<div class="product-thumbnail">
         
