@@ -64,6 +64,11 @@ function beautytemple_register_required_plugins() {
 			'slug'      => 'mailchimp-for-wp',
 			'required'  => false,
 		),
+		array(
+			'name'      => 'Lazy Load by SWL',
+			'slug'      => 'lazy-load-by-swl',
+			'required'  => false,
+		),
 
 	);
 
