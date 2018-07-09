@@ -22,14 +22,6 @@
 					echo bloginfo();
 ?>
 				</div>
-				<div class="right">
-					<p>
-						<?php
-							/* translators: 1: Theme name, 2: Theme author. */
-							printf( esc_html__( '%1$s by %2$s.', 'best-minimalist' ), '<a href="' . esc_url( __( 'https://wpvkp.com/minimalist/', 'best-minimalist' ) ) . '" target="_blank">Minimalist</a> Theme', 'WPVKP' );
-						?>
-					</p>
-				</div>
 			</div><!-- .site-info -->
 		</div>
 	</footer><!-- #colophon -->

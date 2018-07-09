@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, threaded-comments, translatio
 
 Requires at least: 4.5
 Tested up to: 4.9.6
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -26,6 +26,9 @@ Best Minimalist WordPress theme for professional bloggers and content marketers.
 Best Minimalist WordPress Theme comes with inbuilt support for Jetpack, Breadcrumb navXT and Related Post With Thumbnail Plugin.
 
 == Changelog ==
+
+= 1.0.2 - July 09 2018 =
+* Removed footer credit links
 
 = 1.0.1 - May 31 2018 =
 * Complete redesign. Major code improvement. Major design improvement. 100% free from any errors when checked via Theme sniffer plugin.
