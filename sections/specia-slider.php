@@ -58,7 +58,7 @@
 								
 								<?php if( get_post_meta(get_the_ID(),'slidebutton', true ) ): ?>
 									<a href="<?php echo esc_url( get_post_meta( get_the_ID(),'slidebutton', true) ); ?>" class="specia-btn-1">
-										<?php echo _e( 'Read More','avira' ); ?> 
+										<?php echo esc_html_e( 'Read More','avira' ); ?> 
 									</a>
 								<?php
 									endif;
