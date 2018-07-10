@@ -204,10 +204,15 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * TGM class.
  */
-require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/admin/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/admin/plugins.php';
 
 /**
  * Load dashboard
  */
 require get_template_directory() . '/inc/dashboard/class-bayn-lite-dashboard.php';
 $dashboard = new Bayn_Lite_Dashboard();
+
+require get_template_directory() . '/inc/customizer-pro/class-bayn-lite-customizer-pro.php';
+$customizer_pro = new Bayn_Lite_Customizer_Pro();
+$customizer_pro->init();

@@ -60,22 +60,3 @@ function bayn_lite_logo_class() {
 
 	return '';
 }
-
-/**
- * Register required and recommended plugins.
- */
-function bayn_lite_register_required_plugins() {
-	$plugins = array(
-		array(
-			'name' => esc_html__( 'Jetpack', 'bayn-lite' ),
-			'slug' => 'jetpack',
-		),
-	);
-	$config  = array(
-		'id' => 'bayn_lite',
-	);
-
-	tgmpa( $plugins, $config );
-}
-
-add_action( 'tgmpa_register', 'bayn_lite_register_required_plugins' );

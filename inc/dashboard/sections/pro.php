@@ -115,7 +115,12 @@
 			<tr>
 				<td></td>
 				<td colspan="2">
-					<a href="<?php echo esc_url( "https://gretathemes.com/wordpress-themes/bayn/?utm_source=theme_dashboard&utm_medium=buy_link&utm_campaign={$this->theme->template}_dashboard" ); ?>" target="_blank" class="button button-primary button-hero"><?php esc_html_e( 'Get Bayn PRO now', 'bayn-lite' ); ?></a>
+					<a href="<?php echo esc_url( "https://gretathemes.com/wordpress-themes/{$this->pro_slug}/{$this->utm}" ); ?>" target="_blank" class="button button-primary button-hero">
+						<?php
+						/* translators: pro theme name. */
+						echo esc_html( sprintf( __( 'Get %s PRO now', 'bayn-lite' ), $this->pro_name ) );
+						?>
+					</a>
 				</td>
 			</tr>
 		</tbody>

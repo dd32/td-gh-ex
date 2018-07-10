@@ -60,6 +60,9 @@ http://gretathemes.com/
 
 == Changelog ==
 
+= 1.0.4 =
+* rebuild dashboad and customizer
+
 = 1.0.3 =
 * Fix some required issues
 

@@ -2,7 +2,7 @@
 /**
  * Support section.
  *
- * @package Bayn Lite
+ * @package GreenTech Lite
  */
 
 ?>
