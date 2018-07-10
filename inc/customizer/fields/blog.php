@@ -326,6 +326,68 @@ function azonbooster_homepage_fields( $fields ) {
 				),
 				
 			),
+			/**
+			 * Featured Posts
+			 */
+			array(
+				'settings'          => 'homepage_featured_posts_cat_setting',
+				'label'             => __('Featured Posts', 'azonbooster'),
+				'section'           => 'azonbooster_homepage_featured_posts_section',
+				'type'              => 'select',
+				'description'		=> __( 'Choose category to show it\'s post. Keep [All categories] to show from all categoies.', 'azonbooster' ),
+				'priority'          => 10,
+				'choices'		=> azonbooster_category_list()
+				
+			),
+			array(
+				'type'			=> 'number',
+				'settings'     => 'homepage_featured_posts_num_setting',
+				'default'		=> 5,
+				'priority'    => 20,
+				'label'			=> esc_attr__( 'Number of Posts', 'azonbooster' ),
+				'section'     => 'azonbooster_homepage_featured_posts_section',
+			),
+			array(
+				'type'			=> 'checkbox',
+				'settings'     => 'homepage_fp_ignore_sticky_posts_setting',
+				'default'		=> true,
+				'priority'    => 30,
+				'label'			=> esc_attr__( 'Ignore Sticky Posts', 'azonbooster' ),
+				'section'     => 'azonbooster_homepage_featured_posts_section',
+			),
+			array(
+				'settings'          => 'homepage_featured_posts_order_setting',
+				'label'             => __('Order', 'azonbooster'),
+				'section'           => 'azonbooster_homepage_featured_posts_section',
+				'type'              => 'select',
+				'priority'          => 40,
+				'choices'		=> array('DESC' => __('Descending', 'azonbooster'), 'ASC' => __( 'Ascending', 'azonbooster' ) )
+				
+			),
+			array(
+				'settings'          => 'homepage_featured_posts_orderby_setting',
+				'label'             => __('Order By', 'azonbooster'),
+				'section'           => 'azonbooster_homepage_featured_posts_section',
+				'type'              => 'select',
+				'priority'          => 40,
+				'default'			=> 'date',
+				'choices'			=> array(
+
+							'none' 		=> __('No order', 'azonbooster'),
+							'ID'		=> __('ID', 'azonbooster'),
+							'author'		=> __('Author', 'azonbooster'),
+							'date'		=> __('Date', 'azonbooster'),
+							'modified'		=> __('Modified', 'azonbooster'),
+							'parent'		=> __('Parent', 'azonbooster'),
+							'rand'		=> __('Random', 'azonbooster'),
+							'comment_count'		=> __('Comment Count', 'azonbooster'),
+					)
+				
+			),
+
+		/**
+		 * Custom Content
+		 */
 		array(
 			'type'			=> 'select',
 			'settings'     => 'homepage_content_col_setting',

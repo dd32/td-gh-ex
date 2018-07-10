@@ -105,11 +105,17 @@ class AzonBooster_Customizer {
 			    'panel'          => 'azonbooster_home_panel',
 			    'priority'       => 10,
 			),
-			'azonbooster_homepage_content_section' => array (
+			'azonbooster_homepage_featured_posts_section' => array (
 
-				'title'          => __( 'Content', 'azonbooster' ),
+				'title'          => __( 'Featured Posts', 'azonbooster' ),
 			    'panel'          => 'azonbooster_home_panel',
 			    'priority'       => 20,
+			),
+			'azonbooster_homepage_content_section' => array (
+
+				'title'          => __( 'Custom Content', 'azonbooster' ),
+			    'panel'          => 'azonbooster_home_panel',
+			    'priority'       => 30,
 			)
 		);
 	}

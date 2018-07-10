@@ -12,6 +12,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php
+		
 			/**
 			 * Functions hooked in to homepage action
 			 *

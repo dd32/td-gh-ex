@@ -2,10 +2,75 @@
  * Homepage style control
  */
 @include susy-media($desktop) {
+
+	.azb-featured-posts {
+		@include clearfix;
+		padding-bottom: ms(5);
+		margin-bottom: ms(5);
+		border-bottom: 2px solid #ccc;
+
+
+		.featured-posts-thumb {
+			position: relative;
+
+			.featured-posts-title {
+
+				background: rgba(0, 0, 0, .5);
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				margin: 0;
+				padding: 5px 15px;
+
+				a {
+					color: #fff;
+
+					&:hover {
+						color: #f90;
+					}
+				}
+			}
+		}
+
+		.featured-posts-first {
+			@include span(7 of 12);
+		} 
+		.featured-posts-second {
+			@include span( last 5 of 12);
+
+			.featured-posts-list {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+
+				li {
+					padding: 10px 0;
+					border-bottom: 1px solid #ccc;
+
+					a {
+						font-size: 1.3em;
+
+						&::before {
+							font-family: "FontAwesome";
+						    margin-right: 0;
+						    display: block;
+						    float: left;
+						    opacity: 0.35;
+						    width: 20px;
+						    content: "\f105";
+						}
+					}
+
+					
+
+				}
+			}
+		}
+	}
 	.azb-hmp-container {
 		.azb-hmp-row{
 			@include clearfix;
-			padding-top: ms(7);
+			margin-bottom: ms(5);
 		}
 	}
 	.azb-box {
@@ -69,5 +134,10 @@
 				@include last;
 			}
 		}
+	}
+}
+@include susy-media (max-width $handheld) {
+	.header-menu-container {
+		display: none;
 	}
 }

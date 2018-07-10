@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: AzonBooster 1.2.1\n"
+"Project-Id-Version: AzonBooster 1.2.2\n"
 "Report-Msgid-Bugs-To: https://gitlab.com/boosterwp/azonbooster.gitissues\n"
-"POT-Creation-Date: 2018-07-06 10:18:00+00:00\n"
+"POT-Creation-Date: 2018-07-10 08:56:47+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -79,7 +79,7 @@ msgstr ""
 
 #: inc/azonbooster-template-functions.php:199
 #: inc/azonbooster-template-functions.php:337
-#: inc/azonbooster-template-functions.php:815
+#: inc/azonbooster-template-functions.php:823
 msgid "Pages:"
 msgstr ""
 
@@ -93,7 +93,7 @@ msgid "View Detail"
 msgstr ""
 
 #: inc/azonbooster-template-functions.php:513
-msgid "&bull; Powered by %1$s."
+msgid "&bull; <a href=\"%1$s\">AzonBooster</a> Designed by  %2$s."
 msgstr ""
 
 #: inc/azonbooster-template-functions.php:548
@@ -128,7 +128,7 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:799
+#: inc/azonbooster-template-functions.php:807
 msgid "Edit this section"
 msgstr ""
 
@@ -538,7 +538,7 @@ msgstr ""
 msgid "Read More..."
 msgstr ""
 
-#: inc/customizer/class-azb-homepage-ouput.php:205
+#: inc/customizer/class-azb-homepage-ouput.php:299
 msgid "Recent Posts"
 msgstr ""
 
@@ -580,14 +580,20 @@ msgid "General"
 msgstr ""
 
 #: inc/customizer/class-azonbooster-customizer.php:110
-msgid "Content"
+#: inc/customizer/fields/blog.php:334
+msgid "Featured Posts"
+msgstr ""
+
+#: inc/customizer/class-azonbooster-customizer.php:116
+#: inc/customizer/fields/blog.php:407
+msgid "Custom Content"
 msgstr ""
 
 #: inc/customizer/fields/blog.php:30
 msgid "Thumbnail Position"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:36 inc/customizer/fields/blog.php:404
+#: inc/customizer/fields/blog.php:36 inc/customizer/fields/blog.php:466
 msgid "Left"
 msgstr ""
 
@@ -595,7 +601,7 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:38 inc/customizer/fields/blog.php:406
+#: inc/customizer/fields/blog.php:38 inc/customizer/fields/blog.php:468
 msgid "Right"
 msgstr ""
 
@@ -646,11 +652,12 @@ msgid "Check them to show post meta data."
 msgstr ""
 
 #: inc/customizer/fields/blog.php:167 inc/customizer/fields/blog.php:243
+#: inc/customizer/fields/blog.php:379
 msgid "Date"
 msgstr ""
 
 #: inc/customizer/fields/blog.php:168 inc/customizer/fields/blog.php:244
-#: inc/customizer/fields/blog.php:362
+#: inc/customizer/fields/blog.php:424
 msgid "Category"
 msgstr ""
 
@@ -659,6 +666,7 @@ msgid "Tag"
 msgstr ""
 
 #: inc/customizer/fields/blog.php:170 inc/customizer/fields/blog.php:246
+#: inc/customizer/fields/blog.php:378
 msgid "Author"
 msgstr ""
 
@@ -706,103 +714,149 @@ msgstr ""
 msgid "OFF"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:334 inc/customizer/fields/blog.php:387
-msgid "Number of Columns"
+#: inc/customizer/fields/blog.php:337
+msgid ""
+"Choose category to show it's post. Keep [All categories] to show from all "
+"categoies."
 msgstr ""
 
-#: inc/customizer/fields/blog.php:340
-msgid "Homepage Content"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:345
-msgid "Custom Content"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:348
-msgid "Add New"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:363
-msgid "Choose any category"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:368
-msgid "Image Category"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:369
-msgid "Category Image Thumbnail"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:374
+#: inc/customizer/fields/blog.php:347 inc/customizer/fields/blog.php:436
 msgid "Number of Posts"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:379
-msgid "Render Style"
+#: inc/customizer/fields/blog.php:355
+msgid "Ignore Sticky Posts"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:360
+msgid "Order"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:364
+msgid "Descending"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:364
+msgid "Ascending"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:369
+msgid "Order By"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:376
+msgid "No order"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:377
+msgid "ID"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:380
+msgid "Modified"
 msgstr ""
 
 #: inc/customizer/fields/blog.php:381
-msgid "List"
+msgid "Parent"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:381
-msgid "Grid"
+#: inc/customizer/fields/blog.php:382
+msgid "Random"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:385
-msgid "Choose column for Grid style."
+#: inc/customizer/fields/blog.php:383
+msgid "Comment Count"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:392
-msgid "Post Thumbnail"
+#: inc/customizer/fields/blog.php:396 inc/customizer/fields/blog.php:449
+msgid "Number of Columns"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:396
-msgid "Show Thumbnail"
+#: inc/customizer/fields/blog.php:402
+msgid "Homepage Content"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:401
-msgid "Image Alignment"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:405
-msgid "Center"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:411
-msgid "Image Postion"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:414
-msgid "Before Title"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:415
-msgid "After Title"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:421
-msgid "Post Content"
+#: inc/customizer/fields/blog.php:410
+msgid "Add New"
 msgstr ""
 
 #: inc/customizer/fields/blog.php:425
-msgid "Content Type"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:429
-msgid "Excerpt"
+msgid "Choose any category"
 msgstr ""
 
 #: inc/customizer/fields/blog.php:430
-msgid "None"
+msgid "Image Category"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:436
-msgid "Excerpt Length (words)"
+#: inc/customizer/fields/blog.php:431
+msgid "Category Image Thumbnail"
 msgstr ""
 
 #: inc/customizer/fields/blog.php:441
+msgid "Render Style"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:443
+msgid "List"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:443
+msgid "Grid"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:447
+msgid "Choose column for Grid style."
+msgstr ""
+
+#: inc/customizer/fields/blog.php:454
+msgid "Post Thumbnail"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:458
+msgid "Show Thumbnail"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:463
+msgid "Image Alignment"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:467
+msgid "Center"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:473
+msgid "Image Postion"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:476
+msgid "Before Title"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:477
+msgid "After Title"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:483
+msgid "Post Content"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:487
+msgid "Content Type"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:491
+msgid "Excerpt"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:492
+msgid "None"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:498
+msgid "Excerpt Length (words)"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:503
 msgid "Title Element"
 msgstr ""
 

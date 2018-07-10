@@ -11,7 +11,91 @@ class AzonBooster_Homepage_Output
 
 		add_filter( 'azonbooster_homepage_content_show', array( $this, 'show_homepage_content' ) );
 
-		add_action( 'azonbooster_homepage', array( $this, 'repeater_content'), 20 );
+		add_action( 'azonbooster_homepage', array( $this, 'featured_posts'), 20 );
+		add_action( 'azonbooster_homepage', array( $this, 'custom_content'), 50 );
+	}
+
+	/**
+	 * Featured posts onf Homepage
+	 *
+	 * @since 1.2.2
+	 * @return void
+	 */
+	public function featured_posts() {
+
+		$show_featured_posts = apply_filters( 'azonbooster_homepage_featured_posts_show', true );
+
+		// return back
+		if ( ! $show_featured_posts ) return;
+
+		$param['cat'] = azonbooster_get_option('homepage_featured_posts_cat_setting', 0);
+		$param['post_per_page'] = azonbooster_get_option( 'homepage_featured_posts_num_setting', 5 );
+		$param['ignore_sticky_posts'] = azonbooster_get_option( 'homepage_fp_ignore_sticky_posts_setting', true);
+		$param['order'] = azonbooster_get_option ( 'homepage_featured_posts_order_setting', 'DESC' );
+		$param['orderby'] = azonbooster_get_option ( 'homepage_featured_posts_orderby_setting', 'date' );
+
+
+		$posts = $this->get_posts( $param );
+
+		if ( ! empty( $posts ) ) { 
+			echo $this->render_featured_posts( $posts );
+		}
+	}
+
+	/**
+	 * Render featured posts on Homepage
+	 * 
+	 * @param  array $posts
+	 * @since 1.2.2
+	 * @return mixed
+	 */
+	public function render_featured_posts( $posts ) {
+		global $post;
+
+		$i = 1;
+		
+		ob_start();
+		?>
+		<div class="azb-featured-posts">
+		<?php
+		foreach ( $posts as $post ) :
+
+			setup_postdata( $post );
+
+			if ( $i == 1 ) :
+				?>
+				<div class="featured-posts-first">
+					<?php if ( has_post_thumbnail() ) : ?>
+						<div class="featured-posts-thumb">
+							<?php the_post_thumbnail('large'); ?>
+							<h3 class="featured-posts-title">
+							<a href="<?php the_permalink() ?>"><?php the_title() ?></a>
+							</h3>
+						</div>
+					<?php endif ?>
+				</div>
+				<div class="featured-posts-second">
+					<ul class="featured-posts-list">
+				<?php
+			else:
+				?>
+				<li><a href="<?php the_permalink() ?>"><?php the_title() ?></a></li>
+				<?php
+			endif;
+			
+			$i++;
+		endforeach;
+
+		?>
+				</ul> <!-- /.featured-posts-list -->
+			</div> <!-- /.featured-posts-second -->
+		</div> <!-- /.azb-featured-posts -->
+		<?php
+		wp_reset_postdata();
+
+		$content = ob_get_clean();
+
+		return $content;
 	}
 
 	/**
@@ -29,12 +113,12 @@ class AzonBooster_Homepage_Output
 	}
 
 	/**
-	 * Show homepage repeater content
+	 * Show homepage custom content
 	 *
 	 * @since 1.2.0
 	 * @return void
 	 */
-	public function repeater_content() {
+	public function custom_content() {
 
 		$contents = azonbooster_get_option( 'homepage_content_setting', array() );
 		$columns = azonbooster_get_option( 'homepage_content_col_setting', 2);
@@ -141,12 +225,22 @@ class AzonBooster_Homepage_Output
 	private function get_posts( $params ) {
 
 		$args = array(
-			'ignore_sticky_posts'	=> false,
+			'ignore_sticky_posts'	=> isset( $params['ignore_sticky_posts'] ) ? $params['ignore_sticky_posts'] : true,
 			'posts_per_page'	=> $params['post_per_page'],
 		);
 
-		if ( $params['cat'] > 0 ) {
+		if ( intval( $params['cat'] ) > 0 ) {
 			$args['cat'] = $params['cat'];
+		}
+
+		if ( isset( $params['order'] ) ) {
+
+			$args['order'] = $params['order'];
+		}
+
+		if ( isset( $params['orderby'] ) ) {
+			
+			$args['orderby'] = $params['orderby'];
 		}
 
 		$posts = get_posts( $args );

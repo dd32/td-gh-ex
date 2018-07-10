@@ -510,7 +510,7 @@ if ( ! function_exists( 'azonbooster_credit' ) ) {
 
 			<?php if ( apply_filters( 'azonbooster_enable_credit_link', true ) ) : ?>
 
-			<?php printf( esc_attr__( '&bull; Powered by %1$s.', 'azonbooster' ), $credit_url ); ?>
+			<?php printf( __( '&bull; <a href="%1$s">AzonBooster</a> Designed by  %2$s.', 'azonbooster' ), 'https://boosterwp.com', $credit_url ); ?>
 
 			<?php endif; ?>
 
@@ -763,8 +763,16 @@ if ( ! function_exists( 'azonbooster_homepage_content' ) ) {
 
 		while ( have_posts() ) {
 			the_post();
-
-			get_template_part( 'template-parts/content', 'homepage' );
+			?>
+			<div class="homepage-content">
+			<?php
+				azauthority_homepage_content_thumbnail();
+				azauthority_homepage_content_header();
+				azauthority_homepage_page_content();
+			?>
+			</div>
+			<?php
+			
 
 		} // end of the loop.
 	}

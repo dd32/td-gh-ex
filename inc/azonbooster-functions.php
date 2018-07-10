@@ -68,7 +68,7 @@ function azonbooster_category_list( $args = array(), $is_all = true ) {
 
 function azonbooster_credit_link() {
 
-	$attrs = array( "href" => "https://theconsumer.guide", "title" => "AzonBooster Theme - The Best Free Amazon Affiliate WordPress Themes", "rel" => "author", 'label' => "AzonBooster" );
+	$attrs = array( "href" => "https://theconsumer.guide", "title" => "BoosterWP Theme - The Best Free Amazon Affiliate WordPress Themes", "rel" => "author", 'label' => "BoosterWP" );
 	
 	$link = 'a';
 
