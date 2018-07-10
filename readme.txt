@@ -1,8 +1,8 @@
 === Beatrix Lite === 
 Contributors: wponlinesupport, anoopranawat
 Requires at least: WordPress 4.5
-Tested up to: WordPress 4.9.5
-Version: 1.0.3
+Tested up to: WordPress 4.9.7
+Version: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: footer-widgets, custom-menu, featured-images, post-formats, sticky-post, threaded-comments, translation-ready, blog,  right-sidebar, two-columns
@@ -23,7 +23,7 @@ Built on the latest technology of WordPress, Beatrix Lite is lightweight, fast a
 
 == Copyright ==
 
-Beatrix Lite WordPress Theme, Copyright 2017 Plugin & Play
+Beatrix Lite WordPress Theme, Copyright 2018 WP Online Support
 Beatrix Lite is Distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -50,6 +50,9 @@ Images for screenshot
 Images license : Creative Commons Zero (CC0) license (https://www.pexels.com/photo-license/)
 
 == Changelog ==
+
+= 1.0.4 =
+* Fixed some issues reported by TR team
 
 = 1.0.3 =
 * Fixed 404 and serach page design issue.

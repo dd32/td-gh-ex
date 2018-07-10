@@ -10,7 +10,7 @@
 
 // Defining Some Variable
 if( !defined( 'BEATRIX_LITE_VERSION' ) ) {
-	define('BEATRIX_LITE_VERSION', '1.0.3'); // Theme Version
+	define('BEATRIX_LITE_VERSION', '1.0.4'); // Theme Version
 }
 if( !defined( 'BEATRIX_LITE_DIR' ) ) {
 	define( 'BEATRIX_LITE_DIR', get_template_directory() ); // Theme dir
@@ -176,10 +176,6 @@ require_once( BEATRIX_LITE_DIR . '/includes/class-beatrix-script.php' );
 
 // Theme Dynemic CSS
 require_once( BEATRIX_LITE_DIR . '/includes/beatrix-theme-css.php' );
-
-// Enable shortcodes in text widgets
-add_filter('widget_text','do_shortcode');
-
 
 /**
  * Load tab dashboard

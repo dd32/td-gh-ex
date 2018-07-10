@@ -14,7 +14,7 @@ get_header();   ?>
 
 			<section class="error-404 not-found">
 				<div class="error-image">
-					<img alt="<?php esc_html_e( '404', 'beatrix-lite' ); ?>" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/404.png' ); ?>" />
+					<img alt="<?php esc_attr_e( '404', 'beatrix-lite' ); ?>" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/404.png' ); ?>" />
 				</div>
 				<div class="page-content">
 					<p><?php esc_html_e( "OOPS! Page you're looking for doesn't exist. Please use search for help", 'beatrix-lite' ); ?></p>
