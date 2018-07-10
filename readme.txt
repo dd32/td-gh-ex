@@ -52,9 +52,9 @@ Best Construction is distributed under the terms of the GNU General Public Licen
      Source:  http://opensource.org/licenses/gpl-2.0.php  
 
 
-    default.jpg, Copyright Pexels.com
+    default.jpg, Copyright Pixabay.com
     License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://www.pexels.com/photo/apartment-architecture-balcony-building-347141/
+    Source: https://pixabay.com/en/london-england-great-britain-uk-2393098/
 
 
     screenshot.jpg, Copyright Pixabay.com
@@ -69,7 +69,8 @@ Theta provides support at https://www.coothemes.com/forum/theta-theme/best-const
 
 
 === Changelog ===
-
+=version 1.0.1 20180710=
+*update default.jpg
 
 =version 1.0.0 20180622=
 
