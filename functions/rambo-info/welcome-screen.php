@@ -23,7 +23,6 @@ class rambo_screen {
 
 		/* load welcome screen */
 		add_action( 'rambo_info_screen', array( $this, 'rambo_getting_started' ), 	    10 );
-		add_action( 'rambo_info_screen', array( $this, 'rambo_action_required' ), 	    20 );
 		add_action( 'rambo_info_screen', array( $this, 'rambo_upgrade' ), 		        40 );
 		add_action( 'rambo_info_screen', array( $this, 'rambo_welcome_free_pro' ), 		50 );
 		add_action( 'rambo_info_screen', array( $this, 'rambo_child_themes' ), 		    50 );
@@ -44,9 +43,6 @@ class rambo_screen {
 
 		if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
 			add_action( 'admin_notices', array( $this, 'rambo_admin_notice' ), 99 );
-			add_action( 'admin_notices', array( $this, 'rambo_admin_video_notice' ), 99 );
-			add_action( 'admin_notices', array( $this, 'rambo_admin_import_notice' ), 99 );
-			
 		}
 	}
 
@@ -55,29 +51,37 @@ class rambo_screen {
 	 * @sfunctionse 1.8.2.4
 	 */
 	public function rambo_admin_notice() {
+            $theme_info = wp_get_theme();
 		?>
-			<div class="updated notice notice-success notice-alt is-dismissible">
-				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing Rambo Theme! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'rambo' ), '<a href="' . esc_url( admin_url( 'themes.php?page=rambo-info' ) ) . '">', '</a>' ); ?></p>
+			<div class="updated notice is-dismissible rambo-notice">
+			<h1><?php 
+			printf( esc_html__( 'Welcome to %1$s - Version %2$s', 'rambo' ), esc_html( $theme_info->Name ), esc_html( $theme_info->Version ) ); ?>
+			</h1>
+				<p><?php echo sprintf( esc_html__( "Welcome! Thank you for choosing Webriti's Rambo WordPress theme. To take full advantage of the features this theme has to offer visit our %swelcome page%s.", "rambo"), '<a href="' . esc_url( admin_url( 'themes.php?page=rambo-info' ) ) . '">', '</a>' ); ?></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=rambo-info' ) ); ?>" class="button button-blue-secondary button_quality" style="text-decoration: none;"><?php _e( 'Get started with Rambo', 'rambo' ); ?></a></p>
 			</div>
+			<style>
+			.rambo-notice {
+			background: #e9eff3 !important;
+			border: 10px solid #fff !important;
+			color: #608299 !important;
+			padding: 30px 10px !important;
+			text-align: center !important;
+			box-shadow: none !important;
+			text-align: center !important;
+			padding: 25px !important;
+			position: relative !important;
+			}
+			
+			.button_quality{   
+      			font-size: 14px!important;
+				height: 46px!important;
+				line-height: 44px!important;
+				padding: 0 36px!important;}
+			</style>
 		<?php
-	}
 	
-	function rambo_admin_import_notice(){
-    ?>
-    <div class="updated notice notice-success notice-alt is-dismissible">
-        <p><?php printf( esc_html__( 'Save time by importing our demo data and make your site ready in minutes. %s', 'rambo' ), '<a class="button button-secondary" href="'.esc_url( add_query_arg( array( 'page' => 'rambo-info#demo_import' ), admin_url( 'themes.php' ) ) ).'">'.esc_html__( 'Import Demo Data', 'rambo' ).'</a>'  ); ?></p>
-    </div>
-    <?php
-}
-
-public function rambo_admin_video_notice() {
-		?>
-			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__('Walkthrough our step by step video series for setting front page sections. %sClick here to watch%s', 'rambo' ), 
-				'<a href="' . esc_url( 'http://webriti.com/rambo-theme-video-documentation/' ). '">', '</a>' ); ?></p>
-			</div>
-		<?php
-}
+	}
 
 	/**
 	 * Load welcome screen css and javascript
@@ -225,7 +229,6 @@ public function rambo_admin_video_notice() {
 		<div class="col-md-12">
 		<ul class="rambo-nav-tabs" role="tablist">
 			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting Started','rambo'); ?></a></li>
-			<li role="presentation"><a href="#actions_required" aria-controls="actions_required" role="tab" data-toggle="tab"><?php esc_html_e( 'Actions Required','rambo'); ?></a></li>
 			<li role="presentation"><a href="#upgrade" aria-controls="upgrade" role="tab" data-toggle="tab"><?php esc_html_e( 'Why Upgrade Pro','rambo'); ?></a></li>
 			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free VS PRO','rambo'); ?></a></li>
 			<li role="presentation"><a href="#child_themes" aria-controls="child_themes" role="tab" data-toggle="tab"><?php esc_html_e( 'Child Themes','rambo'); ?></a></li>
@@ -251,15 +254,6 @@ public function rambo_admin_video_notice() {
 	 */
 	public function rambo_getting_started() {
 		require_once( get_template_directory() . '/functions/rambo-info/sections/getting-started.php' );
-	}
-
-	
-	/**
-	 * Action Requerd
-	 *
-	 */
-	public function rambo_action_required() {
-		require_once( get_template_directory() . '/functions/rambo-info/sections/actions-required.php' );
 	}
 	
 	

@@ -6,7 +6,7 @@ get_header();
     <div class="row-fluid about_space">
 	 <div class="span8">
       <h2 class="page_head">
-			<?php  the_title(); ?>
+			<?php esc_attr_e('Shop','rambo' ); ?>
 	  </h2>
 	  </div>
 	  <div class="span4">

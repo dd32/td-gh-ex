@@ -10,9 +10,11 @@
  *-----------------------------------------------------------------------------------*/ 
 function theme_data_setup()
 {
+	
+	$portfolio_image = WEBRITI_TEMPLATE_DIR_URI . "/images/project";
+	$slider_image = WEBRITI_TEMPLATE_DIR_URI . "/images/slider.jpg";
 	return $rambo_pro_theme_options  = array(
 			//Logo and Fevicon header			
-			'layout_selector' => 'wide',
 			'rambopro_stylesheet'=>'default.css',			
 			'upload_image_logo'=>'',
 			'height'=>'50',
@@ -35,9 +37,15 @@ function theme_data_setup()
 			'site_intro_column_layout' => 1,
 			'site_intro_bottom_column_layout'=> 1,
 			
-			//Slide 	
+			//Slide
 			'home_slider_enabled'=>true,
-			'slider_post' => '',
+			'slider_post' => $slider_image,
+			'slider_title' => __('Responsive WP theme','rambo'),
+			'slider_text' => 'We are a group of passionate designers and developers who really love creating awesome WordPress themes & giving support.',
+			'slider_readmore_text' => __('Read More','rambo'),
+			'readmore_text_link' => '#',
+			'readmore_target' => false,
+			
 			
 			// service
 			'home_service_enabled'=>false,
@@ -46,11 +54,10 @@ function theme_data_setup()
 			// project 
 			'home_projects_enabled' => false,
 			'project_protfolio_enabled'=>false,
-			'project_heading_one'=> '',
-			'project_protfolio_tag_line'=>'',
-			'project_tagline' =>'',
+			'project_heading_one'=> __('Featured Portfolio Projects','rambo'),
+			'project_tagline'=>'Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.',
 			// home project 
-			 'project_list'=>4,
+			'project_list'=>4,
 			
 			//home latest news
 			'post_display_count' => 3,
@@ -69,17 +76,17 @@ function theme_data_setup()
 			
 			
 			// site intro info 			
-			'site_intro_descritpion' =>'',
-			'site_intro_button_text'=>'',
+			'site_intro_descritpion' => __('Rambo is a clean and fully responsive Template.','rambo'),
+			'site_intro_button_text'=> __('Purchase Now','rambo'),
 			'site_intro_button_link'=>'#',
 			'intro_button_target'=>true,
 			
 			// Service section
 			'service_section_title'=>'',
-			'service_section_descritpion'=>'',
+			'service_section_descritpion'=> __('Check out our Main Services which we offer to every client','rambo'),
 			
 			/** footer customization **/
-			'footer_copyright' => sprintf(__('Copyright @ 2014 - RAMBO. Designed by <a href="http://webriti.com" rel="nofollow" target="_blank"> Webriti</a>','rambo')),
+			'footer_copyright' => sprintf(__('Copyright @ 2018 - RAMBO. Designed by <a href="http://webriti.com" rel="nofollow" target="_blank"> Webriti</a>','rambo')),
 
 			/* Footer social media */
 			'footer_social_media_enabled'=>false,
@@ -99,55 +106,35 @@ function theme_data_setup()
 			'social_media_google_plus' =>"#",
 			
 			//Service Layout
-			'service_section_title'=> '',
-			'service_section_description' => '',
+			'service_section_title'=> __('Our Services','rambo'),
+			'service_section_description' => __('Check out our Main Services which we offer to every client','rambo'),
 			'service_column_layout'=> 4,
 			
 			//Project Layout
 			'project_column_layout'  => 4,
 
 			//News Column Layout
-			'$news_column_layout' => 3,
-			
-			
-			//Old Default Data
-			
-			// service
-			'home_service_enabled'=>false,
-			'home_service_one_icon'=>'',
-			'home_service_one_title'=>'',
-			'home_service_one_description'=> '',
-			
-			'home_service_two_icon'=>'',
-			'home_service_two_title'=>'',
-			'home_service_two_description'=> '',
-			
-			'home_service_three_icon'=>'',
-			'home_service_three_title'=>'',
-			'home_service_three_description'=>'',
-			
-			'home_service_fourth_icon'=>'',
-			'home_service_fourth_title'=>'',
-			'home_service_fourth_description'=>'',
+			'news_column_layout' => 3,
+			'latest_news_title' => __('Latest News','rambo'),
 			
 			
 			//Projects Section Settings
 			'home_projects_enabled' => true,
-			'project_one_thumb' => '',
-			'project_one_title' => '',
-			'project_one_text' => '',
+			'project_one_thumb' => $portfolio_image .'/port1.jpg',
+			'project_one_title' => __('Mobile Apps','rambo'),
+			'project_one_text' => 'A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";',
 		
-		    'project_two_thumb' => '',
-			'project_two_title' => '',
-			'project_two_text' => '',
+		    'project_two_thumb' => $portfolio_image .'/port2.jpg',
+			'project_two_title' => __('Super Baby','rambo'), 
+			'project_two_text' => 'A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";',
 			
-			'project_three_thumb' => '',
-			'project_three_title' => '',
-			'project_three_text' => '',
+			'project_three_thumb' => $portfolio_image .'/port3.jpg',
+			'project_three_title' => __('Coffee Break','rambo'),
+			'project_three_text' => 'A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";',
 			
-			'project_four_thumb' => '',
-			'project_four_title' => '',
-			'project_four_text' => '',
+			'project_four_thumb' => $portfolio_image .'/port4.jpg',
+			'project_four_title' => __('Beautiful Birds','rambo'),
+			'project_four_text' => 'A set of pieces of creative work collected to be shown to potential customers or employers; "the artist had put together a portfolio of his work";',
 
 		);
 }

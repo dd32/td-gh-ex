@@ -35,7 +35,7 @@
 							<span class="theme-name"><?php _e('Redify','rambo'); ?></span>
 							<span class="theme-btn">
 							<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=redify' ), 'install-theme_redify' ) ); ?>" class="button button-primary"><?php printf( __( 'Install %s now', 'rambo' ), '<span class="screen-reader-text">redify</span>' ); ?></a>
-							<a class="button button-secondary" target="_blank" href="http://webriti.com/demo/wp/lite/dreamspa/"><?php esc_html_e( 'Live Preview','rambo'); ?></a>
+							<a class="button button-secondary" target="_blank" href="https://webriti.com/demo/wp/lite/rambo/"><?php esc_html_e( 'Live Preview','rambo'); ?></a>
 							</span>
 							<div class="rambo-clear"></div>
 						</div>
@@ -67,7 +67,7 @@
 							<span class="theme-name"><?php _e('Mambo','rambo'); ?></span>
 							<span class="theme-btn">
 							<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=mambo' ), 'install-theme_mambo' ) ); ?>" class="button button-primary"><?php printf( __( 'Install %s now', 'rambo' ), '<span class="screen-reader-text">mambo</span>' ); ?></a>
-							<a class="button button-secondary" target="_blank" href="http://webriti.com/demo/wp/lite/dreamspa/"><?php esc_html_e( 'Live Preview','rambo'); ?></a>
+							<a class="button button-secondary" target="_blank" href="https://webriti.com/demo/wp/lite/rambo/"><?php esc_html_e( 'Live Preview','rambo'); ?></a>
 							</span>
 							<div class="rambo-clear"></div>
 						</div>
@@ -99,7 +99,7 @@
 							<span class="theme-name"><?php _e('Spicy','rambo'); ?></span>
 							<span class="theme-btn">
 							<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=spicy' ), 'install-theme_spicy' ) ); ?>" class="button button-primary"><?php printf( __( 'Install %s now', 'rambo' ), '<span class="screen-reader-text">spicy</span>' ); ?></a>
-							<a class="button button-secondary" target="_blank" href="https://wp-themes.com/spicy/"><?php esc_html_e( 'Live Preview','rambo'); ?></a>
+							<a class="button button-secondary" target="_blank" href="https://webriti.com/demo/wp/lite/rambo/"><?php esc_html_e( 'Live Preview','rambo'); ?></a>
 							</span>
 							<div class="rambo-clear"></div>
 						</div>
@@ -132,7 +132,7 @@
 							<span class="theme-name"><?php _e('WorkPress','rambo'); ?></span>
 							<span class="theme-btn">
 							<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=workpress' ), 'install-theme_workpress' ) ); ?>" class="button button-primary"><?php printf( __( 'Install %s now', 'rambo' ), '<span class="screen-reader-text">workpress</span>' ); ?></a>
-							<a class="button button-secondary" target="_blank" href="https://wp-themes.com/workpress/"><?php esc_html_e( 'Live Preview','rambo'); ?></a>
+							<a class="button button-secondary" target="_blank" href="https://webriti.com/demo/wp/lite/rambo/"><?php esc_html_e( 'Live Preview','rambo'); ?></a>
 							</span>
 							<div class="rambo-clear"></div>
 						</div>

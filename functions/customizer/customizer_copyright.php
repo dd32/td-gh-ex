@@ -17,7 +17,7 @@ function rambo_copyright_customizer( $wp_customize ) {
 	
 	$wp_customize->add_setting('rambo_pro_theme_options[footer_copyright]', array(
         'sanitize_callback' => 'rambo_copyright_sanitize_html',
-		'default'        => sprintf(__('Copyright @ 2014 - RAMBO. Designed by <a href="http://webriti.com" rel="nofollow" target="_blank"> Webriti</a>','rambo')),
+		'default'        => sprintf(__('Copyright @ 2018 - RAMBO. Designed by <a href="http://webriti.com" rel="nofollow" target="_blank"> Webriti</a>','rambo')),
         'capability'     => 'edit_theme_options',
 		'type'=> 'option',
 		

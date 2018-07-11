@@ -1,8 +1,6 @@
 <?php
 /*	* @Theme Name	:	Rambopro
 	* @file         :	404.php
-	* @package      :	Rambopro
-	* @author       :	Hari Maliya
 	* @license      :	license.txt
 	* @filesource   :	wp-content/themes/rambo-pro/404.php
 */

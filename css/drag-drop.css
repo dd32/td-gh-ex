@@ -135,9 +135,7 @@ list-style-type: none;
     border-radius: 2px;
  }
  
-.customize-control-checkbox label, .customize-control-nav_menu_auto_add label, .customize-control-radio label{display:inline !important;margin-left: 0px !important;}
-.customize-control-checkbox input, .customize-control-nav_menu_auto_add input, .customize-control-radio input{margin-left: 0px !important;}
-
+#accordion-section-rambo_help_section .accordion-section-title, #accordion-section-rambo_help_section .accordion-section-title:hover  { background: #db2723 !important; color:#fff !important; }
 #accordion-section-rambo_help_section .accordion-section-title, #accordion-section-rambo_help_section .accordion-section-title:hover  { background: #db2723 !important; color:#fff !important; }
 
 #accordion-section-rambo_help_section .accordion-section-title:after, #accordion-section-rambo_pro_section .accordion-section-title:after, 

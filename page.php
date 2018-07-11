@@ -32,15 +32,6 @@ get_template_part('banner','strip');?>
 				<?php the_post_thumbnail('', $defalt_arg); ?>
 			</a>
 			<?php endif;?>
-			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-			<?php if (!class_exists( 'WooCommerce' ) ) {?>
-			<div class="blog_section2_comment">
-			<a href="<?php the_permalink(); ?>"><i class="fa fa-calendar icon-spacing"></i><?php the_time('M j,Y');?></a>
-			<a class="post-comment" href="<?php the_permalink(); ?>"><i class="fa fa-comments icon-spacing"></i><?php comments_popup_link( __('Leave a comment','rambo' ) ); ?></a>
-			<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><i class="fa fa-user icon-spacing"></i> <?php _e('By','rambo');?>&nbsp;<?php the_author();?></a>
-			</div>
-			<?php }?>
-			
 			<?php  the_content( __('Read More','rambo') ); ?>
 			</div>
 			<?php comments_template( '', true );?>

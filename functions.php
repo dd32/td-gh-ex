@@ -30,8 +30,6 @@
 	
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/rambo-sidebar-latest-news.php' ); //for sidebar Latest News custom widgets	
 	
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/rambo-recent-news-widget.php' ); //for news widget
-	
 	
 	//Customizer
 	
@@ -47,13 +45,11 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_import_data.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_emailcourse.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer.php' );
+	
 	
 	// Rambo Info Page
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/rambo-info/welcome-screen.php');
-	
-	// Rambo Demo Image
-	require_once( get_template_directory() . '/rambo-demo-image/rambo-prevdem.php' );
-	
 	
 	//require( WEBRITI_THEME_FUNCTIONS_PATH . '/excerpt/excerpt.php' ); // for Excerpt Length
 	
@@ -201,6 +197,25 @@ if ( in_array( $plugin , $pluginList ) ) {
 }
 add_action( 'deactivated_plugin', 'rambo_one_click_demo_import_detect_plugin_deactivation');
 
+function wc_hide_page_title()
+{
+    if( !is_shop() ) // is_shop is the conditional tag
+        return true;
+}
+add_filter( 'woocommerce_show_page_title', 'wc_hide_page_title' );
 
+add_action('admin_head', 'my_custom_fonts');
+
+function my_custom_fonts() {
+  echo '<style>
+    #sidebar-service {
+    display: none !important;
+}
+#site-intro-area {
+    display: none !important;
+}
+
+  </style>';
+}
 
 ?>

@@ -28,12 +28,6 @@ function rambo_scripts()
 	}
 	add_action( 'wp_enqueue_scripts', 'rambo_scripts' );
 	
-	function rambo_registers() {
-
-	wp_enqueue_script( 'rambo_customizer_script', get_template_directory_uri() . '/js/rambo_customizer.js', array("jquery"), '20120206', true  );
-}
-add_action( 'customize_controls_enqueue_scripts', 'rambo_registers' );	
-
 add_action( 'admin_enqueue_scripts', 'rambo_enqueue_script_function' );
 	function rambo_enqueue_script_function()
 	{

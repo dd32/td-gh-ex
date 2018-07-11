@@ -11,16 +11,16 @@ $image_uri= WEBRITI_TEMPLATE_DIR_URI. '/images' ;
 		<div class="span8 Blog_main">
 			<?php 
 				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-				$args = array( 'post_type' => 'post','paged'=>$paged);		
-				$post_type_data = new WP_Query( $args );
-					while($post_type_data->have_posts()):
-					$post_type_data->the_post();
-					global $more;
-					$more = 0;?>
+                $args = array( 'post_type' => 'post','paged'=>$paged);        
+                $post_type_data = new WP_Query( $args );
+                while($post_type_data->have_posts()){
+                $post_type_data->the_post();
+                global $more;
+                $more = 0;?>
 			<div class="blog_section2" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<?php $defalt_arg =array('class' => "img-responsive blog_section2_img" )?>
 					<?php if(has_post_thumbnail()):?>
-					<a  href="<?php the_permalink(); ?>" class="pull-left blog_pull_img2">
+					<a  href="<?php the_permalink(); ?>" class="pull-left blog_pull_img2 img-responsive">
 					<?php the_post_thumbnail('', $defalt_arg); ?>
 					</a>
 					<?php endif;?>
@@ -39,8 +39,19 @@ $image_uri= WEBRITI_TEMPLATE_DIR_URI. '/images' ;
 					</p>
 					<?php }  ?>
 			</div><?php wp_link_pages( $args ); ?>
-			<?php endwhile ?>
-			<?php rambo_post_pagination(); // call post pagination ?>
+				<?php } ?>
+			
+		    <div class="pagination_section">	
+		        <div class="pagination text-center">
+				<ul>
+				  <?php $GLOBALS['wp_query']->max_num_pages = $post_type_data->max_num_pages;
+               the_posts_pagination( array(
+                'prev_text'          => '<i class="fa fa-angle-double-left"></i>',
+                'next_text'          => '<i class="fa fa-angle-double-right"></i>',
+                ) ); ?>
+				</ul>
+                </div>          
+            </div>
 		</div>
 	</div>
 </div>

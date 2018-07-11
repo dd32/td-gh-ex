@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Rambo\n"
-"POT-Creation-Date: 2017-07-21 16:46+0530\n"
-"PO-Revision-Date: 2017-07-21 16:46+0530\n"
+"POT-Creation-Date: 2018-07-09 14:35+0530\n"
+"PO-Revision-Date: 2018-07-09 14:34+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.0.5\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -21,11 +21,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:16 banner-strip.php:33
+#: 404.php:14 banner-strip.php:33
 msgid "Oops! Page not found"
 msgstr ""
 
-#: 404.php:18
+#: 404.php:16
 msgid "We are sorry, but the page you are looking for does not exist."
 msgstr ""
 
@@ -55,24 +55,25 @@ msgstr ""
 msgid "Go"
 msgstr ""
 
-#: archive.php:66 author.php:55 blog-left-sidebar.php:31 category.php:56
-#: index.php:32 page.php:39 search.php:19 single.php:19 tag.php:55
+#: archive.php:66 author.php:55 blog-left-sidebar.php:31 category.php:55
+#: index.php:34 search.php:19 single.php:19 tag.php:55
 msgid "Leave a comment"
 msgstr ""
 
-#: archive.php:67 author.php:56 blog-left-sidebar.php:32 category.php:57
-#: functions/template-tags.php:10 index.php:33 page.php:40 search.php:20
-#: single.php:20 tag.php:56
+#: archive.php:67 author.php:56 blog-left-sidebar.php:32 category.php:56
+#: functions/template-tags.php:10 index.php:35 search.php:20 single.php:20
+#: tag.php:56
 msgid "By"
 msgstr ""
 
-#: archive.php:73 author.php:62 blog-left-sidebar.php:38 category.php:63
-#: index.php:39 tag.php:62
+#: archive.php:73 author.php:62 blog-left-sidebar.php:38 category.php:62
+#: index.php:41 tag.php:62
 msgid "Tags"
 msgstr ""
 
-#: archive.php:78 author.php:67 blog-left-sidebar.php:34 category.php:68
-#: fullwidth.php:16 index.php:35 page.php:44 single.php:22 tag.php:66
+#: archive.php:78 author.php:67 blog-left-sidebar.php:34 category.php:67
+#: fullwidth.php:16 index-service.php:189 index.php:37 page.php:35
+#: single.php:22 tag.php:66 theme_setup_data.php:45
 msgid "Read More"
 msgstr ""
 
@@ -86,7 +87,7 @@ msgstr ""
 msgid "Search results for %s"
 msgstr ""
 
-#: category.php:35
+#: category.php:14
 msgid "Category Archive"
 msgstr ""
 
@@ -144,15 +145,15 @@ msgstr ""
 msgid "WordPress"
 msgstr ""
 
-#: functions.php:76
+#: functions.php:73
 msgid "Page"
 msgstr ""
 
-#: functions.php:112
+#: functions.php:109
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:135
+#: functions.php:132
 msgid ""
 "Click the big blue button to start the dummy data import process.</br></"
 "br>Please be patient while WordPress imports all the content.</br></br>\n"
@@ -177,15 +178,221 @@ msgid "Import Dummy Data"
 msgstr ""
 
 #: functions/custom_control/class-dummy-import-control.php:13
-#: functions/rambo-info/welcome-screen.php:68
 #, php-format
 msgid ""
 "Save time by importing our demo data and make your site ready in minutes. %s"
 msgstr ""
 
 #: functions/custom_control/class-dummy-import-control.php:13
-#: functions/rambo-info/welcome-screen.php:68
 msgid "Import Demo Data"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:38
+msgid "Add new field"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:43
+msgid "Customizer Repeater"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:306
+#: functions/customizer-repeater/class/customizer-repeater-control.php:506
+#: functions/customizer/customizer_project.php:41
+#: functions/customizer/customizer_project.php:88
+#: functions/customizer/customizer_project.php:134
+#: functions/customizer/customizer_project.php:180
+#: functions/customizer/customizer_project.php:226
+#: functions/customizer/customizer_recent_news.php:40
+#: functions/customizer/customizer_service_panel.php:43
+#: functions/customizer/customizer_slider_panel.php:82
+#: functions/widget/rambo-sidebar-latest-news.php:74
+msgid "Title"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:313
+#: functions/customizer-repeater/class/customizer-repeater-control.php:513
+msgid "Subtitle"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:320
+#: functions/customizer-repeater/class/customizer-repeater-control.php:520
+#: functions/customizer/customizer_project.php:57
+#: functions/customizer/customizer_project.php:103
+#: functions/customizer/customizer_project.php:149
+#: functions/customizer/customizer_project.php:195
+#: functions/customizer/customizer_project.php:241
+#: functions/customizer/customizer_service_panel.php:57
+#: functions/customizer/customizer_site_intro.php:25
+#: functions/customizer/customizer_slider_panel.php:100
+#: functions/widget/rambo-site-intro-widget.php:74
+msgid "Description"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:329
+#: functions/customizer-repeater/class/customizer-repeater-control.php:528
+#: functions/customizer/customizer_site_intro.php:44
+#: functions/customizer/customizer_slider_panel.php:117
+#: functions/widget/rambo-site-intro-widget.php:77
+msgid "Button Text"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:340
+#: functions/customizer-repeater/class/customizer-repeater-control.php:539
+msgid "Banner Title"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:350
+#: functions/customizer-repeater/class/customizer-repeater-control.php:549
+msgid "Banner Subtitle"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:360
+#: functions/customizer-repeater/class/customizer-repeater-control.php:559
+msgid "Banner Description"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:370
+#: functions/customizer-repeater/class/customizer-repeater-control.php:569
+msgid "Banner Call Title"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:380
+msgid "Banner Call number"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:391
+#: functions/customizer-repeater/class/customizer-repeater-control.php:590
+#: functions/customizer-repeater/class/customizer-repeater-control.php:779
+#: functions/customizer-repeater/class/customizer-repeater-control.php:801
+msgid "Link"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:410
+#: functions/customizer-repeater/class/customizer-repeater-control.php:608
+msgid "Video Url"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:434
+#: functions/customizer-repeater/class/customizer-repeater-control.php:498
+msgid "Color"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:444
+#: functions/customizer-repeater/class/customizer-repeater-control.php:619
+msgid "Shortcode"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:452
+#: functions/customizer-repeater/class/customizer-repeater-control.php:628
+msgid "Designation"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:468
+#: functions/customizer-repeater/class/customizer-repeater-control.php:639
+msgid "Delete field"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:579
+msgid "Banner Call Number"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:676
+msgid "Open link in new tab:"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:687
+#: functions/customizer-repeater/class/customizer-repeater-control.php:755
+msgid "Icon"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:692
+#, php-format
+msgid ""
+"Note: Some icons may not be displayed here. You can see the full list of "
+"icons at %1$s."
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:693
+msgid "http://fontawesome.io/icons/"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:710
+#: functions/customizer-repeater/class/customizer-repeater-control.php:756
+#: functions/customizer/customizer_project.php:71
+#: functions/customizer/customizer_project.php:117
+#: functions/customizer/customizer_project.php:163
+#: functions/customizer/customizer_project.php:209
+#: functions/customizer/customizer_slider_panel.php:62
+msgid "Image"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:713
+msgid "Upload Image"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:722
+msgid "Slide Format"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:726
+msgid "Standard"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:730
+msgid "Aside"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:734
+msgid "Quote"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:738
+msgid "Status"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:742
+msgid "Video"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:752
+msgid "Image type"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:757
+msgid "None"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:765
+msgid "Social icons"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:782
+#: functions/customizer-repeater/class/customizer-repeater-control.php:812
+msgid "Remove Icon"
+msgstr ""
+
+#: functions/customizer-repeater/class/customizer-repeater-control.php:787
+#: functions/customizer-repeater/class/customizer-repeater-control.php:820
+msgid "Add Icon"
+msgstr ""
+
+#: functions/customizer/customizer.php:41 index-service.php:60
+#: index-service.php:184
+msgid "Incredibly Flexible"
+msgstr ""
+
+#: functions/customizer/customizer.php:52
+msgid "fa fa-cogst"
+msgstr ""
+
+#: functions/customizer/customizer.php:63 index-service.php:82
+#: index-service.php:184
+msgid "Easy To Use"
+msgstr ""
+
+#: functions/customizer/customizer.php:74 index-service.php:93
+#: index-service.php:184
+msgid "Responsive Design"
 msgstr ""
 
 #: functions/customizer/customizer_copyright.php:8
@@ -197,9 +404,9 @@ msgstr ""
 msgid "Copyright text"
 msgstr ""
 
-#: functions/customizer/customizer_copyright.php:20 theme_setup_data.php:82
+#: functions/customizer/customizer_copyright.php:20 theme_setup_data.php:89
 msgid ""
-"Copyright @ 2014 - RAMBO. Designed by <a href=\"http://webriti.com\" rel="
+"Copyright @ 2018 - RAMBO. Designed by <a href=\"http://webriti.com\" rel="
 "\"nofollow\" target=\"_blank\"> Webriti</a>"
 msgstr ""
 
@@ -282,108 +489,136 @@ msgid ""
 msgstr ""
 
 #: functions/customizer/customizer_project.php:8
-msgid "Project section"
+msgid "Project settings"
 msgstr ""
 
-#: functions/customizer/customizer_project.php:15
-#: functions/customizer/customizer_recent_news.php:14
-#: functions/customizer/customizer_service_panel.php:16
-#: functions/customizer/customizer_site_intro.php:12
-#: functions/customizer/customizer_slider_panel.php:24
-msgid "Settings"
-msgstr ""
-
-#: functions/customizer/customizer_project.php:29
+#: functions/customizer/customizer_project.php:22
 msgid "Hide project section"
 msgstr ""
 
-#: functions/customizer/customizer_project.php:43
-#: functions/customizer/customizer_service_panel.php:44
-#: functions/customizer/customizer_site_intro.php:26
-msgid "Select column layout"
+#: functions/customizer/customizer_project.php:33 theme_setup_data.php:57
+msgid "Featured Portfolio Projects"
 msgstr ""
 
-#: functions/customizer/customizer_project.php:51
-#: functions/customizer/customizer_service_panel.php:51
-msgid "Section Header"
+#: functions/customizer/customizer_project.php:82
+#: functions/customizer/customizer_project.php:220 theme_setup_data.php:124
+msgid "Mobile Apps"
 msgstr ""
 
-#: functions/customizer/customizer_project.php:68
-#: functions/customizer/customizer_service_panel.php:66
-#: functions/widget/rambo-recent-news-widget.php:86
-#: functions/widget/rambo-sidebar-latest-news.php:74
-msgid "Title"
+#: functions/customizer/customizer_project.php:128 theme_setup_data.php:128
+msgid "Super Baby"
 msgstr ""
 
-#: functions/customizer/customizer_project.php:84
-#: functions/customizer/customizer_service_panel.php:80
-#: functions/widget/rambo-site-intro-widget.php:74
-msgid "Description"
+#: functions/customizer/customizer_project.php:174 theme_setup_data.php:132
+msgid "Coffee Break"
 msgstr ""
 
-#: functions/customizer/customizer_recent_news.php:7
-msgid "News section"
+#: functions/customizer/customizer_project.php:257
+msgid "Want to add more projects and categorisations? Then upgrade to Pro."
 msgstr ""
 
-#: functions/customizer/customizer_recent_news.php:28
+#: functions/customizer/customizer_project.php:260
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: functions/customizer/customizer_recent_news.php:8
+msgid "Latest news settings"
+msgstr ""
+
+#: functions/customizer/customizer_recent_news.php:23
 msgid "Hide news section"
 msgstr ""
 
-#: functions/customizer/customizer_recent_news.php:47
-msgid "Show slider post in latest news"
+#: functions/customizer/customizer_recent_news.php:32
+#: functions/widget/rambo-sidebar-latest-news.php:69 theme_setup_data.php:118
+msgid "Latest News"
 msgstr ""
 
-#: functions/customizer/customizer_service_panel.php:9
-msgid "Service section"
+#: functions/customizer/customizer_service_panel.php:14
+msgid "Service settings"
 msgstr ""
 
-#: functions/customizer/customizer_service_panel.php:30
+#: functions/customizer/customizer_service_panel.php:28
 msgid "Hide service section"
 msgstr ""
 
-#: functions/customizer/customizer_site_intro.php:5
-msgid "Call to action top"
+#: functions/customizer/customizer_service_panel.php:35
+#: theme_setup_data.php:109
+msgid "Our Services"
 msgstr ""
 
-#: functions/customizer/customizer_slider_panel.php:7
+#: functions/customizer/customizer_service_panel.php:50 theme_setup_data.php:86
+#: theme_setup_data.php:110
+msgid "Check out our Main Services which we offer to every client"
+msgstr ""
+
+#: functions/customizer/customizer_service_panel.php:68
+msgid "Service content"
+msgstr ""
+
+#: functions/customizer/customizer_service_panel.php:71
+msgid "Add new Service"
+msgstr ""
+
+#: functions/customizer/customizer_service_panel.php:72
+msgid "Service"
+msgstr ""
+
+#: functions/customizer/customizer_site_intro.php:8
+msgid "Call to action top settings"
+msgstr ""
+
+#: functions/customizer/customizer_site_intro.php:16 theme_setup_data.php:79
+msgid "Rambo is a clean and fully responsive Template."
+msgstr ""
+
+#: functions/customizer/customizer_site_intro.php:33 theme_setup_data.php:80
+msgid "Purchase Now"
+msgstr ""
+
+#: functions/customizer/customizer_site_intro.php:61
+#: functions/customizer/customizer_slider_panel.php:133
+#: functions/widget/rambo-site-intro-widget.php:80
+msgid "Button Link"
+msgstr ""
+
+#: functions/customizer/customizer_site_intro.php:78
+#: functions/customizer/customizer_slider_panel.php:149
+#: functions/widget/rambo-site-intro-widget.php:86
+msgid "Open link in new tab"
+msgstr ""
+
+#: functions/customizer/customizer_slider_panel.php:9
 msgid "Choose Post"
 msgstr ""
 
-#: functions/customizer/customizer_slider_panel.php:18
-msgid "Slider section"
+#: functions/customizer/customizer_slider_panel.php:20
+msgid "Slider settings"
 msgstr ""
 
-#: functions/customizer/customizer_slider_panel.php:43
+#: functions/customizer/customizer_slider_panel.php:37
 msgid "Enable home slider"
 msgstr ""
 
-#: functions/customizer/customizer_slider_panel.php:46
+#: functions/customizer/customizer_slider_panel.php:40
 msgid "Enable slider on front page."
 msgstr ""
 
-#: functions/customizer/customizer_slider_panel.php:57
-msgid "Select post"
+#: functions/customizer/customizer_slider_panel.php:70 index-banner.php:33
+#: theme_setup_data.php:43
+msgid "Responsive WP theme"
+msgstr ""
+
+#: functions/customizer/customizer_slider_panel.php:111
+msgid "Read more"
+msgstr ""
+
+#: functions/customizer/customizer_slider_panel.php:127
+msgid "#"
 msgstr ""
 
 #: functions/menu/default_menu_walker.php:23
 msgid "Home"
-msgstr ""
-
-#: functions/rambo-info/sections/actions-required.php:13
-msgid "1. Set your Homepage as Front Page."
-msgstr ""
-
-#: functions/rambo-info/sections/actions-required.php:14
-msgid ""
-"To setup exact replica of homepage as shown in our demo, We are providing "
-"setting to display your homepage as front page\". Homepage shows all the "
-"section like banner, services, portfolio, Latest News, 3 Column Footer etc "
-"which is ideal for any business site. Kindly refer the snapshot."
-msgstr ""
-
-#: functions/rambo-info/sections/actions-required.php:23
-#: functions/rambo-info/sections/getting-started.php:31
-msgid "rambo Blue Child Theme"
 msgstr ""
 
 #: functions/rambo-info/sections/child-themes.php:16
@@ -492,7 +727,7 @@ msgid "No of Section on Homepage"
 msgstr ""
 
 #: functions/rambo-info/sections/free_pro.php:31
-msgid "Theme have many sidebar on Front page."
+msgid "Theme have many sections on Front page."
 msgstr ""
 
 #: functions/rambo-info/sections/free_pro.php:36
@@ -594,8 +829,8 @@ msgstr ""
 
 #: functions/rambo-info/sections/free_pro.php:98
 msgid ""
-"Banner Image, No of 4 Services, No of 4 Projects, Latest News, 3 Column "
-"Footer Widgetizeds area"
+"Banner Image, Services [Unlimited Services], No of 4 Projects, Latest News, "
+"3 Column Footer Widgetizeds area"
 msgstr ""
 
 #: functions/rambo-info/sections/free_pro.php:99
@@ -676,27 +911,46 @@ msgid ""
 "Language."
 msgstr ""
 
-#: functions/rambo-info/sections/getting-started.php:41
+#: functions/rambo-info/sections/getting-started.php:28
+#: functions/rambo-info/welcome-screen.php:231
+msgid "Getting Started"
+msgstr ""
+
+#: functions/rambo-info/sections/getting-started.php:32
+msgid ""
+"Need to take full advantage of all the features Go to the customizer. Go to "
+"the customizer to configure theme settings."
+msgstr ""
+
+#: functions/rambo-info/sections/getting-started.php:35
+msgid "Go to the Customizer"
+msgstr ""
+
+#: functions/rambo-info/sections/getting-started.php:42
+msgid "rambo Blue Child Theme"
+msgstr ""
+
+#: functions/rambo-info/sections/getting-started.php:52
 msgid "Useful Links"
 msgstr ""
 
-#: functions/rambo-info/sections/getting-started.php:49
+#: functions/rambo-info/sections/getting-started.php:60
 msgid "Lite Demo"
 msgstr ""
 
-#: functions/rambo-info/sections/getting-started.php:53
+#: functions/rambo-info/sections/getting-started.php:64
 msgid "View Pro"
 msgstr ""
 
-#: functions/rambo-info/sections/getting-started.php:56
+#: functions/rambo-info/sections/getting-started.php:67
 msgid "Premium Theme Support"
 msgstr ""
 
-#: functions/rambo-info/sections/getting-started.php:65
+#: functions/rambo-info/sections/getting-started.php:76
 msgid "Rate This Theme"
 msgstr ""
 
-#: functions/rambo-info/sections/getting-started.php:68
+#: functions/rambo-info/sections/getting-started.php:79
 msgid "Support"
 msgstr ""
 
@@ -738,7 +992,7 @@ msgid "After activation go to Appreance >> Import Demo Data."
 msgstr ""
 
 #: functions/rambo-info/sections/upgrade.php:11
-#: functions/rambo-info/welcome-screen.php:229
+#: functions/rambo-info/welcome-screen.php:232
 msgid "Why Upgrade Pro"
 msgstr ""
 
@@ -891,45 +1145,40 @@ msgid ""
 "this support you can create website in multiple languages."
 msgstr ""
 
+#: functions/rambo-info/welcome-screen.php:58
+#, php-format
+msgid "Welcome to %1$s - Version %2$s"
+msgstr ""
+
 #: functions/rambo-info/welcome-screen.php:60
 #, php-format
 msgid ""
-"Welcome! Thank you for choosing Rambo Theme! To fully take advantage of the "
-"best our theme can offer please make sure you visit our %swelcome page%s."
+"Welcome! Thank you for choosing Webriti's Rambo WordPress theme. To take "
+"full advantage of the features this theme has to offer visit our %swelcome "
+"page%s."
 msgstr ""
 
-#: functions/rambo-info/welcome-screen.php:76
-#, php-format
-msgid ""
-"Walkthrough our step by step video series for setting front page sections. "
-"%sClick here to watch%s"
+#: functions/rambo-info/welcome-screen.php:61
+msgid "Get started with Rambo"
 msgstr ""
 
-#: functions/rambo-info/welcome-screen.php:120
+#: functions/rambo-info/welcome-screen.php:124
 msgid "Hooray! There are no required actions for you right now."
 msgstr ""
 
-#: functions/rambo-info/welcome-screen.php:157
+#: functions/rambo-info/welcome-screen.php:161
 msgid "View Theme Info"
 msgstr ""
 
-#: functions/rambo-info/welcome-screen.php:227
-msgid "Getting Started"
-msgstr ""
-
-#: functions/rambo-info/welcome-screen.php:228
-msgid "Actions Required"
-msgstr ""
-
-#: functions/rambo-info/welcome-screen.php:230
+#: functions/rambo-info/welcome-screen.php:233
 msgid "Free VS PRO"
 msgstr ""
 
-#: functions/rambo-info/welcome-screen.php:231
+#: functions/rambo-info/welcome-screen.php:234
 msgid "Child Themes"
 msgstr ""
 
-#: functions/rambo-info/welcome-screen.php:232
+#: functions/rambo-info/welcome-screen.php:235
 msgid "One Click Demo Import"
 msgstr ""
 
@@ -963,39 +1212,19 @@ msgstr ""
 msgid "Use the Project Widget to add project type content"
 msgstr ""
 
-#: functions/widget/custom-sidebar.php:58
-msgid "Homepage news section - sidebar"
-msgstr ""
-
-#: functions/widget/custom-sidebar.php:60
-msgid "Use the News Widget to add News type content"
-msgstr ""
-
-#: functions/widget/custom-sidebar.php:68
-#: functions/widget/custom-sidebar.php:70
+#: functions/widget/custom-sidebar.php:57
+#: functions/widget/custom-sidebar.php:59
 msgid "Woocommerce sidebar widget area"
+msgstr ""
+
+#: functions/widget/custom-sidebar.php:69
+#: functions/widget/custom-sidebar.php:71
+msgid "Footer widget area"
 msgstr ""
 
 #: functions/widget/custom-sidebar.php:80
 #: functions/widget/custom-sidebar.php:82
-msgid "Footer widget area"
-msgstr ""
-
-#: functions/widget/custom-sidebar.php:91
-#: functions/widget/custom-sidebar.php:93
 msgid "Footer social icon sidebar area"
-msgstr ""
-
-#: functions/widget/rambo-recent-news-widget.php:17
-msgid "WBR : Recent News Widget"
-msgstr ""
-
-#: functions/widget/rambo-recent-news-widget.php:18
-msgid "Recent News widget"
-msgstr ""
-
-#: functions/widget/rambo-recent-news-widget.php:91
-msgid "Number of post to show"
 msgstr ""
 
 #: functions/widget/rambo-register-page-widget.php:17
@@ -1030,10 +1259,6 @@ msgstr ""
 msgid "The Recent post display on your site"
 msgstr ""
 
-#: functions/widget/rambo-sidebar-latest-news.php:69
-msgid "Latest News"
-msgstr ""
-
 #: functions/widget/rambo-sidebar-latest-news.php:78
 msgid "Number of pages to show"
 msgstr ""
@@ -1046,30 +1271,12 @@ msgstr ""
 msgid "Display the Site Intro Section."
 msgstr ""
 
-#: functions/widget/rambo-site-intro-widget.php:77
-msgid "Button Text"
-msgstr ""
-
-#: functions/widget/rambo-site-intro-widget.php:80
-msgid "Button Link"
-msgstr ""
-
-#: functions/widget/rambo-site-intro-widget.php:86
-msgid "Open link in new tab"
-msgstr ""
-
 #: header.php:52
 msgid "R<small>ambo</small>"
 msgstr ""
 
-#: index-banner.php:47
-msgid "Theme Feature Goes Here !"
-msgstr ""
-
-#: index-banner.php:48
-msgid ""
-"This is Dummy Text. This is Dummy Text. This is Dummy Text.  I repeat.. This "
-"is Dummy Text."
+#: index-service.php:71 index-service.php:184
+msgid "Powerful Admin"
 msgstr ""
 
 #: search.php:26
@@ -1087,12 +1294,20 @@ msgstr ""
 msgid "Tag Archive %s"
 msgstr ""
 
+#: theme_setup_data.php:136
+msgid "Beautiful Birds"
+msgstr ""
+
+#: woocommerce.php:9
+msgid "Shop"
+msgstr ""
+
 #. Theme Name of the plugin/theme
 msgid "Rambo"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://webriti.com/rambo-lite-version-details-page/"
+msgid "https://webriti.com/rambo-lite-version-details-page/"
 msgstr ""
 
 #. Author of the plugin/theme
@@ -1100,5 +1315,5 @@ msgid "Webriti"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://webriti.com/"
+msgid "https://webriti.com/"
 msgstr ""

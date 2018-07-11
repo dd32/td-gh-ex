@@ -24,11 +24,22 @@ $customizer_url = admin_url() . 'customize.php' ;
 				<p>
 				<?php esc_html_e( 'In the premium version, you will get caption Slider, Site Intro, unlimited Services, unlimited Projects, Latest News, Footer Callout, Wide & Boxed Layout, 5 predefined color schemes, feature for creating custom color scheme and Layout Manager. Page templates like About Us, Services, Portfolio, Contact Us etc are there. The theme supports popular plugins like WPML, Polylang, Contact Form 7, WP Google Maps and JetPack Gallery Extensions. Just navigate to Appearance > Customize to start customizing. Both the lite and premium version of Rambo themes are completely translated in Spanish Language.', 'rambo' ); ?>
 				</p>
+				
+				<h1 style="margin-top: 73px;"><?php esc_html_e( "Getting Started", 'rambo' ); ?></h1>
+				<div style="border-top: 1px solid #eaeaea;">
+				<p style="margin-top: 16px;">
+				
+				<?php esc_html_e( 'Need to take full advantage of all the features Go to the customizer. Go to the customizer to configure theme settings.', 'rambo' ); ?>
+				
+				</p>
+				<p><a target="_blank" href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Go to the Customizer','rambo');?></a></p>
+				</div>
+	
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="rambo-tab-pane-half rambo-tab-pane-first-half">
-				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/rambo-info/img/rambo.png'; ?>" alt="<?php esc_html_e( 'rambo Blue Child Theme', 'rambo' ); ?>" />
+				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/rambo-info/img/rambo.png'; ?>" alt="<?php esc_html_e('rambo Blue Child Theme','rambo'); ?>" />
 				</div>
 			</div>	
 		</div>

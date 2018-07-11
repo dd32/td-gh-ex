@@ -133,6 +133,10 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.7.1
+1. Fixed Sanitization issue and update theme tags.
+@version 1.7
+1. Added repetater customize control for service and update slider,project,callout settings.
 @version 1.6.7
 1. Added code for demo import plugin active redirect on import page .
 @version 1.6.6

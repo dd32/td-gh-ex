@@ -11,7 +11,7 @@ get_template_part('index','slider');
 		<div class="row-fluid about_space">
 			
 			<div class="span8">
-				<h2 class="page_head"><?php echo single_cat_title("", false); ?></h2>
+				<h2 class="page_head"><?php  _e("Category Archive", 'rambo'); echo ' '; echo single_cat_title( '', false ); ?></h2>
 			</div>
 			<div class="span4">
 				<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -32,7 +32,6 @@ get_template_part('index','slider');
 	<div class="row-fluid">
 		<!-- Blog Main -->
 		<div class="<?php if( is_active_sidebar('sidebar-primary')) echo "span8"; else echo "span12";?> Blog_main">
-		<h2><?php  _e("Category Archive", 'rambo'); echo ' '; echo single_cat_title( '', false ); ?></h2>
 			<?php 				
 				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 				$category_id=get_query_var('cat');

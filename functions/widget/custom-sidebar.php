@@ -53,17 +53,6 @@ register_sidebar( array(
 			'after_title' => '</h3>',
 		) );
 		
-//News Sidebar
-	register_sidebar( array(
-			'name' => __( 'Homepage news section - sidebar', 'rambo' ),
-			'id' => 'sidebar-news',
-			'description' => __('Use the News Widget to add News type content','rambo'),
-			'before_widget' => '<div id="%1$s" class="rambo_post_section widget %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<div class="row"><div class="span12"><div class="team_head_title"><h3 class="widget-title">',
-			'after_title' => '</h3></div></div></div>',
-		) );
-		
 register_sidebar( array(
 	'name' => __('Woocommerce sidebar widget area', 'rambo' ),
 	'id' => 'woocommerce',

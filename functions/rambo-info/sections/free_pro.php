@@ -28,7 +28,7 @@
 						
 						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'No of Section on Homepage','rambo' ); ?></span>
-							<p> <?php esc_html_e('Theme have many sidebar on Front page.','rambo');?></p>
+							<p> <?php esc_html_e('Theme have many sections on Front page.','rambo');?></p>
 						</li>
 						
 						
@@ -95,7 +95,7 @@
 					</header>
 					
 					<ul class="feature">
-						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Banner Image, No of 4 Services, No of 4 Projects, Latest News, 3 Column Footer Widgetizeds area','rambo'); ?> </li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Banner Image, Services [Unlimited Services], No of 4 Projects, Latest News, 3 Column Footer Widgetizeds area','rambo'); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Blog Left Sidebar, Full Width Template','rambo'); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php echo '4'; ?> </li>
 						

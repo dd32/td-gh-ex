@@ -19,16 +19,14 @@ get_template_part('index','slider');
 					global $more;
 					$more = 0;?>
 					<div class="blog_section2" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<?php
-					$post_thumbnail_url = get_the_post_thumbnail( get_the_ID(), 'img-responsive' );
-					if ( !empty( $post_thumbnail_url ) ) {
-					?>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="pull-left blog_pull_img2">
-								<?php echo $post_thumbnail_url; ?>
+					
+					<?php $defalt_arg =array('class' => "img-responsive blog_section2_img" )?>
+					<?php if(has_post_thumbnail()): ?>
+					<a class="pull-left blog_pull_img2" href="<?php the_permalink(); ?>">
+						<?php the_post_thumbnail('', $defalt_arg); ?>
 					</a>
-					<?php
-					}
-					?>
+					<?php endif; ?>
+					
 					<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 					</h2>
 					<div class="blog_section2_comment">
@@ -44,7 +42,7 @@ get_template_part('index','slider');
 					</p>
 					<?php }  wp_link_pages( $args ); ?>
 			</div>
-			<?php endwhile ?>
+			<?php endwhile; ?>
 			<?php rambo_post_pagination(); // call post pagination ?>
 		</div>
 		 <?php get_sidebar();?>
