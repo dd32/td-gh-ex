@@ -59,9 +59,6 @@ class CMB2_Options_Hookup extends CMB2_hookup {
 		// Optionally network_admin_menu.
 		$hook = $this->cmb->prop( 'admin_menu_hook' );
 
-		// Hook in to add our menu.
-		add_action( $hook, array( $this, 'options_page_menu_hooks' ) );
-
 		// If in the network admin, need to use get/update_site_option.
 		if ( 'network_admin_menu' === $hook ) {
 			// Override CMB's getter.
@@ -69,28 +66,6 @@ class CMB2_Options_Hookup extends CMB2_hookup {
 			// Override CMB's setter.
 			add_filter( "cmb2_override_option_save_{$this->option_key}", array( $this, 'network_update_override' ), 10, 2 );
 		}
-	}
-
-	/**
-	 * Hook up our admin menu item and admin page.
-	 *
-	 * @since  2.2.5
-	 *
-	 * @return void
-	 */
-	public function options_page_menu_hooks() {
-		$parent_slug = $this->cmb->prop( 'parent_slug' );
-		$title       = $this->cmb->prop( 'title' );
-		$menu_title  = $this->cmb->prop( 'menu_title', $title );
-		$capability  = $this->cmb->prop( 'capability' );
-		$callback    = array( $this, 'options_page_output' );
-
-		if ( $this->cmb->prop( 'cmb_styles' ) ) {
-			// Include CMB CSS in the head to avoid FOUC
-			add_action( "admin_print_styles-{$page_hook}", array( 'CMB2_hookup', 'enqueue_cmb_css' ) );
-		}
-
-		$this->maybe_register_message();
 	}
 
 	/**

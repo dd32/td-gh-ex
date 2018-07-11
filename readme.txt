@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-
 
 Requires at least: 4.0
 Tested up to: 4.9.6
-Stable tag: 2.0
+Stable tag: 2.0.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,12 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 2.0.1 / 11 July 2018
+Fixed the CMB2 admin notice bug.
+Added extra functions for the Expansion Pack.
+Fixed the text float issue on aligned images inside content.
+Fixed submenu chevron positioning for larger menu font sizes.
 
 * 2.0 / 29 June 2018
 Replaced all Isotope layouts in the theme with modern CSS grids, removed Isotope dependency.

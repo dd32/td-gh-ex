@@ -464,6 +464,10 @@ function bento_insert_custom_styles() {
 			if ( $tile_opacity_raw > 1 ) {
 				$tile_opacity_raw = $tile_opacity_raw / 10;
 			}
+			$header_height = '10%';
+			if ( get_post_meta( $postid, 'bento_header_image_height', true ) != 'fh' ) {
+				$header_height = esc_html( get_post_meta( $postid, 'bento_header_image_height', true ) );
+			}
 			$custom_css .= '
 				.post-header-overlay {
 					background-color: '.esc_html( get_post_meta( $postid, 'bento_header_overlay', true ) ).';
@@ -503,8 +507,8 @@ function bento_insert_custom_styles() {
 				}
 				@media screen and (min-width: 48em) {
 					.post-header-title {
-						padding-top: '.esc_html( get_post_meta( $postid, 'bento_header_image_height', true ) ).';
-						padding-bottom: '.esc_html( get_post_meta( $postid, 'bento_header_image_height', true ) ).';
+						padding-top: '.$header_height.';
+						padding-bottom: '.$header_height.';
 					}
 				}
 			';

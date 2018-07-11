@@ -1880,7 +1880,8 @@ function bento_customizer_css() {
 		#nav-primary {
 			font-family: '.$bento_menu_font.', Arial, sans-serif;
 		}
-		.primary-menu > li > a {
+		.primary-menu > li > a,
+		.primary-menu > li > a:after {
 			font-size: '.$bento_menu_text_size.'px;
 			font-size: '.$bento_menu_text_size_rem.'rem;
 		}

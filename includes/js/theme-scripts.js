@@ -89,7 +89,11 @@ $str(document).ready(function() {
 	
 	// Fixed header
 	if ( bentoThemeVars.fixed_menu == 1 && bentoThemeVars.menu_config != 3 && $str(window).width() > bentoEmValue(64) ) {
-		if ( $str(window).scrollTop() > 0 ) {
+		var topbar = 0;
+		if ( $str('.bnt-topbar').length ) {
+			topbar = $str('.bnt-topbar').outerHeight(true);
+		}
+		if ( $str(window).scrollTop() > topbar ) {
 			if ( ! $str('.fixed-header').length ) {
 				var $bento_headerClone = $str('.site-header > .bnt-container').clone();
 				$str('.site-wrapper').append('<header class="site-header fixed-header"></header>');
@@ -179,6 +183,9 @@ $str(document).ready(function() {
 		var bento_headertop = 0;
 		if ( $str('#wpadminbar').outerHeight(true) > 0 ) {
 			bento_headertop = $str('#wpadminbar').outerHeight(true);
+		}
+		if ( $str('.bnt-topbar').length ) {
+			bento_headertop += $str('.bnt-topbar').outerHeight(true);
 		}
 		$str('.header-side .site-header').css('top',bento_headertop+'px');
 	}
@@ -366,7 +373,11 @@ $str(window).scroll(function () {
 	
 	// Fixed header on scroll
 	if ( bentoThemeVars.fixed_menu == 1 && bentoThemeVars.menu_config != 3 && $str(window).width() > bentoEmValue(64) ) {
-		if ( $str(window).scrollTop() > 0 ) {
+		var topbar = 0;
+		if ( $str('.bnt-topbar').length ) {
+			topbar = $str('.bnt-topbar').outerHeight(true);
+		}
+		if ( $str(window).scrollTop() > topbar ) {
 			if ( ! $str('.fixed-header').length ) {
 				var $bento_headerClone = $str('.site-header > .bnt-container').clone(true);
 				$str('.site-wrapper').append('<header class="site-header fixed-header"></header>');

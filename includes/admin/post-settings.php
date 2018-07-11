@@ -217,6 +217,8 @@ function bento_metaboxes() {
 				'15%' => '15%',
 				'20%' => '20%',
 				'25%' => '25%',
+				'30%' => '30%',
+				'fh' => esc_html__( 'Full screen height', 'bento' ),
 			),
 			'default' => '10%',
 		)
