@@ -15,8 +15,13 @@ if ( post_password_required() )
   <?php if ( have_comments() ) : ?>
   <h2 class="comments-title">
     <?php
-		printf( _n( '1 Comment', '%1$s Comments', get_comments_number(), 'multishop' ),
-		number_format_i18n( get_comments_number() ), get_the_title() ); ?>
+	    printf( // WPCS: XSS OK.
+                    /* translators: 1: comment count number, 2: title. */
+                    esc_html( _nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', 'multishop' ) ),
+                    number_format_i18n(get_comments_number() ),
+                     get_the_title()
+                );
+		?>
   </h2>
   <ol class="comment-list">
 	<?php

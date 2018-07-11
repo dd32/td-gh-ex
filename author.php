@@ -6,7 +6,7 @@ get_header(); ?>
 <div class="clearfix"></div>
 <div class="col-md-12 site-title clearfix">
   <div class="multishop-container multishop-breadcrumb">
-    <h1><?php printf( __( 'All posts by %s', 'multishop' ), get_the_author() ); ?></h1>
+    <h1><?php printf(/* translators: %s is author name.*/ esc_html__( 'All posts by %s', 'multishop' ), get_the_author() ); ?></h1>
     <ol class="site-breadcumb">
       <?php if (function_exists('multishop_custom_breadcrumbs')) multishop_custom_breadcrumbs(); ?>
     </ol>

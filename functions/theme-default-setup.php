@@ -1,11 +1,5 @@
 <?php 
-/*
- * thumbnail list
-*/ 
-function multishop_thumbnail_image($content) {
-    if( has_post_thumbnail() )
-         return the_post_thumbnail( 'thumbnail' ); 
-}
+
 /*
  * multishop Main Sidebar
 */
@@ -68,16 +62,16 @@ function multishop_entry_meta() {
 	);
 	$multishop_author = sprintf( '<a href="%1$s" title="%2$s" >%3$s</a>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'multishop' ), get_the_author() ) ),
+		esc_attr( sprintf(/* translators: %s is post author. */ __( 'View all posts by %s', 'multishop' ), get_the_author() ) ),
 		get_the_author()
 	);
 
 	if ( $multishop_tag_list ) {
-			$multishop_utility_text = __( '<div class="multishop-tags"><i class="fa fa-calendar"></i> %3$s <i class="fa fa-user"></i> %4$s </div>', 'multishop' );
+			$multishop_utility_text = /* translators: 3 is post time. */__( '<div class="multishop-tags"><i class="fa fa-calendar"></i> %3$s <i class="fa fa-user"></i> %4$s </div>', 'multishop' );
 		} elseif ( $multishop_category_list ) {
-			$multishop_utility_text = __( '<div class="multishop-tags"><i class="fa fa-calendar"></i> %3$s <i class="fa fa-user"></i> %4$s </div>', 'multishop' );
+			$multishop_utility_text = /* translators: 3 is post author. */ __( '<div class="multishop-tags"><i class="fa fa-calendar"></i> %3$s <i class="fa fa-user"></i> %4$s </div>', 'multishop' );
 		} else {
-			$multishop_utility_text = __( '<div class="multishop-tags"><i class="fa fa-calendar"></i> %3$s <i class="fa fa-user"></i> %4$s </div>', 'multishop' );
+			$multishop_utility_text =/* translators: 3 is post tags. */ __( '<div class="multishop-tags"><i class="fa fa-calendar"></i> %3$s <i class="fa fa-user"></i> %4$s </div>', 'multishop' );
 		}	
 
 
@@ -102,9 +96,7 @@ function multishop_custom_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'multishop_custom_excerpt_length', 999 );
 
 
-if ( ! function_exists('is_plugin_inactive')) {
-      require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
-}
+
 
 function multishop_pagination() { ?>
 <div class="col-md-12 multishop-default-pagination ">

@@ -1,5 +1,22 @@
 <?php
 /**
+ * The Template for displaying all single products
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/single-product.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see 	    https://docs.woocommerce.com/document/template-structure/
+ * @author 		WooThemes
+ * @package 	WooCommerce/Templates
+ * @version     1.6.4
+ */
+
+/**
  * The Template for displaying all single products.
  */
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -8,8 +25,11 @@ get_header( 'shop' ); ?>
 <div class="col-md-12 site-title">
   <div class="multishop-container multishop-breadcrumb">
     <h1>
-      <?php esc_attr(the_title()); ?>
+      <?php the_title(); ?>
     </h1>
+    <ol class="site-breadcumb">
+      <?php if (function_exists('multishop_custom_breadcrumbs')) multishop_custom_breadcrumbs(); ?>
+    </ol>
   </div>
 </div>
 <section class="shoap-section">
@@ -19,9 +39,9 @@ get_header( 'shop' ); ?>
       <div class="col-md-12 no-padding single-product clearfix">
         <?php while ( have_posts() ) : the_post(); ?>
         <div class="col-md-5 no-padding-lr">
-          <div class=" product-images"> <?php echo get_the_post_thumbnail( $post->ID, apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ) ) ?> </div>
+          <div class=" product-images"> <?php the_post_thumbnail( 'single_product_large_thumbnail_size' ); ?> </div>
           <?php global $post, $product, $woocommerce;
-					$attachment_ids = $product->get_gallery_attachment_ids();
+					$attachment_ids = $product->get_gallery_image_ids();
 					if ( $attachment_ids ) { ?>
           <div class="col-md-12 no-padding-lr clearfix"> <a class="product-small progallery">
             <?php $loop = 0;
@@ -48,7 +68,7 @@ get_header( 'shop' ); ?>
         <div class="col-md-7">
           <div class="product-details">
             <h3>
-              <?php esc_attr(the_title()); ?>
+              <?php the_title(); ?>
             </h3>
             <p>
               <?php the_excerpt(); ?>
@@ -56,38 +76,38 @@ get_header( 'shop' ); ?>
           </div>
           <div class="clearfix"></div>
           <div class="product-availabilty">
-            <label><?php _e('Availability:','multishop'); ?></label>
+            <label><?php esc_html_e('Availability:','multishop'); ?></label>
             <?php
 							// Availability
 							$availability = $product->get_availability();
 							if ( $availability['availability'] )
 							echo apply_filters( 'woocommerce_stock_html', '<p class="stock ' . esc_attr( $availability['class'] ) . '">' . esc_html( $availability['availability'] ) . '</p>', $availability['availability'] );
 							else
-							echo "<p>".__('Out Stock','multishop')."</p>"; ?>
-            <span><?php echo $product->get_price_html(); ?></span></div>
+							echo "<p>".esc_html__('Out Stock','multishop')."</p>"; ?>
+            <span><?php   if( $product->is_on_sale() ) : echo wp_kses_post($product->get_price_html()); endif; ?></span></div>
           <div class="product-count">
             <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
               global $product; ?>
             <?php if ( ! $product->is_in_stock() ) : ?>
-            <a href="<?php echo apply_filters( 'out_of_stock_add_to_cart_url', get_permalink( $product->id ) ); ?>" class="button"><?php echo apply_filters( 'out_of_stock_add_to_cart_text', __( 'Read More', 'multishop' ) ); ?></a>
+            <a href="<?php echo apply_filters( 'out_of_stock_add_to_cart_url', get_permalink( $product->get_id() ) ); ?>" class="button"><?php echo apply_filters( 'out_of_stock_add_to_cart_text', __( 'Read More', 'multishop' ) ); ?></a>
             <?php else :
 								$link = array(
 									'url'   => '',
 									'label' => '',
 									'class' => ''
-								);
-				$handler = apply_filters( 'woocommerce_add_to_cart_handler', $product->product_type, $product );
+								);          
+				$handler = apply_filters( 'woocommerce_add_to_cart_handler', $product->get_type(), $product );
 				switch ( $handler ) {
 					case "variable" :
-						$link['url']    = apply_filters( 'variable_add_to_cart_url', get_permalink( $product->id ) );
+						$link['url']    = apply_filters( 'variable_add_to_cart_url', get_permalink( $product->get_id() ) );
 						$link['label']  = apply_filters( 'variable_add_to_cart_text', __( 'Select options', 'multishop' ) );
 						break;
 					case "grouped" :
-						$link['url']    = apply_filters( 'grouped_add_to_cart_url', get_permalink( $product->id ) );
+						$link['url']    = apply_filters( 'grouped_add_to_cart_url', get_permalink( $product->get_id() ) );
 						$link['label']  = apply_filters( 'grouped_add_to_cart_text', __( 'View options', 'multishop' ) );
 						break;
 					case "external" :
-						$link['url']    = apply_filters( 'external_add_to_cart_url', get_permalink( $product->id ) );
+						$link['url']    = apply_filters( 'external_add_to_cart_url', get_permalink( $product->get_id() ) );
 						$link['label']  = apply_filters( 'external_add_to_cart_text', __( 'Read More', 'multishop' ) );
 						break;
 					default :
@@ -96,19 +116,19 @@ get_header( 'shop' ); ?>
 						$link['label']  = apply_filters( 'add_to_cart_text', __( 'Add to cart', 'multishop' ) );
 						$link['class']  = apply_filters( 'add_to_cart_class', 'add_to_cart_button' );
 					} else {
-						$link['url']    = apply_filters( 'not_purchasable_url', get_permalink( $product->id ) );
+						$link['url']    = apply_filters( 'not_purchasable_url', get_permalink( $product->get_id() ) );
 						$link['label']  = apply_filters( 'not_purchasable_text', __( 'Read More', 'multishop' ) );
 					}break;
 				}
-				if ( $product->product_type == 'simple' ) { ?>
+				if ( $product->is_type( 'simple' ) ) { ?>
             <form action="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="cart" method="post" enctype='multipart/form-data'>
               <?php woocommerce_quantity_input(); ?>
               <button type="submit" class="single-add-cart">
-              <a  class="addcart-red-btn"><?php _e('add to cart','multishop'); ?> </a>
+              <a  class="addcart-red-btn"><?php esc_html_e('add to cart','multishop'); ?> </a>
               </button>
             </form>
             <?php } else {
-									echo apply_filters( 'woocommerce_loop_add_to_cart_link', sprintf('<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="%s button product_type_%s">%s</a>', esc_url( $link['url'] ), esc_attr( $product->id ), esc_attr( $product->get_sku() ), esc_attr( $link['class'] ), esc_attr( $product->product_type ), esc_html( $link['label'] ) ), $product, $link );
+									echo apply_filters( 'woocommerce_loop_add_to_cart_link', sprintf('<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="%s button product_type_%s">%s</a>', esc_url( $link['url'] ), esc_attr( $product->get_id() ), esc_attr( $product->get_sku() ), esc_attr( $link['class'] ), esc_attr( $product->get_type() ), esc_html( $link['label'] ) ), $product, $link );
 								}
                 endif; ?>
           </div>
@@ -119,8 +139,8 @@ get_header( 'shop' ); ?>
       <div class="col-md-12 product-tabs">
         <div id="horizontalTab" class="horizontal-tabs">
           <ul class="resp-tabs-list">
-            <li><?php _e('Product Description','multishop') ?></li>
-            <li><?php _e('Reviews','multishop') ?></li>
+            <li><?php esc_html_e('Product Description','multishop') ?></li>
+            <li><?php esc_html_e('Reviews','multishop') ?></li>
           </ul>
           <div class="resp-tabs-container">
             <div>
@@ -133,7 +153,7 @@ get_header( 'shop' ); ?>
             <div>
               <?php if ( comments_open() ) { ?>
               <li><a href="#">
-                <?php _e('Reviews', 'multishop');
+                <?php esc_html_e('Reviews', 'multishop');
                   echo comments_number(' (0)', ' (1)', ' (%)'); ?></a>
                 <section>
                   <?php comments_template(); ?>

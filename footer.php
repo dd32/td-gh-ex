@@ -2,7 +2,8 @@
 /**
  * The Footer template.
  */
-$multishop_options = get_option('multishop_theme_options'); ?>
+$multishop_options = get_option('multishop_theme_options');
+ ?>
 <div class="clearfix"></div>
 <footer>
 	 <?php if (is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') || is_active_sidebar('footer-4')) { ?>
@@ -34,24 +35,18 @@ $multishop_options = get_option('multishop_theme_options'); ?>
     <div class="footer-bottom">
         <div class="container multishop-container">
             <div class="col-md-6 foot-copy-right no-padding-lr">
-<?php
-if (!empty($multishop_options['footertext'])) {
-    echo esc_attr($multishop_options['footertext']); 
-} else {
-    printf(__('Powered by %1$s', 'multishop'), '<a href="http://fasterthemes.com/wordpress-themes/multishop" target="_blank">Multishop WordPress Theme</a>');
-} ?>
-    </div>
+             <?php echo wp_kses_post(get_theme_mod ( 'footertext',(!empty($multishop_options['footertext'])) ? $multishop_options['footertext']:''));?>
+            <?php printf(/* translators: 1 is link for theme.*/esc_html__('Powered by %1$s', 'multishop'), '<a href="'.esc_url("http://fasterthemes.com/wordpress-themes/multishop").'" target="_blank">Multishop WordPress Theme</a>'); ?>
+            </div>
             <div class="col-md-6  no-padding-lr social-icon">
-                <ul>
-                    <?php if (!empty($multishop_options['fburl'])) { ?>
-                    <li><a href="<?php echo esc_url($multishop_options['fburl']); ?>"><i class="fa fa-facebook-square twitt"></i></a></li>
-                    <?php }
-                    if (!empty($multishop_options['twitter'])) { ?>
-                    <li><a href="<?php echo esc_url($multishop_options['twitter']); ?>"><i class="fa fa-twitter-square linkin"></i></a></li>
-                    <?php }
-                    if (!empty($multishop_options['googleplus'])) { ?>
-                    <li><a href="<?php echo esc_url($multishop_options['googleplus']); ?>"><i class="fa fa-google-plus-square"></i></a></li>
-                    <?php } ?>
+                <?php $TopHeaderSocialIconDefault = array(array('url'=>$multishop_options['fburl'],'icon'=>'fa-facebook-square'),array('url'=>$multishop_options['twitter'],'icon'=>'fa-twitter-square'),array('url'=>$multishop_options['googleplus'],'icon'=>'fa-google-plus-square'));?>
+                <ul>                    
+                    <?php for($i=1; $i<=3; $i++) : 
+                        if(get_theme_mod('TopHeaderSocialIconLink'.$i,$TopHeaderSocialIconDefault[$i-1]['url'])!= '' && get_theme_mod('TopHeaderSocialIcon'.$i,$TopHeaderSocialIconDefault[$i-1]['icon'])!= ''){     ?>
+                           <li><a href="<?php echo esc_url(get_theme_mod('TopHeaderSocialIconLink'.$i,$TopHeaderSocialIconDefault[$i-1]['url'])); ?>" class="icon" title="" target="_blank">
+                                <i class="fa <?php echo esc_attr(get_theme_mod('TopHeaderSocialIcon'.$i,$TopHeaderSocialIconDefault[$i-1]['icon'])); ?>"></i>
+                            </a></li>
+                    <?php } endfor; ?>
                 </ul>
             </div>
         </div>

@@ -7,7 +7,7 @@ Multishop is a twitter bootstrap based responsive theme mainly designed for WooC
 === Tags ===
 left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments , translation-ready
 
-Version: 1.3
+Version: 1.5.0
 
 == License ==
 License: GNU General Public License v3 or later

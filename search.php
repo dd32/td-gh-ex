@@ -6,7 +6,7 @@ get_header(); ?>
 <div class="clearfix"></div>
 <div class="col-md-12 site-title clearfix">
   <div class="multishop-container multishop-breadcrumb">
-    <h1><?php printf( __( 'Search Results for: %s', 'multishop' ), get_search_query() ); ?></h1>
+    <h1><?php printf(/* translators: %s is search query*/ esc_html__( 'Search Results for: %s', 'multishop' ), get_search_query() ); ?></h1>
     <ol class="site-breadcumb">
       <?php if (function_exists('multishop_custom_breadcrumbs')) multishop_custom_breadcrumbs(); ?>
     </ol>
@@ -20,7 +20,7 @@ get_header(); ?>
 				endwhile;
 		  else : ?>
 		<div>
-			<?php echo	'<h3>' . __('Sorry, but nothing matched your search terms. Please try again with some different keywords.','multishop') . '</h3>';
+			<?php echo	'<h3>' . esc_html__('Sorry, but nothing matched your search terms. Please try again with some different keywords.','multishop') . '</h3>';
 			 get_search_form(); ?>
 		</div>	 
 	<?php endif; multishop_pagination(); ?>

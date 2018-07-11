@@ -33,6 +33,7 @@ function multishop_setup() {
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list',
 	) );
+	add_theme_support('custom-logo');       
 	add_theme_support( 'custom-background', apply_filters( 'multishop_custom_background_args', array(
 	'default-color' => 'f5f5f5',
 	) ) );
@@ -128,28 +129,73 @@ return $fields;
 // now we set our cookie if we need to
 function multishop_sort_by_page($count) {
   if (isset($_COOKIE['shop_pageResults'])) { // if normal page load with cookie
-     $count = $_COOKIE['shop_pageResults'];
+     $count = sanitize_text_field(wp_unslash($_COOKIE['shop_pageResults']));
   }
   if (isset($_POST['woocommerce-sort-by-columns'])) { //if form submitted
-    setcookie('shop_pageResults', $_POST['woocommerce-sort-by-columns'], time()+1209600, '/', '', false); //this will fail if any part of page has been output- hope this works!
-    $count = $_POST['woocommerce-sort-by-columns'];
+    setcookie('shop_pageResults', sanitize_text_field(wp_unslash($_POST['woocommerce-sort-by-columns'])), time()+1209600, '/', '', false); //this will fail if any part of page has been output- hope this works!
+    $count = sanitize_text_field(wp_unslash($_POST['woocommerce-sort-by-columns']));
   }
   // else normal page load and no cookie
   return $count;
 }
  
+add_action( 'admin_menu', 'multishop_admin_menu');
+function multishop_admin_menu( ) {
+    add_theme_page( __('Pro Feature','multishop'), __('Multishop Pro','good-news-lite'), 'manage_options', 'multishop-pro-buynow', 'multishop_pro_buy_now', 300 );   
+}
+function multishop_pro_buy_now(){ ?>
+<div class="multishop_pro_version">
+  <a href="<?php echo esc_url('https://fasterthemes.com/wordpress-themes/multishop/'); ?>" target="_blank">
+    <img src ="<?php echo esc_url(get_template_directory_uri().'/images/multishop_pro_features.png') ?>" width="70%" height="auto" />
+  </a>
+</div>
+<?php
+}
+
 add_filter('loop_shop_per_page','multishop_sort_by_page');
+add_action( 'tgmpa_register', 'multishop_action_tgm_plugin_active_register_required_plugins' );
+function multishop_action_tgm_plugin_active_register_required_plugins() {
+    if(class_exists('TGM_Plugin_Activation')){
+      $plugins = array(        
+        array(
+           'name'      => __('WooCommerce excelling eCommerce','multishop'),
+           'slug'      => 'woocommerce',
+           'required'  => false,
+        ),
+      );
+      $config = array(
+        'default_path' => '',
+        'menu'         => 'multishop-install-plugins',
+        'has_notices'  => true,
+        'dismissable'  => true,
+        'dismiss_msg'  => '',
+        'is_automatic' => false,
+        'message'      => '',
+        'strings'      => array(
+           'page_title'                      => __( 'Install Recommended Plugins', 'multishop' ),
+           'menu_title'                      => __( 'Install Plugins', 'multishop' ),
+           'installing'                      => /* translators: %s is plugin name.*/__( 'Installing Plugin: %s', 'multishop' ),            
+           'nag_type'                        => 'updated'
+        )
+      );
+      tgmpa( $plugins, $config );
+    }
+}
 /*** Enqueue css and js files ***/
 require get_template_directory() . '/functions/enqueue-files.php';
+
+require get_template_directory() . '/functions/class-tgm-plugin-activation.php';
 /*** Theme Default Setup ***/
 require get_template_directory() . '/functions/theme-default-setup.php';
 //multishop theme theme option
-require get_template_directory() . '/theme-options/fasterthemes.php';
+require get_template_directory() . '/functions/customizer.php';
 /*** Recent Post Widget ***/
 require get_template_directory() . '/functions/recent-post-widget.php';
 /*** Breadcrumbs ***/
 require get_template_directory() . '/functions/breadcrumbs.php';
 /*** Custom Header ***/
 require get_template_directory() . '/functions/custom-header.php';
-/*** TGM ***/
-require get_template_directory() . '/functions/tgm-plugins.php'; ?>
+
+if ( ! function_exists('is_plugin_inactive')) {
+      require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+}

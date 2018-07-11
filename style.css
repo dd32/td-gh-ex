@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/wordpress-themes/Multishop
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Multishop is a twitter bootstrap based responsive theme mainly designed for WooCommerce based e-commerce websites. But this can be used for developing business or personal websites as well as it contains all the features which a standard WordPress theme should have. As Multishop theme is built on top of Twitter Bootstrap framework so your website will be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your need. Pro version of this theme is also available which has several awesome options like Color options, Font Options , Google Analytics inbuilt code panel, Slider options, more speed optimized code for faster loading and a lot more options to worth having them.
-Version: 1.4
+Version: 1.5.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments , translation-ready
@@ -175,9 +175,7 @@ header {
 	color: #c80000;
 	background-color: transparent;
 }
-*html .multishop-menu li a:hover { /* IE6 only */
-	color: #c80000;
-}
+
 .multishop-menu ul {
 	opacity: 0;
 	visibility: hidden;
@@ -404,10 +402,7 @@ footer {
 	margin-top: 0;
 	margin-bottom: 20px;
 }
-.blog-body {
-/*	padding-left: 0px;
-	padding-right: 0;*/
-}
+
 .blog-body h4 a {
 	color: #545454;
 	font-size: 16px;
@@ -448,7 +443,6 @@ footer {
 }
 .single-image {
 	margin-bottom: 25px;
-/*	margin-top: 15px;*/
 	float: left; 
 	margin-right: 15px;
 }
@@ -911,7 +905,6 @@ textarea:focus{
 	margin-right: 10px;
 }
 .multishop-default-pagination {
-/*	background-color: #f8f8f8; */
     margin-bottom: 0;
     margin-top: 2px;
     padding: 15px;
@@ -1189,10 +1182,15 @@ embed, iframe, object, video, .alignnone.size-full {
 .header-cart {
 	float: right;
 }
-.header-cart img {
-	float: left;
-	margin-top: 2px;
+.header-cart i.fa {
+    float: left;
+    font-size: 13px;
+    background: #c81700;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 20px;
 }
+
 .header-cart a {
 	color: #212121;
 	float: left;
@@ -1242,7 +1240,7 @@ embed, iframe, object, video, .alignnone.size-full {
 	top: -13px;
 }
 .prev {
-	background: url("images/button-next.png") no-repeat scroll 0 0 #FFFFFF;
+	
 	height: 30px;
 	position: absolute;
 	right: 0;
@@ -1250,13 +1248,20 @@ embed, iframe, object, video, .alignnone.size-full {
 	width: 34px;
 }
 .next {
-	background: url("images/button-previous.png") no-repeat scroll 0 0 #FFFFFF;
+	
 	height: 30px;
-	padding: 0 0 0 7px;
+	padding: 0 0 0 2px;
 	position: absolute;
 	right: 34px;
 	top: -21px;
 	width: 34px;
+}
+.next-prev-button i.fa {
+    font-size: 19px;
+    border: 1px solid;
+    padding: 4px 9px;
+    border-radius: 65px;
+    background: #fff;
 }
 
 #top-product .item, #feat-product .item {
@@ -1563,7 +1568,7 @@ embed, iframe, object, video, .alignnone.size-full {
 	border: 1px solid #d6d6d6;
 	border-radius: 5px;
 	width: 50px;
-	margin: 0 0 -9px 108px;
+	margin: 0 0 -9px 8px;
 }
 .product-count .quantity.buttons_added {
 	margin-bottom: 15px;
@@ -1767,4 +1772,8 @@ a.select,
 /* footer copyright text color */
 .col-md-6.foot-copy-right.no-padding-lr {
     color: #fff;
+}
+.multishop-breadcrumb a:after {
+    content: '/';
+    margin: 0 3px;
 }
