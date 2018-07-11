@@ -60,16 +60,7 @@ the <em>&mdash; Select &mdash;</em> default value.','weaver-xtreme' /*adm*/); ?>
 		return;
 	}
 
-	$updir = wp_upload_dir();
-	$dir = trailingslashit($updir['basedir']) . 'weaverx-subthemes/editor-style-wvrx.css';
-
-	if (!@file_exists( $dir ))  { ?>
-<div style="padding:2px; border:2px solid red; background:#FAA;">
-<?php _e('<strong>Note!</strong>
-Please open the <em>Appearance:Weaver Xtreme Admin:Main Options</em> page and <em>Save Settings</em> to enable full editor theme match styling.','weaver-xtreme' /*adm*/); ?>
-</div><br />
-<?php
-	}
+	weaverx_check_editor_style();		// see if we need an update...
 
 	echo '<strong>' . __('Page Templates','weaver-xtreme' /*adm*/) . '</strong>';
 	weaverx_help_link('help.html#PageTemplates',__('Help for Weaver Xtreme Page Templates','weaver-xtreme' /*adm*/));
@@ -983,17 +974,8 @@ function weaverx_pp_post_extras() {
 <div style="line-height:150%;border: 1px solid $888;list-style-type: none;">
 <p>
 <?php
-	$updir = wp_upload_dir();
-	$dir = trailingslashit($updir['basedir']) . 'weaverx-subthemes/editor-style-wvrx.css';
-
-	if (!@file_exists( $dir ))  { ?>
-<div style="padding:2px; border:2px solid red; background:#FAA;">
-<?php _e('<strong>Note!</strong>
-Please open the <em>Appearance:Weaver Xtreme Admin:Main Options</em> page and <em>Save Settings</em> to enable full editor theme match styling.','weaver-xtreme' /*adm*/); ?>
-</div><br />
-<?php
-	}
-
+	weaverx_check_editor_style();		// see if we need an update...
+	
 	echo '<strong>' . __('Per Post Options','weaver-xtreme' /*adm*/) . '</strong>';
 	weaverx_help_link('help.html#PerPage', __('Help for Per Post Options','weaver-xtreme' /*adm*/));
 	echo '<span style="float:right;">(' . __('This Post\'s ID: ','weaver-xtreme' /*adm*/); the_ID() ; echo ')</span>';

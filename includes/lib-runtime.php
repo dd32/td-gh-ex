@@ -1451,5 +1451,20 @@ jQuery(window).resize(function(){jQuery('#blog-posts').masonry({itemSelector:'.b
 	return true;
 }
 
+function weaverx_check_editor_style() {		// see if we need an update...
+	if ( !( current_user_can('edit_theme_options') && current_user_can('activate_plugins')) )
+		return;
+
+	$updir = wp_upload_dir();
+	$dir = trailingslashit($updir['basedir']) . 'weaverx-subthemes/editor-style-wvrx.css';
+
+	if (!@file_exists( $dir ))  {
+		weaverx_alert( __('IMPORTANT!\r\n*** Your Weaver Xtreme Theme settings are not up to date, probably because you are updating from Weaver Xtreme Version 3 to Version 4. These settings will now be automatically updated.','weaver-xtreme' /*adm*/) );
+		weaverx_save_opts('customizer', true); // using customizer helps force for all situations
+		global $wp_settings_errors;
+		$wp_settings_errors = array();		// clear messages for this update setting
+	}
+}
+
 require_once( get_template_directory() . '/includes/fileio.php' );
 ?>

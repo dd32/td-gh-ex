@@ -572,6 +572,8 @@ function weaverx_enqueue_gutenberg_block_editor_assets() {
 	if (weaverx_getopt('_hide_editor_style'))
 		return;
 
+	weaverx_check_editor_style();		// see if we need an update...
+
 	$style_file = get_template_directory_uri() . '/assets/css/gutenberg-blocks'.WEAVERX_MINIFY.'.css';
 	wp_enqueue_style( 'weaverx_gutenberg_block', $style_file, array(),WEAVERX_VERSION );
 

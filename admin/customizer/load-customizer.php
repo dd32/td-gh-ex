@@ -10,7 +10,7 @@ global $wp_customize;
 
 if (isset( $wp_customize ) && !weaverx_getopt('_disable_customizer')) {
 
-
+	weaverx_check_editor_style();		// see if we need an update...
 
 	add_action( 'customize_register', 'weaverx_add_customizer_content' );
 	add_action( 'customize_controls_enqueue_scripts','weaverx_enqueue_customizer_scripts');

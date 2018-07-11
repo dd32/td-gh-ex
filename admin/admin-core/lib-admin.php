@@ -428,13 +428,6 @@ function weaverx_clear_messages() {
 ?>
 <form style="float:right;margin-right:15px;" name="clearweaverx_form" method="post">
 <?php
-
-	if (!function_exists('wvrx_ts_installed')) {
-		if (!is_multisite() || (is_multisite() && current_user_can('manage_network_themes')) ) {
-			echo '<div style="display:inline-block;background-color:pink;border:1px solid black;padding:3px;margin-right:4px;font-style:italic;font-size:80%;line-height:1.2;">' .
-			__('Please install and activate the<br />Weaver Xtreme Theme Support Plugin.', 'weaver-xtreme') . '</div>';
-		}
-	}
 	if (!function_exists('weaverxplus_plugin_installed')) {
 		echo '<strong style="border:1px solid blue;background:yellow;padding:4px;margin:5px;">';
 		weaverx_site('','//plus.weavertheme.com/',__('Weaver Xtreme Plus', 'weaver-xtreme' /*adm*/));

@@ -629,14 +629,15 @@ function weaverx_get_font_family() {
 
 }
 
-
-
 // and filter to use the generated file...
 
 add_filter( 'weaverx_mce_css', 'weaverx_mce_css_add_style');
 
 function weaverx_mce_css_add_style( $default_style ) {
 	// build mce edit css path if we've generated the editor css
+
+	weaverx_check_editor_style();		// see if we need an update...
+
 	$updir = wp_upload_dir();
 	// make relative for https: - doesn't work right...
 	// return parse_url(trailingslashit($updir['baseurl']) . 'weaverx-subthemes/style-weaverxt.css',PHP_URL_PATH);

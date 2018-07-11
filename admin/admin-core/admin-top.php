@@ -23,6 +23,8 @@ function weaverx_do_admin() {
 
 	if (!current_user_can('edit_theme_options'))
 		wp_die(__('No permission to access that page.', 'weaver-xtreme' /*adm*/));
+	else
+		weaverx_check_editor_style();		// see if we need an update...
 
 	weaverx_admin_page_process_options();	// Process non-sapi options
 

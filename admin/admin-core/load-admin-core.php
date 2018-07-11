@@ -101,7 +101,7 @@ function weaverx_load_admin_aux() {
 	}
 }
 
-if (current_user_can('edit_posts') && !has_action('weaver_xtreme_load_customizer')) {
+if ( current_user_can('edit_posts') && !has_action('weaver_xtreme_load_customizer')) {
 
 	add_action('weaver_xtreme_load_customizer', 'weaver_xtreme_load_customizer_action');
 

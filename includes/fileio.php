@@ -114,30 +114,6 @@ function weaverx_f_get_contents($fn) {
 // =========================== helper functions ===========================
 function weaverx_alert($msg) {
 	echo "<script> alert('" . esc_html($msg) . "'); </script>";
-	// echo "<h1>*** $msg ***</h1>\n";
-/*
-<script>
-  jQuery( function() {
-    jQuery( "#dialog-message" ).dialog({
-      modal: true,
-      buttons: {
-        Ok: function() {
-          jQuery( this ).dialog( "close" );
-        }
-      }
-    });
-  } );
-  </script>
-<div id="dialog-message" title="Weaver Message">
-  <p>
-    <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
-    <?php echo $msg; ?>
-  </p>
-  <p>
-    Can add even more....
-  </p>
-</div>
- */
 }
 
 function weaverx_f_content_dir() {

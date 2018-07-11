@@ -797,7 +797,6 @@ class WeaverX_Set_Customizer_Level extends WP_Customize_Control {
 		// Enqueue
 		wp_enqueue_style( 'wvrx-sr-css' );
 		wp_enqueue_script( 'wvrx-sr-js' );
-
 	}
 
 }

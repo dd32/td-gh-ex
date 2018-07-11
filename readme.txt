@@ -531,3 +531,7 @@ with testing and feature suggestions.
 = Version 4.0.4 =
 * Fix: Problem with search form translation
 * Tweak: some Gutenberg styling
+
+= Version 4.0.5 =
+* Fix: fitvids fixed
+* Fix: Theme will now auto-upgrade generated CSS when updating from 3.2.x to 4.0.x
