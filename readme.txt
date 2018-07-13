@@ -3,7 +3,7 @@
 Contributors: AF themes
 Requires at least: 4.0
 Tested up to: 4.9
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: news, blog, entertainment, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, custom-header, translation-ready, theme-options, threaded-comments
@@ -22,7 +22,9 @@ Beautiful Blog is a child theme of "Magazine 7". Magazine 7 Theme is licensed un
 Beautiful Blog is distributed under the terms of the GNU GPL v2 or later.
 
 == Description ==
- Beautiful Blog is a child theme of Magazine 7. The theme has different fonts and color setup. Furthermore, the theme altered some of the default value to other available settings, like frontpage section and archive layout. With the help of available customizer options along with widgets, you can implement layouts as a clean and minimal blogging site, modern fashion blog, photography blog, wedding blog & magazine and even more. The theme is SEO friendly with optimized codes and awesome supports.
+ Beautiful Blog is a child theme of Magazine 7. The theme has different fonts and color setup. Furthermore, the theme altered some of the default value to other available settings, like frontpage section and archive layout. With the help of available customizer options along with widgets, you can implement layouts as a clean and minimal blogging site, modern fashion blog, photography blog, wedding blog & magazine and even more. The theme is SEO friendly with optimized code and awesome support.
+See Demo: https://demo.afthemes.com/magazine-7/beautiful-blog/
+Support: https://afthemes.com/supports/
 
 == Installation ==
 
@@ -37,6 +39,9 @@ Beautiful Blog is distributed under the terms of the GNU GPL v2 or later.
 Beautiful Blog includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+= 1.0.2 - July 13 2018 =
+* Theme terminology updated
+
 = 1.0.1 - July 5 2018 =
 * Fixed CSS glitch
 
