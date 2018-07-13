@@ -3,7 +3,7 @@
 Created by: Vedathemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 4.9.6
-Version: 1.0.1
+Version: 1.0.2
 PHP required : PHP 5.4+
 IE Browser Support: IE11+
 License: GNU General Public License v2 or later
@@ -83,6 +83,16 @@ Aamla WordPress Theme bundles the following third-party resources:
 	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 == Changelog ==
+
+= 1.0.2 - Jul 13 2018 =
+* Error Fix - Empty string supplied as input to loadHTML()
+* Error Fix - Fatal Error on installing theme below PHP 5.4
+* Error Fix - Replace esc_html to esc_attr for escaping attributes
+* Error Fix - Gutenberg add theme support method changed
+* Error Fix - Tap target size issue for social icons
+* Error Fix - Minor styling issues
+* Error Fix - Minor RTL style correction for pagination and WooCommerce
+* Error Fix - WooCommerce archive pages sidebar position
 
 = 1.0.1 - Jul 02 2018 =
 * Add - Archive page grid layout option.

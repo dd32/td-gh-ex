@@ -1,3 +1,8 @@
+.dp-wrapper.only-content .dp-entry:last-child,
+.dp-wrapper.only-content .dp-entry:only-of-type {
+	margin-bottom: 0;
+}
+
 .dp-entry {
 	margin-bottom: 40px;
 }
@@ -21,6 +26,30 @@
 .list-l-m .dp-main-content,
 .list-r-m .dp-main-content {
 	overflow: hidden;
+}
+
+.dp-main-content .video-container {
+	position: relative;
+}
+
+.dp-main-content .video-container:after {
+	display: block;
+	width: auto;
+	max-height: 100vh;
+	padding-top: 56.25%;
+	content: "";
+}
+
+.dp-main-content .video-container iframe,
+.dp-main-content .video-container object,
+.dp-main-content .video-container embed,
+.dp-main-content .video-container video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
 }
 
 .dp-featured-content {
@@ -148,6 +177,10 @@
 .dp-meta > span:first-child:before,
 .dp-meta .modified-entry-date {
 	display: none;
+}
+
+.dp-content > *:last-child {
+	margin-bottom: 0;
 }
 
 @media only screen and (min-width: 641px) {

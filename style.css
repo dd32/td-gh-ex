@@ -4,7 +4,7 @@ Theme URI: http://www.vedathemes.com/aamla
 Author: Vedathemes
 Author URI: http://www.vedathemes.com/
 Description: Aamla is a minimal, lightweight and mobile first WordPress theme that is flexible and easy to use. It is built with special focus on blog, business and e-commerce websites. Aamla is written with clean code, the most current HTML5 conventions. Aamla can serve as a solid base to build incredible websites.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aamla
@@ -279,6 +279,14 @@ p .alignnone {
 
 .gallery-columns-2 .gallery-item {
 	width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	width: 50%;
+}
+
+.gallery-columns-3 .gallery-item:nth-of-type(3n) {
+	width: 100%;
 }
 
 .gallery-item .gallery-icon {
@@ -687,10 +695,15 @@ blockquote {
 	font-size: 1.125rem;
 	line-height: 1.55556;
 	position: relative;
+	margin-top: 0;
 	margin-bottom: 1.75rem;
 	margin-left: 0;
 	padding-left: 2.5em;
 	color: #757575;
+}
+
+blockquote > p {
+	margin-bottom: 0.875rem;
 }
 
 blockquote > p:last-child {
@@ -1187,8 +1200,6 @@ button.search-submit:focus {
 	position: static;
 	overflow-x: auto;
 	overflow-y: hidden;
-	padding-top: 8px;
-	padding-bottom: 8px;
 	white-space: nowrap;
 	color: #757575;
 }
@@ -1203,6 +1214,8 @@ button.search-submit:focus {
 
 .contact-wrapper > span {
 	margin-right: 0.875rem;
+	padding-top: 8px;
+	padding-bottom: 8px;
 	letter-spacing: 1px;
 }
 
@@ -1227,11 +1240,17 @@ button.search-submit:focus {
 }
 
 .social-navigation ul a {
-	font-size: 14px;
+	line-height: 1;
 	display: block;
-	margin-right: 1.3125em;
+	padding: 12px;
 	color: #363636;
 	background-color: transparent;
+}
+
+.social-navigation ul a .icon {
+	width: 16px;
+	height: 16px;
+	margin-right: 0;
 }
 
 .social-navigation ul a:hover,
@@ -1256,13 +1275,14 @@ button.search-submit:focus {
 
 .site-navigation ul li {
 	display: inline-block;
-	padding: 0.875em 0;
+	padding: 0.2625em 0;
 }
 
 .site-navigation ul a {
 	font-size: 15px;
 	display: block;
 	margin-right: 1.75em;
+	padding: 0.6125em 0;
 	letter-spacing: 0.5px;
 	color: #363636;
 	background-color: transparent;
@@ -1448,6 +1468,10 @@ body:not(.error404) .page-header h1.page-header-title {
 
 body:not(.error404) .page-header-description {
 	margin-top: 0.875rem;
+}
+
+body.grid:not(.error404) .page-header {
+	margin: 20px;
 }
 
 .entry {
@@ -1891,6 +1915,12 @@ body:not(.error404) .page-header-description {
 	display: inline-block;
 }
 
+.rtl .pagination .page-numbers.prev,
+.rtl .pagination .page-numbers.next {
+	-webkit-transform: rotate(180deg);
+	        transform: rotate(180deg);
+}
+
 .image-navigation,
 .comment-navigation,
 .post-navigation {
@@ -1958,7 +1988,7 @@ body:not(.error404) .page-header-description {
 }
 
 .comments-area p.no-comments {
-	margin-bottom: 50px;
+	margin-bottom: 60px;
 }
 
 .comments-title {
@@ -2082,6 +2112,14 @@ body:not(.error404) .page-header-description {
 	font-weight: 400;
 }
 
+.site-footer {
+	border-top: 1px solid #e6e6e6;
+}
+
+.has-footer-widgets.site-footer {
+	border-top-width: 0;
+}
+
 .footer-items {
 	font-size: 14px;
 	line-height: 1.5;
@@ -2186,6 +2224,9 @@ body:not(.error404) .page-header-description {
 	}
 	.gallery-columns-3 .gallery-item {
 		max-width: 33.3333%;
+	}
+	.gallery-columns-3 .gallery-item:nth-of-type(3n) {
+		width: 33.3333%;
 	}
 	.header-items {
 		-webkit-box-pack: end;
@@ -2317,6 +2358,9 @@ body:not(.error404) .page-header-description {
 	body:not(.error404) .page-header {
 		margin-bottom: 60px;
 	}
+	body.grid:not(.error404) .page-header {
+		margin-bottom: 30px;
+	}
 	.grid.index-view .entry {
 		padding: 20px;
 	}
@@ -2356,6 +2400,7 @@ body:not(.error404) .page-header-description {
 	}
 	.page-entry-header-items .page-excerpt {
 		font-size: 20px;
+		letter-spacing: 0.04em;
 	}
 	.entry-author-avatar > img {
 		width: 120px;
@@ -2424,8 +2469,8 @@ body:not(.error404) .page-header-description {
 	.comment-form-url {
 		width: 50%;
 	}
-	.site-footer {
-		border-top: 1px solid #e6e6e6;
+	.has-footer-widgets.site-footer {
+		border-top-width: 1px;
 	}
 	.footer-widget-area {
 		display: -webkit-box;
@@ -2531,6 +2576,10 @@ body:not(.error404) .page-header-description {
 		-ms-flex: 1;
 		flex: 1;
 	}
+	.singular.no-sidebar .site-main {
+		max-width: 83.3333333%;
+		margin: 0 auto;
+	}
 	.index-view.list .entry:last-of-type {
 		margin-bottom: 0;
 		border-bottom-width: 0;
@@ -2559,7 +2608,7 @@ body:not(.error404) .page-header-description {
 	.comment-respond,
 	.entry-comments,
 	.comment-body {
-		margin-bottom: 50px;
+		margin-bottom: 60px;
 	}
 	.nav-menu .sub-menu .icon {
 		position: absolute;
@@ -2638,6 +2687,9 @@ body:not(.error404) .page-header-description {
 	}
 	.grid .site-main {
 		margin: -30px -30px 30px;
+	}
+	.entry {
+		margin-bottom: 60px;
 	}
 	.index-view .entry {
 		margin-bottom: 60px;

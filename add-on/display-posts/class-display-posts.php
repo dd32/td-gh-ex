@@ -127,9 +127,17 @@ class Display_Posts {
 		wp_enqueue_style(
 			'aamla_display_posts_style',
 			get_template_directory_uri() . '/add-on/display-posts/assets/displayposts.css',
-			array(),
+			[],
 			false,
 			'all'
+		);
+
+		wp_enqueue_script(
+			'aamla_display_posts_js',
+			get_template_directory_uri() . '/add-on/display-posts/assets/displayposts.js',
+			[],
+			'1.0.0',
+			true
 		);
 	}
 
@@ -158,11 +166,6 @@ class Display_Posts {
 			'1.0.0',
 			true
 		);
-		wp_localize_script( 'aamla_display_posts_admin_js', 'aamlaDisplayPosts', [
-			'nounce' => wp_create_nonce( 'display_posts' ),
-			'fetch'  => esc_html__( 'Fetching Data...', 'aamla' ),
-			'failed' => esc_html__( 'Nothing Found', 'aamla' ),
-		] );
 	}
 
 	/**

@@ -211,7 +211,7 @@ class WooCommerce {
 		);
 
 		// Shop page link markup.
-		$shopping_page_link = sprintf( '<a class="wc-shop-pagelink" href="%1$s">%2$s %3$s</a>',
+		$shopping_page_link = sprintf( '<a class="wc-shop-pagelink" href="%1$s">%2$s <span class="long-arrow-right">%3$s</span></a>',
 			esc_url( wc_get_page_permalink( 'shop' ) ),
 			$cart_text,
 			aamla_get_icon( [ 'icon' => 'long-arrow-right' ] )
@@ -250,7 +250,7 @@ class WooCommerce {
 		$fragments['span.wc-cart-items'] = '<span class="wc-cart-items' . $cart_class . '">' . absint( $cart_contents_count ) . '</span>';
 
 		// Update shop page link text.
-		$fragments['a.wc-shop-pagelink'] = '<a class="wc-shop-pagelink" href="' . esc_url( wc_get_page_permalink( 'shop' ) ) . '">' . $cart_text . ' ' . aamla_get_icon( [ 'icon' => 'long-arrow-right' ] ) . '</a>';
+		$fragments['a.wc-shop-pagelink'] = '<a class="wc-shop-pagelink" href="' . esc_url( wc_get_page_permalink( 'shop' ) ) . '">' . $cart_text . ' <span class="long-arrow-right">' . aamla_get_icon( [ 'icon' => 'long-arrow-right' ] ) . '</span></a>';
 
 		return $fragments;
 	}
@@ -298,7 +298,7 @@ class WooCommerce {
 	 */
 	public function woocommerce_body_classes( $classes ) {
 
-		if ( is_shop() ) {
+		if ( is_shop() || is_product_category() || is_product_tag() ) {
 
 			// Remove default sidebar layout classes.
 			$vals = [ 'no-sidebar', 'sidebar-left', 'sidebar-right' ];
@@ -330,7 +330,7 @@ class WooCommerce {
 	 */
 	public function product_search_form( $form ) {
 		ob_start();
-		require get_template_directory() . '/add-on/woocommerce/searchform.php';
+		aamla_get_template_partial( 'add-on/woocommerce', 'searchform' );
 		$form = ob_get_clean();
 		return $form;
 	}

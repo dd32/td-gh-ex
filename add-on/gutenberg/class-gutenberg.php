@@ -66,23 +66,9 @@ class GutenBerg {
 	 * @since 1.0.1
 	 */
 	public function add_gutenberg_support() {
-		// Add theme support for Infinite Scroll.
-		add_theme_support( 'gutenberg', [
-			'wide-images' => true,
-			'colors'      => [
-				'#FFFFFF',
-				'#FAFAFA',
-				'#303F9F',
-				'#3F51B5',
-				'#C5CAE9',
-				'#FFFFFF',
-				'#448AFF',
-				'#0049C4',
-				'#363636',
-				'#757575',
-				'#E6E6E6',
-			],
-		] );
+		// Add theme support for Wide Alignment.
+		add_theme_support( 'align-wide' );
+
 	}
 
 	/**

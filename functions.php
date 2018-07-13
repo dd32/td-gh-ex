@@ -60,23 +60,23 @@ function aamla_setup() {
 
 	// Allows the use of valid HTML5 markup.
 	add_theme_support( 'html5',
-		[
+		array(
 			'comment-form',
 			'comment-list',
 			'gallery',
 			'caption',
-		]
+		)
 	);
 
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats',
-		[
+		array(
 			'image',
 			'video',
 			'quote',
 			'gallery',
 			'audio',
-		]
+		)
 	);
 
 	/**
@@ -87,10 +87,10 @@ function aamla_setup() {
 	 * @param arrray $locations Associative array of menu location identifiers (like a slug) and descriptive text.
 	 */
 	$locations = apply_filters( 'aamla_nav_menus',
-		[
+		array(
 			'primary' => esc_html__( 'Primary Menu', 'aamla' ),
 			'social'  => esc_html__( 'Social Links', 'aamla' ),
-		]
+		)
 	);
 
 	// Register nav menu locations.
@@ -105,7 +105,7 @@ function aamla_setup() {
 	 */
 	$bg_args = apply_filters(
 		'aamla_custom_bg_args',
-		[
+		array(
 			'default-image'          => '',
 			'default-preset'         => 'default',
 			'default-position-x'     => 'left',
@@ -117,7 +117,7 @@ function aamla_setup() {
 			'wp-head-callback'       => '_custom_background_cb',
 			'admin-head-callback'    => '',
 			'admin-preview-callback' => '',
-		]
+		)
 	);
 
 	/*
@@ -136,13 +136,13 @@ function aamla_setup() {
 	 */
 	$logo_args = apply_filters(
 		'aamla_custom_logo_args',
-		[
+		array(
 			'width'       => 120,
 			'height'      => 120,
 			'flex-width'  => true,
 			'flex-height' => false,
 			'header_text' => '',
-		]
+		)
 	);
 	// Set up the WordPress core custom logo feature.
 	add_theme_support( 'custom-logo', $logo_args );
@@ -156,7 +156,7 @@ function aamla_setup() {
 	 */
 	$header_args = apply_filters(
 		'aamla_custom_header_args',
-		[
+		array(
 			'default-image'          => '',
 			'random-default'         => false,
 			'width'                  => 1680,
@@ -171,7 +171,7 @@ function aamla_setup() {
 			'admin-preview-callback' => '',
 			'video'                  => false,
 			'video-active-callback'  => 'is_front_page',
-		]
+		)
 	);
 
 	/*
@@ -199,7 +199,7 @@ function aamla_setup() {
 	 * @param arrray $addons Array of addon features for this theme.
 	 */
 	$addons = apply_filters( 'aamla_theme_support',
-		[
+		array(
 			'widgetlayer',
 			'jetpack',
 			'typography',
@@ -207,7 +207,7 @@ function aamla_setup() {
 			'media-manager',
 			'woocommerce',
 			'gutenberg',
-		]
+		)
 	);
 	foreach ( $addons as $addon ) {
 		$file_path = "add-on/{$addon}/class-{$addon}.php";
@@ -225,7 +225,7 @@ function aamla_setup() {
 	}
 
 	// Add custom styles for visual editor to resemble the theme style.
-	add_editor_style( [ 'assets/admin/css/editor-style.css', esc_url( aamla_font_url() ) ] );
+	add_editor_style( array( 'assets/admin/css/editor-style.css', esc_url( aamla_font_url() ) ) );
 
 	// Load theme customizer initiation file at last.
 	require_once get_parent_theme_file_path( 'lib/customizer/customize-register.php' );
@@ -277,29 +277,29 @@ function aamla_widgets_init() {
 	 * }
 	 */
 	$widgets = apply_filters( 'aamla_register_sidebar',
-		[
-			[
+		array(
+			array(
 				'name' => esc_html__( 'Sidebar Widgets', 'aamla' ),
 				'id'   => 'sidebar',
-			],
-			[
+			),
+			array(
 				'name' => esc_html__( 'Action Widgets', 'aamla' ),
 				'id'   => 'header',
-			],
-			[
+			),
+			array(
 				'name' => esc_html__( 'Footer Widgets', 'aamla' ),
 				'id'   => 'footer',
-			],
-		]
+			),
+		)
 	);
 
-	$defaults = [
+	$defaults = array(
 		'description'   => esc_html__( 'Add widgets here.', 'aamla' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title"><span>',
 		'after_title'   => '</span></h3>',
-	];
+	);
 
 	foreach ( $widgets as $widget ) {
 		register_sidebar( wp_parse_args( $widget, $defaults ) );
@@ -320,7 +320,7 @@ add_action( 'widgets_init', 'aamla_widgets_init' );
  */
 function aamla_font_url() {
 
-	$fonts     = [];
+	$fonts     = array();
 	$fonts_url = '';
 	$subsets   = 'latin,latin-ext';
 
@@ -335,10 +335,10 @@ function aamla_font_url() {
 
 	if ( $fonts ) {
 		$fonts_url = add_query_arg(
-			[
+			array(
 				'family' => rawurlencode( implode( '|', $fonts ) ),
 				'subset' => rawurlencode( $subsets ),
-			],
+			),
 			'https://fonts.googleapis.com/css'
 		);
 	}
@@ -384,23 +384,23 @@ function aamla_scripts() {
 	wp_enqueue_style(
 		'aamla-fonts',
 		esc_url( aamla_font_url() ),
-		[],
+		array(),
 		null
 	);
 
 	// Theme localize scripts data.
 	$l10n = apply_filters( 'aamla_localize_script_data',
-		[
+		array(
 			'menu'  => 'primary-menu', // ID of nav-menu first UL element.
-			'close' => aamla_get_icon( [ 'icon' => 'close' ] ),
-		]
+			'close' => aamla_get_icon( array( 'icon' => 'close' ) ),
+		)
 	);
 
 	// Theme scripts.
 	wp_enqueue_script(
 		'aamla-scripts',
 		get_theme_file_uri( '/scripts.js' ),
-		[],
+		array(),
 		'1.0.0',
 		true
 	);
@@ -427,10 +427,10 @@ add_action( 'wp_enqueue_scripts', 'aamla_scripts' );
  */
 function aamla_resource_hints( $urls, $relation_type ) {
 	if ( wp_style_is( 'aamla-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
-		$urls[] = [
+		$urls[] = array(
 			'href' => 'https://fonts.gstatic.com',
 			'crossorigin',
-		];
+		);
 	}
 
 	return $urls;

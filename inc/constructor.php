@@ -133,7 +133,7 @@ function aamla_header_widgets() {
 		'<button aria-expanded="false" class="action-toggle">%1$s<span class="screen-reader-text">%2$s</span></button>',
 		aamla_get_icon( [ 'icon' => 'more' ] ),
 		esc_html__( 'Show possible user actions', 'aamla' )
-	); // WPCS xss ok.
+	); // WPCS xss ok. We get escaped value from 'aamla_get_icon' (Contains HTML).
 	aamla_widgets(
 		'header-widget-area',
 		'header-widget-area',
@@ -324,21 +324,21 @@ function aamla_page_excerpt() {
 	// Remove html tags except 'p' and 'a' tags.
 	$excerpt = strip_tags( $excerpt, '<p><a>' );
 
-	// Get all links within 'a' tag in page excerpt.
-	$dom = new DOMDocument();
-	$dom->loadHTML( $excerpt );
-	$links = $dom->getElementsByTagName( 'a' );
-
-	// Iterate over the extracted links and escape their URLs.
-	foreach ( $links as $link ) {
-		$url = esc_url( $link->getAttribute( 'href' ) );
-		$link->removeAttribute( 'href' );
-		$link->setAttribute( 'href', $url );
-	}
-	$excerpt = $dom->saveHTML();
-
-	// Display excerpt (if any).
 	if ( $excerpt ) {
+		$dom = new DOMDocument();
+		$dom->loadHTML( $excerpt );
+
+		// Get all links within 'a' tag in page excerpt.
+		$links = $dom->getElementsByTagName( 'a' );
+
+		// Iterate over the extracted links and escape their URLs.
+		foreach ( $links as $link ) {
+			$url = esc_url( $link->getAttribute( 'href' ) );
+			$link->removeAttribute( 'href' );
+			$link->setAttribute( 'href', $url );
+		}
+		$excerpt = $dom->saveHTML();
+
 		printf( '<div class="page-excerpt">%s</div>', $excerpt ); // WPCS xss ok. Contains HTML, other values escaped.
 	}
 }

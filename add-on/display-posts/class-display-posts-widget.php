@@ -63,9 +63,6 @@ class Display_Posts_Widget extends \WP_Widget {
 			'styles'    => 'list_l',
 		];
 
-		// Get the registered post types.
-		$this->post_types = get_post_types( [ 'public' => true ], 'objects' );
-
 		// Set the options for orderby.
 		$this->orderby = [
 			'date'          => esc_html__( 'Publish Date', 'aamla' ),
@@ -75,9 +72,6 @@ class Display_Posts_Widget extends \WP_Widget {
 			'comment_count' => esc_html__( 'Comment Count', 'aamla' ),
 			'rand'          => esc_html__( 'Random', 'aamla' ),
 		];
-
-		// Setup our AJAX callback.
-		add_action( 'wp_ajax_aamla_display_posts', array( $this, 'ajax_callback' ) );
 
 		// Set the widget options.
 		$widget_ops = [
@@ -189,6 +183,12 @@ class Display_Posts_Widget extends \WP_Widget {
 	public function form( $instance ) {
 		// Merge with defaults.
 		$instance = wp_parse_args( (array) $instance, $this->defaults );
+
+		if ( empty( $this->post_types ) ) {
+			// Get the registered post types.
+			$this->post_types = get_post_types( [ 'public' => true ], 'objects' );
+		}
+
 		?>
 		<p>
 			<?php $this->label( 'title', esc_html__( 'Title:', 'aamla' ) ); ?>
@@ -205,29 +205,17 @@ class Display_Posts_Widget extends \WP_Widget {
 		</p>
 
 		<div class="page-panel" <?php echo 'page' !== $instance['post_type'] ? ' style="display:none;"' : ''; ?>>
-			<?php
-			if ( 'page' === $instance['post_type'] ) :
-				$this->pages_checklist( $instance['pages'] );
-			endif;
-			?>
+			<?php $this->pages_checklist( $instance['pages'] ); ?>
 		</div><!-- .page-panel -->
 
 		<div class="post-panel" <?php echo ( ! $instance['post_type'] || 'page' === $instance['post_type'] ) ? ' style="display:none;"' : ''; ?>>
 
 			<div class="taxonomies">
-				<?php
-				if ( $instance['post_type'] && 'page' !== $instance['post_type'] ) {
-					$this->taxonomies_select( $instance['post_type'], $instance['taxonomy'] );
-				}
-				?>
+				<?php $this->taxonomies_select( $instance['post_type'], $instance['taxonomy'] ); ?>
 			</div><!-- .taxonomies -->
 
 			<div class="terms-panel" <?php echo '' === $instance['taxonomy'] ? ' style="display:none;"' : ''; ?>>
-				<?php
-				if ( '' !== $instance['taxonomy'] ) :
-					$this->terms_checklist( $instance['taxonomy'], $instance['terms'] );
-				endif;
-				?>
+				<?php $this->terms_checklist( $instance['taxonomy'], $instance['terms'] ); ?>
 			</div><!-- .terms-panel -->
 
 			<p class="number-of-posts">
@@ -279,6 +267,11 @@ class Display_Posts_Widget extends \WP_Widget {
 
 		$instance          = $old_instance;
 		$instance['title'] = sanitize_text_field( $new_instance['title'] );
+
+		if ( empty( $this->post_types ) ) {
+			// Get the registered post types.
+			$this->post_types = get_post_types( [ 'public' => true ], 'objects' );
+		}
 
 		$valid_post_types      = wp_list_pluck( $this->post_types, 'name' );
 		$instance['post_type'] = in_array( $new_instance['post_type'], $valid_post_types, true ) ? $new_instance['post_type'] : '';
@@ -345,95 +338,65 @@ class Display_Posts_Widget extends \WP_Widget {
 	/**
 	 * Prints a checkbox list of all terms for a taxonomy.
 	 *
-	 * @param str   $taxonomy       Selected taxonomy in widget form.
+	 * @param str   $taxonomy       Selected Taxonomy.
 	 * @param array $selected_terms Selected Terms.
 	 * @return void
 	 */
-	public function terms_checklist( $taxonomy, $selected_terms ) {
+	public function terms_checklist( $taxonomy, $selected_terms = [] ) {
 
-		// Get list of all terms for a taxonomy.
-		$terms = get_terms( [ 'taxonomy' => $taxonomy ] );
-		$terms = wp_list_pluck( $terms, 'name', 'slug' );
+		// Get list of all registered terms.
+		$terms = get_terms();
+
+		// Get 'checkbox' options as value => label.
+		$options = wp_list_pluck( $terms, 'name', 'slug' );
+
+		// Get HTML classes for checkbox options.
+		$classes = wp_list_pluck( $terms, 'taxonomy', 'slug' );
+		if ( $taxonomy ) {
+			foreach ( $classes as $slug => $taxon ) {
+				if ( $taxonomy !== $taxon ) {
+					$classes[ $slug ] .= ' aamla-hidden';
+				}
+			}
+		}
 
 		// Terms Checkbox markup.
 		$this->label( 'terms', esc_html__( 'Select Terms', 'aamla' ) );
-		$this->mu_checkbox( 'terms', $terms, $selected_terms );
+		$this->mu_checkbox( 'terms', $options, $selected_terms, $classes );
 	}
 
 	/**
 	 * Prints select list of all taxonomies for a post type.
 	 *
-	 * @param str $post_type Selected post type in widget form.
-	 * @param str $taxonomy  Selected taxonomy in widget form.
+	 * @param str   $post_type Selected post type.
+	 * @param array $selected  Selected taxonomy in widget form.
 	 * @return void
 	 */
-	public function taxonomies_select( $post_type, $taxonomy ) {
+	public function taxonomies_select( $post_type, $selected = [] ) {
 
-		// Get list of all taxonomies for a post type.
-		$taxonomies = get_object_taxonomies( $post_type, 'objects' );
-		$taxonomies = wp_list_pluck( $taxonomies, 'label', 'name' );
-		$taxonomies = array_merge( [ '' => esc_html__( 'Ignore Taxonomy', 'aamla' ) ], $taxonomies );
+		// Get list of all registered taxonomies.
+		$taxonomies = get_taxonomies( [], 'objects' );
+
+		// Get 'select' options as value => label.
+		$options = wp_list_pluck( $taxonomies, 'label', 'name' );
+		$options = array_merge( [ '' => esc_html__( 'Ignore Taxonomy', 'aamla' ) ], $options );
+
+		// Get HTML classes for select options.
+		$classes = wp_list_pluck( $taxonomies, 'object_type', 'name' );
+		if ( $post_type && 'page' !== $post_type ) {
+			foreach ( $classes as $name => $type ) {
+				$type = (array) $type;
+				if ( ! in_array( $post_type, $type, true ) ) {
+					$type[]           = 'aamla-hidden';
+					$classes[ $name ] = $type;
+				}
+			}
+		}
+		$classes[''] = 'always-visible';
 
 		// Taxonomy Select markup.
 		$this->label( 'taxonomy', esc_html__( 'Select Taxonomy', 'aamla' ) );
-		$this->select( 'taxonomy', $taxonomies, $taxonomy );
-	}
-
-	/**
-	 * Setup Ajax callback for this widget.
-	 *
-	 * @return void
-	 */
-	public function ajax_callback() {
-
-		// Nounce verification of Ajax request.
-		check_ajax_referer( 'display_posts' );
-
-		if ( isset( $_POST['query_context'] ) ) {
-			$queried_context = sanitize_text_field( $_POST['query_context'] );
-		} else {
-			$queried_context = '';
-		}
-
-		if ( isset( $_POST['query_val'] ) ) {
-			$queried_item = sanitize_text_field( $_POST['query_val'] );
-		} else {
-			$queried_item = '';
-		}
-
-		if ( isset( $_POST['widget_id'] ) ) {
-			$widget_id = sanitize_text_field( $_POST['widget_id'] );
-		} else {
-			$widget_id = '';
-		}
-
-		if ( '' === $queried_item || '' === $queried_context ) {
-			echo false;
-			wp_die();
-		}
-
-		$widget_id = explode( '_aamla_display_posts-', $widget_id );
-		$id        = $widget_id[1];
-
-		$instances = $this->get_settings();
-		$instance  = array_key_exists( $id, $instances ) ? $instances[ $id ] : [];
-
-		if ( 'posttype' === $queried_context ) {
-			if ( 'page' === $queried_item ) {
-				$pages = isset( $instance['pages'] ) ? $instance['pages'] : [];
-				$this->pages_checklist( $pages );
-			} elseif ( $queried_item ) {
-				$taxonomy = isset( $instance['taxonomy'] ) ? $instance['taxonomy'] : [];
-				$this->taxonomies_select( $queried_item, $instance['taxonomy'] );
-			}
-		} elseif ( 'taxonomy' === $queried_context ) {
-			if ( $queried_item ) {
-				$terms = isset( $instance['terms'] ) ? $instance['terms'] : [];
-				$this->terms_checklist( $queried_item, $instance['terms'] );
-			}
-		}
-
-		wp_die();
+		$this->select( 'taxonomy', $options, $selected, $classes );
 	}
 
 	/**
@@ -459,13 +422,20 @@ class Display_Posts_Widget extends \WP_Widget {
 	 * @param str   $for      Select for which ID.
 	 * @param array $options  Select options as 'value => label' pair.
 	 * @param str   $selected selected option.
+	 * @param array $classes  Options HTML classes.
 	 * @param bool  $echo     Display or return.
 	 * @return void|string
 	 */
-	public function select( $for, $options, $selected, $echo = true ) {
-		$select = '';
+	public function select( $for, $options, $selected, $classes = [], $echo = true ) {
+		$select      = '';
+		$final_class = '';
 		foreach ( $options as $value => $label ) {
-			$select .= sprintf( '<option value="%s" %s>%s</option>', esc_attr( $value ), selected( $value, $selected, false ), esc_html( $label ) );
+			if ( isset( $classes[ $value ] ) ) {
+				$option_classes = (array) $classes[ $value ];
+				$option_classes = array_map( 'esc_attr', $option_classes );
+				$final_class    = 'class="' . join( ' ', $option_classes ) . '"';
+			}
+			$select .= sprintf( '<option value="%1$s" %2$s %3$s>%4$s</option>', esc_attr( $value ), $final_class, selected( $value, $selected, false ), esc_html( $label ) );
 		}
 
 		$select = sprintf( '<select id="%1$s" name="%2$s" class="aamla-%3$s">%4$s</select>',
@@ -488,10 +458,13 @@ class Display_Posts_Widget extends \WP_Widget {
 	 * @param str   $for      Select for which ID.
 	 * @param array $options  Select options as 'value => label' pair.
 	 * @param str   $selected selected option.
+	 * @param array $classes  Checkbox input HTML classes.
 	 * @param bool  $echo     Display or return.
 	 * @return void|string
 	 */
-	public function mu_checkbox( $for, $options, $selected, $echo = true ) {
+	public function mu_checkbox( $for, $options, $selected, $classes = [], $echo = true ) {
+
+		$final_class = '';
 
 		$mu_checkbox = '<div class="' . esc_attr( $for ) . '-checklist"><ul id="' . esc_attr( $this->get_field_id( $for ) ) . '">';
 
@@ -506,7 +479,10 @@ class Display_Posts_Widget extends \WP_Widget {
 		}
 
 		foreach ( $rev_options as $id => $label ) {
-			$mu_checkbox .= "\n<li>" . '<label class="selectit"><input value="' . esc_attr( $id ) . '" type="checkbox" name="' . esc_attr( $this->get_field_name( $for ) ) . '[]"' . checked( in_array( strval( $id ), $selected, true ), true, false ) . ' /> ' . esc_html( $label ) . "</label></li>\n";
+			if ( isset( $classes[ $id ] ) ) {
+				$final_class = ' class="' . esc_attr( $classes[ $id ] ) . '"';
+			}
+			$mu_checkbox .= "\n<li$final_class>" . '<label class="selectit"><input value="' . esc_attr( $id ) . '" type="checkbox" name="' . esc_attr( $this->get_field_name( $for ) ) . '[]"' . checked( in_array( strval( $id ), $selected, true ), true, false ) . ' /> ' . esc_html( $label ) . "</label></li>\n";
 		}
 		$mu_checkbox .= "</ul></div>\n";
 

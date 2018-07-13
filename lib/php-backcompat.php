@@ -58,7 +58,7 @@ function aamla_prevent_customize_load() {
 			PHP_VERSION
 		),
 		'',
-		[ 'back_link' => true ]
+		array( 'back_link' => true )
 	); // WPCS xss ok. 'PHP_VERSION' is a Predefined Constant.
 }
 add_action( 'load-customize.php', 'aamla_prevent_customize_load' );

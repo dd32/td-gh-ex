@@ -29,7 +29,7 @@ class Blank_Widget extends \WP_Widget {
 			'customize_selective_refresh' => true,
 		);
 		parent::__construct( 'aamla_blank_widget', esc_html__( 'Blank Widget', 'aamla' ), $widget_ops );
-		add_filter( 'aamla_widget_custom_css', [ $this, 'add_widget_css' ], 10, 3 );
+		add_filter( 'aamla_widget_custom_css', [ $this, 'add_widget_css' ], 10, 2 );
 	}
 
 	/**
@@ -96,15 +96,20 @@ class Blank_Widget extends \WP_Widget {
 	 *
 	 * @since 1.0.1
 	 *
-	 * @param array  $css Array of css rules.
-	 * @param string $type Type of widget (id_base).
-	 * @param array  $settings array of settings for widget instance.
+	 * @param array $css          Array of css rules.
+	 * @param array $widget_data {.
+	 *     @type str   $widget_id  Widget ID.
+	 *     @type int   $widget_pos Widget position in widgetlayer widget-area.
+	 *     @type array $instance   Current widget instance settings.
+	 *     @type str   $id_base    Widget ID base.
+	 * }
 	 * @return array
 	 */
-	public function add_widget_css( $css, $type, $settings ) {
-		if ( 'aamla_blank_widget' !== $type ) {
+	public function add_widget_css( $css, $widget_data ) {
+		if ( 'aamla_blank_widget' !== $widget_data[3] ) {
 			return $css;
 		}
+		$settings        = $widget_data[2];
 		$css['common'][] = 'margin-bottom: 0';
 		$css['common'][] = 'padding-top: 0';
 		$css['common'][] = 'padding-bottom: 0';

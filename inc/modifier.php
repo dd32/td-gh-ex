@@ -81,6 +81,22 @@ add_filter( 'aamla_get_attr_site_content', 'aamla_primary_wrapper' );
 add_filter( 'aamla_get_attr_footer_items', 'aamla_primary_wrapper' );
 
 /**
+ * Adds class to site footer.
+ *
+ * @since 1.0.2
+ *
+ * @param array $attr attribute values array.
+ * @return array
+ */
+function aamla_site_footer_classes( $attr ) {
+	if ( is_active_sidebar( 'footer' ) ) {
+		$attr['class'] .= ' has-footer-widgets';
+	}
+	return $attr;
+}
+add_filter( 'aamla_get_attr_site_footer', 'aamla_site_footer_classes' );
+
+/**
  * Change excerpt length.
  *
  * Change excerpt length to be displayed on main, archive and search

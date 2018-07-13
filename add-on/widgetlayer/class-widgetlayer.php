@@ -78,9 +78,10 @@ class WidgetLayer {
 		add_action( 'save_post', [ self::get_instance(), 'save_widget_metabox' ], 10, 2 );
 		add_action( 'delete_post', [ self::get_instance(), 'delete_pages_with_custom_widget' ] );
 		add_filter( 'aamla_register_sidebar', [ self::get_instance(), 'register_widget_areas' ] );
-		add_filter( 'dynamic_sidebar_params', [ self::get_instance(), 'add_widget_classes' ] );
+		add_filter( 'dynamic_sidebar_params', [ self::get_instance(), 'add_widget_customizations' ] );
 		add_filter( 'widget_update_callback', [ self::get_instance(), 'update_settings' ], 10, 2 );
 		add_filter( 'aamla_widget_custom_classes', [ self::get_instance(), 'widget_classes' ], 10, 3 );
+		add_filter( 'aamla_custom_widget_form', [ self::get_instance(), 'image_upload' ], 10, 5 );
 	}
 
 	/**
@@ -110,14 +111,34 @@ class WidgetLayer {
 	 */
 	public function enqueue_admin() {
 		$screen = get_current_screen();
-		if ( in_array( $screen->id, array( 'page', 'widgets', 'customize' ), true ) ) {
+		if ( in_array( $screen->id, [ 'page', 'widgets', 'customize' ], true ) ) {
+			wp_enqueue_media();
+
 			wp_enqueue_style(
 				'aamla_widgetlayer_admin_style',
 				get_template_directory_uri() . '/add-on/widgetlayer/admin/widgetlayer.css',
-				array(),
+				[],
 				false,
 				'all'
 			);
+
+			wp_enqueue_script(
+				'aamla_widgetlayer_admin_js',
+				get_template_directory_uri() . '/add-on/widgetlayer/admin/widgetlayer.js',
+				[ 'jquery' ],
+				'1.0.0',
+				true
+			);
+
+			// Theme localize scripts data.
+			$l10n = apply_filters( 'aamla_localize_script_data',
+				[
+					'uploader_title'       => esc_html__( 'Set Text Widget Featured Image', 'aamla' ),
+					'uploader_button_text' => esc_html__( 'Select', 'aamla' ),
+					'set_featured_img'     => esc_html__( 'Set Featured Image', 'aamla' ),
+				]
+			);
+			wp_localize_script( 'aamla_widgetlayer_admin_js', 'aamlaImageUploadText', $l10n );
 		}
 	}
 
@@ -136,7 +157,7 @@ class WidgetLayer {
 			return '';
 		}
 
-		// We will put inline css to individual widgets in customize preview.
+		// We will put inline css to individual widgets separately in customize preview.
 		if ( is_customize_preview() ) {
 			return '';
 		}
@@ -149,9 +170,13 @@ class WidgetLayer {
 			return '';
 		}
 
-		$css_array = array();
+		$css_array = [];
 		foreach ( $sidebars_widgets[ 'widgetlayer-page-' . $page_id ] as $widget ) {
-			$css_array = array_merge_recursive( $css_array, $this->get_widget_css( $widget ) );
+			$widget_data = $this->get_widget_data_from_id( $page_id, $widget );
+			if ( false === $widget_data ) {
+				continue;
+			}
+			$css_array = array_merge_recursive( $css_array, $this->get_widget_css( $widget_data ) );
 		}
 		$final_css = $css_array ? $this->widget_css_array_to_string( $css_array ) : '';
 
@@ -159,86 +184,78 @@ class WidgetLayer {
 	}
 
 	/**
-	 * Get dynamically generated inline css from widget instance settings.
+	 * Get dynamically generated inline css from widget id.
 	 *
 	 * @since 1.0.1
 	 *
-	 * @param  string $widget_id Widget ID.
+	 * @param array $widget_data {
+	 *     Current widget's data to generate customized output.
+	 *     @type str   $widget_id  Widget ID.
+	 *     @type int   $widget_pos Widget position in widgetlayer widget-area.
+	 *     @type array $instance   Current widget instance settings.
+	 *     @type str   $id_base    Widget ID base.
+	 * }
 	 * @return string Verified css string or empty string.
 	 */
-	public function get_widget_css( $widget_id ) {
-		global $wp_registered_widgets;
-		$sidebars_widgets = get_option( 'sidebars_widgets', array() );
-
-		$widget_css = [];
-		$widget_pos = array_search( $widget_id, $sidebars_widgets[ 'widgetlayer-page-' . get_the_ID() ], true );
-		if ( false !== $widget_pos ) {
-			$widget_css['common'][] = 'order:' . 2 * $widget_pos;
-		} else {
+	public function get_widget_css( $widget_data ) {
+		if ( ! $widget_data || ! is_array( $widget_data ) ) {
 			return [];
 		}
 
-		// Get widget parameters.
-		$widget_params = $wp_registered_widgets[ $widget_id ];
+		$widget_id  = isset( $widget_data[0] ) ? $widget_data[0] : false;
+		$widget_pos = isset( $widget_data[1] ) ? $widget_data[1] : false;
+		$instance   = isset( $widget_data[2] ) ? $widget_data[2] : false;
+		$id_base    = isset( $widget_data[3] ) ? $widget_data[3] : false;
 
-		/*
-		 * Widget's display callback function is actually an array of widget object
-		 * and 'display callback' method. Let's use that object to get widget settings.
-		 */
-		if ( ! ( is_array( $widget_params['callback'] ) && is_object( $widget_params['callback'][0] ) ) ) {
+		if ( false === $widget_id || false === $widget_pos || false === $instance || false === $id_base ) {
 			return [];
 		}
-		$widget_obj = $widget_params['callback'][0];
-		if ( ! ( method_exists( $widget_obj, 'get_settings' ) && isset( $widget_params['params'][0]['number'] ) ) ) {
-			return [];
-		}
-		$instances = $widget_obj->get_settings();
-		$number    = $widget_params['params'][0]['number'];
-		if ( array_key_exists( $number, $instances ) ) {
-			$instance     = $instances[ $number ];
-			$wid_settings = array_intersect_key( $instance, $this->widget_options );
-			if ( ! empty( $wid_settings ) ) {
-				foreach ( $this->widget_options as $key => $args ) {
-					if ( ! isset( $instance[ $key ] ) || '' === $instance[ $key ] ) {
-						continue;
-					}
-					$val = $instance[ $key ];
-					switch ( $key ) {
-						case 'aamla_width':
-							if ( '' !== $instance['aamla_width_tablet'] ) {
-								$widget_css['desktop'][] = sprintf( 'flex: 0 0 %s%%', absint( $val ) );
-							} else {
-								$widget_css['tablet'][] = sprintf( 'flex: 0 0 %s%%', absint( $val ) );
-							}
-							break;
-						case 'aamla_width_tablet':
+
+		$widget_css             = [];
+		$widget_css['common'][] = 'order:' . 2 * $widget_pos;
+		$wid_settings           = array_intersect_key( $instance, $this->widget_options );
+
+		if ( ! empty( $wid_settings ) ) {
+			foreach ( $this->widget_options as $key => $args ) {
+				if ( ! isset( $instance[ $key ] ) || '' === $instance[ $key ] ) {
+					continue;
+				}
+				$val = $instance[ $key ];
+				switch ( $key ) {
+					case 'aamla_width':
+						if ( '' !== $instance['aamla_width_tablet'] ) {
+							$widget_css['desktop'][] = sprintf( 'flex: 0 0 %s%%', absint( $val ) );
+						} else {
 							$widget_css['tablet'][] = sprintf( 'flex: 0 0 %s%%', absint( $val ) );
-							break;
-						case 'aamla_vert_align':
-							$widget_css['tablet'][] = 'display:flex';
-							$widget_css['tablet'][] = 'flex-direction:column';
-							$widget_css['tablet'][] = ( 'middle' === $val ) ? 'justify-content:center' : 'justify-content:flex-end';
-							break;
-						case 'aamla_text_align':
-							$widget_css['common'][] = ( 'center' === $val ) ? 'text-align:center' : 'text-align:right';
-							break;
-						case 'aamla_show_mobile':
-							$widget_css['mobile_only'][] = 'display:none';
-							break;
-						case 'aamla_push_down':
-							$widget_css['mobile_only'][] = 'order:' . ( 2 * ( $widget_pos + 1 ) + 1 );
-							break;
-						case 'aamla_push_down_tablet':
-							$widget_css['tablet_only'][] = 'order:' . ( 2 * ( $widget_pos + 1 ) + 1 );
-							break;
-						default:
-							break;
-					}
+						}
+						break;
+					case 'aamla_width_tablet':
+						$widget_css['tablet'][] = sprintf( 'flex: 0 0 %s%%', absint( $val ) );
+						break;
+					case 'aamla_vert_align':
+						$widget_css['tablet'][] = 'display:flex';
+						$widget_css['tablet'][] = 'flex-direction:column';
+						$widget_css['tablet'][] = ( 'middle' === $val ) ? 'justify-content:center' : 'justify-content:flex-end';
+						break;
+					case 'aamla_text_align':
+						$widget_css['common'][] = ( 'center' === $val ) ? 'text-align:center' : 'text-align:right';
+						break;
+					case 'aamla_show_mobile':
+						$widget_css['mobile_only'][] = 'display:none';
+						break;
+					case 'aamla_push_down':
+						$widget_css['mobile_only'][] = 'order:' . ( 2 * ( $widget_pos + 1 ) + 1 );
+						break;
+					case 'aamla_push_down_tablet':
+						$widget_css['tablet_only'][] = 'order:' . ( 2 * ( $widget_pos + 1 ) + 1 );
+						break;
+					default:
+						break;
 				}
 			}
-			$id_base    = property_exists( $widget_obj, 'id_base' ) ? $widget_obj->id_base : '';
-			$widget_css = apply_filters( 'aamla_widget_custom_css', $widget_css, $id_base, $instance, $widget_id );
 		}
+
+		$widget_css = apply_filters( 'aamla_widget_custom_css', $widget_css, $widget_data );
 
 		if ( ! empty( $widget_css ) ) {
 			foreach ( $widget_css as $key => $rules ) {
@@ -296,45 +313,34 @@ class WidgetLayer {
 	 *
 	 * @since 1.0.1
 	 *
-	 * @param  string $widget_id Widget ID.
+	 * @param array $widget_data {
+	 *     Current widget's data to generate customized output.
+	 *     @type str   $widget_id  Widget ID.
+	 *     @type int   $widget_pos Widget position in widgetlayer widget-area.
+	 *     @type array $instance   Current widget instance settings.
+	 *     @type str   $id_base    Widget ID base.
+	 * }
 	 * @return array  Verified class string or empty string.
 	 */
-	public function get_widget_classes( $widget_id ) {
-		global $wp_registered_widgets;
-		$sidebars_widgets = get_option( 'sidebars_widgets', array() );
-
-		$widget_classes = [];
-		$widget_pos     = array_search( $widget_id, $sidebars_widgets[ 'widgetlayer-page-' . get_the_ID() ], true );
-		if ( false !== $widget_pos ) {
-			$widget_classes[] = 'brick-' . $widget_pos;
-		} else {
-			return [];
+	public function get_widget_classes( $widget_data ) {
+		if ( ! $widget_data || ! is_array( $widget_data ) ) {
+			return '';
 		}
 
-		// Get widget parameters.
-		$widget_params = $wp_registered_widgets[ $widget_id ];
+		$widget_id  = isset( $widget_data[0] ) ? $widget_data[0] : false;
+		$widget_pos = isset( $widget_data[1] ) ? $widget_data[1] : false;
+		$instance   = isset( $widget_data[2] ) ? $widget_data[2] : false;
+		$id_base    = isset( $widget_data[3] ) ? $widget_data[3] : false;
 
-		/*
-		 * Widget's display callback function is actually an array of widget object
-		 * and 'display callback' method. Let's use that object to get widget settings.
-		 */
-		if ( ! ( is_array( $widget_params['callback'] ) && is_object( $widget_params['callback'][0] ) ) ) {
-			return [];
-		}
-		$widget_obj = $widget_params['callback'][0];
-		if ( ! ( method_exists( $widget_obj, 'get_settings' ) && isset( $widget_params['params'][0]['number'] ) ) ) {
-			return [];
-		}
-		$instances = $widget_obj->get_settings();
-		$number    = $widget_params['params'][0]['number'];
-		if ( array_key_exists( $number, $instances ) ) {
-			$instance       = $instances[ $number ];
-			$id_base        = property_exists( $widget_obj, 'id_base' ) ? $widget_obj->id_base : '';
-			$widget_classes = apply_filters( 'aamla_widget_custom_classes', $widget_classes, $id_base, $instance, $widget_id );
+		if ( false === $widget_id || false === $widget_pos || false === $instance || false === $id_base ) {
+			return '';
 		}
 
-		$widget_classes = array_map( 'esc_attr', $widget_classes );
-		$widget_classes = array_unique( $widget_classes );
+		$widget_classes   = [];
+		$widget_classes[] = 'brick-' . $widget_pos;
+		$widget_classes   = apply_filters( 'aamla_widget_custom_classes', $widget_classes, $id_base, $instance, $widget_id );
+		$widget_classes   = array_map( 'esc_attr', $widget_classes );
+		$widget_classes   = array_unique( $widget_classes );
 
 		return join( ' ', $widget_classes );
 	}
@@ -353,6 +359,9 @@ class WidgetLayer {
 		if ( 'text' === $type ) {
 			if ( isset( $settings['text'] ) && empty( $settings['text'] ) ) {
 				$classes[] = 'only-title';
+			}
+			if ( isset( $settings['aamla_text_featured_image'] ) && absint( $settings['aamla_text_featured_image'] ) ) {
+				$classes[] = 'has-featured-image';
 			}
 		}
 
@@ -392,7 +401,7 @@ class WidgetLayer {
 	public function display_widget_areas( $calledby ) {
 		if ( is_singular( 'page' ) && 'after_header' === $calledby ) {
 			$page_id = get_the_ID();
-			if ( ! array_key_exists( $page_id, $this->get_pages_with_custom_widget() ) ) {
+			if ( ! $page_id || ! array_key_exists( $page_id, $this->get_pages_with_custom_widget() ) ) {
 				return;
 			}
 			aamla_widgets(
@@ -456,7 +465,7 @@ class WidgetLayer {
 	public function get_widget_options() {
 		return apply_filters( 'aamla_widgetlayer_widget_options',
 			[
-				'aamla_width'            => [
+				'aamla_width'               => [
 					'setting'     => 'aamla_width',
 					'label'       => esc_html__( 'Width on desktop (in %)', 'aamla' ),
 					'default'     => 100,
@@ -467,19 +476,19 @@ class WidgetLayer {
 						'step' => 0.01,
 					],
 				],
-				'aamla_width_tablet'     => [
+				'aamla_width_tablet'        => [
 					'setting'     => 'aamla_width_tablet',
 					'label'       => esc_html__( 'Width on tablet (in %)', 'aamla' ),
 					'default'     => '',
 					'type'        => 'number',
 					'input_attrs' => [
-						'min'  => 0,
-						'max'  => 100,
-						'step' => 0.01,
+						'min'         => 0,
+						'max'         => 100,
+						'step'        => 0.01,
+						'placeholder' => 'Same as desktop',
 					],
-					'description' => esc_html__( 'Default width will be equal to widget "width on desktop"', 'aamla' ),
 				],
-				'aamla_vert_align'       => [
+				'aamla_vert_align'          => [
 					'setting' => 'aamla_vert_align',
 					'label'   => esc_html__( 'Content Vertical Alignment', 'aamla' ),
 					'default' => esc_html__( 'Top', 'aamla' ),
@@ -489,7 +498,7 @@ class WidgetLayer {
 						'bottom' => esc_html__( 'Bottom', 'aamla' ),
 					],
 				],
-				'aamla_text_align'       => [
+				'aamla_text_align'          => [
 					'setting' => 'aamla_text_align',
 					'label'   => esc_html__( 'Text Alignment', 'aamla' ),
 					'default' => esc_html__( 'Left', 'aamla' ),
@@ -499,20 +508,26 @@ class WidgetLayer {
 						'right'  => esc_html__( 'Right', 'aamla' ),
 					],
 				],
-				'aamla_show_mobile'      => [
+				'aamla_show_mobile'         => [
 					'setting' => 'aamla_show_mobile',
 					'label'   => esc_html__( 'Hide widget on mobile', 'aamla' ),
 					'type'    => 'checkbox',
 				],
-				'aamla_push_down'        => [
-					'setting' => 'aamla_push_down',
-					'label'   => esc_html__( 'Push widget below next widget (only on mobile)', 'aamla' ),
+				'aamla_push_down_tablet'    => [
+					'setting' => 'aamla_push_down_tablet',
+					'label'   => esc_html__( 'Move below next widget on tablet', 'aamla' ),
 					'type'    => 'checkbox',
 				],
-				'aamla_push_down_tablet' => [
-					'setting' => 'aamla_push_down_tablet',
-					'label'   => esc_html__( 'Push widget below next widget (only on tablet)', 'aamla' ),
+				'aamla_push_down'           => [
+					'setting' => 'aamla_push_down',
+					'label'   => esc_html__( 'Move below next widget on mobile', 'aamla' ),
 					'type'    => 'checkbox',
+				],
+				'aamla_text_featured_image' => [
+					'setting' => 'aamla_text_featured_image',
+					'label'   => esc_html__( 'Text Widget Featured Image', 'aamla' ),
+					'type'    => 'custom',
+					'id_base' => 'text',
 				],
 			]
 		);
@@ -573,7 +588,13 @@ class WidgetLayer {
 						$field  = sprintf( '<input name="%s" id="%s" type="checkbox" value="yes" %s />', $name, $id, checked( $instance[ $setting ], 'yes' ) );
 						$field .= '<label for="' . $id . '">' . $value['label'] . '</label>';
 						$field .= $description;
-						$field  = sprintf( '<p class="%s">%s</p>', esc_attr( $setting ), $field );
+						$field  = sprintf( '<p class="%s widget-small-text">%s</p>', esc_attr( $setting ), $field );
+						break;
+					case 'custom':
+						$field  = '<label for="' . $id . '">' . $value['label'] . '</label>';
+						$field .= $description;
+						$field .= apply_filters( 'aamla_custom_widget_form', '', $setting, $id, $name, $instance[ $setting ] );
+						$field  = sprintf( '<p class="%s  widget-setting">%s</p>', esc_attr( $setting ), $field );
 						break;
 					default:
 						$field  = '<label for="' . $id . '">' . $value['label'] . ': </label>';
@@ -611,6 +632,47 @@ class WidgetLayer {
 			// Display Widget Options.
 			printf( '<div class="widget-options-section">%s%s</div>', $title, $content ); // WPCS xss ok. Contains HTML, other values escaped.
 		}
+	}
+
+	/**
+	 * Image upload option markup.
+	 *
+	 * @since 1.0.2
+	 *
+	 * @param str $markup  Widget form image upload markup.
+	 * @param str $setting Setting Name.
+	 * @param str $id      Field ID.
+	 * @param str $name    Field Name.
+	 * @param int $value   Uploaded image id.
+	 * @return str Widget form image upload markup.
+	 */
+	public function image_upload( $markup, $setting, $id, $name, $value ) {
+		if ( 'aamla_text_featured_image' !== $setting ) {
+			return $markup;
+		}
+
+		$value          = absint( $value );
+		$uploader_class = '';
+		$class          = 'aamla-hidden';
+
+		if ( $value ) {
+			$image_src = wp_get_attachment_image_src( $value, 'aamla-medium' );
+			if ( $image_src ) {
+				$featured_markup = sprintf( '<img class="text-widget-thumbnail" src="%s">', esc_url( $image_src[0] ) );
+				$class           = '';
+				$uploader_class  = 'has-image';
+			} else {
+				$featured_markup = esc_html( 'Set Featured Image', 'aamla' );
+			}
+		} else {
+			$featured_markup = esc_html( 'Set Featured Image', 'aamla' );
+		}
+
+		$markup  = sprintf( '<a class="aamla-widget-img-uploader %s">%s</a>', $uploader_class, $featured_markup );
+		$markup .= sprintf( '<span class="aamla-widget-img-instruct %s">%s</span>', $class, esc_html__( 'Click the image to edit/update', 'aamla' ) );
+		$markup .= sprintf( '<a class="aamla-widget-img-remover %s">%s</a>', $class, esc_html__( 'Remove Featured Image', 'aamla' ) );
+		$markup .= sprintf( '<input class="aamla-widget-img-id" name="%s" id="%s" value="%s" type="hidden" />', $name, $id, $value );
+		return $markup;
 	}
 
 	/**
@@ -665,6 +727,16 @@ class WidgetLayer {
 
 					$instance[ $setting ] = ( '' !== $number ) ? $number : '';
 					break;
+				case 'custom':
+					if ( 'aamla_text_featured_image' === $setting ) {
+						$img_id               = absint( $new_instance[ $setting ] );
+						$img_url              = wp_get_attachment_image_src( $img_id );
+						$instance[ $setting ] = $img_url ? $img_id : '';
+					} else {
+						$instance[ $setting ] = '';
+					}
+					$instance[ $setting ] = apply_filters( 'aamla_custom_widget_form_update', $instance[ $setting ], $setting, $new_instance );
+					break;
 				default:
 					$instance[ $setting ] = '';
 					break;
@@ -681,16 +753,14 @@ class WidgetLayer {
 	 * @param array $params Parameters passed to a widget's display callback.
 	 * @return false|array
 	 */
-	public function add_widget_classes( $params ) {
-		$sidebars_widgets = get_option( 'sidebars_widgets', array() );
-
+	public function add_widget_customizations( $params ) {
 		if ( is_admin() ) {
 			return $params;
 		}
 
 		$page_id = get_the_ID();
 
-		if ( ! array_key_exists( $page_id, $this->get_pages_with_custom_widget() ) ) {
+		if ( ! $page_id || ! array_key_exists( $page_id, $this->get_pages_with_custom_widget() ) ) {
 			return $params;
 		}
 
@@ -698,15 +768,16 @@ class WidgetLayer {
 			return $params;
 		}
 
-		if ( ! in_array( $params[0]['widget_id'], $sidebars_widgets[ 'widgetlayer-page-' . $page_id ], true ) ) {
+		$widget_data = $this->get_widget_data_from_id( $page_id, $params[0]['widget_id'] );
+		if ( false === $widget_data ) {
 			return $params;
 		}
 
-		$custom_classes = $this->get_widget_classes( $params[0]['widget_id'] );
-		$custom_classes = $params[0]['widget_id'] . ' ' . $custom_classes;
+		$custom_classes = $this->get_widget_classes( $widget_data );
+		$custom_classes = $custom_classes ? esc_attr( $params[0]['widget_id'] ) . ' ' . $custom_classes : esc_attr( $params[0]['widget_id'] );
 
 		// Add class(es) to widget front end.
-		$params[0]['before_widget'] = str_replace( 'brick', 'brick ' . esc_attr( $custom_classes ), $params[0]['before_widget'] );
+		$params[0]['before_widget'] = str_replace( 'brick', 'brick ' . $custom_classes, $params[0]['before_widget'] );
 
 		// Change markup for Blank Widget.
 		if ( false !== strpos( $params[0]['widget_id'], 'aamla_blank_widget' ) ) {
@@ -714,18 +785,141 @@ class WidgetLayer {
 			$params[0]['after_widget']  = '</span>';
 		}
 
+		$before_widget_content      = $this->get_before_widget_content( $widget_data );
+		$after_widget_content       = $this->get_after_widget_content( $widget_data );
+		$params[0]['before_widget'] = $params[0]['before_widget'] . $before_widget_content;
+		$params[0]['after_widget']  = $after_widget_content . $params[0]['after_widget'];
+
 		// Add inline style, only if we are in customizer preview.
 		if ( ! is_customize_preview() ) {
 			return $params;
 		}
 
-		$inline_css = $this->get_widget_css( $params[0]['widget_id'] );
+		$inline_css = $this->get_widget_css( $widget_data );
 		$inline_css = $this->widget_css_array_to_string( $inline_css );
 		if ( $inline_css ) {
 			echo '<style>' . $inline_css . '</style>'; // WPCS xss ok. CSS with strip all tags.
 		}
 
 		return $params;
+	}
+
+	/**
+	 * Get widget settings and other information from widget id.
+	 *
+	 * @since 1.0.2
+	 *
+	 * @param int $page_id   Page ID.
+	 * @param str $widget_id Widget ID.
+	 * @return false|array
+	 */
+	public function get_widget_data_from_id( $page_id, $widget_id ) {
+		global $wp_registered_widgets;
+
+		if ( ! $page_id || ! $widget_id ) {
+			return false;
+		}
+
+		$sidebars_widgets = get_option( 'sidebars_widgets', [] );
+		$widget_pos       = array_search( $widget_id, $sidebars_widgets[ 'widgetlayer-page-' . $page_id ], true );
+		if ( false === $widget_pos ) {
+			return false;
+		}
+
+		// Get widget parameters.
+		$widget_params = $wp_registered_widgets[ $widget_id ];
+
+		/*
+		 * Widget's display callback function is actually an array of widget object
+		 * and 'display callback' method. Let's use that object to get widget settings.
+		 */
+		if ( ! ( is_array( $widget_params['callback'] ) && is_object( $widget_params['callback'][0] ) ) ) {
+			return false;
+		}
+		$widget_obj = $widget_params['callback'][0];
+		if ( ! ( method_exists( $widget_obj, 'get_settings' ) && isset( $widget_params['params'][0]['number'] ) ) ) {
+			return false;
+		}
+		$instances = $widget_obj->get_settings();
+		$number    = $widget_params['params'][0]['number'];
+		if ( array_key_exists( $number, $instances ) ) {
+			$instance = $instances[ $number ];
+			$id_base  = property_exists( $widget_obj, 'id_base' ) ? $widget_obj->id_base : '';
+		} else {
+			return false;
+		}
+
+		return [ $widget_id, $widget_pos, $instance, $id_base ];
+	}
+
+	/**
+	 * Get before widget customized content.
+	 *
+	 * @since 1.0.2
+	 *
+	 * @param array $widget_data {
+	 *     Current widget's data to generate customized output.
+	 *     @type str   $widget_id  Widget ID.
+	 *     @type int   $widget_pos Widget position in widgetlayer widget-area.
+	 *     @type array $instance   Current widget instance settings.
+	 *     @type str   $id_base    Widget ID base.
+	 * }
+	 * @return string Widget customized content markup.
+	 */
+	public function get_before_widget_content( $widget_data ) {
+
+		$widget_id  = isset( $widget_data[0] ) ? $widget_data[0] : false;
+		$widget_pos = isset( $widget_data[1] ) ? $widget_data[1] : false;
+		$instance   = isset( $widget_data[2] ) ? $widget_data[2] : false;
+		$id_base    = isset( $widget_data[3] ) ? $widget_data[3] : false;
+
+		if ( false === $widget_id || false === $widget_pos || false === $instance || false === $id_base ) {
+			return '';
+		}
+
+		// Short circuit filter.
+		$check = apply_filters( 'aamla_before_widget_content', false, $widget_data );
+		if ( false !== $check ) {
+			return $check;
+		}
+
+		// Generate markup for text widget featured image.
+		if ( 'text' === $id_base && isset( $instance['aamla_text_featured_image'] ) ) {
+			$image_id = absint( $instance['aamla_text_featured_image'] );
+			if ( $image_id ) {
+				$image_size = apply_filters( 'aamla_text_image_size', 'aamla-medium', $widget_data );
+				$classes    = apply_filters( 'aamla_text_image_classes', 'text-widget-featured-image', $widget_data );
+				return wp_get_attachment_image( $image_id, $image_size, false, [ 'class' => $classes ] );
+			}
+		}
+	}
+
+	/**
+	 * Get after widget customized content.
+	 *
+	 * @since 1.0.2
+	 *
+	 * @param array $widget_data {
+	 *     Current widget's data to generate customized output.
+	 *     @type str   $widget_id  Widget ID.
+	 *     @type int   $widget_pos Widget position in widgetlayer widget-area.
+	 *     @type array $instance   Current widget instance settings.
+	 *     @type str   $id_base    Widget ID base.
+	 * }
+	 * @return string Widget customized content markup.
+	 */
+	public function get_after_widget_content( $widget_data ) {
+
+		$widget_id  = isset( $widget_data[0] ) ? $widget_data[0] : false;
+		$widget_pos = isset( $widget_data[1] ) ? $widget_data[1] : false;
+		$instance   = isset( $widget_data[2] ) ? $widget_data[2] : false;
+		$id_base    = isset( $widget_data[3] ) ? $widget_data[3] : false;
+
+		if ( false === $widget_id || false === $widget_pos || false === $instance || false === $id_base ) {
+			return '';
+		}
+
+		return apply_filters( 'aamla_after_widget_content', '', $widget_data );
 	}
 
 	/**
@@ -806,7 +1000,7 @@ class WidgetLayer {
 		/*
 		 * Conditionally delete saved array of pages with custom widget.
 		 * Note: Delete data before user capability check, as a user with less than
-		 * required capability can still delete a page (on page deletion, that page
+		 * required capability (edit_theme_options) can still delete a page (on page deletion, that page
 		 * specific widget should also be deleted).
 		 */
 		$this->delete_pages_with_custom_widget( $post_id );

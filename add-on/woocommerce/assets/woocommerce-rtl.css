@@ -2695,13 +2695,13 @@ ul.products .woo-sold-out {
 	        box-shadow: none;
 }
 
-.woocommerce-loop-product__link {
+a.woocommerce-loop-product__link {
 	position: relative;
 	display: block;
 	border: 1px solid #e6e6e6;
 }
 
-.woocommerce-loop-product__link .onsale {
+a.woocommerce-loop-product__link .onsale {
 	font-size: 13px;
 	position: absolute;
 	top: 10px;
@@ -2712,10 +2712,14 @@ ul.products .woo-sold-out {
 	background-color: #77a464;
 }
 
-.woocommerce-loop-product__link .star-rating {
+a.woocommerce-loop-product__link .star-rating {
 	display: block;
 	float: none;
 	margin: 10px auto 0;
+}
+
+a.woocommerce-loop-product__link:focus {
+	outline: 0;
 }
 
 .woocommerce-pagination {
@@ -3058,6 +3062,21 @@ form.woocommerce-checkout .wc_payment_method label {
 .grid.woocommerce-page .site-main {
 	display: block;
 	margin: 0;
+}
+
+.woocommerce-widget-layered-nav-list__item a:focus {
+	outline: 0;
+}
+
+.long-arrow-right {
+	margin-right: 1em;
+}
+
+.rtl .long-arrow-right .icon,
+.rtl .woocommerce-pagination .next,
+.rtl .woocommerce-pagination .prev {
+	-webkit-transform: rotate(-180deg);
+	        transform: rotate(-180deg);
 }
 
 @media only screen and (min-width: 641px){

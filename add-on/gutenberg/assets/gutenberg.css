@@ -20,6 +20,21 @@
 	margin-bottom: 1.75rem;
 }
 
+.wp-block-pullquote {
+	padding: 0 0 0 2.5em;
+	text-align: left;
+}
+
+.wp-block-pullquote > p {
+	font-size: 1.125rem;
+	line-height: 1.55556;
+	margin-bottom: 0.875rem;
+}
+
+.wp-block-quote > p {
+	margin-bottom: 0.875rem;
+}
+
 @media only screen and (min-width: 768px) {
 
 	.alignfull {
