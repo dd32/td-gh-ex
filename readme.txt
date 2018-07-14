@@ -2,7 +2,7 @@
 Akyl WordPress Theme 
 ------------------------------
 Copyright 2017 Akila Thiwanka : https://www.akilathiwanka.info/
-Version : 1.0.2
+Version : 1.2
 License : GPLv2 or later
 License URI : http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,6 +54,14 @@ HTML5 Shiv MIT/GPL2 https://github.com/aFarkas/html5shiv
 
 Respond.js https://github.com/scottjehl/Respond/blob/master/LICENSE-MIT
 
+
+Images
+--------------
+Images used in screenshot
+
+https://pixabay.com/en/ivy-plant-garden-nature-green-3519431/
+https://pixabay.com/en/guitar-classical-guitar-756326/
+All License: CC0 Creative Commons (http://creativecommons.org/publicdomain/zero/1.0/deed.en)
 
 
 Changelog

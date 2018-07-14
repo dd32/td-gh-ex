@@ -35,7 +35,7 @@ function akyl_customize_register( $wp_customize ) {
 	 * Add Header Background Color Setting
 	 -----------------------------------------*/
 	$wp_customize->add_setting( 'akyl_header_background_color' , array(
-		'default'   => '#05182c',
+		'default'   => '#2c4769',
 		'sanitize_callback' => 'sanitize_hex_color',
 		'type' => 'option',
 		'transport' => 'refresh'
@@ -133,14 +133,14 @@ function akyl_customize_css()
 	 <style type="text/css">
 		<?php if ( ! get_option('background_image') ): ?>
 
-			.bg-image::after { background-color: <?php echo get_option('background_color'); ?>; }
+			.bg-image::after { background-color: <?php echo esc_attr(get_option('background_color')); ?>; }
 
 		<?php endif; ?>
 
-		.banner, .site-title a { color: #<?php echo get_option('header_textcolor'); ?>; }
-		.banner { background-color: <?php echo get_option('akyl_header_background_color', '#05182c'); ?>; }
-		footer { background-color: <?php echo get_option('akyl_footer_background_color', '#041323'); ?>; }
-		.footer-widget-area { background-color: <?php echo get_option('akyl_footer_widget_area_background_color', '#05182c'); ?>; }
+		.banner, .site-title a { color: #<?php echo esc_attr(get_option('header_textcolor')); ?>; }
+		.banner { background-color: <?php echo esc_attr(get_option('akyl_header_background_color', '#2c4769')); ?>; }
+		footer { background-color: <?php echo esc_attr(get_option('akyl_footer_background_color', '#041323')); ?>; }
+		.footer-widget-area { background-color: <?php echo esc_attr(get_option('akyl_footer_widget_area_background_color', '#05182c')); ?>; }
 	 </style>
 	<?php
 }

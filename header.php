@@ -66,7 +66,7 @@
 			</div>
 		</nav>
 		<!-- Header Banner -->
-		<div class="section banner" style="background-image: url('<?php echo header_image() ?>');">
+		<div class="section banner" style="background-image: url('<?php echo esc_url(header_image()) ?>');">
 			<div class="display-table">
 				<div class="display-table-cell">
 					<div class="container">

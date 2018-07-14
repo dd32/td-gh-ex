@@ -37,21 +37,10 @@
 				</div><!-- end row --> 
 				
 				<!-- Posts navigation -->
-				<div class="row">
-					<?php if ( $wp_query->max_num_pages > 1 ) : ?>
-							
-						<div class="posts-nav">
-									
-							<?php echo '<span class="alignleft">' . get_next_posts_link( '&larr;  ' . __('Older posts', 'akyl')) . '</span>' ; ?>
-										
-							<?php echo '<span class="alignright">' . get_previous_posts_link( __('Newer posts', 'akyl') . ' &rarr;') . '</span>'; ?>
-							
-							<div class="clear"></div>
-							
-						</div> <!-- /post-nav archive-nav -->
-						
-					<?php endif; ?>
-				</div><!-- end row -->
+				<?php the_posts_navigation( array(
+				    'prev_text' => __( '&larr; Older posts', 'akyl' ),
+				    'next_text' => __( 'Newer posts &rarr;', 'akyl' ),
+				) ); ?>
 
 		</div><!-- end container -->
 	</div>
