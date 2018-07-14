@@ -196,59 +196,59 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:261, inc/customizer.php:36
+#: functions.php:260, inc/customizer.php:36
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:263
+#: functions.php:262
 msgid "Displays to the right or left of the content area."
 msgstr ""
 
-#: functions.php:272
+#: functions.php:271
 msgid "Shop"
 msgstr ""
 
-#: functions.php:274
+#: functions.php:273
 msgid "Displays on WooCommerce pages."
 msgstr ""
 
-#: functions.php:283, inc/customizer.php:40
+#: functions.php:282, inc/customizer.php:40
 msgid "Footer"
 msgstr ""
 
-#: functions.php:285
+#: functions.php:284
 msgid "Displays below the content area."
 msgstr ""
 
-#: functions.php:293
+#: functions.php:292
 msgid "Header"
 msgstr ""
 
-#: functions.php:295
+#: functions.php:294
 msgid "Displays to the right of the logo."
 msgstr ""
 
-#: functions.php:303
+#: functions.php:302
 msgid "Masthead"
 msgstr ""
 
-#: functions.php:305
+#: functions.php:304
 msgid "Replaces the logo and header widget area."
 msgstr ""
 
-#: functions.php:400
+#: functions.php:399
 msgid "Back To Top"
 msgstr ""
 
-#: functions.php:607
+#: functions.php:606
 msgid "SiteOrigin Page Builder"
 msgstr ""
 
-#: functions.php:612
+#: functions.php:611
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions.php:617
+#: functions.php:616
 msgid "SiteOrigin CSS"
 msgstr ""
 
