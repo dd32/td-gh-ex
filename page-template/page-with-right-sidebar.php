@@ -5,6 +5,8 @@
 
 get_header(); ?>
 
+<?php do_action( 'automobile_car_dealer_pageright_top' ); ?>
+
 <div class="container">
     <div class="main-wrapper row">       
 		<div class="col-md-8 col-sm-8" id="content_box" >
@@ -26,4 +28,7 @@ get_header(); ?>
         <div class="clear"></div>    
     </div>
 </div>
+
+<?php do_action( 'automobile_car_dealer_pageright_bottom' ); ?>
+
 <?php get_footer(); ?>

@@ -8,7 +8,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width">
-<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'automobile-car-dealer' ) ); ?>">
 <?php wp_head(); ?>
 </head>
 
@@ -68,7 +68,7 @@
             </div>
           </div>
         </div>
-        <div class="row m-0">
+        <div class="row m-1">
           <div class="col-md-9 col-sm-9 padding0">
             <div class="menus">
               <div class="menubox header">
@@ -81,7 +81,7 @@
         </div>
           <?php if( get_theme_mod( 'automobile_car_dealer_button_link','' ) != '') { ?>
             <div class="col-md-3 col-sm-3 appointbtn">
-              <a href="<?php echo esc_url( get_theme_mod('automobile_car_dealer_button_link','#' ) ); ?>"><?php esc_html_e( 'Make an Appointment','automobile-car-dealer' ); ?></a>
+                <a href="<?php echo esc_url( get_theme_mod('automobile_car_dealer_button_link','#' ) ); ?>"><?php esc_html_e( 'Make an Appointment','automobile-car-dealer' ); ?></a>
             </div>
           <?php }?>
         </div>

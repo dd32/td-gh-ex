@@ -6,6 +6,8 @@
 
 get_header(); ?>
 
+<?php do_action( 'automobile_car_dealer_page_top' ); ?>
+
 <div id="content_box" class="container">
     <div class="main-wrapper">
         <?php while ( have_posts() ) : the_post(); ?>
@@ -37,5 +39,7 @@ get_header(); ?>
         <div class="clear"></div>    
     </div>
 </div>
+
+<?php do_action( 'automobile_car_dealer_page_bottom' ); ?>
 
 <?php get_footer(); ?>

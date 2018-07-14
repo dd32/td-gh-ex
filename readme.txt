@@ -2,8 +2,8 @@
 
 Theme Name      :   Automobile Car Dealer
 Theme URI       :   https://www.buywptemplates.com/themes/free-car-dealer-wordpress-theme
-Version         :   0.3.1
-Tested up to    :   WP 4.9.6
+Version         :   0.3.2
+Tested up to    :   WP 4.9.7
 Author          :   Buywptemplates
 Author URI      :   https://www.buywptemplates.com/
 license         :   GNU General Public License v3.0
@@ -162,3 +162,8 @@ Version 0.3.1
 	i.   Added post formats.
 	ii.  Updated the pot file.
 	iii. updated bootstrap.
+
+Version 0.3.2
+	i.   Done changes in screenshot.
+	ii.  Updated RTL file.
+	iii. Added post formats tag.

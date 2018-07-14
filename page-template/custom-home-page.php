@@ -5,6 +5,8 @@
 
 get_header(); ?>
 
+<?php do_action( 'automobile_car_dealer_above_slider' ); ?>
+
 <?php /** slider section **/ ?>
   <div class="slider-main">
     <?php
@@ -75,6 +77,8 @@ get_header(); ?>
     ?>
   </div>
 
+<?php do_action( 'automobile_car_dealer_above_project' ); ?>
+
 <?php /** About Us section **/ ?>
 <section id="project">
   <div class="container">
@@ -120,5 +124,13 @@ get_header(); ?>
     </div>
   </div> 
 </section>
+
+<?php do_action( 'automobile_car_dealer_above_content' ); ?>
+
+<div id="content-vw" class="container">
+  <?php while ( have_posts() ) : the_post(); ?>
+    <?php the_content(); ?>
+  <?php endwhile; // end of the loop. ?>
+</div>
 
 <?php get_footer(); ?>

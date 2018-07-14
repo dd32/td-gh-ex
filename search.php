@@ -11,7 +11,7 @@ get_header(); ?>
         $layout_option = get_theme_mod( 'automobile_car_dealer_layout_options','Right Sidebar');
         if($layout_option == 'One Column'){ ?>
         <div id="blog_sec" class="blog-section">
-            <h1 class="entry-title"><?php printf( 'Results For: %s', '<span>' . get_search_query() . '</span>' ); ?></h1>
+            <h1 class="entry-title"><?php printf( esc_html('Results For: %s', 'automobile-car-dealer' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
             <?php if ( have_posts() ) :
                 /* Start the Loop */          
                 while ( have_posts() ) : the_post();
@@ -37,7 +37,7 @@ get_header(); ?>
         <div class="row">
             <div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
             <div id="blog_sec" class="blog-section col-md-6 col-sm-6">
-                <h1 class="entry-title"><?php printf( 'Results For: %s', '<span>' . get_search_query() . '</span>' ); ?></h1>
+                <h1 class="entry-title"><?php printf( esc_html('Results For: %s', 'automobile-car-dealer' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
                 <?php if ( have_posts() ) :
                     /* Start the Loop */          
                     while ( have_posts() ) : the_post();
@@ -65,7 +65,7 @@ get_header(); ?>
         <div class="row">
             <div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
             <div id="blog_sec" class="blog-section col-md-3 col-sm-3">
-                <h1 class="entry-title"><?php printf( 'Results For: %s', '<span>' . get_search_query() . '</span>' ); ?></h1>
+                <h1 class="entry-title"><?php printf( esc_html('Results For: %s', 'automobile-car-dealer' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
                 <?php if ( have_posts() ) :
                 /* Start the Loop */          
                     while ( have_posts() ) : the_post();
@@ -93,7 +93,7 @@ get_header(); ?>
     <?php }else if($layout_option == 'Grid Layout'){ ?>
         <div class="row">
             <div id="blog_sec" class="blog-section col-md-8 col-sm-8">
-                <h1 class="entry-title"><?php printf( 'Results For: %s', '<span>' . get_search_query() . '</span>' ); ?></h1>
+                <h1 class="entry-title"><?php printf( esc_html('Results For: %s', 'automobile-car-dealer' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
                 <div class="row">
                     <?php if ( have_posts() ) :
                     /* Start the Loop */
@@ -123,7 +123,7 @@ get_header(); ?>
         <div class="row">
             <div class="col-md-4 col-sm-4"><?php get_sidebar(); ?></div>
             <div id="blog_sec" class="blog-section col-md-8 col-sm-8">
-                <h1 class="entry-title"><?php printf( 'Results For: %s', '<span>' . get_search_query() . '</span>' ); ?></h1>
+                <h1 class="entry-title"><?php printf( esc_html('Results For: %s', 'automobile-car-dealer' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
                 <?php if ( have_posts() ) :
                     /* Start the Loop */
                     while ( have_posts() ) : the_post();
@@ -149,7 +149,7 @@ get_header(); ?>
     <?php }else if($layout_option == 'Right Sidebar'){ ?>
         <div class="row">
             <div id="blog_sec" class="blog-section col-md-8 col-sm-8">
-                <h1 class="entry-title"><?php printf( 'Results For: %s', '<span>' . get_search_query() . '</span>' ); ?></h1>
+                <h1 class="entry-title"><?php printf( esc_html('Results For: %s', 'automobile-car-dealer' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
                 <?php if ( have_posts() ) :
                     /* Start the Loop */
                     while ( have_posts() ) : the_post();
