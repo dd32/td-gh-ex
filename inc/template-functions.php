@@ -288,16 +288,12 @@ function bakery_shop_welcome(){
                     ?>
                     
                     <div class="about-item">
-                        <div class="col-6">
-                            <?php if( has_post_thumbnail() ){ the_post_thumbnail( 'bakery-shop-welcome' ); } ?>
-                        </div>
-                        <div class="col-6">
-                            <div class="about-text">
-                                <?php
-                                    the_title('<h1 class="section-title">', '</h1>');
-                                    the_content(); 
-                                ?>
-                            </div>
+                        <?php if( has_post_thumbnail() ){ the_post_thumbnail( 'bakery-shop-welcome' ); } ?>
+                        <div class="about-text">
+                            <?php
+                                the_title('<h1 class="section-title">', '</h1>');
+                                the_content(); 
+                            ?>
                         </div>
                     </div>
                     <?php
@@ -512,20 +508,20 @@ function bakery_shop_cta(){
                <section id="cta" class="cta-section" <?php if( has_post_thumbnail() ) echo 'style="background: url(' . esc_url( get_the_post_thumbnail_url() ) . ')no-repeat; background-size: cover; background-position: center; background-attachment: fixed;"';?> >
                     <div class="container">
                         <div class="row">
-                                <?php
-                                    the_title('<h1 class="section-title">', '</h1>');
-                                    the_content(); 
+                            <?php
+                                the_title('<h1 class="section-title">', '</h1>');
+                                echo '<div class="cta-content">';
+                                the_content(); 
+                                echo '</div>';
+                            ?>
+                            <div class="cta-btn">
+                                <?php 
+                                    if( $cta_one && $cta_one_url ) { 
+                                        echo '<a class="btn pink" href="' . esc_url( $cta_one_url ) . '">';
+                                            echo esc_html( $cta_one ); 
+                                        echo '</a>';
+                                    } 
                                 ?>
-                                <div class="cta-btn">
-                                    <?php 
-                                        if( $cta_one && $cta_one_url ) { 
-                                            echo '<a class="btn pink" href="' . esc_url( $cta_one_url ) . '">';
-                                                echo esc_html( $cta_one ); 
-                                            echo '</a>';
-                                        } 
-                                    ?>
-                                </div>
-                            
                             </div>
                         </div>
                     </div> 
@@ -704,8 +700,6 @@ function bakery_shop_page_content_image(){
     if( has_post_thumbnail() ){
         echo '<div class="post-thumbnail">';
             if( is_active_sidebar( 'right-sidebar' ) && ( $sidebar_layout == 'right-sidebar' ) ) {
-                the_post_thumbnail( 'bakery-shop-with-sidebar' );
-            }else{ 
                 the_post_thumbnail( 'bakery-shop-without-sidebar' );    
             }
         echo '</div>';

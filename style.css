@@ -4,11 +4,11 @@ Theme URI: http://prosystheme.com/wordpress-themes/bakery-shop
 Author: Prosys Theme
 Author URI: http://prosystheme.com/
 Description: Bakery Shop is a modern Multipurpose responsive Bakery Shop style WordPress theme suitable for business, portfolio, food, bakery shop, cake shop, travel, blogs, publishing and any kind of sites. This theme supports Ecommerce so that this theme can be used in any kind of shops. The theme is built on Customizer and it allows you to easily customize your website with live previews. The theme is Speed and Search Engine Optimized (SEO) to help you easily climb the google rank. Other feature includes social media integration, custom widgets, author bio, breadcrumb, custom CSS, translation ready and more. Check demo at http://prosystheme.com/preview/bakery-shop/ and documentation at http://prosystheme.com/documentation/bakery-shop. Read theme details at http://prosystheme.com/wordpress-themes/bakery-shop and get free support at http://prosystheme.com/request-a-support.
-Version: 1.0.4
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bakery-shop
-Tags: one-column, two-columns, right-sidebar, custom-background, custom-logo, custom-menu, featured-image-header, featured-images, threaded-comments, translation-ready, theme-options, footer-widgets, blog, full-width-template, custom-colors , portfolio, e-commerce, food-and-drink 
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-logo, custom-menu, featured-image-header, featured-images, threaded-comments, translation-ready, theme-options, footer-widgets, blog, full-width-template, custom-colors , e-commerce, food-and-drink 
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1369,11 +1369,12 @@ a.rsswidget{
 #mobile-header{display: none;}
 
 #mobile-header a {
-    color: #fff;
-}
-
-#mobile-header a {
+    color: #fffff8;
+    background: #fdbded;
+    padding: 4px 10px;
+    border-radius: 5px;
     opacity: 0.8;
+    margin: 5px;
 }
 
 
@@ -1584,10 +1585,9 @@ a.rsswidget{
 
 .banner-text {
     position: absolute;
-    bottom: 0;
+    bottom: 20%;
     padding-top: 100px;
     color: #fff;
-    height: 100%;
     width: 50%;
 }
 .banner-text-item {
@@ -1610,6 +1610,7 @@ a.rsswidget{
     text-decoration: none;
     padding: 10px 30px;
     border: 2px solid #fff;
+    display: inline-block;
 }
 
 .banner-text a:hover.btn {
@@ -1642,12 +1643,12 @@ a.rsswidget{
     border-color: #fd91b8;
 }
 
-.featured-text {
-    overflow: hidden;
-}
-
 .featured-text p{
     margin : 0;
+}
+
+.featured-text h3 {
+    display: contents;
 }
 
 .featured-text a{
@@ -1780,6 +1781,16 @@ a.rsswidget{
 	padding: 120px 0;
 }
 
+.about-item img {
+    width: 50%;
+    float: left;
+    margin-right: 30px;
+}
+
+.about-text h1 {
+    display: contents;
+}
+
 /* CTA Section */
 .cta-section {
 	text-align: center;
@@ -1789,6 +1800,10 @@ a.rsswidget{
 
 .cta-section .section-title{
 	color: #fff;
+}
+
+.cta-content {
+    padding: 30px 0;
 }
 /* Blog section */
 .latest-activity-section{
@@ -1970,10 +1985,25 @@ span.testimonial-designation p {
 	.container{
 		width: 970px;
 	}
+	.banner-text {
+    	bottom: 24%;
+	}
 
 	}
-@media only screen and (max-width: 991px){
 
+@media only screen and (max-width: 991px){
+	.banner-text {
+    	bottom: 22%;
+	}
+	.banner-text-item {
+	    padding: 20px 30px;
+	}
+
+	.fadeout.owl-theme .owl-dots{
+		display: none;
+
+	}
+	
 	p{
     	margin: 5px 0;
     	line-height: 23px;
@@ -1990,7 +2020,6 @@ span.testimonial-designation p {
 	#mobile-header{
 		display: block;
 		float: right;
-		margin-top: 20px;
 	}
 
 	#mobile-header span{
@@ -2029,16 +2058,35 @@ span.testimonial-designation p {
 
 @media only screen and (max-width: 767px){
 
-
+	.banner-text-item {
+	    background: rgba(0, 0, 0, 0.5);
+	    padding: 15px 30px;
+	    height: unset;
+	}
 
 	.col-3, .col-4, .col-6, .col-8, .col-9{
 		width: 50%;
 	}
 
-	.fadeout.owl-theme .owl-dots{
-		display: none;
+	.container{width: 100%;}
 
+	.banner .banner-text{
+	    padding: unset;
+    	height: unset;
+   		bottom: 15px;
+   	}
+
+	#banner .owl-theme .owl-prev {
+	    top: 200px;
 	}
+
+	#banner .owl-theme .owl-next {
+	    top: 200px;
+	}
+	.team-item{
+	    margin-bottom: 30px;
+	}
+
 	.featured-item {
 	    margin: 15px 0;
 	}
@@ -2052,6 +2100,7 @@ span.testimonial-designation p {
 
 	.about-text {
 	    overflow: initial;
+	    padding: 15px;
 	}
 
 	.about-text h1 {
@@ -2064,22 +2113,6 @@ span.testimonial-designation p {
 
 	#latest-activity .col-4 img{
 		width: 100%;
-	}
-
-	.container{width: 100%;}
-
-	.header-bottom {
-	    padding: 10px 0px 0;
-	}
-
-	.banner .banner-text{padding: 20px 0 40px;}
-
-	#banner .owl-theme .owl-prev {
-	    top: 200px;
-	}
-
-	#banner .owl-theme .owl-next {
-	    top: 200px;
 	}
 
 
@@ -2147,12 +2180,14 @@ span.testimonial-designation p {
 
 
 @media only screen and (max-width: 480px){
-
-
 	.banner .banner-text{
 		position: relative;
 	    top: 0;
 	    width: 100%;
+	}
+
+	.banner-text-item {
+	    margin: 0 -15px;
 	}
 
 	.testimonial-thumbnail {
@@ -2165,7 +2200,6 @@ span.testimonial-designation p {
 	    position: relative;
 	    border: 10px solid #efefef;
 	    width: 100%;
-	    margin-bottom: 30px;
 	}
 
 
