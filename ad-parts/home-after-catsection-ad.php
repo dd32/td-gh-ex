@@ -25,7 +25,7 @@ if(!is_paged()){ // Displaying ad only on home page not to nagavigated pages.
 			  echo wp_kses_stripslashes(get_theme_mod('admela_after_home_category_post_ad_setting'));
 			}
 			
-             ?>
+            ?>
 	    </div> <!-- .admela_themead -->
 		<?php 
 		endif;		

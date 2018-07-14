@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: PlaceHolder\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-28 04:46+0000\n"
-"PO-Revision-Date: 2018-06-14 06:56+0000\n"
-"Last-Translator: admin <v.vimal0992@gmail.com>\n"
-"Language-Team: English (United States)\n"
+"PO-Revision-Date: 2018-07-13 09:30+0000\n"
+"Last-Translator: admin <sakthi6600@gmail.com>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-Bookmarks: \n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes\n"
-"Language: en-US"
+"Language: en_US"
 
 #: 404.php:18
 msgid "Oops! That page can&rsquo;t be found."
@@ -30,16 +30,16 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: archive.php:144 search.php:121 layout-parts/amblyt.php:374 
+#: archive.php:144 search.php:121 layout-parts/amblyt.php:374
 msgid "Sorry No Posts Were Found"
 msgstr ""
 
-#: author-bio.php:28 content.php:32 content.php:254 content.php:349 
-#: content.php:428 content.php:512 content.php:693 content.php:757 
-#: layout-parts/amblyt.php:65 layout-parts/amblyt.php:311 
-#: lib/includes/admela-customtemp-tags.php:1812 
-#: lib/includes/admela-customtemp-tags.php:2633 
-#: lib/includes/admela-customtemp-tags.php:2698 
+#: author-bio.php:28 content.php:32 content.php:254 content.php:349
+#: content.php:428 content.php:512 content.php:693 content.php:757
+#: layout-parts/amblyt.php:65 layout-parts/amblyt.php:311
+#: lib/includes/admela-customtemp-tags.php:1812
+#: lib/includes/admela-customtemp-tags.php:2633
+#: lib/includes/admela-customtemp-tags.php:2698
 #: lib/includes/admela-customtemp-tags.php:2934
 msgid "By"
 msgstr ""
@@ -116,45 +116,43 @@ msgstr ""
 msgid "Leave a Comment"
 msgstr ""
 
-#: content-page.php:95 content-page.php:119 content-page.php:131 
-#: content.php:206 content.php:224 layout-parts/amblyt.php:253 
-#: layout-parts/amblyt.php:271 layout-parts/amblyt.php:279 
-#: lib/includes/admela-customtemp-tags.php:819 
-#: lib/includes/admela-customtemp-tags.php:830 
-#: lib/includes/admela-customtemp-tags.php:987 
-#: lib/includes/admela-customtemp-tags.php:998 
-#: lib/includes/admela-customtemp-tags.php:1253 
-#: lib/includes/admela-customtemp-tags.php:1277 
-#: lib/includes/admela-customtemp-tags.php:1289 
-#: lib/includes/admela-customtemp-tags.php:1365 
-#: lib/includes/admela-customtemp-tags.php:1389 
-#: lib/includes/admela-customtemp-tags.php:1401 
-#: lib/includes/admela-customtemp-tags.php:1485 
-#: lib/includes/admela-customtemp-tags.php:1509 
-#: lib/includes/admela-customtemp-tags.php:1521 
-#: lib/includes/admela-customtemp-tags.php:1618 
-#: lib/includes/admela-customtemp-tags.php:1762 
-#: lib/includes/admela-customtemp-tags.php:1652 
-#: lib/includes/admela-customtemp-tags.php:1757 
-#: lib/includes/admela-customtemp-tags.php:1768 
-#: lib/includes/admela-customtemp-tags.php:1778 
-#: lib/includes/admela-customtemp-tags.php:1904 
-#: lib/includes/admela-customtemp-tags.php:1929 
+#: content-page.php:95 content-page.php:119 content-page.php:131
+#: content.php:206 content.php:224 layout-parts/amblyt.php:253
+#: layout-parts/amblyt.php:271 layout-parts/amblyt.php:279
+#: lib/includes/admela-customtemp-tags.php:819
+#: lib/includes/admela-customtemp-tags.php:830
+#: lib/includes/admela-customtemp-tags.php:987
+#: lib/includes/admela-customtemp-tags.php:998
+#: lib/includes/admela-customtemp-tags.php:1253
+#: lib/includes/admela-customtemp-tags.php:1277
+#: lib/includes/admela-customtemp-tags.php:1289
+#: lib/includes/admela-customtemp-tags.php:1365
+#: lib/includes/admela-customtemp-tags.php:1389
+#: lib/includes/admela-customtemp-tags.php:1401
+#: lib/includes/admela-customtemp-tags.php:1485
+#: lib/includes/admela-customtemp-tags.php:1509
+#: lib/includes/admela-customtemp-tags.php:1521
+#: lib/includes/admela-customtemp-tags.php:1618
+#: lib/includes/admela-customtemp-tags.php:1762
+#: lib/includes/admela-customtemp-tags.php:1652
+#: lib/includes/admela-customtemp-tags.php:1757
+#: lib/includes/admela-customtemp-tags.php:1768
+#: lib/includes/admela-customtemp-tags.php:1778
+#: lib/includes/admela-customtemp-tags.php:1904
+#: lib/includes/admela-customtemp-tags.php:1929
 #: lib/includes/admela-customtemp-tags.php:1940
 msgid "img"
 msgstr ""
 
-#: content-page.php:158 content-single.php:68 content.php:73 content.php:276 
-#: content.php:374 content.php:458 content.php:537 content.php:605 
-#: layout-parts/amblyt.php:106 
-#: layout-parts/amblyt.php:333 
+#: content-page.php:158 content-single.php:68 content.php:73 content.php:276
+#: content.php:374 content.php:458 content.php:537 content.php:605
+#: layout-parts/amblyt.php:106 layout-parts/amblyt.php:333
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:162 content-single.php:72 content.php:77 content.php:280 
-#: content.php:378 content.php:462 content.php:541 content.php:609 
-#: layout-parts/amblyt.php:110 
-#: layout-parts/amblyt.php:337 
+#: content-page.php:162 content-single.php:72 content.php:77 content.php:280
+#: content.php:378 content.php:462 content.php:541 content.php:609
+#: layout-parts/amblyt.php:110 layout-parts/amblyt.php:337
 msgid "Page"
 msgstr ""
 
@@ -178,7 +176,7 @@ msgstr ""
 msgid "Linkedin"
 msgstr ""
 
-#: content-single.php:165 
+#: content-single.php:165
 msgid "Pinterest"
 msgstr ""
 
@@ -202,29 +200,28 @@ msgstr ""
 msgid "Whatsapp"
 msgstr ""
 
-#: content.php:38 content.php:247 content.php:342 content.php:421 
-#: content.php:505 layout-parts/amblyt.php:71 layout-parts/amblyt.php:304 
+#: content.php:38 content.php:247 content.php:342 content.php:421
+#: content.php:505 layout-parts/amblyt.php:71 layout-parts/amblyt.php:304
 #: lib/includes/admela-customtemp-tags.php:1804
 msgid "Featured"
 msgstr ""
 
-#: content.php:47 content.php:333 content.php:412 content.php:496 
-#: content.php:677 content.php:741 layout-parts/amblyt.php:79 
-#: lib/includes/admela-customtemp-tags.php:853 
-#: lib/includes/admela-customtemp-tags.php:1021 
-#: lib/includes/admela-customtemp-tags.php:1795 
+#: content.php:47 content.php:333 content.php:412 content.php:496
+#: content.php:677 content.php:741 layout-parts/amblyt.php:79
+#: lib/includes/admela-customtemp-tags.php:853
+#: lib/includes/admela-customtemp-tags.php:1021
+#: lib/includes/admela-customtemp-tags.php:1795
 #: lib/includes/admela-customtemp-tags.php:2664
 msgid "In"
 msgstr ""
 
-#: content.php:57 content.php:260 content.php:355 content.php:434 
-#: content.php:518 content.php:698 content.php:762 layout-parts/amblyt.php:89 
-#: layout-parts/amblyt.php:317 
-#: lib/includes/admela-customtemp-tags.php:847 
-#: lib/includes/admela-customtemp-tags.php:1014 
-#: lib/includes/admela-customtemp-tags.php:1818 
-#: lib/includes/admela-customtemp-tags.php:2643 
-#: lib/includes/admela-customtemp-tags.php:2706 
+#: content.php:57 content.php:260 content.php:355 content.php:434
+#: content.php:518 content.php:698 content.php:762 layout-parts/amblyt.php:89
+#: layout-parts/amblyt.php:317 lib/includes/admela-customtemp-tags.php:847
+#: lib/includes/admela-customtemp-tags.php:1014
+#: lib/includes/admela-customtemp-tags.php:1818
+#: lib/includes/admela-customtemp-tags.php:2643
+#: lib/includes/admela-customtemp-tags.php:2706
 #: lib/includes/admela-customtemp-tags.php:2938
 msgid "On"
 msgstr "posted on"
@@ -246,7 +243,7 @@ msgctxt "Google font: on or off"
 msgid "on"
 msgstr ""
 
-#: single.php:76 
+#: single.php:76
 msgid "Sorry No Posts were Found..!"
 msgstr ""
 
@@ -263,7 +260,7 @@ msgstr "old post"
 msgid "Next Post"
 msgstr ""
 
-#: lib/includes/admela-customtemp-tags.php:735 
+#: lib/includes/admela-customtemp-tags.php:735
 #: lib/includes/admela-customtemp-tags.php:905
 msgid "You May Also Like"
 msgstr ""

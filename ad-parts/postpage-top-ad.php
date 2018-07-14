@@ -16,7 +16,7 @@
 
 			<div class="admela_themead admela_entrycontentad admela_ectpad">
 			<?php			
-			if(preg_match($admela_postpgtpscd_matchexp , get_theme_mod('admela_single_post_top_ad_setting'))) {
+			if(preg_match($admela_shortcode_matchexpression , get_theme_mod('admela_single_post_top_ad_setting'))) {
 			  echo do_shortcode(''.get_theme_mod('admela_single_post_top_ad_setting').'');
 			}
 			else {

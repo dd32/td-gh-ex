@@ -11,13 +11,13 @@
 
 
 if((get_theme_mod('admela_header_social_fb_setting') == false) && (get_theme_mod('admela_header_social_twitter_setting') == false) && (get_theme_mod('admela_header_social_gplus_setting') == false) && (get_theme_mod('admela_header_social_instagram_setting') == false)){ 
-   $admela_hdsocialclass = 'admela_hdrsocialwot';
+   $admela_header_socialclass = 'admela_hdrsocialwot';
 }
 else {
-   $admela_hdsocialclass = '';
+   $admela_header_socialclass = '';
 }
 ?>
-<div class="admela_header admela_header1 <?php echo esc_attr($admela_hdsocialclass); ?>">
+<div class="admela_header admela_header1 <?php echo esc_attr($admela_header_socialclass); ?>">
 <div class="admela_headerinner">
 	<?php if((get_theme_mod('admela_header_social_fb_setting') != false) || (get_theme_mod('admela_header_social_twitter_setting') != false) || (get_theme_mod('admela_header_social_gplus_setting') != false) || (get_theme_mod('admela_header_social_instagram_setting') != false)){ ?>
 	<div class="admela_headerfirst">

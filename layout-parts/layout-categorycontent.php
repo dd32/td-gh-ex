@@ -30,7 +30,7 @@
     <div class="admela_contentlistmain">
 		<div class="admela_contentlisttitle">
 		  <h4><?php echo esc_html($admela_home_cat_displayname); ?></h4>
-		  <p><?php echo esc_html(get_theme_mod('admela_home_category_post_subtitle_setting','Here, you can add your category related description')); ?></p>
+		  <p><?php echo esc_html(get_theme_mod('admela_home_category_post_subtitle_setting')); ?></p>
 		</div>
 		<div class="admela_contentlistinner">
 		   

@@ -4,7 +4,7 @@
 
 Theme Name      :   Admela
 Theme URI       :   http://userthemes.com/admela
-Version         :   0.1
+Version         :   1.2
 Tested up to    :   WP 4.9.5
 Author          :   Userthemes
 Author URI      :   http://userthemes.com/
@@ -77,11 +77,16 @@ For Admela Settings
 
 Step 1. Go to wp-dashboard >> Appearance >> Customize >> Admela Settings >> here you can change and save your theme options.
 
+For Customizer Ad Settings and User Profile Custom Fields 
+==========================================================
+
+Step1. Go to wp-dashboard >> There you can able to see the recommended plugin notice,just click on Begin activating plugin link and enjoy with our ad options on your customizer.
+
 /*-----------------------------------------------------------------------------------*/
 /* Changelog */
 /*-----------------------------------------------------------------------------------*/
 
-Version 0.1
+Version 1.2
 	i) Initial version Released.
 
 Admela Free version

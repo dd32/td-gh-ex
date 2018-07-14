@@ -30,8 +30,8 @@ if ( post_password_required() ) {
 
 
 	$admela_commentfields =  array(
-	'author' => '<p class="admela-comment-form-author"><label for="author">' . esc_html__( 'Name', 'admela' ) . '</label> ' . ( $admela_commentreq ? '<span class="required">*</span>' : '' ) . '<input id="author" name="author" type="text" value="' . esc_attr( $admela_commenter['comment_author'] ) . '" size="30"' . @$admela_aria_req . ' /></p>',
-	'email' => '<p class="admela-comment-form-email"><label for="email">' . esc_html__( 'Email', 'admela' ) . '</label> ' . ( $admela_commentreq ? '<span class="required">*</span>' : '' ) . '<input id="email" name="email" type="text" value="' . esc_attr(  $admela_commenter['comment_author_email'] ) . '" size="30"' . @$admela_aria_req . ' /></p>',
+	'author' => '<p class="admela-comment-form-author"><label for="author">' . esc_html__( 'Name', 'admela' ) . '</label> ' . ( $admela_commentreq ? '<span class="required">*</span>' : '' ) . '<input id="author" name="author" type="text" value="' . esc_attr( $admela_commenter['comment_author'] ) . '" size="30"' . esc_attr($admela_aria_req) . ' /></p>',
+	'email' => '<p class="admela-comment-form-email"><label for="email">' . esc_html__( 'Email', 'admela' ) . '</label> ' . ( $admela_commentreq ? '<span class="required">*</span>' : '' ) . '<input id="email" name="email" type="text" value="' . esc_attr(  $admela_commenter['comment_author_email'] ) . '" size="30"' . esc_attr($admela_aria_req) . ' /></p>',
 	'url' => '<p class="admela-comment-form-url"><label for="url">' . esc_html__( 'Website', 'admela' ) . '</label><input id="url" name="url" type="text" value="' . esc_url( $admela_commenter['comment_author_url'] ) . '" size="30" /></p>'
 	); 
 
@@ -55,22 +55,22 @@ if ( post_password_required() ) {
 	' . esc_html__( 'Your email address will not be published.' , 'admela' ).  '</p>',
 	'comment_notes_after' => '<p class="form-allowed-tags">
 	'.wp_kses( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'admela' ), ' <code>' .esc_attr(allowed_tags()). '</code>').'
-</p>',
+	</p>',
 	'fields' => apply_filters( 'comment_form_default_fields', array(
-	'author' => '<p class="admela-comment-form-author">' . '<label for="author">' . esc_html__( 'Name', 'admela' ) . '</label> ' . ( $admela_commentreq ? '<span class="required">*</span>' : '' ) . '<input id="author" name="author" type="text" value="' . esc_attr( $admela_commenter['comment_author'] ) . '" size="30"' . @$admela_aria_req . ' /></p>',
-	'email' => '<p class="admela-comment-form-email"><label for="email">' . esc_html__( 'Email', 'admela' ) . '</label> ' . ( $admela_commentreq ? '<span class="required">*</span>' : '' ) . '<input id="email" name="email" type="text" value="' . esc_attr(  $admela_commenter['comment_author_email'] ) . '" size="30"' . @$admela_aria_req . ' /></p>',
+	'author' => '<p class="admela-comment-form-author">' . '<label for="author">' . esc_html__( 'Name', 'admela' ) . '</label> ' . ( $admela_commentreq ? '<span class="required">*</span>' : '' ) . '<input id="author" name="author" type="text" value="' . esc_attr( $admela_commenter['comment_author'] ) . '" size="30"' . esc_attr($admela_aria_req) . ' /></p>',
+	'email' => '<p class="admela-comment-form-email"><label for="email">' . esc_html__( 'Email', 'admela' ) . '</label> ' . ( $admela_commentreq ? '<span class="required">*</span>' : '' ) . '<input id="email" name="email" type="text" value="' . esc_attr(  $admela_commenter['comment_author_email'] ) . '" size="30"' . esc_attr($admela_aria_req) . ' /></p>',
 	'url' => '<p class="comment-form-url"><label for="url">' . esc_html__( 'Website', 'admela' ) . '</label>' . '<input id="url" name="url" type="text" value="' . esc_attr( $admela_commenter['comment_author_url'] ) . '" size="30" /></p>' ) ) ); ?>
   <div class="admela_total_comments">
    
-           <?php $admela_snlg = get_post_field('comment_count',get_the_ID());
-				if ($admela_snlg >= 1):
-				echo '<h3>'.absint($admela_snlg).' <span> '.esc_html__('Comments','admela').'</span> </h3>';			
+           <?php $admela_comment_title = get_post_field('comment_count',get_the_ID());
+				if ($admela_comment_title >= 1):
+				echo '<h3>'.absint($admela_comment_title).' <span> '.esc_html__('Comments','admela').'</span> </h3>';			
 				else:
 				echo ''; 
 				endif;
 			?>
     
-  </div>
+  </div> <!-- .admela_total_comments -->
   <?php
 	
 	if(get_comments_number()):
@@ -89,7 +89,7 @@ if ( post_password_required() ) {
 				)
 			);
 		?>
-  </ol>
+  </ol> <!-- .admela_commentlist -->
   <?php
 	
 	the_comments_navigation();
@@ -120,5 +120,5 @@ if ( post_password_required() ) {
 	comment_form($admela_comments_args); 
 	
    ?>
-</div>
-<!--End of the Comment section--> 
+</div> <!-- #admela_commentbox -->
+ 

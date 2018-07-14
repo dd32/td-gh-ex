@@ -251,4 +251,5 @@ endif;
   /* Custom template tags for this theme. */ 
   require get_parent_theme_file_path('/lib/includes/admela-customtemp-tags.php');
   
-  
+  /* Require the tgm plugin class file. */ 
+  require get_parent_theme_file_path('/lib/admela-tgm-plugin/active-plugin.php');

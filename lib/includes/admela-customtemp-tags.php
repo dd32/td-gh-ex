@@ -30,32 +30,30 @@ $admela_next_post = get_next_post();
 	if(!empty($admela_prev_post) || !empty($admela_next_post) ):
 	
 	if(!empty($admela_prev_post) == ''):
-	$admela_nxtpst_class = 'admela_nxtpst_dsgn';
+	$admela_nextpost_class = 'admela_nxtpst_dsgn';
 	else:
-	$admela_nxtpst_class = '';
+	$admela_nextpost_class = '';
 	endif;
 	
 	?>
 
-	<div class="admela_prenext <?php echo esc_attr($admela_nxtpst_class); ?>"> <!--Single post prev/next-->
+	<div class="admela_prenext <?php echo esc_attr($admela_nextpost_class); ?>"> <!--Single post prev/next-->
   
-  <?php  
- 
-  
-  the_post_navigation( array(
-	'prev_text' => 
-				'<div class="admela_snlgepdsg">'.esc_html((get_theme_mod('admela_preposttrnstxt')) ? get_theme_mod('admela_preposttrnstxt'): 'Prev Post').'</div>'.
+		<?php  
+   
+		the_post_navigation( array(
+	
+		'prev_text' => 
+				'<div class="admela_snlgepdsg">'.esc_html__('Prev Post','admela').'</div>'.
 				'<div class="admela_snlgenpntit"><h4>%title</h4></div>',
-	'next_text' => 
-				'<div class="admela_snlgepdsg">'.esc_html((get_theme_mod('admela_nxtposttrnstxt')) ? get_theme_mod('admela_nxtposttrnstxt'): 'Next Post').'</div>'.
+		'next_text' => 
+				'<div class="admela_snlgepdsg">'.esc_html__('Next Post','admela').'</div>'.
 				'<div class="admela_snlgenpntit"><h4>%title</h4></div>',					
- ) );
-
-  
+		) );  
  
-?>
-</div>
-	<!-- preview / next -->
+		?>
+	
+	</div>	<!-- .admela_prenext -->
 
 <?php 				
 	endif;
@@ -504,28 +502,3 @@ $admela_getpostfmt = get_post_format();
                     
 }
 endif; // admela_postformat.
-
-
-/* admela user profile extra fields
-* @since admela 1.0
-*/
-		
-/*-----------------------------------------------------------------------------------*/
-	# User Profile Author Contact Info
-/*-----------------------------------------------------------------------------------*/
-
-if( ! function_exists( 'admela_custom_contact_profilefields' ) ):
-
-	function admela_custom_contact_profilefields( $admela_contactmethods ) {
-	$admela_contactmethods['google_profile'] = 'Google Profile URL';
-	$admela_contactmethods['facebook_id'] = 'Facebook ID';
-	$admela_contactmethods['twitter_id'] = 'Twitter UserName';  
-	$admela_contactmethods['linkedin_id'] = 'LinkedIn URL';
-	$admela_contactmethods['youtube_id'] = 'YouTube URL';  
-	$admela_contactmethods['pintrest_id'] = 'Pinterest URL';
-	$admela_contactmethods['instagram_id'] = 'Instagram URL';
-	return $admela_contactmethods;
-	}
-	endif;
-	add_filter('user_contactmethods','admela_custom_contact_profilefields',10,1);
-	
