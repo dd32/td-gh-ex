@@ -65,6 +65,10 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.78
+* Updated the bxslider plugin
+* Updated Nivo Lightbox plugin
+
 Version 2.76
 * Pot file updated
 * Theme Sniffer error fixed
