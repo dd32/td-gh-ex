@@ -9,7 +9,9 @@
 
 
 ?>
-	
+	<!-- Jet pack 'Older posts' button will append here -->
+	<div id="infinite-handle-container"></div>
+
 	<!--==== Start Footer Widget Area ====-->
 	<?php if ( is_active_sidebar( 'footer-1' ) || 
 				is_active_sidebar( 'footer-2' ) || 
@@ -78,7 +80,8 @@
 		</div>
 	</footer>
 	<!--==== End Footer ====-->
-
+	
+	<div id="blog-masonry-temp" style="opacity: 0"></div>
 	<?php wp_footer(); ?>
 </body>
 </html>

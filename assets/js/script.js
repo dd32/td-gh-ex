@@ -7,7 +7,6 @@
 	/*=============================
 	        Menu - Toggle button
 	==============================*/
-
 	$(".toggle-btn").on("click", function () {
 	    $(this).toggleClass("active");
 	    $(".main-menu").toggleClass("active");
@@ -16,40 +15,80 @@
 	/*=============================
 	        Sticky header
 	==============================*/
-
 	$window.on('scroll', function() {
-    	if ($(".navbar").offset().top > 100) {
+    	if ($(".navbar").offset().top > 50) {
     	    $(".navbar-fixed-top").addClass("top-nav-collapse");
     	} else {
     	    $(".navbar-fixed-top").removeClass("top-nav-collapse");
     	}
 	});
 
+
 	/*=============================
 	        Blog Masonry
 	==============================*/
-
 	var $blocks = $(".blog-masonry"); //Masonry blocks
 	
-	$blocks.imagesLoaded(function(){
-		$blocks.masonry({
-			itemSelector: '.masonry-entry'
-		});
-		// Fade blocks in after images are ready (prevents jumping and re-rendering)
-		$(".masonry-entry").fadeIn();
+	$blocks.masonry({
+		itemSelector: '.masonry-entry'
+	});
+
+	// layout Masonry after each image loads
+	$blocks.imagesLoaded().progress( function() {
+	  $blocks.masonry('layout');
 	});
 	
 	$(document).ready( function() { 
 		setTimeout( function() { 
-			$blocks.masonry(); 
-		}, 500); 
+			$blocks.masonry('layout');
+		}, 1000); 
 	});
 
 	$(window).resize(function () {
 		setTimeout( function() { 
-			$blocks.masonry(); 
-		}, 500);
+			$blocks.masonry('layout');
+		}, 1000);
 	});
+
+
+	/*=========================================================
+	        Update Masonry after Jetpack Infinite Scroll
+	=========================================================*/
+	$(document).ready( function() { 
+		// change infinite-handle location
+	    $("#infinite-handle").prependTo("#infinite-handle-container");
+	    var infinite_count = 1;
+
+	     // Triggers re-layout on infinite scroll
+	    $( document.body ).on( 'post-load', function () {
+
+			infinite_count = infinite_count + 1;
+			var $container = $('#blog-masonry');
+			var $selector = $('#infinite-view-' + infinite_count);
+			var $elements = $selector.find('.hentry');
+			$elements.hide();
+
+			// append items to grid
+			$container.append($elements).masonry( 'appended', $elements );
+
+			// re-arrange the grid
+			setTimeout( function() { 
+				$container.imagesLoaded().progress( function() {
+				  $container.masonry('layout');
+				});
+				// change infinite-handle location
+			    $("#infinite-handle").prependTo("#infinite-handle-container");
+			}, 500);
+
+			// Worst case scenario - re-arrange the grid again
+			setTimeout( function() { 
+				$container.masonry('layout');
+			}, 1000);
+
+			$elements.fadeIn();
+	    });
+	});
+
 
 	/*=============================
 	        Flexslider
@@ -99,3 +138,32 @@
 
 })(jQuery);
 
+jQuery( document ).ready( function( $ ) {
+	// change infinite-handle location
+    $("#infinite-handle").prependTo("#infinite-handle-container");
+    var infinite_count = 1;
+
+     // Triggers re-layout on infinite scroll
+    $( document.body ).on( 'post-load', function () {
+
+		infinite_count = infinite_count + 1;
+		var $container = $('#blog-masonry');
+		var $selector = $('#infinite-view-' + infinite_count);
+		var $elements = $selector.find('.hentry');
+		$elements.hide();
+
+		// append items to grid
+		$container.append($elements).masonry( 'appended', $elements );
+
+		// re-arrange the grid
+		setTimeout( function() { 
+			$container.imagesLoaded().progress( function() {
+			  $container.masonry('layout');
+			});
+			// change infinite-handle location
+		    $("#infinite-handle").prependTo("#infinite-handle-container");
+		}, 500);
+
+		$elements.fadeIn();
+    });
+});

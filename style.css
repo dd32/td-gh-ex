@@ -1,7 +1,7 @@
 /*	
  * Theme Name: Akyl
  * Text Domain: akyl
- * Version: 1.2
+ * Version: 1.2.1
  * Description: Akyl is a clean and responsive masonry style blog theme. It features Responsive, Support Post Formats, Social Menu, Customization Option, Editor Styling and Translation-Ready Code
  * Tags: blog, three-columns, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, threaded-comments, translation-ready, grid-layout
  * Author: Akila Thiwanka
@@ -297,7 +297,7 @@ body {
 	font-size: 15px;
 	line-height: 24px;
 	font-family: 'Montserrat', sans-serif;
-	background: #08213c;
+	background: #f2f6ff;
 	color: #333;
 	font-weight: 300;
 }
@@ -482,9 +482,7 @@ input[type="text"] {
 }
 
 .navbar-collapse.in {
-	top: -50px;
-	position: relative;
-	right: 50px;
+	float: right;
 }
 
 .main-menu .navbar-collapse.in {
@@ -492,15 +490,19 @@ input[type="text"] {
 }
 
 .main-menu.active .navbar-collapse.in {
-	overflow-y: auto;
+	margin-left: 30px;
 }
 
 .nav-toggle {
+	outline: none;
 	display: inline-block;
 	float: right;
 }
 
 .toggle-btn {
+	position: relative;
+	z-index: 1;
+	outline: none;
 	background-color: transparent;
 	border: 0 none;
 	padding: 15px 10px 14px 10px;
@@ -563,6 +565,10 @@ input[type="text"] {
 	display: none;
 }
 
+.main-menu .navbar-nav {
+	margin: 0 !important;
+}
+
 .main-menu .navbar-nav li a, .main-menu .navbar-nav li a:focus {
 	color: #fff;
 	-webkit-transition: .3s;
@@ -584,7 +590,7 @@ input[type="text"] {
 }
 
 .custom-navbar.top-nav-collapse ul, .custom-navbar.top-nav-collapse .nav-toggle {
-	background: #0b0c16;
+	background: #091b2c;
 }
 
 .custom-navbar.top-nav-collapse .navbar-nav li a
@@ -597,18 +603,24 @@ input[type="text"] {
 }
 
 /* Sub menu */
-.sub-menu, .nav .children {
-	background: #101221;
+.sub-menu, .nav .children:first-child {
 	display: block;
 	position: absolute;
 	min-width: 240px;
 	padding: 0;
 	opacity: 0;
+	left: 100%;
+	margin-top: -50px;
 	visibility: hidden;
-	top: 65px;
 	-webkit-transition: all 0.4s ease-in-out;
 	-o-transition: all 0.4s ease-in-out;
 	transition: all 0.4s ease-in-out;
+}
+
+.nav > .menu-item-has-children > .sub-menu {
+	left: 0px;
+	top: 60px;
+	margin-top: 0px;
 }
 
 .custom-navbar .sub-menu li a, .custom-navbar .children li a {
@@ -621,7 +633,6 @@ input[type="text"] {
 .nav li:hover >.sub-menu, .nav a:focus + .sub-menu, .nav li:hover >.children, .nav a:focus + .children {
 	visibility: visible;
 	opacity: 1;
-	top: 55px;
 }
 
 
@@ -693,6 +704,10 @@ input[type="text"] {
     left: 0;
     z-index: 0;
 } 
+
+#blog-grid  {
+	padding-bottom: 30px;
+}
 
 #blog-grid article {
 	margin-bottom: 30px;
@@ -859,14 +874,31 @@ input[type="text"] {
 	font-weight: 500;
 }
 
+.nav-links {
+	margin: 0 auto;
+	text-align: center;
+}
+
 .nav-links a {
-	color: #fff;
+	/*color: #fff;*/
+	font-weight: 700;
 	border-bottom: 1px solid transparent;
 }
 
+.nav-links .nav-previous {
+	/*float: left;*/
+	display: inline-block;
+}
+
+.nav-links .nav-next {
+	/*float: left;*/
+	margin-left: 40px;
+    display: inline-block;
+}
+
 .nav-links a:hover {
-	color: #fff;
-	border-bottom-color: #fff;
+	/*color: #fff;*/
+	border-bottom-color: #59a3e9;
 }
 
 
@@ -1457,7 +1489,8 @@ blockquote::before, blockquote::after{
 	width: 100%;
 	color: #fff;
 	z-index: 1;
-	top: 50%;
+	top: 40%;
+	padding: 0 10px;
 }
 
 /* link post */
@@ -1777,16 +1810,30 @@ footer a:hover {
 * ----------------------------------------------------------------------------------------
 */
 
+@media (max-width: 992px) {
+	.col-md-4 {
+		width: 100%
+	}
+}
+
 @media (max-width: 768px) {
 
 	/* main menu */
 	.main-menu.active .navbar-collapse.in {
 		top: 0px;
+		position: absolute;
+		left: 0px;
+		right: 50px;
+		margin-left: 0px;
 	}
 	
+	.custom-navbar.top-nav-collapse ul, .custom-navbar.top-nav-collapse .nav-toggle {
+    	background: #091b2c;
+	}
+
 	.main-menu.active {
 		right: 30px;
-		left: 60px;
+		left: 0px;
 		background: none !important;
 		box-shadow: none !important;
 	}
@@ -1803,7 +1850,7 @@ footer a:hover {
 
 	.nav-menu {
 		width: 100%;
-		background: #0b0c16;
+		background: #091b2c;
 	}
 	
 	.nav-menu li a {
@@ -1852,12 +1899,72 @@ footer a:hover {
 	}
 }
 
+@media (max-width: 480px) {
+	.nav-social {
+		/*display: none;*/
+		visibility: hidden;
+	}
+	
+	.logo {
+		left: 20px;
+		top: 25px;
+	}
+
+	.main-menu, .main-menu.active {
+		right: 15px;
+	    top: 10px;
+	}
+}
+
 
 /*
 * ----------------------------------------------------------------------------------------
 * 12. Animation and Other Fixing
 * ----------------------------------------------------------------------------------------
 */
+
+/* JetPack Infinite scroll button location fix */
+#infinite-handle {
+	margin: 0px 0 40px;
+    text-align: center;
+}
+
+#infinite-handle span {
+	background: #05182c;
+	border-radius: 100px;
+	padding: 12px 25px;
+}
+
+.infinite-loader {
+	bottom: -20px;
+	position: absolute;
+	left: 50%;
+	margin-left: -15px;
+}
+
+#infinite-footer {
+	bottom: 10px;
+}
+
+#infinite-footer .container {
+	background: #2c4769;
+	border-radius: 100px;
+}
+
+#infinite-footer .blog-info a {
+	color: #fff;
+	font-weight: 400;
+}
+
+#infinite-footer a:hover {
+	color: #59a3e9;
+	text-decoration: none;
+}
+
+#infinite-footer .blog-credits, #infinite-footer .blog-credits a {
+	color: #fff;
+}
+
 
 /* ripple animation for button click */
 @keyframes ripple {

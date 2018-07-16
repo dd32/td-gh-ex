@@ -20,7 +20,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-
+	
 	<!--===== Header Area =====-->
 	<header class="site-header">
 		<div class="logo">
@@ -36,35 +36,39 @@
 				?>
 			</a>
 		</div>
+
 		<!-- Navigation -->
-		<nav class="navbar custom-navbar navbar-fixed-top">
-			<div class="main-menu">
-				<div class="nav-toggle">
-					<button class="toggle-btn">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-				<div class="navbar-collapse collapse in">
-					<ul class="nav navbar-nav nav-social">
-						<?php 
-							$links = akyl_load_social_links();
-							foreach ( $links as $link ) {
-								echo '<li>' . $link . '</li>' ;
-							}
+		<?php if ( has_nav_menu( 'main-menu' ) ) : ?>
+			<nav class="navbar custom-navbar navbar-fixed-top">
+				<div class="main-menu">
+					<div class="nav-toggle">
+						<button class="toggle-btn">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="navbar-collapse collapse in">
+						<ul class="nav navbar-nav nav-social">
+							<?php 
+								$links = akyl_load_social_links();
+								foreach ( $links as $link ) {
+									echo '<li>' . $link . '</li>' ;
+								}
+							?>
+						</ul>
+						<?php
+						wp_nav_menu( array( 
+						 	'theme_location' => 'main-menu',
+						 	'menu_class' => 'nav navbar-nav nav-menu',
+						 	'container' => ''
+						));
 						?>
-					</ul>
-					<?php
-					 wp_nav_menu( array( 
-					 	'theme_location' => 'Main Menu',
-					 	'menu_class' => 'nav navbar-nav nav-menu',
-					 	'container' => ''
-					 ) );
-					?>
+					</div>
 				</div>
-			</div>
-		</nav>
+			</nav>
+		<?php endif; ?>
+
 		<!-- Header Banner -->
 		<div class="section banner" style="background-image: url('<?php echo esc_url(header_image()) ?>');">
 			<div class="display-table">

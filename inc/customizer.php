@@ -3,7 +3,7 @@
  * Add support for custom backgrounds
  */
 add_theme_support( 'custom-background', array(
-	'default-color' => '08213c',
+	'default-color' => 'f2f6ff',
 	'default-image' => '',
 ));
 
@@ -28,8 +28,7 @@ function akyl_customize_register( $wp_customize ) {
 	 --------------------------------*/
 	$wp_customize->get_setting( 'header_textcolor' )->type = 'option'; // get_option faster than get_theme_mod
 	$wp_customize->get_setting( 'header_textcolor' )->default = '#fff';
-	$wp_customize->get_setting( 'background_color' )->default = '#08213c';
-
+	$wp_customize->get_setting( 'background_color' )->default = '#f2f6ff';
 
 	/**--------------------------------------
 	 * Add Header Background Color Setting
@@ -121,11 +120,9 @@ function akyl_customize_register( $wp_customize ) {
 		));
 
 		$priority += 5;
-	 }
-
+	}
 }
 add_action( 'customize_register', 'akyl_customize_register' );
-
 
 function akyl_customize_css()
 {

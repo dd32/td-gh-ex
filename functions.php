@@ -41,6 +41,52 @@ if ( ! function_exists('akyl_theme_setup') ) {
 		register_nav_menus( array( 
 			'main-menu' => __( 'Main menu', 'akyl' )
 		) );
+		
+		/* Add support for Jetpack Infinite scroll */
+		add_theme_support( 'infinite-scroll', array(
+			'container' => 'blog-masonry',
+			'footer_widgets' => array( 'footer-1', 'footer-2', 'footer-3', ), /* If there is at least one widget then show older posts button */
+		) );
+
+		/* Change Gutenberg color palette */
+		add_theme_support( 'editor-color-palette', array(
+		    array(
+		        'name' => __( 'strong blue', 'akyl' ),
+		        'slug' => 'strong-blue',
+		        'color' => '#091b2c',
+		    ),
+		    array(
+		        'name' => __( 'light blue', 'akyl' ),
+		        'slug' => 'light-blue',
+		        'color' => '#2c4769',
+		    ),
+		    array(
+		        'name' => __( 'very light blue', 'akyl' ),
+		        'slug' => 'very-light-blue',
+		        'color' => '#59a3e9',
+		    ),
+		    array(
+		        'name' => __( 'dark gray', 'akyl' ),
+		        'slug' => 'dark-gray',
+		        'color' => '#333',
+		    ),
+		    array(
+		        'name' => __( 'very dark red', 'akyl' ),
+		        'slug' => 'very-dark-red',
+		        'color' => '#c7254e',
+		    ),
+		    array(
+		        'name' => __( 'very light red', 'akyl' ),
+		        'slug' => 'very-light-red',
+		        'color' => '#f9f2f4',
+		    ),
+		    array(
+		        'name' => __( 'light green', 'akyl' ),
+		        'slug' => 'light-green',
+		        'color' => '#13C4A5',
+		    ),
+		) );
+
 	}
 	add_action( 'after_setup_theme', 'akyl_theme_setup' );
 }
@@ -235,7 +281,10 @@ function akyl_get_link_url() {
 	return ( $has_url && has_post_format( 'link' ) ) ? $has_url : apply_filters( 'the_permalink', get_permalink() );
 }
 
-// Change the length of excerpts
+
+/**
+ * Change the length of excerpts
+ */
 function akyl_custom_excerpt_length( $length ) {
 	if ( is_admin() ) {
 		return $length;
@@ -244,7 +293,10 @@ function akyl_custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'akyl_custom_excerpt_length', 999 );
 
-// Add more-link ( [...] to . . . )
+
+/**
+ * Add more-link ( [...] to . . . )
+ */
 function akyl_excerpt_more( $more ) {
 	if ( is_admin() ) {
 		return $more;
@@ -254,7 +306,9 @@ function akyl_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'akyl_excerpt_more' );
 
 
-// Use full size gallery images for the next gallery shortcode: 
+/**
+ * Use full size gallery images for the next gallery shortcode: 
+ */
 function akyl_shortcode_atts_gallery( $out )
 {
     remove_filter( current_filter(), __FUNCTION__ );
@@ -264,7 +318,9 @@ function akyl_shortcode_atts_gallery( $out )
 add_filter( 'shortcode_atts_gallery', 'akyl_shortcode_atts_gallery' );
 
 
-// Add editor styles
+/**
+ * Add editor styles
+ */
 function akyl_add_editor_styles() {
     add_editor_style( 'akyl-editor-style.css' );
     $font_url = 'https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Raleway:300,400,500,700';
@@ -273,11 +329,25 @@ function akyl_add_editor_styles() {
 add_action( 'init', 'akyl_add_editor_styles' );
 
 
-// Set content-width
+/**
+ * Enqueue Gutenberg editor style
+ */
+function akyl_block_editor_styles() {
+    wp_enqueue_style( 'akyl-block-editor-styles', get_theme_file_uri( '/akyl-editor-style.css' ), false, '1.0', 'all' );
+}
+
+add_action( 'enqueue_block_editor_assets', 'akyl_block_editor_styles' );
+
+
+/**
+ * Set content-width
+ */
 if ( ! isset( $content_width ) ) $content_width = 640;
 
 
-// akyl_comment
+/**
+ * akyl_comment
+ */
 if ( ! function_exists('akyl_comment') ) {
 	function akyl_comment( $comment, $args, $depth ) {
 		?>
@@ -332,7 +402,8 @@ if ( ! function_exists('akyl_comment') ) {
 }
 
 
-// Load customizer
+/**
+ * Load customizer
+ */
 require get_template_directory() . '/inc/customizer.php' ;
-
 

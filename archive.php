@@ -23,7 +23,7 @@
 			<?php 
 				$tag_description = tag_description();
 				if ( ! empty( $tag_description ) )
-					the_wp_archive_description( '<div class="tag-archive-meta">', '</div>' ); ?>
+					the_archive_description( '<div class="tag-archive-meta">', '</div>' ); ?>
 
 		</div> <!-- /page-title -->
 
@@ -48,11 +48,13 @@
 		</div><!-- end row --> 
 		
 		<!-- Posts navigation -->
-		<?php the_posts_navigation( array(
+		<?php 
+		the_posts_navigation( array(
 		    'prev_text' => __( '&larr; Older posts', 'akyl' ),
 		    'next_text' => __( 'Newer posts &rarr;', 'akyl' ),
-		) ); ?>
-
+		) ); 
+		?>
+		
 	</div><!-- end container -->
 </div>
 <!--==== End Blog Section ====-->

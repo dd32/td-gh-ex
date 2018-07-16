@@ -2,7 +2,7 @@
 Akyl WordPress Theme 
 ------------------------------
 Copyright 2017 Akila Thiwanka : https://www.akilathiwanka.info/
-Version : 1.2
+Version : 1.2.1
 License : GPLv2 or later
 License URI : http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,6 +14,7 @@ Features
 * Custom Header
 * Social Links
 * Post Formats
+* Jetpack Infinite scroll support
 * Translate Support
 
 
@@ -66,10 +67,13 @@ All License: CC0 Creative Commons (http://creativecommons.org/publicdomain/zero/
 
 Changelog
 --------------
+= 1.2.1 =
+* Rekeased: July 16, 2018
+
 = 1.0.2 =
 * Released: April 3, 2018
 
 = 1.0.0 =
-* Released: December 18, 2014
+* Released: July 18, 2017
 
 Initial release

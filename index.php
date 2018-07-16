@@ -13,7 +13,7 @@
 <!--==== Start Blog Section ====-->
 <div class="section" id="blog-grid">
 	<div class="container-fluid">
-		<div class="row blog-masonry">
+		<div class="row blog-masonry" id="blog-masonry">
 			<?php 
 			if ( have_posts() ) : 
 
@@ -34,11 +34,13 @@
 		</div><!-- end row --> 
 		
 		<!-- Posts navigation -->
-		<?php the_posts_navigation( array(
+		<?php 
+		the_posts_navigation( array(
 		    'prev_text' => __( '&larr; Older posts', 'akyl' ),
 		    'next_text' => __( 'Newer posts &rarr;', 'akyl' ),
-		) ); ?>
-
+		) ); 
+		?>
+		
 	</div><!-- end container -->
 </div>
 <!--==== End Blog Section ====-->

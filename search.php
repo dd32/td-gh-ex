@@ -37,11 +37,13 @@
 				</div><!-- end row --> 
 				
 				<!-- Posts navigation -->
-				<?php the_posts_navigation( array(
+				<?php 
+				the_posts_navigation( array(
 				    'prev_text' => __( '&larr; Older posts', 'akyl' ),
 				    'next_text' => __( 'Newer posts &rarr;', 'akyl' ),
-				) ); ?>
-
+				) ); 
+				?>
+				
 		</div><!-- end container -->
 	</div>
 	<!--==== End Msonry Section ====-->
