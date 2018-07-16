@@ -65,7 +65,7 @@ final class Bayn_Lite_Customizer_Pro {
 		$manager->add_section(
 			new Bayn_Lite_Customizer_Section_Pro(
 				$manager,
-				'bayn-lite',
+				'bayn-pro',
 				array(
 					'title'     => esc_html__( 'Ready For More?', 'bayn-lite' ),
 					'pro_text'  => esc_html__( 'Upgrade To PRO', 'bayn-lite' ),
