@@ -1,7 +1,71 @@
 <?php
+/**
+ * Add notice for toolkit.
+ * Include the TGM_Plugin_Activation class.
+ * Register the required plugins for this theme.
+ *
+ * @package Ascend Theme
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
+	exit; // Exit if accessed directly.
 }
+/**
+ * Add Notice for toolkit if not installed
+ */
+function ascend_kadence_toolkit_notice() {
+	if ( defined( 'VIRTUE_TOOLKIT_PATH' ) || get_transient( 'ascend_theme_toolkit_plugin_notice' ) || ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+	$installed_plugins = get_plugins();
+	if ( ! isset( $installed_plugins['virtue-toolkit/virtue_toolkit.php'] ) ) {
+		$button_label = esc_html__( 'Install Kadence Toolkit', 'ascend' );
+		$data_action  = 'install';
+	} elseif ( ! Ascend_Plugin_Check::active_check( 'virtue-toolkit/virtue_toolkit.php' ) ) {
+		$button_label = esc_html__( 'Activate Kadence Toolkit', 'ascend' );
+		$data_action  = 'activate';
+	} else {
+		return;
+	}
+	$install_link    = wp_nonce_url(
+		add_query_arg(
+			array(
+				'action' => 'install-plugin',
+				'plugin' => 'virtue-toolkit',
+			),
+			network_admin_url( 'update.php' )
+		),
+		'install-plugin_virtue-toolkit'
+	);
+	$activate_nonce  = wp_create_nonce( 'activate-plugin_virtue-toolkit/virtue_toolkit.php' );
+	$activation_link = self_admin_url( 'plugins.php?_wpnonce=' . $activate_nonce . '&action=activate&plugin=virtue-toolkit%2Fvirtue_toolkit.php' );
+	?>
+	<div id="message" class="updated kt-plugin-install-notice-wrapper" style="position: relative; border:10px solid #fff; padding:10px 30px; background:#ebfbff;">
+		<h3 class="kt-notice-title"><?php echo esc_html__( 'Thanks for choosing the Ascend Theme', 'ascend' ); ?></h3>
+		<p class="kt-notice-description"><?php /* translators: %s: <strong> */ printf( esc_html__( 'To take full advantage of the Ascend Theme please install the %1$sKadence Toolkit%2$s, this adds extra settings and features.', 'ascend' ), '<strong>', '</strong>' ); ?></p>
+		<p class="submit">
+			<a class="button button-primary kt-install-toolkit-btn" data-redirect-url="<?php echo esc_url( admin_url( 'themes.php?page=kadence_welcome_page' ) ); ?>" data-activating-label="<?php echo esc_attr__( 'Activating...', 'ascend' ); ?>" data-activated-label="<?php echo esc_attr__( 'Activated', 'ascend' ); ?>" data-installing-label="<?php echo esc_attr__( 'Installing...', 'ascend' ); ?>" data-installed-label="<?php echo esc_attr__( 'Installed', 'ascend' ); ?>" data-action="<?php echo esc_attr( $data_action ); ?>" data-install-url="<?php echo esc_attr( $install_link ); ?>" data-activate-url="<?php echo esc_attr( $activation_link ); ?>"><?php echo esc_html( $button_label ); ?></a>
+			<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'virtue-kadence-toolkit-plugin-notice', 'install' ), 'virtue_toolkit_hide_notices_nonce', '_notice_nonce' ) ); ?>" class="notice-dismiss kt-close-notice"><span class="screen-reader-text"><?php esc_html_e( 'Skip', 'ascend' ); ?></span></a>
+		</p>
+	</div>
+	<?php
+	wp_enqueue_script( 'kadence-toolkit-install' );
+}
+add_action( 'admin_notices', 'ascend_kadence_toolkit_notice' );
+
+/**
+ * Hide Notice
+ */
+function ascend_hide_toolkit_plugin_notice() {
+	if ( isset( $_GET['virtue-kadence-toolkit-plugin-notice'] ) && isset( $_GET['_notice_nonce'] ) ) {
+		if ( ! wp_verify_nonce( wp_unslash( sanitize_key( $_GET['_notice_nonce'] ) ), 'virtue_toolkit_hide_notices_nonce' ) ) {
+			wp_die( esc_html__( 'Authorization failed. Please refresh the page and try again.', 'ascend' ) );
+		}
+		set_transient( 'ascend_theme_toolkit_plugin_notice', 1, 4 * YEAR_IN_SECONDS );
+	}
+}
+add_action( 'wp_loaded', 'ascend_hide_toolkit_plugin_notice' );
+
 /**
  * Include the TGM_Plugin_Activation class.
  */
@@ -25,7 +89,7 @@ function ascend_register_required_plugins() {
 			'name'     				=> 'Kadence Toolkit', // The plugin name
 			'slug'     				=> 'virtue-toolkit', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
-			'version' 				=> '3.0',
+			'version' 				=> '4.8',
 			'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
 			'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
 	);
@@ -60,7 +124,7 @@ function ascend_register_required_plugins() {
 		'default_path' 		=> '',                         	// Default absolute path to pre-packaged plugins
 		'parent_slug'  		=> 'themes.php',            // Parent menu slug.
 		'menu'         		=> 'install-recommended-plugins', 	// Menu slug
-		'has_notices'      	=> true,                       	// Show admin notices or not
+		'has_notices'      	=> false,                       	// Show admin notices or not
 		'is_automatic'    	=> false,					   	// Automatically activate plugins after installation or not
 		'message' 			=> '',							// Message to output right before the plugins table
 		'strings'      		=> array(

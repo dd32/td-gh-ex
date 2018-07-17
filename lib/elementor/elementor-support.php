@@ -3,14 +3,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
-function ascend_is_ele_active() {
-	return Ascend_Elementor_Plugin_Check::active_check_ele();
-}
-
 add_action('after_setup_theme', 'ascend_elementor_support');
 function ascend_elementor_support() {
-	require_once( trailingslashit( get_template_directory() ) . 'lib/elementor/class-ascend-elementor-plugin-check.php');
-	if ( ascend_is_ele_active() ){
+	if ( Ascend_Plugin_Check::active_check( 'elementor/elementor.php' ) ){
 		add_action('init', 'ascend_elementor_woo_editing_issue', 1);
 		require_once( trailingslashit( get_template_directory() ) . 'lib/elementor/class-ascend-elementor-header-footer.php');
 	}

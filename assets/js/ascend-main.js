@@ -249,6 +249,31 @@ jQuery(document).ready(function ($) {
 						},
 					});
 			});
+			// Gutenberg Gallery
+			$('.wp-block-gallery').each(function(){
+				$(this).find('a[data-rel^="lightbox"]:not(".kt-no-lightbox")').magnificPopup({
+					type: 'image',
+					gallery: {
+						enabled:true
+						},
+						image: {
+							titleSrc: function(item) {
+								if ( item.el.parents('.blocks-gallery-item').find('figcaption').length ) {
+									return item.el.parents('.blocks-gallery-item').find('figcaption').html();
+								} else {
+									return item.el.find('img').attr('alt');
+								}
+							}
+						},
+					removalDelay: 500, //delay removal by X to allow out-animation
+					callbacks: {
+						    beforeOpen: function() {
+						      // just a hack that adds mfp-anim class to markup 
+						       this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+						    }
+						},
+					});
+			});
 			// Video Lightbox
 			$(".ktvideolight").magnificPopup({
 				type:'iframe'

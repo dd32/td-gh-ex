@@ -28,6 +28,10 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.2.9 | 16th July 2018 =
+* Update: Gutenberg Support.
+* Update: Easier Kadence Toolkit install.
+
 = Version 1.2.8 | 3rd July 2018 =
 * Fix: Conflict with woo code and other store plugin.
 * Add: Page content width settings.

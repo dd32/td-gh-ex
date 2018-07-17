@@ -32,10 +32,10 @@ function ascend_scripts() {
 
   	if(class_exists('woocommerce')) {
   		if(is_product()) {
-       		wp_enqueue_script( 'ascend-wc-add-to-cart-variation', get_template_directory_uri() . '/assets/js/min/kt-add-to-cart-variation-min.js' , array( 'jquery' ), false, ASCEND_VERSION, true );
+       		wp_enqueue_script( 'ascend-wc-add-to-cart-variation', get_template_directory_uri() . '/assets/js/min/kt-add-to-cart-variation-min.js' , array( 'jquery' ), ASCEND_VERSION, true );
        	}
     	if(isset($ascend['product_quantity_input']) && $ascend['product_quantity_input'] == 1) {
-        		wp_enqueue_script( 'wcqi-js', get_template_directory_uri() . '/assets/js/min/wc-quantity-increment-min.js' , array( 'jquery' ), false, ASCEND_VERSION, true );
+        		wp_enqueue_script( 'wcqi-js', get_template_directory_uri() . '/assets/js/min/wc-quantity-increment-min.js' , array( 'jquery' ), ASCEND_VERSION, true );
     	}
   	}
 }
