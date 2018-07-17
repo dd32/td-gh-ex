@@ -89,9 +89,9 @@ $config = array(
 	'free_pro'            => array(
 		'free_theme_name'     => 'best-construction',
 		'pro_theme_name'      => 'Theta All',
-		'pro_theme_link'      => 'https://www.coothemes.com/member/member.php',
+		'pro_theme_link'      => 'https://www.coothemes.com/theme-theta-all/',
 		/* translators: s - theme name */
-		'get_pro_theme_label' => sprintf( __( 'Go Member Area!', 'best-construction' ), 'Theta All (Best Construction Pro)' ),
+		'get_pro_theme_label' => sprintf( __( 'Upgrade to pro!', 'best-construction' ), 'Theta All (Best Construction Pro)' ),
 'features'            => array(
 			array(
 				'title'       => __( 'One-page Theme', 'best-construction' ),

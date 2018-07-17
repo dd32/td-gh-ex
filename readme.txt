@@ -69,6 +69,9 @@ Theta provides support at https://www.coothemes.com/forum/theta-theme/best-const
 
 
 === Changelog ===
+=version 1.0.2 20180717=
+*modify link
+
 =version 1.0.1 20180710=
 *update default.jpg
 
