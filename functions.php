@@ -578,7 +578,7 @@ if ( ! function_exists( 'wp_barrister_comment' ) ) :
  * Template for comments and pingbacks.
  */
 function wp_barrister_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
+
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
@@ -594,7 +594,7 @@ function wp_barrister_comment( $comment, $args, $depth ) {
 			<footer class="clearfix comment-head">
 				<div class="comment-author vcard">
 					<?php echo get_avatar( $comment, 60 ); ?>
-					<?php printf( __( '%s', 'wp-barrister' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( '%s', sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 				</div><!-- .comment-author .vcard -->
 
 				<div class="comment-meta commentmetadata">
