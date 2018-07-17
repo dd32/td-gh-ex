@@ -1,5 +1,5 @@
 <?php if ( post_password_required() ) : ?>
-	<p><?php _e( 'This post is password protected. Enter the password to view any comments.', 'enigma' ); ?></p>
+	<p><?php esc_html_e( 'This post is password protected. Enter the password to view any comments.', 'enigma' ); ?></p>
 	<?php return; endif; ?>
     <?php if ( have_comments() ) : ?>
 	<div class="enigma_comment_section">		
@@ -7,7 +7,7 @@
 	<?php wp_list_comments( array( 'callback' => 'weblizar_comment' ) ); ?>		
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		<nav id="comment-nav-below">
-			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'enigma' ); ?></h1>
+			<h1 class="assistive-text"><?php esc_html_e( 'Comment navigation', 'enigma' ); ?></h1>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'enigma' ) ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'enigma' ) ); ?></div>
 		</nav>
@@ -29,6 +29,7 @@
 		'comment_field'=> '<div class="enigma_form_group"><label for="message"> Message *</label>
 		<textarea id="comment" name="comment" class="enigma_con_textarea_control" rows="5"></textarea></div>',		
 		'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as ",'enigma' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__(" Log out?",'enigma').'</a>' . '</p>',
+		/* translators: %s: reply to name */
 		'title_reply_to' => __( 'Leave a Reply to %s','enigma'),
 		'id_submit' => 'enigma_send_button',
 		'label_submit'=>__( 'Post Comment','enigma'),

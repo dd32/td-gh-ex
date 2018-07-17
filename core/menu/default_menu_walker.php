@@ -49,7 +49,7 @@ function weblizar_fallback_page_menu( $args = array() ) {
 	$menu = '<div class="' . esc_attr($args['container_class']) . '">' . $menu . "</div>\n";
 	$menu = apply_filters( 'wp_page_menu', $menu, $args );
 	if ( $args['echo'] )
-		echo $menu;
+		echo esc_html($menu);
 	else
 		return $menu;
 }

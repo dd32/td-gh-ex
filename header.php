@@ -11,10 +11,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <meta charset="<?php bloginfo('charset'); ?>" />	
-	<?php $wl_theme_options = weblizar_get_options(); ?>
-	
-	<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
-	<?php wp_head(); ?>
+	<?php $wl_theme_options = weblizar_get_options();
+	wp_head(); ?>
 </head>
 <body <?php if($wl_theme_options['box_layout']==2) { body_class('boxed'); } else body_class(); ?>>
 <div>
@@ -29,7 +27,7 @@
 					<a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
 						$image = wp_get_attachment_image_src( $custom_logo_id,'full' ); ?>
-					 <?php if (has_custom_logo()) { ?> <img src="<?php echo $image[0]; ?>" height="<?php echo $wl_theme_options['logo_height'] ?>" width="<?php echo $wl_theme_options['logo_width'] ?>"> <?php } else { ?> <h1><?php echo get_bloginfo('name'); } ?></h1>
+					 <?php if (has_custom_logo()) { ?> <img src="<?php echo esc_attr($image[0]); ?>" height="<?php echo esc_attr($wl_theme_options['logo_height']) ?>" width="<?php echo esc_attr($wl_theme_options['logo_width']) ?>"> <?php } else { ?> <h1><?php echo esc_html(get_bloginfo('name')); } ?></h1>
 					</a>
 					<p><?php bloginfo( 'description' ); ?></p>
 					</div>
@@ -40,7 +38,7 @@
 					<a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
 						$image = wp_get_attachment_image_src( $custom_logo_id,'full' ); ?>
-					<?php if (has_custom_logo()) { ?> <img src="<?php echo $image[0]; ?>" height="<?php echo $wl_theme_options['logo_height'] ?>" width="<?php echo $wl_theme_options['logo_width'] ?>"> <?php } else { ?> <h1><?php echo get_bloginfo('name'); } ?></h1>
+					<?php if (has_custom_logo()) { ?> <img src="<?php echo esc_attr($image[0]); ?>" height="<?php echo esc_attr($wl_theme_options['logo_height']) ?>" width="<?php echo esc_attr($wl_theme_options['logo_width']) ?>"> <?php } else { ?> <h1><?php echo esc_html(get_bloginfo('name')); } ?></h1>
 					</a>
 					<p><?php bloginfo( 'description' ); ?></p>
 					</div>
@@ -50,8 +48,8 @@
 				<div class="col-md-6 col-sm-12">
 				<?php if($wl_theme_options['email_id'] || $wl_theme_options['phone_no'] !='') { ?>
 				<ul class="head-contact-info">
-						<?php if($wl_theme_options['email_id'] !='') { ?><li><i class="fa fa-envelope"></i><a href="mailto:<?php echo $wl_theme_options['email_id']; ?>"><?php echo esc_attr($wl_theme_options['email_id']); ?></a></li><?php } ?>
-						<?php if($wl_theme_options['phone_no'] !='') { ?><li><i class="fa fa-phone"></i><a href="tel:<?php echo $wl_theme_options['phone_no']; ?>"><?php echo esc_attr($wl_theme_options['phone_no']); ?></a></li><?php } ?>
+						<?php if($wl_theme_options['email_id'] !='') { ?><li><i class="fa fa-envelope"></i><a href="mailto:<?php echo esc_attr($wl_theme_options['email_id']); ?>"><?php echo esc_attr($wl_theme_options['email_id']); ?></a></li><?php } ?>
+						<?php if($wl_theme_options['phone_no'] !='') { ?><li><i class="fa fa-phone"></i><a href="tel:<?php echo esc_attr($wl_theme_options['phone_no']); ?>"><?php echo esc_attr($wl_theme_options['phone_no']); ?></a></li><?php } ?>
 				</ul>
 				<?php } ?>
 					<ul class="social">
@@ -92,7 +90,7 @@
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
 					 
-					  <span class="sr-only"><?php _e('Toggle navigation','enigma');?></span>
+					  <span class="sr-only"><?php esc_html_e('Toggle navigation','enigma');?></span>
 					  <span class="icon-bar"></span>
 					  <span class="icon-bar"></span>
 					  <span class="icon-bar"></span>

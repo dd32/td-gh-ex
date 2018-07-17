@@ -315,7 +315,7 @@ endif;
     echo '<ul class="breadcrumb">';
     global $post;
     $homeLink = home_url();
-    echo '<li><a href="' . $homeLink . '">' . $home . '</a></li>' . $delimiter . ' ';
+    echo '<li><a href="' . esc_attr($homeLink) . '">' . esc_html($home) . '</a></li>' . esc_html($delimiter) . ' ';
     if (is_category()) {
         global $wp_query;
         $cat_obj = $wp_query->get_queried_object();
@@ -323,23 +323,23 @@ endif;
         $thisCat = get_category($thisCat);
         $parentCat = get_category($thisCat->parent);
         if ($thisCat->parent != 0)
-            echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
-        echo $before . ' _e("Archive by category","enigma") "' . single_cat_title('', false) . '"' . $after;
+            echo(esc_html(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' ')));
+        echo esc_html($before) . ' _e("Archive by category","enigma") "' . single_cat_title('', false) . '"' . esc_html($after);
     } elseif (is_day()) {
-        echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
-        echo '<li><a href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . get_the_time('F') . '</a></li> ' . $delimiter . ' ';
-        echo $before . get_the_time('d') . $after;
+        echo '<li><a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html(get_the_time('Y')) . '</a></li> ' . esc_html($delimiter) . ' ';
+        echo '<li><a href="' . esc_url(get_month_link(get_the_time('Y'), get_the_time('m'))) . '">' . esc_html(get_the_time('F')) . '</a></li> ' . esc_html($delimiter) . ' ';
+        echo esc_html($before) . esc_html(get_the_time('d')) . esc_html($after);
     } elseif (is_month()) {
-        echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
-        echo $before . get_the_time('F') . $after;
+        echo '<li><a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html(get_the_time('Y')) . '</a></li> ' . esc_html($delimiter) . ' ';
+        echo esc_html($before) . esc_html(get_the_time('F')) . esc_html($after);
     } elseif (is_year()) {
-        echo $before . get_the_time('Y') . $after;
+        echo esc_html($before) . esc_html(get_the_time('Y')) . esc_html($after);
     } elseif (is_single() && !is_attachment()) {
         if (get_post_type() != 'post') {
             $post_type = get_post_type_object(get_post_type());
             $slug = $post_type->rewrite;
-            echo '<li><a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a></li> ' . $delimiter . ' ';
-            echo $before . get_the_title() . $after;
+            echo '<li><a href="' . esc_attr($homeLink) . '/' . esc_attr($slug['slug']) . '/">' . esc_html($post_type->labels->singular_name ). '</a></li> ' . esc_html($delimiter) . ' ';
+            echo esc_html($before) . get_the_title() . esc_html($after);
         } else {
             $cat = get_the_category();
             $cat = $cat[0];
@@ -349,14 +349,14 @@ endif;
 		
     } elseif (!is_single() && !is_page() && get_post_type() != 'post') {
         $post_type = get_post_type_object(get_post_type());
-        echo $before . $post_type->labels->singular_name . $after;
+        echo esc_html($before) . esc_html($post_type->labels->singular_name) . esc_html($after);
     } elseif (is_attachment()) {
         $parent = get_post($post->post_parent);
         $cat = get_the_category($parent->ID);
         //$cat = $cat[0];
        // echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-        echo '<li><a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a></li> ' . $delimiter . ' ';
-        echo $before . get_the_title() . $after;
+        echo '<li><a href="' . esc_url(get_permalink($parent)) . '">' . esc_html($parent->post_title) . '</a></li> ' . esc_html($delimiter) . ' ';
+        echo esc_html($before) . get_the_title() . esc_html($after);
     } elseif (is_page() && !$post->post_parent) {
         echo $before . get_the_title() . $after;
     } elseif (is_page() && $post->post_parent) {
@@ -364,13 +364,13 @@ endif;
         $breadcrumbs = array();
         while ($parent_id) {
             $page = get_page($parent_id);
-            $breadcrumbs[] = '<li><a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a></li>';
+            $breadcrumbs[] = '<li><a href="' . esc_url(get_permalink($page->ID)) . '">' . get_the_title($page->ID) . '</a></li>';
             $parent_id = $page->post_parent;
         }
         $breadcrumbs = array_reverse($breadcrumbs);
         foreach ($breadcrumbs as $crumb)
-            echo $crumb . ' ' . $delimiter . ' ';
-        echo $before . get_the_title() . $after;
+            echo esc_html($crumb) . ' ' . esc_html($delimiter) . ' ';
+        echo esc_html($before) . get_the_title() . esc_html($after);
     } elseif (is_search()) {
         echo $before . _e("Search results for","enigma")  . get_search_query() . '"' . $after;
 
@@ -383,13 +383,12 @@ endif;
     } elseif (is_404()) {
         echo $before . _e("Error 404","enigma") . $after;
     }
-    
     echo '</ul>';
 	}
 	
 	
 	//PAGINATION
-		function weblizar_pagination($pages = '', $range = 2)
+		/*function weblizar_pagination($pages = '', $range = 2)
 {  
      $showitems = ($range * 2)+1;  
 
@@ -409,22 +408,22 @@ endif;
      if(1 != $pages)
      {
          echo "<div class='enigma_blog_pagination'><div class='enigma_blog_pagi'>";
-         if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo;</a>";
-         if($paged > 1 && $showitems < $pages) echo "<a href='".get_pagenum_link($paged - 1)."'>&lsaquo;</a>";
+         if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".esc_url(get_pagenum_link(1))."'>&laquo;</a>";
+         if($paged > 1 && $showitems < $pages) echo "<a href='".esc_url(get_pagenum_link($paged - 1))."'>&lsaquo;</a>";
 
          for ($i=1; $i <= $pages; $i++)
          {
              if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
              {
-                echo ($paged == $i)? "<a class='active'>".$i."</a>":"<a href='".get_pagenum_link($i)."'>".$i."</a>";
+                echo ($paged == $i)? "<a class='active'>".esc_attr($i)."</a>":"<a href='".esc_url(get_pagenum_link($i))."'>".esc_attr($i)."</a>";
              }
          }
 
-         if ($paged < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($paged + 1)."'>&rsaquo;</a>";  
-         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($pages)."'>&raquo;</a>";
+         if ($paged < $pages && $showitems < $pages) echo "<a href='".esc_url(get_pagenum_link($paged + 1))."'>&rsaquo;</a>";  
+         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".esc_url(get_pagenum_link($pages))."'>&raquo;</a>";
          echo "</div></div>";
      }
-}
+} */
 	/*===================================================================================
 	* Add Author Links
 	* =================================================================================*/
@@ -499,8 +498,8 @@ function enigma_plugin_recommend(){
 function enigma_custom_admin_notice() {
 	wp_register_style( 'custom_admin_css', get_template_directory_uri() . '/core/admin/admin-rating.css');
     wp_enqueue_style( 'custom_admin_css' );
-	wp_enqueue_style('custom-bootstrap',  get_template_directory_uri() .'/core/admin/bootstrap/css/bootstrap.min.css');
-	wp_enqueue_script('custom-bootstrap-js',get_template_directory_uri() .'/core/admin/bootstrap/js/bootstrap.min.js');
+	wp_enqueue_style('custom-bootstrap',  get_template_directory_uri() .'/core/admin/bootstrap/css/bootstrap.css');
+	wp_enqueue_script('custom-bootstrap-js',get_template_directory_uri() .'/core/admin/bootstrap/js/bootstrap.js');
 	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome-4.7.0/css/font-awesome.css');
 	$wl_th_info = wp_get_theme(); 
 	$currentversion = str_replace('.','',(esc_html( $wl_th_info->get('Version') )));
@@ -522,7 +521,7 @@ function enigma_custom_admin_notice() {
 		</div>-->
 		
 		<div class="col-md-12">
-		<a class="dismiss" href="?-notice-dismissed<?php echo $currentversion;?>"><?php _e('Click here to dismiss This Ad.','enigma');?></strong></a>
+		<a class="dismiss" href="?-notice-dismissed<?php echo esc_attr($currentversion);?>"><?php esc_html_e('Click here to dismiss This Ad.','enigma');?></strong></a>
 		  <div class="tab-content features-content">
 			<div id="home" class="tab-pane fade in active">
 				
@@ -534,7 +533,7 @@ function enigma_custom_admin_notice() {
 						<div class="wb_products"> 
 							<div class="wb_products-inner"> 
 								<a href="https://weblizar.com/themes/enigma-premium/" target="_blank"> 
-								<img src="<?php echo get_template_directory_uri(); ?>/images/Enigma1.jpg" class="img-responsive">  
+								<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Enigma1.jpg" class="img-responsive">  
 								</a>
 							</div>
 						</div>
@@ -579,12 +578,12 @@ function enigma_custom_admin_notice() {
 				  <div class="notice-box notice-success is-dismissible flat_responsive_notice" data-dismissible="disable-done-notice-forever">
 						<div>
 						<p>	
-							<?php  _e('Thank you for using the free version of ','enigma'); ?>
+							<?php  esc_html_e('Thank you for using the free version of ','enigma'); ?>
 							<?php echo esc_html( $wl_th_info->get('Name') );?> - 
 							<?php echo esc_html( $wl_th_info->get('Version') );
 							 ?>
-							<?php _e('Please give your reviews and ratings on ','enigma'); echo $wl_th_info->get('Name'); _e(' theme. Your ratings will help us to improve our themes.', 'enigma'); ?>
-							<script type="text/javascript">alert(<?php echo $isitdismissed?>);</script>
+							<?php esc_html_e('Please give your reviews and ratings on ','enigma'); echo esc_attr($wl_th_info->get('Name')); esc_html_e(' theme. Your ratings will help us to improve our themes.', 'enigma'); ?>
+							<script type="text/javascript">alert(<?php echo esc_attr($isitdismissed)?>);</script>
 							<?php if($wl_th_info->get('Name')=="Enigma") { ?>
 							<div class="">
 							<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/enigma/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel"> <?php } elseif($wl_th_info->get('Name')=="Greenigma") { ?>
@@ -607,228 +606,6 @@ function enigma_custom_admin_notice() {
 				  <!-- rating -->
 				</div>
 			</div>
-			<!-- <div id="wb_theme" class="tab-pane fade">
-				<div class="row">
-					<div class="col-md-12 theme-div"> 
-					<div class="col-md-6 theme-img">
-						<div class="wb_products"> 
-							<div class="wb_products-inner"> 
-								<a href="https://weblizar.com/themes/enigma-premium/" target="_blank"> 
-								<img src="<?php //echo get_template_directory_uri(); ?>/images/Enigma.jpg" class="img-responsive"> 
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-					<div class="thumbhead">Enigma Premium</div>
-						<ul class="feature">
-							<li><i class="fa fa-check"></i> RESPONSIVE DESIGN</li>
-							<li><i class="fa fa-check"></i> HTML 5 & CSS3</li>
-							<li><i class="fa fa-check"></i> WPML Compatible</li>
-						</ul>
-						<h4 class="detail theme-dt"> <a href="https://weblizar.com/themes/enigma-premium/" target="_blank"> Get Pro </a></h4>
-					</div>
-					</div>
-					<div class="col-md-12 theme-div">
-					<div class="col-md-6 theme-img">
-						<div class="wb_products"> 
-							<div class="wb_products-inner"> 
-								<a href="https://weblizar.com/themes/beautyspa-premium/" target="_blank"> 
-								<img src="<?php //echo get_template_directory_uri(); ?>/images/BeautySpa.jpg" class="img-responsive">
-								
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-					<div class="thumbhead">BeautySpa Premium</div>
-						<ul class="feature">
-							<li><i class="fa fa-check"></i> RESPONSIVE DESIGN</li>
-							<li><i class="fa fa-check"></i> Woo-commerce</li>
-							<li><i class="fa fa-check"></i> WPML Compatible</li>
-						</ul>
-						<h4 class="detail theme-dt"> <a href="https://weblizar.com/themes/beautyspa-premium/" target="_blank"> Get Pro </a></h4>
-					</div>
-					</div>
-					<div class="col-md-12 theme-div">
-					<div class="col-md-6 theme-img"> 
-						<div class="wb_products"> 
-							<div class="wb_products-inner"> 
-								<a href="https://weblizar.com/themes/healthcare/" target="_blank"> 
-								<img src="<?php //echo get_template_directory_uri(); ?>/images/Healthcare-premium.jpg" class="img-responsive">
-									
-								
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6"> 
-					<div class="thumbhead">Healthcare-premium</div>
-						<ul class="feature">
-							<li><i class="fa fa-check"></i> RESPONSIVE DESIGN</li>
-							<li><i class="fa fa-check"></i> Custom Shortcodes</li>
-							<li><i class="fa fa-check"></i> WPML Compatible</li>
-						</ul>
-						<h4 class="detail theme-dt"> <a href="https://weblizar.com/themes/healthcare/" target="_blank"> Get Pro </a></h4>
-					</div>
-					</div>
-					</div>
-				</div> -->
-			<!--<div id="offer" class="tab-pane fade">
-							<div class="oure-details">
-                                <h3><span>Weblizar Offers</span></h1>
-                            </div>
-						<div class="row p_plugin blog_gallery">			
-						 <div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
-							<div class="img-thumbnail">
-								<img src="<?php //echo get_template_directory_uri(); ?>/images/offer.jpg" class="img-responsive" alt="img"/>
-							</div>						
-						</div>
-						 <div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
-                                <div class="row p-box">
-                                    <h2>Get the Exciting Deals here , Daily
-                                    <a class="btn btn-primary title_offers" href="https://weblizar.com/offers/">Visit Here</a> 
-                                    </h2>
-                                </div>
-                            </div>
-							</div>
-					</div>-->
-			<!--<div id="wb_plugin" class="tab-pane fade">
-				<div class="row">
-				<div class="col-md-12 theme-div">
-					<div class="col-md-6 theme-img"> 
-						<div class="wb_products"> 
-							<div class="wb_products-inner"> 
-								<a href="https://weblizar.com/plugins/appointment-scheduler-pro/" target="_blank"> 
-								<img src="<?php //echo get_template_directory_uri(); ?>/images/appointment-scheduler.png" class="img-responsive">
-									 
-								 
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6"> 
-					<div class="thumbhead">Appointment Scheduler Pro</div> 
-						<ul class="feature">
-							<li><i class="fa fa-check"></i>Experience Responsive Scheduling</li>
-							<li><i class="fa fa-check"></i> Unlimited Bookings</li>
-							<li><i class="fa fa-check"></i> Unlimited Services</li>
-							<li><i class="fa fa-check"></i>Unlimited Staff</li>
-							<li><i class="fa fa-check"></i> Free Bookings & Premium Booking</li>
-							
-						</ul>
-					<h4 class="detail theme-dt"> <a href="https://weblizar.com/plugins/appointment-scheduler-pro/" target="_blank"> Get Pro </a></h4>
-
-					</div>
-				</div>
-				<div class="col-md-12 theme-div">
-					<div class="col-md-6 theme-img"> 
-						<div class="wb_products"> 
-							<div class="wb_products-inner"> 
-								<a href="https://weblizar.com/plugins/ultimate-responsive-image-slider-pro/" target="_blank"> 
-								<img src="<?php //echo get_template_directory_uri(); ?>/images/urisp.jpg" class="img-responsive">
-									  
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6"> 
-					<div class="thumbhead">Ultimate Responsive Image Slider Pro</div>
-						<ul class="feature">
-							<li><i class="fa fa-check"></i> Responsive Design</li>
-							<li><i class="fa fa-check"></i> 5 Slider Layout</li>
-							<li><i class="fa fa-check"></i> Unlimited Color Scheme</li>
-							<li><i class="fa fa-check"></i> Full Screen slideshow</li>
-							<li><i class="fa fa-check"></i> Lightbox Integrated</li>
-							
-						</ul>
-						<h4 class="detail theme-dt"> <a href="https://weblizar.com/plugins/ultimate-responsive-image-slider-pro/" target="_blank"> Get Pro </a></h4>
-					</div>
-				</div>	
-				<div class="col-md-12 theme-div">
-					<div class="col-md-6 theme-img">
-						<div class="wb_products"> 
-							<div class="wb_products-inner"> 
-								<a href="https://weblizar.com/plugins/facebook-feed-pro/" target="_blank"> 
-								<img src="<?php //echo get_template_directory_uri(); ?>/images/facebook-feed.jpg" class="img-responsive">
-									
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6"> 
-					<div class="thumbhead">Facebook Feed Pro</div>
-						<ul class="feature">
-							<li><i class="fa fa-check"></i> Profile, Page & Group Feeds</li>
-							<li><i class="fa fa-check"></i> Unlimited Feeds Per Page/Post</li>
-							<li><i class="fa fa-check"></i> Tons of Feed Shortcodes</li>
-							<li><i class="fa fa-check"></i> Feed Widgets</li>
-							<li><i class="fa fa-check"></i> Light-Box Layouts</li>
-							
-						</ul>
-						<h4 class="detail theme-dt"> <a href="https://weblizar.com/plugins/facebook-feed-pro/" target="_blank"> Get Pro </a></h4>
-					</div>
-				</div>
-				<div class="col-md-12 theme-div">
-					<div class="col-md-6 theme-img">
-					<div class="wb_products"> 
-						<div class="wb_products-inner"> 
-							<a href="https://weblizar.com/plugins/pinterest-feed-pro/" target="_blank"> 
-							<img src="<?php //echo get_template_directory_uri(); ?>/images/pint.jpg" class="img-responsive">
-								
-							</a>
-						</div>
-					</div>
-					</div>
-					<div class="col-md-6"> 
-					<div class="thumbhead">Pinterest Feed Pro</div>
-						<ul class="feature">
-							<li><i class="fa fa-check"></i> Responsive Pinterest Plugin</li>
-							<li><i class="fa fa-check"></i> Pinterest Feed Shortcode</li>
-							<li><i class="fa fa-check"></i> Pinterest Feed Widget</li>
-							<li><i class="fa fa-check"></i> Pinterest Profile</li>
-							<li><i class="fa fa-check"></i> Pinterest Pin Slider</li>
-						</ul>
-						<h4 class="detail theme-dt"> <a href="https://weblizar.com/plugins/pinterest-feed-pro/" target="_blank"> Get Pro </a></h4>
-					</div>
-				</div>
-			</div>
-			</div> -->
-			<!--<div id="menu3" class="tab-pane fade">
-				<div class="oure-details">
-				<h3>  <span> Review and Rating  </span></h3>
-				
-				  <!-- rating 
-				  <div class="notice-box notice-success is-dismissible flat_responsive_notice" data-dismissible="disable-done-notice-forever">
-						<div>
-						<p>	
-							<?php /* _e('Thank you for using the free version of ','enigma'); ?>
-							<?php echo esc_html( $wl_th_info->get('Name') );?> - 
-							<?php echo esc_html( $wl_th_info->get('Version') );
-							 ?>
-							<?php _e('Please give your reviews and ratings on ','enigma'); echo $wl_th_info->get('Name'); _e(' theme. Your ratings will help us to improve our themes.', 'enigma'); ?>
-							<script type="text/javascript">alert(<?php echo $isitdismissed?>);</script>
-							<?php if($wl_th_info->get('Name')=="Enigma") { ?>
-							<div class="">
-							<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/enigma/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel"> <?php } elseif($wl_th_info->get('Name')=="Greenigma") { ?>
-							<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/greenigma/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel"> <?php } elseif($wl_th_info->get('Name')=="Inferno") { ?>
-							<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/inferno/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel">		
-							<?php } else { ?>
-							<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/cista/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel">	
-							<?php } */?>
-								<span class="dashicons dashicons-star-filled"></span>
-								<span class="dashicons dashicons-star-filled"></span>
-								<span class="dashicons dashicons-star-filled"></span>
-								<span class="dashicons dashicons-star-filled"></span>
-								<span class="dashicons dashicons-star-filled"></span>
-							</a>
-							</div>
-						</p>
-						</div>
-				</div>
-				  <!-- rating 
-				</div>
-				</div>-->
 		  </div>
 		</div>
 	</div>

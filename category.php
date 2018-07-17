@@ -6,7 +6,8 @@ if($wl_theme_options['breadcrumb']!='') { ?>
 		<div class="row">
 		<?php if(have_posts()) :?>
 			<div class="col-md-12">
-			<h1><?php printf( __( 'Category Archives: %s', 'enigma' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
+			<?php /* translators: %s: category name. */ ?>
+			<h1><?php printf( esc_html__( 'Category Archives: %s', 'enigma' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
 			</h1>
 			</div>
 		<?php endif; ?>	

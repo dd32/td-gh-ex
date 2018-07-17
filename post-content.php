@@ -11,7 +11,7 @@
 		<div class="enigma_blog_thumb_wrapper_showcase_overlays">
 				<div class="enigma_blog_thumb_wrapper_showcase_overlay_inner ">
 					<div class="enigma_blog_thumb_wrapper_showcase_icons1">
-						<a title="<?php the_title_attribute(); ?>" href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php echo get_the_author(); ?></a>
+						<a title="<?php the_title_attribute(); ?>" href="<?php echo esc_url(get_author_posts_url(get_the_author_meta( 'ID' ))); ?>"><?php echo get_the_author(); ?></a>
 					</div>
 				</div>
 			</div>
@@ -46,7 +46,7 @@
 		</div>
 		<div class="col-md-6 col-sm-3">
 		<?php if(get_the_category_list() != '') { ?>
-		<p class="enigma_cats"><?php echo __("Category : ",'enigma');
+		<p class="enigma_cats"><?php esc_html_e("Category : ",'enigma');
 		the_category(' , '); ?></p>
 		<?php } ?>
 		</div>

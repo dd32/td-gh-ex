@@ -1,12 +1,12 @@
 <?php if(get_the_author_meta('description')) : ?>	
 <div class="enigma_author_detail_section">
 	<div class="enigma_heading_title2">
-	<h3><?php _e('About Author','enigma'); ?></h3>		
+	<h3><?php esc_html_e('About Author','enigma'); ?></h3>		
 	</div>
 	<div class="enigma_author_detail_wrapper">
 		<?php echo get_avatar( get_the_author_meta('email') , 90 ); ?>
 		<h4 class="enigma_author_detail_name"><?php the_author(); ?></h4>
-		<p><?php echo get_the_author_meta('description'); ?></p>
+		<p><?php echo esc_html(get_the_author_meta('description')); ?></p>
 		<ul class="social" style="margin-top:10px;padding-left:0px;text-align:left">
 		<?php 
 		$youtube_profile = get_the_author_meta( 'youtube_profile' );

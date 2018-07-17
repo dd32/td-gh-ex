@@ -6,7 +6,8 @@ if($wl_theme_options['breadcrumb']!='') { ?>
 		<div class="row">
 		<?php if(have_posts()) :?>
 			<div class="col-md-12">
-			<h1><?php printf( __( 'Author Archives: %s', 'enigma' ), '<span class="vcard">'. get_the_author() .'</span>' ) ; ?>
+			<?php /* translators: %s: author name. */ ?>
+			<h1><?php printf( esc_html__( 'Author Archives: %s', 'enigma' ), '<span class="vcard">'. get_the_author() .'</span>' ) ; ?>
 			</h1>
 			</div>
 		<?php endif; ?>

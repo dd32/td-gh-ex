@@ -1,4 +1,4 @@
-<?php if (!function_exists('enigma_info_page')) {
+<?php /*if (!function_exists('enigma_info_page')) {
 	function enigma_info_page() {
 	$page1=add_theme_page(__('Welcome to Enigma', 'enigma'), __('Pro Themes & Plugin', 'enigma'), 'edit_theme_options', 'enigma', 'enigmadisplay_theme_info_page');
 	
@@ -152,4 +152,4 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 <?php
 	}
 }
-?>
+?>*/

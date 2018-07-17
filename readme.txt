@@ -6,6 +6,9 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 4.4 [17-07-2018]
+1. Google fonts added in typography option.
+
 @Version: 4.3 [26-06-2018]
 1. Go Enigma pro option added in customizer.
 2. Rating option added on admin panel.

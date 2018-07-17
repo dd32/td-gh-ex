@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h1><?php global $wp;
-				echo $current_url = (add_query_arg(array(),$wp->request)); ?></h1>
+				echo esc_html($current_url) = (add_query_arg(array(),esc_html($wp->request))); ?></h1>
 				<!-- BreadCrumb -->
                 <?php if (function_exists('weblizar_breadcrumbs')) weblizar_breadcrumbs(); ?>
                 <!-- BreadCrumb -->

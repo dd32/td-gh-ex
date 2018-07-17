@@ -7,13 +7,16 @@ if($wl_theme_options['breadcrumb']!='') { ?>
 		<?php if(have_posts()) :?>
 			<div class="col-md-12">
 			<h1><?php if ( is_day() ) :
-						printf( __( 'Daily Archives: %s', 'enigma' ), '<span>' . get_the_date() . '</span>' );
+			/* translators: %s: date. */
+						printf( esc_html__( 'Daily Archives: %s', 'enigma' ), '<span>' . get_the_date() . '</span>' );
 					elseif ( is_month() ) :
-						printf( __( 'Monthly Archives: %s', 'enigma' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'enigma' ) ) . '</span>' );
+					/* translators: %s: month. */
+						printf( esc_html__( 'Monthly Archives: %s', 'enigma' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'enigma' ) ) . '</span>' );
 					elseif ( is_year() ) :
-						printf( __( 'Yearly Archives: %s', 'enigma' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'enigma' ) ) . '</span>' );
+					/* translators: %s: year. */
+						printf( esc_html__( 'Yearly Archives: %s', 'enigma' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'enigma' ) ) . '</span>' );
 					else :
-						_e( 'Archives', 'enigma' );
+						esc_html_e( 'Archives', 'enigma' );
 					endif; ?>
 			</h1></div>
 		<?php endif; ?>	
