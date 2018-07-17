@@ -39,7 +39,7 @@ function kadence_sidebar_id() {
 	return virtue_sidebar_id();
 }
 function virtue_sidebar_id() {
-    if(is_front_page()) {
+    if ( is_front_page() ) {
       global $virtue;
         if (!empty($virtue['home_sidebar'])) {
           $sidebar = $virtue['home_sidebar'];
@@ -57,14 +57,14 @@ function virtue_sidebar_id() {
     } elseif( class_exists('woocommerce') and (is_account_page())) {
             get_template_part('templates/account', 'sidebar');
             $sidebar = "";
-    } elseif(is_page_template('page-blog.php') || is_page_template('page-sidebar.php') || is_page_template('page-feature-sidebar.php') || (get_post_type() == 'post')) {
-      global $post;
-      $sidebar_name = get_post_meta( $post->ID, '_kad_sidebar_choice', true ); 
-        if (!empty($sidebar_name)) {
-            $sidebar = $sidebar_name;
-        } else  {
-            $sidebar = 'sidebar-primary';
-        } 
+    } elseif ( is_page_template( 'page-blog.php' ) || is_page_template('page-sidebar.php') || is_page_template('page-feature-sidebar.php') || 'post' === get_post_type() || 'page.php' === basename( get_page_template() ) ) {
+		global $post;
+		$sidebar_name = get_post_meta( $post->ID, '_kad_sidebar_choice', true );
+		if ( ! empty( $sidebar_name ) ) {
+			$sidebar = $sidebar_name;
+		} else {
+			$sidebar = 'sidebar-primary';
+		}
     } else if (is_archive()) {
       $sidebar = 'sidebar-primary';
     } else if(is_category()) {

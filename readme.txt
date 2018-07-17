@@ -30,6 +30,19 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.2.7 | 17th July 2018 = 
+* Fix: issue with portfolio carousel arrows.
+* Update: easier toolkit install.
+* Add: Gutenberg Support.
+	* color sheme.
+	* admin typography styles.
+	* gallery lightbox.
+	* wide and fullwidth content.
+* Add: Fullwidth Content setting.
+* Add: Default page template sidebar setting.
+* Add: Paragraph margin bottom settings.
+* Update: Clean up code.
+
 = Version 3.2.6 | 2nd July 2018 = 
 * Fix: issue with urls getting double slash.
 

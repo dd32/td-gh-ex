@@ -36,6 +36,27 @@ function virtue_sidebar_class() {
   return 'col-lg-3 col-md-4';
 }
 
+/**
+ * Virtue Container classes
+ */
+function virtue_container_class() {
+	global $post;
+	$page_content_width = get_post_meta( $post->ID, '_kad_page_content_width', true );
+	if ( isset( $page_content_width ) && 'full' === $page_content_width ) {
+		$content_class = 'container-fullwidth';
+	} elseif ( isset( $page_content_width ) && 'contained' === $page_content_width ) {
+		$content_class = 'container-contained';
+	} else {
+		global $virtue;
+		if ( isset( $virtue['default_page_content_width'] ) && 'full' === $virtue['default_page_content_width'] ) {
+			$content_class = 'container-fullwidth';
+		} else {
+			$content_class = 'container-contained';
+		}
+	}
+	return apply_filters( 'virtue_page_content_class', $content_class );
+}
+
 /* Depreciated */
 function kadence_sidebar_class() {
 	error_log( "The kadence_sidebar_class() function is deprecated since version 3.0.7. Please use virtue_sidebar_class() instead." );
@@ -57,13 +78,13 @@ function kadence_display_sidebar() {
 function virtue_display_sidebar() {
 	if ( class_exists( 'woocommerce' ) )  {
 		$sidebar_config = new Kadence_Sidebar(
-		array('kadence_sidebar_on_shop_page','kadence_sidebar_on_blog_post','kadence_sidebar_on_blog_page','is_404','kadence_sidebar_on_home_page','is_cart','is_product','is_checkout','kadence_sidebar_on_myaccount_page',array('is_singular', array('portfolio')),array('is_singular', array('kbe_knowledgebase')), array('is_tax', array('portfolio-type'))
+		array('kadence_sidebar_on_shop_page','kadence_sidebar_on_blog_post','kadence_sidebar_on_blog_page', 'virtue_sidebar_on_default_page','is_404','kadence_sidebar_on_home_page','is_cart','is_product','is_checkout','kadence_sidebar_on_myaccount_page',array('is_singular', array('portfolio')),array('is_singular', array('kbe_knowledgebase')), array('is_tax', array('portfolio-type'))
         ),
 		array('page-fullwidth.php','page-feature.php','page-portfolio.php','page-staff-grid.php','page-testimonial-grid.php','page-contact.php', 'elementor_canvas', 'elementor_header_footer',)
       );
 	} else {
 		$sidebar_config = new Kadence_Sidebar(
-		array('kadence_sidebar_on_blog_post','kadence_sidebar_on_blog_page','is_404','kadence_sidebar_on_home_page', array('is_singular', array('portfolio')),array('is_singular', array('kbe_knowledgebase')), array('is_tax', array('portfolio-type'))
+		array('kadence_sidebar_on_blog_post','kadence_sidebar_on_blog_page','virtue_sidebar_on_default_page','is_404','kadence_sidebar_on_home_page', array('is_singular', array('portfolio')),array('is_singular', array('kbe_knowledgebase')), array('is_tax', array('portfolio-type'))
 		),
 		array( 'page-fullwidth.php','page-feature.php','page-portfolio.php','page-staff-grid.php','page-testimonial-grid.php','elementor_header_footer','elementor_canvas','page-contact.php' ) );
 	}
@@ -82,6 +103,29 @@ function kadence_sidebar_on_shop_page() {
     }
   }
 }
+
+/**
+ * Check defualt page template
+ */
+function virtue_sidebar_on_default_page() {
+	if ( is_page() && 'page.php' === basename( get_page_template() ) ) {
+		global $post;
+		$postsidebar = get_post_meta( $post->ID, '_kad_page_sidebar', true );
+		if ( isset( $postsidebar ) && 'no' === $postsidebar ) {
+			return true;
+		} elseif ( isset( $postsidebar ) && 'default' === $postsidebar || empty( $postsidebar ) ) {
+			global $virtue;
+			if ( isset( $virtue['default_page_show_sidebar'] ) && 'no' == $virtue['default_page_show_sidebar'] ) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
+}
+
 function kadence_sidebar_on_blog_post() {
   if(is_single()) {
     global $post;

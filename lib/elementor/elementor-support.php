@@ -3,15 +3,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
-function virtue_is_ele_active() {
-	return Virtue_Elementor_Plugin_Check::active_check_ele();
-}
-
 add_action('after_setup_theme', 'virtue_elementor_support');
 function virtue_elementor_support() {
-	require_once( trailingslashit( get_template_directory() ) . 'lib/elementor/class-virtue-elementor-plugin.php'); 
-
-	if ( virtue_is_ele_active() ){
+	if ( Virtue_Plugin_Check::active_check( 'elementor/elementor.php' ) ){
 		add_action( 'init', 'virtue_elementor_woo_editing_issue', 1 );
 		add_filter( 'template_include', 'virtue_elementor_page_template_support', 20 );
 		require_once( trailingslashit( get_template_directory() ) . 'lib/elementor/class-virtue-elementor-header-footer.php');

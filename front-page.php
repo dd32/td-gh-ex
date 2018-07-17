@@ -56,7 +56,7 @@
 		</div><!--welomeclass-->
 	<?php } ?>
 
-	<div id="content" class="container homepagecontent">
+	<div id="content" class="container homepagecontent <?php echo esc_attr( virtue_container_class() ); ?>">
 		<div class="row">
 			<div class="main <?php echo esc_attr( virtue_main_class() ); ?>" role="main">
 				<div class="entry-content" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">

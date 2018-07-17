@@ -676,13 +676,14 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
     $number = isset($instance['number']) ? absint($instance['number']) : 6;
     if (isset($instance['thecat'])) { $thecat = esc_attr($instance['thecat']); } else {$thecat = '';}
     if (isset($instance['thetype'])) { $thetype = esc_attr($instance['thetype']); } else {$thetype = '';}
-     $types= get_terms('portfolio-type');
-     $type_options = array();
-          $type_options[] = '<option value="">All</option>';
- 
-	foreach ($types as $type) {
-		if ($thetype == $type->slug) { $selected=' selected="selected"';} else { $selected=""; }
-		$type_options[] = '<option value="' . $type->slug .'"' . $selected . '>' . $type->name . '</option>';
+	$types = get_terms('portfolio-type');
+	$type_options = array();
+	$type_options[] = '<option value="">All</option>';
+	if ( ! empty( $types ) && ! is_wp_error( $types ) ) {
+		foreach( $types as $type ) {
+			$selected = ( $thetype == $type->slug ? ' selected="selected"' : '' );
+			$type_options[] = '<option value="' . esc_attr( $type->slug ) .'"' . $selected . '>' . esc_html( $type->name ) . '</option>';
+		}
 	}
 	$categories= get_categories();
 	$cat_options = array();

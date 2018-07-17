@@ -186,6 +186,24 @@ jQuery(document).ready(function ($) {
 	          }
 	        });
 	    });
+	    // Gutenberg Gallery
+		$('.wp-block-gallery').each(function(){
+			$(this).find('a[data-rel^="lightbox"]:not(".kt-no-lightbox")').magnificPopup({
+				type: 'image',
+				gallery: {
+					enabled:true
+				},
+				image: {
+					titleSrc: function(item) {
+						if ( item.el.parents('.blocks-gallery-item').find('figcaption').length ) {
+							return item.el.parents('.blocks-gallery-item').find('figcaption').html();
+						} else {
+							return item.el.find('img').attr('alt');
+						}
+					}
+				},
+			});
+		});
 
 		//Superfish Menu
 		$('ul.sf-menu').superfish({

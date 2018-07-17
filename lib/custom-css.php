@@ -1,45 +1,55 @@
 <?php
-function kadence_custom_css() {
+/**
+ * Get all ascend custom css output.
+ *
+ * @package Virtue Theme
+ */
 
-global $virtue; 
-//Logo
-if( isset( $virtue[ 'logo_padding_top' ] ) ) {
-	$logo_padding_top = '#logo {padding-top:'.esc_attr( $virtue[ 'logo_padding_top' ] ).'px;}';
-} else {
-	$logo_padding_top = '#logo {padding-top:25px;}';
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
 }
-if( isset( $virtue[ 'logo_padding_bottom' ] ) ) {
-	$logo_padding_bottom = '#logo {padding-bottom:'.esc_attr( $virtue[ 'logo_padding_bottom' ] ).'px;}';
-} else {
-	$logo_padding_bottom = '#logo {padding-bottom:10px;}';
-} 
-if( isset( $virtue[ 'logo_padding_left' ] ) ) {
-	$logo_padding_left = '#logo {margin-left:'.esc_attr( $virtue[ 'logo_padding_left' ] ).'px;}';
-} else {
-	$logo_padding_left = '#logo {margin-left:0px;}';
-}
-if( isset( $virtue[ 'logo_padding_right' ] ) ) {
-	$logo_padding_right = '#logo {margin-right:'.esc_attr( $virtue[ 'logo_padding_right' ] ).'px;}';
-} else {
-	$logo_padding_right = '#logo {margin-right:0px;}';
-}
-if( isset( $virtue[ 'menu_margin_top' ] ) ) {
-	$menu_margin_top = '#nav-main {margin-top:'.esc_attr( $virtue[ 'menu_margin_top' ] ).'px;}';
-} else {
-	$menu_margin_top = '#nav-main {margin-top:40px;}';
-} 
-if( isset( $virtue[ 'menu_margin_bottom' ] ) ) {
-	$menu_margin_bottom = '#nav-main {margin-bottom:'.esc_attr( $virtue[ 'menu_margin_bottom' ] ).'px;}';
-} else {
-	$menu_margin_bottom = '#nav-main {margin-bottom:10px;}';
-}
-//Typography
-if( ! empty( $virtue[ 'font_h1' ] ) ) {
-	$font_family = '.headerfont, .tp-caption {font-family:'.esc_attr( $virtue[ 'font_h1' ][ 'font-family' ] ).';} 
-.topbarmenu ul li {font-family:'.esc_attr( $virtue[ 'font_primary_menu' ][ 'font-family' ] ).';}';
-} else {
-	$font_family = '';
-}
+/**
+ * Get all virtue custom css output.
+ */
+function virtue_custom_css() {
+	global $virtue;
+	// Logo.
+	if ( isset( $virtue['logo_padding_top'] ) ) {
+		$logo_padding_top = '#logo {padding-top:' . esc_attr( $virtue['logo_padding_top'] ) . 'px;}';
+	} else {
+		$logo_padding_top = '#logo {padding-top:25px;}';
+	}
+	if ( isset( $virtue['logo_padding_bottom'] ) ) {
+		$logo_padding_bottom = '#logo {padding-bottom:' . esc_attr( $virtue['logo_padding_bottom'] ) . 'px;}';
+	} else {
+		$logo_padding_bottom = '#logo {padding-bottom:10px;}';
+	}
+	if ( isset( $virtue['logo_padding_left'] ) ) {
+		$logo_padding_left = '#logo {margin-left:' . esc_attr( $virtue['logo_padding_left'] ) . 'px;}';
+	} else {
+		$logo_padding_left = '#logo {margin-left:0px;}';
+	}
+	if ( isset( $virtue['logo_padding_right'] ) ) {
+		$logo_padding_right = '#logo {margin-right:' . esc_attr( $virtue['logo_padding_right'] ) . 'px;}';
+	} else {
+		$logo_padding_right = '#logo {margin-right:0px;}';
+	}
+	if ( isset( $virtue['menu_margin_top'] ) ) {
+		$menu_margin_top = '#nav-main {margin-top:' . esc_attr( $virtue['menu_margin_top'] ) . 'px;}';
+	} else {
+		$menu_margin_top = '#nav-main {margin-top:40px;}';
+	}
+	if ( isset( $virtue['menu_margin_bottom'] ) ) {
+		$menu_margin_bottom = '#nav-main {margin-bottom:' . esc_attr( $virtue['menu_margin_bottom'] ) . 'px;}';
+	} else {
+		$menu_margin_bottom = '#nav-main {margin-bottom:10px;}';
+	}
+	// Typography.
+	if ( ! empty( $virtue['font_h1'] ) ) {
+		$font_family = '.headerfont, .tp-caption {font-family:' . esc_attr( $virtue['font_h1']['font-family'] ) . ';} .topbarmenu ul li {font-family:' . esc_attr( $virtue['font_primary_menu']['font-family'] ) . ';}';
+	} else {
+		$font_family = '';
+	}
 
 //Basic Styling
 
@@ -49,21 +59,21 @@ if(!empty($virtue['primary_color'])) {
   nav.woocommerce-pagination ul li a:hover, .wp-pagenavi a:hover, .panel-heading .accordion-toggle, .variations .kad_radio_variations label:hover, .variations .kad_radio_variations label.selectedValue {border-color: '.$virtue['primary_color'].';}
   a, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .amount, .color_primary, .primary-color, #logo a.brand, #nav-main ul.sf-menu a:hover,
   .woocommerce-message:before, .woocommerce-info:before, #nav-second ul.sf-menu a:hover, .footerclass a:hover, .posttags a:hover, .subhead a:hover, .nav-trigger-case:hover .kad-menu-name, 
-  .nav-trigger-case:hover .kad-navbtn, #kadbreadcrumbs a:hover, #wp-calendar a, .star-rating {color: '.$virtue['primary_color'].';}
+  .nav-trigger-case:hover .kad-navbtn, #kadbreadcrumbs a:hover, #wp-calendar a, .star-rating, .has-virtue-primary-color {color: '.$virtue['primary_color'].';}
 .widget_price_filter .ui-slider .ui-slider-handle, .product_item .kad_add_to_cart:hover, .product_item:hover a.button:hover, .product_item:hover .kad_add_to_cart:hover, .kad-btn-primary, html .woocommerce-page .widget_layered_nav ul.yith-wcan-label li a:hover, html .woocommerce-page .widget_layered_nav ul.yith-wcan-label li.chosen a,
 .product-category.grid_item a:hover h5, .woocommerce-message .button, .widget_layered_nav_filters ul li a, .widget_layered_nav ul li.chosen a, .wpcf7 input.wpcf7-submit, .yith-wcan .yith-wcan-reset-navigation,
 #containerfooter .menu li a:hover, .bg_primary, .portfolionav a:hover, .home-iconmenu a:hover, p.demo_store, .topclass, #commentform .form-submit #submit, .kad-hover-bg-primary:hover, .widget_shopping_cart_content .checkout,
-.login .form-row .button, .variations .kad_radio_variations label.selectedValue, #payment #place_order, .wpcf7 input.wpcf7-back, .shop_table .actions input[type=submit].checkout-button, .cart_totals .checkout-button, input[type="submit"].button, .order-actions .button  {background: '.$virtue['primary_color'].';}';
+.login .form-row .button, .variations .kad_radio_variations label.selectedValue, #payment #place_order, .wpcf7 input.wpcf7-back, .shop_table .actions input[type=submit].checkout-button, .cart_totals .checkout-button, input[type="submit"].button, .order-actions .button, .has-virtue-primary-background-color {background: '.$virtue['primary_color'].';}';
 } else {
 	$color_primary = '';
 }
-if(!empty($virtue['primary20_color'])) {
-  $color_primary30 =  'a:hover {color: '.$virtue['primary20_color'].';} .kad-btn-primary:hover, .login .form-row .button:hover, #payment #place_order:hover, .yith-wcan .yith-wcan-reset-navigation:hover, .widget_shopping_cart_content .checkout:hover,
-.woocommerce-message .button:hover, #commentform .form-submit #submit:hover, .wpcf7 input.wpcf7-submit:hover, .widget_layered_nav_filters ul li a:hover, .cart_totals .checkout-button:hover,
-.widget_layered_nav ul li.chosen a:hover, .shop_table .actions input[type=submit].checkout-button:hover, .wpcf7 input.wpcf7-back:hover, .order-actions .button:hover, input[type="submit"].button:hover, .product_item:hover .kad_add_to_cart, .product_item:hover a.button {background: '.$virtue['primary20_color'].';}';
-} else {
-  $color_primary30 = '';
-}
+	if ( ! empty( $virtue['primary20_color'] ) ) {
+		$color_primary30 = 'a:hover, .has-virtue-primary-light-color {color: ' . esc_attr( $virtue['primary20_color'] ) . ';} .kad-btn-primary:hover, .login .form-row .button:hover, #payment #place_order:hover, .yith-wcan .yith-wcan-reset-navigation:hover, .widget_shopping_cart_content .checkout:hover,
+	.woocommerce-message .button:hover, #commentform .form-submit #submit:hover, .wpcf7 input.wpcf7-submit:hover, .widget_layered_nav_filters ul li a:hover, .cart_totals .checkout-button:hover,
+	.widget_layered_nav ul li.chosen a:hover, .shop_table .actions input[type=submit].checkout-button:hover, .wpcf7 input.wpcf7-back:hover, .order-actions .button:hover, input[type="submit"].button:hover, .product_item:hover .kad_add_to_cart, .product_item:hover a.button, .has-virtue-primary-light-background-color {background: ' . esc_attr( $virtue['primary20_color'] ) . ';}';
+	} else {
+		$color_primary30 = '';
+	}
 if(!empty($virtue['gray_font_color'])) {
   $color_grayfont = '.color_gray, .subhead, .subhead a, .posttags, .posttags a, .product_meta a {color:'.$virtue['gray_font_color'].';}';
 } else {
@@ -347,16 +357,20 @@ if(isset($virtue['logo_layout']) and ($virtue['logo_layout'] == 'logocenter')) {
 } else {
   $mobileslider = '';
 }
+	if ( isset( $virtue['paragraph_margin_bottom'] ) ) {
+		$paragraph_spacing = '.entry-content p { margin-bottom:' . esc_attr( $virtue['paragraph_margin_bottom'] ) . 'px;}';
+	} else {
+		$paragraph_spacing = '';
+	}
+	if ( ! empty( $virtue['custom_css'] ) ) {
+		$custom_css = $virtue['custom_css'];
+	} else {
+		$custom_css = '';
+	}
 
-if (!empty($virtue['custom_css'])) {
-  $custom_css = $virtue['custom_css'];
-} else {
-  $custom_css = '';
-}
-
-$kad_custom_css = '<style type="text/css">'.$logo_padding_top.$logo_padding_bottom.$logo_padding_left.$logo_padding_right.$menu_margin_top.$menu_margin_bottom.$font_family.$color_primary.$color_primary30.$color_grayfont.$quantity_input
-.$color_footerfont.$contentclass.$topbarclass.$headerclass.$menuclass.$mobileclass.$footerclass.$boxedclass.$show_author.$ptitle_uppercase.$menu_layout_center.$x2logo.$ptitle_minheight.$topbar_layout.$wp_image_border.$mobileslider.$custom_css.'</style>';
+	$kad_custom_css = '<style type="text/css">' . $logo_padding_top . $logo_padding_bottom . $logo_padding_left . $logo_padding_right . $menu_margin_top . $menu_margin_bottom . $font_family . $color_primary . $color_primary30 . $color_grayfont . $quantity_input . $color_footerfont . $contentclass . $topbarclass . $headerclass . $menuclass . $mobileclass . $footerclass . $boxedclass . $show_author . $ptitle_uppercase . $menu_layout_center . $x2logo . $ptitle_minheight . $topbar_layout . $wp_image_border . $mobileslider . $paragraph_spacing . $custom_css . '</style>';
+	
 	echo $kad_custom_css;
 }
-add_action('wp_head', 'kadence_custom_css');
+add_action( 'wp_head', 'virtue_custom_css' );
 ?>

@@ -1694,6 +1694,45 @@ Redux::setSection( $opt_name, array(
     'title' => __('Page/Post Settings', 'virtue'),
     'desc' => "<div class='redux-info-field'><h3>".__('Page and Post Comment Settings', 'virtue')."</h3></div>",
     'fields' => array(
+		array(
+			'id'         => 'paragraph_margin_bottom',
+			'type'       => 'slider',
+			'title'      => __( 'Paragraph bottom spacing', 'virtue' ),
+			'default'    => '16',
+			'min'        => '0',
+			'customizer' => true,
+			'step'       => '1',
+			'max'        => '60',
+		),
+		array(
+			'id'       => 'page_title_show',
+			'type'     => 'switch', 
+			'title'    => __( 'Show page title by default', 'virtue' ),
+			'subtitle' => __( 'Turn off to hide page titles by default', 'virtue' ),
+			'default'  => 1,
+		),
+		array(
+			'id'      => 'default_page_content_width',
+			'type'    => 'select',
+			'title'   => __( 'Single Page Content Width Default', 'virtue' ),
+			'options' => array(
+				'contained' => __( 'Contained', 'virtue' ),
+				'full'      => __( 'Fullwidth', 'virtue' ),
+			),
+			'width'   => 'width:60%',
+			'default' => 'contained',
+		),
+		array(
+			'id'      => 'default_page_show_sidebar',
+			'type'    => 'select',
+			'title'   => __( 'Default Page Template - Sidebar Default', 'virtue' ),
+			'options' => array(
+				'yes' => __('Yes sidebar', 'virtue'),
+				'no'  => __('No sidebar', 'virtue'),
+			),
+			'width'   => 'width:60%',
+			'default' => 'yes',
+		),
         array(
             'id'=>'close_comments',
             'type' => 'switch',

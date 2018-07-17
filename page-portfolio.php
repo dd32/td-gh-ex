@@ -1,7 +1,9 @@
 <?php
-/*
-Template Name: Portfolio Grid
-*/
+/**
+ * Template Name: Portfolio Grid
+ *
+ * @package Virtue Theme
+ */
 
 global $post; 
 $portfolio_category 	= get_post_meta( $post->ID, '_kad_portfolio_type', true ); 
@@ -69,7 +71,7 @@ if ( $portfolio_lightbox == 'yes' ){
 */
 do_action( 'virtue_page_title_container' );
 ?>
-<div id="content" class="container">
+<div id="content" class="container <?php echo esc_attr( virtue_container_class() ); ?>">
 	<div class="row">
   		<div class="main <?php echo esc_attr( virtue_main_class() );?>" role="main">
 			<div class="entry-content" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/WebPageElement">

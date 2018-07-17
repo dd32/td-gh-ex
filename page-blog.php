@@ -36,7 +36,7 @@ if( $blog_items == 'all' ) {
 	do_action( 'virtue_page_title_container' );
 	?>
 	
-	<div id="content" class="container">
+	<div id="content" class="container <?php echo esc_attr( virtue_container_class() ); ?>">
 		<div class="row">
 			<div class="main <?php echo esc_attr( virtue_main_class() );?> <?php echo esc_attr( $postclass ) .' '. esc_attr( $fullclass ); ?>" role="main">
 				<?php 	
