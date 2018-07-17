@@ -19,7 +19,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<header id="masthead" class="<?php echo of_get_option('header_layout'); ?>">
+	<header id="masthead" class="<?php echo esc_attr(of_get_option('header_layout')); ?>">
 		<div class="mid-content clearfix">
         
         <div class="flex-box">
@@ -36,7 +36,7 @@
 
 		<nav id="site-navigation" class="main-navigation">
         
-		<div class="menu-toggle"><?php _e( 'Menu', 'accesspress-parallax' ); ?></div>
+		<div class="menu-toggle"><?php esc_html_e( 'Menu', 'accesspress-parallax' ); ?></div>
 					
 			<?php 
 			$sections = of_get_option('parallax_section');
@@ -63,7 +63,7 @@
 							$title = get_the_title($single_sections['page']); 
 						}	
 						?>
-						<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>#section-<?php echo $single_sections['page']; ?>"><?php echo esc_html($title); ?></a></li>
+						<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>#section-<?php echo esc_attr($single_sections['page']); ?>"><?php echo esc_html($title); ?></a></li>
 					<?php 
 					endif;
 				endforeach; 

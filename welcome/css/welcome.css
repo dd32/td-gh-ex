@@ -22,7 +22,9 @@
     background: url(wlogo.png) center 20px no-repeat #0073aa;
     text-decoration: none;
     background-size: 70%;
-    padding-top: 130px;
+    padding-top: 145px;
+    padding-left: 10px;
+    padding-right: 10px;
     color: #FFF;
 }
 

@@ -88,6 +88,11 @@ Images
 
 ---------------------------------------------
 == Changelog ==
+Version 1.63
+ * Warning Error from Theme Snifer Plugin fixed
+ * Pot file updated
+ * Other minor fixes
+
 Version 1.62
  * Requiried Error from Theme Snifer Plugin fixed
  * Pot file updated
