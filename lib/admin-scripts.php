@@ -48,7 +48,7 @@ function ascend_editor_dynamic_css() {
 	$options_fonts = array( 'font_h1', 'font_h2', 'font_h3', 'font_h4', 'font_h5', 'font_p' );
 	$load_gfonts   = array();
 	foreach ( $options_fonts as $options_key ) {
-		if ( isset( $ascend[ $options_key ] ) && true == $ascend[ $options_key ]['google'] ) {
+		if ( isset( $ascend[ $options_key ] ) && isset( $ascend[ $options_key ]['google'] ) && true == $ascend[ $options_key ]['google'] ) {
 			// check if it's in the array.
 			if ( isset( $load_gfonts[ sanitize_key( $ascend[ $options_key ]['font-family'] ) ] ) ) {
 				if ( isset( $ascend[ $options_key ]['font-weight'] ) && ! empty( $ascend[ $options_key ]['font-weight'] ) ) {
@@ -78,12 +78,12 @@ function ascend_editor_dynamic_css() {
 					$load_gfonts[ sanitize_key( $ascend[ $options_key ]['font-family'] ) ]['subsets'][ $ascend[ $options_key ]['subsets'] ] = $ascend[ $options_key ]['subsets'];
 				}
 			}
-		}
-		if ( 'font_p' === $options_key ) {
-			$load_gfonts[ sanitize_key( $ascend[ $options_key ]['font-family'] ) ]['font-style']['400italic'] = '400italic';
-			$load_gfonts[ sanitize_key( $ascend[ $options_key ]['font-family'] ) ]['font-style']['400']       = '400';
-			$load_gfonts[ sanitize_key( $ascend[ $options_key ]['font-family'] ) ]['font-style']['700italic'] = '700italic';
-			$load_gfonts[ sanitize_key( $ascend[ $options_key ]['font-family'] ) ]['font-style']['700']       = '700';
+			if ( 'font_p' === $options_key ) {
+				$load_gfonts[ sanitize_key( $ascend[ $options_key ]['font-family'] ) ]['font-style']['400italic'] = '400italic';
+				$load_gfonts[ sanitize_key( $ascend[ $options_key ]['font-family'] ) ]['font-style']['400']       = '400';
+				$load_gfonts[ sanitize_key( $ascend[ $options_key ]['font-family'] ) ]['font-style']['700italic'] = '700italic';
+				$load_gfonts[ sanitize_key( $ascend[ $options_key ]['font-family'] ) ]['font-style']['700']       = '700';
+			}
 		}
 	}
 	if ( ! empty( $load_gfonts ) ) {
@@ -111,7 +111,6 @@ function ascend_editor_dynamic_css() {
 			$link .= '&amp;subset=' . implode( ',', $subsets );
 		}
 		echo '<link href="//fonts.googleapis.com/css?family=' . esc_attr( str_replace( '|', '%7C', $link ) ) . ' " rel="stylesheet">';
-
 	}
 	echo '<style type="text/css" id="ascend-editor-font-family">';
 	if ( isset( $ascend['font_h1'] ) ) {
@@ -175,4 +174,6 @@ function ascend_editor_dynamic_css() {
 	}
 	echo '</style>';
 }
-add_action( 'admin_head', 'ascend_editor_dynamic_css' );
+add_action( 'admin_head-post.php', 'ascend_editor_dynamic_css' );
+add_action( 'admin_head-post-new.php', 'ascend_editor_dynamic_css' );
+add_action( 'admin_head-edit.php', 'ascend_editor_dynamic_css' );

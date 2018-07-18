@@ -22,8 +22,16 @@ body.gutenberg-editor-page {
 	p.has-drop-cap:not(:focus):first-letter {
 		font-weight: inherit;
 	}
-	.wp-block-separator {
+	.wp-block-separator:not(.is-style-dots) {
 	    border-bottom: 2px solid #eee;
+	}
+	.wp-block-separator.is-style-dots:before {
+		content: "\00b7 \00b7 \00b7";
+		color: #32373c;
+		font-size: 30px;
+		letter-spacing: 2em;
+		padding-left: 2em;
+		font-family: serif;
 	}
 	// Auto
 	figure.wp-block-audio {

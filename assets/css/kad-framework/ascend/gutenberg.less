@@ -14,7 +14,8 @@ body {
 .alignfull, .alignwide {
     margin-bottom: 2em;
 }
-@media (min-width: 750px) {
+
+@media (min-width: 992px) {
 	// Full width
 	.main:not(.kt-sidebar) .entry-content .alignfull {
 		width: 100vw;
@@ -32,16 +33,69 @@ body {
 	// Wide
 	.main:not(.kt-sidebar) .entry-content .alignwide {
 		position: relative;
-		width: 72vw;
+		width: 92vw;
 	    left: 50%;
 		right: 50%;
-		margin-left: -36vw;
-		margin-right: -36vw;
+		margin-left: -46vw;
+		margin-right: -46vw;
 		text-align: center;
 	}
 	.alignwide img {
 		width:100%;
 	}
+}
+@media (min-width: 1400px) {
+	// Wide
+	.main:not(.kt-sidebar) .entry-content .alignwide {
+		width: 84vw;
+		margin-left: -42vw;
+		margin-right: -42vw;
+	}
+}
+@media (min-width: 1700px) {
+	// Wide
+	.main:not(.kt-sidebar) .entry-content .alignwide {
+		width: 72vw;
+		margin-left: -36vw;
+		margin-right: -36vw;
+	}
+}
+@media (max-width: 991px) {
+	// Full width
+	.main .entry-content .alignfull {
+		position: relative;
+		left: 50%;
+		right: 50%;
+		margin-left: -50vw;
+		margin-right: -50vw;
+		text-align: center;
+		padding: 0;
+		width: 100vw;
+	}
+	.main .entry-content .alignwide {
+		position: relative;
+		width: 92vw;
+	    left: 50%;
+		right: 50%;
+		margin-left: -46vw;
+		margin-right: -46vw;
+		text-align: center;
+	}
+}
+@media (max-width: 767px) {
+	.main .entry-content .alignwide {
+		position: relative;
+		left: 50%;
+		right: 50%;
+		margin-left: -50vw;
+		margin-right: -50vw;
+		text-align: center;
+		padding: 0;
+		width: 100vw;
+	}
+}
+.alignfull img, .alignwide img {
+	width:100%;
 }
 // Columns
 .wp-block-column {
@@ -65,6 +119,9 @@ body {
 }
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
     max-width: 100px;
+}
+.wp-block-separator.is-style-dots:before {
+	font-size: 30px;
 }
 
 // Lists 
@@ -184,6 +241,12 @@ figure.wp-block-audio.aligncenter {
 }
 .entry-content .wp-block-gallery.aligncenter {
 	display: flex;
+	margin-left: -8px;
+	margin-right: -8px;
+}
+// text
+.entry-content p[style^="font-size"] {
+    line-height: 1.4;
 }
 // Pull quotes
 .wp-block-pullquote {
@@ -217,4 +280,7 @@ figure.wp-block-audio.aligncenter {
     	font-size: 18px;
     	bottom:15px;
     }
+}
+.main:not(.kt-sidebar) .entry-content .alignfull.wp-block-pullquote {
+	padding: 24px 45px 24px 45px;
 }

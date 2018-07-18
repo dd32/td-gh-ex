@@ -28,6 +28,9 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.3.0 | 18th July 2018 =
+* Fix: Undefined variable
+
 = Version 1.2.9 | 16th July 2018 =
 * Update: Gutenberg Support.
 * Update: Easier Kadence Toolkit install.
