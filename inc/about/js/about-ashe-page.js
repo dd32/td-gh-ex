@@ -44,4 +44,6 @@ jQuery( document ).ready( function ($) {
         }
     );
 
+    $('.theme-changelog').fadeOut().fadeIn(1000);
+
 });

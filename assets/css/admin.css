@@ -1,4 +1,5 @@
 .ashe-activation-notice {
+	position: relative;
 	text-align: center;
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -12,4 +13,8 @@
 
 .ashe-activation-notice p:first-of-type {
 	margin-bottom: 20px !important;
+}
+
+.appearance_page_about-ashe .ashe-activation-notice {
+	display: none !important;
 }

@@ -9,12 +9,26 @@
 	font-size: 16px;
 }
 
-/* Theme Review */
-.theme-review {
+.wrap {
+  padding: 10px 0;
+}
+
+.content {
+  float: left;
+  width: calc(100% - 280px);
+}
+
+.sidebar {
+  width: 255px;
+  float: right;
+}
+
+/* Sidebar Widgets */
+.sidebar-widget {
 	display: inline-block;
 	position: relative;
 	float: right;
-	width: 365px;
+	width: 100%;
 	background-color: #fff;
 	margin: 16px auto 15px;
 	border: 1px solid #e5e5e5;
@@ -24,42 +38,38 @@
 	text-align: center;
 }
 
-.theme-review h3 {
+.sidebar-widget h3 {
 	display: block;
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: 600;
 	padding: 12px 10px;
-	background-color: #0085ba;
+	background-color: #32373C;
 	color: #fff;
 	letter-spacing: .6px;
 	margin: 0;
 	text-align: center;
-	cursor: pointer;
 }
 
-.theme-review h3 .dashicons {
-	margin-top: -1px;
+.sidebar-widget > div {
+	padding: 15px 20px;
 }
 
-.theme-review > div {
-	padding: 25px 30px;
-}
-
-.theme-review p {
-	font-size: 14px;
+.sidebar-widget p {
+	font-size: 12px;
+	line-height: 1.65;
 	color: #5a5a5a;
 	margin-top: 0;
 }
 
-.theme-review a {
+.sidebar-widget a {
 	display: inline-block;
 	background-color: #0085ba;
 	color: #fff;
 	height: auto;
-	font-size: 13px;
+	font-size: 12px;
 	line-height: 1;
 	font-weight: 600;
-	padding: 14px 20px;
+	padding: 9px 15px 11px;
 	border: 0;
 	cursor: pointer;
 	text-align: center;
@@ -69,15 +79,15 @@
 	transition: all .3s ease;
 }
 
-.theme-review a:hover {
+.sidebar-widget a:hover {
 	opacity: 0.85;
 }
 
-.theme-review a .dashicons {
-  width: auto;
-  height: auto;
-  font-size: 12px;
-  margin-top: 1px;
+.sidebar-widget a .dashicons {
+	width: auto;
+	height: auto;
+	font-size: 12px;
+	margin-top: 1px;
 }
 
 
@@ -191,6 +201,12 @@
 	cursor: default;
 }
 
+/* Buttons */
+.button.docs,
+.button.demo-import {
+	font-size: 13px !important;
+}
+
 /* Video Tutorials */
 .video-tutorials .column-width-4 {
   width: 18%;
@@ -223,7 +239,7 @@
 /* Recommended Plugins */
 .three-columns-wrap .plugin-card {
 	position: relative;
-	width: 30% !important;
+	width: 49% !important;
 	min-height: 170px;
 	padding: 20px;
 	margin-right: 1% !important;
@@ -248,7 +264,7 @@
 
 /* Free vs Pro */
 .free-vs-pro {
-  width: 50%;
+  width: 90%;
 }
 
 .free-vs-pro th {
@@ -313,9 +329,12 @@
 	}
 }
 
-@media screen and ( max-width: 1360px ) {
-	.free-vs-pro {
-		width: 80% !important;
+@media screen and ( max-width: 1460px ) {
+	.column-width-4 {
+		width: 30%;
+		margin-right: 3%;
+		margin-right: 2%;
+		margin-bottom: 20px;
 	}
 }
 
@@ -325,13 +344,19 @@
 	}
 }
 
+@media screen and ( max-width: 1366px ) {
+	.four-columns-wrap.video-tutorials .column-width-4 {
+		width: 50%;
+	}
+}
+
 @media screen and ( max-width: 1160px ) {
 	.three-columns-wrap .plugin-card {
 		width: 100% !important;
 		margin-right: 0 !important;
 	}
 	.column-width-4 {
-		width: 30%;
+		width: 47%;
 		margin-right: 3%;
 		margin-right: 2%;
 		margin-bottom: 20px;

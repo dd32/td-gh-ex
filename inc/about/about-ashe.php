@@ -12,7 +12,10 @@ function ashe_about_page_output() {
 	$theme_data	 = wp_get_theme();
 
 ?>
+
 	<div class="wrap">
+
+	<div class="content">
 
 		<div class="welcome-text">
 			<h1>
@@ -27,19 +30,6 @@ function ashe_about_page_output() {
 				?>
 				<br><br><a href="<?php echo esc_url('http://wp-royal.com/themes/ashe-free/demo/?ref=ashe-free-backend-about-theme-prev-btn'); ?>" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Demo Preview', 'ashe' ); ?></a>
 			</p>
-		</div>
-
-		<div class="theme-review">
-			<h3>
-				<?php esc_html_e( 'Are You a Helpful Person?', 'ashe' ); ?>
-			</h3>
-			<div>
-				<p><?php esc_html_e( 'We are grateful that you\'ve decided to join the Ashe family. If we could take 2 mins of your time, we\'d really appreciate if you could leave a review. By spreading the love, we can create even greater free stuff in the future!', 'ashe' ); ?></p>
-				<a href="<?php echo esc_url('https://wordpress.org/support/theme/ashe/reviews/?filter=5#new-post') ?>" target="_blank">
-					<?php esc_html_e( 'Leave a Review', 'ashe' ); ?>
-					<span class="dashicons dashicons-star-filled"></span>
-				</a>
-			</div>
 		</div>
 
 		<!-- Tabs -->
@@ -77,7 +67,7 @@ function ashe_about_page_output() {
 						printf( esc_html__( 'Need more details? Please check our full documentation for detailed information on how to use %s.', 'ashe' ), esc_html( $theme_data->Name ) );
 					?>
 					</p>
-					<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/ashe/docs/?ref=ashe-free-backend-about-docs/'); ?>" class="button button-primary"><?php esc_html_e( 'Read Full Documentation', 'ashe' ); ?></a>
+					<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/ashe/docs/?ref=ashe-free-backend-about-docs/'); ?>" class="button button-primary docs"><?php esc_html_e( 'Read Full Documentation', 'ashe' ); ?></a>
 				</div>
 
 				<div class="column-width-3">
@@ -109,6 +99,8 @@ function ashe_about_page_output() {
 			</div>
 
 			<div class="four-columns-wrap">
+
+			<hr>
 			
 				<h2 id="ashe-predefined-styles"><?php esc_html_e( 'Ashe Pro - Predefined Styles', 'ashe' ); ?></h2>
 				<p>
@@ -452,6 +444,61 @@ function ashe_about_page_output() {
 	    <?php endif; ?>
 
 	</div><!-- /.wrap -->
+
+	<div class="sidebar">
+
+		<div class="sidebar-widget theme-changelog">
+			<h3>
+				<?php esc_html_e( 'Latest Theme Changes', 'ashe' ); ?>
+			</h3>
+			<div>
+				<p><?php esc_html_e( 'Want to get the gist on the latest theme changes? Just consult our changelog below to get a taste of the recent fixes and features implemented.', 'ashe' ); ?></p>
+				<a href="<?php echo esc_url('https://wp-royal.com/ashe-free-changelog/?ref=ashe-free-backend-about-changelog/'); ?>" target="_blank">
+					<?php esc_html_e( 'Changelog', 'ashe' ); ?>
+				</a>
+			</div>
+		</div>
+
+		<div class="sidebar-widget theme-review">
+			<h3>
+				<?php esc_html_e( 'Are You a Helpful Person?', 'ashe' ); ?>
+			</h3>
+			<div>
+				<p><?php esc_html_e( 'We are grateful that you\'ve decided to join the Ashe family. If we could take 2 mins of your time, we\'d really appreciate if you could leave a review. By spreading the love, we can create even greater free stuff in the future!', 'ashe' ); ?></p>
+				<a href="<?php echo esc_url('https://wordpress.org/support/theme/ashe/reviews/?filter=5#new-post') ?>" target="_blank">
+					<?php esc_html_e( 'Leave a Review', 'ashe' ); ?>
+					<span class="dashicons dashicons-star-filled"></span>
+				</a>
+			</div>
+		</div>
+
+		<div class="sidebar-widget">
+			<h3>
+				<?php esc_html_e( 'Recommended Hosting', 'ashe' ); ?>
+			</h3>
+			<div>
+				<p><?php esc_html_e( 'A fast theme gets faster with a great hosting! Ashe proudly recommends Bluehost to any of our users who is looking for speedy host.', 'ashe' ); ?></p>
+				<a href="<?php echo esc_url('https://www.bluehost.com/track/wproyal'); ?>" target="_blank">
+					<?php esc_html_e( 'Get Hosting', 'ashe' ); ?>
+				</a>
+			</div>
+		</div>
+
+		<div class="sidebar-widget">
+			<h3>
+				<?php esc_html_e( 'Ashe Family', 'ashe' ); ?>
+			</h3>
+			<div>
+				<p><?php esc_html_e( 'Join the community of super helpful Ashe users. Say hello, ask questions, give feedback and help each other!', 'ashe' ); ?></p>
+				<a href="<?php echo esc_url('https://www.facebook.com/groups/408037686363411/'); ?>" target="_blank">
+					<?php esc_html_e( 'Join us on Facebook', 'ashe' ); ?>
+				</a>
+			</div>
+		</div>
+
+	</div>
+
+	</div>
 <?php
 } // end ashe_about_page_output
 
@@ -656,12 +703,12 @@ function ashe_enqueue_about_page_scripts($hook) {
 	}
 
 	// enqueue CSS
-	wp_enqueue_style( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/css/about-ashe-page.css' ), array(), '1.6.6' );
+	wp_enqueue_style( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/css/about-ashe-page.css' ), array(), '1.6.7' );
 
 	// Demo Import
 	wp_enqueue_script( 'plugin-install' );
 	wp_enqueue_script( 'updates' );
-	wp_enqueue_script( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/js/about-ashe-page.js' ), array(), '1.6.6' );
+	wp_enqueue_script( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/js/about-ashe-page.js' ), array(), '1.6.7' );
 
 }
 add_action( 'admin_enqueue_scripts', 'ashe_enqueue_about_page_scripts' );
