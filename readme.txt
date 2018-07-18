@@ -2,7 +2,7 @@
 Akyl WordPress Theme 
 ------------------------------
 Copyright 2017 Akila Thiwanka : https://www.akilathiwanka.info/
-Version : 1.2.1
+Version : 1.3
 License : GPLv2 or later
 License URI : http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,6 +15,7 @@ Features
 * Social Links
 * Post Formats
 * Jetpack Infinite scroll support
+* Menu Icons support added (Now you can add font awesome icon to the main menu)
 * Translate Support
 
 

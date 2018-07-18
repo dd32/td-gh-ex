@@ -1,7 +1,7 @@
 /*	
  * Theme Name: Akyl
  * Text Domain: akyl
- * Version: 1.2.1
+ * Version: 1.3
  * Description: Akyl is a clean and responsive masonry style blog theme. It features Responsive, Support Post Formats, Social Menu, Customization Option, Editor Styling and Translation-Ready Code
  * Tags: blog, three-columns, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, threaded-comments, translation-ready, grid-layout
  * Author: Akila Thiwanka
@@ -327,7 +327,7 @@ p {
 	margin: 0 0 24px;
 }
 
-a {
+a, .nav li:hover {
 	color: #091b2c;
 	-webkit-transition: all 024s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
@@ -569,6 +569,10 @@ input[type="text"] {
 	margin: 0 !important;
 }
 
+.main-menu .navbar-nav li {
+	color: #fff;
+}
+
 .main-menu .navbar-nav li a, .main-menu .navbar-nav li a:focus {
 	color: #fff;
 	-webkit-transition: .3s;
@@ -580,6 +584,7 @@ input[type="text"] {
 }
 
 .nav li a:hover,
+.nav li:hover,
 .nav li.active a {
 	background: none;
 	color: #59a3e9 !important;
@@ -605,6 +610,7 @@ input[type="text"] {
 /* Sub menu */
 .sub-menu, .nav .children:first-child {
 	display: block;
+	background: #091b2c;
 	position: absolute;
 	min-width: 240px;
 	padding: 0;
@@ -635,6 +641,23 @@ input[type="text"] {
 	opacity: 1;
 }
 
+/* Add icons to the menu */
+.navbar-nav > li {
+	display: table;
+	align-items: center;
+}
+
+.navbar-nav li.fa::before {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.navbar-nav li.fa a {
+	font-family: 'Montserrat', serif;
+	font-weight: 500;
+	margin-left: -0.5em;
+}
 
 /*
 * ----------------------------------------------------------------------------------------
@@ -1986,3 +2009,5 @@ footer a:hover {
 .logged-in .logo, .logged-in .main-menu {
 	margin-top: 32px;
 }
+
+
