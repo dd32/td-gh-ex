@@ -1,15 +1,15 @@
 <?php
 /*
-	Template Name: Full Width
- 	NewsPress Theme's Full Width Page to show the Pages Selected Full Width
-	Copyright: 2014-2017, D5 Creation, www.d5creation.com
+	Template Name: Narrow Width
+ 	NewsPress Theme's Narrow Width Page to show the Pages Selected Narrow Width
+	Copyright: 2014-2018, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
-	Since NewsPress 1.0
+	Since NewsPress 2.3
 */
 ?>
 
 <?php get_header(); ?>
-<div id="content-full" class="pageitems">
+<div id="content-narrow" class="pageitems">
  <?php if (have_posts()) : while (have_posts()) : the_post();?>
  
  <h1 id="post-<?php the_ID(); ?>" class="page-title"><?php the_title();?></h1>

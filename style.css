@@ -7,9 +7,9 @@ Author URI: https://d5creation.com/
 
 Description: NewsPress is a Multipurpose WordPress Theme. The best use can be operating News Media, News Paper, Online News Agency etc.  Multi Layer Slider will give extra impression to your readers. Easy and Flexible NewsPress Theme is fully RESPONSIVE which can be fit within any screen of devices. NewsPress Extend is one of the most popular News Themes. You can find the Demo Here: http://demo.d5creation.com/themes/?theme=NewsPress
 
-Version: 2.1
+Version: 2.3
 
-Tags: two-columns, right-sidebar, blog, news, entertainment, education, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, theme-options, translation-ready, featured-images, footer-widgets, rtl-language-support
+Tags: two-columns, right-sidebar, blog, news, entertainment, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, theme-options, translation-ready, featured-images, footer-widgets, rtl-language-support
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -88,6 +88,7 @@ img.site-logo,h1.site-title{font-size:80px;font-weight:700;max-height:90px;max-w
 #headersep{height:3px;margin:20px -20px}
 #content{float:left;width:70%}
 #content-full{width:100%}
+#content-narrow { width: 70%; min-width: 300px; max-width: 900px; margin: 20px auto; padding: 20px; box-shadow: 0 0 7px 0 #e7e7e7;     background: #ffffff; }
 .content-ver-sep{clear:both;height:1px}
 .fsubhcontainer{margin:0 -3%;width:106%}
 .fsubheading{border-top:2px solid #CCC;float:left;min-height:200px;margin:0 3% 10px;overflow:hidden;width:44%;padding-top:10px}
@@ -100,6 +101,7 @@ img.site-logo,h1.site-title{font-size:80px;font-weight:700;max-height:90px;max-w
 .fccontainer a,.fsubheading a,.fpheading a,.fpage-catspecial a{color:#555}
 .fccontainer h3.fcpt,.fpheading h1.page-title,.fpage-catspecial h3.fcpt{font-weight:300;text-transform:uppercase}
 .fccontainer h3.fcpt:hover,.fccontainer li a:hover,.fsubheading h2.post-title:hover,.fpheading h1.page-title:hover,.fpage-catspecial h3.fcpt:hover,.fpage-catspecial li a:hover,.ticker-title,.ticker-content a:hover{color:#F90909}
+#content-narrow h1.page-title { text-align: center; }
 .fccontainer .read-more,.fsubheading .read-more,.fpheading .read-more,.fpage-catspecial .read-more,h2.post-title a:hover{color:#F90909}
 .fpage-cat{margin:5px 2% 15px;width:20.65%;line-height:1.15;padding-top:3px;overflow:hidden;vertical-align:top;display:inline-block}
 .fpage-catg{float:left;margin:5px 2% 15px;width:29.3%;line-height:1.15;padding-top:3px;overflow:hidden}

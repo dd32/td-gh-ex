@@ -44,4 +44,5 @@
 	.fsubheading .subhpostbox { display: flex !important; flex-direction: row-reverse !important; justify-content: flex-end; align-items: center; }
 	.scattnfi {display: flex !important; justify-content: flex-start; align-items: center;}
 	.fpage-catg {width:calc(100% - 24px);} 
+	#content-narrow { width: 100%; min-width: 100%; }
 }
