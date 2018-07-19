@@ -1,7 +1,7 @@
 ----------------------------------
 Theme:		D5 COLORFUL
 ----------------------------------
-Version: 	2.1
+Version: 	2.3
 Developer: 	D5 Creation
 Author URI: 	https://d5creation.com
 
