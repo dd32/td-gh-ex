@@ -1,7 +1,7 @@
 ----------------------------------
 Design Theme
 ----------------------------------
-Version: 	2.1
+Version: 	2.3
 Developer: 	D5 Creation
 Author URI: 	https://d5creation.com
 
@@ -27,9 +27,10 @@ All other Image Files Copyright 2012-2017: D5 Creation (www.d5creation.com) and 
 
 The width and height of Main menu is fixed. So please design your menu items in such way that will fit with the container. 
 
-Changelog Version 2.1
+Changelog Version 2.3
 ====================================
 - Code Cleanup
+- Narrow Width Template Added
 
 Changelog Version 2.0
 ====================================

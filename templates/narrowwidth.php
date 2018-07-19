@@ -1,16 +1,16 @@
 <?php
 /*
-	Template Name: Full Width
- 	design Theme's Full Width Page to show the Pages Selected Full Width
+	Template Name: Narrow Width
+ 	Design Theme's Narrow Width Page to show the Pages Selected Narrow Width
 	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
-	Since Design 1.0
+	Since Design 2.3
 */
 get_header(); ?>
 <div class="pagenev"><div class="conwidth"><?php design_breadcrumbs(); ?></div></div>
 
 <div id="container">
-<div id="content-full" class="pageitems">
+<div id="content-narrow" class="pageitems">
  <?php if (have_posts()) : while (have_posts()) : the_post();?>
  
  <h1 id="post-<?php the_ID(); ?>" class="page-title"><?php the_title();?></h1>

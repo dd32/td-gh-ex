@@ -112,7 +112,7 @@
 	add_filter( 'wp_page_menu_args', 'design_page_menu_args' );
 	
 	function design_credit() {
-		echo '&nbsp;| Design Theme by: <a href="'. esc_url('https://d5creation.com').'" target="_blank"><img  src="' . get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a>';
+		echo '&nbsp;| Design Theme by: <a href="'. esc_url('https://d5creation.com').'" target="_blank">D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a>';
 	}
 
 //	Registers the Widgets and Sidebars for the site
