@@ -27,6 +27,18 @@
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 584;
 
+		
+// 	WordPress Custom Background Support	
+	$colorful_custom_background = array(
+	'default-color'          => 'CB4560',
+	'default-image'          => get_template_directory_uri() . '/images/back.jpg',
+	'default-repeat'         => 'repeat-y',
+	'default-position-x'     => 'center',
+    'default-position-y'     => 'top',
+    'default-size'           => '100% auto',
+	);
+	add_theme_support( 'custom-background', $colorful_custom_background );		
+		
 
 // 	This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	if ( function_exists( 'add_theme_support' ) ) { 
