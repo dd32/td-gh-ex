@@ -984,6 +984,27 @@ if ( ! function_exists( 'asagi_customize_register' ) ) {
 			)
 		);
 
+		$wp_customize->add_setting(
+			'asagi_settings[blog_header_image]',
+			array(
+				'default' => $defaults['blog_header_image'],
+				'type' => 'option',
+				'sanitize_callback' => 'esc_url_raw'
+			)
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control(
+				$wp_customize,
+				'asagi_settings[blog_header_image]',
+				array(
+					'label' => __( 'Blog Header Image', 'asagi' ),
+					'section' => 'asagi_blog_section',
+					'settings' => 'asagi_settings[blog_header_image]',
+				)
+			)
+		);
+
 		// Add Layout setting
 		$wp_customize->add_setting(
 			'asagi_settings[post_content]',

@@ -1,7 +1,7 @@
 === Asagi ===
 Requires at least: WordPress 4.9
 Tested up to: WordPress 4.9.6
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, three-columns, one-column, right-sidebar, left-sidebar, footer-widgets, blog, e-commerce, flexible-header, full-width-template, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, rtl-language-support, featured-images, theme-options
@@ -62,12 +62,71 @@ WPKoi Asagi: https://pixabay.com/en/fish-koi-fish-asian-japan-2486632/
 Copyright DearlyReloved
 License: https://creativecommons.org/publicdomain/zero/1.0/
 
+WPKoi Asagi Footer: https://pixabay.com/en/koi-swimming-pond-fish-nature-1935183/
+Copyright Mariamichelle
+License: https://creativecommons.org/publicdomain/zero/1.0/
+
+Asagi-1: https://pixabay.com/en/mountain-landscape-mountains-2031539/
+Copyright composita
+License: https://creativecommons.org/publicdomain/zero/1.0/
+
+Asagi-2: https://pixabay.com/en/railroad-tracks-tracks-railway-163518/
+Copyright Larisa-K
+License: https://creativecommons.org/publicdomain/zero/1.0/
+
+Asagi-3: https://pixabay.com/en/landscape-spacious-field-meadow-2211587/
+Copyright torstensimon
+License: https://creativecommons.org/publicdomain/zero/1.0/
+
+Asagi-4: https://pixabay.com/en/evening-sun-sunset-back-light-mood-55067/
+Copyright DasWortgewand
+License: https://creativecommons.org/publicdomain/zero/1.0/
+
+Asagi-5: https://pixabay.com/en/mountains-alps-meadow-summer-757731/
+Copyright Bess-Hamiti
+License: https://creativecommons.org/publicdomain/zero/1.0/
+
+Asagi-6: https://pixabay.com/en/road-sun-rays-path-forest-nature-815297/
+Copyright bertvthul
+License: https://creativecommons.org/publicdomain/zero/1.0/
+
+Member-1: https://pixabay.com/en/model-beautiful-young-model-2411733/
+Copyright Engin_Akyurt
+License: https://creativecommons.org/publicdomain/zero/1.0/
+
+Member-2: https://pixabay.com/en/excited-woman-surprised-happy-2681493/
+Copyright RobinHiggins
+License: https://creativecommons.org/publicdomain/zero/1.0/
+
+Member-3: https://pixabay.com/en/sport-fitness-exercise-abdominal-1685737/
+Copyright Keifit
+License: https://creativecommons.org/publicdomain/zero/1.0/
+
+Member-4: https://pixabay.com/en/woman-model-clothes-mont-winter-2701134/
+Copyright Engin_Akyurt
+License: https://creativecommons.org/publicdomain/zero/1.0/
+
+Member-5: https://pixabay.com/en/man-crazy-funny-dude-sunglasses-540500/
+Copyright alehidalgo
+License: https://creativecommons.org/publicdomain/zero/1.0/
+
+Member-6: https://pixabay.com/en/hands-model-woman-composition-2373539/
+Copyright Engin_Akyurt
+License: https://creativecommons.org/publicdomain/zero/1.0/
+
+Page Header: https://pixabay.com/en/videos/sunset-landscape-idyll-cows-10737/
+Copyright Curriculum_Photografia
+License: https://creativecommons.org/publicdomain/zero/1.0/
+
 Asagi Icon: https://pixabay.com/en/koi-koi-fish-fish-pond-3355188/
 Copyright Artissa
 License: https://creativecommons.org/publicdomain/zero/1.0/
 
 
 == Change Log ==
+
+= 1.0.4 =
+Added Blog header
 
 = 1.0.3 =
 Version fixes

@@ -84,6 +84,14 @@ if ( ! function_exists( 'asagi_featured_page_header' ) ) {
 
 		if ( is_page() ) {
 			asagi_featured_page_header_area( 'page-header-image' );
+		} elseif ( ( is_front_page() && is_home() ) || ( is_home() ) ) { 
+			$blog_header_image =  asagi_get_setting( 'blog_header_image' ); 
+			if ($blog_header_image != '') { ?>
+			<div class="page-header-image grid-container grid-parent">
+				<img src="<?php echo esc_url($blog_header_image); ?>"  />
+			</div>
+			<?php
+			}
 		}
 	}
 }

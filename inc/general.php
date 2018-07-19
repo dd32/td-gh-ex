@@ -30,9 +30,7 @@ if ( ! function_exists( 'asagi_scripts' ) ) {
 			wp_enqueue_style( 'asagi-child', get_stylesheet_uri(), array( 'asagi-style' ), filemtime( get_stylesheet_directory() . '/style.css' ), 'all' );
 		}
 
-		if ( ! apply_filters( 'asagi_fontawesome_essentials', false ) ) {
-			wp_enqueue_style( 'font-awesome', $dir_uri . "/css/font-awesome{$suffix}.css", false, '4.7', 'all' );
-		}
+		wp_enqueue_style( 'font-awesome', $dir_uri . "/css/font-awesome{$suffix}.css", false, '4.7', 'all' );
 
 		if ( function_exists( 'wp_script_add_data' ) ) {
 			wp_enqueue_script( 'asagi-classlist', $dir_uri . "/js/classList{$suffix}.js", array(), ASAGI_VERSION, true );

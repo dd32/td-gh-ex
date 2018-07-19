@@ -36,6 +36,7 @@ if ( ! function_exists( 'asagi_get_defaults' ) ) {
 			'layout_setting' => 'right-sidebar',
 			'blog_layout_setting' => 'right-sidebar',
 			'single_layout_setting' => 'right-sidebar',
+			'blog_header_image' => '',
 			'post_content' => 'excerpt',
 			'footer_layout_setting' => 'fluid-footer',
 			'footer_inner_width' => 'contained',
