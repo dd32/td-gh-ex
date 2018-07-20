@@ -34,7 +34,7 @@ $options = get_option( 'faster_theme_options' ); ?>
       <article class="post">
         <h2 class="post-title"><a href="#"></a> </h2>
         <div class="post-meta">
-          <div class="post-date"> <span class="day"><?php echo get_the_time('d'); ?></span> <span class="month"><?php echo get_the_time('M'); ?></span> </div>
+          <div class="post-date"> <span class="day"><?php echo esc_html(get_the_time('d')); ?></span> <span class="month"><?php echo esc_html(get_the_time('M')); ?></span> </div>
           <!--end / post-date-->
           <div class="post-meta-author">
             <div class="post-author-name">
@@ -43,43 +43,39 @@ $options = get_option( 'faster_theme_options' ); ?>
                 </a></h5>
              </div>
               <?php redpro_entry_meta(); ?>
-              <div class="clear-fix"></div>
-			      <?php the_tags(); ?>
+              <div class="clear-fix"></div>			     
             </div>
           <!--end / post-meta--> 
         </div>
-        <figure class="feature-thumbnail-large">
-          <?php $id = get_the_ID();
-			$feat_image = wp_get_attachment_url(get_post_thumbnail_id($id)); 
-			if($feat_image!='')
-			{ ?>
-      <a href="<?php echo $feat_image ?>"> <img src="<?php echo $feat_image ?>" class="img-responsive" alt="<?php echo get_the_title();?>" /> </a>
-      <?php } ?>
+        <?php if(has_post_thumbnail()) { ?>
+        <figure class="feature-thumbnail-large">         
+            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large');?></a>            
         </figure>
+        <?php } ?>
         <div class="post-content">
           <?php the_excerpt(); ?>
         </div>
         <!--end / post-content--> 
       </article>
       <?php endwhile; endif; ?>
-      <?php wp_reset_query();?>
-      <ul class="pagecount">
-        <?php if (function_exists("redpro_paginate"))
-   		 redpro_paginate($query->max_num_pages); ?>		
-      </ul>
-      
+      <?php wp_reset_query();     
+        the_posts_pagination( array(
+            'screen-reader-text'=>'',
+            'Previous' => __( 'Back', 'redpro' ),
+            'Next' => __( 'Onward', 'redpro' ),
+          ) ); ?>		
       <!--end / article--> 
     </div>
     <!--end / main-->
     <?php 
 	  if(!empty($options['bloglayout'])) {
 	  if($options['bloglayout'] == 'right'){
-		echo '<div class="col-md-3 col-md-offset-1 sidebar">';
+		echo '<div class="col-md-4 sidebar">';
 	  get_sidebar();
 	  echo '</div>';
 	  } }
 	  if(empty($options['bloglayout'])){
-		echo '<div class="col-md-3 col-md-offset-1 sidebar">';
+		echo '<div class="col-md-4 sidebar">';
 	  	get_sidebar();
 	  	echo '</div>';
 	  } ?>

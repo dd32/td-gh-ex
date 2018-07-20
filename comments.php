@@ -14,8 +14,11 @@ if ( post_password_required() )
 <div id="comments" class="comments-area">
 	<?php if ( have_comments() ) : ?>
     <h2 class="comments-title">
-		<?php printf( _n( 'One thought on - %2$s', '%1$s thoughts on - %2$s', get_comments_number(), 'redpro' ),
-				number_format_i18n( get_comments_number() ), get_the_title() ); ?>
+		 <?php 
+             printf( // WPCS: XSS OK.
+                    /* translators: 1: comment count number */
+                    esc_html( _nx( '%1$s Comment', '%1$s Comments;', get_comments_number(), 'comments title', 'redpro' ) ),
+                    number_format_i18n(get_comments_number() )       );   ?>
 	</h2>
     <ul class="">
     <?php	

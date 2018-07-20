@@ -14,14 +14,16 @@ get_header(); ?>
         <?php $archives = get_the_category();
         		$archives_name = $archives[0]->name;
         		$archives_id = $archives[0]->cat_ID;
-      if ( have_posts() ) : 
-	 		  _e('Archives','redpro'); echo " : ". get_the_date('M-Y');
-		  endif; ?>
+      if ( have_posts() ) : ?>
+        <p class="redpro-post-title">
+	 		  <?php esc_html_e('Archives','redpro'); echo " : ". get_the_date('M-Y'); ?>
+      </p>
+		  <?php endif; ?>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="breadcrumb  pull-right">
-          <li><a href="<?php echo site_url();?>"><?php _e('Home','redpro'); ?></a></li>
-          <li class="active"><a href="<?php echo get_category_link( $archives_id ); ?>"><?php echo $archives_name; ?></a></li>
+          <li><a href="<?php echo esc_url(site_url());?>"><?php esc_html_e('Home','redpro'); ?></a></li>
+          <li class="active"><a href="<?php echo esc_url(get_category_link( $archives_id )); ?>"><?php echo esc_html($archives_name); ?></a></li>
         </ol>
       </div>
     </div>
@@ -37,18 +39,15 @@ get_header(); ?>
           while (have_posts()) : the_post(); ?>
         <article class="post">
           <h2 class="post-title"><a href="#"></a> </h2>
-<?php if (function_exists("ompj_pagination"))
-			ompj_pagination($archives_stories->max_num_pages); ?>
+          <?php if (function_exists("ompj_pagination"))
+		      	ompj_pagination($archives_stories->max_num_pages); ?>
           <figure class="feature-thumbnail-large">
-            <?php 
-			$id = get_the_ID();
-			$feat_image = wp_get_attachment_url(get_post_thumbnail_id($id)); 
-			if($feat_image!="") { ?>
-        <a href="<?php the_permalink(); ?>"> <img src="<?php echo $feat_image ?>" class="img-responsive" alt="<?php echo get_the_title();?>" /></a>
-      <?php } ?>
+            <?php if(has_post_thumbnail()) { ?>
+              <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large'); ?></a>
+            <?php } ?>
           </figure>
           <div class="post-meta">
-            <div class="post-date"> <span class="day"><?php echo get_the_time('d'); ?></span> <span class="month"><?php echo get_the_time('M'); ?></span> </div>
+            <div class="post-date"> <span class="day"><?php echo esc_html(get_the_time('d')); ?></span> <span class="month"><?php echo esc_html(get_the_time('M')); ?></span> </div>
             <!--end / post-date-->
             
             <div class="post-meta-author">
@@ -57,7 +56,6 @@ get_header(); ?>
                </div>
               <?php redpro_entry_meta(); ?>
               <div class="clear-fix"></div>
-			  <?php the_tags(); ?>
             </div>
             <!--end / post-meta-->            
           </div>
@@ -70,21 +68,15 @@ get_header(); ?>
           endif; ?>
         <!--end / article--> 
         <!--Pagination Start-->
-        <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-          if(is_plugin_active('faster-pagination/ft-pagination.php')) {
-            faster_pagination();
-          }else {
-          if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
-          <nav class="redpro-nav">
-            <span class="redpro-nav-previous"><?php previous_posts_link(); ?></span>
-            <span class="redpro-nav-next"><?php next_posts_link(); ?></span>
-          </nav>
-        <?php }
-        }//is plugin active ?>
+        <?php the_posts_pagination( array(
+            'screen-reader-text'=>'',
+            'Previous' => __( 'Back', 'redpro' ),
+            'Next' => __( 'Onward', 'redpro' ),
+          ) ); ?>
         <!--Pagination End-->
       </div>
       <!--end / main-->
-      <div class="col-md-3 col-md-offset-1 sidebar">
+      <div class="col-md-4 sidebar">
       	<?php get_sidebar(); ?>
       </div>
     </div>

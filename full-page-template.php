@@ -7,7 +7,7 @@ get_header(); ?>
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-       <p class="redpro-post-title"><?php _e('Blog ','redpro'); echo " : "; ?>
+       <p class="redpro-post-title"><?php esc_html_e('Blog ','redpro'); echo " : "; ?>
           <span class="redpro-post-subtitle">
           <?php redpro_title(); ?>
           </span></p>
@@ -27,11 +27,11 @@ get_header(); ?>
     <div class="row">
       <div class="col-md-12 main full-page">
         <?php while ( have_posts() ) : the_post(); ?>
-        <article class="post">
-          <?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-			if($feat_image!="") { ?>
-          <figure class="feature-thumbnail-large"> <a href="<?php echo $feat_image; ?>"> <img src="<?php echo $feat_image; ?>" class="img-responsive" alt="<?php echo get_the_title(); ?>" /> </a> </figure>
-          <?php } ?>
+        <article class="post">          
+          <figure class="feature-thumbnail-large">
+           <?php if(has_post_thumbnail()) { ?>
+            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large');?></a>
+            <?php } ?> </figure>          
           <div class="post-content">
             <?php the_content(); ?>
           </div>

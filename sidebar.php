@@ -1,4 +1,4 @@
-<!--<div class="col-md-3 col-md-offset-1 sidebar">-->
+<!--<div class="col-md-4 sidebar">-->
   <?php if ( is_active_sidebar( 'content-sidebar' ) ) : 
 		 dynamic_sidebar( 'content-sidebar' ); 
 	 endif; ?>

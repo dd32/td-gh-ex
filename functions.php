@@ -1,7 +1,4 @@
 <?php
-require_once('theme-option/fasterthemes.php');
-/*** TGM ***/
-require_once('functions/tgm-plugins.php');
 
 /**
  * Set up the content width value based on the theme's design.
@@ -11,11 +8,7 @@ if ( ! isset( $content_width ) ) {
 }
 // Adding breadcrumbs
 function redpro_breadcrumbs() {
- echo '<li><a href="';
- //echo get_option('home');
- echo home_url();  
-  _e('Home','redpro');
- echo "</a></li>";
+ echo '<li><a href="'.esc_html(home_url()).'">'.esc_html__('Home','redpro').'</a></li>';
   if (is_category() || is_single()) {
    if(is_category())
    {
@@ -27,21 +20,21 @@ function redpro_breadcrumbs() {
     if (is_single()) {
    echo "<li>";
    $category = get_the_category();
-   echo '<a rel="category" title="View all posts in '.$category[0]->cat_name.'" href="'.site_url().'/?cat='.$category[0]->term_id.'">'.$category[0]->cat_name.'</a>';
+   echo '<a rel="category" title="View all posts in '.esc_html($category[0]->cat_name).'" href="'.esc_url(site_url()).'/?cat='.$category[0]->term_id.'">'.esc_html($category[0]->cat_name).'</a>';
    echo "</li>";
      echo "<li class='active'>";
-     the_title();
+     echo get_the_title();
      echo "</li>";
     }
         } elseif (is_page()) {
             echo "<li class='active'>";
-            echo the_title();
+            echo get_the_title();
    echo "</li>";
   } elseif (is_search()) {
             echo "<li class='active'>";
-             _e('Search Results for...','redpro');
+             esc_html_e('Search Results for...','redpro');
    echo '"<em>';
-   echo the_search_query();
+   echo esc_html(get_the_search_query());
    echo '</em>"';
    echo "</li>";
         }
@@ -80,6 +73,14 @@ function redpro_setup() {
 	register_nav_menus( array(
 		'primary'   => __( 'Main Menu', 'redpro' ),		
 	) );
+	 add_theme_support( 'custom-logo', array(
+            'height'      => 220,
+            'width'       => 120,
+            'flex-height' => true,
+            'flex-width'  => true,
+            'priority'    => 11,
+            'header-text' => array( 'site-title', 'site-description' ), 
+    ) );
 	add_theme_support( "title-tag" );
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -103,8 +104,7 @@ function redpro_setup() {
 }
 endif; // redpro_setup
 add_action( 'after_setup_theme', 'redpro_setup' );
-// Implement Custom Header features.
-require get_template_directory() . '/functions/custom-header.php';
+
 /**
  * Register Lato Google font for redpro.
  *
@@ -140,7 +140,7 @@ function redpro_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'redpro' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( /* translators: %s is page count.*/__( 'Page %s', 'redpro' ), max( $paged, $page ) );
 
 	return $title;
 }
@@ -156,7 +156,7 @@ function redpro_entry_meta() {
 
 	$category_list = get_the_category_list( ', ', 'redpro');
 
-	$tag_list = get_the_tag_list( ', ', 'redpro');
+	$tag_list = get_the_tag_list('<li><i class="fa fa-link"></i>', ', ','</li>');
 
 	$date = sprintf( '<a href="%1$s" title="%2$s" ><time datetime="%3$s">%4$s</time></a>',
 		esc_url( get_permalink() ),
@@ -167,16 +167,16 @@ function redpro_entry_meta() {
 
 	$author = sprintf( '<span><a href="%1$s" title="%2$s" >%3$s</a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'redpro' ), get_the_author() ) ),
+		esc_attr( sprintf(/* translators: %s is author name.*/ esc_html__( 'View all posts by %s', 'redpro' ), get_the_author() ) ),
 		get_the_author()
 	);
 	
 	if ( $tag_list ) {
-        $utility_text = __( 'Posted in : %1$s on %3$s by : %4$s %2$s Comments: '.get_comments_number(), 'redpro' );
+        $utility_text = __( '<ul><li><i class="fa fa-folder-open"></i> %1$s</li><li> <i class="fa fa-calendar"></i> %3$s </li><li><i class="fa fa-user"></i> %4$s </li> %2$s <li> <i class="fa fa-comment"></i> '.get_comments_number().'</li></ul>', 'redpro' );
     } elseif ( $category_list ) {
-        $utility_text = __( 'Posted in : %1$s on %3$s by : %4$s %2$s Comments: '.get_comments_number(), 'redpro' );
+        $utility_text = __( '<ul><li><i class="fa fa-folder-open"></i> %1$s </li><li><i class="fa fa-calendar"></i> %3$s </li><li><i class="fa fa-user"></i> %4$s</li> %2$s <li><i class="fa fa-comment"></i> '.get_comments_number().'</li></ul>', 'redpro' );
     } else {
-        $utility_text = __( 'Posted on : %3$s by : %4$s %2$s Comments: '.get_comments_number(), 'redpro' );
+        $utility_text = __( '<ul><li><i class="fa fa-calendar"></i> %3$s</li><li> <i class="fa fa-user"></i> %4$s</li> %2$s <li> <i class="fa fa-comment"></i> '.get_comments_number().'</li></ul>', 'redpro' );
     }
 
 
@@ -271,11 +271,17 @@ add_filter( 'excerpt_more', 'redpro_read_more' );
  * Enqueues scripts and styles for front-end.
  */
 function redpro_scripts_styles() {
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.0.1');
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), '3.0.1');
+	wp_enqueue_script( 'respond', get_template_directory_uri() . '/js/respond.js', array('jquery'));
 	wp_enqueue_script( 'function', get_template_directory_uri() . '/js/function.js', array('jquery'), '1.0.0');
-	wp_enqueue_style('style', get_stylesheet_uri());
+
+	
 	wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
+	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.css');
+	
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+
+	redpro_custom_css();
 }
 add_action( 'wp_enqueue_scripts', 'redpro_scripts_styles' );
 if ( ! function_exists( 'redpro_comment' ) ) :
@@ -296,7 +302,7 @@ function redpro_comment( $comment, $args, $depth ) {
 		// Display trackbacks differently than normal comments. ?>
 <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
   <p>
-    <?php _e( 'Pingback:', 'redpro' ); ?>
+    <?php esc_html_e( 'Pingback:', 'redpro' ); ?>
     <?php comment_author_link(); ?>
     <?php edit_comment_link( __( '(Edit)', 'redpro' ), '<span class="edit-link">', '</span>' ); ?>
   </p>
@@ -313,7 +319,7 @@ function redpro_comment( $comment, $args, $depth ) {
       <?php
             printf( '<b class="fn">%1$s',
                 get_comment_author_link(),
-                ( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author ', 'redpro' ) . '</span>' : ''
+                ( $comment->user_id === $post->post_author ) ? '<span>' . esc_html__( 'Post author ', 'redpro' ) . '</span>' : ''
             );
             echo ' '.get_comment_date().'</b>';
 			echo '<a href="#" class="reply pull-right">'.comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'redpro' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ).'</a>'; ?>
@@ -391,4 +397,13 @@ $fields['comment_field'] = str_replace(
 $fields['comment_field']
 );
 return $fields;
-} ?>
+} 
+
+/*** customizer ***/
+require_once('functions/theme-customizer.php');
+/*** TGM Class***/
+require_once('functions/class-tgm-plugin-activation.php');
+/*** TGM ***/
+require_once('functions/tgm-plugins.php');
+// Implement Custom Header features.
+require_once('functions/custom-header.php');

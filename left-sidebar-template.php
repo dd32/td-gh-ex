@@ -7,9 +7,9 @@ get_header(); ?>
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-        <h1>
+        <p class="redpro-post-title">
           <?php redpro_title() ?>
-        </h1>
+        </p>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="breadcrumb  pull-right">
@@ -31,13 +31,12 @@ get_header(); ?>
       </div>
       <div class="col-md-9 main ">
         <article class="post">
-          <?php while ( have_posts() ) : the_post(); ?>
-          <?php 
-			$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-			if($feat_image!="")
-			{ ?>
-          <figure class="feature-thumbnail-large"> <a href="<?php echo $feat_image;?>"> <img src="<?php echo $feat_image;?>" class="img-responsive" alt="<?php echo get_the_title();?>" /> </a> </figure>
-          <?php } ?>
+          <?php while ( have_posts() ) : the_post(); ?>         
+          <?php if(has_post_thumbnail()) { ?>
+          <figure class="feature-thumbnail-large">             
+            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large');?></a>            
+           </figure> 
+           <?php } ?>
           <div class="post-content">
             <?php the_content(); ?>
           </div>

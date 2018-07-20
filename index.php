@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-        <p class="redpro-post-title"><?php _e('Blog ','redpro'); echo " : "; ?>
+        <p class="redpro-post-title"><?php esc_html_e('Blog ','redpro'); echo " : "; ?>
           <span class="redpro-post-subtitle">
           <?php redpro_title(); ?>
           </span></p>
@@ -26,7 +26,7 @@
         <article class="post">
           <h2 class="post-title"><a href="#"></a> </h2>
           <div class="post-meta">
-            <div class="post-date"> <span class="day"><?php echo get_the_time('d'); ?></span> <span class="month"><?php echo get_the_time('M'); ?></span> </div>
+            <div class="post-date"> <span class="day"><?php echo esc_html(get_the_time('d')); ?></span> <span class="month"><?php echo esc_html(get_the_time('M')); ?></span> </div>
             <!--end / post-date-->
             <div class="post-meta-author">
               <div class="post-author-name">
@@ -35,17 +35,18 @@
                   </a></h5>
               </div>
               <div class="post-category"> </div>
-              <div class="post-author"> <?php _e('BY','redpro'); echo " : "; ?>
+              <div class="post-author"> <?php esc_html_e('BY : ','redpro'); ?>
                 <?php the_author_posts_link(); ?>
               </div>
             </div>
             <!--end / post-meta--> 
             
-          </div>
-          <?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-				if($feat_image!="") { ?>
-          <figure class="feature-thumbnail-large"> <a href="<?php echo $feat_image;?>"> <img src="<?php echo $feat_image;?>" class="img-responsive" alt="<?php echo get_the_title();?>" /> </a> </figure>
-          <?php } ?>
+          </div>          
+          <figure class="feature-thumbnail-large"> 
+          <?php if(has_post_thumbnail()) { ?>
+            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large');?></a>
+            <?php } ?>
+          </figure>          
           <div class="post-content">
             <?php the_content(); ?>
           </div>
@@ -54,7 +55,7 @@
       </div>
       <!--end / main-->
       <?php endwhile; // end of the loop. ?>
-      <div class="col-md-3 col-md-offset-1 sidebar">
+      <div class="col-md-4 sidebar">
       	<?php get_sidebar(); ?>
       </div>
     </div>

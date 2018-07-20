@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-          <h1><?php _e('404 Page','redpro'); ?></h1>
+          <h1><?php esc_html_e('404 Page','redpro'); ?></h1>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="breadcrumb  pull-right">
@@ -21,7 +21,7 @@
       <div class="col-md-8 main">
         <div class="page-content">
           <p class="error-message">
-            <?php _e( 'It looks like nothing was found at this location. May be try a search?', 'redpro' ); ?>
+            <?php esc_html_e( 'It looks like nothing was found at this location. May be try a search?', 'redpro' ); ?>
           </p>
           <?php get_search_form(); ?>
         </div>
@@ -29,7 +29,7 @@
         
       </div>
       <!--end / main-->
-      <div class="col-md-3 col-md-offset-1 sidebar">
+      <div class="col-md-4 sidebar">
       	<?php get_sidebar(); ?>
       </div>
     </div>

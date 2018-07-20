@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-        <p class="redpro-post-title"><?php _e('Blog ','redpro'); echo " : "; ?>
+        <p class="redpro-post-title"><?php esc_html_e('Blog ','redpro'); echo " : "; ?>
           <span class="redpro-post-subtitle">
           <?php redpro_title() ?>
           </span></p>
@@ -31,15 +31,14 @@
                 <span class="redpro-nav-previous"><?php previous_post_link(); ?></span>
                 <span class="redpro-nav-next"><?php next_post_link(); ?></span>
 			</nav><!-- .nav-single -->
-              <div class="post-date"> <span class="day"><?php echo get_the_time('d'); ?></span> <span class="month"><?php echo get_the_time('M'); ?></span> </div>
+              <div class="post-date"> <span class="day"><?php echo esc_html(get_the_time('d')); ?></span> <span class="month"><?php echo esc_html(get_the_time('M')); ?></span> </div>
               <!--end / post-date-->
               <div class="post-meta-author">
                 <div class="post-author-name">
                   <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
                 </div>
               <?php redpro_entry_meta(); ?>
-              <div class="clear-fix"></div>
-			       <?php the_tags(); ?>
+              <div class="clear-fix"></div>			       
             </div>
               <!--end / post-meta-->
             </div>
@@ -58,11 +57,11 @@
             <!--end / post-content-->
           </div>
         </article>
-        <?php comments_template( '', true ); ?>
+        <?php comments_template( ''); ?>
       </div>
       <!--end / main-->
       <?php endwhile; // end of the loop. ?>
-      <div class="col-md-3 col-md-offset-1 sidebar">
+      <div class="col-md-4 sidebar">
       	<?php get_sidebar(); ?>
       </div>
     </div>

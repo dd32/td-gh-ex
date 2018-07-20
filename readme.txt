@@ -4,7 +4,6 @@ Theme URI: http://fasterthemes.com/wordpress-themes/redpro
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: RedPro is a Twitter bootstrap based responsive WordPress theme which can be used for personal or corporate websites.
-Version: 4.0.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: Red, left-sidebar, right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, theme-options, full-width-template, sticky-post, post-formats, featured-images, custom-background, custom-header, custom-menu, editor-style, translation-ready
@@ -30,7 +29,25 @@ Responsive design(Bootstrap), Theme Options, Custom Widgets, Custom Menu, suppor
 Right-sidebar, Left-sidebar, Full width to set the layout of overall theme.
 
 
+== Change Log ==
+Version	4.0
+    i)  Set Sanitization in all input fields.
+	ii) Define TGM license and link in  readme.txt 
+	iii) Set copyright text in footer.
+	
+Version	4.0.1 (17th Nov 2014)
+    i) Fixed JS error which was appearing in admin panel.   
+ 	ii) Removed screen_icon() found in the files class-tgm-plugin-activation.php and fasterthemes.php as it's deprecated. 
+ 	
+Version 4.0.2(18th Dec 2014)
+	i) Made theme translation-ready!
+    ii) Fix css issue
 
+Version 4.0.3 (02 Jan 2017)
+    i) Minor fixes.
+
+Version 5.0.0 (20 July 2018)
+    i) Misc Chagne.
 
 
 == Installation ==

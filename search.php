@@ -11,23 +11,20 @@ get_header(); ?>
       <div class="col-md-8 main">
         <header class="page-header">
           <h1>
-			 <?php _e( 'Search Results for', 'redpro' ); echo ' : '. get_search_query(); ?>
+			 <?php esc_html_e( 'Search Results for', 'redpro' ); echo ' : '. get_search_query(); ?>
 			  </h1>
         </header>
         <?php if (have_posts() ) :
             while (have_posts()) : the_post(); ?>
         <article class="post">
           <h2 class="post-title"><a href="#"></a> </h2>
-          <figure class="feature-thumbnail-large">
-            <?php 
-        $id = get_the_ID();
-        $feat_image = wp_get_attachment_url(get_post_thumbnail_id($id)); 
-    		if($feat_image!='') { ?>
-          <a href="<?php echo $feat_image; ?>"> <img src="<?php echo $feat_image; ?>" class="img-responsive" alt="<?php echo get_the_title(); ?>" /> </a>
-        <?php } ?>
-          </figure>
+          <?php if(has_post_thumbnail()) { ?>
+          <figure class="feature-thumbnail-large">             
+            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large');?></a>            
+           </figure> 
+           <?php } ?>
           <div class="post-meta">
-            <div class="post-date"> <span class="day"><?php echo get_the_time('d'); ?></span> <span class="month"><?php echo get_the_time('M'); ?></span> </div>
+            <div class="post-date"> <span class="day"><?php echo esc_html(get_the_time('d')); ?></span> <span class="month"><?php echo esc_html(get_the_time('M')); ?></span> </div>
             
             <!--end / post-date-->
             
@@ -38,8 +35,7 @@ get_header(); ?>
                   </a></h5>
               </div>
               <?php redpro_entry_meta(); ?>
-              <div class="clear-fix"></div>
-			        <?php the_tags(); ?>
+              <div class="clear-fix"></div>			        
             </div>
             <!--end / post-meta-->
           </div>
@@ -50,27 +46,19 @@ get_header(); ?>
         </article>
         <?php endwhile; 
 	      else:
-			  echo'<h2>';
-			 _e('No Results Found','redpro');
-			echo '</h2>'; ?>
+			  echo'<h2>'.esc_html__('No Results Found','redpro').'</h2>'; ?>
         <?php endif; ?>
         <!--end / article--> 
         <!--Pagination Start-->
-        <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-        if(is_plugin_active('faster-pagination/ft-pagination.php')) {
-            faster_pagination();
-        } else {
-        if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
-          <nav class="redpro-nav">
-            <span class="redpro-nav-previous"><?php previous_posts_link(); ?></span>
-            <span class="redpro-nav-next"><?php next_posts_link(); ?></span>
-  		    </nav>
-        <?php }
-        }//is plugin active ?>
+        <?php the_posts_pagination( array(
+            'screen-reader-text'=>'',
+            'Previous' => __( 'Back', 'redpro' ),
+            'Next' => __( 'Onward', 'redpro' ),
+          ) ); ?>
         <!--Pagination End-->
       </div>
       <!--end / main-->
-      <div class="col-md-3 col-md-offset-1 sidebar">
+      <div class="col-md-4 sidebar">
         <?php get_sidebar(); ?>
       </div>
     </div>

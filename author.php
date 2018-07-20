@@ -10,12 +10,12 @@ get_header(); ?>
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-        <p class="redpro-post-title"><?php _e('Author ','redpro'); echo ":". __('All posts by ','redpro'), get_the_author(); ?></p>
+        <p class="redpro-post-title"><?php esc_html_e('Author ','redpro'); echo ":". esc_html__('All posts by ','redpro'), get_the_author(); ?></p>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="breadcrumb  pull-right">
-          <li><a href="<?php echo site_url();?>"><?php _e('Home','redpro'); ?></a></li>
-          <li class="active"><a href="<?php echo site_url().'/author/'.get_the_author();?>"><?php echo get_the_author(); ?></a></li>
+          <li><a href="<?php echo esc_url(site_url());?>"><?php esc_html_e('Home','redpro'); ?></a></li>
+          <li class="active"><a href="<?php echo esc_url(site_url()).'/author/'.get_the_author();?>"><?php echo esc_html(get_the_author()); ?></a></li>
         </ol>
       </div>
     </div>
@@ -32,7 +32,7 @@ get_header(); ?>
         <article class="post">
           <h2 class="post-title"><a href="#"></a> </h2>
           <div class="post-meta">
-            <div class="post-date"> <span class="day"><?php echo get_the_time('d'); ?></span> <span class="month"><?php echo get_the_time('M'); ?></span> </div>
+            <div class="post-date"> <span class="day"><?php echo esc_html(get_the_time('d')); ?></span> <span class="month"><?php echo esc_html(get_the_time('M')); ?></span> </div>
             <!--end / post-date-->
             
             <div class="post-meta-author">
@@ -40,17 +40,14 @@ get_header(); ?>
                 <h5><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h5>
                </div>
               <?php redpro_entry_meta(); ?>
-              <div class="clear-fix"></div>
-			       <?php the_tags(); ?>
+              <div class="clear-fix"></div>			      
             </div>
             <!--end / post-meta--> 
             
           </div>
           <figure class="feature-thumbnail-large">
-            <?php $id = get_the_ID();
-				  $feat_image = wp_get_attachment_url(get_post_thumbnail_id($id)); 
-				  if($feat_image!="") { ?>
-            <a href="<?php the_permalink(); ?>"> <img src="<?php echo $feat_image ?>" class="img-responsive" alt="<?php echo get_the_title(); ?>" /></a>
+            <?php if(has_post_thumbnail()) { ?>
+            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large');?></a>
             <?php } ?>
           </figure>
           <div class="post-content">
@@ -63,21 +60,15 @@ get_header(); ?>
         <!--end / article--> 
      
         <!--Pagination Start-->
-        <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-          if(is_plugin_active('faster-pagination/ft-pagination.php')) {
-            faster_pagination();
-          }else {
-          if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
-          <nav class="redpro-nav">
-                <span class="redpro-nav-previous"><?php previous_posts_link(); ?></span>
-                <span class="redpro-nav-next"><?php next_posts_link(); ?></span>
-			</nav>
-        <?php }
-          }//is plugin active ?>
+        <?php the_posts_pagination( array(
+            'screen-reader-text'=>'',
+            'Previous' => __( 'Back', 'redpro' ),
+            'Next' => __( 'Onward', 'redpro' ),
+          ) ); ?>
         <!--Pagination End-->
       </div>
       <!--end / main-->
-      <div class="col-md-3 col-md-offset-1 sidebar">
+      <div class="col-md-4 sidebar">
       	<?php get_sidebar(); ?>
       </div>
     </div>

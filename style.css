@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/wordpress-themes/redpro
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Redpro is a Twitter bootstrap based responsive WordPress theme which can be used for personal or corporate websites.
-Version: 4.0.3
+Version: 5.0.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: left-sidebar, right-sidebar, one-column, two-columns, theme-options, full-width-template, sticky-post, post-formats, featured-images, custom-background, custom-header, custom-menu, editor-style, translation-ready
@@ -18,8 +18,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 body, button, input, select, textarea {
 	color: #404040;
 	font-family: sans-serif;
-	font-size: 16px;
-	font-size: 1.6rem;
+	font-size: 14px;
 	line-height: 1.5;
 }
 /* Headings */
@@ -217,7 +216,7 @@ textarea {
 	margin-top: 65px;
 }
 .redpro-post-title {
-	font-size:40px;
+	font-size:30px;
 	margin-top:8px;
 	margin-bottom:0px;
 }
@@ -228,7 +227,7 @@ textarea {
 	float: left;
 	width: 100%;
 	background: #e7e5e5;
-	padding: 45px 0 20px 0;
+	padding: 20px 0;
 }
 h1 small {
 	font-size: 55% !important;
@@ -293,7 +292,7 @@ h1 small {
 }
 .menu-ommune {
 	max-width:960px;
-	margin: 60px auto;
+	margin: 35px auto;
 }
 .menu-ommune:before, .menu-ommune:after {
 	content: "";
@@ -315,11 +314,10 @@ h1 small {
 	color: #fff;
 	text-transform: uppercase;
 	text-decoration: none;
+	font-size: 14px;
 }
-.menu-ommune a:hover, .menu-ommune a:focus {
-	color: #FFF !important;
-	background:#EEEEEE;
-	color:#6E0202 !important;
+.menu-ommune a:hover, .menu-ommune a:focus {	
+	background:#EEEEEE;	
 }
 .menu-ommune li:hover > a {
 	color: #fff;
@@ -357,12 +355,12 @@ h1 small {
 	width:100%;
 }
 .menu-ommune ul li a {
-	color: #000 !important;
+	color: #000;
 	text-decoration: none;
-	background:#EEEEEE !important;	
+	background:#EEEEEE;	
 }
 .menu-ommune ul li a:hover, .menu-ommune ul li a:focus, .menu-ommune ul li a:active {
-	color: #4e0000 !important;	
+	color: #4e0000;
 }
 .menu-ommune ul li {
 	background-color: #FFFFFF;
@@ -382,7 +380,7 @@ h1 small {
 	_height: 10px; /*IE6 only*/
 	display: block;
 	float: none;
-	text-transform: none;
+	text-transform: uppercase;
 	text-align: left;
 }
 .menu-ommune ul a:hover {
@@ -442,13 +440,16 @@ h1 small {
 	cursor: pointer;
 	display: block;
 	height: 40px;
+	position: absolute;
+	right: 0;
+	margin-top: 15px;
 }
 /* main nav */
 .menu-ommune {
 	margin: 0 0 0 -15px;
 	padding: 10px;
 	position: absolute;
-	top: 108px;
+	
 	width: 100%;
 	z-index: 1;
 	background-color: #fff;
@@ -461,7 +462,7 @@ h1 small {
 .menu-ommune:after {
 	content: '';
 	position: absolute;
-	left: 25px;
+	right: 30px;
 	top: -8px;
 	border-left: 8px solid transparent;
 	border-right: 8px solid transparent;
@@ -564,16 +565,17 @@ h1 small {
 }
 /*============= M E N U -- C S S   E N D S   H E R E ===========*/
 /*==================== M A I N C O N T E N T -- C S S =============*/
+
 .main-container {
 	float: left;
 	width: 100%;
-	padding-top: 60px;
+	padding-top: 30px;
 }
 .main-container .container {
 	background: #e7e5e5;
 	padding-left: 30px;
 	padding-right: 30px;
-	padding-bottom: 60px;
+	padding-bottom: 30px;
 }
 .post-title a {
 	font-size: 16px;
@@ -767,22 +769,20 @@ a.more:hover {
 .widget-list li {
 	margin-bottom: 5px;
 }
+.widget-list li:before{
+	content: '>'; 
+	padding-right: 10px;
+}
 .widget-list li a {
-	background: url(images/bullet.png) no-repeat left top 5px;
 	color: #4e0000;
-	padding-left: 20px;
+	
 }
 .bypostauthor {
 }
 .recentcomments a {
 	background: none repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
 }
-.recentcomments {
-	list-style-image: url("images/bullet.png");
-}
-#recentcomments li {
-	margin-left: 7%;
-}
+
 .recentcomments a {
 	padding-left: 3px !important;
 }
@@ -800,6 +800,14 @@ a.more:hover {
 }
 .footer .container {
 	background: #2d0000;
+}
+.footer aside ul li:before{
+	content: '>'; 
+	padding-right: 10px;
+}
+.footer aside ul.list-unstyled li:before {
+    content: '';
+    padding-right: 0px;
 }
 .footer h6 {
 	color: #ededed;
@@ -833,7 +841,7 @@ a.more:hover {
 }
 .list-bullet li a {
 	color: #c3c3c3;
-	background: url(images/small-bullet.png) no-repeat left top 5px;
+	/*background: url(images/small-bullet.png) no-repeat left top 5px;*/
 	padding-left: 15px;
 }
 .map {
@@ -878,6 +886,10 @@ a.facebook-icon:hover {
 a.twitter-icon:hover {
 	background-position: -32px -32px;
 }
+#copyright_area{
+	text-align: center;
+	border-top: 1px solid #fff;
+}
 .copyright {
 	width: 100%;
 	float: left;
@@ -888,10 +900,11 @@ a.twitter-icon:hover {
 }
 .copyright span {
 	display: block;
+	padding: 15px 0 0;
 }
 .footer-separator {
 	padding: 0 40px !important;
-	border-right: 1px solid #490f01;
+
 }
 .footer-separator:last-child {
 	border-right: none;
@@ -905,7 +918,6 @@ a.twitter-icon:hover {
 }
 .footer li a {
 	color: #C3C3C3;
-	padding-left: 15px;
 }
 /*========= E N D -- F O O T E R -- C S S ===========*/
 /*==================== P A G I N A T I O N -- C S S =============*/
@@ -1074,10 +1086,10 @@ a.twitter-icon:hover {
 /*============= E N D -- P A G I N A T I O N -- C S S ===========*/
 /*========= E X T R A -- C S S ========*/
 .footer .widget_recent_entries li a {
-	background: url("images/small-bullet.png") no-repeat scroll left top 5px rgba(0, 0, 0, 0);
+	/*background: url("images/small-bullet.png") no-repeat scroll left top 5px rgba(0, 0, 0, 0);*/
 }
 .footer .recentcomments {
-	list-style-image: url("images/small-bullet.png");
+	/*list-style-image: url("images/small-bullet.png");*/
 }
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
 	background-color: #300101 !important;
@@ -1101,7 +1113,7 @@ a.twitter-icon:hover {
 /*========= E N D -- E X T R A -- C S S ===========*/
 /* ========= A D D I T I O N A L -- C S S -- S T A R T S ============*/
 .row a {
-	font-weight: 700;
+	
 	color: #4E0000;
 }
 .row a:hover, a:focus {
@@ -1109,7 +1121,7 @@ a.twitter-icon:hover {
 	color: #428BCA;
 }
 footer .row a {
-	font-weight: 800;
+	
 	color: #fff;
 }
 .post-content iframe {
@@ -1139,9 +1151,42 @@ footer .row a {
 	background:none;
 	font-size:22px;
 }
+.main article.post {
+    margin: 20px 0;
+    border-bottom: 1px solid #4e0000;
+    width: 100%;
+    display: inline-block;
+}
+.single .main article.post ,
+.page .main article.post {
+	 border-bottom: none;
+}
+.screen-reader-text{display: none;}
+.nav-links a, .nav-links span {
+	position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #4e0000;
+    text-decoration: none;
+    background-color: #fff;
+    border: 2px solid #4e0000;
+    margin: 0 5px;
+    font-size: 14px;
+}
+.nav-links span.current {
+	z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #4e0000;
+}
 
 /* =========== A D D I T I O N A L -- C S S -- E N D S ===============*/
-
+.comments-area {
+    background-color: #eeeeee;
+    padding: 10px;
+}
 
 /**
  redpro gallery
@@ -1270,4 +1315,36 @@ footer .row a {
 }
 .pagination ul li a:hover, a.select, .pagination .active a{
 	border:1px solid #4e0000;	
+}
+.post-meta .post-meta-author ul {
+    display: inline-table;
+    list-style: none;
+    padding: 0;
+}
+.post-meta .post-meta-author ul li {
+    display: inline-table;
+    padding: 0 10px 0 0;
+}
+.post-meta .post-meta-author ul li i {
+    padding-right: 5px;
+}
+.navbar-header a:hover{text-decoration: none;}
+.navbar-header a h2.site-title,
+.navbar-header a h6.site-description{
+	color: #fff;
+	text-transform: none;
+}
+.page-title .breadcrumb{margin-top: 15px;}
+.comments-area {
+    display: inline-block;
+    width: 100%;
+}
+.comment-form input[type='submit']{
+	    padding: 10px 10px;
+}
+.page-template .comments-area {
+    display: none;
+}
+.navbar-header a h2.site-title, .navbar-header a h6.site-description{
+	padding: 0 15px;
 }

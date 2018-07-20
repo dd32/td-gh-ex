@@ -1,8 +1,9 @@
 </div>
 <footer class="footer">
   <div class="container">
-    <div class="row">
-      <?php $options = get_option( 'faster_theme_options' ); ?>
+    <div class="row">      
+      <?php $options = get_option( 'faster_theme_options' ); 
+      if(get_theme_mod('hideFooterWidgetBar','1') == 1): ?>
       <aside class="col-md-3 footer-separator widget_recent_entries" id="recent-posts-3">
       	<?php if ( is_active_sidebar( 'footer-area-1' ) ) : dynamic_sidebar( 'footer-area-1' ); endif; ?>
       </aside>
@@ -13,19 +14,31 @@
         <?php if ( is_active_sidebar( 'footer-area-3' ) ) : dynamic_sidebar( 'footer-area-3' ); endif; ?>
       </aside>
       <aside class="col-md-3 footer-separator" id="follow_us">
-      <?php if(!empty($options['fburl']) || !empty($options['twitter'])) { ?>
-        <h6><?php _e('Follow Us','redpro'); ?></h6>
-        <ul class=" list-unstyled social">
-          <?php if(!empty($options['fburl'])){ ?><li><a href="<?php echo esc_url_raw($options['fburl']); ?>" target="_blank" class="sprite facebook-icon"><?php _e('facebook','redpro') ?></a></li><?php } ?>
-          <?php if(!empty($options['twitter'])){ ?><li><a href="<?php echo esc_url_raw($options['twitter']); ?>" target="_blank" class="sprite twitter-icon"><?php _e('twitter','redpro') ?></a></li><?php } ?>
+      <?php $social_flag = 0;
+                    for ($i=1; $i <= 4; $i++) { 
+                        if(get_theme_mod('social_icon'.$i) != '' && get_theme_mod('social_icon_link'.$i) != ''){
+                            $social_flag++;
+                        }
+                    }
+        if($social_flag > 0) { ?>
+        <h6><?php esc_html_e('Follow Us','redpro'); ?></h6>
+        <ul class=" list-unstyled social">         
+          <?php for ($i=1; $i <= 4; $i++) { 
+                if(get_theme_mod('social_icon'.$i) != '' && get_theme_mod('social_icon_link'.$i) != ''){ ?>
+                    <li><a href="<?php echo esc_url(get_theme_mod('social_icon_link'.$i)); ?>" target="_blank"><i class="fa <?php echo esc_attr(get_theme_mod('social_icon'.$i)); ?>"></i></a></li>
+                <?php }
+            } ?>
         </ul>
         <?php } ?>
+        </aside>
+      <?php endif; ?>
+        <aside class="col-md-12 " id="copyright_area">
         <div class="copyright"> <span>
-          <?php if(!empty($options['footertext'])) {
-								echo wp_filter_nohtml_kses($options['footertext']).'. ';
+          <?php if (get_theme_mod('copyright_text') != '') {
+								echo wp_kses_post(get_theme_mod('copyright_text')).'. ';
 							} ?>
-			<?php _e('Powered by','redpro'); ?><a href='http://fasterthemes.com/wordpress-themes/redpro' target='_blank'>
-    <?php _e('RedPro WordPress Theme.','redpro'); ?></a>						
+			<?php esc_html_e('Powered by','redpro'); ?><a href='http://fasterthemes.com/wordpress-themes/redpro' target='_blank'>
+    <?php esc_html_e('RedPro WordPress Theme','redpro'); ?></a>						
           </span> </div>
       </aside>
     </div>
