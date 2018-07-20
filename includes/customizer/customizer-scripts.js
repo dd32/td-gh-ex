@@ -44,6 +44,13 @@
 				'bento_front_header_secondary_cta_color',
 				'bento_front_header_secondary_cta_color_hover',
 			];
+			var blogCtl = [
+				'bento_blog_header_image',
+				'bento_blog_header_title',
+				'bento_blog_header_title_color',
+				'bento_blog_header_subtitle',
+				'bento_blog_header_subtitle_color',
+			];
 			// Static front page
 			$.each( frontCtl, function( index, id ) {
 				c.control( id, function( control ) {
@@ -59,6 +66,22 @@
 					bentoCustHomepage( val.get() );
 					// On parent control change
 					val.bind( bentoCustHomepage );
+				});
+			});
+			$.each( blogCtl, function( index, id ) {
+				c.control( id, function( control ) {
+					// The logic
+					var bentoPostsHomepage = function( to ) {
+						if ( to == 'posts' ) {
+							control.toggle( true );
+						} else {
+							control.toggle( false );
+						}
+					};
+					// On load
+					bentoPostsHomepage( val.get() );
+					// On parent control change
+					val.bind( bentoPostsHomepage );
 				});
 			});
 		});

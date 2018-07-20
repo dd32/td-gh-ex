@@ -232,13 +232,18 @@ if ( ! function_exists( 'bento_post_header' ) ) {
 		if ( is_singular() && get_post_meta( $postid, 'bento_hide_title', true) != 'on' ) {
 			$title = '<h1>'.wp_kses( get_the_title(), array( 'br' => array() ) ).'</h1>';
 		}
-		if ( is_home() ) {
+		if ( is_home() && get_option( 'show_on_front' ) == 'posts' ) {
 			$title = '';
 			if ( get_theme_mod( 'bento_blog_header_title' ) != '' ) {
 				$title = '<h1>'.get_theme_mod( 'bento_blog_header_title' ).'</h1>';
-			}	
+			}
+			$subtitle = '
+				<div class="post-header-subtitle">
+					'.get_theme_mod( 'bento_blog_header_subtitle' ).'
+				</div>
+			';
 		}
-		if ( has_excerpt( $postid ) ) {
+		if ( is_singular() && has_excerpt( $postid ) ) {
 			$subtitle = '
 				<div class="post-header-subtitle">
 					'.wp_kses( get_the_excerpt( $postid ), array( 'br' => array() ) ).'
@@ -325,7 +330,7 @@ if ( ! function_exists( 'bento_post_header' ) ) {
 		if ( 
 			( get_post_meta( $postid, 'bento_activate_header', true ) == 'on' && get_post_meta( $postid, 'bento_activate_headermap', true ) != 'on' ) || 
 			( is_front_page() && 'page' == get_option('show_on_front') && get_theme_mod( 'bento_front_header_image' ) != '' ) ||
-			( is_home() && get_theme_mod( 'bento_blog_header_image' ) != '' )
+			( is_home() && get_option( 'show_on_front' ) == 'posts' && get_theme_mod( 'bento_blog_header_image' ) != '' )
 		) {
 			echo '
 				<div class="post-header">

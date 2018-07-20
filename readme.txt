@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-
 
 Requires at least: 4.0
 Tested up to: 4.9.6
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,10 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 2.0.2 / 20 July 2018
+Added more blog page controls to the "Homepage Settings" tab of the Customizer.
+Fixed the behaviour of the extended header elements on blog posts pages.
 
 * 2.0.1 / 11 July 2018
 Fixed the CMB2 admin notice bug.

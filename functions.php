@@ -392,7 +392,7 @@ function bento_insert_custom_styles() {
 				}
 			}	
 		} 
-		if ( is_home() ) {
+		if ( is_home() && 'posts' == get_option( 'show_on_front' ) ) {
 			if ( get_theme_mod( 'bento_blog_header_image' ) != '' ) {
 				$postheader_obj = wp_get_attachment_image_src( get_theme_mod( 'bento_blog_header_image' ), 'full' );
 				if ( $postheader_obj ) {
@@ -410,7 +410,7 @@ function bento_insert_custom_styles() {
 	}
 	
 	// Individual page/post settings
-	if ( is_singular() ) {
+	if ( is_singular() || ( is_home() && 'page' == get_option( 'show_on_front' ) ) ) {
 		$custom_css .= '
 			.post-header-title h1,
 			.entry-header h1 { 

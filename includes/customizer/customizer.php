@@ -1470,7 +1470,7 @@ function bento_customize_register( $wp_customize ) {
 		)
 	);
 	
-	// Static Front Page
+	// Homepage Settings
 	
 	$wp_customize->add_setting( 
 		'bento_blog_header_image', 
@@ -1509,7 +1509,68 @@ function bento_customize_register( $wp_customize ) {
 			'priority' => 21,
 			'type' => 'text',
 			'label' => esc_html__( 'Blog posts page: header title', 'bento' ),
-			'description' => esc_html__( 'Input the text to be displayed in the blog header.', 'bento' ),
+			'description' => esc_html__( 'Input the text to be displayed in the blog header on the front page.', 'bento' ),
+		)
+	);
+	
+	$wp_customize->add_setting( 
+		'bento_blog_header_title_color', 
+		array(
+			'type' => 'theme_mod',
+			'default' => '#ffffff',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'bento_blog_header_title_color', 
+			array(
+				'section' => 'static_front_page',
+				'priority' => 22,
+				'label' => esc_html__( 'Front blog header title color', 'bento' ),
+				'description' => esc_html__( 'Choose the color for the title of the blog posts page if it is set as the website front page; default is #ffffff (white).', 'bento' ),
+			)
+		)
+	);
+	
+	$wp_customize->add_setting( 
+		'bento_blog_header_subtitle', 
+		array(
+			'type' => 'theme_mod',
+			'default' => '',
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control( 
+		'bento_blog_header_subtitle', 
+		array(
+			'section' => 'static_front_page',
+			'priority' => 23,
+			'type' => 'text',
+			'label' => esc_html__( 'Blog posts page: header subtitle', 'bento' ),
+			'description' => esc_html__( 'Input the text to be displayed under the main title in the blog header.', 'bento' ),
+		)
+	);
+	
+	$wp_customize->add_setting( 
+		'bento_blog_header_subtitle_color', 
+		array(
+			'type' => 'theme_mod',
+			'default' => '#cccccc',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_control( 
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'bento_blog_header_subtitle_color', 
+			array(
+				'section' => 'static_front_page',
+				'priority' => 24,
+				'label' => esc_html__( 'Front blog header subtitle color', 'bento' ),
+				'description' => esc_html__( 'Choose the color for the subtitle of the blog posts page if it is set as the website front page; default is #cccccc (light-grey).', 'bento' ),
+			)
 		)
 	);
 	
@@ -1527,7 +1588,7 @@ function bento_customize_register( $wp_customize ) {
 			'bento_front_header_image', 
 			array(
 				'section' => 'static_front_page',
-				'priority' => 21,
+				'priority' => 25,
 				'mime_type' => 'image',
 				'label' => esc_html__( 'Static front page: header image', 'bento' ),
 				'description' => esc_html__( 'Upload the image to be used as the full-width header for the static front page.', 'bento' ),
@@ -2179,6 +2240,16 @@ function bento_customizer_css() {
 		}
 		.bottom-footer a {
 			color: '.esc_html( get_theme_mod( 'bento_footer_bottom_link_text_color', '#ffffff' ) ).';
+		}
+	';
+	
+	// Theme Options: Homepage tab
+	$customizer_css .= '
+		.home.blog .post-header-title h1 {
+			color: '.esc_html( get_theme_mod( 'bento_blog_header_title_color', '#ffffff' ) ).';
+		}
+		.home.blog .post-header-subtitle {
+			color: '.esc_html( get_theme_mod( 'bento_blog_header_subtitle_color', '#cccccc' ) ).';
 		}
 	';
 	
