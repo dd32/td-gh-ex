@@ -41,6 +41,9 @@ Activiation and Use
 
 == Changelog ==
 
+= 1.0.1 =
+* Changing Slider Images 
+
 = 1.0.0 =
 * Initial Release
 
@@ -75,11 +78,11 @@ Source: https://github.com/dirkgroenen/jQuery-viewport-checker
 
 Screenshot Slider Image, Copyright StockSnap
 Image is licensed under the terms of the CC0 Creative Commons license.
-Source: https://pixabay.com/en/laptop-apple-macbook-computer-2562211/
+Source: https://pixabay.com/en/white-cat-geek-sweet-cat-3550311/
 
 Default Slide #1 Image (images/slider/1.jpg), Copyright StockSnap
 Image is licensed under the terms of the CC0 Creative Commons license.
-Source: https://pixabay.com/en/laptop-apple-macbook-computer-2562211/
+Source: https://pixabay.com/en/white-cat-geek-sweet-cat-3550311/
 
 Default Slide #2 Image (images/slider/2.jpg), Copyright Lalmch
 Image is licensed under the terms of the CC0 Creative Commons license.
