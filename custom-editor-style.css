@@ -3,7 +3,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.0
+ * @version   1.1.1
  */
 
 /* TABLE OF CONTENT
@@ -157,22 +157,26 @@
   ## 1.6 Avik Button
 -----------------------*/
 
-  .avik-button-editor{
-    background-color: #000;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    border-radius: 0;
-    display: inline-block;
-    padding: 20px;
-    margin-top: 30px;
-    text-decoration: none;
-    margin-bottom: 30px;
-    cursor: pointer;
-  }
-  
-  a.avik-button-editor{
-    color:#d5f83e!important;
-    line-height: 0!important;
-    margin-top: 3px!important;
-    margin-bottom: 3px!important;
-  }
+.avik-button-editor{
+  background-color: #ffffff;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 0;
+  display: inline-block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 30px;
+  text-decoration: none;
+  margin-bottom: 30px;
+  cursor: pointer;
+  border: 0.003em solid #c2c2c2;
+  color:#464a4e!important;
+}
+
+.avik-button-editor:hover{
+  background-color: #000;
+  color: #d5f83e!important;
+}
+

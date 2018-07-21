@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.0
+ * @version   1.1.1
  */
 ?>
 
@@ -16,7 +16,7 @@
 	   $new_query = new WP_Query( array( 'cat' => $carousel_cat  , 'showposts' => $carousel_count ));
 	 while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
 	 <div class="item">
-		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'carousel-pic' ); ?></a>
+		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'carousel-pic' )?></a>
 		<hr>
 		<h3> <?php the_title();?> </h3>
 	 </div>
@@ -26,3 +26,4 @@
 	 ?>
    </div>
 </div>
+

@@ -3,7 +3,7 @@
  *
  * author    Denis Franchi
  * package   Avik
- * version   1.1.0
+ * version   1.1.1
  */
 
 (function(api) {
@@ -33,7 +33,6 @@
             'background_breadcrumbs_color',
             'background_preloader_color',      
             'preloader_color',
-            'background_body_color',
 		                              
         ];
 

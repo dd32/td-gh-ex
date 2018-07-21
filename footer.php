@@ -4,18 +4,17 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.0
+ * @version   1.1.1
  */
  ?>
- </div> <!--Content -->
+ </div> <!--Content --> 
     <footer>
      <div class="jumbotron">
         <!-- Social Icons Contact -->
-        <div class="avik-social-icons-footer" data-aos="zoom-in">
-		         <ul class="avik-social-icons-footer-ul">
+       
+		         <div class="avik-social-icons-footer" data-aos="zoom-in">
                    <?php get_template_part( 'inc/social' ); ?>
-		         </ul>
-        </div>
+</div>  
         <hr class="my-4 avik-footer">
         <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_copyright_footer', false) )) :?>
          <p>

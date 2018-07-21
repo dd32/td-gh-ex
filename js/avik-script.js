@@ -3,7 +3,7 @@
  *
  * author    Denis Franchi
  * package   Avik
- * version   1.1.0
+ * version   1.1.1
  */
 
 /* TABLE OF CONTENT
@@ -21,7 +21,6 @@
 10 - Carousel featured image
 11 - Portfolio
 12 - Popup image
-13 - Stats number
 
 */
 
@@ -506,93 +505,6 @@ jQuery(document).ready(function($) {
 });
     
 });
-
-
-/* ------------------------------------------------------------------------- *
-##  13  Stats number */
-/* ------------------------------------------------------------------------- */
-
-(function($){
-    $(window).on("load",function(){
-        $(document).avikNumber();
-        $(document).avikInit();
-    });
-    $(window).on("load scroll resize", function(){
-        $('.statistics-number').scrollzip({
-            showFunction    :   function() {
-                                    numberRoller($(this).attr('data-slno'));
-                                },
-            wholeVisible    :     false,
-        });
-    });
-    $.fn.avikNumber=function(){
-        $('body').prepend("<div style='position:fixed;top:0px;left:0px;width:0;height:0;' id='avik-scroll-point-zero'></div>" );
-    };
-    $.fn.avikInit=function(){
-        var i=0;
-        $('.statistics-number').each(function() {
-            i++;
-           $(this).attr('data-slno',i); 
-           $(this).addClass("avik-title-number"+i);
-        });        
-    };
-    $.fn.scrollzip = function(options){
-        var settings = $.extend({
-            showFunction    : null,
-            hideFunction    : null,
-            showShift       : 0,
-            wholeVisible    : false,
-            hideShift       : 0,
-        }, options);
-        return this.each(function(i,obj){
-            $(this).addClass('scrollzip');
-            if ( $.isFunction( settings.showFunction ) ){
-                if(
-                    !$(this).hasClass('isShown')&&
-                    ($(window).outerHeight()+$('#avik-scroll-point-zero').offset().top-settings.showShift)>($(this).offset().top+((settings.wholeVisible)?$(this).outerHeight():0))&&
-                    ($('#avik-scroll-point-zero').offset().top+((settings.wholeVisible)?$(this).outerHeight():0))<($(this).outerHeight()+$(this).offset().top-settings.showShift)
-                ){
-                    $(this).addClass('isShown');
-                    settings.showFunction.call( this );
-                }
-            }
-            if ( $.isFunction( settings.hideFunction ) ){
-                if(
-                    $(this).hasClass('isShown')&&
-                    (($(window).outerHeight()+$('#avik-scroll-point-zero').offset().top-settings.hideShift)<($(this).offset().top+((settings.wholeVisible)?$(this).outerHeight():0))||
-                    ($('#avik-scroll-point-zero').offset().top+((settings.wholeVisible)?$(this).outerHeight():0))>($(this).outerHeight()+$(this).offset().top-settings.hideShift))
-                ){
-                    $(this).removeClass('isShown');
-                    settings.hideFunction.call( this );
-                }
-            }
-            return this;
-        });
-    };
-    function numberRoller(slno){
-            var min=$('.avik-title-number'+slno).attr('data-min');
-            var max=$('.avik-title-number'+slno).attr('data-max');
-            var timediff=$('.avik-title-number'+slno).attr('data-delay');
-            var increment=$('.avik-title-number'+slno).attr('data-increment');
-            var numdiff=max-min;
-            var timeout=(timediff*1000)/numdiff;
-            numberRoll(slno,min,max,increment,timeout);
-            
-    }
-    function numberRoll(slno,min,max,increment,timeout){
-        if(min<=max){
-            $('.avik-title-number'+slno).html(min);
-            min=parseInt(min)+parseInt(increment);
-            setTimeout(function(){numberRoll(eval(slno),eval(min),eval(max),eval(increment),eval(timeout))},timeout);
-        }else{
-            $('.avik-title-number'+slno).html(max);
-        }
-    }
-    
-
-})(jQuery);
-
-
 
 
 

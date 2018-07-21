@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.0
+ * @version   1.1.1
 */
 
 /* TABLE OF CONTENT
@@ -28,14 +28,12 @@
 
 3 - Dependently-Contextual Customizer Controls
   
-  3.1 - Logo 2
-  3.2 - Section Team
-  3.3 - Social Team Who we are
-  3.4 - Portfolio
-  3.5 - Blog
-  3.6 - Contact 
-  3.7 - Footer
-  3.8 - Social
+  3.1 - Section Team
+  3.2 - Social Team Who we are
+  3.3 - Blog
+  3.4 - Footer
+  3.5 - Social
+  3.6 - Filter Header Home 
   
 
 4 - General Sanitization
@@ -239,8 +237,8 @@ class Avik_Google_Font_Dropdown_Custom_Control extends WP_Customize_Control{
 	public function get_google_fonts(){
 		if (get_transient('avik_google_font_list_p')) {
         	$content = get_transient('avik_google_font_list_p');
-	    } else {
-	        $googleApi = 'https://www.googleapis.com/webfonts/v1/webfonts?sort=alpha&key=AIzaSyAX1CGUKz_8OGO3kzZBLGIE_rZR0aYoGHE';
+	    } else { 
+	        $googleApi = esc_url( get_theme_mod( 'avik_google_api'));
 	        $fontContent = wp_remote_get( $googleApi, array('sslverify'   => false) );
 	        $content = json_decode($fontContent['body'], true);
 	        set_transient( 'avik_google_font_list_p', $content, 0 );
@@ -420,22 +418,8 @@ add_action( 'wp_footer', 'avik_customizer_css' );
 ##  3 Dependently-Contextual Customizer Controls */
 /* ------------------------------------------------------------------------- */ 
 
-/* --------------------------------------*
-##  3.1 Logo 2 */
-/* -------------------------------------- */ 
-
-// Enable Logo 2
-
-function avik_enable_logo_2($control) {
-
-	$option = $control->manager->get_setting('avik_enable_logo_2');
-	
-	return $option->value() == 'logo_2';
-	
-}
-
 /* ---------------------------------------- *
-##  3.2 Section Team */
+##  3.1 Section Team */
 /* --------------------------------------- */ 
 
 // Enable Section Team
@@ -451,7 +435,7 @@ function avik_enable_team_whoweare($control) {
 }
 
 /* --------------------------------------*
-##  3.3 Social Team Who we are */
+##  3.2 Social Team Who we are */
 /* -------------------------------------- */ 
 
 // avik_Enable Icon Facebook 1
@@ -604,428 +588,9 @@ function avik_enable_google_plus_icon_team_3($control) {
 	
 }
 
-/* --------------------------------------*
-##  3.4 Portfolio */
-/* -------------------------------------- */ 
-
-// Enable button Portfolio 1 c 1
-
-function avik_enable_button_portfolio_1_c_1($control) {
-
-	$option = $control->manager->get_setting('avik_enable_button_portfolio_1_c_1');
-	
-    return $option->value() == 'avik_link_button_portfolio_1_c_1';
-    return $option->value() == 'avik_title_button_portfolio_1_c_1';
-	
-}
-
-// Enable button Portfolio 2 c 1
-
-function avik_enable_button_portfolio_2_c_1($control) {
-
-	$option = $control->manager->get_setting('avik_enable_button_portfolio_2_c_1');
-	
-    return $option->value() == 'avik_link_button_portfolio_2_c_1';
-    return $option->value() == 'avik_title_button_portfolio_2_c_1';
-	
-}
-
-// Enable button Portfolio 3 c 1
-
-function avik_enable_button_portfolio_3_c_1($control) {
-
-	$option = $control->manager->get_setting('avik_enable_button_portfolio_3_c_1');
-	
-    return $option->value() == 'avik_link_button_portfolio_3_c_1';
-    return $option->value() == 'avik_title_button_portfolio_3_c_1';
-	
-}
-
-// Enable button Portfolio 4 c 1
-
-function avik_enable_button_portfolio_4_c_1($control) {
-
-	$option = $control->manager->get_setting('avik_enable_button_portfolio_4_c_1');
-	
-    return $option->value() == 'avik_link_button_portfolio_4_c_1';
-    return $option->value() == 'avik_title_button_portfolio_4_c_1';
-	
-}
-
-// Enable button Portfolio 5 c 1
-
-function avik_enable_button_portfolio_5_c_1($control) {
-
-	$option = $control->manager->get_setting('avik_enable_button_portfolio_5_c_1');
-	
-    return $option->value() == 'avik_link_button_portfolio_5_c_1';
-    return $option->value() == 'avik_title_button_portfolio_5_c_1';
-	
-}
-
-// Enable button Portfolio 6 c 1
-
-function avik_enable_button_portfolio_6_c_1($control) {
-
-	$option = $control->manager->get_setting('avik_enable_button_portfolio_6_c_1');
-	
-    return $option->value() == 'avik_link_button_portfolio_6_c_1';
-    return $option->value() == 'avik_title_button_portfolio_6_c_1';
-	
-}
-
-// Enable button Portfolio 1 c 2
-
-function avik_enable_button_portfolio_1_c_2($control) {
-
-	$option = $control->manager->get_setting('avik_enable_button_portfolio_1_c_2');
-	
-    return $option->value() == 'avik_link_button_portfolio_1_c_2';
-    return $option->value() == 'avik_title_button_portfolio_1_c_2';
-	
-}
-
-// Enable button Portfolio 2 c 2
-
-function avik_enable_button_portfolio_2_c_2($control) {
-
-	$option = $control->manager->get_setting('avik_enable_button_portfolio_2_c_2');
-	
-    return $option->value() == 'avik_link_button_portfolio_2_c_2';
-    return $option->value() == 'avik_title_button_portfolio_2_c_2';
-	
-}
-
-// Enable button Portfolio 3 c 2
-
-function avik_enable_button_portfolio_3_c_2($control) {
-
-	$option = $control->manager->get_setting('avik_enable_button_portfolio_3_c_2');
-	
-    return $option->value() == 'avik_link_button_portfolio_3_c_2';
-    return $option->value() == 'avik_title_button_portfolio_3_c_2';
-
-}
-
-// Enable button Portfolio 4 c 2
-
-function avik_enable_button_portfolio_4_c_2($control) {
-
-	$option = $control->manager->get_setting('avik_enable_button_portfolio_4_c_2');
-	
-    return $option->value() == 'avik_link_button_portfolio_4_c_2';
-    return $option->value() == 'avik_title_button_portfolio_4_c_2';
-
-}
-
-// Enable button Portfolio 5 c 2
-
-function avik_enable_button_portfolio_5_c_2($control) {
-
-	$option = $control->manager->get_setting('avik_enable_button_portfolio_5_c_2');
-	
-    return $option->value() == 'avik_link_button_portfolio_5_c_2';
-    return $option->value() == 'avik_title_button_portfolio_5_c_2';
-
-}
-
-// Enable button Portfolio 6 c 2
-
-function avik_enable_button_portfolio_6_c_2($control) {
-
-	$option = $control->manager->get_setting('avik_enable_button_portfolio_6_c_2');
-	
-    return $option->value() == 'avik_link_button_portfolio_6_c_2';
-    return $option->value() == 'avik_title_button_portfolio_6_c_2';
-
-}
-
-// avik_Enable button Portfolio 1 c 3
-
-function avik_enable_button_portfolio_1_c_3($control) {
-
-	$option = $control->manager->get_setting('avik_enable_button_portfolio_1_c_3');
-	
-    return $option->value() == 'avik_link_button_portfolio_1_c_3';
-    return $option->value() == 'avik_title_button_portfolio_1_c_3';
-
-}
-
-// Enable button Portfolio 2 c 3
-
-function avik_enable_button_portfolio_2_c_3($control) {
-
-	$option = $control->manager->get_setting('avik_enable_button_portfolio_2_c_3');
-	
-    return $option->value() == 'avik_link_button_portfolio_2_c_3';
-    return $option->value() == 'avik_title_button_portfolio_2_c_3';
-
-}
-
-// Enable button Portfolio 3 c 3
-
-function avik_enable_button_portfolio_3_c_3($control) {
-
-	$option = $control->manager->get_setting('avik_enable_button_portfolio_3_c_3');
-	
-    return $option->value() == 'avik_link_button_portfolio_3_c_3';
-    return $option->value() == 'avik_title_button_portfolio_3_c_3';
-
-}
-
-// Enable button Portfolio 4 c 3
-
-function avik_enable_button_portfolio_4_c_3($control) {
-
-	$option = $control->manager->get_setting('avik_enable_button_portfolio_4_c_3');
-	
-    return $option->value() == 'avik_link_button_portfolio_4_c_3';
-    return $option->value() == 'avik_title_button_portfolio_4_c_3';
-
-}   
-
-    
-// Enable button Portfolio 5 c 3
-
-function avik_enable_button_portfolio_5_c_3($control) {
-
-	$option = $control->manager->get_setting('avik_enable_button_portfolio_5_c_3');
-	
-    return $option->value() == 'avik_link_button_portfolio_5_c_3';
-    return $option->value() == 'avik_title_button_portfolio_5_c_3';
-
-}
-
-// Enable button Portfolio 6 c 3
-
-function avik_enable_button_portfolio_6_c_3($control) {
-
-	$option = $control->manager->get_setting('avik_enable_button_portfolio_6_c_3');
-	
-    return $option->value() == 'avik_link_button_portfolio_6_c_3';
-    return $option->value() == 'avik_title_button_portfolio_6_c_3';
-
-}	
-
-
-// Enable video icon column 1 Portfolio 1
-
-function avik_enable_column_1_id_portfolio_1($control) {
-
-	$option = $control->manager->get_setting('avik_enable_column_1_id_portfolio_1');
-	
-    return $option->value() == 'avik_column_1_id_portfolio_1';
-    return $option->value() == 'avik_alt_portfolio_1_c_1';
-    return $option->value() == 'avik_enable_icon_video_column_1_id_portfolio_1';
-	
-}
-
-// Enable video icon column 1 Portfolio 2
-
-function avik_enable_column_1_id_portfolio_2($control) {
-
-	$option = $control->manager->get_setting('avik_enable_column_1_id_portfolio_2');
-	
-    return $option->value() == 'avik_column_1_id_portfolio_2';
-    return $option->value() == 'avik_alt_portfolio_2_c_1';
-    return $option->value() == 'avik_enable_icon_video_column_1_id_portfolio_2';
-	
-}
-
-// Enable video icon column 1 Portfolio 3
-
-function avik_enable_column_1_id_portfolio_3($control) {
-
-	$option = $control->manager->get_setting('avik_enable_column_1_id_portfolio_3');
-	
-    return $option->value() == 'avik_column_1_id_portfolio_3';
-    return $option->value() == 'avik_alt_portfolio_3_c_1';
-    return $option->value() == 'avik_enable_icon_video_column_1_id_portfolio_3';
-	
-}
-
-// Enable video icon column 1 Portfolio 4
-
-function avik_enable_column_1_id_portfolio_4($control) {
-
-	$option = $control->manager->get_setting('avik_enable_column_1_id_portfolio_4');
-	
-    return $option->value() == 'avik_column_1_id_portfolio_4';
-    return $option->value() == 'avik_alt_portfolio_4_c_1';
-    return $option->value() == 'avik_enable_icon_video_column_1_id_portfolio_4';
-	
-}
-
-// Enable video icon column 1 Portfolio 5
-
-function avik_enable_column_1_id_portfolio_5($control) {
-
-	$option = $control->manager->get_setting('avik_enable_column_1_id_portfolio_5');
-	
-    return $option->value() == 'avik_column_1_id_portfolio_5';
-    return $option->value() == 'avik_alt_portfolio_5_c_1';
-    return $option->value() == 'avik_enable_icon_video_column_1_id_portfolio_5';
-	
-}
-
-// Enable video icon column 1 Portfolio 6
-
-function avik_enable_column_1_id_portfolio_6($control) {
-
-	$option = $control->manager->get_setting('avik_enable_column_1_id_portfolio_6');
-	
-    return $option->value() == 'avik_column_1_id_portfolio_6';
-    return $option->value() == 'avik_alt_portfolio_6_c_1';
-    return $option->value() == 'avik_enable_icon_video_column_1_id_portfolio_6';
-	
-}
-
-// Enable video icon column 2 Portfolio 1
-
-function avik_enable_column_2_id_portfolio_1($control) {
-
-	$option = $control->manager->get_setting('avik_enable_column_2_id_portfolio_1');
-	
-    return $option->value() == 'avik_column_2_id_portfolio_1';
-    return $option->value() == 'avik_alt_portfolio_1_c_2';
-    return $option->value() == 'avik_enable_icon_video_column_2_id_portfolio_1';
-	
-}
-
-// Enable video icon column 2 Portfolio 2
-
-function avik_enable_column_2_id_portfolio_2($control) {
-
-	$option = $control->manager->get_setting('avik_enable_column_2_id_portfolio_2');
-	
-    return $option->value() == 'avik_column_2_id_portfolio_2';
-    return $option->value() == 'avik_alt_portfolio_2_c_2';
-    return $option->value() == 'avik_enable_icon_video_column_2_id_portfolio_2';
-	
-}
-
-// Enable video icon column 2 Portfolio 3
-
-function avik_enable_column_2_id_portfolio_3($control) {
-
-	$option = $control->manager->get_setting('avik_enable_column_2_id_portfolio_3');
-	
-    return $option->value() == 'avik_column_2_id_portfolio_3';
-    return $option->value() == 'avik_alt_portfolio_3_c_2';
-    return $option->value() == 'avik_enable_icon_video_column_2_id_portfolio_3';
-	
-}
-
-// Enable video icon column 2 Portfolio 4
-
-function avik_enable_column_2_id_portfolio_4($control) {
-
-	$option = $control->manager->get_setting('avik_enable_column_2_id_portfolio_4');
-	
-    return $option->value() == 'avik_column_2_id_portfolio_4';
-    return $option->value() == 'avik_alt_portfolio_4_c_2';
-    return $option->value() == 'avik_enable_icon_video_column_2_id_portfolio_4';
-	
-}
-
-// Enable video icon column 2 Portfolio 5
-
-function avik_enable_column_2_id_portfolio_5($control) {
-
-	$option = $control->manager->get_setting('avik_enable_column_2_id_portfolio_5');
-	
-    return $option->value() == 'avik_column_2_id_portfolio_5';
-    return $option->value() == 'avik_alt_portfolio_5_c_2';
-    return $option->value() == 'avik_enable_icon_video_column_2_id_portfolio_5';
-	
-}
-
-// Enable video icon column 2 Portfolio 6
-
-function avik_enable_column_2_id_portfolio_6($control) {
-
-	$option = $control->manager->get_setting('avik_enable_column_2_id_portfolio_6');
-	
-    return $option->value() == 'avik_column_2_id_portfolio_6';
-    return $option->value() == 'avik_alt_portfolio_6_c_2';
-    return $option->value() == 'avik_enable_icon_video_column_2_id_portfolio_6';
-	
-}
-
-// Enable video icon column 3 Portfolio 1
-
-function avik_enable_column_3_id_portfolio_1($control) {
-
-	$option = $control->manager->get_setting('avik_enable_column_3_id_portfolio_1');
-	
-    return $option->value() == 'avik_column_3_id_portfolio_1';
-    return $option->value() == 'avik_alt_portfolio_1_c_3';
-    return $option->value() == 'avik_enable_icon_video_column_3_id_portfolio_1';
-	
-}
-
-// Enable video icon column 3 Portfolio 2
-
-function avik_enable_column_3_id_portfolio_2($control) {
-
-	$option = $control->manager->get_setting('avik_enable_column_3_id_portfolio_2');
-	
-    return $option->value() == 'avik_column_3_id_portfolio_2';
-    return $option->value() == 'avik_alt_portfolio_2_c_3';
-    return $option->value() == 'avik_enable_icon_video_column_3_id_portfolio_2';
-	
-}
-
-// Enable video icon column 3 Portfolio 3
-
-function avik_enable_column_3_id_portfolio_3($control) {
-
-	$option = $control->manager->get_setting('avik_enable_column_3_id_portfolio_3');
-	
-    return $option->value() == 'avik_column_3_id_portfolio_3';
-    return $option->value() == 'avik_alt_portfolio_3_c_3';
-    return $option->value() == 'avik_enable_icon_video_column_3_id_portfolio_3';
-	
-}
-
-// Enable video icon column 3 Portfolio 4
-
-function avik_enable_column_3_id_portfolio_4($control) {
-
-	$option = $control->manager->get_setting('avik_enable_column_3_id_portfolio_4');
-	
-    return $option->value() == 'avik_column_3_id_portfolio_4';
-    return $option->value() == 'avik_alt_portfolio_4_c_3';
-    return $option->value() == 'avik_enable_icon_video_column_3_id_portfolio_4';
-	
-}
-
-// Enable video icon column 3 Portfolio 5
-
-function avik_enable_column_3_id_portfolio_5($control) {
-
-	$option = $control->manager->get_setting('avik_enable_column_3_id_portfolio_5');
-	
-    return $option->value() == 'avik_column_3_id_portfolio_5';
-    return $option->value() == 'avik_alt_portfolio_5_c_3';
-    return $option->value() == 'avik_enable_icon_video_column_3_id_portfolio_5';
-	
-}
-
-// Enable video icon column 3 Portfolio 6
-
-function avik_enable_column_3_id_portfolio_6($control) {
-
-	$option = $control->manager->get_setting('avik_enable_column_3_id_portfolio_6');
-	
-    return $option->value() == 'avik_column_3_id_portfolio_6';
-    return $option->value() == 'avik_alt_portfolio_6_c_3';
-    return $option->value() == 'avik_enable_icon_video_column_3_id_portfolio_6';
-	
-}
 
 /* --------------------------------------*
-##  3.5 Blog */
+##  3.3 Blog */
 /* -------------------------------------- */ 
 
 
@@ -1041,23 +606,7 @@ function avik_enable_carousel($control) {
 }
 
 /* --------------------------------------*
-##  3.6 Contact  */
-/* -------------------------------------- */ 
-
-// Map
-
-function avik_enable_map_contact($control) {
-
-	$option = $control->manager->get_setting('avik_enable_map_contact');
-	
-    return $option->value() == 'avik_image_map';
-    return $option->value() == 'avik_alt_image_map';
-    return $option->value() == 'avik_link_map';
-	
-}
-
-/* --------------------------------------*
-##  3.7 Footer */
+##  3.4 Footer */
 /* -------------------------------------- */ 
 
 // Power by 
@@ -1071,7 +620,7 @@ function avik_enable_power_footer($control) {
 }
 
 /* --------------------------------------*
-##  3.8 Social */
+##  3.5 Social */
 /* -------------------------------------- */ 
 
 // Facebook
@@ -1186,7 +735,7 @@ function avik_enable_github_social($control) {
 
     	
 /* --------------------------------------*
-##  3.10 Filter Header Home */
+##  3.6 Filter Header Home */
 /* -------------------------------------- */ 
 
 // Color Filter Header Home

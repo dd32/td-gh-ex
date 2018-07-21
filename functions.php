@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.0
+ * @version   1.1.1
  */
 
 /* TABLE OF CONTENT
@@ -20,19 +20,19 @@
  9 - Breadcrumb Search
 10 - Add Custom Styles Editor
 11 - Carousel featured image
-12 - 
-13 - Avik Support Page
-14 - Lightbox popup image
-15 - Lenght excerpt
-16 - Include javascript files
-17 - Include css files
-18 - Include script and styles for class add Panel 
-19 - Add additional templates
-20 - Google Fonts URL function
-21 - Include Plugin
-22 - Clean attribute script and style 
-23 - Remove script version
+12 - Avik Support Page
+13 - Lightbox popup image
+14 - Lenght excerpt
+15 - Include javascript files
+16 - Include css files
+17 - Include script and styles for class add Panel 
+18 - Add additional templates
+19 - Google Fonts URL function
+20 - Include Plugin
+21 - Multipost Thumbnails Plugin
 */
+
+
 /* 1 Dependecies
  ------------------------------------------------------------*/
 
@@ -64,6 +64,8 @@ if ( ! function_exists( 'avik_setup' ) ) :
 		add_image_size('avik_big', 1400, 800, true);
 		add_image_size('avik_quad', 600, 600, true);
 		add_image_size('avik_single', 750, 450, true);
+		add_image_size('avik_brand', 115, 100, true);
+		add_image_size('avik_services', 80, 80, true);
 		// create custom menus
 		register_nav_menus( array(
 			'menu-1' => esc_html__('Primary (Home)', 'avik'),
@@ -79,6 +81,12 @@ if ( ! function_exists( 'avik_setup' ) ) :
 			'gallery',
 			'caption',
 		) );
+
+		// add support for Video
+		add_theme_support( 'custom-header', array(
+			'video' => true,
+			'video-active-callback' => true,
+		   ) );
 
 		// Set up the WordPress core custom background feature.
 		add_theme_support( 'custom-background', apply_filters( 'avik_custom_background_args', array(
@@ -127,7 +135,7 @@ if(! function_exists('avik_widget_contact_form') ) {
   
 add_action('widgets_init','avik_widget_contact_form');
 
-/* 4 Register Area Widget Contact Form Services
+/* 3 B Register Area Widget Contact Form Services
 -------------------------------------------------------- */
 
 if(! function_exists('avik_widget_contact_form_services') ) {
@@ -388,21 +396,21 @@ function avik_mce_before_init_insert_formats( $init_array ) {
 $style_formats = array(  
 
 			array(  
-				'title' => 'Avik Success',  
+				'title' => __('Avik Success', 'avik'),
 				'block' => 'blockquote',  
 				'classes' => 'alert alert-success alert-link',
 				'wrapper' => true,
 			),
 
 			array(  
-				'title' => 'Avik Quote',  
+				'title' => __('Avik Quote', 'avik'), 
 				'block' => 'blockquote',  
 				'classes' => 'alert alert-secondary alert-link',
 				'wrapper' => true,
 			),
 
 			array(  
-				'title' => 'Avik Danger',  
+				'title' => __('Avik Danger','avik'),  
 				'block' => 'blockquote',  
 				'classes' => 'alert alert-danger alert-link',
 				'wrapper' => true,
@@ -410,26 +418,26 @@ $style_formats = array(
 
 			
 			array(  
-				'title' => 'Avik Warning',  
+				'title' => __('Avik Warning','avik'),  
 				'block' => 'blockquote',  
 				'classes' => 'alert alert-warning alert-link',
 				'wrapper' => true,
 			),
 
 			array(  
-				'title' => 'Avik Info',  
+				'title' => __('Avik Info','avik'), 
 				'block' => 'blockquote',  
 				'classes' => 'alert alert-info alert-link',
 				'wrapper' => true,
 			),
 
 			array(  
-				'title' => 'Avik Button',  
-				'block' => 'a',  
+				'title' => __('Avik Button','avik'), 
+				'block' => 'span',  
 				'classes' => 'avik-button-editor',
-				'wrapper' => false,
+				'wrapper' => true,
 			),  
-			
+		
 			
 		);  
 		
@@ -459,17 +467,7 @@ add_action( 'wp_enqueue_scripts', 'avik_carousel_scripts' );
 
 add_image_size( 'carousel-pic', 480, 320, true ); 
 
-
-
-
-
-
-
-
-
-
-
-/* 13 Avik Support Page
+/* 12 Avik Support Page
 ------------------------------------------------------------*/
 
 add_action('admin_menu', 'avik_page_create');
@@ -492,7 +490,7 @@ function avik_load_admin_style() {
     wp_enqueue_style( 'wp-bootstrap-avik-font-awesome-admin', get_template_directory_uri() . '/css/fontawesome-all.css' );		
 }
 
-/* 14 Lightbox popup image
+/* 13 Lightbox popup image
 -------------------------------------------------------- */
 
 function avik_register_lightbox() {
@@ -515,7 +513,7 @@ function avik_addtaglightbox ($content){
     return $content;
 }
 
-/* 15 Lenght excerpt
+/* 14 Lenght excerpt
 -------------------------------------------------------- */
 
 function avik_wpdocs_custom_excerpt_length( $length ) {
@@ -530,7 +528,7 @@ function avik_custom_excerpt_more( $more ) { return '...';
 } add_filter( 'excerpt_more', 'avik_custom_excerpt_more' ); 
 
    
-/* 16 Include javascript files
+/* 15 Include javascript files
 ------------------------------------------------------------*/
 
 function avik_scripts() {
@@ -547,7 +545,8 @@ function avik_scripts() {
     // AOS Animate
     wp_enqueue_script('avik-aos-js',get_template_directory_uri() . '/js/aos.js', array(), '2.0.0', false );
     // Carousel Brands
-    wp_enqueue_script('avik-carousel-brands-js', get_template_directory_uri() . '/js/carousel.js', array(), '1.6.0', true );
+	wp_enqueue_script('avik-carousel-brands-js', get_template_directory_uri() . '/js/carousel.js', array(), '1.6.0', true );
+	
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ){
 		wp_enqueue_script( 'comment-reply' );
@@ -557,7 +556,7 @@ function avik_scripts() {
 add_action( 'wp_enqueue_scripts', 'avik_scripts' );
 
 
-/* 17 Include css files
+/* 16 Include css files
 -------------------------------------------------------- */
 
 if(! function_exists('avik_styles') ) {
@@ -581,7 +580,7 @@ if(! function_exists('avik_styles') ) {
 
 add_action('wp_enqueue_scripts', 'avik_styles');
 
-/* 18 Include script and styles for class add Panel
+/* 17 Include script and styles for class add Panel
 ------------------------------------------------------------*/
 
 function avik_pe_customize_controls_scripts() {
@@ -607,7 +606,7 @@ $wp_customize->register_section_type( 'Avik_WP_Customize_Section' );
 
     add_action( 'customize_register', 'avik_pe_customize_register' );
 
-/* 19 Add additional templates
+/* 18 Add additional templates
 -------------------------------------------------------- */
 
 // Custom template tags for this theme
@@ -642,7 +641,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 
-/* 20 Google Fonts URL function
+/* 19 Google Fonts URL function
 -------------------------------------------------------- */
 
 
@@ -670,7 +669,7 @@ if ( ! function_exists( 'avik_fonts_url' ) ){
 }
 
 
-/* 21 Include Plugin
+/* 20 Include Plugin
 -------------------------------------------------------- */
 
 
@@ -697,7 +696,14 @@ function avik_register_required_plugins() {
 
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
-			'name'      => 'Featured Video Plus',
+			'name'      => 'Multiple Post Thumbnails',
+			'slug'      => 'multiple-post-thumbnails',
+			'required'  => false,
+		),
+
+		// This is an example of how to include a plugin from the WordPress Plugin Repository.
+		array(
+			'name'      => 'Featured Video Plus', 
 			'slug'      => 'featured-video-plus',
 			'required'  => false,
 		),
@@ -794,28 +800,53 @@ function avik_register_required_plugins() {
 }
 
 
-/* 22 Clean attribute script and style
+$header_info = array(
+    'width'         => 1400,
+	'height'        => 750,
+	'flex-width'    => true,
+    'flex-height'   => true,
+    'default-image' => get_template_directory_uri() . '/img/static.jpg',
+);
+add_theme_support( 'custom-header', $header_info );
+ 
+$header_images = array(
+    'city' => array(
+            'url'           => get_template_directory_uri() . '/img/static.jpg',
+            'thumbnail_url' => get_template_directory_uri() . '/img/static_thumbnail.jpg',
+            'description'   => 'City',
+    ),
+    'man' => array(
+            'url'           => get_template_directory_uri() . '/img/static_2.jpg',
+            'thumbnail_url' => get_template_directory_uri() . '/img/static_2_thumbnail.jpg',
+            'description'   => 'Man',
+    ),  
+);
+register_default_headers( $header_images );
+
+
+/* 21 Multipost Thumbnails Plugin
 -------------------------------------------------------- */
 
-add_filter('style_loader_tag', 'avik_myplugin_remove_type_attr', 10, 2);
-add_filter('script_loader_tag', 'avik_myplugin_remove_type_attr', 10, 2);
+   if ( class_exists( 'MultiPostThumbnails' )) {
+    new MultiPostThumbnails(
+        array(
+            'label' => __( 'Featured Image 2','avik' ),
+            'id' => 'thumbnail-two-post',
+            'post_type' => 'post'
+        )
+    );
+}
 
-function avik_myplugin_remove_type_attr($tag, $handle) {
-    return preg_replace( "/type=['\"]text\/(javascript|css)['\"]/", '', $tag );
+if ( class_exists( 'MultiPostThumbnails' )) {
+    new MultiPostThumbnails(
+        array(
+            'label' => __( 'Featured Image 2 Page','avik' ),
+            'id' => 'thumbnail-two-page',
+            'post_type' => 'page'
+        )
+    );
 }
 
 
 
-/* 23 Remove script version
--------------------------------------------------------- */
 
-if ( false == esc_attr( get_theme_mod( 'avik_enable_remove_script', false ) )) : 
-
-function avik_remove_script_version( $src ){
-	$parts = explode( '?ver', $src );
-        return $parts[0];
-}
-add_filter( 'script_loader_src', 'avik_remove_script_version', 15, 1 );
-add_filter( 'style_loader_src', 'avik_remove_script_version', 15, 1 );
-
-endif; 

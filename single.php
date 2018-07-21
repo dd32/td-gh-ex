@@ -2,9 +2,9 @@
 /**
  * single.php
  *
- * @author    Denis Franchi
+ * @author    Denis Franchi 
  * @package   Avik
- * @version   1.1.0
+ * @version   1.1.1
  */
 
  if(is_single()) { get_header('post'); } else { get_header(); }  

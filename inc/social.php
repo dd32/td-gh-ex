@@ -4,22 +4,22 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.0
+ * @version   1.1.1
  */
 ?>
 
     <!-- Facebook -->
-    <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_facebook_social', false) )) :?>
-    <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_facebook_social' ,'#'));?>">
+	<?php if ( false == esc_attr( get_theme_mod( 'avik_enable_facebook_social', true) )):?>
+    <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_facebook_social','#' ));?>">	
 	<i class="fab fa-facebook"></i></a></li>
     <?php endif; ?>
     <!-- Twitter -->
-    <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_twitter_social', false) )):?>
+    <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_twitter_social', true) )):?>
 	<li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_twitter_social','#' ));?>">
 	<i class="fab fa-twitter"></i></a></li>
 	<?php endif; ?>
     <!-- Google Plus-->
-	<?php if ( false == esc_attr( get_theme_mod( 'avik_enable_google_plus_social', false) )) : ?>
+	<?php if ( false == esc_attr( get_theme_mod( 'avik_enable_google_plus_social', true) )) : ?>
 	<li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_google_plus_social','#' )); ?>">
 	<i class="fab fa-google-plus-g"></i></a></li>
 	<?php endif; ?>
@@ -34,12 +34,12 @@
 	<i class="fab fa-tumblr"></i></a></li>
 	<?php endif; ?>
     <!-- Instagram -->
-	<?php if ( false == esc_attr( get_theme_mod( 'avik_enable_instagram_social', false ) )) : ?>
+	<?php if ( false == esc_attr( get_theme_mod( 'avik_enable_instagram_social', true ) )) : ?>
 	<li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_instagram_social','#' )); ?>">
 	<i class="fab fa-instagram"></i></a></li>
     <?php endif; ?>
     <!-- Linkedin -->
-	<?php if ( false == esc_attr( get_theme_mod( 'avik_enable_avik_linkedin_social', false ) )) : ?>
+	<?php if ( false == esc_attr( get_theme_mod( 'avik_enable_avik_linkedin_social', true ) )) : ?>
 	<li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_avik_linkedin_social','#' )); ?>">
 	<i class="fab fa-avik_linkedin"></i></a></li>
 	<?php endif; ?>

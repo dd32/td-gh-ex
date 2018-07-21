@@ -4,20 +4,14 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.0
+ * @version   1.1.1
  */
  ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
      <?php the_post_thumbnail( 'avik_single', array( 'class' => 'img-fluid mb-4', 'alt' => get_the_title() ))?>
-     <div class="title-page mt-5">
-        <?php the_title( '<h1>', '</h1>' ); ?>
-     </div>
-      <div class="info-post">
-        <ul class="info-ul-blog">
-           <li><i class="far fa-calendar"></i><?php echo get_the_date (); ?></li>
-        </ul>
-      </div>	
+     <div class="title-page mt-5">   
+     </div>  	
 	    <div class="entry-content">
 		   <?php
 		    the_content();

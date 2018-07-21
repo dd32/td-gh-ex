@@ -4,32 +4,31 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.0
- */
+ * @version   1.1.1
+ */ 
 ?>
 <div class="container brands">
     <div class="title-brands text-center">
-  <h3><?php echo esc_html( get_theme_mod( 'avik_title_partner_whoweare','Our  Partners')); ?></h3>
-  <h4><?php echo esc_html( get_theme_mod( 'avik_subtitle_partner_whoweare','AWARDS & COMMENDATIONS & BRANDS')); ?></h4>
-</div>
-   <div class="avik-brands slider">
-      <div class="slide"><img src="<?php echo esc_url( get_theme_mod('avik_image_partner_1_whoweare', get_stylesheet_directory_uri(). '/img/brands-1.jpg')); ?>" 
-             alt="<?php echo esc_attr( get_theme_mod('avik_alt_image_partner_1_whoweare','Brands 1')); ?>"></div>
-      <div class="slide"><img src="<?php echo esc_url( get_theme_mod('avik_image_partner_2_whoweare', get_stylesheet_directory_uri(). '/img/brands-2.jpg')); ?>" 
-             alt="<?php echo esc_attr( get_theme_mod('avik_alt_image_partner_2_whoweare','Brands 2')); ?>"></div>
-      <div class="slide"><img src="<?php echo esc_url( get_theme_mod('avik_image_partner_3_whoweare', get_stylesheet_directory_uri(). '/img/brands-3.jpg')); ?>" 
-             alt="<?php echo esc_attr( get_theme_mod('avik_alt_image_partner_3_whoweare','Brands 3')); ?>"></div>
-      <div class="slide"><img src="<?php echo esc_url( get_theme_mod('avik_image_partner_4_whoweare', get_stylesheet_directory_uri(). '/img/brands-4.jpg')); ?>" 
-             alt="<?php echo esc_attr( get_theme_mod('avik_alt_image_partner_4_whoweare','Brands 4')); ?>"></div>
-      <div class="slide"><img src="<?php echo esc_url( get_theme_mod('avik_image_partner_5_whoweare', get_stylesheet_directory_uri(). '/img/brands-5.jpg')); ?>" 
-             alt="<?php echo esc_attr( get_theme_mod('avik_alt_image_partner_5_whoweare','Brands 5')); ?>"></div>
-      <div class="slide"><img src="<?php echo esc_url( get_theme_mod('avik_image_partner_6_whoweare', get_stylesheet_directory_uri(). '/img/brands-6.jpg')); ?>" 
-             alt="<?php echo esc_attr( get_theme_mod('avik_alt_image_partner_6_whoweare','Brands 6')); ?>"></div>
-      <div class="slide"><img src="<?php echo esc_url( get_theme_mod('avik_image_partner_7_whoweare', get_stylesheet_directory_uri(). '/img/brands-7.jpg')); ?>" 
-             alt="<?php echo esc_attr( get_theme_mod('avik_alt_image_partner_7_whoweare','Brands 7')); ?>"></div>
-      <div class="slide"><img src="<?php echo esc_url( get_theme_mod('avik_image_partner_8_whoweare', get_stylesheet_directory_uri(). '/img/brands-8.jpg')); ?>" 
-             alt="<?php echo esc_attr( get_theme_mod('avik_alt_image_partner_8_whoweare','Brands 8')); ?>"></div>
-   </div>
+      <h3><?php echo esc_html( get_theme_mod( 'avik_title_partner_whoweare','Our  Partners')); ?></h3>
+      <h4><?php echo esc_html( get_theme_mod( 'avik_subtitle_partner_whoweare','AWARDS & COMMENDATIONS & BRANDS')); ?></h4>
+    </div>
+    <div class="avik-brands slider">
+      <?php
+	      $brands_cat = esc_attr( get_theme_mod('avik_brands_category'));
+	      $brands_count =8;
+	      $new_query = new WP_Query( array( 'cat' => $brands_cat  , 'showposts' => $brands_count ));
+	      while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+        <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_brand');?>
+        <div class="slide">
+            <a href="<?php the_permalink();?>">
+                <img src="<?php if ( $avik_image_attributes[0] ) : 
+                    echo esc_attr($avik_image_attributes[0]); else: echo get_template_directory_uri().'/images/avik-default.jpg'; endif; ?>">
+            </a>
+        </div>   
+          <?php endwhile; 
+          wp_reset_query();
+          wp_reset_postdata(); ?>
+    </div>
 </div>
 
   

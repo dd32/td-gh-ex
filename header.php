@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.0
+ * @version   1.1.1
  */
 
 ?>
@@ -24,18 +24,12 @@
    </div>
    <div id="page" class="site">	
      <header>
-	   <!-- General Logo-->
-     <!-- Logo 2 -->
-     <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_logo_2', false ) )) : ?>
-     <div class="avik-custom-logo-header avik-logo <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_rotate_logo', false ) )) : ?> rotate <?php endif; ?>">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-          <img src="<?php echo esc_url( get_theme_mod( 'avik_logo_2', get_stylesheet_directory_uri(). '/img/logo-avik-bianco.png' )); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name','dispaly' ) ); ?>" class="avik-custom-logo-header">
-        </a>
+     <!-- Logo -->
+     <div class="avik-custom-logo-header avik-logo <?php if ( false == get_theme_mod( 'avik_enable_rotate_logo', true) ) : ?> rotate <?php endif; ?>">
+     <?php the_custom_logo();?>
      </div>
-     <?php endif; ?>
      <nav class="navbar navbar-expand-lg avik-nav-front-page hide-menu fixed-top"> 
-        <div class="avik-logo <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_rotate_logo', false ) )) : ?> rotate <?php endif; ?>">
-			       <!-- Logo 1-->
+        <div class="avik-logo <?php if ( false == get_theme_mod( 'avik_enable_rotate_logo', true ) ) : ?> rotate <?php endif; ?>">
 			       <div class="avik-custom-logo-body">
 		           <?php the_custom_logo();?>
 					   </div>
@@ -46,7 +40,7 @@
 			       <?php endif;
 			           $avik_description = get_bloginfo( 'description', 'display' );
 			       if ($avik_description || is_customize_preview() ) : ?>
-				     <p class="site-description"><?php echo $avik_description; /* WPCS: xss ok. */ ?></p>
+				     <p class="site-description"><?php echo esc_html($avik_description); ?></p>
 			       <?php endif; ?>		
            </div>	
 		       <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#bs4navbar" aria-controls="bs4navbar" aria-expanded="false" aria-label="Toggle navigation">

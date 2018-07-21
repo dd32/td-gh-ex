@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.0
+ * @version   1.1.1
  */
 ?>
 
@@ -41,7 +41,7 @@
           <!--Pinterest-->
           <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_pinterest_share', false) )) :?>
           <li class="pinterest"><?php $pinterestimage = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),'full' );?>
-		      <a class="popup" href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $pinterestimage[0];?>">
+		      <a class="popup" href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo esc_attr($pinterestimage[0]);?>">
 		         <i class="fab fa-pinterest-p"></i>
 		      </a></li>
           <?php endif; ?>

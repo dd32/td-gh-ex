@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.0
+ * @version   1.1.1
  */
 
 class Avik_Color_Scheme {
@@ -52,19 +52,18 @@ class Avik_Color_Scheme {
 			'background_price_color'          => __( 'Quotation background color', 'avik' ),
 			'background_footer_color'         => __( 'Footer background color', 'avik' ),
 			'text_footer_color'               => __( 'Text Footer color', 'avik' ),
-			'background_scroll_to_top_color'  => __( 'Scroll to top background color', 'avik' ),
-			'scroll_to_top_color'             => __( 'Scroll to top color', 'avik' ),
-			'hover_scroll_to_top_color'       => __( 'Hover Scroll to top color', 'avik' ),
+			'background_scroll_to_top_color'  => __( 'Back to top background color', 'avik' ),
+			'scroll_to_top_color'             => __( 'Back to top color', 'avik' ),
+			'hover_scroll_to_top_color'       => __( 'Hover Back to top color', 'avik' ),
 			'hover_social_slider_footer_color'=> __( 'Hover Social slider and footer color', 'avik' ),
 			'social_contact_color'            => __( 'Social contact color', 'avik' ),
 			'hover_social_contact_color'      => __( 'Hover Social contact color', 'avik' ),
-			'social_team_color'               => __( 'Social team color', 'avik' ),
+			'social_team_color'               => __( 'Social Team color', 'avik' ),
 			'social_share_color'              => __( 'Social share color', 'avik' ),
 			'hover_social_share_color'        => __( 'Hover Social share color', 'avik' ),
 			'background_breadcrumbs_color'    => __( 'Background breadcrumbs color', 'avik' ),
 			'background_preloader_color'      => __( 'Background preloader color', 'avik' ),
 			'preloader_color'                 => __( 'Preloader color', 'avik' ),
-			'background_body_color'           => __( 'Background body color', 'avik' ),
 			
 			
 		);
@@ -110,7 +109,6 @@ class Avik_Color_Scheme {
 		'background_breadcrumbs_color',
 		'background_preloader_color',      
 		'preloader_color',
-		'background_body_color',
 		              
 		
 	);
@@ -300,7 +298,6 @@ class Avik_Color_Scheme {
 			'background_breadcrumbs_color'     => '{{ data.background_breadcrumbs_color}}',
 			'background_preloader_color'       => '{{ data.background_preloader_color}}',
 			'preloader_color'                  => '{{ data.preloader_color}}',
-			'background_body_color'            => '{{ data.background_body_color}}',
 			
 			
 	    );
