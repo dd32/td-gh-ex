@@ -1,39 +1,48 @@
 <?php
 /**
- * The template for displaying all pages.
+ * The template for displaying all pages
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site may use a
  * different template.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package BeautyTemple
+ * @package beautytemple
  */
 
-get_header(); ?>
+get_header();
+$object_id = get_queried_object_id();
+?>
+    <section class="page-heading">
+        <div class="container page-heading__inner">
+            <h1><?php echo get_the_title($object_id);?></h1>
+        </div>
+    </section>
 
-<div id="content" class="site-content row">
-	<div id="primary" class="content-area eight columns">
-		<main id="main" class="site-main" role="main">
+    <section class="main-wrapper">
+        <div class="container main-wrapper__inner">
+            <section class="page-wrapper">
 
-			<?php
-			while ( have_posts() ) : the_post();
+                <?php
+                while ( have_posts() ) :
+                    the_post();
 
-				get_template_part( 'template-parts/content', 'page' );
+                    get_template_part( 'template-parts/content', 'page' );
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
 
-			endwhile; // End of the loop.
-			?>
+                endwhile; // End of the loop.
+                ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+            </section>
 
+           <?php get_sidebar(); ?>
+        </div>
+    </section>
 <?php
-get_sidebar();
+// If comments are open or we have at least one comment, load up the comment template.
+if ( comments_open() || get_comments_number() ) :
+	comments_template();
+endif;
 get_footer();

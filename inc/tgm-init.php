@@ -10,7 +10,7 @@
  *
  * @package    TGM-Plugin-Activation
  * @subpackage Example
- * @version    2.6.1 for parent theme Beautytemple for publication on WordPress.org
+ * @version    2.6.1 for parent theme BeautyTemple for publication on WordPress.org
  * @author     Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright  Copyright (c) 2011, Thomas Griffin
  * @license    http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
@@ -23,17 +23,17 @@
  * Depending on your implementation, you may want to change the include call:
  *
  * Parent Theme:
- * require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+ * require_once get_template_directory() . '/path/to/class-tgm-plugin-activation.php';
  *
  * Child Theme:
- * require_once get_stylesheet_directory() . '/inc/class-tgm-plugin-activation.php';
+ * require_once get_stylesheet_directory() . '/path/to/class-tgm-plugin-activation.php';
  *
  * Plugin:
- * require_once dirname( __FILE__ ) . '/inc/class-tgm-plugin-activation.php';
+ * require_once dirname( __FILE__ ) . '/path/to/class-tgm-plugin-activation.php';
  */
 require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'beautytemple_register_required_plugins' );
+add_action( 'tgmpa_register', 'BeautyTemple_register_required_plugins' );
 
 /**
  * Register the required plugins for this theme.
@@ -52,24 +52,22 @@ add_action( 'tgmpa_register', 'beautytemple_register_required_plugins' );
  *
  * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
  */
-function beautytemple_register_required_plugins() {
+function BeautyTemple_register_required_plugins() {
 	/*
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	$plugins = array(
-
 		array(
-			'name'      => 'MailChimp for WordPress',
-			'slug'      => 'mailchimp-for-wp',
-			'required'  => false,
+			'name'      => 'Kirki',
+			'slug'      => 'kirki',
+			'required'  => true,
 		),
 		array(
 			'name'      => 'Lazy Load by SWL',
 			'slug'      => 'lazy-load-by-swl',
 			'required'  => false,
 		),
-
 	);
 
 	/*

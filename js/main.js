@@ -1,23 +1,42 @@
-// Gumby is ready to go
-Gumby.ready(function() {
-	Gumby.log('Gumby is ready to go...', Gumby.dump());
+// Avoid `console` errors in browsers that lack a console.
+(function() {
+    var method;
+    var noop = function () {};
+    var methods = [
+        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+        'timeline', 'timelineEnd', 'timeStamp', 'trace', 'warn'
+    ];
+    var length = methods.length;
+    var console = (window.console = window.console || {});
 
-	// placeholder polyfil
-	if(Gumby.isOldie || Gumby.$dom.find('html').hasClass('ie9')) {
-		$('input, textarea').placeholder();
-	}
+    while (length--) {
+        method = methods[length];
 
-	// skip link and toggle on one element
-	// when the skip link completes, trigger the switch
-	//$('#skip-switch').on('gumby.onComplete', function() {
-	//	$(this).trigger('gumby.trigger');
-	//});
+        // Only stub undefined methods.
+        if (!console[method]) {
+            console[method] = noop;
+        }
+    }
+}());
 
-// Oldie document loaded
-}).oldie(function() {
-	Gumby.warn("This is an oldie browser...");
+// Place any jQuery/helper plugins in here.
 
-// Touch devices loaded
-}).touch(function() {
-	Gumby.log("This is a touch enabled device...");
+jQuery(document).ready(function($){
+
+    $('.main-nav__toogle').click(function(){
+        $('.main-nav__toogle').toggleClass('active');
+        $('.side-nav').toggleClass('active');
+        $('.content-overlay').toggleClass('active');
+        $('.menu-item-has-children.active').toggleClass('active');
+
+    });
+
+    $('.menu-item-has-children a').click(function(event){
+        event.preventDefault();
+        var activeChild = $(this).parent('.menu-item-has-children').find('.active');
+        $(activeChild).toggleClass('active');
+        $(this).parent().toggleClass('active');
+    });
 });

@@ -1,48 +1,57 @@
 <?php
 /**
- * The template for displaying search results pages.
+ * The template for displaying search results pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package BeautyTemple
+ * @package beautytemple
  */
 
-get_header(); ?>
-<div id="content" class="site-content row">
-	<section id="primary" class="content-area eight columns">
-		<main id="main" class="site-main" role="main">
-
-		<?php
-		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'beautytemple' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
-
+get_header();
+?>
+    <section class="page-heading">
+        <div class="container page-heading__inner">
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			/* translators: %s: search query. */
+			printf( __( '<span class="page-meta">Search Results for:</span> %s', 'beautytemple' ), '<h1>&laquo;' . get_search_query() . '&raquo;</h1>' );
+			?>
+        </div>
+    </section>
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+    <section class="main-wrapper">
+        <div class="container main-wrapper__inner">
+            <section class="blog-posts search-page">
 
-			endwhile;
 
-			the_posts_navigation();
+				<?php if ( have_posts() ) : ?>
+					<?php
+					/* Start the Loop */
+					while ( have_posts() ) :
+						the_post();
 
-		else :
+						/**
+						 * Run the loop for the search to output the results.
+						 * If you want to overload this in a child theme then include a file
+						 * called content-search.php and that will be used instead.
+						 */
+						get_template_part( 'template-parts/content', 'search' );
 
-			get_template_part( 'template-parts/content', 'none' );
+					endwhile;
 
-		endif; ?>
+					the_posts_navigation();
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+				else :
+
+					get_template_part( 'template-parts/content', 'none' );
+
+				endif;
+				?>
+
+            </section>
+			<?php get_sidebar(); ?>
+        </div>
+    </section>
 
 <?php
-get_sidebar();
+
 get_footer();

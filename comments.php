@@ -1,13 +1,13 @@
 <?php
 /**
- * The template for displaying comments.
+ * The template for displaying comments
  *
  * This is the template that displays the area of the page that contains both the current comments
  * and the comment form.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package BeautyTemple
+ * @package beautytemple
  */
 
 /*
@@ -19,68 +19,111 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
+<section id="comments" class="comment-area">
+    <div class="container">
+        <div class="comment-area__inner">
+            <?php
+            // You can start editing here -- including this comment!
+            if ( have_comments() ) :
+                ?>
+                <h2 class="comments-title">
+                    <?php
+                    $beautytemple_comment_count = get_comments_number();
+                    if ( '1' === $beautytemple_comment_count ) {
 
-<div id="comments" class="comments-area">
+                            esc_html__( 'One comment', 'beautytemple' );
 
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) : ?>
-		<h4 class="comments-title">
-			<?php
-				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'beautytemple' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			?>
-		</h4>
+                    } else {
+                        printf( // WPCS: XSS OK.
+                            /* translators: 1: comment count number, 2: title. */
+                            esc_html( _nx( '%1$s comment', '%1$s comments', $beautytemple_comment_count, 'comments title', 'beautytemple' ) ),
+                            number_format_i18n( $beautytemple_comment_count )
+                        );
+                    }
+                    ?>
+                </h2><!-- .comments-title -->
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h5 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'beautytemple' ); ?></h5>
-			<div class="nav-links">
+                <?php the_comments_navigation(); ?>
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'beautytemple' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'beautytemple' ) ); ?></div>
+                <ul class="comment-list">
+                    <?php
+                    wp_list_comments( array(
+	                    'callback'          => 'beautytemple_comment',
+	                    'end-callback'      => '</div>',
+                        'style'      => 'ul',
+	                    'avatar_size'       => 82,
+	                    'short_ping' => true,
+                    ) );
+                    ?>
+                </ul><!-- .comment-list -->
 
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
+                <?php
+                the_comments_navigation();
 
-		<ul class="comment-list">
-			<?php
-				wp_list_comments( array(
-					'style'      => 'ul',
-					'avatar_size' => 64,
-					'short_ping' => true,
-				) );
-			?>
-		</ol><!-- .comment-list -->
+                // If comments are closed and there are comments, let's leave a little note, shall we?
+                if ( ! comments_open() ) :
+                    ?>
+                    <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'beautytemple' ); ?></p>
+                    <?php
+                endif;
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h5 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'beautytemple' ); ?></h5>
-			<div class="nav-links">
+            endif; // Check for have_comments().
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'beautytemple' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'beautytemple' ) ); ?></div>
+            $fields =  array(
 
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-below -->
-		<?php
-		endif; // Check for comment navigation.
+	            'author' =>
 
-	endif; // Check for have_comments().
+		            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+		            '" size="30"' . $aria_req . ' placeholder="' . esc_html__( 'Name', 'beautytemple' ) . '"/>',
+
+	            'email' =>
+		            '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+		            '" size="30"' . $aria_req . ' placeholder="' . esc_html__( 'Email', 'beautytemple' ) . '"/>',
+
+	            'url' =>
+		            '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
+		            '" size="30" placeholder="' . esc_html__( 'Website', 'beautytemple' ) . '" />',
+            );
+            $args = array(
+	            'id_form'           => 'commentform',
+	            'class_form'      => 'comment-form',
+	            'id_submit'         => 'submit',
+	            'class_submit'      => 'submit',
+	            'name_submit'       => 'submit',
+	            'title_reply'       => esc_html__( 'Leave a Reply', 'beautytemple' ),
+	            'title_reply_to'    => esc_html__( 'Leave a Reply to %s', 'beautytemple' ),
+	            'cancel_reply_link' => esc_html__( 'Cancel Reply', 'beautytemple' ),
+	            'label_submit'      => esc_html__( 'Post Comment', 'beautytemple' ),
+	            'format'            => 'xhtml',
 
 
-	// If comments are closed and there are comments, let's leave a little note, shall we?
-	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+	            'fields' => apply_filters( 'comment_form_default_fields', $fields ),
 
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'beautytemple' ); ?></p>
-	<?php
-	endif;
+	            'comment_field' =>  '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="' . esc_html__( 'Comment', 'beautytemple' ) . '"></textarea>',
 
-	comment_form();
-	?>
+	            'must_log_in' => '<div class="must-log-in">' .
+	                             sprintf(
+		                             __( 'You must be <a href="%s">logged in</a> to post a comment.', 'beautytemple' ),
+		                             wp_login_url( apply_filters( 'the_permalink', get_permalink() ) )
+	                             ) . '</div>',
 
-</div><!-- #comments -->
+	            'logged_in_as' => '<div class="logged-in-as">' .
+	                              sprintf(
+		                              __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'beautytemple'  ),
+		                              admin_url( 'profile.php' ),
+		                              $user_identity,
+		                              wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
+	                              ) . '</div>',
+
+	            'comment_notes_before' => null,
+
+	            'comment_notes_after' => null,
+
+
+            );
+
+            comment_form($args);
+            ?>
+        </div>
+    </div>
+</section><!-- #comments -->

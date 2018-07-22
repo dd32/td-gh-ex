@@ -1,36 +1,41 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The template for displaying all single posts
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package BeautyTemple
+ * @package beautytemple
  */
 
-get_header(); ?>
+get_header();
+?>
 
-<div id="content" class="site-content row">
-	<div id="primary" class="content-area eight columns">
-		<main id="main" class="site-main" role="main">
 
-		<?php
-		while ( have_posts() ) : the_post();
+    <section class="main-wrapper">
+        <div class="container main-wrapper__inner">
+            <section class="post-wrapper">
 
-			get_template_part( 'template-parts/content', get_post_format() );
+                    <?php
+                    while ( have_posts() ) :
+                        the_post();
 
-			the_post_navigation();
+                        get_template_part( 'template-parts/content-single', get_post_type() );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+                        the_post_navigation();
 
-		endwhile; // End of the loop.
-		?>
+                    endwhile; // End of the loop.
+                    ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+            </section>
+
+            <?php get_sidebar(); ?>
+        </div>
+    </section>
 
 <?php
-get_sidebar();
+// If comments are open or we have at least one comment, load up the comment template.
+if ( comments_open() || get_comments_number() ) :
+	comments_template();
+endif;
+
 get_footer();
