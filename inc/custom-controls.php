@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.1
+ * @version   1.2.0
 */
 
 /* TABLE OF CONTENT
@@ -114,8 +114,8 @@ if (class_exists('WP_Customize_Control')) {
             $dropdown = str_replace( '<select', '<select ' . $this->get_link(), $dropdown );
             printf(
                 '<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
-                $this->label,
-                $dropdown
+                esc_attr($this)->label,
+                esc_attr($dropdown)
             );
         }
     }
@@ -226,7 +226,7 @@ class Avik_Google_Font_Dropdown_Custom_Control extends WP_Customize_Control{
             	<select id="<?php echo esc_attr($this->id); ?>" name="<?php echo esc_attr($this->id); ?>" data-customize-setting-link="<?php echo esc_attr($this->id); ?>">
                     <?php
                         foreach ( $this->fonts as $k => $v ){
-                            echo '<option value="'.$v['family'].'" ' . selected( $this->value(), $v['family'], false ) . '>'.$v['family'].'</option>';
+                            echo esc_attr('<option value="'.$v['family'].'" ' . selected( $this->value(), $v['family'], false ) . '>'.$v['family'].'</option>');
                         }
                     ?>
                 </select>
@@ -290,13 +290,13 @@ class Avik_Google_Font_Dropdown_Custom_Control extends WP_Customize_Control{
 				<label>
 					<?php 
 					if ( isset( $this->label ) && '' !== $this->label ) {
-						echo '<span class="customize-control-title">' . sanitize_text_field( $this->label ) . '</span>';
+						echo esc_attr('<span class="customize-control-title">' . sanitize_text_field( $this->label ) . '</span>');
 					}
 					if ( isset( $this->description ) && '' !== $this->description ) {
-						echo '<span class="description customize-control-description">' . sanitize_text_field( $this->description ) . '</span>';
+						echo esc_attr('<span class="description customize-control-description">' . sanitize_text_field( $this->description ) . '</span>');
 					} ?>
 				</label>
-				<input class="alpha-color-control" type="text" data-show-opacity="<?php echo $show_opacity; ?>" data-palette="<?php echo esc_attr( $palette ); ?>" data-default-color="<?php echo esc_attr( $this->settings['default']->default ); ?>" <?php $this->link(); ?>  />
+				<input class="alpha-color-control" type="text" data-show-opacity="<?php echo esc_attr($show_opacity); ?>" data-palette="<?php echo esc_attr( $palette ); ?>" data-default-color="<?php echo esc_attr( $this->settings['default']->default ); ?>" <?php $this->link(); ?>  />
 			<?php
 	}
 }

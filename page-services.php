@@ -7,7 +7,8 @@ Template Post Type: post, page, product
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.1
+ * @version   1.2.0
+ * 
  */
 
 if(is_single()) { get_header('post'); } else { get_header(); } ?>
@@ -47,7 +48,7 @@ if(is_single()) { get_header('post'); } else { get_header(); } ?>
                 <li class="tab__development tabs__list-item tabs__list-item--fourth animated wow fadeInUp tab-fadeup">                   
                  <div class="tab__development-img" data-aos="fade-left" data-aos-duration="2000">
                  <img class="img-avic-services-default" src="<?php if ( $avik_image_attributes[0] ) : 
-                           echo  esc_attr($avik_image_attributes[0]); else: echo get_template_directory_uri().'/images/avik-default.jpg'; endif; ?>">
+                           echo  esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>">
                  </div>                         
                   <h2 class="tab__development-title one"><?php the_title();?></h2>                       
                   <a href="<?php the_permalink();?>" class="btn btn-avik" role="button" aria-pressed="true" data-aos="zoom-in" data-aos-duration="2000"><?php esc_html_e('Read more...','avik'); ?></a>
@@ -77,7 +78,7 @@ if(is_single()) { get_header('post'); } else { get_header(); } ?>
                   <a href="<?php the_permalink();?>">
                      <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>                    
                          <img src="<?php if ( $avik_image_attributes[0] ) : 
-                           echo  esc_attr($avik_image_attributes[0]); else: echo get_template_directory_uri().'/images/avik-default.jpg'; endif; ?>">
+                           echo  esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>">
                   </a>              
                 </div>
 				         <?php endwhile; 

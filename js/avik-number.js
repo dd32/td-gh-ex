@@ -1,3 +1,11 @@
+/**
+ * avik-number.js
+ *
+ * author    Denis Franchi
+ * package   Avik
+ * version   1.2.0
+ */
+
 var a = 0;
 $(window).scroll(function() {
 

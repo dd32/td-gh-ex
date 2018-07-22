@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.1
+ * @version   1.2.0
  */
 
 if(is_archive()) { get_header('post'); } else { get_header(); } 
@@ -31,7 +31,7 @@ avik_the_breadcrumb_archive(); ?>
 			 <div class="avik-pagination-nav text-center">
 			  <?php global $wp_query; $big = 999999999; 
 			     // need an unlikely integer
-			     echo paginate_links( array(
+			     echo esc_attr(paginate_links( array(
 				 'base'               => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 				 'format'             => '?paged=%#%',
 				 'total'              => $wp_query->max_num_pages,
@@ -46,7 +46,7 @@ avik_the_breadcrumb_archive(); ?>
 				 'add_args'           => false,
 				 'add_fragment'       => '',
 				 'before_page_number' => '',
-				 'after_page_number'  => '') );
+				 'after_page_number'  => '') ));
               ?>
 			 </div> 
 		     <?php else :

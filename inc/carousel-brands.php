@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.1
+ * @version   1.2.0
  */ 
 ?>
 <div class="container brands">
@@ -22,7 +22,7 @@
         <div class="slide">
             <a href="<?php the_permalink();?>">
                 <img src="<?php if ( $avik_image_attributes[0] ) : 
-                    echo esc_attr($avik_image_attributes[0]); else: echo get_template_directory_uri().'/images/avik-default.jpg'; endif; ?>">
+                    echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>">
             </a>
         </div>   
           <?php endwhile; 

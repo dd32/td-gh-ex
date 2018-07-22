@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.1
+ * @version   1.2.0
  */
  ?>
 <?php if(is_404()) { get_header('post'); } else { get_header(); }?> 
@@ -17,7 +17,7 @@
   <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
  <div class="image-404">
  <img src="<?php if ( $avik_image_attributes[0] ) : 
-              echo esc_attr($avik_image_attributes[0]); else: echo get_template_directory_uri().'/img/page-404.jpg'; endif; ?>"/>
+              echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/img/page-404.jpg'; endif; ?>"/>
 				 </div>
  <main class="container mt-5 main-content">
 	 <div class="row">

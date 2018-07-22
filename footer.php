@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.1
+ * @version   1.2.0
  */
  ?>
  </div> <!--Content --> 
@@ -18,7 +18,7 @@
         <hr class="my-4 avik-footer">
         <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_copyright_footer', false) )) :?>
          <p>
-           &copy; <?php echo date("Y"); echo " "; echo bloginfo('name'); ?>
+           &copy; <?php echo esc_attr(date("Y")); echo " "; echo bloginfo('name'); ?>
          </p>
           <?php endif; ?> 
           <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_power_footer', false) )) :?>

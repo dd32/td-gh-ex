@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.1
+ * @version   1.2.0
  */
 
 /* TABLE OF CONTENT
@@ -186,7 +186,7 @@ if(! function_exists('avik_html5_search_form') ) {
 
 	function avik_html5_search_form( $form ) { 
 		$form = '<section class="search"><form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
-	   <label class="screen-reader-text" for="s">' . __('',  'avik') . '</label>
+	   <label class="screen-reader-text" for="s">' . __('s',  'avik') . '</label>
 		<input type="search" value="' . get_search_query() . '" name="s" id="s" placeholder= "'. esc_attr__('Keyword ...', 'avik') .'" />
 		<input type="submit" class="search-submit" value="'. esc_attr__('Search', 'avik') .'" />
 		</form></section>';
@@ -225,26 +225,27 @@ function avik_the_breadcrumb() {
 		echo '<div class="menu-breadcrumbs col-sm-8">';
 		echo esc_html__( 'You are here:&nbsp;&nbsp;', 'avik' );	
         echo '<a href="';
-        echo home_url('home');
+		echo esc_url( home_url( '/' ) );
         echo '">';
         bloginfo('name');
-        echo '</a>' . $sep;
+        echo '</a>' . esc_attr($sep);
 	
         if (is_category() || is_single() ){
             single_term_title();
         } elseif (is_archive() || is_single()){
             if ( is_day() ) {
-                printf( __( '%s', 'avik' ), get_the_date() );
+				/* translators: %s: search term */ 
+                printf( esc_html( '%s', 'avik' ), get_the_date() );
             } elseif ( is_month() ) {
-                printf( __( '%s', 'avik' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'avik' ) ) );
+                printf( esc_html( '%s', 'avik' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'avik' ) ) );
             } elseif ( is_year() ) {
-                printf( __( '%s', 'avik' ), get_the_date( _x( 'Y', 'yearly archives date format', 'avik' ) ) );
+                printf( esc_html( '%s', 'avik' ), get_the_date( _x( 'Y', 'yearly archives date format', 'avik' ) ) );
             } else {
-                _e( 'Blog Archives', 'avik' );
+                esc_html( 'Blog Archives', 'avik' );
             }
         }
         if (is_single()) {
-            echo $sep;
+            echo esc_attr($sep);
             the_title();
         }
         if (is_page()) {
@@ -254,7 +255,7 @@ function avik_the_breadcrumb() {
             global $post;
             $page_for_posts_id = get_option('page_for_posts');
             if ( $page_for_posts_id ) { 
-                $post = get_page($page_for_posts_id);
+                
                 setup_postdata($post);
                 the_title();
                 rewind_posts();
@@ -282,25 +283,26 @@ function avik_the_breadcrumb_archive() {
 		echo '<div class="menu-breadcrumbs avikArchive col-sm-8">';
 		echo esc_html__( 'You are here:&nbsp;&nbsp;', 'avik' );	
         echo '<a href="';
-        echo home_url('home');
+        echo esc_url( home_url( '/' ) );
         echo '">';
         bloginfo('name');
-        echo '</a>' . $sep;
+        echo '</a>' . esc_attr($sep);
         if (is_category() || is_single() ){
             single_term_title();
         } elseif (is_archive() || is_single()){
             if ( is_day() ) {
-                printf( __( '%s', 'avik' ), get_the_date() );
+				/* translators: %s: search term */ 
+                printf( esc_html( '%s', 'avik' ), get_the_date() );
             } elseif ( is_month() ) {
-                printf( __( '%s', 'avik' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'avik' ) ) );
+                printf( esc_html( '%s', 'avik' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'avik' ) ) );
             } elseif ( is_year() ) {
-                printf( __( '%s', 'avik' ), get_the_date( _x( 'Y', 'yearly archives date format', 'avik' ) ) );
+                printf( esc_html( '%s', 'avik' ), get_the_date( _x( 'Y', 'yearly archives date format', 'avik' ) ) );
             } else {
-                _e( 'Blog Archives', 'avik' );
+                esc_html( 'Blog Archives', 'avik' );
             }
         }
         if (is_single()) {
-            echo $sep;
+            echo esc_attr($sep);
             the_title();
         }
         if (is_page()) {
@@ -310,7 +312,7 @@ function avik_the_breadcrumb_archive() {
             global $post;
             $page_for_posts_id = get_option('page_for_posts');
             if ( $page_for_posts_id ) { 
-                $post = get_page($page_for_posts_id);
+               
                 setup_postdata($post);
                 the_title();
                 rewind_posts();
@@ -333,30 +335,31 @@ function avik_the_breadcrumb_search() {
 		echo '<div class="row breadcrumbs">';
 		echo '<div class="text-breadcrumbs avikSearch text-left col-sm-4">';
 		echo '<i class="far fa-lightbulb"></i>';
-		printf( esc_html__( 'Results for: "%s"', 'avik' ), '<span>' . get_search_query() . '</span>' );
+		printf( esc_html__( 'Results for: "s"', 'avik' ), '<span>' . get_search_query() . '</span>' );
 		echo '</div>';
 		echo '<div class="menu-breadcrumbs col-sm-8">';
 		echo esc_html__( 'You are here:&nbsp;&nbsp;', 'avik' );	
         echo '<a href="';
-        echo home_url('home');
+        echo esc_url( home_url( '/' ) );
         echo '">';
         bloginfo('name');
-        echo '</a>' . $sep;
+        echo '</a>' . esc_attr($sep);
         if (is_category() || is_single() ){
             the_category('title_li=');
         } elseif (is_archive() || is_single()){
             if ( is_day() ) {
-                printf( __( '%s', 'avik' ), get_the_date() );
+				/* translators: %s: search term */ 
+                printf( esc_html( '%s', 'avik' ), get_the_date() );
             } elseif ( is_month() ) {
-                printf( __( '%s', 'avik' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'avik' ) ) );
+                printf( esc_html( '%s', 'avik' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'avik' ) ) );
             } elseif ( is_year() ) {
-                printf( __( '%s', 'avik' ), get_the_date( _x( 'Y', 'yearly archives date format', 'avik' ) ) );
+                printf( esc_html( '%s', 'avik' ), get_the_date( _x( 'Y', 'yearly archives date format', 'avik' ) ) );
             } else {
-                _e( 'Blog Archives', 'avik' );
+                esc_html( 'Blog Archives', 'avik' );
             }
         }
         if (is_single()) {
-            echo $sep;
+            echo esc_attr($sep);
             the_title();
         }	
         if (is_page()) {
@@ -366,7 +369,7 @@ function avik_the_breadcrumb_search() {
             global $post;
             $page_for_posts_id = get_option('page_for_posts');
             if ( $page_for_posts_id ) { 
-                $post = get_page($page_for_posts_id);
+               
                 setup_postdata($post);
                 the_title();
                 rewind_posts();
@@ -719,47 +722,48 @@ function avik_register_required_plugins() {
 		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
 		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
 		'message'      => '',                      // Message to output right before the plugins table.
-	
+		
 		'strings'      => array(
 			'page_title'                      => __( 'Install Required Plugins', 'avik' ),
 			'menu_title'                      => __( 'Install Plugins', 'avik' ),
-			
+			/* translators: %s: search term */ 
 			'installing'                      => __( 'Installing Plugin: %s', 'avik' ),
-			
+			/* translators: %s: search term */ 
 			'updating'                        => __( 'Updating Plugin: %s', 'avik' ),
 			'oops'                            => __( 'Something went wrong with the plugin API.', 'avik' ),
+			/* translators: %1: search term */
 			'notice_can_install_required'     => _n_noop(
-				
+				 
 				'This theme requires the following plugin: %1$s.',
 				'This theme requires the following plugins: %1$s.',
 				'avik'
 			),
+			/* translators: %1: search term */ 
 			'notice_can_install_recommended'  => _n_noop(
-				
 				'This theme recommends the following plugin: %1$s.',
 				'This theme recommends the following plugins: %1$s.',
 				'avik'
 			),
+			/* translators: %1: search term */ 
 			'notice_ask_to_update'            => _n_noop(
-				
 				'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
 				'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
 				'avik'
 			),
+			/* translators: %1: search term */ 
 			'notice_ask_to_update_maybe'      => _n_noop(
-			
 				'There is an update available for: %1$s.',
 				'There are updates available for the following plugins: %1$s.',
 				'avik'
 			),
+			/* translators: %1: search term */ 
 			'notice_can_activate_required'    => _n_noop(
-				
 				'The following required plugin is currently inactive: %1$s.',
 				'The following required plugins are currently inactive: %1$s.',
 				'avik'
 			),
+			/* translators: %1: search term */ 
 			'notice_can_activate_recommended' => _n_noop(
-				
 				'The following recommended plugin is currently inactive: %1$s.',
 				'The following recommended plugins are currently inactive: %1$s.',
 				'avik'
@@ -782,11 +786,11 @@ function avik_register_required_plugins() {
 			'return'                          => __( 'Return to Required Plugins Installer', 'avik' ),
 			'plugin_activated'                => __( 'Plugin activated successfully.', 'avik' ),
 			'activated_successfully'          => __( 'The following plugin was activated successfully:', 'avik' ),
-			
+			/* translators: %1: search term */ 
 			'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'avik' ),
-			
+			/* translators: %s: search term */ 
 			'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'avik' ),
-			
+			/* translators: %1: search term */ 
 			'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'avik' ),
 			'dismiss'                         => __( 'Dismiss this notice', 'avik' ),
 			'notice_cannot_install_activate'  => __( 'There are one or more required or recommended plugins to install, update or activate.', 'avik' ),
@@ -795,6 +799,7 @@ function avik_register_required_plugins() {
 			'nag_type'                        => '', // Determines admin notice type - can only be one of the typical WP notice classes, such as 'updated', 'update-nag', 'notice-warning', 'notice-info' or 'error'. Some of which may not work as expected in older WP versions.
 		),
 	);
+
 
 	tgmpa( $plugins, $config );
 }

@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.1
+ * @version   1.2.0
  */
 
 class Avik_Color_Scheme {
@@ -303,7 +303,7 @@ class Avik_Color_Scheme {
 	    );
 	    ?>
 	    <script type="text/html" id="tmpl-avik-color-scheme">
-	        <?php echo $this->get_css( $colors ); ?>
+	        <?php echo esc_attr($this->get_css( $colors )); ?>
 	    </script>
 	<?php
     }

@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.1
+ * @version   1.2.0
  */
 ?>
 
@@ -45,7 +45,7 @@ while ( $mod->have_posts() ) : $mod->the_post(); { ?>
            <!-- Image 2 who we are -->
            <div class="second-image-who-we-are" data-aos="zoom-in" data-aos-duration="2000">
            <img class="img-who-we-are border-who-we-are" src="<?php if ( $avik_image_attributes[0] ) : 
-           echo esc_attr($avik_image_attributes[0]); else: echo get_template_directory_uri().'/images/avik-default.jpg'; endif; ?>"/>
+           echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>"/>
            </div>
        </div>
    </div>
@@ -74,7 +74,7 @@ wp_reset_postdata(); ?>
                    <li class="tab__development tabs__list-item tabs__list-item--fourth animated wow fadeInUp tab-fadeup">        
                     <div class="tab__development-img" data-aos="fade-left" data-aos-duration="2000">           
                     <img class="img-avic-services-default" src="<?php if ( $avik_image_attributes[0] ) : 
-                           echo esc_attr($avik_image_attributes[0]); else: echo get_template_directory_uri().'/images/avik-default.jpg'; endif; ?>">
+                           echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>">
                     </div>                                                    
                       <h2 class="tab__development-title one"><?php the_title();?></h2>                       
                        <a href="<?php the_permalink();?>" class="btn btn-avik" role="button" aria-pressed="true" data-aos="zoom-in" data-aos-duration="2000"><?php esc_html_e('Read more...','avik'); ?></a>                        
@@ -114,7 +114,7 @@ wp_reset_postdata(); ?>
           <div class="content avik-portfolio">
            <a href="<?php the_permalink();?>">
               <img src="<?php if ( $avik_image_attributes[0] ) : 
-              echo esc_attr($avik_image_attributes[0]); else: echo get_template_directory_uri().'/images/avik-default.jpg'; endif; ?>"/></a>
+              echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>"/></a>
           </div>
           </div>             
           <?php endwhile; 
@@ -131,7 +131,7 @@ wp_reset_postdata(); ?>
           <div class="content avik-portfolio">
            <a href="<?php the_permalink();?>">
               <img src="<?php if ( $avik_image_attributes[0] ) : 
-              echo esc_attr($avik_image_attributes[0]); else: echo get_template_directory_uri().'/images/avik-default.jpg'; endif; ?>"/></a>
+              echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>"/></a>
           </div>
           </div>
             <?php endwhile; 
@@ -148,7 +148,7 @@ wp_reset_postdata(); ?>
           <div class="content avik-portfolio">
            <a href="<?php the_permalink();?>">
               <img src="<?php if ( $avik_image_attributes[0] ) : 
-              echo esc_attr($avik_image_attributes[0]); else: echo get_template_directory_uri().'/images/avik-default.jpg'; endif; ?>"/></a>
+              echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>"/></a>
           </div>
           </div>
             <?php endwhile; 
@@ -176,7 +176,7 @@ wp_reset_postdata(); ?>
                     <a href="<?php the_permalink();?>" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 link-blog" data-aos="fade-up">
                       <div class="blog-image">
                          <img src="<?php if ( $avik_image_attributes[0] ) : 
-                           echo esc_attr($avik_image_attributes[0]); else: echo get_template_directory_uri().'/images/avik-default.jpg'; endif; ?>">
+                           echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>">
                       </div>
                          <h2 class="blog-title"><?php the_title();?></h2>
                          <div class="blog-subtitle"><?php the_excerpt();?></div>
@@ -226,7 +226,7 @@ wp_reset_postdata(); ?>
      <div class="avik-map">
      <a href="<?php the_permalink();?>">
         <img src="<?php if ( $avik_image_attributes[0] ) : 
-        echo  esc_attr($avik_image_attributes[0]); else: echo get_template_directory_uri().'/images/avik-default.jpg'; endif; ?>"/></a>
+        echo  esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>"/></a>
      </div>
      <?php endif; ?>
      <?php endwhile; 

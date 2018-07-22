@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.1.1
+ * @version   1.2.0
  */ 
  ?>
 
@@ -32,7 +32,7 @@
               <div class="slideshow__slide-background background-absolute">
                 <div class="slideshow__slide-image-wrap background-absolute">
                   <!-- Image slider 1 -->
-                  <div class="slideshow__slide-image background-absolute" style="background-image:url(<?php echo $avik_image_attributes[0]; ?>); background-size: cover; background-position: center center;">
+                  <div class="slideshow__slide-image background-absolute" style="background-image:url(<?php echo esc_url($avik_image_attributes[0]); ?>); background-size: cover; background-position: center center;">
                   <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_filter_home', false) )) :?> 
                   <div class="filter-header"></div>
                   <?php endif; ?> 
@@ -75,7 +75,7 @@
               <div class="slideshow__slide-background background-absolute">
                 <div class="slideshow__slide-image-wrap background-absolute">
                   <!-- Image slider 2 -->
-                  <div class="slideshow__slide-image background-absolute" style="background-image: url(<?php echo $avik_image_attributes[0]; ?>); background-size: cover; background-position: center center;">
+                  <div class="slideshow__slide-image background-absolute" style="background-image: url(<?php echo esc_url($avik_image_attributes[0]); ?>); background-size: cover; background-position: center center;">
                   <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_filter_home', false) )) :?> 
                   <div class="filter-header"></div>
                   <?php endif; ?>
@@ -118,7 +118,7 @@
               <div class="slideshow__slide-background background-absolute">
                 <div class="slideshow__slide-image-wrap background-absolute">
                   <!-- Image slider 3 -->
-                  <div class="slideshow__slide-image background-absolute" style="background-image: url(<?php echo $avik_image_attributes[0]; ?>); background-size: cover; background-position: center center;">
+                  <div class="slideshow__slide-image background-absolute" style="background-image: url(<?php echo esc_url($avik_image_attributes[0]); ?>); background-size: cover; background-position: center center;">
                   <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_filter_home', false) )) :?> 
                   <div class="filter-header"></div>
                   <?php endif; ?>
