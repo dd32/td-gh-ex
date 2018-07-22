@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.0
+ * @version   1.2.1
  */
 
 /* TABLE OF CONTENT
@@ -62,7 +62,6 @@ if ( ! function_exists( 'avik_setup' ) ) :
 
 		// create custom size images
 		add_image_size('avik_big', 1400, 800, true);
-		add_image_size('avik_quad', 600, 600, true);
 		add_image_size('avik_single', 750, 450, true);
 		add_image_size('avik_brand', 115, 100, true);
 		add_image_size('avik_services', 80, 80, true);
@@ -500,7 +499,7 @@ function avik_register_lightbox() {
 	if (!is_admin()) {
 	wp_register_style('lightbox-css', get_template_directory_uri() . '/css/lightbox.min.css');
 	wp_enqueue_style('lightbox-css');
-	wp_register_script('lightbox-script', get_template_directory_uri() . '/js/lightbox-plus-jquery.min.js', '', '', false);
+	wp_register_script('lightbox-script-min', get_template_directory_uri() . '/js/lightbox-plus-jquery.min.js', '', '', false);
 	wp_enqueue_script('lightbox-script');
 }
 }
@@ -537,7 +536,7 @@ function avik_custom_excerpt_more( $more ) { return '...';
 function avik_scripts() {
 
     // Bootstrap
-	wp_enqueue_script('avik-popper-js', get_template_directory_uri() .'/js/popper.min.js', array('jquery'),null ,true );
+	wp_enqueue_script('avik-popper-js-min', get_template_directory_uri() .'/js/popper.min.js', array('jquery'),null ,true );
     wp_enqueue_script('avik-bootstrap-js', get_template_directory_uri() .'/js/bootstrap.min.js', array('jquery'),null ,true );
     // Avik 
 	wp_enqueue_script('avik-script-js', get_template_directory_uri() .'/js/avik-script.js',  array('jquery'),null,true);
@@ -546,7 +545,7 @@ function avik_scripts() {
     // Writing text 
     wp_enqueue_script( 'avik-text-js', get_template_directory_uri() . '/js/typed.js', array(), '20151215', true );
     // AOS Animate
-    wp_enqueue_script('avik-aos-js',get_template_directory_uri() . '/js/aos.js', array(), '2.0.0', false );
+    wp_enqueue_script('avik-aos-js',get_template_directory_uri() . '/js/aos.min.js', array(), '2.0.0', false );
     // Carousel Brands
 	wp_enqueue_script('avik-carousel-brands-js', get_template_directory_uri() . '/js/carousel.js', array(), '1.6.0', true );
 	

@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.0
+ * @version   1.2.1
  */ 
  ?>
  
@@ -60,7 +60,8 @@
            <div class="statistics-box col-sm-3">
              <div class="statistics-icon">
                <span><i class="<?php echo esc_attr( get_theme_mod( 'avik_icon_1_statistics','far fa-flag')); ?>"></i></span>
-               <div class="counter-value statistics-number" data-count="<?php echo esc_attr( get_theme_mod( 'avik_max_numbers_1_statistics','2500')); ?>">
+               <div class="counter-value statistics-number">
+               <?php echo esc_attr( get_theme_mod( 'avik_max_numbers_1_statistics','2500')); ?>
                </div>
                 <div class="statistics-text one">
                   <h4><?php echo esc_html( get_theme_mod( 'avik_title_1_statistics_whoweare','PROJECT DONE')); ?></h4>
@@ -70,7 +71,8 @@
        <div class="statistics-box col-sm-3">
           <div class="statistics-icon">
             <span><i class="<?php echo esc_attr( get_theme_mod( 'avik_icon_2_statistics','far fa-smile')); ?>"></i></span>    
-          <div class="counter-value statistics-number" data-count="<?php echo esc_attr( get_theme_mod( 'avik_max_numbers_2_statistics','700')); ?>">
+          <div class="counter-value statistics-number"> 
+          <?php echo esc_attr( get_theme_mod( 'avik_max_numbers_2_statistics','700')); ?>
           </div>
                <div class="statistics-text two">
                  <h4><?php echo esc_html( get_theme_mod( 'avik_title_2_statistics_whoweare','HAPPY CLIENTS')); ?></h4>
@@ -80,7 +82,8 @@
        <div class="statistics-box col-sm-3">
           <div class="statistics-icon">
             <span><i class="<?php echo esc_attr( get_theme_mod( 'avik_icon_3_statistics','fas fa-thumbtack')); ?>"></i></span>
-            <div class="counter-value statistics-number" data-count="<?php echo esc_attr( get_theme_mod( 'avik_max_numbers_3_statistics','1550')); ?>">
+            <div class="counter-value statistics-number">
+            <?php echo esc_attr( get_theme_mod( 'avik_max_numbers_3_statistics','1550')); ?>
               </div>
                  <div class="statistics-text three">
                   <h4><?php echo esc_html( get_theme_mod( 'avik_title_3_statistics_whoweare','BRANDING')); ?></h4>
@@ -90,7 +93,8 @@
        <div class="statistics-box col-sm-3">
           <div class="statistics-icon">
              <span><i class="<?php echo esc_attr( get_theme_mod( 'avik_icon_4_statistics','fas fa-globe')); ?>"></i></span>
-             <div class="counter-value statistics-number" data-count="<?php echo esc_attr( get_theme_mod( 'avik_max_numbers_4_statistics','480')); ?>">
+             <div class="counter-value statistics-number">
+              <?php echo esc_attr( get_theme_mod( 'avik_max_numbers_4_statistics','480')); ?>
                 </div>
                  <div class="statistics-text four">
                    <h4><?php echo esc_html( get_theme_mod( 'avik_title_3_statistics_whoweare','THEMES')); ?></h4>
@@ -268,43 +272,3 @@
   <?php endif; ?>
   </div>
 
-<script>
-var a = 0;
-$(window).scroll(function() {
-
-  var oTop = $('.statistics-number').offset().top - window.innerHeight;
-  if (a == 0 && $(window).scrollTop() > oTop) {
-    $('.counter-value').each(function() {
-      var $this = $(this),
-        countTo = $this.attr('data-count');
-      $({
-        countNum: $this.text()
-      }).animate({
-          countNum: countTo
-        },
-
-        {
-
-          duration: 2000,
-          easing: 'swing',
-          step: function() {
-            $this.text(Math.floor(this.countNum));
-          },
-          complete: function() {
-            $this.text(this.countNum);
-            //alert('finished');
-          }
-
-        });
-    });
-    a = 1;
-  }
-
-});
-</script>
-
-
-
-
-
-	
