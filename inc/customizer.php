@@ -40,7 +40,61 @@ function best_wp_customize_register( $wp_customize ) {
 				return '';
 			}
 		}
+/********************************************
+* Breadcrumb
+*********************************************/ 
 		
+		$wp_customize->add_section( 'best_wp_premium_hide_section' , array(
+			'title'       => __( 'Breadcrumb', 'best-wp' ),
+			'priority'		=> 70,
+		) );
+				
+		$wp_customize->add_setting( 'best_wp_home_activate_breadcrumb', array (
+			'sanitize_callback'	=> 'best_wp_sanitize_checkbox',
+		) );
+		
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'best_wp_home_activate_breadcrumb', array(
+			'label'    => __( 'Activate Breadcrumb', 'best-wp' ),
+			'section'  => 'best_wp_premium_hide_section',
+			'settings' => 'best_wp_home_activate_breadcrumb',
+			'type'     =>  'checkbox',
+		) ) );		
+
+/***********************************************************************************
+ * Contacts
+***********************************************************************************/
+ 
+		$wp_customize->add_section( 'best_wp_contacts_header' , array(
+			'title'       => __( 'Header Contacts', 'best-wp' ),
+			'priority'   => 65,
+		) );
+		
+		$wp_customize->add_setting( 'best_wp_contacts_header_phone', array (
+			'sanitize_callback' => 'sanitize_text_field',
+		) );
+		
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'best_wp_contacts_header_phone', array(
+			'label'    => __( 'Phone Number', 'best-wp' ),
+		'description' => __('  Add content and activate the phone.', 'best-wp'),        
+			
+			'section'  => 'best_wp_contacts_header',
+			'settings' => 'best_wp_contacts_header_phone',
+			'type'     =>  'text'		
+		) ) );
+
+		
+		$wp_customize->add_setting( 'best_wp_contacts_header_address', array (
+			'sanitize_callback' => 'sanitize_text_field',
+		) );
+		
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'best_wp_contacts_header_address', array(
+			'label'    => __( 'Address', 'best-wp' ),
+		'description' => __(' Add content and activate the address.', 'best-wp'),        
+			
+			'section'  => 'best_wp_contacts_header',
+			'settings' => 'best_wp_contacts_header_address',
+			'type'     =>  'text'		
+		) ) );
 		
 /***********************************************************************************
  * Social media option

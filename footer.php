@@ -7,9 +7,16 @@
 
 	</div><!-- #content -->
 	
-	<?php if (get_theme_mod( 'social_media_activate' )) { best_wp_social_section (); } ?>
+		<?php if (esc_attr(get_theme_mod( 'social_media_activate' )) ) { ?>
+		<div style="float: none; text-align: center;  display: inline-table;" class="social">
+				<div  style="float: none;" class="fa-icons">
+					<?php echo best_wp_social_section (); ?>
+				</div>
+		</div>
+		
+	<?php } ?>
 	
-	<footer role="contentinfo">
+	<footer role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 	
 		<div id="colophon"  class="site-info">
 		<?php if (get_theme_mod('best_wp_premium_copyright1')) : echo get_theme_mod('best_wp_premium_copyright1'); else : ?>

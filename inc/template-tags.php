@@ -22,12 +22,12 @@ function best_wp_posted_on() {
 
 	$ap_posted_on = sprintf(
 		esc_html_x( 'Posted on %s', 'post date', 'best-wp' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $ap_time_string . '</a>'
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"  itemprop="datePublished">' . $ap_time_string . '</a>'
 	);
 
 	$ap_byline = sprintf(
 		esc_html_x( 'by %s', 'post author', 'best-wp' ),
-		'<span class="author vcard"><i class="fa fa-male"></i><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		'<span class="author vcard" itemprop="name"><i class="fa fa-male"></i><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
 	echo '<span class="posted-on">' . $ap_posted_on . '</span><span class="byline"> ' . $ap_byline . '</span>'; // WPCS: XSS OK.

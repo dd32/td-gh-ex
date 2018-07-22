@@ -86,7 +86,7 @@ add_action( 'widgets_init', 'best_wp_widgets_init' );
 ********************************/
  
 function best_wp_scripts() {
-
+		wp_enqueue_style( 'dashicons' ); 
 		wp_enqueue_style( 'best-wp-style', get_stylesheet_uri());
 		wp_enqueue_style( 'animate', BEST_WP_THEME_URI . '/framework/css/animate.css');
 		wp_enqueue_style( 'animate-image', BEST_WP_THEME_URI . '/css/style.css');

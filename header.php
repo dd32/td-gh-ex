@@ -26,7 +26,22 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'best-wp' ); ?></a>
-	<?php if (esc_attr(get_theme_mod( 'social_media_activate_header' ))) { best_wp_social_section (); } ?>
+
+		<?php if (esc_attr(get_theme_mod( 'social_media_activate_header' )) or esc_attr(get_theme_mod('best_wp_contacts_header_address')) or esc_attr(get_theme_mod('best_wp_contacts_header_phone')) ) { ?>
+		
+		<div class="social">
+				<div class="fa-icons">
+					<?php if (get_theme_mod( 'social_media_activate_header' )) {echo best_wp_social_section ();} ?>		
+
+				</div>
+				<div class="soc-right">
+						<?php if (get_theme_mod('best_wp_contacts_header_address')) { ?><span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo get_theme_mod('best_wp_contacts_header_address'); ?></span><?php } ?>
+						<?php if (get_theme_mod('best_wp_contacts_header_phone')) { ?><span itemprop="telephone"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> <?php echo get_theme_mod('best_wp_contacts_header_phone'); ?></span><?php } ?>
+				</div>
+				<div class="clear"></div>
+		</div>	 
+		<?php } ?>
+
 	
 	<div class="nav-center">
 
@@ -44,7 +59,7 @@
 		</nav><!-- #site-navigation -->
 
 	</div>					
-	<header id="masthead" class="site-header" role="banner">				
+	<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">				
 
 	
 <!---------------- Deactivate Header Image ---------------->	
@@ -60,32 +75,44 @@
 	
 			<div class="site-branding">
 				<div class="dotted">
-					<?php if ( has_custom_logo() ) : ?>
-						
-							<?php if ( is_front_page() && is_home() ) : ?>
-								<h1 class="site-title aniview" data-av-animation="bounceInLeft"><?php the_custom_logo(); ?></h1>
-							<?php else : ?>
-								<p class="site-title aniview" data-av-animation="bounceInLeft"><p class="site-title"><?php the_custom_logo(); ?></p></p>
-							<?php endif;
-
-							$ap_description = esc_html (get_bloginfo( 'description', 'display' ));
-							if ( $ap_description || is_customize_preview() ) : ?>
-								<p class="site-description aniview" data-av-animation="bounceInRight"><?php echo $ap_description; /* WPCS: xss ok. */ ?></p>
-							<?php endif;  ?>
-							
+				<?php if ( has_custom_logo() ) : ?>
+					
+						<?php if ( is_front_page() && is_home() ) : ?>
+							<h1 class="site-title aniview" data-av-animation="bounceInLeft" itemscope itemtype="http://schema.org/Brand">
+								<span class="site-title" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject"><?php the_custom_logo(); ?><span>
+							</h1>
 						<?php else : ?>
-						
-							<?php if ( is_front_page() && is_home() ) : ?>
-								<h1 class="site-title aniview" data-av-animation="bounceInLeft"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<?php else : ?>
-								<p class="site-title aniview" data-av-animation="bounceInLeft"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-							<?php endif;
+							<p class="site-title aniview" data-av-animation="bounceInLeft" itemscope itemtype="http://schema.org/Brand">
+								<p class="site-title" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject"><?php the_custom_logo(); ?></p>
+							</p>
+						<?php endif;
 
-							$ap_description = esc_html (get_bloginfo( 'description', 'display' ));
-							if ( $ap_description || is_customize_preview() ) : ?>
-							<p class="site-description aniview" data-av-animation="bounceInRight"><?php echo $ap_description; /* WPCS: xss ok. */ ?></p>
-							
-					<?php endif;  endif;  ?>			
+						$ap_description = esc_html (get_bloginfo( 'description', 'display' ));
+						if ( $ap_description || is_customize_preview() ) : ?>
+							<p class="site-description aniview" data-av-animation="bounceInRight" <?php if ( is_front_page() or is_home() ) { ?>itemprop="headline" <?php } ?>>
+								<?php echo $ap_description; /* WPCS: xss ok. */ ?>
+							</p>
+						<?php endif;  ?>
+						
+					<?php else : ?>
+					
+						<?php if ( is_front_page() && is_home() ) : ?>
+							<h1 class="site-title aniview" data-av-animation="bounceInLeft" itemscope itemtype="http://schema.org/Brand">
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+							</h1>
+						<?php else : ?>
+							<p class="site-title aniview" data-av-animation="bounceInLeft" itemscope itemtype="http://schema.org/Brand">
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+							</p>
+						<?php endif;
+
+						$ap_description = esc_html (get_bloginfo( 'description', 'display' ));
+						if ( $ap_description || is_customize_preview() ) : ?>
+						<p class="site-description aniview" data-av-animation="bounceInRight" <?php if ( is_front_page() or is_home() ) { ?>itemprop="headline" <?php } ?>>
+							<?php echo $ap_description; /* WPCS: xss ok. */ ?>
+						</p>
+						
+				<?php endif;  endif;  ?>			
 				
 				</div><!-- .site-branding -->
 			</div>	
@@ -101,32 +128,44 @@
 					
 			<div class="site-branding">
 				<div class="dotted">			
-					<?php if ( has_custom_logo() ) : ?>
-						
-							<?php if ( is_front_page() && is_home() ) : ?>
-								<h1 class="site-title aniview" data-av-animation="bounceInLeft"><?php the_custom_logo(); ?></h1>
-							<?php else : ?>
-								<p class="site-title aniview" data-av-animation="bounceInLeft"><p class="site-title"><?php the_custom_logo(); ?></p></p>
-							<?php endif;
-
-							$ap_description = esc_html (get_bloginfo( 'description', 'display' ));
-							if ( $ap_description || is_customize_preview() ) : ?>
-								<p class="site-description aniview" data-av-animation="bounceInRight"><?php echo $ap_description; /* WPCS: xss ok. */ ?></p>
-							<?php endif;  ?>
-							
+				<?php if ( has_custom_logo() ) : ?>
+					
+						<?php if ( is_front_page() && is_home() ) : ?>
+							<h1 class="site-title aniview" data-av-animation="bounceInLeft" itemscope itemtype="http://schema.org/Brand">
+								<span class="site-title" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject"><?php the_custom_logo(); ?><span>
+							</h1>
 						<?php else : ?>
-						
-							<?php if ( is_front_page() && is_home() ) : ?>
-								<h1 class="site-title aniview" data-av-animation="bounceInLeft"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<?php else : ?>
-								<p class="site-title aniview" data-av-animation="bounceInLeft"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-							<?php endif;
+							<p class="site-title aniview" data-av-animation="bounceInLeft">
+								<p class="site-title" itemscope itemtype="http://schema.org/Brand"><p class="site-title" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject"><?php the_custom_logo(); ?></p></p>
+							</p>
+						<?php endif;
 
-							$ap_description = esc_html (get_bloginfo( 'description', 'display' ));
-							if ( $ap_description || is_customize_preview() ) : ?>
-							<p class="site-description aniview" data-av-animation="bounceInRight"><?php echo $ap_description; /* WPCS: xss ok. */ ?></p>
-							
-					<?php endif;  endif;  ?>			
+						$ap_description = esc_html (get_bloginfo( 'description', 'display' ));
+						if ( $ap_description || is_customize_preview() ) : ?>
+							<p class="site-description aniview" data-av-animation="bounceInRight" <?php if ( is_front_page() or is_home() ) { ?>itemprop="headline" <?php } ?>>
+								<?php echo $ap_description; /* WPCS: xss ok. */ ?>
+							</p>
+						<?php endif;  ?>
+						
+					<?php else : ?>
+					
+						<?php if ( is_front_page() && is_home() ) : ?>
+							<h1 class="site-title aniview" data-av-animation="bounceInLeft" itemscope itemtype="http://schema.org/Brand">
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+							</h1>
+						<?php else : ?>
+							<p class="site-title aniview" data-av-animation="bounceInLeft" itemscope itemtype="http://schema.org/Brand">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+							</p>
+						<?php endif;
+
+						$ap_description = esc_html (get_bloginfo( 'description', 'display' ));
+						if ( $ap_description || is_customize_preview() ) : ?>
+						<p class="site-description aniview" data-av-animation="bounceInRight" <?php if ( is_front_page() or is_home() ) { ?>itemprop="headline" <?php } ?>>
+							<?php echo $ap_description; /* WPCS: xss ok. */ ?>
+						</p>
+						
+				<?php endif;  endif;  ?>		
 				</div>
 			</div><!-- .site-branding -->
 		
@@ -144,40 +183,76 @@
 			<?php if (has_header_image() !=""){ ?><img class="header-img" src="<?php echo esc_url(get_template_directory_uri()). "/framework/images/header.jpg"; ?>" /><?php } ?>
 			<div class="site-branding">
 				<div class="dotted">					
-					<?php if ( has_custom_logo() ) : ?>
-						
-							<?php if ( is_front_page() && is_home() ) : ?>
-								<h1 class="site-title aniview" data-av-animation="bounceInLeft"><?php the_custom_logo(); ?></h1>
-							<?php else : ?>
-								<p class="site-title aniview" data-av-animation="bounceInLeft"><p class="site-title"><?php the_custom_logo(); ?></p></p>
-							<?php endif;
-
-							$ap_description = esc_html (get_bloginfo( 'description', 'display' ));
-							if ( $ap_description || is_customize_preview() ) : ?>
-								<p class="site-description aniview" data-av-animation="bounceInRight"><?php echo $ap_description; /* WPCS: xss ok. */ ?></p>
-							<?php endif;  ?>
-							
+			<?php if (has_header_image() !=""){ ?><img class="header-img" src="<?php echo esc_url(get_template_directory_uri()). "/framework/images/header.jpg"; ?>" /><?php } ?>
+			<div class="site-branding">
+			
+				<?php if ( has_custom_logo() ) : ?>
+					
+						<?php if ( is_front_page() && is_home() ) : ?>
+							<h1 class="site-title aniview" data-av-animation="bounceInLeft">
+								<span class="site-title" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject"><?php the_custom_logo(); ?><span>
+							</h1>
 						<?php else : ?>
-						
-							<?php if ( is_front_page() && is_home() ) : ?>
-								<h1 class="site-title aniview" data-av-animation="bounceInLeft"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<?php else : ?>
-								<p class="site-title aniview" data-av-animation="bounceInLeft"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-							<?php endif;
+							<p class="site-title aniview" data-av-animation="bounceInLeft">
+							<p class="site-title">
+								<p class="site-title" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject"><?php the_custom_logo(); ?></p>
+							</p>
+							</p>
+						<?php endif;
 
-							$ap_description = esc_html (get_bloginfo( 'description', 'display' ));
-							if ( $ap_description || is_customize_preview() ) : ?>
-							<p class="site-description aniview" data-av-animation="bounceInRight"><?php echo $ap_description; /* WPCS: xss ok. */ ?></p>
-							
-					<?php endif;  endif;  ?>			
+						$ap_description = esc_html (get_bloginfo( 'description', 'display' ));
+						if ( $ap_description || is_customize_preview() ) : ?>
+							<p class="site-description aniview" data-av-animation="bounceInRight" <?php if ( is_front_page() or is_home() ) { ?>itemprop="headline" <?php } ?>>
+								<?php echo $ap_description; /* WPCS: xss ok. */ ?>
+							</p>
+						<?php endif;  ?>
+						
+					<?php else : ?>
+					
+						<?php if ( is_front_page() && is_home() ) : ?>
+							<h1 class="site-title aniview" data-av-animation="bounceInLeft" itemscope itemtype="http://schema.org/Brand">
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+							</h1>
+						<?php else : ?>
+							<p class="site-title aniview" data-av-animation="bounceInLeft" itemscope itemtype="http://schema.org/Brand">
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+							</p>
+						<?php endif;
+
+						$ap_description = esc_html (get_bloginfo( 'description', 'display' ));
+						if ( $ap_description || is_customize_preview() ) : ?>
+						<p class="site-description aniview" data-av-animation="bounceInRight" <?php if ( is_front_page() or is_home() ) { ?>itemprop="headline" <?php } ?>>
+							<?php echo $ap_description; /* WPCS: xss ok. */ ?>
+						</p>
+						
+				<?php endif;  endif;  ?>			
 				</div>
 			</div><!-- .site-branding -->
 
 <?php } } } ?>
 
 	</header><!-- #masthead -->
-	
-	
+	<?php if(get_theme_mod('best_wp_home_activate_breadcrumb')and ( !is_front_page() || !is_home())) { ?>
+		<div class="breadcrumb" itemprop="breadcrumb"> <!-- breadcrumb -->
+			<ul itemscope="" itemtype="http://schema.org/BreadcrumbList">
+				<meta name="numberOfItems" content="2">
+				<meta name="itemListOrder" content="Ascending">
+				<li class="trail-item trail-begin" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<span itemprop="name">
+							<span class="dashicons dashicons-admin-home"></span>
+							<span style=" display: none;"><?php echo get_bloginfo( 'name' ); ?></span>
+						</span>
+					</a>
+					<meta content="1" itemprop="position">
+				</li>
+				<li class="trail-item trail-end" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+					<span itemprop="name"><?php the_title(); ?></span>
+					<meta content="2" itemprop="position">
+				</li>
+			</ul>
+		</div> <!-- breadcrumb -->	
+	<?php } ?>
 	<div class="clear"></div>
 	
 	<div id="content" class="site-content">
