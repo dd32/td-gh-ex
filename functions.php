@@ -110,6 +110,7 @@ endif;
 require_once( get_template_directory() . '/core-functions/core-defaults.php');
 require_once( get_template_directory() . '/core-functions/core-seo.php');
 require_once( get_template_directory() . '/core-functions/core-sidebar.php');
+require_once get_template_directory() . '/core-functions/class-tgm-plugin-activation.php';
 
 /**
  * Enqueue scripts and styles.
@@ -199,4 +200,33 @@ function pangolin_register_bellini_widgets(){
     register_widget( 'Bellini_Recent_Posts_Widget' );
     unregister_widget( 'WP_Widget_Recent_Comments' );
     register_widget( 'Bellini_Recent_Comments_Widget' );
+}
+
+
+add_action( 'tgmpa_register', 'bellini_register_required_plugins' );
+
+
+function bellini_register_required_plugins() {
+
+	$plugins = array(
+
+		array(
+			'name'      => 'Contact Form by WPForms – Drag & Drop Form Builder for WordPress',
+			'slug'      => 'wpforms-lite',
+			'required'  => false,
+		),
+	);
+
+	$config = array(
+		'id'           => 'bellini',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+		'default_path' => '',                      // Default absolute path to bundled plugins.
+		'menu'         => 'tgmpa-install-plugins', // Menu slug.
+		'has_notices'  => true,                    // Show admin notices or not.
+		'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+		'message'      => '',                      // Message to output right before the plugins table.
+	);
+
+	tgmpa( $plugins, $config );
 }
