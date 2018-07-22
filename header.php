@@ -183,8 +183,6 @@
 			<?php if (has_header_image() !=""){ ?><img class="header-img" src="<?php echo esc_url(get_template_directory_uri()). "/framework/images/header.jpg"; ?>" /><?php } ?>
 			<div class="site-branding">
 				<div class="dotted">					
-			<?php if (has_header_image() !=""){ ?><img class="header-img" src="<?php echo esc_url(get_template_directory_uri()). "/framework/images/header.jpg"; ?>" /><?php } ?>
-			<div class="site-branding">
 			
 				<?php if ( has_custom_logo() ) : ?>
 					
