@@ -1,6 +1,6 @@
 === Medical ===
 Contributors: Guido07111975
-Version: 5.9
+Version: 6.0
 Requires at least: 4.7
 Tested up to: 4.9
 License: GNU General Public License v3 or later
