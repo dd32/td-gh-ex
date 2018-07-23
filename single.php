@@ -26,7 +26,7 @@
 
 				?>
 				<article <?php post_class('full-width-post full-width-post-single'); ?>>
-					<p class="post-category-desc"><?php print __('In ','anorya'); ?><span class="post-category-content"> <?php print esc_html( anorya_get_post_display_category($post->ID) ); ?></span></p>
+					<p class="post-category-desc"><?php esc_html_e('In ','anorya'); ?><span class="post-category-content"> <?php print esc_html( anorya_get_post_display_category($post->ID) ); ?></span></p>
 					<h1 class="full-width-post-single-title"><?php the_title(); ?></h1>
 				
 					<?php 
@@ -42,18 +42,12 @@
 				
 				
 					<div class="row single-post-meta">
-						<div class="col-md-6 col-sm-6 col-xs-12 post-tags">
-						<?php	print __('TAGS: ','anorya'); 
+						<div class="col-md-12 col-sm-12 col-xs-12 post-tags">
+						<?php	esc_html_e('TAGS: ','anorya'); 
 								echo get_the_tag_list(); ?>
 						</div>
-						<div class="col-md-6 col-sm-6 col-xs-12 post-social-share">
-							<?php print __('SHARE THIS POST:','anorya'); ?>
-							<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-							<a href="https://twitter.com/home?status=<?php print esc_html(str_replace(' ','+',get_the_title($post->ID))); echo '-'; the_permalink(); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-							<a href="https://plus.google.com/share?url=<?php the_permalink(); ?>"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-							<a href="https://pinterest.com/pin/create/button/?url=<?php the_permalink();?>&media=<?php get_the_post_thumbnail_url($post->ID,'anorya_large');?>&description=<?php print esc_html(str_replace(' ','-',get_the_title($post->ID))); ?>"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
-						</div>
 					</div>
+					
 					<hr/>
 				
 				
@@ -64,10 +58,10 @@
 					
 					<div class="single-post-pagination">
 						<div class="nav-previous">
-							<?php previous_post_link( '%link', __( '<i class="fa  fa-angle-double-left" aria-hidden="true"></i> Previous Post','anorya' ).'<h2>%title</h2>', true ); ?>
+							<?php previous_post_link( '%link', '<i class="fa  fa-angle-double-left" aria-hidden="true"></i> '.esc_html__( 'Previous Post','anorya' ).'<h2>%title</h2>', true ); ?>
 						</div>	
 						<div class="nav-next">
-							<?php next_post_link( '%link', __( 'Next Post <i class="fa fa-angle-double-right" aria-hidden="true"></i>','anorya' ).'<h2>%title</h2>', true ); ?>
+							<?php next_post_link( '%link', esc_html__( 'Next Post','anorya' ).' <i class="fa fa-angle-double-right" aria-hidden="true"></i>'.'<h2>%title</h2>', true ); ?>
 						</div>
 					</div>	
 					<hr/>

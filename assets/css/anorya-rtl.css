@@ -1,0 +1,28 @@
+/*
+Theme Name: anorya
+Description: RTL Stylesheet.
+*/
+
+	
+	.hidden-sidebar, .navbar, .secondary-navigation, .slider-item-overlay,
+	.promo-box-text, .main-content-container, .wp-caption-text, .search-form-container,
+	.anorya-search-results, .footer-container, .footer-bar
+	{
+		direction:rtl;
+	}	
+	
+	
+	.full-width-post-gallery-container, .social-menu, .widget_archive, .widget_categories,
+	.posts-pagination, .post-tags, .full-width-post-audio-container, .full-width-post-video-container,
+	.footer-bar a	
+	{
+		direction:ltr;
+	}	
+	
+	.widget h6, .next .page-numbers, .previous .page-numbers, .post-tags a
+	{ 
+		direction:rtl;
+	}	
+	
+	
+	

@@ -92,11 +92,6 @@
 										<img class="img-responsive align-center" 
 											  src="<?php print esc_url_raw(get_theme_mod( 'anorya_logo_image_setting')); ?>" 
 											  alt="<?php print esc_attr(get_bloginfo( 'name', 'display' ) ); ?>" /></a>
-									<?php else: ?>
-										<a href="<?php print esc_url_raw(home_url( '/' )); ?>">
-										<img class="img-responsive align-center" 
-											  src="<?php print get_template_directory_uri().'/assets/images/logo.png'; ?>" 
-											  alt="<?php print esc_attr(get_bloginfo( 'name', 'display' ) ); ?>" /></a>
 									<?php endif; ?>
 							</div>	
 						</div>	

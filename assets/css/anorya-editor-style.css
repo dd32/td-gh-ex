@@ -1,0 +1,159 @@
+/*
+Theme Name: Anorya
+Description: Used to style the TinyMCE editor.
+*/
+
+
+	body{
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 300;
+		font-size: 18px;
+	}
+		
+	h1,h2,h3,h4,h5,h6{
+		font-family: 'Antic Didone', serif;
+		font-weight: 400;
+	}	
+	
+ 
+	h1 { 
+		font-size: 3.000em;
+		margin-bottom:10px;  
+	} 
+	
+	h2 {
+		font-size: 2.800em;
+		margin-bottom:10px; 
+	} 
+	h3 { 
+		font-size: 2.600em; 
+		margin-bottom:10px; } 
+	h4 { 
+		font-size: 2.200em; 
+		letter-spacing:0px; 
+		
+		margin-bottom:10px; } 
+	h5 { 
+		font-size: 2.100em; 
+		margin-bottom:10px; 
+	} 
+	h6 { 
+		font-size: 2.000em; 
+		letter-spacing:1px; 
+		margin-bottom:10px; 
+	} 
+	
+	
+	del { color: #777; }
+	
+	ins {
+		background: #fff9c0;
+		text-decoration: none;
+	}
+	
+	sub,	sup {
+		font-size: 75%;
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
+	}
+	
+	table, th, td , table th td, table th{
+		font-size: 0.850em;
+		padding: 15px;
+	}
+	
+	table { 
+		margin-top:20px;
+		margin-bottom:20px;
+	}	
+	
+	.table > thead > tr > th { border-bottom:4px solid #D9D9D9;}
+	
+	.table > tbody > tr > td { border:none;}
+	
+	blockquote{ 
+		margin: 15px 20px 15px 20px; 
+		padding:20px 10px 20px 10px;
+		border-left: 3px solid;
+		line-height: 1em;
+		font-size:1.750em;
+	}
+	
+	blockquote p { line-height: 1.500em;}
+	
+	
+	.label {
+		display: inline;
+		padding: 1px 5px 1px 5px;
+		font-size:90%;
+		text-align: center;
+		white-space: nowrap;
+		vertical-align: baseline;
+		border-radius: 3px;
+	}
+	
+	code { 
+		padding: 5px 5px 5px 5px; 
+		margin: 5px 5px 5px 5px; 
+	}
+	
+	.dropcap::first-letter{
+		font-size:300%;
+		font-weight:bold;
+		vertical-align: -5px;
+	}	
+	
+	ul{ list-style-type:none;}
+	
+	li { margin-left:15px;}
+	
+	ul>li:before {
+		font-size: 1.000em;
+		content: "■";
+		padding-right:7px;
+	}
+	
+	ol {
+		list-style-type:none;
+		counter-reset:li; 
+	}
+
+	ol > li:before {
+	font-size: 1.000em;
+	content:counter(li)"."; 
+	counter-increment:li; 
+	padding-right:7px;
+	}
+	
+	dl{
+		margin-top:20px;
+		margin-bottom:20px;
+		font-size:0.750em;
+	}
+
+	dd {	margin-bottom:15px;}
+	
+	address {
+		margin-top: 20px;
+		font-size: 0.850em;
+		line-height: 1.600em;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	pre	{
+		margin-top: 20px;
+		font-size: 0.850em;
+		line-height: 1.600em;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	cite	{
+		text-align:right;
+	}
+	
+	a:focus:active, a:focus {
+		text-decoration:none;
+	}	

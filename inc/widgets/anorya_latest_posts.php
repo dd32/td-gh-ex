@@ -9,7 +9,7 @@
 		
 		// Constructor.
 		public function __construct(){
-			parent::__construct( strtolower( __CLASS__ ), esc_html(__('Anorya - Latest Posts Widget','anorya')) );
+			parent::__construct( strtolower( __CLASS__ ), esc_html__('Anorya - Latest Posts Widget','anorya') );
 		}
 
     
@@ -19,21 +19,21 @@
 			
 			
 			//widget title
-			$field_value = isset ( $instance['anorya_title_widget'] ) ? $instance['anorya_title_widget'] : __('Latest Posts', 'anorya');
+			$field_value = isset ( $instance['anorya_title_widget'] ) ? $instance['anorya_title_widget'] : esc_html__('Latest Posts', 'anorya');
 			$field_value = esc_attr( $field_value );
 			printf('<p><label for="%1$s">%2$s</label><br /><input type="text" name="%3$s" id="%1$s" value="%4$s" class="widefat"></p>',
-					$this->get_field_id( 'anorya_title_widget' ),
+					esc_attr($this->get_field_id( 'anorya_title_widget' )),
 					esc_html__( 'Title', 'anorya' ),
-					$this->get_field_name( 'anorya_title_widget' ),
+					esc_attr($this->get_field_name( 'anorya_title_widget' )),
 					esc_attr( $field_value ) );
 					
 			//posts number - default number 4
 			$field_value = isset ( $instance['anorya_posts_number'] ) ? $instance['anorya_posts_number'] : 4;
 			$field_value = esc_attr( $field_value );
 			printf('<p><label for="%1$s">%2$s</label><br /><input type="text" name="%3$s" id="%1$s" value="%4$s" class="widefat"></p>',
-					$this->get_field_id( 'anorya_posts_number' ),
+					esc_attr($this->get_field_id( 'anorya_posts_number' )),
 					esc_html__( 'Posts Number to be displayed:', 'anorya' ),
-					$this->get_field_name( 'anorya_posts_number' ),
+					esc_attr($this->get_field_name( 'anorya_posts_number' )),
 					esc_attr( $field_value ) );
 			
 		}
@@ -47,12 +47,12 @@
 			$widget_output = '<div class="widget">';
 			//title output
 			if(isset( $instance['anorya_title_widget'] ) || $instance['anorya_title_widget']){
-				$widget_output .= '<h4>'.$instance['anorya_title_widget'].'</h4>';
+				$widget_output .= '<h4>'.esc_attr($instance['anorya_title_widget']).'</h4>';
 			}
 			
 			$widget_output .= '<div class="row">';
 			if(isset( $instance['anorya_posts_number'] ) || $instance['anorya_posts_number']){
-				$args = array(	'posts_per_page' =>  $instance['anorya_posts_number'] );
+				$args = array(	'posts_per_page' =>  absint($instance['anorya_posts_number'] ));
 			}
 			else
 			{

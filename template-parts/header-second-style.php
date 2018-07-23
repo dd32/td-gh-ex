@@ -5,11 +5,19 @@
 
 			<div class="container header-area">
 				<div class="row">
-					<div class="col-md-4">
-						<?php the_custom_logo(); ?>
+					<div class="col-md-4 col-sm-12">
+						<?php if( has_custom_logo()): ?>
+							<div itemscope itemtype="http://schema.org/Brand">
+								<?php the_custom_logo(); ?>
+							</div>
+						<?php else: ?>
+							<h1><a href="<?php print esc_url_raw(home_url( '/' )); ?>">
+								<?php print esc_attr(get_bloginfo( 'name', 'display' ) ); ?>
+							</a></h1>
+						<?php endif; ?>
 					</div>
-					<div class="col-md-8 header-area-content">
-						<?php anorya_display_header_banner(); ?>	
+					<div class="col-md-8 col-sm-12 header-area-content">
+						<?php dynamic_sidebar( 'anorya_widget_header_banner' ); ?>	
 					</div>
 				</div>
 			</div>

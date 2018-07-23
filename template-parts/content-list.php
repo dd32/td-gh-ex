@@ -21,9 +21,9 @@
 		
 			<div class="col-md-6 col-sm-12 col-xs-12">
 				<p class="post-category-desc">
-					<?php print __('Posted In ','anorya'); ?>
+					<?php esc_html_e('Posted In ','anorya'); ?>
 					<span class="post-category-content"><?php print esc_html( anorya_get_post_display_category($post->ID) ); ?></span>
-					<?php print __(' By ','anorya'); ?>
+					<?php esc_html_e(' By ','anorya'); ?>
 					<span class="post-category-content"><?php print esc_html(the_author_meta('display_name')); ?></span>
 				</p>
 		
@@ -31,13 +31,7 @@
 		
 				<p><?php  print esc_html(get_the_excerpt()); ?></p>	
 		
-				<div class=" post-meta-container">
-					<div class=" post-social-icons">
-						<?php anorya_social_share($post->ID); ?>
-					</div>
-				</div>
-				
-				<a href="<?php the_permalink(); ?>" class="posts-read-more btn btn-primary"><?php print __('Continue Reading','anorya');?></a>
+				<a href="<?php the_permalink(); ?>" class="posts-read-more btn btn-primary"><?php esc_html_e('Continue Reading','anorya');?></a>
 		
 			</div>
 		</div>

@@ -14,14 +14,14 @@
 		// Gallery Metabox
 		$metaboxes[] = array(
 			'id'         => 'anorya_gallery',
-			'title'      => __( 'Gallery', 'anorya' ),
+			'title'      => esc_html__( 'Gallery', 'anorya' ),
 			'post_types' => array( 'post' ),
 			'context'    => 'normal',
 			'priority'   => 'high',
 			'autosave'   => true,
 			'fields'     => array(
 				array(
-					'name'             => __( 'Upload  Images', 'anorya' ),
+					'name'             => esc_html__( 'Upload  Images', 'anorya' ),
 					'id'               => "anorya_g",
 					'type'             => 'image_advanced',
 					'max_file_uploads' => 10,
@@ -32,7 +32,7 @@
 		// Video Metabox
 		$metaboxes[] = array(
 			'id'         => 'anorya_video_url',
-			'title'      => __( 'Video Post', 'anorya' ),
+			'title'      => esc_html__( 'Video Post', 'anorya' ),
 			'post_types' => array( 'post' ),
 			'context'    => 'normal',
 			'priority'   => 'high',
@@ -40,7 +40,7 @@
 			'fields'     => array(
 				// TEXTAREA
 				array(
-					'name' => __( 'Your Video Embed Code:', 'anorya' ),
+					'name' => esc_html__( 'Your Video Embed Code:', 'anorya' ),
 					'id'   => "anorya_v_url",
 					'type' => 'textarea',
 					'cols' => 20,
@@ -52,7 +52,7 @@
 		// Audio Metabox
 		$metaboxes[] = array(
 			'id'         => 'anorya_audio_url',
-			'title'      => __( 'Audio Post', 'anorya' ),
+			'title'      => esc_html__( 'Audio Post', 'anorya' ),
 			'post_types' => array( 'post' ),
 			'context'    => 'normal',
 			'priority'   => 'high',
@@ -60,7 +60,7 @@
 			'fields'     => array(
 				// TEXTAREA
 				array(
-					'name' => __( 'Your Audio Embed Code:', 'anorya' ),
+					'name' => esc_html__( 'Your Audio Embed Code:', 'anorya' ),
 					'id'   => "anorya_a_url",
 					'type' => 'textarea',
 					'cols' => 20,

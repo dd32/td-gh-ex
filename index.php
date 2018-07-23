@@ -119,8 +119,8 @@
 					
 				<?php print str_replace('role="navigation"','',get_the_posts_pagination( array(
 												'mid_size' => 2,
-												'prev_text' =>__( '<i class="fa  fa-angle-double-left" aria-hidden="true"></i> Previous','anorya' ),
-												'next_text' => __( 'Next <i class="fa fa-angle-double-right" aria-hidden="true"></i>','anorya' ),) ));
+												'prev_text' =>'<i class="fa  fa-angle-double-left" aria-hidden="true"></i> '.esc_html__( ' Previous','anorya' ),
+												'next_text' => esc_html__( 'Next','anorya' ).'  <i class="fa fa-angle-double-right" aria-hidden="true"></i>',) ));
 												 
 				?>
 				</div>

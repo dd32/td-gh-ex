@@ -9,7 +9,7 @@
 		
 		// Constructor.
 		public function __construct(){
-			parent::__construct( strtolower( __CLASS__ ), esc_html(__('Anorya - Social Media Links Widget','anorya')) );
+			parent::__construct( strtolower( __CLASS__ ), esc_html__('Anorya - Social Media Links Widget','anorya') );
 		}
 
     
@@ -19,12 +19,12 @@
 			
 			
 			//widget title
-			$field_value = isset ( $instance['anorya_title_widget'] ) ? $instance['anorya_title_widget'] : __('Social Media', 'anorya');
+			$field_value = isset ( $instance['anorya_title_widget'] ) ? $instance['anorya_title_widget'] : esc_html__('Social Media', 'anorya');
 			$field_value = esc_attr( $field_value );
 			printf('<p><label for="%1$s">%2$s</label><br /><input type="text" name="%3$s" id="%1$s" value="%4$s" class="widefat"></p><p>%5$s</p>',
-					$this->get_field_id( 'anorya_title_widget' ),
+					esc_attr($this->get_field_id( 'anorya_title_widget' )),
 					esc_html__( 'Title', 'anorya' ),
-					$this->get_field_name( 'anorya_title_widget' ),
+					esc_attr($this->get_field_name( 'anorya_title_widget' )),
 					esc_attr( $field_value ),
 					esc_html__('Social Media Links are set in Customizer Options','anorya'));
 					
@@ -39,7 +39,7 @@
 			print '<div class="widget">';
 			//title output
 			if(isset( $instance['anorya_title_widget'] ) || $instance['anorya_title_widget']){
-				print '<h4>'.$instance['anorya_title_widget'].'</h4>';
+				print '<h4>'.esc_html($instance['anorya_title_widget']).'</h4>';
 			}
 			
 			print '<ul class="social-menu">';
@@ -47,8 +47,6 @@
 			anorya_social_links_list_display();
 			
 			print '</ul></div>';
-			
-			//print $widget_output;
 			
 		}
 

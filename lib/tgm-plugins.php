@@ -50,16 +50,6 @@
 							'force_deactivation' => false, 
 						),
 						
-						//Customizer Reset
-						array(
-							'name'               => 'Customizer Reset', 
-							'slug'               => 'customizer-reset-by-wpzoom', 
-							'required'           => false, 
-							'version'            => '1.0.1', 
-							'force_activation'   => false, 
-							'force_deactivation' => false, 
-						),
-						
 						//Customizer Export/Import
 						array(
 							'name'               => 'Customizer Export/Import', 
@@ -69,17 +59,27 @@
 							'force_activation'   => false, 
 							'force_deactivation' => false, 
 						),
+						
+						//Widget Importer - Exporter
+						array(
+							'name'               => 'Widget Importer & Exporter', 
+							'slug'               => 'widget-importer-exporter', 
+							'required'           => false, 
+							'version'            => '1.5.3', 
+							'force_activation'   => false, 
+							'force_deactivation' => false, 
+						),
 		
 		
 					);
 					
 		$config = array( 'id'           => 'anorya',                 
-						 'default_path' => get_template_directory() . '/lib/plugins/',       
+						 'default_path' => '',       
 						 'menu'         => 'anorya_tgmpa-install-plugins', 
 						 'has_notices'  => true,
 						 'dismissable'  => true,
 						 'is_automatic' => false,
-						 'message'      => __('Install all required plugins in order to use all the themes functions','anorya'),   
+						 'message'      => esc_html__('You will need to install all recommended plugins if you plan to use all the theme\'s features.','anorya'),   
 						);	
 					
 		tgmpa( $plugins, $config );			

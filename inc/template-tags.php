@@ -106,12 +106,12 @@
 						<div class="slider-post-title">
 							<h1><a href="<?php the_permalink(); ?>"><?php print the_title(); ?></a></h1>
 						</div>	
-						<p class="slider-post-date-desc"><?php print __('Posted On ','anorya'); ?>
+						<p class="slider-post-date-desc"><?php esc_html_e('Posted On ','anorya'); ?>
 						<span class="slider-post-date"><?php print get_the_date('F j, Y',$query->post->ID);?></span>
-						<?php print __('In ','anorya'); ?>
+						<?php esc_html_e('In ','anorya'); ?>
 						<span class="slider-post-date"><?php echo esc_html( anorya_get_post_display_category($query->post->ID) );?></span>
 						</p>   
-						<a href="<?php print esc_url(the_permalink());?>" class="slider-post-button-container btn btn-primary"><?php print __('Read More','anorya'); ?></a>
+						<a href="<?php print esc_url(the_permalink());?>" class="slider-post-button-container btn btn-primary"><?php esc_html_e('Read More','anorya'); ?></a>
 					</div>
 				</div>
 				<?php endif;			
@@ -181,7 +181,7 @@
 			
 			
 				<div class="row similar-posts">
-					<h2><?php print __('You may also like','anorya'); ?> </h2>
+					<h2><?php esc_html_e('You may also like','anorya'); ?> </h2>
 				
 				<?php	while ( $query->have_posts() ) :
  
@@ -210,8 +210,8 @@
 		if(isset($content_type)){
 			switch($content_type){
 				case 'HOME':
-						if(get_theme_mod( 'anorya_home_sidebar_setting', 'hidden' ) == 'left' ||
-						   get_theme_mod( 'anorya_home_sidebar_setting', 'hidden' ) == 'right'){
+						if(get_theme_mod( 'anorya_home_sidebar_setting', 'right' ) == 'left' ||
+						   get_theme_mod( 'anorya_home_sidebar_setting', 'right' ) == 'right'){
 							return 'col-md-8 col-sm-7';	
 							break;
 					    }
@@ -220,8 +220,8 @@
 							break;
 						}  
 				case 'ARCHIVES':
-						if(get_theme_mod( 'anorya_archives_sidebar_setting', 'hidden' ) == 'left' ||
-						   get_theme_mod( 'anorya_archives_sidebar_setting', 'hidden' ) == 'right'){
+						if(get_theme_mod( 'anorya_archives_sidebar_setting', 'right' ) == 'left' ||
+						   get_theme_mod( 'anorya_archives_sidebar_setting', 'right' ) == 'right'){
 							return 'col-md-8 col-sm-7';	
 							break;
 					    }
@@ -230,8 +230,8 @@
 							break;
 						}
 				case 'SINGLE':
-						if(get_theme_mod( 'anorya_single_post_sidebar_setting', 'hidden' ) == 'left' ||
-						   get_theme_mod( 'anorya_single_post_sidebar_setting', 'hidden' ) == 'right'){
+						if(get_theme_mod( 'anorya_single_post_sidebar_setting', 'right' ) == 'left' ||
+						   get_theme_mod( 'anorya_single_post_sidebar_setting', 'right' ) == 'right'){
 							return 'col-md-8 col-sm-7';	
 							break;
 					    }
@@ -240,8 +240,8 @@
 							break;
 						}
 				case 'PAGE':
-						if(get_theme_mod( 'anorya_single_page_sidebar_setting', 'hidden' ) == 'left' ||
-						   get_theme_mod( 'anorya_single_page_sidebar_setting', 'hidden' ) == 'right'){
+						if(get_theme_mod( 'anorya_single_page_sidebar_setting', 'right' ) == 'left' ||
+						   get_theme_mod( 'anorya_single_page_sidebar_setting', 'right' ) == 'right'){
 							return 'col-md-8 col-sm-7';	
 							break;
 					    }
@@ -250,8 +250,8 @@
 							break;
 						}
 				case 'SEARCH':
-						if(get_theme_mod( 'anorya_search_sidebar_setting', 'hidden' ) == 'left' ||
-						   get_theme_mod( 'anorya_search_sidebar_setting', 'hidden' ) == 'right'){
+						if(get_theme_mod( 'anorya_search_sidebar_setting', 'right' ) == 'left' ||
+						   get_theme_mod( 'anorya_search_sidebar_setting', 'right' ) == 'right'){
 							return 'col-md-8 col-sm-7 anorya-search-results';	
 							break;
 					    }
@@ -273,48 +273,48 @@
 	function anorya_get_sidebar_display_setting()
 	{
 		if(is_home() || is_front_page()){
-			if(get_theme_mod( 'anorya_home_sidebar_setting', 'hidden' )){
-				return get_theme_mod( 'anorya_home_sidebar_setting', 'hidden');
+			if(get_theme_mod( 'anorya_home_sidebar_setting', 'right' )){
+				return get_theme_mod( 'anorya_home_sidebar_setting', 'right');
 			}
 			else{
 				return false;
 			}	
 		}
 		else if(is_archive() || is_category() || is_tag()){
-			if(get_theme_mod( 'anorya_archives_sidebar_setting', 'hidden' )){
-				return get_theme_mod( 'anorya_archives_sidebar_setting', 'hidden');
+			if(get_theme_mod( 'anorya_archives_sidebar_setting', 'right' )){
+				return get_theme_mod( 'anorya_archives_sidebar_setting', 'right');
 			}
 			else{
 				return false;
 			}	
 		}
 		else if(is_single()){
-			if(get_theme_mod( 'anorya_single_post_sidebar_setting', 'hidden' )){
-				return get_theme_mod( 'anorya_single_post_sidebar_setting', 'hidden');
+			if(get_theme_mod( 'anorya_single_post_sidebar_setting', 'right' )){
+				return get_theme_mod( 'anorya_single_post_sidebar_setting', 'right');
 			}
 			else{
 				return false;
 			}	
 		}
 		else if(is_page()){
-			if(get_theme_mod( 'anorya_single_page_sidebar_setting', 'hidden' )){
-				return get_theme_mod( 'anorya_single_page_sidebar_setting', 'hidden');
+			if(get_theme_mod( 'anorya_single_page_sidebar_setting', 'right' )){
+				return get_theme_mod( 'anorya_single_page_sidebar_setting', 'right');
 			}
 			else{
 				return false;
 			}	
 		}
 		else if(is_search()){
-			if(get_theme_mod( 'anorya_search_sidebar_setting', 'hidden' )){
-				return get_theme_mod( 'anorya_search_sidebar_setting', 'hidden');
+			if(get_theme_mod( 'anorya_search_sidebar_setting', 'right' )){
+				return get_theme_mod( 'anorya_search_sidebar_setting', 'right');
 			}
 			else{
 				return false;
 			}	
 		}
 		else{
-			if(get_theme_mod( 'anorya_search_sidebar_setting', 'hidden' )){
-				return get_theme_mod( 'anorya_search_sidebar_setting', 'hidden');
+			if(get_theme_mod( 'anorya_search_sidebar_setting', 'right' )){
+				return get_theme_mod( 'anorya_search_sidebar_setting', 'right');
 			}
 			else{
 				return false;
@@ -399,28 +399,29 @@
 	}
 	
 	//display social media share buttons
+	// DEPRECATE SINCE 1.0.4
 	function anorya_social_share($post_id)
 	{
 		 ?>
 			<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>">
-				<?php print __('SHARE: ','anorya'); ?>
+				<?php esc_html_e('SHARE: ','anorya'); ?>
 				<i class="fa fa-facebook" aria-hidden="true"></i>
 			</a>
 			
 			<a href="https://twitter.com/home?status=<?php 
 				print esc_html(str_replace(' ','+',get_the_title($post_id))); 
 				echo '-'; the_permalink(); ?>">
-				<?php print __('TWEET: ','anorya'); ?>
+				<?php print esc_html_e('TWEET: ','anorya'); ?>
 				<i class="fa fa-twitter" aria-hidden="true"></i>
 			</a>
 			
 			<a href="https://plus.google.com/share?url=<?php the_permalink(); ?>">
-				<?php print __('+1: ','anorya'); ?>
+				<?php print esc_html_e('+1: ','anorya'); ?>
 				<i class="fa fa-google-plus" aria-hidden="true"></i>
 			</a>
 			
 			<a href="https://pinterest.com/pin/create/button/?url=<?php the_permalink();?>&media=<?php get_the_post_thumbnail_url($post_id,'anorya_large');?>&description=<?php print esc_html(str_replace(' ','-',get_the_title($post_id))); ?>">
-				<?php print __('PIN: ','anorya'); ?>
+				<?php print esc_html_e('PIN: ','anorya'); ?>
 				<i class="fa fa-pinterest-p" aria-hidden="true"></i>
 			</a> <?php
 	}
@@ -431,10 +432,10 @@
 			<i class="fa  fa-comment-o" aria-hidden="true"></i> 
 			<?php 
 				if(get_comments_number() == 1){
-					print __('1 COMMENT','anorya');
+					esc_html_e('1 COMMENT','anorya');
 				}
 				else{
-					printf(__('%s COMMENTS','anorya'),get_comments_number());
+					printf(esc_html__('%s COMMENTS','anorya'),esc_attr(get_comments_number()));
 				}			
 			?>
 		</div> <?php
@@ -477,17 +478,6 @@
 				<img class="img-responsive align-center"
 						src="<?php print esc_url_raw(get_theme_mod( 'anorya_header_banner_image_setting')); ?>" 
 						alt="<?php print esc_attr(get_bloginfo( 'name', 'display' ) ); ?>" /></a>	
-			</div>
-		<?php else: ?>	
-			<div class="widget">
-				<?php if(get_theme_mod( 'anorya_header_banner_link_setting')): ?>
-					<a href="<?php print esc_url_raw(get_theme_mod( 'anorya_header_banner_link_setting')); ?>">
-				<?php else: ?>	
-					<a href="<?php print esc_url_raw(home_url( '/' )); ?>">
-				<?php endif; ?>	
-				<img class="img-responsive align-center" 
-					src="<?php print get_template_directory_uri().'/assets/images/header_banner.jpg'; ?>" 
-					alt="<?php print esc_attr(get_bloginfo( 'name', 'display' ) ); ?>" /></a>
 			</div>
 		<?php endif;	
 	}	

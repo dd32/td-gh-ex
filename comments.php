@@ -17,10 +17,10 @@
 	<div id ="comments" class="post-comments">
 		<?php if ( have_comments() ) : 
 			if(get_comments_number() == 1){ ?>
-				<h4><?php print __('1 Comment','anorya'); ?></h4>
+				<h4><?php print esc_html('1 Comment','anorya'); ?></h4>
 			<?php }
 			else{ ?>
-				<h4><?php printf(__('%s Comments','anorya'),get_comments_number());?></h4>
+				<h4><?php printf(esc_html('%s Comments','anorya'),esc_attr(get_comments_number()));?></h4>
 			<?php }	
 
 			//comments navigation if there are multiple comment pages
@@ -69,21 +69,21 @@
 									'title_reply_after' => '</h6>',
 									'fields' => apply_filters( 'comment_form_default_fields', 
 									array(	'author' => '<div class="col-md-4 col-sm-4">' .
-														'<input id="author" name="author" class="comment-form-input" type="text" placeholder="'.__('Enter your name','anorya').
-														( $req ? __(' - (Required)','anorya') : '' ).'" value="'.esc_attr( $commenter['comment_author'] ) .'" ' . $aria_req . ' /></div>',
+														'<input id="author" name="author" class="comment-form-input" type="text" placeholder="'.esc_html__('Enter your name','anorya').
+														( $req ? esc_html__(' - (Required)','anorya') : '' ).'" value="'.esc_attr( $commenter['comment_author'] ) .'" ' . $aria_req . ' /></div>',
 											'email' =>	 '<div class="col-md-4 col-sm-4">'.
-														'<input id="email" name="email" type="text" class="comment-form-input" placeholder="'.__('Your e-mail address','anorya').
-														( $req ? __(' - (Required)','anorya') : '' ).'" value="' . esc_attr(  $commenter['comment_author_email'] ).'" '.$aria_req.'/></div>',
+														'<input id="email" name="email" type="text" class="comment-form-input" placeholder="'.esc_html__('Your e-mail address','anorya').
+														( $req ? esc_html__(' - (Required)','anorya') : '' ).'" value="' . esc_attr(  $commenter['comment_author_email'] ).'" '.$aria_req.'/></div>',
 											'url' =>    '<div class="col-md-4 col-sm-4">'.
-														'<input id="url" name="url" type="text" class="comment-form-input" placeholder="'.__('Your website url','anorya').
-														( $req ? __(' - (Required)','anorya') : '' ).'" value="' . esc_attr( $commenter['comment_author_url'] ).
+														'<input id="url" name="url" type="text" class="comment-form-input" placeholder="'.esc_html__('Your website url','anorya').
+														( $req ? esc_html__(' - (Required)','anorya') : '' ).'" value="' . esc_attr( $commenter['comment_author_url'] ).
 														'"  /></div>')),
 									'comment_field' =>  '<div class="col-md-12 col-sm-12">'.
-														'<textarea id="comment" name="comment" placeholder="'.__('Enter Your Comment','anorya').( $req ? __(' - (Required)','anorya') : '' ).
+														'<textarea id="comment" name="comment" placeholder="'.esc_html__('Enter Your Comment','anorya').( $req ? esc_html__(' - (Required)','anorya') : '' ).
 														'" class="comment-form-textarea" cols="45" rows="8" aria-required="true">'.
 														'</textarea></div>',
 									'class_submit' => 'comment-form-submit btn-primary',
-									'comment_notes_before' => '<div class="col-md-12 col-sm-12"><p>'.__('Your e-mail will not be published. All required Fields are marked','anorya').'</p></div>',
+									'comment_notes_before' => '<div class="col-md-12 col-sm-12"><p>'.esc_html__('Your e-mail will not be published. All required Fields are marked','anorya').'</p></div>',
 									
 														));
 

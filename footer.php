@@ -46,8 +46,10 @@
 					else:
 						//link to reborn themes if text on footer is not set
 						esc_html_e('&copy; 2017 - Anorya Personal Responsive Blog WordPress Theme','anorya');	 ?>
-						- <a href="https://www.rebornthemes.com">Reborn Themes</a>			
-				<?php endif; ?>
+				<?php endif; ?>				
+					- <a href="https://www.wordpress.org">Powered by WordPress</a>
+					- <a href="https://www.rebornthemes.com"> Created by RebornThemes.com</a>			
+				
 			</div>
 		</div>
 	</footer>

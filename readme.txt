@@ -4,8 +4,8 @@ Contributors: automattic
 Tags: translation-ready, theme-options, custom-menu, post-formats, threaded-comments
 
 Requires at least: 4.7
-Tested up to: 4.9.3
-Stable tag: 1.0.3
+Tested up to: 4.9.7
+Stable tag: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,23 +20,27 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
-=1.0 1/11/2017=
+=1.0.4 23/7/2018=
 
-* Initial release
+* REMOVED SOCIAL SHARE ICONS TO PREVENT INCOMPABILITIES WITH PLUGINS
+* UPDATED THEME URI, AUTHOR URI AND COPYRIGHT NOTICES
+* UPDATED HEADER LOGO, ADDED FAIL-SAFE SITE TITLE AND DESCRIPTION WHEN NO LOGO IS UPLOADED
+* FIXED BUG IN HEADER LAYOUT 5 WHERE BANNER WAS NOT DISPLAYED PROPERLY
+* FIXED MISSING WORDPRESS GENERATED CLASSES IN WIDGET CONTAINERS
+* ADDED NEW WIDGET AREA FOR HEADER BANNER AND REMOVED HEADER BANNER FROM CUSTOMIZER OPTIONS
+* FIXED PROMO BOX 2 URL FIELD MISSING FROM CUSTOMIZER SETTINGS
+* MOVED MAIN THEME CSS INTO SEPERATE FILE
+* UPDATED TGMPA RECOMMENDED PLUGINS AND FIXED TYPOS
+* UPDATED OWL CAROUSEL TO 2.3.4 VERSION
+* ADDED EDITOR STYLESHEET FOR TINYMCE
+* ADDED RTL LANGUAGE SUPPORT
 
-=1.0.1 6/2/2018=
 
-* CHANGED POST FORMATS METABOXES: Using Metabox plugin to store data to prevent loss when switching themes
-* REMOVED FACEBOK WIDGET
-* REMOVED DEAFULT LOGO: If a logo is not uploaded a default logo will not be displayed. Instead a Heading with blog name will be displayed
-* REMOVED SCRIPTS ADN STYLES FROM ADMIN: Removed Several scripts and styles that erroneously were load across the entire admin
-* UPDATE LICENSE AND COPYRIGHT STATEMENTS
-* REMOVED THEME URI
-* REMOVED AUTHOR URI
-* ADDED NON MINIFIED VERSION OF SCRIPTS AND STYLESHEETS USED
-* UPDATED CUSTOMIZER SETTINGS
-* FIXED SEVERAL PHP BUGS FOR VERSIONS PRIOR TO 5.5
-* UPDATED THE TGMPA TO WORDPRESS.ORG VERSION
+=1.0.3 23/2/2018=
+
+* ADDED SIDEBAR TEMPLATES (Left,Right or No Sidebar) FROM PAGES AND POSTS(SINGLE)
+* FIXED NOT NEEDED ECHO on POST THUMBNAIL FUNCTION
+* FIXED GALLERY POST FORMAT BOG NOT DISPLAYING PROPERLY
 
 =1.0.2 13/2/2018=
 
@@ -45,11 +49,23 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * REMOVED THEME SUPPORT OF CUSTOM-BACKGROUND
 * FIXED SEVERAL TYPOS ON CUSTOMIZER
 
-=1.0.3 23/2/2018=
+=1.0.1 6/2/2018=
 
-* ADDED SIDEBAR TEMPLATES (Left,Right or No Sidebar) FROM PAGES AND POSTS(SINGLE)
-* FIXED NOT NEEDED ECHO on POST THUMBNAIL FUNCTION
-* FIXED GALLERY POST FORMAT BOG NOT DISPLAYING PROPERLY
+* CHANGED POST FORMATS METABOXES: Using Metabox plugin to store data to prevent loss when switching themes
+* REMOVED FACEBOK WIDGET
+* REMOVED DEAFULT LOGO: If a logo is not uploaded a default logo will not be displayed. Instead a Heading with blog name will be displayed
+* REMOVED SCRIPTS AND STYLES FROM ADMIN: Removed Several scripts and styles that erroneously were load across the entire admin
+* UPDATE LICENSE AND COPYRIGHT STATEMENTS
+* REMOVED THEME URI
+* REMOVED AUTHOR URI
+* ADDED NON MINIFIED VERSION OF SCRIPTS AND STYLESHEETS USED
+* UPDATED CUSTOMIZER SETTINGS
+* FIXED SEVERAL PHP BUGS FOR VERSIONS PRIOR TO 5.5
+* UPDATED THE TGMPA TO WORDPRESS.ORG VERSION
+
+=1.0 1/11/2017=
+
+* Initial release
 
 == Copyright ==
 
@@ -67,18 +83,19 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Anorya bundles the following third-party resources:
+=Anorya bundles the following third-party resources:=
 
 * Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
-
 * animate.css,  Copyright (c) 2016 Daniel Eden, [MIT](http://opensource.org/licenses/MIT)
-
-* OwlCarousel 2.2, Copyright (c) Modified work Copyright 2016-2017 David Deutsch, [MIT](http://opensource.org/licenses/MIT)
-
-* All images used, included those on screenshot are licensed under the Creative Commons Zero (CC0) license. (https://www.pexels.com/photo-license/)
-
+* OwlCarousel 2.3.4, Copyright (c) Modified work Copyright 2016-2017 David Deutsch, [MIT](http://opensource.org/licenses/MIT)
 * Google Fonts ( https://fonts.google.com/attribution )
-
 * Font Awesome icons, Copyright Dave Gandy License: SIL Open Font License, version 1.1. Source: http://fontawesome.io/
+
+=All images used in theme screenshot are licensed under the Creative Commons Zero (CC0) license.=
+* https://www.pexels.com/photo/black-and-white-close-up-eyes-face-407035/ - (C) pixabay.com - Creative Commons Zero (CC0) license
+* https://www.pexels.com/photo/baby-s-feet-on-brown-wicker-basket-161534/ - (C) pixabay.com - Creative Commons Zero (CC0) license
+* https://www.pexels.com/photo/woman-lying-on-white-textile-touching-white-pillow-33690/ - (C) pixabay.com - Creative Commons Zero (CC0) license
+* https://www.pexels.com/photo/woman-in-white-dress-wearing-gold-chunky-necklace-during-daytime-66354/ - (C) Scott Webb  - Creative Commons Zero (CC0) license
+* https://www.pexels.com/photo/architecture-buildings-business-city-325185/ - (C) Aleksandar Pasaric - Creative Commons Zero (CC0) license
+* https://www.pexels.com/photo/botanical-bright-cacti-cactus-323391/ - (C) Scott Webb  - Creative Commons Zero (CC0) license

@@ -63,38 +63,45 @@
 	* Register widget areas.
 	*/
 	function anorya_widgets_init() {
+			register_sidebar( array('name'=> esc_html__( 'Header Banner', 'anorya' ),
+									'id'            => 'anorya_widget_header_banner',
+									'description'   => esc_html__( 'Used in header layouts 2 & 5 to add a banner on the header.', 'anorya' ),	
+									'before_widget' => '<div id="%1$s" class="widget %2$s">',
+									'after_widget'  => '</div>',
+									'before_title'  => '<h6>',
+									'after_title'   => '</h6>',	) );
 			register_sidebar( array('name'=> esc_html__( 'Sidebar', 'anorya' ),
 									'id'            => 'anorya_widget_main_sidebar',
 									'description'   => esc_html__( 'Add widgets here.', 'anorya' ),	
-									'before_widget' => '<div id="%1$s" class="widget">',
+									'before_widget' => '<div id="%1$s" class="widget %2$s">',
 									'after_widget'  => '</div>',
 									'before_title'  => '<h6>',
 									'after_title'   => '</h6>',	) );
 			register_sidebar( array('name'=> esc_html__( 'Hidden Sidebar', 'anorya' ),
 									'id'            => 'anorya_widget_hidden_sidebar',
 									'description'   => esc_html__( 'Add widgets here.', 'anorya' ),	
-									'before_widget' => '<div id="%1$s" class="widget">',
+									'before_widget' => '<div id="%1$s" class="widget %2$s">',
 									'after_widget'  => '</div>',
 									'before_title'  => '<h6>',
 									'after_title'   => '</h6>',	) );						
 			register_sidebar( array('name'=> esc_html__( 'Footer Section 1', 'anorya' ),
 									'id'            => 'anorya_widget_footer_section_1',
 									'description'   => esc_html__( 'Add widgets here.', 'anorya' ),	
-									'before_widget' => '<div id="%1$s" class="widget">',
+									'before_widget' => '<div id="%1$s" class="widget %2$s">',
 									'after_widget'  => '</div>',
 									'before_title'  => '<h6>',
 									'after_title'   => '</h6>',	) );
 			register_sidebar( array('name'=> esc_html__( 'Footer Section 2', 'anorya' ),
 									'id'            => 'anorya_widget_footer_section_2',
 									'description'   => esc_html__( 'Add widgets here.', 'anorya' ),	
-									'before_widget' => '<div id="%1$s" class="widget">',
+									'before_widget' => '<div id="%1$s" class="widget %2$s">',
 									'after_widget'  => '</div>',
 									'before_title'  => '<h6>',
 									'after_title'   => '</h6>',	) );
 			register_sidebar( array('name'=> esc_html__( 'Footer Section 3', 'anorya' ),
 									'id'            => 'anorya_widget_footer_section_3',
 									'description'   => esc_html__( 'Add widgets here.', 'anorya' ),	
-									'before_widget' => '<div id="%1$s" class="widget">',
+									'before_widget' => '<div id="%1$s" class="widget %2$s">',
 									'after_widget'  => '</div>',
 									'before_title'  => '<h6>',
 									'after_title'   => '</h6>',	) );
@@ -110,6 +117,16 @@
 		wp_enqueue_style( 'animate', get_template_directory_uri() . '/assets/css/animate.css', array(), null, 'all' );
 		wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.min.css', array(), null, 'all' );
 		wp_enqueue_style( 'font-awesome', get_template_directory_uri() .'/assets/css/font-awesome.min.css', array(), null, 'all' );
+		wp_enqueue_style( 'anorya-theme-style', get_template_directory_uri() .'/assets/css/anorya.css', array(), null, 'all' );
+		
+		
+		// Enable RTL Support if it's activated - since 1.0.4
+		if(get_theme_mod('anorya_rtl_support_setting')){
+			wp_enqueue_style( 'anorya-style-rtl', get_template_directory_uri() .'/assets/css/anorya-rtl.css', array(), null, 'all' );
+		}
+		
+		
+		
 		wp_enqueue_style( 'anorya-style', get_stylesheet_directory_uri() . '/style.css' );
 		
 		//add google fonts css
@@ -263,7 +280,7 @@
 		
 		//main hover color
 		$custom_css .= "\n"." .social-menu a:hover, .author-social a:hover,.slider-post-title a:hover,
-							  .promo-box-text:hover a, full-width-post:hover a, .sticky h2 a, 		
+							.promo-box-text:hover a, full-width-post:hover a, .sticky h2 a 		
 							  {color:".get_theme_mod('anorya_main_hover_color_setting').";}";
 		
 		//main hover text color
@@ -278,6 +295,9 @@
 	}
 	add_action( 'wp_enqueue_scripts', 'anorya_inline_styles' );
 	
+	
+	//add editor style - since 1.0.4
+	add_editor_style( 'assets/css/anorya-editor-style.css' );
 	
 	
 	//display hidden sidebar if enabled
@@ -312,12 +332,12 @@
 					
 				<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'],'','',array('class' => 'img-responsive img-circle') ); ?>
 				<h6><?php print get_comment_author_link( $comment ); ?>
-					<span class="comment-date"><?php printf( __( '%1$s at %2$s','anorya' ), get_comment_date( '', $comment ), get_comment_time() ); ?></span>
-					<?php edit_comment_link( __( 'Edit','anorya' ), '<span class="edit-link">', '</span>' ); ?>
+					<span class="comment-date"><?php printf( esc_html__( '%1$s at %2$s','anorya' ), get_comment_date( '', $comment ), get_comment_time() ); ?></span>
+					<?php edit_comment_link( esc_html__( 'Edit','anorya' ), '<span class="edit-link">', '</span>' ); ?>
 				</h6>
 
 				<?php if ( $comment->comment_approved == '0') : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.','anorya' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.','anorya' ); ?></p>
 				<?php endif;
 
 				comment_text(); ?> 
@@ -519,7 +539,7 @@
 		$args['walker'] = new Anorya_Widget_Nav_Walker();
 		$args['container'] = 'nav';
 		$args['container_class'] = 'navbar';
-		$args['container_id'] = 'primaryNav';
+		//$args['container_id'] = 'primaryNav';
 		$args['menu_class'] = 'nav navbar-nav';
 		
 		return $args;
