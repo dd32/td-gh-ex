@@ -4,11 +4,11 @@ Theme URI:  https://www.themeshopy.com/free/bb-free-wedding-bliss-wordpress-them
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: BB Wedding Bliss is a wedding WordPress theme to construct websites for marriage, engagement, couples, wedding planners, wedding band, personal, portfolio, art, design, business, photography, girlie or feminine blogs and websites, as well as photographer type of clients. You can make beautiful wedding websites with this multipurpose theme that caters to businesses such as hospitality, lodge, hotel, restaurant, café, food joints, cuisines, recipe, eatery, etc. It’s a completely mobile-friendly theme which is built using Bootstrap – an excellent framework. It has powerful shortcodes that will set up a pleasing website for you. It has a well-integrated versatile banner with attractive Call to Action Button (CTA). From the testimonial section, you can spread client reviews about your site. This theme has many features such social media tools, amazing typography options, color choices, customizable admin panel, etc. The optimized codes support faster page load time to give a stunning user experience. BB Wedding WordPress Theme is SEO friendly that gets over the top in search result pages. Take away this professional Wedding WordPress Theme which will give a beautiful touch to your wedding website. Demo: http://themeshopy.com/bb-wedding-bliss-theme/
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-wedding-bliss
-Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, buddypress, full-width-template, theme-options, threaded-comments, blog, photography, portfolio
+Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, post-formats, buddypress, full-width-template, theme-options, threaded-comments, blog, photography, portfolio
 
 BB wedding Bliss WordPress Theme has been created by Themeshopy, 2017.
 BB wedding Bliss WordPress Theme is released under the terms of GNU GPL
@@ -516,7 +516,7 @@ section .innerlightbox{
     color: #fff;
 }
 #footer input[type="search"] {
-    width: 100%;
+    width: 90%;
     border: none;
     padding: 7px 6px;
     border: solid 1px #4d4d4d;
@@ -610,8 +610,8 @@ table#wp-calendar {
 	border-radius:5px;
 }
 #footer input[type="submit"] {
-    width: 43%;
-    padding: 8px 5%;
+    width: 40%;
+    padding: 6px 5%;
     float: right;
     border: none;
     background: #4d4d4d;
@@ -931,6 +931,7 @@ table#wp-calendar {
 }
 label{
 	margin-bottom: 0px;
+	width: 60%;
 }
 #sidebar .tagcloud a{
 	background:#eeeeee;

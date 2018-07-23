@@ -138,9 +138,9 @@ get_header(); ?>
 <?php do_action( 'bb_wedding_bliss_after_section1' ); ?>
 
 <div class="container">
-    <?php while ( have_posts() ) : the_post(); ?>
-      <?php the_content(); ?>
-    <?php endwhile; // end of the loop. ?>
+  <?php while ( have_posts() ) : the_post(); ?>
+    <?php the_content(); ?>
+  <?php endwhile; // end of the loop. ?>
 </div>
 
 <?php get_footer(); ?>

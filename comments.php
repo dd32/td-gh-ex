@@ -28,13 +28,13 @@ if ( post_password_required() )
 				} else {
 					printf(
 						/* translators: 1: number of comments, 2: post title */
-						esc_html( _nx(
+						esc_html(
 			                '%1$s thought on &ldquo;%2$s&rdquo;',
 			                '%1$s thoughts on &ldquo;%2$s&rdquo;',
 			                $comments_number,
 			                'comments title',
 			                'bb-wedding-bliss'
-			            ) ),
+			            ),
 						esc_html (number_format_i18n( $comments_number ) ),
 		            	get_the_title()
 					);

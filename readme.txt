@@ -4,8 +4,8 @@
 
 Theme Name      :   BB Wedding Bliss
 Theme URI       :   https://www.themeshopy.com/free/bb-free-wedding-bliss-wordpress-theme/
-Version         :   1.0.6
-Tested up to    :   WP 4.9.5
+Version         :   1.0.7
+Tested up to    :   WP 4.9.6
 Author          :   Themeshopy
 Author URI      :   https://www.themeshopy.com/
 license         :   GNU General Public License v3.0
@@ -45,33 +45,31 @@ Twenty Sixteen is distributed under the terms of the GNU GPL
 
 Theme is Built using the following resource bundles.
 
-1 - All js that have been used are within folder /js of theme.
-- jquery.nivo.slider.js, License: MIT, License Url: https://opensource.org/licenses/MIT
-
-2 - PT Sans font - https://www.google.com/fonts/specimen/Open+Sans
+1 - PT Sans font - https://www.google.com/fonts/specimen/Open+Sans
 	License: Distributed under the terms of the Apache License, version 2.0 http://www.apache.org/licenses/LICENSE-2.0.html
 
-3. - All CSS that have been used are within folder /css of theme.
-	- nivo-slider.css, Copyright 2012, Dev7studios
-	 	* Free to use and abuse under the MIT license.
-	 	* http://www.opensource.org/licenses/mit-license.php
-	- bootstrap.css
-	 	* Bootstrap v3.3.2 (http://getbootstrap.com)
-	 	* Copyright 2011-2015 Twitter, Inc.
+2 -	CSS bootstrap.css
+    -- Copyright 2011-2018 The Bootstrap Authors
+    -- https://github.com/twbs/bootstrap/blob/master/LICENSE
+    
+    JS bootstrap.js
+    -- Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+    -- https://github.com/twbs/bootstrap/blob/master/LICENSE
 
-4 - CSS bootstrap.css
-        Code and documentation copyright 2011-2016 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.
     CSS nivo-slider.css
         Copyright 2012, Dev7studios
         Free to use and abuse under the MIT license.
         http://www.opensource.org/licenses/mit-license.php
 
-5 - The Font Awesome font is licensed under the SIL OFL 1.1:
+    JS nivo slider.js
+    	jquery.nivo.slider.js, License: MIT, License Url: https://opensource.org/licenses/MIT
+
+3 - The Font Awesome font is licensed under the SIL OFL 1.1:
 	http://scripts.sil.org/OFL
 	Font Awesome CSS, LESS, and Sass files are licensed under the MIT License:
 	https://opensource.org/licenses/mit-license.html
 
-6 - Images used from Pixabay.
+4 - Images used from Pixabay.
 	Pixabay provides images under CC0 license (https://creativecommons.org/about/cc0)
 
 	Bundled header image, Copyright scottwebb
@@ -124,6 +122,10 @@ ii)	 Resolved the errors.
 iii) Update the bootstrap to version 4.0.0.
 iv)  Added the post format tag and done the changes in template files.
 v)   Update the pot file in language folder.
+
+Version 1.0.7
+i)  Added typography section.
+ii) Updated pot file.
 	
 BB Wedding Bliss Free version
 ==========================================================

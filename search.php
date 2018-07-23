@@ -18,7 +18,7 @@ get_header(); ?>
                         <?php get_sidebar();?>
                     </div>
                     <div class="col-md-8 col-sm-8 col-xs-12">
-                       <h1 class="entry-title"><?php printf( 'Results For: %s', '<span>' . get_search_query() . '</span>' ); ?></h1>
+                       <h1 class="entry-title"><?php printf(esc_html('Results For: %s','bb-wedding-bliss'), '<span>' . esc_html(get_search_query()) . '</span>' ); ?></h1>
                         <?php if ( have_posts() ) :
                           /* Start the Loop */
                           while ( have_posts() ) : the_post();
@@ -43,7 +43,7 @@ get_header(); ?>
             <?php }else if($left_right == 'Right Sidebar'){ ?>
                 <div class="row">
                     <div class="col-md-8 col-sm-8 col-xs-12">
-                        <h1 class="entry-title"><?php printf( 'Results For: %s', '<span>' . get_search_query() . '</span>' ); ?></h1>
+                        <h1 class="entry-title"><?php printf(esc_html('Results For: %s','bb-wedding-bliss'), '<span>' . esc_html(get_search_query()) . '</span>' ); ?></h1>
                         <?php if ( have_posts() ) :
                             /* Start the Loop */
                             while ( have_posts() ) : the_post();
@@ -69,7 +69,7 @@ get_header(); ?>
                     </div>
                 </div>
             <?php }else if($left_right == 'One Column'){ ?>
-                <h1 class="entry-title"><?php printf( 'Results For: %s', '<span>' . get_search_query() . '</span>' ); ?></h1>
+                <h1 class="entry-title"><?php printf(esc_html('Results For: %s','bb-wedding-bliss'), '<span>' . esc_html(get_search_query()) . '</span>' ); ?></h1>
                 <?php if ( have_posts() ) :
                     /* Start the Loop */
                     while ( have_posts() ) : the_post();
@@ -93,7 +93,7 @@ get_header(); ?>
                 <div class="row">
                     <div id="sidebar" class="col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                        <h1 class="entry-title"><?php printf( 'Results For: %s', '<span>' . get_search_query() . '</span>' ); ?></h1>
+                        <h1 class="entry-title"><?php printf(esc_html('Results For: %s','bb-wedding-bliss'), '<span>' . esc_html(get_search_query()) . '</span>' ); ?></h1>
                         <?php if ( have_posts() ) :
                           /* Start the Loop */
                           while ( have_posts() ) : the_post();
@@ -120,7 +120,7 @@ get_header(); ?>
                 <div class="row">
                     <div id="sidebar" class="col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
                     <div class="col-md-3 col-sm-3 col-xs-12">
-                        <h1 class="entry-title"><?php printf( 'Results For: %s', '<span>' . get_search_query() . '</span>' ); ?></h1>
+                        <h1 class="entry-title"><?php printf(esc_html('Results For: %s','bb-wedding-bliss'), '<span>' . esc_html(get_search_query()) . '</span>' ); ?></h1>
                         <?php if ( have_posts() ) :
                           /* Start the Loop */
                             while ( have_posts() ) : the_post();
@@ -147,7 +147,7 @@ get_header(); ?>
             <?php }else if($left_right == 'Grid Layout'){ ?>
                 <div class="row">
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        <h1 class="entry-title"><?php printf( 'Results For: %s', '<span>' . get_search_query() . '</span>' ); ?></h1>
+                        <h1 class="entry-title"><?php printf(esc_html('Results For: %s','bb-wedding-bliss'), '<span>' . esc_html(get_search_query()) . '</span>' ); ?></h1>
                         <div class="row">
                             <?php if ( have_posts() ) :
                               /* Start the Loop */
