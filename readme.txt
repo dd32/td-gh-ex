@@ -1,6 +1,6 @@
 === DarkOrange ===
 Contributors: Guido07111975
-Version: 6.6
+Version: 6.7
 Requires at least: 4.7
 Tested up to: 4.9
 License: GNU General Public License v3 or later
