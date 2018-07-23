@@ -1,6 +1,6 @@
 === MyKnowledgeBase ===
 Contributors: Guido07111975
-Version: 6.2
+Version: 6.3
 Requires at least: 4.7
 Tested up to: 4.9
 License: GNU General Public License v3 or later
@@ -68,7 +68,7 @@ When you click the post link in frontend it will redirect you to this URL (so th
 You can change the search bar title via WordPress Dashboard > Appearance > Customize.
 
 = Browser support =
-The knowledgebase might not display properly in IE8 and older because I have used CSS selector 'nth-of-type'.
+The knowledgebase might not display properly in IE8 and older because I have used CSS selector "nth-of-type".
 
 == Copyright ==
 = Fonts =

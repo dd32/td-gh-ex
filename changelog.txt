@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 6.3 - july 2018
+- file style: changed CSS of many floating elements
+- file style: removed unnecessary CSS
+- file style: mobile menu update
+- file comments: changed comments-title from h4 into h3
+
 MyKnowledgeBase version 6.2 - june 2018
 - fixed mistake in POT file
 - readme file: removed donate link
