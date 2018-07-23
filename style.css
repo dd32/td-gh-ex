@@ -2,9 +2,9 @@
 Theme Name: Best Minimalist
 Theme URI: https://wpvkp.com/minimalist/
 Author: designgrande
-Author URI: 
-Description: Best Minimalist WordPress theme for professional bloggers and content marketers.
-Version: 1.0.2
+Author URI:
+Description: Best Minimalist WordPress theme for professional bloggers and content marketers. It comes with inbuilt support for Jetpack, Breadcrumb navXT and Related Post With Thumbnail Plugin. If the suggested extensions are not installed then the default in-build widgets will be used. This templates comes with default featured image in-case your post doesn't have any post-thumbnail. You can change the default featured image by replacing the image inside assets/images folder.
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: best-minimalist
@@ -1148,6 +1148,14 @@ time.entry-date:before,
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
+#comments {
+	text-align: center;
+}
+
+#comments .comment-list {
+	text-align: initial;
+}
+
 .comment-content a {
 	word-wrap: break-word;
 }
@@ -1161,8 +1169,39 @@ ol.comment-list {
 	padding: 0;
 }
 
+ol.comment-list li {
+	list-style-type: none;
+}
+
 .comment-list ol.children {
 	margin: 20px 0;
+}
+
+.comments-area .page-title {
+	margin: 20px auto 50px;
+}
+
+.comment-meta img {
+	height: 60px;
+	width: 60px;
+	margin: 0 0 -35px;
+	border-radius: 3px;
+}
+
+.comment-list b.fn {
+	margin: 0 0 0 5px;
+}
+
+.comment-metadata {
+	margin: 0 0 0 70px;
+}
+
+.comment-content {
+	margin: 5px 0 0;
+}
+
+.comment-respond {
+	text-align: initial;
 }
 
 a.comment-reply-link {
