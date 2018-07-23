@@ -79,7 +79,7 @@ function aladdin_get_defaults() {
 	$defaults['is_display_portfolio_project'] = '1';
 	
 	$defaults['empty_image'] = get_template_directory_uri() . '/img/empty.png';
-	$defaults['footer_text'] = '<a href="' . __( 'http://wordpress.org/', 'aladdin' ) . '">' . __( 'Powered by WordPress', 'aladdin' ). '</a> | ' . __( 'theme ', 'aladdin' ) . '<a href="' .  __( 'http://wpblogs.ru/themes/blog/theme/aladdin/', 'aladdin') . '">Aladdin</a>';
+	$defaults['footer_text'] = '<a href="' . __( 'http://wordpress.org/', 'aladdin' ) . '">' . __( 'Powered by WordPress', 'aladdin' ). '</a> | ' . __( 'theme ', 'aladdin' ) . '<a href="' .  __( '#', 'aladdin') . '">Aladdin</a>';
 	
 	$defaults['width_mobile_switch'] = '960';
 	$defaults['columns_direction'] = 'c_1_2';

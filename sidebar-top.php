@@ -20,7 +20,7 @@ if( ! isset( $wp_filter[ $hook_name ] ) && ! is_active_sidebar( 'aladdin-sidebar
 
 			<?php else : ?>
 
-					<?php //do_action( $hook_name ); ?>
+					<?php do_action( $hook_name ); ?>
 			
 			<?php endif; ?>
 	</div><!-- .widget-area -->
