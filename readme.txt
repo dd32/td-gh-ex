@@ -1,6 +1,6 @@
 === DarkElements ===
 Contributors: Guido07111975
-Version: 6.2
+Version: 6.3
 Requires at least: 4.2
 Tested up to: 4.9
 License: GNU General Public License v3 or later

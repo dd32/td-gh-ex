@@ -11,9 +11,9 @@ if ( post_password_required() )
 
 <div id="comments">
 	<?php if ( have_comments() ) : ?>
-		<h4 class="comments-title">
+		<h3 class="comments-title">
 			<?php printf( _n( '%1$s comment on %2$s', '%1$s comments on %2$s', get_comments_number(), 'darkelements' ), number_format_i18n( get_comments_number() ), get_the_title() ); ?> 
-		</h4>
+		</h3>
 
 		<ol class="comment-list">
 			<?php wp_list_comments( array(
