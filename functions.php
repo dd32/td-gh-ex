@@ -157,7 +157,7 @@ function belfast_scripts_styles() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
 	wp_enqueue_style( 'slicknav', get_template_directory_uri() . '/css/slicknav.css');
 	wp_enqueue_style( 'belfast-responsive', get_template_directory_uri().'/css/responsive.css');
-	wp_enqueue_script( 'slicknav', get_template_directory_uri() . '/js/jquery.slicknav.js', array( 'jquery' ), true );
+	wp_enqueue_script( 'jquery-slicknav', get_template_directory_uri() . '/js/jquery.slicknav.js', array( 'jquery' ), true );
 	wp_enqueue_script( 'belfast-custom-script', get_template_directory_uri() . '/js/scripts.js', array( 'jquery', 'imagesloaded' ), true );
 
 	}
@@ -227,59 +227,6 @@ function belfast_widgets_init() {
 }
 
 add_action( 'widgets_init', 'belfast_widgets_init' );
-
-if ( ! function_exists( 'belfast_paging_nav' ) ) :
-
-/**
-
- * Display navigation to next/previous set of posts when applicable. */
-
-function belfast_paging_nav() {
-
-	global $wp_query;
-
-// Don't print empty markup if there's only one page.
-
-	if ( $wp_query->max_num_pages < 2 )
-
-		return;
-
-	?>
-
-	<nav class="navigation paging-navigation" role="navigation">
-
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'belfast' ); ?></h1>
-
-		<div class="nav-links">
-
-
-
-			<?php if ( get_next_posts_link() ) : ?>
-
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'belfast' ) ); ?></div>
-
-			<?php endif; ?>
-
-
-
-			<?php if ( get_previous_posts_link() ) : ?>
-
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'belfast' ) ); ?></div>
-
-			<?php endif; ?>
-
-
-
-		</div><!-- .nav-links -->
-
-	</nav><!-- .navigation -->
-
-	<?php
-
-}
-
-endif;
-
 
 // WP post link pages
 function belfast_link_pages(){

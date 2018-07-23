@@ -4,12 +4,12 @@ Theme URI: http://webdesignbelfast.com/belfast/
 Author: Jonny Jordan
 Author URI: http://jonnyjordan.com/
 Description: Belfast is a beautiful, responsive and retina-ready Pinterest-style theme for creative minded people. Belfast can be used for personal, photography, art, fashion, nature, health or any minimalistic style website you want to create. It is highly optimised for SEO and very lightweight to ensure lightning quick loading speeds.
-Version: 1.1.4
+Version: 1.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: portfolio, blog, food-and-drink, one-column, two-columns, three-columns, grid-layout, right-sidebar, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options
 
-Text Domain: Belfast
+Text Domain: belfast
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1104,8 +1104,11 @@ ol {
 	font-style: italic;
 }
 .nav-links a {
-	font-style: italic; font-weight:bold;
-	color: #ff4171; font-size:18px;
+	font-style: italic; 
+	font-weight:bold;
+	color: #ff4171; 
+	font-size:18px;
+	margin:0px 6px;
 }
 .more-link:hover {
 	background:#eee;

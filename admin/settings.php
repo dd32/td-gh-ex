@@ -27,18 +27,6 @@ function belfast_customize_register ( $wp_customize ) {
     $wp_customize->add_control( 'belfast_rsslink', array('label' => __('RSS Feeds URL','belfast'),'section' => 'sociallinks',) );
 
 	// Social Links Ends
- 	// Footer Copyright Section
-	
-	$wp_customize->add_section( 'fcopyright', array(
-        'title' => __('Footer Copyright','belfast'), // The title of section
-        'description' => __('Add Your Copyright Notes Here.','belfast'), // The description of section
-        'priority' => '900',
-	) );
- 
-	$wp_customize->add_setting( 'belfast_footer_top', array('default' => __('Any Text Here','belfast'),'sanitize_callback' => 'belfast_sanitize_footer_text',) );
-    $wp_customize->add_control( 'belfast_footer_top', array('label' => __('Footer Text','belfast'),'section' => 'fcopyright',) );
-	$wp_customize->add_setting( 'belfast_footer_cr_left', array('default' => __('Your Copyright Here.','belfast'),'sanitize_callback' => 'belfast_sanitize_footer_text',) );
-	$wp_customize->add_control( 'belfast_footer_cr_left', array('label' => __('Copyright Note Left','belfast'),'section' => 'fcopyright',) );
 
 	function belfast_sanitize_footer_text( $input ) {
     return sanitize_text_field(  $input  );}

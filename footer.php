@@ -15,24 +15,15 @@
 <footer> 
 <div class="container">
         <div class="copyright col-md-12 col-sm-8">
-            <p class="col-md-6 alignleft"><?php if(get_theme_mod('belfast_footer_cr_left')){
-                echo esc_html(get_theme_mod( 'belfast_footer_cr_left' )); 
-                }?>
-				</p>
 				
-				<p class="col-md-6 alignright2">
-				
-                <?php if(get_theme_mod('belfast_footer_top')){
-                    echo esc_html(get_theme_mod( 'belfast_footer_top' )); 
-                }
-				?> 
-				<br/>
+			<p class="col-md-6 alignright2">
+
 				<?php 
 				$url   = 'https://jonnyjordan.com';
 				
 				$brand = '<a href="'.esc_url( $url ).'">Jonny Jordan</a>';
 				
-				echo sprintf( __( 'Belfast WordPress Theme, Copyright 2018 %s', 'belfast' ), $brand );
+				printf( __( 'Belfast Theme Powered by %s', 'belfast' ), $brand );
 				?>
 				
 			</p> 

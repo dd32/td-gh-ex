@@ -29,7 +29,10 @@ get_header(); ?>
 		<?php endif; ?>
 		</div><!-- #content -->
 	</div>
-	<?php belfast_paging_nav(); ?>
+	
+	<?php
+	the_posts_pagination();	
+	?>
 		</div>
 			</div>
 

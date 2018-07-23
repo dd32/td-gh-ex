@@ -53,7 +53,7 @@ get_header(); ?>
 
     
 
-                <?php belfast_paging_nav(); ?>
+                <?php the_posts_pagination(); ?>
 
     
 
