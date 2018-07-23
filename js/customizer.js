@@ -3,7 +3,7 @@
  *
  * author    Denis Franchi
  * package   Avik
- * version   1.2.1
+ * version   1.2.2
  */
 
 /* TABLE OF CONTENT

@@ -7,7 +7,7 @@ Template Post Type: post, page, product
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.1
+ * @version   1.2.2
  * 
  */
 
