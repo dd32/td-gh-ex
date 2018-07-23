@@ -1,0 +1,117 @@
+/*
+Theme Name: Awesome Business
+Theme URI: 
+Author: themeansar
+Author URI: https://themeansar.com/
+Template: businessup
+Description: Awesome Business WordPress theme ideal for a business or blog website (corporate, Consulting, Advisor, Agency, Finance, consult, law, Photography, freelancers, online presence etc.). You can also use for anything. It comes with all features these kind of Google Fonts, logo upload, slider, service, blog, shop page, latest news, about us, portfolio, contact us and much more. The theme you can use for any business website. Work with the most popular page builders as SiteOrigin. Developers will love his extensible codebase making it a joy to customize and extend. Looking for a Multi-Purpose theme? Look no further! Check the demos to realize that it's the only theme you will ever need: https://themeansar.com/demo/wp/businessup/transparent/
+Version: 1.0
+Tags: three-columns, right-sidebar, custom-colors, custom-logo, featured-images
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl.html
+Text Domain: awesome-business
+*/
+
+.ta-trhead {
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.ta-trhead .ta-head-detail {
+    background: rgba(26, 30, 34, 0.2);
+}
+
+.ta-head-detail {
+    padding: 5px 0;
+}
+.ta-head-detail .info-left {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+.ta-head-detail .info-left li {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 0;
+}
+.ta-trhead .ta-head-detail li a i {
+    color: #ce1b28;
+}
+
+.ta-trhead .ta-head-detail .info-left li a, .ta-trhead .ta-head-detail li a i, .ta-trhead .ta-head-detail .info-right li a {
+    color: #fff;
+}
+
+.ta-head-detail .info-left li a {
+    font-size: 13px;
+}
+
+.fa-clock-o:before {
+    content: "\f017";
+}
+
+.info-right {
+    display: block;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+.info-right li {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 0;
+}
+.ta-trhead .ta-head-detail .info-left li a, .ta-trhead .ta-head-detail li a i, .ta-trhead .ta-head-detail .info-right li a {
+    color: #fff;
+}
+
+.ta-head-detail .info-right li a {
+    font-size: 13px;
+}
+
+.ta-trhead .navbar-wp {
+    background: rgba(20, 17, 44, 0.8);
+}
+.navbar-wp {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    z-index: 1000;
+}
+
+.ta-trhead .navbar-wp .navbar-nav > li > a:hover, .ta-trhead .navbar-wp .navbar-nav > li > a:focus, .ta-trhead .navbar-wp .navbar-nav > .active > a, .ta-trhead .navbar-wp .navbar-nav > .active > a:hover, .ta-trhead .navbar-wp .navbar-nav > .active > a:focus {
+    color: #ce1b28;
+}
+.ta-trhead .navbar-wp .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-wp .navbar-nav > li> a {
+    padding: 30px 16px;
+    margin-right: 0;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+    margin-bottom: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+}
+
+.ta-head-detail .btn-theme.quote {
+    margin: -5px 0 -5px 0;
+    border-radius: 0;
+    float: right;
+}
+
+.is-sticky .ta-main-nav {
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
