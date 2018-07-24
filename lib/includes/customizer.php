@@ -18,8 +18,8 @@ if(! function_exists( 'admela_customize_register' )):
 function admela_customize_register( $wp_customize ) {
 	
 	
-	$wp_customize->get_setting( 'blogname' )->transport   = 'refresh';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'refresh';
+	$wp_customize->get_setting( 'blogname' )->transport   = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	
 	$wp_customize->selective_refresh->add_partial(
 		'blogname', array(
@@ -143,7 +143,7 @@ function admela_customize_register( $wp_customize ) {
         'capability' => 'edit_theme_options',		
 		'transport' => 'refresh', 
         'default' => 1,		
-        'sanitize_callback' => 'admela_sanitize_select'		
+        'sanitize_callback' => 'absint'		
 	));
 
 	$wp_customize->add_control('admela_slider_category_control',array(
@@ -201,9 +201,10 @@ function admela_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('admela_home_category_post_setting',array(
         'capability' => 'edit_theme_options',		
 		'transport' => 'refresh',  
-		'default' => 1,
-        'sanitize_callback' => 'admela_sanitize_select'		
+		'default' => '1',
+        'sanitize_callback' => 'absint'		
 	));
+		
 
 	$wp_customize->add_control('admela_home_category_post_control',array(
         'type' => 'select',
@@ -548,16 +549,16 @@ endif;
 if(! function_exists( 'admela_sanitize_select' )):
 
 //select sanitization function
-function admela_sanitize_select( $admela_input, $admela_setting ){
+function admela_sanitize_select( $input, $setting ){
          
     //admela_input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
-    $admela_input = sanitize_key($admela_input);
+    $input = sanitize_key($input);
  
     //get the list of possible select options 
-    $admela_choices = $admela_setting->manager->get_control( $admela_setting->id )->choices;
+    $admela_choices = $setting->manager->get_control( $setting->id )->choices;
                              
     //return input if valid or return default option
-    return (  isset($admela_input) ? $admela_input : $admela_choices->default );                
+ 	return ( array_key_exists( $input, $admela_choices ) ? $input : $input );
              
 }
 endif;

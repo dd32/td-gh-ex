@@ -22,7 +22,7 @@ if(!is_paged()){ // Displaying ad only on home page not to nagavigated pages.
 			  echo do_shortcode(''.get_theme_mod('admela_single_post_bottom_ad_setting').'');
 			}
 			else {
-			  echo wp_kses_stripslashes(get_theme_mod('admela_single_post_bottom_ad_setting'));
+			  echo get_theme_mod('admela_single_post_bottom_ad_setting');
 			}		
 			
 			?>

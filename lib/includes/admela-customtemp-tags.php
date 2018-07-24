@@ -281,7 +281,7 @@ function admela_paging_nav() {
 	if ( $admela_pagenav_links ) :
 
 	?>
-<div class="admela_pagination"> <?php echo wp_kses_stripslashes($admela_pagenav_links); ?> </div>
+<div class="admela_pagination"> <?php echo $admela_pagenav_links; ?> </div>
 <!-- .admela_pagination -->
 <?php
 endif;

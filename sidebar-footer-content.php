@@ -36,13 +36,13 @@
 			</div>  
 			<?php if(get_theme_mod('admela_footer_aboutus_text_setting') != ''){  ?>
 			<div class="admela_sitefooterabtus">
- 				<p> <?php echo get_theme_mod('admela_footer_aboutus_text_setting'); ?> </p>
+ 				<p> <?php echo esc_textarea(get_theme_mod('admela_footer_aboutus_text_setting')); ?> </p>
 			</div>
 			<?php  } ?>
 		</div> <!-- .admela_footermiddle --> 
 		
 		<div class="admela_footerbottom">	  
-			<?php echo get_theme_mod('admela_footer_copyrights_setting','Admela Theme All Rights Reserved'); ?> 
+			<?php echo esc_textarea(get_theme_mod('admela_footer_copyrights_setting','Admela Theme All Rights Reserved')); ?> 
 		</div> <!-- .admela_footerbottom -->
 		
 		<div class="admela_top" id="admela_top"> 

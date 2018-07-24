@@ -20,7 +20,7 @@
 			  echo do_shortcode(''.get_theme_mod('admela_single_post_top_ad_setting').'');
 			}
 			else {
-			  echo wp_kses_stripslashes(get_theme_mod('admela_single_post_top_ad_setting'));
+			  echo get_theme_mod('admela_single_post_top_ad_setting');
 			}
 			?>
 			</div> <!-- .admela_entrycontentad -->

@@ -12,14 +12,13 @@
 	$admela_home_catname = get_theme_mod('admela_home_category_post_setting');
 	$admela_home_cat_postorderby = get_theme_mod('admela_home_category_post_order_setting');
     $admela_home_cat_subtitle = get_theme_mod('admela_home_category_post_subtitle_setting');
-
+    
 	if($admela_home_cat_postorderby == '1'):
 		$admela_post_orderby = 'rand';
 	else:
 		$admela_post_orderby = 'date';
 	endif;
-	
-	
+		
 	
 	if($admela_home_catname != ''){
 
@@ -27,7 +26,7 @@
 	
 	?>
     
-    <div class="admela_contentlistmain">
+    <div class="admela_contentlistmain admela_contentcatmain1">
 		<div class="admela_contentlisttitle">
 		  <h4><?php echo esc_html($admela_home_cat_displayname); ?></h4>
 		  <p><?php echo esc_html(get_theme_mod('admela_home_category_post_subtitle_setting')); ?></p>

@@ -126,7 +126,7 @@
 						$admela_pinterestimage = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
 						$admela_pinImage = $admela_pinterestimage[0];
 						?>
-						<li class="admela_share_pintrest"> <a target="_blank" href="//pinterest.com/pin/create/bookmarklet/?url=<?php echo urlencode(esc_url(get_permalink( $post->ID ))).'&amp;media='. $admela_pinImage .'&amp;description='. htmlspecialchars(urlencode(html_entity_decode(esc_html(get_the_title( $post->ID )), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');?>" onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=800,width=800'); return false;"> <i class="fab fa-pinterest"></i><span class="admela_sharetext"><?php esc_html_e('Pinterest','admela'); ?></span></a>
+						<li class="admela_share_pintrest"> <a target="_blank" href="//pinterest.com/pin/create/bookmarklet/?url=<?php echo urlencode(esc_url(get_permalink( $post->ID ))).'&amp;media='. esc_url($admela_pinImage) .'&amp;description='. htmlspecialchars(urlencode(html_entity_decode(esc_html(get_the_title( $post->ID )), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8');?>" onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=800,width=800'); return false;"> <i class="fab fa-pinterest"></i><span class="admela_sharetext"><?php esc_html_e('Pinterest','admela'); ?></span></a>
 						
 						</li>
 						 <!--pinterest-->
