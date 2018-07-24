@@ -1338,7 +1338,7 @@ msgstr ""
 #: admin/main/options.php:1427
 msgid ""
 "For premium support direct from the theme developers, or advice on "
-"customizations please <a href=\"http://www.thinkupthemes.com/themes/minamaze/"
+"customizations please <a href=\"https://www.thinkupthemes.com/themes/minamaze/"
 "\" target=\"_blank\">upgrade</a> to Minamaze Pro or purchase a <a href="
 "\"http://www.thinkupthemes.com/pricing/\" target=\"_blank\">Theme "
 "Subscription</a>."

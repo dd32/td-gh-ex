@@ -1365,7 +1365,7 @@
 
     Redux::setSection( $opt_name, array(
 		'title'      => __('Support', 'lan-thinkupthemes'),
-		'desc'       => __('For premium support direct from the theme developers, or advice on customizations please <a href="http://www.thinkupthemes.com/themes/minamaze/" target="_blank">upgrade</a> to Minamaze Pro or purchase a <a href="http://www.thinkupthemes.com/pricing/" target="_blank">Theme Subscription</a>.', 'lan-thinkupthemes'),
+		'desc'       => __('For premium support direct from the theme developers, or advice on customizations please <a href="https://www.thinkupthemes.com/themes/minamaze/" target="_blank">upgrade</a> to Minamaze Pro or purchase a <a href="http://www.thinkupthemes.com/pricing/" target="_blank">Theme Subscription</a>.', 'lan-thinkupthemes'),
 		'icon'       => 'el el-user',
 		'icon_class' => '',
         'id'         => 'thinkup_section_support',
@@ -1422,7 +1422,7 @@
 				$thinkup_subtitle_customizer => __('', 'lan-thinkupthemes'),
 				'id'                         => 'thinkup_upgrade_content',
 				'type'                       => 'thinkup_upgrade',
-				'upgrade_url'                => '//www.thinkupthemes.com/themes/minamaze/',
+				'upgrade_url'                => 'https://www.thinkupthemes.com/themes/minamaze/',
 			),
 		)
 	) );

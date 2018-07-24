@@ -1416,7 +1416,7 @@ msgstr ""
 
 #: admin/main/options.php:1183
 #@ redux-framework
-msgid "<span class=\"redux-title\">Documentation</span><p>Please refer to the \"ThinkUpThemes - Lite Documentation\" file included with this theme for information on how to use the theme options. For premium support direct from the theme developers, or advice on customizations please <a href=\"http://www.thinkupthemes.com/themes/minamaze/\" target=\"_blank\">upgrade</a> to the Premium Theme Membership.</p>"
+msgid "<span class=\"redux-title\">Documentation</span><p>Please refer to the \"ThinkUpThemes - Lite Documentation\" file included with this theme for information on how to use the theme options. For premium support direct from the theme developers, or advice on customizations please <a href=\"https://www.thinkupthemes.com/themes/minamaze/\" target=\"_blank\">upgrade</a> to the Premium Theme Membership.</p>"
 msgstr ""
 
 #: admin/main/options.php:1200
