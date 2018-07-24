@@ -55,7 +55,8 @@ function bezel_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// Theme Image Sizes
-	add_image_size( 'bezel-featured', 754, 566, true );
+	add_image_size( 'bezel-featured',        754, 566, true ); // Retina Image (2x)
+	add_image_size( 'bezel-featured-normal', 377, 283, true ); // Normal Image (1x)
 
 	// This theme uses wp_nav_menu() in four locations.
 	register_nav_menus( array (

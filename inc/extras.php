@@ -16,10 +16,11 @@
 function bezel_default( $theme_mod = 'bezel_sidebar_position' ) {
 
 	$bezel_default = array(
-		'bezel_sidebar_position'  => 'right',
-		'bezel_fullwidth_archive' => false,
-		'bezel_copyright'         => sprintf( '&copy; Copyright %1$s - <a href="%2$s">%3$s</a>', esc_html( date_i18n( __( 'Y', 'bezel' ) ) ), esc_attr( esc_url( home_url( '/' ) ) ), esc_html( get_bloginfo( 'name' ) ) ),
-		'bezel_credit'            => true,
+		'bezel_featured_image_size' => 'retina',
+		'bezel_sidebar_position'    => 'right',
+		'bezel_fullwidth_archive'   => false,
+		'bezel_copyright'           => sprintf( '&copy; Copyright %1$s - <a href="%2$s">%3$s</a>', esc_html( date_i18n( __( 'Y', 'bezel' ) ) ), esc_attr( esc_url( home_url( '/' ) ) ), esc_html( get_bloginfo( 'name' ) ) ),
+		'bezel_credit'              => true,
 	);
 
 	if ( isset( $bezel_default[$theme_mod] ) ) {

@@ -17,18 +17,39 @@ function bezel_customize_register ( $wp_customize ) {
 	$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-	// Theme Options Panel
+	/**
+	 * Theme Options Panel
+	 */
 	$wp_customize->add_panel( 'bezel_theme_options', array(
 	    'title'     => esc_html__( 'Theme Options', 'bezel' ),
 	    'priority'  => 1,
 	) );
 
-	// General Options Section
+	/**
+	 * General Options Section
+	 */
 	$wp_customize->add_section( 'bezel_general_options', array (
 		'title'     => esc_html__( 'General Options', 'bezel' ),
 		'panel'     => 'bezel_theme_options',
 		'priority'  => 10,
 		'description' => esc_html__( 'Personalize the settings of your theme.', 'bezel' ),
+	) );
+
+	// Featured Image Size
+	$wp_customize->add_setting ( 'bezel_featured_image_size', array (
+		'default'           => bezel_default( 'bezel_featured_image_size' ),
+		'sanitize_callback' => 'bezel_sanitize_select',
+	) );
+
+	$wp_customize->add_control ( 'bezel_featured_image_size', array (
+		'label'    => esc_html__( 'Featured Image Size', 'bezel' ),
+		'section'  => 'bezel_general_options',
+		'priority' => 1,
+		'type'     => 'select',
+		'choices'  => array(
+			'normal' => esc_html__( 'Normal',      'bezel'),
+			'retina' => esc_html__( 'Retina (2x)', 'bezel'),
+		),
 	) );
 
 	// Main Sidebar Position
@@ -40,7 +61,7 @@ function bezel_customize_register ( $wp_customize ) {
 	$wp_customize->add_control ( 'bezel_sidebar_position', array (
 		'label'    => esc_html__( 'Main Sidebar Position (if active)', 'bezel' ),
 		'section'  => 'bezel_general_options',
-		'priority' => 1,
+		'priority' => 2,
 		'type'     => 'select',
 		'choices'  => array(
 			'right' => esc_html__( 'Right', 'bezel'),
@@ -57,7 +78,7 @@ function bezel_customize_register ( $wp_customize ) {
 	$wp_customize->add_control ( 'bezel_fullwidth_archive', array (
 		'label'    => esc_html__( 'Display Archives at Fullwidth', 'bezel' ),
 		'section'  => 'bezel_general_options',
-		'priority' => 2,
+		'priority' => 3,
 		'type'     => 'checkbox',
 	) );
 
@@ -99,7 +120,9 @@ function bezel_customize_register ( $wp_customize ) {
 		'type'     => 'checkbox',
 	) );
 
-	// Theme Support Section
+	/**
+	 * Support Section
+	 */
 	$wp_customize->add_section( 'bezel_support', array(
 		'title'       => esc_html__( 'Theme Support', 'bezel' ),
 		'description' => esc_html__( 'Thanks for your interest in Bezel! If you have any questions or run into any trouble, please visit us the following links. We will get you fixed up!', 'bezel' ),
@@ -119,7 +142,7 @@ function bezel_customize_register ( $wp_customize ) {
 			array(
 				'label'         => esc_html__( 'Bezel Theme', 'bezel' ),
 				'section'       => 'bezel_support',
-				'type'          => 'button',
+				'type'          => 'bezel-button',
 				'button_tag'    => 'a',
 				'button_class'  => 'button button-primary',
 				'button_href'   => 'https://simplefreethemes.com/bezel/',
@@ -140,7 +163,7 @@ function bezel_customize_register ( $wp_customize ) {
 			array(
 				'label'         => esc_html__( 'Bezel Support', 'bezel' ),
 				'section'       => 'bezel_support',
-				'type'          => 'button',
+				'type'          => 'bezel-button',
 				'button_tag'    => 'a',
 				'button_class'  => 'button button-primary',
 				'button_href'   => 'https://simplefreethemes.com/contact/',
@@ -149,7 +172,9 @@ function bezel_customize_register ( $wp_customize ) {
 		)
 	);
 
-	// Theme Review Section
+	/**
+	 * Review Section
+	 */
 	$wp_customize->add_section( 'bezel_review', array(
 		'title'       => esc_html__( 'Enjoying the theme?', 'bezel' ),
 		'description' => esc_html__( 'Why not leave us a review on WordPress.org? We\'d really appreciate it!', 'bezel' ),
@@ -169,7 +194,7 @@ function bezel_customize_register ( $wp_customize ) {
 			array(
 				'label'         => esc_html__( 'Review on WordPress.org', 'bezel' ),
 				'section'       => 'bezel_review',
-				'type'          => 'button',
+				'type'          => 'bezel-button',
 				'button_tag'    => 'a',
 				'button_class'  => 'button button-primary',
 				'button_href'   => 'https://wordpress.org/support/theme/bezel/reviews',
@@ -190,7 +215,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		 * @access public
 		 * @var string
 		 */
-		public $type = 'button';
+		public $type = 'bezel-button';
 
 		/**
 		 * HTML tag to render button object.

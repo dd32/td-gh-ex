@@ -228,28 +228,49 @@ add_action( 'save_post',     'bezel_category_transient_flusher' );
 
 if ( ! function_exists( 'bezel_post_thumbnail' ) ) :
 /**
- * Display an optional post thumbnail.
- *
- * Wraps the post thumbnail in an anchor element.
+ * Display Featured Image.
  *
  * @return void
 */
-function bezel_post_thumbnail() {
+function bezel_post_thumbnail( $args = array() ) {
 
-	// Post Thumbnail HTML
+	// Defaults
+	$defaults = array (
+ 		'class' => 'entry-image-wrapper entry-image-wrapper-archive',
+	);
+
+	// Parse incoming $args into an array and merge it with $defaults
+	$args = wp_parse_args( $args, $defaults );
+
+	// Featured Image Size
+	$size                 = bezel_mod( 'bezel_featured_image_size' );
+	$featured_image_size  = ( 'normal' === $size ? 'bezel-featured-normal' : 'bezel-featured' );
+
+	// Featured Image Class
+	$featured_image_class = sprintf( 'img-featured img-featured-%1$s img-responsive', esc_attr( $size ) );
+
+	// Featured Image HTML
 	$html = '';
 
-	// Get Post Thumbnail
-	$post_thumbnail = get_the_post_thumbnail( null, 'bezel-featured', array( 'class' => 'img-featured img-responsive' ) );
+	// Post Thumbnail Attributes
+	$attr = array(
+		'class' => esc_attr( $featured_image_class ),
+		'alt'   => esc_attr( get_the_title() ),
+	);
 
-	// Validation
+	// Get Post Thumbnail
+	$post_thumbnail = get_the_post_thumbnail( null, $featured_image_size, $attr );
+
+	// Post Thumbnail Validation
 	if ( ! empty( $post_thumbnail ) ) {
 
 		// Post Thumbnail HTML
-		$html = sprintf( '<div class="entry-image-wrapper entry-image-wrapper-archive"><figure class="post-thumbnail post-thumbnail-archive"><a href="%1$s">%2$s</a></figure></div>',
-			esc_attr( esc_url( get_the_permalink() ) ),
+		$html = sprintf( '<div class="%1$s"><figure class="post-thumbnail post-thumbnail-archive"><a href="%2$s">%3$s</a></figure></div>',
+			esc_attr( $args['class'] ),
+			esc_url( get_the_permalink() ),
 			$post_thumbnail
 		);
+
 	}
 
 	/**
@@ -257,10 +278,10 @@ function bezel_post_thumbnail() {
 	 *
 	 * @param string $html Post Thumbnail HTML.
 	 */
-	$html = apply_filters( 'bezel_post_thumbnail_html', $html );
+	$html = apply_filters( 'bezel_post_thumbnail_html', $html, $args, $size, $featured_image_size, $featured_image_class );
 
 	// Print HTML
-	if ( ! empty( $html ) ) {
+	if ( ! empty ( $html ) ) {
 		echo $html; // WPCS: XSS OK.
 	}
 
