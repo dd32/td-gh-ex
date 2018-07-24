@@ -5,6 +5,8 @@
 
 get_header(); ?>
 
+<?php do_action( 'bb_mobile_application_before_slider' ); ?>
+
   <?php /** slider section **/ ?>
   <div class="slider-main">
     <?php
@@ -69,7 +71,9 @@ get_header(); ?>
     ?>
   </div>
 
-  <?php /** post section **/ ?>
+<?php do_action( 'bb_mobile_application_after_slider' ); ?>
+
+<?php /** post section **/ ?>
 <section class="creative-feature">
   <div class="container">
     <?php if( get_theme_mod('bb_mobile_application_title') != ''){ ?>
@@ -147,5 +151,13 @@ get_header(); ?>
     </div>
   </div>
 </section>
+
+<?php do_action( 'bb_mobile_application_before_service' ); ?>
+
+<div class="container">
+  <?php while ( have_posts() ) : the_post(); ?>
+    <?php the_content(); ?>
+  <?php endwhile; // end of the loop. ?>
+</div>
 
 <?php get_footer(); ?>

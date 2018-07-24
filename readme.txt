@@ -4,8 +4,8 @@
 
 Theme Name      :   BB Mobile Application
 Theme URI       :   https://www.themeshopy.com/free/wp-bb-mobile-application-theme/
-Version         :   1.2.3.3
-Tested up to    :   WP 4.9.5
+Version         :   1.2.3.4
+Tested up to    :   WP 4.9.7
 Author          :   ThemeShopy
 Author URI      :   https://www.themeshopy.com/
 license         :   GNU General Public License v3.0
@@ -21,7 +21,7 @@ email       	:   support@themeshopy.com
 /* Theme Resources */
 /*-----------------------------------------------------------------------------------*/
 
-BB Mobile Application WordPress Theme, Copyright 2012 Burhanuddin Bohra
+BB Mobile Application WordPress Theme, Copyright 2018 ThemeShopy
 BB Mobile Application is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -37,33 +37,43 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see .
 
-BB Mobile Application WordPress Theme is derived from VW(VWTHEMES) WordPress Theme, Copyright 2013 Automattic, Inc.
-VW(VWTHEMES) WordPress Theme is distributed under the terms of the GNU GPL
+BB Mobile Application WordPress Theme is derived from Twenty Sixteen WordPress Theme, Copyright 2014-2015 WordPress.org
+Twenty Sixteen is distributed under the terms of the GNU GPL
 
 Theme is Built using the following resource bundles.
 
-1 - All js that have been used are within folder /js of theme.
-- jquery.nivo.slider.js, License: MIT, License Url: https://opensource.org/licenses/MIT
-
-2 - PT Sans font - https://www.google.com/fonts/specimen/Open+Sans
+1 - PT Sans font - https://www.google.com/fonts/specimen/Open+Sans
 	License: Distributed under the terms of the Apache License, version 2.0 http://www.apache.org/licenses/LICENSE-2.0.html
 
-3. - All CSS that have been used are within folder /css of theme.
-		- nivo-slider.css, Copyright 2012, Dev7studios
-		 * Free to use and abuse under the MIT license.
-		 * http://www.opensource.org/licenses/mit-license.php
-		- bootstrap.css
-		 * Bootstrap v3.3.2 (http://getbootstrap.com)
- 		 * Copyright 2011-2015 Twitter, Inc.
+2 - CSS bootstrap.css
+    -- Copyright 2011-2018 The Bootstrap Authors
+    -- https://github.com/twbs/bootstrap/blob/master/LICENSE
+    
+    JS bootstrap.js
+    -- Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+    -- https://github.com/twbs/bootstrap/blob/master/LICENSE
+
+    CSS nivo-slider.css
+    -- Copyright 2012, Dev7studios
+    -- Free to use and abuse under the MIT license.
+    -- http://www.opensource.org/licenses/mit-license.php
+
+    JS nivo-slider.js
+    -- jquery.nivo.slider.js, License: MIT, License Url: https://opensource.org/licenses/MIT
 
     Bundled header image, Copyright JESHOOTScom
     License: CC0 1.0 Universal (CC0 1.0)
     Source: https://pixabay.com/en/iphone-smartphone-apps-apple-inc-410311/
 
-4 - All the icons taken from fontawesome licensed under GPL License.
+3 - All the icons taken from fontawesome licensed under GPL License.
     https://github.com/FortAwesome/Font-Awesome [MIT](http://opensource.org/licenses/MIT)
 
-All the slider images taken from pixabay under Creative Commons Deed CC0 - https://pixabay.com/en/service/terms/
+4 - Images used from pixabay.
+    pixabay provides images under CC0 license (https://pixabay.com/en/service/terms/)
+
+    Banner image, JESHOOTScom
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://pixabay.com/en/iphone-smartphone-apps-apple-inc-410311/
 
 All the icons taken from genericons licensed under GPL License.
 http://genericons.com/
@@ -144,9 +154,11 @@ iii) Added the post format tag and add the files in template part folder.
 iv)  Upadte the language folder.
 v)   Resolved the minor theme error.
 
+Version 1.2.3.4
+i)  Added typography section.
+ii) Updated pot file.
 
-BB Mobile Application Premium version
+BB Mobile Application Free version
 ==========================================================
-BB Mobile Application Premium version is compatible with GPL licensed.
-
+BB Mobile Application Free version is compatible with GPL licensed.
 For any help you can mail us at support[at]themeshopy.com

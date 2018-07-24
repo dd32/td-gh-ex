@@ -12,8 +12,9 @@
 
 get_header(); ?>
 
-<?php 
-while ( have_posts() ) : the_post(); ?>
+<?php do_action( 'bb_mobile_application_page_header' ); ?>
+
+<?php while ( have_posts() ) : the_post(); ?>
     <div class="title-box">
     	<div class="container">
     		<h1><?php the_title();?></h1>
@@ -43,5 +44,8 @@ while ( have_posts() ) : the_post(); ?>
             }
         ?>
     </div>
-<?php endwhile; // end of the loop. ?>    
+<?php endwhile; // end of the loop. ?>
+
+<?php do_action( 'bb_mobile_application_page_footer' ); ?>
+
 <?php get_footer(); ?>

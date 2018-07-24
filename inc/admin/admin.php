@@ -46,11 +46,11 @@ function bb_mobile_application_mostrar_guide() {
 				</ul>
 		  	</div>
 		  	<div class="doc-image">
-		  		<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/home-page-template.jpg" alt="" />	
+		  		<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/home-page-template.png" alt="" />	
 		  	</div>
 		  	<div class="clearfixed">
 				<div class="doc-image1">
-					<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/set-front-page.jpg" alt="" />	
+					<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/set-front-page.png" alt="" />	
 			    </div>
 			    <div class="image-docs1">
 				    <ul>

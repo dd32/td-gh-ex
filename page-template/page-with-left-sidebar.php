@@ -5,6 +5,8 @@
 
 get_header(); ?>
 
+<?php do_action( 'bb_mobile_application_page_left_header' ); ?>
+
 <div class="container">
     <div class="middle-align row">  
     	<div class="col-md-4" id="sidebar">
@@ -26,4 +28,7 @@ get_header(); ?>
         <div class="clear"></div>    
     </div>
 </div>
+
+<?php do_action( 'bb_mobile_application_page_left_footer' ); ?>
+
 <?php get_footer(); ?>

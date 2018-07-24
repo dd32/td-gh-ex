@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/free/wp-bb-mobile-application-theme/
 Author: ThemeShopy
 Author URI: https://www.themeshopy.com
 Description: Trying to create an interactive website with the help of a flexible option? If so, let us introduce a stunning solution! BB is a beautiful and responsive business WordPress theme. BB Mobile Application is a unique theme that can easily bring your website to perfection. Neat, dainty and extremely easy to use, this theme will truly make your website stand out. BB Mobile Application is a free WordPress theme for APP websites. BB App is an innovative and clean Lead Capture cum Landing Page WordPress Theme from Themeshopy. This theme is ideal for seeking reviews of upcoming products like mobile app, gadgets or any other business proposition, company corporate identity showcase, blog, one page, landing page, construction, travel, hotel, real estate, restaurant, photography, industrial, portfolio, gym, education, affiliate, job board and portal, jewelry, local business, creative agency, architecture, event, gallery, lifestyle, lens, listing, yoga, wedding, university, school, sports, quotes and similar websites. It is a highly suitable theme for APP post display. It has purpose oriented design, responsive layout and special features to manage Slider, service and footer from customize admin section. This user-friendly theme has secure and clean code due to which you can obtain faster page load time. It provides different personalization options making it effortless for you to customize the theme. So, get ready to create a professional website with this multipurpose theme which has optimized codes. Demo: https://www.themeshopy.com/bb-mobile-application-theme/
-Version: 1.2.3.3
+Version: 1.2.3.4
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-mobile-application
@@ -12,6 +12,8 @@ Tags:left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-c
 
 BB Mobile Application WordPress Theme has been created by ThemeShopy, 2017.
 BB Mobile Application WordPress Theme is released under the terms of GNU GPL
+
+In this theme some code is taken from Twenty Sixteen.
 */
 
 /* Basic Style */
@@ -460,7 +462,7 @@ a.r_button {
     color: #fff;
 }
 .copyright-wrapper .search-form .search-field {
-    width: 100%;
+    width: 90%;
     border: none;
     padding: 8px;
     color: #000;
@@ -523,8 +525,8 @@ a.r_button {
 	border-radius:5px;
 }
 #footer input[type="submit"]{
-	width:40%;
-	padding:8px;
+	width:38%;
+	padding:6px;
 	float:right;
 	border:none;
 	background:#14c2a0;
@@ -536,6 +538,11 @@ a.r_button {
 }
 
 /* Woocommerce CSS */
+span.woocommerce-input-wrapper,
+.woocommerce label {
+ width: 100%;
+}
+
 li.woocommerce-MyAccount-navigation-link {
     padding: 0 !important;
     margin: 0 !important;
@@ -690,6 +697,9 @@ h1.woocommerce-products-header__title {
 }
 .woocommerce .panel{
 	padding: 15px !important;
+}
+.col-1,.col-2{
+	max-width: 100%;
 }
 /* Woocommerce CSS End*/
 
@@ -927,6 +937,7 @@ section#blog{
 }
 label{
 	margin-bottom: 0 !important;
+	width: 62%;
 }
 #sidebar aside {
     margin-bottom: 30px;

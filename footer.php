@@ -26,7 +26,7 @@
       </div>
       <div class="inner">
         <div class="copyright text-center">
-          <p><?php echo esc_html(get_theme_mod('bb_mobile_application_footer_copy',__('Mobile Application Theme By ','bb-mobile-application'))); ?> <?php bb_mobile_application_credit(); ?></p>
+          <p><?php echo esc_html(get_theme_mod('bb_mobile_application_footer_copy',__('Mobile Application WordPress Theme By ','bb-mobile-application'))); ?> <?php bb_mobile_application_credit(); ?></p>
         </div>
         <div class="clear"></div>
       </div>
