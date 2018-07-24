@@ -285,12 +285,12 @@ Sidebar Options
 	function best_wp_sidebar(){
 	$option_sidebar = get_theme_mod( 'best_wp_sidebar_position');		
 	if($option_sidebar == '2') { 
-			wp_enqueue_style( 'seos-right-sidebar', get_template_directory_uri() . '/css/right-sidebar.css');
+			wp_enqueue_style( 'best-wp-seos-right-sidebar', get_template_directory_uri() . '/css/right-sidebar.css');
 		}
 
 	$option_sidebar = get_theme_mod( 'best_wp_sidebar_position');			
 		if($option_sidebar == '3') { 
-			wp_enqueue_style( 'seos-no-sidebar', get_template_directory_uri() . '/css/no-sidebar.css');
+			wp_enqueue_style( 'best-wp-seos-no-sidebar', get_template_directory_uri() . '/css/no-sidebar.css');
 		}
 	}
 	add_action( 'wp_enqueue_scripts', 'best_wp_sidebar' );

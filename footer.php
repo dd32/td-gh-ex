@@ -19,7 +19,7 @@
 	<footer role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 	
 		<div id="colophon"  class="site-info">
-		<?php if (get_theme_mod('best_wp_premium_copyright1')) : echo get_theme_mod('best_wp_premium_copyright1'); else : ?>
+		<?php if (esc_textarea(get_theme_mod('best_wp_premium_copyright1'))) : echo esc_textarea(get_theme_mod('best_wp_premium_copyright1')); else : ?>
 			<p>
 					<?php esc_html_e('All rights reserved', 'best-wp'); ?>  &copy; <?php bloginfo('name'); ?>
 								

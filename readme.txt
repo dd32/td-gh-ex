@@ -3,7 +3,7 @@ Contributors: Tsvetomir Tsvetanov
 Tags: two-columns, left-sidebar, grid-layout, flexible-header, custom-background, custom-menu, custom-colors, editor-style, featured-image-header, featured-images, threaded-comments, blog, news, portfolio
 Requires at least: 4.9.7
 Tested up to: 4.9.7
-Stable tag: 1.1.5
+Stable tag: 1.1.6
 Author URI: https://seosthemes.info/best-wordpress-theme/
 Theme URI: https://seosthemes.com/best-wordpress-theme/
 License: GNU General Public License version 3.0
@@ -11,8 +11,8 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 == Copyright ==
 
-Image Gallery WordPress Theme, Copyright 2018 Tsvetomir Tsvetanov
-Image Gallery is distributed under the terms of the GNU GPL
+Best WP WordPress Theme, Copyright 2018 Tsvetomir Tsvetanov
+Best WP is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ GNU General Public License for more details.
 
 == Description ==
 
-Image Gallery is clear, easy to customize WP template. The Image Gallery theme.
+Best WP is clear, easy to customize WP template. Best WP theme.
 
 == Installation ==
 
@@ -38,7 +38,7 @@ Image Gallery is clear, easy to customize WP template. The Image Gallery theme.
 
 = Does this theme support any plugins? =
 
-Image Gallery includes support for Infinite Scroll in Jetpack.
+Best WP includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
@@ -52,7 +52,6 @@ Image Gallery includes support for Infinite Scroll in Jetpack.
 
 
 * Animate.css -http://daneden.me/animate - http://opensource.org/licenses/MIT - Licensed under the MIT license
-* jQuery-viewport-checker - https://github.com/dirkgroenen/jQuery-viewport-checker/blob/master/LICENSE- Licensed under the MIT license
 * Fonts - https://www.google.com/fonts/specimen/Oswald - SIL Open Font License, 1.1
 * Genericons - https://github.com/Automattic/Genericons/blob/master/LICENSE.txt - GNU General Public License v2.0
 * Font Awesome Code - http://opensource.org/licenses/mit-license.html - MIT License

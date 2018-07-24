@@ -31,12 +31,12 @@
 		
 		<div class="social">
 				<div class="fa-icons">
-					<?php if (get_theme_mod( 'social_media_activate_header' )) {echo best_wp_social_section ();} ?>		
+					<?php if (esc_attr(get_theme_mod( 'social_media_activate_header' ))) {echo best_wp_social_section ();} ?>		
 
 				</div>
 				<div class="soc-right">
-						<?php if (get_theme_mod('best_wp_contacts_header_address')) { ?><span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo get_theme_mod('best_wp_contacts_header_address'); ?></span><?php } ?>
-						<?php if (get_theme_mod('best_wp_contacts_header_phone')) { ?><span itemprop="telephone"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> <?php echo get_theme_mod('best_wp_contacts_header_phone'); ?></span><?php } ?>
+						<?php if (esc_attr(get_theme_mod('best_wp_contacts_header_address'))) { ?><span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo esc_attr(get_theme_mod('best_wp_contacts_header_address')); ?></span><?php } ?>
+						<?php if (esc_attr(get_theme_mod('best_wp_contacts_header_phone'))) { ?><span itemprop="telephone"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> <?php echo esc_attr(get_theme_mod('best_wp_contacts_header_phone')); ?></span><?php } ?>
 				</div>
 				<div class="clear"></div>
 		</div>	 
