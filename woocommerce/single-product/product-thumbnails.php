@@ -37,7 +37,7 @@ if ( $attachment_ids && has_post_thumbnail() ) {
 			'data-large_image_height' => $full_size_image[2],
 		);
 
-		$html  = '<div data-thumb="' . esc_url( $thumbnail[0] ) . '" class="woocommerce-product-gallery__image"><a data-rel="prettyPhoto[product-gallery]" href="' . esc_url( $full_size_image[0] ) . '">';
+		$html  = '<div data-thumb="' . esc_url( $thumbnail[0] ) . '" class="woocommerce-product-gallery__image"><a class="swipebox" data-rel="[product-gallery]" href="' . esc_url( $full_size_image[0] ) . '">';
 		$html .= wp_get_attachment_image( $attachment_id, 'shop_single', false, $attributes );
  		$html .= '</a></div>';
 

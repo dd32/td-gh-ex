@@ -1,5 +1,9 @@
 Bazaar Lite Changelog
 
+- Version 1.5.2 - Released: 24.07.2018
+
+-- Fixed : WooCommerce product galleries lightbox.
+
 - Version 1.5.1 - Released: 09.06.2018
 
 -- Updated : WooCommerce templates.
