@@ -1,13 +1,19 @@
 /*
 Theme Name: BB Ecommerce Store
-
-Adding support for languages written in a Right To Left (RTL) direction is easy,
-it's just a matter of overwriting all the horizontal positioning attributes
-of your CSS stylesheet in a separate stylesheet file named rtl.css.
-
-https://codex.wordpress.org/Right-to-Left_Language_Support
-
+Theme URI: https://www.themeshopy.com/free/wp-ecommerce-store-wordpress-theme/
+Author: ThemeShopy
+Author URI: https://www.themeshopy.com
+Description: E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce Store is an elegant E-commerce/Woo-Commerce WordPress theme suitable for E-commerce websites of any store type such as online bookstore, electronic store, apparel & clothing store, fashion store, sport & athletic goods store, handbags & feminine products store, cosmetics & saloon item shop, jewelry & luxury item store and various multipurpose online stores. The modern design and smooth coding standard make them perfect for business, corporate, companies and freelancers. Who wants to have an impactful and awesome online presence? We also utilize best and clean coding standard that functions well with the latest WordPress version. This Free customizable responsive Woo-commerce WordPress theme includes plenty of customization options that are fairly easy to use. You can easily customize them, using the short codes and hook. Setting up, an astonishing e-store that's a dazzling beauty was never this easy before. Main features of our Free e-commerce-store includes Customizer theme options, background image, and color, SEO optimized, fully responsive, fast loading. Why stop there? If you can setup your website, easily utilizing our free business WordPress theme.  why not take it a notch further?  Upgrade to your premium theme, as it offers an army of features, along with customization options with a customer care support that will resolve your problems in no time. We have a devoted team of developers that believes in perfection and providing the best product for the users. This team will be ready at the helm to provide you with support and being your ultimate back-up. If you ever required our assistance. Customer satisfaction is our top priority; we strive to deliver the best and aren’t going to be ever content with anything less. If it doesn’t satisfy the user then it won’t please us either. You can easily set up and dip your hands into the world E-marketing with our free corporate WordPress theme. Our free themes are user and mobile friendly, very responsive and have a beautiful professional look.  It is not going to be enough in a longer run. Your business is bound to grow and with a booming business, you would need to make upgrades in almost every business aspect. The way your website appears and works is significant for an online store.  Upgrading to premium WordPress theme should take first priority, in that case. The first impression is the last impression and you can leave an ever-lasting one, with the aid of our premium WordPress theme.  Upgrade your free theme to premium now! You can take a free demo tour of our premium theme and see how it will sit on your website. Click on the click below to being your demo tour. https://www.themeshopy.com/ecommerce-store-wordpress-theme/
+Version: 1.3.3
+License: GNU General Public License
+License URI: license.txt
+Text Domain: bb-ecommerce-store
+Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, front-page-post-form, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce,post-formats, portfolio
+BB Ecommerce Store WordPress Theme has been created by ThemeShopy(themeshopy.com), 2017.
+BB Ecommerce Store WordPress Theme is released under the terms of GNU GPL
 */
+
+
 *{ 
   margin:0;
   padding:0;
@@ -45,6 +51,12 @@ h6{
   margin:0;
   padding:0 0 15px;
 }
+
+p, span {
+   
+    font-size: 12px;
+    color: #000;
+    }
 
 p{ 
   margin:0;
@@ -337,14 +349,14 @@ a.blog-more{
   width:100%;
   height:auto;
   padding-top:15px;
-  background: #232f3e;
+  background: #333;
 }
 
 .header .nav{ 
   margin:0;
   padding:0;
   text-align:right;
-  background:#e22626;
+  background: #e22626;
 }
 
 .header .nav ul { 
@@ -368,7 +380,7 @@ a.blog-more{
 }
 
 .header .nav ul li a:hover{
-  background:#232f3e;
+  background:#e22626;
   color:#fff;
   text-decoration:none;
 }
@@ -377,57 +389,44 @@ a.blog-more{
   background:#ffd34e;
   color:#000;
 }
-
-@media print
-{    
-    .nav *,#sidebar *
-    {
-        display: none !important;
-    }
-
+.cathead {
+  background: #333;
+  color: #fff;
+  position: absolute;
+  top: -52px;
+  width: 100%;
+  right: 0;
+  padding: 14px;
 }
-
-@media screen and (min-width:720px){
-  .header .nav ul li ul{
-    display:none;
-    z-index:2;
-  }
-  
-
- 
-
-  .header .nav ul li:hover > ul{
-    display:block;
-    background:#222222;
-    width:200px;
-    position:absolute;
-    top:25px;
-    right:0;
-    text-align:right;
-    padding:10px 0;
-    z-index:99;
-  }
-  .header .nav ul li:hover > ul li{ 
-    display:block;
-  }
-  .header .nav ul li:hover > ul li a{ 
-    padding:5px 10px 5px 0px;
-    color:#ffffff;
-  }
-  .header .nav ul li:hover ul li ul{
-    display:none;
-    }
-  .header .nav ul li:hover ul li:hover > ul{
-    display:block;
-    position:absolute;
-    right:200px;
-    top:-20px;
-  }
-  .header .logo{
-    float:right;
-  }
+.cathead i {
+  font-size: 16px;
+  margin-left: 5%;
 }
-
+.cathead span {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #fff;
+}
+.topbar {
+  font-family: Roboto;
+  background: #e22626;
+  padding: 5px 0;
+}
+.social-media i {
+  color: #fff;
+  margin-right: 5%;
+}
+.top-contact {
+  color: #fff;
+  font-size: 12px;
+}
+.top-contact i {
+  margin-left: 5%;
+}
+.social-media {
+  text-align: left;
+}
 .header-widget{ 
   margin:0;
   padding:0;
@@ -452,27 +451,25 @@ a.blog-more{
     color: white;
 }
 .cart_no {
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 3%;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 3%;
 }
 .cart_no a{
   color: #fff;
 }
 .cart_icon i {
-    background: #e22626;
-    color: #fff;
-    padding: 12px;
-    border-radius: 50%;
+  background: #e22626;
+  color: #fff;
+  padding: 12px;
+  border-radius: 50%;
 }
 button.search-submit {
-    background: #e22626;
-    border: none;
-    padding: 11px 15px;
-    border-bottom-left-radius: 12px;
-    border-top-left-radius: 12px;
-    color: #fff;
+  background: #e22626;
+  border: none;
+  padding: 11px 15px;
+  color: #fff;
 }
 input#woocommerce-product-search-field {
     width: 90%;
@@ -486,37 +483,36 @@ input#woocommerce-product-search-field {
 }
 h2.woocommerce-loop-product__title {
     font-size: 18px !important;
-    color: #3d3d3d !important;
 }
 #our-products a.button {
-    border: 2px solid;
-    color: #000;
-    font-size: 14px;
-    padding: 8px 18px;
-    background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
-    border-color: #a88734 #9c7e31 #846a29;
+  border: 2px solid;
+  color: #000;
+  font-size: 14px;
+  padding: 8px 18px;
+  background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+  border-color: #a88734 #9c7e31 #846a29;
 }
 #our-products a.button:hover {
-    background: #f1c860;
-    background: -webkit-linear-gradient(top,#f5d78e,#eeb933);
-    background: linear-gradient(to bottom,#f5d78e,#eeb933);
-    border-color: #a88734 #9c7e31 #846a29;
+  background: #f1c860;
+  background: -webkit-linear-gradient(top,#f5d78e,#eeb933);
+  background: linear-gradient(to bottom,#f5d78e,#eeb933);
+  border-color: #a88734 #9c7e31 #846a29;
 }
 #our-products .woocommerce ul.products li.product{
-    margin: 0 4px 2.992em;
-    width: 24%;
+  margin: 0 4px 2.992em;
+  width: 24%;
 }
 #our-products li.product {
-    padding: 15px !important;
-    border: solid 2px #f1f1f1;
+  padding: 15px !important;
+  background: #f5f5f5;
 }
 .static-sidebar {
-    background: #f3f3f3;
-    color: #222222;
+  background: #f3f3f3;
+  color: #222222;
 }
 .static-sidebar h3 {
-    font-size: 20px;
-    padding-bottom: 0;
+  font-size: 20px;
+  padding-bottom: 0;
 }
 .static-sidebar caption {
   font-weight: bold;
@@ -526,28 +522,28 @@ h2.woocommerce-loop-product__title {
 .static-sidebar table,
 .static-sidebar th,
 .static-sidebar td {
-    border: 1px solid #d1d1d1;
-    text-align: center;
+  border: 1px solid #d1d1d1;
+  text-align: center;
 }
 .static-sidebar td {
-    padding: 10px;
-    color: #e22626;
+  padding: 10px;
+  color: #e22626;
 }
 .static-sidebar th {
-    text-align: center;
-    padding: 10px;
-    color: #e22626;
+  text-align: center;
+  padding: 10px;
+  color: #e22626;
 }
 .static-sidebar select {
-    padding: 8px 5px;
+  padding: 8px 5px;
 }
 .static-sidebar li a {
   color: #e22626;
   font-size: 15px;
 }
 .static-sidebar ul li {
-    list-style: none;
-    padding: 5px 0;
+  list-style: none;
+  padding: 5px 0;
 }
 .static-sidebar ul {
   margin: 0;
@@ -557,17 +553,17 @@ h2.woocommerce-loop-product__title {
 }
 /* --------- Homepage --------- */
 #our-products {
-    padding: 20px 15px 0 15px;
-    border: 2px solid #f1f1f1;
-    margin-top: 4%;
-    margin-bottom: 4%;
+  padding: 20px 15px 0 15px;
+  border: 2px solid #f1f1f1;
+  margin-top: 4%;
+  margin-bottom: 4%;
 }
 #our-products h3 {
-    text-align: right;
-    font-size: 30px;
-    color: #000;
-    font-weight: bold;
-    letter-spacing: 2px;
+  text-align: right;
+  font-size: 30px;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 section { 
   width:100%;
@@ -578,12 +574,10 @@ section {
   font: 26px 'PT sans';
   margin: 0;
 }
-
 .services {
   padding:0;
   margin-top: 3%;
 }
-
 .services .section-title a{
   color:#a94442;
   font-size:24px;
@@ -593,30 +587,29 @@ section {
   text-decoration:none;
 }
 .services .new-text p {
-    color: #636060;
-    margin: 0 0 10px;
-    line-height: 20px;
-    font-size: 15px;
-    padding: 0 15px;
-    letter-spacing: 1px;
+  color: #636060;
+  margin: 0 0 10px;
+  line-height: 20px;
+  font-size: 15px;
+  padding: 0 15px;
+  letter-spacing: 1px;
 }
 .inner-service {
-    background: #fff;
-    margin-bottom: 4%;
-    border-top: solid 4px #e22626;
+  background: #fff;
+  margin-bottom: 4%;
+  border-top: solid 4px #e22626;
 }
 h3.ecomercepost-title {
-    padding: 15px 15px 0;
-    font-size: 30px;
+  padding: 15px 15px 0;
+  font-size: 30px;
 }
 .read-btn {
-    padding: 0 15px 15px;
+  padding: 0 15px 15px;
 }
 .services .about-us{
   padding: 10px;
   margin-top:20px;
 }
-
 .services  .about-us a{
   border: 1px solid #000;
   padding:8px 20px;
@@ -625,203 +618,15 @@ h3.ecomercepost-title {
   text-transform: uppercase;
   font-size: 19px;
 }
-
 .services .button{
   margin: 0 18%;
   display: inline-block;
 }
 
-.one_half,
-.one_third,
-.two_third,
-.one_fourth,
-.three_fourth,
-.one_fifth,
-.four_fifth{ 
-  float:right;
-  margin-bottom:20px;
-  position:relative;
-}
-
-.last_column{
-  clear:left;
-  margin-left:0 !important;
-}
-
-.one_half{
-  width:48%;
-  margin-left:4%;
-}
-
-/*---------------- SERVICES END ------------------------------------------*/
-
-section.welcome{ 
-  padding:0 !important;
-  color:#757575;
-  background-color:#f7f7f7;
-}
-section.welcome h2{ 
-  font:400 30px 'Roboto';
-  color:#454545;
-}
-section.welcome .one_half{ 
-  margin-bottom:0;
-}
-.message-thumb{ 
-  width:525px;
-  border:#212121 solid 7px;
-  overflow:hidden;
-}
-
-/* -------------- Features ----------- */
-.features .one_half h3{ 
-  font:400 30px 'Roboto';
-  color:#454545;
-  margin-bottom:25px;
-  padding:0 0 10px;
-  border-bottom:1px solid #dfdfdf;
-}
-
-/** Blog post css **
------------------------------------------------------------------*/
-section#works{ 
-  padding-bottom:0;
-}
-
-.blogposts { 
-  width:31.6%;
-  margin:0 0 2% 2%;
-  display:inline-block;
-  position:relative;
-  vertical-align:top;
-  text-align:center;
-  background-color:#f7f7f7;
-  padding-bottom:40px;
-}
-
-.blogposts > p{ 
-  padding:0 35px;
-}
-
-.blogposts h2 { 
-  color:#343434;
-  font:700 18px 'Roboto';
-  margin:20px 0;
-  padding:0;
-}
-
-.blogposts h2 a {
-  color:#302f2f;
-}
-
-.blogposts a.blog-more{ 
-  color:#ffffff;
-  background-color:#222222;
-}
-
-.lastcols { 
-  margin-left:0 !important;
-}
-
-.blog-thumb{ 
-  position:relative;
-}
-
-.blog-date{ 
-  position:absolute;
-  top:0;
-  right:0;
-}
-
-.blog-date .date{ 
-  background-color:#00A885;
-  color:#ffffff;
-  font:700 24px arial;
-  padding:5px 20px;
-}
-
-.blog-date .month{ 
-  background-color:#2e2e2e;
-  color:#ffffff;
-  font-size:14px;
-  padding:4px 20px;
-}
-
-.blog-author{ 
-  background-color:rgba(0,0,0,0.5);
-  color:#ffffff;
-  width:100%;
-   position:absolute;
-  bottom:6px;
-  padding:10px 0;
-  text-transform:uppercase;
-}
-
-.blog-author .blog-author-name{ 
-  float:right;
-  margin-right:10px;
-}
-
-.blog-author .comment-count{ 
-  float:left;
-  margin-left:10px;
-}
-
-.see-all-button { 
-  border:1px solid #444;
-  display:table;
-  font-size:16px;
-  font-weight:700;
-  margin:50px auto 0;
-  padding:10px 20px;
-  text-align:center;
-  text-transform:uppercase;
-  transition: all 0.3s ease 0s;
-  color:#f0efef;
-}
-
-.see-all-button:hover { 
-  background:#ff8a00;
-  border:#ff8a00 solid 1px;
-  color:#fff;
-}
-
-.clients{ 
-  text-align:center;
-}
-
-.clients img {
-  text-align: center;
-  vertical-align: middle;
-  margin:0 20px;
-}
-
-/*-------------- LATEST NEWS END -------------------------------------------*/
-
 /* --------- POST --------- */
-section#blog{
-  padding-top:0;
-  margin-top:0;
-}
-
-.blog-post h5{
-  text-transform:uppercase;
-  color: #000;
-}
-
-.feature-image-box{
-  width:100%;
-}
-
-.feature-image-box img{
-  height:230px;
-  width:100%;
-}
-
 .bradcrumbs{
   padding:30px 0;
 }
-
 .bradcrumbs a{
   background:#f1f1f1;
   color:#000;
@@ -829,109 +634,16 @@ section#blog{
   margin-left:5px;
   line-height: 37px;
 }
-
 .bradcrumbs a:hover{
   background:#ffd34e;
 }
-
 .bradcrumbs span{
   background:#dddddd;
   color:#000;
   padding:5px 15px;
 }
 
-/*-------------------------------- Sweep To Right ----------------------*/
-.hvr-sweep-to-right {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  position: relative;
-  -webkit-transition-property: color;
-  transition-property: color;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-
-.hvr-sweep-to-right:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(226, 38, 38, 0.51) ;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transform-origin: 100% 50%;
-  transform-origin: 100% 50%;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-.hvr-sweep-to-right:hover,
-.hvr-sweep-to-right:focus,
-.hvr-sweep-to-right:active {
-  color: #000;
-}
-
-.hvr-sweep-to-right:hover:before,
-.hvr-sweep-to-right:focus:before,
-.hvr-sweep-to-right:active:before {
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-}
-
 /* --------- Blog Page ------- */
-
-#full-width-blog .postbox{
-  height:355px;
-}
-
-#blog-right-sidebar .postbox img,
-#blog-left-sidebar .postbox img{
-  height:250px;
-}
-
-#blog-left-sidebar .postbox img:hover{
-  border:1px solid #d3da36;
-}
-
-.postbox {
-  margin-bottom:39px;
-  border-bottom:2px dotted #7e7e7e;
-  padding:0 0 26px;
-}
-
-.postbox h2{
-  margin:0 0 5px;
-  font-weight:bold;
-}
-
-.postbox  a.blogbutton {
-  background:none;
-  color:#fff;
-  font-size:12px;
-  font-weight:bold;
-  color:#fff;
-  padding:6px 25px;
-  border:1px solid #000;
-  color:#000;
-  font-size:18px;
-  text-transform:uppercase;
-  margin:25px 0 0 0;
-  display:table;
-}
-
 .blogbutton-small{
   background:none;
   color:#fff;
@@ -953,8 +665,6 @@ section#blog{
   padding:15px 15px;
   clear:both;
 }
-
-
 .metabox .entry-date{
   background:url('images/date.png') no-repeat;
   padding: 0 20px 0 0;
@@ -962,7 +672,6 @@ section#blog{
   font-size: 15px;
   color: #636060;
 }
-
 .metabox .entry-author{
   background:url('images/author.png') no-repeat;
   padding: 0 20px 0 0;
@@ -970,7 +679,6 @@ section#blog{
   font-size: 15px;
   color: #636060;
 }
-
 .metabox .entry-comments{
   background:url('images/comments.png') no-repeat;
   padding: 0 20px 0 0;
@@ -982,20 +690,17 @@ section#blog{
 #comments{
   margin-top:40px;
 }
-
 #comments h2.comments-title{
   font-size:20px;
   font-weight:bold;
   border-top:2px dotted #7e7e7e;
   padding:40px 0 0 0;
 }
-
 #comments h3.comment-reply-title{
   font-size:20px;
   font-weight:bold;
   clear:both;
 }
-
 #comments input[type="text"],
 #comments input[type="email"],
 #comments textarea {
@@ -1003,7 +708,6 @@ section#blog{
   font-size:18px;
   margin:20px 0 0 0;
 }
-
 #comments input[type="submit"].submit{
   background:#e22626 !important ;
   padding:10px 60px;
@@ -1012,25 +716,20 @@ section#blog{
   margin-top:20px;
   margin-right:0px;
 }
-
 #comments a.comment-reply-link{
   color:#000;
   background:#cecece;
   padding:5px 15px;
 }
-
 #comments a.comment-reply-link:hover{
   background:#e22626;
   color: #fff;
 }
-
 #comments a time{
   color:#000;
   font-weight:bold;
   font-size:12px;
 }
-
-
 #content-bb #comments ol li{
   width:100%;
   background:none;
@@ -1040,31 +739,25 @@ section#blog{
   background:#eee;
   display:inline-block;
 }
-
 #content-bb #comments ul{
   margin:0 40px 0 0;
 }
-
 #comments .reply{
   float:left;
 }
-
 .comment-respond{
   clear:both;
 }
-
 #comments .comment-metadata{
   width:90%;
   float:right;
   padding:1% 0 0 0;
 }
-
 #comments .comment-content{
   width:90%;
   float:right;
   margin-right:7%;
 }
-
 #comments p {
   width:90%;
   float:right;
@@ -1079,24 +772,24 @@ section#blog{
 #sidebar table,
 #sidebar th,
 #sidebar td {
-    border: 1px solid #d1d1d1;
-    text-align: center;
+  border: 1px solid #d1d1d1;
+  text-align: center;
 }
 #sidebar td {
-    padding: 10px;
-    color: #fff;
+  padding: 10px;
+  color: #fff;
 }
 #sidebar th {
-    text-align: center;
-    padding: 10px;
-    color: #fff;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
 }
 #sidebar select {
-    padding: 8px 5px;
+  padding: 8px 5px;
 }
 #sidebar {
-    background: rgba(226, 38, 38, 0.51);
-    padding: 15px 15px;
+  background: rgba(226, 38, 38, 0.51);
+  padding: 15px 15px;
 }
 #sidebar form{
   display: table;
@@ -1104,17 +797,15 @@ section#blog{
   border: 2px solid #fff;
   border-radius: 40px;
 }
-
 #sidebar h3 {
-    text-align: right;
-    padding: 15px;
-    font-size: 24px;
-    font-family: Roboto;
-    background: #e22626;
-    color: #fff;
-    margin-bottom: 5%;
+  text-align: right;
+  padding: 15px;
+  font-size: 24px;
+  font-family: Roboto;
+  background: #e22626;
+  color: #fff;
+  margin-bottom: 5%;
 }
-
 #sidebar input[type="search"] {
   background:none;
   padding:7px 10px;
@@ -1123,30 +814,26 @@ section#blog{
   color:#fff;
   width:100%;
 }
-
 #sidebar label{
   width:70%;
   float:right;
 }
-
 #sidebar input[type="submit"] {
-    background: #e22626;
-    border: none;
-    color: #ffffff;
-    padding: 10px 0;
-    width: 30%;
-    font-size: 14px;
-    float: right;
-    margin: 0;
-    font-weight: bold;
-    border-bottom-left-radius: 20px;
-    border-top-left-radius: 20px;
+  background: #e22626;
+  border: none;
+  color: #ffffff;
+  padding: 10px 0;
+  width: 30%;
+  font-size: 14px;
+  float: right;
+  margin: 0;
+  font-weight: bold;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
 }
-
 #sidebar aside{
   margin-bottom:30px;
 }
-
 #sidebar ul {list-style:none;
   margin:0;
   padding:0;
@@ -1157,12 +844,11 @@ section#blog{
   margin:0 0 15px;
   padding:0 23px 0 0;
 }
-
 #sidebar ul li a{
   color:#fff;
 }
-
-#sidebar .tagcloud a{
+#sidebar .tagcloud a,
+.copyright-wrapper .tagcloud a{
   background:#eeeeee;
   color:#000;
   font-size:15px !important;
@@ -1170,27 +856,87 @@ section#blog{
   margin:0 0 5px;
   display:inline-block;
 }
-
-#sidebar .tagcloud a:hover{
-  background:#a94442;
+#sidebar .tagcloud a:hover,
+.copyright-wrapper .tagcloud a:hover{
+  background:#e22626;
   color: #fff;
 }
 
-
 /* woocommerce */
-
-.woocommerce #sidebar{
-  width: 28%;
-  float: right;
-  margin-right: 2%;
-}
-
 .woocommerce-checkout #content-bb ul li{
   list-style-type: none;
   padding: 1em 3.5em 1em 2em;
 }
+.woocommerce div.product form.cart .button{
+  padding: 11px;
+}
+a.showcoupon,
+.woocommerce-message::before{
+  color: #e22626;
+}
+.woocommerce-message {
+    border-top-color: #e22626;
+}
+.woocommerce span.onsale{
+  background: #e22626;
+  color: #fff;
+  padding: 0;
+}
+.col-1,.col-2 {
+  max-width: 100%;
+}
+nav.woocommerce-MyAccount-navigation ul {
+  list-style: none;
+}
+nav.woocommerce-MyAccount-navigation ul li {
+  background: #e22626 !important;
+  padding: 12px!important;
+  margin-bottom: 10px;
+}
+nav.woocommerce-MyAccount-navigation ul li a{
+  color: #fff !important;
+}
+.posted_in {
+  display: block;
+}
+.woocommerce .woocommerce-ordering select{
+  padding: 10px;
+}
+span.woocommerce-input-wrapper,
+.woocommerce label {
+ width: 100%;
+}
 
+h2.woocommerce-loop-product__title,
+.woocommerce div.product .product_title {
+    color: #000;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+.woocommerce ul.products li.product .price,
+.woocommerce div.product p.price, .woocommerce div.product span.price {
+    color: #000;
+}
+.woocommerce div.product .product_title,.woocommerce div.product p.price, .woocommerce div.product span.price{
+  margin-bottom: 5px;
+}
 
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
+  background: #e22626;
+  color: #fff;
+  border-radius: 0;
+}
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{
+  background: #202020;
+  color: #fff;
+}
+.woocommerce .quantity .qty {
+  width: 5em;
+  padding: 5px;
+  border-radius: 0;
+  border: solid 1px #000;
+  color: #000;
+}
 /* Page */
 .title-box{
   background-repeat:no-repeat;
@@ -1209,8 +955,7 @@ section#blog{
   font-style:italic;
   font-weight:bold;
   margin:0 0 15px 0;
-  }
-
+}
 .cat-box{
   background:url(images/cat-icon.png) no-repeat 1px 3px;
   padding:0 25px 0 0;
@@ -1218,33 +963,27 @@ section#blog{
   font-weight:bold;
   margin:15px 0 30px 0;
 }
-
 .single .title-box{
   background-size:100% 100%;
 }
-
 #content-bb {
-  font-family:Helvetica;
+  font-family:Roboto;
 }
-
 #content-bb p{
   line-height: 25px;
   font-size: 16px;
   margin:0 0 20px 0;
 }
-
 #content-bb hr{
   border:none;
   border-bottom:2px dotted #7e7e7e;
   margin:35px 0;
   clear:both;
 }
-
 #content-bb h1{
   font-size:35px;
   margin:20px 0 0 0;
 }
-
 #content-bb h2{
   font-size:30px;
   font-weight:normal;
@@ -1254,7 +993,6 @@ section#blog{
   margin:0 0 15px;
   font-family:Roboto;
 }
-
 #content-bb h3{
   font-size:36px;
   font-weight:normal;
@@ -1264,7 +1002,6 @@ section#blog{
   margin:0 0 25px;
   font-family:Roboto;
 }
-
 #content-bb h4{
   font-size:20px;
   font-weight:bold;
@@ -1274,11 +1011,9 @@ section#blog{
   margin:0 0 10px;
   font-family:Roboto;
 }
-
 #content-bb  h6{
   font-size:18px;
 }
-
 #content-bb  h6{
   margin:0 0 15px;
   font-size:17px;
@@ -1286,25 +1021,21 @@ section#blog{
   font-weight:bold;
   line-height:normal;
 }
-
 #content-bb ul{
   list-style:none;
   margin:0 10px 0 0;
   padding:10px 0 0;
   font-size:16px;
 }
-
 #content-bb ul li{
   list-style-type: circle;
   padding:0 35px 0 0;
   margin:0 0 20px 0;
   line-height:25px;
 }
-
 #content-bb ul li ul li{
   list-style-type: circle;
 }
-
 #content-bb ol{
   list-style: none;
   margin:0 15px 0 0;
@@ -1312,18 +1043,15 @@ section#blog{
   font-size:16px;
   counter-reset: myCounter;
 }
-
 #content-bb ol li{
   padding:0 0 0 0;
   margin:0 5px 15px 0;
   list-style:decimal;
 }
-
 #content-bb ol li ol li{
   margin:0 0 15px 0;
   padding:0 35px 0 0;
 }
-
 #content-bb  h5{
   margin:0 0 15px;
   font-size:18px;
@@ -1331,11 +1059,9 @@ section#blog{
   font-weight:bold;
   line-height:normal;
 }
-
 .read-moresec{
   margin:2% 0;
 }
-
 a.button {
   border: 2px solid #000;
   background: #fff;
@@ -1356,8 +1082,7 @@ a.button {
   float:left;  
   font-weight:bold;
   width:100%;
-}
- 
+} 
 .pagination span, .pagination a {
   display:block;
   float:right;
@@ -1372,43 +1097,24 @@ a.button {
   -ms-transition: background .15s ease-in-out;
   -o-transition: background .15s ease-in-out;
   transition: background .15s ease-in-out;
-}
- 
+} 
 .pagination a:hover{
-    color:#fff;
-    background: #e22626;
-}
- 
+  color:#fff;
+  background: #e22626;
+} 
 .pagination .current{
-    padding:10px 15px;
-    background: #e22626;
-    color: #ffffff;
-    font-weight:normal;
+  padding:10px 15px;
+  background: #e22626;
+  color: #ffffff;
+  font-weight:normal;
 }
-
 #content-bb .pagination ul{
   margin:0;
   clear:both;
 }
-
 #content-bb .pagination ul li{
   margin:0;
 }
-
-@media screen and (max-width:991px) 
-{
-  #slider .slide-cap h2{
-    font-size:150%;
-    color:#ffffff;
-  }
-
-  .day-time{ 
-    border-bottom: 1px solid #fff;
-    margin-bottom: 15px;
-    padding-bottom: 20px;
-  }
-}
-
 
 /*copyright css*/
 .copyright-wrapper .widget ul{
@@ -1417,20 +1123,17 @@ a.button {
 .copyright-wrapper .widget {
     padding: 20px 0;
 }
-.copyright-wrapper .tagcloud a {
-    color: #fff;
-}
 .copyright-wrapper input[type="submit"]{
   margin-top: 0;
   padding: 10px 9px;
   font-size: 15px;  
 }
 .copyright-wrapper input.search-submit {
-    float: left;
-    width: 39%;
+  float: left;
+  width: 39%;
 }
 .copyright-wrapper .search-form .search-field {
-    width: 100%;
+  width: 100%;
 }
 .copyright-wrapper caption {
   font-weight: bold;
@@ -1440,33 +1143,36 @@ a.button {
 .copyright-wrapper table,
 .copyright-wrapper th,
 .copyright-wrapper td {
-    border: 1px solid #d1d1d1;
-    text-align: center;
+  border: 1px solid #d1d1d1;
+  text-align: center;
 }
 .copyright-wrapper td {
-    padding: 10px;
-    color: #fff;
+  padding: 9px;
+  color: #fff;
 }
 .copyright-wrapper th {
-    text-align: center;
-    padding: 10px;
-    color: #fff;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
 }
 .copyright-wrapper select {
-    padding: 8px 5px;
+  padding: 8px 5px;
 }
 .copyright-wrapper h3 {
-    color: #e22626;
-    font-weight: 600;
-    font-size: 25px;
+  color: #e22626;
+  font-weight: 600;
+  font-size: 25px;
 }
 .copyright-wrapper li a {
   color: #fff;
   font-size: 15px;
 }
 .copyright-wrapper ul li {
-    list-style: none;
-    padding: 5px 0;
+  list-style: none;
+  padding: 5px 0;
+}
+li{
+  color: #f1f1f1;
 }
 .copyright-wrapper ul {
   margin: 0;
@@ -1476,64 +1182,20 @@ a.button {
   background-color:rgba(41, 41, 41, 0.98);
   letter-spacing: 1px;
 }
-
 .copyright {
   color: #fff;
   font-size: 15px;
   font-weight: bold;
   margin: auto;
   text-align: center;
-  padding:25px 0;
-  background: #232f3e;
+  padding:18px 0;
+  background: #333;
 }
-
-.copyright a{
+.copyright a,
+.copyright p{
   color: #fff;
 }
 
-@media screen and (max-width: 720px) and (min-width: 320px){
-  #sidebar {
-    clear: both;
-  }
-  ol.children {
-    margin: 0 !important;
-  }
-  ol.children img {
-    width: 30px;
-    border: solid 1px;
-  }
-  #content-bb #comments ol li {
-    padding: 10% 2% 0 0;
-  }
-  .comment-author img {
-    border: solid 1px;
-  }
-  #comments .reply {
-    float: right;
-  }
-  #our-products .woocommerce ul.products li.product {
-    margin: 0 0px 2.992em;
-    width: 100%;
-  }
-  .services .new-line {
-    padding-bottom: 5px;
-    font-size: 26px;
-    width: 60%;
-    font-style: oblique;
-  }
-}
-@media screen and (max-width: 768px) and (min-width: 721px){
-  #our-products .woocommerce ul.products li.product {
-      margin: 0 4px 2.992em;
-      width: 48%;
-  }
-}
-@media screen and (max-width: 1024px) and (min-width: 990px){
-  #our-products .woocommerce ul.products li.product {
-      margin: 0 4px 2.992em;
-      width: 23.8%;
-  }
-}
 /* ------ Contact Form ------ */
 .wpcf7{ 
   margin:0;
@@ -1555,12 +1217,8 @@ a.button {
 .wpcf7 form input[type="tel"],
 .wpcf7 form input[type="url"],
 .wpcf7 form input[type="date"],
-.wpcf7 form select, .leftdiv input[type="text"],
-.leftdiv input [type="url"],
-.leftdiv input[type="email"],
-.leftdiv input[type="tel"],
-.wpcf7 form textarea,
-.rightdiv textarea{ 
+.wpcf7 form select,
+.wpcf7 form textarea,{ 
   width:94%;
   background-color:#f8f8f8;
   border:1px solid #e6e5e5;
@@ -1584,19 +1242,7 @@ span.wpcf7-list-item{
 }
 
 .wpcf7 form input[type="submit"],
-#contact input[type="submit"],
-#contactform_main input[type='submit']{
-  margin:25px 0 0 0;
-  padding:5px 20px;
-  border:none;
-  color:#ffffff;
-  border-radius:4px;
-  -moz-border-radius:4px;
-  -o-border-radius:4px;
-  -webkit-border-radius:4px;
-  cursor:pointer;
-  background-color:#00A885;
-}
+
 
 .pagination{
   display:table;
@@ -1669,6 +1315,8 @@ input.search-field,
 .post-password-form input[type=password]{
   border:1px #eee solid;
   padding:9px 2px;
+  background: transparent;
+  color: #e22626;
 }
 
 input.search-submit,
@@ -1739,66 +1387,6 @@ nav.post-navigation{
   margin-top:15px;
 }
 
-.blog-post-repeat{ 
-  border-bottom:1px solid #cccccc;
-  margin-bottom:40px;
-}
-
-#contact .column-2{ 
-  width:65%;
-  float:right;
-  margin:0;
-}
-#contact .column-2.last_column{ 
-  width:25%;
-  margin-right:9%;
-}
-
-#contact .column-2.last_column span{ 
-  text-transform:capitalize;
-}
-
-#contact .column-2.last_column a{
-  color:#666666;
-}
-
-.leftdiv{ 
-  float:right;
-  width:48%;
-}
-
-.rightdiv{ 
-  float:left;
-  width:48%;
-}
-
-#contact .column-2 h2{ 
-  font:400 17px 'Oswald';
-  text-transform:uppercase;
-}
-
-.social-icons{ 
-  text-align:center;
-}
-
-.top-right .social-icons a {height: 50px;
-  margin:0;
-  vertical-align: 0;
-  width: 39px;
-  display: table;
-  float: right;
-  border-right:1px solid #727171;
-  color:#727171;
-}
-
-.top-right .social-icons a:hover{
-  color:#ffffff;
-}
-
-.top-right .social-icons a:last-child{ 
-  border-left:1px solid #727171;
-}
-
 .fa::before, fa::after{ 
   display:table-cell;
   vertical-align:middle;
@@ -1808,116 +1396,40 @@ nav.post-navigation{
   color:#222222;
 }
 
-/* --------- CONTACT Page --------- */
-section#contact-box {
-  padding:0;
-  margin:0;
-}
-
-.contact-info {
-  color:#6e6e6e;
-  font-weight:bold;
-  font-size:16px;
-  line-height:26px;
-  border-left:2px dotted #595959;
-  margin: 3% 0 0 0;
-}
-
-.contact-location{
-  background:url('images/location.png') no-repeat scroll 100% 2px;
-  padding:0 30px 0 0;
-  margin:0 0 40px 0;
-}
-
-.contact-call{
-  background:url('images/phone.png') no-repeat scroll 100% 2px;
-  padding:0 30px 0 0;
-  margin:0 0 40px 0;
-}
-
-.contact-email{
-  background:url('images/email.png') no-repeat scroll 100% 5px;
-  padding:0 30px 0 0;
-  margin:0 0 40px 0;
-}
-
-.contact-info .head{
-  color:#000;
-}
-
-.contact_form textarea  {
-  height: 75px;
-}
-.contact_form{
-  background: #000;
-  padding: 54px;
-}
-.contact_form p{
-  color:#fff;
-  margin:0 0 15px;
-}
-
-.contact_form input[type="text"] ,
-.contact_form input[type="email"],
-.contact_form textarea { 
-  width: 100%;
-  background: #262626;
-  border: 1px solid #262626;
-  color: #fcfcfc;
-  padding: 8px 10px;
-  margin:5px 0 0 0;
-}
-
-.contact_form  input[type="submit"] 
-{
-  background:none;
-  color:#fff;
-  padding:10px 50px;
-  text-transform:uppercase;
-  color:#fcfcfc;
-  display:table;
-  margin:0 auto;
-  text-align:center;
-  border: 2px solid #fff;
-
-}
-.contact_form  input[type="submit"]:hover{
-  background:#ffd34e;
-  color:#000;
-}
-
+/*responsive menu*/
 @media screen and (max-width:686px){
   #content-bb #comments ul{
     margin: 0!important;
   }
 }
-
-/*responsive menu*/
 @media screen and (max-width:720px) {
+  .topbar,.social-media{
+    text-align: center;
+  }
+  .cathead{
+    position: relative;
+    top: 0;
+  }
+  input#woocommerce-product-search-field{
+    width: 83%;
+  }
   .toggle{
     display:block;
   }
 
   .toggle a{
     width:100%;
-    color:#000;
-    background:url('images/responsive_menu.png') no-repeat left center #ffd34e;
+    color:#fff;
+    background:url('images/responsive_menu.png') no-repeat left center #e22626;
     padding:10px 10px;
    font-size:16px;
   }
-
-  .toggle a:hover{ 
-    color:#000;
-  }
-
   .toggle a.active{
     color:#000;
   }
-
   .nav{
     display:none;
   }
-
   .admin-bar .header .nav{
     top: 75px;
   }
@@ -1996,7 +1508,6 @@ section#contact-box {
     min-height: auto;
   }
 }
-
 @media screen and (min-width:720px){
   .header .nav ul li ul{
     display:none;
@@ -2030,7 +1541,7 @@ section#contact-box {
     display:block;
     position:absolute;
     right:200px;
-    top:-20px;
+    top:5px;
   }
   
   .header .nav ul.sub-menu{
@@ -2038,7 +1549,7 @@ section#contact-box {
   }
 
   .header .nav ul.sub-menu li a:hover{
-    background:#3890cb;
+    background:#e22626;
     color:#fff;
   }
   .header .nav ul {
@@ -2046,11 +1557,10 @@ section#contact-box {
   }
   .header .nav ul li a{ 
     color:#fff;
-    padding:14px 15px;
+    padding:15px;
     display:block;
   }
 }
-
 @media screen and (min-width: 1000px) {
   #header #header-inner .nav ul li ul li{
     display:block;
@@ -2064,4 +1574,57 @@ section#contact-box {
     padding-bottom:10px;
     border-bottom:1px #313131 solid;
   }
+}
+@media print{    
+    .nav *,#sidebar *
+    {
+        display: none !important;
+    }
+}
+@media screen and (max-width: 720px) and (min-width: 320px){
+  #sidebar {
+    clear: both;
+  }
+  ol.children {
+    margin: 0 !important;
+  }
+  ol.children img {
+    width: 30px;
+    border: solid 1px;
+  }
+  #content-bb #comments ol li {
+    padding: 10% 2% 0 0;
+  }
+  .comment-author img {
+    border: solid 1px;
+  }
+  #comments .reply {
+    float: right;
+  }
+  #our-products .woocommerce ul.products li.product {
+    margin: 0 0px 2.992em;
+    width: 100%;
+  }
+  .services .new-line {
+    padding-bottom: 5px;
+    font-size: 26px;
+    width: 60%;
+    font-style: oblique;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 721px){
+  #our-products .woocommerce ul.products li.product {
+      margin: 0 4px 2.992em;
+      width: 48%;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 990px){
+  #our-products .woocommerce ul.products li.product {
+      margin: 0 4px 2.992em;
+      width: 23.8%;
+  }
+}
+/*video*/
+iframe{
+  width: 100%;
 }

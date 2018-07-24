@@ -1,4 +1,4 @@
- <?php
+<?php
 /**
  * The Header for our theme.
  *
@@ -11,7 +11,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width">
-<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'bb-ecommerce-store' ) ); ?>">
 <?php wp_head(); ?>
 </head>
 
@@ -73,11 +73,11 @@
         </div>
         </div>
         <div class="cart-btn-box col-md-1 col-6 col-sm-6">
-        <div class="cart_icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
-        <div class="cart_no">
-          <div class="cart_txt">Total</div>              
-          <a class="cart-contents" href="<?php if(function_exists('wc_get_cart_url')){ echo esc_url(wc_get_cart_url()); } ?>" title="<?php esc_html_e( 'View your shopping cart','bb-ecommerce-store' ); ?>"><?php if(function_exists('get_cart_total')){ echo esc_html(WC() )->cart->get_cart_total(); } ?></a>
-        </div>
+          <div class="cart_icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+          <div class="cart_no">
+            <div class="cart_txt">Total</div>
+            <a class="cart-contents" href="<?php if(function_exists('wc_get_cart_url')){ echo esc_url(wc_get_cart_url()); } ?>" title="<?php esc_html_e( 'View your shopping cart','bb-ecommerce-store' ); ?>"><?php if(function_exists('get_cart_total')){ echo esc_html(WC() )->cart->get_cart_total(); } ?></a>
+          </div>
         </div>
       </div>
     </div>

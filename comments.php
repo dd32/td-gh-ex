@@ -27,18 +27,18 @@ if ( post_password_required() )
             if ( 1 === $comments_number ) {
 
                 /* translators: %s: post title */
-                printf( esc_html( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'bb-ecommerce-store' ), get_the_title() );
+                printf( esc_html__( 'One thought on &ldquo;%s&rdquo;', 'bb-ecommerce-store' ), get_the_title() );
             } else {
                 printf(
                 /* translators: 1: number of comments, 2: post title */
-                    esc_html( _nx(
+                    esc_html(
                         '%1$s thought on &ldquo;%2$s&rdquo;',
                         '%1$s thoughts on &ldquo;%2$s&rdquo;',
                         $comments_number,
                         'comments title',
                         'bb-ecommerce-store'
 
-                    ) ),
+                     ),
                     esc_html (number_format_i18n( $comments_number ) ),
                     get_the_title()
 

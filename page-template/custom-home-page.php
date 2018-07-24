@@ -14,6 +14,8 @@ get_header(); ?>
 			</div>
 		</div>
 		<div class="col-md-9">
+			<?php do_action( 'bb_ecommerce_store_before_slider' ); ?>
+
 			<?php /** slider section **/ ?>
 				<?php
 				// Get pages set in the customizer (if any)
@@ -112,18 +114,17 @@ get_header(); ?>
 				wp_reset_postdata();?>
 			    <div class="clearfix"></div> 
 			</section>
+
+			<?php do_action( 'bb_ecommerce_store_after_productsec' ); ?>
+
+			<div id="content-bb" class="container">
+				<?php while ( have_posts() ) : the_post(); ?>
+			        <?php the_content(); ?>
+			    <?php endwhile; // end of the loop. ?>
+			</div>
 		</div>
 	</div>
 </div>
 <div class="clearfix"></div>
-
-<?php do_action( 'bb_ecommerce_store_after_productsec' ); ?>
-
-<div class="container">
-	<?php while ( have_posts() ) : the_post(); ?>
-        <?php the_content(); ?>
-    <?php endwhile; // end of the loop. ?>
-</div>
-
 
 <?php get_footer(); ?>

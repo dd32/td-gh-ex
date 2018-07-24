@@ -50,7 +50,7 @@ function bb_ecommerce_store_mostrar_guide() {
 		  	</div>
 		  	<div class="clearfixed">
 				<div class="doc-image1">
-					<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/set-front-page.jpg" alt="" />	
+					<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/set-front-page.png" alt="" />	
 			    </div>
 			    <div class="image-docs1">
 				    <ul>

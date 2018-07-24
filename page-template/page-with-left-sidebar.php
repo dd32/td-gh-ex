@@ -26,12 +26,11 @@ get_header(); ?>
                     'link_after'  => '</span>',
                     'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>%',
                     'separator'   => '<span class="screen-reader-text">, </span>',
-                ) );
-
-                
-                //If comments are open or we have at least one comment, load up the comment template
-                	if ( comments_open() || '0' != get_comments_number() )
-                    	comments_template();
+                ) );               
+                // If comments are open or we have at least one comment, load up the comment template.
+                   if ( comments_open() || get_comments_number() ) :
+                       comments_template();
+                   endif;
                 ?>
             <?php endwhile; // end of the loop. ?>
         </div>
@@ -40,6 +39,5 @@ get_header(); ?>
 </div>
 
 <?php do_action( 'bb_ecommerce_store_pageleft_footer' ); ?>
-
 
 <?php get_footer(); ?>

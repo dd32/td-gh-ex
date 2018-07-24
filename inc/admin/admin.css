@@ -112,3 +112,8 @@ body{
 .tab1{
     display: block;
 }
+
+.get-started {
+    box-shadow: 0 0 10px 4px #eee;
+    border: solid 5px #333;
+}

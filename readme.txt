@@ -4,12 +4,12 @@
 
 Theme Name      :   BB Ecommerce Store
 Theme URI       :   https://www.themeshopy.com/free/wp-ecommerce-store-wordpress-theme/
-Version         :   1.3.2
-Tested up to    :   WP 4.9.5
+Version         :   1.3.3
+Tested up to    :   WP 4.9.7
 Author          :   Themeshopy
 Author URI      :   https://www.themeshopy.com/
 license         :   License: GNU General Public License v3 or later
-License URI     :   http://www.gnu.org/licenses/gpl-2.0.html
+License URI     :   http://www.gnu.org/licenses/gpl-3.0.html
 
 == Copyright ==
 This program is free software: you can redistribute it and/or modify
@@ -59,20 +59,29 @@ Theme is Built using the following resource bundles.
     Source: https://pixabay.com/en/shopping-shopping-cart-sale-meadow-2291966/
 
 3 - CSS bootstrap.css
-        Code and documentation copyright 2011-2016 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.
-    CSS nivo-slider.css
-        Copyright 2012, Dev7studios
-        Free to use and abuse under the MIT license.
-        http://www.opensource.org/licenses/mit-license.php
+    -- Copyright 2011-2018 The Bootstrap Authors
+    -- https://github.com/twbs/bootstrap/blob/master/LICENSE
+    
+    JS bootstrap.js
+    -- Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+    -- https://github.com/twbs/bootstrap/blob/master/LICENSE
 
-4 - All the icons taken from fontawesome licensed under GPL License.
+    CSS nivo-slider.css
+    -- Copyright 2012, Dev7studios
+    -- Free to use and abuse under the MIT license.
+    -- http://www.opensource.org/licenses/mit-license.php
+
+    JS nivo-slider.js
+    -- jquery.nivo.slider.js, License: MIT, License Url: https://opensource.org/licenses/MIT
+
+4 - Customizer Pro
+    Source: https://github.com/justintadlock/trt-customizer-pro 
+
+5 - All the icons taken from fontawesome licensed under GPL License.
     https://github.com/FortAwesome/Font-Awesome [MIT](http://opensource.org/licenses/MIT)
 
-
-All the slider images taken from pixabay under Creative Commons Deed CC0 - 
-
-All the icons taken from genericons licensed under GPL License.
-http://genericons.com/
+    All the icons taken from genericons licensed under GPL License.
+    http://genericons.com/
 
 /*-----------------------------------------------------------------------------------*/
 /* Steps to Setup Theme */
@@ -187,8 +196,12 @@ ii) Removed the unused css.
 iii) Update the bootstrap upto 4.0.0.
 iv) Update the language folder.
 
+Version 1.3.3
+i)   Added typography section.
+ii)  Potfile in language folder is updated.
+iii) Resolved error occured in files.
+
 Ecommerce Store Free version
 ==========================================================
 Ecommerce Store Free version is compatible with GPL licensed.
-
 For any help you can mail us at support[at]themeshopy.com
