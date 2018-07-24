@@ -5,7 +5,7 @@ Contributors: themeansar
 Tags: three-columns, right-sidebar, custom-colors, custom-logo, featured-images, full-width-template, threaded-comments, blog, e-commerce, news
 Requires at least: 4.0.5
 Tested up to: 4.8.1
-Stable tag: 1.1
+Stable tag: 1.0
 
 == Theme License & Copyright ==
 Awesome Business is distributed under the terms of the GNU GPL
@@ -66,6 +66,3 @@ All images use Pixabay
 ========================================================================================	
 --- Version 1.0 ----
 1. Relesed
-
---- Version 1.1 ----
-1. Added  Theme URI links
