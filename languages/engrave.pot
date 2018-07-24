@@ -1339,7 +1339,7 @@ msgstr ""
 #: admin/main/options.php:1423
 msgid ""
 "For premium support direct from the theme developers, or advice on "
-"customizations please <a href=\"http://www.thinkupthemes.com/themes/engrave/"
+"customizations please <a href=\"https://www.thinkupthemes.com/themes/engrave/"
 "\" target=\"_blank\">upgrade</a> to Engrave premium or purchase a <a href="
 "\"http://www.thinkupthemes.com/pricing/\" target=\"_blank\">Theme "
 "Subscription</a>."
