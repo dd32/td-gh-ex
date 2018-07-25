@@ -80,13 +80,13 @@ function beatrix_lite_esc_attr($data) {
  * @package Beatrix Lite
  * @since 1.0
  */
-function iclean_excerpt_length( $length ) {
+function beatrix_lite_excerpt_length( $length ) {
 	if(!is_admin()) {
 		$blog_excerpt_length 	= beatrix_lite_get_theme_mod( 'blog_excerpt_length' );
 		return $blog_excerpt_length;
 	}
 }
-add_filter( 'excerpt_length', 'iclean_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'beatrix_lite_excerpt_length', 999 );
 
 /**
  * Function to excerpt more
@@ -94,12 +94,12 @@ add_filter( 'excerpt_length', 'iclean_excerpt_length', 999 );
  * @package Beatrix Lite
  * @since 1.0
  */
-function iclean_excerpt_more( $more ) {
+function beatrix_lite_excerpt_more( $more ) {
     if(!is_admin()) {
 		return '...';
 	}
 }
-add_filter('excerpt_more', 'iclean_excerpt_more');
+add_filter('excerpt_more', 'beatrix_lite_excerpt_more');
 
 
 
