@@ -4,7 +4,7 @@ Theme URI: https://thememattic.com/theme/best-education
 Author: Thememattic
 Author URI: https://thememattic.com
 Description: Best Education is the flexible and highly responsive wordpress theme that helps in creating the best website for education instituitions like schools, colleges, primary schools, universities and various others business related to the education, teaching and learning. It has many features that supports all the functionalities of an educational website. Loaded with powerful plugin named "Education Connect", helps in creating the outstanding website for your school or college within a very less time. By featuring a responsive layout, it is clear that visitors can use any mobile device or desktop screen for reaching the website. It is perfectly optimized to support all the latest trends in SEO on-page optimization. View Live Preview: https://demo.thememattic.com/best-education and For Documentation: https://docs.thememattic.com/best-education
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: best-education
@@ -852,7 +852,7 @@ a:hover, a:focus, a:active {
     transform: translateY(-8px) rotateZ(45deg);
 }
 
-.icon-search {
+.nav-icon {
     border-left: 1px solid;
     border-right: 1px solid;
     color: #fff;
@@ -1498,13 +1498,56 @@ body .widget-bgcolor a {
     transition: all 0.3s ease;
 }
 
-.reveal-search .popup-search {
+@media only screen and (max-width: 767px) {
+    .header-middle .header-links {
+        display: table;
+        position: fixed;
+        width: 0;
+        height: 100%;
+        overflow-y: auto;
+        text-align: center;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        padding: 20px;
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        background-color: rgba(51, 51, 51, 0.94);
+        color: #fff;
+        margin: auto;
+        overflow: hidden;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+    .header-middle .header-links a {
+        color: #fff;
+    }
+
+    .header-middle .header-links .link-list {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .header-middle .svg-icon{
+        fill: #fff;
+    }
+}
+
+.reveal-search .popup-search,
+.reveal-contact .header-middle .header-links {
     opacity: 1;
     visibility: visible;
     width: 100%;
 }
 
-.popup-search .close-popup {
+.popup-search .close-popup,
+.header-middle .close-popup-1{
     position: fixed;
     bottom: 80px;
     right: 0;
@@ -1523,7 +1566,9 @@ body .widget-bgcolor a {
 }
 
 .popup-search .close-popup:after,
-.popup-search .close-popup:before {
+.popup-search .close-popup:before,
+.header-middle .close-popup-1:after,
+.header-middle .close-popup-1:before{
     content: '';
     height: 1px;
     width: 41px;
@@ -1541,7 +1586,8 @@ body .widget-bgcolor a {
     transition: all 0.3s ease;
 }
 
-.popup-search .close-popup:before {
+.popup-search .close-popup:before,
+.header-middle .close-popup-1:before{
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
@@ -1549,7 +1595,8 @@ body .widget-bgcolor a {
     transform: rotate(-45deg);
 }
 
-.popup-search .close-popup:after {
+.popup-search .close-popup:after,
+.header-middle .close-popup-1:after{
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -3853,13 +3900,23 @@ object {
 }
 
 @media only screen and (max-width: 991px) {
-    .icon-search {
+    .nav-icon-wrapper {
         position: absolute;
         top: 0;
         right: 15px;
         height: 60px;
         line-height: 60px;
         padding: 0 24px
+    }
+
+    .nav-icon-wrapper .nav-icon {
+        display: block;
+        float: left;
+        padding: 0 25px;
+    }
+
+    .nav-icon-wrapper .nav-icon.icon-contact {
+        border-right: 0;
     }
 }
 
@@ -3870,6 +3927,10 @@ object {
         margin-right: auto;
         max-width: 290px;
         width: 100%
+    }
+
+    .nav-icon-wrapper .nav-icon{
+        padding: 0 15px;
     }
 }
 
@@ -3991,6 +4052,7 @@ figcaption {
 
     body .site-branding {
         text-align: center;
+        margin: 20px auto;
     }
 
     .about-cta-section {
@@ -4061,12 +4123,12 @@ figcaption {
 }
 
 .top-header,
-.icon-search {
+.nav-icon {
     border-color: #2d2d2d;
 }
 
 .top-header-overlay.top-header,
-.top-header-overlay .icon-search {
+.top-header-overlay .nav-icon {
     border-color: #313131;
 }
 

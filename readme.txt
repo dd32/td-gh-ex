@@ -3,8 +3,8 @@
 Contributors: Thememattic
 
 Requires at least: 4.0
-Tested up to: 4.9
-Stable tag: 1.0.2
+Tested up to: 4.9.5
+Stable tag: 1.0.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -50,6 +50,10 @@ Best Education is distributed under the terms of the GNU GPL
 
 
 = 1.0.2 =
+=Fixed bugs on latest post=
+
+
+= 1.0.3 =
 =Fixed bugs on latest post=
 
 

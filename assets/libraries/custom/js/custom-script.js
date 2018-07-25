@@ -73,13 +73,22 @@
             });
         },
 
-        n.SearchReveal = function () {
+        n.BestReveal = function () {
             e('.icon-search').on('click', function (event) {
                 e('body').toggleClass('reveal-search');
             });
             e('.close-popup').on('click', function (event) {
                 e('body').removeClass('reveal-search');
             });
+
+
+            e('.icon-contact').on('click', function (event) {
+                e('body').toggleClass('reveal-contact');
+            });
+            e('.close-popup-1').on('click', function (event) {
+                e('body').removeClass('reveal-contact');
+            });
+
         },
 
         /* Slick Slider */
@@ -225,7 +234,7 @@
         },
 
         e(document).ready(function () {
-            n.mobileMenu.init(), n.DataBackground(), n.SearchReveal(), n.SlickCarousel(), n.Thememattic_preloader(), n.parellex(), n.scroll_up();
+            n.mobileMenu.init(), n.DataBackground(), n.BestReveal(), n.SlickCarousel(), n.Thememattic_preloader(), n.parellex(), n.scroll_up();
         }), e(window).scroll(function () {
         n.stickyMenu();
     }), e(window).resize(function () {

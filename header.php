@@ -137,7 +137,7 @@ if (best_education_get_option('show_footer_page_section') == 1) {
                                         <li class="link-tel">
                                             <div class="link-wrapper">
                                         <span class="link-icon">
-                                            <svg id="svg-icon icon-phone" viewBox="0 0 42.062 42.062" width="100%" height="100%">
+                                            <svg id="icon-phone" class="svg-icon" viewBox="0 0 42.062 42.062" width="100%" height="100%">
                                                 <path d="M38.26,29.35l-1.327-1.327c4.337-4.337,4.336-11.394-0.002-15.731l1.329-1.328C43.329,16.032,43.329,24.281,38.26,29.35z
      M35.964,13.259l-1.327,1.328c3.07,3.072,3.07,8.069,0,11.139l1.327,1.33C39.767,23.251,39.767,17.062,35.964,13.259z
      M33.594,15.627l-1.327,1.328c1.768,1.765,1.768,4.639,0,6.403l1.328,1.328C36.093,22.189,36.093,18.125,33.594,15.627z
@@ -166,7 +166,7 @@ if (best_education_get_option('show_footer_page_section') == 1) {
                                         <li class="link-email">
                                             <div class="link-wrapper">
                                         <span class="link-icon">
-                                           <svg id="svg-icon icon-email" viewBox="0 0 81.751 81.751" width="100%" height="100%">
+                                           <svg id="icon-email" class="svg-icon" viewBox="0 0 81.751 81.751" width="100%" height="100%">
                                                <path d="M78.863,24.446H49.882V5.522c0-3.04-2.483-5.522-5.52-5.522H7.914C4.875,0,2.393,2.483,2.393,5.522v70.707
     c0,3.038,2.483,5.522,5.521,5.522h36.448c3.036,0,5.52-2.484,5.52-5.522V59.915h13.226h2.964l0.161-0.44L78.286,27.31l1.072-2.866
     L78.863,24.446L78.863,24.446z M31.133,29.305l9.653,10.607L20.99,56.375L31.133,29.305z M33.211,27.011h41.4L47.877,43.117
@@ -191,7 +191,7 @@ if (best_education_get_option('show_footer_page_section') == 1) {
                                         <li class="link-address">
                                             <div class="link-wrapper">
                                         <span class="link-icon">
-                                           <svg id="svg-icon icon-address" viewBox="0 0 539.077 539.077" width="100%" height="100%">
+                                           <svg id="icon-address" class="svg-icon" viewBox="0 0 539.077 539.077" width="100%" height="100%">
                                                <path d="M460.462,527.846H325.692c-6.208,0-11.231-5.023-11.231-11.231v-146h-89.846v146c0,6.208-5.023,11.231-11.231,11.231
                 H78.615c-6.208,0-11.231-5.023-11.231-11.231V292c0-6.208,5.023-11.231,11.231-11.231c6.208,0,11.231,5.023,11.231,11.231v213.385
                 h112.308v-146c0-6.208,5.023-11.231,11.231-11.231h112.308c6.208,0,11.231,5.023,11.231,11.231v146h112.308V303.231
@@ -211,6 +211,7 @@ if (best_education_get_option('show_footer_page_section') == 1) {
                                         </li>
                                     <?php } ?>
                                 </ul>
+                                <div class="close-popup-1 hidden-lg hidden-md hidden-sm"></div>
                             </div>
                         </div>
                     <?php } ?>
@@ -242,8 +243,15 @@ if (best_education_get_option('show_footer_page_section') == 1) {
                     )); ?>
                 </nav>
 
-                <div class="icon-search pull-right">
-                    <i class="fa fa-search"></i>
+                <div class="pull-right nav-icon-wrapper">
+                    <?php  if (best_education_get_option('enable_header_contact_section') == 1) { ?>
+                        <div class="nav-icon icon-contact hidden-lg hidden-md hidden-sm">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                    <?php } ?>
+                    <div class="nav-icon icon-search">
+                        <i class="fa fa-search"></i>
+                    </div>
                 </div>
             </div>
         </div>
