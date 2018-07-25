@@ -10,7 +10,7 @@
 
 // Defining Some Variable
 if( !defined( 'BEATRIX_LITE_VERSION' ) ) {
-	define('BEATRIX_LITE_VERSION', '1.0.4'); // Theme Version
+	define('BEATRIX_LITE_VERSION', '1.0.5'); // Theme Version
 }
 if( !defined( 'BEATRIX_LITE_DIR' ) ) {
 	define( 'BEATRIX_LITE_DIR', get_template_directory() ); // Theme dir

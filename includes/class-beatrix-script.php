@@ -11,7 +11,7 @@
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
-class Beatrix_Script {
+class Beatrix_Lite_Script {
 	
 	function __construct() {
 
@@ -76,4 +76,4 @@ class Beatrix_Script {
         }
 }
 
-$beatrix_lite_script = new Beatrix_Script();
+$beatrix_lite_script = new Beatrix_Lite_Script();
