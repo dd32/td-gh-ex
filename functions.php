@@ -315,7 +315,7 @@ endif;
     echo '<ul class="breadcrumb">';
     global $post;
     $homeLink = home_url();
-    echo '<li><a href="' . esc_attr($homeLink) . '">' . esc_html($home) . '</a></li>' . esc_html($delimiter) . ' ';
+    echo '<li><a href="' . $homeLink . '">' . $home . '</a></li>' . $delimiter . ' ';
     if (is_category()) {
         global $wp_query;
         $cat_obj = $wp_query->get_queried_object();
@@ -323,23 +323,23 @@ endif;
         $thisCat = get_category($thisCat);
         $parentCat = get_category($thisCat->parent);
         if ($thisCat->parent != 0)
-            echo(esc_html(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' ')));
-        echo esc_html($before) . ' _e("Archive by category","enigma") "' . single_cat_title('', false) . '"' . esc_html($after);
+            echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
+        echo $before . ' _e("Archive by category","enigma") "' . single_cat_title('', false) . '"' . $after;
     } elseif (is_day()) {
-        echo '<li><a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html(get_the_time('Y')) . '</a></li> ' . esc_html($delimiter) . ' ';
-        echo '<li><a href="' . esc_url(get_month_link(get_the_time('Y'), get_the_time('m'))) . '">' . esc_html(get_the_time('F')) . '</a></li> ' . esc_html($delimiter) . ' ';
-        echo esc_html($before) . esc_html(get_the_time('d')) . esc_html($after);
+        echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
+        echo '<li><a href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . get_the_time('F') . '</a></li> ' . $delimiter . ' ';
+        echo $before . get_the_time('d') . $after;
     } elseif (is_month()) {
-        echo '<li><a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html(get_the_time('Y')) . '</a></li> ' . esc_html($delimiter) . ' ';
-        echo esc_html($before) . esc_html(get_the_time('F')) . esc_html($after);
+        echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
+        echo $before . get_the_time('F') . $after;
     } elseif (is_year()) {
-        echo esc_html($before) . esc_html(get_the_time('Y')) . esc_html($after);
+        echo $before . get_the_time('Y') . $after;
     } elseif (is_single() && !is_attachment()) {
         if (get_post_type() != 'post') {
             $post_type = get_post_type_object(get_post_type());
             $slug = $post_type->rewrite;
-            echo '<li><a href="' . esc_attr($homeLink) . '/' . esc_attr($slug['slug']) . '/">' . esc_html($post_type->labels->singular_name ). '</a></li> ' . esc_html($delimiter) . ' ';
-            echo esc_html($before) . get_the_title() . esc_html($after);
+            echo '<li><a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a></li> ' . $delimiter . ' ';
+            echo $before . get_the_title() . $after;
         } else {
             $cat = get_the_category();
             $cat = $cat[0];
@@ -349,14 +349,14 @@ endif;
 		
     } elseif (!is_single() && !is_page() && get_post_type() != 'post') {
         $post_type = get_post_type_object(get_post_type());
-        echo esc_html($before) . esc_html($post_type->labels->singular_name) . esc_html($after);
+        echo $before . $post_type->labels->singular_name . $after;
     } elseif (is_attachment()) {
         $parent = get_post($post->post_parent);
         $cat = get_the_category($parent->ID);
         //$cat = $cat[0];
        // echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-        echo '<li><a href="' . esc_url(get_permalink($parent)) . '">' . esc_html($parent->post_title) . '</a></li> ' . esc_html($delimiter) . ' ';
-        echo esc_html($before) . get_the_title() . esc_html($after);
+        echo '<li><a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a></li> ' . $delimiter . ' ';
+        echo $before . get_the_title() . $after;
     } elseif (is_page() && !$post->post_parent) {
         echo $before . get_the_title() . $after;
     } elseif (is_page() && $post->post_parent) {
@@ -364,13 +364,13 @@ endif;
         $breadcrumbs = array();
         while ($parent_id) {
             $page = get_page($parent_id);
-            $breadcrumbs[] = '<li><a href="' . esc_url(get_permalink($page->ID)) . '">' . get_the_title($page->ID) . '</a></li>';
+            $breadcrumbs[] = '<li><a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a></li>';
             $parent_id = $page->post_parent;
         }
         $breadcrumbs = array_reverse($breadcrumbs);
         foreach ($breadcrumbs as $crumb)
-            echo esc_html($crumb) . ' ' . esc_html($delimiter) . ' ';
-        echo esc_html($before) . get_the_title() . esc_html($after);
+            echo $crumb . ' ' . $delimiter . ' ';
+        echo $before . get_the_title() . $after;
     } elseif (is_search()) {
         echo $before . _e("Search results for","enigma")  . get_search_query() . '"' . $after;
 
@@ -383,6 +383,7 @@ endif;
     } elseif (is_404()) {
         echo $before . _e("Error 404","enigma") . $after;
     }
+    
     echo '</ul>';
 	}
 	
