@@ -45,6 +45,15 @@ function medium_setup() {
 		'featured_content_filter' => 'medium_get_featured_posts',
 		'max_posts' => 6,
 	) );
+
+	add_theme_support( 'custom-logo', array(
+            'height'      => 220,
+            'width'       => 120,
+            'flex-height' => true,
+            'flex-width'  => true,
+            'priority'    => 11,
+            'header-text' => array( 'site-title', 'site-description' ), 
+        ) );
 	add_theme_support( "title-tag" );
 	// This theme uses its own gallery styles.
 	add_filter( 'use_default_gallery_style', '__return_false' );
@@ -83,7 +92,7 @@ function medium_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 ) {
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'medium' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf(/* translators: %s is paged count.*/ __( 'Page %s', 'medium' ), max( $paged, $page ) );
 	}
 
 	return $title;
@@ -108,20 +117,26 @@ function medium_font_url() {
 function medium_scripts() {
 	
 	global $medium_options;
-	wp_enqueue_style( 'medium-bootstrap', get_stylesheet_directory_uri().'/css/bootstrap.css' );
-	wp_enqueue_style( 'medium-font-awesome', get_stylesheet_directory_uri().'/css/font-awesome.css' );
-	wp_enqueue_style( 'style', get_stylesheet_uri());
+	wp_enqueue_style('google-font-opensans','//fonts.googleapis.com/css?family=Open+Sans', array());
+	wp_enqueue_style('google-font-Raleway','//fonts.googleapis.com/css?family=Raleway', array());
+	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri().'/css/bootstrap.css' );
+	wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri().'/css/font-awesome.css' );
+	
+	medium_custom_css();
+
 	wp_enqueue_style( 'medium-theme', get_stylesheet_directory_uri().'/css/theme.css' );	
 	wp_enqueue_style( 'medium-media', get_stylesheet_directory_uri().'/css/media.css' );        
 	
-	wp_enqueue_script( 'medium-script-bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), '' );	        
-	wp_enqueue_script( 'medium-enscroll', get_template_directory_uri() . '/js/enscroll.js', array('jquery'), '0.6.0' );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), '' );	        
+	wp_enqueue_script( 'enscroll', get_template_directory_uri() . '/js/enscroll.js', array('jquery'), '0.6.0' );
         wp_enqueue_script( 'medium-default', get_template_directory_uri() . '/js/default.js', array('jquery'), '1.0' );
         
         
         wp_localize_script( 'medium-default', 'admin_url', admin_url( 'admin-ajax.php'));
+
+    
 	
-	if(preg_match('/(?i)msie [1-8]/',$_SERVER['HTTP_USER_AGENT']))
+	if(isset($_SERVER['HTTP_USER_AGENT']) && preg_match('/(?i)msie [1-8]/',sanitize_text_field(wp_unslash($_SERVER['HTTP_USER_AGENT']))))
 	{
 	    // if IE<=8
 	    wp_enqueue_script('medium-respond', get_stylesheet_directory_uri() . '/js/respond.js',array('jquery'), '', true );
@@ -129,27 +144,14 @@ function medium_scripts() {
 	}
 	
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
-        
+     
+
 }
 add_action( 'wp_enqueue_scripts', 'medium_scripts');
 
-/*************** Theme option ***********************/
-require get_template_directory() . '/theme-options/fasterthemes.php';
-
-
-function medium_favicon() {
- global $medium_options;
- $medium_options = get_option( 'medium_theme_options' );
- if(!empty($medium_options['favicon']))
- 	echo '<link rel="shortcut icon" href="'.  esc_url( $medium_options['favicon'] ) .'"/>'."\n";}
-
-add_action('wp_head', 'medium_favicon');
-
-
-
 /* Custom search */
 function medium_search_ajax(){	
-	$medium_keyword = $_POST['text'];
+	$medium_keyword = (isset($_POST['text']))?sanitize_text_field(wp_unslash($_POST['text'])):'';
 	$medium_args_search = array(
 		's'	=>	$medium_keyword,
 		'post_status' => 'publish',
@@ -163,7 +165,7 @@ function medium_search_ajax(){
 		while($medium_query->have_posts()){
 			$medium_query->the_post();			
                         $medium_featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'medium-blog-small',0 );
-			$medium_result .= '<div class="col-md-3 search-box" >';
+			$medium_result .= '<div class="col-md-4 search-box" >';
                         if(!empty($medium_featured_image))
                         $medium_result .= '<a href="'.get_permalink(get_the_ID()).'"><img class="img-responsive" src="'.esc_url($medium_featured_image[0]).'" alt="'.esc_attr(get_the_title()).'"></a>';
 			$medium_result .= '<div class="image-sub"><a href="'.get_permalink(get_the_ID()).'">'.get_the_title().'</a></div>
@@ -172,7 +174,7 @@ function medium_search_ajax(){
 		}
 	}
 	else
-		$medium_error.=_e('Not found','medium');
+		$medium_error.=esc_html__('Not found','medium');
 		
 	echo json_encode(array("medium_result"=>$medium_result,"medium_error"=>$medium_error));
 	die;
@@ -192,30 +194,32 @@ function medium_entry_meta() {
 	
 	$medium_category_list = "";
 	$medium_category_list=get_the_category_list();
-if(!empty($medium_category_list))
-	$medium_category_list = _e('Posted in ','medium'); echo ": ".get_the_category_list(', ');
-$medium_tag_list = "";
-$medium_tag_list=get_the_tag_list();
-if(!empty($medium_tag_list))
-	$medium_tag_list = _e(' Tags','medium'); echo ": ".get_the_tag_list('',', ');
+	if(!empty($medium_category_list))
+		$medium_category_list = '<li><i class="fa fa-folder-open"></i>'.get_the_category_list(', ').'</li>';
 
-	$medium_date = sprintf( '<li>'.__('On','medium').' : %1$s</li>',
+	$medium_tag_list = "";
+	$medium_tag_list=get_the_tag_list();
+	if(!empty($medium_tag_list))
+		$medium_tag_list = get_the_tag_list('<li> <i class="fa fa-tags"></i> ',', ','</li>');
+
+	$medium_date = sprintf( '<li><i class="fa fa-calendar"></i> %1$s</li>',
 		esc_html( get_the_date('M d, Y') )
 	);
-	$medium_author = sprintf( '<li>'.__('By','medium').' : <a href="%1$s" title="%2$s" >%3$s</a></li>',
+	$medium_author = sprintf( '<li><i class="fa fa-user"></i> <a href="%1$s" title="%2$s" >%3$s</a></li>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'medium' ), get_the_author() ) ),
+		esc_attr( sprintf(/* translators: %s is author name*/ esc_html__( 'View all posts by %s', 'medium' ), get_the_author() ) ),
 		get_the_author()
 	);
 	if(comments_open()) { 
 		if(get_comments_number()>=1)
-			$medium_comments = '<li>'.__('Comments','medium').' : '.get_comments_number().'</li>';
+			$medium_comments = '<li><i class="fa fa-comment"></i>'.get_comments_number().'</li>';
 		else
 			$medium_comments = '';
 	} else {
 		$medium_comments = '';
 	}
-	printf('%1$s %2$s %3$s %4$s',
+	printf('%1$s %2$s %3$s %4$s %5$s',
+		$medium_author,
 		$medium_category_list,
 		$medium_date,		
 		$medium_comments,
@@ -235,8 +239,7 @@ if(!empty($medium_tag_list))
  *
  */
  if ( ! function_exists( 'medium_comment' ) ) :
-function medium_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
+function medium_comment( $comment, $args, $depth ) {	
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
@@ -244,7 +247,7 @@ function medium_comment( $comment, $args, $depth ) {
 			?>
 			<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
 				<p>
-				<?php _e( 'Pingback:', 'medium' ); ?>
+				<?php esc_html_e( 'Pingback:', 'medium' ); ?>
 				<?php comment_author_link(); ?>
 				<?php edit_comment_link( __( '(Edit)', 'medium' ), '<span class="edit-link">', '</span>' ); ?>
 				</p>
@@ -255,17 +258,15 @@ function medium_comment( $comment, $args, $depth ) {
 		// Proceed with normal comments.
 		if($comment->comment_approved==1)
 		{
-			global $post;
-		?>
-			<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); 
-			?>">
+			global $post; ?>
+			<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 			<article id="comment-<?php comment_ID(); ?>">
-			<figure class="comment-author"><?php echo get_avatar( get_the_author_meta('ID'), '41'); ?></figure>
+			<figure class="comment-author"><?php echo wp_kses_post(get_avatar( get_the_author_meta('ID'), '41')); ?></figure>
 			<div class="comment-content">
 				<div class="comment-metadata">
            <?php
-		   		printf( '%1$s ',get_comment_author_link(),( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author ', 'medium' ) . '</span>' : '');
-				printf( __('%1$s', get_comment_date(), 'medium' ), get_comment_date(), get_comment_time() );
+		   		printf( '%1$s ',get_comment_author_link(),( $comment->user_id === $post->post_author ) ? '<span>' . esc_html__( 'Post author ', 'medium' ) . '</span>' : '');
+				printf( /*translators: 1 is commnet date.*/ esc_html(' %s '),esc_html(get_comment_date()));
 				
 				echo comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'medium' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ));
 				
@@ -288,8 +289,11 @@ endif;
 
 
 
+/*************** Customizer option ***********************/
+require get_template_directory() . '/functions/theme-customizer.php';
 /*** Custom Header ***/
 require get_template_directory() . '/functions/custom-header.php';
-
+/*** TGM Class***/
+require get_template_directory() . '/functions/class-tgm-plugin-activation.php';
 /*** TGM ***/
 require get_template_directory() . '/functions/tgm-plugins.php';

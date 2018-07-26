@@ -10,13 +10,13 @@ get_header();
     	<h2>
         <?php
         if ( is_day() ) :
-            _e('Daily Archives','medium'); echo ": ". get_the_date();
+            esc_html_e('Daily Archives','medium'); echo ": ". get_the_date();
         elseif ( is_month() ) :
-            _e('Monthly Archives','medium'); echo ": ". get_the_date('F-Y');
+            esc_html_e('Monthly Archives','medium'); echo ": ". get_the_date('F-Y');
         elseif ( is_year() ) :
-            _e('Monthly Archives','medium'); echo ": ". get_the_date('Y');
+            esc_html_e('Monthly Archives','medium'); echo ": ". get_the_date('Y');
         else :
-            _e( 'Archives', 'medium' );
+            esc_html_e( 'Archives', 'medium' );
         endif; ?></h2>
     </div>
    	<div class="container blog-container">	
@@ -25,28 +25,21 @@ get_header();
              <?php
 			 $medium_i = 1;
 		if( have_posts() ) : while (have_posts()) : the_post(); 
-			if($medium_i == 1 || $medium_i == 4){
-				$medium_class = 'col-md-7 col-sm-7 post-box';
-				$medium_featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'medium-blog-big');
-			}
-			else{
-				$medium_class = 'col-md-5 col-sm-5 post-box';
-				$medium_featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'medium-blog-small',0 );				
-			} ?>	 
+			$medium_class = ($medium_i == 1 || $medium_i == 4)?'col-md-7 col-sm-12 post-box':'col-md-5 col-sm-12 post-box';
+            $medium_featured_image = ($medium_i == 1 || $medium_i == 4)?'medium-blog-big':'medium-blog-small'; ?>	 
                 <div  id="post-<?php the_ID(); ?>" <?php post_class($medium_class); ?>>
                     <div class="blog-left">
-                    	<?php
-							if(!empty($medium_featured_image[0])) {
-								echo '<a href="'. esc_url(get_permalink()).'"><img src="'. esc_url($medium_featured_image[0]).'" class="img-responsive" alt="'.esc_attr(get_the_title()).'" /></a>';
-								} ?>
+                    	<?php if(has_post_thumbnail()) : ?>
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail($medium_featured_image);?> </a>
+							<?php endif; ?>
                         <div class="block-content">
-                            <a href="<?php echo  esc_url(get_permalink());?>" class="block-title"><?php echo get_the_title(); ?></a>
+                            <a href="<?php the_permalink();?>" class="block-title"><?php the_title(); ?></a>
                             <div class="block-details"> 
                                 <ul>
                                     <?php medium_entry_meta(); ?> 
                                 </ul>
                              </div>
-                            <a href="<?php echo  esc_url(get_permalink());?>" class="read-more"><?php _e('Read More...','medium'); ?></a>
+                            <a href="<?php the_permalink();?>" class="read-more"><?php esc_html_e('Read More...','medium'); ?></a>
                         </div>    
                     </div>
                 </div>
@@ -60,11 +53,12 @@ get_header();
     				faster_pagination();
 				}
 				else{ ?>
-					<div class="col-md-12 medium-pagination-single">
-                        <span class="medium-previous-link"><?php previous_posts_link('&laquo; '.__('Previous','medium')); ?></span>
-                        <span class="medium-next-link"><?php next_posts_link(__('Next','medium').' &raquo;'); ?></span>
-      				</div>
-                    <?php } ?>
+                    <div class="col-md-12">
+                        <div class="medium-pagination-single">
+                        <?php  the_posts_pagination(); ?>
+                        </div>
+                    </div>
+                <?php } ?>
             </div>
         </div>    
     </div>   

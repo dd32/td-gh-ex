@@ -23,44 +23,33 @@
 <body <?php body_class(); ?>>
 <!--header strat-->
    <header class="home-header">
-       <div class="col-md-3 col-sm-3 col-xs-3 menu-button">
+       <div class="col-md-3 col-sm-3 col-xs-3 ">
         <?php if(get_header_image()){ ?>
-      <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" class="medium-custom-header" alt="" />
+      <img src="<?php header_image(); ?>" width="<?php echo esc_attr(get_custom_header()->width); ?>" height="<?php echo esc_attr(get_custom_header()->height); ?>" class="medium-custom-header" alt="" />
       <?php } ?>
-
            <a href="javascript:void(0);" id="menu-trigger" class="fa fa-bars"></a>
         </div>   
           	<div class="header-menu scrollbar">
 	          <div class="menu-column">
 		         <?php
-			$medium_args = array(
-					'theme_location'  => 'primary',
-					'container'       => '',
-					'container_class' => '',
-					'container_id'    => '',
-					'menu_class'      => '',
-					'menu_id'         => '',
-					'echo'            => true,
-					'fallback_cb'     => 'wp_page_menu',
-					'before'          => '',
-					'after'           => '',
-					'link_before'     => '',
-					'link_after'      => '',
-					'items_wrap'      => '<ul>%3$s</ul>',
-					'depth'           => 0,
-					'walker'          => ''
-					);
-			wp_nav_menu($medium_args); ?>
+        			$medium_args = array(
+        					'theme_location'  => 'primary',					
+        					'echo'            => true,
+        					'fallback_cb'     => 'wp_page_menu',
+        					'items_wrap'      => '<ul>%3$s</ul>',
+        					'depth'           => 0,
+        					);
+			       wp_nav_menu($medium_args); ?>
 	          </div>
 	      </div>
           <div class="col-md-6 col-sm-6 col-xs-6 header-logo">
               <div class="site-title">
-              <?php 
-              $medium_options = get_option( 'medium_theme_options' );
-              if(empty($medium_options['logo'])) { ?>
-        		<a href="<?php echo esc_url(site_url()); ?>"><?php echo get_bloginfo('name'); ?></a>
-            <?php } else { ?>
-                <a href="<?php echo esc_url(site_url()); ?>"><img src="<?php echo esc_url($medium_options['logo']); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="logo-center img-responsive" /></a>
+              <?php $medium_options = get_option( 'medium_theme_options' );
+              if(has_custom_logo()){
+                  the_custom_logo();            
+              }
+               if (display_header_text()==true){ ?>                
+                <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" id='brand' ><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a><a href="<?php echo esc_url(home_url('/')); ?>" rel="home" id='brand' ><h6 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h6></a>  
             <?php } ?>
               </div>
            </div>
@@ -72,21 +61,20 @@
           	<div class="header-search scrollbar">
 	          <div class="search-column">
                <form method="post" action="javascript:void(0);" name="Search-form">
-		          <input type="search" placeholder="<?php _e('Search','medium') ?>" autofocus class="pop-search">
+		          <input type="search" placeholder="<?php esc_attr_e('Search','medium') ?>" autofocus class="pop-search">
                </form>
                
                <div id="search_result_form">
                <div id="search_text_result"></div>
                <div class="row">
-               	<div class="" id="search_result">
-                
+               	<div class="" id="search_result">                
                 </div>
                 </div>
-               	<h2 id="no_search_result"><?php _e( 'No results found...', 'medium' ); ?></h2>
+               	<h2 id="no_search_result"><?php esc_html_e( 'No results found...', 'medium' ); ?></h2>
                </div>
                   <p id="msg"><?php 
-                  if(!empty($medium_options['search-text']))
-                    echo esc_attr($medium_options['search-text']); ?>
+                  if(get_theme_mod ( 'medium_searchtext',(!empty($medium_options['search-text'])) ? $medium_options['search-text']:''))
+                     echo esc_html(get_theme_mod ( 'medium_searchtext',(!empty($medium_options['search-text'])) ? $medium_options['search-text']:''));     ?>
                   </p>
 	          </div>
 	      </div>

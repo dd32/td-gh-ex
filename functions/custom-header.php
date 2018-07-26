@@ -23,7 +23,7 @@ function medium_custom_header_setup() {
 	 * }
 	 */
 	add_theme_support( 'custom-header', apply_filters( 'medium_custom_header_args', array(
-		'default-text-color'     => 'fff',
+		'default-text-color'     => '2b2b2b',
 		'width'                  => 1260,
 		'height'                 => 240,
 		'flex-height'            => true,
@@ -53,17 +53,7 @@ function medium_header_style() {
 	<style type="text/css" id="medium-header-css">
 	<?php
 		// Has the text been hidden?
-		if ( ! display_header_text() ) :
-	?>
-		.site-title,
-		.site-description {
-			clip: rect(1px 1px 1px 1px); /* IE7 */
-			clip: rect(1px, 1px, 1px, 1px);
-			position: absolute;
-		}
-	<?php
-		// If the user has set a custom color for the text, use that.
-		elseif ( $medium_text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
+		if ( $medium_text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
 	?>
 		.site-title a {
 			color: #<?php echo esc_attr( $medium_text_color ); ?>;
@@ -120,7 +110,7 @@ function medium_admin_header_image() {
 		<?php if ( get_header_image() ) : ?>
 		<img src="<?php header_image(); ?>" alt="">
 		<?php endif; ?>
-		<h1 class="displaying-header-text"><a id="name"<?php echo sprintf( ' style="color:#%s;"', get_header_textcolor() ); ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+		<h1 class="displaying-header-text"><a id="name"<?php echo sprintf( ' style="color:#%s;"', esc_attr(get_header_textcolor()) ); ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 	</div>
 <?php
 }

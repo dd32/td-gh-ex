@@ -12,9 +12,11 @@ if ( post_password_required() ) {
 	<div id="comments" class="comments-area">
 <?php if ( have_comments() ) : 	?>
    <h2 class="comments-title">
-    <?php
-			printf( _n( 'One thought on - %2$s', '%1$s thoughts on - %2$s', get_comments_number(), 'medium' ),
-			number_format_i18n( get_comments_number() ), get_the_title() ); ?>
+    <?php  
+    printf( // WPCS: XSS OK.
+          /* translators: 1: comment count number, 2: title. */
+          esc_html( _nx( '%1$s thought on - %2$s', '%1$s thoughts on - %2$s', get_comments_number(), 'comments title', 'medium' ) ),
+          number_format_i18n(get_comments_number() ), get_the_title() ); ?>
   </h2>
     <ul class="comment-list">
     <?php
