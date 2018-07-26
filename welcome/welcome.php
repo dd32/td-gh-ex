@@ -155,8 +155,13 @@
 				if( is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated'])) ) {
 					?>
 					<div class="notice notice-success is-dismissible">
-						<p><?php printf( __( 'Welcome! Thank you for choosing %1$s! Please make sure you visit our <a href="%2$s">Welcome page</a> to get started with %1$s.', 'accesspress-store' ), $this->theme_name, admin_url( 'themes.php?page=accesspressstore-welcome' )  ); ?></p>
-						<p><a class="button" href="<?php echo admin_url( 'themes.php?page=accesspressstore-welcome' ) ?>"><?php _e( 'Lets Get Started', 'accesspress-store' ); ?></a></p>
+						<p>
+							<?php
+								/* translators: %1$s: Theme Name, %2$s: Welcome Page link. */
+								printf( esc_html__( 'Welcome! Thank you for choosing %1$s! Please make sure you visit our <a href="%2$s">Welcome page</a> to get started with %1$s.', 'accesspress-store' ), esc_html($this->theme_name), esc_url(admin_url( 'themes.php?page=accesspressstore-welcome' )));
+							?>
+						</p>
+						<p><a class="button" href="<?php echo esc_url(admin_url( 'themes.php?page=accesspressstore-welcome' )); ?>"><?php esc_html_e( 'Lets Get Started', 'accesspress-store' ); ?></a></p>
 					</div>
 					<?php
 				}
@@ -173,30 +178,39 @@
 			public function accesspressstore_welcome_screen() {
 				$tabs = $this->tab_sections;
 
-				$current_section = isset($_GET['section']) ? $_GET['section'] : 'getting_started';
+				$current_section = isset($_GET['section']) ? sanitize_text_field(wp_unslash($_GET['section'])) : 'getting_started';
 				$section_inline_style = '';
 				?>
 				<div class="wrap about-wrap access-wrap">
-					<h1><?php printf( esc_html__( 'Welcome to %s - Version %s', 'accesspress-store' ), $this->theme_name, $this->theme_version ); ?></h1>
-					<div class="about-text"><?php printf( esc_html__( 'The %s is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more.', 'accesspress-store' ), $this->theme_name ); ?></div>
-
+					<h1>
+						<?php
+							/* translators: %1$s: Theme Name, %2$s: Theme version. */
+							printf( esc_html__( 'Welcome to %1$s - Version %2$s', 'accesspress-store' ), esc_html($this->theme_name), esc_html($this->theme_version ));
+						?>
+					</h1>
+					<div class="about-text">
+						<?php
+							/* translators: %s: theme name. */
+							printf( esc_html__( 'The %s is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more.', 'accesspress-store' ), esc_html($this->theme_name) );
+						?>
+					</div>
 					<a target="_blank" href="http://www.accesspressthemes.com" class="accesspress-badge wp-badge"><span><?php echo esc_html('AccessPressThemes'); ?></span></a>
 
 				<div class="nav-tab-wrapper clearfix">
 					<?php foreach($tabs as $id => $label) : ?>
 						<?php
-							$section = isset($_REQUEST['section']) ? esc_attr($_REQUEST['section']) : 'getting_started';
+							$section = isset($_REQUEST['section']) ? sanitize_text_field(wp_unslash($_REQUEST['section'])) : 'getting_started';
 							$nav_class = 'nav-tab';
 							if($id == $section) {
 								$nav_class .= ' nav-tab-active';
 							}
 						?>
-						<a href="<?php echo admin_url('themes.php?page=accesspressstore-welcome&section='.$id); ?>" class="<?php echo $nav_class; ?>" >
+						<a href="<?php echo esc_url(admin_url('themes.php?page=accesspressstore-welcome&section='.$id)); ?>" class="<?php echo esc_attr($nav_class); ?>" >
 							<?php echo esc_html( $label ); ?>
 							<?php if($id == 'actions_required') : $not = $this->get_required_plugin_notification(); ?>
 								<?php if($not) : ?>
 							   		<span class="pending-tasks">
-						   				<?php echo $not; ?>
+						   				<?php echo esc_html($not); ?>
 						   			</span>
 				   				<?php endif; ?>
 						   	<?php endif; ?>
@@ -205,7 +219,7 @@
 			   	</div>
 
 		   		<div class="welcome-section-wrapper">
-	   				<?php $section = isset($_REQUEST['section']) ? $_REQUEST['section'] : 'getting_started'; ?>
+	   				<?php $section = isset($_REQUEST['section']) ? sanitize_text_field(wp_unslash($_REQUEST['section'])) : 'getting_started'; ?>
    					
    					<div class="welcome-section <?php echo esc_attr($section); ?> clearfix">
    						<?php require_once get_template_directory() . '/welcome/sections/' . esc_attr($section) . '.php'; ?>
@@ -337,9 +351,13 @@
 				if ( ! current_user_can('install_plugins') )
 					wp_die( esc_html__( 'Sorry, you are not allowed to install plugins on this site.', 'accesspress-store' ) );
 
-				$nonce = $_POST["nonce"];
-				$plugin = $_POST["plugin"];
-				$plugin_file = $_POST["plugin_file"];
+				$nonce = isset( $_POST["nonce"] ) ? sanitize_text_field( wp_unslash( $_POST["nonce"] ) ) : '';
+				$plugin = isset( $_POST["plugin"] ) ? sanitize_text_field( wp_unslash( $_POST["plugin"] ) ) : '';
+				$plugin_file = isset( $_POST["plugin_file"] ) ? sanitize_text_field( wp_unslash( $_POST["plugin_file"] ) ) : '';
+
+				if( !$nonce && !$plugin && !$plugin_file ) {
+					return;
+				}
 
 				// Check our nonce, if they don't match then bounce!
 				if (! wp_verify_nonce( $nonce, 'accesspressstore_plugin_installer_nonce' ))
@@ -375,13 +393,15 @@
 
 			/** Plugin Offline Installation Ajax **/
 			public function accesspressstore_plugin_offline_installer_callback() {
-
-				
-				$file_location = $_POST['file_location'];
-				$file = $_POST['file'];
-				$github = $_POST['github'];
-				$slug = $_POST['slug'];
+				$file_location = isset($_POST['file_location']) ? sanitize_text_field( wp_unslash( $_POST['file_location'] ) ) : '';
+				$file = isset( $_POST['file'] ) ? sanitize_text_field( wp_unslash( $_POST['file'] ) ) : '';
+				$github = isset( $_POST['github'] ) ? sanitize_text_field( wp_unslash( $_POST['github'] ) ) : '';
+				$slug = isset( $_POST['slug'] ) ? sanitize_text_field( wp_unslash($_POST['slug']) ) : '';
 				$plugin_directory = ABSPATH . 'wp-content/plugins/';
+
+				if( !$file_location && !$file && !$github && !$slug ) {
+					return;
+				}
 
 				$zip = new ZipArchive;
 				if ($zip->open(esc_html($file_location)) === TRUE) {
@@ -406,7 +426,7 @@
 			/** Plugin Offline Activation Ajax **/
 			public function accesspressstore_plugin_offline_activation_callback() {
 
-				$plugin = $_POST['plugin'];
+				$plugin = isset( $_POST['plugin'] ) ? sanitize_text_field( wp_unslash( $_POST['plugin'] ) ) : '';
 				$plugin_file = ABSPATH . 'wp-content/plugins/'.esc_html($plugin).'/'.esc_html($plugin).'.php';
 
 				if(file_exists($plugin_file)) {
@@ -425,8 +445,8 @@
 				if ( ! current_user_can('install_plugins') )
 					wp_die( esc_html__( 'Sorry, you are not allowed to activate plugins on this site.', 'accesspress-store' ) );
 
-				$nonce = $_POST["nonce"];
-				$plugin = $_POST["plugin"];
+				$nonce = isset( $_POST["nonce"] ) ? sanitize_text_field( wp_unslash( $_POST["nonce"] ) ) : '';
+				$plugin = isset( $_POST["plugin"] ) ? sanitize_text_field( wp_unslash( $_POST["plugin"] ) ) : '';
 
 				// Check our nonce, if they don't match then bounce!
 				if (! wp_verify_nonce( $nonce, 'accesspressstore_plugin_activate_nonce' ))

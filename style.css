@@ -4,11 +4,11 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 2.3.0
+Version: 2.3.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
-Tags: e-commerce, custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, featured-images, custom-header, custom-colors, custom-background, threaded-comments, featured-images, custom-header, rtl-language-support
+Tags: e-commerce, custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, featured-images, custom-header, custom-colors, custom-background, threaded-comments, rtl-language-support
 This theme, like WordPress, is licensed under the GPL.
 
 AccessPress Store is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
@@ -6869,6 +6869,9 @@ AP WIDGET TITLE SECOND AYOUT
     top: 51px;
     width: 100%;
 }
+.apwidget_title .widget_search .searchform::before{
+    border-top: 0;
+}
 .apwidget_title .woocommerce .cart-collaterals .cart_totals::before, .apwidget_title.woocommerce-page .cart-collaterals .cart_totals::before, 
 .apwidget_title .checkout .woocommerce-billing-fields::before, .apwidget_title .checkout .woocommerce-shipping-fields:before {
     top: 41px;
@@ -6887,7 +6890,7 @@ AP WIDGET TITLE SECOND AYOUT
     padding: 0 5px;
     position: static;
     vertical-align: middle;
-    width: 9%;
+    width: 8%;
     position: relative;
     z-index: 1;
     cursor: pointer;

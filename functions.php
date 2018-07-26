@@ -110,6 +110,14 @@ function accesspress_store_wp_admin_section() {
 add_action( 'admin_enqueue_scripts', 'accesspress_store_wp_admin_section' );
 
 /**
+ * Enqueue script for custom customize control.
+ */
+function accesspress_store_custom_customize_enqueue() {
+	wp_enqueue_script( 'accesspress-store-customizer-controls', get_template_directory_uri() . '/js/theme-customizer.js', array( 'jquery', 'customize-controls' ), false, true );
+}
+add_action( 'customize_controls_enqueue_scripts', 'accesspress_store_custom_customize_enqueue' );
+
+/**
  * Load Require init file.
 */
 require $accesspress_store_file_directory_init_file_path = trailingslashit( get_template_directory() ).'inc/init.php';

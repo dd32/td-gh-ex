@@ -47,9 +47,9 @@ function accesspress_store_header_style() {
 
 	// If no custom options for text are set, let's bail
 	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == $header_text_color ) {
-		return;
-	}
+	if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
+			return;
+		}
 
 	// If we get this far, we have custom styles. Let's do this.
 	?>
@@ -116,7 +116,7 @@ function accesspress_store_admin_header_image() {
 ?>
 	<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
         <?php if ( get_header_image() ) : ?>
-		<img src="<?php echo  header_image(); ?>" alt="<?php bloginfo( 'name' ); ?>"/> 
+		<img src="<?php echo esc_url(header_image()); ?>" alt="<?php bloginfo( 'name' ); ?>"/> 
 		<?php endif; ?>
     </a>            
 	<a class="site-text" href="<?php echo esc_url( home_url( '/' ) ); ?>">

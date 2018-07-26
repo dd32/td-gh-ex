@@ -40,7 +40,7 @@ $woocommerce_loop['loop']++;
 	?>">
 	<?php do_action( 'woocommerce_before_subcategory', $category ); ?>
 
-	<a href="<?php echo get_term_link( $category->slug, 'product_cat' ); ?>">
+	<a href="<?php echo esc_url(get_term_link( $category->slug, 'product_cat' )); ?>">
 
 		<?php
 			/**
@@ -52,9 +52,9 @@ $woocommerce_loop['loop']++;
 		?>
 		<h3>
 			<?php
-				echo $category->name;
+				echo esc_html($category->name);
 				if ( $category->count > 0 )
-					echo apply_filters( 'woocommerce_subcategory_count_html', ' <mark class="count">(' . $category->count . ')</mark>', $category );
+					echo apply_filters( 'woocommerce_subcategory_count_html', ' <mark class="count">(' . absint($category->count) . ')</mark>', $category );
 			?>
 		</h3>
 		<?php

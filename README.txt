@@ -47,6 +47,10 @@ Images
 
 
 == Changelog ==
+= 2.3.1 =
+** Fixed Security Related Issues in theme.
+** Fixed Search form design issue
+
 = 2.3.0 =
 ** Fixed Woocommerce outdated template issue
 ** Minior Css issue fixed.

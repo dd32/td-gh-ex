@@ -17,11 +17,11 @@
                 <?php the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
                 <div class="entry-meta">                                        
                     <p class="meta-info">
-                        <?php echo __('Posted On', 'accesspress-store'); ?> 
+                        <?php echo esc_html__('Posted On', 'accesspress-store'); ?> 
                         <?php the_time('F j, Y'); ?> 
-                        <?php echo __('at', 'accesspress-store'); ?>
+                        <?php echo esc_html__('at', 'accesspress-store'); ?>
                         <?php the_time('g:i a'); ?> 
-                        <?php echo __('by', 'accesspress-store'); ?>
+                        <?php echo esc_html__('by', 'accesspress-store'); ?>
                         <?php the_author_posts_link(); ?> /  <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
                         / <?php the_category(','); ?>
                     </p>

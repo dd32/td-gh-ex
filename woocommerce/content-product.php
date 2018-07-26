@@ -59,7 +59,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
             if (function_exists('YITH_WCWL')) {
                 $url = add_query_arg('add_to_wishlist', get_the_ID());
                 ?>
-                <a class="item-wishlist" href="<?php echo $url ?>"><?php _e('Wishlist','accesspress-store'); ?></a>
+                <a class="item-wishlist" href="<?php echo esc_url($url) ?>"><?php esc_html_e('Wishlist','accesspress-store'); ?></a>
         <?php } ?>
     </div>
     <?php

@@ -49,7 +49,7 @@ endif;
                     <span class="cat-name">
                         <?php
                             $category = get_the_category();
-                            echo $category[0]->cat_name;
+                            echo esc_html($category[0]->cat_name);
                         ?>
                     </span>
                     <?php the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>'); ?>
@@ -58,11 +58,11 @@ endif;
                             <?php //accesspress_store_posted_on(); ?>
                                 <?php //accesspress_store_entry_footer();    ?>
                             <p class="meta-info">
-                                <?php echo __('Posted On', 'accesspress-store'); ?> 
+                                <?php echo esc_html__('Posted On', 'accesspress-store'); ?> 
                                 <?php the_time('F j, Y'); ?> 
-                                <?php echo __('at', 'accesspress-store'); ?>
+                                <?php echo esc_html__('at', 'accesspress-store'); ?>
                                 <?php the_time('g:i a'); ?> 
-                                <?php echo __('by', 'accesspress-store'); ?>
+                                <?php echo esc_html__('by', 'accesspress-store'); ?>
                                 <?php the_author_posts_link(); ?> /  <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
                             </p>
                         </div><!-- .entry-meta -->
@@ -72,18 +72,18 @@ endif;
                     <div class="desc">
                         <?php
                         if ($blog_post_layout == 'blog_layout4'):
-                            echo get_the_content();
+                            echo esc_html(get_the_content());
                         else:
-                            echo accesspress_letter_count( get_the_content(), '200');
+                            echo esc_html(accesspress_letter_count( get_the_content(), '200'));
                         endif;
                         ?>
                     </div>
                     <a href="<?php the_permalink(); ?>" class="bttn read-more">
-                        <?php echo __('Read More', 'accesspress-store'); ?>
+                        <?php echo esc_html__('Read More', 'accesspress-store'); ?>
                     </a>
                     <?php
                         wp_link_pages(array(
-                            'before' => '<div class="page-links">' . __('Pages:', 'accesspress-store'),
+                            'before' => '<div class="page-links">' . esc_html__('Pages:', 'accesspress-store'),
                             'after' => '</div>',
                         ));
                     ?>

@@ -12,13 +12,13 @@
                 ?>
                         <div class="welcome-user">
                             <span class="line">|</span>
-                            <?php _e('Welcome', 'accesspress-store'); ?>
-                            <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="my-account">
+                            <?php esc_html_e('Welcome', 'accesspress-store'); ?>
+                            <a href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>" class="my-account">
                                 <span class="user-name">
-                                    <?php echo $current_user->display_name; ?>
+                                    <?php echo esc_html($current_user->display_name); ?>
                                 </span>
                             </a>
-                            <?php _e('!', 'accesspress-store'); ?>
+                            <?php esc_html_e('!', 'accesspress-store'); ?>
                         </div>
                 <?php } ?>
 
@@ -51,9 +51,9 @@
                     if (function_exists('YITH_WCWL')) {
                         $wishlist_url = YITH_WCWL()->get_wishlist_url();
                         ?>
-                        <a class="quick-wishlist" href="<?php echo $wishlist_url; ?>" title="Wishlist">
+                        <a class="quick-wishlist" href="<?php echo esc_url($wishlist_url); ?>" title="Wishlist">
                             <i class="fa fa-heart"></i>
-                            <?php echo "(" . yith_wcwl_count_products() . ")"; ?>
+                            <?php echo "(" . absint(yith_wcwl_count_products()) . ")"; ?>
                         </a>
                         <?php
                     }
@@ -64,14 +64,14 @@
                         global $current_user;
                         wp_get_current_user();
                     ?>
-                        <a href="<?php echo wp_logout_url( home_url() ); ?>" class="logout">
-                            <?php _e(' Logout', 'accesspress-store'); ?>
+                        <a href="<?php echo esc_url(wp_logout_url( home_url() )); ?>" class="logout">
+                            <?php esc_html_e(' Logout', 'accesspress-store'); ?>
                         </a>
                         <?php
                     } else {
                         ?>
-                        <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="account">
-                            <?php _e('Login', 'accesspress-store'); ?>
+                        <a href="<?php echo esc_url(get_permalink(get_option('woocommerce_myaccount_page_id'))); ?>" class="account">
+                            <?php esc_html_e('Login', 'accesspress-store'); ?>
                         </a>
                     <?php } ?>
                 </div>
@@ -107,7 +107,7 @@
                             ?>
                                 <nav id="site-navigation" class="main-navigation" role="navigation">
                                     <a class="menu-toggle">
-                                        <?php _e('Menu', 'accesspress-store'); ?>
+                                        <?php esc_html_e('Menu', 'accesspress-store'); ?>
                                     </a>
                                     <?php
                                         wp_nav_menu(array(

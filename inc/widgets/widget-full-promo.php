@@ -36,45 +36,45 @@ class accesspress_store_full_promo extends WP_Widget {
         $fields = array(
             'promo_title' => array(
                 'accesspress_store_widgets_name' => 'promo_title',
-                'accesspress_store_widgets_title' => __('Title', 'accesspress-store'),
+                'accesspress_store_widgets_title' => esc_html__('Title', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'text',
                 ),
             
             'promo_image' => array(
                 'accesspress_store_widgets_name' => 'promo_image',
-                'accesspress_store_widgets_title' => __('Upload Image', 'accesspress-store'),
+                'accesspress_store_widgets_title' => esc_html__('Upload Image', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'upload',
                 ),
 
             'promo_style' => array(
                 'accesspress_store_widgets_name' => 'promo_style',
-                'accesspress_store_widgets_title' => __('Select FullWidth Style', 'accesspress-store'),
+                'accesspress_store_widgets_title' => esc_html__('Select FullWidth Style', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'select',
                 'accesspress_store_widgets_field_options' => array('style_one' => 'Style One', 'style_two' => 'Style Two')                
             ),
 
             'promo_title_sub' => array(
                 'accesspress_store_widgets_name' => 'promo_title_sub',
-                'accesspress_store_widgets_title' => __('Sub Title', 'accesspress-store'),
+                'accesspress_store_widgets_title' => esc_html__('Sub Title', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'text',
                 ),
             
             'promo_desc' => array(
                 'accesspress_store_widgets_name' => 'promo_desc',
-                'accesspress_store_widgets_title' => __('Enter Promo Desc', 'accesspress-store'),
+                'accesspress_store_widgets_title' => esc_html__('Enter Promo Desc', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'textarea',   
                 'accesspress_store_widgets_row' =>'4',
                 ),
 
             'promo_link_btn' => array(
                 'accesspress_store_widgets_name' => 'promo_link_btn',
-                'accesspress_store_widgets_title' => __('Enter Promo Button Text', 'accesspress-store' ),
+                'accesspress_store_widgets_title' => esc_html__('Enter Promo Button Text', 'accesspress-store' ),
                 'accesspress_store_widgets_field_type' => 'text'
                 ),
             
             'promo_link' => array(
                 'accesspress_store_widgets_name' => 'promo_link',
-                'accesspress_store_widgets_title' => __('Enter Promo Link', 'accesspress-store' ),
+                'accesspress_store_widgets_title' => esc_html__('Enter Promo Link', 'accesspress-store' ),
                 'accesspress_store_widgets_field_type' => 'url'
                 ),
             
@@ -104,36 +104,36 @@ return $fields;
                 $promo_link_btn = $instance['promo_link_btn'];            }
             $promo_link = $instance['promo_link'];
 
-            echo $before_widget; 
+            echo wp_kses_post($before_widget); 
             ?>
-            <div class="promo-widget-wrap-full <?php echo $promo_style; ?>">
-               <a href="<?php echo $promo_link?>">
+            <div class="promo-widget-wrap-full <?php echo esc_attr($promo_style); ?>">
+               <a href="<?php echo esc_url($promo_link); ?>">
                    <div class="promo-image">
                     <?php if (!empty($promo)): ?>
-                        <img src = "<?php echo $promo; ?>" alt="<?php echo $promo_title; ?>" />
+                        <img src = "<?php echo esc_url($promo); ?>" alt="<?php echo esc_attr($promo_title); ?>" />
                     <?php endif; ?>
                     <div class="caption wow fadeIn" data-wow-delay="1s">
                         <?php if (!empty($promo_title)): ?>
-                            <h4 class="widget-title"><?php echo $promo_title; ?></h4>
+                            <h4 class="widget-title"><?php echo esc_html($promo_title); ?></h4>
                         <?php endif; ?>
                         
                         <?php if (!empty($promo_title_sub)): ?>
-                            <div class="promo-desc-title"><?php echo $promo_title_sub; ?></div>
+                            <div class="promo-desc-title"><?php echo esc_html($promo_title_sub); ?></div>
                         <?php endif; ?> 
 
                         <?php if (!empty($promo_desc)): ?>
-                            <div class="promo-desc"><?php echo $promo_desc; ?></div>
+                            <div class="promo-desc"><?php echo wp_kses_post($promo_desc); ?></div>
                         <?php endif; ?> 
 
                         <?php if (!empty($promo_link_btn)): ?>
-                            <span class="btn promo-link-btn"><?php echo $promo_link_btn; ?></span>
+                            <span class="btn promo-link-btn"><?php echo esc_html($promo_link_btn); ?></span>
                         <?php endif; ?>   
                     </div>                 
                 </div>
             </a>                        
         </div>        
         <?php 
-        echo $after_widget;
+        echo wp_kses_post($after_widget);
     }
 }
 

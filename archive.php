@@ -19,7 +19,7 @@ if($archive_bread){
 }
 if($breadcrumb == '1') :
 ?>
-    <div class="page_header_wrap clearfix" style="background:url('<?php echo $bread_archive; ?>') no-repeat center; background-size: cover;">
+    <div class="page_header_wrap clearfix" style="background:url('<?php echo esc_url($bread_archive); ?>') no-repeat center; background-size: cover;">
         <div class="ak-container">
             <header class="page-header">
                 <?php
@@ -32,7 +32,7 @@ if($breadcrumb == '1') :
     </div>
 <?php endif; ?>
 <div class="inner">
-    <main id="main" class="site-main clearfix <?php echo $archive_page_layout; ?>">
+    <main id="main" class="site-main clearfix <?php echo esc_attr($archive_page_layout); ?>">
 
         <?php if ($archive_page_layout == 'both-sidebar'): ?>
             <div id="primary-wrap" class="clearfix">
@@ -40,8 +40,9 @@ if($breadcrumb == '1') :
 
             <?php
                 $blog_post_layouts = get_theme_mod('blog_post_layout');
+                $arch_viewtype = get_theme_mod('archive_page_view_type');
             ?>
-            <div id="primary" class="content-area <?php echo get_theme_mod('archive_page_view_type') . " " . $blog_post_layouts; ?>">
+            <div id="primary" class="content-area <?php echo esc_attr($arch_viewtype) . " " . esc_attr($blog_post_layouts); ?>">
                 <?php if ( have_posts() ) : ?>
                     <?php /* Start the Loop */ ?>
                     <?php while ( have_posts() ) : the_post(); ?>

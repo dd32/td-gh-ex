@@ -23,7 +23,7 @@ class accesspress_cta_video extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'accesspress_cta_video', 'AP : Call to Action with Video', array(
-            'description' => __('A widget that shows Call to Action with Video', 'accesspress-store')
+            'description' => esc_html__('A widget that shows Call to Action with Video', 'accesspress-store')
                 )
         );
     }
@@ -36,34 +36,34 @@ class accesspress_cta_video extends WP_Widget {
         $fields = array(
             'cta_video_title' => array(
                 'accesspress_store_widgets_name' => 'cta_video_title',
-                'accesspress_store_widgets_title' => __('Title', 'accesspress-store'),
+                'accesspress_store_widgets_title' => esc_html__('Title', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'title',
             ),
             'cta_video_phone' => array(
                 'accesspress_store_widgets_name' => 'cta_video_desc',
-                'accesspress_store_widgets_title' => __('Description', 'accesspress-store'),
+                'accesspress_store_widgets_title' => esc_html__('Description', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'textarea',
                 'accesspress_store_widgets_row' => '4'
             ),
             'bg_image' => array(
                'accesspress_store_widgets_name' => 'access_store_image',
-               'accesspress_store_widgets_title' => __('Background Upload Image', 'accesspress-store'),
+               'accesspress_store_widgets_title' => esc_html__('Background Upload Image', 'accesspress-store'),
                'accesspress_store_widgets_field_type' => 'upload',
             ),
             'cta_video_email' => array(
                 'accesspress_store_widgets_name' => 'cta_video_iframe',
-                'accesspress_store_widgets_title' => __('Video Iframe', 'accesspress-store'),
+                'accesspress_store_widgets_title' => esc_html__('Video Iframe', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'iframe_textarea',
                 'accesspress_store_widgets_row' => '4'
             ),
             'cta_video_website' => array(
                 'accesspress_store_widgets_name' => 'cta_video_btn_text',
-                'accesspress_store_widgets_title' => __('Button Text', 'accesspress-store'),
+                'accesspress_store_widgets_title' => esc_html__('Button Text', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'text',
             ),
             'cta_video_address' => array(
                 'accesspress_store_widgets_name' => 'cta_video_btn_url',
-                'accesspress_store_widgets_title' => __('Button Url', 'accesspress-store'),
+                'accesspress_store_widgets_title' => esc_html__('Button Url', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'text'
                 
             )
@@ -83,29 +83,29 @@ class accesspress_cta_video extends WP_Widget {
      */
     public function widget($args, $instance) {
         extract($args);
-        $cta_video_title = $instance['cta_video_title'];
-        $cta_video_desc = $instance['cta_video_desc'];
-        $cta_video_iframe = $instance['cta_video_iframe'];
-        $cta_video_btn_text = $instance['cta_video_btn_text'];
-        $cta_video_btn_url = $instance['cta_video_btn_url'];
+        $cta_video_title = isset($instance['cta_video_title']) ? $instance['cta_video_title'] : '';
+        $cta_video_desc = isset($instance['cta_video_desc']) ? $instance['cta_video_desc'] : '';
+        $cta_video_iframe = isset($instance['cta_video_iframe']) ? $instance['cta_video_iframe'] : '';
+        $cta_video_btn_text = isset($instance['cta_video_btn_text']) ? $instance['cta_video_btn_text'] : '';
+        $cta_video_btn_url = isset($instance['cta_video_btn_url']) ? $instance['cta_video_btn_url'] : '';
         $bgfull_image = isset($instance['access_store_image'])? $instance['access_store_image'] : '';
-        echo $before_widget;
+        echo wp_kses_post($before_widget);
 ?>
     <style type="text/css">
-        #ap-cta-video { background-image: url(<?php echo $bgfull_image; ?>); }
+        #ap-cta-video { background-image: url(<?php echo esc_url($bgfull_image); ?>); }
     </style>
         <div class="cta-video clearfix">
             <div class="cta-wrap-left wow fadeInBounce" data-wow-delay="1s" data-wow-duration="2s">
-                <?php echo $cta_video_iframe ; ?>
+                <?php echo $cta_video_iframe; ?>
             </div>
             <div class="cta-wrap-right wow fadeIn" data-wow-delay="1.5s">
-                <h2 class="cta-title main-title"><?php echo $cta_video_title;?></h2>
-                <div class="cta-desc"><?php echo $cta_video_desc;  ?></div>
-                <a class="bttn cta-video-btn" href="<?php echo $cta_video_btn_url; ?>"><?php echo $cta_video_btn_text; ?></a>
+                <h2 class="cta-title main-title"><?php echo esc_html($cta_video_title); ?></h2>
+                <div class="cta-desc"><?php echo wp_kses_post($cta_video_desc);  ?></div>
+                <a class="bttn cta-video-btn" href="<?php echo esc_url($cta_video_btn_url); ?>"><?php echo esc_html($cta_video_btn_text); ?></a>
             </div>
         </div>
         <?php 
-        echo $after_widget;
+        echo wp_kses_post($after_widget);
     }
 
     /**

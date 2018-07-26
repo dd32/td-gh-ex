@@ -1,7 +1,12 @@
 <div class="two-col">
 	<div class="support-process col">
 		<h3><?php echo esc_html__('Documentation', 'accesspress-store'); ?></h3>
-		<p><?php printf(esc_html__('Read the detailed documentation of the theme. The documentation contain all the necessary information required to setup the theme %s.', 'accesspress-store'), $this->theme_name ); ?></p>
+		<p>
+			<?php
+				/* translators: %s: Theme Name. */
+				printf(esc_html__('Read the detailed documentation of the theme. The documentation contain all the necessary information required to setup the theme %s.', 'accesspress-store'), esc_html($this->theme_name) );
+			?>
+		</p>
 		<a class="button" target="_blank" href="http://doc.accesspressthemes.com/accespress-store-doc"><?php echo esc_html__('Read Full Documentation', 'accesspress-store'); ?></a>
 	</div>
 

@@ -26,11 +26,11 @@ class accesspress_store_product extends WP_Widget {
     private function widget_fields() {
 
       $prod_type = array(
-        'category' => __('Category', 'accesspress-store'),
-        'latest_product' => __('Latest Product', 'accesspress-store'),
-        'upsell_product' => __('UpSell Product', 'accesspress-store'),
-        'feature_product' => __('Feature Product', 'accesspress-store'),
-        'on_sale' => __('On Sale Product', 'accesspress-store'),
+        'category' => esc_html__('Category', 'accesspress-store'),
+        'latest_product' => esc_html__('Latest Product', 'accesspress-store'),
+        'upsell_product' => esc_html__('UpSell Product', 'accesspress-store'),
+        'feature_product' => esc_html__('Feature Product', 'accesspress-store'),
+        'on_sale' => esc_html__('On Sale Product', 'accesspress-store'),
         );
       $taxonomy     = 'product_cat';
       $empty        = 1;
@@ -60,20 +60,20 @@ class accesspress_store_product extends WP_Widget {
           $fields = array(
             'product_title' => array(
               'accesspress_store_widgets_name' => 'product_title',
-              'accesspress_store_widgets_title' => __('Title', 'accesspress-store'),
+              'accesspress_store_widgets_title' => esc_html__('Title', 'accesspress-store'),
               'accesspress_store_widgets_field_type' => 'text',
 
               ),
             'product_type' => array(
               'accesspress_store_widgets_name' => 'product_type',
-              'accesspress_store_widgets_title' => __('Select Product Type', 'accesspress-store'),
+              'accesspress_store_widgets_title' => esc_html__('Select Product Type', 'accesspress-store'),
               'accesspress_store_widgets_field_type' => 'select',
               'accesspress_store_widgets_field_options' => $prod_type
 
               ),
             'product_category' => array(
               'accesspress_store_widgets_name' => 'product_category',
-              'accesspress_store_widgets_title' => __('Select Product Category (This category option does not work on Feature Product and On Sale Products)', 'accesspress-store'),
+              'accesspress_store_widgets_title' => esc_html__('Select Product Category (This category option does not work on Feature Product and On Sale Products)', 'accesspress-store'),
               'accesspress_store_widgets_field_type' => 'select',
               'accesspress_store_widgets_field_options' => $woocommerce_categories
 
@@ -81,7 +81,7 @@ class accesspress_store_product extends WP_Widget {
             
             'product_number' => array(
               'accesspress_store_widgets_name' => 'number_of_prod',
-              'accesspress_store_widgets_title' => __('Select the number of Product to show', 'accesspress-store'),
+              'accesspress_store_widgets_title' => esc_html__('Select the number of Product to show', 'accesspress-store'),
               'accesspress_store_widgets_field_type' => 'number',
               ),
             
@@ -92,10 +92,10 @@ return $fields;
 public function widget($args, $instance){
   extract($args);
   if($instance!=null){
-    $product_title      =   $instance['product_title'];
-    $product_type       =   $instance['product_type'];
-    $product_category   =   $instance['product_category'];
-    $product_number     =   $instance['number_of_prod'];
+    $product_title      =   isset($instance['product_title']) ? $instance['product_title'] : '';
+    $product_type       =   isset($instance['product_type']) ? $instance['product_type'] : '';
+    $product_category   =   isset($instance['product_category']) ? $instance['product_category'] : '';
+    $product_number     =   isset($instance['number_of_prod']) ? $instance['number_of_prod'] : '';
     $product_label_custom = '';
     $product_args       =   '';
     if($product_type == 'category'){
@@ -186,7 +186,7 @@ public function widget($args, $instance){
     ?>
     <section class="product-slider">
       <div class="ak-container">
-        <?php echo $before_widget; ?>
+        <?php echo wp_kses_post($before_widget); ?>
         <div class="title-bg">
          <h2 class="prod-title"><?php echo esc_attr($product_title); ?></h2>
        </div>
@@ -199,12 +199,12 @@ public function widget($args, $instance){
             global $product; 
             $count+=0.5;
         ?>
-          <li class="span3 wow flipInY <?php if($productcount <= 3){ echo 'access_tab_product_full'; } ?>" data-wow-delay="<?php echo $count ?>s">
+          <li class="span3 wow flipInY <?php if($productcount <= 3){ echo 'access_tab_product_full'; } ?>" data-wow-delay="<?php echo absint($count); ?>s">
             <div class="item-img">
               <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">  
                 <?php
                   if ($product_label_custom != ''){
-                    echo '<span class="label-new">'.$product_label_custom.'</span>';
+                    echo '<span class="label-new">' . esc_html($product_label_custom) . '</span>';
                   }
                 ?>
                 <?php
@@ -223,8 +223,8 @@ public function widget($args, $instance){
             </div>
             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">  
               <h3><?php the_title(); ?></h3>
-              <p class="short_desc"><?php echo(get_the_excerpt()); ?></p>
-              <span class="price"><?php echo $product->get_price_html(); ?></span>
+              <p class="short_desc"><?php echo esc_html(get_the_excerpt()); ?></p>
+              <span class="price"><?php echo wp_kses_post($product->get_price_html()); ?></span>
             </a>        
           </li>
         <?php endwhile; 
@@ -233,7 +233,7 @@ public function widget($args, $instance){
       <?php wp_reset_query(); ?>
     </ul>
     <?php 
-    echo $after_widget;
+    echo wp_kses_post($after_widget);
     ?>
   </div>
 </section>

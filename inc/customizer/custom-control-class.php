@@ -14,9 +14,9 @@ if( class_exists( 'WP_Customize_control') && class_exists( 'WP_Customize_Section
 				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
                 <span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 		        <div class="switch_options">
-                  <span class="switch_enable"> <?php _e('Enable', 'accesspress-store'); ?> </span>
-                  <span class="switch_disable"> <?php _e('Disable', 'accesspress-store'); ?> </span>  
-                  <input type="hidden" id="enable_prev_next" <?php $this->link(); ?> value="<?php echo $this->value(); ?>" />							
+                  <span class="switch_enable"> <?php esc_html_e('Enable', 'accesspress-store'); ?> </span>
+                  <span class="switch_disable"> <?php esc_html_e('Disable', 'accesspress-store'); ?> </span>  
+                  <input type="hidden" id="enable_prev_next" <?php $this->link(); ?> value="<?php echo esc_attr($this->value()); ?>" />							
                 </div>
             </label>
 		<?php
@@ -32,9 +32,9 @@ if( class_exists( 'WP_Customize_control') && class_exists( 'WP_Customize_Section
 				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
                 <span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
 		        <div class="switch_options">
-                  <span class="switch_enable"> <?php _e('Yes', 'accesspress-store'); ?> </span>
-                  <span class="switch_disable"> <?php _e('No', 'accesspress-store'); ?> </span>  
-                  <input type="hidden" id="enable_prev_next_yn" <?php $this->link(); ?> value="<?php echo $this->value(); ?>" />
+                  <span class="switch_enable"> <?php esc_html_e('Yes', 'accesspress-store'); ?> </span>
+                  <span class="switch_disable"> <?php esc_html_e('No', 'accesspress-store'); ?> </span>  
+                  <input type="hidden" id="enable_prev_next_yn" <?php $this->link(); ?> value="<?php echo esc_attr($this->value()); ?>" />
                 </div>
             </label>
 		<?php
@@ -51,16 +51,16 @@ if( class_exists( 'WP_Customize_control') && class_exists( 'WP_Customize_Section
 			$name = '_customize-radio-' . $this->id;
 			?>
 			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-			<div id="input_<?php echo $this->id; ?>" class="image">
+			<div id="input_<?php echo esc_attr($this->id); ?>" class="image">
 				<?php foreach ( $this->choices as $value => $label ) : ?>
-					<input class="image-select" type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" id="<?php echo $this->id . $value; ?>" <?php $this->link(); checked( $this->value(), $value ); ?>>
-						<label for="<?php echo $this->id . $value; ?>">
+					<input class="image-select" type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" id="<?php echo esc_attr($this->id) . esc_attr($value); ?>" <?php $this->link(); checked( $this->value(), $value ); ?>>
+						<label for="<?php echo esc_attr($this->id) . esc_attr($value); ?>">
 							<img src="<?php echo esc_html( $label ); ?>"/>
 						</label>
 					</input>
 				<?php endforeach; ?>
 			</div>
-			<script>jQuery(document).ready(function($) { $( '[id="input_<?php echo $this->id; ?>"]' ).buttonset(); });</script>
+			<script>jQuery(document).ready(function($) { $( '[id="input_<?php echo esc_attr($this->id); ?>"]' ).buttonset(); });</script>
 			<?php 
 		}
 	}
@@ -70,13 +70,12 @@ if( class_exists( 'WP_Customize_control') && class_exists( 'WP_Customize_Section
 	    public $type = 'category-checkboxes';
 
 	    public function render_content() {
-	        echo '<script src="' . get_template_directory_uri() . '/js/theme-customizer.js"></script>';
 	        echo '<span class="customize-control-title">' . esc_html($this->label) . '</span>';
 	        foreach (get_categories() as $category) {
-	            echo '<label><input type="checkbox" name="category-' . $category->term_id . '" id="category-' . $category->term_id . '" class="cstmzr-category-checkbox"> ' . $category->cat_name . '</label><br>';
+	            echo '<label><input type="checkbox" name="category-' . esc_attr($category->term_id) . '" id="category-' . esc_attr($category->term_id) . '" class="cstmzr-category-checkbox"> ' . esc_html($category->cat_name) . '</label><br>';
 	        }
 	        ?>
-	        <input type="hidden" id="<?php echo $this->id; ?>" class="cstmzr-hidden-categories" <?php $this->link(); ?> value="<?php echo sanitize_text_field($this->value()); ?>">
+	        <input type="hidden" id="<?php echo esc_attr($this->id); ?>" class="cstmzr-hidden-categories" <?php $this->link(); ?> value="<?php echo esc_attr($this->value()); ?>">
 	        <?php
 	    }
 	}

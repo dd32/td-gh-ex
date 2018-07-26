@@ -12,7 +12,12 @@ get_header();
     <div class="ak-container">
         <?php if ( have_posts() ) : ?>
             <header class="page-header">
-                <h2 class="page-title"><?php printf( __('Search Results for: %s', 'accesspress-store'), '<span>' . get_search_query() . '</span>'); ?></h2>
+                <h2 class="page-title">
+                    <?php
+                        /* translators: %s: search query. */
+                        printf( esc_html__('Search Results for: %s', 'accesspress-store'), '<span>' . get_search_query() . '</span>');
+                    ?>
+                </h2>
             </header><!-- .page-header -->
         <?php endif; ?>
         <?php accesspress_breadcrumbs() ?>
@@ -20,7 +25,7 @@ get_header();
 </div>
 
 <div class="inner">
-    <main id="main" class="site-main clearfix <?php echo @esc_attr( $single_page_layout ); ?>">
+    <main id="main" class="site-main clearfix <?php echo esc_attr( $single_page_layout ); ?>">
         <div id="primary" class="content-area">
             <?php if ( have_posts() ) : ?>
                 <?php /* Start the Loop */ ?>

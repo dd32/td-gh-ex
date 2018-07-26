@@ -32,7 +32,7 @@ if ( $archive_bread ) {
 
 if ( $breadcrumb == '1' ) :
     ?>
-    <header id="title_bread_wrap" class="entry-header" style="background:url('<?php echo $bread_archive; ?>') no-repeat center; background-size: cover;">
+    <header id="title_bread_wrap" class="entry-header" style="background:url('<?php echo esc_url($bread_archive); ?>') no-repeat center; background-size: cover;">
         <div class="ak-container">     
             <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
                 <h1 class="entry-title ak-container"><?php woocommerce_page_title(); ?></h1>

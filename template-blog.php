@@ -27,7 +27,7 @@ if($archive_bread){
 }
 
 if($breadcrumb == '1') { ?>
-<div class="page_header_wrap clearfix" style="background:url('<?php echo $bread_archive; ?>') no-repeat center; background-size: cover;">
+<div class="page_header_wrap clearfix" style="background:url('<?php echo esc_url($bread_archive); ?>') no-repeat center; background-size: cover;">
     <div class="ak-container">
         <header class="entry-header">
             <?php the_title('<h2 class="entry-title">', '</h2>'); ?>
@@ -38,7 +38,7 @@ if($breadcrumb == '1') { ?>
 <?php } ?>
 
 <div class="inner">
-    <main id="main" class="site-main clearfix <?php echo $archive_page_layout; ?>">
+    <main id="main" class="site-main clearfix <?php echo esc_attr($archive_page_layout); ?>">
         <?php if ($archive_page_layout == 'both-sidebar'): ?>
             <div id="primary-wrap" class="clearfix">
         <?php endif; ?>
@@ -93,7 +93,7 @@ if($breadcrumb == '1') { ?>
                                         <span class="cat-name">
                                             <?php 
                                                 $category = get_the_category();
-                                                echo $category[0]->cat_name;
+                                                echo esc_html($category[0]->cat_name);
                                              ?>
                                         </span>
                                         <?php the_title(sprintf('<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() )), '</a></h2>'); ?>
@@ -101,11 +101,11 @@ if($breadcrumb == '1') { ?>
                                         <?php if ('post' == get_post_type()) : ?>
                                             <div class="entry-meta">
                                                 <p class="meta-info">
-                                                    <?php echo __('Posted On', 'accesspress-store'); ?> 
+                                                    <?php echo esc_html__('Posted On', 'accesspress-store'); ?> 
                                                     <?php the_time('F j, Y'); ?> 
-                                                    <?php echo __('at', 'accesspress-store'); ?>
+                                                    <?php echo esc_html__('at', 'accesspress-store'); ?>
                                                     <?php the_time('g:i a'); ?> 
-                                                    <?php echo __('by', 'accesspress-store'); ?>
+                                                    <?php echo esc_html__('by', 'accesspress-store'); ?>
                                                     <?php the_author_posts_link(); ?> /  <?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
                                                 </p>
                                             </div><!-- .entry-meta -->
@@ -115,14 +115,14 @@ if($breadcrumb == '1') { ?>
                                         <div class="desc">
                                             <?php
                                             if ($blog_post_layout == 'blog_layout4'):
-                                                echo get_the_content();
+                                                echo esc_html(get_the_content());
                                             else:
-                                                echo accesspress_letter_count(get_the_content(), '200');
+                                                echo esc_html(accesspress_letter_count(get_the_content(), '200'));
                                             endif;
                                             ?>
                                         </div>
                                         <a href="<?php the_permalink(); ?>" class="bttn read-more">
-                                            <?php _e('Read More', 'accesspress-store'); ?>
+                                            <?php esc_html_e('Read More', 'accesspress-store'); ?>
                                         </a>
                                     </div><!-- .entry-content -->
                                 </div>

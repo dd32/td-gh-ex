@@ -17,7 +17,7 @@ class accesspress_store_product2 extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'accesspress_store_product2', 'AP: WooCommerce Product Category Banner', array(
-            'description' => __('This widgets show the Category Image its Description and Product of that Category', 'accesspress-store')
+            'description' => esc_html__('This widgets show the Category Image its Description and Product of that Category', 'accesspress-store')
         ));
     }
 
@@ -28,8 +28,8 @@ class accesspress_store_product2 extends WP_Widget {
     private function widget_fields() {
         
           $prod_type = array(
-            'right_align' => __('Right Align With Category Image', 'accesspress-store'),
-            'left_align' => __('Left Align With Category Image', 'accesspress-store'),
+            'right_align' => esc_html__('Right Align With Category Image', 'accesspress-store'),
+            'left_align' => esc_html__('Left Align With Category Image', 'accesspress-store'),
           );
           $taxonomy     = 'product_cat';
           $empty        = 1;
@@ -60,14 +60,14 @@ class accesspress_store_product2 extends WP_Widget {
             
               'product_type' => array(
                   'accesspress_store_widgets_name' => 'product_alignment',
-                  'accesspress_store_widgets_title' => __('Select the Display Style (Image Alignment)', 'accesspress-store'),
+                  'accesspress_store_widgets_title' => esc_html__('Select the Display Style (Image Alignment)', 'accesspress-store'),
                   'accesspress_store_widgets_field_type' => 'select',
                   'accesspress_store_widgets_field_options' => $prod_type                
               ),
 
               'product_category' => array(
                   'accesspress_store_widgets_name' => 'product_category',
-                  'accesspress_store_widgets_title' => __('Select Product Category', 'accesspress-store'),
+                  'accesspress_store_widgets_title' => esc_html__('Select Product Category', 'accesspress-store'),
                   'accesspress_store_widgets_field_type' => 'select',
                   'accesspress_store_widgets_field_options' => $woocommerce_categories                
               ),            
@@ -96,10 +96,10 @@ class accesspress_store_product2 extends WP_Widget {
         <section class="category_product">
             <div class="ak-container">
                 <?php
-                echo $before_widget;
+                echo wp_kses_post($before_widget);
                 ?>
                 <div class="feature-cat-product-wrap">
-                      <div class="feature-cat-image <?php echo $product_alignment;?>">
+                      <div class="feature-cat-image <?php echo esc_attr($product_alignment); ?>">
                           <?php 
                               $thumbnail_id = get_woocommerce_term_meta($product_category, 'thumbnail_id', true);
                               if (!empty($thumbnail_id)) {
@@ -113,13 +113,13 @@ class accesspress_store_product2 extends WP_Widget {
                                 $terms = term_description( $product_category, $taxonomy );
                                 $terms_name = get_term( $product_category, $taxonomy );
                               ?>
-                              <h3><?php echo $terms_name->name ?></h3>
+                              <h3><?php echo esc_html($terms_name->name); ?></h3>
                               <div class="cat_desc">  
-                                <?php echo $terms; ?>   
+                                <?php echo esc_html($terms); ?>
                               </div>  
                           </div>
                     </div>
-                    <div class="feature-cat-product <?php echo $product_alignment;?>">
+                    <div class="feature-cat-product <?php echo esc_attr($product_alignment); ?>">
                         <?php 
                             $prod_args = array(
                                                 'post_type' => 'product',
@@ -136,7 +136,7 @@ class accesspress_store_product2 extends WP_Widget {
                                       $image_id = get_post_thumbnail_id();
                                       $image = wp_get_attachment_image_src($image_id, 'thumbnail', 'true');
                                     ?>
-                                    <div class="feature-prod-wrap wow flipInY" data-wow-delay="<?php echo $count ?>s">
+                                    <div class="feature-prod-wrap wow flipInY" data-wow-delay="<?php echo absint($count); ?>s">
                                         <?php wc_get_template_part( 'content', 'feat-product' ); ?>
                                     </div>
                                     <?php
@@ -149,7 +149,7 @@ class accesspress_store_product2 extends WP_Widget {
                 </div>
                 
                 <?php
-                echo $after_widget;
+                echo wp_kses_post($after_widget);
                 ?>
             </div>
         </section>

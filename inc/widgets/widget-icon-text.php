@@ -23,7 +23,7 @@ class accesspress_store_Icon_Text extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'accesspress_store_icon_text', 'AP : Icon Text Block', array(
-            'description' => __('A widget that shows Text with Icon', 'accesspress-store')
+            'description' => esc_html__('A widget that shows Text with Icon', 'accesspress-store')
                 )
         );
     }
@@ -38,29 +38,29 @@ class accesspress_store_Icon_Text extends WP_Widget {
 
             'icon_text_title' => array(
                 'accesspress_store_widgets_name' => 'icon_text_title',
-                'accesspress_store_widgets_title' => __('Title', 'accesspress-store'),
+                'accesspress_store_widgets_title' => esc_html__('Title', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'text',
             ),
             'icon_text_content' => array(
                 'accesspress_store_widgets_name' => 'icon_text_content',
-                'accesspress_store_widgets_title' => __('Content', 'accesspress-store'),
+                'accesspress_store_widgets_title' => esc_html__('Content', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'textarea',
                 'accesspress_store_widgets_row' => '6'
             ),
             'icon_text_icon' => array(
                 'accesspress_store_widgets_name' => 'icon_text_icon',
-                'accesspress_store_widgets_title' => __('Icon', 'accesspress-store'),
+                'accesspress_store_widgets_title' => esc_html__('Icon', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'icon',
             ),
             'icon_text_readmore' => array(
                 'accesspress_store_widgets_name' => 'icon_text_readmore',
-                'accesspress_store_widgets_title' => __('Read More Text', 'accesspress-store'),
-                 'accesspress_store_widgets_desc' => __('Leave Empty not to show', 'accesspress-store'),
+                'accesspress_store_widgets_title' => esc_html__('Read More Text', 'accesspress-store'),
+                 'accesspress_store_widgets_desc' => esc_html__('Leave Empty not to show', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'text',
             ),
             'icon_text_readmore_link' => array(
                 'accesspress_store_widgets_name' => 'icon_text_readmore_link',
-                'accesspress_store_widgets_title' => __('Read More Link', 'accesspress-store'),
+                'accesspress_store_widgets_title' => esc_html__('Read More Link', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'url',
             ),            
         );
@@ -79,22 +79,22 @@ class accesspress_store_Icon_Text extends WP_Widget {
     public function widget($args, $instance) {
         extract($args);
 
-        $icon_text_title = $instance['icon_text_title'];
-        $icon_text_content = $instance['icon_text_content'];
-        $icon_text_icon = $instance['icon_text_icon'];
-        $icon_text_readmore = $instance['icon_text_readmore'];
-        $icon_text_readmore_link = $instance['icon_text_readmore_link'];
+        $icon_text_title = isset( $instance['icon_text_title'] ) ? $instance['icon_text_title'] : '';
+        $icon_text_content = isset($instance['icon_text_content']) ? $instance['icon_text_content'] : '';
+        $icon_text_icon = isset($instance['icon_text_icon']) ? $instance['icon_text_icon'] : '';
+        $icon_text_readmore = isset($instance['icon_text_readmore']) ? $instance['icon_text_readmore'] : '';
+        $icon_text_readmore_link = isset($instance['icon_text_readmore_link']) ? $instance['icon_text_readmore_link'] : '';
 
-        echo $before_widget; ?>
+        echo wp_kses_post($before_widget);
+        ?>
         <div class="wow fadeInUp ap-icon-text">
         <?php
         
         if (!empty($icon_text_icon)): 
         if(!empty($icon_text_readmore_link)){?>
-        
-        <a class="bttn" href="<?php if(!empty($icon_text_readmore_link)){ echo $icon_text_readmore_link; }?>"><?php }?>
+        <a class="bttn" href="<?php if(!empty($icon_text_readmore_link)){ echo esc_url($icon_text_readmore_link); }?>"><?php }?>
         <div class="ap-icon-text-icon">
-            <i class="<?php echo $icon_text_icon; ?>"></i>
+            <i class="<?php echo esc_attr($icon_text_icon); ?>"></i>
         </div>    
         <?php
         if(!empty($icon_text_readmore_link)){?></a><?php } ?>
@@ -105,28 +105,28 @@ class accesspress_store_Icon_Text extends WP_Widget {
         <?php
         if (!empty($icon_text_title)): ?>
             <h5 class="ap-icon-text-title">
-            <?php echo $icon_text_title; ?>
+            <?php echo esc_html($icon_text_title); ?>
             </h5>
         <?php endif; ?>
 
         <?php    
         if (!empty($icon_text_content)): ?>
             <div class="ap-icon-text-content">
-            <?php echo $icon_text_content; ?>
+            <?php echo esc_html($icon_text_content); ?>
             </div>
         <?php endif; ?>
 
         <?php  
         if (!empty($icon_text_readmore)): ?>
             <div class="ap-icon-text-readmore">
-            <a class="bttn" href="<?php echo $icon_text_readmore_link; ?>"><?php echo $icon_text_readmore; ?></a>
+            <a class="bttn" href="<?php echo esc_url($icon_text_readmore_link); ?>"><?php echo esc_html($icon_text_readmore); ?></a>
             </div>
         <?php endif; ?>
         </div>
         </div>
         </div>
         <?php 
-        echo $after_widget;
+        echo wp_kses_post($after_widget);
     }
 
     /**

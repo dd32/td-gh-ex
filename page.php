@@ -28,7 +28,7 @@ if($archive_bread){
 }
 if($breadcrumb == '1') :
 ?>
-<div class="page_header_wrap clearfix" style="background:url('<?php echo $bread_archive; ?>') no-repeat center; background-size: cover;">
+<div class="page_header_wrap clearfix" style="background:url('<?php echo esc_url($bread_archive); ?>') no-repeat center; background-size: cover;">
     <div class="ak-container">
         <header class="entry-header">
             <?php the_title('<h2 class="entry-title">', '</h2>'); ?>
@@ -38,7 +38,7 @@ if($breadcrumb == '1') :
 </div>
 <?php endif; ?>
 <div class="inner">
-    <main id="main" class="site-main clearfix <?php echo $single_page_layout; ?>">
+    <main id="main" class="site-main clearfix <?php echo esc_attr($single_page_layout); ?>">
         <?php if ($single_page_layout == 'both-sidebar'): ?>
             <div id="primary-wrap" class="clearfix">
         <?php endif; ?>

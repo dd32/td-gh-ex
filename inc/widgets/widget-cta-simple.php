@@ -92,18 +92,18 @@ if( !class_exists( 'Accesspress_cta_simple' ) ) :
                 $cta_simple_btn_url = "";
                 $cta_simple_font_class = "";
             }
-            echo $before_widget; ?>            
+            echo wp_kses_post($before_widget); ?>            
             <div class="cta-banner clearfix">
                 <div class="banner-text wow fadeInLeft" data-wow-delay="0.5s">
-                    <h1 class="widget-title"><?php echo $cta_simple_title;?></h1>                        
-                    <div class="cta-desc_simple"><?php echo $cta_simple_desc;  ?></div>
+                    <h1 class="widget-title"><?php echo esc_html($cta_simple_title);?></h1>                        
+                    <div class="cta-desc_simple"><?php echo wp_kses_post($cta_simple_desc);  ?></div>
                 </div>
                 <div class="banner-btn wow fadeInRight" data-wow-delay="0.5s">
-                    <a class="btn" href="<?php echo $cta_simple_btn_url; ?>"><i class="fa <?php echo $cta_simple_font_class; ?>"></i><?php echo $cta_simple_btn_text; ?></a>
+                    <a class="btn" href="<?php echo esc_url($cta_simple_btn_url); ?>"><i class="fa <?php echo esc_attr($cta_simple_font_class); ?>"></i><?php echo esc_html($cta_simple_btn_text); ?></a>
                 </div>                
             </div>
             <?php 
-            echo $after_widget;
+            echo wp_kses_post($after_widget);
         }
 
         /**
