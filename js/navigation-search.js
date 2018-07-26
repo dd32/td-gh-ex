@@ -21,9 +21,9 @@
 				nav = document.querySelector( this.getAttribute( 'data-nav' ) );
 			}
 
-			var form = nav.querySelector( '.navigation-search' );
+			var form = nav.querySelector( '.inside-navigation .search-form' );
 
-			var focusableEls = document.querySelectorAll('a[href], area[href], input:not([disabled]):not(.navigation-search), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]');
+			var focusableEls = document.querySelectorAll('a[href], area[href], input:not([disabled]):not(.inside-navigation .search-form), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]');
 
 			if ( form.classList.contains( 'nav-search-active' ) ) {
 				item.classList.remove( 'close-search' );
@@ -35,7 +35,7 @@
 
 				// Allow tabindex on items again.
 				for ( var i = 0; i < focusableEls.length; i++ ) {
-					if ( ! focusableEls[i].closest( '.navigation-search' ) && ! focusableEls[i].closest( '.search-item' ) ) {
+					if ( ! focusableEls[i].closest( '.inside-navigation .search-form' ) && ! focusableEls[i].closest( '.search-item' ) ) {
 						focusableEls[i].removeAttribute( 'tabindex' );
 					}
 				};
@@ -46,7 +46,7 @@
 
 				// Trap tabindex within the search element
 				for ( var i = 0; i < focusableEls.length; i++ ) {
-					if ( ! focusableEls[i].closest( '.navigation-search' ) && ! focusableEls[i].closest( '.search-item' ) ) {
+					if ( ! focusableEls[i].closest( '.inside-navigation .search-form' ) && ! focusableEls[i].closest( '.search-item' ) ) {
 						focusableEls[i].setAttribute( 'tabindex', '-1' );
 					}
 				};
@@ -82,8 +82,8 @@
 
 			// Close navigation search on click elsewhere
 			document.addEventListener( 'click', function ( event ) {
-				if ( document.querySelector( '.navigation-search.nav-search-active' ) ) {
-					if ( ! event.target.closest( '.navigation-search' ) && ! event.target.closest( '.search-item' ) ) {
+				if ( document.querySelector( '.inside-navigation .search-form.nav-search-active' ) ) {
+					if ( ! event.target.closest( '.inside-navigation .search-form' ) && ! event.target.closest( '.search-item' ) ) {
 						var activeSearchItems = document.querySelectorAll( '.search-item.active' );
 						for ( var i = 0; i < activeSearchItems.length; i++ ) {
 							toggleSearch( event, activeSearchItems[i] );
@@ -94,7 +94,7 @@
 
 			// Close navigation search on escape key
 			document.addEventListener( 'keydown', function( e ) {
-				if ( document.querySelector( '.navigation-search.nav-search-active' ) ) {
+				if ( document.querySelector( '.inside-navigation .search-form.nav-search-active' ) ) {
 					var key = e.which || e.keyCode;
 
 					if ( key === 27 ) { // 27 is esc

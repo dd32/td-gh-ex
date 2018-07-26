@@ -243,14 +243,7 @@ if ( ! function_exists( 'asagi_navigation_search' ) ) {
 			return;
 		}
 
-		echo apply_filters( 'asagi_navigation_search_output', sprintf( // WPCS: XSS ok, sanitization ok.
-			'<form method="get" class="search-form navigation-search" action="%1$s">
-				<input type="search" class="search-field" value="%2$s" name="s" title="%3$s" />
-			</form>',
-			esc_url( home_url( '/' ) ),
-			esc_attr( get_search_query() ),
-			esc_attr_x( 'Search', 'label', 'asagi' )
-		));
+		echo get_search_form();
 	}
 }
 

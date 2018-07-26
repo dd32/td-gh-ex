@@ -65,10 +65,10 @@ if ( ! function_exists( 'asagi_construct_logo' ) ) {
 	 */
 	function asagi_construct_logo() {
 		$logo_url = ( function_exists( 'the_custom_logo' ) && get_theme_mod( 'custom_logo' ) ) ? wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' ) : false;
-		$logo_url = ( $logo_url ) ? $logo_url[0] : asagi_get_setting( 'logo' );
+		$logo_url = ( $logo_url ) ? $logo_url[0] : '';
 
 		$logo_url = esc_url( apply_filters( 'asagi_logo', $logo_url ) );
-		$retina_logo_url = esc_url( apply_filters( 'asagi_retina_logo', asagi_get_setting( 'retina_logo' ) ) );
+		$retina_logo_url = esc_url( apply_filters( 'asagi_retina_logo', '' ) );
 
 		// If we don't have a logo, bail.
 		if ( empty( $logo_url ) ) {
@@ -83,7 +83,6 @@ if ( ! function_exists( 'asagi_construct_logo' ) ) {
 
 		$attr = apply_filters( 'asagi_logo_attributes', array(
 			'class' => 'header-image',
-			'alt'	=> esc_attr( apply_filters( 'asagi_logo_title', get_bloginfo( 'name', 'display' ) ) ),
 			'src'	=> $logo_url,
 			'title'	=> esc_attr( apply_filters( 'asagi_logo_title', get_bloginfo( 'name', 'display' ) ) ),
 		) );

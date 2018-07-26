@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Set our theme version.
-define( 'ASAGI_VERSION', '1.0.4' );
+define( 'ASAGI_VERSION', '1.0.5' );
 
 if ( ! function_exists( 'asagi_setup' ) ) {
 	add_action( 'after_setup_theme', 'asagi_setup' );

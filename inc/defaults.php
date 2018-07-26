@@ -17,8 +17,6 @@ if ( ! function_exists( 'asagi_get_defaults' ) ) {
 		$asagi_defaults = array(
 			'hide_title' => '',
 			'hide_tagline' => '',
-			'logo' => '',
-			'retina_logo' => '',
 			'top_bar_width' => 'full',
 			'top_bar_inner_width' => 'contained',
 			'top_bar_alignment' => 'left',
@@ -49,7 +47,6 @@ if ( ! function_exists( 'asagi_get_defaults' ) ) {
 			'link_color_hover' => '#000000',
 			'link_color_visited' => '',
 			'font_awesome_essentials' => true,
-			'dynamic_css_cache' => true,
 			'header_date' => true,
 			'header_date_format' => 'M d, Y'
 		);

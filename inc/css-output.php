@@ -126,12 +126,12 @@ if ( ! function_exists( 'asagi_advanced_css' ) ) {
 		$css->add_property( 'background-color', esc_attr( $asagi_settings[ 'navigation_background_current_color' ] ) );
 
 		// Navigation search input
-		$css->set_selector( '.navigation-search input[type="search"],.navigation-search input[type="search"]:active' );
+		$css->set_selector( '.inside-navigation .search-form input[type="search"],.inside-navigation .search-form input[type="search"]:active' );
 		$css->add_property( 'color', esc_attr( $asagi_settings[ 'navigation_background_hover_color' ] ) );
 		$css->add_property( 'background-color', esc_attr( $asagi_settings[ 'navigation_background_hover_color' ] ) );
 
 		// Navigation search input on focus
-		$css->set_selector( '.navigation-search input[type="search"]:focus' );
+		$css->set_selector( '.inside-navigation .search-form input[type="search"]:focus' );
 		$css->add_property( 'color', esc_attr( $asagi_settings[ 'navigation_text_hover_color' ] ) );
 		$css->add_property( 'background-color', esc_attr( $asagi_settings[ 'navigation_background_hover_color' ] ) );
 
@@ -622,7 +622,7 @@ if ( ! function_exists( 'asagi_spacing_css' ) ) {
 		$css->add_property( 'top', 'auto' ); // Added for compatibility purposes on 22/12/2016
 
 		// Navigation search
-		$css->set_selector( '.navigation-search, .navigation-search input' );
+		$css->set_selector( '.inside-navigation .search-form, .inside-navigation .search-form input' );
 		$css->add_property( 'height', '100%' ); // Added to give browser caches a chance to clear
 
 		// Dropdown arrow spacing
@@ -722,50 +722,7 @@ add_action( 'wp_enqueue_scripts', 'asagi_enqueue_dynamic_css', 50 );
  *
  */
 function asagi_enqueue_dynamic_css() {
-	if ( ! get_option( 'asagi_dynamic_css_output', false ) || is_customize_preview() || apply_filters( 'asagi_dynamic_css_skip_cache', false ) ) {
-		$css = asagi_base_css() . asagi_font_css() . asagi_advanced_css() . asagi_spacing_css();
-	} else {
-		$css = get_option( 'asagi_dynamic_css_output' ) . '/* End cached CSS */';
-	}
-
-	$css = $css . asagi_no_cache_dynamic_css();
+	$css = asagi_base_css() . asagi_font_css() . asagi_advanced_css() . asagi_spacing_css() . asagi_no_cache_dynamic_css();
 
 	wp_add_inline_style( 'asagi-style', $css );
-}
-
-add_action( 'init', 'asagi_set_dynamic_css_cache' );
-/**
- * Sets our dynamic CSS cache if it doesn't exist.
- *
- * If the theme version changed, bust the cache.
- *
- */
-function asagi_set_dynamic_css_cache() {
-	if ( apply_filters( 'asagi_dynamic_css_skip_cache', false ) ) {
-		return;
-	}
-
-	$cached_css = get_option( 'asagi_dynamic_css_output', false );
-	$cached_version = get_option( 'asagi_dynamic_css_cached_version', '' );
-
-	if ( ! $cached_css || $cached_version !== ASAGI_VERSION ) {
-		$css = asagi_base_css() . asagi_font_css() . asagi_advanced_css() . asagi_spacing_css();
-
-		update_option( 'asagi_dynamic_css_output', $css );
-		update_option( 'asagi_dynamic_css_cached_version', ASAGI_VERSION );
-	}
-}
-
-add_action( 'customize_save_after', 'asagi_update_dynamic_css_cache' );
-/**
- * Update our CSS cache when done saving Customizer options.
- *
- */
-function asagi_update_dynamic_css_cache() {
-	if ( apply_filters( 'asagi_dynamic_css_skip_cache', false ) ) {
-		return;
-	}
-
-	$css = asagi_base_css() . asagi_font_css() . asagi_advanced_css() . asagi_spacing_css();
-	update_option( 'asagi_dynamic_css_output', $css );
 }

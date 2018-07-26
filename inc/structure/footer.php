@@ -95,7 +95,9 @@ function asagi_do_footer_widget( $widget_width, $widget ) {
 	$tablet_widget_width = apply_filters( "asagi_footer_widget_{$widget}_tablet_width", '50' );
 	?>
 	<div class="footer-widget-<?php echo absint( $widget ); ?> grid-parent grid-<?php echo absint( $widget_width ); ?> tablet-grid-<?php echo absint( $tablet_widget_width ); ?> mobile-grid-100">
-		<?php if ( ! dynamic_sidebar( 'footer-' . absint( $widget ) ) ) : ?>
+		<?php if ( ! dynamic_sidebar( 'footer-' . absint( $widget ) ) ) : 
+			$current_user = wp_get_current_user();
+			if (user_can( $current_user, 'administrator' )) { ?>
 			<aside class="widget inner-padding widget_text">
 				<h4 class="widget-title"><?php esc_html_e( 'Footer Widget', 'asagi' );?></h4>
 				<div class="textwidget">
@@ -119,7 +121,8 @@ function asagi_do_footer_widget( $widget_width, $widget ) {
 					</p>
 				</div>
 			</aside>
-		<?php endif; ?>
+		<?php }
+			endif; ?>
 	</div>
 	<?php
 }

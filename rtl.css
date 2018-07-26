@@ -165,12 +165,12 @@ footer.entry-meta .posted-on:before {
 	right: auto;
 }
 
-.rtl .navigation-search {
+.rtl .inside-navigation .search-form {
 	left: auto;
 	right: -999999px;
 }
 
-.rtl .navigation-search.nav-search-active {
+.rtl .inside-navigation .search-form.nav-search-active {
     right: 0;
 }
 

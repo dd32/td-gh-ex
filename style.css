@@ -4,7 +4,7 @@ Theme URI: http://wpkoi.com/asagi-wpkoi-wordpress-theme/
 Author: WPKoi
 Author URI: http://wpkoi.com
 Description: Asagi WPKoi WordPress Theme is a clean blogger theme with full of features. Asagi has different layouts and post formats and also compatible with WooCommerce and Elementor page builder plugins. If You want to create a clean site with unique design, Asagi will gives the spirit to it. Check out the theme page for more functions!
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: asagi
@@ -690,12 +690,12 @@ span.search-item a:before {
     float: left
 }
 
-.navigation-search,
+.inside-navigation .search-form,
 li.search-item.active {
     transition: opacity 100ms ease-in-out
 }
 
-.navigation-search {
+.inside-navigation .search-form {
     position: absolute;
     left: -99999px;
     pointer-events: none;
@@ -706,7 +706,7 @@ li.search-item.active {
     opacity: 0
 }
 
-.navigation-search.nav-search-active {
+.inside-navigation .search-form.nav-search-active {
     left: 0;
     right: 0;
     pointer-events: auto;
@@ -714,12 +714,12 @@ li.search-item.active {
     opacity: 1
 }
 
-.gen-sidebar-nav .navigation-search {
+.gen-sidebar-nav .inside-navigation .search-form {
     top: auto;
     bottom: 0
 }
 
-.navigation-search input {
+.inside-navigation .search-form input {
     border: 0;
     vertical-align: bottom;
     line-height: 0;
@@ -730,22 +730,22 @@ li.search-item.active {
     -webkit-appearance: none
 }
 
-.navigation-search input::-ms-clear {
+.inside-navigation .search-form input::-ms-clear {
     display: none;
     width: 0;
     height: 0
 }
 
-.navigation-search input::-ms-reveal {
+.inside-navigation .search-form input::-ms-reveal {
     display: none;
     width: 0;
     height: 0
 }
 
-.navigation-search input::-webkit-search-cancel-button,
-.navigation-search input::-webkit-search-decoration,
-.navigation-search input::-webkit-search-results-button,
-.navigation-search input::-webkit-search-results-decoration {
+.inside-navigation .search-form input::-webkit-search-cancel-button,
+.inside-navigation .search-form input::-webkit-search-decoration,
+.inside-navigation .search-form input::-webkit-search-results-button,
+.inside-navigation .search-form input::-webkit-search-results-decoration {
     display: none
 }
 
@@ -1877,8 +1877,8 @@ footer.entry-meta .posted-on {
     font-size: 14px
 }
 
-.navigation-search,
-.navigation-search input {
+.inside-navigation .search-form,
+.inside-navigation .search-form input {
     height: 100%
 }
 

@@ -146,6 +146,10 @@
 	margin: 0 10px;
 }
 
+.asagi-masthead-links-bold {
+	font-weight: bold;
+}
+
 .asagi-masthead .asagi-version {
 	display: inline-block;
 	background: #EFEFEF;

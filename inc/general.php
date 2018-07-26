@@ -293,19 +293,3 @@ function asagi_set_font_awesome_essentials( $essentials ) {
 
 	return $essentials;
 }
-
-add_filter( 'asagi_dynamic_css_skip_cache', 'asagi_skip_dynamic_css_cache' );
-/**
- * Skips caching of the dynamic CSS if set to false.
- *
- *
- * @param bool $cache
- * @return bool
- */
-function asagi_skip_dynamic_css_cache( $cache ) {
-	if ( ! asagi_get_setting( 'dynamic_css_cache' ) ) {
-		return true;
-	}
-
-	return $cache;
-}

@@ -189,12 +189,16 @@ if ( ! function_exists( 'asagi_excerpt_more' ) ) {
 	 * @return string The HTML for the more link.
 	 */
 	function asagi_excerpt_more( $more ) {
-		return apply_filters( 'asagi_excerpt_more_output', sprintf( ' ... <a title="%1$s" class="read-more" href="%2$s">%3$s%4$s</a>',
-			the_title_attribute( 'echo=0' ),
-			esc_url( get_permalink( get_the_ID() ) ),
-			__( 'Read more', 'asagi' ),
-			'<span class="screen-reader-text">' . get_the_title() . '</span>'
-		) );
+		if ( is_admin() ) {
+			return '[&hellip;]';
+		} else {
+			return apply_filters( 'asagi_excerpt_more_output', sprintf( ' ... <a title="%1$s" class="read-more" href="%2$s">%3$s%4$s</a>',
+				the_title_attribute( 'echo=0' ),
+				esc_url( get_permalink( get_the_ID() ) ),
+				__( 'Read more', 'asagi' ),
+				'<span class="screen-reader-text">' . get_the_title() . '</span>'
+			) );
+		}
 	}
 }
 

@@ -42,14 +42,14 @@ if ( ! function_exists( 'asagi_settings_page' ) ) {
 				<div class="asagi-masthead clearfix">
 					<div class="asagi-container">
 						<div class="asagi-title">
-							<a href="<?php echo esc_attr(ASAGI_THEME_URL); ?>" target="_blank"><?php esc_html_e( 'Asagi', 'asagi' ); ?></a> <span class="asagi-version"><?php echo ASAGI_VERSION; ?></span>
+							<a href="<?php echo esc_url(ASAGI_THEME_URL); ?>" target="_blank"><?php esc_html_e( 'Asagi', 'asagi' ); ?></a> <span class="asagi-version"><?php echo ASAGI_VERSION; ?></span>
 						</div>
 						<div class="asagi-masthead-links">
 							<?php if ( ! defined( 'ASAGI_PREMIUM_VERSION' ) ) : ?>
-								<a style="font-weight: bold;" href="<?php echo esc_attr(ASAGI_THEME_URL); // WPCS: XSS ok, sanitization ok. ?>" target="_blank"><?php esc_html_e( 'Premium', 'asagi' );?></a>
+								<a class="asagi-masthead-links-bold" href="<?php echo esc_url(ASAGI_THEME_URL); ?>" target="_blank"><?php esc_html_e( 'Premium', 'asagi' );?></a>
 							<?php endif; ?>
-							<a href="<?php echo esc_attr(ASAGI_WPKOI_AUTHOR_URL); ?>" target="_blank"><?php esc_html_e( 'WPKoi', 'asagi' ); ?></a>
-                            <a href="<?php echo esc_attr(ASAGI_DOCUMENTATION); ?>" target="_blank"><?php esc_html_e( 'Documentation', 'asagi' ); ?></a>
+							<a href="<?php echo esc_url(ASAGI_WPKOI_AUTHOR_URL); ?>" target="_blank"><?php esc_html_e( 'WPKoi', 'asagi' ); ?></a>
+                            <a href="<?php echo esc_url(ASAGI_DOCUMENTATION); ?>" target="_blank"><?php esc_html_e( 'Documentation', 'asagi' ); ?></a>
 						</div>
 					</div>
 				</div>
@@ -191,31 +191,6 @@ if ( ! function_exists( 'asagi_settings_page' ) ) {
 								 do_action( 'asagi_admin_right_panel' );
 
 								  ?>
-
-								<div class="postbox asagi-metabox" id="gen-delete">
-									<h3 class="hndle"><?php esc_html_e( 'Delete Customizer Settings', 'asagi' );?></h3>
-									<div class="inside">
-										<p><?php esc_html_e( 'Deleting your settings can not be undone.', 'asagi' ); ?></p>
-										<form method="post">
-											<p><input type="hidden" name="asagi_reset_customizer" value="asagi_reset_customizer_settings" /></p>
-											<p>
-												<?php
-												$warning = 'return confirm("' . esc_html__( 'Warning: This will delete your settings.', 'asagi' ) . '")';
-												wp_nonce_field( 'asagi_reset_customizer_nonce', 'asagi_reset_customizer_nonce' );
-												submit_button( esc_attr__( 'Delete Default Settings', 'asagi' ), 'button', 'submit', false, array( 'onclick' => esc_js( $warning ) ) );
-												?>
-											</p>
-
-										</form>
-										<?php
-										/**
-										 * asagi_delete_settings_form hook.
-										 *
-										 */
-										 do_action( 'asagi_delete_settings_form' );
-										 ?>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -223,38 +198,6 @@ if ( ! function_exists( 'asagi_settings_page' ) ) {
 			</div>
 		</div>
 		<?php
-	}
-}
-
-if ( ! function_exists( 'asagi_reset_customizer_settings' ) ) {
-	add_action( 'admin_init', 'asagi_reset_customizer_settings' );
-	/**
-	 * Reset customizer settings
-	 *
-	 */
-	function asagi_reset_customizer_settings() {
-		if ( empty( $_POST['asagi_reset_customizer'] ) || 'asagi_reset_customizer_settings' !== $_POST['asagi_reset_customizer'] ) {
-			return;
-		}
-
-		$nonce = isset( $_POST['asagi_reset_customizer_nonce'] ) ? sanitize_key( $_POST['asagi_reset_customizer_nonce'] ) : '';
-
-		if ( ! wp_verify_nonce( $nonce, 'asagi_reset_customizer_nonce' ) ) {
-			return;
-		}
-
-		if ( ! current_user_can( 'manage_options' ) ) {
-			return;
-		}
-
-		delete_option( 'asagi_settings' );
-		delete_option( 'asagi_dynamic_css_output' );
-		delete_option( 'asagi_dynamic_css_cached_version' );
-		remove_theme_mod( 'font_body_variants' );
-		remove_theme_mod( 'font_body_category' );
-
-		wp_safe_redirect( admin_url( 'themes.php?page=asagi-options&status=reset' ) );
-		exit;
 	}
 }
 

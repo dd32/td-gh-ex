@@ -63,7 +63,6 @@ if ( ! function_exists( 'asagi_featured_page_header_area' ) ) {
 				apply_filters( 'asagi_page_header_default_size', 'full' ),
 				array(
 					'itemprop' => 'image',
-					'alt' => the_title_attribute( 'echo=0' )
 				)
 			); ?>
 		</div>
