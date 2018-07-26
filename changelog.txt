@@ -1,4 +1,21 @@
 Changelog -----------------------------------
+version:1.523
+
+Overview of Changes
+
+	Modified Gutenberg plugin CSS
+
+Files Modified
+	modified:	admin-options.css
+	modified:   functions.php
+	modified:   header.php
+	modified:   lib/customize.js
+	modified:   plugins/plugins-presentation.php
+
+Description of Code Changes
+	please see https://themes.trac.wordpress.org/changeset?old_path=raindrops/1.521&new_path=raindrops/1.523
+-----------------------------------------------Changelog -----------------------------------
+Changelog -----------------------------------
 version:1.521
 
 Overview of Changes
