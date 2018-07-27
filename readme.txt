@@ -41,6 +41,9 @@ Activiation and Use
 
 == Changelog ==
 
+= AyaPhotography 1.0.1 - 2018.07.27 
+* changing gallery images
+
 = 1.0.0 =
 * Initial Release
 
@@ -91,7 +94,7 @@ Source: https://pixabay.com/en/puffin-iceland-bird-cliff-coast-1489022/
 
 Default Slide #2 Image (images/slider/2.jpg), Copyright castleguard
 Image is licensed under the terms of the CC0 Creative Commons license.
-Source: https://pixabay.com/en/iceland-iceland-horse-horse-flock-1747368/
+Source: ayatemplates.com
 
 Default Slide #3 Image (images/slider/3.jpg), Copyright ReneBoinski
 Image is licensed under the terms of the CC0 Creative Commons license.
@@ -99,7 +102,7 @@ Source: https://pixabay.com/en/skogar-museum-iceland-grass-roofs-1989483/
 
 Default Slide #4 Image (images/slider/4.jpg), Copyright jackmac34
 Image is licensed under the terms of the CC0 Creative Commons license.
-Source: https://pixabay.com/en/iceland-bordafjordur-roofing-grass-725904/
+Source: ayatemplates.com
 
 Default Slide #5 Image (images/slider/5.jpg), Copyright darrenquigley32
 Image is licensed under the terms of the CC0 Creative Commons license.
