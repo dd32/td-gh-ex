@@ -72,8 +72,6 @@ function ashe_setup() {
 	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
 		add_action( 'admin_notices', 'ashe_activation_notice' );
 	}
-
-	add_action( 'admin_notices', 'ashe_update_notice' );
 	
 }
 add_action( 'after_setup_theme', 'ashe_setup' );
@@ -106,55 +104,6 @@ function ashe_activation_notice() {
 	echo '</div>';
 }
 
-// Update Notice
-function ashe_update_notice() {
-	global $pagenow;
-	global $current_user;
-
-	$user_id	 = $current_user->ID;
-	$theme_data	 = wp_get_theme();
-	$theme_vers	 = str_replace( '.', '_', $theme_data->get( 'Version' ) );
-
-	if ( ! get_user_meta( $user_id, esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore' ) && 'themes.php' != $pagenow ) {
-
-		echo '<div class="notice notice-success ashe-activation-notice">';
-		
-			echo '<h1>';
-				/* translators: %s theme name */
-				printf( esc_html__( 'Welcome to %1$s %2$s', 'ashe' ), esc_html( $theme_data->Name ), $theme_data->get( 'Version' ) );
-			echo '</h1>';
-
-			echo '<p>';
-				/* translators: %1$s: theme name, %2$s link */
-				printf( __( 'Want to get the gist on the latest theme changes? Just consult our changelog below to get a taste of the recent fixes and features implemented.', 'ashe' ), esc_html( $theme_data->Name ), esc_url( admin_url( 'themes.php?page=about-ashe' ) ) );
-			echo '</p>';
-
-			printf( '<a href="%1$s" class="notice-dismiss dashicons dashicons-dismiss dashicons-dismiss-icon"></a>', '?' . esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore=0' );
-
-			echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=about-ashe' ) ) .'" class="button button-primary button-hero">';
-				/* translators: %s theme name */
-				printf( esc_html__( 'See What\'s New', 'ashe' ), esc_html( $theme_data->Name ) );
-			echo '</a></p>';
-
-		echo '</div>';
-
-	}
-}
-
-
-function ashe_notice_ignore() {
-	global $current_user;
-	$theme_data	 = wp_get_theme();
-	$user_id	 = $current_user->ID;
-	$theme_vers	 = str_replace( '.', '_', $theme_data->get( 'Version' ) );
-
-	/* If user clicks to ignore the notice, add that to their user meta */
-	if ( isset( $_GET[ esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore' ] ) && '0' == $_GET[ esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore' ] ) {
-		add_user_meta( $user_id, esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore', 'true', true );
-	}
-}
-add_action( 'admin_init', 'ashe_notice_ignore' );
-
 function ashe_admin_scripts() {
 	
 	// Theme Activation Notice
@@ -181,7 +130,7 @@ add_action( 'wp_head', 'ashe_pingback_header' );
 function ashe_scripts() {
 
 	// Theme Stylesheet
-	wp_enqueue_style( 'ashe-style', get_stylesheet_uri(), array(), '1.6.7' );
+	wp_enqueue_style( 'ashe-style', get_stylesheet_uri(), array(), '1.6.8' );
 
 	// FontAwesome Icons
 	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/font-awesome.css' ) );
@@ -201,11 +150,11 @@ function ashe_scripts() {
 	}
 	
 	// Theme Responsive CSS
-	wp_enqueue_style( 'ashe-responsive', get_theme_file_uri( '/assets/css/responsive.css' ), array(), '1.6.7'  );
+	wp_enqueue_style( 'ashe-responsive', get_theme_file_uri( '/assets/css/responsive.css' ), array(), '1.6.8'  );
 
 	// Enqueue Custom Scripts
-	wp_enqueue_script( 'ashe-plugins', get_theme_file_uri( '/assets/js/custom-plugins.js' ), array( 'jquery' ), '1.6.7', true );
-	wp_enqueue_script( 'ashe-custom-scripts', get_theme_file_uri( '/assets/js/custom-scripts.js' ), array( 'jquery' ), '1.6.7', true );
+	wp_enqueue_script( 'ashe-plugins', get_theme_file_uri( '/assets/js/custom-plugins.js' ), array( 'jquery' ), '1.6.8', true );
+	wp_enqueue_script( 'ashe-custom-scripts', get_theme_file_uri( '/assets/js/custom-scripts.js' ), array( 'jquery' ), '1.6.8', true );
 
 	// Comment reply link
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
