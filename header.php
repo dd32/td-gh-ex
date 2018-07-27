@@ -1,14 +1,11 @@
 <?php
 
 /* 	GREEN EYE Theme's Header
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since GREEN 1.0
 */
-
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>><head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />

@@ -2,13 +2,11 @@
 /*
 	Template Name: Full Width
  	GREEN EYE Theme's Full Width Page to show the Pages Selected Full Width
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since GREEN 1.0
 */
-?>
-
-<?php get_header(); ?>
+get_header(); ?>
 <div id="container">
 <div id="content-full">
  <?php if (have_posts()) : while (have_posts()) : the_post();?>

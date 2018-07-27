@@ -1,6 +1,6 @@
 <?php
 /* 	GREEN EYE Theme's Functions
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since GREEN 1.0
 */
@@ -111,7 +111,7 @@
 	
 	// Content Type Showing
 	function green_content() { the_content(__('<span class="read-more">Read More ...</span>','green-eye')); }
-	function green_creditline() { echo '<span class="credit">| GREEN EYE Theme by: <a href="http://d5creation.com" target="_blank"><img  src="' . get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></span>'; }
+	function green_creditline() { echo '<span class="credit">| GREEN EYE Theme by: <a href="'.esc_url('https://d5creation.com').'" target="_blank"> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></span>'; }
 
 
 //	Registers the Widgets and Sidebars for the site

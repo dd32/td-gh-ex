@@ -1,6 +1,6 @@
 <?php 
 /* 	GREEN EYE Theme's About Page
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since GREEN EYE 3.0
 */
@@ -14,27 +14,27 @@
     
     <h2>IMPORTANT NOTE !</h2>As per the Requirements of New Theme Review Guidelines, Theme Options will not be available at this location anymore for the Free Version of GREEN EYE Theme. You can get all those options under <b>Appearance > Customize</b><br /><br />
     
-    If you love the Excellent Previous Style Options You may consider using our <a href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>" target="_blank">Extend Version Themes</a>. <span class="impspe">All Options will be under <b>Appearance > GREEN EYE Options</b> with large screen and user friendtly Interface in Extended Version</span>
+    If you love the Excellent Previous Style Options You may consider using our <a href="<?php echo esc_url('https://d5creation.com/themegallery/'); ?>" target="_blank">Extend Version Themes</a>. <span class="impspe">All Options will be under <b>Appearance > GREEN EYE Options</b> with large screen and user friendtly Interface in Extended Version</span>
     </div>
     
-    <div class="infohead">A Theme is an effort of many sleepless nights of Developers. You can contribute on this development translating this theme in your Language. You can send your translation/language file to us. For any kind of Theme Support, Please do not hesitate to <a href="<?php echo esc_url('http://d5creation.com/contact'); ?>" target="_blank">Contact Us</a> anytime<br /><br />
+    <div class="infohead">A Theme is an effort of many sleepless nights of Developers. You can contribute on this development translating this theme in your Language. You can send your translation/language file to us. For any kind of Theme Support, Please do not hesitate to <a href="<?php echo esc_url('https://d5creation.com/contact'); ?>" target="_blank">Contact Us</a> anytime<br /><br />
     
 We appreciate an <a href="<?php echo esc_url('http://wordpress.org/support/view/theme-reviews/green-eye'); ?>" target="_blank">Honest Review</a> of this Theme if you Love our Work<br /> <br />
 
-Need More Features and Options including Exciting Slide and 100+ Advanced Features? Try <a href="<?php echo esc_url('http://d5creation.com/theme/green-eye/'); ?>" target="_blank"><strong>GREEN EYE Extend</strong></a><br /> <br /> 
+Need More Features and Options including Exciting Slide and 100+ Advanced Features? Try <a href="<?php echo esc_url('https://d5creation.com/theme/green-eye/'); ?>" target="_blank"><strong>GREEN EYE Extend</strong></a><br /> <br /> 
         
         
 You can Visit the GREEN EYE Extend <a href="<?php echo esc_url('http://demo.d5creation.com/themes/?theme=GREEN%20 EYE'); ?>" target="_blank"><strong>Demo Here</strong></a> 
-<a href="<?php echo esc_url('http://d5creation.com/theme/green-eye/'); ?>" target="_blank" class="extendlink"> </a>
+<a href="<?php echo esc_url('https://d5creation.com/theme/green-eye/'); ?>" target="_blank" class="extendlink"> </a>
         </div>
         
         <p>GREEN EYE is a CSS3 Powered and WordPress Latest Version Ready Theme for Small Business Companies. Customizable Background and other options will give the WordPress Driven Site an attractive look.  GREEN EYE Extend is Responsive, Super Elegant and Professional Theme which will be adjusted automatically with all smart devices. There are two different Editions of GREEN EYE. You can use the Free Version downloading from WordPress.org and the Extend version downloading from D5Creation.com
         </p>
         
         <div class="floatcntr">
-    		<a class="specialbutton inblk" href="<?php echo esc_url('http://d5creation.com/theme/green-eye/'); ?>">GREEN EYE Theme Page</a>
+    		<a class="specialbutton inblk" href="<?php echo esc_url('https://d5creation.com/theme/green-eye/'); ?>">GREEN EYE Theme Page</a>
             <a class="specialbutton inblk" href="<?php echo esc_url('http://demo.d5creation.com/themes/?theme=GREEN%20 EYE'); ?>">GREEN EYE Demo</a>
-            <a class="specialbutton inblk" href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>">D5 Theme Gallery</a>
+            <a class="specialbutton inblk" href="<?php echo esc_url('https://d5creation.com/themegallery/'); ?>">D5 Theme Gallery</a>
     	</div>
         
         <h2 class="spetitle">Features of GREEN EYE vs GREEN EYE Extend</h2>
@@ -72,13 +72,13 @@ You can Visit the GREEN EYE Extend <a href="<?php echo esc_url('http://demo.d5cr
             <tr><td>Social Links</td><td>None</td><td>20 and More</td></tr>
             <tr><td>Awesome Support with Foruma and Dedicated E-Mail</td><td>Only Forum</td><td>Forum and E-Mail</td></tr>
             
-            <tr><th><a href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th><th><a href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th><th><a href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th></tr>
+            <tr><th><a href="<?php echo esc_url('https://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th><th><a href="<?php echo esc_url('https://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th><th><a href="<?php echo esc_url('https://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th></tr>
 		</table>
         <span class="alncenter">* Each Extend Theme is only $7.5 with DEVELOPER Membership</span>
         
         <div class="specialmsg">
     		<div class="specialtext floatlt ">Learn More about our Flexible Membership Options</div>
-        	<a class="specialbutton floatrt" href="<?php echo esc_url('http://d5creation.com/mp/'); ?>">View Pricing and Features</a>
+        	<a class="specialbutton floatrt" href="<?php echo esc_url('https://d5creation.com/mp/'); ?>">View Pricing and Features</a>
     	</div>
         
         <div class="bottom"><img src="<?php echo get_template_directory_uri().'/inc/images/bottom.png'; ?>" alt="D5 Creation Themes"/></div>

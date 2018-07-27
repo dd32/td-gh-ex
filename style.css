@@ -1,20 +1,20 @@
 /*
 Theme Name: GREEN EYE 
-Theme URI: http://d5creation.com/theme/green-eye/
+Theme URI: https://d5creation.com/theme/green-eye/
 
 Author: D5 Creation
-Author URI: http://d5creation.com/
+Author URI: https://d5creation.com/
 
 Description: GREEN EYE is a CSS3 Powered and WordPress Latest Version Ready Responsive Theme for Environment Friendly Institutions or Companies running on Green Energy. GREEN EYE is Responsive, Super Elegant and Professional Theme which will be adjusted automatically with all smart devices. You can Visit the GREEN EYE Demo Here: http://demo.d5creation.com/themes/?theme=GREEN%20EYE
 
-Version: 1.7
+Version: 1.9
 
-Tags: two-columns, right-sidebar, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, rtl-language-support, front-page-post-form, full-width-template, theme-options, translation-ready 
+Tags: two-columns, right-sidebar, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, rtl-language-support, front-page-post-form, full-width-template, theme-options, blog, portfolio, entertainment, translation-ready 
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-GREEN WordPress Theme, Copyright 2013-2015: D5 Creation (www.d5creation.com)
+GREEN WordPress Theme, Copyright 2012-2018: D5 Creation (www.d5creation.com)
 GREEN is distributed under the terms of the GNU GPL
 
 Text Domain: green-eye
@@ -56,6 +56,7 @@ hgroup,
 menu,
 nav,
 section{display:block;}
+
 .alignnone{margin:5px 20px 20px 0;}
 .aligncenter,
 div.aligncenter{display:block;margin:5px auto 5px auto;}
@@ -83,7 +84,7 @@ img{max-width:100%;border:0 none;}
 .small{height:81px;border-bottom:1px solid #43c382;font-weight:bold;position:fixed;top:0;box-shadow:0 0 3px 1px #333333;}
 #header-fpage{height:110px;background:#caefd5;}
 img.site-logol, h1.site-logol {max-width:350px;max-height:100px;padding:5px 0;float:left;display:block; font-size: 50px; color: #4ba614; line-height: 1.5;}
-img.site-logos, h1.site-logos{max-width:250px;max-height:70px;padding:5px 0;float:left;position:fixed;float:left;z-index:10001;display:block; font-size: 40px;}
+img.site-logos, h1.site-logos{max-width:250px;max-height:70px;padding:5px 0;position:fixed;float:left;z-index:10001;display:block; font-size: 40px;}
 .site-title-hidden{display:none;}
 #content{float:left;width:70%;}
 #content-full{width:930px;}
@@ -112,6 +113,7 @@ img.site-logos, h1.site-logos{max-width:250px;max-height:70px;padding:5px 0;floa
 .gplus-link:hover,
 .li-link:hover,
 .feed-link:hover{opacity:1;box-shadow:0 0 5px 1px #057c4e;}
+
 .small #green-main-menu{width:650px;float:right;}
 #green-main-menu{display:block;text-align:center;width:930px;}
 .small .m-menu a{padding:30px 10px;font-size:13px;}
@@ -126,15 +128,15 @@ img.site-logos, h1.site-logos{max-width:250px;max-height:70px;padding:5px 0;floa
 .m-menu .current-menu-ancestor ul > a,
 .m-menu .current_page_item ul > a,
 .m-menu .current_page_ancestor ul > a{color:#13f41e;text-decoration:none;}
-*html .m-menu li a:hover{color:#13f41e;}
+html .m-menu li a:hover{color:#13f41e;}
 .m-menu li:hover > ul{display:block;visibility:visible;opacity:1;top:53px;}
 .m-menu ul li:hover > ul{display:block;visibility:visible;opacity:1;top:0px;left:189px;}
 .m-menu ul{list-style:none;margin:0;padding:0;visibility:hidden; opacity:0;position:absolute;top:80px;z-index:99999;background:#0d7200;background:-moz-linear-gradient(top, #0d7200 0%, #0f8200 37%, #045600 100%);background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#0d7200), color-stop(37%,#0f8200), color-stop(100%,#045600));background:-webkit-linear-gradient(top, #0d7200 0%,#0f8200 37%,#045600 100%);background:-o-linear-gradient(top, #0d7200 0%,#0f8200 37%,#045600 100%);background:-ms-linear-gradient(top, #0d7200 0%,#0f8200 37%,#045600 100%);background:linear-gradient(to bottom, #0d7200 0%,#0f8200 37%,#045600 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0d7200', endColorstr='#045600',GradientType=0);box-shadow:0 0 2px rgba(255,255,255,.5);border-radius:5px;}
 .m-menu ul ul{top:0px;left:250px;}
 .m-menu ul li{float:none;margin:0;padding:0;display:block;-moz-box-shadow:0 1px 0 #024d15, 0 2px 0 #049629;-webkit-box-shadow:0 1px 0 #024d15, 0 2px 0 #049629;box-shadow:0 1px 0 #024d15, 0 2px 0 #049629;font-weight:normal;}
 .m-menu ul li:last-child{-moz-box-shadow:none;-webkit-box-shadow:none;box-shadow:none;}
-.m-menu ul a{padding:10px;height:10px;width:170px;height:auto;line-height:1;display:block;white-space:pre-wrap;float:none;text-transform:none;text-align:left;}
-*html .m-menu ul a{height:10px;}
+.m-menu ul a{padding:10px;height:10px;width:170px;line-height:1;display:block;white-space:pre-wrap;float:none;text-transform:none;text-align:left;}
+html .m-menu ul a{height:10px;}
 *:first-child+html .m-menu ul a{height:10px;}
 .m-menu ul a:hover{background:#cfd3d0;background:-moz-linear-gradient(top, #cfd3d0 0%, #e8eae8 42%, #b9ccba 99%);background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#cfd3d0), color-stop(42%,#e8eae8), color-stop(99%,#b9ccba));background:-webkit-linear-gradient(top, #cfd3d0 0%,#e8eae8 42%,#b9ccba 99%);background:-o-linear-gradient(top, #cfd3d0 0%,#e8eae8 42%,#b9ccba 99%);background:-ms-linear-gradient(top, #cfd3d0 0%,#e8eae8 42%,#b9ccba 99%);background:linear-gradient(to bottom, #cfd3d0 0%,#e8eae8 42%,#b9ccba 99%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cfd3d0', endColorstr='#b9ccba',GradientType=0);color:#05581b;text-shadow:none;}
 .m-menu ul li:first-child > a{-moz-border-radius:5px 5px 0 0;border-radius:5px 5px 0 0;}
@@ -222,7 +224,7 @@ a:hover{color:#13f41e;text-decoration:none;}
 b, strong{font-weight:bold;}
 displaynone{display:none;}
 .clear{clear:both;}
-table{background-color:#EEEEEE;border:1px solid #FFFFFF;border-radius:3px 3px 3px 3px;padding:5px;-moz-border-radius:3px;-webkit-border-radius:3px;min-width:200px;}
+table{background-color:#EEEEEE;border:1px solid #FFFFFF;padding:5px;border-radius:3px;min-width:200px;}
 td{padding:5px 7px;vertical-align:top;}
 #wp-calendar td{padding:0px 7px;}
 th{font-weight:bold;line-height:1;padding:5px 7px;background:#47BC4A;}
@@ -278,7 +280,7 @@ a#ft-next-slide{background:url("images/slide-next.png") no-repeat scroll 0 0 tra
 .featured-box h3{font-weight:normal;margin:10px 0;text-transform:uppercase;}
 #featured-boxs img.box-image{display:block;height:100px;margin:0 auto;max-width:100%;}
 #featured-boxs img.box-image:hover{-webkit-transform:scale(1.15);-moz-transform:scale(1.15);-o-transform:scale(1.15);-ms-transform:scale(1.15);transform:scale(1.15);filter:url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");filter:gray;-webkit-filter:grayscale(100%);}
-blockquote, q{background:#B6E3B8;border-left:10px solid #47BC4A;margin:20px 10px;padding:10px;quotes:quotes:'<<' '>>';}
+blockquote, q{background:#B6E3B8;border-left:10px solid #47BC4A;margin:20px 10px;padding:10px;quotes:'<<' '>>';}
 blockquote:before, q:before{color:#47BC4A;content:'\201C';font-size:4em;line-height:.1em;margin-right:.20em;vertical-align:-.4em;}
 blockquote:after, q:after{color:#47BC4A;content:'\201D';font-size:4em;line-height:.1em;margin-left:.20em;vertical-align:-.4em;}
 blockquote p, q p{display:inline;}
@@ -323,7 +325,7 @@ p.postmetadata{margin:0;}
 #commentsbox .watermark{font-size:17px;text-align:center;text-shadow:none;text-transform:uppercase;color:rgba(150, 150, 150, 0.7);}
 #commentsbox .comment-author cite, #commentsbox .comment-author cite a{color:#3DBB52;font-style:normal;}
 ol.commentlist,
-ul.commentlist,{list-style:none outside none;}
+ul.commentlist{list-style:none outside none;}
 #commentsbox img.avatar{border:3px solid #7ED080;border-radius:50px 50px 50px 50px;position:absolute;right:-5px;top:-25px;width:50px;}
 #commentsbox ul.children{padding:5px 0 0 20px;}
 .comment-body{padding:0 0 10px;}

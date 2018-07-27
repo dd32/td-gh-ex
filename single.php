@@ -1,7 +1,7 @@
 <?php
 
 /* 	GREEN EYE Theme's Single Page to display Single Page or Post
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since GREEN 1.0
 */

@@ -1,6 +1,6 @@
 <?php
 /* 	GREEN EYE Theme's Right Sidebar Area
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since GREEN 1.0
 */
@@ -25,5 +25,5 @@
 				</aside>
 
 <?php endif; // end sidebar widget area ?>
-<?php dynamic_sidebar( 'sidebar-2' ); ?>
+
 </div>

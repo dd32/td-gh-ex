@@ -9,7 +9,7 @@ function green_customize_register($wp_customize){
 		'title'    		=> __('GREEN EYE OPTIONS', 'green-eye'),
         'description'   => ' <div class="infohead">' . __('We appreciate an','green-eye') . ' <a href="http://wordpress.org/support/view/theme-reviews/green-eye" target="_blank">' . __('Honest Review','green-eye') . '</a> ' . __('of this Theme if you Love our Work','green-eye') . '<br /> <br />
 
-' . __('Need More Features and Options including Exciting 3D Slide and 100+ Advanced Features? Try ','green-eye') . '<a href="' . esc_url('http://d5creation.com/theme/green-eye/') .'
+' . __('Need More Features and Options including Exciting 3D Slide and 100+ Advanced Features? Try ','green-eye') . '<a href="' . esc_url('https://d5creation.com/theme/green-eye/') .'
 " target="_blank"><strong>' . __('GREEN EYE Extend','green-eye') . '</strong></a><br /> <br /> 
         
         
