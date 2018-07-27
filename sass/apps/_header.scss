@@ -102,12 +102,9 @@ header{
 			text-align:center !important;
 			line-height:2;
 
-			@include mq($min-width: 768px) {
-				text-align:right !important;
-			}
-
 			@include mq($min-width: 992px) {
 				line-height:inherit;
+				text-align:right !important;
 			}
 		}
 

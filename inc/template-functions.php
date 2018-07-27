@@ -251,7 +251,7 @@ function bazzinga_home_banner_sec_business_fnc(){
 
 					while ( $bazzinga_banner_query->have_posts() ) : $bazzinga_banner_query->the_post();
 				 	?>
-					 	<div class="col-md-3">
+					 	<div class="col-lg-3">
 							<article class="homepage_banner_post" data-aos="fade-up"  data-aos-delay="<?php echo esc_attr( $business_header_delay );?>">
 								<div class="hero-post article-post"  >
 									<div class="p-md-4">
@@ -457,8 +457,9 @@ function bazzinga_home_services_sec_fnc(){
 					} ?>
 				</div>
 			</div>
-			<div class="row col-md-7">
-				<div class="services-list row pl-5 pt-4">
+			<div class="col-md-7">
+				<div class="row ">
+				<div class="services-list row pl-md-5 pt-md-4">
 			
 				<?php 
 					$services_cat_id = get_theme_mod(
@@ -467,7 +468,7 @@ function bazzinga_home_services_sec_fnc(){
 					if ($services_cat_id){
 					$bazzinga_services_query  = new WP_Query( array( 
 													'cat' => absint( $services_cat_id ) , 
-													'posts_per_page' => 8 
+													'posts_per_page' => 4 
 															) );
 						$bazz_service_delay = 0;
 					while ( $bazzinga_services_query->have_posts() ) : 
@@ -492,6 +493,7 @@ function bazzinga_home_services_sec_fnc(){
 						wp_reset_postdata(); 
 					} ?>
 				</div>
+			</div>
 			</div>
 		</div>
 	</div>
@@ -535,7 +537,7 @@ function bazzinga_home_porfolio_sec_fnc(){
 			<div class="col-md-10 offset-md-1">
 				<div class="portfolio-filter" data-aos="fade-up" data-aos-delay="100">
 					<ul class="portfolio_design nav m-auto align-items-center justify-content-center ">
-						<li class="show active" data-filter='*'><span class="links">ALL</span></li>
+						<li class="show active" data-filter='*'><span class="links"><?php esc_html_e('ALL','bazzinga'); ?></span></li>
 						<?php
 						$bazz_portfolio_cat = get_categories(
 						    array( 'parent' => absint( $portfolio_cat_id ) )
@@ -543,7 +545,7 @@ function bazzinga_home_porfolio_sec_fnc(){
 
 
 						foreach($bazz_portfolio_cat as $bazz_portofolio_cat_child){ ?>
-							<li class="show nav-item px-4   " data-filter='.<?php echo esc_attr($bazz_portofolio_cat_child->slug ); ?>'>
+							<li class="show nav-item px-4" data-filter='.<?php echo esc_attr($bazz_portofolio_cat_child->slug ); ?>'>
 								<span class="links"><?php echo esc_html( $bazz_portofolio_cat_child->name ); ?></span></li>
 						<?php } ?>
 					</ul>
@@ -638,7 +640,8 @@ function bazzinga_home_approach_sec_fnc(){
 		if( $bazz_myapproach_cat ){
 			?>
 			<div class="row">
-				<div class="row col-md-6 col-lg-7 order-12 order-md-1">
+				<div class=" col-md-6 col-lg-7 order-12 order-md-1">
+					<div class="row">
 					<?php
 					$bazzinga_myapproach_query  = new WP_Query( array( 
 														'cat' => absint( $bazz_myapproach_cat ) , 'posts_per_page' => 8) );
@@ -661,6 +664,7 @@ function bazzinga_home_approach_sec_fnc(){
 						</div>
 					<?php endwhile; wp_reset_postdata(); ?>
 				</div>
+			</div>
 				<div class="col-md-6 col-lg-5 order-1 order-md-12">
 					<div class="our-approach-desc if-bg">
 						<div class="sub-headline" data-aos="fade-up" ><?php 
@@ -772,7 +776,9 @@ function bazzinga_home_cta_sec_fnc(){
 					<?php
 					$bazz_contact_form = get_theme_mod( 'homepage_calltoaction_contact_form_shortcode' );
 					if( $bazz_contact_form ){
-						echo do_shortcode('[contact-form-7 id="'.absint($bazz_contact_form).'"]');
+						if( class_exists ('WPCF7') ){ // check if contact form 7 activated
+							echo do_shortcode('[contact-form-7 id="'.absint($bazz_contact_form).'"]');
+						}
 					}
 					?>
 			</div>
@@ -913,7 +919,7 @@ function bazzinga_home_newsletter_sec_fnc(){
 				
 				<div class="row">
 					<div class="col-md-5">
-						<div class=" py-3  px-5 "><h1><?php esc_html_e('Subscribe to newsletter', 'bazzinga'); ?> </h1></div>
+						<div class=" py-3  px-5 "><h1><?php esc_html_e('Newsletter Subscribe', 'bazzinga'); ?> </h1></div>
 					</div>
 					<div class="col-md-7">
 						<div class="homepage_newsletter-right py-5 px-5">
@@ -999,31 +1005,34 @@ Homepage footer botton
 if ( ! function_exists( 'bazzinga_footer_bottom_sec_fnc' ) ) :
 
 function bazzinga_footer_bottom_sec_fnc(){
-?>
-<section class="homepage_footer_bottom_wrap if-bg"> 
-	<div class="container">
-		<div class="row">
-			<?php if ( is_active_sidebar( 'footer-bottom-one' ) ) { ?>
-		 	<div class="col-md-4" data-aos="fade-up" >
-				<?php dynamic_sidebar( 'footer-bottom-one' ); ?>
-			</div>
-			<?php } ?>
 
-			<?php if ( is_active_sidebar( 'footer-bottom-two' ) ) { ?>
-		 	<div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
-				<?php dynamic_sidebar( 'footer-bottom-two' ); ?>
-			</div>
-			<?php } ?>
+	if ( is_active_sidebar( 'footer-bottom-one' ) || is_active_sidebar( 'footer-bottom-two' ) || is_active_sidebar( 'footer-bottom-three' ) ) {
+		?>
+		<section class="homepage_footer_bottom_wrap if-bg"> 
+			<div class="container">
+				<div class="row">
+					<?php if ( is_active_sidebar( 'footer-bottom-one' ) ) { ?>
+				 	<div class="col-md-4" data-aos="fade-up" >
+						<?php dynamic_sidebar( 'footer-bottom-one' ); ?>
+					</div>
+					<?php } ?>
 
-			<?php if ( is_active_sidebar( 'footer-bottom-three' ) ) { ?>
-		 	<div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-				<?php dynamic_sidebar( 'footer-bottom-three' ); ?>
+					<?php if ( is_active_sidebar( 'footer-bottom-two' ) ) { ?>
+				 	<div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
+						<?php dynamic_sidebar( 'footer-bottom-two' ); ?>
+					</div>
+					<?php } ?>
+
+					<?php if ( is_active_sidebar( 'footer-bottom-three' ) ) { ?>
+				 	<div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+						<?php dynamic_sidebar( 'footer-bottom-three' ); ?>
+					</div>
+					<?php } ?>
+				</div>
 			</div>
-			<?php } ?>
-		</div>
-	</div>
-</section>
-<?php
+		</section>
+		<?php
+	}
 } endif;
 
 /*
@@ -1038,7 +1047,7 @@ function bazzinga_navigation_header_fnc(){
 ?>
  
  
-<div class="navbar navbar-color-on-scroll   navbar-expand-lg navbar-transparent" id="bazz_header_nav">
+<div class="navbar navbar-color-on-scroll navbar-expand-lg navbar-transparent" id="bazz_header_nav">
  
 	<div class="container">
 
@@ -1066,7 +1075,8 @@ function bazzinga_navigation_header_fnc(){
 				<!-- Mobile menu toggle button (hamburger/x icon) -->
 				<input id="main-menu-state" type="checkbox" />
 				<label class="main-menu-btn" for="main-menu-state">
-					<span class="main-menu-btn-icon"></span> Toggle main menu visibility
+					<span class="main-menu-btn-icon"></span>
+					<?php esc_html_e('Toggle main menu visibility','bazzinga'); ?>
 				</label>
 				<?php
 					wp_nav_menu( array(

@@ -3,8 +3,8 @@
  Theme URI: https://blazethemes.com/themes/bazzinga
  Author: Blaze Themes
  Author URI: http://blazethemes.com/
- Description: Bazzinga is a pure blog type theme.
- Version: 1.0.0
+ Description: Bazzinga is a well-designed Multi Purpose WordPress Theme with HTML5 / CSS3 and Responsive design. Bazzinga Theme is suitable for any kind of corporations & businesses and its features serve as a good looking and informative business / corporate website. It has multiple homepage layouts with latest trendy animations.
+ Version: 1.0.1
  License: GNU General Public License v2 or later
  License URI: https://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: bazzinga
@@ -1157,14 +1157,10 @@ header .bazzinga_show_search {
   text-align: center !important;
   line-height: 2;
 }
-@media only screen  and (min-width: 768px) {
-  .top_heading .social-icons {
-    text-align: right !important;
-  }
-}
 @media only screen  and (min-width: 992px) {
   .top_heading .social-icons {
     line-height: inherit;
+    text-align: right !important;
   }
 }
 .top_heading .widget {
@@ -1449,7 +1445,7 @@ header .bazzinga_show_search {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.23);
 }
 .sm-clean > li > ul::before, .sm-clean > li > ul::after {
-  content: '';
+  content: none;
 }
 .sm-clean a .sub-arrow, .sm-clean ul a .sub-arrow {
   border-width: 0;
@@ -1488,7 +1484,7 @@ header .bazzinga_show_search {
 .bazz_sticky_menu .main-navigation > ul > li > a {
   color: #adb5bd;
 }
-.bazz_sticky_menu .main-navigation > ul .current-menu-item a {
+.bazz_sticky_menu .main-navigation > ul .current-menu-item > a {
   color: #d4364d;
 }
 .post-navigation {
@@ -1532,7 +1528,7 @@ header .bazzinga_show_search {
 }
 .post-navigation .nav-next a:after {
   margin-left: 1rem;
-  content: '\f061';
+  content: '\f30b';
 }
 .menu-toggle, .main-navigation.toggled ul {
   display: block;
@@ -1943,6 +1939,9 @@ header#masthead {
 .article-post article.hentry figure {
   position: relative;
   margin: 0;
+}
+.article-post article.hentry figure img {
+  width: 100%;
 }
 .article-post article.hentry .entry-meta {
   margin: 0 1.5rem;
@@ -2393,6 +2392,9 @@ a, a:hover {
 .homepage_portfolio_wrap h1 p {
   margin-bottom: 0;
 }
+.portfolio_items {
+  overflow: hidden;
+}
 .portfolio-filter {
   margin-bottom: 3rem;
 }
@@ -2679,7 +2681,7 @@ a, a:hover {
 }
 @media only screen  and (min-width: 768px) {
   .homepage_our_approach_wrap .our-approach-desc {
-    padding: 2rem 0 2rem 3rem;
+    padding: 2rem 0 2rem 2rem;
   }
 }
 @media only screen  and (min-width: 992px) {
@@ -2692,6 +2694,11 @@ a, a:hover {
   position: relative;
 }
 @media only screen  and (min-width: 768px) {
+  .homepage_our_approach_wrap .counter-number-list {
+    padding: 2rem 0 2rem 3rem;
+  }
+}
+@media only screen  and (min-width: 992px) {
   .homepage_our_approach_wrap .counter-number-list {
     padding: 2rem 0 2rem 6rem;
   }

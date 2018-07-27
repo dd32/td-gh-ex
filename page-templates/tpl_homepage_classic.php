@@ -32,7 +32,7 @@ if ( true == get_theme_mod( 'homepage_services_post_display', true ) ) :
 endif;
 ?>
 
-<!-- homepage-portfolio-section -->m
+<!-- homepage-portfolio-section -->
 <?php 
 if ( true == get_theme_mod( 'homepage_portfolio_section_display', true ) ) : 
 	do_action('bazzinga_home_porfolio_sec');

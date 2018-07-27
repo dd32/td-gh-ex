@@ -52,7 +52,7 @@
 		 
 
 		@include mq($min-width: 768px) {
-			padding:2rem 0 2rem 3rem;
+			padding:2rem 0 2rem 2rem;
 		}
 
 		@include mq($min-width: 992px) {
@@ -65,6 +65,11 @@
 		position:relative;
 
 		@include mq($min-width: 768px) {
+			padding:2rem 0 2rem 3rem;
+		}
+		
+
+		@include mq($min-width: 992px) {
 			padding:2rem 0 2rem 6rem;
 		}
 		

@@ -100,10 +100,16 @@ jQuery(document).ready(function($){
     });
   }
 
-  $containerport =  jQuery('.portfolio_items');
-    jQuery('.portfolio_items').isotope({
-      itemSelector: '.item',
-  });
+
+var forimg_load =  document.querySelector('.portfolio_items')
+  if(forimg_load) {
+    imagesLoaded( forimg_load, function() {
+      $containerport =  jQuery('.homepage_portfolio_wrap .portfolio_items');
+        jQuery('.homepage_portfolio_wrap .portfolio_items').isotope({
+          itemSelector: '.item',
+      });
+    });
+  }
 
  	jQuery('.portfolio_design').on( 'click', 'li:not(".no-link")', function() {
     var filterValue = jQuery(this).attr('data-filter');

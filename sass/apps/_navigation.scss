@@ -93,7 +93,7 @@
 }
 
 .sm-clean > li > ul::before, .sm-clean > li > ul::after{
-	content:'';
+	content:none;
 }
 
 .sm-clean a .sub-arrow,
@@ -159,7 +159,7 @@
 		}
 
 			.current-menu-item{
-				a{
+				> a{
 					color:$color__link;
 				}
 			}
@@ -226,7 +226,7 @@
 
 		    	&:after{
 		    		margin-left:1rem;
-		    		content: '\f061';
+		    		content: '\f30b';
 		    	}
 		    }
 	    }

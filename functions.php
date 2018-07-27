@@ -24,13 +24,13 @@ if ( ! function_exists( 'bazzinga_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 		add_image_size('bazzinga_post_image1', 350,340,true);
 		add_image_size('bazzinga_post_image2', 460,460,true);
-		add_image_size('bazzinga_services_image', 67,40,true);
+		add_image_size('bazzinga_services_image', 67,56,true);
 		add_image_size('bazzinga_our_approach_image', 51,41,true);
 		add_image_size('bazzinga_our_team_image', 196,211,true);
 		add_image_size('bazzinga_testimonials_image', 273,304,true);
 		add_image_size('bazzinga_blog_image', 400,300,true);
 		add_image_size('bazzinga_widget_post_img', 64,64,true);
-		add_image_size('bazzinga_about_team_img', 360,394,true);
+		add_image_size('bazzinga_about_team_img', 384,420,true);
 		add_image_size('bazzinga_about_subpage', 330,330,true);
 		add_image_size('bazzinga_about_innerimage', 487,487,true);
 
@@ -237,6 +237,8 @@ function bazzinga_scripts() {
 	
 	// lightslider js
 	wp_enqueue_script('lightslider-js', get_template_directory_uri() . '/inc/library/lightslider/lightslider.min.js', array(), '1.1.6' );
+
+	wp_enqueue_script( 'imagesloaded-js', get_template_directory_uri() . '/js/imageloaded.min.js', array( 'jquery' ), '1', true );
 
 	// bootstrap js
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/inc/library/bootstrap/js/bootstrap.min.js', array('jquery'), '4.0.0', true );
