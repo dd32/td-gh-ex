@@ -41,6 +41,11 @@ Activiation and Use
 
 == Changelog ==
 
+
+AyaMedicine 1.0.1, 2018-07-27
+------------------------------
+* changing slider images
+
 = 1.0.0 =
 * Initial Release
 
@@ -79,7 +84,7 @@ Source: https://github.com/dirkgroenen/jQuery-viewport-checker
 
 Screenshot Slider Image, Copyright stevepb
 Image is licensed under the terms of the CC0 Creative Commons license.
-Source: https://pixabay.com/en/thermometer-temperature-fever-flu-833085/
+Source: https://pixabay.com/en/schuessler-minerals-2867822/
 
 Default Slide #1 Image (images/slider/1.jpg), Copyright DarkoStojanovic
 Image is licensed under the terms of the CC0 Creative Commons license.
@@ -87,11 +92,11 @@ Source: https://pixabay.com/en/doctor-medical-medicine-health-563428/
 
 Default Slide #2 Image (images/slider/2.jpg), Copyright stevepb
 Image is licensed under the terms of the CC0 Creative Commons license.
-Source: https://pixabay.com/en/thermometer-temperature-fever-flu-833085/
+Source: https://pixabay.com/en/schuessler-minerals-2867822/
 
 Default Slide #3 Image (images/slider/3.jpg), Copyright typographyimages
 Image is licensed under the terms of the CC0 Creative Commons license.
-Source: https://pixabay.com/en/dna-microscopic-cell-gene-helix-1903318/
+Source: https://pixabay.com/en/cosmetic-oil-essential-oil-3493928/
 
 Default Slide #4 Image (images/slider/4.jpg), Copyright mohamed_hassan
 Image is licensed under the terms of the CC0 Creative Commons license.
