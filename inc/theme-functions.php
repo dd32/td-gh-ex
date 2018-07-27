@@ -128,6 +128,7 @@ add_action( 'admin_enqueue_scripts', 'best_wp_admin_scripts' );
 	require BEST_WP_THEME . '/inc/custom-header.php';
 	require BEST_WP_THEME . '/inc/woocommerce/woo-functions.php';
 	require BEST_WP_THEME . '/inc/social.php';
+	require BEST_WP_THEME . '/inc/pro/pro.php';
 
 /*********************************************************************************************************
 * Excerpt Read More

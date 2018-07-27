@@ -1,5 +1,8 @@
 Best WP Changelog
 
+= 1.1.7 - June 27 2018 =
+* ADDED: Premium Feature
+
 = 1.1.6 - June 24 2018 =
 * FIXED: Prefixed Issues
 * FIXED: Escaping Issues
