@@ -23,7 +23,7 @@
 			  echo do_shortcode(''.get_theme_mod('admela_after_header_ad_setting').'');
 			}
 			else {
-			  echo get_theme_mod('admela_after_header_ad_setting');
+			  echo esc_html(get_theme_mod('admela_after_header_ad_setting'));
 			}
 			?>
 			

@@ -20,7 +20,7 @@
 			  echo do_shortcode(''.get_theme_mod('admela_single_post_top_ad_setting').'');
 			}
 			else {
-			  echo get_theme_mod('admela_single_post_top_ad_setting');
+			  echo esc_html(get_theme_mod('admela_single_post_top_ad_setting'));
 			}
 			?>
 			</div> <!-- .admela_entrycontentad -->

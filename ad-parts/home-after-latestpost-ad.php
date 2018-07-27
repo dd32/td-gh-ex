@@ -21,7 +21,7 @@ if(!is_paged()){  // Displaying ad only on home page not to nagavigated pages.
 			  echo do_shortcode(''.get_theme_mod('admela_after_home_latestpost_ad_setting').'');
 			}
 			else {
-			  echo get_theme_mod('admela_after_home_latestpost_ad_setting');
+			  echo esc_html(get_theme_mod('admela_after_home_latestpost_ad_setting'));
 			}			
 			?>
 	        </div> <!-- .admela_entrycontentad -->
