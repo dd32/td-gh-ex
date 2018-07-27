@@ -2,7 +2,7 @@
 Akyl WordPress Theme 
 ------------------------------
 Copyright 2017 Akila Thiwanka : https://www.akilathiwanka.info/
-Version : 1.3
+Version : 1.4
 License : GPLv2 or later
 License URI : http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,8 +68,14 @@ All License: CC0 Creative Commons (http://creativecommons.org/publicdomain/zero/
 
 Changelog
 --------------
+= 1.4 =
+* Released: July 27, 2018
+* Fix spacing on menu icons
+* Add non-latin characters problem on title and post excerpt
+* Add print css
+
 = 1.2.1 =
-* Rekeased: July 16, 2018
+* Released: July 16, 2018
 
 = 1.0.2 =
 * Released: April 3, 2018

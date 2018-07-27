@@ -301,7 +301,7 @@ function akyl_excerpt_more( $more ) {
 	if ( is_admin() ) {
 		return $more;
 	}
-	return '<strong>. . .</strong>';
+	return '<strong>&hellip;</strong>';
 }
 add_filter( 'excerpt_more', 'akyl_excerpt_more' );
 

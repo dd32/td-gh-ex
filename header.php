@@ -31,7 +31,7 @@
 					$site_icon = get_theme_mod( 'custom_logo' );
 					the_custom_logo();
 				}else{
-					echo '<span class="first-letter">' . substr( get_bloginfo('name'), 0, 1 ) . '</span>';
+					echo '<span class="first-letter">' . mb_substr( get_bloginfo('name'), 0, 1 ) . '</span>';
 				}
 				?>
 			</a>

@@ -24,7 +24,7 @@
 
 					<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
 
-						<div class="col-md-4">
+						<div class="col-md-4 col-sm-6">
 							
 							<?php dynamic_sidebar( 'footer-1' ); ?>
 						
@@ -34,7 +34,7 @@
 
 					<?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
 
-						<div class="col-md-4">
+						<div class="col-md-4 col-sm-6">
 							
 							<?php dynamic_sidebar( 'footer-2' ); ?>
 						
@@ -44,7 +44,7 @@
 					
 					<?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
 
-						<div class="col-md-4">
+						<div class="col-md-4 col-sm-6">
 							
 							<?php dynamic_sidebar( 'footer-3' ); ?>
 						

@@ -109,25 +109,29 @@
 
 						<div class="post-meta-container">
 
-							<div class="author-image">
+							<div class="row">
+								<div class="author-image-container col-sm-3">
+									<div class="author-image">
 
-								<?php akyl_post_meta( 'user_avatar' ); ?>
+										<?php akyl_post_meta( 'user_avatar' ); ?>
 
+									</div>
+								</div>
+
+								<div class="author-bio col-sm-9 col-xs-12">
+
+									<h4>
+										<a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
+											<?php akyl_post_meta( 'author_name' ); ?>
+										</a>
+									</h4>
+
+									<p><?php akyl_post_meta( 'author_bio' ); ?></p>
+
+								</div>
+
+								<div class="clearfix"></div>
 							</div>
-
-							<div class="author-bio">
-
-								<h4>
-									<a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
-										<?php akyl_post_meta( 'author_name' ); ?>
-									</a>
-								</h4>
-
-								<p><?php akyl_post_meta( 'author_bio' ); ?></p>
-
-							</div>
-
-							<div class="clearfix"></div>
 
 						</div>
 						

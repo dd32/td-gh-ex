@@ -14,9 +14,8 @@ if ( post_password_required() ) {
 <div class="row">
 	<div class="post-comments">	
 		
-		<div id="comments" class="comments-area">
-			<?php if ( have_comments() ) : ?>
-
+		<?php if ( have_comments() ) : ?>
+			<div id="comments" class="comments-area">
 				<div class="comment-title-wrapper">
 					<h4 class="comments-title alignleft">
 						<?php 	
@@ -86,9 +85,8 @@ if ( post_password_required() ) {
 					'next_text' => __('Newer comments', 'akyl') . ' &rarr;'
 				) )
 				?>
-
-			<?php endif; ?>
-		</div><!-- #comments -->
+			</div><!-- #comments -->
+		<?php endif; ?>
 		
 		<?php if ( ! comments_open() && !is_page() ) : ?>
 		
