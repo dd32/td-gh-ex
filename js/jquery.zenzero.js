@@ -82,7 +82,7 @@
 		/*-----------------------------------------------------------------------------------*/
 		/*  Mobile Menu
 		/*-----------------------------------------------------------------------------------*/ 
-			if ($( window ).width() <= 1024) {
+			if ($( window ).width() <= 1025) {
 				$('.main-navigation').find('li').each(function(){
 					if($(this).children('ul').length > 0){
 						$(this).append('<span class="indicator"></span>');
@@ -100,7 +100,7 @@
 				});
 			}
 			$(window).resize(function() {
-				if ($( window ).width() > 1024) {
+				if ($( window ).width() > 1025) {
 					$('.main-navigation ul > li.menu-item-has-children, .main-navigation ul > li.page_item_has_children').find('> ul.sub-menu, > ul.children').slideDown(300);
 				}
 			});

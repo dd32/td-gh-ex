@@ -514,7 +514,7 @@ function zenzero_custom_css_styles() {
 	.nano > .nano-pane > .nano-slider {
 		background: rgba(<?php echo esc_html($r).', '.esc_html($g).', '.esc_html($b); ?>, 0.3);
 	}
-	@media screen and (max-width: 1024px) {
+	@media screen and (max-width: 1025px) {
 		.main-navigation ul li .indicator {
 			color: <?php echo esc_html($special_box_color_fourth); ?>;
 		}
