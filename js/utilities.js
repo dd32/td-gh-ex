@@ -1,93 +1,98 @@
-jQuery( document ).ready(function() {
+(function($) {
 
-	// add submenu icons class in main menu (only for large resolution)
-	if (fmuzz_IsLargeResolution()) {
-	
-		jQuery('.menu > li:has(".sub-menu")').addClass('level-one-sub-menu');
-		jQuery('.menu li ul li:has(".sub-menu")').addClass('level-two-sub-menu');										
-	}
+	"use strict";
 
-	jQuery('.menu-all-pages-container', jQuery('#navmain')).on('click', function(e) {
+	$( document ).ready(function() {
 
-		e.stopPropagation();
+		$('#header-spacer').height( $('#header-main-fixed').height() );
 
-		// toggle main menu
-		if (fmuzz_IsSmallResolution() || fmuzz_IsMediumResolution()) {
-
-			var parentOffset = jQuery(this).parent().offset(); 
-			
-			var relY = e.pageY - parentOffset.top;
+		if ($('#wpadminbar').length > 0) {
 		
-			if (relY < 36) {
-			
-				jQuery('ul:first-child', this).toggle(400);
+			$('#header-main-fixed').css('top', $('#wpadminbar').height() + 'px');
+			$('#wpadminbar').css('position', 'fixed');
+		}
+
+		$(window).scroll(function () {
+
+			if ($(this).scrollTop() > 100) {
+
+				$('.scrollup').fadeIn();
+
+			} else {
+
+				$('.scrollup').fadeOut();
+
 			}
-		}
+		});
+
+		$('.scrollup').click(function () {
+			
+			$("html, body").animate({
+				  scrollTop: 0
+			  }, 600);
+
+			return false;
+		});
+
+		fmuzz_mainMenuInit();
+
+		$('#navmain > div').on('click', function(e) {
+
+			e.stopPropagation();
+
+			// toggle main menu
+			if ( $(window).width() < 800 ) {
+
+				var parentOffset = $(this).parent().offset(); 
+				
+				var relY = e.pageY - parentOffset.top;
+			
+				if (relY < 36) {
+				
+					$('ul:first-child', this).toggle(400);
+				}
+			}
+		});
+
+		// re-init main menu on screen resize
+		$(window).resize(function () {
+	       
+	    	fmuzz_mainMenuClear();
+	    	fmuzz_mainMenuInit();
+		});
+
+		$(function(){
+			$('#camera_wrap').camera({
+				height: '300px',
+				loader: 'bar',
+				pagination: true,
+				thumbnails: false,
+				time: 4500
+			});
+		});
 	});
 
-	jQuery("#navmain .menu li").mouseleave( function() {
-		if (fmuzz_IsLargeResolution()) {
-			jQuery(this).children("ul").stop(true, true).css('display', 'block').slideUp(300);
-		}
-	});
-	
-	jQuery("#navmain .menu li").mouseenter( function() {
-		if (fmuzz_IsLargeResolution()) {
+	function fmuzz_mainMenuClear() {
 
-			var curMenuLi = jQuery(this);
-			jQuery("#navmain .menu > ul:not(:contains('#" + curMenuLi.attr('id') + "')) ul").hide();
+		if ( $(window).width() >= 800 ) {
 		
-			jQuery(this).children("ul").stop(true, true).css('display','none').slideDown(400);
+			$('#navmain > div > ul > li:has("ul")').removeClass('level-one-sub-menu');
+			$('#navmain > div > ul li ul li:has("ul")').removeClass('level-two-sub-menu');										
 		}
-	});
-	
-	if (jQuery('#wpadminbar').length > 0) {
-	
-		jQuery('#header-main').css('top', jQuery('#wpadminbar').height() + 'px');
-		jQuery('#wpadminbar').css('position', 'fixed');
+
+		if ( $('ul:first-child', $('#navmain > div') ).is( ":visible" ) ) {
+
+			$('ul:first-child', $('#navmain > div') ).css('display', '');
+		}
 	}
-	
-	jQuery('#camera_wrap').camera({
-		height: '300px',
-		loader: 'bar',
-		pagination: true,
-		thumbnails: false,
-		time: 4500
-	});
-});
 
-function fmuzz_IsSmallResolution() {
+	function fmuzz_mainMenuInit() {
 
-	return (jQuery(window).width() <= 360);
-}
+		if ( $(window).width() >= 800 ) {
+		
+			$('#navmain > div > ul > li:has("ul")').addClass('level-one-sub-menu');
+			$('#navmain > div > ul li ul li:has("ul")').addClass('level-two-sub-menu');										
+		}
+	}
 
-function fmuzz_IsMediumResolution() {
-	
-	var browserWidth = jQuery(window).width();
-
-	return (browserWidth > 360 && browserWidth < 800);
-}
-
-function fmuzz_IsLargeResolution() {
-
-	return (jQuery(window).width() >= 800);
-}
-
-jQuery(document).ready(function () {
-
-  jQuery(window).scroll(function () {
-	  if (jQuery(this).scrollTop() > 100) {
-		  jQuery('.scrollup').fadeIn();
-	  } else {
-		  jQuery('.scrollup').fadeOut();
-	  }
-  });
-
-  jQuery('.scrollup').click(function () {
-	  jQuery("html, body").animate({
-		  scrollTop: 0
-	  }, 600);
-	  return false;
-  });
-
-});
+})(jQuery);

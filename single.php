@@ -1,6 +1,10 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying all single posts and attachments
+ *
+ */
 
-<?php fmuzz_show_page_header_section(); ?>
+ get_header(); ?>
 
 <div id="main-content-wrapper">
 	<div id="main-content">
@@ -13,42 +17,32 @@
 				/*
 				 * includes a post format-specific template for single content
 				 */
-				get_template_part( 'content', get_post_format() );
+				get_template_part( 'template-parts/content' );
 				
 				// if comments are open or there's at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) {
 					comments_template();
 				}
 
-					wp_link_pages( array(
-						'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'fmuzz' ) . '</span>',
-						'after'       => '</div>',
-						'link_before' => '<span>',
-						'link_after'  => '</span>',
-					) );
+					the_post_navigation( array(
 
-?>
-					<div class="post-links">
-						<div class="left">
-							<?php previous_post_link(); ?>
-						</div>
-						<div class="right">
-							<?php next_post_link(); ?>
-						</div>
-					</div>
-
-		<?php
+                        'prev_text' => __( 'Previous Post: %title', 'fmuzz' ),
+                        'next_text' => __( 'Next Post: %title', 'fmuzz' ),
+                    ) );
 				
 				endwhile;
 	?>
 	<?php else :
 
 				// if no content is loaded, show the 'no found' template
-				get_template_part( 'content', 'none' );
+				get_template_part( 'template-parts/content', 'none' );
 
 		  endif; ?>
-	</div>
+
+	</div><!-- #main-content -->
 
 	<?php get_sidebar(); ?>
-</div>
+
+</div><!-- #main-content-wrapper -->
+
 <?php get_footer(); ?>

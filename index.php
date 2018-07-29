@@ -1,21 +1,27 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * e.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ */
 
-<?php if ( is_front_page() ) : ?>
+ get_header(); ?>
 
-		<?php fmuzz_display_slider(); ?>
-	
-	<?php else : ?>
-	
-		<?php fmuzz_show_page_header_section(); ?>
-
-<?php endif; ?>
-
-<div class="clear">
-</div>
+ <div class="clear">
+</div><!-- .clear -->
 
 <div id="main-content-wrapper">
+
 	<div id="main-content">
+
 	<?php if ( have_posts() ) : 
+
 				// starts the loop
 				while ( have_posts() ) :
 
@@ -24,22 +30,25 @@
 					/*
 					 * Include the post format-specific template for the content.
 					 */
-					get_template_part( 'content', get_post_format() );
+					get_template_part( 'template-parts/content' );
 
 				endwhile;
-	?>
-				<div class="navigation">
-					<?php fmuzz_show_pagenavi(); ?>
-				</div>  
-	<?php else :
+
+				the_posts_pagination( array(
+                        'prev_next' => '',
+                    ) );
+
+		  else :
 
 				// if no content is loaded, show the 'no found' template
-				get_template_part( 'content', 'none' );
+				get_template_part( 'template-parts/content', 'none' );
 			
 		  endif; ?>
-	</div>
+
+	</div><!-- #main-content -->
 
 	<?php get_sidebar(); ?>
-</div>
+
+</div><!-- #main-content-wrapper -->
 
 <?php get_footer(); ?>

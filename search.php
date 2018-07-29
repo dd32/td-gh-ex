@@ -1,40 +1,53 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying search results pages.
+ *
+ */
 
-<?php fmuzz_show_page_header_section(); ?>
+ get_header(); ?>
 
 <div id="main-content-wrapper">
+
 	<div id="main-content">
+
 		<div id="infoTxt">
-			<?php printf( __( 'You searched for "%s". Here are the results:', 'fmuzz' ),
+			<?php 
+				/* translators: %s: search query */
+				printf( esc_html__( 'You searched for "%s". Here are the results:', 'fmuzz' ),
 						get_search_query() );
 			?>
-		</div>
+		</div><!-- #infoTxt -->
 
-	<?php if ( have_posts() ) : 
+	<?php if ( have_posts() ) :
+
 				// starts the loop
 				while ( have_posts() ) :
 
 					the_post();
 
-					/*
-					 * include the post format-specific template for the content.
-					 */
-					get_template_part( 'content', get_post_format() );
+					/**
+				 	 * Run the loop for the search to output the results.
+				 	 */
+					get_template_part( 'template-parts/content', 'excerpt' );
 
 				endwhile;
-	?>
-				<div class="navigation">
-					<?php fmuzz_show_pagenavi(); ?>
-				</div>  
-	<?php else :
+	
+				the_posts_pagination( array(
+		                        'prev_next' => '',
+		                    ) );
+
+		else :
 
 				// if no content is loaded, show the 'no found' template
-				get_template_part( 'content', 'none' );
+				get_template_part( 'template-parts/content', 'none' );
 			
 		  endif;
 	?>
-	</div>
+
+	</div><!-- #main-content -->
 
 	<?php get_sidebar(); ?>
-</div>
+
+</div><!-- #main-content-wrapper -->
+
 <?php get_footer(); ?>
