@@ -440,3 +440,13 @@ function mp_artwork_post_thumbnail( $mp_artwork_post, $mp_artwork_page_template 
 		<?php
 	endif;
 }
+
+add_filter('body_class', 'mp_artwork_filter_body_class');
+function mp_artwork_filter_body_class($classes){
+
+    if(wp_is_mobile()){
+        $classes[] = 'mobile-device';
+    }
+
+    return $classes;
+}

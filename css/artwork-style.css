@@ -884,6 +884,11 @@ button, input[type="button"], input[type="submit"] {
     max-width: 100%;
   }
 }
+.main-header {
+  position: relative;
+  z-index: 2;
+}
+
 @media (min-width: 992px) {
   body:not(.show-header-always) .top-header {
     position: fixed;
@@ -1657,6 +1662,7 @@ button, input[type="button"], input[type="submit"] {
 
 .page-wrapper .work-wrapper {
   min-height: 100vh;
+  height: 100%;
 }
 
 .two-col-works .work-element {
@@ -2022,6 +2028,11 @@ iframe {
     padding: 1em 2em;
   }
 }
+body.mobile-device .page-wrapper .work-wrapper.work-wrapper-cover {
+  background-attachment: scroll;
+  background-size: auto 100%;
+}
+
 #infscr-loading {
   text-align: center;
   z-index: 100;
