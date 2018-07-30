@@ -36,7 +36,7 @@ function simplecatch_customize_register( $wp_customize ) {
 					'title' 		=> esc_html__( 'Responsive Design', 'simple-catch' ),
 					'description' 	=> '',
 				),
-				
+
 				'default_layout' => array(
 					'id' 			=> 'default_layout',
 					'title' 		=> esc_html__( 'Default Layout', 'simple-catch' ),
@@ -210,7 +210,7 @@ function simplecatch_customize_register( $wp_customize ) {
 			'default' 			=> $defaults['remove_footer_logo'],
 			'priority'			=> '28',
 		),
-		
+
 		//Header Right Sidebar Options
 		'disable_header_right_sidebar' => array(
 			'id' 				=> 'disable_header_right_sidebar',
@@ -477,7 +477,7 @@ function simplecatch_customize_register( $wp_customize ) {
 						            'step'  => 1,
 						        	)
 		),
-		
+
 
 		//Update Notifier
 		'disable_scrollup' => array(
@@ -1097,7 +1097,7 @@ add_action( 'customize_save', 'simplecatch_customize_preview' );
  * @since Simple Catch 1.4
  */
 function simplecatch_customize_scripts() {
-	wp_enqueue_script( 'simplecatch_customizer_custom', get_template_directory_uri() . '/functions/panel/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
+	wp_enqueue_script( 'simplecatch_customizer_custom', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'functions/panel/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'simplecatch_customize_scripts' );
 
@@ -1107,7 +1107,7 @@ add_action( 'customize_controls_enqueue_scripts', 'simplecatch_customize_scripts
  */
 function simplecatch_reset_data() {
 	$options = simplecatch_get_options();
-    
+
     if ( '1' == $options['reset_all_settings'] ) {
     	remove_theme_mods();
 
@@ -1120,7 +1120,7 @@ function simplecatch_reset_data() {
     }
 
 	$defaults = simplecatch_defaults_options();
-    
+
     if ( '1' == $options['reset_color'] ) {
 		$new_val['color_scheme']              = $defaults['color_scheme'];
 		$new_val['heading_color']             = $defaults['heading_color'];
@@ -1138,7 +1138,7 @@ function simplecatch_reset_data() {
 		remove_theme_mod( 'background_color' );
 
 		update_option( 'simplecatch_options', array_merge( $options, $new_val ) );
-		
+
 		// Flush out all transients	on reset
         simplecatch_flush_transients();
     }

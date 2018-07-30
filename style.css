@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/simple-catch
 Author: Catch Themes Team
 Author URI: https://catchthemes.com
 Description: Simple Catch is a Highly Customizable Simple, Clean and Responsive WordPress Theme for anyone looking to give their website a professional look. It's easy customization through WordPress theme customizer, ultra-readable typography, large thumbnail and featured slider makes it outstanding. It comes with a wide variety of options: like Custom Menu, Custom Widgets, Custom Layouts, Featured Post Slider, Header Logo, Footer Logo, Fav Icon, Header Image, Background Image, Social Icons, Color Schemes, Custom CSS Styles, Excerpt settings and scroll up. This theme is translation ready and also currently translated in Polish, Russian, Finnish, French, Dutch, Greek, Croatian, Chinese, Spanish, German, Italian, Danish, Czech, Hungarian and Brazilian Portuguese languages. Check out Theme Instructions at https://catchthemes.com/theme-instructions/simple-catch/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/simplecatch/
-Version: 3.6
+Version: 3.6.1
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: simple-catch
@@ -123,9 +123,9 @@ ul, ol {
 ul a, ol a {
 	color: #666666;
 }
-ul a:hover, 
+ul a:hover,
 ol a:hover,
-ul a:focus, 
+ul a:focus,
 ol a:focus {
 	text-decoration: none;
 }
@@ -246,7 +246,7 @@ blockquote cite {
    font-style: italic;
    padding: 0 22px 0 12px;
 }
-.breadcrumb ul li a:hover, 
+.breadcrumb ul li a:hover,
 .breadcrumb ul li a:focus,
 .breadcrumb ul li.current_item  {
 	background-position:right 0px;
@@ -326,11 +326,11 @@ input[type="reset"], input[type="button"], input[type="submit"] {
 	width: inherit;
 	cursor: pointer;
 }
-input[type="reset"]:hover, 
-input[type="button"]:hover, 
+input[type="reset"]:hover,
+input[type="button"]:hover,
 input[type="submit"]:hover,
-input[type="reset"]:focus, 
-input[type="button"]:focus, 
+input[type="reset"]:focus,
+input[type="button"]:focus,
 input[type="submit"]:focus {
 	 background: url(images/submit-bg-hover.jpg) repeat-x;
 }
@@ -339,8 +339,8 @@ a {
 	color: #000;
 	text-decoration: none;
 }
-a:focus, 
-a:active, 
+a:focus,
+a:active,
 a:hover {
 	text-decoration: none;
 	color: #000;
@@ -949,8 +949,8 @@ ul.social-profile li.email a:focus {
 	float: left;
 	white-space: nowrap;
 }
-#access ul li a:hover, 
-#access ul li a:focus, 
+#access ul li a:hover,
+#access ul li a:focus,
 #access ul li.current-menu-item a, #access ul li:hover > a,
 #access ul li.current-menu-item a, #access ul li:focus > a {
 	background-color: #444;
@@ -1008,10 +1008,10 @@ ul.social-profile li.email a:focus {
 #access ul li.current-menu-item .sub-menu li {
 	margin-bottom: 0;
 }
-#access ul li ul li a:hover, 
+#access ul li ul li a:hover,
 #access ul li ul li:hover > a,
 #access ul li.current-menu-item .sub-menu a:hover,
-#access ul li ul li a:focus, 
+#access ul li ul li a:focus,
 #access ul li ul li:focus > a,
 #access ul li.current-menu-item .sub-menu a:focus {
 	background-color: #333;
@@ -1079,7 +1079,7 @@ ul.social-profile li.email a:focus {
 	text-indent: -9999px;
 }
 #controllers a:hover,
-#controllers a:focus,  
+#controllers a:focus,
 #controllers a.active {
 	background-color:#000;
 }
@@ -1454,8 +1454,8 @@ ul.social-profile li.email a:focus {
 .image-attachment div.attachment a img {
 	border-color: #f9f9f9;
 }
-.image-attachment div.attachment a:focus img, 
-.image-attachment div.attachment a:hover img, 
+.image-attachment div.attachment a:focus img,
+.image-attachment div.attachment a:hover img,
 .image-attachment div.attachment a:active img {
 	border-color: #ddd;
 	background: #fff;
@@ -1585,8 +1585,8 @@ a.comment-reply-link {
 	padding: 0 8px;
 	text-decoration: none;
 }
-a.comment-reply-link:hover, 
-a.comment-reply-link:focus, 
+a.comment-reply-link:hover,
+a.comment-reply-link:focus,
 a.comment-reply-link:active {
 	background: #888;
 	color: #fff;
@@ -1638,8 +1638,8 @@ a.comment-reply-link > span {
 	text-transform: uppercase;
 	top: 1.1em;
 }
-#cancel-comment-reply-link:focus, 
-#cancel-comment-reply-link:active, 
+#cancel-comment-reply-link:focus,
+#cancel-comment-reply-link:active,
 #cancel-comment-reply-link:hover {
 	color: #ff4b33;
 }
@@ -1679,23 +1679,23 @@ p.comment-form-comment {
     margin-bottom: 30px;
 }
 /* Image borders */
-img[class*="align"], 
+img[class*="align"],
 img[class*="wp-image-"] {/* Add fancy borders to all WordPress-added images but not things like badges and icons and the like */
 	border: 1px solid #ddd;
  	padding: 6px;
 	max-width: 97.5%;
 }
-a:focus img[class*="align"], 
-a:hover img[class*="align"], 
-a:active img[class*="align"], 
-a:focus img[class*="wp-image-"], 
-a:hover img[class*="wp-image-"], 
+a:focus img[class*="align"],
+a:hover img[class*="align"],
+a:active img[class*="align"],
+a:focus img[class*="wp-image-"],
+a:hover img[class*="wp-image-"],
 a:active img[class*="wp-image-"] {/* Add some useful style to those fancy borders for linked images ... */
 	background: #eee;
 	border-color: #bbb;
 }
 .wp-caption a:focus img,
-.wp-caption a:active img, 
+.wp-caption a:active img,
 .wp-caption a:hover img {/* ... including captioned images! */
 	background: #fff;
 	border-color: #ddd;
@@ -2035,23 +2035,30 @@ ul.default-wp-page li.next a {
 /* =Jetpack Infinite Scroll
 -------------------------------------------------------------- */
 
-#primary #infinite-handle {
+.site-main #infinite-handle {
 	clear: both;
 	margin-bottom: 30px;
 	text-align: center;
 	width: 100%;
 }
-#primary #infinite-handle span {
-    background-coor:  #333;
-    display: block;
-    padding: 10px 0;
-    width: 100%;
-}
-#primary #infinite-handle span:hover,
-#primary #infinite-handle span:focus {
-	background-color: #000;
+
+.site-main #infinite-handle span {
+	background-color: transparent;
+	display: inline-block;
+	padding: 0;
 }
 
+.site-main #infinite-handle span button {
+    background-color: #444;
+    color: #fff;
+    display: inline;
+    padding: 10px 30px;
+}
+
+.site-main #infinite-handle span button:hover,
+.site-main #infinite-handle span button:focus {
+	background-color: #000;
+}
 
 /* =Scrollup
 ----------------------------------------------- */

@@ -37,25 +37,25 @@ $sidebar_layout = array(
 					'id'		=> 'simplecatch-sidebarlayout',
 					'value' 	=> 'no-sidebar',
 					'label' 	=> __( 'No sidebar', 'simple-catch' ),
-					'thumbnail' => get_template_directory_uri() . '/images/no-sidebar.png'
+					'thumbnail' => trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/no-sidebar.png'
 				),
 	'no-sidebar-full-width' => array(
 					'id'		=> 'simplecatch-sidebarlayout',
 					'value' 	=> 'no-sidebar-full-width',
 					'label' 	=> __( 'No sidebar, Full Width', 'simple-catch' ),
-					'thumbnail' => get_template_directory_uri() . '/images/no-sidebar-fullwidth.png'
+					'thumbnail' => trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/no-sidebar-fullwidth.png'
 				),
 	'left-sidebar' => array(
 					'id'		=> 'simplecatch-sidebarlayout',
 					'value' 	=> 'left-sidebar',
 					'label' 	=> __( 'Left sidebar', 'simple-catch' ),
-					'thumbnail' => get_template_directory_uri() . '/images/left-sidebar.png'
+					'thumbnail' => trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/left-sidebar.png'
 				),
 	'right-sidebar' => array(
 					'id' => 'simplecatch-sidebarlayout',
 					'value' => 'right-sidebar',
 					'label' => __( 'Right sidebar', 'simple-catch' ),
-					'thumbnail' => get_template_directory_uri() . '/images/right-sidebar.png'
+					'thumbnail' => trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/right-sidebar.png'
 				)
 );
 
