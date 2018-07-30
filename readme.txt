@@ -60,6 +60,11 @@ Icons
 
 == Changelog ==
 
+= 1.1 (Released: July 30, 2018) =
+* Added: Header Image Support for Testimonials, Portfolio, Services and Featured Content via Essential Content Types
+* Updated: Upgrade to pro button css
+* Updated: Screenshot
+
 = 1.0 (Released: June 10, 2018) =
 * Added: Core Privacy Policy link support in footer
 * Bug Fixed: svg.icons.svg syntax

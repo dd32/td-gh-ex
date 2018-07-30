@@ -27,17 +27,29 @@ if ( ! function_exists( 'adonis_featured_image' ) ) :
 			$jetpack_options = get_theme_mod( 'jetpack_testimonials' );
 
 			if ( isset( $jetpack_options['featured-image'] ) && '' !== $jetpack_options['featured-image'] ) {
-				return wp_get_attachment_image_src( (int) $jetpack_options['featured-image'], $thumbnail );
+				$image = wp_get_attachment_image_src( (int) $jetpack_options['featured-image'], $thumbnail );
+				return $image[0];
 			} else {
 				return false;
 			}
-		} elseif ( is_post_type_archive( 'jetpack-portfolio' ) ) {
-			$jetpack_portfolio_featured_image = get_option( 'jetpack_portfolio_featured_image' );
+		} elseif ( is_post_type_archive( 'jetpack-portfolio' ) || is_post_type_archive( 'featured-content' ) || is_post_type_archive( 'ect-service' ) ) {
+			$option = '';
 
-			if ( '' !== $jetpack_portfolio_featured_image ) {
-				return wp_get_attachment_image_src( (int) $jetpack_portfolio_featured_image, $thumbnail );
+			if ( is_post_type_archive( 'jetpack-portfolio' ) ) {
+				$option = 'jetpack_portfolio_featured_image';
+			} elseif ( is_post_type_archive( 'featured-content' ) ) {
+				$option = 'featured_content_featured_image';
+			} elseif ( is_post_type_archive( 'ect-service' ) ) {
+				$option = 'ect_service_featured_image';
+			}
+
+			$featured_image = get_option( $option );
+
+			if ( '' !== $featured_image ) {
+				$image = wp_get_attachment_image_src( (int) $featured_image, $thumbnail );
+				return $image[0];
 			} else {
-				return false;
+				return get_header_image();
 			}
 		} elseif ( is_header_video_active() && has_header_video() ) {
 			return true;
