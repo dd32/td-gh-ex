@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Quality\n"
-"POT-Creation-Date: 2018-06-19 18:09+0530\n"
-"PO-Revision-Date: 2018-06-19 18:09+0530\n"
+"POT-Creation-Date: 2018-07-26 14:17+0530\n"
+"PO-Revision-Date: 2018-07-26 14:16+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -100,7 +100,7 @@ msgstr ""
 msgid "Leave a Reply"
 msgstr ""
 
-#: content.php:29 functions.php:99 index-blog.php:48
+#: content.php:29 functions.php:96 index-blog.php:48
 msgid "Read More"
 msgstr ""
 
@@ -108,15 +108,15 @@ msgstr ""
 msgid "In"
 msgstr ""
 
-#: functions.php:58
+#: functions.php:55
 msgid "Page"
 msgstr ""
 
-#: functions.php:72
+#: functions.php:69
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:120
+#: functions.php:117
 msgid ""
 "Important Notice: We hope you are enjoying this theme, and we thank you for "
 "updating it. Please install our Webriti Companion plugin to manage your "
@@ -125,7 +125,7 @@ msgid ""
 "plugin from there."
 msgstr ""
 
-#: functions.php:121
+#: functions.php:118
 msgid "Go To Customizer"
 msgstr ""
 
@@ -382,6 +382,7 @@ msgid "Copyright text"
 msgstr ""
 
 #: functions/customizer/customizer-general.php:11
+#: functions/customizer/customizer-general.php:47
 msgid "Theme Color"
 msgstr ""
 
@@ -1076,6 +1077,36 @@ msgstr ""
 #: theme_setup_data.php:54
 msgid "Business cards"
 msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://webriti.com/quality-lite-version-details-page/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Quality is a perfect theme to create a corporate/business website. It boasts "
+"3 beautifully designed page templates, namely Business Page, Full-width, and "
+"Blog. Quality is built on the Bootstrap CSS Framework, which makes it fully "
+"responsive on all devices, and is translation-ready. To enable the Business "
+"template, just create a normal WordPress page and select Business Template "
+"as page template. The Business template can be further personalized in the "
+"customizer. Each section in the Business Template is designed according to "
+"current business requirements, with sections like Banner, Services, Projects "
+"etc. You can use this theme for any type of activity. Quality supports "
+"famous plugins like Contact Form 7, to create your contact page or any type "
+"of forms you might want to add. Quality also gives a clean and appealing "
+"look to the WordPress core gallery feature. See Quality's demo at http://"
+"webriti.com/quality-free"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Webriti"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://webriti.com/"
+msgstr ""
+
 
 #. Theme URI of the plugin/theme
 msgid "https://webriti.com/quality-lite-version-details-page/"

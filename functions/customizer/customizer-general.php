@@ -34,10 +34,18 @@ public $type = 'new_menu';
 }
 
 /* General Section */
-	$wp_customize->add_section( 'general_options', array(
+	$wp_customize->add_panel( 'general_options', array(
 		'priority'       => 400,
 		'capability'     => 'edit_theme_options',
 		'title'      => __('General setting', 'quality'),
+	) );
+	
+	
+	$wp_customize->add_section( 'theme_color', array(
+		'priority'       => 400,
+		'capability'     => 'edit_theme_options',
+		'title'      => __('Theme Color', 'quality'),
+		'panel'  => 'general_options',
 	) );
 	
 	
@@ -52,7 +60,7 @@ public $type = 'new_menu';
 	$wp_customize->add_control(new WP_color_Customize_Control($wp_customize,'quality_pro_options[style_sheet]',
 	array(
         'label'   => 'Theme Color Schemes',
-        'section' => 'general_options',
+        'section' => 'theme_color',
 		'type' => 'radio',
 		'choices' => array(
 			'default.css' => 'blue.png',

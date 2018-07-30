@@ -153,6 +153,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 ChangLog:
+@Version 2.1
+1. Remove demo preview image.
 @Version 2.0
 1. Added  Testimonial Section.
 2. Update Whole Theme Design. 
