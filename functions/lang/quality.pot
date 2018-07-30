@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Quality\n"
-"POT-Creation-Date: 2018-07-26 14:17+0530\n"
-"PO-Revision-Date: 2018-07-26 14:16+0530\n"
+"POT-Creation-Date: 2018-07-30 13:55+0530\n"
+"PO-Revision-Date: 2018-07-30 13:55+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1095,8 +1095,8 @@ msgid ""
 "etc. You can use this theme for any type of activity. Quality supports "
 "famous plugins like Contact Form 7, to create your contact page or any type "
 "of forms you might want to add. Quality also gives a clean and appealing "
-"look to the WordPress core gallery feature. See Quality's demo at http://"
-"webriti.com/quality-free"
+"look to the WordPress core gallery feature. See Quality's demo at https://"
+"demo.webriti.com/?theme=Quality"
 msgstr ""
 
 #. Author of the plugin/theme
@@ -1106,7 +1106,6 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://webriti.com/"
 msgstr ""
-
 
 #. Theme URI of the plugin/theme
 msgid "https://webriti.com/quality-lite-version-details-page/"

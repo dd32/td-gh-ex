@@ -47,11 +47,11 @@ $customizer_url = admin_url() . 'customize.php' ;
 			<div class="col-md-6"> 
 				<div class="quality-tab-pane-half quality-tab-pane-first-half">
 
-					<a href="<?php echo esc_url('http://webriti.com/quality-free/'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-desktop info-icon"></div>
+					<a href="<?php echo esc_url('https://demo.webriti.com/?theme=Quality'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-desktop info-icon"></div>
 					<p class="info-text"><?php echo __('Lite Demo','quality'); ?></p></a>
 					
 					
-					<a href="<?php echo esc_url('http://webriti.com/quality'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-book-alt info-icon"></div>
+					<a href="<?php echo esc_url('https://demo.webriti.com/?theme=Quality%20Pro'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-book-alt info-icon"></div>
 					<p class="info-text"><?php echo __('PRO Demo','quality'); ?></p></a>
 					
 					
@@ -65,7 +65,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 					<a href="<?php echo esc_url('https://wordpress.org/support/view/theme-reviews/quality'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-smiley info-icon"></div>
 					<p class="info-text"><?php echo __('Your feedback is valuable to us','quality'); ?></p></a>
 					
-					<a href="<?php echo esc_url('https://wordpress.org/support/theme/quality'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-sos info-icon"></div>
+					<a href="<?php echo esc_url('https://help.webriti.com/category/themes/quality/'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-sos info-icon"></div>
 					<p class="info-text"><?php echo __('Premium Theme Support','quality'); ?></p></a>
 				</div>
 			</div>
@@ -83,10 +83,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 			</div>
 			
 			
-			
-			
 		</div>	
-		
 		
 		
 		

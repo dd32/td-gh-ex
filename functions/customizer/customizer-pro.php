@@ -45,7 +45,7 @@ class WP_multi_page_Customize_Control extends WP_Customize_Control {
     public function render_content() {
     ?>
 	  <div class="pro-box">
-     <a href="<?php echo esc_url('http://webriti.com/demo/wp/quality/');?>" target="_blank" class="multiple" id="review_pro"><?php _e( 'View PRO Demo','quality' ); ?></a>
+     <a href="<?php echo esc_url('https://demo.webriti.com/?theme=Quality%20Pro');?>" target="_blank" class="multiple" id="review_pro"><?php _e( 'View PRO Demo','quality' ); ?></a>
 	 </div>
     <?php
     }
