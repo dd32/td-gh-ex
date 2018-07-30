@@ -51,6 +51,13 @@
 		} );
 	} );
 
+	// Read More Label
+	wp.customize( 'bandana_read_more_label', function( value ) {
+		value.bind( function( to ) {
+			$( '.more-link-wrapper .more-link' ).html( to );
+		} );
+	} );
+
 	// Copyright Control
 	wp.customize( 'bandana_copyright', function( value ) {
 		value.bind( function( to ) {

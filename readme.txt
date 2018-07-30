@@ -1,7 +1,7 @@
 === Bandana ===
 Contributors: DesignOrbital.com
 Requires at least: WordPress 4.7
-Tested up to: WordPress 4.9.4
+Tested up to: WordPress 4.9.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,6 +90,13 @@ Licensed under the terms of CC0
 Source: https://unsplash.com/
 
 == Changelog ==
+
+= 1.3.2 =
+Released: July 30, 2018
+
+* New option `Read More Label` added in `Theme Options > General Options` panel.
+* Header Text Color code updated.
+* POT file updated.
 
 = 1.3 =
 Released: March 29, 2018

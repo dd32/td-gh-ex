@@ -84,6 +84,20 @@ function bandana_customize_register ( $wp_customize ) {
 		),
 	) );
 
+	// Read More Label
+	$wp_customize->add_setting ( 'bandana_read_more_label', array (
+		'default'           => bandana_default( 'bandana_read_more_label' ),
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control ( 'bandana_read_more_label', array (
+		'label'       => esc_html__( 'Read More Label', 'bandana' ),
+		'section'     => 'bandana_general_options',
+		'priority'    => 2,
+		'type'        => 'text',
+	) );
+
 	/**
 	 * Footer Section
 	 */

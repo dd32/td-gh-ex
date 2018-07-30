@@ -37,7 +37,7 @@
 		<?php endif; ?>
 
 		<div class="more-link-wrapper">
-			<a href="<?php echo esc_url( get_permalink() ); ?>" class="more-link"><?php esc_html_e( 'Continue Reading', 'bandana' ); ?></a>
+			<a href="<?php echo esc_url( get_permalink() ); ?>" class="more-link"><?php printf( '%1$s', esc_html( bandana_mod( 'bandana_read_more_label' ) ) ); ?></a>
 		</div><!-- .more-link-wrapper -->
 
 	</div><!-- .entry-content-wrapper -->
