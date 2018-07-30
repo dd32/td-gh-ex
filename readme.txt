@@ -3,8 +3,8 @@
 Contributors: specia
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.9.7
-Stable tag: 1.0.8
-Version: 1.0.8
+Stable tag: 1.0.9
+Version: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, editor-style, blog, photography, portfolio
@@ -35,6 +35,9 @@ Source: https://pixabay.com/
 License: CC0 License
 
 ##Changelog
+version 1.0.9
+* Social Media Improvement Test against Parent theme
+
 version 1.0.8
 * WordPress 4.9.7 Compatibility Tested.
 
