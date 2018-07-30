@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Set our theme version.
-define( 'ASAGI_VERSION', '1.0.5' );
+define( 'ASAGI_VERSION', '1.0.6' );
 
 if ( ! function_exists( 'asagi_setup' ) ) {
 	add_action( 'after_setup_theme', 'asagi_setup' );
@@ -29,7 +29,7 @@ if ( ! function_exists( 'asagi_setup' ) ) {
 		add_theme_support( 'post-formats', array( 'aside', 'image', 'quote', 'link', 'status' ) );
 		add_theme_support( 'woocommerce' );
 		add_theme_support( 'title-tag' );
-		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
+		add_theme_support( 'html5', array( 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		add_theme_support( 'custom-logo', array(

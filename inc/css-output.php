@@ -661,13 +661,6 @@ if ( ! function_exists( 'asagi_spacing_css' ) ) {
 		$css->set_selector( '.site-info' );
 		$css->add_property( 'padding', asagi_padding_css( $spacing_settings[ 'footer_top' ], $spacing_settings[ 'footer_right' ], $spacing_settings[ 'footer_bottom' ], $spacing_settings[ 'footer_left' ] ), asagi_padding_css( $og_defaults[ 'footer_top' ], $og_defaults[ 'footer_right' ], $og_defaults[ 'footer_bottom' ], $og_defaults[ 'footer_left' ] ) );
 
-		// Add spacing back where dropdown arrow should be
-		// Old versions of WP don't get nice things
-		if ( version_compare( $GLOBALS['wp_version'], '4.4', '<' ) ) {
-			$css->set_selector( '.main-navigation .main-nav ul li.menu-item-has-children>a, .secondary-navigation .main-nav ul li.menu-item-has-children>a' );
-			$css->add_property( 'padding-right', absint( $spacing_settings[ 'menu_item' ] ), absint( $og_defaults[ 'menu_item' ] ), 'px' );
-		}
-
 		$output = '';
 		// Get color settings
 		$asagi_settings = wp_parse_args(
@@ -723,6 +716,7 @@ add_action( 'wp_enqueue_scripts', 'asagi_enqueue_dynamic_css', 50 );
  */
 function asagi_enqueue_dynamic_css() {
 	$css = asagi_base_css() . asagi_font_css() . asagi_advanced_css() . asagi_spacing_css() . asagi_no_cache_dynamic_css();
+	$css = wp_kses_post( $css );
 
 	wp_add_inline_style( 'asagi-style', $css );
 }

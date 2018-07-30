@@ -111,29 +111,6 @@ if ( ! function_exists( 'asagi_customize_register' ) ) {
 			)
 		);
 
-		// Only show this option if we're not using WordPress 4.5
-		if ( ! function_exists( 'the_custom_logo' ) ) {
-			$wp_customize->add_setting(
-				'asagi_settings[logo]',
-				array(
-					'type' => 'option',
-					'sanitize_callback' => 'esc_url_raw'
-				)
-			);
-
-			$wp_customize->add_control(
-				new WP_Customize_Image_Control(
-					$wp_customize,
-					'asagi_settings[logo]',
-					array(
-						'label' => __( 'Logo', 'asagi' ),
-						'section' => 'title_tagline',
-						'settings' => 'asagi_settings[logo]'
-					)
-				)
-			);
-		}
-
 		$wp_customize->add_setting(
 			'asagi_settings[retina_logo]',
 			array(

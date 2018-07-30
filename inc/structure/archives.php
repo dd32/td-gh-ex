@@ -14,11 +14,7 @@ if ( ! function_exists( 'asagi_archive_title' ) ) {
 	 * Build the archive title
 	 *
 	 */
-	function asagi_archive_title() {
-		if ( ! function_exists( 'the_archive_title' ) ) {
-			return;
-		}
-		?>
+	function asagi_archive_title() { ?>
 		<header class="page-header<?php if ( is_author() ) echo ' clearfix';?>">
 			<?php
 			/**

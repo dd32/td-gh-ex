@@ -58,13 +58,11 @@ if ( ! function_exists( 'asagi_content_nav' ) ) {
 					<div class="nav-next"><span class="next" title="<?php esc_attr_e( 'Next', 'asagi' );?>"><?php previous_posts_link( __( 'Newer posts', 'asagi' ) ); ?></span></div>
 				<?php endif;
 
-				if ( function_exists( 'the_posts_pagination' ) ) {
-					the_posts_pagination( array(
-						'mid_size' => apply_filters( 'asagi_pagination_mid_size', 1 ),
-						'prev_text' => apply_filters( 'asagi_previous_link_text', __( '&larr; Previous', 'asagi' ) ),
-						'next_text' => apply_filters( 'asagi_next_link_text', __( 'Next &rarr;', 'asagi' ) ),
-					) );
-				}
+				the_posts_pagination( array(
+					'mid_size' => apply_filters( 'asagi_pagination_mid_size', 1 ),
+					'prev_text' => apply_filters( 'asagi_previous_link_text', __( '&larr; Previous', 'asagi' ) ),
+					'next_text' => apply_filters( 'asagi_next_link_text', __( 'Next &rarr;', 'asagi' ) ),
+				) );
 
 				/**
 				 * asagi_paging_navigation hook.
