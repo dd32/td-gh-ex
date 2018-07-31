@@ -43,11 +43,3 @@ function advance_blog_infinite_scroll_render() {
 		endif;
 	}
 }
-
-function advance_blog_social_menu() {
-	if ( ! function_exists( 'jetpack_social_menu' ) ) {
-		return;
-	} else {
-		jetpack_social_menu();
-	}
-}

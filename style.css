@@ -4,7 +4,7 @@ Theme URI: https://wpinterface.com/themes/advance-blog/
 Author: WPInterface
 Author URI: http://wpinterface.com
 Description: Advance Blog is a perfect, modern, clean, responsive and retina-ready WordPress blog theme also suitable for magazines, newspapers, or review sites. The theme comes with several awesome features, including a featured posts slideshow, a color options, a magazine homepage template, and a two columned layout that makes your site in flash. A clean and elegant design helps you to deliever or present your content in a stilish way. Easy customization options with use of customizer API can give you an advance features to obtain a perfect looking site.
-Version: 1.0.7
+Version: 1.0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-blog
@@ -662,9 +662,6 @@ table {
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
-.mastbar {
-    padding-top: 30px;
-}
 
 body .jetpack-social-navigation-genericons a:before {
     font-size: 28px;
@@ -840,11 +837,7 @@ body .jetpack-social-navigation-genericons a:before {
 
 .search-icon {
     cursor: pointer;
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    transform: rotate(-90deg);
+    font-size: 18px;
 }
 
 .popup-search-wrapper {
@@ -912,7 +905,7 @@ body .jetpack-social-navigation-genericons a:before {
 }
 
 .main-navigation .menu ul li i {
-    padding: 0 10px;
+    padding-left: 10px;
     display: inline-block;
     line-height: 100%;
 }
@@ -923,6 +916,7 @@ body .jetpack-social-navigation-genericons a:before {
     }
 
     .main-navigation .menu,
+    .main-navigation .social-icons,
     .main-navigation .nav-icon {
         display: inline-block;
         vertical-align: middle;
@@ -1186,18 +1180,18 @@ body .jetpack-social-navigation-genericons a:before {
     display: table-cell;
     line-height: 1;
     vertical-align: middle;
-    font: normal normal normal 44px/1 LineAwesome;
+    font: normal normal normal 44px/1 "Ionicons";
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 .nav-previous:before {
-    content: "\f11a";
+    content: "\f3d5";
 }
 
 .nav-next:after {
-    content: "\f11b";
+    content: "\f3d6";
 }
 
 .nav-previous a,
@@ -1914,7 +1908,7 @@ input[type="submit"],
 
 .post .style-archive header:before {
     color: #949494;
-    font: normal normal normal 16px/1 LineAwesome;
+    font: normal normal normal 16px/1 "Ionicons";
     font-size: inherit;
     text-decoration: inherit;
     text-rendering: optimizeLegibility;
@@ -1928,9 +1922,9 @@ input[type="submit"],
 }
 
 .sticky header:after {
-    content: "\f14f";
+    content: "\f2a6";
     color: #949494;
-    font: normal normal normal 16px/1 LineAwesome;
+    font: normal normal normal 16px/1 "Ionicons";
     font-size: inherit;
     text-decoration: inherit;
     text-rendering: optimizeLegibility;
@@ -1948,15 +1942,15 @@ input[type="submit"],
 }
 
 .post.format-video .style-archive header:before {
-    content: "\f2be";
+    content: "\f4cc";
 }
 
 .post.format-image .style-archive header:before {
-    content: "\f246";
+    content: "\f3f5";
 }
 
 .post.format-audio .style-archive header:before {
-    content: "\f299";
+    content: "\f46c";
 }
 
 .hentry {
@@ -2480,10 +2474,16 @@ object {
 }
 
 @media only screen and (max-width: 991px) {
-    .nav-icon {
+    .nav-icon,
+    .main-navigation .social-icons{
         position: absolute;
         top: 15px;
         right: 20px;
+    }
+
+    .main-navigation .social-icons {
+        right: 40px;
+        top: 0;
     }
 
     body .gallery .gallery-item {
@@ -2604,4 +2604,144 @@ object {
 #scroll-top {
     background: #000;
     color: #fff;
+}
+
+/*--------------------------------------------------------------
+##Social Icon
+--------------------------------------------------------------*/
+
+.social-icons ul {
+    float: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.social-icons ul li {
+    display: block;
+    float: left;
+}
+
+.social-icons ul a {
+    display: block;
+    position: relative;
+}
+
+.social-icons ul a span {
+    display: none;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.social-icons ul li a:after {
+    display: inline-block;
+    font-weight: 400;
+    height: 60px;
+    margin: 0 auto;
+    line-height: 60px;
+    text-align: center;
+    width: 30px;
+    font-size: 18px;
+    filter: alpha(opacity=84);
+    opacity: .84;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -ms-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+
+.social-icons.bordered-radius ul a:after {
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.social-icons ul a:after {
+    display: inline-block;
+    font-family: "Ionicons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    width: 46px;
+    font-size: 20px;
+    line-height: 46px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.social-icons ul a[href*="dribbble.com"]:after {
+    content: "\f22d";
+}
+
+.social-icons ul a[href*="facebook.com"]:after {
+    content: "\f231";
+}
+
+.social-icons ul a[href*="twitter.com"]:after {
+    content: "\f243";
+}
+
+.social-icons ul a[href*="linkedin.com"]:after {
+    content: "\f239";
+}
+
+.social-icons ul a[href*="instagram.com"]:after {
+    content: "\f351";
+}
+
+.social-icons ul a[href*="youtube.com"]:after {
+    content: "\f24d";
+}
+
+.social-icons ul a[href*="vimeo.com"]:after {
+    content: "\f245";
+}
+
+.social-icons ul a[href*="plus.google.com"]:after {
+    content: "\f34f";
+}
+
+.social-icons ul a[href*="pinterest.com"]:after {
+    content: "\f2b1";
+}
+
+.social-icons ul a[href*="tumblr.com"]:after {
+    content: "\f241";
+}
+
+.social-icons ul a[href*="wordpress.org"]:after {
+    content: "\f249";
+}
+
+.social-icons ul a[href*="whatsapp.com"]:after {
+    content: "\f4f0";
+}
+
+.social-icons ul a:hover[href*="reddit.com"]:after {
+    content: "\f23b";
+}
+
+@media screen and (max-width: 480px) {
+    .main-navigation .social-icons{
+        position: relative;
+        text-align: center;
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    .main-navigation .social-icons ul li {
+        display: inline-block;
+        float: none;
+    }
+
+    .main-navigation .social-icons ul li a:after{
+        height: 30px;
+        line-height: 30px;
+    }
 }

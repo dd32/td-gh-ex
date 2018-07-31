@@ -4,7 +4,7 @@ Contributors: WPinterface
 
 Requires at least:4.0
 Tested up to:4.9
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,9 @@ Advance Blog is distributed under the terms of the GNU GPL
 Advance Blog includes support for Jetpack's Infinite Scroll as well as other features.
 
 == Changelog ==
+
+= 1.0.8 - [28-jul-2018] =
+* Fixed bugs on update
 
 = 1.0.6 - [27-jun-2018] =
 * Fixed bugs on update
@@ -60,8 +63,8 @@ This theme uses [https://www.pexels.com/photo/red-painted-woman-illustration-505
 * Based on https://github.com/Automattic/theme-components/, (C) 2015-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 
-* Line Awesome 1.1.0 by @icons_8 - https://icons8.com/line-awesome
-* License - https://icons8.com/good-boy-license/ (Font: SIL OFL 1.1, CSS: MIT License)
+*Ionicons, v2.0.0 Created by Ben Sperry for the Ionic Framework, http://ionicons.com/ https://twitter.com/benjsperry  https://twitter.com/ionicframework
+MIT License: https://github.com/driftyco/ionicons
 
 * Slick https://github.com/kenwheeler/slick/
 * Author: Ken Wheeler

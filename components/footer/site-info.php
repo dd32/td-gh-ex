@@ -12,5 +12,5 @@
 
 
 <a id="scroll-top">
-    <i class="la la-arrow-up"></i>
+    <i class="ion-ios-arrow-up"></i>
 </a>

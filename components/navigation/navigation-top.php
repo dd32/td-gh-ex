@@ -12,11 +12,25 @@
         'container' => 'div',
         'container_class' => 'menu'
     )); ?>
+
+    <div class="social-icons">
+        <?php
+        wp_nav_menu(
+            array('theme_location' => 'social',
+                'link_before' => '<span>',
+                'link_after' => '</span>',
+                'menu_id' => 'social-menu',
+                'fallback_cb' => false,
+                'menu_class' => false
+            )); ?>
+    </div>
+
     <div class="nav-icon">
         <div class="search-icon">
-            <i class="la la-search"></i>
+            <i class="ion-ios-search-strong"></i>
         </div>
     </div>
+
 </nav>
 
 <div class="popup-search">

@@ -48,6 +48,7 @@ if (!function_exists('advance_blog_setup')) :
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus(array(
             'menu-1' => esc_html__('Top', 'advance-blog'),
+            'social'  => __('Social Menu', 'advance-blog'),
         ));
 
         /**
@@ -128,7 +129,7 @@ function advance_blog_the_custom_logo()
 function advance_blog_scripts()
 {
     wp_enqueue_style('slick', get_template_directory_uri() . '/assets/lib/slick/css/slick.min.css');
-    wp_enqueue_style('line-awesome', get_template_directory_uri() . '/assets/lib/line-awesome/css/line-awesome.min.css');
+    wp_enqueue_style('ionicons', get_template_directory_uri() . '/assets/lib/ionicons/css/ionicons.min.css');
 
     wp_enqueue_style('advance-blog-style', get_stylesheet_uri());
 

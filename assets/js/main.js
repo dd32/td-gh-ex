@@ -40,8 +40,8 @@
             autoplaySpeed: 8000,
             infinite: true,
             dots: true,
-            nextArrow: '<i class="navcontrol-icon slide-next la la-angle-right"></i>',
-            prevArrow: '<i class="navcontrol-icon slide-prev la la-angle-left"></i>',
+            nextArrow: '<i class="navcontrol-icon slide-next ion-ios-arrow-right"></i>',
+            prevArrow: '<i class="navcontrol-icon slide-prev ion-ios-arrow-left"></i>',
             easing: "linear"
         });
 
@@ -53,8 +53,8 @@
                 autoplay: true,
                 autoplaySpeed: 8000,
                 infinite: true,
-                nextArrow: '<i class="navcontrol-icon slide-next la la-angle-right"></i>',
-                prevArrow: '<i class="navcontrol-icon slide-prev la la-angle-left"></i>',
+                nextArrow: '<i class="navcontrol-icon slide-next ion-ios-arrow-right"></i>',
+                prevArrow: '<i class="navcontrol-icon slide-prev ion-ios-arrow-left"></i>',
                 dots: true
             });
         });

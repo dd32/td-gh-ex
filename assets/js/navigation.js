@@ -62,7 +62,7 @@
             },
             menuArrow: function () {
                 if (e('.site-header .main-navigation div.menu > ul').length) {
-                    e('.site-header .main-navigation div.menu > ul .sub-menu').parent('li').find('> a').append('<i class="la la-angle-down">');
+                    e('.site-header .main-navigation div.menu > ul .sub-menu').parent('li').find('> a').append('<i class="ion-ios-arrow-down">');
                 }
             }
         },
