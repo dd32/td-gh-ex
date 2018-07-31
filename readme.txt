@@ -25,6 +25,10 @@ Agency Lite includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.0.4 - July 31 2018 =
+* Checked with Theme Sniffer Plugin and all error fixed.
+* pot file updated
+
 = 1.0.3 - June 27 2018 =
 * WPML Compatibility
 

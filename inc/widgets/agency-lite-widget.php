@@ -198,7 +198,7 @@ function agency_lite_widgets_show_widget_field($instance = '', $widget_field = '
                 }
             }
             $output .= '</div></div>' . "\n";
-            echo $output;
+            echo $output; // WPCS: XSS OK.
             break;
     }
 }

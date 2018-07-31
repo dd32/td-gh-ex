@@ -40,9 +40,9 @@
 					<div class="plugin-img-wrap">
 						<img src="<?php echo esc_url($icon_url); ?>" />
 						<div class="version-author-info">
-							<span class="version"><?php printf('Version %s', $plugin['version']); ?></span>
+							<span class="version"><?php printf('Version %s', esc_html($plugin['version'])); ?></span>
 							<span class="seperator">|</span>
-							<span class="author"><?php echo esc_html($plugin['author']); ?></span>
+							<span class="author"><?php echo wp_kses_post($plugin['author']); ?></span>
 						</div>
 					</div>
 					<div class="plugin-title-install clearfix">
@@ -96,7 +96,7 @@
 					<div class="plugin-img-wrap">
 						<img src="<?php echo esc_url($icon_url); ?>" />
 						<div class="version-author-info">
-							<span class="version"><?php printf('Version %s', $info->version); ?></span>
+							<span class="version"><?php printf('Version %s', esc_html($info->version)); ?></span>
 							<span class="seperator">|</span>
 							<span class="author"><?php echo wp_kses_post($info->author); ?></span>
 						</div>

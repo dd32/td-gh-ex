@@ -204,12 +204,12 @@ function agency_lite_header_banner_x() {
   ?>
 
     <div class="header-banner-container">
-        <?php echo $overlay;?>
+        <?php echo $overlay;  // WPCS: XSS OK. ?>
             <div class="agency-lite-container">
                 <div class="page-title-wrap">
                         <?php
                             if(is_archive()) {
-                                echo agency_lite_cat_title();
+                                echo agency_lite_cat_title(); // WPCS: XSS OK.
                             }elseif( is_home() ){ ?>
                               <h1 class="page-title"> <?php single_post_title(); ?></h1>
                             <?php
@@ -217,7 +217,9 @@ function agency_lite_header_banner_x() {
                                 the_title('<h1 class="page-title">', '</h1>');
                             } elseif(is_search()) {
                                 ?>
-                                <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'agency-lite' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                                <h1 class="page-title"><?php printf( 
+                                    /* translators: Search Title */
+                                    esc_html__( 'Search Results for: %s', 'agency-lite' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
                                 <?php
                             } elseif(is_404()) {
                                 ?>

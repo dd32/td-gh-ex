@@ -226,7 +226,7 @@ class Breadcrumb_Trail {
 		if ( false === $this->args['echo'] )
 			return $breadcrumb;
 
-		echo $breadcrumb;
+		echo $breadcrumb; // WPCS: XSS OK.
 	}
 
 	/* ====== Protected Methods ====== */

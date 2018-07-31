@@ -97,8 +97,11 @@
 				if( is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated'])) ) {
 					?>
 					<div class="notice notice-success is-dismissible">
-						<p><?php printf( __( 'Welcome! Thank you for choosing %1$s! Please make sure you visit our <a href="%2$s">Welcome page</a> to get started with %1$s.', 'agency-lite' ), $this->theme_name, admin_url( 'themes.php?page=agency-welcome' )  ); ?></p>
-						<p><a class="button" href="<?php echo admin_url( 'themes.php?page=agency-welcome' ) ?>"><?php _e( 'Lets Get Started', 'agency-lite' ); ?></a></p>
+						<p><?php printf( 
+							/* translators: 1. Theme Name 2. Welcome page link */
+							esc_html__( 'Welcome! Thank you for choosing %1$s! Please make sure you visit our %2$s to get started with %1$s.', 'agency-lite' ), esc_html($this->theme_name), '<a href="'.esc_url(admin_url( 'themes.php?page=agency-welcome' )).'">'. esc_html__( 'Welcome page', 'agency-lite') .'</a>'  ); ?></p>
+						
+						<p><a class="button" href="<?php echo esc_url(admin_url( 'themes.php?page=agency-welcome' )) ?>"><?php esc_html_e( 'Lets Get Started', 'agency-lite' ); ?></a></p>
 					</div>
 					<?php
 				}
@@ -115,33 +118,37 @@
 			public function agency_lite_Welcome_screen() {
 				$tabs = $this->tab_sections;
 
-				$current_section = isset($_GET['section']) ? $_GET['section'] : 'getting_started';
+				$current_section = isset($_GET['section']) ? sanitize_text_field(wp_unslash($_GET['section'])) : 'getting_started';
 				$section_inline_style = '';
 				?>
 				<div class="wrap about-wrap access-wrap">
-					<h1><?php printf( esc_html__( 'Welcome to %s - Version %s', 'agency-lite' ), $this->theme_name, $this->theme_version ); ?></h1>
+					<h1><?php printf( 
+						/* translators: 1.Theme Name 2.Theme Version*/
+						esc_html__( 'Welcome to %1$s - Version %2$s', 'agency-lite' ), esc_html($this->theme_name), esc_html($this->theme_version) ); ?></h1>
 
-					<div class="about-text"><?php printf( esc_html__( 'The %s is a multipurpose WordPress theme that can be used for business corporate, agency, blog, portfolio websites. The theme has very clean with modern design and is built with the latest technology. The theme is fully responsive and looks good on all mobile devices. Built on customizer, the theme is very easy to configure with changes displaying in a live preview.', 'agency-lite' ), $this->theme_name ); ?></div>
+					<div class="about-text"><?php printf( 
+						/* translators: 1.Theme Name*/
+						esc_html__( 'The %s is a multipurpose WordPress theme that can be used for business corporate, agency, blog, portfolio websites. The theme has very clean with modern design and is built with the latest technology. The theme is fully responsive and looks good on all mobile devices. Built on customizer, the theme is very easy to configure with changes displaying in a live preview.', 'agency-lite' ), esc_html($this->theme_name) ); ?></div>
 
 					<a target="_blank" href="http://www.accesspressthemes.com" class="accesspress-badge wp-badge"><span><?php echo esc_html('AccessPressThemes'); ?></span></a>
 
 				<div class="nav-tab-wrapper clearfix">
 					<?php foreach($tabs as $id => $label) : ?>
 						<?php
-							$section = isset($_REQUEST['section']) ? esc_attr($_REQUEST['section']) : 'getting_started';
+							$section = isset($_REQUEST['section']) ? sanitize_text_field(wp_unslash($_REQUEST['section'])) : 'getting_started';
 							$nav_class = 'nav-tab';
 							if($id == $section) {
 								$nav_class .= ' nav-tab-active';
 							}
 						?>
-						<a href="<?php echo admin_url('themes.php?page=agency-welcome&section='.$id); ?>" class="<?php echo esc_attr($nav_class); ?>" >
+						<a href="<?php echo esc_url(admin_url('themes.php?page=agency-welcome&section='.$id)); ?>" class="<?php echo esc_attr($nav_class); ?>" >
 							<?php echo esc_html( $label ); ?>
 					   	</a>
 					<?php endforeach; ?>
 			   	</div>
 
 		   		<div class="welcome-section-wrapper">
-	   				<?php $section = isset($_REQUEST['section']) ? $_REQUEST['section'] : 'getting_started'; ?>
+	   				<?php $section = isset($_REQUEST['section']) ? sanitize_text_field(wp_unslash($_REQUEST['section'])) : 'getting_started'; ?>
    					
    					<div class="welcome-section <?php echo esc_attr($section); ?> clearfix">
    						<?php require_once get_template_directory() . '/inc/welcome/sections/'.esc_html($section).'.php'; ?>
@@ -271,7 +278,7 @@
 			public function agency_lite_plugin_installer_callback(){
 
 				if ( ! current_user_can('install_plugins') )
-					wp_die( __( 'Sorry, you are not allowed to install plugins on this site.', 'agency-lite' ) );
+					wp_die( esc_html__( 'Sorry, you are not allowed to install plugins on this site.', 'agency-lite' ) );
 
 				$nonce = $_POST["nonce"];
 				$plugin = $_POST["plugin"];
@@ -279,7 +286,7 @@
 
 				// Check our nonce, if they don't match then bounce!
 				if (! wp_verify_nonce( $nonce, 'agency_lite_plugin_installer_nonce' ))
-					wp_die( __( 'Error - unable to verify nonce, please try again.', 'agency-lite') );
+					wp_die( esc_html__( 'Error - unable to verify nonce, please try again.', 'agency-lite') );
 
 
          		// Include required libs for installation
@@ -359,14 +366,14 @@
 			public function agency_lite_plugin_activation_callback(){
 
 				if ( ! current_user_can('install_plugins') )
-					wp_die( __( 'Sorry, you are not allowed to activate plugins on this site.', 'agency-lite' ) );
+					wp_die( esc_html__( 'Sorry, you are not allowed to activate plugins on this site.', 'agency-lite' ) );
 
 				$nonce = $_POST["nonce"];
 				$plugin = $_POST["plugin"];
 
 				// Check our nonce, if they don't match then bounce!
 				if (! wp_verify_nonce( $nonce, 'agency_lite_plugin_activate_nonce' ))
-					die( __( 'Error - unable to verify nonce, please try again.', 'agency-lite' ) );
+					die( esc_html__( 'Error - unable to verify nonce, please try again.', 'agency-lite' ) );
 
 
 	         	// Include required libs for activation

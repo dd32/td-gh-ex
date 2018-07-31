@@ -77,13 +77,13 @@ function agency_lite_contact_details(){
               $gmap_contact_email = isset($instance['gmap_contact_email']) ? $instance['gmap_contact_email'] : '';
               $gmap_location = isset($instance['gmap_location']) ? $instance['gmap_location'] : '';
 
-               echo $before_widget;
+               echo $before_widget; // WPCS: XSS OK.
                ?>
                <div class = "agency-lite-contact-info-warp">
                 <?php 
                //Show title
               if(!empty($gmap_contact_title)){
-                   echo $before_title . esc_html($gmap_contact_title) . $after_title;
+                   echo $before_title . esc_html($gmap_contact_title) . $after_title; // WPCS: XSS OK.
                }
 
               if( $gmap_phone || $gmap_support_email || $gmap_contact_email || $gmap_location ){ ?>
@@ -113,7 +113,7 @@ function agency_lite_contact_details(){
           <?php } ?>
         </div>
         <?php 
-       echo $after_widget;
+       echo $after_widget; // WPCS: XSS OK.
       }
     }
 

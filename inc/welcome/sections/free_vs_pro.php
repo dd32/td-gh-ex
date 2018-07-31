@@ -1,17 +1,17 @@
 <div class="three-col">
 	<div class="col">
-		<h4>ONE TIME PAYMENT</h4>
-		<p>No renewal needed</p>
+		<h4><?php echo esc_html('ONE TIME PAYMENT', 'agency-lite'); ?></h4>
+		<p><?php echo esc_html('No renewal needed', 'agency-lite'); ?></p>
 	</div>
 
 	<div class="col">
-		<h4>UNLIMITED DOMAIN LICENCE</h4>
-		<p>Use in as many website as you need</p>
+		<h4><?php echo esc_html('UNLIMITED DOMAIN LICENCE', 'agency-lite'); ?></h4>
+		<p><?php echo esc_html('Use in as many website as you need', 'agency-lite'); ?></p>
 	</div>
 
 	<div class="col">
-		<h4>FREE UPDATES FOR LIFE TIME</h4>
-		<p>Keep upto date</p>
+		<h4><?php echo esc_html('FREE UPDATES FOR LIFE TIME', 'agency-lite'); ?></h4>
+		<p><?php echo esc_html('Keep upto date', 'agency-lite'); ?></p>
 	</div>
 </div>
 
@@ -36,10 +36,10 @@
 			<p><?php esc_html_e('Tired of configuring site from scratch. Installation of demo is just one click away.', 'agency-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/no.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/no.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -48,10 +48,10 @@
 			<p><?php esc_html_e('Preview your changes as you build your site.', 'agency-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -72,10 +72,10 @@
 			<p><?php esc_html_e('Choose any theme skin color you like.', 'agency-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/no.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/no.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -120,10 +120,10 @@
 			<p><?php esc_html_e('Display preloader before the site content loads fully in your website.', 'agency-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/no.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/no.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -132,10 +132,10 @@
 			<p><?php esc_html_e('Display Countdown page if your site is under construction.', 'agency-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/no.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/no.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -144,10 +144,10 @@
 			<p><?php esc_html_e('Change the fonts settings for the entire site.', 'agency-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/no.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/no.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -156,10 +156,10 @@
 			<p><?php esc_html_e('Set the order of the home section to display.', 'agency-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/no.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/no.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -168,10 +168,10 @@
 			<p><?php esc_html_e('Displays fine in device with screen sizes.', 'agency-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -192,7 +192,7 @@
 			<p><?php esc_html_e('Have more flexibility in creating posts and pages with using easy to use Shortcodes.', 'agency-lite'); ?></p>
 		</td>
 		<td>
-			<?php esc_html_e('0', 'agency-lite'); ?>
+			<?php echo esc_html('0', 'agency-lite'); ?>
 		</td>
 		<td>
 			<?php esc_html_e('9', 'agency-lite'); ?>
@@ -204,10 +204,10 @@
 			<p><?php esc_html_e('The theme is fully compatible with WordPress Multilingual plugin WMPL and Polylang.', 'agency-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -216,10 +216,10 @@
 			<p><?php esc_html_e('Supports the Woocommerce plugin to build a ecommerce based website.', 'agency-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -228,10 +228,10 @@
 			<p><?php esc_html_e('Google will love it.', 'agency-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -240,10 +240,10 @@
 			<p><?php esc_html_e('The theme is compatible with all RTL (Right to Left) languages like Arabic, Persian and Hebrew.', 'agency-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/no.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/no.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/inc/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>

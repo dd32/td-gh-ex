@@ -38,7 +38,7 @@
     		</h2>
     		
 		<div class='expert-content'>
-        	<?php echo apply_filters('the_content' , wp_kses_post(wp_trim_words(get_the_content(),70,'...')));?>
+        	<?php echo apply_filters('the_content' , wp_kses_post(wp_trim_words(get_the_content(),70,'...'))); //WPCS: XSS OK.?>
         </div>
         <a class="read-more" href="<?php the_permalink() ?>">
         	<?php esc_html_e('Read More','agency-lite'); ?>

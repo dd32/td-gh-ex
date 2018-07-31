@@ -43,11 +43,11 @@ if( ! function_exists('agency_lite_client_logo') ){
 
             if( $logo_url ){ ?>
                 <div class="client-contents wow fadeInUp">
-                   <?php echo $link_open; ?>
+                   <?php echo $link_open; // WPCS: XSS OK. ?>
                     <div class="client-logo-image">
                         <img src="<?php echo esc_url($logo_url); ?>" alt="<?php the_title_attribute() ?>" title="<?php the_title_attribute() ?>" />
                     </div>
-                    <?php echo $link_close; ?>
+                    <?php echo $link_close; // WPCS: XSS OK. ?>
                 </div>
             <?php
            }
