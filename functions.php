@@ -20,9 +20,8 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_layout_manager.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-template.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_theme_style.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-emailcourse.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_pro.php');
-	
-	
 	
 	
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php'); 
