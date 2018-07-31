@@ -8,7 +8,7 @@ get_header(); ?>
             <div class="breadcrumb-bg">
                 <div class="royals-container container">
                     <div class="site-breadcumb">
-                       <h1><?php printf( __( 'Search Results for: %s', 'avocation' ), get_search_query() ); ?></h1>
+                       <h1><?php printf( /* translators: %s is search query.*/ esc_html__( 'Search Results for: %s', 'avocation' ), get_search_query() ); ?></h1>
                         <ol class="breadcrumb breadcrumb-menubar">
                             <?php if (function_exists('avocation_custom_breadcrumbs')) avocation_custom_breadcrumbs(); ?>                             
                         </ol>
@@ -25,8 +25,8 @@ get_header(); ?>
                 get_template_part( 'content' );
                 else : ?>
 		<div class="blog-box">
-			<?php echo	'<h3>' . __('Sorry, but nothing matched your search terms. Please try again with some different keywords.','avocation') . '</h3>';
-			 get_search_form(); ?>
+			<h3><?php esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords.','avocation');?></h3>
+			 <?php get_search_form(); ?>
 		</div>	 
 	<?php endif; ?>
 						<div class="site-pagination">

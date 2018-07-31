@@ -8,7 +8,7 @@ get_header(); ?>
             <div class="breadcrumb-bg">
                 <div class="royals-container container">
                     <div class="site-breadcumb">
-                        <h1><<?php _e( 'Published by', 'avocation' ); ?></h1>
+                        <h1><?php esc_html_e( 'Published by', 'avocation' ); ?></h1>
                         <ol class="breadcrumb breadcrumb-menubar">
                             <?php if (function_exists('avocation_custom_breadcrumbs')) avocation_custom_breadcrumbs(); ?>                             
                         </ol>

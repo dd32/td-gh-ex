@@ -18,7 +18,6 @@ function avocation_setup() {
 	add_editor_style(array('css/editor-style.css', avocation_font_url()));
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support('automatic-feed-links');
-	add_theme_support( 'title-tag' );
 	add_theme_support('post-thumbnails');
 
 	set_post_thumbnail_size( 640, 428, true );
@@ -41,6 +40,16 @@ function avocation_setup() {
 	'height' => '120',
 	'width'  => '1260'
  	) ) );
+
+ 	add_theme_support( 'custom-logo', array(
+			'height'      => 250,
+			'width'       => 250,
+			'flex-width'  => true,
+			'flex-height' => true,
+			'priority' => 11,			
+            'header-text' => array('img-responsive-logo', 'site-description-logo'),
+	) );
+	 add_theme_support( 'title-tag' );
 	add_theme_support( 'custom-background', apply_filters( 'avocation_custom_background_args', array(
 	'default-color' => 'f5f5f5',
 	) ) );
@@ -51,28 +60,17 @@ function avocation_setup() {
 endif; // avocation_setup
 add_action( 'after_setup_theme', 'avocation_setup' );
 
-add_action('wp_head','avocation_purpose_bg_img_css');
-function avocation_purpose_bg_img_css()
-{
-	$avocation_purpose_image=get_theme_mod('avocation_purpose_image');
-	$avocation_header_bg_img=get_theme_mod('avocation-breadcrumbsbg-bg');
-	$avocation_footer_bg_img=get_theme_mod('avocation-footerbg-bg');
-	if (!empty($avocation_purpose_image)){
-		$avocation_purpose_image = esc_url(get_theme_mod('avocation_purpose_image'));
-		$avocation_purpose_output="<style> .business-wrap { background :url('".$avocation_purpose_image."');
-		background-position: center;} </style>";
-		echo $avocation_purpose_output;		
-	}
-	if (!empty($avocation_header_bg_img)){
-		$avocation_header_bg_img = esc_url(get_theme_mod('avocation-breadcrumbsbg-bg'));
-		$avocation_header_output="<style>  .breadcrumb-bg { background :url('".$avocation_header_bg_img."'); } </style>";
-		echo $avocation_header_output;		
-	}
-	if (!empty($avocation_footer_bg_img)){
-		$avocation_footer_bg_img = esc_url(get_theme_mod('avocation-footerbg-bg'));
-		$avocation_footer_output="<style>  .footer-bg{ background :url('".$avocation_footer_bg_img."'); } </style>";
-		echo $avocation_footer_output;	
-	}
+add_action( 'admin_menu', 'avocation_admin_menu');
+function avocation_admin_menu( ) {
+    add_theme_page( __('Pro Feature','avocation'), __('Avocation Pro','avocation'), 'manage_options', 'avocation-pro-buynow', 'avocation_buy_now', 300 );   
+}
+function avocation_buy_now(){ ?>
+<div class="avocation_pro_version">
+  <a href="<?php echo esc_url('https://fruitthemes.com/wordpress-themes/avocationpro/'); ?>" target="_blank">    
+    <img src ="<?php echo esc_url(get_template_directory_uri()); ?>/images/avocation_pro_features.png" width="70%" height="auto" />    
+  </a>
+</div>
+<?php
 }
 /***  excerpt Length ***/ 
 function avocation_change_excerpt_more( $avocation_more ) {
@@ -102,11 +100,5 @@ require get_template_directory() . '/functions/breadcrumbs.php';
 /*** Custom Header ***/
 require get_template_directory() . '/functions/custom-header.php';
 
-/*** tgm-plugins ***/
-require get_template_directory() . '/functions/tgm-plugins.php';
-
 /*** Customizer ***/
 require get_template_directory() . '/functions/theme-customizer.php';
-
-/*** Customizer ***/
-require get_template_directory() . '/theme-options/theme-option.php'; ?>

@@ -3,69 +3,64 @@
  * avocation Breadcrumbs
 */
 function avocation_custom_breadcrumbs() {
-  $avocation_showonhome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-  $avocation_delimiter = '/'; // avocation_delimiter between crumbs
-  $avocation_home = __('Home','avocation'); // text for the 'Home' link
+  $avocation_showonhome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show  
   $avocation_showcurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
-  $avocation_before = ' '; // tag before the current crumb
-  $avocation_after = ' '; // tag after the current crumb
 
   global $post;
-  $avocation_homelink = home_url('/');
   if (is_home() || is_front_page()) {
-    if ($avocation_showonhome == 1) echo '<li><a href="' . esc_url ( $avocation_homelink . '/' . $avocation_slug['slug'] ). '">' . $avocation_home . '</a></li>';
+    if ($avocation_showonhome == 1) echo '<li><a href="' . esc_url ( home_url('/') ). '">' . esc_html__('Home','avocation') . '</a></li>';
     
   }  else {
 
-    echo '<li><a href="' . esc_url ( $avocation_homelink . '/' . $avocation_slug['slug'] ) . '">' . esc_attr($avocation_home) . '</a> ' . $avocation_delimiter . '';
+    echo '<li><a href="' . esc_url ( home_url('/') ) . '">' . esc_html__('Home','avocation') . '</a> ';
     
    if ( is_category() ) {
       $avocation_thisCat = get_category(get_query_var('cat'), false);
-      if ($avocation_thisCat->parent != 0) echo get_category_parents($avocation_thisCat->parent, TRUE, ' ' . $avocation_delimiter . ' ');      
-		echo $avocation_before; _e('category','avocation'); echo ' "'.single_cat_title('', false) . '"' . $avocation_after;
+      if ($avocation_thisCat->parent != 0) echo get_category_parents($avocation_thisCat->parent, TRUE, ' ');      
+		  esc_html_e('category','avocation'); echo ' "'.single_cat_title('', false) . '"' ;
     } 
     elseif ( is_search() ) {
-      echo $avocation_before; _e('Search Results For','avocation'); echo ' "'. get_search_query() . '"' . $avocation_after;
+       esc_html_e('Search Results For','avocation'); echo ' "'. get_search_query() . '"';
 
     } elseif ( is_day() ) {
-      echo '<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . get_the_time('Y') . '</a> ' . $avocation_delimiter . ' ';
-      echo '<a href="' . esc_url(get_month_link(get_the_time('Y'),get_the_time('m'))) . '">' . get_the_time('F') . '</a> ' . $avocation_delimiter . ' ';
-      echo $avocation_before . get_the_time('d') . $avocation_after;
+      echo '<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html(get_the_time('Y')) . '</a> ';
+      echo '<a href="' . esc_url(get_month_link(get_the_time('Y'),get_the_time('m'))) . '">' . esc_html(get_the_time('F')) . '</a>  ';
+      echo  esc_html(get_the_time('d')) ;
 
     } elseif ( is_month() ) {
-      echo '<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . get_the_time('Y') . '</a> ' . $avocation_delimiter . ' ';
-      echo $avocation_before . get_the_time('F') . $avocation_after;
+      echo '<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html(get_the_time('Y')) . '</a> ';
+      echo  esc_html(get_the_time('F')) ;
 
     } elseif ( is_year() ) {
-      echo $avocation_before . get_the_time('Y') . $avocation_after;
+      echo  esc_html(get_the_time('Y')) ;
 
     } elseif ( is_single() && !is_attachment() ) {
       if ( get_post_type() != 'post' ) {
         $avocation_post_type = get_post_type_object(get_post_type());
         $avocation_slug = $avocation_post_type->rewrite;
-        echo '<a href="' . esc_url ( $avocation_homelink . '/' . $avocation_slug['slug'] ) . '/' . $avocation_slug['slug'] . '/">' . $avocation_post_type->labels->singular_name . '</a>';
-        if ($avocation_showcurrent == 1) echo ' ' . $avocation_delimiter . ' ' . $avocation_before . esc_attr(get_the_title()) . $avocation_after;
+        echo '<a href="' . esc_url ( home_url('/'. $avocation_slug['slug']) ) . '/' . $avocation_slug['slug'] . '/">' . esc_html($avocation_post_type->labels->singular_name) . '</a>';
+        if ($avocation_showcurrent == 1) echo  esc_attr(get_the_title()) ;
       } else {
         $avocation_cat = get_the_category(); $avocation_cat = $avocation_cat[0];
-        $avocation_cats = get_category_parents($avocation_cat, TRUE, ' ' . $avocation_delimiter . ' ');
-        if ($avocation_showcurrent == 0) $avocation_cats = preg_replace("#^(.+)\s$avocation_delimiter\s$#", "$1", $avocation_cats);
+        $avocation_cats = get_category_parents($avocation_cat, TRUE, ' ');
+        if ($avocation_showcurrent == 0) $avocation_cats = preg_replace("#^(.+)\s \s$#", "$1", $avocation_cats);
         echo $avocation_cats;
-        if ($avocation_showcurrent == 1) echo $avocation_before . esc_attr(get_the_title()) . $avocation_after;
+        if ($avocation_showcurrent == 1) echo  esc_attr(get_the_title()) ;
       }
 
     } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
       $avocation_post_type = get_post_type_object(get_post_type());
-      echo $avocation_before . $avocation_post_type->labels->singular_name . $avocation_after;
+      echo  esc_html($avocation_post_type->labels->singular_name) ;
 
     } elseif ( is_attachment() ) {
       $avocation_parent = get_post($post->post_parent);
       $avocation_cat = get_the_category($avocation_parent->ID); $avocation_cat = $avocation_cat[0];
-      echo get_category_parents($avocation_cat, TRUE, ' ' . $avocation_delimiter . ' ');
+      echo get_category_parents($avocation_cat, TRUE, '  ');
       echo '<a href="' . esc_url(get_permalink($avocation_parent)) . '">' . $avocation_parent->post_title . '</a>';
-      if ($avocation_showcurrent == 1) echo ' ' . $avocation_delimiter . ' ' . $avocation_before . esc_attr(get_the_title()) . $avocation_after;
+      if ($avocation_showcurrent == 1) echo  esc_attr(get_the_title()) ;
 
     } elseif ( is_page() && !$post->post_parent ) {
-      if ($avocation_showcurrent == 1) echo $avocation_before . esc_attr(get_the_title()) . $avocation_after;
+      if ($avocation_showcurrent == 1) echo  esc_attr(get_the_title()) ;
 
     } elseif ( is_page() && $post->post_parent ) {
       $avocation_parent_id  = $post->post_parent;
@@ -78,25 +73,25 @@ function avocation_custom_breadcrumbs() {
       $avocation_breadcrumbs = array_reverse($avocation_breadcrumbs);
       for ($avocation_i = 0; $avocation_i < count($avocation_breadcrumbs); $avocation_i++) {
         echo $avocation_breadcrumbs[$avocation_i];
-        if ($avocation_i != count($avocation_breadcrumbs)-1) echo ' ' . $avocation_delimiter . ' ';
+        if ($avocation_i != count($avocation_breadcrumbs)-1) echo ' ';
       }
-      if ($avocation_showcurrent == 1) echo ' ' . $avocation_delimiter . ' ' . $avocation_before . esc_attr(get_the_title()) . $avocation_after;
+      if ($avocation_showcurrent == 1) echo esc_attr(get_the_title()) ;
 
     } elseif ( is_tag() ) {
-      echo $avocation_before; _e('Posts tagged','avocation'); echo ' "'.  single_tag_title('', false) . '"' . $avocation_after;
+       esc_html_e('Posts tagged','avocation'); echo ' "'.  single_tag_title('', false) . '"' ;
 
     } elseif ( is_author() ) {
        global $author;
       $avocation_userdata = get_userdata($author);
-      echo $avocation_before; _e('Articles posted by ','avocation'); echo $avocation_userdata->display_name . $avocation_after;
+       esc_html_e('Articles posted by ','avocation'); echo esc_html($avocation_userdata->display_name) ;
 
     } elseif ( is_404() ) {
-      echo $avocation_before; _e('Error 404','avocation'); echo $avocation_after;
+       esc_html_e('Error 404','avocation'); 
     }
     
     if ( get_query_var('paged') ) {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-      echo __('Page','avocation') . ' ' . get_query_var('paged');
+      echo esc_html__('Page','avocation') . ' ' . esc_html(get_query_var('paged'));
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
     echo '</li>';

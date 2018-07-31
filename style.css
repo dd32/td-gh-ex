@@ -1,46 +1,23 @@
 /*
 Theme Name: Avocation
-Theme URI: https://fasterthemes.com/wordpress-themes/avocation/
-Author: Fasterthemes
-Author URI: https://fasterthemes.com/
-Description: Avocation is a lightweight, clean, super flexible and bootstrap based responsive theme for business or personal websites. Avocation Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your need.
-Version: 1.1
+Theme URI: https://fruitthemes.com/wordpress-themes/avocation/
+Author: FruitThemes
+Author URI: https://fruitthemes.com/
+Description: Avocation is a lightweight, clean, super flexible and bootstrap based responsive theme for business or personal websites. Avocation Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your need.Step by step documentation and dummy data is available at: https://fruitthemes.com/documentation/avocation/
+Version: 2.0.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Copyright :
-Avocation Wordpress Theme, Copyright 2014 fasterthemes.com
+Avocation Wordpress Theme, Copyright 2014 fruitthemes.com
 Avocation is distributed under the terms of the GNU GPL
 Tags: left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template,  sticky-post, theme-options, threaded-comments, translation-ready
 Text Domain: avocation
 */
 
-/************default CSS start**************/
-@font-face {
-    font-family: 'Lato-Regular'; 
-    src: local('Lato-Regular'), local('Lato-Regular'),    
-        url('fonts/Lato-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Raleway-Regular';   
-    src: local('Raleway-Regular'), local('Raleway-Regular'),    
-        url('fonts/Raleway-Regular.ttf') format('truetype');        
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face{
-    font-family: 'Raleway-Bold';   
-    src: local('Raleway-Bold'), local('Raleway-Bold'),    
-        url('fonts/Raleway-Bold.ttf') format('truetype');        
-    font-weight: normal;
-    font-style: normal;
-}
-
 body{    
     color: #212121;
-    font-family: 'Raleway-Regular';
-    background-color:#f8f8f8;	
+    font-family: 'Raleway';
+    background-color:#f8f8f8;   
     font-size: 14px;
 }
 .avocation-container{
@@ -49,7 +26,7 @@ body{
 }
 .no-padding{
     padding-left: 0;
-    padding-right: 0;	
+    padding-right: 0;   
 }
 .color-text{
     color: #cd1f07;
@@ -120,6 +97,10 @@ img{
     color: #545454;
     display: inline-block;
     text-transform: capitalize;
+	transition:0.3s all ease-in-out;
+}
+.social-icon > ul li:hover{
+	background-color:#cd1f07;
 }
 .mask-overlay {    
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);
@@ -136,7 +117,8 @@ img{
     border-radius: 2px;
     color: #ffffff;
     display: inline-block;
-    font-family: "Raleway-Bold";
+    font-family: "Raleway";
+    font-weight: 700;
     font-size: 20px;
     padding: 7px 20px;
     text-transform: uppercase; 
@@ -309,7 +291,8 @@ section {
     background-color: transparent;
     color: #fbfbfb;
     display:inline-block;
-    font-family: "Raleway-Bold";
+    font-family: "Raleway";
+    font-weight: 700;
     font-size: 14px;
     line-height: 1;
     padding: 30px 20px;   
@@ -453,7 +436,7 @@ section {
 .logo > a{
     color: #212121;
     display: inline-block;
-    font-family: 'Lato-Regular'; 
+    font-family: 'Lato'; 
     font-size: 28px;    
     text-transform: uppercase;
     line-height: 1.6;
@@ -477,7 +460,7 @@ color:#fff;
     width: 100%;
     border-top: 3px solid #cd1f07;
     vertical-align: middle;   
-    /*padding: 30px 0 20px; */  
+    padding: 20px 0 0px;
     color: #f4f4f4;
 }
 .footer-bg a{
@@ -487,10 +470,12 @@ color:#fff;
 .copyright {
     color: #f4f4f4;
     margin: 20px 0;
+	padding: 10px 0 10px;
     text-align: center;
 }
 .footer-sidebar {
     border-bottom: 1px solid #545454;
+	padding-bottom:20px;
 
 }
 
@@ -511,7 +496,8 @@ color:#fff;
 .footer-sidebar .widget_recent_comments .widget-title{
     border-bottom: 1px solid #515151;
     color: #f4f4f4;
-    font-family: 'Raleway-Bold';
+    font-family: "Raleway";
+    font-weight: 700;
     font-size: 18px;
     margin: 20px 0;
     padding-bottom: 15px;
@@ -531,7 +517,8 @@ color:#fff;
 .footer-widget-title {
     border-bottom: 1px solid #515151;
     color: #f4f4f4;
-    font-family: 'Raleway-Bold';   
+    font-family: "Raleway";
+    font-weight: 700; 
     font-size: 18px;
     margin: 20px 0;
     padding-bottom: 15px;
@@ -579,7 +566,8 @@ color:#fff;
 }
 .footer-post .post-title{
     color: #ccc;
-    font-family: 'Raleway-Bold';   
+    font-family: "Raleway";
+    font-weight: 700;  
     display: block;
     margin-bottom: 5px;
     text-transform: capitalize;
@@ -608,7 +596,8 @@ color:#fff;
     text-transform: uppercase;
     border-radius: 3px;  
     display: inline-block;
-    font-family: 'Raleway-Bold';  
+    font-family: "Raleway";
+    font-weight: 700; 
     margin: 0 5px 10px 0;
     padding: 9px 15px;
     vertical-align: baseline;
@@ -645,7 +634,8 @@ color:#fff;
     border-bottom: 1px solid #cccccc;
 }
 .site-breadcumb > h1{
-    font-family: 'Raleway-Bold';   
+    font-family: "Raleway";
+    font-weight: 700;  
     font-size: 22px;
     margin-bottom: 0;
     color: #cd1f07;   
@@ -670,6 +660,10 @@ color:#fff;
 }
 .breadcrumb-menubar > li > a:hover,.breadcrumb-menubar > li > a:focus{
     color: #cd1f07;
+}
+.breadcrumb-menubar > li > a:after{
+    content:'/';
+    padding: 0 5px;
 }
 /**************************breadcrumb end*********************/
 
@@ -714,7 +708,8 @@ color:#fff;
 
 .sidebar-widget .widget-title {
     color: #cd1f07;
-    font-family: "Raleway-Bold";
+    font-family: "Raleway";
+    font-weight: 700;
     font-size: 16px;
     margin: 0 0 15px;
     text-align: left;
@@ -731,7 +726,7 @@ color:#fff;
     margin-bottom: 10px;
 }
 .sidebar-widget ul li{
-    border-bottom: 1px solid #c7c7c7; 	
+    border-bottom: 1px solid #c7c7c7;   
     padding-top: 7px;
     padding-bottom: 7px;
     text-transform: capitalize;
@@ -778,7 +773,7 @@ color:#fff;
     text-transform: capitalize;
 }
 .comment-author-link {
-    font-family: 'Lato-Regular'; 
+    font-family: 'Lato'; 
     text-transform: uppercase;
 }
 .sidebar-widget .comment-author-link a{
@@ -813,7 +808,8 @@ color:#fff;
 .sidebar-widget .post-title {
     color: #212121;
     display: block;
-    font-family: "Raleway-Bold";
+    font-family: "Raleway";
+    font-weight: 700;
     margin-bottom: 5px;
     text-transform: capitalize;
 }
@@ -907,7 +903,7 @@ a.comment-reply-link{
     border-bottom: 4px double #c7c7c7;
     color: #cd1f07;
     display: table;
-    font-family: "Lato-Regular";
+    font-family: "Lato";
     font-size: 22px;  
     padding: 0 30px 10px;
     margin: 1em auto;
@@ -945,7 +941,7 @@ a.comment-reply-link{
     padding: 10px;
     width: 100%;
     resize: vertical; 
-    text-transform: capitalize;	
+    text-transform: capitalize; 
 }
 
 .form-submit > input[type="submit"],.wpcf7-form .wpcf7-submit{
@@ -953,7 +949,7 @@ a.comment-reply-link{
     border: 1px solid #cd1f07;
     border-radius: 2px;
     color: #ffffff;
-    font-family: 'Lato-Regular';
+    font-family: 'Lato';
     font-size: 13px;
     margin-top: 10px;
     padding: 8px 20px;
@@ -1147,7 +1143,8 @@ a.comment-reply-link{
     color:#cd1f07;
 }
 .site-pagination a,.site-pagination span{   
-    font-family: "Raleway-Bold";
+    font-family: "Raleway";
+    font-weight: 700;
     font-size: 18px;
     padding: 0 7px;
     text-transform: capitalize;
@@ -1215,6 +1212,9 @@ a.comment-reply-link{
     display: block;
     width: 100%;   
 }
+.carousel .carousel-inner .item img{
+	width:100%;
+}
 .carousel-caption {
     left: 7%;
     right: 36%;
@@ -1245,21 +1245,87 @@ a.comment-reply-link{
     right: 10px;
 }
 .carousel-caption h3 {
-    font-family: "Raleway-Bold";
+    font-family: "Raleway";
+    font-weight: 700;
     font-size: 42px;
     line-height: 1.3;
     text-transform: uppercase;
 }
 .carousel-caption p {
-    font-family: "Raleway-Bold";
+    font-family: "Raleway";
+    font-weight: 700;
     font-size: 20px;
     margin: 15px 55px 35px 0;
 }
+
+
+
+
+
+
+.carousel-indicators {
+    bottom: 0px;
+}
+
+.carousel-inner .item .effect-hover {
+    position: absolute;
+    z-index: 1000;
+    bottom: 0px;
+    top: 0;
+    width: 100%;
+    text-align: left;
+    background: linear-gradient(to bottom, transparent -100%, #000000 130%);
+}
+.carousel-inner .item .effect-hover h3 {
+    color: #fff;
+    padding: 230px 15px 10px;
+    position: relative;
+    font-size: 32px;
+    margin-bottom: 33px;
+    line-height: 40px;
+    text-align: left;
+    width: 86%;
+    margin: 0 auto;
+    font-weight:800;
+}
+.carousel-inner .item .effect-hover p {
+    color: #fff;
+    padding: 15px 15px;
+    position: relative;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: left;
+    width: 86%;
+    margin: 0 auto;
+}
+.carousel-inner .item .effect-hover a {
+    color: #fff;
+    background: #cd1f07;
+    padding: 10px 20px;
+    position: relative;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    width: 86%;
+}
+.carousel-inner .item .effect-hover a:hover{
+    background: #cd1f07;
+} 
 /**************Slider End**************/   
 
 /**************About-Us Start**************/
 .projects-wrap .title-box, .blog-wrap .title-box, .about-us{
     margin-bottom: 40px;
+}
+.about-us-text p{
+	color: #545454;
+    line-height: 1.8;
+    text-align: left;
+    padding: 20px;
+}
+.aboutus-box{
+	margin-bottom:60px;
 }
 /**************About-Us End**************/  
 
@@ -1348,7 +1414,8 @@ a.comment-reply-link{
 }
 .feature-box a {
     color: #212121;
-    font-family: "Raleway-Bold";
+    font-family: "Raleway";
+    font-weight: 700;
     font-size: 18px;
     text-transform: uppercase;
     margin: 0 0 10px;
@@ -1380,13 +1447,17 @@ a.comment-reply-link{
 }
 .business-box h2{   
     text-transform: uppercase;
-    font-family: 'Raleway-Bold';   
-    font-size: 40px;
+    font-size: 32px;
     margin: 0 0 30px;
+    font-weight: 800;
+    border-bottom: double 4px;
+    width: 45%;
+    margin: 20px auto;
+    padding-bottom: 15px;
 }
 .business-box > p {
     margin: 0 8em;
-    text-align: justify;
+    line-height: 26px;
 }
 
 /**************Purpose-Business End**************/
@@ -1419,7 +1490,7 @@ a.comment-reply-link{
     left: 0;
     opacity: 0;
     position: absolute;    
-    width: 100%; 	
+    width: 100%;    
     top: 0;
     right: 0;
     overflow: hidden;
@@ -1459,7 +1530,8 @@ a.comment-reply-link{
 }
 .blog-title{
     color: #212121;
-    font-family: "Raleway-Bold";
+    font-family: "Raleway";
+    font-weight: 700;
     font-size: 16px;
     margin-top: 5px;
     text-transform: capitalize; 
@@ -1557,7 +1629,7 @@ a.comment-reply-link{
 /**************************contact-us END*********************/
 
 .custom-header-image{
-	padding-top:75px;
+    padding-top:75px;
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     ::i-block-chrome, .blog-box-img {   
@@ -1606,6 +1678,17 @@ embed, iframe, object, video {
     left: 6px;
 }
 /* media */
+@media screen and (max-width:1024px){
+	.carousel-inner .item .effect-hover h3{
+		display:none;
+	}
+	.carousel-inner .item .effect-hover p{
+		display:none;
+	}
+	.logo{
+		text-align:center;
+	}
+}
 @media (min-width:1024px) {
     .page-template-homepage .scroll-header {
         position: absolute;
@@ -1631,9 +1714,22 @@ embed, iframe, object, video {
     .comment-form-email {
         margin: auto 12px;
     }
+	.amenu-list li a, .amenu-list li a:link, .amenu-list li a:visited{
+		padding:30px 10px;
+	}
+	
 
 }
 @media (max-width:767px) {
+	.aboutus-box .blog-wrap{
+		margin-bottom:0px;
+	}
+	.aboutus-box .blog-wrap .title-box{
+		margin-bottom:10px;
+	}
+	.business-box h2{
+		width:80%;
+	}
 
     .transparent-menubar .scroll-header {
         position: static;
@@ -1656,12 +1752,12 @@ embed, iframe, object, video {
         margin-top: 5px;
     }
     .amenu-list li{
-        margin:0;	
+        margin:0;   
         display: block;
         float: none;
     }
     .amenu-list li a:link, .amenu-list li a:visited{
-        font-family: 'Lato-Regular';	
+        font-family: 'Lato';    
         line-height: normal;
         padding: 10px;
     }
@@ -1686,7 +1782,7 @@ embed, iframe, object, video {
     .amenu-list ul li a:link, .amenu-list ul li a:visited{
         background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
         border-bottom: medium none;
-        font-family: "Lato-Regular";
+        font-family: "Lato";
         text-align: left;
     }
     .amenu-list ul li a:hover, .amenu-list ul li a.active {
@@ -1767,7 +1863,7 @@ embed, iframe, object, video {
         border-bottom: 4px double #c7c7c7;
         color: #cd1f07;
         display: inline-block;
-        font-family: "Lato-Regular";
+        font-family: "Lato";
         font-size: 30px;  
         padding: 0 40px 10px;
         margin: 0 0 15px;
@@ -1817,8 +1913,13 @@ embed, iframe, object, video {
         margin: 5px 2px 0 0;
     }
     .amenu-list li a:link, .amenu-list li a:visited{
-        padding: 10px 20px;
+        padding: 10px 10px;
+		font-size:13px;
     }
+	.social-icon li a{
+		font-size:16px;
+		line-height:30px;
+	}
     .scroll-header .social-icon > ul{
         margin: 0;
     }

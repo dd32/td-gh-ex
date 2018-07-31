@@ -8,7 +8,7 @@ get_header(); ?>
         <div class="breadcrumb-bg">
             <div class="royals-container container">
                 <div class="site-breadcumb">
-                  <h1 class="page-title-404"><?php _e( 'Oops! That page can&rsquo;t be found.', 'avocation' ); ?></h1>
+                  <h1 class="page-title-404"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'avocation' ); ?></h1>
                     <ol class="breadcrumb breadcrumb-menubar">
                         <?php if (function_exists('avocation_custom_breadcrumbs')) avocation_custom_breadcrumbs(); ?>                             
                     </ol>
@@ -22,8 +22,8 @@ get_header(); ?>
                 <div class="row">
                     <div class="blog-page col-md-8 col-sm-8"> 
 			<div class="blog-box">
-				 <h1 class="page-title-404"><?php _e( 'Oops! That page can&rsquo;t be found.', 'avocation' ); ?></h1>
-				<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'avocation' ); ?></p>
+				 <h1 class="page-title-404"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'avocation' ); ?></h1>
+				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'avocation' ); ?></p>
 				<?php get_search_form(); ?>
 			</div><!-- .page-content -->
 			 </div>

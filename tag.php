@@ -8,7 +8,7 @@ get_header(); ?>
         <div class="breadcrumb-bg">
             <div class="royals-container container">
                 <div class="site-breadcumb">
-                    <h1><?php printf( __( 'Tag Archives : %s', 'avocation' ), single_tag_title( '', false ) ); ?></h1>
+                    <h1><?php printf( /* translators: %s is single tag name.*/ esc_html( 'Tag Archives : %s', 'avocation' ), single_tag_title( '', false ) ); ?></h1>
                     <ol class="breadcrumb breadcrumb-menubar">
                         <?php if (function_exists('avocation_custom_breadcrumbs')) avocation_custom_breadcrumbs(); ?>                             
                     </ol>

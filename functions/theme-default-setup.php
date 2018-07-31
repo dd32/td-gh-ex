@@ -5,7 +5,7 @@
 */
 function avocation_font_url() {
    $avocation_font_url = '';
-   if ('off' !== _x('on', 'Raleway-Regular font: on or off', 'avocation')) {
+   if ('off' !== _x('on', 'Raleway font: on or off', 'avocation')) {
        $avocation_font_url = add_query_arg('family', urlencode('Raleway:400,400italic,600italic,700'), "//fonts.googleapis.com/css");
    }
    return $avocation_font_url;
@@ -78,7 +78,7 @@ function avocation_entry_meta() {
 	);
 	$avocation_author = sprintf( '<a href="%1$s" title="%2$s" >%3$s</a>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'avocation' ), get_the_author() ) ),
+		esc_attr( sprintf(/* translators: %s is author name*/ __( 'View all posts by %s', 'avocation' ), get_the_author() ) ),
 		get_the_author()
 	);
 	if($avocation_category_list) {

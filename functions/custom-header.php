@@ -114,8 +114,8 @@ function avocation_admin_header_image() { ?>
 	<div id="headimg" style="background: url(<?php header_image(); ?>) no-repeat scroll top; background-size: 1600px auto;">
 		<?php $style = ' style="color:#' . get_header_textcolor() . ';"'; ?>
 		<div class="home-link">
-			<h1 class="displaying-header-text"><a id="name"<?php echo $avocation_style; ?> onclick="return false;" href="#" tabindex="-1"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 id="desc" class="displaying-header-text"<?php echo $avocation_style; ?>><?php bloginfo( 'description' ); ?></h2>
+			<h1 class="displaying-header-text"><a id="name"<?php echo esc_attr($avocation_style); ?> onclick="return false;" href="#" tabindex="-1"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 id="desc" class="displaying-header-text"<?php echo esc_attr($avocation_style); ?>><?php bloginfo( 'description' ); ?></h2>
 		</div>
 	</div>
 <?php } ?>

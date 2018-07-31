@@ -9,11 +9,10 @@ get_header(); ?>
             <div class="breadcrumb-bg">
                 <div class="royals-container container">
                     <div class="site-breadcumb">
-                        <h1><?php $blogtitle_check = get_theme_mod( 'avocation_blogtitle' );
-							if( $blogtitle_check != '' ) {  
-								echo esc_attr( get_theme_mod('avocation_blogtitle', '') );
+                        <h1><?php if( get_theme_mod( 'avocation_blogtitle','' )!='' ) {  
+								echo esc_html( get_theme_mod('avocation_blogtitle') );
 							 } else { 	
-								echo _e('Our Blog','avocation');
+								esc_html_e('Our Blog','avocation');
 							} ?>
 						</h1>
                         <ol class="breadcrumb breadcrumb-menubar">

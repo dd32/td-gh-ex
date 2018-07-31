@@ -20,7 +20,7 @@ get_header(); ?>
     <div class="avocation-container  container">
         <div class="blog-wrap row">
             <?php get_sidebar(); ?>
-            <div class="blog-page col-md-offset-1 col-md-8 col-sm-8">                        
+            <div class="blog-page col-md-8 col-sm-8">                        
                 <?php while (have_posts()) : the_post(); ?>
                     <div class="blog-box">
                         <div class="item">
