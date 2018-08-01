@@ -272,7 +272,24 @@ if (!function_exists('suevafree_enqueue_style')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/*RESPONSIVE EMBED */
+/* ALLOWED PROTOCOLS */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('suevafree_kses_allowed_protocols')) {
+
+	function suevafree_kses_allowed_protocols($protocols) {
+		
+		$protocols[] = 'skype';
+		return $protocols;
+	
+	}
+
+	add_filter( 'kses_allowed_protocols', 'suevafree_kses_allowed_protocols');
+
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* RESPONSIVE EMBED */
 /*-----------------------------------------------------------------------------------*/ 
 
 if (!function_exists('suevafree_embed_html')) {

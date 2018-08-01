@@ -346,15 +346,19 @@ if( !class_exists( 'suevafree_customize' ) ) {
 			
 			);
 	
-			if (!strstr ( $value, $sanize[$setting->id])) :
+			if (!isset($value) || $value == '' || $value == $sanize[$setting->id]) {
+
+				return '';
+
+			} elseif (!strstr($value, $sanize[$setting->id])) {
 	
 				return $sanize[$setting->id] . $value;
 	
-			else:
+			} else {
 	
-				return esc_url_raw($value, array('skype', 'tel', 'mailto'));
+				return esc_url_raw($value, array('mailto', 'skype', 'tel'));
 	
-			endif;
+			}
 	
 		}
 		
