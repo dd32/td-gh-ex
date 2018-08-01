@@ -55,7 +55,7 @@ function ascend_setup() {
 	// Indicate widget sidebars can use selective refresh in the Customizer.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
-	define( 'ASCEND_VERSION', '1.3.0' );
+	define( 'ASCEND_VERSION', '1.3.1' );
 	// Square.
 	add_image_size( 'ascend-600x600', 600, 600, true );
 	// portrait.
@@ -147,6 +147,10 @@ function ascend_filter_archive_title( $title ){
 	} elseif ( function_exists( 'is_bbpress' ) ) {
 		if ( is_bbpress() ) {
 			$title = bbp_title();
+		}
+	} elseif ( function_exists( 'tribe_is_month') ) {
+		if( tribe_is_month() ) {
+			$title = tribe_get_event_label_plural();
 		}
 	}
 	return $title;

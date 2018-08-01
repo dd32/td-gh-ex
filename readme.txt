@@ -28,6 +28,11 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.3.1 | 31st July 2018 =
+* Add: Better Modern tribe Support
+* Update: Simple search loop.
+* Update: Google Font Options. 
+
 = Version 1.3.0 | 18th July 2018 =
 * Fix: Undefined variable
 
