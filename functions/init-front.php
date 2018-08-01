@@ -105,7 +105,10 @@ if ( ! function_exists( 'hu_get_layout_class' ) ) {
       array_walk_recursive(hu_is_real_home(), function(&$v) { $v = htmlspecialchars($v); }); */
 
     // Check for page/post specific layout
-    if ( ! hu_is_real_home() && ( is_page() || is_single() ) ) {
+    if ( hu_is_checked( 'force-layout-global' ) ) {
+        $layout = hu_get_option( 'layout-global' );
+    }
+    elseif ( ! hu_is_real_home() && ( is_page() || is_single() ) ) {
         // Reset post data
         wp_reset_postdata();
         global $post;
@@ -514,10 +517,14 @@ if ( ! function_exists( 'hu_get_404_title' ) ) {
 if ( ! function_exists( 'hu_get_author_title' ) ) {
   function hu_get_author_title() {
     $author = get_userdata( get_query_var('author') );
-    return sprintf('<i class="fas fa-user"></i>%1$s <span>%2$s </span>',
-        __('Author:','hueman'),
-        $author->display_name
-    );
+    if ( ! hu_is_checked( 'archive-title-with-icon' ) ) {
+        return $author->display_name;
+    } else {
+        return sprintf('<i class="fas fa-user"></i>%1$s <span>%2$s </span>',
+            __('Author:','hueman'),
+            $author->display_name
+        );
+    }
   }
 }
 
@@ -528,15 +535,23 @@ if ( ! function_exists( 'hu_get_author_title' ) ) {
 if ( ! function_exists( 'hu_get_term_page_title' ) ) {
   function hu_get_term_page_title() {
     if ( is_category() ) {
-      $title = sprintf('<i class="fas fa-folder-open"></i>%1$s <span>%2$s </span>',
-          __('Category:','hueman'),
-          single_cat_title('', false)
-      );
+      if ( ! hu_is_checked( 'archive-title-with-icon' ) ) {
+          $title = single_cat_title('', false);
+      } else {
+          $title = sprintf('<i class="fas fa-folder-open"></i>%1$s <span>%2$s </span>',
+              __('Category:','hueman'),
+              single_cat_title('', false)
+          );
+      }
     } else if ( is_tag() ) {
-      $title = sprintf('<i class="fas fa-tags"></i>%1$s <span>%2$s </span>',
-          __('Tagged:','hueman'),
-          single_tag_title('', false)
-      );
+      if ( ! hu_is_checked( 'archive-title-with-icon' ) ) {
+          $title = single_tag_title('', false);
+      } else {
+          $title = sprintf('<i class="fas fa-tags"></i>%1$s <span>%2$s </span>',
+              __('Tagged:','hueman'),
+              single_tag_title('', false)
+          );
+      }
     }
     return $title;
   }
@@ -548,20 +563,34 @@ if ( ! function_exists( 'hu_get_term_page_title' ) ) {
 if ( ! function_exists( 'hu_get_date_archive_title' ) ) {
   function hu_get_date_archive_title() {
     if ( is_day() ) {
-      $title = sprintf('<i class="fas fa-calendar"></i>%1$s <span>%2$s </span>',
-          __('Daily Archive:','hueman'),
-          get_the_time('F j, Y')
-      );
+      if ( ! hu_is_checked( 'archive-title-with-icon' ) ) {
+          $title = get_the_time('F j, Y');
+      } else {
+          $title = sprintf('<i class="fas fa-calendar"></i>%1$s <span>%2$s </span>',
+              __('Daily Archive:','hueman'),
+              get_the_time('F j, Y')
+          );
+      }
+
     } else if ( is_month() ) {
-      $title = sprintf('<i class="fas fa-calendar"></i>%1$s <span>%2$s </span>',
-          __('Monthly Archive:','hueman'),
-          get_the_time('F Y')
-      );
+      if ( ! hu_is_checked( 'archive-title-with-icon' ) ) {
+          $title = get_the_time('F Y');
+      } else {
+          $title = sprintf('<i class="fas fa-calendar"></i>%1$s <span>%2$s </span>',
+              __('Monthly Archive:','hueman'),
+              get_the_time('F Y')
+          );
+      }
+
     } else if ( is_year() ) {
-      $title = sprintf('<i class="fas fa-calendar"></i>%1$s <span>%2$s </span>',
-          __('Yearly Archive:','hueman'),
-          get_the_time('Y')
-      );
+      if ( ! hu_is_checked( 'archive-title-with-icon' ) ) {
+          $title = get_the_time('Y');
+      } else {
+          $title = sprintf('<i class="fas fa-calendar"></i>%1$s <span>%2$s </span>',
+              __('Yearly Archive:','hueman'),
+              get_the_time('Y')
+          );
+      }
     }
     return $title;
   }
@@ -1493,8 +1522,18 @@ function hu_get_template_part( $path ) {
 
 
 
+add_filter( 'hu_masonry_grid_thumb_size',  'hu_maybe_replace_blog_thumb_size_with_full' );
+add_filter( 'hu_grid_featured_thumb_size', 'hu_maybe_replace_blog_thumb_size_with_full' );
+add_filter( 'hu_grid_standard_thumb_size', 'hu_maybe_replace_blog_thumb_size_with_full' );
+add_filter( 'hu_grid_thumb_size',          'hu_maybe_replace_blog_thumb_size_with_full' );
 
-
+//@return string thumb-size
+//Filter to override the default grid thumb sizes
+//hook: 'hu_masonry_grid_thumb_size'
+//hook: 'hu_grid_thumb_size'
+function hu_maybe_replace_blog_thumb_size_with_full( $thumb_size ) {
+  return hu_is_checked( 'blog-use-original-image-size' ) ? 'full' : $thumb_size;
+}
 
 /* ------------------------------------------------------------------------- *
  *  Page Menu

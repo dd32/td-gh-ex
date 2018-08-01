@@ -855,6 +855,14 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'choices'   => $this -> hu_get_content_layout_choices( 'global' ),
                 'notice'    => __('Other layouts will override this option if they are set' , 'hueman')
           ),
+          'force-layout-global' => array(
+                'default'   => 0,
+                'control'   => 'HU_controls',
+                'label'     => __("Force the global layout", 'hueman'),
+                'section'   => 'content_layout_sec',
+                'type'      => 'checkbox',
+                'notice'    => __('The global layout will be applied on every pages, even when a specific layout is set.' , 'hueman')
+          ),
           'layout-home' => array(
                 'default'   => 'inherit',
                 'control'   => 'HU_Customize_Layout_Control',
@@ -994,6 +1002,21 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                     'priority' => '60'
                 )
           ),
+          'blog-use-original-image-size'  =>  array(
+                'default'   => 0,
+                'control'   => 'HU_controls' ,
+                'type'      => 'checkbox',
+                'label'     => __( "Display featured images in their original dimensions in post lists" , 'hueman' ),
+                'section'   => 'content_blog_sec' ,
+                //'transport' => 'postMessage',
+                'notice'    => __( 'When checked, the post featured image are displayed in their original size, instead of the optimized image sizes of the theme. Make sure your original images are not too large, it could slow down your website.', 'hueman'),
+                //'active_callback' => 'hu_is_post_list',
+                'priority'   => 22,
+                'ubq_section'   => array(
+                    'section' => 'static_front_page',
+                    'priority' => '65'
+                )
+          ),
           'excerpt-length'  =>  array(
                 'default'   => 34,
                 'control'   => 'HU_controls' ,
@@ -1014,6 +1037,16 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                     'section' => 'static_front_page',
                     'priority' => '70'
                 )
+          ),
+          'archive-title-with-icon' => array(
+                'default'   => 1,
+                'control'   => 'HU_controls',
+                'label'     => __( 'Display the archive type and an icon next to the archive headings', 'hueman' ),
+                'section'   => 'content_blog_sec',
+                'type'      => 'checkbox',
+                'notice'    => __( 'In WordPress, archives are the pages listing posts by category, tag, author and date.' , 'hueman'),
+                //'active_callback' => 'hu_is_post_list',
+                'priority'   => 150
           ),
           'featured-posts-enabled' => array(
                 'default'   => 1,
