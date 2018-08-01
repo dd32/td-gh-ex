@@ -1,0 +1,962 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Atlast Agency Theme\n"
+"POT-Creation-Date: 2018-08-01 17:55+0300\n"
+"PO-Revision-Date: 2018-08-01 17:55+0300\n"
+"Last-Translator: \n"
+"Language-Team: https://akisthemes.com\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_attr__\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/admin-pages.php:25
+msgid "PRO VERSION? DON'T THINK SO.."
+msgstr ""
+
+#: admin/admin-pages.php:26
+msgid ""
+"Atlast Agency theme has already been packed with awesome features.\n"
+"    So there is no need at all for a \"Pro\" version of this theme. We only "
+"get better based on your feedback. Please rate us. "
+msgstr ""
+
+#: admin/admin-pages.php:28
+msgid "Rate our Theme"
+msgstr ""
+
+#: admin/admin-pages.php:38
+msgid "Getting Started"
+msgstr ""
+
+#: admin/admin-pages.php:42
+msgid "Documentation / Support"
+msgstr ""
+
+#: admin/admin-pages.php:46
+msgid "Extra Info"
+msgstr ""
+
+#: admin/admin-pages.php:64
+#, php-format
+msgid "Welcome to %1$s"
+msgstr ""
+
+#: admin/admin-pages.php:65
+#, php-format
+msgid "About  %1$s"
+msgstr ""
+
+#: admin/admin-pages.php:80
+#, php-format
+msgid "Welcome to %1$s "
+msgstr ""
+
+#: admin/admin-pages.php:84
+msgid ""
+"You are minutes away for creating something smashing good \n"
+"                        for any any kind of freelancer / digital agency. "
+"Atlast Agency theme is really one of its kind combining superb features with "
+"free price."
+msgstr ""
+
+#: admin/admin-pages.php:130
+msgid "1. Install The Recommended Plugins"
+msgstr ""
+
+#: admin/admin-pages.php:132
+msgid ""
+"This theme comes with some recommended plugins. You can use it without them "
+"installed, however\n"
+"                        if you install them you\n"
+"                        use this theme with its max features. The "
+"recommended plugins appear at the top of the screen when in a notice box."
+msgstr ""
+
+#: admin/admin-pages.php:136
+msgid ""
+"If you haven't already done so, please install and activate these plugins."
+msgstr ""
+
+#: admin/admin-pages.php:140
+msgid "2. Install the demo content."
+msgstr ""
+
+#: admin/admin-pages.php:143
+msgid ""
+"All our our themes comes with Predefined demo content. If you want to "
+"replicate the demo in a\n"
+"                        single click just browse to \"Appearance > Import "
+"Demo Data\" and hit the \"Import Demo Data\"\n"
+"                        Button."
+msgstr ""
+
+#: admin/admin-pages.php:158
+msgid "1. Documentation"
+msgstr ""
+
+#: admin/admin-pages.php:160
+msgid ""
+"This theme comes with extensive documentation. \n"
+"\t\t\t\t\t\tYou can find it by clicking the button below."
+msgstr ""
+
+#: admin/admin-pages.php:165
+msgid "Read the Docs"
+msgstr ""
+
+#: admin/admin-pages.php:170
+msgid "2. Support"
+msgstr ""
+
+#: admin/admin-pages.php:173
+msgid ""
+"We provide awesome support through the WordPress.org forums. If you need any "
+"help just click the button below. We really respect our users."
+msgstr ""
+
+#: admin/admin-pages.php:178
+msgid "I need support"
+msgstr ""
+
+#: admin/admin-pages.php:190
+msgid "1. Changelog"
+msgstr ""
+
+#: admin/admin-pages.php:192
+msgid ""
+"Click the button below to learn more about the changelog of this theme. You "
+"can view all the changes that happen with any new update."
+msgstr ""
+
+#: admin/admin-pages.php:196
+msgid "View Changelog"
+msgstr ""
+
+#: comments.php:9
+msgid "on "
+msgstr ""
+
+#: comments.php:33
+msgid "Trackbacks"
+msgstr ""
+
+#: comments.php:33
+msgid "Trackback"
+msgstr ""
+
+#: functions.php:70
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:71
+msgid "Copyright Menu"
+msgstr ""
+
+#: functions.php:187
+msgid "Footer sidebar"
+msgstr ""
+
+#: functions.php:188
+msgid ""
+" This sidebar appears in the footer. You can use the customizer to select "
+"the layout this sidebar"
+msgstr ""
+
+#: functions.php:235
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:256
+msgid "Edit this comment"
+msgstr ""
+
+#: functions.php:317 includes/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr ""
+
+#: functions.php:318 includes/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#: functions.php:320 includes/class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: functions.php:322 includes/class-tgm-plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: functions.php:323 includes/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: functions.php:375 includes/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: functions.php:376 includes/class-tgm-plugin-activation.php:387
+#: includes/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: functions.php:377 includes/class-tgm-plugin-activation.php:388
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: functions.php:379 includes/class-tgm-plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: functions.php:381 includes/class-tgm-plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: functions.php:383 includes/class-tgm-plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: functions.php:384 includes/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: functions.php:385 includes/class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: functions.php:386 includes/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: functions.php:403
+msgid "Atlast Agency Demo Import"
+msgstr ""
+
+#: functions.php:407
+msgid "After importing this data everything will be in place like the demo."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:386
+#: includes/class-tgm-plugin-activation.php:827
+#: includes/class-tgm-plugin-activation.php:2533
+#: includes/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:934
+#: includes/class-tgm-plugin-activation.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3509
+#: includes/class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3509
+#: includes/class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3517
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/customizer-functions/customizer-panels.php:10
+msgid "Atlast Agency - Homepage"
+msgstr ""
+
+#: includes/customizer-functions/customizer-panels.php:11
+msgid ""
+"This settings apply to the page you have set as the homepage in the "
+"\"Settings > Reading Section\"."
+msgstr ""
+
+#: includes/customizer-functions/customizer-panels.php:18
+msgid "Atlast Agency - Theme Options"
+msgstr ""
+
+#: includes/customizer-functions/customizer-panels.php:19
+msgid "A lot of options to customize your website completely."
+msgstr ""
+
+#: includes/customizer-functions/customizer-panels.php:27
+msgid "Getting Started & Docs"
+msgstr ""
+
+#: includes/customizer-functions/customizer-panels.php:28
+msgid "Getting Started / Docs "
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/about-section.php:7
+msgid "About Section"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/about-section.php:8
+msgid "The first section below the featured categories."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/about-section.php:29
+msgid "Select the page to show."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/about-section.php:30
+msgid "Please use a featured image ,title and an excerpt."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/about-section.php:37
+msgid "Select the about section style."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/about-section.php:38
+msgid ""
+"Well if you select the second one it is better to have a tall featured image "
+"assigned."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/about-section.php:40
+#: includes/customizer-functions/homepage-layout/featured-categories-settings.php:39
+#: includes/customizer-functions/options/copyright-options.php:33
+#: includes/customizer-functions/options/header-image-options.php:50
+msgid "Style 1"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/about-section.php:41
+#: includes/customizer-functions/homepage-layout/featured-categories-settings.php:40
+#: includes/customizer-functions/options/copyright-options.php:34
+msgid "Style 2"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/blog-section.php:6
+#: includes/customizer-functions/homepage-layout/blog-settings.php:6
+msgid "Blog section"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/blog-section.php:7
+#: includes/customizer-functions/homepage-layout/blog-settings.php:7
+msgid ""
+"The blog section of the homepage. It uses the title and the excerpt from the "
+"blog page you have set at the \"Reading Settings\". At the moment you can "
+"show the last 3 blog entries."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/blog-section.php:21
+#: includes/customizer-functions/homepage-layout/blog-settings.php:21
+#: includes/customizer-functions/homepage-layout/portfolio-section.php:48
+#: includes/customizer-functions/homepage-layout/team-section.php:29
+#: includes/customizer-functions/homepage-layout/testimonial-section.php:28
+msgid "Enable this section."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/featured-categories-settings.php:7
+msgid "Featured Categories"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/featured-categories-settings.php:8
+msgid "Show some of your best categories on the front page."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/featured-categories-settings.php:29
+msgid "Add the exact names of the product categories, comma separated"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/featured-categories-settings.php:30
+msgid ""
+"Add the exact name and respect the case eg Shoes is different than shoes."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/featured-categories-settings.php:36
+msgid "The style of the featured categories"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/featured-categories-settings.php:37
+msgid "Choose your preferred layout."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/portfolio-section.php:8
+msgid "Portfolio"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/portfolio-section.php:9
+msgid "Add your projects."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/portfolio-section.php:54
+msgid "This is the parent page of the projects."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/portfolio-section.php:55
+msgid ""
+"By selecting the page above the this section will get the page's title and "
+"the excerpt as the subtitle. \n"
+"    Refer to the documentation to see how you use this section."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/portfolio-section.php:63
+msgid "Portfolio Items by slug"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/portfolio-section.php:64
+msgid ""
+"Add a comma separated list of pages using their unique slugs eg my-page,my-"
+"other-page. All of your pages should have a featured image."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/portfolio-section.php:71
+msgid "Portfolio Style"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/portfolio-section.php:72
+msgid "Choose your favorite one"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/portfolio-section.php:74
+msgid "1 Large  - 4 Smaller Projects (5 Projects)"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/portfolio-section.php:75
+msgid "2 Small - 1 Large - 2 Small Project (5 Projects)"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/portfolio-section.php:76
+msgid "3 Columns each (4/row) (Unlimited Projects)"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/portfolio-section.php:77
+msgid "4 Columns each (3/row) (Unlimited Projects)"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/portfolio-section.php:85
+msgid "Portfolio Layout"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/portfolio-section.php:86
+msgid "Boxed or Full width?"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/portfolio-section.php:88
+#: includes/customizer-functions/options/footer-options.php:26
+msgid "Boxed"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/portfolio-section.php:89
+msgid "Full Width"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/section-2-settings.php:7
+msgid "Section 2"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/section-2-settings.php:8
+msgid "The second section below the featured categories section."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/section-2-settings.php:25
+msgid "Set background color."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/section-2-settings.php:32
+msgid "Select the page to show the content."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/section-2-settings.php:33
+msgid ""
+"Keep in mind to use a page that you have pasted a WooCommerce shortcode "
+"inside it order to make the products shown inside this section. The title of "
+"that page and the excerpt will be shown as title and subtitle automatically. "
+"There are some examples for this in the documentation."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/slider-options.php:7
+msgid "Slider Options"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/slider-options.php:8
+msgid ""
+"You can have an slider with unlimited slides! If you enable this feature you "
+"have to remove the header image if you have set any. If not both the slider "
+"and the header image will appear."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/slider-options.php:22
+msgid "Select the parent page of the slider."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/slider-options.php:23
+msgid ""
+"By selecting the page below, all its children pages will be act like the "
+"slides. \n"
+"    Refer to the documentation to see how you use this section."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/team-section.php:8
+msgid "Team"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/team-section.php:9
+msgid "Add your team members."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/team-section.php:35
+msgid "This is the parent page of the team members."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/team-section.php:36
+msgid ""
+"By selecting the page above the this section will get the page's title and "
+"the excerpt as the subtitle. \n"
+"    Also all of its child pages will act as the team members and appear in "
+"that section."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/testimonial-section.php:6
+msgid "Testimonials"
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/testimonial-section.php:7
+msgid "Show your latest testimonials using a great testimonials slider."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/testimonial-section.php:35
+msgid "Select the parent page of the testimonials."
+msgstr ""
+
+#: includes/customizer-functions/homepage-layout/testimonial-section.php:36
+msgid ""
+"By selecting the page above, all its children pages will be act like the "
+"testimonials. Refer to the documentation to see how you use this section."
+msgstr ""
+
+#: includes/customizer-functions/options/copyright-options.php:7
+msgid "Copyright section"
+msgstr ""
+
+#: includes/customizer-functions/options/copyright-options.php:30
+msgid "Select the copyright section style"
+msgstr ""
+
+#: includes/customizer-functions/options/copyright-options.php:31
+#: includes/customizer-functions/options/header-image-options.php:48
+msgid ""
+"There are more than one to choose from. Please refer to the documentation to "
+"view the available layouts."
+msgstr ""
+
+#: includes/customizer-functions/options/copyright-options.php:35
+msgid "Style 3"
+msgstr ""
+
+#: includes/customizer-functions/options/copyright-options.php:36
+msgid "Style 4"
+msgstr ""
+
+#: includes/customizer-functions/options/copyright-options.php:44
+msgid "Copyright"
+msgstr ""
+
+#: includes/customizer-functions/options/copyright-options.php:45
+msgid ""
+"Add your copyright text here. You can use this text with the available "
+"copyright layouts."
+msgstr ""
+
+#: includes/customizer-functions/options/footer-options.php:7
+msgid "Footer section"
+msgstr ""
+
+#: includes/customizer-functions/options/footer-options.php:23
+msgid "Select the footer(widget area) layout"
+msgstr ""
+
+#: includes/customizer-functions/options/footer-options.php:24
+msgid "You can have boxed and full width layout."
+msgstr ""
+
+#: includes/customizer-functions/options/footer-options.php:27
+msgid "Full width"
+msgstr ""
+
+#: includes/customizer-functions/options/header-image-options.php:8
+msgid "Navigation & Header Image section"
+msgstr ""
+
+#: includes/customizer-functions/options/header-image-options.php:47
+msgid "Select header (contains the navigation) style"
+msgstr ""
+
+#: includes/customizer-functions/options/header-image-options.php:59
+msgid "Do you want the header image to appear to all pages / posts etc?"
+msgstr ""
+
+#: includes/customizer-functions/options/header-image-options.php:60
+msgid ""
+"If this is a \"No\" the header image (if any) will appear only to the "
+"homepage and the static front page."
+msgstr ""
+
+#: includes/customizer-functions/options/header-image-options.php:62
+msgid "No - Only Front"
+msgstr ""
+
+#: includes/customizer-functions/options/header-image-options.php:63
+msgid "Yes, everywhere"
+msgstr ""
+
+#: includes/customizer-functions/options/header-image-options.php:71
+msgid "Add transparency to the header."
+msgstr ""
+
+#: includes/customizer-functions/options/header-image-options.php:72
+msgid "This works with header and slider enabled."
+msgstr ""
+
+#: includes/customizer-functions/options/header-image-options.php:74
+#: includes/customizer-functions/options/header-image-options.php:85
+msgid "No"
+msgstr ""
+
+#: includes/customizer-functions/options/header-image-options.php:75
+#: includes/customizer-functions/options/header-image-options.php:86
+msgid "Yes"
+msgstr ""
+
+#: includes/customizer-functions/options/header-image-options.php:82
+msgid "Stick the header navigation at the top."
+msgstr ""
+
+#: includes/customizer-functions/options/header-image-options.php:83
+msgid "Enable this to set the main navigation fixed during the page scroll."
+msgstr ""
+
+#: includes/customizer-functions/options/header-image-options.php:93
+msgid "Select the content of the header image(page)."
+msgstr ""
+
+#: includes/customizer-functions/options/header-image-options.php:94
+msgid ""
+"This is a page. If you apply a page ,then title of that page and its link "
+"will be visible ,not its featured image!"
+msgstr ""
+
+#: searchform.php:3 template-parts/header/header-elements/search-overlay.php:6
+#: template-parts/header/header-elements/search-overlay.php:10
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:8
+msgid "Please add widgets here."
+msgstr ""
+
+#: template-parts/content/archive/archive-style-1.php:18
+#: template-parts/content/blog/blog-style-1.php:18
+#: template-parts/content/category/category-style-1.php:18
+#: template-parts/content/search/search-style-1.php:18
+#: template-parts/content/tag/tag-style-1.php:18
+#: template-parts/custom-pages/homepage/blog/blog-style-1.php:21
+msgid "Continue Reading"
+msgstr ""
+
+#: template-parts/content/content-elements/meta.php:5
+msgid "on"
+msgstr ""
+
+#: template-parts/content/content-elements/pagination/nav-below.php:6
+#, php-format
+msgid " %s Previous posts"
+msgstr ""
+
+#: template-parts/content/content-elements/pagination/nav-below.php:11
+#, php-format
+msgid "Next posts %s"
+msgstr ""
+
+#: template-parts/content/single/single-style-1.php:17
+msgid "Read Also"
+msgstr ""
+
+#: template-parts/copyright/copyright-elements/copyright-text.php:9
+msgid "Atlast Agency WordPress Theme"
+msgstr ""
+
+#: template-parts/copyright/copyright-elements/copyright-text.php:9
+msgid " by "
+msgstr ""
+
+#: template-parts/copyright/copyright-elements/copyright-text.php:11
+msgid "akisthemes.com"
+msgstr ""
+
+#: template-parts/copyright/copyright-elements/social-menu.php:2
+#: template-parts/header/header-elements/social-menu.php:12
+msgid "Visit us on Facebook"
+msgstr ""
+
+#: template-parts/copyright/copyright-elements/social-menu.php:6
+#: template-parts/header/header-elements/social-menu.php:19
+msgid "Follow us on Twitter"
+msgstr ""
+
+#: template-parts/copyright/copyright-elements/social-menu.php:8
+#: template-parts/header/header-elements/social-menu.php:24
+msgid "View our Google+ profile"
+msgstr ""
+
+#: template-parts/copyright/copyright-elements/social-menu.php:10
+#: template-parts/header/header-elements/social-menu.php:30
+msgid "View our Linkedin profile"
+msgstr ""
+
+#: template-parts/copyright/copyright-elements/social-menu.php:12
+#: template-parts/header/header-elements/social-menu.php:34
+msgid "Follow us on Instagram"
+msgstr ""
+
+#: template-parts/custom-pages/homepage/about/about-style-1.php:25
+#: template-parts/custom-pages/homepage/about/about-style-2.php:28
+msgid "Read More"
+msgstr ""
+
+#: template-parts/custom-pages/homepage/testimonials/testimonial-style-1.php:49
+msgid "View Testimonials"
+msgstr ""
+
+#: template-parts/slider/slider-tpl.php:42
+#: template-parts/slider/slider-tpl.php:51 theme-init/init.php:69
+msgid "Learn More"
+msgstr ""
+
+#: theme-init/init.php:18
+msgid "Add a Menu"
+msgstr ""

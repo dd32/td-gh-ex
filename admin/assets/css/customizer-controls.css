@@ -1,0 +1,15 @@
+.getting-started-section{
+    text-align: right;
+}
+#getting-started-btn{
+    background: #ff7600;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 36px;
+    height: 36px;
+    border:none;
+    box-shadow: none;
+}
+#getting-started-btn:hover{
+    background: rgba(255, 124, 0, 0.74);
+}
