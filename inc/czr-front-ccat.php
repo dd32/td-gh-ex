@@ -4223,7 +4223,7 @@ if ( ! class_exists( 'CZR_headings' ) ) :
 
                   apply_filters( 'tc_author_meta_wrapper_class', 'row-fluid' ),
 
-                  sprintf('<div class="%1$s">%2$s</div><div class="%3$s"><h2>%4$s</h2><p>%5$s</p></div>',
+                  sprintf('<div class="%1$s">%2$s</div><div class="%3$s"><h2>%4$s</h2><div>%5$s</div></div>',
                       apply_filters( 'tc_author_meta_avatar_class', 'comment-avatar author-avatar span2'),
                       get_avatar( get_the_author_meta( 'user_email', $user_id ), apply_filters( 'tc_author_bio_avatar_size' , 100 ) ),
                       apply_filters( 'tc_author_meta_content_class', 'author-description span10' ),
@@ -4656,9 +4656,14 @@ if ( ! class_exists( 'CZR_page' ) ) :
     function czr_fn_write_thumbnail_inline_css( $_css ) {
       if ( ! $this -> czr_fn_show_single_page_thumbnail() )
         return $_css;
+
       $_single_thumb_height   = apply_filters('tc_single_page_thumb_height', esc_attr( czr_fn_opt( 'tc_single_page_thumb_height' ) ) );
       $_single_thumb_height   = (! $_single_thumb_height || ! is_numeric($_single_thumb_height) ) ? 250 : $_single_thumb_height;
-      return sprintf("%s\n%s",
+
+      $_single_thumb_smartphone_height   = apply_filters('tc_single_page_thumb_smartphone_height', esc_attr( czr_fn_opt( 'tc_single_page_thumb_smartphone_height' ) ) );
+      $_single_thumb_smartphone_height   = (! $_single_thumb_smartphone_height || ! is_numeric($_single_thumb_smartphone_height) ) ? 200 : $_single_thumb_smartphone_height;
+
+      $_css = sprintf("%s\n%s",
         $_css,
         ".tc-single-page-thumbnail-wrapper .tc-rectangular-thumb {
           max-height: {$_single_thumb_height}px;
@@ -4673,6 +4678,19 @@ if ( ! class_exists( 'CZR_page' ) ) :
           transition: opacity .5s ease-in-out;
         }\n"
       );
+
+      //max-height in smartphones: max-width: 480px
+      if ( $_single_thumb_smartphone_height != $_single_thumb_height ) {
+        $_css                       = sprintf("%s\n@media (max-width: %spx ){\n%s\n}\n",
+          $_css,
+          480,
+          ".tc-single-page-thumbnail-wrapper .tc-rectangular-thumb {
+            max-height: {$_single_thumb_smartphone_height}px;
+            height :{$_single_thumb_smartphone_height}px
+          }"
+        );
+      }
+      return $_css;
     }
 
   }//end of class
@@ -4823,10 +4841,10 @@ if ( ! class_exists( 'CZR_post' ) ) :
                                     apply_filters( 'tc_author_meta_avatar_class', 'comment-avatar author-avatar span2'),
                                     get_avatar( get_the_author_meta( 'user_email', $author_id ), apply_filters( 'tc_author_bio_avatar_size' , 100 ) )
                             ),
-                            sprintf('<div class="%1$s"><h3>%2$s</h3><p>%3$s</p><div class="author-link">%4$s</div></div>',
+                            sprintf('<div class="%1$s"><h3>%2$s</h3><div>%3$s</div><div class="author-link">%4$s</div></div>',
                                     apply_filters( 'tc_author_meta_content_class', 'author-description span10' ),
                                     sprintf( __( 'About %s' , 'customizr' ), $author_name ),
-                                    get_the_author_meta( 'description', $author_id ),
+                                    apply_filters( 'the_author_description', get_the_author_meta( 'description', $author_id ) ),
                                     sprintf( '<a href="%1$s" rel="author">%2$s</a>',
                                       esc_url( get_author_posts_url( $author_id ) ),
                                       sprintf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>' , 'customizr' ), $author_name )
@@ -4956,9 +4974,14 @@ if ( ! class_exists( 'CZR_post' ) ) :
     function czr_fn_write_thumbnail_inline_css( $_css ) {
       if ( ! $this -> czr_fn_show_single_post_thumbnail() )
         return $_css;
+
       $_single_thumb_height   = apply_filters('tc_single_post_thumb_height', esc_attr( czr_fn_opt( 'tc_single_post_thumb_height' ) ) );
       $_single_thumb_height   = (! $_single_thumb_height || ! is_numeric($_single_thumb_height) ) ? 250 : $_single_thumb_height;
-      return sprintf("%s\n%s",
+
+      $_single_thumb_smartphone_height   = apply_filters('tc_single_post_thumb_smartphone_height', esc_attr( czr_fn_opt( 'tc_single_post_thumb_smartphone_height' ) ) );
+      $_single_thumb_smartphone_height   = (! $_single_thumb_smartphone_height || ! is_numeric($_single_thumb_smartphone_height) ) ? 200 : $_single_thumb_smartphone_height;
+
+      $_css = sprintf("%s\n%s",
         $_css,
         ".tc-single-post-thumbnail-wrapper .tc-rectangular-thumb {
           max-height: {$_single_thumb_height}px;
@@ -4973,6 +4996,19 @@ if ( ! class_exists( 'CZR_post' ) ) :
           transition: opacity .5s ease-in-out;
         }\n"
       );
+
+      //max-height in smartphones: max-width: 480px
+      if ( $_single_thumb_smartphone_height != $_single_thumb_height ) {
+        $_css                       = sprintf("%s\n@media (max-width: %spx ){\n%s\n}\n",
+          $_css,
+          480,
+          ".tc-single-post-thumbnail-wrapper .tc-rectangular-thumb {
+            max-height: {$_single_thumb_smartphone_height}px;
+            height :{$_single_thumb_smartphone_height}px
+          }"
+        );
+      }
+      return $_css;
     }
 
   }//end of class
@@ -6962,7 +6998,7 @@ if ( ! class_exists( 'CZR_post_metas' ) ) :
         */
         private function czr_fn_get_meta_author() {
 
-            $author_id = null;
+            $author_id = get_the_author_meta( 'ID' );
 
             if ( is_single() ) {
                 if ( ! in_the_loop() ) {
@@ -6975,15 +7011,16 @@ if ( ! class_exists( 'CZR_post_metas' ) ) :
             $author_id_array = is_array( $author_id_array ) ? $author_id_array : array( $author_id );
 
             $_html  = '';
-            $_i     = 0;
+            $_i     = 1;
 
             foreach ( $author_id_array as $author_id ) {
-                $_i         +=1;
+
                 $author_name = get_the_author_meta( 'display_name', $author_id );
 
-                if ( ! ( 1 == $_i || count( $author_id ) == $_i ) ) {
+                if ( 1 != $_i && count( $author_id_array ) > $_i - 1 ) {
                     $_html  .= ', ';
                 }
+                $_i         +=1;
 
                 $_html      .= sprintf( '<span class="author vcard author_name"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>' ,
                       esc_url( get_author_posts_url( $author_id ) ),
@@ -6991,7 +7028,6 @@ if ( ! class_exists( 'CZR_post_metas' ) ) :
                       $author_name
                 );
             }
-
             return apply_filters('tc_author_meta', $_html );
         }
 

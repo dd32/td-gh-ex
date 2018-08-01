@@ -23,8 +23,52 @@ See headers of each files for further details.
 
 
 ####################### Changelog ######################
+= 4.1.10 August 1st 2018 =
+* added : new option to display the site title next to the logo. Enabled by default. fixes #1573
+* imp : always make sure WC functions exist before calling them. fixes #1529
+* imp : replace slider iphone checks with checkboxes consistent with the Gutenberg editor style. also fixes #1540
+* imp : better compatibility with the Gutenberg editor for post-formats metaboxes. fixes #1576
+
+= 4.1.9 July 17th 2018 =
+* Imp: make sure the_author_description filter hook is fired. fixes #1561
+* Fix: make sure to respect the threaded comments wp setting. fixes #1563
+
+= 4.1.8 June 22nd 2018 =
+* Impr : compliancy with the latests WordPress.org rules for the themes : the demo content in previewer should be disabled. Featured pages and slider should be opted-in by users and not enabled by default.
+
+= 4.1.7 June 19th 2018 =
+* Fix: do not wrap ol item counters. fixes #1551
+* Fix: improve scoping of the link underline effect only to widgets we know. fixes #1544
+* Fix: do not print related posts by tags when the post has no tags. fixes #1549
+* Impr: improve some woocommerce checkout elements alignment. fixes #1536
+* Impr: when reacting to the post-load event make sure the response object is defined. fixes presscustomizr/customizr#1548
+* Impr: dropdown on hover: make sure pointer events on scroll are still allowed if there's at least one submenu opened
+
+= 4.1.6 June 6th 2018 =
+* Fix: radio and checkboxes style that should be applied only to relevant elments to avoid plugin conflits ( contact forms plugins for example ). fixes #1542
+
+= 4.1.5 May 31st 2018 =
+* Imp: make sure .navbar-brand height is set to auto to avoid issues with bootstrap3 based plugins. fixes #1533
+* Imp: build/delete retina version of pdf thumbnails. Also improve remove retina images logic. fixes #1387
+* Fix: fix comment-form-cookies-consent label and input appearance. fixes #1538
+
+= 4.1.4 May 1st 2018 =
+* Fix: search form close icon visual issue in IE10+. fixes #1512
+* Imp: do not load dev classes
+* Imp: decrease space above WooCommerce page title. fixes #1521
+* Added: options to fine tuning singular featured image height in smartphones
+both in modern and classical style fixes #1524
+
+= 4.1.3 April 15th 2018 =
+* Fix: no need to enqueue the front placeholders assets when user not logged in. fixes #1513
+* Fix: make sure the mfp gallery left arrow is correctly aligned. fixes #1515
+* Fix: set word-wrap break-word for whatever text in the page content. This will avoid text overflowing the parent element width, for example in list items
+
+= 4.1.2 March 29th 2018 =
+* Fix: author meta link pointing to wrong URL. fixes #1509
+
 = 4.1.1 March 23rd 2018 =
-* Fix: wront text-domain for the social links module
+* Fix: wrong text-domain for the social links module
 
 = 4.1.0 March 22nd 2018 =
 * Fix: do not display post metas for pages in search results
