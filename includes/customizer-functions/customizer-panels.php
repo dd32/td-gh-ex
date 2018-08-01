@@ -24,8 +24,8 @@ $wp_customize->add_section(
 		$wp_customize,
 		'getting_started',
 		array(
-			'title' => esc_html__('Getting Started & Docs', 'atlast-business'),
-			'button_txt' => esc_html__('Getting Started / Docs ', 'atlast-business'),
+			'title' => esc_html__('Getting Started & Docs', 'atlast-agency'),
+			'button_txt' => esc_html__('Getting Started / Docs ', 'atlast-agency'),
 			'button_url'=>esc_url( admin_url( 'themes.php?page=atlast-agency-hello' ) ),
 			'priority' => 1,
 			'capability' => 'edit_theme_options',

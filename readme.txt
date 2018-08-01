@@ -2,7 +2,7 @@
 Contributors: ArchimidisM
 Requires at least: WordPress 4.5.1
 Tested up to: WordPress 4.9.7
-Version: 1.0.0
+Version: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: theme-options,full-width-template,two-columns, custom-header, custom-background,custom-logo, custom-menu,flexible-header,translation-ready, featured-images
@@ -125,6 +125,9 @@ The following images:
 The main menu supports up to 3 navigation levels.
 
 == Change Log ==
+
+= Version 1.0.1 =
+- Fixed a textdomain issue
 
 = Version 1.0.0 =
 - Initial Release
