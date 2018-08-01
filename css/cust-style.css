@@ -75,3 +75,26 @@ font-size:14px !important;
  #customize-control-elitepress_lite_options-webriti_stylesheet img{height:45px; 
  width:120px !important;}
   #customize-control-elitepress_lite_options-webriti_stylesheet label{display:inline-block; margin-left: 0px !important;}
+  
+  .course{
+  background-color: #0d6db8;
+  border-color: #ef9c28;
+  color: #fff !important;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  padding: 13px 30px 14px 29px;
+  text-transform: uppercase;
+  width: 54%;
+  border-radius:2px;
+  text-decoration:none;
+}
+
+.pro-box
+{display:block;text-align:center; margin-bottom: 0px;}
+.pro-vesrion 
+{text-align:center; margin-top:15px;}
+
+#accordion-section-elitepress_email_course_section h3{ font-size: 14px;font-weight: 700;}

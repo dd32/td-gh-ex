@@ -30,16 +30,10 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_theme_style.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_header.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer.php' );
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-emailcourse.php' );
 	
 	// Elitepress Info Page
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/elitepress-info/welcome-screen.php');
-	
-	
-	
-	
-	
-	
-	
 	
 	//wp title tag starts here
 	function elitepress_head( $title, $sep ) {

@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: ElitePress\n"
-"POT-Creation-Date: 2018-04-14 19:03+0530\n"
-"PO-Revision-Date: 2018-04-14 19:01+0530\n"
+"POT-Creation-Date: 2018-08-01 12:00+0530\n"
+"PO-Revision-Date: 2018-08-01 12:00+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -62,19 +62,19 @@ msgstr ""
 #: functions/customizer-repeater/class/customizer-repeater-control.php:256
 #: functions/customizer-repeater/class/customizer-repeater-control.php:405
 #: functions/customizer/customizer-blog.php:21
-#: functions/customizer/customizer-homecallout.php:27
-#: functions/customizer/customizer-project.php:47
-#: functions/customizer/customizer-project.php:83
-#: functions/customizer/customizer-project.php:138
-#: functions/customizer/customizer-project.php:168
-#: functions/customizer/customizer-project.php:193
-#: functions/customizer/customizer-service.php:43
-#: functions/customizer/customizer_banner.php:34
-#: functions/customizer/customizer_banner.php:80
-#: functions/customizer/customizer_banner.php:126
-#: functions/customizer/customizer_banner.php:172
-#: functions/customizer/customizer_banner.php:218
-#: functions/customizer/customizer_banner.php:266
+#: functions/customizer/customizer-homecallout.php:26
+#: functions/customizer/customizer-project.php:46
+#: functions/customizer/customizer-project.php:82
+#: functions/customizer/customizer-project.php:137
+#: functions/customizer/customizer-project.php:167
+#: functions/customizer/customizer-project.php:192
+#: functions/customizer/customizer-service.php:42
+#: functions/customizer/customizer_banner.php:33
+#: functions/customizer/customizer_banner.php:79
+#: functions/customizer/customizer_banner.php:125
+#: functions/customizer/customizer_banner.php:171
+#: functions/customizer/customizer_banner.php:217
+#: functions/customizer/customizer_banner.php:265
 #: functions/widget/elitepress_header_widget.php:85 theme_setup_data.php:132
 #: theme_setup_data.php:135 theme_setup_data.php:138 theme_setup_data.php:144
 #: theme_setup_data.php:147
@@ -171,8 +171,8 @@ msgstr ""
 msgid "Leave a Reply"
 msgstr ""
 
-#: content.php:20 fullwidth.php:13 functions.php:125 functions.php:142
-#: functions/customizer/customizer-homecallout.php:50 index-slider.php:100
+#: content.php:20 fullwidth.php:13 functions.php:119 functions.php:136
+#: functions/customizer/customizer-homecallout.php:49 index-slider.php:100
 #: page.php:13 theme_setup_data.php:76
 msgid "Read More"
 msgstr ""
@@ -181,16 +181,16 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: functions.php:59
+#: functions.php:53
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:75
+#: functions.php:69
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:76
+#: functions.php:70
 msgid "Footer Menu"
 msgstr ""
 
@@ -210,17 +210,17 @@ msgstr ""
 #: functions/customizer-repeater/class/customizer-repeater-control.php:270
 #: functions/customizer-repeater/class/customizer-repeater-control.php:419
 #: functions/customizer/customizer-blog.php:34
-#: functions/customizer/customizer-homecallout.php:42
-#: functions/customizer/customizer-project.php:61
-#: functions/customizer/customizer-project.php:114
-#: functions/customizer/customizer-project.php:226
-#: functions/customizer/customizer-service.php:60
-#: functions/customizer/customizer_banner.php:53
-#: functions/customizer/customizer_banner.php:99
-#: functions/customizer/customizer_banner.php:145
-#: functions/customizer/customizer_banner.php:191
-#: functions/customizer/customizer_banner.php:237
-#: functions/customizer/customizer_banner.php:285
+#: functions/customizer/customizer-homecallout.php:41
+#: functions/customizer/customizer-project.php:60
+#: functions/customizer/customizer-project.php:113
+#: functions/customizer/customizer-project.php:225
+#: functions/customizer/customizer-service.php:59
+#: functions/customizer/customizer_banner.php:52
+#: functions/customizer/customizer_banner.php:98
+#: functions/customizer/customizer_banner.php:144
+#: functions/customizer/customizer_banner.php:190
+#: functions/customizer/customizer_banner.php:236
+#: functions/customizer/customizer_banner.php:284
 #: functions/meta-box/post-meta.php:24
 #: functions/widget/elitepress_header_widget.php:91
 msgid "Description"
@@ -228,7 +228,7 @@ msgstr ""
 
 #: functions/customizer-repeater/class/customizer-repeater-control.php:279
 #: functions/customizer-repeater/class/customizer-repeater-control.php:427
-#: functions/customizer/customizer-homecallout.php:56
+#: functions/customizer/customizer-homecallout.php:55
 msgid "Button Text"
 msgstr ""
 
@@ -265,7 +265,7 @@ msgid "Delete field"
 msgstr ""
 
 #: functions/customizer-repeater/class/customizer-repeater-control.php:523
-#: functions/customizer/customizer-homecallout.php:84
+#: functions/customizer/customizer-homecallout.php:83
 #: functions/widget/elitepress_social_icon.php:200
 #: functions/widget/elitepress_social_icon.php:206
 #: functions/widget/elitepress_social_icon.php:212
@@ -293,9 +293,9 @@ msgstr ""
 
 #: functions/customizer-repeater/class/customizer-repeater-control.php:558
 #: functions/customizer-repeater/class/customizer-repeater-control.php:604
-#: functions/customizer/customizer-project.php:96
-#: functions/customizer/customizer-project.php:150
-#: functions/customizer/customizer-project.php:208
+#: functions/customizer/customizer-project.php:95
+#: functions/customizer/customizer-project.php:149
+#: functions/customizer/customizer-project.php:207
 msgid "Image"
 msgstr ""
 
@@ -357,93 +357,122 @@ msgstr ""
 msgid "Latest news"
 msgstr ""
 
-#: functions/customizer/customizer-copyright.php:7
-#: functions/customizer/customizer-copyright.php:13
+#: functions/customizer/customizer-copyright.php:6
+#: functions/customizer/customizer-copyright.php:12
 msgid "Footer copyright settings"
 msgstr ""
 
-#: functions/customizer/customizer-copyright.php:23 theme_setup_data.php:82
+#: functions/customizer/customizer-copyright.php:22 theme_setup_data.php:82
 msgid "©2017 All Rights Reserved - Webriti. - Designed and Developed by"
 msgstr ""
 
 #. Author of the plugin/theme
-#: functions/customizer/customizer-copyright.php:23 theme_setup_data.php:82
+#: functions/customizer/customizer-copyright.php:22 theme_setup_data.php:82
 msgid "Webriti"
 msgstr ""
 
-#: functions/customizer/customizer-copyright.php:32
+#: functions/customizer/customizer-copyright.php:31
 msgid "Copyright text"
 msgstr ""
 
-#: functions/customizer/customizer-copyright.php:50
+#: functions/customizer/customizer-copyright.php:49
 msgid "Enable Footer Menu Bar"
 msgstr ""
 
-#: functions/customizer/customizer-home.php:8
+#: functions/customizer/customizer-emailcourse.php:5
+msgid "CREATE TRUSTWORTHY WEBSITES"
+msgstr ""
+
+#: functions/customizer/customizer-emailcourse.php:20
+msgid "A website exists for one and ONLY one reason:"
+msgstr ""
+
+#: functions/customizer/customizer-emailcourse.php:21
+msgid "To bring you more business."
+msgstr ""
+
+#: functions/customizer/customizer-emailcourse.php:23
+msgid ""
+"Think of your website as a hardworking salesman who works 24/7 and never "
+"asks for a raise!"
+msgstr ""
+
+#: functions/customizer/customizer-emailcourse.php:25
+msgid ""
+"In this email course I deliver 4 highly actionable tips on how you can build "
+"a website which is trustworthy and which, in turn, brings more business to "
+"you."
+msgstr ""
+
+#: functions/customizer/customizer-emailcourse.php:29
+msgid "JOIN COURSE"
+msgstr ""
+
+#: functions/customizer/customizer-home.php:7
 msgid "Header settings"
 msgstr ""
 
-#: functions/customizer/customizer-home.php:14
-#: functions/customizer/customizer-home.php:26
+#: functions/customizer/customizer-home.php:13
+#: functions/customizer/customizer-home.php:25
 msgid "Site favicon"
 msgstr ""
 
-#: functions/customizer/customizer-home.php:33
+#: functions/customizer/customizer-home.php:32
 msgid "Header logo settings"
 msgstr ""
 
-#: functions/customizer/customizer-home.php:50
+#: functions/customizer/customizer-home.php:49
 msgid "Upload logo"
 msgstr ""
 
-#: functions/customizer/customizer-home.php:69
+#: functions/customizer/customizer-home.php:68
 msgid "Show Logo text"
 msgstr ""
 
-#: functions/customizer/customizer-home.php:90
+#: functions/customizer/customizer-home.php:89
 msgid "Enter Logo width"
 msgstr ""
 
-#: functions/customizer/customizer-home.php:109
+#: functions/customizer/customizer-home.php:108
 msgid "Enter Logo Height"
 msgstr ""
 
-#: functions/customizer/customizer-home.php:117
-#: functions/customizer/customizer-home.php:129
+#: functions/customizer/customizer-home.php:116
+#: functions/customizer/customizer-home.php:128
 msgid "Custom CSS"
 msgstr ""
 
-#: functions/customizer/customizer-home.php:161
+#: functions/customizer/customizer-home.php:160
 msgid "Enable search bar on header"
 msgstr ""
 
-#: functions/customizer/customizer-homecallout.php:6
-#: functions/customizer/customizer-homecallout.php:12
+#: functions/customizer/customizer-homecallout.php:5
+#: functions/customizer/customizer-homecallout.php:11
 msgid "Home header callout setting"
 msgstr ""
 
-#: functions/customizer/customizer-homecallout.php:21 theme_setup_data.php:74
+#: functions/customizer/customizer-homecallout.php:20 theme_setup_data.php:74
 msgid "Want to say hey or find out more?"
 msgstr ""
 
-#: functions/customizer/customizer-homecallout.php:70
+#: functions/customizer/customizer-homecallout.php:69
 msgid "Button Link"
 msgstr ""
 
-#: functions/customizer/customizer-pro.php:13
-#: functions/customizer/customizer-pro.php:20
+#: functions/customizer/customizer-pro.php:11
+#: functions/customizer/customizer-pro.php:18
 msgid "UPGRADE TO PRO"
 msgstr ""
 
-#: functions/customizer/customizer-pro.php:46
+#: functions/customizer/customizer-pro.php:44
 msgid "ADD YOUR REVIEW"
 msgstr ""
 
-#: functions/customizer/customizer-pro.php:73
+#: functions/customizer/customizer-pro.php:71
 msgid "DOCUMENTATION"
 msgstr ""
 
-#: functions/customizer/customizer-pro.php:77
+#: functions/customizer/customizer-pro.php:75
 msgid ""
 "The Pro Version gives you more opportunities to enhance your site and "
 "business. In order to create effective online presence one have to showcase "
@@ -453,105 +482,105 @@ msgid ""
 "serve you better."
 msgstr ""
 
-#: functions/customizer/customizer-project.php:8
-#: functions/customizer/customizer-project.php:14
+#: functions/customizer/customizer-project.php:7
+#: functions/customizer/customizer-project.php:13
 msgid "Project settings"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:33
+#: functions/customizer/customizer-project.php:32
 msgid "Enable project section on home Page"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:41 theme_setup_data.php:90
+#: functions/customizer/customizer-project.php:40 theme_setup_data.php:90
 msgid "Latest projects"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:69
+#: functions/customizer/customizer-project.php:68
 msgid "Portfolio one"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:77 theme_setup_data.php:93
+#: functions/customizer/customizer-project.php:76 theme_setup_data.php:93
 msgid "Growing your business"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:125
+#: functions/customizer/customizer-project.php:124
 msgid "Portfolio two"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:132 theme_setup_data.php:97
+#: functions/customizer/customizer-project.php:131 theme_setup_data.php:97
 msgid "Functional elegance"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:178
+#: functions/customizer/customizer-project.php:177
 msgid "Portfolio three"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:187 theme_setup_data.php:101
+#: functions/customizer/customizer-project.php:186 theme_setup_data.php:101
 msgid "Planning your next move"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:235
+#: functions/customizer/customizer-project.php:234
 msgid "Add more portfolios"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:250
+#: functions/customizer/customizer-project.php:249
 msgid "Want to add projects and categorization?"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:253
+#: functions/customizer/customizer-project.php:252
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: functions/customizer/customizer-service.php:6
+#: functions/customizer/customizer-service.php:5
 msgid "Service settings"
 msgstr ""
 
-#: functions/customizer/customizer-service.php:25
+#: functions/customizer/customizer-service.php:24
 msgid "Enable Service section on front page"
 msgstr ""
 
-#: functions/customizer/customizer-service.php:34 theme_setup_data.php:108
+#: functions/customizer/customizer-service.php:33 theme_setup_data.php:108
 msgid "Our services"
 msgstr ""
 
-#: functions/customizer/customizer-service.php:73
+#: functions/customizer/customizer-service.php:72
 msgid "Service Content"
 msgstr ""
 
-#: functions/customizer/customizer-service.php:76
+#: functions/customizer/customizer-service.php:75
 msgid "Add new Service"
 msgstr ""
 
-#: functions/customizer/customizer-service.php:77
+#: functions/customizer/customizer-service.php:76
 msgid "Service"
 msgstr ""
 
-#: functions/customizer/customizer-slider.php:47
-#: functions/customizer/customizer-slider.php:53
+#: functions/customizer/customizer-slider.php:46
+#: functions/customizer/customizer-slider.php:52
 msgid "Slider settings"
 msgstr ""
 
-#: functions/customizer/customizer-slider.php:71
+#: functions/customizer/customizer-slider.php:70
 msgid "Enable home banner"
 msgstr ""
 
-#: functions/customizer/customizer-slider.php:85
+#: functions/customizer/customizer-slider.php:84
 msgid "Slider Content"
 msgstr ""
 
-#: functions/customizer/customizer-slider.php:88
+#: functions/customizer/customizer-slider.php:87
 msgid "Add new slide"
 msgstr ""
 
-#: functions/customizer/customizer-slider.php:89
+#: functions/customizer/customizer-slider.php:88
 msgid "Slide"
 msgstr ""
 
-#: functions/customizer/customizer-slider.php:113
+#: functions/customizer/customizer-slider.php:112
 msgid "Animation speed"
 msgstr ""
 
-#: functions/customizer/customizer-slider.php:132
+#: functions/customizer/customizer-slider.php:131
 msgid "Slideshow speed"
 msgstr ""
 
@@ -590,84 +619,84 @@ msgstr ""
 msgid "Incredibly flexible"
 msgstr ""
 
-#: functions/customizer/customizer_banner.php:11
+#: functions/customizer/customizer_banner.php:10
 msgid "Banner settings"
 msgstr ""
 
-#: functions/customizer/customizer_banner.php:16
+#: functions/customizer/customizer_banner.php:15
 msgid "Category"
 msgstr ""
 
-#: functions/customizer/customizer_banner.php:25
+#: functions/customizer/customizer_banner.php:24
 msgid "Category title"
 msgstr ""
 
-#: functions/customizer/customizer_banner.php:62
+#: functions/customizer/customizer_banner.php:61
 msgid "Archive"
 msgstr ""
 
-#: functions/customizer/customizer_banner.php:71
+#: functions/customizer/customizer_banner.php:70
 msgid "Archive title"
 msgstr ""
 
-#: functions/customizer/customizer_banner.php:108
+#: functions/customizer/customizer_banner.php:107
 msgid "Author"
 msgstr ""
 
-#: functions/customizer/customizer_banner.php:117
+#: functions/customizer/customizer_banner.php:116
 msgid "Author title"
 msgstr ""
 
-#: functions/customizer/customizer_banner.php:154
+#: functions/customizer/customizer_banner.php:153
 msgid "404"
 msgstr ""
 
-#: functions/customizer/customizer_banner.php:163 theme_setup_data.php:141
+#: functions/customizer/customizer_banner.php:162 theme_setup_data.php:141
 msgid "404 title"
 msgstr ""
 
-#: functions/customizer/customizer_banner.php:200
+#: functions/customizer/customizer_banner.php:199
 msgid "Tag"
 msgstr ""
 
-#: functions/customizer/customizer_banner.php:209
+#: functions/customizer/customizer_banner.php:208
 msgid "Tag title"
 msgstr ""
 
-#: functions/customizer/customizer_banner.php:248 header-menu-section.php:35
+#: functions/customizer/customizer_banner.php:247 header-menu-section.php:35
 #: searchform.php:2
 msgid "Search"
 msgstr ""
 
-#: functions/customizer/customizer_banner.php:257
+#: functions/customizer/customizer_banner.php:256
 msgid "Search title"
 msgstr ""
 
-#: functions/customizer/customizer_header.php:6
+#: functions/customizer/customizer_header.php:5
 msgid "Header widget section"
 msgstr ""
 
-#: functions/customizer/customizer_header.php:19
+#: functions/customizer/customizer_header.php:18
 msgid "Select column layout"
 msgstr ""
 
-#: functions/customizer/customizer_header.php:33
+#: functions/customizer/customizer_header.php:32
 msgid "Click here to add a header widget"
 msgstr ""
 
-#: functions/customizer/customizer_theme_style.php:11
+#: functions/customizer/customizer_theme_style.php:10
 msgid "Theme Color"
 msgstr ""
 
-#: functions/customizer/customizer_theme_style.php:36
+#: functions/customizer/customizer_theme_style.php:35
 msgid "Theme style setting"
 msgstr ""
 
-#: functions/customizer/customizer_theme_style.php:43
+#: functions/customizer/customizer_theme_style.php:42
 msgid "wide"
 msgstr ""
 
-#: functions/customizer/customizer_theme_style.php:54
+#: functions/customizer/customizer_theme_style.php:53
 msgid "Theme Layout"
 msgstr ""
 
