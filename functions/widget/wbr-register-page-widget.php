@@ -21,7 +21,7 @@ class wbr_feature_page_widget extends WP_Widget{
 			
 			__('WBR: Page widget', 'spasalon'), // Name
 			
-			array( 'description' => __( 'Feature page item widget', 'spasalon'), ) // Args
+			array( 'description' => __( 'Featured page item widget', 'spasalon'), ) // Args
 			
 		);
 	}

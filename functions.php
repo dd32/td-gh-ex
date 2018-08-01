@@ -34,6 +34,8 @@ require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
 
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_recommended_plugin.php');
 
+require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-emailcourse.php');
+
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/font/font.php');
 
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/meta-box/metabox.php');
@@ -49,8 +51,7 @@ require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/post-widget.php');
 // Spasalon Info Page
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/spasalon-info/welcome-screen.php');
 
-// Spasalon Demo Image
-require_once( get_template_directory() . '/spasalon-demo-image/spasalon-prevdem.php' );
+
 
 $repeater_path = trailingslashit( get_template_directory() ) . '/functions/customizer-repeater/functions.php';
 	if ( file_exists( $repeater_path ) ) {

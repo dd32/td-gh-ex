@@ -124,6 +124,11 @@ Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank y
 
 
 ============================Change Log================================
+@Version 1.9.6
+1. Remove Preview demo image.
+2. Added trustworthy website tab.	
+@Version 1.9.5
+1. Update Strings.
 @Version 1.9.4
 1. Update Strings.
 @Version 1.9.3
