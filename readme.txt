@@ -24,6 +24,8 @@ License URI: LICENSE
 Agency Lite includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+= 1.0.6 - Aug 2 2018 =
+* navigation.js missing issue fixed
 
 = 1.0.5 - Aug 2 2018 =
 * Slider Button not appearing issue fixed

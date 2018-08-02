@@ -673,16 +673,9 @@
 	));
 
 	//for footer section
-	$wp_customize->add_panel( 'agency_lite_footer_setting',array(
-        'title' 		=>		 esc_html__('Footer Setting','agency-lite'),
-        'description' 	=>       esc_html__('It shows Footer setting','agency-lite'),
+	$wp_customize->add_section( 'agency_lite_footer_page_section',array(
+        'title' 		=>		 esc_html__('Footer Setting','agency-lite')
     ));
-
-	$wp_customize->add_section('agency_lite_footer_page_section', array(
-	    'title'		=> esc_html__('Footer Section','agency-lite'),
-	    'panel'		=> 'agency_lite_footer_setting',
-
-	));
 
 	$wp_customize->add_setting( 'agency_lite_footer_icon_enable',array(
 		'sanitize_callback' => 'agency_lite_sanitize_textarea',

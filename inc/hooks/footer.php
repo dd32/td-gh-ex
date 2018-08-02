@@ -80,15 +80,17 @@ function agency_lite_footer_copyright_fn()
 	<div class = "agency-lite-footer-wrap ">
 		<div class="agency-lite-container clearfix">
 			<div class = "agency-lite-footer-copyright">
-				
 				<?php
 				  if( !empty($agency_lite_footer_copyright)){
 	                        echo wp_kses_post($agency_lite_footer_copyright) . " | "; 
 		            } ?>
 		            WordPress Theme : <a href="https://accesspressthemes.com/wordpress-themes/agency-lite" target="_blank">Agency Lite</a> 
 			</div>
+
 			<div class = "agency-lite-footer-image-control"> 
-			<img src="<?php echo esc_url($agency_lite_footer_image_control); ?>" alt="<?php the_title_attribute(); ?>" title="<?php the_title_attribute(); ?>" />
+			<?php if($agency_lite_footer_image_control){ ?>
+				<img src="<?php echo esc_url($agency_lite_footer_image_control); ?>" />
+			<?php } ?>
 			</div>
 		</div>
 	</div>
