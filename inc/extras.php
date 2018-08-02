@@ -173,6 +173,7 @@ if ( ! function_exists( 'create_get_theme_layout' ) ) :
 
 		// Settings for page/post/attachment
 		if ( is_singular() ) {
+
 			if ( is_attachment() ) {
 				$parent 		= $post->post_parent;
 				$layout 		= get_post_meta( $parent, 'create-layout-option', true );
@@ -190,9 +191,9 @@ if ( ! function_exists( 'create_get_theme_layout' ) ) :
 			$layout 	= get_theme_mod( 'homepage_layout', create_get_default_theme_options( 'homepage_layout' ) );
 		}
 
-		else{
-			//if layout is default, them the theme layour is the main layout
-			$layout = get_theme_mod( 'theme_layout', create_get_default_theme_options( 'theme_layout' ) );
+		// Check empty and load default.
+		if ( empty( $layout ) || 'default' === $layout ) {
+				$layout = get_theme_mod( 'theme_layout', create_get_default_theme_options( 'theme_layout' ) );
 		}
 
 	    return $layout;

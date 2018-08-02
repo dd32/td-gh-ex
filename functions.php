@@ -55,6 +55,12 @@ function create_setup() {
 	// Add default size for homepage.
 	add_image_size( 'create-header', '1024', '350', true );
 
+	// Add default size for featured content
+	add_image_size( 'create-featured', '540', '406', true );
+
+	// Add default size for testimonial
+	add_image_size( 'create-testimonial', '100', '100', true );
+
 	// Add default logo size for Jetpack.
 	add_image_size( 'create-site-logo', '300', '9999', false );
 
@@ -83,7 +89,7 @@ function create_setup() {
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'create_custom_background_args', array(
 		'default-color'       => 'f5f5f5',
-		'default-attachment'  => 'fixed',
+		'default-attachment'  => 'cover',
 		'default-repeat'      => 'no-repeat',
 		'default-image'       => '%s/images/default-background.jpg',
 	) ) );
@@ -164,16 +170,21 @@ function create_scripts() {
 	wp_enqueue_style( 'create-fonts', create_fonts_url(), array(), '1.0.0' );
 
 	//For genericons
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons/genericons.css', false, '3.4.1' );
+	wp_enqueue_style( 'genericons', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/genericons/genericons.css', false, '3.4.1' );
 
     // JS helpers (This is also the place where we call the jQuery in array)
-	wp_enqueue_script( 'create-helpers', get_template_directory_uri() . '/js/helpers.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'create-helpers', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/helpers.js', array( 'jquery' ), '1.0.0', true );
 
 	// Mobile navigation
-	wp_enqueue_script( 'create-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'create-navigation', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/navigation.js', array(), '1.0.0', true );
+
+	wp_localize_script( 'create-navigation', 'screenReaderText', array(
+		'expand'   => esc_html__( 'expand child menu', 'create' ),
+		'collapse' => esc_html__( 'collapse child menu', 'create' ),
+	) );
 
 	// Skip link fix
-	wp_enqueue_script( 'create-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'create-skip-link-focus-fix', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/skip-link-focus-fix.js', array(), '1.0.0', true );
 
 	// Comments
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -186,7 +197,7 @@ function create_scripts() {
 	$featured_slider_option = get_theme_mod( 'featured_slider_option', create_get_default_theme_options( 'featured_slider_option' ) );
 
 	if( 'disabled' != $featured_slider_option  ) {
-		wp_register_script( 'jquery.cycle2', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.min.js', array( 'jquery' ), '2.1.5', true );
+		wp_register_script( 'jquery-cycle2', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle/jquery.cycle2.min.js', array( 'jquery' ), '2.1.5', true );
 
 		/**
 		 * Condition checks for additional slider transition plugins
@@ -195,22 +206,22 @@ function create_scripts() {
 
 		// Scroll Vertical transition plugin addition
 		if ( 'scrollVert' ==  $featured_slide_transition_effect ){
-			wp_enqueue_script( 'jquery.cycle2.scrollVert', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.scrollVert.min.js', array( 'jquery.cycle2' ), '20140128', true );
+			wp_enqueue_script( 'jquery-cycle2-scrollVert', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle/jquery.cycle2.scrollVert.min.js', array( 'jquery-cycle2' ), '20140128', true );
 		}
 		// Flip transition plugin addition
 		else if ( 'flipHorz' ==  $featured_slide_transition_effect || 'flipVert' ==  $featured_slide_transition_effect ){
-			wp_enqueue_script( 'jquery.cycle2.flip', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.flip.min.js', array( 'jquery.cycle2' ), '20140128', true );
+			wp_enqueue_script( 'jquery-cycle2-flip', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle/jquery.cycle2.flip.min.js', array( 'jquery-cycle2' ), '20140128', true );
 		}
 		// Shuffle transition plugin addition
 		else if ( 'tileSlide' ==  $featured_slide_transition_effect || 'tileBlind' ==  $featured_slide_transition_effect ){
-			wp_enqueue_script( 'jquery.cycle2.tile', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.tile.min.js', array( 'jquery.cycle2' ), '20140128', true );
+			wp_enqueue_script( 'jquery-cycle2-tile', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle/jquery.cycle2.tile.min.js', array( 'jquery-cycle2' ), '20140128', true );
 		}
 		// Shuffle transition plugin addition
 		else if ( 'shuffle' ==  $featured_slide_transition_effect ){
-			wp_enqueue_script( 'jquery.cycle2.shuffle', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.shuffle.min.js', array( 'jquery.cycle2' ), '20140128 ', true );
+			wp_enqueue_script( 'jquery-cycle2-shuffle', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle/jquery.cycle2.shuffle.min.js', array( 'jquery-cycle2' ), '20140128 ', true );
 		}
 		else {
-			wp_enqueue_script( 'jquery.cycle2' );
+			wp_enqueue_script( 'jquery-cycle2' );
 		}
 	}
 
@@ -220,7 +231,7 @@ function create_scripts() {
 	$disable_scrollup = get_theme_mod( 'disable_scrollup', create_get_default_theme_options( 'disable_scrollup' ) );
 
 	if ( '1' != $disable_scrollup ) {
-		wp_enqueue_script( 'create-scrollup', get_template_directory_uri() . '/js/scrollup.js', array( 'jquery' ), '20141223	', true  );
+		wp_enqueue_script( 'create-scrollup', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/scrollup.js', array( 'jquery' ), '20141223	', true  );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'create_scripts' );
@@ -235,10 +246,10 @@ add_action( 'wp_enqueue_scripts', 'create_scripts' );
  */
 function create_enqueue_metabox_scripts() {
     //Scripts
-    wp_enqueue_script( 'create-metabox', get_template_directory_uri() . '/js/metabox.js', array( 'jquery', 'jquery-ui-tabs' ), '2013-10-05' );
+    wp_enqueue_script( 'create-metabox', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/metabox.js', array( 'jquery', 'jquery-ui-tabs' ), '2013-10-05' );
 
 	//CSS Styles
-	wp_enqueue_style( 'create-metabox-tabs', get_template_directory_uri() . '/css/metabox-tabs.css' );
+	wp_enqueue_style( 'create-metabox-tabs', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/metabox-tabs.css' );
 }
 add_action( 'admin_print_scripts-post-new.php', 'create_enqueue_metabox_scripts', 11 );
 add_action( 'admin_print_scripts-post.php', 'create_enqueue_metabox_scripts', 11 );
@@ -329,10 +340,10 @@ function create_custom_css_migrate(){
 	if ( version_compare( $ver, '4.7' ) >= 0 ) {
 		return;
 	}
-	
+
 	if ( function_exists( 'wp_update_custom_css_post' ) ) {
 	    // Migrate any existing theme CSS to the core option added in WordPress 4.7.
-	    
+
 	    /**
 		 * Get Theme Options Values
 		 */

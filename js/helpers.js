@@ -4,7 +4,7 @@
 		/*
 		 * Masonry
 		 */
-		
+
 		//Masonry blocks
 		$blocks = $(".create-masonry #main");
 
@@ -35,7 +35,7 @@
 
 			var $container = $('.create-masonry #main');
 			$container.masonry( 'reloadItems' );
-			
+
 			$blocks.imagesLoaded(function(){
 				$blocks.masonry({
 					"columnWidth": 261,
@@ -43,7 +43,7 @@
 					"isFitWidth": true,
 					"gutter": 60
 				});
-		
+
 				// Fade blocks in after images are ready (prevents jumping and re-rendering)
 				$(".hentry").fadeIn();
 				$blocks.find( '.hentry' ).animate( {
@@ -51,13 +51,13 @@
 				} );
 
 			});
-			
+
 			$container.masonry( 'reloadItems' );
-			
+
 			$(document).ready( function() { setTimeout( function() { $blocks.masonry(); }, 500); });
 
 		});
-		
+
 		/*
 		 * Comment placeholders
 		 * (Localized via wp_localize_script in functions file)

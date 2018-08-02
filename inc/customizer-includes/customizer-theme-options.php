@@ -104,12 +104,7 @@
 
 			$dropdown = str_replace('<select', '<select multiple = "multiple" style = "height:95px;" ' . $this->get_link(), $dropdown );
 
-			printf(
-				'<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
-				$this->label,
-				$dropdown
-			);
-
+			printf( '<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',esc_html( $this->label ), $dropdown ); // WPCS: XSS OK.
 			echo '<p class="description">'. __( 'Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.', 'create' ) . '</p>';
 		}
 	}

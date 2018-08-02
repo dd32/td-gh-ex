@@ -4,12 +4,13 @@ Theme URI: https://catchthemes.com/themes/create/
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: Create your website using Create WordPress Theme. Make a remarkable first impression on your website visitors with a large headline & full-page background. How do you do it best? Do it through Create, our new WordPress Theme! Create is super easy to use and has unconventional out-of-the-box features. It is great for your personal, business or even organizational web portals. Create is based on HTML5, CSS3 and designed with a mobile-first approach in mind. Your content display will always be clean, smooth and perfect regardless of whether your visitors reach you through smartphone, tablet, laptop, or desktop computer. Create a beautiful, yet professional WordPress site in no time! This theme is translation ready and also currently translated in German language. Check out Theme Instructions at https://catchthemes.com/theme-instructions/create/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/create/
-Version: 2.4.2
+Version: 2.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: create
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 */
+
 
 /* =Table of Contents
 -------------------------------------------------------------- */
@@ -39,9 +40,10 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, flexibl
     22. Infinite scroll (Jetpack plugin)
     23. Scrollup
     24. Featured Slider
-    25. Footer
-    26. Responsive design
-    27. Print styles
+    25. Hero Content
+    26. Footer
+    27. Responsive design
+    28. Print styles
 */
 
 
@@ -488,6 +490,17 @@ body {
     width: 100%;
 }
 
+.site-title,
+.site-description,
+.hentry,
+.widget,
+#intro-widget-area .widget,
+.comments-area {
+    hyphens: auto;
+    word-wrap: break-word;
+    -ms-word-wrap: break-word;
+}
+
 /* =03. Clearfix
 -------------------------------------------------------------- */
 
@@ -506,7 +519,11 @@ body {
 .site-footer:before,
 .site-footer:after,
 .navigation:before,
-.navigation:after {
+.navigation:after,
+.section:before,
+.section:after,
+.section-content-wrapper:before,
+.section-content-wrapper:after {
     content: '';
     display: table;
 }
@@ -518,7 +535,9 @@ body {
 .site-header:after,
 .site-content:after,
 .site-footer:after,
-.navigation:after {
+.navigation:after,
+.section:after,
+.section-content-wrapper:after {
     clear: both;
 }
 
@@ -596,6 +615,15 @@ blockquote p,
 .content-area,
 .comment-body {
     padding: 30px;
+}
+
+.section {
+    padding: 30px 30px 0;
+}
+
+.section-wrapper {
+    margin: 0 30px;
+    padding-bottom: 30px;
 }
 
 #supplementary {
@@ -738,10 +766,12 @@ h6 {
     width: 50px;
 }
 
+.section-title,
 .no-sidebar-full-width .entry-title,
 .widget-title {
     font-size: 16px;
     font-weight: 700;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
 }
 
@@ -1050,6 +1080,7 @@ a:active {
     color: #cfa205;
     font-size: 18px;
     font-weight: 400;
+    letter-spacing: 0.05em;
     margin-bottom: 0;
     text-align: center;
     text-transform: uppercase;
@@ -1075,6 +1106,57 @@ a:active {
     margin: 0 auto;
 }
 
+.section-content-wrapper.layout-four,
+.section-content-wrapper.layout-three,
+.section-content-wrapper.layout-two {
+    margin-left: -6%;
+}
+
+.section-content-wrapper .post-thumbnail {
+    margin-bottom: 30px;
+}
+
+.section-content-wrapper .post-thumbnail a {
+    display: block;
+    line-height: 0;
+}
+
+.section .section-content-wrapper .hentry {
+    display: block;
+    float: left;
+    margin-bottom: 30px;
+    opacity: 1;
+    width: 100%;
+}
+
+.section-content-wrapper.layout-four .hentry {
+    margin-left: 6%;
+    width: 19%;
+}
+
+.section-content-wrapper.layout-three .hentry {
+    margin-left: 6%;
+    width: 27.33%;
+}
+
+.section-content-wrapper.layout-two .hentry {
+    margin-left: 6%;
+    width: 44%;
+}
+
+.section-content-wrapper.layout-four .hentry:nth-child(4n+1),
+.section-content-wrapper.layout-three .hentry:nth-child(3n+1),
+.section-content-wrapper.layout-two .hentry:nth-child(2n+1) {
+    clear: both;
+}
+
+.section-content-wrapper .entry-summary,
+.section-content-wrapper .entry-content,
+.section-content-wrapper .entry-summary p,
+.section-content-wrapper .entry-content p:last-child {
+    margin-bottom: 0;
+}
+
 @viewport{
     width: device-width;
 }
@@ -1087,7 +1169,11 @@ a:active {
 #feature-slider .cycle-prev:before,
 #feature-slider .cycle-next:before,
 .pagination .prev:before,
-.pagination .next:before {
+.pagination .next:before,
+.menu-toggle:before,
+.dropdown-toggle:before,
+.main-navigation a:after,
+.secondary-navigation a:after {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     display: inline-block;
@@ -1127,6 +1213,7 @@ a:active {
     font-weight: 400;
     text-decoration: none;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .main-navigation {
@@ -1136,7 +1223,6 @@ a:active {
 .secondary-navigation {
     background-color: #e8e8e8;
 }
-
 
 .main-navigation a {
     color: #dbdada;
@@ -1173,6 +1259,14 @@ a:active {
     display: block;
     text-transform: none;
     width: 200px;
+}
+
+.main-navigation .menu-item-has-children > a:after,
+.main-navigation .page_item_has_children > a:after,
+.secondary-navigation .menu-item-has-children > a:after {
+    content: "\f431";
+    margin-left: 2px;
+    line-height: 1.2;
 }
 
 .main-navigation ul ul a {
@@ -1230,10 +1324,25 @@ a:active {
     color: #e7b507;
 }
 
-/* Small menu */
+.social-menu+.secondary-navigation {
+    margin-top: -10px;
+}
 
+/* Small menu */
 .menu-toggle {
     display: none;
+    text-transform: uppercase;
+}
+
+.menu-toggle:before {
+    content: "\f419";
+    font-size: 16px;
+    line-height: 22px;
+    margin-right: 5px;
+}
+
+.menu-toggle.toggled-on:before {
+    content: "\f406";
 }
 
 .main-navigation .menu-toggle {
@@ -1250,8 +1359,30 @@ a:active {
     color: #e7b507;
 }
 
-/* Social menu */
+.dropdown-toggle {
+    border-left: 1px solid #444;
+    display: none;
+    height: 49px;
+    padding: 10px 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+}
 
+.secondary-navigation .dropdown-toggle {
+    border-left-color: #bbb;
+}
+
+.dropdown-toggle:before {
+    content: "\f431";
+}
+
+.dropdown-toggle.toggled-on:before {
+    content: "\f432";
+}
+
+/* Social menu */
 .social-menu {
     background-color: #e8e8e8;
     padding: 15px 0 10px;
@@ -1877,21 +2008,10 @@ figure {
     width: 100%;
 }
 
-.widget,
-#intro-widget-area .widget {
-    hyphens: auto;
-    word-wrap: break-word;
-}
-
 #intro-widget-area .widget {
     border-bottom: 2px solid #e8e8e8;
     margin: 0 auto 30px auto;
     text-align: center;
-}
-
-#intro-widget-area .widget_text {
-    font-size: 18px;
-    font-weight: 700;
 }
 
 .widget:after {
@@ -2040,8 +2160,28 @@ figure {
     float: left;
 }
 
+.section,
 .site-content {
     background-color: #fff;
+}
+
+.section-heading-wrapper {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.section-wrapper {
+    border-bottom: 2px solid #e8e8e8;
+}
+
+.section-title {
+    margin-bottom: 15px;
+}
+
+.section .taxonomy-description-wrapper,
+#intro-widget-area .widget_text {
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .post-edit-link {
@@ -2111,10 +2251,6 @@ figure {
     list-style: none;
 }
 
-.comment-content a {
-    word-wrap: break-word;
-}
-
 .comments-area label {
     display: none;
 }
@@ -2150,6 +2286,7 @@ figure {
 .comment-metadata {
     font-size: 11px;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .says {
@@ -2198,11 +2335,24 @@ figure {
     width: 100%;
 }
 
-#infinite-handle span {
+.site-main #infinite-handle span {
+    background-color: transparent;
     display: inline-block;
+    padding: 0;
+}
+
+.site-main #infinite-handle span button {
+    background-color: #090401;
+    color: #fff;
     padding: 10px 20px;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
     letter-spacing: 1px;
+}
+
+.site-main #infinite-handle span button:hover,
+.site-main #infinite-handle span button:focus {
+    background-color: #393939;
 }
 
 .infinite-loader {
@@ -2216,7 +2366,7 @@ figure {
     top: auto !important;
     bottom: 10px !important;
     left: 50% !important;
-    margin-left: -12px;
+    transform: translate(-50%, -50%);
 }
 
 /* =23. Scrollup
@@ -2253,25 +2403,28 @@ a#scrollup:hover {
 
 /* =24. Featured Slider
 -------------------------------------------------------------- */
+#feature-slider {
+    padding: 0;
+    position: relative;
+    z-index: 101;
+}
+
 #feature-slider .cycle-pager span {
     font-size: 45px;
 }
+
 #feature-slider .cycle-prev:before,
 #feature-slider .cycle-next:before {
     font-size: 40px;
     line-height: 40px;
 }
+
 #feature-slider .cycle-prev:before {
     content: "\f430";
 }
 
 #feature-slider .cycle-next:before {
     content: "\f429";
-}
-
-#feature-slider {
-    position: relative;
-    z-index: 101;
 }
 
 #feature-slider .cycle-slideshow {
@@ -2384,6 +2537,10 @@ a#scrollup:hover {
 
 #feature-slider .entry-container {
     bottom: 44px;
+    background-color: #000;
+    -moz-border-radius:     4px;
+    -webkit-border-radius:  4px;
+    border-radius:          4px;
     color: #fff;
     left: 25%;
     padding: 15px;
@@ -2393,16 +2550,6 @@ a#scrollup:hover {
     z-index: 101;
 }
 
-#feature-slider .entry-container:hover {
-    background-color: #000;
-    -moz-border-radius:     4px;
-    -webkit-border-radius:  4px;
-    border-radius:          4px;
-    -moz-transition:    all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    transition:         all 0.2s ease-in-out;
-}
-
 #feature-slider .entry-title,
 #feature-slider .entry-title a {
     color: #fff;
@@ -2410,7 +2557,8 @@ a#scrollup:hover {
 
 #feature-slider .entry-content {
     border: none;
-    margin: 0
+    color: #bbb;
+    margin: 0;
 }
 
 #feature-slider .entry-content p:last-child {
@@ -2422,7 +2570,86 @@ a#scrollup:hover {
     filter:alpha(opacity=50);
 }
 
-/* =25. Footer
+/* =25. Hero Content
+-------------------------------------------------------------- */
+
+.section-content-wrapper.hero-content-wrapper {
+    padding-top: 30px;
+}
+
+.hero-content-wrapper .hentry {
+    display: table;
+    position: relative;
+    width: 100%;
+}
+
+.hero-content-wrapper .post-thumbnail {
+    background-position: center center;
+    background-size: cover;
+    content: "";
+    display: table-cell;
+    float: left;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    vertical-align: middle;
+    width: 45%;
+}
+
+.hero-content-wrapper .post-thumbnail a {
+    border: none;
+    position: absolute;
+    top: 0;
+    right:  0;
+    bottom: 0;
+    left: 0;
+}
+
+.hero-content-wrapper .entry-container {
+    display: table-cell;
+    float: right;
+    padding: 60px 0 60px 6%;
+    vertical-align: middle;
+    width: 55%;
+}
+
+/* =26. Testimonial
+-------------------------------------------------------------- */
+.testimonial-content-wrapper .post-thumbnail {
+    position: relative;
+    z-index: 2;
+    border-radius: 50%;
+    display: block;
+    height: 100px;
+    margin: 0 auto 30px;
+    padding-top: 100px;
+    position: relative;
+    text-decoration: none;
+    width: 100px;
+}
+
+.testimonial-content-wrapper .post-thumbnail img {
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.testimonial-content-wrapper .entry-title {
+    display: block;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+/* =26. Footer
 -------------------------------------------------------------- */
 
 .site-footer {
@@ -2446,7 +2673,7 @@ a#scrollup:hover {
 }
 
 
-/* =26. Responsive design
+/* =27. Responsive design
 -------------------------------------------------------------- */
 
 @media screen and (max-width: 1024px) {
@@ -2459,6 +2686,13 @@ a#scrollup:hover {
         width: 646px;
     }
 
+    .section-content-wrapper.layout-four .hentry {
+        width: 44%;
+    }
+
+    .section-content-wrapper.layout-four .hentry:nth-child(2n+1) {
+        clear: both;
+    }
 }
 
 @media screen and (max-width: 960px) { /* Mobile Devices */
@@ -2498,12 +2732,41 @@ a#scrollup:hover {
         text-align: left;
     }
 
+    .main-navigation .menu-item-has-children > a:after,
+    .main-navigation .page_item_has_children > a:after,
+    .secondary-navigation .menu-item-has-children > a:after {
+        content: none;
+        margin-left: 0;
+    }
+
+    .main-navigation .menu-item-has-children > a,
+    .main-navigation .page_item_has_children > a,
+    .secondary-navigation .menu-item-has-children > a {
+        padding-right: 49px;
+    }
+
     .main-navigation .menu {
         background-color: #000;
     }
 
     .secondary-navigation .menu {
         background-color: #e8e8e8;
+    }
+
+    .dropdown-toggle,
+    .dropdown-toggle:hover,
+    .dropdown-toggle:focus {
+        background-color: transparent;
+    }
+
+    .secondary-navigation .dropdown-toggle {
+        color: #7a7a7a;
+    }
+
+    .dropdown-toggle.toggled-on,
+    .dropdown-toggle:hover,
+    .dropdown-toggle:focus {
+        color: #e7b507;
     }
 
     .main-navigation a,
@@ -2516,8 +2779,26 @@ a#scrollup:hover {
         border-bottom: 1px solid #bbb;
     }
 
-    .create-menu ul {
+    #primary-menu-wrapper,
+    #secondary-menu-wrapper,
+    .create-menu ul ul {
         display: none;
+    }
+
+    #primary-menu-wrapper.toggled-on,
+    #secondary-menu-wrapper.toggled-on,
+    .create-menu ul ul.toggled-on {
+        display: block;
+    }
+
+    .create-menu ul ul {
+        left: auto;
+        opacity: 1;
+    }
+
+    .dropdown-toggle,
+    .create-menu ul li {
+        display: block;
     }
 
     .create-menu ul ul,
@@ -2543,13 +2824,13 @@ a#scrollup:hover {
         color: #7a7a7a;
     }
 
-    .create-menu ul li {
-        display: inline;
-    }
-
     .create-menu ul ul li a {
         padding-left: 30px;
         width: 100%;
+    }
+
+    .create-menu ul ul ul li a {
+        padding-left: 45px;
     }
 
     .create-menu ul li:hover > ul,
@@ -2592,7 +2873,6 @@ a#scrollup:hover {
 }
 
 @media screen and (max-width: 890px) { /* Mobile Devices */
-
     .site {
         width: 96%;
     }
@@ -2663,7 +2943,41 @@ a#scrollup:hover {
 
 }
 
+@media screen and (max-width: 689px) {
+    .section-content-wrapper.layout-three {
+        margin-left: 0;
+    }
+
+    .section-content-wrapper.layout-three .hentry {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .hero-content-wrapper .post-thumbnail {
+        padding-bottom: 100%;
+        position: relative;
+        width: 100%;
+    }
+
+    .hero-content-wrapper .entry-container {
+        padding: 30px 0 0;
+        width: 100%;
+    }
+}
+
+
 @media screen and (max-width: 479px) {
+    .section-content-wrapper.layout-four,
+    .section-content-wrapper.layout-two {
+        margin-left: 0;
+    }
+
+    .section-content-wrapper.layout-four .hentry,
+    .section-content-wrapper.layout-two .hentry {
+        margin-left: 0;
+        width: 100%;
+    }
+
 
     .site {
         width: 100%;
@@ -2745,7 +3059,7 @@ a#scrollup:hover {
 
 }
 
-/* =27. Print styles
+/* =28. Print styles
 -------------------------------------------------------------- */
 
 /* Print styles inlined to avoid extra HTTP connection */

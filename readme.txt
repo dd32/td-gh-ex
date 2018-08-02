@@ -1,11 +1,11 @@
 === Create ===
 
-Contributors: Catch Themes and Emil Uzelac 
+Contributors: Catch Themes and Emil Uzelac
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 Requires at least: 4.1
 Tested up to: 4.6.1
 Create WordPress Theme, Copyright 2012-2016 Catchthemes.com
-Create is distributed under the terms of the GNU General Public License v3 
+Create is distributed under the terms of the GNU General Public License v3
 
 == Description ==
 
@@ -21,7 +21,7 @@ Create your website using Create WordPress Theme. Make a remarkable first impres
 == Credits ==
 
 * Create was based on Underscores http://underscores.me/ - (C) 2012-2014 Automattic, Inc. - [GNU General Public License v2 or later]
-* screenshot.png images: http://pixabay.com/en/man-person-shirt-bow-tie-suspender-407095/, http://pixabay.com/en/radio-television-grunge-chair-407112/, http://pixabay.com/en/wristwatch-watch-time-gadget-407096/ - [CC0] 
+* screenshot.png images: http://pixabay.com/en/man-person-shirt-bow-tie-suspender-407095/, http://pixabay.com/en/radio-television-grunge-chair-407112/, http://pixabay.com/en/wristwatch-watch-time-gadget-407096/ - [CC0]
 * /images/default-background.jpg http://www.pexels.com/photo/2286/ [CC0]
 * /css/genericons/ http://genericons.com/ - (C) 2014 Automattic, Inc. - [GPL, version 2 or later]
 
@@ -48,7 +48,7 @@ Support Forum: https://catchthemes.com/support-forum/forum/create-free/
 
 = Custom Menus =
 
-Create theme supports two custom menus. One is your primary and second one is for social links. 
+Create theme supports two custom menus. One is your primary and second one is for social links.
 To create a custom menu, go to Appearance -> Menus in your dashboard.
 
 = How do I replace default page menu to custom menu? =
@@ -114,6 +114,87 @@ Theme supports Jetpack logo and it can be easily uploaded from Customizer area. 
 For detail instructions, check out theme instructions page at https://catchthemes.com/theme-instructions/create/
 
 
-== Change Log ==
+== Change log ==
 
-Please refer to changelog.txt file or change log page at https://catchthemes.com/changelogs/create-theme/
+= 2.5 (Released: August 02, 2018) =
+* Bug Fixed: Default Background Attachment to cover
+* Bug Fixed: Design issue with Catch Infinite Scroll plugin
+* Bug Fixed: Singe Post/Page meta layout issue
+* Bug Fixed: Site title, tagline and comment text overflow issue
+* Bug Fixed: Slider html structure
+* Code optimization
+* Removed: changelog.txt file and added changelog in readme.txt file
+* Updated: Upgrade to pro button css update
+* Updated: Menu html structure
+* Updated: Mobile menu script
+
+= 2.4.2 (Released: June 07, 2017) =
+* Bug Fixed: Archive page title and description overlapping issue
+* Bug Fixed: Layout issue in blog page when static page is selected (Reported by lizzie)
+
+= 2.4.1 =
+* Added: Option to Display all Categories in Customizer
+* Code Optimization
+
+= 2.4 =
+* Bug Fixed: Reset Options in customizer updated
+* Updated: Upgrade Button in customizer with respect to trt decision
+* Updated: Custom CSS to Additional CSS( Core Support ) for WP version 4.7
+
+= 2.3.1 =
+* Bug Fixed: white space issue
+* Updated: theme tags
+* Updated: All instances of http://catchthemes.com changed to https://catchthemes.com
+
+= 2.3 =
+* Added: Custom Header Support
+
+= 2.2 =
+* Added: Custom Logo( Core Support ) for WP version 4.5
+
+= 2.1 =
+* Added German translation de_DE.po and de_DE
+* Bug Fixed: Site title line height issue
+
+= 2.0 =
+* Added: Theme Options -> Custom CSS option, Excerpt Options, Homepage / Frontpage Settings, Layout Options, ScrollUp Options, Pagination Options and Search Options
+* Added: Metabox Options
+* Bug Fixed: infinite scroll issue
+* Bug Fixed: Layout issues in Static Homepage(Reported by kerrigo)
+* Updated: Genericons to version 3.4.1
+
+= 1.3 =
+* Added Featured Slider
+* Compatible with WordPress 4.3
+* Removed support for WordPress version less than 4.1
+
+= 1.2 =
+* Added title tag via add theme support
+* Added Important links section to Theme Customizer
+* Added three-columns tag
+* Bug Fixed: body_class when there is no sidebar
+* Bug Fixed: Image Size and styles
+* Bug Fixed: Extra css and border issue in style.css
+* Bug Fixed: Classes for excerpt and content fixed in content.php
+* Bug Fixed: Added missing keyword _nx:1,2,4c and esc_html__ in language file create.pot
+* Removed unnecessary font: Alegreya in blockquote
+
+
+= 1.1 =
+* Initial Release in Catchthemes.com
+* Updated instructions and links in Readme.txt
+* Fixed spacing issues in style.css
+* Fixed navigation position in homepage
+* Removed unnecessary layouts directory
+* Removed unnecessary files
+
+= 1.0 =
+* Added create_footer hook
+* Changed footer codes
+* Changed theme description
+* Fixed Google Font issues
+* Fixed style issues
+* Replaced typicons with genericons version 3.3
+
+= 0.1 =
+* Submitted to WordPress.org

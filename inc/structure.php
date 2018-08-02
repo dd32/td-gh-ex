@@ -36,8 +36,10 @@ if ( ! function_exists( 'create_head' ) ) :
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 		<?php
+		if ( is_singular() && pings_open() ) {
+			echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
+		}
 	}
 endif;
 add_action( 'create_before_wp_head', 'create_head', 10 );
@@ -116,16 +118,31 @@ if ( ! function_exists( 'create_primary_menu' ) ) :
 	 */
 	function create_primary_menu() {
 		?>
-		<nav id="site-navigation" class="main-navigation create-menu" role="navigation">
-		    <button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Menu', 'create' ); ?></button>
-		    <?php
-		    	wp_nav_menu(
-		    		array(
-			    		'theme_location' => 'primary'
-			    	)
-				);
-			?>
-		</nav><!-- #site-navigation -->
+		<div id="site-header-menu">
+		    <button id="menu-toggle-primary" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Menu', 'create' ); ?></button>
+		    <div id="primary-menu-wrapper">
+			    <?php if ( has_nav_menu( 'primary' ) ) : ?>
+			    	<nav id="site-navigation" class="main-navigation create-menu custom-primary-menu" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'create' ); ?>">
+						<?php
+							wp_nav_menu( array(
+								'theme_location' => 'primary',
+								'menu_class'     => 'primary-menu',
+							 ) );
+						?>
+					</nav><!-- #site-navigation -->
+				<?php else : ?>
+					<nav id="site-navigation" class="main-navigation create-menu default-page-menu" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'create' ); ?>">
+						<?php wp_page_menu(
+							array(
+								'menu_class' => 'primary-menu-container',
+								'before'     => '<ul id="menu-primary-items" class="primary-menu">',
+								'after'      => '</ul>'
+							)
+						); ?>
+					</nav><!-- #site-navigation -->
+				<?php endif; ?>
+			</div><!-- #primary-menu-wrapper -->
+		</div><!-- #site-header-menu -->
 		<?php
 	}
 endif;

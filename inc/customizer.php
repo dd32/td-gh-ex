@@ -89,7 +89,7 @@ function create_customize_register( $wp_customize ) {
 								),
 							);
 			foreach ( $important_links as $important_link) {
-				echo '<p><a target="_blank" href="' . $important_link['link'] .'" >' . $important_link['text'] .' </a></p>';
+				echo '<p><a target="_blank" href="' . $important_link['link'] .'" >' . $important_link['text'] .' </a></p>'; // WPCS: XSS OK.
 			}
         }
     }
@@ -122,7 +122,7 @@ add_action( 'customize_register', 'create_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function create_customize_preview_js() {
-	wp_enqueue_script( 'create_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+	wp_enqueue_script( 'create_customizer', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
 add_action( 'customize_preview_init', 'create_customize_preview_js' );
 
@@ -133,7 +133,7 @@ add_action( 'customize_preview_init', 'create_customize_preview_js' );
  * @since Create 1.2
  */
 function create_customize_scripts() {
-	wp_enqueue_script( 'create_customizer_custom', get_template_directory_uri() . '/js/customizer-custom-scripts.js', array( 'jquery' ), '20131028', true );
+	wp_enqueue_script( 'create_customizer_custom', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/customizer-custom-scripts.js', array( 'jquery' ), '20131028', true );
 
 	$create_data = array(
 		'reset_message' => esc_html__( 'Refresh the customizer page after saving to view reset effects', 'create' )

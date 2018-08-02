@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Create\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-06-07 10:12+0545\n"
-"PO-Revision-Date: 2017-06-07 10:12+0545\n"
+"POT-Creation-Date: 2018-08-02 15:18+0545\n"
+"PO-Revision-Date: 2018-08-02 15:18+0545\n"
 "Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: de_DE\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
 "_nx:1,2,4c;esc_html__\n"
@@ -118,47 +118,55 @@ msgstr "Bearbeiten"
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "%s weiterlesen <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:63
+#: ../functions.php:69 ../inc/structure.php:125 ../inc/structure.php:134
 msgid "Primary Menu"
 msgstr "Hauptmenü"
 
-#: ../functions.php:64
+#: ../functions.php:70
 msgid "Social Menu"
 msgstr "Social Media Menü"
 
-#: ../functions.php:123
+#: ../functions.php:129
 msgid "Sidebar"
 msgstr "Sidebar"
 
-#: ../functions.php:125
+#: ../functions.php:131
 msgid "Main sidebar that appears on the left."
 msgstr "Haupt-Seitenleiste, die links erscheint."
 
-#: ../functions.php:133
+#: ../functions.php:139
 msgid "Intro Widget"
 msgstr ""
 
-#: ../functions.php:135
+#: ../functions.php:141
 msgid "Additional widget that appears only on your default homepage."
 msgstr ""
 
-#: ../functions.php:154
+#: ../functions.php:160
 msgid "Your Name"
 msgstr "Ihr Name"
 
-#: ../functions.php:155
+#: ../functions.php:161
 msgid "E-mail"
 msgstr "E-Mail"
 
-#: ../functions.php:156
+#: ../functions.php:162
 msgid "Website"
 msgstr "Webseite"
 
-#: ../functions.php:157
+#: ../functions.php:163
 msgid "Your Comment"
 msgstr "Dein Kommentar"
 
-#: ../functions.php:259
+#: ../functions.php:182
+msgid "expand child menu"
+msgstr ""
+
+#: ../functions.php:183
+msgid "collapse child menu"
+msgstr ""
+
+#: ../functions.php:270
 msgctxt "Google font: on or off"
 msgid "on"
 msgstr "An"
@@ -254,7 +262,7 @@ msgstr "weiterlesen..."
 msgid "All Categories"
 msgstr "Kategorien ausw&auml;hlen"
 
-#: ../inc/customizer-includes/customizer-theme-options.php:113
+#: ../inc/customizer-includes/customizer-theme-options.php:108
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
 "options."
@@ -262,7 +270,7 @@ msgstr ""
 "Halten Sie die STRG- (Windows) / bzw. Command Taste (Mac) gedr&uuml;ckt, um "
 "mehrere Kategorien auszuw&auml;hlen."
 
-#: ../inc/customizer-includes/customizer-theme-options.php:119
+#: ../inc/customizer-includes/customizer-theme-options.php:114
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page"
@@ -270,37 +278,37 @@ msgstr ""
 "Auf der Titelseite erscheinen nur Beitr&auml;ge, der hier ausgew&auml;hlten "
 "Kategorien"
 
-#: ../inc/customizer-includes/customizer-theme-options.php:122
+#: ../inc/customizer-includes/customizer-theme-options.php:117
 msgid "Homepage / Frontpage Options"
 msgstr "Homepage / Frontpage-Optionen"
 
-#: ../inc/customizer-includes/customizer-theme-options.php:132
+#: ../inc/customizer-includes/customizer-theme-options.php:127
 msgid "Select Categories"
 msgstr "Kategorien ausw&auml;hlen"
 
-#: ../inc/customizer-includes/customizer-theme-options.php:146
+#: ../inc/customizer-includes/customizer-theme-options.php:141
 #: ../inc/metabox.php:85
 msgid "Layout Options"
 msgstr "Layout Optionen"
 
-#: ../inc/customizer-includes/customizer-theme-options.php:163
+#: ../inc/customizer-includes/customizer-theme-options.php:158
 msgid "Frontpage Posts Layout"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:182
+#: ../inc/customizer-includes/customizer-theme-options.php:177
 msgid "Default Layout"
 msgstr "Layout"
 
-#: ../inc/customizer-includes/customizer-theme-options.php:208
+#: ../inc/customizer-includes/customizer-theme-options.php:203
 msgid "Archive Content Layout"
 msgstr "Blog Archiv Layout"
 
-#: ../inc/customizer-includes/customizer-theme-options.php:228
+#: ../inc/customizer-includes/customizer-theme-options.php:223
 #: ../inc/metabox.php:87
 msgid "Single Page/Post Image Layout "
 msgstr "Layout f&uuml;r einzelne Seite/Post"
 
-#: ../inc/customizer-includes/customizer-theme-options.php:246
+#: ../inc/customizer-includes/customizer-theme-options.php:241
 #, php-format
 msgid ""
 "Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
@@ -309,32 +317,32 @@ msgstr ""
 "Infinite Scroll Optionen ben&ouml;tigen <a target=\"_blank\" href=\"%s"
 "\">JetPack Plugin</a> mit aktiviertem 'Infinite Scroll' Modul."
 
-#: ../inc/customizer-includes/customizer-theme-options.php:254
+#: ../inc/customizer-includes/customizer-theme-options.php:249
 msgid "Pagination Options"
 msgstr "Numerierungsoptionen"
 
-#: ../inc/customizer-includes/customizer-theme-options.php:271
+#: ../inc/customizer-includes/customizer-theme-options.php:266
 msgid "Pagination type"
 msgstr "Numerierungsart"
 
-#: ../inc/customizer-includes/customizer-theme-options.php:282
+#: ../inc/customizer-includes/customizer-theme-options.php:277
 msgid "Scrollup Options"
 msgstr "Scrollup Optionen"
 
-#: ../inc/customizer-includes/customizer-theme-options.php:292
+#: ../inc/customizer-includes/customizer-theme-options.php:287
 msgid "Check to disable Scroll Up"
 msgstr "Scroll Up deaktivieren"
 
-#: ../inc/customizer-includes/customizer-theme-options.php:301
+#: ../inc/customizer-includes/customizer-theme-options.php:296
 msgid "Change default placeholder text in Search."
 msgstr ""
 "Hier k&ouml;nnen Sie den Standard Platzhaltertext im Suchfeld &auml;ndern."
 
-#: ../inc/customizer-includes/customizer-theme-options.php:304
+#: ../inc/customizer-includes/customizer-theme-options.php:299
 msgid "Search Options"
 msgstr "Weitere Suchkriterien"
 
-#: ../inc/customizer-includes/customizer-theme-options.php:314
+#: ../inc/customizer-includes/customizer-theme-options.php:309
 msgid "Default Display Text in Search"
 msgstr "Voreingestellter Anzeigetext im Feld \"Suche\""
 
@@ -571,7 +579,7 @@ msgstr "Ver&ouml;ffentlicht am:"
 msgid "By"
 msgstr "nach"
 
-#: ../inc/extras.php:295
+#: ../inc/extras.php:296
 msgid "Scroll Up"
 msgstr "Hoch scrollen"
 
@@ -583,28 +591,28 @@ msgstr "Optionen für das Header-Themenbild"
 msgid "Create Options"
 msgstr "Create Optionen"
 
-#: ../inc/structure.php:55
+#: ../inc/structure.php:57
 msgid "Skip to content"
 msgstr "Zum Inhalt springen"
 
-#: ../inc/structure.php:120
+#: ../inc/structure.php:122
 msgid "Menu"
 msgstr "Menü"
 
-#: ../inc/structure.php:374
+#: ../inc/structure.php:391
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL"
 msgid "&copy; %1$s %2$s"
 msgstr "&copy; %1$s %2$s"
 
-#: ../inc/structure.php:374
+#: ../inc/structure.php:391
 #, fuzzy
 #| msgctxt "yearly archives date format"
 #| msgid "Y"
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/structure.php:404
+#: ../inc/structure.php:421
 msgctxt "attribution"
 msgid "by"
 msgstr "von"
@@ -794,7 +802,7 @@ msgstr "Archiv"
 msgid "Search Results for: %s"
 msgstr "Suchergebnis für: %s"
 
-#: ../searchform.php:14 ../searchform.php:15
+#: ../searchform.php:15
 msgctxt "label"
 msgid "Search for:"
 msgstr "Suche nach:"
