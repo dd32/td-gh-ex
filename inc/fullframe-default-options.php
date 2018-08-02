@@ -23,7 +23,7 @@ function fullframe_get_default_theme_options() {
 
 	$default_theme_options = array(
 		//Site Title an Tagline
-		'logo'												=> get_template_directory_uri() . '/images/headers/logo.png',
+		'logo'												=> trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/headers/logo.png',
 		'logo_alt_text' 									=> '',
 		'logo_disable'										=> 1,
 		'move_title_tagline'								=> 0,
@@ -87,7 +87,7 @@ function fullframe_get_default_theme_options() {
 		'featured_content_enable_excerpt_content'			=> 0,
 		'featured_content_number'							=> '4',
 
-		'featured_content_background_image'					=> get_template_directory_uri() . '/images/default-featured-bg.jpg',
+		'featured_content_background_image'					=> trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/default-featured-bg.jpg',
 
 		//Featured Slider Options
 		'featured_slider_option'							=> 'homepage',
@@ -577,7 +577,7 @@ function fullframe_metabox_featured_image_options() {
 function fullframe_get_content() {
 	$theme_data = wp_get_theme();
 
-	$fullframe_content['left'] 	= sprintf( _x( 'Copyright &copy; %1$s %2$s. All Rights Reserved.', '1: Year, 2: Site Title with home URL', 'full-frame' ), esc_attr( date_i18n( __( 'Y', 'full-frame' ) ) ), '<a href="'. esc_url( home_url( '/' ) ) .'">'. esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>' );
+	$fullframe_content['left'] 	= sprintf( _x( 'Copyright &copy; %1$s %2$s. All Rights Reserved. %3$s', '1: Year, 2: Site Title with home URL 3: Privacy Policy Link', 'full-frame' ), esc_attr( date_i18n( __( 'Y', 'full-frame' ) ) ), '<a href="'. esc_url( home_url( '/' ) ) .'">'. esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>', get_the_privacy_policy_link() );
 
 	$fullframe_content['right']	= esc_attr( $theme_data->get( 'Name') ) . '&nbsp;' . esc_html__( 'by', 'full-frame' ). '&nbsp;<a target="_blank" href="'. esc_url( $theme_data->get( 'AuthorURI' ) ) .'">'. esc_attr( $theme_data->get( 'Author' ) ) .'</a>';
 

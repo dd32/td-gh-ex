@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/full-frame/
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: Full Frame is a Simple, Clean and Spacious Full Width Responsive WordPress Theme based on Catch Base Theme. Built on HTML5, CSS3 and Theme Customizer for real time customization, it comes with a whole set of interesting and rich features which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Full Frame WordPress Theme will be best suited for photography, portfolio and blogging sites. This theme is translation ready and also currently translated in Swedish, French, Brazilian Portuguese, German, Hungarian, Lithuanian and Danish languages. Check out Theme Instructions at https://catchthemes.com/theme-instructions/full-frame/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/full-frame/
-Version: 2.5.4
+Version: 2.5.5
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: full-frame
@@ -304,7 +304,7 @@ big {
 }
 
 .sidebar-header-right .widget-title,
-#infinite-handle span {
+.site-main #infinite-handle span button {
     font-size: 16px;
 }
 
@@ -552,6 +552,11 @@ blockquote:before {
 #feature-slider,
 #header-featured-image {
     margin-top: -44px;
+}
+
+.show-header #feature-slider,
+.show-header #header-featured-image {
+    margin-top: 0;
 }
 
 .wrapper {
@@ -1185,23 +1190,35 @@ textarea {
 }
 
 /* Jetpack Infinite Scroll */
-#infinite-handle span {
-    background-color: #666;
-    border-radius: 3px;
+.site-main #infinite-handle {
+	display: block;
+	text-align: center;
+    width: 100%;
+}
+.site-main #infinite-handle span {
+	background-color: transparent;
+    display: inline-block;
+    padding: 0;
+}
+
+.site-main #infinite-handle span button {
+	background-color: #666;
+	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
     -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow: 	0 2px 6px rgba(0, 0, 0, 0.5);
 	box-shadow: 		0 2px 6px rgba(0, 0, 0, 0.5);
-    color: #eee;
-    cursor: pointer;
-    display: block;
-    padding: 10px 0;
-    text-align: center;
-    width: 100%;
+	color: #eee;
+	display: inline;
+	line-height: 1;
+	padding: 14px 28px;
+	text-shadow: none;
+	vertical-align: initial;
 }
 
-#infinite-handle span:hover {
+.site-main #infinite-handle span button:hover,
+.site-main #infinite-handle span button:focus {
 	background-color: #000;
     color: #fff;
     text-decoration: none;
@@ -2108,7 +2125,10 @@ caption {
 	background-color: #000;
 	border-color: #000;
     color: #fff;
-    text-decoration: none;
+}
+
+.site .widget_fullframe_social_icons a:hover {
+	text-decoration: none;
 }
 
 .site .widget_fullframe_social_icons a.genericon-facebook-alt:hover {
@@ -2268,4 +2288,34 @@ caption {
 	border: none;
 	background: transparent;
 	padding: 0;
+}
+
+.site .widget_fullframe_social_icons .icon-hover,
+.site .widget_fullframe_social_icons .has-hover:hover .icon-static {
+	display: none;
+}
+
+.site .widget_fullframe_social_icons .has-hover:hover .icon-hover {
+	display: inline-block;
+	text-decoration: none;
+	border: none;
+}
+
+/* Disable Responsive */
+.disable-responsive .wrapper {
+    width: 1280px;
+}
+
+.disable-responsive #fixed-header,
+.disable-responsive #content,
+.disable-responsive #colophon,
+.disable-responsive #feature-slider,
+.disable-responsive #promotion-message,
+.disable-responsive #featured-content {
+    min-width: 1300px;
+}
+
+.disable-responsive #footer-left-content,
+.disable-responsive #footer-right-content {
+    width: 620px;
 }

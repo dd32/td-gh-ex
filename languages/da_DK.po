@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-12-14 21:56+0545\n"
-"PO-Revision-Date: 2017-12-14 21:56+0545\n"
+"POT-Creation-Date: 2018-08-02 17:29+0545\n"
+"PO-Revision-Date: 2018-08-02 17:29+0545\n"
 "Last-Translator: Kurt <catchme@vindu.dk>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: da_DK\n"
@@ -16,7 +16,7 @@ msgstr ""
 "_nx:1,2,4c;esc_html__;esc_html_e;esc_attr_x:1,2c\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -102,30 +102,30 @@ msgstr "Rediger"
 msgid "All Categories"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:42
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:37
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
 "options."
 msgstr ""
 "Hold Ctrl (Windows) / Kommando (Mac) knappen for at vælge flere muligheder."
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:55
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:50
 msgid "Theme Instructions"
 msgstr "Theme Instructions"
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:59
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:54
 msgid "Support"
 msgstr "Support"
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:63
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:58
 msgid "Changelog"
 msgstr "Ændringslog"
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:67
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:62
 msgid "Donate Now"
 msgstr "Doner nu"
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:71
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:66
 msgid "Review"
 msgstr "Gennemse"
 
@@ -1053,9 +1053,11 @@ msgid "Disable Image"
 msgstr "Deaktiver billede"
 
 #: ../inc/fullframe-default-options.php:580
-#, php-format
-msgctxt "1: Year, 2: Site Title with home URL"
-msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
+#, fuzzy, php-format
+#| msgctxt "1: Year, 2: Site Title with home URL"
+#| msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
+msgctxt "1: Year, 2: Site Title with home URL 3: Privacy Policy Link"
+msgid "Copyright &copy; %1$s %2$s. All Rights Reserved. %3$s"
 msgstr "Copyright &copy; %1$s %2$s. All Rights Reserved."
 
 #: ../inc/fullframe-default-options.php:580

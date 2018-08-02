@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-12-14 21:56+0545\n"
-"PO-Revision-Date: 2017-12-14 21:56+0545\n"
+"POT-Creation-Date: 2018-08-02 17:29+0545\n"
+"PO-Revision-Date: 2018-08-02 17:29+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: lt\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
 "_nx:1,2,4c;esc_html__;esc_attr_x:1,2c;esc_html_e\n"
@@ -103,7 +103,7 @@ msgstr "Redaguoti"
 msgid "All Categories"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:42
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:37
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
 "options."
@@ -111,23 +111,23 @@ msgstr ""
 "Laikykite nuspaudę Ctrl (Windows) / Command (Mac) mygtuką, norėdami "
 "pasirinkti kelis variantus."
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:55
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:50
 msgid "Theme Instructions"
 msgstr "Temos instrukcijos"
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:59
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:54
 msgid "Support"
 msgstr "Pagalba"
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:63
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:58
 msgid "Changelog"
 msgstr "Keitimų žurnalas"
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:67
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:62
 msgid "Donate Now"
 msgstr "Paaukok dabar"
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:71
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:66
 msgid "Review"
 msgstr "Peržiūra"
 
@@ -1060,9 +1060,11 @@ msgid "Disable Image"
 msgstr "Išjungti paveikslėlį"
 
 #: ../inc/fullframe-default-options.php:580
-#, php-format
-msgctxt "1: Year, 2: Site Title with home URL"
-msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
+#, fuzzy, php-format
+#| msgctxt "1: Year, 2: Site Title with home URL"
+#| msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
+msgctxt "1: Year, 2: Site Title with home URL 3: Privacy Policy Link"
+msgid "Copyright &copy; %1$s %2$s. All Rights Reserved. %3$s"
 msgstr "Autorinės teisės &copy; %1$s %2$s. Visos Teisės Saugomos."
 
 #: ../inc/fullframe-default-options.php:580

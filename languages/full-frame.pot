@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Full Frame 2.5\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2017-12-14 21:56+0545\n"
+"POT-Creation-Date: 2018-08-02 17:29+0545\n"
 "PO-Revision-Date: 2016-12-07 16:49-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-KeywordsList: __;_e;_x;esc_html_e;esc_html__;esc_attr_e;esc_attr__;"
 "_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;"
 "__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -98,28 +98,28 @@ msgstr ""
 msgid "All Categories"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:42
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:37
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple options."
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:55
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:50
 msgid "Theme Instructions"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:59
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:54
 msgid "Support"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:63
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:58
 msgid "Changelog"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:67
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:62
 msgid "Donate Now"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:71
+#: ../inc/customizer-includes/fullframe-customizer-custom-controls.php:66
 msgid "Review"
 msgstr ""
 
@@ -1029,8 +1029,8 @@ msgstr ""
 
 #: ../inc/fullframe-default-options.php:580
 #, php-format
-msgctxt "1: Year, 2: Site Title with home URL"
-msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
+msgctxt "1: Year, 2: Site Title with home URL 3: Privacy Policy Link"
+msgid "Copyright &copy; %1$s %2$s. All Rights Reserved. %3$s"
 msgstr ""
 
 #: ../inc/fullframe-default-options.php:580

@@ -180,7 +180,7 @@ function fullframe_demo_content( $options ) {
 	<div class="featured_content_slider_wrap">
 		<article id="featured-post-1" class="post hentry post-demo">
 			<figure class="featured-content-image">
-				<img alt="Central Park" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured1-400x225.jpg" />
+				<img alt="Central Park" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/gallery/featured1-400x225.jpg" />
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">
@@ -196,7 +196,7 @@ function fullframe_demo_content( $options ) {
 
 		<article id="featured-post-2" class="post hentry post-demo">
 			<figure class="featured-content-image">
-				<img alt="Antique Clock" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured2-400x225.jpg" />
+				<img alt="Antique Clock" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/gallery/featured2-400x225.jpg" />
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">
@@ -212,7 +212,7 @@ function fullframe_demo_content( $options ) {
 
 		<article id="featured-post-3" class="post hentry post-demo">
 			<figure class="featured-content-image">
-				<img alt="Vespa Scooter" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured3-400x225.jpg" />
+				<img alt="Vespa Scooter" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/gallery/featured3-400x225.jpg" />
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">
@@ -230,7 +230,7 @@ function fullframe_demo_content( $options ) {
 		$fullframe_demo_content .= '
 		<article id="featured-post-4" class="post hentry post-demo">
 			<figure class="featured-content-image">
-				<img alt="Dhulikhel" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured4-400x225.jpg" />
+				<img alt="Dhulikhel" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/gallery/featured4-400x225.jpg" />
 			</figure>
 			<div class="entry-container">
 				<header class="entry-header">
@@ -319,7 +319,7 @@ function fullframe_page_content( $options ) {
 				}
 				else {
 					//Default value if there is no first image
-					$fullframe_image = '<img class="pngfix wp-post-image" src="'.get_template_directory_uri().'/images/gallery/no-featured-image-1680x720.jpg" >';
+					$fullframe_image = '<img class="pngfix wp-post-image" src="'.esc_url( get_template_directory_uri() ).'/images/gallery/no-featured-image-1680x720.jpg" >';
 
 					//Get the first image in page, returns false if there is no image
 					$fullframe_first_image = fullframe_get_first_image( $post->ID, 'fullframe-featured-content', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class' => 'pngfix' ) );

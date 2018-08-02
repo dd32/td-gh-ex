@@ -114,7 +114,7 @@ function fullframe_sanitize_category_list( $input ) {
 		if( in_array( 0, $input ) ) {
 			return '0';
 		}
-		
+
 		$args = array(
 						'type'			=> 'post',
 						'child_of'      => 0,
@@ -193,7 +193,7 @@ function fullframe_sanitize_number_range( $number, $setting ) {
  * @since Full Frame 1.9
  */
 function fullframe_sanitize_footer_code( $input ) {
-	return ( stripslashes( wp_filter_post_kses( addslashes ( $input ) ) ) );
+	return ( stripslashes( wp_kses_post( addslashes ( $input ) ) ) );
 }
 
 

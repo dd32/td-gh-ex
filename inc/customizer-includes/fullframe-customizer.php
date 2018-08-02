@@ -186,7 +186,7 @@ add_action( 'customize_register', 'fullframe_customize_register' );
  * @since Fullframe 1.0
  */
 function fullframe_customize_preview() {
-	wp_enqueue_script( 'fullframe_customizer', get_template_directory_uri() . '/js/fullframe-customizer.min.js', array( 'customize-preview' ), '20120827', true );
+	wp_enqueue_script( 'fullframe_customizer', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/fullframe-customizer.min.js', array( 'customize-preview' ), '20120827', true );
 
 	//Flush transients on preview
 	fullframe_flush_transients();
@@ -200,7 +200,7 @@ add_action( 'customize_preview_init', 'fullframe_customize_preview' );
  * @since Fullframe 1.0
  */
 function fullframe_customize_scripts() {
-	wp_enqueue_script( 'fullframe_customizer_custom', get_template_directory_uri() . '/js/fullframe-customizer-custom-scripts.min.js', array( 'jquery' ), '20131028', true );
+	wp_enqueue_script( 'fullframe_customizer_custom', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/fullframe-customizer-custom-scripts.min.js', array( 'jquery' ), '20131028', true );
 
 	$fullframe_data = array(
 		'reset_message'        => esc_html__( 'Refresh the customizer page after saving to view reset effects', 'full-frame' )
