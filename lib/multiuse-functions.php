@@ -271,7 +271,6 @@ function aamla_widgets( $id, $class, $label, $widget = 'sidebar', $aside = true 
 		</aside>
 	<?php else : ?>
 		<article id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $class ); ?>">
-			<h2 class="screen-reader-text"><?php echo esc_html( $label ); ?></h2>
 			<?php dynamic_sidebar( $widget ); ?>
 		</article>
 	<?php endif; ?>

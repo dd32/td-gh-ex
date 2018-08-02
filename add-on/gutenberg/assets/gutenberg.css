@@ -16,23 +16,24 @@
 }
 
 .wp-block-gallery,
-.wp-block-image {
+.wp-block-image,
+.wp-block-embed {
 	margin-bottom: 1.75rem;
-}
-
-.wp-block-pullquote {
-	padding: 0 0 0 2.5em;
-	text-align: left;
-}
-
-.wp-block-pullquote > p {
-	font-size: 1.125rem;
-	line-height: 1.55556;
-	margin-bottom: 0.875rem;
 }
 
 .wp-block-quote > p {
 	margin-bottom: 0.875rem;
+}
+
+ul.wp-block-gallery > li,
+ul.wp-block-gallery > li:first-child {
+	margin: 8px;
+	padding-top: 0;
+	border-top-width: 0;
+}
+
+.widget ul.wp-block-gallery {
+	margin-bottom: 1.75rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -47,7 +48,7 @@
 @media only screen and (min-width: 1200px) {
 
 	.alignwide {
-		width: calc( 120%);
+		width: 120%;
 		max-width: none;
 		margin-right: calc( -10%);
 		margin-left: calc( -10%);

@@ -65,6 +65,15 @@ class Media_Grabber {
 	public $split;
 
 	/**
+	 * Whether post is from main query.
+	 *
+	 * @since  1.0.2
+	 * @access public
+	 * @var    bool
+	 */
+	public $is_main_query;
+
+	/**
 	 * The playlist shortcode in post content.
 	 *
 	 * @since  1.0.1
@@ -89,8 +98,9 @@ class Media_Grabber {
 	 *
 	 * @param string $type  audio | video | gallery.
 	 * @param bool   $split Whether to split the media from the post content.
+	 * @param bool   $main_query Whether called by a function in main query.
 	 */
-	public function __construct( $type, $split ) {
+	public function __construct( $type, $split, $main_query ) {
 
 		// Set the object properties.
 		if ( 'audio' === $type ) {
@@ -98,9 +108,10 @@ class Media_Grabber {
 		} elseif ( 'video' === $type ) {
 			$this->media_type = [ 'video', 'object', 'embed', 'iframe' ];
 		}
-		$this->type    = $type;
-		$this->split   = $split;
-		$this->post_id = get_the_ID();
+		$this->type          = $type;
+		$this->split         = $split;
+		$this->post_id       = get_the_ID();
+		$this->is_main_query = $main_query;
 
 		// Find the media related to the post.
 		$this->set_media();
@@ -126,16 +137,8 @@ class Media_Grabber {
 	 */
 	public function get_media() {
 
-		$this->media = apply_filters( 'aamla_media_grabber_media', $this->media, $this );
-		$this->type  = $this->playlist ? 'playlist' : $this->type;
-		$media       = '';
-		if ( $this->media ) {
-			$media = sprintf( '<div%1$s>%2$s</div>',
-				aamla_get_attr( 'entry-' . $this->type ),
-				$this->media
-			);
-		}
-
+		$media      = apply_filters( 'aamla_media_grabber_media', $this->media, $this );
+		$this->type = $this->playlist ? 'playlist' : $this->type;
 		return [ $media, $this->type ];
 	}
 
@@ -205,7 +208,15 @@ class Media_Grabber {
 	public function split_media( $content ) {
 
 		if ( get_the_ID() !== $this->post_id ) {
-			return;
+			return $content;
+		}
+
+		if ( $this->is_main_query && ! in_the_loop() ) {
+			return $content;
+		}
+
+		if ( ! $this->is_main_query && in_the_loop() ) {
+			return $content;
 		}
 
 		if ( $this->playlist ) {

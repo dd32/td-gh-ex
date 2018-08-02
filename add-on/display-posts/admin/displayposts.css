@@ -1,9 +1,13 @@
-.terms-panel {
-	margin-top: 10px;
+.page-panel,
+.post-panel,
+.posts-styles,
+.posts-styles-grid,
+.widget-options-section {
+	margin: 1em 0;
 }
 
-.posts-styles {
-	margin-bottom: 10px;
+.post-panel > div {
+	margin: 1em 0;
 }
 
 .terms-checklist,

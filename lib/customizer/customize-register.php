@@ -201,7 +201,7 @@ function aamla_customize_preview_js() {
 		'aamla_customizer',
 		get_template_directory_uri() . '/assets/admin/js/customize-preview.js',
 		[ 'customize-preview' ],
-		'1.0.0',
+		AAMLA_THEME_VERSION,
 		true
 	);
 }
@@ -217,7 +217,7 @@ function aamla_customize_control_js() {
 		'aamla_customizer_control',
 		get_template_directory_uri() . '/assets/admin/js/customize-control.js',
 		[ 'customize-controls', 'jquery' ],
-		'1.0.0',
+		AAMLA_THEME_VERSION,
 		true
 	);
 }
@@ -231,7 +231,9 @@ add_action( 'customize_controls_enqueue_scripts', 'aamla_customize_control_js' )
 function aamla_customize_control_css() {
 	wp_enqueue_style(
 		'aamla_customizer_control_style',
-		get_template_directory_uri() . '/assets/admin/css/customize-control.css'
+		get_template_directory_uri() . '/assets/admin/css/customize-control.css',
+		[],
+		AAMLA_THEME_VERSION
 	);
 }
 add_action( 'customize_controls_print_styles', 'aamla_customize_control_css' );

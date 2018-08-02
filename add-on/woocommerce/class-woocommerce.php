@@ -155,7 +155,7 @@ class WooCommerce {
 			aamla_widgets(
 				'wc-archive-filters',
 				'wc-archive-filters sidebar-widget-area',
-				esc_html( 'WooCommerce - Procuct Archive Filters' ),
+				esc_html__( 'WooCommerce - Procuct Archive Filters', 'aamla' ),
 				'wc-archive-filters'
 			);
 			return true;
@@ -165,6 +165,8 @@ class WooCommerce {
 
 	/**
 	 * Add shopping cart to site header widgets area.
+	 *
+	 * If default widget area is active, this function will add shopping cart to it.
 	 *
 	 * @since  1.0.1
 	 *
@@ -180,6 +182,9 @@ class WooCommerce {
 
 	/**
 	 * Add shopping cart to site header widgets area.
+	 *
+	 * If default header widget area is not active, this function will create a header widget markup
+	 * and add shopping cart to it.
 	 *
 	 * @since  1.0.1
 	 *
@@ -349,7 +354,7 @@ class WooCommerce {
 	}
 
 	/**
-	 * Remove custom widget metabox on certain edit screen.
+	 * Remove custom widget metabox (widgetlayer) on wooCommerce shop page edit screen.
 	 *
 	 * @since  1.0.1
 	 *
@@ -441,7 +446,7 @@ class WooCommerce {
 			'aamla_woocommerce_script',
 			get_template_directory_uri() . '/add-on/woocommerce/assets/woocommerce.js',
 			[],
-			'1.0.0',
+			AAMLA_THEME_VERSION,
 			true
 		);
 
@@ -449,7 +454,7 @@ class WooCommerce {
 			'aamla_woocommerce_style',
 			get_template_directory_uri() . '/add-on/woocommerce/assets/woocommerce.css',
 			[],
-			false,
+			AAMLA_THEME_VERSION,
 			'all'
 		);
 		wp_style_add_data( 'aamla_woocommerce_style', 'rtl', 'replace' );

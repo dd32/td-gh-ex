@@ -107,8 +107,8 @@ class JetPack {
 		wp_enqueue_style(
 			'aamla_jetpack_style',
 			get_template_directory_uri() . '/add-on/jetpack/assets/jetpack.css',
-			array(),
-			false,
+			[],
+			AAMLA_THEME_VERSION,
 			'all'
 		);
 	}

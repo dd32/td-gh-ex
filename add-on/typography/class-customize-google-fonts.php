@@ -33,13 +33,16 @@ class Customize_Google_Fonts extends \WP_Customize_Control {
 	public function enqueue() {
 		wp_enqueue_style(
 			'aamla_gf_customizer_control_style',
-			get_template_directory_uri() . '/add-on/typography/admin/customize-control.css'
+			get_template_directory_uri() . '/add-on/typography/admin/customize-control.css',
+			[],
+			AAMLA_THEME_VERSION,
+			'all'
 		);
 		wp_enqueue_script(
 			'aamla_gf_customizer_control_js',
 			get_template_directory_uri() . '/add-on/typography/admin/customize-control.js',
 			[ 'customize-controls', 'jquery' ],
-			'1.0.0',
+			AAMLA_THEME_VERSION,
 			true
 		);
 	}

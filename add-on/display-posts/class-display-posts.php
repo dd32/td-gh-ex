@@ -57,6 +57,7 @@ class Display_Posts {
 		add_action( 'wp_enqueue_scripts', [ self::get_instance(), 'enqueue_front' ] );
 		add_action( 'admin_enqueue_scripts', [ self::get_instance(), 'enqueue_admin' ] );
 		add_action( 'aamla_dp_entry', [ self::get_instance(), 'dp_entry' ], 10, 3 );
+		add_action( 'aamla_dp_excerpt_more', [ self::get_instance(), 'excerpt_more' ], 10, 2 );
 	}
 
 	/**
@@ -67,16 +68,16 @@ class Display_Posts {
 	 * @return array Array of supported display styles.
 	 */
 	public function dp_styles( $styles, $instance ) {
-		$styles = [
-			'list-l-m'     => esc_html__( 'Mini List - Left Thumb', 'aamla' ),
-			'list-r-m'     => esc_html__( 'Mini List - Right Thumb', 'aamla' ),
-			'list-l-l'     => esc_html__( 'Large List - Left Thumb', 'aamla' ),
-			'list-r-l'     => esc_html__( 'Large List - Right Thumb', 'aamla' ),
-			'grid-default' => esc_html__( 'Default Grid', 'aamla' ),
-			'grid-t'       => esc_html__( 'Only Thumb-Title Grid', 'aamla' ),
+		return [
 			'only-content' => esc_html__( 'Only Full content', 'aamla' ),
+			'list-l-tm'    => esc_html__( 'List-Left-Title-Meta', 'aamla' ),
+			'list-r-tm'    => esc_html__( 'List-Right-Title-Meta', 'aamla' ),
+			'grid-default' => esc_html__( 'Grid-Default', 'aamla' ),
+			'grid-th'      => esc_html__( 'Grid-Thumb-Only', 'aamla' ),
+			'grid-t'       => esc_html__( 'Grid-Title', 'aamla' ),
+			'grid-te'      => esc_html__( 'Grid-Title-Excerpt', 'aamla' ),
+			'grid-c'       => esc_html__( 'Grid-Content', 'aamla' ),
 		];
-		return $styles;
 	}
 
 	/**
@@ -88,9 +89,12 @@ class Display_Posts {
 	 * @return str Entry posts classes.
 	 */
 	public function dp_classes( $classes, $instance, $widget ) {
-		$classes .= ' index-view';
-		if ( in_array( $instance['styles'], [ 'grid-default', 'grid-t' ], true ) ) {
-			$classes .= ' dp-grid';
+		$classes[] = 'index-view';
+		if ( false !== strpos( $instance['styles'], 'grid' ) ) {
+			$classes[] = 'dp-grid';
+			$classes[] = 'dp-grid-' . $instance['grid_columns'];
+		} else {
+			$classes[] = 'dp-list';
 		}
 		return $classes;
 	}
@@ -114,7 +118,7 @@ class Display_Posts {
 			$this->featured( $this->get_thumb_size( $instance['styles'] ) );
 		}
 		if ( $display[3] ) {
-			$this->main_content( $display[3] );
+			$this->main_content( $display[3], $instance['styles'] );
 		}
 	}
 
@@ -128,7 +132,7 @@ class Display_Posts {
 			'aamla_display_posts_style',
 			get_template_directory_uri() . '/add-on/display-posts/assets/displayposts.css',
 			[],
-			false,
+			AAMLA_THEME_VERSION,
 			'all'
 		);
 
@@ -136,7 +140,7 @@ class Display_Posts {
 			'aamla_display_posts_js',
 			get_template_directory_uri() . '/add-on/display-posts/assets/displayposts.js',
 			[],
-			'1.0.0',
+			AAMLA_THEME_VERSION,
 			true
 		);
 	}
@@ -156,14 +160,14 @@ class Display_Posts {
 			'aamla_display_posts_admin_style',
 			get_template_directory_uri() . '/add-on/display-posts/admin/displayposts.css',
 			array(),
-			false,
+			AAMLA_THEME_VERSION,
 			'all'
 		);
 		wp_enqueue_script(
 			'aamla_display_posts_admin_js',
 			get_template_directory_uri() . '/add-on/display-posts/admin/displayposts.js',
 			[ 'jquery' ],
-			'1.0.0',
+			AAMLA_THEME_VERSION,
 			true
 		);
 	}
@@ -180,24 +184,30 @@ class Display_Posts {
 
 		/*
 		 * Default element display instructions.
-		 * Instructions array to display particular entry element.
-		 * [ 'title', [ 'date', 'author' ], ['thumbnail'], [ 'title', [ 'date', 'author', 'category' ], 'excerpt', 'content' ] ]
+		 * Instructions array to display particular HTML element as per given sequence.
+		 * NOTE: Thinks array brackets as HTML wrapper for containing items.
+		 * [ 'title', [ 'date', 'author' ], ['thumbnail'], [ 'title', [ 'date', 'author' ], 'excerpt', 'content' ] ]
 		 */
 
 		switch ( $style ) {
-			case 'list-l-m':
-			case 'list-r-m':
+			case 'list-l-tm':
+			case 'list-r-tm':
 				$d = [ $f, $f, $t, [ $t, [ $t, $t, $f ], $f, $f ] ];
-				break;
-			case 'list-l-l':
-			case 'list-r-l':
-				$d = [ $f, $f, $t, [ $t, [ $f, $f, $t ], $t, $f ] ];
 				break;
 			case 'grid-default':
 				$d = [ $f, $f, $t, [ $t, $f, $t, $f ] ];
 				break;
+			case 'grid-th':
+				$d = [ $f, $f, $t, $f ];
+				break;
 			case 'grid-t':
 				$d = [ $f, $f, $t, [ $t, $f, $f, $f ] ];
+				break;
+			case 'grid-te':
+				$d = [ $f, $f, $t, [ $t, $f, $t, $f ] ];
+				break;
+			case 'grid-c':
+				$d = [ $f, $f, $t, [ $f, $f, $f, $t ] ];
 				break;
 			case 'only-content':
 				$d = [ $f, $f, $f, [ $f, $f, $f, $t ] ];
@@ -219,7 +229,7 @@ class Display_Posts {
 
 		$thumb_size = 'aamla-medium';
 
-		if ( 'list-l-m' === $style || 'list-r-m' === $style ) {
+		if ( false !== strpos( $style, 'list' ) ) {
 			$thumb_size = 'thumbnail';
 		}
 
@@ -308,9 +318,10 @@ class Display_Posts {
 	 *
 	 * @since 1.0.1
 	 *
-	 * @param array $instruct Date and author display instruction.
+	 * @param array  $instruct Date and author display instruction.
+	 * @param string $style    Current display post style.
 	 */
-	public function main_content( $instruct ) {
+	public function main_content( $instruct, $style ) {
 		echo '<div class="dp-main-content">';
 
 		if ( $instruct[0] ) {
@@ -323,7 +334,7 @@ class Display_Posts {
 
 		if ( $instruct[2] ) {
 			echo '<div class="dp-content">';
-			$this->excerpt();
+			$this->excerpt( 20, $style );
 			echo '</div>';
 		}
 
@@ -345,8 +356,9 @@ class Display_Posts {
 	 * @since 1.0.1
 	 *
 	 * @param int $length Number of words in an excerpt.
+	 * @param str $style  Current display post style.
 	 */
-	public function excerpt( $length = 20 ) {
+	public function excerpt( $length = 20, $style ) {
 		$text = get_the_content( '' );
 
 		$text = wp_strip_all_tags( strip_shortcodes( $text ) );
@@ -362,7 +374,7 @@ class Display_Posts {
 		 *
 		 * @param int $number The number of words. Default 20.
 		 */
-		$excerpt_length = apply_filters( 'aamla_dp_excerpt_length', $length );
+		$excerpt_length = apply_filters( 'aamla_dp_excerpt_length', $length, $style );
 
 		/**
 		 * Filters the string in the "more" link displayed after a trimmed excerpt.
@@ -371,10 +383,32 @@ class Display_Posts {
 		 *
 		 * @param string $more_string The string shown within the more link.
 		 */
-		$excerpt_more = apply_filters( 'aamla_dp_excerpt_more', ' [&hellip;]' );
+		$excerpt_more = apply_filters( 'aamla_dp_excerpt_more', ' [&hellip;]', $style );
 		$text         = wp_trim_words( $text, $excerpt_length, $excerpt_more );
 
 		echo $text; // WPCS xss ok.
+	}
+
+	/**
+	 * Change Display Post excerpt read more text.
+	 *
+	 * @since 1.0.2
+	 *
+	 * @param string $teaser Excerpt more teaser text.
+	 * @param string $style  Current display post style.
+	 * @return string
+	 */
+	public static function excerpt_more( $teaser, $style ) {
+		if ( 'grid-te' !== $style ) {
+			return $teaser;
+		}
+
+		$post_title    = get_the_title();
+		$post_url      = esc_url( get_permalink() );
+		$teaser_text   = esc_html__( 'Read More', 'aamla' );
+		$screen_reader = strlen( $post_title ) ? sprintf( '<span class="screen-reader-text">%s</span>', $post_title ) : '';
+
+		return sprintf( '<p class="dp-link-more"><a class="dp-more-link button black-bordered" href="%1$s">%2$s %3$s</a></p>', $post_url, $teaser_text, $screen_reader );
 	}
 
 	/**

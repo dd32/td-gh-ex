@@ -81,7 +81,7 @@ class GutenBerg {
 			'aamla_gutenberg_style',
 			get_template_directory_uri() . '/add-on/gutenberg/assets/gutenberg.css',
 			[],
-			false,
+			AAMLA_THEME_VERSION,
 			'all'
 		);
 	}
@@ -97,7 +97,7 @@ class GutenBerg {
 			'aamla-fonts',
 			esc_url( aamla_font_url() ),
 			[],
-			false,
+			AAMLA_THEME_VERSION,
 			'all'
 		);
 		// Add custom styles for gutenberg admin screen.
@@ -105,7 +105,7 @@ class GutenBerg {
 			'aamla_gutenberg_admin_style',
 			get_template_directory_uri() . '/add-on/gutenberg/admin/gutenberg.css',
 			[],
-			false,
+			AAMLA_THEME_VERSION,
 			'all'
 		);
 		wp_add_inline_style( 'aamla_gutenberg_admin_style', $this->gutenberg_css() );

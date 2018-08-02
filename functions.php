@@ -29,6 +29,12 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
 }
 
 /**
+ * Save theme version as a constant.
+ * To be used to increase version of theme scripts & styles. (for Browser Cache-Busting).
+ */
+define( 'AAMLA_THEME_VERSION', esc_html( wp_get_theme( get_template() )->get( 'Version' ) ) );
+
+/**
  * Register theme features.
  *
  * Set up theme defaults and registers support for various WordPress features.
@@ -53,6 +59,7 @@ function aamla_setup() {
 	add_image_size( 'aamla-small', 320, 240, true );
 	add_image_size( 'aamla-medium', 640, 9999, false );
 	add_image_size( 'aamla-large', 1100, 9999, false );
+	add_image_size( 'aamla-laptop', 1440, 9999, false );
 	add_image_size( 'aamla-page-featured-image', 2000, 9999, false );
 
 	// Set the default content width.
@@ -207,6 +214,7 @@ function aamla_setup() {
 			'media-manager',
 			'woocommerce',
 			'gutenberg',
+			'admin-page',
 		)
 	);
 	foreach ( $addons as $addon ) {
@@ -350,7 +358,7 @@ function aamla_font_url() {
 	 *
 	 * @param string $fonts_url Google fonts url.
 	 */
-	return apply_filters( 'aamla_font_url', $fonts_url );
+	return apply_filters( 'aamla_font_url', esc_url_raw( $fonts_url ) );
 }
 
 /**
@@ -376,7 +384,12 @@ add_action( 'wp_head', 'aamla_javascript_detection', 0 );
  */
 function aamla_scripts() {
 	// Theme stylesheet.
-	wp_enqueue_style( 'aamla-style', get_stylesheet_uri() );
+	wp_enqueue_style(
+		'aamla-style',
+		get_stylesheet_uri(),
+		array(),
+		AAMLA_THEME_VERSION
+	);
 	wp_style_add_data( 'aamla-style', 'rtl', 'replace' );
 	wp_add_inline_style( 'aamla-style', aamla_get_inline_css() );
 
@@ -385,14 +398,13 @@ function aamla_scripts() {
 		'aamla-fonts',
 		esc_url( aamla_font_url() ),
 		array(),
-		null
+		AAMLA_THEME_VERSION
 	);
 
 	// Theme localize scripts data.
 	$l10n = apply_filters( 'aamla_localize_script_data',
 		array(
-			'menu'  => 'primary-menu', // ID of nav-menu first UL element.
-			'close' => aamla_get_icon( array( 'icon' => 'close' ) ),
+			'menu' => 'primary-menu', // ID of nav-menu first UL element.
 		)
 	);
 
@@ -401,7 +413,7 @@ function aamla_scripts() {
 		'aamla-scripts',
 		get_theme_file_uri( '/scripts.js' ),
 		array(),
-		'1.0.0',
+		AAMLA_THEME_VERSION,
 		true
 	);
 	wp_localize_script( 'aamla-scripts', 'aamlaScreenReaderText', $l10n );

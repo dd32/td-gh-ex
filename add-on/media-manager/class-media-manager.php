@@ -120,7 +120,7 @@ class Media_Manager {
 		$format = get_post_format();
 		if ( in_array( $format, [ 'audio', 'video', 'gallery' ], true ) ) {
 			// Add 'media_markup()' to array of callbacks with its args.
-			array_push( $callbacks, [ [ $this, 'media_markup' ], $format, false, true ] );
+			array_push( $callbacks, [ [ $this, 'media_markup' ], $format, true, false ] );
 		}
 		return $callbacks;
 	}
@@ -132,43 +132,92 @@ class Media_Manager {
 	 *
 	 * @param string $media_type  audio | video | gallery.
 	 * @param bool   $split_media Whether to split the media from the post content.
-	 * @param bool   $wrapper     Whether media to be wrapped in 'entry-featured-media'.
+	 * @param bool   $is_main_query  Whether the post is from main query.
 	 * @return void
 	 */
-	public function media_markup( $media_type, $split_media, $wrapper = false ) {
+	public function media_markup( $media_type, $split_media, $is_main_query = true ) {
 
-		$media_obj = new Media_Grabber( $media_type, $split_media );
+		$media_obj = new Media_Grabber( $media_type, $split_media, $is_main_query );
 		$media_arr = $media_obj->get_media();
 		$media     = $media_arr[0];
-		if ( ( $wrapper || ! is_single() ) && $media ) {
+		if ( ! $media ) {
+			return;
+		}
 
-			$toggle = sprintf(
-				'<button class="close-media">%1$s<span class="screen-reader-text"> %2$s </span></button>',
-				aamla_get_icon( array( 'icon' => 'close' ) ),
-				esc_html__( 'Close Media Window', 'aamla' )
+		if ( $is_main_query && is_single() ) {
+			printf( '<div%1$s>%2$s</div>', aamla_get_attr( 'entry-' . $media_arr[1] ), $media ); // WPCS xss ok. Contains HTML, other values escaped.
+			return;
+		}
+
+		$toggle = sprintf(
+			'<button class="close-media">%1$s<span class="screen-reader-text"> %2$s </span></button>',
+			aamla_get_icon( array( 'icon' => 'close' ) ),
+			esc_html__( 'Close Media Window', 'aamla' )
+		);
+
+		$title = the_title(
+			sprintf(
+				'<div class="media-post-title">%s<a href="%s">',
+				$this->get_media_text( $media_arr[1] ) . esc_html__( ' from: ', 'aamla' ),
+				esc_url( get_permalink() )
+			),
+			'</a></div>',
+			false
+		);
+
+		if ( 'video' === $media_arr[1] ) {
+			$media = $this->deferred_media_markup( $media );
+			printf(
+				'<div class="entry-featured-media mm-video"><div class="mm-video-wrapper"><div class="entry-video">%s%s</div>%s</div></div>', $media, $toggle, $title
+			); // WPCS xss ok. Contains HTML, other values escaped.
+			return;
+		} else {
+			$media = sprintf(
+				'<div%1$s>%2$s</div>',
+				aamla_get_attr( 'entry-' . $media_arr[1] ),
+				$media
 			);
 
-			$title = the_title(
-				sprintf(
-					'<div class="media-post-title">%s<a href="%s">',
-					$this->get_media_text( $media_arr[1] ) . esc_html__( ' from: ', 'aamla' ),
-					esc_url( get_permalink() )
-				),
-				'</a></div>',
-				false
+			$media_post = sprintf(
+				'<div class="entry-featured-media-extra">%s%s</div>',
+				$toggle,
+				$title
 			);
 
-			$media_post = sprintf( '<div class="entry-featured-media-extra">%s%s</div>', $toggle, $title );
-			$media      = sprintf( '<div%1$s>%2$s%3$s</div>',
+			printf(
+				'<div%1$s>%2$s%3$s</div>',
 				aamla_get_attr( 'entry-featured-media' ),
 				$media_post,
 				$media
-			);
+			); // WPCS xss ok. Contains HTML, other values escaped.
+		}
+	}
+
+	/**
+	 * Get video markup to fecilitate defer its loading until page load.
+	 *
+	 * @since  1.0.2
+	 *
+	 * @param str $media Video markup.
+	 * @return string
+	 */
+	public function deferred_media_markup( $media ) {
+		if ( $media ) {
+			$dom = new \DOMDocument();
+			$dom->loadHTML( $media );
+			$frames = $dom->getElementsByTagName( 'iframe' );
+			foreach ( $frames as $frame ) {
+				$url = $frame->getAttribute( 'src' );
+				if ( $url ) {
+					$frame->removeAttribute( 'src' );
+					$frame->setAttribute( 'data-src', esc_url( $url ) );
+					$frame->setAttribute( 'src', '' );
+				}
+			}
+			$media = $dom->saveHTML();
 		}
 
-		if ( $media ) {
-			echo $media; // WPCS xss ok. Contains HTML, other values escaped.
-		}
+		return $media;
 	}
 
 	/**
@@ -205,8 +254,16 @@ class Media_Manager {
 			'aamla_media_manager_style',
 			get_template_directory_uri() . '/add-on/media-manager/assets/media-manager.css',
 			array(),
-			false,
+			AAMLA_THEME_VERSION,
 			'all'
+		);
+
+		wp_enqueue_script(
+			'aamla_media_manager_js',
+			get_template_directory_uri() . '/add-on/media-manager/assets/media-manager.js',
+			[],
+			AAMLA_THEME_VERSION,
+			true
 		);
 	}
 }

@@ -39,7 +39,7 @@
 .edit-post-visual-editor blockquote.wp-block-quote p {
 	font-size: 1.125rem;
 	line-height: 1.55556;
-	color: #757575;
+	color: #363636;
 }
 
 .wp-block-heading h2 {
@@ -128,7 +128,8 @@ blockquote.wp-block-quote cite {
 	line-height: 2.1875;
 	display: block;
 	margin-top: 0.4375rem;
-	color: #363636;
+	text-transform: capitalize;
+	color: #757575;
 }
 
 blockquote.wp-block-quote:before {
@@ -140,7 +141,29 @@ blockquote.wp-block-quote:before {
 	left: 0;
 	width: 30px;
 	content: "\201C";
+	color: #757575;
+}
+
+blockquote.wp-block-pullquote {
+	padding: 3em 0;
+	text-align: center;
 	color: #363636;
+	border-top: 4px solid currentColor;
+	border-bottom: 4px solid currentColor;
+}
+
+blockquote.wp-block-pullquote > .editor-rich-text p {
+	font-size: 1.125rem;
+	line-height: 1.55556;
+}
+
+blockquote.wp-block-pullquote > .editor-rich-text cite {
+	font-size: 0.8rem;
+	font-style: normal;
+	line-height: 2.1875;
+	display: block;
+	margin-top: 0.4375rem;
+	color: #757575;
 }
 
 /* Table */

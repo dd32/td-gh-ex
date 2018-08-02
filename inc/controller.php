@@ -88,6 +88,7 @@ function aamla_get_theme_controls( $controls = [] ) {
 				'choices' => [
 					'sidebar-left'  => esc_html__( 'Sidebar-Content', 'aamla' ),
 					'sidebar-right' => esc_html__( 'Content-Sidebar', 'aamla' ),
+					'no-sidebar'    => esc_html__( 'Only Content - No Sidebar', 'aamla' ),
 				],
 			],
 			[
@@ -147,6 +148,12 @@ function aamla_get_theme_controls( $controls = [] ) {
 				'type'    => 'checkbox',
 			],
 			[
+				'label'   => esc_html__( 'Show Thumbnail on Single Post', 'aamla' ),
+				'section' => 'aamla_general_section',
+				'setting' => 'aamla_thumbnail_on_single',
+				'type'    => 'checkbox',
+			],
+			[
 				'label'   => esc_html__( 'Show Print Post Icon', 'aamla' ),
 				'section' => 'aamla_general_section',
 				'setting' => 'aamla_print_post_icon',
@@ -165,6 +172,13 @@ function aamla_get_theme_controls( $controls = [] ) {
 				'setting'     => 'aamla_email_id',
 				'type'        => 'email',
 				'description' => esc_html__( 'Email will be visible at the top of your site.', 'aamla' ),
+			],
+			[
+				'label'       => esc_html__( 'Hide Social icons from contact bar', 'aamla' ),
+				'section'     => 'aamla_contact_section',
+				'setting'     => 'aamla_hide_social_icons_on_contact_bar',
+				'type'        => 'checkbox',
+				'description' => esc_html__( 'If any social menu is defined, hide it from top Contact Information bar.', 'aamla' ),
 			],
 		]
 	);
@@ -191,6 +205,7 @@ function aamla_get_theme_defaults( $defaults = [] ) {
 		'aamla_primary_nav'            => 1,
 		'aamla_header_search'          => 1,
 		'aamla_thumbnail_placeholder'  => 1,
+		'aamla_thumbnail_on_single'    => 1,
 		'aamla_print_post_icon'        => 1,
 		'aamla_footer_text'            => '[site_title] [copy_symbol] [current_year] &middot; [reserve_text]',
 	] );

@@ -1,10 +1,9 @@
 /*
 Theme Name: Aamla
-Theme URI: http://www.vedathemes.com/aamla
+Theme URI: http://www.vedathemes.com/
 Author: Vedathemes
-Author URI: http://www.vedathemes.com/
-Description: Aamla is a minimal, lightweight and mobile first WordPress theme that is flexible and easy to use. It is built with special focus on blog, business and e-commerce websites. Aamla is written with clean code, the most current HTML5 conventions. Aamla can serve as a solid base to build incredible websites.
-Version: 1.0.2
+Description: Aamla is a feature rich, lightweight and mobile first WordPress theme that is flexible and easy to use. It is built with special focus on blog, business and e-commerce websites. Aamla is written with clean code and the most current HTML5 conventions. Aamla can be used as a solid base to build beautiful and functional websites.
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aamla
@@ -376,6 +375,11 @@ img {
 	display: block;
 }
 
+a:hover > img,
+a:focus > img {
+	opacity: 0.8;
+}
+
 /* Captions */
 .wp-caption {
 	max-width: 100%;
@@ -486,8 +490,7 @@ p > video {
 .mejs-audio.mejs-container .mejs-controls {
 	height: 60px !important;
 	border-radius: 4px;
-	background: -webkit-gradient(linear, left top, right top, from(rgba(54, 54, 54, 0.6)), color-stop(85%, rgba(54, 54, 54, 0.4)));
-	background: linear-gradient(to right, rgba(54, 54, 54, 0.6), rgba(54, 54, 54, 0.4) 85%);
+	background: rgba(23, 35, 34, 0.75);
 }
 
 .mejs-audio .mejs-controls {
@@ -586,12 +589,12 @@ h6 {
 /* Links */
 a {
 	text-decoration: none;
-	color: #448aff;
+	color: #0050c7;
 }
 
 a:visited,
 a:hover {
-	color: #005eff;
+	color: #06f;
 }
 
 a:focus {
@@ -691,7 +694,7 @@ code {
 }
 
 /* Blockquote */
-blockquote {
+blockquote:not(.wp-block-pullquote) {
 	font-size: 1.125rem;
 	line-height: 1.55556;
 	position: relative;
@@ -699,27 +702,27 @@ blockquote {
 	margin-bottom: 1.75rem;
 	margin-left: 0;
 	padding-left: 2.5em;
-	color: #757575;
+	color: #363636;
 }
 
-blockquote > p {
+blockquote:not(.wp-block-pullquote) > p {
 	margin-bottom: 0.875rem;
 }
 
-blockquote > p:last-child {
+blockquote:not(.wp-block-pullquote) > p:last-child {
 	margin-bottom: 0;
 }
 
-blockquote cite {
+blockquote:not(.wp-block-pullquote) cite {
 	font-size: 0.8rem;
 	font-style: normal;
 	line-height: 2.1875;
 	display: block;
 	margin-top: 0.4375rem;
-	color: #363636;
+	color: #757575;
 }
 
-blockquote:before {
+blockquote:not(.wp-block-pullquote):before {
 	font-family: "georgia";
 	font-size: 50px;
 	line-height: 1;
@@ -729,6 +732,28 @@ blockquote:before {
 	width: 30px;
 	content: "\201C";
 	color: #363636;
+}
+
+blockquote.wp-block-pullquote {
+	padding: 3em 0;
+	text-align: center;
+	color: #363636;
+	border-top: 4px solid currentColor;
+	border-bottom: 4px solid currentColor;
+}
+
+blockquote.wp-block-pullquote > p {
+	font-size: 1.125rem;
+	line-height: 1.55556;
+}
+
+blockquote.wp-block-pullquote cite {
+	font-size: 0.8rem;
+	font-style: normal;
+	line-height: 2.1875;
+	display: block;
+	margin-top: 0.4375rem;
+	color: #757575;
 }
 
 /* Table */
@@ -762,6 +787,10 @@ p:empty {
 	padding: 0;
 }
 
+p > br:only-child {
+	display: none;
+}
+
 /**
 * #.# Forms
 *
@@ -792,7 +821,7 @@ input[type="submit"] {
 	color: #fff;
 	border: none;
 	border-radius: 2px;
-	background-color: #448aff;
+	background-color: #0050c7;
 }
 
 a.button:hover,
@@ -807,7 +836,7 @@ input[type="submit"]:hover,
 input[type="submit"]:focus {
 	cursor: pointer;
 	border: none;
-	background-color: #005eff;
+	background-color: #003d99;
 }
 
 a.button:focus,
@@ -891,8 +920,8 @@ input[type="number"]:focus,
 textarea:focus,
 select:focus {
 	outline: 0;
-	-webkit-box-shadow: inset 0 0 4px #ccdfff;
-	        box-shadow: inset 0 0 4px #ccdfff;
+	-webkit-box-shadow: inset 0 0 4px #06f;
+	        box-shadow: inset 0 0 4px #06f;
 }
 
 select {
@@ -981,6 +1010,8 @@ button.search-submit:focus {
 	display: -ms-flexbox;
 	display: flex;
 	background-color: #fff;
+	-webkit-box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.3);
+	        box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.3);
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
 }
@@ -1037,7 +1068,7 @@ button.search-submit:focus {
 
 .site-title {
 	font-family: sans-serif;
-	font-size: 2em;
+	font-size: 1.25em;
 	font-weight: 400;
 	line-height: 1.2;
 	margin-bottom: 0;
@@ -1143,18 +1174,18 @@ button.search-submit:focus {
 	right: -15px;
 	width: 40px;
 	height: 40px;
+	margin-left: 2px;
 	padding: 0;
 	color: #363636;
 	outline-offset: -0.05em;
 	background-color: transparent;
 }
 
-.header-widgets .action-toggle:hover {
-	background-color: rgba(255, 255, 255, 0.2);
-}
-
-.header-widgets .action-toggle:focus {
-	background-color: transparent;
+.header-widgets .action-toggle:hover,
+.header-widgets .action-toggle:focus,
+.header-widgets .action-toggle.toggled-btn {
+	outline: none;
+	background-color: #f0f0f0;
 }
 
 .header-widget-area {
@@ -1201,7 +1232,7 @@ button.search-submit:focus {
 	overflow-x: auto;
 	overflow-y: hidden;
 	white-space: nowrap;
-	color: #757575;
+	color: #363636;
 }
 
 .js .contact-wrapper {
@@ -1220,6 +1251,7 @@ button.search-submit:focus {
 }
 
 .contact-wrapper .icon {
+	font-size: 16px;
 	margin-right: 2px;
 }
 
@@ -1237,6 +1269,9 @@ button.search-submit:focus {
 
 .social-navigation ul li {
 	display: inline-block;
+	margin-top: 0;
+	padding-top: 0;
+	border-top-width: 0;
 }
 
 .social-navigation ul a {
@@ -1255,7 +1290,7 @@ button.search-submit:focus {
 
 .social-navigation ul a:hover,
 .social-navigation ul a:focus {
-	color: #448aff;
+	color: #0050c7;
 }
 
 .site-navigation {
@@ -1263,8 +1298,6 @@ button.search-submit:focus {
 	color: currentColor;
 	border-top: 1px solid #f0f0f0;
 	background-color: #fff;
-	-webkit-box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.3);
-	        box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.3);
 }
 
 .site-navigation ul {
@@ -1281,8 +1314,7 @@ button.search-submit:focus {
 .site-navigation ul a {
 	font-size: 15px;
 	display: block;
-	margin-right: 1.75em;
-	padding: 0.6125em 0;
+	padding: 0.6125em 0.875em;
 	letter-spacing: 0.5px;
 	color: #363636;
 	background-color: transparent;
@@ -1290,7 +1322,7 @@ button.search-submit:focus {
 
 .site-navigation ul a:hover,
 .site-navigation ul a:focus {
-	color: #448aff;
+	color: #0050c7;
 }
 
 .site-navigation ul ul {
@@ -1321,7 +1353,7 @@ button.search-submit:focus {
 .site-navigation ul ul a {
 	font-size: 15px;
 	margin-right: 0;
-	padding: 0.4375em 5%;
+	padding: 0.4375em 20px;
 	letter-spacing: 0;
 	border-bottom: 1px solid #f0f0f0;
 }
@@ -1363,6 +1395,7 @@ button.search-submit:focus {
 
 .site-navigation .menu-container > ul {
 	float: left;
+	margin-left: -0.875em;
 }
 
 .site-navigation .menu-container > ul ul {
@@ -1444,7 +1477,6 @@ nav.breadcrumbs {
 
 body:not(.error404) .page-header {
 	position: relative;
-	width: 100%;
 	margin-bottom: 40px;
 	padding: 30px;
 	border: 1px solid #e6e6e6;
@@ -1471,7 +1503,11 @@ body:not(.error404) .page-header-description {
 }
 
 body.grid:not(.error404) .page-header {
-	margin: 20px;
+	margin-bottom: 40px;
+}
+
+.page-header:not(.screen-reader-text) {
+	width: 100%;
 }
 
 .entry {
@@ -1574,6 +1610,16 @@ body.grid:not(.error404) .page-header {
 	background-color: rgba(0, 0, 0, 0.2);
 }
 
+.entry-featured-content a.post-permalink:hover,
+.entry-featured-content a.post-permalink:focus {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.entry-featured-content a.post-permalink:focus {
+	outline-style: solid;
+	outline-offset: 1px;
+}
+
 .entry-featured-content .quick-action {
 	font-size: 12px;
 	position: absolute;
@@ -1600,11 +1646,15 @@ body.grid:not(.error404) .page-header {
 	left: 5px;
 	padding: 0 10px;
 	color: #fff;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.55);
 }
 
 .entry-featured-content .meta-date .modified-entry-date {
 	display: none;
+}
+
+.entry-featured-content .meta-date .entry-date {
+	vertical-align: text-bottom;
 }
 
 .entry-featured-content .icon-sticky {
@@ -1649,6 +1699,7 @@ body.grid:not(.error404) .page-header {
 }
 
 .entry-extra {
+	line-height: 1;
 	position: absolute;
 	top: 2px;
 	left: 0;
@@ -1658,17 +1709,21 @@ body.grid:not(.error404) .page-header {
 	list-style: none;
 }
 
-.entry-extra li {
-	margin-bottom: 5px;
-}
-
 .entry-extra a {
+	font-size: 18px;
+	line-height: 40px;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	text-align: center;
+	vertical-align: middle;
 	color: #757575;
 }
 
 .entry-extra a:hover,
 .entry-extra a:focus {
-	color: #005eff;
+	color: #06f;
 }
 
 .index-view .entry-content {
@@ -1698,6 +1753,10 @@ body.grid:not(.error404) .page-header {
 	margin-bottom: 1.75rem;
 }
 
+.singular .entry-content:last-child {
+	margin-bottom: 40px;
+}
+
 .singular .entry-content > *:last-child {
 	margin-bottom: 0;
 }
@@ -1709,7 +1768,6 @@ body.grid:not(.error404) .page-header {
 .entry-content .video-container:after {
 	display: block;
 	width: auto;
-	max-height: 100vh;
 	padding-top: 56.25%;
 	content: "";
 }
@@ -2043,7 +2101,7 @@ body.grid:not(.error404) .page-header {
 
 .comment-metadata a:hover,
 .comment-metadata a:focus {
-	color: #448aff;
+	color: #0050c7;
 }
 
 .comment-author a {
@@ -2052,7 +2110,7 @@ body.grid:not(.error404) .page-header {
 
 .comment-author a:hover,
 .comment-author a:focus {
-	color: #448aff;
+	color: #0050c7;
 }
 
 .comment-author > img {
@@ -2179,13 +2237,25 @@ body.grid:not(.error404) .page-header {
 }
 
 .widget li {
-	margin-bottom: 0.6125rem;
-	padding-bottom: 0.6125rem;
-	border-bottom: 1px dotted #e6e6e6;
+	margin-top: 0.6125rem;
+	padding-top: 0.6125rem;
+	border-top: 1px dotted #e6e6e6;
 }
 
-.widget li:last-child {
-	margin-bottom: 0;
+.widget li:first-child {
+	margin-top: 0;
+	padding-top: 0;
+	border-top: none;
+}
+
+.widget li li {
+	margin-left: 0.875rem;
+}
+
+.widget li li:first-child {
+	margin-top: 0.6125rem;
+	padding-top: 0.6125rem;
+	border-top: 1px dotted #e6e6e6;
 }
 
 .widget p:last-child,
@@ -2202,15 +2272,6 @@ body.grid:not(.error404) .page-header {
 .footer-widget-area .widget-title {
 	font-size: 18px;
 	margin-bottom: 1.3125rem;
-}
-
-.widget a:not(.button) {
-	color: currentColor;
-}
-
-.widget a:not(.button):hover,
-.widget a:not(.button):focus {
-	color: #757575;
 }
 
 .widget a.button {
@@ -2239,6 +2300,9 @@ body.grid:not(.error404) .page-header {
 	.custom-logo-link img {
 		height: 64px;
 		margin-right: 0.875rem;
+	}
+	.site-title {
+		font-size: 2em;
 	}
 	.header-items .search-form {
 		margin-top: 0;
@@ -2269,13 +2333,16 @@ body.grid:not(.error404) .page-header {
 	.social-navigation ul li:last-child a {
 		margin-right: 0;
 	}
-	.grid .site-main {
+	.grid:not(.error404) .site-main {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
 		margin: -20px -10px 20px;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
+	}
+	body.grid:not(.error404) .page-header {
+		margin: 20px 10px;
 	}
 	.list .entry {
 		padding-bottom: 40px;
@@ -2352,14 +2419,17 @@ body.grid:not(.error404) .page-header {
 	.social-navigation {
 		right: -4px;
 	}
-	.grid .site-main {
+	.site-navigation ul ul a {
+		padding: 0.4375em 40px;
+	}
+	.grid:not(.error404) .site-main {
 		margin: -20px -20px 20px;
 	}
 	body:not(.error404) .page-header {
 		margin-bottom: 60px;
 	}
 	body.grid:not(.error404) .page-header {
-		margin-bottom: 30px;
+		margin: 20px;
 	}
 	.grid.index-view .entry {
 		padding: 20px;
@@ -2547,6 +2617,9 @@ body.grid:not(.error404) .page-header {
 		right: auto;
 		left: auto;
 	}
+	.scroll-btn {
+		display: none;
+	}
 	.site-content {
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -2685,8 +2758,11 @@ body.grid:not(.error404) .page-header {
 	.content-area {
 		padding: 60px 60px 0;
 	}
-	.grid .site-main {
+	.grid:not(.error404) .site-main {
 		margin: -30px -30px 30px;
+	}
+	body.grid:not(.error404) .page-header {
+		margin: 30px;
 	}
 	.entry {
 		margin-bottom: 60px;
@@ -2701,12 +2777,18 @@ body.grid:not(.error404) .page-header {
 	.single .entry-header-title {
 		font-size: 2.65em;
 	}
+	.singular .entry-content:last-child {
+		margin-bottom: 60px;
+	}
 	.page-entry-header {
-		min-height: 40vw;
+		min-height: 38vw;
 		padding: 100px 60px;
 	}
 	.page-entry-header-items {
-		max-width: 850px;
+		max-width: 900px;
+	}
+	.page-entry-header-items .entry-header-title {
+		font-size: 4em;
 	}
 	.footer-widget-area .widget {
 		margin-right: 60px;

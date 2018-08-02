@@ -2,8 +2,8 @@
 
 Created by: Vedathemes
 Requires at least: WordPress 4.7
-Tested up to: WordPress 4.9.6
-Version: 1.0.2
+Tested up to: WordPress 4.9.7
+Version: 1.0.3
 PHP required : PHP 5.4+
 IE Browser Support: IE11+
 License: GNU General Public License v2 or later
@@ -12,7 +12,7 @@ Tags: two-columns, left-sidebar, right-sidebar, grid-layout, custom-menu, custom
 
 == Description ==
 
-Aamla is a minimal, lightweight and mobile first WordPress theme that is flexible and easy to use. It is built with special focus on blog, business and e-commerce websites. Aamla is written with clean code, the most current HTML5 conventions. Aamla can serve as a solid base to build incredible websites.
+Aamla is a feature rich, lightweight and mobile first WordPress theme that is flexible and easy to use. It is built with special focus on blog, business and e-commerce websites. Aamla is written with clean code and the most current HTML5 conventions. Aamla can be used as a solid base to build beautiful and functional websites.
 
 == Installation ==
 
@@ -33,7 +33,7 @@ the Free Software Foundation, either version 2 of the License, or
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 == Credits ==
@@ -67,15 +67,25 @@ Aamla WordPress Theme bundles the following third-party resources:
 	License: GPL / CC BY 4.0. (https://icomoon.io/icons-icomoon.html)
 	Source: https://icomoon.io
 
+	Feather SVG icons, Copyright Colebemis
+	License: [MIT](http://opensource.org/licenses/MIT)
+	Source: https://github.com/feathericons/feather
+
 3.	Images used for theme screenshot
 
-	https://www.pexels.com/photo/macbook-pro-iphone-cup-desk-7974/
-	by Life Of Pix (https://www.pexels.com/@life-of-pix)
+	https://pixabay.com/en/gui-interface-internet-program-2311258/
+	by janjf93 (https://pixabay.com/en/users/janjf93-3084263/)
 	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
-	https://pixabay.com/en/paper-business-finance-document-3213924/
-	by mohamed_hassan (https://pixabay.com/en/users/mohamed_hassan-5229782/)
+	https://pixabay.com/en/ok-check-todo-agenda-icon-symbol-1976099/
+	by janjf93 (https://pixabay.com/en/users/janjf93-3084263/)
 	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+
+	https://pixabay.com/en/americana-modern-abstract-design-1501711/
+	by Fotocitizen (https://pixabay.com/en/users/Fotocitizen-397314/)
+	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+
+	Other illustrations are self created.
 
 4.	Image used on 404-error page
 	https://pixabay.com/en/not-found-404-error-file-not-found-2384304/
@@ -83,6 +93,25 @@ Aamla WordPress Theme bundles the following third-party resources:
 	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 == Changelog ==
+
+= 1.0.3 - Aug 02 2018 =
+* Add - Additional image size to cater laptop screens.
+* Add - Customizer option to not display thumbnails on single posts.
+* Add - Number of columns in display posts grid specific styles.
+* Add - Option to get posts by post IDs in display posts widget.
+* Add - Option to hide social navigation menu from contact bar.
+* Add - Method to defer loading videos in Media Manager.
+* Add - Proper styles to add navigation menus to widget areas.
+* Add - Proper styles to add social navigation menu to widget areas.
+* Modify - Remove title in Media Manager for display posts styles without titles.
+* Modify - Media manager css to create minor animation effect.
+* Modify - Move blank widget height options to Theme specific styling options.
+* Modify - Style to recognize hover and focus on linked images.
+* Modify - Media Manager video styling for better mobile compatibility.
+* Error Fix - Markup and style of scroll buttons to cater accessibility errors.
+* Error Fix - Add aria expanded and screen reader text to toggle buttons.
+* Error Fix - Gutenberg page/post style to be compatible with display posts widget.
+* Error Fix - Minor markup, commenting and styling issues.
 
 = 1.0.2 - Jul 13 2018 =
 * Error Fix - Empty string supplied as input to loadHTML()

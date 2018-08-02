@@ -530,30 +530,35 @@ code {
 }
 
 /* Blockquote */
-blockquote {
+blockquote:not(.wp-block-pullquote) {
 	font-size: 1.125rem;
 	line-height: 1.55556;
 	position: relative;
+	margin-top: 0;
 	margin-bottom: 1.75rem;
 	margin-left: 0;
 	padding-left: 2.5em;
-	color: #757575;
+	color: #363636;
 }
 
-blockquote > p:last-child {
+blockquote:not(.wp-block-pullquote) > p {
+	margin-bottom: 0.875rem;
+}
+
+blockquote:not(.wp-block-pullquote) > p:last-child {
 	margin-bottom: 0;
 }
 
-blockquote cite {
+blockquote:not(.wp-block-pullquote) cite {
 	font-size: 0.8rem;
 	font-style: normal;
 	line-height: 2.1875;
 	display: block;
 	margin-top: 0.4375rem;
-	color: #363636;
+	color: #757575;
 }
 
-blockquote:before {
+blockquote:not(.wp-block-pullquote):before {
 	font-family: "georgia";
 	font-size: 50px;
 	line-height: 1;
@@ -563,6 +568,28 @@ blockquote:before {
 	width: 30px;
 	content: "\201C";
 	color: #363636;
+}
+
+blockquote.wp-block-pullquote {
+	padding: 3em 0;
+	text-align: center;
+	color: #363636;
+	border-top: 4px solid currentColor;
+	border-bottom: 4px solid currentColor;
+}
+
+blockquote.wp-block-pullquote > p {
+	font-size: 1.125rem;
+	line-height: 1.55556;
+}
+
+blockquote.wp-block-pullquote cite {
+	font-size: 0.8rem;
+	font-style: normal;
+	line-height: 2.1875;
+	display: block;
+	margin-top: 0.4375rem;
+	color: #757575;
 }
 
 /* Table */

@@ -52,15 +52,17 @@ class Display_Posts_Widget extends \WP_Widget {
 	public function __construct() {
 		// Set widget instance settings default values.
 		$this->defaults = [
-			'title'     => '',
-			'post_type' => '',
-			'taxonomy'  => '',
-			'terms'     => [],
-			'pages'     => [],
-			'number'    => 5,
-			'orderby'   => 'date',
-			'order'     => 'DESC',
-			'styles'    => 'list_l',
+			'title'        => '',
+			'post_type'    => '',
+			'taxonomy'     => '',
+			'terms'        => [],
+			'post_ids'     => '',
+			'pages'        => [],
+			'number'       => 5,
+			'orderby'      => 'date',
+			'order'        => 'DESC',
+			'styles'       => 'list-l-tm',
+			'grid_columns' => 1,
 		];
 
 		// Set the options for orderby.
@@ -103,7 +105,8 @@ class Display_Posts_Widget extends \WP_Widget {
 		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
-		$entry_class = apply_filters( 'aamla_dp_classes', $instance['styles'], $instance, $this );
+		$entry_class = apply_filters( 'aamla_dp_classes', [ $instance['styles'] ], $instance, $this );
+		$entry_class = array_map( 'esc_attr', $entry_class );
 
 		echo $args['before_widget']; // WPCS xss ok. Contains HTML.
 
@@ -143,6 +146,10 @@ class Display_Posts_Widget extends \WP_Widget {
 					],
 				];
 			}
+
+			if ( $instance['post_ids'] ) {
+				$query_args['post__in'] = explode( ',', $instance['post_ids'] );
+			}
 		}
 
 		$query_args = apply_filters( 'aamla_display_posts_args', $query_args, $instance, $this );
@@ -150,7 +157,7 @@ class Display_Posts_Widget extends \WP_Widget {
 
 		if ( $post_query->have_posts() ) :
 			?>
-			<div class="dp-wrapper <?php echo esc_attr( $entry_class ); ?>">
+			<div class="dp-wrapper <?php echo join( ' ', $entry_class ); // WPCS xss ok. Value escaped. ?>">
 
 			<?php
 			while ( $post_query->have_posts() ) :
@@ -210,6 +217,11 @@ class Display_Posts_Widget extends \WP_Widget {
 
 		<div class="post-panel" <?php echo ( ! $instance['post_type'] || 'page' === $instance['post_type'] ) ? ' style="display:none;"' : ''; ?>>
 
+			<p class="post-ids">
+				<?php $this->label( 'post_ids', esc_html__( 'Post IDs (if any)', 'aamla' ) ); ?>
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'post_ids' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'post_ids' ) ); ?>" type="text" placeholder="<?php esc_attr_e( 'Comma separated ids, i.e. 230,300', 'aamla' ); ?>" value="<?php echo esc_attr( $instance['post_ids'] ); ?>" />
+			</p>
+
 			<div class="taxonomies">
 				<?php $this->taxonomies_select( $instance['post_type'], $instance['taxonomy'] ); ?>
 			</div><!-- .taxonomies -->
@@ -219,7 +231,7 @@ class Display_Posts_Widget extends \WP_Widget {
 			</div><!-- .terms-panel -->
 
 			<p class="number-of-posts">
-				<?php $this->label( 'number', esc_html__( 'Number of Posts:', 'aamla' ) ); ?>
+				<?php $this->label( 'number', esc_html__( 'Number of Posts', 'aamla' ) ); ?>
 				<input class="tiny-text" id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="number" step="1" min="1" value="<?php echo absint( $instance['number'] ); ?>" size="3" />
 			</p>
 
@@ -247,6 +259,24 @@ class Display_Posts_Widget extends \WP_Widget {
 			$this->label( 'styles', esc_html__( 'Display Style', 'aamla' ) );
 			$styles = apply_filters( 'aamla_dp_styles', '', $instance );
 			$this->select( 'styles', $styles, $instance['styles'] );
+			?>
+		</div><!-- .posts-styles -->
+		<?php
+		$hide_grid_columns = true;
+		if ( $instance['post_type'] && ( false !== strpos( $instance['styles'], 'grid' ) ) ) {
+			$hide_grid_columns = false;
+		}
+		?>
+		<div class="posts-styles-grid" <?php echo $hide_grid_columns ? ' style="display:none;"' : ''; ?>>
+			<?php
+			$this->label( 'grid_columns', esc_html__( 'Grid Columns', 'aamla' ) );
+			$columns = [
+				1 => esc_html__( '1', 'aamla' ),
+				2 => esc_html__( '2', 'aamla' ),
+				3 => esc_html__( '3', 'aamla' ),
+				4 => esc_html__( '4', 'aamla' ),
+			];
+			$this->select( 'grid_columns', $columns, $instance['grid_columns'] );
 			?>
 		</div><!-- .posts-styles -->
 		<?php
@@ -287,6 +317,13 @@ class Display_Posts_Widget extends \WP_Widget {
 			$instance['pages'] = [];
 		}
 
+		if ( $instance['post_type'] && 'page' !== $instance['post_type'] && $new_instance['post_ids'] ) {
+			$post_ids             = array_map( 'absint', explode( ',', $new_instance['post_ids'] ) );
+			$instance['post_ids'] = implode( ',', $post_ids );
+		} else {
+			$instance['post_ids'] = '';
+		}
+
 		if ( $instance['post_type'] && 'page' !== $instance['post_type'] && $new_instance['taxonomy'] ) {
 			// Get list of all taxonomies for a post type.
 			$taxonomies = get_object_taxonomies( $instance['post_type'], 'objects' );
@@ -315,6 +352,13 @@ class Display_Posts_Widget extends \WP_Widget {
 
 		$valid_styles       = apply_filters( 'aamla_dp_styles', '', $new_instance );
 		$instance['styles'] = array_key_exists( $new_instance['styles'], $valid_styles ) ? $new_instance['styles'] : '';
+
+		if ( $instance['styles'] && ( false !== strpos( $instance['styles'], 'grid' ) ) ) {
+			$columns                  = absint( $new_instance['grid_columns'] );
+			$instance['grid_columns'] = in_array( $columns, [ 1, 2, 3, 4 ], true ) ? $columns : 1;
+		} else {
+			$instance['grid_columns'] = 1;
+		}
 
 		return $instance;
 	}
@@ -438,7 +482,7 @@ class Display_Posts_Widget extends \WP_Widget {
 			$select .= sprintf( '<option value="%1$s" %2$s %3$s>%4$s</option>', esc_attr( $value ), $final_class, selected( $value, $selected, false ), esc_html( $label ) );
 		}
 
-		$select = sprintf( '<select id="%1$s" name="%2$s" class="aamla-%3$s">%4$s</select>',
+		$select = sprintf( '<select id="%1$s" name="%2$s" class="aamla-%3$s widefat">%4$s</select>',
 			esc_attr( $this->get_field_id( $for ) ),
 			esc_attr( $this->get_field_name( $for ) ),
 			esc_attr( str_replace( '_', '-', $for ) ),

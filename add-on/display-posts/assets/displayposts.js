@@ -18,7 +18,7 @@
 
 	length = bin.length;
 	for ( ; j < length; j++ ) {
-		frames  = bin[j].querySelectorAll(selectors.join(',')),
+		frames  = bin[j].querySelectorAll(selectors.join(','));
 		flength = frames.length;
 
 		for( ; i < flength; i++ ) {

@@ -30,6 +30,7 @@ class Blank_Widget extends \WP_Widget {
 		);
 		parent::__construct( 'aamla_blank_widget', esc_html__( 'Blank Widget', 'aamla' ), $widget_ops );
 		add_filter( 'aamla_widget_custom_css', [ $this, 'add_widget_css' ], 10, 2 );
+		add_filter( 'aamla_widgetlayer_widget_options', [ $this, 'widget_options' ] );
 	}
 
 	/**
@@ -53,42 +54,48 @@ class Blank_Widget extends \WP_Widget {
 	 * @param array $instance Current settings.
 	 */
 	public function form( $instance ) {
-		$instance = wp_parse_args( (array) $instance,
-			[
-				'widget_height'     => 0,
-				'widget_height_tab' => 0,
-			]
-		);
 		?>
 		<p class="options-widget">
 			<?php esc_html_e( 'This is an aamla theme widgetlayer specific widget. It should not be used outside widgetlayer widget area.', 'aamla' ); ?>
 		</p>
-		<p><label for="<?php echo esc_attr( $this->get_field_id( 'widget_height' ) ); ?>"><?php esc_html_e( 'Height on desktop (in px):', 'aamla' ); ?></label>
-		<input class="tiny-text" id="<?php echo esc_attr( $this->get_field_id( 'widget_height' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'widget_height' ) ); ?>" type="number" step="1" value="<?php echo absint( $instance['widget_height'] ); ?>" size="3" /></p>
-
-		<p><label for="<?php echo esc_attr( $this->get_field_id( 'widget_height_tab' ) ); ?>"><?php esc_html_e( 'Height on tablet (in px):', 'aamla' ); ?></label>
-		<input class="tiny-text" id="<?php echo esc_attr( $this->get_field_id( 'widget_height_tab' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'widget_height_tab' ) ); ?>" type="number" step="1" value="<?php echo absint( $instance['widget_height_tab'] ); ?>" size="3" /></p>
-
 		<?php
 	}
 
 	/**
-	 * Handles updating the settings for the current widget instance.
+	 * Adds widget specific form options on admin pages.
 	 *
-	 * @since 1.0.1
-	 * @access public
+	 * @since 1.0.2
 	 *
-	 * @param array $new_instance New settings for this instance as input by the user via
-	 *                            WP_Widget::form().
-	 * @param array $old_instance Old settings for this instance.
-	 * @return array Updated settings to save.
+	 * @param array $options Widget Options.
+	 * @return array
 	 */
-	public function update( $new_instance, $old_instance ) {
-		$new_instance                  = wp_parse_args( (array) $new_instance, [ 'widget_height' => 0 ] );
-		$instance                      = $old_instance;
-		$instance['widget_height']     = absint( $new_instance['widget_height'] );
-		$instance['widget_height_tab'] = absint( $new_instance['widget_height_tab'] );
-		return $instance;
+	public function widget_options( $options ) {
+		$blank_widget_options = [
+			'aamla_blank_widget_height'        => [
+				'setting'     => 'aamla_blank_widget_height',
+				'label'       => esc_html__( 'Height on desktop (in px):', 'aamla' ),
+				'default'     => 0,
+				'type'        => 'number',
+				'id_base'     => 'aamla_blank_widget',
+				'input_attrs' => [
+					'step' => 1,
+					'size' => 3,
+				],
+			],
+			'aamla_blank_widget_height_tablet' => [
+				'setting'     => 'aamla_blank_widget_height_tablet',
+				'label'       => esc_html__( 'Height on Tablet (in px):', 'aamla' ),
+				'default'     => 0,
+				'type'        => 'number',
+				'id_base'     => 'aamla_blank_widget',
+				'input_attrs' => [
+					'step' => 1,
+					'size' => 3,
+				],
+			],
+		];
+
+		return array_merge( $blank_widget_options, $options );
 	}
 
 	/**
@@ -113,11 +120,11 @@ class Blank_Widget extends \WP_Widget {
 		$css['common'][] = 'margin-bottom: 0';
 		$css['common'][] = 'padding-top: 0';
 		$css['common'][] = 'padding-bottom: 0';
-		if ( isset( $settings['widget_height'] ) ) {
-			$css['desktop'][] = 'height: ' . absint( $settings['widget_height'] ) . 'px';
+		if ( isset( $settings['aamla_blank_widget_height'] ) ) {
+			$css['desktop'][] = 'height: ' . absint( $settings['aamla_blank_widget_height'] ) . 'px';
 		}
-		if ( isset( $settings['widget_height_tab'] ) ) {
-			$css['tablet_only'][] = 'height: ' . absint( $settings['widget_height_tab'] ) . 'px';
+		if ( isset( $settings['aamla_blank_widget_height_tablet'] ) ) {
+			$css['tablet_only'][] = 'height: ' . absint( $settings['aamla_blank_widget_height_tablet'] ) . 'px';
 		}
 		return $css;
 	}

@@ -130,12 +130,12 @@ function aamla_add_menu_scrolling_buttons( $nav_menu, $args ) {
 	}
 
 	$left_button = sprintf(
-		'<button class="scroll-btn scroll-btn-Left" type="button">%s</button>',
+		'<button class="scroll-btn scroll-btn-Left" type="button" aria-hidden="true">%s</button>',
 		aamla_get_icon( [ 'icon' => 'angle-left' ] )
 	);
 
 	$right_button = sprintf(
-		'<button class="scroll-btn scroll-btn-Right" type="button">%s</button>',
+		'<button class="scroll-btn scroll-btn-Right" type="button" aria-hidden="true">%s</button>',
 		aamla_get_icon( [ 'icon' => 'angle-right' ] )
 	);
 
@@ -160,6 +160,7 @@ function aamla_custom_image_sizes_to_admin( $size_names ) {
 			'aamla-small'  => esc_html__( 'Aamla Small', 'aamla' ),
 			'aamla-medium' => esc_html__( 'Aamla Medium', 'aamla' ),
 			'aamla-large'  => esc_html__( 'Aamla Large', 'aamla' ),
+			'aamla-laptop' => esc_html__( 'Aamla Laptop', 'aamla' ),
 		]
 	);
 }

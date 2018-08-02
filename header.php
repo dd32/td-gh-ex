@@ -33,12 +33,8 @@
 	<header id="masthead"<?php aamla_attr( 'site-header' ); ?>>
 
 		<?php
-		printf( '<a class="skip-link screen-reader-text" href="#content">%s</a>',
-			esc_html__( 'Skip to content', 'aamla' )
-		);
-
 		/**
-		 * Fires inside site header after skip-link.
+		 * Fires inside site header.
 		 *
 		 * @since 1.0.0
 		 *

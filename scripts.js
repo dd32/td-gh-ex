@@ -135,6 +135,7 @@ skipLinkFocusFix();
 	}
 
 	for ( i = 0, length = links.length; i < length; ++i ) {
+		links[i].parentNode.setAttribute( 'aria-expanded', false );
 		links[i].addEventListener( 'click', toggleMenu, false );
 		links[i].addEventListener( 'keypress', toggleMenu, false );
 	}
@@ -168,12 +169,15 @@ skipLinkFocusFix();
 					continue;
 				}
 				siblings[i].classList.remove( 'toggled-on' );
+				siblings[i].setAttribute( 'aria-expanded', false );
 			}
 			for ( i = 0, length = childitems.length; i < length; ++i ) {
 				childitems[i].classList.remove( 'toggled-on' );
+				childitems[i].setAttribute( 'aria-expanded', false );
 			}
 			item.classList.toggle( 'toggled-on' );
 			isMenuOpen = item.classList.contains( 'toggled-on' );
+			item.setAttribute( 'aria-expanded', isMenuOpen );
 		}
 	}
 
@@ -182,6 +186,7 @@ skipLinkFocusFix();
 		if ( isMenuOpen && ! e.target.closest( '#primary-menu' ) ) {
 			toggledItems = menu.getElementsByClassName( 'toggled-on' );
 			while ( toggledItems.length > 0 ) {
+				toggledItems[0].setAttribute( 'aria-expanded', false );
 				toggledItems[0].classList.remove( 'toggled-on' );
 			}
 			isMenuOpen = false;
@@ -237,7 +242,20 @@ function mediaToggle() {
 			this.classList.add( 'makeitvisible' );
 		}.bind( elems[i] ), false );
 		close.addEventListener( 'click', function() {
+			var videoWrapper, videoFrame, video, videoFrameSrc;
 			this.classList.remove( 'makeitvisible' );
+			videoWrapper = this.getElementsByClassName( 'entry-video' )[0];
+			if ( videoWrapper ) {
+				videoFrame = videoWrapper.getElementsByTagName( 'iframe' )[0];
+				video = videoFrame.getElementsByTagName( 'video' )[0];
+				if ( videoFrame ) {
+					videoFrameSrc = videoFrame.src;
+					videoFrame.src = videoFrameSrc;
+				}
+				if ( video ) {
+					video.pause();
+				}
+			}
 		}.bind( elems[i] ), false );
 	}
 }
@@ -278,10 +296,14 @@ function headerWidgetToggle() {
 	if ( toggle ) {
 		toggle.addEventListener( 'click', function( e ) {
 			elem.classList.toggle( 'makeitvisible' );
+			toggle.classList.toggle( 'toggled-btn' );
+			toggle.setAttribute( 'aria-expanded', elem.classList.contains( 'makeitvisible' ) );
 		}, false );
 		document.documentElement.addEventListener( 'click', function( e ) {
 			if ( ! e.target.closest( '#header-widget-area' ) && ! e.target.closest( '.action-toggle' ) ) {
 				elem.classList.remove( 'makeitvisible' );
+				toggle.classList.remove( 'toggled-btn' );
+				toggle.setAttribute( 'aria-expanded', false );
 			}
 		}, false );
 	}

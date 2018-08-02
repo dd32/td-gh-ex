@@ -30,7 +30,7 @@ $aamla_email     = aamla_get_mod( 'aamla_email_id', 'email' );
 	<?php endif; ?>
 
 	<?php
-	if ( has_nav_menu( 'social' ) ) :
+	if ( has_nav_menu( 'social' ) && ! aamla_get_mod( 'aamla_hide_social_icons_on_contact_bar', 'none' ) ) :
 		aamla_nav_menu(
 			'social-navigation',
 			esc_html__( 'Social Navigation', 'aamla' ),

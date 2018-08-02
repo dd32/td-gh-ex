@@ -23,6 +23,7 @@
  */
 
 // Display site header items.
+aamla_add_markup_for( 'skip_link', 'inside_header', 0 );
 aamla_add_markup_for( 'header_items', 'inside_header' );
 aamla_add_markup_for( 'contact_information', 'inside_header' );
 aamla_add_markup_for( 'main_navigation', 'inside_header' );
@@ -60,6 +61,22 @@ add_action( 'wp_footer', 'aamla_svg_icons', 9999 );
  * Therefore, we have to create wrapper functions. Also, these wrapper functions
  * make code more redable.
  */
+
+/**
+ * Conditionally display skip link.
+ *
+ * @since 1.0.2
+ */
+function aamla_skip_link() {
+	// Return if there is no content to skip to.
+	if ( is_page_template( 'page-templates/header-blank-footer.php' ) ) {
+		return;
+	}
+
+	printf( '<a class="skip-link screen-reader-text" href="#content">%s</a>',
+		esc_html__( 'Skip to content', 'aamla' )
+	);
+}
 
 /**
  * Header items wrapper markup.
@@ -133,7 +150,7 @@ function aamla_header_widgets() {
 		'<button aria-expanded="false" class="action-toggle">%1$s<span class="screen-reader-text">%2$s</span></button>',
 		aamla_get_icon( [ 'icon' => 'more' ] ),
 		esc_html__( 'Show possible user actions', 'aamla' )
-	); // WPCS xss ok. We get escaped value from 'aamla_get_icon' (Contains HTML).
+	); // WPCS xss ok.
 	aamla_widgets(
 		'header-widget-area',
 		'header-widget-area',
@@ -216,7 +233,7 @@ function aamla_page_entry_header() {
  */
 function aamla_breadcrumb() {
 
-	// Let's not display breadcrumbs on front page.
+	// Let's not display breadcrumbs on the front page.
 	if ( is_front_page() ) {
 		return;
 	}
@@ -227,13 +244,13 @@ function aamla_breadcrumb() {
 		return;
 	}
 
-	// Use 'Breadcrumb Trail' Plugin's function (if available).
+	// Next use 'Breadcrumb Trail' Plugin's function (if available).
 	if ( function_exists( 'breadcrumb_trail' ) ) {
 		breadcrumb_trail();
 		return;
 	}
 
-	// Next use 'Yoast Breadcrumb' function (if available).
+	// Lastly use 'Yoast Breadcrumb' function (if available).
 	if ( function_exists( 'yoast_breadcrumb' ) ) {
 		yoast_breadcrumb( '<p id="breadcrumbs" class="breadcrumbs">', '</p>' );
 	}
@@ -280,11 +297,13 @@ function aamla_entry_main_content() {
  */
 function aamla_entry_header_wrapper() {
 	if ( is_single() ) {
-		// Display title-area and post thumbnails on single posts.
-		$entry_header = [
-			'aamla_entry_title_area',
-			[ 'aamla_get_template_partial', 'template-parts/post', 'entry-thumbnail' ],
-		];
+		// Display title-area on single posts.
+		$entry_header = [ 'aamla_entry_title_area' ];
+
+		// Check if post thumbnails to be displayed on single posts.
+		if ( aamla_get_mod( 'aamla_thumbnail_on_single', 'none' ) ) {
+			$entry_header[] = [ 'aamla_get_template_partial', 'template-parts/post', 'entry-thumbnail' ];
+		}
 	} else {
 		// If singular page having a thumbnail, its title display will be handled separately.
 		if ( is_singular( 'page' ) && has_post_thumbnail() ) {
@@ -333,9 +352,11 @@ function aamla_page_excerpt() {
 
 		// Iterate over the extracted links and escape their URLs.
 		foreach ( $links as $link ) {
-			$url = esc_url( $link->getAttribute( 'href' ) );
-			$link->removeAttribute( 'href' );
-			$link->setAttribute( 'href', $url );
+			$url = $link->getAttribute( 'href' );
+			if ( $url ) {
+				$link->removeAttribute( 'href' );
+				$link->setAttribute( 'href', esc_url( $url ) );
+			}
 		}
 		$excerpt = $dom->saveHTML();
 
@@ -397,18 +418,18 @@ function aamla_entry_extra() {
 		<?php if ( get_edit_post_link() ) : ?>
 		<li class="entry-extra-item">
 		<?php
-		edit_post_link( aamla_get_icon( [ 'icon' => 'pencil' ] ) . '<span class="screen-reader-text"> "' . get_the_title() . '"</span>' );
+		edit_post_link( aamla_get_icon( [ 'icon' => 'pencil' ] ) . '<span class="screen-reader-text">' . esc_html__( 'Edit Post', 'aamla' ) . '</span>' );
 		?>
 		</li>
 		<?php endif; ?>
 		<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
 		<li class="entry-extra-item">
-			<a href="<?php comments_link(); ?>"><?php aamla_icon( [ 'icon' => 'comment' ] ); ?></a>
+			<a href="<?php comments_link(); ?>"><?php aamla_icon( [ 'icon' => 'comment' ] ); ?><span class="screen-reader-text"><?php esc_html_e( 'Comment on post', 'aamla' ); ?></span></a>
 		</li>
 		<?php endif; ?>
 		<?php if ( aamla_get_mod( 'aamla_print_post_icon', 'none' ) ) : ?>
 		<li class="entry-extra-item">
-			<a href="javascript:window.print()"><?php aamla_icon( [ 'icon' => 'print' ] ); ?></a>
+			<a href="javascript:window.print()"><?php aamla_icon( [ 'icon' => 'print' ] ); ?><span class="screen-reader-text"><?php esc_html_e( 'Print Post', 'aamla' ); ?></span></a>
 		</li>
 		<?php endif; ?>
 	</ul>
@@ -592,6 +613,10 @@ function aamla_image_navigation() {
  * @since 1.0.0
  */
 function aamla_sidebar_widgets() {
+	if ( ( is_home() || is_archive() ) && 'no-sidebar' === aamla_get_mod( 'aamla_archive_sidebar_layout', 'none' ) ) {
+		return;
+	}
+
 	aamla_widgets(
 		'secondary',
 		'sidebar-widget-area',
@@ -639,7 +664,7 @@ function aamla_footer_text() {
 		return;
 	}
 
-	$output = str_replace( '[current_year]', date_i18n( __( 'Y', 'aamla' ) ), $footer_text );
+	$output = str_replace( '[current_year]', esc_html( date_i18n( __( 'Y', 'aamla' ) ) ), $footer_text );
 	$output = str_replace( '[site_title]', get_bloginfo( 'name', 'display' ), $output );
 	$output = str_replace( '[copy_symbol]', '&copy;', $output );
 	$output = str_replace( '[reserve_text]', esc_html__( 'All rights reserved', 'aamla' ), $output );

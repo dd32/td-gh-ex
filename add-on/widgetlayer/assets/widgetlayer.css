@@ -17,6 +17,10 @@
 	    flex: 0 0 100%;
 }
 
+.widgetlayer + .site-content {
+	border-top: 1px solid #e6e6e6;
+}
+
 .widgetlayer .widget a.button + a.button {
 	margin-left: 0.4375rem;
 }
@@ -39,8 +43,8 @@
 	margin-bottom: 0.4375rem;
 }
 
-.widgetlayer .has-featured-image .text-widget-featured-image {
-	display: block;
+.widgetlayer .widget-thumbnail {
+	position: relative;
 	margin: 0 auto 1.3125rem;
 }
 
