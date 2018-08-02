@@ -10,7 +10,7 @@ get_template_part('breadcrumb'); ?>
 
 
 	<?php do_action('greenr_before_content'); ?>
-
+	<?php do_action('greenr_single_page_flexslider_featured_image'); ?>
 	<div id="content" class="site-content container">
 
       <div id="primary" class="content-area sixteen columns">  

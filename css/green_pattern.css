@@ -63,7 +63,7 @@ html {
   box-sizing: border-box; }
 
 body {
-  background: #fff;
+  background: white;
   /* Fallback for when there is no custom background color defined. */ }
 
 article,
@@ -467,7 +467,7 @@ pre {
   font-size: 1.5rem;
   border: 1px solid #d7d7d7;
   line-height: 1.6;
-  background: #eee; }
+  background: #eeeeee; }
 
 code, kbd, tt, var {
   font-size: 15px;
@@ -475,7 +475,7 @@ code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace; }
 
 abbr, acronym {
-  border-bottom: 1px dotted #666;
+  border-bottom: 1px dotted #666666;
   cursor: help; }
 
 mark, ins {
@@ -521,7 +521,7 @@ blockquote cite a {
 3.0 Elements
 --------------------------------------------------------------*/
 hr {
-  background-color: #ccc;
+  background-color: #cccccc;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em; }
@@ -632,14 +632,14 @@ textarea {
     background-color: #d7d7d7; }
 
 .required {
-  color: #ff0000; }
+  color: red; }
 
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border: 1px solid;
-  border-color: #ccc #ccc #bbb;
+  border-color: #cccccc #cccccc #bbbbbb;
   background-clip: padding-box;
   /* stops bg color from leaking outside the border: */
   -webkit-border-radius: 0;
@@ -661,7 +661,7 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  border-color: #ccc #bbb #aaa;
+  border-color: #cccccc #bbbbbb #aaaaaa;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02); }
 
 button:focus,
@@ -672,7 +672,7 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-  border-color: #aaa #bbb #bbb;
+  border-color: #aaaaaa #bbbbbb #bbbbbb;
   box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); }
 
 input[type="checkbox"],
@@ -704,8 +704,8 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-  color: #666;
-  border: 1px solid #ccc;
+  color: #666666;
+  border: 1px solid #cccccc;
   background-clip: padding-box;
   /* stops bg color from leaking outside the border: */
   -webkit-border-radius: 0;
@@ -717,7 +717,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
-  color: #111; }
+  color: #111111; }
 
 input[type="text"],
 input[type="email"],
@@ -753,7 +753,7 @@ a {
   a:visited {
     color: #56cc00; }
   a:hover, a:focus, a:active {
-    color: #000000; }
+    color: black; }
 
 /*--------------------------------------------------------------
 5.2 Menus
@@ -766,7 +766,7 @@ a {
     padding-left: 0;
     float: right; }
     .main-navigation ul a {
-      color: #000000;
+      color: black;
       height: 60px; }
     .main-navigation ul ul {
       background-color: #e2e1e1;
@@ -800,8 +800,8 @@ a {
           font-family: FontAwesome;
           content: "\F054";
           margin-right: 15px;
-          color: #000000;
-          text-shadow: 1px 1px 1px #ffffff; }
+          color: black;
+          text-shadow: 1px 1px 1px white; }
       .main-navigation ul ul :hover > a {
         border-bottom: none;
         padding-left: 15px; }
@@ -844,10 +844,10 @@ a {
 
 @media screen and (max-width: 600px) {
   .menu-toggle {
-    background: #000000;
-    color: #ffffff; }
+    background: black;
+    color: white; }
     .menu-toggle:hover {
-      color: #ffffff; }
+      color: white; }
 
   .menu-toggle,
   .main-navigation.toggled ul.nav-menu {
@@ -875,13 +875,13 @@ a {
 .page-navigation ol li a, .page-navigation ol li.bpn-current, .page-navigation ol li.bpn-current:hover {
   display: inline-block;
   padding: 7px 15px;
-  border-left: 2px solid #ffffff;
-  border-right: 2px solid #ffffff;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
   background-color: #d7d7d7;
-  color: #000000; }
+  color: black; }
   .page-navigation ol li a:hover, .page-navigation ol li.bpn-current:hover {
     background-color: #56cc00;
-    color: #ffffff; }
+    color: white; }
 
 .site-main .comment-navigation,
 .site-main .paging-navigation,
@@ -909,17 +909,17 @@ a {
     display: inline-block;
     padding: 10px 25px;
     background-color: #d7d7d7;
-    color: #000000;
+    color: black;
     position: relative;
     z-index: 1;
     border-bottom: 1px solid #d7d7d7; }
     .post-navigation .nav-links a:hover {
       background-color: #56cc00;
-      color: #ffffff;
+      color: white;
       border-color: #56cc00; }
 
 .nav-links a:before {
-  border-bottom: 2px solid #ffffff;
+  border-bottom: 2px solid white;
   content: "";
   display: block;
   left: 0px;
@@ -940,18 +940,21 @@ a {
       display: inline; }
     .page-navigation ol li.bpn-current, .page-navigation ol li.bpn-current:hover {
       background-color: #56cc00;
-      color: #ffffff; }
+      color: white; }
 
 .comment-navigation .nav-next a,
 .comment-navigation .nav-previous a {
   display: inline-block;
   padding: 5px 25px;
   background-color: #56cc00;
-  color: #ffffff; }
+  color: white; }
   .comment-navigation .nav-next a:hover,
   .comment-navigation .nav-previous a:hover {
     background-color: #e2e1e1;
-    color: #000000; }
+    color: black; }
+
+.sticky-header #header-bottom .main-navigation ul ul li:hover ul {
+  top: 0px; }
 
 /*--------------------------------------------------------------
 6.0 Accessibility
@@ -964,7 +967,7 @@ a {
   width: 1px;
   overflow: hidden; }
   .screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
-    background-color: #fff;
+    background-color: white;
     background-clip: padding-box;
     /* stops bg color from leaking outside the border: */
     -webkit-border-radius: 3px;
@@ -1046,7 +1049,7 @@ a {
   display: inline-block;
   margin: 2px;
   padding: 2px 5px;
-  color: #000000; }
+  color: black; }
   .tagcloud a:hover {
     border-color: #56cc00; }
 
@@ -1108,7 +1111,7 @@ a {
 .widget_nav_menu ul li a {
   display: block;
   padding: 8px 8px 8px 20px;
-  border-bottom: 1px solid #ccc; }
+  border-bottom: 1px solid #cccccc; }
 
 /*--------------------------------------------------------------
 	1.4 Calendar
@@ -1122,7 +1125,7 @@ a {
     font-size: 1.4rem; }
 
 .widget_calendar #today a {
-  color: #ffffff; }
+  color: white; }
 
 .widget_calendar th,
 .widget_calendar td {
@@ -1140,7 +1143,7 @@ a {
   border-left: 0; }
 
 .widget_calendar td {
-  border: 1px solid #fff;
+  border: 1px solid white;
   border-left: 0;
   border-top: 0; }
 
@@ -1154,7 +1157,7 @@ a {
 
 .widget_calendar td#today {
   background-color: #56cc00;
-  color: #ffffff; }
+  color: white; }
 
 /*--------------------------------------------------------------
 	1.5 Sidebar Search
@@ -1164,10 +1167,10 @@ input.search-submit {
   text-transform: uppercase; }
 
 .copy {
-  background-color: #000000;
+  background-color: black;
   padding: 15px 0; }
   .copy a {
-    color: #ffffff; }
+    color: white; }
     .copy a:hover {
       color: #56cc00; }
 
@@ -1196,12 +1199,12 @@ input.search-submit {
       font-size: 0.9em;
       border-bottom: none;
       padding: 2px 6px;
-      color: #ffffff; }
+      color: white; }
       .footer-bottom ul.menu li a:hover {
         background-color: #56cc00; }
   .footer-bottom ul.menu li.current_page_item a {
     background: #56cc00 !important;
-    color: #ffffff; }
+    color: white; }
 
 .widget_social-networks-widget,
 .share-box {
@@ -1228,7 +1231,7 @@ input.search-submit {
         line-height: 32px;
         text-align: center;
         display: inline-block;
-        color: #000000;
+        color: black;
         border-bottom: 3px solid transparent; }
         .widget_social-networks-widget ul li a:hover,
         .share-box ul li a:hover {
@@ -1285,7 +1288,7 @@ input.search-submit {
     text-align: center; }
     .page-links a:hover {
       background-color: #56cc00;
-      color: #ffffff; }
+      color: white; }
 
 .entry-footer {
   padding: 15px 0; }
@@ -1390,13 +1393,13 @@ ol.comment-list .odd.parent article {
   background-color: #f2f2f2; }
 
 ol.comment-list .odd.parent .even.parent article {
-  background-color: #ffffff; }
+  background-color: white; }
 
 ol.comment-list .odd.parent .even.parent .odd.parent article {
   background-color: #f2f2f2; }
 
 ol.comment-list .odd.parent .even.parent .odd.parent .even.parent article {
-  background-color: #ffffff; }
+  background-color: white; }
 
 ol.comment-list .parent article .reply {
   top: 60px; }
@@ -1435,7 +1438,7 @@ ol.comment-list li.byuser {
 .woocommerce-page a.button,
 .woocommerce-page button.button,
 .woocommerce-page input.button {
-  color: #ffffff;
+  color: white;
   background: #56cc00; }
 
 .woocommerce #content input.button:hover,
@@ -1475,7 +1478,7 @@ ol.comment-list li.byuser {
   /* IE10+ */
   background: linear-gradient(to bottom, #272727 0%, #45484d 100%) !important;
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#272727', endColorstr='#45484d',GradientType=0 ) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#272727', endColorstr='#45484d',GradientType=0 ) !important;
   /* IE6-9 */
   border: 1px solid #333; }
 
@@ -1492,19 +1495,19 @@ ol.comment-list li.byuser {
   border-color: #000;
   background: #666 !important;
   /* Old browsers */
-  background: -moz-linear-gradient(top, #666 0%, #45484d 100%) !important;
+  background: -moz-linear-gradient(top, #666666 0%, #45484d 100%) !important;
   /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #45484d), color-stop(100%, #45484d)) !important;
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #666 0%, #45484d 100%) !important;
+  background: -webkit-linear-gradient(top, #666666 0%, #45484d 100%) !important;
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #666 0%, #45484d 100%) !important;
+  background: -o-linear-gradient(top, #666666 0%, #45484d 100%) !important;
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #666 0%, #45484d 100%) !important;
+  background: -ms-linear-gradient(top, #666666 0%, #45484d 100%) !important;
   /* IE10+ */
-  background: linear-gradient(to bottom, #666 0%, #45484d 100%) !important;
+  background: linear-gradient(to bottom, #666666 0%, #45484d 100%) !important;
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666', endColorstr='#45484d',GradientType=0 ) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666', endColorstr='#45484d',GradientType=0 ) !important;
   /* IE6-9 */ }
 
 .woocommerce .woocommerce-info:before,
@@ -1539,7 +1542,7 @@ ol.comment-list li.byuser {
   /* IE10+ */
   background: linear-gradient(to bottom, #f2f9fe 0%, #d6f0fd 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f9fe', endColorstr='#d6f0fd',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f9fe', endColorstr='#d6f0fd',GradientType=0 );
   /* IE6-9 */ }
 
 .woocommerce ul.products li.product .price,
@@ -1557,7 +1560,7 @@ ol.comment-list li.byuser {
 .woocommerce a.added_to_cart,
 .woocommerce-page a.added_to_cart {
   background-color: #666;
-  color: #ffffff; }
+  color: white; }
 
 .woocommerce a.added_to_cart:hover,
 .woocommerce-page a.added_to_cart:hover {
@@ -1565,7 +1568,7 @@ ol.comment-list li.byuser {
 
 .woocommerce .woocommerce-breadcrumb a,
 .woocommerce-page .woocommerce-breadcrumb a {
-  color: #ffffff; }
+  color: white; }
 
 .woocommerce #content div.product .woocommerce-tabs ul.tabs li, .woocommerce div.product .woocommerce-tabs ul.tabs li, .woocommerce-page #content div.product .woocommerce-tabs ul.tabs li, .woocommerce-page div.product .woocommerce-tabs ul.tabs li {
   background: #f2f9fe;
@@ -1582,7 +1585,7 @@ ol.comment-list li.byuser {
   /* IE10+ */
   background: linear-gradient(to bottom, #f2f9fe 0%, #d6f0fd 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f9fe', endColorstr='#d6f0fd',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f9fe', endColorstr='#d6f0fd',GradientType=0 );
   /* IE6-9 */ }
 
 .woocommerce #content table.cart a.remove,
@@ -1612,7 +1615,7 @@ ol.comment-list li.byuser {
 .woocommerce-page #content div.product .woocommerce-tabs ul.tabs li.active,
 .woocommerce-page div.product .woocommerce-tabs ul.tabs li.active {
   background: #e2e1e1;
-  color: #ffffff; }
+  color: white; }
 
 .woocommerce span.onsale,
 .woocommerce-page span.onsale {
@@ -1630,7 +1633,7 @@ ol.comment-list li.byuser {
   /* IE10+ */
   background: linear-gradient(to bottom, #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dd53a', endColorstr='#7cbc0a',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9dd53a', endColorstr='#7cbc0a',GradientType=0 );
   /* IE6-9 */ }
 
 .woocommerce #content nav.woocommerce-pagination ul li a,
@@ -1642,7 +1645,7 @@ ol.comment-list li.byuser {
 .woocommerce-page nav.woocommerce-pagination ul li a,
 .woocommerce-page nav.woocommerce-pagination ul li span {
   background-color: #56cc00;
-  color: #ffffff; }
+  color: white; }
 
 .woocommerce #content nav.woocommerce-pagination ul li a:focus,
 .woocommerce #content nav.woocommerce-pagination ul li a:hover,
@@ -1657,7 +1660,7 @@ ol.comment-list li.byuser {
 .woocommerce-page nav.woocommerce-pagination ul li a:hover,
 .woocommerce-page nav.woocommerce-pagination ul li span.current {
   background-color: #e2e1e1;
-  color: #ffffff; }
+  color: white; }
 
 .woocommerce #content nav.woocommerce-pagination ul li,
 .woocommerce #content nav.woocommerce-pagination ul {
@@ -1830,7 +1833,7 @@ ol.comment-list li.byuser {
 .woocommerce div.product .woocommerce-tabs ul.tabs li a,
 .woocommerce-page #content div.product .woocommerce-tabs ul.tabs li a,
 .woocommerce-page div.product .woocommerce-tabs ul.tabs li a {
-  color: #ffffff;
+  color: white;
   text-shadow: 0 0 0;
   padding: 7px 20px !important; }
 
@@ -2162,7 +2165,7 @@ dl.wp-caption {
 13 Global
 --------------------------------------------------------------*/
 #header-top {
-  background: #ccc;
+  background: #cccccc;
   overflow: hidden;
   padding: 10px 0 0; }
   #header-top p {
@@ -2172,7 +2175,7 @@ dl.wp-caption {
   list-style: none;
   margin: 0;
   float: right;
-  color: #ffffff;
+  color: white;
   list-style: none; }
   .social ul {
     list-style: none; }
@@ -2183,7 +2186,7 @@ dl.wp-caption {
       height: 45px;
       line-height: 45px;
       width: 45px;
-      color: #000000;
+      color: black;
       border-bottom: 3px solid transparent;
       text-align: center; }
       .social li a:hover {
@@ -2207,7 +2210,7 @@ h2.site-description {
   background-color: #2a2a2a;
   padding: 30px 0 10px; }
   .footer-widgets .widget-title {
-    color: #ffffff;
+    color: white;
     margin: 0 0 10px;
     padding-bottom: 10px; }
   .footer-widgets ul {
@@ -2217,7 +2220,7 @@ h2.site-description {
       padding: 8px 0;
       border-bottom: 1px solid #494949; }
   .footer-widgets a {
-    color: #ffffff; }
+    color: white; }
     .footer-widgets a:hover {
       color: #56cc00; }
   .footer-widgets .widget, .footer-widgets .widget_calendar td {
@@ -2228,10 +2231,10 @@ h2.site-description {
     border-right: 0;
     border-top: 0; }
     .footer-widgets .widget_calendar td a:hover {
-      color: #ffffff; }
+      color: white; }
   .footer-widgets .widget_calendar th {
     background-color: transparent;
-    color: #ffffff;
+    color: white;
     border: 1px solid #aaaaaa;
     border-right: 0;
     border-top: 0;
@@ -2267,18 +2270,20 @@ h2.site-description {
   .footer-widgets .tagcloud a {
     border: 1px solid #aaaaaa; }
   .footer-widgets .tagcloud :hover {
-    color: #000000;
-    background-color: #ffffff; }
+    color: black;
+    background-color: white; }
 
 .copy {
-  background-color: #000000;
+  background-color: black;
   padding: 15px 0; }
+  .copy p {
+    margin-bottom: 0px; }
   .copy .site-info {
     font-size: 12px;
     font-size: 1.2rem;
     text-align: center; }
     .copy .site-info a {
-      color: #ffffff; }
+      color: white; }
       .copy .site-info a:hover {
         color: #56cc00; }
 
@@ -2287,7 +2292,7 @@ h2.site-description {
 
 .scroll-to-top {
   background: #56cc00;
-  color: #ffffff;
+  color: white;
   bottom: 3%;
   cursor: pointer;
   display: none;
@@ -2339,27 +2344,27 @@ h2.site-description {
       font-weight: 700;
       line-height: 1;
       font-family: "Neuton", serif;
-      text-shadow: 1px 1px 1px #000000;
-      color: #ffffff; }
+      text-shadow: 1px 1px 1px black;
+      color: white; }
     .flex-container .flex-caption p {
-      color: #ffffff;
+      color: white;
       margin-bottom: 1.5em; }
     .flex-container .flex-caption .btn-slider a {
       text-shadow: 0 0 0;
-      color: #000000;
+      color: black;
       padding: 10px 25px;
-      border-bottom: 2px solid #ffffff;
+      border-bottom: 2px solid white;
       position: relative;
       z-index: 1;
       display: inline-black;
-      background-color: #ffffff;
+      background-color: white;
       text-transform: uppercase; }
       .flex-container .flex-caption .btn-slider a:hover {
         background-color: #56cc00;
         border-color: #56cc00;
-        color: #ffffff; }
+        color: white; }
     .flex-container .flex-caption .btn-slider a:before {
-      border-bottom: 2px solid #000000;
+      border-bottom: 2px solid black;
       content: "";
       display: block;
       left: 0px;
@@ -2375,7 +2380,7 @@ h2.site-description {
     text-align: center;
     display: block;
     color: #56cc00;
-    background-color: #ffffff;
+    background-color: white;
     line-height: 40px;
     width: 40px;
     height: 40px; }
@@ -2383,7 +2388,7 @@ h2.site-description {
       font-size: 20px;
       font-size: 2rem; }
   .flex-container .flex-direction-nav a {
-    background-color: #ffffff; }
+    background-color: white; }
   .flex-container .flex-direction-nav a:hover {
     border-color: #56cc00; }
   .flex-container .flexslider .flex-image {
@@ -2399,7 +2404,7 @@ h2.site-description {
   bottom: -10px;
   height: 50px; }
   .flex-control-paging li a {
-    background-color: #ffffff;
+    background-color: white;
     font-size: 0;
     -webkit-box-shadow: 0 0 0;
     moz-box-shadow: 0 0 0;
@@ -2452,9 +2457,9 @@ h2.site-description {
       height: 2.5em;
       margin: 0 auto; }
       .services .four.columns .service-title p i {
-        color: #ffffff;
+        color: white;
         padding-right: 0;
-        color: #ffffff;
+        color: white;
         -webkit-transition: all 0.8s ease;
         -moz-transition: all 0.8s ease;
         -ms-transition: all 0.8s ease;
@@ -2466,17 +2471,17 @@ h2.site-description {
     border-color: #56cc00; }
     .services .four.columns:hover .service-title p {
       border-color: #56cc00;
-      background-color: #ffffff; }
+      background-color: white; }
       .services .four.columns:hover .service-title p i {
         color: #56cc00; }
     .services .four.columns:hover h3 {
-      color: #000000; }
+      color: black; }
   .services p.more-button {
     margin-bottom: 0; }
     .services p.more-button a {
       background-color: #56cc00;
       padding: 5px 8px;
-      color: #ffffff;
+      color: white;
       border-bottom: 2px solid #56cc00;
       position: relative;
       z-index: 1; }
@@ -2484,7 +2489,7 @@ h2.site-description {
         background-color: #56cc00;
         border-color: #56cc00; }
     .services p.more-button a:before {
-      border-bottom: 2px solid #ffffff;
+      border-bottom: 2px solid white;
       content: "";
       display: block;
       left: 0px;
@@ -2541,7 +2546,7 @@ h2.site-description {
       padding-top: 10px;
       margin: 0 0 0 170px; }
     .testimonials ul li p.client strong {
-      color: #000000;
+      color: black;
       text-transform: uppercase; }
 
 .gap {
@@ -2568,7 +2573,7 @@ h2.site-description {
   text-align: center;
   margin: 0 auto;
   background-color: #56cc00;
-  color: #ffffff;
+  color: white;
   border-bottom: 2px solid #56cc00;
   position: relative;
   z-index: 1;
@@ -2577,7 +2582,7 @@ h2.site-description {
     background-color: #000;
     border-color: #000; }
 .callout-widget .callout-btn a:before {
-  border-bottom: 2px solid #ffffff;
+  border-bottom: 2px solid white;
   content: "";
   display: block;
   left: 0px;
@@ -2599,9 +2604,9 @@ h2.site-description {
 
 .site-header {
   background: url("../images/bg-repeat-pattern1.png") repeat left top;
-  -webkit-box-shadow: 0 0 10px #000000 ;
-  -moz-box-shadow: 0 0 10px #000000 ;
-  box-shadow: 0 0 10px #000000 ;
+  -webkit-box-shadow: 0 0 10px black ;
+  -moz-box-shadow: 0 0 10px black ;
+  box-shadow: 0 0 10px black ;
   position: relative;
   z-index: 2; }
   .site-header #header-bottom {
@@ -2612,7 +2617,8 @@ h2.site-description {
   border: 0;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4) ;
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4) ;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4) ; }
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4) ;
+  z-index: 0; }
 
 .services:before,
 .callout-widget .callout-btn a::before {
@@ -2620,10 +2626,10 @@ h2.site-description {
 
 .testimonials {
   padding: 10px;
-  background-color: #ffffff;
-  border: 1px solid #000000; }
+  background-color: white;
+  border: 1px solid black; }
   .testimonials .testimony {
-    background-color: #ffffff; }
+    background-color: white; }
 
 .service-title h2 {
   padding: 10px 0;
@@ -2681,7 +2687,7 @@ h2.site-description {
   border: 0; }
   .main-navigation ul.nav-menu > li > a:hover {
     background-color: #56cc00;
-    color: #ffffff;
+    color: white;
     -webkit-box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5); }
@@ -2690,7 +2696,7 @@ h2.site-description {
 .main-navigation ul.nav-menu li.current-menu-item > a,
 .main-navigation ul.menu.nav-menu > li.current-menu-ancestor > a {
   background-color: #56cc00;
-  color: #ffffff;
+  color: white;
   border: 0;
   -webkit-box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
@@ -2698,7 +2704,7 @@ h2.site-description {
 
 .main-navigation ul.nav-menu ul.sub-menu li a {
   background-color: transparent;
-  color: #000000;
+  color: black;
   border: 0;
   -webkit-box-shadow: inset 0 0 0 transparent;
   -moz-box-shadow: inset 0 0 0 transparent;
@@ -2717,7 +2723,7 @@ h2.site-description {
 
 .flex-control-paging li a.flex-active,
 .flex-control-paging li a:hover {
-  background-color: #000000; }
+  background-color: black; }
 
 .footer-widgets {
   background: url("../images/bg-repeat-footer.png") repeat left top; }
@@ -2725,7 +2731,7 @@ h2.site-description {
 .copy {
   background-color: #56cc00; }
   .copy .site-info a {
-    color: #ffffff; }
+    color: white; }
     .copy .site-info a:hover {
       color: #e2e1e1; }
 
@@ -2857,6 +2863,4 @@ h2.site-description {
   text-align: center; }
   .breadcrumb h1,
   .breadcrumb #crumbs {
-    color: #ffffff; }
-
-/*# sourceMappingURL=green_pattern.css.map */
+    color: white; }

@@ -6,7 +6,7 @@
 get_header(); 
 get_template_part('breadcrumb'); 
 do_action('greenr_before_content');?>	
-
+<?php do_action('greenr_single_page_flexslider_featured_image'); ?>
 
 <div id="content" class="site-content container">
 		<div id="primary" class="content-area eleven columns">

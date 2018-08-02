@@ -6,8 +6,10 @@ $custom = '';
 	if( $sticky_header_position == 'bottom') {
 		$custom .= ".sticky-header #header-bottom {  top: auto!important;
 			bottom:0; }"."\n";	
-		$custom .= ".sticky-header #header-bottom .nav-menu .sub-menu {  top: auto;
+		$custom .= ".sticky-header #header-bottom .nav-menu .sub-menu {  top: auto !important;
 			bottom:100%; }"."\n";	
+		$custom .= ".sticky-header #header-bottom .nav-menu .sub-menu .sub-menu{  top: auto !important;
+				bottom:0%; }"."\n";
 	}	
 
      $page_title_bar = get_theme_mod('page_titlebar');

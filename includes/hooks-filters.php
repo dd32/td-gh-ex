@@ -1,10 +1,7 @@
 <?php
-
 if(! function_exists('greenr_footer_credits') ) {
 	function greenr_footer_credits() { 
-		printf( __('<p>Powered by <a href="%1$s">WordPress</a>', 'greenr'), esc_url( 'http://wordpress.org/') );
-		printf( '<span class="sep"> .</span>' );
-		printf( __( 'Theme: Greenr by <a href="%1$s" rel="designer">Webulous Themes</a></p>', 'greenr' ), esc_url('https://www.webulousthemes.com/') );
+		printf( '<p> %1$s <a href="%2$s" target="_blank"> %3$s</a> %4$s <a href="%5$s" target="_blank" rel="designer">%6$s</a></p>', __('Powered by','greenr'), esc_url( 'http://wordpress.org/'), __('WordPress.','greenr'), __('Theme: Greenr by','greenr'), esc_url('http://www.webulousthemes.com/'), __('Webulous Themes','greenr')) ;
     }  
 }
 	

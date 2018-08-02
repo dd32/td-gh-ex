@@ -46,6 +46,11 @@ https://unsplash.imgix.net/46/3YNGIU4yRTO4DDifrEfA__MG_2885.jpg?q=75&fm=jpg&s=b7
 
 == Change Log ==
 
+Version 1.3.3
+* Social Network option issue fixed.
+* Update .po files.
+* Single Page featured image issue fixed.
+
 Version 1.3.2
 * Scroll To top Enable/disable option added.
 * WPForms Lite plugin recommended. 

@@ -210,7 +210,7 @@ if ( ! function_exists( 'greenr_paging_nav' ) ) :
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'greenr' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link('<span class="meta-nav">&larr;</span>%1$s', __( 'Older posts', 'greenr' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
