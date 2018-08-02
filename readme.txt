@@ -25,6 +25,9 @@ Agency Lite includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.0.5 - Aug 2 2018 =
+* Slider Button not appearing issue fixed
+
 = 1.0.4 - July 31 2018 =
 * Checked with Theme Sniffer Plugin and all error fixed.
 * pot file updated

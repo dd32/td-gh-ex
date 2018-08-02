@@ -104,9 +104,8 @@ function agency_lite_slider_control(){
         foreach ($home_sliders as $home_slider) {
      
             $my_slider_cat = get_theme_mod('agency_lite_slider_page_'.$home_slider.'_control');
-            $agency_lite_slider_btn_control = get_theme_mod('agency_lite_slider_page_'.$home_slider.'_btn_control');
-            $agency_lite_slider_url_control = get_theme_mod('agency_lite_slider_page_'.$home_slider.'_url_control');
-
+            $agency_lite_slider_btn_control = get_theme_mod('agency_lite_slider_'.$home_slider.'_btn_control');
+            $agency_lite_slider_url_control = get_theme_mod('agency_lite_slider_'.$home_slider.'_url_control');
 
             if($my_slider_cat){
                 $my_slider_args = array(
@@ -121,7 +120,7 @@ function agency_lite_slider_control(){
                     <?php
                         while($my_slider_query->have_posts()):
                             $my_slider_query->the_post();
-                            $agency_slider_image_src = wp_get_attachment_image_src(get_post_thumbnail_id(),'agency-lite-slider-image');
+                            $agency_slider_image_src = wp_get_attachment_image_src(get_post_thumbnail_id(),'full');
                             $agency_image_url = $agency_slider_image_src[0];
                             if($agency_image_url || get_the_title() || get_the_content()){
                                 ?>
@@ -134,12 +133,12 @@ function agency_lite_slider_control(){
                                             <?php the_title(); ?>
                                         </div>
                                         <div class="desc">
-                                        <?php if(get_the_content()){ ?>
-                                        <div class="about-post-content">
-                                            <?php the_content(); ?>
+                                            <?php if(get_the_content()){ ?>
+                                            <div class="about-post-content">
+                                                <?php the_content(); ?>
+                                            </div>
+                                            <?php } ?>
                                         </div>
-                                    <?php } ?>
-                                    </div>
                                         <?php if($agency_lite_slider_url_control) {?>
                                         <div class="slider-btn">
                                             <a href="<?php echo esc_url($agency_lite_slider_url_control); ?>">
