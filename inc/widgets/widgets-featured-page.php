@@ -77,7 +77,7 @@ class Accesspress_Basic_Featured_Page_Widget extends WP_Widget {
         $feat_readmore_text = empty($instance['feat_readmore_text']) ? false : $instance['feat_readmore_text'];
         $feat_readmore_link = empty($instance['feat_readmore_link']) ? false : $instance['feat_readmore_link'];
 
-        echo $before_widget;
+        echo wp_kses_post($before_widget);
             ?>
             <?php if($feat_page_query->have_posts()) : ?>
                 <?php while($feat_page_query->have_posts()) : $feat_page_query->the_post(); ?> 
@@ -97,7 +97,7 @@ class Accesspress_Basic_Featured_Page_Widget extends WP_Widget {
                 <?php endwhile; ?>
             <?php endif; ?>
             <?php
-        echo $after_widget;
+        echo wp_kses_post($after_widget);
 	}
 
 	/**
@@ -124,7 +124,7 @@ class Accesspress_Basic_Featured_Page_Widget extends WP_Widget {
 	
 			// Use helper function to get updated field values
 			$instance[$apbasic_widgets_name] = accesspress_basic_widgets_updated_field_value( $widget_field, $new_instance[$apbasic_widgets_name] );
-			echo $instance[$apbasic_widgets_name];
+			echo esc_html($instance[$apbasic_widgets_name]);
 			
 		}
 				

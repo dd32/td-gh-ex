@@ -40,12 +40,12 @@ function accesspress_basic_widgets_show_widget_field( $instance = '', $widget_fi
 		// Standard text field
 		case 'text' : ?>
 			<p>
-				<label for="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>"><?php echo $apbasic_widgets_title; ?>:</label>
-				<input class="widefat" id="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>" name="<?php echo $instance->get_field_name( $apbasic_widgets_name ); ?>" type="text" value="<?php echo $athm_field_value; ?>" />
+				<label for="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>"><?php echo esc_html($apbasic_widgets_title); ?>:</label>
+				<input class="widefat" id="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>" name="<?php echo esc_attr($instance->get_field_name( $apbasic_widgets_name )); ?>" type="text" value="<?php echo esc_attr($athm_field_value); ?>" />
 				
 				<?php if( isset( $apbasic_widgets_description ) ) { ?>
 				<br />
-				<small><?php echo $apbasic_widgets_description; ?></small>
+				<small><?php echo esc_html($apbasic_widgets_description); ?></small>
 				<?php } ?>
 			</p>
 			<?php
@@ -54,8 +54,8 @@ function accesspress_basic_widgets_show_widget_field( $instance = '', $widget_fi
 		// Textarea field
 		case 'textarea' : ?>
 			<p>
-				<label for="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>"><?php echo $apbasic_widgets_title; ?>:</label>
-				<textarea class="widefat" rows="6" id="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>" name="<?php echo $instance->get_field_name( $apbasic_widgets_name ); ?>"><?php echo $athm_field_value; ?></textarea>
+				<label for="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>"><?php echo esc_html($apbasic_widgets_title); ?>:</label>
+				<textarea class="widefat" rows="6" id="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>" name="<?php echo esc_attr($instance->get_field_name( $apbasic_widgets_name )); ?>"><?php echo esc_attr($athm_field_value); ?></textarea>
 			</p>
 			<?php
 			break;
@@ -63,8 +63,8 @@ function accesspress_basic_widgets_show_widget_field( $instance = '', $widget_fi
 		// Textarea field
 		case 'contentarea' : ?>
 			<p>
-				<label for="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>"><?php echo $apbasic_widgets_title; ?>:</label>
-				<textarea class="widefat" rows="6" id="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>" name="<?php echo $instance->get_field_name( $apbasic_widgets_name ); ?>"><?php echo wp_kses_post($athm_field_value); ?></textarea>
+				<label for="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>"><?php echo esc_html($apbasic_widgets_title); ?>:</label>
+				<textarea class="widefat" rows="6" id="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>" name="<?php echo esc_attr($instance->get_field_name( $apbasic_widgets_name )); ?>"><?php echo wp_kses_post($athm_field_value); ?></textarea>
 			</p>
 			<?php
 			break;
@@ -72,12 +72,12 @@ function accesspress_basic_widgets_show_widget_field( $instance = '', $widget_fi
 		// Checkbox field
 		case 'checkbox' : ?>
 			<p>
-				<input id="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>" name="<?php echo $instance->get_field_name( $apbasic_widgets_name ); ?>" type="checkbox" value="1" <?php checked( '1', $athm_field_value ); ?>/>
-				<label for="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>"><?php echo $apbasic_widgets_title; ?></label>
+				<input id="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>" name="<?php echo esc_attr($instance->get_field_name( $apbasic_widgets_name )); ?>" type="checkbox" value="1" <?php checked( '1', $athm_field_value ); ?>/>
+				<label for="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>"><?php echo esc_html($apbasic_widgets_title); ?></label>
 
 				<?php if( isset( $apbasic_widgets_description ) ) { ?>
 				<br />
-				<small><?php echo $apbasic_widgets_description; ?></small>
+				<small><?php echo esc_html($apbasic_widgets_description); ?></small>
 				<?php } ?>
 			</p>
 			<?php
@@ -87,16 +87,16 @@ function accesspress_basic_widgets_show_widget_field( $instance = '', $widget_fi
 		case 'radio' : ?>
 			<p>
 				<?php
-				echo $apbasic_widgets_title; 
+				echo esc_html($apbasic_widgets_title); 
 				echo '<br />';
 				foreach( $apbasic_widgets_field_options as $athm_option_name => $athm_option_title ) { ?>
-					<input id="<?php echo $instance->get_field_id( $athm_option_name ); ?>" name="<?php echo $instance->get_field_name( $apbasic_widgets_name ); ?>" type="radio" value="<?php echo $athm_option_name; ?>" <?php checked( $athm_option_name, $athm_field_value ); ?> />
-					<label for="<?php echo $instance->get_field_id( $athm_option_name ); ?>"><?php echo $athm_option_title; ?></label>
+					<input id="<?php echo esc_attr($instance->get_field_id( $athm_option_name )); ?>" name="<?php echo esc_attr($instance->get_field_name( $apbasic_widgets_name )); ?>" type="radio" value="<?php echo esc_attr($athm_option_name); ?>" <?php checked( $athm_option_name, $athm_field_value ); ?> />
+					<label for="<?php echo esc_attr($instance->get_field_id( $athm_option_name )); ?>"><?php echo esc_html($athm_option_title); ?></label>
 					<br />
 				<?php } ?>
 				
 				<?php if( isset( $apbasic_widgets_description ) ) { ?>
-				<small><?php echo $apbasic_widgets_description; ?></small>
+				<small><?php echo esc_html($apbasic_widgets_description); ?></small>
 				<?php } ?>
 			</p>
 			<?php
@@ -105,17 +105,17 @@ function accesspress_basic_widgets_show_widget_field( $instance = '', $widget_fi
 		// Select field
 		case 'select' : ?>
 			<p>
-				<label for="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>"><?php echo $apbasic_widgets_title; ?>:</label>
-				<select name="<?php echo $instance->get_field_name( $apbasic_widgets_name ); ?>" id="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>" class="widefat">
+				<label for="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>"><?php echo esc_html($apbasic_widgets_title); ?>:</label>
+				<select name="<?php echo esc_attr($instance->get_field_name( $apbasic_widgets_name )); ?>" id="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>" class="widefat">
 					<?php
 					foreach ( $apbasic_widgets_field_options as $athm_option_name => $athm_option_title ) { ?>
-						<option value="<?php echo $athm_option_name; ?>" id="<?php echo $instance->get_field_id( $athm_option_name ); ?>" <?php selected( $athm_option_name, $athm_field_value ); ?>><?php echo $athm_option_title; ?></option>
+						<option value="<?php echo esc_attr($athm_option_name); ?>" id="<?php echo esc_attr($instance->get_field_id( $athm_option_name )); ?>" <?php selected( $athm_option_name, $athm_field_value ); ?>><?php echo esc_html($athm_option_title); ?></option>
 					<?php } ?>
 				</select>
 
 				<?php if( isset( $apbasic_widgets_description ) ) { ?>
 				<br />
-				<small><?php echo $apbasic_widgets_description; ?></small>
+				<small><?php echo esc_html($apbasic_widgets_description); ?></small>
 				<?php } ?>
 			</p>
 			<?php
@@ -123,12 +123,12 @@ function accesspress_basic_widgets_show_widget_field( $instance = '', $widget_fi
 			
 		case 'number' : ?>
 			<p>
-				<label for="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>"><?php echo $apbasic_widgets_title; ?>:</label><br />
-				<input name="<?php echo $instance->get_field_name( $apbasic_widgets_name ); ?>" type="number" step="1" min="1" id="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>" value="<?php echo $athm_field_value; ?>" class="small-text" />
+				<label for="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>"><?php echo esc_html($apbasic_widgets_title); ?>:</label><br />
+				<input name="<?php echo esc_attr($instance->get_field_name( $apbasic_widgets_name )); ?>" type="number" step="1" min="1" id="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>" value="<?php echo esc_attr($athm_field_value); ?>" class="small-text" />
 				
 				<?php if( isset( $apbasic_widgets_description ) ) { ?>
 				<br />
-				<small><?php echo $apbasic_widgets_description; ?></small>
+				<small><?php echo esc_html($apbasic_widgets_description); ?></small>
 				<?php } ?>
 			</p>
 			<?php
@@ -137,17 +137,17 @@ function accesspress_basic_widgets_show_widget_field( $instance = '', $widget_fi
 		// Select field
 		case 'selectpost' : ?>
 			<p>
-				<label for="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>"><?php echo $apbasic_widgets_title; ?>:</label>
-				<select name="<?php echo $instance->get_field_name( $apbasic_widgets_name ); ?>" id="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>" class="widefat">
+				<label for="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>"><?php echo esc_html($apbasic_widgets_title); ?>:</label>
+				<select name="<?php echo esc_attr($instance->get_field_name( $apbasic_widgets_name )); ?>" id="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>" class="widefat">
 					<?php
 					foreach ( $accesspress_pro_postlist as $accesspress_basic_single_page ) { ?>
-						<option value="<?php echo $accesspress_basic_single_page['value']; ?>" id="<?php echo $instance->get_field_id( $accesspress_basic_single_page['label'] ); ?>" <?php selected( $accesspress_basic_single_page['value'], $athm_field_value ); ?>><?php echo $accesspress_basic_single_page['label']; ?></option>
+						<option value="<?php echo esc_attr($accesspress_basic_single_page['value']); ?>" id="<?php echo esc_attr($instance->get_field_id( $accesspress_basic_single_page['label'] )); ?>" <?php selected( $accesspress_basic_single_page['value'], $athm_field_value ); ?>><?php echo esc_html($accesspress_basic_single_page['label']); ?></option>
 					<?php } ?>
 				</select>
 
 				<?php if( isset( $apbasic_widgets_description ) ) { ?>
 				<br />
-				<small><?php echo $apbasic_widgets_description; ?></small>
+				<small><?php echo esc_html($apbasic_widgets_description); ?></small>
 				<?php } ?>
 			</p>
 			<?php
@@ -156,17 +156,17 @@ function accesspress_basic_widgets_show_widget_field( $instance = '', $widget_fi
             // Select field
 		case 'selectpage' : ?>
 			<p>
-				<label for="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>"><?php echo $apbasic_widgets_title; ?> :</label>
-				<select name="<?php echo $instance->get_field_name( $apbasic_widgets_name ); ?>" id="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>" class="widefat">
+				<label for="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>"><?php echo esc_html($apbasic_widgets_title); ?> :</label>
+				<select name="<?php echo esc_attr($instance->get_field_name( $apbasic_widgets_name )); ?>" id="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>" class="widefat">
 					<?php
 					foreach ( $accesspress_basic_pagelist as $accesspress_basic_single_page ) { ?>
-						<option value="<?php echo $accesspress_basic_single_page['value']; ?>" id="<?php echo $instance->get_field_id( $accesspress_basic_single_page['label'] ); ?>" <?php selected( $accesspress_basic_single_page['value'], $athm_field_value ); ?>><?php echo $accesspress_basic_single_page['label']; ?></option>
+						<option value="<?php echo esc_attr($accesspress_basic_single_page['value']); ?>" id="<?php echo esc_attr($instance->get_field_id( $accesspress_basic_single_page['label'] )); ?>" <?php selected( $accesspress_basic_single_page['value'], $athm_field_value ); ?>><?php echo esc_html($accesspress_basic_single_page['label']); ?></option>
 					<?php } ?>
 				</select>
 
 				<?php if( isset( $apbasic_widgets_description ) ) { ?>
 				<br />
-				<small><?php echo $apbasic_widgets_description; ?></small>
+				<small><?php echo esc_html($apbasic_widgets_description); ?></small>
 				<?php } ?>
 			</p>
 			<?php
@@ -174,7 +174,6 @@ function accesspress_basic_widgets_show_widget_field( $instance = '', $widget_fi
             
         case 'upload' :
 
-            $output = '';
             $id = $instance->get_field_id($apbasic_widgets_name);
             $class = '';
             $int = '';
@@ -185,60 +184,64 @@ function accesspress_basic_widgets_show_widget_field( $instance = '', $widget_fi
             if ($value) {
                 $class = ' has-file';
             }
-            $output .= '<div class="sub-option widget-upload">';
-            $output .= '<label for="' . $instance->get_field_id($apbasic_widgets_name) . '">' . $apbasic_widgets_title . '</label><br/>';
-            $output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="' . $name . '" value="' . $value . '" placeholder="' . __('No file chosen', 'accesspress-basic') . '" />' . "\n";
+            ?>
+            <div class="sub-option widget-upload">
+            <label for="<?php echo esc_attr($instance->get_field_id($apbasic_widgets_name)); ?>"><?php esc_html($apbasic_widgets_title); ?></label><br/>
+            <input id="<?php echo esc_attr($id); ?>" class="upload <?php echo esc_attr($class); ?>" type="text" name="<?php echo esc_attr($name); ?>" value="<?php echo esc_url($value); ?>" placeholder="<?php esc_html_e('No file chosen', 'accesspress-basic'); ?>" />
+            <?php
             if (function_exists('wp_enqueue_media')) {
-                //if (( $value == '')) {
-                    $output .= '<input id="upload-' . $id . '" class="upload-button button" type="button" value="' . __('Upload', 'accesspress-basic') . '" />' . "\n";
-                //} else {
-                //   $output .= '<input id="remove-' . $id . '" class="remove-file button" type="button" value="' . __('Remove', 'accesspress-basic') . '" />' . "\n";
-                //}
+        	?>
+                <input id="upload-<?php echo esc_attr($id); ?>" class="upload-button button" type="button" value="<?php esc_html_e('Upload', 'accesspress-basic'); ?>" />
+            <?php
             } else {
-                $output .= '<p><i>' . __('Upgrade your version of WordPress for full media support.', 'accesspress-basic') . '</i></p>';
+        	?>
+                <p><i><?php esc_html_e('Upgrade your version of WordPress for full media support.', 'accesspress-basic'); ?></i></p>
+            <?php
             }
-
-            $output .= '<div class="screenshot team-thumb" id="' . $id . '-image">' . "\n";
+        	?>
+            <div class="screenshot team-thumb" id="<?php echo esc_attr($id); ?>-image">
+        	<?php
 
             if ($value != '') {
-                $remove = '<a class="remove-image remove-screenshot">Remove</a>';
-                $attachment_id = attachment_url_to_postid($value);
 
+                $attachment_id = attachment_url_to_postid($value);
                 $image_array = wp_get_attachment_image_src($attachment_id, 'medium');
                 $image = preg_match('/(^.*\.jpg|jpeg|png|gif|ico*)/i', $value);
                 if ($image) {
-                    $output .= '<img src="' . $image_array[0] . '" alt="" />' . $remove;
+                	?>
+                    <img src="<?php echo esc_attr($image_array[0]); ?>" alt="" /><a class="remove-image remove-screenshot"><?php esc_html_e( 'Remove', 'accesspress-basic' ); ?></a>
+                    <?php
                 } else {
                     $parts = explode("/", $value);
                     for ($i = 0; $i < sizeof($parts); ++$i) {
                         $title = $parts[$i];
                     }
 
-                    // No output preview if it's not an image.
-                    $output .= '';
-
-                    // Standard generic output if it's not an image.
                     $title = __('View File', 'accesspress-basic');
-                    $output .= '<div class="no-image"><span class="file_link"><a href="' . $value . '" target="_blank" rel="external">' . $title . '</a></span></div>';
+                    ?>
+                    <div class="no-image"><span class="file_link"><a href="<?php echo esc_attr($value); ?>" target="_blank" rel="external"><?php echo esc_html($title); ?></a></span></div>
+                    <?php
                 }
             }
-            $output .= '</div></div>' . "\n";
-            echo $output;
+            ?>
+	        	</div>
+	        </div>
+	        <?php
             break;	
             
         case 'select_theme' : ?>
 			<p>
-				<label for="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>"><?php echo $apbasic_widgets_title; ?> :</label>
-				<select name="<?php echo $instance->get_field_name( $apbasic_widgets_name ); ?>" id="<?php echo $instance->get_field_id( $apbasic_widgets_name ); ?>" class="widefat">
+				<label for="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>"><?php echo esc_html($apbasic_widgets_title); ?> :</label>
+				<select name="<?php echo esc_attr($instance->get_field_name( $apbasic_widgets_name )); ?>" id="<?php echo esc_attr($instance->get_field_id( $apbasic_widgets_name )); ?>" class="widefat">
 					<?php
 					foreach ( $twitter_themes as $twitter_theme ) { ?>
-						<option value="<?php echo $twitter_theme['value']; ?>" id="<?php echo $instance->get_field_id( $twitter_theme['label'] ); ?>" <?php selected( $twitter_theme['value'], $athm_field_value ); ?>><?php echo $twitter_theme['label']; ?></option>
+						<option value="<?php echo esc_attr($twitter_theme['value']); ?>" id="<?php echo esc_attr($instance->get_field_id( $twitter_theme['label'] )); ?>" <?php selected( $twitter_theme['value'], $athm_field_value ); ?>><?php echo esc_html($twitter_theme['label']); ?></option>
 					<?php } ?>
 				</select>
 
 				<?php if( isset( $apbasic_widgets_description ) ) { ?>
 				<br />
-				<small><?php echo $apbasic_widgets_description; ?></small>
+				<small><?php echo esc_html($apbasic_widgets_description); ?></small>
 				<?php } ?>
 			</p>
 			<?php

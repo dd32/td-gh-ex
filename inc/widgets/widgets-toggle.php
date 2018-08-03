@@ -75,10 +75,10 @@ class Accesspress_Basic_Toggle_Widget extends WP_Widget {
         $toggle_content = empty($instance['toggle_content']) ? false : $instance['toggle_content'];
         $toggle_status = empty($instance['toggle_status']) ? false : $instance['toggle_status'];
         
-        echo $before_widget;
+        echo wp_kses_post($before_widget);
         ?>
         <?php if(!empty($toggle_title)) : ?>
-            <div class="ap_toggle <?php echo $toggle_status; ?>">
+            <div class="ap_toggle <?php echo esc_attr($toggle_status); ?>">
                 <?php if(!empty($toggle_title)) : ?>
                     <div class="ap_toggle_title"><?php echo esc_attr($toggle_title); ?></div>           
                 <?php endif; ?>
@@ -89,7 +89,7 @@ class Accesspress_Basic_Toggle_Widget extends WP_Widget {
             </div>
         <?php endif; ?>
         <?php
-        echo $after_widget;
+        echo wp_kses_post($after_widget);
 	}
 
 	/**
@@ -116,7 +116,7 @@ class Accesspress_Basic_Toggle_Widget extends WP_Widget {
 	
 			// Use helper function to get updated field values
 			$instance[$apbasic_widgets_name] = accesspress_basic_widgets_updated_field_value( $widget_field, $new_instance[$apbasic_widgets_name] );
-			echo $instance[$apbasic_widgets_name];
+			echo esc_html($instance[$apbasic_widgets_name]);
 			
 		}
 				

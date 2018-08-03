@@ -46,7 +46,7 @@
 		<div class="site-info">
             <div class="ap-container clearfix">
                 <div class="copyright-info">
-                    <?php _e('Copyright','accesspress-basic'); ?> &copy; <?php the_date( 'Y' ); ?> <a href="<?php echo get_home_url(); ?>">
+                    <?php esc_html_e('Copyright','accesspress-basic'); ?> &copy; <?php the_date( 'Y' ); ?> <a href="<?php echo esc_url(get_home_url()); ?>">
                         <?php 
                         if(!empty($apbasic_settings['footer_text'])){
                             echo esc_attr($apbasic_settings['footer_text']);                              
@@ -56,7 +56,7 @@
                         ?>
                     </a>
                     <span class="sep"> | </span>
-                        <?php _e( 'Theme: ', 'accesspress-basic' ); ?><a href="<?php esc_url('http://www.accesspressthemes.com/'); ?>" target="_blank" rel="designer">AccessPress Basic</a>
+                        <?php esc_html_e( 'Theme: ', 'accesspress-basic' ); ?><a href="<?php esc_url('http://www.accesspressthemes.com/'); ?>" target="_blank" rel="designer">AccessPress Basic</a>
                 </div>
                 <?php if(is_active_sidebar('apbasic_footer_social_links')) : ?>
                 <div class="footer-socials">

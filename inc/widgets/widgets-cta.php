@@ -82,7 +82,7 @@ class Accesspress_Basic_Cta_Widget extends WP_Widget {
         $cta_readmore_text = empty($instance['cta_readmore_text']) ? false : $instance['cta_readmore_text'];
         $cta_fa_icon = empty($instance['cta_fa_icon']) ? false : $instance['cta_fa_icon'];
         
-        echo $before_widget;
+        echo wp_kses_post($before_widget);
             ?>
             <div class="cta-wrap clearfix">
                 <div class="ap-container">
@@ -105,7 +105,7 @@ class Accesspress_Basic_Cta_Widget extends WP_Widget {
                 </div>
             </div>
             <?php
-        echo $after_widget;
+        echo wp_kses_post($after_widget);
 	}
 
 	/**
@@ -132,7 +132,7 @@ class Accesspress_Basic_Cta_Widget extends WP_Widget {
 	
 			// Use helper function to get updated field values
 			$instance[$apbasic_widgets_name] = accesspress_basic_widgets_updated_field_value( $widget_field, $new_instance[$apbasic_widgets_name] );
-			echo $instance[$apbasic_widgets_name];
+			echo esc_html($instance[$apbasic_widgets_name]);
 			
 		}
 				

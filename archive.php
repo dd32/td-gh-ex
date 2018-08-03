@@ -60,7 +60,7 @@ get_header(); ?>
         </div>
 	</header><!-- .page-header -->
 <?php endif; ?>
-	<main id="main" class="site-main <?php echo $content_class.' '.$blog_display_class; ?>" role="main">
+	<main id="main" class="site-main <?php echo esc_attr($content_class) . ' ' . esc_attr($blog_display_class); ?>" role="main">
         <div class="ap-container">
         <?php if($default_layout == 'both_sidebar') : ?>
             <div id="primary-wrap" class="clearfix">

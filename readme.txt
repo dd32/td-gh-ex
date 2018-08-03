@@ -54,6 +54,10 @@ Images
 
 == Changelog ==
 
+Version 3.1.3
+===============
+* Fixed Security Issues
+
 Version 3.1.2
 ===============
 * Fixed Woocommerce Compatibility Issue in 3.3.0

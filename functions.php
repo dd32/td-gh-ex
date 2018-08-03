@@ -175,6 +175,11 @@ require get_template_directory() . '/inc/admin-panel/theme-options.php';
 require get_template_directory() . '/inc/apbasic-widgets.php';
 
 /**
+ * Load Accesspress Basic Dynamic Styles
+ */
+require get_template_directory() . '/css/style.php';
+
+/**
  * Load Welcome Page
  */
 require get_template_directory() . '/welcome/welcome.php';

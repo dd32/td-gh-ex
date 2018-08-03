@@ -74,7 +74,7 @@ class Accesspress_Basic_Services_Widget extends WP_Widget {
 
         if(!empty($service_posts)) :
             
-            echo $before_widget;
+            echo wp_kses_post($before_widget);
             
             $args = array(
                 'posts_per_page' => -1,
@@ -97,9 +97,9 @@ class Accesspress_Basic_Services_Widget extends WP_Widget {
                         <figure class="services-post-thumbnail">
                             <a href="<?php the_permalink(); ?>">
                                 <?php if(has_post_thumbnail()) : ?>
-                                    <img src="<?php echo $img_src; ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>" />
+                                    <img src="<?php echo esc_url($img_src); ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>" />
                                 <?php else : ?>
-                                    <img src="<?php echo get_template_directory_uri().'/images/no-services-thumbnail.png'; ?>" />
+                                    <img src="<?php echo esc_url(get_template_directory_uri().'/images/no-services-thumbnail.png'); ?>" />
                                 <?php endif; ?>
                             </a>
                             <figcaption> 
@@ -113,11 +113,11 @@ class Accesspress_Basic_Services_Widget extends WP_Widget {
                         </a>
                         <div class="services-post-excerpt">
                         	<?php $content = trim(strip_tags(strip_shortcodes( get_the_content() ))); ?>
-                            <?php echo wp_trim_words($content,24); ?>
+                            <?php echo esc_html(wp_trim_words($content,24)); ?>
                         </div>
                         <a class="services_readmore-button readmore-button" href="<?php the_permalink(); ?>">
                             <?php if(empty($services_readmore_text)) : ?>
-                                <?php _e('More Info...','accesspress-basic'); ?>
+                                <?php esc_html_e('More Info...','accesspress-basic'); ?>
                             <?php else : ?>
                                 <?php echo esc_attr($services_readmore_text); ?>
                             <?php endif; ?>
@@ -130,7 +130,7 @@ class Accesspress_Basic_Services_Widget extends WP_Widget {
                 <?php
             endif; // if feature query has posts
             
-            echo $after_widget;
+            echo wp_kses_post($after_widget);
             
         endif; // Feature posts empty
 	}
@@ -159,7 +159,7 @@ class Accesspress_Basic_Services_Widget extends WP_Widget {
 	
 			// Use helper function to get updated field values
 			$instance[$apbasic_widgets_name] = accesspress_basic_widgets_updated_field_value( $widget_field, $new_instance[$apbasic_widgets_name] );
-			echo $instance[$apbasic_widgets_name];
+			echo esc_html($instance[$apbasic_widgets_name]);
 			
 		}
 				

@@ -69,8 +69,8 @@
     		?>
             <div class="pplayout">
                 <img src="<?php echo esc_url(get_template_directory_uri().'/inc/admin-panel/images/'.$field['img']); ?>" />
-    			<input id="<?php echo $field['value']; ?>" class="post-format" type="radio" name="<?php echo $field['id']; ?>" value="<?php echo esc_attr($field['value']); ?>" <?php checked( $field['value'], $layout_meta ); ?>/>
-    			<label for="<?php echo $field['value']; ?>" class="post-format-icon"><?php echo $field['label']; ?></label><br/>
+    			<input id="<?php echo esc_attr($field['value']); ?>" class="post-format" type="radio" name="<?php echo esc_attr($field['id']); ?>" value="<?php echo esc_attr($field['value']); ?>" <?php checked( $field['value'], $layout_meta ); ?>/>
+    			<label for="<?php echo esc_attr($field['value']); ?>" class="post-format-icon"><?php echo esc_html($field['label']); ?></label><br/>
             </div>
     		<?php
         endforeach;
@@ -87,14 +87,14 @@
         global $accesspress_basic_page_layout, $post;
         
         // Verify the nonce before proceeding.
-        if ( !isset( $_POST[ 'custom_meta_box_nonce' ] ) || !wp_verify_nonce( $_POST[ 'custom_meta_box_nonce' ], basename( __FILE__ ) ) )
+        if ( !isset( $_POST[ 'custom_meta_box_nonce' ] ) || !wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST[ 'custom_meta_box_nonce' ] ) ), basename( __FILE__ ) ) )
             return;
         
         // Stop WP from clearing custom fields on autosave
         if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE)  
             return;
         
-        if ('page' == $_POST['post_type']) {  
+        if ( isset( $_POST['post_type'] ) && 'page' == sanitize_text_field( wp_unslash( $_POST['post_type'] ) ) ) {  
             if (!current_user_can( 'edit_page', $post_id ) )  
                 return $post_id;  
             } 
@@ -105,7 +105,7 @@
         foreach ($accesspress_basic_page_layout as $field) {  
             //Execute this saving function
             $old = get_post_meta( $post_id, $field['id'], true); 
-            $new = sanitize_text_field($_POST[$field['id']]);
+            $new = isset( $_POST[$field['id']] ) ? sanitize_text_field( wp_unslash( $_POST[$field['id']] ) ) : '';
             
             if ($new && $new != $old) {  
             	update_post_meta($post_id, $field['id'], $new);  

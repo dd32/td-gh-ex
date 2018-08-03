@@ -81,7 +81,7 @@ class Accesspress_Basic_Icon_Text_Widget extends WP_Widget {
         $icon_readmore_text = empty($instance['icon_readmore_text']) ? __('Read More','accesspress-basic') : $instance['icon_readmore_text']; 
         $icon_readmore_link = empty($instance['icon_readmore_link']) ? false : $instance['icon_readmore_link'];
         static $ic_count = 1;
-        echo $before_widget;
+        echo wp_kses_post($before_widget);
             ?>
             <?php if(!empty($icon_title) && !empty($icon_detail)) : ?>
                 <div class="icon-text-wrap">
@@ -108,7 +108,7 @@ class Accesspress_Basic_Icon_Text_Widget extends WP_Widget {
                 </div>
             <?php endif; ?>
             <?php
-        echo $after_widget;
+        echo wp_kses_post($after_widget);
         if($ic_count%4 == 0){
             ?>
                 <div class="clearfix"></div>
@@ -141,7 +141,7 @@ class Accesspress_Basic_Icon_Text_Widget extends WP_Widget {
 	
 			// Use helper function to get updated field values
 			$instance[$apbasic_widgets_name] = accesspress_basic_widgets_updated_field_value( $widget_field, $new_instance[$apbasic_widgets_name] );
-			echo $instance[$apbasic_widgets_name];
+			echo esc_html($instance[$apbasic_widgets_name]);
 			
 		}
 				

@@ -42,7 +42,7 @@ get_header(); ?>
     }
 ?>
 <?php while ( have_posts() ) : the_post(); ?>
-	<main id="main" class="site-main <?php echo $content_class; ?>" role="main">
+	<main id="main" class="site-main <?php echo esc_attr($content_class); ?>" role="main">
         <div class="ap-container">
         <?php if($default_page_layout == 'both_sidebar') : ?>
             <div id="primary-wrap" class="clearfix">

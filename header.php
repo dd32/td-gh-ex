@@ -40,19 +40,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<?php if(!empty($favicon)) : ?>
-    <?php if($activate_favicon == 1) : ?>
-        <link rel="icon" type="image/png" href="<?php echo esc_url($favicon); ?>">
-    <?php endif; ?>
-<?php endif; ?>
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class($site_class); ?>>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'accesspress-basic' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'accesspress-basic' ); ?></a>
 
-	<header id="masthead" class="site-header <?php echo $header_class; ?>" role="banner">
+	<header id="masthead" class="site-header <?php echo esc_attr($header_class); ?>" role="banner">
         	<div class="top-header clearfix">
                 <div class="ap-container">
                     <div class="site-branding">
@@ -61,7 +56,7 @@
                             <?php if($show_header == 'header_logo_only') : ?>
                                 <?php if(get_header_image()) : ?>
                                     <div class="header-logo-container">
-                                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo header_image(); ?>" /></a></h1>
+                                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url(header_image()); ?>" /></a></h1>
                                     </div>
                                 <?php endif; ?>
                             <?php elseif($show_header == 'header_text_only') : ?>
@@ -72,7 +67,7 @@
                             <?php else : ?>
                                 <?php if(get_header_image()) : ?>
                                     <div class="header-logo-container">
-                                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $header_logo; ?>" /></a></h1>
+                                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url($header_logo); ?>" /></a></h1>
                                     </div>
                                 <?php endif; ?>
                                 <div class="header-text-container">
@@ -106,7 +101,7 @@
                 <div class="ap-container">
                     <a class="menu-trigger"><span></span><span></span><span></span></a>   
             		<nav id="site-navigation" class="main-navigation" role="navigation">
-            			<button class="menu-toggle hide" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Primary Menu', 'accesspress-basic' ); ?></button>
+            			<button class="menu-toggle hide" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'accesspress-basic' ); ?></button>
             			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
             		</nav><!-- #site-navigation -->
                     <?php if($show_search == 1) : ?>
@@ -114,12 +109,12 @@
                         <i class="fa fa-search"></i>
                         <div class="ak-search">
                             <div class="close">&times;</div>
-                                 <form action="<?php echo site_url(); ?>" class="search-form" method="get" role="search">
+                                 <form action="<?php echo esc_url(site_url()); ?>" class="search-form" method="get" role="search">
                                     <label>
-                                        <span class="screen-reader-text"><?php _e('Search for:', 'accesspress-basic'); ?></span>
-                                        <input type="search" title="Search for:" name="s" value="" placeholder="<?php _e('Search content...', 'accesspress-basic'); ?>" class="search-field">
+                                        <span class="screen-reader-text"><?php esc_html_e('Search for:', 'accesspress-basic'); ?></span>
+                                        <input type="search" title="Search for:" name="s" value="" placeholder="<?php esc_html_e('Search content...', 'accesspress-basic'); ?>" class="search-field">
                                     </label>
-                                    <input type="submit" value="<?php _e('Search', 'accesspress-basic'); ?>" class="search-submit">
+                                    <input type="submit" value="<?php esc_html_e('Search', 'accesspress-basic'); ?>" class="search-submit">
                                  </form>
                          <div class="overlay-search"> </div> 
                         </div>
@@ -128,12 +123,12 @@
                 </div>
             </div>
             <nav id="site-navigation-responsive" class="main-navigation-responsive">
-    			<button class="menu-toggle hide" aria-controls="primary-menu" aria-expanded="false"><?php _e( 'Primary Menu', 'accesspress-basic' ); ?></button>
+    			<button class="menu-toggle hide" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'accesspress-basic' ); ?></button>
     			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content <?php echo $slider_type.'-slider'; ?>">
+	<div id="content" class="site-content <?php echo esc_attr($slider_type) . '-slider'; ?>">
     <?php
         if($show_slider == 'yes') :
             if($show_slider_in_post == 1) :

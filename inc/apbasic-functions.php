@@ -54,31 +54,6 @@
     }
     //add_filter( 'body_class', 'category_id_class' );
     
-    // Adding custom dynamic styles to the site
-    function accesspress_basic_custom_dynamic_styles(){
-        global $apbasic_options;
-        $apbasic_settings = get_option('apbasic_options',$apbasic_options);
-        $background_image = $apbasic_settings['background_image'];
-        $bg_img = get_template_directory_uri().'/inc/admin-panel/images/'.$background_image.'.png';
-        
-        if($apbasic_settings['site_layout'] == 'boxed') :
-        ?>
-            <style type="text/css" rel="stylesheet">
-                <?php if($background_image == 'pattern0') : ?>
-                    body{
-                        background: none;
-                    }
-                <?php else : ?>
-                    body{
-                        background: url(<?php echo $bg_img; ?>);
-                    }
-                <?php endif; ?>                
-            </style>
-        <?php
-        endif;
-    }
-    add_action('wp_head','accesspress_basic_custom_dynamic_styles');
-    
     // Filter for excerpt read more
     function custom_excerpt_more( $more ) {
     	return '...';

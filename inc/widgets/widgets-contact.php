@@ -71,11 +71,11 @@ class Accesspress_Basic_Contact_Widget extends WP_Widget {
 		extract( $args );
 		extract($instance);
         
-        echo $before_widget;
+        echo wp_kses_post($before_widget);
         ?>
             <div class="contact-info">
                 <?php if(!empty($contact_title)) : ?>
-                    <?php echo $before_title.esc_attr($contact_title).$after_title; ?>
+                    <?php echo wp_kses_post($before_title).esc_attr($contact_title).wp_kses_post($after_title); ?>
                 <?php endif; ?>
                 <ul class="contact-info-wrapper">
                     <?php if(!empty($contact_phone)) : ?>
@@ -90,7 +90,7 @@ class Accesspress_Basic_Contact_Widget extends WP_Widget {
                 </ul>
             </div>
         <?php
-        echo $after_widget;
+        echo wp_kses_post($after_widget);
 	}
 
 	/**
@@ -117,7 +117,7 @@ class Accesspress_Basic_Contact_Widget extends WP_Widget {
 	
 			// Use helper function to get updated field values
 			$instance[$apbasic_widgets_name] = accesspress_basic_widgets_updated_field_value( $widget_field, $new_instance[$apbasic_widgets_name] );
-			echo $instance[$apbasic_widgets_name];
+			echo esc_html($instance[$apbasic_widgets_name]);
 			
 		}
 				

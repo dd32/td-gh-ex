@@ -17,9 +17,9 @@ get_header(); ?>
 
 			<header class="page-header">
                 <?php if(empty($search_results_for_text)) : ?>
-				    <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'accesspress-basic' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				    <h1 class="page-title"><?php /* translator: %s : search keyword */ printf( __( 'Search Results for: %s', 'accesspress-basic' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
                 <?php else : ?>
-                    <h1 class="page-title"><?php echo $search_results_for_text . ': <span>' . get_search_query() . '</span>'; ?></h1>                    
+                    <h1 class="page-title"><?php echo esc_html($search_results_for_text) . ': <span>' . get_search_query() . '</span>'; ?></h1>                    
                 <?php endif; ?>
 			</header><!-- .page-header -->
 

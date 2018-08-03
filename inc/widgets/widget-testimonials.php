@@ -78,15 +78,15 @@ class Accesspress_Basic_Testimonial_Widget extends WP_Widget {
         $img_id = attachment_url_to_postid($client_image);
         $image = wp_get_attachment_image_src($img_id,'accesspress-basic-testimonial-thumbnail');
         
-        echo $before_widget;
+        echo wp_kses_post($before_widget);
             ?>
                 <div class="testimonials-wrap clearfix">
                     <figure class="testimonial-image-wrap">
                         <div class="testimonial-img">
                             <?php if(!empty($image[0])) : ?>
-                                <img src="<?php echo $image[0]; ?>" />
+                                <img src="<?php echo esc_url($image[0]); ?>" />
                             <?php else : ?>
-                                <img src="<?php echo get_template_directory_uri().'/images/no-testimonial-thumbnail.png'; ?>" />
+                                <img src="<?php echo esc_url(get_template_directory_uri().'/images/no-testimonial-thumbnail.png'); ?>" />
                             <?php endif; ?>
                         </div>
                         <span class="client-name"><?php echo esc_attr($client_name); ?></span>
@@ -97,7 +97,7 @@ class Accesspress_Basic_Testimonial_Widget extends WP_Widget {
                     </div>
                 </div>
             <?php
-        echo $after_widget;        
+        echo wp_kses_post($after_widget);        
 	}
 
 	/**
@@ -124,7 +124,7 @@ class Accesspress_Basic_Testimonial_Widget extends WP_Widget {
 	
 			// Use helper function to get updated field values
 			$instance[$apbasic_widgets_name] = accesspress_basic_widgets_updated_field_value( $widget_field, $new_instance[$apbasic_widgets_name] );
-			echo $instance[$apbasic_widgets_name];
+			echo esc_attr($instance[$apbasic_widgets_name]);
 			
 		}
 				
