@@ -155,7 +155,7 @@ acool_add_field(
 		'type'			 => 'custom', //toggle
 		'settings'		 => 'info',
 		'title'		=> __( 'Theme Settings', 'acool' ),
-         'description' => '<p class="documentation-text">' . __('1. Documentation for Acool can be found <a target="_blank" href="https://www.coothemes.com/doc/acool-manual.php">here</a>', 'acool') . '</p><p class="documentation-text">' . __('2. A full theme demo can be found <a target="_blank" href="https://www.coothemes.com/themes/acool.php">here</a>', 'acool') . '</p>', 		
+         'description' => '<p class="documentation-text">' . __('1. Documentation for Acool can be found <a target="_blank" href="https://www.coothemes.com/acool-pro-manual/">here</a>', 'acool') . '</p><p class="documentation-text">' . __('2. A full theme demo can be found <a target="_blank" href="https://www.coothemes.com/theme-acool/">here</a>', 'acool') . '</p>', 		
 		'section'		 => 'general_theme_option',
 		'priority'		 => 10,
 	)

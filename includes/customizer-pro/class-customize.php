@@ -76,7 +76,7 @@ final class acool_Customize {
 					'title'    => esc_html__( 'Acool Pro', 'acool' ),
 					'priority'	=> 8,	
 					'pro_text' => esc_html__( 'Upgrade to Pro',         'acool' ),
-					'pro_url'  => 'https://www.coothemes.com/themes/acool.php'
+					'pro_url'  => 'https://www.coothemes.com/theme-acool/'
 				)
 			)
 		);
