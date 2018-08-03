@@ -72,6 +72,9 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.4.8
+ * Fixed Security Issues
+
 Version 2.4.7
  * Made Translation Ready
 

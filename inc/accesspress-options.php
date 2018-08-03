@@ -103,6 +103,7 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Background Settings', 'accesspress-mag' ) ,
+            /* translators: %s : customizer page link */
             'desc' => sprintf(__( 'Go to <a href="%s" target="_blank">customize page</a> to change the background settings', 'accesspress-mag' ), esc_url(admin_url('/customize.php'))),
             'id'   => 'back_setting_option',    
             'type' => 'info',  
@@ -140,7 +141,7 @@ function optionsframework_options() {
             'name' => __( 'Custom Css', 'accesspress-mag' ),
             'desc' => __( 'Add your required css', 'accesspress-mag' ),
             'id' => 'custom_css',
-            'std' => __( '', 'accesspress-mag' ),
+            'std' => '',
             'type' => 'textarea' 
             );
      $options[] = array(
@@ -211,6 +212,7 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Header Image', 'accesspress-mag' ) ,
+            /* translators: %s : customizer page link */
             'desc' => sprintf(__( 'Go to <a href="%s" target="_blank">customize page</a> to add Header Image', 'accesspress-mag' ), esc_url(admin_url('/customize.php'))),
             'id'   => 'header_image',    
             'type' => 'info',  
@@ -218,6 +220,7 @@ function optionsframework_options() {
 
      $options[] = array(
             'name' => __( 'Favicon', 'accesspress-mag' ),
+            /* translators: %s : customizer page link */
             'desc' => sprintf(__( 'Go to <a href="%s" target="_blank">customize page</a> to add Site Icon', 'accesspress-mag' ), esc_url(admin_url('/customize.php'))),
             'id' => 'favicon_upload',
             'type' => 'info', 
@@ -328,6 +331,7 @@ function optionsframework_options() {
 
     $options[] = array(
             'name' => __( 'Your Header Ad', 'accesspress-mag' ),
+            /* translators: %s : widget page link */
             'desc' => sprintf(__( 'Go to <a href="%s" target="_blank">Widget Page</a> to add Header Ads <br> Ads Size : 728x90px <br> Sidebar Name: Header Ad ', 'accesspress-mag' ), esc_url(admin_url('/widgets.php'))),
             'id' => 'value_header_ad',
             'type' => 'info' 
@@ -344,6 +348,7 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Your Article Ad', 'accesspress-mag' ),
+            /* translators: %s : widget page link */
             'desc' => sprintf(__( 'Go to <a href="%s" target="_blank">Widget Page</a> to add Article Ad <br> Ads Size : 728x90px <br> Sidebar Name: Article Ad ', 'accesspress-mag' ), esc_url(admin_url('/widgets.php'))),
             'id' => 'value_article_ad',
             'type' => 'info' 
@@ -358,18 +363,21 @@ function optionsframework_options() {
             );
     $options[] = array(
             'name' => __( 'Your Homepage Inline Ad', 'accesspress-mag' ),
+            /* translators: %s : widget page link */
             'desc' => sprintf(__( 'Go to <a href="%s" target="_blank">Widget Page</a> to add Homepage Inline Ad <br> Ads Size : 728x90px <br> Sidebar Name: Homepage Inline Ad ', 'accesspress-mag' ), esc_url(admin_url('/widgets.php'))),
             'id' => 'value_homepage_inline_ad',
             'type' => 'info' 
             );
     $options[] = array(
             'name' => __( 'Your Homepage Sidebar Top Ad', 'accesspress-mag' ),
+            /* translators: %s : widget page link */
             'desc' => sprintf(__( 'Go to <a href="%s" target="_blank">Widget Page</a> to add Homepage Sidebar Top Ad <br> Ads Size : 300x250px <br> Sidebar Name: Homepage Sidebar Top Ad ', 'accesspress-mag' ), esc_url(admin_url('/widgets.php'))),
             'id' => 'value_sidebar_top_ad',
             'type' => 'info' 
             );
     $options[] = array(
             'name' => __( 'Your Homepage Sidebar Middle Ad', 'accesspress-mag' ),
+            /* translators: %s : widget page link */
             'desc' => sprintf(__( 'Go to <a href="%s" target="_blank">Widget Page</a> to add Homepage Sidebar Middle Ad <br> Ads Size : 300x250px <br> Sidebar Name: Homepage Sidebar Middle Ad ', 'accesspress-mag' ), esc_url(admin_url('/widgets.php'))),
             'id' => 'value_sidebar_middle_ad',
             'type' => 'info' 

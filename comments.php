@@ -25,14 +25,27 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'accesspress-mag' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+				$accesspress_mag_comment_count = get_comments_number();
+				if ( '1' === $accesspress_mag_comment_count ) {
+					printf(
+						/* translators: 1: title. */
+						esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'accesspress-mag' ),
+						'<span>' . get_the_title() . '</span>'
+					);
+				} else {
+					printf( // WPCS: XSS OK.
+						/* translators: 1: comment count number, 2: title. */
+						esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $accesspress_mag_comment_count, 'comments title', 'accesspress-mag' ) ),
+						number_format_i18n( $accesspress_mag_comment_count ),
+						'<span>' . get_the_title() . '</span>'
+					);
+				}
 			?>
 		</h2>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'accesspress-mag' ); ?></h2>
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'accesspress-mag' ); ?></h2>
 			<div class="nav-links">
 
 				<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'accesspress-mag' ) ); ?></div>
@@ -53,7 +66,7 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php _e( 'Comment navigation', 'accesspress-mag' ); ?></h2>
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'accesspress-mag' ); ?></h2>
 			<div class="nav-links">
 
 				<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'accesspress-mag' ) ); ?></div>
@@ -69,7 +82,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'accesspress-mag' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'accesspress-mag' ); ?></p>
 	<?php endif; ?>
 
 	<?php 
@@ -80,7 +93,7 @@ if ( post_password_required() ) {
 		esc_attr( $commenter['comment_author'] ) . '" size="30" aria-required="true" />'.
 		'</div></div>',
 
-		'email'  => '<div class="control-group"><div class="controls">' . '<input id="email" placeholder="'.__( 'Email Address *', 'accesspress-mag' ).'" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+		'email'  => '<div class="control-group"><div class="controls">' . '<input id="email" placeholder="'.__( 'Email Address *', 'accesspress-mag' ).'" name="email" type="text" value="' . esc_attr(  $commenter['comment_authoresc_html_email'] ) .
 		'" size="30" aria-required="true" />'  .
 		'</div></div>',
 

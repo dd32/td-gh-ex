@@ -15,7 +15,7 @@
         <div class="close">&times;</div>
      <form action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search-form" method="get">
         <label>
-            <span class="screen-reader-text"><?php _e( 'Search for:', 'accesspress-mag' ) ?></span>
+            <span class="screen-reader-text"><?php esc_html_e( 'Search for:', 'accesspress-mag' ) ?></span>
             <input type="search" title="<?php esc_attr_e( 'Search for:', 'accesspress-mag' ); ?>" name="s" value="<?php echo get_search_query(); ?>" placeholder="<?php echo esc_attr( $search_placeholder ); ?>" class="search-field" />
         </label>
         <div class="icon-holder">

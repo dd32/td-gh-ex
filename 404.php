@@ -14,10 +14,10 @@ get_header(); ?>
 				<div class="apmag-container">
 					<div class="page-content">
 						<div class="page-404-wrap clearfix">
-							<span class="oops"><?php _e( 'Oops!!', 'accesspress-mag' );?></span>
+							<span class="oops"><?php esc_html_e( 'Oops!!', 'accesspress-mag' );?></span>
 							<div class="error-num"> 
-							<span class="num"><?php _e( '404', 'accesspress-mag' );?></span>
-							<span class="not_found"><?php _e( 'Page Not Found', 'accesspress-mag' );?></span>
+							<span class="num"><?php esc_html_e( '404', 'accesspress-mag' );?></span>
+							<span class="not_found"><?php esc_html_e( 'Page Not Found', 'accesspress-mag' );?></span>
 							</div>
 						</div>
 					</div><!-- .page-content -->

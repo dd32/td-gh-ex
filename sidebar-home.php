@@ -17,7 +17,7 @@ if( empty( $trans_editor ) ){ $trans_editor = __( "Editor's Pick", "accesspress-
 $page_sidebar = get_post_meta( $post->ID, 'accesspress_mag_page_sidebar_layout', true);
 ?>
 
-<div id="secondary-<?php if( empty( $page_sidebar ) ){ echo 'right-sidebar';}else{ echo $page_sidebar; } ?>" class="widget-area" role="complementary">
+<div id="secondary-<?php if( empty( $page_sidebar ) ){ echo 'right-sidebar';}else{ echo esc_attr($page_sidebar); } ?>" class="widget-area" role="complementary">
     <div id="secondary" class="secondary-wrapper">
         <?php if ( is_active_sidebar( 'accesspress-mag-home-top-sidebar' )) { ?>
         <div id="home-top-sidebar" class="widget-area wow fadeInUp" data-wow-delay="0.5s" role="complementary">
@@ -81,7 +81,7 @@ $page_sidebar = get_post_meta( $post->ID, 'accesspress_mag_page_sidebar_layout',
                     ?>
                         <h3 class="post-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
                         <div class="block-poston"><?php do_action( 'accesspress_mag_home_posted_on' );?></div>
-                        <?php if( $e_counter > 1 ){echo '</div>';} if( $e_counter == 1 ) { ?><div class="post-content"><?php echo '<p>'. accesspress_mag_word_count( get_the_content(), 25) .'</p>' ;?></div><?php } ?>
+                        <?php if( $e_counter > 1 ){echo '</div>';} if( $e_counter == 1 ) { ?><div class="post-content"><?php echo '<p>'. esc_html(accesspress_mag_word_count( get_the_content(), 25)) .'</p>' ;?></div><?php } ?>
                 </div><!-- .single_post -->
             <?php
                     }

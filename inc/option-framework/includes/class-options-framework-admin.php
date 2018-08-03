@@ -189,25 +189,37 @@ class Options_Framework_Admin {
 	<div id="optionsframework-wrap" class="wrap apmag-themeoption">
     <div class="theme-header clearfix">
 		<div class="accesspress-mag-logo">
-    		<img src="<?php echo get_template_directory_uri();?>/images/logo.png" alt="<?php esc_attr_e('AccessPress Mag','accesspress-mag'); ?>" />
+    		<img src="<?php echo esc_url( get_template_directory_uri() . '/images/logo.png' ); ?>" alt="<?php esc_attr_e('AccessPress Mag','accesspress-mag'); ?>" />
     		<div class="theme-name">
                 <?php 
                 $theme = wp_get_theme();
-                echo $theme->get( 'Name' )." V". $theme->get( 'Version' ) . __( ' - Theme Option Panel', 'accesspress-mag' ); ?>
+                echo esc_html($theme->get( 'Name' ))." V". esc_html($theme->get( 'Version' )) . esc_html__( ' - Theme Option Panel', 'accesspress-mag' ); ?>
             </div>
         </div>
         <div class="ak-socials">
             <p>
-              <a target="_blank" href="<?php echo esc_url( 'http://demo.accesspressthemes.com/accesspress-mag/' ); ?>"><?php _e( 'Demo', 'accesspress-mag' ); ?></a> |
-              <a target="_blank" href="<?php echo esc_url( 'http://doc.accesspressthemes.com/accesspress-mag-documentation/' ); ?>"><?php _e( 'Documentation', 'accesspress-mag' ); ?></a> |  
-              <?php echo sprintf(__('Any question!! Click <a href="%s" target="_blank">here</a> for Live Chat.','accesspress-mag'),esc_url('https://accesspressthemes.com/contact/')); ?>  
+              <a target="_blank" href="<?php echo esc_url( 'http://demo.accesspressthemes.com/accesspress-mag/' ); ?>"><?php esc_html_e( 'Demo', 'accesspress-mag' ); ?></a> |
+              <a target="_blank" href="<?php echo esc_url( 'http://doc.accesspressthemes.com/accesspress-mag-documentation/' ); ?>"><?php esc_html_e( 'Documentation', 'accesspress-mag' ); ?></a> |  
+              <?php /* translators: %s : contact link */ echo sprintf(__('Any question!! Click <a href="%s" target="_blank">here</a> for Live Chat.','accesspress-mag'),esc_url('https://accesspressthemes.com/contact/')); ?>  
             </p>
         </div>
 	</div>
         
          
 	    <div class="nav-tab-wrapper">
-	        <?php echo Options_Framework_Interface::optionsframework_tabs(); ?>
+	        <?php
+		        echo wp_kses(Options_Framework_Interface::optionsframework_tabs(), array(
+		        	'a' => array(
+		        		'id' => array(),
+		        		'class' => array(),
+		        		'title' => array(),
+		        		'href' => array()
+		        	),
+		        	'div' => array(
+		        		'class' => array()
+		        	)
+		        ));
+	        ?>
 	    </div>
 
 		<div id="optionsframework-metabox" class="metabox-holder">
@@ -231,25 +243,25 @@ class Options_Framework_Admin {
 		</div>
 		<div class="promo-banner clearfix">
 	        <div class="banner-image">
-	            <img src="<?php echo get_template_directory_uri().'/inc/option-framework/images/upgrade-mag-pro.jpg' ?>" />           
+	            <img src="<?php echo esc_url(get_template_directory_uri().'/inc/option-framework/images/upgrade-mag-pro.jpg'); ?>" />           
 	        </div> 
 	        <div class="button-link">
                 <?php
                     $pro_demo_link = 'http://demo.accesspressthemes.com/accesspress-mag-pro';
                     $pro_upgrade_link = 'https://accesspressthemes.com/wordpress-themes/accesspress-mag-pro/';
                 ?>
-    			<a href="<?php echo esc_url( $pro_demo_link ); ?>" target="_blank"><img src="<?php echo get_template_directory_uri().'/inc/option-framework/images/demo-btn.png'?>"/></a>
-    			<a href="<?php echo esc_url( $pro_upgrade_link ); ?>" target="_blank"><img src="<?php echo get_template_directory_uri().'/inc/option-framework/images/upgrade-btn.png' ?>"/></a>
+    			<a href="<?php echo esc_url( $pro_demo_link ); ?>" target="_blank"><img src="<?php echo esc_url(get_template_directory_uri().'/inc/option-framework/images/demo-btn.png'); ?>"/></a>
+    			<a href="<?php echo esc_url( $pro_upgrade_link ); ?>" target="_blank"><img src="<?php echo esc_url(get_template_directory_uri().'/inc/option-framework/images/upgrade-btn.png'); ?>"/></a>
 		    </div>
 	        <div class="any-question">
-	    		<?php echo sprintf( __('Any question!! Click <a href="%s" target="_blank"> here!! </a> for live chat', 'accesspress-mag'), esc_url('https://accesspressthemes.com/contact/')); ?>
+	    		<?php /* translators: %s : contact link */ echo sprintf( wp_kses('Any question!! Click <a href="%s" target="_blank"> here!! </a> for live chat', array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), esc_url('https://accesspressthemes.com/contact/')); ?>
 	    	</div>
 
         	<div class="view-features">
-        	<h3><?php _e('View Features','accesspress-mag'); ?> <span>+<span></h3>
+        	<h3><?php esc_html_e('View Features','accesspress-mag'); ?> <span>+<span></h3>
     		
     		<div style="display:none" class="view-features-img"> 
-            <img src="<?php echo get_template_directory_uri().'/inc/option-framework/images/upgrade-mag-pro-features.jpg'?>" />
+            <img src="<?php echo esc_url(get_template_directory_uri().'/inc/option-framework/images/upgrade-mag-pro-features.jpg'); ?>" />
         	</div>
         	</div>
         </div>

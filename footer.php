@@ -65,7 +65,7 @@
             <?php if( $accesspress_mag_sub_footer_switch == 1 ){ ?>
         		<div class="site-info">
                     <?php if( $accesspress_mag_copyright_symbol == 1 ){ ?>
-                        <span class="copyright-symbol"> &copy; <?php echo date( 'Y' ) ?></span>
+                        <span class="copyright-symbol"> &copy; <?php echo esc_html(date( 'Y' )); ?></span>
                     <?php } ?> 
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
                     <?php
@@ -77,14 +77,14 @@
         		</div><!-- .site-info -->
             <?php } ?>
                 <div class="ak-info">
-                    <?php _e( 'Powered by ', 'accesspress-mag' );  ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'accesspress-mag' ) ); ?>"><?php _e( 'WordPress', 'accesspress-mag' ); ?> </a>
-                    <?php _e( '| Theme: ', 'accesspress-mag' );?>
-                    <a title="AccessPress Themes" href="<?php echo esc_url( 'http://accesspressthemes.com', 'accesspress-mag' ); ?>"><?php _e( 'AccessPress Mag', 'accesspress-mag' ); ?></a>
+                    <?php esc_html_e( 'Powered by ', 'accesspress-mag' );  ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'accesspress-mag' ) ); ?>"><?php esc_html_e( 'WordPress', 'accesspress-mag' ); ?> </a>
+                    <?php esc_html_e( '| Theme: ', 'accesspress-mag' );?>
+                    <a title="AccessPress Themes" href="<?php echo esc_url( 'http://accesspressthemes.com', 'accesspress-mag' ); ?>"><?php esc_html_e( 'AccessPress Mag', 'accesspress-mag' ); ?></a>
                 </div><!-- .ak-info -->
              <?php if ( ( has_nav_menu( 'footer_menu' ) ) && ( $accesspress_mag_sub_footer_switch == 1 ) ) { ?>      
                 <div class="subfooter-menu">
                     <nav id="footer-navigation" class="footer-main-navigation" role="navigation">
-                        <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Footer Menu', 'accesspress-mag' ); ?></button>
+                        <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php esc_html_e( 'Footer Menu', 'accesspress-mag' ); ?></button>
                         <?php wp_nav_menu( array( 'theme_location' => 'footer_menu', 'container_class' => 'footer_menu' ) ); ?>
                     </nav><!-- #site-navigation -->
                 </div><!-- .subfooter-menu -->

@@ -15,7 +15,16 @@
 		<?php if ( 'post' == get_post_type() ) : ?>
     		<div class="entry-meta">
                 <?php 
-                    echo get_the_category_list();
+                    echo wp_kses( get_the_category_list(), array(
+                        'ul' => array(
+                            'class' => array()
+                        ),
+                        'li' => array(),
+                        'a' => array(
+                            'href' => array(),
+                            'rel' => array()
+                        )
+                    ) );
     			    accesspress_mag_posted_on();
                     do_action('accesspress_mag_post_meta');
                 ?>

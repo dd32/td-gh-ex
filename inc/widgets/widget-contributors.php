@@ -54,7 +54,7 @@ class Accesspress_mag_article_contributors extends WP_Widget {
     public function widget($args, $instance) {
         extract($args);
         $contributors_title = $instance['contributors_title'];
-        echo $before_widget; 
+        echo wp_kses_post($before_widget); 
     ?>
         <div class="contributors-wrapper clearfix">
            <h1 class="widget-title"><span><?php if( !empty( $contributors_title )  ){ echo esc_attr($contributors_title); } ?></span></h1>     
@@ -77,7 +77,7 @@ class Accesspress_mag_article_contributors extends WP_Widget {
                 ?>
                             <div class="single-user">
                                 <a href="<?php echo esc_url( get_author_posts_url( $user_id, $user_nickname ) ) ;?>">
-                                    <div class="user-image"><?php echo  $user_avatar ;?></div>
+                                    <div class="user-image"><?php echo wp_kses($user_avatar, array( 'img' => array( 'alt' => array(), 'src' => array(), 'srcset' => array(), 'class' => array(), 'height' => array(), 'width' => array() ) )) ;?></div>
                                     <h3 class="user-name"><?php echo esc_attr( $user_name );?></h3>
                                 </a>
                             </div>
@@ -89,7 +89,7 @@ class Accesspress_mag_article_contributors extends WP_Widget {
            </div><!-- .single-user-wrapper -->
         </div><!-- .contributors-wrapper-->
     <?php 
-        echo $after_widget;
+        echo wp_kses_post($after_widget);
     }
 
     /**

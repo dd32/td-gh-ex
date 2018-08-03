@@ -61,7 +61,7 @@ class Accesspress_mag_register_latest_posts extends WP_Widget {
         extract( $args );
         $latest_posts_title = $instance[ 'latest_posts_title' ];
         $latest_posts_count = $instance[ 'latest_posts_count' ];
-        echo $before_widget; 
+        echo wp_kses_post($before_widget); 
     ?>
         <div class="latest-posts clearfix">
            <h1 class="widget-title"><span><?php if( !empty( $latest_posts_title ) ){ echo esc_attr( $latest_posts_title ); } ?></span></h1>     
@@ -82,7 +82,7 @@ class Accesspress_mag_register_latest_posts extends WP_Widget {
                             <?php if( has_post_thumbnail() ) { ?>
                                 <img src="<?php echo esc_url( $image_path[0] );?>" alt="<?php echo esc_attr( $image_alt );?>" />
                             <?php } else { ?>
-                                <img src="<?php echo esc_url( get_template_directory_uri(). '/images/no-image-small.jpg' );?>" alt="<?php _e( 'No image', 'accesspress-mag' );?>" />                            
+                                <img src="<?php echo esc_url( get_template_directory_uri(). '/images/no-image-small.jpg' );?>" alt="<?php esc_html_e( 'No image', 'accesspress-mag' );?>" />                            
                             <?php } ?>
                             </a>
                         </div><!-- .post-img -->
@@ -98,7 +98,7 @@ class Accesspress_mag_register_latest_posts extends WP_Widget {
            </div><!-- .latest-posts-wrapper -->
         </div><!-- .latest-posts -->
     <?php 
-        echo $after_widget;
+        echo wp_kses_post($after_widget);
     }
 
     /**

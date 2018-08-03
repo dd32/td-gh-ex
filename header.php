@@ -43,17 +43,17 @@
         <div class="top-menu-wrapper <?php echo esc_attr( $top_menu_class ); ?> clearfix">
             <div class="apmag-container">
             <?php if( empty( $apmag_date_option ) && $apmag_date_option != '1' ) { ?>
-            <div class="current-date"><?php echo date_i18n( 'l, F j, Y' ); ?></div>
+            <div class="current-date"><?php echo esc_html(date_i18n( 'l, F j, Y' )); ?></div>
             <?php } ?>
             <?php if ( has_nav_menu( 'top_menu' ) ) { ?>   
                 <nav id="top-navigation" class="top-main-navigation">
-                            <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php _e( 'Top Menu', 'accesspress-mag' ); ?></button>
+                            <button class="menu-toggle hide" aria-controls="menu" aria-expanded="false"><?php esc_html_e( 'Top Menu', 'accesspress-mag' ); ?></button>
                             <?php wp_nav_menu( array( 'theme_location' => 'top_menu', 'container_class' => 'top_menu_left' ) ); ?>
                 </nav><!-- #site-navigation -->
             <?php } ?>
             <?php if ( has_nav_menu( 'top_menu_right' ) ) { ?>        
                 <nav id="top-right-navigation" class="top-right-main-navigation">
-                            <button class="menu-toggle hide" aria-controls="top-right-menu" aria-expanded="false"><?php _e( 'Top Menu Right', 'accesspress-mag' ); ?></button>
+                            <button class="menu-toggle hide" aria-controls="top-right-menu" aria-expanded="false"><?php esc_html_e( 'Top Menu Right', 'accesspress-mag' ); ?></button>
                             <?php wp_nav_menu( array( 'theme_location' => 'top_menu_right', 'container_class' => 'top_menu_right' ) ); ?>
                 </nav><!-- #site-navigation -->
             <?php } ?>

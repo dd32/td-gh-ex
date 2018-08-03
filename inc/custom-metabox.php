@@ -103,27 +103,27 @@ function accesspress_mag_post_settings_callback()
 
 <div class="my_post_settings">
         <table class="form-table">
-            <tr><td colspan="4"><em class="f13"><?php _e( 'Post template:', 'accesspress-mag' )?></em></td></tr>            
+            <tr><td colspan="4"><em class="f13"><?php esc_html_e( 'Post template:', 'accesspress-mag' )?></em></td></tr>            
             <tr><td>
             <?php  
                foreach ($accesspress_mag_post_template_layout as $field) {  
                             $accesspress_mag_post_template_metalayout = get_post_meta( $post->ID, 'accesspress_mag_post_template_layout', true );?>
                                             
-                            <div class="radio-post-template-wrapper" available="<?php echo $field['available'];?>" style="float:left; margin-right:30px;">
+                            <div class="radio-post-template-wrapper" available="<?php echo esc_attr($field['available']); ?>" style="float:left; margin-right:30px;">
                             <label class="description">
                             <span><img src="<?php echo esc_url( $field['thumbnail'] ); ?>" alt="" /></span></br>
-                            <input type="radio" name="accesspress_mag_post_template_layout" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $accesspress_mag_post_template_metalayout ); if(empty($accesspress_mag_post_template_metalayout) && $field['value']=='global-template'){ echo "checked='checked'";} ?>/>&nbsp;<?php echo $field['label']; ?>
+                            <input type="radio" name="accesspress_mag_post_template_layout" value="<?php echo esc_attr($field['value']); ?>" <?php checked( $field['value'], $accesspress_mag_post_template_metalayout ); if(empty($accesspress_mag_post_template_metalayout) && $field['value']=='global-template'){ echo "checked='checked'";} ?>/>&nbsp;<?php echo esc_html($field['label']); ?>
                             </label>
                             </div>
                             <?php } // end foreach 
                             ?>
-                            <span class="pro-tmp-msg" style="display: none;"><?php _e( 'Template available in pro version', 'accesspress-mag' );?></span>
+                            <span class="pro-tmp-msg" style="display: none;"><?php esc_html_e( 'Template available in pro version', 'accesspress-mag' );?></span>
                             <div class="clear"></div>
             </td></tr>
         </table>
         
         <table class="form-table">
-            <tr><td colspan="4"><em class="f13"><?php _e( 'Post Sidebar', 'accesspress-mag' ); ?></em></td></tr>            
+            <tr><td colspan="4"><em class="f13"><?php esc_html_e( 'Post Sidebar', 'accesspress-mag' ); ?></em></td></tr>            
             <tr><td>
             <?php  
                foreach ($accesspress_mag_sidebar_layout as $field) {  
@@ -132,7 +132,7 @@ function accesspress_mag_post_settings_callback()
                 <div class="radio-image-wrapper" style="float:left; margin-right:30px;">
                 <label class="description">
                 <span><img src="<?php echo esc_url( $field['thumbnail'] ); ?>" alt="" /></span></br>
-                <input type="radio" name="accesspress_mag_sidebar_layout" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $accesspress_mag_sidebar_metalayout ); if(empty($accesspress_mag_sidebar_metalayout) && $field['value']=='global-sidebar'){ echo "checked='checked'";} ?>/>&nbsp;<?php echo $field['label']; ?>
+                <input type="radio" name="accesspress_mag_sidebar_layout" value="<?php echo esc_attr($field['value']); ?>" <?php checked( $field['value'], $accesspress_mag_sidebar_metalayout ); if(empty($accesspress_mag_sidebar_metalayout) && $field['value']=='global-sidebar'){ echo "checked='checked'";} ?>/>&nbsp;<?php echo esc_html($field['label']); ?>
                 </label>
                 </div>
                 <?php } // end foreach 
@@ -140,7 +140,7 @@ function accesspress_mag_post_settings_callback()
                 <div class="clear"></div>
             </td></tr>
             <tr>
-                <td><em class="f13"><?php _e( 'You can set up the sidebar content ', 'accesspress-mag' );?> <a href="<?php echo admin_url('/themes.php?page=ap-theme-options'); ?>"><?php _e( 'here', 'accesspress-mag' )?></a></em></td>
+                <td><em class="f13"><?php esc_html_e( 'You can set up the sidebar content ', 'accesspress-mag' );?> <a href="<?php echo esc_url(admin_url('/themes.php?page=ap-theme-options')); ?>"><?php esc_html_e( 'here', 'accesspress-mag' )?></a></em></td>
             </tr>
         </table>
 </div><!-- .my_post_settings -->
@@ -156,7 +156,7 @@ function accesspress_mag_page_settings_callback()
     wp_nonce_field( basename( __FILE__ ), 'accesspress_mag_page_settings_nonce' );
 ?>
         <table class="form-table">
-            <tr><td colspan="4"><em class="f13"><?php _e('Page Sidebar','accesspress-mag'); ?></em></td></tr>
+            <tr><td colspan="4"><em class="f13"><?php esc_html_e('Page Sidebar','accesspress-mag'); ?></em></td></tr>
             <tr><td>
             <?php  
                foreach ($accesspress_mag_page_sidebar_layout as $field) {  
@@ -165,7 +165,7 @@ function accesspress_mag_page_settings_callback()
                             <div class="radio-image-wrapper" style="float:left; margin-right:30px;">
                             <label class="description">
                             <span><img src="<?php echo esc_url( $field['thumbnail'] ); ?>" alt="" /></span></br>
-                            <input type="radio" name="accesspress_mag_page_sidebar_layout" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $accesspress_mag_page_sidebar_metalayout ); if(empty($accesspress_mag_page_sidebar_metalayout) && $field['value']=='right-sidebar'){ echo "checked='checked'";} ?>/>&nbsp;<?php echo $field['label']; ?>
+                            <input type="radio" name="accesspress_mag_page_sidebar_layout" value="<?php echo esc_attr($field['value']); ?>" <?php checked( $field['value'], $accesspress_mag_page_sidebar_metalayout ); if(empty($accesspress_mag_page_sidebar_metalayout) && $field['value']=='right-sidebar'){ echo "checked='checked'";} ?>/>&nbsp;<?php echo esc_html($field['label']); ?>
                             </label>
                             </div>
                             <?php } // end foreach 
@@ -173,7 +173,7 @@ function accesspress_mag_page_settings_callback()
                             <div class="clear"></div>
             </td></tr>
             <tr>
-                <td><em class="f13"><?php _e( 'You can set up the sidebar content', 'accesspress-mag' );?> <a href="<?php echo esc_url( admin_url('/themes.php?page=ap-theme-options') ); ?>"><?php _e( 'here', 'accesspress-mag' );?></a></em></td>
+                <td><em class="f13"><?php esc_html_e( 'You can set up the sidebar content', 'accesspress-mag' );?> <a href="<?php echo esc_url( admin_url('/themes.php?page=ap-theme-options') ); ?>"><?php esc_html_e( 'here', 'accesspress-mag' );?></a></em></td>
             </tr>
         </table>
 <?php
@@ -190,14 +190,14 @@ function accesspress_mag_save_post_settings( $post_id ) {
     global $accesspress_mag_post_template_layout, $accesspress_mag_sidebar_layout, $post; 
 
     // Verify the nonce before proceeding.
-    if ( !isset( $_POST[ 'accesspress_mag_post_settings_nonce' ] ) || !wp_verify_nonce( $_POST[ 'accesspress_mag_post_settings_nonce' ], basename( __FILE__ ) ) )
+    if ( !isset( $_POST[ 'accesspress_mag_post_settings_nonce' ] ) || !wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST[ 'accesspress_mag_post_settings_nonce' ] ) ), basename( __FILE__ ) ) )
         return;
 
     // Stop WP from clearing custom fields on autosave
     if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE)  
         return;
         
-    if ('page' == $_POST['post_type']) {  
+    if ( isset( $_POST['post_type'] ) && 'page' == sanitize_text_field( wp_unslash( $_POST['post_type'] ) ) ) {  
         if (!current_user_can( 'edit_page', $post_id ) )  
             return $post_id;  
     } elseif (!current_user_can( 'edit_post', $post_id ) ) {  
@@ -207,7 +207,7 @@ function accesspress_mag_save_post_settings( $post_id ) {
     foreach ($accesspress_mag_post_template_layout as $field) {  
         //Execute this saving function
         $old = get_post_meta( $post_id, 'accesspress_mag_post_template_layout', true); 
-        $new = sanitize_text_field($_POST['accesspress_mag_post_template_layout']);
+        $new = isset( $_POST['accesspress_mag_post_template_layout'] ) ? sanitize_text_field( wp_unslash( $_POST['accesspress_mag_post_template_layout'] ) ) : '';
         if ($new && $new != $old) {  
             update_post_meta($post_id, 'accesspress_mag_post_template_layout', $new);  
         } elseif ('' == $new && $old) {  
@@ -218,7 +218,7 @@ function accesspress_mag_save_post_settings( $post_id ) {
    foreach ($accesspress_mag_sidebar_layout as $field) {  
         //Execute this saving function
         $old = get_post_meta( $post_id, 'accesspress_mag_sidebar_layout', true); 
-        $new = sanitize_text_field($_POST['accesspress_mag_sidebar_layout']);
+        $new = isset( $_POST['accesspress_mag_sidebar_layout'] ) ? sanitize_text_field( wp_unslash( $_POST['accesspress_mag_sidebar_layout'] ) ) : '';
         if ($new && $new != $old) {  
             update_post_meta($post_id, 'accesspress_mag_sidebar_layout', $new);  
         } elseif ('' == $new && $old) {  
@@ -236,14 +236,14 @@ function accesspress_mag_save_page_settings( $post_id ) {
     global $accesspress_mag_sidebar_layout, $post; 
 
     // Verify the nonce before proceeding.
-    if ( !isset( $_POST[ 'accesspress_mag_page_settings_nonce' ] ) || !wp_verify_nonce( $_POST[ 'accesspress_mag_page_settings_nonce' ], basename( __FILE__ ) ) )
+    if ( !isset( $_POST[ 'accesspress_mag_page_settings_nonce' ] ) || !wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST[ 'accesspress_mag_page_settings_nonce' ] ) ), basename( __FILE__ ) ) )
         return;
 
     // Stop WP from clearing custom fields on autosave
     if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE)  
         return;
         
-    if ('page' == $_POST['post_type']) {  
+    if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
         if (!current_user_can( 'edit_page', $post_id ) )  
             return $post_id;  
     } elseif (!current_user_can( 'edit_post', $post_id ) ) {  
@@ -253,7 +253,7 @@ function accesspress_mag_save_page_settings( $post_id ) {
     foreach ($accesspress_mag_sidebar_layout as $field) {  
         //Execute this saving function
         $old = get_post_meta( $post_id, 'accesspress_mag_page_sidebar_layout', true); 
-        $new = sanitize_text_field($_POST['accesspress_mag_page_sidebar_layout']);
+        $new = isset( $_POST['accesspress_mag_page_sidebar_layout'] ) ? sanitize_text_field( wp_unslash( $_POST['accesspress_mag_page_sidebar_layout'] ) ) : '';
         if ($new && $new != $old) {  
             update_post_meta($post_id, 'accesspress_mag_page_sidebar_layout', $new);  
         } elseif ('' == $new && $old) {  

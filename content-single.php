@@ -12,7 +12,16 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<div class="entry-meta clearfix">
             <?php 
-                echo get_the_category_list();
+                echo wp_kses( get_the_category_list(), array(
+                    'ul' => array(
+                        'class' => array()
+                    ),
+                    'li' => array(),
+                    'a' => array(
+                        'href' => array(),
+                        'rel' => array()
+                    )
+                ) );
                 accesspress_mag_posted_on();
 		        do_action( 'accesspress_mag_post_meta' );
             ?>

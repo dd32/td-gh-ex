@@ -59,12 +59,12 @@ class Accesspress_mag_register_random_posts extends WP_Widget {
      */
     public function widget( $args, $instance ) {
         extract( $args );
-        $random_posts_title = $instance['random_posts_title'];
-        $random_posts_count = $instance['random_posts_count'];
-        echo $before_widget;
+        $random_posts_title = isset( $instance['random_posts_title'] ) ? $instance['random_posts_title'] : '';
+        $random_posts_count = isset( $instance['random_posts_count'] ) ? $instance['random_posts_count'] : '';
+        echo wp_kses_post($before_widget);
     ?>
         <div class="random-posts clearfix">
-           <h1 class="widget-title"><span><?php if( !empty( $random_posts_title ) ){ echo esc_attr( $random_posts_title ); } ?></span></h1>     
+           <h1 class="widget-title"><span><?php if( !empty( $random_posts_title ) ){ echo esc_html( $random_posts_title ); } ?></span></h1>     
            <div class="random-posts-wrapper">
                 <?php
                     $rand_posts_args = array( 'post_type'=>'post','post_status'=>'publish','posts_per_page'=>$random_posts_count,'orderby'=>'rand' );
@@ -82,7 +82,7 @@ class Accesspress_mag_register_random_posts extends WP_Widget {
                                 <?php if( has_post_thumbnail() ) { ?>
                                 <img src="<?php echo esc_url( $image_path[0] );?>" alt="<?php echo esc_attr( $image_alt );?>" />
                                 <?php } else { ?>
-                                <img src="<?php echo esc_url( get_template_directory_uri(). '/images/no-image-small.jpg' );?>" alt="<?php _e( 'No image', 'accesspress-mag' );?>" />                            
+                                <img src="<?php echo esc_url( get_template_directory_uri(). '/images/no-image-small.jpg' );?>" alt="<?php esc_html_e( 'No image', 'accesspress-mag' );?>" />                            
                                 <?php } ?>
                             </a>
                         </div><!-- .post-img -->
@@ -98,7 +98,7 @@ class Accesspress_mag_register_random_posts extends WP_Widget {
            </div><!-- .random-posts-wrapper -->
         </div><!-- .random-posts -->
         <?php 
-        echo $after_widget;
+        echo wp_kses_post($after_widget);
     }
 
     /**

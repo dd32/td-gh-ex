@@ -26,7 +26,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><span><?php printf( $search_result_text.__( ': %s', 'accesspress-mag' ), '</span><span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><span><?php /* translators: %s : search keyword */ printf( esc_html($search_result_text) . esc_html__( ': %s', 'accesspress-mag' ), '</span><span>' . esc_html(get_search_query()) . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>

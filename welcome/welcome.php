@@ -143,8 +143,8 @@
 				if( is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated'])) ) {
 					?>
 					<div class="notice notice-success is-dismissible">
-						<p><?php printf( __( 'Welcome! Thank you for choosing %1$s! Please make sure you visit our <a href="%2$s">Welcome page</a> to get started with %1$s.', 'accesspress-mag' ), $this->theme_name, admin_url( 'themes.php?page=accesspressmag-welcome' )  ); ?></p>
-						<p><a class="button" href="<?php echo admin_url( 'themes.php?page=accesspressmag-welcome' ) ?>"><?php _e( 'Lets Get Started', 'accesspress-mag' ); ?></a></p>
+						<p><?php /* translators: %1$s : theme name, %2$s : welcome page link */ printf( wp_kses( 'Welcome! Thank you for choosing %1$s! Please make sure you visit our <a href="%2$s">Welcome page</a> to get started with %1$s.', array( 'a' => array( 'href' => array() ) ) ), esc_html($this->theme_name), esc_url(admin_url( 'themes.php?page=accesspressmag-welcome' ))  ); ?></p>
+						<p><a class="button" href="<?php echo esc_url(admin_url( 'themes.php?page=accesspressmag-welcome' )); ?>"><?php esc_html_e( 'Lets Get Started', 'accesspress-mag' ); ?></a></p>
 					</div>
 					<?php
 				}
@@ -161,25 +161,25 @@
 			public function accesspressmag_welcome_screen() {
 				$tabs = $this->tab_sections;
 
-				$current_section = isset($_GET['section']) ? $_GET['section'] : 'getting_started';
+				$current_section = isset($_GET['section']) ? sanitize_text_field( wp_unslash( $_GET['section'] ) ) : 'getting_started';
 				$section_inline_style = '';
 				?>
 				<div class="wrap about-wrap access-wrap">
-					<h1><?php printf( esc_html__( 'Welcome to %s - Version %s', 'accesspress-mag' ), $this->theme_name, $this->theme_version ); ?></h1>
-					<div class="about-text"><?php printf( esc_html__( '%s is clean & modern WordPress Magazine theme. It is ideal for newspaper, editorial, online magazine, blog or personal website. It is a cutting-edge, feature-rich FREE WordPress theme and is fully-responsive.', 'accesspress-mag' ), $this->theme_name ); ?></div>
+					<h1><?php /* translators: %1$s : theme name, %2$s : theme version */ printf( esc_html__( 'Welcome to %1$s - Version %2$s', 'accesspress-mag' ), esc_html($this->theme_name), esc_html($this->theme_version) ); ?></h1>
+					<div class="about-text"><?php /* translators: %s : theme name */ printf( esc_html__( '%s is clean & modern WordPress Magazine theme. It is ideal for newspaper, editorial, online magazine, blog or personal website. It is a cutting-edge, feature-rich FREE WordPress theme and is fully-responsive.', 'accesspress-mag' ), esc_html($this->theme_name) ); ?></div>
 
 					<a target="_blank" href="http://www.accesspressthemes.com" class="accesspress-badge wp-badge"><span><?php echo esc_html('AccessPressThemes'); ?></span></a>
 
 				<div class="nav-tab-wrapper clearfix">
 					<?php foreach($tabs as $id => $label) : ?>
 						<?php
-							$section = isset($_REQUEST['section']) ? esc_attr($_REQUEST['section']) : 'getting_started';
+							$section = isset($_REQUEST['section']) ? sanitize_text_field( wp_unslash( $_REQUEST['section'] ) ) : 'getting_started';
 							$nav_class = 'nav-tab';
 							if($id == $section) {
 								$nav_class .= ' nav-tab-active';
 							}
 						?>
-						<a href="<?php echo admin_url('themes.php?page=accesspressmag-welcome&section='.$id); ?>" class="<?php echo esc_attr($nav_class); ?>" >
+						<a href="<?php echo esc_url(admin_url('themes.php?page=accesspressmag-welcome&section='.$id)); ?>" class="<?php echo esc_attr($nav_class); ?>" >
 							<?php echo esc_html( $label ); ?>
 							<?php if($id == 'actions_required') : $not = $this->get_required_plugin_notification(); ?>
 								<?php if($not) : ?>
@@ -193,7 +193,7 @@
 			   	</div>
 
 		   		<div class="welcome-section-wrapper">
-	   				<?php $section = isset($_REQUEST['section']) ? $_REQUEST['section'] : 'getting_started'; ?>
+	   				<?php $section = isset($_REQUEST['section']) ? sanitize_text_field( wp_unslash( $_REQUEST['section'] ) ) : 'getting_started'; ?>
    					
    					<div class="welcome-section <?php echo esc_attr($section); ?> clearfix">
    						<?php require_once get_template_directory() . '/welcome/sections/'.esc_html($section).'.php'; ?>
@@ -323,15 +323,15 @@
 			public function accesspressmag_plugin_installer_callback(){
 
 				if ( ! current_user_can('install_plugins') )
-					wp_die( __( 'Sorry, you are not allowed to install plugins on this site.', 'accesspress-mag' ) );
+					wp_die( esc_html__( 'Sorry, you are not allowed to install plugins on this site.', 'accesspress-mag' ) );
 
-				$nonce = $_POST["nonce"];
-				$plugin = $_POST["plugin"];
-				$plugin_file = $_POST["plugin_file"];
+				$nonce = isset( $_POST["nonce"] ) ? sanitize_text_field( wp_unslash( $_POST["nonce"] ) ) : '';
+				$plugin = isset( $_POST["plugin"] ) ? sanitize_text_field( wp_unslash( $_POST["plugin"] ) ) : '';
+				$plugin_file = isset( $_POST["plugin_file"] ) ? sanitize_text_field( wp_unslash( $_POST["plugin_file"] ) ) : '';
 
 				// Check our nonce, if they don't match then bounce!
 				if (! wp_verify_nonce( $nonce, 'accesspressmag_plugin_installer_nonce' ))
-					wp_die( __( 'Error - unable to verify nonce, please try again.', 'accesspress-mag') );
+					wp_die( esc_html__( 'Error - unable to verify nonce, please try again.', 'accesspress-mag') );
 
 
          		// Include required libs for installation
@@ -365,10 +365,10 @@
 			public function accesspressmag_plugin_offline_installer_callback() {
 
 				
-				$file_location = $_POST['file_location'];
-				$file = $_POST['file'];
-				$github = $_POST['github'];
-				$slug = $_POST['slug'];
+				$file_location = isset( $_POST['file_location'] ) ? sanitize_text_field( wp_unslash( $_POST['file_location'] ) ) : '';
+				$file = isset( $_POST['file'] ) ? sanitize_text_field( wp_unslash( $_POST['file'] ) ) : '';
+				$github = isset( $_POST['github'] ) ? sanitize_text_field( wp_unslash( $_POST['github'] ) ) : '';
+				$slug = isset( $_POST['slug'] ) ? sanitize_text_field( wp_unslash( $_POST['slug'] ) ) : '';
 				$plugin_directory = ABSPATH . 'wp-content/plugins/';
 
 				$zip = new ZipArchive;
@@ -394,7 +394,7 @@
 			/** Plugin Offline Activation Ajax **/
 			public function accesspressmag_plugin_offline_activation_callback() {
 
-				$plugin = $_POST['plugin'];
+				$plugin = isset( $_POST['plugin'] ) ? sanitize_text_field( wp_unslash( $_POST['plugin'] ) ) : '';
 				$plugin_file = ABSPATH . 'wp-content/plugins/'.esc_html($plugin).'/'.esc_html($plugin).'.php';
 
 				if(file_exists($plugin_file)) {
@@ -411,14 +411,14 @@
 			public function accesspressmag_plugin_activation_callback(){
 
 				if ( ! current_user_can('install_plugins') )
-					wp_die( __( 'Sorry, you are not allowed to activate plugins on this site.', 'accesspress-mag' ) );
+					wp_die( esc_html__( 'Sorry, you are not allowed to activate plugins on this site.', 'accesspress-mag' ) );
 
-				$nonce = $_POST["nonce"];
-				$plugin = $_POST["plugin"];
+				$nonce = isset( $_POST["nonce"] ) ? sanitize_text_field( wp_unslash( $_POST["nonce"] ) ) : '';
+				$plugin = isset( $_POST["plugin"] ) ? sanitize_text_field( wp_unslash( $_POST["plugin"] ) ) : '';
 
 				// Check our nonce, if they don't match then bounce!
 				if (! wp_verify_nonce( $nonce, 'accesspressmag_plugin_activate_nonce' ))
-					die( __( 'Error - unable to verify nonce, please try again.', 'accesspress-mag' ) );
+					die( esc_html__( 'Error - unable to verify nonce, please try again.', 'accesspress-mag' ) );
 
 
 	         	// Include required libs for activation
