@@ -13,7 +13,7 @@ License URI: License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 === Description ===
-Best Food is a clean and beautiful, polished and feature-rich, robust and easy to use, fully responsive premium WordPress theme that is ideal for restaurant, caf¨¦, bakery, cuisine, fast food, pizzerias, drinks and food related business. The theme is loaded with many pre-built home page sections to help you create an amazing modern one-page website without having to write a single line of code. The Best Food free theme displays full screen image banner, About Us section, Service Section, Recent Posts Section and Contact Us form as well as Footer widgets. You have full control including font, font size, color, button, opacity of every open section. The theme is optimized for fast loading and extremely responsive with various devices. Demo here: https://www.coothemes.com/demos/best-food/
+Best Food is a clean and beautiful, polished and feature-rich, robust and easy to use, fully responsive premium WordPress theme that is ideal for restaurant, cafe, bakery, cuisine, fast food, pizzerias, drinks and food related business. The theme is loaded with many pre-built home page sections to help you create an amazing modern one-page website without having to write a single line of code. The Best Food free theme displays full screen image banner, About Us section, Service Section, Recent Posts Section and Contact Us form as well as Footer widgets. You have full control including font, font size, color, button, opacity of every open section. The theme is optimized for fast loading and extremely responsive with various devices. Demo here: http://demos.coothemes.com/?theme-demo=best-food-pro
 
 === License ===
 Best Food WordPress Theme  is a child theme of Theta WordPress Theme, Copyright 2018 Coothemes.com
@@ -75,6 +75,9 @@ Theta provides support at https://www.coothemes.com/forum/best-food-theme/.
 
 
 === Changelog ===
+version 1.0.4 20180803
+*update demo link
+
 version 1.0.3 20180510
 *fix service icon
 

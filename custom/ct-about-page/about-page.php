@@ -24,7 +24,7 @@ $config = array(
 	/* translators: s - theme name */
 	'welcome_title'       => sprintf( __( 'Welcome to %s! - Version ', 'best-food' ), 'best-food' ),
 	// Main welcome content
-	'welcome_content'     => esc_html__( 'Best Food is a clean and beautiful, polished and feature-rich, robust and easy to use, fully responsive premium WordPress theme that is ideal for restaurant, cafe, bakery, cuisine, fast food, pizzerias, drinks and food related business. The theme is loaded with many pre-built home page sections to help you create an amazing modern one-page website without having to write a single line of code. The Best Food free theme displays full screen image banner, About Us section, Service Section, Recent Posts Section and Contact Us form as well as Footer widgets. You have full control including home page section order, font, font size, color, button, opacity of every open section. The theme is optimized for fast loading and extremely responsive with various devices. You can see the demo at https://www.coothemes.com/demos/best-food-pro/', 'best-food' ),
+	'welcome_content'     => esc_html__( 'Best Food is a clean and beautiful, polished and feature-rich, robust and easy to use, fully responsive premium WordPress theme that is ideal for restaurant, cafe, bakery, cuisine, fast food, pizzerias, drinks and food related business. The theme is loaded with many pre-built home page sections to help you create an amazing modern one-page website without having to write a single line of code. The Best Food free theme displays full screen image banner, About Us section, Service Section, Recent Posts Section and Contact Us form as well as Footer widgets. You have full control including home page section order, font, font size, color, button, opacity of every open section. The theme is optimized for fast loading and extremely responsive with various devices. You can see the demo at http://demos.coothemes.com/?theme-demo=best-food-pro', 'best-food' ),
 	/**
 	 * Tabs array.
 	 *
@@ -58,7 +58,7 @@ $config = array(
 			'title'               => esc_html__( 'Read full documentation', 'best-food' ),
 			'text'                => esc_html__( 'Need more details? Please check our full documentation for detailed information on how to use best-food.', 'best-food' ),
 			'button_label'        => esc_html__( 'Documentation', 'best-food' ),
-			'button_link'         => 'https://www.coothemes.com/doc/best-food-pro-manual.php',
+			'button_link'         => 'https://www.coothemes.com/best-food-pro-manual/',
 			'is_button'           => false,
 			'recommended_actions' => false,
 			'is_new_tab'          => true,

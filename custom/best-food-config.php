@@ -132,7 +132,7 @@
 		  'label'			 => __( 'Best Food PRO', 'best-food' ),
 		  'description'	 => __( 'Available in Best Food PRO: Feature Section, Gallery Section, More Service Items, Facts / Number Section, Our Team Section, Pricing Section, Testimonials Section, Clients Section,Contact Us Section,Call out Section, Google Map, Custom Colors, Google Fonts, video(include Youtube) Backgrounds, More Animations Effects and WooCommerce Compatible much more...', 'best-food' ),
 		  'section'		 => 'homepage_layout',
-		  'default'		 => '<a class="install-now button-primary button" href="' . esc_url( 'https://www.coothemes.com/theme-best-food-pro/' ) . '" aria-label="Best Food PRO" data-name="Best Food PRO">' . __( 'Discover Best Food PRO', 'best-food' ) . '</a>',
+		  'default'		 => '<a class="install-now button-primary button" href="' . esc_url( 'http://demos.coothemes.com/?theme-demo=best-food-pro' ) . '" aria-label="Best Food PRO" data-name="Best Food PRO">' . __( 'Discover Best Food PRO', 'best-food' ) . '</a>',
 		  'priority'		 => 10,
 	  ) ); 
   }
