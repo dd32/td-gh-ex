@@ -96,7 +96,7 @@
 		  'label'			 => __( 'Akaka PRO', 'akaka' ),
 		  'description'	 => __( 'Available in Akaka PRO: Feature Section, Gallery Section, Service Section, Facts / Number Section, Our Team Section, Pricing Section, Testimonials Section, Clients Section,Contact Us Section,Download Section, Google Map, Custom Colors, Google Fonts, video(include Youtube) Backgrounds, Animations, Custom Footer Link and much more...', 'akaka' ),
 		  'section'		 => 'homepage_layout',
-		  'default'		 => '<a class="install-now button-primary button" href="' . esc_url( 'https://www.coothemes.com/themes/theta.php' ) . '" aria-label="Akaka PRO" data-name="Akaka PRO">' . __( 'Discover Akaka PRO', 'akaka' ) . '</a>',
+		  'default'		 => '<a class="install-now button-primary button" href="' . esc_url( 'https://www.coothemes.com/theme-akaka/' ) . '" aria-label="Akaka PRO" data-name="Akaka PRO">' . __( 'Discover Akaka PRO', 'akaka' ) . '</a>',
 		  'priority'		 => 10,
 	  ) ); 
   }
