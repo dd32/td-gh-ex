@@ -4,7 +4,7 @@ Theme URI: http://prosystheme.com/wordpress-themes/bakery-shop
 Author: Prosys Theme
 Author URI: http://prosystheme.com/
 Description: Bakery Shop is a modern Multipurpose responsive Bakery Shop style WordPress theme suitable for business, portfolio, food, bakery shop, cake shop, travel, blogs, publishing and any kind of sites. This theme supports Ecommerce so that this theme can be used in any kind of shops. The theme is built on Customizer and it allows you to easily customize your website with live previews. The theme is Speed and Search Engine Optimized (SEO) to help you easily climb the google rank. Other feature includes social media integration, custom widgets, author bio, breadcrumb, custom CSS, translation ready and more. Check demo at http://prosystheme.com/preview/bakery-shop/ and documentation at http://prosystheme.com/documentation/bakery-shop. Read theme details at http://prosystheme.com/wordpress-themes/bakery-shop and get free support at http://prosystheme.com/request-a-support.
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bakery-shop
@@ -1653,6 +1653,7 @@ a.rsswidget{
 
 .featured-text a{
     text-decoration: none;
+    display: table;
 }
 
 .featured-products-section{

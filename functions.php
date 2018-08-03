@@ -28,8 +28,6 @@ if(is_array($bakery_shop_post_array)){
     $bakery_shop_default_post = $bakery_shop_post_array[0]->ID;
 }
 
-
-
 /**
  * Load Jetpack compatibility file.
  */

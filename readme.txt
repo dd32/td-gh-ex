@@ -5,8 +5,8 @@ Author: Prosys Theme (http://prosystheme.com)
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-logo, custom-menu, featured-image-header, featured-images,  threaded-comments, translation-ready, theme-options, footer-widgets, blog, full-width-template, custom-colors, e-commerce, food-and-drink 
 
 Requires at least: 4.0
-Tested up to: 4.9.7
-Stable tag: 1.0.6
+Tested up to: 4.9.8
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -63,6 +63,10 @@ Bakery Shop WordPress Theme is distributed under the terms of the GPLv2 or later
    
 
 == Change Log ==
+1.0.7
+ * View Pro Theme Button added.
+ * Fixed Found Bugs.
+
 1.0.6
  * Template Tags fixed.
 

@@ -281,7 +281,6 @@ function bakery_shop_welcome(){
     if( $welcome_enable ){
         echo '<section id="about" class="about-section">';
             echo '<div class="container">';
-                echo '<div class="row">';
                 if( have_posts() ){
                     while( have_posts() ){
                         the_post();
@@ -300,7 +299,6 @@ function bakery_shop_welcome(){
                     }
                 }
                 wp_reset_postdata();  
-                echo '</div>'; 
             echo '</div>'; 
         echo '</section>';     
     }    

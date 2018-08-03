@@ -5,7 +5,7 @@
  * @package bakery_shop
  */
 
-    $bakery_shop_settings = array( 'default', 'home', 'breadcrumb'  );
+    $bakery_shop_settings = array( 'info', 'default', 'home', 'breadcrumb'  );
 
     /* Option list of all post */	
     $bakery_shop_options_posts = array();
