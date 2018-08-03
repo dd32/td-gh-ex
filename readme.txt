@@ -121,6 +121,9 @@ content/themes/Ascreen/index.php (for example).
 3. Log into your WP admin panel and go to Appearance -> Themes. Now move your mouse over the Ascreen theme to activate  it.
 
 == Changelog ==
+Version 1.4.3  2018.8.3
+*fix link problem
+
 Version 1.4.2  2017.6.19
 * remove optionframework
 * add kirki

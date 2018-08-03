@@ -76,7 +76,7 @@ final class Example_1_Customize {
 					'title'    => esc_html__( 'Ascreen Pro', 'ascreen' ),
 					'priority'	=> 8,	
 					'pro_text' => esc_html__( 'Upgrade to Pro',         'ascreen' ),
-					'pro_url'  => 'https://www.coothemes.com/themes/ascreen.php'
+					'pro_url'  => 'https://www.coothemes.com/theme-ascreen/'
 				)
 			)
 		);

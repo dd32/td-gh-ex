@@ -433,7 +433,7 @@ if (class_exists('Woocommerce')) {
 		  'label'			 => __( 'Ascreen PRO', 'ascreen' ),
 		  'description'	 => __( 'Available in Ascreen PRO: Feature Section, Gallery Section, Service Section, Facts / Number Section, Our Team Section, Pricing Section, Testimonials Section, Clients Section,Contact Us Section,Download Section, Google Map, Custom Colors, Google Fonts, video(include Youtube) Backgrounds, Animations, Custom Footer Link and much more...', 'ascreen' ),
 		  'section'		 => 'homepage_layout',
-		  'default'		 => '<a class="install-now button-primary button" href="' . esc_url( 'https://www.coothemes.com/themes/ascreen.php' ) . '" aria-label="Ascreen PRO" data-name="Ascreen PRO">' . __( 'Discover Ascreen PRO', 'ascreen' ) . '</a>',
+		  'default'		 => '<a class="install-now button-primary button" href="' . esc_url( 'https://www.coothemes.com/theme-ascreen/' ) . '" aria-label="Ascreen PRO" data-name="Ascreen PRO">' . __( 'Discover Ascreen PRO', 'ascreen' ) . '</a>',
 		  'priority'		 => 10,
 	  ) ); 
   }
