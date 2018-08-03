@@ -3,7 +3,7 @@ Contributors: CooThemes
 Tags: Blog, Custom Background, Custom Colors, Custom Header, Custom Logo, Custom Menu, E-Commerce, Featured Images, Flexible Header, Footer Widgets, Full Width Template, Left Sidebar, Portfolio, Right Sidebar, Theme Options, Translation Ready, Two Columns
 
 Requires at least: 4.0
-Tested up to: 4.9.6
+Tested up to: 4.9.7
 Stable tag: 1.0.0
 
 Author URI:  https://www.coothemes.com/
@@ -13,7 +13,7 @@ License URI: License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 === Description ===
-Best Construction is a fully responsive WordPress theme built for businesses like architecture, building, company, construction, constructor, contractor, corporate, industry, metal, painter, plumber, plumbing, remodeling, renovation, roofing and other construction related businesses. The theme is purpose-oriented designed and comes with loads of awesome features, such as gallery, portfolio, HTML5 video background, call to action, Google Map and subscribe form, to perfectly present your company in a very pleasant and professional way. Moreover, you can easily re-create the front-page or part of it on any other page of your website. The theme is fully compatible with WooCommerce, Contact Form 7 and MailChimp. And it¡¯s highly customized and allows you to build a unique website without editing a single line of code. Demo: https://www.coothemes.com/demos/theta-all-pro/?page_id=232
+Best Construction is a fully responsive WordPress theme built for businesses like architecture, building, company, construction, constructor, contractor, corporate, industry, metal, painter, plumber, plumbing, remodeling, renovation, roofing and other construction related businesses. The theme is purpose-oriented designed and comes with loads of awesome features, such as gallery, portfolio, HTML5 video background, call to action, Google Map and subscribe form, to perfectly present your company in a very pleasant and professional way. Moreover, you can easily re-create the front-page or part of it on any other page of your website. The theme is fully compatible with WooCommerce, Contact Form 7 and MailChimp. And it's highly customized and allows you to build a unique website without editing a single line of code. Demo: http://demo.coothemes.com/best-construction-pro/
 
 === License ===
 Best Construction WordPress Theme, Copyright 2018 Coothemes.com
@@ -65,11 +65,11 @@ Best Construction is distributed under the terms of the GNU General Public Licen
 
 Does this theme have a support forum? 
 
-Theta provides support at https://www.coothemes.com/forum/theta-theme/best-construction-theme/
+Theta provides support at https://www.coothemes.com/forum/theta-all-theme/best-construction-theme/
 
 
 === Changelog ===
-=version 1.0.2 20180717=
+=version 1.0.3 20180803=
 *modify link
 
 =version 1.0.1 20180710=

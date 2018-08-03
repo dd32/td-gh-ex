@@ -229,7 +229,7 @@ function best_construction_import_files() {
 			'import_customizer_file_url' => trailingslashit( THEME_URL ) . 'custom/demo-content/best-construction.dat',
 			'import_preview_image_url'   => trailingslashit( THEME_URL ) . 'custom/demo-content/images/demo1.jpg',
 			'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'best-construction' ),
-			'preview_url'                => 'https://www.coothemes.com/demos/?theme-demo=theta-all-pro',
+			'preview_url'                => 'http://demo.coothemes.com/best-construction-pro/',
 		),
 		array(
 			'import_file_name'           => 'best-construction Free',
@@ -238,7 +238,7 @@ function best_construction_import_files() {
 
 			'import_preview_image_url'   => trailingslashit( THEME_URL ) . 'custom/demo-content/images/demo1.jpg',
 			'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'best-construction' ),
-			'preview_url'                => 'https://www.coothemes.com/demos/theta-all-pro/?page_id=151',
+			'preview_url'                => 'http://demo.coothemes.com/best-construction-pro/',
 		),
 	);
 }
