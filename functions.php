@@ -252,12 +252,10 @@ if ( ! function_exists( 'artgallery_display_slider' ) ) :
 			<?php
 				// display slides
 				for ( $i = 1; $i <= 3; ++$i ) {
-
-						$defaultSlideContent = __( '<h3>This is Default Slide Title</h3><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'artgallery' );
 						
 						$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
 
-						$slideContent = get_theme_mod( 'artgallery_slide'.$i.'_content', html_entity_decode( $defaultSlideContent ) );
+						$slideContent = get_theme_mod( 'artgallery_slide'.$i.'_content' );
 						$slideImage = get_theme_mod( 'artgallery_slide'.$i.'_image', $defaultSlideImage );
 
 					?>

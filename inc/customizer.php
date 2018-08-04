@@ -61,7 +61,6 @@ if ( ! function_exists( 'artgallery_customize_register' ) ) :
 			$wp_customize->add_setting(
 				$slideContentId,
 				array(
-					'default'           => __( '<h2>This is Default Slide Title</h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'artgallery' ),
 					'sanitize_callback' => 'force_balance_tags',
 				)
 			);

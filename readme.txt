@@ -17,6 +17,9 @@ ArtGallery is fully Responsive Moto WordPress Theme. Features: Custom Logo, Cust
 
 == Changelog ==
 
+= 1.0.5 =
+- display slider in static homepage only
+
 = 1.0.4 =
 - change homepage slider images
 
@@ -66,7 +69,7 @@ ArtGallery is fully Responsive Moto WordPress Theme. Features: Custom Logo, Cust
 *
 * images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/copenhagen-denmark-art-gallery-169052/ 
 *
-* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/woman-art-creative-relaxation-girl-1283009/
+* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/istanbul-turkey-art-gallery-168774/ 
 *
 * inc/customize-pro/class-customize.php, © Justin Tadlock (justintadlock), GNU Version 2
 * inc/customize-pro/customize-controls.css, © Justin Tadlock (justintadlock), GNU Version 2
