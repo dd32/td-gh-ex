@@ -131,8 +131,30 @@ function admela_customize_register( $wp_customize ) {
 		
 		$admela_cats[$admela_cat->term_id] = $admela_cat->slug;
 	}
-  
+		
+	// After Header Ad Section,Setting,Control
 	
+	$wp_customize->add_section('admela_after_header_ad_section',array(
+		'title' => esc_html__('After Header Ad Code','admela'),
+		'priority' => 11,
+		'panel' => 'admela_panel_id'
+	));
+
+	$wp_customize->add_setting('admela_after_header_ad_setting',array(
+        'capability' => 'edit_theme_options',
+		'transport' => 'postMessage',
+        'sanitize_callback' => 'admela_sanitize_textarea',
+	));
+
+	$wp_customize->add_control('admela_after_header_ad_control',array(
+        'type' => 'textarea',
+		'section' => 'admela_after_header_ad_section', 
+		'label' => esc_html__('Paste your Ad  Code','admela'),
+		'settings' => 'admela_after_header_ad_setting',
+		'description' => esc_html__('Here, you can also add your after header ad code with shorcode format','admela'),
+	));
+	
+  	
 	$wp_customize->add_section('admela_slider_category_section',array(
 		'title' => esc_html__('Home Page Slider','admela'),
 		'priority' => 12,
@@ -250,6 +272,27 @@ function admela_customize_register( $wp_customize ) {
 		)
 	));
 		
+	// After Category Section Ad section,setting,control
+	
+	$wp_customize->add_section('admela_after_home_category_post_ad_section',array(
+		'title' => esc_html__('Home After Category Post Section Ad','admela'),
+		'priority' => 14,
+		'panel' => 'admela_panel_id'
+	));
+	
+	$wp_customize->add_setting('admela_after_home_category_post_ad_setting',array(
+        'capability' => 'edit_theme_options',		
+		'transport' => 'refresh',
+        'sanitize_callback' => 'admela_sanitize_textarea',
+	));
+
+	$wp_customize->add_control('admela_after_home_category_post_ad_control',array(
+        'type' => 'textarea',
+		'section' => 'admela_after_home_category_post_ad_section', 
+		'label' => esc_html__('Paste your after category post section Ad  Code','admela'),
+		'settings' => 'admela_after_home_category_post_ad_setting',
+		'description' => esc_html__('Here, you can also add your after category post section code with shorcode format','admela'),
+	));
 	
 	
 	// Latest post section,setting,control
@@ -290,6 +333,76 @@ function admela_customize_register( $wp_customize ) {
 		'description' => esc_html__('Here, you can change your latest post sub title text','admela'),
 	));
 	
+	// After LatestPost Section Ad section,setting,control
+	
+	$wp_customize->add_section('admela_after_home_latestpost_ad_section',array(
+		'title' => esc_html__('Home After Latestpost Post Section Ad','admela'),
+		'priority' => 16,
+		'panel' => 'admela_panel_id'
+	));
+	
+	$wp_customize->add_setting('admela_after_home_latestpost_ad_setting',array(
+        'capability' => 'edit_theme_options',		
+		'transport' => 'refresh',
+        'sanitize_callback' => 'admela_sanitize_textarea',
+	));
+
+	$wp_customize->add_control('admela_after_home_latestpost_ad_control',array(
+        'type' => 'textarea',
+		'section' => 'admela_after_home_latestpost_ad_section', 
+		'label' => esc_html__('Paste your after latest post section Ad  Code','admela'),
+		'settings' => 'admela_after_home_latestpost_ad_setting',
+		'description' => esc_html__('Here, you can also add your after latest post section code with shorcode format','admela'),
+	));
+	
+	$wp_customize->add_setting('admela_single_post_top_ad_setting',array(
+        'capability' => 'edit_theme_options',		
+		'transport' => 'refresh',
+        'sanitize_callback' => 'admela_sanitize_textarea',
+	));
+
+	$wp_customize->add_control('admela_single_post_top_ad_control',array(
+        'type' => 'textarea',
+		'section' => 'admela_single_post_section', 
+		'label' => esc_html__('Paste your single post content top Ad  Code','admela'),
+		'settings' => 'admela_single_post_top_ad_setting',
+		'description' => esc_html__('Here, you can also add your single post content top ad code with shorcode format','admela'),
+	));
+	
+	$wp_customize->add_setting('admela_single_post_top_ad_alignment_setting',array(
+        'capability' => 'edit_theme_options',
+		'default'    => 'none',
+		'transport' => 'refresh',  
+        'sanitize_callback' => 'admela_sanitize_select'		
+	));
+
+	$wp_customize->add_control('admela_single_post_top_ad_alignment_control',array(
+        'type' => 'select',
+		'section' => 'admela_single_post_section', 
+		'label' => esc_html__('Choose your single post content top ad alignment','admela'),
+		'settings' => 'admela_single_post_top_ad_alignment_setting',
+		'description' => esc_html__('Here, you can also add your single post content top ad alignment','admela'),
+	    'choices' => array(
+		 'none' => esc_html__('None','admela'),
+		 'left' => esc_html__('Left','admela'),
+		 'right' => esc_html__('Right','admela')
+		)
+	));
+	
+	
+	$wp_customize->add_setting('admela_single_post_bottom_ad_setting',array(
+        'capability' => 'edit_theme_options',		
+		'transport' => 'refresh',
+        'sanitize_callback' => 'admela_sanitize_textarea',
+	));
+
+	$wp_customize->add_control('admela_single_post_bottom_ad_control',array(
+        'type' => 'textarea',
+		'section' => 'admela_single_post_section', 
+		'label' => esc_html__('Paste your single post content bottom Ad Code','admela'),
+		'settings' => 'admela_single_post_bottom_ad_setting',
+		'description' => esc_html__('Here, you can also add your single post content bottom ad code with shorcode format','admela'),
+	));
 	
 	// Single post section, socialshare setting, socialshare control
 	

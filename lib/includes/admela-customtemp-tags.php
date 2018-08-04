@@ -281,7 +281,7 @@ function admela_paging_nav() {
 	if ( $admela_pagenav_links ) :
 
 	?>
-<div class="admela_pagination"> <?php echo $admela_pagenav_links; ?> </div>
+<div class="admela_pagination"> <?php echo wp_kses_post($admela_pagenav_links); ?> </div>
 <!-- .admela_pagination -->
 <?php
 endif;
@@ -317,11 +317,13 @@ if(is_single()) {
 		</span>		
 		</div>
 	</div>  
-   <?php if(get_theme_mod('admela_active_postsocialshare') != false) {	 ?>
+   <?php if(get_theme_mod('admela_active_postsocialshare') != false) {	 
+	$admela_onclickjs = 'javascript:window.open(this.href,"","menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=800,width=800");return false;';
+	?>
     <div class="admela_ebyright">		
-		<a href="//www.facebook.com/sharer.php?u=<?php esc_url(the_permalink()); ?>&amp;t=<?php echo htmlspecialchars(urlencode(html_entity_decode(esc_html(get_the_title()), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8'); ?>" class="admela_eshfb" target="_blank" onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=800,width=800');return false;"> <i class="fab fa-facebook-f"></i><span class="admela_esfbtext"><?php esc_html_e('Share on Facebook','admela'); ?></span></a>
+		<a href="<?php echo esc_url('//www.facebook.com/sharer.php?u=');?><?php the_permalink();?>&amp;t=<?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8'); ?>" class="admela_eshfb" target="_blank" onclick="<?php echo esc_js($admela_onclickjs); ?>"> <i class="fab fa-facebook-f"></i><span class="admela_esfbtext"><?php esc_html_e('Share on Facebook','admela'); ?></span></a>
 		<!--facebook-->		
-		<a href="//twitter.com/share?text=<?php echo htmlspecialchars(urlencode(html_entity_decode(esc_html(get_the_title()), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8'); ?>&amp;url=<?php esc_url(the_permalink()); ?>" target="_blank" onclick="javascript:window.open(this.href,'','menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=800,width=800'); return false;" class="admela_eshtwt"> <i class="fab fa-twitter"></i><span class="admela_esfbtext"><?php esc_html_e('Share on Twitter','admela'); ?></span></a>
+		<a href="<?php echo esc_url('//twitter.com/share?text=');?><?php echo htmlspecialchars(urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')), ENT_COMPAT, 'UTF-8'); ?>&amp;url=<?php the_permalink(); ?>" target="_blank" onclick="<?php echo esc_js($admela_onclickjs); ?>" class="admela_eshtwt"> <i class="fab fa-twitter"></i><span class="admela_esfbtext"><?php esc_html_e('Share on Twitter','admela'); ?></span></a>
 		<!--twitter-->			
 	</div>
 	<?php }	?>

@@ -61,7 +61,7 @@ else {
 		?>
 		<p>
         <?php					
-			echo wp_trim_words($admela_contentlimit,30,'..');
+			echo esc_html(wp_trim_words($admela_contentlimit,30,'..'));
 					 
 			wp_link_pages( array(
 				'before'=> '<div class="admela_pagelinks"><span class="admela_pagelinkstitle">' . esc_html__( 'Pages:', 'admela' ) . '</span>',

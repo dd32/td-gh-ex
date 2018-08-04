@@ -45,9 +45,8 @@ Theme is Built using the following resource bundles.
 	License: MIT
 	Source: https://necolas.github.io/normalize.css/
 	
-3 -	Pexel Images, 
-	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://www.pexels.com/photo-license/
+3 -	Pixabay Images
+	Source: https://pixabay.com/en/photos/
 
 4 - All the icons taken from Fontawesome Icons.
     
