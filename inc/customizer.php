@@ -36,7 +36,7 @@ if ( ! function_exists( 'artgallery_customize_register' ) ) :
 		$wp_customize->add_setting(
 				'artgallery_slider_display',
 				array(
-						'default'           => 1,
+						'default'           => 0,
 						'sanitize_callback' => 'artgallery_sanitize_checkbox',
 				)
 		);
