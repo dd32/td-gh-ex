@@ -50,12 +50,14 @@ Added Translation for Brazilian Portuguese by Giovanna Chinellato (Email: giovan
 
 == Change Log ==
 
-= 3.6.1 (Unreleased: July 12, 2018) =
+= 3.6.2 (Released: July 12, 2018) =
 * Added: Core Privacy Policy link support in footer
+* Updated: Upgrade to pro button css update
+
+= 3.6.1 (Released: July 30, 2018) =
 * Bug Fixed: Design issue with Catch Infinite Scroll plugin
 * Code Optimization
 * Removed: changelog.txt file and added changelog in readme.txt file
-* Update: Upgrade to pro button css update
 
 = 3.6 (Released: June 08, 2017) =
 * Internationalized date() to date_i18n()
