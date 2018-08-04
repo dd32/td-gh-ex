@@ -199,7 +199,7 @@ function fcorpo_show_website_logo_image_and_title() {
  */
 function fcorpo_show_header_phone() {
 
-	$phone = get_theme_mod('fcorpo_header_phone', '1.555.555.555');
+	$phone = get_theme_mod('fcorpo_header_phone');
 
 	if ( !empty( $phone ) ) {
 
@@ -212,7 +212,7 @@ function fcorpo_show_header_phone() {
  */
 function fcorpo_show_header_email() {
 
-	$email = get_theme_mod('fcorpo_header_email', 'info@yoursite.com');
+	$email = get_theme_mod('fcorpo_header_email');
 
 	if ( !empty( $email ) ) {
 
@@ -327,20 +327,20 @@ function fcorpo_display_slider() { ?>
 		<?php
 			// display slides
 			for ( $i = 1; $i <= 3; ++$i ) {
-
-					$defaultSlideContent = __( '<h3>This is Default Slide Title</h3><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a class="btn" title="Read more" href="#">Read more</a>', 'fcorpo' );
 					
 					$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
 
-					$slideContent = get_theme_mod( 'fcorpo_slide'.$i.'_content', html_entity_decode( $defaultSlideContent ) );
-					$slideImage = get_theme_mod( 'fcorpo_slide'.$i.'_image', $defaultSlideImage );
+					$slideContent = get_theme_mod( 'fcorpo_slide'.$i.'_content' );
+					$slideImage = get_theme_mod( 'fcorpo_slide'.$i.'_image' );
 
 				?>
 
 					<div data-thumb="<?php echo esc_attr( $slideImage ); ?>" data-src="<?php echo esc_attr( $slideImage ); ?>">
-						<div class="camera_caption fadeFromBottom">
-							<?php echo $slideContent; ?>
-						</div>
+						<?php if ( $slideContent ) : ?>
+								<div class="camera_caption fadeFromBottom">
+									<?php echo $slideContent; ?>
+								</div>
+						<?php endif; ?>
 					</div>
 <?php		} ?>
 	</div><!-- #camera_wrap -->
@@ -351,79 +351,84 @@ function fcorpo_display_social_sites() {
 
 	echo '<ul class="header-social-widget">';
 
-	$socialURL = get_theme_mod('fcorpo_social_facebook', '#');
+	$socialURL = get_theme_mod('fcorpo_social_facebook');
 	if ( !empty($socialURL) ) {
 
 		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Facebook', 'fcorpo') . '" class="facebook16"></a>';
 	}
 
-	$socialURL = get_theme_mod('fcorpo_social_google', '#');
+	$socialURL = get_theme_mod('fcorpo_social_google');
 	if ( !empty($socialURL) ) {
 
 		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Google+', 'fcorpo') . '" class="google16"></a>';
 	}
 
-	$socialURL = get_theme_mod('fcorpo_social_twitter', '#');
+	$socialURL = get_theme_mod('fcorpo_social_twitter');
 	if ( !empty($socialURL) ) {
 
 		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Twitter', 'fcorpo') . '" class="twitter16"></a>';
 	}
 
-	$socialURL = get_theme_mod('fcorpo_social_linkedin', '#');
+	$socialURL = get_theme_mod('fcorpo_social_linkedin');
 	if ( !empty($socialURL) ) {
 
 		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on LinkedIn', 'fcorpo') . '" class="linkedin16"></a>';
 	}
 
-	$socialURL = get_theme_mod('fcorpo_social_instagram', '#');
+	$socialURL = get_theme_mod('fcorpo_social_instagram');
 	if ( !empty($socialURL) ) {
 
 		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Instagram', 'fcorpo') . '" class="instagram16"></a>';
 	}
 
-	$socialURL = get_theme_mod('fcorpo_social_rss', get_bloginfo( 'rss2_url' ));
+	$socialURL = get_theme_mod('fcorpo_social_rss');
 	if ( !empty($socialURL) ) {
 
 		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow our RSS Feeds', 'fcorpo') . '" class="rss16"></a>';
 	}
 
-	$socialURL = get_theme_mod('fcorpo_social_tumblr', '#');
+	$socialURL = get_theme_mod('fcorpo_social_tumblr');
 	if ( !empty($socialURL) ) {
 
 		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Tumblr', 'fcorpo') . '" class="tumblr16"></a>';
 	}
 
-	$socialURL = get_theme_mod('fcorpo_social_youtube', '#');
+	$socialURL = get_theme_mod('fcorpo_social_youtube');
 	if ( !empty($socialURL) ) {
 
 		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Youtube', 'fcorpo') . '" class="youtube16"></a>';
 	}
 
-	$socialURL = get_theme_mod('fcorpo_social_pinterest', '#');
+	$socialURL = get_theme_mod('fcorpo_social_pinterest');
 	if ( !empty($socialURL) ) {
 
 		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Pinterest', 'fcorpo') . '" class="pinterest16"></a>';
 	}
 
-	$socialURL = get_theme_mod('fcorpo_social_vk', '#');
+	$socialURL = get_theme_mod('fcorpo_social_vk');
 	if ( !empty($socialURL) ) {
 
 		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on VK', 'fcorpo') . '" class="vk16"></a>';
 	}
 
-	$socialURL = get_theme_mod('fcorpo_social_flickr', '#');
+	$socialURL = get_theme_mod('fcorpo_social_flickr');
 	if ( !empty($socialURL) ) {
 
 		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Flickr', 'fcorpo') . '" class="flickr16"></a>';
 	}
 
-	$socialURL = get_theme_mod('fcorpo_social_vine', '#');
+	$socialURL = get_theme_mod('fcorpo_social_vine');
 	if ( !empty($socialURL) ) {
 
 		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Vine', 'fcorpo') . '" class="vine16"></a>';
 	}
 
 	echo '</ul>';
+}
+
+function fcorpo_sanitize_checkbox( $checked ) {
+	// Boolean check.
+	return ( ( isset( $checked ) && true == $checked ) ? true : false );
 }
 
 /**
@@ -446,7 +451,7 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 			'fcorpo_slider_display',
 			array(
-					'default'           => 1,
+					'default'           => 0,
 					'sanitize_callback' => 'fcorpo_sanitize_checkbox',
 			)
 	);
@@ -471,7 +476,6 @@ function fcorpo_customize_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			$slideContentId,
 			array(
-				'default'           => __( '<h2>This is Default Slide Title</h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a class="btn" title="Read more" href="#">Read more</a>', 'fcorpo' ),
 				'sanitize_callback' => 'force_balance_tags',
 			)
 		);
@@ -519,7 +523,6 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_header_phone',
 		array(
-		    'default'           => '1.555.555.555',
 		    'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
@@ -538,7 +541,6 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_header_email',
 		array(
-		    'default'           => 'info@yoursite.com',
 		    'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
@@ -587,7 +589,6 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_facebook',
 		array(
-		    'default'           => '#',
 		    'sanitize_callback' => 'esc_url_raw',
 		)
 	);
@@ -606,7 +607,6 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_google',
 		array(
-		    'default'           => '#',
 		    'sanitize_callback' => 'esc_url_raw',
 		)
 	);
@@ -625,7 +625,6 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_twitter',
 		array(
-		    'default'           => '#',
 		    'sanitize_callback' => 'esc_url_raw',
 		)
 	);
@@ -644,7 +643,6 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_linkedin',
 		array(
-		    'default'           => '#',
 		    'sanitize_callback' => 'esc_url_raw',
 		)
 	);
@@ -663,7 +661,6 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_instagram',
 		array(
-		    'default'           => '#',
 		    'sanitize_callback' => 'esc_url_raw',
 		)
 	);
@@ -682,7 +679,6 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_rss',
 		array(
-		    'default'           => get_bloginfo( 'rss2_url' ),
 		    'sanitize_callback' => 'esc_url_raw',
 		)
 	);
@@ -701,7 +697,6 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_tumblr',
 		array(
-		    'default'           => '#',
 		    'sanitize_callback' => 'esc_url_raw',
 		)
 	);
@@ -720,7 +715,6 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_youtube',
 		array(
-		    'default'           => '#',
 		    'sanitize_callback' => 'esc_url_raw',
 		)
 	);
@@ -739,7 +733,6 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_pinterest',
 		array(
-		    'default'           => '#',
 		    'sanitize_callback' => 'esc_url_raw',
 		)
 	);
@@ -758,7 +751,6 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_vk',
 		array(
-		    'default'           => '#',
 		    'sanitize_callback' => 'esc_url_raw',
 		)
 	);
@@ -777,7 +769,6 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_flickr',
 		array(
-		    'default'           => '#',
 		    'sanitize_callback' => 'esc_url_raw',
 		)
 	);
@@ -796,7 +787,6 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_vine',
 		array(
-		    'default'           => '#',
 		    'sanitize_callback' => 'esc_url_raw',
 		)
 	);
@@ -827,7 +817,7 @@ function fcorpo_customize_register( $wp_customize ) {
 			'fcorpo_animations_display',
 			array(
 					'default'           => 1,
-					'sanitize_callback' => 'esc_attr',
+					'sanitize_callback' => 'fcorpo_sanitize_checkbox',
 			)
 	);
 
