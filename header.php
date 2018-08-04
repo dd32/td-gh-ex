@@ -40,17 +40,17 @@
 				&nbsp;
 			</div>
 
-			<?php if ( (is_front_page() || is_home()) && get_theme_mod('fkidd_slider_display', 1) == 1 ) : ?>
+			<?php if ( is_front_page() && get_option( 'show_on_front' ) == 'page' ) : ?>
 
-					<?php fkidd_display_slider(); ?>
+					<?php if ( get_theme_mod('fkidd_slider_display', 0) == 1 ) : ?>
+
+						<?php fkidd_display_slider(); ?>
+
+					<?php endif; ?>
+
+					<?php get_sidebar( 'home' ); ?>
 				
 			<?php endif; ?>
 
 			<div class="clear">
 			</div>
-
-			<?php if ( is_home() || is_front_page() ) :
-
-						get_sidebar( 'home' );
-			
-				  endif; ?>

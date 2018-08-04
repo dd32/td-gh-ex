@@ -1,3 +1,8 @@
+fKidd 1.8.6, 2018-08-04
+------------------------
+- display slider and homepage widgets only on static homepage
+- remove default widgets content
+
 fKidd 1.8.5, 2018-06-02
 ------------------------
 - add homepage widget areas

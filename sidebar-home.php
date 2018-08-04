@@ -17,23 +17,7 @@
 					 */
 				?>
 				<div class="col3a">
-
-					<?php if ( !dynamic_sidebar( 'homepage-column-1-widget-area' ) && current_user_can('edit_theme_options') ) : ?>
-
-								<h2 class="sidebar-title">
-									<?php esc_html_e('Home Col Widget 1', 'fkidd'); ?>
-								</h2><!-- .sidebar-title -->
-								
-								<div class="sidebar-after-title">
-								</div><!-- .sidebar-after-title -->
-								
-								<div class="textwidget">
-									<?php esc_html_e('This is first homepage widget area. To customize it, please navigate to Admin Panel -> Appearance -> Widgets and add widgets to Homepage Column #1.', 'fkidd'); ?>
-								</div><!-- .textwidget -->
-					
-					<?php endif; // end of ! dynamic_sidebar( 'homepage-column-1-widget-area' )
-						  ?>
-
+					<?php dynamic_sidebar( 'homepage-column-1-widget-area' ); ?>
 				</div><!-- .col3a -->
 
 		<?php endif; ?>
@@ -46,22 +30,7 @@
 					 */
 				?>
 				<div class="col3b">
-					<?php if ( !dynamic_sidebar( 'homepage-column-2-widget-area' ) && current_user_can('edit_theme_options') ) : ?>
-					
-							<h2 class="sidebar-title">
-								<?php esc_html_e('Home Col Widget 2', 'fkidd'); ?>
-							</h2><!-- .sidebar-title -->
-							
-							<div class="sidebar-after-title">
-							</div><!-- .sidebar-after-title -->
-							
-							<div class="textwidget">
-								<?php esc_html_e('This is second homepage widget area. To customize it, please navigate to Admin Panel -> Appearance -> Widgets and add widgets to Homepage Column #2.', 'fkidd'); ?>
-							</div><!-- .textwidget -->
-								
-					<?php endif; // end of ! dynamic_sidebar( 'homepage-column-2-widget-area' )
-						  ?>
-					
+					<?php dynamic_sidebar( 'homepage-column-2-widget-area' ); ?>
 				</div><!-- .col3b -->
 
 		<?php endif; ?>
@@ -74,22 +43,7 @@
 					 */
 				?>
 				<div class="col3c">
-					<?php if ( !dynamic_sidebar( 'homepage-column-3-widget-area' ) && current_user_can('edit_theme_options') ) : ?>
-					
-							<h2 class="sidebar-title">
-								<?php esc_html_e('Home Col Widget 3', 'fkidd'); ?>
-							</h2><!-- .sidebar-title -->
-							
-							<div class="sidebar-after-title">
-							</div><!-- .sidebar-after-title -->
-							
-							<div class="textwidget">
-								<?php esc_html_e('This is third homepage widget area. To customize it, please navigate to Admin Panel -> Appearance -> Widgets and add widgets to Homepage Column #3.', 'fkidd'); ?>
-							</div><!-- .textwidget -->
-								
-					<?php endif; // end of ! dynamic_sidebar( 'homepage-column-3-widget-area' )
-						  ?>
-					
+					<?php dynamic_sidebar( 'homepage-column-3-widget-area' ); ?>
 				</div><!-- .col3c -->
 
 		<?php endif; ?>
@@ -106,26 +60,9 @@
 	<?php if ( is_active_sidebar( 'homepage-below-widget-area' ) ) : ?>
 
 			<div id="top-widget-inner">
-
-				<?php if ( !dynamic_sidebar( 'homepage-below-widget-area' ) && current_user_can('edit_theme_options') ) : ?>
-
-						<h2 class="sidebar-title">
-							<?php esc_html_e('Homepage Above Columns', 'fkidd'); ?>
-						</h2><!-- .sidebar-title -->
-								
-						<div class="sidebar-after-title">
-						</div><!-- .sidebar-after-title -->
-								
-						<div class="textwidget">
-							<?php esc_html_e('This is homepage above columns widget area. To customize it, please navigate to Admin Panel -> Appearance -> Widgets and add widgets to Homepage Above Columns.', 'fkidd'); ?>
-						</div><!-- .textwidget -->
-
-				<?php endif; // end of ! dynamic_sidebar( 'homepage-top-widget-area' )
-						  ?>
-
+				<?php dynamic_sidebar( 'homepage-below-widget-area' ); ?>
 				<div class="clear">
 				</div>
-
 			</div>
 
 	<?php endif; ?>

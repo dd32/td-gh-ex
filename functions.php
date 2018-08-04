@@ -88,12 +88,11 @@ add_action( 'after_setup_theme', 'fkidd_setup' );
 /**
  * Add Social Site control into Customizer
  */
-function fkidd_customize_add_social_site($wp_customize, $controlId, $label, $defaultValue) {
+function fkidd_customize_add_social_site($wp_customize, $controlId, $label) {
 
 	$wp_customize->add_setting(
 		$controlId,
 		array(
-		    'default'           => $defaultValue,
 		    'sanitize_callback' => 'esc_url_raw',
 		)
 	);
@@ -107,6 +106,11 @@ function fkidd_customize_add_social_site($wp_customize, $controlId, $label, $def
             )
         )
 	);
+}
+
+function fkidd_sanitize_checkbox( $checked ) {
+	// Boolean check.
+	return ( ( isset( $checked ) && true == $checked ) ? true : false );
 }
 
 /**
@@ -128,8 +132,8 @@ function fkidd_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 			'fkidd_slider_display',
 			array(
-					'default'           => 1,
-					'sanitize_callback' => 'esc_attr',
+					'default'           => 0,
+					'sanitize_callback' => 'fkidd_sanitize_checkbox',
 			)
 	);
 	
@@ -154,7 +158,6 @@ function fkidd_customize_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			$slideContentId,
 			array(
-				'default'           => __( '<h2>This is Default Slide Title</h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a class="btn" title="Read more" href="#">Read more</a>', 'fkidd' ),
 				'sanitize_callback' => 'force_balance_tags',
 			)
 		);
@@ -202,7 +205,6 @@ function fkidd_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fkidd_header_phone',
 		array(
-		    'default'           => '1.555.555.555',
 		    'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
@@ -221,7 +223,6 @@ function fkidd_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fkidd_header_email',
 		array(
-		    'default'           => 'info@yoursite.com',
 		    'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
@@ -268,51 +269,51 @@ function fkidd_customize_register( $wp_customize ) {
 	
 	// Add facebook url
 	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_facebook',
-		__( 'Facebook Page URL', 'fkidd' ), '#');
+		__( 'Facebook Page URL', 'fkidd' ));
 
 	// Add google+ url
 	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_google',
-		__( 'Google+ Page URL', 'fkidd' ), '#');
+		__( 'Google+ Page URL', 'fkidd' ));
 
 	// Add twitter url
 	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_twitter',
-		__( 'Twitter URL', 'fkidd' ), '#');
+		__( 'Twitter URL', 'fkidd' ));
 
 	// Add LinkedIn
 	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_linkedin',
-		__( 'LinkedIn', 'fkidd' ), '#');
+		__( 'LinkedIn', 'fkidd' ));
 
 	// Add Instagram
 	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_instagram',
-		__( 'Instagram', 'fkidd' ), '#');
+		__( 'Instagram', 'fkidd' ));
 
 	// Add RSS Feeds url
 	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_rss',
-		__( 'RSS Feeds URL', 'fkidd' ), get_bloginfo( 'rss2_url' ));
+		__( 'RSS Feeds URL', 'fkidd' ));
 
 	// Add Tumblr Text Control
 	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_tumblr',
-		__( 'Tumblr', 'fkidd' ), '#');
+		__( 'Tumblr', 'fkidd' ));
 
 	// Add YouTube channel url
 	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_youtube',
-		__( 'YouTube channel URL', 'fkidd' ), '#');
+		__( 'YouTube channel URL', 'fkidd' ));
 
 	// Add Pinterest Text Control
 	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_pinterest',
-		__( 'Pinterest', 'fkidd' ), '#');
+		__( 'Pinterest', 'fkidd' ));
 
 	// Add VK Text Control
 	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_vk',
-		__( 'VK', 'fkidd' ), '#');
+		__( 'VK', 'fkidd' ));
 
 	// Add Flickr Text Control
 	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_flickr',
-		__( 'Flickr', 'fkidd' ), '#');
+		__( 'Flickr', 'fkidd' ));
 
 	// Add Vine Text Control
 	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_vine',
-		__( 'Vine', 'fkidd' ), '#');
+		__( 'Vine', 'fkidd' ));
 
 	/**
 	 * Add Animations Section
@@ -330,7 +331,7 @@ function fkidd_customize_register( $wp_customize ) {
 			'fkidd_animations_display',
 			array(
 					'default'           => 1,
-					'sanitize_callback' => 'esc_attr',
+					'sanitize_callback' => 'fkidd_sanitize_checkbox',
 			)
 	);
 
@@ -517,9 +518,9 @@ function fkidd_widgets_init() {
 }
 add_action( 'widgets_init', 'fkidd_widgets_init' );
 
-function fkidd_display_single_social_site($socialSiteID, $defaultValue, $title, $cssClass) {
+function fkidd_display_single_social_site($socialSiteID, $title, $cssClass) {
 
-	$socialURL = get_theme_mod( $socialSiteID, $defaultValue );
+	$socialURL = get_theme_mod( $socialSiteID );
 	if ( !empty($socialURL) ) {
 
 		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_url( $title )
@@ -533,29 +534,29 @@ function fkidd_display_single_social_site($socialSiteID, $defaultValue, $title, 
  */
 function fkidd_display_social_sites() {
 
-	fkidd_display_single_social_site('fkidd_social_facebook', '#', __('Follow us on Facebook', 'fkidd'), 'facebook16' );
+	fkidd_display_single_social_site('fkidd_social_facebook', __('Follow us on Facebook', 'fkidd'), 'facebook16' );
 
-	fkidd_display_single_social_site('fkidd_social_google', '#', __('Follow us on Google+', 'fkidd'), 'google16' );
+	fkidd_display_single_social_site('fkidd_social_google', __('Follow us on Google+', 'fkidd'), 'google16' );
 
-	fkidd_display_single_social_site('fkidd_social_twitter', '#', __('Follow us on Twitter', 'fkidd'), 'twitter16' );
+	fkidd_display_single_social_site('fkidd_social_twitter', __('Follow us on Twitter', 'fkidd'), 'twitter16' );
 
-	fkidd_display_single_social_site('fkidd_social_linkedin', '#', __('Follow us on LinkedIn', 'fkidd'), 'linkedin16' );
+	fkidd_display_single_social_site('fkidd_social_linkedin', __('Follow us on LinkedIn', 'fkidd'), 'linkedin16' );
 
-	fkidd_display_single_social_site('fkidd_social_instagram', '#', __('Follow us on Instagram', 'fkidd'), 'instagram16' );
+	fkidd_display_single_social_site('fkidd_social_instagram', __('Follow us on Instagram', 'fkidd'), 'instagram16' );
 
 	fkidd_display_single_social_site('fkidd_social_rss', get_bloginfo( 'rss2_url' ), __('Follow our RSS Feeds', 'fkidd'), 'rss16' );
 
-	fkidd_display_single_social_site('fkidd_social_tumblr', '#', __('Follow us on Tumblr', 'fkidd'), 'tumblr16' );
+	fkidd_display_single_social_site('fkidd_social_tumblr', __('Follow us on Tumblr', 'fkidd'), 'tumblr16' );
 
-	fkidd_display_single_social_site('fkidd_social_youtube', '#', __('Follow us on Youtube', 'fkidd'), 'youtube16' );
+	fkidd_display_single_social_site('fkidd_social_youtube', __('Follow us on Youtube', 'fkidd'), 'youtube16' );
 
-	fkidd_display_single_social_site('fkidd_social_pinterest', '#', __('Follow us on Pinterest', 'fkidd'), 'pinterest16' );
+	fkidd_display_single_social_site('fkidd_social_pinterest', __('Follow us on Pinterest', 'fkidd'), 'pinterest16' );
 
-	fkidd_display_single_social_site('fkidd_social_vk', '#', __('Follow us on VK', 'fkidd'), 'vk16' );
+	fkidd_display_single_social_site('fkidd_social_vk', __('Follow us on VK', 'fkidd'), 'vk16' );
 
-	fkidd_display_single_social_site('fkidd_social_flickr', '#', __('Follow us on Flickr', 'fkidd'), 'flickr16' );
+	fkidd_display_single_social_site('fkidd_social_flickr', __('Follow us on Flickr', 'fkidd'), 'flickr16' );
 
-	fkidd_display_single_social_site('fkidd_social_vine', '#', __('Follow us on Vine', 'fkidd'), 'vine16' );
+	fkidd_display_single_social_site('fkidd_social_vine', __('Follow us on Vine', 'fkidd'), 'vine16' );
 }
 
 /**
@@ -563,7 +564,7 @@ function fkidd_display_social_sites() {
  */
 function fkidd_show_header_phone() {
 
-	$phone = get_theme_mod('fkidd_header_phone', '1.555.555.555');
+	$phone = get_theme_mod('fkidd_header_phone');
 
 	if ( !empty( $phone ) ) {
 
@@ -576,7 +577,7 @@ function fkidd_show_header_phone() {
  */
 function fkidd_show_header_email() {
 
-	$email = get_theme_mod('fkidd_header_email', 'info@yoursite.com');
+	$email = get_theme_mod('fkidd_header_email');
 
 	if ( !empty( $email ) ) {
 
@@ -627,20 +628,20 @@ function fkidd_display_slider() { ?>
 		<?php
 			// display slides
 			for ( $i = 1; $i <= 3; ++$i ) {
-
-					$defaultSlideContent = __( '<h3>This is Default Slide Title</h3><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a class="btn" title="Read more" href="#">Read more</a>', 'fkidd' );
 					
 					$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
 
-					$slideContent = get_theme_mod( 'fkidd_slide'.$i.'_content', html_entity_decode( $defaultSlideContent ) );
+					$slideContent = get_theme_mod( 'fkidd_slide'.$i.'_content' );
 					$slideImage = get_theme_mod( 'fkidd_slide'.$i.'_image', $defaultSlideImage );
 
 				?>
 
 					<div data-thumb="<?php echo esc_attr( $slideImage ); ?>" data-src="<?php echo esc_attr( $slideImage ); ?>">
-						<div class="camera_caption fadeFromBottom">
-							<?php echo $slideContent; ?>
-						</div>
+						<?php if ( $slideContent ) : ?>
+								<div class="camera_caption fadeFromBottom">
+									<?php echo $slideContent; ?>
+								</div>
+						<?php endif; ?>
 					</div>
 <?php		} ?>
 	</div><!-- #camera_wrap -->
