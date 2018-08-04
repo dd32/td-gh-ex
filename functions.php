@@ -230,12 +230,6 @@ function avata_enqueue_scripts() {
 	
 	wp_enqueue_script( 'avata-main', get_template_directory_uri().'/assets/js/main.js', array( 'jquery' ), $theme_info->get( 'Version' ), true );
 	
-	$copyright_font_color = avata_option('copyright_color');
-	$copyright_bg_color   = avata_option('copyright_bg_color');
-	
-	$css .= "footer .sub-footer{background-color:".$copyright_bg_color.";}";
-	$css .= "footer .sub-footer,footer .sub-footer i,footer .sub-footer li{color:".$copyright_font_color .";}";
-	
 	$nav_css3_border_color = avata_option("nav_css3_border_color");
 	
 	$css .=  "
@@ -665,6 +659,7 @@ function avata_get_sidebar($sidebar, $template_part)
  */	
 
 function avata_get_excerpt($limit) {
+
   $excerpt = explode(' ', get_the_excerpt(), $limit);
   if (count($excerpt)>=$limit) {
     array_pop($excerpt);
@@ -1042,6 +1037,89 @@ function avata_standard_fonts(){
 		
 add_filter( 'kirki/fonts/standard_fonts', 'avata_standard_fonts' );
 
+/**
+ * Get top bar items
+ *
+ */
+ 
+function avata_get_topbar_content( $type = '' ){
+	
+	$html = '';
+	switch( $type ){
+		
+		case "topbar_widgets":
+			$widgets = avata_option( $type );
+			
+			if(is_array($widgets) && !empty($widgets)):
+			
+  				foreach($widgets as $item):
+				
+					$text = $item['text'];
+					
+					$html .= '<span class="avata-microwidget">';
+					if( $item['link'] != '' ){
+						$html .= '<a href="'.esc_url($item['link']).'" target="'.esc_attr($item['target']).'">'.$text.'</a>';
+					}else{
+						$html .= $text;
+						}
+					$html .= '</span>';
+				endforeach;
+				return $html;
+			endif;
+			
+		break;
+		case "topbar_menu":
+			$topbar_menu = avata_option( $type );
+			$html = '<ul>';
+			if ( $menu_items = wp_get_nav_menu_items( $topbar_menu ) ) {
+			   foreach ( $menu_items as $menu_item ) {
+				  $current = ( $menu_item->object_id == get_queried_object_id() ) ? 'current' : '';
+				  $html .= '<li class="' . $current . '"><a href="' . $menu_item->url . '">' . $menu_item->title . '</a></li>';
+			   }
+			}
+			$html .= '</ul>';
+			
+			return $html;
+		break;
+		case "topbar_text":
+			$html = avata_option( $type );
+			return $html;
+		
+		break;
+		
+		}
+	
+	}
+
+/**
+ * Get top bar
+ *
+ */
+ 
+function avata_top_bar(){
+	
+	$display_topbar = avata_option( 'display_topbar' );
+		
+	if( $display_topbar != '1' )
+		return '';
+	
+	$topbar_left_content = avata_option( 'topbar_left_content' );
+	$topbar_right_content = avata_option( 'topbar_right_content' );
+	
+	$left_content = avata_get_topbar_content( $topbar_left_content );
+	$right_content = avata_get_topbar_content( $topbar_right_content );
+	
+	return '<div class="avata-top-bar-wrap"><div class="avata-top-bar">
+	
+	<div class="topbar-left avata-f-microwidgets">'.wp_kses_post($left_content).'</div>
+	<div class="topbar-right avata-f-microwidgets">'.wp_kses_post($right_content).'</div>
+
+	</div></div>';
+	
+	}
+
+add_filter( 'avata_top_bar', 'avata_top_bar' );
+
 require_once dirname( __FILE__ ) . '/lib/kirki/kirki.php';
 require_once dirname( __FILE__ ) . '/includes/options.php';
 require_once dirname( __FILE__ ) . '/includes/customizer.php';
@@ -1096,3 +1174,5 @@ function avata_theme_register_required_plugins() {
     tgmpa( $plugins, $config );
 
 }
+
+

@@ -1,5 +1,4 @@
 <?php
-  global $allowedposttags;
 
   $slider            = avata_option('section_slider_banner_1');
   $autoplay          =  avata_option('section_autoplay_banner_1');
@@ -23,7 +22,7 @@
             <div class="avata-container">
               <div class="avata-section-title-wrap text-center">
                 <h2 class="section-title" style="color:<?php echo $font_color;?>"><span><?php echo esc_attr($item['title']);?></span></h2>
-                <p class="section-subtitle" style="color:<?php echo $font_color;?>"><?php echo wp_kses(do_shortcode($item['description']), $allowedposttags);?></p>
+                <p class="section-subtitle" style="color:<?php echo $font_color;?>"><?php echo wp_kses_post(do_shortcode($item['description']));?></p>
               </div>
               <div class="avata-button-group">
               <?php if( $item['left_btn_text'] !=''){?>

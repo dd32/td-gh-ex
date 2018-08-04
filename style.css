@@ -4,7 +4,7 @@ Theme URI: https://www.hoothemes.com/themes/avata.html
 Author: HooThemes
 Author URI: http://www.hoothemes.com/
 Description: Based on Bootstrap and coded with HTML5 and CSS3 language, Avata WordPress theme is fully responsive in desktops and mobile devices. With enriched customizer settings, you can easily create a homepage with pre-built layouts such as banner, service, video, gallery, team, testimonial, progress bar, counter up, blog, slogan and so on, you can also sort them by dragging and dropping. Avata theme is WooCommerce compatible we can use it for e-commerce site, multilingual ready (WPML & Polylang) and translateable. You can check the demo at http://demo.hoosoft.com/avata/.
-Version: 1.5.3
+Version: 1.5.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avata
@@ -97,6 +97,7 @@ input:invalid {
 a {
 	color: inherit;
 	text-decoration: none;
+	color:#8bc03c;
 }
 
 a:focus {
@@ -491,9 +492,7 @@ ul > li > i{
 #main-header.homepage-header{
 	position:absolute;
 	}
-#main-header.homepage-header.fixed {
-	position: fixed;
-}
+
 .site-branding {
 	float: left;
 	padding-bottom: 10px;
@@ -3753,7 +3752,7 @@ a.avate-media{
 /* Common styles and resets */
 .dotstyle{
     position: fixed;
-    top: 50%;
+    top: 35%;
     z-index: 999999;
 	left: 47px;
 }
@@ -5057,4 +5056,240 @@ input[type="color"]:focus,
         width: 20%;
         float: left;
     }
+}
+/*Top Bar*/
+.avata-top-bar {
+    position: relative;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+    margin-top: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.avata-top-bar > .avata-f-microwidgets {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-flex: 1 1 auto;
+    -moz-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    -ms-flex-pack: flex-end;
+    -ms-justify-content: flex-end;
+    justify-content: flex-end;
+    -ms-flex-pack: end;
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+
+.avata-top-bar .avata-f-microwidgets {
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    -ms-flex-positive: 1;
+    -ms-flex-grow: 1;
+    flex-grow: 1;
+}
+
+.avata-top-bar .avata-f-microwidgets:first-child {
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    -ms-flex-pack: flex-start;
+    -ms-justify-content: flex-start;
+    justify-content: flex-start;
+    -ms-flex-pack: start;
+}
+
+.avata-top-bar .avata-microwidget,
+.avata-top-bar ul li a {
+    font: 12px / 18px "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+    text-transform: none;
+    position: relative;
+    color: #666;
+    letter-spacing: .5px;
+}
+.avata-microwidget {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.avata-top-bar * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.avata-top-bar.empty {
+    position: absolute;
+    visibility: hidden;
+}
+
+.avata-header.transparent .avata-top-bar {
+    margin-bottom: -1px;
+}
+
+.avata-top-bar .sub-menu {
+    z-index: 1003;
+}
+
+.avata-top-bar a,
+.avata-top-bar .sub-menu a:hover,
+.avata-top-bar a:hover {
+    text-decoration: none;
+}
+
+.avata-top-bar a:hover,
+.avata-top-bar .mini-search .submit:hover,
+.avata-top-bar .mini-login a:hover {
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.avata-top-bar .social-icons a:hover,
+.avata-top-bar .shopping-cart-inner a:hover {
+    opacity: 1;
+}
+
+.avata-top-bar {
+    position: relative;
+}
+
+.avata-top-bar * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.avata-top-bar.empty {
+    position: absolute;
+    visibility: hidden;
+}
+
+.avata-header.transparent .avata-top-bar {
+    margin-bottom: -1px;
+}
+
+.avata-top-bar .sub-menu {
+    z-index: 1003;
+}
+
+.avata-top-bar a,
+.avata-top-bar .sub-menu a:hover,
+.avata-top-bar a:hover {
+    text-decoration: none;
+}
+
+.avata-top-bar a:hover,
+.avata-top-bar .avata-search .submit:hover,
+.avata-top-bar .avata-login a:hover {
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.avata-top-bar .avata-microicons a:hover,
+.avata-top-bar .avata-shopping-cart-inner a:hover {
+    opacity: 1;
+}
+
+.avata-top-bar:before,
+.avata-navigation:before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+    min-height:1px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.avata-top-bar.avata-style-solid-bg:before {
+    background-color: #f7f7f7;
+}
+
+.avata-navigation.avata-style-solid-bg:before {
+    background-color: rgba(0,0,0,.8);
+}
+
+.avata-style-solid-bg:before {
+    height: 100%!important;
+}
+
+.avata-style-solid-bg:before,
+.avata-style-bottom-line-full:before,
+.avata-style-top-line-full:before {
+    padding: 0 1000px;
+    margin-left: -1000px;
+}
+
+.avata-style-bottom-line:before,
+.avata-style-bottom-line-full:before {
+    border-bottom: 1px solid rgba(179,181,182,0.32);
+}
+
+.avata-style-top-line:before,
+.avata-style-top-line-full:before {
+    top: 0;
+    bottom: auto;
+    background-color: rgba(179,181,182,0.32);
+}
+.avata-top-bar ul li{
+	list-style: none;
+    float: left;
+    padding-right: 10px;
+}
+.avata-top-bar,
+.avata-main-header,
+.avata-mobile-main-header {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    -o-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .avata-top-bar,
+    .avata-main-header {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .avata-top-bar,
+    .avata-main-header,
+    .avata-mobile-main-header {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .avata-top-bar,
+    .avata-main-header,
+    .avata-mobile-main-header {
+        width: 1170px;
+    }
+}
+
+.avata-header.fullwidth .avata-top-bar,
+.avata-header.fullwidth .avata-main-header {
+    width: 100%;
+}
+.transparent{
+	background-color:transparent !important;
 }

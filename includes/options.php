@@ -108,7 +108,7 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 						  'padding_top' => '100px',
 						  'padding_bottom' => '100px',
 						  'text_align' => 'center'
-				),$default);
+				), $default );
 
 	$font_family = avata_option_saved('font_'.$id);
 	$font_size   = avata_option_saved('font_size_'.$id);
@@ -410,7 +410,7 @@ if ($is_old_version){
 }
 
 $defaults = array();
-
+$transport  = 'refresh';
 // section banner 1
 
 $banner_defaults = array(
@@ -852,59 +852,59 @@ $gallery_options = avata_public_section_options('gallery',$gallery_defaults,fals
 array_splice($gallery_options,3,0,array(
 
 'columns_gallery' => array(
-												  'settings' => 'columns_gallery',
-												  'label'   => __( 'Columns', 'avata' ),
-												  'section' => 'section_gallery',
-												  'type'    => 'slider',
-												  'default' => '6',
-												  'choices'     => array(
-													  'min'  => 2,
-													  'max'  => 6,
-													  'step' => 1,
-												  ),
-											  ),
+		  'settings' => 'columns_gallery',
+		  'label'   => __( 'Columns', 'avata' ),
+		  'section' => 'section_gallery',
+		  'type'    => 'slider',
+		  'default' => '6',
+		  'choices'     => array(
+			  'min'  => 2,
+			  'max'  => 6,
+			  'step' => 1,
+		  ),
+	  ),
 'section_items_gallery' => array(
-													'type'        => 'repeater',
-													'label'       => esc_attr__( 'Gallery Items', 'avata' ),
-													'section'     => 'section_gallery',
-													'priority'    => 10,
-													'row_label' => array(
-														'type' => 'field',
-														'value' => esc_attr__('Image', 'avata' ),
-														'field' => 'title',
-													),
-													'settings'    => 'section_items_gallery',
-													'default'     => array(
-														array('image'  => $imagepath.'work-1.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),1 )),
-														array('image'  => $imagepath.'work-2.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),2 )),
-														array('image'  => $imagepath.'work-3.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),3 )),
-														array('image'  => $imagepath.'work-4.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),4 )),
-														array('image'  => $imagepath.'work-5.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),5 )),
-														array('image'  => $imagepath.'work-6.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),6 )),
-														array('image'  => $imagepath.'work-7.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),7 )),
-														array('image'  => $imagepath.'work-8.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),8 )),
-														array('image'  => $imagepath.'work-9.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),9 )),
-														array('image'  => $imagepath.'work-10.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),10 )),
-														array('image'  => $imagepath.'work-11.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),11)),
-														array('image'  => $imagepath.'work-12.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),12 )),
-													),
-													'fields' => array(
-				
-														'image' => array(
-															'type'        => 'image',
-															'label'       => esc_attr__( 'Image', 'avata' ),
-															'description' => '',
-															'default'     => '',
-														),
-														'title' => array(
-															'type'        => 'textarea',
-															'label'       => esc_attr__( 'Description', 'avata' ),
-															'description' => '',
-															'default'     => '',
-														),
-											
-													),
-													)));
+			'type'        => 'repeater',
+			'label'       => esc_attr__( 'Gallery Items', 'avata' ),
+			'section'     => 'section_gallery',
+			'priority'    => 10,
+			'row_label' => array(
+				'type' => 'field',
+				'value' => esc_attr__('Image', 'avata' ),
+				'field' => 'title',
+			),
+			'settings'    => 'section_items_gallery',
+			'default'     => array(
+				array('image'  => $imagepath.'work-1.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),1 )),
+				array('image'  => $imagepath.'work-2.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),2 )),
+				array('image'  => $imagepath.'work-3.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),3 )),
+				array('image'  => $imagepath.'work-4.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),4 )),
+				array('image'  => $imagepath.'work-5.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),5 )),
+				array('image'  => $imagepath.'work-6.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),6 )),
+				array('image'  => $imagepath.'work-7.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),7 )),
+				array('image'  => $imagepath.'work-8.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),8 )),
+				array('image'  => $imagepath.'work-9.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),9 )),
+				array('image'  => $imagepath.'work-10.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),10 )),
+				array('image'  => $imagepath.'work-11.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),11)),
+				array('image'  => $imagepath.'work-12.jpg', 'title'=> sprintf(__( 'Gallery Items %d', 'avata' ),12 )),
+			),
+			'fields' => array(
+
+				'image' => array(
+					'type'        => 'image',
+					'label'       => esc_attr__( 'Image', 'avata' ),
+					'description' => '',
+					'default'     => '',
+				),
+				'title' => array(
+					'type'        => 'textarea',
+					'label'       => esc_attr__( 'Description', 'avata' ),
+					'description' => '',
+					'default'     => '',
+				),
+	
+			),
+			)));
 
 $avata_lite_sections['section-gallery'] = array(
 										'name'=> __('Section Gallery', 'avata'),
@@ -927,175 +927,175 @@ $team_options = avata_public_section_options('team',$team_defaults,false,$args);
 array_splice($team_options,3,0,array(
 
 'columns_team' => array(
-												  'settings' => 'columns_team',
-												  'label'   => __( 'Columns', 'avata' ),
-												  'section' => 'section_team',
-												  'type'    => 'slider',
-												  'default' => '3',
-												  'choices'     => array(
-													  'min'  => 2,
-													  'max'  => 5,
-													  'step' => 1,
-												  ),
-											  ),
+		  'settings' => 'columns_team',
+		  'label'   => __( 'Columns', 'avata' ),
+		  'section' => 'section_team',
+		  'type'    => 'slider',
+		  'default' => '3',
+		  'choices'     => array(
+			  'min'  => 2,
+			  'max'  => 5,
+			  'step' => 1,
+		  ),
+	  ),
 'section_items_team' => array(
-													'type'        => 'repeater',
-													'label'       => esc_attr__( 'Members', 'avata' ),
-													'section'     => 'section_team',
-													'priority'    => 10,
-													'row_label' => array(
-														'type' => 'field',
-														'value' => esc_attr__('Member', 'avata' ),
-														'field' => 'name',
-													),
-													'settings'    => 'section_items_team',
-													'default'     => array(
-														array(
-															'avatar'  => $imagepath.'img-380x380.png',
-															'name'  => 'Johnathan Doe',
-															'role'  => 'The Mastermind',
-															'description'  => 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
-															'social_icon_1' => 'facebook',
-															'social_link_1' => '#',
-															'social_icon_2' => 'twitter',
-															'social_link_2' => '#',
-															'social_icon_3' => 'linkedin',
-															'social_link_3' => '#',
-															'social_icon_4' => 'google-plus',
-															'social_link_4' => '#',
-															'social_icon_5' => 'dribbble',
-															'social_link_5' => '#',
-														),
-														array(
-															'avatar'  => $imagepath.'img-380x380.png',
-															'name'  => 'Lisa Brown',
-															'role'  => 'Creative head',
-															'description'  => 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
-															'social_icon_1' => 'facebook',
-															'social_link_1' => '#',
-															'social_icon_2' => 'twitter',
-															'social_link_2' => '#',
-															'social_icon_3' => 'linkedin',
-															'social_link_3' => '#',
-															'social_icon_4' => 'google-plus',
-															'social_link_4' => '#',
-															'social_icon_5' => 'dribbble',
-															'social_link_5' => '#',
-														),
-														array(
-															'avatar'  => $imagepath.'img-380x380.png',
-															'name'  => 'Mike Collins',
-															'role'  => 'Technical lead',
-															'description'  => 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
-															'social_icon_1' => 'facebook',
-															'social_link_1' => '#',
-															'social_icon_2' => 'twitter',
-															'social_link_2' => '#',
-															'social_icon_3' => 'linkedin',
-															'social_link_3' => '#',
-															'social_icon_4' => 'google-plus',
-															'social_link_4' => '#',
-															'social_icon_5' => 'dribbble',
-															'social_link_5' => '#',
-														),
-								
-													),
-													'fields' => array(
-				
-														'avatar' => array(
-															'type'        => 'image',
-															'label'       => esc_attr__( 'Avatar', 'avata' ),
-															'description' => '',
-															'default'     => '',
-														),
-														'name' => array(
-															'type'        => 'text',
-															'label'       => esc_attr__( 'Name', 'avata' ),
-															'description' => '',
-															'default'     => '',
-														),
-														'role' => array(
-															'type'        => 'text',
-															'label'       => esc_attr__( 'Role', 'avata' ),
-															'description' => '',
-															'default'     => '',
-														),
-														'description' => array(
-															'type'        => 'text',
-															'label'       => esc_attr__( 'Description', 'avata' ),
-															'description' => '',
-															'default'     => '',
-														),
-														'social_icon_1' => array(
-															'type'        => 'text',
-															'label'       => esc_attr__( 'Social Icon 1', 'avata' ),
-															'description' => esc_attr__( 'Get social icon string from http://fontawesome.io/icons/, e.g. facebook.', 'avata' ),
-															'default'     => '',
-														),
-														'social_link_1' => array(
-															'type'        => 'text',
-															'label'       => esc_attr__( 'Social Link 1', 'avata' ),
-															'description' => '',
-															'default'     => 'http://',
-														),
-														'social_icon_2' => array(
-															'type'        => 'text',
-															'label'       => esc_attr__( 'Social Icon 2', 'avata' ),
-															'description' => esc_attr__( 'Get social icon string from http://fontawesome.io/icons/, e.g. facebook.', 'avata' ),
-															'default'     => '',
-														),
-														'social_link_2' => array(
-															'type'        => 'text',
-															'label'       => esc_attr__( 'Social Link 2', 'avata' ),
-															'description' => '',
-															'default'     => 'http://',
-														),
-														'social_icon_3' => array(
-															'type'        => 'text',
-															'label'       => esc_attr__( 'Social Icon 3', 'avata' ),
-															'description' => esc_attr__( 'Get social icon string from http://fontawesome.io/icons/, e.g. facebook.', 'avata' ),
-															'default'     => '',
-														),
-														'social_link_3' => array(
-															'type'        => 'text',
-															'label'       => esc_attr__( 'Social Link 3', 'avata' ),
-															'description' => '',
-															'default'     => 'http://',
-														),
-														'social_icon_4' => array(
-															'type'        => 'text',
-															'label'       => esc_attr__( 'Social Icon 4', 'avata' ),
-															'description' => esc_attr__( 'Get social icon string from http://fontawesome.io/icons/, e.g. facebook.', 'avata' ),
-															'default'     => '',
-														),
-														'social_link_4' => array(
-															'type'        => 'text',
-															'label'       => esc_attr__( 'Social Link 4', 'avata' ),
-															'description' => '',
-															'default'     => 'http://',
-														),
-														'social_icon_5' => array(
-															'type'        => 'text',
-															'label'       => esc_attr__( 'Social Icon 5', 'avata' ),
-															'description' => esc_attr__( 'Get social icon string from http://fontawesome.io/icons/, e.g. facebook.', 'avata' ),
-															'default'     => '',
-														),
-														'social_link_5' => array(
-															'type'        => 'text',
-															'label'       => esc_attr__( 'Social Link 5', 'avata' ),
-															'description' => '',
-															'default'     => 'http://',
-														),
-																									
-													),
-													),
-									'link_target_team' => array(
-				  'type'        => 'select',
-				  'settings'    => 'link_target_team',
-				  'label'       => esc_attr__( 'Social Link Target', 'avata' ),
-				  'description' => '',
-				  'default'     => '_blank',
-				  'choices'     => array('_blank'=>esc_attr__( 'Blank', 'avata' ),'_self'=>esc_attr__( 'Self', 'avata' ))
+			'type'        => 'repeater',
+			'label'       => esc_attr__( 'Members', 'avata' ),
+			'section'     => 'section_team',
+			'priority'    => 10,
+			'row_label' => array(
+				'type' => 'field',
+				'value' => esc_attr__('Member', 'avata' ),
+				'field' => 'name',
+			),
+			'settings'    => 'section_items_team',
+			'default'     => array(
+				array(
+					'avatar'  => $imagepath.'img-380x380.png',
+					'name'  => 'Johnathan Doe',
+					'role'  => 'The Mastermind',
+					'description'  => 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
+					'social_icon_1' => 'facebook',
+					'social_link_1' => '#',
+					'social_icon_2' => 'twitter',
+					'social_link_2' => '#',
+					'social_icon_3' => 'linkedin',
+					'social_link_3' => '#',
+					'social_icon_4' => 'google-plus',
+					'social_link_4' => '#',
+					'social_icon_5' => 'dribbble',
+					'social_link_5' => '#',
+				),
+				array(
+					'avatar'  => $imagepath.'img-380x380.png',
+					'name'  => 'Lisa Brown',
+					'role'  => 'Creative head',
+					'description'  => 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
+					'social_icon_1' => 'facebook',
+					'social_link_1' => '#',
+					'social_icon_2' => 'twitter',
+					'social_link_2' => '#',
+					'social_icon_3' => 'linkedin',
+					'social_link_3' => '#',
+					'social_icon_4' => 'google-plus',
+					'social_link_4' => '#',
+					'social_icon_5' => 'dribbble',
+					'social_link_5' => '#',
+				),
+				array(
+					'avatar'  => $imagepath.'img-380x380.png',
+					'name'  => 'Mike Collins',
+					'role'  => 'Technical lead',
+					'description'  => 'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
+					'social_icon_1' => 'facebook',
+					'social_link_1' => '#',
+					'social_icon_2' => 'twitter',
+					'social_link_2' => '#',
+					'social_icon_3' => 'linkedin',
+					'social_link_3' => '#',
+					'social_icon_4' => 'google-plus',
+					'social_link_4' => '#',
+					'social_icon_5' => 'dribbble',
+					'social_link_5' => '#',
+				),
+
+			),
+			'fields' => array(
+
+				'avatar' => array(
+					'type'        => 'image',
+					'label'       => esc_attr__( 'Avatar', 'avata' ),
+					'description' => '',
+					'default'     => '',
+				),
+				'name' => array(
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Name', 'avata' ),
+					'description' => '',
+					'default'     => '',
+				),
+				'role' => array(
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Role', 'avata' ),
+					'description' => '',
+					'default'     => '',
+				),
+				'description' => array(
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Description', 'avata' ),
+					'description' => '',
+					'default'     => '',
+				),
+				'social_icon_1' => array(
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Social Icon 1', 'avata' ),
+					'description' => esc_attr__( 'Get social icon string from https://fontawesome.com/v4.7.0/icons/, e.g. facebook.', 'avata' ),
+					'default'     => '',
+				),
+				'social_link_1' => array(
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Social Link 1', 'avata' ),
+					'description' => '',
+					'default'     => 'http://',
+				),
+				'social_icon_2' => array(
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Social Icon 2', 'avata' ),
+					'description' => esc_attr__( 'Get social icon string from https://fontawesome.com/v4.7.0/icons/, e.g. facebook.', 'avata' ),
+					'default'     => '',
+				),
+				'social_link_2' => array(
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Social Link 2', 'avata' ),
+					'description' => '',
+					'default'     => 'http://',
+				),
+				'social_icon_3' => array(
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Social Icon 3', 'avata' ),
+					'description' => esc_attr__( 'Get social icon string from https://fontawesome.com/v4.7.0/icons/, e.g. facebook.', 'avata' ),
+					'default'     => '',
+				),
+				'social_link_3' => array(
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Social Link 3', 'avata' ),
+					'description' => '',
+					'default'     => 'http://',
+				),
+				'social_icon_4' => array(
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Social Icon 4', 'avata' ),
+					'description' => esc_attr__( 'Get social icon string from https://fontawesome.com/v4.7.0/icons/, e.g. facebook.', 'avata' ),
+					'default'     => '',
+				),
+				'social_link_4' => array(
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Social Link 4', 'avata' ),
+					'description' => '',
+					'default'     => 'http://',
+				),
+				'social_icon_5' => array(
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Social Icon 5', 'avata' ),
+					'description' => esc_attr__( 'Get social icon string from https://fontawesome.com/v4.7.0/icons/, e.g. facebook.', 'avata' ),
+					'default'     => '',
+				),
+				'social_link_5' => array(
+					'type'        => 'text',
+					'label'       => esc_attr__( 'Social Link 5', 'avata' ),
+					'description' => '',
+					'default'     => 'http://',
+				),
+															
+			),
+			),
+		'link_target_team' => array(
+			'type'        => 'select',
+			'settings'    => 'link_target_team',
+			'label'       => esc_attr__( 'Social Link Target', 'avata' ),
+			'description' => '',
+			'default'     => '_blank',
+			'choices'     => array('_blank'=>esc_attr__( 'Blank', 'avata' ),'_self'=>esc_attr__( 'Self', 'avata' ))
 		),
 													));
 
@@ -1208,92 +1208,92 @@ $counter_options = avata_public_section_options('counter',$counter_defaults,fals
 
 		  
 array_splice($counter_options,3,0,array(	
-											'columns_counter' => array(
-												  'settings' => 'columns_counter',
-												  'label'   => __( 'Columns', 'avata' ),
-												  'section' => 'section_counter',
-												  'type'    => 'slider',
-												  'default' => '4',
-												  'choices'     => array(
-													  'min'  => 2,
-													  'max'  => 5,
-													  'step' => 1,
-												  ),
-											  ),
+		  'columns_counter' => array(
+				'settings' => 'columns_counter',
+				'label'   => __( 'Columns', 'avata' ),
+				'section' => 'section_counter',
+				'type'    => 'slider',
+				'default' => '4',
+				'choices'     => array(
+					'min'  => 2,
+					'max'  => 5,
+					'step' => 1,
+				),
+			),
 
-											'section_items_counter' => array(
-													'type'        => 'repeater',
-													'label'       => esc_attr__( 'Counter', 'avata' ),
-													'section'     => 'section_counter',
-													'settings'     => 'section_items_counter',
-													'priority'    => 10,
-													'row_label' => array(
-														'type' => 'field',
-														'value' => esc_attr__('Counter', 'avata' ),
-														'field' => 'name',
-													),
-													'settings'    => 'section_items_counter',
-													'default'     => array(
-														array(
-															'image'  => '',
-															'icon'  => 'fa-heart-o',
-															'title'  => 'The Mastermind',
-															'number'  => '120',
-															
-														),
-														array(
-															'image'  => '',
-															'icon'  => 'fa-cogs',
-															'title'  => 'Creative head',
-															'number'  => '160',
-															
-														),
-														array(
-															'image'  => '',
-															'icon'  => 'fa-database',
-															'title'  => 'Technical lead',
-															'number'  => '1360',
-															
-														),
-														array(
-															'image'  => '',
-															'icon'=> 'fa-user',
-															'title'=> 'Customers',
-															'number'=> '3000',
-															),
-								
-													),
-													'fields' => array(
-														
-														'icon' => array(
-															'type'        => 'text',
-															'label'       => esc_attr__( 'Fontawesome Icon', 'avata' ),
-															'description' => '',
-															'default'     => '',
-														),
-				
-														'image' => array(
-															'type'        => 'image',
-															'label'       => esc_attr__( 'Image Icon', 'avata' ),
-															'description' => '',
-															'default'     => '',
-														),
-														
-														'title' => array(
-															'type'        => 'text',
-															'label'       => esc_attr__( 'Title', 'avata' ),
-															'description' => '',
-															'default'     => '',
-														),
-														'number' => array(
-															'type'        => 'text',
-															'label'       => esc_attr__( 'Number', 'avata' ),
-															'description' => '',
-															'default'     => '100',
-														),
-														
-													),
-													)));
+		  'section_items_counter' => array(
+				  'type'        => 'repeater',
+				  'label'       => esc_attr__( 'Counter', 'avata' ),
+				  'section'     => 'section_counter',
+				  'settings'     => 'section_items_counter',
+				  'priority'    => 10,
+				  'row_label' => array(
+					  'type' => 'field',
+					  'value' => esc_attr__('Counter', 'avata' ),
+					  'field' => 'name',
+				  ),
+				  'settings'    => 'section_items_counter',
+				  'default'     => array(
+					  array(
+						  'image'  => '',
+						  'icon'  => 'fa-heart-o',
+						  'title'  => 'The Mastermind',
+						  'number'  => '120',
+						  
+					  ),
+					  array(
+						  'image'  => '',
+						  'icon'  => 'fa-cogs',
+						  'title'  => 'Creative head',
+						  'number'  => '160',
+						  
+					  ),
+					  array(
+						  'image'  => '',
+						  'icon'  => 'fa-database',
+						  'title'  => 'Technical lead',
+						  'number'  => '1360',
+						  
+					  ),
+					  array(
+						  'image'  => '',
+						  'icon'=> 'fa-user',
+						  'title'=> 'Customers',
+						  'number'=> '3000',
+						  ),
+
+				  ),
+				  'fields' => array(
+					  
+					  'icon' => array(
+						  'type'        => 'text',
+						  'label'       => esc_attr__( 'Fontawesome Icon', 'avata' ),
+						  'description' => '',
+						  'default'     => '',
+					  ),
+
+					  'image' => array(
+						  'type'        => 'image',
+						  'label'       => esc_attr__( 'Image Icon', 'avata' ),
+						  'description' => '',
+						  'default'     => '',
+					  ),
+					  
+					  'title' => array(
+						  'type'        => 'text',
+						  'label'       => esc_attr__( 'Title', 'avata' ),
+						  'description' => '',
+						  'default'     => '',
+					  ),
+					  'number' => array(
+						  'type'        => 'text',
+						  'label'       => esc_attr__( 'Number', 'avata' ),
+						  'description' => '',
+						  'default'     => '100',
+					  ),
+					  
+				  ),
+				  )));
 
 $avata_lite_sections['section-counter'] = array(
 										'name'=> __('Section Counter', 'avata'),
@@ -1639,7 +1639,7 @@ $avata_lite_sections['section-progress-bar-2'] = array(
 										);
 										
 										
-// custom frontpage sections
+// Custom frontpage sections
 $args['hide']    = '1';
 for( $i=1;$i<=2;$i++){
 	$j = $i-1;
@@ -1734,15 +1734,6 @@ Kirki::add_field( 'avata', array(
 	'priority' => 10,
 	) );
 
-Kirki::add_field( 'avata', array(
-	'type'     => 'color',
-	'settings' => 'menu_color_frontpage',
-	'label'    => __('Menu Font Color', 'avata'),
-	'section'  => 'avata_frontpage_general',
-	'default'  => '#ffffff',
-	'priority' => 10,
-	) );
-
 	
 // Front Page Header
 Kirki::add_section( 'avata_frontpage_header', array(
@@ -1763,6 +1754,16 @@ Kirki::add_field( 'avata', array(
 	'priority' => 10,
 	//'transport' => 'refresh',
 	) );
+	
+Kirki::add_field( 'avata', array(
+	'type'     => 'checkbox',
+	'settings' => 'transparent_header_frontpage',
+	'label'    => __('Transparent Header', 'avata'),
+	'section'  => 'avata_frontpage_header',
+	'default'  => '1',
+	'priority' => 10,
+	//'transport' => 'refresh',
+	) );
 
 Kirki::add_field( 'avata', array(
 	'type'     => 'slider',
@@ -1772,10 +1773,10 @@ Kirki::add_field( 'avata', array(
 	'default'  => '0.4',
 	'priority' => 10,
 	'choices'     => array(
-													  'min'  => 0.1,
-													  'max'  => 1,
-													  'step' => 0.1,
-												  ),
+				  'min'  => 0.1,
+				  'max'  => 1,
+				  'step' => 0.1,
+			  ),
 	) );
 
 	
@@ -1835,23 +1836,6 @@ Kirki::add_field( 'avata', array(
 	),
 ) );
 
-Kirki::add_field( 'avata', array(
-	'settings' => 'nav_css3_color',
-	'label'    => __( 'Icon Color', 'avata' ),
-	'section'  => 'avata_nav_styling',
-	'type'     => 'color',
-	'priority' => 10,
-	'default'  => '#f9ae40',
-) );
-
-Kirki::add_field( 'avata', array(
-	'settings' => 'nav_css3_border_color',
-	'label'    => __( 'Icon Border Color', 'avata' ),
-	'section'  => 'avata_nav_styling',
-	'type'     => 'color',
-	'priority' => 10,
-	'default'  => '#f9ae40',
-) );
 
 Kirki::add_field( 'avata', array(
 	'settings' => 'side_nav_padding',
@@ -1871,15 +1855,6 @@ Kirki::add_section( 'avata_panel_basic_settings', array(
     'priority'       => 11,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
-) );
-
-Kirki::add_field( 'avata', array(
-	'settings' => 'primary_color',
-	'label'    => __( 'Primary Color', 'avata' ),
-	'section'  => 'avata_panel_basic_settings',
-	'type'     => 'color',
-	'priority' => 10,
-	'default'  => '#f9ae40',
 ) );
 
 
@@ -1993,12 +1968,139 @@ Kirki::add_field( 'avata', array(
 	'choices'  => $avata_sidebars
 ) );
 
-
-// Footer
-Kirki::add_section( 'avata_footer', array(
-    'title'          => __( 'Avata: Footer', 'avata' ),
+// Header
+$panel = 'header';
+$section = 'avata_top_bar';
+Kirki::add_panel( $panel, array(
+	'priority'    => 13,
+	'title'       => __( 'Avata: Header', 'avata' ),
+	'description' => '',
+	) );
+  
+Kirki::add_section( $section, array(
+    'title'          => __( 'Top Bar', 'avata' ),
     'description'    => '',
-    'panel'          => '', 
+    'panel'          => $panel, 
+    'priority'       => 1,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '',
+) );
+
+Kirki::add_field( 'avata', array(
+	'settings' => 'display_topbar',
+	'label'   => __( 'Display Top Bar', 'avata' ),
+	'section' => $section,
+	'type'    => 'checkbox',
+	'transport' => $transport,
+	'default' => '',
+));
+
+Kirki::add_field( 'avata', array(
+	'type'        => 'select',
+	'settings'    => 'topbar_left_content',
+	'label'       => __( 'Tobbar Left Content', 'avata' ),
+	'section'     => $section,
+	'default'     => 'topbar_widgets',
+	'priority'    => 10,
+	'multiple'    => 0,
+	'choices'     => array(
+		'topbar_widgets' => __( '1, Widgets', 'avata' ),
+		'topbar_menu' => __( '2, Menu', 'avata' ),
+		'topbar_text' => __( '3, Text', 'avata' ),
+		)
+) );
+
+Kirki::add_field( 'avata', array(
+	'type'        => 'select',
+	'settings'    => 'topbar_right_content',
+	'label'       => __( 'Tobbar Right Content', 'avata' ),
+	'section'     => $section,
+	'default'     => 'topbar_text',
+	'priority'    => 10,
+	'multiple'    => 0,
+	'choices'     => array(
+		'topbar_widgets' => __( '1, Widgets', 'avata' ),
+		'topbar_menu' => __( '2, Menu', 'avata' ),
+		'topbar_text' => __( '3, Text', 'avata' ),
+		)
+) );
+
+Kirki::add_field( 'avata', array(
+	'settings' => 'topbar_widgets',
+	'label'   => __( '1, Widgets', 'avata' ),
+	'section' => $section,
+	'type'    => 'repeater',
+	'priority'    => 10,
+	'choices' => array('limit' => '6'),
+	'transport' => $transport,
+	'row_label' => array(
+				'type' => 'field',
+				'value' => esc_attr__('Item', 'avata' ),
+				'field' => 'text',),
+	'fields' => array(
+		
+		'text'=>array('type'=>'text','default'=>'','label'=> __( 'Text', 'avata' )),
+		'link'=>array('type'=>'link','default'=>'','label'=> __( 'Link', 'avata' )),
+		'target'=>array('type'=>'select','default'=>'', 'choices'=> $target, 'label'=> __( 'Target', 'avata' )),
+	),
+	'default' =>  array(
+		array(
+			"text" => "admin@domain.com",
+			"link" => "",
+			"target" => "_self",
+			),
+		array(
+			"text" => "011 322 44 56",
+			"link" => "",
+			"target" => "_self",
+			),
+		array(
+			"text" => "Monday - Friday 10 AM - 8 PM",
+			"link" => "",
+			"target" => "_self",
+			),
+		)
+	));
+	
+$locations = wp_get_nav_menus();
+$menus = array('' => __('== Select Menu ==', 'avata') );
+foreach( $locations as $location ){
+	$menus[$location->slug] = $location->name;
+	}
+
+Kirki::add_field( 'avata', array(
+	'type'        => 'select',
+	'settings'    => 'topbar_menu',
+	'label'       => __( '2, Menu', 'avata' ),
+	'section'     => $section,
+	'default'     => '',
+	'priority'    => 10,
+	'multiple'    => 0,
+	'choices'     => $menus
+) );
+	
+Kirki::add_field( 'avata', array(
+	'type'     => 'textarea',
+	'settings' => 'topbar_text',
+	'label'    => __('3, Text', 'avata'),
+	'section'  => $section,
+	'default'  => '',
+	'priority' => '10',
+	) );
+	
+// Footer
+$panel = 'footer';
+Kirki::add_panel( $panel, array(
+	'priority'    => 13,
+	'title'       => __( 'Avata: Footer', 'avata' ),
+	'description' => '',
+	) );
+	
+$section = 'avata_footer_widgets';
+Kirki::add_section( $section, array(
+    'title'          => __( 'Widgets Area', 'avata' ),
+    'description'    => '',
+    'panel'          => $panel, 
     'priority'       => 13,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
@@ -2007,49 +2109,66 @@ Kirki::add_section( 'avata_footer', array(
 Kirki::add_field( 'avata', array(
 	'type'     => 'checkbox',
 	'settings' => 'enable_footer_widgets',
-	'label'    => sprintf(__('Display Footer Widgets', 'avata' ),'#'.($i+1)),
-	'section'  => 'avata_footer',
+	'label'    => __('Display Footer Widgets', 'avata' ),
+	'section'  => $section,
 	'default'  => '1',
 	'priority' => 10,
 	) );
-	
+
 Kirki::add_field( 'avata', array(
-	'type'     => 'background',
-	'settings' => 'footer_area_background',
-	'label'    => __('Footer Widgets Area Background', 'avata' ),
-	'section'  => 'avata_footer',
-	'default'  => array('background-color'=>'#3f5267'),
-	'priority' => 10,
-	'output' => array(
-	array(
-		'element' => 'footer .footer-widget-area',
-	),
-	),
+		'type'        => 'dimensions',
+		'settings'    => 'footer_widgets_padding',
+		'label'       => esc_attr__( 'Footer Info Area Padding', 'avata' ),
+		'description' => '',
+		'section'     => $section,
+		'default'     => array(
+			'padding-top'    => '60px',
+			'padding-bottom' => '60px',
+			'padding-left'   => '0',
+			'padding-right'  => '0',
+		),
+		'output'      => array(
+			array(
+				'element' => '.footer-widget-area',
+			),
+		),
+	));
+
+$section = 'avata_footer_info';
+Kirki::add_section( $section, array(
+    'title'          => __( 'Copyright Area', 'avata' ),
+    'description'    => '',
+    'panel'          => $panel, 
+    'priority'       => 13,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '',
 ) );
 
-$default = array();
-
-for($i=0;$i<9;$i++){
-	$icon = avata_option('social_icon_'.$i);
-	if($icon !=''){
-		
-		$default[] = array(
-			'title'  => avata_option('social_title_'.$i),
-			'icon'  => $icon,
-			'link'  => avata_option('social_link_'.$i),
-			'target'  => '_blank'
-		);
-		
-	}
-}
-
-
+Kirki::add_field( 'avata', array(
+		'type'        => 'dimensions',
+		'settings'    => 'footer_info_padding',
+		'label'       => esc_attr__( 'Footer Info Area Padding', 'avata' ),
+		'description' => '',
+		'section'     => $section,
+		'default'     => array(
+			'padding-top'    => '50px',
+			'padding-bottom' => '20px',
+			'padding-left'   => '0',
+			'padding-right'  => '0',
+		),
+		'output'      => array(
+			array(
+				'element' => '.sub-footer',
+			),
+		),
+	));
+	
 Kirki::add_field( 'avata', array(
 	'type'        => 'repeater',
 	'label'       => esc_attr__( 'Social Icons', 'avata' ),
-	'section'     => 'avata_footer',
+	'section'     => $section,
 	'settings'     => 'footer_social_icons',
-	'description' => esc_attr__( 'Get social icon string from http://fontawesome.io/icons/, e.g. facebook.', 'avata' ),
+	'description' => esc_attr__( 'Get social icon string from https://fontawesome.com/v4.7.0/icons/, e.g. facebook.', 'avata' ),
 	'priority' => 10+$i,
 	'row_label' => array(
 		'type' => 'field',
@@ -2058,9 +2177,9 @@ Kirki::add_field( 'avata', array(
 	),
 	'default'     => array(
 		array(
-			'title'  => '',
-			'icon'  => '',
-			'link'  => '',
+			'title'  => 'Facebook',
+			'icon'  => 'facebook',
+			'link'  => '#',
 			'target'  => '_blank'
 	),
 		),
@@ -2074,7 +2193,7 @@ Kirki::add_field( 'avata', array(
 		'icon' => array(
 			'type'        => 'text',
 			'label'       => esc_attr__( 'Social Icon', 'avata' ),
-			'description' => esc_attr__( 'Get social icon string from http://fontawesome.io/icons/, e.g. facebook.', 'avata' ),
+			'description' => esc_attr__( 'Get social icon string from https://fontawesome.com/v4.7.0/icons/, e.g. facebook.', 'avata' ),
 			'default'     => '',
 		),
 		'link' => array(
@@ -2096,51 +2215,667 @@ Kirki::add_field( 'avata', array(
 );
 
 Kirki::add_field( 'avata', array(
-	'type'     => 'textarea',
+	'type'     => 'editor',
 	'settings' => 'copyright',
 	'label'    => __('Copyright', 'avata'),
-	'section'  => 'avata_footer',
-	'default'  => '&copy;Copyright '.date('Y').' - All rights reserved.',
+	'section'  => $section,
+	'default'  => 'Copyright &copy; '.date('Y').' - All rights reserved.',
 	'priority' => 11+$i,
 	) );
+
+// Colors & Background
 	
-Kirki::add_field( 'avata', array(
-	'type'     => 'color',
-	'settings' => 'copyright_color',
-	'label'    => __('Copyright Font Color', 'avata' ),
-	'section'  => 'avata_footer',
-	'default'  => '#ffffff',
-	'priority' => 12+$i,
+	$panel = 'panel-colors-background';
+	
+	Kirki::add_panel( $panel, array(
+		'settings' => $panel,
+		'title' => __( 'Avata: Colors & Background', 'avata' ),
+		'priority' => '14'
+	));
+	
+	$section = 'section-base-colors';
+	Kirki::add_section( $section, array(
+		'settings' => $section,
+		'title' => __( 'Base Colors', 'avata' ),
+		'priority' => '1',
+		'panel' => $panel
+	));
+	
+	Kirki::add_field( 'avata', array(
+		'settings' => 'primary_color',
+		'label'   => __( 'Primary Color', 'avata' ),
+		'priority' => '1',
+		'section' => $section,
+		'type'    => 'color',
+		'transport' => $transport,
+		'default' => '#f9ae40',
+	));
+	
+	
+	$section = 'section-top-bar-background';
+	Kirki::add_section( $section, array(
+		'settings' => $section,
+		'title' => __( 'Top Bar', 'avata' ),
+		'priority' => '2',
+		'panel' => $panel
+	));
+	
+	Kirki::add_field( 'avata', array(
+		'type'     => 'color',
+		'settings' => 'topbar_background_color',
+		'label'    => __('Background Color', 'avata' ),
+		'section'  => $section,
+		'default'  => 'rgba(245,245,245,1)',
+		'priority' => 10,
+		'output' => array(
+					array( 
+					'element' => '.avata-top-bar-wrap',
+					'function' => 'css',
+					'property' => 'background-color',
+					
+					)
+				),
+		'js_vars' => array(
+			array(
+			'element' => '.avata-top-bar-wrap',
+			'function' => 'css',
+			'property' => 'background-color',
+			
+			)
+		),
+		'choices'     => array(
+					'alpha' => true,
+				),
 	) );
 	
-Kirki::add_field( 'avata', array(
-	'type'     => 'color',
-	'settings' => 'copyright_bg_color',
-	'label'    => __('Copyright Background Color', 'avata' ),
-	'section'  => 'avata_footer',
-	'default'  => '#333',
-	'priority' => 13+$i,
+	$section = 'section-navigation-bar-background';
+	Kirki::add_section( $section, array(
+		'settings' => $section,
+		'title' => __( 'Navigation Bar', 'avata' ),
+		'priority' => '3',
+		'panel' => $panel
+	));
+	
+	Kirki::add_field( 'avata', array(
+		'type'     => 'color',
+		'settings' => 'menu_color_frontpage',
+		'label'    => __('Frontpage Menu Font Color', 'avata'),
+		'section'  =>  $section,
+		'default'  => '#ffffff',
+		'priority' => 1,
+	) );
+	
+	Kirki::add_field( 'avata', array(
+		'settings' => 'navigation_background',
+		'label'   => __( 'Navigation Bar Background', 'avata' ),
+		'priority' => '1',
+		'section' => $section,
+		'type'    => 'background',
+		'transport' => $transport,
+		'default' => array( 'background-color' => '#ffffff' ),
+		'output'      => array(
+			array(
+				'element' => '#main-header',
+			),
+		),
+		'choices'     => array(
+			'alpha' => true,
+		),
+	));
+	
+	$section = 'section-side-navigation-bar-background';
+	Kirki::add_section( $section, array(
+		'settings' => $section,
+		'title' => __( 'Side Navigation Icon', 'avata' ),
+		'priority' => '3',
+		'panel' => $panel
+	));
+	
+	Kirki::add_field( 'avata', array(
+		'settings' => 'nav_css3_color',
+		'label'    => __( 'Icon Color', 'avata' ),
+		'section'  => $section,
+		'type'     => 'color',
+		'priority' => 10,
+		'default'  => '#f9ae40',
+	) );
+	
+	Kirki::add_field( 'avata', array(
+		'settings' => 'nav_css3_border_color',
+		'label'    => __( 'Icon Border Color', 'avata' ),
+		'section'  => $section,
+		'type'     => 'color',
+		'priority' => 10,
+		'default'  => '#f9ae40',
+	) );
+	
+	$section = 'section-footer-widget-area-background';
+	Kirki::add_section( $section, array(
+		'settings' => $section,
+		'title' => __( 'Footer Widget Area', 'avata' ),
+		'priority' => '4',
+		'panel' => $panel
+	));
+	
+	Kirki::add_field( 'avata', array(
+		'type'     => 'background',
+		'settings' => 'footer_area_background',
+		'label'    => __('Footer Widgets Area Background', 'avata' ),
+		'section'  => $section,
+		'default'  => array('background-color'=>'#3f5267'),
+		'priority' => 10,
+		'output' => array(
+		array(
+			'element' => 'footer .footer-widget-area',
+		),
+		),
+		'choices'     => array(
+				'alpha' => true,
+			),
+		) );
+	
+	$section = 'section-footer-info-area-background';
+	Kirki::add_section( $section, array(
+		'settings' => $section,
+		'title' => __( 'Footer Info Area', 'avata' ),
+		'priority' => '4',
+		'panel' => $panel
+	));
+	
+	Kirki::add_field( 'avata', array(
+		'settings' => 'copyright_bg_color',
+		'label'   => __( 'Footer Info Area Background', 'avata' ),
+		'priority' => '1',
+		'section' => $section,
+		'type'    => 'background',
+		'transport' => $transport,
+		'default' => array('background-color' => '#333'),
+		'output'      => array(
+			array(
+				'element' => 'footer .sub-footer',
+			),
+		),
+		'choices'     => array(
+			'alpha' => true,
+		),
+	));
+	
+	$section = 'section-page-title-bar-background';
+	Kirki::add_section( $section, array(
+		'settings' => $section,
+		'title' => __( 'Page Title Bar', 'avata' ),
+		'priority' => '5',
+		'panel' => $panel
+	));
+	
+	Kirki::add_field( 'avata', array(
+		'type'     => 'background',
+		'settings' => 'page_title_bar_background',
+		'label'    => __('Page Title Bar Background', 'avata' ),
+		'section'  =>  $section,
+		'default'  => array('background-color'=>'#3f5267'),
+		'priority' => 10,
+		'description' => __( 'You can set the header overlay, subtitle, page title bar background, padding, slider, etc. for each page in the <strong>Pro version</strong>', 'avata' ),
+		'output' => array(
+		array(
+			'element' => '.page-title-bar, .post-title-bar',
+		),
+		),
+	) );
+	
+
+	// Panel Typography
+	$panel = 'panel-typography';
+	
+	Kirki::add_panel( $panel, array(
+		'settings' => $panel,
+		'title' => __( 'Avata: Typography', 'avata' ),
+		'priority' => '15'
+	));
+	
+	$section = 'base-typorgraphy';
+	Kirki::add_section( $section, array(
+		'settings' => $section,
+		'title' => __( 'Base Typorgraphy', 'avata' ),
+		'priority' => '10',
+		'panel' => $panel
+	));
+	
+	Kirki::add_field( 'avata', array(
+		'type'     => 'text',
+		'settings' =>  $section,
+		'label'    => __('Load Google Fonts', 'avata' ),
+		'section'  => 'avata_typography',
+		'default'  => 'Source+Sans+Pro:400,900,700,300,300italic|Lato:300,400,700,900|Poppins:300,400,500,600,700',
+		'priority' => 10,
 	) );
 
-// Typography
+	Kirki::add_field( 'avata', array(
+		'type'        => 'typography',
+		'settings'    => 'body_typography',
+		'label'       => esc_attr__( 'Body Typography', 'avata' ),
+		'section'     => $section,
+		'default'     => array(
+			'font-family'    => 'Lato',
+			'variant'        => 'regular',
+			'font-size'      => '16px',
+			'line-height'    => '1.8',
+			'letter-spacing' => '0',
+			'color'          => '#333',
+			'text-transform' => 'none',
+			'text-align'     => 'left',
+		),
+		'priority'    => 10,
+		'output'      => array(
+			array(
+				'element' => 'html, body',
+			),
+	)));
+	
+	Kirki::add_field( 'avata', array(
+		'type'        => 'typography',
+		'settings'    => 'h1_typography',
+		'label'       => esc_attr__( 'H1', 'avata' ),
+		'section'     => $section,
+		'transport' => $transport,
+		'default'     => array(
+			'font-family'    => 'Lato',
+			'variant'        => 'regular',
+			'font-size'      => '36px',
+			'line-height'    => '1.1',
+			'letter-spacing' => '0',
+			'color'          => '#333',
+			'text-transform' => 'none',
+			//'text-align'     => 'left',
+		),
+		'priority'    => 10,
+		'output'      => array(
+			array(
+				'element' => 'h1',
+			),
+			
+	),
+	 'js_vars' => array(
+        array(
+            'element' => 'h1',
+        ))
+		));
+	
+	Kirki::add_field( 'avata', array(
+		'type'        => 'typography',
+		'settings'    => 'h2_typography',
+		'label'       => esc_attr__( 'H2', 'avata' ),
+		'section'     => $section,
+		'default'     => array(
+			'font-family'    => 'Lato',
+			'variant'        => 'regular',
+			'font-size'      => '30px',
+			'line-height'    => '1.1',
+			'letter-spacing' => '0',
+			'color'          => '#333',
+			'text-transform' => 'none',
+			'text-align'     => 'left',
+		),
+		'priority'    => 10,
+		'output'      => array(
+			array(
+				'element' => 'h2',
+			),
+	)));
+	
+	
+	Kirki::add_field( 'avata', array(
+		'type'        => 'typography',
+		'settings'    => 'h3_typography',
+		'label'       => esc_attr__( 'H3', 'avata' ),
+		'section'     => $section,
+		'default'     => array(
+			'font-family'    => 'Lato',
+			'variant'        => 'regular',
+			'font-size'      => '24px',
+			'line-height'    => '1.1',
+			'letter-spacing' => '0',
+			'color'          => '#333',
+			'text-transform' => 'none',
+			'text-align'     => 'left',
+		),
+		'priority'    => 10,
+		'output'      => array(
+			array(
+				'element' => 'h3',
+			),
+	)));
 
-Kirki::add_section( 'avata_typography', array(
-    'title'          => __( 'Avata: Typography', 'avata' ),
-    'description'    => '',
-    'panel'          => '', 
-    'priority'       => 14,
-    'capability'     => 'edit_theme_options',
-    'theme_supports' => '',
-) );
+		
+	Kirki::add_field( 'avata', array(
+			'type'        => 'typography',
+			'settings'    => 'h4_typography',
+			'label'       => esc_attr__( 'H4', 'avata' ),
+			'section'     => $section,
+			'default'     => array(
+				'font-family'    => 'Lato',
+				'variant'        => 'regular',
+				'font-size'      => '20px',
+				'line-height'    => '1.1',
+				'letter-spacing' => '0',
+				'color'          => '#333',
+				'text-transform' => 'none',
+				'text-align'     => 'left',
+			),
+			'priority'    => 10,
+			'output'      => array(
+				array(
+					'element' => 'h4',
+				),
+		)));
+	
+	Kirki::add_field( 'avata', array(
+			'type'        => 'typography',
+			'settings'    => 'h5_typography',
+			'label'       => esc_attr__( 'H5', 'avata' ),
+			'section'     => $section,
+			'default'     => array(
+				'font-family'    => 'Lato',
+				'variant'        => 'regular',
+				'font-size'      => '18px',
+				'line-height'    => '1.1',
+				'letter-spacing' => '0',
+				'color'          => '#333',
+				'text-transform' => 'none',
+				'text-align'     => 'left',
+			),
+			'choices'     => array(
+				'alpha' => true,
+			),
+			'priority'    => 10,
+			'output'      => array(
+				array(
+					'element' => 'h5',
+				),
+		)));
+		
+	Kirki::add_field( 'avata', array(
+			'type'        => 'typography',
+			'settings'    => 'h6_typography',
+			'label'       => esc_attr__( 'H6', 'avata' ),
+			'section'     => $section,
+			'default'     => array(
+				'font-family'    => 'Lato',
+				'variant'        => 'regular',
+				'font-size'      => '16px',
+				'line-height'    => '1.1',
+				'letter-spacing' => '0',
+				'color'          => '#333',
+				'text-transform' => 'none',
+				'text-align'     => 'left',
+			),
+			'priority'    => 10,
+			'output'      => array(
+				array(
+					'element' => 'h6',
+				),
+		)));
+	
+	$section = 'top-bar-typorgraphy';
+	Kirki::add_section( $section, array(
+		'settings' => $section,
+		'title' => __( 'Top Bar', 'avata' ),
+		'priority' => '10',
+		'panel' => $panel
+	));
+	
+	Kirki::add_field( 'avata', array(
+			'type'        => 'typography',
+			'settings'    => 'topbar_typography',
+			'label'       => esc_attr__( 'Content', 'avata' ),
+			'section'     => $section,
+			'default'     => array(
+				'font-family'    => 'Open Sans',
+				'variant'        => 'regular',
+				'font-size'      => '12px',
+				'line-height'    => '18px',
+				'letter-spacing' => '0.5px',
+				'color'          => '#666',
+				'text-transform' => 'none',
+				'text-align'     => 'left',
+			),
+			'priority'    => 10,
+			'output'      => array(
+				array(
+					'element' => '.avata-top-bar .avata-microwidget, .avata-top-bar .avata-microwidget a',
+				),
+		)));
+		
+	$section = 'navigation-typography';
+	Kirki::add_section( $section, array(
+		'settings' => $section,
+		'title' => __( 'Navigation Bar', 'avata' ),
+		'priority' => '10',
+		'panel' => $panel
+	));
+	
+	Kirki::add_field( 'avata', array(
+			'type'        => 'typography',
+			'settings'    => 'main_menu_typography',
+			'label'       => esc_attr__( 'Main Menu', 'avata' ),
+			'section'     => $section,
+			'default'     => array(
+				'font-family'    => 'Lato',
+				'variant'        => '400',
+				'font-size'      => '16px',
+				'line-height'    => '70px',
+				'letter-spacing' => '0.3px',
+				'color'          => '#333',
+				'text-transform' => 'none',
+				'text-align'     => 'left',
+			),
+			'priority'    => 10,
+			'output'      => array(
+				array(
+					'element' => '.main-header .main-navigation > li > a, .main-nav > li > a',
+				),
+		)));
+	
+	Kirki::add_field( 'avata', array(
+			'type'        => 'typography',
+			'settings'    => 'sub_menu_typography',
+			'label'       => esc_attr__( 'Sub Menu', 'avata' ),
+			'section'     => $section,
+			'default'     => array(
+				'font-family'    => 'Lato',
+				'variant'        => 'regular',
+				'font-size'      => '14px',
+				'line-height'    => '1.8',
+				'letter-spacing' => '0',
+				'color'          => '#333',
+				'text-transform' => 'none',
+				'text-align'     => 'left',
+			),
+			'priority'    => 10,
+			'output'      => array(
+				array(
+					'element' => '.main-nav .sub-menu li a',
+				),
+		)));
+		
+	$section = 'widget-typography';
+	Kirki::add_section( $section, array(
+		'settings' => $section,
+		'title' => __( 'Widget', 'avata' ),
+		'priority' => '10',
+		'panel' => $panel
+	));
+	
+	Kirki::add_field( 'avata', array(
+			'type'        => 'typography',
+			'settings'    => 'widget_title_typography',
+			'label'       => esc_attr__( 'Widget Title', 'avata' ),
+			'section'     => $section,
+			'default'     => array(
+				'font-family'    => 'Lato',
+				'variant'        => '400',
+				'font-size'      => '18px',
+				'line-height'    => '1.1',
+				'letter-spacing' => '0',
+				'color'          => '#fff',
+				'text-transform' => 'uppercase',
+				'text-align'     => 'left',
+			),
+			'priority'    => 10,
+			'output'      => array(
+				array(
+					'element' => '.widget-title, .footer-widget-area .widget-title',
+				),
+				array(
+					'choice' => 'color',
+					'element' => '.footer-widget-area .widget-title:after',
+					'property' => 'background-color'
+				),
+	
+		)));
+		
+	Kirki::add_field( 'avata', array(
+			'type'        => 'typography',
+			'settings'    => 'widget_content_typography',
+			'label'       => esc_attr__( 'Widget Content', 'avata' ),
+			'section'     => $section,
+			'default'     => array(
+				'font-family'    => 'Lato',
+				'variant'        => '400',
+				'font-size'      => '14px',
+				'line-height'    => '1.1',
+				'letter-spacing' => '0',
+				'color'          => '#a0a0a0',
+				'text-transform' => 'none',
+				'text-align'     => 'left',
+			),
+			'priority'    => 10,
+			'output'      => array(
+				array(
+					'element' => '.widget-box, .widget-box a',
+				),
+		)));
+		
+	$section = 'footer-typography';
+	Kirki::add_section( $section, array(
+		'settings' => $section,
+		'title' => __( 'Footer Info', 'avata' ),
+		'priority' => '10',
+		'panel' => $panel
+	));
+		
+	Kirki::add_field( 'avata', array(
+			'type'        => 'typography',
+			'settings'    => 'footer_typography',
+			'label'       => esc_attr__( 'Footer Content', 'avata' ),
+			'section'     => $section,
+			'default'     => array(
+				'font-family'    => 'Lato',
+				'variant'        => '400',
+				'font-size'      => '16px',
+				'line-height'    => '1.8',
+				'letter-spacing' => '0',
+				'color'          => '#fff',
+				'text-transform' => 'none',
+				'text-align'     => 'left',
+			),
+			'transport'   => $transport,
+			'priority'    => 10,
+			'output'      => array(
+				array(
+					'element' => '.sub-footer',
+				),
+				array(
+					'choice' => 'color',
+					'element' => '.sub-footer i',
+					'property' => 'color'
+				),
 
-Kirki::add_field( 'avata', array(
-	'type'     => 'text',
-	'settings' => 'google_fonts',
-	'label'    => __('Load Google Fonts', 'avata' ),
-	'section'  => 'avata_typography',
-	'default'  => 'Source+Sans+Pro:400,900,700,300,300italic|Lato:300,400,700,900|Poppins:300,400,500,600,700',
-	'priority' => 10,
-	) );
+		)));
+		
+	$section = 'page-title-bar-typography';
+	Kirki::add_section( $section, array(
+		'settings' => $section,
+		'title' => __( 'Page Title Bar', 'avata' ),
+		'priority' => '10',
+		'panel' => $panel
+	));
+	
+	Kirki::add_field( 'avata', array(
+			'type'        => 'typography',
+			'settings'    => 'page_title_typography',
+			'label'       => esc_attr__( 'Page Title', 'avata' ),
+			'section'     => $section,
+			'default'     => array(
+				'font-family'    => 'Lato',
+				'variant'        => '400',
+				'font-size'      => '36px',
+				'line-height'    => '1.1',
+				'letter-spacing' => '0',
+				'color'          => '#fff',
+				'text-transform' => 'none',
+				'text-align'     => 'left',
+			),
+			'priority'    => 10,
+			'output'      => array(
+				array(
+					'element' => '.page-title, .page-title h1',
+				),
+		)));
+	
+	Kirki::add_field( 'avata', array(
+			'type'        => 'typography',
+			'settings'    => 'breadcrumb_typography',
+			'label'       => esc_attr__( 'Breadcrumb', 'avata' ),
+			'section'     => $section,
+			'default'     => array(
+				'font-family'    => 'Lato',
+				'variant'        => '400',
+				'font-size'      => '14px',
+				'line-height'    => '1.8',
+				'letter-spacing' => '1.5px',
+				'color'          => '#fff',
+				'text-transform' => 'none',
+				'text-align'     => 'left',
+			),
+			'priority'    => 10,
+			'output'      => array(
+				array(
+					'element' => '.breadcrumb-nav, .breadcrumb-nav a,.breadcrumb-nav span',
+				),
+		)));
+	
+	$section = 'blog-typography';
+	Kirki::add_section( $section, array(
+		'settings' => $section,
+		'title' => __( 'Blog', 'avata' ),
+		'priority' => '10',
+		'panel' => $panel
+	));
+	
+	Kirki::add_field( 'avata', array(
+			'type'        => 'typography',
+			'settings'    => 'post_title_typography',
+			'label'       => esc_attr__( 'Post Title', 'avata' ),
+			'section'     => $section,
+			'default'     => array(
+				'font-family'    => 'Lato',
+				'variant'        => '400',
+				'font-size'      => '20px',
+				'line-height'    => '1.1',
+				'letter-spacing' => '2px',
+				'color'          => '#fff',
+				'text-transform' => 'uppercase',
+				'text-align'     => 'left',
+			),
+			'priority'    => 10,
+			'output'      => array(
+
+				array(
+					'element' => 'h1.post-title,h1.entry-title',
+				),
+		)));
+	
 
 
 // Blog
@@ -2148,7 +2883,7 @@ Kirki::add_section( 'avata_blog', array(
     'title'          => __( 'Avata: Posts & Pages', 'avata'  ),
     'description'    => '',
     'panel'          => '', 
-    'priority'       => 15,
+    'priority'       => 16,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
 ) );
@@ -2170,21 +2905,6 @@ Kirki::add_field( 'avata', array(
 	'type'     => 'checkbox',
 	'priority' => 10,
 	'default'  => '',
-) );
-
-Kirki::add_field( 'avata', array(
-	'type'     => 'background',
-	'settings' => 'page_title_bar_background',
-	'label'    => __('Page Title Bar Background', 'avata' ),
-	'section'  => 'avata_blog',
-	'default'  => array('background-color'=>'#3f5267'),
-	'priority' => 10,
-	'description' => __( 'You can set the header overlay, subtitle, page title bar background, padding, slider, etc. for each page in the <strong>Pro version</strong>', 'avata' ),
-	'output' => array(
-	array(
-		'element' => '.page-title-bar, .post-title-bar',
-	),
-	),
 ) );
 
 Kirki::add_field( 'avata', array(

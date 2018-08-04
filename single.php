@@ -27,7 +27,7 @@ if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $righ
   <div class="<?php echo $container;?>">
   <div class="row">
     <div class="col-md-12">
-  <h4 class="text-uppercase"><?php the_title();?></h4>
+  <h1 class="post-title entry-title"><?php the_title();?></h1>
     <div class="breadcrumb-nav">
       <?php avata_breadcrumbs();?>
     </div>

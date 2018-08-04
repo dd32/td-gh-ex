@@ -23,13 +23,13 @@ if ($left_sidebar != '' && $left_sidebar != '0' && $right_sidebar != '' && $righ
 <div class="<?php echo $container;?>">
   <div class="row">
     <div class="col-md-12">
-  <h4 class="text-uppercase"><?php 
+  <h1 class="entry-title"><?php 
 				if( is_archive() )
 					the_archive_title();
 				else
 					single_cat_title(); 
 				
-				?></h4>
+				?></h1>
     <div class="breadcrumb-nav">
       <?php avata_breadcrumbs();?>
     </div>

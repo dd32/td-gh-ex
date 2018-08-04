@@ -1,5 +1,5 @@
 <?php
-  global $allowedposttags, $avata_animation, $avata_animation_delay;
+  global $avata_animation, $avata_animation_delay;
 
   $section_title      = avata_option('section_title_banner_2');
   $section_subtitle   = avata_option('section_subtitle_banner_2');
@@ -25,7 +25,7 @@
             <div class="avata-box avata-box--stretched"><div class="avata-box__magnet section-content-wrap avata-box__magnet--center-center">
                 <div class="avata-hero" >
                 <h1 class="avata-hero__text avata-section_title_banner_2 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo esc_attr($section_title);?></h1>
-                    <p class="avata-hero__subtext <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><strong class="avata-section_subtitle_banner_2"><?php echo wp_kses(do_shortcode($section_subtitle), $allowedposttags);?></strong></p>
+                    <p class="avata-hero__subtext <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><strong class="avata-section_subtitle_banner_2"><?php echo wp_kses_post(do_shortcode($section_subtitle));?></strong></p>
                 </div>
                 <div class="avata-buttons btn-inverse avata-buttons--center">
                 <?php if($btn_txt_1 !=''){?>

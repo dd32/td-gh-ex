@@ -1,5 +1,5 @@
 <?php
-  global $allowedposttags, $avata_animation, $avata_animation_delay;
+  global $avata_animation, $avata_animation_delay;
   $section_title     = avata_option('section_title_testimonial');
   $section_subtitle  = avata_option('section_subtitle_testimonial');
   $testimonial       = avata_option('section_items_testimonial');
@@ -15,7 +15,7 @@
   <?php if ( $section_title !='' || $section_subtitle !='' ){?>
   <div class="section-title-area">
     <h2 class="section-title text-center avata-section_title_testimonial <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo esc_attr($section_title);?></h2>
-    <p class="section-subtitle text-center avata-section_subtitle_testimonial <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo wp_kses($section_subtitle, $allowedposttags);?></p>
+    <p class="section-subtitle text-center avata-section_subtitle_testimonial <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo wp_kses_post($section_subtitle);?></p>
   </div>
   <?php }?>
   <div class="section-content">
@@ -34,7 +34,7 @@
             <div class="testimonial-slide text-center">
               <figure> <img src="<?php echo esc_url($item['avatar']);?>" alt="<?php echo esc_attr($item['name']);?>"> </figure>
               <blockquote>
-                <p>"<?php echo wp_kses(do_shortcode($item['description']), $allowedposttags);?>"</p>
+                <p>"<?php echo wp_kses_post(do_shortcode($item['description']));?>"</p>
               </blockquote>
               <span><?php echo esc_attr($item['name']);?>, <?php echo esc_attr($item['role']);?></span>
                </div>

@@ -1,5 +1,5 @@
 <?php
-  global $allowedposttags, $avata_animation, $avata_animation_delay;
+  global $avata_animation, $avata_animation_delay;
 
   $section_title     = avata_option('section_title_video_1');
   $section_subtitle  = avata_option('section_subtitle_video_1');
@@ -16,8 +16,8 @@
       <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
         <div class="video-content">
           <div class="avate-video-container"> <a href="<?php echo esc_attr($video);?>" class="avate-media <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><i class="fa fa-play"></i></a> </div>
-          <h2 class="section-title avata-section_title_video_1 <?php echo $avata_animation;?>" style="font-size: 32px;font-weight: 400;" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo wp_kses(do_shortcode($section_title), $allowedposttags);?></h2>
-          <p class="section-subtitle text-center avata-section_subtitle_video_1 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo wp_kses(do_shortcode($section_subtitle), $allowedposttags);?></p>
+          <h2 class="section-title avata-section_title_video_1 <?php echo $avata_animation;?>" style="font-size: 32px;font-weight: 400;" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo wp_kses_post(do_shortcode($section_title));?></h2>
+          <p class="section-subtitle text-center avata-section_subtitle_video_1 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo wp_kses_post(do_shortcode($section_subtitle));?></p>
         </div>
       </div>
     </div>

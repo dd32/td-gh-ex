@@ -2,7 +2,7 @@
 Contributors: HooThemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.0-trunk
-Version: 1.5.3
+Version: 1.5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready, custom-logo, featured-image-header, footer-widgets, right-sidebar, left-sidebar, e-commerce
@@ -88,6 +88,12 @@ https://www.pexels.com/photo/white-and-gray-pen-beside-succulent-flower-and-whit
 
 
 == Changelog ==
+
+= Version 1.5.4 = = 04/08/2018
+* Add - Added top bar
+* Add - Added Colors & Background options
+* Add - Added Typography options
+* Add - Added Footer options
 
 = Version 1.5.3 = = 14/05/2018
 * Fix - Fixed front page menu fornt color issue

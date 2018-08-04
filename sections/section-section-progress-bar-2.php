@@ -1,5 +1,5 @@
 <?php
-  global $allowedposttags, $avata_animation, $avata_animation_delay;
+  global $avata_animation, $avata_animation_delay;
   $section_title     = avata_option('section_title_progress_bar_2');
   $section_subtitle  = avata_option('section_subtitle_progress_bar_2');
   $progress_bar      = avata_option('section_progress_progress_bar_2');
@@ -16,7 +16,7 @@
   <?php if ( $section_title !='' || $section_subtitle !='' ){?>
     <div class="section-title-area">
       <h2 class="section-title text-center avata-section_title_service_2 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo esc_attr($section_title);?></h2>
-      <p class="section-subtitle text-center avata-section_subtitle_service_2 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo wp_kses(do_shortcode($section_subtitle), $allowedposttags);?></p>
+      <p class="section-subtitle text-center avata-section_subtitle_service_2 <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo wp_kses_post(do_shortcode($section_subtitle));?></p>
     </div>
     <?php }?>
     <div class="section-content">
@@ -49,11 +49,11 @@
 	?>
     
      <div class="col-md-<?php echo $col;?>">
-                        <div class="progress2 circle" data-percent="<?php echo absint($item['percent']);?>" data-color="<?php echo esc_attr($item['color']);?>">
-                          <strong></strong>
-                          <span><?php echo esc_attr($item['title']);?></span>
-                        </div>
-                    </div>
+        <div class="progress2 circle" data-percent="<?php echo absint($item['percent']);?>" data-color="<?php echo esc_attr($item['color']);?>">
+          <strong></strong>
+          <span><?php echo esc_attr($item['title']);?></span>
+        </div>
+    </div>
     
     <?php
 	 endforeach;

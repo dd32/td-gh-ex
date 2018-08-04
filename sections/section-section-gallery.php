@@ -1,5 +1,5 @@
 <?php
-  global $allowedposttags, $avata_animation, $avata_animation_delay;
+  global $avata_animation, $avata_animation_delay;
   $section_title     = avata_option('section_title_gallery');
   $section_subtitle  = avata_option('section_subtitle_gallery');
   $gallery           = avata_option('section_items_gallery');
@@ -22,7 +22,7 @@
   <?php if ( $section_title !='' || $section_subtitle !='' ){?>
     <div class="section-title-area">
       <h2 class="section-title text-center avata-section_title_gallery <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo esc_attr($section_title);?></h2>
-      <p class="section-subtitle text-center avata-section_subtitle_gallery <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo wp_kses(do_shortcode($section_subtitle), $allowedposttags);?></p>
+      <p class="section-subtitle text-center avata-section_subtitle_gallery <?php echo $avata_animation;?>" data-os-animation="fadeInUp" data-os-animation-delay="<?php echo $avata_animation_delay;?>"><?php echo wp_kses_post(do_shortcode($section_subtitle));?></p>
     </div>
     <?php }?>
     <div class="section-content avata-section_items_gallery">
@@ -37,7 +37,7 @@
 				
 				
 	?>
-    <li class="col-md-<?php echo $column;?> work <?php echo $avata_animation;?>" data-download-url="<?php echo esc_url($item['image']);?>" data-src="<?php echo esc_url($item['image']);?>" data-sub-html="<?php echo wp_kses($item['title'], $allowedposttags);?>" data-facebook-share-url="<?php echo esc_url($item['image']);?>" data-twitter-share-url="<?php echo esc_url($item['image']);?>" data-googleplus-share-url="<?php echo esc_url($item['image']);?>" data-pinterest-share-url="<?php echo esc_url($item['image']);?>" data-os-animation="fadeIn" data-os-animation-delay="<?php echo $avata_animation_delay_new;?>"><a href="#" class="work-box"> <img src="<?php echo esc_url($item['image']);?>" class="img-responsive" alt="" />
+    <li class="col-md-<?php echo $column;?> work <?php echo $avata_animation;?>" data-download-url="<?php echo esc_url($item['image']);?>" data-src="<?php echo esc_url($item['image']);?>" data-sub-html="<?php echo wp_kses_post($item['title']);?>" data-facebook-share-url="<?php echo esc_url($item['image']);?>" data-twitter-share-url="<?php echo esc_url($item['image']);?>" data-googleplus-share-url="<?php echo esc_url($item['image']);?>" data-pinterest-share-url="<?php echo esc_url($item['image']);?>" data-os-animation="fadeIn" data-os-animation-delay="<?php echo $avata_animation_delay_new;?>"><a href="#" class="work-box"> <img src="<?php echo esc_url($item['image']);?>" class="img-responsive" alt="" />
         <div class="overlay">
           <div class="overlay-caption">
             <p><i class="fa fa-search" aria-hidden="true"></i></p>

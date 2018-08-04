@@ -1,5 +1,5 @@
 <?php
-global $avata_post_meta, $allowedposttags;
+global $avata_post_meta;
 get_header();
 
 $container = 'container';
@@ -54,7 +54,7 @@ if ($page_id  > 0) {
     <div class="<?php echo $container;?>">
       <div class="page-inner row <?php echo avata_get_sidebar_class($sidebar);?>">
         <div class="col-main">
-        <?php echo wp_kses($content, $allowedposttags);?>
+        <?php echo wp_kses_post($content);?>
         </div>
         <?php avata_get_sidebar($sidebar, 'page'); ?>
       </div>
