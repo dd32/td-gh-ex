@@ -42,6 +42,10 @@ Activiation and Use
 
 == Changelog ==
 
+= 1.3.9 =
+* display slider and homepage widgets only on static homepage
+* remove default widgets content
+
 = 1.3.8 =
 * bug fixing
 

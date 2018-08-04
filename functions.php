@@ -271,20 +271,18 @@ if ( ! function_exists( 'fmuzz_display_slider' ) ) :
 			<?php
 				// display slides
 				for ( $i = 1; $i <= 3; ++$i ) {
-
-						$defaultSlideContent = __( '<h3>This is Default Slide Title</h3><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'fmuzz' );
 						
 						$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
 
 						$slideContent = get_theme_mod( 'fmuzz_slide'.$i.'_content', html_entity_decode( $defaultSlideContent ) );
 						$slideImage = get_theme_mod( 'fmuzz_slide'.$i.'_image', $defaultSlideImage );
-
 					?>
-
 						<div data-thumb="<?php echo esc_attr( $slideImage ); ?>" data-src="<?php echo esc_attr( $slideImage ); ?>">
-							<div class="camera_caption fadeFromBottom">
-								<?php echo $slideContent; ?>
-							</div>
+							<?php if ($slideContent) : ?>
+									<div class="camera_caption fadeFromBottom">
+										<?php echo $slideContent; ?>
+									</div>
+							<?php endif; ?>
 						</div>
 	<?php		} ?>
 		</div><!-- #camera_wrap -->
@@ -335,73 +333,73 @@ if ( ! function_exists( 'fmuzz_show_social_sites' ) ) :
 
 	function fmuzz_show_social_sites() {
 
-		$socialURL = get_theme_mod('fmuzz_social_facebook', '#');
+		$socialURL = get_theme_mod('fmuzz_social_facebook');
 		if ( !empty($socialURL) ) {
 
 			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Facebook', 'fmuzz') . '" class="facebook16"></a>';
 		}
 
-		$socialURL = get_theme_mod('fmuzz_social_google', '#');
+		$socialURL = get_theme_mod('fmuzz_social_google');
 		if ( !empty($socialURL) ) {
 
 			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Google+', 'fmuzz') . '" class="google16"></a>';
 		}
 
-		$socialURL = get_theme_mod('fmuzz_social_twitter', '#');
+		$socialURL = get_theme_mod('fmuzz_social_twitter');
 		if ( !empty($socialURL) ) {
 
 			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Twitter', 'fmuzz') . '" class="twitter16"></a>';
 		}
 
-		$socialURL = get_theme_mod('fmuzz_social_linkedin', '#');
+		$socialURL = get_theme_mod('fmuzz_social_linkedin');
 		if ( !empty($socialURL) ) {
 
 			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on LinkedIn', 'fmuzz') . '" class="linkedin16"></a>';
 		}
 
-		$socialURL = get_theme_mod('fmuzz_social_instagram', '#');
+		$socialURL = get_theme_mod('fmuzz_social_instagram');
 		if ( !empty($socialURL) ) {
 
 			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Instagram', 'fmuzz') . '" class="instagram16"></a>';
 		}
 
-		$socialURL = get_theme_mod('fmuzz_social_rss', get_bloginfo( 'rss2_url' ));
+		$socialURL = get_theme_mod('fmuzz_social_rss');
 		if ( !empty($socialURL) ) {
 
 			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow our RSS Feeds', 'fmuzz') . '" class="rss16"></a>';
 		}
 
-		$socialURL = get_theme_mod('fmuzz_social_tumblr', '#');
+		$socialURL = get_theme_mod('fmuzz_social_tumblr');
 		if ( !empty($socialURL) ) {
 
 			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Tumblr', 'fmuzz') . '" class="tumblr16"></a>';
 		}
 
-		$socialURL = get_theme_mod('fmuzz_social_youtube', '#');
+		$socialURL = get_theme_mod('fmuzz_social_youtube');
 		if ( !empty($socialURL) ) {
 
 			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Youtube', 'fmuzz') . '" class="youtube16"></a>';
 		}
 
-		$socialURL = get_theme_mod('fmuzz_social_pinterest', '#');
+		$socialURL = get_theme_mod('fmuzz_social_pinterest');
 		if ( !empty($socialURL) ) {
 
 			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Pinterest', 'fmuzz') . '" class="pinterest16"></a>';
 		}
 
-		$socialURL = get_theme_mod('fmuzz_social_vk', '#');
+		$socialURL = get_theme_mod('fmuzz_social_vk');
 		if ( !empty($socialURL) ) {
 
 			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on VK', 'fmuzz') . '" class="vk16"></a>';
 		}
 
-		$socialURL = get_theme_mod('fmuzz_social_flickr', '#');
+		$socialURL = get_theme_mod('fmuzz_social_flickr');
 		if ( !empty($socialURL) ) {
 
 			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Flickr', 'fmuzz') . '" class="flickr16"></a>';
 		}
 
-		$socialURL = get_theme_mod('fmuzz_social_vine', '#');
+		$socialURL = get_theme_mod('fmuzz_social_vine');
 		if ( !empty($socialURL) ) {
 
 			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Vine', 'fmuzz') . '" class="vine16"></a>';
@@ -550,6 +548,15 @@ final class fmuzz_Customize {
 	}
 }
 
+if ( ! function_exists( 'fmuzz_sanitize_checkbox' ) ) :
+
+	function fmuzz_sanitize_checkbox( $checked ) {
+		// Boolean check.
+		return ( ( isset( $checked ) && true == $checked ) ? true : false );
+	}
+
+endif;
+
 // Doing this customizer thang!
 fmuzz_Customize::get_instance();
 
@@ -576,7 +583,6 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_facebook',
 			array(
-			    'default'           => '#',
 			    'sanitize_callback' => 'esc_url_raw',
 			)
 		);
@@ -595,7 +601,6 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_google',
 			array(
-			    'default'           => '#',
 			    'sanitize_callback' => 'esc_url_raw',
 			)
 		);
@@ -614,7 +619,6 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_twitter',
 			array(
-			    'default'           => '#',
 			    'sanitize_callback' => 'esc_url_raw',
 			)
 		);
@@ -633,7 +637,6 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_linkedin',
 			array(
-			    'default'           => '#',
 			    'sanitize_callback' => 'esc_url_raw',
 			)
 		);
@@ -652,7 +655,6 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_instagram',
 			array(
-			    'default'           => '#',
 			    'sanitize_callback' => 'esc_url_raw',
 			)
 		);
@@ -671,7 +673,6 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_rss',
 			array(
-			    'default'           => get_bloginfo( 'rss2_url' ),
 			    'sanitize_callback' => 'esc_url_raw',
 			)
 		);
@@ -690,7 +691,6 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_tumblr',
 			array(
-			    'default'           => '#',
 			    'sanitize_callback' => 'esc_url_raw',
 			)
 		);
@@ -709,7 +709,6 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_youtube',
 			array(
-			    'default'           => '#',
 			    'sanitize_callback' => 'esc_url_raw',
 			)
 		);
@@ -728,7 +727,6 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_pinterest',
 			array(
-			    'default'           => '#',
 			    'sanitize_callback' => 'esc_url_raw',
 			)
 		);
@@ -747,7 +745,6 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_vk',
 			array(
-			    'default'           => '#',
 			    'sanitize_callback' => 'esc_url_raw',
 			)
 		);
@@ -766,7 +763,6 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_flickr',
 			array(
-			    'default'           => '#',
 			    'sanitize_callback' => 'esc_url_raw',
 			)
 		);
@@ -785,7 +781,6 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_vine',
 			array(
-			    'default'           => '#',
 			    'sanitize_callback' => 'esc_url_raw',
 			)
 		);
@@ -815,7 +810,7 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 				'fmuzz_slider_display',
 				array(
-						'default'           => 1,
+						'default'           => 0,
 						'sanitize_callback' => 'fmuzz_sanitize_checkbox',
 				)
 		);
@@ -840,7 +835,6 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 			$wp_customize->add_setting(
 				$slideContentId,
 				array(
-					'default'           => __( '<h2>This is Default Slide Title</h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'fmuzz' ),
 					'sanitize_callback' => 'force_balance_tags',
 				)
 			);
