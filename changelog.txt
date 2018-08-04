@@ -1,3 +1,8 @@
+fGymm 1.6.7, 2018-08-04
+------------------------
+- display slider and homepage widgets only on static homepage
+- remove default widgets content
+
 fGymm 1.6.6, 2018-05-24
 ------------------------
 - improve design

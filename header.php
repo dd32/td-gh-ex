@@ -33,3 +33,15 @@
 			<div id="header-spacer">
 				&nbsp;
 			</div>
+
+			<?php if ( is_front_page() && get_option( 'show_on_front' ) == 'page' ) : ?>
+
+					<?php if ( get_theme_mod('fgymm_slider_display', 0) == 1 ) : ?>
+
+						<?php fgymm_display_slider(); ?>
+
+					<?php endif; ?>
+
+					<?php get_sidebar('home'); ?>
+			
+			<?php endif; ?>

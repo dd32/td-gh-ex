@@ -68,12 +68,6 @@ The exceptions to this license are as follows:
 *
 * screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/bodybuilder-muscles-fitness-925770/
 *
-* screenshot.png (column image 1) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: 
-*
-* screenshot.png (column image 2) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: 
-*
-* screenshot.png (column image 3) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: 
-*
 * js/camera.min.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
 * js/camera.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
 * js/jquery.easing.1.3.js BSD License Reference: http://www.linfo.org/bsdlicense.html

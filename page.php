@@ -1,13 +1,5 @@
 <?php get_header(); ?>
 
-<?php if ( (is_home() || is_front_page()) && get_theme_mod('fgymm_slider_display', 1) == 1 ) : ?>
-
-		<?php fgymm_display_slider(); ?>
-
-		<?php get_sidebar('home'); ?>
-	
-	<?php endif; ?>
-
 <div class="clear">
 </div>
 
