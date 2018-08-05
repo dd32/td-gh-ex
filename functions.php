@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Set our theme version.
-define( 'BEKKO_VERSION', '1.0.0' );
+define( 'BEKKO_VERSION', '1.0.1' );
 
 if ( ! function_exists( 'bekko_setup' ) ) {
 	add_action( 'after_setup_theme', 'bekko_setup' );
