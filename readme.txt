@@ -125,6 +125,10 @@ License: https://creativecommons.org/publicdomain/zero/1.0/
 
 == Change Log ==
 
+= 1.0.7 =
+Fixed: Font Awesome css
+Fixed: CSS output
+
 = 1.0.6 =
 Some little fixes
 

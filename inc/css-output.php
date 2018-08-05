@@ -716,7 +716,6 @@ add_action( 'wp_enqueue_scripts', 'asagi_enqueue_dynamic_css', 50 );
  */
 function asagi_enqueue_dynamic_css() {
 	$css = asagi_base_css() . asagi_font_css() . asagi_advanced_css() . asagi_spacing_css() . asagi_no_cache_dynamic_css();
-	$css = wp_kses_post( $css );
 
 	wp_add_inline_style( 'asagi-style', $css );
 }
