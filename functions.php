@@ -1,0 +1,291 @@
+<?php
+
+
+if ( ! function_exists( 'bee_news_setup' ) ) :
+
+function bee_news_setup() {
+
+    /*
+     * Make theme available for translation.
+     * Translations can be filed in the /languages/ directory.
+     */
+    /* Pinegrow generated Load Text Domain Begin */
+    load_theme_textdomain( 'bee-news', get_template_directory() . '/languages' );
+    /* Pinegrow generated Load Text Domain End */
+
+    // Add default posts and comments RSS feed links to head.
+    add_theme_support( 'automatic-feed-links' );
+    add_theme_support( 'content_width', 900 );
+
+    /*
+     * Let WordPress manage the document title.
+     */
+    add_theme_support( 'title-tag' );
+    
+    /*
+     * Enable support for Post Thumbnails on posts and pages.
+     */
+    add_theme_support( 'post-thumbnails' );
+    set_post_thumbnail_size( 825, 510, true );
+
+    add_image_size( 'category-thumb', 350, 260, true ); // (cropped)
+    add_image_size( 'category-thumb-small', 220, 180, true ); // (cropped)
+
+    add_theme_support( 'custom-header', array (
+      'width'             => 960,
+      'height'            => 100,
+      'flex-height'        => true,
+      'uploads'           => true
+    ));
+
+    add_theme_support( 'custom-background', array (
+     'default-color'          => '',
+    'default-image'          => ''
+    ));
+
+
+    // Add menus.
+    register_nav_menus( array(
+        'primary' => __( 'Primary Menu', 'bee-news' ),
+        'social'  => __( 'Social Links Menu', 'bee-news' ),
+    ) );
+
+    /*
+     * Switch default core markup for search form, comment form, and comments
+     * to output valid HTML5.
+     */
+    add_theme_support( 'html5', array(
+        'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+    ) );
+
+    /*
+     * Enable support for Post Formats.
+     */
+    add_theme_support( 'post-formats', array(
+        'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat'
+    ) );
+}
+endif; // bee_news_setup
+
+add_action( 'after_setup_theme', 'bee_news_setup' );
+
+
+if ( ! function_exists( 'bee_news_init' ) ) :
+
+function bee_news_init() {
+
+    
+    // Use categories and tags with attachments
+    register_taxonomy_for_object_type( 'category', 'attachment' );
+    register_taxonomy_for_object_type( 'post_tag', 'attachment' );
+
+    /*
+     * Register custom post types. You can also move this code to a plugin.
+     */
+    /* Pinegrow generated Custom Post Types Begin */
+
+    /* Pinegrow generated Custom Post Types End */
+    
+    /*
+     * Register custom taxonomies. You can also move this code to a plugin.
+     */
+    /* Pinegrow generated Taxonomies Begin */
+
+    /* Pinegrow generated Taxonomies End */
+
+}
+endif; // bee_news_setup
+
+add_action( 'init', 'bee_news_init' );
+
+
+if ( ! function_exists( 'bee_news_widgets_init' ) ) :
+
+function bee_news_widgets_init() {
+
+    /*
+     * Register widget areas.
+     */
+    /* Pinegrow generated Register Sidebars Begin */
+
+
+     register_sidebar( array(
+        'name' => __( 'Homepage - Header area', 'bee-news' ),
+        'id' => 'homepage-slider',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widgettitle">',
+        'after_title' => '</h3>'
+    ) );
+
+     
+    register_sidebar( array(
+        'name' => __( 'Homepage - Content area', 'bee-news' ),
+        'id' => 'content-area',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widgettitle">',
+        'after_title' => '</h3>'
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Right Sidebar', 'bee-news' ),
+        'id' => 'right-sidebar',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widgettitle">',
+        'after_title' => '</h3>'
+    ) );
+
+
+    register_sidebar( array(
+        'name' => __( 'Footer 3 - Quick Link 1', 'bee-news' ),
+        'id' => 'footer-3-quicklink-1',
+        'before_widget' => '<div id="%1$s" class="widget %2$s col-xs-4" >',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widgettitle">',
+        'after_title' => '</h3>'
+    ) );
+
+
+    register_sidebar( array(
+        'name' => __( 'Footer 3 - Quick Link 2', 'bee-news' ),
+        'id' => 'footer-3-quicklink-2',
+        'before_widget' => '<div id="%1$s" class="widget %2$s col-xs-4" >',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widgettitle">',
+        'after_title' => '</h3>'
+    ) );
+
+
+    register_sidebar( array(
+        'name' => __( 'Footer 3 - Quick Link 3', 'bee-news' ),
+        'id' => 'footer-3-quicklink-3',
+        'before_widget' => '<div id="%1$s" class="widget %2$s col-xs-4" >',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widgettitle">',
+        'after_title' => '</h3>'
+    ) );
+
+
+
+    /* Pinegrow generated Register Sidebars End */
+}
+add_action( 'widgets_init', 'bee_news_widgets_init' );
+endif;// bee_news_widgets_init
+
+
+
+if ( ! function_exists( 'bee_news_customize_register' ) ) :
+
+function bee_news_customize_register( $wp_customize ) {
+    // Do stuff with $wp_customize, the WP_Customize_Manager object.
+
+    /* Pinegrow generated Customizer Controls Begin */
+
+    /* Pinegrow generated Customizer Controls End */
+
+}
+add_action( 'customize_register', 'bee_news_customize_register' );
+endif;// bee_news_customize_register
+
+
+if ( ! function_exists( 'bee_news_enqueue_scripts' ) ) :
+    function bee_news_enqueue_scripts() {
+
+        /* Pinegrow generated Enqueue Scripts Begin */
+
+    wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', false, null, true);
+
+    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', false, null, true);
+  
+
+
+
+    if(is_home() || is_front_page()):
+
+        wp_enqueue_script( 'google-api-js', 
+            'https://apis.google.com/js/client.js?onload=init', false, null, true);
+    endif;
+
+
+
+    wp_enqueue_script( 'beenews-custom-js', get_template_directory_uri() . '/js/beenews-custom.js', false, null, true);
+
+    /* Pinegrow generated Enqueue Scripts End */
+
+        /* Pinegrow generated Enqueue Styles Begin */
+
+    wp_deregister_style( 'bootstrap' );
+    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', false, null, 'all');
+    wp_deregister_style( 'font-awesome' );
+    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', false, null, 'all');
+        // Load our main stylesheet.
+    wp_enqueue_style( 'bee-news-style', get_stylesheet_uri() );
+
+    wp_deregister_style( 'style' );
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css', false, null, 'all');
+
+
+    /* Pinegrow generated Enqueue Styles End */
+
+    }
+    add_action( 'wp_enqueue_scripts', 'bee_news_enqueue_scripts' );
+endif;
+
+/*
+ * Resource files included by Pinegrow.
+ */
+/* Pinegrow generated Include Resources Begin */
+require_once "inc/bootstrap/wp_bootstrap_navwalker.php";
+require_once "inc/bootstrap/wp_bootstrap_navwalker.php";
+
+require_once "inc/template-tags.php";
+require_once "inc/widget/Bee-Breaking-New-Headline-layout.php";
+require_once "inc/widget/Bee-Slider.php";
+require_once "inc/widget/Bee-Layout-1.php";
+require_once "inc/widget/Bee-Layout-2.php";
+require_once "inc/widget/Bee-Layout-3.php";
+require_once "inc/widget/Bee-News-Category-Sidebar.php";
+require_once "inc/news-layouts.php";
+require_once "inc/class-beenews-autoloader.php";
+require_once "inc/class-beenews-lite.php";
+ require_once "inc/library/customizer/class-beenews-main-notify-system.php";
+
+//include Redux Framework
+include_once get_template_directory().'/admin-folder/admin/admin-init.php';
+$beenews = new beenews_Lite();
+
+/* Pinegrow generated Include Resources End */
+
+
+/*
+ * Removed Continue reading on manually inputted excerpt;
+ */
+function bee_excerpt_more( $output ) {
+    return '...';
+}
+
+add_filter('excerpt_more', 'bee_excerpt_more');
+
+
+// Changing excerpt length - only works with MANUAL excerpt
+// Priority of 9 is set so that read more filter function fires AFTER this one.
+add_filter('get_the_excerpt', 'bee_news_excerpt_length', 9);
+function bee_news_excerpt_length($excerpt) {
+    global $post;
+    $length = 10; //Number of characters to display in excerpt
+    $new_excerpt = substr($excerpt, 0, $length); //truncate excerpt according to $len
+    if(strlen($new_excerpt) < strlen($excerpt)) {
+        return $new_excerpt;
+    } else {
+        return $excerpt;
+    }
+}
+
+
+function bee_news_content_width() {
+    $GLOBALS['content_width'] = apply_filters( 'bee_news_content_width', 840 );
+}
+add_action( 'after_setup_theme', 'bee_news_content_width', 0 );
+

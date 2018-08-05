@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="300" height="300" viewBox="0 0 300 300">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        font-size: 263.484px;
+      }
+
+      .cls-2 {
+        fill: #eee;
+        font-family: "Eras Bold ITC";
+      }
+
+      .cls-3 {
+        font-size: 84.315px;
+      }
+    </style>
+  </defs>
+  <text transform="translate(-10 194) scale(0.75 0.57)" class="cls-1"><tspan class="cls-1"><tspan class="cls-2">B<tspan class="cls-3">press</tspan></tspan></tspan></text>
+</svg>
