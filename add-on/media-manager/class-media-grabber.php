@@ -2,7 +2,7 @@
 /**
  * A script for grabbing media related to a post.
  *
- * This class incorporates code from Stargazer WordPress Theme,
+ * This method is highly inspired and incorporates some code from Stargazer WordPress Theme,
  * Copyright 2013 – 2018 Justin Tadlock. Stargazer is distributed
  * under the terms of the GNU GPL.
  *
@@ -177,12 +177,24 @@ class Media_Grabber {
 			$content = $wp_embed->run_shortcode( get_the_content() );
 			$content = $wp_embed->autoembed( $content );
 
+			// We want to replace special characters into formatted entities.
+			$content = wptexturize( $content );
+
 			// Filter shortcodes in the content through their hooks.
 			$content = do_shortcode( $content );
 
 			// Get media from the content.
 			$media       = get_media_embedded_in_content( $content, $this->media_type );
 			$this->media = $media ? $media[0] : '';
+
+			// If no audio found, check for audio embedded in iframe.
+			if ( ! $this->media && 'audio' === $this->type ) {
+				$iframes = get_media_embedded_in_content( $content, [ 'iframe' ] );
+				if ( $iframes && isset( $iframes[0] ) ) {
+					$this->media = $iframes[0];
+					$this->type  = 'iaudio';
+				}
+			}
 		}
 
 		if ( $this->split && $this->media ) {

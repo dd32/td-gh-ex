@@ -70,12 +70,14 @@ class WidgetLayer {
 		add_action( 'wp_enqueue_scripts', [ self::get_instance(), 'enqueue_front' ] );
 		add_action( 'admin_enqueue_scripts', [ self::get_instance(), 'enqueue_admin' ] );
 		add_action( 'aamla_inside_header', [ self::get_instance(), 'skip_link' ], -1 );
+		add_action( 'aamla_after_header', [ self::get_instance(), 'breadcrumb' ] );
 		add_action( 'aamla_after_header', [ self::get_instance(), 'display_widget_areas' ] );
 		add_action( 'widgets_init', [ self::get_instance(), 'register_custom_widget' ] );
 		add_action( 'in_widget_form', [ self::get_instance(), 'extend_widget_form' ], 9, 3 );
 		add_action( 'add_meta_boxes', [ self::get_instance(), 'add_custom_widget_metabox' ], 10, 2 );
 		add_action( 'save_post', [ self::get_instance(), 'save_widget_metabox' ], 10, 2 );
 		add_action( 'delete_post', [ self::get_instance(), 'delete_pages_with_custom_widget' ] );
+		add_filter( 'body_class', [ self::get_instance(), 'body_classes' ] );
 		add_filter( 'aamla_register_sidebar', [ self::get_instance(), 'register_widget_areas' ] );
 		add_filter( 'dynamic_sidebar_params', [ self::get_instance(), 'add_widget_customizations' ] );
 		add_filter( 'widget_update_callback', [ self::get_instance(), 'update_settings' ], 10, 2 );
@@ -89,7 +91,8 @@ class WidgetLayer {
 	 * @since 1.0.1
 	 */
 	public function enqueue_front() {
-		if ( ! is_singular( 'page' ) ) {
+
+		if ( ! $this->active_widgetlayer_pageid() ) {
 			return;
 		}
 		wp_enqueue_style(
@@ -104,28 +107,54 @@ class WidgetLayer {
 	}
 
 	/**
+	 * Extend the default WordPress body classes.
+	 *
+	 * @since 1.0.4
+	 *
+	 * @param array $classes Classes for the body element.
+	 * @return array
+	 */
+	public function body_classes( $classes ) {
+		if ( $this->active_widgetlayer_pageid() ) {
+			$classes[] = 'widgetlayer-page';
+		}
+
+		return $classes;
+	}
+
+	/**
+	 * Call available breadcrumb display function.
+	 *
+	 * @since 1.0.4
+	 */
+	public function breadcrumb() {
+
+		if ( ! $this->active_widgetlayer_pageid() ) {
+			return;
+		}
+
+		remove_action( 'aamla_inside_main_content', 'aamla_breadcrumb' );
+		aamla_breadcrumb();
+	}
+
+	/**
 	 * Conditionally display skip link.
 	 *
 	 * @since 1.0.2
 	 */
 	public function skip_link() {
-		if ( ! is_singular( 'page' ) ) {
+
+		if ( ! $this->active_widgetlayer_pageid() ) {
 			return;
 		}
 
-		// Get current page ID.
-		$page_id = get_the_ID();
+		// Remove default action hook to display skip link.
+		remove_action( 'aamla_inside_header', 'aamla_skip_link', 0 );
 
-		// Display new skip link markup, if current page have widgetlayer custom widget area.
-		if ( array_key_exists( $page_id, $this->get_pages_with_custom_widget() ) ) {
-			// Remove default action hook to display skip link.
-			remove_action( 'aamla_inside_header', 'aamla_skip_link', 0 );
-
-			// Display revised skip link.
-			printf( '<a class="skip-link screen-reader-text" href="#page-widget-area-top">%s</a>',
-				esc_html__( 'Skip to content', 'aamla' )
-			);
-		}
+		// Display revised skip link.
+		printf( '<a class="skip-link screen-reader-text" href="#page-widget-area-top">%s</a>',
+			esc_html__( 'Skip to content', 'aamla' )
+		);
 	}
 
 	/**
@@ -134,36 +163,39 @@ class WidgetLayer {
 	 * @since 1.0.1
 	 */
 	public function enqueue_admin() {
+
 		$screen = get_current_screen();
-		if ( in_array( $screen->id, [ 'page', 'widgets', 'customize' ], true ) ) {
-			wp_enqueue_media();
-
-			wp_enqueue_style(
-				'aamla_widgetlayer_admin_style',
-				get_template_directory_uri() . '/add-on/widgetlayer/admin/widgetlayer.css',
-				[],
-				AAMLA_THEME_VERSION,
-				'all'
-			);
-
-			wp_enqueue_script(
-				'aamla_widgetlayer_admin_js',
-				get_template_directory_uri() . '/add-on/widgetlayer/admin/widgetlayer.js',
-				[ 'jquery' ],
-				AAMLA_THEME_VERSION,
-				true
-			);
-
-			// Theme localize scripts data.
-			$l10n = apply_filters( 'aamla_localize_script_data',
-				[
-					'uploader_title'       => esc_html__( 'Set Text Widget Featured Image', 'aamla' ),
-					'uploader_button_text' => esc_html__( 'Select', 'aamla' ),
-					'set_featured_img'     => esc_html__( 'Set Featured Image', 'aamla' ),
-				]
-			);
-			wp_localize_script( 'aamla_widgetlayer_admin_js', 'aamlaImageUploadText', $l10n );
+		if ( ! in_array( $screen->id, [ 'page', 'widgets', 'customize' ], true ) ) {
+			return;
 		}
+
+		wp_enqueue_media();
+
+		wp_enqueue_style(
+			'aamla_widgetlayer_admin_style',
+			get_template_directory_uri() . '/add-on/widgetlayer/admin/widgetlayer.css',
+			[],
+			AAMLA_THEME_VERSION,
+			'all'
+		);
+
+		wp_enqueue_script(
+			'aamla_widgetlayer_admin_js',
+			get_template_directory_uri() . '/add-on/widgetlayer/admin/widgetlayer.js',
+			[ 'jquery' ],
+			AAMLA_THEME_VERSION,
+			true
+		);
+
+		// Theme localize scripts data.
+		$l10n = apply_filters( 'aamla_localize_script_data',
+			[
+				'uploader_title'       => esc_html__( 'Set Text Widget Featured Image', 'aamla' ),
+				'uploader_button_text' => esc_html__( 'Select', 'aamla' ),
+				'set_featured_img'     => esc_html__( 'Set Featured Image', 'aamla' ),
+			]
+		);
+		wp_localize_script( 'aamla_widgetlayer_admin_js', 'aamlaImageUploadText', $l10n );
 	}
 
 	/**
@@ -174,23 +206,14 @@ class WidgetLayer {
 	 * @return string Verified css string or empty string.
 	 */
 	public function generate_custom_css() {
-		$page_id = get_the_ID();
-		if ( ! $page_id ) {
-			return '';
-		}
 
 		// We will put inline css to individual widgets separately in customize preview.
 		if ( is_customize_preview() ) {
 			return '';
 		}
 
-		// Return if current page does not have widgetlayer custom widget area.
-		if ( ! array_key_exists( $page_id, $this->get_pages_with_custom_widget() ) ) {
-			return '';
-		}
-
-		// Return if current page's widgetlayer custom widget area is not active.
-		if ( ! is_active_sidebar( 'widgetlayer-page-' . $page_id ) ) {
+		$page_id = $this->active_widgetlayer_pageid();
+		if ( ! $page_id ) {
 			return '';
 		}
 
@@ -227,16 +250,11 @@ class WidgetLayer {
 			return [];
 		}
 
-		$widget_id  = isset( $widget_data[0] ) ? $widget_data[0] : false;
-		$widget_pos = isset( $widget_data[1] ) ? $widget_data[1] : false;
-		$instance   = isset( $widget_data[2] ) ? $widget_data[2] : false;
-		$id_base    = isset( $widget_data[3] ) ? $widget_data[3] : false;
-
-		if ( false === $widget_id || false === $widget_pos || false === $instance || false === $id_base ) {
-			return [];
-		}
-
 		$widget_css             = [];
+		$widget_id              = $widget_data[0];
+		$widget_pos             = $widget_data[1];
+		$instance               = $widget_data[2];
+		$id_base                = $widget_data[3];
 		$widget_css['common'][] = 'order:' . 2 * $widget_pos;
 		$wid_settings           = array_intersect_key( $instance, $this->get_widget_options() );
 
@@ -352,20 +370,11 @@ class WidgetLayer {
 			return '';
 		}
 
-		$widget_id  = isset( $widget_data[0] ) ? $widget_data[0] : false;
-		$widget_pos = isset( $widget_data[1] ) ? $widget_data[1] : false;
-		$instance   = isset( $widget_data[2] ) ? $widget_data[2] : false;
-		$id_base    = isset( $widget_data[3] ) ? $widget_data[3] : false;
-
-		if ( false === $widget_id || false === $widget_pos || false === $instance || false === $id_base ) {
-			return '';
-		}
-
-		$widget_classes   = [];
-		$widget_classes[] = 'brick-' . $widget_pos;
-		$widget_classes   = apply_filters( 'aamla_widget_custom_classes', $widget_classes, $id_base, $instance, $widget_id );
-		$widget_classes   = array_map( 'esc_attr', $widget_classes );
-		$widget_classes   = array_unique( $widget_classes );
+		$classes        = [];
+		$classes[]      = 'brick-' . $widget_data[1];
+		$widget_classes = apply_filters( 'aamla_widget_custom_classes', $classes, $widget_data );
+		$widget_classes = array_map( 'esc_attr', $widget_classes );
+		$widget_classes = array_unique( $widget_classes );
 
 		return join( ' ', $widget_classes );
 	}
@@ -375,17 +384,26 @@ class WidgetLayer {
 	 *
 	 * @since 1.0.1
 	 *
-	 * @param array  $classes  Array of css rules.
-	 * @param string $type     Type of widget (id_base).
-	 * @param array  $settings Array of settings for widget instance.
+	 * @param array $classes  Array of css rules.
+	 * @param array $widget_data {
+	 *     Current widget's data to generate customized output.
+	 *     @type str   $widget_id  Widget ID.
+	 *     @type int   $widget_pos Widget position in widgetlayer widget-area.
+	 *     @type array $instance   Current widget instance settings.
+	 *     @type str   $id_base    Widget ID base.
+	 * }
 	 * @return array
 	 */
-	public function widget_classes( $classes, $type, $settings ) {
-		if ( 'text' === $type ) {
-			if ( isset( $settings['text'] ) && empty( $settings['text'] ) ) {
+	public function widget_classes( $classes, $widget_data ) {
+
+		$instance = $widget_data[2];
+		$id_base  = $widget_data[3];
+
+		if ( 'text' === $id_base ) {
+			if ( isset( $instance['text'] ) && empty( $instance['text'] ) ) {
 				$classes[] = 'only-title';
 			}
-			if ( isset( $settings['aamla_text_featured_image'] ) && absint( $settings['aamla_text_featured_image'] ) ) {
+			if ( isset( $instance['aamla_text_featured_image'] ) && $instance['aamla_text_featured_image'] ) {
 				$classes[] = 'has-featured-image';
 			}
 		}
@@ -424,19 +442,17 @@ class WidgetLayer {
 	 * @param string $calledby Hook by which this function is called.
 	 */
 	public function display_widget_areas( $calledby ) {
-		if ( is_singular( 'page' ) && 'after_header' === $calledby ) {
-			$page_id = get_the_ID();
-			if ( ! $page_id || ! array_key_exists( $page_id, $this->get_pages_with_custom_widget() ) ) {
-				return;
-			}
-			aamla_widgets(
-				'page-widget-area-top',
-				'page-widget-area-top widgetlayer wrapper',
-				esc_html__( 'Page Content Below Site Header', 'aamla' ),
-				'widgetlayer-page-' . $page_id,
-				false
-			);
+		$page_id = $this->active_widgetlayer_pageid();
+		if ( ! $page_id ) {
+			return;
 		}
+		aamla_widgets(
+			'page-widget-area-top',
+			'page-widget-area-top widgetlayer wrapper',
+			esc_html__( 'Page Content Below Site Header', 'aamla' ),
+			'widgetlayer-page-' . $page_id,
+			false
+		);
 	}
 
 	/**
@@ -457,28 +473,17 @@ class WidgetLayer {
 
 		$pages = [];
 		$args  = [
-			'post_type'   => 'page',
-			'post_status' => 'publish',
-			'meta_query'  => [
-				[
-					'key'     => 'aamla_custom_widget_meta',
-					'compare' => 'EXISTS',
-				],
-			],
+			'meta_key'   => 'aamla_custom_widget_meta',
+			'meta_value' => 'yes',
 		];
-		$query = new \WP_Query( $args );
+		$query = get_pages( $args );
 
-		if ( $query->have_posts() ) {
-			while ( $query->have_posts() ) {
-				$query->the_post();
-				$pages[ $query->post->ID ] = esc_html( get_the_title() );
-			}
-			// Reset our postdata.
-			wp_reset_postdata();
-			update_option( 'aamla_pages_with_custom_widget', $pages );
-			$this->pages_with_custom_widget = $pages;
+		foreach ( $query as $page ) {
+			$pages[ $page->ID ] = esc_html( $page->post_title );
 		}
 
+		update_option( 'aamla_pages_with_custom_widget', $pages );
+		$this->pages_with_custom_widget = $pages;
 		return $pages;
 	}
 
@@ -514,7 +519,7 @@ class WidgetLayer {
 						'min'         => 0,
 						'max'         => 100,
 						'step'        => 0.01,
-						'placeholder' => 'Same as desktop',
+						'placeholder' => esc_html__( 'Same as desktop', 'aamla' ),
 					],
 				],
 				'aamla_vert_align'          => [
@@ -597,59 +602,53 @@ class WidgetLayer {
 			}
 
 			// Prepare markup for custom widget options.
-			if ( current_user_can( 'edit_theme_options' ) ) {
-				switch ( $value['type'] ) {
-					case 'select':
-						$field  = '<label for="' . $id . '">' . $value['label'] . ': </label>';
-						$field .= $description;
-						// Select option field.
-						$field .= sprintf( '<select name="%s" id="%s">', $name, $id );
-						$field .= sprintf( '<option value="">%s</option>', $value['default'] );
-						foreach ( $value['choices'] as $val => $label ) {
-							$field .= sprintf( '<option value="%s" %s>%s</option>',
-								esc_attr( $val ),
-								selected( $instance[ $setting ], $val, false ),
-								$label
-							);
-						}
-						$field .= '</select>';
-						$field  = sprintf( '<p class="%s widget-setting">%s</p>', esc_attr( $setting ), $field );
-						break;
-					case 'checkbox':
-						$field  = sprintf( '<input name="%s" id="%s" type="checkbox" value="yes" %s />', $name, $id, checked( $instance[ $setting ], 'yes' ) );
-						$field .= '<label for="' . $id . '">' . $value['label'] . '</label>';
-						$field .= $description;
-						$field  = sprintf( '<p class="%s widget-small-text">%s</p>', esc_attr( $setting ), $field );
-						break;
-					case 'custom':
-						$field  = '<label for="' . $id . '">' . $value['label'] . '</label>';
-						$field .= $description;
-						$field .= apply_filters( 'aamla_custom_widget_form', '', $setting, $id, $name, $instance[ $setting ] );
-						$field  = sprintf( '<p class="%s  widget-setting">%s</p>', esc_attr( $setting ), $field );
-						break;
-					default:
-						$field  = '<label for="' . $id . '">' . $value['label'] . ': </label>';
-						$field .= $description;
-						$field .= sprintf( '<input name="%s" id="%s" type="%s" ', $name, $id, esc_attr( $value['type'] ) );
-						foreach ( $input_attrs as $attr => $val ) {
-							$field .= esc_html( $attr ) . '="' . esc_attr( $val ) . '" ';
-						}
-						if ( ! isset( $input_attrs['value'] ) ) {
-							$field .= sprintf( 'value=%s', ( '' !== $instance[ $setting ] ) ? $instance[ $setting ] : $value['default'] );
-						}
-						$field .= ' />';
-						$field  = sprintf( '<p class="%s widget-setting">%s</p>', esc_attr( $setting ), $field );
-						break;
-				}
-				if ( false === $value['premium_option'] ) {
-					$fields['basic'][] = $field;
-				} else {
-					$fields['premium'][] = $field;
-				}
+			switch ( $value['type'] ) {
+				case 'select':
+					$field  = '<label for="' . $id . '">' . $value['label'] . ': </label>';
+					$field .= $description;
+					// Select option field.
+					$field .= sprintf( '<select name="%s" id="%s">', $name, $id );
+					$field .= sprintf( '<option value="">%s</option>', $value['default'] );
+					foreach ( $value['choices'] as $val => $label ) {
+						$field .= sprintf( '<option value="%s" %s>%s</option>',
+							esc_attr( $val ),
+							selected( $instance[ $setting ], $val, false ),
+							$label
+						);
+					}
+					$field .= '</select>';
+					$field  = sprintf( '<p class="%s widget-setting">%s</p>', esc_attr( $setting ), $field );
+					break;
+				case 'checkbox':
+					$field  = sprintf( '<input name="%s" id="%s" type="checkbox" value="yes" %s />', $name, $id, checked( $instance[ $setting ], 'yes' ) );
+					$field .= '<label for="' . $id . '">' . $value['label'] . '</label>';
+					$field .= $description;
+					$field  = sprintf( '<p class="%s widget-small-text">%s</p>', esc_attr( $setting ), $field );
+					break;
+				case 'custom':
+					$field  = '<label for="' . $id . '">' . $value['label'] . '</label>';
+					$field .= $description;
+					$field .= apply_filters( 'aamla_custom_widget_form', '', $setting, $id, $name, $instance[ $setting ] );
+					$field  = sprintf( '<p class="%s  widget-setting">%s</p>', esc_attr( $setting ), $field );
+					break;
+				default:
+					$field  = '<label for="' . $id . '">' . $value['label'] . ': </label>';
+					$field .= $description;
+					$field .= sprintf( '<input name="%s" id="%s" type="%s" ', $name, $id, esc_attr( $value['type'] ) );
+					foreach ( $input_attrs as $attr => $val ) {
+						$field .= esc_html( $attr ) . '="' . esc_attr( $val ) . '" ';
+					}
+					if ( ! isset( $input_attrs['value'] ) ) {
+						$field .= sprintf( 'value=%s', ( '' !== $instance[ $setting ] ) ? $instance[ $setting ] : $value['default'] );
+					}
+					$field .= ' />';
+					$field  = sprintf( '<p class="%s widget-setting">%s</p>', esc_attr( $setting ), $field );
+					break;
+			}
+			if ( false === $value['premium_option'] ) {
+				$fields['basic'][] = $field;
 			} else {
-				?>
-				<input type="hidden" name="<?php echo esc_attr( $widget->get_field_name( $setting ) ); ?>" value="<?php echo esc_attr( $instance[ $setting ] ); ?>" />
-				<?php
+				$fields['premium'][] = $field;
 			}
 		}
 
@@ -693,10 +692,10 @@ class WidgetLayer {
 				$class           = '';
 				$uploader_class  = 'has-image';
 			} else {
-				$featured_markup = esc_html( 'Set Featured Image', 'aamla' );
+				$featured_markup = esc_html__( 'Set Featured Image', 'aamla' );
 			}
 		} else {
-			$featured_markup = esc_html( 'Set Featured Image', 'aamla' );
+			$featured_markup = esc_html__( 'Set Featured Image', 'aamla' );
 		}
 
 		$markup  = sprintf( '<a class="aamla-widget-img-uploader %s">%s</a>', $uploader_class, $featured_markup );
@@ -716,9 +715,6 @@ class WidgetLayer {
 	 * @return false|array
 	 */
 	public function update_settings( $instance, $new_instance ) {
-		if ( ! current_user_can( 'edit_theme_options' ) ) {
-			return $instance;
-		}
 
 		foreach ( $this->get_widget_options() as $option => $value ) {
 			$setting      = $value['setting'];
@@ -789,13 +785,8 @@ class WidgetLayer {
 			return $params;
 		}
 
-		$page_id = get_the_ID();
-
-		if ( ! $page_id || ! array_key_exists( $page_id, $this->get_pages_with_custom_widget() ) ) {
-			return $params;
-		}
-
-		if ( ! is_active_sidebar( 'widgetlayer-page-' . $page_id ) ) {
+		$page_id = $this->active_widgetlayer_pageid();
+		if ( ! $page_id ) {
 			return $params;
 		}
 
@@ -899,14 +890,8 @@ class WidgetLayer {
 	 */
 	public function get_before_widget_content( $widget_data ) {
 
-		$widget_id  = isset( $widget_data[0] ) ? $widget_data[0] : false;
-		$widget_pos = isset( $widget_data[1] ) ? $widget_data[1] : false;
-		$instance   = isset( $widget_data[2] ) ? $widget_data[2] : false;
-		$id_base    = isset( $widget_data[3] ) ? $widget_data[3] : false;
-
-		if ( false === $widget_id || false === $widget_pos || false === $instance || false === $id_base ) {
-			return '';
-		}
+		$instance = $widget_data[2];
+		$id_base  = $widget_data[3];
 
 		// Short circuit filter.
 		$check = apply_filters( 'aamla_before_widget_content', false, $widget_data );
@@ -918,6 +903,7 @@ class WidgetLayer {
 		if ( 'text' === $id_base && isset( $instance['aamla_text_featured_image'] ) ) {
 			$image_id = absint( $instance['aamla_text_featured_image'] );
 			if ( $image_id ) {
+				$classes     = [];
 				$orientation = '';
 				$image_size  = apply_filters( 'aamla_text_image_size', 'aamla-medium', $widget_data );
 				$classes[]   = 'text-widget-featured-image';
@@ -947,16 +933,6 @@ class WidgetLayer {
 	 * @return string Widget customized content markup.
 	 */
 	public function get_after_widget_content( $widget_data ) {
-
-		$widget_id  = isset( $widget_data[0] ) ? $widget_data[0] : false;
-		$widget_pos = isset( $widget_data[1] ) ? $widget_data[1] : false;
-		$instance   = isset( $widget_data[2] ) ? $widget_data[2] : false;
-		$id_base    = isset( $widget_data[3] ) ? $widget_data[3] : false;
-
-		if ( false === $widget_id || false === $widget_pos || false === $instance || false === $id_base ) {
-			return '';
-		}
-
 		return apply_filters( 'aamla_after_widget_content', '', $widget_data );
 	}
 
@@ -1035,12 +1011,7 @@ class WidgetLayer {
 			return;
 		}
 
-		/*
-		 * Conditionally delete saved array of pages with custom widget.
-		 * Note: Delete data before user capability check, as a user with less than
-		 * required capability (edit_theme_options) can still delete a page (on page deletion, that page
-		 * specific widget should also be deleted).
-		 */
+		// Conditionally delete saved array of pages with custom widget.
 		$this->delete_pages_with_custom_widget( $post_id );
 
 		// Exits script depending on user capability.
@@ -1076,6 +1047,34 @@ class WidgetLayer {
 		if ( false !== $pages ) {
 			delete_option( 'aamla_pages_with_custom_widget' );
 		}
+	}
+
+	/**
+	 * Check if current page has active widgetlayer widget area.
+	 *
+	 * @since  1.0.4
+	 *
+	 * return false|int Current page id or false.
+	 */
+	public function active_widgetlayer_pageid() {
+
+		if ( ! is_singular( 'page' ) ) {
+			return false;
+		}
+
+		$page_id = get_the_ID();
+
+		// Return if current page does not have widgetlayer custom widget area.
+		if ( ! array_key_exists( $page_id, $this->get_pages_with_custom_widget() ) ) {
+			return false;
+		}
+
+		// Return if current page's widgetlayer custom widget area is not active.
+		if ( ! is_active_sidebar( 'widgetlayer-page-' . $page_id ) ) {
+			return false;
+		}
+
+		return $page_id;
 	}
 
 	/**

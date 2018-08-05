@@ -234,6 +234,29 @@
 	margin-left: 0;
 }
 
+.widget .grid-c ul:not(.wp-block-gallery),
+.widget .only-content ul:not(.wp-block-gallery) {
+	margin: 0 0 1.75rem;
+	padding: 0 0 0 1.75em;
+	list-style: disc outside none;
+}
+
+.widget .grid-c ul:not(.wp-block-gallery) ul,
+.widget .only-content ul:not(.wp-block-gallery) ul {
+	margin: 0.875rem 0;
+}
+
+.widget .grid-c ul:not(.wp-block-gallery) li,
+.widget .grid-c ul:not(.wp-block-gallery) li li,
+.widget .grid-c ul:not(.wp-block-gallery) li li:first-child,
+.widget .only-content ul:not(.wp-block-gallery) li,
+.widget .only-content ul:not(.wp-block-gallery) li li,
+.widget .only-content ul:not(.wp-block-gallery) li li:first-child {
+	margin-top: 0;
+	padding-top: 0;
+	border-top: none;
+}
+
 @media only screen and (min-width: 641px) {
 
 	.dp-grid {

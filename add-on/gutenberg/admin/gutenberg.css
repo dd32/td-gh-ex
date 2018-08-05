@@ -192,6 +192,10 @@ blockquote.wp-block-pullquote > .editor-rich-text cite {
 	padding-right: 0;
 }
 
+figure.wp-block-audio {
+	margin: 0;
+}
+
 @media only screen and (min-width: 600px) {
 	.edit-post-visual-editor .editor-post-title {
 		max-width: 822px;

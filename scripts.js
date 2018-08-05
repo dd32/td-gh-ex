@@ -221,46 +221,6 @@ skipLinkFocusFix();
 	}
 }() );
 
-// Funtion name needs to be changed.
-function mediaToggle() {
-	var open, close,
-		elems = document.getElementsByClassName( 'entry-featured-media' ),
-		length = elems.length,
-		i = 0;
-
-	for ( ; i < length; ++i ) {
-		open = elems[i].parentElement.getElementsByClassName( 'post-permalink' )[0];
-		if ( undefined === open ) {
-			continue;
-		}
-
-		close = elems[i].getElementsByClassName( 'close-media' )[0];
-
-		open.addEventListener( 'click', function( e ) {
-			e.preventDefault();
-			e.stopPropagation();
-			this.classList.add( 'makeitvisible' );
-		}.bind( elems[i] ), false );
-		close.addEventListener( 'click', function() {
-			var videoWrapper, videoFrame, video, videoFrameSrc;
-			this.classList.remove( 'makeitvisible' );
-			videoWrapper = this.getElementsByClassName( 'entry-video' )[0];
-			if ( videoWrapper ) {
-				videoFrame = videoWrapper.getElementsByTagName( 'iframe' )[0];
-				video = videoFrame.getElementsByTagName( 'video' )[0];
-				if ( videoFrame ) {
-					videoFrameSrc = videoFrame.src;
-					videoFrame.src = videoFrameSrc;
-				}
-				if ( video ) {
-					video.pause();
-				}
-			}
-		}.bind( elems[i] ), false );
-	}
-}
-mediaToggle();
-
 /**
  * Make embedded videos responsive.
  *

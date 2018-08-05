@@ -3,7 +3,7 @@ Theme Name: Aamla
 Theme URI: http://www.vedathemes.com/
 Author: Vedathemes
 Description: Aamla is a feature rich, lightweight and mobile first WordPress theme that is flexible and easy to use. It is built with special focus on blog, business and e-commerce websites. Aamla is written with clean code and the most current HTML5 conventions. Aamla can be used as a solid base to build beautiful and functional websites.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aamla
@@ -1219,6 +1219,7 @@ button.search-submit:focus {
 }
 
 .contact-information {
+	position: relative;
 	border-bottom: 1px solid #f0f0f0;
 	background-color: #fafafa;
 	-webkit-box-ordinal-group: 0;
@@ -1263,6 +1264,7 @@ button.search-submit:focus {
 
 .social-navigation ul {
 	margin: 0;
+	padding-right: 20px;
 	padding-left: 0;
 	list-style: none;
 }
@@ -1291,6 +1293,22 @@ button.search-submit:focus {
 .social-navigation ul a:hover,
 .social-navigation ul a:focus {
 	color: #0050c7;
+}
+
+button.contact-bar-scroll {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	padding: 0 0.735em;
+	cursor: default;
+	background: -webkit-gradient(linear, left top, right top, from(rgba(250, 250, 250, 0.5)), color-stop(55%, #fafafa));
+	background: linear-gradient(to right, rgba(250, 250, 250, 0.5), #fafafa 55%);
+}
+
+button.contact-bar-scroll:hover,
+button.contact-bar-scroll:focus {
+	background: #fafafa;
 }
 
 .site-navigation {
@@ -1469,6 +1487,17 @@ button.search-submit:focus {
 .single .content-area {
 	max-width: 1080px;
 	margin: 0 auto;
+}
+
+.breadcrumbs {
+	font-size: 13px;
+	font-weight: 600;
+	margin-left: 4px;
+	text-transform: uppercase;
+}
+
+.breadcrumbs .trail-browse.trail-browse {
+	margin-right: 10px;
 }
 
 nav.breadcrumbs {
@@ -2330,8 +2359,15 @@ body.grid:not(.error404) .page-header {
 		display: block;
 		margin-left: auto;
 	}
+	.social-navigation ul {
+		margin-right: -13px;
+		padding-right: 0;
+	}
 	.social-navigation ul li:last-child a {
 		margin-right: 0;
+	}
+	button.contact-bar-scroll {
+		display: none;
 	}
 	.grid:not(.error404) .site-main {
 		display: -webkit-box;
@@ -2653,7 +2689,7 @@ body.grid:not(.error404) .page-header {
 		max-width: 83.3333333%;
 		margin: 0 auto;
 	}
-	.index-view.list .entry:last-of-type {
+	.index-view.list:not(.infinite-scroll) .entry:last-of-type {
 		margin-bottom: 0;
 		border-bottom-width: 0;
 	}
@@ -2701,10 +2737,6 @@ body.grid:not(.error404) .page-header {
 	.singular .site-main {
 		max-width: 83.3333333%;
 		margin: 0 auto;
-	}
-	.singular .breadcrumbs {
-		width: 120%;
-		margin-left: -10%;
 	}
 	.no-sidebar.grid:not(.search) .entry {
 		width: 33.3333%;

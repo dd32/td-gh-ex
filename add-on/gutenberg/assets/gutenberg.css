@@ -21,6 +21,19 @@
 	margin-bottom: 1.75rem;
 }
 
+.wp-block-audio {
+	margin-bottom: 1.75rem;
+}
+
+.wp-block-audio audio {
+	display: block;
+	width: 100%;
+}
+
+.wp-block-audio:empty {
+	display: none;
+}
+
 .wp-block-quote > p {
 	margin-bottom: 0.875rem;
 }

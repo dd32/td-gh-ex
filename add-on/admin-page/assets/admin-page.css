@@ -1,3 +1,7 @@
+.aml-section-content a {
+	text-decoration: underline;
+}
+
 .auto-fold #wpcontent,
 #wpcontent {
 	padding-left: 0;
@@ -12,7 +16,7 @@
 
 .wrap,
 .wrap p {
-	font-family: "Open Sans", Sans-serif;
+	font-family: "Roboto", Sans-serif;
 	font-size: 16px;
 	line-height: 1.75;
 	margin: 0 0 1em;
@@ -30,7 +34,7 @@
 .wrap h1,
 .wrap h2,
 .wrap h3 {
-	font-family: "Archivo Narrow", Sans-serif;
+	font-family: "Roboto Condensed", Sans-serif;
 	font-weight: 400;
 }
 
@@ -194,6 +198,19 @@ table th:first-child {
 table td:last-child,
 table th:last-child {
 	padding-right: 0;
+}
+
+#aml-demo a {
+	text-decoration: underline;
+}
+
+.aml-footer-links a {
+	display: inline-block;
+	font-size: 13px;
+	margin-right: 10px;
+	letter-spacing: 0.075em;
+	position: relative;
+	top: -4px;
 }
 
 @media (min-width: 575px) {

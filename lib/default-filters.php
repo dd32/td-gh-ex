@@ -92,6 +92,10 @@ add_filter( 'widget_nav_menu_args', 'aamla_social_menu_widget', 10, 4 );
 /**
  * Display SVG icons in social links menu.
  *
+ * This function incorporates code from Twenty Seventeen WordPress Theme,
+ * Copyright 2016-2017 WordPress.org. Twenty Seventeen is distributed
+ * under the terms of the GNU GPL.
+ *
  * @param  string  $item_output The menu item output.
  * @param  WP_Post $item        Menu item object.
  * @param  int     $depth       Depth of the menu.

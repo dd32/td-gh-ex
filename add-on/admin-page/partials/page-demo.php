@@ -14,28 +14,16 @@ $aamla_demo_blocks = [
 $aamla_demo_ques = [
 	[
 		'section'  => 'demo',
-		'link'     => 'resort-demo',
-		'question' => esc_html__( 'Resort Demo', 'aamla' ),
+		'question' => esc_html__( 'All demos have been created without using any plugin, except WooCommerce & Gutenberg for their respective pages.', 'aamla' ),
 	],
 	[
 		'section'  => 'demo',
-		'link'     => 'personalized-business-solutions',
-		'question' => esc_html__( 'Business Consultancy Demo', 'aamla' ),
+		'question' => esc_html__( 'These demos are not exhaustive. You can create much more using your imagination, tools provided by the theme and perhaps with some plugins.', 'aamla' ),
 	],
 	[
 		'section'  => 'demo',
-		'link'     => 'shop',
-		'question' => esc_html__( 'WooCommerce Shop', 'aamla' ),
-	],
-	[
-		'section'  => 'demo',
-		'link'     => 'uncategorized/welcome-to-the-gutenberg-editor',
-		'question' => esc_html__( 'Gutenberg', 'aamla' ),
-	],
-	[
-		'section'  => 'demo',
-		'link'     => 'blog',
-		'question' => esc_html__( 'Blog Index Page', 'aamla' ),
+		'link'     => '',
+		'question' => esc_html__( 'Theme Demo Page', 'aamla' ),
 	],
 ];
 

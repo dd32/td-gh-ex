@@ -18,6 +18,10 @@
  * @return void
  */
 function aamla_markup( $context = '', $callbacks = [], $open = '<div%s>', $close = '</div>' ) {
+	if ( ! $context ) {
+		return;
+	}
+
 	$hook = str_replace( '-', '_', $context );
 
 	/**
@@ -61,6 +65,10 @@ function aamla_attr( $slug, $attr = [] ) {
 /**
  * Gets an HTML element's attributes.
  *
+ * This code is inspired (but totally modified) from Stargazer WordPress Theme,
+ * Copyright 2013 – 2018 Justin Tadlock. Stargazer is distributed
+ * under the terms of the GNU GPL.
+ *
  * @since  1.0.0
  *
  * @param  str   $slug The slug/ID of the element (e.g., 'sidebar').
@@ -68,6 +76,10 @@ function aamla_attr( $slug, $attr = [] ) {
  * @return string
  */
 function aamla_get_attr( $slug, $attr = [] ) {
+	if ( ! $slug ) {
+		return '';
+	}
+
 	$out = '';
 
 	if ( false !== $attr ) {

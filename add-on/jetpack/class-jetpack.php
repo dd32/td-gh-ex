@@ -111,6 +111,14 @@ class JetPack {
 			AAMLA_THEME_VERSION,
 			'all'
 		);
+
+		wp_enqueue_script(
+			'aamla_jetpack_js',
+			get_template_directory_uri() . '/add-on/jetpack/assets/jetpack.js',
+			[ 'jquery', 'aamla_media_manager_js' ],
+			AAMLA_THEME_VERSION,
+			true
+		);
 	}
 }
 

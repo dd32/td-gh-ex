@@ -168,13 +168,18 @@ class Media_Manager {
 		if ( 'video' === $media_arr[1] ) {
 			$media = $this->deferred_media_markup( $media );
 			printf(
-				'<div class="entry-featured-media mm-video"><div class="mm-video-wrapper"><div class="entry-video">%s%s</div>%s</div></div>', $media, $toggle, $title
+				'<div class="entry-featured-media mm-video"><div class="mm-video-wrapper"><div class="entry-video media-wrapper">%s%s</div>%s</div></div>', $media, $toggle, $title
 			); // WPCS xss ok. Contains HTML, other values escaped.
-			return;
 		} else {
+			if ( 'audio' === $media_arr[1] ) {
+				$media = sprintf( '<div class="mm-audio-wrapper">%s</div>', $media );
+			} elseif ( 'iaudio' === $media_arr[1] ) {
+				$media = $this->deferred_media_markup( $media );
+			}
+
 			$media = sprintf(
 				'<div%1$s>%2$s</div>',
-				aamla_get_attr( 'entry-' . $media_arr[1] ),
+				aamla_get_attr( 'entry-' . $media_arr[1], [ 'class' => 'media-wrapper' ] ),
 				$media
 			);
 
@@ -210,7 +215,8 @@ class Media_Manager {
 				$url = $frame->getAttribute( 'src' );
 				if ( $url ) {
 					$frame->removeAttribute( 'src' );
-					$frame->setAttribute( 'data-src', esc_url( $url ) );
+					// Escape url and preserve special charaters (if any).
+					$frame->setAttribute( 'data-src', wp_specialchars_decode( esc_url( $url ) ) );
 					$frame->setAttribute( 'src', '' );
 				}
 			}
@@ -231,6 +237,7 @@ class Media_Manager {
 	public function get_media_text( $media_type ) {
 		$text_arr = [
 			'audio'    => esc_html__( 'Audio', 'aamla' ),
+			'iaudio'   => esc_html__( 'Audio', 'aamla' ),
 			'playlist' => esc_html__( 'Playlist', 'aamla' ),
 			'video'    => esc_html__( 'Video', 'aamla' ),
 			'gallery'  => esc_html__( 'Gallery', 'aamla' ),

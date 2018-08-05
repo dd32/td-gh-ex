@@ -407,7 +407,7 @@ function aamla_entry_extra() {
 		return;
 	}
 
-	if ( 'post' !== get_post_type() ) {
+	if ( in_array( get_post_type(), [ 'page', 'attachment' ], true ) ) {
 		return;
 	}
 
@@ -415,13 +415,6 @@ function aamla_entry_extra() {
 
 	?>
 	<ul class="entry-extra">
-		<?php if ( get_edit_post_link() ) : ?>
-		<li class="entry-extra-item">
-		<?php
-		edit_post_link( aamla_get_icon( [ 'icon' => 'pencil' ] ) . '<span class="screen-reader-text">' . esc_html__( 'Edit Post', 'aamla' ) . '</span>' );
-		?>
-		</li>
-		<?php endif; ?>
 		<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
 		<li class="entry-extra-item">
 			<a href="<?php comments_link(); ?>"><?php aamla_icon( [ 'icon' => 'comment' ] ); ?><span class="screen-reader-text"><?php esc_html_e( 'Comment on post', 'aamla' ); ?></span></a>

@@ -208,12 +208,12 @@ function aamla_setup() {
 	$addons = apply_filters( 'aamla_theme_support',
 		array(
 			'widgetlayer',
-			'jetpack',
-			'typography',
+			'google-fonts',
 			'display-posts',
 			'media-manager',
 			'woocommerce',
 			'gutenberg',
+			'jetpack',
 			'admin-page',
 		)
 	);

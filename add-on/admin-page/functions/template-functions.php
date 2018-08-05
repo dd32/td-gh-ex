@@ -16,20 +16,16 @@ function aamla_admin_theme_information() {
 	$theme_info = '';
 	$infos      = [
 		[
-			'label' => esc_html__( 'Theme Name', 'aamla' ),
-			'value' => esc_html__( 'Aamla', 'aamla' ),
-		],
-		[
 			'label' => esc_html__( 'Current Version', 'aamla' ),
 			'value' => AAMLA_THEME_VERSION,
 		],
 		[
 			'label' => esc_html__( 'Last Updated on', 'aamla' ),
-			'value' => esc_html__( 'Aug 02, 2018', 'aamla' ),
+			'value' => esc_html__( 'Aug 05, 2018', 'aamla' ),
 		],
 		[
 			'label' => esc_html__( 'Next Planned update', 'aamla' ),
-			'value' => esc_html__( 'Aug 10, 2018', 'aamla' ),
+			'value' => esc_html__( 'Aug 12, 2018', 'aamla' ),
 		],
 		[
 			'label' => esc_html__( 'Minimum PHP Required', 'aamla' ),

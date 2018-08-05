@@ -44,5 +44,6 @@ $aamla_email     = aamla_get_mod( 'aamla_email_id', 'email' );
 			]
 		);
 	endif;
+	printf( '<button class="contact-bar-scroll" type="button" aria-hidden="true"></button>' );
 	?>
 </div>

@@ -43,12 +43,20 @@
 	margin-bottom: 0.4375rem;
 }
 
+.widgetlayer-page .breadcrumbs {
+	margin: 40px 20px 0;
+}
+
 .widgetlayer .widget-thumbnail {
 	position: relative;
 	margin: 0 auto 1.3125rem;
 }
 
 @media only screen and (min-width: 768px) {
+
+	.widgetlayer-page .breadcrumbs {
+		margin: 40px 40px 0;
+	}
 
 	.widgetlayer {
 		padding: 20px 30px;
@@ -75,6 +83,10 @@
 
 	.widgetlayer .only-title:not(.has-featured-image) .widget-title {
 		margin-bottom: calc( -60px + 1.3125rem);
+	}
+
+	.widgetlayer-page .breadcrumbs {
+		margin: 60px 60px 0;
 	}
 
 	.widgetlayer {

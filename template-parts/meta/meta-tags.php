@@ -6,7 +6,7 @@
  * @since 1.0.0
  */
 
-$aamla_tags_list = get_the_tag_list( '', _x( ', ', 'Used between tags list items, there is a space after the comma.', 'aamla' ) );
+$aamla_tags_list = get_the_tag_list( '', esc_html_x( ', ', 'Used between tags list items, there is a space after the comma.', 'aamla' ) );
 
 if ( $aamla_tags_list ) :
 ?>

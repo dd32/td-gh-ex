@@ -56,7 +56,7 @@ class Admin_Page {
 			esc_html__( 'Thanks for trying Aamla. Just need to inform that Aamla has some unique and powerful features. Knowing them in advance will certainly help to build your site. Use following link to quickly go through these features.', 'aamla' ),
 			esc_url( admin_url( 'themes.php?page=aamla-docs' ) ),
 			esc_html__( 'Getting started with Aamla', 'aamla' ),
-			esc_html__( 'If you cannot read it now, you can find quick documentation later at Appearance > Aamla Docs page.', 'aamla' ),
+			esc_html__( 'If you cannot read it now, you can find quick documentation later at Appearance > Aamla Docs.', 'aamla' ),
 			esc_html__( 'Thank You', 'aamla' )
 		);
 
@@ -98,11 +98,15 @@ class Admin_Page {
 			[ $this, 'render' ]
 		);
 
-		// Register theme options page specific styles.
-		add_action( "admin_print_styles-$aamla_page", [ $this, 'enqueue_styles' ] );
+		if ( $aamla_page ) {
+			$aamla_page = esc_html( $aamla_page );
 
-		// Register theme options page specific scripts.
-		add_action( "admin_print_scripts-$aamla_page", [ $this, 'enqueue_scripts' ] );
+			// Register theme options page specific styles.
+			add_action( "admin_print_styles-$aamla_page", [ $this, 'enqueue_styles' ] );
+
+			// Register theme options page specific scripts.
+			add_action( "admin_print_scripts-$aamla_page", [ $this, 'enqueue_scripts' ] );
+		}
 	}
 
 	/**
@@ -129,7 +133,7 @@ class Admin_Page {
 			'all'
 		);
 
-		$fonts_url = 'https://fonts.googleapis.com/css?family=Archivo+Narrow:400|Open+Sans:400,700';
+		$fonts_url = 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400|Roboto:400,700';
 		wp_enqueue_style( 'aamla-adminpage-font', esc_url_raw( $fonts_url ) );
 	}
 

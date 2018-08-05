@@ -107,6 +107,30 @@
 	margin-bottom: 0;
 }
 
+.index-view .entry-audio {
+	background-color: #fafafa;
+	-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
+	        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+.index-view .entry-audio:after {
+	display: block;
+	padding-top: 56.25%;
+	content: "";
+}
+
+.index-view .entry-audio .mm-audio-wrapper {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.entry-audio > audio {
+	display: block;
+	width: 100%;
+}
+
 .entry-playlist .wp-playlist-item {
 	padding: 5px 3px;
 }
@@ -116,10 +140,11 @@
 }
 
 .index-view .entry-audio,
+.index-view .entry-iaudio,
 .index-view .entry-playlist {
 	clear: both;
 	width: 100%;
-	max-width: 500px;
+	max-width: 640px;
 	height: auto;
 	margin: 0 auto;
 	-webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
@@ -133,6 +158,7 @@
 }
 
 .index-view .makeitvisible .entry-audio,
+.index-view .makeitvisible .entry-iaudio,
 .index-view .makeitvisible .entry-playlist {
 	-webkit-transform: scale(1);
 	        transform: scale(1);
@@ -176,6 +202,9 @@
 	        transition: opacity 1s ease, transform 1s ease, top 0.5s ease, transform 0.5s ease, -webkit-transform 1s ease, -webkit-transform 0.5s ease;
 	opacity: 0;
 	color: #fff;
+	background-color: #fafafa;
+	-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
+	        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
 }
 
 .index-view .makeitvisible .entry-video {
@@ -199,6 +228,52 @@
 	height: auto;
 	margin: 0 auto;
 	margin-bottom: 60px;
+}
+
+.entry-video:before,
+.entry-iaudio:before {
+	position: absolute;
+	top: calc( 50% - 40px);
+	left: calc( 50% - 40px);
+	display: block;
+	width: 80px;
+	height: 80px;
+	content: "";
+	-webkit-animation: spin 1s linear 0s 10;
+	        animation: spin 1s linear 0s 10;
+	border: 4px solid #e6e6e6;
+	border-top: 4px solid #363636;
+	border-radius: 50%;
+}
+
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		        transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		        transform: rotate(360deg);
+	}
+}
+
+.entry-iaudio {
+	position: relative;
+}
+
+.entry-iaudio iframe {
+	position: relative;
 }
 
 .format-video .entry-header-title-area {

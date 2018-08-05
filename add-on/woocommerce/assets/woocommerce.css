@@ -449,35 +449,6 @@
 	src: url("../../../../../plugins/woocommerce/assets/fonts/WooCommerce.eot?#iefix") format("embedded-opentype"), url("../../../../../plugins/woocommerce/assets/fonts/WooCommerce.woff") format("woff"), url("../../../../../plugins/woocommerce/assets/fonts/WooCommerce.ttf") format("truetype"), url("../../../../../plugins/woocommerce/assets/fonts/WooCommerce.svg#WooCommerce") format("svg");
 }
 
-p.demo_store,
-.woocommerce-store-notice {
-	font-size: 1em;
-	position: absolute;
-	z-index: 99998;
-	top: 0;
-	right: 0;
-	left: 0;
-	display: none;
-	width: 100%;
-	margin: 0;
-	padding: 1em 0;
-	text-align: center;
-	color: white;
-	background-color: #a46497;
-	-webkit-box-shadow: 0 1px 1em rgba(0, 0, 0, 0.2);
-	        box-shadow: 0 1px 1em rgba(0, 0, 0, 0.2);
-}
-
-p.demo_store a,
-.woocommerce-store-notice a {
-	text-decoration: underline;
-	color: white;
-}
-
-.admin-bar p.demo_store {
-	top: 32px;
-}
-
 .clear {
 	clear: both;
 }
@@ -3102,8 +3073,32 @@ form.woocommerce-checkout .wc_payment_method label {
 	        transform: rotate(180deg);
 }
 
+.woocommerce-store-notice {
+	font-size: 14px;
+	position: fixed;
+	z-index: 999;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+	padding: 15px;
+	color: #fff;
+	background-color: rgba(54, 54, 54, 0.85);
+}
+
+.woocommerce-store-notice a {
+	display: block;
+	text-decoration: underline;
+	color: #fff;
+}
+
 .woocommerce .quantity .qty {
 	padding: 0.625em;
+}
+
+.woocommerce form .form-row input.input-text {
+	line-height: normal;
+	height: 46.5px;
 }
 
 @media only screen and (min-width: 641px){
@@ -3209,6 +3204,17 @@ form.woocommerce-checkout .wc_payment_method label {
 	.woocommerce-customer-details{
 		float: right;
 		width: 48%;
+	}
+	.woocommerce-store-notice{
+		padding: 15px 140px 15px 40px;
+	}
+	.woocommerce-store-notice a{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		padding: 15px 40px;
+		background-color: rgba(0, 0, 0, 0.2);
 	}
 }
 

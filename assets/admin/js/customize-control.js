@@ -1,4 +1,5 @@
 (function( $, customize ) {
+	var disableInput;
 	customize.bind( 'ready', function () {
 
 		customize.control( 'blogdescription' ).priority( 20 );		

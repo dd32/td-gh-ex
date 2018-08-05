@@ -57,5 +57,8 @@ require_once get_template_directory() . '/add-on/admin-page/functions/template-f
 	</div><!-- .wrapper -->
 	<div id="aml-footer" class="aml-footer">
 		<div class="copyright"><span><?php esc_html_e( 'Vedathemes', 'aamla' ); ?> &copy; <?php echo esc_html( date_i18n( __( 'Y', 'aamla' ) ) ); ?></span></div>
+		<div class="aml-footer-links">
+			<a href="<?php echo AAMLA_URI; // WPCS xss ok. URL already escaped. ?>" target="_blank"><?php esc_html_e( 'Contact Us', 'aamla' ); ?></a>
+		</div>
 	</div><!-- .aml-footer -->
 </div><!-- .wrap -->

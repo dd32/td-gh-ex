@@ -2,8 +2,8 @@
 
 Created by: Vedathemes
 Requires at least: WordPress 4.7
-Tested up to: WordPress 4.9.7
-Version: 1.0.3
+Tested up to: WordPress 4.9.8
+Version: 1.0.4
 PHP required : PHP 5.4+
 IE Browser Support: IE11+
 License: GNU General Public License v2 or later
@@ -93,6 +93,21 @@ Aamla WordPress Theme bundles the following third-party resources:
 	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 == Changelog ==
+
+= 1.0.4 - Aug 05 2018 =
+* Add - Media Manager support for external embedded audio.
+* Modify - Rename 'typography' addon to 'google-fonts' addon.
+* Modify - Method for Media Manager to load iframe content only on click.
+* Error Fix - Return 'aamla_markup' function if context is not defined.
+* Error Fix - Return 'aamla_get_attr' function if slug is not defined.
+* Error Fix - User capability check removed from 'extend_widget_form' in widgetlayer class.
+* Error Fix - User capability check removed from 'update_settings' in widgetlayer class.
+* Error Fix - Breadcrumb styling on widgetlayer and other pages.
+* Error Fix - JetPack infinite scroll compatibility with Media Manager & grid layout.
+* Error Fix - Widget lists style for display posts full content and grid content styles.
+* Error Fix - WooCommerce notice box styling.
+* Error Fix - Styling of audio files added via gutenberg editor.
+* Error Fix - Other minor styling and Javascript improvements.
 
 = 1.0.3 - Aug 02 2018 =
 * Add - Additional image size to cater laptop screens.
