@@ -544,7 +544,7 @@ function fkidd_display_social_sites() {
 
 	fkidd_display_single_social_site('fkidd_social_instagram', __('Follow us on Instagram', 'fkidd'), 'instagram16' );
 
-	fkidd_display_single_social_site('fkidd_social_rss', get_bloginfo( 'rss2_url' ), __('Follow our RSS Feeds', 'fkidd'), 'rss16' );
+	fkidd_display_single_social_site('fkidd_social_rss', __('Follow our RSS Feeds', 'fkidd'), 'rss16' );
 
 	fkidd_display_single_social_site('fkidd_social_tumblr', __('Follow us on Tumblr', 'fkidd'), 'tumblr16' );
 

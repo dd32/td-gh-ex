@@ -1,3 +1,7 @@
+fKidd 1.8.7, 2018-08-05
+------------------------
+- fix issue with social sites RSS feeds
+
 fKidd 1.8.6, 2018-08-04
 ------------------------
 - display slider and homepage widgets only on static homepage
