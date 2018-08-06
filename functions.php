@@ -293,6 +293,11 @@ function atlast_business_register_required_plugins() {
 	$plugins = array(
 
 		array(
+            'name'     => 'Meta Box',
+            'slug'     => 'meta-box',
+            'required' => false,
+		),
+        array(
 			'name'     => 'One Click Demo Import',
 			'slug'     => 'one-click-demo-import',
 			'required' => false,
@@ -308,8 +313,8 @@ function atlast_business_register_required_plugins() {
 			'required' => false,
 		),
 		array(
-			'name'     => 'Contact Form 7',
-			'slug'     => 'contact-form-7',
+			'name'     => 'Contact Form by WPForms – Drag & Drop Form Builder for WordPress',
+			'slug'     => 'wpforms-lite',
 			'required' => false,
 		),
 		array(

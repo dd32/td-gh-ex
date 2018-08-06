@@ -1,8 +1,8 @@
 === Atlast Business WordPress Theme ===
 Contributors: ArchimidisM
 Requires at least: WordPress 4.5.1
-Tested up to: WordPress 4.9.7
-Version: 1.5.7
+Tested up to: WordPress 4.9.8
+Version: 1.5.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: theme-options,full-width-template,two-columns, custom-header, custom-background,custom-logo, custom-menu,flexible-header,translation-ready, featured-images
@@ -245,3 +245,7 @@ Removed unnecessary files
 
 = Version 1.5.7 =
 - Page template added you can use with the Elementor plugin.
+
+= Version 1.5.8 =
+- Added metabox.io plugin compatibility and new pages metaboxes via the Atlast Business Styling Customizer.
+- Added compatibility with the Famous WPForms Plugin
