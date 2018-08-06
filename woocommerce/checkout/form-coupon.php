@@ -12,12 +12,12 @@
  *
  * @see https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 3.4.0
+ * @version 3.4.4
  */
 
 defined( 'ABSPATH' ) || exit;
 
-if ( ! wc_coupons_enabled() || ! empty( WC()->cart->applied_coupons ) ) { // @codingStandardsIgnoreLine.
+if ( ! wc_coupons_enabled() ) { // @codingStandardsIgnoreLine.
 	return;
 }
 
@@ -27,11 +27,13 @@ if ( ! wc_coupons_enabled() || ! empty( WC()->cart->applied_coupons ) ) { // @co
 
 	<div class="woocommerce-form-coupon-toggle">
    
-		<?php wc_print_notice( apply_filters( 'woocommerce_checkout_coupon_message', esc_attr__( 'Have a coupon?', 'bazaar-lite' ) . ' <a href="#" class="showcoupon">' . esc_attr__( 'Click here to enter your code', 'bazaar-lite' ) . '</a>' ), 'notice' ); ?>
+		<?php wc_print_notice( apply_filters( 'woocommerce_checkout_coupon_message', esc_attr__( 'Have a coupon?', 'bazaar-lite' ) . ' <a href="#" class="showcoupon">' . esc_html__( 'Click here to enter your code', 'bazaar-lite' ) . '</a>' ), 'notice' ); ?>
        
     </div>
 
-	<form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
+    <form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
+    
+        <p><?php esc_html_e( 'If you have a coupon code, please apply it below.', 'bazaar-lite' ); ?></p>
     
         <p class="form-row form-row-first">
             <input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'bazaar-lite' ); ?>" id="coupon_code" value="" />
