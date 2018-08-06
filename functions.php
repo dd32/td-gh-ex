@@ -7,8 +7,8 @@ function benzer_css() {
 	wp_enqueue_style('benzer-default',get_stylesheet_directory_uri() .'/css/colors/default.css');
 	wp_dequeue_style('specia-default', get_template_directory_uri() . '/css/colors/default.css');
 	
-	wp_enqueue_style('benzer-media-query',get_stylesheet_directory_uri() .'/css/media-query.css');
-	wp_dequeue_style('specia-media-query', get_template_directory_uri() . '/css/media-query.css');
+	wp_dequeue_script('specia-custom-js', get_template_directory_uri() . '/js/custom.js');
+	wp_enqueue_script('benzer-custom-js', get_stylesheet_directory_uri() . '/js/custom.js');
 }
 add_action( 'wp_enqueue_scripts', 'benzer_css',999);
    	
