@@ -25,10 +25,10 @@ wp_enqueue_script( 'updates' );
 
 		foreach ( $beenews_required_actions as $beenews_required_action_key => $beenews_required_action_value ):
 			$hidden = false;
-			if ( @$beenews_show_required_actions[ $beenews_required_action_value['id'] ] === false ) {
+			if ( isset($beenews_show_required_actions[ $beenews_required_action_value['id'] ]) && $beenews_show_required_actions[ $beenews_required_action_value['id'] ] === false ) {
 				$hidden = true;
 			}
-			if ( @$beenews_required_action_value['check'] ) {
+			if ( isset($beenews_required_action_value['check']) && $beenews_required_action_value['check'] ) {
 				continue;
 			}
 			?>

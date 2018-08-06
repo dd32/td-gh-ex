@@ -96,9 +96,9 @@ class beenews_Lite {
 				),
 				array(
 					"id"          => 'beenews-req-ac-static-latest-news',
-					"title"       => esc_html__( 'Set front page to static', 'beenews' ),
-					"description" => esc_html__( 'If you just installed beenews, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'beenews' ),
-					"help"        => 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>. <br/><br/> <a class="button button-secondary" target="_blank"  href="' . self_admin_url( 'options-reading.php' ) . '">' . __( 'Set Front Page', 'beenews' ) .'</a>',
+					"title"       => esc_html__( 'Set front page to static', 'bee-news' ),
+					"description" => esc_html__( 'If you just installed beenews, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'bee-news' ),
+					"help"        => 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>. <br/><br/> <a class="button button-secondary" target="_blank"  href="' . self_admin_url( 'options-reading.php' ) . '">' . __( 'Set Front Page', 'bee-news' ) .'</a>',
 					"check"       => Beenews_Notify_System::is_not_template_front_page()
 				)
 				

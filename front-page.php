@@ -11,7 +11,7 @@
  *
  *@package WordPress
  *@subpackage Beenews
- *@since Beenews 1.0
+ *@since Bee news 1.1
  */
 ?>
 
@@ -74,10 +74,7 @@ else:
                 <?php dynamic_sidebar( 'content-area' ); ?>   
             <?php } ?>
         </div>
-
-        <!-- END OF CONTAINER -->
-        <script async="" custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js">
-        </script>
+       
         
      <?php endif; ?>
 

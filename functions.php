@@ -9,9 +9,9 @@ function bee_news_setup() {
      * Make theme available for translation.
      * Translations can be filed in the /languages/ directory.
      */
-    /* Pinegrow generated Load Text Domain Begin */
+    /* Beenews Load Text Domain Begin */
     load_theme_textdomain( 'bee-news', get_template_directory() . '/languages' );
-    /* Pinegrow generated Load Text Domain End */
+    /* Beenews Load Text Domain End */
 
     // Add default posts and comments RSS feed links to head.
     add_theme_support( 'automatic-feed-links' );
@@ -70,35 +70,6 @@ endif; // bee_news_setup
 add_action( 'after_setup_theme', 'bee_news_setup' );
 
 
-if ( ! function_exists( 'bee_news_init' ) ) :
-
-function bee_news_init() {
-
-    
-    // Use categories and tags with attachments
-    register_taxonomy_for_object_type( 'category', 'attachment' );
-    register_taxonomy_for_object_type( 'post_tag', 'attachment' );
-
-    /*
-     * Register custom post types. You can also move this code to a plugin.
-     */
-    /* Pinegrow generated Custom Post Types Begin */
-
-    /* Pinegrow generated Custom Post Types End */
-    
-    /*
-     * Register custom taxonomies. You can also move this code to a plugin.
-     */
-    /* Pinegrow generated Taxonomies Begin */
-
-    /* Pinegrow generated Taxonomies End */
-
-}
-endif; // bee_news_setup
-
-add_action( 'init', 'bee_news_init' );
-
-
 if ( ! function_exists( 'bee_news_widgets_init' ) ) :
 
 function bee_news_widgets_init() {
@@ -106,7 +77,7 @@ function bee_news_widgets_init() {
     /*
      * Register widget areas.
      */
-    /* Pinegrow generated Register Sidebars Begin */
+    /* Beenews Register Sidebars Begin */
 
 
      register_sidebar( array(
@@ -169,7 +140,7 @@ function bee_news_widgets_init() {
 
 
 
-    /* Pinegrow generated Register Sidebars End */
+    /* Beenews Register Sidebars End */
 }
 add_action( 'widgets_init', 'bee_news_widgets_init' );
 endif;// bee_news_widgets_init
@@ -181,9 +152,9 @@ if ( ! function_exists( 'bee_news_customize_register' ) ) :
 function bee_news_customize_register( $wp_customize ) {
     // Do stuff with $wp_customize, the WP_Customize_Manager object.
 
-    /* Pinegrow generated Customizer Controls Begin */
+    /* Beenews Customizer Controls Begin */
 
-    /* Pinegrow generated Customizer Controls End */
+    /* Beenews Customizer Controls End */
 
 }
 add_action( 'customize_register', 'bee_news_customize_register' );
@@ -193,7 +164,7 @@ endif;// bee_news_customize_register
 if ( ! function_exists( 'bee_news_enqueue_scripts' ) ) :
     function bee_news_enqueue_scripts() {
 
-        /* Pinegrow generated Enqueue Scripts Begin */
+        /* Beenews Enqueue Scripts Begin */
 
     wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', false, null, true);
 
@@ -212,9 +183,9 @@ if ( ! function_exists( 'bee_news_enqueue_scripts' ) ) :
 
     wp_enqueue_script( 'beenews-custom-js', get_template_directory_uri() . '/js/beenews-custom.js', false, null, true);
 
-    /* Pinegrow generated Enqueue Scripts End */
+    /* Beenews Enqueue Scripts End */
 
-        /* Pinegrow generated Enqueue Styles Begin */
+        /* Beenews Enqueue Styles Begin */
 
     wp_deregister_style( 'bootstrap' );
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', false, null, 'all');
@@ -227,16 +198,14 @@ if ( ! function_exists( 'bee_news_enqueue_scripts' ) ) :
     wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css', false, null, 'all');
 
 
-    /* Pinegrow generated Enqueue Styles End */
+    /* Beenews Enqueue Styles End */
 
     }
     add_action( 'wp_enqueue_scripts', 'bee_news_enqueue_scripts' );
 endif;
 
-/*
- * Resource files included by Pinegrow.
- */
-/* Pinegrow generated Include Resources Begin */
+
+/* Beenews Include Resources Begin */
 require_once "inc/bootstrap/wp_bootstrap_navwalker.php";
 require_once "inc/bootstrap/wp_bootstrap_navwalker.php";
 
@@ -256,7 +225,7 @@ require_once "inc/class-beenews-lite.php";
 include_once get_template_directory().'/admin-folder/admin/admin-init.php';
 $beenews = new beenews_Lite();
 
-/* Pinegrow generated Include Resources End */
+/* Beenews Include Resources End */
 
 
 /*

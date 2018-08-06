@@ -11,7 +11,7 @@
 *
 *@package WordPress
 *@subpackage Beenews
-*@since Beenews 1.0
+*@since Bee news 1.1
 */
 get_header(); ?>
 <div id="primary" class="content-area">
