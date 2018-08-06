@@ -4,10 +4,10 @@ Theme URI: https://catchthemes.com/themes/catch-kathmandu/
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: Catch Kathmandu Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight full-fledged WordPress theme based on HTML5 and CSS3. The design is highly customizable and you can tailor the display to your taste with a few easy clicks. If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Catch Kathmandu is your perfect find. This theme is widely been used by Photographers, Bloggers, Corporate Houses and Universities. Translation ready and currently translated in French, Russian, Spanish, Polish, Brazilian Portuguese, Italian, German(SWITZERLAND), Japanese, Dutch, German and Danish languages. Check out Theme Instructions at https://catchthemes.com/theme-instructions/catch-kathmandu/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/catch-kathmandu/
-Version: 3.9.6
+Version: 3.9.7
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
-Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-header, custom-menu, custom-logo, featured-image-header, featured-images, footer-widgets, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, photography, holiday, education, blog, news
+Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-header, custom-menu, custom-logo, featured-image-header, featured-images, footer-widgets, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, photography, education, blog
 Text Domain: catch-kathmandu
 
 This theme, like WordPress, is licensed under the GPL.
@@ -1634,6 +1634,11 @@ a#scrollup:hover {
 }
 #commentform input {
 	display: block;
+}
+#commentform input[type="checkbox"],
+#commentform input[type="radio"] {
+	display: inline-block;
+	margin-right: 5px;
 }
 #commentform .comment-subscription-form input {
 	display: inline-block;

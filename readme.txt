@@ -83,6 +83,12 @@ Access to free support forum at https://catchthemes.com/support-forum/forum/catc
 
 == Change log ==
 
+= 3.9.7 (Released: August 06, 2018) =
+* Added: Core Privacy Policy link support in footer
+* Bug Fixed: Comment Form radio and checkbox alignment
+* Replaced: class_exists( 'woocommerce' ) with class_exists( 'WooCommerce' ) as WooCommerce update caused issues
+* Updated: Upgrade to pro button css
+
 = 3.9.6 (Released: April 10, 2018) =
 * Bug Fixed: Design issue with Catch Infinite Scroll plugin
 

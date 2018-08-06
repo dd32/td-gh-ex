@@ -1739,7 +1739,7 @@ add_action( 'save_post', 'catchkathmandu_post_invalidate_caches' );
 function catchkathmandu_make_footer_modifications() {
 	global $catchkathmandu_options_settings;
 
-    $new_footer_code = '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-kathmandu' ) . ' &copy; ' . catchkathmandu_the_year() . '&nbsp;' . catchkathmandu_site_link() . '&nbsp;' . esc_attr__( 'All Rights Reserved', 'catch-kathmandu' ) . '.</div><div class="powered">'. esc_attr__( 'Catch Kathmandu by', 'catch-kathmandu' ) . '&nbsp;' . catchkathmandu_shop_link() . '</div>';
+    $new_footer_code = '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-kathmandu' ) . ' &copy; ' . catchkathmandu_the_year() . '&nbsp;' . catchkathmandu_site_link() . '&nbsp;' . get_the_privacy_policy_link() .'&nbsp;' . esc_attr__( 'All Rights Reserved', 'catch-kathmandu' ) . '.</div><div class="powered">'. esc_attr__( 'Catch Kathmandu by', 'catch-kathmandu' ) . '&nbsp;' . catchkathmandu_shop_link() . '</div>';
 
     //Check if new footer code and old footer code match, if they don't perform following
     if( $new_footer_code != $catchkathmandu_options_settings['footer_code'] ) {

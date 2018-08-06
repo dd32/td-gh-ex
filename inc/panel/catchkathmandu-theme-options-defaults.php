@@ -100,7 +100,7 @@ $catchkathmandu_options_defaults = array(
 	'social_meetup'							=> '',
  	'analytic_header'						=> '',
  	'analytic_footer'						=> '',
-	'footer_code'							=> '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-kathmandu' ) . ' &copy; ' . catchkathmandu_the_year() . '&nbsp;' . catchkathmandu_site_link() . '&nbsp;' . esc_attr__( 'All Rights Reserved', 'catch-kathmandu' ) . '.</div><div class="powered">'. esc_attr__( 'Catch Kathmandu by', 'catch-kathmandu' ) . '&nbsp;' . catchkathmandu_shop_link() . '</div>',
+	'footer_code'							=> '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-kathmandu' ) . ' &copy; ' . catchkathmandu_the_year() . '&nbsp;' . catchkathmandu_site_link() . '&nbsp;' . get_the_privacy_policy_link() .'&nbsp;' . esc_attr__( 'All Rights Reserved', 'catch-kathmandu' ) . '.</div><div class="powered">'. esc_attr__( 'Catch Kathmandu by', 'catch-kathmandu' ) . '&nbsp;' . catchkathmandu_shop_link() . '</div>',
 	'reset_footer'							=> '2'
 );
 global $catchkathmandu_options_settings;

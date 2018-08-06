@@ -253,7 +253,7 @@ endif; //catchkathmandu_get_theme_layout
 /**
  * Add Suport for WooCommerce Plugin
  */
-if ( class_exists( 'woocommerce' ) ) {
+if ( class_exists( 'WooCommerce' ) ) {
 	add_theme_support( 'woocommerce' );
     require( get_template_directory() . '/inc/catchkathmandu-woocommerce.php' );
 }
