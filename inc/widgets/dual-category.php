@@ -65,7 +65,7 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 		</p>
 		<p>
 			<input type="checkbox" <?php checked( $instance['sticky_posts1'], true ) ?> class="checkbox" id="<?php echo $this->get_field_id('sticky_posts1'); ?>" name="<?php echo $this->get_field_name('sticky_posts1'); ?>" />
-			<label for="<?php echo $this->get_field_id('sticky_posts1'); ?>"><?php _e( 'Hide sticky posts.', 'awaken' ); ?></label>
+			<label for="<?php echo $this->get_field_id('sticky_posts1'); ?>"><?php _e( 'Ignore sticky posts.', 'awaken' ); ?></label>
 		</p>
 
 		<hr />
@@ -89,7 +89,7 @@ class Awaken_Dual_Category_Posts extends WP_Widget {
 		</p>
 		<p>
 			<input type="checkbox" <?php checked( $instance['sticky_posts2'], true ) ?> class="checkbox" id="<?php echo $this->get_field_id('sticky_posts2'); ?>" name="<?php echo $this->get_field_name('sticky_posts2'); ?>" />
-			<label for="<?php echo $this->get_field_id('sticky_posts2'); ?>"><?php _e( 'Hide sticky posts.', 'awaken' ); ?></label>
+			<label for="<?php echo $this->get_field_id('sticky_posts2'); ?>"><?php _e( 'Ignore sticky posts.', 'awaken' ); ?></label>
 		</p>
 
 	<?php

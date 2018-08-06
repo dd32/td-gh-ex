@@ -74,7 +74,7 @@ function awaken_customize_register( $wp_customize ) {
             'type'      	=> 'radio',
             'description'	=> __( 'Choose your preferred option.', 'awaken' ),
             'choices'   => array (
-                'text-only' 	=> __( 'Display site title and description only.', 'awaken' ),
+                'text-only' 	=> __( 'Display site title and tagline only.', 'awaken' ),
                 'logo-only'     => __( 'Display site logo image only.', 'awaken' ),
                 'text-logo'		=> __( 'Display both site title and logo image.', 'awaken' ),
                 'display-none'	=> __( 'Display none', 'awaken' )

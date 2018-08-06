@@ -57,7 +57,7 @@ class awaken_three_block_posts extends WP_Widget {
 		</p>
 		<p>
 			<input type="checkbox" <?php checked( $instance['sticky_posts'], true ) ?> class="checkbox" id="<?php echo $this->get_field_id('sticky_posts'); ?>" name="<?php echo $this->get_field_name('sticky_posts'); ?>" />
-			<label for="<?php echo $this->get_field_id('sticky_posts'); ?>"><?php _e( 'Hide sticky posts.', 'awaken' ); ?></label>
+			<label for="<?php echo $this->get_field_id('sticky_posts'); ?>"><?php _e( 'Ignore sticky posts.', 'awaken' ); ?></label>
 		</p>
 
 	<?php

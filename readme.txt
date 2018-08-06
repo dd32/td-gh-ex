@@ -1,5 +1,5 @@
 ﻿Theme Name : Awaken
-Version    : 2.1.7
+Version    : 2.1.8
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -227,3 +227,7 @@ Fixed structured data errors showing on Google search console report.
 Added theme starter content support.
 Added customize selective refresh support for widgets.
 Changed sidebar widget title <h2> tags to <h3>
+
+- Version 2.1.8
+Renamed widget control "Hide sticky posts" to "Ignore sticky posts".
+Changed HEADER_TEXTCOLOR to use add_theme_support('custom-header).
