@@ -122,7 +122,13 @@ $arise_settings = arise_get_theme_options(); ?>
 				} else { ?>
 					<div class="container">
 						<div class="page-header clearfix">
-							<h1 class="page-title"><?php echo arise_header_title();?></h1> <!-- .page-title -->
+							<?php if ( is_front_page()) : ?>
+								<h2 class="page-title"><?php echo arise_header_title(); ?></h2>
+								<!-- .page-title -->
+							<?php else : ?>
+								<h1 class="page-title"><?php echo arise_header_title(); ?></h1>
+								<!-- .page-title -->
+							<?php endif; ?>
 							<?php arise_breadcrumb(); ?>
 						</div> <!-- .page-header -->
 					</div> <!-- .container -->

@@ -13,18 +13,29 @@
 /********************* arise RESPONSIVE AND CUSTOM CSS OPTIONS ***********************************/
 function arise_resp_and_custom_css() {
 	$arise_settings = arise_get_theme_options();
+	$header_display = $arise_settings['arise_header_display'];
 	if( $arise_settings['arise_responsive'] == 'on' ) { ?>
 	<meta name="viewport" content="width=device-width" />
 	<?php } else{ ?>
 	<meta name="viewport" content="width=1070" />
 	<?php  }
-	if ($arise_settings['arise_slider_header_line'] == 1){
+	
+	if (($arise_settings['arise_slider_header_line'] == 1) || ($header_display == 'header_logo')){
 		$arise_internal_css = '<!-- Custom CSS -->'."\n";
 		$arise_internal_css .= '<style type="text/css" media="screen">'."\n";
+		if($arise_settings['arise_slider_header_line']==1){
 			$arise_internal_css .= 
 			'.header-line {
 				height: 0px;
 			}';
+		}
+		if($header_display=='header_logo'){
+			$arise_internal_css .= 
+				'#site-branding #site-title, #site-branding #site-description{
+				clip: rect(1px, 1px, 1px, 1px);
+				position: absolute;
+			}';
+		}
 		$arise_internal_css .= '</style>'."\n";
 	}
 	if (isset($arise_internal_css)) {

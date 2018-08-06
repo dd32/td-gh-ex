@@ -110,6 +110,10 @@ All the theme files and other un-specified scripts are licensed under GNU Genera
 =================================================================================
 
 == CHANGE LOG ==
+== 2.1.3.6 =
+	- Fix - SEO issue fixed on displaying Logo Only
+			- Page Title SEO fixed
+
 = 2.1.3.5 =
 	- Fix - minor code fixed
 			- sanitize widgets
