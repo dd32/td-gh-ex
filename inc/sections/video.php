@@ -63,9 +63,17 @@ if ( ! function_exists( 'architectonic_render_video_section' ) ) :
                         <?php endif; ?>
                     </div><!-- .video-content-wrapper -->
 
-                    <?php if ( ! empty( $featured_video ) ) : ?>
+                    <?php if ( ! empty( $featured_video ) ) : 
+                        $library_video =  attachment_url_to_postid( $featured_video );
+                    ?>
                         <div id="video-popup">
-                            <?php the_widget( 'WP_Widget_Media_Video', $instance = array( 'url' => esc_url( $featured_video ) ) ); ?>
+                            <?php 
+                            if ( 0 !== $library_video ) :
+                                the_widget( 'WP_Widget_Media_Video', $instance = array( 'attachment_id' => absint( $library_video ) ) ); 
+                            else :
+                                the_widget( 'WP_Widget_Media_Video', $instance = array( 'url' => esc_url( $featured_video ) ) ); 
+                            endif;
+                            ?>
                         </div>
                     <?php endif; ?>
                 </div><!-- .wrapper -->

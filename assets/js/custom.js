@@ -53,7 +53,12 @@ jQuery(document).ready(function($) {
 
     dropdown_toggle.click(function() {
         $(this).toggleClass('active');
-       $(this).parent().find('.sub-menu').first().slideToggle();
+        $(this).parent().find('.sub-menu').first().slideToggle();
+    });
+
+    $('#primary-menu .menu-item-has-children > a > svg').click(function(event) {
+        event.preventDefault();
+        $(this).parent().find('.sub-menu').first().slideToggle();
     });
 
     $('.main-navigation ul li.search-menu a').click(function(event) {

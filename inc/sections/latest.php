@@ -102,7 +102,9 @@ if ( ! function_exists( 'architectonic_render_latest_section' ) ) :
 
         if ( empty( $content_details ) ) {
             return;
-        } ?>
+        } 
+        $count = count( $content_details );
+        ?>
 
         <div id="latest-projects" class="relative page-section">
             <div class="wrapper">
@@ -112,7 +114,7 @@ if ( ! function_exists( 'architectonic_render_latest_section' ) ) :
                     </div><!-- .section-header -->
                 <?php endif; ?>
 
-                <div class="project-slider" data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "infinite": false, "speed": 800, "dots": false, "arrows":true, "autoplay": true, "fade": false, "draggable": false }'>
+                <div class="project-slider <?php echo ( $count < 3 ) ? 'col-' . absint( $count ) : ''; ?>" data-slick='{"slidesToShow": <?php echo ( $count >= 3 ) ? 3 : absint( $count ); ?>, "slidesToScroll": 1, "infinite": false, "speed": 800, "dots": false, "arrows":true, "autoplay": true, "fade": false, "draggable": false }'>
                     <?php foreach ( $content_details as $content ) : ?>
                         <article class="slick-item">
                             <div class="overlay"></div>

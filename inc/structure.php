@@ -78,19 +78,21 @@ if ( ! function_exists( 'architectonic_top_menu' ) ) :
 			return;
 		?>
 		<div id="top-navigation">
-			<?php if ( ! empty( $options['topbar_email'] ) || ! empty( $options['topbar_phone'] ) ) : ?>
-	            <div class="widget widget_contact_info">
-	                <ul>
-	                	<?php if ( ! empty( $options['topbar_email'] ) ) : ?>
-		                    <li class="topbar-email" ><a href="mailto:<?php echo esc_attr( $options['topbar_email'] ); ?>"><?php echo esc_html( $options['topbar_email'] ); ?></a></li>
-		                <?php endif; 
+			<div class="wrapper">
+				<?php if ( ! empty( $options['topbar_email'] ) || ! empty( $options['topbar_phone'] ) ) : ?>
+		            <div class="widget widget_contact_info">
+		                <ul>
+		                	<?php if ( ! empty( $options['topbar_email'] ) ) : ?>
+			                    <li class="topbar-email" ><a href="mailto:<?php echo esc_attr( $options['topbar_email'] ); ?>"><?php echo esc_html( $options['topbar_email'] ); ?></a></li>
+			                <?php endif; 
 
-		                if ( ! empty( $options['topbar_phone'] ) ) : ?>
-	                    	<li class="topbar-phone"><a href="tel:<?php echo esc_attr( $options['topbar_phone'] ) ?>"><?php echo esc_html( $options['topbar_phone'] ); ?></a></li>
-                    	<?php endif; ?>
-	                </ul>
-	            </div><!-- .widget_contact_info -->
-	        <?php endif; ?>
+			                if ( ! empty( $options['topbar_phone'] ) ) : ?>
+		                    	<li class="topbar-phone"><a href="tel:<?php echo esc_attr( $options['topbar_phone'] ) ?>"><?php echo esc_html( $options['topbar_phone'] ); ?></a></li>
+	                    	<?php endif; ?>
+		                </ul>
+		            </div><!-- .widget_contact_info -->
+		        <?php endif; ?>
+	        </div>
         </div><!-- .top-navigation -->
 
 		<?php

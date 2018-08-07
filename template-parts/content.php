@@ -10,7 +10,7 @@
  */
 
 $options = architectonic_get_theme_options();
-$readmore = ! empty( $options['read_more_text'] ) ? $options['read_more_text'] : esc_html__( 'Read More', 'architectonic' );
+$readmore = ! empty( $options['read_more_text'] ) ? $options['read_more_text'] : '';
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -44,8 +44,10 @@ $readmore = ! empty( $options['read_more_text'] ) ? $options['read_more_text'] :
             ?>
         </div><!-- .entry-content -->
 
-        <div class="read-more">
-            <a href="<?php the_permalink(); ?>" class="more-link"><?php echo esc_html( $readmore ); ?></a>
-        </div><!-- .read-more -->
+        <?php if ( ! empty( $readmore ) ) : ?>
+            <div class="read-more">
+                <a href="<?php the_permalink(); ?>" class="more-link"><?php echo esc_html( $readmore ); ?></a>
+            </div><!-- .read-more -->
+        <?php endif; ?>
     </div><!-- .entry-container -->
 </article><!-- #post-## -->

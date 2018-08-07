@@ -4,7 +4,7 @@ Theme URI: https://themepalace.com/downloads/architectonic
 Author: Theme Palace
 Author URI: https://themepalace.com
 Description: Architectonic, with its aesthetically pleasant and modern looking design is a multipurpose WordPress theme fully capable of handling the needs and requirements of enormously vast range of websites, from personal to corporate but is particularly suited for the needs of people who want to start their blog, architectural firms, interior design firms, landscaping firms, entertainment business and engineering firms that wish to establish their online presence. The theme is beautifully crafted, clean, easy to use, responsive, features different layouts with sidebar position. It has been designed for everybody with or without previous coding experience to effectively and helps to speedily put together polished, professional quality websites without having to so much as peek at a single line of code.
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: architectonic
@@ -195,6 +195,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	-o-animation: rotating 2s linear infinite;
 	animation: rotating 2s linear infinite;
 }
+.loader-container svg {
+    width: 70px;
+    height: 70px;
+}
 .blog-loader {
     text-align: center;
     margin-top: 30px;
@@ -224,6 +228,7 @@ body {
     position: relative;
     overflow-x: hidden;
     box-shadow: 0 0 15px #aaa;
+    background-color: #fff;
 }
 #content {
     position: relative;
@@ -1397,13 +1402,10 @@ form.search-form button.search-submit {
     width: 45px;
     border-radius: 0;
     outline: none;
-    padding: 0;
 }
 .widget_search form.search-form button.search-submit {
     width: 50px;
-    height: 50px;
     color: #fff;
-    padding: .6em 1em .4em;
 }
 .widget_search form.search-form button.search-submit svg,
 .no-results .search-submit svg,
@@ -1472,7 +1474,7 @@ table#wp-calendar {
 
 table#wp-calendar th, 
 table#wp-calendar td {
-    padding: 10px;
+    padding: 4px;
 }
 
 .widget-title {
@@ -1513,8 +1515,8 @@ table#wp-calendar td {
     font-family: "FontAwesome";
     padding-right: 15px;
 }
-#secondary .widget.architectonic_social_link ul li:before,
-#colophon .widget.architectonic_social_link ul li:before {
+#secondary .widget.architectonic_pro_social_link ul li:before,
+#colophon .widget.architectonic_pro_social_link ul li:before {
 	content: none;
 }
 #secondary .widget ul li:hover:before, 
@@ -1874,7 +1876,7 @@ input[type="submit"]:focus {
 }
 #top-navigation .widget,
 #top-navigation .social-icons {
-    float: none;
+    float: left;
 }
 #top-navigation .social-icons {
 	margin-right: 14px;
@@ -2651,6 +2653,8 @@ object {
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
+    margin: 0;
+    padding: 3px;
 }
 
 .gallery-columns-2 .gallery-item {
@@ -2686,7 +2690,7 @@ object {
 }
 
 .gallery-caption {
-	display: block;
+    display: none;
 }
 /*--------------------------------------------------------------
 ## Social Icons
@@ -3052,7 +3056,6 @@ object {
 --------------------------------------------------------------*/
 #about-us {
     border-bottom: 1px solid #e4e4e4;
-    background-color: #fff;
 }
 #about-us .section-header {
     margin-bottom: 40px;
@@ -3317,6 +3320,10 @@ object {
 }
 #latest-posts .view-all {
     right: 6.7%;
+}
+#latest-projects .col-1 article .overlay,
+#latest-projects .col-2 article .overlay {
+    display: none;
 }
 /*--------------------------------------------------------------
 #  Call to action Section
@@ -4318,7 +4325,7 @@ body.body-font-5 .trail-items li {
 	#search {
 	    position: absolute;
 	    z-index: 30;
-	    right: 0;
+	    right: 10px;
 	    top: 100%;
 	    display: none;
 	}
@@ -4425,15 +4432,9 @@ body.body-font-5 .trail-items li {
     body:not(.blog).right-sidebar #primary {
     	padding-right: 7.5%;
     }
-    body.archive.right-sidebar #primary {
-    	padding-right: 0;
-    }
     .single.left-sidebar #primary,
     body:not(.blog).left-sidebar #primary {
     	padding-left: 7.5%;
-    }
-    body.archive.left-sidebar #primary {
-    	padding-left: 0;
     }
     body.search-results.left-sidebar #primary,
     body.search-results.right-sidebar #primary {
@@ -4504,7 +4505,7 @@ body.body-font-5 .trail-items li {
 		-ms-transform: rotate(90deg);
 		-o-transform: rotate(90deg);
 		transform: rotate(-90deg);
-		top: 580px;
+		top: 600px;
 		z-index: 1;
 		bottom: auto;
 	}
@@ -4529,10 +4530,6 @@ body.body-font-5 .trail-items li {
 	}
 	body:not(.top-navigation-classic)  #masthead.sticky-header {
 	    position: fixed;
-	    max-width: 1920px;
-	}
-	body.boxed #masthead.sticky-header {
-	    width: 92%;
 	}
 	body:not(.top-navigation-classic) .customize-support #masthead.sticky-header {
 		top: 32px;
@@ -4611,6 +4608,9 @@ body.body-font-5 .trail-items li {
 	textarea {
 		font-size: 18px;
 	}
+	body:not(.top-navigation-classic)  #masthead.sticky-header {
+	    max-width: 1920px;
+	}
 	.site-branding {
 		min-height: 150px;
 	}
@@ -4640,13 +4640,10 @@ body.body-font-5 .trail-items li {
 	.nav-shrink .site-branding {
 	    min-height: 110px;
 	}
-	#search {
-		right: 5px;
-	}
 	#top-navigation,
 	body:not(.top-navigation-classic) #top-navigation {
 		left: 4.5%;
-	    top: 750px;
+	    top: 830px;
 	}
 	#top-navigation .widget_contact_info ul li, 
 	#top-navigation .widget_contact_info ul li a {
@@ -4712,9 +4709,6 @@ body.body-font-5 .trail-items li {
 	}
 	.services-section-enabled #latest-projects {
 	    padding-bottom: 240px;
-	}
-	#call-to-action {
-	    padding: 243px 0;
 	}
 	#call-to-action .section-content {
 	    font-size: 18px;
@@ -4795,7 +4789,6 @@ body.body-font-5 .trail-items li {
 	    margin: 0;
 	    clear: both;
 	    display: inline-block;
-	    text-align: center;
 	    padding: 15px 0;
 	    width: 100%;
 	    background-color: #111;
@@ -5050,16 +5043,6 @@ body.body-font-5 .trail-items li {
 	#video-popup {
 		max-width: 80%;
 	}
-	.site-info {
-	    text-align: center;
-	    padding: 20px 0;
-	}
-	.site-info span:nth-child(1),
-	.site-info span:nth-child(2) {
-		float: none;
-		display: block;
-		padding: 4px 0;
-	}
 }
 @media screen and (max-width: 767px) {
 	#masthead.site-header .main-navigation ul.nav-menu {
@@ -5165,6 +5148,16 @@ body.body-font-5 .trail-items li {
 	}
 	#comments {
 	    margin-top: 40px;
+	}
+	.site-info {
+	    text-align: center;
+	    padding: 20px 0;
+	}
+	.site-info span:nth-child(1),
+	.site-info span:nth-child(2) {
+		float: none;
+		display: block;
+		padding: 4px 0;
 	}
 	#video-popup {
 		max-width: 90%;
