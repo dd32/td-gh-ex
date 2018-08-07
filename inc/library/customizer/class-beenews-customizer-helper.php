@@ -98,16 +98,12 @@ class beenews_Customizer_Helper {
 
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector'        => '.site-title',
-			'render_callback' => function () {
-				bloginfo( 'name' );
-			},
+			'render_callback' => bloginfo( 'name' ),
 		) );
 
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 			'selector'        => '.site-description',
-			'render_callback' => function () {
-				bloginfo( 'description' );
-			},
+			'render_callback' => bloginfo( 'description' ),
 		) );
 	}
 

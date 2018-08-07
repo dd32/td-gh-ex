@@ -11,7 +11,7 @@
  *
  *@package WordPress
  *@subpackage Beenews
- *@since Bee news 1.1
+ *@since bee-news 1.2
  */
 ?>
 

@@ -4,7 +4,7 @@
  *
  *@package WordPress
  *@subpackage bee-news
- *@since bee-news 1.1
+ *@since bee-news 1.2
  */
 ?>
 

@@ -43,7 +43,7 @@ class BeeLayout1 extends WP_Widget {
                 </a>
             </div>
            
-            <?php beenews_tabs(array('cat_id' => [$tab_cat_id_1, $tab_cat_id_2, $tab_cat_id_3 ] )); ?>
+            <?php beenews_tabs(array('cat_id' => array($tab_cat_id_1, $tab_cat_id_2, $tab_cat_id_3 ) )); ?>
         </div>
         <!-- END LEFT SLIDER OF CONTAINER -->
     </div>
