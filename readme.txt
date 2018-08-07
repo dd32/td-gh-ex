@@ -3,7 +3,7 @@
 Created by: Vedathemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 4.9.8
-Version: 1.0.4
+Version: 1.0.5
 PHP required : PHP 5.4+
 IE Browser Support: IE11+
 License: GNU General Public License v2 or later
@@ -93,6 +93,12 @@ Aamla WordPress Theme bundles the following third-party resources:
 	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 == Changelog ==
+
+= 1.0.5 - Aug 07 2018 =
+* Error Fix - Gutenberg Gallery styling fix
+* Error Fix - WooCommerce single product main image overflow its container (if multiple images)
+* Error Fix - Various display posts style's thumbnail aspect ratio streamlined
+* Error Fix - Reduce display posts title font size in grid layout
 
 = 1.0.4 - Aug 05 2018 =
 * Add - Media Manager support for external embedded audio.

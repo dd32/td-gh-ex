@@ -21,11 +21,11 @@ function aamla_admin_theme_information() {
 		],
 		[
 			'label' => esc_html__( 'Last Updated on', 'aamla' ),
-			'value' => esc_html__( 'Aug 05, 2018', 'aamla' ),
+			'value' => esc_html__( 'Aug 07, 2018', 'aamla' ),
 		],
 		[
 			'label' => esc_html__( 'Next Planned update', 'aamla' ),
-			'value' => esc_html__( 'Aug 12, 2018', 'aamla' ),
+			'value' => esc_html__( 'Aug 21, 2018', 'aamla' ),
 		],
 		[
 			'label' => esc_html__( 'Minimum PHP Required', 'aamla' ),

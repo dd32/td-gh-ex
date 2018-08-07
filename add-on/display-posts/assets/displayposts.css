@@ -90,11 +90,6 @@
 }
 
 .dp-grid .dp-featured-content:after {
-	padding-top: 75%;
-}
-
-.dp-grid.grid-th .dp-featured-content:after,
-.dp-grid.grid-c .dp-featured-content:after {
 	padding-top: 66.66%;
 }
 
@@ -193,7 +188,7 @@
 }
 
 .dp-title {
-	font-size: 1.5em;
+	font-size: 1.25em;
 	line-height: 1.2;
 	margin-bottom: 0.6125rem;
 }

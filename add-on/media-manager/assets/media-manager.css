@@ -276,6 +276,11 @@
 	position: relative;
 }
 
+.entry-iaudio > audio {
+	display: block;
+	width: 100%;
+}
+
 .format-video .entry-header-title-area {
 	padding-bottom: 0;
 	border-bottom-width: 0;

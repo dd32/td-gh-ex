@@ -17,3 +17,22 @@ function wooCartToggle() {
 	}
 }
 wooCartToggle();
+
+function wooFlexImgWidth() {
+	var container = document.getElementsByClassName( 'multiple-product-images' )[0],
+		images, imageCount, per, css, style;
+	
+	if ( container ) {
+		images = container.getElementsByClassName( 'woocommerce-product-gallery__image' );
+		imageCount = images.length;
+		if ( imageCount ) {
+			per = 50 / imageCount;
+			css = '.flex-active-slide{max-width:' + per + '%}';
+			style = document.createElement("style");
+			style.type = 'text/css';
+			style.appendChild(document.createTextNode(css));
+			document.head.appendChild(style);
+		}
+	}
+}
+wooFlexImgWidth();
