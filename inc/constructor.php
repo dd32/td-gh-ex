@@ -340,25 +340,40 @@ function aamla_page_excerpt() {
 	// Remove 'script' and 'style' tag and their contents.
 	$excerpt = preg_replace( '@<(script|style)[^>]*?>.*?</\\1>@si', '', get_the_excerpt() );
 
-	// Remove html tags except 'p' and 'a' tags.
-	$excerpt = strip_tags( $excerpt, '<p><a>' );
-
 	if ( $excerpt ) {
-		$dom = new DOMDocument();
-		$dom->loadHTML( $excerpt );
+		/*
+		 * In the rare case that DOMDocument is not available we cannot reliably escape URL and
+		 * so we strip link tag.
+		 */
+		if ( ! class_exists( 'DOMDocument' ) ) {
+			$excerpt = wp_strip_all_tags( $excerpt );
+		} else {
+			// Remove html tags except 'p' and 'a' tags.
+			$excerpt = strip_tags( $excerpt, '<p><a>' );
+			$doc     = new DOMDocument();
 
-		// Get all links within 'a' tag in page excerpt.
-		$links = $dom->getElementsByTagName( 'a' );
+			$doc->loadHTML( sprintf(
+				'<!DOCTYPE html><html><head><meta charset="%s"></head><body>%s</body></html>',
+				esc_attr( get_bloginfo( 'charset' ) ),
+				$excerpt
+			) );
 
-		// Iterate over the extracted links and escape their URLs.
-		foreach ( $links as $link ) {
-			$url = $link->getAttribute( 'href' );
-			if ( $url ) {
-				$link->removeAttribute( 'href' );
-				$link->setAttribute( 'href', esc_url( $url ) );
+			$body = $doc->getElementsByTagName( 'body' )->item( 0 );
+
+			// Get all links within 'a' tag in page excerpt.
+			$links = $body->getElementsByTagName( 'a' );
+
+			// Iterate over the extracted links and escape their URLs.
+			foreach ( $links as $link ) {
+				$url = $link->getAttribute( 'href' );
+				if ( $url ) {
+					$link->removeAttribute( 'href' );
+					$link->setAttribute( 'href', esc_url( $url ) );
+				}
 			}
+			// Remove <body> and </body> tags from the string.
+			$excerpt = str_replace( [ '<body>', '</body>' ], '', $doc->saveHTML( $body ) );
 		}
-		$excerpt = $dom->saveHTML();
 
 		printf( '<div class="page-excerpt">%s</div>', $excerpt ); // WPCS xss ok. Contains HTML, other values escaped.
 	}
@@ -660,7 +675,6 @@ function aamla_footer_text() {
 	$output = str_replace( '[current_year]', esc_html( date_i18n( __( 'Y', 'aamla' ) ) ), $footer_text );
 	$output = str_replace( '[site_title]', get_bloginfo( 'name', 'display' ), $output );
 	$output = str_replace( '[copy_symbol]', '&copy;', $output );
-	$output = str_replace( '[reserve_text]', esc_html__( 'All rights reserved', 'aamla' ), $output );
 
 	printf( '<div class="footer-text">%1$s</div>', $output ); // WPCS xss ok. Contains HTML, other values escaped.
 }

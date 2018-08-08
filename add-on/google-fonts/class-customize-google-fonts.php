@@ -86,7 +86,7 @@ class Customize_Google_Fonts extends \WP_Customize_Control {
 					<option value="none" <# if ( 'none' === data.family.value ) { #> selected="selected" <# } #>><?php esc_html_e( 'None', 'aamla' ); ?></option>
 
 					<# if ( data.sans ) { #>
-						<optgroup label="<?php esc_attr_e( 'Sans Serif Fonts', 'aamla' ); ?>">
+						<optgroup label="<?php echo esc_attr_x( 'Sans Serif Fonts', 'Font optgroup label attribute', 'aamla' ); ?>">
 						<# _.each( data.sans, function( args, choice ) { #>
 							<option value="{{ choice }}" <# if ( choice === data.family.value ) { #> selected="selected" <# } #>>{{ args.family }}</option>
 						<# } ) #>
@@ -94,7 +94,7 @@ class Customize_Google_Fonts extends \WP_Customize_Control {
 					<# } #>
 
 					<# if ( data.serif ) { #>
-						<optgroup label="<?php esc_attr_e( 'Serif Fonts', 'aamla' ); ?>">
+						<optgroup label="<?php echo esc_attr_x( 'Serif Fonts', 'Font optgroup label attribute', 'aamla' ); ?>">
 						<# _.each( data.serif, function( args, choice ) { #>
 							<option value="{{ choice }}" <# if ( choice === data.family.value ) { #> selected="selected" <# } #>>{{ args.family }}</option>
 						<# } ) #>
@@ -116,7 +116,7 @@ class Customize_Google_Fonts extends \WP_Customize_Control {
 					<# if ( data.selectors.desc ) { #>
 						<span class="customize-control-description">{{ data.selectors.desc }}</span>
 					<# } #>
-					<input type="text" value="{{ data.selectors.value }}" placeholder="<?php esc_attr_e( 'examlple: .site-title, #main', 'aamla' ); ?>" {{{ data.selectors.link }}} />
+					<input type="text" value="{{ data.selectors.value }}" placeholder="<?php echo esc_attr_x( 'example: .site-title, #main', 'Placeholder text for css selectors', 'aamla' ); ?>" {{{ data.selectors.link }}} />
 				</div>
 				<div class="google-font-weight">
 					<# if ( data.weight.label ) { #>

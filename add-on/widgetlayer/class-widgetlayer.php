@@ -519,7 +519,7 @@ class WidgetLayer {
 						'min'         => 0,
 						'max'         => 100,
 						'step'        => 0.01,
-						'placeholder' => esc_html__( 'Same as desktop', 'aamla' ),
+						'placeholder' => esc_attr_x( 'Same as desktop', 'Placeholder text for a number input field', 'aamla' ),
 					],
 				],
 				'aamla_vert_align'          => [

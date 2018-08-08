@@ -219,7 +219,7 @@ class Display_Posts_Widget extends \WP_Widget {
 
 			<p class="post-ids">
 				<?php $this->label( 'post_ids', esc_html__( 'Post IDs (if any)', 'aamla' ) ); ?>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'post_ids' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'post_ids' ) ); ?>" type="text" placeholder="<?php esc_attr_e( 'Comma separated ids, i.e. 230,300', 'aamla' ); ?>" value="<?php echo esc_attr( $instance['post_ids'] ); ?>" />
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'post_ids' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'post_ids' ) ); ?>" type="text" placeholder="<?php echo esc_attr_x( 'Comma separated ids, i.e. 230,300', 'Placeholder text for post ids', 'aamla' ); ?>" value="<?php echo esc_attr( $instance['post_ids'] ); ?>" />
 			</p>
 
 			<div class="taxonomies">

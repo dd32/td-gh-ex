@@ -208,21 +208,35 @@ class Media_Manager {
 	 */
 	public function deferred_media_markup( $media ) {
 		if ( $media ) {
-			$dom = new \DOMDocument();
-			$dom->loadHTML( $media );
-			$frames = $dom->getElementsByTagName( 'iframe' );
-			foreach ( $frames as $frame ) {
+			/*
+			 * In the rare case that DOMDocument is not available, we will return media as it is.
+			 */
+			if ( ! class_exists( 'DOMDocument' ) ) {
+				return $media;
+			} else {
+				$doc = new \DOMDocument();
+				$doc->loadHTML( sprintf(
+					'<!DOCTYPE html><html><head><meta charset="%s"></head><body>%s</body></html>',
+					esc_attr( get_bloginfo( 'charset' ) ),
+					$media
+				) );
+
+				$body  = $doc->getElementsByTagName( 'body' )->item( 0 );
+				$frame = $body->getElementsByTagName( 'iframe' )->item( 0 );
+
+				if ( ! $frame ) {
+					return $media;
+				}
+
 				$url = $frame->getAttribute( 'src' );
 				if ( $url ) {
 					$frame->removeAttribute( 'src' );
 					// Escape url and preserve special charaters (if any).
 					$frame->setAttribute( 'data-src', wp_specialchars_decode( esc_url( $url ) ) );
-					$frame->setAttribute( 'src', '' );
 				}
+				$media = $doc->saveHTML( $frame );
 			}
-			$media = $dom->saveHTML();
 		}
-
 		return $media;
 	}
 

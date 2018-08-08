@@ -33,7 +33,7 @@ function aamlaMediaManager() {
 			videoFrame = videoWrapper.getElementsByTagName( 'iframe')[0];
 			if ( videoFrame ) {
 				if ( this.classList.contains( 'makeitvisible' ) ) {
-					if ( '' === videoFrame.getAttribute( 'src' ) ) {
+					if ( ! videoFrame.hasAttribute( 'src' ) ) {
 						src = videoFrame.getAttribute( 'data-src' );
 						if ( src ) {
 							videoFrame.setAttribute( 'src', src );
@@ -42,7 +42,9 @@ function aamlaMediaManager() {
 				} else {
 					video = videoFrame.getElementsByTagName( 'video' )[0];
 					src   = videoFrame.getAttribute( 'src' );
-					videoFrame.setAttribute( 'src', src );
+					if ( src ) {
+						videoFrame.setAttribute( 'src', src );
+					}
 					if ( video ) {
 						video.pause();
 					}
@@ -77,7 +79,7 @@ function aamlaMediaManager() {
 			audioFrame = audioWrapper.getElementsByTagName( 'iframe')[0];
 			if ( audioFrame ) {
 				if ( this.classList.contains( 'makeitvisible' ) ) {
-					if ( '' === audioFrame.getAttribute( 'src' ) ) {
+					if ( ! audioFrame.hasAttribute( 'src' ) ) {
 						src = audioFrame.getAttribute( 'data-src' );
 						if ( src ) {
 							audioFrame.setAttribute( 'src', src );
@@ -86,7 +88,9 @@ function aamlaMediaManager() {
 				} else {
 					audio = audioWrapper.getElementsByTagName( 'audio' )[0];
 					src   = audioFrame.getAttribute( 'src' );
-					audioFrame.setAttribute( 'src', src );
+					if ( src ) {
+						audioFrame.setAttribute( 'src', src );
+					}
 					if ( video ) {
 						video.pause();
 					}

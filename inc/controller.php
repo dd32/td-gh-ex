@@ -127,7 +127,7 @@ function aamla_get_theme_controls( $controls = [] ) {
 				'section'     => 'aamla_general_section',
 				'setting'     => 'aamla_footer_text',
 				'type'        => 'text',
-				'description' => esc_html__( 'Change footer copyright & credit text at the bottom of your site.', 'aamla' ),
+				'description' => esc_html__( 'Change footer copyright & credit text at the bottom of your site.', 'aamla' ) . ' ' . esc_html__( 'For Site Title, Use ', 'aamla' ) . '[site_title]. ' . esc_html__( 'For Copyright symbol, Use ', 'aamla' ) . '[copy_symbol]. ' . esc_html__( 'For Current Year, Use ', 'aamla' ) . '[current_year]',
 			],
 			[
 				'label'   => esc_html__( 'Show Primary Navigation', 'aamla' ),
@@ -207,7 +207,7 @@ function aamla_get_theme_defaults( $defaults = [] ) {
 		'aamla_thumbnail_placeholder'  => 1,
 		'aamla_thumbnail_on_single'    => 1,
 		'aamla_print_post_icon'        => 1,
-		'aamla_footer_text'            => '[site_title] [copy_symbol] [current_year] &middot; [reserve_text]',
+		'aamla_footer_text'            => '[site_title] [copy_symbol] [current_year] &middot; ' . esc_html__( 'All rights reserved', 'aamla' ), // Note: Translation friendly instructions for using footer text placeholders has been given in customizer control description.
 	] );
 }
 add_filter( 'aamla_theme_defaults', 'aamla_get_theme_defaults' );

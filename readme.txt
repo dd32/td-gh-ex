@@ -3,7 +3,7 @@
 Created by: Vedathemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 4.9.8
-Version: 1.0.5
+Version: 1.0.6
 PHP required : PHP 5.4+
 IE Browser Support: IE11+
 License: GNU General Public License v2 or later
@@ -93,6 +93,13 @@ Aamla WordPress Theme bundles the following third-party resources:
 	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 == Changelog ==
+
+= 1.0.6 - Aug 8 2018 =
+* Modify - Replace esc_attr__ & esc_attr_e with esc_attr_x to make translation friendly
+* Modify - Translation friendly instructions for Footer text placeholders.
+* Modify - Change theme screenshot.
+* Error Fix - DOMDocument generate DOCTYPE, HTML and BODY tags on saveHTML.
+* Error Fix - IFRAME empty src attribute HTML markup warning in media manager
 
 = 1.0.5 - Aug 07 2018 =
 * Error Fix - Gutenberg Gallery styling fix
