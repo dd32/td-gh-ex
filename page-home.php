@@ -94,7 +94,7 @@ get_header(); ?>
 									$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'accesspress-root-service-thumbnail' );
 									?>
 									<a href="<?php the_permalink(); ?>" class="image-wrap"> 
-									<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+									<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 									</a>
 									<div class="service-overlay">
 										<a href="<?php the_permalink(); ?>"> <i class="fa fa-external-link"></i> </a>
@@ -104,7 +104,7 @@ get_header(); ?>
 								</div>
 								<div class="service-content">
 									<h1 class="service-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-									<div class="service-desc"><?php echo accesspress_letter_count(get_the_content(),'120'); ?></div>
+									<div class="service-desc"><?php echo esc_html(accesspress_letter_count(get_the_content(),'120')); ?></div>
 								</div>
 							</div>
 					<?php
@@ -185,8 +185,8 @@ get_header(); ?>
 									<?php endif; ?>
 									<div class="feature-content">
 										<h1 class="feature-title"> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> </h1>
-										<div class="feature-desc"><?php echo accesspress_letter_count(get_the_content(),'90'); ?></div>
-										<a class="feature-read-more" href="<?php the_permalink(); ?>"><?php echo of_get_option('feature_readmore'); ?></a>
+										<div class="feature-desc"><?php echo esc_html(accesspress_letter_count(get_the_content(),'90')); ?></div>
+										<a class="feature-read-more" href="<?php the_permalink(); ?>"><?php echo esc_html(of_get_option('feature_readmore')); ?></a>
 									</div>
 								</div>
 								<?php
@@ -237,18 +237,18 @@ get_header(); ?>
 							$count++;
 							$class = ($count % 2 == 0) ? "right-blog" : "left-blog";
 						?>
-							<div class="blog-block <?php echo $class; ?>">
+							<div class="blog-block <?php echo esc_attr($class); ?>">
 								<div class="blog-image">
 									<?php if(has_post_thumbnail()):
 										$big_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 										$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'accesspress-root-blog-thumbnail' );
 									?>
 									<a class="blog-img-wrap" href="<?php the_permalink(); ?>">
-									<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+									<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 									</a>
 									<div class="blog-overlay">
 										<div class="blog-anchor-wrap">
-											<a class="search fancybox-gallery" data-lightbox-gallery="gallery" href="<?php echo $big_image[0]; ?>"> <i class="fa fa-search"></i></a>
+											<a class="search fancybox-gallery" data-lightbox-gallery="gallery" href="<?php echo esc_url($big_image[0]); ?>"> <i class="fa fa-search"></i></a>
 											<a class="link" href="<?php the_permalink(); ?>"> <i class="fa fa-link"> </i> </a>
 										</div>
 									</div>
@@ -265,21 +265,21 @@ get_header(); ?>
 									</div>
 									<div class="blog-content">
 										<h1 class="blog-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a></h1>
-										<div class="blog-desc"><?php echo accesspress_letter_count(get_the_content(),'200'); ?></div>
+										<div class="blog-desc"><?php echo esc_html(accesspress_letter_count(get_the_content(),'200')); ?></div>
 									</div>
 									<div class="clearfix"> </div>
 									<div class="blog-comments-wrap clearfix">
                                         <div class="blog-comments">
-    										<span><a class="author" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"> <i class="fa fa-user"> </i><?php echo get_the_author(); ?></a></span>
-    										<span><a class="comment" href="<?php echo get_comments_link( $post->ID ); ?>"> <i class="fa fa-comments"> </i><?php echo get_comments_number(); ?></a></span>
+    										<span><a class="author" href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) )); ?>"> <i class="fa fa-user"> </i><?php echo esc_html(get_the_author()); ?></a></span>
+    										<span><a class="comment" href="<?php echo esc_url(get_comments_link( $post->ID )); ?>"> <i class="fa fa-comments"> </i><?php echo absint(get_comments_number()); ?></a></span>
     										<?php if(has_category()): ?>
     										<span>
-    										<i class="fa fa-folder"></i><?php echo get_the_category_list(', '); ?>
+    										<i class="fa fa-folder"></i><?php echo wp_kses(get_the_category_list(', '), array( 'a' => array( 'href' => array(), 'rel' => array() ) )); ?>
     										</span>
     										<?php endif; ?>
     										<?php if(has_tag()): ?>
     										<span>
-    										<i class="fa fa-tags"></i><?php echo get_the_tag_list('' , ', '); ?>
+    										<i class="fa fa-tags"></i><?php echo wp_kses(get_the_tag_list('' , ', '), array( 'a' => array( 'href' => array(), 'rel' => array() ) )); ?>
     										</span>
     										<?php endif; ?>
                                         </div>
@@ -320,11 +320,11 @@ get_header(); ?>
 								?>
 								<div class="info-img"> 
 								<a href="<?php the_permalink(); ?>">
-								<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+								<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 								</a> 
 								</div>
 								<?php endif; ?>
-								<div class="info-content"><?php echo accesspress_letter_count(get_the_content(),'200'); ?></div>
+								<div class="info-content"><?php echo esc_html(accesspress_letter_count(get_the_content(),'200')); ?></div>
 								<a class="info-read-more" href="<?php the_permalink(); ?>"><?php echo esc_attr(of_get_option('project_readmore')); ?></a>
 							</div>
 						</div> <!-- widget-block -->
@@ -338,7 +338,7 @@ get_header(); ?>
 					<?php if(of_get_option('project_cat')): ?>
 					<div class="widget-block">
 						<div class="project-block-wrap">
-						<div class="info-title"><?php echo get_cat_name(of_get_option('project_cat')); ?></div>	
+						<div class="info-title"><?php echo esc_html(get_cat_name(of_get_option('project_cat'))); ?></div>	
 					<?php 
 					$args = array(
 						'posts_per_page' => 6,
@@ -366,7 +366,7 @@ get_header(); ?>
 						</div>
 						<div class="project-content-wrap">
 							<div class="project-title"><?php the_title(); ?></div>
-							<div class="project-content"><?php echo accesspress_letter_count(get_the_content(),'120'); ?></div>
+							<div class="project-content"><?php echo esc_html(accesspress_letter_count(get_the_content(),'120')); ?></div>
 							<div class="project-link-wrap">
 								<a class="project-search fancybox-gallery" data-lightbox-gallery="gallery1" href="<?php echo esc_url($big_image[0]); ?>"> <i class="fa fa-search"> </i> </a>
 								<a class="project-link" href="<?php the_permalink(); ?>"><i class="fa fa-link"></i></a>
@@ -424,7 +424,7 @@ get_header(); ?>
 							if(has_post_thumbnail()):
 								the_post_thumbnail('thumbnail'); 
 							else: ?>
-								<img src="<?php echo get_template_directory_uri(); ?>/images/testimonial-dummy.jpg">
+								<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/testimonial-dummy.jpg">
 							<?php
 							endif;
 							?>
@@ -446,7 +446,7 @@ get_header(); ?>
 								$query->the_post();
 							?>
 							<div class="testimonail-content testimonial-<?php echo the_ID() ?>"> 
-								<div class="testimonial-quote"><?php echo get_the_content(); ?></div>
+								<div class="testimonial-quote"><?php the_content(); ?></div>
 								<div class="speaker-name">-<?php the_title(); ?></div>
 							</div>
 						<?php endwhile; ?>

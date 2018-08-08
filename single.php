@@ -22,7 +22,7 @@ $single_post_layout = esc_attr(of_get_option('single_post_layout'));
 		</div>
 	</div>
 
-	<main id="main" class="site-main clearfix <?php echo $single_post_layout; ?>">
+	<main id="main" class="site-main clearfix <?php echo esc_attr($single_post_layout); ?>">
 	<?php if($single_post_layout == 'both-sidebar'): ?>
 		<div id="primary-wrap" class="clearfix">
 	<?php endif; ?>

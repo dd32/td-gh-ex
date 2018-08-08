@@ -80,17 +80,19 @@ function accesspress_root_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
+	/* translators: posted on date */
 	$posted_on = sprintf(
-		_x( '%s', 'post date', 'accesspress-root' ),
+		'%s',
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
+	/* translators: %s : author name */
 	$byline = sprintf(
-		_x( '%s', 'post author', 'accesspress-root' ),
+		'%s',
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+	echo '<span class="posted-on">' . wp_kses( $posted_on, array( 'a' => array( 'href' => array(), 'rel' => array() ), 'time' => array( 'class' => array(), 'datetime' => array() ) ) ) . '</span><span class="byline">' .  wp_kses( $byline, array( 'span' => array( 'class' => array() ),'a' => array( 'class' => array(), 'href' => array() ) ) ) . '</span>';
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
@@ -111,13 +113,15 @@ function accesspress_root_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( __( ', ', 'accesspress-root' ) );
 		if ( $categories_list && accesspress_root_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( '%1$s', 'accesspress-root' ) . '</span>', $categories_list );
+			/* translators: %1$s : category list */
+			printf( '<span class="cat-links">' . wp_kses( '%1$s', array( 'a' => array( 'href' => array(), 'rel' => array() ) ) ) . '</span>', wp_kses( $categories_list, array( 'a' => array( 'href' => array(), 'rel' => array() ) ) ) );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', __( ', ', 'accesspress-root' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( '%1$s', 'accesspress-root' ) . '</span>', $tags_list );
+			/* translators: %1$s : taglist */
+			printf( '<span class="tags-links">' . wp_kses( '%1$s', array( 'a' => array( 'href' => array(), 'rel' => array() ) ) ) . '</span>', wp_kses( $tags_list, array( 'a' => array( 'href' => array(), 'rel' => array() ) ) ) );
 		}
 	}
 
@@ -138,17 +142,23 @@ if ( ! function_exists( 'the_archive_title' ) ) :
  */
 function the_archive_title( $before = '', $after = '' ) {
 	if ( is_category() ) {
-		$title = sprintf( __( 'Category: %s', 'accesspress-root' ), single_cat_title( '', false ) );
+		/* translators: %s : category title */
+		$title = sprintf( esc_html__( 'Category: %s', 'accesspress-root' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
-		$title = sprintf( __( 'Tag: %s', 'accesspress-root' ), single_tag_title( '', false ) );
+		/* translators: %s : tag title */
+		$title = sprintf( esc_html__( 'Tag: %s', 'accesspress-root' ), single_tag_title( '', false ) );
 	} elseif ( is_author() ) {
-		$title = sprintf( __( 'Author: %s', 'accesspress-root' ), '<span class="vcard">' . get_the_author() . '</span>' );
+		/* translators: %s : author name */
+		$title = sprintf( wp_kses( __( 'Author: %s', 'accesspress-root' ), array( 'span' => array( 'class' => array() ) ) ), '<span class="vcard">' . get_the_author() . '</span>' );
 	} elseif ( is_year() ) {
-		$title = sprintf( __( 'Year: %s', 'accesspress-root' ), get_the_date( _x( 'Y', 'yearly archives date format', 'accesspress-root' ) ) );
+		/* translators: %s : year */
+		$title = sprintf( esc_html__( 'Year: %s', 'accesspress-root' ), get_the_date( _x( 'Y', 'yearly archives date format', 'accesspress-root' ) ) );
 	} elseif ( is_month() ) {
-		$title = sprintf( __( 'Month: %s', 'accesspress-root' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'accesspress-root' ) ) );
+		/* translators: %s : month */
+		$title = sprintf( esc_html__( 'Month: %s', 'accesspress-root' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'accesspress-root' ) ) );
 	} elseif ( is_day() ) {
-		$title = sprintf( __( 'Day: %s', 'accesspress-root' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'accesspress-root' ) ) );
+		/* translators: %s : day */
+		$title = sprintf( esc_html__( 'Day: %s', 'accesspress-root' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'accesspress-root' ) ) );
 	} elseif ( is_tax( 'post_format' ) ) {
 		if ( is_tax( 'post_format', 'post-format-aside' ) ) {
 			$title = _x( 'Asides', 'post format archive title', 'accesspress-root' );
@@ -170,7 +180,8 @@ function the_archive_title( $before = '', $after = '' ) {
 			$title = _x( 'Chats', 'post format archive title', 'accesspress-root' );
 		}
 	} elseif ( is_post_type_archive() ) {
-		$title = sprintf( __( 'Archives: %s', 'accesspress-root' ), post_type_archive_title( '', false ) );
+		/* translators: %s : post archive title */
+		$title = sprintf( esc_html__( 'Archives: %s', 'accesspress-root' ), post_type_archive_title( '', false ) );
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
@@ -187,7 +198,7 @@ function the_archive_title( $before = '', $after = '' ) {
 	$title = apply_filters( 'get_the_archive_title', $title );
 
 	if ( ! empty( $title ) ) {
-		echo $before . $title . $after;
+		echo wp_kses_post($before . $title . $after);
 	}
 }
 endif;
@@ -214,7 +225,7 @@ function the_archive_description( $before = '', $after = '' ) {
 		 *
 		 * @param string $description Archive description to be displayed.
 		 */
-		echo $before . $description . $after;
+		echo wp_kses_post($before . $description . $after);
 	}
 }
 endif;

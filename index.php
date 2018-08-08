@@ -16,7 +16,7 @@ get_header(); ?>
 <?php 
 $archive_page_layout = esc_attr(of_get_option('archive_page_layout'));
 ?>
-	<main id="main" class="site-main clearfix <?php echo $archive_page_layout; ?>">
+	<main id="main" class="site-main clearfix <?php echo esc_attr($archive_page_layout); ?>">
 		<?php if($archive_page_layout == 'both-sidebar'): ?>
 			<div id="primary-wrap" class="clearfix">
 		<?php endif; ?>

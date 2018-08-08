@@ -46,7 +46,7 @@ endif;
 
 	<?php if(has_post_thumbnail()):  ?>
 	<div class="entry-thumbanil">
-	<a href="<?php the_permalink(); ?>"><img src="<?php echo $image[0] ?>" alt="<?php the_title(); ?>"></a>
+	<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>"></a>
 	</div>
 	<?php endif; ?>
 
@@ -56,7 +56,7 @@ endif;
 		if($blog_post_layout == 'blog_layout4'):
 			the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'accesspress-root' )  );
 		else:
-			echo accesspress_letter_count(get_the_content(),'460'); 
+			echo esc_html(accesspress_letter_count(get_the_content(),'460'));
 		endif;
 		?>
 

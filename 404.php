@@ -20,10 +20,10 @@ get_header(); ?>
 		<section class="error-404 not-found">
 			<div class="page-content">
 				<div class="page-404-wrap clearfix">
-					<span class="oops"><?php _e('Oops!!','accesspress-root'); ?></span>
+					<span class="oops"><?php esc_html_e('Oops!!','accesspress-root'); ?></span>
 					<div class="error-num"> 
-					<span class="num"><?php _e('404','accesspress-root'); ?></span>
-					<span class="not_found"><?php _e('Page Not Found','accesspress-root'); ?></span>
+					<span class="num"><?php esc_html_e('404','accesspress-root'); ?></span>
+					<span class="not_found"><?php esc_html_e('Page Not Found','accesspress-root'); ?></span>
 					</div> 
 				</div>
 			</div><!-- .page-content -->

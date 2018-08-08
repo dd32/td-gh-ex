@@ -23,7 +23,7 @@ $single_page_layout = of_get_option('single_page_layout');
 		</div>
 	</div>
 
-	<main id="main" class="site-main clearfix <?php echo $single_page_layout; ?>">
+	<main id="main" class="site-main clearfix <?php echo esc_attr($single_page_layout); ?>">
 		<?php if($single_page_layout == 'both-sidebar'): ?>
 			<div id="primary-wrap" class="clearfix">
 		<?php endif; ?>

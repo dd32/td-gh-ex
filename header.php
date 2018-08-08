@@ -41,7 +41,7 @@
 
 			<div class="right-header">
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<a class="menu-toggle"><?php _e( 'Menu', 'accesspress-root' ); ?></a>
+					<a class="menu-toggle"><?php esc_html_e( 'Menu', 'accesspress-root' ); ?></a>
 					<?php wp_nav_menu( array( 
 					'theme_location' => 'primary',
 					'container'       => false, 

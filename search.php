@@ -9,7 +9,7 @@ get_header(); ?>
 <div class="page_header_wrap clearfix">
 	<div class="ak-container">
 		<header class="entry-header">
-			<h1 class="entry-title"><?php printf( __( 'Search Results for: %s', 'accesspress-root' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			<h1 class="entry-title"><?php /* translators: %s : search keyword */ printf( esc_html__( 'Search Results for: %s', 'accesspress-root' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 		</header><!-- .page-header -->
 
 		<?php accesspress_breadcrumbs() ?>

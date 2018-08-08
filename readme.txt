@@ -97,6 +97,9 @@ Pattern Images
 ---------------------------------------------
 == Changelog ==
 
+Version 1.29
+ * Fixed Security Issues
+
 Version 1.28
  * Updated bxSlider
  * Updated Fontawesome Fonts

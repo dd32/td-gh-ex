@@ -44,11 +44,11 @@
 					?>
 					
 					<div class="action-tab warning">
-						<h3><?php printf( esc_html__("Install : %s Plugin", 'accesspress-root'), $info->name ); ?></h3>
+						<h3><?php /* translators: %s : plugin name */ printf( esc_html__("Install : %s Plugin", 'accesspress-root'), esc_html($info->name) ); ?></h3>
 						<p><?php esc_html_e('Install Contact Form 7 to add the contact forms.', 'accesspress-root'); ?></p>
 
 						<span class="plugin-card-<?php echo esc_attr($plugin['slug']); ?>" action_button>
-							<a class="<?php echo esc_attr($btn_class); ?>" data-slug="<?php echo esc_attr($plugin['slug']); ?>" href="<?php echo esc_url($btn_url); ?>"><?php echo $label; ?></a>
+							<a class="<?php echo esc_attr($btn_class); ?>" data-slug="<?php echo esc_attr($plugin['slug']); ?>" href="<?php echo esc_url($btn_url); ?>"><?php echo esc_html($label); ?></a>
 						</span>
 					</div>
 					<?php
@@ -77,11 +77,11 @@
 
 				?>
 				<div class="action-tab warning">
-					<h3><?php printf( esc_html__("Install : %s Plugin", 'accesspress-root'), $plugin['name'] ); ?></h3>
+					<h3><?php /* translators: %s : plugin name */ printf( esc_html__("Install : %s Plugin", 'accesspress-root'), esc_html($plugin['name']) ); ?></h3>
 					<p><?php esc_html_e('Instant Demo Importer Plugin adds the feature to Import the Demo Conent with a single click.', 'accesspress-root'); ?></p>
 
 					<span class="plugin-card-<?php echo esc_attr($plugin['slug']); ?>" action_button>
-						<a class="<?php echo esc_attr($btn_class); ?>" data-file='<?php echo esc_attr($plugin['slug']).'/'.esc_attr($plugin['filename']); ?>' data-slug="<?php echo esc_attr($plugin['slug']); ?>" href="<?php echo esc_html($link); ?>"><?php echo $label; ?></a>
+						<a class="<?php echo esc_attr($btn_class); ?>" data-file='<?php echo esc_attr($plugin['slug']).'/'.esc_attr($plugin['filename']); ?>' data-slug="<?php echo esc_attr($plugin['slug']); ?>" href="<?php echo esc_html($link); ?>"><?php echo esc_html($label); ?></a>
 					</span>
 				</div>
 				<?php

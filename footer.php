@@ -11,7 +11,7 @@
 	</div><!-- #content -->
 
 	<footer id="colophon">
-		<div id="top-footer" class="clearfix columns-<?php echo accesspress_footer_count(); ?>">
+		<div id="top-footer" class="clearfix columns-<?php echo esc_attr(accesspress_footer_count()); ?>">
 			<div class="ak-container">
 			<div class="top-footer-wrap clearfix">
 			<?php if(is_active_sidebar('footer-1')): ?>
@@ -53,7 +53,7 @@
 
 		<div id="bottom-footer" class="clearfix">
 			<div class="ak-container">
-				<div class="copyright"><?php _e('WordPress Theme: ', 'accesspress-root'); ?> <a title="AccessPress Themes" href="<?php echo esc_url('http://accesspressthemes.com/wordpress-themes/accesspress-root'); ?>">AccessPress Root</a>  by AccessPress Themes </div>
+				<div class="copyright"><?php esc_html_e('WordPress Theme: ', 'accesspress-root'); ?> <a title="AccessPress Themes" href="<?php echo esc_url('http://accesspressthemes.com/wordpress-themes/accesspress-root'); ?>">AccessPress Root</a>  by AccessPress Themes </div>
 				<ul class="social-icon">
 					<?php do_action('accesspress_social'); ?>
 				</ul>
