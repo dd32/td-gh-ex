@@ -30,6 +30,11 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.2.8 | 8th August 2018 = 
+* Update: Gutenberg Support.
+* Update: Menu walker.
+* Update: Google Fonts.
+
 = Version 3.2.7 | 17th July 2018 = 
 * Fix: issue with portfolio carousel arrows.
 * Update: easier toolkit install.

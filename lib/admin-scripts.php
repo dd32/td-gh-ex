@@ -40,7 +40,7 @@ function virtue_editor_dynamic_css() {
 	$options_fonts = array( 'font_h1', 'font_h2', 'font_h3', 'font_h4', 'font_h5', 'font_p' );
 	$load_gfonts   = array();
 	foreach ( $options_fonts as $options_key ) {
-		if ( isset( $virtue[ $options_key ] ) && true == $virtue[ $options_key ]['google'] ) {
+		if ( isset( $virtue[ $options_key ] ) && isset( $virtue[ $options_key ]['google'] ) && 'false' !== $virtue[ $options_key ]['google'] ) {
 			// check if it's in the array.
 			if ( isset( $load_gfonts[ sanitize_key( $virtue[ $options_key ]['font-family'] ) ] ) ) {
 				if ( isset( $virtue[ $options_key ]['font-weight'] ) && ! empty( $virtue[ $options_key ]['font-weight'] ) ) {
@@ -72,10 +72,23 @@ function virtue_editor_dynamic_css() {
 			}
 		}
 		if ( 'font_p' === $options_key ) {
-			$load_gfonts[ sanitize_key( $virtue[ $options_key ]['font-family'] ) ]['font-style']['400italic'] = '400italic';
-			$load_gfonts[ sanitize_key( $virtue[ $options_key ]['font-family'] ) ]['font-style']['400']       = '400';
-			$load_gfonts[ sanitize_key( $virtue[ $options_key ]['font-family'] ) ]['font-style']['700italic'] = '700italic';
-			$load_gfonts[ sanitize_key( $virtue[ $options_key ]['font-family'] ) ]['font-style']['700']       = '700';
+			$path      = trailingslashit( get_template_directory() ) . 'lib/gfont-json.php';
+			$all_fonts = include $path;
+			if ( isset( $all_fonts[ $virtue[ $options_key ]['font-family'] ] ) ) {
+				$p_font = $all_fonts[ $virtue[ $options_key ]['font-family'] ];
+				if ( isset( $p_font['variants']['italic']['400'] ) ) {
+					$load_gfonts[ sanitize_key( $virtue[ $options_key ]['font-family'] ) ]['font-style']['400italic'] = '400italic';
+				}
+				if ( isset( $p_font['variants']['italic']['700'] ) ) {
+					$load_gfonts[ sanitize_key( $virtue[ $options_key ]['font-family'] ) ]['font-style']['700italic'] = '700italic';
+				}
+				if ( isset( $p_font['variants']['normal']['400'] ) ) {
+					$load_gfonts[ sanitize_key( $virtue[ $options_key ]['font-family'] ) ]['font-style']['400'] = '400';
+				}
+				if ( isset( $p_font['variants']['normal']['700'] ) ) {
+					$load_gfonts[ sanitize_key( $virtue[ $options_key ]['font-family'] ) ]['font-style']['700'] = '700';
+				}
+			}
 		}
 	}
 	if ( ! empty( $load_gfonts ) ) {
@@ -105,15 +118,9 @@ function virtue_editor_dynamic_css() {
 		echo '<link href="//fonts.googleapis.com/css?family=' . esc_attr( str_replace( '|', '%7C', $link ) ) . ' " rel="stylesheet">';
 
 	}
-	echo '<style type="text/css" id="ascend-editor-font-family">';
-	if ( isset( $virtue['paragraph_margin_bottom'] ) ) {
-		echo '.editor-block-list__layout .editor-block-list__block .editor-block-list__block-edit {
-			margin-bottom:' . esc_attr( $virtue['paragraph_margin_bottom'] ) . 'px;
-			margin-top:' . esc_attr( $virtue['paragraph_margin_bottom'] ) . 'px;
-		}';
-	}
+	echo '<style type="text/css" id="virtue-editor-font-family">';
 	if ( isset( $virtue['font_h1'] ) ) {
-		echo 'body.gutenberg-editor-page .wp-block-heading h1 {
+		echo 'body.gutenberg-editor-page .editor-post-title__block .editor-post-title__input, body.gutenberg-editor-page .wp-block-heading h1, body.gutenberg-editor-page .editor-block-list__block h1 {
 				font-size: ' . esc_attr( $virtue['font_h1']['font-size'] ) . ';
 				line-height: ' . esc_attr( $virtue['font_h1']['line-height'] ) . ';
 				font-weight: ' . esc_attr( $virtue['font_h1']['font-weight'] ) . ';
@@ -122,7 +129,7 @@ function virtue_editor_dynamic_css() {
 			}';
 	}
 	if ( isset( $virtue['font_h2'] ) ) {
-		echo 'body.gutenberg-editor-page .wp-block-heading h2 {
+		echo 'body.gutenberg-editor-page .wp-block-heading h2, body.gutenberg-editor-page .editor-block-list__block h2 {
 			font-size: ' . esc_attr( $virtue['font_h2']['font-size'] ) . ';
 			line-height: ' . esc_attr( $virtue['font_h2']['line-height'] ) . ';
 			font-weight: ' . esc_attr( $virtue['font_h2']['font-weight'] ) . ';
@@ -131,7 +138,7 @@ function virtue_editor_dynamic_css() {
 		}';
 	}
 	if ( isset( $virtue['font_h3'] ) ) {
-		echo 'body.gutenberg-editor-page .wp-block-heading h3 {
+		echo 'body.gutenberg-editor-page .wp-block-heading h3, body.gutenberg-editor-page .editor-block-list__block h3 {
 			font-size: ' . esc_attr( $virtue['font_h3']['font-size'] ) . ';
 			line-height: ' . esc_attr( $virtue['font_h3']['line-height'] ) . ';
 			font-weight: ' . esc_attr( $virtue['font_h3']['font-weight'] ) . ';
@@ -140,16 +147,16 @@ function virtue_editor_dynamic_css() {
 		}';
 	}
 	if ( isset( $virtue['font_h4'] ) ) {
-		echo 'body.gutenberg-editor-page .wp-block-heading h4 {
+		echo 'body.gutenberg-editor-page .wp-block-heading h4, body.gutenberg-editor-page .editor-block-list__block h4 {
 			font-size: ' . esc_attr( $virtue['font_h4']['font-size'] ) . ';
 			line-height: ' . esc_attr( $virtue['font_h4']['line-height'] ) . ';
 			font-weight: ' . esc_attr( $virtue['font_h4']['font-weight'] ) . ';
 			font-family: ' . esc_attr( $virtue['font_h4']['font-family'] ) . ';
 			color: ' . esc_attr( $virtue['font_h4']['color'] ) . ';
-		}';
+		} body.gutenberg-editor-page .editor-block-list__block .widgets-container .so-widget h4 {font-size:inherit; letter-spacing:normal; font-family:inherit;}';
 	}
 	if ( isset( $virtue['font_h5'] ) ) {
-		echo 'body.gutenberg-editor-page .wp-block-heading h5 {
+		echo 'body.gutenberg-editor-page .wp-block-heading h5, body.gutenberg-editor-page .editor-block-list__block h5 {
 			font-size: ' . esc_attr( $virtue['font_h5']['font-size'] ) . ';
 			line-height: ' . esc_attr( $virtue['font_h5']['line-height'] ) . ';
 			font-weight: ' . esc_attr( $virtue['font_h5']['font-weight'] ) . ';

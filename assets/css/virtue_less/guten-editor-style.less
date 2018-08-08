@@ -2,13 +2,27 @@
 body.gutenberg-editor-page .editor-post-title__block,
 body.gutenberg-editor-page .editor-default-block-appender,
 body.gutenberg-editor-page .editor-block-list__block {
-    max-width: 750px;
+    max-width: 800px;
 }
 
 /* Width of "wide" blocks */
 body.gutenberg-editor-page .editor-block-list__block[data-align="wide"] {
-    width: 72%;
-    max-width: 1140px;
+    max-width: 1400px;
+}
+@media (min-width: 1100px) {
+	body.gutenberg-editor-page .editor-block-list__block[data-align="wide"] {
+	    width: 92%;
+	}
+}
+@media (min-width: 1550px) {
+	body.gutenberg-editor-page .editor-block-list__block[data-align="wide"] {
+	    width: 84%;
+	}
+}
+@media (min-width: 1900px) {
+	body.gutenberg-editor-page .editor-block-list__block[data-align="wide"] {
+	    width: 72%;
+	}
 }
 
 /* Width of "full-wide" blocks */
@@ -17,14 +31,6 @@ body.gutenberg-editor-page .editor-block-list__block[data-align="full"] {
 }
 .editor-rich-text__tinymce.mce-content-body {
 	line-height: 1.6;
-}
-.editor-block-list__layout .editor-block-list__block .editor-block-list__block-edit {
-	margin-bottom: 20px;
-	margin-top: 20px;
-}
-body.gutenberg-editor-page .editor-block-list__block[data-align="full"] .editor-block-list__block-edit, body.gutenberg-editor-page .editor-block-list__block[data-align="wide"] .editor-block-list__block-edit {
-    margin-bottom: 32px;
-	margin-top: 32px;
 }
 body.gutenberg-editor-page {
 	p.has-drop-cap:not(:focus):first-letter {
