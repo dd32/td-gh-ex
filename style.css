@@ -4,7 +4,7 @@ Theme URI: https://crestaproject.com/downloads/ansia/
 Author: Rizzo Andrea - CrestaProject
 Author URI: https://crestaproject.com
 Description: Ansia is a simple and minimal WordPress theme especially suited to blogging. Its structure allows you to have a classic sidebar and a push sidebar that can be activated through a special button. The full width header allows you to insert your own image and the site structure can be boxed or full width. Ansia theme is also compatible with WooCommerce to create your online store. Unlimited colors, 2 sidebars, footer widget, custom logo and many other options. Demo here https://crestaproject.com/demo/ansia/
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: ansia
@@ -743,7 +743,7 @@ footer.site-footer a {
 	display: block;
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1026px) {
 	.menu-toggle {
 		display: none;
 	}
@@ -2240,7 +2240,7 @@ ul.products.columns-2 > li {
 }
 
 ul.products.columns-3 > li {
-	width: 31.3333%;
+	width: 31.3%;
 }
 
 ul.products.columns-4 > li {
@@ -2252,7 +2252,7 @@ ul.products.columns-5 > li {
 }
 
 .related.products .products > li {
-	width: 31.3333%;
+	width: 31.3%;
 }
 
 ul.products.columns-1 > li:nth-child(1n+1),
@@ -3363,7 +3363,7 @@ table.cart td.actions label {
 		padding-top: 3em;
 	}
 }
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1025px) {
 	.ansia-menu {
 		left: inherit;
 		z-index: 99999;

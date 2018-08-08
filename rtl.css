@@ -212,7 +212,7 @@ blockquote::before {
 	left: inherit;
 	right: 0;
 }
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1025px) {
 	.ansia-subbar {
 		direction: ltr;
 	}
