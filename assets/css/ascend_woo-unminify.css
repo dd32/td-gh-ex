@@ -1133,6 +1133,9 @@ p.stars.selected a:not(.active):before {
 .quantity.buttons_added input.qty {
   padding-right: 20px;
 }
+.quantity.hidden.buttons_added .kt-spin-button {
+  display: none;
+}
 table.variations {
   min-width: 300px;
   margin-bottom: 24px;

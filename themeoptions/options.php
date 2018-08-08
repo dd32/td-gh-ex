@@ -3756,7 +3756,7 @@ Redux::setSection( $opt_name, array(
             'type' => 'background',
             'title' => __('Mobile Menu background', 'ascend'), 
             'default' => '',
-            'output' => array('.mfp-slide #kt-mobile-menu'),
+            'output' => array('.mfp-slide #kt-mobile-menu, .mfp-slide #kt-mobile-cart, .mfp-slide #kt-mobile-account'),
             ),
     	array(
             'id'=>'mobile_submenu_collapse',
@@ -3785,7 +3785,7 @@ Redux::setSection( $opt_name, array(
             'letter-spacing'=>true,
             'color'=>true,
             'preview'=>true, 
-            'output' => array('.kad-mobile-nav li a, .kad-mobile-nav li', 'color' => '.kt-mobile-menu form.search-form input[type="search"].search-field, .kt-mobile-menu form.search-form .search-submit'),
+            'output' => array('.kad-mobile-nav li a, .kad-mobile-nav li', 'color' => '.kt-mobile-menu form.search-form input[type="search"].search-field, .kt-mobile-menu form.search-form .search-submit', '.mfp-slide #kt-mobile-account, .mfp-slide #kt-mobile-cart'),
             'subtitle'=> __("Choose Size and Style for Mobile Menu", 'ascend'),
             'default'=> array(
                 'font-family'=>'Source Sans Pro',

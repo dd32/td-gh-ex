@@ -28,6 +28,11 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.3.2 | 8th August 2018 =
+* Fix: WC spinner showing when no quantity.
+* Fix: Mobile Cart Background.
+* Update: Gutenberg support.
+
 = Version 1.3.1 | 31st July 2018 =
 * Add: Better Modern tribe Support
 * Update: Simple search loop.
