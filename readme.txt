@@ -23,6 +23,9 @@ See headers of each files for further details.
 
 
 ####################### Changelog ######################
+= 4.1.11 August 9th 2018 =
+* improved : theme screenshot compatibility with the latest requirements of the theme repository on WordPress.org. (see https://make.wordpress.org/themes/2018/08/08/new-additions-to-the-screenshots-and-featured-images-requirements/)
+
 = 4.1.10 August 1st 2018 =
 * added : new option to display the site title next to the logo. Enabled by default. fixes #1573
 * imp : always make sure WC functions exist before calling them. fixes #1529
