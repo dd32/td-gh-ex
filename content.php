@@ -33,9 +33,9 @@ $cat_portfolio = $accesspresslite_settings['portfolio_cat'];
 			<?php accesspresslite_posted_on(); ?>
 		</div>
 		
-		<div><?php echo accesspresslite_excerpt( get_the_content() , 400 ) ?></div>
+		<div><?php echo esc_html(accesspresslite_excerpt( get_the_content() , 400 )); ?></div>
 		</div>
-		<a href="<?php the_permalink(); ?>" class="cat-event-more bttn"><?php _e('More','accesspress-lite');?></a>
+		<a href="<?php the_permalink(); ?>" class="cat-event-more bttn"><?php esc_html_e('More','accesspress-lite');?></a>
 	</div><!-- .entry-content -->
 </article>
 
@@ -50,7 +50,7 @@ $cat_portfolio = $accesspresslite_settings['portfolio_cat'];
 		?>
 		<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 		<?php }else {?>	
-		<img src="<?php echo get_template_directory_uri(); ?>/images/testimonial-fallback.jpg" alt="<?php the_title(); ?>">
+		<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/testimonial-fallback.jpg" alt="<?php the_title(); ?>">
 		<?php }?>
 	</div>
 		
@@ -73,7 +73,7 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 ?>
 	<a class="fancybox-gallery" href="<?php echo esc_url($full_image[0]); ?>" data-lightbox-gallery="gallery">
     <div class="cat-portfolio-image">
-		<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+		<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
     </div>
 	<div class="portofolio-layout">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -109,9 +109,9 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 		</div>
 		<?php } ?>
 		<div class="short-content">
-		<?php echo accesspresslite_excerpt( get_the_content() , 500 ) ?>
+		<?php echo esc_html(accesspresslite_excerpt( get_the_content() , 500 )); ?>
 		</div>
-		<a href="<?php the_permalink(); ?>" class="bttn"><?php _e('More','accesspress-lite')?></a>
+		<a href="<?php the_permalink(); ?>" class="bttn"><?php esc_html_e('More','accesspress-lite')?></a>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'accesspress-lite' ),
@@ -129,7 +129,7 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 				if ( $categories_list && accesspresslite_categorized_blog() ) :
 			?>
 			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', 'accesspress-lite' ), $categories_list ); ?>
+				<?php /* translators: %1$s : category list */ printf( wp_kses(__( 'Posted in %1$s', 'accesspress-lite' ), array( 'a' => array( 'href' => array(), 'rel' => array() ) ) ), wp_kses( $categories_list, array( 'a' => array( 'href' => array(), 'rel' => array() ) ) ) ); ?>
 			</span>
 			<?php endif; // End if categories ?>
 
@@ -139,7 +139,7 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 				if ( $tags_list ) :
 			?>
 			<span class="tags-links">
-				<?php printf( __( 'Tagged %1$s', 'accesspress-lite' ), $tags_list ); ?>
+				<?php /* translators: %1$s : tags list */ printf( wp_kses(__( 'Tagged %1$s', 'accesspress-lite' ), array( 'a' => array( 'href' => array(), 'rel' => array() ) ) ), wp_kses( $tags_list, array( 'a' => array( 'href' => array(), 'rel' => array() ) ) ) ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>

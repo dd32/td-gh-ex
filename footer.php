@@ -50,16 +50,16 @@
 		<div id="bottom-footer">
 		<div class="ak-container">
 			<div class="site-info">
-				<a href="<?php echo esc_url('http://wordpress.org/'); ?>"><?php _e( 'Free WordPress Theme', 'accesspress-lite' ); ?></a>
+				<a href="<?php echo esc_url('http://wordpress.org/'); ?>"><?php esc_html_e( 'Free WordPress Theme', 'accesspress-lite' ); ?></a>
 				<span class="sep"> | </span>
 				<a href="<?php echo esc_url('https://accesspressthemes.com/');?>" title="AccessPress Themes" target="_blank">AccessPress Lite</a>
 			</div><!-- .site-info -->
 
 			<div class="copyright">
-				<?php _e('Copyright','accesspress-lite') ?> &copy; <?php echo date('Y') ?> 
+				<?php esc_html_e('Copyright','accesspress-lite') ?> &copy; <?php echo esc_html(date('Y')); ?> 
 				<a target="_blank" href="http://demo.accesspressthemes.com/accesspresslite/">
 				<?php if(!empty($accesspresslite_settings['footer_copyright'])){
-					echo $accesspresslite_settings['footer_copyright']; 
+					echo wp_kses_post($accesspresslite_settings['footer_copyright']);
 					}else{
 						echo bloginfo('name');
 					} ?>

@@ -26,10 +26,10 @@
 			<p><?php esc_html_e('Tired of configuring site from scratch. Installation of demo is just one click away.', 'accesspress-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/no.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/no.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -38,10 +38,10 @@
 			<p><?php esc_html_e('Displays fine in device with screen sizes.', 'accesspress-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -50,10 +50,10 @@
 			<p><?php esc_html_e('Create the site in your own custom language.', 'accesspress-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/no.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/no.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -62,10 +62,10 @@
 			<p><?php esc_html_e('Choose any theme skin color you like.', 'accesspress-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/no.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/no.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -74,10 +74,10 @@
 			<p><?php esc_html_e('Choose either boxed or fullwidth layout for your site.', 'accesspress-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -86,10 +86,10 @@
 			<p><?php esc_html_e('Choose any layout for your page from multiple portfolio page layouts.', 'accesspress-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/no.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/no.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -98,10 +98,10 @@
 			<p><?php esc_html_e('Choose font for your site from any available 600+ Google Fonts.', 'accesspress-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/no.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/no.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -110,10 +110,10 @@
 			<p><?php esc_html_e('Customize the custom page header banners for your site.', 'accesspress-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/no.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/no.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -122,10 +122,10 @@
 			<p><?php esc_html_e('Choose custom page template designs for the pages.', 'accesspress-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/no.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/no.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -134,10 +134,10 @@
 			<p><?php esc_html_e('Display your custom footer texts in the site.', 'accesspress-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/no.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/no.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -146,10 +146,10 @@
 			<p><?php esc_html_e('Have a clients logo carousel section in your site.', 'accesspress-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/no.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/no.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -158,10 +158,10 @@
 			<p><?php esc_html_e('Choose any header layout for your site from available multiple header layout.', 'accesspress-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/no.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/no.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -194,10 +194,10 @@
 			<p><?php esc_html_e('Have custom background pattern and images for your website.', 'accesspress-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/no.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/no.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -206,10 +206,10 @@
 			<p><?php esc_html_e('Yes - Stop your WooCommerce theme search here.', 'accesspress-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>
@@ -218,10 +218,10 @@
 			<p><?php esc_html_e('Google will love it.', 'accesspress-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 		<td>
-			<img src="<?php echo get_template_directory_uri().'/welcome/css/yes.png'; ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/welcome/css/yes.png'); ?>">
 		</td>
 	</tr>
 	<tr>

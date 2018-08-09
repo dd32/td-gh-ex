@@ -52,7 +52,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 					<div  class="welcome-detail<?php if( !has_post_thumbnail() ){ echo " welcome-detail-full-width"; } ?>">
 					
 					<?php if($accesspresslite_settings['welcome_post_content'] == 0 || empty($accesspresslite_settings['welcome_post_content'])){ ?>
-						<p><?php echo accesspresslite_excerpt( get_the_content() , $accesspresslite_welcome_post_char ) ?></p>
+						<p><?php echo esc_html(accesspresslite_excerpt( get_the_content() , $accesspresslite_welcome_post_char )); ?></p>
 						<?php if(!empty($accesspresslite_settings['welcome_post_readmore'])){?>
 							<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_attr($accesspresslite_settings['welcome_post_readmore']); ?></a>
 						<?php } 
@@ -65,24 +65,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 				<?php endwhile;	
 				wp_reset_postdata(); 
 				}
-				
-				else{ ?>
-				
-				<h2><a href="#"><?php _e('Free WordPress theme - ACCESSPRESS LITE','accesspress-lite'); ?></a></h2>
-				<figure class="welcome-text-image">
-				<a href="#">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/demo/welcome-image.jpg" alt="welcome">
-				</a>
-				</figure>
-
-				<div  class="welcome-detail">
-				<p><?php _e('AccessPress Lite is a HTML5 & CSS3 Responsive Free WordPress Business Theme with clean, minimal yet highly professional design.','accesspress-lite'); ?></p>
-<p><?php _e('With our years of experience, we have developed this theme and given back to this awesome WordPress community. It is feature rich, multi purpose and flexible responsive theme Suitable for Agencies, Small Biz, Corporates, Bloggers - Anyone and Everyone!','accesspress-lite'); ?></p>
-<p><?php _e('The theme is complete with many useful features. The intuitive theme options let you manage all the possible options/features of the theme. You can use it to create your next superb website in no time and all for FREE.','accesspress-lite'); ?></p>
-				<a href="#" class="readmore bttn"><?php _e('Read More','accesspress-lite'); ?></a>
-				</div>
-
-			<?php } ?>
+				?>
 </div>
 
 <?php if($disable_event != 1): ?>
@@ -99,7 +82,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 	                'posts_per_page' => $accesspresslite_show_event_number,
 	            )); ?>
 
-	        <h2><a href="<?php echo get_category_link($accesspresslite_event_category); ?>"><?php echo get_cat_name($accesspresslite_event_category); ?></a></h2>
+	        <h2><a href="<?php echo esc_url(get_category_link($accesspresslite_event_category)); ?>"><?php echo esc_html(get_cat_name($accesspresslite_event_category)); ?></a></h2>
 
 	        <?php while ($loop->have_posts()) : $loop->the_post(); ?>
 
@@ -113,7 +96,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 						?>
 						<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 						<?php } else { ?>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/demo/event-fallback.jpg" alt="<?php the_title(); ?>">
+						<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/demo/event-fallback.jpg" alt="<?php the_title(); ?>">
 						<?php } ?>
 						
 						<?php 
@@ -133,39 +116,14 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 		        		</h4>
 
 		        		<div class="event-excerpt">
-		        			<?php echo accesspresslite_excerpt( get_the_content() , 100 ) ?>
+		        			<?php echo esc_html(accesspresslite_excerpt( get_the_content() , 100 )); ?>
 		        		</div>
 	        		</div>
 	        	</div>
 	        <?php endwhile; ?>
 	        <?php wp_reset_postdata(); 
 
-	        } else { ?>
-	        
-	        <h2>Latest Events/News</h2>
-		        <?php for ( $event_count=1 ; $event_count < 4 ; $event_count++ ) { ?>
-		        <div class="event-list clearfix">
-						<figure class="event-thumbnail">
-							<a href="#"><img src="<?php echo get_template_directory_uri().'/images/demo/event-'.$event_count.'.jpg'; ?>" alt="<?php echo 'event'.$event_count; ?>">
-							<div class="event-date">
-								<span class="event-date-day"><?php echo $event_count; ?></span>
-								<span class="event-date-month"><?php _e('Mar','accesspress-lite'); ?></span>
-							</div>
-							</a>
-						</figure>	
-
-						<div class="event-detail">
-			        		<h4 class="event-title">
-			        			<a href="#"><?php _e('Title of the event-','accesspress-lite'); ?><?php echo $event_count; ?></a>
-			        		</h4>
-
-			        		<div class="event-excerpt">
-			        			<?php _e('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor...','accesspress-lite'); ?>
-			        		</div>
-		        		</div>
-		        	</div>
-		        <?php } 
-	        	}
+	        }
 	        } ?>
 </div>
 <?php endif; ?>
@@ -201,7 +159,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 							?>
 							<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 							<?php }else { ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
+							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
 							<?php } 
 							?>
 						</a>
@@ -221,7 +179,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					</h4>
 
 					<div class="featured-content">
-						<p><?php echo accesspresslite_excerpt( get_the_content() , 260 ) ?></p>
+						<p><?php echo esc_html(accesspresslite_excerpt( get_the_content() , 260 )); ?></p>
 						<?php if(!empty($accesspresslite_settings['featured_post_readmore'])){?>
 						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_attr($accesspresslite_settings['featured_post_readmore']); ?></a>
 						<?php } ?>
@@ -259,7 +217,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 							?>
 							<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 							<?php }else { ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
+							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
 							<?php } 
 							?>
 						</a>
@@ -279,7 +237,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					</h4>
 
 					<div class="featured-content">
-						<p><?php echo accesspresslite_excerpt( get_the_content() , 260 ) ?></p>
+						<p><?php echo esc_html(accesspresslite_excerpt( get_the_content() , 260 )); ?></p>
 						<?php if(!empty($accesspresslite_settings['featured_post_readmore'])){?>
 						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_attr($accesspresslite_settings['featured_post_readmore']); ?></a>
 						<?php } ?>
@@ -315,7 +273,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 							?>
 							<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 							<?php }else { ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
+							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
 							<?php } 
 							?>
 						</a>
@@ -335,7 +293,7 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 					</h4>
 
 					<div class="featured-content">
-						<p><?php echo accesspresslite_excerpt( get_the_content() , 260 ) ?></p>
+						<p><?php echo esc_html(accesspresslite_excerpt( get_the_content() , 260 )); ?></p>
 						<?php if(!empty($accesspresslite_settings['featured_post_readmore'])){?>
 						<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_attr($accesspresslite_settings['featured_post_readmore']); ?></a>
 						<?php } ?>
@@ -346,30 +304,6 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
 		</div>
 	<?php } 
 	
-	}else{ ?>
-	
-	<?php for($featured_post=1 ; $featured_post < 4; $featured_post++){ ?>
-	<div id="featured-post-<?php echo $featured_post; ?>" class="featured-post">
-
-		<figure class="featured-image">
-		<a href="#">
-		<div class="featured-overlay">
-			<span class="overlay-plus font-icon-plus"></span>
-		</div>
-
-		<img src="<?php echo get_template_directory_uri().'/images/demo/featuredimage-'.$featured_post.'.jpg' ?>" alt="<?php echo 'featuredpost'.$featured_post; ?>">
-		</a>
-		</figure>
-
-		<h4><a href="#"><?php _e('Featured Post','accesspress-lite'); ?> <?php echo $featured_post; ?></a></h4>
-
-		<div class="featured-content">
-			<p><?php _e('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate...','accesspress-lite'); ?></p>
-			<a href="#" class="read-more bttn"><?php _e('Read More','accesspress-lite'); ?></a>
-		</div>
-	</div>
-
-	<?php }
 	} ?>
 </section>
 <?php } 
@@ -417,71 +351,34 @@ wp_reset_query(); ?>
 <section id="bottom-section">
 	<div class="ak-container">
         <div class="text-box">
-		<?php if ( is_active_sidebar( 'textblock-1' ) ) : ?>
-		  <?php dynamic_sidebar( 'textblock-1' ); 
-        
-        else:  
-        ?>
-        <aside id="text-3" class="widget widget_text">
-            <h3 class="widget-title"><?php _e('Why AccessPress?','accesspress-lite'); ?></h3>
-            <div class="textwidget">
-                <ul>
-                <li><?php _e('Theme Options Panel','accesspress-lite'); ?></li>
-                <li><?php _e('Responsive Design','accesspress-lite'); ?></li>
-                <li><?php _e('Featured Slider','accesspress-lite'); ?></li>
-                <li><?php _e('Sidebar & custom Logo/favicon Option','accesspress-lite'); ?></li>
-                <li><?php _e('Multiple Homepage Layouts','accesspress-lite'); ?></li>
-                <li><?php _e('Portfolio, Event/News Layout','accesspress-lite'); ?></li>
-                <li><?php _e('CSS3 Animations','accesspress-lite'); ?></li>
-                <li><?php _e('Many More','accesspress-lite'); ?></li>
-                </ul>
-            </div>
-        </aside>
-		<?php endif; ?>	
+			<?php if ( is_active_sidebar( 'textblock-1' ) ) : ?>
+			  <?php dynamic_sidebar( 'textblock-1' ); ?>
+			<?php endif; ?>	
 		</div>
         
         <div class="thumbnail-gallery clearfix">
         <?php 
-        $gallery_code = $accesspresslite_settings['gallery_code'];
-        if ( is_active_sidebar( 'textblock-2' ) ) : ?>
-		  <?php dynamic_sidebar( 'textblock-2' ); ?>
-		<?php elseif(!empty($gallery_code)): ?>	
-		<h3><?php _e('Gallery','accesspress-lite')?></h3>
-        <?php 
-        echo do_shortcode($gallery_code );
-        else: ?>
-        <h3>Gallery</h3>
-		<div id="gallery-1" class="gallery galleryid-445 gallery-columns-3 gallery-size-thumbnail"><dl class="gallery-item">
-			<dt class="gallery-icon landscape">
-				<a href="<?php echo get_template_directory_uri();?>/images/demo/img1-thumb.jpg" class="fancybox-gallery" data-lightbox-gallery="gallery"><img width="150" height="150" src="<?php echo get_template_directory_uri();?>/images/demo/img1-thumb.jpg" class="attachment-thumbnail size-thumbnail" alt="img6-thumb"></a>
-			</dt></dl><dl class="gallery-item">
-			<dt class="gallery-icon landscape">
-				<a href="<?php echo get_template_directory_uri();?>/images/demo/img2-thumb.jpg" class="fancybox-gallery" data-lightbox-gallery="gallery"><img width="150" height="150" src="<?php echo get_template_directory_uri();?>/images/demo/img2-thumb.jpg" class="attachment-thumbnail size-thumbnail" alt="img5-thumb"></a>
-			</dt></dl><dl class="gallery-item">
-			<dt class="gallery-icon landscape">
-				<a href="<?php echo get_template_directory_uri();?>/images/demo/img3-thumb.jpg" class="fancybox-gallery" data-lightbox-gallery="gallery"><img width="150" height="150" src="<?php echo get_template_directory_uri();?>/images/demo/img3-thumb.jpg" class="attachment-thumbnail size-thumbnail" alt="img4-thumb"></a>
-			</dt></dl><br style="clear: both"><dl class="gallery-item">
-			<dt class="gallery-icon landscape">
-				<a href="<?php echo get_template_directory_uri();?>/images/demo/img4-thumb.jpg" class="fancybox-gallery" data-lightbox-gallery="gallery"><img width="150" height="150" src="<?php echo get_template_directory_uri();?>/images/demo/img4-thumb.jpg" class="attachment-thumbnail size-thumbnail" alt="img3-thumb"></a>
-			</dt></dl><dl class="gallery-item">
-			<dt class="gallery-icon landscape">
-				<a href="<?php echo get_template_directory_uri();?>/images/demo/img5-thumb.jpg" class="fancybox-gallery" data-lightbox-gallery="gallery"><img width="150" height="150" src="<?php echo get_template_directory_uri();?>/images/demo/img5-thumb.jpg" class="attachment-thumbnail size-thumbnail" alt="img2-thumb"></a>
-			</dt></dl><dl class="gallery-item">
-			<dt class="gallery-icon landscape">
-				<a href="<?php echo get_template_directory_uri();?>/images/demo/img6-thumb.jpg" class="fancybox-gallery" data-lightbox-gallery="gallery"><img width="150" height="150" src="<?php echo get_template_directory_uri();?>/images/demo/img6-thumb.jpg" class="attachment-thumbnail size-thumbnail" alt="img1-thumb"></a>
-			</dt></dl><br style="clear: both">
-		</div>
-        <?php endif; ?>	
+	        $gallery_code = $accesspresslite_settings['gallery_code'];
+
+	        if ( is_active_sidebar( 'textblock-2' ) ) {
+				dynamic_sidebar( 'textblock-2' );
+	        } elseif(!empty($gallery_code)) {
+	        	?>
+	        	<h3><?php esc_html_e('Gallery','accesspress-lite')?></h3>
+	        	<?php
+	        	echo do_shortcode($gallery_code );
+	        }
+        ?>	
 		</div>        
         
 		<div class="testimonial-slider-wrap">
-		<?php 
+			<?php 
 		if ( is_active_sidebar( 'textblock-3' ) ) {
 		  dynamic_sidebar( 'textblock-3' );
 		}else{
 
 		if(!empty($testimonial_category)) {	?>
- 		<h3><?php echo get_cat_name($testimonial_category); ?></h3>
+ 		<h3><?php echo esc_html(get_cat_name($testimonial_category)); ?></h3>
 			<?php
 				$loop2 = new WP_Query( array(
 	                'cat' => $testimonial_category,
@@ -498,12 +395,12 @@ wp_reset_query(); ?>
                             if(has_post_thumbnail()){
                             the_post_thumbnail('thumbnail'); 
                             }else{ ?>
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/testimonial-dummy.jpg" alt="no-image"/>
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/testimonial-dummy.jpg" alt="no-image"/>
                             <?php }?>
 			        		</div>
 
 			        		<div class="testimonial-excerpt">
-			        			<?php echo accesspresslite_excerpt( get_the_content() , 140 ) ?>
+			        			<?php echo esc_html(accesspresslite_excerpt( get_the_content() , 140 )); ?>
 			        		</div>
 			        	</div>
 					<div class="testimoinal-client-name"><?php the_title(); ?></div>
@@ -511,41 +408,12 @@ wp_reset_query(); ?>
                 <?php endwhile; ?>
 				</div>
 			</div>
-			<a class="all-testimonial" href="<?php echo get_category_link( $testimonial_category ) ?>"><?php echo esc_html($accesspresslite_settings['view_all_text']); ?> <?php echo get_cat_name($testimonial_category); ?></a>
+			<a class="all-testimonial" href="<?php echo esc_url(get_category_link( $testimonial_category )); ?>"><?php echo esc_html($accesspresslite_settings['view_all_text']); ?> <?php echo esc_html(get_cat_name($testimonial_category)); ?></a>
 	        
 	        
 	        <?php wp_reset_postdata(); 
-			}else{ 
-			?>
-			<h3 class="widget-title"><?php _e('Testimonials','accesspress-lite'); ?></h3>
-			<div class="testimonial-wrap">
-				<div class="testimonial-slider">
-					<div class="testimonial-slide">
-			        	<div class="testimonial-list clearfix">
-			        		<div class="testimonial-thumbnail">
-			        		<img src="<?php echo get_template_directory_uri(); ?>/images/demo/testimonial-image4.jpg">
-			        		</div>
-
-			        		<div class="testimonial-excerpt"><?php _e('Thanks for delivering top quality services to your clients. It just takes a minute to get an answer from you when in difficulties.','accesspress-lite'); ?></div>
-			        	</div>
-						<div class="testimoinal-client-name"><?php _e('Robin Jacob','accesspress-lite'); ?></div>
-					</div>
-
-					<div class="testimonial-slide">
-			        	<div class="testimonial-list clearfix">
-			        		<div class="testimonial-thumbnail">
-			        		<img src="<?php echo get_template_directory_uri(); ?>/images/demo/testimonial-image4.jpg">
-			        		</div>
-
-			        		<div class="testimonial-excerpt"><?php _e('Thank you very much the support team AccessPress lite for service, are really wonderful in their care and in the resolution of the problem.','accesspress-lite'); ?></div>
-			        	</div>
-						<div class="testimoinal-client-name"><?php _e('David Blen','accesspress-lite'); ?></div>
-					</div>
-				</div>
-			</div>
-				<a class="all-testimonial" href="#"><?php _e('View All Testimonials','accesspress-lite'); ?></a>
-			<?php } 
-			}?>
+			}
+			} ?>
 		</div>
 	</div>
 </section>

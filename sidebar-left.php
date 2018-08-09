@@ -35,7 +35,7 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 	                'posts_per_page' => 3,
 	            )); ?>
 	        <aside id="latest-events" class="clearfix">
-	        <h3 class="widget-title"><?php echo get_cat_name(esc_attr($event_category)); ?></h3>
+	        <h3 class="widget-title"><?php echo esc_html(get_cat_name($event_category)); ?></h3>
 
 	        <?php while ($loop->have_posts()) : $loop->the_post(); ?>
 
@@ -49,7 +49,7 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 						?>
 						<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 						<?php } else { ?>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/demo/event-fallback.jpg" alt="<?php the_title(); ?>">
+						<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/demo/event-fallback.jpg" alt="<?php the_title(); ?>">
 						<?php } ?>
 						
 						<div class="event-date">
@@ -65,13 +65,13 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 		        		</h4>
 
 		        		<div class="event-excerpt">
-		        			<?php echo accesspresslite_excerpt( get_the_content() , 50 ) ?>
+		        			<?php echo esc_html(accesspresslite_excerpt( get_the_content() , 50 )); ?>
 		        		</div>
 	        		</div>
 	        	</div>
 	        <?php endwhile; ?>
 	        <?php if(!empty($accesspresslite_settings['view_all_text'])){ ?>
-	        <a class="all-events" href="<?php echo get_category_link( esc_attr($event_category) ) ?>"><?php echo esc_html($accesspresslite_settings['view_all_text']); ?></a>
+	        <a class="all-events" href="<?php echo esc_url(get_category_link( esc_attr($event_category) )); ?>"><?php echo esc_html($accesspresslite_settings['view_all_text']); ?></a>
 	        <?php } ?>
 	        <?php wp_reset_postdata(); ?>
 	        </aside>
@@ -82,9 +82,9 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 		        <?php for ( $event_count=1 ; $event_count < 4 ; $event_count++ ) { ?>
 		        <div class="event-list clearfix">
 						<figure class="event-thumbnail">
-							<a href="#"><img src="<?php echo get_template_directory_uri().'/images/demo/event-'.$event_count.'.jpg'; ?>" alt="<?php echo 'event'.$event_count; ?>">
+							<a href="#"><img src="<?php echo esc_url(get_template_directory_uri().'/images/demo/event-'.$event_count.'.jpg'); ?>" alt="<?php echo 'event'.esc_attr($event_count); ?>">
 							<div class="event-date">
-								<span class="event-date-day"><?php echo $event_count; ?></span>
+								<span class="event-date-day"><?php echo esc_html($event_count); ?></span>
 								<span class="event-date-month"><?php echo "Mar"; ?></span>
 							</div>
 							</a>
@@ -92,7 +92,7 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 
 						<div class="event-detail">
 			        		<h4 class="event-title">
-			        			<a href="#">Title of the event-<?php echo $event_count; ?></a>
+			        			<a href="#">Title of the event-<?php echo esc_html($event_count); ?></a>
 			        		</h4>
 
 			        		<div class="event-excerpt">
@@ -114,7 +114,7 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
  		<?php
 			
 			if(!empty($testimonial_category)) { ?>
-			<h3 class="widget-title"><?php echo get_cat_name(esc_attr($testimonial_category)); ?></h3>
+			<h3 class="widget-title"><?php echo esc_html(get_cat_name(esc_attr($testimonial_category))); ?></h3>
 			<?php
 	            $loop = new WP_Query( array(
 	                'cat' => $testimonial_category,
@@ -129,12 +129,12 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
                             if(has_post_thumbnail()){
                             the_post_thumbnail('thumbnail'); 
                             }else{ ?>
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/testimonial-dummy.jpg" alt="no-image"/>
+                                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/testimonial-dummy.jpg" alt="no-image"/>
                             <?php }?>
 		        		</div>
                         <div class="testimoinal-client-name"><?php the_title(); ?></div>
 			        	<div class="testimonial-excerpt">
-			        		<?php echo accesspresslite_excerpt( get_the_content() , 90 ) ?>
+			        		<?php echo esc_html(accesspresslite_excerpt( get_the_content() , 90 )); ?>
 			        	</div>
 			        	<div class="clearfix"></div>
 					
@@ -142,7 +142,7 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 			<?php endwhile; ?>
 	        </div>
 	        <?php if(!empty($accesspresslite_settings['view_all_text'])){ ?>
-            <a class="all-testimonial" href="<?php echo get_category_link( esc_attr($testimonial_category) ) ?>"><?php echo esc_attr($accesspresslite_settings['view_all_text']); ?></a>
+            <a class="all-testimonial" href="<?php echo esc_url(get_category_link( esc_attr($testimonial_category) )); ?>"><?php echo esc_attr($accesspresslite_settings['view_all_text']); ?></a>
             <?php } ?>
 	        
 	        <?php wp_reset_postdata(); 
@@ -154,14 +154,14 @@ if($post_class=='left-sidebar' || $post_class=='both-sidebar' ){
 				<?php for ($testimonial_count=1 ; $testimonial_count < 4 ; $testimonial_count++) { ?>
 			        	<div class="testimonial-list clearfix">
 			        		<div class="testimonial-thumbnail">
-			        		<img src="<?php echo get_template_directory_uri().'/images/demo/testimonial-image'.$testimonial_count.'.jpg' ?>" alt="<?php echo $client_name[$testimonial_count]; ?>">
+			        		<img src="<?php echo esc_url(get_template_directory_uri().'/images/demo/testimonial-image'.$testimonial_count.'.jpg'); ?>" alt="<?php echo esc_html($client_name[$testimonial_count]); ?>">
 			        		</div>
 
 			        		<div class="testimonial-excerpt">
 			        			Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer..
 			        		</div>
 			        		<div class="clearfix"></div>
-			        	<div class="testimoinal-client-name"><?php echo $client_name[$testimonial_count]; ?></div>
+			        	<div class="testimoinal-client-name"><?php echo esc_html($client_name[$testimonial_count]); ?></div>
 			        	</div>
 						
 				<?php } ?>

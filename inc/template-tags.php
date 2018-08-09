@@ -20,7 +20,7 @@ function accesspresslite_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'accesspress-lite' ); ?></h1>
+		<h1 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'accesspress-lite' ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
@@ -53,7 +53,7 @@ function accesspresslite_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'accesspress-lite' ); ?></h1>
+		<h1 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'accesspress-lite' ); ?></h1>
 		<div class="nav-links">
 			<?php
 				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'accesspress-lite' ) );
@@ -82,10 +82,20 @@ function accesspresslite_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', 'accesspress-lite' ),
+	/* translators: %1$s : posted date, %2$s : author name */
+	printf( wp_kses(__( '<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', 'accesspress-lite' ), array( 'a' => array( 'href' => array(), 'rel' => array(), ), 'time' => array( 'class' => array(), 'datetime' => array(), ), 'span' => array('class' => array() ) ) ),
 		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),
-			$time_string
+			wp_kses($time_string, array(
+				'a' => array(
+					'href' => array(),
+					'rel' => array(),
+				),
+				'time' => array(
+					'class' => array(),
+					'datetime' => array(),
+				)
+			) )
 		),
 		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),

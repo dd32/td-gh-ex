@@ -195,20 +195,6 @@ function accesspresslite_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'accesspresslite_scripts' );
 
-/**
-* Loads up favicon
-*/
-function accesspresslite_add_favicon(){
-	$accesspresslite_options = accesspress_default_setting_value();
-	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-	
-	if( !empty($accesspresslite_settings[ 'media_upload' ])){
-	echo '<link rel="shortcut icon" type="image/png" href="'. esc_url($accesspresslite_settings[ 'media_upload' ]).'"/>';
-	}
-}
-add_action('wp_head', 'accesspresslite_add_favicon');
-
-
 function accesspresslite_social_cb(){ 
 	$accesspresslite_options = accesspress_default_setting_value();
 	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
@@ -283,7 +269,7 @@ function accesspresslite_header_text_cb(){
 	$accesspresslite_options = accesspress_default_setting_value();
 	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 	if(!empty($accesspresslite_settings['header_text'])){
-	echo '<div class="header-text">'.wpautop(wp_kses_post($accesspresslite_settings['header_text'])).'</div>';
+	echo '<div class="header-text">'.wp_kses_post(wpautop($accesspresslite_settings['header_text'])).'</div>';
 	}
 }
 
@@ -385,7 +371,7 @@ function accesspresslite_bxslidercb(){
 							<div class="slider-caption">
 								<div class="ak-container">
 									<div class="caption-title"><?php the_title();?></div>
-									<div class="caption-description"><?php echo get_the_content();?></div>
+									<div class="caption-description"><?php the_content();?></div>
 								</div>
 							</div>
 							<?php  endif; ?>
@@ -420,7 +406,7 @@ function accesspresslite_bxslidercb(){
 					<div class="slider-caption">
 						<div class="ak-container">
 							<div class="caption-title"><?php the_title();?></div>
-							<div class="caption-description"><?php echo get_the_content();?></div>
+							<div class="caption-description"><?php the_content();?></div>
 						</div>
 					</div>
 					<?php  endif; ?>
@@ -432,56 +418,7 @@ function accesspresslite_bxslidercb(){
             <span id="slider-prev"></span><span id="slider-next"></span>
         <?php
     	}
-    	}else{ ?>
-
-    	<script type="text/javascript">
-        jQuery(function(){
-			jQuery('.bx-slider').bxSlider({
-				pager:<?php echo esc_attr($a); ?>,
-				controls:<?php echo esc_attr($b); ?>,
-				mode:'<?php echo esc_attr($c); ?>',
-				auto :<?php echo esc_attr($d); ?>,
-				pause: '<?php echo esc_attr($e); ?>',
-				<?php if($accesspresslite_settings['slider_speed']) {?>
-				speed:'<?php echo esc_attr($accesspresslite_settings['slider_speed']); ?>',
-				<?php } ?>
-                <?php if($home_template == 'template_two'|| $home_template == ''){ ?>
-                nextSelector: '#slider-next',
-                prevSelector: '#slider-prev',
-                <?php } ?>
-			});
-		});
-        </script>
-        <div class="bx-slider">
-			<div class="slides">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider1.jpg" alt="slider1">
-                <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
-				<div class="slider-caption">
-					<div class="ak-container">
-						<div class="caption-title">AccessPress Lite</div>
-						<div class="caption-description">Free Responsive, multi-purpose, business wordpress theme, perfect for any business on any device.</div>
-					</div>
-				</div>
-                <?php  endif; ?>
-			</div>
-					
-			<div class="slides">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/demo/slider2.jpg" alt="slider2">
-                <?php if($accesspresslite_settings['slider_caption']=='yes4' || empty($accesspresslite_settings['slider_caption'])):?>
-				<div class="slider-caption">
-					<div class="ak-container">
-						<div class="caption-title">Easy Customization</div>
-						<div class="caption-description">A free theme with powerful theme options for customization. Style your wordpress and see changes live!</div>
-					</div>
-				</div>
-                <?php  endif; ?>
-			</div>
-		</div>
-        <?php if($home_template == 'template_two' || $home_template == ''){ ?>
-                <span id="slider-prev"></span><span id="slider-next"></span>
-                <?php } ?>
-	<?php
-	}
+    	}
 }
 }
 
@@ -529,21 +466,12 @@ function accesspresslite_call_to_action_cb()
 	$accesspresslite_options = accesspress_default_setting_value();
 	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
     $home_template = $accesspresslite_settings['accesspresslite_home_template'];
-    if($home_template == ''){
-        ?>
-    	<section id="call-to-action">
-    	<div class="ak-container">
-    		<h4>Check Our AccessPress Pro Theme - A premium version of AccessPres Lite</h4>
-    		<a class="action-btn" href="#">Check Now</a>
-    	</div>
-    	</section>
-<?php
-    }
+    
 	if(!empty($accesspresslite_settings['action_text']))
     { ?>
     	<section id="call-to-action">
     	<div class="ak-container">
-    		<h4><?php echo $accesspresslite_settings['action_text']; ?></h4>
+    		<h4><?php echo esc_html($accesspresslite_settings['action_text']); ?></h4>
     		<a class="action-btn" href="<?php echo esc_url($accesspresslite_settings['action_btn_link']); ?>"><?php echo esc_attr($accesspresslite_settings['action_btn_text']); ?></a>
     	</div>
     	</section>
@@ -581,7 +509,7 @@ function accesspresslite_admin_notice() {
     if (is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
     ?>
     <div class="updated">
-        <p><?php echo sprintf(__( 'Go to <a href="%s">Theme Options Panel</a> to set up the website.', 'accesspress-lite' ), esc_url(admin_url('/themes.php?page=theme_options'))); ?></p>
+        <p><?php /* translators: %s : theme options page link */ echo sprintf(__( 'Go to <a href="%s">Theme Options Panel</a> to set up the website.', 'accesspress-lite' ), esc_url(admin_url('/themes.php?page=theme_options'))); ?></p>
     </div>
     <?php
     }

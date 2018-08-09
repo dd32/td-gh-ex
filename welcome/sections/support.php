@@ -1,6 +1,6 @@
 <div class="support-process">
 	<h3><?php echo esc_html__('Documentation', 'accesspress-lite'); ?></h3>
-	<p><?php printf(esc_html__('Read the detailed documentation of the theme. The documentation contain all the necessary information required to setup the theme %s.', 'accesspress-lite'), $this->theme_name ); ?></p>
+	<p><?php /* translators: %s : theme name */ printf(esc_html__('Read the detailed documentation of the theme. The documentation contain all the necessary information required to setup the theme %s.', 'accesspress-lite'), esc_html($this->theme_name) ); ?></p>
 	<a class="button" target="_blank" href="https://accesspressthemes.com/theme-instruction-accesspress-lite/"><?php echo esc_html__('Read Full Documentation', 'accesspress-lite'); ?></a>
 </div>
 

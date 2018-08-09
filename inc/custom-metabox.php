@@ -64,7 +64,7 @@ wp_nonce_field( basename( __FILE__ ), 'accesspresslite_sidebar_layout_nonce' );
 
 <table class="form-table">
 <tr>
-<td colspan="4"><em class="f13"><?php _e('Choose Sidebar Template','accesspress-lite'); ?></em></td>
+<td colspan="4"><em class="f13"><?php esc_html_e('Choose Sidebar Template','accesspress-lite'); ?></em></td>
 </tr>
 
 <tr>
@@ -76,7 +76,7 @@ wp_nonce_field( basename( __FILE__ ), 'accesspresslite_sidebar_layout_nonce' );
                 <div class="radio-image-wrapper" style="float:left; margin-right:30px;">
                 <label class="description">
                 <span><img src="<?php echo esc_url( $field['thumbnail'] ); ?>" alt="" /></span></br>
-                <input type="radio" name="accesspresslite_sidebar_layout" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $accesspresslite_sidebar_metalayout ); if(empty($accesspresslite_sidebar_metalayout) && $field['value']=='right-sidebar'){ echo "checked='checked'";} ?>/>&nbsp;<?php echo $field['label']; ?>
+                <input type="radio" name="accesspresslite_sidebar_layout" value="<?php echo esc_attr($field['value']); ?>" <?php checked( $field['value'], $accesspresslite_sidebar_metalayout ); if(empty($accesspresslite_sidebar_metalayout) && $field['value']=='right-sidebar'){ echo "checked='checked'";} ?>/>&nbsp;<?php echo esc_html($field['label']); ?>
                 </label>
                 </div>
                 <?php } // end foreach 
@@ -85,7 +85,7 @@ wp_nonce_field( basename( __FILE__ ), 'accesspresslite_sidebar_layout_nonce' );
 </td>
 </tr>
 <tr>
-    <td><em class="f13"><?php echo sprintf(__('You can set up the sidebar content <a href="%s" target="_blank">here</a> in Sidebar tab','accesspress-lite'), admin_url('/themes.php?page=theme_options')); ?></em></td>
+    <td><em class="f13"><?php /* translators: %s : theme options page link */ echo sprintf( wp_kses(__('You can set up the sidebar content <a href="%s" target="_blank">here</a> in Sidebar tab','accesspress-lite'), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), esc_url(admin_url('/themes.php?page=theme_options'))); ?></em></td>
 </tr>
 </table>
 
@@ -99,14 +99,14 @@ function accesspresslite_save_sidebar_layout( $post_id ) {
     global $accesspresslite_sidebar_layout, $post; 
 
     // Verify the nonce before proceeding.
-    if ( !isset( $_POST[ 'accesspresslite_sidebar_layout_nonce' ] ) || !wp_verify_nonce( $_POST[ 'accesspresslite_sidebar_layout_nonce' ], basename( __FILE__ ) ) )
+    if ( !isset( $_POST[ 'accesspresslite_sidebar_layout_nonce' ] ) || !wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST[ 'accesspresslite_sidebar_layout_nonce' ] ) ), basename( __FILE__ ) ) )
         return;
 
     // Stop WP from clearing custom fields on autosave
     if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE)  
         return;
         
-    if ('page' == $_POST['post_type']) {  
+    if ( isset( $_POST['post_type'] ) && 'page' == sanitize_text_field( wp_unslash( $_POST['post_type'] ) ) ) {  
         if (!current_user_can( 'edit_page', $post_id ) )  
             return $post_id;  
     } elseif (!current_user_can( 'edit_post', $post_id ) ) {  
@@ -117,7 +117,7 @@ function accesspresslite_save_sidebar_layout( $post_id ) {
     foreach ($accesspresslite_sidebar_layout as $field) {  
         //Execute this saving function
         $old = get_post_meta( $post_id, 'accesspresslite_sidebar_layout', true); 
-        $new = sanitize_text_field($_POST['accesspresslite_sidebar_layout']);
+        $new = isset( $_POST['accesspresslite_sidebar_layout'] ) ? sanitize_text_field( wp_unslash( $_POST['accesspresslite_sidebar_layout'] ) ) : '';
         if ($new && $new != $old) {  
             update_post_meta($post_id, 'accesspresslite_sidebar_layout', $new);  
         } elseif ('' == $new && $old) {  
