@@ -3,11 +3,15 @@ Theme Name: Admela
 Theme URI: https://userthemes.com/admela/
 Author: userthemes
 Author URI: http://userthemes.com/
-Description: Admela is a well-organized WordPress theme entirely blended with Ad spaces at the sensible points. This Adsense ready design is best suitable for magazine based sites to feature and splash the significant content along with the advertisements.This responsive template is not only easy-to-use but also SEO attentive that pleases the search engines and makes your site super fast. As we have provided a hell lot of Ad spots at the unexpected logical locations, you can easily boost your Adsense earnings with this clever design. 
-Version: 1.5
+Description: Admela is the best free WordPress Adsense theme entirely blended with Ad spaces at the sensible points to increase the CTR (click-through rate). With this Adsense optimized theme for WordPress, you can display the significant content along with the advertisements in an attractive way. 
+
+This free WordPress Ad theme is not only easy-to-use but also SEO attentive that pleases the search engines and makes your site super fast. Moreover, we have carefully built this CTR theme free download by following the best coding practices with HTML5 and CSS3 Validation. 
+
+Having the option of adding the Ad banner at the top of the homepage and showing the featured posts through the slider section are the exciting qualities of our Adsense free theme, Admela. Moreover, you can showcase the category based content with this free Google Adsense website template.see our demo https://userthemes.com/admela/
+Version: 1.5.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-columns,right-sidebar,custom-menu, custom-colors, sticky-post, threaded-comments,editor-style
+Tags:two-columns,right-sidebar,custom-menu,custom-colors,sticky-post,custom-header,custom-background,custom-logo,translation-ready,threaded-comments,editor-style
 Text Domain: admela
 
 */
@@ -161,9 +165,6 @@ a:active {
 a img {
     border: 0;
 }
-
-
-
 
 body,
 button,
@@ -3427,6 +3428,10 @@ readers do not read off random characters that represent icons */
     position: relative;
 }
 
+.admela_themead {
+	text-align:center;
+}
+
 /*--------------------------------------------------------------
 4.0 Alignments
 --------------------------------------------------------------*/
@@ -3970,6 +3975,14 @@ a:hover {
     background-color: #e4b983;
 }
 
+.admela_readmore {
+    font-size: 13px;
+    color: #e4b983;
+    line-height: 1;
+    display: inline-block;
+    margin: 15px 0 0;
+}
+
 .admela_top a {
     display: block;
     text-align: center;
@@ -4184,7 +4197,7 @@ a:hover {
 }
 
 .admela_afterheaderad {
-   margin:3em auto;
+    margin: 3em auto -3em;
 }
 
 .admela_afterheaderad  img {
@@ -4392,12 +4405,8 @@ a:hover {
    position: static;
    display: inline-block;
 }
-.admela_sliderwithimg {
-  height:374px;
-}
 .admela_sliderwithimg img {
 	width:100%;
-	height:374px;
 }
 .admela_sliderinner {
  margin:0 0 5%;
@@ -5588,6 +5597,9 @@ img#wpstats {
 	.admela_sitefooterinner {
 		width: 755px !important;
 	}
+	.admela_afterheaderad {
+    margin: 3em auto -1em;
+}
 	.admela_slider2itemleft {
 		float: none;
 		width: 100%;
@@ -6086,6 +6098,9 @@ img#wpstats {
 	.admela_related_posts h2 {
 		font-size: 20px !important;
 		line-height: 28px !important;
+	}
+	.admela_headerfirstsub {
+		top:44px;
 	}
 	.admela_lyt3 .admela_contentlistinner .admela_entry .admela_entryheader,
 	.admela_lyt3 .admela_contentlistinner .admela_entry:nth-child(2n+1) .admela_entryheader,

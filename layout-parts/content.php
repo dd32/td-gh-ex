@@ -60,9 +60,10 @@ else {
             if($admela_contentlimit != ''){
 		?>
 		<p>
-        <?php					
-			echo esc_html(wp_trim_words($admela_contentlimit,30,'..'));
-					 
+        <?php			
+				
+			echo esc_html(wp_trim_words($admela_contentlimit,30,'.'));
+							
 			wp_link_pages( array(
 				'before'=> '<div class="admela_pagelinks"><span class="admela_pagelinkstitle">' . esc_html__( 'Pages:', 'admela' ) . '</span>',
 				'after'=> '</div>',
@@ -72,7 +73,8 @@ else {
 				'separator'  => '<span class="admela_screenreadertext">, </span>',
 			) );
 		?>
-		</p>
+		</p>				
+	    <a href="<?php the_permalink(); ?>" class="admela_readmore"><?php esc_html_e('Keep Reading','admela'); ?> &rarr;</a>
 		<?php
 		}       
 		?>	

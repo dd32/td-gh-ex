@@ -4,7 +4,7 @@
 
 Theme Name      :   Admela
 Theme URI       :   http://userthemes.com/admela
-Version         :   1.2
+Version         :   1.5.1
 Tested up to    :   WP 4.9.5
 Author          :   Userthemes
 Author URI      :   http://userthemes.com/
@@ -85,8 +85,11 @@ Step1. Go to wp-dashboard >> There you can able to see the recommended plugin no
 /* Changelog */
 /*-----------------------------------------------------------------------------------*/
 
-Version 1.2
+Version 1.5
 	i) Initial version Released.
+	
+Version 1.5.1
+	i) Added Read more link in latestpost.	
 
 Admela Free version
 ==========================================================

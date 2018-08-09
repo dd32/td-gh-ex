@@ -35,8 +35,22 @@ echo '<main id="admela_maincontent" class="admela_maincontent">';
 	
 	<div class="admela_contentlistmain admela_contentlistlatestmain">
 		<div class="admela_contentlisttitle">
-		  <h4><?php echo esc_html(get_theme_mod('admela_latest_post_title_setting')); ?></h4>
-		  <p><?php echo esc_html(get_theme_mod('admela_latest_post_subtitle_setting')); ?></p>
+			<?php
+			if(get_theme_mod('admela_latest_post_title_setting') != ''){			  
+			   $admela_latest_title = get_theme_mod('admela_latest_post_title_setting');			
+			}
+			else {
+				 $admela_latest_title = 'Latest Stories...!';
+			}
+			if(get_theme_mod('admela_latest_post_subtitle_setting') != ''){			  
+			     $admela_latest_sub_title = get_theme_mod('admela_latest_post_subtitle_setting');			
+			}
+			else {
+				 $admela_latest_sub_title = 'Latest stories from recent published posts';
+			}
+			?>
+		  <h4><?php echo esc_html($admela_latest_title); ?></h4>
+		  <p><?php echo esc_html($admela_latest_sub_title); ?></p>
 		</div>
 		<div class="admela_contentlistinner">
 	      
