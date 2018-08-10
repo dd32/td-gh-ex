@@ -274,6 +274,7 @@
 
 .entry-iaudio iframe {
 	position: relative;
+	width: 100%;
 }
 
 .entry-iaudio > audio {

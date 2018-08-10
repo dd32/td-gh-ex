@@ -115,7 +115,7 @@ class Display_Posts {
 			$this->meta( $display[1] );
 		}
 		if ( $display[2] ) {
-			$this->featured( $this->get_thumb_size( $instance['styles'] ) );
+			$this->featured( $this->get_thumb_size( $instance ) );
 		}
 		if ( $display[3] ) {
 			$this->main_content( $display[3], $instance['styles'] );
@@ -222,18 +222,22 @@ class Display_Posts {
 	/**
 	 * Get post thumbnail size.
 	 *
-	 * @param str $style      Style for this widget instance.
+	 * @param str $instance Settings for the current widget instance.
 	 * @return str
 	 */
-	public function get_thumb_size( $style ) {
+	public function get_thumb_size( $instance ) {
 
 		$thumb_size = 'aamla-medium';
 
-		if ( false !== strpos( $style, 'list' ) ) {
+		if ( false !== strpos( $instance['styles'], 'list' ) ) {
 			$thumb_size = 'thumbnail';
 		}
 
-		return apply_filters( 'aamla_dp_thumb_size', $thumb_size, $style );
+		if ( false !== strpos( $instance['styles'], 'grid' ) && 1 === $instance['grid_columns'] ) {
+			$thumb_size = 'aamla-large';
+		}
+
+		return apply_filters( 'aamla_dp_thumb_size', $thumb_size, $instance );
 	}
 
 	/**

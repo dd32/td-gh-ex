@@ -68,7 +68,7 @@ ul.wp-block-gallery > li:first-child {
 .wp-block-gallery.is-cropped .blocks-gallery-item:after {
 	display: block;
 	width: 100%;
-	padding-top: 66.66%;
+	padding-top: 56.25%;
 	content: "";
 }
 

@@ -340,18 +340,17 @@ function aamla_page_excerpt() {
 	// Remove 'script' and 'style' tag and their contents.
 	$excerpt = preg_replace( '@<(script|style)[^>]*?>.*?</\\1>@si', '', get_the_excerpt() );
 
+	// Remove html tags except 'p' and 'a' tags.
+	$excerpt = strip_tags( $excerpt, '<p><a>' );
+
 	if ( $excerpt ) {
 		/*
-		 * In the rare case that DOMDocument is not available we cannot reliably escape URL and
-		 * so we strip link tag.
+		 * In the rare case that DOMDocument is not available we cannot reliably escape URL so we will use wp_kses_post.
 		 */
 		if ( ! class_exists( 'DOMDocument' ) ) {
-			$excerpt = wp_strip_all_tags( $excerpt );
+			$excerpt = wp_kses_post( $excerpt );
 		} else {
-			// Remove html tags except 'p' and 'a' tags.
-			$excerpt = strip_tags( $excerpt, '<p><a>' );
-			$doc     = new DOMDocument();
-
+			$doc = new DOMDocument();
 			$doc->loadHTML( sprintf(
 				'<!DOCTYPE html><html><head><meta charset="%s"></head><body>%s</body></html>',
 				esc_attr( get_bloginfo( 'charset' ) ),

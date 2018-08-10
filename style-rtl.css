@@ -3,7 +3,7 @@ Theme Name: Aamla
 Theme URI: http://www.vedathemes.com/
 Author: Vedathemes
 Description: Aamla is a feature rich, lightweight and mobile first WordPress theme that is flexible and easy to use. It is built with special focus on blog, business and e-commerce websites. Aamla is written with clean code and the most current HTML5 conventions. Aamla can be used as a solid base to build beautiful and functional websites.
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aamla
@@ -324,7 +324,7 @@ p .alignnone {
 .gallery-item .gallery-icon:after {
 	display: block;
 	width: 100%;
-	padding-top: 66.66%;
+	padding-top: 56.25%;
 	content: "";
 }
 
@@ -2306,6 +2306,16 @@ body.grid:not(.error404) .page-header {
 .widget a.button {
 	margin: 1.3125rem 0 0 0.4375rem;
 	text-transform: capitalize;
+}
+
+.widget a.button:last-of-type {
+	margin-left: 0;
+}
+
+.widget a.button.fwidth {
+	width: 100%;
+	margin: 1.3125rem 0 0;
+	text-align: center;
 }
 
 @media only screen and (min-width: 641px) {

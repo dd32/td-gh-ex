@@ -3,7 +3,7 @@
 Created by: Vedathemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 4.9.8
-Version: 1.0.6
+Version: 1.0.7
 PHP required : PHP 5.4+
 IE Browser Support: IE11+
 License: GNU General Public License v2 or later
@@ -60,7 +60,7 @@ Aamla WordPress Theme bundles the following third-party resources:
 2.	SVG Icons collection has been created from following,
 
 	Font Awesome SVG icons, Copyright Dave Gandy
-	License: CC BY 4.0 License. (https://fontawesome.com/license)
+	License: SIL Open Font License, version 1.1 (https://fontawesome.com/license/free)
 	Source: http://fontawesome.io/
 
 	Icomoon SVG icons ( Free Version ), Copyright Roonas
@@ -93,6 +93,11 @@ Aamla WordPress Theme bundles the following third-party resources:
 	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 == Changelog ==
+
+= 1.0.7 - Aug 10 2018 =
+* Modify - Change theme screenshot to better adhere to theme guidelines.
+* Error Fix - Use wp_kses_post for page excerpts incase DOMdocument is not available.
+* Error Fix - Minor css modifications and error fix.
 
 = 1.0.6 - Aug 8 2018 =
 * Modify - Replace esc_attr__ & esc_attr_e with esc_attr_x to make translation friendly
