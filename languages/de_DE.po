@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Create\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-08-02 15:18+0545\n"
-"PO-Revision-Date: 2018-08-02 15:18+0545\n"
+"POT-Creation-Date: 2018-08-10 12:28+0545\n"
+"PO-Revision-Date: 2018-08-10 12:28+0545\n"
 "Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: de_DE\n"
@@ -118,7 +118,7 @@ msgstr "Bearbeiten"
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "%s weiterlesen <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:69 ../inc/structure.php:125 ../inc/structure.php:134
+#: ../functions.php:69 ../inc/structure.php:126 ../inc/structure.php:135
 msgid "Primary Menu"
 msgstr "Hauptmenü"
 
@@ -595,24 +595,24 @@ msgstr "Create Optionen"
 msgid "Skip to content"
 msgstr "Zum Inhalt springen"
 
-#: ../inc/structure.php:122
+#: ../inc/structure.php:123
 msgid "Menu"
 msgstr "Menü"
 
-#: ../inc/structure.php:391
+#: ../inc/structure.php:396
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL"
 msgid "&copy; %1$s %2$s"
 msgstr "&copy; %1$s %2$s"
 
-#: ../inc/structure.php:391
+#: ../inc/structure.php:396
 #, fuzzy
 #| msgctxt "yearly archives date format"
 #| msgid "Y"
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/structure.php:421
+#: ../inc/structure.php:426
 msgctxt "attribution"
 msgid "by"
 msgstr "von"

@@ -217,7 +217,7 @@ if ( ! function_exists( 'create_archive_content_image' ) ) :
 			<div class="entry-thumbnail">
 				<a rel="bookmark" href="<?php the_permalink(); ?>">
 	                <?php
-						the_post_thumbnail( 'create-home' );
+						the_post_thumbnail( 'create-featured' );
 					?>
 				</a>
 	        </div>

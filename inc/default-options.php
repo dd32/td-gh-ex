@@ -17,7 +17,7 @@ function create_get_default_theme_options( $parameter = null ) {
 
 		//Layout
 		'homepage_layout'                  => 'no-sidebar-full-width',
-		'theme_layout'                     => 'no-sidebar-full-width',
+		'theme_layout'                     => 'left-sidebar',
 		'content_layout'                   => 'excerpt-featured-image',
 		'single_post_image_layout'         => 'featured-image',
 

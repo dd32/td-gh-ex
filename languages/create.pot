@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Create 2.3.2\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-08-02 15:18+0545\n"
+"POT-Creation-Date: 2018-08-10 12:28+0545\n"
 "PO-Revision-Date: 2016-12-07 16:36-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -108,7 +108,7 @@ msgstr ""
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../functions.php:69 ../inc/structure.php:125 ../inc/structure.php:134
+#: ../functions.php:69 ../inc/structure.php:126 ../inc/structure.php:135
 msgid "Primary Menu"
 msgstr ""
 
@@ -571,21 +571,21 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: ../inc/structure.php:122
+#: ../inc/structure.php:123
 msgid "Menu"
 msgstr ""
 
-#: ../inc/structure.php:391
+#: ../inc/structure.php:396
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL"
 msgid "&copy; %1$s %2$s"
 msgstr ""
 
-#: ../inc/structure.php:391
+#: ../inc/structure.php:396
 msgid "Y"
 msgstr ""
 
-#: ../inc/structure.php:421
+#: ../inc/structure.php:426
 msgctxt "attribution"
 msgid "by"
 msgstr ""

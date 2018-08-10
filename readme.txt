@@ -2,8 +2,8 @@
 
 Contributors: Catch Themes and Emil Uzelac
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
-Requires at least: 4.1
-Tested up to: 4.6.1
+Requires at least: 4.7
+Tested up to: 4.9.8
 Create WordPress Theme, Copyright 2012-2016 Catchthemes.com
 Create is distributed under the terms of the GNU General Public License v3
 
@@ -115,6 +115,12 @@ For detail instructions, check out theme instructions page at https://catchtheme
 
 
 == Change log ==
+
+= 2.5.1 (Released: August 10, 2018) =
+* Bug Fixed: Single page featured image size
+* Bug Fixed: Single page/post default layout set to "Primary Sidebar, Content"
+* Bug Fixed: Responsive Masonry and archive image sizes
+* Updated: Added wrapper in various section for better css control
 
 = 2.5 (Released: August 02, 2018) =
 * Bug Fixed: Default Background Attachment to cover

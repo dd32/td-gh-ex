@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/create/
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: Create your website using Create WordPress Theme. Make a remarkable first impression on your website visitors with a large headline & full-page background. How do you do it best? Do it through Create, our new WordPress Theme! Create is super easy to use and has unconventional out-of-the-box features. It is great for your personal, business or even organizational web portals. Create is based on HTML5, CSS3 and designed with a mobile-first approach in mind. Your content display will always be clean, smooth and perfect regardless of whether your visitors reach you through smartphone, tablet, laptop, or desktop computer. Create a beautiful, yet professional WordPress site in no time! This theme is translation ready and also currently translated in German language. Check out Theme Instructions at https://catchthemes.com/theme-instructions/create/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/create/
-Version: 2.5
+Version: 2.5.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: create
@@ -546,6 +546,7 @@ body {
 -------------------------------------------------------------- */
 
 .create-masonry .site-main {
+    margin-left: -6%;
     padding-bottom: 60px;
 }
 
@@ -592,6 +593,11 @@ blockquote p,
 .site-main .comment-navigation,
 .comment-subscription-form {
     margin-top: 30px;
+}
+
+.create-masonry .section .entry-summary,
+.create-masonry .content-area .entry-summary {
+    margin-top: 15px;
 }
 
 .widget,
@@ -668,7 +674,14 @@ blockquote p,
     margin: 0;
 }
 
-#intro-widget-area,
+#intro-widget-area {
+    padding: 0 30px;
+}
+
+#intro-widget-area .widget {
+    padding: 30px 0;
+}
+
 .pagination {
     padding-top: 0;
     padding-bottom: 0;
@@ -1100,6 +1113,34 @@ a:active {
 
 /* =12. Layout
 -------------------------------------------------------------- */
+
+.fluid .site,
+.boxed-modern .site,
+.fluid .section-wrapper,
+.fluid .site-content .wrapper,
+.fluid .site-footer .wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.fluid .site {
+    max-width: 1920px;
+}
+
+.boxed-modern .site,
+.fluid .section-wrapper,
+.fluid .site-info .wrapper {
+   max-width: 1500px;
+}
+
+.fluid .site-content .wrapper,
+.fluid #supplementary .wrapper {
+   max-width: 1560px;
+}
+
+.fluid #feature-slider .wrapper {
+    max-width: 1920px;
+}
 
 .site,
 .site-main {
@@ -2057,8 +2098,25 @@ figure {
     margin: 0;
     width: 254px;
 }
+
 .right-sidebar #secondary {
     float: right;
+}
+
+.widget_categories ul,
+.widget_archive ul {
+    text-align: right
+}
+
+.widget_categories li,
+.widget_archive li {
+    display: block;
+    overflow: hidden;
+}
+
+.widget_categories ul a,
+.widget_archive ul a {
+    float: left;
 }
 
 /* Make sure select elements fit in widgets */
@@ -2095,19 +2153,19 @@ figure {
 }
 
 .create-masonry .hentry {
-    opacity: 0;
-    width: 261px;
+    margin-left: 6%;
+    width: 27.33%;
 }
+
+.create-masonry .hentry:nth-child(3n+1) {
+    clear: both;
+}
+
 
 .more-dots {
     color: #e0e0e0;
     font-weight: 400;
     padding-left: 5px;
-}
-
-.no-sidebar-full-width .content-area {
-    clear: both;
-    width: 100%;
 }
 
 .page-title {
@@ -2154,6 +2212,35 @@ figure {
 .content-area {
     float: right;
     width: 710px;
+}
+
+.boxed-modern .content-area {
+    max-width: 1084px;
+    width: 75%;
+}
+
+.boxed-modern .widget-area {
+    width: 25%;
+}
+
+.fluid .content-area {
+    max-width: 1084px;
+    width: 70%;
+}
+
+.fluid .widget-area {
+    width: 30%;
+}
+
+.no-sidebar-content-width .content-area {
+    float: none;
+    margin: 0 auto;
+}
+
+.no-sidebar-full-width .content-area {
+    clear: both;
+    max-width: 100%;
+    width: 100%;
 }
 
 .right-sidebar .content-area {
@@ -2404,6 +2491,7 @@ a#scrollup:hover {
 /* =24. Featured Slider
 -------------------------------------------------------------- */
 #feature-slider {
+    overflow: hidden;
     padding: 0;
     position: relative;
     z-index: 101;
@@ -2429,7 +2517,7 @@ a#scrollup:hover {
 
 #feature-slider .cycle-slideshow {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1920px;
     margin: 0 auto;
     padding: 0;
     position: relative;
@@ -2577,8 +2665,9 @@ a#scrollup:hover {
     padding-top: 30px;
 }
 
-.hero-content-wrapper .hentry {
+.section .hero-content-wrapper .hentry {
     display: table;
+    margin-left: 0;
     position: relative;
     width: 100%;
 }
@@ -2666,6 +2755,11 @@ a#scrollup:hover {
 #supplementary .widget-area {
     width: 33.33%
 }
+
+#supplementary.four .widget-area {
+    width: 25%;
+}
+
 .site-info {
     background-color: #090401;
     color: #7f7f7f;
@@ -2675,6 +2769,12 @@ a#scrollup:hover {
 
 /* =27. Responsive design
 -------------------------------------------------------------- */
+@media screen and (max-width: 1560px) {
+    .fluid .section {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
 
 @media screen and (max-width: 1024px) {
 
@@ -2701,6 +2801,8 @@ a#scrollup:hover {
         width: 880px;
     }
 
+    .boxed-modern .content-area,
+    .fluid .content-area,
     .content-area,
     #secondary {
         width: 100%;
@@ -2885,15 +2987,25 @@ a#scrollup:hover {
     #supplementary .widget-area {
         width: 100%;
     }
+
+    #supplementary.four .widget-area {
+        float: left;
+        width: 50%;
+    }
+
     img {
         display: block;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .site-info,
     .site-content,
     #supplementary {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .site-info {
         padding: 10px;
     }
 
@@ -2944,10 +3056,12 @@ a#scrollup:hover {
 }
 
 @media screen and (max-width: 689px) {
+    .create-masonry .site-main,
     .section-content-wrapper.layout-three {
         margin-left: 0;
     }
 
+    .create-masonry .hentry,
     .section-content-wrapper.layout-three .hentry {
         margin-left: 0;
         width: 100%;
@@ -2963,10 +3077,27 @@ a#scrollup:hover {
         padding: 30px 0 0;
         width: 100%;
     }
+
+    #supplementary.four .widget-area {
+        width: 100%;
+    }
+
 }
 
 
 @media screen and (max-width: 479px) {
+    .section,
+    .site-content,
+    #supplementary {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .fluid .section {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
     .section-content-wrapper.layout-four,
     .section-content-wrapper.layout-two {
         margin-left: 0;
@@ -2982,11 +3113,6 @@ a#scrollup:hover {
     .site {
         width: 100%;
     }
-
-    .site .content-area {
-        padding: 20px;
-    }
-
 
     p,
     ul,

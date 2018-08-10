@@ -104,6 +104,7 @@ if ( ! function_exists( 'create_site_branding_start' ) ) :
 	function create_site_branding_start() {
 		?>
 		<div class="site-branding">
+			<div class="wrapper">
 		<?php
 	}
 endif;
@@ -204,6 +205,7 @@ if ( ! function_exists( 'create_site_branding_end' ) ) :
 	 */
 	function create_site_branding_end() {
 		?>
+			</div><!-- .wrapper -->
 		</div><!-- .site-branding -->
 		<?php
 	}
@@ -238,10 +240,11 @@ if ( ! function_exists( 'create_social_menu' ) ) :
 		        <?php
 		        	wp_nav_menu(
 		        		array(
-				    		'theme_location' => 'social',
-				    		'depth'          => '1',
-				    		'link_before'    => '<span class="screen-reader-text">',
-				    		'link_after'     => '</span>'
+				    		'theme_location' 	=> 'social',
+				    		'container_class'	=> 'social-menu-container wrapper',
+				    		'depth'          	=> '1',
+				    		'link_before'    	=> '<span class="screen-reader-text">',
+				    		'link_after'     	=> '</span>'
 				    	)
 				    );
                 ?>
@@ -293,6 +296,7 @@ if ( ! function_exists( 'create_content_start' ) ) :
 	function create_content_start() {
 		?>
 		<div id="content" class="site-content">
+			<div class="wrapper">
 	<?php
 	}
 endif;
@@ -334,6 +338,7 @@ if ( ! function_exists( 'create_content_end' ) ) :
 	 * @since Create 0.2
  	*/
 	function create_content_end() { ?>
+			</div><!-- .wrapper -->
 		</div><!-- #content -->
 	<?php
 	}
@@ -435,9 +440,11 @@ function create_profile() { ?>
  */
 function create_footer_info() { ?>
 	<div class="site-info">
-		<?php create_copyright(); ?>
-		<?php create_seperator(); ?>
-		<?php create_profile(); ?>
+		<div class="wrapper">
+			<?php create_copyright(); ?>
+			<?php create_seperator(); ?>
+			<?php create_profile(); ?>
+		</div><!-- .wrapper -->
 	</div><!-- .site-info -->
 	<?php
 }

@@ -10,10 +10,9 @@
 
 		$blocks.imagesLoaded(function(){
 			$blocks.masonry({
-				"columnWidth": 261,
+				"columnWidth": ".create-masonry .hentry",
 				"itemSelector": ".hentry",
-				"isFitWidth": true,
-				"gutter": 60
+				"percentPosition": true
 			});
 
 			// Fade blocks in after images are ready (prevents jumping and re-rendering)
@@ -38,10 +37,9 @@
 
 			$blocks.imagesLoaded(function(){
 				$blocks.masonry({
-					"columnWidth": 261,
+					"columnWidth": ".create-masonry .hentry",
 					"itemSelector": ".hentry",
-					"isFitWidth": true,
-					"gutter": 60
+					"percentPosition": true
 				});
 
 				// Fade blocks in after images are ready (prevents jumping and re-rendering)

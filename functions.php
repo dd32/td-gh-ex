@@ -139,7 +139,7 @@ function create_widgets_init() {
 		'name'          => __( 'Intro Widget', 'create' ),
 		'id'            => 'sidebar-2',
 		'description'   => __( 'Additional widget that appears only on your default homepage.', 'create' ),
-		'before_widget' => '<aside id="%1$s" class="widget-intro %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget widget-intro %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
