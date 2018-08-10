@@ -88,6 +88,9 @@ Images
 
 ---------------------------------------------
 == Changelog ==
+Version 1.64
+ * Fixed Some Escaping and Security Issues
+
 Version 1.63
  * Warning Error from Theme Snifer Plugin fixed
  * Pot file updated

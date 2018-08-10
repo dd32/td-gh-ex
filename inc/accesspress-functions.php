@@ -92,35 +92,6 @@ function accesspress_parallax_bxslidercb(){
 					<?php endwhile; ?>
 					</div>
 					<?php endif; ?>
-			<?php else: ?>
-
-            <div class="bx-slider">
-				<div class="main-slides">
-					<img src="<?php echo esc_url(get_template_directory_uri().'/images/demo/slider1.jpg') ?>" alt="slider1">
-					<div class="slider-caption">
-						<div class="mid-content">
-							<h1 class="caption-title"><?php esc_html_e('Welcome to AccessPress Parallax!','accesspress-parallax'); ?></h1>
-							<h2 class="caption-description">
-							<p><?php esc_html_e('A full featured parallax theme - and its absolutely free!','accesspress-parallax'); ?></p>
-							<p><a href="#"><?php esc_html_e('Read More','accesspress-parallax'); ?></a></p>
-							</h2>
-						</div>
-					</div>
-				</div>
-						
-				<div class="main-slides">
-					<img src="<?php echo esc_url(get_template_directory_uri().'/images/demo/slider2.jpg') ?>" alt="slider2">
-					<div class="slider-caption">
-						<div class="ak-container">
-							<h1 class="caption-title"><?php esc_html_e('Amazing multi-purpose parallax theme','accesspress-parallax'); ?></h1>
-							<h2 class="caption-description">
-							<p><?php esc_html_e('Travel, corporate, small biz, portfolio, agencies, photography, health, creative - useful for anyone and everyone','accesspress-parallax'); ?></p>
-							<p><a href="#"><?php esc_html_e('Read More','accesspress-parallax'); ?></a></p>
-							</h2>
-							</div>
-					</div>
-				</div>
-			</div>
 
 			<?php  endif; ?>
 		</section>

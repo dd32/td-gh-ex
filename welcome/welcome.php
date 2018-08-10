@@ -330,9 +330,9 @@
 				if ( ! current_user_can('install_plugins') )
 					wp_die( esc_html__( 'Sorry, you are not allowed to install plugins on this site.', 'accesspress-parallax' ) );
 
-				$nonce = $_POST["nonce"];
-				$plugin = $_POST["plugin"];
-				$plugin_file = $_POST["plugin_file"];
+				$nonce = isset( $_POST["nonce"] ) ? sanitize_text_field( wp_unslash( $_POST["nonce"] ) ) : '';
+				$plugin = isset( $_POST["plugin"] ) ? sanitize_text_field( wp_unslash( $_POST["plugin"] ) ) : '';
+				$plugin_file = isset( $_POST["plugin_file"] ) ? sanitize_text_field( wp_unslash( $_POST["plugin_file"] ) ) : '';
 
 				// Check our nonce, if they don't match then bounce!
 				if (! wp_verify_nonce( $nonce, 'accesspressparallax_plugin_installer_nonce' ))
@@ -370,10 +370,10 @@
 			public function accesspressparallax_plugin_offline_installer_callback() {
 
 				
-				$file_location = $_POST['file_location'];
-				$file = $_POST['file'];
-				$github = $_POST['github'];
-				$slug = $_POST['slug'];
+				$file_location = isset( $_POST['file_location'] ) ? sanitize_text_field( wp_unslash( $_POST['file_location'] ) ) : '';
+				$file = isset( $_POST['file'] ) ? sanitize_text_field( wp_unslash( $_POST['file'] ) ) : '';
+				$github = isset( $_POST['github'] ) ? sanitize_text_field( wp_unslash( $_POST['github'] ) ) : '';
+				$slug = isset( $_POST['slug'] ) ? sanitize_text_field( wp_unslash( $_POST['slug'] ) ) : '';
 				$plugin_directory = ABSPATH . 'wp-content/plugins/';
 
 				$zip = new ZipArchive;
@@ -399,7 +399,7 @@
 			/** Plugin Offline Activation Ajax **/
 			public function accesspressparallax_plugin_offline_activation_callback() {
 
-				$plugin = $_POST['plugin'];
+				$plugin = isset( $_POST['plugin'] ) ? sanitize_text_field( wp_unslash( $_POST['plugin'] ) ) : '';
 				$plugin_file = ABSPATH . 'wp-content/plugins/'.esc_html($plugin).'/'.esc_html($plugin).'.php';
 
 				if(file_exists($plugin_file)) {
@@ -418,8 +418,8 @@
 				if ( ! current_user_can('install_plugins') )
 					wp_die( esc_html__( 'Sorry, you are not allowed to activate plugins on this site.', 'accesspress-parallax' ) );
 
-				$nonce = $_POST["nonce"];
-				$plugin = $_POST["plugin"];
+				$nonce = isset( $_POST["nonce"] ) ? sanitize_text_field( wp_unslash( $_POST["nonce"] ) ) : '';
+				$plugin = isset( $_POST["plugin"] ) ? sanitize_text_field( wp_unslash( $_POST["plugin"] ) ) : '';
 
 				// Check our nonce, if they don't match then bounce!
 				if (! wp_verify_nonce( $nonce, 'accesspressparallax_plugin_activate_nonce' ))
