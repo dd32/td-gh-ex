@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage Bee News
- * @since bee-news 1.2
+ * @since bee-news 1.3
  */
 
 if ( ! function_exists( 'bee_news_entry_meta' ) ) :
@@ -15,7 +15,7 @@ if ( ! function_exists( 'bee_news_entry_meta' ) ) :
  *
  * Create your own bee_news_entry_meta() function to override in a child theme.
  *
- * @since bee-news 1.2
+ * @since bee-news 1.3
  */
 function bee_news_entry_meta() {
 	if ( 'post' === get_post_type() ) {
@@ -59,7 +59,7 @@ if ( ! function_exists( 'bee_news_entry_date' ) ) :
  *
  * Create your own bee_news_entry_date() function to override in a child theme.
  *
- * @since bee-news 1.2
+ * @since bee-news 1.3
  */
 function bee_news_entry_date() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -93,7 +93,7 @@ if ( ! function_exists( 'bee_news_meta_simplified' ) ) :
  *
  * Create your own bee_news_entry_date() function to override in a child theme.
  *
- * @since bee-news 1.2
+ * @since bee-news 1.3
  */
 function bee_news_meta_simplified() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -130,7 +130,7 @@ if ( ! function_exists( 'bee_news_entry_taxonomies' ) ) :
  *
  * Create your own bee_news_entry_taxonomies() function to override in a child theme.
  *
- * @since bee-news 1.2
+ * @since bee-news 1.3
  */
 function bee_news_entry_taxonomies() {
 	$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'bee-news' ) );
@@ -160,7 +160,7 @@ if ( ! function_exists( 'bee_news_post_thumbnail' ) ) :
  *
  * Create your own bee_news_post_thumbnail() function to override in a child theme.
  *
- * @since bee-news 1.2
+ * @since bee-news 1.3
  */
 function bee_news_post_thumbnail($image_size = 'post-thumbnail' ) {
 
@@ -232,7 +232,7 @@ if ( ! function_exists( 'bee_news_excerpt' ) ) :
 	 *
 	 * Create your own bee_news_excerpt() function to override in a child theme.
 	 *
-	 * @since bee-news 1.2
+	 * @since bee-news 1.3
 	 *
 	 * @param string $class Optional. Class string of the div element. Defaults to 'entry-summary'.
 	 */
@@ -255,7 +255,7 @@ if ( ! function_exists( 'bee_news_force_excerpt' ) ) :
 	 *
 	 * Create your own bee_news_excerpt() function to override in a child theme.
 	 *
-	 * @since bee-news 1.2
+	 * @since bee-news 1.3
 	 *
 	 * @param string $class Optional. Class string of the div element. Defaults to 'entry-summary'.
 	 */
@@ -277,7 +277,7 @@ if ( ! function_exists( 'bee_news_excerpt_more' ) && ! is_admin() ) :
  *
  * Create your own bee_news_excerpt_more() function to override in a child theme.
  *
- * @since bee-news 1.2
+ * @since bee-news 1.3
  *
  * @return string 'Continue reading' link prepended with an ellipsis.
  */
@@ -298,7 +298,7 @@ if ( ! function_exists( 'bee_news_categorized_blog' ) ) :
  *
  * Create your own bee_news_categorized_blog() function to override in a child theme.
  *
- * @since bee-news 1.2
+ * @since bee-news 1.3
  *
  * @return bool True if there is more than one category, false otherwise.
  */
@@ -330,7 +330,7 @@ endif;
 /**
  * Flushes out the transients used in bee_news_categorized_blog().
  *
- * @since bee-news 1.2
+ * @since bee-news 1.3
  */
 function bee_news_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
@@ -348,7 +348,7 @@ if ( ! function_exists( 'bee_news_the_custom_logo' ) ) :
  *
  * Does nothing if the custom logo is not available.
  *
- * @since bee-news 1.2
+ * @since bee-news 1.3
  */
 function bee_news_the_custom_logo() {
 	if ( function_exists( 'the_custom_logo' ) ) {
