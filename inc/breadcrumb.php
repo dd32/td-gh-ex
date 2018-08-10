@@ -71,7 +71,7 @@ if ( ! function_exists( 'adonis_breadcrumb' ) ) :
 					echo $cats; // WPCS: XSS OK.
 				}
 
-				echo $before . sprintf( $text['category'], '<span class="archive-text">', '</span>' . single_cat_title( '', false ) ) . $after; // WPCS: XSS OK.
+				the_archive_title( $before . sprintf( $text['category'], '<span class="archive-text">', '</span>' ), $after );
 
 			} elseif ( is_search() ) {
 				echo $before . sprintf( $text['search'], '<span class="search-text">', '</span>' . get_search_query() ) . $after; // WPCS: XSS OK.
@@ -155,7 +155,7 @@ if ( ! function_exists( 'adonis_breadcrumb' ) ) :
 
 				echo $before . esc_html( get_the_title() ) . $after; // WPCS: XSS OK.
 			} elseif ( is_tag() ) {
-				echo $before . sprintf( $text['tag'], '<span class="tag-text">', '</span>' . single_tag_title( '', false ) ) . $after;  // WPCS: XSS OK.
+				the_archive_title( $before . sprintf( $text['tag'], '<span class="tag-text">', '</span>' ), $after );
 
 			} elseif ( is_author() ) {
 				global $author;

@@ -457,50 +457,50 @@ function adonis_register_required_plugins() {
 	$plugins = array(
 		// Catch Web Tools.
 		array(
-			'name' => 'Catch Web Tools',
+			'name' => 'Catch Web Tools', // Plugin Name, translation not required.
 			'slug' => 'catch-web-tools',
 		),
 		// Catch IDs
 		array(
-			'name' => 'Catch IDs',
+			'name' => 'Catch IDs', // Plugin Name, translation not required.
 			'slug' => 'catch-ids',
 		),
 		// To Top.
 		array(
-			'name' => 'To top',
+			'name' => 'To top', // Plugin Name, translation not required.
 			'slug' => 'to-top',
 		),
 		// Catch Gallery.
 		array(
-			'name' => 'Catch Gallery',
+			'name' => 'Catch Gallery', // Plugin Name, translation not required.
 			'slug' => 'catch-gallery',
 		),
 	);
 
 	if ( ! class_exists( 'Catch_Infinite_Scroll_Pro' ) ) {
 		$plugins[] = array(
-			'name' => 'Catch Infinite Scroll',
+			'name' => 'Catch Infinite Scroll', // Plugin Name, translation not required.
 			'slug' => 'catch-infinite-scroll',
 		);
 	}
 
 	if ( ! class_exists( 'Essential_Content_Types_Pro' ) ) {
 		$plugins[] = array(
-			'name' => 'Essential Content Types',
+			'name' => 'Essential Content Types', // Plugin Name, translation not required.
 			'slug' => 'essential-content-types',
 		);
 	}
 
 	if ( ! class_exists( 'Essential_Widgets_Pro' ) ) {
 		$plugins[] = array(
-			'name' => 'Essential Widgets',
+			'name' => 'Essential Widgets', // Plugin Name, translation not required.
 			'slug' => 'essential-widgets',
 		);
 	}
 
 	if ( ! class_exists( 'Catch_Instagram_Feed_Gallery_Widget_Pro' ) ) {
 		$plugins[] = array(
-			'name' => 'Catch Instagram Feed Gallery & Widget',
+			'name' => 'Catch Instagram Feed Gallery & Widget', // Plugin Name, translation not required.
 			'slug' => 'catch-instagram-feed-gallery-widget',
 		);
 	}

@@ -443,7 +443,7 @@ function adonis_get_sidebar_id() {
 function adonis_social_menu() {
 	if ( has_nav_menu( 'social-menu' ) ) :
 		?>
-		<nav class="social-navigation" role="navigation" aria-label="<?php esc_html_e( 'Social Links Menu', 'adonis' ); ?>">
+		<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'adonis' ); ?>">
 			<?php
 				wp_nav_menu( array(
 					'theme_location' => 'social-menu',
@@ -571,7 +571,7 @@ if ( ! function_exists( 'adonis_content_image' ) ) :
 					$image_size = $individual_featured_image;
 					$class[]    = 'from-metabox';
 				}
-				
+
 				$class[] = $individual_featured_image;
 				?>
 				<div class="post-thumbnail <?php echo esc_attr( implode( ' ', $class ) ); ?>">
@@ -619,7 +619,7 @@ if ( ! function_exists( 'adonis_get_featured_posts' ) ) :
 
 			for ( $i = 1; $i <= $number; $i++ ) {
 				$post_id = '';
-				
+
 					$post_id = get_theme_mod( 'adonis_featured_content_cpt_' . $i );
 
 				if ( $post_id && '' !== $post_id ) {

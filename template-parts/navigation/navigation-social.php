@@ -1,5 +1,5 @@
 <?php if ( has_nav_menu( 'social-menu' ) ) :  ?>
-	<nav class="social-navigation" role="navigation" aria-label="<?php esc_html_e( 'Social Menu', 'adonis' ); ?>">
+	<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Menu', 'adonis' ); ?>">
 		<?php
 			wp_nav_menu( array(
 				'theme_location' 	=> 'social-menu',

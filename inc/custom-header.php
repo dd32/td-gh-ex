@@ -75,6 +75,8 @@ if ( ! function_exists( 'adonis_featured_page_post_image' ) ) :
 		    return get_the_post_thumbnail_url( $blog_id, $thumbnail );
 		} elseif ( ! has_post_thumbnail() ) {
 			return adonis_featured_image();
+		} elseif ( is_home() && is_front_page() ) {
+			return adonis_featured_image();
 		}
 
 		return get_the_post_thumbnail_url( get_the_id(), $thumbnail );

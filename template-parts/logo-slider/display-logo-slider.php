@@ -52,8 +52,8 @@ if ( $logo_slider_bg ) {
 
 		<div class="section-content-wrapper clients-content-wrapper">
 			<!-- prev/next for SVG links -->
-			<button id="logo-slider-prev" class="cycle-prev" aria-label="<?php esc_html_e( 'Previous', 'adonis' ); ?>"><?php echo adonis_get_svg( array( 'icon' => 'angle-down' ) ); ?></button>
-			<button id="logo-slider-next" class="cycle-next" aria-label="<?php esc_html_e( 'Next', 'adonis' ); ?>"><?php echo adonis_get_svg( array( 'icon' => 'angle-down' ) ); ?></button>
+			<button id="logo-slider-prev" class="cycle-prev" aria-label="<?php esc_attr_e( 'Previous', 'adonis' ); ?>"><?php echo adonis_get_svg( array( 'icon' => 'angle-down' ) ); ?></button>
+			<button id="logo-slider-next" class="cycle-next" aria-label="<?php esc_attr_e( 'Next', 'adonis' ); ?>"><?php echo adonis_get_svg( array( 'icon' => 'angle-down' ) ); ?></button>
 
 			<!-- empty element for pager links -->
 			<div id="logo-slider-pager" class="cycle-pager"></div>

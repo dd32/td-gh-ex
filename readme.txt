@@ -60,6 +60,11 @@ Icons
 
 == Changelog ==
 
+= 1.1.1 (Released: August 10, 2018) =
+* Bug Fixed: Header Image for front blog page issue
+* Bug Fixed: Improper escaping for aria-label on menus
+* Updated: Breadcrumb functions - used the_archive_title() instead of single_cat_title and single_tag_title
+
 = 1.1 (Released: July 30, 2018) =
 * Added: Header Image Support for Testimonials, Portfolio, Services and Featured Content via Essential Content Types
 * Updated: Upgrade to pro button css
