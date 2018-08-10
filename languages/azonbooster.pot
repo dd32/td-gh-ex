@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: AzonBooster 1.2.2\n"
+"Project-Id-Version: AzonBooster 1.2.3\n"
 "Report-Msgid-Bugs-To: https://gitlab.com/boosterwp/azonbooster.gitissues\n"
-"POT-Creation-Date: 2018-07-10 08:56:47+00:00\n"
+"POT-Creation-Date: 2018-08-10 11:09:25+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,6 +65,10 @@ msgstr ""
 msgid "All Categories"
 msgstr ""
 
+#: inc/azonbooster-functions.php:71
+msgid "The Best Free WordPress Booster Themes"
+msgstr ""
+
 #: inc/azonbooster-template-functions.php:17
 msgid "Skip to navigation"
 msgstr ""
@@ -79,7 +83,7 @@ msgstr ""
 
 #: inc/azonbooster-template-functions.php:199
 #: inc/azonbooster-template-functions.php:337
-#: inc/azonbooster-template-functions.php:823
+#: inc/azonbooster-template-functions.php:885
 msgid "Pages:"
 msgstr ""
 
@@ -92,43 +96,47 @@ msgstr ""
 msgid "View Detail"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:513
-msgid "&bull; <a href=\"%1$s\">AzonBooster</a> Designed by  %2$s."
+#: inc/azonbooster-template-functions.php:575
+msgid "AzonBooster Theme - The Best Free Amazon Affiliate WordPress Themes"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:548
+#: inc/azonbooster-template-functions.php:575
+msgid "Designed by"
+msgstr ""
+
+#: inc/azonbooster-template-functions.php:610
 msgid "Last updated"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:549
+#: inc/azonbooster-template-functions.php:611
 msgid "By "
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:613
+#: inc/azonbooster-template-functions.php:675
 msgid "Edit"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:671
+#: inc/azonbooster-template-functions.php:733
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:706
+#: inc/azonbooster-template-functions.php:768
 msgid ", "
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:729
+#: inc/azonbooster-template-functions.php:791
 msgid "Leave a Comment"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:729
+#: inc/azonbooster-template-functions.php:791
 msgid "One Comment"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:729
+#: inc/azonbooster-template-functions.php:791
 msgid "% Comments"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:807
+#: inc/azonbooster-template-functions.php:869
 msgid "Edit this section"
 msgstr ""
 
@@ -538,7 +546,7 @@ msgstr ""
 msgid "Read More..."
 msgstr ""
 
-#: inc/customizer/class-azb-homepage-ouput.php:299
+#: inc/customizer/class-azb-homepage-ouput.php:301
 msgid "Recent Posts"
 msgstr ""
 
@@ -860,6 +868,10 @@ msgstr ""
 msgid "Title Element"
 msgstr ""
 
+#: inc/helpers/class-related-posts.php:39
+msgid "See More Related"
+msgstr ""
+
 #: inc/helpers/include-kirki.php:54
 msgid ""
 "The AzonBooster recommends the following plugin: <a "
@@ -954,12 +966,12 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/azonbooster-template-functions.php:388
+#: inc/azonbooster-template-functions.php:450
 msgctxt "Next post"
 msgid "Next"
 msgstr ""
 
-#: inc/azonbooster-template-functions.php:389
+#: inc/azonbooster-template-functions.php:451
 msgctxt "Previous post"
 msgid "Previous"
 msgstr ""

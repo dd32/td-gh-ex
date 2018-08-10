@@ -267,7 +267,7 @@ if ( ! function_exists( 'azonbooster_post_thumbnail' ) ) {
 			if ( $enable_link && (! is_single() || ! is_page() ) ) {
 
 				?>
-				<a href="<?php echo $link ?>"> 
+				<a href="<?php echo esc_attr( $link ) ?>"> 
 				<?php
 					the_post_thumbnail( $thumbnail );
 				?></a>
@@ -355,6 +355,68 @@ if ( ! function_exists( 'azonbooster_readmore_link' ) ) {
 	}
 }
 
+if ( ! function_exists( 'azonbooster_related_posts' ) ) {
+	/**
+	 * Display related post
+	 *
+	 * @since 1.2.3
+	 * @return void
+	 */
+	function azonbooster_related_posts() {
+
+		global $post;
+
+		$show_related_posts = apply_filters('azonbooster_show_related_posts', true);
+
+		// Return if hide related posts
+		if ( ! $show_related_posts && ! is_single() ) return;
+
+		$style = apply_filters('azonbooster_show_related_posts_style', 'grid' );
+		$num_posts = apply_filters('azonbooster_show_related_posts_num_posts', 8 );
+		$related_by = apply_filters('azonbooster_show_related_posts_by', 'cat' );
+		$order_by = apply_filters('azonbooster_show_related_posts_orderby', 'date' );
+		$order = apply_filters('azonbooster_show_related_posts_order', 'DESC' );
+
+		$args = array(
+			'posts_per_page'   	=> $num_posts,
+			'post__not_in'		=> array( $post->ID ),
+			'no_found_rows'		=> true,
+			'order'				=> $order,
+			'orderby'			=> $order_by
+		);
+
+		/**
+		 * Render by option
+		 */
+		if ( $related_by == 'author' ) {
+
+			$args['author'] = get_the_author_meta('ID');
+
+		} elseif ( $related_by == 'tag' ) {
+
+			$tags = wp_get_post_tags( $post->ID, array( 'fields' => 'ids' ) );
+			$args['tag__in'] = $tags;
+
+		} elseif ( $related_by == 'rand') {
+
+			$args['orderby'] = 'rand';
+
+		} else {
+			$args['category__in'] = wp_get_post_categories( $post->ID );
+		}
+
+		$posts  = get_posts( $args );
+
+		
+
+		if ( $posts ) {
+
+			$rlp = new AzonBooster_Related_Posts();
+			$rlp->render_related_posts( $posts, $style );
+		}
+	}
+
+}
 if ( ! function_exists( 'azonbooster_post_nav' ) ) {
 	/**
 	 * Display navigation to next/previous post when applicable.
@@ -510,7 +572,7 @@ if ( ! function_exists( 'azonbooster_credit' ) ) {
 
 			<?php if ( apply_filters( 'azonbooster_enable_credit_link', true ) ) : ?>
 
-			<?php printf( __( '&bull; <a href="%1$s">AzonBooster</a> Designed by  %2$s.', 'azonbooster' ), 'https://boosterwp.com', $credit_url ); ?>
+			<?php printf( '&bull; <a href="%1$s" title="%2$s">AzonBooster</a> %3$s %4$s', 'https://boosterwp.com', esc_attr__('AzonBooster Theme - The Best Free Amazon Affiliate WordPress Themes', 'azonbooster'), esc_html__('Designed by', 'azonbooster'), $credit_url ); ?>
 
 			<?php endif; ?>
 
@@ -826,81 +888,5 @@ if ( ! function_exists ( 'azauthority_homepage_page_content' ) ) {
 			?>
 		</div><!-- .entry-content -->
 		<?php
-	}
-}
-
-if ( ! function_exists( 'azonbooster_init_structured_data' ) ) {
-	/**
-	 * Generates structured data.
-	 *
-	 * Hooked into the following action hooks:
-	 *
-	 * - `azonbooster_loop_post`
-	 * - `azonbooster_single_post`
-	 * - `azonbooster_page`
-	 *
-	 * Applies `azonbooster_structured_data` filter hook for structured data customization :)
-	 */
-	function azonbooster_init_structured_data() {
-
-		// Post's structured data.
-		if ( is_home() || is_category() || is_date() || is_search() || is_single() ) {
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'normal' );
-			$logo  = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
-
-			$json = array();
-			
-			$json['@type'] = 'BlogPosting';
-
-			$json['mainEntityOfPage'] = array(
-				'@type' => 'webpage',
-				'@id'   => get_the_permalink(),
-			);
-
-			$json['publisher'] = array(
-				'@type' => 'organization',
-				'name'  => get_bloginfo( 'name' ),
-			);
-
-			if ( $logo ) {
-				$json['publisher']['logo'] = array(
-					'@type'  => 'ImageObject',
-					'url'    => $logo[0],
-					'width'  => $logo[1],
-					'height' => $logo[2],
-				);
-			}
-
-			$json['author'] = array(
-				'@type' => 'person',
-				'name'  => get_the_author(),
-			);
-
-			if ( $image ) {
-				$json['image'] = array(
-					'@type'  => 'ImageObject',
-					'url'    => $image[0],
-					'width'  => $image[1],
-					'height' => $image[2],
-				);
-			}
-			
-			$json['datePublished'] = get_post_time( 'c' );
-			$json['dateModified']  = get_the_modified_date( 'c' );
-			$json['name']          = get_the_title();
-			$json['headline']      = $json['name'];
-			$json['description']   = get_the_excerpt();
-
-		// Page's structured data.
-		} elseif ( is_page() ) {
-			$json['@type']       = 'WebPage';
-			$json['url']         = get_the_permalink();
-			$json['name']        = get_the_title();
-			$json['description'] = get_the_excerpt();
-		}
-
-		if ( isset( $json ) ) {
-			AzonBooster::set_structured_data( apply_filters( 'azonbooster_structured_data', $json ) );
-		}
 	}
 }

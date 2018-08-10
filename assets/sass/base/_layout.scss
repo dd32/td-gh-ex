@@ -5,7 +5,8 @@
 @include susy-media($desktop) {
 	
 	.site-header {
-		padding: 0 0 ms(-2) 0;
+		padding: 0 0 ms(2) 0;
+		margin-bottom: ms(2);
 
 		.header-left {
 			@include span(8 of 12);
@@ -185,6 +186,62 @@
 	.content-area,
 	.widget-area {
 		margin-bottom: ms(5);
+	}
+
+	/**
+	 * Related Post
+	 */
+	.related-posts {
+
+		
+		.num-col-1 {
+
+			.related-post-block {
+				@include span(last 12 of 12 );
+			}
+		}
+
+		.num-col-2 {
+
+			.related-post-block {
+				@include span(6 of 12);
+
+				&:nth-child(2n) {
+					@include last;
+				}
+			}
+		}
+
+		.num-col-3 {
+
+			.related-post-block {
+				@include span(4 of 12);
+
+				&:nth-child(3n) {
+					@include last;
+				}
+			}
+		}
+		.num-col-4 {
+
+			.related-post-block {
+				@include span(3 of 12);
+
+				&:nth-child(4n) {
+					@include last;
+				}
+			}
+		}
+		.num-col-6 {
+
+			.related-post-block {
+				@include span(2 of 12);
+
+				&:nth-child(6n) {
+					@include last;
+				}
+			}
+		}
 	}
 
 	/**
@@ -409,8 +466,11 @@
 	}
 
 	.site-header {
+		margin-bottom: ms(2);
+
 		.site-branding {
 			margin-left: 30px;
+
 		}
 	}
 

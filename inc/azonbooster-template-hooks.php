@@ -44,18 +44,28 @@ add_action( 'azonbooster_footer', 'azonbooster_site_info_wrapper_close', 35 );
 
 /**
  * Posts
+ *
+ * @see  azonbooster_post_header()
+ * @see  azonbooster_post_content()
+ * @see  azonbooster_paging_nav()
+ * @see  azonbooster_related_posts()
+ * @see  azonbooster_post_nav()
+ * @see  azonbooster_display_comments()
+ * @see  azonbooster_post_thumbnail()
+ * @see  azonbooster_post_meta()
  * 
  */
 add_action( 'azonbooster_loop_post', 'azonbooster_post_header', 10 );
 add_action( 'azonbooster_loop_post', 'azonbooster_post_content', 20 );
-add_action( 'azonbooster_loop_post', 'azonbooster_init_structured_data', 30 );
+
 
 add_action( 'azonbooster_loop_after', 'azonbooster_paging_nav', 10 );
 
 add_action( 'azonbooster_single_post', 'azonbooster_post_header', 10 );
 add_action( 'azonbooster_single_post', 'azonbooster_post_content', 20 );
-add_action( 'azonbooster_single_post', 'azonbooster_init_structured_data', 30 );
 
+
+add_action( 'azonbooster_single_post_bottom', 'azonbooster_related_posts', 5 );
 add_action( 'azonbooster_single_post_bottom', 'azonbooster_post_nav', 10 );
 add_action( 'azonbooster_single_post_bottom', 'azonbooster_display_comments', 20 );
 
@@ -67,15 +77,15 @@ add_action( 'azonbooster_post_meta', 'azonbooster_post_meta', 10 );
  * 
  * @see  azonbooster_page_header()
  * @see  azonbooster_page_content()
- * @see  azonbooster_init_structured_data()
  * @see  azonbooster_display_comments()
  */
 add_action( 'azonbooster_page',       'azonbooster_page_header',          10 );
 add_action( 'azonbooster_page',       'azonbooster_page_content',         20 );
-add_action( 'azonbooster_page',       'azonbooster_init_structured_data', 30 );
 add_action( 'azonbooster_page_after', 'azonbooster_display_comments', 10);
 
 /**
  * Homepage Hook
+ *
+ * @see azonbooster_homepage_content()
  */
 add_action( 'azonbooster_homepage', 'azonbooster_homepage_content', 10 );

@@ -4,7 +4,7 @@ Theme URI: https://boosterwp.com/themes/azonbooster
 Author: BoosterWP Team
 Author URI: https://boosterwp.com
 Description: The best free Amazon Affiliate theme double up your sales and conversion rate. AzonBooster is a fast, lightweight, mobile responsive theme built with speed, SEO friendly, and usability in mind. AzonBooster can serve as a solid base for any website and works great with any of your favorite page builders. With an emphasis on WordPress coding standards, we ensure AzonBooster is compatible with all well-coded plugins, including major ones like Amazon Associates Link Builder, EazyAzon, WPML, BuddyPress and bbPress.
-Version: 1.2.2
+Version: 1.2.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: azonbooster
@@ -1832,11 +1832,53 @@ body.search-open .site-search {
       text-decoration: underline; }
 
 /**
+	 * Related Post
+	 */
+.related-posts {
+  margin: 1em 0;
+  /** List Style */ }
+  .related-posts .related-posts-title {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 1em; }
+  .related-posts .list-related-posts {
+    margin: 0 0 0 1em;
+    list-style: none; }
+    .related-posts .list-related-posts li:before {
+      font-family: "FontAwesome";
+      margin-right: 0;
+      display: block;
+      float: left;
+      opacity: 0.35;
+      margin-left: -1em;
+      width: 1em;
+      content: "\f105"; }
+    .related-posts .list-related-posts a {
+      color: #f90; }
+      .related-posts .list-related-posts a:hover {
+        color: #c60; }
+  .related-posts .grid-related-posts {
+    margin-top: 1.41575em;
+    margin-bottom: 1.618em; }
+    .related-posts .grid-related-posts:before, .related-posts .grid-related-posts:after {
+      content: "";
+      display: table; }
+    .related-posts .grid-related-posts:after {
+      clear: both; }
+    .related-posts .grid-related-posts.num-col-1 a {
+      font-size: 1.618em;
+      font-weight: bold; }
+    .related-posts .grid-related-posts.num-col-1 a img {
+      margin-bottom: 0; }
+  .related-posts .related-post-block a img {
+    margin-bottom: 0.5407911001em; }
+
+/**
  * Strictly Layout Styles
  */
 @media (min-width: 768px) {
   .site-header {
-    padding: 0 0 0.6180469716em 0; }
+    padding: 0 0 1.41575em 0;
+    margin-bottom: 1.41575em; }
     .site-header .header-left {
       width: 65.2173913043%;
       float: left;
@@ -1980,6 +2022,41 @@ body.search-open .site-search {
   .content-area,
   .widget-area {
     margin-bottom: 2.617924em; }
+  /**
+	 * Related Post
+	 */
+  .related-posts .num-col-1 .related-post-block {
+    width: 100%;
+    float: right;
+    margin-right: 0; }
+  .related-posts .num-col-2 .related-post-block {
+    width: 47.8260869565%;
+    float: left;
+    margin-right: 4.347826087%; }
+    .related-posts .num-col-2 .related-post-block:nth-child(2n) {
+      float: right;
+      margin-right: 0; }
+  .related-posts .num-col-3 .related-post-block {
+    width: 30.4347826087%;
+    float: left;
+    margin-right: 4.347826087%; }
+    .related-posts .num-col-3 .related-post-block:nth-child(3n) {
+      float: right;
+      margin-right: 0; }
+  .related-posts .num-col-4 .related-post-block {
+    width: 21.7391304348%;
+    float: left;
+    margin-right: 4.347826087%; }
+    .related-posts .num-col-4 .related-post-block:nth-child(4n) {
+      float: right;
+      margin-right: 0; }
+  .related-posts .num-col-6 .related-post-block {
+    width: 13.0434782609%;
+    float: left;
+    margin-right: 4.347826087%; }
+    .related-posts .num-col-6 .related-post-block:nth-child(6n) {
+      float: right;
+      margin-right: 0; }
   /**
 	 * Full width & homepage template
 	 */
@@ -2163,33 +2240,79 @@ body.search-open .site-search {
     margin-left: 1.41575em;
     margin-right: 1.41575em;
     padding: 0; }
-  .site-header .site-branding {
-    margin-left: 30px; } }
+  .site-header {
+    margin-bottom: 1.41575em; }
+    .site-header .site-branding {
+      margin-left: 30px; } }
 
 /**
  * Homepage style control
  */
+.azb-featured-posts {
+  margin-bottom: 2.617924em; }
+  .azb-featured-posts:before, .azb-featured-posts:after {
+    content: "";
+    display: table; }
+  .azb-featured-posts:after {
+    clear: both; }
+  .azb-featured-posts .featured-posts-second .featured-posts-list {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .azb-featured-posts .featured-posts-second .featured-posts-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid #ccc; }
+      .azb-featured-posts .featured-posts-second .featured-posts-list li a {
+        font-size: 1.3em; }
+        .azb-featured-posts .featured-posts-second .featured-posts-list li a::before {
+          font-family: "FontAwesome";
+          margin-right: 0;
+          display: block;
+          float: left;
+          opacity: 0.35;
+          width: 20px;
+          content: "\f105"; }
+
+.azb-hmp-container .azb-hmp-row {
+  margin-bottom: 2.617924em; }
+  .azb-hmp-container .azb-hmp-row:before, .azb-hmp-container .azb-hmp-row:after {
+    content: "";
+    display: table; }
+  .azb-hmp-container .azb-hmp-row:after {
+    clear: both; }
+
+.azb-box ul {
+  margin: 1em 0 1em 1em; }
+  .azb-box ul li {
+    list-style: none; }
+    .azb-box ul li a {
+      color: #0000EE; }
+      .azb-box ul li a:hover {
+        color: #f90; }
+    .azb-box ul li::before {
+      font-family: "FontAwesome";
+      margin-right: 0;
+      display: block;
+      float: left;
+      opacity: 0.35;
+      margin-left: -1em;
+      width: 1em;
+      content: "\f105"; }
+
 @media (min-width: 768px) {
   .azb-featured-posts {
-    padding-bottom: 2.617924em;
-    margin-bottom: 2.617924em;
-    border-bottom: 2px solid #ccc; }
-    .azb-featured-posts:before, .azb-featured-posts:after {
-      content: "";
-      display: table; }
-    .azb-featured-posts:after {
-      clear: both; }
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 2.617924em; }
     .azb-featured-posts .featured-posts-thumb {
       position: relative; }
       .azb-featured-posts .featured-posts-thumb .featured-posts-title {
-        background: rgba(0, 0, 0, 0.5);
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        margin: 0;
-        padding: 5px 15px; }
+        /*background: rgba(0, 0, 0, .5);
+				position: absolute;*/
+        margin: 0 0 0.6180469716em;
+        padding: 0;
+        font-size: 2.617924em; }
         .azb-featured-posts .featured-posts-thumb .featured-posts-title a {
-          color: #fff; }
+          color: #000; }
           .azb-featured-posts .featured-posts-thumb .featured-posts-title a:hover {
             color: #f90; }
     .azb-featured-posts .featured-posts-first {
@@ -2200,47 +2323,6 @@ body.search-open .site-search {
       width: 39.1304347826%;
       float: right;
       margin-right: 0; }
-      .azb-featured-posts .featured-posts-second .featured-posts-list {
-        margin: 0;
-        padding: 0;
-        list-style: none; }
-        .azb-featured-posts .featured-posts-second .featured-posts-list li {
-          padding: 10px 0;
-          border-bottom: 1px solid #ccc; }
-          .azb-featured-posts .featured-posts-second .featured-posts-list li a {
-            font-size: 1.3em; }
-            .azb-featured-posts .featured-posts-second .featured-posts-list li a::before {
-              font-family: "FontAwesome";
-              margin-right: 0;
-              display: block;
-              float: left;
-              opacity: 0.35;
-              width: 20px;
-              content: "\f105"; }
-  .azb-hmp-container .azb-hmp-row {
-    margin-bottom: 2.617924em; }
-    .azb-hmp-container .azb-hmp-row:before, .azb-hmp-container .azb-hmp-row:after {
-      content: "";
-      display: table; }
-    .azb-hmp-container .azb-hmp-row:after {
-      clear: both; }
-  .azb-box ul {
-    margin: 1em 0 1em 1em; }
-    .azb-box ul li {
-      list-style: none; }
-      .azb-box ul li a {
-        color: #0000EE; }
-        .azb-box ul li a:hover {
-          color: #f90; }
-      .azb-box ul li::before {
-        font-family: "FontAwesome";
-        margin-right: 0;
-        display: block;
-        float: left;
-        opacity: 0.35;
-        margin-left: -1em;
-        width: 1em;
-        content: "\f105"; }
   .cat-summary .cat-desc {
     font-style: italic; }
   .azb-hmp-box-2 .azb-box {
@@ -2267,4 +2349,23 @@ body.search-open .site-search {
 
 @media (max-width: 568px) {
   .header-menu-container {
-    display: none; } }
+    display: none; }
+  .featured-posts-first {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0; }
+  .featured-posts-second {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0; }
+  .azb-hmp-container .cat-summary .azb-hmp-cat {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+  .azb-hmp-box-2 .azb-box,
+  .azb-hmp-box-3 .azb-box,
+  .azb-hmp-box-4 .azb-box {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0; } }

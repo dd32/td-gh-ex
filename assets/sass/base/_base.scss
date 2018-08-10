@@ -1720,3 +1720,64 @@ body.search-open .site-search {
 		}
 	}
 }
+/**
+	 * Related Post
+	 */
+	.related-posts {
+
+		margin: ms(1) 0;
+
+		.related-posts-title {
+			border-bottom: 1px solid $color_border;
+			font-size: ms(1);
+		}
+
+		/** List Style */
+		.list-related-posts {
+			margin: 0 0 0 ms(1);
+			list-style: none;
+
+			li:before {
+				font-family: "FontAwesome";
+			    margin-right: 0;
+			    display: block;
+			    float: left;
+			    opacity: 0.35;
+			    margin-left: -1em;
+			    width: 1em;
+			    content: "\f105";
+			}
+
+			a {
+				color: $color_links;
+				&:hover {
+					color: $color_links_hover;
+				}
+			}
+
+		}
+
+		.grid-related-posts {
+			margin-top: ms(2);
+			margin-bottom: ms(3);
+			@include clearfix;
+
+			&.num-col-1 {
+				a {
+					font-size: ms(3);
+					font-weight: bold;
+				}
+
+				a img {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.related-post-block {
+			
+			a img {
+				margin-bottom: ms(-3);
+			}
+		}
+	}

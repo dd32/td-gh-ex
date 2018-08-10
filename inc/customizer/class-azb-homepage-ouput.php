@@ -67,10 +67,12 @@ class AzonBooster_Homepage_Output
 				<div class="featured-posts-first">
 					<?php if ( has_post_thumbnail() ) : ?>
 						<div class="featured-posts-thumb">
-							<?php the_post_thumbnail('large'); ?>
-							<h3 class="featured-posts-title">
+							<h2 class="featured-posts-title">
 							<a href="<?php the_permalink() ?>"><?php the_title() ?></a>
-							</h3>
+							</h2>
+
+							<a href="<?php the_permalink() ?>"> <?php the_post_thumbnail('large'); ?></a>
+							
 						</div>
 					<?php endif ?>
 				</div>
@@ -132,7 +134,7 @@ class AzonBooster_Homepage_Output
 
 				foreach ( $contents as $key => $vals ) {
 
-					printf('<div class="azb-hmp-row azb-hmp-row-%s">', $key+1 );
+					printf('<div class="azb-hmp-row azb-hmp-row-%s">', esc_attr( $key+1 ) );
 						$index = 1;
 						foreach ( $vals as $v ) {
 
