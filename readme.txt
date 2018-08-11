@@ -3,8 +3,8 @@
 Contributors: specia
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.9.8
-Stable tag: 1.0.40
-Version: 1.0.40
+Stable tag: 1.0.41
+Version: 1.0.41
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-logo, translation-ready, blog
@@ -16,11 +16,12 @@ Avira is distributed under the terms of the GNU GPL
 
 Avira is the right theme for you if you are looking for a multipurpose theme that can handle everything you throw at it. It is perfect for marketing, corporate startup, agency, blog, business, company, creative, portfolio, professional business, food & restaurant, gym & fitness, spa salon, medical practitioner & hospitals, landing pages, product pages, corporate business, digital agency, product showcase, financial advisor, accountant, law firm, wealth advisor, photography, personal, and any eCommerce stores. The design is easy to change and adapt to the client needs.
 
-##Frequently Asked Questions
-	
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
+=== Frequently Asked Questions ===
+
+1. Get Support - https://specia.ticksy.com
+2. In your admin panel, go to Appearance > Themes and click the Add New button.
+3. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
+4. Click Activate to use your new theme right away.
 
 ## Credit & Copyright
 
@@ -35,8 +36,11 @@ Source: https://www.pexels.com/
 License: CC0 License
 
 ##Changelog
+version 1.0.41
+* Added support link in readme
+
 version 1.0.40
-* WordPress 4.9.8 Compatibility Tested.
+* WordPress 4.9.7 Compatibility Tested.
 
 version 1.0.39
 * Social Media Improvement Test against Parent theme
