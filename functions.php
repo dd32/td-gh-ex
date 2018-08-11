@@ -1126,7 +1126,18 @@ require_once dirname( __FILE__ ) . '/includes/customizer.php';
 require_once dirname( __FILE__ ) . '/includes/breadcrumbs.php';
 require_once dirname( __FILE__ ) . '/includes/template-parts.php';
 require_once dirname( __FILE__ ) . '/includes/theme-widgets.php';
+require_once dirname( __FILE__ ) . '/lib/customizer-controls/iconpicker/class-customize-iconpicker-control.php';
 
+/**
+ * Load dynamic logic for the customizer controls area.
+ */
+function avata_panels_js() {
+	wp_enqueue_script( 'avata-fontawesome-iconpicker', get_template_directory_uri() . '/lib/customizer-controls/iconpicker/assets/js/fontawesome-iconpicker.min.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'avata-iconpicker-control', get_template_directory_uri() . '/lib/customizer-controls/iconpicker/assets/js/iconpicker-control.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_style( 'avata-fontawesome-iconpicker', get_template_directory_uri() . '/lib/customizer-controls/iconpicker/assets/css/fontawesome-iconpicker.min.css' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/lib/customizer-controls/iconpicker/assets/css/font-awesome.min.css' );
+}
+add_action( 'customize_controls_enqueue_scripts', 'avata_panels_js' );
 
 /**
  * Include the TGM_Plugin_Activation class.

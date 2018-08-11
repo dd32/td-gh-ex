@@ -130,6 +130,7 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 					'description' =>  '',
 					'default'     => $default_options['section_title'],
 					  ),
+					  
 
 			  'section_subtitle_'.$id => array(
 					'type'        => 'textarea',
@@ -714,7 +715,7 @@ array_splice($service_1_options,3,0,array(
 													),
 													'fields' => array(
 														'icon' => array(
-															'type'        => 'text',
+															'type'        => 'iconpicker',
 															'label'       => esc_attr__( 'Font Awesome Icon', 'avata' ),
 															'description' => '',
 															'default'     => '',
@@ -1027,7 +1028,7 @@ array_splice($team_options,3,0,array(
 					'default'     => '',
 				),
 				'social_icon_1' => array(
-					'type'        => 'text',
+					'type'        => 'iconpicker',
 					'label'       => esc_attr__( 'Social Icon 1', 'avata' ),
 					'description' => esc_attr__( 'Get social icon string from https://fontawesome.com/v4.7.0/icons/, e.g. facebook.', 'avata' ),
 					'default'     => '',
@@ -1039,7 +1040,7 @@ array_splice($team_options,3,0,array(
 					'default'     => 'http://',
 				),
 				'social_icon_2' => array(
-					'type'        => 'text',
+					'type'        => 'iconpicker',
 					'label'       => esc_attr__( 'Social Icon 2', 'avata' ),
 					'description' => esc_attr__( 'Get social icon string from https://fontawesome.com/v4.7.0/icons/, e.g. facebook.', 'avata' ),
 					'default'     => '',
@@ -1051,7 +1052,7 @@ array_splice($team_options,3,0,array(
 					'default'     => 'http://',
 				),
 				'social_icon_3' => array(
-					'type'        => 'text',
+					'type'        => 'iconpicker',
 					'label'       => esc_attr__( 'Social Icon 3', 'avata' ),
 					'description' => esc_attr__( 'Get social icon string from https://fontawesome.com/v4.7.0/icons/, e.g. facebook.', 'avata' ),
 					'default'     => '',
@@ -1063,7 +1064,7 @@ array_splice($team_options,3,0,array(
 					'default'     => 'http://',
 				),
 				'social_icon_4' => array(
-					'type'        => 'text',
+					'type'        => 'iconpicker',
 					'label'       => esc_attr__( 'Social Icon 4', 'avata' ),
 					'description' => esc_attr__( 'Get social icon string from https://fontawesome.com/v4.7.0/icons/, e.g. facebook.', 'avata' ),
 					'default'     => '',
@@ -1075,7 +1076,7 @@ array_splice($team_options,3,0,array(
 					'default'     => 'http://',
 				),
 				'social_icon_5' => array(
-					'type'        => 'text',
+					'type'        => 'iconpicker',
 					'label'       => esc_attr__( 'Social Icon 5', 'avata' ),
 					'description' => esc_attr__( 'Get social icon string from https://fontawesome.com/v4.7.0/icons/, e.g. facebook.', 'avata' ),
 					'default'     => '',
@@ -1266,7 +1267,7 @@ array_splice($counter_options,3,0,array(
 				  'fields' => array(
 					  
 					  'icon' => array(
-						  'type'        => 'text',
+						  'type'        => 'iconpicker',
 						  'label'       => esc_attr__( 'Fontawesome Icon', 'avata' ),
 						  'description' => '',
 						  'default'     => '',
@@ -2039,23 +2040,23 @@ Kirki::add_field( 'avata', array(
 				'field' => 'text',),
 	'fields' => array(
 		
-		'text'=>array('type'=>'text','default'=>'','label'=> __( 'Text', 'avata' )),
+		'text'=>array('type'=>'textarea','default'=>'','label'=> __( 'Text', 'avata' )),
 		'link'=>array('type'=>'link','default'=>'','label'=> __( 'Link', 'avata' )),
 		'target'=>array('type'=>'select','default'=>'', 'choices'=> $target, 'label'=> __( 'Target', 'avata' )),
 	),
 	'default' =>  array(
 		array(
-			"text" => "admin@domain.com",
+			"text" => "<i class='fa fa-user'></i> admin@domain.com",
 			"link" => "",
 			"target" => "_self",
 			),
 		array(
-			"text" => "011 322 44 56",
+			"text" => "<i class='fa fa-phone'></i> 011 322 44 56",
 			"link" => "",
 			"target" => "_self",
 			),
 		array(
-			"text" => "Monday - Friday 10 AM - 8 PM",
+			"text" => "<i class='fa fa-calendar'></i> Monday - Friday 10 AM - 8 PM",
 			"link" => "",
 			"target" => "_self",
 			),
@@ -2191,7 +2192,7 @@ Kirki::add_field( 'avata', array(
 			'default'     => '',
 		),
 		'icon' => array(
-			'type'        => 'text',
+			'type'        => 'iconpicker',
 			'label'       => esc_attr__( 'Social Icon', 'avata' ),
 			'description' => esc_attr__( 'Get social icon string from https://fontawesome.com/v4.7.0/icons/, e.g. facebook.', 'avata' ),
 			'default'     => '',

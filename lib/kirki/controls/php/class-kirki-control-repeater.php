@@ -437,6 +437,15 @@ class Kirki_Control_Repeater extends Kirki_Control_Base {
 								<# if ( field.description ) { #><span class="description customize-control-description">{{{ field.description }}}</span><# } #>
 								<div data-field="{{{ field.id }}}">{{{ field.default }}}</div>
 
+							<# } else if ( 'iconpicker' === field.type ) { #>
+			
+								<# if ( field.label ) { #><span class="customize-control-title">{{{ field.label }}}</span><# } #>
+								<# if ( field.description ) { #><span class="description customize-control-description">{{{ field.description }}}</span><# } #>
+								<div class="input-group icp-container">
+								<input data-placement="bottomRight" class="icp icp-auto" type="{{ field.type }}" name="" value="{{{ field.default }}}" data-field="{{{ field.id }}}">
+								<span class="input-group-addon"></span>
+								</div>
+
 							<# } #>
 
 						</div>

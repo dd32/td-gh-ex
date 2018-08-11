@@ -2,7 +2,7 @@
 Contributors: HooThemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.0-trunk
-Version: 1.5.4
+Version: 1.5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready, custom-logo, featured-image-header, footer-widgets, right-sidebar, left-sidebar, e-commerce
@@ -89,6 +89,9 @@ https://www.pexels.com/photo/white-and-gray-pen-beside-succulent-flower-and-whit
 
 == Changelog ==
 
+= Version 1.5.5 = = 11/08/2018
+* Add - Added iconpicker
+
 = Version 1.5.4 = = 04/08/2018
 * Add - Added top bar
 * Add - Added Colors & Background options
@@ -100,7 +103,7 @@ https://www.pexels.com/photo/white-and-gray-pen-beside-succulent-flower-and-whit
 
 = Version 1.5.2 = = 14/05/2018
 * Add - Added option - Page Title Bar Text Align
-* Fix - Fixed  menu issue on mobile
+* Fix - Fixed menu issue on mobile
 
 = Version 1.5.1 = = 10/04/2018
 * Add - Added option "HTML Code Before Post Content"
