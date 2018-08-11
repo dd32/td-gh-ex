@@ -278,18 +278,23 @@ class alhenalite_customize {
 		
 			'wip_footer_email_button' => 'mailto:',
 			'wip_footer_skype_button' => 'skype:',
+			'wip_footer_whatsapp_button' => 'tel:',
 		
 		);
 
-		if ( !strstr ( $value, $sanize[$setting->id]) ) :
+		if (!isset($value) || $value == '' || $value == $sanize[$setting->id]) {
 
+			return '';
+
+		} elseif (!strstr($value, $sanize[$setting->id])) {
+	
 			return $sanize[$setting->id] . $value;
-
-		else:
-
-			return esc_url_raw($value, array('skype', 'mailto'));
-
-		endif;
+	
+		} else {
+	
+			return esc_url_raw($value, array('mailto', 'skype', 'tel'));
+	
+		}
 
 	}
 

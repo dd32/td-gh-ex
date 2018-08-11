@@ -55,12 +55,12 @@ if (!function_exists('alhenalite_socials_function')) {
 		$i = 0;
 		$html = "";
 		
-		foreach ( $socials as $name => $attrs) { 
+		foreach ( $socials as $k => $v) { 
 		
-			if ( alhenalite_setting('wip_footer_'.$name.'_button') ): 
-
+			if ( alhenalite_setting('wip_footer_'.$k.'_button') ): 
+			
 				$i++;	
-				$html.= '<a href="'.esc_url(alhenalite_setting('wip_footer_'.$name.'_button'), array( 'http', 'https', 'tel', 'skype', 'mailto' ) ).'" target="'.$attrs['target'].'" title="'.ucfirst($name).'" class="social"> <i class="'.$attrs['icon'].'" ></i> </a> ';
+				$html.= '<a href="'.esc_url(alhenalite_setting('wip_footer_'.$k.'_button'), array( 'http', 'https', 'tel', 'skype', 'mailto' )).'" target="'.$v['target'].'" title="'.ucfirst($k).'" class="social"><i class="'.$v['icon'].'" ></i></a> ';
 			
 			endif;
 			

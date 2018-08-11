@@ -22,7 +22,7 @@
                 
                 <div class="col-md-6" >
                     
-                    <div class="socials"> <?php do_action( 'alhenalite_socials' ); ?> </div>
+                    <div class="socials"><?php do_action( 'alhenalite_socials' ); ?></div>
     
                 </div>
             

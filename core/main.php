@@ -466,6 +466,23 @@ if (!function_exists('alhenalite_remove_thumbnail_dimensions')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* ALLOWED PROTOCOLS */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('alhenalite_kses_allowed_protocols')) {
+
+	function alhenalite_kses_allowed_protocols($protocols) {
+		
+		$protocols[] = 'skype';
+		return $protocols;
+	
+	}
+
+	add_filter( 'kses_allowed_protocols', 'alhenalite_kses_allowed_protocols');
+
+}
+
+/*-----------------------------------------------------------------------------------*/
 /*RESPONSIVE EMBED */
 /*-----------------------------------------------------------------------------------*/ 
 
