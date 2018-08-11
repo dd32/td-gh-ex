@@ -56,6 +56,7 @@ class Bayn_Lite_Dashboard {
 
 		add_action( 'admin_menu', array( $this, 'add_menu' ) );
 		add_action( 'admin_init', array( $this, 'redirect' ) );
+		add_filter( 'wpforms_shareasale_id', array( $this, 'wpforms_shareasale_id' ) );
 	}
 
 	/**
@@ -86,8 +87,9 @@ class Bayn_Lite_Dashboard {
 							<?php include get_template_directory() . '/inc/dashboard/sections/welcome.php'; ?>
 							<?php include get_template_directory() . '/inc/dashboard/sections/tabs.php'; ?>
 							<?php include get_template_directory() . '/inc/dashboard/sections/getting-started.php'; ?>
-							<?php include get_template_directory() . '/inc/dashboard/sections/recommended-actions.php'; ?>
+							<?php include get_template_directory() . '/inc/dashboard/sections/actions.php'; ?>
 							<?php include get_template_directory() . '/inc/dashboard/sections/pro.php'; ?>
+							<?php include get_template_directory() . '/inc/dashboard/sections/recommendation.php'; ?>
 						</div>
 						<div id="postbox-container-1" class="postbox-container">
 							<?php include get_template_directory() . '/inc/dashboard/sections/newsletter.php'; ?>
@@ -104,9 +106,10 @@ class Bayn_Lite_Dashboard {
 	 * Enqueue scripts for dashboard page.
 	 */
 	public function enqueue_scripts() {
+		wp_enqueue_style( 'slick', get_template_directory_uri() . '/inc/dashboard/css/slick.css' );
 		wp_enqueue_style( "{$this->slug}-dashboard-style", get_template_directory_uri() . '/inc/dashboard/css/dashboard-style.css' );
-		wp_enqueue_script( "{$this->slug}-dashboard-slick", get_template_directory_uri() . '/inc/dashboard/js/slick.js', array( 'jquery' ), '1.8.0', true );
-		wp_enqueue_script( "{$this->slug}-dashboard-script", get_template_directory_uri() . '/inc/dashboard/js/script.js', array( 'jquery' ), '', true );
+		wp_enqueue_script( 'slick', get_template_directory_uri() . '/inc/dashboard/js/slick.js', array( 'jquery' ), '1.8.0', true );
+		wp_enqueue_script( "{$this->slug}-dashboard-script", get_template_directory_uri() . '/inc/dashboard/js/script.js', array( 'slick' ), '', true );
 	}
 
 	/**
@@ -175,5 +178,24 @@ class Bayn_Lite_Dashboard {
 				return true;
 			}
 		}
+	}
+
+	/**
+	 * Set the WPForms ShareASale ID.
+	 *
+	 * @param string $shareasale_id The the default ShareASale ID.
+	 *
+	 * @return string $shareasale_id
+	 */
+	public function wpforms_shareasale_id( $shareasale_id ) {
+		$id = '424629';
+
+		if ( ! empty( $shareasale_id ) && $shareasale_id == $id ) {
+			return $shareasale_id;
+		}
+
+		update_option( 'wpforms_shareasale_id', $id );
+
+		return $id;
 	}
 }

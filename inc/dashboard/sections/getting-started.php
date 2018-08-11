@@ -17,16 +17,14 @@
 				?>
 			</p>
 			<p>
-				<a href="#recommended-actions" class="action-links button"><?php esc_html_e( 'Recommended Actions', 'bayn-lite' ); ?></a>
+				<a href="#actions" class="action-links button"><?php esc_html_e( 'Recommended Actions', 'bayn-lite' ); ?></a>
 			</p>
-
 
 			<h3><?php esc_html_e( 'Customize The Theme', 'bayn-lite' ); ?></h3>
 			<p><?php esc_html_e( 'Using the WordPress Customizer you can easily customize every aspect of the theme.', 'bayn-lite' ); ?></p>
 			<p>
 				<a href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" class="button"><?php esc_html_e( 'Start Customize', 'bayn-lite' ); ?></a>
 			</p>
-
 
 			<h3><?php esc_html_e( 'Read Full Documentation', 'bayn-lite' ); ?></h3>
 			<p class="about"><?php esc_html_e( 'Need any help to setup and configure the theme? Please check our full documentation for detailed information on how to use it.', 'bayn-lite' ); ?></p>
