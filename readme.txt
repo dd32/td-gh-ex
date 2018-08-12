@@ -72,6 +72,10 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.4.9
+ * Fixed Comment Section author email field issue
+ * Fixed Latest Post Widget issue
+
 Version 2.4.8
  * Fixed Security Issues
 

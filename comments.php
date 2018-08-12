@@ -93,7 +93,7 @@ if ( post_password_required() ) {
 		esc_attr( $commenter['comment_author'] ) . '" size="30" aria-required="true" />'.
 		'</div></div>',
 
-		'email'  => '<div class="control-group"><div class="controls">' . '<input id="email" placeholder="'.__( 'Email Address *', 'accesspress-mag' ).'" name="email" type="text" value="' . esc_attr(  $commenter['comment_authoresc_html_email'] ) .
+		'email'  => '<div class="control-group"><div class="controls">' . '<input id="email" placeholder="'.__( 'Email Address *', 'accesspress-mag' ).'" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
 		'" size="30" aria-required="true" />'  .
 		'</div></div>',
 

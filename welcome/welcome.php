@@ -47,6 +47,7 @@
 					'recommended_plugins' => __('Recommended Plugins', 'accesspress-mag'),
 					'support' => __('Support', 'accesspress-mag'),
 					'free_vs_pro' => __('Free vs Pro', 'accesspress-mag'),
+					'more_wp_stuff' => __('More WordPress Stuff', 'accesspress-mag'),
 				);
 
 				/** List of Recommended Free Plugins **/

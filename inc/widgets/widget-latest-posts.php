@@ -59,8 +59,8 @@ class Accesspress_mag_register_latest_posts extends WP_Widget {
      */
     public function widget( $args, $instance ) {
         extract( $args );
-        $latest_posts_title = $instance[ 'latest_posts_title' ];
-        $latest_posts_count = $instance[ 'latest_posts_count' ];
+        $latest_posts_title = isset( $instance[ 'latest_posts_title' ] ) ? $instance[ 'latest_posts_title' ] : '';
+        $latest_posts_count = isset( $instance[ 'latest_posts_count' ] ) ? $instance[ 'latest_posts_count' ] : '';
         echo wp_kses_post($before_widget); 
     ?>
         <div class="latest-posts clearfix">
