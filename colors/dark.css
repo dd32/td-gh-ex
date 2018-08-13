@@ -50,7 +50,7 @@ input#s:focus {
 ----------------------------------------------- */
 
 #fixed-header-top {
-	border-top: 1px solid #333; 
+	border-top: 1px solid #333;
 	border-bottom: 1px solid #333;
 }
 .has-header-top #branding {
@@ -90,7 +90,7 @@ input#s:focus {
 /* =Menu
 ----------------------------------------------- */
 
-#header-menu #access, 
+#header-menu #access,
 .sidebar-top .widget_nav_menu,
 #colophon #access-footer {
 	background: #333; /* Show a solid color for older browsers */
@@ -104,12 +104,12 @@ input#s:focus {
 	background-color: #e6e6e6;
 }
 
-#infinite-handle span {
+#content #infinite-handle span button {
     background-color: #333;
 }
 
-#infinite-handle span:hover,
-#infinite-handle span:focus {
+#content #infinite-handle span button:hover,
+#content #infinite-handle span button:focus {
     background-color: #000;
 }
 
@@ -118,7 +118,7 @@ input#s:focus {
 #main {
 	background-color: #222;
 }
-#slider { 
+#slider {
 	background-color: #111111;
     border-color: #333333;
 }

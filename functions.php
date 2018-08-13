@@ -264,7 +264,7 @@ if ( ! function_exists( 'catchevolution_woocommerce_activated' ) ) :
  * Add Suport for WooCommerce Plugin
  */
 function catchevolution_woocommerce_activated() {
-	if ( class_exists( 'woocommerce' ) ) {
+	if ( class_exists( 'WooCommerce' ) ) {
 		add_theme_support( 'woocommerce' );
 	    require( get_template_directory() . '/inc/catchevolution-woocommerce.php' );
 	}

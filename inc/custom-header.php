@@ -26,8 +26,8 @@ function catchevolution_custom_header_setup() {
 		'default-image'			=> trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/headers/buddha.jpg',
 
 		// Set height and width, with a maximum value for the width.
-		'height'                 => 400,
-		'width'                  => 1600,
+		'height'                 => 480,
+		'width'                  => 1920,
 
 		// Support flexible height and width.
 		'flex-height'            => true,
@@ -404,17 +404,14 @@ function catchevolution_featured_header() {
 	$header_image_path = get_header_image();
 
 	// Check if this is a post or page, if it has a thumbnail, and if it's a big one
-	if ( is_singular() && current_theme_supports( 'post-thumbnails' ) &&
-			has_post_thumbnail( $post->ID ) &&
-			( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
-			$image[1] >= HEADER_IMAGE_WIDTH ) :
+	if ( is_singular() && has_post_thumbnail( $post->ID ) ) :
 		// Houston, we have a new header image!
 		echo '<div id="header-image">';
-			echo get_the_post_thumbnail( $post->ID );
+			echo get_the_post_thumbnail( $post->ID, 'full' );
 		echo '</div>';
 	elseif ( get_header_image() ) : ?>
 		<div id="header-image">
-			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
+			<img src="<?php header_image(); ?>" alt="" />
 		</div>
 	<?php endif;
 

@@ -1157,6 +1157,8 @@ function catchevolution_themeoption_invalidate_caches(){
 	delete_transient( 'catchevolution_site_verification' ); // scripts which loads on header
 	delete_transient( 'catchevolution_footercode' ); // scripts which loads on footer
 	delete_transient( 'catchevolution_footer_content' ); // Footer content
+    delete_transient( 'catchevolution_footer_content_new' ); //Footer Copyright
+    
 }
 
 /*
@@ -1219,6 +1221,6 @@ function catchevolution_theme_author() {
  * @return string
  */
 function catchevolution_assets(){
-    $catchevolution_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-evolution' ) . ' &copy; '. catchevolution_the_year() . ' ' . catchevolution_site_link() . ' ' . esc_attr__( 'All Rights Reserved', 'catch-evolution' ) . '.</div><div class="powered">'. catchevolution_theme_name() . catchevolution_theme_author() . '</div>';
+    $catchevolution_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-evolution' ) . ' &copy; '. catchevolution_the_year() . ' ' . catchevolution_site_link() . ' ' . esc_attr__( 'All Rights Reserved.', 'catch-evolution' ) . ' ' . get_the_privacy_policy_link() . '</div><div class="powered">'. catchevolution_theme_name() . catchevolution_theme_author() . '</div>';
     return $catchevolution_content;
 }

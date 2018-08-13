@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/catch-evolution/
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish, French, Swedish, German, Italian, Japanese, Russian, Czech, Bosnian, Brazilian Portuguese and Dutch. If you need support with this theme, please go to https://catchthemes.com/support/
-Version: 3.0.2
+Version: 3.0.3
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: catch-everest
@@ -2990,21 +2990,27 @@ img#wpstats {
 
 /* =Jetpack
 ----------------------------------------------- */
-#infinite-handle {
+#content #infinite-handle {
+	display: block;
 	padding-bottom: 40px;
     text-align: center;
 }
-#infinite-handle span {
+#content #infinite-handle span {
+	background: none transparent;
+	display: block;
+	padding: 0;
+}
+#content #infinite-handle span button {
 	background-color: #444;
 	color: #eee;
-    display: block;
-    font-size: 16px;
+	display: inline;
+	font-size: 16px;
     font-size: 1rem;
-    padding: 10px 0;
-    width: 100%;
+	padding: 10px 30px;
+	width: 100%;
 }
-#infinite-handle span:hover,
-#infinite-handle span:focus {
+#content #infinite-handle span button:hover,
+#content #infinite-handle span button:focus {
 	background-color: #222;
 	color: #fff;
 }

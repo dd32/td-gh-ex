@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-03-06 12:21+0545\n"
-"PO-Revision-Date: 2018-03-06 12:21+0545\n"
+"POT-Creation-Date: 2018-08-13 14:55+0545\n"
+"PO-Revision-Date: 2018-08-13 14:55+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes Team <info@catchthemes.com>\n"
 "Language: bs\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:12
@@ -1088,7 +1088,7 @@ msgid "https://catchthemes.com/"
 msgstr "https://catchthemes.com/"
 
 #: ../inc/panel/theme-options.php:90 ../inc/panel/theme-options.php:91
-#: ../inc/panel/theme-options.php:1211
+#: ../inc/panel/theme-options.php:1213
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
@@ -1521,20 +1521,22 @@ msgstr ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
 
-#: ../inc/panel/theme-options.php:1179
+#: ../inc/panel/theme-options.php:1181
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/panel/theme-options.php:1200
+#: ../inc/panel/theme-options.php:1202
 msgid "Theme: Catch Evolution by "
 msgstr "Teme: Catch Evolution od "
 
-#: ../inc/panel/theme-options.php:1222
+#: ../inc/panel/theme-options.php:1224
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../inc/panel/theme-options.php:1222
-msgid "All Rights Reserved"
+#: ../inc/panel/theme-options.php:1224
+#, fuzzy
+#| msgid "All Rights Reserved"
+msgid "All Rights Reserved."
 msgstr "All Rights Reserved"
 
 #: ../search.php:13

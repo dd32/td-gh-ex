@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-03-06 12:22+0545\n"
-"PO-Revision-Date: 2018-03-06 12:22+0545\n"
+"POT-Creation-Date: 2018-08-13 14:56+0545\n"
+"PO-Revision-Date: 2018-08-13 14:56+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Piotrekkk <fansitepoprostugry@gmail.com>\n"
 "Language: pl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -1091,7 +1091,7 @@ msgid "https://catchthemes.com/"
 msgstr "https://catchthemes.com/"
 
 #: ../inc/panel/theme-options.php:90 ../inc/panel/theme-options.php:91
-#: ../inc/panel/theme-options.php:1211
+#: ../inc/panel/theme-options.php:1213
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
@@ -1523,20 +1523,22 @@ msgstr ""
 "Rada: Tutaj możesz wpisać kod skryptu od Google, Facebooka, Add This itp. "
 "który będzie załadowany w stopce"
 
-#: ../inc/panel/theme-options.php:1179
+#: ../inc/panel/theme-options.php:1181
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/panel/theme-options.php:1200
+#: ../inc/panel/theme-options.php:1202
 msgid "Theme: Catch Evolution by "
 msgstr "Theme: Catch Evolution by "
 
-#: ../inc/panel/theme-options.php:1222
+#: ../inc/panel/theme-options.php:1224
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../inc/panel/theme-options.php:1222
-msgid "All Rights Reserved"
+#: ../inc/panel/theme-options.php:1224
+#, fuzzy
+#| msgid "All Rights Reserved"
+msgid "All Rights Reserved."
 msgstr "Wszelkie prawa zastrzeżone"
 
 #: ../search.php:13

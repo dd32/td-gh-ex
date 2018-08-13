@@ -63,6 +63,14 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 
 == Change Log ==
 
+= 3.0.3 (Released: August 13, 2018) =
+* Added: Core Privacy Policy link support in footer
+* Bug Fixed: Design issue with Catch Infinite Scroll plugin
+* Replaced class_exists( 'woocommerce' ) with class_exists( 'WooCommerce' ) as WooCommerce update caused issues
+* Removed: Unnecessary code
+* Updated: Header image size
+* Updated: Upgrade to pro button css
+
 = 3.0.2 (Released: March 06, 2018) =
 * Enhanced Security: Replaced wp_filter_post_kses with wp_kses_post
 
