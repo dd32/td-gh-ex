@@ -235,6 +235,7 @@ skipLinkFocusFix();
 		selectors = [
 			'iframe[src*="youtube.com"]',
 			'iframe[src*="vimeo.com"]',
+			'iframe[src*="dailymotion.com"]',
 			'iframe[src*="videopress.com"]'
 		],
 		frames = bin ? bin.querySelectorAll( selectors.join( ',' ) ) : [],

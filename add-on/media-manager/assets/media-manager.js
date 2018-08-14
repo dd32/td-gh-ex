@@ -24,33 +24,72 @@ function aamlaMediaManager() {
 	}
 
 	function toggleMedia() {
-		var videoWrapper, audioWrapper, videoFrame, audioFrame, video, audio, src, thumb, bg;
+		var modal, video, audioWrapper, audioFrame, audio, src, thumb, bg,
+			videoSelectors = [
+				'iframe[data-src*="youtube.com"]',
+				'iframe[data-src*="vimeo.com"]',
+				'iframe[data-src*="dailymotion.com"]',
+				'iframe[data-src*="videopress.com"]',
+				'video'
+			];
 
 		this.classList.toggle( 'makeitvisible' );
 
-		videoWrapper = this.getElementsByClassName( 'entry-video' )[0];
-		if ( videoWrapper ) {
-			videoFrame = videoWrapper.getElementsByTagName( 'iframe')[0];
-			if ( videoFrame ) {
-				if ( this.classList.contains( 'makeitvisible' ) ) {
-					if ( ! videoFrame.hasAttribute( 'src' ) ) {
-						src = videoFrame.getAttribute( 'data-src' );
-						if ( src ) {
-							videoFrame.setAttribute( 'src', src );
-						}
-					}
-				} else {
-					video = videoFrame.getElementsByTagName( 'video' )[0];
-					src   = videoFrame.getAttribute( 'src' );
+		modal = this.getElementsByClassName( 'entry-video' )[0];
+		if ( modal ) {
+			video = modal.querySelector( videoSelectors.join( ',' ) );
+
+			if ( this.classList.contains( 'makeitvisible' ) ) {
+
+				// If an HTML5 video, play it
+				if ( video && video.tagName.toLowerCase() === 'video' ) {
+					video.play();
+					return;
+				}
+
+				// Create ifrmae src attribute from data-src attribute.
+				if ( video && ! video.src ) {
+					src = video.getAttribute( 'data-src' );
+					// Remove any autoplay instructions already present in dataset.
+					src = src.replace('&autoplay=1', '').replace('?autoplay=1', '').replace('&autoplay=0', '').replace('?autoplay=0', '').replace('?autoPlay=1', '').replace('&autoPlay=1', '');
+
+					// Create video src attribute.
+					video.src = src ? src + ( src.indexOf('?') < 0 ? '?' : '&') + 'autoplay=1': '';
+					return;
+				} else if ( video ) {
+					// Add autoplay instruction to src attribute.
+					video.src = video.src + ( video.src.indexOf('?') < 0 ? '?' : '&') + 'autoplay=1';
+					return;
+				}
+
+				// Let's check if modal have other iframe videos.
+				video = modal.getElementsByTagName( 'iframe')[0];
+				if ( video && ! video.hasAttribute( 'src' ) ) {
+					src = video.getAttribute( 'data-src' );
 					if ( src ) {
-						videoFrame.setAttribute( 'src', src );
-					}
-					if ( video ) {
-						video.pause();
+						video.setAttribute( 'src', src );
 					}
 				}
-				return;
+			} else {
+				// If an HTML5 video, pause it
+				if ( video && video.tagName.toLowerCase() === 'video' ) {
+					video.pause();
+					return;
+				}
+
+				// Remove autoplay from video src
+				if ( video ) {
+					video.src = video.src.replace('&autoplay=1', '').replace('?autoplay=1', '');
+					return;
+				}
+
+				video = modal.getElementsByTagName( 'iframe')[0];
+				src = video.getAttribute( 'src' );
+				if ( src ) {
+					video.setAttribute( 'src', src );
+				}
 			}
+			return;
 		}
 
 		audioWrapper = this.getElementsByClassName( 'entry-audio' )[0];
@@ -86,13 +125,9 @@ function aamlaMediaManager() {
 						}
 					}
 				} else {
-					audio = audioWrapper.getElementsByTagName( 'audio' )[0];
-					src   = audioFrame.getAttribute( 'src' );
+					src = audioFrame.getAttribute( 'src' );
 					if ( src ) {
 						audioFrame.setAttribute( 'src', src );
-					}
-					if ( video ) {
-						video.pause();
 					}
 				}
 				return;

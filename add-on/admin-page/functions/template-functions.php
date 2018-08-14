@@ -21,7 +21,7 @@ function aamla_admin_theme_information() {
 		],
 		[
 			'label' => esc_html__( 'Last Updated on', 'aamla' ),
-			'value' => esc_html__( 'Aug 10, 2018', 'aamla' ),
+			'value' => esc_html__( 'Aug 14, 2018', 'aamla' ),
 		],
 		[
 			'label' => esc_html__( 'Next Planned update', 'aamla' ),

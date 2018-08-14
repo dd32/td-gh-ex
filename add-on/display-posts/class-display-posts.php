@@ -233,7 +233,7 @@ class Display_Posts {
 			$thumb_size = 'thumbnail';
 		}
 
-		if ( false !== strpos( $instance['styles'], 'grid' ) && 1 === $instance['grid_columns'] ) {
+		if ( false !== strpos( $instance['styles'], 'grid' ) && 1 === $instance['grid_columns'] && 1 === $instance['number'] ) {
 			$thumb_size = 'aamla-large';
 		}
 

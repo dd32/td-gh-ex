@@ -214,7 +214,9 @@ class Media_Manager {
 			if ( ! class_exists( 'DOMDocument' ) ) {
 				return $media;
 			} else {
-				$doc = new \DOMDocument();
+				// We want to replace special characters into formatted entities.
+				$media = wptexturize( $media );
+				$doc   = new \DOMDocument();
 				$doc->loadHTML( sprintf(
 					'<!DOCTYPE html><html><head><meta charset="%s"></head><body>%s</body></html>',
 					esc_attr( get_bloginfo( 'charset' ) ),

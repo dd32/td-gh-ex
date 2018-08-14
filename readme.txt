@@ -1,9 +1,9 @@
-===Welcome to Aamla ===
+=== Welcome to Aamla ===
 
 Created by: Vedathemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 4.9.8
-Version: 1.0.7
+Version: 1.0.8
 PHP required : PHP 5.4+
 IE Browser Support: IE11+
 License: GNU General Public License v2 or later
@@ -60,7 +60,7 @@ Aamla WordPress Theme bundles the following third-party resources:
 2.	SVG Icons collection has been created from following,
 
 	Font Awesome SVG icons, Copyright Dave Gandy
-	License: SIL Open Font License, version 1.1 (https://fontawesome.com/license/free)
+	License: CC BY 4.0 (https://fontawesome.com/license/free)
 	Source: http://fontawesome.io/
 
 	Icomoon SVG icons ( Free Version ), Copyright Roonas
@@ -73,19 +73,25 @@ Aamla WordPress Theme bundles the following third-party resources:
 
 3.	Images used for theme screenshot
 
-	https://pixabay.com/en/gui-interface-internet-program-2311258/
-	by janjf93 (https://pixabay.com/en/users/janjf93-3084263/)
+	https://pixabay.com/en/background-geometry-polygon-design-618226/
+	by Aeyos (https://pixabay.com/en/users/Aeyos-738868/)
 	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
-	https://pixabay.com/en/ok-check-todo-agenda-icon-symbol-1976099/
-	by janjf93 (https://pixabay.com/en/users/janjf93-3084263/)
+	https://pixabay.com/en/musicians-guitars-music-instruments-690591/
+	by Free-Photos (https://pixabay.com/en/users/Free-Photos-242387/)
 	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
-	https://pixabay.com/en/americana-modern-abstract-design-1501711/
-	by Fotocitizen (https://pixabay.com/en/users/Fotocitizen-397314/)
+	https://pixabay.com/en/evening-sky-colorful-sunset-1777352/
+	by sbtlneet (https://pixabay.com/en/users/sbtlneet-3591002/)
 	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
-	Other illustrations are self created.
+	https://pixabay.com/en/harp-musical-instrument-classical-384557/
+	by Skitterphoto (https://pixabay.com/en/users/Skitterphoto-324082/)
+	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+
+	https://pixabay.com/en/musician-performer-keyboard-1031110/
+	by Free-Photos (https://pixabay.com/en/users/Free-Photos-242387/)
+	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 4.	Image used on 404-error page
 	https://pixabay.com/en/not-found-404-error-file-not-found-2384304/
@@ -93,6 +99,10 @@ Aamla WordPress Theme bundles the following third-party resources:
 	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 == Changelog ==
+
+= 1.0.8 - Aug 14 2018 =
+* Modify - Make theme screenshot comply with updated requirements.
+* Error Fix - Media Manager autoplay/pause video streamlined.
 
 = 1.0.7 - Aug 10 2018 =
 * Modify - Change theme screenshot to better adhere to theme guidelines.
