@@ -1,6 +1,39 @@
 == Changelog ==
 
-View full release information on [Github](https://github.com/siteorigin/vantage/releases).
+== 1.7.10 - 14 August 2018 ==
+* Removed http/https from Google Fonts import.
+* Updated screenshot.
+
+== 1.7.9 - 27 July 2018 ==
+* Restored the vantage .pot file to it's correct location caused by build script issue.
+
+== 1.7.8 - 14 July 2018 ==
+* Allow for mobile menu fragment links with ID's defined.
+
+== 1.7.7 - 22 June 2018 ==
+* Updated Google Fonts array.
+* Updated .pot file.
+* Fixed overlay class in Ajax output in Loop Carousel.
+* Fixed alignment in slider loop.
+
+== 1.7.6 - 21 May 2018 ==
+* Resolved image post format warning.
+* Removed clearfix for full width rows.
+* Resolved header widget area menu drop-down z-index menu issue.
+
+== 1.7.5 - 25 April 2018 ==
+* Allow for text to wrap on mobile post navigation.
+* Include sliders JavaScript files.
+
+== 1.7.4 - 18 April 2018 ==
+* Fixed search focus bug on iOS devices.
+
+== 1.7.3 - 02 April 2018 ==
+* Resolved MetaSlider Vantage (Flex) theme bottom margin issue.
+* Added main menu keyboard accessibility.
+
+== 1.7.2 - 20 March 2018 ==
+* Reverted to 1.7. Resolved PHP 5 error.
 
 == 1.7.1 - 18 March 2018 ==
 * Hotfix release. Reverted to 1.6.9 to resolve PHP 5 error.
@@ -35,7 +68,7 @@ View full release information on [Github](https://github.com/siteorigin/vantage/
 * Updated Settings framework.
 * Fixed boxed layout logo padding bug.
 * Disabled mobile menu if responsive layout is disabled.
-* Disabled Meta Slider shortcode from ouputting if Meta Slider is deactivated.
+* Disabled Meta Slider shortcode from outputting if Meta Slider is deactivated.
 
 == 1.6.2 - 19 June 2017 ==
 * Improved main menu search bar keyboard accessibility. Close with escape key added.
@@ -71,7 +104,7 @@ View full release information on [Github](https://github.com/siteorigin/vantage/
 = 1.5.5 - 10 October 2016 =
 * Added scope to the full-width page setting for the boxed layout bound.
 * Updated to the latest SiteOrigin Settings framework.
-* Fixed Meta Slider home page - Customiser setting sync bug.
+* Fixed Meta Slider home page - Customizer setting sync bug.
 * Added fallback for the Continue Reading field if left blank.
 * Fixed WooCommerce checkout button focus state.
 * Fixed drop-down menu falling behind slider widgets bug.
@@ -128,7 +161,7 @@ View full release information on [Github](https://github.com/siteorigin/vantage/
 * Added support for WordPress title tag.
 * Added color options for scroll to top icon.
 * Added font size settings for site title and support text.
-* Added styling to polylang widget in masthead.
+* Added styling to Polylang widget in masthead.
 * Add link underline and link hover underline option.
 * Moved WooCommerce styling to a separate file.
 * Added mobile menu color settings
@@ -145,7 +178,7 @@ View full release information on [Github](https://github.com/siteorigin/vantage/
 
 = 1.4.4 - 9 May 2016 =
 * Removed admin bar.
-* Better resizing behaviour for share buttons.
+* Better resizing behavior for share buttons.
 * Change order and content of blog theme settings.
 * Removed HTML from translation strings.
 * Fix Jetpack infinite scroll button styles.

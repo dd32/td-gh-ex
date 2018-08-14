@@ -7,13 +7,13 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION', '1.7.1' );
+define( 'SITEORIGIN_THEME_VERSION', '1.7.10' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', '.min' );
 define( 'SITEORIGIN_THEME_CSS_PREFIX', '.min' );
 
 // Load the new settings framework.
 include get_template_directory() . '/inc/settings/settings.php';
-include get_template_directory() . '/inc/metaslider/metaslider.php';
+include get_template_directory() . '/inc/sliders/sliders.php';
 include get_template_directory() . '/inc/plugin-activation/plugin-activation.php';
 include get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 
@@ -23,7 +23,7 @@ include get_template_directory() . '/inc/settings.php';
 include get_template_directory() . '/inc/extras.php';
 include get_template_directory() . '/inc/template-tags.php';
 include get_template_directory() . '/inc/gallery.php';
-include get_template_directory() . '/inc/metaslider.php';
+include get_template_directory() . '/inc/sliders.php';
 include get_template_directory() . '/inc/widgets.php';
 include get_template_directory() . '/inc/menu.php';
 include get_template_directory() . '/inc/breadcrumbs.php';
@@ -99,7 +99,7 @@ function vantage_setup() {
 
 	add_theme_support( 'title-tag' );
 
-	if( !defined('SITEORIGIN_PANELS_VERSION') ){
+	if ( ! defined( 'SITEORIGIN_PANELS_VERSION' ) ) {
 		// Only include panels lite if the panels plugin doesn't exist
 		include get_template_directory() . '/inc/panels-lite/panels-lite.php';
 	}
@@ -164,15 +164,15 @@ if ( ! function_exists( 'vantage_premium_setup' ) ) :
 /**
  * Add support for premium theme components.
  */
-function vantage_premium_setup(){
-	// This theme supports the no attribution addon
+function vantage_premium_setup() {
+	// This theme supports the no attribution addon.
 	add_theme_support( 'siteorigin-premium-no-attribution', array(
 		'filter'  => 'vantage_footer_attribution',
 		'enabled' => siteorigin_setting( 'general_attribution' ),
 		'siteorigin_setting' => 'general_attribution'
 	) );
 
-	// This theme supports the ajax comments addon
+	// This theme supports the ajax comments addon.
 	add_theme_support( 'siteorigin-premium-ajax-comments', array(
 		'enabled' => siteorigin_setting( 'social_ajax_comments' ),
 		'siteorigin_setting' => 'social_ajax_comments'
@@ -187,14 +187,13 @@ function vantage_siteorigin_css_snippets_paths( $paths ){
 }
 add_filter( 'siteorigin_css_snippet_paths', 'vantage_siteorigin_css_snippets_paths' );
 
-if( !function_exists( 'vantage_infinite_scroll_settings' ) ) :
+if ( ! function_exists( 'vantage_infinite_scroll_settings' ) ) :
 // Override Jetpack Infinite Scroll default behaviour of ignoring explicit posts_per_page setting when type is 'click'.
 function vantage_infinite_scroll_settings( $settings ) {
 	if ( $settings['type'] == 'click' ) {
-		if( siteorigin_setting( 'blog_archive_layout' ) == 'circleicon' ) {
+		if ( siteorigin_setting( 'blog_archive_layout' ) == 'circleicon' ) {
 			$settings['posts_per_page'] = 6;
-		}
-		else if ( siteorigin_setting( 'blog_archive_layout' ) == 'grid' ) {
+		} elseif ( siteorigin_setting( 'blog_archive_layout' ) == 'grid' ) {
 			$settings['posts_per_page'] = 8;
 		}
 	}
@@ -235,7 +234,7 @@ if( !function_exists('vantage_register_custom_background') ) :
  */
 function vantage_register_custom_background() {
 
-	if(siteorigin_setting('layout_bound') == 'boxed') {
+	if ( siteorigin_setting( 'layout_bound' ) == 'boxed') {
 		$args = array(
 			'default-color' => 'e8e8e8',
 			'default-image' => '',
@@ -250,7 +249,7 @@ endif;
 add_action( 'after_setup_theme', 'vantage_register_custom_background' );
 
 
-if( !function_exists('vantage_widgets_init') ) :
+if ( ! function_exists('vantage_widgets_init') ) :
 /**
  * Register widgetized area and update sidebar with default widgets
  *
@@ -313,12 +312,12 @@ endif;
 add_action( 'widgets_init', 'vantage_widgets_init' );
 
 
-if( !function_exists('vantage_print_styles') ) :
+if ( ! function_exists( 'vantage_print_styles' ) ) :
 /**
  * Print all the necessary Vantage styles in the header.
  */
-function vantage_print_styles(){
-	if( !siteorigin_setting('layout_responsive') ) return;
+function vantage_print_styles() {
+	if ( ! siteorigin_setting( 'layout_responsive' ) ) return;
 
 	// Create the footer and masthead widget CSS
 	$sidebars_widgets = wp_get_sidebars_widgets();
@@ -335,7 +334,7 @@ function vantage_print_styles(){
 	<?php
 }
 endif;
-add_action('wp_head', 'vantage_print_styles', 11);
+add_action( 'wp_head', 'vantage_print_styles', 11 );
 
 
 if( !function_exists('vantage_scripts') ) :
@@ -426,16 +425,18 @@ if ( ! function_exists( 'vantage_render_slider' ) ) :
  * Render the slider.
  */
 function vantage_render_slider() {
-
-	if ( is_front_page() &&  ! in_array( siteorigin_setting( 'home_slider' ), array( '', 'none' ) ) ) {
+	if ( is_front_page() && ! in_array( siteorigin_setting( 'home_slider' ), array( '', 'none' ) ) ) {
 		$settings_slider = siteorigin_setting( 'home_slider' );
 		$slider_stretch = siteorigin_setting( 'home_slider_stretch' );
-
-		if( ! empty( $settings_slider ) ) {
+		$slider = false;
+		
+		// Check if we should show demo slider or not.
+		if ( ! class_exists( 'SmartSlider3' ) && ! class_exists( 'MetaSliderPlugin' ) ) {
+			$slider = 'demo';
+		} else if ( ! empty( $settings_slider ) ) {
 			$slider = $settings_slider;
 		}
-	}
-	else {
+	} else {
 		$page_id = get_the_ID();
 		$is_wc_shop = vantage_is_woocommerce_active() && is_woocommerce() && is_shop();
 		if ( $is_wc_shop ) {
@@ -444,36 +445,37 @@ function vantage_render_slider() {
 		if ( is_home() ) {
 			$page_id = get_queried_object_id();
 		}
-		if( ( is_page() || $is_wc_shop || is_home() ) && get_post_meta($page_id, 'vantage_metaslider_slider', true) != 'none' ) {
-			$page_slider = get_post_meta($page_id, 'vantage_metaslider_slider', true);
-			if( !empty($page_slider) ) {
+		if( ( is_page() || $is_wc_shop || is_home() ) && get_post_meta( $page_id, 'vantage_metaslider_slider', true ) != 'none' ) {
+			$page_slider = get_post_meta( $page_id, 'vantage_metaslider_slider', true );
+			if ( ! empty( $page_slider ) ) {
 				$slider = $page_slider;
 			}
 			$slider_stretch = get_post_meta($page_id, 'vantage_metaslider_slider_stretch', true);
 		}
-
 	}
 
-	if( empty($slider) ) return;
+	if ( empty( $slider ) ) return;
 
 	global $vantage_is_main_slider;
 	$vantage_is_main_slider = true;
 
-	?><div id="main-slider" <?php if( $slider_stretch ) echo 'data-stretch="true"' ?>><?php
-
-
-	if($slider == 'demo') get_template_part('slider/demo');
-	elseif(substr($slider, 0, 5) == 'meta:' && defined('METASLIDER_VERSION') ) {
-		list($null, $slider_id) = explode(':', $slider);
-
-		echo do_shortcode( "[metaslider id=" . intval($slider_id) . "]" );
+	if ( $slider == 'demo' ) { ?>
+		<div id="main-slider" data-stretch="true">
+			<?php get_template_part( 'slider/demo' ); ?>
+		</div><?php
+	} else {
+		
+		list( $type, $slider_id ) = explode( ':', $slider );
+		$shortcode = '[' . ( $type == 'meta' ? 'metaslider id=' : 'smartslider3 slider=' ) . intval( $slider_id ) . ']';
+		?>
+		<div id="main-slider" <?php if ( ! empty( $slider_stretch ) ) echo 'data-stretch="true"' ?>>
+			<?php echo do_shortcode( $shortcode ); ?>
+		</div><?php
 	}
-
-	?></div><?php
+	
 	$vantage_is_main_slider = false;
 }
 endif;
-
 
 if( !function_exists('vantage_post_class_filter') ) :
 function vantage_post_class_filter($classes){
@@ -522,7 +524,7 @@ if( !function_exists('vantage_get_site_width') ) :
 /**
  * Get the site width.
  *
- * @return int The side width in pixels.
+ * @return int The site width in pixels.
  */
 function vantage_get_site_width(){
 	return apply_filters('vantage_site_width', !empty($GLOBALS['vantage_site_width']) ? $GLOBALS['vantage_site_width'] : 1080);

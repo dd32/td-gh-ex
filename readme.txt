@@ -2,7 +2,7 @@
 
 Contributors: siteorigin
 
-Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, e-commerce
+Tags: two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 
 Requires at least: 4.7
 Tested up to: 4.8.1
@@ -13,7 +13,7 @@ An advanced multi-purpose theme for WordPress.
 
 == Description ==
 
-Vantage is a flexible multipurpose theme. Its strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, Meta Slider for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store. We offer free and premium support on our support <a href="http://siteorigin.com/thread/">forums</a> (http://siteorigin.com/thread/).
+Vantage is a flexible multipurpose theme. Its strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, Smart Slider 3 for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store. We offer free and premium support on our support <a href="http://siteorigin.com/thread/">forums</a> (http://siteorigin.com/thread/).
 
 == Installation ==
 	
@@ -44,6 +44,7 @@ Vantage includes integration support for the following plugins:
 * [Page Builder by SiteOrigin](https://wordpress.org/plugins/siteorigin-panels/)
 * [SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/)
 * [SiteOrigin CSS](https://wordpress.org/plugins/so-css/)
+* [Smart Slider 3](https://wordpress.org/plugins/smart-slider-3/)
 * [Yoast Breadcrumbs](https://wordpress.org/plugins/wordpress-seo/)
 * [WooCommerce](https://wordpress.org/plugins/woocommerce/)
 
@@ -61,14 +62,8 @@ Vantage WordPress Theme is derived from Underscores WordPress Theme, Copyright 2
 
 == Images ==
 
-Cell Phone image sourced from http://www.publicdomainpictures.net/view-image.php?image=15874&picture=woman-showing-a-cell-phone
-Licensed under Public Domain.
-
-Basketball Player image sourced from http://pixabay.com/en/basketball-sports-teams-players-95607/
-Licensed under Public Domain with confirmation of full Public Domain/CC0 license from the author.
-
-Nature Scene photo sourced from http://publicdomainarchive.com/
-Licensed under public domain.
+Miami skyline image sourced from [Pixabay](https://pixabay.com/en/panorama-miami-florida-water-usa-2117310/) by [pixeid](https://pixabay.com/en/users/pixexid-4729217/).
+Licensed under CC0 Creative Commons.
 
 == Bundled Resources ==
 
@@ -76,7 +71,7 @@ FitVids, Copyright 2013 Chris Coyier
 Released under the WTFPL license - http://sam.zoy.org/wtfpl/
 Source: http://fitvidsjs.com/
 
-Flex Slider, Copyright 2012 WooThemes
+FlexSlider, Copyright 2012 WooThemes
 Free to use under the GPLv2 license.
 Source: http://www.woothemes.com/flexslider/
 

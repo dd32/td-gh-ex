@@ -125,9 +125,11 @@ jQuery( function ( $ ) {
                             .attr( 'href', $$.find( '> a' ).attr( 'href' ) )
                             .addClass( 'link' );
                         var li = $( '<li></li>' ).append( ln );
-                        li.find('a[href!="#"]').click(
+                        li.find('a').not('.next').click( 
                             function (e) {
-                                frame.mnHideFrame();
+                                if ( $( this ).attr( 'href' ) === 'undefined' ) {
+                                    frame.mnHideFrame();
+                                }
                             }
                         );
 
@@ -147,12 +149,6 @@ jQuery( function ( $ ) {
                                 showSlide( childSlide.index() );
                                 return false;
                             } );
-
-                            // For # links, treat this as a click on next.
-                            li.find('a[href="#"]').not('.next').click(function(){
-                                next.click();
-                                return false;
-                            });
                         }
                     } );
 
@@ -162,6 +158,17 @@ jQuery( function ( $ ) {
                 createMenu( $nav.find( 'ul' ).eq( 0 ) );
                 showSlide( 0 );
             }
+            
+            // Attach .click All non link menu items and hash links (#, #example).
+            $( '.mobile-nav-frame .mobile a[href*="#"].link, .mobile-nav-frame .mobile a:not([href])' ).click( function() {
+                // Check for .next and if there is one, open the sub menu
+                if( $( this ).prev( '.next' ).length ) {
+                    $( this ).prev( '.next' ).click();
+                } else {
+                    // Close Mobile Menu
+                    frame.mnHideFrame();
+                }
+            } );
 
             $( window ).resize();
             frame.mnShowFrame();
