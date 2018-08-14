@@ -71,4 +71,13 @@ body.gutenberg-editor-page .editor-block-list__block {
   text-decoration: none;
 }
 
+.editor-block-list__block[data-align=center] {
+  text-align: initial;
+}
+
+.editor-block-list__layout .editor-block-list__block[data-align=full] {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /*# sourceMappingURL=block-editor.css.map */
