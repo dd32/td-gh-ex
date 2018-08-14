@@ -2,15 +2,15 @@
 Theme Name: SemPress
 Theme URI: https://github.com/pfefferle/SemPress
 Author: Matthias Pfefferle
-Author URI: http://notizblog.org/projects/sempress/
+Author URI: http://notiz.blog/projects/sempress/
 Description: SemPress is an extremely lightweight, responsive theme designed to show off your posts, quotes, and images. SemPress supports multiple post formats, widgets, and the option to upload a custom header or background image. The theme is based on HTML5 mixed with microformats, microformats v2 and microdata (Schema.org).
-Version: 1.5.1
+Version: 1.5.10
 License: GNU General Public License Version 3
 License URI: http://www.gnu.org/licenses/gpl.html
-Tags: white, gray, light, black, custom-menu, custom-colors, custom-header, custom-background, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats, threaded-comments, fluid-layout, right-sidebar, responsive-layout, accessibility-ready, two-columns, one-column, editor-style, featured-images, theme-options
+Tags: custom-menu, custom-colors, custom-header, custom-background, custom-logo, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats, threaded-comments, right-sidebar, theme-options, two-columns, one-column, editor-style, featured-images, blog, news
 Text Domain: sempress
 
-This theme is based on the toolbox theme (http://wordpress.org/extend/themes/toolbox)
+This theme is based on the toolbox theme (http://wordpress.org/themes/toolbox)
 and, like WordPress, licensed under the GPL.
 
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -167,6 +167,11 @@ h1 {
   display: block;
   clear: both;
   margin-top: 60px;
+}
+#branding .logo {
+  float: left;
+  clear: both;
+  margin-left: -70px;
 }
 
 #site-image {
@@ -709,12 +714,6 @@ body.single #content .post, body.single #content .page, body.page #content .post
   color: #21759B;
 }
 
-/* Gallery Posts */
-.format-gallery .gallery-thumb {
-  float: left;
-  margin: 0 1em 0 0;
-}
-
 /* Custom Post Types */
 .format-aside:before,
 .format-video:before,
@@ -888,7 +887,10 @@ img.size-thumbnail,
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-.wp-caption .wp-caption-text, .gallery-caption, .entry-caption {
+.wp-caption .wp-caption-text,
+.gallery-caption,
+.entry-caption,
+.entry-media figcaption {
   padding: 0px;
   margin: 0px;
   text-align: center;
@@ -954,6 +956,155 @@ div.aligncenter, .gallery {
 
 .entry-meta .avatar {
   display: none;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+  clear: both;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.gallery .gallery-item {
+  overflow: hidden;
+  float: left;
+  margin: 10px 0 0;
+  text-align: center;
+  list-style: none;
+}
+
+.gallery-caption {
+  font-size: 11px;
+}
+
+/*
+Image sizes depending on the number of columns
+Based on Hybrid theme
+*/
+.gallery-columns-0 .gallery-item {
+  width: 100%;
+}
+
+.gallery-columns-1 .gallery-item {
+  width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+  width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+  width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+  width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+  width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+  width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+  width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+  width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+  width: 11.11%;
+}
+
+.gallery-columns-10 .gallery-item {
+  width: 10%;
+}
+
+.gallery-columns-11 .gallery-item {
+  width: 9.09%;
+}
+
+.gallery-columns-12 .gallery-item {
+  width: 8.33%;
+}
+
+.gallery-columns-13 .gallery-item {
+  width: 7.69%;
+}
+
+.gallery-columns-14 .gallery-item {
+  width: 7.14%;
+}
+
+.gallery-columns-15 .gallery-item {
+  width: 6.66%;
+}
+
+.gallery-columns-16 .gallery-item {
+  width: 6.25%;
+}
+
+.gallery-columns-17 .gallery-item {
+  width: 5.88%;
+}
+
+.gallery-columns-18 .gallery-item {
+  width: 5.55%;
+}
+
+.gallery-columns-19 .gallery-item {
+  width: 5.26%;
+}
+
+.gallery-columns-20 .gallery-item {
+  width: 5%;
+}
+
+.gallery-columns-21 .gallery-item {
+  width: 4.76%;
+}
+
+.gallery-columns-22 .gallery-item {
+  width: 4.54%;
+}
+
+.gallery-columns-23 .gallery-item {
+  width: 4.34%;
+}
+
+.gallery-columns-24 .gallery-item {
+  width: 4.16%;
+}
+
+.gallery-columns-25 .gallery-item {
+  width: 4%;
+}
+
+.gallery-columns-26 .gallery-item {
+  width: 3.84%;
+}
+
+.gallery-columns-27 .gallery-item {
+  width: 3.7%;
+}
+
+.gallery-columns-28 .gallery-item {
+  width: 3.57%;
+}
+
+.gallery-columns-29 .gallery-item {
+  width: 3.44%;
+}
+
+.gallery-columns-30 .gallery-item {
+  width: 3.33%;
 }
 
 /* =Forms
@@ -1395,6 +1546,9 @@ ol.commentlist {
   }
   body #content, .single-column #content, .multi-column #content {
     margin: 0;
+  }
+  body .custom-logo-link, .single-column .custom-logo-link, .multi-column .custom-logo-link {
+    display: none;
   }
   body .post:before, body .error404:before, body .sticky:before, .single-column .post:before, .single-column .error404:before, .single-column .sticky:before, .multi-column .post:before, .multi-column .error404:before, .multi-column .sticky:before {
     content: none;
