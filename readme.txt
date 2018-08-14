@@ -2,7 +2,7 @@
 Contributors: wponlinesupport, anoopranawat
 Requires at least: WordPress 4.5
 Tested up to: WordPress 4.9.7
-Version:  1.0
+Version:  1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, blog,  left-sidebar,  right-sidebar,  custom-background,  custom-colors,  custom-menu,  featured-images,  full-width-template,  threaded-comments, footer-widgets,  sticky-post,  theme-options
@@ -55,5 +55,9 @@ License: Creative Commons Zero (CC0) license (https://www.pexels.com/photo-licen
 - https://www.pexels.com/photo/photography-of-woman-sitting-on-chair-near-window-761872/
 
 == Changelog ==
+
+= 1.0.1 =
+* Added theme URL
+
 = 1.0 =
 * Initial release
