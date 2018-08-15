@@ -48,6 +48,9 @@ Images
 
 == Changelog ==
 = 2.3.1 =
+** Minor Bug Fixes
+
+= 2.3.1 =
 ** Fixed Security Related Issues in theme.
 ** Fixed Search form design issue
 

@@ -95,14 +95,14 @@ return $fields;
     public function widget($args, $instance) {
         extract($args);
         if($instance!=null){        
-            $promo_title = $instance['promo_title'];
-            $promo = $instance['promo_image'];
-            $promo_title_sub = $instance['promo_title_sub'];
-            $promo_desc = $instance['promo_desc'];
+            $promo_title = isset( $instance['promo_title'] ) ? $instance['promo_title'] : '';
+            $promo = isset( $instance['promo_image'] ) ? $instance['promo_image'] : '';
+            $promo_title_sub = isset( $instance['promo_title_sub'] ) ? $instance['promo_title_sub'] : '';
+            $promo_desc = isset( $instance['promo_desc'] ) ? $instance['promo_desc'] : '';
             $promo_style = isset($instance['promo_style']) ? $instance['promo_style'] : 'style_one';
             if(isset($instance['promo_link_btn'])){
                 $promo_link_btn = $instance['promo_link_btn'];            }
-            $promo_link = $instance['promo_link'];
+            $promo_link = isset( $instance['promo_link'] ) ? $instance['promo_link'] : '';
 
             echo wp_kses_post($before_widget); 
             ?>

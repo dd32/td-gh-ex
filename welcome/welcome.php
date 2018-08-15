@@ -54,14 +54,20 @@
 				/** Define Tabs Sections **/
 				$this->tab_sections = array(
 					'getting_started' => esc_html__('Getting Started', 'accesspress-store'),
-					'actions_required' => esc_html__('Required Actions', 'accesspress-store'),
 					'recommended_plugins' => esc_html__('Recommended Plugins', 'accesspress-store'),
 					'support' => esc_html__('Support', 'accesspress-store'),
 					'free_vs_pro' => esc_html__('Free vs Pro', 'accesspress-store'),
+					'more_wp_stuff' => esc_html__('More WordPress Stuff', 'accesspress-store'),
 				);
 
 				/** List of Recommended Free Plugins **/
 				$this->free_plugins = array(
+
+					'woocommerce' => array(
+						'slug' => 'woocommerce',
+						'filename' =>'woocommerce.php',
+						'class' => 'WooCommerce',
+					),
 
 					'accesspress-social-icons' => array(
 						'slug' => 'accesspress-social-icons',
@@ -158,7 +164,7 @@
 						<p>
 							<?php
 								/* translators: %1$s: Theme Name, %2$s: Welcome Page link. */
-								printf( esc_html__( 'Welcome! Thank you for choosing %1$s! Please make sure you visit our <a href="%2$s">Welcome page</a> to get started with %1$s.', 'accesspress-store' ), esc_html($this->theme_name), esc_url(admin_url( 'themes.php?page=accesspressstore-welcome' )));
+								printf( wp_kses(__( 'Welcome! Thank you for choosing %1$s! Please make sure you visit our <a href="%2$s">Welcome page</a> to get started with %1$s.', 'accesspress-store' ), array( 'a' => array( 'href' => array() ) ) ), esc_html($this->theme_name), esc_url(admin_url( 'themes.php?page=accesspressstore-welcome' )));
 							?>
 						</p>
 						<p><a class="button" href="<?php echo esc_url(admin_url( 'themes.php?page=accesspressstore-welcome' )); ?>"><?php esc_html_e( 'Lets Get Started', 'accesspress-store' ); ?></a></p>
