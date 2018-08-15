@@ -3,6 +3,11 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.3.6 - 15 August 2018 =
+* Minor customizer changes related to pro features.
+* Removed agama favicon feature (same feature already is build in WordPress itself).
+* Removed function for backwards compatibility for title tag.
+
 = 1.3.5 - 06 July 2018 =
 * Added plugin (TGM) installation recommendations feature.
 * Fixed some of accessibility issues.

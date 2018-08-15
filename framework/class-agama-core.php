@@ -26,7 +26,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
 		 * @rewritten
 		 * @since 1.1.5
 		 */
-		static private $version = '1.3.5';
+		static private $version = '1.3.6';
 		
 		/**
 		 * Development Mode
@@ -86,38 +86,48 @@ if( ! class_exists( 'Agama_Core' ) ) {
 			
 			// Defina Agama URI
 			if( ! defined( 'AGAMA_URI' ) ) {
-				define( 'AGAMA_URI', get_template_directory_uri().'/' );
+				define( 'AGAMA_URI', get_template_directory_uri() . '/' );
 			}
 			
 			// Define Agama DIR
 			if( ! defined( 'AGAMA_DIR' ) ) {
-				define( 'AGAMA_DIR', get_template_directory().'/' );
+				define( 'AGAMA_DIR', get_template_directory() . '/' );
 			}
 			
 			// Define Agama framework DIR
 			if( !defined( 'AGAMA_FMW' ) ) {
-				define( 'AGAMA_FMW', AGAMA_DIR.'framework/' );
+				define( 'AGAMA_FMW', AGAMA_DIR . 'framework/' );
 			}
 			
 			// Define Agama INC
 			if( ! defined( 'AGAMA_INC' ) ) {
-				define( 'AGAMA_INC', AGAMA_DIR.'includes/' );
+				define( 'AGAMA_INC', AGAMA_DIR . 'includes/' );
 			}
 			
 			// Define Agama CSS
 			if( ! defined( 'AGAMA_CSS' ) ) {
-				define( 'AGAMA_CSS', AGAMA_URI.'assets/css/' );
+				define( 'AGAMA_CSS', AGAMA_URI . 'assets/css/' );
 			}
 			
 			// Define Agama JS
 			if( ! defined( 'AGAMA_JS' ) ) {
-				define( 'AGAMA_JS', AGAMA_URI.'assets/js/' );
+				define( 'AGAMA_JS', AGAMA_URI . 'assets/js/' );
 			}
 			
 			// Define Agama IMG
 			if( ! defined( 'AGAMA_IMG' ) ) {
-				define( 'AGAMA_IMG', AGAMA_URI.'assets/img/' );
+				define( 'AGAMA_IMG', AGAMA_URI . 'assets/img/' );
 			}
+            
+            // Define Agama Modules DIR
+            if( ! defined( 'AGAMA_MODULES_DIR' ) ) {
+                define( 'AGAMA_MODULES_DIR', AGAMA_FMW . 'admin/modules/' );
+            }
+            
+            // Define Agama Modules URI
+            if( ! defined( 'AGAMA_MODULES_URI' ) ) {
+                define( 'AGAMA_MODULES_URI', AGAMA_URI . 'framework/admin/modules/' );
+            }
 		}
 		
 		/**

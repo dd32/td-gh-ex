@@ -20,9 +20,6 @@ if( ! class_exists( 'Agama' ) ) {
 		 */
 		function __construct() {
 			
-			// Favicon init
-			add_filter( 'wp_head', array( $this, 'agama_favicon' ) );
-			
 			// Extends body class init
 			add_filter( 'body_class', array( $this, 'body_class' ) );
 			
@@ -37,17 +34,6 @@ if( ! class_exists( 'Agama' ) ) {
 			
 			// Add button class to comment edit links init
 			add_filter( 'edit_comment_link', array( $this, 'edit_comment_link' ) );
-		}
-		
-		/**
-		 * Agama Favicon
-		 *
-		 * @since 1.1.5
-		 */
-		function agama_favicon() {
-			if( get_theme_mod( 'agama_favicon', '' ) ) {
-				echo '<link rel="shortcut icon" href="'. esc_url( get_theme_mod( 'agama_favicon', '' ) ) .'" />'."\n";
-			}
 		}
 		
 		/**

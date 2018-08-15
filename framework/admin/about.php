@@ -87,9 +87,9 @@ if( ! class_exists( 'Agama_About' ) ) {
 				
 				echo '<div class="changelog point-releases">';
 					echo sprintf( '<h3>Changelog Agama v%s</h3>', Agama_Core::version() );
-                    echo '<p>* Added plugin (TGM) recommendations feature.</p>';
-                    echo '<p>* Fixed some of accessibility issues.</p>';
-                    echo '<p>* Updated theme translation files.</p>';
+                    echo '<p>* Minor customizer changes related to pro features.</p>';
+                    echo '<p>* Removed agama favicon feature (same feature already is build in WordPress itself).</p>';
+                    echo '<p>* Removed function for backwards compatibility for title tag.</p>';
 				echo '</div>';
             
                 echo '<h2 class="nav-tab-wrapper vision-themes">';

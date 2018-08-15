@@ -67,20 +67,6 @@ function agama_setup() {
 add_action( 'after_setup_theme', 'agama_setup' );
 
 /**
- * Backwards Compatibility for Title Tag
- *
- * @since Agama 1.0
- */
-if ( ! function_exists( '_wp_render_title_tag' ) ) {
-function agama_slug_render_title() {
-?>
-<title><?php wp_title( '|', true, 'right' ); ?></title>
-<?php
-	}
-	add_action( 'wp_head', 'agama_slug_render_title' );
-}
-
-/**
  * Agama Thumb Title
  * Get post-page article title and separates it on two halfs
  *

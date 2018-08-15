@@ -18,8 +18,8 @@ get_template_part( 'framework/admin/modules/icon-picker/icon-picker-control' );
 // Include partial refresh class
 get_template_part( 'framework/admin/partial-refresh' );
 
-// Include theme pro features file.
-get_template_part( 'framework/admin/modules/pro-features/pro-features' );
+// Upgrade to Agama Pro
+get_template_part( 'framework/admin/modules/agama-pro/class-customize' );
 
 /**
  * Update Kirki Path's
@@ -2391,66 +2391,10 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		),
 		'default'		=> '#293744'
 	) );
-###################################################################################
-# AGAMA SUPPORT
-###################################################################################
-	Kirki::add_section( 'agama_support_section', array(
-		'title'			=> __( 'Agama Support', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'priority'		=> 140
-	) );
-###################################################################################
-# PRO FEATURES
-###################################################################################
-	Kirki::add_panel( 'agama_pro_panel', array(
-		'title'			=> __( 'Agama PRO Features', 'agama' ),
-		'priority'		=> 150
-	) );
-	Kirki::add_section( 'agama_headings_section', array(
-		'title'			=> __( 'Headings', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'panel'			=> 'agama_pro_panel'
-	) );
-	Kirki::add_section( 'agama_share_icons_section', array(
-		'title'			=> __( 'Social Share', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'panel'			=> 'agama_pro_panel'
-	) );
-	Kirki::add_section( 'agama_typography_section', array(
-		'title'			=> __( 'Typography', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'panel'			=> 'agama_pro_panel'
-	) );
-	Kirki::add_section( 'agama_lightbox_section', array(
-		'title'			=> __( 'Lightbox', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'panel'			=> 'agama_pro_panel'
-	) );
-	Kirki::add_section( 'agama_pages_section', array(
-		'title'			=> __( 'Pages', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'panel'			=> 'agama_pro_panel'
-	) );
-	Kirki::add_section( 'agama_portfolio_section', array(
-		'title'			=> __( 'Portfolio', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'panel'			=> 'agama_pro_panel'
-	) );
-	Kirki::add_section( 'agama_preloader_section', array(
-		'title'			=> __( 'Pre-Loader', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'panel'			=> 'agama_pro_panel'
-	) );
-	Kirki::add_section( 'agama_woocommerce_section', array(
-		'title'			=> __( 'WooCommerce', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'panel'			=> 'agama_pro_panel'
-	) );
-	Kirki::add_section( 'agama_contact_section', array(
-		'title'			=> __( 'Contact', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'panel'			=> 'agama_pro_panel'
-	) );
+#######################################
+# REMOVE SECTIONS
+#######################################
+    Kirki::remove_section( 'colors' );
 
 /**
  * Enqueue Javascript postMessage handlers for the Customizer.
@@ -2671,38 +2615,12 @@ function customize_styles_agama_support( $input ) { ?>
         #accordion-panel-agama_footer_panel h3:before {
             content: '\f2d1';
         }
-        #accordion-section-agama_support_section h3:before {
-            content: '\f1cd';
-        }
-        #accordion-panel-agama_pro_panel h3:before {
-            content: '\f005';
-        }
         #accordion-panel-nav_menus h3:before {
             content: '\f0c9';
         }
         #accordion-panel-widgets h3:before {
             content: '\f0ca';
         }
-		#customize-theme-controls #accordion-panel-agama_pro_panel .accordion-section-title:after {
-			color: #fff;
-		}
-		#customize-theme-controls #accordion-panel-agama_pro_panel .accordion-section-title {
-			background-color: rgba(254, 103, 100, 0.9);
-			color: #fff;
-		}
-		#customize-theme-controls #accordion-panel-agama_pro_panel .accordion-section-title:hover {
-			background-color: rgba(254, 103, 100, 1);
-		}
-		#customize-theme-controls #accordion-section-agama_support_section .theme-info a {
-			padding: 10px 8px;
-			display: block;
-			border-bottom: 1px solid #eee;
-			color: #555;
-		}
-		#customize-theme-controls #accordion-section-agama_support_section .theme-info a:hover {
-			color: #222;
-			background-color: #f5f5f5;
-		}
 		.theme-headers label > input[type="radio"] {
 		  display:none;
 		}
@@ -2712,51 +2630,6 @@ function customize_styles_agama_support( $input ) { ?>
 		}
 		.theme-headers label > input[type="radio"]:checked + img{
 		  border:2px solid #f00;
-		}
-		#accordion-section-agama_typography_section .accordion-section-content,
-		#accordion-section-agama_share_icons_section .accordion-section-content,
-		#accordion-section-agama_woocommerce_section .accordion-section-content,
-		#accordion-section-agama_lightbox_section .accordion-section-content,
-		#accordion-section-agama_body_background_animated_section .accordion-section-content,
-		#accordion-section-agama_contact_section .accordion-section-content {
-			background-color: #FE6663;
-			color: #fff;
-		}
-		#accordion-section-agama_typography_section .accordion-section-content a,
-		#accordion-section-agama_share_icons_section .accordion-section-content a,
-		#accordion-section-agama_woocommerce_section .accordion-section-content a,
-		#accordion-section-agama_lightbox_section .accordion-section-content a,
-		#accordion-section-agama_body_background_animated_section .accordion-section-content a,
-		#accordion-section-agama_contact_section .accordion-section-content a {
-			color: #000;
-		}
-		#accordion-section-agama_typography_section .accordion-section-content a:hover,
-		#accordion-section-agama_share_icons_section .accordion-section-content a:hover,
-		#accordion-section-agama_woocommerce_section .accordion-section-content a:hover,
-		#accordion-section-agama_lightbox_section .accordion-section-content a:hover,
-		#accordion-section-agama_body_background_animated_section .accordion-section-content a:hover,
-		#accordion-section-agama_contact_section .accordion-section-content a:hover {
-			color: #fff;
-		}
-		#sub-accordion-panel-agama_slider_panel li#accordion-section-agama_slide_3_section h3:before,
-		#sub-accordion-panel-agama_slider_panel li#accordion-section-agama_slide_4_section h3:before,
-		#sub-accordion-panel-agama_slider_panel li#accordion-section-agama_slide_5_section h3:before,
-		#sub-accordion-panel-agama_slider_panel li#accordion-section-agama_slide_6_section h3:before,
-		#sub-accordion-panel-agama_slider_panel li#accordion-section-agama_slide_7_section h3:before,
-		#sub-accordion-panel-agama_slider_panel li#accordion-section-agama_slide_8_section h3:before,
-		#sub-accordion-panel-agama_slider_panel li#accordion-section-agama_slide_9_section h3:before,
-		#sub-accordion-panel-agama_slider_panel li#accordion-section-agama_slide_10_section h3:before,
-		#sub-accordion-panel-agama_frontpage_boxes_panel li#accordion-section-agama_frontpage_boxes_section_5 h3:before,
-		#sub-accordion-panel-agama_frontpage_boxes_panel li#accordion-section-agama_frontpage_boxes_section_6 h3:before,
-		#sub-accordion-panel-agama_frontpage_boxes_panel li#accordion-section-agama_frontpage_boxes_section_7 h3:before,
-		#sub-accordion-panel-agama_frontpage_boxes_panel li#accordion-section-agama_frontpage_boxes_section_8 h3:before,
-		#sub-accordion-panel-agama_pro_panel li.accordion-section h3:before {
-			font-size: 11px;
-			content: "premium";
-			float: right;
-			right: 20px;
-			position: relative;
-			color: #FE6663;
 		}
 		.agama-customize-heading h3 {
 			border: 1px dashed #4A73AA;
@@ -2768,7 +2641,7 @@ function customize_styles_agama_support( $input ) { ?>
 		#customize-controls .customize-info .customize-help-toggle:focus, 
 		#customize-controls .customize-info .customize-help-toggle:hover, 
 		#customize-controls .customize-info.open .customize-help-toggle {
-			color: #FE6663;
+			color: #0085ba;
 		}
 		#available-menu-items .item-add:focus:before, 
 		#customize-controls .customize-info .customize-help-toggle:focus:before, 
@@ -2776,35 +2649,35 @@ function customize_styles_agama_support( $input ) { ?>
 		.menu-item-bar .item-delete:focus:before, 
 		.wp-customizer .menu-item .submitbox .submitdelete:focus, 
 		.wp-customizer button:focus .toggle-indicator:after {
-			-webkit-box-shadow: 0 0 0 1px #FE6663, 0 0 2px 1px <?php echo Agama_Helper::hex2rgba( '#FE6663', 0.8 ); ?>;
-			box-shadow: 0 0 0 1px #FE6663, 0 0 2px 1px <?php echo Agama_Helper::hex2rgba( '#FE6663', 0.8 ); ?>;
+			-webkit-box-shadow: 0 0 0 1px #0085ba, 0 0 2px 1px <?php echo Agama_Helper::hex2rgba( '#FE6663', 0.8 ); ?>;
+			box-shadow: 0 0 0 1px #0085ba, 0 0 2px 1px <?php echo Agama_Helper::hex2rgba( '#FE6663', 0.8 ); ?>;
 		}
 		#customize-controls .control-section .accordion-section-title:focus, 
 		#customize-controls .control-section .accordion-section-title:hover, 
 		#customize-controls .control-section.open .accordion-section-title, 
 		#customize-controls .control-section:hover>.accordion-section-title {
-			border-left-color: #FE6663;
-			color: #FE6663;
+			border-left-color: #0085ba;
+			color: #0085ba;
 		}
 		.customize-panel-back:focus, 
 		.customize-panel-back:hover, 
 		.customize-section-back:focus, 
 		.customize-section-back:hover {
-			border-left-color: #FE6663;
-			color: #FE6663;
+			border-left-color: #0085ba;
+			color: #0085ba;
 		}
 		#customize-theme-controls .control-section .accordion-section-title:focus:after, 
 		#customize-theme-controls .control-section .accordion-section-title:hover:after, 
 		#customize-theme-controls .control-section.open .accordion-section-title:after, 
-		#customize-theme-controls .control-section:hover>.accordion-section-title:after {
-			color: #FE6663;
+		#customize-theme-controls .control-section:hover > .accordion-section-title:after {
+			color: #0085ba;
 		}
 		.customize-controls-close:focus, 
 		.customize-controls-close:hover, 
 		.customize-controls-preview-toggle:focus, 
 		.customize-controls-preview-toggle:hover {
-			border-top-color: #FE6663;
-			color: #FE6663;
+			border-top-color: #0085ba;
+			color: #0085ba;
 		}
 		/* Override Kirki Default Colors */
 		.kirki-reset-section:hover, 
