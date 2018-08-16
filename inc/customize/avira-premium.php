@@ -22,7 +22,7 @@ function avira_premium_setting( $wp_customize ) {
 				<ul>
 					<li><a href="https://demo.speciatheme.com/pro/?theme=avira" class="btn-green" target="_blank"><i class="dashicons dashicons-desktop info-icon"></i><?php _e( 'Premium Demo','avira' ); ?> </a></li>
 					
-					<li><a href="themes.php?page=specia-theme-info#avira" class="btn-green"><i class="dashicons dashicons-visibility"></i><?php _e( 'View Details','avira' ); ?> </a></li>
+					<li><a href="themes.php?page=specia-store" class="btn-green"><i class="dashicons dashicons-visibility"></i><?php _e( 'View Details','avira' ); ?> </a></li>
 					
 					<li><a href="https://speciatheme.com/avira-premium-wordpress-theme/" class="btn-red" target="_blank"><i class="dashicons dashicons-cart"></i><?php _e( 'Buy Now','avira' ); ?> </a></li>
 					

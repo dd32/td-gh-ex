@@ -3,8 +3,8 @@
 Contributors: specia
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.9.8
-Stable tag: 1.0.41
-Version: 1.0.41
+Stable tag: 1.0.42
+Version: 1.0.42
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-logo, translation-ready, blog
@@ -36,6 +36,9 @@ Source: https://www.pexels.com/
 License: CC0 License
 
 ##Changelog
+version 1.0.42
+* Theme Details URL changed
+
 version 1.0.41
 * Added support link in readme
 
