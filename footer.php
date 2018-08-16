@@ -8,7 +8,7 @@
  */
 ?>
 	</div><!-- #content -->
-
+</div>
 <?php do_action('boxy_before_footer'); ?>
 	<footer id="colophon" class="site-footer footer-image " role="contentinfo">
 	 <?php global $boxy;
@@ -27,13 +27,9 @@
 				<div class="eight columns">
 					<?php if( get_theme_mod('copyright') ) : ?>
 							<p><?php echo get_theme_mod('copyright'); ?></p>
-						<?php else : ?>
-							<p>
-							 <?php printf( __( 'Powered by <a href="%1$s">WordPress</a>', 'boxy' ), esc_url( 'http://wordpress.org/') ); ?>
-							<span class="sep"> | </span>
-							<?php printf( __( 'Theme: %1$s by <a href="%2$s">Webulous</a>', 'boxy' ), 'boxy',  esc_url('http://www.webulous.in') ); ?>
-							</p>
-					   <?php endif; ?>
+						<?php else : 
+							printf( '<p> %1$s <a href="%2$s" target="_blank"> %3$s</a> %4$s <a href="%5$s" target="_blank" rel="designer">%6$s</a></p>', __('Powered by','boxy'), esc_url( 'http://wordpress.org/'), __('WordPress','boxy'), __('| Theme: Boxy by','boxy'), esc_url('https://www.webulousthemes.com/'), __('Webulous Themes','boxy')) ;
+   						endif; ?>
 				</div>
 				<div class="footer-right eight columns">      
 					<?php dynamic_sidebar( 'footer-nav' ); ?>

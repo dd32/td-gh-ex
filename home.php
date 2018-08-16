@@ -11,7 +11,7 @@
 global $boxy;
 get_header();
 if( get_theme_mod('blog-slider',false) ) { 
-	get_template_part('category-slider');
+	get_template_part('blog-category-slider');
 }
  ?>
 	<div id="content" class="site-content container">

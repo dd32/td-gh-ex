@@ -1676,6 +1676,41 @@ Boxy_Kirki::add_field( 'boxy', array(
 	'tooltip' => __('To show the slider on posts page','boxy'),
 ) );
 Boxy_Kirki::add_field( 'boxy', array(
+	'settings' => 'blog_slider_cat',
+	'label'    => __( 'Blog Slider Posts category', 'boxy' ),
+	'section'  => 'blog',
+	'type'     => 'select',
+	'choices' => Kirki_Helper::get_terms( 'category' ),
+	'active_callback' => array(
+		array(
+			'setting'  => 'blog-slider',
+			'operator' => '==',
+			'value'    => true,
+		),
+    ),
+    'tooltip' => __('Create post ( Goto Dashboard => Post => Add New ) and Post Featured Image ( Preferred size is 1200 x 450 pixels ) as taken as slider image and Post Content as taken as Flexcaption.','boxy'),
+) );
+Boxy_Kirki::add_field( 'boxy', array(
+	'settings' => 'blog_slider_count',
+	'label'    => __( 'No. of Sliders', 'boxy' ),
+	'section'  => 'blog',
+	'type'     => 'number',
+	'choices' => array(
+		'min' => 1,
+		'max' => 999,
+		'step' => 1,
+	),
+	'default'  => 2,
+	'active_callback' => array(
+		array(
+			'setting'  => 'blog-slider',
+			'operator' => '==',
+			'value'    => true,
+		),
+    ),
+    'tooltip' => __('Enter number of slides you want to display under your selected Category','boxy'),
+) );
+Boxy_Kirki::add_field( 'boxy', array(
 	'settings' => 'blog_layout',
 	'label'    => __( 'Select Blog Page Layout you prefer', 'boxy' ),
 	'section'  => 'blog',

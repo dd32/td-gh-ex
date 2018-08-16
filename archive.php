@@ -21,22 +21,22 @@ get_header(); ?>
 				<h1 class="page-title">
 				<?php
 					if ( is_category() ) :
-						printf( __( 'Category: %s', 'boxy' ), '<span class="vcard">' . single_cat_title( '', false ) . '</span>' );
+						printf( '%1$s: %2$s',__('Category','boxy' ), '<span class="vcard">' . single_cat_title( '', false ) . '</span>' );
 
 					elseif ( is_tag() ) :
-						printf( __( 'Tag: %s', 'boxy' ), '<span class="vcard">' . single_tag_title( '', false ) . '</span>' );
+						printf( '%1$s: %2$s',__('Tag','boxy' ), '<span class="vcard">' . single_tag_title( '', false ) . '</span>' );
 
 					elseif ( is_author() ) :
-						printf( __( 'Author: %s', 'boxy' ), '<span class="vcard">' . get_the_author() . '</span>' );
+						printf( '%1$s: %2$s',__('Author','boxy' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 					elseif ( is_day() ) :
-						printf( __( 'Day: %s', 'boxy' ), '<span>' . get_the_date() . '</span>' );
+						printf( '%1$s: %2$s',__('Day','boxy' ), '<span>' . get_the_date() . '</span>' );
 
 					elseif ( is_month() ) :
-						printf( __( 'Month: %s', 'boxy' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'boxy' ) ) . '</span>' );
+						printf( '%1$s: %2$s',__('Month','boxy' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'boxy' ) ) . '</span>' );
 
 					elseif ( is_year() ) :
-						printf( __( 'Year: %s', 'boxy' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'boxy' ) ) . '</span>' );
+						printf( '%1$s: %2$s',__('Year','boxy' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'boxy' ) ) . '</span>' );
 
 					elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
 						_e( 'Asides', 'boxy' );
@@ -110,5 +110,6 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 	 <?php do_action('boxy_two_sidebar_right'); ?>	
+
 	
 <?php get_footer(); ?>

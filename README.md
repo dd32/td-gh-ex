@@ -41,6 +41,10 @@ https://pixabay.com/en/man-handsome-male-model-guy-885223/
 
 == Change Log ==
 
+= 1.3.9 = 
+* Added option for separate slider selecting option in Blog Page. 
+* Updating .po file.
+
 = 1.3.8 = 
 * Scroll To top Enable/disable option added.
 * WPForms Lite plugin recommended. 
