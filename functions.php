@@ -250,7 +250,7 @@ function bb_ecommerce_store_font_url(){
 	$font_family[] = 'Unica One';
 
 	$query_args = array(
-		'family'	=> urlencode(implode('|',$font_family)),
+		'family'	=> rawurlencode(implode('|',$font_family)),
 	);
 	$font_url = add_query_arg($query_args,'//fonts.googleapis.com/css');
 	return $font_url;
@@ -409,6 +409,16 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
     
     return $fragments;
 }
+
+
+// Change number or products per row to 3
+add_filter('loop_shop_columns', 'loop_columns');
+	if (!function_exists('loop_columns')) {
+		function loop_columns() {
+	return 3; // 3 products per row
+	}
+}
+
 
 /* Custom template tags for this theme. */
 require get_template_directory() . '/inc/template-tags.php';

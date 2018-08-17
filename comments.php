@@ -21,32 +21,33 @@ if ( post_password_required() )
 <div id="comments" class="comments-area">
 
     <?php if ( have_comments() ) : ?>
-        <h2 class="comments-title">
+       <h2 class="comments-title">
             <?php
             $comments_number = get_comments_number();
-            if ( 1 === $comments_number ) {
-
+            if ( '1' === $comments_number ) {
                 /* translators: %s: post title */
                 printf( esc_html__( 'One thought on &ldquo;%s&rdquo;', 'bb-ecommerce-store' ), get_the_title() );
             } else {
                 printf(
-                /* translators: 1: number of comments, 2: post title */
                     esc_html(
-                        '%1$s thought on &ldquo;%2$s&rdquo;',
-                        '%1$s thoughts on &ldquo;%2$s&rdquo;',
-                        $comments_number,
-                        'comments title',
-                        'bb-ecommerce-store'
-
-                     ),
+                        /* translators: 1: number of comments, 2: post title */
+                        _nx( 
+                            '%1$s thought on &ldquo;%2$s&rdquo;',
+                            '%1$s thoughts on &ldquo;%2$s&rdquo;',
+                            $comments_number,
+                            'comments title',
+                            'bb-ecommerce-store'
+                        )
+                    ),
                     esc_html (number_format_i18n( $comments_number ) ),
                     get_the_title()
-
                 );
             }
             ?>
         </h2>
-        <?php the_comments_navigation(); ?>
+        <div class="pre">
+            <?php the_comments_navigation(); ?>
+        </div>
 
         <ol class="comment-list">
             <?php
@@ -58,7 +59,9 @@ if ( post_password_required() )
             ?>
         </ol>
 
-        <?php the_comments_navigation(); ?>
+        <div class="nex">
+            <?php the_comments_navigation(); ?>
+        </div>
 
     <?php endif; // Check for have_comments(). ?>
     <?php

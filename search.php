@@ -14,7 +14,7 @@ get_header(); ?>
       <div class="row">  
         <div class="col-md-4 col-sm-4"><?php get_sidebar(); ?></div>
         <div id="our-services" class="services col-md-8 col-sm-8">
-            <h1 class="entry-title"><?php printf( esc_html('Results For: %s', 'bb-ecommerce-store' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
+            <h1 class="search-title"><?php /* translators: %s: search term */ printf( esc_html__( 'Search Results for: %s','bb-ecommerce-store'), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
             <?php if ( have_posts() ) :
               /* Start the Loop */
                 
@@ -46,7 +46,7 @@ get_header(); ?>
     <?php }else if($left_right == 'Right Sidebar'){ ?>
       <div class="row">
         <div id="our-services" class="services col-md-8 col-sm-8">
-            <h1 class="entry-title"><?php printf( esc_html('Results For: %s', 'bb-ecommerce-store' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
+            <h1 class="search-title"><?php /* translators: %s: search term */ printf( esc_html__( 'Search Results for: %s','bb-ecommerce-store'), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
             <?php if ( have_posts() ) :
               /* Start the Loop */
                 
@@ -78,7 +78,7 @@ get_header(); ?>
       </div>
     <?php }else if($left_right == 'One Column'){ ?>
         <div id="our-services" class="services">
-            <h1 class="entry-title"><?php printf( esc_html('Results For: %s', 'bb-ecommerce-store' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
+             <h1 class="search-title"><?php /* translators: %s: search term */ printf( esc_html__( 'Search Results for: %s','bb-ecommerce-store'), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
             <?php if ( have_posts() ) :
               /* Start the Loop */
                 
@@ -110,7 +110,7 @@ get_header(); ?>
       <div class="row">
         <div id="sidebar" class="col-md-3 col-ms-3"><?php dynamic_sidebar('sidebar-1');?></div>
         <div id="our-services" class="services col-md-6 col-sm-6">
-           <h1 class="entry-title"><?php printf( esc_html('Results For: %s', 'bb-ecommerce-store' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
+            <h1 class="search-title"><?php /* translators: %s: search term */ printf( esc_html__( 'Search Results for: %s','bb-ecommerce-store'), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
             <?php if ( have_posts() ) :
               /* Start the Loop */
                 
@@ -144,7 +144,7 @@ get_header(); ?>
       <div class="row">
         <div id="sidebar" class="col-md-3 col-ms-3"><?php dynamic_sidebar('sidebar-1');?></div>
         <div id="our-services" class="services col-md-3 col-sm-3">
-            <h1 class="entry-title"><?php printf( esc_html('Results For: %s', 'bb-ecommerce-store' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
+             <h1 class="search-title"><?php /* translators: %s: search term */ printf( esc_html__( 'Search Results for: %s','bb-ecommerce-store'), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
             <?php if ( have_posts() ) :
               /* Start the Loop */
                 
@@ -177,7 +177,7 @@ get_header(); ?>
       </div>
     <?php }else if($left_right == 'Grid Layout'){ ?>
         <div id="our-services" class="services row">
-            <h1 class="entry-title"><?php printf( esc_html('Results For: %s', 'bb-ecommerce-store' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
+             <h1 class="search-title"><?php /* translators: %s: search term */ printf( esc_html__( 'Search Results for: %s','bb-ecommerce-store'), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
             <?php if ( have_posts() ) :
               /* Start the Loop */
                 

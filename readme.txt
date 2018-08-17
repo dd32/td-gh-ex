@@ -4,8 +4,8 @@
 
 Theme Name      :   BB Ecommerce Store
 Theme URI       :   https://www.themeshopy.com/free/wp-ecommerce-store-wordpress-theme/
-Version         :   1.3.3
-Tested up to    :   WP 4.9.7
+Version         :   1.3.4
+Tested up to    :   WP 4.9.8
 Author          :   Themeshopy
 Author URI      :   https://www.themeshopy.com/
 license         :   License: GNU General Public License v3 or later
@@ -200,6 +200,10 @@ Version 1.3.3
 i)   Added typography section.
 ii)  Potfile in language folder is updated.
 iii) Resolved error occured in files.
+
+Version 1.3.4
+i)   Updated woocommerce.
+ii)  Solved minor errors.
 
 Ecommerce Store Free version
 ==========================================================
