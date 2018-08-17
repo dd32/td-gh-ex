@@ -41,19 +41,19 @@
           </div>
           <div class="col-md-4 col-sm-4">
             <div class="socialbox">
-              <?php if( get_theme_mod( 'automobile_car_dealer_cont_facebook','' ) != '') { ?>
+              <?php if( get_theme_mod( 'automobile_car_dealer_cont_facebook') != '') { ?>
                 <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_cont_facebook','' ) ); ?>"><i class="fab fa-facebook-f"></i></a>
               <?php } ?>
-              <?php if( get_theme_mod( 'automobile_car_dealer_cont_twitter','' ) != '') { ?>
+              <?php if( get_theme_mod( 'automobile_car_dealer_cont_twitter') != '') { ?>
                 <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_cont_twitter','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i></a>
               <?php } ?>
-              <?php if( get_theme_mod( 'automobile_car_dealer_google_plus','' ) != '') { ?>
+              <?php if( get_theme_mod( 'automobile_car_dealer_google_plus') != '') { ?>
                 <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_google_plus','' ) ); ?>"><i class="fab fa-google-plus-g" aria-hidden="true"></i></a>
               <?php } ?>
-              <?php if( get_theme_mod( 'automobile_car_dealer_pinterest','' ) != '') { ?>
+              <?php if( get_theme_mod( 'automobile_car_dealer_pinterest') != '') { ?>
                 <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_pinterest','' ) ); ?>"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
               <?php } ?>
-              <?php if( get_theme_mod( 'automobile_car_dealer_tumblr','' ) != '') { ?>
+              <?php if( get_theme_mod( 'automobile_car_dealer_tumblr') != '') { ?>
                 <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_tumblr','' ) ); ?>"><i class="fab fa-tumblr" aria-hidden="true"></i></a>
               <?php } ?>
             </div>
@@ -68,7 +68,7 @@
             </div>
           </div>
         </div>
-        <div class="row m-1">
+        <div class="row m-0">
           <div class="col-md-9 col-sm-9 padding0">
             <div class="menus">
               <div class="menubox header">
@@ -81,7 +81,7 @@
         </div>
           <?php if( get_theme_mod( 'automobile_car_dealer_button_link','' ) != '') { ?>
             <div class="col-md-3 col-sm-3 appointbtn">
-                <a href="<?php echo esc_url( get_theme_mod('automobile_car_dealer_button_link','#' ) ); ?>"><?php esc_html_e( 'Make an Appointment','automobile-car-dealer' ); ?></a>
+               <i class="fas fa-calendar-alt"></i><a href="<?php echo esc_url( get_theme_mod('automobile_car_dealer_button_link','#' ) ); ?>"><?php esc_html_e( 'MAKE AN APPOINTMENT','automobile-car-dealer' ); ?></a>
             </div>
           <?php }?>
         </div>

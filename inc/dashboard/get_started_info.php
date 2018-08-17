@@ -17,7 +17,7 @@ function automobile_car_dealer_notice(){
 		<div class="notice-content">
 			<p><img src="<?php echo esc_url( get_template_directory_uri() .'/inc/dashboard/media/theme-logo.png' ); ?>" width="200"></p>
 			<h2><?php esc_html_e( 'Thanks for installing Automobile Car Dealer Lite, you rock!', 'automobile-car-dealer' ) ?> </h2>
-			<p><?php esc_html_e( 'Take benefit of a variety of features, functionalities, elements, and an exclusive set of customization options to build your own professional real estate business website.', 'automobile-car-dealer' ) ?></p>
+			<p><?php esc_html_e( 'Take benefit of a variety of features, functionalities, elements, and an exclusive set of customization options to build your own professional automobile website.', 'automobile-car-dealer' ) ?></p>
 			<p><?php esc_html_e( "Please Click on the link below to know the theme setup information", 'automobile-car-dealer' ) ?></p>
 			<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=automobile-car-dealer-guide-page' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Getting Started With Automobile Car Dealer', 'automobile-car-dealer' ); ?></a></p>
 		</div>
@@ -160,5 +160,4 @@ function automobile_car_dealer_guide() {
 		</div>
 	</div>
 
-<?php
-}?>
+<?php }?>

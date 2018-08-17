@@ -2,8 +2,8 @@
 
 Theme Name      :   Automobile Car Dealer
 Theme URI       :   https://www.buywptemplates.com/themes/free-car-dealer-wordpress-theme
-Version         :   0.3.2
-Tested up to    :   WP 4.9.7
+Version         :   0.3.3
+Tested up to    :   WP 4.9.8
 Author          :   Buywptemplates
 Author URI      :   https://www.buywptemplates.com/
 license         :   GNU General Public License v3.0
@@ -93,50 +93,44 @@ Theme is Built using the following resource bundles.
     -- Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
     -- https://github.com/twbs/bootstrap/blob/master/LICENSE
 
-	CSS nivo-slider.css
-	-- Copyright 2012, Dev7studios Free to use and abuse under the MIT license.
-    -- http://www.opensource.org/licenses/mit-license.php
-
-    JS nivo-slider.js
-    -- Copyright 2012, Dev7studios
-	-- Free to use and abuse under the MIT license.
-	-- http://www.opensource.org/licenses/mit-license.php
-
     Font-awesome.css
     -- Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  	-- License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 
-3   Customizer Licence
-		All code, unless otherwise noted, is licensed under the GNU GPL, version 2 or later.
-		2016 © Justin Tadlock.
-
-4 	Tether MIT License
+3 	Tether MIT License
 	https://github.com/HubSpot/tether/blob/master/LICENSE
 	https://github.com/HubSpot/tether
 
-5   Pexels image,
+4   Pixabay image,
 	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://www.pexels.com/photo-license/
+	Source: https://pixabay.com/en/service/terms/
 
-	Header image, Copyright Snapwire
+	Header image, Copyright OpenClipart-Vectors
 	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://www.pexels.com/photo/white-coupe-car-near-green-grass-9808/
+	Source: https://pixabay.com/en/car-sports-car-luxury-model-auto-1300629/
 
-	Post image, Copyright skeeze
+	Our Project, Copyright MikesPhotos
 	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://www.pexels.com/photo/auto-automobile-automotive-car-358070/
+	Source: https://pixabay.com/en/mercedes-car-transport-luxury-auto-1338063/
 
-	Post image, Copyright Burak Kebapci
+	Post image, Copyright Free-Photos
 	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://www.pexels.com/photo/blue-forest-car-beetle-105032/
+	Source: https://pixabay.com/en/bmw-car-front-sports-car-tuned-918408/
 
-	Post image, Copyright Mikes Photos
+	Post image, Copyright OpenClipart-Vectors
 	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://www.pexels.com/photo/alloy-asphalt-auto-automobile-241316/
+	Source: https://pixabay.com/en/car-sports-car-luxury-model-auto-1300629/
 
-	Post image, Copyright oskaline
+	Post image, Copyright Up-Free
 	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://www.pexels.com/photo/winter-vehicle-sport-black-80465/
+	Source: https://pixabay.com/en/users/Up-Free-427519/
+
+	Post image, Copyright PIRO4D
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://pixabay.com/en/audi-sports-car-auto-a8-red-1890494/
+	
+5 - Customizer Pro
+	Source: https://github.com/justintadlock/trt-customizer-pro  
 
 === Automobile Car Dealer Free version ===
 
@@ -167,3 +161,12 @@ Version 0.3.2
 	i.   Done changes in screenshot.
 	ii.  Updated RTL file.
 	iii. Added post formats tag.
+
+Version 0.3.3
+	i.   Added wocommerce.
+	ii.  Added typography.
+	iii. Updated theme slider.
+	iv.  Resolved minor theme issues.
+	v.   Updated Pot file.
+	vi.  Theme is updated with Post Formats.
+	vii. Added the proper format of image url.

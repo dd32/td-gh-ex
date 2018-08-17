@@ -5,7 +5,6 @@
  * @package Automobile Car Dealer
  */
 
-
 if ( ! function_exists( 'automobile_car_dealer_the_attached_image' ) ) :
 /**
  * Prints the attached image with a link to the next attached image.
@@ -81,7 +80,7 @@ if ( ! function_exists( 'automobile_car_dealer_the_custom_logo' ) ) :
  *
  * Does nothing if the custom logo is not available.
  *
- * @since Twenty Sixteen 1.2
+ * @since Automobile Car Dealer
  */
 function automobile_car_dealer_the_custom_logo() {
 	if ( function_exists( 'the_custom_logo' ) ) {

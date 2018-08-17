@@ -16,7 +16,6 @@
     $video = get_media_embedded_in_content( $content, array( 'video', 'object', 'embed', 'iframe' ) );
   }
 ?>
-
 <div id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>    
   <h3 class="section-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h3>  
   <div class="box-image">
@@ -32,12 +31,12 @@
              }
             };
           };
-        ?>
+    ?>
   </div>
   <div class="new-text">
     <p><?php the_excerpt();?></p>
   </div>
   <div class="postbtn">
-    <a href="<?php the_permalink(); ?>"><?php esc_html_e('View More','automobile-car-dealer'); ?></a>
+    <a href="<?php the_permalink(); ?>"><?php esc_html_e('Veiw More','automobile-car-dealer'); ?></a>
   </div>
 </div>

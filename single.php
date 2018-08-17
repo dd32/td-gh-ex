@@ -14,10 +14,10 @@ get_header(); ?>
 			<div id="content_box">
 				<?php while ( have_posts() ) : the_post(); ?>
 					<h3><?php the_title();?></h3>
-					<div class="metabox">
-						<span class="entry-date"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( get_the_date() ); ?></a></span>
-						<span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
-						<span class="entry-comments"> <?php comments_number( __('0 Comment', 'automobile-car-dealer'), __('0 Comments', 'automobile-car-dealer'), __('% Comments', 'automobile-car-dealer') ); ?> </span>
+					<div class="box">
+						<i class="fa fa-calendar" aria-hidden="true"></i><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( get_the_date() ); ?></a>
+						<i class="fa fa-user" aria-hidden="true"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a>
+						<i class="fas fa-comments"></i><?php comments_number( __('0 Comment', 'automobile-car-dealer'), __('0 Comments', 'automobile-car-dealer'), __('% Comments', 'automobile-car-dealer') ); ?>
 					</div>
 					<?php if(has_post_thumbnail()) { ?>
 						<div class="feature-box">	
@@ -69,10 +69,10 @@ get_header(); ?>
 				<div class="col-md-6 col-sm-6" id="content_box">
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h3><?php the_title();?></h3>
-						<div class="metabox">
-							<span class="entry-date"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( get_the_date() ); ?></a></span>
-							<span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
-							<span class="entry-comments"> <?php comments_number( __('0 Comment', 'automobile-car-dealer'), __('0 Comments', 'automobile-car-dealer'), __('% Comments', 'automobile-car-dealer') ); ?> </span>
+						<div class="box">
+							<i class="fa fa-calendar" aria-hidden="true"></i><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( get_the_date() ); ?></a>
+							<i class="fa fa-user" aria-hidden="true"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a>
+							<i class="fas fa-comments"></i><?php comments_number( __('0 Comment', 'automobile-car-dealer'), __('0 Comments', 'automobile-car-dealer'), __('% Comments', 'automobile-car-dealer') ); ?>
 						</div>
 						<?php if(has_post_thumbnail()) { ?>
 							<hr>
@@ -128,10 +128,10 @@ get_header(); ?>
 				<div class="col-md-3 col-sm-3" id="content_box">
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h3><?php the_title();?></h3>
-						<div class="metabox">
-							<span class="entry-date"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( get_the_date() ); ?></a></span>
-							<span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
-							<span class="entry-comments"> <?php comments_number( __('0 Comment', 'automobile-car-dealer'), __('0 Comments', 'automobile-car-dealer'), __('% Comments', 'automobile-car-dealer') ); ?> </span>
+						<div class="box">
+							<i class="fa fa-calendar" aria-hidden="true"></i><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( get_the_date() ); ?></a>
+							<i class="fa fa-user" aria-hidden="true"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a>
+							<i class="fas fa-comments"></i><?php comments_number( __('0 Comment', 'automobile-car-dealer'), __('0 Comments', 'automobile-car-dealer'), __('% Comments', 'automobile-car-dealer') ); ?>
 						</div>
 						<?php if(has_post_thumbnail()) { ?>
 							<hr>
@@ -187,10 +187,10 @@ get_header(); ?>
 				<div class="col-md-8 col-sm-8" id="content_box">
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h3><?php the_title();?></h3>
-						<div class="metabox">
-							<span class="entry-date"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( get_the_date() ); ?></a></span>
-							<span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
-							<span class="entry-comments"> <?php comments_number( __('0 Comment', 'automobile-car-dealer'), __('0 Comments', 'automobile-car-dealer'), __('% Comments', 'automobile-car-dealer') ); ?> </span>
+						<div class="box">
+							<i class="fa fa-calendar" aria-hidden="true"></i><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( get_the_date() ); ?></a>
+							<i class="fa fa-user" aria-hidden="true"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a>
+							<i class="fas fa-comments"></i><?php comments_number( __('0 Comment', 'automobile-car-dealer'), __('0 Comments', 'automobile-car-dealer'), __('% Comments', 'automobile-car-dealer') ); ?>
 						</div>
 						<?php if(has_post_thumbnail()) { ?>
 							<hr>
@@ -246,10 +246,10 @@ get_header(); ?>
 				<div class="col-md-8 col-sm-8" id="content_box">
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h3><?php the_title();?></h3>
-						<div class="metabox">
-							<span class="entry-date"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( get_the_date() ); ?></a></span>
-							<span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
-							<span class="entry-comments"> <?php comments_number( __('0 Comment', 'automobile-car-dealer'), __('0 Comments', 'automobile-car-dealer'), __('% Comments', 'automobile-car-dealer') ); ?> </span>
+						<div class="box">
+							<i class="fa fa-calendar" aria-hidden="true"></i><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( get_the_date() ); ?></a>
+							<i class="fa fa-user" aria-hidden="true"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a>
+							<i class="fas fa-comments"></i><?php comments_number( __('0 Comment', 'automobile-car-dealer'), __('0 Comments', 'automobile-car-dealer'), __('% Comments', 'automobile-car-dealer') ); ?>
 						</div>
 						<?php if(has_post_thumbnail()) { ?>
 							<hr>
@@ -303,10 +303,10 @@ get_header(); ?>
 		       	<div class="col-md-8 col-sm-8" id="content_box">
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h3><?php the_title();?></h3>
-						<div class="metabox">
-							<span class="entry-date"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( get_the_date() ); ?></a></span>
-							<span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
-							<span class="entry-comments"> <?php comments_number( __('0 Comment', 'automobile-car-dealer'), __('0 Comments', 'automobile-car-dealer'), __('% Comments', 'automobile-car-dealer') ); ?> </span>
+						<div class="box">
+							<i class="fa fa-calendar" aria-hidden="true"></i><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( get_the_date() ); ?></a>
+							<i class="fa fa-user" aria-hidden="true"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a>
+							<i class="fas fa-comments"></i><?php comments_number( __('0 Comment', 'automobile-car-dealer'), __('0 Comments', 'automobile-car-dealer'), __('% Comments', 'automobile-car-dealer') ); ?>
 						</div>
 						<?php if(has_post_thumbnail()) { ?>
 							<hr>

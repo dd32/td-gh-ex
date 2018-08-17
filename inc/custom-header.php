@@ -16,7 +16,6 @@ function automobile_car_dealer_custom_header_setup() {
 		'height'                 => 400,
 		'wp-head-callback'       => 'automobile_car_dealer_header_style',
 	) ) );
-
 }
 
 add_action( 'after_setup_theme', 'automobile_car_dealer_custom_header_setup' );

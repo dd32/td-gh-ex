@@ -4,11 +4,11 @@ Theme URI: https://www.buywptemplates.com/themes/free-car-dealer-wordpress-theme
 Author: Buywptemplates
 Author URI: https://www.buywptemplates.com
 Description: Automobile car dealer theme is a responsive WordPress theme that is created by the team of professionals with optimized codes and interactive designs to make it secure and stunning at the same time. This SEO friendly, robust WordPress theme by Buywptemplates is perfect for dealers of new or used cars, motorbikes, and motorcycles. Its Mega Menu allows showcasing the portfolio of products in best possible ways. Simple and adaptable car Dealer WordPress Theme is clean, user-friendly, and responsive. It is professional in both looks and functionalities. It is flexible enough and allows customizing via personalization options. Right from publishing automotive news or blogs on the website or sharing it on different social media platforms; everything becomes easy and hassle-free with Automobile car dealer themes. With clean code, this multi-purpose mobile-friendly WordPress theme is ideal for motorhome and car dealers. From an effective call to action button to amazingly designed landing page, this theme is well-equipped with all the functionalities and functions to streamline the entire automobile business process right from browsing till purchase. Demo: https://www.buywptemplates.com/automobile-car-dealer-pro
-Version: 0.3.2
+Version: 0.3.3
 License: GNU General Public License
 License URI: license.txt
 Text Domain: automobile-car-dealer
-Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, post-formats, footer-widgets, sticky-post, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, news, portfolio
+Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, theme-options, threaded-comments, post-formats , translation-ready, rtl-language-support, blog, portfolio, e-commerce
 
 Automobile Car Dealer WordPress Theme incorporates code from VW Restaurant Lite WordPress Theme, Copyright 2016 VW Themes
 Automobile Car Dealer WordPress Theme is distributed under the terms of the GNU GPL
@@ -25,7 +25,7 @@ body{
   -ms-word-wrap:break-word;
   word-wrap:break-word;
   background-color:#f1f1f1;
-  font:12px/22px arial;
+  font:14px;
   color:#5b5b5b;
   font-family: 'Poppins', sans-serif;
 }
@@ -44,7 +44,8 @@ h2,
 h3,
 h4,
 h5,
-h6{ 
+h6{
+  font-family: 'Ubuntu', sans-serif;
   margin:0;
   padding:0 0 15px;
 }
@@ -66,7 +67,7 @@ ol{
   padding:0;
 }
 input[type='submit']{
-  background-color: #d6d6d4;
+  background-color: #000;
   padding: 1%;
   border: 0;
   color: #000;
@@ -94,6 +95,7 @@ textarea{
 }
 select{
   width:100%;
+  padding: 13px;
 }
 .center{ 
   text-align:center;
@@ -182,53 +184,88 @@ h2.section-title {
 }
 
 /* --------- SLIDER--------- */
+#slider .carousel-control-next-icon,
+#slider .carousel-control-prev-icon{
+background: transparent;
+}
+#slider .metabox span{
+  margin-right: 15px;
+}
+#slider .metabox {
+    font-size: 12px;
+    margin-bottom: 2em;
+}
+#slider .metabox i{
+  margin-right: 10px;
+}
 #slider{ 
   max-width:100%;
-  margin:auto;
+  margin:auto; 
   padding:0;
-  position:relative;
+  background: #000;
 }
-.nivo-caption {
-  top:25%!important;
+#slider img {
+  width: 100%;
+  opacity: 0.7;
 }
-#slider .slide-cap p {
+#slider .carousel-item-next,#slider .carousel-item-prev,#slider .carousel-item.active {
+  display: block !important;
+}
+
+#slider .carousel-control-next, #slider .carousel-control-prev{
+  opacity: 1;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon{
+  width: auto;
+  height: auto;
+}
+#slider .inner_carousel h2 a {
+  font-weight: bolder;
+  letter-spacing: 1px;
   color: #fff;
-  font-weight: bold;
-  padding: 0 10%;
+  padding:0px;
 }
-.main-slide {
-  margin: 0 auto;
-  background: rgba(0, 0, 0, 0.47);
-  width: 80%;
-  padding: 10px 0 20px;
+#slider .inner_carousel h2{
+  padding: 0px;
+}
+#slider .inner_carousel {
+  text-align: left;
+  color: #fff;
+}
+#slider .carousel-caption{
+  padding-bottom:0px !important;
+  top: 46%;
+}
+#slider hr{
+  margin-top: -29rem;
+  border:none;
+
+}
+#slider .inner_carousel h2{
+  border-left: 3px solid white;
+  margin-right: 10px;
+  text-align: center;
+}
+#slider p{
+  text-align: center;
+  margin: 10px;
 }
 .slide-button a {
-  background: #dd3333;
   color: #fff;
   font-size: 20px;
   padding: 10px 15px;
 }
 .slide-button {
   margin: 20px;
+  margin-left: 43%;
 }
-
-/*blog section*/
-.attachment img {
-  width: 100%;
+#slider i{
+  font-size: 20px;
 }
-a.r_button {
-  background: rgba(158, 158, 158, 0.38);
-  padding: 0.5em 2em;
-  color: #000;
-  font-weight: bold;
-}
-section h3 {
-  font-weight: bold;
-  text-align: center;
-  margin: 0 0 7px;
-  padding: 0;
-  font-size: 30px;
-  color: #000;
+.slide-button i {
+    background: red;
+    padding: 8px;
+    font-size: 20px;
 }
 /*-----------------Search pop up----------------*/
 .serach_outer {
@@ -316,6 +353,11 @@ input.search-field {
   width: 100%;
   background: transparent;
 }
+.appointbtn i{
+  font-size: 20px;
+  color: white;
+  padding: 4px;
+}
 #header{
   background: #fff;
 }
@@ -328,7 +370,7 @@ input.search-field {
 }
 .appointbtn {
   background: #dd3333;
-  padding: 19px 0;
+  padding: 5px 0;
   text-align: center;
 }
 .appointbtn a {
@@ -359,6 +401,9 @@ input.search-field {
 }
 .logo a:hover {
   text-decoration: none;
+}
+.blog-section {
+  margin-top: 3%;
 }
 #header .logo{
   margin:0;
@@ -430,8 +475,11 @@ input.search-field {
   display: inline;
 }
 .socialbox {
-    text-align: left;
-    }
+  text-align: left;
+}
+.m-1 {
+  margin: 0px 0.25rem 0px 0px !important;
+}
 
 /* --------- Homepage --------- */
 #blog_sec i {
@@ -492,6 +540,10 @@ input.search-field {
   display: inline-block;
 }
 
+/*video*/
+iframe{
+ width: 100%;
+}
 /* Breadcrumb */
 
 .bradcrumbs{
@@ -563,24 +615,13 @@ input.search-field {
 }
 
 /* --------- Blog Page ------- */
-.metabox{
+.box{
   color:#000;
   padding:15px 0;
   clear:both;
 }
-.metabox .entry-date{
-  background:url('images/date.png') no-repeat;
-  padding: 0 0 0 20px;
-  margin:0 13px 0 0;
-}
-.metabox .entry-author{
-  background:url('images/author.png') no-repeat;
-  padding: 0 0 0 20px;
-  margin:0 20px 0 0;
-}
-.metabox .entry-comments{
-  background:url('images/comments.png') no-repeat;
-  padding: 0 0 0 20px;
+.box i{
+  padding: 5px;
 }
 
 /* Comments BOX */
@@ -708,6 +749,11 @@ input.search-field {
 #sidebar select {
   padding: 10px;
 }
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 0px !important;
+}
 #sidebar input[type="search"] {
   background:transparent;
   padding:10px 10px; 
@@ -819,10 +865,6 @@ table {
   margin:20px 0;
   clear:both;
 }
-#content_box h1{
-  font-size:51px;
-  float: left;
-}
 #content_box h2{
   font-size:32px;
   font-weight:normal;
@@ -864,10 +906,9 @@ table {
   font-size:16px;
 }
 #content_box ul li{
-  list-style-type: circle;
-  padding:0 0 0 4px;
-  margin:0 0 20px 0;
-  line-height:25px;
+  list-style-type: none;
+    margin: 0 21px 20px 0;
+    line-height: 25px;
 }
 #content_box ul li ul li{
   list-style-type: circle;
@@ -950,7 +991,7 @@ a.button {
   float:left;
 }
 .footer-wp input[type="submit"] {
-  padding: 10px 12px;
+  padding: 9px 12px;
   float: right;
   border: none;
   background: #dd3333;
@@ -960,6 +1001,9 @@ a.button {
 }
 .footer-wp  td#prev a {
   color: #fff;
+}
+label{
+  width:74%;
 }
 .footer-wp caption {
   font-weight: bold;
@@ -1170,7 +1214,6 @@ input.search-submit,
 
 /*---Our Project --*/
 #project h3 {
-  font-family: 'Ubuntu', sans-serif;
   text-align: left;
   font-size: 35px;
   color: #111111;
@@ -1188,8 +1231,7 @@ input.search-submit,
   padding: 10px 0; 
 }
 .categorybox h4 {
-  font-size: 15px;
-  font-family: 'Ubuntu', sans-serif;
+  font-size: 15px;  
   font-weight: bold;
   color: #000;
   padding: 0;
@@ -1203,7 +1245,131 @@ input.search-submit,
     float: left;
 }
 
+/* Woocommerce */
+.woocommerce span.onsale{
+  background: #dd3333;
+  padding: 0;
+}
+.products li {
+    border: solid 1px #dcdcdc;
+    padding: 10px !important;
+    width: 30% !important;
+    text-align: center;
+    margin-right: 10px !important;
+}
+.woocommerce ul.products li.product .star-rating {
+    font-size: .857em;
+    margin: 0 auto;
+}
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 10px;
+    line-height: normal;
+}
+#add_payment_method table.cart td.actions .coupon .input-text, .woocommerce-cart table.cart td.actions .coupon .input-text, .woocommerce-checkout table.cart td.actions .coupon .input-text {
+    float: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #d3ced2;
+    padding: 9px 6px 5px;
+    margin: 0 4px 0 0;
+    outline: 0;
+}
+h2.woocommerce-loop-product__title,
+.woocommerce div.product .product_title {
+    color: #000;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-align: center;
+  }
+.woocommerce ul.products li.product .price,
+.woocommerce div.product p.price, .woocommerce div.product span.price {
+    color: #000;
+}
+.woocommerce div.product .product_title,.woocommerce div.product p.price, .woocommerce div.product span.price{
+  margin-bottom: 5px;
+}
+
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
+  background: #dd3333;
+  color: #fff;
+  border-radius: 0;
+  padding: 12px;
+}
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{
+  background: #000;
+  color: #fff;
+}
+.woocommerce .quantity .qty {
+    width: 5em;
+    padding: 6px;
+    border-radius: 0;
+    border: solid 1px #000;
+    color: #000;
+}
+.col-1,.col-2 {
+    max-width: 100%;
+}
+nav.woocommerce-MyAccount-navigation ul {
+    list-style: none;
+}
+nav.woocommerce-MyAccount-navigation ul li {
+    background: #dd3333;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+nav.woocommerce-MyAccount-navigation ul li a{
+  color: #fff;
+}
+span.posted_in {
+    display: block;
+}
+span.woocommerce-input-wrapper,
+.woocommerce label {
+ width: 100%;
+}
+.woocommerce-message {
+    border-top-color: #dd3333;
+}
+.woocommerce-message::before {
+    content: '\e015';
+    color: #dd3333;
+}
+.summary .product_title{
+  border:none;
+}
 /*responsive menu*/
+@media screen and (min-width:320px) and (max-width: 425px){
+  .topbar span {
+    display: block;
+    text-align: center;
+}
+#slider{
+  margin-top: 67%;
+}
+#slider p, #slider h2 {
+    display: none;
+}
+.slide-button{
+  margin-left: 0px;
+  text-align: center;
+  margin-bottom: 31%;
+}
+.topbar span {
+    font-size: 15px;
+    float: none;
+}
+#header .nav{
+  top:-200px;
+}
+.socialbox {
+    text-align: center;
+}
+}
 @media screen and (max-width:720px) {
   .menus{
     background: transparent;
@@ -1325,7 +1491,7 @@ input.search-submit,
     display:block;
     position:absolute;
     left:100px;
-    top:-30px;
+    top:-66px;
   }  
   .header .nav ul.sub-menu{
     margin-top:6px;
@@ -1356,6 +1522,9 @@ input.search-submit,
     padding-bottom:10px;
     border-bottom:1px #313131 solid;
   }
+   label {
+    width: 75%;
+}
 }
 @media screen and (max-width: 720px) and (min-width: 320px){
   .blog-section .new-line {
@@ -1368,8 +1537,8 @@ input.search-submit,
     clear: both;
   }
 }
-
-/*video*/
-iframe{
- width: 100%;
+@media screen and (max-width: 768px){
+label {
+    width: 55%;
+}
 }

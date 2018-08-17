@@ -8,74 +8,58 @@ get_header(); ?>
 <?php do_action( 'automobile_car_dealer_above_slider' ); ?>
 
 <?php /** slider section **/ ?>
-  <div class="slider-main">
-    <?php
-      // Get pages set in the customizer (if any)
-      $pages = array();
-      for ( $count = 1; $count <= 5; $count++ ) {
-        $mod = absint( get_theme_mod( 'automobile_car_dealer_slidersettings-page-' . $count ) );
-        if ( 'page-none-selected' != $mod ) {
-          $pages[] = $mod;
-        }
-      }
-      
-      if( !empty($pages) ) :
-        $args = array(
-          'posts_per_page' => 5,
-          'post_type' => 'page',
-          'post__in' => $pages,
-          'orderby' => 'post__in'
-        );
-        $query = new WP_Query( $args );
-        if ( $query->have_posts() ) :
-          $count = 1;
-          ?>
-          <div id="slider" class="nivoSlider">
-            <?php
-              $automobile_car_dealer_n = 0;
-            while ( $query->have_posts() ) : $query->the_post();
-                
-                $automobile_car_dealer_n++;
-                $automobile_car_dealer_slideno[] = $automobile_car_dealer_n;
-                $automobile_car_dealer_slidetitle[] = get_the_title();
-                $automobile_car_dealer_slideexcerpt[] = get_the_excerpt();
-                $automobile_car_dealer_slidelink[] = esc_url( get_permalink() );
-                ?>
-                  <img src="<?php the_post_thumbnail_url('full'); ?>" title="#slidecaption<?php echo esc_attr( $automobile_car_dealer_n ); ?>" />
-                <?php
-              $count++;
-            endwhile;
-            wp_reset_postdata(); ?>
-          </div>
+ <section id="slider">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
+        <?php $pages = array();
+            for ( $count = 1; $count <= 3; $count++ ) {
+              $mod = intval( get_theme_mod( 'automobile_car_dealer_slider' . $count ));
+              if ( 'page-none-selected' != $mod ) {
+                $pages[] = $mod;
+              }
+            }
+            if( !empty($pages) ) :
+            $args = array(
+                'post_type' => 'page',
+                'post__in' => $pages,
+                'orderby' => 'post__in'
+            );
+            $query = new WP_Query( $args );
+            if ( $query->have_posts() ) :
+              $i = 1;
+        ?>     
+        <div class="carousel-inner" role="listbox">
+            <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
+            <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
+                <img src="<?php the_post_thumbnail_url('full'); ?>"/>
+                <div class="carousel-caption">
+                  <div class="inner_carousel">
+                      <h2><a href="<?php echo esc_url( get_permalink() );?>"><?php the_title();?></a></h2>
+                      <p><?php the_excerpt(); ?></p> 
 
-          <?php
-          $automobile_car_dealer_k = 0;
-            foreach( $automobile_car_dealer_slideno as $automobile_car_dealer_sln ){ ?>
-              <div id="slidecaption<?php echo esc_attr( $automobile_car_dealer_sln ); ?>" class="nivo-html-caption">
-                <div class="slide-cap">
-                  <div class="container">
-                    <div class="main-slide">
-                      <h2><?php echo esc_html( $automobile_car_dealer_slidetitle[$automobile_car_dealer_k] ); ?></h2>
-                      <p><?php echo esc_html( $automobile_car_dealer_slideexcerpt[$automobile_car_dealer_k] ); ?></p>
-                      <div class="slide-button">
-                        <a class="read-more" href="<?php echo esc_url( $automobile_car_dealer_slidelink[$automobile_car_dealer_k] ); ?>"><?php esc_html_e( 'Read More','automobile-car-dealer' ); ?></a>
-                      </div>
-                    </div>
+                     <div class="slide-button">
+                     <i class="fas fa-long-arrow-alt-right"></i>
+                        <a class="read-more" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More','automobile-car-dealer' ); ?></a>
+                      </div>              
+                      
                   </div>
                 </div>
-              </div>
-              <?php $automobile_car_dealer_k++;
-          }
-        else : ?>
-            <div class="header-no-slider"></div>
-          <?php
-        endif;
-      else : ?>
-          <div class="header-no-slider"></div>
-      <?php
-      endif; 
-    ?>
-  </div>
+            </div>
+            <?php $i++; endwhile; 
+            wp_reset_postdata();?>
+        </div>
+        <?php else : ?>
+        <div class="no-postfound"></div>
+          <?php endif;
+        endif;?>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left" ></i></span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right" ></i></span>
+        </a>
+      </div>  
+      <div class="clearfix"></div>
+  </section> 
 
 <?php do_action( 'automobile_car_dealer_above_project' ); ?>
 
@@ -127,7 +111,7 @@ get_header(); ?>
 
 <?php do_action( 'automobile_car_dealer_above_content' ); ?>
 
-<div id="content-vw" class="container">
+<div class="container">
   <?php while ( have_posts() ) : the_post(); ?>
     <?php the_content(); ?>
   <?php endwhile; // end of the loop. ?>
