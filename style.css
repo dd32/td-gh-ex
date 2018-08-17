@@ -4,7 +4,7 @@ Theme URI: http://themonic.com/iconic-one/
 Author: Themonic
 Author URI: http://themonic.com
 Description: Iconic One is a premium quality theme with pixel perfect typography and responsiveness and is built for speed with pagespeed score of 95+, Iconic One implements proper SEO so that your content will rank high and is compatible with AIOSEO and Yoast SEO, It makes proper use of Live customizer that allows you to setup the theme in minutes, you can easily upload the logo, modify the background color, footer text, social media urls without touching any line of code. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. Support is free, access the support here http://themonic.com/support/, Report issues and feedback at http://themonic.com/feedback/.
-Version: 1.9.4
+Version: 1.9.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, two-columns, right-sidebar, custom-background, custom-menu, custom-logo, full-width-template, rtl-language-support, theme-options, custom-colors, flexible-header, translation-ready, news, e-commerce, sticky-post, featured-images, threaded-comments
@@ -579,6 +579,7 @@ section[role="banner"] {
 	-moz-hyphens: auto;
 	hyphens: auto;
 	margin-bottom: 20px;
+	line-height: 1.4;
 	word-wrap: break-word;
 }
 .widget-area .widget-title {
@@ -599,7 +600,7 @@ section[role="banner"] {
 }
 .widget-area .widget p {
 	margin-bottom: 12px;
-	padding: 10px;
+	padding: 8px 10px;
 }
 	
 .widget-area .textwidget ul {
@@ -711,7 +712,7 @@ footer[role="contentinfo"] a:hover {
 .entry-content,
 .entry-summary,
 .mu_register {
-	line-height: 1.714285714;
+	line-height: 1.7;
 }
 .entry-content h1,
 .comment-content h1,
@@ -726,7 +727,7 @@ footer[role="contentinfo"] a:hover {
 .entry-content h6,
 .comment-content h6 {
 	margin: 24px 0;
-	line-height: 1.714285714;
+	line-height: 1.7;
 }
 .entry-content h1,
 .comment-content h1 {
@@ -742,29 +743,29 @@ footer[role="contentinfo"] a:hover {
 .entry-content h3,
 .comment-content h3 {
 	font-size: 16px;
-	line-height: 1.846153846;
+	line-height: 1.8;
 }
 .entry-content h4,
 .comment-content h4 {
 	font-size: 14px;
-	line-height: 1.846153846;
+	line-height: 1.8;
 }
 .entry-content h5,
 .comment-content h5 {
 	font-size: 13px;
-	line-height: 1.846153846;
+	line-height: 1.8;
 }
 .entry-content h6,
 .comment-content h6 {
 	font-size: 12px;
-	line-height: 1.846153846;
+	line-height: 1.8;
 }
 .entry-content p,
 .entry-summary p,
 .comment-content p,
 .mu_register p {
 	margin: 0 0 20px;
-	line-height: 1.714285714;
+	line-height: 1.7;
 }
 .entry-content ol,
 .comment-content ol,
@@ -772,7 +773,7 @@ footer[role="contentinfo"] a:hover {
 .comment-content ul,
 .mu_register ul {
 	margin: 0 0 24px;
-	line-height: 1.714285714;
+	line-height: 1.7;
 }
 .entry-content ul ul,
 .comment-content ul ul,
@@ -1312,6 +1313,11 @@ a.comment-edit-link:hover {
 	color: #666666;
     text-decoration:none;
 	}
+	
+section.comment-content.comment {
+    border:  1px solid #f1f1f1;
+    padding: 10px;
+}
 /* =Plugins
 ----------------------------------------------- */
 

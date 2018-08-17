@@ -1,6 +1,12 @@
 Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/iconic-one/ for latest version
 
 
+-------------- 17 August 2018 ----------------
+
+17/08/2018  - Version 1.9.5
+
+- Sidebar line height fix for third party widgets
+- Minor updates
 
 -------------- 09 July 2018 ----------------
 
