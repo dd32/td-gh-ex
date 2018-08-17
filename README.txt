@@ -3,6 +3,10 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.3.6.1 - 17 August 2018 =
+* Front page boxes disabled by default (Theme review rules).
+* Updated theme language files.
+
 = 1.3.6 - 15 August 2018 =
 * Minor customizer changes related to pro features.
 * Removed agama favicon feature (same feature already is build in WordPress itself).

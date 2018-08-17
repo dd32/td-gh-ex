@@ -1179,70 +1179,6 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		),
 		'default'		=> '#FE6663'
 	) );
-	###################################################
-	# SLIDE 3 SECTION
-	###################################################
-	Kirki::add_section( 'agama_slide_3_section', array(
-		'title'			=> __( 'Slide #3', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'panel'			=> 'agama_slider_panel'
-	) );
-	###################################################
-	# SLIDE 4 SECTION
-	###################################################
-	Kirki::add_section( 'agama_slide_4_section', array(
-		'title'			=> __( 'Slide #4', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'panel'			=> 'agama_slider_panel'
-	) );
-	###################################################
-	# SLIDE 5 SECTION
-	###################################################
-	Kirki::add_section( 'agama_slide_5_section', array(
-		'title'			=> __( 'Slide #5', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'panel'			=> 'agama_slider_panel'
-	) );
-	###################################################
-	# SLIDE 6 SECTION
-	###################################################
-	Kirki::add_section( 'agama_slide_6_section', array(
-		'title'			=> __( 'Slide #6', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'panel'			=> 'agama_slider_panel'
-	) );
-	###################################################
-	# SLIDE 7 SECTION
-	###################################################
-	Kirki::add_section( 'agama_slide_7_section', array(
-		'title'			=> __( 'Slide #7', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'panel'			=> 'agama_slider_panel'
-	) );
-	###################################################
-	# SLIDE 8 SECTION
-	###################################################
-	Kirki::add_section( 'agama_slide_8_section', array(
-		'title'			=> __( 'Slide #8', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'panel'			=> 'agama_slider_panel'
-	) );
-	###################################################
-	# SLIDE 9 SECTION
-	###################################################
-	Kirki::add_section( 'agama_slide_9_section', array(
-		'title'			=> __( 'Slide #9', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'panel'			=> 'agama_slider_panel'
-	) );
-	###################################################
-	# SLIDE 10 SECTION
-	###################################################
-	Kirki::add_section( 'agama_slide_10_section', array(
-		'title'			=> __( 'Slide #10', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'panel'			=> 'agama_slider_panel'
-	) );
 ###################################################################################
 # BREADCRUMB
 ###################################################################################
@@ -1326,7 +1262,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'settings'		=> 'agama_frontpage_boxes',
 		'section'		=> 'agama_frontpage_general_section',
 		'type'			=> 'switch',
-		'default'		=> true
+		'default'		=> false
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			=> __( 'Visibility', 'agama' ),
@@ -1356,7 +1292,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'section'		=> 'agama_frontpage_boxes_section_1',
 		'settings'		=> 'agama_frontpage_box_1_enable',
 		'type'			=> 'switch',
-		'default'		=> true
+		'default'		=> false
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			    => __( 'Title', 'agama' ),
@@ -1475,7 +1411,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'section'		=> 'agama_frontpage_boxes_section_2',
 		'settings'		=> 'agama_frontpage_box_2_enable',
 		'type'			=> 'switch',
-		'default'		=> true
+		'default'		=> false
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			    => __( 'Title', 'agama' ),
@@ -1594,7 +1530,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'section'		=> 'agama_frontpage_boxes_section_3',
 		'settings'		=> 'agama_frontpage_box_3_enable',
 		'type'			=> 'switch',
-		'default'		=> true
+		'default'		=> false
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			=> __( 'Title', 'agama' ),
@@ -1713,7 +1649,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'section'		=> 'agama_frontpage_boxes_section_4',
 		'settings'		=> 'agama_frontpage_box_4_enable',
 		'type'			=> 'switch',
-		'default'		=> true
+		'default'		=> false
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			=> __( 'Title', 'agama' ),
@@ -1816,42 +1752,6 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 			)
 		),
 		'default'			=> 'fadeInRight'
-	) );
-	#############################################################
-	# FRONTPAGE BOXES SECTION 5
-	#############################################################
-	Kirki::add_section( 'agama_frontpage_boxes_section_5', array(
-		'title'			=> __( 'Front Page Box #5', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'priority'		=> 60,
-		'panel'			=> 'agama_frontpage_boxes_panel'
-	) );
-	#############################################################
-	# FRONTPAGE BOXES SECTION 6
-	#############################################################
-	Kirki::add_section( 'agama_frontpage_boxes_section_6', array(
-		'title'			=> __( 'Front Page Box #6', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'priority'		=> 60,
-		'panel'			=> 'agama_frontpage_boxes_panel'
-	) );
-	#############################################################
-	# FRONTPAGE BOXES SECTION 7
-	#############################################################
-	Kirki::add_section( 'agama_frontpage_boxes_section_7', array(
-		'title'			=> __( 'Front Page Box #7', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'priority'		=> 60,
-		'panel'			=> 'agama_frontpage_boxes_panel'
-	) );
-	#############################################################
-	# FRONTPAGE BOXES SECTION 8
-	#############################################################
-	Kirki::add_section( 'agama_frontpage_boxes_section_8', array(
-		'title'			=> __( 'Front Page Box #8', 'agama' ),
-		'capability'	=> 'edit_theme_options',
-		'priority'		=> 60,
-		'panel'			=> 'agama_frontpage_boxes_panel'
 	) );
 ###################################################################################
 # BLOG
