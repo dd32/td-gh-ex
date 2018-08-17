@@ -28,6 +28,7 @@
 	$wl_theme_options=array(
 			//Logo and Fevicon header
 			'title_position'=>'',
+			'search_box'=>'',
 			'upload__header_image'=>'',
 			'upload_image_logo'=>'',
 			'height'=>'55',
@@ -61,6 +62,8 @@
 			'slide_btn_text_3' => __('Read More', 'enigma' ),
 			'slide_btn_link_3' => '#',
 			'slider_anim'=>'',
+			'animate_type_title'=>'',
+			'animate_type_desc'=>'',
 			// Footer Call-Out
 			'fc_home'=>'1',			
 			'fc_title' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'enigma' ),

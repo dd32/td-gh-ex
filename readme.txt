@@ -6,6 +6,9 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 4.6 [17-08-2018]
+1. Minor issue fixed.
+
 @Version: 4.5 [25-07-2018]
 1. Minor issue fixed.
 
