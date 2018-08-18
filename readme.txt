@@ -94,6 +94,11 @@ Image used in Theme Screenshot:
 License: Creative Commons Zero (CC0) license
 
 == Changelog ==
+= 2.0.1 =
+* Released: Aug 18, 2018
+* Updated woocommmerce files
+
+== Changelog ==
 = 2.0 =
 * Released: May 27, 2018
 * Menu fix
