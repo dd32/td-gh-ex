@@ -1,11 +1,10 @@
 <?php
   $key = 'tool';
   $custom_css = '';
-  //--------------public css set-------------------
-  $sections = cts_public_content_default(); 
+
+  $sections = best_restaurantpublic_content_default(); 
   $default = $sections[$key];
 
-  //--------------section css set-------------------
   $imagepath =  get_stylesheet_directory_uri() . '/custom/images/'; 
   
   $tool_1_logo     = esc_url(get_theme_mod( 'tool_1_logo',$imagepath.'logo.png' ));  
@@ -21,8 +20,6 @@
 ?>
 <section id="ct_<?php echo $key;?>" class="ct_section ct_<?php echo $key;?> ct_section_<?php echo $key;?> ">
 	<div  id="<?php echo $key;?>" class="section_content " >
-    	
-
 
         <div class="ct_tool_list container">
 
@@ -97,7 +94,7 @@
                         <hr>
                         <ul>
 						<?php
-						  $default_content = cts_section_content_default($key);
+						  $default_content = best_restaurantsection_content_default($key);
                           $repeater_value = get_theme_mod( 'repeater_tool_2',$default_content);	
 
                           if ( ! empty( $repeater_value ) ) :	
@@ -118,11 +115,7 @@
                         
                    	</div>
                	</div>		           
-            
-            
-
-
-          	</div><!--div class="row"-->         
+          	</div>      
             
         </div>
         

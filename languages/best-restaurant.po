@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Best Food\n"
-"POT-Creation-Date: 2018-03-30 22:00+0800\n"
-"PO-Revision-Date: 2018-03-30 22:00+0800\n"
+"Project-Id-Version: Best Restaurant\n"
+"POT-Creation-Date: 2018-08-18 11:29+0800\n"
+"PO-Revision-Date: 2018-08-18 11:29+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -21,87 +21,91 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: custom/best-food-config.php:27
-msgid "Homepage Settings"
+#: custom/best-restaurant-config.php:21
+msgid "Forntpage Settings"
 msgstr ""
 
-#: custom/best-food-config.php:28
-msgid "Homepage options for Best Food theme"
+#: custom/best-restaurant-config.php:22
+msgid "Homepage options for Best Restaurant theme"
 msgstr ""
 
-#: custom/best-food-config.php:34
+#: custom/best-restaurant-config.php:26
 msgid "Homepage Layout"
 msgstr ""
 
-#: custom/best-food-config.php:40
+#: custom/best-restaurant-config.php:32
 msgid "Slider Section"
 msgstr ""
 
-#: custom/best-food-config.php:42
+#: custom/best-restaurant-config.php:33
 msgid "About Section"
 msgstr ""
 
-#: custom/best-food-config.php:43
+#: custom/best-restaurant-config.php:34
 msgid "Service Section"
 msgstr ""
 
-#: custom/best-food-config.php:46
+#: custom/best-restaurant-config.php:37
 msgid "Woocommerce Section"
 msgstr ""
 
-#: custom/best-food-config.php:47
+#: custom/best-restaurant-config.php:38
 msgid "Advantage Section"
 msgstr ""
 
-#: custom/best-food-config.php:48
+#: custom/best-restaurant-config.php:39
 msgid "Team Section"
 msgstr ""
 
-#: custom/best-food-config.php:51
+#: custom/best-restaurant-config.php:42
 msgid "Fact Section"
 msgstr ""
 
-#: custom/best-food-config.php:52
+#: custom/best-restaurant-config.php:43
 msgid "Gallery Section"
 msgstr ""
 
-#: custom/best-food-config.php:53
+#: custom/best-restaurant-config.php:44
 msgid "Testimonial Section"
 msgstr ""
 
-#: custom/best-food-config.php:56
+#: custom/best-restaurant-config.php:47
 msgid "Client Section"
 msgstr ""
 
-#: custom/best-food-config.php:57
+#: custom/best-restaurant-config.php:48
 msgid "News Section"
 msgstr ""
 
-#: custom/best-food-config.php:58
+#: custom/best-restaurant-config.php:49
 msgid "Contact Section"
 msgstr ""
 
-#: custom/best-food-config.php:60
+#: custom/best-restaurant-config.php:51
 msgid "Blog Section"
 msgstr ""
 
-#: custom/best-food-config.php:61
+#: custom/best-restaurant-config.php:52
 msgid "Map Section"
 msgstr ""
 
-#: custom/best-food-config.php:62
+#: custom/best-restaurant-config.php:53
 msgid "Footer Tool Section"
 msgstr ""
 
-#: custom/best-food-config.php:77
+#: custom/best-restaurant-config.php:67
 msgid "video Background Options"
 msgstr ""
 
-#: custom/best-food-config.php:95
+#: custom/best-restaurant-config.php:80
+msgid "Enable section header menu in the feature homepage"
+msgstr ""
+
+#: custom/best-restaurant-config.php:90
 msgid "Switch \"Front page displays\" to \"A static page\""
 msgstr ""
 
-#: custom/best-food-config.php:97
+#: custom/best-restaurant-config.php:92
 #, php-format
 msgid ""
 "Your homepage is not static page. In order to set up the home page as shown "
@@ -110,455 +114,193 @@ msgid ""
 "your latest blog posts. Check the %s page for more informations."
 msgstr ""
 
-#: custom/best-food-config.php:97
+#: custom/best-restaurant-config.php:92
 msgid "Theme info"
 msgstr ""
 
-#: custom/best-food-config.php:112
+#: custom/best-restaurant-config.php:106
 msgid "Homepage Blocks"
 msgstr ""
 
-#: custom/best-food-config.php:114
+#: custom/best-restaurant-config.php:108
 msgid "Drag and Drop and enable the homepage blocks."
 msgstr ""
 
-#: custom/best-food-config.php:125
-msgid "Best Food PRO"
+#: custom/best-restaurant-config.php:119
+msgid "Best Restaurant PRO"
 msgstr ""
 
-#: custom/best-food-config.php:126
+#: custom/best-restaurant-config.php:120
 msgid ""
-"Available in Best Food PRO: Feature Section, Gallery Section, Service "
-"Section, Facts / Number Section, Our Team Section, Pricing Section, "
-"Testimonials Section, Clients Section,Contact Us Section,Download Section, "
+"Available in Best Restaurant PRO: Feature Section, Gallery Section, More "
+"Service Items, Facts / Number Section, Our Team Section, Pricing Section, "
+"Testimonials Section, Clients Section,Contact Us Section,Call out Section, "
 "Google Map, Custom Colors, Google Fonts, video(include Youtube) Backgrounds, "
-"Animations, Custom Footer Link and much more..."
+"More Animations Effects and WooCommerce Compatible much more..."
 msgstr ""
 
-#: custom/best-food-config.php:128
-msgid "Discover Best Food PRO"
+#: custom/best-restaurant-config.php:122
+msgid "Discover Best Restaurant PRO"
 msgstr ""
 
-#: custom/best-food-config.php:138 custom/best-food-config.php:570
+#: custom/best-restaurant-config.php:131 custom/best-restaurant-config.php:306
 msgid "Main Menu Title"
 msgstr ""
 
-#: custom/best-food-config.php:148
+#: custom/best-restaurant-config.php:141
 msgid "Apply background video to this slider"
 msgstr ""
 
-#: custom/best-food-config.php:149
+#: custom/best-restaurant-config.php:142
 msgid ""
 "If you enable video background, you need to set the setting \"video "
 "background option\" in the homepage settings"
 msgstr ""
 
-#: custom/best-food-config.php:162
+#: custom/best-restaurant-config.php:155
 msgid "Slider"
 msgstr ""
 
-#: custom/best-food-config.php:171 custom/best-food-config.php:1066
+#: custom/best-restaurant-config.php:164
 msgid "Select page"
 msgstr ""
 
-#: custom/best-food-config.php:177 custom/best-food-config.php:1586
+#: custom/best-restaurant-config.php:170 custom/best-restaurant-config.php:715
 msgid "Button Text"
 msgstr ""
 
-#: custom/best-food-config.php:182 custom/best-food-config.php:885
+#: custom/best-restaurant-config.php:175
 msgid "URL"
 msgstr ""
 
-#: custom/best-food-config.php:190
+#: custom/best-restaurant-config.php:183
 msgid "Slide"
 msgstr ""
 
-#: custom/best-food-config.php:199
+#: custom/best-restaurant-config.php:192
 msgid "Slide Time"
 msgstr ""
 
-#: custom/best-food-config.php:212
+#: custom/best-restaurant-config.php:205
 msgid "Title Typography"
 msgstr ""
 
-#: custom/best-food-config.php:232
+#: custom/best-restaurant-config.php:225
 msgid "Description Typography"
 msgstr ""
 
-#: custom/best-food-config.php:251
+#: custom/best-restaurant-config.php:244
 msgid "Slider Button Background Color"
 msgstr ""
 
-#: custom/best-food-config.php:264 custom/best-food-config.php:1637
+#: custom/best-restaurant-config.php:257 custom/best-restaurant-config.php:765
 msgid "Button Text Typography"
 msgstr ""
 
-#: custom/best-food-config.php:287
-msgid "Choose the type of video you want to use"
-msgstr ""
-
-#: custom/best-food-config.php:289
-msgid "Recommend youtube video"
-msgstr ""
-
-#: custom/best-food-config.php:293
-msgid "youtube"
-msgstr ""
-
-#: custom/best-food-config.php:294
-msgid "Vimeo"
-msgstr ""
-
-#: custom/best-food-config.php:295
-msgid "MP4/WebM/Ogg"
-msgstr ""
-
-#: custom/best-food-config.php:302
-msgid "YouTube Video ID"
-msgstr ""
-
-#: custom/best-food-config.php:320
-msgid "Video Mute"
-msgstr ""
-
-#: custom/best-food-config.php:325 custom/best-food-config.php:347
-#: custom/best-food-config.php:369 custom/best-food-config.php:391
-#: custom/best-food-config.php:413
-msgid "Enable"
-msgstr ""
-
-#: custom/best-food-config.php:326 custom/best-food-config.php:348
-#: custom/best-food-config.php:370 custom/best-food-config.php:392
-#: custom/best-food-config.php:414
-msgid "Disable"
-msgstr ""
-
-#: custom/best-food-config.php:342
-msgid "Video AddRaster"
-msgstr ""
-
-#: custom/best-food-config.php:364
-msgid "Display  Bottom Controls"
-msgstr ""
-
-#: custom/best-food-config.php:386
-msgid "Video Auto Play"
-msgstr ""
-
-#: custom/best-food-config.php:408
-msgid "Video Loop"
-msgstr ""
-
-#: custom/best-food-config.php:430
-msgid "Default Volum"
-msgstr ""
-
-#: custom/best-food-config.php:439
-msgid "Values are between 0 and 100."
-msgstr ""
-
-#: custom/best-food-config.php:454
-msgid "Seeks To"
-msgstr ""
-
-#: custom/best-food-config.php:463
-msgid "Seeks to a specified time in the video ( number of seconds )."
-msgstr ""
-
-#: custom/best-food-config.php:478
-msgid "Video Stop Time"
-msgstr ""
-
-#: custom/best-food-config.php:487
-msgid ""
-"the video will stop at the time you set( number of seconds ). If you set the "
-"loop, the video will play again, 0 means no stop time, the video will play "
-"to the end."
-msgstr ""
-
-#: custom/best-food-config.php:502
-msgid "Video Opacity"
-msgstr ""
-
-#: custom/best-food-config.php:541
+#: custom/best-restaurant-config.php:277
 msgid "Section Title"
 msgstr ""
 
-#: custom/best-food-config.php:551
+#: custom/best-restaurant-config.php:287
 msgid "Title Iocn"
 msgstr ""
 
-#: custom/best-food-config.php:561
+#: custom/best-restaurant-config.php:297
 msgid "Section Description"
 msgstr ""
 
-#: custom/best-food-config.php:582
+#: custom/best-restaurant-config.php:316
 msgid "Section Background Image"
 msgstr ""
 
-#: custom/best-food-config.php:594
+#: custom/best-restaurant-config.php:327
 msgid "Section Background Color"
 msgstr ""
 
-#: custom/best-food-config.php:605
+#: custom/best-restaurant-config.php:336
 msgid "Section Background Opacity"
 msgstr ""
 
-#: custom/best-food-config.php:619
+#: custom/best-restaurant-config.php:349
 msgid "Section Padding Control"
 msgstr ""
 
-#: custom/best-food-config.php:634
+#: custom/best-restaurant-config.php:363
 msgid "Section Mobile Padding Control"
 msgstr ""
 
-#: custom/best-food-config.php:650
+#: custom/best-restaurant-config.php:379
 msgid "Enable Animate"
 msgstr ""
 
-#: custom/best-food-config.php:661
+#: custom/best-restaurant-config.php:390
 msgid "Enable Parallax Background"
 msgstr ""
 
-#: custom/best-food-config.php:683
+#: custom/best-restaurant-config.php:403
 msgid "Title / Description Typography Setting"
 msgstr ""
 
-#: custom/best-food-config.php:684
+#: custom/best-restaurant-config.php:404
 msgid "Enable or disable Title / Description Typography"
 msgstr ""
 
-#: custom/best-food-config.php:694
+#: custom/best-restaurant-config.php:413
 msgid " Title Typography"
 msgstr ""
 
-#: custom/best-food-config.php:717
+#: custom/best-restaurant-config.php:435
 msgid " Description Typography"
 msgstr ""
 
-#: custom/best-food-config.php:749
+#: custom/best-restaurant-config.php:464
 msgid "About Us Content Select"
 msgstr ""
 
-#: custom/best-food-config.php:760
+#: custom/best-restaurant-config.php:475
 msgid "About Image"
 msgstr ""
 
-#: custom/best-food-config.php:862
-msgid "Service"
-msgstr ""
-
-#: custom/best-food-config.php:873
-msgid "Service Icon Image"
-msgstr ""
-
-#: custom/best-food-config.php:879
-msgid "Service Icon Hover Image"
-msgstr ""
-
-#: custom/best-food-config.php:891
-msgid "Item Title"
-msgstr ""
-
-#: custom/best-food-config.php:896
-msgid "Item Description"
-msgstr ""
-
-#: custom/best-food-config.php:904
-msgid "Service Item"
-msgstr ""
-
-#: custom/best-food-config.php:912
-msgid "Item Title Typography"
-msgstr ""
-
-#: custom/best-food-config.php:937
-msgid "Displays the number of woocommerce products"
-msgstr ""
-
-#: custom/best-food-config.php:954
-msgid "Menu Information"
-msgstr ""
-
-#: custom/best-food-config.php:965
-msgid "Menu Icon"
-msgstr ""
-
-#: custom/best-food-config.php:973
-msgid "Menu Item"
-msgstr ""
-
-#: custom/best-food-config.php:982
-msgid "Select The Catagories"
-msgstr ""
-
-#: custom/best-food-config.php:983
-msgid ""
-"The following catagories will display on Woocommerce section in the Homepage."
-msgstr ""
-
-#: custom/best-food-config.php:996
-msgid "Content Title Text Typography"
-msgstr ""
-
-#: custom/best-food-config.php:1045 custom/best-food-config.php:1074
-msgid "Advantage"
-msgstr ""
-
-#: custom/best-food-config.php:1082
-msgid "Facts / Number"
-msgstr ""
-
-#: custom/best-food-config.php:1092
-msgid "Facts Icon"
-msgstr ""
-
-#: custom/best-food-config.php:1099
-msgid "Facts Item"
-msgstr ""
-
-#: custom/best-food-config.php:1105
-msgid "Facts Number"
-msgstr ""
-
-#: custom/best-food-config.php:1114
-msgid "Fact Item"
-msgstr ""
-
-#: custom/best-food-config.php:1121 custom/best-food-config.php:1156
-msgid "Gallery"
-msgstr ""
-
-#: custom/best-food-config.php:1132
-msgid "Gallery Name"
-msgstr ""
-
-#: custom/best-food-config.php:1137
-msgid "Gallery Image"
-msgstr ""
-
-#: custom/best-food-config.php:1143
-msgid "Url"
-msgstr ""
-
-#: custom/best-food-config.php:1148 custom/best-food-config.php:1195
-msgid "Description"
-msgstr ""
-
-#: custom/best-food-config.php:1167
-msgid "Testimonials"
-msgstr ""
-
-#: custom/best-food-config.php:1177
-msgid "Customer Avatar"
-msgstr ""
-
-#: custom/best-food-config.php:1183
-msgid "Customer Name"
-msgstr ""
-
-#: custom/best-food-config.php:1189
-msgid "Customer Job"
-msgstr ""
-
-#: custom/best-food-config.php:1203
-msgid "Testimonial Item"
-msgstr ""
-
-#: custom/best-food-config.php:1210
-msgid "Our Clients"
-msgstr ""
-
-#: custom/best-food-config.php:1220
-msgid "Clients Logo"
-msgstr ""
-
-#: custom/best-food-config.php:1226
-msgid "Clients Logo Hover"
-msgstr ""
-
-#: custom/best-food-config.php:1232
-msgid "Clients Name"
-msgstr ""
-
-#: custom/best-food-config.php:1239
-msgid "Clients Website Link"
-msgstr ""
-
-#: custom/best-food-config.php:1248
-msgid "Our Client Item"
-msgstr ""
-
-#: custom/best-food-config.php:1259
-msgid "Number of rotation articles"
-msgstr ""
-
-#: custom/best-food-config.php:1285
-msgid "The following catagories will display on news section in the Homepage."
-msgstr ""
-
-#: custom/best-food-config.php:1297 custom/best-food-config.php:1348
-msgid "Homepage Article Default Feature image"
-msgstr ""
-
-#: custom/best-food-config.php:1308 custom/inc.php:702
-#: custom/section/homepage-about.php:28 custom/section/homepage-about.php:53
-#: custom/section/homepage-news.php:115
-msgid "Read More"
-msgstr ""
-
-#: custom/best-food-config.php:1320
+#: custom/best-restaurant-config.php:495
 msgid "Displays the number of articles"
 msgstr ""
 
-#: custom/best-food-config.php:1336
+#: custom/best-restaurant-config.php:511
 msgid "The following catagories will display on Blog section in the Homepage."
 msgstr ""
 
-#: custom/best-food-config.php:1361
-msgid "Contact Form 7 Shortcode"
+#: custom/best-restaurant-config.php:522
+msgid "Homepage Article Default Feature image"
 msgstr ""
 
-#: custom/best-food-config.php:1362
-msgid "Fill in shortcode of \"Contact Form 7\" plugin (or similar plugin)"
-msgstr ""
-
-#: custom/best-food-config.php:1374
-msgid "WP Google Map Shortcode"
-msgstr ""
-
-#: custom/best-food-config.php:1375
-msgid "Fill in shortcode of \"WP Google Maps\" plugin (or similar plugin)"
-msgstr ""
-
-#: custom/best-food-config.php:1386
+#: custom/best-restaurant-config.php:534
 msgid "Footer Logo"
 msgstr ""
 
-#: custom/best-food-config.php:1396
+#: custom/best-restaurant-config.php:544
 msgid "Tool 1 Description"
 msgstr ""
 
-#: custom/best-food-config.php:1397 custom/section/homepage-tool.php:14
+#: custom/best-restaurant-config.php:545 custom/section/homepage-tool.php:13
 msgid ""
 "Donec at eui smod nibh, eu bibendum quam. Nullam  non gravida pDonec at eui "
 "smod nibh, eu bibendum quam. Nullam  non gravida peu bibendum quam. Nullam  "
 "non gravida peu bibendum quam. Nullam  non gravida p"
 msgstr ""
 
-#: custom/best-food-config.php:1406
+#: custom/best-restaurant-config.php:554
 msgid "Tool 2 Title"
 msgstr ""
 
-#: custom/best-food-config.php:1407 custom/section/homepage-tool.php:16
+#: custom/best-restaurant-config.php:555 custom/section/homepage-tool.php:15
 msgid "Contact Us"
 msgstr ""
 
-#: custom/best-food-config.php:1415
+#: custom/best-restaurant-config.php:563
 msgid "Tool 2 Information"
 msgstr ""
 
-#: custom/best-food-config.php:1420
+#: custom/best-restaurant-config.php:568
 #, php-format
 msgid ""
 "Note: <br>Find fontawesome icon: <a href=\"%1$s\" target=\"_blank\">http://"
@@ -566,351 +308,397 @@ msgid ""
 "\">http://fontawesome.io/examples/</a>"
 msgstr ""
 
-#: custom/best-food-config.php:1426
+#: custom/best-restaurant-config.php:574
 msgid "tool 2 Fontawesome Icon"
 msgstr ""
 
-#: custom/best-food-config.php:1431
+#: custom/best-restaurant-config.php:579
 msgid "Tool 2 Text"
 msgstr ""
 
-#: custom/best-food-config.php:1438
+#: custom/best-restaurant-config.php:586
 msgid "Tool 2 Contact Item"
 msgstr ""
 
-#: custom/best-food-config.php:1445
+#: custom/best-restaurant-config.php:593
 msgid "Tool 3 Title"
 msgstr ""
 
-#: custom/best-food-config.php:1446 custom/section/homepage-tool.php:18
+#: custom/best-restaurant-config.php:594 custom/section/homepage-tool.php:17
 msgid "Opening Hours"
 msgstr ""
 
-#: custom/best-food-config.php:1454
+#: custom/best-restaurant-config.php:602
 msgid "Tool 3 Information"
 msgstr ""
 
-#: custom/best-food-config.php:1462 custom/section/homepage-tool.php:64
+#: custom/best-restaurant-config.php:610 custom/section/homepage-tool.php:61
 msgid "Monday-Friday: 08:00AM - 10:00PM"
 msgstr ""
 
-#: custom/best-food-config.php:1466 custom/section/homepage-tool.php:68
+#: custom/best-restaurant-config.php:614 custom/section/homepage-tool.php:65
 msgid "Saturday-Sunday: 10:00AM - 11:00PM"
 msgstr ""
 
-#: custom/best-food-config.php:1473
+#: custom/best-restaurant-config.php:621
 msgid "Tool 3 Text"
 msgstr ""
 
-#: custom/best-food-config.php:1480
+#: custom/best-restaurant-config.php:628
 msgid "Tool 3 Contact Item"
 msgstr ""
 
-#: custom/best-food-config.php:1488
+#: custom/best-restaurant-config.php:635
 msgid "Footer Copyriht 2"
 msgstr ""
 
-#: custom/best-food-config.php:1490 footer.php:76
+#: custom/best-restaurant-config.php:637 footer.php:77
 msgid ""
-"Powered by <a href=\"http://wordpress.org/\">WordPress</a>. Best Food theme "
-"by <a href=\"https://www.coothemes.com/\">CooThemes.com</a>."
+"Powered by <a href=\"http://wordpress.org/\">WordPress</a>. Best Restaurant "
+"theme by <a href=\"https://www.coothemes.com/\">CooThemes.com</a>."
 msgstr ""
 
-#: custom/best-food-config.php:1499
+#: custom/best-restaurant-config.php:646
 msgid "Facebook Link"
 msgstr ""
 
-#: custom/best-food-config.php:1508
+#: custom/best-restaurant-config.php:655
 msgid "Twitter Link"
 msgstr ""
 
-#: custom/best-food-config.php:1517
+#: custom/best-restaurant-config.php:664
 msgid "Youtube Link"
 msgstr ""
 
-#: custom/best-food-config.php:1526
+#: custom/best-restaurant-config.php:673
 msgid "Pinterest Link"
 msgstr ""
 
-#: custom/best-food-config.php:1535
+#: custom/best-restaurant-config.php:682
 msgid "Google Plus Link"
 msgstr ""
 
-#: custom/best-food-config.php:1544
+#: custom/best-restaurant-config.php:691
 msgid "Instagram Link"
 msgstr ""
 
-#: custom/best-food-config.php:1596
+#: custom/best-restaurant-config.php:700
+msgid "Enable hr in footer"
+msgstr ""
+
+#: custom/best-restaurant-config.php:725
 msgid "Button URL"
 msgstr ""
 
-#: custom/best-food-config.php:1606
+#: custom/best-restaurant-config.php:735
 msgid "Button Background Color"
 msgstr ""
 
-#: custom/best-food-config.php:1621
+#: custom/best-restaurant-config.php:749
 msgid "Button Background Opacity"
 msgstr ""
 
-#: custom/best-food-config.php:1654
+#: custom/best-restaurant-config.php:782
 msgid "Button Border Radius"
 msgstr ""
 
-#: custom/best-food-config.php:1667
+#: custom/best-restaurant-config.php:795
 msgid "Section Button Padding Control"
 msgstr ""
 
+#: custom/ct-about-page/about-page.php:20
+#: custom/ct-about-page/about-page.php:22
+msgid "About Best Restaurant"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:25
+#, php-format
+msgid "Welcome to %s! - Version "
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:27
+msgid ""
+"Best Restaurant is a modern, clean and professional WordPress theme that is "
+"perfect for restaurant, café, bakery, cuisine, fast food, pizzerias, drinks "
+"and food related business. The theme is specially designed based on the "
+"requirements of the food business and contains all needed functionalities, "
+"including food menu, reservation, gallery, opening hours, and map. Moreover, "
+"the theme has other awesome functionalities to help you build an awesome "
+"website, such as HTML5 video background, parallax scrolling effect, "
+"portfolio, newsletter subscribe and many more. Using latest Bootstrap "
+"Framework, HTML5 and CSS3 techniques, the theme is fully responsive on "
+"various devices. And Best Restaurant supports both one-page and multi-page "
+"layout. Moreover, the theme is compatible with WooCommerce, Contact Form 7, "
+"and MailChimp plugins. Demo: http://demo.coothemes.com/best-restaurant-pro/"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:35
+msgid "Getting Started"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:37
+msgid "Recommended Plugins"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:40
+msgid "Free vs PRO"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:49
+#: custom/ct-about-page/about-page.php:51
+msgid "Recommended actions"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:50
+msgid ""
+"We have compiled a list of steps for you to take so we can ensure that the "
+"experience you have using one of our products is very easy to follow."
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:58
+msgid "Read full documentation"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:59
+msgid ""
+"Need more details? Please check our full documentation for detailed "
+"information on how to use best-restaurant."
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:60
+msgid "Documentation"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:67
+#: custom/ct-about-page/about-page.php:69
+msgid "Go to the Customizer"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:68
+msgid ""
+"Using the WordPress Customizer you can easily customize every aspect of the "
+"theme."
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:77
+#: custom/ct-about-page/about-page.php:79
+msgid "Contact Support"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:78
+msgid ""
+"We want to make sure you have the best experience using  Best Restaurant, "
+"and that is why we have gathered all the necessary information here for you. "
+"We hope you will enjoy using  Best Restaurant as much as we enjoy creating "
+"great products."
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:94
+#, php-format
+msgid "Get %s now!"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:97
+msgid "One-page Theme"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:103
+msgid "Text and Image Logos"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:109
+msgid "Front Page Parallax Image Banner"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:115
+msgid "Parallax Backgrounds"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:121
+msgid "Front page section reordering"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:127
+msgid "Full screen front page banner"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:133
+msgid "Front page about us section"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:139
+msgid "Front page service section"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:145
+msgid "Front page blog section"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:151
+msgid "Footer copyright editor"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:157
+msgid "Multiple blog layouts"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:163
+msgid "Footer widgets"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:169
+msgid "Front page menu section"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:175
+msgid "Front page reserve now section"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:181
+msgid "Front page image and video slider"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:187
+msgid "Front page why choose us section"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:193
+msgid "Front page team section"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:199
+msgid "Front page facts section"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:205
+msgid "Front page gallery section"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:211
+msgid "Front page testimonial section"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:217
+msgid "Front page events section"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:223
+msgid "Google map"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:229
+msgid "Google fonts"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:235
+msgid "Shortcode"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:241
+msgid "Multiple page template"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:247
+msgid "Woocommerce compatible"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:253
+msgid "Unlimited color choices"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:258
+msgid "Automatic Updates"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:269
+msgid "Already activated"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:270
+msgid "Version: "
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:271
+msgid "Install and Activate"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:272
+msgid "Activate"
+msgstr ""
+
+#: custom/ct-about-page/about-page.php:273
+msgid "Deactivate"
+msgstr ""
+
+#: custom/ct-about-page/class-ct-about-page.php:920
+msgid "Activating"
+msgstr ""
+
 #: custom/customizer-pro/class-customize.php:76
-msgid "Best Food Pro"
+msgid "Best Restaurant Pro"
 msgstr ""
 
 #: custom/customizer-pro/class-customize.php:78
 msgid "Upgrade to Pro"
 msgstr ""
 
-#: custom/inc.php:151
+#: custom/inc.php:135
 msgid "About Us"
 msgstr ""
 
-#: custom/inc.php:164
-msgid "Services We Offer"
+#: custom/inc.php:148
+msgid "Vestibulum iaculis sapien sit amet metus mattis"
 msgstr ""
 
-#: custom/inc.php:165
-msgid ""
-"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere c."
-"Etiam ut dui eVestibulum ante ipsum primi"
+#: custom/inc.php:149
+msgid "Lorem ipsum dolor sit amet"
 msgstr ""
 
-#: custom/inc.php:178
-msgid "Our Menu"
-msgstr ""
-
-#: custom/inc.php:179 custom/inc.php:206 custom/inc.php:233 custom/inc.php:246
-#: custom/inc.php:272
-msgid ""
-"You can write a description of the section here! You can write a description "
-"of the section here!"
-msgstr ""
-
-#: custom/inc.php:191
-msgid "Why Choose Us"
-msgstr ""
-
-#: custom/inc.php:192 custom/inc.php:259 custom/inc.php:285 custom/inc.php:298
-msgid "You can write a description of the section here!"
-msgstr ""
-
-#: custom/inc.php:205
-msgid "Meet Our Chefs"
-msgstr ""
-
-#: custom/inc.php:232
-msgid "Our Gallery"
-msgstr ""
-
-#: custom/inc.php:245
-msgid "Our customers say"
-msgstr ""
-
-#: custom/inc.php:258
-msgid "Featured On"
-msgstr ""
-
-#: custom/inc.php:271
-msgid "Events of The Month"
-msgstr ""
-
-#: custom/inc.php:284 custom/inc.php:297
+#: custom/inc.php:160
 msgid "From The Blog"
 msgstr ""
 
-#: custom/inc.php:350 custom/inc.php:362
+#: custom/inc.php:161
+msgid "You can write a description of the section here!"
+msgstr ""
+
+#: custom/inc.php:200 custom/inc.php:212
 msgid "Check it out"
 msgstr ""
 
-#: custom/inc.php:356
+#: custom/inc.php:206
 msgid "Downlaod Now"
 msgstr ""
 
-#: custom/inc.php:374
-msgid "Service One"
-msgstr ""
-
-#: custom/inc.php:375 custom/inc.php:383 custom/inc.php:391 custom/inc.php:399
-#: custom/inc.php:407 custom/inc.php:415
-msgid ""
-"Duis sit amet nulla id quam faucibus sagittis. Mauris id tempus tortor. "
-"Mauris nibh purus, maximus non porttitor et, varius non tortor. "
-msgstr ""
-
-#: custom/inc.php:382
-msgid "Service Two"
-msgstr ""
-
-#: custom/inc.php:390
-msgid "Service Three"
-msgstr ""
-
-#: custom/inc.php:398
-msgid "Service Four"
-msgstr ""
-
-#: custom/inc.php:406
-msgid "Service Five"
-msgstr ""
-
-#: custom/inc.php:414
-msgid "Service Six"
-msgstr ""
-
-#: custom/inc.php:459
-msgid "Mark B. McPeters"
-msgstr ""
-
-#: custom/inc.php:460 custom/inc.php:473 custom/inc.php:485 custom/inc.php:499
-msgid "Head Chef"
-msgstr ""
-
-#: custom/inc.php:465
-msgid ""
-"Donec at eui smod nibh, eu bibendum quam. Nullam non gravida purus, nec "
-"eleifsdfidunt nisi. Aguascalientes glum \n"
-"newsbeat unsolved dispensed. Taig apotropaic proadjournment repromulgation "
-"disappointer.Fusce at purus in massa laoreet. Taig apotropaic proadjournment "
-"repromulgation disappointer.Fusce at purus in massa laoreet."
-msgstr ""
-
-#: custom/inc.php:472
-msgid "Joseph Le"
-msgstr ""
-
-#: custom/inc.php:478 custom/inc.php:490 custom/inc.php:504
-msgid ""
-"Donec at eui smod nibh, eu bibendum quam. Nullam non gravida purus, nec "
-"eleifsdfidunt nisi. Aguascalientes glum \n"
-"newsbeat unsolved dispensed. Taig apotropaic proadjournment repromulgation "
-"disappointer.Fusce at purus in massa laoreet.Taig apotropaic proadjournment "
-"repromulgation disappointer.Fusce at purus in massa laoreet."
-msgstr ""
-
-#: custom/inc.php:484
-msgid "Callie T Schmidt"
-msgstr ""
-
-#: custom/inc.php:498
-msgid "Nick J Johnson"
-msgstr ""
-
-#: custom/inc.php:518
-msgid "Years of Experience"
-msgstr ""
-
-#: custom/inc.php:524
-msgid "Special Dishes"
-msgstr ""
-
-#: custom/inc.php:530
-msgid "Cups of coffee"
-msgstr ""
-
-#: custom/inc.php:536
-msgid "happy customers"
-msgstr ""
-
-#: custom/inc.php:546 custom/inc.php:552 custom/inc.php:558 custom/inc.php:564
-#: custom/inc.php:570
-msgid "Project Name"
-msgstr ""
-
-#: custom/inc.php:585
-msgid "Jack"
-msgstr ""
-
-#: custom/inc.php:586 custom/inc.php:595 custom/inc.php:604
-msgid "Web Developer"
-msgstr ""
-
-#: custom/inc.php:587 custom/inc.php:596 custom/inc.php:605
-msgid ""
-"Donec at eui smod nibh, eu bibendum quam. Nullam non gravida purus, nec "
-"eleifsdfidunt nisi. Aguascalientes glum \n"
-"\tnewsbeat unsolved dispensed. Taig apotropaic proadjournment repromulgation "
-"disappointer.Fusce at purus in massa laoreet."
-msgstr ""
-
-#: custom/inc.php:594
-msgid "Kevin Perry"
-msgstr ""
-
-#: custom/inc.php:603
-msgid "David"
-msgstr ""
-
-#: custom/inc.php:618
-msgid "client 1"
-msgstr ""
-
-#: custom/inc.php:625
-msgid "client 2"
-msgstr ""
-
-#: custom/inc.php:632
-msgid "client 3"
-msgstr ""
-
-#: custom/inc.php:639
-msgid "client 4"
-msgstr ""
-
-#: custom/inc.php:646
-msgid "client 5"
-msgstr ""
-
-#: custom/inc.php:652
-msgid "client 6"
-msgstr ""
-
-#: custom/inc.php:663
+#: custom/inc.php:226
 msgid "383 Waterview Lane, Las Vegas, US"
 msgstr ""
 
-#: custom/inc.php:668
+#: custom/inc.php:231
 msgid "+1 123 456 789"
 msgstr ""
 
-#: custom/inc.php:726
-msgid "View Full Menu"
+#: custom/inc.php:266 custom/section/homepage-about.php:24
+#: custom/section/homepage-about.php:49
+msgid "Read More"
 msgstr ""
 
-#: custom/inc.php:751
-msgid "View All Gallery"
-msgstr ""
-
-#: custom/inc.php:776 custom/inc.php:800
-msgid "View All Events"
-msgstr ""
-
-#: custom/inc.php:824
+#: custom/inc.php:291
 msgid "View The Blog"
 msgstr ""
 
-#: custom/section/homepage-news.php:135 custom/section/homepage-slider.php:146
-#: custom/section/homepage-team.php:160
-#: custom/section/homepage-testimonial.php:105
-msgid "Previous"
-msgstr ""
-
-#: custom/section/homepage-news.php:139 custom/section/homepage-slider.php:150
-#: custom/section/homepage-team.php:164
-#: custom/section/homepage-testimonial.php:109
-msgid "Next"
-msgstr ""
-
-#: custom/section/homepage-slider.php:123
+#: custom/section/homepage-slider.php:66
 msgid "Download Now"
 msgstr ""
 
-#: footer.php:12
+#: custom/section/homepage-slider.php:90
+msgid "Previous"
+msgstr ""
+
+#: custom/section/homepage-slider.php:94
+msgid "Next"
+msgstr ""
+
+#: footer.php:13
 msgid "Follow Us On"
 msgstr ""

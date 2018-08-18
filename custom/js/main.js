@@ -1,17 +1,10 @@
 (function($)
 {	
     "use strict";
-
-	
 	
     $(document).ready(function()
     {
-	   // alert('ok');
 
-		//jQuery(".ct_slider_video").YTPlayer({align:"center,center"});
-		
-	  //alert($('body').height());
-	  
 		if($(document).height() > $('body').height() ){ $('#footer').css('display','block'); }
 
 		$(window).scroll(function() {
@@ -24,8 +17,6 @@
 			$('#footer').css('display','block');
 		  }
 		});
- 	
-
 
 		$(window).scroll(function () {
 			var scroll_y = $(window).scrollTop();
@@ -42,12 +33,6 @@
 			}		
 		});
 
-
-		
-		
     });
-
-
-
 
 })( jQuery );

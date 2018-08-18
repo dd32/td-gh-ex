@@ -6,8 +6,6 @@
         	<hr />
          	<?php 
 				}else{echo '<br />';}
-			
-			
 			?>           
             <?php 
 			 	if(  get_theme_mod( 'facebook_link', '#' ) !=''  || get_theme_mod( 'twitter_link', '#' ) !='' || get_theme_mod( 'youtube_link', '#' ) !='' || get_theme_mod( 'pinterest_link', '#' ) !='' || get_theme_mod( 'google_plus_link', '#' ) !='' || get_theme_mod( 'instagram_link', '#' ) !='' ){

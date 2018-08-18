@@ -2,11 +2,9 @@
 
   $key = 'about';
   $custom_css = '';
-  //--------------public css set-------------------
-  $sections = cts_public_content_default(); 
-  $default = $sections[$key];
 
-  //--------------section css set-------------------
+  $sections = best_restaurantpublic_content_default(); 
+  $default = $sections[$key];
 
   $about_page = get_theme_mod( $key.'_page','');  
   
@@ -21,10 +19,8 @@
   if($enable_parallax_background && $section_background_image !=''){
 	  
 	  $parallax_str ='data-parallax="scroll" data-image-src="'.$section_background_image.'" ';
-	  
 	}
-	
-	
+
 	$about_button_text_str =  __( 'Read More', 'best-restaurant' );
   
 ?>

@@ -1,49 +1,7 @@
 <?php
 	$key = 'slider';	
-	$default_content = cts_section_content_default($key);
+	$default_content = best_restaurantsection_content_default($key);
  
-  	$video_select_enable = get_theme_mod( 'video_select_enable','youtube');
-  
-    $slider_video = get_theme_mod( 'slider_video',0);
-  
-	//youtube video
-	if($video_select_enable =='youtube'){
-		$video_youtobe_id = esc_html(get_theme_mod( 'video_youtobe_id','e1c-n1dRxwc'));	  
-		$video_mute = get_theme_mod( 'video_mute',0);
-		if($video_mute == ''){ $video_mute =0;}
-		  
-		$video_addraster = get_theme_mod( 'video_addraster',1);	
-		if($video_addraster == ''){ $video_addraster =0;}
-		
-		  
-		$video_bottom_controls_bar = get_theme_mod( 'video_bottom_controls_bar','1');	
-		if($video_bottom_controls_bar == ''){ $video_bottom_controls_bar =0;}	
-			
-		$video_auto_play = get_theme_mod( 'video_auto_play',1);	
-		if($video_auto_play == ''){ $video_auto_play =0;}	
-		  
-		$video_loop = get_theme_mod( 'video_loop','1');	
-		if($video_loop == ''){ $video_loop =0;}	
-			
-		  
-		$video_default_volum = get_theme_mod( 'video_default_volum',40);	
-		$video_seeks_to = get_theme_mod( 'video_seeks_to',0);	
-		if($video_seeks_to == ''){ $video_seeks_to =0;}  
-		$video_stop_time = get_theme_mod( 'video_stop_time',0);
-		if($video_stop_time == ''){ $video_stop_time =0;}
-		
-		$video_opacity = get_theme_mod( 'video_opacity',1);	
-		if($video_opacity == ''){ $video_opacity =0;}	
-			  
-	  }
-	
-	$youtube_str ='';
-	if($video_select_enable == 'youtube'){ 
-		$youtube_str = 'data-property="{videoURL:\''.$video_youtobe_id.'\', mute:'.$video_mute.',quality:\'default\',opacity:'.$video_opacity.',containment:\'.ct_slider_video\', loop:'.$video_loop.',showControls:'.$video_bottom_controls_bar.',  vol:'.$video_default_volum.',startAt:'.$video_seeks_to.',stopAt:'.$video_stop_time.',autoPlay:'.$video_auto_play.', addRaster:'.$video_addraster.', optimizeDisplay:true, stopMovieOnBlur:true }" ';
-	}
-	//youtube video end
-
-
 	$repeater_value = get_theme_mod( 'repeater_slider',$default_content); 
 	$slider_li = '';
 	$str_active = '';
@@ -69,23 +27,13 @@
 <section id="ct_slider" class="ct_section ct_slider ct_section_1">
 
 <div  class="section_slider ">
-  <!-- Carousel================================================== -->
+
   <div id="myCarousel" class="carousel slide ct_slider_warp" data-ride="carousel"  data-interval="<?php echo esc_attr(get_theme_mod( 'slide_time','5000')); ?> " >
-  <!-- Indicators 
-  
-  	<?php   if($j > 1){  ?>
-    <ol class="carousel-indicators">
-	<?php
-	  echo $slider_li;
-    ?>
-    </ol>
-  	<?php  }   ?>   
-     -->
+
     <div class="carousel-inner" role="listbox">
 	<?php  
       $k=0;
-	 // $slide_image =array();
-      
+    
       if ( ! empty( $repeater_value ) ) :	
         foreach ( $repeater_value as $row ) : 
           if ( isset( $row[ 'slider_page' ] ) && !empty( $row[ 'slider_page' ] ) ) :
@@ -93,13 +41,7 @@
      ?>       
             
       <div class="item ct_slider_item_<?php echo $k+1;?>  <?php if($k==0){echo 'active';}?> " >
-          
-             
-             <?php if( $slider_video == ($k+1) && $video_select_enable =='youtube'){?> 
-             <div class="ct_slider_video player"    <?php echo $youtube_str;?> >
-			 <?php }?>            
-             
-             
+      
               <div class="carousel-caption">
                   <div class="carousel_caption_warp">
 
@@ -127,12 +69,11 @@
 
                   </div>
                   <div class="clear"></div>
-                  <?php if(  $slider_video == ($k+1) && $video_select_enable =='youtube'){?>  </div><?php }?>
+
               </div>
           
-      </div><!--div class="item ct_slider_item  -->           
-        
-        
+      </div>         
+
      <?php
 	 		$k++;
           endif;
@@ -153,7 +94,7 @@
         <span class="sr-only"><?php esc_html_e('Next', 'best-restaurant');?></span>
     </a>  
   	<?php   }  ?>    
-  </div><!-- /.carousel -->
+  </div>
 
 </div>
 <div class="clear"></div>

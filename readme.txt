@@ -1,6 +1,6 @@
 === Best Restaurant===
 Contributors: CooThemes
-Tags: Tags: Blog, Custom Background, Custom Logo, Custom Menu, Custom-Colors, Custom Header, Flexible Header, Featured Images, Footer Widgets, Two Columns, Right Sidebar, Left Sidebar, Theme Options, E-Commerce, Food and Drink, Full Width Template, Portfolio, Translation Ready
+Tags: Blog, Custom Background, Custom Logo, Custom Menu, Custom-Colors, Custom Header, Flexible Header, Featured Images,  Footer Widgets, Two Columns, Right Sidebar, Left Sidebar, Theme Options, E-Commerce, Food and Drink, Full Width Template,  Translation Ready
 
 Requires at least: 4.9
 Tested up to: 4.9.8
@@ -13,7 +13,7 @@ License URI: License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 === Description ===
-Best Restaurant is a modern, clean and professional WordPress theme that is perfect for restaurant, caf¨¦, bakery, cuisine, fast food, pizzerias, drinks and food related business. The theme is specially designed based on the requirements of the food business and contains all needed functionalities, including food menu, reservation, gallery, opening hours, and map. Moreover, the theme has other awesome functionalities to help you build an awesome website, such as HTML5 video background, parallax scrolling effect, portfolio, newsletter subscribe and many more. Using latest Bootstrap Framework, HTML5 and CSS3 techniques, the theme is fully responsive on various devices. And Best Restaurant supports both one-page and multi-page layout. Moreover, the theme is compatible with WooCommerce, Contact Form 7, and MailChimp plugins. Demo: http://demo.coothemes.com/best-restaurant-pro/
+Best Restaurant is a modern, clean and professional WordPress theme that is perfect for restaurant, cafe, bakery, cuisine, fast food, pizzerias, drinks and food related business. The theme is specially designed based on the requirements of the food business and contains all needed functionalities, including food menu, reservation, gallery, opening hours, and map. Moreover, the theme has other awesome functionalities to help you build an awesome website, such as HTML5 video background, parallax scrolling effect, portfolio, newsletter subscribe and many more. Using latest Bootstrap Framework, HTML5 and CSS3 techniques, the theme is fully responsive on various devices. And Best Restaurant supports both one-page and multi-page layout. Moreover, the theme is compatible with WooCommerce, Contact Form 7, and MailChimp plugins. Demo: http://demo.coothemes.com/best-restaurant-pro/
 
 === License ===
 Best Restaurant WordPress Theme, Copyright 2018 Coothemes.com

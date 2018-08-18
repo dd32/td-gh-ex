@@ -1,12 +1,11 @@
 <?php
   $key = 'blog';
   $custom_css = '';
-  //--------------public css set-------------------
-  $sections = cts_public_content_default(); 
+
+  $sections = best_restaurantpublic_content_default(); 
   $default = $sections[$key];
 
-  //--------------section css set-------------------
-  $default_content = cts_section_content_default($key);  
+  $default_content = best_restaurantsection_content_default($key);  
   $repeater_value = get_theme_mod( 'repeater_'.$key,$default_content);	
 
 	
@@ -22,7 +21,7 @@
 	  $parallax_str ='data-parallax="scroll" data-image-src="'.$section_background_image.'" '; 
   }
   
-  $button_arr  = cts_button_default_arr($key);  
+  $button_arr  = best_restaurantbutton_default_arr($key);  
   $button_url = esc_url(get_theme_mod( $key.'_button_url',''));  
   $button_text = esc_html(get_theme_mod( $key.'_button_text',$button_arr['button_text']));  
   
@@ -50,9 +49,6 @@
  			<div class="row">
             
                 <?php
-		
-					// Pull all the categories into an array
-					//Pull all the categories into an array
 					$options_categories = array();
 					$options_categories_obj = get_categories();
 					foreach ($options_categories_obj as $category) {
@@ -74,7 +70,7 @@
 					if(empty($options_cat_id)){
 						
 						$query_posts = array( 
-						'showposts' => $blog_article_number,// $post_list_num
+						'showposts' => $blog_article_number,
 						'ignore_sticky_posts' => 1,
 						
 						 ); 
@@ -121,7 +117,7 @@
                             </div>
                         </div>                    
                     
-                    </div><!--div class="ct_row ct_clear_margin_padding"-->
+                    </div>
 
                 <?php 
 				
@@ -140,7 +136,7 @@
                 
                                                           
             </div>	
-        </div><!--div class="ct_gallery_list "-->
+        </div>
         
 
 	</div>

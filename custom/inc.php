@@ -1,24 +1,19 @@
 <?php
 
-//default data
-function cts_section_default_order() 
+function best_restaurantsection_default_order() 
 {
 	$section_default = array( 	
-		'slider',//free
-		'about',//free			
-		'service',//free
-					
-		'blog',//free
-		//'contact',//free
-		//'tool',//free
-				
+		'slider',
+		'about',		
+		'service',		
+		'blog',
 	);		
 	return $section_default;
 }
 
 
-if ( !function_exists( 'cts_get_default_title_font' ) ){
-  function cts_get_default_title_font($key)
+if ( !function_exists( 'best_restaurantget_default_title_font' ) ){
+  function best_restaurantget_default_title_font($key)
   {  
   
 	switch($key){
@@ -73,8 +68,8 @@ if ( !function_exists( 'cts_get_default_title_font' ) ){
   }
 }
 
-if ( !function_exists( 'cts_get_description_font' ) ){
-  function cts_get_description_font($key)
+if ( !function_exists( 'best_restaurantget_description_font' ) ){
+  function best_restaurantget_description_font($key)
   {  
 	switch($key){
 
@@ -130,9 +125,8 @@ if ( !function_exists( 'cts_get_description_font' ) ){
 }
 	   
 
-  //section public set
   
-function cts_public_content_default()//section public css
+function best_restaurantpublic_content_default()
 { 
   $imagepath =  get_stylesheet_directory_uri() . '/custom/images/';    
   return $sections_default = array(
@@ -194,7 +188,7 @@ function cts_public_content_default()//section public css
   );
 }
 
-function cts_section_content_default($key)
+function best_restaurantsection_content_default($key)
 {  
   $imagepath =  get_stylesheet_directory_uri() . '/custom/images/'; 
   switch($key){
@@ -261,7 +255,7 @@ function cts_section_content_default($key)
 }
 
 
-function cts_button_default_arr($key) 
+function best_restaurantbutton_default_arr($key) 
 {
 	$default     = array();	
  switch($key){

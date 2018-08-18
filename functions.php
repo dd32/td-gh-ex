@@ -36,7 +36,6 @@ function best_restaurant_custom_scripts()
 	$custom_css = '';
 	$color = THEME_COLOR;
 		
-	//header css
  	if ( get_theme_mod( 'theme_color',$color) ){
 		$color = esc_attr(get_theme_mod( 'theme_color',$color)) ;
 	}	
@@ -60,8 +59,7 @@ function best_restaurant_custom_scripts()
 		';
 	}
 
-	// get sction live css
-	$sortable_value = maybe_unserialize( get_theme_mod( 'home_layout', cts_section_default_order() ) );
+	$sortable_value = maybe_unserialize( get_theme_mod( 'home_layout', best_restaurantsection_default_order() ) );
 	
 
 	if ( ! empty( $sortable_value ) ) : 
@@ -90,15 +88,13 @@ add_action( 'wp_enqueue_scripts', 'best_restaurant_custom_scripts' );
 function best_restaurant_script_method() {	
 	$custom_js = 'jQuery(document).ready(function($){';
 	
-	//front-page
 	$custom_js .= 'var height = jQuery(window).height();
 	var width = jQuery(window).width();';
 
 	if(is_front_page() ){
-		// get sction live js
-		$sortable_value = maybe_unserialize( get_theme_mod( 'home_layout', cts_section_default_order() ) );
-		
-	
+
+		$sortable_value = maybe_unserialize( get_theme_mod( 'home_layout', best_restaurantsection_default_order() ) );
+			
 		if ( ! empty( $sortable_value ) ) : 
 		  foreach ( $sortable_value as $checked_value ) :
 		  
@@ -107,8 +103,7 @@ function best_restaurant_script_method() {
 		  endforeach;
 		endif; 
 	}	
-	
-	
+		
 	$custom_js .= '});';
 	
 
@@ -120,20 +115,17 @@ function best_restaurant_script_method() {
 if ( ! function_exists( 'best_restaurant_get_section_menu' ) ) {
 	function best_restaurant_get_section_menu(){
 		$section_menu = '';
-		$sortable_value = maybe_unserialize( get_theme_mod( 'home_layout',cts_section_default_order() ) );	
+		$sortable_value = maybe_unserialize( get_theme_mod( 'home_layout',best_restaurantsection_default_order() ) );	
 		if ( ! empty( $sortable_value ) ) : 
 		  foreach ( $sortable_value as $checked_value ) :
 			$section_menu = '<li data-menuanchor="'.$checked_value.'"><a href="#'.$checked_value.'">'.ucfirst(esc_html(get_theme_mod( $checked_value.'_section_menu_title',$checked_value) )).'</a></li>'.$section_menu;
 		  endforeach;
-		endif; 
-	
+		endif;	
 		return $section_menu;
 	}
-
 }
 
 
-/* this function gets thumbnail from Post Thumbnail or Custom field or First post image */
 if ( ! function_exists( 'best_restaurant_get_blog_thumbnail' ) ) {
 	function best_restaurant_get_blog_thumbnail($post_id)
 	{
@@ -194,7 +186,6 @@ function best_restaurant_get_page_details($page_id , $type)
 		$return = $page_data->guid;	
 
 	}	
-	
 	
 	return 	$return;
 }

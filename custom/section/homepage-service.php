@@ -2,11 +2,10 @@
 
   $key = 'service';
   $custom_css = '';
-  //--------------public css set-------------------
-  $sections = cts_public_content_default(); 
+
+  $sections = best_restaurantpublic_content_default(); 
   $default = $sections[$key];
 
-  //--------------section css set-------------------
 	
   $imagepath =  get_stylesheet_directory_uri() . '/custom/images/'; 
 
@@ -37,8 +36,6 @@
 
             
         </div>
-
-
 
 	</div>
 	<div class="clear"></div>
