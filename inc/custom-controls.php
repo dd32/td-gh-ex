@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.2
+ * @version   1.2.3
 */
 
 /* TABLE OF CONTENT
@@ -15,13 +15,11 @@
   1.2 - Class Category Control
   1.3 - Class add panel
   1.4 - Class TinyMCE
-  1.5 - Class Google Font
   1.6 - Class Alpha Color
   1.7 - Class Slider custom control 
 
 2 - CSS Customize 
   
-  2.1 - Font Family
   2.2 - Color Filter Header Home
   2.3 - Font Size Logo
   2.4 - Responsive avik_Enable Style
@@ -68,7 +66,7 @@ class Avik_Toggle_Switch_Custom_control extends WP_Customize_Control {
      * Enqueue our scripts and styles
      */
     public function enqueue(){
-        wp_enqueue_style( 'avik_custom_controls_css', trailingslashit( get_template_directory_uri() ) . 'inc/css/customizer.css', array(), '1.0', 'all' );
+        wp_enqueue_style( 'avik_custom_controls_css', trailingslashit( get_template_directory_uri() ) . 'inc/css/avik-customizer.css', array(), '1.0', 'all' );
     }
     /**
      * Render the control in the customizer
@@ -114,8 +112,9 @@ if (class_exists('WP_Customize_Control')) {
             $dropdown = str_replace( '<select', '<select ' . $this->get_link(), $dropdown );
             printf(
                 '<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
-                esc_attr($this)->label,
-                esc_attr($dropdown)
+                $this->label,
+                $dropdown
+               
             );
         }
     }
@@ -175,8 +174,8 @@ class Avik_TinyMCE_Custom_control extends WP_Customize_Control {
      * Enqueue our scripts and styles
      */
     public function enqueue(){
-        wp_enqueue_script( 'avik_custom_controls_js', trailingslashit( get_template_directory_uri() ) . 'inc/js/class-customizer.js', array( 'jquery' ), '1.0', true );
-        wp_enqueue_style( 'avik_custom_controls_css', trailingslashit( get_template_directory_uri() ) . 'inc/css/customizer.css', array(), '1.0', 'all' );
+        wp_enqueue_script( 'avik_custom_controls_js', trailingslashit( get_template_directory_uri() ) . 'inc/js/avik-class-customizer.js', array( 'jquery' ), '1.0', true );
+        wp_enqueue_style( 'avik_custom_controls_css', trailingslashit( get_template_directory_uri() ) . 'inc/css/avik-customizer.css', array(), '1.0', 'all' );
         wp_enqueue_editor();
     }
     /**
@@ -206,51 +205,6 @@ class Avik_TinyMCE_Custom_control extends WP_Customize_Control {
 }
 
 /* ------------------------------------*
-##  1.5 Class Google Font  */
-/* ----------------------------------- */
-
-
-if (class_exists('WP_Customize_Control')) {
-
-class Avik_Google_Font_Dropdown_Custom_Control extends WP_Customize_Control{
-	private $fonts = false;
-    public function __construct($manager, $id, $args = array(), $options = array()){
-        $this->fonts = $this->get_google_fonts();
-        parent::__construct( $manager, $id, $args );
-    }
- 
-    public function render_content(){
-        ?>
-            <label class="customize_dropdown_input">
-                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-            	<select id="<?php echo esc_attr($this->id); ?>" name="<?php echo esc_attr($this->id); ?>" data-customize-setting-link="<?php echo esc_attr($this->id); ?>">
-                    <?php
-                        foreach ( $this->fonts as $k => $v ){
-                            echo esc_attr('<option value="'.$v['family'].'" ' . selected( $this->value(), $v['family'], false ) . '>'.$v['family'].'</option>');
-                        }
-                    ?>
-                </select>
-            </label>
-        <?php
-    }
- 
-	public function get_google_fonts(){
-		if (get_transient('avik_google_font_list_p')) {
-        	$content = get_transient('avik_google_font_list_p');
-	    } else { 
-	        $googleApi = esc_url( get_theme_mod( 'avik_google_api'));
-	        $fontContent = wp_remote_get( $googleApi, array('sslverify'   => false) );
-	        $content = json_decode($fontContent['body'], true);
-	        set_transient( 'avik_google_font_list_p', $content, 0 );
-	    }
- 
-	    return $content['items'];
-	}
- 
-}
-}
-
-/* ------------------------------------*
 ##  1.6 Class Alpha Color  */
 /* ----------------------------------- */
 
@@ -270,8 +224,8 @@ class Avik_Google_Font_Dropdown_Custom_Control extends WP_Customize_Control{
 		public $show_opacity;
 
 		public function enqueue() {
-			wp_enqueue_script( 'avik_custom_controls_js', trailingslashit( get_template_directory_uri() ) . 'inc/js/class-customizer.js', array( 'jquery', 'wp-color-picker' ), '1.0', true );
-			wp_enqueue_style( 'avik_custom_controls_css', trailingslashit( get_template_directory_uri() ) . 'inc/css/customizer.css', array( 'wp-color-picker' ), '1.0', 'all' );
+			wp_enqueue_script( 'avik_custom_controls_js', trailingslashit( get_template_directory_uri() ) . 'inc/js/avik-class-customizer.js', array( 'jquery', 'wp-color-picker' ), '1.0', true );
+			wp_enqueue_style( 'avik_custom_controls_css', trailingslashit( get_template_directory_uri() ) . 'inc/css/avik-customizer.css', array( 'wp-color-picker' ), '1.0', 'all' );
 		}
 	
 		public function render_content() {
@@ -290,10 +244,10 @@ class Avik_Google_Font_Dropdown_Custom_Control extends WP_Customize_Control{
 				<label>
 					<?php 
 					if ( isset( $this->label ) && '' !== $this->label ) {
-						echo esc_attr('<span class="customize-control-title">' . sanitize_text_field( $this->label ) . '</span>');
+						echo '<span class="customize-control-title">' . esc_html(sanitize_text_field( $this->label )) . '</span>';
 					}
 					if ( isset( $this->description ) && '' !== $this->description ) {
-						echo esc_attr('<span class="description customize-control-description">' . sanitize_text_field( $this->description ) . '</span>');
+						echo '<span class="description customize-control-description">' . esc_html(sanitize_text_field( $this->description )) . '</span>';
 					} ?>
 				</label>
 				<input class="alpha-color-control" type="text" data-show-opacity="<?php echo esc_attr($show_opacity); ?>" data-palette="<?php echo esc_attr( $palette ); ?>" data-default-color="<?php echo esc_attr( $this->settings['default']->default ); ?>" <?php $this->link(); ?>  />
@@ -317,8 +271,8 @@ class Avik_Slider_Custom_Control extends WP_Customize_Control {
      * Enqueue our scripts and styles
      */
     public function enqueue() {
-        wp_enqueue_script( 'avik_custom_controls_js', trailingslashit( get_template_directory_uri() ) . 'inc/js/class-customizer.js', array( 'jquery', 'jquery-ui-core' ), '1.0', true );
-        wp_enqueue_style( 'avik_custom_controls_css', trailingslashit( get_template_directory_uri() ) . 'inc/css/customizer.css', array(), '1.0', 'all' );
+        wp_enqueue_script( 'avik_custom_controls_js', trailingslashit( get_template_directory_uri() ) . 'inc/js/avik-class-customizer.js', array( 'jquery', 'jquery-ui-core' ), '1.0', true );
+        wp_enqueue_style( 'avik_custom_controls_css', trailingslashit( get_template_directory_uri() ) . 'inc/css/avik-customizer.css', array(), '1.0', 'all' );
     }
     /**
      * Render the control in the customizer
@@ -343,19 +297,6 @@ function avik_customizer_css() {
 ?>
 
 <style>
-
-
-/* ------------------------------------------------------------------------- *
-## 2.1 Font Family */
-/* ------------------------------------------------------------------------- */  
-
-p{
-    font-family:<?php echo esc_attr( get_theme_mod('avik_google_font_list_p', 'Montserrat')); ?>;
-}
-
-h1,h2,h3,h4,h5,h6,li,a,span{
-    font-family:<?php echo esc_attr( get_theme_mod('avik_google_font_list_title', 'Montserrat')); ?>;
-}
 
 /* ------------------------------------------------------------------------- *
 ## 2.2 Color Filter Header Home */
@@ -886,4 +827,7 @@ function avik_sanitize_select( $input, $setting ){
 		function avik_sanitize_integer( $input ) {
 			return (int) $input;
 		}
-	}
+    }
+    
+
+

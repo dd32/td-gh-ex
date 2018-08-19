@@ -7,7 +7,7 @@ Template Post Type: post, page, product
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.2
+ * @version   1.2.3
  */
 
 if(is_single()) { get_header('post'); } else { get_header(); }  
@@ -40,10 +40,6 @@ if(is_single()) { get_header('post'); } else { get_header(); }
 						<p class="subtitle-name-portfolio-1-c-1"><i class="fas fa-angle-right "></i><?php the_title(); ?></p>
 						  
 			</div>
-			<!-- Social Share -->
-            <div class="social-share-portfolio">
-			   <?php get_template_part( 'inc/share' ); ?>  
-            </div>
 	      </div>
 	    </div>
      </div>

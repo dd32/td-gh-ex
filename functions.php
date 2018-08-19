@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.2
+ * @version   1.2.3
  */
 
 /* TABLE OF CONTENT
@@ -22,12 +22,10 @@
 11 - Carousel featured image
 12 - Avik Support Page
 13 - Lightbox popup image
-14 - Lenght excerpt
 15 - Include javascript files
 16 - Include css files
 17 - Include script and styles for class add Panel 
 18 - Add additional templates
-19 - Google Fonts URL function
 20 - Include Plugin
 21 - Multipost Thumbnails Plugin
 */
@@ -461,7 +459,7 @@ add_action( 'init', 'avik_my_theme_add_editor_styles' );
 
 function avik_carousel_scripts() {
   
-    wp_enqueue_script( 'owl.carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), '20120206', true );
+    wp_enqueue_script( 'owl.carousel', get_template_directory_uri() . '/js/jquery-owl.carousel.js', array('jquery'), '20120206', true );
    
 }
 add_action( 'wp_enqueue_scripts', 'avik_carousel_scripts' );
@@ -487,8 +485,8 @@ function avik_page_display() {
 
 add_action( 'admin_enqueue_scripts', 'avik_load_admin_style' );
 function avik_load_admin_style() {
-    wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/css/admin-style.css', false, '1.0.0' );	
-    wp_enqueue_script( 'admin_script', get_template_directory_uri() . '/js/admin-script.js', false, '1.0.0' );
+    wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/css/avik-admin-style.css', false, '1.0.0' );	
+    wp_enqueue_script( 'admin_script', get_template_directory_uri() . '/js/avik-admin-script.js', false, '1.0.0' );
     wp_enqueue_style( 'wp-bootstrap-avik-font-awesome-admin', get_template_directory_uri() . '/css/fontawesome-all.css' );		
 }
 
@@ -514,21 +512,6 @@ function avik_addtaglightbox ($content){
     $content = preg_replace($pattern, $replacement, $content);
     return $content;
 }
-
-/* 14 Lenght excerpt
--------------------------------------------------------- */
-
-function avik_wpdocs_custom_excerpt_length( $length ) {
-    return 20;
-}
-add_filter( 'excerpt_length', 'avik_wpdocs_custom_excerpt_length', 999 );
-
-//Filter content more excerpt
-
-function avik_custom_excerpt_more( $more ) { return '...';
-    
-} add_filter( 'excerpt_more', 'avik_custom_excerpt_more' ); 
-
    
 /* 15 Include javascript files
 ------------------------------------------------------------*/
@@ -573,8 +556,6 @@ if(! function_exists('avik_styles') ) {
 	wp_enqueue_style('avik-font-awesome', get_template_directory_uri(). '/css/fontawesome-all.min.css');
 	// AOS Animate
 	wp_enqueue_style('avik-aos-css', get_template_directory_uri(). '/css/aos.css'); 
-	// Include Font
-	wp_enqueue_style('avik-google-fonts', avik_fonts_url(), array(), null); 
 
   }
 
@@ -587,14 +568,14 @@ add_action('wp_enqueue_scripts', 'avik_styles');
 
 function avik_pe_customize_controls_scripts() {
 
-    wp_enqueue_script( 'avik-pe-customize-controls', get_theme_file_uri( '/assets/js/pe-customize-controls.js' ), array(), '1.0', true );
+    wp_enqueue_script( 'avik-pe-customize-controls', get_theme_file_uri( '/assets/js/avik-pe-customize-controls.js' ), array(), '1.0', true );
 }
 
     add_action( 'customize_controls_enqueue_scripts', 'avik_pe_customize_controls_scripts' );
 
 function avik_pe_customize_controls_styles() {
 
-    wp_enqueue_style( 'avik-pe-customize-controls', get_theme_file_uri( '/assets/css/pe-customize-controls.css' ), array(), '1.0' );
+    wp_enqueue_style( 'avik-pe-customize-controls', get_theme_file_uri( '/assets/css/avik-pe-customize-controls.css' ), array(), '1.0' );
 }
 
     add_action( 'customize_controls_print_styles', 'avik_pe_customize_controls_styles' );
@@ -641,35 +622,6 @@ require get_template_directory() . '/inc/color-scheme.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-
-/* 19 Google Fonts URL function
--------------------------------------------------------- */
-
-
-if ( ! function_exists( 'avik_fonts_url' ) ){
-	function avik_fonts_url() {
-	    $fonts_url = '';
-	    $content_font = get_theme_mod('avik_google_font_list_p', '');
- 
-	    if ( 'off' !== $content_font ) {
-	        $font_families = array();
- 
-	        if ( 'off' !== $content_font ) {
-	            $font_families[] = $content_font;
-	        }
- 
-	        $query_args = array(
-	            'family' => urlencode( implode( '|', array_unique($font_families) ) ),
-	        );
- 
-	        $fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-	    }
- 
-	    return esc_url_raw( $fonts_url );
-	}
-}
-
 
 /* 20 Include Plugin
 -------------------------------------------------------- */

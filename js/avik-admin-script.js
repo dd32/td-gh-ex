@@ -1,9 +1,9 @@
 /**
- * admin-script.js
+ * avik-admin-script.js
  *
  * author    Denis Franchi
  * package   Avik
- * version   1.2.2
+ * version   1.2.3
  */
 
 

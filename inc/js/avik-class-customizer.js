@@ -1,10 +1,10 @@
 
 /**
- * class-customizer.js
+ * avik-class-customizer.js
  *
  * author    Denis Franchi
  * package   Avik
- * version   1.2.2
+ * version   1.2.3
  */
 
 jQuery( document ).ready(function($) {

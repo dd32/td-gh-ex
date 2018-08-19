@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi 
  * @package   Avik
- * @version   1.2.2
+ * @version   1.2.3
  */
 
  if(is_single()) { get_header('post'); } else { get_header(); }  
@@ -36,10 +36,6 @@
                       </div>
 	                    <?php the_content(); ?>
 					            <?php wp_link_pages('pagelink=Page %'); ?>
-					            <!-- Social Share -->
-					            <div class="social-share-single" data-aos="zoom-in">
-                        <?php get_template_part( 'inc/share' ); ?>  
-                      </div>
                       <hr>
 	                    <div class="comments">
 	                        <?php comments_template() ; ?>

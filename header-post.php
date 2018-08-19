@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.2
+ * @version   1.2.3
  */
 
 ?> 
@@ -54,7 +54,7 @@
               <span class="navbar-toggler-icon"></span>
            </button>
            <?php
-               wp_nav_menu([
+               wp_nav_menu(array(
                 'menu'            => 'menu-2',
                 'theme_location'  => 'menu-2',
                 'container'       => 'div',
@@ -64,7 +64,7 @@
                 'menu_class'      => 'navbar-nav ml-auto',
                 'depth'           => 2,
                 'fallback_cb'     => 'bs4navwalker::fallback',
-                'walker'          => new bs4navwalker() ]);
+                'walker'          => new bs4navwalker() ));
 		         ?>
 	  </nav>
 </header>

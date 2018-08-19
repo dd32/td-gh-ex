@@ -1,10 +1,10 @@
 
 /**
- * customizer.css
+ * avik-customizer.css
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.2
+ * @version   1.2.3
 */
 
 /* TABLE OF CONTENT
@@ -334,7 +334,6 @@ input[type="number"]:focus {
 	line-height: 22px;
 	font-size: 14px;
 	color: white;
-	font-family: Trebuchet, Arial, sans-serif;
 	font-weight: bold;
 	box-sizing: border-box;
 }
@@ -413,7 +412,6 @@ input[type="number"]:focus {
 	line-height: 22px;
 	font-size: 12px;
 	color: white;
-	font-family: Trebuchet, Arial, sans-serif;
 	font-weight: bold;
 	box-sizing: border-box;
 	padding-right: 2px;
@@ -462,7 +460,6 @@ input[type="number"]:focus {
 	line-height: 22px;
 	font-size: 9px;
 	color: white;
-	font-family: Trebuchet, Arial, sans-serif;
 	font-weight: bold;
 	box-sizing: border-box;
 	padding-right: 2px;
@@ -511,7 +508,6 @@ input[type="number"]:focus {
 	line-height: 22px;
 	font-size: 9px;
 	color: white;
-	font-family: Trebuchet, Arial, sans-serif;
 	font-weight: bold;
 	box-sizing: border-box;
 	padding-right: 2px;

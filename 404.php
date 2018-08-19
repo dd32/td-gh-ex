@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.2
+ * @version   1.2.3
  */
  ?>
 <?php if(is_404()) { get_header('post'); } else { get_header(); }?> 

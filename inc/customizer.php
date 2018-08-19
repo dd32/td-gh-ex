@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.2
+ * @version   1.2.3
  */
 
 /* TABLE OF CONTENT
@@ -23,8 +23,8 @@
   2.11 - Page 404
   2.12 - Back to Top
   2.13 - Social
-  2.14 - Share
-  2.15 - Font Family 
+ 
+
 */
 /**
  *
@@ -164,7 +164,7 @@ array(
 
 $avikSlider = new Avik_WP_Customize_Panel( $wp_customize, 'avik_slider', array(
 	'title'    => __('Slider','avik'),
-    'priority' => 20,
+    'priority' => 20, 
 ));
 
 $wp_customize->add_panel( $avikSlider );
@@ -3291,218 +3291,6 @@ $wp_customize->add_control( 'avik_link_github_social',
          'placeholder' => __( 'Enter link...','avik' ),
 ), ));
 
-
-/* ------------------------------------------------------------------------------------------------------------*
-##  2.14 Share
-/* ------------------------------------------------------------------------------------------------------------*/ 
-
-$avikShare = new Avik_WP_Customize_Panel( $wp_customize, 'avik_share', array(
-	'title'    => __('Share','avik'),
-	'priority' => 310,
-));
-
-$wp_customize->add_panel( $avikShare );
-
-// Settings Share
-
-$wp_customize->add_section(
-    'avik_section_settings_share',
-    array(
-        'title'      => __('Settings Share','avik'),
-        'priority'   => 10,
-		'capability' => 'edit_theme_options',
-		'panel'      => 'avik_share',
-    )
-);
-
-// Title Share
-
-$wp_customize->add_setting( 'avik_title_share', array(
-    'capability'        => 'edit_theme_options',
-    'default'           => '',
-    'transport'         => 'postMessage',
-    'sanitize_callback' => 'wp_filter_nohtml_kses',
-) );
-  
-  $wp_customize->add_control( 'avik_title_share', array(
-    'type'    => 'text',
-    'section' => 'avik_section_settings_share',
-    'priority'=> 10,
-    'label'   => __( 'Title Share','avik' ),
-) );
-
-// Facebbok
-
-$wp_customize->add_setting( 'avik_enable_facebook_share',
-array(
-   'default' => 0,
-   'transport' => 'refresh',
-   'sanitize_callback' => 'avik_switch_sanitization',
-));
-
-$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_facebook_share',
-array(
-   'label' => __( 'Enable/Disable Facebook.','avik' ),
-   'section' => 'avik_section_settings_share',
-   'priority'=> 20,
-)) );
-
-// Twitter
-
-$wp_customize->add_setting( 'avik_enable_twitter_share',
-array(
-   'default' => 0,
-   'transport' => 'refresh',
-   'sanitize_callback' => 'avik_switch_sanitization',
-));
-
-$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_twitter_share',
-array(
-   'label' => __( 'Enable/Disable Twitter.','avik' ),
-   'section' => 'avik_section_settings_share',
-   'priority'=> 30,
-)) );
-
-// Google Plus
-
-$wp_customize->add_setting( 'avik_enable_google_plus_share',
-array(
-   'default' => 0,
-   'transport' => 'refresh',
-   'sanitize_callback' => 'avik_switch_sanitization',
-));
-
-$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_google_plus_share',
-array(
-   'label' => __( 'Enable/Disable Google Plus.','avik' ),
-   'section' => 'avik_section_settings_share',
-   'priority'=> 40,
-)) );
-
-// Linkedin
-
-$wp_customize->add_setting( 'avik_enable_linkedin_share',
-array(
-   'default' => 0,
-   'transport' => 'refresh',
-   'sanitize_callback' => 'avik_switch_sanitization',
-));
-
-$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_linkedin_share',
-array(
-   'label' => __( 'Enable/Disable Linkedin.','avik' ),
-   'section' => 'avik_section_settings_share',
-   'priority'=> 50,
-)) );
-
-// Pinterest 
-
-$wp_customize->add_setting( 'avik_enable_pinterest_share',
-array(
-   'default' => 0,
-   'transport' => 'refresh',
-   'sanitize_callback' => 'avik_switch_sanitization',
-));
-
-$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_pinterest_share',
-array(
-   'label' => __( 'Enable/Disable Pinterest.','avik' ),
-   'section' => 'avik_section_settings_share',
-   'priority'=> 60,
-)) );
-
-// Whatsapp
-
-$wp_customize->add_setting( 'avik_enable_whatsapp_share',
-array(
-   'default' => 0,
-   'transport' => 'refresh',
-   'sanitize_callback' => 'avik_switch_sanitization',
-));
-
-$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_whatsapp_share',
-array(
-   'label' => __( 'Enable/Disable Whatsapp.','avik' ),
-   'section' => 'avik_section_settings_share',
-   'priority'=> 70,
-)) );
-
-
-/* ------------------------------------------------------------------------------------------------------------*
-##  2.15 Font Family
-/* ------------------------------------------------------------------------------------------------------------*/
-
-$avikFonts = new Avik_WP_Customize_Panel( $wp_customize, 'avik_fonts', array(
-	'title'    => __('Font Family','avik'),
-	'priority' => 320,
-));
-
-$wp_customize->add_panel( $avikFonts );
-
-// Settings Font
-
-$wp_customize->add_section(
-    'avik_section_settings_fonts',
-      array(
-        'title'      => __('Settings Font Family','avik'),
-        'priority'   => 10,
-		'capability' => 'edit_theme_options',
-		'panel'      => 'avik_fonts',
-    )
-);
-
-// Font Family paragraph
-   
-$wp_customize->add_setting( 'avik_google_font_list_p', array(
-    'default'           => '',
-    'sanitize_callback' => 'sanitize_text_field',
-));
-
-$wp_customize->add_control( new Avik_Google_Font_Dropdown_Custom_Control( $wp_customize, 'avik_google_font_list_p', array(
-    'label'      => __('Font family for paragraph','avik'),
-    'section'    => 'avik_section_settings_fonts',
-    'settings'   => 'avik_google_font_list_p',
-    'priority'   => 10,
-)));
-
-// Font Family title
-   
-$wp_customize->add_setting( 'avik_google_font_list_title', array(
-    'default'           => '',
-    'sanitize_callback' => 'sanitize_text_field',
-));
-
-$wp_customize->add_control( new Avik_Google_Font_Dropdown_Custom_Control( $wp_customize, 'avik_google_font_list_title', array(
-    'label'      => __('Font family for title','avik'),
-    'section'    => 'avik_section_settings_fonts',
-    'settings'   => 'avik_google_font_list_title',
-    'priority'   => 20,
-)));
-
-// Url Api Google
-
-$wp_customize->add_setting( 'avik_google_api',
-   array(
-      'default' => '',
-      'transport' => 'refresh',
-      'sanitize_callback' => 'esc_url_raw',
-   )
-);
- 
-$wp_customize->add_control( 'avik_google_api',
-   array(
-      'label' => __( 'Api Google','avik' ),
-      'description' => __( 'Insert your Google Api key(s)','avik' ),
-      'section' => 'avik_section_settings_fonts',
-	  'priority'=> 30,
-	  'type' => 'url',
-      'input_attrs' => array( 
-         'class' => 'my-custom-class',
-         'style' => 'border: 1px solid #2885bb',
-         'placeholder' => __( 'Enter api key...','avik' ),
-), ));
-
-
 }
 add_action( 'customize_register', 'avik_customize_register' );
 
@@ -3528,7 +3316,7 @@ function avik_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function avik_customize_preview_js() {
-	wp_enqueue_script( 'avik-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'avik-customizer', get_template_directory_uri() . '/js/avik-customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'avik_customize_preview_js' );
 

@@ -1,9 +1,9 @@
 /**
- * customizer.js
+ * avik-customizer.js
  *
  * author    Denis Franchi
  * package   Avik
- * version   1.2.2
+ * version   1.2.3
  */
 
 /* TABLE OF CONTENT
@@ -14,8 +14,7 @@
   4 - Portfolio
   5 - Blog
   6 - Footer
-  7 - Share
-  8 - Color Filter Header Home
+  7 - Color Filter Header Home
 */
 
 ( function( $ ) {
@@ -274,19 +273,7 @@ wp.customize( 'avik_title_power_footer', function( value ) {
 } );
 
 /* ------------------------------------------------------------------------- *
-## 7 Share */
-/* ------------------------------------------------------------------------- */
-
-// Title Share
-wp.customize( 'avik_title_share', function( value ) {
-	value.bind( function( newval ) {
-		$( 'h3.title-share' ).html( newval );
-		
-	} );
-} );
-
-/* ------------------------------------------------------------------------- *
-## 8 Color Filter Header Home */
+## 7 Color Filter Header Home */
 /* ------------------------------------------------------------------------- */
 
 // Color Filter

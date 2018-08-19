@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.2
+ * @version   1.2.3
  */
  ?>
 
@@ -25,10 +25,6 @@
 			  'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'avik' ),
 			   'after'  => '</div>',) );
 		?>
-		  <!-- Social Share -->
-		  <div class="social-share-page" data-aos="zoom-in">
-		    <?php get_template_part( 'inc/share' ); ?>         
-          </div>
 	 </div>
 	 <?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">

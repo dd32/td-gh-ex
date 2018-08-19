@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.2
+ * @version   1.2.3
  */
 
 class Avik_Color_Scheme {
@@ -22,7 +22,7 @@ class Avik_Color_Scheme {
 
     	$wp_customize->add_setting( 'avik_color_scheme', array(
 		    'default' => 'default',
-			'transport' => 'postMessage',
+			'transport' => 'refresh',
 			'sanitize_callback' => 'avik_sanitize_select',
 		) );
 		$color_schemes = $this->get_color_schemes();
@@ -71,7 +71,7 @@ class Avik_Color_Scheme {
 		foreach ( $options as $key => $label ) {
 		    $wp_customize->add_setting( $key, array(
 				'sanitize_callback' => 'sanitize_hex_color',
-		        'transport' => 'postMessage',
+		        'transport' => 'refresh',
 			) );
 
 
@@ -268,7 +268,7 @@ class Avik_Color_Scheme {
 
     
 	public function customize_js() {
-	   wp_enqueue_script( 'avik-color-scheme', get_template_directory_uri() . '/inc/js/color-scheme.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '', true );
+	   wp_enqueue_script( 'avik-color-scheme', get_template_directory_uri() . '/inc/js/avik-color-scheme.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '', true );
 	   wp_localize_script( 'avik-color-scheme', 'AvikColorScheme', $this->get_color_schemes() );
 	}
 	    
@@ -308,7 +308,7 @@ class Avik_Color_Scheme {
 	<?php
     }
     public function customize_preview_js() {
-   		wp_enqueue_script( 'avik-color-scheme-preview', get_template_directory_uri() . '/inc/js/color-scheme-preview.js', array( 'customize-preview' ), '', true );
+   		wp_enqueue_script( 'avik-color-scheme-preview', get_template_directory_uri() . '/inc/js/avik-color-scheme-preview.js', array( 'customize-preview' ), '', true );
 
     }
     
