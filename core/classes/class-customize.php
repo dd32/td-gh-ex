@@ -265,20 +265,24 @@ class novalite_customize {
 		
 		$sanize = array (
 		
-			'jaxlite_footer_email_button' => 'mailto:',
-			'jaxlite_footer_skype_button' => 'skype:',
+			'novalite_footer_email_button' => 'mailto:',
+			'novalite_footer_skype_button' => 'skype:',
 		
 		);
 
-		if ( !strstr ( $value, $sanize[$setting->id]) ) :
+		if (!isset($value) || $value == '' || $value == $sanize[$setting->id]) {
 
+			return '';
+
+		} elseif (!strstr($value, $sanize[$setting->id])) {
+	
 			return $sanize[$setting->id] . $value;
-
-		else:
-
-			return esc_url_raw($value, array('skype', 'mailto'));
-
-		endif;
+	
+		} else {
+	
+			return esc_url_raw($value, array('mailto', 'skype'));
+	
+		}
 
 	}
 

@@ -311,6 +311,23 @@ if (!function_exists('novalite_my_gallery_style')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* ALLOWED PROTOCOLS */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('novalite_kses_allowed_protocols')) {
+
+	function novalite_kses_allowed_protocols($protocols) {
+		
+		$protocols[] = 'skype';
+		return $protocols;
+	
+	}
+
+	add_filter( 'kses_allowed_protocols', 'novalite_kses_allowed_protocols');
+
+}
+
+/*-----------------------------------------------------------------------------------*/
 /*RESPONSIVE EMBED */
 /*-----------------------------------------------------------------------------------*/ 
 
