@@ -4,14 +4,14 @@ Theme URI: https://www.hoothemes.com/themes/avata.html
 Author: HooThemes
 Author URI: http://www.hoothemes.com/
 Description: Based on Bootstrap and coded with HTML5 and CSS3 language, Avata WordPress theme is fully responsive in desktops and mobile devices. With enriched customizer settings, you can easily create a homepage with pre-built layouts such as banner, service, video, gallery, team, testimonial, progress bar, counter up, blog, slogan and so on, you can also sort them by dragging and dropping. Avata theme is WooCommerce compatible we can use it for e-commerce site, multilingual ready (WPML & Polylang) and translateable. You can check the demo at http://demo.hoosoft.com/avata/.
-Version: 1.5.5
+Version: 1.5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avata
 Tags: one-column, two-columns, three-columns, theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready, custom-logo, featured-image-header, footer-widgets, right-sidebar, left-sidebar
 
-Avata Wordpress Theme has been created by Hoothemes.com, Copyright 2018 Hoothemes.com
-Avata Wordpress theme is released under the terms of GNU GPL.
+Avata WordPress Theme has been created by Hoothemes.com, Copyright 2018 Hoothemes.com
+Avata WordPress theme is released under the terms of GNU GPL.
 
 */
 
@@ -937,7 +937,7 @@ a.hoomenu-reveal {
 		padding-bottom:50px;
 		}
 	.main-nav > li > a {
-		line-height: 20px;
+		line-height: 20px !important;
 	}
 	.main-nav li {
 		margin-left: 0;
@@ -2060,6 +2060,7 @@ a:hover .lnk-icon-right {
 	.both-aside .col-aside-left {
 		right: 60%; /*.both-aside .col-aside-main width*/
 	}
+
 }
 
 /* 
@@ -2747,6 +2748,10 @@ ul.social li {
   .avata-counter-style-2 .avata-section-content-wrap {
     height: inherit;
   }
+  
+  #avata-nav{
+		display:none;
+	}
 }
 .avata-counter-style-1 .avata-section-content-wrap,
 .avata-counter-style-2 .avata-section-content-wrap {
@@ -3581,6 +3586,9 @@ a.avate-media{
     position: relative;
     top: 8px;
 	color:#fff;
+}
+.avata-box .avata-buttons{
+	margin-bottom:50px;
 }
 .avata-arrow {
     bottom: 71px;

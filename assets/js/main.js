@@ -25,6 +25,7 @@ jQuery(document).ready(function($) {
 	
 	var h = 0;
 	var stickyTop = adminbarHeight();
+	var winHeight = $(window).height();
 	
 	if($('#main-header').length)
 		h += $('#main-header').outerHeight();
@@ -41,7 +42,13 @@ jQuery(document).ready(function($) {
 		var sub_nav = $( '#sub_nav .sub_nav' );
 		sub_nav.css({ 'margin-top':'-'+(sub_nav.height()/2)+'px' });
 	}
-	$('#avata-nav').css({'margin-top':'-'+($('#avata-nav').height()/2)+'px'});
+	
+	//$('#avata-nav').css({'margin-top':'-'+($('#avata-nav').height()/2)+'px'});
+	$('#avata-nav').css({'top': ((winHeight-$('#avata-nav').height())/2)+'px'});
+	$(window).resize(function () {
+		winHeight = $(window).height();
+		$('#avata-nav').css({'top': ((winHeight-$('#avata-nav').height())/2)+'px'});
+	});
 	//$('.page-template-template-frontpage.admin-bar #main-header').css({'top':stickyTop});
 	$('.admin-bar #main-header.overlay').css({'top':stickyTop});
 	
