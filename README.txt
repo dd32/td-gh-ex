@@ -68,6 +68,17 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.09
+* Style tweaks/fixes
+* Fixed Default Header Layout search bug on mobile
+* GDPR - Added Setting to disable Google Fonts - Site then uses websafe fonts - Arial & Tahoma
+* Added setting to adjust the side social top position
+* Fixed js bug in Customizer settings
+* Updated the language .pot file
+Premium: Added the option to add a custom non brand Social Icon
+Premium: Added setting to remove WooCommerce Product Gallery Zoom
+Premium: Added setting to remove WooCommerce Product Gallery LightBox
+
 #### 1.1.08
 * Style tweaks/fixes
 * Added setting to pause default slider on mouse hover

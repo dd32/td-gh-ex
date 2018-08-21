@@ -85,6 +85,14 @@ function customizer_library_avant_options() {
         'panel' => $panel
 	);
     
+    $options['avant-disable-google-fonts'] = array(
+        'id' => 'avant-disable-google-fonts',
+        'label'   => __( 'GDPR: Disable Google Fonts', 'avant' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+        'description' => __( 'Selecting this uses the websafe font\'s - Tahoma for Heading/Title text and Arial for Body & Inputs text.<br /><br />Turning this on will stop the font selection settings from working and also stop your website connecting to Google servers.', 'avant' ),
+    );
     $options['avant-remove-topborder'] = array(
         'id' => 'avant-remove-topborder',
         'label'   => __( 'Remove Top Border', 'avant' ),
@@ -125,6 +133,13 @@ function customizer_library_avant_options() {
         'type'    => 'checkbox',
         'description' => __( 'Add <a href="#avant-social-section" rel="tc-section">Social Icons</a> for this to show', 'avant' ),
         'default' => 0,
+    );
+    $options['avant-side-social-top'] = array(
+        'id' => 'avant-side-social-top',
+        'label'   => __( 'Position from the top', 'avant' ),
+        'section' => $section,
+        'type'    => 'number',
+        'default' => '',
     );
     $options['avant-enable-bttb'] = array(
         'id' => 'avant-enable-bttb',
@@ -845,7 +860,7 @@ function customizer_library_avant_options() {
             'id' => 'avant-noteon-woocommerce',
             'section' => $section,
             'type'    => 'note',
-            'description' => __( '<b>Premium Extra Features:</b><br />- Set Products Per Page<br />- Set Products Per Row<br />- Set Shop, Archives and Product pages to Left Sidebar<br />- Set Shop, Archives and Product pages to Full Width', 'avant' )
+            'description' => __( '<b>Premium Extra Features:</b><br />- Set Products Per Page<br />- Set Products Per Row<br />- Set Shop and Product pages to Left Sidebar<br />- Set Shop and Product pages to Full Width<br />- Disable Product page image Zoom and/or Lightbox', 'avant' )
         );
 
     endif;
@@ -963,6 +978,12 @@ function customizer_library_avant_options() {
         'panel' => $panel
     );
 
+    $options['avant-note-fonts-one'] = array(
+        'id' => 'avant-note-fonts-one',
+        'section' => $section,
+        'type'    => 'note',
+        'description' => __( 'Google Fonts has been disabled. <a href="#avant-site-layout-section-site" rel="tc-section">Enable them here</a>', 'avant' ),
+    );
     $options['avant-site-title-uc'] = array(
         'id' => 'avant-site-title-uc',
         'label'   => __( 'Site Title - Uppercase', 'avant' ),
@@ -1024,6 +1045,12 @@ function customizer_library_avant_options() {
         'panel' => $panel
     );
 
+    $options['avant-note-fonts-two'] = array(
+        'id' => 'avant-note-fonts-two',
+        'section' => $section,
+        'type'    => 'note',
+        'description' => __( 'Google Fonts has been disabled. <a href="#avant-site-layout-section-site" rel="tc-section">Enable them here</a>', 'avant' ),
+    );
     $options['avant-body-font'] = array(
         'id' => 'avant-body-font',
         'label'   => __( 'Body Font', 'avant' ),
@@ -1433,6 +1460,13 @@ function customizer_library_avant_options() {
         'panel' => $panel
     );
 
+    $options['avant-mobile-remove-topbar'] = array(
+        'id' => 'avant-mobile-remove-topbar',
+        'label'   => __( 'Remove Top Bar on Mobile', 'avant' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
     $options['avant-header-menu-text'] = array(
         'id' => 'avant-header-menu-text',
         'label'   => __( 'Menu Button Text', 'avant' ),
@@ -1538,7 +1572,7 @@ function customizer_library_avant_options() {
         'id' => 'avant-noteon-social-links',
         'section' => $section,
         'type'    => 'note',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Premium offers a bunch of extra Social Links<br />- Plus 2 custom inputs for your own links', 'avant' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Premium offers a bunch of extra Social Links<br />- Plus 3 custom inputs for your own links', 'avant' )
     );
 
 

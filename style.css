@@ -4,7 +4,7 @@ Theme URI: https://kairaweb.com/theme/avant/
 Author: Kaira
 Author URI: https://kairaweb.com/
 Description: 7 Header layouts, 5 Blog layouts, 3 Footer layouts, Full site color settings, SEO (Search Engine Optimization) settings and lots more settings all built neatly into the WordPress Customizer so you can edit & make changes in a live environment before making any of the changes live... Avant sure gives you what you're wanting. Avant is a highly customizable, multipurpose WordPress theme. Use Avant to build your WooCommerce eCommerce store, online fashion blog, corporate law or business website, or anything down to a simple personal blog. Avant integrates with top plugins such as Elementor or SiteOrigin's Page Builder to make it easy building your website with a drag and drop Page Builder. WooCommerce to create your e-commerce shop selling your products beautifully online. We're constantly building on to Avant, making it even more flexible to what you need. Give it a go!
-Version: 1.1.08
+Version: 1.1.09
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avant
@@ -2254,9 +2254,6 @@ body.single-product.woocommerce .page-fimage-banner {
 
 @media screen and (max-width: 980px) {
     
-    .side-aligned-social {
-        display: none;
-    }
     .entry-header h2 {
         margin: 0 0 10px;
     }
@@ -2376,6 +2373,9 @@ body.single-product.woocommerce .page-fimage-banner {
 
 @media only screen and (max-width: 782px) {
 
+    .side-aligned-social {
+        display: none;
+    }
     .page-template-default .content-area,
     .woocommerce #container,
     .woocommerce-page #container,
@@ -2450,6 +2450,12 @@ body.single-product.woocommerce .page-fimage-banner {
 
 }
 
+@media only screen and (max-width: 480px) {
+    .home-slider-block-inner {
+        width: 100%;
+    }
+​}
+
 body.show-main-menu #main-menu {
     right: 0px !important;
 }
@@ -2464,13 +2470,13 @@ Fallback CSS for Customizer Library Styles
 body,
 .widget-area .widget a {
     color: #636161;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', 'Arial', sans-serif;
 }
 h1, h2, h3, h4, h5, h6,
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
 .widget-area .widget-title {
     color: #3a3a3a;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Tahoma', sans-serif;
 }
 .woocommerce table.cart th,
 .woocommerce-page #content table.cart th,
@@ -2483,10 +2489,10 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
 button, input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Tahoma', sans-serif;
 }
 .site-title a {
-    font-family: 'Parisienne', cursive;
+    font-family: 'Parisienne', 'Tahoma', cursive;
 }
 
 .site-top-border,

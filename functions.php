@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.08' );
+define( 'AVANT_THEME_VERSION' , '1.1.09' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -146,9 +146,11 @@ add_filter( 'dynamic_sidebar_params', 'kaira_change_widget_titles', 20 );
  * Enqueue scripts and styles.
  */
 function avant_scripts() {
-	wp_enqueue_style( 'avant-title-font', '//fonts.googleapis.com/css?family=Parisienne', array(), AVANT_THEME_VERSION );
-	wp_enqueue_style( 'avant-body-font-default', '//fonts.googleapis.com/css?family=Open+Sans', array(), AVANT_THEME_VERSION );
-	wp_enqueue_style( 'avant-heading-font-default', 'https://fonts.googleapis.com/css?family=Poppins', array(), AVANT_THEME_VERSION );
+	if ( !get_theme_mod( 'avant-disable-google-fonts', customizer_library_get_default( 'avant-disable-google-fonts' ) ) ) {
+		wp_enqueue_style( 'avant-title-font', '//fonts.googleapis.com/css?family=Parisienne', array(), AVANT_THEME_VERSION );
+		wp_enqueue_style( 'avant-body-font-default', '//fonts.googleapis.com/css?family=Open+Sans', array(), AVANT_THEME_VERSION );
+		wp_enqueue_style( 'avant-heading-font-default', 'https://fonts.googleapis.com/css?family=Poppins', array(), AVANT_THEME_VERSION );
+	}
 
 	wp_enqueue_style( 'avant-font-awesome', get_template_directory_uri().'/includes/font-awesome/css/fontawesome-all.css', array(), '5.0.13' );
 	wp_enqueue_style( 'avant-style', get_stylesheet_uri(), array(), AVANT_THEME_VERSION );

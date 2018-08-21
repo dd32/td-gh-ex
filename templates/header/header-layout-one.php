@@ -38,6 +38,13 @@ global $woocommerce; ?>
 	<div class="site-header-top">
 		
 		<div class="site-container">
+
+			<?php if ( !get_theme_mod( 'avant-header-search', customizer_library_get_default( 'avant-header-search' ) ) ) : ?>
+			    <div class="search-block">
+			        <?php get_search_form(); ?>
+			    </div>
+			<?php endif; ?>
+			
 			<div class="site-header-top-left">
 				
 				<nav id="site-navigation" class="main-navigation avant-nav-style-plain" role="navigation">
@@ -67,12 +74,6 @@ global $woocommerce; ?>
 				</nav><!-- #site-navigation -->
 				
 			</div>
-			
-			<?php if ( !get_theme_mod( 'avant-header-search', customizer_library_get_default( 'avant-header-search' ) ) ) : ?>
-			    <div class="search-block">
-			        <?php get_search_form(); ?>
-			    </div>
-			<?php endif; ?>
 			
 			<div class="site-header-top-right">
 				

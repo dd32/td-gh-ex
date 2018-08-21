@@ -6,6 +6,21 @@
     
     $( window ).load( function() {
         
+        avant_fonts_check();
+        $( '#customize-control-avant-disable-google-fonts input[type=checkbox]' ).on( 'change', function() {
+            avant_fonts_check();
+        });
+        
+        function avant_fonts_check() {
+            if ( $( '#customize-control-avant-disable-google-fonts input[type=checkbox]' ).is( ':checked' ) ) {
+                $( '#sub-accordion-section-avant-typography-section #customize-control-avant-note-fonts-one' ).show();
+                $( '#sub-accordion-section-avant-typography-section-default #customize-control-avant-note-fonts-two' ).show();
+            } else {
+                $( '#sub-accordion-section-avant-typography-section #customize-control-avant-note-fonts-one' ).hide();
+                $( '#sub-accordion-section-avant-typography-section-default #customize-control-avant-note-fonts-two' ).hide();
+            }
+        }
+
         // Show / Hide Site Boxed Color Setting
         var avant_site_boxed_select_value = $( '#customize-control-avant-site-layout select' ).val();
         avant_site_boxed_value_check( avant_site_boxed_select_value );
@@ -131,6 +146,7 @@
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-shortcode' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slidermage-size' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slidermage-fullwidth' ).hide();
+                $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-pause-oh' ).hide();
             } else if ( avant_slider_select_value == 'avant-shortcode-slider' ) {
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-cats' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-size' ).hide();
@@ -143,6 +159,7 @@
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-remove-pagination' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slidermage-size' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slidermage-fullwidth' ).hide();
+                $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-pause-oh' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-shortcode' ).show();
             } else if ( avant_slider_select_value == 'avant-home-featured-image' ) {
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-cats' ).hide();
@@ -155,6 +172,7 @@
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-auto-scroll' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-remove-pagination' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-shortcode' ).hide();
+                $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-pause-oh' ).hide();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slidermage-size' ).show();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slidermage-fullwidth' ).show();
             } else {
@@ -170,6 +188,7 @@
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-remove-sub-title' ).show();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-auto-scroll' ).show();
                 $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-remove-pagination' ).show();
+                $( '#sub-accordion-section-avant-site-layout-section-slider #customize-control-avant-slider-pause-oh' ).show();
             }
         }
 

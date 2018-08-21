@@ -87,8 +87,17 @@
     font-size: 12px;
     opacity: 0.8;
 }
+#customize-control-avant-note-fonts-one .kaira-note-txt,
+#customize-control-avant-note-fonts-two .kaira-note-txt {
+    background-color: rgba(255, 0, 0, 0.08);
+    text-align: center;
+    border-radius: 4px;
+    margin: 0;
+    padding: 4px 0;
+}
 
 #customize-control-blogdescription,
+#customize-control-avant-disable-google-fonts,
 #customize-control-avant-site-tagline-case-normal,
 #customize-control-avant-slider-full-width,
 #customize-control-avant-slider-scroll-effect,
@@ -124,6 +133,7 @@
 #customize-control-avant-footer-side-fullwidth,
 #customize-control-avant-align-product-titles,
 #customize-control-avant-remove-wc-page-titles,
+#customize-control-avant-mobile-remove-topbar,
 #customize-control-avant-slider-mobile-set-height,
 #customize-control-avant-set-wc-single-col-width,
 #customize-control-avant-website-txt-copy {

@@ -21,7 +21,9 @@ function customizer_avant_fonts() {
 	$font_uri = customizer_library_get_google_font_uri( $fonts );
 
 	// Load Google Fonts
-	wp_enqueue_style( 'customizer_avant_fonts', $font_uri, array(), null, 'screen' );
+	if ( !get_theme_mod( 'avant-disable-google-fonts', customizer_library_get_default( 'avant-disable-google-fonts' ) ) ) {
+		wp_enqueue_style( 'customizer_avant_fonts', $font_uri, array(), null, 'screen' );
+	}
 
 }
 add_action( 'wp_enqueue_scripts', 'customizer_avant_fonts' );
