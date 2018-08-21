@@ -4,7 +4,7 @@ Contributors: blazethemes
 Requires at least: 4.7
 Tested up to: 4.9.4
 Stable tag: 1.0.0
-Tags: right-sidebar, custom-background, custom-logo, portfolio, blog, education, grid-layout, custom-colors,featured-images, footer-widgets, theme-options, threaded-comments
+Tags: right-sidebar, custom-background, custom-header, custom-logo, portfolio, blog, education, grid-layout, custom-colors,featured-images, footer-widgets, theme-options, threaded-comments, post-formats
 
 Multi-purpose WordPress theme
 
@@ -40,16 +40,24 @@ All options are in the Customizer.
 = 1.0 - July 6 2018 =
 * Initial release
 
+= 1.0.1 - August 2 2018 =
+* escaping fixes
+
+= 1.0.2 - August 21 2018 =
+* Licensing issues fixes
+
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License  v2 or later
 License: GNU General Public License v2 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php GPL v2 (or later) 
+Bazzinga WordPress Theme, Copyright 2018 BlazeThemes
+Bazzinga is distributed under the terms of the GNU GPL.
 
 Screenshot Image
-	* https://pixabay.com/en/business-man-adult-american-boss-3380350/
 
 	* License: CC0 Public Domain
 	* License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
+	* Image url: https://pixabay.com/en/business-man-adult-american-boss-3380350/
 
 
 Font awesome
