@@ -32,6 +32,9 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.6.5 | 20th August 2018 = 
+* Update: more gutenberg stuff.
+
 = 1.6.4 | 30th May 2018 = 
 * Update: woocommerce files, support for 3.4.1
 
