@@ -28,7 +28,9 @@
     font-size: 12px;
     opacity: 0.8;
 }
-
+#accordion-section-conica-site-seo-section {
+    margin: 8px 0 0;
+}
 .conica-remove-section {
     display: none !important;
 }

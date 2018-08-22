@@ -1,7 +1,8 @@
-<?php if ( !is_front_page() ) : ?>
+<?php if ( !is_front_page() ) :
+    $page_title_tag = get_theme_mod( 'conica-seo-page-title-tag', customizer_library_get_default( 'conica-seo-page-title-tag' ) ); ?>
     <div class="title-bar page-header">
         <div class="site-container">
-            <h1>
+            <h<?php echo esc_attr( $page_title_tag ); ?> class="page-h-title">
                 <?php if ( is_home() ) :
                     $blog_page_id = get_option( 'page_for_posts' );  ?>
                     
@@ -45,7 +46,7 @@
                     <?php the_title(); ?>
                     
                 <?php endif; ?>
-            </h1>
+            </h<?php echo esc_attr( $page_title_tag ); ?>>
             <div class="conica-breadcrumbs">
                 <?php if ( function_exists( 'bcn_display' ) ) : ?>
                     <?php bcn_display(); ?>

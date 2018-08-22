@@ -5,7 +5,7 @@
  * @package Conica
  */
 
-define( 'CONICA_THEME_VERSION' , '1.3.12' );
+define( 'CONICA_THEME_VERSION' , '1.3.13' );
 
 // Get help / Premium Page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -115,6 +115,18 @@ function conica_widgets_init() {
 }
 add_action( 'widgets_init', 'conica_widgets_init' );
 
+/*
+ * Change Widgets Title Tags for SEO
+ */
+function conica_change_widget_titles( array $params ) {
+	$widget_title_tag = get_theme_mod( 'conica-seo-widget-title-tag', customizer_library_get_default( 'conica-seo-widget-title-tag' ) );
+    $widget =& $params[0];
+    $widget['before_title'] = '<h'.esc_attr( $widget_title_tag ).' class="widget-title">';
+    $widget['after_title'] = '</h'.esc_attr( $widget_title_tag ).'>';
+    return $params;
+}
+add_filter( 'dynamic_sidebar_params', 'conica_change_widget_titles', 20 );
+
 /**
  * Enqueue scripts and styles
  */
@@ -214,7 +226,7 @@ if ( conica_is_woocommerce_activated() ) {
 /**
  * Add classes to the blog list for styling.
  */
-function conica_add_post_classes ( $classes ) {
+function conica_add_post_classes( $classes ) {
 	global $current_class;
 	
 	if ( is_home() || is_archive() || is_search() ) :

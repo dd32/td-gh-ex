@@ -195,7 +195,7 @@ function customizer_library_conica_options() {
         'id' => 'conica-help-header',
         'section' => $section,
         'type'    => 'help',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Enable WooCommerce drop down basket/cart<br />- Add Site Title & Tagline with an uploaded logo<br />- Adjust logo position<br />- Vertically align Header One & Two Navigation<br />- Remove WooCommerce Cart from header', 'conica' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Enable WooCommerce drop down basket/cart<br />- Add Site Title & Tagline with an uploaded logo<br />- Adjust logo position<br />- Vertically align Header One & Two Navigation<br />- Remove WooCommerce Cart from header<br />- Option to replace search with more advanced shortcode search', 'conica' )
     );
     // --------------------------------------------------------------------------------------- Header Settings
 
@@ -409,6 +409,43 @@ function customizer_library_conica_options() {
     );
     // ---------------------------------------------------------------------------------- Blog Single Settings
 
+    $section = 'conica-panel-website-section-footer'; // ------------------------------------ Footer Settings
+
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'Footer', 'conica' ),
+        'priority' => '10',
+        'panel' => $panel
+    );
+
+    $options['conica-footer-hide-social'] = array(
+        'id' => 'conica-footer-hide-social',
+        'label'   => __( 'Remove Social Links', 'conica' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
+    $choices = array(
+        'conica-footer-layout-standard' => __( 'Standard Layout', 'conica' ),
+        'conica-footer-layout-social' => __( 'Social Layout', 'conica' ),
+        'conica-footer-layout-none' => __( 'None', 'conica' )
+    );
+    $options['conica-footer-layout'] = array(
+        'id' => 'conica-footer-layout',
+        'label'   => __( 'Footer Layout', 'conica' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => 'conica-footer-layout-standard'
+    );
+
+    $options['conica-help-footer'] = array(
+        'id' => 'conica-help-footer',
+        'section' => $section,
+        'type'    => 'help',
+        'description' => __( '<b>Premium Extra Features:</b><br />- Remove footer bottom bar<br />- Extra advanced footer layout<br />- Set advanced footer column widths<br /><br />- Change attribution text to your own<br />- Extra custom text blocks can be added to the footer', 'conica' )
+    );
+    // -------------------------------------------------------------------------------------- Footer Settings
 
     // WooCommerce style Layout
     if ( conica_is_woocommerce_activated() ) :
@@ -448,49 +485,103 @@ function customizer_library_conica_options() {
             'id' => 'conica-help-woocommerce',
             'section' => $section,
             'type'    => 'help',
-            'description' => __( '<b>Premium Extra Features:</b><br />- Change amount of products per row<br />- Remove products hover border<br />- Set Shop/Archive/Single pages left sidebar<br />- Set Shop/Archive/Single pages full width', 'conica' )
+            'description' => __( '<b>Premium Extra Features:</b><br />- Change amount of products per row<br />- Remove products hover border<br />- Set Shop/Archive/Single pages left sidebar<br />- Set Shop/Archive/Single pages full width<br />- Remove Product image Zoom and/or Lightbox', 'conica' )
         );
 
     endif;
     // -------------------------------------------------------------------------- WooCommerce Layout Settings
 
-    $section = 'conica-panel-website-section-footer'; // ------------------------------------ Footer Settings
+    $section = 'conica-site-seo-section';
 
     $sections[] = array(
         'id' => $section,
-        'title' => __( 'Footer', 'conica' ),
-        'priority' => '10',
+        'title' => __( 'SEO (Search Engine Optimization)', 'conica' ),
+        'priority' => '20',
         'panel' => $panel
     );
 
-    $options['conica-footer-hide-social'] = array(
-        'id' => 'conica-footer-hide-social',
-        'label'   => __( 'Remove Social Links', 'conica' ),
-        'section' => $section,
-        'type'    => 'checkbox',
-        'default' => 0,
-    );
     $choices = array(
-        'conica-footer-layout-standard' => __( 'Standard Layout', 'conica' ),
-        'conica-footer-layout-social' => __( 'Social Layout', 'conica' ),
-        'conica-footer-layout-none' => __( 'None', 'conica' )
+        '1' => __( 'H1', 'conica' ),
+        '2' => __( 'H2', 'conica' ),
+        '3' => __( 'H3', 'conica' ),
+        '4' => __( 'H4', 'conica' ),
+        '5' => __( 'H5', 'conica' ),
+        '6' => __( 'H6', 'conica' )
     );
-    $options['conica-footer-layout'] = array(
-        'id' => 'conica-footer-layout',
-        'label'   => __( 'Footer Layout', 'conica' ),
+    $options['conica-seo-site-title-tag'] = array(
+        'id' => 'conica-seo-site-title-tag',
+        'label'   => __( 'Site Title Element', 'conica' ),
         'section' => $section,
         'type'    => 'select',
         'choices' => $choices,
-        'default' => 'conica-footer-layout-standard'
+        'default' => '1'
     );
 
-    $options['conica-help-footer'] = array(
-        'id' => 'conica-help-footer',
-        'section' => $section,
-        'type'    => 'help',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Remove footer bottom bar<br />- Extra advanced footer layout<br />- Set advanced footer column widths<br /><br />- Change attribution text to your own<br />- Extra custom text blocks can be added to the footer', 'conica' )
+    $choices = array(
+        '1' => __( 'H1', 'conica' ),
+        '2' => __( 'H2', 'conica' ),
+        '3' => __( 'H3', 'conica' ),
+        '4' => __( 'H4', 'conica' ),
+        '5' => __( 'H5', 'conica' ),
+        '6' => __( 'H6', 'conica' )
     );
-    // -------------------------------------------------------------------------------------- Footer Settings
+    $options['conica-seo-site-desc-tag'] = array(
+        'id' => 'conica-seo-site-desc-tag',
+        'label'   => __( 'Site Description Element', 'conica' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => '2'
+    );
+
+    $choices = array(
+        '1' => __( 'H1', 'conica' ),
+        '2' => __( 'H2', 'conica' ),
+        '3' => __( 'H3', 'conica' ),
+        '4' => __( 'H4', 'conica' ),
+        '5' => __( 'H5', 'conica' ),
+        '6' => __( 'H6', 'conica' )
+    );
+    $options['conica-seo-page-title-tag'] = array(
+        'id' => 'conica-seo-page-title-tag',
+        'label'   => __( 'Page Titles Element', 'conica' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => '3'
+    );
+    $choices = array(
+        '1' => __( 'H1', 'conica' ),
+        '2' => __( 'H2', 'conica' ),
+        '3' => __( 'H3', 'conica' ),
+        '4' => __( 'H4', 'conica' ),
+        '5' => __( 'H5', 'conica' ),
+        '6' => __( 'H6', 'conica' )
+    );
+    $options['conica-seo-blog-post-title-tag'] = array(
+        'id' => 'conica-seo-blog-post-title-tag',
+        'label'   => __( 'Blog List Titles Element', 'conica' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => '3'
+    );
+    $choices = array(
+        '1' => __( 'H1', 'conica' ),
+        '2' => __( 'H2', 'conica' ),
+        '3' => __( 'H3', 'conica' ),
+        '4' => __( 'H4', 'conica' ),
+        '5' => __( 'H5', 'conica' ),
+        '6' => __( 'H6', 'conica' )
+    );
+    $options['conica-seo-widget-title-tag'] = array(
+        'id' => 'conica-seo-widget-title-tag',
+        'label'   => __( 'Widget Titles Element', 'conica' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $choices,
+        'default' => '4'
+    );
 
     $panel = 'conica-panel-text';
 

@@ -79,6 +79,15 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.13
+* Style tweaks/fixes
+* Added setting to customize all titles (Site Title, Desctiprtion, Widget Titles, Posts) for better SEO
+* Updated the screenshot.png
+* Updated the language .pot file
+Premium: Added setting to remove WooCommerce Product Gallery Zoom
+Premium: Added setting to remove WooCommerce Product Gallery LightBox
+Premium: Added setting to replace default search with more advanced shortcode search
+
 #### 1.3.12
 * Style tweaks/fixes
 * Edit/Setup defaults to work with child themes

@@ -151,7 +151,7 @@ textarea {
     background-color: #1d1d1d;
     box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.08) inset;
 }
-.title-bar.page-header h1 {
+.title-bar.page-header .page-h-title {
     color: #FFF;
 }
 .page-header .conica-breadcrumbs {
