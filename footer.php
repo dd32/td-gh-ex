@@ -57,6 +57,7 @@
                     </a>
                     <span class="sep"> | </span>
                         <?php esc_html_e( 'Theme: ', 'accesspress-basic' ); ?><a href="<?php esc_url('http://www.accesspressthemes.com/'); ?>" target="_blank" rel="designer">AccessPress Basic</a>
+                        <?php esc_html_e( ' by AccessPress Themes', 'accesspress-basic' ); ?>
                 </div>
                 <?php if(is_active_sidebar('apbasic_footer_social_links')) : ?>
                 <div class="footer-socials">

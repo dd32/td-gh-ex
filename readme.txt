@@ -54,6 +54,11 @@ Images
 
 == Changelog ==
 
+Version 3.1.4
+===============
+* Minor Bug Fixes
+* Made theme Translation Ready
+
 Version 3.1.3
 ===============
 * Fixed Security Issues
