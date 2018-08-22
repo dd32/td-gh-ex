@@ -97,6 +97,10 @@ Pattern Images
 ---------------------------------------------
 == Changelog ==
 
+Version 1.30
+ * Made Translation Ready
+ * Minor Bug Fixes
+
 Version 1.29
  * Fixed Security Issues
 
