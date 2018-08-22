@@ -2,10 +2,10 @@
   $key = 'blog';
   $custom_css = '';
 
-  $sections = best_restaurantpublic_content_default(); 
+  $sections = best_restaurant_public_content_default(); 
   $default = $sections[$key];
 
-  $default_content = best_restaurantsection_content_default($key);  
+  $default_content = best_restaurant_section_content_default($key);  
   $repeater_value = get_theme_mod( 'repeater_'.$key,$default_content);	
 
 	
@@ -21,12 +21,12 @@
 	  $parallax_str ='data-parallax="scroll" data-image-src="'.$section_background_image.'" '; 
   }
   
-  $button_arr  = best_restaurantbutton_default_arr($key);  
+  $button_arr  = best_restaurant_button_default_arr($key);  
   $button_url = esc_url(get_theme_mod( $key.'_button_url',''));  
   $button_text = esc_html(get_theme_mod( $key.'_button_text',$button_arr['button_text']));  
   
   $blog_article_number = get_theme_mod( $key.'_article_number',3);
-  $blog_categories = esc_html(get_theme_mod( $key.'_categories','')); 
+  $blog_categories = get_theme_mod( $key.'_categories',''); 
   
 
 ?>
@@ -49,40 +49,32 @@
  			<div class="row">
             
                 <?php
-					$options_categories = array();
-					$options_categories_obj = get_categories();
-					foreach ($options_categories_obj as $category) {
-						$options_categories[$category->cat_name] = $category->cat_ID;
-					}
 
-					$options_cat_id = array();
-
-
-					if($options_categories){
-						foreach ( $options_categories as $cat_name => $cat ) {
-							if(!empty($blog_categories)){	
-							if (!in_array($cat_name, $blog_categories)){$options_cat_id[]= $cat;}	
+						$options_cat_id = array();
+						if(!empty($blog_categories)){
+							foreach ($blog_categories as   $category) {
+								$options_cat_id[] = get_cat_ID($category) ;
 							}
 						}
-					}		
-				
-					
-					if(empty($options_cat_id)){
 						
-						$query_posts = array( 
-						'showposts' => $blog_article_number,
-						'ignore_sticky_posts' => 1,
+						if(empty($options_cat_id)){
+							
+							$query_posts = array( 
+							'showposts' => $blog_article_number,
+							'ignore_sticky_posts' => 1,
+							
+							 ); 
+	
+						}else{
 						
-						 ); 
+							$query_posts =  array( 
+							  'showposts' => $blog_article_number, 
+							  'ignore_sticky_posts' => 1,
+							  'category__in' => $options_cat_id,
+							 );
+						}
 
-					}else{
-					
-						$query_posts =  array( 
-						  'showposts' => $blog_article_number, 
-						  'ignore_sticky_posts' => 1,
-						  'category__in' => $options_cat_id,
-						 );
-					}
+
 					$the_query = new WP_Query( $query_posts );
 					 
                     if ($the_query->have_posts()) :  while ($the_query->have_posts()) : $the_query->the_post();                             

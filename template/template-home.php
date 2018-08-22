@@ -12,7 +12,7 @@ get_header();?>
 
 <div id="theta-section-warp" class="theta-section-warp">
 <?php
-  $section_default = best_restaurantsection_default_order();
+  $section_default = best_restaurant_section_default_order();
   
   $sortable_value = maybe_unserialize( get_theme_mod( 'home_layout',$section_default ) );
 

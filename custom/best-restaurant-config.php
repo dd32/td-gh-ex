@@ -70,11 +70,11 @@
   ));  
 
 
-  function best_restaurantadd_field( $args ) {
+  function best_restaurant_add_field( $args ) {
 	Kirki::add_field( 'best_restaurant_settings', $args );
   }  
  
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 		'type'			 => 'switch', 
 		'settings'		 => 'enable_section_header_menu',
 		'label'			 => __( 'Enable section header menu in the feature homepage', 'best-restaurant' ),
@@ -84,7 +84,7 @@
   )); 
 
 
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
   	'type'				 => 'custom',
   	'settings'			 => 'front_page_info',
   	'label'				 => __( 'Switch "Front page displays" to "A static page"', 'best-restaurant' ),
@@ -100,20 +100,20 @@
   	),
   ) );
 
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
   	'type'		 => 'sortable',
   	'settings'	 => 'home_layout',
   	'label'		 => esc_attr__( 'Homepage Blocks', 'best-restaurant' ),
   	'section'	 => 'homepage_layout',
   	'help'		 => esc_attr__( 'Drag and Drop and enable the homepage blocks.', 'best-restaurant' ),
-	'default'     => best_restaurantsection_default_order(),
+	'default'     => best_restaurant_section_default_order(),
   	'choices'	 => $sections,
   	'priority'	 => 10,	
 	
   ) );
   
   if ( !function_exists('best_restaurant_themes_pro')) {   
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 		  'type'			 => 'custom',
 		  'settings'		 => 'pro-features',
 		  'label'			 => __( 'Best Restaurant PRO', 'best-restaurant' ),
@@ -125,7 +125,7 @@
   }
 	
   
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	  'type'		 => 'text',
 	  'settings'	 => 'slider_section_menu_title',
 	  'label'		 => __( 'Main Menu Title', 'best-restaurant' ),
@@ -135,7 +135,7 @@
   ) ); 
 
 
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	'type'        => 'number',
 	'settings'    => 'slider_video',
 	'label'       => esc_attr__( 'Apply background video to this slider', 'best-restaurant' ),
@@ -150,14 +150,14 @@
 ) );
 
 
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
   	'type'		 => 'repeater',
   	'label'		 => __( 'Slider', 'best-restaurant' ),
 
   	'section'	 => 'slider_section',
   	'priority'	 => 10,
   	'settings'	 => 'repeater_slider',
-	'default'     => best_restaurantsection_content_default('slider'),
+	'default'     => best_restaurant_section_content_default('slider'),
   	'fields'	 => array(
   		'slider_page'	 => array(
   			'type'		 => 'dropdown-pages',
@@ -186,7 +186,7 @@
 
  
  
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	'type'        => 'number',
 	'settings'    => 'slide_time',
 	'label'       => esc_attr__( 'Slide Time', 'best-restaurant' ),
@@ -199,7 +199,7 @@
 	),
   ) );    
 
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	'type'        => 'typography',
 	'settings'    => 'slider_title_typography',
 	'label'       => esc_attr__( 'Title Typography', 'best-restaurant' ),
@@ -219,7 +219,7 @@
 
   
 
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	'type'        => 'typography',
 	'settings'    => 'slider_description_typography',
 	'label'       => esc_attr__( 'Description Typography', 'best-restaurant' ),
@@ -238,7 +238,7 @@
   ) );
 
 
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	'type'        => 'color',
 	'settings'    => 'slider_button_background',
 	'label'       => __( 'Slider Button Background Color', 'best-restaurant' ),
@@ -251,7 +251,7 @@
 	
   ) ); 
   
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	'type'        => 'typography',
 	'settings'    => 'slider_button_typography',
 	'label'       => esc_attr__( 'Button Text Typography', 'best-restaurant' ),
@@ -269,9 +269,9 @@
   ) );   
 
 
-  $sections = best_restaurantpublic_content_default();
+  $sections = best_restaurant_public_content_default();
   foreach ( $sections as $keys => $values ) { 
-    best_restaurantadd_field( array(
+    best_restaurant_add_field( array(
   		'type'		 => 'text',
   		'settings'	 => $keys . '_section_title',
   		'label'		 => __( 'Section Title', 'best-restaurant' ),
@@ -280,7 +280,7 @@
   		'priority'	 => 10,
   	) );
 	
-	best_restaurantadd_field(
+	best_restaurant_add_field(
 		array(
 			'type'			 => 'image',
 			'settings'		 => $keys.'_iocn_image',
@@ -291,7 +291,7 @@
 		)
 	);	
 	
-  	 best_restaurantadd_field( array(
+  	 best_restaurant_add_field( array(
   		'type'		 => 'textarea',
   		'settings'	 => $keys . '_section_description',
   		'label'		 => __( 'Section Description', 'best-restaurant' ),
@@ -300,7 +300,7 @@
   		'priority'	 => 10,
   	) ); 
  
-  	 best_restaurantadd_field( array(
+  	 best_restaurant_add_field( array(
   		'type'		 => 'text',
   		'settings'	 => $keys . '_section_menu_title',
   		'label'		 => __( 'Main Menu Title', 'best-restaurant' ),
@@ -310,7 +310,7 @@
   	) ); 
  
 
-     best_restaurantadd_field( array(
+     best_restaurant_add_field( array(
     	'type'        => 'image',
     	'settings'    => $keys . '_section_background_image',
     	'label'       => __( 'Section Background Image', 'best-restaurant' ),
@@ -321,7 +321,7 @@
     ) );
 	
 
-  	 best_restaurantadd_field( array(
+  	 best_restaurant_add_field( array(
   		'type'		 => 'color',
   		'settings'	 => $keys . '_section_background_color',
   		'label'		 => __( 'Section Background Color', 'best-restaurant' ),
@@ -330,7 +330,7 @@
   		'priority'	 => 10,
   	) ); 
 
-	 best_restaurantadd_field( array(
+	 best_restaurant_add_field( array(
 		'type'        => 'slider',
 		'settings'    => $keys . '_section_background_opacity',
 		'label'       => __( 'Section Background Opacity', 'best-restaurant' ),
@@ -343,7 +343,7 @@
 		),
 	) );
 	
-	 best_restaurantadd_field( array(
+	 best_restaurant_add_field( array(
 		'type'        => 'spacing',
 		'settings'	 => $keys . '_section_padding',
 		'label'       => __( 'Section Padding Control', 'best-restaurant' ),
@@ -357,7 +357,7 @@
 		'priority'    => 10,
 	) );
 	
-	 best_restaurantadd_field( array(
+	 best_restaurant_add_field( array(
 		'type'        => 'spacing',
 		'settings'	 => $keys . '_section_mobile_padding',
 		'label'       => __( 'Section Mobile Padding Control', 'best-restaurant' ),
@@ -372,7 +372,7 @@
 	) );
 
 	
-	best_restaurantadd_field(
+	best_restaurant_add_field(
 		array(
 			'type'			 => 'switch', 
 			'settings'		 => $keys.'_enable_animate',
@@ -383,7 +383,7 @@
 		)
 	);	
 	
-	best_restaurantadd_field(
+	best_restaurant_add_field(
 		array(
 			'type'			 => 'switch', 
 			'settings'		 => $keys.'_enable_parallax_background',
@@ -397,7 +397,7 @@
 	
 
 
-  	 best_restaurantadd_field( array(
+  	 best_restaurant_add_field( array(
   		'type'			 => 'toggle',
   		'settings'		 => $keys . '_typography_setting_enable',
   		'label'			 => __( 'Title / Description Typography Setting', 'best-restaurant' ),
@@ -407,12 +407,12 @@
   		'priority'		 => 10,
   	) );
 	
-	 best_restaurantadd_field( array(
+	 best_restaurant_add_field( array(
 	  'type'        => 'typography',
 	  'settings'    => $keys . '_title_typography',
 	  'label'       => $keys . esc_attr__( ' Title Typography', 'best-restaurant' ),
   	  'section'	    => $keys . '_section',
-	  'default'     => best_restaurantget_default_title_font($keys),
+	  'default'     => best_restaurant_get_default_title_font($keys),
 	  'priority'    => 10,
 	  'output'      => array(
 		array(
@@ -429,12 +429,12 @@
 	  
 	) );
   
-	 best_restaurantadd_field( array(
+	 best_restaurant_add_field( array(
 	  'type'        => 'typography',
 	  'settings'    => $keys . '_description_typography',
 	  'label'       => $keys .esc_attr__( ' Description Typography', 'best-restaurant' ),
   	  'section'	    => $keys . '_section',
-	  'default'     => best_restaurantget_description_font($keys),
+	  'default'     => best_restaurant_get_description_font($keys),
 	  'priority'    => 10,
 	  
 	  
@@ -458,7 +458,7 @@
   } 
 
 
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
   	'type'		 => 'dropdown-pages',
 	'settings'    => 'about_page',	
   	'label'		 => __( 'About Us Content Select', 'best-restaurant' ),
@@ -469,7 +469,7 @@
 
   ) );
     
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	  'type'        => 'image',
 	  'settings'    => 'about_image',
 	  'label'       => __( 'About Image', 'best-restaurant' ),
@@ -479,7 +479,7 @@
 
   ) );  
 
-  best_restaurantadd_button_field( best_restaurantbutton_default_arr('about') );
+  best_restaurant_add_button_field( best_restaurant_button_default_arr('about') );
   
 
   $options_categories = array();
@@ -489,7 +489,7 @@
 	$options_categories[$category->cat_name] = $category->cat_name;
   }			  
      
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	'type'        => 'select',
 	'settings'    => 'blog_article_number',
 	'label'			 => __( 'Displays the number of articles', 'best-restaurant' ),
@@ -505,7 +505,7 @@
 	),
   ) );  
 
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	'type'        => 'multicheck',
 	'settings'    => 'blog_categories',
 	'label'		  => __( 'The following catagories will display on Blog section in the Homepage.', 'best-restaurant' ),
@@ -516,7 +516,7 @@
 	
   ) );    
    
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	'type'        => 'image',
 	'settings'    => 'blog_feature_img',
 	'label'       => __( 'Homepage Article Default Feature image', 'best-restaurant' ),
@@ -525,20 +525,20 @@
 	'priority'    => 10,
   ) );
  
-  best_restaurantadd_button_field( best_restaurantbutton_default_arr('blog') ); 
+  best_restaurant_add_button_field( best_restaurant_button_default_arr('blog') ); 
 
 
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	'type'        => 'image',
 	'settings'    => 'tool_1_logo',
 	'label'       => __( 'Footer Logo', 'best-restaurant' ),
 	'section'     => 'tool_section',
-	'default'     => esc_url($imagepath.'logo.png'),
+	'default'     => '',
 	'priority'    => 10,
   ) );
  
 
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	  'type'		 => 'textarea',
 	  'settings'	 => 'tool_1_description',
 	  'label'		 => __( 'Tool 1 Description', 'best-restaurant' ),
@@ -548,7 +548,7 @@
   ) );
 
 
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	  'type'		 => 'text',
 	  'settings'	 => 'tool_2_title',
 	  'label'		 => __( 'Tool 2 Title', 'best-restaurant' ),
@@ -558,7 +558,7 @@
   ) );
 
 
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
   	'type'		 => 'repeater',
   	'label'		 => __( 'Tool 2 Information', 'best-restaurant' ),
   	'section'	 => 'tool_section',
@@ -567,7 +567,7 @@
     'sanitize_callback' => 'esc_attr',
 	'description'	=> sprintf(__('Note: <br>Find fontawesome icon: <a href="%1$s" target="_blank">http://fontawesome.io/icons/</a>, Example: <a href="%2$s" target="_blank">http://fontawesome.io/examples/</a>', 'best-restaurant'),esc_url('http://fontawesome.io/icons/'),esc_url('http://fontawesome.io/examples/')),
 	
-	'default'     => best_restaurantsection_content_default('tool'),
+	'default'     => best_restaurant_section_content_default('tool'),
   	'fields'	 => array(
   		'tool_2_icon'	 => array(
   			'type'		 => 'text',
@@ -587,7 +587,7 @@
   	),
   ) );
 
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	  'type'		 => 'text',
 	  'settings'	 => 'tool_3_title',
 	  'label'		 => __( 'Tool 3 Title', 'best-restaurant' ),
@@ -597,7 +597,7 @@
   ) );
 
 
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
   	'type'		 => 'repeater',
   	'label'		 => __( 'Tool 3 Information', 'best-restaurant' ),
   	'section'	 => 'tool_section',
@@ -629,7 +629,7 @@
   	),
   ) );
 
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 		'type'        => 'editor',
 		'settings'    => 'footer_copy_code',
 		'label'       => esc_attr__( 'Footer Copyriht 2', 'best-restaurant' ),
@@ -640,7 +640,7 @@
   )); 
 
  
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	  'type'		 => 'text',
 	  'settings'	 => 'facebook_link',
 	  'label'		 => __( 'Facebook Link', 'best-restaurant' ),
@@ -649,7 +649,7 @@
 	  'priority'	 => 10,
   ) ); 
   
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	  'type'		 => 'text',
 	  'settings'	 => 'twitter_link',
 	  'label'		 => __( 'Twitter Link', 'best-restaurant' ),
@@ -658,7 +658,7 @@
 	  'priority'	 => 10,
   ) );   
   
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	  'type'		 => 'text',
 	  'settings'	 => 'youtube_link',
 	  'label'		 => __( 'Youtube Link', 'best-restaurant' ),
@@ -667,7 +667,7 @@
 	  'priority'	 => 10,
   ) );   
   
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	  'type'		 => 'text',
 	  'settings'	 => 'pinterest_link',
 	  'label'		 => __( 'Pinterest Link', 'best-restaurant' ),
@@ -676,7 +676,7 @@
 	  'priority'	 => 10,
   ) ); 
   
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	  'type'		 => 'text',
 	  'settings'	 => 'google_plus_link',
 	  'label'		 => __( 'Google Plus Link', 'best-restaurant' ),
@@ -685,7 +685,7 @@
 	  'priority'	 => 10,
   ) );   
   
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	  'type'		 => 'text',
 	  'settings'	 => 'instagram_link',
 	  'label'		 => __( 'Instagram Link', 'best-restaurant' ),
@@ -694,7 +694,7 @@
 	  'priority'	 => 10,
   ) );
   
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 		'type'			 => 'switch', 
 		'settings'		 => 'enable_footer_hr',
 		'label'			 => __( 'Enable hr in footer', 'best-restaurant' ),
@@ -706,10 +706,10 @@
          
 
 
-function best_restaurantadd_button_field( $button_arr) {
+function best_restaurant_add_button_field( $button_arr) {
   $key = $button_arr['key'];
 
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
   		'type'		 => 'text',
   		'settings'	 => $key.'_button_text',
   		'label'		 => __( 'Button Text', 'best-restaurant' ),
@@ -719,7 +719,7 @@ function best_restaurantadd_button_field( $button_arr) {
   	) ); 
 	
 	  
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
   		'type'		 => 'text',
   		'settings'	 => $key.'_button_url',
   		'label'		 => __( 'Button URL', 'best-restaurant' ),
@@ -729,7 +729,7 @@ function best_restaurantadd_button_field( $button_arr) {
   	) );   
   
   
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	'type'        => 'color',
 	'settings'    => $key.'_button_background',
 	'label'       => __( 'Button Background Color', 'best-restaurant' ),
@@ -743,7 +743,7 @@ function best_restaurantadd_button_field( $button_arr) {
   ) ); 
   
   
-	 best_restaurantadd_field( array(
+	 best_restaurant_add_field( array(
 		'type'        => 'slider',
 		'settings'    => $key . '_button_opacity',
 		'label'       => __( 'Button Background Opacity', 'best-restaurant' ),
@@ -759,7 +759,7 @@ function best_restaurantadd_button_field( $button_arr) {
   
   
   
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	'type'        => 'typography',
 	'settings'    => $key.'_button_typography',
 	'label'       => esc_attr__( 'Button Text Typography', 'best-restaurant' ),
@@ -776,7 +776,7 @@ function best_restaurantadd_button_field( $button_arr) {
 
   ) ); 
   
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	'type'        => 'number',
 	'settings'    => $key.'_button_radius',
 	'label'       => esc_attr__( 'Button Border Radius', 'best-restaurant' ),
@@ -789,7 +789,7 @@ function best_restaurantadd_button_field( $button_arr) {
 	),
   ) );  
   
-  best_restaurantadd_field( array(
+  best_restaurant_add_field( array(
 	  'type'        => 'spacing',
 	  'settings'	 => $key.'_button_padding',
 	  'label'       => __( 'Section Button Padding Control', 'best-restaurant' ),

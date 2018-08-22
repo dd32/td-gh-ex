@@ -2,12 +2,12 @@
   $key = 'tool';
   $custom_css = '';
 
-  $sections = best_restaurantpublic_content_default(); 
+  $sections = best_restaurant_public_content_default(); 
   $default = $sections[$key];
 
   $imagepath =  get_stylesheet_directory_uri() . '/custom/images/'; 
   
-  $tool_1_logo     = esc_url(get_theme_mod( 'tool_1_logo',$imagepath.'logo.png' ));  
+  $tool_1_logo     = esc_url(get_theme_mod( 'tool_1_logo','' ));  
   
   
  $tool_1_description     = esc_html(get_theme_mod( 'tool_1_description',__( 'Donec at eui smod nibh, eu bibendum quam. Nullam  non gravida pDonec at eui smod nibh, eu bibendum quam. Nullam  non gravida peu bibendum quam. Nullam  non gravida peu bibendum quam. Nullam  non gravida p', 'best-restaurant' ) ));
@@ -58,7 +58,7 @@
 						<?php
 						  $default_content3 = array(
 								array(
-									'tool_3_text' => esc_attr__( 'Monday-Friday: 08:00AM - 10:00PM', 'best-restaurant' ),//====pro====													
+									'tool_3_text' => esc_attr__( 'Monday-Friday: 08:00AM - 10:00PM', 'best-restaurant' ),												
 								),
 						
 								array(
@@ -94,7 +94,7 @@
                         <hr>
                         <ul>
 						<?php
-						  $default_content = best_restaurantsection_content_default($key);
+						  $default_content = best_restaurant_section_content_default($key);
                           $repeater_value = get_theme_mod( 'repeater_tool_2',$default_content);	
 
                           if ( ! empty( $repeater_value ) ) :	

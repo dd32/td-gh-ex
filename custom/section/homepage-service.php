@@ -3,7 +3,7 @@
   $key = 'service';
   $custom_css = '';
 
-  $sections = best_restaurantpublic_content_default(); 
+  $sections = best_restaurant_public_content_default(); 
   $default = $sections[$key];
 
 	

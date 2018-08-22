@@ -1,6 +1,6 @@
 <?php
 
-function best_restaurantsection_default_order() 
+function best_restaurant_section_default_order() 
 {
 	$section_default = array( 	
 		'slider',
@@ -12,8 +12,8 @@ function best_restaurantsection_default_order()
 }
 
 
-if ( !function_exists( 'best_restaurantget_default_title_font' ) ){
-  function best_restaurantget_default_title_font($key)
+if ( !function_exists( 'best_restaurant_get_default_title_font' ) ){
+  function best_restaurant_get_default_title_font($key)
   {  
   
 	switch($key){
@@ -68,8 +68,8 @@ if ( !function_exists( 'best_restaurantget_default_title_font' ) ){
   }
 }
 
-if ( !function_exists( 'best_restaurantget_description_font' ) ){
-  function best_restaurantget_description_font($key)
+if ( !function_exists( 'best_restaurant_get_description_font' ) ){
+  function best_restaurant_get_description_font($key)
   {  
 	switch($key){
 
@@ -126,7 +126,7 @@ if ( !function_exists( 'best_restaurantget_description_font' ) ){
 	   
 
   
-function best_restaurantpublic_content_default()
+function best_restaurant_public_content_default()
 { 
   $imagepath =  get_stylesheet_directory_uri() . '/custom/images/';    
   return $sections_default = array(
@@ -188,7 +188,7 @@ function best_restaurantpublic_content_default()
   );
 }
 
-function best_restaurantsection_content_default($key)
+function best_restaurant_section_content_default($key)
 {  
   $imagepath =  get_stylesheet_directory_uri() . '/custom/images/'; 
   switch($key){
@@ -255,7 +255,7 @@ function best_restaurantsection_content_default($key)
 }
 
 
-function best_restaurantbutton_default_arr($key) 
+function best_restaurant_button_default_arr($key) 
 {
 	$default     = array();	
  switch($key){

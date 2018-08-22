@@ -1,6 +1,6 @@
 <?php
 	$key = 'slider';	
-	$default_content = best_restaurantsection_content_default($key);
+	$default_content = best_restaurant_section_content_default($key);
  
 	$repeater_value = get_theme_mod( 'repeater_slider',$default_content); 
 	$slider_li = '';

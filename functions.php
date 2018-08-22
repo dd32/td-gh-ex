@@ -23,8 +23,7 @@ add_action( 'after_setup_theme', 'theta_about_page' );
 function best_restaurant_custom_scripts()
 {
 	$theme_info = wp_get_theme();
-	
-		
+			
 	wp_enqueue_style('theta-style',  get_template_directory_uri() .'/style.css',array('theta-base','font-awesome','bootstrap'),$theme_info->get( 'Version' ), false);
 	wp_enqueue_style('best-restaurant-style', get_stylesheet_uri(),array('theta-style'), $theme_info->get( 'Version' ) );	
 
@@ -59,7 +58,7 @@ function best_restaurant_custom_scripts()
 		';
 	}
 
-	$sortable_value = maybe_unserialize( get_theme_mod( 'home_layout', best_restaurantsection_default_order() ) );
+	$sortable_value = maybe_unserialize( get_theme_mod( 'home_layout', best_restaurant_section_default_order() ) );
 	
 
 	if ( ! empty( $sortable_value ) ) : 
@@ -93,7 +92,7 @@ function best_restaurant_script_method() {
 
 	if(is_front_page() ){
 
-		$sortable_value = maybe_unserialize( get_theme_mod( 'home_layout', best_restaurantsection_default_order() ) );
+		$sortable_value = maybe_unserialize( get_theme_mod( 'home_layout', best_restaurant_section_default_order() ) );
 			
 		if ( ! empty( $sortable_value ) ) : 
 		  foreach ( $sortable_value as $checked_value ) :
@@ -115,7 +114,7 @@ function best_restaurant_script_method() {
 if ( ! function_exists( 'best_restaurant_get_section_menu' ) ) {
 	function best_restaurant_get_section_menu(){
 		$section_menu = '';
-		$sortable_value = maybe_unserialize( get_theme_mod( 'home_layout',best_restaurantsection_default_order() ) );	
+		$sortable_value = maybe_unserialize( get_theme_mod( 'home_layout',best_restaurant_section_default_order() ) );	
 		if ( ! empty( $sortable_value ) ) : 
 		  foreach ( $sortable_value as $checked_value ) :
 			$section_menu = '<li data-menuanchor="'.$checked_value.'"><a href="#'.$checked_value.'">'.ucfirst(esc_html(get_theme_mod( $checked_value.'_section_menu_title',$checked_value) )).'</a></li>'.$section_menu;

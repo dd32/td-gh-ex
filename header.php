@@ -6,12 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">    
 	<?php wp_head(); ?>
-	<?php
-		$fixed = '';
-		if( get_theme_mod( 'fixed_header',1) || is_front_page() ){
-			$fixed .= 'fixed';
-		}
-	?>   
+      
 </head>
 <body  <?php body_class(); ?>>
   <?php if( get_theme_mod( 'enable_loader',0) ){?> 
@@ -36,7 +31,6 @@
 
             <nav id="theta-menu" class="theta-menu">
                 <div class="menu-icon"><i class="icon-menu"></i><i class="icon-close"></i></div>
-                <!-- Mobile button -->
                 
                 <ul class="menu">
                 <?php if(  get_theme_mod( 'enable_search',1)  ){?>
@@ -48,7 +42,6 @@
 						if( get_theme_mod( 'enable_section_header_menu',1) && is_front_page() && !is_home()  ){
 							echo best_restaurant_get_section_menu();
 						}
-                    
                         if ( has_nav_menu( 'header-menu' ) ) {
                              wp_nav_menu( array( 'theme_location' => 'header-menu', 'items_wrap' => '%3$s','container' => false  ) );
                         }
@@ -57,8 +50,7 @@
                 </ul>
                 
                 <ul class="menu-mobile">
-                </ul> 
-                
+                </ul>
                 
                 <?php if(  get_theme_mod( 'enable_search',1)  ){?>
                 <div id="theta-top-search">
@@ -66,13 +58,9 @@
                 	<?php 
                         get_search_form();
                 	?>
-                
                 </div>
-                <?php }?>           
-                    
+                <?php }?>  
             </nav>
             
- 
         </div>
-  
 	</header>

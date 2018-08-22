@@ -9,7 +9,7 @@
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Text Domain:  best-restaurant
  Template:     theta
- Version:      1.0.1
+ Version:      1.0.2
  Tags: Blog, Custom-Background, Custom-Logo, Custom-Menu, Custom-Colors, Custom-Header, Flexible-Header, Featured-Images, Footer-Widgets, Two-Columns, Right-Sidebar, Left-Sidebar, Theme-Options, E-Commerce, Food-and-Drink, Full-Width-Template, Translation-Ready
 
 */
@@ -173,9 +173,7 @@ section.ct_blog .ct_post_info p{ color:#999; text-align:left;}
 	 }
 		
 	}
-	@media screen and (max-width:992px){
-	
-	
+	@media screen and (max-width:992px){	
 	.service_content_right{text-align: inherit;}
 	.service_content_left{text-align: inherit;}
 	section.ct_section_4 .ct_service_list .service_content_right p{text-align: inherit;}
@@ -183,29 +181,19 @@ section.ct_blog .ct_post_info p{ color:#999; text-align:left;}
 	
 	.service_content_right .col-md-2,.service_content_left .col-md-10{ float: none;}
 	
-	section.ct_section_4 .service_content_image a img{
-		
-		width: 85px;
-		height: 85px;
-		border-radius: 85px;
-		
-	}
+	section.ct_section_4 .service_content_image a img{	width: 85px;	height: 85px;	border-radius: 85px;}
 	
 	}
-	
 	.ct_service_list{ margin-top:-30px;}
 	.service_content_image{ padding-top:5%;}
 /*=========== section service end===============*/
-
 
 .ct_slider_video{ width:100%; height:100%;}
 .ct_slider .carousel-control {
     position: absolute;
     top: 0;
     bottom: 0;
-
     width: 10%;
-    /*height: 60%;*/
     font-size: 20px;
     color: #fff;
     text-align: center;
@@ -263,33 +251,18 @@ section.ct_blog .ct_post_info p{ color:#999; text-align:left;}
 /*=========== tools end ===============*/	
 
 /*=========== footer ===============*/	
-#footer a {
-    color: #DBDBDB;
-    padding: 3px;
-    font-size: 20px;
-}
+#footer a {   color: #DBDBDB;   padding: 3px;   font-size: 20px;}
 
-#footer .copyright a {
-    color: #DBDBDB;
-    padding: 3px;
-    font-size: 14px;
-}
+#footer .copyright a {   color: #DBDBDB;   padding: 3px;    font-size: 14px;}
 
-#footer {
-	background-color: rgba(37,36,37,1);
-}
+#footer {	background-color: rgba(37,36,37,1);}
 #footer hr{ margin:0 auto 25px auto; width:50%; color:#5D5D5D;border-top: 1px solid #8e8e8e;}
-#footer .ct_footer_follow{ /*padding-top:25px;*/ padding-bottom:5px; font-size:1.1em;}
+#footer .ct_footer_follow{padding-bottom:5px; font-size:1.1em;}
 
-#footer .ct_footer_bookmarks {
-    padding: 0 0 0px 0;
-}
-
+#footer .ct_footer_bookmarks {   padding: 0 0 0px 0;}
 #footer .copyright{padding-bottom:20px;}
 
 /*=========== footer end ===============*/	
-
-
 .carousel-caption {
     right: 10%;
     left: 10%;

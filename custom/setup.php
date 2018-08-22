@@ -1,15 +1,13 @@
 <?php
-
 function theta_themes_pro(){
 	//theta pro
 }
 $template_directory = get_template_directory();
 
 
-function best_restaurantgenerate_public_css($key,$default){
+function best_restaurant_generate_public_css($key,$default){
 	
 	$imagepath =  get_stylesheet_directory_uri() . '/custom/images/';
-
 	$custom_css = '';
 
 	$title_iocn_image = get_theme_mod( $key.'_iocn_image', $imagepath.'divider.png' ) ;	
@@ -42,7 +40,7 @@ function best_restaurantgenerate_public_css($key,$default){
 		$custom_css .='section.ct_section_'.$key.' .section_content{padding:'.$section_padding['top'].' '.$section_padding['right'].' '.$section_padding['bottom'].' '.$section_padding['left'].';}';  
 	}
   
-	$button_arr  = best_restaurantbutton_default_arr($key);
+	$button_arr  = best_restaurant_button_default_arr($key);
 	  
 	if( !empty($button_arr) ){
 	  
@@ -75,7 +73,7 @@ function best_restaurant_section_live_css($key){
 
 	  $key = 'slider';
 	  
-	  $default_content = best_restaurantsection_content_default($key);
+	  $default_content = best_restaurant_section_content_default($key);
 	
 	  $slider_title_typography_default     = array(
 		  'font-family'    => 'Dancing Script',
@@ -141,10 +139,10 @@ function best_restaurant_section_live_css($key){
 
 	  $key = 'about';
 
-	  $sections = best_restaurantpublic_content_default(); 
+	  $sections = best_restaurant_public_content_default(); 
 	  $default = $sections[$key];
 	  
-	  $custom_css .= best_restaurantgenerate_public_css($key,$default);
+	  $custom_css .= best_restaurant_generate_public_css($key,$default);
 
 	  $custom_css .= '.ct_about a.btn-primary {  margin-bottom: 30px;}';
 
@@ -155,25 +153,11 @@ function best_restaurant_section_live_css($key){
 	case 'service':
 	  $key = 'service';
 
-	  $sections = best_restaurantpublic_content_default(); 
+	  $sections = best_restaurant_public_content_default(); 
 	  $default = $sections[$key];
 	  
-	  $custom_css .= best_restaurantgenerate_public_css($key,$default);
+	  $custom_css .= best_restaurant_generate_public_css($key,$default);
 
-	  $default_content = best_restaurantsection_content_default($key);  
-	  $repeater_value = get_theme_mod( 'repeater_'.$key,$default_content);		
-  	  
-	  $k = 0;
-		if ( ! empty( $repeater_value ) ) :	
-		  foreach ( $repeater_value as $row ) : 
-			if ( isset( $row[ 'service_icon' ] ) && !empty( $row[ 'service_icon' ] ) ) :
-	  			$k++;
-	 			$custom_css .='.service_content_'.$k.' a.ct_icon{background-image:url('.esc_url($row[ 'service_icon' ]).');width: 100%; height: 100%; min-height: 100px;display: block;    background-position: center; background-repeat: no-repeat;}.service_content_'.$k.' a:hover.ct_icon{background-image:url('.esc_url($row[ 'service_icon_hover' ]).');}';
-				
-
-			endif;
-		  endforeach;	
-		endif;
             	  
  	  break;
 
@@ -181,10 +165,10 @@ function best_restaurant_section_live_css($key){
 	case 'blog':
 	  $key = 'blog';
 
-	  $sections = best_restaurantpublic_content_default(); 
+	  $sections = best_restaurant_public_content_default(); 
 	  $default = $sections[$key];
 	  
-	  $custom_css .= best_restaurantgenerate_public_css($key,$default);
+	  $custom_css .= best_restaurant_generate_public_css($key,$default);
 	  
  	  break;			  
 	  
@@ -192,15 +176,15 @@ function best_restaurant_section_live_css($key){
 	case 'tool':
 	  $key = 'tool';
 
-	  $sections = best_restaurantpublic_content_default(); 
+	  $sections = best_restaurant_public_content_default(); 
 	  $default = $sections[$key];
 	  
-	  $custom_css .= best_restaurantgenerate_public_css($key,$default);
+	  $custom_css .= best_restaurant_generate_public_css($key,$default);
 
-	  $title_typography_value = get_theme_mod( $key.'_title_typography',best_restaurantget_default_title_font($key) );
+	  $title_typography_value = get_theme_mod( $key.'_title_typography',best_restaurant_get_default_title_font($key) );
 
 	  
-	  $description_typography_value = get_theme_mod( $key.'_title_typography',best_restaurantget_description_font($key) );	  
+	  $description_typography_value = get_theme_mod( $key.'_title_typography',best_restaurant_get_description_font($key) );	  
 	  $description_hr_color  = theta_change_color($description_typography_value['color'],0.8);	  
 	  
 	  $custom_css .='.ct_tool_row h2{ font-family:'.$title_typography_value['font-family'].'; color:'.$title_typography_value['color'].';text-transform:'.$title_typography_value['text-transform'].';text-align:'.$title_typography_value['text-align'].';font-size:'.$title_typography_value['font-size'].';font-weight:'.$title_typography_value['variant'].'; }
@@ -281,7 +265,7 @@ function best_restaurant_section_live_js($key){
 
 function best_restaurant_section_check_enabled($key){
 	
-  $section_default = best_restaurantsection_default_order();
+  $section_default = best_restaurant_section_default_order();
   
   $sortable_value = maybe_unserialize( get_theme_mod( 'home_layout',$section_default ) );
  
