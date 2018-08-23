@@ -140,9 +140,9 @@
     margin-left: 5px;
 }
 
-.support-process{
+.support-process {
     width: 46%;
-    margin-right: 4%;
+    margin-right: 2%;
     float: left;
     border: 1px solid #DDD;
     padding: 30px;
@@ -248,4 +248,13 @@ a.buy-pro-btn:hover{
 
 .free_vs_pro .three-col .col:hover{
    background: #EEE;
+}
+
+.about-wrap .more-stuffs .support-process.col:last-child h3 {
+    color: #444;
+}
+
+.about-wrap .more-stuffs .support-process.col:last-child{
+    background: none;
+    color: #444;
 }

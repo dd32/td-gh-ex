@@ -45,6 +45,7 @@
 					'recommended_plugins' => __('Recommended Plugins', 'accesspress-lite'),
 					'support' => __('Support', 'accesspress-lite'),
 					'free_vs_pro' => __('Free vs Pro', 'accesspress-lite'),
+					'more_wp_stuff' => __('More WordPress Stuff', 'accesspress-lite'),
 				);
 
 				/** List of Recommended Free Plugins **/
