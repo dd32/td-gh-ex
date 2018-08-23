@@ -248,3 +248,12 @@ a.buy-pro-btn:hover{
 .free_vs_pro .three-col .col:hover{
    background: #EEE;
 }
+
+.about-wrap .more-stuffs .support-process.col:last-child h3 {
+    color: #444;
+}
+
+.about-wrap .more-stuffs .support-process.col:last-child{
+    background: none;
+    color: #444;
+}

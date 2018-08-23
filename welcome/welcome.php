@@ -47,6 +47,7 @@
 					'recommended_plugins' => esc_html__('Recommended Plugins', 'accesspress-parallax'),
 					'support' => esc_html__('Support', 'accesspress-parallax'),
 					'free_vs_pro' => esc_html__('Free vs Pro', 'accesspress-parallax'),
+					'more_wp_stuff' => esc_html__('More WordPress Stuff', 'accesspress-parallax'),
 				);
 
 				/** List of Recommended Free Plugins **/

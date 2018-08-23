@@ -88,6 +88,11 @@ Images
 
 ---------------------------------------------
 == Changelog ==
+
+Version 1.65
+ * Made Translation Ready
+ * Minor Bug Fixes
+
 Version 1.64
  * Fixed Some Escaping and Security Issues
 
